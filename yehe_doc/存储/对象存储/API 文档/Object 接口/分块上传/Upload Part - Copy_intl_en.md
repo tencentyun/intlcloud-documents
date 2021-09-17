@@ -1,15 +1,32 @@
-## Description
-This API is used to copy a part from an existing object as a source path to a destination path. You specify the data source using `x-cos-copy-source` and a byte range (allowable part size between 1 MB to 5 GB) using `x-cos-copy-source-range` in your request.
+## Overview
+This API is used to copy the parts of an object from the source path to the destination path. You can use `x-cos-copy-source` to specify the source object and use `x-cos-copy-source-range` to specify the byte range to copy (each part should be 1 MB to 5 GB).
 
 >!
->- Before using this API, first initiate a multipart upload using the [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) API and specify the destination path.
->- If the destination object and the source object are in different regions, and the part size of the destination object will exceed 5 GB, you will need to use multipart upload or multipart copy API to copy the object.
->- To upload an object in parts, you must first initialize a multipart upload. A unique descriptor (upload ID) will be returned in response to the initiate request, and must be included in your upload part request.
+>- To call this API, you need to first call the [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) API to initialize the multipart upload and specify the destination path.
+>- If the source and destination objects reside in two different regions and the part size is larger than 5 GB, use the multipart upload or multipart copy API to copy the object.
+>- To upload an object in parts, you must first initialize the multipart upload. The response of the multipart upload initialization will include a unique descriptor `uploadId`, which needs to be carried in the multipart upload request.
+>
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=UploadPartCopy&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
 
 #### Versioning
-If versioning is enabled for the bucket, `x-cos-copy-source` identifies the current version of the object to be copied. If the current version is a delete marker and no version is specified in `x-cos-copy-source`, COS will consider the object as deleted and return a 404 error. If you specify a delete marker as `versionId` in the `x-cos-copy-source`, COS will return an HTTP 400 error as it is not allowed to use a delete marker as versionId in `x-cos-copy-source`.
+If versioning is enabled for the bucket, `x-cos-copy-source` identifies the current version of the object to copy. If the current version is a delete marker and no version is specified in `x-cos-copy-source`, COS will consider that the object has been deleted and return a 404 error. If you specify a `versionId` in `x-cos-copy-source` and the `versionId` is a delete marker, COS will return an HTTP 400 error as delete markers cannot be set in `x-cos-copy-source`.
 
-## Request
+## Requests
 #### Sample request
 
 ```http
@@ -25,43 +42,46 @@ x-cos-copy-source-if-unmodified-since: time_stamp
 x-cos-copy-source-if-modified-since: time_stamp
 ```
 
->?Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 
 #### Request headers
 
-#### Common headers
-The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+#### Common request headers
+This API uses [common request headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-#### Special headers
+#### Non-common request headers
 
 **Required headers**
 
-The implementation of this operation uses the following required request headers:
+This API uses the following required header:
 
-| Name | Description | Type | Required |
+| Header | Description | Type | Required |
 | ----------- | ----------- | ------------- | ---- |
-| x-cos-copy-source     | URL path to the source object. A version can be specified using the `versionId` subresource | String | Yes |
+| x-cos-copy-source     | URL of the source object. You can use `versionid` to specify the `versionId` of the object. | String | Yes |
 
 
 **Recommended headers**
 
-The implementation of this operation uses the following recommended request headers:
+This API uses the following recommended headers:
 
-| Name | Description | Type | Required |
+| Header | Description | Type | Required |
 | ---------------- | ---------- | ------ | -------- |
-| x-cos-copy-source-range | Byte range of the source object. The range value must be in the format of `bytes=first-last`, where both `first` and `last` are zero-based byte offsets.<br>For example, `bytes=0-9` means that you want to copy the first 10 bytes of data of the source object. If this parameter is not specified, the entire object will be copied | String | No |
-| x-cos-copy-source-If-Modified-Since | If the object is modified after the specified time, the operation will be performed; otherwise, `412` will be returned.<br>This header can be used together with `x-cos-copy-source-If-None-Match`. If it is used together with other conditions, a conflict will be returned | String | No |
-| x-cos-copy-source-If-Unmodified-Since | If the object is not modified after the specified time, the operation will be performed; otherwise, `412` will be returned.<br>This header can be used together with `x-cos-copy-source-If-Match`. If it is used together with other conditions, a conflict will be returned | String | No |
-| x-cos-copy-source-If-Match | If the Etag of the object is the same as the specified one, the operation will be performed; otherwise, `412` will be returned.<br>This header can be used together with `x-cos-copy-source-If-Unmodified-Since`. If it is used together with other conditions, a conflict will be returned | String | No |
-| x-cos-copy-source-If-None-Match | If the Etag of the object is different from the specified one, the operation will be performed; otherwise, `412` will be returned.<br>This header can be used together with `x-cos-copy-source-If-Modified-Since`. If it is used together with other conditions, a conflict will be returned | String | No |
+| x-cos-copy-source-range | Byte range of the source object. The range value must be in the format of `bytes=first-last`, where both `first` and `last` are offsets starting from 0. <br>For example, `bytes=0-9` means that you want to copy the first 10 bytes of data of the source object. If this parameter is not specified, the entire object will be copied. | String | No |
+| x-cos-copy-source-If-Modified-Since | If the object is modified after the specified time, the operation will be performed; otherwise, 412 will be returned. <br>This parameter can be used together with `x-cos-copy-source-If-None-Match`. If it is used together with other conditions, a conflict will be returned. | String | No |
+| x-cos-copy-source-If-Unmodified-Since | If the object is not modified after the specified time, the operation will be performed; otherwise, 412 will be returned. <br>This parameter can be used together with `x-cos-copy-source-If-Match`. If it is used together with other conditions, a conflict will be returned. | String | No |
+| x-cos-copy-source-If-Match | If the `ETag` of the object is the same as the specified one, the operation will be performed; otherwise, 412 will be returned. <br>This parameter can be used together with `x-cos-copy-source-If-Unmodified-Since`. If it is used together with other conditions, a conflict will be returned. | String | No |
+| x-cos-copy-source-If-None-Match | If the `ETag` of the object is different from the specified one, the operation will be performed; otherwise, 412 will be returned. <br>This parameter can be used together with `x-cos-copy-source-If-Modified-Since`. If it is used together with other conditions, a conflict will be returned. | string | No |
 
 #### Request parameters
 
- Name | Description | Type | Required
+ | Parameter | Description | Type | Required |
 ---|---|---|---
-partNumber| Number of the part being copied |String| Yes
-uploadId| A unique descriptor (upload ID) that is returned in response to the initiate multipart upload request required for uploading a file in parts, and must be included in your upload part request |String| Yes
+| partNumber | Part number | String | Yes |
+| uploadId | To upload an object in parts, you must first initialize the multipart upload. The response of the multipart upload initialization will carry a unique descriptor (`uploadId`), which needs to be carried in the multipart upload request. | String | Yes |
 
 #### Request body
 The request body of this request is empty.
@@ -70,17 +90,17 @@ The request body of this request is empty.
 
 #### Response headers
 #### Common response headers 
-This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API uses [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-#### Special response headers
+#### Non-common response headers
 
-| Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | 
+|Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Description | Type |
 |---|---|---|
-|x-cos-copy-source-version-id| Version ID of the copied source object if versioning is enabled for the source bucket |String|
-|x-cos-server-side-encryption | If the object is stored with COS-managed server-side encryption, the response will contain this header and the value of the encryption algorithm used (AES256) | String|
+| x-cos-copy-source-version-id | Version ID of the source object to copy (if versioning is enabled for the source bucket) | String |
+| x-cos-server-side-encryption | If the object is stored with COS-managed server-side encryption, the response will contain this header and the encryption algorithm used (AES256). | String |
 
 #### Response body
-This response body returns **application/xml** data. The following example contains all the node data:
+The response body returns **application/xml** data. The following contains all the nodes:
 
 ```shell
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -90,17 +110,17 @@ This response body returns **application/xml** data. The following example conta
 </CopyPartResult>
 ```
 
-The nodes are described in details below:
+The nodes are described as follows:
 
-| Name | Description | Type |
+| Parameter | Description | Type |
 | ---------- | ------------------- | ------ |
-| CopyPartResult | Returns the result of the copy | String |
-| ETag             | Returns the MD5 checksum of the object. The value of `ETag` can be used to check whether the object content has changed during transit | String |
-| LastModified | Returns the last modified time of the object in GMT time | String |
+| CopyPartResult | Results of the copy | String |
+| ETag | MD5 checksum of the object. `ETag` can be used to check whether the object content has changed. | String |
+| LastModified | Last modified time of the object, in GMT format | String |
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Samples
 #### Request

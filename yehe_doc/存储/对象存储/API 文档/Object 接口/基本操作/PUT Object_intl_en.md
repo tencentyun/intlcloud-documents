@@ -6,18 +6,19 @@ This API is used to upload a local object to a specified bucket. To call this AP
 >- The `PUT Object` API supports uploading a file of up to 5 GB. If you need to upload a file larger than 5 GB, please use the [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112) API.
 > - If the `Content-Length` value in the request header is smaller than the length of the data in the actual request body, COS will still successfully create a file, but the object size will be equal to the size defined in `Content-Length`, and the remaining data will be discarded.
 > - If you upload an object with the same name as an object that already exists in the bucket and versioning is not enabled, the old object will be overwritten by the new one and "200 OK" will be returned upon successful upload.
+> 
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                We recommend using Tencent Cloud API Explorer.
+                API Explorer is recommended.
             </div>
-            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for the desired APIs. You can also use it to query the content of each request as well as its response, and obtain the auto-generated SDK calling samples.
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
             </div>
         </div>
     </div>
@@ -29,7 +30,7 @@ This API is used to upload a local object to a specified bucket. To call this AP
 - If versioning is enabled for the bucket, COS will automatically generate a unique version ID for the object to be uploaded. It returns this ID in the response using the `x-cos-version-id` response header.
 - If versioning is suspended for the bucket, COS will always use `null` as the version ID of the object in the bucket and will not return the `x-cos-version-id` response header.
 
-## Request
+## Requests
 
 #### Sample request
 
@@ -47,7 +48,10 @@ Authorization: Auth String
 [Object Content]
 ```
 
-> ? Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
@@ -118,13 +122,14 @@ The response body of this API is empty.
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Samples
 
-#### Example 1. Simple use case (with versioning disabled)
+#### Sample 1: simple use case (with versioning disabled)
 
 #### Request
 
-``` plaintext
+<dx-codeblock>
+:::  plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:35:05 GMT
@@ -135,7 +140,8 @@ Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q
 Connection: close
 
 [Object Content]
-```
+:::
+</dx-codeblock>
 
 #### Response
 
@@ -150,7 +156,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNkYzlfNjRiODJhMDlfMzFmYzhfMTFm****
 ```
 
-#### Example 2. Specifying metadata and ACL using request headers
+#### Sample 2: specifying metadata and ACL using request headers
 
 #### Request
 
@@ -186,7 +192,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNkZTBfZjhjMDBiMDlfNzdmN18xMGFi****
 ```
 
-#### Example 3. Using server-side encryption SSE-COS
+#### Sample 3: using server-side encryption SSE-COS
 
 #### Request
 
@@ -220,7 +226,7 @@ x-cos-request-id: NWU5MDNkZjVfYzVjNzJhMDlfMjVhNzNfMWMy****
 x-cos-server-side-encryption: AES256
 ```
 
-#### Example 4. Using server-side encryption SSE-KMS
+#### Sample 4: using server-side encryption SSE-KMS
 
 #### Request
 
@@ -257,7 +263,7 @@ x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
 ```
 
-#### Example 5. Using server-side encryption SSE-C
+#### Sample 5: using server-side encryption SSE-C
 
 #### Request
 
@@ -295,7 +301,7 @@ x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 ```
 
-#### Example 6. Enabling versioning
+#### Sample 6: versioning-enabled
 
 #### Request
 
@@ -328,7 +334,7 @@ x-cos-request-id: NWU5MDNlMjNfMThiODJhMDlfNGQ1OF8xMWY4****
 x-cos-version-id: MTg0NDUxNTc1NjIzMTQ1MDAwODg
 ```
 
-#### Example 7. Suspending versioning
+#### Sample 7: versioning-suspended
 
 #### Request
 
@@ -360,7 +366,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNlNDNfZTZjNzJhMDlfMmYwMDlfMTVi****
 ```
 
-#### Example 8. Using chunked transfer encoding for multipart transfer
+#### Sample 8: using chunked transfer encoding for multipart transfer
 
 The request in this example uses `Transfer-Encoding: chunked` encoding. This use case describes the raw data in the HTTP request. During use, calling methods vary depending on languages and libraries. Please refer to language- and library-related documents.
 
