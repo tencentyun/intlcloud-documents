@@ -3,144 +3,14 @@
 ## 支持的平台
 
 WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器、桌面版 Edge 浏览器、桌面版 Firefox 浏览器、桌面版 Safari 浏览器以及移动版的 Safari 浏览器上有较为完整的支持，其他平台（例如 Android 平台的浏览器）支持情况均比较差。
-- 如果您的应用场景主要为教育场景，那么教师端推荐使用稳定性更好的 [Electron](https://intl.cloud.tencent.com/document/product/647/35097) 解决方案，支持大小双路画面，更灵活的屏幕分享方案以及更强大的弱网络恢复能力。
+
+如果您的应用场景主要为教育场景，那么教师端推荐使用稳定性更好的 [Electron](https://intl.cloud.tencent.com/document/product/647/35097) 解决方案，支持大小双路画面，更灵活的屏幕分享方案以及更强大的弱网络恢复能力。
 
 
-
-<table>
-<tr>
-<th>操作系统</th>
-<th width="22%">浏览器类型</th><th>浏览器最低<br>版本要求</th><th width="16%">接收（播放）</th><th width="16%">发送（上麦）</th><th>屏幕分享</th><th>SDK 版本要求</th>
-</tr><tr>
-<td rowspan="4">Mac OS</td>
-<td>桌面版 Safari 浏览器</td>
-<td>11+</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持（需要 Safari13+ 版本）</td>
-<td>-</td>
-</tr>
-<tr>
-<td>桌面版 Chrome 浏览器</td>
-<td>56+</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持（需要 Chrome72+ 版本）</td>
-<td>-</td>
-</tr>
-<tr>
-<td>桌面版 Firefox 浏览器</td>
-<td>56+</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持（需要 Firefox66+ 版本）</td>
-<td>v4.7.0+</td>
-</tr>
-<tr>
-<td>桌面版 Edge 浏览器</td>
-<td>80+</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持</td>
-<td>v4.7.0+</td>
-</tr>
-<tr>
-<td  rowspan="4">Windows</td>
-<td>桌面版 Chrome 浏览器</td>
-<td>56+</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持（需要 Chrome72+ 版本）</td>
-<td>-</td>
-</tr>
-<tr>
-<td>桌面版 QQ 浏览器（极速内核）</td>
-<td>10.4+</td>
-<td>支持</td>
-<td>支持</td>
-<td>不支持</td>
-<td>-</td>
-</tr>
-<tr>
-<td>桌面版 Firefox 浏览器</td>
-<td>56+</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持（需要 Firefox66+ 版本）</td>
-<td>v4.7.0+</td>
-</tr>
-<tr>
-<td>桌面版 Edge 浏览器</td>
-<td>80+</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持</td>
-<td>v4.7.0+</td>
-</tr>
-<tr>
-<td>iOS 11.1.2+</td>
-<td>移动版 Safari 浏览器</td>
-<td>11+</td>
-<td>支持</td>
-<td>支持</td>
-<td>不支持</td>
-<td>-</td>
-</tr>
-<tr>
-<td>iOS 12.1.4+</td>
-<td>微信内嵌网页</td>
-<td>-</td>
-<td>支持</td>
-<td>不支持</td>
-<td>不支持</td>
-<td>-</td>
-</tr>
-<tr>
-<td>iOS 14.3+</td>
-<td>微信内嵌网页</td>
-<td>6.5+（微信版本）</td>
-<td>支持</td>
-<td>支持</td>
-<td>不支持</td>
-<td>-</td>
-</tr>
-<tr>
-<td  rowspan="4">Android</td>
-<td>移动版 QQ 浏览器</td>
-<td>-</td>
-<td>不支持</td>
-<td>不支持</td>
-<td>不支持</td>
-<td>-</td>
-</tr><tr>
-<td>移动版 UC 浏览器</td>
-<td>-</td>
-<td>不支持</td>
-<td>不支持</td>
-<td>不支持</td>
-<td>-</td>
-</tr>
-<tr>
-<td>微信内嵌网页（TBS 内核）</td>
-<td>-</td>
-<td>支持</td>
-<td>支持</td>
-<td>不支持</td>
-<td>-</td>
-</tr>
-<tr>
-<td>微信内嵌网页（XWEB 内核）</td>
-<td>-</td>
-<td>支持</td>
-<td>支持</td>
-<td>不支持</td>
-<td>-</td>
-</tr>
-</table>
-
+腾讯云 TRTC Web SDK 详细支持度表格请参见 [支持的平台](https://intl.cloud.tencent.com/document/product/647/41664)。
 >! 
->- 您可以在浏览器中打开 [WebRTC 能力测试](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 页面进行检测是否完整支持 WebRTC。例如公众号等浏览器环境。
->- 由于 H.264 版权限制，华为系统的 Chrome 浏览器和以 Chrome WebView 为内核的浏览器均不支持 TRTC Web端 SDK 的正常运行。
+>- 您可以在浏览器中打开 [TRTC Web SDK 能力测试页面](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 检测当前浏览器是否支持 WebRTC 所有能力。例如 WebView 等浏览器环境。
+>- 由于 H.264 版权限制，华为系统的 Chrome 浏览器和以 Chrome WebView 为内核的浏览器均不支持 TRTC Web 端 SDK 的正常运行。
 
 [](id:requirements)
 ## 环境要求
@@ -149,6 +19,16 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
  - TCP 端口：8687
  - UDP 端口：8000，8080，8800，843，443，16285
  - 域名：qcloud.rtc.qq.com
+
+## URL 域名协议限制
+| 应用场景     | 协议             | 接收（播放） | 发送（上麦） | 屏幕分享 | 备注 |
+| ------------ | :--------------- | :----------- | ------------ | -------- | ---- |
+| 生产环境     | HTTPS 协议        | 支持         | 支持         | 支持     | 推荐 |
+| 生产环境     | HTTP 协议         | 支持         | 不支持       | 不支持   |      |
+| 本地开发环境 | http://localhost | 支持         | 支持         | 支持     | 推荐 |
+| 本地开发环境 | http://127.0.0.1 | 支持         | 支持         | 支持     |      |
+| 本地开发环境 | http://[本机IP]  | 支持         | 不支持       | 不支持   |      |
+| 本地开发环境 | file:///         | 支持         | 支持         | 支持     |      |
 
 ## 前提条件
 您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
@@ -185,14 +65,14 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
 
 >!
 >- 本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
->- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
+>- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166#how-do-i-calculate-usersig-on-the-server.3F)。
 
 ### 步骤4：运行 Demo
 使用 Chrome 浏览器打开 Demo 根目录下的 `index.html` 文件即可运行 Demo。
 
 >!
->- 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口` 访问。
->- 目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
+> - 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口` 访问。
+> - 目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
 
 Demo 运行界面如图所示：
 ![](https://main.qcloudimg.com/raw/e989c968446e6e3bdcc19c58e40e2b86.png)
@@ -201,12 +81,12 @@ Demo 运行界面如图所示：
 - 单击摄像头图标可以选择摄像头设备。
 - 单击麦克风图标可以选择麦克风设备。
 >?WebRTC 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击 **允许**。
-> ![](https://main.qcloudimg.com/raw/1a2c1e7036720b11f921f8ee1829762a.png)
+![](https://main.qcloudimg.com/raw/1a2c1e7036720b11f921f8ee1829762a.png)
 
 
 ## 常见问题
 ### 1. 查看密钥时只能获取公钥和私钥信息，要如何获取密钥？
-TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256。在此之前已创建的应用，需要先升级签名算法才能获取新的加密密钥。如不升级，您也可以继续使用 [老版本算法 ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)，如已升级，您按需切换为新旧算法。
+TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256。在此之前已创建的应用，需要先升级签名算法才能获取新的加密密钥。如不升级，您也可以继续使用 [老版本算法 ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166#how-do-i-calculate-usersig-with-the-old-algorithm.3F)，如已升级，您按需切换为新旧算法。
 
 升级/切换操作：
  1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
