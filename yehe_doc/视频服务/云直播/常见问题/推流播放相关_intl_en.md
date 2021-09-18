@@ -115,8 +115,8 @@ The background audio playback feature is provided by devices. You can develop th
 CSS sets an upper limit on the total number of requests sent by all `SecretId` under an account. After the limit is reached, new requests will not be responded.
 For example, an upper limit of 200 requests per second indicates that Tencent Cloud server can receive up to 200 requests sent by all `SecretId` under your account within 1s. The 200 requests can be sent by one or more customers, and can be used to query one or more streams. 
 
-<span id="que18"></span>
-###  推流过程中显示“RTMP close”并推流失败，但日志提醒推流成功是什么情况？ 
+
+
 <span id="que19"></span>
 
 ### What should I do if the stream cannot be pushed normally after I modify the frame rate, the push needs to be restarted several times, and the stream is frequently interrupted? 
