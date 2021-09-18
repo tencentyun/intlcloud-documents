@@ -78,6 +78,3 @@ The CSS console allows you to change the time granularity when viewing the trend
 
 >? For more information, see [Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2819).
 
-### 相关动态
-
-若您想了解云直播最新的活动和资讯，您可在【相关动态】模块中选择查看。
