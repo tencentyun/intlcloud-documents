@@ -2,11 +2,11 @@
 Anti-DDoS supports watermark protection for the messages sent by the application end. Within the range of the UDP and TCP message ports configured, the application end and Anti-DDoS share the same watermark algorithm and key. After the configuration is completed, every message sent from the client will be embedded with the watermark while attack messages will not, so that the attack messages can be identified and discarded. Watermark protection can effectively and comprehensively defend against layer-4 CC attacks, such as analog business packet attacks and replay attacks.
 
 ## Prerequisites
-You have purchased an [Anti-DDoS Advanced instance](https://intl.cloud.tencent.com/document/product/297/37241) and set the object to protect.
+You have purchased an [Anti-DDoS Advanced (Global Enterprise Edition) instance](https://intl.cloud.tencent.com/document/product/297/37241) and set the object to protect.
 >?This feature is a paid service. Please [contact us](https://intl.cloud.tencent.com/contact-us) for activation.
 
 ## Directions
-1. Log in to the [Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/ddos-basic) and select **Anti-DDoS Advanced (New)** > **Configurations** on the left sidebar.
+1. Log in to the [Anti-DDoS Advanced (Global Enterprise Edition) Console](https://console.cloud.tencent.com/ddos/ddos-basic) and select **Anti-DDoS Advanced** > **Configurations** on the left sidebar.
 2. Select an Anti-DDoS Advanced instance ID in the list on the left, such as "xxx.xx.xx.xx bgpip-000003n2".
 ![](https://main.qcloudimg.com/raw/9c8bb19be4726a46a2261b35e048c8cb.png)
 3. Click **Set** in the **Watermark Protection** section to enter the watermark protection page.
