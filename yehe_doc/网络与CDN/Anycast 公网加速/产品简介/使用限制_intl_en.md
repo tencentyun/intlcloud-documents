@@ -11,7 +11,7 @@ This document describes the use limits of AIA.
 The network bandwidth cap configured for an Anycast EIP refers to the maximum outbound bandwidth, i.e., the bandwidth flowing out from the Anycast EIP. The supported network bandwidth cap is 1-2000 (inclusive) Mbps.
 >! An Anycast EIP created after July 20, 2021, 00:00:00 restricts the total outbound bandwidths of a single IP to the bandwidth cap. However, the bandwidth cap configured for Anycast EIPs created before the time point still restricts the maximum bandwidth going to a single region.
 
-To restrict the total outbound bandwidths of an Anycast EIP created before July 20, 2021, you can adjust the bandwidth cap to apply the new rule. For more information, see [Adjusting Anycast EIP Bandwidth](https://cloud.tencent.com/document/product/1199/41705#.E8.B0.83.E6.95.B4.E5.B8.A6.E5.AE.BD).
+To restrict the total outbound bandwidths of an Anycast EIP created before July 20, 2021, you can adjust the bandwidth cap to apply the new rule. 
 
 
 ## Peak Bandwidth
