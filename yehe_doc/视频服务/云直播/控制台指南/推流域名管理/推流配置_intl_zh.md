@@ -49,6 +49,7 @@ rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=h
 - `txSecret`：开启推流鉴权后生成的鉴权串。
 - `txTime`：推流地址设置的时间戳，是控制台推流地址的有效时间。
 
+>! 若您开启了域名鉴权，实际过期时间 = txTime + Key 有效时间。
 
 
 ## 推流地址示例代码
@@ -60,8 +61,8 @@ rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=h
 3. 选择【推流配置】，下拉到底查看【推流地址示例代码】标签。
 4. 单击切换标签按钮查看 PHP/Java 示例代码。
 
-**推流示例代码（PHP）：**
-
+<dx-codeblock>
+::: PHP php
 ```
 /**
     * 获取推流地址
@@ -87,8 +88,7 @@ function getPushUrl($domain, $streamName, $key = null, $time = null){
 echo getPushUrl("123.test.com","123456","69e0daf7234b01f257a7adb9f807ae9f","2016-09-11 20:08:07");
 ```
 
-**推流示例代码（Java）：**
-
+::: Java java
 ```
 package com.test;
 import java.io.UnsupportedEncodingException;

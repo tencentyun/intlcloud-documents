@@ -8,14 +8,13 @@
 ## 操作步骤
 1. 选择[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或【管理】进入域名管理。
 2. 选择【播放配置】>【播放地址生成器】，进行如下配置：
-	1. 选择过期时间，例如：`2019-02-28 23:59:59`。
-	2. 填写自定义的流名称 StreamName，例如：`liveteststream`。播放地址 StreamName 要与推流地址 StreamName 一致才能播放对应的流。
-	3. 可选择已配置转码模板。
-	3. 单击【生成播放地址】即可。
-![](https://main.qcloudimg.com/raw/6118cad9cca141bcee5c54d8211a9567.png)
-3. 若您的播放域名未开启播放鉴权，您还可以在【播放配置】>【播放地址】标签下，查看该播放域名下 RTMP、FLV、HLS 这三种播放地址。替换播放地址中的 StreamName（流名称）关联推流地址，关联后即可通过播放地址查看直播画面。
-![](https://main.qcloudimg.com/raw/eb03329524d2ccfc2470e27c1b2b8eef.png)
-
+	1. 选择【播放原始流】或【播放转码流】。若选择【播放转码流】则可选择已配置转码模板输出转码流。
+	2. 填写自定义的流名称 StreamName，例如：liveteststream。播放地址 StreamName 要与推流地址 StreamName 一致才能播放对应的流。
+	3.  选择过期时间，例如：`2021-06-30 19:00:44`。
+	4. 单击【生成地址】即可。
+![](https://main.qcloudimg.com/raw/6bea977acb754ec9c36422aef3189f39.png)
+3. 若您的播放域名未开启播放鉴权，您还可以在【播放配置】>【播放地址解析】标签下，查看该播放域名下 RTMP、FLV、HLS、UDP 这四种播放地址。替换播放地址中的 StreamName（流名称）关联推流地址，关联后即可通过播放地址查看直播画面。
+![](https://main.qcloudimg.com/raw/8d8a9ee63dc12045da418c1539051eb6.png)
 >?更多直播播放相关信息，请参见 [直播播放](https://intl.cloud.tencent.com/document/product/267/31559)。
 
 

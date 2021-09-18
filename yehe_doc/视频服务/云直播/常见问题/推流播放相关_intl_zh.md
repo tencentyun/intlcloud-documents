@@ -64,7 +64,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 
 <span id="que7"></span>
 ### 播放鉴权配置中主 Key 的格式有什么要求？有效时间时长有没有限制？
-鉴权配置中主 Key 值仅支持大写字母，小写字母和数字，最大长度256位。字母数字随机组合搭配即可。更多详情，请参见 [播放鉴权配置](https://intl.cloud.tencent.com/document/product/267/31060)。
+鉴权配置中主 Key 值仅支持大写字母，小写字母和数字，最大长度256位。字母数字随机组合搭配即可。更多详情，请参见 [播放鉴权配置](https://intl.cloud.tencent.com/document/product/267/3246)。
 有效时间时长建议设置为一场直播的时间长度。
 
 
@@ -117,9 +117,8 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 
 <span id="que18"></span>
 ###  推流过程中显示“RTMP close”并推流失败，但日志提醒推流成功是什么情况？ 
-可能是您当前推流地址有问题，建议使用 小程序 Demo 测试推流地址是否能正常推流。
-
 <span id="que19"></span>
+
 ###  修改帧率后无法正常推流，需要本地多次重启服务，并经常断开，如何处理？ 
 可能是当前设置帧率过高。15帧以上即可保证视频流畅播放，建议调低帧率。  
 

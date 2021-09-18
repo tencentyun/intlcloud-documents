@@ -7,7 +7,7 @@
 >![](https://main.qcloudimg.com/raw/bffc28b43fb63cdbd996a93790cb5db5.png)
 
 ## 注意事项
-- **海外直播价格与国内直播价格不同，详细计费请参见 [价格总览](https://cloud.tencent.com/document/product/267/52662)。**
+- **海外直播价格与国内直播价格不同，详细计费请参见 [价格总览](https://intl.cloud.tencent.com/document/product/267/2819)。**
 - 在非加速区域使用该播放地址，该播放地址会无法正常使用。
 - 切换区域配置会导致带宽封顶配置失效，需要重新设置带宽封顶配置。
 ## 操作步骤
