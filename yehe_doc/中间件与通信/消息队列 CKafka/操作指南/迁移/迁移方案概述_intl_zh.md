@@ -8,7 +8,7 @@
 
 该方案的整体简单清晰便于操作，且无数据积压，过渡平滑。
 
-![](https://main.qcloudimg.com/raw/7b41c8c1f3740a9b5b6ad45f6b369cc0.png)
+![](https://main.qcloudimg.com/raw/51d15605b01dd1095239001a966b2671.png)
 
 
 
@@ -32,7 +32,7 @@
 
 该方案的整体简单清晰便于操作。
 
-![](https://main.qcloudimg.com/raw/a24b388a3259dfe609e94ed14037c862.png)
+![](https://main.qcloudimg.com/raw/d25503d1d258cc9266c816daded70029.png)
 
 **方案思路：**
 
@@ -52,7 +52,7 @@
 
 该方案会把自建集群 Kafka 中的存量数据迁移到 CKafka。
 
-![](https://main.qcloudimg.com/raw/74a958680c5d45812dfc8141505bc013.png)
+![](https://main.qcloudimg.com/raw/faa4c766dfd74e86da605ffdb0410b24.png)
 
 **方案思路：**
 

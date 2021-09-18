@@ -80,7 +80,7 @@ Tencent Cloud CDNを使用する前に、Tencent Cloudアカウントを登録�
 </tr>
 <tr>
 <td>リアルタイムモニタリングデータにより運用状況を分析します。</td>
-<td><a href="https://cloud.tencent.com/document/product/228/30794" target="_blank">リアルタイムモニタリング</a></td>
+<td>リアルタイムモニタリング</a></td>
 </tr>
 <tr>
 <td>ユーザーソースとユーザー分布、および使用状況を分析します。</td>
@@ -112,7 +112,7 @@ Tencent Cloud CDNを使用する前に、Tencent Cloudアカウントを登録�
 </tr>
 <tr>
 <td>CDNコンソールで中国本土のトラフィックパッケージの使用状況を確認します。</td>
-<td><a href="https://cloud.tencent.com/document/product/228/6306" target="_blank">トラフィックパッケージの管理</a></td>
+<td>トラフィックパッケージの管理</a></td>
 </tr>
 <tr>
 <td>指定されたIPがTencent Cloud CDNノードであるかどうか検証します。</td>

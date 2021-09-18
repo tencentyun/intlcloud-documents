@@ -44,7 +44,7 @@
 
 ### 배포
 
-1. 먼저 [GooseFS의 이진법 배포 패키지 다운로드](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/goosefs-1.0.0-bin.tar.gz)를 합니다. 
+1. 먼저 GooseFS의 이진법 배포 패키지 다운로드 를 합니다. 
 2. 배포 패키지 다운로드 후 압축 해제하여 GooseFS의 디렉터리로 이동하고 아래의 작업을 실행합니다. 
  - conf/goosefs-site.properties.template 복사를 통해 conf/goosefs-site.properties 구성 파일을 생성합니다. 
 ```bash

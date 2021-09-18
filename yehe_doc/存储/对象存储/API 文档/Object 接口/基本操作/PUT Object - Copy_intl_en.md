@@ -1,4 +1,4 @@
-## Description
+## Overview
 
 This API is used to create a copy of an object that already exists in COS, i.e., copying an object from the source path (object key) to the destination path (object key). The recommended object size is from 1 MB to 5 GB. For objects larger than 5 GB, please use [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287).
 
@@ -11,12 +11,29 @@ To call this API, you need to have permission to read the object you want to cop
 > ! 
 > - An error may be returned when COS receives the copy request or is copying the object. If an error occurs before the copy begins, a standard error response will be returned. If an error occurs during the copy, `HTTP 200 OK` will be returned with the error as the response body, meaning that the `HTTP 200 OK` response can include both success and error information. When using this API, pay attention to the content of the response body to determine whether the copy request was successful and process the result accordingly.
 
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutObjectCopy&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
+
+
 #### Versioning
 
 - If versioning is enabled for the bucket where the source object resides, the latest version of the source object is copied by default. You can specify the `versionId` parameter in the `x-cos-copy-source` request header to copy a specified version.
 - If versioning is enabled for the destination bucket, COS will automatically generate a unique version ID for the destination object.
 
-## Request
+## Requests
 
 #### Sample request
 
@@ -37,7 +54,7 @@ This API has no request parameter.
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 | Header | Description | Type | Required |
 | ------------------------------------- | ------------------------------------------------------------ | ------ | -------- |
@@ -70,17 +87,17 @@ When copying an object, you can configure the access permissions of the destinat
 
 | Header | Description | Type | Required |
 | ------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl | Defines the ACL attribute of the destination object. For enumerated values, such as `default`, `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `default` <br>**Note:** If you do not need access control for the object, set this header to `default` or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | Enum | No |
+| x-cos-acl | Defines the ACL attribute of the destination object. For the enumerated values, such as `default` (default), `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). <br>**Note**: If you do not need to set an ACL for the object, set this parameter to `default` or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | Enum | No |
 | x-cos-grant-read | Grants a user permission to read the destination object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use a comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 | x-cos-grant-read-acp | Grants a user permission to read the ACL of the destination object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use a comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 | x-cos-grant-write-acp | Grants a user permission to write to the ACL of the destination object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use a comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 | x-cos-grant-full-control | Grants a user full permission to operate on the destination object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use a comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 
-**Headers related to server-side encryption (SSE) of the source object**
+**Headers related to SSE of the source object**
 
 If the source object uses the server-side encryption method, `SSE-C`, you need to specify the following request headers to decrypt the source object:
 
-| Header | Description | Type | Required &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| Header | Description | Type | Required  |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------ | ------------------------------------------------------------ |
 | x-cos-server-side-encryption-customer-algorithm | Server-side encryption algorithm. Currently, only AES256 is supported. | string | Required if the source object uses SSE-C. |
 | x-cos-server-side-encryption-customer-key | Base64-encoded server-side encryption key, such as <code>MDEyMzQ1Njc4OUFCQ<br>0RFRjAxMjM0NTY3ODlBQkNERUY=</code> | string | Required if the source object uses SSE-C. |
@@ -132,7 +149,7 @@ The nodes are described as follows:
 | ------------------ | ------ | ------------------------------------- | --------- |
 | CopyObjectResult | None | Stores the result of `PUT Object - Copy`. | Container |
 
-**Content of container node CopyObjectResult:**
+**Content of `CopyObjectResult`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ---------------- | ------------------------------------------------------------ | ------ |
@@ -149,7 +166,7 @@ This API returns common error responses and error codes. For more information, p
 
 The response of this API uses `Transfer-Encoding: chunked` encoding by default. Note that for the convenience of reading, use cases in this document are displayed without Transfer-Encoding. During use, different languages and libraries can automatically process this encoding form. For more information, refer to language- and library-related documents.
 
-#### Sample 1. Simple use case
+#### Sample 1: simple use case
 
 #### Request
 
@@ -184,7 +201,7 @@ x-cos-request-id: NWU5MGI4ZWVfNzljMDBiMDlfMWM3MjlfMWQ1****
 </CopyObjectResult>
 ```
 
-#### Sample 2. Replacing metadata during copying
+#### Sample 2: replacing metadata during copying
 
 #### Request
 
@@ -222,7 +239,7 @@ x-cos-request-id: NWU5MGI4ZjlfYTZjMDBiMDlfN2Y1YV8xYjI4****
 </CopyObjectResult>
 ```
 
-#### Sample 3. Modifying object metadata
+#### Sample 3: modifying object metadata
 
 #### Request
 
@@ -260,7 +277,7 @@ x-cos-request-id: NWU5MGI5MDRfNmRjMDJhMDlfZGNmYl8yMDVh****
 </CopyObjectResult>
 ```
 
-#### Sample 4. Modifying the storage class of an object
+#### Sample 4: modifying the storage class of an object
 
 This sample shows how to change the storage class of an object from STANDARD to ARCHIVE. This method is also suitable for switching between STANDARD and STANDARD_IA. If you want to change the storage class of an object stored in ARCHIVE/DEEP ARCHIVE to other storage classes, you need to call [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) to restore the object before calling this API.
 
@@ -299,7 +316,7 @@ x-cos-request-id: NWU5MGI5MGVfN2RiNDBiMDlfMTk1MjhfMWZm****
 </CopyObjectResult>
 ```
 
-#### Sample 5. Copying an unencrypted object to a destination object encrypted with SSE-COS
+#### Sample 5: copying an unencrypted object to a destination object encrypted with SSE-COS
 
 #### Request
 
@@ -336,7 +353,7 @@ x-cos-server-side-encryption: AES256
 </CopyObjectResult>
 ```
 
-#### Sample 6. Copying an unencrypted object to a destination object encrypted with SSE-KMS
+#### Sample 6: copying an unencrypted object to a destination object encrypted with SSE-KMS
 
 #### Request
 
@@ -376,7 +393,7 @@ x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085***
 </CopyObjectResult>
 ```
 
-#### Sample 7. Copying an object encrypted with SSE-C and replacing the key
+#### Sample 7: copying an object encrypted with SSE-C and replacing the key
 
 #### Request
 
@@ -419,7 +436,7 @@ x-cos-server-side-encryption-customer-key-MD5: hRasmdxgYDKV3nvbahU1MA==
 </CopyObjectResult>
 ```
 
-#### Sample 8. Modifying an object encrypted with SSE-C to non-encrypted
+#### Sample 8: modifying an object encrypted with SSE-C to non-encrypted
 
 #### Request
 
@@ -458,7 +475,7 @@ x-cos-request-id: NWU5MGI5NGRfOWFjOTJhMDlfMjg2NDdfMTA0****
 </CopyObjectResult>
 ```
 
-#### Sample 9. Specifying the version of the source object
+#### Sample 9: specifying the version of the source object
 
 #### Request
 
@@ -494,7 +511,7 @@ x-cos-request-id: NWU5MjAzYTdfMWZjMDJhMDlfNTE4N18zNGU2****
 </CopyObjectResult>
 ```
 
-#### Sample 10. Copying an object to a versioning-enabled bucket
+#### Sample 10: copying an object to a versioning-enabled bucket
 
 #### Request
 
@@ -529,4 +546,3 @@ x-cos-request-id: NWU5MjAzYmNfNjRiMDJhMDlfOTE3N18yYWI4****
 			<VersionId>MTg0NDUxNTc0NDYxOTI4MzU0MDI</VersionId>
 </CopyObjectResult>
 ```
-

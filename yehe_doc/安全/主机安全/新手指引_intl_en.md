@@ -14,7 +14,7 @@ This guide will help new users get started with Cloud Workload Protection (CWP).
 CWP is now available in Basic and Pro editions. For more information, see [Features in Different Editions](https://cloud.tencent.com/document/product/296/2222).
 
 #### 2.2 Purchase a CWP service
-Before using CWP, you need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verify your identity](https://intl.cloud.tencent.com/document/product/378/3629). For CWP Basic, you can use it free of charge. For CWP Pro, you need to [purchase your edition](https://buy.cloud.tencent.com/yunjing). See [Purchase Guide](https://intl.cloud.tencent.com/document/product/296/34667) for more information.
+Before using CWP, you need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verify your identity](https://intl.cloud.tencent.com/document/product/378/3629). For CWP Basic, you can use it free of charge. For CWP Pro, you need to purchase your edition(International station not supported at the moment). See [Purchase Guide](https://intl.cloud.tencent.com/document/product/296/34667) for more information.
 
 #### 2.3 Install a CWP agent
 Your CWP agent can be installed together with a CVM instance (including CPMs) or installed separately. For details, see [Quick Start](https://intl.cloud.tencent.com/document/product/296/12236).

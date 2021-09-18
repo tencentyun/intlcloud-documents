@@ -44,7 +44,7 @@ The pseudo–distribution framework is mainly used for trying out and debugging 
 
 ### Deployment
 
-1. [Download the GooseFS binary distribution package](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/goosefs-1.0.0-bin.tar.gz).
+1. Download the GooseFS binary distribution package.
 2. Decompress the package, go to the GooseFS directory, and perform the operations below.
  - Create the `conf/goosefs-site.properties` configuration file by copying `conf/goosefs-site.properties.template`.
 ```bash

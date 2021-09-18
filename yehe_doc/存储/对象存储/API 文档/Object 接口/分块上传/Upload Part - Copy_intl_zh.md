@@ -94,7 +94,7 @@ uploadId|使用上传分块文件，必须先初始化分块上传。在初始�
 
 #### 特有响应头
 
-|名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|描述|类型|
+|名称|描述|类型|
 |---|---|---|
 |x-cos-copy-source-version-id|如果已在源存储桶上启用版本控制，则复制源对象的版本|String|
 |x-cos-server-side-encryption | 如果通过 COS 管理的服务端加密来存储对象，响应将包含此头部和所使用的加密算法的值，AES256 | String|

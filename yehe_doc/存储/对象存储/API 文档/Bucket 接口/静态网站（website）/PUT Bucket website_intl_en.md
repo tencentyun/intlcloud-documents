@@ -6,7 +6,7 @@ This API is used to configure a static website for a bucket by importing configu
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                You are advised to use API Explorer.
+                API Explorer is recommended.
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutBucketWebsite&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
@@ -19,7 +19,7 @@ This API is used to configure a static website for a bucket by importing configu
 </div>
 
 
-## Request
+## Requests
 
 #### Sample request
 
@@ -35,7 +35,10 @@ Authorization: Auth String
 [Request Body]
 ```
 
->? Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
@@ -43,7 +46,7 @@ This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -93,7 +96,7 @@ The nodes are described as follows:
 | --- | --- | --- | --- | --- |
 | WebsiteConfiguration | None | Contains all the request information about PUT Bucket website | Container | No |
 
-**Content of the Container node `WebsiteConfiguration`:**
+**Content of `WebsiteConfiguration`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
@@ -103,64 +106,64 @@ The nodes are described as follows:
 | ErrorDocument | WebsiteConfiguration | Error document configuration | Container | No  |
 | RoutingRules | WebsiteConfiguration | Routing rule configuration. A `RoutingRules` container can contain up to 100 `RoutingRule` elements. | Container | No |
 
-**Content of the Container node `IndexDocument`:**
+**Content of `IndexDocument`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | Suffix | WebsiteConfiguration.IndexDocument | Specifies the object key suffix for index documents. For example, if it is specified as `index.html`, the request automatically returns `index.html` when you access the root directory of the bucket, or `article/index.html` when you access the directory `article/`. | String | Yes |
 
-**Content of the Container node `RedirectAllRequestsTo`:**
+**Content of `RedirectAllRequestsTo`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | Protocol | WebsiteConfiguration.RedirectAllRequestsTo | Specifies the target protocol to redirect all requests. Only HTTPS is supported. | String | Yes |
 
-**Content of the Container node `AutoAddressing`:**
+**Content of `AutoAddressing`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | Status  |  WebsiteConfiguration.AutoAddressing   | Whether to ignore the HTML file extension. Valid values: `Enabled`, `Disabled` (default) | String | No |
 
-**Content of the Container node `ErrorDocument`:**
+**Content of `ErrorDocument`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | Key | WebsiteConfiguration.ErrorDocument | Specifies the object key to return for the error document if an error occurs and does not match the error code in the routing rule | String | Yes |
 | OriginalHttpStatus | WebsiteConfiguration.ErrorDocument  | Configures whether to return the corresponding HTTPS status code if the error documents are hit. Valid values: `Enabled` (default), `Disabled` |  String  |  No  |
 
-**Content of the Container node `RoutingRules`:**
+**Content of `RoutingRules`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| RoutingRule | WebsiteConfiguration.RoutingRules | Sets a single redirect rule. | Container | Yes |
+| RoutingRule | WebsiteConfiguration.RoutingRules | A single routing rule | Container | Yes |
 
-**Content of the Container node `RoutingRules.RoutingRule`:**
+**Content of `RoutingRules.RoutingRule`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Condition | WebsiteConfiguration.RoutingRules.RoutingRule | Sets the condition for the redirect rule | Container | Yes |
-| Redirect | WebsiteConfiguration.RoutingRules.RoutingRule | Sets the redirect destination for the redirect rule | Container | Yes |
+| Condition | WebsiteConfiguration.RoutingRules.RoutingRule | Condition for the routing rule | Container | Yes |
+| Redirect | WebsiteConfiguration.RoutingRules.RoutingRule | Configuration of the redirection target | Container | Yes |
 
-**Content of the Container node `RoutingRules.RoutingRule.Condition`:**
+**Content of `RoutingRules.RoutingRule.Condition`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | HttpErrorCodeRetu<br>rnedEquals | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Condition | Specifies the error code as the match condition for the routing rule. Valid values: only 4xx return codes, such as 403 or 404. | Integer | Either this parameter or `KeyPrefixEquals` must be specified. |
 | KeyPrefixEquals | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Condition | Specifies the object key prefix as the match condition for the routing rule | String | Either this parameter or `HttpErrorCodeReturnedEquals` must be specified. |
 
-**Content of the Container node `RoutingRules.RoutingRule.Redirect`:**
+**Content of `RoutingRules.RoutingRule.Redirect`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | Protocol | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the target protocol for the routing rule. Only HTTPS is supported. | String | No |
-| ReplaceKeyWith | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the object key of the redirect destination in the routing rule to replace the entire object key included in the original request | String | Either this parameter or `ReplaceKeyPrefixWith` must be specified. |
-| ReplaceKeyPrefixWith | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the object key prefix of redirect destination in the routing rule to replace the prefix which the original request used for match. It is set only if the condition is `KeyPrefixEquals`. | String | Either this parameter or `ReplaceKeyWith` must be specified.|
+| ReplaceKeyWith | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the target object key to replace the original object key in the request. | String | Either this parameter or `ReplaceKeyPrefixWith` must be specified. |
+| ReplaceKeyPrefixWith | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the object key prefix to replace the original prefix in the request. You can set this parameter only if the condition is `KeyPrefixEquals`. | String | Either this parameter or `ReplaceKeyWith` must be specified.|
 
 ## Response
 
 #### Response headers
 
-This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -170,7 +173,7 @@ The response body of this API is empty.
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Sample
+## Samples
 
 #### Request
 

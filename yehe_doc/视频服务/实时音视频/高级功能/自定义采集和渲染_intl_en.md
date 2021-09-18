@@ -111,7 +111,7 @@ The texture scheme involves sending OpenGL textures to the TRTC SDK. You need to
 <tbody>
 
 <tr><td>LocalVideoShareActivity.java</td>
-<td>Demonstrates how to use the `sendCustomVideoData` API in `TRTCCloud` to feed video textures into the SDK and the `sendCustomAudioData` API to feed audio data into the SDK.</td>
+<td>Demonstrates how to use the `sendCustomVideoData` API in `TRTCloud` to feed video textures into the SDK and the `sendCustomAudioData` API to feed audio data into the SDK.</td>
 </tr><tr>
 
 <tr><td>Utils.java</td>

@@ -14,7 +14,7 @@ A peering connection is set up between the acceleration region and the origin se
 For example, if your server is located in Hong Kong (China), and you want users from multiple regions such as Western US, Eastern US, Japan, and Korea to access the server through high-speed connections for a fast and stable access experience, then acceleration regions will be Western US, Eastern US, Japan, and Korea, while the origin server region will be Hong Kong (China).
 
 ### What protocols and forwarding methods does GAAP support?
-GAAP supports UDP/HTTP/HTTPS protocols, Layer 4 and Layer 7 protocols, and IP/domain name forwarding.
+GAAP supports TCP/UDP/HTTP/HTTPS protocols, Layer 4 and Layer 7 protocols, and IP/domain name forwarding.
 
 ### Does GAAP support the origin server to get the real user IP?
 GAAP supports the origin server to get the real user IP.
@@ -24,5 +24,5 @@ GAAP can be used for cross-region business access, such as global e-commerce and
 
 ### What if the collaborator account does not have permission to access GAAP?
 Please contact the administrator of the root account or another account that has the `AdministratorAccess` permission to grant the collaborator  GAAP read/write or read-only permission, as instructed in [Configuring Permissions](https://intl.cloud.tencent.com/document/product/608/31510).
-<!-- ![](https://main.qcloudimg.com/raw/0189d4261af32dbc8cf632e390ff7a19.png) -->
+
 

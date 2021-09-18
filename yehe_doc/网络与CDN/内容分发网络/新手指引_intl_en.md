@@ -131,7 +131,7 @@ Below is the overview page of the CDN console:
 </tr>
 <tr>
 <td>Use CDN to deliver a massive number of images.</td>
-<td><a href="https://cloud.tencent.com/document/product/228/43121" target="_blank">Image Optimization</a></td>
+<td>Image Optimization</a></td>
 </tr>
 </tbody></table>
 

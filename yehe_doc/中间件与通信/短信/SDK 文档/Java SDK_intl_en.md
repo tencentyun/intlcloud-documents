@@ -366,10 +366,10 @@ public class SendStatusStatistics {
 
             /* Initialize the request by calling the `SendStatusStatistics` method on the client object. Note: the request method name corresponds to the request object
              * The returned `res` is an instance of the `SendStatusStatisticsResponse` class which corresponds to the request object */
-            SendStatusStatisticsResponse res = client.SendStatusStatisticsStatus(req);
+            SendStatusStatisticsResponse res = client.SendStatusStatistics(req);
 
             // A string return packet in JSON format is output
-            System.out.println(SendStatusStatisticsStatusResponse.toJsonString(res));
+            System.out.println(SendStatusStatisticsResponse.toJsonString(res));
 
         } catch (TencentCloudSDKException e) {
             e.printStackTrace();

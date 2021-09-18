@@ -7,9 +7,9 @@
 本文为您介绍如何通过控制台查看集群实例信息。
 
 ## 操作步骤
-1. 集群创建成功后，登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】页面单击需要管理的集群【ID/名称】。
+1. 集群创建成功后，登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在**集群列表**页面单击需要管理的集群**ID/名称**。
  ![](https://main.qcloudimg.com/raw/bb5497a544bf822644e6ee4051c11803.png)
-2. 若当前集群未开启对象存储，可单击【授权】进行授权。
+2. 若当前集群未开启对象存储，可单击**授权**进行授权。
 ![](https://main.qcloudimg.com/raw/1b2adb3004a6b28e883f342d551d0f4d.png)
 如需精细化授权，可设置自定义服务角色，用于大数据作业运行时访问云上资源。自定义服务角色类型为“腾讯云产品服务”，支持角色的服务选择“弹性MapReduce”。
 

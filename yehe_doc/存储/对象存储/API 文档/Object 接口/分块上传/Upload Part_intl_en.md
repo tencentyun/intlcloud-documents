@@ -1,15 +1,32 @@
-## Feature
+## Overview
 
-This API is used to upload an object in multiple parts to COS. It supports up to 10,000 parts for a single request, each between 1 MB to 5 GB in size, except the last part that can be less than 1 MB.
+This API is used to upload an object to COS in multiple parts. You can upload up to 10,000 parts. The size of each part should be 1 MB to 5 GB, and the last part can be smaller than 1 MB.
 
+> ? 
+> 1. To call this API, you need to first call the [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) API to obtain the `UploadId`, which identifies the current upload operation.
+> 2. Every time you call the `Upload Part` API, you need to include the `partNumber` and `uploadId` parameters. You can upload multiple parts out of order.
+> 3. When the `uploadId` and `partNumber` of a new part are the same as those of a previously uploaded part, the old part will be overwritten. If the `uploadId` does not exist, "404 NoSuchUpload" will be returned.
 > 
-> 1. To call this request, first use the [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) API to get an UploadId that uniquely identifies this Upload Part operation.
-> 2. Every time you request the `Upload Part` API, you need to pass in `partNumber` (the part number) and your `uploadId`. You can upload multiple parts out of order.
-> 3. When the `uploadId` and `partNumber` of a new part are the same as those of a previously uploaded part, the old part will be overwritten by the new one. A 404 error, `NoSuchUpload`, will be returned if the `uploadId` does not exist.
 
-#### Request
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=UploadPart&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
 
-#### Request samples
+## Requests
+
+#### Sample request
 
 ```plaintext
 PUT /<ObjectKey>?partNumber=PartNumber&uploadId=UploadId HTTP/1.1
@@ -23,43 +40,46 @@ Authorization: Auth String
 [Object Part]
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
-| Name                                  | Description                                                         | Type   | Required |
+| Parameter | Description | Type | Required |
 | ---------- | ------------------------------------------------------------ | ------- | -------- |
-| partNumber | Number that identifies a part to upload. Value range: 1 - 10000                | integer | Yes       |
-| uploadId | ID that identifies the multipart upload. It’s the same as the UploadId generated when using the Initiate Multipart Upload API. | string | Yes       |
+| partNumber | Part number. Value range: 1−10000 | integer | Yes |
+| uploadId | Multipart upload ID obtained from the `Initiate Multipart Upload` API | string | Yes |
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-**Headers related to server-side encryption (SSE)**
+**Headers related to SSE**
 
-If you used SSE-C to initialize the multipart upload, then you should specify the SSE-C encryption algorithm and key in the Upload Part request. Otherwise, the following headers cannot be used:
+If SSE-C is used during the initialization of the current multipart upload, you need to specify the encryption algorithm and key that were specified during the initialization. Otherwise, you cannot specify the following headers.
 
-| Name                                                         | Description                                                         | Type   | Required |
+| Header |  Description | Type |Required |
 | ----------------------------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-server-side-encryption-customer-algorithm | Server-side encryption algorithm; currently only AES256 is supported | string | Yes |
-| x-cos-server-side-encryption-customer-key       | Base64-encoded server-side encryption key. <br>For example, `MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=` | string | Yes       |
-| x-cos-server-side-encryption-customer-key-MD5  | Base64-encoded MD5 hash of the server-side encryption key. <br>For example, `U5L61r7jcwdNvT7frmUG8g==` | string | Yes       |
-| x-cos-traffic-limit | Specifies the traffic limit in bit/s on this upload. Value range: 819200-838860800, that is, 100 KB/s-100 MB/s. if this range is exceeded, a 400 error will be returned | integer | No       |
+| x-cos-server-side-encryption-customer-algorithm | Server-side encryption algorithm. Currently, only `AES256` is supported. | string | Yes |
+| x-cos-server-side-encryption-customer-key       | Base64-encoded server-side encryption key. <br>Example: `MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=` | string | Yes       |
+| x-cos-server-side-encryption-customer-key-MD5  | Base64-encoded MD5 checksum of the server-side encryption key. <br>Example: `U5L61r7jcwdNvT7frmUG8g==` | string | Yes       |
+| x-cos-traffic-limit | Limits the speed (in bit/s) for the current multipart upload for traffic control. Value range: 819200-838860800 (i.e., 100 KB/s-100 MB/s). If the speed exceeds the limit, a 400 error will be returned. | integer | No |
 
 #### Request body
 
-The request body of this API request is the object (file) content.
+The request body of this API is the part content of the object (file).
 
 ## Response
 
 #### Response headers
 
-In addition to common response headers, this API also returns the following response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-**Headers related to server-side encryption (SSE)**
+**Headers related to SSE**
 
-If you initiated the multipart upload using SSE encryption, this API will return SSE headers. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used during the initialization of the current multipart upload, this API will return headers used specifically for server-side encryption. For more information, please see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response body
 
@@ -67,11 +87,11 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Samples
 
-#### Example 1. Simple example
+#### Sample 1: simple use case
 
 #### Request
 
@@ -101,7 +121,7 @@ x-cos-hash-crc64ecma: 9973912126177188060
 x-cos-request-id: NWU3YjJkNTJfZDBjODJhMDlfMjU4NTZfMjc5MzBh****
 ```
 
-#### Example 2. Using server-side encryption SSE-COS
+#### Sample 2: using server-side encryption SSE-COS
 
 #### Request
 
@@ -132,7 +152,7 @@ x-cos-request-id: NWVkMmEyZDZfYjNjMjJhMDlfMmJlM18zOWI2****
 x-cos-server-side-encryption: AES256
 ```
 
-#### Example 3. Using server-side encryption SSE-KMS
+#### Sample 3: using server-side encryption SSE-KMS
 
 #### Request
 
@@ -164,7 +184,7 @@ x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
 ```
 
-#### Sample 4. Using Server-side Encryption SSE-C
+#### Sample 4: using server-side encryption SSE-C
 
 #### Request
 

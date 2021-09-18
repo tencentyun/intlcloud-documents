@@ -3,5 +3,5 @@ The update history for GooseFS is described as follows. If you have any queries 
 
 | Version No. | Updated on | Description | Download Link |
 |------|-----|------|------|
-| 1.0.0 |  June 1, 2021  | 1. Namespace-based read/write policies and TTL management<br>2. Data loading at Hive table/partition level<br>3. Compatible with current COSN users’ path to achieve transparent acceleration<br>4. Integrated with Fluid <br>5. Integrated with CHDFS | [Download](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/goosefs-1.0.0-bin.tar.gz) |
+| 1.0.0 |  June 1, 2021  | 1. Namespace-based read/write policies and TTL management<br>2. Data loading at Hive table/partition level<br>3. Compatible with current COSN users’ path to achieve transparent acceleration<br>4. Integrated with Fluid <br>5. Integrated with CHDFS | Download |
 

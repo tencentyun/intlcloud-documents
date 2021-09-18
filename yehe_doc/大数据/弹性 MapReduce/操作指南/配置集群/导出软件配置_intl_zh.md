@@ -7,8 +7,8 @@
 
 ## 操作步骤
 1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr) 进入集群列表页。
-2. 在待导出集群的【管理】栏选择【更多】>【导出软件配置】。
+2. 在待导出集群的**管理**栏选择**更多**>**导出软件配置**。
 ![](https://main.qcloudimg.com/raw/bc33820400f8ba275f2c810e6c4e5b0d.png)
-3. 勾选中需要导出的文件，选择【导出配置】即可下载得到软件配置文件。
+3. 勾选中需要导出的文件，选择**导出配置**即可下载得到软件配置文件。
 ![](https://main.qcloudimg.com/raw/b19caa18fa93fed5bb5b86bb944e85b9.png)
 
