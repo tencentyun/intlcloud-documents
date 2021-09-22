@@ -10,7 +10,7 @@
 - 若 CNAME 设置完成后长时间未显示成功，请参见 [域名配置相关](https://intl.cloud.tencent.com/document/product/267/32478)。
 
 ## 前提条件
-- 已在 [域名注册](https://console.cloud.tencent.com) 申请域名，并备案成功。
+- 已在 [域名注册](https://console.cloud.tencent.com) 申请域名，准备好自有域名。
 - 已在云直播控制台的【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】中成功 [添加自有域名](https://intl.cloud.tencent.com/document/product/267/35970)，且域名 CNAME 地址状态为![](https://main.qcloudimg.com/raw/ed1ac2f8541f629814a3f2420b1eb79c.png)（CNAME 未配置）。
 
 
