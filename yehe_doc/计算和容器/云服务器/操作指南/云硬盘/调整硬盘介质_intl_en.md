@@ -1,7 +1,7 @@
 
 ## Overview
 Tencent Cloud CVM supports adjusting the storage hardware media, which enables you to flexibly respond to diversified storage needs of different businesses.
-Tencent Cloud provides two types of storage media: [Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/4953) and [Local Storage](https://intl.cloud.tencent.com/document/product/ 213/5798). A local disk can be converted to a cloud disk. This document describes how to change the disk media type.
+Tencent Cloud provides two types of storage media: [Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/4953) and [Local Storage](https://intl.cloud.tencent.com/zh/document/product/213/5798). A local disk can be converted to a cloud disk. This document describes how to change the disk media type.
 The downsides of CVMs with local disks are as follows:
 - The configuration cannot be customized due to the limit of host resources.
 - Features such as snapshots and creation acceleration are not supported.

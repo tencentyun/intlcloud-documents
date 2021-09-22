@@ -17,10 +17,10 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 ### 创建 Ingress
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
-2. 在左侧导航栏中，单击【集群】进入集群管理页面。
+2. 在左侧导航栏中，单击**集群**进入集群管理页面。
 3. 单击需要创建 Ingress 的集群 ID，进入待创建 Ingress 的集群管理页面。
-4. 选择【服务】>【Ingress】，进入 Ingress 信息页面。
-5. 单击【新建】，进入“新建Ingress”页面。如下图所示：
+4. 选择**服务**>**Ingress**，进入 Ingress 信息页面。
+5. 单击**新建**，进入“新建Ingress”页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/f2fd4c00a82da4e564b964c87b7e7bcb.png)
 6. 根据实际需求，设置 Ingress 参数。关键参数信息如下：
  - Ingress名称：自定义。
@@ -28,33 +28,33 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
  - IP 版本：提供 IPv4 和 IPv6 NAT64 两种版本，请根据实际需求进行选择。
  - 负载均衡器：可自动创建或使用已有 CLB。
  - 命名空间：根据实际需求进行选择。
- - 监听端口：默认为【Http:80】，请根据实际情况进行选择。
-   如果勾选【Https:443】则需绑定服务器证书，以保证访问安全。如下图所示：
+ - 监听端口：默认为**Http:80**，请根据实际情况进行选择。
+   如果勾选**Https:443**则需绑定服务器证书，以保证访问安全。如下图所示：
    ![](https://main.qcloudimg.com/raw/6d6ff3f162e6880ee6dc669cc312ebfd.png)
    详情请参见 [SSL 证书格式要求及格式转换说明](https://intl.cloud.tencent.com/document/product/214/5369)。
  - 转发配置：根据实际需求进行设置。
-7. 单击【创建Ingress】，完成创建。
+7. 单击**创建Ingress**，完成创建。
 
 ### 更新 Ingress
 
 #### 更新 YAML
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
-2. 在左侧导航栏中，单击【集群】，进入集群管理页面。
+2. 在左侧导航栏中，单击**集群**，进入集群管理页面。
 3. 单击需要更新 YAML 的集群 ID，进入待更新 YAML 的集群管理页面。
-4. 选择【服务】>【Ingress】，进入 Ingress 信息页面。如下图所示：
+4. 选择**服务**>**Ingress**，进入 Ingress 信息页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/9d8befd5a41b4c922999f3337a71f2ab.png)
-5. 在需要更新 YAML 的 Ingress 行中，单击【编辑YAML】，进入更新 Ingress 页面。
-6. 在 “更新Ingress” 页面，编辑 YAML，单击【完成】，即可更新 YAML。
+5. 在需要更新 YAML 的 Ingress 行中，单击**编辑YAML**，进入更新 Ingress 页面。
+6. 在 “更新Ingress” 页面，编辑 YAML，单击**完成**，即可更新 YAML。
 
 #### 更新转发规则
 
 1. 集群管理页面，单击需要更新 YAML 的集群 ID，进入待更新 YAML 的集群管理页面。
-2. 选择【服务】>【Ingress】，进入 Ingress 信息页面。如下图所示：
+2. 选择**服务**>**Ingress**，进入 Ingress 信息页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/6fdbb1dacd69b382e93204a3ead2cbbb.png)
-3. 在需要更新转发规则的 Ingress 行中，单击【更新转发配置】，进入更新转发配置页面。如下图所示：
+3. 在需要更新转发规则的 Ingress 行中，单击**更新转发配置**，进入更新转发配置页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/ac813654063e6349790d10216d3eab47.png)
-4. 根据实际需求，修改转发配置，单击【更新转发配置】，即可完成更新。
+4. 根据实际需求，修改转发配置，单击**更新转发配置**，即可完成更新。
 
 ## Kubectl 操作 Ingress 指引
 
