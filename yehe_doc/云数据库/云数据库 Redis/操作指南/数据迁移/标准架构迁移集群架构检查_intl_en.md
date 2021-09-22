@@ -2,7 +2,7 @@ Standard Edition can be your self-created Redis Standalone Edition, master/repli
 
 ## [Compatibility Description](id:jrxsm)
 TencentDB for Redis Memory Edition (Cluster Architecture) adopts the cluster architecture consisting of Tencent Cloud's proprietary proxy and Redis Community Cluster Edition, which is 100% compatible with Redis Community Cluster Edition commands.
-![](https://main.qcloudimg.com/raw/8d5d073e1e71c2367f35b3029e49f8c6.jpg)
+![](https://main.qcloudimg.com/raw/6149cc0a09ba53ab367f5956c8a783b8.jpg)
 
 The most challenging problem in migrating data from Standard Edition to Memory Edition (Cluster Architecture) is the command compatibility with usage specifications of Memory Edition (Cluster Architecture). You need to pay attention to the following usage specification issues:
 
