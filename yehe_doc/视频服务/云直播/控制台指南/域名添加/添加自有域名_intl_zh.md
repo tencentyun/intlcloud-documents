@@ -26,7 +26,7 @@
 
 [](id:step2)
 ### 步骤2：完成域名 CNAME
-域名添加成功后，系统会为您自动分配一个 CNAME 域名（以`.liveplay.myqcloud.com`为后缀）。CNAME 域名不能直接访问，您需要在域名服务提供商处完成 CNAME 配置，配置生效后，即可享受云直播服务。具体操作请参见 [CNAME 配置](https://intl.cloud.tencent.com/document/product/267/31057)。
+域名添加成功后，系统会为您自动分配一个 CNAME 域名（以`.tlivecdn.com`为后缀）。CNAME 域名不能直接访问，您需要在域名服务提供商处完成 CNAME 配置，配置生效后，即可享受云直播服务。具体操作请参见 [CNAME 配置](https://intl.cloud.tencent.com/document/product/267/31057)。
 
 >? 若您需要对已添加成功的域名进行管理，请参见 [域名管理](https://intl.cloud.tencent.com/document/product/267/31056)。
 
