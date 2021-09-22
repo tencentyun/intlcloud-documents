@@ -156,7 +156,7 @@ metadata:
       name: coredns
       namespace: kube-system
 ```
-3. Configure the resolution record of the custom domain name to the external DNS. It is recommended to add the nameserver in `/etc/resolv.conf` on the node to the upstream of external DNS. Because some services rely on Tencent Cloud internal DNS resolution, if it is not set as the upstream of self-built DNS, some services may not work properly. This document takes [BIND 9](https://www.bind9.net/) as an example to modify the configuration file and write the upstream DNS address into forwarders, as shown below:
+3. Configure the resolution record of the custom domain name to the external DNS. It is recommended to add the nameserver in `/etc/resolv.conf` on the node to the upstream of external DNS. Because some services rely on Tencent Cloud internal DNS resolution, if it is not set as the upstream of self-built DNS, some services may not work properly. This document takes [BIND 9](https://www.isc.org/bind/) as an example to modify the configuration file and write the upstream DNS address into forwarders, as shown below:
 
 
 >! If the external DNS Server and the request source are not in the same Region, some Tencent domain names that do not support cross-region access may become invalid.
