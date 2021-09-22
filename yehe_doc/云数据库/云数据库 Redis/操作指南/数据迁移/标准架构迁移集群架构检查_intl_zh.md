@@ -2,7 +2,7 @@
 
 ## [兼容性说明](id:jrxsm)
 腾讯云数据库 Redis 内存版（集群架构）采用自研 Proxy 加社区集群版的架构，100%兼容社区 Redis Cluster 的命令。
-![](https://main.qcloudimg.com/raw/8d5d073e1e71c2367f35b3029e49f8c6.jpg)
+![](https://main.qcloudimg.com/raw/6149cc0a09ba53ab367f5956c8a783b8.jpg)
 
 标准版迁移至内存版（集群架构）面临的最大问题为命令是否兼容内存版（集群架构）的使用规范，内存版（集群架构）使用规范主要注意事项如下：
 
