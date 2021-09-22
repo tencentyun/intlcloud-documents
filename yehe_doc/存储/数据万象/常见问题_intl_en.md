@@ -6,7 +6,7 @@ Currently, CI supports JPG, BMP, GIF, PNG, and WebP, as well as HEIF decoding an
 
 ### What is the maximum size of an input image?
 
-The size of an input image cannot be larger than 20 MB, its width and height cannot exceed 30,000 pixels, and the total number of pixels cannot exceed 250 million. The width and height of the output image cannot exceed 9,999 pixels. For a source animated image, Width x Height x Number of frames cannot exceed 250 million pixels.
+The size of an input image cannot be larger than 32 MB, its width and height cannot exceed 30,000 pixels, and the total number of pixels cannot exceed 250 million. The width and height of the output image cannot exceed 9,999 pixels. For a source animated image, Width x Height x Number of frames cannot exceed 250 million pixels.
 
 ### Where does CI store my data?
 CI uses Tencent Cloud Object Storage (COS) to store data. You can process images during the upload and store the results persistently in COS, or process images during the download.
@@ -66,7 +66,7 @@ Many parameters of CI’s image processing (e.g., text, color, and font of the t
 3. All equal signs (=) appended to the encoded results are retained.
 
 
-### What will be returned if the input image is larger than 20 MB?
+### What will be returned if the input image is larger than 32 MB?
 CI will return 302 and redirect you to the URL of the image in COS for you to download the input image.
 
 
