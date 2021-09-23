@@ -7,7 +7,7 @@ This document describes how to register and discover a Spring Cloud application 
 
 1. Log in to the [TEM console](https://console.cloud.tencent.com/tem).
 2. On the left sidebar, click **Application List** to enter the application list page and select your application deployment region.
-3. Click **Create** to access the application creation page, enter the application information, and deploy the application as instructed in [Creating and Deploying Application](https://cloud.tencent.com/document/product/1371/53294).
+3. Click **Create** to access the application creation page, enter the application information, and deploy the application as instructed in [Creating and Deploying Application](https://intl.cloud.tencent.com/zh/document/product/1094/40362).
 4. For a Spring Cloud application, if a registry is associated with the selected **release environment**, you can select **Auto Inject Registry Info**.
 
 ### Specific configuration
