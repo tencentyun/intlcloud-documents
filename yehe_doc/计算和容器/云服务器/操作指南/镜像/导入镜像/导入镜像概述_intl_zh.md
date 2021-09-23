@@ -34,7 +34,7 @@
  1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)。
  2. 单击左侧导航栏中的【[镜像](https://console.cloud.tencent.com/cvm/image)】。
  3. 选择【自定义镜像】，单击【导入镜像】。
- 4. 根据操作界面要求，先 [开通 COS](https://console.cloud.tencent.com/cos4/index)，再 [创建 bucket 存储桶](/doc/product/436/6232) ，上传镜像文件到 bucket 并 [获取镜像文件 URL](/doc/product/436/6260)。
+ 4. 根据操作界面要求，先 [开通 COS](https://console.cloud.tencent.com/cos4/index)，再 [创建 bucket 存储桶](/doc/product/436/6232) ，上传镜像文件到 bucket 并 [获取镜像文件 URL](https://intl.cloud.tencent.com/zh/document/product/436/13322)。
  5. 单击【下一步】。
  6. 按照实际情况，填写表单，单击【开始导入】。
  >! 请确保录入的对象存储文件 URL 准确。
