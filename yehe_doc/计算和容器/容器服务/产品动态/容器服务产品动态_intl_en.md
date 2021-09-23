@@ -18,7 +18,7 @@
 	The OLM add-on helps users install, update, and manage the lifecycle of Operators.
 	  </td>
 		<td>2021-05-28</td>
-		<td><a href="https://cloud.tencent.com/document/product/457/56752">OLM</a>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/40955">OLM</a>
 </tr>
 <tr>
     <td>The HPC add-on was launched.</td>
