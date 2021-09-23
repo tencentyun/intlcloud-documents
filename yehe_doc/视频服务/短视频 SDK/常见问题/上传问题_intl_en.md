@@ -40,7 +40,8 @@ A signature for uploading from the client is generated as follows:
 
 For more information, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
-
+### Is there a limit on the length or size of the video uploaded?
+No, there isn't.
 
 
 
