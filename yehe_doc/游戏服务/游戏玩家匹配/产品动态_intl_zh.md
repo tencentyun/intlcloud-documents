@@ -15,6 +15,6 @@
 <td>游戏玩家匹配新品上线</td>
 <td >游戏玩家匹配为您提供灵活、强大的玩家匹配服务，支持多种匹配算法。</td>
 <td>2020-10-29</td> 
-<td><a href="https://cloud.tencent.com/document/product/1294/48282">产品概述</tr>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1072/38344">产品概述</tr>
 </tbody></table>
 
