@@ -2,7 +2,7 @@
 
 >?
 >- 스토리지 용량 단가 및 스토리지 용량 패키지 가격은 [제품 가격](https://buy.cloud.tencent.com/price/cos)을 참조하십시오.
->- 스토리지 유형에 대한 자세한 소개는 [스토리지 유형 개요](https://cloud.tencent.com/document/product/436/33417)를 참조하십시오.
+>- 스토리지 유형에 대한 자세한 소개는 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참조하십시오.
 >
 
 
