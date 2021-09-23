@@ -22,11 +22,11 @@ This document describes how to create a private domain in the Private DNS consol
 >
  - **Tag**: select a tag, through which you can categorize, search for, and aggregate Tencent Cloud resources. For more information, please see [Product Overview](https://intl.cloud.tencent.com/document/product/651/13334).
  - **Remarks**: enter the remarks of the private domain.
- - **Subdomain Recursive DNS**: select an option as needed. This feature is **disabled** by default. For more information, please see [Subdomain Recursive DNS](https://cloud.tencent.com/document/product/1338/50547).
+ - **Subdomain Recursive DNS**: select an option as needed. This feature is **disabled** by default. For more information, please see [Subdomain Recursive DNS](https://intl.cloud.tencent.com/document/product/1097/40566).
 4. Click **OK** to create the private domain.
 
 ## Subsequent Operations
 For a private domain that has DNS records added, the value of **Records** in the private domain list represents the number of DNS records of the private domain.
-In the [Private DNS console](https://console.cloud.tencent.com/privatedns/domains), click the name of the "private domain" you need to resolve to enter the DNS records page, where you can add records for the private domain. For detailed directions, please see [Setting DNS Record](https://cloud.tencent.com/document/product/1338/50538).
+In the [Private DNS console](https://console.cloud.tencent.com/privatedns/domains), click the name of the "private domain" you need to resolve to enter the DNS records page, where you can add records for the private domain. For detailed directions, please see [Setting DNS Record](https://intl.cloud.tencent.com/zh/document/product/1097/40568).
 
 
