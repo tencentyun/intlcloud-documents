@@ -28,7 +28,7 @@ This optional parameter is an array consisting of 0-5 player attributes.
 <td>name</td>
 <td>string</td>
 <td>Yes</td>
-<td>Attribute name, which corresponds to the attribute name passed in to the <a href="https://cloud.tencent.com/document/product/1294/49491" target="_blank">StartMatching</a> API. The `name` parameter in the array is unique, which contains letters and digits only.</td>
+<td>Attribute name, which corresponds to the attribute name passed in to the <a href="https://intl.cloud.tencent.com/zh/document/product/1072/39931" target="_blank">StartMatching</a> API. The `name` parameter in the array is unique, which contains letters and digits only.</td>
 </tr>
 <tr>
 <td>type</td>
