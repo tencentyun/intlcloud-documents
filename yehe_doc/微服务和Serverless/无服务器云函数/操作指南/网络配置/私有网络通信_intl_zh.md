@@ -39,7 +39,7 @@ def main_handler(event,context):
 
 #### VPC 网络中访问自定义域名
 <dx-tabs>
-::: 设置云函数环境中的\sName\sServer
+设置云函数环境中的\sName\sServer
 如果需要对接自定义域名解析服务器，需要在云函数环境内自定义 `name server` 配置，当前可通过配置 `OS_NAMESERVER` 环境变量来实现。实际配置如下表：
 
 <table>
@@ -66,7 +66,7 @@ with open("/etc/resolv.conf") as f:
     print(f.readlines())
 ```
 
-:::
+
 </dx-tabs>
 
 ## 相关操作
