@@ -18,7 +18,7 @@
 	OLM 扩展组件支持帮助用户进行 Operator 的自动安装，升级及生命周期的管理。
 	  </td>
 		<td>2021-05-28</td>
-		<td><a href="https://cloud.tencent.com/document/product/457/56752">OLM 说明</a>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/40955">OLM 说明</a>
 </tr>
 <tr>
     <td>上线 HPC 扩展组件</td>
