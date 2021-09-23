@@ -22,11 +22,11 @@
 >
  - **标签**：请选择标签，您可以通过标签对云资源进行分类、搜索、和聚合。详情请查看：[标签](https://intl.cloud.tencent.com/document/product/651/13334)。
  - **备注**：请填写私有域备注信息。
- - **子域名递归解析**：请根据您的实际需求进行选择，默认状态为【关闭】。详情请查看：[子域名递归解析说明](https://cloud.tencent.com/document/product/1338/50547)。
+ - **子域名递归解析**：请根据您的实际需求进行选择，默认状态为【关闭】。详情请查看：[子域名递归解析说明](https://intl.cloud.tencent.com/document/product/1097/40566)。
 4. 单击【确定】，即可完成创建私有域。
 
 ## 下一步操作
 对于已添加解析的私有域，私有域列表【记录】的数值代表该私有域的解析记录数量。
-在 [Private DNS 控制台](https://console.cloud.tencent.com/privatedns/domains)，单击您需要进行解析的 “私有域” 名称，即可进入解析记录控制台，为该私有域添加解析记录。具体操作请参考 [解析记录设置](https://cloud.tencent.com/document/product/1338/50538)。
+在 [Private DNS 控制台](https://console.cloud.tencent.com/privatedns/domains)，单击您需要进行解析的 “私有域” 名称，即可进入解析记录控制台，为该私有域添加解析记录。具体操作请参考 [解析记录设置](https://intl.cloud.tencent.com/zh/document/product/1097/40568)。
 
 
