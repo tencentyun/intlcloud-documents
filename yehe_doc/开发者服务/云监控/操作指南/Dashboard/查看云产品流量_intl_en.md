@@ -2,8 +2,8 @@
 
 With dashboards, you can view the traffic monitoring data of each instance and the total traffic.
 
-
-## Viewing CVM Instance Traffic[](id:step1)
+[](id:step1)
+## Viewing CVM Instance Traffic
 >?Bill-by-traffic instances are billed by the public outbound traffic.
 
 1. Go to the [dashboard list in the CM console](https://console.cloud.tencent.com/monitor/dashboard2/dashboards).
@@ -18,7 +18,7 @@ With dashboards, you can view the traffic monitoring data of each instance and t
 <tr>
 <td  rowspan="4">Public outbound traffic</td>
 <td>Total</td>
-<td>Bill-by-traffic instances are billed by the public outbound traffic. You can use this chart to view the total traffic of CVM instances in a certain period of time and calculate the corresponding fees. As shown below, 0.41 MB is the total traffic used in the current time period. You can refer to the <a href = "https://cloud.tencent.com/document/product/213/51767#.E6.8C.89.E6.B5.81.E9.87.8F">bill-by-traffic rules</a> to calculate the bandwidth fees incurred in the current time period.</td>
+<td>Bill-by-traffic instances are billed by the public outbound traffic. You can use this chart to view the total traffic of CVM instances in a certain period of time and calculate the corresponding fees. As shown below, 0.41 MB is the total traffic used in the current time period. You can refer to the <a href = "https://intl.cloud.tencent.com/document/product/213/39743">bill-by-traffic rules</a> to calculate the bandwidth fees incurred in the current time period.</td>
 </tr>
 <tr>
 <td>General trend</td>
@@ -47,10 +47,9 @@ With dashboards, you can view the traffic monitoring data of each instance and t
 </table>
 
 
-![](https://main.qcloudimg.com/raw/c2f1180f09c7066f7e2b668d295052da.png)
 
-
-## Viewing Traffic of Other Tencent Cloud Services[](id:step2)
+[](id:step2)
+## Viewing Traffic of Other Tencent Cloud Services
 
 >?Currently, only CVM traffic has a preset monitoring dashboard. To view the traffic trends of other Tencent Cloud services, you need to create dashboards as shown below. Before creation, please check out the [dashboard creation process](https://intl.cloud.tencent.com/document/product/248/35282) first.
 
@@ -70,7 +69,7 @@ The following uses creating a chart for the total private traffic of TencentDB a
 3. Click **Create**, enter the variable name, and select the associated tag as "TencentDB - MySQL - server monitoring instance".
 4. After completing the configuration, click **OK**.
 
-![](https://main.qcloudimg.com/raw/e3fec24737b6a5a665905857e7f7afcf.png)
+
 
 ### Step 3. Create a chart
 1. Return to the dashboard management page and click **Create Chart**.
@@ -79,6 +78,6 @@ The following uses creating a chart for the total private traffic of TencentDB a
    - Filter: select "Template variable" and select the corresponding variable name.
    - Chart name: enter "Private outbound traffic: total".
    - Chart type: select the "Digit" chart type.
-   ![](https://main.qcloudimg.com/raw/760f43c45b76eeaa227c11beaa9e77e5.png)
+
 3. After completing the configuration, click **Save** in the top-right corner.
 > ?If you need to create charts in other types, please see [Use Cases of Different Chart Types](https://intl.cloud.tencent.com/document/product/248/38479).
