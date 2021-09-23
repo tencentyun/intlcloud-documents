@@ -57,9 +57,9 @@ The pay-as-you-go tiered pricing model is based on usage duration.
 
 | Usage Duration | Tiered Pricing |
 |---------|---------|
-| 0 hours<duration≤96 hours   | Tier 1 rate applies |
-| 96 hours<duration≤360 hours | Tier 2 rate applies |
-| Duration>360 hours          | Tier 3 rate applies |
+| 0 hours < duration ≤ 96 hours   | Tier 1 rate applies |
+| 96 hours < duration ≤ 360 hours | Tier 2 rate applies |
+| Duration > 360 hours          | Tier 3 rate applies |
 
 ### Instance price
 
@@ -407,7 +407,7 @@ Instance fees = Tier 1 fees + Tier 2 fees + Tier 3 fees = 126.24 USD
 ## FAQs
 #### Why are additional fees incurred for my monthly-subscribed instance?
 Usage of backup capacity that exceeds the free tier will be charged. Please check whether your usage of backup capacity exceeds the free tier.
-You can check the usage of backup capacity on the **Database Backup** page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/backup). For more information about backup capacity pricing, please see [Backup Space Billing](https://cloud.tencent.com/document/product/236/36263).
+You can check the usage of backup capacity on the **Database Backup** page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/backup). For more information about backup capacity pricing, please see [Backup Space Billing](https://intl.cloud.tencent.com/document/product/236/32344).
 
 #### Will Tencent Cloud charge for pay-as-you-go instances if they are idle?
 Yes. If you stop using pay-as-you-go resources, please terminate them as soon as possible to avoid further fees.
@@ -416,7 +416,7 @@ Yes. If you stop using pay-as-you-go resources, please terminate them as soon as
 
 - Data files: the space which your data takes up, including created tables and indexes
 - System files (necessary for the database): shared tablespaces, error logs, redo logs, undo logs, and data dictionaries
-- Binlogs: binlogs record all DDL and DML statements (except SELECT and SHOW statements) and are used to replicate and restore database data. The more data changes, the more binlogs. To reduce the space binlogs take up, they can be [uploaded to COS](https://cloud.tencent.com/document/product/236/53513).
+- Binlogs: binlogs record all DDL and DML statements (except SELECT and SHOW statements) and are used to replicate and restore database data. The more data changes, the more binlogs. To reduce the space binlogs take up, they can be uploaded to COS.
 
 ## Documentation
 - You can purchase TencentDB for MySQL instances through the console or API. For more information, please see [Purchase Methods](https://intl.cloud.tencent.com/document/product/236/5160).
