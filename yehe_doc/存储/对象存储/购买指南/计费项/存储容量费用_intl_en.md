@@ -2,7 +2,7 @@ Storage usage refers to the storage used. The rate you are charged depends on th
 
 >?
 >- For the unit prices of storage usage and storage package prices, please see [COS Product Pricing](https://buy.cloud.tencent.com/price/cos).
->- For more information about storage classes, please see [Storage Class Overview](https://cloud.tencent.com/document/product/436/33417).
+>- For more information about storage classes, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 >
 
 
@@ -65,7 +65,6 @@ Storage usage refers to the storage used. The rate you are charged depends on th
 >- Prices in the examples below are for reference only. For the actual prices, please see [COS Pricing](https://buy.cloud.tencent.com/price/cos).
 >- The storage capacity is calculated in binary. For example, 1 TB = 1,024 GB.
 >- The minimum number of billable requests is 10,000. Therefore, if the number of monthly accumulated requests is less than 10,000, you will still be billed for 10,000 requests, regardless of whether the request succeeds or fails.
->- The resource package′s validity period of 1 month is equivalent to 30 days.
 
 ### Example 1: STANDARD storage usage fees + STANDARD request fees
 
