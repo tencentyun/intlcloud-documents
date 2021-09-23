@@ -138,7 +138,7 @@ You can specify a file path or use wildcards. For example, when the container fi
 <tr>
 <td>Multiple lines - full regex</td>
 <td>The multi-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from a complete piece of log data that spans multiple lines in a log text file (such as Java program logs) based on a regular expression. When configuring the multi-line - full regular expression mode, you need to enter a sample log first and then customize your regular expression. After the configuration is completed, the system will extract the corresponding key-value pairs according to the capture group in the regular expression. The <a href="#auto">regular expression</a> can be generated automatically.</td>
-<td><a href="https://cloud.tencent.com/document/product/614/52366">Full Regular Format (Multi-Line)</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/614/39590">Full Regular Format (Multi-Line)</a></td>
 </tr>
 <tr>
 <td>JSON</td>
