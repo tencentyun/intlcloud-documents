@@ -11,7 +11,7 @@ Before using GooseFS, you need to:
 
 ## Downloading and Configuring GooseFS
 
-1. Download the GooseFS installation package from the repository at [goosefs-1.0.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/goosefs-1.0.0-bin.tar.gz).
+1. Download the GooseFS installation package from the repository at goosefs-1.0.0-bin.tar.gz.
 2. Run the following command to decompress the installation package:
 ```shell
 tar -zxvf goosefs-1.0.0-bin.tar.gz
