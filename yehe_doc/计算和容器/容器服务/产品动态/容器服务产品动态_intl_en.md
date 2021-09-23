@@ -26,7 +26,7 @@
 	HPC is an add-on to periodically modify the number of replicas of K8s workload. Used in conjunction with HPC CRD resources, it can support scheduled actions in seconds.
 	  </td>
 		<td>2021-05-28</td>
-		<td><a href="https://cloud.tencent.com/document/product/457/56753">HPC</a>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/40956">HPC</a>
 </tr>
 <tr>
     <td>The feature of TKE console was enhanced.</td>
