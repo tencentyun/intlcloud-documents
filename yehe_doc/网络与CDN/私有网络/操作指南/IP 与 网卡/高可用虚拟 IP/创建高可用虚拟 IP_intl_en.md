@@ -50,6 +50,6 @@ See the following cases for your configurations:
 > + [Creating HA Database Using HAVIP + Windows Server Failover Cluster](https://intl.cloud.tencent.com/document/product/215/31878) 
 
 ## Documentation
-Similar to a private IP, an HAVIP can also be bound with or unbound from an EIP on the console. If you need public network communication, see [Binding or Unbinding EIP](https://cloud.tencent.com/document/product/215/53706).
+Similar to a private IP, an HAVIP can also be bound with or unbound from an EIP on the console. If you need public network communication, see [Binding or Unbinding EIP](https://intl.cloud.tencent.com/zh/document/product/215/40083).
 
 
