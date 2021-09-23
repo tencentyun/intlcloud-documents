@@ -1,7 +1,7 @@
 COSBrowser is a visual interface tool launched by Tencent Cloud to make it easier and simpler for you to view, transfer, manage, and interact with COS resources. Currently, COSBrowser is available for desktop and mobile devices. For more information, see:
 
 - [User Guide for Desktop Version](https://intl.cloud.tencent.com/document/product/436/32565)
-- [User Guide for Mobile Edition](https://intl.cloud.tencent.com/document/product/436/41615)
+- [User Guide for Mobile Version](https://intl.cloud.tencent.com/document/product/436/32566)
 
 ## Download URL
 
@@ -26,13 +26,13 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
    <tr>
       <td>Linux</td>
       <td>Includes a GUI that supports the <a href="https://appimage.org">AppImage</a> format<br>
-          Note: To launch a client that runs CentOS, you need to run in the terminal.<code>./cosbrowser.AppImage --no-sandbox</code></td>
+          Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox</code></td> in the terminal.
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
    <tr>
       <td rowspan="2">Mobile Version</td>
       <td>Android</td>
-      <td>Android 4.4 or above</td>
+      <td>Android 4.4 or later</td>
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.apk">Android</a></td>
    </tr>
    <tr>
@@ -97,34 +97,14 @@ COSBrowser for desktop has the following features:
 
 ## COSBrowser Mobile Version
 
-COSBrowser for mobile devices focuses on viewing and monitoring resources and COS data such as storage and traffic anytime, anywhere.
-
-COSBrowser for mobile devices has the following features:
-
-| Operation | Description |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Login with WeChat | Logs in with WeChat |
-| Data overview | Views recent data usage |
-| File batch operations |  Uploads, downloads, deletes, copies, or moves files in a bucket in batches |
-| Sharing and uploading | Shares and uploads files from third-party apps to a bucket |
-| Renaming files | Renames files in a bucket |
-| Creating a folder|  Creates a folder in a bucket |
-| Viewing file details | Views the basic information of the files in a bucket |
-| Previewing files | Previews media files (images, video, and audio) in a bucket |
-| Generating a file link | Generates a file access link with a certain validity period by requesting a temporary signature |
-| Searching files | Searches files in a bucket through prefix search |
-| Searching buckets | Searches existing buckets |
-| Viewing bucket details | Views the basic information and domain name of your bucket |
-| Creating bucket | Creates new buckets |
-| Adding an access path | Allows a sub-account that does not have permission to access the bucket list to enter bucket resource management by adding an access path |
-| Viewing storage pack        | Views the usage of your current resource pack                          |
+The COSBrowser mobile version is mainly used to monitor COS resources (such as storage usage and traffic) at any time you want. For more supported features, please see [Mobile Version Features](https://intl.cloud.tencent.com/document/product/436/32566).
 
 ## Changelog
 
 - Desktop Version changelog: [changelog](https://github.com/tencentyun/cosbrowser/blob/master/changelog.md).
 - Mobile Version changelog: [changelog_mobile](https://github.com/tencentyun/cosbrowser/blob/master/changelog_mobile.md).
 
-## Feedback and suggestions
+## Feedback and Suggestions
 
 If you have any questions or suggestions during your use of COSBrowser, please feel free to give us your feedback:
 

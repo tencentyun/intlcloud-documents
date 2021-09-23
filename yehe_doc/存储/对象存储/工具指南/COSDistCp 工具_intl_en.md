@@ -1,20 +1,22 @@
-## Feature Overview
+## Overview
 
 COSDistCp is a MapReduce-based distributed file copy tool mainly used for data copy between HDFS and COS. It introduces the following features:
-- Performs incremental copy as well as real-time verification, and obtain the list of different files based on the length and CRC checksum.
+- Performs incremental copy as well as real-time verification, and obtains the list of different files based on the length and CRC checksum.
 - Filters files in the source directory with regular expression.
 - Decompresses files in the source directory and compresses them to the target compression format.
 - Aggregates text files based on a regular expression.
 - Preserves user/user group, extension attributes, and time of the source file and directory.
+- Configures alarms and Prometheus monitoring.
+- Gets file size distribution.
 - Limits the read bandwidth.
 
-## Operating Environment
+## Operating Environments
 
 #### Operating system
 
 Linux
 
-#### Software requirements
+#### Software dependency
 
 Hadoop 2.6.0 or above; Hadoop-COS 5.9.3 or above
 
@@ -22,9 +24,8 @@ Hadoop 2.6.0 or above; Hadoop-COS 5.9.3 or above
 
 #### Obtaining the COSDistCp JAR package
 
-If your Hadoop version is 2.x, you can download [cos-distcp-1.5-2.8.5.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.5-2.8.5.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.5-2.8.5-md5.txt) of the package.
-
-If your Hadoop version is 3.x, you can download [cos-distcp-1.5-3.1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.5-3.1.0.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.5-3.1.0-md5.txt) of the package.
+- If your Hadoop version is 2.x, you can download [cos-distcp-1.6-2.8.5.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.6-2.8.5.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.6-2.8.5-md5.txt) of the package.
+- If your Hadoop version is 3.x, you can download [cos-distcp-1.6-3.1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.6-3.1.0.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.6-3.1.0-md5.txt) of the package.
 
 #### Installation notes
 
@@ -47,14 +48,14 @@ You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is t
 | --src=LOCATION | Location of the data to copy. This can be either an HDFS or COS location. <br>Example: --src=hdfs://user/logs/ | None | Yes |
 |         --dest=LOCATION          | Destination for the data. This can be either an HDFS or COS location. <br>Example: --dest=cosn://examplebucket-1250000000/user/logs |   None  | Yes |
 |       --srcPattern=PATTERN       | A regular expression that filters files in the source location. <br>Example: `--srcPattern='.*.log'`<br>**Note: Enclose your parameter in single quotation marks (') in case asterisks (*) are parsed by the shell.** | None | No |
-|       --reducerNumber=VALUE       | The number of reducer processes. <br>Example: --reducerNumber=10 | 10 |   No   |
-|       --workerNumber=VALUE       | The number of copying threads of each reducer. COSDistCp will create a copying thread pool for each reducer based on the set value. <br>Example: workerNumber=4 | 4 | No |
+|       --taskNumber=VALUE       | Number of copy threads <br>Example: --taskNumber=10 | 10 | No |
+|       --workerNumber=VALUE       | Number of copy threads. COSDistCp will create a copy thread pool for each copy process based on this value set. <br>Example: workerNumber=4 | 4 | No |
 |      --filesPerMapper=VALUE      | The number of files input to each mapper. <br>Example: --filesPerMapper=10000 |  500000   |  No  |
 |         --groupBy=PATTERN   | A regular expression to concatenate files that match the expression. </br>Example: --groupBy='.\*group-input/(\d+)-(\d+).\*' |  None  |   No   |
 | --targetSize=VALUE | The size (in MB) of the files to create. This parameter is used together with `--groupBy`. </br>Example: --targetSize=10  | None |  No  |
-|       --outputCodec=VALUE        | Specifies the compression codec to use for the copied files. This can take the values: `gzip`, `lzo`, `snappy`, `none`, or `keep`. Where, <br>1. `keep` indicates retaining the compression codec of the source files. <br>2. `none` indicates compression based on the extension. </br>Example: --outputCodec=gzip | keep | No |
+|       --outputCodec=VALUE        | Specifies the compression codec to use for the copied files. This can take the values: `gzip`, `lzo`, `snappy`, `none`, or `keep`. Where, </br>1. `keep` indicates retaining the compression codec of the source files. </br>2. `none` indicates compression based on the extension. </br>Example: --outputCodec=gzip | keep | No |
 |        --deleteOnSuccess         | If the copy operation is successful, this parameter specifies whether to delete the copied files from the source location immediately. </br>Example: --deleteOnSuccess | false | No |
-| --multipartUploadChunkSize=VALUE | The size (in MB) of the multipart upload part transferred to COS using the Hadoop-COS plugin. COS supports up to 10,000 parts. You can set the value based on the file size.<br>Example: --multipartUploadChunkSize=20 | 8 |   No   |
+| --multipartUploadChunkSize=VALUE | The size (in MB) of the multipart upload part transferred to COS using the Hadoop-COS plugin. COS supports up to 10,000 parts. You can set the value based on the file size.</br>Example: --multipartUploadChunkSize=20 | 8 |   No   |
 |    --cosServerSideEncryption     | Specifies whether to use SSE-COS for encryption on the COS server side. </br>Example: --cosServerSideEncryption | false | No |
 |      --outputManifest=VALUE      | Creates a file (Gzip compressed) that contains a list of all files copied to the destination location. </br>Example: --outputManifest=manifest.gz | None | No |
 |    --requirePreviousManifest     | If set to `true`, `--previousManifest=VALUE` must be specified for incremental copy. </br>Example: --requirePreviousManifest |  false  | No |
@@ -62,15 +63,25 @@ You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is t
 |        --copyFromManifest        | Copies files specified in `--previousManifest` to the destination file system. This is used together with `previousManifest=LOCATION`. <br>Example: --copyFromManifest |  false  |  No |
 | --storageClass=VALUE | The storage class to use. Valid values are `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`, and `INTELLIGENT_TIERING`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).  | None   |   No   |
 |        --srcPrefixesFile=LOCATION        | A local file that contains a list of source directories, one directory per line. </br>Example: --srcPrefixesFile=file:///data/migrate-folders.txt |  None    |   No  |
-| --skipMode=MODE  | Verifies whether the source and destination files are the same before the copy. If they are the same, the file will be skipped. Valid values are `none` (no verification), `length`, `checksum`, and `length-checksum` (length + CRC checksum). </br>Example: --skipMode=length | None | No |
-| --checkMode=MODE | Verifies whether the source and destination files are the same when the copy is completed. If they are different, the copy will be stopped. Valid values are `none` (no verification), `length`, `checksum`, and `length-checksum` (length + CRC checksum).<br/>Example: --checkMode=length-checksum |  length  | No |
+| --skipMode=MODE  | Verifies whether the source and destination files are the same before the copy. If they are the same, the file will be skipped. Valid values are `none` (no verification), `length`, `checksum`, and `length-checksum` (length + CRC checksum). </br>Example: --skipMode=length | length-checksum | No |
+| --checkMode=MODE | Verifies whether the source and destination files are the same when the copy is completed. If they are different, the copy will be stopped. Valid values are `none` (no verification), `length`, `checksum`, and `length-checksum` (length + CRC checksum).<br/>Example: --checkMode=length-checksum | length-checksum | No |
 |   --diffMode=MODE    | Specifies the rule for obtaining the list of different files. Valid values are `length`, `checksum`, and `length-checksum` (`length` + CRC checksum). </br>Example: --diffMode=length-checksum | None   | No  |
 |  --diffOutput=LOCATION  | Specifies the output directory for the list of different files. This directory must be empty.<br/>Example: --diffOutput=/diff-output  |  None |  No  |
 | --cosChecksumType=TYPE     | Specifies the CRC algorithm used by the Hadoop-COS plugin. Valid values are `CRC32C` and `CRC64`. <br/>Example: --cosChecksumType=CRC32C | CRC32C | No |
 | --preserveStatus=VALUE | Specifies whether to copy the `user`, `group`, `permission`, `xattr`, and `timestamps` metadata of the source file to the destination file. Valid values are ugpxt (initials of `user`, `group`, `permission`, `xattr`, and `timestamps`, respectively). <br/>Example: --preserveStatus=ugpt | None | No |
 | --ignoreSrcMiss | Ignores files that exist in the manifest file but cannot be found during the copy. | false | No |
-| --taskCompletionCallback=VALUE | Upon task completion, calls back the collected information as parameters to a specified function. | None | No |
-| --temp=VALUE | Specifies the temporary directory for the task. | /tmp  | No |
+| --promGatewayAddress=VALUE | Specifies the Prometheus PushGateway address and port for pushing the counter data of MapReduce jobs. | None | No |
+| --promGatewayDeleteOnFinish=VALUE | Whether to delete JobName metrics from Prometheus PushGateway when the specified job is completed. </br>Example: --promGatewayDeleteOnFinish=true | true | No |
+| --promGatewayJobName=VALUE | JobName to report to Prometheus PushGateway </br>Example: --promGatewayJobName=cos-distcp-hive-backup | None | No |
+| --promCollectInterval=VALUE | Interval to collect MapReduce jobs, in ms </br>Example: --promCollectInterval=5000 | 5000 | No |
+| --promPort=VALUE | Server port to expose Prometheus metrics <br>Exampe: --promPort=9028 | None | No |
+| --enableDynamicStrategy | Whether to enable the dynamic distribution strategy to allow higher-speed jobs to copy more files </br>Example: --enableDynamicStrategy  | false | No |
+| --splitRatio=VALUE | Split ratio of the dynamic strategy. A higher `splitRatio` indicates a smaller job granularity. </br>Example: --splitRatio=8 | 8 | No |
+| --localTemp=VALUE | Local folder to store the job files generated by the dynamic strategy </br>Example: --localTemp=/tmp | /tmp | No |
+| --taskFilesCopyThreadNum=VALUE | Number of concurrency to copy the job files generated by the dynamic strategy to the HDFS </br>Example: --taskFilesCopyThreadNum=32 | 32 | No |
+| --statsRange=VALUE | Statistics range </br>Example: ---statsRange=0,1mb,10mb,100mb,1gb,10gb,inf | 0,1mb,10mb,100mb,1gb,10gb,inf | No |
+| --printStatsOnly | Collects only statistics on the file size distribution without copying the data.</br>Example: --printStatsOnly | None | No |
+
 
 ## Examples
 
@@ -105,11 +116,11 @@ grep -v '"comment":"SRC_MISS"' failed-manifest |gzip > failed-manifest.gz
 
 Run the following command to recopy files that failed to be copied:
 ```plaintext
-hadoop  jar cos-distcp-${version}.jar --reducerNumber=20 --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --previousManifest=file:///usr/local/service/hadoop/failed-manifest.gz --copyFromManifest
+hadoop  jar cos-distcp-${version}.jar --taskNumber=20 --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --previousManifest=file:///usr/local/service/hadoop/failed-manifest.gz --copyFromManifest
 ```
 
 Run the following command to obtain the log of the MapReduce job. In this way, you can find out the cause of the copy failure. Note that `application_1610615435237_0021` is the application ID.
-```
+```plaintext
 yarn logs -applicationId application_1610615435237_0021 > application_1610615435237_0021.log
 ```
 
@@ -117,15 +128,7 @@ yarn logs -applicationId application_1610615435237_0021 > application_1610615435
 
 When the copy operation ends, statistics on the copy will be output. The counters are as follows:
 
-Copy operation:
-* BYTES_EXPECTED: total size (in bytes) expected to copy according to the source directory
-* FILES_EXPECTED: number of files to copy according to the source directory
-* BYTES_SKIPPED: total size (in bytes) of files that can be skipped (same length or checksum value)
-* FILES_SKIPPED: number of source files that can be skipped (same length or checksum value)
-* FILES_COPIED: number of source files that is successfully copied
-* FILES_FAILED: number of source files that failed to be copied
-
-```
+```plaintext
 CosDistCp Counters
         BYTES_EXPECTED=10198247
         BYTES_SKIPPED=10196880
@@ -133,6 +136,38 @@ CosDistCp Counters
         FILES_EXPECTED=7
         FILES_FAILED=1
         FILES_SKIPPED=5
+```
+
+The statistics are described as follows:
+
+| Statistics Item |  Description |
+| -----|-----|
+|  BYTES_EXPECTED | Total size (in bytes) to copy according to the source directory |
+|  FILES_EXPECTED | Number of files to copy according to the source directory |
+| BYTES_SKIPPED | Total size (in bytes) of files that can be skipped (same length or checksum value) |
+| FILES_SKIPPED | Number of source files that can be skipped (same length or checksum value) |
+| FILES_COPIED | Number of source files that are successfully copied |
+| FILES_FAILED | Number of source files that failed to be copied |
+
+
+
+### File size distribution of the files to copy
+
+Run the following command with the `--printStatsOnly` and `--statsRange=VALUE` parameters to output the file size distribution of the files to copy:
+
+```plaintext
+hadoop jar cos-distcp-1.6-3.1.0.jar --src /wookie/data --dest cosn://examplebucket-1250000000/wookie/data --printStatsOnly  --statsRange=0,1mb,10mb,100mb,1gb,10gb,inf
+
+Copy File Distribution Statistics:
+Total File Count: 4
+Total File Size: 1190133760
+| SizeRange         | TotalCount          | TotalSize           |
+| 0MB ~ 1MB         | 0(0.00%)            | 0(0.00%)            |
+| 1MB ~ 10MB        | 1(25.00%)           | 1048576(0.09%)      |
+| 10MB ~ 100MB      | 1(25.00%)           | 10485760(0.88%)     |
+| 100MB ~ 1024MB    | 1(25.00%)           | 104857600(8.81%)    |
+| 1024MB ~ 10240MB  | 1(25.00%)           | 1073741824(90.22%)  |
+| 10240MB ~ LONG_MAX| 0(0.00%)            | 0(0.00%)            |
 ```
 
 ### Filtering source files with a regular expression
@@ -143,14 +178,14 @@ Run the following command with the `--srcPattern` parameter. In this example, on
 hadoop jar cos-distcp-${version}.jar  --src /data/warehouse/logs --dest cosn://examplebucket-1250000000/data/warehouse --srcPattern='.*/logs/.*\.log'
 ```
 
-### Specifying the number of reducers and the number of threads for each reducer process
+### Specifying the number of copy processes and the number of threads in each process
 
-Run the following command with the `--reducerNumber` and `--workersNumber` parameters. COSDistCp adopts a multi-process, multi-thread framework for the copy operation. You can:
-- Use `--reducerNumber` to specify the number of reducer processes.
-- Use `--workerNumber` to specify the number of threads for each reducer process.
+Run the following command with the `--taskNumber` and `--workersNumber` parameters. COSDistCp adopts a multi-process, multi-thread framework for the copy operation. You can:
+- Use `--taskNumber` to specify the number of processes/
+- Use `--workerNumber` to specify the number of threads in each copy process.
 
 ```plaintext
-hadoop jar cos-distcp-${version}.jar --src /data/warehouse/ --dest cosn://examplebucket-1250000000/data/warehouse --reducerNumber=10 --workerNumber=5
+hadoop jar cos-distcp-${version}.jar --src /data/warehouse/ --dest cosn://examplebucket-1250000000/data/warehouse --taskNumber=10 --workerNumber=5
 ```
 
 ### Deleting the source files
@@ -161,7 +196,8 @@ Run the command with the `--deleteOnSuccess` parameter. The following example de
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --deleteOnSuccess
 ```
 
->!If `--deleteOnSuccess` is specified, each source file is deleted immediately after the file is copied, but not after all source files are copied.
+>! If `--deleteOnSuccess` is specified, each source file is deleted immediately after the file is copied, but not after all source files are copied.
+>
 
 ### Restricting the read bandwidth for a single file
 
@@ -214,6 +250,7 @@ hadoop jar cos-distcp-${version}.jar --src /data/warehouse/logs --dest cosn://ex
 ```
 
 >! If not set to `keep`, the files will be decompressed and converted to the target compression format. Due to the difference in compression parameters, the content of the destination files might be different from that of the source files, but the files will be the same after decompression.
+>
 
 ### Copying multiple directories
 
@@ -228,7 +265,7 @@ cat srcPrefixes.txt
 Then, you can use `--srcPrefixesFile` to specify this file. The command is as follows:
 
 ```plaintext
-hadoop jar  cos-distcp-${version}.jar --src /data/warehouse  --srcPrefixesFile file:///usr/local/service/hadoop/srcPrefixes.txt --dest  cosn://examplebucket-1250000000/data/warehouse/ --reducerNumber=20
+hadoop jar  cos-distcp-${version}.jar --src /data/warehouse  --srcPrefixesFile file:///usr/local/service/hadoop/srcPrefixes.txt --dest  cosn://examplebucket-1250000000/data/warehouse/ --taskNumber=20
 ```
 
 ### Generating the target manifest and specifying the previous manifest
@@ -242,7 +279,8 @@ Run the command with the `--outputManifest` and `--previousManifest` parameters.
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest  cosn://examplebucket-1250000000/data/warehouse/ --outputManifest=manifest.gz --previousManifest= cosn://examplebucket-1250000000/data/warehouse/manifest-2020-01-10.gz
 ```
 
->!The command above performs incremental copy only. Only files with size changes can be copied. If the file content is changed, you can refer to the example of `--diffMode` and determine the changed manifest files based on the CRC checksum.
+>! The command above performs incremental copy only. Only files with size changes can be copied. If the file content is changed, you can refer to the example of `--diffMode` and determine the changed manifest files based on the CRC checksum.
+>
 
 ### Obtaining the list of different files and performing incremental copy based on the CRC checksum
 
@@ -258,7 +296,8 @@ The following example verifies whether the source and destination files are the 
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --diffMode=length-checksum --diffOutput=/tmp/diff-output
 ```
 
->!If the destination file system is COS, and the CRC algorithms of the source and destination file systems are different, COSDistCp will pull the source files and calculate the new CRC checksum for CRC checksum comparison.
+>! If the destination file system is COS, and the CRC algorithms of the source and destination file systems are different, COSDistCp will pull the source files and calculate the new CRC checksum for CRC checksum comparison.
+>
 
 After the command above is executed, a list of different files will be generated in the `/tmp/diff-output` directory of HDFS. The following information about a source file might be contained in the output:
 
@@ -278,7 +317,7 @@ grep -v '"comment":"SRC_MISS"' diff-manifest |gzip > diff-manifest.gz
 Run the following command to implement incremental copy based on the list of different files:
 
 ```plaintext
-hadoop  jar cos-distcp-${version}.jar --reducerNumber=20 --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --previousManifest=file:///usr/local/service/hadoop/diff-manifest.gz --copyFromManifest
+hadoop  jar cos-distcp-${version}.jar --taskNumber=20 --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --previousManifest=file:///usr/local/service/hadoop/diff-manifest.gz --copyFromManifest
 ```
 
 ### Specifying the storage class for COS objects
@@ -289,6 +328,14 @@ Run the following command with the `--storageClass` parameter:
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --outputManifest=manifest-2020-01-10.gz --storageClass=STANDARD_IA
 ```
 
+### Using dynamic strategy for job distribution
+
+If your files greatly differ in size, (e.g., there are a few large files, causing imbalanced loads of a large number of small files and machines), you can use `--enableDynamicStrategy` to enable the dynamic strategy, which allows faster-speed jobs to copy more files to speed up the whole copy process.
+
+```plaintext
+hadoop jar cos-distcp-${version}.jar --src /data/warehouse    --dest  cosn://examplebucket-1250000000/data/warehouse --enableDynamicStrategy
+```
+
 ### Copying metadata of the source file
 
 Run the following command with the `--preserveStatus` parameter. The following command example copies the `user`, `group`, `permission`, and `timestamps` (modification time and access time) metadata of the source file/directory to the destination file/directory:
@@ -296,9 +343,30 @@ Run the following command with the `--preserveStatus` parameter. The following c
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --preserveStatus=ugpt
 ```
 
+### Configuring Prometheus
+
+You can go to YARN to view the COSDistcp job counter, including the number of files/bytes that have been copied. To easily view the graph of the COSDistcp jobs, you can display the data using Prometheus and Grafana with easy configurations. The following example configures `prometheus.yml` to add the jobs to grab:
+
+```plaintext
+- job_name: 'cos-distcp-hive-backup'
+    static_configs:
+      - targets: ['172.16.16.139:9028']
+```
+
+Run the command with the `--promPort=VALUE` parameter to expose the counter of the current MapReduce job:
+
+```plaintext
+hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --promPort=9028
+```
+
+Download the sample [Grafana Dashboard](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/COSDistcp-Grafana-Dashboard.json) and import it. The Grafana dashboard will be as follows:
+![COSDistcp-Grafana](https://main.qcloudimg.com/raw/8bc614ef9364b03f8dd27075fcb8380e.png)
+
+
 ### Alarms for copy failures
 Run the command with the `--completionCallbackClass` parameter to specify the path of the callback class. When the task is completed, COSDistCp will use the collected task information as parameters to execute the callback function. For user-defined callback functions, the following APIs need to be implemented. You can download the [callback sample code](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-alarm-1.0.jar).
-```
+
+```plaintext
 package com.qcloud.cos.distcp;
 import java.util.Map;
 public interface TaskCompletionCallback {
@@ -322,7 +390,7 @@ void init() throws Exception;
 
 COSDistCp has integrated the alarms of Cloud Monitor. When the task runs abnormally or some files fail to be copied, the alarm will be performed.
 
-```
+```plaintext
 export alarmSecretId=SECRET-ID
 export alarmSecretKey=SECRET-KEY
 export alarmRegion=ap-guangzhou
@@ -340,6 +408,7 @@ hadoop jar cos-distcp-1.4-2.8.5.jar \
 --checkMode=checksum \
 --completionCallbackClass=com.qcloud.cos.distcp.DefaultTaskCompletionCallback
 ```
+
 `alarmPolicyId` in the command above is an alarm policy created in Cloud Monitor. You can go to the Cloud Monitor console (**Alarm Management** > **Alarm Configuration** > **Custom Messages**) to create and configure one.
 
 
@@ -349,7 +418,8 @@ hadoop jar cos-distcp-1.4-2.8.5.jar \
 ### How can I run COSDistCp if Hadoop-COS is not configured in the environment?
 
 You can download a specific version of the COSDistCp JAR package according to the Hadoop version and specify the Hadoop-COS-related parameters to perform the copy operation.
-```
+
+```plaintext
 hadoop jar cos-distcp-1.3-2.8.5.jar \
 -Dfs.cosn.credentials.provider=org.apache.hadoop.fs.auth.SimpleCredentialProvider \
 -Dfs.cosn.userinfo.secretId=COS_SECRETID \
@@ -368,12 +438,12 @@ COSDistCp will retry 5 times for IOException occurred during the copy process. I
 2. The job initiator does not have permission to read the source file or write the destination file, or the copy failed due to other reasons (recorded as COPY_FAILED).
 
 If the log message indicates that the source file does not exist, and the source file is ignorable, you can run the following command to obtain the list of different files except for those recorded as SRC_MISS:
-```
+```plaintext
 hadoop fs -getmerge /tmp/${randomUUID}/output/failed/ failed-manifest
 grep -v '"comment":"SRC_MISS"' failed-manifest |gzip > failed-manifest.gz
 ```
 Except for those recorded as SRC_MISS, if there are other failed files, you can locate the failure reasons by referring to the error log messages in the `/tmp/${randomUUID}/output/logs/` directory and pulling the application logs. The following command example pulls the logs of the yarn application:
-```
+```plaintext
 yarn logs -applicationId application_1610615435237_0021 > application_1610615435237_0021.log
 ```
 In the command above, `application_1610615435237_0021` is the application ID.

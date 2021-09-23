@@ -1,4 +1,4 @@
-## Feature
+## Overview
 
 COSCMD enables you to use simple command lines to batch-operate objects, such as upload, download, and delete.
 
@@ -13,7 +13,7 @@ Windows, Linux, and macOS
 > - Local characters should use UTF-8 encoding. Otherwise, exceptions will occur when you operate on Chinese files.
 > - Ensure that the local time is in sync with UTC. If there is a large deviation between the two, COSCMD might not function properly.
 
-#### Software dependency
+#### Software requirements
 
 - Python 2.7/3.5/3.6/3.9
 - Latest version of pip
@@ -36,7 +36,7 @@ Run the `pip` command to install COSCMD:
 pip install coscmd
 ```
 After the installation is complete, you can run the `-v` or `--version` command to view the version information.
->! After installing COSCMD via Windows, you need to add the `C:\python_install_dir` and `C:\python_install_dir\Scripts` paths to environment variables. 
+>! After installing COSCMD in Windows, you need to add the `C:\python_install_dir` and `C:\python_install_dir\Scripts` paths to environment variables. 
 >
 
 #### 1.2 Upgrading with pip
@@ -93,7 +93,7 @@ usage: coscmd [-h] [-d] [-s] [-b BUCKET] [-r REGION] [-c CONFIG_PATH]
               ...
 
 an easy-to-use but powerful command-line tool. try 'coscmd -h' to get more
-information. Try 'coscmd sub-command -h' to learn the usage of all commands, for example
+informations. try 'coscmd sub-command -h' to learn all command usage, likes
 'coscmd upload -h'
 
 positional arguments:
@@ -317,19 +317,20 @@ coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket
 ```plaintext
 coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket -f
 ```
- >!The `-f` parameter will forcibly delete the bucket, including all files, noncurrent folders (if versioning is enabled), and incomplete multipart uploads.
+>! The `-f` parameter will forcibly delete the bucket, including all files, noncurrent folders (if versioning is enabled), and incomplete multipart uploads.
+>
 
 
 ## Common Object Commands
 
-### Uploading files
+### Uploading a file
 
 - Command syntax for uploading a file
 ```plaintext
 coscmd upload <localpath> <cospath>
 ```
- >! Replace "localpath" and "cospath" enclosed in "<>" with the path of the local file to upload and the COS storage path, respectively.
- >
+>! Replace "localpath" and "cospath" enclosed in "<>" with the path of the local file to upload and the COS storage path, respectively.
+>
 - Sample: uploading “picture.jpg” in D drive to the "doc" folder of COS
 ```plaintext
 coscmd upload D:/picture.jpg doc/
@@ -342,8 +343,8 @@ coscmd upload D:/doc/picture.jpg doc/
 ```plaintext
 coscmd upload D:/picture.jpg doc/ -H "{'x-cos-storage-class':'Archive'}"
 ```
- >! When you set the HTTP header with the `-H` parameter, please use the JSON format, for example, `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
- >
+>! When you set the HTTP header with the `-H` parameter, please use the JSON format, for example, `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
+>
 - Sample: setting meta attributes and uploading a file to the “doc” folder of COS
 ```plaintext
 coscmd upload D:/picture.jpg doc/ -H "{'x-cos-meta-example':'example'}"
@@ -370,14 +371,14 @@ coscmd upload -r D:/doc doc
 ```plaintext
 coscmd upload -rs D:/doc doc
 ```
- >! Use the `-s` parameter to upload files synchronously while skipping those with the same MD5 value (please note that the source files in COS must have been uploaded using COSCMD v1.8.3.2 or above; the `x-cos-meta-md5` header is included by default).
- >
+>! Use the `-s` parameter to upload files synchronously while skipping those with the same MD5 value (please note that the source files in COS must have been uploaded using COSCMD v1.8.3.2 or above; the `x-cos-meta-md5` header is included by default).
+>
 - Sample: uploading files synchronously (files with the same name and file size will be skipped)
 ```plaintext
 coscmd upload -rs --skipmd5 D:/doc doc
 ```
- >! The `-s` parameter allows synchronous upload, and the `--skipm5` parameters can be used to skip files with the same name and same file size.
- >
+>!The `-s` parameter allows synchronous upload, and the `--skipmd5` parameters can be used to skip files with the same name and same file size.
+>
 - Sample: uploading the folder synchronously and deleting files that are deleted in the "doc" folder in D drive
 ```plaintext
 coscmd upload -rs --delete D:/doc /
@@ -386,8 +387,8 @@ coscmd upload -rs --delete D:/doc /
 ```plaintext
 coscmd upload -rs D:/doc / --ignore *.txt,*.doc
 ```
- >!When uploading folders, you can ignore certain types of files by using the `--ignore` parameter, or filter certain types of files by using `--include`. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified extension, `,` must be added at the end, or `""` must be used to enclose the extension.
- >
+>! When uploading folders, you can ignore certain types of files by using the `--ignore` parameter, or filter certain types of files by using `--include`. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified extension, `,` must be added at the end, or `""` must be used to enclose the extension.
+>
 - Sample: uploading .txt and .doc files in the "doc" folder in D drive
 ```plaintext
 coscmd upload -rs D:/doc / --include *.txt,*.doc
@@ -488,14 +489,14 @@ coscmd download -r / D:/ --ignore doc/*
 ```plaintext
 coscmd download -rf / D:/examplefolder/
 ```
- >! If a file with the same name exists locally, the download will fail. In this case, you need to use the `-f` parameter to overwrite the local file.
- >
+>! If a file with the same name exists locally, the download will fail. In this case, you need to use the `-f` parameter to overwrite the local file.
+>
 - Sample: synchronously downloading all files in the root directory of the current bucket while skipping those with the same filename and MD5 checksum
 ```plaintext
 coscmd download -rs / D:/examplefolder
 ```
- >! Use the `-s` or `--sync` parameter to skip identical files that already exist locally when downloading a folder (provided that the downloaded files were uploaded via the COSCMD `upload` API and the `x- cos-meta-md5` header was included).
- >
+>! Use the `-s` or `--sync` parameter to skip identical files that already exist locally when downloading a folder (provided that the downloaded files were uploaded via the COSCMD `upload` API and the `x- cos-meta-md5` header was included).
+>
 - Sample: synchronously downloading all files in the root directory of the current bucket while skipping those with the same filename and file size
 ```plaintext
 coscmd download -rs --skipmd5 / D:/examplefolder
@@ -508,8 +509,8 @@ coscmd download -rs --delete / D:/examplefolder
 ```plaintext
 coscmd download -rs / D:/examplefolder --ignore *.txt,*.doc
 ```
- >! When downloading folders, you can ignore certain types of files by using the `--ignore` parameter, or filter certain types of files by using `--include`. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified extension, `,` must be added at the end, or `""` must be used to enclose the extension.
- >
+>! When downloading folders, you can ignore certain types of files by using the `--ignore` parameter, or filter certain types of files by using `--include`. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified extension, `,` must be added at the end, or `""` must be used to enclose the extension.
+>
 - Sample: filtering .txt and .doc files
 ```plaintext
 coscmd download -rs / D:/examplefolder --include *.txt,*.doc

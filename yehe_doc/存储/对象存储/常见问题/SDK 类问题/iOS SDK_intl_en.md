@@ -70,6 +70,14 @@ The SDK supports checkpoint restart only for files in the sandbox. To use the ch
 
 Ensure that the local file is not modified after you set the body. For example, if the upload API is called when the file is still being compressed or file write is not completed yet, the SDK will upload the file (using multipart upload) according to the size at the time of upload, causing a file size inconsistency between the COS file and the local file.
 
+### What do I do if I integrate the SDK and call the upload API, but the error “URL in the body is not a local URL” is reported?
+
+Solution:
+Ensure that the URL starts with “file://”. You can initialize in either of the following two ways:
+1. [NSURL URLWithString:@"file:////var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
+2. [NSURL fileURLWithPath:@"/var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
+
+
 ### What do I do if I integrate the SDK and call the upload API, but the size of the successfully uploaded file is 0?
 
 Solution:
@@ -81,11 +89,21 @@ Solution:
 
 ### What do I do if I use an SDK advanced API for upload, but the error `The MD5 checksum is inconsistent with the local file. Please check whether the file is modified during the upload. During multipart uploads, the MD5 checksum of each uploaded part will be verified against the local file. Any inconsistency will cause an error` is reported?
 
-Cause: If you use the SDK to upload a file greater than 1 MB, the file will be divided into multiple 1-MB parts and uploaded using multipart upload. After all parts are uploaded, the value of the backend-returned `ETag` will be compared with the that of local parts. If there is any inconsistency, this error will be thrown.
+Cause: If you use the SDK to upload a file greater than 1 MB, the file will be divided into multiple 1-MB parts and uploaded using multipart upload. After all parts are uploaded, the value of the backend-returned `ETag` will be compared with that of local parts. If there is any inconsistency, this error will be thrown.
 
 Solution: Check whether the file is modified during the upload.
 
 
-### Can I access the SDK with a CDN acceleration endpoint?
 
-Yes. For more information, please see [SDK Documentation](https://intl.cloud.tencent.com/document/product/494) according to your programming language.
+### How can I set the request timeout in the SDK?
+
+Solution: SDK 5.7.0 and later versions support customizing request timeout as follows:
+1. Initialize `QCloudServiceConfiguration *config = [QCloudServiceConfiguration new]`.
+2. Set the `timeoutInterval` attribute of `config`, for example, `.timeoutInterval = 30;`.
+
+
+### What should I do if the iOS SDK crashes?
+
+Check whether you are using the latest version. If not, you are advised to update to the latest SDK version. For the latest iOS SDK, please see [qcloud-sdk-ios](https://github.com/tencentyun/qcloud-sdk-ios).
+
+
