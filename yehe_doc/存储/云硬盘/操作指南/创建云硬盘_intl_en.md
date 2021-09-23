@@ -1,6 +1,6 @@
 ## Overview
 CBS allows you to create a cloud disk and attach it to any CVM in the same availability zone. The cloud disk is identified and used by the CVM through block storage device mapping. Once created, the cloud disk can reach its maximum performance without prefetch.
-You can create different types of CBS cloud disks based on business needs. For more information about CBS disk types, see [Cloud Disk Types](/doc/product/362/2353).
+You can create different types of CBS cloud disks based on business needs. For more information about CBS disk types, see [Cloud Disk Types](https://intl.cloud.tencent.com/document/product/362/31636).
 
 ## Prerequisites
 - Before creating a cloud disk, you need to [sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
