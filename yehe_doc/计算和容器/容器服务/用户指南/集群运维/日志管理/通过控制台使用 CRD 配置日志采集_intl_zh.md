@@ -138,7 +138,7 @@
 <tr>
 <td>多行 - 完全正则</td>
 <td>适用于日志文本中一条完整的日志数据跨占多行（例如 Java 程序日志），可按正则表达式提取为多个 key-value 键值的日志解析模式，您需先输入日志样例，其次输入自定义正则表达式，系统将根据正则表达式里的捕获组提取对应的 key-value。支持 <a href="#auto">自动生成正则表达式</a>。</td>
-<td><a href="https://cloud.tencent.com/document/product/614/52366">多行-完全正则格式</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/614/39590">多行-完全正则格式</a></td>
 </tr>
 <tr>
 <td>JSON</td>
