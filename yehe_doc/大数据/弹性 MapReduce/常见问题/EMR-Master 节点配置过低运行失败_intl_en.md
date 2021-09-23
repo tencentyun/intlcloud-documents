@@ -24,7 +24,7 @@ hdfs dfsadmin -fs 10.0.0.9(standby node IP):4007 -safemode leave   Exit the safe
  - Upgrade the standby node and make the configuration of the master's active node the same as that of the standby node.
 >If your cluster is not a high-availability one, then it will become unavailable for a while during the upgrade.
 2. In Spark, jobs are committed in client mode by default, and the driver runs on the master node. You can change the mode to master mode and then commit jobs.
-3. For the Hive component, enable the router node, migrate HiveServer2 to it, and then disable the Hive component on the master node. For detailed directions, please see [Migrating HiveServer2 to Router](https://cloud.tencent.com/document/product/589/41198).
+3. For the Hive component, enable the router node, migrate HiveServer2 to it, and then disable the Hive component on the master node. For detailed directions, please see [Migrating HiveServer2 to Router](https://intl.cloud.tencent.com/document/product/1026/35066).
 4. Disable components that are not commonly used on the master node or migrate Hue to the router node.
 Directions for migrating Hue to the router node:
  - Enter the EMR Console, Add a router node on the Cloud Hardware Management page, and select the Hue component.
