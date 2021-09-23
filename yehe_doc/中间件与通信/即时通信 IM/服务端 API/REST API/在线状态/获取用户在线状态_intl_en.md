@@ -10,7 +10,7 @@ https://xxxxxx/v4/openim/querystate?sdkappid=88888888&identifier=admin&usersig=x
 
 ### Request parameters
 
-The following table lists and describes only the parameters to be modified when this API is called. For more parameters, see [REST API Overview](https://cloud.tencent.com/document/product/269/1519).
+The following table lists and describes only the parameters to be modified when this API is called. For more parameters, see [REST API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 
 | Parameter | Description |
 | -------------------- | ------------------------------------------------------------ |
