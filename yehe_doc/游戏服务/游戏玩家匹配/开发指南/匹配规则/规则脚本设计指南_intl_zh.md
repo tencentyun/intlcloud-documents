@@ -28,7 +28,7 @@
 <td>name</td>
 <td>string</td>
 <td>是</td>
-<td>属性名称，与 <a href="https://cloud.tencent.com/document/product/1294/49491" target="_blank">发起匹配</a> 接口中传入的属性名对应。数组内 name 不能重复，支持字母、数字。</td>
+<td>属性名称，与 <a href="https://intl.cloud.tencent.com/zh/document/product/1072/39931">发起匹配</a> 接口中传入的属性名对应。数组内 name 不能重复，支持字母、数字。</td>
 </tr>
 <tr>
 <td>type</td>
