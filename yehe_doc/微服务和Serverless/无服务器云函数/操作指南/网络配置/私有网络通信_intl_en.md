@@ -39,7 +39,7 @@ def main_handler(event,context):
 
 #### Accessing custom domain name in VPC
 <dx-tabs>
-::: Setting\sName\sServer\sin\sSCF\senvironment
+Setting\sName\sServer\sin\sSCF\senvironment
 If you want to connect to a custom DNS server, you need to customize the `name server` configuration in the SCF environment. Currently, you can implement this by configuring the `OS_NAMESERVER` environment variable as shown below:
 
 <table>
@@ -66,7 +66,7 @@ with open("/etc/resolv.conf") as f:
     print(f.readlines())
 ```
 
-:::
+
 </dx-tabs>
 
 ## Relevant Operations
