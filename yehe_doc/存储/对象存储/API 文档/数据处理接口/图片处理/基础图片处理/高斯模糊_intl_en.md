@@ -67,7 +67,7 @@ Operation: blur
 
 ## Examples
 
->? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, please see [Persistent Image Processing](https://cloud.tencent.com/document/product/436/54050) and use **Processing upon upload** or **Processing in-cloud data**.
+>? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, please see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) and use **Processing upon upload** or **Processing in-cloud data**.
 >
 
 #### Blurring an image with a radius of 8 and the sigma 5
