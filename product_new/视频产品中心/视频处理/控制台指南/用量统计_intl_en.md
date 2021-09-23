@@ -1,4 +1,4 @@
-Log in to the [MPS Console](https://console.cloud.tencent.com/mps) and click **Usage Statistics** to display detailed transcoding statistics.
+Log in to the MPS Console and click [Usage Statistics](https://console.cloud.tencent.com/mps/statistics) to display detailed transcoding statistics.
 
 The page displays transcoding statistics for today, yesterday, the last 7 days, the last 30 days. You can also customize a time period within the last 30 days.
 The categories of transcoding statistics include **General Transcoding** and **TESHD**.
