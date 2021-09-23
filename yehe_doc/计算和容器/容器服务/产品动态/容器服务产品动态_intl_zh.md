@@ -26,7 +26,7 @@
 	HPC 扩展组件是一种可以对 K8s workload 副本数进行定时修改的自研组件，配合 HPC CRD 使用，最小支持秒级的定时任务。
 	  </td>
 		<td>2021-05-28</td>
-		<td><a href="https://cloud.tencent.com/document/product/457/56753">HPC 说明</a>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/40956">HPC 说明</a>
 </tr>
 <tr>
     <td>TKE 控制台功能增强</td>
