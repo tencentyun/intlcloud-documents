@@ -40,6 +40,8 @@ dependencies {
 
 更多请参见 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 
+### 视频上传时，最大允许上传的时长和大小有限制吗？
+短视频 SDK 对上传视频的时长和大小没有限制。
 
 
 
