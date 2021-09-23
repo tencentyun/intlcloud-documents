@@ -7,7 +7,7 @@
 
 1. 登录 [弹性微服务控制台](https://console.cloud.tencent.com/tem)。
 2. 在左侧导航栏，单击【应用列表】进入应用管理页面，选择您的应用部署地域。
-3. 单击【新建】，进入新建应用页面，填写应用信息并部署。参考 [创建应用](https://cloud.tencent.com/document/product/1371/53294)。
+3. 单击【新建】，进入新建应用页面，填写应用信息并部署。参考 [创建应用](https://intl.cloud.tencent.com/zh/document/product/1094/40362)。
 4. 对于Spring Cloud应用，如果所选择的【发布环境】中关联了注册中心，在部署时可以选择**自动注入注册中心信息**。
 
 ### 具体配置
