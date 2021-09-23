@@ -34,13 +34,27 @@
 			<td>0.015美元/次</td>
 </tr>
 <tr>      
-      <td >卡证文字识别</td>   
+      <td rowspan="4">卡证文字识别</td>   
       <td>银行卡识别</td>
 	  <td>银行卡识别</td>
       <td>0.071美元/次</td>  
 			<td>0.05美元/次</td> 
 			<td>0.028美元/次</td>
 			<td>0.015美元/次</td>
+</tr>
+<tr>      
+      <td>中国香港身份证识别</td>
+      <td rowspan="3">通用证照识别</td>
+      <td rowspan="3">0.2美元/次</td>  
+      <td rowspan="3">0.18美元/次</td> 
+      <td rowspan="3">0.14美元/次</td>
+      <td rowspan="3">0.11美元/次</td>
+</tr>
+<tr>      
+      <td>马来西亚身份证识别</td>  
+</tr>
+<tr>      
+      <td>护照识别（港澳台地区及境外护照）</td>  
 </tr>
 </tr>       
 </table>
