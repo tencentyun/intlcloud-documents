@@ -239,5 +239,5 @@ Se o resultado mostrado na figura a seguir for retornado, a montagem obteve êxi
 
 ## Perguntas frequentes
 Se você encontrar um problema ao usar o CBS do Tencent Cloud, consulte os seguintes documentos para solucioná-lo, conforme necessário:
-- [Perguntas frequentes sobre uso](https://cloud.tencent.com/document/product/362/17819)
-- [Perguntas frequentes sobre funcionalidades](https://cloud.tencent.com/document/product/362/17818)
+- [Perguntas frequentes sobre uso](https://intl.cloud.tencent.com/document/product/362/32409)
+- [Perguntas frequentes sobre funcionalidades](https://intl.cloud.tencent.com/document/product/362/32408)

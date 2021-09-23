@@ -98,7 +98,7 @@ Permission|AccessControlPolicy.AccessControlList.Grant| Permissions. For the enu
 
 Node Name (Keyword) | Parent Node | Description | Type
 ---|---|---|---
-URI|AccessControlPolicy.AccessControlList.Grant.Grantee| Preset user group such as `http://cam.qcloud.com/groups/global/AllUsers` or `http://cam.qcloud.com/groups/global/AuthenticatedUsers`. For more information, see the “Preset user group” section in [ACL Overview](https://cloud.tencent.com/document/product/436/30752#.E8.BA.AB.E4.BB.BD-grantee) |string
+URI|AccessControlPolicy.AccessControlList.Grant.Grantee| Preset user group such as `http://cam.qcloud.com/groups/global/AllUsers` or `http://cam.qcloud.com/groups/global/AuthenticatedUsers`. For more information, see the “Preset user group” section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583) |string
 ID|AccessControlPolicy.AccessControlList.Grant.Grantee| Complete ID of the grantee in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, such as `qcs::cam::uin/100000000001:uin/100000000001`|string
 DisplayName|AccessControlPolicy.AccessControlList.Grant.Grantee| Grantee name |string
 

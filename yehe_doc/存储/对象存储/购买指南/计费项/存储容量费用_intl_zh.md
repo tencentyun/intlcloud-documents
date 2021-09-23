@@ -2,7 +2,7 @@
 
 >?
 >- 关于存储容量单价和存储容量包定价，请查看 [产品定价](https://buy.cloud.tencent.com/price/cos)。
->- 关于存储类型的更多介绍，请参见 [存储类型概述](https://cloud.tencent.com/document/product/436/33417)。
+>- 关于存储类型的更多介绍，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)。
 >
 
 

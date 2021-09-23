@@ -45,7 +45,7 @@ TIMLogin(id, user_sig, [](int32_t code, const char* desc, const char* json_param
 }, user_data);
 ```
 
->Here, code indicates the error code and desc indicates error description. For more information, see [Error Codes](https://cloud.tencent.com/document/product/269/1671).
+>Here, code indicates the error code and desc indicates error description. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
 
 **onForceOffline**
 

@@ -1,13 +1,13 @@
 ## Overview
 
-This API is used to upload an object to a bucket in the form of parts. If an object is uploaded using the `Append Object` API, it will be automatically determined as "appendable", while objects uploaded using other APIs are determined as "normal" (if you upload an object that already exists and the object type is appendable, the object type will be overwritten to "normal"). You can call the [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) or [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) API to obtain the `x-cos-object-type` header to determine the object type. `Append Object` is available only for appendable objects.
+This API is used to upload an object to a bucket in the form of parts. If an object is uploaded using the `APPEND Object` API, it will be automatically determined as "appendable", while objects uploaded using other APIs are determined as "normal" (if you upload an object that already exists and the object type is appendable, the object type will be overwritten to "normal"). You can call the [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) or [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) API to obtain the `x-cos-object-type` header to determine the object type. `APPEND Object` is available only for appendable objects.
 
 The default maximum size of each object part is 5 GB (no minimum size limit), and the size of the object uploaded using this API can be up to 5 GB. If the value of `position` is inconsistent with the object length, COS will return the 409 status code. If the object to append is of the "normal" type, COS will return "409 ObjectNotAppendable".
 
 >! 
 >- Appendable objects do not support replication, versioning, or lifecycle management.
->- The `Append Object` API does not verify the storage class carried in the request. The storage class will be subject to that of the existing object.
->- The `Append Object` API is not available for INTELLIGENT TIERING.
+>- The `APPEND` API does not verify the storage class carried in the request. The storage class will subject to that of the existing object.
+>- The `APPEND Object` API is not available for INTELLIGENT TIERING.
 
 ## Request
 
@@ -23,20 +23,20 @@ Authorization: Auth String
 ```
 
 >? 
-> - In `Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com`, &lt;BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 #### Request headers
 
-#### Common request headers
+#### Common headers
 
-This API uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Non-common request headers
 
-**Required headers**
-This request uses the following required request headers:
+**Required header**
+This API uses the following required header:
 
 | Header | Description | Type | Required |
 | -------------- | ------------------------------------------- | ------ | ---- |
@@ -74,7 +74,7 @@ The parameter is described as follows:
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------- | ---- |
-| position | Start point of the append operation, in bytes<br>For the first append operation, the value of this parameter is 0. For subsequent append operations, the value equals to the value of `Content-Length` of the current object. | Integer  | Yes |
+| position | Starting point for the append operation (in bytes). For the first append, the value of this parameter is 0. For subsequent appends, the value is the `content-length` of the current object. | Int | Yes |
 
 #### Request body
 
@@ -82,11 +82,11 @@ The request body of this request is empty.
 
 ## Response
 
-#### Response headers
+#### Response Headers
 
 #### Common response headers
 
-This response uses common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response uses [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Non-common response headers
 
@@ -120,7 +120,7 @@ For more information about COS error codes or the complete list of error codes, 
 POST /coss3/app?append&position=0 HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Tue, 16 Jan 2016 21:32:00 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDDNMEycgLRPI2axw9xa2Hhx87wZ3M****&q-sign-time=1484208848;32557104848&q-key-time=1484208848;32557104848&q-header-list=host&q-url-param-list=append;position&q-signature=855fe6b833fadf20570f7f650e2120e17ce8a2fe
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDDNMEycgLRPI2axw9xa2Hhx87wZ3M****&q-sign-time=1484208848;32557104848&q-key-time=1484208848;32557104848&q-header-list=host&q-url-param-list=append;position&q-signature=855fe6b833fadf20570f7f650e2120e17ce8****
 Content-Length: 4096
 
 [Object]
@@ -138,5 +138,5 @@ ETag: 1ce5b469b7d6600ecc2fd112e570917b
 Server: tencent-cos
 x-cos-content-sha1: 1ceaf73df40e531df3bfb26b4fb7cd95fb7bff1d
 x-cos-next-append-position: 4096
-x-cos-request-id: NTg3NzNhZGZfMmM4OGY3X2I2Zl8xMTBm
+x-cos-request-id: NTg3NzNhZGZfMmM4OGY3X2I2Zl8x****
 ```

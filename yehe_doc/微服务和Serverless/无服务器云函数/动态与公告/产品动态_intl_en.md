@@ -15,7 +15,7 @@
 <td>SCF allows you to deploy a local project to the cloud through a web function.</td>
 <td>2021-07-29</td>
 <td>
-<a href="https://cloud.tencent.com/document/product/583/56113">Web Framework Deployment</a>
+<a href="https://intl.cloud.tencent.com/zh/document/product/583">Web Framework Deployment</a>
 </td>
 </tr>
 </tbody></table>

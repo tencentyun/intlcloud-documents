@@ -1,53 +1,33 @@
-### 什么是反向解析
-反向解析是从 IP 地址到域名的映射，相对于将域名映射到 IP 地址的正向解析。
+## 概述
+Private DNS 支持子域名递归解析功能。开启该功能后，当客户端发起 DNS 请求时，若私有域内未配置对应子域名解析记录，Private DNS 则根据是否开启子域名递归解析返回对应记录。
+- 未开启子域名递归解析将返回 SOA 记录。
+- 已开启子域名递归解析将返回公共 DNS 记录。
 
-因为一个 IP 可能被多个域名使用，所以在进行反向解析时要先验证一个 IP 地址是否对应一个或者多个域名。若从 IP 出发遍历整个DNS系统来验证，将会因工程浩大而无法实现。因此，RFC1035 定义了 PTR（Pointer Record）记录。PTR 记录将 IP 地址指向域名。
+例如，私有域名称为 `dnspod.cn`，在 `dnspod.cn` 内配置了三条私有记录。如下所示：
 
-### 如何添加 PTR 记录
+| 主机记录 | 记录类型 | 记录值 |TTL|
+|---------|---------|---------|---------|
+| 01 | A |1.1.1.1 | 600 |
+| 02 | A |1.1.1.2 | 600 |
+| 03 | A |1.1.1.3 | 600 |
 
-在添加 PTR 记录前，必须先创建 IP 地址网络段的反向私有域解析，然后在相应的反向私有域解析内添加需要的 IP 地址反解 PTR 记录。
-
-1. 假设您的网络地址范围是 `192.168.0.1`-`192.168.0.255`，和 `192.168.0.1/24` 这个 C 段网络。那么对应的IP地址网络段反向私有域名称为 `0.168.192.in-addr.arpa`。
-2. 当您在 “私有域解析” 添加 `0.168.192.in-addr.arpa` 私有域并添加主机记录为 `1` 的 PTR 记录指向 `www.dnspod.com` 时，IP地址 `192.168.0.1` 的反向解析即是 `www.dnspod.com`。
-
->?主机记录与私有域组合前缀（即 `in-addr.arpa` 的前缀）需遵循 IPV4 格式，例如，创建私有域名 `10.255.123.in-addr.arpa`，则主机记录仅允许添加为0 - 255内的整数。
-
-### 添加反向私有域
-以下步骤以反向私有域名称 `0.168.192.in-addr.arpa` 为例。
-
-1. 登录 [私有域名解析管理控制台](https://console.cloud.tencent.com/privatedns/domains)。
-2. 在 “私有域列表” 管理页面中，单击【新建私有域】。如下图所示：
-![](https://main.qcloudimg.com/raw/e453ae30a0ae9aa0618be2e01404aeca.png)
-3. 在 “新建私有域” 管理页面中，输入反向解析域名并选择 VPC。
-例如，填写 `0.168.192.in-addr.arpa`。如下图所示：
-![](https://main.qcloudimg.com/raw/3c8b0405e91b4ca8aafd0150c7da0adb.png)
->?
->- 为更好的体验，推荐您创建私有域名并设置解析记录后再关联 VPC。
->- 若当前可选地域中未显示 VPC，请您前往 [VPC 控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1/) 进行添加。
->- 若现有的 VPC 不符合您的要求，请您前往 [VPC 控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1/) 进行修改。
->- 当前支持关联的 VPC 区域有北京、上海、成都、重庆、广州、硅谷。
-4. 单击【确定】，即可完成添加反向私有域操作，您可直接进入该域名的解析记录页添加 PTR 记录。如下图所示：
-![](https://main.qcloudimg.com/raw/9a211374713ea4b8188da47ae50dad86.png)
+- 当发起 DNS 请求 `01.dnspod.cn`，`02.dnspod.cn` 或 `03.dnspod.cn` 时，分别返回私有记录 `1.1.1.1`，`1.1.1.2`，`1.1.1.3`。
+- 当发起 DNS 请求 `www.dnspod.cn`，`bbs.dnspod.cn`，`rss.dnspod.cn` 等公共域名时，进行递归查询，以互联网实际域名公共 DNS 解析结果为最终 DNS 响应结果。
 
 
-### 私有网段
-在公共网络上，反向解析是无法由 DNS 服务商提供的，因为 IP 地址的管理权限属于运营商，所以需要向运营商（ISP）进行申请添加反向解析。
+## 操作步骤
+### 开启子域名递归解析
+#### 方式一
+您可以在首次添加私有域时，选择开启子域名递归解析。具体操作可参考 [创建私有域](https://intl.cloud.tencent.com/document/product/1097/40558)。如下图所示：
+![](https://main.qcloudimg.com/raw/d9fe658c4ff96b214e206e91ac147f1b.png)
+#### 方式二
+1. 登录 [Private DNS 管理控制台](https://console.cloud.tencent.com/privatedns)，并单击左侧导航栏的【私有域解析】，即可进入私有域列表。
+2. 在 “私有域列表” 中，选择您需要开启子域名递归解析的私有域，单击【解析】，即可进入【解析记录】管理页面。
+3. 选择【私有域设置】页签，单击<span ><img src="https://main.qcloudimg.com/raw/1daf42f43153a8e60e5b741ac6422844.png" style="margin-bottom:-5px;"/></span>，即可开启此功能。如下图所示：
 
-但是，在**私有网络 VPC** 内则不同，**您可使用如下私有网段中的任意一个作为您的私有网络网段**：
-
-```
-10.0.0.0 - 10.255.255.255（掩码范围需在16 - 28之间）
-172.16.0.0 - 172.31.255.255（掩码范围需在16 - 28之间）
-192.168.0.0 - 192.168.255.255（掩码范围需在16 - 28之间）
-```
-
-相应地，您也可以在这三个地址段范围内创建反向私有域。
-
->?
->- 私有网段详情内容可参考：[网络规划](https://intl.cloud.tencent.com/document/product/215/31795)。
->- 相同网段的反向域名视为相同私有域，相同私有域不允许关联同一 VPC，例如，`2.1.in-addr.arpa` 与 `4.3.1.in-addr.arpa` 不允许关联相同的 VPC。
->- 在私有域解析 Private DNS 中添加 PTR 记录详情操作请查看 [PTR 记录](https://cloud.tencent.com/document/product/1338/50542)。
-
-
-
-
+![](https://main.qcloudimg.com/raw/3d13bd919cd61a01bd7f1442b54a9e7c.png)
+### 关闭子域名递归解析
+1. 登录 [Private DNS 管理控制台](https://console.cloud.tencent.com/privatedns)，并单击左侧导航栏的【私有域解析】，即可进入私有域列表。
+2. 在 “私有域列表” 中，选择您需要开启子域名递归解析的私有域，单击【解析】，即可进入【解析记录】管理页面。
+3. 选择【私有域设置】页签，单击<span ><img src="https://main.qcloudimg.com/raw/3e46d1b5a3578be94c9b5803006ffb7a.png" style="margin-bottom:-5px;"/></span>，即可关闭此功能。如下图所示：
+![](https://main.qcloudimg.com/raw/703574efe2d8d995c046249dd560ad97.png)

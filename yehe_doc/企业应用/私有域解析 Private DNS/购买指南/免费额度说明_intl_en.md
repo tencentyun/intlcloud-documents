@@ -22,8 +22,8 @@ Private DNS will provide you with free resources based on your identity verifica
 
 >?
 >- To view the number of used private domains and DNS queries, go to [the Overview page in the Private DNS console](https://console.cloud.tencent.com/privatedns).
->- The free quota of private domains will be used to deduct the usage of each day. Extra usage beyond the free quota will be billed at regular rates. For more information, see [Billing Overview](https://cloud.tencent.com/document/product/1338/50523#.E8.AE.A1.E8.B4.B9.E6.96.B9.E5.BC.8F).
->- The free quota of DNS queries will be used to deduct the usage of each month. Extra usage beyond the free quota will be billed at regular rates. For more information, see [Billing Overview](https://cloud.tencent.com/document/product/1338/50523#.E8.AE.A1.E8.B4.B9.E6.96.B9.E5.BC.8F).
+>- The free quota of private domains will be used to deduct the usage of each day. Extra usage beyond the free quota will be billed at regular rates. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1097/40555).
+>- The free quota of DNS queries will be used to deduct the usage of each month. Extra usage beyond the free quota will be billed at regular rates. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1097/40555).
 >- The free quota of DNS queries will be cleared at the end of each month, that is, it will not be carried over to the next month.
 
 

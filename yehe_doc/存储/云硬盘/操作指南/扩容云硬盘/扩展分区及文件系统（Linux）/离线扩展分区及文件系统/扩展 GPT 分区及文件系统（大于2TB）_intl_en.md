@@ -239,5 +239,5 @@ If the result as shown in the following figure is returned, the mounting is succ
 
 ## FAQs
 If you encounter a problem when using Tencent Cloud CBS, refer to the following documents for troubleshooting as needed:
-- [Usage FAQs](https://cloud.tencent.com/document/product/362/17819)
-- [Features FAQs](https://cloud.tencent.com/document/product/362/17818)
+- [Usage FAQs](https://intl.cloud.tencent.com/document/product/362/32409)
+- [Features FAQs](https://intl.cloud.tencent.com/document/product/362/32408)

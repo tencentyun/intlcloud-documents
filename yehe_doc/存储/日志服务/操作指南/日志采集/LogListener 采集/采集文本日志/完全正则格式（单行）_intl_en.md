@@ -1,6 +1,6 @@
 ## Overview
 
-The single-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from each log in a log text file in which each line is a raw log based on a regular expression. If you don't need to extract key-value pairs, please configure it as instructed in [Collecting Logs with Full Text in a Single Line](https://cloud.tencent.com/document/product/614/17421).
+The single-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from each log in a log text file in which each line is a raw log based on a regular expression. If you don't need to extract key-value pairs, please configure it as instructed in [Collecting Logs with Full Text in a Single Line](https://intl.cloud.tencent.com/document/product/614/32287).
 When configuring the single-line - full regular expression mode, you need to enter a sample log first and then customize your regular expression. After the configuration is completed, the system will extract the corresponding key-value pairs according to the capture group in the regular expression.
 This document describes how to collect logs in single-line - full regular expression mode.
 
@@ -118,7 +118,7 @@ The system offers two ways to define a regular expression: **manual mode** and *
  - Collection time: it is the default time attribute of a log.
 
  - Original timestamp: set **Use Collection Time** to <img src="https://main.qcloudimg.com/raw/b4558d9e42043de2669e1b071103836b.png" /> and enter the time key of the original timestamp and the corresponding time parsing format.
- For more information on time parsing formats, please see [Configuring the Time Format](https://cloud.tencent.com/document/product/614/38614).
+ For more information on time parsing formats, please see Configuring the Time Format.
 
 - Collection time: the time attribute of a log is determined by the time when CLS collects the log.
 - Original timestamp: the time attribute of a log is determined by the timestamp in the raw log.

@@ -1,6 +1,6 @@
 ## Overview
 This document describes how to add a PTR record, through which you can reversely resolve a private IP address to the corresponding private network domain name.
->?You need to configure reverse private domain DNS before adding PTR records. For detailed directions, please see [Reverse DNS and PTR Record Description](https://cloud.tencent.com/document/product/1338/50546).
+>?You need to configure reverse private domain DNS before adding PTR records. For detailed directions, please see [Reverse DNS and PTR Record Description](https://intl.cloud.tencent.com/document/product/1097/40565).
 
 ## Prerequisites
 - You have created the corresponding private domain.

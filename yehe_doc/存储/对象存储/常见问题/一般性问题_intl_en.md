@@ -106,7 +106,7 @@ The current version comes with different APIs and SDK APIs than those in earlier
 
 ### How do I monitor error code information?
 
-You can use [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) to get different types of HTTP error code messages. For more information, see [Monitoring and Alarming](https://cloud.tencent.com/document/product/436/31903). For information on how to use Cloud Monitoring to obtain relevant data, see Cloud Monitoring’s [Console Guide](https://intl.cloud.tencent.com/document/product/248) .  
+You can use [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) to get different types of HTTP error code messages. For more information, see [Monitoring and Alarming](https://intl.cloud.tencent.com/document/product/436/31649). For information on how to use Cloud Monitoring to obtain relevant data, see Cloud Monitoring’s [Console Guide](https://intl.cloud.tencent.com/document/product/248) .  
 
 
 ### How do I calculate the availability of COS?

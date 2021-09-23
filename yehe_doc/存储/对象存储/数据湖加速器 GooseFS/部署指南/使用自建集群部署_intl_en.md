@@ -116,7 +116,7 @@ After a successful deployment, run `./bin/goosefs-start.sh all SudoMount` to sta
 
 In the standalone framework, only one master node and multiple worker nodes are deployed in the cluster. You can deploy and run the cluster as follows:
 
-1. [Download the GooseFS binary distribution package](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/goosefs-1.0.0-bin.tar.gz).
+1. Download the GooseFS binary distribution package.
 2. Run the `tar zxvf goosefs-x.x.x-bin.tar.gz` command to decompress the package into the installation directory. You can see **Introduction to the batch deployment tool** to deploy and run your cluster in batches, or perform the following steps to deploy it manually.
 
 (1) Copy the `template` file from the `conf` directory to create a configuration file.

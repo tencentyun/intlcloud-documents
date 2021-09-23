@@ -2,7 +2,7 @@ The COS Select feature uses structured query language (SQL) to filter objects st
 
 The COS Select feature currently allows you to extract objects stored in CSV and JSON formats, as well as CSV- and JSON-formatted objects compressed by gzip and bzip2. In addition, you can save your extraction results in CSV and JSON formats and specify how to separate the result records.
 
-You can pass in an SQL expression to COS in your request. COS Select currently only supports certain SQL expressions. For more information, see [SQL Functions](https://cloud.tencent.com/document/product/436/37637).
+You can pass in an SQL expression to COS in your request. COS Select currently only supports certain SQL expressions. For more information, see [SQL Functions](https://intl.cloud.tencent.com/document/product/436/32474).
 
 You can run SQL queries using the COS console, APIs, SDKs, or COSCMD. Note that certain restrictions apply to file extraction if you use the COS Console: up to 128 MB of files can be extracted, and up to 40 MB of data can be returned. To extract more data, use other methods.
 
@@ -26,7 +26,7 @@ SQL clauses currently supported by COS Select include:
 - WHERE clause
 - LIMIT clause
 
-> For more information on SQL clauses, see [SELECT Command](https://cloud.tencent.com/document/product/436/37636).
+> For more information on SQL clauses, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473).
 
 Functions currently supported by COS Select include:
 
@@ -36,7 +36,7 @@ Functions currently supported by COS Select include:
 - Date functions, such as DATE_ADD function, DATE_DIFF function, EXTRACT function, TO_STRING function, TO_TIMESTAMP function, and UTCNOW function.
 - String functions, such as CHAR_LENGTH function, CHARACTER_LENGTH function, LOWER function, SUBSTRING function, TRIM function, and UPPER function.
 
->- For more information on SQL functions, see [SQL Functions](https://cloud.tencent.com/document/product/436/37637).
+> For more information on SQL functions, see [SQL Functions](https://intl.cloud.tencent.com/document/product/436/32474).
 
 COS Select currently supports the following operators:
 
@@ -45,7 +45,7 @@ COS Select currently supports the following operators:
 - Pattern matching operators: `LIKE`
 - Mathematical operators: `+, -, *, %`
 
->- For more information on operators, see [Operators](https://cloud.tencent.com/document/product/436/37640).
+> For more information on operators, see [Operators](https://intl.cloud.tencent.com/document/product/436/32477).
 
 
 
@@ -53,8 +53,8 @@ COS Select currently supports the following operators:
 
 You can initiate an extraction request using the console, API, or SDK:
 
-- If you use the console, see [Data Extraction](https://cloud.tencent.com/document/product/436/37642).
-- If you use the API, see [SELECT Object Content](https://cloud.tencent.com/document/product/436/37641).
+- If you use the console, see [Data Extraction](https://intl.cloud.tencent.com/document/product/436/32538).
+- If you use the API, see SELECT Object Content.
 - If you use the SDK, go to [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474) and select the required SDK API.
 
 ## FAQ

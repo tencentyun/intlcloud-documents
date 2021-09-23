@@ -18,7 +18,7 @@ For example, the private domain `dnspod.cn` has the following three private reco
 ## Directions
 ### Enabling subdomain recursive DNS
 #### Method 1
-You can choose to enable subdomain recursive DNS when adding a private domain for the first time as shown below. For detailed directions, please see [Creating Private Domain](https://cloud.tencent.com/document/product/1338/50532).
+You can choose to enable subdomain recursive DNS when adding a private domain for the first time as shown below. For detailed directions, please see [Creating Private Domain](https://intl.cloud.tencent.com/document/product/1097/40558).
 ![](https://main.qcloudimg.com/raw/d9fe658c4ff96b214e206e91ac147f1b.png)
 #### Method 2
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns) and click **Private Domain List** on the left sidebar to enter the private domain list.

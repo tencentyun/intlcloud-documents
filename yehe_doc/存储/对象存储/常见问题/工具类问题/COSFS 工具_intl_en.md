@@ -31,7 +31,7 @@ In CentOS, COSFS-generated logs are stored in `/var/log/messages`; in Ubuntu, th
 
 ### How do I mount a directory in a bucket?
 
-When running the mounting command, you can specify a directory under the bucket as shown below:
+When running the mounting command, you can specify a directory under in bucket as shown below:
 ```shell
 cosfs examplebucket-1250000000:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info
 ```
@@ -44,7 +44,7 @@ cosfs 1250000000:examplebucket:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.
 
 ### How does a non-root user mount COSFS?
 
-If you are not a root user, you are advised to create a .passwd-cosfs file in the `Home` directory, set the permission to 600, and then mount COSFS using the mounting command. In addition, you can also specify the key file path using the `-opasswd_file=path` option and set the permission to 600.
+If you are not a root user, you are recommended to create a .passwd-cosfs file in the `Home` directory, set the permission to 600, and then mount COSFS using the mounting command. In addition, you can also specify the key file path using the `-opasswd_file=path` option and set the permission to 600.
 
 ### Does COSFS support mounting over HTTPS?
 
@@ -91,20 +91,23 @@ In a COSFS-mounted directory, you can create a file whose name does not contain 
 In the internal logic of COSFS, a HEAD request is used to determine whether the parent directory and the file exist.
 
 
+### How can I view the storage usage with COSFS?
+COSFS does not support viewing the storage usage. If you need statistics on bucket usage and your data volume is small, log in to the COS console to view the usage. If the data volume is high, you can leverage the [Inventory](https://intl.cloud.tencent.com/document/product/436/30622) feature.
+
 
 
 ## FAQs About Troubleshooting
 
-### What should I do if error message "unable to access MOUNTPOINT /path/to/mountpoint: Transport endpoint is not connected" is displayed and COSFS becomes inaccessible?
+### What should I do if the error message "unable to access MOUNTPOINT /path/to/mountpoint: Transport endpoint is not connected" is displayed and COSFS becomes inaccessible?
 
-You can check whether the COSFS process exists using the `ps ax|grep cosfs` command. If the COSFS process is down due to misoperations, run the following command to remount it:
+You can check whether the COSFS process exists using the `ps ax|grep cosfs` command. If the COSFS process is down due to faulty operations, run the following command to remount it:
 
 ```shell
 umount -l /path/to/mnt_dir
 cosfs examplebucket-1250000000:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info
 ```
 
-If the COSFS process error is not caused by misoperations, you can check whether the fuse version of the server is below v2.9.4. The libfuse on versions below v2.9.4 can cause unexpected exit of the COSFS process. In this case, it is recommended that you update the fuse version or install the latest version of COSFS as described in [COSFS](https://intl.cloud.tencent.com/document/product/436/6883).
+If the COSFS process error is not caused by faulty operations, you can check whether the fuse version of the server is below v2.9.4. The libfuse on versions below v2.9.4 can cause exceptional exit of the COSFS process. In this case, it is recommended to update the fuse version or install the latest version of COSFS as described in [COSFS](https://intl.cloud.tencent.com/document/product/436/6883).
 
 ### What should I do if the Content-Type of a file uploaded via COSFS is changed to "application/octet-stream"?
 
@@ -138,7 +141,7 @@ Please follow the steps below to identify the cause of the error:
 
 After confirming that the above configurations are correct, open the `/var/log/messages` log file on the server and locate the log entry for s3fs, which can help you identify the cause of error. If the error persists, [contact us](https://intl.cloud.tencent.com/contact-sales).
 
-### I've set auto-mounting at startup for COSFS using /etc/fstab, but the error "wrong fs type, bad option, bad superblock on cosfs" occurs when I run "mount -a". Why?
+### I've set auto-amounting at startup for COSFS using /etc/fstab, but the error "wrong fs type, bad option, bad superblock on cosfs" occurs when I run "mount -a". Why?
 This error happens generally because the fuse library is missing on your server. It is recommended to install the fuse library by running the following command:
 - CentOS
 ```shell
@@ -202,11 +205,11 @@ Yes. After you unmount the mount point, the time of the mounted directory will r
 
  ### Can a mounted directory be non-empty?
 
-You can mount a non-empty directory using the `-ononempty` parameter, but you are not advised to do so because a problem may occur when the mount point and the original directory have files with the same path.
+You can mount a non-empty directory using the `-ononempty` parameter, but you are not recommended to do so because a problem may occur when the mount point and the original directory have files with the same path.
 
-### Why does it take so long to return the result of the `ls` command when I run it in a COSFS directory?
-If there are a lot of files in a mounted directory, executing the `Is` command requires a HEAD operation on each file in the directory, so it takes a lot of time to read the directory before the system returns the result. 
->! You are advised not to enable IO hung which may result in unnecessary restarts.
+### Why does it take the `ls` command so long to return when I run it in a COSFS directory?
+If there are a lot of files in a mounted directory, executing the `Is` command requires a HEAD operation on each file in the directory, so it takes a lot of time to read the directory system before the command returns. 
+>! You are recommended not to enable IO hung which may result in unnecessary restarts.
 >
 
 
@@ -214,10 +217,10 @@ If there are a lot of files in a mounted directory, executing the `Is` command r
 You can periodically clear the generated system log files or increase the log level. For example, you can use '-odbglevel=crit' for mounting.
 
 
-### What scenarios does COSFS apply to, and how is the read and write performance?
-As disks are required for COSFS′s read and write operations, COSFS is suitable only for scenarios where POSIX syntax is required for COS access, such as machine learning algorithms of shared data sets reading shared data and simple log backups. COSFS adopts multi-threaded upload and download for acceleration. Via a private network in the same region, it takes COSFS about 80s to sequentially read a 6 GB file and about 160s to sequentially write a 6 GB file. Generally, you can use SDK and multi-thread to achieve better performance.
+### What scenarios does COSFS apply to, and how about the read and write performance?
+As disks are required for COSFS′s read and write operations, COSFS is only suitable for scenarios where POSIX access syntax is required for COS access, such as machine learning algorithms of shared data sets reading shared data and simple log backups. COSFS adopts multithreaded upload and download for acceleration. Via a private network in the same region, it takes COSFS about 80s to sequentially read a 6 GB file and about 160s to sequentially write a 6 GB file. Generally, you can use SDK and multi-thread to achieve better performance.
 
->! The large number of system calls caused by file reading and writing, along with the large number of logs, can affect the COSFS read and write performance to some extent. If you have high performance requirements, you can specify `-odbglevel=warn` or a higher log level.
+>! The large number of system calls caused by file reading and writing, along with the large number of logs, can affect the COSFS read and write performance to some extent. If you have high performance requirements, you can specify `-odbglevel=warn` or higher log level.
 >
 
 ### What should I do if the system prompts that COSFS is not found after the COSFS RPM package is installed?
@@ -241,3 +244,16 @@ rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm --force
 ### Why does the system indicate no permission when I separately mount a directory that has been granted read-only permission in COSFS?
 
 COSFS requires the GetBucket permission on the root directory. Therefore, you need to add the GetBucket permission on the root directory and the read permission on the corresponding directory. In that way, you can list other directories but have no operation permission on them.
+
+
+### Why are the values of `Size` and `Available` are 256 TB after I run `df`?
+In fact, COS buckets offer unlimited storage capacity. The 256 TB displayed is only used as the output of `df`.
+
+### Why is the value of `Used` is 0 after I run `df`?
+COSFS does not occupy local storage. In order to be compatible with tools such as `df`, the values of `Size`, `Used`, and `Available` displayed in COSFS are not the actual values.
+
+### Why are the values of `Inode`, `IUsed, ` and `IFree` are 0 after I run `df -i`?
+COSFS is not a disk-based file system and thus does not have `inode`.
+
+
+

@@ -11,7 +11,7 @@ https://xxxxxx/v4/openim/querystate?sdkappid=88888888&identifier=admin&usersig=x
 
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数                 | 说明                                                         |
 | -------------------- | ------------------------------------------------------------ |

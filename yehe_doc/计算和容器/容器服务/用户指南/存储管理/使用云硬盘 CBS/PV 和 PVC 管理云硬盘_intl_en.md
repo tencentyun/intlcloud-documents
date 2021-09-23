@@ -65,7 +65,7 @@ Main parameters are described as follows:
    - **PersistVolume**: specify a PersistentVolume as required. This document uses use the `cbs-pv` created in the [Creating a PV statically](#pv) step as an example.
 >? 
 >- Only PVs in the specified StorageClass and in the Available or Released statuses can be selected. If no PV in the current cluster meets the conditions, select **Do not specify** in **Specify PersistVolume**.
->- If the status of the selected PV is Released, you need to manually delete the `claimRef` field in the corresponding YAML configuration file of the PV so that the PV can be successfully bound with the PVC. For more information, see [Rules for Binding PVs and PVCs](https://cloud.tencent.com/document/product/457/47014).
+>- If the status of the selected PV is Released, you need to manually delete the `claimRef` field in the corresponding YAML configuration file of the PV so that the PV can be successfully bound with the PVC. For more information, see [Rules for Binding PVs and PVCs](https://intl.cloud.tencent.com/document/product/457/37770).
 3. Click **Create a PersistentVolumeClaim** to complete the creation.
 
 

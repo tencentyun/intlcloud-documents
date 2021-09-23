@@ -13,14 +13,14 @@
       <td>Pay-as-you-go (postpaid)</td>
       <td>Hourly</td>
       <td>Billed according to the maximum hourly usage</td>
-			<td><a href="https://cloud.tencent.com/document/product/582/47378#.E5.90.8E.E4.BB.98.E8.B4.B9.E4.BB.B7.E6.A0.BC.E8.AF.A6.E6.83.85">Pay-as-you-go billing details</a></td>
+			<td><a href="https://intl.cloud.tencent.com/document/product/582/40329">Pay-as-you-go billing details</a></td>
    </tr>
      <tr>
       <td>Storage usage</td>
       <td>Resource pack (prepaid)</td>
       <td>Monthly subscription</td>
       <td>A valid resource pack can be used to offset the corresponding pay-as-you-go fees.</td>
-			<td><a href="https://cloud.tencent.com/document/product/582/47379#.E8.B5.84.E6.BA.90.E5.8C.85.E4.BB.B7.E6.A0.BC.E8.AF.A6.E6.83.85">Resource pack billing details</a></td>
+			<td><a href="https://intl.cloud.tencent.com/document/product/582/40330">Resource pack billing details</a></td>
    </tr>
 </table>
 

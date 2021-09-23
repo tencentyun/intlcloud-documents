@@ -34,7 +34,7 @@ Prepare an image file that meets the import requirements.
  1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
  2. In the left sidebar, click **[Images](https://console.cloud.tencent.com/cvm/image)**.
  3. Select **Custom Image** and click **Import Image**.
- 4. [Activate Cloud Object Storage](https://console.cloud.tencent.com/cos4/index) and then [create bucket](/doc/product/436/6232). Upload the image file to the bucket and get the [image file URL](/doc/product/436/6260).
+ 4. [Activate Cloud Object Storage](https://console.cloud.tencent.com/cos4/index) and then [create bucket](/doc/product/436/6232). Upload the image file to the bucket and get the [image file URL](https://intl.cloud.tencent.com/zh/document/product/436/13322).
  5. Click **Next**.
  6. Complete the configurations and click **Import**.
  >! Ensure the entered COS file URL is correct.

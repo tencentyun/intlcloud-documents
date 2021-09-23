@@ -18,7 +18,7 @@
 	OLM 扩展组件支持帮助用户进行 Operator 的自动安装，升级及生命周期的管理。
 	  </td>
 		<td>2021-05-28</td>
-		<td><a href="https://cloud.tencent.com/document/product/457/56752">OLM 说明</a>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/40955">OLM 说明</a>
 </tr>
 <tr>
     <td>上线 HPC 扩展组件</td>
@@ -26,7 +26,7 @@
 	HPC 扩展组件是一种可以对 K8s workload 副本数进行定时修改的自研组件，配合 HPC CRD 使用，最小支持秒级的定时任务。
 	  </td>
 		<td>2021-05-28</td>
-		<td><a href="https://cloud.tencent.com/document/product/457/56753">HPC 说明</a>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/40956">HPC 说明</a>
 </tr>
 <tr>
     <td>TKE 控制台功能增强</td>

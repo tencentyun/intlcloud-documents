@@ -7,7 +7,7 @@ Characteristics of MPS triggers:
 ## MPS Trigger Attributes
 
 - **Event type**: an MPS trigger pushes events in the account-level event type. Currently, two event types are supported: workflow task (`WorkflowTask`) and video editing task (`EditMediaTask`).
-- **Event processing**: an MPS trigger uses events generated at the service level as the event source, regardless of attributes such as region and resources. Each account can only create one MPS trigger in all regions. If you need multiple functions to handle a task, please see [SDK for Node.js](https://cloud.tencent.com/document/product/583/37316).
+- **Event processing**: an MPS trigger uses events generated at the service level as the event source, regardless of attributes such as region and resources. Each account can only create one MPS trigger in all regions. If you need multiple functions to handle a task, please see [SDK for Node.js](https://intl.cloud.tencent.com/zh/document/product/583/32747).
 
 ## Event Structure for MPS Trigger
 

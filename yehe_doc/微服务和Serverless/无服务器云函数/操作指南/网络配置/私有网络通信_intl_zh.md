@@ -39,10 +39,7 @@ def main_handler(event,context):
 
 #### VPC 网络中访问自定义域名
 <dx-tabs>
-::: 使用私有域解析访问\sVPC\s网络中的自定义域名（推荐）
-在使用 VPC 网络的过程中，若需要通过使用域名来访问内网自建服务，可以通过使用腾讯云提供的 [私有域解析 Private DNS](https://cloud.tencent.com/document/product/1338/50527) 来实现内网自定义域名配置及访问解析。
-:::
-::: 设置云函数环境中的\sName\sServer
+设置云函数环境中的\sName\sServer
 如果需要对接自定义域名解析服务器，需要在云函数环境内自定义 `name server` 配置，当前可通过配置 `OS_NAMESERVER` 环境变量来实现。实际配置如下表：
 
 <table>
@@ -69,7 +66,7 @@ with open("/etc/resolv.conf") as f:
     print(f.readlines())
 ```
 
-:::
+
 </dx-tabs>
 
 ## 相关操作

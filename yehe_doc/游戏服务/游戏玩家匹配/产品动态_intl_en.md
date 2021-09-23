@@ -15,6 +15,6 @@
 <td>Game Player Matchmaking is launched</td>
 <td >Game Player Matchmaking (GPM) is a powerful and flexible game player matchmaking service that supports multiple algorithms.</td>
 <td>2020-10-29</td> 
-<td><a href="https://cloud.tencent.com/document/product/1294/48282">Overview</tr>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1072/38344">Overview</tr>
 </tbody></table>
 

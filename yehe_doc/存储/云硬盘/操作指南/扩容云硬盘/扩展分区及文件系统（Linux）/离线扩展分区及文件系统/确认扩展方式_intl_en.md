@@ -40,20 +40,20 @@ fdisk -l
      </tr>
 	 <tr>      
          <td rowspan="2">GPT</td>   
-	     <td nowrap="nowrap"><a href="https://cloud.tencent.com/document/product/362/53366#Add">Assigning the expanded capacity to an existing GPT partition</a></td>
+	     <td nowrap="nowrap"><a href="https://intl.cloud.tencent.com/document/product/362/39997#Add">Assigning the expanded capacity to an existing GPT partition</a></td>
 	     <td>Applicable to scenarios of direct formatting when no partition is created.</td>
      </tr> 
 	 <tr>
-         <td><a href="https://cloud.tencent.com/document/product/362/53366#New">Formatting the expanded capacity into an independent new GPT partition</a></td> 
+         <td><a href="https://intl.cloud.tencent.com/document/product/362/39997#New">Formatting the expanded capacity into an independent new GPT partition</a></td> 
 	     <td>Applicable to scenarios where the original partitions remain unchanged and a new GPT partition is created for expansion.</td>
      </tr> 
 	 <tr>
          <td rowspan="2">MBR</td>   
-	     <td><a href="https://cloud.tencent.com/document/product/362/53365#Add">Assigning the expanded capacity to an existing MBR partition</a></td> 
+	     <td><a href="https://intl.cloud.tencent.com/document/product/362/39998#Add">Assigning the expanded capacity to an existing MBR partition</a></td> 
 	     <td>Applicable to scenarios of direct formatting when no partition is created.</td>
      </tr> 
 	 <tr>
-         <td><a href="https://cloud.tencent.com/document/product/362/53365#New">Formatting the expanded capacity into an independent new MBR partition</a></td> 
+         <td><a href="https://intl.cloud.tencent.com/document/product/362/39998#New">Formatting the expanded capacity into an independent new MBR partition</a></td> 
 	     <td>Applicable to scenarios where the original partitions remain unchanged and a new MBR partition is created for expansion.</td>
      </tr> 
 </table>

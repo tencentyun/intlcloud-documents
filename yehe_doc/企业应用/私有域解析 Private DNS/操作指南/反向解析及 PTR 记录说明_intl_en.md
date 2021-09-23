@@ -46,7 +46,7 @@ You can also create reverse private domains within these three IP ranges.
 >?
 >- For more information on private IP ranges, please see [Network Planning](https://intl.cloud.tencent.com/document/product/215/31795).
 >- Reverse domain names of the same IP range are regarded as the same private domains, which cannot be associated with the same VPC; for example, `2.1.in-addr.arpa` and `4.3.1.in-addr.arpa` cannot be associated with the same VPC.
->- For more information on how to add PTR records in Private DNS, please see [PTR Record](https://cloud.tencent.com/document/product/1338/50542).
+>- For more information on how to add PTR records in Private DNS, please see [PTR Record](https://intl.cloud.tencent.com/document/product/1097/40573).
 
 
 
