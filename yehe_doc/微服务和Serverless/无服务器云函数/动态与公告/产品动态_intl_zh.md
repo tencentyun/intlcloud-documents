@@ -15,7 +15,7 @@
 <td>云函数支持通过 Web Function，将您的本地的项目快速部署到云端。</td>
 <td>2021-07-29</td>
 <td>
-<a href="https://cloud.tencent.com/document/product/583/56113">Web 框架部署</a>
+<a href="https://intl.cloud.tencent.com/zh/document/product/583">Web 框架部署</a>
 </td>
 </tr>
 </tbody></table>
