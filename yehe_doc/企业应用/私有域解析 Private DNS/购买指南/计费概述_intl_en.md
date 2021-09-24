@@ -1,4 +1,4 @@
-﻿# Pricing
+# Pricing
 ### Billing mode
 
 Private DNS is pay-as-you-go. It is billed by **the numbers of private domains and DNS requests** and settled by calendar day. If a private domain is deleted in less than 24 hours after creation, no fees will be incurred.
