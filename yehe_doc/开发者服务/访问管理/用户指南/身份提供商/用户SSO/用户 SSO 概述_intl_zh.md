@@ -6,8 +6,8 @@
 
 为了建立腾讯云与企业IdP之间的互信关系，需要对腾讯云SP进行SAML配置，同时也要对企业IdP进行SAML配置，两边配置完成后才能进行用户SSO。
 
-1. 为了建立腾讯云对企业IdP的信任，需要将企业IdP配置到腾讯云。具体配置操作请参见腾讯云SP进行SAML配置。
-2. 为了建立企业IdP对腾讯云的信任，需要在企业IdP中配置腾讯云为可信SP并进行SAML断言属性的配置。具体配置操作请参见企业IdP进行SAML配置。
+1. 为了建立腾讯云对企业IdP的信任，需要将企业IdP配置到腾讯云。具体配置操作请参见[腾讯云SP进行SAML配置](https://intl.cloud.tencent.com/document/product/598/42366)。
+2. 为了建立企业IdP对腾讯云的信任，需要在企业IdP中配置腾讯云为可信SP并进行SAML断言属性的配置。具体配置操作请参见[企业IdP进行SAML配置](https://intl.cloud.tencent.com/document/product/598/42367)。
 3. 腾讯云SP和企业IdP都配置完成后，企业需要登录到 CAM 控制台或通过 API 调用创建与企业IdP中名称完全匹配的 CAM 子用户。具体配置操作请参见[新建子用户](https://intl.cloud.tencent.com/document/product/598/13674)
 
 
