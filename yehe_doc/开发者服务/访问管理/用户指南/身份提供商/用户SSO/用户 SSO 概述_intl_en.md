@@ -6,8 +6,8 @@ If Tencent Cloud and an enterprise work together to implement user-based single 
 
 Before implementing user-based SSO, you must establish trust between Tencent Cloud and your IdP by configuring Security Assertion Markup Language (SAML) for both sides.
 
-1. To make sure that your IdP is trusted by Tencent Cloud, you need to configure the IdP in Tencent Cloud Console. For more information, see **Configuring SAML in Tencent Cloud**.
-2. To make sure that Tencent Cloud is trusted by your IdP, you need to configure Tencent Cloud as a trusted SP and configure SAML assertions in your IdP. For more information, see **Configuring SAML in IdP**.
+1. To make sure that your IdP is trusted by Tencent Cloud, you need to configure the IdP in Tencent Cloud Console. For more information, see **[Configuring SAML in Tencent Cloud](https://intl.cloud.tencent.com/document/product/598/42366)**.
+2. To make sure that Tencent Cloud is trusted by your IdP, you need to configure Tencent Cloud as a trusted SP and configure SAML assertions in your IdP. For more information, see **[Configuring SAML in IdP](https://intl.cloud.tencent.com/document/product/598/42367)**.
 3. After the SAML configurations for Tencent Cloud (i.e. the SP) and the IdP are completed, you need to create a CAM sub-user that completely matches the user in your IdP by logging in to the CAM console or calling APIs. For details, see [Creating Sub-user](https://intl.cloud.tencent.com/document/product/598/13674).
 
 
