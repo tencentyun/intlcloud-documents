@@ -12,6 +12,5 @@ To make sure that a user in the enterprise’s identity system (your IdP) can lo
     1. **If your IdP supports URL-based configuration:** copy the SAML SP metadata URL of Tencent Cloud in step 1 to your IdP.
     2. **If your IdP supports configuration based on the uploaded file:** copy the SAML SP metadata URL of Tencent Cloud in step 1 to the browser and open it, save the metadata as an XML file, and upload the file to your IdP.
     3. **If your IdP does not support the two methods above:** configure the parameters below in your IdP:
-        1. `Entity ID`: the value of the `entityID` attribute in the `md:EntityDescriptor` element of the downloaded metadata file.
-        2. `ACS URL`: the value of the `Location` attribute in the `md:AssertionConsumerService` element of the downloaded metadata file.
-        3. `RelayState` (optional): if your IdP supports the `RelayState` parameter, set the value of the parameter to a URL to which users will be redirected after SSO succeeds. If you do not configure this parameter, users will be redirected to the homepage of Tencent Cloud Console after SSO succeeds.
+        1. `Entity ID`: the value of the `entityID` attribute in the `EntityDescriptor` element of the downloaded metadata file.
+        2. `ACS URL`: the value of the `Location` attribute in the `AssertionConsumerService` element of the downloaded metadata file.
