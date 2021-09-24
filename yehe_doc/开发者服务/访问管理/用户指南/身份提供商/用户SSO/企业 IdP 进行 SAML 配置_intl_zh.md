@@ -12,6 +12,5 @@
     1. **企业 IdP 支持 URL 配置：**将步骤1中的腾讯云服务提供商元数据 URL 直接复制到企业 IdP 中进行配置
     2. **企业 IdP 支持上传文件配置：**将步骤1中的腾讯云服务提供商元数据 URL 复制到浏览器打开并保存为 XML 格式的文件，然后再将文件上传到企业 IdP 中进行配置。
     3. **上述两种方式企业 IdP 均不支持：**这种情况，需要在企业 IdP 上手动配置以下参数：
-        1.Entity ID：下载的元数据XML中，md:EntityDescriptor 元素的 entityID 属性值。
-        2.ACS URL：下载的元数据XML中，md:AssertionConsumerService 元素 Location属性值。
-        3.RelayState（可选）：如果您的企业IdP支持设置 RelayState 参数，您可以将SSO登录成功后希望跳转到的页面URL配置在此处。如果不进行配置，SSO登录成功以后，将会默认跳转到腾讯云控制台首页
+        1. Entity ID：下载的元数据XML中，EntityDescriptor 元素的 entityID 属性值。
+        2. ACS URL：下载的元数据XML中，AssertionConsumerService 元素 Location属性值。
