@@ -46,7 +46,6 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 支持的平台包括 iOS、Android、Windows(C++)、Windows(C#)、Mac、Web、Electron，更多详情请参见 [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)。
 
 [](id:que10)
-
 ### TRTC 精简版、专业版、企业版各个版本区别？ 
 详情请参见 [各版本差异对照表](https://intl.cloud.tencent.com/document/product/647/34615)。
 
@@ -71,7 +70,7 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 - [iOS & Mac > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)
 - [Android > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c)
 - [Windows（C++） > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)
-- [Windows（C#） > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn//group__ITRTCCloud__csharp.html#afbb3a1e6f73f339d47368a7d620a995f)
+- [Windows（C#） > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__csharp.html#afbb3a1e6f73f339d47368a7d620a995f)
 - [Electron > enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom)
 - [Web > join](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join)
 
@@ -82,7 +81,7 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 
 [](id:que15)
 ### 实时音视频是否支持私有化部署？
-目前不支持。
+实时音视频私有化部署未完全开放。若您需咨询或使用私有化服务，请联系：colleenyu@tencent.com。
 
 [](id:que16)
 ### 实时音视频开通旁路直播，域名是否需要进行备案使用？
@@ -166,7 +165,7 @@ TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语
 
 [](id:que33)
 ### TRTC 是否支持音视频通话免提模式？
-支持，免提模式通过设置音频路由实现，Native SDK 通过 setAudioRoute 接口切换。
+支持，免提模式通过设置音频路由实现，Native SDK 通过 setAudioRoute 接口切换，小程序端通过 &lt;live-player&gt; 标签的 sound-mode 属性设置。
 
 [](id:que34)
 ### TRTC 是否支持音量大小提示？
@@ -186,7 +185,6 @@ TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语
 您也可以使用 [实现云端录制与回放](https://intl.cloud.tencent.com/document/product/647/35426) 录制视频。
 
 [](id:que38)
-
 ### TRTC 是否支持类似微信视频通话的悬浮窗、大小画面切换等功能？
 此类功能属于 UI 布局逻辑，SDK 并不限制 UI 上的展示处理。在官方 Demo 中提供了画面前后堆叠和九宫格布局模式的示例代码，并且支持悬浮窗、大小画面切换和画面拖动，更多详情请参考 [官方 Demo](https://github.com/tencentyun/TRTCSDK)。
 
@@ -252,7 +250,7 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 
 [](id:que51)
 ### TRTC 接入蓝牙耳机等外设异常？
-目前 TRTC 有对主流的蓝牙耳机和外设做兼容，但是还会遇到某些设备上有兼容问题。建议使用官方 Demo 以及微信、QQ音视频通话测试对比下是否都正常。
+目前 TRTC 有对主流的蓝牙耳机和外设做兼容，但是还会遇到某些设备上有兼容问题。建议使用官方 Demo 以及QQ音视频通话测试对比下是否都正常。
 
 [](id:que52)
 ### TRTC 音视频过程中的上下行码率、分辨率、丢包率、音频采样率等信息怎么获取到？
@@ -290,7 +288,7 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 
 [](id:que60)
 ### 怎样实现横屏视频通话？ 
-详情请参见 [实现横屏视频通话](https://cloud.tencent.com/developer/article/1492095) 和 [视频画面旋转和缩放](https://intl.cloud.tencent.com/document/product/647/35154)。
+详情请参见 [视频画面旋转和缩放](https://intl.cloud.tencent.com/document/product/647/35154)。
 
 [](id:que61)
 ### TRTC 本地和远端画面方向不一致怎么调整？  
@@ -334,8 +332,9 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 ### 实时音视频如何实现云端录制与回放？
 具体请参见 [实现云端录制与回放](https://intl.cloud.tencent.com/document/product/647/35426)。
 
-
-
+[](id:que71)
+### 实时音视频如何实现服务端录制？
+服务端录制需要使用 Linux SDK。Linux SDK 暂未完全开放，若您需咨询或使用相关服务，请联系：colleenyu@tencent.com。
 
 
 

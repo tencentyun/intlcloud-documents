@@ -5,7 +5,7 @@
 - 互动直播（关键词：连麦、PK）
  互动直播是一种业务形式，指主播与观众之间进行互动连麦，主播与主播之间进行互动PK的一种直播类型。
 - 实时音视频（关键词：多人互动，UDP 私有协议，低延时）
- 实时音视频（Tencent Real-Time Communication，TRTC）主要应用场景是音视频互动和低延时直播，使用基于 UDP 的私有协议，其延迟可低至100ms，典型的场景就是 QQ 电话、腾讯会议、大班课等。 腾讯云实时音视频（TRTC）覆盖全平台，除了iOS/Android/Windows之外，还支持小程序以及 WebRTC 互通，并且支持通过云端混流的方式将画面旁路直播到 CDN。
+ 实时音视频（Tencent Real-Time Communication，TRTC）主要应用场景是音视频互动和低延时直播，使用基于 UDP 的私有协议，其延迟可低至100ms，典型的场景就是 QQ 电话、腾讯会议、大班课等。 腾讯云实时音视频（TRTC）覆盖全平台，除了iOS/Android/Windows之外，还支持以及 WebRTC 互通，并且支持通过云端混流的方式将画面旁路直播到 CDN。
 - 旁路直播（关键词：云端混流，RTC 旁路转推，CDN）
  旁路直播是一种技术，指的是将低延时连麦房间里的多路推流画面复制出来，在云端将画面混合成一路，并将混流后的画面推流给直播 CDN 进行分发播放。 
 
@@ -36,7 +36,6 @@ TRTC 的日志默认压缩加密，后缀为 .xlog。日志是否加密是可以
  - 6.8之后的版本：`/sdcard/Android/data/包名/files/log/tencent/liteav/`
 - Windows：`%appdata%/tencent/liteav/log`
 - Web：打开浏览器控制台，或使用 vConsole 记录 SDK 打印信息
-- 小程序：启用 &lt;live-pusher&gt; 和 &lt;live-player&gt; 标签的 debug 属性，使用 vConsole 记录打印信息
 
 >?
 >- 查看 .xlog 文件需要下载解密工具，在python 2.7环境中放到 xlog 文件同目录下直接使用 `python decode_mars_log_file.py` 运行即可。
@@ -226,3 +225,6 @@ TRTC 支持手动录制，具体操作办法如下：
 当观众使用直播模式时，观众进入房间观看会通过 TRTCCloudDelegate 中的 [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a) 回调获知主播的 userid（连麦的人也会 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b) 进房，对于观众来说也是主播）。然后观众可以调用 [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5c5ea936418b106c2e801db57938dde9) 方法来显示主播的视频画面。
 更多详细操作，请参见  [跑通直播模式(Windows)](https://intl.cloud.tencent.com/document/product/647/35109) 。
 
+[](id:que41)
+### TRTC 有 Linux SDK 吗？
+Linux SDK 暂未完全开放，若您需咨询或使用相关服务，请联系：colleenyu@tencent.com。
