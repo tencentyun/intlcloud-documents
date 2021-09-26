@@ -10,7 +10,7 @@
 
 ## 솔루션 아키텍처
 
-![](https://main.qcloudimg.com/raw/31d674511bcc4d75caf24312801818d2.png)
+![](https://main.qcloudimg.com/raw/ccbe75fb92788fce02b02cf0ce63de1c.png)
 
 Hadoop 권한 시스템에서 인증은 Kerberos에서, 권한 인증은 Ranger에서 담당합니다. 여기에 다음과 같은 모듈을 제공하여 CHDFS의 Ranger 권한 솔루션을 지원합니다.
 
