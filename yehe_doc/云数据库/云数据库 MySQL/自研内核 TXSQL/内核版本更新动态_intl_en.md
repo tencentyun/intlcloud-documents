@@ -1,6 +1,20 @@
 This document describes the MySQL kernel version updates. For information on how to upgrade the kernel, please see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
 
 ## MySQL 8.0
+### 20210330
+#### New features
+- Supports source-replica buffer pool sync: after a high-availability (HA) source-replica switch occurs, it usually takes a long time to warm up the replica, that is, to load hotspot data into its buffer pool. To accelerate the replica's warmup, TXSQL now supports the buffer pool sync between the source and the replica.
+- Supports sort merge join.
+- Supports fast DDL operations.
+- Supports querying the value of the `character_set_client_handshake` parameter.
+
+#### Performance optimizations
+- Optimizes the mechanism of scanning and flushing the dirty pages tracked in the flush list, so as to solve the performance fluctuation issue while creating indexes and thus improve the system stability.
+
+#### Bug fixes
+- Fixed the deadlocks caused by the modification of the `offline_mode` and `cdb_working_mode` parameters.
+- Fixed the concurrency issue while persistently storing `max_trx_id` of global object `trx_sys`.
+
 ### 20201230
 #### New features
 - Supports the official updates of MySQL [8.0.19](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html), [8.0.20](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-20.html), [8.0.21](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-21.html), and [8.0.22](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-22.html).
@@ -33,6 +47,29 @@ This document describes the MySQL kernel version updates. For information on how
 - Fixed the crash caused by phrase search under multi-byte character sets in full-text index.
 
 ## MySQL 5.7
+### 20210331
+#### New features
+- Supports RETURNING in a DELETE, INSERT, or REPLACE statement to retrieve the data rows modified by the statement. For DELETE, the returned data rows are pre-images, while for INSERT and UPDATE, they are post-images.
+- Supports column compression: row compression and data page compression are already supported, but if small fields in a table are read and written frequently while big fields are not, both of the compression methods waste a lot of computing resources. In contrast, column compression can compress big fields that are infrequently accessed and reduce the space for storing whole rows of fields, so as to improve read and write access efficiency.
+- Supports querying the value of the `character_set_client_handshake` parameter.
+- Supports the manual clearing of page cache occupied by log files by using the `posix_fadvise()` function based on the sliding window technique, so as to lower the memory pressure on the operating system and improve instance stability.
+
+#### Performance optimizations
+- Optimizes the parallelism of CREATE INDEX: an merge sort is needed in a temp table in the process of creating indexes, which is time-consuming. To solve the issue, the parallel temp-table merge sort algorithm is now supported, reducing the time by more than 50%.
+- Optimizes the mechanism of scanning and flushing the dirty pages tracked in the flush list, so as to solve the performance fluctuation issue while creating indexes and thus improve the system stability.
+
+#### Bug fixes
+- Fixed the memory leak issue.
+- Implemented the JSON bug fixes provided in MySQL 8.0 to improve the stability of using JSON.
+- Fixed the error (error code: 1032) caused by hash scans.
+- Fixed concurrency security issues caused by hotspot update.
+- Implemented the gcol bug fixes provided by MySQL in batches.
+- Fixed the failure to compare DateTime data with String data in some cases.
+- Fixed the bug where file handles cannot be released if source-replica buffer pool sync is enabled.
+- Fixed the deadlocks caused by setting the `offline_mode` parameter and creating connections at the same time.
+- Fixed the crashes caused by the `m_end_range` parameter incorrectly set in concurrent range queries.
+- Fixed the issue where it takes a long time to execute an UPDATE statement on a temp table if a JSON column appears in the GROUP BY clause.
+
 ### 20201231
 #### New features
 - Supports using `NOWAIT` and `SKIP LOCKED` in `SELECT FOR UPDATE/SHARE` statements.
@@ -111,7 +148,7 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Supports skipping the corrupted data and continuing to parse when a binlog is corrupted. If the source instance and binlog are both damaged, this feature helps restore data from the replica database for use as much as possible.
 - Supports syncing data from non-GTID to GTID mode.
 - Supports querying the "user thread memory usage" by executing the `show full processlist` statement.
-- Supports [quick column adding](https://intl.cloud.tencent.com/document/product/236/35990) for tables. This feature does not replicate the data or use disk space/IO and can implement changes during peak hours.
+- Supports [quick column adding](https://intl.cloud.tencent.com/document/product/236/35990) for tables. This feature does not replicate the data or use disk capacity/IO, and can implement changes in real time during peak hours.
 - Supports persistent auto-increment values.
 
 #### Bug fixes

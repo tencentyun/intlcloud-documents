@@ -6,15 +6,14 @@ By re-constructing periodical images and real-time transactions, the TencentDB f
 
 ## How Rollback Works
 The rollback feature can roll back databases or tables to a specified point in time based on `cold data backup and corresponding binlog backup`.
-![](https://main.qcloudimg.com/raw/56699dba58319c212d93c38c6adabbae.png)
-
+![](https://main.qcloudimg.com/raw/89ab32296ba576cf8e087d760b5a8109.png)
 1. Data is exported from the MySQL replica and imported to the cold backup system daily.
 2. To roll back databases or tables, request for a temp rollback instance from the rollback system. Export the cold data from the cold backup system and import it to the temp rollback instance (types of imported data vary with the rollback methods).
 3. Establish a source-replica relationship between the rollback instance and MySQL source instance, set the rollback time, and specify the databases or tables to be rolled back.
 4. Replicate the databases or tables after rollback to the MySQL source instance.
 
 ## Feature Limits
-- Only source instances can be rolled back. Read-only replicas or disaster recovery instances cannot be rolled back.
+- Only source instances can be rolled back. Read-Only replicas or disaster recovery instances cannot be rolled back.
 - Only specified databases or tables can be rolled back. The databases or tables after rollback will be renamed and replicated to the source instance.
 
 ## Notes
@@ -28,6 +27,7 @@ The rollback feature can roll back databases or tables to a specified point in t
 >- If rollback is to be performed on only one instance, you can also go to the instance management page and click **Rollback** in the top-right corner.
 >- Up to 5 rollback tasks can be initiated at a time under the same APPID.
 >
+![](https://main.qcloudimg.com/raw/abd517cf8b6db3db57b622f13d365893.png)
 2. On the rollback page, set the rollback method (described as below), select databases or tables to be rolled back, and click **Next step: set the rollback time and database table name**.
    - Fast: full backup of the instance is imported, and the selected databases or tables are rolled back. This rollback mode is slow but has no limit.
    - Faster: full backup and database-level binlogs are imported. For cross-database operation, if the associated database is not selected at the same time, rollback may fail.
@@ -44,14 +44,11 @@ The rollback feature can roll back databases or tables to a specified point in t
 >- Only one rollback time can be set for each instance.
 >- If you choose to set a batch rollback time, all databases or tables will be rolled back at the specified time.
 >- If you choose to set a single-table rollback time, tables will be rolled back at their respective rollback time.
->- The database or table name after rollback can contain up to 64-bit letters, digits, decimal points (.), dashes (-), underscores (_), and $.
+>- The database or table name after rollback can contain up to 64 letters, digits, or symbols (.-\_$).
 >
 ![](https://main.qcloudimg.com/raw/62377981b147bdb453d79631b3557d12.png)
-
-
-4. After submission, go to **Operation Logs** > **Rollback Log** where you can view the rollback progress. Click **View Details** to view the rollback log in real time.
+4. After submission, go to **Operation Log** > **Rollback Log** to view the rollback progress. Click **View Details** to view the rollback log in real time.
 ![](https://main.qcloudimg.com/raw/b5206b3c23d532553fb54dfc4fe7bfd0.png)
-
-5. Upon the completion of rollback, select **Database Management** > **Database List** and you can see the new table after rollback in the original instance.
+5. Once the rollback completes, go to **Database Management** > **Database List** to view the new database or table after rollback in the original instance.
 ![](https://main.qcloudimg.com/raw/9b939d9a6a7da59092df0051f452b5cd.png)
 
