@@ -10,7 +10,7 @@
 
 ## 解决方案架构
 
-![](https://main.qcloudimg.com/raw/31d674511bcc4d75caf24312801818d2.png)
+![](https://main.qcloudimg.com/raw/ccbe75fb92788fce02b02cf0ce63de1c.png)
 
 Hadoop 权限体系中，认证由 Kerberos 提供，授权鉴权由 Ranger 负责。在此基础上，我们提供以下组件，来支持 CHDFS 的 Ranger 权限方案。
 
