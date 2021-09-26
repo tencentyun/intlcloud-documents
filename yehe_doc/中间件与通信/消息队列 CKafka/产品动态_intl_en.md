@@ -466,7 +466,7 @@
 <td>Topics can be automatically created</td>
 <td>If “auto-create topic” is enabled in the console, when you use or access the metadata of a topic that does not exist, the topic will be automatically created with the configured number of replicas and partitions.</td>
 <td>2019-05-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/40039">Creating Topic</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Creating Topic</a></td>
 </tr></table>
 
 
@@ -506,7 +506,7 @@
 <td>The message retention time is extended</td>
 <td>CKafka extends the max message retention time from one month to three months.</td>
 <td>2019-03-28</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/40039">Creating Instance</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/39718">Creating Instance</a></td>
 </tr><tr>
 <td>Adds regions outside Chinese mainland</td>
 <td>CKafka adds two regions and one zone outside Chinese mainland: Toronto, Virginia, and Silicon Valley Zone 1.</td>
