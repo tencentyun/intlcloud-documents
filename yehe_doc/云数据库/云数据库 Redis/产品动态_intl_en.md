@@ -1,301 +1,238 @@
+
 ## July 2021
 <table>
-<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
-<tr>
-<td>Parameter templates are supported</td>
-<td>Besides the system parameter templates provided by TencentDB for Redis, you can now create custom parameter templates to configure parameters in batches as needed.</td>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported configuring change data capture (CDC)</td>
+<td>You can configure CDC in the console on your own. CDC records the information of all changes in a table and the median values of changed data entries, which help you better track table changes.</td>
 <td>2021-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/41810" target="_blank">Managing Parameter Templates</a></td></tr>
-</table>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/41608" target="_blank">CDC</a></td></tr>
+<tr>
+<td>Supported configuring change tracking (CT)</td>
+<td>You can configure CT in the console on your own. CT records modifications of table rows and allows you to directly get the latest data from the track table.</td>
+<td>2021-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/41607" target="_blank">CT</a></td></tr>
+<tr>
+<td>Supported configuring database shrinking</td>
+<td>You can directly shrink database in the console to avoid space waste.</td>
+<td>2021-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/41606" target="_blank">Shrinking Database</a></td></tr>
+<tr>
+<td>Supported configuring parameters in the console</td>
+<td>You can view and directly modify parameters in the console and view parameter modification logs, which make parameter modification easier.</td>
+<td>2021-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/41609" target="_blank">Setting Instance Parameter</a></td></tr>
+<tr>
+<td>Launched 11 new system and instance monitoring metrics</td>
+<td>4 memory and lock performance counter monitoring metrics and 7 physical machine system monitoring metrics are added for enterprise-grade users to comprehensively monitor database performance.</td>
+<td>2021-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7524" target="_blank">Monitoring</a></td></tr>
+</tbody></table>
 
 ## June 2021
 <table>
-<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
-<tr>
-<td>Auto-failover is now supported</td>
-<td>TencentDB for Redis supports the auto-failover feature for proxy nodes and Redis server nodes to ensure service availability.</td>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Launched high-specification instances</td>
+<td>Dual-Server High Availability Edition, Cluster Edition, and read-only instances are now available in 64-core 512 GB and 90-core 720 GB specifications, meeting the needs of enterprise-grade users.</td>
 <td>2021-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/41052" target="_blank">Failover</a></td></tr>
+<td>-</td></tr>
 <tr>
-<td>Auto-failback is now supported</td>
-<td>TencentDB for Redis provides the auto-failback feature for instances deployed across AZs. After the feature is enabled, if the master node is switched from the master AZ or master node group (cluster architecture) to another AZ or group after a failover occurs, it will be automatically switched back, simplifying subsequent OPS operations.</td>
+<td>Launched the service in Tokyo Zone 2</td>
+<td>TencentDB for SQL Server is now available in Tokyo Zone 2.</td>
 <td>2021-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/41051" target="_blank">Auto-Failback</a></td></tr>
-<tr>
-<td>You can now manually promote a replica node/node group to master node/node group</td>
-<td>For multi-AZ deployed TencentDB for Redis instances in the standard/cluster architecture, you can manually promote a replica node/node group to master node/node group. You can deploy the master node in a specified AZ/node group.</td>
-<td>2021-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/41050" target="_blank">Manually Promoting to Master Node/Node Group</a></td></tr>
-<tr>
-<td>You can now read local nodes only</td>
-<td>To reduce the access latency of a multi-AZ deployed instance, TencentDB for Redis allows you to read local nodes only.</td>
-<td>2021-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/41049" target="_blank">Reading Local Nodes Only</a></td></tr>
-</table>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520" target="_blank">Regions and AZs</a></td></tr>
+</tbody></table>
 
-## March 2021
+## May 2021
 <table>
-<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Launched TencentDB for SQL Server 2019</td>
+<td>TencentDB for SQL Server 2019 is officially launched and supports Basic, High Availability, and Cluster Edition instances, which have great improvements in performance, ease of use, high availability, and security.</td>
+<td>2021-05</td>
+<td>-</td></tr>
 <tr>
-<td>Five-second monitoring granularity is supported</td>
-<td>TencentDB for Redis now supports the five-second monitoring granularity. After the monitoring granularity of an instance is adjusted to five seconds, the monitoring metrics, proxy, and alarm policies of the instance, and the method of viewing monitoring data in the Cloud Monitor console will change.</td>
-<td>2021-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/39984" target="_blank">Notices of Monitoring Upgrade and Alarm Policy Changes</a></td></tr>
-</table>
+<td>Launched the service in Beijing Zone 7</td>
+<td>TencentDB for SQL Server is now available in Beijing Zone 7.</td>
+<td>2021-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520" target="_blank">Regions and AZs</a></td></tr>
+</tbody></table>
+
 
 ## December 2020
-
 <table>
-<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
-<tr>
-<td>TencentDB for Redis Hybrid Storage Edition has been renamed TencentDB for Tendis</td>
-<td>TencentDB for Redis Hybrid Storage Edition has been renamed TencentDB for Tendis. You can access TencentDB for Tendis in its own console.</td>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported self-service version and architecture upgrade</td>
+<td>You can upgrade the version and architecture and scale instances in the console in a self-service manner to easily adjust instances based on your business needs.</td>
 <td>2020-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1083/39286" target="_blank">TencentDB for Tendis</a></td>
-</tr>
-<tr>
-<td>Multi-AZ deployment is supported</td>
-<td>You can now deploy TencentDB for Redis master node and replica nodes in different availability zones of the same region. Multi-AZ deployed instances have higher availability and better disaster recovery capability than single-AZ deployed instances.</td>
-<td>2020-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/39812" target="_blank">Multi-AZ Deployment</a></td>
-</tr>
-</table>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35783" target="_blank">Adjusting Instance Specification</a></td></tr>
+</tbody></table>
 
-## September 2020
+## November 2020
 <table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported the use of tags</td>
+<td>TencentDB for SQL Server supports using tags. You can use tags to mark different resource usages, users, and business scenarios under your account.</td>
+<td>2020-11</td>
+<td>-</td></tr>
 <tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>Monitoring at five-second granularity is supported</td>
-<td>The monitoring feature of TencentDB for Redis has been updated, with the monitoring granularity being narrowed down from one minute to five seconds.</td>
-<td>2020-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/38743" target="_blank">Monitoring at Five-Second Granularity</a></td>
-</tr>
-</table>
+<td>Launched the service in the Chengdu region</td>
+<td>TencentDB for SQL Server is now available in the Chengdu region.</td>
+<td>2020-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520" target="_blank">Regions and AZs</a></td></tr>
+</tbody></table>
+
+## October 2020
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported migration with DTS and optimized cold backup migration</td>
+<td>DTS supports data migration from self-built SQL Server databases in IDCs, clouds, and other cloud vendors to TencentDB for SQL Server as well as data migration between TencentDB for SQL Server instances.<br>Cold backup migration restores data from .bak files, which is applicable to data migration from SQL Server databases in other cloud vendors and self-built SQL Server databases to TencentDB for SQL Server. Multiple migration methods deliver an easier and more user-friendly data migration experience.</td>
+<td>2020-10</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/238/39005" target="_blank">Cold Backup Migration</a></li><li><a href="https://intl.cloud.tencent.com/document/product/238/39006" target="_blank">Migration with DTS</a></li></td></tr>
+</tbody></table>
+
 
 ## July 2020
 <table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>Version upgrade now supported</td>
-<td>TencentDB for Redis now supports version upgrade, so you can upgrade from a lower version of Standard Edition to a higher one, including from 2.8 to 4.0, from 2.8 to 5.0, and from 4.0 to 5.0.</td>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Launched TencentDB for SQL Server Basic (Standalone) Edition</td>
+<td>TencentDB for SQL Server Basic Edition is launched, which supports cloud `sysadmin` permissions. It provides a complete set of genuinely licensed database solutions with high availability, security, and performance and light OPS.</td>
 <td>2020-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/37710" target="_blank">Upgrading Instance Version</a></td>
-</tr>
-<tr>
-<td>Architecture upgrade now supported</td>
-<td>TencentDB for Redis now supports quick upgrade from standard architecture to cluster architecture to help your business expand the performance and capacity with speed.</td>
-<td>2020-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/37860" target="_blank">Upgrading Instance Architecture</a></td>
-</tr>
-</table>
-
-## June 2020
-<table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>TencentDB for Redis Hybrid Storage Edition launched</td>
-<td>TencentDB for Redis Hybrid Storage Edition is launched. It is 100% compatible with Redis protocols, reduces memory costs by up to 80%, and delivers a hot data performance comparable with that of Memory Edition, achieving a perfect balance among compatibility, performance, and costs.</td>
-<td>2020-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1083/39296" target="_blank">Hybrid Storage Edition (Cluster Architecture)</a></td>
-</tr>
-</table>
-
-## April 2020
-<table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>DTS now supports Redis 5.0</td>
-<td>You can now migrate data and upgrade instances to Redis 5.0 with Data Transmission Service (DTS).</td>
-<td>2020-04</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/239/31941" target="_blank">Migration with DTS</a><li><a href="https://intl.cloud.tencent.com/document/product/239/32546" target="_blank">Version Upgrade with DTS</a></td>
-</tr>
-</table>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/3254" target="_blank">Architecture</a></td></tr>
+</tbody></table>
 
 ## March 2020
 <table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>Service unavailable alarm feature now supported</td>
-<td>Redis now supports the service unavailable alarm feature. In addition, users can also set alarms for instance master/replica switch, read-only replica failover, and read-only replica unavailability.</td>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported admin accounts</td>
+<td>TencentDB for SQL Server supports admin permissions. An admin has read/write permissions for all databases on the instance and thread management permissions and can automatically discover new databases and get their read/write permissions.</td>
 <td>2020-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/31947" target="_blank">Configuring Alarms</a></td>
-</tr>
-<tr>
-<td>Adjusting bandwidth in the console now supported</td>
-<td>You can now adjust instance network bandwidth on the instance details page in the Redis console. The bandwidth specifications for the cluster edition have been fully upgraded, with shard specifications upgraded to 384 Mbps.</td>
-<td>2020-03</td>
-<td>-</td>
-</tr>
-<tr>
-<td>Monitoring view for Redis 2.8 now updated</td>
-<td>To provide more accurate monitoring information, Tencent Cloud has updated the monitoring view of Redis 2.8 instance to cluster view. If you use APIs to get monitoring data from Cloud Monitor, you need to change the view parameter from `redisuuid` to `cluster` in the code.</td>
-<td>2020-03</td>
-<td>-</td>
-</tr>
-</table>
-
-
-## February 2020
-<table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>Upgraded the default number of databases in an instance to 256</td>
-<td>For Redis 2.8, 4.0, and 5.0 standard and cluster editions you purchased this month, the default number of databases in an instance has been upgraded from 16 to 256.</td>
-<td>2020-02</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/239/31959" target="_blank">Memory Edition (Standard Architecture)</a><li><a href="https://intl.cloud.tencent.com/document/product/239/18336" target="_blank">Memory Edition (Cluster Architecture)</a></td>
-</tr>
-</table>
+<td>-</td></tr>
+</tbody></table>
 
 ## January 2020
 <table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>Released Redis 5.0</td>
-<td>Redis 5.0 standard and cluster editions have been released with all features of Redis 4.0 reserved, and support the latest STREAM data structure, new ZSET commands `ZPOPMIN` and `ZPOPMAX`, scaling without disconnection, 4 TB of storage capacity, and tens of millions of concurrent QPS.</td>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported Always On clusters</td>
+<td>TencentDB for SQL Server 2017 Enterprise Edition instances supports adding read-only instances. The underlying Always On architecture implements the control of cluster capabilities, such as automated data replication, traffic load balancing of read-only instances, and primary/replica switch of primary instances.</td>
 <td>2020-01</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/239/31959" target="_blank">Memory Edition (Standard Architecture)</a><li><a href="https://intl.cloud.tencent.com/document/product/239/18336" target="_blank">Memory Edition (Cluster Architecture)</a></td>
-</tr>
-</table>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/3254" target="_blank">Architecture</a></td></tr>
+</tbody></table>
+
+## December 2019
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported setting device maintenance time</td>
+<td>TencentDB for SQL Server supports setting the maintenance time. To ensure the stability of your TencentDB instance, the backend system performs maintenance operations on the instance during the maintenance time at irregular intervals.</td>
+<td>2019-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35785" target="_blank">Setting Instance Maintenance Information</a></td></tr>
+</tbody></table>
+
 
 ## October 2019
 <table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>Access management now supported</td>
-<td>You can now create policies through access management which grant sub-accounts permissions to use the resources they need.</td>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported configuring security groups</td>
+<td>A <a href="https://cloud.tencent.com/doc/product/213/500">security group</a> is a stateful virtual firewall capable of filtering. As an important means for network security isolation, it can be used to set network access controls for one or more TencentDB instances.</td>
 <td>2019-10</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/32845" target="_blank">Access Management</a></td>
-</tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35789" target="_blank">Configuring Security Groups</a></td></tr>
 <tr>
-<td>Account management in the console now supported</td>
-<td>TencentDB for Redis provides read/write permission control and routing policy control through the account mechanism, which helps meet the needs of business permission management in complex scenarios. Currently, only the TencentDB for Redis community edition (excluding Redis 2.8) supports account settings.</td>
-<td>2019-08</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/34590" target="_blank">Managing Accounts</a></td>
-</tr>
-</table>
+<td>Supported recycle bin</td>
+<td>After a monthly subscribed or pay-as-you-go instance expires or is manually terminated, it can be automatically put in the recycle bin for retention.</td>
+<td>2019-10</td>
+<td>-</td></tr>
+</tbody></table>
 
 ## September 2019
 <table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>Released monitoring 2.0</td>
-<td>Redis monitoring 2.0 has been released, adding more than 16 monitoring metrics, including network delay, response error and other monitoring metrics.</td>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported creating databases with multiple character sets available in the console</td>
+<td>TencentDB for SQL Server supports multiple SQL Server character sets provided by Microsoft in the console for your choice when creating databases.</td>
 <td>2019-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/34589" target="_blank">Monitoring Feature</a></td>
-</tr>
-</table>
-
-## August 2019
-<table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>Password-free access now supported</td>
-<td>To enable password-free access, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>. We recommend limiting server access by using security groups when password-free access is enabled.</td>
-<td>2019-08</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/32548" target="_blank">Password-free Access</a></td>
-</tr>
-<tr>
-<td>Disabling high-risk commands online now supported</td>
-<td>TencentDB for Redis is now able to disable some Redis commands that may cause service instability or accidentally delete data, including `flushall`, `flushdb`, `keys`, `hgetall`, `eval`, `evalsha`, and `script`.</td>
-<td>2019-08</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/32550" target="_blank">Disabling Commands</a></td>
-</tr>
-
-<tr>
-<td>DTS now supports cluster edition</td>
-<td>You can now migrate self-created Redis Cluster (3.0, 3.2, and 4.0) or Codis (2.8 and 3.2) databases to TencentDB for Redis with DTS.</td>
-<td>2019-08</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/31941" target="_blank">Migration with DTS</a></td>
-</tr>
-</table>
-
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35780" target="_blank">Creating Database</a></td></tr>
+</tbody></table>
 
 ## July 2019
 <table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>Version upgrade with DTS is now supported</td>
-<td>TencentDB for Redis instance version can now be upgraded through Data Transfer Service (DTS) with hot migration, which guarantees instance service continuity during the upgrade process and can update incremental data in real time.</td>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Launched the service in the Seoul region</td>
+<td>TencentDB for SQL Server is now available in the Seoul region.</td>
 <td>2019-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/32546" target="_blank">Version Upgrade with DTS</a></td>
-</tr>
-<tr>
-<td>Released Redis 4.0 standard edition</td>
-<td>Redis 4.0 Standard Edition supports 1-master 5-replica mode, read/write separation, scaling without disconnection, and high availability.</td>
-<td>2019-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/31959" target="_blank">Memory Edition (Standard Architecture)</a></td>
-</tr>
-</table>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520" target="_blank">Regions and AZs</a></td></tr>
+</tbody></table>
 
-
-## October 2018
+## June 2019
 <table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>Released Redis 4.0 cluster edition</td>
-<td>Redis 4.0 cluster edition has been released and supports 4 TB of storage capacity, tens of millions of concurrent access, scaling without storage capacity loss, and automatic read/write separation.</td>
-<td>2018-10</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/18336" target="_blank">Memory Edition (Cluster Architecture)</a></td>
-</tr>
-</table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported pay-as-you-go billing mode</td>
+<td>TencentDB for SQL Server supports the pay-as-you-go billing mode. You can select a billing mode based on your business needs.</td>
+<td>2019-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35798" target="_blank">Billing Overview</a></td></tr>
+</tbody></table>
+
+## May 2019
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported instance configuration upgrade</td>
+<td>The database instance specification can be upgraded, and the capacity can be expanded.</td>
+<td>2019-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35783" target="_blank">Adjusting Instance Specification</a></td></tr>
+</tbody></table>
+
+## September 2017
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Launched SQL Server 2016</td>
+<td>TencentDB for SQL Server is now available on SQL Server 2016.</td>
+<td>2017-09</td>
+<td>-</td></tr>
+</tbody></table>
+
+
+## December 2016
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported read-only mode for replica servers</td>
+<td>TencentDB for SQL Server supports read-only mode for replica servers. You can select memory and disks as needed to tailor the database specification for your actual business. The read-only mode is implemented through snapshots, facilitating online data analysis. It doesn't increase the costs, affect the primary database performance, or compromise high availability.</td>
+<td>2016-12</td>
+<td>-</td></tr>
+</tbody></table>
+
+
+## May 2016
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Supported SQL Server 2012 Enterprise Edition</td>
+<td>TencentDB for SQL Server is now available on SQL Server 2012 Enterprise Edition, which is compatible with all features of SQL Server 2008.</td>
+<td>2016-05</td>
+<td>-</td></tr>
+</tbody></table>
+
+
+## December 2015
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Launched TencentDB for SQL Server officially</td>
+<td>TencentDB for SQL Server is officially launched and provides various features such as instance management, instance details, system monitoring, database management, account management, and backup.</td>
+<td>2015-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/2016" target="_blank">Overview</a></td></tr>
+</tbody></table>
 
