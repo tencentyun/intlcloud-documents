@@ -44,9 +44,9 @@ set(FEATURE_DEBUG_DEV_INFO_USED  OFF)
 
 ## Windows 环境
 
-#### 获取和安装 Visio Studio 2019开发环境
+#### 获取和安装 Visual Studio 2019开发环境
 
-1. 请访问 [Visual Studio 下载网站](https://visualstudio.microsoft.com/zh-hans/downloads/)，下载并安装 Visio Studio 2019，本文档下载安装的是16.2版本 Community。
+1. 请访问 [Visual Studio 下载网站](https://visualstudio.microsoft.com/zh-hans/downloads/)，下载并安装 Visual Studio 2019，本文档下载安装的是16.2版本 Community。
 ![](https://main.qcloudimg.com/raw/394078661873f4464e7c2bf2836aa6a2.png)
 2. 选择【使用 C++ 的桌面开发】，并确保勾选【用于 Windows 的 C++ CMAKE 工具】。
 ![](https://main.qcloudimg.com/raw/2c5ea21e32ed3a6375d41370c6b521d9.png)
@@ -75,9 +75,9 @@ set(FEATURE_DEBUG_DEV_INFO_USED  OFF)
    set(PLATFORM 	  "windows")
 ```
 4. Visual Studio 会自动生成 cmake 缓存，请等待 cmake 缓存生成完毕。
-
+![](https://main.qcloudimg.com/raw/e32548904810ed92ecd52cd5803d23ff.png)
 5. 缓存生成完毕后，选择【生成】>【全部生成】。
-
+![](https://main.qcloudimg.com/raw/8afc803e904f2e06eaa8948d1a8c1b81.png)
 6. 选择相应的示例运行，示例应与用户信息相对应。
-
+![](https://main.qcloudimg.com/raw/c02877b0975625858b9fe51cb9c4114c.png)
 
