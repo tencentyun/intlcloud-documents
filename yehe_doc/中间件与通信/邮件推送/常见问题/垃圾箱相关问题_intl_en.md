@@ -1,5 +1,5 @@
 [](id:que1) 
-### Why would my emails go to the spam folder?
+### Why would my emails go to spam folders?
 A spam folder is a comprehensive judgment policy of recipients. If your emails end up in spam folders, Tencent Cloud recommends that you check the following situations for troubleshooting:
 
 <table id="case">
@@ -12,7 +12,7 @@ A spam folder is a comprehensive judgment policy of recipients. If your emails e
 <td>You are using a new domain or IP. Because a new IP does not have any reputation, your emails have a certain chance of going to spam folders at the beginning. However, every email service provider has a self-learning process. When they find that your emails are good, such as verification emails, they will gradually move them to the inbox.</td>
 </tr><tr>
 <td>Case 3</td>
-<td>You have sent a large number of emails within a short period using a new IP without a warm-up process, for example, sending 100,000 emails on the first day. In this case, it is very likely that email service providers with strict restrictions such as Hotmail and Yahoo Mail will reject these emails and consider them as spams.</td>
+<td>You have sent a large number of emails within a short period using a new IP without a warm-up process, for example, sending 100,000 emails on the first day. In this case, it is very likely that email service providers with strict restrictions such as Hotmail and Yahoo Mail will reject and consider these emails as spams.</td>
 </tr><tr>
 <td>Case 4</td>
 <td>The invalidity rate of your email address is high, which will greatly damage your sender reputation. Tencent Cloud can automatically stop you from sending emails when 8% of your emails are blocklisted in order to protect your IP reputation.</td>
@@ -29,10 +29,10 @@ A new domain does not have reputation with email service providers, so it is nor
 
 [](id:que3) 
 ### How do I know that an email has gone to spam folders?
-You can use your email address to test, or log in to the console and check the email delivery rate and open rate to determine if your email has gone to the spam folder. If the email delivery rate and open rate are both low, probably your email has been delivered to the spam folder.
+You can use your email address to test, or log in to the console and check the email delivery rate and open rate to determine if your email has gone to spam folders. If the email delivery rate and open rate are both low, probably your email has ended up in spam folders.
 
 [](id:que4) 
 ### What should I do if my emails go to spam folders during the test phase?
-Spam folder is a comprehensive judgment policy of recipients. Please follow the instructions below:
-1. Make sure you haven’t use your domain to send spams before. If your domain reputation is low, your emails may automatically go to the spam folder.
+A spam folder is a comprehensive judgment policy of recipients. Please follow the instructions below:
+1. Make sure you haven’t use your domain to send spams before. If your domain reputation is low, your emails may automatically go to spam folders.
 2. The recipients may consider your emails as spam due to inappropriate email subject and content. You can [use the mail-tester tool](https://www.mail-tester.com/) to test the email content until you get a score higher than eight.
