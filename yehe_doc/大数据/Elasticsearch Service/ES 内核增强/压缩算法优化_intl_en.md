@@ -42,7 +42,7 @@ Similarly, add the `index.codec` configuration item in `settings` and set the va
 PUT /newIndex 
 {
    "settings": {
-     "**index.codec**": "**zstandard**",
+    "index.codec": "zstandard",
      "index.number_of_shards": 1
    }
 } 

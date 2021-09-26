@@ -10,7 +10,7 @@ After you adopt storage-compute separation, you will host your data on CHDFS. CH
 
 ## Solution Architecture
 
-![](https://main.qcloudimg.com/raw/31d674511bcc4d75caf24312801818d2.png)
+![](https://main.qcloudimg.com/raw/ccbe75fb92788fce02b02cf0ce63de1c.png)
 
 In the Hadoop permission system, authentication is provided by Kerberos and authorized by Ranger. In addition to this, we provide the following components to support the Ranger permission scheme for CHDFS.
 

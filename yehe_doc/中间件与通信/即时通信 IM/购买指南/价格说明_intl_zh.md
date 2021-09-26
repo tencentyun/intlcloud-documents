@@ -2,7 +2,7 @@
 
 
 ### 套餐包价格详情[](id:Package)
-每个套餐包对单个 SDKAppID 生效，如果您有多个 SDKAppID 需要升级，您需依次为其 [购买](https://intl.cloud.tencent.com/document/product/1047/34351) 单独的套餐包。
+每个套餐包对单个 SDKAppID 生效，如果您有多个 SDKAppID 需要升级，您需依次为其[升级](https://intl.cloud.tencent.com/zh/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8)至专业版或旗舰版。
 采用月结后付费，每月3日扣除上一个自然月所产生的费用，开通当月不收取费用，次月起计费。具体的计费详情如下表所示：
 
 | 计费详情 | 体验版 | 专业版        | 旗舰版        |
@@ -32,7 +32,7 @@
 <th width="25%">专业版</th>
 <th width="25%">旗舰版</th>
 </tr><tr>
-<td>扩展音视频聊天室创建数至无上限</td>
+<td>扩展直播群（AvChatRoom）创建数量至无上限</td>
 <td rowspan = "3">按自然月结算，每月3日扣除上一个自然月所产生的费用，开通当月不收费</td>
 <td>449.99 USD/月</td>
 <td>-</td>
@@ -53,7 +53,7 @@
 <td>存储30天：99.99 USD/月<br>存储90天：179.99 USD/月<br>存储180天：269.99 USD/月<br>存储360天：399.99 USD/月</td>
 <td>存储90天：99.99 USD/月<br>存储180天：179.99 USD/月<br>存储360天：319.99 USD/月</td>
 </tr>
-<td>音视频聊天室弹幕带宽</td>
+<td>直播群（AvChatRoom）弹幕带宽</td>
 <td>国际带宽：2.09 USD/Mbps/天</td>
 <td>国际带宽：2.09 USD/Mbps/天</td>
 </tr></table>

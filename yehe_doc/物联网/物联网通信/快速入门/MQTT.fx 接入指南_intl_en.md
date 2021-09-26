@@ -80,11 +80,11 @@ MQTT.fx is a mainstream MQTT desktop client. Compatible with Windows, macOS, and
 </tr>
 <tr>
 <td>Client Certificate File</td>
-<td>Client certificate file, i.e., the device certificate which can be downloaded if the device is created in a certificate-authenticated product. For more information, please see <a href="https://cloud.tencent.com/document/product/634/14442" target="_blank">Device Connection Preparations</a>.</td>
+<td>Client certificate file, i.e., the device certificate which can be downloaded if the device is created in a certificate-authenticated product. For more information, please see <a href="https://intl.cloud.tencent.com/zh/document/product/1105/41476" target="_blank">Device Connection Preparations</a>.</td>
 </tr>
 <tr>
 <td>Client Key File</td>
-<td>Client key file, i.e., the device key which can be downloaded if the device is created in a certificate-authenticated product. For more information, please see <a href="https://cloud.tencent.com/document/product/634/14442" target="_blank">Device Connection Preparations</a>.</td>
+<td>Client key file, i.e., the device key which can be downloaded if the device is created in a certificate-authenticated product. For more information, please see <a href="https://intl.cloud.tencent.com/zh/document/product/1105/41476" target="_blank">Device Connection Preparations</a>.</td>
 </tr>
 <tr>
 <td>PEM Formatted</td>

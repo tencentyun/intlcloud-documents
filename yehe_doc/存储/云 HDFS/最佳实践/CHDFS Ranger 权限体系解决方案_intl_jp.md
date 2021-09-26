@@ -10,7 +10,7 @@
 
 ## ソリューションアーキテクチャ
 
-![](https://main.qcloudimg.com/raw/31d674511bcc4d75caf24312801818d2.png)
+![](https://main.qcloudimg.com/raw/ccbe75fb92788fce02b02cf0ce63de1c.png)
 
 Hadoop権限システムでは、認証はKerberosによって提供され、権限付与と認証はRangerが担当します。これをベースとして、以下のコンポーネントを提供し、CHDFSのRanger権限スキームをサポートします。
 

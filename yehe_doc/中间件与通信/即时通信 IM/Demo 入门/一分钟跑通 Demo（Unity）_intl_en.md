@@ -4,7 +4,7 @@ This document introduces how to quickly run through the IM demo (Unity).
 
 | Platform | Version |
 |---------|---------|
-| Unity |  2019.4.15f1 or later |
+| Unity | 2019.4.15f1 or later |
 | Android | Android Studio 3.5 or later; devices with Android 4.1 or later for apps |
 | iOS | Xcode 11.0 or later. Ensure that your project has a valid developer signature. |
 
@@ -35,13 +35,14 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 ![](https://main.qcloudimg.com/raw/e31692ae98503221f45ece41039ead92.png)
 4. Comment out the logic for dynamically getting the UserSig in `ExampleEntry.cs` (since the configuration of dynamic UserSig getting is complex, you can configure it separately later).
 ![](https://main.qcloudimg.com/raw/7a8ac734ac60a73caf6139fc0d1d250f.png)
+
 ## Step 3: Build and Run the Demo
 ### Android
 1. Configure Unity Editor, click **File** -> **Build Settings**, and switch the platform to Android.
 ![](https://main.qcloudimg.com/raw/d913d32e36aa01ff93acf0316d4f103f.png)
 2. Start an Android simulator and click **Build And Run** to run the demo.
->? 
->- The demo includes all activated APIs and can be used for testing and calling reference. For the API documentation, see [SDK API (Flutter)](https://intl.cloud.tencent.com/document/product/1047/40124).
+
+>- The demo includes all activated APIs and can be used for testing and calling reference. For the API documentation, see [SDK API (Unity)](https://intl.cloud.tencent.com/document/product/1047/40125).
 > - The UI may have certain changes. Please refer to the latest version.
 >
 ![](https://main.qcloudimg.com/raw/e6f3583d0b807af62a27ee753cfa3b53.png)
@@ -50,25 +51,24 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 ### iOS
 1. Configure Unity Editor, click **File** -> **Build Settings**, and switch the platform to iOS.
 ![](https://main.qcloudimg.com/raw/3982b96c4f9e76107bb4aadac33a5de5.png)
-2. Connect to an iPhone device, click **Build And Run**, select a new directory to store the iOS project built, and wait until the compilation is completed. When the build is completed, a window pops up to display the Xcode project.
-3. Adjust the project configuration as follows in Xcode:
-	1. Include `UnityInterface.h` in **UnityFramework** -> **UnityFramework.h**.
-![](https://main.qcloudimg.com/raw/0a69e67c63479810309080efa3721d6a.png)
-	2. In **Classes** -> **Unity**, change **Target Membership** of `the `UnityFramework.h`, and `UnityForwardDecls.h`, and `UnityRendering.h`, and `UnitySharedDecls.h` files to Public.
-![](https://main.qcloudimg.com/raw/0b1a43e69f965b710c91f24eff8870fd.png)
-	3. Import the IM SDK in **Classes** -> **Prefix.pch**.
-![](https://main.qcloudimg.com/raw/299789b6275e30ede0d8e7d8afcbdd59.png)
-	4. Import the IM SDK to your project.
-![](https://main.qcloudimg.com/raw/335c2b8ae8c797694b4e4dd5000c4751.png)
-	5. Set **Signing & Capabilities** for the target to enable the project to run on an iPhone device.
-	6. Start the project and debug the demo on the iPhone device.
+2. Connect to a real iPhone, and click **Build And Run**. You need to select a new folder to save your iOS build. When the build is completed, the folder containing the Xcode project will open in a new window.
+3. Open the iOS project and set **Signing & Capabilities** for the main target (with an Apple developer account required) to enable the project to run on an iPhone device.
+4. Start the project and debug the demo on the iPhone device.
 
 ## FAQs
+
+### What platforms are supported?
+Currently, both iOS and Android platforms are supported. In addition, the editions for Windows and Mac are under development. Please stay tuned.
 
 ### What should I do if Android reports an error where no available device can be found when I click **Build And Run**?
 Check that the device is not occupied by other resources. Or click **Build** to generate an APK package, drag it to the simulator, and run it.
 
 ### What should I do if iOS reports an error during the first run?
 If iOS reports an error after the demo configured as above is run, click **Product** -> **Clean**, clean the product, and build the demo again. You can also close Xcode and open it again, and then build the demo again.
+### What should I do if Unity v2019.04 on iOS reports the following error?
+Library/PackageCache/com.unity.collab-proxy@1.3.9/Editor/UserInterface/Bootstrap.cs(23,20): error CS0117: 'Collab' does not contain a definition for 'ShowChangesWindow'
+Click **Window** > **Package Manager** on the Editor toolbar to downgrade Unity Collaborate to 1.2.16.
 
-
+### What should I do if Unity v2019.04 on iOS reports the following error?
+Library/PackageCache/com.unity.textmeshpro@3.0.1/Scripts/Editor/TMP_PackageUtilities.cs(453,84): error CS0103: The name 'VersionControlSettings' does not exist in the current context
+Open the source code and delete the code snippet of `|| VersionControlSettings.mode != "Visible Meta Files"`.

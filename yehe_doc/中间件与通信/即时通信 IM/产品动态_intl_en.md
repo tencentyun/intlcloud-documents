@@ -1,8 +1,25 @@
 ## July 2021
 
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> 
+<tr>
+    <td> SDK 5.5.897 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+	<li>Fixed occasional data reporting crashes.</li>
+        <li>Removed the call of `getSimOperatorName()` for getting the carrier name.</li>
+    </ul></td>
+    <td> July 29, 2021 </td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+<tr>
+    <td> SDK 5.1.65 release (basic edition)</td>
+    <td><ul style="margin:0">
+        <li>Removed the call of `getSimOperatorName()` for getting the carrier name.</li>
+    </ul></td>
+    <td> July 29, 2021 </td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
 <tr>
     <td> SDK 5.5.892 release (enhanced edition)</td>
     <td><ul style="margin:0">
@@ -30,7 +47,7 @@
 ## June 2021
 
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> 
 <tr>
     <td> SDK 5.4.666 release (enhanced edition)</td>
@@ -58,7 +75,7 @@
 ## May 2021
 
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> 
 <tr>
     <td> SDK 5.3.435 release (lite edition)</td>
@@ -88,7 +105,7 @@
 ## April 2021
 
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> 
 <tr>
     <td> SDK 5.3.425 release (lite edition)</td>
@@ -129,7 +146,7 @@
 ## March 2021
 
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> 
 <tr>
 	<td> SDK 5.2.210 release (lite edition)</td>
@@ -160,9 +177,7 @@
 	<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
 </tr>
 </table>
-
 ## January 2021
-
 <table>
 <tr>
     <th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
@@ -490,6 +505,7 @@
 </tr>
 </table>
 
+
 ## October 2020
 
 <table>
@@ -554,7 +570,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 4.9.1 release (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Optimized login outside Chinese mainland.</li>
     <li>Fixed file upload failures in some regions outside Chinese mainland.</li>
     <li>Fixed file upload failures for accounts containing the @ symbol.</li>
@@ -575,7 +591,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Android: optimized the offline push of the demo and upgraded the push SDK version for each vendor.</li>
 </ul></td>
 <td>July 24, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK download</a></td>
 </tr> </table>
 
 
@@ -585,7 +601,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 4.8.50 release (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Fixed the API 2.0 issue where the onMemberEnter callback was not triggered when someone entered a audio-video group (AVChatRoom).</li>
     <li>Added the groupID parameter to the onGroupInfoChanged and onMemberInfoChanged callbacks of API 2.0.</li>
     <li>Fixed the issue where there was no conversation update callback after a C2C message was sent successfully.</li>
@@ -602,7 +618,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Added support for AndroidX.</li>
 </ul></td>
 <td>June 22, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK download</a></td>
 </tr> </table>
 
 ## May 2020
@@ -611,7 +627,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 4.8 release (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>iOS & Android launched all-new API 2.0.</li>
     <li>iOS and Android support IPv6.</li>
     <li>Audio-video groups (AVChatRoom) support dynamic updates of the group member list.</li>
@@ -622,7 +638,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the crashes of Android devices caused by network permission issues.</li>
 </ul></td>
 <td>May 15, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK download</a></td>
 </tr> </table>
 
 
@@ -640,10 +656,10 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Deprecated the TIM.EVENT.GROUP_SYSTEM_NOTICE_RECEIVED API, and replaced it with MESSAGE_RECEIVED.</li>
     <li>Fixed an occasional error that occurred when calling getGroupList.</li></ul></td>
 <td>March 30, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK download</a></td>
 </tr><tr>
 <td>SDK 4.7 release (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Optimized the local log size.</li>
     <li>Improved login speed.</li>
     <li>Fixed an issue with unread count synchronization across multiple devices.</li>
@@ -651,7 +667,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>You can now set the message title and content to display on the push notifications bar on iOS and Android devices respectively.</li>
 </ul></td>
 <td>March 23, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK download</a></td>
 </tr> </table>
 
 ## February 2020
@@ -665,10 +681,10 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Optimized COS uploads.</li>
     <li>Improved the logic for processing pending requests for groups.</li></ul></td>
 <td>February 28, 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr><tr>
 <td>SDK 2.5 release (Mini Program and Web)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Added the network status change event TIM.EVENT.NET_STATE_CHANGE, which enables the access side to provide prompts and instructions.</li>
     <li>Added support for running in WeChat Mini Program plug-in environments.</li>
     <li>Reduced and optimized error codes.</li>
@@ -676,7 +692,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where, when groups were frequently created and terminated in the console or through RESTful APIs, the SDK did not deliver the TIM.EVENT.GROUP_SYSTEM_NOTICE_RECEIVED event.</li>
     <li>Fixed an occasional issue where getMessageList would fail to pull group message lists.</li></ul></td>
 <td>February 28, 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## January 2020
@@ -685,7 +701,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 2.4 release (Mini Program and Web)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Added the revokeMessage API to recall messages.</li>
     <li>Added the isRevoked property in Message, which identifies a recalled message when its value is true.</li>
     <li>Added TIM.EVENT.MESSAGE_REVOKED, which is the event notification for message recalls.</li>
@@ -700,7 +716,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where the JOIN_STATUS_ALREADY_IN_GROUP event occasionally occurred when a user logged in and joined an audio-video chat room.</li>
     <li>Fixed potential performance issues caused by core-js.</li></ul></td>
 <td>January 03, 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## December 2019
@@ -714,10 +730,10 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Added the getSenderNickname API for messages.</li>
     <li>TUIKit/Demo: profile photos displayed in conversation lists can be set to have rounded corners.</li></ul></td>
 <td>December 23, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr><tr>
 <td>SDK 2.3 release (Mini Program and Web)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>createImageMessage and createFileMessage APIs added support for passing in File objects.</li>
     <li>Added createFaceMessage to create emoji messages.</li>
     <li>Optimized the message notification efficiency of TIM.TYPES.GRP_AVCHATROOM groups to greatly improve the user experience.</li>
@@ -732,7 +748,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where, when "multi-instance" or "multi-client" login was enabled, other instances or clients failed to receive messages after a web instance was logged out.</li>
     <li>Fixed the issue where the SDK occasionally reported errors due to the structure of conversation lists that were pulled.</li></ul></td>
 <td>December 13, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## November 2019
@@ -740,7 +756,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 2.2 release (Mini Program and Web)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Mini Programs support createVideoMessage for creating and sending video messages. Video messages can be synced across platforms (you need to update to the latest versions of the TUIKit and SDK).</li>
     <li>Added the getGroupMemberProfile API for querying group members’ profiles.</li>
     <li>Compatible with audio and file messages sent by Native IM v3.x.</li>
@@ -750,10 +766,10 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where the Internet Explorer 10 browser would report errors.</li>
     <li>Fixed the issue where anonymous users could not join groups.</li></ul></td>
 <td>November 21, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr><tr>
 <td>SDK 4.6 release (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Roaming message recalls are now supported.</li>
     <li>iOS/Mac: added OPPOChannelID settings to fix the issue where OPPO mobile phones running Android 8.0 or later failed to receive iOS push messages.</li>
     <li>iOS/Mac: optimized the annotations of objects returned by getGrouplist.</li>
@@ -761,12 +777,12 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>TUIKit/Demo: added the video call feature.</li>
     <li>TUIKit/Demo: added 3x3 grid display of group profile photos and optimized the conversation list, contacts, and chat UI.</li></ul></td>
 <td>November 13, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr><tr>
 <td>Fixed pricing for message history storage</td>
 <td>With fixed pricing, message history storage is easier and more cost-efficient to use.</td>
 <td>November 04, 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/34350">Price Specification</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/34350">Pricing</a></td>
 </tr> </table>
 
 ## October 2019
@@ -776,7 +792,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Launch of a new console</td>
 <td>Officially launched a new edition of the IM console.</td>
 <td>October 22, 2019</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li><a href="https://intl.cloud.tencent.com/document/product/1047/34577">Creating and Upgrading Applications</a></li>
     <li><a href="https://intl.cloud.tencent.com/document/product/1047/34540">Basic Configuration</a></li>
     <li><a href="https://intl.cloud.tencent.com/document/product/1047/34419">Feature Configuration</a></li>
@@ -786,7 +802,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li><a href="https://intl.cloud.tencent.com/document/product/1047/34580">Development Tools</a></li></ul></td>
 </tr><tr>
 <td>SDK 4.5 improvements (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Added file format extension to the URL generated upon sending a file message.</li>
     <li>Added a notification callback after custom group fields are modified.</li>
     <li>Local user and group information can be obtained before login by calling the initStorage method.</li>
@@ -794,10 +810,10 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Windows: improved the network reconnection speeds of different platforms across platform libraries.</li>
     <li>Windows: added JVM configurations to cross-platform libraries to facilitate passing jvm from an Android environment.</li></ul></td>
 <td>October 16, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr><tr>
 <td>SDK 2.1 release (Mini Program and Web)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Added support for receiving audio and video messages.</li>
     <li>Changed the maximum number of messages that can be pulled by a single call to the getMessageList API to 15.</li>
     <li>Deprecated TIM.TYPES.MSG_SOUND and replaced it with TIM.TYPES.MSG_AUDIO.</li>
@@ -805,7 +821,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where group system notifications did not show group names.</li>
     <li>Fixed the issue where a conversation created after receiving a new message did not have the profile of the message sender.</li></ul></td>
 <td>October 16, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## September 2019
@@ -815,15 +831,15 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>SDK 2.0 release (Mini Program and Web)</td>
 <td>The new IM SDK for Mini Program and IM SDK for Web offer better module stability and overall connection experience, as well as visualized Demo for convenient and easy try-out by customers.</td>
 <td>September 19, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr><tr>
 <td>SDK 4.5 improvements (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Android: added read receipts.</li>
     <li>Improved network connection quality.</li>
     <li>Optimized the logic for pulling custom group/group member fields.</li></ul></td>
 <td>September 18, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## August 2019
@@ -831,7 +847,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 4.5 release (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Added MotionEvent.ACTION_CANCEL event handling for audio messages in chats.</li>
     <li>Added profile photo display in the conversation list, chat interface, detailed profile, and contacts.</li>
     <li>Added profile photo change in user profiles.</li>
@@ -856,12 +872,12 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Improved the latest conversation list loading speed after login.</li>
     <li>Improved the file message sending speed for users outside Chinese mainland.</li></ul></td>
 <td>August 30, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr><tr>
 <td>Renamed “Instant Messaging (IM)”</td>
 <td>“Cloud Communication” is now “Instant Messaging (IM)”.</td>
 <td>August 06, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## July 2019
@@ -869,7 +885,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 4.4 improvements (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Organized and merged some APIs.</li>
     <li>Added options to add friends in a one-way or two-way manner.</li>
     <li>Added the disableStorage API to disable all local storage.</li>
@@ -878,7 +894,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where it took a long time to deliver messages when the app went to the foreground after remaining in the background for a long time.</li>
     <li>Optimized the one-to-one chat unread count.</li></ul></td>
 <td>July 16, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## June 2019
@@ -886,14 +902,14 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 4.4 and new Demo release (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Launched the TUIKit with a new mobile client UI design and product Demo.</li>
     <li>Improved Demo features such as contacts, group management, and relationship chain.</li>
     <li>Optimized the cache to mitigate UI lag.</li>
     <li>Improved the message sending efficiency.</li>
     <li>Added the JSON key for getting the unique ID of messages for cross-platform library messages.</li></ul></td>
 <td>June 27, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## May 2019
@@ -901,7 +917,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
             <td>SDK 4.3 improvements (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Added querySelfProfile and queryUserProfile to the TIMFriendshipManager class (reading local data).</li>
     <li>Added the addTime field when getting a friend's profile.</li>
     <li>Added support for x86 and x86_64 architectures.</li>
@@ -920,7 +936,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Improved the network reconnection speed when iOS devices switch to Wi-Fi networks.</li>
     <li>Optimized group message synchronization.</li></ul></td>
 <td>May 24, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## April 2019
@@ -928,7 +944,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 4.3 release (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>Added relationship chain features such as blocklist, friend list, and friend request handling.</li>
     <li>Optimized issues related to unread counts.</li>
     <li>Optimized the message read status.</li>
@@ -941,7 +957,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where group messages occasionally could not be received.</li>
     <li>Added support for IP connection and login information reporting.</li></ul></td>
 <td>April 24, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## March 2019
@@ -949,7 +965,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 4.2 release (Android, iOS, and Windows)</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>iOS: TUIKit.framework supports bitcode 2.</li>
     <li>iOS: pod can directly integrate the TUIKit.framework.</li>
     <li>Windows: added the IM demo with the duilib library as a UI component.</li>
@@ -971,7 +987,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where messages occasionally failed to be sent.</li>
     <li>Fixed the issue where clients did not receive relevant instructions after a group was deleted in the backend.</li></ul></td>
 <td>March 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## January 2019
@@ -981,7 +997,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>SDK 4.0 release (Android, iOS, and Windows)</td>
 <td>The new IM client SDK fixed issues with network connection, sending and receiving messages, and unread count, significantly improved the stability of important underlying modules such as network and message, and provides open source TUIKit to simplify the connection process for customers.</td>
 <td>January 21, 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## July 2017
@@ -991,17 +1007,17 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for UGC short videos</td>
 <td>Added support for UGC short video messages with video editing feature, providing better content and user experience.</td>
 <td>July 2017</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## May 2017
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
-<td>SDK 3.0 release</td>
+<td>SDK v3.0 release</td>
 <td>More features, smaller size, and optimized code structure to improve customer integration efficiency and download experience.</td>
 <td>May 2017</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## December 2016
@@ -1011,7 +1027,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for multi-instance force offline</td>
 <td>Meets the needs for multi-instance force offline and for customer service scenario on web clients.</td>
 <td>December 2016</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## August 2016
@@ -1021,12 +1037,12 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for broadcast messages</td>
 <td>Broadcast messages can now be pushed to all members to improve message delivery efficiency and meet customers’ needs for message push.</td>
 <td>August 2016</td>
-<td>N/A</td>
+<td>-</td>
 </tr><tr>
 <td>Support for multi-device login</td>
 <td>Multi-device login is now supported to meet the need for using both mobile phone and PC, improving user experience.</td>
-<td>2016-08</td>
-<td>N/A</td>
+<td>August 2016</td>
+<td>-</td>
 </tr> </table>
 
 ## May 2016
@@ -1036,7 +1052,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Launch of audio-video chat rooms</td>
 <td>Audio-video chat rooms with unlimited participants are now available for live streaming scenarios, providing features such as message frequency limit and custom messages.</td>
 <td>May 2016</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## March 2016
@@ -1046,7 +1062,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for message push</td>
 <td>Push notifications in Android and iOS are now supported to ensure message delivery and better user experience.</td>
 <td>March 2016</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## December 2015
@@ -1056,7 +1072,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for short video messages</td>
 <td>Short video messages are now supported, providing richer message content.</td>
 <td>December 2015</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## August 2015
@@ -1066,7 +1082,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for web platform</td>   
 <td>IM for web now supports custom emoji messages.</td>
 <td>August 2015</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## July 2015
@@ -1076,7 +1092,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for Windows platform</td>
 <td>IM for Windows now supports location and audio messages.</td>
 <td>July 2015</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 ## May 2015
@@ -1086,7 +1102,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Launch of Instant Messaging IM (formerly Cloud Communication)</td>
 <td>IM for Android and IM for iOS support multiple message types including text, image, and emoji.</td>
 <td>May 2015</td>
-<td>N/A</td>
+<td>-</td>
 </tr> </table>
 
 

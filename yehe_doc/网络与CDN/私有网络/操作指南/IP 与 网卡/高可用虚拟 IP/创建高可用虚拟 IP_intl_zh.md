@@ -50,6 +50,6 @@ vrrp_instanceVI_1 {
 + [最佳实践 - 用 HAVIP + Windows Server Failover Cluster 搭建高可用 DB](https://intl.cloud.tencent.com/document/product/215/31878) 
 
 ## 相关文档
-高可用虚拟 IP 与普通内网 IP 类似，均支持在控制台绑定或解绑 EIP，如果您有公网通信的需求，可参考 [绑定或解绑 EIP](https://cloud.tencent.com/document/product/215/53706)，如无，可不绑定 EIP。
+高可用虚拟 IP 与普通内网 IP 类似，均支持在控制台绑定或解绑 EIP，如果您有公网通信的需求，可参考 [绑定或解绑 EIP](https://intl.cloud.tencent.com/zh/document/product/215/40083)，如无，可不绑定 EIP。
 
 
