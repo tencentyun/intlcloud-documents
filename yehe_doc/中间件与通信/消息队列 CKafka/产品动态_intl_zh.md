@@ -85,7 +85,7 @@
 
 
 
-## 2021年06月
+## 2021年07月
 
 <table><tr>
 <th width="20%">动态名称</th>
@@ -466,7 +466,7 @@
 <td>支持自动创建 Topic</td>
 <td>您在控制台开启自动创建 Topic 后，使用或获取不存在的主题元数据时，服务器将自动使用配置的副本数和分区数进行创建。</td>
 <td>2019-05-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/40039">创建 Topic</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">创建 Topic</a></td>
 </tr></table>
 
 
@@ -506,7 +506,7 @@
 <td>延长消息保留时间</td>
 <td>CKafka 消息保留时间最大限制从1个月延长至3个月。</td>
 <td>2019-03-28</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/40039">创建实例</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/39718">创建实例</a></td>
 </tr><tr>
 <td>新增国际地域</td>
 <td>CKafka 新增设2个国际地域和1个国际大区：多伦多、弗吉尼亚、硅谷一区。</td>
