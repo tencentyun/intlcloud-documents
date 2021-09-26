@@ -100,7 +100,7 @@ For Chinese mainland mobile numbers, please enter the mobile numbers directly: <
 
 ## Step 5. View SMS delivery result
 You can view the SMS delivery result in the following ways:
-- On the **Chinese mainland SMS** > **Bulk SMS** page, click **Details & Receipt Analytics** on the line of the target task to view its detailed record and report analysis.
-- Select **Statistics and Analytics** > **Chinese mainland SMS** and you can filter and view the statistics and relevant analysis of Chinese mainland SMS by application, signature, body template, and time.
+- On the **Chinese Mainland SMS** > **Bulk SMS** page, click **Details & Receipt Analytics** on the line of the target task to view its detailed record and report analysis.
+- Select **Statistics and Analytics** > **Chinese Mainland SMS** and you can filter and view the statistics and relevant analysis of Chinese mainland SMS by application, signature, body template, and time.
 
 
