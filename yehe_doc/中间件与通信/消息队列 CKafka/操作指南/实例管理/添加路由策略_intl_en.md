@@ -28,7 +28,7 @@ The VPC access address provided in the console (such as `172.16.0.12:9092`) repr
 
 ::: 
 
-::: Public domain name access
+::: Public\sdomain\sname\saccess
 **Operation scenario**: if your consumer or producer is located in a self-built data center or another cloud, you can produce and consume data in CKafka through public network access.
 
 **Suggestion**: to ensure security, Kafka offers various security authentication mechanisms, which mainly fall into the SSL and SASL2 categories. Among them, SASL/PLAIN is an authentication method based on account and password and more commonly used. CKafka supports SASL_PLAINTEXT authentication. You are recommended to configure the authentication method as appropriate when selecting public domain name access.
@@ -39,7 +39,11 @@ The VPC access address provided in the console (such as `172.16.0.12:9092`) repr
 4. In the pop-up window, select **Public domain name access** as the route type and select the access mode and network.
 ![](https://main.qcloudimg.com/raw/c4d1852255a63b38bfc199d3b6d1711b.png)
 5. Click **Submit** to add the public network routing policy.
->?CKafka provides 3 Mbps public network bandwidth free of charge by default, which can be increased to up to 198 Mbps for Pro Edition instances. For detailed directions, please see [Upgrading public network bandwidth](https://cloud.tencent.com/document/product/597/61319#.E5.8D.87.E9.85.8D.E5.85.AC.E7.BD.91.E5.B8.A6.E5.AE.BD).
+<dx-alert infotype="explain">
+<ul>
+ <li>CKafka provides 3 Mbps public network bandwidth free of charge by default, which can be increased to up to 198 Mbps for Pro Edition instances.</li>
+</ul>
+</dx-alert>
 
 :::
 </dx-tabs>
