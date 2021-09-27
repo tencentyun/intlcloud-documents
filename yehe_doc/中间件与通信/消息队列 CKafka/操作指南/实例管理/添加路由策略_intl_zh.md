@@ -39,7 +39,11 @@
 4. 在弹窗中，路由类型选择 **公网域名接入**，选择好接入方式和网络。
 ![](https://main.qcloudimg.com/raw/c4d1852255a63b38bfc199d3b6d1711b.png)
 5. 单击**提交**，完成公网路由策略添加。
->?CKafka 默认提供3Mbps 免费公网带宽，专业版实例可以额外升配公网带宽，最高可提升至198Mbps。具体操作参考 [升配公网带宽](https://cloud.tencent.com/document/product/597/61319#.E5.8D.87.E9.85.8D.E5.85.AC.E7.BD.91.E5.B8.A6.E5.AE.BD)。
+<dx-alert infotype="explain">
+<ul>
+ <li>CKafka 默认提供3Mbps 免费公网带宽，专业版实例可以额外升配公网带宽，最高可提升至198Mbps。</li>
+</ul>
+</dx-alert>
 
 :::
 </dx-tabs>
