@@ -1,11 +1,15 @@
 ## 功能概述
-对象存储通过数据万象 **imageMogr2** 接口调节图片亮度。
+对象存储通过数据万象 **imageMogr2** 接口提供旋转功能，包括普通旋转和自适应旋转。
 
 该功能支持以下处理方式：
 
 - 下载时处理
 - 上传时处理
 - 云上数据处理
+
+>! 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象图片处理费用。
+>
+
 
 ## 限制说明
 
@@ -14,13 +18,17 @@
 - 动图帧数限制：gif 帧数限300帧。
 
 
-## 接口示例
+
+## 接口形式
 
 #### 1. 下载时处理
 
 ```plaintext
-download_url?imageMogr2/bright/<value>					
+download_url?imageMogr2/rotate/<rotateDegree>
+					   /auto-orient
 ```
+
+>! 请忽略上面的空格与换行符。
 
 #### 2. 上传时处理
 
@@ -34,7 +42,8 @@ Pic-Operations:
   "is_pic_info": 1,
   "rules": [{
       "fileid": "exampleobject",
-      "rule": "imageMogr2/bright/<value>"
+      "rule": "imageMogr2/rotate/<rotateDegree>
+					   /auto-orient"
   }]
 }
 ```
@@ -52,7 +61,8 @@ Pic-Operations:
   "is_pic_info": 1,
   "rules": [{
       "fileid": "exampleobject",
-      "rule": "imageMogr2/bright/<value>"
+      "rule": "imageMogr2/rotate/<rotateDegree>
+					   /auto-orient"
   }]
 }
 ```
@@ -60,43 +70,43 @@ Pic-Operations:
 >? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 >
 
+
 ## 处理参数说明
 
-操作名称：bright。
-
-| 参数             | 含义                                                         |
-| ---------------- | ------------------------------------------------------------ |
+| 参数                      | 含义                                                         |
+| ------------------------- | ------------------------------------------------------------ |
 | download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`。 |
-| /bright/&lt;value> | 图片亮度调节功能，value 为亮度参数值，取值范围为[-100, 100]的整数。<br><li>取值＜0：降低图片亮度。</li><li>取值 = 0：不调整图片亮度。</li><li>取值＞0：提高图片亮度。</li> |
-| /ignore-error/1            | 当处理参数中携带此参数时，针对文件过大导致处理失败的场景，会直接返回原图而不报错。         |
+| /rotate/&lt;rotateDegree> | 普通旋转：图片顺时针旋转角度，取值范围0 - 360，默认不旋转。  |
+| /auto-orient              | 自适应旋转：根据原图 EXIF 信息将图片自适应旋转回正。         |
+| /flip/&lt;flip&gt;            | 镜像翻转：flip 值为 vertical 表示垂直翻转，horizontal 表示水平翻转         |
+| /ignore-error/1            | 当处理参数中携带此参数时，针对文件过大导致处理失败的场景，会直接返回原图而不报错         |
 
 ## 实际案例
 
 >? 本篇文档中的实际案例仅包含**下载时处理**，该类处理不会保存处理后的图片至存储桶。如有保存需求，您可查阅 [图片持久化处理](https://intl.cloud.tencent.com/document/product/436/40592) 文档并配置**上传时处理**或**云上数据处理**。
 
 
-#### 案例一：亮度调节
-
-将图片亮度提高70，示例如下：
+#### 案例一：普通旋转
+顺时针旋转90度，示例如下：
 
 ```plaintext
-http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/bright/70
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/rotate/90
 ```
 
 最终效果如下：
+![](https://main.qcloudimg.com/raw/2d47c4f47b8f9c8eca85a3590a106e14.jpeg)
 
-![](https://main.qcloudimg.com/raw/f0fac36084c6d6709ad832c91752ee28.jpg)	
-  
-#### 案例二：亮度调节并携带私有文件签名
+#### 案例二：普通旋转并携带私有文件签名
 
 处理方式同上，仅增加签名部分，并与图片处理参数以“&”连接，示例如下：
 
 ```plaintext
-http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/bright/70
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/rotate/90
 ```
 
 >? `<signature>` 为签名部分，获取方式请参考 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778)。
 >
+
 
 ## 注意事项
 
@@ -105,6 +115,4 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algor
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=sha1&q-ak=AKID********************&q-sign-time=1593342360;1593342720&q-key-time=1593342360;1593342720&q-header-list=&q-url-param-list=watermark%252f1%252fimage%252fahr0cdovl2v4yw1wbgvzlteyntewmdawmdqucgljc2gubxlxy2xvdwquy29tl3nodwl5aw4uanbn%252fgravity%252fsoutheast&q-signature=26a429871963375c88081ef60247c5746e834a98&watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast
 ```
-
-
 

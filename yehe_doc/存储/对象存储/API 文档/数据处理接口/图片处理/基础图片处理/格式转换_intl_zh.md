@@ -1,6 +1,5 @@
 ## 功能概述
-
-对象存储通过数据万象 **imageMogr2** 接口对图片质量进行调节。
+对象存储通过数据万象接口 **imageMogr2** 提供格式转换、gif 格式优化、渐进显示功能。
 
 该功能支持以下处理方式：
 
@@ -8,20 +7,24 @@
 - 上传时处理
 - 云上数据处理
 
->? 
->- 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象图片处理费用。
->- 该接口支持 jpg、webp、tpg、heif、avif 格式图片。
+>! 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象图片处理费用。
+>
+
+## 限制说明
+
+- gif、webp、tpg 等动图，支持互相转换。
+- jpg、png、bmp、tpg、heif 等静态图片，支持互相转换。
 
 
 
-## 接口示例
+## 接口形式
 
 #### 1. 下载时处理
 
 ```plaintext
-download_url?imageMogr2/quality/<Quality>
-                       /rquality/<quality>
-                       /lquality/<quality>
+download_url?imageMogr2/format/<Format>
+					   /cgif/<FrameNumber>
+					   /interlace/<Mode>
 ```
 
 #### 2. 上传时处理
@@ -36,9 +39,9 @@ Pic-Operations:
   "is_pic_info": 1,
   "rules": [{
       "fileid": "exampleobject",
-      "rule": "imageMogr2/quality/<Quality>
-                       /rquality/<quality>
-                       /lquality/<quality>"
+      "rule": "imageMogr2/format/<Format>
+					   /cgif/<FrameNumber>
+					   /interlace/<Mode>"
   }]
 }
 ```
@@ -56,9 +59,9 @@ Pic-Operations:
   "is_pic_info": 1,
   "rules": [{
       "fileid": "exampleobject",
-      "rule": "imageMogr2/quality/<Quality>
-                       /rquality/<quality>
-                       /lquality/<quality>"
+      "rule": "imageMogr2/format/<Format>
+					   /cgif/<FrameNumber>
+					   /interlace/<Mode>"
   }]
 }
 ```
@@ -68,14 +71,12 @@ Pic-Operations:
 
 ## 处理参数说明
 
-操作名称：quality。
-
-| 参数                | 含义                                                         |
-| ------------------- | ------------------------------------------------------------ |
+| 参数                 | 含义                                                         |
+| -------------------- | ------------------------------------------------------------ |
 | download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`。 |
-| /quality/&lt;Quality>  | 图片的绝对质量，取值范围0 - 100，默认值为原图质量；取原图质量和指定质量的最小值；&lt;Quality&gt;后面加“!”表示强制使用指定值，例如：`90!`。 |
-| /rquality/&lt;quality> | 图片的相对质量，取值范围0 - 100，数值以原图质量为标准。例如原图质量为80，将 rquality 设置为80后，得到处理结果图的图片质量为64（80x80%）。 |
-| /lquality/&lt;quality> | 图片的最低质量，取值范围0 - 100，设置结果图的质量参数最小值。<br><li>例如原图质量为85，将 lquality 设置为80后，处理结果图的图片质量为85。<br><li>例如原图质量为60，将 lquality 设置为80后，处理结果图的图片质量会被提升至80。 |
+| /format/&lt;Format>  | 格式转换：目标缩略图的图片格式可为：jpg，bmp，gif，png，webp，yjpeg 等，其中 yjpeg 为数据万象针对 jpeg 格式进行的优化，本质为 jpg 格式；缺省为原图格式。 |
+| /cgif/&lt;FrameNumber&gt;  | gif 格式优化：只针对原图为 gif 格式，对 gif 图片格式进行的优化，降帧降颜色。分为以下两种情况：<li>FrameNumber=1，则按照默认帧数30处理，如果图片帧数大于该帧数则截取。<li>FrameNumber 取值( 1,100 ]，则将图片压缩到指定帧数 （FrameNumber）。 |
+| /interlace/&lt;Mode> | 输出为渐进式 jpg 格式。Mode 可为0或1。0：表示不开启渐进式；1：表示开启渐进式。该参数仅在输出图片格式为 jpg 格式时有效。如果输出非 jpg 图片格式，会忽略该参数，默认值0。 |
 | /ignore-error/1            | 当处理参数中携带此参数时，针对文件过大导致处理失败的场景，会直接返回原图而不报错         |
 
 
@@ -84,38 +85,22 @@ Pic-Operations:
 >? 本篇文档中的实际案例仅包含**下载时处理**，该类处理不会保存处理后的图片至存储桶。如有保存需求，您可查阅 [图片持久化处理](https://intl.cloud.tencent.com/document/product/436/40592) 文档并配置**上传时处理**或**云上数据处理**。
 
 
-#### 案例一：设置绝对质量
-
-假设设置**绝对质量**为60，示例如下：
-```plaintext
-http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?imageMogr2/quality/60
-```
-
-效果如下：
-![](https://main.qcloudimg.com/raw/499501182b2989899116d958f94368a5.jpeg)
-
-#### 案例二：设置相对质量
-
-假设设置**相对质量**为60，示例如下：
+#### 案例一：将 jpeg 格式的原图片转换为 png 格式
 
 ```plaintext
-http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/rquality/60
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/format/png
 ```
 
-效果如下：
-![](https://main.qcloudimg.com/raw/7b111c90aca02d94d0f11991d92e64cb.jpeg)
-
-#### 案例三：设置相对质量为60并携带私有文件签名
+#### 案例二：将 jpeg 格式的原图片转换为 png 格式并携带私有文件签名
 
 处理方式同上，仅增加签名部分，并与图片处理参数以“&”连接，示例如下：
 
 ```plaintext
-http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/rquality/60
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/format/png
 ```
 
->? `<signature>`为签名部分，获取方式请参考 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778)。
+>? `<signature>` 为签名部分，获取方式请参考 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778)。
 >
-
 
 ## 注意事项
 
@@ -127,5 +112,4 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algor
 ```
 
 
-
-
+​	
