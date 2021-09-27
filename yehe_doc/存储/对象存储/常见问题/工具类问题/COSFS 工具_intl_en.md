@@ -246,14 +246,13 @@ rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm --force
 COSFS requires the GetBucket permission on the root directory. Therefore, you need to add the GetBucket permission on the root directory and the read permission on the corresponding directory. In that way, you can list other directories but have no operation permission on them.
 
 
-### Why are the values of `Size` and `Avaliable` are 256 TB after I run `df`?
+### Why are the values of `Size` and `Available` are 256 TB after I run `df`?
 In fact, COS buckets offer unlimited storage capacity. The 256 TB displayed is only used as the output of `df`.
 
 ### Why is the value of `Used` is 0 after I run `df`?
-COSFS does not occupy local storage. In order to be compatible with tools such as `df`, the values of `Size`, `Used`, and `Avaliable` displayed in COSFS are not the actual values.
+COSFS does not occupy local storage. In order to be compatible with tools such as `df`, the values of `Size`, `Used`, and `Available` displayed in COSFS are not the actual values.
 
 ### Why are the values of `Inode`, `IUsed, ` and `IFree` are 0 after I run `df -i`?
 COSFS is not a disk-based file system and thus does not have `inode`.
-
 
 
