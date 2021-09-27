@@ -6,9 +6,9 @@
 ## 操作步骤
 1. 登录 [密钥管理系统（合规）](https://console.cloud.tencent.com/kms2) 控制台。
 2. 选择需要计划删除的密钥，在其右侧单击【计划删除】。若是正在启用状态的密钥请先对密钥进行禁用操作。
-![](https://main.qcloudimg.com/raw/6c0a32fa83cf4a587e03a4b075672ea8.png)
+![](https://main.qcloudimg.com/raw/e72146fde0582c9c0299ab7386bb9cbb.png)
 3. 输入计划删除天数，单击【确定】，确认计划删除以及指定天数后，密钥将按计划删除。
-![](https://main.qcloudimg.com/raw/fe2bfc5e05fd921262dc9f46b7ff1314.jpg)
+![](https://main.qcloudimg.com/raw/b08c5d89a9754e5cbc36426d7ae2a1be.png)
 >! 计划删除天数可选范围为7-30天。密钥删除后将无法恢复，此密钥下的所有加密数据也将无法解密。
 为避免误删除行为，KMS服务将对以下操作进行自动告警：
 >- 密钥被彻底删除前，对尝试调用此密钥的行为进行提示告警。
