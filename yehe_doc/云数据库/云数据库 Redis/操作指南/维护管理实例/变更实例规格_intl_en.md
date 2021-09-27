@@ -1,7 +1,7 @@
 
 ## Overview
 This document describes how to elastically scale an instance in the TencentDB for Redis console to better optimize resource utilization and costs in real time.
->?Currently, the capacity of a pay-as-you-go instance cannot be reduced.
+
 
 ## Directions
 ### Scaling a memory edition instance in standard architecture

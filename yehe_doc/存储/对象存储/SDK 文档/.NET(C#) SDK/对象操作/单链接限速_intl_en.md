@@ -20,7 +20,7 @@ string cosPath = "dir/exampleObject"; // Object key
 string srcPath = @"temp-source-file";// Absolute path to the local file
 
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, srcPath);
-putObjectRequest.LimitTraffic(8 * 1000 * 1000); // Set the limit to 1 MB/s
+putObjectRequest.LimitTraffic(8 * 1024 * 1024); // Set the limit to 1 MB/s
 
 COSXMLUploadTask uploadTask = new COSXMLUploadTask(putObjectRequest);
 
@@ -47,7 +47,7 @@ string localFileName = "my-local-temp-file"; // Specify the name of the file to 
 
 GetObjectRequest request = new GetObjectRequest(bucket, 
         cosPath, localDir, localFileName);
-request.LimitTraffic(8 * 1000 * 1024); // Set the limit to 1 MB/s
+request.LimitTraffic(8 * 1024 * 1024); // Set the limit to 1 MB/s
 
 COSXMLDownloadTask downloadTask = new COSXMLDownloadTask(request);
 await transferManager.DownloadAsync(downloadTask);

@@ -75,9 +75,8 @@ The demo output is in the `output/release/bin` folder. For example, to run the `
    set(PLATFORM 	  "windows")
 ```
 4. Visual Studio will automatically build the CMake cache. Just wait for the build to complete.
-
+![](https://main.qcloudimg.com/raw/e32548904810ed92ecd52cd5803d23ff.png)
 5. After the cache is generated, select **Build** > **Build All**.
-
+![](https://main.qcloudimg.com/raw/8afc803e904f2e06eaa8948d1a8c1b81.png)
 6. Select the corresponding demo for running, which should correspond to the user information.
-
-
+![](https://main.qcloudimg.com/raw/c02877b0975625858b9fe51cb9c4114c.png)

@@ -3,7 +3,7 @@ Once a rule is created, you can write SQL statements to process the data in a ce
 
 
 For example, if you want to extract three fields `action`, `targetDevice`, and `count` from the JSON message in the `E23VBC3GE8/device_02/event` topic and then filter them by **count <= 3** to get the final processed data for further forwarding, use the following rule:
-
+![](https://main.qcloudimg.com/raw/b5702c494e9b2a4e084a3dab89e3bf2a.png)
 
 ## Action
 When you extract the desired fields from the topic, you should consider performing some operations on them, such as forwarding or storage. Currently supported operations include:

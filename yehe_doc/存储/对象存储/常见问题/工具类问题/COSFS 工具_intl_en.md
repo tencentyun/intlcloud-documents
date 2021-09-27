@@ -256,4 +256,3 @@ COSFS does not occupy local storage. In order to be compatible with tools such a
 COSFS is not a disk-based file system and thus does not have `inode`.
 
 
-

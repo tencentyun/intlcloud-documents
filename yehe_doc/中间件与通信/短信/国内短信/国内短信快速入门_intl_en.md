@@ -1,4 +1,4 @@
-This document uses sending a message `[Tencent Cloud] Your verification code is: XXXX` to mobile numbers in Mainland China as an example to describe how to get started with the Mainland China SMS service. For more concepts related to SMS, please see [Common Concepts](https://intl.cloud.tencent.com/document/product/382/13299).
+This document uses sending a message `[Tencent Cloud] Your verification code is: XXXX` to mobile numbers in Chinese mainland as an example to describe how to get started with the Chinese mainland SMS service. For more concepts related to SMS, please see [Common Concepts](https://intl.cloud.tencent.com/document/product/382/13299).
 
 >?The new version of console is displayed to users who activate the SMS service after September 18, 2019 by default.
 
@@ -10,7 +10,7 @@ This document uses sending a message `[Tencent Cloud] Your verification code is:
 ### Applying for activation of SMS
 >?When logging in to the SMS console for the first time, you need to apply to activate the SMS service.
 
-1. Log in to the [SMS console](https://console.cloud.tencent.com/smsv2), click **I've read and agree to Tencent Cloud SMS [Service Agreement](https://cloud.tencent.com/document/product/382/15627)**, and click **Start Access** to activate the service.
+1. Log in to the [SMS console](https://console.cloud.tencent.com/smsv2), click **I've read and agree to Tencent Cloud SMS Service Agreement**, and click **Start Access** to activate the service.
 2. Select **Getting Started** on the left sidebar and click **Start creating** to enter the SMS delivery guide page.
 
 ## Step 2. Configure SMS content
@@ -65,7 +65,7 @@ You can send an SMS message through the console or [API](https://intl.cloud.tenc
 	     <td>9097</td>
      </tr> 
 		 <td>Instructions</td>
-      <td>Please enter the mobile numbers of recipients. All the mobile numbers in one single SMS delivery task must be registered in Mainland China. The cells need to be in a regular format, i.e., without any specific number formats. </td> 
+      <td>Please enter the mobile numbers of recipients. All the mobile numbers in one single SMS delivery task must be registered in Chinese mainland. The cells need to be in a regular format, i.e., without any specific number formats. </td> 
 	     <td>Please enter the first custom variable content according to the body template, i.e., replacing {1} in the template. </td>
      </tr>
 </table>
@@ -83,13 +83,13 @@ You can send an SMS message through the console or [API](https://intl.cloud.tenc
      </tr>
 		 <tr>
 		 <td>Select a customer group</td>
-      <td>Click **Customer Group** and select a number group that has been created in <a href = "https://console.cloud.tencent.com/smsv2/phone-manage/group-manage">Customer Group</a>. For more information, please see <a href = "https://cloud.tencent.com/document/product/382/48787">Customer Management</a>. <br><b>Note:</b> you cannot select a template with variables for <a href = "#model">Template Name</a>.</td> 
+      <td>Click **Customer Group** and select a number group that has been created in <a href = "https://console.cloud.tencent.com/smsv2/phone-manage/group-manage">Customer Group</a>. <br><b>Note:</b> you cannot select a template with variables for <a href = "#model">Template Name</a>.</td> 
 	     <td>Not supported</td>
      </tr> 		
 		 		 <tr>
 		 <td>Enter mobile numbers</td>
       <td>Enter up to 100 mobile numbers and separate them by pressing the Enter key (one number per line).
-For Mainland China mobile numbers, please enter the mobile numbers directly: <br>For example, 1371481xxxx. <br><b>Note:</b> you cannot select a template with variables for <a href = "#model">Template Name</a>.</td> 
+For Chinese mainland mobile numbers, please enter the mobile numbers directly: <br>For example, 1371481xxxx. <br><b>Note:</b> you cannot select a template with variables for <a href = "#model">Template Name</a>.</td> 
 	     <td>Not supported</td>
      </tr> 
 </table>
@@ -100,7 +100,7 @@ For Mainland China mobile numbers, please enter the mobile numbers directly: <br
 
 ## Step 5. View SMS delivery result
 You can view the SMS delivery result in the following ways:
-- On the **Mainland China SMS** > **Bulk SMS** page, click **Details & Receipt Analytics** on the line of the target task to view its detailed record and report analysis.
-- Select **Statistics and Analytics** > **Mainland China SMS** and you can filter and view the statistics and relevant analysis of Mainland China SMS by application, signature, body template, and time.
+- On the **Chinese Mainland SMS** > **Bulk SMS** page, click **Details & Receipt Analytics** on the line of the target task to view its detailed record and report analysis.
+- Select **Statistics and Analytics** > **Chinese Mainland SMS** and you can filter and view the statistics and relevant analysis of Chinese mainland SMS by application, signature, body template, and time.
 
 

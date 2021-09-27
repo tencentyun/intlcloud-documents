@@ -2,7 +2,6 @@
 Databases with excellent performance and scalability can help you quickly increase the load capacity of your existing systems. With the same size of database, TencentDB for MySQL, if appropriately used, can significantly improve database concurrence for higher QPS.
 
 ## 1. Select a Proper Database Configuration
-
 ### 1.1 Select the database version
 TencentDB for MySQL is currently available in v5.5, v5.6, v5.7, and v8.0, all of which are fully compatible with native MySQL. We recommend that you choose v5.6 and later, as they use more stable database kernels, deliver better system performance by optimizing the design of v5.5 and earlier, and come with a lot of appealing new features.
 
@@ -25,7 +24,7 @@ It is included in MySQL v5.7 by default and provides summary views to answer the
  - Which CVM instance accesses the database server most frequently?
  - How is the instance memory used?
 - **InnoDB improvements**
- - Online operations in InnoDB (Online DDL): you can dynamically adjust the buffer pool size to make it adaptive to the change of your business needs without restarting MySQL. InnoDB now can automatically empty its UNDO logs and tablespace online, thus eliminating one of the most common reasons for large shared table space files (ibdata1). In addition, MySQL v5.7 supports renaming indexes and changing the varchar size, both of which could be done only by recreating indexes or tables in previous versions.
+ - Online operations in InnoDB (Online DDL): you can dynamically adjust the buffer pool size to make it adaptive to the change of your business needs without restarting MySQL. InnoDB now can automatically empty its undo logs and tablespace online, thus eliminating one of the most common reasons for large shared tablespace files (ibdata1). In addition, MySQL v5.7 supports renaming indexes and changing the varchar size, both of which could be done only by recreating indexes or tables in previous versions.
  - InnoDB native partitioning: in MySQL v5.7, InnoDB includes the native support for partitioning, which can reduce the load and lower the memory usage by up to 90%.
  - InnoDB cache prefetching: when MySQL restarts, InnoDB will automatically retain 25% of the hottest data in the buffer pool, eliminating your need to preload or prefetch the data cache and preventing potential performance loss caused by MySQL restart.
 
@@ -52,13 +51,22 @@ High availability of TencentDB for MySQL is guaranteed by the source-replica arc
 All the different database versions and memory/disk specifications of TencentDB for MySQL support online dynamic hot upgrade. The upgrade process will not interrupt your business, eliminating your concerns over any database bottlenecks caused by business growth.
 
 ### 1.7 Use CVM and TencentDB for MySQL together
-After a purchase is made, you generally need to use CVM and TencentDB for MySQL together. For more information, see [Accessing TencentDB for MySQL from CVM](https://intl.cloud.tencent.com/document/product/236/37788).
+After a purchase is made, you generally need to use CVM and TencentDB for MySQL together. For more information, see [Connecting to MySQL Instances](https://intl.cloud.tencent.com/document/product/236/37788).
 
-## 2. Take Read-only Replicas as Read Extension
-In common internet-based businesses, the read/write ratio of databases generally ranges from 4:1 to 10:1, which means that the read load of databases is much higher than the write load. When a performance bottleneck occurs, a common solution is to increase the read load.
-TencentDB for MySQL read-only replicas are ideal for such issues. For more information, see [Read-only Replicas](https://intl.cloud.tencent.com/document/product/236/7270).
-Read-only replicas can also be used for read-only access in various businesses; for example, the source instance undertakes read/write access for online businesses, while the read-only replica provides read-only query for internal businesses or data analysis platforms.
+## 2. Take Read-Only Replicas as Read Extension
+In common internet-based businesses, the read/write ratio of databases generally ranges from 4:1 to 10:1, which means that the read load of databases is much higher than the write load. When a performance bottleneck occurs, a common solution is to enhance the ability to handle read load.
+TencentDB for MySQL read-only instances are ideal for such issues. For more information, see [Creating Read-Only Instances](https://intl.cloud.tencent.com/document/product/236/7270).
+Read-Only instances can also be used for read-only access in various businesses; for example, the source instance undertakes read/write access for online businesses, while the read-only instance provides read-only query for internal businesses or data analysis platforms.
 
-## 3. 2-Region-3-DC Program
+## 3. TencenDB Disaster Recovery Solutions
+TencentDB for MySQL provides [disaster recovery instances](https://intl.cloud.tencent.com/document/product/236/7272), helping you quickly set up remote disaster recovery for databases.
+
+With the help of disaster recovery instances, multiple data centers in different regions can act as redundancy of each other, so that when one data center cannot provide a service due to failures or force majeure events, the service can be quickly switched to another data center. Disaster recovery instances use Tencent Cloud private network to sync data and the replication is optimized at the level of MySQL kernel, which can minimize the impact of delayed sync on your business when a disaster occurs. As long as the remote service logic is ready, the disaster recovery switchover can be completed in seconds.
+
+## 4. Two-Region-Three-DC Program
 With TencentDB for MySQL, it only takes several simple steps to configure the 2-region-3-DC scheme:
 - Purchase a TencentDB for MySQL intra-city strong-consistency cluster and select [multi-AZ deployment](https://intl.cloud.tencent.com/document/product/236/8459) (currently in beta test) which provides the 1-region-2-DC capacity.
+- Add remote disaster recovery nodes to the cluster in order to build the 2-region-3-DC architecture.
+
+## 5. Use Disaster Recovery Instances to Provide Users with Nearby Access
+A disaster recovery instance also adopts the high-availability source-replica architecture. In addition, it can be accessed in a read-only manner, which helps enable local access to your businesses for end users in different regions.

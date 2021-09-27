@@ -148,7 +148,7 @@ cos.getObjectUrl({
 | Protocol    | ‘http:’ 또는 ‘https:’를 선택할 수 있습니다. 기본값: ‘http:’(콜론 포함)                          | String | 아니요   |
 | Domain    | 버킷 액세스 도메인. 기본값: {BucketName-APPID}.cos.{Region}.myqcloud.com     | String | 아니요   |
 | Method  | 작업 방법. 예: GET, POST, DELETE, HEAD 등 HTTP 방법. 기본값: GET | String  | 아니요   |
-| - Query    | 서명 계산에 참여하는 query 매개변수 객체. {key: 'val'} 의 형식               | Object   |
+| - Query    | 서명 계산에 참여하는 query 매개변수 객체. {key: 'val'} 의 형식               | Object   | 아니요   |
 | Headers | 서명 계산에 참여하는 header 매개변수 객체                               | Object  | 아니요   |
 | Expires | 서명 만료 시간(초). 기본값: 900초                                  | Number  | 아니요   |
 

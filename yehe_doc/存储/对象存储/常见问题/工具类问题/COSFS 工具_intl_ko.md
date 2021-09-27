@@ -246,11 +246,11 @@ rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm --force
 COSFS에 루트 디렉터리의 GetBucket 권한이 필요하므로, 루트 디렉터리의 GetBucket 권한 및 해당 디렉터리의 읽기 권한을 추가해야 합니다. 이 경우 기타 디렉터리를 나열할 수 있으나 작업 권한은 없습니다.
 
 
-### df를 실행하면 COSFS의 Size와 Avaliable이 256T로 표시되는 이유는 무엇입니까?
-COS 버킷의 공간은 무한합니다. Avaliable 이 256T인 것은, df 결과를 보여주기 위한 것입니다. 실제로 COS 버킷이 저장할 수 있는 데이터 용량은 256T보다 훨씬 많습니다.
+### df를 실행하면 COSFS의 Size와 Available이 256T로 표시되는 이유는 무엇입니까?
+COS 버킷의 공간은 무한합니다. Available 이 256T인 것은, df 결과를 보여주기 위한 것입니다. 실제로 COS 버킷이 저장할 수 있는 데이터 용량은 256T보다 훨씬 많습니다.
 
 ### df 실행 시 COSFS의 Used가 0으로 표시되는 이유는 무엇입니까?
-COSFS는 로컬 저장 공간을 차지하지 않으며, df 등의 툴과 호환되기 위해 COSFS에서 표시되는 Size Used Avaliable은 실제 값이 아닙니다.
+COSFS는 로컬 저장 공간을 차지하지 않으며, df 등의 툴과 호환되기 위해 COSFS에서 표시되는 Size Used Available은 실제 값이 아닙니다.
 
 ### df -i 실행 시 Inode/IUsed/IFree가 모두 0로 표시되는 이유는 무엇입니까?
 COSFS는 하드 디스크 기반 파일 시스템이 아니므로 inode가 없습니다.

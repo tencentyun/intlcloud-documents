@@ -48,20 +48,28 @@ This feature supports the accessibility detection of common ports and custom por
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Click **Diagnostic Tools** > **Port Verification** in the left sidebar to access the management page.
 3. Select a region at the top of the page, locate the instance you want to verify in the list, and click **Quick Check**.
+![](https://main.qcloudimg.com/raw/7001bc40cd91f8c17070826ba62ce0ab.png)
 4. You can see the port detection details in the pop-up window. Perform the following operations as needed.
    + Uncheck the port that you do not want to detect.
    + Enter custom ports to detect and click **Save**.
       + Protocol: select TCP or UDP.
-      + Port: enter one port number to detect, which cannot be the same as a common port. Otherwise, you need to first uncheck the common port before continuing.
+      + Port: enter one port number to detect, which cannot be the same as a common port. 
       + Direction: select **Inbound** or **Outbound**.
       + IP: enter the source IP for the inbound direction and destination IP for the outbound direction. Enter **ALL** for all source and destination IP addresses.
       + Up to 15 custom ports can be detected.
    
  If you need to detect the outbound traffic towards IP 10.0.1.12 using TCP protocol through port 30, enter the following information in the **Custom port detection** area.
+![](https://main.qcloudimg.com/raw/3f4067337a80ef596af55446cf5fead1.png)
 
 5. After completing the configuration, click **Detect**. The result will be displayed in the **Policy** column.
-<p>Assumes that you need to open an <b>Not opened</b> port, for example`TCP:22`, </p>
-<p>Then you can add an inbound rule for the security group associated with the instance in the <a href="https://console.cloud.tencent.com/vpc/securitygroup">Security Group console</a> to open port TCP:22. You can select <b>all</b> for <b>Source</b> to allow all IPs, or enter a specific IP (IP range).</p>
+![](https://main.qcloudimg.com/raw/ae7eb364c16c5bbcb52ce47615b15174.png)
+<p>Assumes that you need to open an <b>Not opened</b> port, for example  <b>TCP:22</b>, </p>
+
+ ![](https://main.qcloudimg.com/raw/40fc364c561308d97cc1aeca54cbb1b4.png)
+
+ <p>Then you can add an inbound rule for the security group associated with the instance in the <a href="https://console.cloud.tencent.com/vpc/securitygroup">Security Group console</a> to open port TCP:22. You can select <b>all</b> for <b>Source</b> to allow all IPs, or enter a specific IP (IP range).</p>
+
+   ![](https://main.qcloudimg.com/raw/d1053c70ddce3f089737f4abf8e0c297.png)
 
 ## Relevant Information
 - For information on security groups, see [Security Group Overview](https://intl.cloud.tencent.com/document/product/215/38750) and [Adding a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35513).

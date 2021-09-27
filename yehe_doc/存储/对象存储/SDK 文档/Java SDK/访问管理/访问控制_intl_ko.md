@@ -178,7 +178,7 @@ public void setObjectAcl(SetObjectAclRequest setObjectAclRequest)
 [//]: # (.cssg-snippet-put-object-acl)
 ```java
 // 권한 정보 중 개인 정보 포맷에 대한 요구가 있을 경우, 루트 계정과 서브 계정에 대한 표준은 다음과 같습니다.
-// 아래의 root_uin과 sub_uin은 반드시 유효한 QQ 계정이어야 합니다.
+// 아래의 root_uin과 sub_uin은 반드시 유효한 UIN 계정이어야 합니다.
 // 루트 계정 qcs::cam::uin/<root_uin>:uin/<root_uin>는 루트 계정 root_uin의 사용자를 표시합니다(앞뒤의 uin도 동일).
 //  예시) qcs::cam::uin/100000000001:uin/100000000001
 // 서브 계정 qcs::cam::uin/<root_uin>:uin/<sub_uin>는 root_uin의 서브 계정 sub_uin 클라이언트를 표시합니다.
@@ -218,7 +218,7 @@ cosClient.setObjectAcl(bucketName, key, CannedAccessControlList.PublicReadWrite)
 
 Request 구성원 설명:
 
-| Request 구성원 | 설정방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형                    |
+| Request 구성원 | 설정방법          | 설명                                                         | 유형                    |
 | ------------ | ------------------- | ------------------------------------------------------------ | ----------------------- |
 | bucketName   | 구조 함수 혹은 set 방법 | 버킷의 이름 생성 포맷은 BucketName-APPID이며, 세부 사항은 [이름 생성 규범](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) 참조 | String                  |
 | key          | 구조 함수 혹은 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 표식입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 에서, 객체 키는 doc/picture.jpg입니다. 세부 사항은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String                  |
