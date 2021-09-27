@@ -26,16 +26,7 @@ audit/myaudit/${YYYYMMDDH}/xxxxxxxxxxxxx ("xxxxxxxxxxxxx" is the file name)
 ```
 
 
-## Record Export
->?We recommend you use the tracking set preferably, as it offers more comprehensive log information without time limits. For more information, please see [Shipping Log with Tracking Set](https://intl.cloud.tencent.com/document/product/1021/42145).
->
-You can only view logs of the last 30 days online. If you want to view older logs, please request for export, which contains three steps:
-- **Select a time period**
-  Select a time period of logs for export. The backend will start exporting logs in offline mode after receiving your request.
-- **Export data in offline mode**
-  The export operation can be canceled before 24:00 of the day you send the request. After that, you cannot cancel the operation. Once the data is successfully exported, we will send you a notification.
-- **Ship data to COS**
-  After the export, CloudAudit will store the data for up to five business days. To achieve persistent storage, please ship the data to a COS bucket.
+
 
 
 
