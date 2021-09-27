@@ -4,8 +4,6 @@ PUT Bucket 接口请求可以在指定账号下创建一个存储桶。该 API �
 
 >?
 >- 创建存储桶时，如果没有指定访问权限，则默认使用私有读写（private）权限。
->- 如需创建多 AZ 存储桶，那么应当通过请求体指示存储桶配置，否则无需传入请求体。
->
 
 
 <div class="rno-api-explorer">
@@ -73,27 +71,6 @@ Authorization: Auth String
 | x-cos-grant-write-acp    | 赋予被授权者写入存储桶的访问控制列表（ACL）和存储桶策略（Policy）的权限，格式为 id="[OwnerUin]"，如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"` | string | 否       |
 | x-cos-grant-full-control | 赋予被授权者操作存储桶的所有权限，格式为 id="[OwnerUin]"，如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"` | string | 否       |
 
-#### 请求体
-
-仅当需要创建多 AZ 存储桶时提交 **application/xml** 请求数据，包含创建存储桶的配置信息，否则无需传入请求体。
-
-```xml
-<CreateBucketConfiguration>
-	<BucketAZConfig>string</BucketAZConfig>
-</CreateBucketConfiguration>
-```
-
-具体的节点描述如下：
-
-| 节点名称（关键字） | 父节点 | 描述 | 类型 | 是否必选 |
-| --- | --- | --- | --- | --- |
-| CreateBucketConfiguration | 无 | 包含 PUT Bucket 操作的所有请求信息 | Container | 否 |
-
-**Container 节点 CreateBucketConfiguration 的内容：**
-
-| 节点名称（关键字） | 父节点 | 描述 | 类型 | 是否必选 |
-| --- | --- | --- | --- | --- |
-| BucketAZConfig | CreateBucketConfiguration | 存储桶 AZ 配置，指定为 MAZ 以创建多 AZ 存储桶。 | string | 是 |
 
 ## 响应
 
@@ -160,34 +137,4 @@ Connection: close
 Date: Fri, 14 Jun 2019 13:49:00 GMT
 Server: tencent-cos
 x-cos-request-id: NWQwM2E1Y2NfZjBhODBiMDlfOTM1YV83NDRi****
-```
-
-#### 案例三：创建多 AZ 存储桶
-
-#### 请求
-
-```plaintext
-PUT / HTTP/1.1
-Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Thu, 04 Jun 2020 06:06:09 GMT
-Content-Type: application/xml
-Content-Length: 96
-Content-MD5: R1ES/YbddhKJK/wcN+f4yg==
-Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1591250769;1591257969&q-key-time=1591250769;1591257969&q-header-list=content-length;content-md5;content-type;date;host&q-url-param-list=&q-signature=28db662452fcdf8f004fc578f1c3fccbfedd****
-Connection: close
-
-<CreateBucketConfiguration>
-	<BucketAZConfig>MAZ</BucketAZConfig>
-</CreateBucketConfiguration>
-```
-
-#### 响应
-
-```plaintext
-HTTP/1.1 200 OK
-Content-Length: 0
-Connection: close
-Date: Thu, 04 Jun 2020 06:06:10 GMT
-Server: tencent-cos
-x-cos-request-id: NWVkODhmNTFfM2JiODJhMDlfMjg4NmFfMzA5ZmE2****
 ```
