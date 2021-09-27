@@ -178,7 +178,7 @@ public void setObjectAcl(SetObjectAclRequest setObjectAclRequest)
 [//]: # (.cssg-snippet-put-object-acl)
 ```java
 // The grantee information must be formatted. The format for the root account and sub-account differs as follows:
-// In this example, both root_uin and sub_uin below are valid QQ numbers.
+// In this example, both root_uin and sub_uin below are valid UIN numbers.
 // The root account "qcs::cam::uin/<root_uin>:uin/<root_uin>" indicates that permission is granted to the root account "root_uin" itself.
 // Example: qcs::cam::uin/100000000001:uin/100000000001
 // The sub-account "qcs::cam::uin/<root_uin>:uin/<sub_uin>" indicates that permission is granted by the root account "root_uin" to the sub account "sub_uin"
@@ -218,7 +218,7 @@ cosClient.setObjectAcl(bucketName, key, CannedAccessControlList.PublicReadWrite)
 
 Request members:
 
-| Request Member | Set Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Request Member | Set Method  | Description                                                     | Type   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ----------------------- |
 | bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For ,more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83). | String |
 | key | Constructor or set method | Unique identifier of the object in the bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
