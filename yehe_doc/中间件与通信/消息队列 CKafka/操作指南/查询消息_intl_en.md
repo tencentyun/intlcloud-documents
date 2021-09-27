@@ -18,7 +18,7 @@ The console supports query by offset and time, which are used in different scena
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka/index?rid=1).
 2. Select **Instance List** on the left sidebar, select a region, and click the **ID/Name** of the target instance to enter the instance details page.
 3. On the instance details page, select **Topic Management** and click **More**> **Message Query** in the **Operation** column on the right of the target topic.
-4. Select **Query by offset**, enter the partition ID and starting offset, and click **Query* to view the message details.
+4. Select **Query by offset**, enter the partition ID and starting offset, and click **Query** to view the message details.
    ![](https://main.qcloudimg.com/raw/195ca10f4a0868b12a03c7c831eff1fd.png)
    - Partition ID: topic partition to which the message is sent
    - Offset: consumer offset of the message
