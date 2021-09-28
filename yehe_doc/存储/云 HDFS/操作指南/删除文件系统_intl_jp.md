@@ -8,10 +8,10 @@
 1. [CHDFSコンソール](https://console.cloud.tencent.com/chdfs)にログインします。
 2. 左側ナビゲーションバーで、【ファイルシステム】をクリックします。
 3. ファイルシステムインターフェースで、広州など、ファイルシステムが配置されているリージョンを選択します。
-![](https://main.qcloudimg.com/raw/66ac529bd48d9736990d8d59ca8e8399.png)
+![](https://main.qcloudimg.com/raw/2c18a7162590fcb9987683c4dc61f645.png)
 4. ファイルシステムリストで削除する必要のあるファイルシステムを見つけ、ファイルシステム右側の【削除】をクリックします。
-![](https://main.qcloudimg.com/raw/d003ef8ac0274e6f3dfe2764cdc74297.png)
+![](https://main.qcloudimg.com/raw/60e6105d99fb7f1d822bada410e5f4fc.png)
 5. ポップアップしたウィンドウで、【削除】をクリックすると、ファイルシステムが削除できます。
-![](https://main.qcloudimg.com/raw/032e069f9620d0355a9466fb90ece54e.png)
+![](https://main.qcloudimg.com/raw/93ccec68eca953784ef53107ce8feb96.png)
 
 

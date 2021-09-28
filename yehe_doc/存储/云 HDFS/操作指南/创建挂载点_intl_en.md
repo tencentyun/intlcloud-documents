@@ -7,6 +7,6 @@ This document describes how to create a mount point. CVM, CPM 2.0, or TKE access
  - Name: mount point name, which can contain 4–64 letters, digits, hyphens, and underscores.
  - VPC Name/ID: select a VPC.
  - Permission Group: select a permission group. If there are no permission groups, please [create one](https://intl.cloud.tencent.com/document/product/1106/41962) first.
-![](https://main.qcloudimg.com/raw/9baa2b7c238d7b5c37fbcc4161572198.png)
+![](https://main.qcloudimg.com/raw/71dd4afeeaf75de0ca946951bd6fd1f7.png)
 3. Click **Save**.
 

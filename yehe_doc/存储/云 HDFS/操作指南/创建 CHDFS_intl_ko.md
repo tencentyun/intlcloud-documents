@@ -5,8 +5,8 @@
 2. [생성]을 클릭하고, 파일 시스템 생성 페이지에서 이름과 설명을 입력합니다. 
  -**이름**: 파일 시스템 이름으로 대소문자 알파벳, 숫자, - 또는 \_ 조합만 지원하며 길이는 4~64자입니다. 
  - **설명**: 파일 시스템 설명 정보. 
-<img src="https://main.qcloudimg.com/raw/c9285ee9482f19c73decae5d79474c6b.png" width="75%">
+<img src="https://main.qcloudimg.com/raw/6605445472576e30cdca6f00340dee19.png" width="75%">
 3. [저장]을 클릭하면 CHDFS를 생성할 수 있습니다. 
 4. CHDFS에서 [설정]을 클릭하면, 다음과 같이 CHDFS 기본 설정과 마운트 정보를 확인할 수 있습니다. 
-![](https://main.qcloudimg.com/raw/3229893f63b05c04258e2588922c5215.png)
+![](https://main.qcloudimg.com/raw/b66b5179292b1f9e913159dca82929c4.png)
 

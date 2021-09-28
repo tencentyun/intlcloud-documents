@@ -5,6 +5,6 @@ This document describes how to create a permission group, which is used to manag
 2. Click **Create** and enter the name and description in the pop-up window.
  - Name: permission group name, which can contain 4 to 64 letters, digits, hyphens, and underscores.
  - Description: permission group description.
-![](https://main.qcloudimg.com/raw/cd9fcdee76160700fc2a12a722570848.png)
+![](https://main.qcloudimg.com/raw/7ee55d2e9b73a9cbb7904eed5935016c.png)
 3. Click **Save**.
 
