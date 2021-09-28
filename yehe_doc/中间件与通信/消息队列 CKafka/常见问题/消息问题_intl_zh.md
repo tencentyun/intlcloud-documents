@@ -2,8 +2,6 @@
 
 - 在 CKafka 控制台监控页面查看流量监控情况，观察是否存在波峰，升级实例大小解决。
 
-  ![](https://main.qcloudimg.com/raw/a5ef5e5067c265073ef8cb0c07960461.png)
-
 - 查看消费分组是否超过数量。
 
 - 如果因为网络频繁 rebalance，建议调整客户端超时时间。
@@ -19,7 +17,7 @@
 
 计算方式为：未消费消息数量 = 最大的offset - 提交的 offset。如下图：
 
-![img](https://main.qcloudimg.com/raw/05c88d97f36784e5f83c08b24e229265.png)
+![img](https://main.qcloudimg.com/raw/539e54d9e429f2b0d07f51549a026b62.png)
 
 
 
@@ -27,11 +25,7 @@
 
 kafka的消息删除机制会导致某些业务场景出现过期消息没有及时删除的情况，如果对机制不了解容易产生疑惑，具体问题如下：
 
-这里分区0和分区7的消息时间戳存在明显差距，分区0的过期消息没有被及时删除，如下图所示：
-- 分区为0：
-![](https://main.qcloudimg.com/raw/15259a044edd174cbe609a9a95e43ea2.png)
-- 分区为7：
-![](https://main.qcloudimg.com/raw/bda384e0ed20e043f9416481e6d6d2a5.png)
+这里分区0和分区7的消息时间戳存在明显差距，分区0的过期消息没有被及时删除。
 
 **Kafka消息删除机制**
 
