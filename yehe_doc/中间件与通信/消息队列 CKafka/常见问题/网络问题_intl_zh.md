@@ -12,8 +12,8 @@ CKafka 专业版实例支持升配公网带宽，最高可提升至198Mbps，若
 
 >?在添加 ACL 策略时，不需要选择任何用户，则默认为**全部用户**添加了读写权限。
 
-![img](https://main.qcloudimg.com/raw/27e8e0b9b20da5f123eaee2212633dba.png)
+![img](https://main.qcloudimg.com/raw/8d75061c412c78fef7f3f0c13024ec69.png)
 
 添加完成效果如下：
 
-![img](https://main.qcloudimg.com/raw/6d1b4b5dd89343530deae827e76d38ab.png)
+![img](https://main.qcloudimg.com/raw/eb922f7fe6a3cfe97be6498b05676c5c.png)
