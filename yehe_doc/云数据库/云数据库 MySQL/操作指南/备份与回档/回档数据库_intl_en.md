@@ -6,7 +6,7 @@ By re-constructing periodical images and real-time transactions, the TencentDB f
 
 ## How Rollback Works
 The rollback feature can roll back databases or tables to a specified point in time based on `cold data backup and corresponding binlog backup`.
-![](ttps://main.qcloudimg.com/raw/56699dba58319c212d93c38c6adabbae.png)
+![](https://main.qcloudimg.com/raw/56699dba58319c212d93c38c6adabbae.png)
 1. Data is exported from the MySQL replica and imported to the cold backup system daily.
 2. To roll back databases or tables, request for a temp rollback instance from the rollback system. Export the cold data from the cold backup system and import it to the temp rollback instance (types of imported data vary with the rollback methods).
 3. Establish a source-replica relationship between the rollback instance and MySQL source instance, set the rollback time, and specify the databases or tables to be rolled back.
