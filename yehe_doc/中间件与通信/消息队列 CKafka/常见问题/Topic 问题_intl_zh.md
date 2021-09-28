@@ -14,7 +14,7 @@
 
 建议您创建 Topic 时选择2副本或3副本存储数据，保障数据可靠性。默认创建的 Topic 是2副本，如果业务需要更高的可用性，则可以指定选择3副本运行。如果 Topic 需要更多的副本数，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行处理。新建 Topic 时副本选择方式如下图所示。
 
-![topic](https://main.qcloudimg.com/raw/05f7dc495a90da08c2b1a5593b908c1f.png)
+![topic](https://main.qcloudimg.com/raw/08bf05cf16f28acecf0534c1d96a0391.png)
 
 为了提高数据的安全性，当前 CKafka 已经禁止单副本 Topic 的创建，如您账户下有单副本的 Topic，建议按如下步骤迁移：
 1. 创建新的 Topic，选择相同的分区，选取双副本。
@@ -30,7 +30,7 @@
 ### Topic 创建失败的原因？
 
 1. 已创建的所有Topic的分区数之和达到实例规格的分区数上限。解决方案：对Kafka实例扩容，或者删除不需要的Topic。
-![](https://main.qcloudimg.com/raw/94904051a2fba64bb4d191b50abbf703.jpg)
+![](https://main.qcloudimg.com/raw/3b47e96e056bbc1b303f8b374289bf6b.png)
 2. Topic 删除是异步操作，下发删除指令后，系统会异步的删除该 Topic 的元数据。若在此期间创建同名 Topic，系统会提示 Topic 已经存在，届时请您稍后重试。这里需要等待1分钟左右，再进行重建操作。
 3. Topic 已经存在集群当中，创建重名的 Topic 就会提示 Topic 已经存在。
 
