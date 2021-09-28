@@ -1,7 +1,7 @@
 ### 如何选择实例的规格？
 
 可以借助控制台的 "[迁移上云](https://console.cloud.tencent.com/ckafka/migration) - 规格计算器" 来计算所需的产品规格：
-<img src="https://main.qcloudimg.com/raw/2aa46d3744ac7406833549da41333ed3.jpg" width="550px">
+<img src="https://main.qcloudimg.com/raw/15b721ef605d238f01f888b6a54a334e.png" width="550px">
 
 消息队列 CKafka 实例按照规格分为标准版和专业版，两个版本的对比参考 [产品规格](https://intl.cloud.tencent.com/document/product/597/41815)。
 
@@ -20,7 +20,7 @@
 
 当需要数据迁移时，可自定义迁移时间：
 
-![](https://main.qcloudimg.com/raw/bdf595851782261be3237bc17d8abbc3.jpg)
+![](https://main.qcloudimg.com/raw/50035915db52c093577406f0707722f2.png)
 
 当需要数据迁移时，会有迁移模式和定时迁移两种选项，迁移模式分为如下两种：
 
