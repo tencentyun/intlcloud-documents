@@ -12,7 +12,7 @@
 #### 可能原因
 
 1. 如果是专业版实例，可以在控制台查看高级监控，观察服务端的整体负载情况，如请求队列深度，生产消费的服务端耗时等。来确认服务端是否有性能问题。如果是标准版实例，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 查看这些指标。
-   ![](https://main.qcloudimg.com/raw/af8dcc058b765c4f116cba7a89850904.png)
+    ![](https://main.qcloudimg.com/raw/1e0c6df4443b1933853616d0a0ecf9bf.png)
 2. 排查客户端负载，如本地机器的 CPU，内存情况（如果是 Java 客户端，重点关注 GC 情况）。
 3. 如果是偶尔出现阻塞状况，需要排查本地网络是否有波动。特别是容器网络环境下，需要着重关注。
 4. 分析生产者的数量是否过少，可以从单机的流量来分析。如果单机吞吐的流量较大，而生产者又是单线程发送，则需要关注。
@@ -80,4 +80,4 @@ log.info("offset: {}", recordMetadata.offset());
 如果能够打印出 partition 和 offset，则表示当前发送的消息在服务端已经被正确保存。此时可以通过消息查询的工具去查询相关位点的消息即可。
 如果打印不出 partition 和 offset，则表示消息没有被服务端保存，客户端需要重试。
 
-![](https://main.qcloudimg.com/raw/cca4f62e86898eec49d8a9cde7ae9fa8.png)
+![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
