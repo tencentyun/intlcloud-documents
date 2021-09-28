@@ -19,11 +19,11 @@
 ## 操作步骤
 1. 登录 [DDoS 边缘防护管理控制台](https://console.cloud.tencent.com/ddos/antiddos-edge/policy/ddos) ，在左侧导航中，单击【防护策略】，并选择【CC 防护】。
 2. 在左边的列表选中高防实例的 ID，如“edge-xxxxxxx”。
-![](https://main.qcloudimg.com/raw/e854c4c6423ee81d80ed7b964ac26df1.png)
+![](https://main.qcloudimg.com/raw/e43f351d75409dd50d4add1a2fd266f2.png)
 3. 在右侧卡片中单击“精准防护”卡片中的【设置】，进入精准防护页面。
-![](https://main.qcloudimg.com/raw/643c6809496561dd841b77fe8fa509e1.png)
+![](https://main.qcloudimg.com/raw/6b3a20abe36432a84dcf13ad11b72f0f.png)
 4. 在精准防护页面中，单击【新建】。
 5. 在精准防护弹窗中，填写相关字段，单击【确定】，创建精准防护规则。
-![](https://main.qcloudimg.com/raw/9446512caa760b52322d175c24a9a7a5.png)
+![](https://main.qcloudimg.com/raw/caa7012de385195ed0ccadca27955658.png)
 6. 新建完成后精准防护列表中，将新增一条精准防护规则，可以在右侧操作列，单击【配置】，修改精准防护规则。
-![](https://main.qcloudimg.com/raw/401e8a28d819e0550d45e20e3206e598.png)
+![](https://main.qcloudimg.com/raw/8b67f586be6f6059f53fdcac50023fbe.png)

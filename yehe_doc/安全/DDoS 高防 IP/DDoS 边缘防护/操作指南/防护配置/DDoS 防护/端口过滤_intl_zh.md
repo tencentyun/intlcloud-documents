@@ -9,9 +9,9 @@ DDoS 边缘防护支持针对访问 DDoS 高防的源流量，基于端口进行
 2. 在左边的列表选中高防实例的 ID，如“edge-xxxxxxx”。
 ![](https://main.qcloudimg.com/raw/dcb8de6c5b81f6f522b25962f4ad3c11.png)
 3. 在右侧卡片中单击“端口过滤”卡片中的【设置】，进入端口过滤页面。
-![](https://main.qcloudimg.com/raw/40232fb652ecc33efa53f7c3aa678af4.png)
+![](https://main.qcloudimg.com/raw/e7aea83ac323c878cc2376af7fe4d218.png)
 4. 在端口过滤页面中，单击【新建】。
 5. 在新建端口过滤弹窗中，创建端口过滤规则，根据需求，选择不同防护动作并填写相关字段，单击【确定】。
-![](https://main.qcloudimg.com/raw/b99678a88582dedaf7346576d708ddae.png)
+![](https://main.qcloudimg.com/raw/b05f2100f14ecd0269673d26bfc84ce9.png)
 6. 新建完成后端口过滤列表，将新增一条端口过滤规则，可以在右侧操作列，单击【配置】，可以修改端口过滤规则。
-![](https://main.qcloudimg.com/raw/ce604d5213f09262b0f82fa6e8465a5e.png)
+![](https://main.qcloudimg.com/raw/90e5bfe35208179bd42ba04313960eb4.png)
