@@ -30,7 +30,7 @@ Currently, Private DNS has the following limits:
   </tr>
 	  <tr>
     <td>Available regions</td>
-    <td>Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Silicon Valley, Nanjing, Hong Kong (China), Singapore, Frankfurt, and Jakarta</td>
+    <td>Jakarta, Tokyo, Hong Kong (China) and Singapore</td>
 		<td>An available region is a VPC region that can be associated with a private domain.</td>
   </tr>
 		  <tr>
