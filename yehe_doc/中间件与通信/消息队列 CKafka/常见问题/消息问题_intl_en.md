@@ -2,8 +2,6 @@
 
 - You can view the traffic monitoring data on the monitoring page in the CKafka console to check whether there is a surge, and if so, upgrade the instance specification for solution.
 
-  ![](https://main.qcloudimg.com/raw/a5ef5e5067c265073ef8cb0c07960461.png)
-
 - Check whether the number of consumer groups exceeds the limit.
 
 - If rebalance occurs frequently for network reasons, we recommend you adjust the client timeout period.
@@ -19,7 +17,7 @@
 
 Number of unconsumed messages = maximum offset - submitted offset, as shown below:
 
-![img](https://main.qcloudimg.com/raw/05c88d97f36784e5f83c08b24e229265.png)
+![img](https://main.qcloudimg.com/raw/539e54d9e429f2b0d07f51549a026b62.png)
 
 
 
@@ -27,11 +25,8 @@ Number of unconsumed messages = maximum offset - submitted offset, as shown belo
 
 The message deletion mechanism of Kafka may cause a problem where expired messages are not deleted promptly in certain business scenarios. You may feel confused if you are unfamiliar with this mechanism. The specific problem is as follows:
 
-Here, the message timestamps in partition 0 and partition 7 are obviously different, and expired messages in partition 0 are not deleted promptly as shown below:
-- Partition 0:
-![](https://main.qcloudimg.com/raw/15259a044edd174cbe609a9a95e43ea2.png)
-- Partition 7:
-![](https://main.qcloudimg.com/raw/bda384e0ed20e043f9416481e6d6d2a5.png)
+Here, the message timestamps in partition 0 and partition 7 are obviously different, and expired messages in partition 0 are not deleted promptly.
+
 
 **Kafka message deletion mechanism**
 

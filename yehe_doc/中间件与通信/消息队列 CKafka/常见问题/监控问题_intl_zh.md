@@ -5,14 +5,11 @@
 ### 监控显示超过连接数，是否会产生限流？
 实例连接数默认最大值是5000，阈值判断是基于最大值的百分比进行判断。实例连接超过该最大值会导致客户端无法创建新的连接，如评估该最大值在实际业务中不合理可以 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=%E6%B6%88%E6%81%AF%E6%9C%8D%E5%8A%A1%20CKafKa&level3_id=955&radio_title=%E9%85%8D%E9%A2%9D%E6%8F%90%E5%8D%87%E7%94%B3%E8%AF%B7&queue=81&scene_code=18356&step=2) 申请扩大。
 
-![](https://main.qcloudimg.com/raw/161ed6ca3a9ea78ed6fa26813e08eeef.png)
-
 
 
 ### 为何某些分区的监控查看消息堆积数量一直存在？
 
 1. 可能是消费者没有对该分区进行消费，分区一直有生产消息行为，导致堆积数据一直存在。
-   ![](https://main.qcloudimg.com/raw/a24f311ae94f205df0a034e0fd95191b.jpg)
 
 2. 可能是消费者组中的消费者数量不足或者消费的速度过慢导致数据有堆积。可以尝试加大消费者的数量，以提高消费速度。
 
