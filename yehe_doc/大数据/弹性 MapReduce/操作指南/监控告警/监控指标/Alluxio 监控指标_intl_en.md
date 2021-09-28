@@ -1,77 +1,109 @@
+### Alluxio - Overview
+
 | Metric Name | Unit | Description |
-| ----------------------------- | ----- | ------------------------------------------------------- |
-| BytesReadAlluxio | Bytes | Total number of bytes read from Alluxio storage reported by all workers |
-| BytesReadUfsAll | Bytes | Total number of bytes read from Alluxio UFSes by all workers |
-| BytesReadDomain | Bytes | Total number of bytes read from Alluxio storage via a domain socket reported by all workers |
-| BytesReadLocal | Bytes | Total number of bytes short-circuit read from local storage by all clients |
-| BytesReadPerUfs | Bytes | Total number of bytes read from a specific UFS by all workers |
-| BytesWrittenUfsAll | Bytes | Total number of bytes written to all Alluxio UFSes by all workers |
-| BytesWrittenDomain | Bytes | Total number of bytes written to Alluxio storage via a domain socket by all workers |
-| BytesWrittenLocal | Bytes | Total number of bytes short-circuit written to local storage by all clients |
-| BytesWrittenPerUfs | Bytes | Total number of bytes written to a specific Alluxio UFS by all workers |
-| BytesReadAlluxioThroughput | Bytes | Throughput of bytes read from Alluxio storage by all workers |
-| BytesReadUfsThroughput | Bytes | Throughput of bytes read from all Alluxio UFSes by all workers |
-| BytesReadDomainThroughput | Bytes | Throughput of bytes read from Alluxio storage via a domain socket by all workers |
-| BytesReadLocalThroughput | Bytes | Throughput of bytes short-circuit read from local storage by all clients |
-| BytesWrittenAlluxioThroughput | Bytes | Throughput of bytes written to Alluxio storage by all workers |
-| BytesWrittenUfsThroughput | Bytes | Throughput of bytes written to all Alluxio UFSes by all workers |
-| BytesWrittenDomainThroughput | Bytes | Throughput of bytes written to Alluxio storage via a domain socket by all workers |
-| BytesWrittenLocalThroughput | Bytes | Through of bytes written to local storage by all clients |
-| CapacityFree | Bytes | Total free bytes on all tiers of all workers |
-| CapacityTotal | Bytes | Total capacity on all tiers of all workers |
-| CapacityUsed | Bytes | Total used bytes on all tiers of all workers |
-| Workers | - | Total number of active workers in the cluster |
-| CompleteFileOps | - | Total number of CompleteFile operations |
-| FilesCompleted | - | Total number of successful CompleteFile operations |
-| CreateDirectoryOps | - | Total number of CreateDirectory operations |
-| DirectoriesCreated | - | Total number of successful CreateDirectory operations |
-| CreateFileOps | - | Total number of CreateFile operations |
-| FilesCreated | - | Total number of successful CreateFile operations |
-| DeletePathOps | - | Total number of Delete operations |
-| PathsDeleted | - | Total number of successful Delete operations |
-| FreeFileOps | - | Total number of FreeFile operations |
-| FilesFreed | - | Total number of successful FreeFile operations |
-| GetFileBlockInfoOps | - | Total number of GetFileBlockInfo operations |
-| FileBlockInfosGot | - | Total number of successful GetFileBlockInfo operations |
-| GetFileInfoOps | - | Total number of GetFileInfo operations |
-| FileInfosGot | - | Total number of successful GetFileInfo operations |
-| GetNewBlockOps | - | Total number of GetNewBlock operations |
-| NewBlocksGot | -  | Total number of successful GetNewBlock operations |
-| MountOps | - | Total number of Mount operations |
-| PathsMounted | - | Total number of successful Mount operations |
-| UnmountOps | - | Total number of Unmount operations |
-| PathsUnmounted | - | Total number of successful Unmount operations |
-| RenamePathOps | - | Total number of Rename operations |
-| PathsRenamed | - | Total number of successful Rename operations |
-| SetAclOps | - | Total number of SetAcl operations |
-| SetAttributeOps | - | Total number of SetAttribute operations |
-| FilesPersisted | - | Total number of successfully saved files |
-| FilesPinned | - | Total number of currently pinned files |
-| TotalPaths  | - | Total number of files and directory in Alluxio namespace |
+| -------------------------------------------- | -------- | ------------------------------------------------------- |
+| Total amount of data read/written\_BytesReadAlluxio | Bytes | Total number of bytes read from Alluxio storage reported by all workers |
+| Total amount of data read/written\_BytesReadUfsAll | Bytes | Total number of bytes read from Alluxio UFSes by all workers |
+| Total amount of data read/written\_BytesReadDomain | Bytes | Total number of bytes read from Alluxio storage via a domain socket reported by all workers |
+| Total amount of data read/written\_BytesReadLocal | Bytes | Total number of bytes short-circuit read from local storage by all clients |
+| Total amount of data read/written\_BytesReadPerUfs | Bytes | Total number of bytes read from a specific UFS by all workers |
+| Total amount of data read/written\_BytesWrittenAlluxio             | Bytes    | Total number of bytes written to Alluxio storage by all workers                    |
+| Total amount of data read/written\_BytesWrittenUfsAll | Bytes | Total number of bytes written to all Alluxio UFSes by all workers |
+| Total amount of data read/written\_BytesWrittenDomain | Bytes | Total number of bytes written to Alluxio storage via a domain socket by all workers |
+| Total amount of data read/written\_BytesWrittenLocal | Bytes | Total number of bytes short-circuit written to local storage by all clients |
+| Total amount of data read/written\_BytesWrittenPerUfs | Bytes | Total number of bytes written to a specific Alluxio UFS by all workers |
+| Data read/write throughput\_BytesReadAlluxioThroughput | Bytes | Throughput of bytes read from Alluxio storage by all workers |
+| Data read/write throughput\_BytesReadUfsThroughput | Bytes | Throughput of bytes read from all Alluxio UFSes by all workers |
+| Data read/write throughput\_BytesReadDomainThroughput | Bytes | Throughput of bytes read from Alluxio storage via a domain socket by all workers |
+| Data read/write throughput\_BytesReadLocalThroughput | Bytes | Throughput of bytes short-circuit read from local storage by all clients |
+| Data read/write throughput\_BytesWrittenAlluxioThroughput | Bytes | Throughput of bytes written to Alluxio storage by all workers |
+| Data read/write throughput\_BytesWrittenUfsThroughput | Bytes | Throughput of bytes written to all Alluxio UFSes by all workers |
+| Data read/write throughput\_BytesWrittenDomainThroughput | Bytes | Throughput of bytes written to Alluxio storage via a domain socket by all workers |
+| Data read/write throughput\_BytesWrittenLocalThroughput | Bytes | Throughput of bytes written to local storage by all clients |
+| Worker capacity\_CapacityFree | Bytes | Total free bytes on all tiers of all workers |
+| Worker capacity\_CapacityTotal | Bytes | Total capacity on all tiers of all workers |
+| Worker capacity\_CapacityUsed | Bytes | Total used bytes on all tiers of all workers |
+| Worker count\_Workers                           | -       | Total number of active workers in the cluster |
+
+
+### Alluxio - Master
+
+| Metric Name | Unit | Description |
+| ---------------------------------------- | -------- | --------------------------------------- |
 | YGC | - | Number of young GCs |
 | FGC | - | Number of full GCs |
 | FGCT | s | Time taken by full GCs |
 | GCT | s | Time taken by GCs |
-| YGCT | s  | Time taken by young GCs |
-| S0  | % | Memory utilization of survivor space 0 |
-| E  | % | Memory utilization of eden space |
-| CCS | % | Memory utilization of compressed class space |
-| S1 | % | Memory utilization of survivor space 1 |
-| O | % | Memory utilization of old space |
-| M | % | Memory utilization of metaspace space |
-| MemNonHeapUsedM | MB | Number of used JVM NonHeapMemory |
-| MemNonHeapCommittedM | MB | Number of committed JVM NonHeapMemory |
-| MemHeapUsedM | MB | Number of used JVM HeapMemory |
-| MemHeapCommittedM | MB | Number of committed JVM HeapMemory |
-| MemHeapMaxM | MB | Number of configured JVM HeapMemory |
-| MemHeapInitM | MB | Number of initial JVM HeapMem |
-| MemNonHeapInitM | MB | Number of initial JVM NonHeapMem |
-| AsyncCacheDuplicateRequests | - | Total number of duplicated async cache requests received by a worker |
-| AsyncCacheRequests | - | Total number of async cache requests received by a worker |
-| AsyncCacheFailedBlocks | - | Total number of blocks that fail to be async cached in a worker |
-| AsyncCacheRemoteBlocks  | - | Total number of blocks that need to be async cached from the remote source |
-| AsyncCacheSucceededBlocks | - | Total number of blocks that are async cached successfully in a worker |
-| AsyncCacheUfsBlocks | - | Total number of blocks that need to be async cached from the local source |
+| YGCT | s | Time taken by young GCs |
+| S0 | % | Percentage of used survivor 0 memory |
+| E | % | Percentage of used eden memory |
+| CCS | % | Percentage of used compressed class space memory |
+| S1 | % | Percentage of used survivor 1 memory |
+| O | % | Percentage of used old memory |
+| M | % | Percentage of used metaspace memory |
+| MemNonHeapUsedM | MB | Amount of NonHeapMemory used by the JVM |
+| MemNonHeapCommittedM | MB | Amount of NonHeapMemory committed by the JVM |
+| MemHeapUsedM | MB | Amount of HeapMemory used by the JVM |
+| MemHeapCommittedM | MB | Amount of HeapMemory committed by the JVM |
+| MemHeapMaxM | MB | Amount of HeapMemory configured for the JVM |
+| MemHeapInitM | MB | Initial amount of HeapMem for the JVM |
+| MemNonHeapInitM | MB | Initial amount of NonHeapMem for the JVM |
+| CompleteFile operations\_CompleteFileOps | - | Total number of CompleteFile operations |
+| CompleteFile operations\_FilesCompleted          | -       | Total number of successful CompleteFile operations              |
+| CreateDirectory operations\_CreateDirectoryOps  | - | Total number of CreateDirectory operations |
+| CreateDirectory operations\_DirectoriesCreated | - | Total number of successful CreateDirectory operations |
+| CreateFile operations\_CreateFileOps | - | Total number of CreateFile operations |
+| CreateFile operations\_FilesCreated | - | Total number of successful CreateFile operations |
+| Delete operations\_DeletePathOps | - | Total number of Delete operations |
+| Delete operations\_PathsDeleted | - | Total number of successful Delete operations |
+| FreeFile operations\_FreeFileOps | - | Total number of FreeFile operations |
+| FreeFile operations\_FilesFreed | - | Total number of successful FreeFile operations |
+| GetFileBlockInfo operations\_GetFileBlockInfoOps | - | Total number of GetFileBlockInfo operations                |
+| GetFileBlockInfo operations\_FileBlockInfosGot | - | Total number of successful GetFileBlockInfo operations |
+| GetFileInfo operations\_GetFileInfoOps | - | Total number of GetFileInfo operations |
+| GetFileInfo operations\_FileInfosGot | - | Total number of successful GetFileInfo operations |
+| GetNewBlock operations\_GetNewBlockOps | - | Total number of GetNewBlock operations |
+| GetNewBlock operations\_NewBlocksGot | -  | Total number of successful GetNewBlock operations |
+| Mount operations\_MountOps | - | Total number of Mount operations |
+| Mount operations\_PathsMounted | - | Total number of successful Mount operations |
+| Unmount operations\_UnmountOps | - | Total number of Unmount operations |
+| Unmount operations\_PathsUnmounted | - | Total number of successful Unmount operations |
+| Rename operations\_RenamePathOps | - | Total number of Rename operations |
+| Rename operations\_PathsRenamed | - | Total number of successful Rename operations |
+| SetAcl operations\_SetAclOps | - | Total number of SetAcl operations |
+| SetAttribute operations\_SetAttributeOps | - | Total number of SetAttribute operations |
+| Operated file count\_FilesPersisted | - | Total number of successfully saved files |
+| Operated file count\_FilesPinned | - | Total number of currently pinned files |
+| File and directory count\_TotalPaths  | - | Total number of files and directory in Alluxio namespace |
+
+### Alluxio - Worker
+
+| Metric Name | Unit | Description |
+| ----------------------------------------- | -------- | ------------------------------------------ |
+| YGC | - | Number of young GCs |
+| FGC | - | Number of full GCs |
+| FGCT | s | Time taken by full GCs |
+| GCT | s | Time taken by GCs |
+| YGCT | s | Time taken by young GCs |
+| S0 | % | Percentage of used survivor 0 memory |
+| E | % | Percentage of used eden memory |
+| CCS | % | Percentage of used compressed class space memory |
+| S1 | % | Percentage of used survivor 1 memory |
+| O | % | Percentage of used old memory |
+| M | % | Percentage of used metaspace memory |
+| MemNonHeapUsedM | MB | Amount of NonHeapMemory used by the JVM |
+| MemNonHeapCommittedM | MB | Amount of NonHeapMemory committed by the JVM |
+| MemHeapUsedM | MB | Amount of HeapMemory used by the JVM |
+| MemHeapCommittedM | MB | Amount of HeapMemory committed by the JVM |
+| MemHeapMaxM | MB | Amount of HeapMemory configured for the JVM |
+| MemHeapInitM | MB | Initial amount of HeapMem for the JVM |
+| MemNonHeapInitM | MB | Initial amount of NonHeapMem for the JVM |
+| Async cache requests\_AsyncCacheDuplicateRequests | - | Total number of duplicated async cache requests received by a worker |
+| Async cache requests\_AsyncCacheRequests | - | Total number of async cache requests received by a worker |
+| Async cache block count\_AsyncCacheFailedBlocks | - | Total number of blocks that fail to be async cached in a worker |
+| Async cache block count\_AsyncCacheRemoteBlocks  | - | Total number of blocks that need to be async cached from the remote source |
+| Async cache block count\_AsyncCacheSucceededBlocks | - | Total number of blocks that are async cached successfully in a worker |
+| Async cache block count\_AsyncCacheUfsBlocks | - | Total number of blocks that need to be async cached from the local source |
 | BlocksAccessed | - | Total number of times any one of the blocks in a worker is accessed |
 | BlocksCached | - | Total number of blocks used for caching data in a worker |
 | BlocksCancelled | - | Total number of aborted temporary blocks in a worker |
@@ -79,6 +111,8 @@
 | BlocksEvicted | - | Total number of evicted blocks in a worker |
 | BlocksLost | - | Total number of lost blocks in a worker |
 | BlocksPromoted | - | Total number of times any one of the blocks in a worker moved to a new tier |
+| Worker capacity\_CapacityFree             | Bytes    | Total free bytes on all tiers of all workers               |
+| Worker capacity\_CapacityTotal            | Bytes    | Total capacity on all tiers of all workers                   |
+| Worker capacity\_CapacityUsed | Bytes | Total used bytes on all tiers of all workers |
 
  
-
