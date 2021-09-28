@@ -4,9 +4,9 @@ YARN Resource Scheduling supports interactive YARN resource queue scheduling man
 - Capacity Scheduler organizes resources in a hierarchical manner, allowing multiple users to share cluster resources based on multi-level resource restrictions.
 
 >!
-- Fair Scheduler is used by default. Therefore, you need to configure relevant parameters in the `fair-scheduler.xml` configuration file for the YARN component. If you switch to Capacity Scheduler, configure relevant parameters in the `capacity-scheduler.xml` configuration file. No matter which scheduler you use, parameter configurations must be consistent with those on the **Resource Scheduling** page.
-- After setting the policy on the **Resource Scheduling** page, you need to click **Refresh Dynamic Resource Pools** to deliver the policy configurations to keep the configuration file and parameters consistent in **Configuration Management**. After deleting a resource pool, you need to manually restart or click **Apply** to restart Resource Manager.
-- After switching schedulers, you need to click **Apply** to restart Resource Manager for the changes to take effect.
+>- Fair Scheduler is used by default. Therefore, you need to configure relevant parameters in the `fair-scheduler.xml` configuration file for the YARN component. If you switch >to Capacity Scheduler, configure relevant parameters in the `capacity-scheduler.xml` configuration file. No matter which scheduler you use, parameter configurations must be >consistent with those on the **Resource Scheduling** page.
+>- After setting the policy on the **Resource Scheduling** page, you need to click **Refresh Dynamic Resource Pools** to deliver the policy configurations to keep the >configuration file and parameters consistent in **Configuration Management**. After deleting a resource pool, you need to manually restart or click **Apply** to restart >Resource Manager.
+>- After switching schedulers, you need to click **Apply** to restart Resource Manager for the changes to take effect.
 
 ## Configuring Fair Scheduler
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click a Hadoop cluster ID on the cluster list to go to the cluster details page.
