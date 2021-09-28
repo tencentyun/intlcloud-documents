@@ -6,7 +6,6 @@ PUT Bucket 接口请求可以在指定账号下创建一个存储桶。该 API �
 >- 创建存储桶时，如果没有指定访问权限，则默认使用私有读写（private）权限。
 
 
-
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
@@ -50,7 +49,10 @@ Authorization: Auth String
 [Request Body]
 ```
 
->? Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> 
 
 #### 请求参数
 
@@ -70,7 +72,6 @@ Authorization: Auth String
 | x-cos-grant-full-control | 赋予被授权者操作存储桶的所有权限，格式为 id="[OwnerUin]"，如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"` | string | 否       |
 
 
-
 ## 响应
 
 #### 响应头
@@ -87,7 +88,31 @@ Authorization: Auth String
 
 ## 实际案例
 
-#### 案例一：指定公有读并授权特定用户读取权限和写入对象
+#### 案例一：简单案例（单 AZ 存储桶）
+
+#### 请求
+
+```plaintext
+PUT / HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Sun, 26 May 2019 14:51:38 GMT
+Content-Length: 0
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1558882298;1558889498&q-key-time=1558882298;1558889498&q-header-list=content-length;date;host&q-url-param-list=&q-signature=c25fd640274a6da2318935ceebfbcfba4598****
+Connection: close
+```
+
+#### 响应
+
+```plaintext
+HTTP/1.1 200 OK
+Content-Length: 0
+Connection: close
+Date: Sun, 26 May 2019 14:51:37 GMT
+Server: tencent-cos
+x-cos-request-id: NWNlYWE3ZjlfZDQyNzVkNjRfMzg1N18yNzFh****
+```
+
+#### 案例二：指定公有读并授权特定用户读取权限和写入对象
 
 #### 请求
 
