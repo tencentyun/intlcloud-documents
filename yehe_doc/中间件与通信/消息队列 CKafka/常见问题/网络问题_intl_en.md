@@ -12,8 +12,8 @@ If you use the PLAINTEXT method to access CKafka while enabling public network a
 
 >?When adding an ACL policy, you don't need to select any user, and read/write permissions are added to **all users** by default.
 
-![img](https://main.qcloudimg.com/raw/27e8e0b9b20da5f123eaee2212633dba.png)
+![img](https://main.qcloudimg.com/raw/8d75061c412c78fef7f3f0c13024ec69.png)
 
 The effect after addition is as follows:
 
-![img](https://main.qcloudimg.com/raw/6d1b4b5dd89343530deae827e76d38ab.png)
+![img](https://main.qcloudimg.com/raw/eb922f7fe6a3cfe97be6498b05676c5c.png)
