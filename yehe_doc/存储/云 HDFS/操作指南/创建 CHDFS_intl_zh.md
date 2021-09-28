@@ -5,7 +5,9 @@
 2. 单击【新建】，在新建文件系统页面，输入名称与描述。
  - **名称**：文件系统名称，仅支持大小写字母、数字和 - 或 \_ 的组合，长度为4-64的字符。
  - **描述**：文件系统描述信息。
+
 <img src="https://main.qcloudimg.com/raw/6605445472576e30cdca6f00340dee19.png" width="75%">
+
 3. 单击【保存】，即可新建 CHDFS。
 4. 单击 CHDFS 上的【配置】，可查看 CHDFS 基础配置和挂载信息，如下图所示：
 ![](https://main.qcloudimg.com/raw/b66b5179292b1f9e913159dca82929c4.png)
