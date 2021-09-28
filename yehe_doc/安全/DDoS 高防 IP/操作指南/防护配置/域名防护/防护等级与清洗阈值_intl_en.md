@@ -1,14 +1,14 @@
 ## Protection Description
-In order to improve the protection effect and reduce the risk of false blocking during protection, Anti-DDoS Advanced has three protection levels for CC attacks for your choice, and the "Medium" level is used by default.
+Anti-DDoS Advanced provides three protection levels against CC attacks for stronger protection and less false blocking. The default level is Medium.
 <dx-tabs>
 ::: Loose
 This level applies to a protected website without obviously exceptional traffic. It will run checks on all visitor requests by using human verification algorithm. Only the visitors who successfully authenticate are allowed to access the website. As this CC protection policy is loose, a small number of exceptional requests may pass through the security system.
 :::
 ::: Medium
-This level is set as the default. We recommend this protection level when a protected website is under CC attacks. Compared with the Loose level, it can cover most of attack scenarios and defend against most of CC attacks. Meanwhile it will run checks on all visitor requests by using human verification algorithm. Only the visitors who successfully authenticate are allowed to access the website.
+This level is set as the default. We recommend this protection level when a protected website is under CC attacks. Compared with the Loose level, it can cover most of attack scenarios and defend against most of CC attacks. Meanwhile it will run checks on all visitor requests by using human verification algorithm. Only the visitors who successfully authenticate are allowed to access the website. This level only applies to website applications. If your application is related to APIs or apps, configure CC frequency limiting rules for protection.
 :::
 ::: Strict
-This level applies to more complex CC attacks. It will run checks on all visitor requests by using human verification algorithm. Only the visitors who successfully authenticate are allowed to access the website. As this verification mode is strict, some normal requests may be blocked.
+This level applies to more complex CC attacks. It will run checks on all visitor requests by using human verification algorithm. Only the visitors who successfully authenticate are allowed to access the website. As this verification mode is strict, some normal requests may be blocked. This level only applies to website applications. If your application is related to APIs or apps, configure CC frequency limiting rules for protection.
 :::
 </dx-tabs>
 
@@ -22,9 +22,9 @@ This level applies to more complex CC attacks. It will run checks on all visitor
 You have purchased an [Anti-DDoS Advanced instance](https://intl.cloud.tencent.com/document/product/297/37241) and set the object to protect.
 
 ## Directions
-1. Log in to the [Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Protection Configuration** on the left sidebar.
+1. Log in to the [Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Configurations** on the left sidebar.
 2. Select a domain name under an instance ID from the left list, e.g., **212.64.xx.xx bgpip-000002je** -> **http:80** -> **www.xxx.com**.
-![](https://main.qcloudimg.com/raw/9b99b60388bd40282a34316cda196b64.png)
+![](https://main.qcloudimg.com/raw/ceb4f1ebedc2efb78e428f5ffe071473.png)
 3. In the **CC Protection Policy** section, set the protection level to **Loose**, **Medium**, or **Strict** as needed and set the cleansing threshold.
 >?
 >- The cleansing threshold is the threshold for Anti-DDoS services to start cleansing traffic. If the number of HTTP requests sent to the specified domain name exceeds the threshold, CC protection will be triggered.

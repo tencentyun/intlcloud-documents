@@ -34,7 +34,7 @@ DDoS 高防 IP 服务提供防护策略调整功能，针对 DDoS 攻击提供�
 3.	在右侧“DDoS 防护等级”卡片中，设置“防护等级”与“清洗阈值”。
 >?若明确该清洗阈值，可进行自定义设置。若无法明确该清洗阈值，DDoS 防护系统将根据 AI 算法自动学习并生成一套专属的默认阈值。
 
-![](https://main.qcloudimg.com/raw/5493d666511df983f24362189d39901f.png)
+![](https://main.qcloudimg.com/raw/9d9ed77e18ed9864dd1cc2ea5bf5182b.png)
 
 **配置参数说明：**
 	- **防护等级**
