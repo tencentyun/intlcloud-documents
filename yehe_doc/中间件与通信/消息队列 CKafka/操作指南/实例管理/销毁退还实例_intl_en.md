@@ -22,7 +22,7 @@ You can manually terminate a monthly-subscribed instance before it expires by fo
 1. Log in to the [CKafka Console](https://console.cloud.tencent.com/ckafka).
 2. On the instance list page, select **More** > **Terminate** in the **Operation** column.
 3. In the pop-up window, click **Submit** to terminate the instance.
-   ![](https://main.qcloudimg.com/raw/fca06554eebef46745359c818586177c.png)
+   ![](https://main.qcloudimg.com/raw/05cef4bc7b69d2f68c1f2367ecdfd7fa.png)
 > !
 > - After a monthly-subscribed instance is terminated, it will be in “Isolated” status for seven days in the CKafka console. It will be completely released after 14 days (including the 14th day).
 > - Isolated instances cannot produce or consume data. Data and configurations saved in CKafka will not be terminated, but **expired messages will still be automatically deleted according to the open-source Kafka mechanism**.
@@ -43,4 +43,4 @@ A monthly-subscribed instance will be retained for seven days in the CKafka cons
 1. Log in to the [CKafka Console](https://console.cloud.tencent.com/ckafka).
 2. On the instance list page, select **More** > **Terminate** in the **Operation** column.
 3. In the pop-up window, click **Submit** to delete the instance.
-   ![](https://main.qcloudimg.com/raw/7f6e8ee097b96f8e9faeb2c0844add53.png)
+   ![](https://main.qcloudimg.com/raw/166e8127c0f30f409415519999f47a8b.png)

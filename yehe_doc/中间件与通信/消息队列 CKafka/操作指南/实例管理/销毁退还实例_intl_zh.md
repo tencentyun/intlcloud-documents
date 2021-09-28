@@ -22,7 +22,7 @@
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在实例列表页的操作栏，选择**更多** > **销毁/退还**。
 3. 在确认销毁的弹窗中，单击**提交**，即可销毁该实例。
-   ![](https://main.qcloudimg.com/raw/fca06554eebef46745359c818586177c.png)
+   ![](https://main.qcloudimg.com/raw/05cef4bc7b69d2f68c1f2367ecdfd7fa.png)
 > !
 > - 包年包月实例销毁后，在 CKafka 控制台保留7天，状态显示为已隔离，14天后（包括第14天）彻底释放。
 > - 处于已隔离状态的实例不能生产和消费数据，已保存在 CKafka 内的数据以及配置不会被销毁，**到期的消息仍然会依照开源 Kafka 机制被自动删除**。
@@ -43,4 +43,4 @@
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在实例列表页的操作栏，选择**更多** > **销毁/退还**。
 3. 在确认删除的弹窗中，单击**提交**，即可删除该实例。
-   ![](https://main.qcloudimg.com/raw/7f6e8ee097b96f8e9faeb2c0844add53.png)
+   ![](https://main.qcloudimg.com/raw/166e8127c0f30f409415519999f47a8b.png)
