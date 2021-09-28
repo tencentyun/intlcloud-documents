@@ -1,7 +1,7 @@
 ### How do I select the instance specification?
 
 You can use the specification calculator in the [console](https://console.cloud.tencent.com/ckafka/migration) to calculate the required production specification.
-<img src="https://main.qcloudimg.com/raw/2aa46d3744ac7406833549da41333ed3.jpg" width="550px">
+<img src="https://main.qcloudimg.com/raw/15b721ef605d238f01f888b6a54a334e.png" width="550px">
 
 CKafka instances are divided into Standard Edition and Pro Edition according to their specifications. For the comparison between the two editions, please see [Product Specifications](https://intl.cloud.tencent.com/document/product/597/41815).
 
@@ -20,7 +20,7 @@ Pro Edition uses a dedicated cluster. When the system algorithm finds that the c
 
 If data migration is required, you can customize the migration time:
 
-![](https://main.qcloudimg.com/raw/bdf595851782261be3237bc17d8abbc3.jpg)
+![](https://main.qcloudimg.com/raw/50035915db52c093577406f0707722f2.png)
 
 If data migration is required, you can select a migration mode and set scheduled migration. There are two migration modes:
 
