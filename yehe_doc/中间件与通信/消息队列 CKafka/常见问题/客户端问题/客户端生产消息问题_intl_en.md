@@ -12,7 +12,7 @@ Produced messages are blocked mainly because the messages cannot be sent, or mes
 #### Possible causes
 
 1. For Pro Edition instances, you can view advanced monitoring metrics such as the request queue depth and server production and consumption time in the console to check the overall load of the server and whether the server has performance problems. For Standard Edition instances, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to view such metrics.
-   ![](https://main.qcloudimg.com/raw/af8dcc058b765c4f116cba7a89850904.png)
+   ![](https://main.qcloudimg.com/raw/1e0c6df4443b1933853616d0a0ecf9bf.png)
 2. Check the client load such as local server CPU and memory utilization (if the client is in Java, you should pay attention to GC).
 3. If blocking occurs occasionally, you should check whether the local network is stable, especially in a container network environment.
 4. Check whether producers are not enough based on the traffic of a single server. If the throughput traffic of a server is high, but producers send messages in a single thread, you should pay attention to the number of producers.
@@ -80,4 +80,4 @@ log.info("offset: {}", recordMetadata.offset());
 If the partition and offset can be printed out, the currently sent message has been correctly saved on the server. At this time, you can use the message query tool to query the information of the relevant offset.
 If the partition and offset cannot be printed out, the message has not been saved on the server, and the client needs to retry.
 
-![](https://main.qcloudimg.com/raw/cca4f62e86898eec49d8a9cde7ae9fa8.png)
+![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
