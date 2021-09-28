@@ -14,7 +14,7 @@ In such cases, if you have to use an ACL policy, we recommend you produce messag
 
 We recommend you select two or three replicas for data storage when creating a topic to ensure data reliability. A created topic has two replicas by default. If your business requires higher availability, you can select three replicas. If you need more replicas, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. When creating a topic, you can select the number of replicas as shown below:
 
-![topic](https://main.qcloudimg.com/raw/05f7dc495a90da08c2b1a5593b908c1f.png)
+![topic](https://main.qcloudimg.com/raw/08bf05cf16f28acecf0534c1d96a0391.png)
 
 To improve data security, CKafka has banned the creation of single-replica topics currently. If you have a single-replica topic in your account, please migrate it as follows:
 1. Create a topic, select the same partition parameter, and select "dual-replica".
@@ -30,7 +30,7 @@ To improve data security, CKafka has banned the creation of single-replica topic
 ### Why did topic creation fail?
 
 1. The total number of all topic partitions has reached the upper limit of the number of partitions in the instance specification. To solve this problem, expand the Kafka instance or delete unnecessary topics.
-![](https://main.qcloudimg.com/raw/94904051a2fba64bb4d191b50abbf703.jpg)
+![](https://main.qcloudimg.com/raw/3b47e96e056bbc1b303f8b374289bf6b.png)
 2. Topic deletion is an async operation. After the deletion instruction is delivered, the system will delete the topic metadata asynchronously. During this period, if you try to create a topic with the same name as the deleted one, the system will prompt that the topic already exists. In this case, please wait about 1 minute and try again later.
 3. If a topic with the same name as the topic you want to create already exists in the cluster, the system will prompt that the topic already exists.
 
