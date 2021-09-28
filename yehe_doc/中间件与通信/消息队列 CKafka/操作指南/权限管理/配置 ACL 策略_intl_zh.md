@@ -30,20 +30,26 @@
 - **批量勾选：**选择多个需要配置相同 ACL 策略的 Topic，批量勾选模式只支持配置一条策略。
 - **按前缀模糊：**按 Topic 名称前缀模糊匹配需要配置相同 ACL 策略的 Topic，需要指定模糊匹配规则名称。设置后，新增按指定前缀命名的 Topic 时，系统自动配置指定 ACL 策略。
 
->?
->- 模糊匹配规则最多支持设置五条。  
->- 支持输入多个IP或网段，用 `;` 隔开。
+<dx-alert infotype="explain">
+<ul>
+<li>模糊匹配规则最多支持设置五条。</li>  
+<li>支持输入多个IP或网段，用 `;` 隔开。</li>
+</ul>
+</dx-alert>
 
-![](https://main.qcloudimg.com/raw/302ef1adfcd93b5fcae7ebaed583c7f9.png)
+![](https://main.qcloudimg.com/raw/aab5317519ca8427e012aed9dcefde36.png)
 :::
 ::: 其他版本实例
 支持**批量勾选**为用户授予权限。
 
-> ?
-> - 批量勾选模式只支持配置一条策略。
-> - 支持输入多个IP或网段，用 `;` 隔开。		
+<dx-alert infotype="explain">
+<ul>
+<li>批量勾选模式只支持配置一条策略。</li> 
+<li>支持输入多个IP或网段，用 `;` 隔开。</li> 
+</ul>
+</dx-alert>		
 
-![](https://main.qcloudimg.com/raw/d1294464da0efc600c01bc183c62d0b8.png)
+![](https://main.qcloudimg.com/raw/477c223aea0e0734bc7d56a2e233d5da.png)
 :::
 </dx-tabs>
     
@@ -55,10 +61,10 @@
 2. 如果您在开通公网访问路由的同时还使用了 PLAINTEXT 方式接入 CKafka，那么之前为 Topic 设置的 ACL 仍然会生效。若您希望 PLAINTEXT 方式的访问不受影响，请为 PLAINTEXT 需要访问的 Topic 添加全部用户的可读写的权限。
 >?在添加ACL策略时，不需要选择任何用户，默认为**全部用户**添加了读写权限。
 >
- ![](https://main.qcloudimg.com/raw/27e8e0b9b20da5f123eaee2212633dba.png)
+ ![](https://main.qcloudimg.com/raw/12e574cc76287026b4620c0802c6c08a.png)
 
    添加完成效果如下：
-   ![](https://main.qcloudimg.com/raw/6d1b4b5dd89343530deae827e76d38ab.png)
+   ![](https://main.qcloudimg.com/raw/6d921dbdae519910c8f8b8eb3b5a89c7.png)
 
 3. 如果该 Topic 已经在有其他云产品在使用（例如：日志服务 CLS 的日志投递、云函数 SCF 消息转储、大数据 EMR 组件的消费等），开启 ACL 策略相当于对这些联动能力的权限加以限制，会直接导致这些能力不可用，请一定谨慎操作。对于此类情况建议生产同一份数据到另一个 Topic 做分别处理，不要在同一个 Topic 上配置统一的 ACL 策略。
 

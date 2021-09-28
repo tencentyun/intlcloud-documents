@@ -7,6 +7,6 @@ CVM、CPM 2.0またはコンテナは、マウントポイントを介してCHDF
  - 名前：マウントポイント名、大文字と小文字、数字および-または_の組み合わせのみをサポートし、長さは4～64文字とします。
  - VPCネットワーク名/ID：VPCネットワークを選択します。
  - 権限グループ：権限グループを選択します。新規作成していない場合は、まず[権限グループの作成](https://intl.cloud.tencent.com/document/product/1106/41962)を行ってください。
-![](https://main.qcloudimg.com/raw/9baa2b7c238d7b5c37fbcc4161572198.png)
+![](https://main.qcloudimg.com/raw/71dd4afeeaf75de0ca946951bd6fd1f7.png)
 3. 【保存】をクリックすると、マウントポイントが新規作成されます。
 

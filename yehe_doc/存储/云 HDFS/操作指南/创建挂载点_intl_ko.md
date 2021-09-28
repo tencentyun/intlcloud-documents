@@ -7,6 +7,6 @@ CVM, CPM 2.0 또는 컨테이너는 마운트 포인트를 통해 CHDFS 데이�
  - 이름: 마운트 포인트 이름으로 대소문자 알파벳, 숫자, - 또는 _ 조합만 지원하며 길이는 4~64자 입니다. 
  - VPC 네트워크 이름/ID: VPC 네트워크 선택.
  - 권한 그룹: 권한 그룹을 선택하고 아직 생성되지 않았으면 [권한 그룹 생성](https://intl.cloud.tencent.com/document/product/1106/41962)을 선택합니다. 
-![](https://main.qcloudimg.com/raw/9baa2b7c238d7b5c37fbcc4161572198.png)
+![](https://main.qcloudimg.com/raw/71dd4afeeaf75de0ca946951bd6fd1f7.png)
 3. [저장]을 클릭하면 마운트 포인트가 생성됩니다. 
 

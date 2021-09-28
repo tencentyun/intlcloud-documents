@@ -5,8 +5,8 @@
 2. 【新規作成】をクリックし、ファイルシステムの新規作成ページに名前と説明を入力します。
  - **名前**：ファイルシステム名、大文字と小文字、数字および-または\ _の組み合わせのみをサポートし、長さは4～64文字とします。
  - **説明**：ファイルシステムの説明情報。
-<img src="https://main.qcloudimg.com/raw/c9285ee9482f19c73decae5d79474c6b.png" width="75%">
+<img src="https://main.qcloudimg.com/raw/6605445472576e30cdca6f00340dee19.png" width="75%">
 3. 【保存】をクリックすると、CHDFSを新規作成できます。
 4. CHDFSの【設定】をクリックすると、CHDFSの基本設定とマウント情報を確認できます。下図のとおりです。
-![](https://main.qcloudimg.com/raw/3229893f63b05c04258e2588922c5215.png)
+![](https://main.qcloudimg.com/raw/b66b5179292b1f9e913159dca82929c4.png)
 

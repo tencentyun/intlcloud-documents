@@ -1,3 +1,22 @@
+## August 2021
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Added support for YARN resource scheduling.</td>
+<td>Added support for UI-based YARN resource scheduling configuration.</td>
+<td>August 31, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/42328" target="_blank">YARN Resource Scheduling</a></td>
+</tr>
+</tbody></table>
+
 ## July 2021
 <table>
 <thead>

@@ -24,26 +24,32 @@ This document describes how to configure SASL authentication and ACL (access con
 >- If allow and deny rules are simultaneously configured, only IPs with allow rules can connect to the instance. 
 
 <dx-tabs>
-::: Instances on v2.4.1 or above
+::: Instances\son\sv2.4.1\sor\sabove
 You can grant permissions to the user through **Topics** or **Topic name prefix**.
 
 - **Topics:** select multiple topics that need to be configured with the same ACL policy. The "Topics" mode only supports configuring one policy.
 - **Topic name prefix:** fuzzy match topics that need to be configured with the same ACL policy by topic name prefix. You need to specify the fuzzy matching rule name. After this is set, when a new topic whose name contains the specified prefix is added, the system will automatically configure the specified ACL policy for it.
 
->?
->- Up to five fuzzy match rules can be set.  
->- You can enter multiple IPs or IP ranges and separate them by `;`.
+<dx-alert infotype="explain">
+<ul>
+<li>Up to five fuzzy match rules can be set. </li>
+<li>You can enter multiple IPs or IP ranges and separate them by `;`.</li>
+</ul>
+</dx-alert>
 
-![](https://main.qcloudimg.com/raw/302ef1adfcd93b5fcae7ebaed583c7f9.png)
+![](https://main.qcloudimg.com/raw/aab5317519ca8427e012aed9dcefde36.png)
 :::
-::: Instances on other versions
+::: Instances\son\sother\sversions
 You can grant permissions to the user through **Topics**.
 
-> ?
-> - The "Topics" mode only supports configuring one policy.
-> - You can enter multiple IPs or IP ranges and separate them by `;`.		
+<dx-alert infotype="explain">
+<ul>
+<li>The "Topics" mode only supports configuring one policy.</li>
+<li>You can enter multiple IPs or IP ranges and separate them by `;`.	</li>
+</ul>
+</dx-alert>	
 
-![](https://main.qcloudimg.com/raw/d1294464da0efc600c01bc183c62d0b8.png)
+![](https://main.qcloudimg.com/raw/477c223aea0e0734bc7d56a2e233d5da.png)
 :::
 </dx-tabs>
     
@@ -55,10 +61,10 @@ You can grant permissions to the user through **Topics**.
 2. If you use the PLAINTEXT method to access CKafka while enabling public network access routing, the ACL previously set for the topics will still take effect. If you want PLAINTEXT access to be unaffected, please add the read/write permissions of all users for the topics that PLAINTEXT needs to access.
 >?When adding an ACL policy, you don't need to select any user, and read/write permissions are added to **all users** by default.
 >
- ![](https://main.qcloudimg.com/raw/27e8e0b9b20da5f123eaee2212633dba.png)
+ ![](https://main.qcloudimg.com/raw/12e574cc76287026b4620c0802c6c08a.png)
 
    The effect after addition is as follows:
-   ![](https://main.qcloudimg.com/raw/6d1b4b5dd89343530deae827e76d38ab.png)
+   ![](https://main.qcloudimg.com/raw/6d921dbdae519910c8f8b8eb3b5a89c7.png)
 
 3. If a topic is already being used by another Tencent Cloud service (e.g., log shipping in CLS, message dump in SCF, and component consumption in EMR), enabling ACL policy is equivalent to imposing restrictions on the permissions of these linked capabilities, and they will directly become unavailable. Therefore, please be sure to do so with caution. In such cases, we recommend you produce the same data to another topic for separate processing instead of configuring a unified ACL policy on the same topic.
 

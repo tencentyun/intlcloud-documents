@@ -5,6 +5,6 @@
 2. 单击【新建】，在弹出的新建权限组窗口中，输入名称与描述。
  - 名称：文件系统名称，仅支持大小写字母、数字和 - 或 _ 的组合，长度为4-64的字符。
  - 描述：权限组描述信息。
-![](https://main.qcloudimg.com/raw/cd9fcdee76160700fc2a12a722570848.png)
+![](https://main.qcloudimg.com/raw/7ee55d2e9b73a9cbb7904eed5935016c.png)
 3. 单击【保存】，即可新建权限组。
 
