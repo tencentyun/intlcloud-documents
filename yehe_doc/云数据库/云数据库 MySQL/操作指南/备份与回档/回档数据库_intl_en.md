@@ -1,6 +1,6 @@
 
 ## Overview
-TencentDB for MySQL will not alter any of your data. Data corrupted due to personal reasons can be recovered through rollback in a self-service manner. A rollback feature is provided to roll back databases or tables in Tencent Cloud based on data backup and binlog backup. Real-time data rollback is supported.
+TencentDB for MySQL will not modify any of your data. Data corrupted due to personal reasons can be recovered through rollback in a self-service manner. A rollback feature is provided to roll back databases or tables in Tencent Cloud based on data backup and binlog backup. Real-time data rollback is supported.
 
 By re-constructing periodical images and real-time transactions, the TencentDB for MySQL rollback feature can roll back a database or table to the specified point in time and the time slices of all data are guaranteed to be identical. A new database or table will be generated in the original instance, and during the process, the original database or table can be accessed normally. Upon the completion of rollback, you can see both the new and original databases or tables.
 
@@ -29,9 +29,9 @@ The rollback feature can roll back databases or tables to a specified point in t
 >
 ![](https://main.qcloudimg.com/raw/abd517cf8b6db3db57b622f13d365893.png)
 2. On the rollback page, set the rollback method (described as below), select databases or tables to be rolled back, and click **Next step: set the rollback time and database table name**.
-   - Fast: full backup of the instance is imported, and the selected databases or tables are rolled back. This rollback mode is slow but has no limit.
-   - Faster: full backup and database-level binlogs are imported. For cross-database operation, if the associated database is not selected at the same time, rollback may fail.
-   - Ultrafast: full backup and table-level binlogs are imported. For cross-table operation, if the associated table is not selected at the same time, rollback may fail.
+   - Fast mode: full backup of the instance is imported, and the selected databases or tables are rolled back. This rollback mode is slow but has no limit.
+   - Faster mode: full backup and database-level binlogs are imported. For cross-database operation, if the associated database is not selected at the same time, rollback may fail.
+   - Ultrafast mode: full backup and table-level binlogs are imported. For cross-table operation, if the associated table is not selected at the same time, rollback may fail.
 >?
 >- Only databases/tables whose name contains digits, letters, underscores, or their combinations can be rolled back. Databases/tables with names containing special characters are not supported.
 >- In the mode where specified databases/tables can be rolled back only, a maximum of 500 databases/tables in the same instance can be rolled back at a time.
