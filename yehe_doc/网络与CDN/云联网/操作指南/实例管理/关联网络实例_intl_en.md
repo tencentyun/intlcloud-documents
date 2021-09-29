@@ -1,6 +1,5 @@
-1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
-2. Click **Cloud Connect Network** on the left sidebar to access the CCN management page.
-3. Associate a network instance using either of:
+1. Log in to the [CCN console](https://console.cloud.tencent.com/vpc/ccn) and access the CCN management page.
+2. Associate a network instance using either of:
  Option 1: associate the network instance on the details page.
      1. Click the **ID/Name** of the desired CCN instance to access the **Associated Instances** page. Click **Add an instance**. 
      2. In the pop-up window, select a network instance type from **VPC**, **Direct Connect Gateway**, **BM Virtual Private Cloud**, and **VPN Gateway**. Select the region to which the network instance belongs and the specific network instance.
