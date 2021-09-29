@@ -34,7 +34,7 @@ We recommend you install the SDK by using the tool that comes with the language:
 ## Sample Code
 >?All samples are for reference only and cannot be directly compiled and executed. You need to modify them based on your actual needs. You can also use [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) to automatically generate the demo code as needed.
 
-Each API has a corresponding request structure and a response structure. This document only lists the sample code of several common features. For more samples, please see [SDK for Go Samples](https://github.com/TencentCloud/tencentcloud-sdk-go/tree/master/examples/sms).
+Each API has a corresponding request structure and a response structure. This document only lists the sample code of several common features. 
 
 ### Applying for SMS template
 ```
