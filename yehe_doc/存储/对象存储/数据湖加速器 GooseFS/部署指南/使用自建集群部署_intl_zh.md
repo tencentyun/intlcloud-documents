@@ -116,7 +116,7 @@ GooseFS 在 `scripts` 目录下提供了批量配置 SSH 免密登录以及批�
 
 Standalone 架构采用的是单 Master 节点，多 Worker 节点的集群部署架构。具体可参考如下步骤部署运行：
 
-1. [下载 GooseFS 的二进制分发包](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/goosefs-1.0.0-bin.tar.gz)。
+1. 下载 GooseFS 的二进制分发包。
 2. 使用 `tar zxvf goosefs-x.x.x-bin.tar.gz` 命令解压到安装路径后。可参见批量部署工具的介绍配置和执行集群的批量部署，也可以继续参考下文详细地手动部署流程。
 
 （1）从 `conf` 目录下拷贝 `template` 文件创建配置文件：
