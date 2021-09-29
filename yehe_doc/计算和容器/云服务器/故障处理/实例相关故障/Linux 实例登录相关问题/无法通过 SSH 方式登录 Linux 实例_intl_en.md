@@ -10,7 +10,7 @@ During [login to a Linux instance using SSH key](https://intl.cloud.tencent.com/
 Check below for the solutions for common SSH login errors.
 
 <dx-accordion>
-::: SSH login error “User root not allowed because not listed in AllowUsers”
+::: SSH\slogin\serror\s“User\sroot\snot\sallowed\sbecause\snot\slisted\sin\sAllowUsers”
 
 #### Cause[](id:userNotListAllowUsers)
 The login is restricted by the user login control parameters.
@@ -57,7 +57,7 @@ Then you can <a href="https://intl.cloud.tencent.com/document/product/213/32501"
 
 
 ::: 
-::: SSH login error “Disconnected:No supported authentication methods available”
+::: SSH\slogin\serror\s“Disconnected:No\ssupported\sauthentication\smethods\savailable”
 
 #### Problem[](id:noSupportesAuthentication)
 When logging in via SSH key, the following error message appears:
@@ -96,7 +96,7 @@ service sshd restart
 Then you can <a href="https://intl.cloud.tencent.com/document/product/213/32501">log in to the Linux CVM instance via SSH key</a> normally.
 
 :::
-::: SSH login error “ssh_exchange_identification: read: Connection reset by peer”
+::: SSH\slogin\serror\s“ssh_exchange_identification:\sread:\sConnection\sreset\sby\speer”
 
 #### Problem[](id:connectionResetByPeer)
 When logging in via SSH key, the error message “ssh_exchange_identification: read: Connection reset by peer” or as shown below appears:
@@ -179,7 +179,7 @@ service sshd restart
 
 If the SSH login error persists, it may be caused by kernel exceptions or other unknown reasons. In this case, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 :::
-::: SSH login error “Permission denied, please try again”
+::: SSH\slogin\serror\s“Permission\sdenied,\splease\stry\sagain”
 
 #### Problem[](id:permissionDenied)
 When the root user logs in to a Linux instance via SSH key, the “Permission denied, please try again” error message appears.
@@ -240,7 +240,7 @@ service sshd restart
 ```
 Then you can <a href="https://intl.cloud.tencent.com/document/product/213/32501">log in to the Linux CVM instance via SSH key</a> normally.
 :::
-::: SSH login error “Too many authentication failures for root”
+::: SSH\slogin\serror\s“Too\smany\sauthentication\sfailures\sfor\sroot”
 
 #### Problem[](id:tooManyFailures)
 The error message “Too many authentication failures for root” is returned and the connection is interrupted after many failed attempts to enter the password to login via SSH key.
@@ -280,7 +280,7 @@ service sshd restart
 Then you can <a href="https://intl.cloud.tencent.com/document/product/213/32501">log in to the Linux CVM instance via SSH key</a> normally.
 
 :::
-::: SSH startup error “error while loading shared libraries”
+::: SSH\sstartup\serror\s“error\swhile\sloading\sshared\slibraries”
 
 #### Problem[](id:errorLibraries)
 When the SSH service is started in a Linux instance, an error message similar to the following is displayed in the `secure` log or directly returned:
@@ -390,7 +390,7 @@ You can roll back to snapshot of the system disk to recover the library file. Fo
 </dx-alert>
 
 :::
-::: SSH service startup error “fatal: Cannot bind any address”
+::: SSH\sservice\sstartup\serror\s“fatal:\sCannot\sbind\sany\saddress”
 #### Problem[](id:cannotBindAddress)
 When the SSH service is started in a Linux instance, an error message similar to the following is displayed in the `secure` log or directly returned:
 ```
@@ -438,7 +438,7 @@ service sshd restart
 Then you can <a href="https://intl.cloud.tencent.com/document/product/213/32501">log in to the Linux CVM instance via SSH key</a> normally.
 
 :::
-::: SSH service startup error “Bad configuration options”
+::: SSH\sservice\sstartup\serror\s“Bad\sconfiguration\soptions”
 
 #### Problem[](id:badConfigureOptions)
 When the SSH service is started in a Linux instance, an error message similar to the following is displayed in the `secure` log or directly returned:
@@ -517,6 +517,6 @@ You can roll back the system disk snapshot of the instance to recover the librar
 </dx-accordion>
 
 
-<br>
+
 If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
