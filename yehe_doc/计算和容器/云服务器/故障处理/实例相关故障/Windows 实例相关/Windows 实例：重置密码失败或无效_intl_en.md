@@ -57,30 +57,6 @@ Check and configure the `cloudbase-init` components as instructed below.
 1. [Log in to the target Windows instance via VNC](https://intl.cloud.tencent.com/document/product/213/32496).
 2. Restore and set the `cloudbase-init` components according to the actually installed third-party security program.
 
-<dx-tabs>
-::: 360 Total Security
-The installed 360 Total Security will regularly scan the system, and consider the `cloudbase-init` component risky to isolate it. Perform the following steps to restore the `cloudbase-init` component and add it to the trust file:
 
-1. Open 360 Total Security and choose **Trojans Killer** > **Recovery Zone**.
-![](https://main.qcloudimg.com/raw/cfc16c35c1eafbf4938f5ef4711cf0ee.png)
-2. In the pop-up window, select files and click **Restore Selected**.
-3. In the confirmation window that appears, check **Trust them** and click **Restore**.
-![](https://main.qcloudimg.com/raw/4e7dee481a05243cec89ba5c6b1a5eb0.png)
-:::
-::: Huorong Security
-The installed Huorong Security software will block the password resets of the `cloudbase-init` service, instead of isolating the `cloudbase-init` component. Perform the following steps to add the component to the trust file:
-1. Open the Huorong Security software and click <img src="https://main.qcloudimg.com/raw/66dcf0fca93bab386180ab4337ebda92.png" style="margin:-3px 0px"> in the upper-right corner. Click **Trusted Zone** in the pop-up menu.
-![](https://main.qcloudimg.com/raw/93e25735ff17294bb36d224b074ec67a.png)
-2. In the pop-up window, add the following files and folders.
-![](https://main.qcloudimg.com/raw/a8b0bd702407e5100238237fb6a5821a.png)
-The directory path is as follows:
- - `C:\Program Files\Cloudbase Solutions`
- - `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\Scripts`
- - `C:\Program Files\QCloud`
- - `C:\Windows\System32\cmd.exe`
- - `C:\Windows\System32\WindowsPowerShell`
- - `C:\Windows\SysWOW64\cmd.exe`
-:::
-</dx-tabs>
 
 
