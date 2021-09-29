@@ -33,7 +33,7 @@ CHDFS 大数据组件支持情况如下：
 
 1. 登录 CDH 管理页面。
 2. 在系统主页，选择**配置** > **服务范围** > **高级**，进入高级配置代码段页面，如下图所示：
-   ![](https://main.qcloudimg.com/raw/95a05ec2090a84861c99222c9d26d4df.png)
+   ![](https://main.qcloudimg.com/raw/09f053f2c0feaf4451d9bc4c70cb501d.png)
 3. 在 Cluster-wide Advanced Configuration Snippet(Safety Valve) for core-site.xml 的代码框中，填入 CHDFS 配置。
 
 ```
