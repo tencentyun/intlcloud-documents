@@ -2,7 +2,7 @@
 
 
 ### IM Plan Prices[](id:Package)
-A plan can be applied only to a single `SDKAppID`. You must purchase a plan for each `SDKAppID` if you want to [upgrade](https://intl.cloud.tencent.com/zh/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) multiple ones to the Pro or Flagship edition.
+A plan can be applied only to a single `SDKAppID`. You must purchase a plan for each `SDKAppID` if you want to [upgrade](https://intl.cloud.tencent.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) multiple ones to the Pro or Flagship edition.
 IM plans are pay-as-you-go on a monthly basis. Fees incurred within a calendar month will be deducted on the third day of the next month. No fees will be charged for the month the plan is activated. Billing starts from the next month. See the table below for billing details:
 
 | Item | Trial Edition | Pro Edition | Flagship Edition |
