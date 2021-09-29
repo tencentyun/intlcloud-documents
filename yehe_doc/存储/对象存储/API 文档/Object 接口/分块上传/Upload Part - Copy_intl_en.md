@@ -79,7 +79,7 @@ This API uses the following recommended headers:
 #### Request parameters
 
  | Parameter | Description | Type | Required |
----|---|---|---
+|---|---|---|---|
 | partNumber | Part number | String | Yes |
 | uploadId | To upload an object in parts, you must first initialize the multipart upload. The response of the multipart upload initialization will carry a unique descriptor (`uploadId`), which needs to be carried in the multipart upload request. | String | Yes |
 

@@ -1,6 +1,6 @@
 Private DNS will provide you with free resources based on your identity verification type, number of private domains, and number of DNS queries, so that you can fully experience our features. Specific free quotas are shown in the tables below:
 >!
->- The free quotas are valid **from September 28, 2021 to December 11, 2021**. During this period, you can use them normally.
+>- The free quotas are valid **from September 28, 2021 to December 31, 2021**. During this period, you can use them normally.
 >- The free quotas take effects in the next billing cycle. Added private domains are billed on a daily basis. DNS queries are billed on an hourly basis.
 >
 ## Individual Users

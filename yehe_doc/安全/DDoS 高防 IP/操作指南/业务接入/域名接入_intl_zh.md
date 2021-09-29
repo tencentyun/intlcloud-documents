@@ -1,6 +1,4 @@
 
-
-## 操作步骤
 1. 登录 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l7) ，在左侧目录中，单击【业务接入 】，在业务接入页面，单击【域名接入】，进入相关管理页面。
 ![](https://main.qcloudimg.com/raw/71835dde8e359d1ad4d4de19d80d3c54.png)
 2. 在“域名接入”页签，单击【添加域名】，进入新建七层转发规则弹窗中，填写相关字段。
@@ -28,8 +26,7 @@
 			</tr> 
 		</table>
 	
- - 协议右侧框内可填写端口。
- ![](https://main.qcloudimg.com/raw/d5b688e81c5954f51dcbdacc721ecda8.png)
+
   - 回源方式支持【IP 回源】和【域名回源】
     - 若勾选【IP 回源】，则填写源站服务器的 IP （或 IP+端口）。一个网站域名对应多个源站 IP（或 IP+端口）时，可全部填入并用回车分隔多个 IP（或 IP+端口），最多支持填写16个 IP（或 IP+端口）。
     - 若勾选【域名回源】，则填写回源域名（CNAME）或域名（CNAME）+端口。一个网站域名对应多个源站域名（CNAME）或域名（CNAME）+端口时，可全部填入并用回车分隔多个域名（CNAME）或域名（CNAME）+端口，最多支持填写16个域名（CNAME）或域名（CNAME）+端口。
