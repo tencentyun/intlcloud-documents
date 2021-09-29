@@ -85,40 +85,40 @@ A successful query returns the **application/xml** data that includes informatio
 The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
----|---|---|---
+| ---|---|---|---| 
 | AccessControlPolicy | None | Stores the result of `GET Bucket acl`. | Container |
 
 **Content of `AccessControlPolicy`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
----|---|---|---
+| ---|---|---|---| 
 | Owner | AccessControlPolicy | Information about the bucket owner | Container |
 | AccessControlList|AccessControlPolicy | Information about the grantee and permissions |Container |
 
 **Content of `Owner`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
----|---|---|---
+| ---|---|---|---| 
 | ID|AccessControlPolicy.Owner | Complete ID of the bucket owner, formatted as `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]` <br> Example: `qcs::cam::uin/100000000001:uin/100000000001` | string |
 | DisplayName | AccessControlPolicy.Owner | Name of the bucket owner | string |
 
 **Content of `AccessControlList`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
----|---|---|---
+| ---|---|---|---| 
 | Grant | AccessControlPolicy.AccessControlList | A single permission | Container |
 
 **Content of `AccessControlList.Grant`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
----|---|---|---
+| ---|---|---|---| 
 | Grantee | AccessControlPolicy.AccessControlList.Grant | Grantee information. `xsi:type` can be set to `Group` or `CanonicalUser`. If it’s set to `Group`, the child node can contain only `URI`. If it’s set to `CanonicalUser`, the child node can contain only `ID` and `DisplayName`. | Container |
 | Permission | AccessControlPolicy.AccessControlList.Grant | Permission granted. For the enumerated values such as `WRITE` and `FULL_CONTROL`, please see <b>Actions on buckets</b> in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). | Enum |
 
 **Content of `AccessControlList.Grant.Grantee`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
----|---|---|---
+| ---|---|---|---| 
 | URI | AccessControlPolicy.AccessControlList.Grant.Grantee | Preset user group. For more information, please see <b>Preset user group</b> in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).<br>Examples: `http://cam.qcloud.com/groups/global/AllUsers`, `http://cam.qcloud.com/groups/global/AuthenticatedUsers` | string |
 | ID | AccessControlPolicy.AccessControlList.Grant.Grantee | Compete ID of the grantee, formatted as `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`<br>Example: `qcs::cam::uin/100000000001:uin/100000000001` | string |
 | DisplayName | AccessControlPolicy.AccessControlList.Grant.Grantee | Name of the grantee | string |
