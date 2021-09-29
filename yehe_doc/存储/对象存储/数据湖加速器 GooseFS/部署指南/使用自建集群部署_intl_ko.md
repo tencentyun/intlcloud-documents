@@ -116,7 +116,7 @@ GooseFS는 ‘scripts’ 디렉터리에서 SSH 비밀번호 없이 로그인 �
 
 Standalone 아키텍처는 단일 Master 노드, 다중 Worker 노드의 클러스터 배포 아키텍처를 적용했습니다. 아래 순서를 참고하여 배포를 실행합니다. 
 
-1. [GooseFS의 이진법 배포 패키지 다운로드](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/goosefs-1.0.0-bin.tar.gz)를 합니다. 
+1. GooseFS의 이진법 배포 패키지 다운로드 를 합니다. 
 2. `tar zxvf goosefs-x.x.x-bin.tar.gz` 명령어를 통해 설치 경로 뒤에 압축 해제합니다. 일괄 배포 툴의 소개를 참고하여 클러스터의 일괄 배포를 설정 및 실행할 수 있으며, 아래 상세한 수동 배포 프로세스 문장을 참고할 수 있습니다. 
 
  (1) ‘conf’ 디렉터리에서 ‘template’ 파일을 복사하여 구성 파일을 생성합니다. 
