@@ -24,7 +24,7 @@ The demo includes the following features:
 
 [](id:step2)
 ### Step 2. Download the SDK and source code
-1. Download the SDK and [demo source code](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/unity/TRTCUnitySDK.zip).
+1. Download the SDK and [demo source code](https://github.com/tencentyun/TRTCUnitySDK).
 2. Click **Next**. You can open the project with Unity, or copy `TRTCUnitySDK/Assets/TRTCSDK/SDK` in the SDK ZIP file to the `Assets` directory of your project.
 
 3. Find and open `Assets/TRTCSDK/Demo/Tools/GenerateTestUserSig.cs`.
