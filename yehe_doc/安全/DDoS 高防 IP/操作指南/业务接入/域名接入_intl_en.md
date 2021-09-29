@@ -1,6 +1,4 @@
 
-
-## Directions
 1. Log in to the [Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l7), click **Application Accessing** on the left sidebar, and open the **Access via domain names** tab.
 ![](https://main.qcloudimg.com/raw/71835dde8e359d1ad4d4de19d80d3c54.png)
 2. Click **Add Domain Name** to fill in the configuration fields in the pop-up window.
@@ -28,9 +26,8 @@ Parameters are described as follows:
 			</tr> 
 		</table>
 	
- - Enter a port in the right box of the protocol.
- ![](https://main.qcloudimg.com/raw/d5b688e81c5954f51dcbdacc721ecda8.png)
   - Forwarding can be performed via IPs or domain names.
     - If you select **Forwarding via IP**, enter the real server IP (or IP + port). If a domain name corresponds to multiple real server IPs (or multiple pairs of IP + port), you can enter all of them and separate them with carriage return. Up to 16 entries are supported.
     - If you select **Forwarding via domain name**, enter the forwarding domain name (CNAME) or domain name (CNAME) + port. If a domain name corresponds to multiple real server domain names (CNAME) or multiple pairs of domain name (CNAME) + port, you can enter all of them and separate them with carriage return. Up to 16 entries are supported.
+ 
 3. After completing the configuration, click **OK**.
