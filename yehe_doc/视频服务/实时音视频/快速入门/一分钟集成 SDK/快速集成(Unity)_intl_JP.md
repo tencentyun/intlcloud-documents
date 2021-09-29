@@ -9,7 +9,7 @@
   - プロジェクトが有効な開発者による署名を設定済みであることを確認してください。
 
 ## SDKの統合
-1. SDKおよび付属する[Demoソースコード](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/unity/TRTCUnitySDK.zip)をダウンロードします。
+1. SDKおよび付属する[Demoソースコード](https://github.com/tencentyun/TRTCUnitySDK)をダウンロードします。
 2. 解凍後、プロジェクト内の`TRTCUnitySDK/Assets/TRTCSDK/SDK`フォルダを自分のプロジェクトのAssetsディレクトリ下にコピーします。
 
 ## よくあるご質問
