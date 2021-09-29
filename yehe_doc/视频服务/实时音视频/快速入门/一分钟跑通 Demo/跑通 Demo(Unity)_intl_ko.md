@@ -24,7 +24,7 @@
 
 [](id:step2)
 ### 2단계: SDK와 소스 코드 다운로드
-1. 실제 비즈니스 요구사항에 따라 SDK 및 관련 [Demo 소스 코드](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/unity/TRTCUnitySDK.zip)를 다운로드합니다.
+1. 실제 비즈니스 요구사항에 따라 SDK 및 관련 [Demo 소스 코드](https://github.com/tencentyun/TRTCUnitySDK)를 다운로드합니다.
 2. 다운로드 완료 후 [다운로드 완료, 다음 단계]를 클릭합니다. 이 프로젝트를 직접 Unity로 열 수 있습니다. SDK 파일을 직접 사용하려면 SDK 패키지에 있는 `TRTCUnitySDK/Assets/TRTCSDK/SDK` 폴더를 프로젝트의 Assets 디렉터리에 복사합니다.
 
 3. `Assets/TRTCSDK/Demo/Tools/GenerateTestUserSig.cs` 파일을 찾아 엽니다.
