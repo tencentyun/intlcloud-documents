@@ -7,11 +7,11 @@ DDoS 高防支持针对访问 DDoS 高防的源流量，基于端口进行一键
 ## 操作步骤
 1. 登录  [DDoS 高防包控制台](https://console.cloud.tencent.com/ddos/antiddos-native/package) ，在左侧导航中，单击【DDoS 高防包】>【防护配置】。
 2. 在左边的列表选中高防包的 ID，如“bgp-00xxxxxx”。
-![](https://main.qcloudimg.com/raw/f5a6eedee422db9cb63069c5fe8ec369.png)
+![](https://main.qcloudimg.com/raw/dcb8de6c5b81f6f522b25962f4ad3c11.png)
 3. 右侧卡片中单击“端口过滤”卡片中的【设置】，进入端口过滤页面。
-![](https://main.qcloudimg.com/raw/ebc17e54b98aa8db88f617d4779b539f.png)
+![](https://main.qcloudimg.com/raw/e7aea83ac323c878cc2376af7fe4d218.png)
 4. 在端口过滤页面中，单击【新建】，弹出新建端口过滤弹窗。
 5. 在新建端口过滤弹窗中，创建端口过滤规则，根据需求，选择不同防护动作并填写相关字段，单击【确定】。
-![](https://main.qcloudimg.com/raw/3363b94f297dc47a1a66e0416795b593.png)
+![](https://main.qcloudimg.com/raw/b05f2100f14ecd0269673d26bfc84ce9.png)
 6. 新建完成后端口过滤列表，将新增一条端口过滤规则，可以在右侧操作列，单击【配置】，可以修改端口过滤规则。
-![](https://main.qcloudimg.com/raw/f962422e82584936d91387c67ac65858.png)
+![](https://main.qcloudimg.com/raw/90e5bfe35208179bd42ba04313960eb4.png)

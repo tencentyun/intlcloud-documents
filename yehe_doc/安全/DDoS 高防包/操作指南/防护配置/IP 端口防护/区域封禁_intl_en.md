@@ -1,11 +1,11 @@
-Anti-DDoS Pro allows you to block traffic from source IP addresses in specific geographic locations at the cleansing node, with just one click. You can block traffic from whatever regions or countries you need.
-
+Anti-DDoS allows you to block traffic from source IP addresses in specific geographic locations at the cleansing node, with just one click. You can block traffic from whatever regions or countries you need.
+>?After you configure the regional blocking setting, attack traffic targeting the region will still be recorded but will not be allowed to your real server.
 ## Prerequisites
 You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36115) instance and set the protected target.
 
 ## Directions
 1. Log in to the [Anti-DDoS Pro Console](https://console.cloud.tencent.com/ddos/antiddos-native/package) and click **Configurations** on the left sidebar.
-2. Select an Anti-DDoS Pro instance ID in the list on the left, such as "bgp-00xxxxxx".
+Select an Anti-DDoS Pro instance ID in the list on the left, such as "bgp-00xxxxxx".
 ![](https://main.qcloudimg.com/raw/4e4ba3bf8ddc987818ff247e2b62770d.png)
 3. Click **Set** in the **Block by Location** section to get to configuration.
 ![](https://main.qcloudimg.com/raw/f53c5b4854b2edcf7ae58bad4151c41c.png)
