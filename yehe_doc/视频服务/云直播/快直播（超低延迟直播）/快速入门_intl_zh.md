@@ -5,7 +5,7 @@
 1. 注册 [腾讯云账号](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的云直播实例。
 2. 进入 [腾讯云直播服务开通页](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)，勾选同意《腾讯云服务协议》，并单击 **申请开通** 即可开通云直播服务。
 >?  
->- 云直播服务申请开通后，会赠送20GB国内播放流量免费体验使用。为避免赠送流量用完后自动扣费，导致欠费无法使用云直播服务，建议您根据实际业务需求， **[购买](https://buy.cloud.tencent.com/live?from=console-portal-buy-lvb)** 相应规格的套餐包。
+>- 云直播服务申请开通后，会赠送20GB国内播放流量免费体验使用。
 >- 域名配置与标准直播一致，如您已接入标准直播，可直接从 [步骤4：获取播放地址](#step4) 部分了解快直播拉流。
 
 [](id:step1)
