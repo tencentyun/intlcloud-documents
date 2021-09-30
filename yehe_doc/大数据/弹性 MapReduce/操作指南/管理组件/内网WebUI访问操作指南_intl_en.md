@@ -32,7 +32,7 @@ Adjust the bandwidth upper limit to an appropriate value to ensure that the band
 ![](https://main.qcloudimg.com/raw/04a0956edc818210b2069607d5a675a1.png)
 ![](https://main.qcloudimg.com/raw/cbc735040d7134e3f4027de39f764a2f.png)
 4. Click **Bind** to bind an existing EIP to the current CVM instance or create an EIP for binding.
-![](https://main.qcloudimg.com/raw/77f7d3d97919e23ed604bae0c3ccb08e.png)
+![](https://main.qcloudimg.com/raw/b846993c8533d6b830fb8486d9d11a87.png)
 After binding the EIP, in the ENI tab, you can see that there is EIP information in the "Bound Public IP" section of the primary ENI.
 ![](https://main.qcloudimg.com/raw/f8d83f9aade43573c9720dabc231144a.png)
 5. Check whether the CVM instance can be accessed over the public network.
