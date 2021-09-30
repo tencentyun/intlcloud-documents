@@ -12,7 +12,7 @@ You can configure a cross-region bandwidth cap for pay-as-you-go CCN instances b
 
 > ?The default bandwidth cap is 1 Gbps. If you require a higher bandwidth, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
-1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and click **Cloud Connect Network** on the left sidebar.
+1. Log in to the [CCN console](https://console.cloud.tencent.com/vpc/ccn) and access the CCN management page.
 
 2. On the CCN instance list page, click the **ID/Name** of the target pay-as-you-go CCN instances billed by monthly 95 percentile to enter its details page. Click the **Bandwidth Management** tab.
 

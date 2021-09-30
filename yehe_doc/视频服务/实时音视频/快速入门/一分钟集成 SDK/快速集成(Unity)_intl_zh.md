@@ -9,7 +9,7 @@
   - 请确保您的项目已设置有效的开发者签名。
 
 ## 集成 SDK
-1. 下载 SDK 及配套的 [Demo 源码](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/unity/TRTCUnitySDK.zip)。
+1. 下载 SDK 及配套的 [Demo 源码](https://github.com/tencentyun/TRTCUnitySDK)。
 2. 解压后，把项目中的 `TRTCUnitySDK/Assets/TRTCSDK/SDK` 文件夹拷贝到您项目中的 Assets 目录下。
 
 ## 常见问题

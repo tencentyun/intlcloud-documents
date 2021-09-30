@@ -9,7 +9,7 @@
   - 프로젝트에 유효한 개발자 서명이 설정되어 있는지 확인하십시오.
 
 ## SDK 통합
-1. SDK 및 관련 [Demo 소스 코드](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/unity/TRTCUnitySDK.zip)를 다운로드합니다.
+1. SDK 및 관련 [Demo 소스 코드](https://github.com/tencentyun/TRTCUnitySDK)를 다운로드합니다.
 2. 압축 해제 후 프로젝트에 있는 `TRTCUnitySDK/Assets/TRTCSDK/SDK` 폴더를 프로젝트의 Assets 디렉터리에 복사합니다.
 
 ## FAQ

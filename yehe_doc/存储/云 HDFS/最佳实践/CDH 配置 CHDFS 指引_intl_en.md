@@ -33,7 +33,7 @@ The dependent component versions used in this document are as follows:
 
 1. Log in to Cloudera Manager (CDH management page).
 2. On the system homepage, select **Configuration** > **Service-Wide** > **Advanced** to enter the advanced configuration code snippet page as shown below:
-   ![](https://main.qcloudimg.com/raw/95a05ec2090a84861c99222c9d26d4df.png)
+   ![](https://main.qcloudimg.com/raw/09f053f2c0feaf4451d9bc4c70cb501d.png)
 3. Enter the CHDFS configuration in the code box of `Cluster-wide Advanced Configuration Snippet (Safety Valve) for core-site.xml`.
 
 ```

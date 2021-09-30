@@ -12,7 +12,7 @@
 
 > ?默认带宽上限为 1Gbps，如需更大默认带宽，请提 [工单申请](https://console.cloud.tencent.com/workorder/category)。
 
-1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) ，并在左侧导航栏中单击【云联网】。
+1. 登录 [云联网控制台](https://console.cloud.tencent.com/vpc/ccn) ，进入云联网管理页面。
 
 2. 在云联网列表页面单击目标月95后付费云联网实例的 ID，然后在实例详情页面单击【带宽管理】页签。
 
@@ -41,7 +41,7 @@
       	 <td>两地域之间的出入带宽限速。</td>
       	 </tr>
       	 </table>
-
+   
    3. 单击【确定】，即可修改限速方式。
 
 4. 根据您创建的云联网限速方式，按需配置限速：

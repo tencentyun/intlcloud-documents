@@ -11,7 +11,7 @@ GooseFS 사용 전 아래 작업을 준비해야 합니다.
 
 ## GooseFS 다운로드 및 구성
 
-1. 공식 홈페이지 라이브러리에서 GooseFS 설치 패키지를 로컬에 다운로드 합니다. 공식 홈페이지 라이브러리 다운로드 링크: [goosefs-1.0.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/goosefs-1.0.0-bin.tar.gz).
+1. 공식 홈페이지 라이브러리에서 GooseFS 설치 패키지를 로컬에 다운로드 합니다. 공식 홈페이지 라이브러리 다운로드 링크: goosefs-1.0.0-bin.tar.gz.
 2. 아래 명령어를 실행하여 설치 패키지의 압축을 해제합니다.
 ```shell
 tar -zxvf goosefs-1.0.0-bin.tar.gz

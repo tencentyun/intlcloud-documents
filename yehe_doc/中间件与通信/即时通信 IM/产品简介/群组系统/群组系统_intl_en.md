@@ -122,7 +122,7 @@ Based on common use cases, IM provides the following default group types:
 | Importing groups, group members, and group messages is allowed | Yes. It is allowed when historical groups are migrated from a third-party platform to IM. | No. Only existing groups, group members, and group messages can be used. |
 | Time before a group is automatically repossessed (in seconds) | The backend does not repossess groups, unless the group owner disbands the group or all members quit the group. | The backend does not repossess groups, unless the group owner disbands the group or all members quit the group. |
 
->!If you need to enable the group repossession feature, you can submit a ticket for application according to the [ticket template](https://intl.cloud.tencent.com/document/product/1047/37275). After configuration, inactive groups (where no members speak and change) will be cleaned up based on the group type.
+>!If you need to enable the group repossession feature, you can submit a ticket for application according to the ticket template. After configuration, inactive groups (where no members speak and change) will be cleaned up based on the group type.
 
 ## Group Data Structure
 ### Group basic information[](id:GroupBaseInfoFilter)
@@ -164,7 +164,7 @@ Based on common use cases, IM provides the following default group types:
 
 ## Custom Group Types
 
-If the group types provided by IM cannot meet your needs, you can prepare relevant information according to the [ticket template](https://intl.cloud.tencent.com/document/product/1047/37275) and [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to modify existing group types or add custom group types.
+If the group types provided by IM cannot meet your needs, you can prepare relevant information according to the ticket template and [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to modify existing group types or add custom group types.
 For example, you can create a group that is used in an office environment. This group is similar to a work group, but every member has the highest level of management permissions and can view messages sent before they join the group. In this case, you can:
 - Choose the work group type and [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to enable the **view historical messages before joining** and **allow ordinary members to remove members** options.
 - [Submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for a new group type named OAGroup. Specify work group as the reference type and enable the **view historical messages before joining** and **allow ordinary members to remove members** options.  

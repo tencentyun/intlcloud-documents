@@ -55,7 +55,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 
 >?All samples are for reference only and cannot be directly compiled and executed. You need to modify them based on your actual needs. You can also use [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) to automatically generate the demo code as needed.
 
-Each API has a corresponding request structure and a response structure. This document only lists the sample code of several common features. For more samples, please see [SDK for Java Samples](https://github.com/TencentCloud/tencentcloud-sdk-java/tree/master/examples/sms).
+Each API has a corresponding request structure and a response structure. This document only lists the sample code of several common features. 
 
 ### Applying for SMS template
 
