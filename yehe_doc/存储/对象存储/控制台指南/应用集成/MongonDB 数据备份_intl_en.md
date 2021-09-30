@@ -17,7 +17,7 @@ MongoDB Backup is a [SCF](https://intl.cloud.tencent.com/document/product/583)-b
 >!
 > If you haven’t activated SCF, please go to the [SCF console](https://console.cloud.tencent.com/scf) to activate it and authorize the service as instructed.
 5. In the pop-up window, configure the following information:
-![](https://main.qcloudimg.com/raw/e6eaa0130a141a2d313e014ef0bd51d7.png)
+![](https://main.qcloudimg.com/raw/f4591a75200593b0ee91cc27ccb589f6.png)
  - **Function Name**: uniquely identifies a function and cannot be modified after being set. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
  - **Associated Bucket**: a bucket to store the MongoDB backup files
  - **Trigger Period**: triggers the backup operation for the MongoDB Backup function. Every day, every week, and custom periods are supported.
@@ -26,7 +26,7 @@ MongoDB Backup is a [SCF](https://intl.cloud.tencent.com/document/product/583)-b
  - **Delivery Path**: delivery path prefix of the backup files. If not specified, backup files will be stored in the root directory of the bucket.
  - **SCF Authorization**: SCF needs to be authorized so that it can read the MongoDB instances as well as their backup files, and store the backup files to the specified bucket.
 6. Click **Confirm** to add the function.
-![](https://main.qcloudimg.com/raw/a5b709e3d94050234745763e3a123b1e.png)
+![](https://main.qcloudimg.com/raw/74eab5ca9a722e20fac6e1ca040ed8d3.png)
 You can perform the following operations on the created function:
  - Click **View Log** to view the historical running status of MongoDB Backup. If an error is reported, you can click **View Log** to quickly redirect to the SCF console for viewing the error log details.
  - Click **Edit** to modify a MongoDB Backup rule.
