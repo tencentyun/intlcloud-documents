@@ -1,14 +1,20 @@
-## Demonstration
+## Overview
 
-This document describes how to quickly enable browser-based live streaming features, including stream pulling and pushing, chat rooms, and co-anchoring.
+TWebLive is Tencent Cloud’s interactive live streaming component for web. A new SDK developed by Tencent Cloud’s terminal R&D team, it integrates TRTC, IM, and TCPlayer, and offers features common for web-based interactive live streaming, including stream publishing, mic on/off, camera on/off, sharing and watch on WeChat, chatting, and liking. It also comes with easy-to-use [APIs](https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/TWebLive.html) that can be used for stream publishing, playback, and real-time chatting. You can use the [demo](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html) to try out the features.
 
-## How It Works
 
-[**TWebLive**] is a browser-based live streaming component Tencent Cloud developed based on its TRTC, IM and CDN services. With this component, you can use simple code to enable features including stream pushing/pulling and chat rooms.
 
-### Stream pushing
-To use the stream pushing feature, you need to create a pusher object. A simple stream pushing feature takes only three steps to implement:
-```
+
+## Strengths
+
+The [TWebLive SDK](https://www.npmjs.com/package/tweblive) offers a substitute for Flash streaming and significantly simplifies the process of implementing web-based stream publishing, web-based low-latency playback, CDN streaming, and real-time chatting (or on-screen comments). The example below guides you through the implementation process.
+
+
+<dx-tabs>
+::: Push
+To use the push feature, you need to create a pusher object. A simple push feature takes only three steps to implement:
+<dx-codeblock>
+::: html html
 <div id="pusherView" style="width:100%; height:auto;"></div>
 <script>
 // 1. Create a pusher object.
@@ -19,23 +25,24 @@ pusher.setRenderView({
   elementID: 'pusherView',
   audio: true,
   video: true
-.then(() => {
-
-// 3. Enter an `sdkappid`, a `roomid`, and other information, and push streams.
+}).then(() => {
+  // 3. Enter the SDKAppID, room ID, and other information, and push streams.
   // The URL must start with `room://`.
   let url = `room://sdkappid=${SDKAppID}&roomid=${roomID}&userid=${userID}&usersig=${userSig}&livedomainname=${liveDomainName}&streamid=${streamID}`;
   pusher.startPush(url).then(() => {
     console.log('pusher | startPush | ok');
   });
-.catch(error => {
+}).catch(error => {
   console.error('pusher | setRenderView | failed', error);
 });
 </script>
-```
-### Stream pulling
-To use the stream pulling feature, you need to create a player object. A simple stream pulling feature takes only three steps to implement:
-
-```
+:::
+</dx-codeblock>
+:::
+::: Pull
+To use the pull feature, you need to create a player object. A simple pull feature takes only three steps to implement:
+<dx-codeblock>
+::: html html
 <div id="playerView" style="width:100%; height:auto;"></div>
 <script>
 // 1. Create a player object.
@@ -44,27 +51,29 @@ let player = TWebLive.createPlayer();
 // 2. Set the rendering view.
 player.setRenderView({ elementID: 'playerView' });
 
-// 3-1. Enter a CDN playback address in the FLV or HLS format, which must start with `https://`.
+// 3. Enter an FLV or HLS URL and other information and pull CDN streams for playback. The URL must start with `https://`.
+// Alternatively, enter the SDKAppID, room ID, and other information and pull WebRTC low-latency streams for playback. The URL must start with `room://`.
 let url = 'https://'
   + 'flv=https://200002949.vod.myqcloud.com/200002949_b6ffc.f0.flv' + '&' // Replace it with a valid playback URL.
   + 'hls=https://200002949.vod.myqcloud.com/200002949_b6ffc.f0.m3u8' // Replace it with a valid playback URL.
 
-// 3-2. You can also enter a WebRTC playback address that starts with `room://`. Such addresses allow ultra-low-latency playback.
-let url = `room://sdkappid=${SDKAppID}&roomid=${roomID}&userid=${userID}&usersig=${userSig}`;
+// let url = `room://sdkappid=${SDKAppID}&roomid=${roomID}&userid=${userID}&usersig=${userSig}`;
 player.startPlay(url).then(() => {
   console.log('player | startPlay | ok');
 }).catch((error) => {
   console.error('player | startPlay | failed', error);
 });
 </script>
-```
-### Chat room
-To allow the anchor and viewers to chat with each other, you need to create an IM object. A simple message sending/receiving feature takes only three steps to implement:
-
-```
-// 1. Create an IM object and listen for events.
+:::
+</dx-codeblock>
+:::
+::: Interaction
+To allow the anchor and audience to chat with each other, you need to create an IM object. A simple message sending/receiving feature takes only three steps to implement:
+<dx-codeblock>
+::: javascript javascript
+// 1. Create an IM object and subscribe to events.
 let im = TWebLive.createIM({
-  SDKAppID: 0 // Replace 0 with the `SDKAppID` of your IM app when connecting.
+  SDKAppID: 0 // Replace 0 with the SDKAppID of your IM app when connecting.
 });
 // Listen for events including `IM_READY`, `IM_TEXT_MESSAGE_RECEIVED`, etc.
 let onIMReady = function(event) {
@@ -80,18 +89,18 @@ im.on(TWebLive.EVENT.IM_READY, onIMReady);
 // Text message received and displayed on screen
 im.on(TWebLive.EVENT.IM_TEXT_MESSAGE_RECEIVED, onTextMessageReceived);
 
-// 2. Log in to IM.
+// 2. Log in to the IM console
 im.login({userID: 'your userID', userSig: 'your userSig'}).then((imResponse) => {
-  console.log(imResponse.data); // Login succeeds.
+  console.log(imResponse.data); // Login successful
   if (imResponse.data.repeatLogin === true) {
-    // This indicates that the account is already logged in.
+    // This indicates that the account is already logged in
     console.log(imResponse.data.errorInfo);
   }
 }).catch((imError) => {
   console.warn('im | login | failed', imError); // Message about failed login
 });
 
-// 3. Enter the live streaming room.
+// 3. Enter the live streaming room
 im.enterRoom('your roomID').then((imResponse) => {
   switch (imResponse.data.status) {
     case TWebLive.TYPES.ENTER_ROOM_SUCCESS: // Room entry successful
@@ -104,89 +113,138 @@ im.enterRoom('your roomID').then((imResponse) => {
 }).catch((imError) => {
   console.warn('im | enterRoom | failed', imError); // Message about failed room entry
 });
-```
+</script>
+:::
+</dx-codeblock>
+:::
+</dx-tabs>
 
->? To help you reduce development and labor costs, in addition to the TWebLive SDK, we have published a [demo](https://github.com/tencentyun/TWebLive) applicable for both desktop and mobile browsers on GitHub. You can fork and clone the demo project to your local environment and run it after minor modifications, or integrate the demo into your own project for official launch.
-
-## Integration Instructions
-
-<span id="step1"></span>
-### Step 1. create an application.
-First, you need to create an application in the TRTC console. Tencent Cloud will automatically bind the application with the IM application having the same `SDKAppID`.
-
-1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
-2. Go to [**Application Management**](https://console.cloud.tencent.com/trtc/app), click **Create Application**, enter an application name, and click **Confirm**.
-
-<span id="step2"></span>
-### Step 2. Obtain the `SDKAppID` and key.
-1. Go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, find your application, and click **Application Info** on the right to go to the details page.
-2. In **Application Info** section, click the copy button, and note the `SDKAppID`.
-![](https://main.qcloudimg.com/raw/a65b6631553159ce553620e40f9c2040.png)
-3. Go to the **Quick Start** tab and click **Copy Secret Key** in **Step 2: obtain the secret key to issue UserSig**.
-    ![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
-
->!
->- Local calculation of `UserSig` is for development and local debugging only and not for official launch. If your `SECRETKEY` is leaked, attackers can steal your Tencent Cloud traffic.
->- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
-
-<span id="step3"></span>
-### Step 3. Enable CDN live streaming (optional).
-To enable CDN live streaming, you need to activate Tencent Cloud CSS. Follow the steps below to enable the feature.
-1. In **Application Management** > **Function Configuration**, [enable relayed push](https://intl.cloud.tencent.com/document/product/647/39080). This will give each channel in a TRTC room a playback address.
-2. In the [CSS console](https://console.cloud.tencent.com/live/), configure the playback domain name and CNAME record. For detailed instructions, see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
+To help you reduce development and labor costs, in addition to the TWebLive SDK, we have published a [demo](https://github.com/tencentyun/TWebLive) applicable for both desktop and mobile browsers on GitHub. You can fork and clone the demo project to your local environment and run it after minor modifications, or integrate the demo into your own project for official launch.
 
 
-<span id="step4"></span>
 
-### Step 4. Download and configure the demo source code.
+## Use
+### Notes
+- TRTC and IM can share your account and authentication information only if you enter the same SDKAppID for your TRTC and IM apps.
+- The local UserSig calculation method is used for local development and debugging only. Do not publish it to your online systems. Once your SECRETKEY is disclosed, attackers can use your Tencent Cloud traffic without authorization. The correct UserSig distribution method is to integrate the computing code of UserSig into your server and provide an app-oriented API. When UserSig is required, your app can send a request to the business server to obtain the dynamic UserSig. For more information, please see "Generating a UserSig on the Server" in [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
+
+
+### Directions
+<dx-tabs>
+::: Method 1: via TRTC
+[](id:step1)
+#### Step 1. Create a TRTC application
+On the left sidebar of the [TRTC console](https://console.cloud.tencent.com/trtc/app), click **Application Management** > **Create Application**, enter an application name, and click **Confirm**. Take note of the `SDKAPPID` of the application you have created.
+
+>? An IM application with the same `SDKAppID` will be created automatically.
+
+#### Step 2: enable relayed push
+1. In the [TRTC console](https://console.cloud.tencent.com/trtc/app), click **Application Management** on the left sidebar, find the app you have created, and click **Function Configuration**.
+2. Click **Enable Relayed Push**, and select **Global auto-relayed push** for **Relayed Push Mode**. This will give each stream in a TRTC room a dedicated playback address.
+>? You can skip this step if you don’t need to enable CDN live streaming.
+3. Click **Quick Start** to view and note your key.[](id:step2)
+![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
+4. In the [CSS console](https://console.cloud.tencent.com/live/), configure the playback domain name and CNAME record. For detailed instructions, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
+
+>? You can skip this step if you don’t need to enable CDN live streaming.
+
+#### Step 3: download and configure the demo source code
+
 1. Download the demo project of the TWebLive component [here](https://github.com/tencentyun/TWebLive).
-2. Open the `TWebLive/dist/debug/GenerateTestUserSig.js` file and set the parameters as follows.<ul style="margin:0">
-   <li/>SDKAPPID: set it to the actual `SDKAppID` obtained in <a href="#step2">Step 2</a>.
-    <li/>SECRETKEY: set it to the actual key obtained in <a href="#step2">step 2</a>.
-    <li/>PLAYDOMAIN: set a playback domain name for CDN live streaming. Skip this if you don’t need the service.
-    </ul>
-3. Integrate the demo source code.
-#### Installing via npm
-1. Install the latest `tim-js-sdk`, `trtc-js-sdk`, and `tweblive` via npm.
+2. Open the `TWebLive/dist/debug/GenerateTestUserSig.js` file and set the parameters as follows.
+ - SDKAPPID: set it to the actual SDKAppID obtained in [step 1](#step1).
+ - SECRETKEY: enter the actual key obtained in [step 2](#step2).
+ - PUSHDOMAIN set a push domain name for CDN live streaming. Skip this if you don’t need the service.
+3. Install the latest `tim-js-sdk`, `trtc-js-sdk`, and `tweblive` via npm. If your project already has `tim-js-sdk` or `trtc-js-sdk`, upgrade it to the latest version.
 ```javascript
 npm install tim-js-sdk --save
 npm install trtc-js-sdk --save
 npm install tweblive --save
 ```
->? If your project already has `tim-js-sdk` or `trtc-js-sdk`, upgrade it to the latest version.
-2. Import `tweblive` to your project.
+4. Import `tweblive` to your project.
 ```javascript
 import TWebLive from 'tweblive'
 Vue.prototype.TWebLive = TWebLive
 ```
-
-#### Installing via script tags
-If you want to install the demo source code by referring to external files in the script tag, copy `tim-js.js`, `trtc.js`, and `tweblive.js` to your project and import them in the order below.
-```
-<script src="trtc.js"></script>
+5. If you want to install the demo source code by referring to external files in the script tag, copy `tim-js.js`, `trtc.js`, and `tweblive.js` to your project and import them in the order below.
+```javascript
+<script src="./trtc.js"></script>
 <script src="./tim-js.js"></script>
 <script src="./tweblive.js"></script>
 ```
-
-<span id="step5"></span>
-
-### Step 5. Run the demo.
-
-Open the `index.html` file in the `dist` directory with Chrome to run the demo.
-
 >!
->
+>- The local UserSig calculation method is used for local development and debugging only. Do not publish it to your online systems. Once your SECRETKEY is disclosed, attackers can use your Tencent Cloud traffic without authorization.
+>- The correct UserSig distribution method is to integrate the computing code of UserSig into your server and provide an app-oriented API. When UserSig is required, your app can send a request to the business server to obtain the dynamic UserSig. For more information, please see "Generating a UserSig on the Server" in [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
+
+#### Step 4: run the demo
+Open the `index.html` file in the `dist` directory with Chrome to run the demo.
+>!
 >- Normally, the demo needs to be deployed on the server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.
-> - Currently, the desktop version of Chrome offers better support for the features of TRTC SDK for desktop browsers; therefore, Chrome is recommended for the demo.
+> - Currently, the desktop version of Chrome offers better support for the features of TRTC SDK for web; therefore, Chrome is recommended for the demo.
 >- TWebLive uses the camera and mic to capture audio and video. During the demo run, when prompted by Chrome, you should click **Allow**.
+>  :::
+::: Method 2: via IM\sIM
+#### Step 1. Create an IM application
+1. Log in to the [IM console](https://console.cloud.tencent.com/im), and click **Create Application**.
+2. Enter an app name, and click **Confirm**.
+3. On the overview page of the [IM console](https://console.cloud.tencent.com/im), you can view the status, edition, SDKAppID, creation time, and expiration date of the app created.
+
+#### Step 2: obtain the key and activate TRTC
+1. On the overview page of the [IM console](https://console.cloud.tencent.com/im), click the app you have created to go to the **Basic Configuration** page. In the **Basic Information** section, click **Display key**, and copy and save the key.
+>! Please store the key information properly to prevent leakage.
+2. On the **Basic Configuration** page, activate TRTC.
+
+#### Step 3: download and configure the demo source code
+1. Download the demo project of the TWebLive component [here](https://github.com/tencentyun/TWebLive).
+2. Open the `TWebLive/dist/debug/GenerateTestUserSig.js` file and set the parameters as follows.
+ - SDKAPPID: set it to the actual SDKAppID obtained in [step 1](#step1).
+ - SECRETKEY: enter the actual key obtained in [step 2](#step2).
+ - PUSHDOMAIN set a push domain name for CDN live streaming. Skip this if you don’t need the service.
+3. Install the latest `tim-js-sdk`, `trtc-js-sdk`, and `tweblive` via npm. If your project already has `tim-js-sdk` or `trtc-js-sdk`, upgrade it to the latest version.
+```javascript
+npm install tim-js-sdk --save
+npm install trtc-js-sdk --save
+npm install tweblive --save
+```
+4. Import `tweblive` to your project.
+```javascript
+import TWebLive from 'tweblive'
+Vue.prototype.TWebLive = TWebLive
+```
+5. If you want to install the demo source code by referring to external files in the script tag, copy `tim-js.js`, `trtc.js`, and `tweblive.js` to your project and import them in the order below.
+```javascript
+<script src="./trtc.js"></script>
+<script src="./tim-js.js"></script>
+<script src="./tweblive.js"></script>
+```
+>!
+>- The local UserSig calculation method is used for local development and debugging only. Do not publish it to your online systems. Once your SECRETKEY is disclosed, attackers can use your Tencent Cloud traffic without authorization.
+>- The correct UserSig distribution method is to integrate the computing code of UserSig into your server and provide an app-oriented API. When UserSig is required, your app can send a request to the business server to obtain the dynamic UserSig. For more information, please see "Generating a UserSig on the Server" in [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
+
+#### Step 4: run the demo
+Open the `index.html` file in the `dist` directory with Chrome to run the demo.
+>!
+>- Normally, the demo needs to be deployed on the server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.
+> - Currently, the desktop version of Chrome offers better support for the features of TRTC SDK for web; therefore, Chrome is recommended for the demo.
+>- TWebLive uses the camera and mic to capture audio and video. During the demo run, when prompted by Chrome, you should click **Allow**.
+>  :::
+</dx-tabs>
+
+## Architecture and Supported Platforms
+
+### TWebLive architecture
+
+The figure below demonstrates TWebLive’s architecture.
+![](https://main.qcloudimg.com/raw/403cca1412a4a99a2b4abdd326b65c5b.png)
+Web-based stream pushing and low-latency playback use the WebRTC technology.
+
+- If your app scenario is mainly in the education sector, consider using [TRTC SDK for Electron](https://intl.cloud.tencent.com/document/product/647/35097), which supports two-channel big/small video images, with more flexible screen sharing schemes and better recovery capabilities on poor network connections.
+
+>?Proposed by Google, the WebRTC technology is well supported by Chrome (desktop), Edge (desktop), Firefox (desktop), and Safari (desktop and mobile), but poorly or not supported by other platforms such as browsers on Android.
 
 ### Supported Platforms
 
-Browser-based stream pushing and low-latency playback are based on the WebRTC technology. Proposed by Google, the technology is well supported by Chrome (desktop), Edge (desktop), Firefox (desktop), and Safari (desktop and mobile), but poorly or not supported by other platforms such as browsers on Android.
-
-- If your application scenario is mainly in the education sector, consider using [TRTC SDK for Electron](https://intl.cloud.tencent.com/document/product/647/35097) for the teacher end, which supports big/small video images and has more flexible screen sharing schemes and better recovery capabilities on poor network connections.
-
-|  OS   |          Browser          | Minimum Browser Version Requirement | Receiving (Playback) | Sending (Broadcast) |
+|  OS   |          Browser          | Minimum Browser Version Requirement | Receiving (Playback) | Sending (Publish) |
 | :---------: | :--------------------------: | :----------------: | :----------: | :----------: |
 |   macOS    |     Safari (desktop)     |        11+         |     Supported     |     Supported          |
 |  macOS    |     Chrome (desktop)     |        56+         |     Supported     |     Supported     |
@@ -204,28 +262,53 @@ Browser-based stream pushing and low-latency playback are based on the WebRTC te
 |   Android   |   WeChat embedded browser (TBS core)   |         -          |     Supported     |     Supported     |
 |   Android   |  WeChat embedded browser (XWEB core)   |         -          |     Supported     |    Not supported    |
 
->! Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support TRTC SDK for desktop browsers.
+>! Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support TRTC SDK for web.
+>[](id:sos)
+
+
 
 ## FAQs
-**1. Only public and private keys can be obtained when I try to view the key. How do I get a key?**
+<dx-accordion>
+::: Only public and private key can be obtained when I try to view the secret key. How do I get the secret key?
+By default, TRTC and IM applications (`SDKAppID`) created before August 2019 use the ECDSA-SHA256 algorithm for signature calculation, which uses public and private keys. You are strongly advised to upgrade to the HMAC-SHA256 algorithm.
+- To upgrade the algorithm via the TRTC console, please see [FAQs > UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+- To upgrade the algorithm via the IM console, please see [Basic Configuration](https://intl.cloud.tencent.com/document/product/1047/34540).
+:::
+::: What should I do if the client error "RtcError:\sno\svalid\sice\scandidate\sfound" occurs?**
+This error indicates that the TRTC SDK for web failed to establish a connection for media transfer. Please configure your firewall policy against the environment requirements. You can use the [demo](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html) to check whether the configuration has taken effect.
+  - TCP port: 8687
+  - UDP ports: 8000, 8080, 8800, 843, 443, 16285
+  - Domain name: qcloud.rtc.qq.com
+:::
+::: What should I do if the client error "RtcError:ICE/DTLS\sTransport\sconnection\sfailed" or "RtcError:DTLS\sTransport\sconnection\stimeout" occurs?
+This error indicates that the TRTC SDK for web failed to establish a connection for media transfer. Please configure your firewall policy against the environment requirements. You can use the [demo](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html) to check whether the configuration has taken effect.
+  - TCP port: 8687
+  - UDP ports: 8000, 8080, 8800, 843, 443, 16285
+  - Domain name: qcloud.rtc.qq.com
+:::
+::: What should I do if a \s10006\serror\s error occurs?
+If the `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"` error occurs, log in to the [TRTC console](https://console.cloud.tencent.com/rav), find the application you have created, click **Application Info**, and check in the **Application Info** tab if your TRTC service is available.<img src="https://main.qcloudimg.com/raw/33bd04fe44f1a9b4163709f3c513643c.png">
+:::
+::: What should I do if I cannot play back streams on iOS\s?
+1. Upgrade the TWebLive SDK to 1.2.0.
+2. After calling `player.startPlay()`, listen for the `PLAYER_AUTOPLAY_NOT_ALLOWED` callback, which indicates that the browser forbids autoplay.
+3. After the callback is received, display a play button, and trigger [resumePlay()](https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/Player.html#resumePlay) upon clicking of the button to start playback.
+For how to deal with iOS restrictions on autoplay, please see [Suggested Solutions for Autoplay Restrictions](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html).
+:::
+</dx-accordion>
 
-TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HMAC-SHA256. If your application was created before August 2019, you need to upgrade the signature algorithm to get a new key.
 
-**2. What should I do if the client error "RtcError:no valid ice candidate found" occurs?**
 
-This error indicates that TRTC SDK for desktop browsers failed with regard to Session Traversal Utilities for NAT (STUN). Please check your firewall policy against the environment requirements.
+## Summary
+This document describes Tencent Cloud's new web-based interactive live broadcasting component TWebLive. The SDK offers an ideal substitute for the traditional Flash streaming and allows you to quickly implement web-based stream pushing, web-based low-latency streaming, CDN streaming, real-time chatting (or on-screen comments), and other features.
 
-**3. What should I do if the client error "RtcError: ICE/DTLS Transport connection failed" or "RtcError: DTLS Transport connection timeout" occurs?**
+We also provide detailed integration instructions and a [demo](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html) for you to explore the component. Currently, TWebLive is well supported on the web.
 
-It indicates that TRTC SDK for desktop browsers failed to establish a media transmission channel. Please check your firewall configuration against the environment requirements.
+In the future, we plan to integrate more live streaming features into the component, for example, screen sharing on the push end, image messaging, multi-line (WebRTC low-latency and CDN) watching, and co-anchoring between anchors and viewers.
 
-** 4. What should I do if a 10006 error occurs?**
+References:
 
-If the `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"` error occurs, log in to the [TRTC console](https://console.cloud.tencent.com/rav), find the application you created, click **Application Info**, and check in the **Application Info** tab if your TRTC service is available.
-![](https://main.qcloudimg.com/raw/33bd04fe44f1a9b4163709f3c513643c.png)
+- <a href="https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/TWebLive.html">TWebLive API Guide</a>
+- [Online demos](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html)
 
-## References
-
-- [TWebLive API Guide](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html)
-- [Online demos](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/index.html)
 

@@ -1,6 +1,6 @@
 `TRTCMeeting` has the following features based on Tencent Real-Time Communication (TRTC) and Instant Messaging (IM):
-- The chairperson can create a meeting room, and the participants can enter the room ID to join the meeting.
-- The participants can share their screens with each other.
+- The host can create a meeting room, and the attendees can enter the room ID to join the meeting.
+- The attendees can share their screens with each other.
 - All users can send various text and custom messages.
 
 `TRTCMeeting` is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, please see [Video Conferencing (Android)](https://intl.cloud.tencent.com/document/product/647/37283).
@@ -14,8 +14,8 @@
 
 | API | Description |
 |-----|-----|
-| [sharedInstance](#sharedinstance) | Gets singleton object. |
-| [destroySharedInstance](#destroysharedinstance) | Terminates singleton object. |
+| [sharedInstance](#sharedinstance) | Gets a singleton object.           |
+| [destroySharedInstance](#destroysharedinstance) | Terminates a singleton object. |
 | [setDelegate](#setdelegate) | Sets event callback. |
 | [setDelegateHandler](#setdelegatehandler) | Sets the thread where the event callback is. |
 | [login](#login) | Logs in. |
@@ -26,10 +26,10 @@
 
 | API | Description |
 |-----|-----|
-| [createMeeting](#createmeeting) | Creates meeting room (called by chairperson). |
-| [destroyMeeting](#destroymeeting) | Terminates meeting room (called by chairperson). |
-| [enterMeeting](#entermeeting) | Enters meeting room (called by participant). |
-| [leaveMeeting](#leavemeeting) | Exits meeting room (called by participant). |
+| [createMeeting](#createmeeting) | Creates meeting room (called by host). |
+| [destroyMeeting](#destroymeeting) | Terminates meeting room (called by host). |
+| [enterMeeting](#entermeeting) | Enters meeting room (called by attendee). |
+| [leaveMeeting](#leavemeeting) | Leaves meeting room (called by attendee). |
 
 ### Remote user APIs
 | API | Description |
@@ -55,7 +55,7 @@
 | [setVideoBitrate](#setvideobitrate) | Sets bitrate. |
 | [setLocalViewMirror](#setlocalviewmirror) | Sets the mirroring preview mode of local image. |
 
-### Local audio operation APIs
+### Local audio APIs
 
 | API | Description |
 |-----|-----|
@@ -64,11 +64,11 @@
 | [setAudioQuality](#setaudioquality) | Sets audio quality. |
 | [muteLocalAudio](#mutelocalaudio) | Mutes local audio. |
 | [setSpeaker](#setspeaker) | Enables speaker. |
-| [setAudioCaptureVolume](#setaudiocapturevolume) | Sets mic capturing volume level. |
-| [setAudioPlayoutVolume](#setaudioplayoutvolume) | Sets playback volume level. |
+| [setAudioCaptureVolume](#setaudiocapturevolume) | Sets mic capturing volume. |
+| [setAudioPlayoutVolume](#setaudioplayoutvolume) | Sets playback volume. |
 | [startFileDumping](#startfiledumping) | Starts audio recording. |
 | [stopFileDumping](#stopfiledumping) | Stops audio recording. |
-| [enableAudioEvaluation](#enableaudioevaluation) | Enables volume level reminder. |
+| [enableAudioEvaluation](#enableaudioevaluation) | Enables volume reminder. |
 
 ### Screen sharing APIs
 
@@ -83,7 +83,7 @@
 
 | API | Description |
 |-----|-----|
-| [getBeautyManager](#getbeautymanager) | Gets beauty filter management object [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager). |
+| [getBeautyManager](#getbeautymanager) | Gets the beauty filter management object [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager). |
 
 ### Sharing APIs
 
@@ -101,7 +101,7 @@
 
 <h2 id="TRTCMeetingDelegate">TRTCMeetingDelegate API Overview</h2>
 
-### General event callbacks
+### Common event callback APIs
 
 | API | Description |
 |-----|-----|
@@ -113,7 +113,7 @@
 |-----|-----|
 | [onRoomDestroy](#onroomdestroy) | Callback for meeting room termination. |
 | [onNetworkQuality](#onnetworkquality)     | Callback for network status. |
-| [onUserVolumeUpdate](#onuservolumeupdate) | Callback for user call volume level. |
+| [onUserVolumeUpdate](#onuservolumeupdate) | Callback for user call volume. |
 
 ### Member entry/exit event callbacks
 
@@ -130,7 +130,7 @@
 | [onUserAudioAvailable](#onuseraudioavailable) | Notification of member enabling/disabling mic. |
 
 
-### Message event callbacks
+### Message event callback APIs
 
 | API | Description |
 |-----|-----|
@@ -148,7 +148,7 @@
 
 ## Basic SDK APIs
 
-<span id="sharedInstance"></span>
+[](id:sharedInstance)
 ### sharedInstance
 
 This API is used to get the [TRTCMeeting](https://intl.cloud.tencent.com/document/product/647/37283) singleton object.
@@ -159,7 +159,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| context | Context | Android context, which will be converted to `ApplicationContext` for the system APIs to call. |
+| context | Context | Android context, which will be converted to `ApplicationContext` for the calling of system APIs |
 
 
 
@@ -170,7 +170,7 @@ This API is used to terminate the [TRTCMeeting](https://intl.cloud.tencent.com/d
 
 ```java
 public static void destroySharedInstance();
-```   
+```
 
 ### setDelegate
 
@@ -206,10 +206,10 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| sdkAppId | int | You can view the `SDKAppID` in the TRTC Console > **[Application Management](https://console.cloud.tencent.com/trtc/app)** > "Application Info". |
-| userId | String | ID of current user, which is a string that can contain only letters (a–z and A–Z), digits (0–9), hyphens (-), and underscores (\_). |
+| sdkAppId | int | You can view the `SDKAppID` in the TRTC console > **[Application Management](https://console.cloud.tencent.com/trtc/app)** > "Application Info". |
+| userId | String | ID of the current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (\_). |
 | userSig | String | Tencent Cloud's proprietary security protection signature. For more information on how to get it, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
-| callback | ActionCallback | Callback for login. The `code` will be 0 if the operation succeeds. |
+| callback | ActionCallback | Callback for login. The `code` will be 0 if login succeeds. |
 
 
 ### logout
@@ -222,13 +222,13 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| callback | ActionCallback | Callback for logout. The `code` will be 0 if the operation succeeds. |
+| callback | ActionCallback | Callback for logout. The code is 0 if logout succeeds. |
 
    
 
 ### setSelfProfile
 
-This API is used to modify the personal information.
+This API is used to set profile.
 ```java
 public abstract void setSelfProfile(String userName, String avatarURL, TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -237,8 +237,8 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| userName | String | Nickname. |
-| avatarURL | String | Profile photo address. |
+| userName | String | Nickname |
+| avatarURL | String | Profile photo address |
 | callback | ActionCallback | Callback for personal information setting. The `code` will be 0 if the operation succeeds. |
 
    
@@ -247,7 +247,7 @@ The parameters are as detailed below:
 ## Meeting Room APIs
 ### createMeeting
 
-This API is used to create a meeting (called by the chairperson).
+This API is used to create a meeting (called by the host).
 ```java
 public abstract void createMeeting(int roomId, TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -259,16 +259,16 @@ The parameters are as detailed below:
 | roomId | int | Meeting room ID. You need to assign and manage the IDs in a centralized manner. |
 | callback | ActionCallback | Callback for room creation result. The `code` will be 0 if the operation succeeds.  |
 
-Generally, the chairperson calls the APIs in the following steps: 
-1. The **chairperson** calls `createMeeting()` to create a meeting. No matter whether the room is successfully created, the result will be notified to the chairperson through `ActionCallback`.
-2. The **chairperson** calls `startCameraPreview()` to enable camera preview. At this time, the beauty filter parameters can be adjusted. 
-3. The **chairperson** calls `startMicrophone()` to enable mic capturing.
+Generally, the host calls the APIs in the following steps: 
+1. The **host** calls `createMeeting()` to create a meeting. No matter whether the room is successfully created, the result will be notified to the host through `ActionCallback`.
+2. The **host** calls `startCameraPreview()` to enable camera preview. At this time, the beauty filter parameters can be adjusted. 
+3. The **host** calls `startMicrophone()` to enable mic capturing.
 
    
 
 ### destroyMeeting
 
-This API is used to terminate a meeting room (called by the chairperson). After creating a meeting, the chairperson can call this API to terminate it.
+This API is used to terminate a meeting room (called by the host). After creating a meeting, the host can call this API to terminate it.
 ```java
 public abstract void destroyMeeting(int roomId, TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -278,12 +278,12 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 |-----|-----|-----|
 | roomId | int | Meeting room ID. You need to assign and manage the IDs in a centralized manner. |
-| callback | ActionCallback | Callback for room termination result. The `code` will be 0 if the operation succeeds. |
-   
+| callback | ActionCallback | Callback for room termination result. The `code` is 0 if the operation succeeds. |
+
 
 ### enterMeeting
 
-This API is used to enter a meeting (called by the participant).
+This API is used to enter a meeting (called by the attendee).
 ```java
 public abstract void enterMeeting(int roomId, TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -293,18 +293,18 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 |-----|-----|-----|
 | roomId | int | Meeting room ID. |
-| callback | ActionCallback | Callback for room entry result. The `code` will be 0 if the operation succeeds.  |
+| callback | ActionCallback | Callback for room entry result. The `code` is 0 if the operation succeeds. |
 
 
-Generally, the participant joins a meeting in the following steps: 
-1. The **participant** calls `enterMeeting` and passes in `roomId` to enter the meeting room.
-2. The **participant** calls `startCameraPreview()` to enable camera preview and calls `startMicrophone()` to enable mic capturing.
-3. The **participant** receives the `onUserVideoAvailable` event and calls `startRemoteView(userId)` and passes in the `userId` of the target member to start playback.
+Generally, the attendee joins a meeting in the following steps: 
+1. The **attendee** calls `enterMeeting` and passes in `roomId` to enter the meeting room.
+2. The **attendee** calls `startCameraPreview()` to enable camera preview and calls `startMicrophone()` to enable mic capturing.
+3. The **attendee** receives the `onUserVideoAvailable` event and calls `startRemoteView(userId)` and passes in the `userId` of the target member to start playback.
    
 
 ### leaveMeeting
 
-This API is used to leave a meeting (called by the participant).
+This API is used to leave a meeting (called by the attendee).
 ```java
 public abstract void leaveMeeting(TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -313,9 +313,9 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| callback | ActionCallback | Callback for room exit result. The `code` will be 0 if the operation succeeds. |
+| callback | ActionCallback | Callback for room exit result. The code is 0 if the operation succeeds. |
 
-   
+
 ## Remote User APIs
 
 ### getUserInfoList
@@ -332,7 +332,7 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 |-----|-----|-----|
 | userListCallback | UserListCallback | Callback for user details. |
-   
+
 
 ### getUserInfo
 
@@ -345,7 +345,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| userId | String | User ID. |
+| userId | String | User ID |
 | userListCallback | UserListCallback | Callback for user details. |
 
 
@@ -389,9 +389,9 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| userId | String | User ID. |
-| fillMode | int  | Fill or fit mode. Default value: fill (FILL). For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab4197bc2efb62b471b49f926bab9352f). |
-   
+| userId | String | User ID |
+| fillMode | int  | Fill or fit mode. Default value: fill (FILL). For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ab4197bc2efb62b471b49f926bab9352f). |
+
 
 
 ### setRemoteViewRotation
@@ -406,13 +406,13 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 |-----|-----|-----|
 | userId | String | User ID. |
-| rotation | int  | Clockwise rotation angle. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a87fd1307871debc7c051de4878eb6d69). |
-   
+| rotation | int  | Clockwise rotation angle. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a87fd1307871debc7c051de4878eb6d69). |
+
 
 
 ### muteRemoteAudio
 
-This API is used to mute the remote audio.
+This API is used to mute or unmute a remote user.
 ```java
 public abstract void muteRemoteAudio(String userId, boolean mute);
 ```
@@ -440,13 +440,13 @@ The parameters are as detailed below:
 | userId | String | User ID. |
 | mute | boolean | true: blocks; false: unblocks. |
 
-   
-      
+
+​      
 
 ## Local Video Operation APIs
 ### startCameraPreview
 
-This API is used to enable the preview image of local video.
+This API is used to enable local video preview.
 ```java
 public abstract void startCameraPreview(boolean isFront, TXCloudVideoView view);
 ```
@@ -480,11 +480,11 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 |-----|-----|-----|
 | isFront | boolean | Switches between front and rear cameras. true: front camera; false: rear camera. |
-   
+
 
 ### setVideoResolution
 
-This API is used to set the resolution.
+Set the resolution
 
 ```java
 public abstract void setVideoResolution(int resolution);
@@ -494,7 +494,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| resolution | int | Video resolution. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#aa3b72c532f3ffdf64c6aacab26be5f87). |
+| resolution | int | Video resolution. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#aa3b72c532f3ffdf64c6aacab26be5f87). |
 
 
 
@@ -525,7 +525,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| bitrate | int  | Bitrate. The SDK encodes streams at the target video bitrate and will actively reduce the bitrate only if the network conditions are poor. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html). |
+| bitrate | int  | Bitrate. The SDK encodes streams at the target video bitrate and will actively reduce the bitrate only if the network conditions are poor. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html). |
 
 >? **Recommended value:** please see the optimal bitrate for each tier in `TRTCVideoResolution`. You can also slightly increase the optimal bitrate. For example, `TRTC_VIDEO_RESOLUTION_1280_720` corresponds to the target bitrate of 1,200 Kbps, and you can also set the bitrate to 1,500 Kbps for higher definition.
 
@@ -542,9 +542,9 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| type | int | Mirroring mode. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa353b5cf5662c43252eb8e5132f041c1). |
+| type | int | Mirroring mode. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa353b5cf5662c43252eb8e5132f041c1). |
 
-## Local Audio Operation APIs
+## Local Audio APIs
 
 ### startMicrophone
 
@@ -562,7 +562,7 @@ public abstract void stopMicrophone();
 
 ### setAudioQuality
 
-This API is used to set the audio quality.
+This API is used to set audio quality.
 ```java
 public abstract void setAudioQuality(int quality);
 ```
@@ -571,12 +571,12 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| quality | int | Audio quality. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55). |
+| quality | int | Audio quality. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55). |
 
 
 ### muteLocalAudio
 
-This API is used to mute/unmute the local audio.
+This API is used to mute/unmute local audio.
 ```java
 public abstract void muteLocalAudio(boolean mute);
 ```
@@ -585,7 +585,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| mute | boolean | Mutes/Unmutes. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86). |
+| mute | boolean | Mutes/Unmutes. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86). |
 
 
 
@@ -606,7 +606,7 @@ The parameters are as detailed below:
 
 ### setAudioCaptureVolume
 
-This API is used to set the mic capturing volume level.
+This API is used to set the mic capturing volume.
 ```java
 public abstract void setAudioCaptureVolume(int volume);
 ```
@@ -615,12 +615,12 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| volume | int | Capture volume level. Value range: 0–100. Default value: 100. |
+| volume | int | Capture volume. Value range: 0–100. Default value: 100. |
 
 
 ### setAudioPlayoutVolume
 
-This API is used to set the playback volume level.
+This API is used to set the playback volume.
 ```java
 public abstract void setAudioPlayoutVolume(int volume);
 ```
@@ -629,7 +629,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| volume | int | Playback volume level. Value range: 0–100. Default value: 100. |
+| volume | int | Playback volume. Value range: 0–100. Default value: 100. |
 
 
 ### startFileDumping
@@ -643,7 +643,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| trtcAudioRecordingParams | TRTCCloudDef.TRTCAudioRecordingParams | Audio recording parameters. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams). |
+| trtcAudioRecordingParams | TRTCCloudDef.TRTCAudioRecordingParams | Audio recording parameters. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams). |
 
 >? After this API is called, the SDK will record all audios (such as local audio, remote audio, and background music) in the current call to a file. No matter whether room entry is performed, this API will take effect once called. If audio recording is still ongoing when `exitMeeting` is called, it will stop automatically.
 
@@ -656,7 +656,7 @@ public abstract void stopFileDumping();
 
 ### enableAudioEvaluation
 
-This API is used to enable the volume level reminder.
+This API is used to enable the volume reminder.
 ```java
 public abstract void enableAudioEvaluation(boolean enable);
 ```
@@ -667,7 +667,7 @@ The parameters are as detailed below:
 |-----|-----|-----|
 | enable | boolean | true: enables; false: disables. |
 
->? After this feature is enabled, the result of volume level evaluation by the SDK will be obtained in `onUserVolumeUpdate`.
+>? After this feature is enabled, the result of volume evaluation by the SDK will be obtained in `onUserVolumeUpdate`.
 
 ## Screen Sharing APIs
 ### startScreenCapture
@@ -684,11 +684,11 @@ The parameters are as detailed below:
 | encParams | TRTCCloudDef.TRTCVideoEncParam | Screen sharing encoding parameters. We recommend you use the above configuration. If you set `encParams` to `null`, the encoding parameter settings before `startScreenCapture` is called will be used. |
 | screenShareParams | TRTCCloudDef.TRTCScreenShareParams | Special screen sharing configuration. We recommend you set `floatingView` which can prevent the application from being killed by the system and help protect user privacy. |
 
->? For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58).
+>? For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58).
 
 ### stopScreenCapture
 
-This API is used to stop screen sharing.
+This API is used to stop screen capture.
 ```java
 public abstract void stopScreenCapture();
 ```
@@ -724,15 +724,15 @@ The returned values are as detailed below:
 ## Beauty Filter APIs
 ### getBeautyManager
 
-This API is used to get the beauty filter management object [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager).
+This API is used to get the beauty filter management object [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager).
 ```java
 public abstract TXBeautyManager getBeautyManager();
 ```
 
-You can use the following features with beauty filter management:
-- Set beauty effects such as "beauty filter style", "brightening", "rosy skin", "eye enlarging", "face slimming", "chin slimming", "chin lengthening or shortening", "face shortening", "nose narrowing", "eye brightening", "teeth whitening", "eye bag removal", "wrinkle removal", and "smile line removal".
-- Adjust the "hairline", "eye distance", "eye corners", "mouth shape", "nose wing", "nose position", "lip thickness", and "face shape".
-- Set animated effects such as facial pendants (materials).
+You can do the following using `TXBeautyManager`:
+- Set the beauty filter style and apply effects including skin brightening, rosy skin, eye enlarging, face slimming, chin slimming, chin lengthening/shortening, face shortening, nose narrowing, eye brightening, teeth whitening, eye bag removal, wrinkle removal, and smile line removal.
+- Adjust the hairline, eye spacing, eye corners, lip shape, nose wings, nose position, lip thickness, and face shape.
+- Apply animated effects such as face widgets (materials).
 - Add makeup effects.
 - Recognize gestures.
 
@@ -750,7 +750,7 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 |-----|-----|-----|
 | message | String | Text message. |
-| callback | ActionCallback | Callback for sending result. |
+| callback | ActionCallback | Callback for operation |
 
    
 
@@ -765,19 +765,19 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cmd | String | Custom command word used to distinguish between different message types. |
-| message | String | Text message. |
-| callback | ActionCallback | Callback for sending result. |
+| cmd | String | Custom command word used to distinguish between different message types |
+| message | String | Text message |
+| callback | ActionCallback | Callback for operation |
 
    
 
-## TRTCMeetingDelegate Event Callbacks
+## `TRTCMeetingDelegate` Event Callback APIs
 
-## General Event Callbacks
+## Common Event Callback APIs
 ### onError
 
 Callback for error.
->?The SDK encountered an irrecoverable error and must be listened on. Corresponding UI reminders should be displayed based on the actual conditions.
+This callback indicates that the SDK encountered an unrecoverable error. Such errors must be listened for, and UI reminders should be sent to users if necessary.
 
 ```java
 void onError(int code, String message);
@@ -787,15 +787,15 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| code | int | Error code. |
-| message | String | Error message. |
-   
+| code | int | Error code |
+| message | String | Error message |
 
 
-## Room Event Callbacks
+
+## Room Event Callback APIs
 ### onRoomDestroy
 
-Callback for room termination. When the chairperson exits the room, all users in the room will receive this callback.
+Callback for room termination. When the host leaves the room, all users in the room will receive this callback.
 ```java
 void onRoomDestroy(String roomId);
 ```
@@ -804,7 +804,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| roomId | String | Room ID. |
+| roomId | String | Room ID |
 
 ### onNetworkQuality
 
@@ -820,12 +820,12 @@ The parameters are as detailed below:
 | localQuality | TRTCCloudDef.TRTCQuality | Upstream network quality. |
 | remoteQuality | List&lt;TRTCCloudDef.TRTCQuality&gt; | Downstream network quality. |
 
->? For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b).
+>? For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b).
 
 
 ### onUserVolumeUpdate
 
-Notification to all members of the volume level after the volume level reminder is enabled.
+Notification to all members of the volume after the volume reminder is enabled.
 ```java
 void onUserVolumeUpdate(String userId, int volume);
 ```
@@ -834,9 +834,9 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| userId | String | User ID. |
-| volume | int | Volume level. Value range: 0–100. |
-   
+| userId | String | User ID |
+| volume | int | Volume. Value range: 0–100 |
+
 
 
 ## Member Entry/Exit Event Callbacks
@@ -851,8 +851,8 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| userId | String | User ID of the new member who enters the room. |
-   
+| userId | String | User ID of the new member who enters the room |
+
 
 ### onUserLeaveRoom
 
@@ -865,9 +865,9 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| userId | String | User ID of the member who exits the room. |
-   
-   
+| userId | String | User ID of the member who leaves the room |
+
+
 ## Member Audio/Video Event Callbacks
 ### onUserVideoAvailable
 
@@ -896,15 +896,15 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| userId | String | User ID. |
+| userId | String | User ID |
 | available | boolean | true: the mic is enabled; false: the mic is disabled; |
 
    
 
-## Message Event Callbacks
+## Message Event Callback APIs
 ### onRecvRoomTextMsg
 
-Receipt of text message.
+A text message was received.
 ```java
 void onRecvRoomTextMsg(String message, TRTCMeetingDef.UserInfo userInfo);
 ```
@@ -913,14 +913,14 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| message | String | Text message. |
-| user | UserInfo | User information of sender. |
+| message | String | Text message |
+| userInfo | TRTCMeetingDef.UserInfo | Information of sender |
 
    
 
 ### onRecvRoomCustomMsg
 
-Receipt of custom message.
+A custom message was received.
 ```java
 void onRecvRoomCustomMsg(String cmd, String message, TRTCMeetingDef.UserInfo userInfo);
 ```
@@ -929,9 +929,9 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| command | String | Custom command word used to distinguish between different message types. |
-| message | String | Text message. |
-| user | UserInfo | User information of sender. |
+| cmd | String | Custom command word used to distinguish between different message types |
+| message | String | Text message |
+| userInfo | TRTCMeetingDef.UserInfo | Information of sender |
 
 
 ## Screen Sharing Event Callbacks
@@ -973,3 +973,8 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | ------ | ---- | -------------------------------------------------- |
 | reason | int  | Reason for stop. 0: the user stopped proactively; 1: stopped due to preemption by another application. |
+
+
+
+
+

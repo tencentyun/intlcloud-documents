@@ -1,7 +1,7 @@
 
 `TRTCMeeting` has the following features based on Tencent Real-Time Communication (TRTC) and Instant Messaging (IM):
-- The chairperson can create a meeting room, and the participants can enter the room ID to join the meeting.
-- The participants can share their screens with each other.
+- The host can create a meeting room, and the attendees can enter the room ID to join the meeting.
+- The attendees can share their screens with each other.
 - All users can send various text and custom messages.
 
 `TRTCMeeting` is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, please see [Video Conferencing (iOS)](https://intl.cloud.tencent.com/document/product/647/37284).
@@ -9,7 +9,7 @@
 - TRTC SDK: the [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as the low-latency video conferencing component.
 - IM SDK: the `MeetingRoom` feature of the [IM SDK](https://intl.cloud.tencent.com/document/product/1047) is used to implement chat rooms in meetings.
 
-## TRTCMeeting API Overview
+## `TRTCMeeting` API Overview
 
 ### Basic SDK APIs
 
@@ -26,10 +26,10 @@
 
 | API | Description |
 | ----------------------------------- | ------------------------------ |
-| [createMeeting](#createmeeting)   | Creates meeting room (called by chairperson).   |
-| [destroyMeeting](#destroymeeting) | Terminates meeting room (called by chairperson).   |
-| [enterMeeting](#entermeeting)     | Enters meeting room (called by participant). |
-| [leaveMeeting](#leavemeeting)     | Exits meeting room (called by participant). |
+| [createMeeting](#createmeeting)   | Creates meeting room (called by host).   |
+| [destroyMeeting](#destroymeeting) | Terminates meeting room (called by host).   |
+| [enterMeeting](#entermeeting)     | Enters meeting room (called by attendee). |
+| [leaveMeeting](#leavemeeting)     | Leaves meeting room (called by attendee). |
 
 ### Remote user APIs
 
@@ -39,7 +39,7 @@
 | [getUserInfo](#getuserinfo)                     | Gets the details of specified user in room. This API will take effect only if it is called after `enterMeeting()` succeeds. |
 | [startRemoteView](#startremoteview)             | Plays back the remote video image of specified member.                                 |
 | [stopRemoteView](#stopremoteview)               | Stops playing back remote video image.                                       |
-| [setRemoteViewFillMode](#setremoteviewfillmode) | Sets the rendering mode of remote image based on user ID.                         |
+| [setRemoteViewFillMode](#setremoteviewfillmode) | Sets the rendering mode of remote image based on user ID. |
 | [setRemoteViewRotation](#setremoteviewrotation) | Sets the clockwise rotation angle of remote image.                               |
 | [muteRemoteAudio](#muteremoteaudio)             | Mutes specified remote member.                                      |
 | [muteRemoteVideoStream](#muteremotevideostream) | Blocks the video stream of specified remote member.                                   |
@@ -56,7 +56,7 @@
 | [setVideoBitrate](#setvideobitrate)       | Sets bitrate.                 |
 | [setLocalViewMirror](#setlocalviewmirror) | Sets the mirroring preview mode of local image. |
 
-### Local audio operation APIs
+### Local audio APIs
 
 | API | Description |
 | ------------------------------------------------- | -------------------- |
@@ -64,12 +64,12 @@
 | [stopMicrophone](#stopmicrophone)               | Stops mic capturing.     |
 | [setAudioQuality](#setaudioquality)             | Sets audio quality.           |
 | [muteLocalAudio](#mutelocalaudio)               | Mutes local audio.       |
-| [setSpeaker](#setspeaker)                       | Enables speaker.     |
-| [setAudioCaptureVolume](#setaudiocapturevolume) | Sets mic capturing volume level. |
-| [setAudioPlayoutVolume](#setaudioplayoutvolume) | Sets playback volume level.       |
+| [setSpeaker](#setspeaker)                       | Turns the speaker on.     |
+| [setAudioCaptureVolume](#setaudiocapturevolume) | Sets mic capturing volume. |
+| [setAudioPlayoutVolume](#setaudioplayoutvolume) | Sets playback volume.       |
 | [startFileDumping](#startfiledumping)           | Starts audio recording.           |
 | [stopFileDumping](#stopfiledumping)             | Stops audio recording.           |
-| [enableAudioEvaluation](#enableaudioevaluation) | Enables volume level reminder.   |
+| [enableAudioEvaluation](#enableaudioevaluation) | Enables volume reminder.   |
 
 ### Screen sharing APIs
 
@@ -84,7 +84,7 @@
 
 | API | Description |
 | --------------------------------------- | ------------------------------------------------------------ |
-| [getBeautyManager](#getbeautymanager) | Gets beauty filter management object [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html). |
+| [getBeautyManager](#getbeautymanager) | Gets the beauty filter management object [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html). |
 
 ### Sharing APIs
 
@@ -101,7 +101,7 @@
 
 ## TRTCMeetingDelegate API Overview
 
-### General event callbacks
+### Common event callback APIs
 
 | API | Description |
 | --------------------- | ---------- |
@@ -113,7 +113,7 @@
 | ------------------------------------------- | ---------------------- |
 | [onRoomDestroy](#onroomdestroy)           | Callback for meeting room termination. |
 | [onNetworkQuality](#onnetworkquality)     | Callback for network status.         |
-| [onUserVolumeUpdate](#onuservolumeupdate) | Callback for user call volume level.     |
+| [onUserVolumeUpdate](#onuservolumeupdate) | User volume     |
 
 ### Member entry/exit event callbacks
 
@@ -138,12 +138,12 @@
 | [onScreenCaptureResumed](#onscreencaptureresumed) | Callback for screen sharing resumption. |
 | [onScreenCaptureStoped](#onscreencapturestoped)   | Callback for screen sharing stop. |
 
-### Message event callbacks
+### Message event callback APIs
 
 | API | Description |
 | --------------------------------------------- | ---------------- |
-| [onRecvRoomTextMsg](#onrecvroomtextmsg)     | Receipt of text message.   |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | Receipt of custom message. |
+| [onRecvRoomTextMsg](#onrecvroomtextmsg)     | Receipt of a text message  |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | Receipt of a custom message |
 
 ### Screen sharing event callbacks
 
@@ -209,7 +209,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | -------- | ------------------- | ------------------------------------------------------------ |
-| sdkAppId | UInt32              | You can view the `SDKAppID` in the TRTC Console > **[Application Management](https://console.cloud.tencent.com/trtc/app)** > "Application Info". |
+| sdkAppId | UInt32              | You can view the `SDKAppID` in the TRTC console > **[Application Management](https://console.cloud.tencent.com/trtc/app)** > "Application Info". |
 | userId   | NSString            | ID of current user, which is a string that can contain only letters (a–z and A–Z), digits (0–9), hyphens (-), and underscores (_). |
 | userSig  | NSString            | Tencent Cloud's proprietary security protection signature. For more information on how to get it, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
 | callback | TRTCMeetingCallback | Callback for login. The `code` will be 0 if the operation succeeds.                                  |
@@ -230,7 +230,7 @@ The parameters are as detailed below:
 
 ### setSelfProfile
 
-This API is used to modify the personal information.
+This API is used to set profile.
 
 ```objective-c
 - (void)setSelfProfile:(NSString *)userName avatarURL:(NSString *)avatarURL callback:(TRTCMeetingCallback)callback;
@@ -248,7 +248,7 @@ This API is used to modify the personal information.
 
 ### createMeeting
 
-This API is used to create a meeting (called by the chairperson).
+This API is used to create a meeting (called by the host).
 
 ```objective-c
 - (void)createMeeting:(UInt32)roomId callback:(TRTCMeetingCallback)callback;
@@ -261,15 +261,15 @@ The parameters are as detailed below:
 | roomId   | UInt32              | Room ID. You need to assign and manage the IDs in a centralized manner. |
 | callback | TRTCMeetingCallback | Callback for room creation result. The `code` will be 0 if the operation succeeds.  |
 
-Generally, the chairperson calls the APIs in the following steps: 
+Generally, the host calls the APIs in the following steps: 
 
-1. The **chairperson** calls `createMeeting()` to create a meeting. No matter whether the room is successfully created, the result will be notified to the chairperson through `TRTCMeetingCallback`.
-2. The **chairperson** calls `startCameraPreview()` to enable camera preview. At this time, the beauty filter parameters can be adjusted. 
-3. The **chairperson** calls `startMicrophone()` to enable mic capturing.
+1. The **host** calls `createMeeting()` to create a meeting. No matter whether the room is successfully created, the result will be notified to the host through `TRTCMeetingCallback`.
+2. The **host** calls `startCameraPreview()` to enable camera preview. At this time, the beauty filter parameters can be adjusted. 
+3. The **host** calls `startMicrophone()` to enable mic capturing.
 
 ### destroyMeeting
 
-This API is used to terminate a meeting room (called by the chairperson). After creating a meeting, the chairperson can call this API to terminate it.
+This API is used to terminate a meeting room (called by the host). After creating a meeting, the host can call this API to terminate it.
 
 ```objective-c
 - (void)destroyMeeting:(UInt32)roomId callback:(TRTCMeetingCallback)callback;
@@ -284,7 +284,7 @@ The parameters are as detailed below:
 
 ### enterMeeting
 
-This API is used to enter a meeting (called by the participant).
+This API is used to enter a meeting (called by the attendee).
 
 ```objective-c
 - (void)enterMeeting:(UInt32)roomId callback:(TRTCMeetingCallback)callback;
@@ -297,14 +297,14 @@ The parameters are as detailed below:
 | roomId   | UInt32              | Room ID. You need to assign and manage the IDs in a centralized manner. |
 | callback | TRTCMeetingCallback | Callback for room entry result. The `code` will be 0 if the operation succeeds.  |
 
-Generally, the participant joins a meeting in the following steps: 
-1. The **participant** calls `enterMeeting` and passes in `roomId` to enter the meeting room.
-2. The **participant** calls `startCameraPreview()` to enable camera preview and calls `startMicrophone()` to enable mic capturing.
-3. The **participant** receives the `onUserVideoAvailable` event and calls `startRemoteView(userId)` and passes in the `userId` of the target member to start playback.
+Generally, the attendee joins a meeting in the following steps: 
+1. The **attendee** calls `enterMeeting` and passes in `roomId` to enter the meeting room.
+2. The **attendee** calls `startCameraPreview()` to enable camera preview and calls `startMicrophone()` to enable mic capturing.
+3. The **attendee** receives the `onUserVideoAvailable` event and calls `startRemoteView(userId)` and passes in the `userId` of the target member to start playback.
    
 ### leaveMeeting
 
-This API is used to leave a meeting (called by the participant).
+This API is used to leave a meeting (called by the attendee).
 
 ```objective-c
 - (void)leaveMeeting:(TRTCMeetingCallback)callback;
@@ -392,12 +392,12 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | -------- | ----------------- | ------------------------------------------------------------ |
-| userId   | NSString          | User ID.                                             |
-| fillMode | TRTCVideoFillMode | Fill or fit mode. Default value: fill (TRTCVideoFillMode_Fill). For more information, please see [TRTC SDK]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff). |
+| userId   | NSString          | User ID                                                    |
+| fillMode | TRTCVideoFillMode | Fill or fit mode. Default value: fill (TRTCVideoFillMode_Fill). For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff). |
 
 ### setRemoteViewRotation
 
-This API is used to set the clockwise rotation angle of the remote image.
+Set the clockwise rotation angle of remote image
 
 ```objective-c
 - (void)setRemoteViewRotation:(NSString *)userId rotation:(NSInteger)rotation;
@@ -407,12 +407,12 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | -------- | --------- | ------------------------------------------------------------ |
-| userId   | NSString  | Remote user ID.                                             |
+| userId   | NSString  | Remote user ID. |
 | rotation | NSInteger | Clockwise rotation angle. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90). |
 
 ### muteRemoteAudio
 
-This API is used to mute the remote audio.
+This API is used to mute or unmute a remote user.
 
 ```objective-c
 - (void)muteRemoteAudio:(NSString *)userId mute:(BOOL)mute;
@@ -423,7 +423,7 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | ------ | -------- | --------------------------------- |
 | userId | NSString | Remote user ID.                   |
-| mute   | BOOL     | true: mutes; false: unmutes. |
+| mute   | BOOL   | `true`: mutes; `false`: unmutes. |
 
 ### muteRemoteVideoStream
 
@@ -446,7 +446,7 @@ The parameters are as detailed below:
 
 ### startCameraPreview
 
-This API is used to enable the preview image of local video.
+This API is used to enable local video preview.
 
 ```objective-c
 - (void)startCameraPreview:(BOOL)isFront view:(UIView *)view;
@@ -456,7 +456,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------- | ------ | ------------------------------------- |
-| isFront | BOOL   | true: front camera; false: rear camera. |
+| isFront | BOOL | `true`: turns the front camera on; `false`: turns the rear camera on. |
 | view    | UIView | Control that carries the video image.                  |
 
 ### stopCameraPreview
@@ -469,7 +469,7 @@ This API is used to stop local video capturing and preview.
 
 ### switchCamera
 
-This API is used to switch between front and rear cameras.
+This API is used to switch between the front and rear cameras.
 
 ```objective-c
 - (void)switchCamera:(BOOL)isFront;
@@ -506,7 +506,7 @@ This API is used to set the frame rate.
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
-| ---- | ---- | ------------ |
+| ---- | ---- | -------------- |
 | fps  | int  | Video capturing frame rate. |
 
 >? **Recommended value:** 15 or 20 fps. If the frame rate is lower than 5 fps, there will be obvious lagging; if lower than 10 fps but higher than 5 fps, there will be slight lagging; if higher than 20 fps, too many resources will be wasted (the frame rate of movies is generally 24 fps).
@@ -543,7 +543,7 @@ The parameters are as detailed below:
 
 
 
-## Local Audio Operation APIs
+## Local Audio APIs
 
 ### startMicrophone
 
@@ -591,7 +591,7 @@ The parameters are as detailed below:
 
 ### setSpeaker
 
-This API is used to enable the speaker.
+This API is used to turn the speaker on.
 
 ```objective-c
 - (void)setSpeaker:(BOOL)useSpeaker;
@@ -600,12 +600,12 @@ This API is used to enable the speaker.
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
-| ---------- | ---- | ---------------------- |
-| useSpeaker | BOOL | true: speaker; false: receiver. |
+| ---------- | ---- | ---------------------------- |
+| useSpeaker | BOOL | `true`: speaker; `false`: receiver |
 
 ### setAudioCaptureVolume
 
-This API is used to set the mic capturing volume level.
+This API is used to set the mic capturing volume.
 
 ```objective-c
 - (void)setAudioCaptureVolume:(NSInteger)volume;
@@ -615,11 +615,11 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------ | --------- | --------------------------- |
-| volume | NSInteger | Capture volume level. Value range: 0–100. Default value: 100. |
+| volume | NSInteger | Capture volume. Value range: 0–100. Default value: 100. |
 
 ### setAudioPlayoutVolume
 
-This API is used to set the playback volume level.
+This API is used to set the playback volume.
 
 ```objective-c
 - (void)setAudioPlayoutVolume:(NSInteger)volume;
@@ -629,7 +629,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------ | --------- | --------------------------- |
-| volume | NSInteger | Playback volume level. Value range: 0–100. Default value: 100. |
+| volume | NSInteger | Playback volume. Value range: 0–100. Default value: 100. |
 
 ### startFileDumping
 
@@ -657,7 +657,7 @@ This API is used to stop audio recording.
 
 ### enableAudioEvaluation
 
-This API is used to enable the volume level reminder.
+This API is used to enable volume reminder.
 
 ```objective-c
 - (void)enableAudioEvaluation:(BOOL)enable;
@@ -666,10 +666,10 @@ This API is used to enable the volume level reminder.
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
-| ------ | ---- | ---------------------- |
+| ------ | ---- | ------------------------- |
 | enable | BOOL | true: enables; false: disables. |
 
->? After this feature is enabled, the result of volume level evaluation by the SDK will be obtained in `onUserVolumeUpdate`.
+>? After this feature is enabled, the result of volume evaluation by the SDK will be obtained in `onUserVolumeUpdate`.
 
 
 
@@ -693,7 +693,7 @@ The parameters are as detailed below:
 
 ### stopScreenCapture
 
-This API is used to stop screen sharing.
+This API is used to stop screen capture.
 
 ```objective-c
 - (int)stopScreenCapture
@@ -745,11 +745,11 @@ This API is used to get the beauty filter management object [TXBeautyManager](ht
 - (TXBeautyManager *)getBeautyManager;
 ```
 
-You can use the following features with beauty filter management:
+You can do the following using `TXBeautyManager`:
 
-- Set beauty effects such as "beauty filter style", "brightening", "rosy skin", "eye enlarging", "face slimming", "chin slimming", "chin lengthening or shortening", "face shortening", "nose narrowing", "eye brightening", "teeth whitening", "eye bag removal", "wrinkle removal", and "smile line removal".
-- Adjust the "hairline", "eye distance", "eye corners", "mouth shape", "nose wing", "nose position", "lip thickness", and "face shape".
-- Set animated effects such as facial pendants (materials).
+- Set the beauty filter style and apply effects including skin brightening, rosy skin, eye enlarging, face slimming, chin slimming, chin lengthening/shortening, face shortening, nose narrowing, eye brightening, teeth whitening, eye bag removal, wrinkle removal, and smile line removal.
+- Adjust the hairline, eye spacing, eye corners, lip shape, nose wings, nose position, lip thickness, and face shape.
+- Apply animated effects such as face widgets (materials).
 - Add makeup effects.
 - Recognize gestures.
 
@@ -790,13 +790,13 @@ The parameters are as detailed below:
 
 
 
-## TRTCMeetingDelegate Event Callbacks
+## `TRTCMeetingDelegate` Event Callback APIs
 
-## General Event Callbacks
+## Common Event Callback APIs
 
 ### onError
 
->?The SDK encountered an irrecoverable error and must be listened on. Corresponding UI reminders should be displayed based on the actual conditions.
+This callback indicates that the SDK encountered an unrecoverable error. Such errors must be listened for, and UI reminders should be sent to users if necessary.
 
 ```objective-c
 - (void)onError:(NSInteger)code message:(NSString* _Nullable)message;
@@ -806,16 +806,16 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------- | --------- | ---------- |
-| code    | NSInteger | Error code.   |
-| message | NSString  | Error message. |
+| code    | NSInteger | Error code   |
+| message | NSString  | Error message |
 
 
 
-## Room Event Callbacks
+## Room Event Callback APIs
 
 ### onRoomDestroy
 
-Callback for room termination. When the chairperson exits the room, all users in the room will receive this callback.
+Callback for room termination. When the host leaves the room, all users in the room will receive this callback.
 
 ```objective-c
 - (void)onRoomDestroy:(NSString *)roomId;
@@ -841,13 +841,13 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | ------------- | -------------------------- | -------------- |
 | localQuality  | TRTCQualityInfo            | Upstream network quality. |
-| remoteQuality | NSArray<TRTCQualityInfo *> | Downstream network quality. |
+| remoteQuality | NSArray&lt;TRTCQualityInfo *&gt; | Downstream network quality. |
 
 >? For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28).
 
 ### onUserVolumeUpdate
 
-Notification to all members of the volume level after the volume level reminder is enabled.
+Callback of the volume of each member in the room after the volume reminder is enabled.
 
 ```objective-c
 - (void)onUserVolumeUpdate:(NSString *)userId volume:(NSInteger)volume;
@@ -857,8 +857,8 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------ | --------- | --------------------- |
-| userId | NSString  | User ID.            |
-| volume | NSInteger | Volume level. Value range: 0–100. |
+| userId | NSString  | User ID            |
+| volume | NSInteger | Volume. Value range: 0–100 |
 
 
 
@@ -876,7 +876,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------ | -------- | --------------- |
-| userId | NSString | User ID of the new member who enters the room. |
+| userId | NSString | ID of the user who entered the room. |
 
 
 ### onUserLeaveRoom
@@ -891,7 +891,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------ | -------- | ------------- |
-| userId | NSString | User ID of the member who exits the room. |
+| userId | NSString | ID of the user who left the room. |
 
 
 
@@ -909,7 +909,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | --------- | -------- | --------------------------------------------- |
-| userId    | NSString | User ID.                                    |
+| userId    | NSString | User ID. |
 | available | BOOL     | true: the camera is enabled; false: the camera is disabled. |
 
 ### onUserAudioAvailable
@@ -924,16 +924,16 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | --------- | -------- | --------------------------------------------- |
-| userId    | NSString | User ID.                                    |
+| userId    | NSString | User ID. |
 | available | BOOL     | true: the mic is enabled; false: the mic is disabled; |
 
    
 
-## Message Event Callbacks
+## Message Event Callback APIs
 
 ### onRecvRoomTextMsg
 
-Receipt of text message.
+A text message was received.
 
 ```objective-c
 - (void)onRecvRoomTextMsg:(NSString* _Nullable)message userInfo:(TRTCMeetingUserInfo *)userInfo;
@@ -944,11 +944,11 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | ------- | ------------------- | ---------------- |
 | message | NSString            | Text message.       |
-| user    | TRTCMeetingUserInfo | User information of sender. |
+| userInfo | TRTCMeetingUserInfo | Information of sender |
 
 ### onRecvRoomCustomMsg
 
-Receipt of custom message.
+A custom message was received.
 
 ```objective-c
 - (void)onRecvRoomCustomMsg:(NSString* _Nullable)cmd message:(NSString* _Nullable)message userInfo:(TRTCMeetingUserInfo *)userInfo;
@@ -957,10 +957,10 @@ Receipt of custom message.
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
-| ------- | ------------------- | -------------------------------------------------- |
-| command | NSString            | Custom command word used to distinguish between different message types. |
-| message | NSString            | Text message.                                         |
-| user    | TRTCMeetingUserInfo | User information of sender.                                   |
+| -------- | ------------------- | -------------------------------------------------- |
+| cmd      | NSString            | Custom command word used to distinguish between different message types. |
+| message  | NSString            | Text message.                                         |
+| userInfo | TRTCMeetingUserInfo | Information of sender |
 
 
 
@@ -1013,12 +1013,12 @@ Screen sharing stop notification.
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
-| ------ | ---- | -------------------------------------------------- |
-| reason | int  | Reason for stop. 0: the user stopped proactively; 1: screen sharing stopped as the shared window was closed. |
+| ------ | ---- | ---------------------------------------------------- |
+| reason | int | Reason for stop. 0: the user stopped proactively; 1: screen sharing stopped as the shared window was closed |
 
 
 
-## TRTCMeetingDef Attributes
+## `TRTCMeetingDef` Attributes
 
 ## TRTCMeetingUserInfo
 
