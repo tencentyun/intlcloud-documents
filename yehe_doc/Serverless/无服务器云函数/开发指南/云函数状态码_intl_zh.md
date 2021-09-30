@@ -31,6 +31,12 @@
 <td>检查函数的 <a href="https://intl.cloud.tencent.com/document/product/583/38377">网络配置</a> 信息是否正确以及子网 id 是否有效。</td>
 </tr>
 <tr>
+<td>405<br>ContainerStateExited	</td>
+<td>容器退出。</td>
+<td>请检查您的镜像或启动文件，是否可以本地正常启动。<br>如本地可正常启动，请确定是否符合云函数 SCF 的使用限制，例如 RootFS 只读，仅允许 /tmp 可写。
+<br>本地调试命令参考：`docker run -itd --read-only -v /tmp:/tmp`。</td>
+</tr>
+<tr>
 <td>406<br>RequestTooLarge</td>
 <td>函数调用请求参数体太大时，会有该返回信息。</td>
 <td>请求事件大小超限，同步请求事件最大为6MB，异步请求事件最大为128KB。</td>
@@ -39,6 +45,11 @@
 <td>407<br>The size of response exceeds the upper limit (6MB)</td>
 <td>函数返回值超出 6MB 限制。</td>
 <td>函数返回值过大，超出 6MB 限制，请调整函数返回值大小后重试。</td>
+</tr>
+<tr>
+<td>410<br>InsufficientBalance</td>
+<td>账号余额不足。</td>
+<td>由于您的腾讯云账户欠费导致服务停止，请充值后重试。</td>
 </tr>
 <tr>
 <td>429<br>ResourceLimit</td>
@@ -112,10 +123,36 @@
 <td>443<br>UserCodeError</td>
 <td>当用户代码执行出现错误时，会有该返回信息。</td>
 <td>可以根据控制台的错误日志，查看代码错误堆栈信息，检查代码是否能正常执行。</td>
+</tr>	
+<tr>
+<td>444<br>PullImageFailed</td>
+<td>拉取镜像失败。</td>
+<td>请您确认所选择镜像的完整性和有效性后重试，如本地可正常下载。若仍无法解决，请<a href="https://console.cloud.tencent.com/workorder/category">提交工单。</td>
+</tr>
+<tr>
+<td>445<br>ContainerInitError</td>
+<td>容器启动失败。</td>
+<td>容器启动失败，请检查您的启动文件是否已成功上传，并且保证调用路径正确。<br>如果是镜像部署，请确认控制台传入的 Command 或者 Args 参数格式是否正确，详情可参见<a href="https://intl.cloud.tencent.com/document/product/583/41077"> 使用镜像部署函数使用方法</a>。<br>
+如果是代码部署，容器启动失败，请检查您的启动文件是否已成功上传，并且保证调用路径正确。</td>
+</tr>
+<tr>
+<td>446<br>PortBindingFailed</td>
+<td>端口监听失败。</td>
+<td>容器初始化超过30s最大时间，请检查您的监听端口是否为<code>9000</code>。</td>
+</tr>
+<tr>
+<td>447<br>PullImageTimeOut</td>
+<td>拉取镜像超时</td>
+<td>可能是由于镜像较大或网络抖动原因引起的超时，建议在最小化镜像后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</td>
 </tr>
 <td>450<br>InitContainerTimeout</td>
 <td>当用户代码起容器超时情况下，会有该返回信息。</td>
-<td>用户代码起容器超时（15s），请检查代码后重试。若仍无法解决，请或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
+<td>用户代码起容器超时（15s），请检查代码后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</td>
+</tr>
+<tr>
+<td>449<br>InsufficientResources</td>
+<td>当大内存资源不足时，会有该返回信息。</td>
+<td>大内存资源不足，请稍后再试。</td>
 </tr>
 <tr>
 <td>500<br>InternalError</td>
@@ -130,15 +167,14 @@
 </style>
 
 ## 相关概念
-#### 执行方法<div id="handler"></div>
+#### 执行方法
 执行方法表明了调用云函数时需要从哪个文件中的哪个函数开始执行。如下图所示：
 ![](https://main.qcloudimg.com/raw/81835da7292ef575fde6d634a99bb1e5.png)
 
-- 一段式格式为【文件名】，Golang 环境时使用。例如 `main`。
-- 两段式格式为【文件名.函数名】，Python、Node.js 及 PHP 环境时使用。例如 `index.main_handler`。
+- 一段式格式为**文件名**，Golang 环境时使用。例如 `main`。
+- 两段式格式为**文件名.函数名**，Python、Node.js 及 PHP 环境时使用。例如 `index.main_handler`。
 	
 	- 此执行方法**前一段指向代码包中不包含后缀的文件名，后一段指向文件中的入口函数名**。需要确保代码包中的文件名后缀与语言环境匹配，如 Python 环境为 `.py` 文件，Node.js 环境为 `.js` 文件。 更多执行方法相关说明，请参见 [执行方法详情说明](https://intl.cloud.tencent.com/document/product/583/9210)。 
-- 三段式格式为【package.class::method】，JAVA 环境时使用。例如 `example.Hello::mainHandler`。
+- 三段式格式为**package.class::method**，JAVA 环境时使用。例如 `example.Hello::mainHandler`。
 - 非固定段式格式，只针对 Custom Runtime 运行环境开放使用，根据自定义语言实现来设定执行方法。
 
-  ​       
