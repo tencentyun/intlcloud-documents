@@ -1,7 +1,7 @@
 当您调用触发器接口 [设置函数触发方式（CreateTrigger）](https://intl.cloud.tencent.com/document/product/583/18589)时，对应的 `TriggerDesc` 参数为触发器描述，您可参考本文进行使用。
 
 ## 定时触发器
-该参数直接填写 Cron 表达式，相关内容请参考 [Cron 表达式](https://intl.cloud.tencent.com/document/product/583/9708#cron-.E8.A1.A8.E8.BE.BE.E5.BC.8F)。
+该参数直接填写 Cron 表达式，相关内容请参考 [Cron 表达式](https://intl.cloud.tencent.com/document/product/583/9708)。
 
 ###  TriggerDesc 示例
 每五分种触发一次
@@ -18,8 +18,7 @@
 | service | [ApigwService](#ApigwService) | 否   | 创建 API 网关的 Service 配置 |
 | release | [ApigwRelease](#ApigwRelease) | 否   | 创建 API 网关后，发布的环境  |
 
-<span id="ApigwApi"></span>
-### ApigwApi
+### ApigwApi[](id:ApigwApi)
 
 
 | 名称                 | 类型                                              | 必选 | 描述                                                 |
@@ -27,22 +26,20 @@
 | authRequired         | String                                            | 否   | 是否需要鉴权，可选 TRUE 或者 FALSE，默认为 FALSE     |
 | requestConfig        | [ApigwApiRequestConfing](#ApigwApiRequestConfing) | 否   | 请求后端 API 的配置                                  |
 | isIntegratedResponse | String                                            | 否   | 是否使用集成响应，可选 TRUE 或者 FALSE，默认为 FALSE |
+| IsBase64Encoded | String | 否 | 是否打开Base64编码，可选 TRUE 或者 FALSE，默认为 FALSE|
 
-<span id="ApigwApiRequestConfing"></span>
-### ApigwApiRequestConfing
+### ApigwApiRequestConfing[](id:ApigwApiRequestConfing)
 | 名称   | 类型   | 必选 | 描述                                                         |
 | ------ | ------ | ---- | ------------------------------------------------------------ |
 | method | String | 否   | 请求后端 API 的 method 配置，必须是 `ANY`、`GET`、`HEAD`、`POST`、`PUT`、`DELETE` 中的一种 |
 
-<span id="ApigwService"></span>
-### ApigwService
+### ApigwService[](id:ApigwService)
 
 | 名称      | 类型   | 必选 | 描述                                         |
 | --------- | ------ | ---- | -------------------------------------------- |
 | serviceId | String | 否   | Apigw Service ID（不传入则新建一个 Service） |
 
-<span id="ApigwRelease"></span>
-### ApigwRelease
+### ApigwRelease[](id:ApigwRelease)
 
 | 名称            | 类型   | 必选 | 描述                                                         |
 | --------------- | ------ | ---- | ------------------------------------------------------------ |
@@ -102,8 +99,7 @@ TriggerName: "ckafka-8tfxzia3-test"
 | event  | String                  | 是   | [COS 的事件类型 ](https://intl.cloud.tencent.com/document/product/583/9707)      |
 | filter | [CosFilter](#CosFilter) | 是   | COS 文件名的过滤规则 |
 
-<span id="CosFilter"></span>
-### CosFilter
+### CosFilter[](id:CosFilter)
 
 | 名称   | 类型   | 必选 | 描述                              |
 | ------ | ------ | ---- | --------------------------------- |
@@ -129,7 +125,7 @@ TriggerName: "ckafka-8tfxzia3-test"
 ```json
 TriggerName: "xxx.cos.ap-guangzhou.myqcloud.com"
 ```
->!访问域名请在对象存储控制台【存储桶列表】>【基础配置】>【基本信息】中查看。
+>!访问域名请在对象存储控制台**存储桶列表** > **基础配置** > **基本信息**中查看。
 
 
 ## CMQ 触发器
