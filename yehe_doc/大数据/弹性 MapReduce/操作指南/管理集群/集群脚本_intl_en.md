@@ -16,8 +16,8 @@ The cluster script feature allows you to run a script on multiple nodes at a tim
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click a cluster ID in the cluster list to go the instance information page. Click **Cluster Scripts** > **Set Task**.
 ![](https://main.qcloudimg.com/raw/1a361319fc4a2f500c03d4506dd0281e.png)                      
 2. Set the **Task Name**, **Script**, **Nodes**, and **Custom Parameter** fields. After that, click **Run** to generate a task in the task list.
-![](https://main.qcloudimg.com/raw/f713bbc7f073f1b2a85ff80bd9ec7e2b.png)
+![](https://main.qcloudimg.com/raw/5f9805e96432d2997c04fe3fb09458e7.png)
 3. There are various task statuses depending on the execution results, including successful, failed, partially failed, etc. You can click **Details** to view details.
 ![](https://main.qcloudimg.com/raw/9b1425a37ce28e469490943f88a476e8.png)
-![](https://main.qcloudimg.com/raw/6d3dab9d215ceef7bc12b463354891fa.png)
+![](https://main.qcloudimg.com/raw/af3c17449632829bf34373ec4414be09.png)
 4. A cluster script may run successfully on some nodes and fail on other nodes. You can batch copy the failed nodes to run the script again.
