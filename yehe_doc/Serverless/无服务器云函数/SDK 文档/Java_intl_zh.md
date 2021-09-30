@@ -158,7 +158,7 @@ httpProfile.setProxyPort(真实代理端口);
 
 ### 语言
 
-从3.1.16版本开始，我们添加了对公共参数 Language 的支持，以满足部分产品国际化的诉求。和以前一样，Language 默认不传，行为由各产品接口自行决定，通常是中文的，但也有默认英文的。目前可选值为中文或者英文,通过如下方法设置：
+从3.1.16版本开始，我们添加了对公共参数 Language 的支持，以满足部分产品的诉求。和以前一样，Language 默认不传，行为由各产品接口自行决定，通常是中文的，但也有默认英文的。目前可选值为中文或者英文,通过如下方法设置：
 
 ```
 import com.tencentcloudapi.common.profile.ClientProfile;
