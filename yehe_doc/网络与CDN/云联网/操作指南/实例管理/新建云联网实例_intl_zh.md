@@ -26,15 +26,15 @@
 <tr>
  <td rowspan=3 align="center">服务质量</td>
  <td align="center">白金</td>
- <td>适用于通信质量最敏感的关键业务，金牌次之，主要包括支付，游戏加速等。</td>
+ <td>通信质量最敏感，如支付。</td>
 </tr>
 <tr>
  <td align="center" white-space="nowrap">金</td>
- <td >适用于重要数据业务数据传输业务，如企业商务数据传递、ERP 等。</td>
+ <td >通信质量较敏感，如游戏加速。</td>
 </tr>
 <tr >
  <td align="center">银</td>
- <td >银牌适用成本敏感，抖动不敏感，安全性高的业务。</td>
+ <td >成本敏感，通信质量不敏感，如数据备份。</td>
 </tr>
 <tr>
  <td rowspan=2>限速方式</td>
@@ -59,3 +59,4 @@
 - 若需关联网络实例，具体操作请参见[ 关联网络实例](https://intl.cloud.tencent.com/document/product/1003/30064)。
 - 需查看云联网关联的 VPC 下各子网的路由策略是否生效，具体操作请参见[ 查看路由信息](https://intl.cloud.tencent.com/document/product/1003/30066)。
 - 若您创建的月95后付费云联网实例，可以按需配置跨地域带宽上限，控制带宽费用。具体操作请参见[ 配置带宽](https://intl.cloud.tencent.com/document/product/1003/38894)。
+
