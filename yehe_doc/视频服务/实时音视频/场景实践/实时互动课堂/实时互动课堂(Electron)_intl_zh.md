@@ -3,15 +3,6 @@
 
 <input type="button" value="MacOS 版" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education/TRTC_Education_Demo-1.1.0.dmg')" />
 
-## 效果展示
-您可以下载安装我们的 Demo 体验实时互动课堂的能力效果，包括语音、视频、屏幕分享等上课方式，还封装了老师开始问答、学生举手、老师邀请学生上台回答、结束回答等相关能力。
-
-<table>
-<tr><th>教师端</th><th>学生端</th><tr>
-<tr><td><img src="https://main.qcloudimg.com/raw/35d33cb6003bd3575ee6bbfb0cbe6450.png"/></td><td><img src="https://main.qcloudimg.com/raw/30e62d5c96c1ba31fc24c113ecfdb395.png"/></td><tr>
-</table>
-
-如需快速实现实时互动课堂功能，可以直接基于我们提供的 Demo 进行修改适配，也可以使用我们提供的 [trtc-electron-education](https://intl.cloud.tencent.com/document/product/647/37279) 组件并实现自定义 UI 界面。
 
 ## 复用 Demo 的 UI 界面
 [](id:ui.step1)

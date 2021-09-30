@@ -30,34 +30,33 @@ curl <WORKER_IP>:<WOKER_PORT>/metrics/prometheus/
 
 1. Download the Prometheus installation package, decompress it, and modify `promethus.yml` as follows:
 <pre class="rno-code-pre"><code class="language-plaintext">
- # prometheus.yml
- global:
-	 scrape_interval:     10s
-	 evaluation_interval: 10s
-
- scrape_configs:
-	 - job_name: 'goosefs masters'
-		 metrics_path: /metrics/prometheus
-		 file_sd_configs:
-		 - refresh_interval: 1m
-			 files:
-			 - "targets/cluster/masters/*.yml"
-	 - job_name: 'goosefs workers'
-		 metrics_path: /metrics/prometheus
-		 file_sd_configs:
-		 - refresh_interval: 1m
-			 files:
-			 - "targets/cluster/workers/*.yml"
+# prometheus.yml
+global:
+	scrape_interval:     10s
+	evaluation_interval: 10s
+scrape_configs:
+	- job_name: 'goosefs masters'
+		metrics_path: /metrics/prometheus
+		file_sd_configs:
+		- refresh_interval: 1m
+		files:
+		- "targets/cluster/masters/*.yml"
+	- job_name: 'goosefs workers'
+		metrics_path: /metrics/prometheus
+		file_sd_configs:
+		- refresh_interval: 1m
+		files:
+		- "targets/cluster/workers/*.yml"
 </code></pre>
 2. Create `targets/cluster/masters/masters.yml` and add the IP and port of the master:
 <pre class="rno-code-pre"><code class="language-plaintext">
  - targets:
-	  - "&lt;TARGERTS_MASTER_IP>:&lt;TARGERTS_MASTER_PORT>"
+	- "&lt;TARGERTS_MASTER_IP>:&lt;TARGERTS_MASTER_PORT>"
 </code></pre>
 3. Create `targets/cluster/workers/workers.yml` and add the IP and port of the worker:
 <pre class="rno-code-pre"><code class="language-plaintext">
  - targets:
-	  - "&lt;TARGERTS_WORKER_IP>:&lt;TARGERTS_WORKER_PORT>"
+	- "&lt;TARGERTS_WORKER_IP>:&lt;TARGERTS_WORKER_PORT>"
 </code></pre>
 4. Start Prometheus. `--web.listen-address` specifies the Prometheus listen address. The default port number is 9090.
 <pre class="rno-code-pre"><code class="language-plaintext">
@@ -86,16 +85,16 @@ wget https://rig-1258344699.cos.ap-guangzhou.myqcloud.com/prometheus-agent/agent
  scheme: http
  file_sd_configs:
  - files:
-	 - /usr/local/services/prometheus/targets/cluster/masters/*.yml
-	 refresh_interval: 1m
- job_name: goosefs-workers
- honor_timestamps: true
- metrics_path: /metrics/prometheus
- scheme: http
- file_sd_configs:
+	- /usr/local/services/prometheus/targets/cluster/masters/*.yml
+	refresh_interval: 1m
+job_name: goosefs-workers
+honor_timestamps: true
+metrics_path: /metrics/prometheus
+scheme: http
+file_sd_configs:
  - files:
-	 - /usr/local/services/prometheus/targets/cluster/workers/*.yml
-	 refresh_interval: 1
+	- /usr/local/services/prometheus/targets/cluster/workers/*.yml
+	refresh_interval: 1m
 </code></pre>
 
  >! Do not use spaces in the value of `job_name`. However, the value of `job_name` in single-machine Prometheus can contain spaces.
@@ -107,10 +106,10 @@ wget https://rig-1258344699.cos.ap-guangzhou.myqcloud.com/prometheus-agent/agent
 ```plaintext
 nohup ./bin/grafana-server web > grafana.log 2>&1 &
 ```
-2. Open the login page `http://<GRAFANA_BI_IP>:<GRAFANA_BI_PORT>`. By default, Grafana will be listening on port 3000, and both the “username” and “password” are “admin”. You can change the password after your initial login.
+2. Open the login page `http://&lt;GRAFANA_IP&gt;:&lt;GRAFANA_PORT&gt;`. By default, Grafana will be listening on port 3000, and both the “username” and “password” are “admin”. You can change the password after your initial login.
 3. Create a Prometheus data source.
 ```plaintext
-<PROMETHEUS_BI_IP>:<PROMETHEUS_BI_PORT>
+<PROMETHEUS_IP>:<PROMETHEUS_PORT>
 ```
 4. Import Grafana dashboards for GooseFS. Select JSON import ([Download JSON](https://cos-data-lake-release-1253960454.file.myqcloud.com/goosefs/grafana/goosefs-grafana-dashboard.json)) and use it for the data source created above.
 >! You need to set the password when purchasing the in-cloud Prometheus. The configuration of the in-cloud Grafana monitoring GUI is similar to that mentioned above. Note that the configuration of `job_name` should be consistent.
