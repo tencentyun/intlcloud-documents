@@ -5,9 +5,6 @@ You can configure alarm rules for the connection, dedicated tunnel and direct co
 2. Click **Create** on the **Alarm Policy** page.
 3. Configure a new alarm policy as instructed below.
    1. Fill in **Policy Name** and **Remarks**. Select **Physical Dedicated Line**, **Dedicated Line Channel** or **Direct Connect Gateway** for **Policy Type** as needed.
-   <dx-alert infotype="explain" title="">
-   若需选择”专线网关“，则在 VPC 产品下选择。
-   </dx-alert>
    2. Choose a project to which the alarm policy belongs. Each project supports creating a maximum of 300 alarm policies.
    3. Select the alarm object.
      - If you select **All Objects**, the alarm policy will be associated with all instances under the current account.
