@@ -1,19 +1,14 @@
-CSS에 도메인 연결 후, 시스템에서 CNAME 도메인(`.liveplay.myqcloud.com`을 접미사로 함)을 자동으로 할당하며 [[도메인 이름 관리](https://console.cloud.tencent.com/live/domainmanage)]리스트에서 조회할 수 있습니다. CNAME 도메인은 직접 액세스할 수 없으며, 도메인 서비스 제공 업체 측에서 CNAME 설정을 완료하고 관련 설정이 적용되면 CSS 서비스를 즐기실 수 있습니다.
+CSS에 도메인 연결 후, 시스템에서 CNAME 도메인(`.tlivecdn.com`을 접미사로 함)을 자동으로 할당하며 **[도메인 이름 관리](https://console.cloud.tencent.com/live/domainmanage)** 리스트에서 조회할 수 있습니다. CNAME 도메인은 직접 액세스할 수 없으며, 도메인 서비스 제공 업체 측에서 CNAME 설정을 완료하고 관련 설정이 적용되면 CSS 서비스를 즐기실 수 있습니다.
 
-다음 비디오는 Tencent Cloud에서의 도메인 CNAME 리졸브 설정 방법을 소개합니다.
-
-
-
-주의 사항
-
+## 주의 사항
 - 푸시 스트리밍 도메인과 재생 도메인은 모두 CNAME 리졸브를 완료해야 합니다. 
 - 사용자의 도메인 리졸브 서비스 제공 업체 측으로 이동하여 CNAME 레코드를 설정합니다. 자세한 작업 방법은 도메인 리졸브 서비스 제공 업체에 문의하십시오.
 - CNAME 설정 완료 후 약 15분이 지나면 적용됩니다. 멀티 레이어 CNAME 을 설정한 경우 CSS에서 효과적으로 리졸브 결과를 모니터링할 수 없습니다. 실제 액세스 상황을 참고하십시오.
 - CNAME 설정 완료 후 오랫동안 완료 메세지가 뜨지 않으면 [도메일 설정 관련](https://intl.cloud.tencent.com/document/product/267/32478)을 참고하십시오.
 
 ## 전제 조건
-- [도메인 등록](https://console.cloud.tencent.com)에서 도메인 회원가입 및 ICP 비안 완료. 
-- CSS 콘솔의 [[도메인 이름 관리](https://console.cloud.tencent.com/live/domainmanage)]에서 [자체 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)를 완료했고, 도메인 CNAME 주소 상태가 ![](https://main.qcloudimg.com/raw/ed1ac2f8541f629814a3f2420b1eb79c.png)(CNAME 미설정)임.
+- [도메인 등록](https://dnspod.cloud.tencent.com/?from=qcloudProductDns)에서 도메인 신청 및 ICP비안을 완료해야 합니다.
+- CSS 콘솔의 **[도메인 이름 관리](https://console.cloud.tencent.com/live/domainmanage)**에서 [외부 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)를 완료했고, 도메인 CNAME 주소 상태가 ![](https://main.qcloudimg.com/raw/ed1ac2f8541f629814a3f2420b1eb79c.png)(CNAME 미설정)이어야 합니다.
 
 
 
@@ -26,13 +21,13 @@ CSS에 도메인 연결 후, 시스템에서 CNAME 도메인(`.liveplay.myqcloud
 DNS 서비스 제공 업체가 Tencent Cloud인 경우 다음 단계에 따라 CNAME 레코드를 추가 할 수 있습니다.
 
 1. [도메인 서비스 콘솔](https://console.cloud.tencent.com/domain)에 로그인합니다.
-2. CNAME을 추가할 도메인을 선택하고 [리졸브]를 클릭합니다.
-3. 해당 도메인의 도메인 리졸브 페이지에서 [레코드 추가]를 클릭합니다.
+2. CNAME을 추가할 도메인을 선택하고 **리졸브**를 클릭합니다.
+3. 해당 도메인의 도메인 리졸브 페이지에서 **레코드 추가**를 클릭합니다.
 4. 신규 열에 도메인 CNAME 레코드를 입력합니다. 구체적인 입력 내용은 다음과 같습니다. 
 <table>
     <tr><th width="12%" >매개변수 이름</th><th width="38%">매개변수 설명</th><th width="50%">설정 방법</th></tr>
     <tr>
-    <td>호스트 레코드</td>
+    <td>호스트 레코드 </td>
         <td>서브 도메인의 접두사 입력  </td>
         <td>
             <ul style="margin-bottom:0;">
@@ -53,12 +48,12 @@ DNS 서비스 제공 업체가 Tencent Cloud인 경우 다음 단계에 따라 C
         <td>선택: <b>기본 설정:</b></td>
     </tr>
     <tr>
-        <td>레코드값</td>
-        <td>지정할 도메인. Tencent Cloud 콘솔 [<a href="https://console.cloud.tencent.com/live/domainmanage">도메인 이름 관리</a>] 도메인에 상응하는 CNAME 값을 입력합니다.</td>
-        <td>[<a href="https://console.cloud.tencent.com/live/domainmanage">도메인 이름 관리</a>]에서 해당 도메인이 할당한 미설정 CNAME을 조회하고 복사하여 [레코드값]에 입력합니다. 입력 형식:<ul style="margin:0">
-				<li/><code><b style="color:red;">xxxx</b>.tlivecdn.com</code>
-				<li/><code><b style="color:red;">xxxx</b>.tlivepush.com</code>
-				</ul></td>
+        <td>레코드 값</td>
+        <td>지정할 도메인. Tencent Cloud 콘솔 **<a href="https://console.cloud.tencent.com/live/domainmanage">도메인 이름 관리</a>** 도메인에 상응하는 CNAME 값을 입력합니다.</td>
+        <td>**<a href="https://console.cloud.tencent.com/live/domainmanage">도메인 이름 관리</a>**에서 해당 도메인이 할당한 미설정 CNAME을 조회하고 복사하여 **레코드값**에 입력합니다. 입력 형식:<ul style="margin:0">
+            <li/><code><b style="color:red;">xxxx</b>.tlivecdn.com</code>
+            <li/><code><b style="color:red;">xxxx</b>.tlivepush.com</code>
+            </ul></td>
     </tr>
     <tr>
         <td>TTL(초)</td>
@@ -66,40 +61,37 @@ DNS 서비스 제공 업체가 Tencent Cloud인 경우 다음 단계에 따라 C
         <td><b>600초</b>입력 권장</td>
     </tr>
 </table>
-5. [저장]을 클릭하여, CNAME 설정 완료합니다.
+5. **저장**을 클릭하여, CNAME 설정 완료합니다.
 
->! 
->- 도메인 리졸브 레코드 관련 자세한 내용은 호스트 레코드와 레코드값을 참고하십시오.
->- 도메인 리졸브의 각 레코드 유형 간에는 우선순위의 차이가 있으므로 호스트 레코드가 동일한 경우 같은 회선에 서로 다른 레코드 유형이 공존할 수 없으며, 이 같은 상황 발생 시 충돌 메세지가 뜹니다. CNAME 레코드는 다른 모든 레코드 유형과 충돌하므로 설정하기 전에 먼저 다른 레코드를 삭제해야 합니다. 자세한 내용은 ‘리졸브 레코드 추가 시 ‘레코드 충돌’ 메세지가 뜨는 이유는 무엇입니까?’를 참고하시기 바랍니다. 
+>!  리졸브의 각 레코드 유형 간에는 우선순위의 차이가 있으므로 CVM 레코드가 동일한 경우 같은 회선에 서로 다른 레코드 유형이 공존할 수 없으며, 충돌이 발생할 수 있습니다. CNAME 레코드가 다른 모든 레코드 유형과 충돌하므로 설정하기 전에 먼저 다른 레코드를 삭제해야 합니다.
 
 [](id:ali)
-
 ### Alibaba Cloud 설정 방법
 DNS 서비스 제공 업체가 Alibaba Cloud이고 도메인 ICP비안을 완료하였다면 다음 단계를 참고하여 CNAME을 설정할 수 있습니다.
 
-1 . Alibaba Cloud 콘솔에 로그인하여 [클라우드 DNS]>[도메인 리졸브](https://dns.console.aliyun.com/#/dns/domainList)로 이동합니다.
-2. CNAME을 추가할 도메인을 선택하고 [리졸브 설정]을 클릭합니다.
-3. [레코드 추가]를 선택하고 레코드 추가 페이지에 다음과 같이 설정합니다.
+1 . Alibaba Cloud 콘솔에 로그인하여 **클라우드 DNS** >[ **도메인 리졸브** ](https://dns.console.aliyun.com/#/dns/domainList)로 이동합니다.
+2. CNAME을 추가할 도메인을 선택하고 **리졸브 설정**을 클릭합니다.
+3. **레코드 추가**를 선택하고 레코드 추가 페이지에 다음과 같이 설정합니다.
   -  레코드 유형: `CNAME`을 선택합니다.
   -  호스트 레코드: 서브 도메인의 접두사를 작성합니다. 예를 들어 재생 도메인이 ‘play.myqcloud.com’인 경우 `play`를 추가하고, 직접 메인 도메인 ‘myqloud.com’을 리졸브하는 경우 `@`을 입력합니다. 와일드카드 서브도메인을 리졸브하는 경우에는 `\*`을 입력합니다.
   -  리졸브 경로: `기본 설정` 선택을 권장합니다.
-  -  레코드값: Tencent Cloud 콘솔의 도메인 이름 관리 페이지에서 도메인의 해당 CNAME 값을 입력합니다. 형식은 `domain.livecdn.liveplay.myqcloud.com`입니다.
+  -  레코드값: Tencent Cloud 콘솔의 도메인 이름 관리 페이지에서 도메인의 해당 CNAME 값을 입력합니다. 형식은 `domain.tlivecdn.com`입니다.
   -  TTL: `10분` 입력을 권장합니다.
-4. [확인]을 클릭합니다.
+4. **확인**을 클릭하여 완료합니다.
 
 
 [](id:baidu)
 ### Baidu Cloud 설정 방법
 도메인 서비스 제공 업체가 Baidu Cloud인 경우 다음 단계에 따라 CNAME 레코드를 추가 할 수 있습니다.
-1. Baidu Cloud 콘솔에 로그인하고 [도메인 이름 관리](https://console.bce.baidu.com/bcd/?_=1550137564099#/bcd/manage/list)를 선택하여 도메인 관리 리스트 페이지로 이동합니다.
-2. CSS에 추가한 도메인을 선택하고 작업 열에서 [리졸브]를 클릭해 DNS 리졸브 페이지로 이동합니다.
+1. Baidu Cloud 콘솔에 로그인하고 [**도메인 이름 관리**](https://console.bce.baidu.com/bcd/?_=1550137564099#/bcd/manage/list)를 선택하여 도메인 관리 리스트 페이지로 이동합니다.
+2. CSS에 추가한 도메인을 선택하고 작업 열에서 **리졸브**를 클릭해 DNS 리졸브 페이지로 이동합니다.
 3. 해당 페이지에서 다음과 같이 설정하여 리졸브 레코드를 추가합니다.
  - 호스트 레코드: 서브 도메인, 즉 접두사를 작성합니다. 예를 들어 재생 도메인이 ‘play.myqcloud.com’인 경우`play`를 추가하고, 직접 메인 도메인 ‘myqloud.com’을 리졸브하는 경우 `@`을 입력합니다. 와일드카드 서브도메인을 리졸브하는 경우에는 `\*`을 입력합니다.
  - 레코드 유형: `CNAME 레코드`를 선택합니다.
- - 리졸브 경로: `기본 설정` 선택을 권장합니다.
- - 레코드값: CSS 콘솔의 도메인 이름 관리 페이지에서 도메인의 해당 CNAME 값을 작성합니다. 형식은 `domain.livecdn.liveplay.myqcloud.com`입니다.
- - TTL: `10분` 입력을 권장합니다.
-4. [확인]을 클릭하여 제출합니다.
+ -  리졸브 경로: `기본 설정` 선택을 권장합니다.
+ - 레코드값: CSS 콘솔의 도메인 이름 관리 페이지에서 도메인의 해당 CNAME 값을 작성합니다. 형식은 `domain.tlivecdn.com`입니다.
+ -  TTL: `10분` 입력을 권장합니다.
+4.  **확인**을 클릭하여 제출합니다.
 
 [](id:dnspod)
 ### DNSPod 설정 방법
@@ -120,11 +112,11 @@ DNS 서비스 제공 업체가 DNSPod인 경우 다음 단계에 따라 CNAME �
 DNS 서비스 제공 업체가 www.net.cn인 경우 아래 단계에 따라 CNAME 레코드를 추가할 수 있습니다.
 
 1. www.net.cn에 로그인하십시오.
-2. 회원 사이트의 왼쪽 메뉴에서 [제품 관리]->[나의 클라우드 리졸브]를 클릭하여 World Wide Web Cloud 리졸브 리스트 페이지로 이동합니다.
+2. 회원 사이트의 왼쪽 메뉴에서 **제품 관리** ->  **나의 클라우드 리졸브**를 클릭하여 World Wide Web Cloud 리졸브 리스트 페이지로 이동합니다.
 3. 리졸브하려는 도메인을 클릭하고 리졸브 레코드 페이지로 이동하십시오.
-4. 리졸브 레코드 페이지로 이동한 후 [리졸브 추가]를 클릭하여 리졸브 레코드 설정을 시작하십시오.
-5. CNAME 리졸브 레코드를 설정하려면 레코드 유형을 CNAME으로 선택하십시오. 호스트 기록은 도메인 이름의 접두사이며 임의로 입력할 수 있습니다(예 :`www`). 레코드 값은 현재 도메인이 아닌 다른 도메인으로 채워집니다. 리졸브 회선은 TTL 기본값이면 됩니다.
-6. 모두 입력 후 [저장]을 클릭하여 리졸브 설정을 완료하십시오.
+4. 리졸브 레코드 페이지로 이동한 후 **리졸브 추가**를 클릭하여 리졸브 레코드 설정을 시작합니다.
+5. CNAME 리졸브 레코드를 설정하려면 레코드 유형을 CNAME으로 선택하십시오. 호스트 레코드는 도메인 이름의 접두사이며 임의로 입력할 수 있습니다(예 :`www`). 레코드 값은 현재 도메인이 아닌 다른 도메인으로 채워집니다. 리졸브 회선은 TTL 기본값이면 됩니다.
+6. 모두 입력 후 **저장**을 클릭하여 리졸브 설정을 완료합니다.
 
 
 [](id:xinnet)
@@ -135,12 +127,12 @@ DNS 서비스 제공 업체가 Sina인 경우, **별명(CNAME 레코드) 설정*
 [](id:check)
 ## CNAME 인증 유효성 확인
 DNS 서비스 제공 업체에 따라 CNAME 적용 시간이 조금씩 다르며, 일반적으로 30분 내에 적용됩니다. 다음 방법을 통해 CNAME이 적용되었는지 확인할 수 있습니다.
-- **방법1: **CSS 콘솔의 [[도메인 이름 관리](https://console.cloud.tencent.com/live/domainmanage)]로 이동하여 조회 결과 접미사가`.myqcloud.com`인 도메인의 상태 부호가 ![](https://main.qcloudimg.com/raw/0fc346399ae095d69113d4944e511a20.png)로 변경되었다면 CNAME 적용이 완료된 것입니다. 
-![](https://main.qcloudimg.com/raw/7930331f6eb7f4271014083cab27fb26.png)
-- **방법2: **Linux/Mac 시스템에서 dig 명령어를 통해 확인. 명령 형식: `dig` 외부 도메인. 첫 번째 열에 CSS가 제공한 타깃 도메인으로 리졸브되었다고 표시된다면 CNAME 적용이 완료된 것입니다. 
-![](https://main.qcloudimg.com/raw/49aa30e1edc3884c2ae93ec5fdeeb1fb.png)
-- **방법3: **Windows 시스템은 [시작]→[실행]→cmd 입력과 엔터키를 통해, 명령 라인 모드에서:`nslookup 외부 도메인`을 입력합니다. CSS가 제공하는 타깃 도메인으로 리졸브되었다면 CNAME 적용이 완료된 것입니다.
-![](https://main.qcloudimg.com/raw/8bad41428852a7c32111933b33e8853c.png)
+- **방법1: **CSS 콘솔의 **[도메인 이름 관리](https://console.cloud.tencent.com/live/domainmanage)**로 이동하여 조회 결과 접미사가`.myqcloud.com`인 도메인의 상태 부호가 ![](https://main.qcloudimg.com/raw/0fc346399ae095d69113d4944e511a20.png)로 변경되었다면 CNAME 적용이 완료된 것입니다. 
+![](https://main.qcloudimg.com/raw/e0d17a824c26a138ea771099d06f7e60.png)
+- **방법2: **Linux/Mac 시스템에서 dig 명령어를 통해 확인합니다. 명령 형식: `dig` 외부 도메인. 첫 번째 열에 CSS가 제공한 타깃 도메인으로 리졸브되었다고 표시된다면 CNAME 적용이 완료된 것입니다. 
+![](https://main.qcloudimg.com/raw/2cbe7fdc1c9d7dbed7851aa86dd64ff1.png)
+- **방법3: **Windows 시스템은 **시작** → **실행** →cmd 입력과 엔터키를 통해, 명령 라인 모드에서:`nslookup 외부 도메인`을 입력합니다. CSS가 제공하는 타깃 도메인으로 리졸브되었다면 CNAME 적용이 완료된 것입니다.
+![](https://main.qcloudimg.com/raw/765ac099e7c79a70496563f00cdab9a7.png)
 
 
->! CNAME 설정 완료 후 오랫동안 완료 메세지가 뜨지 않으면 [도메일 설정 관련](https://intl.cloud.tencent.com/document/product/267/32478)을 참고하십시오.
+>!CNAME 설정 완료 후 오랫동안 완료 메세지가 뜨지 않으면 [도메일 설정 관련](https://intl.cloud.tencent.com/document/product/267/32478)을 참고하십시오.
