@@ -33,8 +33,8 @@ static std::string Sign(const std::string& secret_id,
 | secret_key  | 개발자 소유 프로젝트 키                              | String                   |
 | http_method | 전달될 때 대소문자를 구분하지 않는 POST/GET/HEAD/PUT 등 HTTP 메소드 | String                   |
 | in_uri      | HTTP uri                                              | String                   |
-| headers     | HTTP header의 키 값 쌍                                  | map&lt;string,string&gt; |
-| params      | HTTP params의 키 값 쌍                                  | map&lt;string,string&gt; |
+| headers     | HTTP header의 키 값 쌍                                  | string |
+| params      | HTTP params의 키 값 쌍                                  | string |
 
 #### 반환 결과 설명
 
@@ -61,8 +61,8 @@ static std::string Sign(const std::string& secret_id,
 | secret_key      | 개발자 소유 프로젝트 키                             | String                    |
 | http_method     | 전달될 때 대소문자를 구분하지 않는 POST/GET/HEAD/PUT 등 HTTP 메소드 | String                    |
 | in_uri          | HTTP uri                                             | String                    |
-| headers         | HTTP header의 키 값 쌍                                 | map &lt;string,string&gt; |
-| params          | HTTP params의 키 값 쌍                                 | map &lt;string,string&gt; |
+| headers         | HTTP header의 키 값 쌍                                 | string|
+| params          | HTTP params의 키 값 쌍                                 | string |
 | start_time_in_s | 서명 유효 기간의 시작 시간                                   | uint64_t                  |
 | end_time_in_s   | 서명 유효 기간의 종료 시간                                   | uint64_t                  |
 
