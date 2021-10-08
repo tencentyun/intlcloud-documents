@@ -1,5 +1,12 @@
 专线网关用于连接腾讯云 VPC 与物理专线（专用通道），是专线网络的流量入口。专线网关分为私有网络专线网关和云联网专线网关，您可以根据不同的场景进行选择。
 
+## 使用限制
+标准型专线网关支持传递辅助 CIDR，但需要遵循如下限制：
+- 金融云地域的标准型专线网关不支持传递辅助 CIDR。
+- 标准型专线网关支持传递10个辅助 CIDR。
+- NAT 型专线网关不支持传递辅助 CIDR。
+
+
 ## 私有网络专线网关
 在专线网络架构中，专用通道的模式对 IDC 到腾讯云 VPC 方向的路由目的网段有影响，具体如下表所示：
 <table>
@@ -19,10 +26,9 @@
 例如某专线网络架构中，使用私有网络专线网关实现腾讯云 VPC 与一个数据中心连接，不同模式的专用通道下路由配置如下：
 
 - 若专用通道为静态模式，IDC 到腾讯云 VPC 方向的路由目的网段，由用户在本地路由器配置，如 VPC CIDR（172.21.0.0/16）。
-   <img width="80%" src="https://main.qcloudimg.com/raw/71f3699ac26a9df2fbb410ba3b31bf27.png" style="zoom:67%;" />
-
+<img width="80%" src="https://main.qcloudimg.com/raw/71f3699ac26a9df2fbb410ba3b31bf27.png" style="zoom:67%;" />
 - 若专用通道为 BGP 模式，IDC 到腾讯云 VPC 方向的路由目的网段，为本地路由器通过 BGP 协议学习到的 VPC CIDR（172.21.0.0/16）。
-   <img width="80%" src="https://main.qcloudimg.com/raw/ab36e0aa7080f7804a2073692455f62a.png" style="zoom:67%;" />
+<img width="80%" src="https://main.qcloudimg.com/raw/ab36e0aa7080f7804a2073692455f62a.png" style="zoom:67%;" />
 
 ## 云联网专线网关
 一个云联网专线网关可以关联一个云联网和多个专用通道，实现云联网内的多个 VPC 与不同的 IDC 互联。在专线网络架构中，创建云联网专线网关的时间、专用通道的模式均对 IDC 到腾讯云 VPC 方向的路由目的网段有影响，具体如下表所示：

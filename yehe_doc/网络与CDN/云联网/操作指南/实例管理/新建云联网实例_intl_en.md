@@ -26,15 +26,15 @@
 <tr>
  <td rowspan=3 align="center">Service Level</td>
  <td align="center">Platinum</td>
- <td>It’s ideal for key businesses that require extremely high communication quality. Gold service is suitable for businesses that require high communication quality, such as payment and game acceleration.</td>
+ <td>It’s ideal for key businesses that require extremely high communication quality, such as payment.</td>
 </tr>
 <tr>
  <td align="center" white-space="nowrap">Gold</td>
- <td >It’s suitable for businesses that require transmission of key business data, such as enterprise business data and ERP.</td>
+ <td >It’s suitable for businesses that require high communication quality, such as game acceleration.</td>
 </tr>
 <tr >
  <td align="center">Silver</td>
- <td >It’s suitable for cost-sensitive and jitter-insensitive businesses that require high security.</td>
+ <td >It’s suitable for cost-sensitive and jitter-insensitive businesses, such as data backup.</td>
 </tr>
 <tr>
  <td rowspan=2>Bandwidth Limit Mode</td>
@@ -56,6 +56,7 @@
 
 ## Subsequent Operations
 After creating a CCN instance, you need to associate network instances with it, check its route table, and configure the bandwidth to enable interconnection.
-- For more information on how to associate network instances, see [Associating Network Instances](https://intl.cloud.tencent.com/document/product/1003/30064)
+- For more information on how to associate network instances, see [Associating Network Instances](https://intl.cloud.tencent.com/document/product/1003/30064).
 - For more information on how to check whether the routing policies of each subnet in the VPC associated with the CCN take effect, see [Viewing Routing Information](https://intl.cloud.tencent.com/document/product/1003/30066).
-- For pay-as-you-go CCN instances billed by monthly 95 percentile, you can configure a cross-region bandwidth cap as needed to control the bandwidth cost. For detailed directions, see [Configuring Bandwidth](https://intl.cloud.tencent.com/document/product/1003/38894).
+- For pay-as-you-go CCN instances billed by monthly 95th percentile, you can configure a cross-region bandwidth cap as needed to control the bandwidth cost. For detailed directions, see [Configuring Bandwidth](https://intl.cloud.tencent.com/document/product/1003/38894).
+

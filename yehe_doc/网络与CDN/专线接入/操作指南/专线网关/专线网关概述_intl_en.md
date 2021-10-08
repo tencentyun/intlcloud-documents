@@ -1,5 +1,12 @@
 A direct connect gateway is a traffic entry for Direct Connect that is used to connect Tencent Cloud VPCs with connections (dedicated tunnels). There are two types: VPC-based direct connect gateway and CCN-based direct connect gateway, which are suitable for different use cases.
 
+## Use Limits
+A standard direct connect gateway supports propagating secondary CIDR blocks. Note the following limits:
+- This feature is unavailable in the Finance Cloud regions.
+- Up to 10 secondary CIDR blocks can be propagated.
+- This feature is unavailable to a NAT direct connect gateway.
+
+
 ## VPC-based Direct Connect Gateway
 As shown in the Direct Connect network architecture, dedicated tunnel mode will affect the destination IP range of the IDC routes to Tencent Cloud VPCs. See the following table for details.
 <table>
@@ -32,7 +39,7 @@ A CCN-based direct connect gateway can associate one CCN with multiple dedicated
 <th>IDC Routes to Tencent Cloud</th>
 </tr>
 <tr>
-<td rowspan="2" >Before 00:00:00 on September 15, 2020</td>
+<td rowspan="2">Before 00:00:00 on September 15, 2020</td>
 <td>Static</td>
 <td>The IDC routes to Tencent Cloud VPCs are configured in the local router.</td>
 </tr>
@@ -54,7 +61,6 @@ In a Direct Connect network architecture, if the direct connect gateways A and B
 
 - When both dedicated tunnels are static, the destination IP range of IDC routes to Tencent Cloud VPCs is the VPC CIDR block (`172.21.0.0/16`) configured in the local router. The direct connect gateways A and B have the same routes and receive local IDC traffic evenly.
 <img width="80%" src="https://main.qcloudimg.com/raw/b1802fe849f2ef09589fa9b9061c827d.png" style="zoom:67%;" />
-
 - When both dedicated tunnels are BGP, the destination IP range synced from the direct connect gateway A to the local router based on the BGP protocol is the subnet CIDR blocks (`172.21.0.0/20`, `172.21.16.0/20`), while that synced from the direct connect gateway B is the VPC CIDR block (`172.21.0.0/16`). The route with the longest mask will be matched and used for forwarding. Therefore, the local router will forward all traffic to the direct connect gateway A. The traffic will be forwarded to the direct connect gateway B only when the direct connect gateway A fails and loses routes.
 >?For a direct connect gateway created before September 15, 2020, 00:00:00, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to change its routing policy to VPC CIDR block.
 >

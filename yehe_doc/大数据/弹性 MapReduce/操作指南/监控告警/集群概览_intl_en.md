@@ -12,5 +12,5 @@ Cluster overview displays a summary of cluster operation status, where you can v
  - **Cluster Deployment Status** displays exceptional, missing, and invalid processes deployed on nodes and the number of nodes in the current cluster, so that you can correct the configuration accordingly.
 ![](https://main.qcloudimg.com/raw/62124d7eb6014282351ab70d76a45851.png)
  -  In **Top 10 Nodes**, you can view the trend of node loads in the current cluster under key metrics. You can also compare multiple nodes with the load trends under the same metric.
-![](https://main.qcloudimg.com/raw/32b9f595d84df6d60b9369874b66d533.png)
-![](https://main.qcloudimg.com/raw/1745dd632521d160a62b8d87048252f1.png)
+![](https://main.qcloudimg.com/raw/191047bc304323356ddf2b203a0597c5.png)
+![](https://main.qcloudimg.com/raw/6b4bf84a00ad58508cfc3c470e906162.png)

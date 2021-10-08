@@ -1,14 +1,15 @@
 
-Tencent Cloud Serverless Cloud Function (SCF) is a serverless execution environment that enables you to build and run applications without having to purchase and manage servers. It is an ideal computing platform for use cases such as real-time file processing and data processing. Simply code in a supported language and set the execution conditions, and your code can be run on the Tencent Cloud infrastructure elastically and securely.
+Tencent Cloud Serverless Cloud Function (SCF) is a serverless execution environment that enables you to build and run applications without having to purchase and manage servers. It is an ideal computing platform for use cases such as real-time file processing and data processing. Simply code in a supported language and set the execution conditions, and your code can be run on the Tencent Cloud infrastructure elastically and securely. The following video introduces SCF:
+<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/2937-54929?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 ## Evolution of Computing Resources
 
 With the development of cloud services and the high abstraction of computing resources, Tencent Cloud provides a wide variety of computing resource options from physical servers to cloud-based functions at different abstraction levels.
 
-- Cloud Physical Machine (CPM): scaling is at the physical machine level. You enjoy the physical computing resources exclusively, which provides the best security.
-- [Cloud Virtual Machine (CVM)](https://intl.cloud.tencent.com/document/product/213): it virtualizes hardware devices, and scaling is at the virtual machine level. You share the physical machine resources with other tenants, and you can configure CVM metrics on your own, which is simpler than deployment and iteration.
-- [Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/document/product/457): it virtualizes operating systems, and scaling is at the service level. The test and production environments are exactly the same, making testing and deployment very convenient.
-- [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/583): it virtualizes runtime environments, and scaling is at the function level. This is the smallest unit of existing computing resources, which features full automation, one-click deployment, and high scalability, and is an ideal choice for lightweight service deployment.
+- [Cloud Physical Machine (CPM)](https://cloud.tencent.com/document/product/386): scaling is at the physical machine level. You enjoy the physical computing resources exclusively, which provides the best security.
+- [Cloud Virtual Machine (CVM)](https://cloud.tencent.com/document/product/213): it virtualizes hardware devices, and scaling is at the virtual machine level. You share the physical machine resources with other tenants, and you can configure CVM metrics on your own, which is simpler than deployment and iteration.
+- [Tencent Kubernetes Engine (TKE)](https://cloud.tencent.com/document/product/457): it virtualizes operating systems, and scaling is at the service level. The test and production environments are exactly the same, making testing and deployment very convenient.
+- [Serverless Cloud Function (SCF)](https://cloud.tencent.com/document/product/583): it virtualizes runtime environments, and scaling is at the function level. This is the smallest unit of existing computing resources, which features full automation, one-click deployment, and high scalability, and is an ideal choice for lightweight service deployment.
 
 ## Serverless
 
@@ -26,26 +27,33 @@ You can customize the timing of running a function, such as when a file is uploa
 
 ## SCF Features
 
-Serverless helps you get rid of the tedious development and configuration work, so that you can only care about the writing of business code logic, without any infrastructure construction, management, and OPS overheads. This service model lowers the threshold of R&D and improves the efficiency of business construction; therefore, it has gained the recognition of high numbers of enterprises and developers.
+  Serverless helps you get rid of the tedious development and configuration work, so that you can only care about the writing of business code logic, without any infrastructure construction, management, and OPS overheads. This service model lowers the threshold of R&D and improves the efficiency of business construction; therefore, it has gained the recognition of high numbers of enterprises and developers.
+
+  ![https://main.qcloudimg.com/raw/5413ca7292d769e5ec0c121edbaa6b0a.png](https://main.qcloudimg.com/raw/5413ca7292d769e5ec0c121edbaa6b0a.png)
+
+#### Various development tools and languages supported for smooth development
+
+  The Tencent Cloud Serverless team works in many ways to provide convenient tools or capabilities that can meet the needs in a wide variety of development scenarios; for example:
 
 
+  - You can use [Serverless Framework](https://cloud.tencent.com/product/sls) to create, debug, and package projects in your local development environment and then quickly deploy them online.
+  - With the aid of visual operations based on the [VS Code plugin](https://cloud.tencent.com/document/product/583/36911) and IDE, online/offline management of functions and code writing and debugging can be performed at one single place. The VS Code IDE and plugin also enables local management, development, and debugging as well as online release of functions.
+  - [Web IDE](https://cloud.tencent.com/document/product/583/51345) is supported; therefore, you can develop and debug projects in real time in the console, which delivers the same experience as local development and debugging and makes it easier for you to view and adjust code.
+  - SCF supports Python, Node.js, Go, PHP, Java, and [Custom Runtime](https://intl.cloud.tencent.com/document/product/583/38129), so you can select a custom runtime environment as needed.
+
+#### Multiple deployment methods for various environments
 
 
-### Pay-as-You-Go billing accurate to the millisecond level
-SCF supports billing actually used resources at a time granularity of 1 ms, which can significantly reduce your costs compared to the time granularity of 100 ms.
+  SCF supports deployment through the console, command line, SDK/API, web IDE, and image.
 
+#### Diversified triggers to support more business scenarios
 
-### Multiple programming languages and custom runtime supported
-SCF supports Python, Node.js, Go, PHP, Java, and [Custom Runtime](https://intl.cloud.tencent.com/document/product/583/38129), so you can select a custom runtime as needed.
+  Triggering methods of SCF include API, SDK, and events in other Tencent Cloud services such as COS and API Gateway, which enrich the use cases.
 
+#### Automated and flexible execution for better invocations
 
+  SCF can automatically scale according to the call volume, which is imperceptible to users, perfectly fits the invocation curve, and saves resources and costs to the greatest extent.
 
+#### **Pay-as-You-Go billing accurate to the millisecond level**
 
-### Various development tools supported for smooth development
-
-The Tencent Cloud Serverless team works in many ways to provide convenient tools or capabilities that can meet the needs in a wide variety of development scenarios; for example:
-
-- You can use [Serverless Framework](https://intl.cloud.tencent.com/product/sls) to create, debug, and package projects in your local development environment and then quickly deploy them online.
-- With the aid of visual operations based on the VS Code plugin and IDE, online/offline management of functions and code writing and debugging can be performed at one single place. The VS Code IDE and plugin also enables local management, development, and debugging as well as online release of functions.
-- Web IDE is supported; therefore, you can develop and debug projects in real time in the console, which delivers the same experience as local development and debugging and makes it easier for you to view and adjust code.
-- For code that has already been hosted in git, you can connect your team to the git. Through the interconnection with your git and the feature of online installation of dependent packages, a simpler code submission and deployment method is realized, and the operation process is simplified.
+  SCF supports billing actually used resources at a time granularity of 1 ms, which can significantly reduce your costs compared to the time granularity of 100 ms.

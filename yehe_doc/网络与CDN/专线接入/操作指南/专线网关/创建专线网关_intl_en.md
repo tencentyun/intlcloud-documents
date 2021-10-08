@@ -4,25 +4,31 @@ This document describes how to create a direct connect gateway and provides info
 - You have applied for a connection as instructed in [Applying for Connection](https://intl.cloud.tencent.com/document/product/216/19244).
 - You have built a VPC as instructed in [Building Up an IPv4 VPC](https://intl.cloud.tencent.com/document/product/215/31891).
 
-## Directions
-1. Log in to the [Direct Connect Gateway console](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fvpc%2Fdcgw%3Frid%3D1).
-2. Select a region and VPC at the top of the **Direct Connect Gateway** page, and click **+New**.
-![](https://main.qcloudimg.com/raw/89ddf380778948849f709ba4518198db.png)
-3. Complete the configurations in the pop-up window and click **OK**.
-![](https://main.qcloudimg.com/raw/d74dd96faabff1924720444e732330a9.png)
+## Use Limits
+A standard direct connect gateway supports propagating secondary CIDR blocks. Note the following limits:
+- This feature is unavailable in the Finance Cloud regions.
+- Up to 10 secondary CIDR blocks can be propagated.
+- This feature is unavailable to a NAT direct connect gateway.
 
+
+## Directions
+1. Log in to the [Direct Connect Gateway console](https://console.cloud.tencent.com/vpc/dcgw?rid=1).
+2. Select a region and VPC at the top of the **Direct Connect Gateway** page, and click **+New**.
+   ![](https://main.qcloudimg.com/raw/89ddf380778948849f709ba4518198db.png)
+3. Complete the configurations in the pop-up window and click **OK**.
+   ![](https://main.qcloudimg.com/raw/d74dd96faabff1924720444e732330a9.png)
 <table>
 <tr>
 <th width="15%">Field</th>
-<th width="85%">Description</th>
+<th width="85%">Configuration</th>
 </tr>
 <tr>
 <td>Name</td>
-<td>The name of the direct connect gateway</td>
+<td>Enter a name for the direct connect gateway.</td>
 </tr>
 <tr>
 <td>Associate Network</td>
-<td>Select either CCN or VPC.</td>
+<td>Select either <b>CCN</b> or <b>VPC</b>.</td>
 </tr>
 <tr>
 <td>CCN instance</td>
@@ -80,5 +86,5 @@ As shown in the Direct Connect network architecture, both the creation time of t
 </tbody></table>
 
 ## Subsequent Operations
-- After you create a CCN-based direct connect gateway, you should also add IDC IP ranges to the direct connect gateway to implement network communication. For more information, see [Adding IDC IP Ranges to the Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/39083).
-- After you create a VPC-based direct connect gateway, you should also configure the VPC’s route table to implement network communication. For more information, see [Configuring the Route Table](https://intl.cloud.tencent.com/document/product/216/19259).
+- After creating a CCN-based direct connect gateway, you need to add IDC IP ranges to the direct connect gateway to implement network communication. For more information, see [Publishing IDC IP Ranges to CCN](https://intl.cloud.tencent.com/document/product/216/39083).
+- After creating a VPC-based direct connect gateway, you need to configure the VPC route table to implement network communication. For more information, see [Configuring the Route Table](https://intl.cloud.tencent.com/document/product/216/19259).

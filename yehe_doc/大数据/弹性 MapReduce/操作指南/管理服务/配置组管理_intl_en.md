@@ -9,8 +9,8 @@ A configuration group is used to group and manage nodes that are equipped with t
 4. Click **Manage Configuration Group** to enter the "Manage Configuration Group" page. You can click **Add Configuration Group**, **Modify**, or **Delete** to add, modify, or delete a configuration group, respectively.
 ![](https://main.qcloudimg.com/raw/ff447e9c6676627682ca593f857900b9.png)
 ![](https://main.qcloudimg.com/raw/a0b2473ce46ffa36cf7ee5c090777b65.png)
-![](https://main.qcloudimg.com/raw/9f7d7373ed884a0251e52ee133c98fa0.png)
+![](https://main.qcloudimg.com/raw/e2e544be85fca345a0b3a461c02e55fd.png)
 5. If the configuration of a node is different from that in the current configuration group, click **Sync Configuration** in the top-right corner to deliver the configuration in the configuration group to the node.
 ![](https://main.qcloudimg.com/raw/7286e6eb52685a59dfb0e53eed087dd5.png)
 Enter the "Sync Configuration" page. You can click **Details** to view the detailed information or click **Sync Configuration** to sync the configuration group.
-![](https://main.qcloudimg.com/raw/b1a3b1f5152d7632e3ae601d09084d5e.png)
+![](https://main.qcloudimg.com/raw/7a6e3b61a7c61ba94ab9b45a0481765a.png)

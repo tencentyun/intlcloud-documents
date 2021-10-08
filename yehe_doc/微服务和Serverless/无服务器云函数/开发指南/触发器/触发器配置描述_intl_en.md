@@ -1,10 +1,10 @@
 When you call the trigger API [CreateTrigger](https://intl.cloud.tencent.com/document/product/583/18589), the corresponding `TriggerDesc` parameter will be the trigger description, which can be used as instructed in this document.
 
 ## Timer Trigger
-Directly use a cron expression by referring to [Cron Expression](https://intl.cloud.tencent.com/document/product/583/9708#cron-.E8.A1.A8.E8.BE.BE.E5.BC.8F).
+Please directly enter a cron expression for this parameter. For more information, please see [Timer Trigger Description](https://intl.cloud.tencent.com/document/product/583/9708).
 
 ### Sample TriggerDesc
-Triggered once every 5 minutes:
+Triggered once every five minutes:
 ```json
 0 */5 * * * * *
 ```
@@ -14,12 +14,11 @@ Triggered once every 5 minutes:
 
 | Name | Type | Required | Description |
 | ------- | ----------------------------- | ---- | ---------------------------- |
-| api     | [ApigwApi](#ApigwApi)         | No | Creates API configuration for API gateway |
-| service | [ApigwService](#ApigwService) | No   | Creates service configuration for API gateway |
-| release | [ApigwRelease](#ApigwRelease) | No   | Release environment for created API gateway  |
+| api | [ApigwApi](#ApigwApi) | No | API configuration of the created API gateway |
+| service | [ApigwService](#ApigwService) | No | Service configuration of the created API gateway |
+| release | [ApigwRelease](#ApigwRelease) | No | Release environment for the created API gateway |
 
-<span id="ApigwApi"></span>
-### ApigwApi
+### ApigwApi[](id:ApigwApi)
 
 
 | Name | Type | Required | Description |
@@ -27,22 +26,20 @@ Triggered once every 5 minutes:
 | authRequired         | String                                            | No | Whether authentication is required. Valid values: TRUE, FALSE. Default value: FALSE |
 | requestConfig        | [ApigwApiRequestConfing](#ApigwApiRequestConfing) | No | Configuration of request backend API |
 | isIntegratedResponse | String                                            | No | Whether to use integrated response. Valid values: TRUE, FALSE. Default value: FALSE |
+| IsBase64Encoded | String | No | Whether to enable Base64-encoding. Valid values: TRUE, FALSE. Default value: FALSE |
 
-<span id="ApigwApiRequestConfing"></span>
-### ApigwApiRequestConfing
+### ApigwApiRequestConfing[](id:ApigwApiRequestConfing)
 | Name | Type | Required | Description |
 | ------ | ------ | ---- | ------------------------------------------------------------ |
 | method | String | No   | Method configuration of request backend API. Valid values: `ANY`, `GET`, `HEAD`, `POST`, `PUT`, `DELETE` |
 
-<span id="ApigwService"></span>
-### ApigwService
+### ApigwService[](id:ApigwService)
 
 | Name | Type | Required | Description |
 | --------- | ------ | ---- | -------------------------------------------- |
 | serviceId | String | No | Apigw Service ID (if this parameter is not passed in, a new service will be created) |
 
-<span id="ApigwRelease"></span>
-### ApigwRelease
+### ApigwRelease[](id:ApigwRelease)
 
 | Name | Type | Required | Description |
 | --------------- | ------ | ---- | ------------------------------------------------------------ |
@@ -74,8 +71,8 @@ Triggered once every 5 minutes:
 | Name | Type | Required | Description |
 | --------- | ------ | ---- | ---------------------------------------------------------- |
 | maxMsgNum | String | Yes | A function invocation will be triggered once every time `maxMsgNum` CKafka messages are aggregated within 5 seconds |
-| offset    | String | Yes   | `offset` is the position where consumption of CKafka messages starts. Valid values: `latest`, `earliest`, `timestamp at the millisecond level` |
-| retry     | String | Yes   | Maximum number of retries when the function reports an error |
+| offset | String | Yes | `offset` is the position where consumption of CKafka messages starts. Currently, three values are supported: `latest`, `earliest`, and `millisecond-level timestamp` |
+| retry | String | Yes | Maximum number of retries when the function reports an error |
 
 
 ### Sample TriggerDesc
@@ -87,7 +84,7 @@ Triggered once every 5 minutes:
 ```
 
 ### API request description
-To create a CKafka trigger by using an API request, the `TriggerName` field needs to be defined as the `instanceId` and `topicName` of the CKafka instance (`[instanceId]-[topicName]`) to dump to. <br>Below is an example:
+To create a CKafka trigger by using an API request, the `TriggerName` field needs to be defined as the `instanceId` and `topicName` of the target CKafka instance in the following format: <br>`[instanceId]-[topicName]`. Below is a sample request:
 
 ```json
 TriggerName: "ckafka-8tfxzia3-test"
@@ -102,8 +99,7 @@ TriggerName: "ckafka-8tfxzia3-test"
 | event  | String                  | Yes   | [COS event type](https://intl.cloud.tencent.com/document/product/583/9707)      |
 | filter | [CosFilter](#CosFilter) | Yes   | COS filename filter |
 
-<span id="CosFilter"></span>
-### CosFilter
+### CosFilter[](id:CosFilter)
 
 | Name | Type | Required | Description |
 | ------ | ------ | ---- | --------------------------------- |
@@ -125,19 +121,19 @@ TriggerName: "ckafka-8tfxzia3-test"
 
 ### API request description
 
-To create a COS trigger by using an API request, the `TriggerName` field needs to be defined as the XML API access domain name of the COS bucket to dump to. Below is an example:
+To create a COS trigger by using an API request, the `TriggerName` field needs to be defined as the XML API access domain name of the target COS bucket. Below is an example:
 ```json
 TriggerName: "xxx.cos.ap-guangzhou.myqcloud.com"
 ```
->!To view the access domain name, go to the COS Console > **Bucket List** > **Basic Configuration** > **Basic Information**.
+>!The access domain name can be viewed in **Bucket List** > **Basic Configuration** > **Basic Information** in the COS console.
 
 
 ## CMQ Trigger
 
 | Name | Type | Required | Description |
 | ------ | ----------------------- | ---- | -------------------- |
-| filterType  | String                  | No  |  Message filter type. `1`: tag; `2`: route match	   |
-| filterKey | String  | No   | Message filter tag if `filterType` is `1`; `Binding Key` if `filterType` is `2` |
+| filterType | String | No | Message filter type. 1: tag; 2: route match	   |
+| filterKey | String | No | When `filterType` is `1`, it indicates the message filter tag; when `filterType` is `2`, it indicates the `Binding Key` |
 
 ### Sample TriggerDesc
 ```json

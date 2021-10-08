@@ -1,6 +1,7 @@
 A dedicated tunnel is a network link segmentation of a connection. You can create dedicated tunnels that connect to different direct connect gateways to enable communication between your on-premises IDC and multiple VPCs. After a dedicated tunnel is created, its event alarms will be automatically configured to facilitate your monitoring and OPS of it. This document describes how to apply for a dedicated tunnel.
 [](id:background)
 > ?The shared connection feature of new dedicated tunnels has stopped accepting new applications since August 1, 2020 at 00:00:00. If you are using a shared connection, it will not be affected by this change, but if you delete it, you will not be able to apply for new dedicated tunnels with shared connection after August 1, 2020 at 00:00:00.
+>
 ## Prerequisites
 - You have applied for a connection as instructed in [Applying for Connection](https://intl.cloud.tencent.com/document/product/216/19244).
 - You have created a direct connect gateway as instructed in [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
@@ -37,7 +38,7 @@ A dedicated tunnel is a network link segmentation of a connection. You can creat
  If <b>VPC</b> is selected as the access network, you can only select the region where the connection resides for a 2.0 tunnel and select any region for a 1.0 tunnel.</li><li>If <b>BM Network</b> is selected as the access network, you can select any region for a 1.0 tunnel.</li></ul></td>
 </tr>
 <tr>
-<td>Virtual Private Cloud</td>
+<td>VPC</td>
 <td>Select the VPC instance to be connected to by the dedicated tunnel.</td>
 </tr>
 <tr>
@@ -69,11 +70,11 @@ A dedicated tunnel is a network link segmentation of a connection. You can creat
 </tr>
 <tr>
 <td>CPE Peer IP</td>
-<td>Configure the connection IP address on the user (or ISP) side.</td>
+<td>Configure the connection IP address on the user (or carrier) side.</td>
 </tr>
 <tr>
 <td>Routing Mode</td>
-<td>Select <b>BGP</b> or <b>Static</b>.<br><ul><li>BGP: applies to the exchange of routing information and network accessibility across autonomous systems (AS).</li><li>Static: applies to a simper network environment.</li></ul></td>
+<td>Select:<br><ul><li>BGP Routing: applicable to the exchange of routing information and network accessibility across autonomous systems (AS).</li><li>Static Routing: applicable to a simper network environment.</li></ul></td>
 </tr>
 <tr>
 <td>BGP ASN</td>
@@ -85,7 +86,7 @@ A dedicated tunnel is a network link segmentation of a connection. You can creat
 </tr>
 <tr>
 <td>CPE IP Range</td>
-<td>Enter the IP ranges of your IDC, with one IP range per line.</td>
+<td>Enter the IP ranges of your IDC, with one IP range per line.</br>If the new tunnel and existing tunnel are redundant, it is recommended to publish other IP ranges for <b>CPE IP Range</b>, and complete test for new tunnel with the IDC devices. And then publish the final service IP range via <b>Change Tunnel</b>, to prevent effects against traffic in running redundant tunnel.</td>
 </tr>
 </table>
 <dx-alert infotype="explain" title="">
@@ -121,19 +122,19 @@ After a dedicated tunnel is created, Tencent Cloud automatically configures four
 This default alarm policy does not configure recipient information, so you can only view alarms on the console. To configure a recipient, take the following steps.
 1. Log in to the [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview) console and choose **Alarm Configuration** > **Alarm Policy** on the left sidebar.
 2. In the upper-right corner of the **Alarm Policy** page, click **Advanced Filter** to select **All** for **Monitor Type** and **Dedicated Line channel** for **Policy type**.
-4. Perform the following operations as needed.
+3. Perform the following operations as needed.
  - Configure alarm objects
      1. Click the name of the target default policy in the alarm policy list.
      2. Click **Edit** next to **Alarm Object**, and select the objects to monitor. You can also click **Add Object** to create more alarm objects.
  - Modify an alarm policy
      1. Click the name of the target default policy in the alarm policy list.
-     2. Click **Edit** next to the **Trigger Condition** and modify the trigger conditions for metric alarms and event alarms in the pop-up window. For more information on alarms, please see [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403). After the modification, click **Save**.
+     2. Click **Edit** next to the **Trigger Condition** and modify the trigger conditions for metric alarms and event alarms in the pop-up window. For more information on alarms, please see [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403). After the modification is complete, click **Save**.
  - Set alarm notification
      1. Click the name of the target default policy in the alarm policy list.
      2. Select a template in the **Alarm Notification** section.
          Click **Edit Recipient** to configure alarm recipients in the template. If existing templates are not suitable, you can click **Create Template** and configure it as prompted. Then you can select the template to configure alarm recipients.
  - Set a default policy
-     If the default alarm policy cannot meet your needs, you can select a custom alarm policy and click **Set to Default Policy** in the **Operation** column. Then the selected alarm policy will automatically apply to dedicated tunnels being created afterwards.
+     If the default alarm policy cannot meet your needs, you can select a custom alarm policy and click **Set to Default Policy** in the **Operation** column. Then the selected alarm policy will automatically apply to dedicated tunnels created afterwards.
 
 ## Connection Status
 After the dedicated tunnel is created, it will be displayed on the **Dedicated Tunnels** page in the **Applying** status.

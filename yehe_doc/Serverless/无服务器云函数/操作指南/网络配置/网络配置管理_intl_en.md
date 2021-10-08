@@ -41,7 +41,7 @@ SCF supports the following network configurations:
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index) and click **Function Service** in the left sidebar.
 2. Choose a region at the top of the page and click the function to be configured.
 3. In the **Function configuration** module, click **Edit** in the upper right corner.
-4. Configure the network as needed by referring to the related network configuration documentation.
+4. Configure the network as needed by referring to the related [network configuration documentation](https://intl.cloud.tencent.com/document/product/583/38377).
 
 
 ### Viewing network configuration

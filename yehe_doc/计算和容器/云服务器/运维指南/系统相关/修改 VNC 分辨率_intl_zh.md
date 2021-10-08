@@ -9,16 +9,15 @@
 
 ### 修改 Windows 实例的 VNC 分辨率
 
-> 下面以 Windows Server 2012 中文版系统镜像为例，引导您修改 Windows 实例的 VNC 分辨率。
->
+>? 下面以 Windows Server 2012 中文版系统镜像为例，引导您修改 Windows 实例的 VNC 分辨率。
 
 1. [使用 VNC 登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/32496)。
-2. 在操作系统界面，单击鼠标右键，选择【屏幕分辨率】。如下图所示：
+2. 在操作系统界面，单击鼠标右键，选择**屏幕分辨率**。如下图所示：
 ![](https://main.qcloudimg.com/raw/b8ec8e8ec22002532a4a517150079d2d.png)
-3. 在打开的屏幕分辨率窗口中，设置【分辨率】的大小，单击【应用】。如下图所示：
+3. 在打开的屏幕分辨率窗口中，设置**分辨率**的大小，单击**应用**。如下图所示：
 ![](https://main.qcloudimg.com/raw/b90a33fa0600846888a15154f1e656dc.png)
-4. 在弹出的提示框中，单击【保留更改】。
-5. 单击【确定】，关闭屏幕分辨率窗口。
+4. 在弹出的提示框中，单击**保留更改**。
+5. 单击**确定**，关闭屏幕分辨率窗口。
 
 ### 修改 Linux 实例的 VNC 分辨率
 
@@ -69,7 +68,7 @@ reboot
 
 ## 附录
 
-分辨率与 VGA 的参数对照表如下：
+Linux 实例分辨率与 VGA 的参数对照表如下：
 <table>
 	<tr><th>分辨率</th><td>640 * 480</td><td>800 * 600</td><td>1024 * 768</td></tr>
 	<tr><th>VGA</th><td>786</td><td>789</td><td>792</td></tr>

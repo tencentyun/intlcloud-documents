@@ -4,13 +4,19 @@
 - 您已申请物理专线，具体操作请参见[ 申请物理专线](https://intl.cloud.tencent.com/document/product/216/19244)。
 - 您已创建腾讯云 VPC，具体操作请参见[ 快速搭建 IPv4 私有网络](https://intl.cloud.tencent.com/document/product/215/31891)。
 
+## 使用限制
+标准型专线网关支持传递辅助 CIDR，但需要遵循如下限制：
+- 金融云地域的标准型专线网关不支持传递辅助 CIDR。
+- 标准型专线网关支持传递10个辅助 CIDR。
+- NAT 型专线网关不支持传递辅助 CIDR。
+
+
 ## 操作步骤
-1. 登录 [专线网关控制台](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fvpc%2Fdcgw%3Frid%3D1) 。
+1. 登录 [专线接入控制台](https://console.cloud.tencent.com/dc/dc) ，并在左侧导航栏单击【专线网关】。
 2. 在“专线网关”页面上方选择地域和私有网络，然后单击【+新建】。
- ![](https://main.qcloudimg.com/raw/89ddf380778948849f709ba4518198db.png)
+   ![](https://main.qcloudimg.com/raw/89ddf380778948849f709ba4518198db.png)
 3. 在“创建专线网关”对话框中配置网关详情，完成后单击【确定】。
- ![](https://main.qcloudimg.com/raw/d74dd96faabff1924720444e732330a9.png)
- 
+   ![](https://main.qcloudimg.com/raw/d74dd96faabff1924720444e732330a9.png)
 <table>
 <tr>
 <th width="15%">字段</th>

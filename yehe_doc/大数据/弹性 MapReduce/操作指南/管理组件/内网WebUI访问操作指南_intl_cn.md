@@ -31,7 +31,7 @@ EMR 集群创建时，如果没有勾选“开启集群 Master 节点公网”�
 ![](https://main.qcloudimg.com/raw/04a0956edc818210b2069607d5a675a1.png)
 ![](https://main.qcloudimg.com/raw/cbc735040d7134e3f4027de39f764a2f.png)
 4. 单击**绑定**，为当前 CVM 实例绑定一个已有的 EIP 或创建一个新的 EIP。
-![](https://main.qcloudimg.com/raw/77f7d3d97919e23ed604bae0c3ccb08e.png)
+![](https://main.qcloudimg.com/raw/b846993c8533d6b830fb8486d9d11a87.png)
 绑定 EIP 后，可以看到弹性网卡页面，主网卡已绑定公网 IP 处已有 EIP 信息。
 ![](https://main.qcloudimg.com/raw/f8d83f9aade43573c9720dabc231144a.png)
 5. 检查 CVM 实例是否可以通过公网访问。
