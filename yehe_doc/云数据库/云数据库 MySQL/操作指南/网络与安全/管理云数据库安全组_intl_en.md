@@ -3,9 +3,9 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 
 >?
 >- TencentDB for MySQL security groups currently only support network access control for VPCs and public networks but not the classic network.
->- TencentDB security groups in the Frankfurt, Silicon Valley, Singapore regions currently do not support public network access control.
+>- Security groups associated with TencentDB instances in the Frankfurt, Silicon Valley, and Singapore regions currently do not support public network access control.
 >- As TencentDB does not have active outbound traffic, outbound rules are not applicable to TencentDB.
->- TencentDB for MySQL security groups support source and read-only instances.
+>- Security groups are supported for source, read-only, and disaster recovery TencentDB for MySQL instances.
 >- Security groups are not supported for basic single-node TencentDB for MySQL instances.
 
 
@@ -13,7 +13,7 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 ### Step 1. Create a security group
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/securitygroup).
 2. Select **Security Group** on the left sidebar, select a region, and click **New**.
-3. In the pop-up dialog box, configure the following items and click **OK**.
+3. In the pop-up dialog window, configure the following items, and click **OK**.
  - **Template**: select a template based on the service to be deployed on the TencentDB instance in the security group, which simplifies the security group rule configuration, as shown below:
 <table>
 	<tr><th>Template</th><th>Description</th><th>Remarks</th></tr>
@@ -30,7 +30,7 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click **Modify Rule** in the **Operation** column on the row of the security group for which to configure a rule.
 2. On the security group rule page, click **Inbound rule** > **Add Rule**.
 3. In the pop-up dialog box, set the rule.
- - **Type**: **Custom** is selected by default. You can also choose another system rule template, such as MySQL(3306).
+ - **Type**: **Custom** is selected by default. You can also choose another system rule template. MySQL(3306) is recommended.
  - **Source** or **Target**: traffic source (inbound rules) or target (outbound rules). You need to specify one of the following options:
 <table>
 	<tr><th>Source or Target</th><th>Description</th></tr>
@@ -42,10 +42,13 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 	<tr><td>Reference an IP address object or IP address group object in a <a href="https://intl.cloud.tencent.com/document/product/215/31867">parameter template</a>.</td><td>-</td></tr>
 </table>
  - **Protocol Port**: enter the protocol type and port range or reference a protocol/port or protocol/port group in a [parameter template](https://intl.cloud.tencent.com/document/product/215/31867).
-  >!To connect to a TencentDB for MySQL instance, you must open its port.
-  >- TencentDB for MySQL uses private network port 3306 by default and supports customizing the port. If the default port is changed, the new port should be opened in the security group.
-  >- TencentDB for MySQL uses public network port 60719 by default. You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and view its port number on the instance details page.
-  >![](https://main.qcloudimg.com/raw/9f471c644eb9a5aa86bd092fdebd0255.png)
+>!To connect to a TencentDB for MySQL instance, its port must be opened. You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and view its port number on the instance details page.
+>![](https://main.qcloudimg.com/raw/9f471c644eb9a5aa86bd092fdebd0255.png)
+>
+>- TencentDB for MySQL uses private network port 3306 by default and supports customizing the port. If the default port is changed, the new port should be opened in the security group.
+>- TencentDB for MySQL uses public network port 60719 by default. After TencentDB for MySQL public network access is enabled, it will be controlled by the security group, so both port 60719 and 3306 should be opened.
+>- The security group rules displayed on the **Security Group** page in the TencentDB for MySQL console take effect for private and public (if enabled) network addresses of the TencentDB for MySQL instance.
+>
  - **Policy**: **Allow** or **Reject**. **Allow** is selected by default.
     - **Allow**: traffic to this port is allowed.
     - **Reject**: data packets will be discarded without any response.
@@ -57,7 +60,7 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 **Solution:** when adding security group rules, select MySQL(3306) in **Type** to open port 3306.
 You can also set **Source** to all or specific IPs (IP ranges) as needed to allow them to access TencentDB for MySQL from a CVM instance.
 
-| Direction | Type | Source | Port | Policy |
+| Inbound or Outbound   | Type   | Source                                                    | Protocol and Port | Policy |
 |---------|---------|---------|---------|---------|
 | Inbound | MySQL(3306) | All IPs: 0.0.0.0/0 <br>Specific IPs: specify IPs or IP ranges | TCP:3306 | Allow |
 
