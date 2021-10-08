@@ -2,7 +2,7 @@
 
 The JavaScript SDK provides the API for getting an object URL and the presigned URL for a request. 
 
-## Signature Calculation
+## Signature calculation
 
 In all COS XML API requests, the authentication credential `Authorization` is required for all operations on private resources for COS to determine whether a request is valid.
 
@@ -11,17 +11,18 @@ There are two ways to use the authentication credential:
 1. Put it in the header parameter; field name: authorization.
 2. Put it in the URL parameter; field name: sign.
 
-The COS.getAuthorization method is used to calculate the authentication credential (Authorization), which is the signing information used to verify the request validity.
+The `COS.getAuthorization` method is used to calculate the authentication credential (Authorization), which is the signing information used to verify the validity of the request.
 
-> ! It is recommended that this method is only used for frontend debugging but not in actual projects, as it may disclose keys.
+>! It is recommended that this method is only used for frontend debugging but not in actual projects, as it may disclose keys.
+>
 
-#### Use case 
+#### Examples
 
 Obtain the authentication credential for object download:
 
 [//]: # (.cssg-snippet-get-authorization)
 ```js
-// You can obtain/manage SECRETID and SECRETKEY at https://console.cloud.tencent.com/cam/capi
+// Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to check and manage the `SecretId` and `SecretKey` of your project.
 var Authorization = COS.getAuthorization({
     SecretId: 'SECRETID',
     SecretKey: 'SECRETKEY',
@@ -35,15 +36,15 @@ var Authorization = COS.getAuthorization({
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | --------- | ------------------------------------------------------------ | ------ | ---- |
-| SecretId | User SecretId | String | No |
-| SecretKey | User's SecretKey | String | Yes |
+| SecretId | User's `SecretId` | String | No |
+| SecretKey | User's `SecretKey` | String | Yes |
 | Method | HTTP request method such as `GET`, `POST`, `DELETE`, or `HEAD` | String | Yes |
 | Key | Object key (object name) is the unique ID of an object in a bucket. **If the request operation is to be performed on a file, this parameter is required and should be a filename.** If the operation is on a bucket, this parameter should be left empty | String | No |
-| Query | Query parameter object of the request | Object | No |
-| Headers | Header parameter object of the request | Object | No |
-| Expires | Signature expiration time in seconds. Default value: 900 seconds | Number | No |
+| Query | `query` parameter object of the request | Object | No |
+| Headers | `header` parameter object of the request | Object | No |
+| Expires | Signature expiration time in seconds. Default value: `900` | Number | No |
 
 #### Returned value description
 
@@ -92,7 +93,7 @@ cos.getObjectUrl({
 });
 ```
 
-Sample 4. Specify the validity period of the link
+Sample 4. Specify the validity period of a link
 
 [//]: # (.cssg-snippet-get-presign-download-url-expiration)
 ```js
@@ -107,7 +108,7 @@ cos.getObjectUrl({
 });
 ```
 
-Sample 5. Get an object URL and download the object
+Sample 5. Get the object URL and download the object
 
 [//]: # (.cssg-snippet-get-presign-download-url-then-fetch)
 ```js
@@ -156,16 +157,16 @@ cos.getObjectUrl({
 
 | Parameter | Description | Type | Required |
 | ------- | ------------------------------------------------------------ | ------- | ---- |
-| Bucket  | Bucket name in the format: `BucketName-APPID`. | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID`. | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key | Object key (object name) is the unique ID of an object in a bucket. **If the request operation is to be performed on a file, this parameter is required and should be a filename.** If the operation is on a bucket, this parameter should be left empty | String | Yes |
 | Sign | Whether to return a signed URL. Default value: `true` | Boolean | No |
 | Protocol    | It can be `http:` (default) or `https:` | String | No |
 | Domain    | Bucket access domain. Default value: `{BucketName-APPID}.cos.{Region}.myqcloud.com` | String | No |
 | Method | HTTP request method such as `GET`, `POST`, `DELETE`, or `HEAD`. Default value: `GET` | String | No |
-| Query | Query parameter object used in the signature calculation | Object | No |
-| Headers | Header parameter object used in the signature calculation | Object | No |
-| Expires | Signature expiration time in seconds. Default value: 900 seconds | Number | No |
+| Query | Query parameter object for signature calculation in the format of {key: 'val'} | Object | No |
+| Headers | Header parameter object for signature calculation | Object | No |
+| Expires | Signature expiration time in seconds. Default value: `900` | Number | No |
 
 #### Returned value description
 
@@ -183,6 +184,6 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------ | ------------------------------------------------------------ | ------ |
 | err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
+| data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
 | - Url | Calculated URL | String |
 

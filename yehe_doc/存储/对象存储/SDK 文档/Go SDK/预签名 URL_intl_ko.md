@@ -1,7 +1,10 @@
 ## 소개
-Go SDK는 사전 서명된 URL 요청을 가져오는 인터페이스를 제공합니다. 자세한 내용은 본 문서의 예시를 참조하십시오.
+Go SDK는 사전 서명된 URL 요청을 가져오는 인터페이스를 제공합니다. 자세한 내용은 본 문서의 예시를 참고하십시오.
 
-
+>?
+> - 사용자는 임시 키를 사용하여 사전 서명을 생성하고, 임시 승인을 통해 사전 서명 업로드 및 다운로드 요청의 보안성을 강화할 것을 권장합니다. 임시 키 신청 시, [최소 권한의 원칙 관련 가이드](https://intl.cloud.tencent.com/document/product/436/32972)를 준수하여 타깃 버킷이나 객체 이외의 리소스가 유출되지 않도록 하시기 바랍니다.
+> - 사전 서명 생성을 위해 영구 키를 사용해야 하는 경우, 리스크 방지를 위해 영구 키 권한을 업로드 또는 다운로드 작업으로 제한할 것을 권장합니다.
+> 
 
 ## 사전 서명된 URL 요청 가져오기 
 
@@ -12,16 +15,16 @@ func (s *ObjectService) GetPresignedURL(ctx context.Context, httpMethod, name, a
 #### 매개변수 설명
 | 매개변수 이름           | 유형                         | 설명                            |
 | ------------------ | ---------------------------- | ------------------------------- |
-| httpMethod            | string                   | HTTP 요청 방법                        |
+| httpMethod            | string                   | HTTP 요청 메소드                        |
 | name | string           | HTTP 요청 경로. 즉, 객체 키                 |
 | ak             | string                       | SecretId                    |
 | sk               | string                       | SecretKey         |
 | expired            | time.Duration | 서명 유효 기간             |
-| opt    | interface{} | 확장 항목, nil 입력 가능 |
+| opt    | interface{} | 확장 항목. nil 입력 가능 |
 
-## 영구 키로 사전 서명된 요청 예시
+## 영구 키 사전 서명 요청 예시
 
-#### 업로드 요청 예시
+#### 요청 예시 업로드
 
 [//]: # (.cssg-snippet-get-presign-upload-url)
 ```go
@@ -49,7 +52,7 @@ req, err := http.NewRequest(http.MethodPut, presignedURL.String(), f)
 if err != nil {
     panic(err)
 }
-// 사용자가 요청 헤더를 직접 설정할 수 있습니다.
+// 사용자가 요청 헤더를 직접 설정할 수 있음
 req.Header.Set("Content-Type", "text/html")
 _, err = http.DefaultClient.Do(req)
 if err != nil {
@@ -57,7 +60,7 @@ if err != nil {
 }
 ```
 
-#### 다운로드 요청 예시
+#### 요청 예시 다운로드
 
 [//]: # (.cssg-snippet-get-presign-download-url)
 ```go
@@ -89,7 +92,7 @@ if bytes.Compare(bs2, bs) != 0 {
 }
 ```
 
-## 임시 키로 사전 서명된 요청 예시
+## 임시 키 사전 서명 요청 예시
 
 ```go
 // 사용자는 tag 방식을 통해 요청 매개변수 또는 요청 헤더를 서명에 삽입할 수 있습니다.
@@ -98,7 +101,7 @@ type URLToken struct {
 }
 
 func main() {
-	// 보유한 임시 키로 변경
+	// 사용자의 임시 키로 변경
 	tak := os.Getenv("SECRETID")
 	tsk := os.Getenv("SECRETKEY")
 	token := &URLToken{

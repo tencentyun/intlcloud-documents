@@ -2,7 +2,7 @@
 
 Node.js SDK provides APIs for getting object URLs and pre-signed request URLs. For details, see the descriptions and samples below.
 
-## Signature Calculation
+## Signature calculation
 
 In all COS XML API requests, the authentication credential `Authorization` is required for all operations on private resources for COS to determine whether a request is valid.
 
@@ -11,17 +11,18 @@ There are two ways to use the authentication credential:
 1. Put it in the header parameter; field name: authorization.
 2. Put it in the URL parameter; field name: sign.
 
-The COS.getAuthorization method is used to calculate the authentication credential (Authorization), which is the signing information used to verify the request validity.
+The `COS.getAuthorization` method is used to calculate the authentication credential (Authorization), which is the signing information used to verify the validity of the request.
 
-> ! It is recommended that this method is only used for frontend debugging but not in actual projects, as it may disclose keys.
+>! It is recommended that this method is only used for frontend debugging but not in actual projects, as it may disclose keys.
+>
 
-#### Use case
+#### Examples
 
 Obtaining the authentication credential for file download:
 
 [//]: # (.cssg-snippet-get-authorization)
 ```js
-// Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to check and manage the `SecretId` and `SecretKey` of your project.
+// You can obtain/manage SECRETID and SECRETKEY at https://console.cloud.tencent.com/cam/capi
 var COS = require('cos-nodejs-sdk-v5');
 var Authorization = COS.getAuthorization({
     SecretId: 'SECRETID',
@@ -44,15 +45,15 @@ var Authorization = COS.getAuthorization({
 | Key | Object key (object name), a unique ID of an object in a bucket. **If the request operation is to be performed on a file, this parameter is required and should be a filename.** If the operation is on a bucket, this parameter should be left empty | String | No |
 | Query | `query` parameter object of the request | Object | No |
 | Headers | `header` parameter object of the request | Object | No |
-| Expires | Signature expiration time in seconds. Default value: 900 seconds | Number | No |
+| Expires | Signature expiration time in seconds. Default value: `900` | Number | No |
 
-#### Returned value
+#### Returned value description
 
 The returned value is the calculated authentication credential string `authorization`.
 
-## Getting a Pre-signed Request URL
+## Obtaining pre-signed URL used for requests
 
-### Samples for download requests
+### Download request samples
 
 Sample 1. Get an unsigned object URL
 
@@ -167,9 +168,9 @@ cos.getObjectUrl({
 | Protocol    | It can be `http:` (default) or `https:` | String | No |
 | Domain    | Bucket access domain. Default value: `{BucketName-APPID}.cos.{Region}.myqcloud.com` | String | No |
 | Method | HTTP request method such as `GET`, `POST`, `DELETE`, or `HEAD`. Default value: `GET` | String | No |
-| Query | `query` parameter object used in signature calculation | Object | No |
-| Headers | `header` parameter object used in signature calculation | Object | No |
-| Expires | Signature expiration time in seconds. Default value: 900 seconds | Number | No |
+| Query | Query parameter object for signature calculation in the format of {key: 'val'} | Object | No |
+| Headers | Header parameter object for signature calculation | Object | No |
+| Expires | Signature expiration time in seconds. Default value: `900` | Number | No |
 
 ### Returned value description
 
@@ -187,5 +188,5 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------ | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this parameter is left empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| data | Object returned when the request is successful. If the request fails, this parameter is left empty | Object |
+| data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
 | - Url | Calculated URL | String |

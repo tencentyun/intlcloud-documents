@@ -1,6 +1,13 @@
-## 개요
+## 소개
 
 JavaScript SDK는 객체 URL과 사전 서명된 URL 요청을 가져오는 인터페이스를 제공합니다.
+
+>?
+> - 사용자는 임시 키를 사용하여 사전 서명을 생성하고, 임시 승인을 통해 사전 서명 업로드 및 다운로드 요청의 보안성을 강화할 것을 권장합니다. 임시 키 신청 시, [최소 권한의 원칙 관련 가이드](https://intl.cloud.tencent.com/document/product/436/32972)를 준수하여 타깃 버킷이나 객체 이외의 리소스가 유출되지 않도록 하시기 바랍니다.
+> - 사전 서명 생성을 위해 영구 키를 사용해야 하는 경우, 리스크 방지를 위해 영구 키 권한을 업로드 또는 다운로드 작업으로 제한할 것을 권장합니다.
+> 
+
+
 
 ## 서명 계산
 
@@ -11,7 +18,7 @@ COS XML API의 요청에서 프라이빗 리소스 작업은 모두 현재 요�
 1. header 매개변수에서 사용, 필드 이름: authorization.
 2. url 매개변수에서 사용, 필드 이름: sign.
 
-COS.getAuthorization 방법은 자격 증명(Authorization) 계산에 사용되며, 이는 요청의 합법성 인증에 사용되는 서명 정보입니다.
+COS.getAuthorization 메소드는 자격 증명(Authorization) 계산에 사용되며, 이는 요청의 합법성 인증에 사용되는 서명 정보입니다.
 
 >! 해당 방법은 프런트 엔드 디버깅 시에만 사용하는 것을 권장합니다. 프로젝트가 온라인 상태일 경우, 키가 노출될 리스크가 있기 때문에 프런트 엔드를 사용해 서명을 계산하는 방법은 권장하지 않습니다.
 >
@@ -40,11 +47,11 @@ var Authorization = COS.getAuthorization({
 | --------- | ------------------------------------------------------------ | ------ | ---- |
 | SecretId  | 사용자의 SecretId                                              | String | 예   |
 | SecretKey | 사용자의 SecretKey                                             | String | 예   |
-| Method    | 작업 방법. 예: GET, POST, DELETE, HEAD 등 HTTP 방법           | String | 예   |
+| Method    | 작업 메소드. 예: GET, POST, DELETE, HEAD 등 HTTP 메소드           | String | 예   |
 | Key       | 객체 키(Object의 이름). 객체는 버킷에 있는 고유 식별자입니다. **파일에 대한 요청 작업인 경우 파일 이름이자 필수 매개변수입니다**. 버킷에 대한 작업인 경우 빈칸으로 표시됩니다. | String | 아니요   |
 | Query     | 요청의 query 매개변수 객체                                        | Object | 아니요   |
 | Headers   | 요청의 header 매개변수 객체                                       | Object | 아니요   |
-| Expires   | 서명 만료 시간(초).. 기본값: 900초                                  | Number | 아니요   |
+| Expires   | 서명 만료 시간(초). 기본값: 900초                                  | Number | 아니요   |
 
 #### 반환값 설명
 
@@ -60,7 +67,7 @@ var Authorization = COS.getAuthorization({
 ```js
 var url = cos.getObjectUrl({
     Bucket: 'examplebucket-1250000000',
-    Region: 'COS_REGION',     /* 버킷이 위치한 리전, 필수 필드 */
+    Region: 'COS_REGION',     /* 버킷이 위치한 리전. 필수 필드 */
     Key: 'exampleobject',
     Sign: false
 });
@@ -72,7 +79,7 @@ var url = cos.getObjectUrl({
 ```js
 var url = cos.getObjectUrl({
     Bucket: 'examplebucket-1250000000',
-    Region: 'COS_REGION',     /* 버킷이 위치한 리전, 필수 필드 */
+    Region: 'COS_REGION',     /* 버킷이 위치한 리전. 필수 필드 */
     Key: 'exampleobject'
 });
 ```
@@ -85,7 +92,7 @@ var url = cos.getObjectUrl({
 ```js
 cos.getObjectUrl({
     Bucket: 'examplebucket-1250000000',
-    Region: 'COS_REGION',     /* 버킷이 위치한 리전, 필수 필드 */
+    Region: 'COS_REGION',     /* 버킷이 위치한 리전. 필수 필드 */
     Key: 'exampleobject',
     Sign: false
 }, function (err, data) {
@@ -99,7 +106,7 @@ cos.getObjectUrl({
 ```js
 cos.getObjectUrl({
     Bucket: 'examplebucket-1250000000',
-    Region: 'COS_REGION',     /* 버킷이 위치한 리전, 필수 필드 */
+    Region: 'COS_REGION',     /* 버킷이 위치한 리전. 필수 필드 */
     Key: 'exampleobject',
     Sign: true,
     Expires: 3600, // 단위: 초
@@ -114,7 +121,7 @@ cos.getObjectUrl({
 ```js
 cos.getObjectUrl({
     Bucket: 'examplebucket-1250000000',
-    Region: 'COS_REGION',     /* 버킷이 위치한 리전, 필수 필드 */
+    Region: 'COS_REGION',     /* 버킷이 위치한 리전. 필수 필드 */
     Key: 'exampleobject',
     Sign: true
 }, function (err, data) {
@@ -132,7 +139,7 @@ cos.getObjectUrl({
 ```js
 cos.getObjectUrl({
     Bucket: 'examplebucket-1250000000',
-    Region: 'COS_REGION',     /* 버킷이 위치한 리전, 필수 필드 */
+    Region: 'COS_REGION',     /* 버킷이 위치한 리전. 필수 필드 */
     Method: 'PUT',
     Key: 'exampleobject',
     Sign: true
@@ -163,10 +170,10 @@ cos.getObjectUrl({
 | Sign    | 서명이 있는 Url 반환 여부. 기본값: true                          | Boolean | 아니요   |
 | Protocol    | ‘http:’ 또는 ‘https:’를 선택할 수 있습니다. 기본값: ‘http:’(콜론 포함)                    | String | 아니요   |
 | Domain    | 버킷 액세스 도메인. 기본값: {BucketName-APPID}.cos.{Region}.myqcloud.com     | String | 아니요   |
-| Method  | 작업 방법. 예: GET, POST, DELETE, HEAD 등 HTTP 방법. 기본값: GET | String  | 아니요   |
-| Query    | 서명 계산에 참여하는 query 매개변수 객체. {key: 'val'} 의 형식               | Object    | 아니요   |
+| Method  | 작업 메소드. 예: GET, POST, DELETE, HEAD 등 HTTP 메소드. 기본값: GET | String  | 아니요   |
+| Query    | 서명 계산에 참여하는 query 매개변수 객체. {key: 'val'} 의 형식               | Object   | 아니오   |
 | Headers | 서명 계산에 참여하는 header 매개변수 객체                               | Object  | 아니요   |
-| Expires | 서명 만료 시간(초) 기본값: 900초                                  | Number  | 아니요   |
+| Expires | 서명 만료 시간(초). 기본값: 900초                                  | Number  | 아니요   |
 
 #### 반환값 설명
 
