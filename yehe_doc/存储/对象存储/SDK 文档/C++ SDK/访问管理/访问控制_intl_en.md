@@ -6,7 +6,7 @@ This document provides an overview of APIs and SDK code samples related to the a
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | --------------------------------------- |
-| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets the ACL for a bucket |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets an ACL for a bucket |
 | [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Queries the ACL of a bucket |
 
 **Object ACL**
@@ -19,9 +19,9 @@ This document provides an overview of APIs and SDK code samples related to the a
 ## Bucket ACL
 ### Setting a bucket ACL
 
-#### Feature description
+#### API description
 
-This API (PUT Bucket acl) is used to set the ACL for a bucket. This operation will overwrite existing permission configurations. ACL includes a predefined permission policy (CannedAccessControlList) or a custom permission control (AccessControlList). When two types of permissions are configured at the same time, predefined policies are ignored and custom policies will be used.
+This API (PUT Bucket acl) is used to set an ACL for a bucket. This operation will overwrite existing permission configurations. ACL includes predefined permission policies (CannedAccessControlList) or custom permission policies (AccessControlList). If both types of policies are set, predefined policies are ignored and custom policies will be used.
 
 #### Method prototype
 
@@ -36,11 +36,11 @@ qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 std::string bucket_name = "examplebucket-1250000000";
 
-// bucket_name is required for the constructor of PutBucketACLReq.
+// bucket_name needs to be passed to the constructor of PutBucketACLReq.
 qcloud_cos::PutBucketACLReq req(bucket_name);
 qcloud_cos::PutBucketACLResp resp;
 
-// 1. Set the ACL configuration. (It can be set either through the body or the header. Note that you can only use either one of these two methods; otherwise, a conflict will occur).
+// Set the ACL through either the body or the header. Using both will cause a conflict.
 // 1. Set the ACL through the header.
 req.SetXCosAcl("public-read-write");
 
@@ -70,54 +70,54 @@ if (result.IsSucc()) {
 | req  | Request of the `PutBucketACL` operation | PutBucketACLReq | Yes |
 | resp | Response of the `PutBucketACL` operation | PutBucketACLResp | Yes |
 
-`PutBucketACLReq` provides the following member functions:
+`PutBucketACLReq` contains the following member function:
 
 ```
-// Defines the ACL attribute of the bucket. Valid values: private, public-read-write, public-read
+// Define the ACL attribute of the bucket. Valid values: private, public-read-write, public-read
 // Default: private
 void SetXCosAcl(const std::string& str);
 
-// Grant read permission in the format: x-cos-grant-read: id=" ",id=" ".
-// Authorize a sub-account in the format: id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"
-// Authorize the root account in the format: id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
+// Grant read permission in the format of x-cos-grant-read: id=" ",id=" ".
+// To authorize a sub-account, use id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"
+// To authorize the root account, use id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
 void SetXCosGrantRead(const std::string& str);
 
-// Grant write permission in the format: x-cos-grant-write: id=" ",id=" "./
-// Authorize a sub-account in the format: id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>",
-// Authorize the root account in the format: id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
+// Grant write permission in the format of x-cos-grant-write: id=" ",id=" "./
+// To authorize a sub-account, use id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>",
+// To authorize the root account, use id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
 void SetXCosGrantWrite(const std::string& str);
 
-// Grant read-write permission in the format: x-cos-grant-full-control: id=" ",id=" ".
-// Authorize a sub-account in the format: id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>",
-// Authorize the root account in the format: id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
+// Grant read-write permission in the format of x-cos-grant-full-control: id=" ",id=" ".
+// To authorize a sub-account, use id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>",
+// To authorize the root account, use id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
 void SetXCosGrantFullControl(const std::string& str);
 
-// Set the ID of the bucket owner.
+// ID of the bucket owner
 void SetOwner(const Owner& owner);
 
-// Set grantee and permission information.
+// Set the grantee and permission to grant.
 void SetAccessControlList(const std::vector<Grant>& grants);
 
-// Add authorization information for a single bucket.
+// Add authorization for a single bucket.
 void AddAccessControlList(const Grant& grant);
 
 ```
 
-> !APIs such as `SetXCosAcl`, `SetXCosGrantRead`, `SetXCosGrantWrite`, and `SetXCosGrantFullControl` cannot be used together with `SetAccessControlList` or `AddAccessControlList` at the same time. Because the former type is implemented by setting the HTTP header, while the latter is by adding content in XML format to the body, you can choose only one type. The former type is preferred within the SDK.
+> !APIs such as `SetXCosAcl`, `SetXCosGrantRead`, `SetXCosGrantWrite`, and `SetXCosGrantFullControl` cannot be used together with `SetAccessControlList` or `AddAccessControlList`. This is because the former type is implemented with HTTP headers, while the latter is implemented by adding XML content to the body. The former type is preferred in the SDK.
 
-Classes for the request are defined as follows:
+Classes involved in this request are defined as follows:
 
 ```
 struct Owner {
-    // Information of the bucket owner
-    std::string m_id; // Full ID of the owner, formatted as qcs::cam::uin/<OwnerUin>:uin/<SubUin>
-    std::string m_display_name;  // Owner description
+    // Information about the bucket owner
+    std::string m_id; // Complete ID of the owner, formatted as qcs::cam::uin/<OwnerUin>:uin/<SubUin>
+    std::string m_display_name;  // Name of the owner
 };
 
 struct Grantee {
-    // `type` can be RootAccount or SubAccount.
-    // If `type` is set to RootAccount, you can enter an account ID in the uin field or enter "anyone" (representing all types of users) to indicate uin/<OwnerUin> and uin/<SubUin>.
-    // If `type` is set to RootAccount, uin indicates the root account, and Subaccount indicates the sub-account.
+    // "type" can be RootAccount or SubAccount.
+    // If the type is “RootAccount”, enter the account ID in the “uin” field or enter "anyone" (representing all types of user) to replace “uin/<OwnerUin>” and “uin/<SubUin>”.
+    // When “type” is “RootAccount”, “uin” represents the root account and “Subaccount” the sub-account.
     std::string m_type; 
     std::string m_id; // qcs::cam::uin/<OwnerUin>:uin/<SubUin>
     std::string m_display_name; // Optional
@@ -125,15 +125,15 @@ struct Grantee {
 };
 
 struct Grant {
-    Grantee m_grantee; // Resource information of the grantee
-    std::string m_perm; // Permissions granted to the grantee. Valid values: READ, WRITE, FULL_CONTROL.
+    Grantee m_grantee; // Information about the grantee
+    std::string m_perm; // Permission granted. Valid values: "READ", "WRITE", "FULL_CONTROL"
 };
 
 ```
 
 ### Querying a bucket ACL
 
-#### Feature description
+#### API description
 
 This API is used to query the ACL of a bucket.
 
@@ -155,7 +155,7 @@ qcloud_cos::GetBucketACLResp resp;
 qcloud_cos::CosResult result = cos.GetBucketACL(req, &resp);
 
 if (result.IsSucc()) {
-    // Request successful. You can call the resp member functions to get the return content.
+    // Request successful. You can call the resp member functions to get the content returned.
 } else {
     // Request failed. You can call the CosResult member functions to output the error information, such as requestID.
 } 
@@ -166,11 +166,11 @@ if (result.IsSucc()) {
 
 | Parameter | Description | Type | Required |
 | ---- | ------------------------| ----------------| ------|
-| req  | Request of the `GetBucketACL` operation | GetBucketACLReq | Yes |
+| req  | Request of the `GetBucketACL` operation  | GetBucketACLReq | Yes |
 | resp | Response of the `GetBucketACL` operation | GetBucketACLResp | Yes |
 
 
-`GetBucketACLResp` provides the following member functions:
+`GetBucketACLResp` contains the following member functions:
 
 ```
 std::string GetOwnerID();
@@ -178,16 +178,16 @@ std::string GetOwnerDisplayName();
 std::vector<Grant> GetAccessControlList();
 ```
 
-## Object ACLs
+## Object ACL
 
 
 ### Setting an object ACL
 
-#### Feature description
+#### API description
 
-This API is used to set an ACL for an object in a bucket.
+This API is used to set an ACL for a specified object in a bucket.
 
-> !You can configure up to 1,000 bucket ACLs. Do not set object ACL unless it is necessary. If not set, the object inherits the bucket permissions by default.
+> !You can configure up to 1,000 bucket ACLs. Do not set object ACL control unless absolutely necessary. The object inherits bucket permissions by default.
 
 There are two types of ACL policies: predefined ACLs (CannedAccessControlList) and custom ACLs (AccessControlList). If both of them are set, the custom ACL prevails over the predefined ACL.
 
@@ -206,7 +206,7 @@ qcloud_cos::CosAPI cos(config);
 std::string bucket_name = "examplebucket-1250000000";
 std::string object_name = "test";
 
-// 1. Set the ACL configuration (through the body. It can be set either through the body or the header. Note that you can only use one of these two methods; otherwise, a conflict will occur).
+// 1. Set the ACL configuration (through the body. You can set the ACL through either the body or header, but you may only use one of these two methods; otherwise, a conflict will occur)
 {   
     qcloud_cos::PutObjectACLReq req(bucket_name, object_name);
     qcloud_cos::Owner owner = {"qcs::cam::uin/xxxxx:uin/xxx", "qcs::cam::uin/xxxxxx:uin/xxxxx" };
@@ -226,7 +226,7 @@ std::string object_name = "test";
     } 
 }   
 
-// 2. Set the ACL configuration (through the header. It can be set either through the body or the header. Note that you can only use either of these two methods; otherwise, a conflict will occur).
+// 2. Set the ACL configuration (through the header. You can set the ACL through either the body or header, but you may only use one of these two methods; otherwise, a conflict will occur)
 {   
     qcloud_cos::PutObjectACLReq req(bucket_name, object_name);                                                                                                                    
     req.SetXCosAcl("public-read-write");
@@ -263,26 +263,26 @@ void SetXCosGrantRead(const std::string& str);
 // Grant full permission in the format: id="[OwnerUin]"
 void SetXCosGrantFullControl(const std::string& str);
 
-// Set the ID of the object owner.
+// ID of the object owner
 void SetOwner(const Owner& owner);
 
-// Set grantee and permission information
+// Set the grantee and permission to grant.
 void SetAccessControlList(const std::vector<Grant>& grants);
 
-// Add the authorization information for a single object.
+// Add authorization for a single object.
 void AddAccessControlList(const Grant& grant);
 
 ```
 
-> !APIs such as `SetXCosAcl`, `SetXCosGrantRead`, `SetXCosGrantWrite`, and `SetXCosGrantFullControl` cannot be used together with `SetAccessControlList` or `AddAccessControlList` at the same time. Because the former type is implemented by setting the HTTP header, while the latter is by adding content in XML format to the body, you can only choose one type. The former type is preferred within the SDK.
+> !APIs such as `SetXCosAcl`, `SetXCosGrantRead/SetXCosGrantWrite`, and `SetXCosGrantFullControl` cannot be used together with `SetAccessControlList` or `AddAccessControlList`. This is because the former type is implemented with HTTP headers, while the latter is implemented by adding XML content to the body. The former type is preferred in the SDK.
 
 `ACLRule` is defined as follows:
 
 ```
 struct Grantee {
-    // `type` can be RootAccount or SubAccount.
-    // If the type is RootAccount, you can enter an account ID in the uin field or enter "anyone" (representing all types of users) in place of uin/<OwnerUin> and uin/<SubUin>
-    // If `type` is set to RootAcount, uin indicates the root account, and SubAccount indicates the sub-account.
+    // "type" can be RootAccount or SubAccount.
+    // If the type is “RootAccount”, enter the account ID in the “uin” field or enter "anyone" (representing all types of user) to replace “uin/<OwnerUin>” and “uin/<SubUin>”.
+    // When “type” is “RootAccount”, “uin” represents the root account and “Subaccount” the sub-account.
     std::string m_type; 
     std::string m_id; // qcs::cam::uin/<OwnerUin>:uin/<SubUin>
     std::string m_display_name; // Optional
@@ -290,17 +290,17 @@ struct Grantee {
 };
 
 struct Grant {
-    Grantee m_grantee; // Resource information of the grantee
-    std::string m_perm; // Permissions granted to the grantee. Valid values: READ, WRITE, FULL_CONTROL.
+    Grantee m_grantee; // Information about the grantee
+    std::string m_perm; // Permission granted. Valid values: "READ", "WRITE", "FULL_CONTROL"
 };
 
 ```
 
 ### Querying an object ACL
 
-#### Feature description
+#### API description
 
-This API is used to query the ACL of an object.
+This API (GET Object acl) is used to query the ACL of an object.
 
 #### Method prototype
 
@@ -317,13 +317,13 @@ qcloud_cos::CosAPI cos(config);
 std::string bucket_name = "examplebucket-1250000000";
 std::string object_name = "exampleobject";
 
-// Object_name is required for the constructor of GetObjectACLReq.
+// Object_name needs to be passed to the constructor of GetObjectACLReq.
 qcloud_cos::GetObjectACLReq req(bucket_name, object_name);
 qcloud_cos::GetObjectACLResp resp;
 qcloud_cos::CosResult result = cos.GetObjectACL(req, &resp);
 
 if (result.IsSucc()) {
-    // Request successful. You can call the resp member functions to get the return content.
+    // Request successful. You can call the resp member functions to get the content returned.
 } else {
     // Request failed. You can call the CosResult member functions to output the error information, such as requestID.
 } 

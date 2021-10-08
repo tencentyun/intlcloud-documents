@@ -5,7 +5,7 @@ File decompression is a data processing solution provided by Tencent Cloud COS b
 ![Decompression Flow](https://main.qcloudimg.com/raw/4899b5c92bb085a0f18a522dfae344ae.jpg)
 
 
-## Notes:
+## Notes
 
 Currently, COS can decompress ZIP files only. Each file contained in the ZIP file must not be larger than 5 GB. If a single file in the ZIP file is larger than 5 GB, the decompression will fail.
 - If you have added a file decompression rule to your bucket in the COS console, a file decompression function will appear in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **DO NOT** delete this function. Otherwise, your rule may not take effect.
@@ -18,21 +18,31 @@ Currently, COS can decompress ZIP files only. Each file contained in the ZIP fil
 ## Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
-2. Click **Bucket List** in the left sidebar. Then, click the bucket to which you want to add a file decompression rule.
-3. Click **Function Service** > **ZIP File Decompression Function**.
+2. Click **Bucket List** in the left sidebar.
+3. Click the bucket you want to add a decompression rule for. 
+4. Click **Function Service** > **ZIP Decompression Function**.
 >! If you haven’t activated SCF, please go to the [SCF console](https://console.cloud.tencent.com/scf) to activate it and authorize the service as instructed.
-4. Click **Add Function** and perform configuration in the pop-up window, as shown below:
-![](https://main.qcloudimg.com/raw/33a0d8b1ded5fbc19342bf63f9df4827.png)
-   - **Function Name**: uniquely identifies a function and cannot be modified after creation. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
-   - **Event Type**: an operation that triggers SCF. Take upload as an example. You can initiate an upload by calling the `PUT Object” or `POST Object` API. If you choose **Create using PUT method** as the event type, decompression will only be triggered by a package uploaded via the `PUT Object` API.
- >!If you intend to upload files to the bucket using multiple ways, such as simple upload, multipart upload, and cross-bucket replication, you are advised to choose **File upload** as the event type.
- - **Trigger Condition**: the upload path that will trigger SCF. If you select **Specified prefix**, SCF will be triggered only when the package is uploaded to a path with the specified prefix. If you choose **The whole bucket**, SCF will be triggered as long as a compressed file is uploaded to any location of the bucket.
-  >!If the destination file prefix you configured overlaps with the trigger condition, it may cause a cyclic trigger, so please try to avoid it. For example, if the destination prefix is `prefix`, and the trigger condition is` pre`, a cyclic decompression is triggered when you upload a `pref` package.
- - **Decompression Format**: the decompression formats you are allowed to use. Currently, only ZIP files are supported.
- - **Destination Bucket**: the bucket where the decompressed files are stored.
- - **Destination File Prefix**: the specified path where the decompressed files are stored. If not specified, defaults to the root directory of the bucket.
+5. Click **Add Function**, and configure the following in the pop-up window:
+
+ - **Function Name**: uniquely identifies a function and cannot be modified after creation. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
+ - **Event Type**: an operation that triggers SCF. Take upload as an example. You can initiate an upload by calling the `PUT Object” or `POST Object` API. If you choose **Create using PUT method** as the event type, decompression will only be triggered by a package uploaded via the `PUT Object` API.
+>! If you intend to upload files to the bucket using multiple ways, such as simple upload, multipart upload, and cross-bucket replication, you are advised to choose **File upload** as the event type.
+>
+ - **Trigger Condition**: the upload path that will trigger SCF. If you select **Specified prefix**, SCF will be triggered only when the package is uploaded to a path with the specified prefix. If you choose **Not specifying prefix**, SCF will be triggered as long as a package is uploaded to any location of the bucket.
+>! If the destination prefix you configured overlaps with the trigger condition, a loop may be triggered, which should be avoided. For example, if the destination prefix is `prefix`, and the trigger condition is` pre`, a decompression loop will be triggered when you upload a `pref` package.
+>
  - **SCF Authorization**: Required. To decompress a compressed file, SCF should be authorized to read the package from your bucket and upload the decompressed files to the specified location.
-5. Click **Confirm**.
+5. Click **Next** and perform configuration in the pop-up window, as shown below:
+
+ - **Decompression Format**: the decompression formats you are allowed to use. Currently, only ZIP files are supported.
+ - **Destination Bucket**: a bucket to store the compressed files
+ - **Destination Path**: a path to store the decompressed files of the packages that are matched. To prevent unnecessary fees from triggering the loop, it is recommended that you set a destination path different from the prefix.
+ - **Extra Prefix**:
+    - Compressed package name: decompresses the package to a prefix that is named the same as the package itself.
+    - Full path of the compressed package: decompresses the package to a prefix that is named the complete path of the package.
+    - Empty: decompresses the package directly to the destination path.
+ - **Forbid Recursive Triggering**: **Enable** does not continue to decompress ZIP packages that are decompressed from the package, while **Disable** does.
+6. Click **Confirm**.
 ![](https://main.qcloudimg.com/raw/cb968ff99051f2eb1e515dd74000c1ee.png)
 You can perform the following operations on the created function:
  - Click **View Logs** to view the historical running status of the decompression. If an error is reported, you can click **View Logs** to quickly redirect to the SCF console for viewing the error log details.
