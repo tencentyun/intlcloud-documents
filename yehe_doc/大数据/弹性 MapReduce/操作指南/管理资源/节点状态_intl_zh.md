@@ -11,7 +11,7 @@
 ![](https://main.qcloudimg.com/raw/6480cb463f2b73057f74d3b70cfc871e.png)
  - 【节点列表】展示了当前所有节点和部署节点类型、CPU 利用率、内存利用率、磁盘利用率。单击对应节点 IP 可查看单个节点基本配置、部署状态、负载状态、节点监控等。
         - 基本配置：可查看当前节点的基本信息，例如节点类型、实例 ID、资源 ID、计费类型、规格大小等。
-![](https://main.qcloudimg.com/raw/2d4938f79086e7e767a85acd148b20b3.png)
+![](https://main.qcloudimg.com/raw/b9f4fe46f5d72466186bda68965adc44.png)
         - 部署状态：可查看当前节点的服务部署情况，是否为标准进程、进程状态是否运行正常等。
 ![](https://main.qcloudimg.com/raw/d7d2746efe442d64e8bbf74ab45a024c.png)
         - 负载状态：可查看当前节点维度 TOP N 进程情况，同时可根据指定时间进行查看。

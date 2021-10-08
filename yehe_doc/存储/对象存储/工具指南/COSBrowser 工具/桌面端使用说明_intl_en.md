@@ -1,6 +1,6 @@
-## Download and installation
+## Download and Installation
 
-#### Download
+### Downloads
 
 | OS | OS Requirement | Download Link |
 | :------- | :---------------------------------------------------------- | :----------------------------------------------------------- |
@@ -9,19 +9,41 @@
 | Linux | Includes GUI and supports the [AppImage](https://appimage.org/) format | [Linux](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip) |
 | Website version | Browsers such as Chrome, FireFox, Safari, and IE10+ | [Web](https://cosbrowser.cloud.tencent.com/web) |
 
-#### Installation
+### Installations
 
 The COSBrowser installation package is an executable file. You can double-click the downloaded file and then install as prompted.
 
-> !To launch the client running CentOS, you need to run `./cosbrowser.AppImage --no-sandbox` in the terminal.
+>! To launch the client running CentOS, you need to run `./cosbrowser.AppImage --no-sandbox` in the terminal.
+>
 
 ## Login
 
-You can log in to COSBrowser Desktop Edition with your Tencent Cloud API key, which can be obtained at [Manage API Key](https://console.cloud.tencent.com/cam/capi) in the CAM console. After you logged in successfully, the key will be saved in **Historical Key** for future use. The login page is as shown below:
+You can log in to the COSBrowser desktop version using a permanent key, Tencent Cloud account, or a shared link. You can log in to an account on multiple devices at the same time.
 
-> !Logging in to COSBrowser with a project key is not supported.
+### Login with a permanent key
 
+You can log in using your Tencent Cloud API key (`SecretID` and `SecretKey`), which can be created and obtained at [Manage API Key](https://console.cloud.tencent.com/cam/capi) in the CAM console. After you logged in successfully, the key will be saved to **Historical Sessions**. The login page and configuration items are as follows:
+- **Bucket/Access Path**: If this field is specified, you can quickly navigate to the specified path. This field is required if the key only has permission to a certain bucket or a certain directory. The format is `Bucket/Object-prefix` (for example, `examplebucket-1250000000` or `examplebucket-1250000000/folderName`).
+- **Description**: description of the permanent key entered, such as the operator and the usage. The description can be used to distinguish different `SecretID` when you manage the historical sessions on the historical key page.
+- **Remember Session**：
+    - If this box is not checked, the Tencent Cloud API key entered will be cleared when you log out (if the key has been saved to the historical sessions, it will be removed).
+    - If this box is checked, the Tencent Cloud API key entered will be remembered and can be managed in the historical sessions.
+
+>! You can not log in to COSBrowser with a project key.
+>
 <img src="https://main.qcloudimg.com/raw/5fcb01823ae8220e035e86bfd12f047c.png" width="90%">
+
+
+
+### Login with a Tencent Cloud account
+
+Click **Tencent Cloud Account Login** and log in to the COSBrowser desktop version in the pop-up window. This login method supports WeChat, email, QQ, WeChat Official Account, WeCom, and sub-account logins.
+
+
+
+### Login with a shared link
+
+The [Share Folder](#share) feature can generate a **link** and **password**, with which you can log in to the COSBrowser desktop version temporarily.
 
 
 ## Basic Features
@@ -42,6 +64,7 @@ You can log in to COSBrowser Desktop Edition with your Tencent Cloud API key, wh
 You can view bucket details by clicking **Details** on the right of the bucket list. Details include bucket name, region, access permissions, and versioning status.
 
 
+
 <span id="count"></span>
 
 #### 3. Viewing statistics
@@ -57,7 +80,8 @@ You can use COSBrowser to manage permissions for buckets and objects.
 - Bucket permissions: Click **Permission Management** on the right of the bucket list.
 - Object permissions: Click **Permission Management** on the right of the object.
 
->?For more information about COS permissions, please see [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).
+>? For more information about COS permissions, please see [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).
+>
 
 <span id="version"></span>
 
@@ -75,9 +99,9 @@ To configure versioning, click **Versioning** on the right of the bucket list.
 
 If you log in with a sub-account that does not have permission to access the bucket list, you can initiate an access via **Add Access Path** in the following two ways:
 (1) Add an access path directly on the login page and select the corresponding bucket region. Once you log in, you can manage your resources.
-<img src="https://main.qcloudimg.com/raw/5d80a51cd9b9a9c4d14fec9d4275a41d.png" width="90%">
+<img src="https://main.qcloudimg.com/raw/5fcb01823ae8220e035e86bfd12f047c.png" width="90%">
 (2) Log in with your sub-account, click **Add Path** in the upper-left corner of the bucket list page, and enter a specified path to enter the bucket and manage its resources.
-<img src="https://main.qcloudimg.com/raw/3e66b023a607ea11ae224d2ec3eb3d4c.png" width="60%">
+<img src="https://main.qcloudimg.com/raw/3e66b023a607ea11ae224d2ec3eb3d4c.png" width="90%">
 
 <span id="upload"></span>
 
@@ -86,7 +110,7 @@ If you log in with a sub-account that does not have permission to access the buc
 <table>
    <tr>
       <th>Upload Feature</th>
-      <th>Notes</th>
+      <th>Description</th>
       <th>Directions</th>
    </tr>
    <tr>
@@ -106,6 +130,7 @@ If you log in with a sub-account that does not have permission to access the buc
    </tr>
 </table>
 
+>! If you need to upload files in batches, you are advised to use a computer with a 4-core CPU and 16 GB RAM, which allows you to upload up to 300 thousand files at a time.
 
 
 <span id="download"></span>
@@ -115,7 +140,7 @@ If you log in with a sub-account that does not have permission to access the buc
 <table>
    <tr>
       <th>Download Feature</th>
-      <th>Notes</th>
+      <th>Description</th>
       <th>Directions</th>
    </tr>
    <tr>
@@ -135,9 +160,11 @@ If you log in with a sub-account that does not have permission to access the buc
    </tr>
 </table>
 
+>! If you need to download files in batches, you are advised to use a computer with a 4-core CPU and 16 GB RAM, which allows you to download up to 300 thousand files at a time.
+
 <span id="delete"></span>
 
-#### 9. Deleting file/folder	
+#### 9. Deleting file/folder
 
 To delete a file/folder, select the file/folder to delete and click **Delete** in **More** at the top of the UI, or right-click it and select **Delete**. You can delete multiple files/folders in batches.
 
@@ -150,7 +177,7 @@ The file synchronization feature allows you to upload specified files in your lo
 (1) Click **Sync** in the upper right of the UI.
 (2) Specify a local folder and bucket directory in the dialog box.
 (3) Click **Start Sync** to enable file synchronization.
-(4) View synchronization history logs in **Sync Logs** tab.
+(4) View synchronization history logs in the **Sync Logs** tab.
 <img src="https://main.qcloudimg.com/raw/283c7f9ee254b08561084ece22e2ada2.png" width="90%" />
 
 > !
@@ -209,9 +236,32 @@ You can generate a file URL in the following ways:
 
  <img src="https://main.qcloudimg.com/raw/18f72dceccdaeaf9171acf0b08917107.png" width="60%">
 
+
+<span id="share"></span>
+
+#### 16. Sharing file/folder
+
+Click **Share** in the operation column or the context menu to share a COS folder. You can also set a validity time for the link.
+
+>?
+>- You can only share a single folder but not multiple files.
+>- If multiple users share a folder, the file content may be hard to manage. In this case, you are advised to enable versioning for your bucket so that you can roll back to the desired historical version.
+
+ <img src="https://main.qcloudimg.com/raw/0583a5a5c7d30b7def3c28ce0787ccb1.png" width="60%">
+
+| Parameter <div style="width: 80pt">| Description |
+| --- | --- |
+| Permission | Sets the access permission for the shared folder. |
+| \- Can view | Pulls the folder list and downloads files in the folder using the access URL. |
+| \- Can edit | Pulls the folder list and downloads files in the folder, upload files to the folder, and create folders using the access URL. |
+| Validity Period | In minutes, hours, or days <br>If you log in to the client using a key, the validity period can be 1 minute to 2 hours for the root account, and 1 minute to 1.5 days for sub-accounts.<br>If you log in to the client using a Tencent Cloud account, the longest validity period is 2 hours.<br>The default value is the longest validity period allowed for the current user.|
+| Password | A 6-character password automatically generated by the system. You can customize one as needed (numbers, letters, and symbols are supported). |
+
+>!When the link is valid, users receiving the link and password can access the folder.
+
 <span id="preview"></span>
 
-#### 16. Previewing file
+#### 17. Previewing file
 
 COSBrowser allows you to preview media files, including images, videos, and audio. To preview a media file, double-click it or right-click it and select **Preview** or **Playback** in the context menu. On the file preview or playback screen, you can click:
 
@@ -227,19 +277,19 @@ COSBrowser allows you to preview media files, including images, videos, and audi
 
 <span id="searchfile"></span>
 
-#### 17. Searching for file
+#### 18. Searching for file
 
 To search for a file, enter the filename in the search box at the top right of the bucket. COSBrowser supports prefix search and fuzzy search.
 
 <span id="searchbuckete"></span>
 
-#### 18. Searching for bucket
+#### 19. Searching for bucket
 
 To quickly locate a bucket, enter the bucket name in the search box above the bucket list on the left.
 
 <span id="viewfiles"></span>
 
-#### 19. Viewing historical versions or incomplete multipart uploads
+#### 20. Viewing historical versions or incomplete multipart uploads
 
 - If versioning is enabled for your bucket, you can click **View** > **Multiversion list** above the file list to view the historical versions. Prefix search and clearing all historical versions (retaining the latest version only) are supported.
 <img src="https://main.qcloudimg.com/raw/5fb6a486881f0aeef1682c9944262698.png" width="80%">
@@ -254,7 +304,7 @@ To quickly locate a bucket, enter the bucket name in the search box above the bu
 <table>
    <tr>
       <th nowrap="nowrap">System Feature</th>
-      <th>Notes</th>
+      <th>Description</th>
       <th>Directions</th>
    </tr>
    <tr>
@@ -293,6 +343,4 @@ To quickly locate a bucket, enter the bucket name in the search box above the bu
       <td nowrap="nowrap">1. Select **Settings** > **About**.<br>2. Click **Local Log** and the system will open the directory where the local log is stored.</td>
    </tr>
 </table>
-
-
 

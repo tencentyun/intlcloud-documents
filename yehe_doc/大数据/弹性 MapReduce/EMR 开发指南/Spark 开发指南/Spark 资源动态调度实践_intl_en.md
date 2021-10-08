@@ -11,19 +11,19 @@ You need to copy `spark-<version>-yarn-shuffle.jar` to the `/usr/local/service/h
 ### Method 1. Use the SSH Console
 
 1. In **Cluster Service** > **YARN**, select **Operation** > **Role Management** and confirm the IP of the node where NodeManager resides.
-![](https://main.qcloudimg.com/raw/82cbab09e1ca217e813c751dda026391.png)
+![](https://main.qcloudimg.com/raw/6f308d859cb16483410dc3191bd25083.png)
 2. Log in to the nodes where NodeManager resides one by one.
  - You need to log in to any node (preferably a master one) in the EMR cluster. For more information on how to log in to EMR, please see [Logging in to Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can log in by using XShell.
  - Use SSH to log in to other nodes where NodeManager resides. The used command is `ssh $user@$ip`, where `$user` is the login username, and `$ip` is the remote server IP (i.e., IP address confirmed in step 1).
-![](https://main.qcloudimg.com/raw/d83d844103c4a6050a83700fadaf79dd.png)
+![](https://main.qcloudimg.com/raw/c5b1f5c083af553e1ad7cf658c2e6ebe.png)
  - Verify that the switch is successful.
-![](https://main.qcloudimg.com/raw/30f0578b2cc19daebbdd82df8d95c13e.png)
+![](https://main.qcloudimg.com/raw/da366fe74ac4e971cdcc0e16973f7412.png)
 3. Search for the path of the `spark-<version>-yarn-shuffle.jar` file.
 ![](https://main.qcloudimg.com/raw/4927797f6ff300662f14dd3d0ae3b22a.png)
 4. Copy `spark-<version>-yarn-shuffle.jar` to `/usr/local/service/hadoop/share/hadoop/yarn/lib`.
 ![](https://main.qcloudimg.com/raw/fab8b0abf34de2f4608924e9982f28ac.png)
 5. Log out and switch to other nodes.
-![](https://main.qcloudimg.com/raw/a9d4b368807a974b618202af0173357c.png)
+![](https://main.qcloudimg.com/raw/6ed044f23c161ec02374aa1a0f1c3278.png)
 
 ### Method 2. Use batch deployment script
 
@@ -71,7 +71,7 @@ done
 
 ## Modifying YARN Configuration
 1. In **Cluster Service** > **YARN**, select **Operation** > **Configuration Management**. Select the configuration file `yarn-site.xml` and select "cluster level" as the **level** (modifications of configuration items at the cluster level will be applied to all nodes in the cluster).
-![](https://main.qcloudimg.com/raw/58e2684f32c23c9abb05d49cf2e80d26.png)
+![](https://main.qcloudimg.com/raw/7df4002379006a6cb4879c5c18c1417e.png)
 2. Modify the `yarn.nodemanager.aux-services` configuration item and add `spark_shuffle`.
 ![](https://main.qcloudimg.com/raw/d264a6708b76c10d3239dd2eb50a09a8.png)
 3. Add the configuration item `yarn.nodemanager.aux-services.spark_shuffle.class` and set it to `org.apache.spark.network.yarn.YarnShuffleService`.
