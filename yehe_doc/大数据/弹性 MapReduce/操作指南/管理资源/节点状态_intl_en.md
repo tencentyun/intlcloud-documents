@@ -11,7 +11,7 @@ The "Node Status" page displays the monitoring overview of all nodes in the curr
 ![](https://main.qcloudimg.com/raw/6480cb463f2b73057f74d3b70cfc871e.png)
  - **Node List** displays the deployed node type, CPU utilization, memory utilization, and disk utilization of all current nodes. Click a node IP to view the basic configuration, deployment status, load status, node monitoring, and other metrics of one single node.
         - Basic Configuration: it displays the basic information of the current node, such as the node type, instance ID, resource ID, billing mode, and specification.
-![](https://main.qcloudimg.com/raw/2d4938f79086e7e767a85acd148b20b3.png)
+![](https://intl.cloud.tencent.com/document/product/1026/31119)
         - Deployment Status: it displays the deployment status of services on the current node, such as whether the processes are standard ones and whether they are running properly.
 ![](https://main.qcloudimg.com/raw/d7d2746efe442d64e8bbf74ab45a024c.png)
         - Load Status: it displays the top N processes with the highest load on the current node. You can specify a time to view the load status.
