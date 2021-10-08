@@ -3,7 +3,7 @@
 The Java SDK supports client-side encryption. Files can be encrypted before the upload and decrypted during the download. Client-side encryption is suitable for users who store sensitive data.
 
 The following two types of keys are supported for client-side encryption:
-- KMS managed keys: You can provide the ID of your KMS CMK to the SDK. To use this type of keys, the KMS service needs to be activated. For more information, please see [Key Management Service](https://cloud.tencent.com/document/product/573).
+- KMS managed keys: You can provide the ID of your KMS CMK to the SDK. To use this type of keys, the KMS service needs to be activated. For more information, please see [Key Management Service](https://intl.cloud.tencent.com/document/product/1030).
 - Customer managed keys: This type of keys (AES symmetric or RSA asymmetric) is provided and managed by you.
 >? Symmetric or asymmetric keys mentioned above are to encrypt the randomly generated keys only. Note that files are always encrypted symmetrically using AES-256.
 >
