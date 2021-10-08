@@ -63,8 +63,8 @@ In a source bucket with cross-bucket replication enabled, COS will replicate the
 - Object operations, such as adding an object of the same name (equivalent to adding a new object) and deleting an object.
 
 >?
-- If you specify an object version to delete in the source bucket by specifying a version ID, COS will not replicate this delete operation.
-- If you add a bucket-level configuration such as a lifecycle rule to the source bucket, COS will not replicate any resulting object operations.
+>- If you specify an object version to delete in the source bucket by specifying a version ID, COS will not replicate this delete operation.
+>- If you add a bucket-level configuration such as a lifecycle rule to the source bucket, COS will not replicate any resulting object operations.
 
 For more information, please see [Cross-Bucket Replication Actions](https://intl.cloud.tencent.com/document/product/436/19923).
 
