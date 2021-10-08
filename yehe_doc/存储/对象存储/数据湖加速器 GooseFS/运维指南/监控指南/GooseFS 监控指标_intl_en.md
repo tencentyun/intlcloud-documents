@@ -134,7 +134,7 @@ Worker monitoring metrics are classified into default metrics (recorded by defau
 | **Metric** | **Type** | **Description** |
 | --------------------------------------- | ------------ | ------------------------------------------------------------ |
 | Worker.AsyncCacheDuplicateRequests      | COUNTER      | Total number of duplicated async cache requests received by this worker |
-| Worker.AsyncCacheFailedBlocks           | COUNTER      | Total number of async cache failed blocks in this worker     |      |
+| Worker.AsyncCacheFailedBlocks           | COUNTER      | Total number of async cache failed blocks in this worker     | 
 | Worker.AsyncCacheRemoteBlocks           | COUNTER      | Total number of blocks that need to be async cached from remote source |
 | Worker.AsyncCacheRequests               | COUNTER      | Total number of async cache requests received by this worker  |
 | Worker.AsyncCacheSucceededBlocks        | COUNTER      | Total number of async cache succeeded blocks in this worker  |
@@ -207,7 +207,7 @@ Client monitoring metrics are aggregated based on the user ID or client IP. If a
 | Client.CachePutBenignRacingErrors       | COUNTER      | Number of failures when adding pages due to racing eviction. This error is benign. |
 | Client.CachePutErrors                   | COUNTER      | Number of failures when putting cached data in the client cache. |
 | Client.CachePutEvictionErrors           | COUNTER      | Number of failures when putting cached data in the client cache due to failed eviction. |
-| Client.CachePutInsufficientSpaceErrors  | COUNTER      | Number of failures when putting cached data in the client cache due to insufficient space made after eviction. |      |
+| Client.CachePutInsufficientSpaceErrors  | COUNTER      | Number of failures when putting cached data in the client cache due to insufficient space made after eviction. |  
 | Client.CachePutNotReadyErrors           | COUNTER      | Number of failures when cache is not ready to add pages.     |
 | Client.CachePutStoreDeleteErrors        | COUNTER      | Number of failures when putting cached data in the client cache due to failed deletes in page store. |      |
 | Client.CachePutStoreWriteErrors         | COUNTER      | Number of failures when putting cached data in the client cache due to failed writes to page store. |      |
