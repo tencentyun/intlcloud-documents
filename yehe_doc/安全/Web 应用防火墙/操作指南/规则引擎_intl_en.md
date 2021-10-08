@@ -6,32 +6,37 @@ WAF's rule protection engine provides expert rule sets based on Tencent Security
 
 WAF's rule protection engine supports rule level configuration. You can set the rule protection level according to your actual business needs and enable or disable rule sets, individual rules, and preset rules. You can also use the allowlist of specified URLs and rule IDs to process false positives.
 
-## Directions
+## Operation Directions
 ### Domain name rule protection engine settings
-1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/config) and select **Web Application Firewall** -> **Defense settings** on the left sidebar.
+1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/config) and select **Web Application Firewall** -> **Defense settings** on the left sidebar.
 2. In the domain name list, click the target domain name to enter the defense settings page.
 3. On the "Basic Settings" tab, you can configure basic web protection.
+
 **Field description:**
-- **Rules Engine Switch:** it is enabled by default. If it is disabled, domain name requests that pass through WAF will not be processed by the rules engine for threat prevention.
-	- **Defense Mode:** working mode of the rules engine, which is "Block" by default.
+	
+ - **Rules Engine Switch:** it is enabled by default. If it is disabled, domain name requests that pass through WAF will not be processed by the rules engine for threat prevention.
+- **Defense Mode:** working mode of the rules engine, which is "Block" by default.
 	 - **Observation:** attack requests are not blocked but estimated to generate observation logs.
 	 - **Block:** web attack requests are directly blocked, with blocking logs generated.
-	- **Defense Level:** defense level of the rules engine, which is "Strict" by default.
-		- **Loose:** common web application attacks are detected. If you find that there are many false positives under the default level, or there are many uncontrollable user inputs in your business (such as websites with rich text editors), we recommend selecting this level.
-		- **Normal:** common web application attacks are normally detected.
-		- **Strict:** web application attacks such as SQL injections, XSS attacks, and command executions are strictly detected. This is the default level.
-	- **Rule Management:** on the right of the defense level, click **Rule Management**. Then, you can configure the rules engine and view its information, such as the attack category, content of the rules at the rule level, and rule set updates. You can also enable or disable individual rules and create an allowlist based on domain name URL and rule ID.
-	- **Supported Decoding Types:** currently, the rules engine supports the following decoding types by default, which cannot be manually configured:
-	URL decoding (multi-decoding), JavaScript Unicode decoding, annotation processing, space compression, UTF-7 decoding, HTML entity decoding, multipart parsing, JSON parsing, XML parsing, and Form parsing.
-	
+- **Defense Level:** defense level of the rules engine, which is "Strict" by default.
+	- **Loose:** common web application attacks are detected. If you find that there are many false positives under the default level, or there are many uncontrollable user inputs in your business (such as websites with rich text editors), we recommend selecting this level.
+	- **Normal:** common web application attacks are normally detected.
+	- **Strict:** web application attacks such as SQL injections, XSS attacks, and command executions are strictly detected. This is the default level.
+>? The level "Strict" covers rules of the level "Normal" and "Loose", and "Normal" covers "Loose".
+
+- **Rule Management:** on the right of the defense level, click **Rule Management**. Then, you can configure the rules engine and view its information, such as the attack category, content of the rules at the rule level, and rule set updates. You can also enable or disable individual rules and create an allowlist based on domain name URL and rule ID.
+- **Supported Decoding Types:** currently, the rules engine supports the following decoding types by default, which cannot be manually configured:
+URL decoding (multi-decoding), JavaScript Unicode decoding, annotation processing, space compression, UTF-7 decoding, HTML entity decoding, multipart parsing, JSON parsing, XML parsing, and Form parsing.
+
 ### Viewing the rule category
 1. Enter the rules engine settings page.
-	- **Method 1:** Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/rule), and select **Web Application Firewall** -> **Rules Engine** on the left sidebar to enter the rules engine page.
-	- **Method 2:**
-		① Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/config) and select **Web Application Firewall** -> **Defense settings** on the left sidebar.
-		② In the domain name list, click the target domain name to enter the defense settings page.
-		③ On the "Basic Settings" tab, find the basic web protection module and click **Rule Management** to enter the rules engine page.
+  - **Method 1:** Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/rule), and select **Web Application Firewall** -> **Rules Engine** on the left sidebar to enter the rules engine page.
+  - **Method 2:**
+    1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/config) and select **Web Application Firewall** -> **Defense settings** on the left sidebar.
+    2. In the domain name list, click the target domain name to enter the defense settings page.
+    3. On the "Basic Settings" tab, find the basic web protection module and click **Rule Management** to enter the rules engine page. 
 2. In the **Protection Rule** tab, you can view the descriptions and rule updates of the attack categories that WAF currently can defend against.
+
 Attack categories that WAF currently can defend against include:
 <table>
 <thead>
@@ -92,28 +97,28 @@ Attack categories that WAF currently can defend against include:
 3. You can view the rule updates on the right of the **Protection Rule** tab. For more security notifications, please see [Security Advisory](https://intl.cloud.tencent.com/document/product/627/38433).
 
 ### Rule management
-1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/rule), and select **Web Application Firewall** -> **Rules Engine** on the left sidebar to enter the rules engine page.
+1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/rule), and select **Web Application Firewall** -> **Rules Engine** on the left sidebar to enter the rules engine page.
 2. On the rules engine page, click **Rule Setting**. In the **Rule Management** tab, you can enable individual rules in the rules engine based on domain name. All rules are enabled by default.
 3. You can search in the rule set by specifying the rule level, attack category, or rule ID to view specific rules and perform operations.
 >? The level "Strict" covers rules of the level "Normal" and "Loose", and "Normal" covers "Loose".
 
 ### Rule allowlist and false positive processing
-1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/rule), and select **Web Application Firewall** -> **Rules Engine** on the left sidebar to enter the rules engine page.
+1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/rule), and select **Web Application Firewall** -> **Rules Engine** on the left sidebar to enter the rules engine page.
 2. On the rules engine page, click **Rule Setting**. On the **Allowlist** tab, you can add domain name URLs and rule IDs to the allowlist and process false positives.
 3. At the top of the rule list, click **Add** to add rules to the allowlist in the pop-up window.
 **Field description:**
-- **Rule ID:** ID of the rule that needs to be allowed. Up to 10 rule IDs can be added to one policy, and multiple rules should be separated by commas.
-	- **Match Method:** match method of the URL to be allowed. You can select "Exact match" (default value), "Prefix matches with", or "Suffix matches with".
-	- **Path:** URI path to be allowed. The URI must be unique under one domain name.
-	- **Enable/Disable:** allowlist switch, which is disabled by default.
+    - **Rule ID:** ID of the rule that needs to be allowed. Up to 10 rule IDs can be added to one policy, and multiple rules should be separated by commas.
+    - **Match Method:** match method of the URL to be allowed. You can select "Exact match" (default value), "Prefix matches with", or "Suffix matches with".
+    - **Path:** URI path to be allowed. The URI must be unique under one domain name.
+    - **Enable/Disable:** allowlist switch, which is disabled by default.
 4. After the allowlist is configured, you can view the allowed rules in the rule list and perform operations.
 **Field description:**
-- No.: auto-incrementing rule number.
-	- Rule ID: ID of the rule added to the allowlist, which can be obtained through attack logs or rule management.
-	- Match Method: match method of the URL to be allowed. You can select "Exact match" (default value), "Prefix matches with", or "Suffix matches with".
-	- Path: URI path to be allowed. The URI must be unique under one domain name.
-	- Enable/Disable: allowlist switch.
-	- Modification Time: last time when the rule was added or modified.
-	- Operation: you can edit or delete the rule.
-		- Click **Edit** to modify the rule parameters.
-		- Click **Delete** to delete the rule.
+   - No.: auto-incrementing rule number.
+   - Rule ID: ID of the rule added to the allowlist, which can be obtained through attack logs or rule management.
+   - Match Method: match method of the URL to be allowed. You can select "Exact match" (default value), "Prefix matches with", or "Suffix matches with".
+   - Path: URI path to be allowed. The URI must be unique under one domain name.
+   - Enable/Disable: allowlist switch.
+   - Modification Time: last time when the rule was added or modified.
+   - Operation: you can edit or delete the rule.
+	  - Click **Edit** to modify the rule parameters.
+	  - Click **Delete** to delete the rule.
