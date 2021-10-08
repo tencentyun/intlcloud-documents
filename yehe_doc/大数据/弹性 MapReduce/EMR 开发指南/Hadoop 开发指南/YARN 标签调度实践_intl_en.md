@@ -56,10 +56,10 @@ Set it in `conf/yarn-site.xml`.
 	<value>centralized or delegated-centralized or distributed</value>
 </property>
 ```
->
-1. Make sure that `yarn.node-labels.fs-store.root-dir` has been created and ResourceManager has the permission to access it.
-2. You can store node labels in the local file system of ResourceManager at a path such as `file://home/yarn/node-label`; however, in order to ensure high availability of the cluster and avoid loss of label information due to ResourceManager failures, you are recommended to store the label information in HDFS.
-3. In Hadoop 2.8.2, you need to configure the `yarn.node-labels.configuration-type` configuration item.
+>!
+>1. Make sure that `yarn.node-labels.fs-store.root-dir` has been created and ResourceManager has the permission to access it.
+>2. You can store node labels in the local file system of ResourceManager at a path such as `file://home/yarn/node-label`; however, in order to ensure high availability of the >cluster and avoid loss of label information due to ResourceManager failures, you are recommended to store the label information in HDFS.
+>3. In Hadoop 2.8.2, you need to configure the `yarn.node-labels.configuration-type` configuration item.
 
 ### 4. Configure node label
 Set it in `etc/hadoop/capacity-scheduler.xml`.
@@ -67,22 +67,23 @@ Set it in `etc/hadoop/capacity-scheduler.xml`.
 | Configuration Item | Description | 
 |---------|---------| 
 | yarn.scheduler.capacity.`<queue-path>`.capacity | It specifies the percentage of nodes in the default partition that a queue can access. **The total capacity of the default partition for all subqueues under the parent queue must be 100.** |  
-| yarn.scheduler.capacity.`<queue-path>`.accessible-node-labels  | It specifies the list of labels that a queue can access, and labels should be separated by commas. For example, "HBASE,STORM" means that the queue can access the labels "HBASE" and "STORM". All queues can access nodes with no label. If this field is not set, it will inherit the value of its parent field. If you want a queue to access only nodes with no label, leave this field empty. |
-| yarn.scheduler.capacity.`<queue-path>`.accessible-node-labels.`<label>`.capacity  | It specifies the percentage of nodes in the `<label>` partition that a queue can access. Note that the total capacity of the `<label>` partition for all subqueues under the parent queue must be 100. The default value of this configuration item is 0. |
-| yarn.scheduler.capacity.`<queue-path>`.accessible-node-labels.`<label>`.maximum-capacity  | Similar to the `yarn.scheduler.capacity.`<queue-path>`.maximum-capacity` configuration item in Capacity Scheduler, it specifies the maximum capacity of `<queue-path>` in the `<label>` partition. The default value of this configuration item is 100. |
-| yarn.scheduler.capacity.`<queue-path>`.default-node-label-expression  | If a resource request does not have a node label specified, the application will be submitted to the corresponding partition specified by this configuration item. By default, this value is empty, i.e., applications will be allocated to containers in nodes with no label. |
+| yarn.scheduler.capacity.`<queue-path>`.accessible-node-labels  | It specifies the list of labels that a queue can access, and labels should be separated by commas. For example, "HBASE,STORM" means that the queue can access the labels "HBASE" and "STORM". All queues can access nodes with no label. If this field is not set, it will inherit the value of its parent field. If you want a queue to access only nodes with no label, leave this field empty.  |
+| yarn.scheduler.capacity.`<queue-path>`.accessible-node-labels.`<label>`.capacity  | It specifies the percentage of nodes in the `<label>` partition that a queue can access. **Note that the total capacity of the `<label>` partition for all subqueues under the parent queue must be 100. The default value of this configuration item is 0.** |
+| yarn.scheduler.capacity.`<queue-path>`.accessible-node-labels.`<label>`.maximum-capacity  | Similar to the `yarn.scheduler.capacity.`<queue-path>`.maximum-capacity` configuration item in Capacity Scheduler, it specifies the maximum capacity of `<queue-path>` in the `<label>` partition. The default value of this configuration item is 100.  |
+| yarn.scheduler.capacity.`<queue-path>`.default-node-label-expression  | If a resource request does not have a node label specified, the application will be submitted to the corresponding partition specified by this configuration item. By default, this value is empty, i.e., applications will be allocated to containers in nodes with no label.  |
 
 ## Use Cases
 ### Preparations
 1. Prepare a cluster
 Confirm that you have activated Tencent Cloud and created an EMR cluster.
 2. Check configuration of the YARN component
-On the "Cluster Service" page, select the YARN component to enter its component management page, switch to the configuration management tab, modify relevant parameters in `yarn-site.xml`, save the changes, and restart all YARN components. On the role management tab, confirm the IP of the node where the ResourceManager service resides, switch to the configuration management tab to modify relevant parameters in `yarn-site.xml`, save the changes, and restart all YARN components.
- - Click the cluster instance ID in the cluster list to enter the cluster information page. Then, click **Cluster Service** on the left sidebar and select **Operation** > **Configuration Management** in YARN component management.
-![](https://main.qcloudimg.com/raw/b938adde4eb5b330a11e25bba77a3ca0.png)
- - Confirm the IP address of ResourceManager.
- - On the "Configuration Management" page of the YARN component, select server as the **level**, select the IP address of ResourceManager as the **server**, and click **Modify Configuration** to modify the `yarn.resourcemanager.scheduler.class` parameter in `yarn-site.xml` of the node where ResourceManager resides.
-![](https://main.qcloudimg.com/raw/fca9010a03c4a11071c1251a7873ed49.png)
+On the "Component Management" page, select the YARN component to enter its component management page. On the role management tab, confirm the IP of the node where the ResourceManager service resides. Then, switch to the configuration management tab to modify relevant parameters in `yarn-site.xml`, save the changes, and restart all YARN components.
+ 1. Enter the YARN component management page.
+![](https://main.qcloudimg.com/raw/6f308d859cb16483410dc3191bd25083.png)
+ 2. Confirm the IP address of ResourceManager.
+ ![](https://main.qcloudimg.com/raw/682dafc75d3bc59d1d739ddc437c427f.png)
+ 3. Modify the `yarn.resourcemanager.scheduler.class` parameter in `yarn-site.xml` of the node where ResourceManager resides.
+ ![](https://main.qcloudimg.com/raw/fca9010a03c4a11071c1251a7873ed49.png)
 
 ### Configuring the mappings and ratios of node labels and queues in Capacity-Scheduler.xml
 1. Create an HDFS directory for storing node labels.
@@ -100,7 +101,7 @@ On the "Cluster Service" page, select the YARN component to enter its component 
 	As can be seen in the "NodeLabels" panel, the number of nodes in the "normal" and "cpu" partitions has become 1 from 0.
 ![](https://main.qcloudimg.com/raw/10bb2e30ba5b45cb9ed9a6ebe69f3170.png)
  As can be seen in the "Scheduler" panel, the labels of the two nodes in the testing system have changed.
-![](https://main.qcloudimg.com/raw/465308d473eed1484ecd67345ca2d74e.png)
+![](https://main.qcloudimg.com/raw/283be98b66ef440a94cd0f770584e367.png)
 6. Edit configuration items in `Capacity-Scheduler.xml` to configure the cluster queues, resource ratio of queues, and accessible labels of queues as shown in the following sample:
 ```
 <?xml version="1.0" encoding="UTF-8"?>
