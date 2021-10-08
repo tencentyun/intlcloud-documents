@@ -116,17 +116,17 @@ If you log in with a sub-account that does not have permission to access the buc
    <tr>
       <td>Uploading files</td>
       <td >COSBrowser allows you to upload a single file or multiple files in batches in different ways.</td>
-      <td nowrap="nowrap">You can upload files in the following ways. In the specified bucket or path:<br>1. Click **Upload Files** to upload files directly. <br>2. Right-click in the blank space of the file list and select **Upload Files** to upload files. <br>3. Drag a file to the file list pane.</td>
+      <td nowrap="nowrap">You can upload files in the following ways. In the specified bucket or path:<br>1. Click <b>Upload Files</b> to upload files directly. <br>2. Right-click in the blank space of the file list and select  <b>Upload Files</b> to upload files. <br>3. Drag a file to the file list pane.</td>
    </tr>
    <tr>
       <td nowrap="nowrap">Uploading a folder and the files contained</td>
       <td>If the name of the file/folder to upload already exists in the bucket or path, the old file/folder will be overwritten by default.</td>
-      <td nowrap="nowrap">You can upload a folder in the following ways. In the specified bucket or path:<br>1. Click **Upload Folder** to upload a folder directly. <br>2. Right-click in the blank space of the file list and select **Upload Folder** to upload a folder. <br>3. Drag a folder to the file list pane.</td>
+      <td nowrap="nowrap">You can upload a folder in the following ways. In the specified bucket or path:<br>1. Click  <b>Upload Folder</b> to upload a folder directly. <br>2. Right-click in the blank space of the file list and select <b>Upload Folder</b> to upload a folder. <br>3. Drag a folder to the file list pane.</td>
    </tr>
    <tr>
       <td>Incremental upload</td>
       <td>Incremental upload compares the files to upload with existing files in the bucket before the upload. An existing file with the same name in the bucket will be skipped.</td>
-      <td>You can perform the following 2 steps to use incremental upload. In the specified bucket or path:<br>1. Upload as you do with a folder and click **Next**.<br>2. In **Storage method**, select **Skip**. Then, click **Upload** to begin the incremental upload.</td>
+      <td>You can perform the following 2 steps to use incremental upload. In the specified bucket or path:<br>1. Upload as you do with a folder and click <b>Next</b>.<br>2. In <b>Storage method</b>, select <b>Skip</b>. Then, click <b>Upload</b> to begin the incremental upload.</td>
    </tr>
 </table>
 
@@ -146,17 +146,17 @@ If you log in with a sub-account that does not have permission to access the buc
    <tr>
       <td>Downloading files</td>
       <td>COSBrowser allows you to download a single file or multiple files in batches in different ways.</td>
-      <td nowrap="nowrap">You can download a file in the following ways:<br>1. Select the desired file and click **Download** in the UI.<br>2. Right-click the file and select **Download**.<br>3. Drag the file to the local file system.</td>
+      <td nowrap="nowrap">You can download a file in the following ways:<br>1. Select the desired file and click <b>Download</b>in the UI.<br>2. Right-click the file and select <b>Download</b>.<br>3. Drag the file to the local file system.</td>
    </tr>
    <tr>
       <td nowrap="nowrap">Downloading a folder and files contained</td>
       <td>If the name of the file/folder to download already exists in the local file system, it will be renamed by default.</td>
-      <td>You can download a folder and the files contained in the following ways:<br>1. Select the desired folder and click **Download** in the UI.<br>2. Right-click the folder and select **Download**.<br>3. Drag a folder to the local file system.</td>
+      <td>You can download a folder and the files contained in the following ways:<br>1. Select the desired folder and click <b>Download** in the UI.<br>2. Right-click the folder and select <b>Download</b>.<br>3. Drag a folder to the local file system.</td>
    </tr>
    <tr>
       <td>Incremental download</td>
       <td>Incremental download compares the files to download with local files before the download. An existing file with the same name will be skipped.</td>
-      <td>You can perform the following 3 steps to use incremental download:<br>1. Select the desired file/folder, move the mouse to **More**, and a drop-down list will appear.<br>2. Click **Advanced Download** in the drop-down list and select **Skip** in the dialog box.<br>3. Click **Download Now** to incrementally download new files/folders.</td>
+      <td>You can perform the following 3 steps to use incremental download:<br>1. Select the desired file/folder, move the mouse to <b>More</b>, and a drop-down list will appear.<br>2. Click <b>Advanced Download</b> in the drop-down list and select <b>Skip</b> in the dialog box.<br>3. Click <b>Download Now</b> to incrementally download new files/folders.</td>
    </tr>
 </table>
 
@@ -166,7 +166,7 @@ If you log in with a sub-account that does not have permission to access the buc
 
 #### 9. Deleting file/folder
 
-To delete a file/folder, select the file/folder to delete and click **Delete** in **More** at the top of the UI, or right-click it and select **Delete**. You can delete multiple files/folders in batches.
+To delete a file/folder, select the file/folder to delete and click <b>Delete</b> in **More** at the top of the UI, or right-click it and select **Delete**. You can delete multiple files/folders in batches.
 
 <span id="synchronization"></span>
 
@@ -310,37 +310,37 @@ To quickly locate a bucket, enter the bucket name in the search box above the bu
    <tr>
       <td>Setting up proxy</td>
       <td >COSBrowser uses the system-configured proxy to connect to the Internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the Internet.</td>
-      <td nowrap="nowrap">1. Select **Settings** > **Proxy**.<br>2. Set up a proxy to connect to the Internet.</td>
+      <td nowrap="nowrap">1. Select <b>Settings</b> > <b>Proxy</b>.<br>2. Set up a proxy to connect to the Internet.</td>
    </tr>
    <tr>
       <td>Setting the number of concurrent transfers</td>
       <td>COSBrowser supports uploading/downloading multiple files in batches.</td>
-      <td>1. Select **Settings** > **Download/Upload**. <br>2. Set the number of concurrent transfers, which is 5 by default.</td>
+      <td>1. Select <b>Settings</b> > <b>Download/Upload</b>. <br>2. Set the number of concurrent transfers, which is 5 by default.</td>
    </tr>
    <tr>
       <td>Setting the number of parts to transfer</td>
       <td>COSBrowser supports uploading/downloading a file in multiple parts. When the file to be transferred exceeds a certain size, multipart transfer will be performed by default.</td>
-      <td>1. Select **Setting** > **Download/Upload**.<br>2. Set the number of concurrent parts to be transferred, which is 5 by default.</td>
+      <td>1. Select <b>Setting</b> > <b>Download/Upload</b>.<br>2. Set the number of concurrent parts to be transferred, which is 5 by default.</td>
    </tr>
    <tr>
       <td nowrap="nowrap">Setting the number of retries upon transfer failure</td>
       <td>COSBrowser will retry failed tasks by default when transferring files.</td>
-      <td>1. Select **Settings** > **Download/Upload**.<br>2. Set the number of retries upon transfer failure, which is 5 by default.</td>
+      <td>1. Select <b>Settings</b> > <b>Download/Upload</b>.<br>2. Set the number of retries upon transfer failure, which is 5 by default.</td>
    </tr>
    <tr>
       <td>Setting upload check</td>
       <td>COSBrowser supports checking files online after upload to verify whether their size and status are correct.</td>
-      <td>1. Select **Settings** > **Upload**.<br>2. Select "Upload Check".</td>
+      <td>1. Select <b>Settings</b> > <b>Upload</b>.<br>2. Select "Upload Check".</td>
    </tr>
    <tr>
       <td>Limiting single-thread speed</td>
       <td>COSBrowser supports limiting the upload and download speeds for a single thread. Total upload (download) speed limit = Single-thread upload (download) speed limit x Number of concurrent files x Number of concurrent parts</td>
-      <td>1. Select **Settings** > **Upload/Download**.<br>2. Set the single-thread upload/download speed limit, in MB/s.</td>
+      <td>1. Select <b>Settings</b>> <b>Upload/Download</b>.<br>2. Set the single-thread upload/download speed limit, in MB/s.</td>
    </tr>
    <tr>
       <td>Viewing local log</td>
       <td>COSBrowser will record all the performed operations in the `cosbrowser.log` local file.</td>
-      <td nowrap="nowrap">1. Select **Settings** > **About**.<br>2. Click **Local Log** and the system will open the directory where the local log is stored.</td>
+      <td nowrap="nowrap">1. Select <b>Settings</b> > <br>About</b>.<br>2. Click <b>Local Log</b> and the system will open the directory where the local log is stored.</td>
    </tr>
 </table>
 
