@@ -70,7 +70,7 @@ chroot_list_enable=YES
 chroot_list_file=/etc/vsftpd/chroot_list
 listen=YES
 ```
-  2. Add the pound sign (`#`) at the beginning of the following line to annotate `listen_ipv6=YES` and disable listening on IPv6 sockets.
+  2. Add the pound sign `#`，at the beginning of the following line to annotate `listen_ipv6=YES` and disable listening on IPv6 sockets.
 ```
 #listen_ipv6=YES
 ```
