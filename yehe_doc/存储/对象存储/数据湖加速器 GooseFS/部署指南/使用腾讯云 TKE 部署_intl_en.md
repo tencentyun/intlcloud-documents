@@ -11,11 +11,11 @@ To deploy GooseFS using TKE, the [open source Fluid component](https://github.co
 ## Installation
 
 1. Find Fluid from the [TKE Application Market](https://console.cloud.tencent.com/tke2/market).
-![](https://main.qcloudimg.com/raw/879a2413fee05c39cc3ff8d2fd41f80b.png)
+
 2. Install Fluid controllers.
-![](https://main.qcloudimg.com/raw/ffbc185e04789cb5a679b8e32ec92d59.jpg)
+
 3. Check the controllers. You can click **Cluster** in the left sidebar and find the desired cluster. If there are two controllers, Fluid has been installed successfully.
-![](https://main.qcloudimg.com/raw/27f12c25ac4da44eace986eddf356691.png)
+
 
 
 ## Operation Example
@@ -31,9 +31,7 @@ To deploy GooseFS using TKE, the [open source Fluid component](https://github.co
 
 ### 2. Create a UFS dataset (using COS as an example)
 
-`dataset.yaml` template:
-
-Create `secret.yaml` for encryption:
+Create `secret.yaml` for encryption. The template is as follows:
 
 ```yaml
 apiVersion: v1
@@ -45,7 +43,13 @@ stringData:
   fs.cosn.userinfo.secretId:xxx
 ```
 
+Create `secret`:
+```shell
+[root@master01 ~]# kubectl apply  -f secret.yaml
+secret/mysecret created
+```
 
+`dataset.yaml` template:
 ```yaml
 apiVersion: data.fluid.io/v1alpha1
 kind: Dataset
@@ -59,7 +63,7 @@ spec:
       fs.cosn.bucket.region: ap-beijing
       fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
       fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-      fs.cos.app.id: "your appid"
+      fs.cos.app.id: "${your appid}"
     encryptOptions:
       - name: fs.cosn.userinfo.secretKey
         valueFrom:
@@ -69,10 +73,12 @@ spec:
       - name: fs.cosn.userinfo.secretId
         valueFrom:
           secretKeyRef:
+            name: mysecret
+            key: fs.cosn.userinfo.secretId
 ```
 
-```shell
 Create a dataset:
+```shell
 [root@master01 run]# kubectl apply -f dataset.yaml 
 dataset.data.fluid.io/slice1 created
 ```
@@ -100,8 +106,8 @@ spec:
     replicas: 1
   goosefsVersion:
     imagePullPolicy: Always
-    image: {img_uri}
-    imageTag: {tag}
+    image: ${img_uri}
+    imageTag: ${tag}
   tieredstore:
     levels:
       - mediumtype: MEM
@@ -131,8 +137,8 @@ spec:
         cpu: 8
   fuse:
     imagePullPolicy: Always
-    image: {fuse_uri}
-    imageTag: {tag_num}
+    image: ${fuse_uri}
+    imageTag: ${tag_num}
     env:
       MAX_IDLE_THREADS: "32"
     jvmOptions:

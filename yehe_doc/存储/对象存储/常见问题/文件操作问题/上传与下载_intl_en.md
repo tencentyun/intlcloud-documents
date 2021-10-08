@@ -1,17 +1,24 @@
 ### Does COS limit the upload and download bandwidth?
 
-Yes. By default, the bandwidth limit on each account is 15 Gbit/s in each public cloud region in the Chinese mainland, and 10 Gbit/s in any other regions. If this threshold is exceeded, traffic throttling will be triggered for requests. To increase the threshold, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+Yes. The default bandwidth threshold for a single bucket residing in a public region in the Chinese mainland is 15 Gbps, and 10 Gbps for those in other regions. If this threshold is exceeded, bandwidth throttling will be triggered for requests. To raise the threshold, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 ### How can I directly preview a file in my browser without downloading it?
 
 Bucket endpoints in the format of `<BucketName-APPID>.cos.<Region>.myqcloud.com` are in XML format. You can directly preview file types supported by your browser by accessing the object URL using this endpoint format.
 
+Bucket endpoints in the format of `<BucketName-APPID>.<region>.myqcloud.com` are in JSON format. If you access an object URL using this endpoint format, a download window will pop up, and there are two ways that you can preview the file in your browser:
+
+1. Upgrade your COS Console to [the latest version](https://console.cloud.tencent.com/cos5) and use the object URL in XML format for access (strongly recommended).
+2. Bind a custom endpoint, enable a static website, and access the file using the custom endpoint. For more information, see [Endpoint Management for JSON](https://intl.cloud.tencent.com/document/product/436/18424) and [Static Website Settings for JSON](https://intl.cloud.tencent.com/document/product/436/14984).
 
 #### Sample:
 
-Take the picture.jpg file in the root directory of the bucket `examplebucket-1250000000` in the Beijing region as an example:
+Take the picture.jpg file in the root directory of the bucket examplebucket-1250000000 in Beijing for example:
 
-If the object endpoint is in the format of `https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`, you can directly access it to preview the picture.jpg file via your browser.
+- If the object endpoint is in the format of `https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`, you can directly access it to preview the picture.jpg file in your browser.
+- If the object endpoint is in the format of `https://examplebucket-1250000000.cosbj.myqcloud.com/picture.jpg`, there are two ways to directly preview the object in your browser:
+  1. Upgrade your COS Console to [the latest version](https://console.cloud.tencent.com/cos5) and use the object link in XML format for access (strongly recommended).
+  2. Bind a custom endpoint, enable a static website, and access the file using the custom endpoint. For more information, see [Endpoint Management for JSON](https://intl.cloud.tencent.com/document/product/436/18424) and [Static Website Settings for JSON](https://intl.cloud.tencent.com/document/product/436/14984).
 
 ### How do I directly download a file in my browser without previewing it?
 
@@ -24,6 +31,8 @@ You can also set the value of the request parameter `response-content-dispositio
 ### How do I determine if I am accessing COS over a private network?
 
 The access endpoints of COS use intelligent DNS resolution. For COS access via the Internet (including different ISPs), we will detect and select the optimal linkage for you to access COS. If you have deployed a service in Tencent Cloud to access COS, access within the same region will be automatically directed to a private network address. Cross-region access is not supported in a private network and the COS endpoint is resolved to a public network address by default.
+
+>! The private networks of Public Cloud regions do not interconnect with those of Finance Cloud regions.
 
 #### How to determine access over a private network
 
@@ -53,7 +62,7 @@ For more information about private and public network access and connectivity te
 
 For the private DNS server addresses of CVM, please see [Private Network DNS](https://intl.cloud.tencent.com/document/product/213/5225).
 
->!There are differences between the private IP address of a CPM (common format: `9.*.*.*`) and the IP address of a CVM (common format: `10.*.*.*`). If you have any questions, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>!The private IPs of Tencent Cloud BM instances may be different from those of CVM instances, and their formats are usually `9.*.*.*` or `10.*.*.*`. If you have any queries, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 ### How do I download a folder?
 
@@ -61,13 +70,7 @@ You can log in to [COSBrowser](https://intl.cloud.tencent.com/document/product/4
 
 ### What should I do if the error "403 Forbidden" occurs or access permission is rejected when I perform upload/download and other operations?
 
-Troubleshoot the problems by following the steps below:
-
-1. Check whether the following configuration is correct:
-   `BucketName`, `APPID`, `Region`, `SecretId`, `SecretKey`, etc.
-2. If the configuration above is correct, check whether a sub-account is used for the operation. If yes, check whether the sub-account has been authorized by the root account. If it has not yet been authorized, log in using the root account to authorize the sub-account. For more information about authorization, please see [Cases of Permission Settings](https://intl.cloud.tencent.com/document/product/436/12514).
-3. If a temporary key is used, check whether the current operation is in the policy set when the temporary key is obtained; if not, modify the relevant policy settings. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
-4. If the problem persists, contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=84&source=0&data_title=%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%20COS&step=1).
+You can troubleshoot by referring to [A 403 Status Code is Returned When You Access COS](https://intl.cloud.tencent.com/document/product/436/40105).
 
 
 ### How do I upload or download multiple files using COS?
@@ -91,6 +94,15 @@ The versioning feature is now available in COS. If versioning is not enabled for
 
 Yes.
 
+### How do I generate a temporary URL for files in COS?
+
+For more information, see [Download via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14116).
+
+
+### I have set a validity period for a signature, but why can it still be used to download objects after it has expired?
+
+By default, the browser will cache objects that have been loaded successfully. Therefore, if you access the same URL, the cached object will be returned without requesting the server again. Therefore, you are advised to use the `Cache-Control: no-cache` header during object upload to prevent browser caching (see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) or [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) for details). Alternatively, you can specify the `response-cache-control=no-cache` request header during object download to prevent browser caching (see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) for details).
+
 
 ### What should I do if I upload a file on the console and "Failed to upload. System error." is displayed?
 This error may occur due to an unstable local network environment. You can try the upload again in a different network environment.
@@ -100,9 +112,12 @@ This error may occur due to an unstable local network environment. You can try t
 
 You can set your bucket permission to private read/write. For more information, please see [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315). You can also configure a hotlink protection allowlist on your bucket to block any access from endpoints that are not in the list. For more information, please see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319).
 
+### Can I use case-insensitive download URLs?
+
+No. COS filenames are case-sensitive, and thus so are the download URLs. If you have enabled CDN acceleration for your bucket, you can go to the CDN console to configure [Cache Ignore URL Case](https://intl.cloud.tencent.com/document/product/228/35316), which will increase the hit rate to some extent.
+
 
 ### What should I do if the error "your policy or acl has reached the limit (Status Code: 400; Error Code: PolicyFull)" occurs when I am uploading files or creating a bucket?
 
 COS allows each root account to have up to 1,000 bucket ACLs. If more bucket ACLs have been configured, this error will occur. Therefore, you can delete unnecessary bucket ACLs.
-
 >?You are not advised to use object-level ACLs or policies. When calling APIs or SDKs, if you do not need ACL control over a file, we recommend leaving the ACL-related parameters (such as x-cos-acl and ACL) empty to inherit the bucket permissions.

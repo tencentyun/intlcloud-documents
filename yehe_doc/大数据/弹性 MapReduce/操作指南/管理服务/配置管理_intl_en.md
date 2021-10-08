@@ -4,7 +4,7 @@ Configuration management allows you to modify key configuration parameters of co
 ## Directions
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Service** to enter the cluster service list.
 2. In the cluster service list, select **Operation** > **Configuration Management** in the top-right corner of the target service block. After entering the "Configuration Management" page, click **Modify Configuration** to add, modify, or delete parameters. You can also click **Create Configuration File** to add a custom configuration file and set its parameters.
-![](https://main.qcloudimg.com/raw/f20c5dc2cf851396c9b8cdae2c189f78.png)
+![](https://main.qcloudimg.com/raw/f5ffa451824dc44731119181a0b3ad12.png)
  - To configure the parameters of all nodes of the selected service in the cluster, select cluster level.
  - To configure the parameters of a specified node of the selected service, select node level.
  - To configure the parameters of multiple specified nodes of the selected service, you can create a configuration group and use it as the level.
@@ -22,4 +22,4 @@ Save the configuration:
 6. After completing parameter modification, click **Save configuration** and confirm the changes. We recommend you enter a reason of change for future reference. After confirming that all values are correct, click **Save and Deliver**. After the configurations are successfully delivered, click **Restart Service** to make the parameters take effect.
 >!If you modify the service parameters on the Shell command line, and then modify them again in the EMR Console, the previous modifications made on the command line will be overridden.
 >
- ![](https://main.qcloudimg.com/raw/4a7139cc288c097ec38803cd0c87e784.png)
+ ![](https://main.qcloudimg.com/raw/7c5cf8771c4d2aae871e985197c9f4bb.png)

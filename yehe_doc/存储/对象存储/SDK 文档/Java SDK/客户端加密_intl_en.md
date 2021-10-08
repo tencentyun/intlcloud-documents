@@ -8,7 +8,7 @@ The following two types of keys are supported for client-side encryption:
 >? Symmetric or asymmetric keys mentioned above are to encrypt the randomly generated keys only. Note that files are always encrypted symmetrically using AES-256.
 >
 
-## Notes:
+## Notes
 
 - User data will not be uploaded to COS unless it is encrypted.
 - Client-side encryption may affect the upload speed.
@@ -22,12 +22,12 @@ The client uses AES-256 internally to encrypt data. By default, earlier versions
 - [JDK7 JCE supplementary package](http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html)
 - [JDK8 JCE supplementary package](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)
 
-## Encryption for Upload
+## Encryption upon Upload
 
 1. Before each object upload, a symmetric key will be generated randomly and encrypted with the KMS/customer managed key. The encrypted result will then be Base64-encoded and stored in the object metadata.
 2. During the upload, the file is encrypted in memory using the AES256 algorithm.
 
-## Decryption for Download
+## Decryption upon Download
 
 1. Get the necessary encryption information from the metadata of the file, Base64-decode it, and then decrypt it using the KMS or customer managed key to get the encryption key at upload.
 2. Use the resulting key to decrypt the downloaded input stream using AES256.
@@ -37,12 +37,13 @@ The client uses AES-256 internally to encrypt data. By default, earlier versions
 #### Sample 1
 The following sample uses Tencent Cloud′s KMS service for client-side encryption. For the complete sample code, please see [Complete Sample of Client-Side Encryption using KMS](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/KMSEncryptionClientDemo.java).
 
-[//]: # ".cssg-snippet-put-object-cse-c-kms"
+[//]: # (.cssg-snippet-put-object-cse-c-kms)
 
 ```java
-// Initialize user authentication information (secretId and secretKey).
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// Initialize user authentication information (`secretId` and `secretKey`).
+// You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 // Set the COS region. For regions and their abbreviations, please see https://intl.cloud.tencent.com/zh/document/product/436/6224
 ClientConfig clientConfig = new ClientConfig(new Region("COS_REGION"));
@@ -86,12 +87,13 @@ cosEncryptionClient.shutdown();
 #### Sample 2
 The following sample uses symmetric AES-256 to encrypt the randomly generated keys. For the complete sample code, please see [Complete Sample of Client-Side Symmetric Encryption](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/SymmetricKeyEncryptionClientDemo.java).
 
-[//]: # ".cssg-snippet-put-object-cse-c-aes"
+[//]: # (.cssg-snippet-put-object-cse-c-aes)
 
 ```java
-// Initialize user authentication information (secretId and secretKey).
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// Initialize user authentication information (`secretId` and `secretKey`).
+// You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 // Set the COS region. For regions and their abbreviations, please see https://intl.cloud.tencent.com/zh/document/product/436/6224
 ClientConfig clientConfig = new ClientConfig(new Region("COS_REGION"));
@@ -126,11 +128,12 @@ cosEncryptionClient.shutdown();
 #### Sample 3
 The following sample uses asymmetric RSA to encrypt the randomly generated keys. For the complete sample code, please see [Complete Sample of Client-Side Asymmetric Encryption](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/AsymmetricKeyEncryptionClientDemo.java).
 
-[//]: # ".cssg-snippet-put-object-cse-c-rsa"
+[//]: # (.cssg-snippet-put-object-cse-c-rsa)
 ```java
-// Initialize user authentication information (secretId and secretKey).
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// Initialize user authentication information (`secretId` and `secretKey`).
+// You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 // Set the COS region. For regions and their abbreviations, please see https://intl.cloud.tencent.com/zh/document/product/436/6224
 ClientConfig clientConfig = new ClientConfig(new Region("COS_REGION"));
