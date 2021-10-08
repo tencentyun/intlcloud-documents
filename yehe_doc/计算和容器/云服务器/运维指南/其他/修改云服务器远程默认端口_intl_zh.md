@@ -14,24 +14,24 @@
 1. [使用 VNC 登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/32496)。
 2. 在操作系统界面中，单击 <img src="https://main.qcloudimg.com/raw/f0c84862ef30956c201c3e7c85a26eec.png" style="margin: 0;">，打开 “Windows PowerShell” 窗口。
 3. 在 “Windows PowerShell” 窗口中，输入 **regedit**，按 **Enter**，打开 “注册表编辑器” 窗口。
-4. 在左侧的注册表导航中，依次展开【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【Wds】>【rdpwd】>【Tds】>【tcp】目录。
-5. <span id="Windows_step05"></span>找到【tcp】中的 PortNumber，并将 PortNumber 数据（即3389端口号）修改为0 - 65535之间未被占用端口。如下图所示：
+4. 在左侧的注册表导航中，依次展开**HKEY_LOCAL_MACHINE**>**SYSTEM**>**CurrentControlSet**>**Control**>**Terminal Server**>**Wds**>**rdpwd**>**Tds**>**tcp**目录。
+5. <span id="Windows_step05"></span>找到**tcp**中的 PortNumber，并将 PortNumber 数据（即3389端口号）修改为0 - 65535之间未被占用端口。如下图所示：
 ![](https://main.qcloudimg.com/raw/7044cef95fd7e56b56946afdb64de346.png)
-6. 在左侧的注册表导航中，依次展开【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【WinStations】>【RDP-Tcp】目录。
-7. 找到【RDP-Tcp】中的 PortNumber，并将【RDP-Tcp】中的 PortNumber 数据（端口号）修改为与【tcp】中的 PortNumber 数据（端口号）一致的端口号。
+6. 在左侧的注册表导航中，依次展开**HKEY_LOCAL_MACHINE**>**SYSTEM**>**CurrentControlSet**>**Control**>**Terminal Server**>**WinStations**>**RDP-Tcp**目录。
+7. 找到**RDP-Tcp**中的 PortNumber，并将**RDP-Tcp**中的 PortNumber 数据（端口号）修改为与**tcp**中的 PortNumber 数据（端口号）一致的端口号。
 ![](https://main.qcloudimg.com/raw/fa54eb32c20dcc8a7c942c8e707fa665.png)
 8. （可选）如果您的云服务器开启了防火墙，需将新的端口添加至防火墙并设置允许连接：
  1. 在 “Windows PowerShell” 窗口中，输入 **wf.msc**，按 **Enter**，打开 “高级安全 Windows 防火墙” 窗口。
- 2. 在 “高级安全 Windows 防火墙” 窗口中，选择【入站规则】，单击【新建规则】。如下图所示：
+ 2. 在 “高级安全 Windows 防火墙” 窗口中，选择**入站规则**，单击**新建规则**。如下图所示：
 ![](https://main.qcloudimg.com/raw/ac93eed862e215971073912030fdbc41.png)
- 3. 在 “新建入站规则向导” 窗口的 “规则类型” 步骤中，选择【端口】，单击【下一步】。
- 4. 在 “新建入站规则向导” 窗口的 “协议和端口” 步骤中，选择【TCP】，并将【特定本地端口】填写为 [步骤5](#Windows_step05) 设置的端口号，单击【下一步】。如下图所示：
+ 3. 在 “新建入站规则向导” 窗口的 “规则类型” 步骤中，选择**端口**，单击**下一步**。
+ 4. 在 “新建入站规则向导” 窗口的 “协议和端口” 步骤中，选择**TCP**，并将**特定本地端口**填写为 [步骤5](#Windows_step05) 设置的端口号，单击**下一步**。如下图所示：
  ![](https://main.qcloudimg.com/raw/73a7ca280f4f6b733d687597014b57b4.png)
- 5. 在 “新建入站规则向导” 窗口的 “操作” 步骤中，选择【允许连接】，单击【下一步】。
- 6. 在 “新建入站规则向导” 窗口的 “配置文件” 步骤中，使用默认配置即可，单击【下一步】。
- 7. 在 “新建入站规则向导” 窗口的 “名称” 步骤中，填写规则名称，单击【完成】。
+ 5. 在 “新建入站规则向导” 窗口的 “操作” 步骤中，选择**允许连接**，单击**下一步**。
+ 6. 在 “新建入站规则向导” 窗口的 “配置文件” 步骤中，使用默认配置即可，单击**下一步**。
+ 7. 在 “新建入站规则向导” 窗口的 “名称” 步骤中，填写规则名称，单击**完成**。
 9. 在 “Windows PowerShell” 窗口中，输入 **services.msc**，按 **Enter**，打开 “服务” 窗口。
-10. 在 “服务” 窗口中，找到【Remote Desktop Services】，并右键单击【Remote Desktop Services】，选择【重新启动】，重启远程登录服务。
+10. 在 “服务” 窗口中，找到**Remote Desktop Services**，并右键单击**Remote Desktop Services**，选择**重新启动**，重启远程登录服务。
 11. 参考 [修改安全组规则](https://intl.cloud.tencent.com/document/product/213/34825)，将协议端口为 “TCP:3389” 的安全组规则修改为 [步骤5](#Windows_step05) 设置的端口号。
 ![](https://main.qcloudimg.com/raw/a447d7e69ce95d349f0d78b5b72b9228.png)
 
@@ -88,9 +88,9 @@ firewall-cmd --add-port=23456/tcp --permanent
 ### Windows 云服务器的验证
 
 1. 以本地计算机为 Windows 操作系统为例，打开远程桌面连接对话框。
-2. 在【计算机】后面，输入 `Windows 服务器的公网 IP:修改后的端口号`，单击【连接】。如下图所示：
+2. 在**计算机**后面，输入 `Windows 服务器的公网 IP:修改后的端口号`，单击**连接**。如下图所示：
 ![](https://main.qcloudimg.com/raw/1452f968e3c2c4d4c1083bdf0742df9d.png)
-3. 根据界面提示，输入实例的管理员帐号和密码，单击【确定】。
+3. 根据界面提示，输入实例的管理员帐号和密码，单击**确定**。
 进入 Windows 云服务器的操作系统界面，即表示连接登录成功。
 > 如果您使用 RDP 文件登录 Windows 云服务器，请先修改 RDP 文件中的 `full address:s` 参数。如下图所示：
 >[](https://main.qcloudimg.com/raw/84dd85a9547fc64f2daccba32f1d59d7.png)
@@ -99,7 +99,7 @@ firewall-cmd --add-port=23456/tcp --permanent
 ### Linux 云服务器的验证
 
 1. 以 PuTTY 远程登录软件为例，打开 PuTTY 客户端。
-2. 在 PuTTY Configuration 窗口中，输入 Linux 云服务器的公网 IP，将【Port】设置为新的端口号，单击【Open】。如下图所示：
+2. 在 PuTTY Configuration 窗口中，输入 Linux 云服务器的公网 IP，将**Port**设置为新的端口号，单击**Open**。如下图所示：
 ![](https://main.qcloudimg.com/raw/c89c2064ed82e738fd60fcab39b09206.png)
 3. 根据界面提示，输入 Linux 云服务器的用户名和密码，按 **Enter**。
 进入如下界面，即表示连接登录成功。
