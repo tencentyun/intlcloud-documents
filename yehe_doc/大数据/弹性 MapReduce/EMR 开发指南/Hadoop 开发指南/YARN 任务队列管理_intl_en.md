@@ -1,6 +1,6 @@
 You can log in to the YARNwebUI, which is the web user interface of YARN, through the shortcut entry provided in EMR. For more information, please see the product documentation. After logging in, you will see the following:
 
-![YARN](https://mc.qcloudimg.com/static/img/df3b8ca1dc152d28f7f84caa87613e53/5-1-3.png)  
+![YARN](https://main.qcloudimg.com/raw/35f50d2533fc448a53f5ce63f306ebc0.png)  
 
 You can see some monitoring information of the entire cluster here:
 
