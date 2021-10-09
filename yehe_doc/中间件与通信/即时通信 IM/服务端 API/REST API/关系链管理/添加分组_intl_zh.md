@@ -46,9 +46,9 @@ https://xxxxxx/v4/sns/group_add?sdkappid=88888888&identifier=admin&usersig=xxx&r
 
 |字段|	类型|	属性|	说明|
 |----|-----|------|-----|
-|From_Account|	String|	必填| 需要为该 Identifier 添加新分组 |
+|From_Account|	String|	必填| 需要为该 UserID 添加新分组 |
 |GroupName	|Array|	必填| 新增分组列表 |
-|To_Account	|Array	|选填| 需要加入新增分组的好友的 Identifier 列表 |
+|To_Account	|Array	|选填| 需要加入新增分组的好友的 UserID 列表 |
 
 ### 应答包体示例
 - **基础形式**
@@ -82,8 +82,7 @@ https://xxxxxx/v4/sns/group_add?sdkappid=88888888&identifier=admin&usersig=xxx&r
             "ResultInfo": "ERR_SDKAPPID_ILLEGAL"
         }
     ],
-    "Fail_Account": ["id1"],
-    "Invalid_Account": ["id3"],
+    "Fail_Account":["id2","id3"],
     "CurrentSequence": 3,
     "ActionStatus": "OK",
     "ErrorCode": 0,
@@ -97,7 +96,7 @@ https://xxxxxx/v4/sns/group_add?sdkappid=88888888&identifier=admin&usersig=xxx&r
 |字段|	类型	|说明|
 |-----|-------|------|
 |ResultItem|	Array	|好友加入新增分组的结果对象数组|
-|To_Account|	String	|请求加入新分组的好友的 Identifier|
+|To_Account|	String	|请求加入新分组的好友的 UserID|
 |ResultCode|	Integer	|To_Account 的处理结果，0表示成功，非0表示失败|
 |ResultInfo|	String|	To_Account 的错误描述信息，成功时该字段为空|
 |Fail_Account|Array|返回处理失败的用户列表，仅当存在失败用户时才返回该字段|
