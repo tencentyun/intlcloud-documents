@@ -1,8 +1,8 @@
 ## Overview
-You can set threshold alarms to monitor CVM performance, and also event alarms to watch the status of CVM instances and the underlying platform infrastructure. When an exception occurs, you will promptly receive notifications via WeChat, email, SMS, phone, etc.. A proper alarm policy will help improve the robustness and reliability of your applications. This document describes how to create an alarm policy. For more information, see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
+You can set threshold-triggered alarm policies to monitor CVM performance, and also event-triggered alarm polices to watch the status of CVM instances and the underlying platform infrastructure. When an exception occurs, you will receive notifications via the specified methods (email, SMS or phone call). A proper alarm policy will help improve the robustness and reliability of your applications. You can also see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
 
 ## Directions
-1. Log in to the [Cloud Monitor console] and select **Alarm Configuration** > [**Alarm Policy**](https://console.cloud.tencent.com/monitor/alarm2/policy) on the left sidebar.
+1. Log in to the Cloud Monitor console and click **Alarm Configuration** > [Alarm Policy](https://console.cloud.tencent.com/monitor/alarm2/policy) on the left sidebar.
 2. On the **Alarm Policy** page, click **Create**.
 3. In the pop-up window, configure basic information, alarm policy, and notification template as instructed below.
 <table>
@@ -38,18 +38,18 @@ You can set threshold alarms to monitor CVM performance, and also event alarms t
     <td>
       <ul>
 			         <li><b>Instance ID</b>: associate the policy with the specified CVM instance</li>
-           <li><b>Tag</b>: associate the policy with CVM instances with the specified tag</li>
+           <li><b>Tag</b>: associate the policy with CVM instances bound with the specified tag</li>
                <li><b>Instance Group</b>: associate the policy with the selected instance group</li>
-		            <li><b>All Objects</b>:  associate the policy with all instances the current account (permission required)</li>
+		            <li><b>All Objects</b>: associate the policy with all instances under the current account (permission required)</li>
            </ul>
         </td>
 		<tr>
 		<td rowspan=3>Trigger Condition</td>
-    <td><b>Manual Configuration</b>(Metric Alarm)</td>
+    <td><b>Manual Configuration </b>(Metric Alarm)</td>
     <td>
 Trigger condition: specify the metric, comparison, threshold, statistical period, and the number of consecutive periods. You can expand the trigger condition to view the metric trend, and based on which, set a proper threshold.
   <tr>
-    <td><b>Manual Configuration</b>(Event Alarm)</td>
+    <td><b>Manual Configuration </b>(Event Alarm)</td>
     <td>Create an event alarm policy to get notifications in case of service resources or underlying infrastructure exceptions</td>
   </tr>
   <tr>
