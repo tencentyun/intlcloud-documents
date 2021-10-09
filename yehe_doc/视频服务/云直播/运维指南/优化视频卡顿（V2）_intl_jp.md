@@ -11,6 +11,7 @@
 - **原因3： 下り接続の不良**
 例えばCSSストリームのビットレートが2Mbps、つまり毎秒2Mビットのデータストリームのダウンロードで、視聴者の帯域幅が不足している場合のように、視聴者のダウンロード帯域幅が不足またはネットワーク状態が不安定なときは、視聴者側の再生体験に著しいラグが生じることとなります。下り接続の不良は現在のネットワーク環境下の視聴者にのみ影響を及ぼします。
 
+[](id:deal0)
 ## SDKステータスプロンプト情報を確認
 Tencent Cloud MLVB SDKを使用してプッシュする場合、このSDKは2秒ごとに内部の各ステータスパラメータをフィードバックするステータスフィードバックメカニズムを提供します。 [V2TXLivePusherObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html)で監視装置を登録し、その後、コールバック関数onStatisticsUpdateを介して、これらのステータスを取得することができます。 V2TXLivePusherStatisticsの関連ステータスの説明は次のとおりです。
 
@@ -19,11 +20,12 @@ Tencent Cloud MLVB SDKを使用してプッシュする場合、このSDKは2秒
 |   appCpu     |現在のAppのCPU使用率（％）|
 |	systemCpu     | 現在のシステムのCPU使用率（％）|
 |	width     | ビデオの幅 |
-|	height | ビデオの高さ |
+|	height | 画像高さ |
 |	fps | フレームレート （fps） |
 |	audioBitrate    | オーディオビットレート（Kbps） |
 |	videoBitrate  |ビデオビットレート（Kbps） |
 
+[](id:deal1)
 ##  フレームレートが低すぎる問題を解決
 ### 1. フレームレートが低すぎるかどうかの判断
 MLVB SDKのV2TXLivePusherObserverの[onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#af01be7a0bf0ed619cce63f49959ea8be) コールバックにおける**V2TXLivePusherStatistics.fps**のステータスデータを介して、現在、プッシュするビデオフレームレートを取得することができます。通常、毎秒15フレーム以上のビデオストリームを使用することで、スムーズな視聴が保証されます。標準的なプッシュのFPSが10フレーム以下の場合、視聴者は明らかに画面にラグが発生したように感じます。
@@ -33,20 +35,21 @@ MLVB SDKのV2TXLivePusherObserverの[onStatisticsUpdate](https://liteav.sdk.qclo
 MLVB SDKのV2TXLivePusherObserverの[onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#af01be7a0bf0ed619cce63f49959ea8be) コールバックにおける**V2TXLivePusherStatistics.appCpu**と**V2TXLivePusherStatistics.systemCpu**のステータスデータを介して、**現在のプッシュSDKのCPU使用状況**と**現在のシステムのCPU使用状況**を取得することができます。現在のシステム全体的のCPU使用率が80%を超える場合は、ビデオのキャプチャとコーディングがいずれも影響を受け、正常に機能することができません。CPU使用率が100%に達した場合は、キャスター自体に極めて大きなラグが発生しているため、視聴者はスムーズな視聴体験ができなくなります。
 
 - **2.2 CPUを消費しているものを確認**
-ライブストリーミングのAppでCPUを使用するのは、プッシュSDKだけではなく、弾幕、キラキラエフェクト、テキストメッセージのやり取りなども一定量のCPUを消費する可能性があり、これらはいずれも避けようがありません。プッシュSDKのCPU利用状況を測定したいだけの場合は、当社の[ツールキットDEMO](https://intl.cloud.tencent.com/document/product/1071/38147)を使用して観察と評価を行うことができます。
+ライブストリーミングAppでCPUを使用するのは、プッシュSDKだけではなく、弾幕、キラキラエフェクト、テキストメッセージのやり取りなども一定量のCPUを消費する可能性があり、これらはいずれも避けようがありません。プッシュSDKのCPU利用状況を測定したいだけの場合は、当社の[ツールキットDEMO](https://intl.cloud.tencent.com/document/product/1071/38147)を使用して観察と評価を行うことができます。
 
 - **2.3 高解像度を盲目的に追及しない**
 ビデオ解像度が高すぎても、必ずしも鮮明な画質が得られるとは限りません。まず高解像度の効果を発揮させるためには、高ビットレートと整合させる必要があります。多くの場合、低ビットレート高解像度の明瞭度は、高ビットレート低解像度には及びません。次に、約5インチの平均的なスマートフォン画面で1280 x 720の解像度にメリットを見出すことはできません。960 x 540の解像度との違いを明確に感じ得るのは、PCのフルスクリーンで表示した場合だけです。しかし、高解像度は、SDKのCPU使用率を著しく上昇させるため、通常、MLVB SDKにおけるV2TXLivePusherの[setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a2695806cb6c74ccce4b378d306ef0a02)を使用して**HD**レベルに設定してください。高解像度を盲目的に追跡しても意図する目標に到達しない場合があります。
 
+[](id:deal2)
 ## アップロードの渋滞問題の解決
 統計によると、ビデオクラウド顧客グループのライブストリーミングルームにおけるラグトラブルの80%以上は、キャスターのアップロードの渋滞が原因です。
 
 ### 1. キャスターへの自発的な促し
 解像度が重要なシーンでは、**「現在のネットワーク品質が非常に不良であるため、ルーターの近くに移動し、Wi-Fi信号を壁で隔てないことをお勧めする」**のが最良の選択であるというプロンプトを、適切なUIを介してキャスターに表示します。
-MLVB SDKのプッシュ機能ドキュメントには**イベント処理**の説明が含まれており、これを利用して実行することができます。推奨されるアプローチは次のとおりです。Appが短時間に複数のMLVB SDKの[V2TXLIVE_WARNING_NETWORK_BUSY](hhttps://intl.cloud.tencent.com/document/product/1071)イベントを継続的に受信する場合は、現在のネットワーク品質に注意を払うようキャスターのネットワークにプロンプトを表示します。これは、キャスターがビデオのパフォーマンスから上りの渋滞を認識できず、視聴者の通知またはAppの通知を受けて初めて認識できるためです。
+MLVB SDKのプッシュ機能ドキュメントには**イベント処理**の説明が含まれており、これを利用して実行することができます。推奨されるアプローチは次のとおりです。Appが短時間に複数のMLVB SDKの[V2TXLIVE_WARNING_NETWORK_BUSY](https://cloud.tencent.com/document/product/454/17246#.E8.AD.A6.E5.91.8A.E4.BA.8B.E4.BB.B6)イベントを継続的に受信する場合は、現在のネットワーク品質に注意を払うようキャスターのネットワークにプロンプトを表示します。これは、キャスターがビデオのパフォーマンスから上りの渋滞を認識できず、視聴者の通知またはAppの通知を受けて初めて認識できるためです。
 
 ### 2. 合理的なエンコードの設定
-推奨するエンコード設定は次のとおりです（詳細については、 [画質の設定](https://intl.cloud.tencent.com/document/product/1071)をご参照ください）。V2TXLivePusher内の [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a2695806cb6c74ccce4b378d306ef0a02)インターフェースから対応するグレードの設定を行うことができます。
+推奨するエンコード設定は次のとおりです（詳細については、 [画質の設定](https://intl.cloud.tencent.com/document/product/1071/41861)をご参照ください）。V2TXLivePusher 内の [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a2695806cb6c74ccce4b378d306ef0a02) インターフェースから対応するグレードの設定を行うことができます。
 
 |ユースケース |resolution |resolutionMode |
 | :------------------------  |  :------------------------ | :------------------------ |
@@ -56,6 +59,7 @@ MLVB SDKのプッシュ機能ドキュメントには**イベント処理**の�
 |マイク接続（小画面） |V2TXLiveVideoResolution480x360 |横画面または縦画面 |
 |ブルーレイライブストリーミング |V2TXLiveVideoResolution1920x1080 |横画面または縦画面 |
 
+[](id:deal3)
 ## 再生端末の最適化
 ![](https://main.qcloudimg.com/raw/c2c88d9bbf8f72c77eb778d7f2d5e993.png)
 
@@ -63,7 +67,7 @@ MLVB SDKのプッシュ機能ドキュメントには**イベント処理**の�
 上図に示すとおり、下りネットワークが不安定である場合、または下り帯域幅が滞る場合は、いずれも再生中に**飢餓時間**が出現します（App はこの期間中は再生可能なオーディオおよびビデオデータを取得できません）。視聴端末でのビデオラグを最小限に抑制し、この「飢餓時間」を無事にやり過ごすためには、Appにできるだけ多くのビデオデータをキャッシュさせる必要があります。しかし、Appにオーディオおよびビデオデータを多くキャッシュさせ過ぎると、新たな問題 **高ディレイ**が生じるおそれがあります。これはインタラクティブ性の要件が高いシナリオにとって非常に悪いニュースです。またディレイが修正、制御されない場合、ラグによって引き起こされたディレイには**累積効果**があり、再生時間が長くなればなるほど、ディレイも大きくなります。ディレイの修正が適切に行われるかどうかがプレーヤーの優劣を判断する重要な指標となります。したがって、**ディレイとスムーズさはバランスが重要**であり、低ディレイを強調しすぎると、軽微なネットワークの不安定性を引き起こし、顕著な再生端末のラグを発生させてしまいます。反対に、スムーズさを強調しすぎると、多くのディレイ（典型的なケースでは、HLS（m3u8）が20秒から30秒のディレイの発生により、スムーズな再生体験を実現します）が発生してしまうことになります。
 
 ### 2. 的を絞った最適化計画
-マルチストリーム制御処理の知識が充分になくとも、より良い再生体験を最適化できるようにするため、Tencent Cloud MLVB SDKは、複数バージョンでの改良を経て、一連の自動調整技術が最適化されており、それをベースとして、より優良な[ディレイ制御方法](https://intl.cloud.tencent.com/document/product/1071)が公開されています。 V2TXLivePlayerの [setCacheParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#a8a4f8f8e220a6e4aa2a04ca3e866efcb)で設定することができます。
+マルチストリーム制御処理の知識が充分になくとも、より良い再生体験を最適化できるようにするため、Tencent Cloud MLVB SDKは、複数バージョンでの改良を経て、一連の自動調整技術が最適化されており、それをベースとして、3種類の優良な[遅延制御スキーム](https://intl.cloud.tencent.com/document/product/1071/38160)がリリースされています。V2TXLivePlayerの[setCacheParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#a8a4f8f8e220a6e4aa2a04ca3e866efcb) で設定することができます。
 
 - **自動モード**：主なシーンが確定していない場合は、このモードを直接選択できます。
 >?このモードでは、充分にスムーズな状況で視聴者とキャスター間の遅延を最小限に抑えることを保証し、優れたインタラクティブ体験を確保するために、プレーヤーは現在のネットワーク状況に応じて、遅延を自動的に調整します（デフォルトでは、プレーヤーは1秒～5秒の間隔で遅延の大きさを自動的に調整しますが、setCacheParamsを介してデフォルト値を変更することもできます）。
