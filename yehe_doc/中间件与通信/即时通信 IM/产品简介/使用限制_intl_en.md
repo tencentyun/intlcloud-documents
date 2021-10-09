@@ -55,7 +55,7 @@
         <tr>
             <td  rowspan="2">User relationship chain</td>
             <td>Friends and friend groups</td>
-            <td><ul style="margin:0;"><li>A single user can have up to 3,000 friends.</li><li>The maximum number of pending friend requests supported is 100.</li><li>The maximum number of friend lists supported is 32.</li><li>The maximum length of a friend list name is 30 characters.</li><li>The maximum length of friend remarks is 96 characters.</li><li>WebIM SDK does not support friend relationship chain.</li></ul></td>
+            <td><ul style="margin:0;"><li>A single user can have up to 3,000 friends.</li><li>The maximum number of pending friend requests supported is 100.</li><li>The maximum number of friend lists supported is 32.</li><li>The maximum length of a friend list name is 30 characters.</li><li>The maximum length of friend remarks is 96 characters.</li><li>WebIM SDK supports friend relationship chain starting from v2.13.0.</li></ul></td>
         </tr>
         <tr>
             <td>Blocklist</td>
