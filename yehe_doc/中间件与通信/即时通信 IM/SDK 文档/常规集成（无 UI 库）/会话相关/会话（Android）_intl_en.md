@@ -1,7 +1,7 @@
 ﻿
 ## Displaying the Conversation List
 After logging in to the app, you can display a list of recent conversions like WeChat. The entire display process includes the following steps: **pulling the conversation list**, **processing the change notifications**, and **updating the UI content (including the unread count)**. This document describes these steps in detail.
-<img src="https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/res/Record_2020-05-12-20-05-54-getConvList-android.gif" width="40%">
+
 
 ### Pulling the conversation list
 After logging in to the app, you can call [getConversationList()](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a1bb5ba2beecb4f68146e7f664124fd8b) to pull the local conversation list and display the list on the UI. The conversation list is a list of [V2TIMConversation](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) objects, and every object represents a conversation.
@@ -143,4 +143,4 @@ Locally stored conversations may not always be consistent with those stored in t
 Conversations that are pulled by the `getConversationList` API may have already been added to the data source of the UI conversation list through the `onNewConversation` callback API. Therefore, to avoid adding the same conversation repeatedly, you need to find and replace the same conversations based on [getConversationID](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ae599509f3d5e39bbcfb176b8976ff620).
 
 ### 4. Does the IM SDK support the feature of pinning a conversation to the top?
-The IM SDK does not provide the feature of pinning a conversation to the top, but supports re-sequencing of conversations by means of encapsulation. For more information, see the implementation of TUIKit. Such pinning setting takes effect only on the local device, and will not be stored in the cloud.
+IM SDK supports pinning a conversation to the top and sync to the cloud starting from v5.3.425.
