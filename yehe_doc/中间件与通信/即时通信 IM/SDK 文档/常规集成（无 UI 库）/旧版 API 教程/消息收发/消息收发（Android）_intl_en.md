@@ -810,7 +810,7 @@ Currently, file and audio `Elem` objects might not be transferred in the order t
 ### Online messages
 
 In some scenarios, you need to send online messages, which can only be received when a user is online. If the user is not online when the messages are sent, the user will not see them upon the next login. Online messages can be used for notifications. However, online messages will not be stored or included in the unread count. The API for sending online messages is similar to `sendMessage`.
-
+If you don't want to receive offline pushes, you can call the `setOfflinePushSettings` and set the `TIMOfflinePushSettings` and `setEnabled(false)` parameters to disable push. 
 >! In versions earlier than 2.5.3, online messages apply only to C2C conversations. In version 2.5.3 or later, online messages apply to group conversations, excluding audio-video chat rooms (AVChatRoom) and broadcasting chat rooms (BChatRoom).
 
 ```
