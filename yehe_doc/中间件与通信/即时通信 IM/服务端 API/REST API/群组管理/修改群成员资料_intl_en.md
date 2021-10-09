@@ -108,7 +108,7 @@ Set a specified group member's muting period.
     "ShutUpTime":86400 // Muting period for the specified user, in seconds
 }
 ```
-
+Private groups (i.e., same as work groups in the new version) do not support muting members. 
 ### Request fields
 
 | Field | Type | Required | Description |
