@@ -1,7 +1,7 @@
 ## 购买 CVM 实例的账号限制
 
 - 用户需注册腾讯云账号，注册指引可参考 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985)。
-- 用户需进行实名认证，未进行实名认证的用户无法购买中国境内的云服务器实例。资质认证指引可参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
+- 用户需进行实名认证，资质认证指引可参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
 - 创建按量计费的云服务器时系统会冻结一个小时的主机费用，请确保账号有足够余额以支付订单。
 
 ## CVM 实例的使用限制
@@ -12,7 +12,7 @@
 
 ## CVM 实例的购买限制
 
-- 每个用户在每个可用区可购买的按量计费 CVM 实例的**总数量**为30台。
+- 每个用户在每个可用区可购买的按量计费云服务器实例的**总数量**为30台或60台不等，具体视云服务器购买页实际情况而定。
 - 更多详情请参考 [CVM 实例购买限制](https://intl.cloud.tencent.com/document/product/213/2664)。
 
 
@@ -25,31 +25,11 @@
 
 ## 弹性公网 IP 相关限制
 
-#### 配额限制
-
-| 资源 | 限制 |
-|---------|:---------:|
-| 每个腾讯云账户每个地域（Region）配额弹性公网 IP 个数 | 20个 |
-| 每个腾讯云账户各个地域每天申购次数	 | 配额弹性公网 IP 个数 * 2次 |
-| 解绑 EIP 时，每个账户每天可免费重新分配公网 IP 的次数 | 10次 |
-
-#### 云服务器绑定公网 IP 限制
-
-从2019年9月18日（含）起，根据 CPU 配置的差异，单台云服务器支持绑定的公网 IP 数量上限将会发生变化，具体数额如下表所示：
->? 在2019年9月18日零点前购买的云服务器不受此限制，其支持绑定的公网 IP 数量等于您的服务器支持的 [内网 IP 数量](https://intl.cloud.tencent.com/document/product/576/18527)。
->
-
-| 云服务器的 CPU 数 | 支持绑定的公网 IP 数量上限（含普通公网 IP 和弹性公网 IP） |
-|---------|---------|
-| CPU：1 - 5 | 2 |
-| CPU：6 - 11 | 3 |
-| CPU：12 - 17 | 4 |
-| CPU：18 - 23 | 5 |
-| CPU：24 - 29 | 6 |
-| CPU：30 - 35 | 7 |
-| CPU：36 - 41 | 8 |
-| CPU：42 - 47 | 9 |
-| CPU：≥ 48 | 10 |
+<table>
+	<tr><th>限制类型</th><th>限制说明</th></tr>
+	<tr><td>弹性公网 IP 配额限制</td><td>详情请参见 <a href="https://cloud.tencent.com/document/product/1199/41648#eip-.E9.85.8D.E9.A2.9D.E9.99.90.E5.88.B6">EIP 配额限制</a>。</td></tr>
+	<tr><td>云服务器绑定公网 IP 限制</td><td>详情请参见 <a href="https://cloud.tencent.com/document/product/1199/41648#.E7.BB.91.E5.AE.9A.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E9.99.90.E5.88.B6">绑定云服务器限制</a>。</td></tr>
+</table>
 
 ## 网卡相关限制
 
@@ -341,10 +321,8 @@
     <td  >8</td>
    </tr>
    <tr >
-    <th  rowspan="7" style = "text-align:center;">GPU 机型</th>
-   </tr>
-   <tr >
-    <th class="xl71" x:str style = "text-align:center;">GPU 计算型 GN6</th>
+    <th  rowspan="6" style = "text-align:center;">GPU 机型</th>
+     <th class="xl71" x:str style = "text-align:center;">GPU 计算型 GN6</th>
     <td >-</td>
     <td >-</td>
     <td >-</td>
@@ -421,6 +399,20 @@
      <td  >-</td>
     <td >8</td>
    </tr>
+   <tr  >
+    <th style = "text-align:center;">FPGA 机型</th>
+    <th style = "text-align:center;">FPGA 加速型 FX4</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >6</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >8</td>
+   </tr>
    <tr >
     <th rowspan="3" style = "text-align:center;">大数据型</th>
     <th  style = "text-align:center;">大数据型 D3</th>
@@ -445,8 +437,25 @@
      <td  >-</td>
      <td  >-</td>
      <td  >-</td>
-    <td>8</td>
-    <td>8</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">大数据型 D1</th>
+    <td >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >6</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th colspan="2" style = "text-align:center;">黑石物理服务器2.0</th>
+    <td colspan="10" style = "text-align:center;">不支持绑定弹性网卡</td>
    </tr>
   </table>
 :::
@@ -891,15 +900,6 @@
 ## 带宽相关限制
 
 - 出网带宽上限（下行带宽）：
- - 2020年2月24日00:00以前创建的机器按以下规则执行： 
-<table>
-<tr><th rowspan="2">网络计费模式</th><th colspan="2">实例</th><th rowspan="2">带宽上限的可设置范围（Mbps）</th></tr>
-<tr><th>实例计费模式</th><th>实例配置</th></tr>
-<tr><td>按流量计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
-<tr><td>按带宽计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
-<tr><td>共享带宽</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
-</table>
-
  - 2020年2月24日00:00以后创建的机器按以下规则执行：
 <table>
 <tr><th rowspan="2">网络计费模式</th><th colspan="2">实例</th><th rowspan="2">带宽上限的可设置范围（Mbps）</th></tr>
@@ -909,6 +909,16 @@
 <tr><td>共享带宽</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
 </table>
 
+ - 2020年2月24日00:00以前创建的机器按以下规则执行： 
+<table>
+<tr><th rowspan="2">网络计费模式</th><th colspan="2">实例</th><th rowspan="2">带宽上限的可设置范围（Mbps）</th></tr>
+<tr><th>实例计费模式</th><th>实例配置</th></tr>
+<tr><td>按流量计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>按带宽计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>共享带宽</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
+</table>
+
+
 - 入网带宽上限（上行带宽）：
 	- 用户购买的固定带宽大于10Mbps时，腾讯云会分配与购买的带宽相等的外网入方向带宽。
 	- 用户购买的固定带宽小于10Mbps时，腾讯云会分配10Mbps外网入方向带宽。
@@ -917,7 +927,7 @@
 
 <table>
 	<tr><th>限制类型</th><th>限制说明</th></tr>
-	<tr><td>弹性云盘能力</td><td>自2018年5月起，随云服务器一起购买的数据盘均为弹性云硬盘，支持从云服务器上卸载并重新挂载。 本功能在所有 <a href="https://intl.cloud.tencent.com/document/product/213/35071">可用区</a> 均支持。</td></tr>
+	<tr><td>弹性云盘能力</td><td>自2018年5月起，随云服务器一起购买的数据盘均为弹性云硬盘，支持从云服务器上卸载并重新挂载。 本功能在所有 <a href="https://cloud.tencent.com/document/api/213/15707">可用区</a> 均支持。</td></tr>
 	<tr><td>云硬盘性能限制</td><td>I/O 性能同时生效。</br>例如，1TB的 SSD 云硬盘，最大随机 IOPS 能达到26,000，意味着读 IOPS 和写 IOPS 均可达到该值。同时，由于多个性能限制，该例中使用 block size 为4KB/8KB的 I/O 可达到 IOPS 最大值，但使用 block size 为16KB的 I/O 则无法达到 IOPS 最大值（吞吐已经达到了260MB/s的限制）。</td></tr>
 	<tr><td>单台云服务器可挂载弹性云硬盘数量</td><td>最多20块。</td></tr>
 	<tr><td>单地域下快照配额</td><td>64 + 地域内云硬盘数量 * 64（个）。</td></tr>
@@ -925,7 +935,9 @@
 	<tr><td>快照回滚限制</td><td>快照数据只能回滚到创建快照的源云硬盘上。</td></tr>
 	<tr><td>快照创建云硬盘类型限制</td><td>只有数据盘快照才能用来创建新的弹性云硬盘。</td></tr>
 	<tr><td>快照创建云硬盘大小限制</td><td>使用快照创建的新云硬盘容量必须大于或等于快照源云硬盘的容量。</td></tr>
+	<tr><td>云硬盘欠费回收</td><td>若包年包月的弹性云硬盘到期后七天内未续费，会回收至回收站。进入回收站后，不主动解除该云硬盘与云服务器的挂载关系。具体的回收机制请参考 <a href="https://intl.cloud.tencent.com/document/product/362/31625">欠费说明</a>。 </td></tr>
 </table>
+
 
 
 ## 安全组相关限制
@@ -935,7 +947,7 @@
 - 每个用户在每个地域每个项目下最多可设置50个安全组。
 - 一个安全组入站方向或出站方向的访问策略，各最多可设定100条。
 - 一个云服务器可以加入多个安全组，一个安全组可同时关联多个云服务器。
-- **基础网络**内云服务器绑定的安全组**无法过滤**来自（或去往）腾讯云上的关系型数据库（MySQL、MariaDB、SQL Server、PostgreSQL）、NoSQL 数据库（Redis、Memcached）的数据包。如果您需要过滤这类实例的流量，您可以使用 iptables 实现。
+- **基础网络**内云服务器绑定的安全组**无法过滤**来自（或去往）腾讯云上的关系型数据库（MySQL、MariaDB、SQL Server、PostgreSQL）、NoSQL 数据库（Redis、Memcached）的数据包。如果您需要过滤这类实例的流量，您可以使用 iptables 或者购买云防火墙产品实现。
 - 相关配额限制如下表所示：
 <table>
 <tr><th>功能描述</th><th>限制</th></tr>
@@ -950,7 +962,7 @@
 
 | 资源| 限制（个） |
 |---------|---------|
-| 每个账号每个地域内的私有网络个数 | 20	 |
+| 每个账号每个地域内的私有网络个数 | 20 |
 | 每个私有网络内的子网数 | 100 |
 | 每个私有网络支持关联的基础网络主机个数 | 100 |
 | 每个私有网络内的路由表个数 | 10 |

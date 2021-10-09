@@ -107,7 +107,7 @@ https://xxxxxx/v4/group_open_http_svc/modify_group_member_info?sdkappid=88888888
     "ShutUpTime":86400 // 指定群成员的禁言时间，单位为秒
 }
 ```
-
+>?Private 群（同新版本中的 Work（好友工作群））不支持禁言群用户。
 ### 请求包字段说明
 
 | 字段 | 类型 | 属性 | 说明 |
