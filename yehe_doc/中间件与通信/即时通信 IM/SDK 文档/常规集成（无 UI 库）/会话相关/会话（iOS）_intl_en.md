@@ -136,5 +136,4 @@ Locally stored conversations may not always be consistent with those stored in t
 Conversations that are pulled by the `getConversationList` API may have already been added to the data source of the UI conversation list through the `onNewConversation` callback API. Therefore, to avoid adding the same conversation repeatedly, you need to find and replace the same conversations based on [getConversationID](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMConversation.html#a89d34fa0d0d62e831c27ae2a75a37fac).
 
 ### 4. Does the IM SDK support the feature of pinning a conversation to the top?
-The IM SDK does not provide the feature of pinning a conversation to the top, but supports re-sequencing of conversations by means of encapsulation. For more information, see the implementation of TUIKit. Such pinning setting takes effect only on the local device, and will not be stored in the CVM instance.
-
+IM SDK supports pinning a conversation to the top and sync to the cloud starting from v5.3.425.
