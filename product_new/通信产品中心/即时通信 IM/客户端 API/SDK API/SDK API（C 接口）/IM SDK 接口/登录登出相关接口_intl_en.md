@@ -15,7 +15,7 @@ TIM_DECL int TIMLogin(const char* user_id, const char* user_sig, TIMCommCallback
 |-----|-----|-----|
 | user_id | const char\* | UserID of a user. |
 | user_sig | const char\* | UserSig of a user. |
-| cb | TIMCommCallback | Callback function for notifying whether login was successful. For more information about the callback function definition, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550). |
+| cb | TIMCommCallback | Callback function for notifying whether login was successful. If the ticket expires during login, the `ERR_USER_SIG_EXPIRED (6206)` or `ERR_SVR_ACCOUNT_USERSIG_EXPIRED (70001)` error will be returned, and a new `userSig` will be generated to log in again. For callback function definition, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550). |
 | user_data | const void\* | User-defined data. The IM SDK only transfers the user data to the callback function cb without processing the data. |
 
 **Return values**
