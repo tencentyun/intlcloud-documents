@@ -1,5 +1,5 @@
-## 適用ケース
-リモート教育、ステージライブストリーミング、ビデオミーティング、リモートでの損失評価、金融に関する録音・録画、オンライン医療などのユースケースでは、証明取得、品質検査、審査、アーカイブおよび再生などのニーズを考慮して、ビデオミーティングやインタラクティブなライブストリーミングプロセスの全体をレコーディングまたは保存する必要が度々出てきます。
+## ユースケース
+リモート教育、ステージCSS、ビデオ会議、リモート確定損失、金融二重レコーディング、オンライン医療などのユースケースでは、証明取得、品質検査、審査、保存、再生などのニーズがあり、すべてのビデオ通話やILVBプロセスをレコーディングまたは保存する必要がよくあります。
 
 TRTCのクラウドレコーディングは、ルームの各ユーザーのオーディオ・ビデオストリーミングを独立した一つのファイルにレコーディングします。
 ![](https://main.qcloudimg.com/raw/7820cdafe40fabc38653bc53795412d2.png)
@@ -20,13 +20,13 @@ TRTCのクラウドレコーディングは、ルームの各ユーザーのオ�
 ### レコーディング形式の選択
 
 TRTCのクラウドレコーディングサービスは、「Global Auto-Recording」および「指定ユーザーレコーディング」という2種類の異なるレコーディング形式を提供しています。
-![](https://main.qcloudimg.com/raw/92549e700bb4103ea38db8bccd402414.png)
+![](https://main.qcloudimg.com/raw/d8084b7aa472b95ec21448703e4b6a49.png)
 
 - **Global Auto-Recording**
   各TRTCルームの各ユーザーのアップストリームのオーディオとビデオは自動的にレコーディングされます。レコーディングタスクの開始と停止は自動的に行われるため、心配する必要はありません。操作は比較的シンプルで使いやすいです。具体的な使用方法については、[方法1：Global Auto-Recording](#autoRecord)をご参照ください。
 
 - **指定ユーザーレコーディング**
-  一部のユーザーのオーディオ・ビデオストリーミングのレコーディングしか指定できません。このことは、クライアントのSDK APIまたはサーバーのREST APIを通じて制御するため、追加の開発作業が必要になります。具体的な使用方法は、 [方法二：指定ユーザーレコーディング（SDK API）](#recordSDKAPI) および [方法三：指定ユーザーレコーディング（REST API）](#recordRESTAPI)をご覧ください。
+  一部ユーザーのオーディオ・ビデオストリーミングのみをレコーディングするように指定できます。これには、クライアントのSDKAPIまたはサーバーのRESTAPIを介して制御する必要があり、追加の開発作業が必要になります。具体的な使用方法については、[方法2：指定ユーザーレコーディング（SDK API）](#recordSDKAPI)および[方法3：指定ユーザーレコーディング（REST API）](#recordRESTAPI)をご参照ください。
 
 
 [ ](id:fileFormat)
@@ -36,27 +36,27 @@ TRTCのクラウドレコーディングサービスは、「Global Auto-Recordi
 クラウドレコーディングでは、HLS、MP4、FLV 、AACという4種類の異なるファイルフォーマットをサポートしています。4種類のフォーマットの違いと適用ケースを表形式でリストアップしているので、ご自分の業務のニーズに合わせて選択することができます。
 
 <table>
-<tr><th>パラメータ</th><th>パラメータの説明</th></tr>
+<tr><th>パラメータ</th><th>パラメータ説明</th></tr>
 <tr>
 <td>ファイルタイプ</td>
 <td>以下のファイルタイプをサポートします。<ul style="margin:0"><li><b>HLS</b>：このファイルタイプは、ほとんどのブラウザのオンライン再生をサポートしており、ビデオの再生シーンに適しています。このファイルタイプを選択したときは、ブレークポイントでの連続レコーディングをサポートし、単一ファイルの最大時間が制限されません。</li><li><b>FLV</b>：このファイルタイプは、ブラウザでのオンライン再生をサポートしていませんが、フォーマットはシンプルでフォールトトレラント性に優れています。レコーディングしたファイルをVODプラットフォームに保存する必要がない場合は、このファイルタイプを選択し、レコーディングが完了したらすぐにレコーディングファイルをダウンロードして、ソースファイルを削除できます。</li><li><b>MP4</b>：このファイルタイプはWebブラウザのオンライン再生をサポートしていますが、このフォーマットのフォールトトレラント性は劣ります。ビデオ通話のプロセスでは、どのようなパケットロスが生じても、レコーディングファイルの再生画質に影響します。</li><li><b>AAC</b>：オーディオレコーディングだけ必要な場合は、このファイルタイプを選択しても構いません。</li></td>
 </tr>
 <tr>
 <td nowrap="nowrap">1ファイルの最大時間（分）</td>
-<td><ul style="margin:0"><li/>実際の業務ニーズに応じて1ビデオファイルの最大時間制限を設定できます。制限時間を超過すると、システムはビデオファイルを自動的に分単位で分割します。数値範囲は5～120です。<li/>この【ファイルタイプ】を【HLS】に設定するとき、1ファイルの最大時間を制限しなければ、そのパラメータは無効になります。</td>
+<td><ul style="margin:0"><li/>実際の業務ニーズに応じて、1ビデオファイルの最大時間制限を設定できます。制限時間を超過すると、システムはビデオファイルを自動的に分単位で分割します。数値範囲は1～120です。<li/>この【ファイルタイプ】を【HLS】に設定するとき、1ファイルの最大時間を制限しなければ、そのパラメータは無効になります。</td>
 </tr>
 <tr>
 <td>ファイル保存時間（日）</td>
-<td>実際の業務ニーズに応じて、ビデオファイルをVODプラットフォームに保存する日数を設定します。単位は日で、数値範囲は0～1080です。期限後は、ファイルはVODプラットフォームによって自動的に削除され、復元できなくなります。0は永続ストレージを表します。</td>
+<td>実際の業務ニーズに応じて、ビデオファイルをVODプラットフォームの日数の間保存します。日数単位で数値範囲は0～1500。期限後は、ファイルはVODプラットフォームによって自動的に削除され、回復できなくなります。 0は永久保存を表します。</td>
 </tr>
 <tr>
 <td>連続レコーディングタイムアウト（秒）</td>
-<td><li/>【ファイルタイプ】を【HLS】に設定したときのみ、このパラメータは有効になります。<li/>デフォルトでは、通話（またはライブストリーミング）プロセスが、ネットワークの変動またはその他の原因によって切断された場合、レコーディングファイルは複数のファイルに分割されます。「1回の通話（またはライブストリーミング）で1つしか再生リンクが生成されない」ようにしたい場合は、実情に応じて連続レコーディングタイムアウト時間を設定できます。切断間隔が設定した連続レコーディングタイムアウト時間を超えない場合、1回の通話（またはライブストリーミング）で1ファイルしか生成されません。単位は秒で、数値範囲は1～1800です。0は、ブレークポイント後にレコーディングが再開されないことを表します。</td>
+<td><ul style="margin:0"><li/>デフォルトでは、通話（またはライブストリーミング）プロセスが、ネットワークの変動またはその他の原因によって切断された場合、レコーディングファイルは複数のファイルに分割されます。<li/>「1回の通話（またはライブストリーミング）で1つしか再生リンクが生成されない」ようにしたい場合は、実情に応じて連続レコーディングタイムアウト時間を設定できます。切断間隔が設定した連続レコーディングタイムアウト時間を超えない場合、1回の通話（またはライブストリーミング）で1ファイルしか生成されません。ただし、レコーディングファイルは連続レコーディング時間がタイムアウトしてからでなければ受信できません。<li/>単位は秒で、数値範囲は1～1800です。0は、ブレークポイント後にレコーディングが再開されないことを表します。</ul></td>
 </tr>
 </table>
 
 
->? HLSは最長で30分間の継続レコーディングをサポートし、「1講義に1個のみの再生接続」が可能で、大多数のブラウザのオンライン視聴をサポートしており、オンライン教育におけるビデオ再生のユースケースにとても適しています。
+>? HLSは最長で30分間の連続レコーディングをサポートしており、「1講義に1つしか再生リンクが生成されないように」することができます。また、ほとんどのブラウザのオンライン視聴をサポートしており、eラーニングにおけるビデオ再生のユースケースに大変適しています。
 
 [ ](id:storageLocation)
 
@@ -68,14 +68,14 @@ TRTCクラウドレコーディングファイルは、デフォルトではTenc
   メインアプリとサブアプリとは、VODの1種類のリソース分割方式です。メインアプリはVODのメインアカウントに相当し、サブアプリは複数作成できます。各サブアプリは、ルートアカウント下の1個のサブアカウントに相当し、独立したリソース管理を備えています。ストレージ領域では、その他のサブアプリと相互に隔離することができます。
 
 - **VODサービスのサブアプリケーションを有効にする方法とは。**
-  ドキュメント [「VODサブアプリケーションを有効にする方法」](https://intl.cloud.tencent.com/document/product/266/33987) にもとづき、新規サブアプリケーションを追加することができます。このステップではVOD[コンソール](https://console.cloud.tencent.com/vod)に移動して操作する必要があります。
+  ドキュメント[「VODサブアプリケーションを有効にする方法」](https://intl.cloud.tencent.com/document/product/266/33987) にもとづき、新規サブアプリケーションを追加することができます。このステップではVOD[コンソール](https://console.cloud.tencent.com/vod)に移動して操作する必要があります。
 
 [ ](id:recordCallback)
 
 ###  レコーディングコールバックの設定
 - **レコーディングコールバックアドレス：**
   新しいファイルの[ランディング通知](#callback)をリアルタイムで受信する必要がある場合は、サーバーがレコーディングファイルのコールバックを受け取るアドレスをここに入力できます。このアドレスは、HTTP（またはHTTPS）プロトコルに適合する必要があります。新しいレコーディングファイルが生成されたら、Tencent Cloudはこのアドレスを介して、サーバーに通知を送信します。
-![](https://main.qcloudimg.com/raw/9ab29e9feb17148c0179d3ebebae24d7.png)
+![](https://main.qcloudimg.com/raw/9b9beab813d929a7a364eb2d8ab045ba.png)
 	
 - **レコーディングコールバックキー：**
 コールバックキーは、コールバックイベントの受信時に署名認証を生成するために使用します。このキーはアルファベットの大文字・小文字と数字で構成し、32文字を超えないようにしてください。使用については、[レコーディングイベントパラメータの説明](https://intl.cloud.tencent.com/document/product/267/38082)をご参照ください。
@@ -115,12 +115,12 @@ TRTCでは、[Global Auto-Recording](#autoRecord)、[指定ユーザーレコー
 - **マルチ画面のミックス**
   Global Auto-Recordingモードでのクラウドミクスストリーミングには、「サーバーREST API方式」と「クライアントSDK API方式」という2つの方式があります。この2つの方式を混合して使用しないでください。
   - [サーバーREST APIミクスストリーミング方式](#recordRESTAPI)：お客様のサーバーからAPI呼び出しを起動する必要があります。クライアントのプラットフォームバージョンの制限は受けません。
-  - [クライアントSDK APIミクスストリーミング方式](#recordSDKAPI)：直接クライアントからミクスストリーミングを開始できます。現在サポートしているのは、iOS、Android、Windows、Mac、Electronなどのプラットフォームであり、Webブラウザは現在サポートしていません。
+  - [クライアントSDK APIミクスストリーミング方式](#recordSDKAPI)：直接クライアントからミクスストリーミングを開始できます。現在サポートしているのは、iOS、Android、Windows、Mac、Electronなどのプラットフォームであり、WeChat Mini ProgramおよびWebブラウザは現在サポートしていません。
 
 - **レコーディングファイルの命名**
-  - キャスターが入室時に[userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce))パラメータを指定した場合、レコーディングファイルは`userDefineRecordId_streamType_開始時間_終了時間`で命名されます（streamTypeにはmainおよびauxの2つの値があり、mainはメインストリームを、auxはサブストリームを表します。サブストリームは通常、画面共有に利用されます）。
-  - キャスターが入室時に[userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)パラメータを指定していないが、[streamId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167)パラメータを指定している場合は、レコーディングファイルは`streamId_開始時間_終了時間`によって命名されます。
-  - キャスターが入室時に[userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)パラメータも、[streamId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167)パラメータも指定していない場合、レコーディングファイルは、`sdkappid_roomid_userid_streamType_開始時間_終了時間`によって命名されます（streamTypeにはmainおよびauxの2つの値があり、mainはメインストリームを、auxはサブストリームを表します。サブストリームは通常、画面共有に利用されます）。
+  - キャスターが入室時に [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) パラメータを指定した場合、レコーディングファイルは `userDefineRecordId_streamType_開始時刻_終了時刻` で命名されます（streamTypeにはmainおよびauxの2つの値があり、mainはメインパスを、auxはサブパスを表します。サブパスは通常、画面共有に利用されます）。
+  - キャスターが入室時に [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) パラメータを指定していなかったが、 [streamId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) パラメータを指定していた場合は、レコーディングファイルは`streamId_開始時刻_終了時刻` で命名されます。
+  - キャスターが入室時に [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) パラメータ、 [streamId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) パラメータをいずれも指定していない場合は、レコーディングファイルは `sdkappid_roomid_userid_streamType_開始時刻_終了時刻` で命名されます（streamTypeにはmainおよびauxの2つの値があり、mainはメインパスを、auxはサブパスを表します。サブパスは通常、画面共有に利用されます）。
 
 - **サポート済みのプラットフォーム**
   お客様側のサーバーで制御し、クライアント側プラットフォームの制限は受けません。
@@ -131,19 +131,19 @@ TRTCでは、[Global Auto-Recording](#autoRecord)、[指定ユーザーレコー
 
 TRTC SDKが提供するいくつかのAPIインターフェースとパラメータを呼び出すことで、クラウドミクスストリーミング、クラウドレコーディング、Relayed live streamingという3つの機能が実装可能です。
 
-| クラウド機能 | 開始方法とは。 | 停止方法とは。 |
+| クラウド機能 | 開始方法とは。  | 停止方法とは。 |
 | :------- | :------- | :------- |
 | クラウドレコーディング | 入室時にパラメータ`TRTCParams`の中の`userDefineRecordId`フィールドを指定します   | キャスター退室時に自動停止します                                           |
-| クラウドミクスストリーミング | SDK API  [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93)を呼び出して、クラウドミクスストリーミングを起動します | ミクスストリーミングを開始したキャスターの退室後、ミクスストリーミングが自動停止、または途中で[setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93)を呼び出し、パラメータを`null/nil`に設定して手動停止します |
+| クラウドミクスストリーミング| SDK API  [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) を呼び出してクラウドミクスストリーミングを起動 | クラウドミクスを発出したキャスターが退室したら、ミクスストリーミングは自動的に停止するか、途中で [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) を呼び出してパラメータを `null/nil` 手動停止に設定します |
 | Relayed live streaming | 入室時にパラメータ`TRTCParams`の中の`streamId`フィールドを指定します           | キャスター退室時に自動停止します                                           |
 
-![](https://main.qcloudimg.com/raw/2f92f978c2ca76d001891e645905e8f9.png)
+![](https://main.qcloudimg.com/raw/7daf8430ca74adeec019c10fc384a48e.gif)
 
 - **コンソールでの設定**
   このレコーディング方法を使用したい場合は、コンソールの[レコーディング形式の選択](#recordType)のときに、「指定ユーザーレコーディング」に設定してください。
 
 - **レコーディングタスクの開始**
-  キャスターが入室時に入室パラメータ[TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams)の[userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)のフィールドを指定すると、そのキャスターのアップストリームのオーディオ・ビデオデータはクラウドレコーディングされます。そのパラメータのキャスターを指定しないと、レコーディングタスクはトリガーされません。
+  キャスターが入室時に入室パラメータ [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) の [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) フィールドを指定すると、その後、同キャスターのアップストリームのオーディオ・ビデオデータがクラウドレコーディングされます。このパラメータを指定していないキャスターはレコーディングタスクを起動することはありません。
 <dx-codeblock>
 ::: Objective-C Objective-C
 // サンプルコード：レコーディングユーザーrexchangのオーディオ・ビデオストリーミングを指定し、ファイルidを1001_rexchangにします
@@ -170,7 +170,7 @@ param.userDefineRecordId = @"1001_rexchang";  // レコーディングID。そ�
   レコーディングファイルは、`userDefineRecordId_開始時間_終了時間` のフォーマットで命名されます。
 
 - **サポート済みのプラットフォーム**
-  [iOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html)などの端末でレコーディング制御の開始をサポートしていますが、現時点ではWebブラウザからの制御はサポートしていません。
+  [iOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html)などの端末でレコーディング制御の開始をサポートしていますが、現時点ではWeChat Mini ProgramおよびWebブラウザからの制御はサポートしていません。
 
 [](id:recordRESTAPI)
 
@@ -184,9 +184,9 @@ TRTCのサーバーはREST APIのペア（ [StartMCUMixTranscode](https://intl.c
 | クラウドミクスストリーミング |  [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761)を呼び出す時に`LayoutParams` パラメータを指定すれば、レイアウトテンプレートとレイアウトパラメータを設定できます | 全ユーザーが退室した後自動停止、または途中で[StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760)を呼び出して手動停止します |
 | Relayed live streaming |  [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761)を呼び出す時に`OutputParams.StreamId`パラメータを指定すれば、CDNへのRelayed live streamingを起動できます | 自動停止、または途中で[StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) を呼び出して停止します |
 
->? これらのREST APIに対する制御は、TRTCクラウドサービスのコアとなるミクスストリーミングモジュール(MCU)であり、MCUミクスストリーミング後の結果はレコーディングシステムとライブCDNに送信されるため、APIの名前は`Start/StopMCUMixTranscode`と呼ばれます。したがって機能面から言うと、`Start/StopMCUMixTranscode`はミクスストリーミングの機能を実装できるだけでなく、クラウドレコーディングとRelayed live streaming CDNの機能も実装できます。
+>? これらのREST APIに対する制御は、TRTCクラウドサービスの中のコアのミクスストリーミングモジュール（MCU）となり、MCU ミクスストリーミング後の結果はレコーディングシステムとライブCDNに送信されるため、APIの名前を `Start/StopMCUMixTranscode`としています。このため、機能の点からいうと、`Start/StopMCUMixTranscode` はミクスストリーミングの機能を実装できるだけでなく、クラウドレコーディングとRelayed live streaming CDNの機能も実装できます。
 
-![](https://main.qcloudimg.com/raw/7daf8430ca74adeec019c10fc384a48e.gif)
+![](https://main.qcloudimg.com/raw/65ef546c0e424af77f7d20f23aa1d363.gif)
 
 - **コンソールでの設定**
   このレコーディング方法を使用したい場合は、コンソールの[レコーディング形式の選択](#recordType)のときに、「指定ユーザーレコーディング」に設定してください。
@@ -261,7 +261,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 
 Tencent Cloudは、レコーディングおよびレコーディング関連のイベントを、設定したコールバックアドレスを介して、サーバーにプッシュします。コールバックメッセージの例を次の図に示します。
 ![](https://main.qcloudimg.com/raw/483dba536acd022f93af3ca5ff6cd74a.png)
-下表のフィールドによって、現在のコールバックが対応する通話（またはライブストリーミング）を特定できます。
+下表のフィールドによって、現在のコールバックがどの通話（またはCSS）に対応するかを確定することができます。
 
 <table>
 <tr>
@@ -281,7 +281,7 @@ Tencent Cloudは、レコーディングおよびレコーディング関連の�
 </tr><tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/66d50d985be81cae9698fae3ffa40f40.png" style="box-shadow: 0 0 0px #ccc;"></td>
 <td>stream_param.userdefinerecordid</td>
-<td>カスタムフィールド。TRTCParamsの<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce">userDefineRecordId</a>フィールドを設定することで指定できます。</td>
+<td>カスタムフィールド。 TRTCParams の <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce">userDefineRecordId</a> フィールドを設定することで指定できます。</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/d1cb894a93a1d69cd4215c54064eca5d.png"  style="box-shadow: 0 0 0px #ccc;"></td>
@@ -289,6 +289,7 @@ Tencent Cloudは、レコーディングおよびレコーディング関連の�
 <td>レコーディングファイルの視聴アドレスは、<a href="#play">VOD再生に使用できます</a>。</td>
 </tr></table>
 
+>? コールバックフィールドに関するその他の説明については、[CSS-レコーディングイベントの通知](https://intl.cloud.tencent.com/document/product/267/38082)をご参照ください。
 
 
 [](id:delete)
@@ -305,7 +306,7 @@ https://vod.tencentcloudapi.com/?Action=DeleteMedia
 [](id:play)
 ## レコーディングファイルの再生
 
-eラーニングなどのユースケースでは、教育リソースを最大限に活用するために、通常、ライブストリーミングの終了後、レコーディングファイルを複数回再生する必要があります。
+オンライン教育などのユースケースでは、通常CSSが終了後、何度もレコーディングファイルを再生し、教育リソースを十分に活用しやすくする必要があります。
 
 #### ファイルフォーマットの選択（HLS）
 [レコーディングフォーマットの設定](#fileFormat)では、ファイルフォーマットをHLSに選択します。
@@ -320,14 +321,14 @@ HLSは最長30分間のブレークポイントでの連続レコーディング
 - [Androidプラットフォーム](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html)
 - [Webブラウザ](https://intl.cloud.tencent.com/document/product/266/33977)
 
->! [プロフェッショナル版](https://intl.cloud.tencent.com/document/product/647/34615)TRTC SDKの使用を推奨します。プロフェッショナル版には[Super Player（Player+）](https://intl.cloud.tencent.com/)、[モバイルライブストリーミング](https://intl.cloud.tencent.com/)などの機能が統合され、基盤モジュールを高度に再利用することにより、プロフェッショナル版の容量増加は同時に2つの独立したSDKを統合させた場合よりも小さくなっています。さらにシンボル重複(symbol duplicate)の問題も回避できます。
+>! [プロフェッショナル版](https://intl.cloud.tencent.com/document/product/647/34615)TRTC SDKの使用を推奨します。プロフェッショナル版には [Super Player（Player+）](https://intl.cloud.tencent.com/document/product/266/7836)、[モバイルライブストリーミング](https://intl.cloud.tencent.com/product/mlvb) などの機能が統合され、基盤モジュールを高度に再利用することにより、プロフェッショナル版の容量増加は同時に2つの独立したSDKを統合させたよりも小さくなっています。さらにシンボル重複（symbol duplicate）の問題も回避できます。
 
 
 ## 関連料金
 
 クラウドレコーディングと再生の関連料金には次の項目が含まれています。このうち、レコーディング料金は基本料金となり、その他の料金はお客様の使用状況およびニーズに応じて徴収されます。
 
->?ここでの価格は一例であり、あくまでも参考です。価格と実際の状況が一致しない場合は、[クラウドレコーディング課金説明](https://intl.cloud.tencent.com/document/product/647/38385)、[CSS](https://intl.cloud.tencent.com/login)、[VOD](https://intl.cloud.tencent.com/login)の料金を基準とします。
+>?ここでは価格を例示し、参考としてのみ提供しています。価格と実際の状況とが一致しない場合は、[クラウドレコーディング課金説明](https://intl.cloud.tencent.com/document/product/647/38385)、[CSS](https://buy.intl.cloud.tencent.com/pricing/css) 、[VOD](https://buy.intl.cloud.tencent.com/pricing/vod)の料金を基準とします。
 
 #### レコーディング料金：トランスコーディングまたはそのパッケージングに発生した料金の計算
 
@@ -335,27 +336,32 @@ HLSは最長30分間のブレークポイントでの連続レコーディング
 
 >!
 >- 2020年7月1日以降、初めてTRTCコンソールでアプリケーションを作成したTencent Cloudアカウントの場合、クラウドレコーディング機能を使用した後に発生するレコーディング料金については、[クラウドレコーディング課金説明](https://intl.cloud.tencent.com/document/product/647/38385)を基準とします。
->- 2020年7月1日以前にTRTCコンソールでアプリケーションを作成したことのあるTencent Cloudアカウントの場合、2020年7月1日以前またはそれ以降に作成したアプリケーションであっても、クラウドレコーディング機能を使用して発生するレコーディング料金については、デフォルトで、**CSSレコーディング**の課金ルールを引き続き適用します。
+>- 2020年7月1日以前に TRTC コンソールでアプリケーションを作成したことのあるTencent Cloudアカウントは、2020年7月1日以前またはそれ以降に作成したアプリケーションであっても、クラウドレコーディング機能を使用して発生するレコーディング料金については、デフォルトで、**CSSレコーディング**の課金ルールを引き続き採用します。
 
-**CSSレコーディング**課金の計算方法は、同時レコーディングのチャネル数に応じて料金を徴収し、同時実行数が多いほどレコーディング料金も高くなります。具体的な課金説明については、[CSS > CSSレコーディング](https://intl.cloud.tencent.com/document/product/267/39605)をご参照ください。
+**CSSレコーディング**課金の計算方法は、同時レコーディングのチャネル数に応じて課金し、同時実行数が多くなるほど、レコーディング費用も高くなります。課金説明の詳細は [CSS > CSSレコーディング](https://intl.cloud.tencent.com/document/product/267/39605)をご参照ください。
 
->例えば、現在1000名のキャスターがいて、夕方のピーク時に、最大で500チャネルのキャスターのオーディオ・ビデオストリーミングを同時レコーディングする必要があるとします。仮にレコーディング単価が30元/チャネル/月とすると、合計レコーディング料金は、`500チャネル × 30元/チャネル/月 = 15000元/月`となります。
+>例えば、現在1000名のキャスターがいて、夕方のピーク時に、最多500チャンネルのキャスターのオーディオ・ビデオストリーミングを同時レコーディングする必要があるとします。仮にレコーディング単価が5.2941米ドル/チャンネル/月とすると、合計レコーディング料金は、`500チャンネル × 5.2941米ドル/チャンネル/月 = 2647.05米ドル/月`となります。
 >[レコーディングフォーマットの設定](#fileFormat)をする時に同時に2種類のレコーディングファイルを選択した場合、レコーディング料金とストレージ料金はいずれも× 2になります。同様の理屈により、3種類のファイルを選択した時のレコーディング料金とストレージ料金は× 3になります。不要な場合は、必要な1種類のファイルフォーマットのみを選択することを推奨します。コストを大幅に抑えることができます。
 
 **ストレージ料金：ファイルをTencent Cloudに保存するとこの料金が発生します**
-レコーディングしたファイルをTencent Cloudに保存する場合は、保存自体にディスクリソースの消費が発生しますので、保存するリソースの占用状況に応じて料金を徴収する必要があります。保存期間が長いほど料金も高くなるため、特殊なニーズがない場合は、ファイルの保存期間を短めに設定して、費用を節約するか、またはファイルを自分のサーバーに保存することもできます。保存料金は、 [ビデオ保存（日次決済）価格](https://intl.cloud.tencent.com/document/product/266/14666)を選択して日次決算で計算することも、[ストレージリソースパック](https://intl.cloud.tencent.com/zh/document/product/266/14666)を購入することもできます。
+レコーディングしたファイルをTencent Cloudに保存する場合は、保存自体にディスクリソースの消費が発生しますので、保存するリソースの占用状況に応じて料金を徴収する必要があります。保存期間が長いほど料金も高くなるため、特殊なニーズがない場合は、ファイルの保存期間を短めに設定して、費用を節約するか、またはファイルを自分のサーバーに保存することもできます。保存料金は、 [ビデオ保存（日次決済）価格](https://intl.cloud.tencent.com/document/product/266/14666)選択し、日次決算で計算することができます。
 
->例えば、[setVideoEncodrParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam)を介してキャスターのビットレート（videoBitrate）を1000kbpsに設定し、そのキャスターのライブストリーミングビデオ（1種類のファイルフォーマットを選択）をレコーディングし、1時間レコーディングすると、おおよそ`(1000 / 8)KBps × 3600秒 = 450000KB = 0.45GB`サイズのビデオファイルが生成されます。このファイルに毎日発生するおおよそのストレージ料金は、`0.45GB × 0.0009 米ドル/GB/日 = 0.000405米ドル`となります。
+>例えば、[setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e)を介してキャスターのビットレート（videoBitrate）を1000kbpsに設定し、そのキャスターのライブストリーミングビデオ（1種類のファイルフォーマットを選択）をレコーディングし、1時間レコーディングすると、おおよそ`(1000 / 8)KBps × 3600秒 = 450000KB = 0.45GB`サイズのビデオファイルが生成されます。このファイルに毎日発生するおおよそのストレージ料金は、`0.45GB × 0.0009 米ドル/GB/日 = 0.000405米ドル`となります。
 
 #### 視聴料金：ファイルをVOD視聴に利用するとこの料金が発生します
 
-レコーディングしたファイルをオンデマンド視聴に利用する場合は、視聴自体にCDNトラフィックが消費されるため、VODの価格にもとづき課金する必要があります。デフォルトは、トラフィックによる課金となっています。視聴者数が多いほど料金は高くなります。視聴料金は[ビデオアクセラレーション（日次決済）価格](https://intl.cloud.tencent.com/zh/document/product/266/14666)を選択し、日次決算で計算できます。
+レコーディングしたファイルをオンデマンド視聴に利用する場合は、視聴自体にCDNトラフィックが消費されるため、VODの価格にもとづき課金する必要があります。デフォルトは、トラフィックによる課金となっています。視聴者数が多いほど料金は高くなります。視聴料金は[ビデオアクセラレーション（日次決済）価格](https://intl.cloud.tencent.com/document/product/266/14666) を選択し、日次決算で計算できます。
 
->例えば、クラウドレコーディングによって1GBのファイルが生成され、1000名の視聴者が最初から最後まで完全にそのビデオを視聴すると、約1TBのVOD視聴トラフィックが発生します。この場合は、階層価格表にもとづき、1000名の視聴で、1000 × 1GB × 0.0794米ドル/GB = 79.4米ドルの料金が発生します。
+>例えば、クラウドレコーディングによって1GBのファイルが生成され、1000名の視聴者が最初から最後まで完全にそのビデオを視聴すると、約1TBのVOD視聴トラフィックが発生します。この場合は、階層価格表にもとづき、1000名の視聴で、`1000 × 1GB × 0.0794米ドル/GB = 79.4米ドル`の料金が発生します。
 >Tencent Cloudからファイルをお客様のサーバーにダウンロードするように選択した場合も、非常に小さなVODトラフィックが消費され、お客様の月次請求書の中に反映されます。
 
 #### トランスコード料金：ミクスストリーミングレコーディングを有効にすると、この料金が発生します
 
-ミクスストリーミングレコーディングを有効にすると、ミクスストリーミング自体にデコードとエンコードが必要なため、別途ミクスストリーミングトランスコード料金が発生します。ミクスストリーミングトランスコーディングは、解像度のサイズとトランスコーディング時間によって課金され、キャスターが使用する解像度が高く、マイク接続時間が長いほど（通常、マイク接続シナリオにのみミクスストリーミングトランスコーディングが必要）、料金が高くなります。具体的な料金の計算については、[CSSトランスコード](https://intl.cloud.tencent.com/document/product/267/39604)をご参照ください。
+ミクスストリーミングレコーディングを作動させた場合は、ミクスストリーミング自体はデコーディングとコーディングする必要があるため、追加ミクスストリーミングトランスコード料金が発生します。ミクスストリーミングトランスコーディングは、解像度の大きさおよびトランスコーディング時間によって計算され、キャスター用の解像度が高く、マイク接続時間（通常はマイク接続のシーンではMixTranscodingが必要です）が長いほど、料金は高くなります。費用計算の詳細は[CSSトランスコード](https://intl.cloud.tencent.com/document/product/267/39604)をご参照ください。
 
->例えば、[setVideoEncodrParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam)を介してキャスターのビットレート（videoBitrate）を1500kbps、解像度を720Pに設定したとします。1名のキャスターが視聴者と1時間マイク接続し、マイク接続の間に[クラウドミクスストリーミング](https://intl.cloud.tencent.com/document/product/647/34618)を有効にした場合、発生するトランスコード料金は0.0057米ドル/分 × 60分 = 0.342米ドルとなります。
+>例えば、 [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e)を介してキャスターのビットレート（videoBitrate）を1500kbps、解像度を720Pに設定したとします。1名のキャスターが視聴者と1時間マイク接続し、マイク接続の間に[クラウドミクスストリーミング](https://intl.cloud.tencent.com/document/product/647/34618)を有効にした場合、発生するトランスコード料金は`0.0057米ドル/分 × 60分 = 0.342米ドル`となります。
+
+
+## 関連する質問
+### TRTCはどのようにサーバーでのレコーディングを実現しますか。
+サーバーでのレコーディングにはLinux SDKを使用する必要があります。Linux SDKはまだ完全公開されていません。お問い合わせまたは関連サービスの利用をご希望の場合は、colleenyu@tencent.comまでご連絡ください。

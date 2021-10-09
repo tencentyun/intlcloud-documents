@@ -1,3 +1,83 @@
+## Version 9.1 @ 2021.09.04
+
+**機能追加**
+- すべてのプラットフォーム：C++インターフェースはオーディオフレームのコールバック形式設定をサポートしています。
+- Windows：ビデオ放送のac3形式のサポートを追加しました。
+- Windows：カメラ情報で、サポートされている解像度リストの取得ができるようになりました。具体的には[ITXDeviceCollection.getDeviceProperties](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ad502f48cb2a4470943134e4b48904450)をご参照ください。
+- Windows：Nvidia、Intel、AMDのハードウェアデコードをサポートしました。
+- Mac：ローカルメディアレコーディングのサポートを追加しました。
+
+**問題の修正**
+- すべてのプラットフォーム：偶発的に入室に失敗する問題を修正しました。
+- Mac：画面共有時の解像度切り替え時に、プレビュー画面がちらつく問題を修正しました。
+- Android：サブルームからメインルームに戻る際に、サブストリームビデオ画面の表示に不具合が生じる問題を修正しました。
+- Android：特定のケースでフレームレート設定が有効にならない場合がある問題を修正しました。
+- Windows：視聴者がCDNストリームに切り替えた後、プルできなくなる問題を修正しました。
+- Windows：ビデオ放送機能で特定の形式のビデオを再生すると画面が消える問題を修正しました。
+
+**品質の最適化**
+- すべてのプラットフォーム：弱いネットワーク環境でのオーディオビデオエクスペリエンスを最適化しました。
+- Android：退室時のオーディオ状態の管理を最適化しました。
+- Android：オーディオキャプチャ起動失敗後の復元ロジックを最適化し、成功率を向上させました。
+- Android：特定の条件下でビデオ画面に白飛びが発生する問題を修正しました。
+
+## Version 9.0 @ 2021.08.06
+
+**機能追加**
+- iOS：システム収音量の設定をサポートしています。 [setSystemAudioLoopbackVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afc45226807d84673bab78b21d1be54ae)をご参照ください。
+- すべてのプラットフォーム：カスタムオーディオトラックの音量設定をサポートしています。詳細については、[setMixExternalAudioVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418)をご参照ください。
+- すべてのプラットフォーム：ステータスコールバックは、オーディオとビデオのパケット損失率を区別できます。詳細については、[TRTCRemoteStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCStatistic__cplusplus.html#structliteav_1_1TRTCRemoteStatistics)をご参照ください。
+
+**品質の最適化**
+- すべてのプラットフォーム：サブスクリプションプロセスを最適化し、手動サブスクリプションのインスタントブロードキャスティング速度をアップしました。
+- すべてのプラットフォーム：特定シナリオでのonExitRoomコールバック重複の問題を修復しました。
+
+**問題の修正**
+- Android：ユーザー定義キャプチャのビットレートとフレームレートの動的設定が無効になる問題を修正しました。
+- iOS：まずスクリーンキャプチャサブストリームを起動し、その後、カメラプッシュを起動することによって引き起こされるプッシュストリームが失敗する問題を修正しました。
+- iOS：ローカルビデオレコーディングがぼやける問題を修正しました。
+- iOS：安定性に関する若干の問題を修正しました。
+- Winodws：画面共有時のフレームレート取得異常の問題を修正しました。
+- Windows：画面共有のターゲット切り替え時に、プレーヤーが最初に旧画面を表示する問題を修正しました。
+
+## Version 8.9 @ 2021.07.15
+
+**機能追加** 
+- Android:OpenGL環境をより柔軟に使用できるよう、カスタムレンダリングは外部GLContextの指定をサポートしています。
+- Windows：システム再生音声収音[startSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a157639a4fa3cc73ffc1982bbd8a8985e)時のスピーカーデバイスの指定をサポートしています。
+- Windows：NVIDIAプラットフォームのハードコーディングをサポートし、ストリーミングのパフォーマンスを向上させました。
+-すべてのプラットフォーム：クラウドプロキシサポートを追加し、企業ファイアウォール内部の環境に対するセキュリティコンフィグレーションの親和性をより高めました。
+- すべてのプラットフォーム：インターフェース[muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a22804c4112dee8c76475619f891e2eb5) および [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a74d8d9922a771114804517db66657f65)にストリームタイプのサポートを追加しました。
+- すべてのプラットフォーム：統計ステータスのコールバック [onStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#ae7e4117f9c8004c9bcc5a29d64e840c9)にローカルゲートウェイ遅延の統計gatewayRttを追加し、ユーザーからWiFiルーターまでのネットワーク品質を判断するために使用します。
+-すべてのプラットフォーム：オーディオレコーディングインターフェース[startAudioRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5224523e00d5167eb75cee9b65f72677)はより多くのオーディオ形式へのレコーディングをサポートしています。
+
+**品質の最適化**
+-すべてのプラットフォーム：特定シナリオでの音声再生時に出現するガタツキの問題を最適化しました。
+- Android：画面のインスタントブロードキャスティング速度を最適化しました。
+- Android：通話音声がよりクリアになるよう、オーディオ前処理アルゴリズムをアップグレードしました。
+
+**問題の修正**
+- Windows：VODPlayerがビデオ放送をプッシュするときに、ローカルでレコーディングされたオーディオファイルのストレスの問題を修正しました。
+- Windows：高DPI環境でフィルターウィンドウが有効になっている場合の一部シーンのcrash の問題を修正しました。
+- iOS：外部スクリーンキャプチャのサブストリームプッシュの水平画面設定が無効になる問題を修正しました。
+- iOS：リモートカスタムレンダリングのみが有効で、RGBA形式のデータの使用が指定されている場合のメモリリークの問題を修正しました。
+すべてのプラットフォーム：偶発的に入室に失敗する問題を修正しました。
+
+## Version 8.8 @ 2021.06.21
+
+**機能追加**
+Android&Mac&iOS：オーディオ再生の外部接続や制御をサポートしています。API[enableCustomAudioRendering](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#addb4c87719393cd4c4765d66a8cd9803)をご参照ください。
+
+**品質の最適化**
+-すべてのプラットフォーム：mixExternalAudioFrameの使いやすさを最適化したため、呼び出しのタイミングを完全に制御する必要がなくなりました。
+- Mac：画面共有でマウスキャプチャを有効にする場合のCPUのオーバーヘッドを低減しました。
+- Windows：より迅速かつタイムリーに調整を行えるよう、AGC音声ゲイン効果を最適化しました。
+- Windows：ウィンドウフィルタリングが有効になっている場合の画面共有のパフォーマンスオーバーヘッドを最適化しました。
+
+**問題の修正**
+- iOS：AAC形式のローカルオーディオファイルの合計再生時間が不正確となる問題を修正しました。
+- Android：一部モデルをバックグラウンドに切り替えると、再生音にラグが発生する問題を修正しました。
+
 ## Version 8.7 @ 2021.5.25
 **機能追加**
 - すべてのプラットフォーム：外部オーディオデバイスの異常検出を追加します。onStatisticsコールバックを登録した後、 [TRTCLocalStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics)のaudioCaptureStateを使用して、長期間のミュート、音割れ、異常な中断といった問題をリアルタイムに検出できます。
@@ -49,12 +129,12 @@
 
 **品質の最適化**
 - すべてのプラットフォーム：[Music](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#ga865e618ff3a81236f9978723c00e86fb)モードの音質を最適化し、cloubhouse等の音声ライブストリーミングケースに更に適するようになりました。
--  すべてのプラットフォーム：オーディオ・ビデオリンクのネットワーク耐性を最適化しました。著しく劣るネットワーク環境でも、そのうち70%のオーディオ・ビデオは比較的スムーズなままです。
+-  すべてのプラットフォーム：オーディオ・ビデオリンクのネットワーク耐性を最適化しました。厳しい検索ネットワーク環境でも、そのうち70%のオーディオ・ビデオは比較的スムーズなままです。
 -  Windows：一部のケースでのライブストリーミングの音質を最適化し、音声障害の問題を大幅に減少させました。
 -  Windows：パフォーマンスを最適化しました。一部のユースケースでパフォーマンスが旧バージョンより20%～30%向上しました。
 
 **問題の修正**
--  Windows： Windows Server 2019 Datacenter x64システムでデスクトップ共有を開始するとcrashする問題を修正しました。
+-  Windows： Windows Server 2019 Datacenter x64システムでデスクトップ共有を開始すると、crashする問題を修正しました。
 -  Windows：共有ウィンドウでターゲットウィンドウのサイズを同時に変更すると、偶発的に共有が停止するバグを修正しました。
 -  Windows：一部のモデルのカメラで画面がキャプチャされない問題を修正しました。
 -  iOS：snapvideoshotによってCAAnimationの動画ラグが発生する問題を修正しました。
@@ -67,7 +147,7 @@
 
 **機能追加**
 
-このバージョンではユーザー定義キャプチャ関連の業務ロジックを重点的に最適化しています。
+このバージョンではユーザー定義キャプチャ関連の業務ロジックを重点的に最適化しています：
 - iOS & Android & Mac：オーディオモジュールの最適化によって、[enableCustomAudioCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ab8f8aaa19d70c6a2c9d62ecceb6e974d)を使用してオーディオデータを収集しSDKに送信して処理するときにも、SDKが良好なエコー抑制効果およびノイズ低減効果を維持できるようになります。
 - iOS & Android：TRTC SDKに基づいて自身の音声特殊効果および音声処理のロジックを継続して強化する必要がある場合は、8.3バージョンを使用すればさらに簡単にできます。なぜなら[setCapturedRawAudioFrameDelegateFormat]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4b58b1ee04d0c692f383084d87111f86)などのインターフェースによって、オーディオサンプルレート、オーディオサウンドチャネル数およびサンプリングポイントなどのオーディオデータのコールバック形式を設定し、自身でお気に入りのオーディオ形式でこれらのオーディオデータを処理できるためです。
 - すべてのプラットフォーム：自身でビデオデータを収集し、同時にTRTC SDK標準搭載のオーディオモジュールを使用する必要がある場合は、音声と画像が同期しないという問題が生じる可能性があります。これはSDK内部のタイムラインに固有の制御ロジックがあるためで、このために[generateCustomPTS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ae5f2a974fa23954c5efd682dc464cdee)インターフェースを提供しています。収集した1フレームのビデオ画面でこのインターフェースを呼び出して現在のPTS（タイムスタンプ）を記録し、その後[sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a76e8101153afc009f374bc2b242c6831)を呼び出して、このタイムスタンプが得られれば、音声と画像の同期を良好に保証することができます。
@@ -130,7 +210,7 @@
 
 **追加**
 - すべてのプラットフォームでC++の統一APIを追加しました。cpp_interface/[ITRTCCloud.h](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html)をご参照ください。
-- すべてのプラットフォームで文字列によるルーム番号をサポートします。TRTCParams.strRoomIdをご参照ください。
+- すべてのプラットフォームは文字列によるルーム番号に対応しています。 TRTCParams.strRoomIdをご参照ください。
 - すべてのプラットフォームはTXDeviceManagerデバイス管理タイプを追加します。
 - すべてのプラットフォームは、 API TRTCCloud.switchRoomを追加して収集を止めずに直接ルームの切り替えに対応します。
 - すべてのプラットフォームは、 API TRTCCloud.startRemoteViewを追加してリモートビデオ画面のレンダリングを開始します。
@@ -203,12 +283,12 @@
 - iOS： VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除去をサポートします。
 - iOS&Mac：代替画像のプッシュをサポートします。使用方法は[TRTCCloud.setVideoMuteImage](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2)をご参照ください。
 - Android：代替画像のプッシュをサポートします。使用方法は[TRTCCloud.setVideoMuteImage](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d)をご参照ください。
-- Android：音声のルーティングポリシーを最適化しました。イヤホン装着時に音声がイヤホンからのみ再生されるようサポートします。
+- Android：音声のルーティングポリシーを最適化して、イヤホン装着時に音声がイヤホンからのみ再生されるようサポートします。
 - Android：一部システムで低レイテンシーでの収集再生をサポートして、 Android システムの通話遅延を低減します。
 - Android： VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除去をサポートします。
 - Windows：バーチャルカメラe2eSoft Vacmと互換性があります。
 - Windows： startLocalPreviewとstartCameraDeviceTestを同時に呼び出せるようにします。
-- Windows：画面共有が主経路を経由するのをサポートすると同時に、startLocalPrevieを呼び出してローカルプレビューを開始します。
+- Windows：画面共有が主経路を経由するのをサポートすると同時に、 startLocalPreview をコールしてローカルプレビューをアクティブ化します。
 - Windows： SDK内部の再生バッファに起因するオーディオディレイが大きくなる問題を低減します。
 - Windows：オーディオ起動ロジックを最適化して、再生状態でのみマイクを占有しないようにします。
 
@@ -240,20 +320,20 @@
 - iOS&Android： Audioモジュールの性能を最適化して、最初のフレームの収集ディレイを向上させることで、新バージョンでは最初のオーディオフレームをより速く取得できます。
 - iOS&Android：オンデマンドプレーヤー（VodPlayer）およびTRTCを同時使用するときの音量および音質表現を最適化します。
 - iOS&Android： wavオーディオ形式のBGMおよび音響効果ファイルへのサポートを強化します。
-- Windows：ローエンドのカメラでのCPU使用率が高すぎる問題を最適化します。
-- Windows： 複数のUSBカメラおよびマイクの互換性を最適化して、デバイスのアクティブ化の成功率を向上させます。
-- Windows：カメラおよびマイクデバイスの選択ポリシーを最適化して、カメラまたはマイクを使用中に抜き差しすることで収集に不具合が生じる問題を回避します。
+- Windows：ローエンドのカメラでのCPU使用率が高すぎる問題を最適化しました。
+- Windows： 複数のUSBカメラおよびマイクの互換性を最適化して、デバイスのアクティブ化の成功率を向上させました。
+- Windows：カメラおよびマイクデバイスの選択ポリシーを最適化して、カメラまたはマイクを使用中に抜き差しすることでキャプチャに不具合が生じる問題を回避させました。
 
 **修正**
 
 - すべてのプラットフォーム：脆弱なネットワーク環境でmuteLocalVideoおよびmuteLocalAudioインターフェースをコールするときに、再生に時々不具合が生じるBUGを修正します。
 - iOS：再生オーディオ効果がローエンドのiPhoneまたはiPadで失敗することがあるBUGを修正します。
 - iOS：iPad Proの画面共有の画面に変形、伸びが生じる問題を修正します。
-- iOS： ユーザーの権限拒否後にも、App内のスクリーンがスクリーンレコーディングの権限申請の表示を繰り返しポップアップし続けるという問題を修正しました。
+- iOS： ユーザーの権限拒否後にも、App内のスクリーンがスクリーンレコーディングの権限申請の表示を繰り返しポップアップし続ける問題を修正します。
 - Windows：ノートブックまたはデスクトップ式パソコンが長時間スリープすると、退室[onExitRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd)イベント通知がコールバックされない問題を解決しました。
 - Windows：Music音質モードで、システムミックス[stopSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23)を有効にすると、エコーが漏れる問題を修正しました。
-- Windows：enterRoomおよびexitRoomを呼び出してすばやく入退室するとき、再生側で音声が出ないというBUGを修正しました。
-- Windows：SDKでVisual Stuido 2010プロジェクトのコンパイルの互換性の問題を修正しました。
+- Windows：enterRoom および exitRoom の入退室をクイックコールするとき、再生側に無音声を時々生じさせるBUGを修正します。
+- Windows：SDKはVisual Stuido 2010プロジェクトのコンパイルの互換性の問題を修正します。
 - Windows：手動受信モード（すなわち [setDefaultStreamRecvMode(false，false)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a7a0238314fc1e1f49803c0b22c1019d5)）のときにonUserVideoAvailableイベントコールバックを再受信する問題を修正しました。
 
 
