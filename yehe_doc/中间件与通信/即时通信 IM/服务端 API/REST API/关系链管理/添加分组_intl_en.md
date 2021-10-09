@@ -46,9 +46,9 @@ The maximum invocation frequency is 200 times per second.
 
 | Field | Type | Attribute | Description |
 |----|-----|------|-----|
-| From_Account | String | Required | The identifier for which a new friend group needs to be added. |
+| From_Account | String | Required | The UserID for which a new friend group needs to be added. |
 | GroupName | Array | Required | The list of new friend groups. |
-| To_Account | Array | Optional | The list of identifiers of friends that need to be added to the new friend group. |
+| To_Account | Array | Optional | The list of UserID of friends that need to be added to the new friend group. |
 
 ### Response packet examples
 - **Basic form**
@@ -82,8 +82,7 @@ The maximum invocation frequency is 200 times per second.
             "ResultInfo": "ERR_SDKAPPID_ILLEGAL"
         }
     ],
-    "Fail_Account": ["id1"],
-    "Invalid_Account": ["id3"],
+    "Fail_Account":["id2","id3"],
     "CurrentSequence": 3,
     "ActionStatus": "OK",
     "ErrorCode": 0,
@@ -97,7 +96,7 @@ The maximum invocation frequency is 200 times per second.
 | Field | Type | Description |
 |-----|-------|------|
 | ResultItem | Array | The result object array for adding a friend to a new friend group. |
-| To_Account | String | The identifier of the friend to be added to the new friend group. |
+| To_Account | String | The UserID of the friend to be added to the new friend group. |
 | ResultCode | Integer | The processing result of To_Account. 0: succeeded. Others: failed. |
 | ResultInfo | String | Error description for To_Account. If the processing was successful, the field is empty. |
 | Fail_Account | Array | Returns a list of users for whom the processing failed. This field is returned only when the processing failed for a user. |
