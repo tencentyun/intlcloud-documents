@@ -1,7 +1,7 @@
 CSSサービスはライブミクスストリーミング機能を提供します。設定済みのミクスストリーミングレイアウトに基づき、各入力ソースの複数のストリームを統合して同期時に新しいストリームとみなし、ライブストリーミングのインタラクティブ効果を実現します。また、CSSライブミクスストリーミング機能はAPI 3.0が接続されています。具体的には、[ライブミクスストリーミングインターフェース](https://intl.cloud.tencent.com/document/product/267/35997)をご参照ください。このテキストでは、例を挙げて、各種シナリオでライブストリーミングのミクスストリーミングを実現する方法を説明します。
 
 ## 注意事項
-- クラウドミクスストリーミング機能を使用する場合は、標準的なトランスコード費用が発生します。
+- クラウドミクスストリーミング機能を使用すると、標準トランスコード料金が発生します。料金に関する説明については、[トランスコード料金](https://intl.cloud.tencent.com/document/product/267/39604)をご参照ください。
 - ミクスストリーミングのクリッピング機能を使用する場合は、クリッピングパラメータの値をソースストリームのパラメータより大きくすることはできません。
 
 
@@ -23,25 +23,26 @@ CSSサービスはライブミクスストリーミング機能を提供しま�
 **一般的なレイアウトテンプレート：**
 <table>
 <style>#m_img{width:90%;height:auto;display:block;margin-left:auto;margin-right:auto; }</style>
-<thead><tr><th>テンプレート 10</th><th >テンプレート 30</th></tr></thead><tr>
+<thead><tr><th>テンプレート10</th><th >テンプレート30</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/a6b395f6fc7c1d07e4325836a3b725e6.jpg" id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/05fbe1c32bec1aed0624785d51b8a2ef.jpg"  id="m_img"></td>
 </tr>
-<thead><tr><th >テンプレート 40</th><th>テンプレート 310</th></tr></thead><tr>
+<thead><tr><th>テンプレート40</th><th >テンプレート310</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/06cd40976b29452fa297d52db0d3435c.jpg"  id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/e1f4aa6f198856c47d8175302c649448.jpg"  id="m_img"></td>
 </tr>
-<thead><tr><th>テンプレート 390</th><th >テンプレート 410</th></tr></thead><tr>
+<thead><tr><th>テンプレート390</th><th >テンプレート410</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/50157bb0b01d511c10b3637c13b1471a.png"  id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/6a420d03e7921453cbc461d1f1176f6c.jpg"  id="m_img"></td>
+
 </tr>
-<thead><tr><th>テンプレート 510</th><th>テンプレート 610</th></tr></thead>
+<thead><tr><th >テンプレート510</th><th>テンプレート610</th></tr></thead>
 <td><img src="https://main.qcloudimg.com/raw/c0e5bd29f275a6f055af9830ceea0a02.jpg"  id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/5ca8ba33cc08e80d6aeb403645e75aac.jpg"  id="m_img"></td>
 
-
 </tr>
 </tbody></table>	
+
 
 
 
@@ -164,7 +165,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 
 ## ミクスストリーミングのキャンセル
 ### パラメータの説明
-より詳細な説明をご覧になる場合は、 [一般的なミクスストリーミングのキャンセル](https://intl.cloud.tencent.com/zh/document/product/267/35998)をご参照ください。
+具体的には、[一般的なミクスストリーミングのキャンセル](https://intl.cloud.tencent.com/document/product/267/35998)をご参照ください。
 
 ### シナリオの例
 session idに基づき、ミクスストリーミングをキャンセルします。
@@ -186,7 +187,6 @@ https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
 >! 
 >- ミクスストリーミングを申請後、5秒以上経ってから、ミクスストリーミングをキャンセルしてください。
 >- ミクスストリーミングをキャンセルした後、30秒経たなければ、同一のsession idでミクスストリーミングを申請することができません。
-
 
 ## エラーコード
 クラウドミクスストリーミングAPI3.0は大部分の一般的なエラーコードを [API3.0 エラーコード](https://intl.cloud.tencent.com/document/product/267/35997#6.-.E9.94.99.E8.AF.AF.E7.A0.81) のスタイルに変換されていますが、一部のエラーコードをカバーしきれていない可能性があります。これらエラーコードはInvalidParameterでエラー表示され、 Message中に`err_code [ $code ],msg [ $message ]`の形式で提示されます。具体的なcodeに対応する原因は次のとおりです。
@@ -300,14 +300,20 @@ https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
 <td>出力ストリームのビットレートが[1，50000]の間であるかどうかをチェックします。</td>
 </tr><tr>
 <td>その他</td>
-<td>その他エラーについては、 <a href="https://intl.cloud.tencent.com/contact-sales">でカスタマサービス</a> に連絡し、テクニカルサポートを要請してください</td>
+<td>その他エラーについては、 <a href="https://intl.cloud.tencent.com/contact-us">でカスタマーサービス</a> に連絡し、テクニカルサポートを要請してください</td>
 <td>-</td>
 </tr>
 </tbody></table>
 
 ## よくあるご質問
-- [プッシュ後にミクスストリーミングした場合に、-505エラーコードが返されるのはなぜですか？](https://intl.cloud.tencent.com/document/product/267/38255#que1)
-- [ミクスストリーミングの申請後、ミクスストリーミングをキャンセルしない状態を継続した場合、どうなりますか？](https://intl.cloud.tencent.com/document/product/267/38255#que5)
-- [ミクスストリーミングのアシスタントキャスター画面が予想される位置とは異なることがあるのはなぜですか？](https://intl.cloud.tencent.com/document/product/267/38255#que9)
+- [ミクスストリーミング中に入力ストリームの自動ズームを維持し、かつ黒枠がない状態にするにはどうすればよいですか。](https://intl.cloud.tencent.com/document/product/267/38255)
+- [プッシュ後にミクスストリーミングした場合に、-505エラーコードが返されるのはなぜですか。](https://intl.cloud.tencent.com/document/product/267/38255)
+- [ミクスストリーミングの申請後、ミクスストリーミングをキャンセルしない状態を継続した場合、どうなりますか。](https://intl.cloud.tencent.com/document/product/267/38255)
+- [ミクスストリーミングのアシスタントキャスター画面が予想される位置とは異なることがあるのはなぜですか。](https://intl.cloud.tencent.com/document/product/267/38255)
 
->?これら以外のクラウドミクスストリーミングに関連する質問については、 [クラウドミクスストリーミング関連](https://intl.cloud.tencent.com/document/product/267/38255)をご参照ください
+>? クラウドミクスストリーミングに関連するその他の質問については、 [クラウドミクスストリーミング関連](https://intl.cloud.tencent.com/document/product/267/38255)をご参照ください。
+
+
+
+
+
