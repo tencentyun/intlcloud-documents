@@ -1,3 +1,8 @@
+## 1.4.0 @2021.08.03
+- Simplified the configuration process for the iOS client.
+- Fixed the issue with the Android client where an error occurred during packaging under
+IL2CPP.
+
 ## 1.3.1 @2021.05.21
 
 - Fixed known issues.
