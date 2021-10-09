@@ -232,7 +232,7 @@ Create a group and specify group member custom fields. `AppMemberDefinedData` is
 | MaxMemberCount | Integer | Optional | Maximum number of group members. Default values: 200 for `Private`, 2000 for `Public`, 6000 for `ChatRoom`, and no limit for `AVChatRoom` and `BChatRoom`. |
 | ApplyJoinOption | String | Optional | Method for handling requests to join the group, which can be `FreeAccess`, `NeedPermission`, or `DisableApply`. The default method is `NeedPermission`. <br>This parameter is valid only for [groups](https://intl.cloud.tencent.com/document/product/1047/33529#.E5.8A.A0.E7.BE.A4.E6.96.B9.E5.BC.8F.E5.B7.AE.E5.BC.82) that can be joined by users. |
 | AppDefinedData | Array | Optional | Group custom field. This parameter is not available by default and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im). For details, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5).|
-| MemberList | Array | Optional | Initial group member list, which contains a maximum of 500 members. For details on group member information fields, see [Group member profiles](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99). |
+| MemberList | Array | Optional | Initial group member list, which contains a maximum of 100 members. For details on group member information fields, see [Group member profiles](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99). |
 | AppMemberDefinedData | Array | Optional | Group member custom fields. This parameter is not available by default and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im). For details, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5).|
 
 ### Sample response packet body
@@ -276,7 +276,7 @@ The list below contains error codes specific to this API.
 | 10002 | Internal server error. Please try again. |
 | 10003| Invalid request command word. |
 | 10004 | Invalid parameter. Check the error description and troubleshoot the issue. |
-| 10005 | The number of members imported in the request packet exceeds 300. Reduce the number of members imported in the `MemberList` parameter. |
+| 10005 | The number of members imported in the request packet exceeds 100. Reduce the number of members imported in the `MemberList` parameter. |
 | 10006 | The number of groups created exceeds the quota. For example, the cumulative number of BChatRoom groups created exceeds 5, or the net increase in the number of groups in a single day exceeds the set quota. For details, see [Differences in group limits](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E9.99.90.E5.88.B6.E5.B7.AE.E5.BC.82). |
 | 10007 | Insufficient permissions. Check the request parameters based on the error information. For example, the specified group type does not allow adding members, but you specified `MemberList` in the request packet. |
 | 10008 | The request is invalid, probably because verification of the signing information in the request failed. Please try again or [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1). |
