@@ -15,7 +15,7 @@ This document will use the Windows version as an example to show you in detail h
 The COSBrowser Window Version can run on Windows 7 32/64-bit or above, and Windows Server 2008 R2 64 or above. To download other versions, go to [COSBrowser Overview](https://intl.cloud.tencent.com/document/product/436/11366).
 
 
-<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-setup-latest.exe" target="_blank"  style="color: white; font-size:16px;">Click here to download COSBrowser</a></div><br>
+<div style="background-color:#00A4FF; width: 300px; height: 35px; line-height:35px; text-align:center;"><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-setup-latest.exe" target="_blank"  style="color: white; font-size:16px;">Click here to download COSBrowser</a></div><br>
 
 
 
@@ -98,4 +98,4 @@ We are deeply sorry for any inconvenience you may have encountered when using th
 To learn more about iOS- or Android-powered COSBrowser, see the following documents:
 
 - [COSBrowser Overview](https://intl.cloud.tencent.com/document/product/436/11366)
-- [User Guide for Mobile Edition](https://intl.cloud.tencent.com/document/product/436/41615)
+- [User Guide for Mobile Edition](https://intl.cloud.tencent.com/document/product/436/32566)

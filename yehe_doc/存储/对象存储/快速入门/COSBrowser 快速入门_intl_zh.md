@@ -98,4 +98,4 @@ Windows 版 COSBrowser 的系统要求：Windows 7 32/64位以上、Windows Serv
 了解移动端（iOS、Android）的 COSBrowser ，请参见以下文档。
 
 - [COSBrowser 简介](https://intl.cloud.tencent.com/document/product/436/11366)
-- [移动端使用说明](https://intl.cloud.tencent.com/document/product/436/41615)
+- [移动端使用说明](https://intl.cloud.tencent.com/document/product/436/32566)

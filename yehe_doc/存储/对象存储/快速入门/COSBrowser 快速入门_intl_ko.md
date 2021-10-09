@@ -15,7 +15,7 @@ Windows 플랫폼의 COSBrowser에서의 버킷 생성, 객체 업로드, 객체
 Windows 환경의 COSBrowser 시스템 사양: Windows 7 32/64비트 이상, Windows Server 2008 R2 64비트 이상을 지원하며, 기타 시스템 사양의 COSBrowser는 [COSBrowser 소개](https://intl.cloud.tencent.com/document/product/436/11366)에서 다운로드하십시오.
 
 
-<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-setup-latest.exe" target="_blank"  style="color: white; font-size:16px;">클릭 후 COSBrowser 다운로드</a></div><br>
+<div style="background-color:#00A4FF; width: 250px; height: 35px; line-height:35px; text-align:center;"><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-setup-latest.exe" target="_blank"  style="color: white; font-size:16px;">클릭 후 COSBrowser 다운로드</a></div><br>
 
 
 
@@ -98,4 +98,4 @@ COSBrowser는 위 기능 외에도 버킷 액세스 권한 수정, 파일 미리
 모바일 (iOS, Android)의 COSBrowser, 다음 문서를 참조하십시오.
 
 - [COSBrowser 소개](https://intl.cloud.tencent.com/document/product/436/11366)
-- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/41615)
+- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/32566)

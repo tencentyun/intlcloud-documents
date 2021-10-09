@@ -1,6 +1,5 @@
 ## 展示会话列表
 用户在登录 App 后，可以像微信那样展示最近会话列表。整个过程分为**拉取会话列表**、**处理更新通知**和**更新 UI 内容（包括未读计数）**，本文主要介绍这些步骤的详细细节。
-<img src="https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/res/RPReplay_Final0511.gif" width="40%">
 
 ### 拉取会话列表
 用户在登录后调用 [getConversationList()](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Conversation_08.html#af94d9d44e90da448a395e6d92b4e512e) 拉取本地会话列表做 UI 展示，会话列表是一个 [V2TIMConversation](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMConversation.html) 对象的列表，每一个对象都代表一个会话。
@@ -136,5 +135,5 @@ IM SDK 会在登录成功后、用户上线后、以及断线重连后，自动�
 调用 `getConversationList` 接口拉取的会话可能已经通过 `onNewConversation` 回调接口添加到了 UI 会话列表的数据源中，因此为了避免重复添加同一个会话，您需要在 UI 会话列表数据源中根据 [getConversationID](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMConversation.html#a89d34fa0d0d62e831c27ae2a75a37fac) 找到相同的会话并做替换。
 
 ### 4. IM SDK 支持会话置顶吗？
-IM SDK 并不提供会话置顶功能，但是可以通过封装会话再重排序，可以参考 TUIKit 实现。置顶仅对本机生效，不会保存到服务器上。
+IM SDK 从5.3.425版本开始支持会话置顶功能并可以同步到云端。
 
