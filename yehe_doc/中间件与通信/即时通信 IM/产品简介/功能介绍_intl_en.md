@@ -8,7 +8,7 @@ The following platforms can communicate with each other and provide services acr
 | iOS | Compatible with iOS 8.0 and later | Supported | Supported | Supported |
 | Mac | Compatible with OS X 10.10 and later | Supported | Supported | - |
 | Windows | C and C++ are included. Compatible with Windows 7, Windows 8 and 8.1, and Windows 10. Both 32-bit and 64-bit programs can be connected. | - | - | - |
-| Web | Supports Internet Explorer 11+, Chrome 7+, Firefox 3.6+, Opera 12+ and Safari 6+ | Supported | - | - |
+| Web | Supports Internet Explorer 9+, Chrome 7+, Firefox 3.6+, Opera 12+ and Safari 6+ | Supported | - | - |
 | Mini Program | Supported | Supported | - | - |
 | Unity | Supports 2020.2.7f1c1 or later | Supported | Supported | - |
 | Flutter |Supports Flutter 2.0.12 | Supported | Supported | - |
