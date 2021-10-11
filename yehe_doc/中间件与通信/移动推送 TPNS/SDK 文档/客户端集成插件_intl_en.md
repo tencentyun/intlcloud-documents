@@ -12,3 +12,4 @@ The official plugin address includes installation method, demo (in the `example`
 | Flutter | [Official address](https://github.com/TencentCloud/TPNS-Flutter-Plugin) |
 | React-Native | [Official address](https://git.code.tencent.com/tpns/TPNS-RN-Plugin.git) |
 | Demo for Swift | [Official address](https://git.code.tencent.com/tpns/TPNS-Demo-Swift.git) |
+| Cordova | [Official address](https://www.npmjs.com/package/cordova-plugin-tpns) |
