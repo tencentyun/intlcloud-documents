@@ -3,7 +3,7 @@ GME currently provides voice chat and voice messaging and speech-to-text feature
 
 ## Voice Chat Service
 Voice chat is billed monthly by either voice duration or voice Peak Concurrent Users (PCU) as detailed below:
-- The sound quality is HD by default for services billed by voice duration. You can switch between HD and standard sound quality as needed.
+- The sound quality is HD by default for services billed by voice duration, and cannot be switched to standard.
 - The sound quality is standard by default for services billed by voice PCU, and cannot be switched to HD.
 - We recommend standard sound quality for battle and leisure games, and HD quality for voice live streaming and online karaoke.
 
@@ -18,7 +18,7 @@ Voice chat is billed monthly by either voice duration or voice Peak Concurrent U
    </tr>
    <tr>
       <td  rowspan="2">Billed by voice duration</td>
-      <td>Standard</td>
+      <td>HD</td>
       <td> < 10,000 minutes</td>
       <td>Free</td>
    </tr>
