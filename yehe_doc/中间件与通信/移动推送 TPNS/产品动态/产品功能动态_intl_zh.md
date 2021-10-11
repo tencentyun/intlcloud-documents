@@ -203,7 +203,7 @@
 <td>富媒体通知升级</td>
 <td>富媒体通知能力升级，通知带图片，点击率 Up Up ！ （适配华为、小米通道富媒体通知） </td>
 <td>2020-07-30</td>
-<td><a href="https://cloud.tencent.com/document/product/548/46964 ">富媒体通知</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1024/37858 ">富媒体通知</a></td>
 </tr>
 
 <tr>

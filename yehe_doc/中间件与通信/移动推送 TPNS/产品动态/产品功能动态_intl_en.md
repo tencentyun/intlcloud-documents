@@ -203,7 +203,7 @@
 <td>Rich media notification is upgraded</td>
 <td>The rich media notification feature is upgraded to support images in notifications for an improved click rate (for the Huawei and Mi channels).</td>
 <td>July 30, 2020</td>
-<td><a href="https://cloud.tencent.com/document/product/548/46964 ">Rich Media Notification</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1024/37858">Rich Media Notification</a></td>
 </tr>
 
 <tr>

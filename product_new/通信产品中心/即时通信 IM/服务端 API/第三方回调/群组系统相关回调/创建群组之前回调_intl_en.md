@@ -105,7 +105,7 @@ Reject the user’s request to create the group. In this case, the group will no
 | Field | Type | Attribute | Description |
 | --- | --- | --- | --- |
 | ActionStatus | String | Required | The request processing result. OK: succeeded. FAIL: failed. |
-| ErrorCode | Integer | Required | The error code. 0: allow creation. 1: reject creation. |
+| ErrorCode | Integer | Required | The error code. 0: allow creation. 1: reject creation. If the business side wants to specify error code to forbid the request form a user and send `ErrorCode` and `ErrorInfo` to the client, ensure that the value of `ErrorCode` is set within the range of [10100, 10200]. |
 | ErrorInfo | String | Required | The error information. |
 
 ## References
