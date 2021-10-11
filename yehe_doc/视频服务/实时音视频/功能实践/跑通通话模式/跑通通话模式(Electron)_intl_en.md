@@ -1,7 +1,7 @@
 ## Use Cases
 
-TRTC supports four room entry modes. Video call (`VideoCall`) and audio call (`VoiceCall`) are the call modes, and interactive video live streaming (`Live`) and interactive audio live streaming (`VoiceChatRoom`) are the [live streaming modes](https://intl.cloud.tencent.com/document/product/647/36070).
-- The call modes allow a maximum of 300 users in each TRTC room, and up to 50 of them can speak at the same time. The call modes are suitable for scenarios such as one-to-one video calls, video conferences with up to 300 participants, online medical consultation, video interviews, video customer service, and online Werewolf playing.
+TRTC supports four room entry modes. Video call (`VideoCall`) and audio call (`VoiceCall`) are the call modes, and interactive video streaming (`Live`) and interactive audio streaming (`VoiceChatRoom`) are the [live streaming modes](https://intl.cloud.tencent.com/document/product/647/36070).
+The call modes allow a maximum of 300 users in each TRTC room, and up to 50 of them can speak at the same time. The call modes are suitable for scenarios such as one-to-one video calls, video conferencing with up to 300 participants, online medical consultation, remote interviews, video customer service, and online Werewolf playing.
 
 ## How It Works
 
@@ -27,10 +27,11 @@ You can obtain the sample code used in this document at [GitHub](https://github.
 
 We recommend that you read [Demo Quick Start > Electron](https://intl.cloud.tencent.com/document/product/647/35089) first and follow the instructions to run the official `SimpleDemo`.
 
-- If you run `SimpleDemo` successfully, it means that you have mastered the method of installing Electron in your project.
+- If you run `SimpleDemo` successfully, then you know how to install Electron in your project.
 - If not, there may be a problem in the download or installation process. Try troubleshooting the problem by following the instructions in Electron's [installation document](https://www.electronjs.org/docs/tutorial/installation).
 
 [](id:step2)
+
 ### Step 2. Integrate `trtc-electron-sdk` into your project
 
 If you can [run SimpleDemo](#step1) successfully, then you know how to set up the Electron environment.
@@ -52,7 +53,7 @@ let trtcCloud = new TRTCCloud();
 2. Listen for the `onError` event:
 <dx-codeblock>
 ::: javascript javascript
-// Error events must be listened for and captured, and error messages should be sent to users
+// Error events must be listened for and captured, and error messages should be sent to users.
 let onError = function(err) {
     console.error(err);
 };
@@ -89,7 +90,7 @@ param.userSig = 'eJyrVareCeYrSy1SslI...';
 
 
 >! 
->-In TRTC, users with the same `userId` cannot be in the same room at the same time as it will cause a conflict.
+>- In TRTC, users with the same `userId` cannot be in the same room at the same time as it will cause a conflict.
 >
 >- The value of `appScene` must be the same on each client. Inconsistent `appScene` may cause unexpected problems.
 
@@ -97,10 +98,10 @@ param.userSig = 'eJyrVareCeYrSy1SslI...';
 ### Step 5. Create and enter a room
 
 1. Call [enterRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom) to enter the room specified by the `roomId` field in `TRTCParams`. If the room does not exist, the SDK will create a room whose number is the value of `roomId`.
-2. Set the `appScene` parameter according to your actual application scenario. Inappropriate `appScene` values may lead to increased lag or decreased clarity.
+2. Set the `appScene` parameter according to your actual application scenario. Inappropriate `appScene` values may increase stutter or reduce video clarity.
    - For video calls, set it to `TRTCAppScene.TRTCAppSceneVideoCall`.
    - For audio calls, set it to `TRTCAppScene.TRTCAppSceneAudioCall`.
-   >? For more information about `TRTCAppScene`, see [TRTCAppScene ](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCAppScene).
+>? For more information about `TRTCAppScene`, see [TRTCAppScene ](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCAppScene).
 3. You will receive the [onEnterRoom(result)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onEnterRoom) callback. If `result` is greater than 0, room entry succeeds, and the value of `result` indicates the time (ms) room entry takes; if `result` is less than 0, room entry fails, and the value is the error code for the failure.
 
 <dx-codeblock>
@@ -121,7 +122,7 @@ let onEnterRoom = function (result) {
 // Subscribe to the room entry event
 trtcCloud.on('onEnterRoom', onEnterRoom);
 
-// Enter room. If the room does not exist, the TRTC will create one
+// Enter room. If the room does not exist, the TRTC will create one.
 let param = new TRTCParams();
 param.sdkAppId = 1400000123;
 param.roomId = 29834;
@@ -142,12 +143,12 @@ The SDK supports two subscription modes: automatic subscription and manual subsc
 After room entry, the SDK will automatically pull audio streams from other users in the room. This enables instant streaming.
 
 1. If other users in the room are sending audio data, you will receive the [onUserAudioAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserAudioAvailable) notification, and the SDK will play their audio automatically.
-2. You can call [muteRemoteAudio(userId,  true)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#muteRemoteAudio) to mute a specified `userId`, or[muteAllRemoteAudio(true)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#muteAllRemoteAudio) to mute all remote users. The SDK will stop pulling the user(s)’ audio.
-3. If a remote user in the room is sending video data, you will receive the [onUserVideoAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserVideoAvailable) notification, but since the SDK has not received instructions on how to display the video, it will not process the video data. You must call [startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView) to associate the remote user’s video data with `view`.
-4. You can call [setLocalViewFillMode()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setLocalViewFillMode) to specify the display mode of a remote video.
-    -   `TRTCVideoFillMode.TRTCVideoFillMode_Fill`: aspect fill. The image may be scaled up and cropped, but there are no black bars.
-    -   `TRTCVideoFillMode.TRTCVideoFillMode_Fit`: aspect fit. The image may be scaled down to ensure that it’s displayed in its entirety, and there may be black bars.
-5. You can call [stopRemoteView(userId)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopRemoteView) to block the video of a specified `userId` or [stopAllRemoteView()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopAllRemoteView) to block the video of all remote users. The SDK will stop pulling the user(s)’ video data.
+2. You can call [muteRemoteAudio(userId, true)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#muteRemoteAudio) to mute a specified user (`userId`), or [muteAllRemoteAudio(true)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#muteAllRemoteAudio) to mute all remote users. The SDK will stop pulling the audio data of the user(s).
+3. If a remote user in the room is sending video data, you will receive the [onUserVideoAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserVideoAvailable) notification, but since the SDK has not received instructions on how to display the video, it will not process the video data. You need to call [startRemoteView(userId, view, streamType)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView) to associate the remote user’s video data with `view`.
+4. You can call [setRemoteViewFillMode(userId, mode)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setRemoteViewFillMode) to set the display mode of a remote video.
+    -`TRTCVideoFillMode.TRTCVideoFillMode_Fill`: aspect fill. The image may be scaled up and cropped, but there are no black bars.
+    -`TRTCVideoFillMode.TRTCVideoFillMode_Fit`: aspect fit. The image may be scaled down to ensure that it’s displayed in its entirety, and there may be black bars.
+5. You can call [stopRemoteView(userId)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopRemoteView) to block the video of a specified `userId` or [stopAllRemoteView()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopAllRemoteView) to block the video of all remote users. The SDK will stop pulling the video data of the user(s).
 
 <dx-codeblock>
 ::: html html
@@ -202,7 +203,7 @@ You can call [setDefaultStreamRecvMode(autoRecvAudio, autoRecvVideo)](https://we
 
 1. **Before you enter a room**, call the [setDefaultStreamRecvMode(false, false)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setDefaultStreamRecvMode) API to switch the SDK to the manual subscription mode.
 2. If other users in the room are sending audio data, you will receive the [onUserAudioAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserAudioAvailable) notification, and you need to call [muteRemoteAudio(userId, false)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#muteRemoteAudio) to manually subscribe to the users’ audio. The SDK will decode and play the audio data received.
-3. If a remote user in the room is sending video data, you will receive the [onUserVideoAvailable(userId, available)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserVideoAvailable) notification, and you need to call [startRemoteView(userId,  view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView) to manually subscribe to the user's video data. The SDK will decode and play the video data received.
+3. If a remote user in the room is sending video data, you will receive the [onUserVideoAvailable(userId, available)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserVideoAvailable) notification, and you need to call [startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView) to manually subscribe to the user's video data. The SDK will decode and play the video data received.
 
 
 [](id:step7)
@@ -211,13 +212,13 @@ You can call [setDefaultStreamRecvMode(autoRecvAudio, autoRecvVideo)](https://we
 1. Call [startLocalAudio()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startLocalAudio) to enable mic capturing and encode and publish the audio captured.
 2. Call [startLocalPreview()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startLocalPreview) to enable camera capturing and encode and publish the video captured.
 3. Call [setLocalViewFillMode()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setLocalViewFillMode) to set the display mode of the local video:
-   -   `TRTCVideoFillMode.TRTCVideoFillMode_Fill`: aspect fill. The image may be scaled up and cropped, but there are no black bars.
-   -   `TRTCVideoFillMode.TRTCVideoFillMode_Fit`: aspect fit. The image may be scaled down to ensure that it’s displayed in its entirety, and there may be black bars.
+   -`TRTCVideoFillMode.TRTCVideoFillMode_Fill`: aspect fill. The image may be scaled up and cropped, but there are no black bars.
+   -`TRTCVideoFillMode.TRTCVideoFillMode_Fit`: aspect fit. The image may be scaled down to ensure that it’s displayed in its entirety, and there may be black bars.
 4. Call [setVideoEncoderParam()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setVideoEncoderParam) to set the encoding parameters for the local video, which determine the [quality of your video](https://intl.cloud.tencent.com/document/product/647/35153) seen by other users in the room.
 
 <dx-codeblock>
 ::: javascript javascript
-// Sample code: publish local audio/video streams
+// Sample code: publish the local audio/video stream
 trtcCloud.startLocalPreview(view);
 trtcCloud.setLocalViewFillMode(TRTCVideoFillMode.TRTCVideoFillMode_Fill);
 trtcCloud.startLocalAudio();
@@ -243,7 +244,7 @@ Call [exitRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electr
 
 <dx-codeblock>
 ::: javascript javascript
-// Please wait for the `onExitRoom` callback after calling the room exit API
+// Please wait for the `onExitRoom` callback after calling the room exit API.
 let onExitRoom = function (reason) {
   console.log(`onExitRoom, reason: ${reason}`);
 };

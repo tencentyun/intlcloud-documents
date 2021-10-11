@@ -1,6 +1,6 @@
 ## Use Cases
-TRTC supports four room entry modes. Video call (`VideoCall`) and audio call (`AudioCall`) are the call modes, and interactive video live streaming (`Live`) and interactive audio live streaming (`VoiceChatRoom`) are the [live streaming modes](https://intl.cloud.tencent.com/document/product/647/35107).
-The call modes allow a maximum of 300 users in each TRTC room, and up to 50 of them can speak at the same time. The call modes are suitable for scenarios such as one-to-one video calls, video conferences with up to 300 participants, online medical consultation, video interviews, video customer service, and online Werewolf playing.
+TRTC supports four room entry modes. Video call (`VideoCall`) and audio call (`AudioCall`) are the call modes, and interactive video streaming (`Live`) and interactive audio streaming (`VoiceChatRoom`) are the [live streaming modes](https://intl.cloud.tencent.com/document/product/647/35107).
+The call modes allow a maximum of 300 users in each TRTC room, and up to 50 of them can speak at the same time. The call modes are suitable for scenarios such as one-to-one video calls, video conferencing with up to 300 participants, online medical consultation, remote interviews, video customer service, and online Werewolf playing.
 
 ## How It Works
 TRTC services use two types of server nodes: access servers and proxy servers.
@@ -32,12 +32,12 @@ target 'Your Project' do
         pod 'TXLiteAVSDK_TRTC'
 end
 ```
-3. Run the following command to install the **TRTC SDK**.
+3. Run the command below to install the **TRTC SDK**.
 ```
 pod install
 ```
-After successful installation, a **xcworkspace** file will be generated in the root directory of your project.
-4. Open the **xcworkspace** file.
+After successful installation, an **XCWORKSPACE** file will be generated in the root directory of your project.
+4. Open the **XCWORKSPACE** file.
 
 #### Method 2: manual integration
 If you do not want to install CocoaPods, or your access to CocoaPods repositories is slow, you can download the [ZIP file](https://intl.cloud.tencent.com/document/product/647/34615) of the SDK and integrate it into your project as instructed in [SDK Quick Integration > iOS](https://intl.cloud.tencent.com/document/product/647/35092).
@@ -48,13 +48,13 @@ Add camera and mic permission requests in the `Info.plist` file.
 
 | Key | Value |
 |---------|---------|
-| Privacy - Camera Usage Description | States the reason for requesting camera permission, for example, “camera access is required to capture your video”. |
-| Privacy - Microphone Usage Description | States the reason for requesting mic permission, for example, “mic access is required to capture your audio”. |
+| Privacy - Camera Usage Description | The reason for requesting camera permission, for example, “camera access is required to capture video” |
+| Privacy - Microphone Usage Description | The reason for requesting mic permission, for example, “mic access is required to capture audio” |
 
 [](id:step3)
 ### Step 3. Initialize an SDK instance and configure event callbacks
 
-1. Call the [sharedInstance()](https://intl.cloud.tencent.com/document/product/647/35119) API to create a `TRTCCloud` instance.
+1. Call [sharedInstance()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ab6884975e069628328d05cf0e2c3dc67) to create a `TRTCCloud` instance.
 ```
 // Create a TRTCCloud instance
 _trtcCloud = [TRTCCloud sharedInstance];
@@ -63,7 +63,7 @@ _trtcCloud.delegate = self;
 2. Set the attributes of `delegate` to subscribe to event callbacks and listen for event and error notifications.
 <dx-codeblock>
 ::: iOS object-c
-// Error events must be listened for and captured, and error messages should be sent to users
+// Error events must be listened for and captured, and error messages should be sent to users.
 - (void)onError:(TXLiteAVError)errCode errMsg:(NSString *)errMsg extInfo:(NSDictionary *)extInfo {
     if (ERR_ROOM_ENTER_FAIL == errCode) {
         [self toastTip:@"Failed to enter room"];
@@ -108,7 +108,7 @@ When calling the [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group
 
 - (void)onEnterRoom:(NSInteger)result {
     if (result > 0) {
-        [self toastTip:@"Entered room"];
+        [self toastTip:@"Entered room successfully"];
     } else {
         [self toastTip:@"Failed to enter room"];
     }
@@ -122,18 +122,18 @@ When calling the [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group
 >- The value of `appScene` must be the same on each client. Inconsistent `appScene` may cause unexpected problems.
 
 [](id:step6)
-### Step 6. Subscribe to remote streams
+### Step 6. Subscribe to remote audio/video streams
 The SDK supports automatic subscription and manual subscription.
 
-#### Automatic subscription mode (default)
+#### Automatic subscription (default)
 In the automatic subscription mode, after room entry, the SDK will automatically pull audio streams from other users in the room. This enables instant streaming.
 1. If other users in the room are sending audio data, you will receive the [onUserAudioAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a8c885eeb269fc3d2e085a5711d4431d5) notification, and the SDK will automatically play back the users’ audio.
-2. Call [muteRemoteAudio(userId, mute: true)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afede3cc79a8d68994857b410fb5572d2) to mute a specified `userId`, or [muteAllRemoteAudio(true)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a75148bf8a322c852965fe774cbc7dd14) to mute all remote users. The SDK will stop pulling the user(s)’ audio.
+2. Call [muteRemoteAudio(userId, mute: true)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afede3cc79a8d68994857b410fb5572d2) to mute a specified user (`userId`), or [muteAllRemoteAudio(true)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a75148bf8a322c852965fe774cbc7dd14) to mute all remote users. The SDK will stop pulling the audio data of the user(s).
 3. If a remote user in the room is sending video data, you will receive the [onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) notification, but since the SDK has not received instructions on how to display the video, it will not process the video data. You must call [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) to associate the remote user’s video data with `view`.
 4. Call [setRemoteViewFillMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff) to specify the display mode of a remote video.
  - `Fill`: aspect fill. The image may be scaled up and cropped, but there are no black bars.
  - `Fit`: aspect fit. The image may be scaled down to ensure that it’s displayed in its entirety, and there may be black bars.
-5. Call [stopRemoteView(userId)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2b7e96e4b527798507ff743c61a6a066) to block the video data of a specified `userId` or [stopAllRemoteView()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aaa75cd1b98c226bb7b8a19412b204d2b) to block the video data of all remote users. The SDK will stop pulling the remote user(s)’ video data.
+5. Call [stopRemoteView(userId)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2b7e96e4b527798507ff743c61a6a066) to block the video data of a specified user (`userId`) or [stopAllRemoteView()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aaa75cd1b98c226bb7b8a19412b204d2b) to block the video data of all remote users. The SDK will stop pulling the video data of the user(s).
 
 <dx-codeblock>
 ::: iOS object-c
@@ -151,7 +151,7 @@ In the automatic subscription mode, after room entry, the SDK will automatically
 
 >? If you do not call `startRemoteView()` to subscribe to the video stream immediately after receiving the `onUserVideoAvailable()` event callback, the SDK will stop pulling the remote video within 5 seconds.
 
-#### Manual subscription mode
+#### Manual subscription
 You can call [setDefaultStreamRecvMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ada2e2155e0e7c3001c6bb6dca1d93048) to switch the SDK to the manual subscription mode. In this mode, the SDK will not pull the data of other users in the room automatically. You have to start the process manually via APIs.
 
 1. **Before you enter a room**, call the [setDefaultStreamRecvMode(false, video: false)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ada2e2155e0e7c3001c6bb6dca1d93048) API to switch the SDK to the manual subscription mode.
@@ -169,7 +169,7 @@ You can call [setDefaultStreamRecvMode()](https://liteav.sdk.qcloud.com/doc/api/
 
 <dx-codeblock>
 ::: iOS object-c
-// Sample code: publish local audio/video streams
+// Sample code: publish the local audio/video stream
 [self.trtcCloud startLocalPreview:_isFrontCamera view:self.view];
 [self.trtcCloud startLocalAudio:TRTCAudioQualityMusic];
 :::
@@ -184,7 +184,7 @@ Call [exitRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__
 
 <dx-codeblock>
 ::: iOS object-c
-// Please wait for the `onExitRoom` callback after calling the room exit API
+// Please wait for the `onExitRoom` callback after calling the room exit API.
 [self.trtcCloud exitRoom];
 
 - (void)onExitRoom:(NSInteger)reason {

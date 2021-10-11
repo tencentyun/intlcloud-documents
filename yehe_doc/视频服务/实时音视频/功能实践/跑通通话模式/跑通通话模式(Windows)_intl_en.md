@@ -1,5 +1,5 @@
 ## Overview
-This document describes how to use the TRTC SDK to implement a simple video call feature. It covers only the most commonly used APIs. To learn about other APIs, please see the [API documentation](https://intl.cloud.tencent.com/document/product/647/35119).
+This document describes how to use the TRTC SDK to implement the simple video call feature. It covers only the most used APIs. To learn about other APIs, please see the [API documentation](https://intl.cloud.tencent.com/document/product/647/35119).
 
 
 ## Sample Code
@@ -8,7 +8,7 @@ This document describes how to use the TRTC SDK to implement a simple video call
 |---------|---------|
 | Windows (MFC) | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp) |
 | Windows (Duilib) | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/TRTCMainViewController.cpp) |
-| Windows (C#) | [TRTCMainForm.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/CSharpDemo/TRTCMainForm.cs) |
+| Windows (C#) | [TRTCMainForm.cs](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/CSharpDemo/TRTCMainForm.cs) |
 
 ## Video Call
 ### 1. Initialize the SDK
@@ -48,7 +48,7 @@ private:
 
 TRTCMainViewController::TRTCMainViewController()
 {
-    // Create a TRTCCloud instance
+    // Create a `TRTCCloud` instance
     m_pTRTCSDK = getTRTCShareInstance();
     
     // Subscribe to the SDK’s events
@@ -62,14 +62,14 @@ TRTCMainViewController::~TRTCMainViewController()
         m_pTRTCSDK->removeCallback(this);
     }
     
-    // Release the TRTCCloud instance
+    // Release the `TRTCCloud` instance
       if(m_pTRTCSDK != NULL) {
        destroyTRTCShareInstance();
         m_pTRTCSDK = null;
     }
 }
 
-// Error notifications indicate that the SDK has stopped working and therefore must be listen for
+// Error notifications indicate that the SDK has stopped working and therefore must be listened for.
 virtual void TRTCMainViewController::onError(TXLiteAVError errCode, const char* errMsg, void* arg)
 {
     if (errCode == ERR_ROOM_ENTER_FAIL) {
@@ -92,7 +92,7 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 	{
 		InitializeComponent();
 		this.Disposed += new EventHandler(OnDisposed);
-		// Create a TRTCCloud instance
+		// Create a `TRTCCloud` instance
 		mTRTCCloud = ITRTCCloud.getTRTCShareInstance();
 		// Subscribe to the SDK’s events
 		mTRTCCloud.addCallback(this);
@@ -105,14 +105,14 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 		{
 			// Unsubscribe from the SDK’s events
 			mTRTCCloud.removeCallback(this);
-			// Release the TRTCCloud instance
+			// Release the `TRTCCloud` instance
 			ITRTCCloud.destroyTRTCShareInstance();
 			mTRTCCloud = null;
 		}
 		...
 	}
 	...
-	// Error notifications indicate that the SDK has stopped working and therefore must be listen for
+	// Error notifications indicate that the SDK has stopped working and therefore must be listened for.
 	public void onError(TXLiteAVError errCode, string errMsg, IntPtr arg)
 	{
 	     if (errCode == TXLiteAVError.ERR_ROOM_ENTER_FAIL) {
@@ -132,20 +132,19 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 - **SDKAppID**
   Log in to the [TRTC console](https://console.cloud.tencent.com/rav). If you don't have an application yet, create one, and you will see its `SDKAppID`.
   
-
 - **userId**
-  A random string, which you can keep in line with the naming of your account. Please note that **there cannot be users with identical `userId` in a room**.
+  A custom string, which you can keep in line with the naming of your account. Please note that **there cannot be users with identical `userId` in a room**.
 
 - **userSig**
   Calculated based on `SDKAppID` and `userID`. For details, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 - **roomId**
-  A random number. Please note that **rooms under the same application cannot have identical `roomId`**.
+  A custom number. Please note that **rooms under the same application cannot have identical `roomId`**.
 
 ### 3. Enter (or create) a room
 Call `enterRoom` to enter the room specified by the `roomId` field in `TRTCParams`. If the room does not exist, the SDK will create one whose room number is the value of `roomId`.
 
-The **appScene** parameter specifies the application scenario of the SDK. In this document, it is set to `TRTCAppSceneVideoCall` (video call). The codec and network components give a higher priority to ensuring video smoothness and reducing call latency and lag in this scenario.
+The **appScene** parameter specifies the application scenario of the SDK. In this document, it is set to `TRTCAppSceneVideoCall` (video call). In this scenario, the codec and network components give a higher priority to ensuring video smoothness and reducing call latency and stutter.
 				
 - After calling the room entry API, you will receive the `onEnterRoom` callback. If `result` is greater than 0, room entry succeeds, and the value represents the time (ms) room entry takes; if `result` is less than 0, room entry fails, and the value is the error code for the failure.
 - If room entry fails, you will also receive the `onError` callback, which contains `errCode` (error code, whose value is `ERR_ROOM_ENTER_FAIL`; for other error code values, please see `TXLiteAVCode.h`), `errMsg` (error message), and `extraInfo` (reserved parameter).
@@ -157,7 +156,7 @@ The **appScene** parameter specifies the application scenario of the SDK. In thi
 
 void TRTCMainViewController::enterRoom()
 {
-    // For the definition of `TRTCParams`, please see the `TRTCCloudDef.h` header file
+    // For the definition of `TRTCParams`, please see the header file `TRTCCloudDef.h`.
     TRTCParams params;
     params.sdkAppId = sdkappid;
     params.userId   = userid;
@@ -187,7 +186,7 @@ void TRTCMainViewController::onEnterRoom(int result)
     LOGI(L"onEnterRoom result[%d]", result);
     if(result >= 0)
 	{
-		// Entered room
+		// Entered room successfully
 	}
 	else
 	{
@@ -200,7 +199,7 @@ void TRTCMainViewController::onEnterRoom(int result)
 
 public void EnterRoom()
 {
-    // For the definition of `TRTCParams`, please see the `TRTCCloudDef.h` header file
+    // For the definition of `TRTCParams`, please see the header file `TRTCCloudDef.h`.
     TRTCParams @params = new TRTCParams();
     @params.sdkAppId = sdkappid;
     @params.userId   = userid;
@@ -229,7 +228,7 @@ public void onEnterRoom(int result)
 {
     if(result >= 0)
 	{
-		// Entered room
+		// Entered room successfully
 	}
 	else
 	{
@@ -241,11 +240,11 @@ public void onEnterRoom(int result)
 
 
 >!
->- Set the **`appScene`** parameter according to your actual application scenario. Inappropriate `appScene` values may lead to increased lag or decreased clarity.
+>- Set the `appScene` parameter according to your actual application scenario. Inappropriate `appScene` values may lead to increased stutter or decreased clarity.
 >- The value of `appScene` must be the same on each client. Inconsistent `appScene` may cause unexpected problems.
 
 ### 4. Play remote audio streams
-The TRTC SDK pulls remote audio streams by default, so there is no need for extra code. If you do not want to play the audio stream of a `userid`, you can mute it by calling `muteRemoteAudio`.
+The TRTC SDK pulls remote audio streams by default, so there is no need for extra code. If you do not want to play the audio stream of a specified user (`userid`), you can mute it by calling `muteRemoteAudio`.
 
 ### 5. Play remote video streams
 
@@ -304,9 +303,9 @@ Mic capturing is disabled by default. Call `startLocalAudio` to enable local aud
 
 ### 7. Enable/Disable local video capturing
 
-Camera capturing is disabled by default. You can call `startLocalPreview` to turn on the local camera and enable preview, and `stopLocalPreview` to disable preview.
+Camera capturing is disabled by default. You can call `startLocalPreview` to turn the local camera on and enable preview, and `stopLocalPreview` to disable camera capturing and preview.
 
-- Call `startLocalPreview` to specify the window for local video rendering. **The SDK dynamically detects window size and renders the video in the window represented by `rendHwnd`.**
+- Call `startLocalPreview`, specifying the window for local video rendering. **The SDK dynamically detects window size and renders the video in the window represented by `rendHwnd`.**
 - Call the `setLocalViewFillMode` API to set the local video rendering mode to `Fill` or `Fit`. In both modes, video may be resized proportionally, but they differ in that:
   - In the `Fill` mode, the image fills the entire screen. If the dimensions of the image do not match those of the screen after scaling, the parts that do not fit are cropped.
   - In the `Fit` mode, the image is displayed in whole. If the dimensions of the image do not match those of the screen after scaling, the unoccupied space is painted black.
@@ -353,20 +352,20 @@ public void onEnterRoom(int result)
 </dx-codeblock>
 
 
-### 8. Block audio/video streams
+### 8. Block audio/video
 
 - **Block local video data**
   Call `muteLocalVideo` to block local video data to other users in the room if you do not want them to see your video for privacy reasons.
   
 - **Block local audio data**
-  Call “muteLocalAudio” to block local audio data to other users in the room if you do not want them to hear your audio for privacy reasons.
+  Call `muteLocalAudio` to block local audio data to other users in the room if you do not want them to hear your audio for privacy reasons.
   
 - **Block remote video data**
-  Call `stopRemoteView` to block the video data of a `userid`.
+  Call `stopRemoteView` to block the video data of a specified user (`userid`).
   Call `stopAllRemoteView` to block the video data of all remote users.
   
 - **Block remote audio data**
-  Call `muteRemoteAudio` to block the audio data of a `userid`.
+  Call `muteRemoteAudio` to block the audio data of a specified user (`userid`).
   Call `muteAllRemoteAudio` to block the audio data of all remote users.
 
 ### 9. Exit the room
@@ -387,7 +386,7 @@ void TRTCMainViewController::exitRoom()
 ....
 void TRTCMainViewController::onExitRoom(int reason)
 {
-	// Room exit successful. `reason` is a reserved parameter and is not used for the time being
+	// Exited room successfully. `reason` is a reserved parameter and is not used for the time being.
 
     ...
 }
@@ -405,7 +404,7 @@ public void OnExit()
 ...
 public void onExitRoom(int reason)
 {
-    // Exited room
+    // Exited room successfully
     ...
 }
 :::
