@@ -1,22 +1,22 @@
 
-TRTCMeetingは、Tencent CloudのTRTCおよびIM サービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
+TRTCMeetingは、Tencent CloudのTRTCおよびIMサービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
 - キャスターがミーティングルームを作成し、参加者はルームナンバーを入力した後にミーティングに参加します。
 - 参加者の間で画面共有を行います。
-- 各種のテキストメッセージとカスタマイズメッセージの送信をサポートします。
+- 各種のテキストメッセージとカスタムメッセージの送信をサポートします。
 
 TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloudの2つのクローズドソースのSDKに依存しています。具体的な実現プロセスは、[多人数ビデオミーティング(iOS)](https://intl.cloud.tencent.com/document/product/647/37284)をご参照ください。
 
-- TRTC SDK： [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) を低レイテンシーのビデオミーティングのコンポーネントとして利用します。
+- TRTC SDK： [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) を低遅延のビデオミーティングのコンポーネントとして使用します。
 - IM SDK：[IM SDK](https://intl.cloud.tencent.com/document/product/1047)のMeetingRoomを利用して、ミーティング中のチャットルームの機能を実現します。
 
-## TRTCMeeting API 概要
+## TRTCMeeting API概要
 
 ### SDK基本関数
 
 | API                                 | 説明                     |
 | ----------------------------------- | ------------------------ |
 | [sharedInstance](#sharedinstance) | シングルトンオブジェクトを取得します。           |
-| [delegateQueue](#delegatequeue)   | イベントのコールバックが存在するスレッドを設定します。 |
+| [delegateQueue](#delegatequeue)   | イベントコールバックが設定されているスレッドです。 |
 | [delegate](#delegate)             | イベントコールバックを設定します。           |
 | [login](#login)                   | ログイン。                   |
 | [logout](#logout)                 | ログアウト。                   |
@@ -26,10 +26,10 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | API                                 | 説明                           |
 | ----------------------------------- | ------------------------------ |
-| [createMeeting](#createmeeting)   | ルームの新規作成（キャスターがコール）。   |
-| [destroyMeeting](#destroymeeting) | ルームの廃棄（キャスターがコール）。   |
-| [enterMeeting](#entermeeting)     | 入室（参加者がコール）。 |
-| [leaveMeeting](#leavemeeting)     | 入室（参加者がコール）。 |
+| [createMeeting](#createmeeting)   | ルームの作成（キャスターが呼び出し）。   |
+| [destroyMeeting](#destroymeeting) | ルームの破棄（キャスターが呼び出し）。   |
+| [enterMeeting](#entermeeting)     | 入室（参加者が呼び出し）。 |
+| [leaveMeeting](#leavemeeting)     | 退室（参加者が呼び出し）。 |
 
 ### リモートユーザーのインターフェース
 
@@ -41,7 +41,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | [stopRemoteView](#stopremoteview)               | リモートビデオ画面の再生を停止します。                                       |
 | [setRemoteViewFillMode](#setremoteviewfillmode) | ユーザーIDと設定に基づくリモート画像のレンダリングモード。                         |
 | [setRemoteViewRotation](#setremoteviewrotation) | リモート画像の時計回りの回転角度を設定します。                               |
-| [muteRemoteAudio](#muteremoteaudio)             | リモートの指定参加者の声音をミュートにします。                                     |
+| [muteRemoteAudio](#muteremoteaudio)             | リモートの指定参加者の音声をミュートにします。                                     |
 | [muteRemoteVideoStream](#muteremotevideostream) | リモートの指定参加者のビデオストリームを非表示にします。                                   |
 
 ### ローカルのビデオ操作インターフェース
@@ -50,13 +50,13 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | ------------------------------------------- | -------------------------- |
 | [startCameraPreview](#startcamerapreview) | ローカルビデオのプレビュー画面を立ち上げます。   |
 | [stopCameraPreview](#stopcamerapreview)   | ローカルのビデオキャプチャおよびプレビューを停止します。   |
-| [switchCamera](#switchcamera)   | 前後カメラを切り替えます。           |
+| [switchCamera](#switchcamera)   | フロント/リアカメラを切り替えます。           |
 | [setVideoResolution](#setvideoresolution) | 解像度の設定。               |
 | [setVideoFps](#setvideofps)               | フレームレートの設定。                 |
 | [setVideoBitrate](#setvideobitrate)       | ビットレートの設定。                 |
 | [setLocalViewMirror](#setlocalviewmirror) | ローカル画面のミラーモードのプレビューを設定します。 |
 
-### ローカルの音声操作インターフェース
+### ローカルのオーディオ操作インターフェース
 
 | API                                               | 説明                 |
 | ------------------------------------------------- | -------------------- |
@@ -84,7 +84,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | API                                     | 説明                                                         |
 | --------------------------------------- | ------------------------------------------------------------ |
-| [getBeautyManager](#getbeautymanager) | 美顔管理オブジェクト [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html)を取得します。 |
+| [getBeautyManager](#getbeautymanager) | 美顔管理オブジェクト[TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html)を取得します。 |
 
 ### 共有のインターフェース
 
@@ -96,10 +96,10 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | API                                       | 説明                                                       |
 | ----------------------------------------- | ---------------------------------------------------------- |
-| [sendRoomTextMsg](#sendroomtextmsg)     | ルーム内でのテキストメッセージの放送には、通常テキストによるチャットを使用します。                     |
-| [sendRoomCustomMsg](#sendroomcustommsg) | ルーム内でカスタマイズ（シグナリング）したメッセージを発信します。 |
+| [sendRoomTextMsg](#sendroomtextmsg)     | ルーム内でのテキストメッセージのブロードキャスト。通常、テキストによるチャットに使用します。                     |
+| [sendRoomCustomMsg](#sendroomcustommsg) | ルーム内でカスタマイズ（シグナリング）したメッセージを送信します。 |
 
-## TRTCMeetingDelegate API 概要
+## TRTCMeetingDelegate API概要
 
 ### 一般的なイベントコールバック
 
@@ -111,7 +111,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | API                                         | 説明                   |
 | ------------------------------------------- | ---------------------- |
-| [onRoomDestroy](#onroomdestroy)           | ミーティングルームが廃棄された時のコールバック。 |
+| [onRoomDestroy](#onroomdestroy)           | ミーティングルームが破棄された時のコールバック。 |
 | [onNetworkQuality](#onnetworkquality)     | ネットワーク状態のコールバック。         |
 | [onUserVolumeUpdate](#onuservolumeupdate) | ユーザー通話音量のコールバック。     |
 
@@ -126,12 +126,12 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | API                                             | 説明                        |
 | ----------------------------------------------- | --------------------------- |
-| [onUserVideoAvailable](#onuservideoavailable) | 参加者のカメラオン／オフの通知。 |
-| [onUserAudioAvailable](#onuseraudioavailable) | 参加者のマイクオン／オフの通知。 |
+| [onUserVideoAvailable](#onuservideoavailable) | 参加者のカメラ・オン/オフの通知。 |
+| [onUserAudioAvailable](#onuseraudioavailable) | 参加者のマイク・オン/オフの通知。 |
 
 ### スクリーンキャプチャのイベントコールバック
 
-| API                                                 | 説明           |
+| API                                                 | 説明          |
 | --------------------------------------------------- | -------------- |
 | [onScreenCaptureStarted](#onscreencapturestarted) | スクリーンキャプチャ開始の通知。 |
 | [onScreenCapturePaused](#onscreencapturepaused)   | スクリーンキャプチャ一時停止のコールバック。 |
@@ -143,37 +143,37 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | API                                           | 説明             |
 | --------------------------------------------- | ---------------- |
 | [onRecvRoomTextMsg](#onrecvroomtextmsg)     | テキストメッセージの受信。   |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | カスタマイズメッセージの受信。 |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | カスタムメッセージの受信。 |
 
 ### スクリーンキャプチャのイベントコールバック
 
-| API                                                 | 説明           |
+| API                                                 | 説明          |
 | --------------------------------------------------- | -------------- |
 | [onScreenCaptureStarted](#onscreencapturestarted) | スクリーンキャプチャ開始の通知。 |
 | [onScreenCapturePaused](#onscreencapturepaused)   | スクリーンキャプチャ一時停止のコールバック。 |
 | [onScreenCaptureResumed](#onscreencaptureresumed) | スクリーンキャプチャ再開のコールバック。 |
 | [onScreenCaptureStoped](#onscreencapturestoped)   | スクリーンキャプチャ停止のコールバック。 |
 
-## TRTCMeetingDef API 概要
+## TRTCMeetingDef API概要
 
-### TRTCMeetingUserInfo ミーティングのユーザー情報
+### TRTCMeetingUserInfoミーティングのユーザー情報
 
 | 属性                                    | 説明                                   |
 | --------------------------------------- | -------------------------------------- |
 | [userId](#userid)       | ユーザーID。           |
 | [userName](#username)   | ユーザー名（ニックネーム）。 |
-| [avatarURL](#avatarurl) | ユーザープロファイル写真 URL。      |
+| [avatarURL](#avatarurl) | ユーザープロフィール画像URL。      |
 | [isVideoAvailable](#isvideoavailable) | ユーザーがビデオを立ち上げているかどうか。                   |
 | [isAudioAvailable](#isaudioavailable) | ユーザーが音声を有効にしているかどうか。                     |
 | [isMuteVideo](#ismutevideo)           | ユーザーのビデオを非表示にするかどうか（当該ユーザーのビデオを再生しない）。 |
 | [isMuteAudio](#ismuteaudio)           | ユーザーの音声をミュートにするかどうか（当該ユーザーの音声を再生しない）。 |
 
 
-## SDK 基本関数
+## SDK基本関数
 
 ### sharedInstance
 
-[TRTCMeeting](https://intl.cloud.tencent.com/document/product/647/37284) シングルトンオブジェクトの取得。
+[TRTCMeeting](https://intl.cloud.tencent.com/document/product/647/37284) シングルトンオブジェクトを取得します。
 
 ```objective-c
 + (instancetype)sharedInstance;
@@ -181,7 +181,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 ### delegateQueue
 
-イベントコールバックが存在するスレッドを設定します。
+イベントコールバックが設定されているスレッドです。
 
 ```objective-c
 - (void)setDelegateQueue:(dispatch_queue_t)delegateQueue
@@ -210,9 +210,9 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | パラメータ     | タイプ                | 意味                                                         |
 | -------- | ------------------- | ------------------------------------------------------------ |
 | sdkAppId | UInt32              | TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報の中でSDKAppIDを確認できます。 |
-| userId   | NSString            | 現在のユーザーのID、文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（_）のみ使用できます。 |
+| userId   | NSString            | 現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（_）のみ使用できます。 |
 | userSig  | NSString            | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については、[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
-| callback | TRTCMeetingCallback | ログインのコールバック。成功時に code は0になります。                                  |
+| callback | TRTCMeetingCallback | ログインのコールバック。成功時にcodeは0になります。                                  |
 
 ### logout
 
@@ -226,7 +226,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ     | タイプ                | 意味                        |
 | -------- | ------------------- | --------------------------- |
-| callback | TRTCMeetingCallback | ログアウトのコールバック。成功時に code は0になります。 |
+| callback | TRTCMeetingCallback | ログアウトのコールバック。成功時にcodeは0になります。 |
 
 ### setSelfProfile
 
@@ -239,8 +239,8 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | パラメータ      | タイプ                | 意味                                      |
 | --------- | ------------------- | ----------------------------------------- |
 | userName  | NSString            | ユーザーのニックネーム。                                |
-| avatarURL | NSString            | ユーザーのプロファイル写真。                                |
-| callback  | TRTCMeetingCallback | ユーザー情報の設定結果のコールバック、成功時に code は0になります。 |
+| avatarURL | NSString            | ユーザーのプロフィール画像。                                |
+| callback  | TRTCMeetingCallback | ユーザー情報の設定結果のコールバック、成功時に codeは0になります。 |
 
 
 
@@ -248,7 +248,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 ### createMeeting
 
-ミーティングの作成（キャスターがコール）。
+ミーティングの作成（キャスターの呼び出し）。
 
 ```objective-c
 - (void)createMeeting:(UInt32)roomId callback:(TRTCMeetingCallback)callback;
@@ -258,8 +258,8 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ     | タイプ                | 意味                                   |
 | -------- | ------------------- | -------------------------------------- |
-| roomId   | UInt32              | ルームIDは、ご自身でアサインし、統一管理する必要があります。 |
-| callback | TRTCMeetingCallback | ルームの新規作成結果のコールバック。成功時に code は0になります。  |
+| roomId   | UInt32              | ルームIDは、ご自身でアサインし、一元管理する必要があります。 |
+| callback | TRTCMeetingCallback | ルームの新規作成結果のコールバック。成功時にcodeは0になります。  |
 
 キャスターの通常の呼び出しフローは以下のとおりです。 
 
@@ -269,7 +269,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 ### destroyMeeting
 
-ミーティングルームを廃棄します（キャスターがコール）。キャスターは、ミーティングの作成後、この関数を呼び出してミーティングを廃棄できます。
+ミーティングルームを破棄します（キャスターが呼び出し）。キャスターは、ミーティング作成後、この関数を呼び出してミーティングを破棄できます。
 
 ```objective-c
 - (void)destroyMeeting:(UInt32)roomId callback:(TRTCMeetingCallback)callback;
@@ -279,12 +279,12 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ     | タイプ                | 意味                                   |
 | -------- | ------------------- | -------------------------------------- |
-| roomId   | UInt32              | ルームIDは、ご自身でアサインし、統一管理する必要があります。 |
-| callback | TRTCMeetingCallback | ルームの新規作成結果のコールバック。成功時に code は0になります。  |
+| roomId   | UInt32              | ルームIDは、ご自身でアサインし、一元管理する必要があります。 |
+| callback | TRTCMeetingCallback | ルームの新規作成結果のコールバック。成功時にcodeは0になります。  |
 
 ### enterMeeting
 
-ミーティングに参加します（参加者がコール）。
+ミーティングに参加します（参加者が呼び出し）。
 
 ```objective-c
 - (void)enterMeeting:(UInt32)roomId callback:(TRTCMeetingCallback)callback;
@@ -294,17 +294,17 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ     | タイプ                | 意味                                   |
 | -------- | ------------------- | -------------------------------------- |
-| roomId   | UInt32              | ルームIDは、ご自身でアサインし、統一管理する必要があります。 |
-| callback | TRTCMeetingCallback | 入室結果のコールバック。成功時に code は0になります。  |
+| roomId   | UInt32              | ルームIDは、ご自身でアサインし、一元管理する必要があります。 |
+| callback | TRTCMeetingCallback | 入室結果のコールバック。成功時にcodeは0になります。  |
 
 参加者がミーティングに参加する通常の呼び出しフローは以下のとおりです。 
 1. 【参加者】`enterMeeting`を呼び出し、roomIdを渡すと、ミーティングルームに参加できます。
 2. 【参加者】`startCameraPreview()`を呼び出して、カメラのプレビューを起動し、`startMicrophone()`を呼び出し、マイクキャプチャを起動します。
-3. 【参加者】`onUserVideoAvailable`のイベントを受信します。`startRemoteView(userId)`を呼び出し、メンバーのuserIdを渡して再生を開始します。
+3. 【参加者】`onUserVideoAvailable`のイベントを受信します。`startRemoteView(userId)`を呼び出し、メンバーのuserIdを渡して再生を開始します
    
 ### leaveMeeting
 
-ミーティングから退出します（参加者がコール）。
+ミーティングから退出します（参加者が呼び出し）。
 
 ```objective-c
 - (void)leaveMeeting:(TRTCMeetingCallback)callback;
@@ -314,7 +314,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ     | タイプ                | 意味                                  |
 | -------- | ------------------- | ------------------------------------- |
-| callback | TRTCMeetingCallback | 退室結果のコールバック。成功時に code は0になります。 |
+| callback | TRTCMeetingCallback | 退室結果のコールバック。成功時にcodeは0になります。 |
 
 
 
@@ -362,12 +362,12 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | パラメータ     | タイプ                | 意味                       |
 | -------- | ------------------- | -------------------------- |
 | userId   | NSString            | 視聴が必要なユーザーのID。         |
-| view     | UIView              | ビデオ画像をロードするview ウィジェット。 |
+| view     | UIView              | ビデオ画像をロードするviewウィジェット。 |
 | callback | TRTCMeetingCallback | 操作のコールバック。                 |
 
 ### stopRemoteView
 
-リモートのビデオ画面のレンダリングを停止します。 `onUserVideoAvailable()`がfalseのコールバック時、このインターフェースを呼び出す必要があります。
+リモートのビデオ画面のレンダリングを停止します。 `onUserVideoAvailable()`がfalseのコールバック時、このインターフェースを呼び出します。
 
 ```objective-c
 - (void)stopRemoteView:(NSString *)userId callback:(TRTCMeetingCallback)callback;
@@ -382,7 +382,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 ### setRemoteViewFillMode
 
-ユーザーidと設定に基づくリモート画像のレンダリングモード。
+ユーザーidと設定に基づくリモート画像のレンダリングモード
 
 ```objective-c
 - (void)setRemoteViewFillMode:(NSString *)userId fillMode:(TRTCVideoFillMode)fillMode;
@@ -393,11 +393,11 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | パラメータ     | タイプ              | 意味                                                         |
 | -------- | ----------------- | ------------------------------------------------------------ |
 | userId   | NSString          | ユーザーID。                                                    |
-| fillMode | TRTCVideoFillMode | FILLまたはFITモード。デフォルト値：FILL（TRTCVideoFillMode_Fill）、詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff)をご参照ください。 |
+| fillMode | TRTCVideoFillMode | FILLまたはFITモード。デフォルト値：FILL（TRTCVideoFillMode_Fill）。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff)をご参照ください。 |
 
 ### setRemoteViewRotation
 
-リモート画像の時計回りの回転角度を設定します。
+リモート画像の時計回りの回転角度を設定します
 
 ```objective-c
 - (void)setRemoteViewRotation:(NSString *)userId rotation:(NSInteger)rotation;
@@ -408,7 +408,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | パラメータ     | タイプ      | 意味                                                         |
 | -------- | --------- | ------------------------------------------------------------ |
 | userId   | NSString  | 相手側のユーザーID。                                              |
-| rotation | NSInteger | 時計回りの回転角度。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90)をご参照ください。 |
+| rotation | NSInteger | 時計回りの回転角度。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90)をご参照ください。 |
 
 ### muteRemoteAudio
 
@@ -423,7 +423,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | パラメータ   | タイプ     | 意味                              |
 | ------ | -------- | --------------------------------- |
 | userId | NSString | リモートのユーザーID。                   |
-| mute   | BOOL     | true：ミュートオン；false：ミュートオフ。 |
+| mute   | BOOL     | true：ミュート起動、false：ミュート停止。 |
 
 ### muteRemoteVideoStream
 
@@ -442,7 +442,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 
 
-## ローカルビデオ操作のインターフェース
+## ローカルのビデオ操作インターフェース
 
 ### startCameraPreview
 
@@ -469,7 +469,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 ### switchCamera
 
-前後カメラを切り替えます。
+フロント/リアカメラを切り替えます。
 
 ```objective-c
 - (void)switchCamera:(BOOL)isFront;
@@ -493,7 +493,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ       | タイプ                | 意味                                                         |
 | ---------- | ------------------- | ------------------------------------------------------------ |
-| resolution | TRTCVideoResolution | ビデオの解像度。詳細は、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5)をご参照ください。 |
+| resolution | TRTCVideoResolution | ビデオの解像度。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5)をご参照ください。 |
 
 ### setVideoFps
 
@@ -523,7 +523,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ    | タイプ | 意味                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| bitrate | int  | ビットレート。SDKは、目標ビットレートに応じてエンコードを行い、ネットワークの状態が良くない場合のみ、ビデオのビットレートを動的に引き下げます。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)をご参照ください。 |
+| bitrate | int  | ビットレート。SDKは、目標ビットレートに応じてエンコードを行い、ネットワークの状態が良くない場合のみ、ビデオビットレートを動的に引き下げます。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)をご参照ください。 |
 
 >?【推奨する値】TRTCVideoResolutionの各クラスに注記する最適ビットレートをご参照ください。これをもとにより高いレートに適宜調整することも可能です。例えば、TRTC_VIDEO_RESOLUTION_1280_720に対応する目標ビットレートが1200kbpsであるならば、設定を1500kbpsにし、より鮮明な画像を得ることができます
 
@@ -539,15 +539,15 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ | タイプ                     | 意味                                                         |
 | ---- | ------------------------ | ------------------------------------------------------------ |
-| type | TRTCLocalVideoMirrorType | ミラーモード。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)をご参照ください。 |
+| type | TRTCLocalVideoMirrorType | ミラーモード。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)をご参照ください。 |
 
 
 
-## ローカル音声操作のインターフェース
+## ローカルのオーディオ操作インターフェース
 
 ### startMicrophone
 
-マイクの集音開始。 
+マイクの集音開始。
 
 ```objective-c
 - (void)startMicrophone;
@@ -573,11 +573,11 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ    | タイプ             | 意味                                                         |
 | ------- | ---------------- | ------------------------------------------------------------ |
-| quality | TRTCAudioQuality | 音質。詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53)をご参照ください。 |
+| quality | TRTCAudioQuality | 音質。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53)をご参照ください。 |
 
 ### muteLocalAudio
 
-ローカルの音声のミュート／ミュート取り消し。
+ローカルの音声のミュート/ミュート取り消し。
 
 ```objective-c
 - (void)muteLocalAudio:(BOOL)mute;
@@ -587,7 +587,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ | タイプ | 意味                                                         |
 | ---- | ---- | ------------------------------------------------------------ |
-| mute | BOOL | ミュート／ミュート取り消し。詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9)をご参照ください。 |
+| mute | BOOL | ミュート/ミュート取り消し。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9)をご参照ください。 |
 
 ### setSpeaker
 
@@ -601,7 +601,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ       | タイプ | 意味                         |
 | ---------- | ---- | ---------------------------- |
-| useSpeaker | BOOL | true：スピーカー ；false：ヘッドホン。 |
+| useSpeaker | BOOL | true：スピーカー、false：ヘッドホン。 |
 
 ### setAudioCaptureVolume
 
@@ -643,9 +643,9 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ   | タイプ                     | 意味                                                         |
 | ------ | ------------------------ | ------------------------------------------------------------ |
-| params | TRTCAudioRecordingParams | 録音パラメータ。詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams)をご参照ください。 |
+| params | TRTCAudioRecordingParams | 録音パラメータ。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams)をご参照ください。 |
 
->? この方法で呼び出した後、 SDKは通話プロセスの中の全ての音声（ローカル音声、リモート音声、BGMなど）を１つのファイルにレコーディングします。ルームに参加しているか否かにかかわらず、このインターフェースを呼び出せば有効となります。exitMeeting を呼び出した時に録音中であれば、録音は自動的に停止します。
+>? この方法で呼び出した後、 SDKは通話プロセスの中のすべての音声（ローカル音声、リモート音声、BGMなど）を1つのファイルにレコーディングします。ルームに参加しているか否かにかかわらず、このインターフェースを呼び出せば有効となります。exitMeetingを呼び出した時に録音中であれば、録音は自動的に停止します。
 
 ### stopFileDumping
 
@@ -669,7 +669,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | ------ | ---- | ------------------------- |
 | enable | BOOL | true：オン；false：オフ |
 
->? 有効化すると、onUserVolumeUpdateの中で SDKの音量のボリュームに対する評価を取得できます。
+>? 有効化すると、onUserVolumeUpdateの中でSDKの音量のボリュームに対する評価を取得できます。
 
 
 
@@ -687,9 +687,9 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ   | タイプ              | 意味                                                         |
 | ------ | ----------------- | ------------------------------------------------------------ |
-| params | TRTCVideoEncParam | 画面共有時のエンコードパラメータを設定します。上記の推奨設定を採用することをお勧めします。encParamsにnilを指定した場合、startScreenCaptureを呼び出す前のエンコードパラメータ設定が使用されます。 |
+| params | TRTCCloudDef.TRTCVideoEncParam | 画面共有時のエンコードパラメータを設定します。上記の推奨設定を採用することをお勧めします。encParamsにnilを指定した場合、startScreenCaptureを呼び出す前のエンコードパラメータ設定が使用されます。 |
 
->? 詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff)をご参照ください。
+>? 詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff)をご参照ください。
 
 ### stopScreenCapture
 
@@ -739,7 +739,7 @@ CDN共有のリンク先を取得します。
 
 ### getBeautyManager
 
-美顔管理オブジェクト [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html)を取得します。
+美顔管理オブジェクト[TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html)を取得します。
 
 ```objective-c
 - (TXBeautyManager *)getBeautyManager;
@@ -774,7 +774,7 @@ CDN共有のリンク先を取得します。
 
 ### sendRoomCustomMsg
 
-カスタマイズしたテキストメッセージを発信します。
+カスタマイズしたテキストメッセージを送信します。
 
 ```objective-c
 - (void)sendRoomCustomMsg:(NSString *)cmd message:(NSString *)message callback:(TRTCMeetingCallback)callback;
@@ -784,19 +784,19 @@ CDN共有のリンク先を取得します。
 
 | パラメータ     | タイプ                | 意味                                               |
 | -------- | ------------------- | -------------------------------------------------- |
-| cmd      | NSString            | コマンドワードは、開発者がカスタマイズ。主に異なるメッセージタイプを区分するのに使用。 |
+| cmd      | NSString            | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。 |
 | message  | NSString            | テキストメッセージ。                                         |
 | callback | TRTCMeetingCallback | 発信結果のコールバック。                                     |
 
 
 
-## TRTCMeetingDelegate イベントコールバック
+## TRTCMeetingDelegateイベントコールバック
 
 ## 一般的なイベントコールバック
 
 ### onError
 
->?SDK リカバリー不能なエラーは必ず監視し、状況に応じてユーザーに適切なインターフェースプロンプトを表示します。
+>? SDKのリカバリー不能なエラーは必ず監視し、状況に応じてユーザーに適切なインターフェースプロンプトを表示します。
 
 ```objective-c
 - (void)onError:(NSInteger)code message:(NSString* _Nullable)message;
@@ -807,7 +807,7 @@ CDN共有のリンク先を取得します。
 | パラメータ    | タイプ      | 意味       |
 | ------- | --------- | ---------- |
 | code    | NSInteger | エラーコード。   |
-| message | NSString  | エラーメッセージ。 |
+| message | NSString  | エラー情報。 |
 
 
 
@@ -815,7 +815,7 @@ CDN共有のリンク先を取得します。
 
 ### onRoomDestroy
 
-ルームが廃棄された時のコールバック。キャスターがルームを退出する時、ルーム内の全ユーザーがこの通知を受信します。
+ルームが破棄された時のコールバック。キャスターがルームを退出する時、ルーム内の全ユーザーがこの通知を受信します。
 
 ```objective-c
 - (void)onRoomDestroy:(NSString *)roomId;
@@ -843,7 +843,7 @@ CDN共有のリンク先を取得します。
 | localQuality  | TRTCQualityInfo            | アップストリームネットワークの品質。 |
 | remoteQuality | NSArray&lt;TRTCQualityInfo *&gt; | ダウンストリームネットワークの品質。 |
 
->? 詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28)をご参照ください。
+>? 詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28)をご参照ください。
 
 ### onUserVolumeUpdate
 
@@ -858,7 +858,7 @@ CDN共有のリンク先を取得します。
 | パラメータ   | タイプ      | 意味                  |
 | ------ | --------- | --------------------- |
 | userId | NSString  | ユーザーID 。           |
-| volume | NSInteger | 音量、値：0 - 100。 |
+| volume | NSInteger | 音量の大きさ。値：0～100。 |
 
 
 
@@ -899,7 +899,7 @@ CDN共有のリンク先を取得します。
 
 ### onUserVideoAvailable
 
-参加者のカメラオン／オフの通知。
+参加者のカメラ・オン/オフの通知。
 
 ```objective-c
 - (void)onUserVideoAvailable:(NSString *)userId available:(BOOL)available;
@@ -914,7 +914,7 @@ CDN共有のリンク先を取得します。
 
 ### onUserAudioAvailable
 
-参加者のマイクオン／オフの通知。
+参加者のマイク・オン/オフの通知。
 
 ```objective-c
 - (void)onUserAudioAvailable:(NSString *)userId available:(BOOL)available;
@@ -944,11 +944,11 @@ CDN共有のリンク先を取得します。
 | パラメータ    | タイプ                | 意味             |
 | ------- | ------------------- | ---------------- |
 | message | NSString            | テキストメッセージ。       |
-| user    | TRTCMeetingUserInfo | 発信者ユーザーの情報。 |
+| userInfo | TRTCMeetingUserInfo | 送信者のユーザー情報。 |
 
 ### onRecvRoomCustomMsg
 
-カスタマイズメッセージの受信。
+カスタムメッセージの受信。
 
 ```objective-c
 - (void)onRecvRoomCustomMsg:(NSString* _Nullable)cmd message:(NSString* _Nullable)message userInfo:(TRTCMeetingUserInfo *)userInfo;
@@ -956,11 +956,11 @@ CDN共有のリンク先を取得します。
 
 パラメータは下表に示すとおりです。
 
-| パラメータ    | タイプ                | 意味                                               |
-| ------- | ------------------- | -------------------------------------------------- |
-| command | NSString            | コマンドワードは、開発者がカスタマイズ。主に異なるメッセージタイプを区分するのに使用。 |
-| message | NSString            | テキストメッセージ。                                         |
-| user    | TRTCMeetingUserInfo | 送信者のユーザー情報。                                   |
+| パラメータ     | タイプ                | 意味                                               |
+| -------- | ------------------- | -------------------------------------------------- |
+| cmd      | NSString            | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。 |
+| message  | NSString            | テキストメッセージ。                                         |
+| userInfo | TRTCMeetingUserInfo | 送信者のユーザー情報。                                   |
 
 
 
@@ -1040,7 +1040,7 @@ CDN共有のリンク先を取得します。
 
 ### avatarURL
 
-ユーザープロファイル写真 URL。
+ユーザープロフィール画像URL。
 
 ```objective-c
 @property (nonatomic, strong) NSString *avatarURL;
@@ -1085,3 +1085,4 @@ CDN共有のリンク先を取得します。
 ```objective-c
 @property (nonatomic, assign) BOOL isMuteAudio;
 ```
+

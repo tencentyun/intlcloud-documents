@@ -13,7 +13,7 @@ TRTCでは、通常、カメラが動くチャネルを「ビッグストリー�
 
 ## 依存するAPI
 
-| API機能 | C++バージョン |  C#バージョン | Electronバージョン | 
+| API機能 | C++バージョン |  C#バージョン | Electronバージョン |
 |---------|---------|---------|---------|
 |共有ターゲットの選択| [selectScreenCaptureTarget](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a9d16af81b2ea2db7b91a8346add13393) | [selectScreenCaptureTarget](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__csharp.html#a2aabe079ed38fb5122be988434a81a92) | [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget) |
 |画面共有を開始| [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a984f461eebe77819f40c4129fc5a71bb) | [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__csharp.html#adde6382876b0afab78bab89e8be8e254) | [startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) |
@@ -33,16 +33,14 @@ sourceInfoListの各sourceInfoが共有可能なターゲットは、次のフ�
 | type |TRTCScreenCaptureSourceType| キャプチャソースタイプ。指定タイプはウィンドウまたはスクリーン|
 | sourceId | HWND| ソースIDの収集<li>ウィンドウについては、当該フィールドにウィンドウのハンドル</li><li>を表示します。画面については、当該フィールドに画面ID</li>を表示します |
 | sourceName| string | ウィンドウ名。画面である場合は Screen0 Screen1...を返します |
-| thumbWidth| int32 | ウィンドウサムネイル幅 | 
+| thumbWidth| int32 | ウィンドウサムネイル幅 |
 | thumbHeight| int32 | ウィンドウサムネイル高さ |
 | thumbBGRA| buffer | ウィンドウサムネイルのバイナリーbuffer |
 | iconWidth | int32 | ウィンドウアイコンの幅 |
 | iconHeight| int32 | ウィンドウアイコンの高さ |
 | iconBGRA | buffer | ウィンドウアイコンのバイナリーbuffer |
 
-上述の情報に基づき、ユーザーの選択のために共有できるターゲットを一覧表示するシンプルなリストページを下図のように実現できます。
-
-![](https://main.qcloudimg.com/raw/e370bcac46cc9ab5eb75e34378664d97.jpg)
+上述の情報に基づき、ユーザーの選択のために共有できるターゲットを一覧表示するシンプルなリストページを実現できます。
 
 ## 共有ターゲットの選択
 TRTC SDK は3種の共有モードをサポートしており、`selectScreenCaptureTarget`を介して指定できます：
@@ -67,7 +65,7 @@ TRTC SDK は3種の共有モードをサポートしており、`selectScreenCap
  - 共有ターゲットを選択した後、`startScreenCapture`インターフェースを使用して画面共有を起動することができます。
  - 共有プロセスにおいても、`selectScreenCaptureTarget`を呼び出し、共有ターゲットを変更することができます。
  - `pauseScreenCapture` と `stopScreenCapture` の違いは、pauseはスクリーンコンテンツのキャプチャを停止し、その瞬間の画面を一時停止するため、resumeするまで最後の画面がリモート側に表示され続けます。
- 
+
 ```C++
     /**
     * \brief 7.5 【画面共有】画面共有の起動
@@ -94,22 +92,20 @@ TRTC SDK は3種の共有モードをサポートしており、`selectScreenCap
 ## 画質の設定
 `setSubStreamEncoderParam`インターフェースを介して解像度、ビットレートとフレームレートを含む画面共有の画面品質を設定できます。推奨する参考値を以下に提示します。
 
-| 解像度レベル | 解像度 | フレームレート | ビットレート | 
-|:-------------:|:---------:|:---------:| :---------: | 
+| 解像度レベル | 解像度 | フレームレート | ビットレート |
+|:-------------:|:---------:|:---------:| :---------: |
 | 超高精細（HD+） | 1920 × 1080 | 10 | 800kbps |
 |  高精細（HD） | 1280 × 720 | 10 | 600kbps |
 | 標準（SD） | 960 × 720 | 10 | 400kbps |
 
 ## 画面共有の確認
-- ** Mac / Windows画面共有の確認**
+- **Mac / Windows画面共有の確認**
   ルームにいるMac / Windowsユーザーが画面共有を起動し、サブストリームを介して共有を実行します。ルームにいるその他ユーザーはTRTCCloudDelegate中の[onUserSubStreamAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__csharp.html#a15be39bb902bf917321b26701e961286)イベントを介してこの通知を受け取ります。
   画面共有を確認したいユーザーは[startRemoteSubStreamView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716)インターフェースを介してリモートユーザーのサブストリーム画面のレンダリングを起動することができます。
 
 - **Android / iOS画面共有の確認**
   ユーザーがAndroid / iOSを介して画面共有を実行する場合は、メインストリームを介して共有を実行します。ルームにいるその他ユーザーはTRTCCloudDelegateの中の[onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80)イベントを介してこの通知を受け取ります。
   画面共有を確認したいユーザーは[startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)インターフェースを介してリモートユーザーのメインストリーム画面のレンダリングを起動することができます。
-
-
 
 ```C++
 //サンプルコード：画面共有の画面を見る

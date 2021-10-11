@@ -1,15 +1,14 @@
 TRTCChatSalonは、Tencent CloudのTRTCおよびIMサービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
 
-- キャスターは新しいボイスサロンを作成して配信を開始し、視聴者はボイスサロンに参加して視聴/インタラクティブなコミュニケーションを行います。
-- キャスターは、視聴者をマイク・オンに招待したり、マイク・オンのキャスターをキックアウトしたりすることもできます。
-- 視聴者はマイク・オンを申請して、マイク・オンのキャスターになり、他者と対話することができます。また、いつでもマイク・オフにして、通常の視聴者になることも可能です。
-- 各種のテキストメッセージやカスタマイズメッセージの発信をサポートし、カスタムメッセージは弾幕、「いいね」、ギフトなどに使用することきます。
+- 管理者は新しいボイスサロンを作成して配信を開始し、リスナーはボイスサロンに参加して視聴/インタラクションを行います。
+- 管理者は、リスナーをマイク・オンに招待したり、マイク・オンのキャスターをキックアウトしたりすることもできます。
+- リスナーはマイク・オンを申請して、マイク・オンのキャスターになり、他者と音声インタラクションを行うことができます。また、いつでもマイク・オフにして、通常のリスナーになることも可能です。
+- 各種のテキストメッセージやカスタムメッセージの送信をサポートします。カスタムメッセージは弾幕、「いいね」、ギフトなどを実装するために使用することができます。
 
-TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つのクローズドソースであるSDKに依存しています。具体的な実装プロセスは、[ボイスサロン（iOS）](https://intl.cloud.tencent.com/document/product/647/39804)をご参照ください。
+TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つのクローズドソースであるSDKに依存しています。具体的な実装プロセスについては、[ボイスサロン（iOS）](https://intl.cloud.tencent.com/document/product/647/39803)をご参照ください。
 
-- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のボイスチャットコンポーネントとして使用しています。
+- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のボイスチャットコンポーネントとして使用します。
 - IM SDK：[IM SDK](https://intl.cloud.tencent.com/document/product/1047)のAVChatroomを使用してチャットルーム機能を実装します。同時にIMの属性インターフェースによって、マイクリストなどのルーム情報を保存し、招待シグナリングはマイク・オン/ピックのリクエストに用いることができます。
-
 
 [](id:TRTCChatSalon)
 
@@ -31,10 +30,10 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                                 | 説明                                                         |
 | ----------------------------------- | ------------------------------------------------------------ |
-| [createRoom](#createroom)           | ルームの新規作成（キャスターが呼び出し）。ルームが存在しない場合は、システムが新しいルームを自動作成します。｜
-| [destroyRoom](#destroyroom)         | ルームの廃棄（キャスターが呼び出し）。                                       |
-| [enterRoom](#enterroom)             | 入室（視聴者が呼び出し）。                                       |
-| [exitRoom](#exitroom)               | 退室（視聴者が呼び出し）。                                       |
+| [createRoom](#createroom)           | ルームの作成（管理者が呼び出し）。ルームが存在しない場合は、システムが新しいルームを自動的に作成します。 |
+| [destroyRoom](#destroyroom)        | ルームの破棄（管理者が呼び出し）。                                       |
+| [enterRoom](#enterroom)             | 入室（リスナーが呼び出し）。                                       |
+| [exitRoom](#exitroom)               | 退室（リスナーが呼び出し）。                                       |
 | [getRoomInfoList](#getroominfolist) | ルームリストの詳細情報を取得します。                              |
 | [getUserInfoList](#getuserinfolist) | 指定されたuserIdのユーザー情報を取得します。nilの場合は、ルーム内全員の情報を取得します。 |
 
@@ -42,12 +41,12 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                     | 説明                               |
 | ----------------------- | ---------------------------------- |
-| [enterSeat](#enterseat) | 自主的にマイク・オン（視聴者/キャスターともに呼び出し可）。 |
-| [leaveSeat](#leaveseat) | 自主的にマイク・オフ（視聴者/キャスターともに呼び出し可）。 |
-| [pickSeat](#pickseat)   | ピックしてマイク・オン（キャスターが呼び出し）。             |
-| [kickSeat](#kickseat)   | キックアウトしてマイク・オフ（キャスターが呼び出し）。                  |
+| [enterSeat](#enterseat) | ユーザーが発言者になる（リスナー側/管理者ともに呼び出し可）。 |
+| [leaveSeat](#leaveseat) | ユーザーが視聴者になる（キャスターが呼び出し）。 |
+| [pickSeat](#pickseat)   | 視聴者が発言できるように招待（管理者が呼び出し）。             |
+| [kickSeat](#kickseat)   | キックアウトしてマイク・オフ（管理者が呼び出し）。             |
 
-### ローカルの音声操作インターフェース
+### ローカルのオーディオ操作インターフェース
 
 | API                                             | 説明                  |
 | ----------------------------------------------- | -------------------- |
@@ -69,15 +68,15 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### BGMサウンドエフェクト関連インターフェース
 
-| API                                             | 説明                                                         |
+| API                                             | 説明                                                          |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| [getAudioEffectManager](#getaudioeffectmanager) | BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。 |
+| [getAudioEffectManager](#getaudioeffectmanager) | バックグラウンド・サウンドエフェクト管理オブジェクト[TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。 |
 
 ### メッセージ送信関連インターフェース
 
 | API                                     | 説明                                     |
 | --------------------------------------- | ---------------------------------------- |
-| [sendRoomTextMsg](#sendroomtextmsg)     | ルーム内でのテキストメッセージのブロードキャスト。通常、弾幕によるチャットに使用します。｜
+| [sendRoomTextMsg](#sendroomtextmsg)     | ルーム内でのテキストメッセージのブロードキャスト。通常、弾幕によるチャットに使用します。 |
 | [sendRoomCustomMsg](#sendroomcustommsg) | カスタマイズしたテキストメッセージを送信します。                     |
 
 ### 招待シグナリング関連インターフェース
@@ -105,24 +104,24 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                                       | 説明                   |
 | ----------------------------------------- | ---------------------- |
-| [onRoomDestroy](#onroomdestroy)           | ルームが廃棄された時のコールバック。     |
-| [onRoomInfoChange](#onroominfochange) | ボイスチャットルーム情報変更のコールバック。|
+| [onRoomDestroy](#onroomdestroy)           | ルームが破棄された時のコールバック。     |
+| [onRoomInfoChange](#onroominfochange) | ボイスサロン情報変更のコールバック。|
 | [onUserVolumeUpdate](#onuservolumeupdate) | ユーザー通話音量のコールバック。     |
 
 ### マイク変更コールバック
 
 | API                                     | 説明                                  |
 | --------------------------------------- | ------------------------------------- |
-| [onAnchorEnterSeat](#onanchorenterseat) | マイク・オンのメンバーがいます（自主的にマイク・オン/キャスターがピックしてマイク・オン）。 |
-| [onAnchorLeaveSeat](#onanchorleaveseat) | マイク・オフのメンバーがいます（自主的にマイク・オフ/キャスターがキックアウトしてマイク・オフ）。 |
-| [onSeatMute](#onseatmute)               | キャスターのマイクミュート。                            |
+| [onAnchorEnterSeat](#onanchorenterseat) | 発言者のメンバーがいます（ユーザーが発言者になる/管理者が視聴者を発言できるように招待）。 |
+| [onAnchorLeaveSeat](#onanchorleaveseat) | 視聴者のメンバーがいます（ユーザーが視聴者になる/管理者がキックアウトしてマイク・オフ）。 |
+| [onSeatMute](#onseatmute)               | 管理者のマイクミュート。                            |
 
-### 視聴者の入退室イベントのコールバック
+### リスナーの入退室イベントのコールバック
 
 | API                                 | 説明               |
 | ----------------------------------- | ------------------ |
-| [onAudienceEnter](#onaudienceenter) |視聴者入室通知の受信。|
-| [onAudienceExit](#onaudienceexit) | 視聴者退室通知の受信。|
+| [onAudienceEnter](#onaudienceenter) |リスナー入室通知の受信。|
+| [onAudienceExit](#onaudienceexit) | リスナー退室通知の受信。|
 
 ### メッセージイベントのコールバック
 
@@ -146,7 +145,7 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### sharedInstance
 
-[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804)シングルトンオブジェクトを取得します。
+[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803)シングルトンオブジェクトを取得します。
 
 ```Objective-C
 /**
@@ -161,9 +160,9 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### destroySharedInstance
 
-[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804)シングルトンオブジェクトを廃棄します。
+[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803)シングルトンオブジェクトを廃棄します。
 
->?インスタンスを廃棄すると、外部キャッシュのTRTCChatSalonインスタンスは再利用できなくなります。あらためて[sharedInstance](#sharedInstance)を呼び出し、新しいインスタンスを取得する必要があります。
+>?インスタンスを破棄すると、外部キャッシュのTRTCChatSalonインスタンスは再利用できなくなります。あらためて[sharedInstance](#sharedInstance)を呼び出し、新しいインスタンスを取得する必要があります。
 
 ```Objective-C
 /**
@@ -176,7 +175,7 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### setDelegate
 
-[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804)イベントコールバック。TRTCChatSalonDelegateを介して[TRTCChatSalon][TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804)の各種ステータス通知を受け取ることができます。
+[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803)イベントコールバック。TRTCChatSalonDelegateを介して[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803)の各種ステータス通知を受け取ることができます。
 
 ```Objective-C
 /**
@@ -275,7 +274,7 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### createRoom
 
-ルームの新規作成（キャスターが呼び出し）。
+ルームの作成（管理者が呼び出し）。
 
 ```Objective-C
 - (void)createRoom:(int)roomID roomParam:(ChatSalonParam *)roomParam callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(createRoom(roomID:roomParam:callback:));
@@ -283,22 +282,22 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 パラメータは下表に示すとおりです。
 
-| パラメータ      | タイプ           | 意味                                                        |
+| パラメータ        | タイプ           | 意味                                                         |
 | --------- | -------------- | ------------------------------------------------------------ |
-| roomI    | int            | ルームIDは、ご自身でアサインし、統一管理する必要があります。複数のroomIDを、一つのボイスチャットルームリストにまとめることができます。Tencent Cloudでは現在、ボイスチャットルームリストの管理サービスを行っていませんので、ご自身でボイスチャットルームリストを管理してください。 |
+| roomId    | int            | ルームIDは、ご自身でアサインし、一元管理する必要があります。複数のroomIDを、一つのボイスサロンのルームリストにまとめることができます。Tencent Cloudでは現在、ボイスサロンのルームリストの管理サービスを行っていませんので、ご自身でボイスサロンのルームリストを管理してください。 |
 | roomParam | ChatSalonParam | ルーム情報は、ルームについて説明するための情報です。例えば、ルーム名、マイク情報、カバー情報などです。 |
-| callback  | ActionCallback | ルームの新規作成結果のコールバック。成功時にcodeは0になります。 |
+| callback  | ActionCallback | ルームの作成結果のコールバック。成功時にcodeは0になります。 |
 
-キャスターがブロードキャストを開始する際の通常の呼び出しプロセスは次のとおりです。 
-1. キャスターは、 `createRoom`を呼び出して新しいボイスチャットルームを作成します。この時にルームID、マイク・オンにキャスターの確認の要否などルームのプロパティ情報を渡します。
-2. キャスターは、ルーム作成の成功後、`enterSeat` を呼び出して参加します。
-3. キャスターは、マイクリストのメンバーが参加した`onAnchorEnterSeat`のイベント通知も受信します。このとき、マイク集音は自動的に開始されます。
+管理者が配信を開始する際の通常の呼び出しプロセスは次のとおりです。 
+1. 管理者は、`createRoom`を呼び出して新しいボイスサロンを作成します。この時、ルームID、マイク・オンにすることの管理者の確認の要否などルームの属性情報を渡します。
+2. 管理者は、ルーム作成に成功した後、`enterSeat`を呼び出して参加します。
+3. 管理者は、マイクリストのメンバーが参加した`onAnchorEnterSeat`というイベント通知も受信します。この時、マイク集音は自動的に開始されます。
 
    
 
 ### destroyRoom
 
-ルームの廃棄（キャスターが呼び出し）。キャスターは、ルーム作成後、この関数を呼び出してルームを廃棄します。
+ルームの破棄（管理者が呼び出し）。管理者は、ルーム作成後、この関数を呼び出してルームを破棄します。
 
 ```Objective-C
 - (void)destroyRoom:(ActionCallback _Nullable)callback NS_SWIFT_NAME(destroyRoom(callback:));
@@ -313,7 +312,7 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### enterRoom
 
-入室（視聴者が呼び出し）
+入室（リスナーが呼び出し）
 
 ```Objective-C
 - (void)enterRoom:(NSInteger)roomID callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(enterRoom(roomID:callback:));
@@ -327,16 +326,16 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 | callback | ActionCallback | 入室結果のコールバック。成功時にcodeは0になります。 |
 
 
-視聴者が入室し視聴する際の通常の呼び出しプロセスは次のとおりです。 
+リスナーが入室し視聴する際の通常の呼び出しプロセスは次のとおりです。 
 
-1. 視聴者がサーバーから取得する最新のボイスサロンリストには、多くのボイスサロンのroomIdおよびルーム情報が含まれる場合があります。
-2．視聴者は一つのボイスチャットルームを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
-3. 入室後、コンポーネントの`onRoomInfoChange` ルーム属性変更イベント通知を受信します。この時、ルーム属性を記録し、それに応じた修正を行うことができます。例：UIに表示するルーム名、マイク・オンの際のキャスターへの同意リクエストの要否の記録など。
-4. 入室後に、マイクリストにキャスターが参加した `onAnchorEnterSeat`のイベント通知も受信します。
+1. リスナーがサーバーから取得する最新のボイスサロンリストには、多くのボイスサロンのroomIdおよびルーム情報が含まれる場合があります。
+2. リスナーはボイスサロンの1つを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
+3. 入室後、コンポーネントの`onRoomInfoChange` ルーム属性変更イベント通知を受信します。この時、ルーム属性を記録し、それに応じた修正を行うことができます。例：UIに表示するルーム名、発言者にする際の管理者への同意リクエストの要否の記録など。
+4. 入室後に、マイクリストにキャスターが参加した `onAnchorEnterSeat`というイベント通知も受信します。
 
 ### exitRoom
 
-ルームを退出します。
+ルームから退出します。
 
 ```Objective-C
 - (void)exitRoom:(ActionCallback _Nullable)callback NS_SWIFT_NAME(exitRoom(callback:));
@@ -352,7 +351,7 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### getRoomInfoList
 
-ルームリストの詳細情報を取得します。このうち、ルーム名、ルームカバーは、キャスターが`createRoom()`作成時にroomInfoによって設定したものになります。
+ルームリストの詳細情報を取得します。このうち、ルーム名、ルームカバーは、管理者が`createRoom()`作成時にroomInfoによって設定したものになります。
 
 >?ルームリストおよびルーム情報をご自身で管理する場合は、この関数は無視してもかまいません。
 
@@ -379,19 +378,19 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 パラメータは下表に示すとおりです。
 
-| パラメータ             | タイプ                      | 意味                                                         |
-| ---------------- | ------------------------- | ------------------------------------------------------------ |
-| userIdList       | List&lt;String&gt;        |取得すべきユーザーIDリスト。nullの場合は、ルーム内全員の情報を取得します。 |
-| userlistcallback | ChatSalonUserListCallback | ユーザーの詳細情報のコールバック。                                           |
+| パラメータ       | タイプ                      | 意味                                                         |
+| ---------- | ------------------------- | ------------------------------------------------------------ |
+| userIdList | List&lt;String&gt;        | 取得すべきユーザーIDリスト。nullの場合は、ルーム内全員の情報を取得します。 |
+| callback   | ChatSalonUserListCallback | ユーザーの詳細情報のコールバック。                                           |
 
 
 ## マイクのオン・オフインターフェース
 
 ### enterSeat
 
-自主的にマイク・オン（視聴者/キャスターともに呼び出し可）します。
+ユーザーが発言者になる（リスナー側/管理者ともに呼び出し可）します。
 
->?マイク・オンが成功した後、ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
+>?マイク・オンが成功した後、ルーム内の全メンバーは`onAnchorEnterSeat`というイベント通知を受信します。
 
 ```Objective-C
 - (void)enterSeat:(ActionCallback _Nullable)callback
@@ -404,13 +403,13 @@ NS_SWIFT_NAME(enterSeat(callback:));
 | -------- | -------------- | ---------- |
 | callback | ActionCallback | 操作コールバック。 |
 
-このインターフェースを呼び出すと、すぐにマイクリストが変更されます。視聴者がキャスターからの申請を必要とするシーンの場合は、まず`sendInvitation`を呼び出してキャスターに申請し、`onInvitationAccept `を受信した後にこの関数を呼び出すことができます。
+そのインターフェースを呼び出すと、直ちにマイクリストが変更されます。リスナーが管理者に同意を申請しなければマイク・オンできないユースケースの場合は、まず`sendInvitation`を呼び出してから管理者に申請し、`onInvitationAccept`を受信するとその関数を呼び出せるようになります。
 
 ### leaveSeat
 
-自主的にマイク・オフ（視聴者/キャスターともに呼び出し可）します。
+ユーザーが視聴者になる（キャスターが呼び出し）。
 
->? マイク・オフが成功した後、ルーム内の全メンバーは`onAnchorLeaveSeat`のイベント通知を受信します。
+>? マイク・オフが成功した後、ルーム内の全メンバーは`onAnchorLeaveSeat`というイベント通知を受信します。
 
 ```Objective-C
 - (void)leaveSeat:(ActionCallback _Nullable)callback NS_SWIFT_NAME(leaveSeat(callback:));
@@ -424,9 +423,9 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 ### pickSeat
 
-ピックしてマイク・オン（キャスターが呼び出し）。
+視聴者が発言できるように招待（管理者が呼び出し）。
 
->? キャスターがピックしてマイク・オンにすると、ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
+>? 管理者が視聴者を発言できるように招待すると、ルーム内の全メンバーは`onAnchorEnterSeat`というイベント通知を受信します。
 
 ```Objective-C
 - (void)pickSeat:(NSString *)userID callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(pickSeat(userID:callback:));
@@ -439,14 +438,14 @@ NS_SWIFT_NAME(enterSeat(callback:));
 | userID   | String         | ユーザーID 。  |
 | callback | ActionCallback | 操作コールバック。 |
 
-このインターフェースを呼び出すと、すぐにマイクリストが変更されます。キャスターが、視聴者の同意がなければマイク・オンできないユースケースの場合は、まず `sendInvitation` を呼び出してから視聴者にリクエストし、 `onInvitationAccept `を受信した後にこの関数を呼び出すことができます。
+そのインターフェースを呼び出すと、すぐにマイクリストが修正されます。管理者がリスナーの同意がなければマイク・オンできないユースケースの場合は、まず`sendInvitation`を呼び出してからリスナーに申請し、`onInvitationAccept`を受信すると、その関数をコールできるようになります。
 
 
 ### kickSeat
 
-キックアウトしてマイク・オフ（キャスターが呼び出し）。
+キックアウトしてマイク・オフ（管理者が呼び出し）。
 
->?キャスターがキックアウトしてマイク・オフにすると、ルーム内の全メンバーは、 `onSeatListChange` および `onAnchorLeaveSeat` のイベント通知を受信します。
+>?管理者がキックアウトしてマイク・オフにすると、ルーム内の全メンバーは、`onSeatListChange`および`onAnchorLeaveSeat`というイベント通知を受信します。
 
 ```Objective-C
 - (void)kickSeat:(NSString *)userID callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(kickSeat(userID:callback:));
@@ -459,9 +458,9 @@ NS_SWIFT_NAME(enterSeat(callback:));
 | userID   | String         | キックアウトしてマイク・オフにする必要のあるユーザーID。 |
 | callback | ActionCallback | 操作コールバック。           |
 
-そのインターフェースをコールすると、すぐにマイクリストが修正されます。キャスターが視聴者の同意がなければマイク・オンできないユースケースの場合は、まず `sendInvitation` を呼び出してから視聴者にリクエストし、 `onInvitationAccept` を受信してから、その関数をコールすることができます。
+このインターフェースを呼び出すと、すぐにマイクリストが修正されます。
 
-## ローカル音声操作のインターフェース
+## ローカルのオーディオ操作インターフェース
 
 ### startMicrophone
 
@@ -491,7 +490,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 | パラメータ    | タイプ | 意味                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| quality | int  | 音声品質。詳細については、[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
+| quality | int  | オーディオ品質。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
 
 
 ### muteLocalAudio
@@ -506,7 +505,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 | パラメータ | タイプ    | 意味                                                         |
 | ---- | ------- | ------------------------------------------------------------ |
-| mute | boolean | ミュート/ミュート取り消し。詳細については[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
+| mute | boolean | ミュート/ミュート取り消し。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
 
 
 
@@ -522,7 +521,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 | パラメータ       | タイプ    | 意味                        |
 | ---------- | ------- | --------------------------- |
-| useSpeaker | boolean | true：スピーカー；false：ヘッドホン。 |
+| userSpeaker | boolean | true：スピーカー、false：ヘッドホン。 |
 
 
 
@@ -582,7 +581,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 | パラメータ | タイプ  | 意味                              |
 | ---- | ------- | --------------------------------- |
-| mute | boolean | true：ミュート起動；false：ミュート停止。 |
+| isMute | boolean | true：ミュートを起動、false：ミュートを停止。 |
 
    
 
@@ -590,7 +589,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 ### getAudioEffectManager
 
-BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
+BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
 
 ```Objective-C
 - (TXAudioEffectManager * _Nullable)getAudioEffectManager;
@@ -729,7 +728,7 @@ NS_SWIFT_NAME(onError(code:message:));
 | パラメータ    | タイプ   | 意味       |
 | ------- | ------ | ---------- |
 | code   | int    | エラーコード。   |
-| message | String | エラーメッセージ。 |
+| message | String | エラー情報。 |
 
 
 ### onWarning
@@ -773,7 +772,7 @@ NS_SWIFT_NAME(onDebugLog(message:));
 
 ### onRoomDestroy
 
-ルーム廃棄のコールバック。キャスターがルームを解散するとき、ルーム内の全ユーザーはこの通知を受信します。
+ルーム破棄のコールバック。管理者がルームを解散するとき、ルーム内の全ユーザーはこの通知を受信します。
 
 ```Objective-C
 - (void)onRoomDestroy:(NSString *)message
@@ -789,7 +788,7 @@ NS_SWIFT_NAME(onRoomDestroy(message:));
 
 ### onRoomInfoChange
 
-入室に成功後、このインターフェースをコールバックします。roomInfoは作成されたルームの情報を含みます。
+入室に成功後、このインターフェースをコールバックします。roomInfoの情報は、管理者がルームを作成するときに渡されます。
 
 ```Objective-C
 - (void)onRoomInfoChange:(ChatSalonInfo *)roomInfo
@@ -825,7 +824,7 @@ NS_SWIFT_NAME(onUserVolumeUpdate(userVolumes:totalVolume:));
 
 ### onAnchorEnterSeat
 
-マイク・オンのメンバーがいます（自主的にマイク・オン/キャスターがピックしてマイク・オン）。
+発言者のメンバーがいます（ユーザーが発言者になる/管理者が視聴者を発言できるように招待）。
 
 ```Objective-C
 - (void)onAnchorEnterSeat:(ChatSalonUserInfo *)user
@@ -840,7 +839,7 @@ NS_SWIFT_NAME(onAnchorEnterSeat(user:));
 
 ### onAnchorLeaveSeat
 
-マイク・オフのメンバーがいます（自主的にマイク・オフ/キャスターがキックアウトしてマイク・オフ）。
+視聴者のメンバーがいます（ユーザーが視聴者になる/管理者がキックアウトしてマイク・オフ）。
 
 ```Objective-C
 - (void)onAnchorLeaveSeat:(ChatSalonUserInfo *)user
@@ -855,7 +854,7 @@ NS_SWIFT_NAME(onAnchorLeaveSeat(user:));
 
 ### onSeatMute
 
-キャスターのマイクミュート。
+管理者のマイクミュート。
 
 ```Objective-C
 - (void)onSeatMute:(NSString *)userID
@@ -868,13 +867,13 @@ NS_SWIFT_NAME(onSeatMute(userID:isMute:));
 | パラメータ   | タイプ    | 意味                               |
 | ------ | ------- | ---------------------------------- |
 | userID | String  | マイクのユーザーid。                     |
-| isMute | boolean | true：マイクミュート； false：ミュート解除。 |
+| isMute | boolean | true：マイクミュート、false：ミュート解除。 |
 
-## 視聴者の入退室イベントのコールバック
+## リスナーの入退室イベントのコールバック
 
 ### onAudienceEnter
 
-視聴者入室通知の受信。
+リスナー入室通知の受信。
 
 ```Objective-C
 - (void)onAudienceEnter:(ChatSalonUserInfo *)userInfo
@@ -885,11 +884,11 @@ NS_SWIFT_NAME(onAudienceEnter(userInfo:));
 
 | パラメータ     | タイプ              | 意味           |
 | -------- | ----------------- | -------------- |
-| userInfo | ChatSalonUserInfo | 入室した視聴者の情報。 |
+| userInfo | ChatSalonUserInfo | 入室したリスナーの情報。 |
 
 ### onAudienceExit
 
-視聴者退室通知の受信。
+リスナー退室通知の受信。
 
 ```Objective-C
 - (void)onAudienceExit:(ChatSalonUserInfo *)userInfo
@@ -900,7 +899,7 @@ NS_SWIFT_NAME(onAudienceExit(userInfo:));
 
 | パラメータ     | タイプ              | 意味           |
 | -------- | ----------------- | -------------- |
-| userInfo | ChatSalonUserInfo | 退室した視聴者の情報。 |
+| userInfo | ChatSalonUserInfo | 退室したリスナーの情報。 |
 
    
 
@@ -940,7 +939,7 @@ NS_SWIFT_NAME(onRecvRoomCustomMsg(cmd:message:userInfo:));
 
 | パラメータ     | タイプ              | 意味                                               |
 | -------- | ----------------- | -------------------------------------------------- |
-| command  | String            | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。 |
+| cmd  | String            | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。 |
 | message  | String            | テキストメッセージ。                                         |
 | userInfo | ChatSalonUserInfo | 送信者のユーザー情報。                                   |
 
@@ -1015,7 +1014,7 @@ NS_SWIFT_NAME(onInviteeRejected(identifier:invitee:));
 | パラメータ       | タイプ   | 意味              |
 | ---------- | ------ | ----------------- |
 | identifier | String | 招待ID。         |
-| inviter    | String | 招待者のユーザーID。 |
+| invitee    | String | 招待者のユーザーID。 |
 
 ### onInvitationTimeout
 

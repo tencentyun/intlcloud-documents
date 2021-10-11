@@ -1,4 +1,4 @@
-TRTCCallingはTencent CloudのTRTCとIMを組み合わせたサービスで、1v1のオーディオビデオ通話をサポートします。TRTCCallingは、Tencent Cloudの2つのクローズドソースSDKに依存する1つのオープンソースのClassです。具体的な実装プロセスについては、[Real-Time Video Call（Flutter）](https://intl.cloud.tencent.com/document/product/647/41691)をご参照ください。
+TRTCCallingはTencent CloudのTencent Real-Time Communication（TRTC）とIMを組み合わせたサービスで、1v1オーディオビデオ通話をサポートします。TRTCCallingは、Tencent Cloudの2つのクローズドソースSDKに依存する1つのオープンソースのClassです。具体的な実装プロセスについては、[Real-time Voice Call（Flutter）](https://intl.cloud.tencent.com/document/product/647/41692)をご参照ください。
 
 - TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のオーディオビデオ通話コンポーネントとして使用します。
 - IM SDK： [IM SDK](https://intl.cloud.tencent.com/document/product/1047)をシグナリング情報の送信と処理に使用します。
@@ -12,8 +12,8 @@ TRTCCallingはTencent CloudのTRTCとIMを組み合わせたサービスで、1v
 | ----------------------------------------------- | ------------------------------------------------ |
 | [sharedInstance](#sharedinstance)               | コンポーネントシングルトン。                                       |
 | [destroySharedInstance](#destroysharedinstance) | コンポーネントシングルトンを廃棄します。                                   |
-| [registerListener](#registerlistener)           | イベントコールバックを追加します。                                   |
-| [unRegisterListener](#unregisterlistener)       | コールバックインターフェースを削除します。                                   |
+| [registerListener](#registerlistener)           | イベントコールバックを追加します。 |
+| [unRegisterListener](#unregisterlistener)       | コールバックインターフェースを削除します。 |
 | [destroy](#destroy)                             | 関数の廃棄。このインスタンスを実行する必要がなくなった場合は、このインターフェースをコールしてください。   |
 | [login](#login)                                 | コンポーネントインターフェースへのログイン。すべての機能を使用するためには、まずログインする必要があります。 |
 | [logout](#logout)                               | コンポーネントインターフェースからログアウト。ログアウト後にダイヤル操作はできません。         |
@@ -21,28 +21,19 @@ TRTCCallingはTencent CloudのTRTCとIMを組み合わせたサービスで、1v
 
 ### 通話操作に関連するインターフェース関数
 
-| API               | 説明           |
-| ----------------- | -------------- |
-| [call](#call)     | 1対1通話に招待します。 |
-| [accept](#accept) | 現在の通話を受信します。 |
-| [reject](#reject) | 現在の通話を拒否します。 |
-| [hangup](#hangup) | 現在の通話を終了します。 |
+| API                     | 説明           |
+| ----------------------- | -------------- |
+| [call](#call)           | 1対1通話に招待します。 |
+| [accept](#accept)       | 現在の通話を受信します。 |
+| [reject](#reject)       | 現在の通話を拒否します。 |
+| [hangup](#hangup)       | 現在の通話を終了します。 |
 
-### プッシュプルストリームに関連するインターフェース関数
 
-| API                                 | 説明                                                   |
-| ----------------------------------- | ------------------------------------------------------ |
-| [startRemoteView](#startremoteview) | リモートユーザーのカメラデータを指定のTXCloudVideoViewにレンダリングします。 |
-| [stopRemoteView](#stopremoteview)   | リモートデータのレンダリングを停止します。                                     |
-
-### 音声ビデオ制御に関連するインターフェース関数
+### オーディオ制御に関するインターフェース関数
 
 | API                           | 説明                                             |
 | ----------------------------- | ------------------------------------------------ |
-| [openCamera](#opencamera)     | カメラを起動し、指定のTXCloudVideoViewにレンダリングします。 |
-| [switchCamera](#switchcamera) | フロント/リアカメラを切り替えます。                       |
-| [closeCamara](#closecamara)   | カメラを終了します。                           |
-| [setMicMute](#setmicmute)     | ローカルオーディオキャプチャをミュートにします。                               |
+| [setMicMute](#setmicmute)     | ローカルオーディオキャプチャをミュートにします。                                   |
 | [setHandsFree](#sethandsfree) | ハンズフリーを設定します。                                       |
 
 <h2 id="TRTCCallingDelegate">TRTCCallingDelegate API概要</h2>
@@ -71,12 +62,11 @@ TRTCCallingはTencent CloudのTRTCとIMを組み合わせたサービスで、1v
 
 ### 一般的なコールバック
 
-| API  | 説明 |
-| ---- | ---- |
+| API                                                          | 説明                       |
+| ------------------------------------------------------------ | -------------------------- |
 | [onUserEnter](#onuserenter)                                  | ユーザーが通話に参加した場合のコールバック。         |
 | [onUserLeave](#onuserleave)                                  | ユーザーが通話から退出した場合のコールバック。         |
 | [onUserAudioAvailable](#onuseraudioavailable)                | ユーザーがオーディオアップストリームを開始したかどうかのコールバック。 |
-| [onUserVideoAvailable](#onuservideoavailable)                | ユーザーがビデオアップストリームを開始したかどうかのコールバック。 |
 | [onUserVoiceVolume](#onuservoicevolume)                      | ユーザー通話音量のコールバック。         |
 | [onCallEnd](#oncallend)                                      | 通話終了時のコールバック。             |
 
@@ -114,6 +104,7 @@ void destroy();
 void registerListener(VoiceListenerFunc func);
 ```
 
+
 ### unRegisterListener
 
 コールバックインターフェースを削除します。
@@ -132,11 +123,11 @@ Future<ActionCallback> login(int sdkAppId, String userId, String userSig);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ     | タイプ    | 意味                                                         |
-| -------- | ------ | ------------------------------------------------------------ |
-| sdkAppID | int | TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報でSDKAppIDを確認できます。 |
-| user     | String | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
-| userSig  | String | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については、[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
+| パラメータ     | タイプ           | 意味                                                         |
+| -------- | -------------- | ------------------------------------------------------------ |
+| sdkAppID | int         | TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報でSDKAppIDを確認できます。 |
+| userId     | String         | 現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。 |
+| userSig  | String         |Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
 
 ### logout
 
@@ -188,77 +179,7 @@ void hangup();
 ```
 
 
-## プッシュプルストリームに関連するインターフェース関数
-
-### startRemoteView
-
-リモートユーザーのカメラデータを指定のTRTCCloudVideoViewにレンダリングします。
-
-```java
-void startRemoteView(String userId, int streamType, int viewId);
-```
-
-パラメータは下表に示すとおりです。
-
-| パラメータ       | タイプ   | 意味                                                  |
-| ---------- | ------ | ----------------------------------------------------- |
-| userId     | String | リモートユーザーID。                          |
-| streamType | int    | 視聴を停止するuserIdのビデオストリームタイプを指定します。                |
-| viewId     | int    | ビデオ画像をロードするウィジェットTRTCCloudVideoViewがコールバックするviewId。 |
-
-### stopRemoteView
-
-リモートデータのレンダリングを停止します。
-
-```java
-void stopRemoteView(String userId, int streamType);
-```
-
-パラメータは下表に示すとおりです。
-
-| パラメータ       | タイプ   | 意味                                   |
-| ---------- | ------ | -------------------------------------- |
-| userId     | String | リモートユーザーID。                          |
-| streamType | int    | 視聴を停止するuserIdのビデオストリームタイプを指定します。 |
-
-## 音声ビデオ制御に関連するインターフェース関数
-
-### openCamera
-
-カメラを起動し、指定のTRTCCloudVideoViewにレンダリングします。
-
-```java
-void openCamera(bool isFrontCamera, int viewId);
-```
-
-パラメータは下表に示すとおりです。
-
-| パラメータ          | タイプ | 意味                                                |
-| ------------- | ---- | --------------------------------------------------- |
-| isFrontCamera | bool | trueはフロントカメラの起動を、falseはリアカメラの起動を意味します。 |
-| viewId        | int  | ビデオ画像をロードするウィジェットTRTCCloudVideoViewがコールバックするviewId。 |
-
-### switchCamera
-
-フロント/リアカメラを切り替えます。
-
-```java
-void switchCamera(bool isFrontCamera);
-```
-
-パラメータは下表に示すとおりです。
-
-| パラメータ          | タイプ | 意味                                                    |
-| ------------- | ---- | ------------------------------------------------------- |
-| isFrontCamera | bool | trueはフロントカメラへの切り替えを、falseはリアカメラへの切り替えを意味します。 |
-
-### closeCamara
-
-カメラをオフにします。
-
-```java
-void closeCamera();
-```
+## オーディオ制御に関するインターフェース関数
 
 ### setMicMute
 
@@ -270,8 +191,8 @@ void setMicMute(bool isMute);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ | 意味                                        |
-| ------ | ---- | ------------------------------------------- |
+| パラメータ   | タイプ    | 意味                                        |
+| ------ | ------- | ------------------------------------------- |
 | isMute | bool | trueはマイクの終了を、falseはマイクの起動を意味します。 |
 
 ### setHandsFree
@@ -285,7 +206,7 @@ void setHandsFree(bool isHandsFree);
 パラメータは下表に示すとおりです。
 
 | パラメータ        | タイプ    | 意味                                    |
-| ----------- | ---- | --------------------------------------- |
+| ----------- | ------- | --------------------------------------- |
 | isHandsFree | bool | trueはハンズフリーの起動を、falseはハンズフリーの終了を意味します。 |
 
 ## TRTCCallingDelegateイベントコールバック
@@ -351,7 +272,7 @@ void setHandsFree(bool isHandsFree);
 | ----------- | ------------------ | -------------------------------- |
 | sponsor     | String             | 発信者のID。                    |
 | userIds     | List&lt;String&gt; | 自分以外の招待IDのリスト。         |
-| isFromGroup | bool               | 多人数の通話への招待かどうか。               |
+| isFromGroup | bool          | 多人数の通話への招待かどうか。               |
 | type        | int                | 1は音声通話、2はビデオ通話を意味します。 |
 
 ### onCallingCancel
@@ -395,18 +316,7 @@ void setHandsFree(bool isHandsFree);
 | パラメータ      | タイプ    | 意味               |
 | --------- | ------- | ------------------ |
 | userId    | String  | 通話するユーザーID。      |
-| available | boolean | ユーザーの音声が使用可能かどうか。 |
-
-### onUserVideoAvailable
-
-ユーザーがビデオアップストリームを開始したかどうかのコールバック。通知を受け取った後、ユーザーはstartRemoteViewをコールしてリモートビデオをレンダリングすることができます。
-
-パラメータは下表に示すとおりです。
-
-| パラメータ      | タイプ    | 意味               |
-| --------- | ------- | ------------------ |
-| userId    | String  | 通話するユーザーID。      |
-| available | boolean | ユーザーのビデオが使用可能かどうか。 |
+| available | boolean | ユーザーのオーディオが使用可能かどうか。 |
 
 
 ### onUserVoiceVolume
@@ -415,10 +325,10 @@ void setHandsFree(bool isHandsFree);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ        | タイプ | 意味                                            |
-| ----------- | ---- | ----------------------------------------------- |
+| パラメータ      | タイプ                       | 意味                                                         |
+| --------- | -------------------------- | ------------------------------------------------------------ |
 | userVolumes | List | ディスカッション中のルームの全参加者の音量、値の範囲：0～100。 |
-| totalVolume | int  | すべてのリモート参加者の総音量。値の範囲：0～100。         |
+| totalVolume | int| すべてのリモート参加者の総音量。値の範囲：0～100。|
 
 ### onCallEnd
 

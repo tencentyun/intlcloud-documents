@@ -1,4 +1,4 @@
-音声通話機能をすばやく実装する必要がある場合、当社が提供するDemoをもとに直接適応に変更を加えることも、当社が提供するTRTCCallingコンポーネントでカスタマイズしたUIを実装することもできます。
+音声通話機能をすばやく実装する必要がある場合、当社が提供するDemoをもとに直接変更を加えて適応させるか、当社が提供するTRTCCallingコンポーネントでカスタマイズしたUIを実装することができます。
 
 ## DemoのUIの再利用
 
@@ -16,22 +16,24 @@
 
 1. 実際のビジネスニーズに応じて、SDKと付属の[Demoソースコード](https://github.com/tencentyun/TRTCFlutterScenesDemo)をダウンロードします。
 2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。
+![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 
 
-
-
+[](id:ui.step3)
 ### 手順3：Demoプロジェクトファイルの設定
 1. 設定変更ページに進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
 2. `/example/lib/debug/GenerateTestUserSig.dart`ファイルを見つけて開きます。
 3.`GenerateTestUserSig.dart`ファイル内の関連パラメータを設定します。
-<ul><li></li>SDKAPPID：デフォルトはPLACEHOLDER。実際のSDKAppIDを設定してください。
-	<li/>SECRETKEY：デフォルトはPLACEHOLDER。実際のキー情報を設定してください。</ul>
-	<img src="https://main.qcloudimg.com/raw/96326351d696d6eb8600b5822dcc8992.png"/>
+
+<ul><li/>SDKAPPID：デフォルトはPLACEHOLDER。実際のSDKAppIDを設定してください。
+<li/>SECRETKEY：デフォルトはPLACEHOLDER。実際のキー情報を設定してください。</ul>
+
+
 4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
 
 >!
->- ここで言及したUserSigの新規作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるよようになります。そのため**のこの手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します**。
+>- ここで言及したUserSigの新規作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**のこの手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します**。
 >- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 [](id:ui.step4)
@@ -97,7 +99,7 @@ dependencies:
 3. `tools:replace="android:label"をapplicationの中に追加します。
 >? この手順を実行しないと、[Android Manifest merge failedコンパイルの失敗](https://intl.cloud.tencent.com/document/product/647/39242)という問題が発生します。
 
-![アイコン](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
+![画像](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
 :::
 </dx-tabs>
 
@@ -118,7 +120,7 @@ dependencies:
 <tr><th>パラメータ名</th><th>作用</th></tr>
 <tr>
 <td>SDKAppID</td>
-<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a> でSDKAppIDを表示できます。</td>
+<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a> で SDKAppIDを表示できます。</td>
 </tr><tr>
 <td>userId</td>
 <td>現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（_）のみ使用できます。</td>
@@ -143,10 +145,6 @@ sCall.login(1400000123, "userA", "xxxx");
 3. 受信者：電話に対応したい場合、受信者は`accept()`関数をコールすると同時に`openCamera()`関数を呼び出して、自身のローカルCCDカメラを起動します。受信者は`reject()`を呼び出し、この通話を拒否することもできます。
 4. 双方のオーディオビデオチャネルが確立した後、通話する双方は`onUserVideoAvailable()`という名称のイベント通知を受け取ります。これは、相手方のビデオ画面を取得済みであることを示しています。このとき、双方のユーザーは`startRemoteView()`を呼び出し、リモートのビデオ画面を表示することができます。リモートの音声はデフォルトで自動再生に設定されています。
 
-[](id:model.offline)
-
-### 手順6：オフライン応答の実装
-現時点でオフライン応答はサポートされていませんが、6月中旬にサポートされる予定です。
 
 [](id:api)
 ## コンポーネントAPIリスト

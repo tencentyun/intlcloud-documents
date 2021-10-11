@@ -1,25 +1,26 @@
 ## デモンストレーション
 [ダウンロード](https://intl.cloud.tencent.com/document/product/647/35076)からAppをインストールすると、インタラクティブストリーミング機能の効果を体験していただくことができます。これにはマイク接続によるインタラクション、キャスターPK、低レイテンシーの視聴、弾幕チャットなど、TRTCのインタラクティブライブストリーミングシーンにおける関連機能が含まれています。
 
+
+
 ビデオ・インタラクティブストリーミングの機能をすばやく実装する必要がある場合、当社が提供するAppをもとに直接修正を加えてフィットさせることも、当社が提供するTRTCLiveRoomコンポーネントを使用し、カスタマイズしたUIを実現することも可能です。
 
 [](id:DemoUI)
-
 ## AppのUIの再利用
 
 [](id:ui.step1)
 ### 手順1：アプリケーションの新規作成
 1．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
 2. `TestLiveRoom`などのアプリケーション名を入力して、【作成】をクリックします。
+3. 【ダウンロードしました。次のステップ】をクリックすると、この手順をスキップします。
 
+![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 >! 本機能はTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
 
 
 [](id:ui.step2)
-### 手順2：SDKおよびAppソースコードのダウンロード
-1. 実際の業務ニーズに応じて[SDK](https://intl.cloud.tencent.com/document/product/647/34615)と[Appソースコード](https://github.com/tencentyun/TUILiveRoom)をダウンロードします。
-2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。
-
+### 手順2：Appソースコードのダウンロード
+クリックして[TUILiveRoom](https://github.com/tencentyun/TUILiveRoom)に進み、ソースコードをCloneまたはダウンロードします。
 
 
 [](id:ui.step3)
@@ -29,7 +30,8 @@
 3. `GenerateTestUserSig.java`ファイル内の関連パラメータを設定します。
 <ul style="margin:0"><li/>SDKAPPID：デフォルトはプレースホルダー(PLACEHOLDER)。実際のSDKAppIDを設定してください。
 <li/>SECRETKEY：デフォルトはプレースホルダー(PLACEHOLDER)。実際のキー情報を設定してください。</ul>
-<img src="https://main.qcloudimg.com/raw/09a7c2e06bb792e1c3d651a61aff4000.png">
+
+
 
 4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
@@ -59,24 +61,21 @@ Android Studio（バージョン3.5以上）を使用してソースコード`TU
 
 ### ユーザーA
 1. 図のように、ユーザー名を入力し（**ユーザー名は一意のものとし、他のユーザーと重複しないようにしてください**）、ログインします。
-<img src="https://main.qcloudimg.com/raw/8295052d4cd42f0387bced09f8e145d9.png" width="320"/>
 2. 入った後、下図のように、【ルームの作成】をクリックします。
-<img src="https://main.qcloudimg.com/raw/0f86a3a46403bd1b106d96691fce92c9.png" width="320"/>
 3. ルーム名を入力し、【ライブストリーミングを開始】をクリックします。
 
 ### ユーザーB
 1. 下図のように、ユーザー名を入力します（**ユーザー名は一意のものとし、他のユーザーと重複しないようにしてください**）。
-<img src="https://main.qcloudimg.com/raw/e39abca80039bd3b80e0f2d1a01d3e70.png" width="320"/>
-2. 下図のように、ユーザーAが作成したルーム番号を入力し、クリックして入室します。
-<img src="https://main.qcloudimg.com/raw/7439f305fd52a5f314b5140caa1babc4.png" width="320"/>
+2. 下図のように、ユーザーAが作成したルーム番号を入力し、クリックして入室します：<br>
 
-	>! 下図のように、ルーム番号はユーザーAのルーム上部に表示されます。
-<img src="https://main.qcloudimg.com/raw/da47658a199fc295ccf7447a91b117b7.png" width="320"/>
+>!  ルーム番号はユーザーAのルーム上部に表示されます。
+
 
 
 ## ルームのステータスの監視とPKリストへのアクセス
 ルームのステータスは、次のように`LiveRoomManager`を使用して監視することができます。
-```
+<dx-codeblock>
+::: java java
 LiveRoomManager.getInstance().addCallback(new LiveRoomManager.RoomCallback() {
     /**
      * ルームの作成
@@ -97,7 +96,7 @@ LiveRoomManager.getInstance().addCallback(new LiveRoomManager.RoomCallback() {
     public void onRoomDestroy(int roomId, final LiveRoomManager.ActionCallback callback) {
         // doSomething
     }
-
+    
     /**
      * ルームリストの取得
      * @param callback
@@ -116,7 +115,8 @@ LiveRoomManager.getInstance().addCallback(new LiveRoomManager.RoomCallback() {
         }
     }
 });
-```
+:::
+</dx-codeblock>
 ユーザーのアクセスを容易にするため、Callback方式が採用されています。例えば、ルームリストの取得には非同期操作が必要な場合がありますが、Callback方式を採用すればよりフレキシブルになります。
 
 
@@ -128,27 +128,30 @@ LiveRoomManager.getInstance().addCallback(new LiveRoomManager.RoomCallback() {
 
 [](id:model.step1)
 ### 手順1：SDKへの統合
-オーディオビデオ通話コンポーネントTRTCLiveRoomは、TRTC SDKとIM SDKに依存し、次の手順で2つのSDKをプロジェクトに統合することができます。
+ビデオ・インタラクティブストリーミングコンポーネントTRTCLiveRoomは、TRTC SDKとIM SDKに依存し、次の手順で2つのSDKをプロジェクトに統合することができます。
 
 **方法1：Mavenリポジトリを介する依存**
 1. dependenciesにTRTCSDKとIMSDKの依存を追加します。
-```
+<dx-codeblock>
+::: java java
 dependencies {
-       complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
-       complie 'com.tencent.imsdk:imsdk:latest.release'
+       compile "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
+       compile 'com.tencent.imsdk:imsdk:latest.release'
 }
-```
+:::
+</dx-codeblock>
 >?2つのSDKの最新バージョン番号は、[TRTC](https://github.com/tencentyun/TRTCSDK)および[IM](https://github.com/tencentyun/TIMSDK)のGithubトップページで取得することができます。
->
 2. defaultConfigでAppが使用するCPUアーキテクチャを指定します。
-```
+<dx-codeblock>
+::: java java
 defaultConfig {
       ndk {
           abiFilters "armeabi-v7a"
       }
 }
-```
-3．【Sync Now】をクリックし、自動でSDKをダウンロードし、プロジェクトに統合します。
+:::
+</dx-codeblock>
+3. 【Sync Now】をクリックし、自動でSDKをダウンロードし、プロジェクトに統合します。
 
 **方法2：ローカルAARを介する依存**
 開発環境でのMavenリポジトリへのアクセスが遅い場合は、ZIPパッケージを直接ダウンロードし、統合ドキュメントに従って手動でプロジェクトに統合することができます。
@@ -173,7 +176,8 @@ defaultConfig {
 [](id:model.step2)
 ### 手順2：権限の設定および難読化ルール
 AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が必要です（6.0以上のAndroidシステムではカメラ、ストレージ読み取りの権限を動的に申請する必要があります）。
-```
+<dx-codeblock>
+::: java java
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -186,39 +190,44 @@ AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が�
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-feature android:name="android.hardware.camera"/>
 <uses-feature android:name="android.hardware.camera.autofocus" />
-```
+:::
+</dx-codeblock>
 
-proguard-rules.proファイルでは、SDK関連を非難読化リストに追加します。
-```
+proguard-rules.proファイルでは、SDK関連クラスを非難読化リストに追加します。
+<dx-codeblock>
+::: java java
 -keep class com.tencent.** { *; }
-```
+:::
+</dx-codeblock>
 
 [](id:model.step3)
 ### 手順3：TRTCLiveRoomコンポーネントをインポート
 次のディレクトリ内のすべてのファイルをプロジェクトにコピーします。
-```
+<dx-codeblock>
+::: java java
 src/main/java/com/tencent/liteav/liveroom/model
-```
+:::
+</dx-codeblock>
 
 [](id:model.step4)
 ### 手順4：コンポーネントの作成およびログイン
-1. `sharedInstance`インターフェースを呼び出すと、TRTCLiveRoomコンポーネントのインスタンスオブジェクトを作成できます。
-2. 1つの`TRTCLiveRoomConfig`オブジェクトを作成したら、このオブジェクトにuseCDNFirstとCDNPlayDomainの属性を設定することができます。
+1. sharedInstance インターフェースを呼び出すと、TRTCLiveRoomコンポーネントのインスタンスオブジェクトを作成できます。
+2. 1つの TRTCLiveRoomConfig オブジェクトを作成したら、このオブジェクトにuseCDNFirstとCDNPlayDomainの属性を設定することができます。
  - useCDNFirstの属性：視聴者の視聴方式の設定に使用します。trueは、一般視聴者のCDN経由での視聴を表し、料金は安価ですがレイテンシーは高めです。falseは、一般視聴者の低レイテンシーによる視聴を表し、料金はCDN とマイク接続の間ですが、遅延を1s以内に抑えることができます。
- - CDNPlayDomainの属性：useCDNFirstの設定をtrueにした時に有効になり、CDN経由の視聴の再生ドメイン名の指定に利用します。CSSコンソール >【[Domain Management](https://console.cloud.tencent.com/live/domainmanage)】の画面からログインし、設定することができます。
+ - CDNPlayDomainの属性：useCDNFirstの設定をtrueにした時に有効になり、CDN経由の視聴の再生ドメイン名の指定に利用します。CSSコンソール >【[ドメイン名管理](https://console.cloud.tencent.com/live/domainmanage)】ページからログインし、設定することができます。
 3. `login`関数を呼び出してコンポーネントのログインを完了します。下表を参考にキーパラメータを入力してください。
  <table>
 <tr>
 <th>パラメータ名</th>
-<th>機能</th>
+<th>作用</th>
 </tr>
 <tr>
 <td>sdkAppId</td>
-<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a> で SDKAppIDを表示できます。</td>
+<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a> でSDKAppIDを表示できます。</td>
 </tr>
 <tr>
 <td>userId</td>
-<td>現在のユーザーID、文字列タイプでは、英語のアルファベット（a-z と A-Z）、数字（0-9）、ハイフン（-）とアンダーライン（_）のみ使用できます。</td>
+<td>現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（_）のみ使用できます。</td>
 </tr>
 <tr>
 <td>userSig</td>
@@ -228,7 +237,7 @@ src/main/java/com/tencent/liteav/liveroom/model
 <td>config</td>
 <td>グローバルコンフィギュレーション情報。ログイン時に初期化してください。ログイン後は変更できなくなります。<ul style="margin:0;">
 <li>useCDNFirstの属性：視聴者の視聴方式の設定に使用します。trueは、一般視聴者のCDN経由での視聴を表し、料金は安価ですがレイテンシーは高めです。falseは、一般視聴者の低レイテンシーによる視聴を表し、料金は CDN とマイク接続の間ですが、遅延を1s以内に抑えることができます。</li>
-<li>CDNPlayDomainの属性：useCDNFirstの設定をtrueにした時に有効になり、CDN経由の視聴の再生ドメイン名の指定に利用します。CSSコンソール>【<a href="https://console.cloud.tencent.com/live/domainmanage">Domain Management</a>】の画面からログインして設定を行うことができます。</li>
+<li>CDNPlayDomainの属性：useCDNFirstの設定をtrueにした時に有効になり、CDN経由の視聴の再生ドメイン名の指定に利用します。CSSコンソール>【<a href="https://console.cloud.tencent.com/live/domainmanage">ドメイン名管理</a>】ページからログインして設定を行うことができます。</li>
 </ul></td>
 </tr>
 <tr>
@@ -259,10 +268,9 @@ mLiveRoom.login(SDKAPPID, userId, userSig, config,
 ### 手順5：キャスター側での配信開始
 1. キャスターは、[手順4](#model.step4)でログイン後、`setSelfProfile`を呼び出して自身のニックネームおよびプロフィール画像を設定することができます。
 2. キャスターは、配信開始前に先に`startCameraPreview`を呼び出してカメラのプレビューを起動させ、インターフェース上に美顔調節ボタンを設置して呼び出し、`getBeautyManager`で美顔設定を行うことができます。
- >?エンタープライズ版以外のSDKは美顔やスタンプの機能をサポートしていません。
- >
-3. 美顔効果の変更後、キャスターは`createRoom`を呼び出して新しいライブストリーミングルームを作成することができます。
-4. キャスターが`startPublish`を呼び出し、プッシュを開始します。CDN視聴のサポートが必要な場合は、ログイン時に渡される`TRTCLiveRoomConfig`パラメータ内で`useCDNFirst`と`CDNPlayDomain`を指定し、`startPublish`時にライブストリーミング・プルストリーム用のstreamIDを指定してください。
+>?エンタープライズ版以外のSDKは美顔やスタンプなどの高度な美顔機能をサポートしていません。
+3. 美顔効果の変更後、キャスターは `createRoom` を呼び出して新しいライブストリーミングルームを作成することができます。
+4. キャスターが`startPublish`を呼び出し、プッシュを開始します。CDN視聴のサポートが必要な場合は、login時に渡される`TRTCLiveRoomConfig`パラメータ内で`useCDNFirst`と`CDNPlayDomain`を指定し、`startPublish`時にライブストリーミング・プルストリーム用のstreamIDを指定してください。
 
 ![](https://main.qcloudimg.com/raw/eab281d702879ae87728d0064a090dca.jpg)
 
@@ -280,7 +288,7 @@ mLiveRoom.getBeautyManager().setBeautyLevel(6);
 
 // 3.キャスターがルームを作成します
 TRTCLiveRoomDef.TRTCCreateRoomParam param = new TRTCLiveRoomDef.TRTCCreateRoomParam();
-param.roomName = "テストルーム";
+param.roomName = 「テストルーム」;
 mLiveRoom.createRoom(123456789, param, new TRTCLiveRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
@@ -297,9 +305,9 @@ mLiveRoom.createRoom(123456789, param, new TRTCLiveRoomCallback.ActionCallback()
 ### 手順6：視聴者側の視聴
 1. 視聴者側は、[手順4](#model.step4)でログイン後、`setSelfProfile`を呼び出して自身のニックネームおよびプロフィール画像を設定することができます。
 2. 視聴者側が業務バックエンドから最新のライブストリーミングルームリストを取得します。
- >?App内のライブストリーミングルームリストはデモに使用するためだけのものです。ライブストリーミングルームリストの業務ロジックは千差万別です。現在、Tencent Cloudはライブストリーミングルームリスト管理のサービスを提供していません。各自でご自分のライブストリーミングルームリストを管理してください。
+>?App内のライブストリーミングルームリストはデモに使用するためだけのものです。ライブストリーミングルームリストの業務ロジックは千差万別です。現在、Tencent Cloudはライブストリーミングルームリスト管理のサービスを提供していません。各自でご自分のライブストリーミングルームリストを管理してください。
 3. 視聴者側は、`getRoomInfos`を呼び出してルームの詳細情報を取得します。この情報は、キャスター側が`createRoom`を呼び出してライブストリーミングルームを作成するときに設定する簡単な説明情報です。
- >!ライブストリーミングルームのリストに十分に包括的な情報がある場合は、`getRoomInfos`の呼び出しに関する手順をスキップできます。
+>!ライブストリーミングルームのリストに十分に包括的な情報がある場合は、`getRoomInfos`の呼び出しに関する手順をスキップできます。
 4. 視聴者は1つのライブストリーミングルームを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
 5. `startPlay`を呼び出してキャスターのuserIdを渡し、再生を開始します。
  - ライブストリーミングルームリストにキャスターのuserID情報がすでに含まれている場合、視聴者は直接`startPlay`を呼び出してキャスターのuserIdを渡せば、再生を開始できます。
@@ -317,7 +325,7 @@ mLiveRoom.getRoomInfos(roomList, new TRTCLiveRoomCallback.RoomInfoCallback() {
     @Override
     public void onCallback(int code, String msg, List<TRTCLiveRoomDef.TRTCLiveRoomInfo> list) {
         if (code == 0) {
-            // ルーム詳細情報の取得後、キャスターリスト画面でキャスターのニックネーム、プロフィール画像等の関連情報を表示できます。
+            // ルーム詳細情報の取得後、キャスターリストページでキャスターのニックネーム、プロフィール画像等の関連情報を表示できます
         }
     }
 })
@@ -338,13 +346,13 @@ mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
 
 [](id:model.step7)
 ### 手順7：視聴者とキャスターとのマイク接続
-1. 視聴者側が`requestJoinAnchor`を呼び出し、キャスター側にマイク接続のリクエストを送信します。
-2. キャスター側は `TRTCLiveRoomDelegate#onRequestJoinAnchor`（視聴者からのマイク接続のリクエストがあります）のイベント通知を受信します。
-3. キャスター側は`responseJoinAnchor`を呼び出し、視聴者からのマイク接続リクエストを受け入れるかどうか決定できます。
+1. 視聴者側が requestJoinAnchor を呼び出し、キャスター側にマイク接続のリクエストを送信します。
+2. キャスター側は TRTCLiveRoomDelegate#onRequestJoinAnchor（視聴者からのマイク接続のリクエストがあります）のイベント通知を受信します。
+3. キャスター側は responseJoinAnchor を呼び出し、視聴者からのマイク接続リクエストを受け入れるかどうか決定できます。
 4. 視聴者側が`TRTCLiveRoomDelegate#responseCallback`のイベント通知を受信します。この通知にはキャスターの処理結果が含まれています。
-5. キャスターがマイク接続リクエストに同意したら、視聴者側は`startCameraPreview`を呼び出し、ローカルカメラを起動させます。その後`startPublish`を呼び出し、視聴者側のプッシュを開始します。
-6. キャスター側は、視聴者側の起動の通知の後に、`TRTCLiveRoomDelegate#onAnchorEnter`（別のオーディオ・ビデオストリーミングが届いています）の通知を受信します。この通知には視聴者側のuserIdが含まれています。
-7. キャスター側が`startPlay`を呼び出すと、マイク接続の視聴者の画面を見ることができます。
+5. キャスターがマイク接続リクエストに同意したら、視聴者側は`startCameraPreview`を呼び出し、ローカルカメラを起動させます。その後 startPublish を呼び出し、視聴者側のプッシュを開始します。
+6. キャスター側は、視聴者側の起動の通知の後に、`TRTCLiveRoomDelegate#onAnchorEnter`（別のオーディオビデオストリーミングが届いています）の通知を受信します。この通知には視聴者側のuserIdが含まれています。
+7. キャスター側が startPlay を呼び出すと、マイク接続の視聴者の画面を見ることができます。
 
 ![](https://main.qcloudimg.com/raw/05a8c6af8bdc8b441f90b297e83106fc.jpg)
 
@@ -389,10 +397,10 @@ mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
 
 [](id:model.step8)
 ### 手順8：キャスターとキャスターPK
-1. キャスターAが`requestRoomPK`を呼び出し、キャスターBにPKのリクエストを送信します。
-2. キャスターBが`TRTCLiveRoomDelegate onRequestRoomPK`のコールバック通知を受信します。
-3. キャスターBが`responseRoomPK`を呼び出し、キャスターA のPKのリクエストを受け入れるか決定します。
-4. キャスターBは、キャスターAのリクエストを受け入れたら、`TRTCLiveRoomDelegate onAnchorEnter`の通知を待ってから、`startPlay`を呼び出し、キャスターAを表示します。
+1. キャスターAが requestRoomPK を呼び出し、キャスターBにPKのリクエストを送信します。
+2. キャスターBが `TRTCLiveRoomDelegate onRequestRoomPK`のコールバック通知を受信します。
+3. キャスターBが `responseRoomPK` を呼び出し、キャスターA のPKのリクエストを受け入れるか決定します。
+4. キャスターBは、キャスターAのリクエストを受け入れたら、 `TRTCLiveRoomDelegate onAnchorEnter`の通知を待ってから、`startPlay`を呼び出し、キャスターAを表示します。
 5. PKのリクエストが同意されたかについて、キャスターAが`responseCallback`のコールバック通知を受信します。
 6. キャスターAのリクエストが同意されたら、`TRTCLiveRoomDelegate onAnchorEnter`の通知を待ってから、`startPlay`を呼び出し、キャスターBを表示します 。
 
@@ -451,20 +459,20 @@ mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
 ### 手順9：文字チャットおよび弾幕コメントの実装
 - `sendRoomTextMsg`によって通常のテキストメッセージを送信できるようになり、該当するルーム内の全てのキャスターおよび視聴者が`onRecvRoomTextMsg`のコールバックを受信することができます。
  IMバックエンドは、デフォルトのセンシティブワードフィルタルールを備えており、センシティブワードと認識されたテキストメッセージはクラウドに転送されることはありません。
-<dx-codeblock>
-::: java java
-// 送信側：テキストメッセージの送信
-mLiveRoom.sendRoomTextMsg("Hello Word!", null);
-// 受信側：テキストメッセージの監視
-mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
+  <dx-codeblock>
+  ::: java java
+  // 送信側：テキストメッセージの送信
+  mLiveRoom.sendRoomTextMsg("Hello Word!", null);
+  // 受信側：テキストメッセージの監視
+  mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRecvRoomTextMsg(String roomId, 
         String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
         Log.d(TAG, userInfo.userName + "からのメッセージを受信:" + message);
     }
-});
-:::
-</dx-codeblock>
+  });
+  :::
+  </dx-codeblock>
 - `sendRoomCustomMsg`によって、カスタム（シグナル）メッセージを送信できます。当該ルーム内のすべてのキャスターと視聴者が`onRecvRoomCustomMsg` コールバックを受信できます。
 カスタムメッセージは、カスタマイズ信号の送信によく用いられます。例えば、「いいね」情報の発信やブロードキャストに使用します。
 <dx-codeblock>
@@ -479,7 +487,7 @@ mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
         String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
         if ("CMD_DANMU".equals(cmd)) {
             // 弾幕コメントの受信
-            Log.d(TAG、 + userInfo.userName + 「からの弾幕コメントを受信:」 + message);
+            Log.d(TAG, "が" + userInfo.userName + "から受信した弾幕コメント:" + message);
         } else if ("CMD_LIKE".equals(cmd)) {
             // 「いいね」情報の受信
             Log.d(TAG、 userInfo.userName + 「いいねを付けました！」);
@@ -488,4 +496,3 @@ mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
 });
 :::
 </dx-codeblock>
-

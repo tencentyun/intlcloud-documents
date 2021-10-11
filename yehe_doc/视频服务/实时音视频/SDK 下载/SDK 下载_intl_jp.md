@@ -1,5 +1,8 @@
 TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシステムのSDKはすべて同じ基本モジュールを使用するため、プロジェクトに2つ以上のLiteAVシステムSDKを同時に統合すると、シンボルの重複（symbol duplicate）という問題が発生します。そこで、さまざまな製品機能を統合した**簡易版（TRTC）**、**プロフェッショナル版（Professional）*および**エンタープライズ版（Enterprise）**を提供しています。実際のビジネスニーズに応じて、さまざまなバージョンを選択することができます。
 
+
+
+<h2 id="TRTC">簡易版(TRTC)</h2>  
 簡易版の機能はTRTCとライブストリーミングの再生(TXLivePlayer)という2つだけで、アプリのインストールパッケージのボリューム増分は最小限に留まり、TRTC関連機能のみを使用するお客様に適しています。
 
 <table>
@@ -58,12 +61,12 @@ TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシス�
       <td style="text-align:center">2.05M(arm64)</td>
    </tr>
      <tr>
-      <td style="text-align:center">web</td>
+      <td style="text-align:center">Web</td>
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_web_trtc") href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35607">DOC</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35096">DOC</a></td>
+      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32398">DOC</a></td>
+      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/16863">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
    <tr>
@@ -73,15 +76,6 @@ TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシス�
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35089">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35097">DOC</a></td>
-      <td style="text-align:center">N/A</td>
-   </tr>
-   <tr>
-      <td style="text-align:center">WeChat Mini Program </td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_wxmini_trtc") href="https://web.sdk.qcloud.com/trtc/miniapp/download/trtc-room.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
 	    <tr>
@@ -96,14 +90,14 @@ TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシス�
 </table>
 
 >? 
-> - SDKによるインストールパッケージのボリューム増量を削減する必要がある場合は、[インストールパッケージのボリューム削減方法](https://intl.cloud.tencent.com/document/product/647/35165) をご参照ください。
-> - QRコードをスキャンして公式アカウントをよく読み、SDKのバージョン更新および最新の技術的な動向について確認してください。
+>- SDKによるインストールパッケージのボリューム増量を削減する必要がある場合は、[インストールパッケージのボリューム削減方法](https://intl.cloud.tencent.com/document/product/647/35165) をご参照ください。
+>- QRコードをスキャンして公式アカウントをよく読み、SDKのバージョン更新および最新の技術的な動向について確認してください。
 > ![](https://main.qcloudimg.com/raw/d8a8c8c130ef7799feff6efbc0260ea2.jpg)
 
 
 <h2 id="Professional">プロフェッショナル版（Professional）</h2>
 
-プロフェッショナル版は、TRTCを含む複数のオーディオ・ビデオ関連のコア機能を統合したものです。[Super Player （Player+）](https://intl.cloud.tencent.com/jp/)、[モバイルライブストリーミング]および[UGSV]などが含まれます。基盤モジュールを高度に再利用することにより、統合したプロフェッショナル版の容量増加は同時に2つの独立したSDKを統合させた場合よりも小さくなります。さらにシンボル重複（symbol duplicate）の問題も回避できます。
+プロフェッショナル版には TRTC を含む複数の音声・ビデオ関連のコア機能が統合され、[Super Player（Player+）](https://intl.cloud.tencent.com/document/product/266/7836)、[モバイルライブストリーミング](https://intl.cloud.tencent.com/product/mlvb) と [User Generated Short Video（UGSV）](https://intl.cloud.tencent.com/product/ugsv) 等が含まれます。基盤となるモジュールの再利用度が高いため、統合されたプロフェッショナル版のボリュームの増分は、2つの独立したSDKを同時に統合する場合よりも小さくなり、シンボルの重複（symbol duplicate）問題も回避できます。
 
 <table>
    <tr>
@@ -143,7 +137,7 @@ TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシス�
 
 <h2 id="Enterprise">エンタープライズ版(Enterprise)</h2>
 
-エンタープライズ版はプロフェッショナル版のすべての機能を含む以外に、AIフェイスエフェクトコンポーネントを統合しており、デカ目、小顔、美肌加工およびキャラクターエフェクト、スタンプなどのAIフェイスエフェクト機能をサポートしています。
+エンタープライズ版はプロフェッショナル版のすべての機能を含む以外に、AIフェイスエフェクトコンポーネントを統合しており、デカ目、小顔、美肌加工およびキャラクターエフェクト、スタンプなどのAIフェイスエフェクト機能をサポートしています。AIフェイスエフェクトコンポーネントは付加価値サービスに該当し、料金については、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)ください。エンタープライズ版をダウンロードした後、実行するには、フェイスエフェクト SDKの解凍パスワードと認証Licenseが必要です。[お問い合わせ](https://intl.cloud.tencent.com/contact-us) から取得してください。
 
 <table>
    <tr>
@@ -185,10 +179,10 @@ TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシス�
   <tr>
     <th width="100px" style="text-align:center">機能モジュール</th>
     <th width="100px" style="text-align:center">機能項目</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">ライブストリーミング簡易版</a><br>LiteAV_Smart</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">ライブストリーミングベーシック版</a><br>LiteAV_Smart</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/37914">UGSV版</a><br>LiteAV_UGC</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC版</a><br>LiteAV_TRTC</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">プレーヤー版</a><br>LiteAV_Player</th>
+    <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/881/20205">プレーヤー版</a><br>LiteAV_Player</th>
     <th width="100px" style="text-align:center"><a href="#Professional">プロフェッショナル版</a><br>Professional</th>
     <th width="100px" style="text-align:center"><a href="#Enterprise">エンタープライズ版</a><br>Enterprise</th>
   </tr>
@@ -413,5 +407,4 @@ TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシス�
     s.parentNode.insertBefore(mta, s);
   })();
 </script>
-
 

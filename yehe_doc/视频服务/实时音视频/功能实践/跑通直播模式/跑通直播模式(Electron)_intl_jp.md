@@ -14,7 +14,7 @@ TRTCクラウドサービスは、「インターフェースモジュール」�
 
 通話モードでは、TRTCルームのすべてのユーザーはインターフェースモジュールに割り当てられます。各ユーザーは「キャスター」に相当し、各ユーザーは随時発言でき（同時アップストリームの最大制限は50）、このためオンラインミーティングなどのユースケースに適していますが、1つのルームの人数制限は300人になります。
 
-![](https://main.qcloudimg.com/raw/b88a624c0bd67d5d58db331b3d64c51c.gif)
+![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## サンプルコード
 
@@ -27,10 +27,9 @@ TRTCクラウドサービスは、「インターフェースモジュール」�
 
 初めにドキュメント[SimpleDemoクイックスタート(Electron)](https://intl.cloud.tencent.com/document/product/647/35089)を読み、ドキュメントのガイドに従って、提供されている公式SimpleDemoクイックスタートを実行してください。
 SimpleDemoが順調に動作する場合は、プロジェクトにおいてElectronのインストール方法をお客様が把握していることを意味します。
-- 反対に、SimpleDemoの動作に問題がある場合は、Electronのダウンロード、インストールに問題があったことが考えられます。Electronの公式サイトの[インストールガイド](https://www.electronjs.org/docs/tutorial/installation)をご参照ください。
+- 反対に、SimpleDemoの動作に問題がある場合は、Electronのダウンロード、インストールに問題があったことが考えられます。この場合はElectronの公式サイトの[インストールガイド](https://www.electronjs.org/docs/tutorial/installation)をご参照ください。
 
 [](id:step2)
-
 ### 手順2：お客様のプロジェクトにtrtc-electron-sdkを統合する
 
 [手順1]](#step1) が正常に動作し、予想どおりの効果があった場合は、 Electron環境のインストール方法を把握していることを意味します。
@@ -89,7 +88,9 @@ param.role = TRTCRoleType.TRTCRoleAnchor; // ロールを「キャスター」�
 :::
 </dx-codeblock>
 
->! TRTCは、相互に干渉しないよう、2つの同じuserIdによる同時入室をサポートしていません。
+>! 
+>- TRTCは、2つの同じuserIdによる同時入室をサポートしていません。同時に入室した場合、相互に干渉します。
+>- 各端末のユースケースappSceneについては、統一する必要があります。統一していない場合、想定外のトラブルが生じる恐れがあります。
 
 [](id:step5)
 ### 手順5：キャスター端末でのカメラのプレビューとマイク集音を起動する
@@ -127,9 +128,9 @@ trtcCloud.setVideoEncoderParam(encParam);
     -   style：美顔スタイルで、「スムース」または「ナチュラル」があります。スムースタイプは美肌補正がより強く、華やかなシーンに適しています。
         -   `TRTCBeautyStyle.TRTCBeautyStyleSmooth`: スムース。美女が登場するシーンに適しており、明らかな効果が感じられます。
         -   `TRTCBeautyStyle.TRTCBeautyStyleNature`: ナチュラル。美肌補正のアルゴリズムにより顔の細部の質感が保たれ、より自然な感じに仕上がります。
-    -   beauty：美顔レベル。数値の範囲は0～9です。0はオフを表し、1～9まで数値が大きくなるほど効果が高くなります
-    -   white：美白レベル。数値の範囲は0～9です。0はオフを表し、1～9まで数値が大きくなるほど効果が高くなります
-    -   ruddiness：肌色補正レベル。数値の範囲は0～9です。0はオフを表し、1～9まで数値が大きくなるほど効果が高くなります。このパラメータは、Windowsプラットフォームではまだ有効ではありません
+    -   beauty：美顔レベル。数値の範囲は0～9です。0はオフを表し、1～9まで数値が大きくなるほど効果が高くなります。
+    -   white：美白レベル。数値の範囲は0～9です。0はオフを表し、1～9まで数値が大きくなるほど効果が高くなります。
+    -   ruddiness：肌色補正レベル。数値の範囲は0～9です。0はオフを表し、1～9までは数値が大きくなるほど効果がはっきりとします。このパラメータは、Windowsプラットフォームでは現在有効になっていません。
 
 ```javascript
 // 美顔エフェクトをオン 
@@ -259,9 +260,9 @@ TRTCでは、異なるオーディオ・ビデオルームにいる2人のキャ
 1.  キャスターAは[connectOtherRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#connectOtherRoom)インターフェースを呼び出します。インターフェースのパラメータは現在JSONフォーマットを採用し、キャスターBの`roomId`と`userId`の形式に組み立てた`{"roomId": 978,"userId": "userB"}`のパラメータをインターフェース関数に渡す必要があります。
 2.  ルームを跨ぐことに成功した後、キャスターAは[onConnectOtherRoom(userId, errCode, errMsg)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onConnectOtherRoom)イベントコールバックを受け取ります。同時に、2つのライブストリーミングルームのすべてのユーザーはいずれも[onUserVideoAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserVideoAvailable)および[onUserAudioAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserAudioAvailable)イベント通知を受け取ります。
     例えば、ルーム「001」のキャスターAがルーム「002」のキャスターBと`connectOtherRoom()`を介してルーム間通話をする場合、ルーム「001」のユーザーはキャスターBの`onUserVideoAvailable(B, true)`コールバックと`onUserAudioAvailable(B, true)`コールバックを受信します。ルーム「002」のユーザーはキャスターAの`onUserVideoAvailable(A, true)`コールバックと`onUserAudioAvailable(A, true)`コールバックを受信します。
-3.  両方のルームのユーザーは[startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView)を呼び出すと、もう一方のルームのキャスター画面を表示することができ、音声は自動再生されます。
+3. 2つのルームのユーザーは、[startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView)を呼び出すことで、もう一方のルームのキャスターの画面を表示することができ、音声が自動的に再生されます。
 
-![キャスターマイク接続のシーケンス図](http://main.qcloudimg.com/raw/ac5b230340ebdab69998f95844fa61c1/%E4%B8%BB%E6%92%AD%E8%BF%9E%E9%BA%A6%E6%97%B6%E5%BA%8F%E5%9B%BE.png)
+![キャスターマイク接続のシーケンス図](https://main.qcloudimg.com/raw/bffa420102bb31dee6f76d7f08a16e4f.png)
 
 <dx-codeblock>
 ::: javascript javascript

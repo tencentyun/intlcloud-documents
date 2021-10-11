@@ -1,41 +1,38 @@
 ## Demo体験
-<input type="button" value="Windows版" style="height: 30px;width: 150px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;margin-right:10px;"  onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe')" />
+<input type="button" value="Windows版" style="height: 30px;width: 150px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;margin-right:10px;"  onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe')" />
 
-<input type="button" value="MacOS版" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;" onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg')" />
-
-## デモンストレーション
-当社のDemoをダウンロードしてインストールし、リアルタイムインタラクティブ授業の機能の効果をご体験いただけます。これには、音声、ビデオ、画面共有などの授業方式が含まれ、教師による質疑応答の開始、学生の挙手、教師による学生の回答への招待、回答の終了などの関連機能も含んでいます。
-
-リアルタイムインタラクティブ授業の機能に速やかにアクセスしたい場合は、当社が提供するDemoをもとに直接適応に変更を加えることも、当社が提供する[trtc-electron-education](https://intl.cloud.tencent.com/document/product/647/37279)コンポーネントを使用し、カスタマイズしたUIを実現することも可能です。
+<input type="button" value="MacOS版" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education/TRTC_Education_Demo-1.1.0.dmg')" />
 
 ## DemoのUIの再利用
 [](id:ui.step1)
 ### 手順1：アプリケーションの新規作成
-1．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
-2．例えば、`TestEduDemo`などのアプリケーション名を入力して、【作成】をクリックします。
+1. TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
+2. 例えば、`TestEduDemo`などのアプリケーション名を入力して、【作成】をクリックします。
 
->?本機能はTencent Cloud[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047)という2つの基本的なPAASサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの価格説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
+>?本機能はTencent Cloud[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047)という2つの基本的なPAASサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
 
 
 [](id:ui.step2)
 ### 手順2：SDKおよびDemoソースコードをダウンロード
 1. 実際の業務ニーズに基づき、SDKおよび付属のDemoソースコードをダウンロードします。
 2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。
+![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 
 [](id:ui.step3)
 ### 手順3：Demoプロジェクトファイルの設定
-1. 設定変更画面に入り、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
-2. `TRTCEducation/app/debug/GenerateTestUserSig.js`のファイルを見つけて開きます。
+1. 設定変更ページに進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
+2. `Electron/js/GenerateTestUserSig.js`ファイルを見つけて開きます。
 3. `GenerateTestUserSig.js`のファイルの関連するパラメータを設定します。
-<ul style="margin:0"><li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
-<li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
-<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+<ul>
+ <li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
+ <li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
 
 4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
 
->!ここで言及した新規UserSigの作成法は、クライアントコードでSECRETKEYを設定し、この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適しています**。
-≻ UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+>!
+>- ここで言及したUserSigの新規作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**のこの手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します**。
+>- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 ### 手順4：Demoの実行
 
@@ -50,7 +47,7 @@ yarn dev
 yarn package
 ```
 
->! Macでパッケージ化したMacパッケージング、Windows PCでパッケージ化したWindowsパッケージのみ使用できます。
+>!  Macでパッケージ化したMacパッケージング、Windows PCでパッケージ化したWindowsパッケージのみ使用できます。
 
 
 ### 手順5：Demoソースコードの修正
@@ -71,7 +68,7 @@ Demoで使用するアーキテクチャの技術は次のとおりです。
 | app/components/Chat.tsx|教室-チャットルームのUIの実装コード|
 | app/components/UserList.tsx|教室-メンバーリストのUIの実装コード|
 
-## UIカスタマイズの実現
+## カスタムUIの実装
 Demoにデフォルトで実装されているUIが期待どおりでない場合は、必要に応じて独自のユーザーインターフェースを実装することができます。すなわち、当社がパッケージングした[trtc-electron-education](https://www.npmjs.com/package/trtc-electron-education)コンポーネントで提供する音声・ビデオの機能のみを使用し、UI部分を単独で実装します。
 ![](https://main.qcloudimg.com/raw/cba4f331a811dd5dbf31cce80bd1d826.png)
 

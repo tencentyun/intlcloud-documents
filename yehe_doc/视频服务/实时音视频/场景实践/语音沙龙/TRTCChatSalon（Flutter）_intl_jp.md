@@ -1,14 +1,14 @@
-TRTCChatSalonは、Tencent CloudのTRTCおよびIMサービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
+.TRTCChatSalonは、Tencent CloudのTRTCおよびIMサービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
 
-- キャスターが新しいボイスサロンを作成して配信を開始し、視聴者がボイスサロンに参加して視聴/インタラクティブなコミュニケーションを図ります。
-- キャスターは、視聴者のマイク・オンに同意したり、マイク・オンのキャスターをキックアウトしたりすることもできます。
-- 視聴者はマイク・オンを申請して、マイク・オンのキャスターになり、他者と対話することができます。また、いつでもマイク・オフにして、通常の視聴者になることも可能です。
+- 管理者は新しいボイスサロンを作成して配信を開始し、リスナーはボイスサロンに参加して視聴/インタラクションを行います。
+- 管理者は、リスナーのマイク・オンに同意したり、マイク・オンのキャスターをキックアウトしたりすることもできます。
+- リスナーはマイク・オンを申請して、マイク・オンのキャスターになり、他者と音声インタラクションを行うことができます。また、いつでもマイク・オフにして、通常のリスナーになることも可能です。
 - 各種のテキストメッセージの送信をサポートします。
 
-TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つのクローズソースであるSDKに依存しています。具体的な実装プロセスについては、[ボイスサロン（Flutter）](https://cintl.loud.tencent.com/document/product/647/53582)をご参照ください。
+TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つのクローズドソースであるSDKに依存しています。具体的な実装プロセスについては、[ボイスサロン（Flutter）](https://intl.cloud.tencent.com/document/product/647/39805)をご参照ください。
 
-- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/zh/document/product/647)を低遅延のボイスチャットコンポーネントとして使用しています。
-- IM SDK：[IM SDK](https://intl.cloud.tencent.com/document/product/1047)のAVChatroomを使用してチャットルーム機能を実装します。同時にIMのインターフェース属性によって、マイクリストなどのルーム情報を保存し、招待シグナリングはマイク・オン/ピックのリクエストに用いることができます。
+- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のボイスチャットコンポーネントとして使用します。
+- IM SDK：[IM SDK](https://intl.cloud.tencent.com/document/product/1047)のAVChatroomを使用してチャットルーム機能を実装します。同時にIMの属性インターフェースによって、マイクリストなどのルーム情報を保存し、招待シグナリングはマイク・オン/ピックのリクエストに用いることができます。
 
 [](id:TRTCChatSalon)
 
@@ -18,22 +18,22 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                                             | 説明           |
 | ----------------------------------------------- | -------------- |
-| [sharedInstance](#sharedinstance) | シングルトンオブジェクトを取得します。 |
+| [sharedInstance](#sharedinstance)               | シングルトンオブジェクトを取得します。                                       |
 | [destroySharedInstance](#destroysharedinstance) | シングルトンオブジェクトを廃棄します。 |
 | [registerListener](#registerlistener)           | イベント監視を設定します。 |
 | [unRegisterListener](#unregisterlistener)       | イベント監視を廃棄します。 |
 | [login](#login)                                 | ログイン。         |
 | [logout](#logout)                               | ログアウト。         |
-| [setSelfProfile](#setselfprofile)               |  個人情報を修正します。 |
+| [setSelfProfile](#setselfprofile)               | 個人情報を修正します。           |
 
 ### ルーム関連インターフェース関数
 
 | API                                     | 説明                                                         |
 | --------------------------------------- | ------------------------------------------------------------ |
-| [createRoom](#createroom)               | ルームの新規作成（キャスターが呼び出し）。ルームが存在しない場合は、システムが新しいルームを自動的に作成します。 |
-| [destroyRoom](#destroyroom)             |ルームの廃棄（キャスターが呼び出し）。                                       |
-| [enterRoom](#enterroom)                 | 入室（視聴者が呼び出し）。                                       |
-| [exitRoom](#exitroom)                   | 退室（視聴者が呼び出し）。                                       |
+| [createRoom](#createroom)               | ルームの作成（管理者が呼び出し）。ルームが存在しない場合は、システムが新しいルームを自動的に作成します。 |
+| [destroyRoom](#destroyroom)             | ルームの破棄（管理者が呼び出し）。                                       |
+| [enterRoom](#enterroom)                 | 入室（リスナーが呼び出し）。                                       |
+| [exitRoom](#exitroom)                   | 退室（リスナーが呼び出し）。                                       |
 | [getRoomInfoList](#getroominfolist)     | ルームリストの詳細情報を取得します。                              |
 | [getRoomMemberList](#getroommemberlist) | ルーム内のすべてのユーザー情報を取得します。                              |
 | [getArchorInfoList](#getarchorInfolist) | ルームのキャスターリストを取得します。                                           |
@@ -43,12 +43,12 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                   | 説明                                 |
 | --------------------- | ----------------------------------- |
-| [enterMic](#entermic) | 視聴者のマイク・オン。                          |
+| [enterMic](#entermic) | リスナーのマイク・オン。                          |
 | [enterMic](#entermic) | キャスターのマイク・オフ。                          |
-| [muteSeat](#muteseat)   | 任意のマイクのミュート/ミュート解除（キャスターが呼び出し）。 |
-| [kickMic](#kickmic)   | キックアウトしてマイク・オフ（グループマスターが呼び出し）。              |
+| [muteMic](#mutemic)   | 任意のマイクのミュート/ミュート解除（キャスターが呼び出し）。 |
+| [kickMic](#kickmic)   | キックアウトしてマイク・オフ（管理者が呼び出し）。              |
 
-### ローカルの音声操作インターフェース
+### ローカルのオーディオ操作インターフェース
 
 | API                                             | 説明                  |
 | ----------------------------------------------- | -------------------- |
@@ -64,12 +64,12 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                                       | 説明                    |
 | ----------------------------------------- | ----------------------- |
-| [muteRemoteAudio](#muteremoteaudio)       | ミュート/ミュート解除指定メンバー。 |
-| [muteAllRemoteAudio](#muteallremoteaudio) | ミュート/ミュート解除全メンバー。 |
+| [muteRemoteAudio](#muteremoteaudio)       | 指定メンバーをミュート/ミュート解除。 |
+| [muteAllRemoteAudio](#muteallremoteaudio) | 全メンバーをミュート/ミュート解除。 |
 
-### バックグラウンドミュージック・サウンドエフェクト関連インターフェース
+### BGMサウンドエフェクト関連インターフェース
 
-| API                                             | 説明                                                         |
+| API                                             | 説明                                                          |
 | ----------------------------------------------- | ------------------------------------------------------------ |
 | [getAudioEffectManager](#getaudioeffectmanager) | バックグラウンド・サウンドエフェクト管理オブジェクト[TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。 |
 
@@ -77,15 +77,15 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                                 | 説明                                     |
 | ----------------------------------- | ---------------------------------------- |
-| [sendRoomTextMsg](#sendroomtextmsg) | ルーム内でのテキストメッセージのブロードキャストには、通常、弾幕によるチャットを使用します。｜
+| [sendRoomTextMsg](#sendroomtextmsg) | ルーム内でのテキストメッセージのブロードキャストには、通常、弾幕によるチャットを使用します。|
 
 ### マイク・オン申請シグナリング関連インターフェース
 
 | API                             | 説明           |
 | ------------------------------- | -------------- |
-| [raiseHand](#raisehand)         |視聴者からのマイク・オン申請。 |
-| [agreeToSpeak](#agreetospeak)   | グループマスターによるマイク・オンの同意。 |
-| [refuseToSpeak](#refusetospeak) | グループマスターによるマイク・オンの拒否。 |
+| [raiseHand](#raisehand)         | リスナーがマイク・オンを申請しました。 |
+| [agreeToSpeak](#agreetospeak)   | 管理者はマイク・オンに同意しました。 |
+| [refuseToSpeak](#refusetospeak) | 管理者はマイク・オンを拒否しました。 |
 
 [](id:TRTCChatSalonDelegate)
 ## TRTCChatSalonDelegate API概要
@@ -96,11 +96,11 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 | ----------------------------------- | ---------- |
 | [onError](#onerror)                 | エラーのコールバック。 |
 | [onWarning](#onwarning)             | 警告のコールバック。 |
-| [onKickedOffline](#onkickedoffline) | 警告のコールバック。 |
+| [onKickedOffline](#onkickedoffline) | キックアウトされてオフラインになります。 |
 
 ### ルームイベントのコールバック
 
-| API                                       | 説明                     |
+| API                                       | 説明                   |
 | ----------------------------------------- | ------------------------ |
 | [onRoomDestroy](#onroomdestroy)           | ルームが廃棄されたときのコールバック。       |
 | [onAnchorListChange](#onanchorlistchange) | キャスターリストに変更があったときのコールバック。 |
@@ -110,16 +110,16 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                                   | 説明                                  |
 | ------------------------------------- | ------------------------------------- |
-| [onAnchorEnterMic](#onanchorentermic) | マイク・オンのメンバー（自主的にマイク・オン/グループマスターがピックしてマイク・オン）。 |
-| [onAnchorLeaveMic](#onanchorleavemic) | マイク・オフのメンバー（自主的にマイク・オフ/グループマスターがキックアウトしてマイク・オフ）。 |
+| [onAnchorEnterMic](#onanchorentermic) | 発言者のメンバーがいます（ユーザーが発言者になる/管理者が視聴者を発言できるように招待）。 |
+| [onAnchorLeaveMic](#onanchorleavemic) | 視聴者のメンバーがいます（ユーザーが視聴者になる/管理者がキックアウトしてマイク・オフ）。 |
 | [onMicMute](#onmicmute)               | キャスターのマイクミュート。                          |
 
-### 視聴者の入退室イベントのコールバック
+### リスナーの入退室イベントのコールバック
 
 | API                                 | 説明               |
 | ----------------------------------- | ------------------ |
-| [onAudienceEnter](#onaudienceenter) |視聴者入室通知の受信。|
-| [onAudienceExit](#onaudienceexit) | 視聴者退室通知の受信。|
+| [onAudienceEnter](#onaudienceenter) |リスナー入室通知の受信。|
+| [onAudienceExit](#onaudienceexit) | リスナー退室通知の受信。|
 
 ### メッセージイベントのコールバック
 
@@ -131,9 +131,9 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                                    | 説明                                     |
 | -------------------------------------- | ---------------------------------------- |
-| [onRaiseHand](#onraisehand) | 視聴者の挙手によるマイク・オンの申請。                   |
-| [onAgreeToSpeak](#onagreetospeak)   | 視聴者は挙手を申請すると、グループマスターから挙手に同意するコールバックを受け取ります。 |
-| [onRefuseToSpeak](#onrefusetospeak)    | 視聴者は挙手を申請すると、グループマスターから挙手を拒否するコールバックを受け取ります。 |
+| [onRaiseHand](#onraisehand) | 挙手してマイク・オン申請しているリスナーがいます。                   |
+| [onAgreeToSpeak](#onagreetospeak)   | リスナーが挙手を申請すると、管理者から挙手に同意するコールバックを受け取ります。 |
+| [onRefuseToSpeak](#onrefusetospeak)    | リスナーが挙手を申請すると、管理者が挙手のコールバックを拒否します。     |
 
 ## SDK基本関数
 
@@ -150,7 +150,7 @@ TRTCChatSalonシングルトンオブジェクトを取得します。
 
 TRTCChatSalonシングルトンオブジェクトを廃棄します。
 
->?インスタンスを廃棄すると、外部キャッシュのTRTCChatSalonインスタンスは再利用できなくなります。あらためて[sharedInstance](#sharedInstance)を呼び出し、新しいインスタンスを取得する必要があります。
+>?インスタンスを破棄すると、外部キャッシュのTRTCChatSalonインスタンスは再利用できなくなります。あらためて[sharedInstance](#sharedInstance)を呼び出し、新しいインスタンスを取得する必要があります。
 
 ```dart
 static void destroySharedInstance()
@@ -194,7 +194,7 @@ Future<ActionCallback> login(int sdkAppId, String userId, String userSig)
 | パラメータ     | タイプ    | 意味                                                         |
 | -------- | ------ | ------------------------------------------------------------ |
 | sdkAppId | int    | TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報の中でSDKAppIDを確認できます。 |
-| userId   | String | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
+| user     | String | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
 | userSig  | String | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については、[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
 
 
@@ -235,17 +235,17 @@ Future<ActionCallback> createRoom(int roomId, RoomParam roomParam)
 
 | パラメータ      | タイプ      | 意味                                                         |
 | --------- | --------- | ------------------------------------------------------------ |
-| roomId    |  int       | ルームIDは、ご自身でアサインし、統一管理する必要があります。複数のroomIDを、一つのボイスサロンのルームリストにまとめることができます。Tencent Cloudでは現在、ボイスサロンのルームリストの管理サービスを行っていませんので、ご自身でボイスサロンのルームリストを管理してください。 |
+| roomId    |  intt       | ルームIDは、ご自身でアサインし、統一管理する必要があります。複数のroomIDを、一つのボイスサロンのルームリストにまとめることができます。Tencent Cloudでは現在、ボイスサロンのルームリストの管理サービスを行っていませんので、ご自身でボイスサロンのルームリストを管理してください。 |
 | roomParam | RoomParam | ルーム情報は、ルームについて説明するための情報です。例えば、ルーム名、カバー情報などです。     |
 
-キャスターがブロードキャストを開始する際の通常の呼び出しプロセスは次のとおりです。 
+管理者が配信を開始する際の通常の呼び出しプロセスは次のとおりです。 
 
-1. キャスターは、`createRoom`を呼び出して新しいボイスサロンを作成します。このとき、ルームIDなどルームの属性情報を渡します。
-2. キャスターは、マイクリストのメンバーが参加した`onAnchorEnterMic`のイベント通知も受信します。このとき、マイク集音は自動的に開始されます。
+1. 管理者は`createRoom`を呼び出して新しいボイスサロンを作成し、ルームIDなどルームの属性情報を渡します。
+2. 管理者はマイクリストのメンバーが参加した`onAnchorEnterMic`というイベント通知も受信します。この時、マイク集音は自動的に開始されます。
 
 ### destroyRoom
 
-ルームの廃棄（キャスターが呼び出し）。キャスターは、ルーム作成後、この関数を呼び出してルームを廃棄します。
+ルームの破棄（管理者が呼び出し）。管理者は、ルーム作成後、この関数を呼び出してルームを破棄します。
 
 ```dart
 Future<ActionCallback> destroyRoom()
@@ -254,7 +254,7 @@ Future<ActionCallback> destroyRoom()
 
 ### enterRoom
 
-入室（視聴者が呼び出し）
+入室（リスナーが呼び出し）
 
 ```dart
 Future<ActionCallback> enterRoom(int roomId)
@@ -267,16 +267,16 @@ Future<ActionCallback> enterRoom(int roomId)
 | roomId | int | ルームID。 |
 
 
-視聴者が入室し視聴する際の通常の呼び出しプロセスは次のとおりです。 
+リスナーが入室し視聴する際の通常の呼び出しプロセスは次のとおりです。 
 
-1. 視聴者がサーバーから取得する最新のボイスサロンリストには、多くのボイスサロンのroomIdおよびルーム情報が含まれる場合があります。
-2．視聴者は一つのボイスサロンを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
-3. 入室後、`getArchorInfoList`を確認してキャスターリストを取得してから、`getRoomMemberList`に基づいてすべてのユーザーリストを取得してキャスターリストを差し引けば、視聴者リストを取得することができます。
-4. 入室後にマイクリストにキャスターが参加した`onAnchorEnterMic`のイベント通知も受信します。
+1. リスナーがサーバーから取得する最新のボイスサロンリストには、多くのボイスサロンのroomIdおよびルーム情報が含まれる場合があります。
+2. リスナーはボイスサロンの1つを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
+3. 入室後、`getArchorInfoList`を確認してキャスターリストを取得してから、`getRoomMemberList`に基づいて、すべてのユーザーリストを取得してキャスターリストを差し引けば、リスナーリストを取得することができます。
+4. 入室後、マイクリストにキャスターが参加した`onAnchorEnterMic`というイベント通知も受信します。
 
 ### exitRoom
 
-ルームを退出します。
+ルームから退出します。
 
 ```dart
 Future<ActionCallback> exitRoom()
@@ -284,7 +284,7 @@ Future<ActionCallback> exitRoom()
 
 ### getRoomInfoList
 
-ルームリストの詳細情報を取得します。このうち、ルーム名、ルームカバーは、キャスターが`createRoom()`作成時にroomInfoによって設定したものになります。
+ルームリストの詳細情報を取得します。このうち、ルーム名、ルームカバーは、管理者が`createRoom()`作成時にroomInfoによって設定したものになります。
 
 >?ルームリストおよびルーム情報をご自身で管理する場合は、この関数は無視してもかまいません。
 
@@ -297,7 +297,7 @@ Future<RoomInfoCallback> getRoomInfoList(List<String> roomIdList)
 
 | パラメータ       | タイプ                | 意味         |
 | ---------- | ------------------- | ------------ |
-| roomIdList | List&lt;Integer&gt; | ルームナンバーリスト。 |
+| roomIdList | List&lt;String&gt; | ルームナンバーリスト。 |
 
 
 ### getRoomMemberList
@@ -345,21 +345,21 @@ Future<UserListCallback> getUserInfoList(List<String> userIdList)
 
 ### enterMic
 
-マイク・オン（視聴者/キャスターともに呼び出し可）。
+マイク・オン（リスナー側/管理者ともに呼び出し可）します。
 
->?マイク・オンが成功した後、ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
+>?マイク・オンが成功した後、ルーム内の全メンバーは`onAnchorEnterSeat`というイベント通知を受信します。
 
 ```
 Future<ActionCallback> enterMic();
 ```
 
-このインターフェースを呼び出すと、マイクリストがすぐに修正されます。視聴者がまず`raiseHand`を呼び出してキャスターに申請する必要がある場合は、`onAgreeToSpeak`を受信した後にこの関数を呼び出します。
+このインターフェースを呼び出すと、マイクリストが直ちに変更されます。リスナーがまず`raiseHand`を呼び出して管理者に申請する必要がある場合は、`onAgreeToSpeak`を受信した後にこの関数を呼び出します。
 
 ### leaveMic
 
-自主的なマイク・オフ。
+キャスターのマイク・オフ。
 
->? マイク・オフが成功した後、ルーム内の全メンバーは`onAnchorLeaveMic`のイベント通知を受信します。
+>? マイク・オフが成功した後、ルーム内の全メンバーは`onAnchorLeaveMic`というイベント通知を受信します。
 
 ```dart
 Future<ActionCallback> leaveMic()
@@ -367,9 +367,9 @@ Future<ActionCallback> leaveMic()
 
 ### muteMic
 
-任意のマイクのミュート/ミュート解除（キャスターが呼び出し）。
+任意のマイクのミュート/ミュート解除（管理者が呼び出し）。
 
->? マイク・オンの成功後、ルーム内の全メンバーは、`onAnchorListChange`および`onMicMute`のイベント通知を受信します。
+>? マイク・オンの成功後、ルーム内の全メンバーは、`onAnchorListChange`および`onMicMute`というイベント通知を受信します。
 
 ```dart
 Future<ActionCallback> muteMic(bool mute)
@@ -377,9 +377,9 @@ Future<ActionCallback> muteMic(bool mute)
 
 ### kickMic
 
-キックアウトしてマイク・オフ（キャスターが呼び出し）。
+キックアウトしてマイク・オフ（管理者が呼び出し）。
 
->? キャスターがキックアウトしてマイク・オフにすると、ルーム内の全メンバーは`onAnchorLeaveMic`のイベント通知を受信します。
+>? 管理者がキックアウトしてマイク・オフにすると、ルーム内の全メンバーは`onAnchorLeaveMic`というイベント通知を受信します。
 
 ```dart
 Future<ActionCallback> kickMic(String userId)
@@ -394,7 +394,7 @@ Future<ActionCallback> kickMic(String userId)
 このインターフェースを呼び出すと、すぐにマイクリストが修正されます。
 
 
-## ローカル音声操作のインターフェース
+## ローカルのオーディオ操作インターフェース
 
 ### startMicrophone
 
@@ -420,7 +420,7 @@ void stopMicrophone()
 
 ### muteLocalAudio
 
-ローカルの音声のミュート/ミュート取り消し。
+ローカルのオーディオのミュート/ミュート取り消し。
 
 ```dart
 void muteLocalAudio(bool mute)
@@ -430,7 +430,7 @@ void muteLocalAudio(bool mute)
 
 | パラメータ | タイプ    | 意味                                                         |
 | ---- | ------- | ------------------------------------------------------------ |
-| mute | boolean | ミュート/ミュート取り消し。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
+| mute | bool | ミュート/ミュート取り消し。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
 
 
 ### setSpeaker
@@ -445,7 +445,7 @@ void setSpeaker(bool useSpeaker)
 
 | パラメータ       | タイプ    | 意味                        |
 | ---------- | ------- | --------------------------- |
-| useSpeaker | boolean | true：スピーカー；false：ヘッドホン。 |
+| useSpeaker | bool | true：スピーカー、false：ヘッドホン。 |
 
 
 
@@ -491,7 +491,7 @@ void muteRemoteAudio(String userId, bool mute)
 | パラメータ   | タイプ    | 意味                              |
 | ------ | ------- | --------------------------------- |
 | userId | String  | 指定ユーザーID。                   |
-| mute   | boolean | true：ミュート起動；false：ミュート停止。 |
+| mute   | bool | true：ミュート起動、false：ミュート停止。 |
 
 ### muteAllRemoteAudio
 
@@ -505,10 +505,10 @@ void muteAllRemoteAudio(bool mute)
 
 | パラメータ | タイプ  | 意味                              |
 | ---- | ------- | --------------------------------- |
-| mute | boolean | true：ミュート起動；false：ミュート停止。 |
+| mute | bool | true：ミュート起動、false：ミュート停止。 |
 
 
-## バックグラウンドミュージック・サウンドエフェクト関連インターフェース関数
+## BGMサウンドエフェクト関連インターフェース関数
 
 ### getAudioEffectManager
 
@@ -523,7 +523,7 @@ TXAudioEffectManager getAudioEffectManager()
 
 ### sendRoomTextMsg
 
-ルーム内でテキストメッセージをブロードキャストします。通常、弾幕によるチャットを使用します。
+ルーム内でテキストメッセージをブロードキャストします。通常、弾幕によるチャットに使用します。
 
 ```dart
 Future<ActionCallback> sendRoomTextMsg(String message)
@@ -541,7 +541,7 @@ Future<ActionCallback> sendRoomTextMsg(String message)
 
 ### raiseHand
 
-視聴者からのマイク・オン申請。
+リスナーがマイク・オンを申請しました。
 
 ```dart
 void raiseHand()
@@ -549,7 +549,7 @@ void raiseHand()
 
 ### agreeToSpeak
 
-グループマスターによるマイク・オンの同意。
+管理者がマイク・オンに同意しました。
 
 ```dart
 Future<ActionCallback> agreeToSpeak(String userId)
@@ -563,7 +563,7 @@ Future<ActionCallback> agreeToSpeak(String userId)
 
 ### refuseToSpeak
 
-グループマスターによるユーザーマイク・オンの拒否。
+管理者がユーザーのマイク・オンを拒否しました。
 
 ```dart
 Future<ActionCallback> refuseToSpeak(String userId)
@@ -575,7 +575,7 @@ Future<ActionCallback> refuseToSpeak(String userId)
 | ------ | ------ | -------- |
 | userId | String | ユーザーID。 |
 
-
+[](id:TRTCChatSalonDelegate)
 ## TRTCChatSalonDelegateイベントコールバック
 
 ## 一般的なイベントコールバック
@@ -617,7 +617,7 @@ Future<ActionCallback> refuseToSpeak(String userId)
 
 ### onRoomDestroy
 
-ルーム廃棄のコールバック。キャスターがルームを解散するとき、ルーム内の全ユーザーはこの通知を受信します。
+ルーム破棄のコールバック。管理者がルームを解散するとき、ルーム内の全ユーザーはこの通知を受信します。
 
 ### onAnchorListChange
 
@@ -655,7 +655,7 @@ Future<ActionCallback> refuseToSpeak(String userId)
 
 | パラメータ       | タイプ   | 意味                 |
 | ---------- | ------ | -------------------- |
-| userId     | String | マイク・オンのユーザーID。       |
+| userId     | String | 入室したユーザーID。 |
 | userName   | String | ユーザーのニックネーム。           |
 | userAvatar | String | プロフィール画像URL。           |
 | mute       | bool   | マイクステータス。デフォルトではマイク・オンになっています。 |
@@ -668,11 +668,11 @@ Future<ActionCallback> refuseToSpeak(String userId)
 
 | パラメータ   | タイプ   | 意味           |
 | ------ | ------ | -------------- |
-| userId | String | マイク・オフのユーザーID。 |
+| userId | String | ルームを退出したユーザーID。 |
 
 ### onMicMute
 
-キャスターのマイクミュートの有無。
+管理者のマイクミュートの有無。
 
 パラメータは下表に示すとおりです。
 
@@ -682,24 +682,24 @@ Future<ActionCallback> refuseToSpeak(String userId)
 | mute   | bool   | マイクステータス。     |
 
 
-## 視聴者の入退室イベントのコールバック
+## リスナーの入退室イベントのコールバック
 
 ### onAudienceEnter
 
-視聴者入室通知の受信。
+リスナー入室通知の受信。
 
 
 パラメータは下表に示すとおりです。
 
 | パラメータ       | タイプ   | 意味           |
 | ---------- | ------ | -------------- |
-| userId     | String | マイク・オンのユーザーID。 |
+| userId     | String | マイク・オンのユーザーID。       |
 | userName   | String | ユーザーのニックネーム。     |
 | userAvatar | String | プロフィール画像URL。     |
 
 ### onAudienceExit
 
-視聴者退室通知の受信。
+リスナー退室通知の受信。
 
 パラメータは下表に示すとおりです。
 
@@ -740,22 +740,22 @@ Future<ActionCallback> refuseToSpeak(String userId)
 
 ### onAgreeToSpeak
 
-グループマスターによるマイク・オン同意のコールバック。
+管理者によるマイク・オン同意のコールバック。
 
 
 パラメータは下表に示すとおりです。
 
 | パラメータ   | タイプ   | 意味           |
 | ------ | ------ | -------------- |
-| userId | String | グループマスターのユーザーID。 |
+| userId | String | 管理者のユーザーID。 |
 
 ### onRefuseToSpeak
 
-グループマスターによるマイク・オン拒否のコールバック。
+管理者によるマイク・オン拒否のコールバック。
 
 
 パラメータは下表に示すとおりです。
 
 | パラメータ   | タイプ   | 意味           |
 | ------ | ------ | -------------- |
-| userId | String | グループマスターのユーザーID。 |
+| userId | String | 管理者のユーザーID。 |

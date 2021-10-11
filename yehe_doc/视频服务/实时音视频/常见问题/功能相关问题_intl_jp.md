@@ -43,9 +43,10 @@ UserID、即ちユーザーIDは、1つのTRTCアプリケーションの中で�
 
 [](id:que9)
 ### TRTCはどのプラットフォームをサポートしますか。
-サポートしているプラットフォームは、iOS、Android、Windows(C++)、Windows(C#)、Mac、デスクトップブラウザ、Electron、WeChat Mini Programです。詳細については、[プラットフォームのサポート](https://intl.cloud.tencent.com/document/product/647/35078)をご参照ください。
+サポートしているプラットフォームは、iOS、Android、Windows(C++)、Windows(C#)、Mac、Web、Electronです。詳細については、[プラットフォームのサポート](https://intl.cloud.tencent.com/document/product/647/35078)をご参照ください。
 
 [](id:que10)
+
 ### TRTCの簡易版、プロフェッショナル版、エンタープライズ版の各版の違いは何ですか。 
 詳細は [各版の相違対照表](https://intl.cloud.tencent.com/document/product/647/34615)をご参照ください。
 
@@ -53,10 +54,11 @@ UserID、即ちユーザーIDは、1つのTRTCアプリケーションの中で�
 [](id:que11)
 ### TRTCではライブストリーミングのマイク接続をサポートしていますか。
 サポートしています。具体的な操作ガイドは以下をご参照ください。
-- [オンラインライブストリーミング(iOS&Mac)](https://intl.cloud.tencent.com/document/product/647/35107)
-- [オンラインライブストリーミング(Android)](https://intl.cloud.tencent.com/document/product/647/35108)
-- [オンラインライブストリーミング(Windows)](https://intl.cloud.tencent.com/document/product/647/35109)
-- [オンラインライブストリーミング(デスクトップブラウザ)](https://intl.cloud.tencent.com/document/product/647/35110)
+- [ライブストリーミングクイックスタート(iOS&Mac)](https://intl.cloud.tencent.com/document/product/647/35107)
+- [ライブストリーミングクイックスタート(Android)](https://intl.cloud.tencent.com/document/product/647/35108)
+- [ライブストリーミングクイックスタート(Windows)](https://intl.cloud.tencent.com/document/product/647/35109)
+- [ライブストリーミングクイックスタート(Electron)](https://intl.cloud.tencent.com/document/product/647/36070)
+- [ライブストリーミングクイックスタート(Web)](https://intl.cloud.tencent.com/document/product/647/35110)
 
 
 [](id:que12)
@@ -68,15 +70,12 @@ UserID、即ちユーザーIDは、1つのTRTCアプリケーションの中で�
 ルームは、Tencent Cloudのバックエンドがクライアントのルーム参加時に自動作成します。お客様は、手動でルームを作成する必要がなく、クライアントの関連インターフェースを呼び出して「ルームに参加」するだけで済みます。
 - [iOS & Mac > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)
 - [Android > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c)
-- [Windows(C++) > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac73c4ad51eda05cd2bcec820c847e84f)
-- [Windows(C#) > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__csharp.html#a28b2d3ec27af8c9bfd5cf687dd8e002b)
+- [Windows(C++) > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)
+- [Windows(C#) > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn//group__ITRTCCloud__csharp.html#afbb3a1e6f73f339d47368a7d620a995f)
 - [Electron > enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom)
-- [デスクトップブラウザ > join](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join)
-
-  
+- [Web > join](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join)
 
 [](id:que14)
-
 ### TRTCのビデオサーバーがサポートする帯域幅は最大でいくつですか。
 制限はありません。
 
@@ -95,10 +94,9 @@ Relayed live streamingをアクティブ化する必要がある場合は、国�
 
 [](id:que18)
 ### TRTCは主動的な呼出機能をサポートしていますか。
-シグナリングチャネルを結合して解決する必要がある場合、例えば [IM](https://intl.cloud.tencent.com/zh/document/product/1047) サービスのカスタムメッセージを使用して呼び出す場合は、[SDK](https://intl.cloud.tencent.com/document/product/647/34615) ソースコードのシーンのDemo例を参考にできます。
+シグナリングチャネルのソリューションを結合させる必要があります。例えば [IM](https://intl.cloud.tencent.com/product/im)のサービスのカスタムメッセージを利用して、呼び出しを実現します。[SDK](https://intl.cloud.tencent.com/document/product/647/34615)のソースコードの中のシナリオ化Demoの例をご参照ください。
 
 [](id:que19)
-
 ### TRTCの2人用ビデオ通話では、Bluetoothのイヤホンをサポートしていますか。
 サポートしています。
 
@@ -111,13 +109,12 @@ Relayed live streamingをアクティブ化する必要がある場合は、国�
 ### TRTCのPCアクセスポートは画面共有機能をサポートしていますか。
 サポートしています。次のドキュメントをご参照ください。
 - [画面共有(Windows)](https://intl.cloud.tencent.com/document/product/647/37335)
-- [画面共有(Mac)](https://intl.cloud.tencent.com/document/product/647/37336)
-- [画面共有(デスクトップブラウザ)](https://intl.cloud.tencent.com/document/product/647/35163)
+- [画面共有（Mac）](https://intl.cloud.tencent.com/document/product/647/37336)
+- [画面共有（Web）](https://intl.cloud.tencent.com/document/product/647/35163)
 
-画面共有インターフェースの詳細は[Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) または[Windows（C#）API](https://intl.cloud.tencent.com/document/product/647)をご参照ください。そのほか、[Electronインターフェース](https://intl.cloud.tencent.com/document/product/647/35141)もご使用になれます。
+画面共有インターフェースの詳細をご参照ください [Windows(C++)API](https://intl.cloud.tencent.com/document/product/647/35131) または [Windows(C#)API](https://intl.cloud.tencent.com/document/product/647/35136)。この他、[Electronインターフェース](https://intl.cloud.tencent.com/document/product/647/35141)もお使いいただけます。
 
 [](id:que23)
-
 ### ローカルのビデオファイルをTRTCの中で共有する機能をサポートしていますか。
 
 サポートしています。[ユーザー定義キャプチャ](https://intl.cloud.tencent.com/document/product/647/35158)機能によって実現できます。
@@ -168,8 +165,8 @@ TRTCは、4種類の異なる入室モードをサポートしています。こ
 
 
 [](id:que33)
-### TRTCではオーディオビデオ通話のハンズフリーモードをサポートしていますか。
-サポートしています。ハンズフリーモードはオーディオルートを設定して実現し、Native SDKはsetAudioRouteインターフェースを使用して切り替え、ミニプログラムは&lt;live-player&gt;タグのsound-mode属性を使用して設定します。
+### TRTCではオーディオ・ビデオ通話のハンズフリーモードをサポートしていますか。
+サポートしています。ハンズフリーモードは、Audio Routerを設定することで実現できます。Native SDKでは、setAudioRouteインターフェースで切り替えます。
 
 [](id:que34)
 ### TRTCでは音量のボリューム表示をサポートしていますか。
@@ -186,9 +183,10 @@ TRTCは、4種類の異なる入室モードをサポートしています。こ
 [](id:que37)
 ### TRTCでは、インタラクティブな音声ビデオ通信のプロセスのビデオをファイルにレコーディングする機能をサポートしていますか。
 ご自分のサーバーによるレコーディング（録音/録画）をサポートしています。使用する必要がある場合は、 [チケットを提出](https://console.cloud.tencent.com/workorder/category)でご連絡の上、SDKおよび関連ガイドを取得してください。
-[クラウドレコーディングと再生の実現](https://intl.cloud.tencent.com/document/product/647/35426) を使用してビデオをレコーディングすることもできます。
+[クラウドレコーディングと再生の実現] (https://intl.cloud.tencent.com/document/product/647/35426) を使用してビデオをレコーディングすることもできます。
 
 [](id:que38)
+
 ### TRTCでは、WeChatのビデオ通話のようなフローティングウィンドウ、大小画面の切り替え等の機能をサポートしていますか。
 こういった機能は UIのレイアウトロジックに属しますが、SDKにUIのディスプレイ処理の制限はありません。公式Demoの中では、画面前後のStackと9グリッドのレイアウトモードのサンプルコードを提供し、フローティングウィンドウ、大小画面切り替え、画面ドラッグ等の機能もサポートしています。より詳しい情報は、 [公式Demo](https://github.com/tencentyun/TRTCSDK)をご参照ください。
 
@@ -204,11 +202,10 @@ TRTCには音声チャネルとビデオチャネルの区別はありません�
 [](id:que41)
 ### TRTCルームは、キックアウト、発言の禁止、ミュートをサポートしていますか。  
 サポートしています。
-- 簡単なシグナリング操作の場合、TRTCのカスタムシグナルインターフェースsendCustomCmdMsgを使用できます。開発者が対応する制御シグナリングをカスタマイズして、制御シグナリングを受信した通話者が対応する操作を実行すればOKです。例えば、キックアウトとは、追い出しシグナリングを定義することであり、この信号を受信したユーザーは自動的に退室します。
-- より完全な操作ロジックを実行する必要がある場合は、開発者が[IM]（https://intl.cloud.tencent.com/zh/document/product/1047）を使用して関連のロジックを実行し、TRTCルームとIMグループとのマッピングを行い、IMグループでカスタムメッセージを送受信して、対応する操作を実行することをお勧めします。
+- 簡単なシグナリング操作の場合、TRTCのカスタムシグナルインターフェースsendCustomCmdMsgを使用できます。開発者が対応する制御シグナリングをカスタマイズして、制御シグナリングを受信した通話者が対応する操作を実行すればOKです。例えば、追い出しとは、追い出しシグナリングを定義することであり、この信号を受信したユーザーは自主的に退室します。
+- より完全な操作ロジックを実行する必要がある場合は、開発者が[IM]（https://intl.cloud.tencent.com/document/product/1047）を使用して関連のロジックを実行し、TRTCルームとIMグループとのマッピングを行い、IMグループでカスタムメッセージを送受信して、対応する操作を実行することをお勧めします。
 
 [](id:que42)
-
 ### TRTCでは、プルされたRTMP/FLV形式のストリーミング再生をサポートしていますか。  
 サポートしています。現在すでにTRTC SDKの中に TXLivePlayerがパッケージングされています。より多くのプレーヤー機能が必要な場合は、LiteAVSDK_Professionalバージョンを直接使用すれば、すべての機能が含まれています。
 
@@ -289,8 +286,13 @@ TRTCCloudのsetVideoEncoderParam()インターフェースで、TRTCVideoEncPara
 
 [](id:que59)
 ### SDKの画面の角度と方向の制御はどうすれば実現できますか。  
-詳細は、[ビデオ画面の回転とズーム](https://intl.cloud.tencent.com/document/product/647/35154)をご参照ください。
+詳細については、[ビデオ画面の回転とズーム](https://intl.cloud.tencent.com/document/product/647/35154)をご参照ください。
 
+[](id:que60)
+### 横長画面のビデオ通話はどうすれば実現できますか。 
+詳細については、 [横長画面のビデオ通話の実現](https://cloud.tencent.com/developer/article/1492095) と [ビデオ画面の回転とズーム](https://intl.cloud.tencent.com/document/product/647/35154)をご参照ください。
+
+[](id:que61)
 ### TRTCでローカルとリモートの画面方向が一致しない場合はどうやって調整しますか。  
 詳細は、[ビデオ画面の回転とズーム](https://intl.cloud.tencent.com/document/product/647/35154)をご参照ください。
 
@@ -318,7 +320,7 @@ TRTCCloudのsetVideoEncoderParam()インターフェースで、TRTCVideoEncPara
 
 [](id:que67)
 ### TRTCとは何ですか。
-Tencent Real-Time Communication（TRTC）は、Tencentが長年に渡り蓄積したネットワークとオーディオ・ビデオ技術をベースに、多人数のオーディオビデオ通話と低遅延インタラクションライブストリーミングの、シナリオ化した2大ソリューションを提供し、Tencent Cloudのサービスを通じて開発者向けに開放します。これにより、開発者が低コスト、低遅延、高品質のインタラクティブな音声ビデオソリューションを迅速に構築するのを支援します。詳細は、[製品概要](https://intl.cloud.tencent.com/document/product/647/35078)をご参照ください。
+Tencent Real-Time Communication（TRTC）は、Tencentが長年に渡り蓄積したネットワークとオーディオ・ビデオ技術をベースに、多人数のオーディオビデオ通話と低遅延インタラクションライブストリーミングの、シナリオ化した2大ソリューションを提供し、Tencent Cloudのサービスを通じて開発者向けに開放します。これにより、開発者が低コスト、低遅延、高品質のインタラクティブな音声ビデオソリューションを迅速に構築するのを支援します。詳細は、[製品概要]https://intl.cloud.tencent.com/document/product/647/35078をご参照ください。
 
 [](id:que68)
 ### TRTCのDemoはどのように体験できますか。

@@ -1,21 +1,21 @@
-TRTCCalling はTencent CloudのTRTCとIM を組み合わせたサービスで、1v1と多人数のビデオ/音声通話をサポートします。TRTCCalling はTencent Cloudの2つのクローズドソース SDKに依存する1つのオープンソースの Classで、具体的な実装プロセスについては、[Real-Time Video Call（Android）](https://intl.cloud.tencent.com/document/product/647/36068)をご参照ください。
+TRTCCalling はTencent CloudのTRTCとIMを組み合わせたサービスで、1v1と多人数のビデオ/音声通話をサポートします。TRTCCallingはTencent Cloudの2つのクローズドソースSDKに依存する1つのオープンソースのClassです。具体的な実装プロセスについては、[Real-Time Video Call（Android）](https://intl.cloud.tencent.com/document/product/647/36068)をご参照ください。
 
-- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低レイテンシーのオーディオビデオ通話コンポーネントとして使用しています。
-- IM SDK： [IM SDK](https://intl.cloud.tencent.com/document/product/1047)をシグナリング情報の送信と処理に利用します。
+- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のオーディオビデオ通話コンポーネントとして使用します。
+- IM SDK： [IM SDK](https://intl.cloud.tencent.com/document/product/1047)をシグナリング情報の送信と処理に使用します。
 
 
-<h2 id="TRTCCalling">TRTCCalling API 概要</h2>
+<h2 id="TRTCCalling">TRTCCalling API概要</h2>
 
-### SDK 基本関数
+### SDK基本関数
 
-| API                                             | 説明                                             |
+| API                                             | 説明                                                         |
 | ----------------------------------------------- | ------------------------------------------------ |
 | [sharedInstance](#sharedinstance)               | コンポーネントシングルトン。                                       |
-| [destroySharedInstance](#destroysharedinstance) | コンポーネントシングルトンを廃棄します。                                   |
+| [destroySharedInstance](#destroysharedinstance) | コンポーネントシングルトンを破棄します。                                   |
 | [addDelegate](#adddelegate)                     | イベントコールバックを追加します。                                   |
 | [removeDelegate](#removedelegate)               | コールバックインターフェースを削除します。                                   |
-| [destroy](#destroy)                             | 関数の廃棄。このインスタンスを実行する必要がなくなった場合は、このインターフェースをコールしてください。   |
-| [login](#login)                                 | コンポーネントインターフェースへのログイン、すべての機能を使用するためには、まずログインする必要があります。 |
+| [destroy](#destroy)                             | 関数の破棄。このインスタンスを実行する必要がなくなった場合は、このインターフェースをコールしてください。   |
+| [login](#login)                                 | コンポーネントインターフェースへのログイン。すべての機能を使用するためには、まずログインする必要があります。 |
 | [logout](#logout)                               | コンポーネントインターフェースからログアウト。ログアウト後にダイヤル操作はできません。         |
 
 
@@ -24,7 +24,7 @@ TRTCCalling はTencent CloudのTRTCとIM を組み合わせたサービスで、
 | API                     | 説明           |
 | ----------------------- | -------------- |
 | [call](#call)           | 1対1通話に招待します。 |
-| [groupCall](#groupcall) | グループ通話に招待します。 |
+| [groupCall](#groupcall) | グループチャット通話に招待します。 |
 | [accept](#accept)       | 現在の通話を受信します。 |
 | [reject](#reject)       | 現在の通話を拒否します。 |
 | [hangup](#hangup)       | 現在の通話を終了します。 |
@@ -36,7 +36,7 @@ TRTCCalling はTencent CloudのTRTCとIM を組み合わせたサービスで、
 | [setMicMute](#setmicmute)     | ローカルオーディオキャプチャをミュートにします。                                   |
 | [setHandsFree](#sethandsfree) | ハンズフリーを設定します。                                       |
 
-<h2 id="TRTCCallingDelegate">TRTCCallingDelegate API 概要</h2>
+<h2 id="TRTCCallingDelegate">TRTCCallingDelegate API概要</h2>
 
 ### 一般的なイベントコールバック
 
@@ -64,18 +64,18 @@ TRTCCalling はTencent CloudのTRTCとIM を組み合わせたサービスで、
 
 | API                                                          | 説明                       |
 | ------------------------------------------------------------ | -------------------------- |
-| [onGroupCallInviteeListUpdate](#ongroupcallinviteelistupdate) | グループ通話招待リスト更新のコールバック。     |
+| [onGroupCallInviteeListUpdate](#ongroupcallinviteelistupdate) | グループチャット招待リスト更新のコールバック。     |
 | [onUserEnter](#onuserenter)                                  | ユーザーが通話に参加した場合のコールバック。         |
 | [onUserLeave](#onuserleave)                                  | ユーザーが通話から退出した場合のコールバック。         |
 | [onUserAudioAvailable](#onuseraudioavailable)                | ユーザーがオーディオアップストリームを開始したかどうかのコールバック。 |
 | [onUserVoiceVolume](#onuservoicevolume)                      | ユーザー通話音量のコールバック。         |
 | [onCallEnd](#oncallend)                                      | 通話終了時のコールバック。             |
 
-## SDK 基本関数
+## SDK基本関数
 
 ### sharedInstance
 
-shareInstance は TRTCCalling のコンポーネントシングルトンです。
+shareInstanceはTRTCCallingのコンポーネントシングルトンです。
 
 ```java
 public static ITRTCCalling sharedInstance(Context context);
@@ -99,7 +99,7 @@ void destroy();
 
 ### addDelegate
 
-[TRTCCalling](https://intl.cloud.tencent.com/document/product/647/36066) イベントコールバック。TRTCCallingDelegateを介して [TRTCCalling](https://intl.cloud.tencent.com/document/product/647/36066) の各種ステータス通知を受け取ることができます。
+[TRTCCalling](https://intl.cloud.tencent.com/document/product/647/36066)イベントコールバック。TRTCCallingDelegateを介して[TRTCCalling](https://intl.cloud.tencent.com/document/product/647/36066)の各種ステータス通知を受け取ることができます。
 
 ```java
 public abstract void addDelegate(TRTCCallingDelegate delegate);
@@ -122,7 +122,7 @@ void removeDelegate(TRTCCallingDelegate listener);
 ```java
 void login( int sdkAppId,
             final String userId, 
-            String userSign, 
+            String userSig, 
             final ActionCallBack callback);
 ```
 
@@ -130,9 +130,9 @@ void login( int sdkAppId,
 
 | パラメータ     | タイプ           | 意味                                                         |
 | -------- | -------------- | ------------------------------------------------------------ |
-| sdkAppID | UInt32         | TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報でSDKAppIDを表示できます。 |
-| user     | String         | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-z と A-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。 |
-| userSig  | String         | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については[UserSigの計算方法 ](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
+| sdkAppID | int         | TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報でSDKAppIDを確認できます。 |
+| userId     | String         | 現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。 |
+| userSig  | String         |Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
 | callback | ActionCallBack | ログイン時のコールバック、`onSuccess` はログインに成功したことを意味します。                         |
 
 ### logout
@@ -163,8 +163,8 @@ void call(String userId, int type);
 
 | パラメータ   | タイプ   | 意味                             |
 | ------ | ------ | -------------------------------- |
-| userID | String   | ユーザー IDを呼び出します。         |
-| type   | int    | 1 は音声通話，2 はビデオ通話を意味します。 |
+| userID | String   | ユーザーIDを呼び出します。         |
+| type   | int    | 1は音声通話、2はビデオ通話を意味します。 |
 
 ### groupCall
 
@@ -178,15 +178,15 @@ void groupCall(List<String> userIdList, int type, String groupId);
 
 | パラメータ       | タイプ               | 意味                             |
 | ---------- | ------------------ | -------------------------------- |
-| userIdList | List<String> | 招待ID リスト。                   |
-| type       | int                | 1 は音声通話、2 はビデオ通話を意味します。 |
-| groupId    | String             | グループ ID。                          |
+| userIdList | List<String> | 招待IDリスト。                   |
+| type       | int                | 1は音声通話、2はビデオ通話を意味します。 |
+| groupId    | String             | グループID。                          |
 
 
 
 ### accept
 
-現在の通話を受信します。被招待者として `onInvited()` のコールバックを受け取った場合は、この関数をコールして通話に応答することができます。
+現在の通話を受信します。被招待者として`onInvited()`のコールバックを受け取った場合は、この関数を呼び出して通話に応答することができます。
 
 ```java
 void accept();
@@ -196,7 +196,7 @@ void accept();
 
 ### reject
 
-現在の通話を拒否します。被招待者として `onInvited()`のコールバックを受け取った場合は、この関数をコールして電話を拒否することができます。
+現在の通話を拒否します。被招待者として`onInvited()`のコールバックを受け取った場合は、この関数を呼び出して電話を拒否することができます。
 
 ```java
 void reject();
@@ -206,7 +206,7 @@ void reject();
 
 ### hangup
 
-現在の通話を終了します。通話中である場合は、この関数をコールして通話を終了できます。
+現在の通話を終了します。通話中である場合は、この関数を呼び出して通話を終了できます。
 
 ```java
 void hangup();
@@ -243,7 +243,7 @@ void setHandsFree(boolean isHandsFree);
 | ----------- | ------- | --------------------------------------- |
 | isHandsFree | boolean | true はハンズフリーの起動を、false はハンズフリーの終了を意味します。 |
 
-## TRTCCallingDelegate イベントコールバック
+## TRTCCallingDelegateイベントコールバック
 
 ## 一般的なイベントコールバック
 
@@ -251,7 +251,7 @@ void setHandsFree(boolean isHandsFree);
 
 エラーのコールバック。
 
->?SDK リカバリー不能なエラーは必ず監視し、状況に応じてユーザーに適切なインターフェースプロンプトを表示します。
+>?SDKリカバリー不能なエラーは必ず監視し、状況に応じてユーザーに適切なインターフェースプロンプトを表示します。
 
 ```java
 void onError(int code, String msg);
@@ -262,7 +262,7 @@ void onError(int code, String msg);
 | パラメータ | タイプ   | 意味       |
 | ---- | ------ | ---------- |
 | code | int    | エラーコード。   |
-| msg  | String | エラーメッセージ。 |
+| msg  | String | エラー情報。 |
 
 
 ## 招待者のコールバック
@@ -279,7 +279,7 @@ void onReject(String userId);
 
 | パラメータ   | タイプ   | 意味            |
 | ------ | ------ | --------------- |
-| userId | String | 拒否したユーザーのID |
+| userId | String | 拒否したユーザーのID。 |
 
 ### onNoResp
 
@@ -307,7 +307,7 @@ void onLineBusy(String userId);
 
 | パラメータ   | タイプ   | 意味            |
 | ------ | ------ | --------------- |
-| userId | String | 通話中のユーザーのID |
+| userId | String | 通話中のユーザーのID。 |
 
 ## 被招待者のコールバック
 
@@ -326,7 +326,7 @@ void onInvited(String sponsor, List<String> userIdList, boolean isFromGroup, int
 | sponsor     | String             | 発信者のID。                    |
 | userIds     | List&lt;String&gt; | 自分以外の招待IDのリスト。         |
 | isFromGroup | boolean            | 多人数の通話への招待かどうか。               |
-| type        | int                | 1 は音声通話、2 はビデオ通話を意味します。 |
+| callType        | int                | 1は音声通話、2はビデオ通話を意味します。 |
 
 ### onCallingCancel
 
@@ -350,7 +350,7 @@ void onCallingTimeout();
 
 ### onGroupCallInviteeListUpdate
 
-グループ通話招待リスト更新のコールバック。
+グループチャット招待リスト更新のコールバック。
 
 ```java
 void onGroupCallInviteeListUpdate(List<String> userIdList);
@@ -360,7 +360,7 @@ void onGroupCallInviteeListUpdate(List<String> userIdList);
 
 | パラメータ       | タイプ               | 意味           |
 | ---------- | ------------------ | -------------- |
-| userIdList | List<String> | 招待ID リスト。 |
+| userIdList | List<String> | 招待IDリスト。 |
 
 ### onUserEnter
 
@@ -374,7 +374,7 @@ void onUserEnter(String userId);
 
 | パラメータ   | タイプ   | 意味              |
 | ------ | ------ | ----------------- |
-| userId | String | 通話に参加したユーザーのID |
+| userId | String | 通話に参加したユーザーのID。 |
 
 ### onUserLeave
 
@@ -388,7 +388,7 @@ void onUserLeave(String userId);
 
 | パラメータ   | タイプ   | 意味              |
 | ------ | ------ | ----------------- |
-| userId | String | 通話から離脱したユーザーのID |
+| userId | String | 通話から離脱したユーザーのID。 |
 
 ### onUserAudioAvailable
 
@@ -402,8 +402,8 @@ void onUserAudioAvailable(String userId, boolean available);
 
 | パラメータ      | タイプ    | 意味               |
 | --------- | ------- | ------------------ |
-| userId    | String  | 通話するユーザー ID。      |
-| available | boolean | ユーザーの音声が使用可能かどうか。 |
+| userId    | String  | 通話するユーザーID。      |
+| available | boolean | ユーザーのオーディオが使用可能かどうか。 |
 
 
 ### onUserVoiceVolume
@@ -427,3 +427,4 @@ void onUserVoiceVolume(Map<String, Integer> volumeMap);
 ```java
 void onCallEnd();
 ```
+

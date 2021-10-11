@@ -1,8 +1,8 @@
-このドキュメントでは、主にTencent Cloud TRTC SDK（iOS）を迅速にプロジェクトに統合する方法を紹介します。以下のステップにしたがって設定するだけで、SDK統合のタスクが完了します。
+このドキュメントでは、主に TRTC SDK（iOS）を迅速にプロジェクトに統合する方法を紹介します。以下のステップにしたがって設定するだけで、SDK統合のタスクが完了します。
 
 ## 開発環境要件
-- Xcode 9.0+。
-- iOS 9.0 以上のiPhone または iPad 実機。
+- Xcode 9.0+。 
+- iOS 9.0 以上のiPhone または iPad 。
 - プロジェクトに有効な開発者の署名が設定してあること。
 
 ## TRTC SDKの統合
@@ -10,13 +10,13 @@ CocoaPodsを使用して自動でローディングする方式か、または�
 
 ### CocoaPods
 #### 1. CocoaPodsのインストール
-端末のウィンドウに次のコマンドを入力します（事前に MacにRuby環境をインストールしている必要があります）。
+端末のウィンドウに次のコマンドを入力します（事前にMac にRuby環境をインストールしておく必要があります ）。
 ```
 sudo gem install cocoapods
 ```
 
 #### 2. Podfile ファイルの作成
-プロジェクトが存在するパスに入り、以下のコマンドラインを入力すると、プロジェクトのパスの下に Podfile ファイルが現れます。
+プロジェクトが存在するパスに入り、次のコマンドラインを入力するとプロジェクトパスの下にPodfile ファイルが現れます。
 ```
 pod init
 ```
@@ -28,7 +28,7 @@ Podfile ファイルを編集し、必要に応じて適切な SDKのバージ�
  platform :ios, '8.0'
   
   target 'App' do
-  pod 'TXLiteAVSDK_TRTC', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_TRTC.podspec'
+  pod 'TXLiteAVSDK_TRTC', :podspec => 'http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_TRTC.podspec'
   end
 ```
 
@@ -37,7 +37,7 @@ Podfile ファイルを編集し、必要に応じて適切な SDKのバージ�
  platform :ios, '8.0'
   
   target 'App' do
-  pod 'TXLiteAVSDK_Professional', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_Professional.podspec'
+  pod 'TXLiteAVSDK_Professional', :podspec => 'http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_Professional.podspec'
   end
 ```
 
@@ -70,16 +70,16 @@ pod コマンドの実行が完了すると、SDKを統合した.xcworkspace と
  ![](https://main.qcloudimg.com/raw/85509cc24bd958e7b9978e11937597c5.png)
 3. **Link Binary with Libraries**の項目をクリックして展開し、一番下の「+」記号のアイコンをクリックして依存ライブラリを追加します。
  ![](https://main.qcloudimg.com/raw/54be71cc14ec79ce642216612544a8a4.png)
-4. 順番に、ダウンロードした TRTC SDK Frameworkおよびそれに必要な依存ライブラリ **libc++** 、**Accelerate.framework** 、**libresolv.tbd**、**AVFoundation.framework**を追加します。
+4. 順番に、ダウンロードした TRTC SDK Frameworkおよびそれに必要な依存ライブラリ  **libc++.tbd** 、**Accelerate.framework** 和 **libresolv.tbd**、**AVFoundation.framework**を追加します。
  ![](https://main.qcloudimg.com/raw/2fa94b7f81c7e9c4ac09733782e79c10.png)
 
 
 ## カメラとマイクの使用権限の許可
 SDK の音声ビデオ機能を使用するには、マイクとカメラの使用権限を許可する必要がありますので、AppのInfo.plistの中に次の2項目を追加します。それぞれマイクとカメラに対応し、システムが使用許可のダイヤログボックスをポップアップするときに表示される情報となります。
 - **Privacy - Microphone Usage Description**、さらにマイク使用目的のプロンプトを追加します。
-- **Privacy - Camera Usage Description**、さらにカメラ使用目的のプロンプトを追加します。
+- **Privacy - Camera Usage Description**、さらにカメラ使用目的のプロンプトを記入します。
 
-![](https://main.qcloudimg.com/raw/54cc6989a8225700ff57494cba819c7b.jpg)
+![](https://main.qcloudimg.com/raw/7c483aae65f64cd2bf35b55d9c896a52.png)
 
 
 ## TRTC SDKの引用

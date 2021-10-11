@@ -1,3 +1,15 @@
+## Version 8.9.102 @ 2021.08.11
+
+**機能追加**
+Windows & Mac：onStatisticsコールバックに新しいフィールドgatewayRttを追加しました [onStatistics](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onStatistics)。
+
+**問題の修正**
+- Mac：特殊モデルのログ書き込みによって引き起こされるcrashを修正しました。
+- Mac：マイク禁止操作を修正し、APIインターフェースsetAudioCaptureVolume(0)を使用した後、マイク検出音量が0であることが確認されました。
+- Windows：性能を最適化し、カメラを起動後に画面が黒くなる現象を修正しました。
+- Windows：解像度を自動的に下げた後、スクリーンキャプチャが復元されない問題を修正しました。
+- Windows & Mac：その他のバグ修正。
+
 ## Version 8.6.101 @ 2021.05.28
 
 **機能追加**

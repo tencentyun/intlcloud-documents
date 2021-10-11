@@ -1,28 +1,3 @@
-## 2021年09月
-<table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
-<td>Version 9.1リリース</td>
-<td>すべてのプラットフォーム：<ul style="margin:0">
-	<li>C++インターフェースはオーディオフレームのコールバック形式設定をサポートしています。 </li>
-	<li>弱いネットワーク環境でのオーディオビデオエクスペリエンスを最適化しました。</li>
-</ul><br>Windows: <ul style="margin:0">
-	<li>ビデオ放送のac3形式のサポートを追加しました。</li>
-	<li>カメラ情報で、サポートされている解像度リストの取得ができるようになりました。具体的には<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ad502f48cb2a4470943134e4b48904450">ITXDeviceCollection.getDeviceProperties</a>をご参照ください。</li>
-	<li>Nvidia、Intel、AMDのハードウェアデコードをサポートしました。</li>
-</ul><br>Mac: <ul style="margin:0">
-ローカルメディアレコーディングのサポートを追加しました。
-</ul><br>Android: <ul style="margin:0">
-	<li>退室時のオーディオ状態の管理を最適化しました。</li>
-	<li>オーディオキャプチャ起動失敗後の復元ロジックを最適化し、成功率を向上させました。</li>
-	<li>特定の条件下でビデオ画面に白飛びが発生する問題を修正しました。</li>
-</ul></td>
-<td>2021-09-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
-</tr>
-</table>
-
-
 ## 2021年08月
 <table>
 <tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
@@ -200,7 +175,7 @@ Apple M1アーキテクチャのネイティブサポートを追加しました
 <td>2020-12-30</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/39243">Demoクイックスタート（Flutter）</a></td>
 </tr><tr>
-<td>Version 8.2リリース</td>
+<td>Version 8.2 リリース</td>
 <td>
 iOS&Android：<ul style="margin:0">ローカルで収集したものと再生したすべてのオーディオデータをミキシングするコールバックを追加しました。ローカルでのオーディオレコーディングがさらに使いやすくなります。</ul>
 <br>Android: <ul style="margin:0">
@@ -218,7 +193,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 <td>2020-12-23</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
 </tr><tr>
-<td>Version 8.1リリース</td>
+<td>Version 8.1 リリース</td>
 <td>
 すべてのプラットフォーム：<ul style="margin:0">
 	<li/>統計情報（onStatistics）でリモートビデオラグ関連の統計指標を追加しました。
@@ -238,7 +213,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 </tr>
 </table> 
 
-##  2020年11月
+## 2020年11月
 <table>
 <tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th></tr> 
 <tr>
@@ -275,7 +250,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 <td>MCUクラスターを使用してCloud MixTranscodingを行うサービスが商業的な課金を正式に開始します。
 </td>
 <td>2020-11-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38929">Cloud MixTranscodingの課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/38929">Cloud MixTranscoding課金説明</a></td>
 </tr>
 </table> 
 
@@ -316,7 +291,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 ## 2020年09月
 <table>
 <tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th></tr> 
-<td>Version 7.8リリース</td>
+<td>Version 7.8 リリース</td>
 <td>
 Android: <ul style="margin:0">
 <li>代替画像のプッシュをサポートしています。使用方法は <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d">TRTCCloud.setVideoMuteImage</a>をご参照ください。
@@ -348,7 +323,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
 <tr></tr> 
 <tr>
-<td>Version 7.7リリース</td>
+<td>Version 7.7 リリース</td>
 <td>
 すべてのプラットフォーム：<ul style="margin:0">
 パス（画面共有のこと）のインスタントブロードキャスティングの速度を最適化しました。
@@ -413,7 +388,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 <table>
 <tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th><th width="15%">関連ドキュメント</th>
 <tr>
-<td>Version 7.5リリース</td>
+<td>Version 7.5 リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 <li>デュアルスタックIPV6およびIPV6 onlyのへのサポートを追加しました。</li>
 <li>非常に小さなクラスのサポートに使用するため、複数ルームへの入室プルストリーミング機能を追加しました。</li>
@@ -453,7 +428,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 <td>課金の変更</td>
 <td>クラウドレコーディングに<b>レコーディング時間</b>に応じた課金のサポートを追加しました。</td>
 <td>2020-07-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38385">クラウドレコーディングの課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/38385">クラウドレコーディング課金説明</a></td>
 </tr>
 </table>
 
@@ -462,7 +437,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 <table>
 <tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th><th width="15%">関連ドキュメント</th>
 <tr>
-<td>Version 7.4リリース</td>
+<td>Version 7.4 リリース</td>
 <td>
 すべてのプラットフォーム：<ul style="margin:0">
   <li>各プラットフォームバージョンのSPEECH音質モードで音声通話の遅延が予想よりも大きいという問題を最適化しました。 </li>
@@ -521,7 +496,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
      <li>ビデオ時間の計算ルールは変更されません。ビデオストリームにサブスクライブしたすべてのユーザーの合計継続時間となります。</li>
 </ul></td>   
        <td>2020-05-01</td>   
-       <td><a href="https://intl.cloud.tencent.com/document/product/647/34610">计费概述</a></td>   
+       <td><a href="https://intl.cloud.tencent.com/document/product/647/34610">課金概要</a></td>   
      </tr> 
 </table>
 
@@ -701,14 +676,14 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 <tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th>  <th width="15%">関連ドキュメント</th> 
 <tr>      
     <td>課金の変更&お試しパックの限度の拡充</td>   
-    <td><ul style="margin:0;">
+    <td><ul style="margin:0;">
             <li>音声およびビデオの個別課金をサポートしています。ビデオはSD、HD、FHDに応じてそれぞれ課金されます。料金一覧：音声7元/1000分、SD14元/1000分、HD28元/1000分、FHD105元/1000分。</li>
            <li>固定パッケージとカスタムパッケージを含む、まったく新しい音声、SD、HDパッケージが同時にリリースされます。すべてのパッケージの有効期間は1年間です。</li>
            <li>2019年10月11日より、初めてTRTCコンソールでアプリケーションを作成するお客様が自動的に取得するお試しパックのオーディオ・ビデオ時間が1000分から10000分に延長されます。有効期限は1年間で、音声、SD、HDおよびFHDの順に時間を差し引くことができます。</li>
            <li>初めてTRTCコンソールでアプリケーションを作成する時間が2019年10月11日よりも前のお客様、または音声およびビデオが区分されていない旧パッケージを購入済みのお客様には引き続き「音声およびビデオ同一課金」の課金方式を適用します。旧パッケージ（1000分お試しパック、6.6元300分体験パック、5万分入門パック、25万分標準パック、100万分企業パックおよび300万分プレミアパックを含む）を使い切った翌月または期限切れの翌月に新パッケージ（音声、SD、HDの固定パッケージとカスタムパッケージを含む）を購入でき、新パッケージ購入後に、「音声およびビデオ個別課金」の課金方式に切り替えることができます。課金方式の変更操作はキャンセルできません。</li>
 </ul></td>   
        <td>2019-10-11</td>   
-       <td><a href="https://intl.cloud.tencent.com/document/product/647/34610">计费概述</a></td>   
+       <td><a href="https://intl.cloud.tencent.com/document/product/647/34610">課金概要</a></td>   
      </tr> 
 </table>
 

@@ -1,18 +1,26 @@
 ## デモンストレーション
+[ダウンロード](https://intl.cloud.tencent.com/document/product/647/35076)からAppをインストールして、低遅延カラオケ、マイク管理、ギフトの送受信、文字チャットなどのKTVのユースケースにおけるTRTCの関連機能を含む、KTVの機能を体験できます。
+<table>
+     <tr>
+         <th>管理者によるマイク操作</th>  
+         <th>リスナーによるマイク操作</th>  
+     </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/e52ccb64cd686f6af1c1f561d7969d36.jpg"/></td>
+<td><img src="https://main.qcloudimg.com/raw/206ba3492f4a2f18f36b1d5cba4e5558.jpg"/></td>
+</tr>
+</table>
 
-[ダウンロード](https://intl.cloud.tencent.com/document/product/647/35076)してAppをインストールすると、ボイスサロンの機能をご体験いただけます。これには、ボイスチャット、マイクのオン・オフ、低遅延音声インタラクションなどのボイスチャットシナリオにおけるTRTCの関連機能が含まれています。
 
-
-
-ボイスサロン機能をすばやくアクセスする必要がある場合、当社が提供するAppをもとに直接変更を加えて適応させるか、または当社が提供するTRTCChatSalonコンポーネントでカスタマイズしたUIを実装することができます。
+KTV機能にすばやくアクセスする必要がある場合、当社が提供するAppをもとに直接変更を加えて適応させるか、または当社が提供するTUIKaraokeコンポーネントでカスタマイズしたUIを実装することができます。
 
 [](id:DemoUI)
 ## AppのUIの再利用
 
 [](id:ui.step1)
 ### 手順1：アプリケーションの新規作成
-1．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
-2. アプリケーション名（例：`TestChatSalon`）を入力し、【作成】をクリックします。
+1. TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
+2. `TestKaraoke`など、アプリケーション名を入力し、【作成】をクリックします。
 3. 【ダウンロードしました。次のステップ】をクリックすると、この手順をスキップします。
 
 ![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
@@ -22,12 +30,10 @@
 
 [](id:ui.step2)
 ### 手順2：Appソースコードのダウンロード
-クリックして[TUIChatSalon](https://github.com/tencentyun/TUIChatSalon)に進み、ソースコードをCloneまたはダウンロードします。
+クリックして[TUIKaraoke](https://github.com/tencentyun/TUIKaraoke/tree/main/Android/Source/src/main/java/com/tencent/liteav/tuikaraoke)に進み、ソースコードをCloneするか、またはダウンロードします。
 
 [](id:ui.step3)
-
 ### 手順3：Appプロジェクトファイルの設定
-
 1. 設定変更ページに進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
 2. `Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java`のファイルを見つけて開きます。
 3. `GenerateTestUserSig.java`ファイル内の関連パラメータを設定します。
@@ -44,48 +50,45 @@
 
 [](id:ui.step4)
 ### 手順4：Appの実行
-Android Studio（バージョン3.5以降）を使用してソースコード`TUIChatSalon`プロジェクトを開き、【実行】をクリックすれば、このAppのデバッグが開始されます。
+Android Studio（バージョン3.5以降）を使用してソースコード`TUIKaraoke`プロジェクトを開き、【実行】をクリックすれば、このAppのデバッグが開始されます。
 
 [](id:ui.step5)
 ### 手順5：Appソースコードの修正
 ソースコードのSourceフォルダは、uiとmodelという2つのサブフォルダを含んでいます。uiフォルダにはインターフェースコードが含まれています。以下の表にファイルまたはフォルダおよび対応するUIをリストアップして、二次調整を行いやすくしています。
 
-| ファイルまたはフォルダ | 機能の説明                             |
-| ------------ | ------------------------------------ |
-| base         | UIに使用される基礎となるクラス。                    |
-| list         | ルームページの作成。                 |
-| room         | メインルームページは、管理者とリスナーという2種類のインターフェースがあります。 |
-| widget       | 汎用ウィジェット。                           |
-
+| ファイルまたはフォルダ | 機能の説明 |
+|-------|--------|
+| base | UIに使用される基礎となるクラス。 |
+| room | メインルームページは、管理者とリスナーという2種類のインターフェースがあります。 |
+| widget | 汎用ウィジェット。 |
 
 ## 体験アプリケーション
 >! 体験アプリケーションには、少なくとも2台のデバイスが必要です。
 
 ### ユーザーA
-
 1. 図のように、ユーザー名を入力し（**ユーザー名は一意のものとし、他のユーザーと重複しないようにしてください**）、ログインします。
-2. 入った後、下図のように、【ルームの作成】をクリックします。
-3. ルームトピックを入力し、【チャット開始】をクリックします。
+2. 下図のように、【ルームの作成】をクリックします。
+2. ルームトピックを入力し、【一緒に歌う】をクリックします。
 
 ### ユーザーB
 1. 図のように、ユーザー名を入力し（**ユーザー名は一意のものとし、他のユーザーと重複しないようにしてください**）、ログインします。
 2. ユーザーAが作成したルーム番号を入力し、【入室する】をクリックします。<br>
 
->! ルーム番号はユーザーAのルーム上部に表示されます。
-
+>! 下図のように、ルーム番号はユーザーAのルーム上部に表示されます。
+<img src="https://main.qcloudimg.com/raw/206ba3492f4a2f18f36b1d5cba4e5558.jpg" width="320"/>
 
 [](id:model)
+
 ## カスタムUIの実装
-[ソースコード](https://github.com/tencentyun/TUIChatSalon/tree/main/Android/Source/src/main/java/com/tencent/liteav/trtcchatsalon)のSourceフォルダには、uiとmodelという2つのサブフォルダがあり、modelフォルダには再利用できるオープンソースコンポーネントTRTCChatSalonがあります。`TRTCChatSalon.java`ファイルでこのコンポーネントが提供するインターフェース関数を確認し、対応するインターフェースを使用してカスタムUIを実装することができます。
-![](https://main.qcloudimg.com/raw/7613bd7ec5b4e665f32ee5df69e5de85.png)
+
+[ソースコード](https://github.com/tencentyun/TUIKaraoke/tree/main/Android/Source/src/main/java/com/tencent/liteav/tuikaraoke)のSourceフォルダには、uiとmodelという2つのサブフォルダがあり、modelフォルダには再利用できるオープンソースコンポーネントTRTCKaraokeRoomがあります。`TRTCKaraokeRoom.java`ファイルでこのコンポーネントが提供するインターフェース関数を確認し、対応するインターフェースを使用してカスタマイズしたUIを実装することができます。
+<img src="https://main.qcloudimg.com/raw/9c9b6537318b1fa8cd9c6e4e717c361a.png">
 
 [](id:model.step1)
 ### 手順1：SDKへの統合
+KTVコンポーネントTRTCKaraokeRoomは、TRTC SDKとIM SDKに依存し、次の手順で2つのSDKをプロジェクトに統合することができます。
 
-ボイスサロンコンポーネントSourceは、TRTC SDKとIM SDKに依存し、次の手順で2つのSDKをプロジェクトに統合することができます。
-
-[](id:model.step1_m1)
-#### 方法1：Mavenリポジトリを介する依存
+**方法1：Mavenリポジトリを介する依存**
 1. dependenciesにTRTCSDKとIMSDKの依存を追加します。
 <dx-codeblock>
 ::: java java
@@ -109,12 +112,13 @@ defaultConfig {
 </dx-codeblock>
 3. 【Sync Now】をクリックし、自動でSDKをダウンロードし、プロジェクトに統合します。
 
-[](id:model.step1_m2)
-#### 方法2：ローカルAARを介する依存
+**方法2：ローカルAARを介する依存**
 開発環境でのMavenリポジトリへのアクセスが遅い場合は、ZIPパッケージを直接ダウンロードし、統合ドキュメントに従って手動でプロジェクトに統合することができます。
-
 <table>
-<tr><th>SDK</th><th>ダウンロードページ</th><th>統合ガイド</th>
+<tr>
+<th>SDK</th>
+<th>ダウンロードページ</th>
+<th>統合ガイド</th>
 </tr>
 <tr>
 <td>TRTC SDK</td>
@@ -128,12 +132,9 @@ defaultConfig {
 </tr>
 </table>
 
-
 [](id:model.step2)
 ### 手順2：権限の設定および難読化ルール
-
-AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が必要です（6.0以降のAndroidシステムには、動的な読み取りストレージの権限が必要です）。
-
+AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が必要です（6.0以降のAndroidシステムではストレージ読み取りの権限を動的に申請する必要があります）。
 <dx-codeblock>
 ::: java java
 <uses-permission android:name="android.permission.INTERNET" />
@@ -149,7 +150,6 @@ AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が�
 </dx-codeblock>
 
 proguard-rules.proファイルでは、SDK関連を非難読化リストに追加します。
-
 <dx-codeblock>
 ::: java java
 -keep class com.tencent.** { *; }
@@ -157,21 +157,24 @@ proguard-rules.proファイルでは、SDK関連を非難読化リストに追�
 </dx-codeblock>
 
 [](id:model.step3)
-### 手順3：TRTCChatSalonコンポーネントのインポート
+### 手順3：TRTCKaraokeコンポーネントのインポート
 次のディレクトリ内のすべてのファイルをプロジェクトにコピーします。
 <dx-codeblock>
 ::: java java
-Source/src/main/java/com/tencent/liteav/trtcchatsalon/model
+Source/src/main/java/com/tencent/liteav/tuikaraoke/model
 :::
 </dx-codeblock>
 
 [](id:model.step4)
 ### 手順4：コンポーネントの作成およびログイン
-1. `sharedInstance`インターフェースを呼び出すと、TRTCChatSalonコンポーネントのインスタンスオブジェクトを作成できます。
+1. `sharedInstance`インターフェースを呼び出すと、TRTCKaraokeコンポーネントのインスタンスオブジェクトを作成できます。
 2. `setDelegate`関数を呼び出してコンポーネントのイベント通知を登録します。
 3. `login`関数を呼び出してコンポーネントのログインを完了します。下表を参考にキーパラメータを入力してください。
  <table>
-<tr><th>パラメータ名</th><th>作用</th></tr>
+<tr>
+<th>パラメータ名</th>
+<th>作用</th>
+</tr>
 <tr>
 <td>sdkAppId</td>
 <td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a> でSDKAppIDを表示できます。</td>
@@ -191,12 +194,12 @@ Source/src/main/java/com/tencent/liteav/trtcchatsalon/model
 </table>
 <dx-codeblock>
 ::: java java
-TRTCChatSalon mTRTCChatSalon = TRTCChatSalon.sharedInstance(this);
-mTRTCChatSalon.setDelegate(this);
-mTRTCChatSalon.login(SDKAPPID, userId, userSig, new TRTCChatSalonCallback.ActionCallback() {
+TRTCKaraoke mTRTCKaraokeRoom = TRTCKaraokeRoom.sharedInstance(this);
+mTRTCKaraokeRoom.setDelegate(this);
+mTRTCKaraokeRoom.login(SDKAPPID, userId, userSig, new TRTCKaraokeRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
-        if (code == 0) {
+        if (code == 0) {![](https://main.qcloudimg.com/raw/eafccd297854f0dbf8053856cc250ed3.png)
             //ログイン成功
         }
     }
@@ -206,28 +209,32 @@ mTRTCChatSalon.login(SDKAPPID, userId, userSig, new TRTCChatSalonCallback.Action
 
 [](id:model.step5)
 ### 手順5：管理者側での配信開始
-
 1. 管理者は、[手順4](#model.step4)でログイン後、`setSelfProfile`を呼び出して自身のニックネームおよびプロフィール画像を設定することができます。
-2. 管理者は、`createRoom`を呼び出して新しいボイスサロンを作成します。この時、ルームID、マイク・オンにすることの管理者の確認の要否、ルームタイプなどルームの属性情報を渡します。
-3. 管理者は、メンバーが参加した`onAnchorEnterSeat`というイベント通知を受信します。この時、マイク集音は自動的に開始されます。
+2. 管理者は、`createRoom`を呼び出して新しいKTVルームを作成します。この時、ルームID、マイク・オンにすることの管理者の確認の要否、ルームタイプなどルームの属性情報を渡します。
+3. 管理者はルームの作成に成功した後、`enterSeat`を呼び出して参加することができます。
+4. 管理者は、コンポーネントの`onSeatListChange`マイクリスト変更イベント通知を受信します。この時、マイクリストの変更をUI上に更新することができます。
+5. 管理者は、マイクリストのメンバーが参加した`onAnchorEnterSeat`というイベント通知も受信します。この時、マイク集音は自動的に開始されます。
 
-![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
+<img src="https://main.qcloudimg.com/raw/256ebe5ce1426b3f175c8c8b68095d5b.png">
+
+
 <dx-codeblock>
 ::: java java
 // 1.管理者は、ニックネームおよびプロフィール画像を設定します
-mTRTCChatSalon.setSelfProfile("my_name", "my_face_url", null);
+mTRTCKaraokeRoom.setSelfProfile("my_name", "my_face_url", null);
 
 // 2.管理者は、createRoomを呼び出してルームを作成します
-final TRTCChatSalonDef.RoomParam roomParam = new TRTCChatSalonDef.RoomParam();
+final TRTCKaraokeRoomDef.RoomParam roomParam = new TRTCKaraokeRoomDef.RoomParam();
 roomParam.roomName = 「ルーム名」;
-roomParam.needRequest = true; // マイク・オンの管理者による確認の要否
+roomParam.needRequest = false; // マイク・オンの管理者による確認の要否
+roomParam.seatCount = 7; // ルームの座席数。ここは計7席あり、管理者が1席を占有した後、残り6席はリスナーが占有します
 roomParam.coverUrl = 「ルームカバー図のURL」;
-mTRTCChatSalon.createRoom(mRoomId, roomParam, new TRTCChatSalonCallback.ActionCallback() {
+mTRTCKaraokeRoom.createRoom(mRoomId, roomParam, new TRTCKaraokeRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
         if (code == 0) {
-            // 3.座席を占有します
-            mTRTCChatSalon.enterSeat(new TRTCChatSalonCallback.ActionCallback() {
+            //3. 0号の席を占有
+            mTRTCKaraokeRoom.enterSeat(0, new TRTCKaraokeRoomCallback.ActionCallback() {
                 @Override
                 public void onCallback(int code, String msg) {
                     if (code == 0) {
@@ -238,50 +245,52 @@ mTRTCChatSalon.createRoom(mRoomId, roomParam, new TRTCChatSalonCallback.ActionCa
     }
 });
 
-// 4.席の占有成功後、onAnchorEnterSeatイベント通知を受信します
+// 4.席の占有に成功した後、onSeatListChangeイベント通知を受信します
 @Override
-public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
+public void onSeatListChange(final List<TRTCKaraokeRoomDef.SeatInfo> seatInfoList) {
+    // マイクリストの表示
+}
+
+// 5.  onAnchorEnterSeatイベント通知を受信
+@Override
+public void onAnchorEnterSeat(TRTCKaraokeRoomDef.UserInfo userInfo) {
 }
 :::
 </dx-codeblock>
 
 [](id:model.step6)
-
 ### 手順6：リスナー側の視聴
-
 1. リスナー側は、[手順4](#model.step4)でログイン後、`setSelfProfile`を呼び出して自身のニックネームおよびプロフィール画像を設定することができます。
-2. リスナー側は、業務バックエンドから最新のボイスサロンのルームリストを取得します。
->?Appのボイスサロンリストは、デモンストレーション用のためだけのものです。ボイスサロンリストのビジネスロジックは様々です。Tencent Cloudでは現在ボイスサロンリストの管理サービスを提供していません。ご自身でボイスサロンリストを管理してください。
-3. リスナー側は`getRoomInfoList`を呼び出して、ルームの詳細情報を取得します。この情報は、管理者側が`createRoom`を呼び出してボイスサロンを作成するときに設定する簡単な説明情報です。
->!ボイスサロンリストに十分に包括的な情報がある場合は、`getRoomInfoList`の呼び出しに関する手順をスキップできます。
-4. リスナーはボイスサロンの1つを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
+2. リスナー側は、業務バックエンドから最新のKTVのルームリストを取得します。
+>?App内のKTVルームリストはデモに使用するためだけのものです。KTVルームリストの業務ロジックは千差万別です。現在、Tencent CloudはKTVルームリスト管理のサービスを提供していません。各自でご自分のKTVルームリストを管理してください。
+3. リスナー側は、`getRoomInfoList`を呼び出してルームの詳細情報を取得します。この情報は、管理者側が`createRoom`を呼び出してKTVルームを作成するときに設定する簡単な説明情報です。
+>!KTVルームリストに十分に包括的な情報がある場合は、`getRoomInfoList`の呼び出しに関する手順をスキップできます。
+4. リスナーは1つのKTVルームを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
 5. 入室後、コンポーネントの`onRoomInfoChange` ルーム属性変更イベント通知を受信します。この時、ルーム属性を記録し、それに応じた修正を行うことができます。例：UIに表示するルーム名、発言者にする際の管理者への同意リクエストの要否の記録など。
-6. 入室後にマイクリストにキャスターが参加した`onAnchorEnterSeat`というイベント通知も受信します。
+6. 入室後は、コンポーネントの`onSeatListChange`マイクリスト変更イベント通知を受信します。この時、マイクリストの変更をUI上に更新することができます。
+7. 入室後、マイクリストにキャスターが参加した `onAnchorEnterSeat`というイベント通知も受信します。
 
-![](https://main.qcloudimg.com/raw/117b4dbdaf146cc89b681d067503f0f0.png)
-
+<img src="https://main.qcloudimg.com/raw/33432f97eb632fbb9710a59cba9e4469.png">
 <dx-codeblock>
 ::: java java
 // 1.リスナーは、ニックネームおよびプロフィール画像を設定します
-mTRTCChatSalon.setSelfProfile("my_name", "my_face_url", null);
+mTRTCKaraokeRoom.setSelfProfile("my_name", "my_face_url", null);
 
 // 2.業務バックエンドから取得したルームリストをroomListと仮定します
 List<Integer> roomList = GetRoomList();
 
 // 3.getRoomInfoListを呼び出すことによって、ルームの詳細情報を取得します
-mTRTCChatSalon.getRoomInfoList(roomList, new TRTCChatSalonCallback.RoomInfoCallback() {
-
+mTRTCKaraokeRoom.getRoomInfoList(roomList, new TRTCKaraokeRoomCallback.RoomInfoCallback() {
     @Override
-    public void onCallback(int code, String msg, List<TRTCChatSalonDef.RoomInfo> list) {
+    public void onCallback(int code, String msg, List<TRTCKaraokeRoomDef.RoomInfo> list) {
         if (code == 0) {
             // この時、自分のUIルームリストを更新することができます
         }
     }
-
 });
 
-// 4.roomIdを渡してルームに参加します
-mTRTCChatSalon.enterRoom(roomId, new TRTCChatSalonCallback.ActionCallback() {
+// 4.KTVを選択後、roomIdを渡して入室します
+mTRTCKaraokeRoom.enterRoom(roomId, new TRTCKaraokeRoomCallback.ActionCallback() {
         @Override
         public void onCallback(int code, String msg) {
             if (code == 0) {
@@ -292,33 +301,49 @@ mTRTCChatSalon.enterRoom(roomId, new TRTCChatSalonCallback.ActionCallback() {
 
 // 5.入室に成功後、onRoomInfoChangeイベント通知を受信します
 @Override
-public void onRoomInfoChange(TRTCChatSalonDef.RoomInfo roomInfo) {
+public void onRoomInfoChange(TRTCKaraokeRoomDef.RoomInfo roomInfo) {
     mNeedRequest = roomInfo.needRequest;
     mRoomName = roomInfo.roomName;
     // UIはタイトルなどを表示することができます
 }
 
-// 6. onAnchorEnterSeatイベント通知を受信します
+// 6.入室に成功後、onSeatListChangeイベント通知を受信します
 @Override
-public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
+public void onSeatListChange(final List<TRTCKaraokeRoomDef.SeatInfo> seatInfoList) {
+    // マイクリストの表示
+}
+
+// 7. onAnchorEnterSeatイベント通知を受信します
+@Override
+public void onAnchorEnterSeat(TRTCKaraokeRoomDef.UserInfo userInfo) {
 }
 :::
 </dx-codeblock>
 
 [](id:model.step7)
-### 手順7：マイクのオン・オフ
+### 手順7：マイク管理
 
 <dx-tabs>
 ::: 管理者側
-1. `pickSeat`は、リスナーのuserIdを渡し、発言できるように視聴者を招待できます。ルーム内の全メンバーは`onAnchorEnterSeat`というイベント通知を受信します。
-2. `kickSeat`で該当するユーザーのuserIdを渡すと、その人をキックアウトしてマイク・オフにできます。ルーム内の全メンバーが`onAnchorLeaveSeat`というイベント通知を受信します。
+1. `pickSeat`は、対応するマイクおよびリスナーのuserIdを渡し、発言できるように視聴者を招待できます。ルーム内の全メンバーは`onSeatListChange`および`onAnchorEnterSeat`というイベント通知を受信します。
+2. `kickSeat`は、対応するマイクを渡した後、キックアウトしてマイク・オフにすることができます。ルーム内の全メンバーは`onSeatListChange`および`onAnchorLeaveSeat`というイベント通知を受信します。
+3. `muteSeat`は、対応するマイクを渡した後、ミュート/ミュート解除をすることができます。ルーム内の全参加者は`onSeatListChange`および`onSeatMute`というイベント通知を受信します。
+4．`closeSeat`は、対応するマイクを送信後、任意のマイクのクローズ/解除をすることができます。クローズ後は、リスナー側はこれ以上マイクを使用することはできません。ルーム内の全参加者は`onSeatListChange`および`onSeatClose`というイベント通知を受信します。
+<img src="https://main.qcloudimg.com/raw/367a0c670d2f9899d0b311ed1f322ea3.png">
 
-![](https://main.qcloudimg.com/raw/d968f479f51160f626d07ce8bf403f13.png)
-マイク操作後のイベント通知の順番は次のとおりです。callback > onAnchorEnterSeatなど独立したイベント。
+:::
+::: リスナー側
+1. `enterSeat`は、対応するマイクを渡した後、マイク・オンにすることができます。ルーム内の全メンバーは`onSeatListChange`および`onAnchorEnterSeat`というイベント通知を受信します。
+2. `leaveSeat`でユーザーが視聴者になります。ルーム内の全メンバーは`onSeatListChange`および`onAnchorLeaveSeat`というイベント通知を受信します。
+
+<img src="https://main.qcloudimg.com/raw/8d385dd387b6255b8512dbff5829e88a.png">
+
+マイク操作後のイベント通知の順番は次のとおりです。callback > onSeatListChange > onAnchorEnterSeatなど独立したイベント。
+
 <dx-codeblock>
 ::: java java
-// 1.管理者が、視聴者を発言できるように招待できます
-mTRTCChatSalon.pickSeat("123", new TRTCChatSalonCallback.ActionCallback() {
+// 1: 管理者がピックして1号マイクをマイク・オンにします
+mTRTCKaraokeRoom.pickSeat(1, "123", new TRTCKaraokeRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
         // 2. callbackコールバックを受信します
@@ -327,22 +352,21 @@ mTRTCChatSalon.pickSeat("123", new TRTCChatSalonCallback.ActionCallback() {
     }
 });
 
-// 3.リスナーがキャスターとしてマイク通知に進むと、リスナーが実際にマイク・オンに成功したかどうかを判断できます
-public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo user) {
+// 3.onSeatListChangeコールバックを受信し、マイクリストを更新します
+@Override
+public void onSeatListChange(final List<TRTCKaraokeRoomDef.SeatInfo> seatInfoList) {
+}
+
+// 4.単一のマイク変更の通知によって、ここでリスナーが適切な処理を行っているか判断することができます
+public void onAnchorEnterSeat(int index, TRTCKaraokeRoomDef.UserInfo user) {
 }
 :::
 </dx-codeblock>
-:::
-::: リスナー側
-1. `enterSeat`でマイク・オンにすることができます。ルーム内の全メンバーが `onAnchorEnterSeat`というイベント通知を受信します。
-2. `leaveSeat`でユーザーが視聴者になります。ルーム内の全メンバーが`onAnchorLeaveSeat`というイベント通知を受信します。
 
-![](https://main.qcloudimg.com/raw/c9611b5017536604f63333ce7c19c309.png)
-マイク操作後のイベント通知の順番は次のとおりです。callback > onAnchorEnterSeatなど独立したイベント。
 <dx-codeblock>
 ::: java java
-// 1.リスナーがユーザーを発言者にします
-mTRTCChatSalon.enterSeat(new TRTCChatSalonCallback.ActionCallback() {
+// 1: リスナーが自主的に2号マイクをマイク・オンにします
+mTRTCKaraokeRoom.enterSeat(2, new TRTCKaraokeRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
         // 2. callbackコールバックを受信します
@@ -351,8 +375,13 @@ mTRTCChatSalon.enterSeat(new TRTCChatSalonCallback.ActionCallback() {
     }
 });
 
-// 3.リスナーがキャスターとしてマイク通知に進むと、ここで自分が適切な処理を行っているかどうかを判断することができます
-public void onAnchorEnterSeat(int index, TRTCChatSalonDef.UserInfo user) {
+// 3.onSeatListChangeコールバックを受信し、マイクリストを更新します
+@Override
+public void onSeatListChange(final List<TRTCKaraokeRoomDef.SeatInfo> seatInfoList) {
+}
+
+// 4.単一のマイク変更の通知によって、ここでご自身が適切な処理を行っているか判断することができます
+public void onAnchorEnterSeat(int index, TRTCKaraokeRoomDef.UserInfo user) {
 }
 :::
 </dx-codeblock>
@@ -362,6 +391,7 @@ public void onAnchorEnterSeat(int index, TRTCChatSalonDef.UserInfo user) {
 
 [](id:model.step8)
 ### 手順8：招待シグナリングの使用
+[マイク管理](#model.step7)では、リスナーがマイク・オン/オフにする場合や、管理者が視聴者を発言できるように招待する場合は、相手の同意を必要とせずに直接操作することができます。
 Appが次の操作の業務フローを実施するために、相手の同意を必要とする場合、招待シグナリングによって対応するサポートを提供することができます。
 
 <dx-tabs>
@@ -371,19 +401,19 @@ Appが次の操作の業務フローを実施するために、相手の同意�
 3. 管理者が同意を選択後、`acceptInvitation`を呼び出してinviteIdを渡します。
 4. リスナー側は、`onInviteeAccepted`というイベント通知を受信し、`enterSeat`を呼び出してマイク・オンにします。
 
-![](https://main.qcloudimg.com/raw/3543bf768896cfd78b0163dc9378e659.png)
+<img src="https://main.qcloudimg.com/raw/5ccdb15f63efa127aa883ca6a7bcd80d.png">
 
 <dx-codeblock>
 ::: java java
 // リスナー側の視点
-// 1.sendInvitationを呼び出し、マイク・オンをリクエストします
-String inviteId = mTRTCChatSalon.sendInvitation("ENTER_SEAT", ownerUserId, "123", null);
+// 1. sendInvitationを呼び出し、1号マイクの使用をリクエストします
+String inviteId = mTRTCKaraokeRoom.sendInvitation("ENTER_SEAT", ownerUserId, "1", null);
 
 // 2.招待のリクエスト同意を受信し、正式にマイク・オンになります
 @Override
 public void onInviteeAccepted(String id, String invitee) {
     if(id.equals(inviteId)) {
-        mTRTCChatSalon.enterSeat(null);
+        mTRTCKaraokeRoom.enterSeat(1, null);
     }
 }
 
@@ -393,7 +423,7 @@ public void onInviteeAccepted(String id, String invitee) {
 public void onReceiveNewInvitation(final String id, String inviter, String cmd, final String content) {
     if (cmd.equals("ENTER_SEAT")) {
         // 2.管理者がリスナーのリクエストに同意します
-         mTRTCChatSalon.acceptInvitation(id, null);
+         mTRTCKaraokeRoom.acceptInvitation(id, null);
     }
 }
 :::
@@ -405,19 +435,19 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 3. リスナーが同意を選択後、`acceptInvitation`を呼び出してinviteIdを渡します。
 4. 管理者側は、`onInviteeAccepted`というイベント通知を受信し、`pickSeat`を呼び出して、リスナーをピックしてマイク・オンにします。
 
-![](https://main.qcloudimg.com/raw/60025544abae69e22de22a4b81bf6951.png)
+<img src="https://main.qcloudimg.com/raw/5515f49d6e30410e12cd828b75a8db0b.png">
 
 <dx-codeblock>
 ::: java java
 // 管理者側の視点
-// 1.管理者はsendInvitationを呼び出して、リスナー「123」をピックしてマイク・オンをリクエストします
-String inviteId = mTRTCChatSalon.sendInvitation("PICK_SEAT", ownerUserId, "123", null);
+// 1.管理者はsendInvitationを呼び出して、リスナー「123」をピックして2号マイクのマイク・オンをリクエストします
+String inviteId = mTRTCKaraokeRoom.sendInvitation("PICK_SEAT", "123", "2", null);
 
 // 2.招待のリクエスト同意を受信し、正式にマイク・オンになります
 @Override
 public void onInviteeAccepted(String id, String invitee) {
     if(id.equals(inviteId)) {
-        mTRTCChatSalon.pickSeat(null);
+        mTRTCKaraokeRoom.pickSeat(2, null);
     }
 }
 
@@ -427,7 +457,7 @@ public void onInviteeAccepted(String id, String invitee) {
 public void onReceiveNewInvitation(final String id, String inviter, String cmd, final String content) {
     if (cmd.equals("PICK_SEAT")) {
         // 2.リスナーが管理者のリクエストに同意します
-         mTRTCChatSalon.acceptInvitation(id, null);
+         mTRTCKaraokeRoom.acceptInvitation(id, null);
     }
 }
 :::
@@ -439,32 +469,32 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 [](id:model.step9)
 ### 手順9：文字チャットおよび弾幕コメントの実装
 - `sendRoomTextMsg`によって通常のテキストメッセージを送信できるようになり、このルーム内のすべてのキャスターおよびリスナーが`onRecvRoomTextMsg`のコールバックを受信することができます。
-  IMバックエンドは、デフォルトのセンシティブワードフィルタルールを備えており、センシティブワードと認識されたテキストメッセージはクラウドに転送されることはありません。
+ IMバックエンドは、デフォルトのセンシティブワードフィルタルールを備えており、センシティブワードと認識されたテキストメッセージはクラウドに転送されることはありません。
   <dx-codeblock>
   ::: java java
   // 送信側：テキストメッセージの送信
-  mTRTCChatSalon.sendRoomTextMsg("Hello Word!", null);
+  mTRTCKaraokeRoom.sendRoomTextMsg("Hello Word!", null);
   // 受信側：テキストメッセージの監視
-  mTRTCChatSalon.setDelegate(new TRTCChatSalonDelegate() {
-   @Override
-   public void onRecvRoomTextMsg(String message, TRTCChatSalonDef.UserInfo userInfo) {
-       Log.d(TAG、 + userInfo.userName + 「からのメッセージを受信:」 + message);
-   }
+  mTRTCKaraokeRoom.setDelegate(new TRTCKaraokeRoomDelegate() {
+    @Override
+    public void onRecvRoomTextMsg(String message, TRTCKaraokeRoomDef.UserInfo userInfo) {
+        Log.d(TAG, userInfo.userName + "からのメッセージを受信:" + message);
+    }
   });
   :::
   </dx-codeblock>
 - `sendRoomCustomMsg`によって、カスタム（シグナリング）メッセージを送信できます。当該ルーム内のすべてのキャスターとリスナーが`onRecvRoomCustomMsg`コールバックを受信できます。
-  カスタムメッセージは、カスタムシグナリングの送信によく用いられます。例えば、「いいね」情報の発信やブロードキャストに使用します。
-  <dx-codeblock>
-  ::: java java
-  // 送信側：カスタマイズCmdによって弾幕と「いいね」情報を区別することができます
-  // eg:「CMD_DANMU」は弾幕コメントを表し、「CMD_LIKE」は「いいね」情報を表します
-  mTRTCChatSalon.sendRoomCustomMsg("CMD_DANMU", "Hello world", null);
-  mTRTCChatSalon.sendRoomCustomMsg("CMD_LIKE", "", null);
-  // 受信側：カスタムメッセージの監視
-  mTRTCChatSalon.setDelegate(new TRTCChatSalonDelegate() {
+カスタムメッセージは、カスタムシグナリングの送信によく用いられます。例えば、「いいね」情報の発信やブロードキャストに使用します。
+<dx-codeblock>
+::: java java
+// 送信側：カスタマイズCmdによって弾幕と「いいね」情報を区別することができます
+// eg:「CMD_DANMU」は弾幕コメントを表し、「CMD_LIKE」は「いいね」情報を表します
+mTRTCKaraokeRoom.sendRoomCustomMsg("CMD_DANMU", "Hello world", null);
+mTRTCKaraokeRoom.sendRoomCustomMsg("CMD_LIKE", "", null);
+// 受信側：カスタムメッセージの監視
+mTRTCKaraokeRoom.setDelegate(new TRTCKaraokeRoomDelegate() {
     @Override
-    public void onRecvRoomCustomMsg(String cmd, String message, TRTCChatSalonDef.UserInfo userInfo) {
+    public void onRecvRoomCustomMsg(String cmd, String message, TRTCKaraokeRoomDef.UserInfo userInfo) {
         if ("CMD_DANMU".equals(cmd)) {
             // 弾幕コメントの受信
             Log.d(TAG, "が" + userInfo.userName + "から受信した弾幕コメント:" + message);
@@ -473,6 +503,6 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
             Log.d(TAG、 userInfo.userName + 「いいねを付けました！」);
         }
     }
-  });
-  :::
-  </dx-codeblock>
+});
+:::
+</dx-codeblock>

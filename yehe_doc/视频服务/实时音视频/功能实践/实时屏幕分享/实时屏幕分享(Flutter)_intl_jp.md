@@ -4,6 +4,7 @@ Tencent CloudのTRTCは、Androidシステムでの画面共有をサポート�
 - TRTC Android版の画面共有は、デスクトップ版のように「サブチャネルの共有」をサポートしていません。従って、画面共有を開始するときは、あらかじめカメラのキャプチャを停止する必要があります。停止しない場合、衝突が生じます。
 - Androidシステムのバックグラウンドアプリが引き続きCPUを使用すると、システムによって強制終了されやすくなり、画面共有自体が必然的にCPUを消費してしまいます。この矛盾するような衝突を解消するには、アプリで画面共有を開始するとともに、Androidシステムにフローティングウィンドウをポップアップする必要があります。AndroidはフォアグラウンドUIを含むアプリプロセスを強制終了しないため、このソリューションによって、お客様のアプリはシステムに自動回収されることなく画面を共有し続けることができます。
 
+
 ### 画面共有を開始
 Androidデバイスでの画面共有は、`TRTCCloud`の[startScreenCapture()](https://pub.dev/documentation/tencent_trtc_cloud/latest/trtc_cloud/TRTCCloud/startScreenCapture.html)インターフェースを呼び出すだけで開始することができます。ただし、明瞭で安定した共有効果を実現するには、次の3つの点に注意する必要があります。
 
@@ -83,7 +84,7 @@ iOS画面共有に推奨されるエンコードパラメータは次のとお�
 ### 方法2：iOSプラットフォームアプリケーション間の共有
 
 #### サンプルコード
-[Github](https://github.com/c1avie/trtc_demo)の** trtc_demo/ios **ディレクトリに、アプリケーション間共有用のサンプルコードを設置しています。これには、次のようなテキストが含まれています。
+[Github](https://github.com/c1avie/trtc_demo)の**trtc_demo/ios**ディレクトリに、アプリケーション間共有用のサンプルコードを設置しています。これには、次のようなテキストが含まれています。
 
 ```
 ├── Broadcast.Upload        //スクリーンキャプチャのプロセスBroadcast Upload Extensionコードの詳細は手順2をご参照ください。
@@ -114,9 +115,8 @@ dependencies:
 
 >! [手順1](#Step1)をスキップした場合、すなわちApp Groupを設定しない場合は（インターフェースはnullを渡します）、画面共有は実行できますが、安定性が若干損なわれます。手順はやや多いですが、できる限り正しいApp Groupを設定して、画面共有機能の安定性を確保してください。
 
-[](id:createGroup)
-[](id:Step1)
-##### 手順1： App Groupの作成
+[](id:createGroup)[](id:Step1)
+#### 手順1：App Groupsの作成
 お客様のアカウントを使用して[**https://developer.apple.com/**](https://developer.apple.com/)にログインし、次の操作を実行します。**完了後は、対応するProvisioning Profileを再ダウンロードする必要がありますので、ご注意ください**。
 
 1. 【Certificates, IDs & Profiles】をクリックします。
@@ -131,7 +131,7 @@ dependencies:
 8. Provisioning Profileを再度ダウンロードし、XCodeに設定します。
 
 [](id:createExtension)
-##### 手順2：Broadcast Upload Extensionの作成
+#### 手順2：Broadcast Upload Extensionの作成
 1. Xcodeメニューの【File】 > 【New】 > 【Target...】を順にクリックし、【Broadcast Upload Extension】を選択します。
 2. ポップアップされたダイアログボックスに関連情報を入力し、**【Include UI Extension】にはチェック"を入れずに**【Finish】をクリックして作成を完了します。
 3. ダウンロードしたSDK圧縮パッケージのプロジェクトにTXLiteAVSDK_ReplayKitExt.frameworkをドラッグし、先ほど作成したTargetにチェックを入れます。
@@ -141,8 +141,9 @@ dependencies:
  ![AddGroup](https://main.qcloudimg.com/raw/b4904a8b425cf55e58497b35c0700966.png)
 5. メインアプリのTargetを選択し、**上記の手順に従って、メインアプリのTargetに同様の処理を行います。**
 6. 新規作成したTargetにおいて、Xcodeは「SampleHandler.swift」という名前のファイルを自動的に作成し、それを次のコードに置き換えます。**コード内のAPPGROUPを先ほど作成したApp Group Identifierに変更する必要があります**。
- 
-```
+<dx-codeblock>
+::: iOS swift
+
 import ReplayKit
 import TXLiteAVSDK_ReplayKitExt
 
@@ -209,17 +210,19 @@ class SampleHandler: RPBroadcastSampleHandler, TXReplayKitExtDelegate {
         }
     }
 }
-```
+:::
+</dx-codeblock>
 
 [](id:receive)
-##### 手順3：メインアプリ側の受信ロジックとの結合
+#### 手順3：メインアプリ側の受信ロジックとの結合
 以下の手順に従って、メインアプリ側の受信ロジックと結合します。すなわち、ユーザーが画面共有をトリガーする前に、メインアプリを「待機」状態にして、Broadcast Upload Extensionプロセスからスクリーンキャプチャデータをいつでも受信できるようにします。
 1. TRTCCloudがカメラのキャプチャをオフにしていることを確認します。オフになっていない場合は、 [stopLocalPreview](https://pub.flutter-io.cn/documentation/tencent_trtc_cloud/latest/trtc_cloud/TRTCCloud/stopLocalPreview.html) を呼び出して、カメラのキャプチャをオフにしてください。
 2. [startScreenCapture](https://pub.flutter-io.cn/documentation/tencent_trtc_cloud/latest/trtc_cloud/TRTCCloud/startScreenCapture.html)メソッドを呼び出し、[手順1](#createGroup)で設定したAppGroupを渡して、SDKを「待機」状態にします。
 3. ユーザーが画面共有をトリガーするまで待機します。[手順4](#launch)における「トリガーボタン」が実装されていない場合、ユーザーがiOSシステムのコントロールセンターにおいて、スクリーンキャプチャボタンを長押しして画面共有をトリガーする必要があります。
-4. [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb)インターフェースを呼び出すことにより、いつでも画面共有を停止できます。
 
-```
+4. [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb)インターフェースを呼び出すことにより、いつでも画面共有を停止できます。
+<dx-codeblock>
+::: dart 
 // 画面共有を開始するには、APPGROUPを上記の手順で作成したApp Groupに置き換える必要があります 
 trtcCloud.startScreenCapture(
     TRTCVideoEncParam(
@@ -241,11 +244,12 @@ onRtcListener(type, param){
       //画面共有の開始
     }
 }
-```
+:::
+</dx-codeblock>
 
 [](id:launch)
-##### 手順4：画面共有のトリガーボタンの追加（オプション）
-[手順3](＃receive)までに、ユーザーがコントロールセンターからスクリーンキャプチャボタンを長押しして、画面共有を手動で開始する必要があります。下記に説明してある方法を用いて、TRTC Demo Screenのようにボタンをクリックすることでトリガーする効果を実現することができます。
+#### 手順4：画面共有のトリガーボタンの追加（オプション）
+[手順3](＃receive)までに、ユーザーがコントロールセンターからスクリーンキャプチャボタンを長押しして、画面共有を手動で開始する必要があります。以下の方法で、TRTC Demo Screenのように、ボタンをクリックすることでトリガーする効果を実現できます。
 
 1. `replay_kit_launcher`プラグインをご使用のプロジェクトに導入します。
 2. インターフェースにボタンを設置し、ボタンの応答関数において`ReplayKitLauncher.launchReplayKitBroadcast(iosExtensionName);`関数を呼び出すと、画面共有機能を呼び出すことができます。
@@ -264,7 +268,7 @@ onShareClick() async {
 ```
 
 ## 画面共有の確認
-- **Android / iOS画面共有の確認**
+- **Android/iOS画面共有の確認**
   ユーザーがAndroid / iOSを介して画面共有を実行する場合は、メインストリームを介して共有を実行することができます。ルームにいるその他ユーザーはTRTCCloudListener中の[onUserVideoAvailable](https://pub.flutter-io.cn/documentation/tencent_trtc_cloud/latest/trtc_cloud_listener/TRTCCloudListener-class.html) イベントを介してこの通知を受け取ります。
   画面共有を確認する場合は、[startRemoteView](https://pub.flutter-io.cn/documentation/tencent_trtc_cloud/latest/trtc_cloud/TRTCCloud/startRemoteView.html)インターフェースを介してリモートユーザーのメインストリーム画面のレンダリングを起動することができます。
 

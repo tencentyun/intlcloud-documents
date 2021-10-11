@@ -1,38 +1,38 @@
-TRTCMeetingは、Tencent CloudのTRTCおよびIM サービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
+TRTCMeetingは、Tencent CloudのTRTCおよびIMサービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
 - キャスターがミーティングルームを作成し、参加者はルームナンバーを入力した後にミーティングに参加します。
 - 参加者の間で画面共有を行います。
-- 各種のテキストメッセージとカスタマイズメッセージの送信をサポートします。
+- 各種のテキストメッセージとカスタムメッセージの送信をサポートします。
 
 TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloudの2つのクローズドソースのSDKに依存しています。具体的な実現プロセスは、[多人数ビデオミーティング(Android)](https://intl.cloud.tencent.com/document/product/647/37283)をご参照ください。
-- TRTC SDK： [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) を低レイテンシーのビデオミーティングのコンポーネントとして利用します。
+- TRTC SDK： [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) を低遅延のビデオミーティングのコンポーネントとして使用します。
 - IM SDK：[IM SDK](https://intl.cloud.tencent.com/document/product/1047)のMeetingRoomを利用して、ミーティング中のチャットルームの機能を実現します。
 
 
-<h2 id="TRTCMeeting">TRTCMeeting API 概要</h2>
+<h2 id="TRTCMeeting">TRTCMeeting API概要</h2>
 
-### SDK 基本関数
+### SDK基本関数
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
-| [sharedInstance](#sharedinstance) | シングルトンオブジェクトを取得します。 |
-| [destroySharedInstance](#destroysharedinstance) | シングルトンオブジェクトを廃棄します |
+| [sharedInstance](#sharedinstance)               | シングルトンオブジェクトを取得します。                                       |
+| [destroySharedInstance](#destroysharedinstance) | シングルトンオブジェクトを破棄します。 |
 | [setDelegate](#setdelegate) | イベントコールバックを設定します。|
-| [setDelegateHandler](#setdelegatehandler) | イベントコールバックが存在するスレッドを設定します。 |
+| [setDelegateHandler](#setdelegatehandler) | イベントコールバックが設定されているスレッドです。 |
 | [login](#login) | ログイン。|
 | [logout](#logout) | ログアウト。|
-| [setSelfProfile](#setselfprofile) | 個人情報の修正。|
+| [setSelfProfile](#setselfprofile) | 個人情報を修正します。|
 
 ### ミーティングルームに関するインターフェース関数
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
-| [createMeeting](#createmeeting) | ルームの新規作成（キャスターがコール）。|
-| [destroyMeeting](#destroymeeting) | ルームの廃棄（キャスターがコール）。|
-| [enterMeeting](#entermeeting) | 入室（参加者がコール）。|
-| [leaveMeeting](#leavemeeting) | 入室（参加者がコール）。|
+| [createMeeting](#createmeeting) | ルームの作成（キャスターが呼び出し）。|
+| [destroyMeeting](#destroymeeting) | ルームの破棄（キャスターが呼び出し）。|
+| [enterMeeting](#entermeeting) | 入室（参加者が呼び出し）。|
+| [leaveMeeting](#leavemeeting) | 退室（参加者が呼び出し）。|
 
 ### リモートユーザーに関するインターフェース
-| API | 説明|
+| API | 説明 |
 |-----|-----|
 | [getUserInfoList](#getuserinfolist) | ルーム内の全メンバーのリストを取得します。enterMeeting()の成功後に呼び出しが有効となります。|
 | [getUserInfo](#getuserinfo) | ルーム内の指定メンバーの詳細情報を取得します。enterMeeting()の成功後に呼び出しが有効となります。|
@@ -40,24 +40,24 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | [stopRemoteView](#stopremoteview) | リモートビデオ画面の再生を停止します。 |
 | [setRemoteViewFillMode](#setremoteviewfillmode) | ユーザーIDと設定に基づくリモート画像のレンダリングモード。 |
 | [setRemoteViewRotation](#setremoteviewrotation) | リモート画像の時計回りの回転角度を設定します。 |
-| [muteRemoteAudio](#muteremoteaudio) | リモートの指定参加者の声音をミュートにします。 |
+| [muteRemoteAudio](#muteremoteaudio) | リモートの指定参加者の音声をミュートにします。 |
 | [muteRemoteVideoStream](#muteremotevideostream) | 指定参加者のビデオストリームを非表示にします。 |
 
 ### ローカルのビデオ操作インターフェース
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
 | [startCameraPreview](#startcamerapreview) | ローカルビデオのプレビュー画面を立ち上げます。|
 | [stopCameraPreview](#stopcamerapreview) | ローカルのビデオキャプチャおよびプレビューを停止します。|
-| [switchCamera](#switchcamera) | 前後カメラを切り替えます。 |
+| [switchCamera](#switchcamera) | フロント/リアカメラを切り替えます。 |
 | [setVideoResolution](#setvideoresolution) | 解像度の設定。 |
 | [setVideoFps](#setvideofps) | フレームレートの設定。|
 | [setVideoBitrate](#setvideobitrate) | ビットレートの設定。|
 | [setLocalViewMirror](#setlocalviewmirror) | ローカル画面のミラーモードのプレビューを設定します。|
 
-### ローカルの音声操作インターフェース
+### ローカルのオーディオ操作インターフェース
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
 | [startMicrophone](#startmicrophone) | マイクの集音開始。|
 | [stopMicrophone](#stopmicrophone) | マイクの集音停止。|
@@ -72,7 +72,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 ### スクリーンキャプチャのインターフェース
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
 | [startScreenCapture](#startscreencapture) | 画面共有を開始。 |
 | [stopScreenCapture](#stopscreencapture) | 画面キャプチャの停止。|
@@ -81,61 +81,61 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 ### 美顔フィルタに関するインターフェース関数
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
-| [getBeautyManager](#getbeautymanager) | 美顔管理オブジェクト [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。|
+| [getBeautyManager](#getbeautymanager) | 美顔管理オブジェクト[TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。|
 
 ### 共有に関するインターフェース
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
 | [getLiveBroadcastingURL](#getlivebroadcastingurl) | CDN共有のリンク先を取得します。|
 
 ### メッセージ送信関連インターフェース関数
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
-| [sendRoomTextMsg](#sendroomtextmsg) | ルーム内でのテキストメッセージの放送では、一般的にチャットを使用します。|
-| [sendRoomCustomMsg](#sendroomcustommsg) | カスタマイズ（シグナリング）メッセージを発信します。|
+| [sendRoomTextMsg](#sendroomtextmsg) | ルーム内でのテキストメッセージのブロードキャストでは、通常、チャットに使用します。|
+| [sendRoomCustomMsg](#sendroomcustommsg) | カスタマイズ（シグナリング）メッセージを送信します。|
 
 
-<h2 id="TRTCMeetingDelegate">TRTCMeetingDelegate API 概要</h2>
+<h2 id="TRTCMeetingDelegate">TRTCMeetingDelegate API概要</h2>
 
 ### 一般的なイベントコールバック
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
 | [onError](#onerror) | エラーのコールバック。|
 
 ### ミーティングルームのイベントコールバック
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
-| [onRoomDestroy](#onroomdestroy) | ミーティングルームが廃棄された時のコールバック。|
+| [onRoomDestroy](#onroomdestroy) | ミーティングルームが破棄された時のコールバック。|
 | [onNetworkQuality](#onnetworkquality)     | ネットワーク状態のコールバック。   |
 | [onUserVolumeUpdate](#onuservolumeupdate) | ユーザー通話音量のコールバック。|
 
 ### 参加者入退室のイベントコールバック
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
 | [onUserEnterRoom](#onuserenterroom) | 新しい参加者の入室の通知を受信します。|
 | [onUserLeaveRoom](#onuserleaveroom) | 参加者の退室の通知を受信します。|
 
 ### 参加者の音声・ビデオのイベントコールバック
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
-| [onUserVideoAvailable](#onuservideoavailable) | 参加者のカメラオン／オフの通知。|
-| [onUserAudioAvailable](#onuseraudioavailable) | 参加者のマイクオン／オフの通知。|
+| [onUserVideoAvailable](#onuservideoavailable) | 参加者のカメラ・オン/オフの通知。|
+| [onUserAudioAvailable](#onuseraudioavailable) | 参加者のマイク・オン/オフの通知。|
 
 
 ### メッセージイベントのコールバック
 
-| API | 説明|
+| API | 説明 |
 |-----|-----|
 | [onRecvRoomTextMsg](#onrecvroomtextmsg) | テキストメッセージの受信。|
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | カスタマイズメッセージの受信。|
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | カスタムメッセージの受信。|
 
 ### スクリーンキャプチャのイベントコールバック
 
@@ -146,12 +146,12 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | [onScreenCaptureResumed](#onscreencaptureresumed) | スクリーンキャプチャ再開のコールバック。 |
 | [onScreenCaptureStoped](#onscreencapturestoped)   | スクリーンキャプチャ停止のコールバック。 |
 
-## SDK 基本関数
+## SDK基本関数
 
-<span id="sharedInstance"></span>
+[](id:sharedInstance)
 ### sharedInstance
 
- [TRTCMeeting](https://intl.cloud.tencent.com/document/product/647/37283)シングルトンオブジェクトの取得。
+[TRTCMeeting](https://intl.cloud.tencent.com/document/product/647/37283)シングルトンオブジェクトを取得します。
 ```java
  public static synchronized TRTCMeeting sharedInstance(Context context);
 ```
@@ -159,18 +159,18 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| context | Context | Android コンテキスト。コンテンツをApplicationContext に転換してシステム API のコールに使用 |
+| context | Context | Androidコンテキスト。内部ではApplicationContextに変換してシステムAPIの呼び出しに使用します |
 
 
 
 ### destroySharedInstance
 
- [TRTCMeeting](https://intl.cloud.tencent.com/document/product/647/37283)シングルトンオブジェクトの取得。
->?インスタンスを廃棄すると、外部キャッシュの TRTCMeeting インスタンスは再利用できなくなります。あらためて[sharedInstance](#sharedInstance)を呼び出し、新しいインスタンスを取得する必要があります。
+[TRTCMeeting](https://intl.cloud.tencent.com/document/product/647/37283)シングルトンオブジェクトを破棄します。
+>?インスタンスを破棄すると、外部キャッシュのTRTCMeeting インスタンスは再利用できなくなります。あらためて[sharedInstance](#sharedInstance)を呼び出し、新しいインスタンスを取得する必要があります。
 
 ```java
 public static void destroySharedInstance();
-```   
+```
 
 ### setDelegate
 
@@ -183,7 +183,7 @@ public abstract void setDelegate(TRTCMeetingDelegate delegate);
 
 ### setDelegateHandler
 
-イベントコールバックが存在するスレッドを設定します。
+イベントコールバックが配置されているスレッドを設定します。
 ```java
 public abstract void setDelegateHandler(Handler handler);
 ```
@@ -191,15 +191,15 @@ public abstract void setDelegateHandler(Handler handler);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| handler | Handler | TRTCMeetingの中の各種状態の通知のコールバックは、このhandler によって通知されます。setDelegateと混用しないでください。 |
+| handler | Handler | TRTCMeetingの中の各種状態の通知のコールバックは、このhandlerによって通知されます。setDelegateと混用しないでください。 |
 
 ### login
 
 ログイン。
 ```java
 public abstract void login(int sdkAppId,
- String userId, String userSig,
- TRTCMeetingCallback.ActionCallback callback);
+	 String userId, String userSig,
+	 TRTCMeetingCallback.ActionCallback callback);
 ```
 
 パラメータは下表に示すとおりです。
@@ -207,9 +207,9 @@ public abstract void login(int sdkAppId,
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | sdkAppId | int |  TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報の中でSDKAppIDを確認できます。 |
-| userId | String | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-z と A-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。 |
-| userSig | String | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については、 [UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
-| callback | ActionCallback | ログインのコールバック。成功時に code は0になります。 |
+| user     | String | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
+| userSig  | String         |Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
+| callback | ActionCallback | ログインのコールバック。成功時にcodeは0になります。 |
 
 
 ### logout
@@ -222,7 +222,7 @@ public abstract void logout(TRTCMeetingCallback.ActionCallback callback);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| callback | ActionCallback | ログアウトのコールバック。成功時に code は0になります。 |
+| callback | ActionCallback | ログアウトのコールバック。成功時にcodeは0になります。 |
 
    
 
@@ -235,11 +235,11 @@ public abstract void setSelfProfile(String userName, String avatarURL, TRTCMeeti
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ      | タイプ   | 意味       |
 |-----|-----|-----|
-| userName | String | ニックネーム。 |
-| avatarURL | String | プロファイル写真URL。 |
-| callback | ActionCallback | 個人情報設定のコールバック、成功時のcodeは0です。 |
+| userName  | String         | ニックネーム。                              |
+| avatarURL | String         | プロフィール画像のアドレス。                          |
+| callback | ActionCallback | 個人情報設定のコールバック。成功時のcodeは0です。 |
 
    
 
@@ -247,7 +247,7 @@ public abstract void setSelfProfile(String userName, String avatarURL, TRTCMeeti
 ## ミーティングルームに関するインターフェース関数
 ### createMeeting
 
-ミーティングの作成（キャスターのコール）。
+ミーティングの作成（キャスターの呼び出し）。
 ```java
 public abstract void createMeeting(int roomId, TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -256,11 +256,11 @@ public abstract void createMeeting(int roomId, TRTCMeetingCallback.ActionCallbac
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| roomId | int | ミーティングルームIDは、ご自身でアサインし、統一管理する必要があります。 |
-| callback | ActionCallback | ルームの新規作成結果のコールバック。成功時に code は0になります。 |
+| roomId | int | ミーティングルームIDは、ご自身でアサインし、一元管理する必要があります。 |
+| callback | ActionCallback | ルームの作成結果のコールバック。成功時にcodeは0になります。 |
 
 キャスターの通常の呼び出しフローは以下のとおりです。 
-1. 【キャスター】`createMeeting()`を呼び出し、ミーティングを作成します。ミーティングルームの成功の有無が、 ActionCallbackでキャスターに通知されます。
+1. 【キャスター】`createMeeting()`を呼び出し、ミーティングを作成します。ミーティングルーム作成の成功の有無が、 ActionCallbackでキャスターに通知されます。
 2. 【キャスター】`startCameraPreview()`を呼び出し、カメラのプレビューを起動します。この時美顔パラメータを調整できます。 
 3. 【キャスター】`startMicrophone()`を呼び出し、マイクキャプチャを起動します。
 
@@ -268,7 +268,7 @@ public abstract void createMeeting(int roomId, TRTCMeetingCallback.ActionCallbac
 
 ### destroyMeeting
 
-ミーティングルームを廃棄します（キャスターがコール）。キャスターは、ミーティング作成後、この関数を呼び出してミーティングを廃棄できます。
+ミーティングルームを破棄します（キャスターが呼び出し）。キャスターは、ミーティング作成後、この関数を呼び出してミーティングを破棄できます。
 ```java
 public abstract void destroyMeeting(int roomId, TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -277,13 +277,13 @@ public abstract void destroyMeeting(int roomId, TRTCMeetingCallback.ActionCallba
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| roomId | int | ミーティングルームIDは、ご自身でアサインし、統一管理する必要があります。 |
-| callback | ActionCallback | ルームの廃棄結果のコールバック。成功時に code は0になります。                                  |
-   
+| roomId | int | ミーティングルームIDは、ご自身でアサインし、一元管理する必要があります。 |
+| callback | ActionCallback | ルームの破棄結果のコールバック。成功時にcodeは0になります。 |
+
 
 ### enterMeeting
 
-ミーティングに参加します（参加者がコール）。
+ミーティングに参加します（参加者が呼び出し）。
 ```java
 public abstract void enterMeeting(int roomId, TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -293,7 +293,7 @@ public abstract void enterMeeting(int roomId, TRTCMeetingCallback.ActionCallback
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | roomId | int | ミーティングルームID。 |
-| callback | ActionCallback | 入室結果のコールバック。成功時に code は0になります。 |
+| callback | ActionCallback | 入室結果のコールバック。成功時にcodeは0になります。 |
 
 
 参加者がミーティングに参加する通常の呼び出しフローは以下のとおりです。 
@@ -304,7 +304,7 @@ public abstract void enterMeeting(int roomId, TRTCMeetingCallback.ActionCallback
 
 ### leaveMeeting
 
-ミーティングから退出します（参加者がコール）。
+ミーティングから退出します（参加者が呼び出し）。
 ```java
 public abstract void leaveMeeting(TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -313,9 +313,9 @@ public abstract void leaveMeeting(TRTCMeetingCallback.ActionCallback callback);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| callback | ActionCallback | 退室結果のコールバック。成功時に code は0になります。 |
+| callback | ActionCallback | 退室結果のコールバック。成功時にcodeは0になります。 |
 
-   
+
 ## リモートユーザーに関するインターフェース
 
 ### getUserInfoList
@@ -332,7 +332,7 @@ public abstract void getUserInfoList(TRTCMeetingCallback.UserListCallback userLi
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | userListCallback | UserListCallback | ユーザーの詳細情報のコールバック。 |
-   
+
 
 ### getUserInfo
 
@@ -345,7 +345,7 @@ public abstract void getUserInfo(String userId, TRTCMeetingCallback.UserListCall
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| userId | String | ユーザーID|
+| userId | String | ユーザーID。|
 | userListCallback | UserListCallback | ユーザーの詳細情報のコールバック。 |
 
 
@@ -360,13 +360,13 @@ public abstract void startRemoteView(String userId, TXCloudVideoView view, final
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| userId | String | 再生が必要なユーザーのID|
-| view | TXCloudVideoView | ビデオ画像をロードするview ウィジェット。|
+| userId | String | 再生が必要なユーザーのID。|
+| view | TXCloudVideoView | ビデオ画像をロードするviewウィジェット。|
 | callback | ActionCallback | 操作コールバック。|
 
 ### stopRemoteView
 
-リモートビデオ画面の再生を停止します。`onUserVideoAvailable()`がfalseがfalseのコールバック時、このインターフェースを呼び出す必要があります。
+リモートビデオ画面の再生を停止します。`onUserVideoAvailable()`がfalseのコールバックの時、このインターフェースを呼び出します。
 ```java
 public abstract void stopRemoteView(String userId, final TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -389,9 +389,9 @@ public abstract void setRemoteViewFillMode(String userId, int fillMode);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| userId | String | ユーザーID|
-| fillMode | int  | FILLまたはFITモード。デフォルト値：フィル（FILL） 詳細は [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab4197bc2efb62b471b49f926bab9352f) をご参照ください。|
-   
+| userId | String | ユーザーID。|
+| fillMode | int  | FILLまたはFITモード。デフォルト値：フィル（FILL）。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ab4197bc2efb62b471b49f926bab9352f)をご参照ください。|
+
 
 
 ### setRemoteViewRotation
@@ -403,11 +403,11 @@ public abstract void setRemoteViewRotation(String userId, int rotation);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ   | タイプ   | 意味                            |
 |-----|-----|-----|
 | userId | String | ユーザーID。 |
-| rotation | int  | 時計回りの回転角度。詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a87fd1307871debc7c051de4878eb6d69)をご参照ください。 |
-   
+| rotation | int  | 時計回りの回転角度。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a87fd1307871debc7c051de4878eb6d69)をご参照ください。 |
+
 
 
 ### muteRemoteAudio
@@ -419,10 +419,10 @@ public abstract void muteRemoteAudio(String userId, boolean mute);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ   | タイプ   | 意味                            |
 |-----|-----|-----|
 | userId | String | ユーザーID。 |
-| mute | boolean | true：ミュートオン；false：ミュートオフ。|
+| mute | boolean | true：ミュート起動、false：ミュート停止。|
 
    
 
@@ -435,15 +435,15 @@ public abstract void muteRemoteVideoStream(String userId, boolean mute);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ   | タイプ   | 意味                            |
 |-----|-----|-----|
 | userId | String | ユーザーID。 |
 | mute | boolean | true：非表示；false：非表示の解除。|
 
-   
-      
 
-## ローカルビデオ操作のインターフェース
+​      
+
+## ローカルのビデオ操作インターフェース
 ### startCameraPreview
 
 ローカルビデオのプレビュー画面を立ち上げます。
@@ -471,7 +471,7 @@ public abstract void stopCameraPreview();
 
 ### switchCamera
 
-前後カメラを切り替えます
+フロント/リアカメラを切り替えます。
 ```java
 public abstract void switchCamera(boolean isFront);
 ```
@@ -480,7 +480,7 @@ public abstract void switchCamera(boolean isFront);
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | isFront | boolean | 前後カメラを切り替えます。true：フロントカメラ；false：リアカメラ。 |
-   
+
 
 ### setVideoResolution
 
@@ -494,7 +494,7 @@ public abstract void setVideoResolution(int resolution);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| resolution | int | ビデオの解像度。詳細は、 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#aa3b72c532f3ffdf64c6aacab26be5f87)をご参照ください。 |
+| resolution | int | ビデオの解像度。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#aa3b72c532f3ffdf64c6aacab26be5f87)をご参照ください。 |
 
 
 
@@ -525,7 +525,7 @@ public abstract void setVideoBitrate(int bitrate);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| bitrate | int | ビットレート。SDKは、目標ビットレートに応じてエンコードを行い、ネットワークの状態が良くない場合のみ、ビデオのビットレートを動的に引き下げます。詳細は、[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html)をご参照ください。 |
+| bitrate | int | ビットレート。SDKは、目標ビットレートに応じてエンコードを行い、ネットワークの状態が良くない場合のみ、ビデオビットレートを動的に引き下げます。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html)をご参照ください。 |
 
 >? 【推奨する値】本TRTCVideoResolutionの各クラスに注記する最適ビットレートをご参照ください。これをもとにより高いレートに適宜調整することも可能です。例えば、TRTC_VIDEO_RESOLUTION_1280_720に対応する目標ビットレートが1200kbpsであるならば、設定を1500kbpsにし、より鮮明な画像を得ることができます。
 
@@ -542,20 +542,20 @@ public abstract void setLocalViewMirror(int type);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| type | int | ミラーモード。詳細は、[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa353b5cf5662c43252eb8e5132f041c1)をご参照ください。 |
+| type | int | イメージモード。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa353b5cf5662c43252eb8e5132f041c1)をご参照ください。 |
 
-## ローカル音声操作のインターフェース
+## ローカルのオーディオ操作インターフェース
 
 ### startMicrophone
 
-マイクの集音開始。
+マイクの集音開始
 ```java
 public abstract void startMicrophone();
 ```
 
 ### stopMicrophone
 
-マイクの集音停止。
+マイクの集音停止
 ```java
 public abstract void stopMicrophone();
 ```
@@ -571,12 +571,12 @@ public abstract void setAudioQuality(int quality);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| quality | int | 音質。詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
+| quality | int | 音質。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
 
 
 ### muteLocalAudio
 
-ローカルの音声のミュート／ミュート取り消し
+ローカルのオーディオのミュート/ミュート取り消し
 ```java
 public abstract void muteLocalAudio(boolean mute);
 ```
@@ -585,7 +585,7 @@ public abstract void muteLocalAudio(boolean mute);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| mute | boolean | ミュート／ミュート取り消し。詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
+| mute | boolean | ミュート/ミュート取り消し。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
 
 
 
@@ -606,7 +606,7 @@ public abstract void setSpeaker(boolean useSpeaker);
 
 ### setAudioCaptureVolume
 
-マイクの集音音量設定。
+マイクの集音音量設定
 ```java
 public abstract void setAudioCaptureVolume(int volume);
 ```
@@ -643,9 +643,9 @@ public abstract void startFileDumping(TRTCCloudDef.TRTCAudioRecordingParams trtc
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| trtcAudioRecordingParams | TRTCCloudDef.TRTCAudioRecordingParams | 録音パラメータ。詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams)をご参照ください。 |
+| trtcAudioRecordingParams | TRTCCloudDef.TRTCAudioRecordingParams | 録音パラメータ。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams)をご参照ください。 |
 
->? この方法で呼び出した後、 SDKは通話プロセスの中の全ての音声（ローカル音声、リモート音声、BGMなど）を１つのファイルにレコーディングします。ルームに参加しているか否かにかかわらず、このインターフェースを呼び出せば有効となります。exitMeeting を呼び出した時に録音中であれば、録音は自動的に停止します。
+>? この方法で呼び出した後、 SDKは通話プロセスの中のすべての音声（ローカル音声、リモート音声、BGMなど）を1つのファイルにレコーディングします。ルームに参加しているか否かにかかわらず、このインターフェースを呼び出せば有効となります。exitMeetingを呼び出した時に録音中であれば、録音は自動的に停止します。
 
 ### stopFileDumping
 
@@ -656,7 +656,7 @@ public abstract void stopFileDumping();
 
 ### enableAudioEvaluation
 
-音量レベルリマインダを有効にします。
+音量レベルリマインダを有効にします
 ```java
 public abstract void enableAudioEvaluation(boolean enable);
 ```
@@ -667,7 +667,7 @@ public abstract void enableAudioEvaluation(boolean enable);
 |-----|-----|-----|
 | enable | boolean |  true オン false オフ。 |
 
->? 有効化すると、onUserVolumeUpdateの中で SDKの音量のボリュームに対する評価を取得できます。
+>? 有効化すると、onUserVolumeUpdateの中でSDKの音量のボリュームに対する評価を取得できます。
 
 ## スクリーンキャプチャのインターフェース
 ### startScreenCapture
@@ -681,10 +681,10 @@ public abstract void startScreenCapture(TRTCCloudDef.TRTCVideoEncParam encParams
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| encParams | TRTCCloudDef.TRTCVideoEncParam | 画面共有時のエンコードパラメータを設定します。上記の推奨設定を採用することをお勧めします。encParamsにnilを指定した場合、startScreenCaptureを呼び出す前のエンコードパラメータ設定が使用されます。 |
+| encParams | TRTCCloudDef.TRTCVideoEncParam | 画面共有時のエンコードパラメータを設定します。上記の推奨設定を採用することをお勧めします。encParamsにnullを指定した場合、startScreenCaptureを呼び出す前のエンコードパラメータ設定が使用されます。 |
 | screenShareParams | TRTCCloudDef.TRTCScreenShareParams | 画面共有の特殊なレイアウト設定については、その中のfloatingViewの設定を推奨します。一方で、Appがシステムから強制排除されるのを回避でき、もう一方で、ユーザーのプライバシー保護にも役立ちます。 |
 
->? 詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58)をご参照ください。
+>? 詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58)をご参照ください。 |
 
 ### stopScreenCapture
 
@@ -724,7 +724,7 @@ public abstract String getLiveBroadcastingURL();
 ## 美顔フィルタに関するインターフェース関数
 ### getBeautyManager
 
-美顔管理オブジェクト [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。
+美顔管理オブジェクト [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。
 ```java
 public abstract TXBeautyManager getBeautyManager();
 ```
@@ -747,16 +747,16 @@ public abstract void sendRoomTextMsg(String message, TRTCMeetingCallback.ActionC
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ     | タイプ           | 意味           |
 |-----|-----|-----|
 | message | String | テキストメッセージ。 |
-| callback | ActionCallback | 発信結果のコールバック。|
+| callback | ActionCallback | 送信結果のコールバック。|
 
    
 
 ### sendRoomCustomMsg
 
-カスタマイズしたテキストメッセージを発信します。
+カスタマイズしたテキストメッセージを送信します。
 ```java
 public abstract void sendRoomCustomMsg(String cmd, String message, TRTCMeetingCallback.ActionCallback callback);
 ```
@@ -765,19 +765,19 @@ public abstract void sendRoomCustomMsg(String cmd, String message, TRTCMeetingCa
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| cmd | String | コマンドワードは、開発者がカスタマイズ。主に異なるメッセージタイプを区分するのに使用。 |
+| cmd      | String         | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。 |
 | message | String | テキストメッセージ。 |
-| callback | ActionCallback | 発信結果のコールバック。|
+| callback | ActionCallback | 送信結果のコールバック。|
 
    
 
-## TRTCMeetingDelegate イベントコールバック
+## TRTCMeetingDelegateイベントコールバック
 
 ## 一般的なイベントコールバック
 ### onError
 
 エラーのコールバック。
->?SDK リカバリー不能なエラーは必ず監視し、状況に応じてユーザーに適切なインターフェースプロンプトを表示します。
+>? SDKのリカバリー不能なエラーは必ず監視し、状況に応じてユーザーに適切なインターフェースプロンプトを表示します。
 
 ```java
 void onError(int code, String message);
@@ -785,24 +785,24 @@ void onError(int code, String message);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ    | タイプ   | 意味       |
 |-----|-----|-----|
-| code | int | エラーコード。 |
-| message | String | エラーメッセージ。 |
-   
+| code   | int    | エラーコード。   |
+| message | String | エラー情報。 |
+
 
 
 ## ルームイベントのコールバック
 ### onRoomDestroy
 
-ルームが廃棄された時のコールバック。キャスターがルームを退出する時、ルーム内の全ユーザーがこの通知を受信します。
+ルームが破棄された時のコールバック。キャスターがルームを退出する時、ルーム内の全ユーザーがこの通知を受信します。
 ```java
 void onRoomDestroy(String roomId);
 ```
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+|パラメータ   | タイプ   | 意味      |
 |-----|-----|-----|
 | roomId | String | ルームID。 |
 
@@ -818,12 +818,10 @@ void onRoomDestroy(String roomId);
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | localQuality | TRTCCloudDef.TRTCQuality | アップストリームネットワークの品質。 |
-| remoteQuality | List<TRTCCloudDef.TRTCQuality> | ダウンストリームネットワークの品質。 |
+| remoteQuality | List&lt;TRTCCloudDef.TRTCQuality&gt; | ダウンストリームのネットワーク品質。 |
 
->? 詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b)をご参照ください。
+>? 詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b)をご参照ください。 |
 
-
-   
 
 ### onUserVolumeUpdate
 
@@ -834,11 +832,11 @@ void onUserVolumeUpdate(String userId, int volume);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ   | タイプ   | 意味                            |
 |-----|-----|-----|
 | userId | String | ユーザーID。 |
-| volume | int | 音量、値：0 - 100。 |
-   
+| volume | int | 音量の大きさ。値：0～100。 |
+
 
 
 ## 参加者入退室のイベントコールバック
@@ -854,7 +852,7 @@ void onUserEnterRoom(String userId);
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | userId | String | ルームの新たな参加者のユーザーID。 |
-   
+
 
 ### onUserLeaveRoom
 
@@ -868,19 +866,19 @@ void onUserLeaveRoom(String userId);
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | userId | String | 退室する参加者のユーザーID |
-   
-   
+
+
 ## 参加者の音声・ビデオのイベントコールバック
 ### onUserVideoAvailable
 
-参加者のカメラオン／オフの通知。
+参加者のカメラ・オン/オフの通知。
 ```java
 void onUserVideoAvailable(String userId, boolean available);
 ```
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ   | タイプ   | 意味                            |
 |-----|-----|-----|
 | userId | String | ユーザーID。 |
 | available | boolean | true：ユーザーがカメラをオンにします。false：ユーザーがカメラをオフにします。 |
@@ -889,14 +887,14 @@ void onUserVideoAvailable(String userId, boolean available);
 
 ### onUserAudioAvailable
 
-参加者のマイクオン／オフの通知。
+参加者のマイク・オン/オフの通知。
 ```java
 void onUserAudioAvailable(String userId, boolean available);
 ```
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ   | タイプ   | 意味                            |
 |-----|-----|-----|
 | userId | String | ユーザーID。 |
 | available | boolean | true：ユーザーがマイクをオンにします。false：ユーザーがマイクをオフにします。 |
@@ -916,13 +914,13 @@ void onRecvRoomTextMsg(String message, TRTCMeetingDef.UserInfo userInfo);
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | message | String | テキストメッセージ。|
-| user | UserInfo | 発信者ユーザーの情報。|
+| userInfo | TRTCMeetingDef.UserInfo | 送信者のユーザー情報。|
 
    
 
 ### onRecvRoomCustomMsg
 
-カスタマイズメッセージの受信。
+カスタムメッセージの受信。
 ```java
 void onRecvRoomCustomMsg(String cmd, String message, TRTCMeetingDef.UserInfo userInfo);
 ```
@@ -931,9 +929,9 @@ void onRecvRoomCustomMsg(String cmd, String message, TRTCMeetingDef.UserInfo use
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| command | String | コマンドワードは、開発者がカスタマイズ。主に異なるメッセージタイプを区分するのに使用。|
+| cmd | String | コマンドワード。開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。|
 | message | String | テキストメッセージ。|
-| user | UserInfo | 送信者のユーザー情報。 |
+| userInfo | TRTCMeetingDef.UserInfo | 送信者のユーザー情報。 |
 
 
 ## スクリーンキャプチャのイベントコールバック
@@ -956,7 +954,7 @@ void onScreenCapturePaused();
 
 ### onScreenCaptureResumed
 
-スクリーンキャプチャ再生の通知。
+スクリーンキャプチャ再開の通知。
 
 ```java
 void onScreenCaptureResumed();
@@ -975,3 +973,8 @@ void onScreenCaptureStopped(int reason);
 | パラメータ   | タイプ | 意味                                               |
 | ------ | ---- | -------------------------------------------------- |
 | reason | int  | 停止の理由。0：ユーザーの自発的な停止。1：その他アプリケーションに占有されたことによる停止。 |
+
+
+
+
+
