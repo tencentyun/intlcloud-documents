@@ -197,5 +197,7 @@ If you configure the offline push feature and the `desc` parameter, custom messa
 
 ### 2. How do I search for rich media messages?
 Rich media messages include file, image, voice, and video messages.
-For file messages, you can set the `fileName` parameter as the searched content when creating messages. If `fileName` is not set, the system gets the filename from `filePath` and saves it to both the local device and the server.
-For image, voice, and video messages, the system currently gets the filename only from `filePath` and saves only to the local device but not the server. This will be optimized in later versions, and the filename obtained from `filePath` will also be saved to the server.
+For file messages, the screen usually displays the filename. Therefore, you can set the `fileName` parameter as the searched content when creating messages. If `fileName` is not set, the system gets the filename from `filePath` and saves it to the local storage and the server.
+For image, voice, and video messages, the screen usually displays the thumbnail or duration. In this case, you can specify the message type to search by type, but cannot search by keywords.
+
+
