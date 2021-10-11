@@ -12,10 +12,10 @@
 #### 准备个人密钥
 
  1. 登录访问管理控制台 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面。
- 2. 单击【显示】即可获取 SecretKey。
+ 2. 单击**显示**即可获取 SecretKey。
 
 
-> ?如未创建密钥，请单击【新建密钥】创建密钥。
+> ?如未创建密钥，请单击**新建密钥**创建密钥。
 
 #### 准备告警策略类型
  通过 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39319" tag="API">查询所有名字空间</dx-tag-link> 可以查询到所有策略类型。步骤如下：
@@ -47,7 +47,7 @@
 	</tr>
 </table>
 
-3. 单击【在线调用】>【发送请求】，获取响应结果。返回结果中 Response.QceNamespacesNew.N.Id 即创建告警策略需要的 Namespace。
+3. 单击**在线调用**>**发送请求**，获取响应结果。返回结果中 Response.QceNamespacesNew.N.Id 即创建告警策略需要的 Namespace。
 
 
   >! 此处 Namespace 为告警策略类型，与拉取监控数据时的云产品 Namespace 不同。
@@ -83,7 +83,7 @@
 		<td>填写“准备告警策略类型”步骤获取的告警策略类型，即返回结果中的 Response.QceNamespacesNew.N.Id</td>
 	</tr>
 </table>
-2. 单击右侧【在线调用】>【发送请求】，获取响应结果。返回结果中 Response.Metrics.N 即该策略类型下的所有告警指标。
+2. 单击右侧**在线调用**>**发送请求**，获取响应结果。返回结果中 Response.Metrics.N 即该策略类型下的所有告警指标。
 
 #### 准备事件列表
 通过 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39324" tag="API">查询告警事件列表</dx-tag-link> 可以查询到策略类型下的所有告警指标。
@@ -113,7 +113,7 @@
 	</tr>
 </table>
 
-2. 单击【在线调用】>【发送请求】，获取响应结果。返回结果 Response.Events.N.EventName 即告警策略需要的 EventName。
+2. 单击**在线调用**>**发送请求**，获取响应结果。返回结果 Response.Events.N.EventName 即告警策略需要的 EventName。
 
 
 ## 实践步骤
@@ -126,7 +126,7 @@
 
 1. 登录[ API Explorer 在线调试控制台](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=CreateAlarmPolicy&SignVersion=)。
 2. 将 [准备好的个人密钥](#preparationsteps) 对应复制到对应的 SecretId、SecretKey 文本框。
-3. 在【输入参数】配置项找到 Region，选择相关地域。
+3. 在**输入参数**配置项找到 Region，选择相关地域。
 4. 在 Module 中填写“monitor”，PolicyName 中填写策略名称（策略名称由您自定义），MonitorType 中填写“MT_QCE”。
 5. 在 Namespace 中填写上述 [准备告警策略类型](#preparationsteps) 步骤中获取的告警策略类型。例如，云服务器-基础监控告警策略类型为 cvm_device。
 6. 在云服务器-基础监控场景下 Remark、Enable 为选填，ProjectId 为必填。
@@ -156,7 +156,7 @@
 </tbody></table>
 8. 如需触发事件告警，需要填 EventCondition 参数。在 EventCondition 下，**仅需要**在 Rules.N.MetricName 中填写 <a href="#preparationsteps">准备事件列表</a> 步骤获得的 **EventName**，其他参数可不填。
 9. 在 NoticeIds.N 填写告警通知模板 Id ，例如 notice-qvq836vc。可通过 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39300" tag="API">查询通知模板列表</dx-tag-link> 获得。
-10. 填写完以上参数后，单击【在线调用】>【发送请求】，如下图为成功创建云服务器—基础监控告警策略。
+10. 填写完以上参数后，单击**在线调用**>**发送请求**，如下图为成功创建云服务器—基础监控告警策略。
 
 11. 创建成功后，即可在云监控控制台 [告警策略](https://console.cloud.tencent.com/monitor/alarm2/policy) 页面查看该告警策略。
 
@@ -167,7 +167,7 @@
 
 1. 登录 [API Explorer 在线调试控制台](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=BindingPolicyObject&SignVersion=)。
 2. 将 [准备好的个人密钥](#spreparationsteps) 对应复制到对应的 SecretId、SecretKey 文本框。
-3. 在【输入参数】配置项找到 Region，选择相关地域。
+3. 在**输入参数**配置项找到 Region，选择相关地域。
 4. 在 Module 中填写“monitor”。
 5. 在 GroupId 中填写0。
 6. InstanceGroupId 和 Dimensions  选一项填写，说明如下：
@@ -194,7 +194,7 @@
 </tr>
 </tbody></table>
 7. 在 PolicyId 中填写 [创建告警策略](#createalarm) 步骤返回的 PolicyId（Response.PolicyId）。例如 policy-zg2sk27j。
-8. 填写完以上参数后，单击【在线调用】>【发送请求】，如下图即成功绑定告警策略。
+8. 填写完以上参数后，单击**在线调用**>**发送请求**，如下图即成功绑定告警策略。
 
 9. 创建成功后， 即可在云监控控制台 [告警策略](https://console.cloud.tencent.com/monitor/alarm2/policy) 页面查看对应告警策略关联实例数量。
 
