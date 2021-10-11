@@ -146,7 +146,7 @@ The seq of the returned messages is less than or equal to the `ReqMsgNumber` of 
 | ErrorInfo | String | Error information |
 | ErrorCode | Integer | Error code. `0`: successful. Other values: failed. |
 | `groupID` | `String` | The group ID in the request |
-| IsFinished | Integer | Whether all the requested messages are returned.<li>If not all requested messages are returned because the messages are too long or the number of messages is greater than 20, the value of this field is `0`.</li><li>If the requested messages are too long or the number of messages is greater than 20 and all the messages have expired, the value of this field is `2`.</li> |
+| IsFinished | Integer | Whether all the requested messages are returned.<li>If all the requested messages are returned, the value of this field is `1`.</li><li>If not all requested messages are returned because the messages are too long or the number of messages is greater than 20, the value of this field is `0`.</li><li>If the requested messages are too long or the number of messages is greater than 20 and all the messages have expired, the value of this field is `2`.</li> |
 | MsgList | Array | A list of returned messages |
 | From_Account | String | The UserID of the message sender |
 | IsPlaceMsg | Integer | Whether a message is empty. If the message has been deleted or expired, `MsgBody` is empty and the value of this field is `1`. If the message has been recalled, the value of this field is `2`. |
