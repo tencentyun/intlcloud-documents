@@ -11,13 +11,13 @@
 
 ## 下载并配置 GooseFS
 
-1. 从官方仓库下载 GooseFS 安装包到本地。官方仓库下载链接：goosefs-1.0.0-bin.tar.gz。
+1. 从官方仓库下载 GooseFS 安装包到本地。官方仓库下载链接：[goosefs-1.1.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.1.0/release/goosefs-1.1.0-bin.tar.gz)。
 2. 执行如下命令，对安装包进行解压。
 ```shell
-tar -zxvf goosefs-1.0.0-bin.tar.gz
-cd goosefs-1.0.0
+tar -zxvf goosefs-1.1.0-bin.tar.gz
+cd goosefs-1.1.0
 ```
- 解压后，得到 goosefs-1.0.0，即 GooseFS 的主目录。下文将以 `${GOOSEFS_HOME}` 代指该目录的绝对路径。
+ 解压后，得到 goosefs-1.1.0，即 GooseFS 的主目录。下文将以 `${GOOSEFS_HOME}` 代指该目录的绝对路径。
 3. 在 `${GOOSEFS_HOME}/conf` 的目录下，创建 `conf/goosefs-site.properties` 的配置文件，可以使用内置的配置模板：
 ```shell
 $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
@@ -112,16 +112,16 @@ $ ./bin/goosefs-start.sh local SudoMount
    <name>fs.ofs.user.appid</name>
    <value>1250000000</value>
 </property>
+
 ```
 
 >?
 >- COSN 的完整配置可参考：[Hadoop 工具](https://intl.cloud.tencent.com/document/product/436/6884)。
-
+>- CHDFS 的完整配置可参考：[ 挂载 CHDFS](https://intl.cloud.tencent.com/document/product/1106/41965)。
 
 下面将介绍一下如何通过创建 Namespace 来挂载 COS 或 CHDFS 的方法和步骤。
 
 1. 创建一个命名空间 namespace 并挂载 COS：
-
 ```shell
 $ goosefs ns create myNamespace cosn://bucketName-1250000000/3TB \
 --secret fs.cosn.userinfo.secretId=AKXXXXXXXXXXX \
@@ -139,14 +139,12 @@ goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.
 --attribute fs.ofs.tmp.cache.dir=/tmp/chdfs
 ```
 2. 创建成功后，可以通过 `list` 命令列出集群中创建的所有 namespace：
-
 ```shell
 $ goosefs ns list
 namespace	      mountPoint	       ufsPath                     	 creationTime                wPolicy      	rPolicy	     TTL	   ttlAction
 myNamespace    /myNamespace   cosn://bucketName-125xxxxxx/3TB  03-11-2021 11:43:06:239      CACHE_THROUGH   CACHE        -1      DELETE
 myNamespaceCHDFS /myNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/3TB 03-11-2021 11:45:12:336 CACHE_THROUGH   CACHE  -1  DELETE
 ```
-
 3. 执行如下命令，指定 namespace 的详细信息。
 ```shell
 $ goosefs ns stat myNamespace
@@ -180,12 +178,10 @@ NamespaceStatus{name=myNamespace, path=/myNamespace, ttlTime=-1, ttlAction=DELET
 ## 使用 GooseFS 预热 Table 中的数据
 
 1. GooseFS 支持将 Hive Table 中的数据预热到  GooseFS 中，在预热之前需要先将相关的 DB 关联到 GooseFS 上，相关命令如下：
-
 ```shell
 $ goosefs table attachdb --db test_db hive thrift://
 172.16.16.22:7004 test_for_demo
 ```
-
 >! 命令中的 thrift 需要填写实际的 Hive Metastore 的地址。
 >
 2. 添加完 DB 后，可以通过 ls 命令查看当前关联的 DB 和 Table 的信息：
@@ -221,7 +217,6 @@ PARTITION LIST (
    }
 )
 ```
-
 3. 通过 load 命令预热 Table 中的数据：
 ```shell
 $ goosefs table load test_db web_page
@@ -240,7 +235,6 @@ $ goosefs fs
 $ goosefs fs ls /
 ```
 3. 可以通过 `copyFromLocal` 命令将数据从本地拷贝到 GooseFS 中：
-
 ```shell
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
@@ -265,12 +259,10 @@ persisted file /LICENSE with size 26847
 ## 使用 GooseFS 加速文件上传和下载操作
 
 1. 检查文件存储状态，确认文件是否已被缓存。文件状态 `PERSISTED` 代表文件已在内存中，文件状态 `NOT_PERSISTED` 则代表文件不在内存中：
-
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
-
 2. 统计文件中有多少单词 “tencent”，并计算操作耗时：
 ```shell
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
@@ -280,7 +272,6 @@ user	0m7.557s
 sys	0m1.181s
 ```
 3. 将该数据缓存到内存中可以有效提升查询速度，详细示例如下：
-
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 
@@ -291,7 +282,6 @@ real	0m1.917s
 user	0m2.306s
 sys	 0m0.243s
 ```
-
  可见，系统处理延迟从1.181s减少到了0.243s，得到了10倍的提升。
 
 ## 关闭 GooseFS

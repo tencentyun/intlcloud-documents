@@ -54,3 +54,4 @@ await transferManager.DownloadAsync(downloadTask);
 ```
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs) 查看。
+

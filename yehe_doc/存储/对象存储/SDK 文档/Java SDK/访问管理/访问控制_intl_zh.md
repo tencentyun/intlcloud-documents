@@ -45,6 +45,7 @@ String bucketName = "examplebucket-1250000000";
 // 设置自定义 ACL
 AccessControlList acl = new AccessControlList();
 Owner owner = new Owner();
+// uin 可以在控制台查看到： https://console.cloud.tencent.com/developer
 owner.setId("qcs::cam::uin/100000000001:uin/100000000001");
 acl.setOwner(owner);
 String id = "qcs::cam::uin/100000000001:uin/100000000001";
@@ -178,6 +179,7 @@ public void setObjectAcl(SetObjectAclRequest setObjectAclRequest)
 [//]: # (.cssg-snippet-put-object-acl)
 ```java
 // 权限信息中身份信息有格式要求，对于主账号与子账号的范式如下：
+// uin 可以在控制台查看到： https://console.cloud.tencent.com/developer
 // 下面的 root_uin 和 sub_uin 都必须是有效的 UIN 号
 // 主账号 qcs::cam::uin/<root_uin>:uin/<root_uin> 表示授予主账号 root_uin 这个用户（即前后填的 uin 一样）
 //  如 qcs::cam::uin/100000000001:uin/100000000001
@@ -218,7 +220,7 @@ cosClient.setObjectAcl(bucketName, key, CannedAccessControlList.PublicReadWrite)
 
 Request 成员说明：
 
-| Request 成员 | 设置方法          | 描述                                                         | 类型                    |
+| Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 描述                                                         | 类型                    |
 | ------------ | ------------------- | ------------------------------------------------------------ | ----------------------- |
 | bucketName   | 构造函数或 set 方法 | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | String                  |
 | key          | 构造函数或 set 方法 | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String                  |

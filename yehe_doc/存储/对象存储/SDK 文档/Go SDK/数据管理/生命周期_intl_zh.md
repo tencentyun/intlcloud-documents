@@ -20,7 +20,7 @@ func (s *BucketService) PutLifecycle(ctx context.Context, opt *BucketPutLifecycl
 ```
 
 #### 请求示例
-[//]: # ".cssg-snippet-put-bucket-lifecycle"
+[//]: # (.cssg-snippet-put-bucket-lifecycle)
 ```go
 lc := &cos.BucketPutLifecycleOptions{
     Rules: []cos.BucketLifecycleRule{
@@ -79,7 +79,7 @@ type BucketLifecycleAbortIncompleteMultipartUpload struct {
 | 参数名称                       | 参数描述                                                     | 类型   | 是否必填 |
 | ------------------------------ | ------------------------------------------------------------ | ------ | ---- |
 | BucketLifecycleRule            | 设置对应的规则，包括 ID，Filter，Status，Expiration，Transition，AbortIncompleteMultipartUpload | List   | 是   |
-| ID                             | 设置规则的 ID                                                | String | 否   |
+| ID                             | 设置规则的 ID, 用于唯一标识生命周期规则，多条规则 ID 需唯一  | String | 否   |
 | Status                         | 设置 Rule 是否启用，可选值为 Enabled 或者 Disabled           | String | 是   |
 | Filter                         | 用于描述规则影响的 Object 集合，如需设置 Bucket 中的所有 objects，请设置 Prefix 为空 | Struct | 是   |
 | Transition                     | 设置 Object 转换存储类型规则，可以指定天数 Days 或者指定日期 Date，Date 的格式必须是 GMT ISO 8601。StorageClass 可选 Standard_IA，Archive，可以同时设置多条此类规则 | Struct | 否   |
@@ -99,7 +99,7 @@ func (s *BucketService) GetLifecycle(ctx context.Context) (*BucketGetLifecycleRe
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-get-bucket-lifecycle"
+[//]: # (.cssg-snippet-get-bucket-lifecycle)
 ```go
 _, _, err := client.Bucket.GetLifecycle(context.Background())
 if err != nil {
@@ -140,7 +140,7 @@ type BucketLifecycleAbortIncompleteMultipartUpload struct {
 | 参数名称                       | 参数描述                                                     | 类型   | 是否必填 |
 | ------------------------------ | ------------------------------------------------------------ | ------ | ---- |
 | BucketLifecycleRule            | 设置对应的规则，包括 ID，Filter，Status，Expiration，Transition，AbortIncompleteMultipartUpload | List   | 是   |
-| ID                             | 设置规则的 ID                                                | String | 否   |
+| ID                             | 规则的唯一 ID                                                | String | 否   |
 | Status                         | 设置 Rule 是否启用，可选值为 Enabled 或者 Disabled           | String | 是   |
 | Filter                         | 用于描述规则影响的 Object 集合，如需设置 Bucket 中的所有 objects，请设置 Prefix 为空 | Struct | 是   |
 | Transition                     | 设置 Object 转换存储类型规则，可以指定天数 Days 或者指定日期 Date，Date 的格式必须是 GMT ISO 8601。StorageClass 可选 Standard_IA，Archive，可以同时设置多条此类规则 | struct | 否   |
@@ -162,7 +162,7 @@ func (s *BucketService) DeleteLifecycle(ctx context.Context) (*Response, error)
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-delete-bucket-lifecycle"
+[//]: # (.cssg-snippet-delete-bucket-lifecycle)
 ```go
 _, err := client.Bucket.DeleteLifecycle(context.Background())
 if err != nil {

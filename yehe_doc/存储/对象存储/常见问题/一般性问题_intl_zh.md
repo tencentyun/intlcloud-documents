@@ -3,7 +3,7 @@
 
 用户可通过云服务器实例或互联网使用 Web API 接口存储和检索数据。在 COS 上的数据，用户使用指定域名的 URL 地址，通过 HTTP/HTTPS 协议存储和检索每个独立的数据对象内容。
 
-有关腾讯云对象存储的更多信息，请参见  [COS 产品文档](https://intl.cloud.tencent.com/document/product/436) 。
+有关腾讯云对象存储的更多信息，请参见  [COS 产品文档](https://intl.cloud.tencent.com/document/product/436)。
 
 
 ### 对象存储和文件存储的区别是什么？
@@ -74,7 +74,7 @@
 
 ### COS 支持图片处理功能吗？
 
-COS 控制台集成了数据万象，可以对图片进行缩放、裁剪、添加水印等操作，详情请参见 [开启图片处理](https://intl.cloud.tencent.com/document/product/436/35278) 文档。
+COS 控制台集成了数据万象，可以对图片进行缩放、裁剪、添加水印等操作，详情请参见 [开启图片处理](https://intl.cloud.tencent.com/document/product/436/36569) 文档。
 
 
 
@@ -92,21 +92,32 @@ COS 控制台集成了数据万象，可以对图片进行缩放、裁剪、添�
 
 ### COS 支持文件上传后自动解压吗？
 
-对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持文件解压，但您可以结合 SCF 服务来实现解压缩功能，详情请参见 [文件解压缩](https://intl.cloud.tencent.com/document/product/436/35663)。
+对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持文件解压，但您可以结合 SCF 服务来实现解压缩功能，详情请参见 [文件解压缩](https://intl.cloud.tencent.com/document/product/436/35663) 。
 
 ### COS 有哪些规格和限制？
 
 详情请参见 [规格与限制](https://intl.cloud.tencent.com/document/product/436/14518) 文档。
 
 
+### 创建存储桶时，对于存储桶名称长度有什么限制？
+
+在2021年9月份，COS 控制台进行了版本更新，重新调整了存储桶名称长度的限制策略。新的限制策略是存储桶名称的最大允许字符受到**地域简称**和 **APPID** 的字符数影响，组成的完整请求域名字符数总计最多60个字符。用户已创建的长名称存储桶不会影响业务，无需调整。
+
+
+### COS 存在历史版本和当前版本，应当使用哪一个？
+
+COS 的历史版本和当前版本在实现上存在较大差异，相较于历史版本，当前版本具备更丰富的功能，且历史版本将不再新增特性，**推荐您使用当前版本** 以获得更丰富的体验。如您为历史版本的用户，可 [联系我们](https://intl.cloud.tencent.com/contact-sales) 为您开通当前版本。
+
+当前版本和历史版本所使用的 API 和 SDK 接口均存在差异，历史版本使用 JSON API，当前版本使用 XML API，两种 API 底层架构相同，数据互通，可以交叉使用，但是接口不兼容，域名不一致。
+
 ### 如何监控错误码信息？
 
-您可以使用 [云监控](https://console.cloud.tencent.com/monitor/product/COS) 获取不同类型的 HTTP 返回码信息，详细内容可参见 [监控与报警](https://intl.cloud.tencent.com/document/product/436/31649) 文档。有关云监控的使用和相关数据获取方式，可参见云监控的 [控制台指南](https://intl.cloud.tencent.com/document/product/248/6212) 或 [API 文档](https://intl.cloud.tencent.com/document/product/248/13655)。  
+您可以使用 [云监控](https://console.cloud.tencent.com/monitor/product/COS) 获取不同类型的 HTTP 返回码信息，详细内容可参见 [监控与报警](https://intl.cloud.tencent.com/document/product/436/31649) 文档。有关云监控的使用和相关数据获取方式，可参见云监控的 [控制台指南](https://intl.cloud.tencent.com/document/product/248/13517) 或 [API 文档](https://intl.cloud.tencent.com/document/product/248/37269)。  
 
 
 ### COS 可用性如何计算？
 COS 提供以下可用性计算示例，供您参考：
-小明使用腾讯云对象存储服务以从事其电商业务，假设其业务在2018年11月1日至11月30日这一服务月度中总共消耗了100美元人民币服务费用，且在该服务月度中分别出现了两次不可用的情况，两次不可用情况的记录如下表所示：
+小明使用腾讯云对象存储服务以从事其电商业务，假设其业务在2018年11月1日至11月30日这一服务月度中总共消耗了100美元服务费用，且在该服务月度中分别出现了两次不可用的情况，两次不可用情况的记录如下表所示：
 
 <table>
    <tr>

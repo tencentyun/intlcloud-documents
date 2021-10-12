@@ -10,7 +10,7 @@
 
 ### 假如 SecretId、SecretKey 等密钥相关信息泄露了，该如何处理？
 
-用户可删除已泄露的密钥，并新建一个密钥。详情请参见 [访问密钥](https://intl.cloud.tencent.com/document/product/598/34228)。
+用户可删除已泄露的密钥，并新建一个密钥。详情请参见 [访问密钥](https://intl.cloud.tencent.com/document/product/598/34227)。
 
 ### 如何对私有读写的文件生成具有时效性的访问链接？
 
@@ -21,6 +21,7 @@
 ### COS 如何授予子账号访问指定文件夹的权限？
 
 您可以参见 [设置文件夹权限](https://intl.cloud.tencent.com/document/product/436/35261) 为子账号授予指定文件夹的访问权限。如果为子账号进行更高级的授权，可参考文档 [权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
+
 
 
 ### COS 报错 AccessDenied，该如何处理？
@@ -38,6 +39,16 @@ AccessDenied 一般是由于未授权，缺少权限导致的报错。请按照�
 
 >?我们不建议使用文件级别的 ACL 或 Policy。建议您在调用 API 或 SDK 时，若不需要对文件进行特别的 ACL 控制时，请将 ACL 相关参数（如 x-cos-acl、ACL 等）置空，保持继承存储桶权限。
 
+### 创建存储桶报错，权限设置不规范怎么办？
+
+此情况是存储桶设置了公有读私有写或者公有读写权限，该权限会占用主账户的 ACL 规则数量。由于主账号的 ACL 规则数量达到了上限，且无法调整数量上限，所以会报错。
+
+以下提供两种解决方案供您参考：
+
+方案一：您可以把存储桶的访问权限修改为私有读写，详情请参见 [设置存储桶访问权限](https://intl.cloud.tencent.com/document/product/436/13315)。
+方案二：您可在【Policy 权限设置】中【添加策略】，设置相应的访问权限，详情请参见 [添加存储桶策略](https://intl.cloud.tencent.com/document/product/436/30927)。
+
+
 ### 如果使用签名链接访问公有读的文件，签名时间过期了，是否可以访问到文件？
 
 如果您使用过期的签名链接访问公有读文件，那么 COS 会优先校验权限情况，判断链接过期后会拒绝访问。
@@ -49,7 +60,6 @@ AccessDenied 一般是由于未授权，缺少权限导致的报错。请按照�
 1. 请检查您的以下配置信息是否正确：BucketName、APPID、Region、SecretId、SecretKey 等。
 2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。授权操作请参见  [访问管理权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
 3. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置，详情请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
-
 
 
 ### COS 如何限制他人下载文件到本地？

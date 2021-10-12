@@ -1,6 +1,6 @@
 ## 操作场景
 本文以标准登录方式（WebShell）登录实例为例，为您详细介绍如何在 Linux 客户端上使用 CFS Turbo 文件系统。
-更多登录 Linux 实例的方式请参见 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)。
+更多登录 Linux 实例的方式请参见 [登录 Linux 实例](https://intl.cloud.tencent.com/zh/document/product/213/32493)。
 
 ## 前提条件
 
@@ -46,7 +46,7 @@ sudo ./cfs_turbo_client_setup
 ```
 uname -a
 ```
-6. 根据实例内核版本，依次执行相应命令，下载对应实例内核版本的两个安装包。
+2. 根据实例内核版本，依次执行相应命令，下载对应实例内核版本的两个安装包。
 >! 请确认如下列表中包含该实例内核版本。如果如下列表没有实例内核版本，请先进行升级再安装。
 >
 <span id="CVMKernelVersion"></span>
@@ -133,20 +133,20 @@ yum install
 10. 在挂载点信息页签的“挂载命令”中，单击 <img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" />，复制所需命令。
 
 11. 切换至登录的实例，执行刚复制的挂载命令。
-通常情况下，建议使用第一条指令进行挂载。关于挂载指令的说明如下：
- - 如果您希望支持扩展属性且所有操作默认为同步执行（机器重启不会丢数据，但 IO 性能会稍有损耗），请复制和执行第一条命令。
+关于挂载指令的说明如下，请根据实际的业务情况使用合适的挂载指令：
+ - 如果您希望支持扩展属性且所有操作默认为同步执行（机器重启不会丢数据，但性能会有损耗），请复制和执行第如下命令。
  例如：
-```
+```shell
 sudo mount.lustre -o sync,user_xattrXXXXXXXXXXXXXXXXXXX
 ```
- - 如果您希望支持扩展属性且无需强制同步执行（机器重启有可能会丢少量尚缓存在内存中的数据，但 IO 性能好），请复制和执行第二条命令。
+ - 如果您希望支持扩展属性且无需强制同步执行（机器重启有可能会丢少量尚缓存在内存中的数据，但性能好），请复制和执行如下命令。
  例如：
-```
+```shell
 sudo mount.lustre -o user_xattrXXXXXXXXXXXXXXXXXXX
 ```
- - 如果您无需支持扩展属性且无需强制同步执行，请复制和执行第三条命令。
+ - 如果您无需支持扩展属性且无需强制同步执行（机器重启有可能会丢少量尚缓存在内存中的数据，但性能好），请复制和执行如下命令。
  例如：
-```
+```shell
 sudo mount.lustre XXXXXXXXXXXXXXXXXXX
 ```
 

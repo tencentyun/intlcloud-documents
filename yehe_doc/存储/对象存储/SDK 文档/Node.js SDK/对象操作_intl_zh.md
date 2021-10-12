@@ -218,6 +218,7 @@ cos.putObject({
     Key: 'exampleobject',              /* 必须 */
     StorageClass: 'STANDARD',
     Body: fs.createReadStream(filePath), // 上传文件对象
+    ContentLength: fs.statSync(filepath).size,  // 当Body为文件流时，必须传文件大小，否则onProgress不能返回正确的进度信息
     onProgress: function(progressData) {
         console.log(JSON.stringify(progressData));
     }
@@ -1286,7 +1287,7 @@ cos.uploadFile({
 
 #### 参数说明
 
-| 参数名 | 参数描述                                                     | 类型      | 是否必填 |
+| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型      | 是否必填 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String    | 是   |
 | Region                                                       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String    | 是   |
