@@ -7,6 +7,7 @@
 - **持久存储**：COS 提供稳定持久的存储服务，您可以以极低的成本将您的日志存放到 COS 实现持久化存储。当您的业务需要基于日志进行分析或者决策时，您可以通过 COS 随时随地获取任意时间段的日志。
 - **数据检索**：COS 提供 Select 功能，您可以使用该功能对存储在 COS 上的日志进行简单的检索和抽取工作。您能够结合日志的字段，帮助您检索所需的信息，减少数据下载流量。
 
+
 ## 日志投递方式
 
 您可以通过两种方式将腾讯云产品的日志存储在 COS 上：
@@ -19,14 +20,14 @@
 | 云产品名称          | 是否支持直接投递到 COS | 是否支持投递到 CLS     |
 | ------------------- | ---------------------- | ---------------------- |
 | 云审计 CA           | 是                     | 否                     |
-| 负载均衡 CLB        | 是                     | 是                     |
+| 负载均衡 CLB        | 否                     | 是                     |
 | 消息队列 CKafka     | 是                     | 否                     |
 | API 网关 APIGateway | 否                     | 是                     |
 | 无服务函数 SCF      | 否                     | 是                     |
 | 容器服务 TKE        | 否                     | 是                     |
 | 云直播 LVB          | 否                     | 是                     |
 | 云开发 TCB          | 否                     | 是，但不支持通过 CLS 投递到 COS |
-| 对象存储 COS        | 是                     | 否          |
+| 对象存储 COS        | 是                     |  支持申请开通白名单，请您加入 [技术支持微信群](https://intl.cloud.tencent.com/contact-sales) 联系我们开通白名单       |
 
 ### 直接投递日志到 COS
 
@@ -35,7 +36,6 @@
 | 云产品名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | 日志投递文档                                                 | 日志投递间隔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        | 日志投递路径                                                 |
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 |云审计 CA |[点此查阅](https://intl.cloud.tencent.com/document/product/1021/30338) | 10-15分钟 |  cloudaudit/customprefix/timestamp|
-| 负载均衡 CLB    | [点此查阅](https://intl.cloud.tencent.com/document/product/214) | 60分钟               | lb-id/timestamp                                              |
 | 消息队列 CKafka | [点此查阅](https://intl.cloud.tencent.com/document/product/597) | 5分钟 - 60分钟<br>可指定投递间隔 | instance id/topic id/timestamp                           |
 | 对象存储 COS    | [点此查阅](https://intl.cloud.tencent.com/document/product/436/17040) | 5分钟                | 路径前缀可自行指定，推荐设置可识别的路径，例如 cos_bucketname_access_log/timestamp |
 
@@ -49,7 +49,7 @@
 | -------------------- | ------------------------------------------------------------ |
 | API 网关 API Gateway | [点此查阅](https://intl.cloud.tencent.com/document/product/628/34636) |
 | 容器服务 TKE         | [点此查阅](https://intl.cloud.tencent.com/document/product/457/32419) |
-| 云直播 LVB           | - |
+| 云直播 LVB           | 点此查阅|
 
 CLS 投递到 COS 支持如下三种方式投递：
 
@@ -74,12 +74,12 @@ CLS 投递到 COS 支持如下三种方式投递：
 | 控制台         | [点此查阅](https://intl.cloud.tencent.com/document/product/436/13322) |
 | cosbrowser     | [点此查阅](https://intl.cloud.tencent.com/document/product/436/32565) |
 | coscmd         | [点此查阅](https://intl.cloud.tencent.com/document/product/436/10976) |
-| Android SDK    | [点此查阅](https://intl.cloud.tencent.com/document/product/436/31514) |
+| Android SDK    | [点此查阅](https://intl.cloud.tencent.com/document/product/436/37675) |
 | C SDK          | [点此查阅](https://intl.cloud.tencent.com/document/product/436/31518) |
 | C++ SDK        | [点此查阅](https://intl.cloud.tencent.com/document/product/436/31522) |
-| .NET SDK       | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30596) |
+| .NET SDK       | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30594) |
 | Go SDK         | [点此查阅](https://intl.cloud.tencent.com/document/product/436/31526) |
-| iOS SDK        | [点此查阅](https://intl.cloud.tencent.com/document/product/436/11280) |
+| iOS SDK        | [点此查阅](https://intl.cloud.tencent.com/document/product/436/37684) |
 | Java SDK       | [点此查阅](https://intl.cloud.tencent.com/document/product/436/31534) |
 | JavaScript SDK | [点此查阅](https://intl.cloud.tencent.com/document/product/436/31538) |
 | Node.js SDK    | [点此查阅](https://intl.cloud.tencent.com/document/product/436/31710) |

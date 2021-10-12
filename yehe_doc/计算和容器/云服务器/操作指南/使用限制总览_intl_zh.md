@@ -927,7 +927,7 @@
 
 <table>
 	<tr><th>限制类型</th><th>限制说明</th></tr>
-	<tr><td>弹性云盘能力</td><td>自2018年5月起，随云服务器一起购买的数据盘均为弹性云硬盘，支持从云服务器上卸载并重新挂载。 本功能在所有 <a href="https://cloud.tencent.com/document/api/213/15707">可用区</a> 均支持。</td></tr>
+	<tr><td>弹性云盘能力</td><td>自2018年5月起，随云服务器一起购买的数据盘均为弹性云硬盘，支持从云服务器上卸载并重新挂载。 本功能在所有 <a href="https://intl.cloud.tencent.com/zh/document/product/213/35071">可用区</a> 均支持。</td></tr>
 	<tr><td>云硬盘性能限制</td><td>I/O 性能同时生效。</br>例如，1TB的 SSD 云硬盘，最大随机 IOPS 能达到26,000，意味着读 IOPS 和写 IOPS 均可达到该值。同时，由于多个性能限制，该例中使用 block size 为4KB/8KB的 I/O 可达到 IOPS 最大值，但使用 block size 为16KB的 I/O 则无法达到 IOPS 最大值（吞吐已经达到了260MB/s的限制）。</td></tr>
 	<tr><td>单台云服务器可挂载弹性云硬盘数量</td><td>最多20块。</td></tr>
 	<tr><td>单地域下快照配额</td><td>64 + 地域内云硬盘数量 * 64（个）。</td></tr>

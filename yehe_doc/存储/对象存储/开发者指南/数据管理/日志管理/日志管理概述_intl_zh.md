@@ -1,10 +1,10 @@
 ## 简介
-日志管理功能够记录对于指定源存储桶的详细访问信息，并将这些信息以日志文件的形式保存在指定的存储桶中，以实现对存储桶更好的管理。
+日志管理功能能够记录对于指定源存储桶的详细访问信息，并将这些信息以日志文件的形式保存在指定的存储桶中，以实现对存储桶更好的管理。
 
 在目标存储桶中，日志记录路径为：
 
 ```shell
-目标存储桶/路径前缀{YYYY}/{MM}/{DD}/{time}_{random}_{index}.gz
+目标存储桶/路径前缀{YYYY}/{MM}/{DD}/{time}_{random}_{index}
 ```
 
 日志每5分钟生成一次，一条记录为一行，每条记录包含多个字段，字段之间以空格分割。需要注意的是，单个日志文件最大为256MB，如果您在这5分钟内产生的日志量超过256MB，那您的日志会被分割成多份日志文件。目前支持的日志字段如下：
@@ -29,7 +29,7 @@
 | 16       | resErrorCode    | 错误码                | NoSuchKey                               |
 | 17       | resErrorMsg     | 错误信息             | The specified key does not exist.                                      |
 | 18       | resBytesSent    | 返回字节数（Bytes）   | 197                                                                           |
-| 19       | resTotalTime    | 请求总耗时（毫秒，等于响应末字节的时间-请求首字节的时间） | 4295                                                                          |
+| 19       | resTotalTime    | 请求总耗时（毫秒，等于响应末字节的时间-请求首字节的时间） | 4295        |
 | 20       | logSourceType   | 日志源类型          | USER（用户访问请求），CDN（CDN 回源请求）                                                           |
 | 21       | storageClass    | 存储类型             | STANDARD，STANDARD_IA，ARCHIVE                                              |
 | 22       | accountId    | 存储桶所有者ID             | 100000000001                                              |
@@ -38,12 +38,12 @@
 | 25       | requestId    | 请求 ID             | NWQ1ZjY4MTBfMjZiMjU4NjRfOWI1N180NDBiYTY=      |
 | 26       | objectSize    | 对象大小（Bytes）             | 808，如果您使用分块上传，objectSize 字段只会在完成上传的时候显示，各个分块上传期间该字段显示`-` |
 | 27       | versionId    | 对象版本 ID             | 随机字符串                                              |
-| 28       | targetStorageClass    | 目标存储类型，发起复制操作的请求会记录该字段             | STANDARD，STANDARD_IA，ARCHIVE                                              |
-| 29       | referer    | 源站地址             | `*.example.com`或者111.111.111.1       |
+| 28       | targetStorageClass    | 目标存储类型，发起复制操作的请求会记录该字段             | STANDARD，STANDARD_IA，ARCHIVE        |
+| 29     | referer    | 请求的 HTTP referer             | `*.example.com`或者111.111.111.1       |
 | 30       | requestUri    | 请求 URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
 
 >!
-> - 目前 COS 的日志管理功能支持的地域包括北京、上海、广州、南京、重庆、成都、香港、新加坡、多伦多、硅谷、孟买。
+> - 目前 COS 的日志管理功能支持的地域包括北京、上海、广州、南京、重庆、成都、中国香港、新加坡、多伦多、硅谷、孟买。
 > - 日志管理功能要求源存储桶与目标存储桶必须在同一地域。
 > - 存放日志的目标存储桶可以是源存储桶本身，但不推荐。
 > - 目前只有 XML API 以及基于 XML API 实现的 SDK、工具等进行的请求访问存储桶时，才会记录日志。JSON API 以及基于 JSON API 实现的 SDK、工具等进行的访问，不会记录日志。
@@ -60,7 +60,7 @@
 3. 开启日志管理。
 
 #### 1. 创建日志角色
-创建日志角色，具体接口信息参见请 [CreateRole](https://intl.cloud.tencent.com/document/product/598/13886)。
+创建日志角色，具体接口信息参见请 [CreateRole](https://intl.cloud.tencent.com/document/product/598/33561)。
 其中，roleName 必须为：CLS_QcsRole。
 policyDocument 为：
 ```
@@ -76,7 +76,7 @@ policyDocument 为：
 }
 ```
 #### 2. 日志角色绑定权限
-角色权限绑定权限，具体接口信息参见 [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/13889)。
+角色权限绑定权限，具体接口信息参见 [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562)。
 其中，policyName 为：QcloudCOSAccessForCLSRole，roleName 为第1步中的 CLS_QcsRole，也可以使用创建 roleName 时返回的 roleID。
 
 #### 3. 开启日志管理
