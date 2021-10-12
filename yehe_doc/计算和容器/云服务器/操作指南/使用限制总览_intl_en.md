@@ -37,7 +37,7 @@ Based on CPU and memory configurations, the number of ENIs bound to a CVM differ
 >! The number of IP addresses bound to a single ENI indicates the maximum number allowed. The EIP quota is not provided based on this upper limit but based on EIP [use limits](https://intl.cloud.tencent.com/document/product/213/5733).
 
 <dx-tabs>
-::: Number of ENIs bound to a CVM instance
+::: Number\sof\sENIs\sbound\sto\sa\sCVM\sinstance
 <table >
    <tr >
     <th width="6%"  rowspan="2" style = "text-align:center;">Model</th>
@@ -459,7 +459,7 @@ Based on CPU and memory configurations, the number of ENIs bound to a CVM differ
    </tr>
   </table>
 :::
-::: Number of private IPs bound to a single ENI on CVM instances
+::: Number\sof\sprivate\sIPs\sbound\sto\sa\ssingle\sENI\son\sCVM\sinstances
 <table >
    <tr >
     <th width="6%"  rowspan="2" style = "text-align:center;">Model</th>
@@ -927,7 +927,7 @@ Based on CPU and memory configurations, the number of ENIs bound to a CVM differ
 
 <table>
 	<tr><th>Limitations</th><th>Description</th></tr>
-	<tr><td>Elastic cloud disk capability</td><td>Starting from May 2018, all data disks purchased with CVMs are elastic cloud disks, which can be detached and reattached to CVMs. This feature is supported in all <a href="https://cloud.tencent.com/document/api/213/15707">availability zones</a>.</td></tr>
+	<tr><td>Elastic cloud disk capability</td><td>Starting from May 2018, all data disks purchased with CVMs are elastic cloud disks, which can be detached and reattached to CVMs. This feature is supported in all <a href="https://intl.cloud.tencent.com/zh/document/product/213/35071">availability zones</a>.</td></tr>
 	<tr><td>Cloud disk performance</td><td>I/O specification applies to both input and output performance at the same time.<br/>For example, if a 1-TB SSD has a maximum random IOPS of 26,000, it means that both its read and write performance can reach this value. Due to performance limits, if the block size in this example is 4 KB or 8 KB, the maximum IOPS can be reached. If the block size is 16 KB, the maximum IOPS cannot be reached (throughput has already reached the limit of 260 MB/s).</td></tr>
 	<tr><td>Number of elastic cloud disks attached to a CVM</td><td>A maximum of 20</td></tr>
 	<tr><td>Number of snapshots in one region</td><td>64 + Number of cloud disks in the region x 64</td></tr>
