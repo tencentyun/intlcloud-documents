@@ -135,19 +135,20 @@ im.enterRoom('your roomID').then((imResponse) => {
 [](id:step1)
 #### 步骤1：创建实时音视频 TRTC 应用
 在 [实时音视频 TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，单击左侧导航栏【应用管理】>【创建应用】，输入您的应用名称，单击【确定】即可创建一个实时音视频应用。创建完毕后，请保存 SDKAPPID。
+<dx-alert infotype="explain"> 
+与此同时会自动创建一个 SDKAppID 相同的即时通信 IM 应用。</dx-alert>
 
->?与此同时会自动创建一个 SDKAppID 相同的即时通信 IM 应用。
 
 #### 步骤2：开启自动旁路推流
 1. 在 [实时音视频 TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，单击左侧导航栏【应用管理】，在您创建的实时音视频应用上，单击【功能配置】进入应用详情。
 2. 单击【启用旁路推流】，将旁路推流方式选择：全局自动旁路。旁路推流开启后，实时音视频 TRTC 房间里的每一路画面都配备一路对应的播放地址。
->?如果不需要 CDN 直播观看，可略过开启旁路推流的步骤。
+<dx-alert infotype="explain"> 如果不需要 CDN 直播观看，可略过开启旁路推流的步骤。</dx-alert>
 
 3. 单击【快速上手】，可查看密钥信息，请保存密钥。[](id:step2)
 ![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
 4. 在 [腾讯云直播控制台](https://console.cloud.tencent.com/live/) 配置播放域名并完成 CNAME 配置，详细操作指引请参见 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 文档。
 
->?如果不需要 CDN 直播观看，可略过配置播放域名步骤。
+<dx-alert infotype="explain"> 如果不需要 CDN 直播观看，可略过配置播放域名步骤。</dx-alert>
 
 #### 步骤3：下载并配置 Demo
 
@@ -174,18 +175,20 @@ Vue.prototype.TWebLive = TWebLive
 <script src="./tweblive.js"></script>
 ```
 
->!
->- 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦您的 `SECRETKEY` 泄露，攻击者就可以盗用您的腾讯云流量。
->- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
+<dx-alert infotype="notice"> 
+- 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦您的 `SECRETKEY` 泄露，攻击者就可以盗用您的腾讯云流量。
+- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
+</dx-alert>
 
 #### 步骤4：运行 Demo
 使用 Chrome 浏览器打开 `dist` 目录下的 `index.html` 文件即可运行 Demo。
->!
->- 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口`访问。
->- 目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
->- TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击【允许】即可。
-
+<dx-alert infotype="notice"> 
+- 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口`访问。
+- 目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
+TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击【允许】即可。
+</dx-alert>
 :::
+
 ::: 方式2：基于即时通信\sIM
 #### 步骤1：创建即时通信 IM 应用
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)，单击【创建新应用】将弹出对话框。
@@ -194,11 +197,11 @@ Vue.prototype.TWebLive = TWebLive
 
 #### 步骤2：获取 IM 密钥并开通实时音视频服务
 1. 在 [即时通讯 IM 控制台](https://console.cloud.tencent.com/im) 总览页单击您创建完成的即时通信 IM 应用，随即跳转至该应用的基础配置页。在【基本信息】区域，单击【显示密钥】，复制并保存密钥信息。
-
->!请妥善保管密钥信息，谨防泄露。
+<dx-alert infotype="notice"> 
+请妥善保管密钥信息，谨防泄露。
+</dx-alert>
 
 2. 在该应用的基础配置页，开通腾讯云实时音视频服务。
-
 
 #### 步骤3：下载并配置 Demo
 1. 请下载 [腾讯云 TWebLive 直播互动组件 Demo 工程](https://github.com/tencentyun/TWebLive)。
@@ -225,16 +228,18 @@ Vue.prototype.TWebLive = TWebLive
 <script src="./tweblive.js"></script>
 ```
 
->!
->- 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦您的 `SECRETKEY` 泄露，攻击者就可以盗用您的腾讯云流量。
->- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
+<dx-alert infotype="notice"> 
+- 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦您的 `SECRETKEY` 泄露，攻击者就可以盗用您的腾讯云流量。
+- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
+</dx-alert>
 
 #### 步骤4：运行 Demo
 使用 Chrome 浏览器打开 `dist` 目录下的 `index.html` 文件即可运行 Demo。
->!
->- 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口`访问。
->- 目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
->- TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击【允许】即可。
+<dx-alert infotype="notice"> 
+- 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口`访问。
+- 目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
+- TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击【允许】即可。
+</dx-alert>
 
 :::
 </dx-tabs>
@@ -265,7 +270,7 @@ Web 推流和 Web 低延时观看用到了 WebRTC 技术。
 |   Windows   |      桌面版 Edge 浏览器      |        80+         |     支持     |     支持     |
 | iOS 11.1.2+ |     移动版 Safari 浏览器     |        11+         |     支持     |     支持     |
 | iOS 12.1.4+ |         微信内嵌网页         |         -          |     支持     |    不支持    |
-| iOS 14.3+   |         微信内嵌网页         |   6.5+（微信版本） |     支持     |    支持     |
+|  iOS 14.3+  |         微信内嵌网页         |  6.5+（微信版本）  |     支持     |     支持     |
 |   Android   |       移动版 QQ 浏览器       |         -          |    不支持    |    不支持    |
 |   Android   |       移动版 UC 浏览器       |         -          |    不支持    |    不支持    |
 |   Android   |   微信内嵌网页（TBS 内核）   |         -          |     支持     |     支持     |
@@ -319,5 +324,3 @@ iOS 自动播放受限，请参见 [自动播放受限处理建议](https://web.
 
 - <a href="https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/TWebLive.html">TWebLive 接口手册</a>
 - [在线 Demo](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html)
-
-
