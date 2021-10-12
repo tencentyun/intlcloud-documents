@@ -1,12 +1,12 @@
 
 ## Overview
-TencentDB for MySQL will not modify any of your data. Data corrupted due to personal reasons can be recovered through rollback in a self-service manner. A rollback feature is provided to roll back databases or tables in Tencent Cloud based on data backup and binlog backup. Real-time data rollback is supported.
+TencentDB for MySQL will not alter any of your data. Data corrupted due to personal reasons can be recovered through rollback in a self-service manner. A rollback feature is provided to roll back databases or tables in Tencent Cloud based on data backup and binlog backup. Real-time data rollback is supported.
 
 By re-constructing periodical images and real-time transactions, the TencentDB for MySQL rollback feature can roll back a database or table to the specified point in time and the time slices of all data are guaranteed to be identical. A new database or table will be generated in the original instance, and during the process, the original database or table can be accessed normally. Upon the completion of rollback, you can see both the new and original databases or tables.
 
 ## How Rollback Works
 The rollback feature can roll back databases or tables to a specified point in time based on `cold data backup and corresponding binlog backup`.
-![](https://main.qcloudimg.com/raw/56699dba58319c212d93c38c6adabbae.png)
+![](https://main.qcloudimg.com/raw/89ab32296ba576cf8e087d760b5a8109.png)
 1. Data is exported from the MySQL replica and imported to the cold backup system daily.
 2. To roll back databases or tables, request for a temp rollback instance from the rollback system. Export the cold data from the cold backup system and import it to the temp rollback instance (types of imported data vary with the rollback methods).
 3. Establish a source-replica relationship between the rollback instance and MySQL source instance, set the rollback time, and specify the databases or tables to be rolled back.
@@ -29,9 +29,9 @@ The rollback feature can roll back databases or tables to a specified point in t
 >
 ![](https://main.qcloudimg.com/raw/abd517cf8b6db3db57b622f13d365893.png)
 2. On the rollback page, set the rollback method (described as below), select databases or tables to be rolled back, and click **Next step: set the rollback time and database table name**.
-   - Fast mode: full backup of the instance is imported, and the selected databases or tables are rolled back. This rollback mode is slow but has no limit.
-   - Faster mode: full backup and database-level binlogs are imported. For cross-database operation, if the associated database is not selected at the same time, rollback may fail.
-   - Ultrafast mode: full backup and table-level binlogs are imported. For cross-table operation, if the associated table is not selected at the same time, rollback may fail.
+   - Fast: full backup of the instance is imported, and the selected databases or tables are rolled back. This rollback mode is slow but has no limit.
+   - Faster: full backup and database-level binlogs are imported. For cross-database operation, if the associated database is not selected at the same time, rollback may fail.
+   - Ultrafast: full backup and table-level binlogs are imported. For cross-table operation, if the associated table is not selected at the same time, rollback may fail.
 >?
 >- Only databases/tables whose name contains digits, letters, underscores, or their combinations can be rolled back. Databases/tables with names containing special characters are not supported.
 >- In the mode where specified databases/tables can be rolled back only, a maximum of 500 databases/tables in the same instance can be rolled back at a time.
