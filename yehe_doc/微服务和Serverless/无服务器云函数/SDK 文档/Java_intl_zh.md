@@ -9,14 +9,14 @@
 * 获取安全凭证。安全凭证包含 SecretId 及 SecretKey 两部分。SecretId 用于标识 API 调用者的身份，SecretKey 用于加密签名字符串和服务器端验证签名字符串的密钥。前往 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面，即可进行获取，如下图所示：
 ![](https://main.qcloudimg.com/raw/53199c4c8465fb2c13a26fe18e42e63b.png)
 >!**您的安全凭证代表您的账号身份和所拥有的权限，等同于您的登录密码，切勿泄露他人。**
-* 获取调用地址。调用地址（endpoint）一般形式为`*.tencentcloudapi.com`，产品的调用地址有一定区别，例如，云服务器的调用地址为`cvm.tencentcloudapi.com`。具体调用地址可参考对应产品的 [API 文档](https://intl.cloud.tencent.com/document/api)。
+* 获取调用地址。调用地址（endpoint）一般形式为`*.tencentcloudapi.com`，产品的调用地址有一定区别，例如，云服务器的调用地址为`cvm.tencentcloudapi.com`。具体调用地址可参考对应产品的 [API 文档](https://intl.cloud.tencent.com/zh/document/api)。
 
 ## 安装 SDK[](id:p1)
 ### 方式一、通过 Maven 安装（推荐）
 Maven 是 JAVA 的依赖管理工具，支持您项目所需的依赖项，并将其安装到项目中。
 1. 请访问 [Maven官网](https://maven.apache.org/) 下载对应系统 Maven 安装包进行安装，关于 Maven 详细可参考 [Maven 官网](https://maven.apache.org/)。
 2. 为您的项目添加 Maven 依赖项，只需在 pom.xml 中找到`<dependencies>`标签，在里面添加以下依赖项即可。您可以在 [Maven 仓库](https://search.maven.org/search?q=tencentcloud-sdk-java) 上找到最新的版本（最新版本是3.1.322）
-``` xml
+```xml
 <dependency>
      <groupId>com.tencentcloudapi</groupId>
      <artifactId>tencentcloud-sdk-java</artifactId>
@@ -25,12 +25,10 @@ Maven 是 JAVA 的依赖管理工具，支持您项目所需的依赖项，并�
      <version>3.1.322</version>
 </dependency>
 ```
-
 >!
 >- 这里的版本号只是举例，您可以在 [Maven 仓库](https://search.maven.org/search?q=tencentcloud-sdk-java) 上找到最新的版本。
 >- [Maven 仓库](https://search.maven.org/search?q=tencentcloud-sdk-java) 中显示的4.0.11是废弃版本，由于 Maven 索引更新问题尚未完全删除。
 >- 若上面的引用方式会将腾讯云所有产品 SDK 下载到本地，可以将 artifactId 换成 tencentcloud-sdk-java-cvm/cbs/vpc 等，即可引用特定产品的 SDK，代码中使用方式和大包相同，可参考示例。最新版本也可在 [Maven仓库](https://search.maven.org/search?q=tencentcloud-sdk-java) 查询，可大大节省存储空间。
-
 3. 设置镜像源以加快下载速度，编辑 maven 的 settings.xml 配置文件，在 mirrors 段落增加镜像配置：
 ```
     <mirror>
@@ -50,7 +48,7 @@ Maven 是 JAVA 的依赖管理工具，支持您项目所需的依赖项，并�
 ## 使用 SDK
 以查询实例接口 DescribeInstances 为例：
 <dx-codeblock>
-::: 简化版\sjava
+::: 简化版 java
 ```java
 import com.tencentcloudapi.common.Credential;
 import com.tencentcloudapi.common.exception.TencentCloudSDKException;
@@ -75,7 +73,7 @@ public class DescribeInstances {
 }
 ```
 :::
-::: 详细版\sjava
+::: 详细版 java
 ```java
 import com.tencentcloudapi.common.Credential;
 import com.tencentcloudapi.common.exception.TencentCloudSDKException;
@@ -158,7 +156,7 @@ httpProfile.setProxyPort(真实代理端口);
 
 ### 语言
 
-从3.1.16版本开始，我们添加了对公共参数 Language 的支持，以满足部分产品的诉求。和以前一样，Language 默认不传，行为由各产品接口自行决定，通常是中文的，但也有默认英文的。目前可选值为中文或者英文,通过如下方法设置：
+从3.1.16版本开始，我们添加了对公共参数 Language 的支持，以满足部分产品国际化的诉求。和以前一样，Language 默认不传，行为由各产品接口自行决定，通常是中文的，但也有默认英文的。目前可选值为中文或者英文,通过如下方法设置：
 
 ```
 import com.tencentcloudapi.common.profile.ClientProfile;
