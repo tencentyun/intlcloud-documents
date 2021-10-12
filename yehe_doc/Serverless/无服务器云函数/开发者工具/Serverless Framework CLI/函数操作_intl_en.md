@@ -1,129 +1,138 @@
+
 ## Overview
-This document describes how to quickly create and deploy an SCF project.
+This document describes how to quickly create, configure, and deploy an SCF application in Tencent Cloud through Serverless Framework.
 
 ## Prerequisites
-- Serverless Framework has been installed. For more information, please see [Installing Serverless Framework](https://intl.cloud.tencent.com/document/product/583/36263).
-- Your account has the Serverless Framework permissions. For more information, please see [Account and Permission Configuration](https://intl.cloud.tencent.com/document/product/583/36270).
+- [Serverless Framework 1.67.2 or above has been installed](https://intl.cloud.tencent.com/document/product/1040/37034).
+```
+npm install -g serverless
+```
+- You have [registered a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/10495).
+
+>?If your account is a **Tencent Cloud sub-account**, please get the authorization from the root account first as instructed in [Account and Permission Configuration](https://intl.cloud.tencent.com/document/product/1040/36793).
 
 ## Directions
+### Quick deployment
 
-### Creating function
-Run the following command to quickly create a function in the Node.js language:
-```
-sls init scf-demo
-```
->?`scf-demo` in the command is the Node.js template by default, and you can replace it with function templates in other languages, such as `scf-golang`, `scf-php`, and `scf-python`.
->
-After the function is successfully created, there will be a `serverless.yml` configuration file in the `scf-demo` project directory, which defines the SCF resource information for each deployment. For more information on the configuration file, please see [Configuration file](#configuration).
+In an **empty folder** directory, run the following command:
 
-### Deploying function
-Run the following command in the `scf-demo` directory to deploy the function:
+```sh
+serverless
 ```
-sls deploy
-```
-A QR code will pop up. Please scan it to authorize and start deployment. After successful deployment, SCF resources will be automatically created.
->?If authentication fails, please authorize as instructed in [Account and Permission Configuration](https://intl.cloud.tencent.com/document/product/1040/36793).
->
 
-### View function information
-Run the following command to view the information of the deployed SCF resources:
+Next, follow the interactive prompts to initialize the project. Please select the `scf-starter` template for the application and select the runtime you want to use (Node.js is used as an example here):
+```sh
+Serverless: 当前未检测到 Serverless 项目，是否希望新建一个项目？ Yes
+Serverless: 请选择您希望创建的 Serverless 应用 scf-starter - 快速部署一个云函数
+
+  react-starter - 快速部署一个 React.js 应用 
+  restful-api - 快速部署一个 REST API 使用 python + API gateway 
+❯ scf-starter - 快速部署一个云函数 
+  vue-starter - 快速部署一个 Vue.js 基础应用 
+  website-starter - 快速部署一个静态网站 
+  eggjs-starter - 快速部署一个Egg.js 基础应用 
+  express-starter - 快速部署一个 Express.js 基础应用 
+  
+Serverless: 请选择应用的运行时 scf-nodejs - 快速部署一个 nodejs 云函数
+
+  scf-golang - 快速部署一个 golang 云函数 
+❯ scf-nodejs - 快速部署一个 nodejs 云函数 
+  scf-php - 快速部署一个 PHP 云函数 
+  scf-python - 快速部署一个 python 云函数  
+  
+Serverless: 请输入项目名称 demo
+Serverless: 正在安装 scf-nodejs 应用...
+
+scf-nodejs › Created
+
+
+demo 项目已成功创建!
 ```
+
+Select **Deploy Now** to quickly deploy the initialized project to the SCF console:
+
+```sh
+Serverless: 是否希望立即将该项目部署到云端？ Yes
+
+xxxxxxxx
+x  QR  x
+x CODE x
+xxxxxxxx
+
+serverless ⚡ framework
+Action: "deploy" - Stage: "dev" - App: "scfApp" - Instance: "scfdemo"
+
+functionName: helloworld
+description:  helloworld 空白模板函数
+namespace:    default
+runtime:      Nodejs10.15
+handler:      index.main_handler
+memorySize:   128
+lastVersion:  $LATEST
+traffic:      1
+triggers: 
+  apigw: 
+    - http://service-xxxxxxx.gz.apigw.tencentcs.com/release/
+
+27s › scfdemo › Success
+```
+
+After deployment, complete the remote invocation of the function by running the following command:
+```sh
+sls invoke --inputs function=helloworld
+```
+>>?`sls` is short for the `serverless` command.
+
+### Viewing deployment information
+
+If you want to check the deployment status and resources of the application again, you can go to the folder where the project is successfully deployed and run the following command to view the corresponding information:
+
+```
+cd demo #进入项目目录，此处请改为您的项目目录名称
 sls info
 ```
 
-### Removing function
-Run the following command to remove the deployed SCF resources:
+### Viewing directory structure
+In the directory of the initialized project, you can see the most basic structure of a serverless function project:
+
 ```
-sls remove
-```
-
-[](id:configuration)
-
-### Configuration file
-
-Serverless Framework CLI relies on the configuration in the `serverless.yml` file when creating or updating a function. When the `sls deploy` command is executed to deploy a function, SCF resources will be created or updated according to the configuration in the `serverless.yml` file. Below is a simple example of this file. For more information on the configuration, please see [Full Configuration](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md).
-```
-# SCF component configuration sample
-# For all configuration items, please visit https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md.
-
-# Component information
-component: scf # Name of the imported component, which is required. The `tencent-scf` component is used in this example
-name: scfdemo # Name of the created instance, which is required. Replace it with the name of your instance
-
-# Component parameters
-inputs:
-  name: ${name}-${stage}-${app} # Function name
-  src: ./  # Code path
-  handler: index.main_handler # Entry
-  runtime: Nodejs10.15 # Function runtime environment
-  region: ap-guangzhou # Function region
-  events: # Trigger
-    - apigw: # Gateway trigger
-        parameters:
-          endpoints:
-            - path: /
-              method: GET
+.
+├── serverless.yml  # 配置文件
+├—— index.js    # 入口函数
+└── .env # 环境变量文件
 ```
 
-The `serverless.yml` file contains the following information:
+- The `serverless.yml` configuration file implements the quick configuration of the basic function information. All the configuration items supported by the SCF console can be configured in the `.yml` file (for more information, please see [SCF Configuration Information](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md)).
+- `index.js` is the entry function of the project, which is the `helloworld` template here.
+- The `.env` file stores user login authentication information. You can also configure other environment variables in it.
 
-#### Component information
-
-| Component | Required | Description |
-| --------- | -------- | ---------------------------------------------------------- |
-| component | Yes | Component name. You can run the `sls registry` command to query components available for import. |
-| name | Yes | Name of the created instance. An instance will be created when each component is deployed. |
-
-
-#### Parameter information
-
-Parameters in `inputs` are component configuration parameters. The parameters of a simplest SCF component are as detailed below:
-
-| Parameter | Description |
-| ------- | ------------------------------------------------------------ |
-| name | Function name, which also serves as a resource ID. |
-| src | Code path. |
-| handler | Function handler name. |
-| runtime | Function runtime environment. Valid values: Python2.7, Python3.6, Nodejs6.10, Nodejs8.9, Nodejs10.15, Nodejs12.16, PHP5, PHP7, Go1, Java8, CustomRuntime. |
-| region | Function region. |
-| events | Trigger. Valid values: timer, apigw, cos, cmq, ckafka. |
-
-
-
-## Common Operation Commands
-Serverless Framework provides a set of operation commands for deployment orchestration, which can be used to quickly deploy function resources. For more information, please see [List of Supported Commands](https://intl.cloud.tencent.com/document/product/583/36269).
-
-For a function successfully deployed by running the `sls deploy` command, the following common operation commands provided by the SCF component can also be used.
->!Such commands must be executed in the same directory as `serverless.yml`.
->
-- **Publish function version**
-Run the following command to publish the `$LATEST` version of the `my-function` function as a fixed version:
-```plaintext
-sls publish-ver --inputs  function=my-function
+### Redeployment
+In the local project directory, you can modify the function template and configuration file and then redeploy the project by running the following command:
 ```
-- **Create alias**
-Run the following command to create the `routing-alias` alias for the `my-function` function, with the routing rule of 50% traffic for version 1 and 50% traffic for version 2:
-```plaintext
-sls create-alias --inputs name=routing-alias  function=my-function  version=1  
-config='{"weights":{"2":0.5}}'
+sls deploy
 ```
-- **Update alias**
-Run the following command to update the flow rule of the `routing-alias` alias of the `my-function` function to 10% for version 1 and 90% for version 2:
-```plaintext
-sls update-alias --inputs name=routing-alias  function=my-function  version=1 config='{"weights":{"2":0.9}}'
-```
-- **List alias**
-Run the following command to list the `routing-alias` alias of the `my-function` function:
-```plaintext
-sls list-alias --inputs function=my-function
-```
-- **Delete alias**
-Run the following command to delete the `routing-alias` alias of the `my-function` function:
-```plaintext
-sls delete-alias --inputs name=routing-alias  function=my-function
-```
-- **Trigger function**
-Run the following command to invoke the `functionName` function and pass the JSON parameter {"weights":{"2":0.1}}:
-```plaintext
-sls invoke  --inputs function=functionName  clientContext='{"weights":{"2":0.1}}'
-```
+>?If you want to view the details during the removal process, you can add the `--debug` parameter.
+
+### Continuous development
+After the deployment is completed, Serverless Framework supports running different commands to help you implement continuous development, deployment, and grayscale release for the project. You can also use this component in conjunction with other components to manage the deployment of multi-component applications.
+
+For more information, please see [Application Management](https://intl.cloud.tencent.com/document/product/1040/38288) and [List of Supported Commands](https://intl.cloud.tencent.com/document/product/1040/36861).
+
+## FAQs
+
+- Problem 1: the wizard does not pop up by default when `serverless` is entered. 
+  Solution: add the `SERVERLESS_PLATFORM_VENDOR=tencent` configuration item to the `.env` file.	
+
+- Problem 2: after `sls deploy` is entered in a network environment outside the Chinese mainland, the deployment is very slow. 
+  Solution: add the `GLOBAL_ACCELERATOR_NA=true` configuration item to the `.env` file to enable acceleration outside the Chinese mainland.	
+
+- Problem 3: after `sls deploy` is entered, the deployment reports a network error. 
+  Solution: add the following proxy configuration to the `.env` file.
+  ```
+  HTTP_PROXY=http://127.0.0.1:12345 #请将'12345'替换为您的代理端口
+  HTTPS_PROXY=http://127.0.0.1:12345 #请将'12345'替换为您的代理端口
+  ```
+
+
+
+
