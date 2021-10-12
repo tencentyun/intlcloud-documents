@@ -136,17 +136,17 @@ im.enterRoom('your roomID').then((imResponse) => {
 #### 手順1：TRTCアプリケーションの作成
 [TRTCコンソール](https://console.cloud.tencent.com/trtc/app)の、左側ナビゲーションバーで【アプリケーション管理】>【アプリケーションの作成】をクリックしてアプリケーション名を入力し、【OK】をクリックするとTRTCアプリケーションが作成されます。作成が完了してから、SDKAPPIDを保存してください。
 
->?同時に、同じSDKAppIDを持つIMアプリケーションが自動的に作成されます。
+<dx-alert infotype="explain">  同時に、同じSDKAppIDを持つIMアプリケーションが自動的に作成されます。</dx-alert>
 
 #### 手順2：Auto-Relayed Push機能をオンにする
 1. [TRTCコンソール](https://console.cloud.tencent.com/trtc/app)の、左側ナビゲーションバーで【アプリケーション管理】をクリックします。作成したTRTCアプリケーション上で、【機能設定】をクリックしてアプリケーション詳細に入ります。
 2. 【Relayed Pushの有効化】をクリックして、Relayed Push方式でGlobal Auto-relayを選択します。Relayed Pushの起動後、TRTCルーム内の各チャネル画面に対し対応する再生アドレスが割り当てられます。
->?CDNライブストリーミングの視聴が必要ない場合、Relayed Pushを起動する手順を省略することができます。
+<dx-alert infotype="explain"> CDNライブストリーミングの視聴が必要ない場合、Relayed Pushを起動する手順を省略することができます。</dx-alert>
 3. 【クイックマスター】をクリックすると、キー情報を確認することができます。キーは保存してください。[](id:step2)
 ![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
 4. [Tencent Cloud CSSコンソール](https://console.cloud.tencent.com/live/)で再生ドメイン名を設定し、CNAME設定を完了します。詳細な操作手順については、[CDN relayed live streamingの実装](https://intl.cloud.tencent.com/document/product/647/35242)ドキュメントをご参照ください。
 
->?CDNライブストリーミングの視聴が必要ない場合、再生ドメイン名を設定する手順を省略することができます。
+<dx-alert infotype="explain"> CDNライブストリーミングの視聴が必要ない場合、再生ドメイン名を設定する手順を省略することができます。</dx-alert>
 
 ### 手順3：Demoのダウンロードおよび設定
 
@@ -172,18 +172,20 @@ Vue.prototype.TWebLive = TWebLive
 <script src="./tim-js.js"></script>
 <script src="./tweblive.js"></script>
 ```
->!
->- UserSigをローカルで計算する方法は、ローカルの開発とデバッグにのみ使用されます。`SECRETKEY`が漏えいすると、攻撃者がTencent Cloudのトラフィックを盗用する可能性があるので、ネット上にそのまま公開しないでください。
->- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/1047/34385)をご参照ください。
+<dx-alert infotype="notice"> 
+- UserSigをローカルで計算する方法は、ローカルの開発とデバッグにのみ使用されます。`SECRETKEY`が漏えいすると、攻撃者がTencent Cloudのトラフィックを盗用する可能性があるので、ネット上にそのまま公開しないでください。
+- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/1047/34385)をご参照ください。
+</dx-alert>
 
 #### 手順4：Demoの実行
 Chromeブラウザを使用して `dist`ディレクトリのindex.htmlファイルを開くと、Demoが実行されます。
->!
->- 通常の場合は、体験Demoは、サーバーにデプロイし、`https://ドメイン名/xxx`経由でアクセスするか、または直接ローカルにサーバーを構築して、`localhost:ポート経由で`アクセスする必要があります。
->- 現在デスクトップ版Chromeブラウザは、TRTC Web SDK関連機能のサポート状況がかなり整っていますので、Chromeブラウザを使用して体験することをお勧めします。
->- TWebLiveは、カメラとマイクを使用して、オーディオとビデオをキャプチャする必要があります。体験中、Chromeブラウザから関連プロンプトが表示されることがありますが、その場合は【許可】をクリックします。
-
+<dx-alert infotype="notice"> 
+- 通常の場合は、体験Demoは、サーバーにデプロイし、`https://ドメイン名/xxx`経由でアクセスするか、または直接ローカルにサーバーを構築して、`localhost:ポート経由で`アクセスする必要があります。
+- 現在デスクトップ版Chromeブラウザは、TRTC Web SDK関連機能のサポート状況がかなり整っていますので、Chromeブラウザを使用して体験することをお勧めします。
+- TWebLiveは、カメラとマイクを使用して、オーディオとビデオをキャプチャする必要があります。体験中、Chromeブラウザから関連プロンプトが表示されることがありますが、その場合は【許可】をクリックします。
+</dx-alert>
 :::
+
 ::: 方法2：インスタントメッセージ\sIMの場合
 #### 手順1：IMアプリケーションの作成
 1. [IMコンソール](https://console.cloud.tencent.com/im)にログインし、【新しいアプリケーションの作成】をクリックするとダイアログボックスがポップアップします。
@@ -192,8 +194,8 @@ Chromeブラウザを使用して `dist`ディレクトリのindex.htmlファイ
 
 #### 手順2：IMキーを取得してTRTC Video Serviceをアクティブにする
 1. [IMコンソール](https://console.cloud.tencent.com/im)の概要ページで、自分で作成を完了したIMアプリケーションをクリックして、直ちにそのアプリケーションの基本設定ページにリダイレクトします。【基本情報】領域で、【キーの表示】をクリックして、キー情報をコピーし保存します。
->!キー情報を適切に保管して、漏えいしないようにしてください。
-2. そのアプリケーションの基本設定ページで、Tencent Cloud TRTC Video Serviceをアクティブ化します。
+<dx-alert infotype="notice"> キー情報を適切に保管して、漏えいしないようにしてください。
+2. そのアプリケーションの基本設定ページで、Tencent Cloud TRTC Video Serviceをアクティブ化します。</dx-alert>
 
 ### 手順3：Demoのダウンロードおよび設定
 1. [Tencent Cloud TWebLiveライブストリーミングインタラクションコンポーネントのDemoプロジェクト]をダウンロードします(https://github.com/tencentyun/TWebLive)。
@@ -218,16 +220,18 @@ Vue.prototype.TWebLive = TWebLive
 <script src="./tim-js.js"></script>
 <script src="./tweblive.js"></script>
 ```
->!
->- UserSigをローカルで計算する方法は、ローカルの開発とデバッグにのみ使用されます。`SECRETKEY`が漏えいすると、攻撃者がTencent Cloudのトラフィックを盗用する可能性があるので、ネット上にそのまま公開しないでください。
->- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/1047/34385)をご参照ください。
+<dx-alert infotype="notice"> 
+- UserSigをローカルで計算する方法は、ローカルの開発とデバッグにのみ使用されます。`SECRETKEY`が漏えいすると、攻撃者がTencent Cloudのトラフィックを盗用する可能性があるので、ネット上にそのまま公開しないでください。
+- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/1047/34385)をご参照ください。
+</dx-alert>
 
 #### 手順4：Demoの実行
 Chromeブラウザを使用して `dist`ディレクトリのindex.htmlファイルを開くと、Demoが実行されます。
->!
->- 通常の場合は、体験Demoは、サーバーにデプロイし、`https://ドメイン名/xxx`経由でアクセスするか、または直接ローカルにサーバーを構築して、`localhost:ポート経由で`アクセスする必要があります。
->- 現在デスクトップ版Chromeブラウザは、TRTC Web SDK関連機能のサポート状況がかなり整っていますので、Chromeブラウザを使用して体験することをお勧めします。
->- TWebLiveは、カメラとマイクを使用して、オーディオとビデオをキャプチャする必要があります。体験中、Chromeブラウザから関連プロンプトが表示されることがありますが、その場合は【許可】をクリックします。
+<dx-alert infotype="notice"> 
+- 通常の場合は、体験Demoは、サーバーにデプロイし、`https://ドメイン名/xxx`経由でアクセスするか、または直接ローカルにサーバーを構築して、`localhost:ポート経由で`アクセスする必要があります。
+- 現在デスクトップ版Chromeブラウザは、TRTC Web SDK関連機能のサポート状況がかなり整っていますので、Chromeブラウザを使用して体験することをお勧めします。
+- TWebLiveは、カメラとマイクを使用して、オーディオとビデオをキャプチャする必要があります。体験中、Chromeブラウザから関連プロンプトが表示されることがありますが、その場合は【許可】をクリックします。
+</dx-alert>
 
 :::
 </dx-tabs>
