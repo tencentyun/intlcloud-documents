@@ -15,7 +15,7 @@ Log context search refers to searching for the log’s context, that is, several
 ## Prerequisites
 
 - Log context search and analysis are available only for version 2.3.5 and above. You are advised to [install or upgrade to the latest version](https://intl.cloud.tencent.com/document/product/614/17414).
-- You have collected the logs with LogListener. For more information, please see [LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/17414).
+- Context search is supported for only logs collected by LogListener.
 - You have enabled and configured index. For more information, please see [Configuring Index](https://intl.cloud.tencent.com/document/product/614/39594).
 
 ## Scenarios
@@ -26,13 +26,13 @@ You can troubleshoot in CLS as follows:
 1. Log in to the CLS console and go to the **Search and Analysis** page. Then, specify a time range based on the error occurrence time and enter the **keyword** (order number) to locate the error log of the order.
 2. Scroll up/down based on the error log until you locate the desired context of the log.
 
-<img src="https://main.qcloudimg.com/raw/85d5656e2d5b868872b2497757c5a2b0.svg" style="width: 50%"/>
+<img src="https://main.qcloudimg.com/raw/eddd422f920b3b67e4f2df2b2dd5a29f.svg" style="width: 50%"/>
 
 
 ## Directions
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-2. On the left sidebar, click **Search and Analysis** to go to the search and analysis page.
+2. In the left sidebar, click **Log Search** to go to the **Search and Analysis** page.
 3. Select the **Region**, **Logset**, and **Log Topic** as needed.
 4. Enter the search syntax, select a time range, and click **Search and Analysis**.
 5. On the **Raw Data** tab, find the time of the error log and click <img src="https://main.qcloudimg.com/raw/1327fb192ece11abdf3a130feaa4e78a.png"></img> to go to the context search and analysis page.
