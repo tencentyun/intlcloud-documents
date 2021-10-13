@@ -10,7 +10,7 @@ Você pode consultar a tabela a seguir ou usar a API [DescribeRegions](https://i
 
 - As redes de regiões diferentes são totalmente isoladas. Os serviços do Tencent Cloud em regiões diferentes **não podem se comunicar por meio de uma rede privada por padrão**.
 - Os serviços do Tencent Cloud entre regiões podem se comunicar uns com os outros por meio de [IPs públicos](https://intl.cloud.tencent.com/document/product/213/5224) pela internet, já os serviços em diferentes VPCs comunicam-se por meio de [CCN](https://intl.cloud.tencent.com/document/product/1003), que é mais rápido e estável.
-- O [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214) agora é compatível com encaminhamento de tráfego intra-região por padrão. Se você habilitar a funcionalidade [vinculação entre regiões](https://intl.cloud.tencent.com/document/product/214/12014), a vinculação entre regiões do CLB e das instâncias do CVM será permitida.
+- O [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214) agora é compatível com encaminhamento de tráfego intra-região por padrão. Se você habilitar a funcionalidade [vinculação entre regiões](https://intl.cloud.tencent.com/document/product/214/38441), a vinculação entre regiões do CLB e das instâncias do CVM será permitida.
 
 ## Zonas de disponibilidade
 
