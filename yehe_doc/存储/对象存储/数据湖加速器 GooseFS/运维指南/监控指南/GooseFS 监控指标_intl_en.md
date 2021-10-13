@@ -209,8 +209,8 @@ Client monitoring metrics are aggregated based on the user ID or client IP. If a
 | Client.CachePutEvictionErrors           | COUNTER      | Number of failures when putting cached data in the client cache due to failed eviction. |
 | Client.CachePutInsufficientSpaceErrors  | COUNTER      | Number of failures when putting cached data in the client cache due to insufficient space made after eviction. |  
 | Client.CachePutNotReadyErrors           | COUNTER      | Number of failures when cache is not ready to add pages.     |
-| Client.CachePutStoreDeleteErrors        | COUNTER      | Number of failures when putting cached data in the client cache due to failed deletes in page store. |      |
-| Client.CachePutStoreWriteErrors         | COUNTER      | Number of failures when putting cached data in the client cache due to failed writes to page store. |      |
+| Client.CachePutStoreDeleteErrors        | COUNTER      | Number of failures when putting cached data in the client cache due to failed deletes in page store. |  
+| Client.CachePutStoreWriteErrors         | COUNTER      | Number of failures when putting cached data in the client cache due to failed writes to page store. |   
 | Client.CacheSpaceAvailable              | GAUGE        | Amount of bytes available in the client cache.               |
 | Client.CacheSpaceUsed                   | GAUGE        | Amount of bytes used by the client cache.                    |
 | Client.CacheSpaceUsedCount              | COUNTER      | Amount of bytes used by the client cache as a counter.       |
