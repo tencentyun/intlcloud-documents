@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to get the server group information list.
+This API is used to get the machine group information list.
 
 ## Request
 
@@ -55,14 +55,14 @@ There are only common response headers but no special response headers.
 
 | Field Name | Type | Required | Description |
 |-------------|-----------|---------|-------------------------------|
-| machine_groups|JsonArray| Yes      | Server group information array                  |
+| machine_groups|JsonArray| Yes      | Machine group information array                  |
 
 `MachineGroupInfo` is in the following format:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| group_id   | string | Yes      | Server group ID                  |
-| group_name | string | Yes      | Server group name                    |
+| group_id   | string | Yes      | Machine group ID                  |
+| group_name | string | Yes      | Machine group name                    |
 | create_time| string | No   | Creation time                                                     |
 
 ## Error Codes
