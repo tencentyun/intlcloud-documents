@@ -65,4 +65,4 @@ grep group_ip etc/loglistener.conf
 ![](https://main.qcloudimg.com/raw/4afe8d3a3b7c4f16e6795e35544a38e7.png)
 
 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，单击【机器组管理】，查看机器组配置的 IP 地址，机器组所配置的 IP 地址必须与 LogListener 获取的 IP 地址完全一致。
-![](https://main.qcloudimg.com/raw/ea8e833b596e1cf000f4f58f8f99dd29.png)
+![](https://main.qcloudimg.com/raw/888959e938a1dd3ec8a3f6c5b4818a56.png)
