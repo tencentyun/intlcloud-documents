@@ -100,7 +100,7 @@ Authorization: Auth String
 |节点名称（关键字）|父节点|描述|类型|
 |---|---|---|---|
 |ID|AccessControlPolicy.Owner|存储桶持有者的完整 ID，格式为 `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`，如 `qcs::cam::uin/100000000001:uin/100000000001`|string|
-DisplayName|AccessControlPolicy.Owner|存储桶持有者的名字|string|
+|DisplayName  |AccessControlPolicy.Owner   |存储桶持有者的名字     |string|
 
 **Container 节点 AccessControlList 的内容：**
 
