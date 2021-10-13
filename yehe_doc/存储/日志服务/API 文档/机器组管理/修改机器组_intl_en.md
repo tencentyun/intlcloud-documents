@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to modify a server group.
+This API is used to modify a machine group.
 
 ## Request
 
@@ -34,11 +34,11 @@ There are only common request headers but no special request headers.
 
 | Field Name | Type | Location | Required| Description |
 |------------|----------|------|---------|--------------------------------|
-| group_id   | string   | body | Yes     | ID of the server group to be modified                |
-| group_name | string   | body | No      | Server group name, which must be unique             |
-| type       | string   | body | No      | Server group type. Valid values: ip and label. Default value: ip  |
-| ips        | JsonArray| body | No      | List of IPs in server group                  |
-| labels     | JsonArray| body | No      | List of labels in the server group          |
+| group_id   | string   | body | Yes     | ID of the machine group to be modified                |
+| group_name | string   | body | No      | Machine group name, which must be unique             |
+| type       | string   | body | No      | Machine group type. Valid values: ip and label. Default value: ip  |
+| ips        | JsonArray| body | No      | List of IPs in machine group                  |
+| labels     | JsonArray| body | No      | List of labels in the machine group          |
 
 >Either `group_name`, `ips` or `labels` must be provided.
 
