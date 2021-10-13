@@ -51,7 +51,7 @@ High availability of TencentDB for MySQL is guaranteed by the source-replica arc
 All the different database versions and memory/disk specifications of TencentDB for MySQL support online dynamic hot upgrade. The upgrade process will not interrupt your business, eliminating your concerns over any database bottlenecks caused by business growth.
 
 ### 1.7 Use CVM and TencentDB for MySQL together
-After a purchase is made, you often need to use CVM and TencentDB for MySQL together. For more information, see [Connecting to MySQL Instances](https://intl.cloud.tencent.com/document/product/236/37788).
+After a purchase is made, you generally need to use CVM and TencentDB for MySQL together. For more information, see [Connecting to MySQL Instances](https://intl.cloud.tencent.com/document/product/236/37788).
 
 ## 2. Take Read-Only Replicas as Read Extension
 In common internet-based businesses, the read/write ratio of databases generally ranges from 4:1 to 10:1, which means that the read load of databases is much higher than the write load. When a performance bottleneck occurs, a common solution is to enhance the ability to handle read load.
@@ -63,7 +63,7 @@ TencentDB for MySQL provides [disaster recovery instances](https://intl.cloud.te
 
 With the help of disaster recovery instances, multiple data centers in different regions can act as redundancy of each other, so that when one data center cannot provide a service due to failures or force majeure events, the service can be quickly switched to another data center. Disaster recovery instances use Tencent Cloud private network to sync data and the replication is optimized at the level of MySQL kernel, which can minimize the impact of delayed sync on your business when a disaster occurs. As long as the remote service logic is ready, the disaster recovery switchover can be completed in seconds.
 
-## 4. 2-Region-3-DC Program
+## 4. Two-Region-Three-DC Program
 With TencentDB for MySQL, it only takes several simple steps to configure the 2-region-3-DC scheme:
 - Purchase a TencentDB for MySQL intra-city strong-consistency cluster and select [multi-AZ deployment](https://intl.cloud.tencent.com/document/product/236/8459) (currently in beta test) which provides the 1-region-2-DC capacity.
 - Add remote disaster recovery nodes to the cluster in order to build the 2-region-3-DC architecture.

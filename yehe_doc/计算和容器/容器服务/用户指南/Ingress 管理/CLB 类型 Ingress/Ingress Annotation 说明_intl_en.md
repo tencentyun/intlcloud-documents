@@ -18,13 +18,13 @@ metadata:
 ::: kubernetes.io/ingress.class
 **Note:**
 This annotation is used to configure the Ingress type for the component management that is not configured with the annotation or the Ingress resource whose annotation content is qcloud.
-**Use case:**
+**Sample:**
 `kubernetes.io/ingress.class: "qcloud"`
 :::
 ::: kubernetes.io/ingress.qcloud-loadbalance-id
 **Note:**
 This is a read-only annotation that provides the LoadBalanceId referenced by the current Ingress.
-**Use case:**
+**Sample:**
 `kubernetes.io/ingress.qcloud-loadbalance-id: "lb-3imskkfe"`
 :::
 ::: ingress.cloud.tencent.com/loadbalance-nat-ipv6
@@ -51,62 +51,56 @@ This annotation is used to specify the maximum outbound bandwidth of the CLB whe
 **Valid values:**
 Value range: 0-2,048 Mbps
 
-**Use case:**
+**Sample:**
 `kubernetes.io/ingress.internetMaxBandwidthOut: "2048"`
 :::
 ::: kubernetes.io/ingress.extensiveParameters
 **Note:**
-Refer to [Creating a CLB Instance](https://intl.cloud.tencent.com/document/product/214/33841) to add custom parameters for the created a CLB instance.
-**Use case:**
+You can add custom parameters for creating a CLB instance as instructed in [CreateLoadBalancer](https://intl.cloud.tencent.com/document/product/214/33841).
+**Sample:**
 
-- Creating a NAT64 IPv6 instance
+- Creating an NAT64 IPv6 instance
   `kubernetes.io/ingress.extensiveParameters: '{"AddressIPVersion":"IPV6"}'`
-- Creating an IPv6 Instance
+- Creating an IPv6 instance
   `kubernetes.io/ingress.extensiveParameters: '{"AddressIPVersion":"IPv6FullChain"}'`
-- Purchasing a CTCC CLB
+- Purchasing a China Telecom CLB instance
   `kubernetes.io/ingress.extensiveParameters: '{"VipIsp":"CTCC"}'`
-- Specifying a availability zone to create
+- Specifying an AZ for creation
   `kubernetes.io/ingress.extensiveParameters: '{"ZoneId":"ap-guangzhou-1"}'`
 :::
 ::: kubernetes.io/ingress.subnetId
 **Note:**
 This annotation is used to specify the creation of a private network CLB, and specify the subnet where the CLB locates.
-**Use case:**
+**Sample:**
 `kubernetes.io/ingress.subnetId: "subnet-3swgntkk"`
 :::
 ::: kubernetes.io/ingress.existLbId
 **Note:**
 This annotation is used to specify the use of the existing CLB as the entry resource of the access layer.
+<dx-alert infotype="notice" title="">
+When using an existing CLB, you need to ensure that it does not include other listeners.
+</dx-alert>
 
-<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><p>When using an existing CLB, you need to ensure that it does not include other listeners.</a></p></blockquote>
-
-
-**Use case:**
+**Sample:**
 `kubernetes.io/ingress.existLbId: "lb-342wppll"`
 :::
 ::: ingress.cloud.tencent.com/direct-access
 **Note:**
 You can use this annotation to achieve CLB-to-Pod direct access in layer 7. Pay attention to the service dependency of directly access under different networks.
-**Use case:**
-For details, see [Using Services with CLB-to-Pod Direct Access Mode](https://intl.cloud.tencent.com/document/product/457/36837).
-:::
-::: ingress.cloud.tencent.com/enable-grace-shutdown
-**Note:**
-You can use this annotation to gracefully shut down the workload in access layer. When the Pod is in the “Terminating” state, the workload will not be removed directly but the weight will become 0. It is used together with the PreStop feature of the workload to control the traffic when the workload is shut down.
-**Use case:**
-`ingress.cloud.tencent.com/enable-grace-shutdown: "true"`
+**Sample:**
+For more information on how to use it, please see [Using Services with CLB-to-Pod Direct Access Mode](https://intl.cloud.tencent.com/document/product/457/36837).
 :::
 ::: ingress.cloud.tencent.com/tke-service-config
 **Note:**
 This annotation is used to set the CLB related configurations through tke-service-config, including listeners, forwarding rules, etc.
-**Use case:**
-`ingress.cloud.tencent.com/tke-service-config: "nginx-config"`. For more information, see [Using TKEServiceConfig to Configure CLBs](https://intl.cloud.tencent.com/document/product/457/37015).
+**Sample:**
+`ingress.cloud.tencent.com/tke-service-config: "nginx-config"`. For more information, please see [Using TKEServiceConfig to Configure CLBs](https://intl.cloud.tencent.com/document/product/457/37015).
 :::
 ::: ingress.cloud.tencent.com/tke-service-config-auto
 **Note:**
 You can use this annotation to automatically create the TkeServiceConfig resource and provide a configuration template for user to configure as needed.
-**Use case:**
-`ingress.cloud.tencent.com/tke-service-config-auto: "true"`. For more information, see [Using TKEServiceConfig to Configure CLBs](https://intl.cloud.tencent.com/document/product/457/37015)
+**Sample:**
+`ingress.cloud.tencent.com/tke-service-config-auto: "true"`. For more information, please see [Using TKEServiceConfig to Configure CLBs](https://intl.cloud.tencent.com/document/product/457/37015)
 :::
 ::: ingress.cloud.tencent.com/rewrite-support
 **Note:**
@@ -118,13 +112,14 @@ You can use this annotation to automatically create the TkeServiceConfig resourc
 ::: ingress.cloud.tencent.com/auto-rewrite
 **Note:**
 This annotation is used to provide automatic redirection for the HTTP port. All forwarding rules declared on the HTTPS port will create corresponding redirection rules. It is used together with the `ingress.cloud.tencent.com/rewrite-support` annotation to enable redirection management capabilities.
-**Use case:**
+**Sample:**
 `ingress.cloud.tencent.com/auto-rewrite: "true"`
 :::
 ::: ingress.cloud.tencent.com/cross-region-id
 **Note:**
 This annotation is used for Ingress cross-region binding, and is used to specify which region to access. It is used together with `kubernetes.io/ingress.existLbId` or `ingress.cloud.tencent.com/cross-vpc-id`.
-**Use case:**
+**Sample:**
+
 - Creating a CLB for remote access
   `ingress.cloud.tencent.com/cross-region-id: "ap-guangzhou"`
   `ingress.cloud.tencent.com/cross-vpc-id: "vpc-646vhcjj"`
@@ -135,12 +130,18 @@ This annotation is used for Ingress cross-region binding, and is used to specify
 ::: ingress.cloud.tencent.com/cross-vpc-id
 **Note:**
 This annotation is used for Ingress cross-region binding, and is used to specify which VPC to access. It can be used together with `ingress.cloud.tencent.com/cross-region-id` annotation to specify the VPC of other region.
-<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><p>This annotation applies to the CLB created and managed by TKE. It is invalid for scenarios that use the existing CLB.</a></p></blockquote>
-
-**Use case:**
+>! This annotation applies to the CLB created and managed by TKE. It is invalid for scenarios that use the existing CLB.
+>
+**Sample:**
 Creating CLB for remote access:
 `ingress.cloud.tencent.com/cross-region-id: "ap-guangzhou"`
 `ingress.cloud.tencent.com/cross-vpc-id: "vpc-646vhcjj"`
+:::
+::: ingress.cloud.tencent.com/enable-grace-shutdown
+**Note:**
+This annotation is used to shut down CLB gracefully in direct access mode.
+**Sample:**
+It is only supported in direct access mode and needs to be used together with `ingress.cloud.tencent.com/direct-access`. For more information on how to use it, please see [Graceful Ingress Shutdown](https://intl.cloud.tencent.com/document/product/457/42069).
 :::
 </dx-accordion>
 

@@ -1,7 +1,7 @@
 ## Overview
 * Welcome to Tencent Cloud Software Development Kit (SDK) 3.0, a companion tool for the TencentCloud API 3.0 platform. SDK 3.0 is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
 * This document describes how to use, debug, and connect to TencentCloud APIs with the SDK for Java 3.0 as an example.
-* This version currently supports various Tencent Cloud products such as CVM, VPC, and CBS and will support more products in the future.
+* This version currently supports various Tencent Cloud services such as CVM, VPC, and CBS and will support more services in the future.
 
 ## Dependent Environment
 
@@ -9,35 +9,34 @@
 * Get the security credential, which consists of `SecretId` and `SecretKey`. `SecretId` is used to identify the API requester, while `SecretKey` is a key used for signature string encryption and authentication by the server. You can get them on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page as shown below:
 ![](https://main.qcloudimg.com/raw/53199c4c8465fb2c13a26fe18e42e63b.png)
 >!**Your security credential represents your account identity and granted permissions, which is equivalent to your login password. Do not disclose it to others.**
-* Get the calling address (endpoint), which is generally in the format of `*.tencentcloudapi.com` and varies by product. For example, the endpoint of CVM is `cvm.tencentcloudapi.com`. For specific endpoints, please see the [API documentation](https://intl.cloud.tencent.com/document/api) of the corresponding product .
+* Get the calling address (endpoint), which is generally in the format of `*.tencentcloudapi.com` and varies by service. For example, the endpoint of CVM is `cvm.tencentcloudapi.com`. For specific endpoints, please see the [API documentation](https://intl.cloud.tencent.com/zh/document/api) of the corresponding service.
 
 ## Installing SDK[](id:p1)
 ### Method 1. Install through Maven (recommended)
 Maven is a dependency management tool for Java that supports the dependencies your project requires and installs them into your project.
 1. Go to [Maven official website](https://maven.apache.org/) to download the corresponding Maven installation package for your system and install it. Fore more information on Maven, please see [Welcome to Apache Maven](https://maven.apache.org/).
-2. Add Maven dependencies for your project by adding the following dependencies under the `<dependencies>` tag in Maven's `pom.xml`:
+2. Add Maven dependencies for your project by adding the following dependencies under the `<dependencies>` tag in Maven's `pom.xml`. You can find the latest version (v3.1.322) in the [Maven repository](https://search.maven.org/search?q=tencentcloud-sdk-java).
 ```xml
 <dependency>
-    <groupId>com.tencentcloudapi</groupId>
-    <artifactId>tencentcloud-sdk-java</artifactId>
-    <!-- go to https://search.maven.org/search?q=tencentcloud-sdk-java and get the latest version. -->
-    <!-- Please query the latest version at https://search.maven.org/search?q=tencentcloud-sdk-java, which is as follows -->
-    <version>3.1.217</version>
+     <groupId>com.tencentcloudapi</groupId>
+     <artifactId>tencentcloud-sdk-java</artifactId>
+     <!-- go to https://search.maven.org/search?q=tencentcloud-sdk-java and get the latest version. -->
+     <!-- Please query the latest version at https://search.maven.org/search?q=tencentcloud-sdk-java, which is as follows -->
+     <version>3.1.322</version>
 </dependency>
 ```
-	>!
-	>- The version number here is just an example, and you can view the latest version number in the [Maven repository](https://search.maven.org/search?q=tencentcloud-sdk-java).
-	>- v4.0.11 shown in the [Maven repository](https://search.maven.org/search?q=tencentcloud-sdk-java) was disused but has not been completely deleted due to the Maven index update issue.
-	>- The above import method downloads the SDKs of all Tencent Cloud products to your local system. You can replace the `artifactId` with a specific product SDK name such as `tencentcloud-sdk-java-cvm/cbs/vpc` to import the SDK of the specific product. The code can be used in the same way, and the major packages are the same. For more information, please see the samples. The latest version can also be queried in the [Maven repository](https://search.maven.org/search?q=tencentcloud-sdk-java), which can greatly save the storage space.
+>!
+>- The version number here is just an example, and you can view the latest version number in the [Maven repository](https://search.maven.org/search?q=tencentcloud-sdk-java).
+>- v4.0.11 shown in the [Maven repository](https://search.maven.org/search?q=tencentcloud-sdk-java) was disused but has not been completely deleted due to the Maven index update issue.
+>- The above import method downloads the SDKs of all Tencent Cloud products to your local system. You can replace the `artifactId` with a specific product SDK name such as `tencentcloud-sdk-java-cvm/cbs/vpc` to import the SDK of the specific product. The code can be used in the same way, and the major packages are the same. For more information, please see the samples. The latest version can also be queried in the [Maven repository](https://search.maven.org/search?q=tencentcloud-sdk-java), which can greatly save the storage space.
 3. Set the mirror source to speed up the download. To do so, edit the `settings.xml` configuration file of Maven and add the mirror configuration in the `mirrors` section:
-```xml
-<repositories>
-	<repository>
-      <id>nexus-tencentyun</id>
-      <name>Nexus tencentyun</name>
+```
+    <mirror>
+      <id>tencent</id>
+      <name>tencent maven mirror</name>
       <url>https://mirrors.tencent.com/nexus/repository/maven-public/</url>
-	</repository>
-</repositories>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
 ```
 
 ### Method 2. Install through source package
@@ -47,6 +46,7 @@ Maven is a dependency management tool for Java that supports the dependencies yo
 4. For importing methods, please see the sample.
 
 ## Using SDK
+The following uses the instance querying API `DescribeInstances` as an example:
 <dx-codeblock>
 ::: Simplified Java
 ```java
@@ -97,7 +97,7 @@ public class DescribeInstances {
              // Starting from v3.1.16, set up an HTTP proxy separately
              // httpProfile.setProxyHost("real proxy ip");
              // httpProfile.setProxyPort(real proxy port);
-             httpProfile.setReqMethod("GET"); // GET request (POST request is used by default)
+             httpProfile.setReqMethod("GET"); // GET request (POST request by default)
              httpProfile.setProtocol("https://");  // Please select a protocol (https:// or http://). HTTP is supported if the network environment has access to the public network, and HTTPS is used by default
              httpProfile.setConnTimeout(30); // Specify the request connection timeout value in seconds. The default value is 60s
              httpProfile.setWriteTimeout(30);  // Set the write timeout period in seconds. The default value is 0s
@@ -105,7 +105,7 @@ public class DescribeInstances {
              httpProfile.setEndpoint("cvm.ap-shanghai.tencentcloudapi.com"); // Specify the endpoint. If you do not specify the endpoint, nearby access is enabled by default
              // Instantiate a client option (optional; skip if no special requirements are present)
              ClientProfile clientProfile = new ClientProfile();
-             clientProfile.setSignMethod("HmacSHA256"); // Specify the signature algorithm. The default value is `HmacSHA256`
+             clientProfile.setSignMethod("HmacSHA256"); // Specify the signature algorithm (HmacSHA256 by default)
              // Starting from v3.1.80, the SDK supports printing logs.
              clientProfile.setHttpProfile(httpProfile);
              clientProfile.setDebug(true);
@@ -140,11 +140,11 @@ public class DescribeInstances {
 
 ### More samples
 
-You can find more detailed samples in the `examples` directory in the [GitHub repository](https://github.com/tencentcloud/tencentcloud-sdk-java).
+You can find more detailed samples in the `examples` directory on the [GitHub page](https://github.com/tencentcloud/tencentcloud-sdk-java).
 
 ## Relevant Configuration
 
-### Proxy configuration[](id:p3)
+### Proxy[](id:p3)
 
 Starting from v3.0.96, an HTTP proxy can be set separately: 
 
@@ -156,9 +156,9 @@ httpProfile.setProxyPort(real proxy port);
 
 ### Language
 
-Starting from v3.1.16, we add the support for the common parameter `Language` to meet the globalization requirements of certain products. As before, `Language` is not passed in by default, which is usually Chinese but can also be English by default in some products. Currently, valid values are `zh-CN` (Chinese) and `en-US` (English), which can be set in the following way: 
+Starting from v3.1.16, we add the support for the common parameter `Language` to meet the globalization requirements of certain products. As before, `Language` is not passed in by default subject to the decisions of each service API, which is usually Chinese but can also be English by default in some products. Currently, valid values are Chinese and English, which can be set in the following way:
 
-```java
+```
 import com.tencentcloudapi.common.profile.ClientProfile;
 import com.tencentcloudapi.common.profile.Language;
 ...
@@ -223,25 +223,29 @@ We recommend you use the new version of SDK. If you need a legacy version, add t
 
 
 ## FAQs
-<dx-accordion>
-::: Failure\sto\supdate\sthe\sdependencies\sin\sthe repository's\spom.xml\sfile
-This may be because the local server has a proxy configured, but the proxy is not configured for the tool during the update. Please update the dependencies on the command line as detailed above. If the problem persists, you need to check whether the problem is caused by network or firewall issues.
-:::
-::: Failure\sto\srun\sthe\sdemo
-In `[TencentCloudSDKException]message:java.net.ConnectException-Connection timed out: connect requestId:`, you need to check whether the local server has a proxy configured but the proxy is not added in the code. For more information, please see [Proxy configuration](#p3) above.
-:::
-::: Version\supgrade
-Please note that upgrading from v3.0.x to 3.1.x causes compatibility issues. As `integer` fields have been modified to `long` type, the project needs to be recompiled.
-:::
-::: Dependency\sconflict
-Currently, the SDK depends on OkHttp 2.5.0. If it is mixed with other packages that depend on OkHttp 3, an error may be reported, such as `Exception in thread "main" java.lang.NoSuchMethodError: okio.BufferedSource.rangeEquals(JLokio/ByteString;)Z`.
+### Version upgrade
 
-The reason is that OkHttp 3 depends on Okio 1.12.0, while OkHttp 2.5.0 depends on Okio 1.6.0. When Maven parses dependencies, it gives top priority to the shortest path in sequence, so if the SDK is declared in the pom.xml dependency first, Okio 1.6.0 will be used, and an error will be reported.
+Please note that upgrading from v3.0.x to 3.1.x causes compatibility issues. As `integer` fields have been modified to `long` type, the project needs to be recompiled.
+
+### Dependency conflict
+
+Currently, the SDK depends on OkHttp 2.5.0. If it is mixed with other packages that depend on OkHttp 3, an error may be reported, such as `Exception in thread "main" java.lang.NoSuchMethodError: okio.BufferedSource.rangeEquals(JLokio/ByteString;)Z`. The reason is that OkHttp 3 depends on Okio 1.12.0, while OkHttp 2.5.0 depends on Okio 1.6.0. When Maven parses dependencies, it gives top priority to the shortest path in sequence, so if the SDK is declared in the pom.xml dependency first, Okio 1.6.0 will be used, and an error will be reported.
 
 Solution before the SDK is upgraded to OkHttp 3:
-1. Clearly specify the dependency on Okio 1.12.0 in pom.xml (note that there may be other packages that require a higher version, in which case, take the highest version as a workaround).
-2. Put the SDK at the end of the dependency (note that if it has been compiled before, you need to delete the OkHttp package cached by Maven first). Taking the CMQ SDK that depends on OkHttp 3 as an example, the format is as follows (pay attention to the workaround version number): 
-```xml
+
+1. Clearly specify the dependency on Okio 1.12.0 in pom.xml:
+>?There may be other packages that require a higher version, in which case, take the highest compatible version as a workaround; for example, when other packages use OkHttp 4, the corresponding version may be Okio 2.2.2.
+
+```
+    <dependency>
+      <groupId>com.squareup.okio</groupId>
+      <artifactId>okio</artifactId>
+      <version>1.12.0</version>
+    </dependency>
+```
+
+2. Put the SDK at the end of the dependency (note that if it has been compiled before, you need to delete the OkHttp package cached by Maven first). Taking the CMQ SDK that depends on OkHttp 3 as an example, the format is as follows (pay attention to the workaround version number):
+```
     <dependency>
       <groupId>com.qcloud</groupId>
       <artifactId>cmq-http-client</artifactId>
@@ -253,5 +257,89 @@ Solution before the SDK is upgraded to OkHttp 3:
       <version>3.1.59</version>
     </dependency>
 ```
-:::
-</dx-accordion>
+
+### Certificate issue
+
+Certificate issues are usually caused by incorrect configuration of the client environment. The SDK does not manipulate the certificate and relies on the processing by the Java runtime environment itself. After a certificate issue occurs, you can run `-Djavax.net.debug=ssl` to enable detailed logs for troubleshooting.
+
+Some users reported that the certificate error `javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure` occurred while using IBM JDK 1.8. The error was resolved after Oracle JDK was used.
+
+## Common Client
+
+Starting from v3.1.303, Tencent Cloud SDK for Java supports the use of `Common Client` mode for requests. You only need to install the `Common` package to initiate calls to any Tencent Cloud product.
+
+>?You must clearly know the parameters required by the called API; otherwise, the call may fail.
+
+Currently, only the POST method is supported, and the signature algorithm must be signature algorithm v3. For detailed usage, please see the [Using Common Client to Call](https://github.com/TencentCloud/tencentcloud-sdk-java/tree/master/examples/common/CommonClient) sample.
+
+
+## Support for Request Retry
+
+Starting from v3.1.310, Tencent Cloud SDK for Java supports request retry. For each request, you can set the number of retries between 0 and 10. If an API request fails, it will be retried at intervals of 1s until it succeeds or the number of retries is used up.
+
+For detailed usage, please see the [Using `retry` to Retry Request](https://github.com/TencentCloud/tencentcloud-sdk-java/blob/master/examples/common/retry/Retry.java) sample.
+
+## Credential Management
+
+Tencent Cloud SDK for Java currently supports the following methods for credential management:
+
+### Environment variable
+
+By default, the environment variables `TENCENTCLOUD_SECRET_ID` and `TENCENTCLOUD_SECRET_KEY` are read to get `secretId` and `secretKey`. The relevant code is as follows:
+
+```java
+Credential cred = new EnvironmentVariableCredentialsProvider().getCredentials();
+```
+
+### Configuration file
+
+The configuration file path should be as follows:
+
++ Windows: `c:\Users\NAME\.tencentcloud\credentials`
++ Linux: `~/.tencentcloud/credentials` or `/etc/tencentcloud/credentials`
+
+The configuration file is in the following format:
+
+```ini
+[default]
+secret_id = xxxxx
+secret_key = xxxxx
+```
+
+The relevant code is as follows:
+
+```java
+Credential cred = new ProfileCredentialsProvider().getCredentials();
+```
+
+### Role assumption
+
+For related concepts of role assumption, please see [Role Overview](https://intl.cloud.tencent.com/document/product/598/19420).
+
+To use this method, you must create a role in the Tencent Cloud CAM console as instructed in [Creating a Role](https://intl.cloud.tencent.com/document/product/598/19381).
+
+After you have a role, you can get temporary credentials through the persistent key and `roleArn`, and the SDK will automatically refresh the temporary credentials. The relevant code is as follows:
+
+```java
+Credential cred = new STSCredential("secretId", "secretKey", "roleArn", "roleSessionName");
+```
+
+### Instance role
+
+For related concepts of instance role, please see [Managing Roles](https://intl.cloud.tencent.com/document/product/213/38290).
+
+After you bind a role to an instance, you can access the relevant metadata APIs on the instance to get temporary credentials, and the SDK will automatically refresh the temporary credentials. The relevant code is as follows:
+
+```java
+Credential cred = new CvmRoleCredential();
+```
+
+### Credential supply chain
+
+Tencent Cloud SDK for Java provides a credential supply chain. By default, it will try to get credentials in the order of environment variable -> configuration file -> instance role and return the first obtained credential. The relevant code is as follows:
+
+```java
+Credential cred = new DefaultCredentialsProvider().getCredentials();
+```
+
+For detailed usage of credential management, please see the [Using Credential Supply Chain](https://github.com/TencentCloud/tencentcloud-sdk-java/blob/master/examples/common/credential_manager/CredentialManager.java) sample.

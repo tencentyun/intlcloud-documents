@@ -65,4 +65,4 @@ grep group_ip etc/loglistener.conf
 ![](https://main.qcloudimg.com/raw/4afe8d3a3b7c4f16e6795e35544a38e7.png)
 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls), and select **Server Group** on the left sidebar. On the **Server Group Management** page, view and verify that the IP address of the server group is the same as that configured on LogListener.
-![](https://main.qcloudimg.com/raw/ea8e833b596e1cf000f4f58f8f99dd29.png)
+![](https://main.qcloudimg.com/raw/888959e938a1dd3ec8a3f6c5b4818a56.png)

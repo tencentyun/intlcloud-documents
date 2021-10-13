@@ -7,8 +7,8 @@
 请前往 [CAM 管理控制台](https://console.cloud.tencent.com/cam/overview) 开通相应的服务权限。
 
 ## 操作步骤
-1. 登录容器服务控制台，选择左侧导航栏中的【[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)】。
-2. 在页面上方选择需创建弹性集群的地域，并单击【新建】。如下图所示：
+1. 登录容器服务控制台，选择左侧导航栏中的**[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)**。
+2. 在页面上方选择需创建弹性集群的地域，并单击**新建**。如下图所示：
 ![](https://main.qcloudimg.com/raw/155688ae1758a0df4a0428067bf9acde.png)
 3. 在“创建弹性集群”页面，根据以下提示设置集群信息。如下图所示：
 ![](https://main.qcloudimg.com/raw/1692f78fa60e4565b0f60db76911968f.png)
@@ -21,7 +21,7 @@
  - **集群描述**：创建集群的相关信息，该信息将显示在“集群信息”页面。
  - **DNS Forward 配置**：可注册上游 DNS 信息，支持填写期望由上游 DNS 解析的域名，例如 “example.org”，以及上游 DNS 的地址，例如“10.0.0.1:53”。
  >! 上游 DNS 的地址务必和集群网络互通。
-4. 单击【完成】即可开始创建，可在“弹性集群”列表页面查看集群的创建进度。
+4. 单击**完成**即可开始创建，可在“弹性集群”列表页面查看集群的创建进度。
 
 <span id="ContainerNetwork"></span>
 

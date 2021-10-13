@@ -1,5 +1,5 @@
 
-## Overview
+## Use Cases
 
 CLS allows you to embed the [CLS console](https://console.cloud.tencent.com/cls) into an external system so you can conduct log search and analysis without logging in to Tencent Cloud console. This feature offers benefits as follows:
 
@@ -22,7 +22,7 @@ See the figure below for an overview of this feature:
 	2. Click **Roles** in the left sidebar to enter the roles list page.
 	3. Select **Create Role** > **Tencent Cloud Account** to create a custom role.
 	4. Select **Current root account **, check **Allow the current role to access console**, and click **Next**.
-	
+
 	>!If the option **Allow the current role to access console* is not available, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be whitelisted for this feature.
 	5. Set access policies for the role, e.g., the read-only policy `QcloudCLSReadOnlyAccess`, and click **Next**.
 
@@ -30,7 +30,7 @@ See the figure below for an overview of this feature:
 
 <span id="step2"></span>
  - **Creating a CAM role using APIs**:
- For detailed directions, see [CreateRole](https://intl.cloud.tencent.com/document/product/598/33561). Note that you need to enter `1` as the value of ConsoleLogin to allow the role to log in to the console.
+ For detailed directions, see [CreateRole](https://intl.cloud.tencent.com/document/product/598/33561). Note that you need to enter `1` as the value of `onsoleLogin` to allow the role to log in to the console.
  Sample request:
 ```plaintext
 https://cam.tencentcloudapi.com/?Action=CreateRole&RoleName=CompanyOpsRole&ConsoleLogin=1&PolicyDocument={"version":"2.0","statement":[{"action":["cls:get*","cls:list*","cls:GetHistogram","cls:GetFastAnalysis","cls:GetChart","cls:ListChart","cls:ListDashboard","cls:GetDashboard","cls:searchLog","cls:downloadLog","cls:pullLogs"],"effect":"allow","principal":{"qcs":["qcs::cam::uin/100001234567:root"]}}]}
@@ -41,8 +41,8 @@ https://cam.tencentcloudapi.com/?Action=CreateRole&RoleName=CompanyOpsRole&Conso
 
 1. Log in to the web server outside Tencent Cloud.
 2. The external web server assigns you the pre-created role created in Prerequisite 1 based on your identity, e.g. `CompanyOpsRole`.
-3. The web server accesses the Tencent Cloud STS service based on the role name and uses the access key obtained in Prerequisite 2 to call the [AssumeRole](https://intl.cloud.tencent.com/zh/document/product/598/35840) API to apply for a temporary key of `CompanyOpsRole`.
-4. Call the [AssumeRole](https://intl.cloud.tencent.com/zh/document/product/598/35840) API to get the temporary key of `CompanyOpsRole`.
+3. The web server accesses the Tencent Cloud STS service based on the role name and uses the access key obtained in Prerequisite 2 to call the [AssumeRole](https://intl.cloud.tencent.com/document/product/598/35840) API to apply for a temporary key of `CompanyOpsRole`.
+4. Call the [AssumeRole](https://intl.cloud.tencent.com/document/product/598/35840) API to get the temporary key of `CompanyOpsRole`.
 5. Generate a login signature using the temporary key with the steps as shown below:
  1. **Sorting parameters**
      Sort parameters to be signed listed below in ascending alphabetical or numerical order. That is, sort the parameters by their first letters, then by their second letters if their first letters are the same, and so on. You can do this with the aid of sorting functions in programming languages, such as the ksort function in PHP.	 
@@ -157,7 +157,7 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 <td align="left">region</td>
 <td align="left">Yes</td>
 <td align="left">String</td>
-<td align="left">Region abbreviation, e.g. ap-shanghai for Shanghai region. For other available region abbreviations, see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a></td>
+<td align="left">Region abbreviation, e.g. `ap-shanghai` for Shanghai region. For other available region abbreviations, see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a></td>
 </tr>
 <tr>
 <td align="left">logset_id</td>
@@ -172,16 +172,10 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 <td align="left">Log topic ID</td>
 </tr>
 <tr>
-<td align="left">start_time</td>
+<td align="left">time </td>
 <td align="left">No</td>
 <td align="left">String</td>
-<td align="left">Start time of logs to search, e.g. 2019-11-13 10:00:00</td>
-</tr>
-<tr>
-<td align="left">end_time</td>
-<td align="left">No</td>
-<td align="left">String</td>
-<td align="left">End time of logs to search, e.g. 2019-11-13 20:00:00</td>
+<td align="left">Time range for log search. Format example: ```2021-07-15T10:00:00.000,2021-07-15T12:30:00.000```</td>
 </tr>
 <tr>
 <td align="left">query</td>
@@ -239,16 +233,16 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 </tr>
 </tbody>
 </table>
- 2. Splice your login information and destination page URL into a login URL. **The parameter values should be URL-encoded.**
+ 2. Splice your login information and destination page URL into a login URL. <b>The parameter values should be URL-encoded.</b>
 ```plaintext
 https://cloud.tencent.com/login/roleAccessCallback
 ?algorithm=<encryption algorithm for signing; currently only supports sha1 (used by default) and sha256
 &secretId=<secretId for signing>
 &token=<Temporary key token>
 &nonce=<nonce for signing>
-&timestamp=<timestamp for signing>
-&signature=<signature string>
-&s_url=<destination URL after login>
+&timestamp=<Timestamp for signing>
+&signature=<Signature string>
+&s_url=<Destination URL after login>
 ```
 7. Use the final URL to access the embedded CLS page of the Tencent Cloud console. The sample below is a URL to the CLS search analysis page:
 ```plaintext

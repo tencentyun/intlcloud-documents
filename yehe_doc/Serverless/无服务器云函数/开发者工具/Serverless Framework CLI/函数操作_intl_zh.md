@@ -1,129 +1,137 @@
+
 ## 操作场景
-本文介绍如何快速创建与部署一个云函数项目。
+该任务指导您通过 Serverless Framework，在腾讯云上快速创建、配置和部署一个 SCF 云函数应用。
 
 ## 前提条件
-- 已安装 Serverless Framework，详情请参见 [安装 Serverless Framework](https://intl.cloud.tencent.com/document/product/583/36263)。
-- 账号开通 Serverless 相关权限，详情请参见 [账号和权限配置](https://intl.cloud.tencent.com/document/product/583/36270)。
+- 已经 [安装 Serverless Framework 1.67.2](https://intl.cloud.tencent.com/document/product/1040/37034) 以上版本。
+```
+npm install -g serverless
+```
+- 已经 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/10495)。
+
+>?如果您的账号为**腾讯云子账号**，请先联系主账号，参考 [账号和权限配置](https://intl.cloud.tencent.com/document/product/1040/36793) 进行授权。
 
 ## 操作步骤
+### 快速部署
 
-### 创建函数
-执行以下命令，快速创建一个开发语言为 Node.js 的函数示例。
-```
-sls init scf-demo
-```
->?命令中的 scf-demo 默认为 nodejs 模版，您也可以替换为其它语言的函数模版：`scf-golang`，`scf-php`，`scf-python`。
->
-函数创建成功后，`scf-demo` 项目目录下会有一个 serverless.yml 配置文件。该文件定义了每次部署的云函数资源信息，更多配置文件信息请参见 [配置文件](#configuration)。
+在**空文件夹**目录下，执行如下指令：
 
-### 部署函数
-在 `scf-demo` 目录下执行以下命令，进行函数部署。
+```sh
+serverless
 ```
-sls deploy
-```
-将会弹出二维码，请直接扫码授权开始部署。部署成功后，会自动创建云函数资源。
->?如果鉴权失败，请参考 [权限配置](https://intl.cloud.tencent.com/document/product/1040/36793) 进行授权。
->
 
-### 查看函数信息
-执行以下命令，查看已部署云函数资源信息。
+接下来按照交互提示，完成项目初始化，应用请选择 `scf-starter` 模版，并选择您希望用的运行时（此处以 Node.js 为例）：
+```sh
+Serverless: 当前未检测到 Serverless 项目，是否希望新建一个项目？ Yes
+Serverless: 请选择您希望创建的 Serverless 应用 scf-starter - 快速部署一个云函数
+
+  react-starter - 快速部署一个 React.js 应用 
+  restful-api - 快速部署一个 REST API 使用 python + API gateway 
+❯ scf-starter - 快速部署一个云函数 
+  vue-starter - 快速部署一个 Vue.js 基础应用 
+  website-starter - 快速部署一个静态网站 
+  eggjs-starter - 快速部署一个Egg.js 基础应用 
+  express-starter - 快速部署一个 Express.js 基础应用 
+  
+Serverless: 请选择应用的运行时 scf-nodejs - 快速部署一个 nodejs 云函数
+
+  scf-golang - 快速部署一个 golang 云函数 
+❯ scf-nodejs - 快速部署一个 nodejs 云函数 
+  scf-php - 快速部署一个 PHP 云函数 
+  scf-python - 快速部署一个 python 云函数  
+  
+Serverless: 请输入项目名称 demo
+Serverless: 正在安装 scf-nodejs 应用...
+
+scf-nodejs › Created
+
+
+demo 项目已成功创建!
 ```
+
+选择**立即部署**，将已经初始化好的项目快速部署到云函数控制台：
+
+```sh
+Serverless: 是否希望立即将该项目部署到云端？ Yes
+
+xxxxxxxx
+x  QR  x
+x CODE x
+xxxxxxxx
+
+serverless ⚡ framework
+Action: "deploy" - Stage: "dev" - App: "scfApp" - Instance: "scfdemo"
+
+functionName: helloworld
+description:  helloworld 空白模板函数
+namespace:    default
+runtime:      Nodejs10.15
+handler:      index.main_handler
+memorySize:   128
+lastVersion:  $LATEST
+traffic:      1
+triggers: 
+  apigw: 
+    - http://service-xxxxxxx.gz.apigw.tencentcs.com/release/
+
+27s › scfdemo › Success
+```
+
+部署完毕后，通过以下指令，完成函数的远程调用：
+```sh
+sls invoke --inputs function=helloworld
+```
+>?sls 是 serverless 命令的简写。
+
+### 查看部署信息
+
+如果希望再次查看应用的部署状态和资源，可以进入到部署成功的文件夹，运行如下命令，查看对应信息：
+
+```
+cd demo #进入项目目录，此处请改为您的项目目录名称
 sls info
 ```
 
-### 移除函数
-执行以下命令，移除已经部署云函数资源。
+### 查看目录结构
+在初始化的项目目录下，可以看到一个 Serverless 函数项目的最基本结构：
+
 ```
-sls remove
-```
-
-[](id:configuration)
-
-### 配置文件
-
-Serverless Framework CLI 创建或更新云函数，均依赖 serverless.yml 文件中的配置。当执行 `sls deploy` 命令部署函数时，会根据  serverless.yml 文件中的配置对云函数资源进行创建或更新。serverlesss.yml 文件简单示例如下，更多配置信息请参见 [全量配置文档](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md)。
-```
-#scf组件配置样例
-#全量配置参考https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
-
-#组件信息
-component: scf # (必填) 引用 component 的名称，当前用到的是 tencent-scf 组件
-name: scfdemo # (必填) 创建的实例名称，请修改成您的实例名称
-
-#组件参数
-inputs:
-  name: ${name}-${stage}-${app} #函数名称
-  src: ./  #代码路径
-  handler: index.main_handler #入口
-  runtime: Nodejs10.15 # 云函数运行时的环境
-  region: ap-guangzhou # 云函数所在区域
-  events: # 触发器
-    - apigw: # 网关触发器
-        parameters:
-          endpoints:
-            - path: /
-              method: GET
+.
+├── serverless.yml  # 配置文件
+├—— index.js    # 入口函数
+└── .env # 环境变量文件
 ```
 
-该 serverless.yml 文件包含如下信息：
+- serverless.yml 配置文件实现了函数基本信息的快速配置，函数控制台支持的配置项都支持在 yml 文件里配置（查看 [云函数的全量配置信息](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md)）。
+- index.js 为项目的入口函数，此处为 helloworld 模版。
+- .env 文件里存放了用户登录的鉴权信息，您也可以在里面配置其它环境变量。
 
-#### 组件信息
-
-| 组件名    | 是否必选 | 说明                                                       |
-| --------- | -------- | ---------------------------------------------------------- |
-| component | 是     | component 的名称，可使用 `sls registry` 命令查询可引入的组件。 |
-| name      | 是     | 创建的实例名称，每个组件在部署时将创建一个实例。           |
-
-
-#### 参数信息
-
-inputs 下的参数为组件配置参数。一个最简单 SCF 组件参数配置具备以下信息：
-
-| 参数名  | 说明                                                         |
-| ------- | ------------------------------------------------------------ |
-| name    | 云函数名称，同时也作为资源 ID。                          |
-| src     | 代码路径。                                                   |
-| handler | 函数处理方法名称。                                          |
-| runtime | 云函数运行环境，目前支持： Python2.7、Python3.6、Nodejs6.10、Nodejs8.9、Nodejs10.15、Nodejs12.16、PHP5、PHP7、Go1、Java8 和 CustomRuntime。 |
-| region  | 云函数所在的区域。                                           |
-| events  | 触发器。支持的触发器为：timer、apigw、cos、cmq、ckafka 。   |
-
-
-
-## 常用操作命令
-Serverless Framework 框架提供了一套部署编排的操作命令，您可使用相关命令快速部署函数资源。详情请参见 [支持命令列表](https://intl.cloud.tencent.com/document/product/583/36269)。
-
-使用 `sls deploy` 命令部署成功的云函数，还可使用云函数组件提供的如下常用操作命令。
->!命令必须在 serverless.yml 同目录下执行。
->
-- **发布函数版本**
-执行以下命令，将函数 my-function 云端的 `$LATEST` 版本发布为一个固定版本。
-```plaintext
-sls publish-ver --inputs  function=my-function
+### 重新部署
+在本地项目目录下，您可以对函数模版项目内容与配置文件进行修改，并通过以下指令进行重新部署：
 ```
-- **创建别名**
-执行以下命令，给云函数 my-function 创建别名 routing-alias，路由规则为版本1流量为50%，版本2流量为50%。
-```plaintext
-sls create-alias --inputs name=routing-alias  function=my-function  version=1  
-config='{"weights":{"2":0.5}}'
+sls deploy
 ```
-- **更新别名**
-执行以下命令，更新云函数 my-function 别名 routing-alias 的流量规则为版本1流量为10%，版本2流量为90%。
-```plaintext
-sls update-alias --inputs name=routing-alias  function=my-function  version=1 config='{"weights":{"2":0.9}}'
-```
-- **列举别名**
-执行以下命令，列举云函数 my-function 别名 routing-alias。
-```plaintext
-sls list-alias --inputs function=my-function
-```
-- **删除别名**
-执行以下命令，删除云函数 my-function 的别名 routing-alias。
-```plaintext
-sls delete-alias --inputs name=routing-alias  function=my-function
-```
-- **触发函数**
-执行以下命令，云端调用 functionName 函数，并传递 JSON 参数 {"weights":{"2":0.1}}。
-```plaintext
-sls invoke  --inputs function=functionName  clientContext='{"weights":{"2":0.1}}'
-```
+>?如需查看移除过程中的详细信息，可以增加 `--debug` 参数进行查看。
+
+### 持续开发
+部署完成后，Serverless Framework 支持通过不同指令，帮助您完成项目的持续开发部署、灰度发布等能力，您也可以结合其它组件一起使用，完成多组件应用的部署管理。
+
+详情请参考文档 [应用管理](https://intl.cloud.tencent.com/document/product/1040/38288) 与 [支持命令列表](https://intl.cloud.tencent.com/document/product/1040/36861)。
+
+## 常见问题
+
+- 问题1：输入 `serverless` 时没有默认弹出中文引导。
+  解决方案： 在 .env 文件中增加配置 SERVERLESS_PLATFORM_VENDOR=tencent 即可。
+	
+- 问题2：在境外网络环境，输入 `sls deploy` 后部署十分缓慢。
+  解决方案：在 .env 文件中增加配置 `GLOBAL_ACCELERATOR_NA=true` 则开启境外加速 。 
+	
+- 问题3：输入 `sls deploy` 后部署报网络错误。
+  解决方案：在 .env 文件中增加以下代理配置。
+  ```
+  HTTP_PROXY=http://127.0.0.1:12345 #请将'12345'替换为您的代理端口
+  HTTPS_PROXY=http://127.0.0.1:12345 #请将'12345'替换为您的代理端口
+  ```
+
+  
+

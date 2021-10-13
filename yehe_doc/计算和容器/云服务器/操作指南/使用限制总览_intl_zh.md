@@ -23,14 +23,6 @@
 - 共享镜像：每个自定义镜像最多可共享给50个腾讯云用户，且仅支持共享到对方账户相同地域下。
 - 更多详情请参考 [镜像类型限制](https://intl.cloud.tencent.com/document/product/213/4941)。
 
-## 弹性公网 IP 相关限制
-
-<table>
-	<tr><th>限制类型</th><th>限制说明</th></tr>
-	<tr><td>弹性公网 IP 配额限制</td><td>详情请参见 <a href="https://cloud.tencent.com/document/product/1199/41648#eip-.E9.85.8D.E9.A2.9D.E9.99.90.E5.88.B6">EIP 配额限制</a>。</td></tr>
-	<tr><td>云服务器绑定公网 IP 限制</td><td>详情请参见 <a href="https://cloud.tencent.com/document/product/1199/41648#.E7.BB.91.E5.AE.9A.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E9.99.90.E5.88.B6">绑定云服务器限制</a>。</td></tr>
-</table>
-
 ## 网卡相关限制
 
 根据 CPU 和内存配置不同，云服务器可以绑定的弹性网卡数和单网卡绑定内网 IP 数有较大不同，网卡和单网卡 IP 配额数如下表所示：

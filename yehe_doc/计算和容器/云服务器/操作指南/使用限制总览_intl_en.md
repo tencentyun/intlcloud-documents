@@ -23,14 +23,6 @@
 - Shared images: each custom image can be shared with a maximum of 50 Tencent Cloud users. Custom images can only be shared with accounts in the same region as the source account.
 - For more information, see [Image Types](https://intl.cloud.tencent.com/document/product/213/4941).
 
-## EIP Limits
-
-<table>
-	<tr><th>Limitations</th><th>Description</th></tr>
-	<tr><td>EIP quota limit</td><td>For more information, see<a href="https://cloud.tencent.com/document/product/1199/41648#eip-.E9.85.8D.E9.A2.9D.E9.99.90.E5.88.B6">EIP quota limit</a>.</td></tr>
-	<tr><td>Limits on public IPs bound to a CVM</td><td>For more information, see <a href="https://cloud.tencent.com/document/product/1199/41648#.E7.BB.91.E5.AE.9A.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E9.99.90.E5.88.B6">Limits on public IPs bound to a CVM</a>.</td></tr>
-</table>
-
 ## ENI Limits
 
 Based on CPU and memory configurations, the number of ENIs bound to a CVM differs from the number of private IPs bound to an ENI. The quotes are as shown below:
