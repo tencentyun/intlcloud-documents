@@ -6,7 +6,7 @@ This document describes how to quickly create an event-triggered function in the
 
 If you already have a Tencent Cloud account, you can ignore this step.
 
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank" style="color: white; font-size:13px;">Click here to register a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/378/17985" target="_blank" style="color: white; font-size:13px;">Click here to register a Tencent Cloud account</a></div>
 
 ## Step 2. Top up online
 
@@ -58,7 +58,7 @@ After the function is created, you will be automatically redirected to its **Fun
 
 ## Step 6. Test in the cloud
 <dx-tabs>
-::: Function deployment test
+::: Function\sdeployment\stest
 On the **Function Management** page, select **Function code** and click **Test** to run the code with the test result returned as shown below:
 
 <dx-alert infotype="explain" title="">
@@ -79,7 +79,7 @@ During this test, SCF will get the data structures of the "Hello world event tem
 ```
 
 :::
-::: Trigger configuration test
+::: Trigger\sconfiguration\stest
 On the **Trigger Management** page, view the trigger details.
 1. After a trigger is successfully created, an access path will be generated on the **Trigger Method** page of the function as shown below:
 ![](https://main.qcloudimg.com/raw/9643ba1735426af11150e6260d84aa7e.png)
@@ -90,13 +90,13 @@ On the **Trigger Management** page, view the trigger details.
 
 ## Step 7. View logs and monitoring data
 <dx-tabs>
-::: View logs
+::: View\slogs
 On the details page of a created function, select **Log Query** on the left to view the detailed logs of the function as shown below:
 ![](https://main.qcloudimg.com/raw/d1150d2144bab8a023294554d3c1c170.png)
 For more information on logs, please see [Viewing Execution Logs](https://intl.cloud.tencent.com/document/product/583/32740).
 
 :::
-::: View monitoring data
+::: View\smonitoring\sdata
 On the **Function Management** page, select **Monitoring information** of the created function to view metrics such as function invocations and execution duration as shown below:
 
 <dx-alert infotype="notice" title="">
@@ -109,7 +109,7 @@ The minimal granularity of monitoring statistics collection is 1 minute. You nee
 ![](https://main.qcloudimg.com/raw/11d4ee39e4d824112fa97fe2905e4b1a.png)
 For more information on monitoring, please see [Description of Monitoring Metrics](https://intl.cloud.tencent.com/document/product/583/32739).
 :::
-::: Configure alarms
+::: Configure\salarms
 On the details page of a created function, click **click here** to configure an alarm policy for the function to monitor its running status as shown below:
 ![](https://main.qcloudimg.com/raw/3896565465fcbfc86fc7b5bce9dc9545.png)
 For more information on how to configure an alarm, please see [Configuring Alarm](https://intl.cloud.tencent.com/document/product/583/32738).

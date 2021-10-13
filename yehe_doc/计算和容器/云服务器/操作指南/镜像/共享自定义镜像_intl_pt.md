@@ -35,5 +35,5 @@ A imagem compartilhada do Tencent Cloud é identificada pelo ID exclusivo da con
 
 ### Compartilhamento de imagens por API
 
-É possível usar a API `ShareImage` para compartilhar imagens. Para obter mais informações, consulte a API [`ShareImage`](https://intl.cloud.tencent.com/document/api/213/2361).
+É possível usar a API `ShareImage` para compartilhar imagens. Para obter mais informações, consulte a API `ShareImage`.
 
