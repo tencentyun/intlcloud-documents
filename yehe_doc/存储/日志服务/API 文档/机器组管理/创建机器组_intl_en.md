@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to create a [server group](https://intl.cloud.tencent.com/document/product/614/30449) and return its ID.
+This API is used to create a [machine group](https://intl.cloud.tencent.com/document/product/614/30449) and return its ID.
 
 ## Request
 
@@ -33,10 +33,10 @@ There are only common request headers but no special request headers.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|--------------------------------|
-| group_name   | string | body | Yes      | Server group name, which must be unique             |
-| type       | string    | body | No   | Server group type. Valid values: ip and label. Default value: ip  |
-| ips          | JsonArray| body| No   | List of IPs in server group            |
-| labels     | JsonArray | body | No   | List of labels in the server group          |
+| group_name   | string | body | Yes      | Machine group name, which must be unique             |
+| type       | string    | body | No   | Machine group type. Valid values: ip and label. Default value: ip  |
+| ips          | JsonArray| body| No   | List of IPs in machine group            |
+| labels     | JsonArray | body | No   | List of labels in the machine group          |
 
 ## Response
 
@@ -58,7 +58,7 @@ There are only common response headers but no special response headers.
 
 | Field Name | Type   | Required | Description     |
 |------------|--------|----------|-----------------|
-| group_id   | string | Yes      | Server group ID |
+| group_id   | string | Yes      | Machine group ID |
 
 ## Error Codes
 
