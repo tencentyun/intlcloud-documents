@@ -5,17 +5,16 @@
 
 ## この機能のプラットフォームのサポート
 
-| iOS | Android | Mac OS | Windows | Electron| web|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|     ×  |    ×    |    &#10003;   |    &#10003;    |&#10003;  |    ×   |
+| iOS | Android | Mac OS | Windows  | Web端末|
+|:-------:|:-------:|:-------:|:-------:|:-------:|
+|     ×  |    ×    |    &#10003;   |    &#10003;    |&#10003;    |  ×   |
 
 ## カメラテスト
 
- TRTCCloud の `startCameraDeviceTestInView` インターフェースを使用すればカメラテストが行えます。テストのプロセスでは `setCurrentCameraDevice` 関数をコールすることでカメラを切り替えられます。
+TRTCCloudの`startCameraDeviceTestInView`インターフェースを使用すればカメラテストが行えます。テストのプロセスでは`setCurrentCameraDevice`関数をコールすることでカメラを切り替えられます。
 
-- **Mac プラットフォーム**
-
-``` Objective-C
+<dx-codeblock>
+::: MacプラットフォームObjective-C
 // カメラテストインターフェースの表示（カメラのプレビュー、カメラの切り替えのサポート）
 - (IBAction)startCameraTest:(id)sender {
     // カメラテストの開始。 cameraPreviewをmacOSのNSViewまたはiOSプラットフォームのUIView
@@ -27,11 +26,8 @@
     // カメラテストの終了
     [self.trtcCloud stopCameraDeviceTest];
 }
-```
-
-- **Windows プラットフォーム（C++ バージョン）**
-
-``` C++
+:::
+::: Windowsプラットフォーム（C++） C++
 // カメラテストの開始。レンダリングする必要のあるビデオの制御ハンドルを渡します。
 void TRTCMainViewController::startTestCameraDevice(HWND hwnd) 
 {
@@ -43,11 +39,8 @@ void TRTCMainViewController::stopTestCameraDevice()
 {
      trtcCloud->stopCameraDeviceTest();
 }
-```
-
-* **Windows プラットフォーム（C# バージョン）**
-
-```c#
+:::
+::: Windowsプラットフォーム（C#） c#
 // カメラテストの開始。レンダリングする必要のあるビデオの制御ハンドルを渡します。
 private void startTestCameraDevice(Intptr hwnd) 
 {
@@ -59,15 +52,15 @@ private void stopTestCameraDevice()
 {
      mTRTCCloud.stopCameraDeviceTest();
 }
-```
+:::
+</dx-codeblock>
 
 ## マイクテスト
 
- TRTCCloud の `startMicDeviceTest` 関数を使用すると、マイクの音量を測定でき、コールバック関数はリアルタイムでマイク音量値を返します。
+TRTCCloudの`startMicDeviceTest`関数を使用すると、マイクの音量を測定でき、コールバック関数はリアルタイムでマイク音量値を返します。
 
-- **Mac プラットフォーム**
-
-``` Objective-C
+<dx-codeblock>
+::: MacプラットフォームObjective-C
   // マイクテストサンプルコード
   -(IBAction)micTest:(id)sender {
     NSButton *btn = (NSButton *)sender;
@@ -89,15 +82,12 @@ private void stopTestCameraDevice()
         btn.title = @"テスト開始";
     }
 }
-```
-
-- **Windows プラットフォーム（C++ バージョン）**
-
-``` C++
+:::
+::: Windowsプラットフォーム（C++） C++
 // マイクテストサンプルコード
 void TRTCMainViewController::startTestMicDevice() 
 {
-	// 音量コールバック率を設定。ここでは500msに1回コールバック。 onTestMicVolume コールバックインターフェースでモニタ。
+	// 音量コールバック率の設定。ここでは500msに1回コールバック。 onTestMicVolumeコールバックインターフェースで監視。
 	uint32_t interval = 500; 
 	// マイクテストの開始
 	trtcCloud->startMicDeviceTest(interval);
@@ -108,15 +98,12 @@ void TRTCMainViewController::stopTestMicDevice()
 {
      trtcCloud->stopMicDeviceTest();
 }
-```
-
-* **Windows プラットフォーム（C# バージョン）**
-
-```c#
+:::
+::: Windowsプラットフォーム（C#） c#
 // マイクテストサンプルコード
 private void startTestMicDevice() 
 {
-	// 音量コールバック率の設定、ここでは500msに1回コールバック。 onTestMicVolume コールバックインターフェースでモニタ。
+	// 音量コールバック率の設定。ここでは500msに1回コールバック。 onTestMicVolumeコールバックインターフェースで監視。
 	uint interval = 500; 
 	// マイクテストの開始
 	mTRTCCloud.startMicDeviceTest(interval);
@@ -127,35 +114,37 @@ private void stopTestMicDevice()
 {
      mTRTCCloud.stopMicDeviceTest();
 }
-```
+:::
+</dx-codeblock>
+
+
 
 ## スピーカーテスト
 
- TRTCCloud の `startSpeakerDeviceTest` 関数を使用し、デフォルトの mp3 オーディオデータを再生することで、スピーカーが正常に動作しているかテストします。
+TRTCCloudの`startSpeakerDeviceTest`関数を使用し、デフォルトのmp3オーディオデータを再生することで、スピーカーが正常に動作しているかテストします。
 
-- **Mac プラットフォーム**
-
-``` Objective-C
+<dx-codeblock>
+::: MacプラットフォームObjective-C
 // スピーカーテストサンプルコード
-//  NSButton のクリックイベントを例にすると、 xib の中では Button を Onおよび Off の下のタイトルでそれぞれ"テスト終了"および"テスト開始"に設定しています。
+// NSButtonのクリックイベントを例にすると、xibの中ではButtonをOnおよびOffの下のタイトルでそれぞれ「テスト終了」および「テスト開始」に設定しています。
 - (IBAction)speakerTest:(NSButton *)btn {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"test-32000-mono" ofType:@"mp3"];
     if (btn.state == NSControlStateValueOn) {
-        // "テスト開始"のクリック
+        // 「テスト開始」のクリック
         __weak __typeof(self) wself = self;
         [self.trtcEngine startSpeakerDeviceTest:path onVolumeChanged:^(NSInteger volume, BOOL playFinished) {
-            // 以下の UI 操作に関しては、 main queue に切り替えてから実行する必要があります
+            // 以下のUI操作に関しては、main queueに切り替えてから実行する必要があります
             dispatch_async(dispatch_get_main_queue(), ^{
-                // ここでは、 _updateOutputVolume は更新ページのスピーカー音量インジケータです
+                // ここでは、_updateOutputVolumeは更新ページのスピーカー音量インジケータです
                 [wself _updateOutputVolume:volume];
                 if (playFinished) {
-                    // 再生完了時にはボタンのステータスを"テスト開始"にします
+                    // 再生完了時にはボタンのステータスを「テスト開始」にします
                     sender.state = NSControlStateValueOff;
                 }
             });
         }];
     } else {
-        // "テスト終了"をクリック
+        // 「テスト終了」をクリック
         [self.trtcEngine stopSpeakerDeviceTest];
         [self _updateOutputVolume:0];
     }
@@ -163,20 +152,16 @@ private void stopTestMicDevice()
 
 // スピーカー音量インジケータの更新
 - (void)_updateOutputVolume:(NSInteger)volume {
-    // speakerVolumeMeter は NSLevelIndicatorです
+    // speakerVolumeMeterはNSLevelIndicatorです
     self.speakerVolumeMeter.doubleValue = volume / 255.0 * 10;
 }
-
-```
-
-- **Windows プラットフォーム（C++ バージョン）**
-
-``` C++
+:::
+::: Windowsプラットフォーム（C++） C++
 // スピーカーテストサンプルコード
 void TRTCMainViewController::startTestSpeakerDevice(std::string testAudioFilePath) 
 {
-	// testAudioFilePath オーディオファイルの絶対パス。パス文字列には UTF-8 エンコードフォーマットを使用し、ファイルフォーマットは: wav、mp3をサポート。
-	//  onTestSpeakerVolume コールバックインターフェースからスピーカーテスト音量値をモニタします。
+	// testAudioFilePathオーディオファイルの絶対パス。パス文字列にはUTF-8エンコードフォーマットを使用し、ファイルフォーマットはwav、mp3をサポート。
+	// onTestSpeakerVolumeコールバックインターフェースからスピーカーテスト音量値をモニタします。
 	trtcCloud->startSpeakerDeviceTest(testAudioFilePath.c_str());
 }
 
@@ -184,16 +169,13 @@ void TRTCMainViewController::startTestSpeakerDevice(std::string testAudioFilePat
 void TRTCMainViewController::stopTestSpeakerDevice() {
 	trtcCloud->stopSpeakerDeviceTest();
 }
-```
-
-* **Windows プラットフォーム（C# バージョン）**
-
-```c#
+:::
+::: Windowsプラットフォーム（C#） C#
 // スピーカーテストサンプルコード
 private void startTestSpeakerDevice(string testAudioFilePath) 
 {
-	// testAudioFilePath オーディオファイルの絶対パス。パス文字列には UTF-8 エンコードフォーマットを使用し、ファイルフォーマットは: wav、mp3をサポート。
-	//  onTestSpeakerVolume コールバックインターフェースからスピーカーテスト音量値をモニタします。
+	// testAudioFilePathオーディオファイルの絶対パス。パス文字列にはUTF-8エンコードフォーマットを使用し、ファイルフォーマットはwav、mp3をサポート。
+	// onTestSpeakerVolumeコールバックインターフェースからスピーカーテスト音量値をモニタします。
 	mTRTCCloud.startSpeakerDeviceTest(testAudioFilePath);
 }
 
@@ -201,4 +183,5 @@ private void startTestSpeakerDevice(string testAudioFilePath)
 private void stopTestSpeakerDevice() {
 	mTRTCCloud.stopSpeakerDeviceTest();
 }
-```
+:::
+</dx-codeblock>

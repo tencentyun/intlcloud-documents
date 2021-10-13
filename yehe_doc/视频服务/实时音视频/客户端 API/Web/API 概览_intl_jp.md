@@ -8,7 +8,7 @@ WebRTCのテクノロジーはGoogleが初めて提唱し、現在、デスク�
 <tr>
 <th>OS</th>
 <th>ブラウザタイプ</th>
-<th>ブラウザの最低<br>バージョン要件</th>
+<th>ブラウザの最小<br>バージョン要件</th>
 <th>SDKのバージョン要件</th>
 <th>受信（再生）</th>
 <th>送信（マイク・オン）</th>
@@ -266,18 +266,8 @@ WebRTCのテクノロジーはGoogleが初めて提唱し、現在、デスク�
 </table>
 
 >! 
->- ブラウザで[TRTC Web SDK能力テスト画面](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を開けば、現在のブラウザがWebRTCのすべての機能をサポートしているかどうかチェックすることができます。例:WebViewなどのブラウザ環境。
->- H.264の版権の制限により、HuaweiシステムのChromeブラウザおよびChrome WebViewをコアとするブラウザでは、TRTC Web端末のSDKの正常な動作をサポートしていません。
-
-## URLドメイン名プロトコルの制限
-| ユースケース     | プロトコル             | 受信（再生） | 送信（マイク・オン） | 画面共有 | 備考 |
-| ------------ | :--------------- | :----------- | ------------ | -------- | ---- |
-| 本番環境     | httpsプロトコル        | サポートあり         | サポートあり         | サポートあり     | 推奨 |
-| 本番環境     | httpプロトコル        | サポートあり         | サポートなし       | サポートなし   |      |
-| ローカル開発環境 | http://localhost | サポートあり         | サポートあり         | サポートあり     | 推奨 |
-| ローカル開発環境 | http://127.0.0.1 | サポートあり         | サポートあり         | サポートあり     |      |
-| ローカル開発環境 | http://[ローカルマシンIP]  | サポートあり         | サポートなし       | サポートなし   |      |
-| ローカル開発環境 | file:///         | サポートあり         | サポートあり         | サポートあり     |      |
+>- ブラウザで[WebRTC能力テスト](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)画面を開けば、例えば、公式アカウントなどのブラウザ環境など、WebRTCが完全にサポートされているかどうかチェックすることができます。
+>- H.264版の権限の制限によって、HuaweiシステムのChromeブラウザおよびChrome WebViewをコアとするブラウザでは、TRTCデスクトップブラウザSDKの正常動作をサポートしていません。
 
 ## API使用ガイド
 APIの使用法の詳細については、以下のガイドをご参照ください。
@@ -334,7 +324,7 @@ TRTCは[TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/index.htm
 | [setTurnServer](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setTurnServer)     | TURNサーバーを設定します。このメソッドは[setProxyServer()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setProxyServer)と合わせて使用し、企業が自分でプロキシサーバーおよびTURN中継をデプロイする場合に適用されます。 |
 | [join](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join)       | オーディオビデオ通話ルームに参加し、入室によってオーディオビデオ通話セッションが始まります。ルームが存在しない場合、システムが自動的に新しいルームを作成します。            |
 | [leave](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#leave)     | 現在のオーディオビデオ通話ルームを退出し、オーディオビデオ通話セッションを終了します。         |
-| [publish](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#publish)         | ローカルのオーディオビデオストリーミングを公開します。このメソッドは[join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join)で入室後に呼び出す必要があり、1回のオーディオビデオセッションで1度だけローカルストリーミングを公開することができます。           |
+| [publish](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#publish)         | ローカルのオーディオビデオストリーミングを公開します。このメソッドは[join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join) で入室後に呼び出す必要があり、1回のオーディオビデオセッションで1度だけローカルストリーミングを公開することができます。           |
 | [unpublish](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#unpublish)          | ローカルストリーミングの公開を取り消します。     |
 | [subscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#subscribe)          | リモートストリーミングを閲覧します。         |
 | [unsubscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#unsubscribe)         | リモートストリーミングの閲覧を取り消します。     |

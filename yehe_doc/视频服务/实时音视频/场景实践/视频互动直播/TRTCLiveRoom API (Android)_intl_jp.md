@@ -1,37 +1,37 @@
-TRTCLiveRoomは、Tencent CloudのTRTCおよびIM サービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
-- キャスターが新しいライブルームを作成して放送を開始し、視聴者がライブルームに参加して視聴します。
+TRTCLiveRoomは、Tencent CloudのTencent Real-Time Communication（TRTC）およびIMサービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
+- キャスターが新しいライブストリーミングルームを作成して配信を開始し、視聴者がライブストリーミングルームに参加して視聴します。
 - キャスターと視聴者がビデオでマイク接続によるコラボライブを行います。
 - 2つの異なるルームの間でキャスター同士のPK（クロスルーム対戦）を行います。
-- 各種のテキストメッセージやカスタマイズメッセージの発信をサポートし、情報を弾幕、「いいね」、ギフトに使えられるようにカスタマイズします。
+- 各種のテキストメッセージやカスタムメッセージの送信をサポートします。カスタムメッセージは弾幕、「いいね」、ギフトを実装するために使用することができます。
 
-TRTCLiveRoom はオープンソースのClassであり、Tencent Cloudの2つのクローズドソースのSDKに依存しています。具体的な実現プロセスは、[オーディオ・ビデオライブストリーミング（Android）](https://intl.cloud.tencent.com/document/product/647/36061)をご参照ください。
-- TRTC SDK： [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) を低レイテンシーのライブストリーミングコンポーネントとして利用します。
-- IM SDK： [IM SDK](https://intl.cloud.tencent.com/document/product/1047)のAVChatroomを使用して、ライブストリーミングのチャットルーム機能を実現します。同時に、IMのメッセージでキャスター間のマイク接続のフローをつなげます。
+TRTCLiveRoom はオープンソースのClassであり、Tencent Cloudの2つのクローズドソースのSDKに依存しています。具体的な実現プロセスは、[ビデオマイク接続ライブストリーミング（Android）](https://intl.cloud.tencent.com/document/product/647/36061)をご参照ください。
+- TRTC SDK： [TRTC SDK](https://intl.cloud.tencent.com/document/product/647/34615) を低遅延のライブストリーミングコンポーネントとして使用します。
+- IM SDK： [IM SDK](https://intl.cloud.tencent.com/document/product/1047/33996)のAVChatroomを使用して、ライブストリーミングチャットルーム機能を実装します。同時に、IMのメッセージでキャスター間のマイク接続のフローをつなげます。
 
+[](id:TRTCLiveRoom)
+## TRTCLiveRoom API概要
 
-<h2 id="TRTCLiveRoom">TRTCLiveRoom API 概要</h2>
-
-### SDK 基本関数
+### SDK基本関数
 
 | API | 説明 |
 |-----|-----|
-| [sharedInstance](#sharedinstance) | シングルトンオブジェクトを取得します。 |
-| [destroySharedInstance](#destroysharedinstance) | シングルトンオブジェクトを廃棄します。 |
+| [sharedInstance](#sharedinstance)               | シングルトンオブジェクトを取得します。                                       |
+| [destroySharedInstance](#destroysharedinstance) | シングルトンオブジェクトを破棄します。 |
 | [setDelegate](#setdelegate) | イベントコールバックを設定します。|
-| [setDelegateHandler](#setdelegatehandler) | イベントコールバックが存在するスレッドを設定します。 |
+| [setDelegateHandler](#setdelegatehandler) | イベントコールバックが設定されているスレッドです。 |
 | [login](#login) | ログイン。|
 | [logout](#logout) | ログアウト。|
-| [setSelfProfile](#setselfprofile) | 個人情報の修正。|
+| [setSelfProfile](#setselfprofile) | 個人情報を修正します。|
 
 ### ルーム関連インターフェース関数
 
 | API | 説明 |
 |-----|-----|
-| [createRoom](#createroom) | ルームの新規作成（キャスターがコール）。ルームが存在していない場合は、システムが新しいルームを自動作成。|
-| [destroyRoom](#destroyroom) |ルームの廃棄（キャスターがコール）。|
-| [enterRoom](#enterroom) | 入室（視聴者がコール）。|
-| [exitRoom](#exitroom) | 退室（視聴者がコール）。|
-| [getRoomInfos](#getroominfos) | ルームリストの詳細情報の取得。|
+| [createRoom](#createroom) | ルームの作成（キャスターが呼び出し）。ルームが存在しない場合は、システムが新しいルームを自動作成します。|
+| [destroyRoom](#destroyroom) |ルームの破棄（キャスターが呼び出し）。|
+| [enterRoom](#enterroom) | 入室（視聴者が呼び出し）。|
+| [exitRoom](#exitroom) | 退室（視聴者が呼び出し）。|
+| [getRoomInfos](#getroominfos) | ルームリストの詳細情報を取得します。|
 | [getAnchorList](#getanchorlist) | ルーム内の全キャスターのリストを取得します。enterRoom()成功後に呼び出しが有効になります。|
 | [getAudienceList](#getaudiencelist) | ルーム内の全視聴者の情報を取得します。enterRoom()成功後に呼び出しが有効になります。|
 
@@ -52,7 +52,7 @@ TRTCLiveRoom はオープンソースのClassであり、Tencent Cloudの2つの
 |-----|-----|
 | [requestJoinAnchor](#requestjoinanchor) | 視聴者がマイク接続をリクエストします。|
 | [responseJoinAnchor](#responsejoinanchor) | キャスターがマイク接続のリクエストを処理します。|
-| [kickoutJoinAnchor](#kickoutjoinanchor) | キャスターがマイク接続の視聴者を追放します。|
+| [kickoutJoinAnchor](#kickoutjoinanchor) | キャスターがマイク接続の視聴者をキックアウトします。|
 
 ### キャスターのルーム間PK
 
@@ -62,42 +62,42 @@ TRTCLiveRoom はオープンソースのClassであり、Tencent Cloudの2つの
 | [responseRoomPK](#responseroompk) | キャスターがルーム間PKのリクエストに応答します。|
 | [quitRoomPK](#quitroompk) | ルーム間PKから退出します。|
 
-### 音声ビデオ制御に関連するインターフェース関数
+### オーディオビデオ制御に関連するインターフェース関数
 
 | API | 説明 |
 |-----|-----|
-| [switchCamera](#switchcamera) | 前後カメラを切り替えます。|
-| [setMirror](#setmirror) | ミラー表示のオン／オフを設定します。|
+| [switchCamera](#switchcamera) | フロント/リアカメラを切り替えます。 |
+| [setMirror](#setmirror) | ミラー表示のオン/オフを設定します。|
 | [muteLocalAudio](#mutelocalaudio) | ローカルオーディオをミュートにします。|
-| [muteRemoteAudio](#muteremoteaudio) | リモートの音声をミュートにします。|
-| [muteAllRemoteAudio](#muteallremoteaudio) | 全てのリモート側の音声をミュートにします。|
+| [muteRemoteAudio](#muteremoteaudio) | リモートオーディオをミュートにします。|
+| [muteAllRemoteAudio](#muteallremoteaudio) | 全てのリモート側のオーディオをミュートにします。|
 
-### バックグラウンドミュージック・サウンドエフェクト関連インターフェース関数
+### BGMサウンドエフェクト関連インターフェース関数
 
 | API | 説明 |
 |-----|-----|
-| [getAudioEffectManager](#getaudioeffectmanager) |バックグラウンドミュージック・サウンドエフェクト管理オブジェクト [TXAudioEffectManager](#trtcaudioeffectmanagerapi)の取得。|
+| [getAudioEffectManager](#getaudioeffectmanager) | BGMサウンドエフェクト管理オブジェクト[TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html#interfacecom_1_1tencent_1_1liteav_1_1audio_1_1TXAudioEffectManager)を取得します。|
 
 ### 美顔フィルタに関するインターフェース関数
 
 | API | 説明 |
 |-----|-----|
-| [getBeautyManager](#getbeautymanager) | 美顔管理オブジェクト [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。|
+| [getBeautyManager](#getbeautymanager) | 美顔管理オブジェクト[TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。|
 
 ### メッセージ送信関連インターフェース関数
 
 | API | 説明 |
 |-----|-----|
-| [sendRoomTextMsg](#sendroomtextmsg) | ルーム内でのテキストメッセージの放送には、通常弾幕によるチャットを使用します。|
-| [sendRoomCustomMsg](#sendroomcustommsg) | カスタマイズしたテキストメッセージを発信します。|
+| [sendRoomTextMsg](#sendroomtextmsg) | ルーム内でのテキストメッセージのブロードキャスト。通常、弾幕によるチャットに使用します。|
+| [sendRoomCustomMsg](#sendroomcustommsg) | カスタマイズしたテキストメッセージを送信します。|
 
 ### デバックに関するインターフェース関数
 
 | API | 説明 |
 |-----|-----|
-| [showVideoDebugLog](#showvideodebuglog) | インターフェースにdebug 情報を表示するか。|
+| [showVideoDebugLog](#showvideodebuglog) | インターフェースにdebug情報を表示するか。|
 
-<h2 id="TRTCLiveRoomDelegate">TRTCLiveRoomDelegate API 概要</h2>
+<h2 id="TRTCLiveRoomDelegate">TRTCLiveRoomDelegate API概要</h2>
 
 ### 一般的なイベントコールバック
 
@@ -105,21 +105,21 @@ TRTCLiveRoom はオープンソースのClassであり、Tencent Cloudの2つの
 |-----|-----|
 | [onError](#onerror) | エラーのコールバック。|
 | [onWarning](#onwarning) | 警告のコールバック。|
-| [onDebugLog](#ondebuglog) | Logのコールバック。|
+| [onDebugLog](#ondebuglog) | Logコールバック。|
 
-### ルームイベントのコールバック
-
-| API | 説明 |
-|-----|-----|
-| [onRoomDestroy](#onroomdestroy) | ルームが廃棄された時のコールバック。|
-| [onRoomInfoChange](#onroominfochange) | ライブルーム情報変更のコールバック。|
-
-### キャスターと視聴者の参加／退出のイベントコールバック
+### ルームイベントコールバック
 
 | API | 説明 |
 |-----|-----|
-| [onAnchorEnter](#onanchorenter) | 新しいキャスターのルーム参加の通知を受信します。|
-| [onAnchorExit](#onanchorexit) | キャスターのルーム退出の通知を受信します。|
+| [onRoomDestroy](#onroomdestroy) | ルームが破棄された時のコールバック。|
+| [onRoomInfoChange](#onroominfochange) | ライブストリーミングルーム情報変更のコールバック。|
+
+### キャスターと視聴者の参加/退出のイベントコールバック
+
+| API | 説明 |
+|-----|-----|
+| [onAnchorEnter](#onanchorenter) | 新しいキャスターの入室通知を受信します。|
+| [onAnchorExit](#onanchorexit) | キャスターの退室通知を受信します。|
 | [onAudienceEnter](#onaudienceenter) | 視聴者入室通知の受信。|
 | [onAudienceExit](#onaudienceexit) | 視聴者退室通知の受信。|
 
@@ -128,7 +128,7 @@ TRTCLiveRoom はオープンソースのClassであり、Tencent Cloudの2つの
 | API | 説明 |
 |-----|-----|
 | [onRequestJoinAnchor](#onrequestjoinanchor) | キャスターが視聴者のマイク接続リクエストを受信した時のコールバック。|
-| [onKickoutJoinAnchor](#onkickoutjoinanchor) | マイク接続の視聴者がマイク接続から追放された通知を受信します。|
+| [onKickoutJoinAnchor](#onkickoutjoinanchor) | マイク接続の視聴者がマイク接続からキックアウトされた通知を受信します。|
 
 ### キャスター間PKのイベントコールバック
 
@@ -137,19 +137,19 @@ TRTCLiveRoom はオープンソースのClassであり、Tencent Cloudの2つの
 | [onRequestRoomPK](#onrequestroompk) | ルーム間PKのリクエストの通知を受信。|
 | [onQuitRoomPK](#onquitroompk) | ルーム間PK中止の通知を受信します。|
 
-### メッセージのイベントコールバック
+### メッセージイベントのコールバック
 
 | API | 説明 |
 |-----|-----|
 | [onRecvRoomTextMsg](#onrecvroomtextmsg) | テキストメッセージの受信。|
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | カスタマイズメッセージの受信。|
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | カスタムメッセージの受信。|
 
-## SDK 基本関数
+## SDK基本関数
 
-<span id="sharedInstance"></span>
+[](id:sharedInstance)
 ### sharedInstance
 
- [TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/36061) シングルトンオブジェクトの取得。
+[TRTCLiveRoom](https://cloud.tencent.com/document/product/647/43182) シングルトンオブジェクトを取得します。
 ```java
  public static synchronized TRTCLiveRoom sharedInstance(Context context);
 ```
@@ -157,18 +157,18 @@ TRTCLiveRoom はオープンソースのClassであり、Tencent Cloudの2つの
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| context | Context | Android 前後関係，コンテンツをApplicationContext に転換してシステム API のコールに使用 |
+| context | Context | Androidコンテキスト。内部ではApplicationContextに変換してシステムAPIの呼び出しに使用します |
 
    
 
 ### destroySharedInstance
 
- [TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/36061) シングルトンオブジェクトの廃棄。
->?インスタンスを廃棄後は、外部にキャッシュされた TRTCLiveRoom インスタンスの再使用ができません。改めて [sharedInstance](#sharedInstance) をコールして、インスタンスを新規取得する必要があります。
+[TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/36061) シングルトンオブジェクトを破棄します。
+>?インスタンスの破棄後は、外部にキャッシュされたTRTCLiveRoomインスタンスの再使用ができません。改めて [sharedInstance](#sharedInstance) をコールして、インスタンスを新規取得する必要があります。
 
 ```java
 public static void destroySharedInstance();
-```   
+```
 
 ### setDelegate
 
@@ -177,11 +177,11 @@ public static void destroySharedInstance();
 public abstract void setDelegate(TRTCLiveRoomDelegate delegate);
 ```
 
->?setDelegate はTRTCLiveRoomのプロキシコールバックです。　   
+>?setDelegateはTRTCLiveRoomのプロキシコールバックです。   
 
 ### setDelegateHandler
 
-イベントコールバックが存在するスレッドを設定します。
+イベントコールバックが配置されているスレッドを設定します。
 ```java
 public abstract void setDelegateHandler(Handler handler);
 ```
@@ -189,35 +189,38 @@ public abstract void setDelegateHandler(Handler handler);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| handler | Handler | TRTCLiveRoomの中の各種状態の通知のコールバックは、このhandler によって通知されます。setDelegateと混用しないでください。 |
+| handler | Handler | TRTCLiveRoomの中の各種状態の通知のコールバックは、このhandlerによって通知されます。setDelegateと混用しないでください。 |
 
    
 
 ### login
 
 ログイン。
-```java
+
+<dx-codeblock>
+::: java java
 public abstract void login(int sdkAppId,
  String userId, String userSig,
  TRTCLiveRoomDef.TRTCLiveRoomConfig config, 
  TRTCLiveRoomCallback.ActionCallback callback);
-```
+:::
+</dx-codeblock>
 
 パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| sdkAppId | int |  TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報でSDKAppIDを表示できます。 |
-| userId | String | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-z と A-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。 |
-| userSig | String |  Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については[UserSigの計算の仕方](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
-| config | TRTCLiveRoomConfig | グローバルコンフィギュレーション情報。ログイン時に初期化してください。ログイン後は変更できなくなります。<ul style="margin:0;"><li>useCDNFirst 属性：視聴者の視聴方式の設定に使用します。trueは、普通の視聴者のCDN経由での視聴を表し、費用は安価ですがディレーは高めです。falseは、普通の視聴者の低遅延による視聴を表し、費用は CDN とマイク接続の間ですが、ディレーを1s以内に抑えることができます。</li><li>CDNPlayDomain 属性：useCDNFirstの設定をtrueにすると有効になり、CDN経由で視聴する再生ドメイン名の指定に利用します。ライブストリーミングコンソール >【<a href="https://console.cloud.tencent.com/live/domainmanage">Domain Management</a>】の画面からログインし、設定を行います。</li></ul> |
-| callback | ActionCallback | ログインのコールバック。成功時に code は0になります。 |
+| sdkAppId | int |  TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報の中でSDKAppIDを確認できます。 |
+| user     | String | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
+| userSig | String | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については、 [UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
+| config | TRTCLiveRoomConfig | グローバルコンフィギュレーション情報。ログイン時に初期化してください。ログイン後は変更できなくなります。<ul style="margin:0;"><li>useCDNFirst属性：視聴者の視聴方式の設定に使用します。trueは、普通の視聴者のCDN経由での視聴を表し、費用は安価ですがディレーは高めです。falseは、普通の視聴者の低遅延による視聴を表し、費用はCDNとマイク接続の間ですが、ディレーを1s以内に抑えることができます。</li><li>CDNPlayDomain属性：useCDNFirstの設定をtrueにすると有効になり、CDN経由で視聴する再生ドメイン名の指定に利用します。CSSコンソール>【<a href="https://console.cloud.tencent.com/live/domainmanage">ドメイン名管理</a>】の画面からログインし、設定を行います。</li></ul> |
+| callback | ActionCallback | ログインのコールバック。成功時にcodeは0になります。 |
 
    
 
 ### logout
 
-ログアウト
+ログアウト。
 ```java
 public abstract void logout(TRTCLiveRoomCallback.ActionCallback callback);
 ```
@@ -225,7 +228,7 @@ public abstract void logout(TRTCLiveRoomCallback.ActionCallback callback);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| callback | ActionCallback | ログアウトのコールバック。成功時に code は0になります。 |
+| callback | ActionCallback | ログアウトのコールバック。成功時にcodeは0になります。 |
 
    
 
@@ -238,11 +241,11 @@ public abstract void setSelfProfile(String userName, String avatarURL, TRTCLiveR
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ      | タイプ   | 意味       |
 |-----|-----|-----|
-| name | String | ニックネーム。 |
-| avatarURL | String | プロフィール画像URL。 |
-| callback | ActionCallback | 個人情報設定のコールバック、成功時のcodeは0です。 |
+| userName  | String         | ニックネーム。                              |
+| avatarURL | String         | プロフィール画像のアドレス。                          |
+| callback | ActionCallback | 個人情報設定のコールバック。成功時にcodeは0になります。                                  |
 
    
 
@@ -250,7 +253,7 @@ public abstract void setSelfProfile(String userName, String avatarURL, TRTCLiveR
 ## ルーム関連インターフェース関数
 ### createRoom
 
-ルームの新規作成（キャスターがコール）。
+ルームの新規作成（キャスターが呼び出し）。
 ```java
 public abstract void createRoom(int roomId, TRTCLiveRoomDef.TRTCCreateRoomParam roomParam, TRTCLiveRoomCallback.ActionCallback callback);
 ```
@@ -259,20 +262,20 @@ public abstract void createRoom(int roomId, TRTCLiveRoomDef.TRTCCreateRoomParam 
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| roomId | int | ルームIDは、ご自身でアサインし、統一管理する必要があります。複数の roomID を、一つのライブルームリストにまとめることができます。Tencent Cloudではライブルームリストの管理サービスを一時的に行いませんので、ご自身でライブルームリストを管理してください。 |
-| roomParam | TRTCCreateRoomParam | ルーム情報は、ルーム名、マイク情報、カバー情報などのルーム説明の情報に使用します。ルームリストおよびルーム情報をご自身で管理する場合は、この関数は無視してもかまいません。 |
-| callback | ActionCallback | ルームの新規作成結果のコールバック。成功時に code は0になります。                                  |
+| roomId | int | ルームIDは、ご自身でアサインし、一元管理する必要があります。複数のroomID を、1つのライブストリーミングルームリストにまとめることができます。Tencent Cloudではライブストリーミングルームリストの管理サービスを一時的に行いませんので、ご自身でライブストリーミングルームリストを管理してください。 |
+| roomParam | TRTCCreateRoomParam | ルーム情報は、ルーム名、マイク情報、カバー情報などのルーム説明の情報に使用します。ルームリストおよびルーム情報をご自身のサーバーで管理する場合は、このパラメータは無視してもかまいません。 |
+| callback | ActionCallback | ルームの作成結果のコールバック。成功時にcodeは0になります。 |
 
-キャスターが放送開始する通常のコールフローは以下のとおりです。 
+キャスターが配信を開始する際の通常の呼び出しプロセスは次のとおりです。 
 1. 【キャスター】 `startCameraPreview()`を呼び出し、カメラのプレビューを起動します。この時美顔パラメータを調整できます。 
-2. 【キャスター】`createRoom()`を呼び出し、ライブルームを作成します。ルーム作成の成功の有無がActionCallbackでキャスターに通知されます。
+2. 【キャスター】`createRoom()`を呼び出し、ライブストリーミングルームを作成します。ルーム作成の成功の有無がActionCallbackでキャスターに通知されます。
 3. 【キャスター】`starPublish()`を呼び出し、プッシュを開始します。
 
    
 
 ### destroyRoom
 
-ルームの廃棄（キャスターがコール）。キャスターは、ルーム作成後、この関数をコールしてルームを廃棄します。
+ルームの破棄（キャスターが呼び出し）。キャスターは、ルーム作成後、この関数を呼び出してルームを破棄します。
 ```java
 public abstract void destroyRoom(TRTCLiveRoomCallback.ActionCallback callback);
 ```
@@ -281,36 +284,36 @@ public abstract void destroyRoom(TRTCLiveRoomCallback.ActionCallback callback);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| callback | ActionCallback | ルーム廃棄結果のコールバック、成功時にcodeは0になります。 |
-   
+| callback | ActionCallback | ルームの廃棄結果のコールバック。成功時にcodeは0になります。 |
+
 
 ### enterRoom
 
-入室（視聴者がコール）。
+入室（視聴者が呼び出し）。
 ```java
 public abstract void enterRoom(int roomId, TRTCLiveRoomCallback.ActionCallback callback);
 ```
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ   | タイプ | 意味       |
 |-----|-----|-----|
-| roomId | int | ルームID |
-| callback | ActionCallback | 入室結果のコールバック。成功時に code は0になります。 |
+| roomId   | int            | ルームID。                            |
+| callback | ActionCallback | 入室結果のコールバック。成功時にcodeは0になります。 |
 
 
 視聴者のライブストリーミング視聴の通常の呼び出しフローは以下のとおりです。 
-1.【視聴者】サーバーから取得する最新のライブルームリストには、多くのボイスチャットルームの roomId およびルーム情報が含まれます。
-2. 【視聴者】視聴者は1つのライブルームを選択し、`enterRoom()`を呼び出して、このルームに参加します。
+1.【視聴者】サーバーから取得する最新のライブストリーミングルームリストには、多くのライブストリーミングルームのroomIdおよびルーム情報が含まれる場合があります。
+2. 【視聴者】視聴者は1つのライブストリーミングルームを選択し、`enterRoom()`を呼び出して、このルームに参加します。
 3. 【視聴者】`startPlay(userId)`を呼び出し、キャスターのuserIdを渡して再生を開始します。
- - ライブルームリストにキャスターのuserID 情報がすでに含まれている場合、視聴者は、`startPlay(userID)`を直接呼び出せば、再生を開始できます。
+ - ライブストリーミングルームリストにキャスターのuserId情報がすでに含まれている場合、視聴者は、`startPlay(userId)`を直接呼び出せば、再生を開始できます。
  - ルーム参加前にキャスターのuserIDが一時的に取得できない場合、視聴者はルーム参加後に `TRTCLiveRoomDelegate`の中の `onAnchorEnter(userID)`のイベントコールバックを受信します。このコールバックの中にキャスターのuserID 情報が含まれていますので、`startPlay(userID)`再び呼び出しせば、再生できます。 
 
    
 
 ### exitRoom
 
-ルームを退出する。
+ルームを退出します。
 ```java
 public abstract void exitRoom(TRTCLiveRoomCallback.ActionCallback callback);
 ```
@@ -319,13 +322,13 @@ public abstract void exitRoom(TRTCLiveRoomCallback.ActionCallback callback);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| callback | ActionCallback | 退室結果のコールバック。成功時に code は0になります。 |
+| callback | ActionCallback | 退室結果のコールバック。成功時にcodeは0になります。 |
 
    
 
 ### getRoomInfos
 
-ルームリストの詳細情報を取得します。ルーム情報は、キャスターが `createRoom()`作成時に roomInfoで設定します。
+ルームリストの詳細情報を取得します。ルーム情報は、キャスターが`createRoom()`作成時にroomInfoによって設定します。
 >?ルームリストおよびルーム情報をご自身で管理する場合は、この関数は無視してもかまいません。
 
 
@@ -333,13 +336,13 @@ public abstract void exitRoom(TRTCLiveRoomCallback.ActionCallback callback);
 public abstract void getRoomInfos(List<Integer> roomIdList, TRTCLiveRoomCallback.RoomInfoCallback callback);
 ```
 
-パラメータは下表に示すとおりです。　
+パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ       | タイプ                | 意味         |
 |-----|-----|-----|
 | roomIdList | List&lt;Integer&gt; | ルームナンバーリスト。       |
 | callback   | RoomInfoCallback    | ルーム詳細情報のコールバック。 |
-   
+
 
 ### getAnchorList
 
@@ -358,7 +361,7 @@ public abstract void getAnchorList(TRTCLiveRoomCallback.UserListCallback callbac
 
 ### getAudienceList
 
-ルーム内の全視聴者の情報を取得します。`enterRoom()` 成功後に呼び出しが有効となります。
+ルーム内の全視聴者の情報を取得します。`enterRoom()`成功後に呼び出しが有効となります。
 ```java
 public abstract void getAudienceList(TRTCLiveRoomCallback.UserListCallback callback);
 ```
@@ -401,8 +404,8 @@ public abstract void stopCameraPreview();
 ### startPublish
 
 ライブストリーミング（プッシュ）を開始します。次のシーンに適用します。
-- キャスターの放送開始時のコール
-- 視聴者のマイク接続開始時のコール
+- キャスターの配信開始時のコール
+- 視聴者のマイク接続開始時の呼び出し
 
 
 ```java
@@ -412,15 +415,15 @@ public abstract void startPublish(String streamId, TRTCLiveRoomCallback.ActionCa
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| streamId | String | ライブストリーミングのCDNのstreamIdをバインドするために利用します。視聴者にCDN経由でライブストリーミングを視聴させたい場合は、現在のキャスターのライブストリーミング streamIdを指定する必要があります。|
+| streamId | String | ライブCDNのstreamIdをバインドするために利用します。視聴者にライブCDN経由で視聴させたい場合は、現在のキャスターのライブストリーミングstreamIdを指定する必要があります。|
 | callback | ActionCallback | 操作コールバック。|
-   
+
 
 ### stopPublish
 
 ライブストリーミング（プッシュ）を停止します。次のシーンに適用します。
-- キャスターがライブストリーミングを終了する時のコール
-- 視聴者がマイク接続を終了する時のコール。
+- キャスターがライブストリーミングを終了する時の呼び出し
+- 視聴者がマイク接続を終了する時の呼び出し
 
 
 ```java
@@ -448,16 +451,16 @@ public abstract void startPlay(String userId, TXCloudVideoView view, TRTCLiveRoo
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| userId | String | 視聴が必要なユーザーID。 |
+| userId | String | 視聴が必要なユーザーid。 |
 | view | TXCloudVideoView | ビデオ画像をロードするviewウィジェット。 |
 | callback | ActionCallback | 操作コールバック。|
 
 **普通の視聴シーン**
-- ライブルームリストにキャスターのuserID 情報がすでに含まれている場合、視聴者は、`enterRoom()`成功後に `startPlay(userId)`を直接呼び出せばキャスターの画面を再生できます。
-- ルーム参加前にキャスターのuserIDが一時的に取得できない場合、視聴者はルーム参加後に `TRTCLiveRoomDelegate`の中の `onAnchorEnter(userId)`のイベントコールバックを受信します。このコールバックの中にキャスターのuserID 情報が含まれていますので、`startPlay(userId)`を再び呼び出せば、キャスターの画面を再生できます。
+- ライブストリーミングルームリストにキャスターのuserId情報がすでに含まれている場合、視聴者は、`enterRoom()`成功後に`startPlay(userId)`を直接呼び出せばキャスターの画面を再生できます。
+- ルーム参加前にキャスターのuserIDが一時的に取得できない場合、視聴者はルーム参加後に `TRTCLiveRoomDelegate`の中の`onAnchorEnter(userId)`のイベントコールバックを受信します。このコールバックの中にキャスターのuserID情報が含まれていますので、`startPlay(userId)`を再び呼び出せば、キャスターの画面を再生できます。
 
 **ライブストリーミングのマイク接続シーン**
-マイク接続の始動後、キャスターは `TRTCLiveRoomDelegate`から`onAnchorEnter(userId)` のコールバックを受信します。この時コールバックの中のuserIDを使用して startPlay(userID)を呼び出せば、マイク接続の画面を再生できます。
+マイク接続の始動後、キャスターは`TRTCLiveRoomDelegate`から`onAnchorEnter(userId)`のコールバックを受信します。この時コールバックの中のuserIDを使用してstartPlay(userID)を呼び出せば、マイク接続の画面を再生できます。
 
    
 
@@ -474,14 +477,14 @@ public abstract void stopPlay(String userId, TRTCLiveRoomCallback.ActionCallback
 |-----|-----|-----|
 | userId | String | 相手側のユーザー情報。|
 | callback | ActionCallback | 操作コールバック。|
-   
+
 
 ## キャスターと視聴者のマイク接続
 ### requestJoinAnchor
 
 視聴者がマイク接続をリクエストします。
 ```java
-public abstract void requestJoinAnchor(String reason, TRTCLiveRoomCallback.ActionCallback callback);
+public abstract void requestJoinAnchor(String reason, int timeout, TRTCLiveRoomCallback.ActionCallback callback);
 ```
 
 パラメータは下表に示すとおりです。
@@ -489,19 +492,20 @@ public abstract void requestJoinAnchor(String reason, TRTCLiveRoomCallback.Actio
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | reason | String | マイク接続の理由。 |
-| responseCallback | ActionCallback | キャスターの応答のコールバック。 |
+| timeout | int | タイムアウトの時間。 |
+| callback | ActionCallback | キャスターの応答のコールバック。 |
 
 
 キャスターと視聴者のマイク接続フローは次のとおりです。
 1. 【視聴者】`requestJoinAnchor()`を呼び出し、キャスターにマイク接続リクエストを送信します。
-2. 【キャスター】 `TRTCLiveRoomDelegate`から `onRequestJoinAnchor()`のコールバック通知を受信します。
+2. 【キャスター】 `TRTCLiveRoomDelegate`の`onRequestJoinAnchor()`のコールバック通知を受信します。
 3. 【キャスター】`responseJoinAnchor()`を呼び出して、視聴者からのマイク接続リクエストを受け入れるか決定します。
 4. 【視聴者】responseCallbackのコールバック通知を受信します。この通知にキャスターの処理結果が含まれています。
 5. 【視聴者】リクエストが同意されると、`startCameraPreview()`が呼び出され、ローカルカメラが起動します。
-6. 【視聴者】その後 `startPublish()`を呼び出し、正式にプッシュストリームの状態に入ります。
+6. 【視聴者】その後`startPublish()`を呼び出し、正式にプッシュストリームの状態に入ります。
 7. 【キャスター】一度視聴者がマイク接続に入ると、キャスターは、`TRTCLiveRoomDelegate`の `onAnchorEnter()`の通知を受信します。
 8. 【キャスター】キャスターが `startPlay()`を呼び出すと、マイク接続の視聴者のビデオ画面を見ることができるようになります。
-9. 【視聴者】ライブルームの中で他の視聴者がすでにキャスターとマイク接続を行っている場合、新しく参加したマイク接続の視聴者は`onAnchorEnter()`の通知を受け取ります。この時に`startPlay()`を呼び出せば他のマイク接続者のビデオ画面を再生することができます。
+9. 【視聴者】ライブストリーミングルームの中で他の視聴者がすでにキャスターとマイク接続を行っている場合、新しく参加したマイク接続の視聴者は`onAnchorEnter()`の通知を受け取ります。この時に`startPlay()`を呼び出せば他のマイク接続者のビデオ画面を再生することができます。
 
    
 
@@ -516,14 +520,14 @@ public abstract void responseJoinAnchor(String userId, boolean agree, String rea
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| userId | String | 視聴者 ID。 |
+| userId | String | 視聴者ID。 |
 | agree | boolean | true：同意；false：拒否。 |
 | reason | String | マイク接続に同意/拒否した理由の説明。 |
-   
+
 
 ### kickoutJoinAnchor
 
-キャスターがマイク接続の視聴者を追放します。キャスターがこのインターフェースを呼び出し、マイク接続の視聴者を追放すると、追放されたマイク接続の視聴者は、`TRTCLiveRoomDelegate`の`onKickoutJoinAnchor()`のコールバック通知を受信します。
+キャスターがマイク接続の視聴者をキックアウトします。キャスターがこのインターフェースを呼び出し、マイク接続の視聴者をキックアウトすると、キックアウトされたマイク接続の視聴者は、`TRTCLiveRoomDelegate`の`onKickoutJoinAnchor()`のコールバック通知を受信します。
 
 ```java
 public abstract void kickoutJoinAnchor(String userId, TRTCLiveRoomCallback.ActionCallback callback);
@@ -533,9 +537,9 @@ public abstract void kickoutJoinAnchor(String userId, TRTCLiveRoomCallback.Actio
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| userId | String | マイク接続の視聴者 ID。 |
+| userId | String | マイク接続の視聴者ID。 |
 | callback | ActionCallback | 操作コールバック。|
-  
+
 
 
 ## キャスターのルーム間PK
@@ -550,17 +554,17 @@ public abstract void requestRoomPK(int roomId, String userId, TRTCLiveRoomCallba
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| roomId | int | 招待された側のルーム ID。 |
-| userId | String | 招待された側のキャスター ID。 |
-| responseCallback | ActionCallback | ルーム間PKのリクエスト結果のコールバック。 |
+| roomId | int | 招待された側のルームID。 |
+| userId | String | 招待された側のキャスターID。 |
+| callback | ActionCallback | ルーム間PKのリクエスト結果のコールバック。 |
 
-キャスターとキャスターの間でルーム間PKを行うことができます。ライブストリーミング中の2名のキャスター AとBのルーム間PKのフローは次のとおりです。
+キャスターとキャスターの間でルーム間PKを行うことができます。ライブストリーミング中の2名のキャスターAとBのルーム間PKのフローは次のとおりです。
 1. 【キャスター A】 `requestRoomPK()`を呼び出してキャスターBに向けてマイク接続リクエストを送信します。
 2. 【キャスター B】`TRTCLiveRoomDelegate`の`onRequestRoomPK()`のコールバック通知を受信します。
-3. 【キャスター B】`responseRoomPK()`を呼び出して、キャスター AのPKのリクエストを受け入れるかどうか決定します
-4. 【キャスター B】キャスター Aのリクエストを受け入れる場合は、`TRTCLiveRoomDelegate`の`onAnchorEnter()`の通知を待ってから、`startPlay()`を呼び出してキャスターAのビデオ画面を表示させます 。
+3. 【キャスター B】`responseRoomPK()`を呼び出して、キャスター AのPKのリクエストを受け入れるかどうか決定します。
+4. 【キャスターB】キャスターAのリクエストを受け入れる場合は、`TRTCLiveRoomDelegate`の`onAnchorEnter()`の通知を待ってから、`startPlay()`を呼び出してキャスターAのビデオ画面を表示させます。
 5. 【キャスター A】`responseCallback`のコールバック通知を受信します。この通知にはキャスター B の処理結果が含まれます。
-6. 【キャスター A】リクエストが同意された場合は、`TRTCLiveRoomDelegate`の`onAnchorEnter()`の通知を待ってから、`startPlay()`を呼び出し、キャスター Bのビデオ画面を表示します。
+6. 【キャスターA】リクエストが同意された場合は、`TRTCLiveRoomDelegate`の`onAnchorEnter()`の通知を待ってから、`startPlay()`を呼び出し、キャスターBのビデオ画面を表示します。
 
    
 
@@ -577,8 +581,8 @@ public abstract void responseRoomPK(String userId, boolean agree, String reason)
 |-----|-----|-----|
 | userId | String | PKをリクエストしたキャスターID。 |
 | agree | boolean | true：同意；false：拒否。 |
-| reason | String |  PKを同意/拒否した理由の説明。 |
-   
+| reason | String | PKを同意/拒否した理由の説明。 |
+
 
 ### quitRoomPK
 
@@ -592,12 +596,12 @@ public abstract void quitRoomPK(TRTCLiveRoomCallback.ActionCallback callback);
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | callback | ActionCallback | 操作コールバック。|
-   
 
-## 音声ビデオ制御に関連するインターフェース関数
+
+## オーディオビデオ制御に関連するインターフェース関数
 ### switchCamera
 
-前後カメラを切り替えます。
+フロント/リアカメラを切り替えます。
 ```java
 public abstract void switchCamera();
 ```
@@ -606,7 +610,7 @@ public abstract void switchCamera();
 
 ### setMirror
 
-ミラー表示のオン／オフを設定します。
+ミラー表示のオン/オフを設定します。
 ```java
 public abstract void setMirror(boolean isMirror);
 ```
@@ -621,7 +625,7 @@ public abstract void setMirror(boolean isMirror);
 
 ### muteLocalAudio
 
-ローカル音声をミュートにします。
+ローカルオーディオをミュートにします。
 ```java
 public abstract void muteLocalAudio(boolean mute);
 ```
@@ -630,13 +634,13 @@ public abstract void muteLocalAudio(boolean mute);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| mute | boolean | true：ミュートオン；false：ミュートオフ|
+| mute | boolean | true：ミュート起動、false：ミュート停止。|
 
    
 
 ### muteRemoteAudio
 
-リモートの音声をミュートにします。
+リモートオーディオをミュートにします。
 ```java
 public abstract void muteRemoteAudio(String userId, boolean mute);
 ```
@@ -645,14 +649,14 @@ public abstract void muteRemoteAudio(String userId, boolean mute);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| userId | String | リモートユーザー ID。 |
-| mute | boolean | true：ミュートオン；false：ミュートオフ|
+| userId | String | リモートユーザーID。 |
+| mute | boolean | true：ミュート起動、false：ミュート停止。|
 
    
 
 ### muteAllRemoteAudio
 
-全てのリモート側の音声をミュートにします。
+すべてのリモート側のオーディオをミュートにします。
 ```java
 public abstract void muteAllRemoteAudio(boolean mute);
 ```
@@ -661,30 +665,30 @@ public abstract void muteAllRemoteAudio(boolean mute);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| mute | boolean | true：ミュートオン；false：ミュートオフ|
+| mute | boolean | true：ミュート起動、false：ミュート停止。|
 
    
 
-## バックグラウンドミュージック・サウンドエフェクト関連インターフェース関数
+## BGMサウンドエフェクト関連インターフェース関数
 ### getAudioEffectManager
 
-バックグラウンド・サウンドエフェクト管理オブジェクト [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
+BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
 ```java
 public abstract TXAudioEffectManager getAudioEffectManager();
 ```
-   
+
 
 ## 美顔フィルタに関するインターフェース関数
 ### getBeautyManager
 
-美顔管理オブジェクト [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。
+美顔管理オブジェクト [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。
 ```java
 public abstract TXBeautyManager getBeautyManager();
 ```
 
-美顔管理では、次の機能を利用できます。
+美顔管理では、次の機能を使用できます。
 - 「美顔のスタイル」、「美白」、「肌色補正（血色・つや感）」、「デカ眼」、「顔痩せ」、「V顔」、「下あご」、「面長補正」、「小鼻」、「キラキラ目」、「白い歯」、「目の弛み除去」、「シワ除去」、「ほうれい線除去」などの美容効果を設定します。
-- 「髪の生え際」、「眼と眼の距離」、「眼角度」、「唇の形」、「鼻翼」、「鼻の位置」、「唇の厚さ」、「顔の形」を調整します。
+- 「髪の生え際」、「眼と眼の距離」、「眼の角度」、「唇の形」、「鼻翼」、「鼻の位置」、「唇の厚さ」、「顔の形」を調整します。
 - 人の顔のスタンプ（素材）等のダイナミック効果を設定します。
 - メイクアップを追加します。
 - ジェスチャー認識を行います。
@@ -693,23 +697,23 @@ public abstract TXBeautyManager getBeautyManager();
 ## メッセージ送信関連インターフェース関数
 ### sendRoomTextMsg
 
-ルーム内でのテキストメッセージの放送には、通常弾幕によるチャットを使用します。
+ルーム内でテキストメッセージをブロードキャストします。通常、弾幕によるチャットに使用します。
 ```java
 public abstract void sendRoomTextMsg(String message, TRTCLiveRoomCallback.ActionCallback callback);
 ```
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ     | タイプ           | 意味           |
 |-----|-----|-----|
 | message | String | テキストメッセージ。 |
-| callback  | ActionCallback | 結果のコールバックを送信。|
+| callback | ActionCallback | 送信結果のコールバック。|
 
    
 
 ### sendRoomCustomMsg
 
-カスタマイズしたテキストメッセージを発信します。
+カスタマイズしたテキストメッセージを送信します。
 ```java
 public abstract void sendRoomCustomMsg(String cmd, String message, TRTCLiveRoomCallback.ActionCallback callback);
 ```
@@ -718,9 +722,9 @@ public abstract void sendRoomCustomMsg(String cmd, String message, TRTCLiveRoomC
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| cmd | String | コマンドワードは、開発者がカスタマイズ。主に異なるメッセージタイプを区分するのに使用。 |
+| cmd      | String         | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。 |
 | message | String | テキストメッセージ。 |
-| callback  | ActionCallback | 結果のコールバックを送信。|
+| callback | ActionCallback | 送信結果のコールバック。|
 
    
 
@@ -736,7 +740,7 @@ public abstract void showVideoDebugLog(boolean isShow);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| isShow | boolean | Debug 情報表示のオン/オフ。 |
+| isShow | boolean | Debug情報表示のオン/オフ。 |
 
    
 
@@ -746,7 +750,7 @@ public abstract void showVideoDebugLog(boolean isShow);
 ### onError
 
 エラーのコールバック。
->?SDK リカバリー不能なエラーは必ず監視し、状況に応じてユーザーに適切なインターフェースプロンプトを表示します。
+>?SDKリカバリー不能なエラーは必ず監視し、状況に応じてユーザーに適切なインターフェースプロンプトを表示します。
 
 ```java
 void onError(int code, String message);
@@ -754,11 +758,11 @@ void onError(int code, String message);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ    | タイプ   | 意味       |
 |-----|-----|-----|
-| code | int | エラーコード。 |
-| message | String | エラーメッセージ。 |
-   
+| code   | int    | エラーコード。   |
+| message | String | エラー情報。 |
+
 
 ### onWarning
 
@@ -769,7 +773,7 @@ void onWarning(int code, String message);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+| パラメータ    | タイプ   | 意味       |
 |-----|-----|-----|
 | code | int | エラーコード。 |
 | message | String | 警告メッセージ。 |
@@ -778,7 +782,7 @@ void onWarning(int code, String message);
 
 ### onDebugLog
 
-Log コールバック。
+Logコールバック。
 ```java
 void onDebugLog(String message);
 ```
@@ -795,16 +799,16 @@ void onDebugLog(String message);
 ## ルームイベントのコールバック
 ### onRoomDestroy
 
-ルームが廃棄された時のコールバック。キャスターがルームを退出する時、ルーム内の全ユーザーがこの通知を受信します。
+ルームが破棄された時のコールバック。キャスターが退室する時、ルーム内の全ユーザーがこの通知を受信します。
 ```java
 void onRoomDestroy(String roomId);
 ```
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ | 意味 |
+|パラメータ   | タイプ   | 意味      |
 |-----|-----|-----|
-| roomId | String | ルーム ID。 |
+| roomId | String | ルームID。 |
 
 
 
@@ -812,7 +816,7 @@ void onRoomDestroy(String roomId);
 
 ### onRoomInfoChange
 
-ライブルーム情報変更のコールバック。ライブストリーミングのマイク接続やPKで、ルーム状態の変化を通知するシーンに多用されます。
+ライブストリーミングルーム情報変更のコールバック。ライブストリーミングのマイク接続やPKで、ルーム状態の変化を通知するシーンに多用されます。
 ```java
 void onRoomInfoChange(TRTCLiveRoomDef.TRTCLiveRoomInfo roomInfo);
 ```
@@ -826,10 +830,10 @@ void onRoomInfoChange(TRTCLiveRoomDef.TRTCLiveRoomInfo roomInfo);
    
 
 
-## キャスターと視聴者の参加／退出のイベントコールバック
+## キャスターと視聴者の参加/退出のイベントコールバック
 ### onAnchorEnter
 
-新しいキャスターのルーム参加の通知を受信します。マイク接続の視聴者とルーム間PKのキャスターがルームに参加すると、視聴者は、新しいキャスターがルームに参加したというイベントを受信します。`TRTCLiveRoom`の `startPlay()`を呼び出して、そのキャスターのビデオ画面を表示することができます。
+新しいキャスターの入室の通知を受信します。マイク接続の視聴者とルーム間PKのキャスターが入室すると、視聴者は、新しいキャスターが入室したというイベントを受信します。`TRTCLiveRoom`の `startPlay()`を呼び出して、そのキャスターのビデオ画面を表示することができます。
 ```java
 void onAnchorEnter(String userId);
 ```
@@ -838,12 +842,12 @@ void onAnchorEnter(String userId);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| userId | String | 新しくルームに参加したキャスターの ID。 |
-   
+| userId | String | 新しくルームに参加したキャスターのID。 |
+
 
 ### onAnchorExit
 
-キャスターのルーム退出の通知を受信します。ルーム内のキャスター（およびマイク接続中の視聴者）が、新しいキャスターのルーム退出のイベントを受信します。`TRTCLiveRoom`の`stopPlay()`を呼び出して、そのキャスターのビデオ画面を閉じることができます。
+キャスターの退室の通知を受信します。ルーム内のキャスター（およびマイク接続中の視聴者）が、新しいキャスターの退室のイベントを受信します。`TRTCLiveRoom`の`stopPlay()`を呼び出して、そのキャスターのビデオ画面を閉じることができます。
 ```java
 void onAnchorExit(String userId);
 ```
@@ -852,8 +856,8 @@ void onAnchorExit(String userId);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| userId | String | ルームを退出したユーザー ID。 |
-   
+| userId | String | ルームを退出したユーザーID。 |
+
 
 ### onAudienceEnter
 
@@ -900,17 +904,17 @@ void onRequestJoinAnchor(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, String reaso
 |-----|-----|-----|
 | userInfo | TRTCLiveUserInfo | マイク接続をリクエストした視聴者の情報。|
 | reason | String | マイク接続の理由の説明。|
-| timeout | int | リクエスト処理のタイムアウトの時間。上の階層がこの時間をオーバーしても処理しない場合、このリクエストは自動的に廃棄されます。 |
+| timeout | int | リクエスト処理のタイムアウトの時間。上の階層がこの時間をオーバーしても処理しない場合、このリクエストは自動的に破棄されます。 |
 
    
 
 ### onKickoutJoinAnchor
 
-マイク接続の視聴者がマイク接続から追放された通知を受信します。マイク接続の視聴者は、キャスターからマイク接続追放のメッセージを受信した場合、`TRTCLiveRoom`の`stopPublish()` を呼び出してマイク接続から退出する必要があります。
+マイク接続の視聴者がマイク接続からキックアウトされた通知を受信します。マイク接続の視聴者は、キャスターからマイク接続キックアウトのメッセージを受信した場合、`TRTCLiveRoom`の`stopPublish()` を呼び出してマイク接続から退出する必要があります。
 ```java
 void onKickoutJoinAnchor();
 ```
-  
+
 
 
 ## キャスター間PKのイベントコールバック
@@ -927,7 +931,7 @@ void onRequestRoomPK(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, int timeout);
 |-----|-----|-----|
 | userInfo | TRTCLiveUserInfo | ルーム間マイク接続を始動したキャスターの情報。|
 | timeout | int | リクエスト処理のタイムアウトの時間。 |
-   
+
 
 ### onQuitRoomPK
 
@@ -939,7 +943,7 @@ void onQuitRoomPK();
    
 
 
-## メッセージのイベントコールバック
+## メッセージイベントのコールバック
 ### onRecvRoomTextMsg
 
 テキストメッセージの受信。
@@ -952,13 +956,13 @@ void onRecvRoomTextMsg(String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | message | String | テキストメッセージ。|
-| user | TRTCLiveUserInfo | 発信者ユーザーの情報。|
+| userInfo | TRTCLiveUserInfo | 送信者のユーザー情報。|
 
    
 
 ### onRecvRoomCustomMsg
 
-カスタマイズメッセージの受信。
+カスタムメッセージの受信。
 ```java
 void onRecvRoomCustomMsg(String cmd, String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo);
 ```
@@ -967,12 +971,12 @@ void onRecvRoomCustomMsg(String cmd, String message, TRTCLiveRoomDef.TRTCLiveUse
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| command | String | コマンドワードは、開発者がカスタマイズ。主に異なるメッセージタイプを区分するのに使用。|
+| command | String | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。|
 | message | String | テキストメッセージ。|
-| user | TRTCLiveUserInfo | 発信者ユーザーの情報。 |
+| userInfo | TRTCLiveUserInfo | 送信者のユーザー情報。 |
 
-   
-<span id="TRTCAudioEffectManager"></span>
+
+[](id:TRTCAudioEffectManager)
 ## TRTCAudioEffectManager
 ### playBGM
 
@@ -987,7 +991,7 @@ void playBGM(String url, int loopTimes, int bgmVol, int micVol, TRTCCloud.BGMNot
 |-----|-----|-----|
 | url | String | BGMファイルパス。 |
 | loopTimes | int | ループ回数 |
-| bgmVol | int | BGM 音量 |
+| bgmVol | int | BGM音量 |
 | micVol | int | キャプチャ音量 |
 | notify | TRTCCloud.BGMNotify | 再生の通知 |
 
@@ -1080,13 +1084,13 @@ void setReverbType(int reverbType);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| reverbType | int | リバーブタイプ。詳細は、`TRTCCloudDef` の中の [TRTC_REVERB_TYPE](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a60ecba31f49f70780e623d24bcfa1a7d)の定義をご参照ください。 |
+| reverbType | int | リバーブタイプ。詳細は、`TRTCCloudDef`の中の[TRTC_REVERB_TYPE](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a60ecba31f49f70780e623d24bcfa1a7d)の定義をご参照ください。 |
 
    
 
 ### setVoiceChangerType
 
-ボイス・チェンジのタイプを設定します。
+ボイスチェンジのタイプを設定します。
 ```java
 void setVoiceChangerType(int type);
 ```
@@ -1095,7 +1099,7 @@ void setVoiceChangerType(int type);
 
 | パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| type | int | リバーブタイプ。詳細は、`TRTCCloudDef`の中の [TRTC_VOICE_CHANGER_TYPE](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a899e72b3e4a16288e6c2edfd779e3beb) の定義をご参照ください。 |
+| type | int | リバーブタイプ。詳細は、`TRTCCloudDef`の中の[TRTC_VOICE_CHANGER_TYPE](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a899e72b3e4a16288e6c2edfd779e3beb)の定義をご参照ください。 |
 
    
 
@@ -1113,7 +1117,7 @@ void playAudioEffect(int effectId, String path, int count, boolean publish, int 
 | effectId | int | サウンドエフェクト ID。 |
 | path | String | サウンドエフェクトパス。 |
 | count | int | ループ回数。 |
-| publish | boolean | プッシュかどうか / trueは視聴者に対するプッシュ、 falseは ローカルプレビューです。 |
+| publish | boolean | プッシュかどうか / trueは視聴者に対するプッシュ、 falseはローカルプレビューです。 |
 | volume | int | 音量の大きさ。数値の範囲は0 - 100、デフォルト値は100です。 |
 
    
@@ -1165,7 +1169,7 @@ void stopAudioEffect(int effectId);
 
 ### stopAllAudioEffects
 
-全てのサウンドエフェクトの再生を停止します。
+すべてのサウンドエフェクトの再生を停止します。
 ```java
 void stopAllAudioEffects();
 ```

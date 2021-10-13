@@ -1,52 +1,143 @@
+<style>
+.markdown-text-box table th,.markdown-text-box table td{text-align: center;}
+.inbuttom{height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;}
+</style>
+
+
 ## Native Demos
-<table style="text-align:center;vertical-align:middle;">
+<table>
 <tr>
-<th>iOS</th><th>Android</th><th>Windows</th><th >macOS</th>
+<th>iOS&Android</th><th>Windows</th><th >macOS</th>
 </tr>
 <tr>
-<td><img style="width:150px" src="https://main.qcloudimg.com/raw/7a2a1fc253e7b6afee96538e90d3cf79.png" data-nonescope="true"></td>
-<td><a onclick="window.open('https://dldir1.qq.com/hudongzhibo/TRTC/Demo/TRTCDemo.apk')"><div style="width:150px;height: 150px;background-image:url(https://main.qcloudimg.com/raw/8c59496262e772a492b50c6e1b9cff52.png);background-size: cover;">
-</div></a></td>
-<td><a onclick="window.open('https://trtc-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Win_Demo.exe')"><div style="width:150px;height: 150px;background-image:url(https://main.qcloudimg.com/raw/9c0b20a049f02e07c53ceb8396946d5c.png);background-size: cover;">
-</div></a></td>
-<td><a onclick="window.open('https://trtc-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Mac_Demo.tar.bz2')"><div style="width:150px;height: 150px;background-image:url(https://main.qcloudimg.com/raw/9c0b20a049f02e07c53ceb8396946d5c.png);background-size: cover;">
-</div></a></td>
+<td><img style="width:150px;" src="https://main.qcloudimg.com/raw/d9de23724ad57cab508cfb43f500897c.png" data-nonescope="true" ></td>
+<td><a onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Win_Demo.exe')"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/e80b8f4462e2904b31dcdcaabe71c484.png);background-size: cover;">
+</button></a></td>
+<td><a onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2')"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/e80b8f4462e2904b31dcdcaabe71c484.png);background-size: cover;">
+</button></a></td>
 </tr>
 </table>
 
 ## Cross-Platform Demos
-<table style="text-align:center;vertical-align:middle;">
+<table>
 <tr>
 <th>Web</th><th>Flutter </th><th>Electron</th>
 </tr>
 <tr>
 </div></a></td>
 <td>
-      <input type="button" value="Web API Example " style="height: 50px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
-    color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
-    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html?lang=en')" />
+<input type="button" value="Web Demo" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" />
 </td>
-<td><img style="width:150px" src="https://main.qcloudimg.com/raw/30938d823c61f718e4a2564c0304030c.png" data-nonescope="true"><br><img style="width:150px" src="https://main.qcloudimg.com/raw/ab9f45c1dfcbf0c88f3776ffbd19c02f.png" data-nonescope="true"></td>
-<td><input type="button" value="Windows" style="height: 50px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
-    color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
-    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe?_ga=1.35276513.1325816544.1607066203')" /><br><br>
-      <input type="button" value="macOS" style="height: 50px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
-    color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
-    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg?_ga=1.35276513.1325816544.1607066203/')" /></td>
+<td>
+<img style="width:150px" src="https://main.qcloudimg.com/raw/844e3de73cf2537e8a58e2263de5900e.png" data-nonescope="true">
+</td>
+<td>
+<input type="button" value="Windows" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-windows.zip')" /><br><br>
+<input type="button" value="macOS" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-mac.zip')" /></td>
 </tr>
 </table>
 
-**iOS** 
-![](https://main.qcloudimg.com/raw/296c9a0f50e38ff975dce00e4392ef6c.png)
 
-**Android**
-![](https://main.qcloudimg.com/raw/b7b0d11e2df5d5a9192cb360a390e02a.png)
 
-**macOS**
-![](https://main.qcloudimg.com/raw/ba5823caa9590ba93d1a3fa404b56146.jpg)
 
-**Windows** 
-![](https://main.qcloudimg.com/raw/b0094b94a9d8855a1047adaa3efc2d28.png)
 
-**Web**
-![](https://main.qcloudimg.com/raw/ac6593a0f82fdbf3643ca1214de154fb.jpg)
+## Video Call
+TRTC supports one-to-one and group video calls at a resolution of 720p or 1080p. In the video call mode, each room allows a maximum of 300 concurrent participants, and up to 50 participants can keep their cameras on at the same time. Common video call scenarios include one-to-one video call, video conference with up to 300 people, online medical consultation, video chat, video customer service, video interviews, audio/video recording, online insurance claim settlement, video Werewolf, etc.
+<dx-tabs>
+::: iOS & Android
+<table>
+<tr>
+   <th>Call</th>
+   <th>Answer</th>
+ </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/ef83db73d0a8c487e72986dd1f92e361.jpeg"/></td>
+<td><img src="https://main.qcloudimg.com/raw/f57ed3a55112233b05260f5dc37342ca.jpeg"/></td>
+</tr>
+</table>
+:::
+
+</dx-tabs>
+
+## Audio Call
+TRTC supports one-to-one or group audio calls with dual sound channels and a sample rate of 48 kHz. In the audio call mode, each room allows a maximum of 300 concurrent participants, and up to 50 participants can keep their mics on at the same time. Common audio call scenarios include one-to-one audio call, group audio call, audio chat, audio conferencing, audio customer service, audio Werewolf, etc.
+<dx-tabs>
+::: iOS & Android
+<table>
+<tr>
+   <th>Call</th>
+   <th>Answer</th>
+ </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/7b03f80d5ad33bd33b6fb551e392b4d3.jpeg"/></td>
+<td><img src="https://main.qcloudimg.com/raw/60581f007dda722e06af6333b13afbd4.jpeg"/></td>
+</tr>
+</table>
+:::
+
+</dx-tabs>
+
+## Interactive Live Video Streaming
+The interactive live video streaming mode supports co-anchoring between anchors and audience and cross-room anchor competition. It allows smooth mic on/off without waiting, with anchor latency shorter than 300 ms. There is no limit on the cumulative number of co-anchors in a room, and up to 50 users can co-anchor at the same time. In the low-latency mode, up to 100,000 users can play back at the same time, with latency as low as 1,000 ms. In the CDN live streaming mode, there is no limit on audience size. Common interactive live video streaming scenarios include low-latency video streaming, interactive classroom for up to 100,000 participants, live video competition, video dating, remote training, large conference, etc.
+<dx-tabs>
+::: iOS & Android
+<table>
+<tr>
+<td><img width="260" height="561" src="https://main.qcloudimg.com/raw/317b3eb7ebf971ef7291dec2bacfa18a.jpeg"/></td>
+<td><img width="260" height="561" src="https://main.qcloudimg.com/raw/162112aa8768d0db63e1850c2495a370.jpeg"/></td>
+<td><img width="260" height="561" src="https://main.qcloudimg.com/raw/dab9fe1e5c93deb5ee02155b27bdf639.jpeg"/></td>
+<td><img width="260" height="561" src="https://main.qcloudimg.com/raw/3182620f791a594d555ecab0cd170e1f.jpeg"/></td>
+</tr>
+</table>
+:::
+::: Web
+
+:::
+</dx-tabs>
+
+## Interactive Live Audio Streaming
+In the interactive live audio streaming mode, listeners can become speakers and interact with the room owner, and room owners can compete with each other. It supports smooth mic on/off without waiting, with speaker latency shorter than 300 ms. There is no limit on the cumulative number of speakers in a room, and up to 50 users can speak at the same time. In the low-latency mode, up to 100,000 users can play back at the same time, with latency as low as 1,000 ms. In the CDN live streaming mode, there is no limit on audience size. Common interactive live audio streaming scenarios include low-latency audio streaming, live audio interaction, live audio competition, audio chat room, audio dating, karaoke room, FM radio, etc.
+<table>
+     <tr>
+         <th>Room Owner</th>  
+         <th>Listener</th>  
+     </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/dd836080683a49418bc548bfb9f59857.jpeg"/></td>
+<td><img src="https://main.qcloudimg.com/raw/7b73bfdd915a0ba281c52b9ac0518b80.jpeg"/></td>
+</tr>
+</table>
+
+
+## Video Conferencing
+The video conferencing mode offers smooth and HD conference experience. It supports 1080p video and 48 kHz audio, with latency shorter than 300 ms. The screen sharing and file sharing features help make conferences more efficient, and instant messaging enables text- and image-based discussion without interrupting a conference. Common video conferencing scenarios including omni-channel customer service, online conference, government/corporate live streaming, etc.
+<table>
+     <tr>
+         <th>Join Conference</th>  
+         <th>Share Screen</th>  
+     </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/a1fc2d23946377cb9466d8b645c14d24.jpeg"/></td>
+<td><img src="https://main.qcloudimg.com/raw/5c613b7c7ee890b7e3feb7a3270a9a89.jpeg"/></td>
+</tr>
+</table>
+
+## Interactive Classroom
+The interactive classroom mode allows teacher-student interaction and smooth mic on/off without waiting. Up to 50 participants can keep their mics on at the same time, with latency shorter than 300 ms. In the low-latency mode, up to 100,000 students can play the teacher’s video at the same time, with latency as low as 1,000 ms. In the CDN live streaming mode, there is no limit on audience size. The screen sharing, whiteboard, recording, and replay features help enrich online education experience. Common interactive classroom scenarios include large class, small class, mini class, AI class, open class for enrollment purposes, corporate training, one-to-one tutoring, etc.
+
+| <img src="https://main.qcloudimg.com/raw/e08f0225d255b94c31b03512553a654b.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+
+
+## Online Karaoke
+In the karaoke mode, the room owner and audience can turn their mics on and sing. It supports smooth mic on/off without waiting, with singer latency shorter than 300 ms. There is no limit on the cumulative number of singers in a room, and up to 50 users can sing at the same time. In the low-latency mode, up to 100,000 users can play back at the same time, with latency as low as 1,000 ms. In the CDN live streaming mode, there is no limit on audience size. Common karaoke scenarios include low-latency audio streaming, live audio interaction, live audio competition, audio chat room, audio dating, karaoke room, FM radio, etc.
+<table>
+     <tr>
+         <th>Request Song (Room Owner)</th>  
+         <th>Request Song (Audience)</th>  
+     </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/dcb4f550d478b35212f4b7ef5c332fcf.jpeg"/></td>
+<td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
+</tr>
+</table>

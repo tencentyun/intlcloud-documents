@@ -33,10 +33,10 @@ TRTCコンソールでは、自身でのコールバック情報の設定をサ�
         「EventTs」: 1615554922661、        #イベント発生時間。単位はミリ秒
         「UserId」: 「test」、               #ユーザーID
         「UniqueId」: 1615554922656、      #固有識別子
-        「Role」: 20、                     #ユーザーロール、キャスター
-        「TerminalType」: 3、       #端末のタイプ、OS端末
-        「UserType」: 3、       #ユーザーのタイプ、Native SDK
-        「Reason」: 1        #入室の原因、正常な入室
+        「Role」: 20、                     #ユーザーロール。キャスター
+        「TerminalType」: 3、       #端末のタイプ。IOS端末
+        「UserType」: 3、       #ユーザーのタイプ。Native SDK
+        「Reason」: 1        #入室の原因。正常な入室
 	}
 }
 :::
@@ -114,13 +114,15 @@ TRTCコンソールでは、自身でのコールバック情報の設定をサ�
 |EventTs      |    Number     |      イベントで発生するUnixタイムスタンプ。単位は秒（互換性保留） |
 |EventMsTs    |     Number     |     イベントで発生するUnixタイムスタンプ。単位はミリ秒   |
 | UserId  | String | ユーザーID                            |
-| UniqueId  | Number | [固有識別子](#UniqueId)（option：ルームイベントグループ付与）                            |
+| UniqueId  | Number | 固有識別子（option：ルームイベントグループに付帯）[](id:UniqueId) <br>クライアントでネットワークの切り替え、異常退出および再入室プロセスなどの特殊な行為が発生すると、お客様のコールバックサーバーが同じユーザーの複数回の入室および退室コールバックを受信する可能性があり、UniqueIdを使用してユーザーの同一回の入退室を識別することができます                            |
 | Role    | Number | [ロールタイプ](#role_type)（option：入退室時に付帯）  |
 |TerminalType  |  Number    |   [端末のタイプ](#terminal)（option：入室時に付帯）|
 |UserType  |  Number   |   [ユーザーのタイプ](#usertype)（option：入室時に付帯）|
 | Reason  | Number | [具体的な原因](#reason) （option：入退室時に付帯） |
 
->?[](id:UniqueId) **固有識別子の定義：**クライアントでネットワークの切り替え、異常退出および再入室プロセスなどの特殊な行為が発生すると、お客様のコールバックサーバーが同じユーザーの複数回の入室および退室コールバックを受信する可能性があり、UniqueIdを使用してユーザーの同一回の入退室を識別することができます。
+
+>! 「クライアントの特殊な行為による重複コールバックのフィルタリング」ポリシーをリリース済みです。2021年7月30日より後にコールバックサービスにアクセスした場合、デフォルトで新しいポリシーが適用され、ルームイベントグループには[UniqueId](#UniqueId)（固有識別子）が付加されません。
+
 
 [](id:role_type)
 ### ロールタイプ
@@ -172,3 +174,6 @@ Sign = base64(hmacsha256(key, body))
 >```
 >body="{\n\t\"EventGroupId\":\t1,\n\t\"EventType\":\t103,\n\t\"CallbackTs\":\t1615554923704,\n\t\"EventInfo\":\t{\n\t\t\"RoomId\":\t12345,\n\t\t\"EventTs\":\t1608441737,\n\t\t\"UserId\":\t\"test\",\n\t\t\"UniqueId\":\t1615554922656,\n\t\t\"Role\":\t20,\n\t\t\"Reason\":\t1\n\t}\n}"
 >```
+```
+
+```
