@@ -11,12 +11,13 @@
 </tr>
 <tr>
 <td><img style="width:150px;" src="https://main.qcloudimg.com/raw/d9de23724ad57cab508cfb43f500897c.png" data-nonescope="true" ></td>
-<td><a onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Win_Demo.exe')"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/e80b8f4462e2904b31dcdcaabe71c484.png);background-size: cover;">
+<td><a onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Win_Demo.exe')"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/9c0b20a049f02e07c53ceb8396946d5c.png);background-size: cover;">
 </button></a></td>
-<td><a onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2')"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/e80b8f4462e2904b31dcdcaabe71c484.png);background-size: cover;">
+<td><a onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2')"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/9c0b20a049f02e07c53ceb8396946d5c.png);background-size: cover;">
 </button></a></td>
 </tr>
 </table>
+
 
 ## Cross-Platform Demos
 <table>
