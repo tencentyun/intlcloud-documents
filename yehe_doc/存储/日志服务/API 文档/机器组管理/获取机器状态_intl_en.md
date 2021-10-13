@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to get the server status in a specified server group.
+This API is used to get the server status in a specified machine group.
 
 ## Request
 #### Sample request
