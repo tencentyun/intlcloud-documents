@@ -94,7 +94,7 @@ CPUとメモリの構成の差異によって、CVMにバインドできるENI�
 
 ## ディスクに関する制限
 
-</table>
+<table>
 	<tr><th>アラームタイプ</th><th>制限の説明</th></tr>
 	<tr><td>Cloud Block Storage能力</td><td>は2018年5月以降、CVMと一緒に購入したデータディスクはすべてCloud Block Storageとなり、CVMからアンインストールして再マウントできます。この機能は、すべての<a href="https://intl.cloud.tencent.com/document/product/213/35071">アベイラビリティーゾーン</a>でサポートされています。</td></tr>
 	<tr><td>CBS性能制限</td><td>I/O性能は同時に有効になります。<br/>例えば、1TBのSSD CBSは最大ランダムIOPS が26,000に達することは、読み込みIOPSと書き込みIOPSは同時にこの値に達することを表します。また、複数の性能制限により、この例の中でblock sizeが4KB/8KBのI/OはIOPSの最大値に達しますが、block sizeが16KBのI/OはIOPSの最大値に達することができません（スループットが260MB/sの制限に達した）</td></tr>

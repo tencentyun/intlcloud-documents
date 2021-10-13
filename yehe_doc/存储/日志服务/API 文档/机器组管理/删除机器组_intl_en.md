@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to delete a server group.
+This API is used to delete a machine group.
 
 ## Request
 
@@ -26,7 +26,7 @@ There are only common response headers but no special response headers.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|--------------------------------|
-| group_id     | string | query| Yes      | ID of the server group to be deleted                |
+| group_id     | string | query| Yes      | ID of the machine group to be deleted                |
 
 ## Response
 
