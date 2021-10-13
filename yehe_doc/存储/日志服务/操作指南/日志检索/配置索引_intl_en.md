@@ -27,7 +27,7 @@ Full-text index allows you to perform searches by using keywords. It splits all 
 | ---------- | ------------------------------------------------------------ |
 | Full-text delimiter | A set of characters that split the raw log content into segments. The delimiters <code>@&()='",;:<>[]{}/ \n\t\r\</code> are entered by default in the console. |
 | Case Sensitivity | This specifies whether a keyword after segmentation is case-sensitive during queries; for example, if the keyword after segmentation is `Error` and is case-sensitive, `error` cannot be queried. |
-| Allow Chinese characters | This feature can be enabled when logs contain Chinese characters need to be searched. After you enable this feature, Chinese characters will be segmented by meaning and indexes will increase; you can increase configurations as appropriate. For example, if the original text of a log is in Chinese and reads "用户登录接口超时", and this feature is disabled, you cannot query the log with the Chinese keyword "超时", which is contained in the original text. However, the query will be successful if you enable this feature.|
+| Allow Chinese characters | This feature can be enabled when logs contain Chinese characters need to be searched. After you enable this feature, Chinese characters will be segmented by meaning and indexes will increase; you can increase configurations as appropriate. |
 
 
 For example, a complete log is as shown below:
@@ -77,7 +77,7 @@ Key-value index creates an index of key-value pairs. An index rule can be config
 | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Data Type   | Data type of the field. For example, the `text ` type supports fuzzy query, while the `long` and `double` types support range query. | long - integer (Int 64)<br/>double - floating point (64-bit)<br/>text - string |
 | Delimiter     | They are used to segment fields into keywords according to the defined character set. | Default delimiters: <code>@&()='",;:<>[]{}/ \n\t\r</code>                       |
-| Allow Chinese Characters     | This feature can be enabled when logs contain Chinese characters need to be searched. For example, if the original text of a log is in Chinese and reads "用户登录接口超时", and this feature is disabled, you cannot query the log with the Chinese keyword "超时", which is contained in the original text. However, the query will be successful if you enable this feature.  | If this feature is enabled, Chinese statements will be segmented according to semantics, increasing the index volume to some extent. Please use this feature as needed.              |
+| Allow Chinese Characters     | This feature can be enabled when logs contain Chinese characters need to be searched.   | If this feature is enabled, Chinese statements will be segmented according to semantics, increasing the index volume to some extent. Please use this feature as needed.              |
 | Enable Statistics   | After it is enabled, statistical analysis can be performed on fields, such as `group by ${key}` and `sum(${key})`. For more information, please see [Overview](https://intl.cloud.tencent.com/document/product/614/37803).| It is disabled by default.                                                            |
 | Case Sensitivity | This specifies whether a keyword after segmentation is case-sensitive during queries; for example, if the keyword after segmentation is `Error` and is case-sensitive, `level:error` cannot be queried. | Case-insensitive by default. |
 
