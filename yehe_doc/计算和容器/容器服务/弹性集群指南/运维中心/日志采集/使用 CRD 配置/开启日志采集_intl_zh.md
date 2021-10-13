@@ -31,10 +31,10 @@ CRD 对 Pod 无侵入性，支持单行、多行、分隔符、完全正则、JS
 
 ### 首次授权[](id:role)
 首次使用 EKS 集群的日志采集功能，需要您对 CLS 等相关权限进行授权，以保证将日志正常上传到 CLS。
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=4)，选择左侧导航栏中的【集群运维】>【[功能管理](https://console.cloud.tencent.com/tke2/ops/list?rid=1)】。
-2. 在“功能管理”页面上方选择地域和弹性集群，单击需要开启日志采集的集群右侧的【设置】。如下图所示：
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=4)，选择左侧导航栏中的**集群运维**>**[功能管理](https://console.cloud.tencent.com/tke2/ops/list?rid=1)**。
+2. 在“功能管理”页面上方选择地域和弹性集群，单击需要开启日志采集的集群右侧的**设置**。如下图所示：
 ![](https://main.qcloudimg.com/raw/3f0743029e71e20e4f3b3bfdd7045bab.png)
-3. 在“设置功能”页面，单击【访问管理】，为服务授权。
+3. 在“设置功能”页面，单击**访问管理**，为服务授权。
 完成授权后，会默认为您的账号绑定角色 TKE_QCSLinkedRoleInEKSLog，该角色配置的预设策略为 QcloudAccessForTKELinkedRoleInEKSLog。
 
 >?您只需在首次使用日志采集功能时进行授权，后续使用无需再操作。若您删除了以上角色，则会再次触发授权操作。
@@ -45,10 +45,10 @@ CRD 对 Pod 无侵入性，支持单行、多行、分隔符、完全正则、JS
 
 完成授权后，即可开启日志采集。
 
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=4)，选择左侧导航栏中的【集群运维】>【[功能管理](https://console.cloud.tencent.com/tke2/ops/list?rid=1)】。
-2. 在“功能管理”页面上方选择地域和弹性集群，单击需要开启日志采集的集群右侧的【设置】。如下图所示：
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=4)，选择左侧导航栏中的**集群运维**>**[功能管理](https://console.cloud.tencent.com/tke2/ops/list?rid=1)**。
+2. 在“功能管理”页面上方选择地域和弹性集群，单击需要开启日志采集的集群右侧的**设置**。如下图所示：
 ![](https://main.qcloudimg.com/raw/3f0743029e71e20e4f3b3bfdd7045bab.png)
-3. 在“设置功能”页面，单击日志采集【编辑】，开启日志采集后确认。如下图所示：
+3. 在“设置功能”页面，单击日志采集**编辑**，开启日志采集后确认。如下图所示：
 ![](https://main.qcloudimg.com/raw/9c1a88b996982ab6112f9032bfa15040.png)
 
 
