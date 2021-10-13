@@ -1,21 +1,38 @@
+This document introduces the usage and examples of the `LIMIT` syntax.
 
+The `LIMIT` syntax is used to limit the number of rows in the output result.
 
-The `LIMIT` clause is used to limit the amount of data returned by the `SELECT` statement.
+## Syntax Format
 
-## LIMIT Syntax Format
+CLS supports either of the following types of `LIMIT` syntax:
 
-Read the first `count` rows:
-
-```plaintext
-LIMIT count
+- Read the first N rows:
 ```
->!`LIMIT` doesn't support the `[offset] rows` syntax.
-
-
-## LIMIT Syntax Sample
-
-Sort the request status code logs in descending order and only get the first 10 rows:
-
-```plaintext
-* | SELECT status, COUNT(status) as ct ORDER BY status DESC LIMIT 10
+limit N
 ```
+- Read N rows starting from row S:
+```
+offset S limit N
+```
+>?
+> - In page turning read, `LIMIT` is only used to obtain the final result, not the intermediate result of the SQL statement.
+> - The `LIMIT` syntax cannot be used in subqueries. Example:
+>```
+* | select sum(pv) from 
+(
+select count(1) as pv from log group by status 
+)
+```
+> 
+
+## Examples
+
+- Get the first 10 rows of results:
+```
+* | select status, count(*) as pv group by status limit 10
+```
+- Get the results for rows 2 to 42 (41 rows in total):
+```
+* | select * from log order by ip offset 2 limit 40
+```
+

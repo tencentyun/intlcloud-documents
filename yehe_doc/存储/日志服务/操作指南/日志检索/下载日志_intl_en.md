@@ -1,4 +1,4 @@
-## Use Cases
+## Overview
 CLS allows you to export the collected log data, so you can download the data to view it locally.
 The log download feature is as described below:
 - Up to 10 million logs can be exported.
@@ -8,7 +8,7 @@ The log download feature is as described below:
 ## Directions
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-2. In the left sidebar, click **Log Search** to go to the **Search and Analysis** page.
+2. On the left sidebar, click **Log Search** to go to the **Search and Analysis** page.
 3. Click the drop-down lists of **Logset** and **Log Topic** to select the content to be searched.
 
 4. Click **Log Time** and select a log time for search.
@@ -25,10 +25,14 @@ You can select **Recent Time** or **Relative Time** or customize the time range.
 	<li>Log sorting: logs can be sorted in "ascending" or "descending" (default) order by time.</li>
 	<li>Log quantity: "All logs" are exported by default. You can also select a "custom log quantity".</li>
 </ul>
-8. Click **Export** to switch to the **Export Record** page.
+>? 
+> - For the CSV format, only fields with configured indexes can be exported, and the downloaded logs may be empty.
+> - For the JSON format, all fields can be exported, regardless of index configuration.
+> 
+8. Click **Export** to switch to the **Export Logs** page.
 
-9. After the **Filename/Task ID** status changes to **File generated**, click **Download** to export the logs.
+9. After the **File Name/Task ID** status changes to **File generated successfully**, click **Download** to export the logs.
 >! 
 > - The exported log file is retained for only 3 days.
-> - A single log topic can be exported for up to 5 times.
+> - Up to 5 export records can be stored for a single log topic. If this limit is exceeded, you can continue to download logs only after you delete historical export records.
 > 
