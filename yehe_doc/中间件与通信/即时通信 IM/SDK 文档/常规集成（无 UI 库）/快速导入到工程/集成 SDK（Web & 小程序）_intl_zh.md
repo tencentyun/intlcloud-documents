@@ -10,8 +10,8 @@
 
 ## 相关文档
 - [一分钟跑通 Demo](https://intl.cloud.tencent.com/document/product/1047/34553)
-- [IM SDK（小程序） Demo 运行](https://github.com/tencentyun/TIMSDK/tree/master/WXMini)
-- [IM SDK（Web） Demo 运行](https://github.com/tencentyun/TIMSDK/tree/master/H5)
+- [IM SDK（小程序） TUIKit 运行](https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/TUIKit)
+- [IM SDK（Web） Demo 运行](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
 - [集成 SDK 上传插件（Web & 小程序）](https://intl.cloud.tencent.com/document/product/1047/39858)
 
 ## 集成 SDK
@@ -94,7 +94,7 @@ tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
 在您的项目中使用 script 标签引入 SDK，并初始化。
 
 ```html
-<!-- tim-js.js 和 tim-upload-plugin.js 可以从 https://github.com/tencentyun/TIMSDK/tree/master/H5/sdk 获取 -->
+<!-- tim-js.js 和 tim-upload-plugin.js 可以从 https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo/sdk 获取 -->
 <script src="./tim-js.js"></script>
 <script src="./tim-upload-plugin.js"></script>
 <script>

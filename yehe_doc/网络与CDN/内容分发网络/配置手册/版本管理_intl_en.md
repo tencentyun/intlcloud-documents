@@ -7,7 +7,7 @@ Tencent Cloud CDN supports version management for a single domain name. You can 
 - Staging environment: a sandbox for testing domain name configurations only. This environment is built on a small scale and is only expected for domain name configuration tests in the console. It should not be use for actual business running or performance tests.
 
 >!
->1. The acceleration region should be in the Chinese mainland. The domain name should not use external certificates, and the [Image Optimization](https://cloud.tencent.com/document/product/228/43121) feature  should not be enabled.
+>1. The acceleration region should be in the Chinese mainland. The domain name should not use external certificates, and the Image Optimization feature  should not be enabled.
 >2. Only one version can be deployed at a time in each environment.
 >3. URL refresh is supported in both the production environment and staging environment, while directory refresh and URL prefetch are only allowed in the production environment. For more information, see [Purge and Prefetch](https://intl.cloud.tencent.com/document/product/228/6299).
 >4. Data and usage monitoring features, like [bandwidth cap configuration](https://intl.cloud.tencent.com/document/product/228/7541), are only available in the production environment.

@@ -22,7 +22,7 @@ To simplify this process, we provide the source code for computing a UserSig for
 |Objective-C | Mac | [GenerateTestUserSig.h](https://github.com/tencentyun/TIMSDK/blob/master/Mac/Demo/TUIKitDemo/Debug/GenerateTestUserSig.h) |
 | C++ | Windows | [GenerateTestUserSig.h](https://github.com/tencentyun/TIMSDK/blob/master/Windows/Demo/IMApp/GenerateTestUserSig.h) |
 | Javascript | Web | [GenerateTestUserSig.js](https://github.com/tencentyun/TIMSDK/blob/master/Web/Demo/public/debug/GenerateTestUserSig.js) |
-| Javascript | Mini Program | [GenerateTestUserSig.js](https://github.com/tencentyun/TIMSDK/blob/master/MiniProgram/Demo/static/utils/GenerateTestUserSig.js) | 
+| Javascript | Mini Program | [GenerateTestUserSig.js](https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/TUIKit) | 
 | Dart|Flutter |[GenerateTestUserSig.dart](https://github.com/tencentyun/TencentIMFlutterDemo/blob/master/lib/utils/GenerateTestUserSig.dart)|
 
 >!In this method, the SECRETKEY is easy to decompile and reverse engineer. If the SECRETKEY is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method is used only to locally run through a demo project and debug features.**
