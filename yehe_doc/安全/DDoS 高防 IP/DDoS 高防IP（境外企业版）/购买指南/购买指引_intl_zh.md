@@ -8,7 +8,7 @@
 
 ![](https://main.qcloudimg.com/raw/cb9d5b09e539fe081827b73a9d40bf61.png)
 4. 单击**立即支付**,支付费用后即完成服务购买。
-![](https://main.qcloudimg.com/raw/db84cbc4a640d1681f7b7a5e8a65f3e4.png)
+![](https://main.qcloudimg.com/raw/65e09ee9d14332a0d2e68b5082436068.png)
 5. 登录 [DDoS 控制台](https://console.cloud.tencent.com/ddos/ddos-basic)，单击 **DDoS 高防 IP**  >  **实例列表**，进入实例列表页面。
 6. 在实例列表页面中，单击选择**全部线路** > **Anycast**可以看到购买的 DDoS 高防 IP (境外企业版)实例信息。
-![](https://main.qcloudimg.com/raw/44fa02eaefd8d1f38edfab478a50ee86.png)
+![](https://main.qcloudimg.com/raw/c715c0f64c7f2b94bd814098e35def81.png)

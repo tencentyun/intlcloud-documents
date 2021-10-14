@@ -8,7 +8,7 @@
 
 ![](https://main.qcloudimg.com/raw/cb9d5b09e539fe081827b73a9d40bf61.png)
 4. Click **Pay Now** to complete your purchase.
-![](https://main.qcloudimg.com/raw/db84cbc4a640d1681f7b7a5e8a65f3e4.png)
+![](https://main.qcloudimg.com/raw/65e09ee9d14332a0d2e68b5082436068.png)
 5. Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/ddos/ddos-basic) and select **Anti-DDoS Advanced** -> **Instance List** to enter the instance list page.
 6. On the page, select **All Lines** -> **Anycast** to view your Anti-DDoS Advanced (Global Enterprise Edition) instance details.
-![](https://main.qcloudimg.com/raw/44fa02eaefd8d1f38edfab478a50ee86.png)
+![](https://main.qcloudimg.com/raw/c715c0f64c7f2b94bd814098e35def81.png)
