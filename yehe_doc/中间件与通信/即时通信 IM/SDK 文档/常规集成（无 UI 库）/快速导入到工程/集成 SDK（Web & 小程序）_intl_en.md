@@ -10,7 +10,7 @@ This document describes how to quickly integrate the Tencent Cloud IM SDK into y
 
 ## Relevant Documents
 - [Demo Quick Start](https://intl.cloud.tencent.com/document/product/1047/34553)
-- [Running the IM SDK (Mini Program) Demo](https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/Demo)
+- [Running the IM SDK (Mini Program) TUIKit](https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/TUIKit)
 - [Running the IM SDK (Web) Demo](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
 - [SDK Upload Plugin Integration (Web & Mini Program)](https://intl.cloud.tencent.com/document/product/1047/39858)
 
