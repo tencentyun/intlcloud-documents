@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to get the server group information.
+This API is used to get the machine group information.
 
 ## Request
 
@@ -57,11 +57,11 @@ There are only common response headers but no special response headers.
 
 | Field Name      | Type      | Required | Description                 |
 | ----------- | --------- | ---- | -------------------- |
-| group_id    | string    | Yes   | Server group ID          |
-| group_name  | string    | Yes  | Server group name        |
-| type        | string    | Yes   | Server group type           |
-| ips         | JsonArray | No   | List of IPs in the server group |
-| labels      | JsonArray | No   | List of labels in the server group   |
+| group_id    | string    | Yes   | Machine group ID          |
+| group_name  | string    | Yes  | Machine group name        |
+| type        | string    | Yes   | Machine group type           |
+| ips         | JsonArray | No   | List of IPs in the machine group |
+| labels      | JsonArray | No   | List of labels in the machine group   |
 | create_time | string    | No   | Creation time            |
 
 >! Depending on the `type` value, either or both of `ips` and `labels` are returned.

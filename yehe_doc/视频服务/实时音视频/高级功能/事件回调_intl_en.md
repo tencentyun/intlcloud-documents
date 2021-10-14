@@ -30,7 +30,6 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
     "EventInfo": {
         "RoomId": 12345,        #Numeric room ID
         "EventTs": 1615554922,        #Event occurrence time, in seconds
-        "EventTs": 1615554922661,       #事件发生时间，单位毫秒
         "UserId": "test",        #User ID
         "UniqueId": 1615554922656,        #Unique identifier
         "Role": 20,                     #User role: anchor
