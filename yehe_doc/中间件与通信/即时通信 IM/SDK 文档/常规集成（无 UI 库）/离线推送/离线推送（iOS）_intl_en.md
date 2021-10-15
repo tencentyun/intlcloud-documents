@@ -7,7 +7,7 @@ If you want to receive APNs offline message notifications, follow these steps:
 1. [Apply for an APNs certificate](#ApplyForCertificate).
 2. [Upload the certificate to the console](#UploadCertificate).
 3. The app requests [deviceToken](#DeviceToken) from Apple every time it logs in.
-4. Call [setAPNS](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) to report the token to the IM backend.
+4. Call [setAPNS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) to report the token to the IM backend.
 
 When the app configured with APNs switches to the background or is killed by the user, the Tencent Cloud backend pushes offline messages to the device through Apple’s APNs. For more information, see [Apple Push Notification Service](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1).
 >!Users who have logged out normally or have been forced offline will not receive any message notifications.
@@ -69,7 +69,7 @@ To request DeviceToken from Apple's backend server, add the following code to yo
 
 ### Step 4: upload the token to Tencent Cloud after IM SDK login
 
-After logging in to the IM SDK, call [setAPNS](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) to upload the DeviceToken obtained in [step 3](#DeviceToken) to the Tencent Cloud backend:
+After logging in to the IM SDK, call [setAPNS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) to upload the DeviceToken obtained in [step 3](#DeviceToken) to the Tencent Cloud backend:
 
 ```
 V2TIMAPNSConfig *confg = [[V2TIMAPNSConfig alloc] init];
@@ -86,10 +86,6 @@ confg.token = deviceToken;
 
 >! `businessID` must be consistent with the certificate ID assigned by the console.
 
-## Push Format 
-
-An example of the push format is as shown below.
-<img src="//main.qcloudimg.com/raw/d23be65b4c481beb71db993045b4fec9.png" width=480 />
 
 
 ### General push rules
@@ -116,7 +112,7 @@ The APNs push content consists of the content of each `Elem` in the message body
 | Audio Elem | Display `[audio]` |
 | File Elem | Display `[file]` |
 | Image Elem | Display `[image]` |
-| Custom Elem | Display the [desc](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html#aca3d09a4807ffc6486d556c055605c41) field set when message is sent. If `desc` is not set, it will not be pushed. |
+| Custom Elem | Display the [desc](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html#aca3d09a4807ffc6486d556c055605c41) field set when message is sent. If `desc` is not set, it will not be pushed. |
 
 
 ### Communication among multiple apps
@@ -126,15 +122,15 @@ If you set `SDKAppID` to the same value for multiple apps, these apps communicat
 
 ## Setting Custom iOS Push Alert Sound
 
-Set the `iOSSound` field of [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html) when calling [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send messages. `iOSSound` passes the name (with the extension) of the audio file which must be linked to the Xcode project.
+Set the `iOSSound` field of [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) when calling [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send messages. `iOSSound` passes the name (with the extension) of the audio file which must be linked to the Xcode project.
 
 ## Setting Custom Display for Offline Push
 
-Set the `title` and `desc` fields of [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html) when calling [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send messages. Once set, the `title` content will be added to the default push content and `desc` will be displayed as the push content.
+Set the `title` and `desc` fields of [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) when calling [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send messages. Once set, the `title` content will be added to the default push content and `desc` will be displayed as the push content.
 
 ## Setting Custom Click-to-Redirect Logic
 
-Set the `ext` field of [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html) when calling [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send messages. When the user receives offline push and starts the app, the `ext` field can be obtained from the `AppDelegate -> didReceiveRemoteNotification` system callback, and the user is redirected to the UI as specified by `ext`.
+Set the `ext` field of [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) when calling [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send messages. When the user receives offline push and starts the app, the `ext` field can be obtained from the `AppDelegate -> didReceiveRemoteNotification` system callback, and the user is redirected to the UI as specified by `ext`.
 
 The following example assumes that Denny sends a message to Vinson.
 
@@ -174,5 +170,5 @@ Then, verify that the app and the certificate run in the development environment
 
 ### Why doesn't offline push work for custom messages?
 
-The offline push for custom messages is different from common messages. Since we are not able to resolve the content of custom messages and determine what to push, we simply do not push custom messages by default. If you want to enable offline push for custom messages, set the `desc` field of [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html) when calling [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56), then the content of `desc` will be used for display by offline push.
+The offline push for custom messages is different from common messages. Since we are not able to resolve the content of custom messages and determine what to push, we simply do not push custom messages by default. If you want to enable offline push for custom messages, set the `desc` field of [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) when calling [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56), then the content of `desc` will be used for display by offline push.
 
