@@ -28,7 +28,7 @@ Usaremos as informações das seguintes formas e de acordo com as seguintes base
   </tr>
   <tr>
   <td>Log de Acesso a dados Log: endereço da página, título da página, ID do usuário, status de jogo, tempo de jogo</td>
-   <td>  Para relatar visualizações de página para o serviço relevante e gerar dados do painel (conforme descrito no módulo do contrato de segurança e privacidade de dados para a Tencent Cloud Conference https://intl.cloud.tencent.com/document/product/301/17347). </td>
+   <td>  Para relatar visualizações de página para o serviço relevante e gerar dados do painel (<a href="https://intl.cloud.tencent.com/document/product/301/17347">conforme descrito no módulo do contrato de segurança e privacidade de dados para a Tencent Cloud Conference.</a>） </td>
   <td  rowspan="2">Processamos estas informações conforme o necessário Para executarmos nosso contrato com você para o fornecimento do Serviços.</td>
   </tr>
   <tr>

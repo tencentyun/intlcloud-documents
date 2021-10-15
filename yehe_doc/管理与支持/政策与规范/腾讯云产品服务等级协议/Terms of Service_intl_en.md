@@ -283,7 +283,7 @@ You normally have the right to cancel the Services within 14 days after the date
 
 To cancel the Services, you must clearly inform us, preferably: 
 
-- by contacting customer service by submitting a work order through the console at https://console.cloud.tencent.com/workorder, giving us your name, address, and account information; or 
+- by contacting customer service by submitting a work order through the console at https://console.intl.cloud.tencent.com/workorder/category, giving us your name, address, and account information; or 
 
 Nothing in this section affects your legal rights.
 
@@ -297,7 +297,7 @@ Refunds are made using the same method originally used by you to pay for your pu
 
  **4.** **Defective Services**
 
-If any Services you order are defective (in other words, they do not comply with the requirements of these Terms), you may have one or more legal remedies available to you, depending on when you make us aware of the problem, in accordance with your legal rights. If you believe the Services are defective, you should inform us as soon as possible by contacting customer service by submitting a work order through the console at https://console.cloud.tencent.com/workorder, giving your name, address and account information. Nothing in this section affects your legal rights.
+If any Services you order are defective (in other words, they do not comply with the requirements of these Terms), you may have one or more legal remedies available to you, depending on when you make us aware of the problem, in accordance with your legal rights. If you believe the Services are defective, you should inform us as soon as possible by contacting customer service by submitting a work order through the console at https://console.intl.cloud.tencent.com/workorder/category, giving your name, address and account information. Nothing in this section affects your legal rights.
 
  **5.** **France** **Specific Terms**
 

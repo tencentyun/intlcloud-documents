@@ -23,7 +23,7 @@
   </tr>
   <tr>
   <td>ログデータアクセスログ：ページアドレス、ページタイトル、ユーザー ID、プレイ状況、プレイ時間</td>
-   <td> 関連サービスのページビューを報告し、ダッシュボードデータを生成するため（Tencent Cloud Conference データプライバシーとセキュリティ契約https://intl.cloud.tencent.com/document/product/301/17347 に記載）。</td>
+   <td> 関連サービスのページビューを報告し、ダッシュボードデータを生成するため（<a href="https://intl.cloud.tencent.com/document/product/301/17347">Tencent Cloud Conference データプライバシーとセキュリティ契約 </a> に記載）。</td>
   <td  rowspan="2">弊社は、お客様との契約を履行し、本サービスを提供するために必要な情報として、この情報を処理します。</td>
   </tr>
   <tr>

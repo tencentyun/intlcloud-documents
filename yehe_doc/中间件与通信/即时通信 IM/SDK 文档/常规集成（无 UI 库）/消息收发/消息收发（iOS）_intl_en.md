@@ -21,45 +21,45 @@ IM messages can also be classified by content into text messages, custom (signal
 | Group tip | GroupTipsElem | A group tip is often used to carry a system notification in a group, for example, a notification indicating that a member joins or leaves the group, the group description is modified, or the profile of a group member is changed. |
 
 ## Sending and Receiving Simple Messages
-[V2TIMManager.h](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html) provides a set of simple APIs for sending and receiving messages. Although these APIs can be used to send or receive text messages and custom (signaling) messages, they are easy to use and only a few minutes are needed to complete interfacing.
+[V2TIMManager.h](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html) provides a set of simple APIs for sending and receiving messages. Although these APIs can be used to send or receive text messages and custom (signaling) messages, they are easy to use and only a few minutes are needed to complete interfacing.
 
 ### Sending text and signaling messages (simplified APIs)
-To send text messages, call [sendC2CTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#a8f4eb13fbf039c0216f14f178d9f9f36) or [sendGroupTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#a74fc1a30a7c1a292e625c5b2cf1e91f0). Text messages will be filtered by IM for sensitive words. If a message containing sensitive words is sent, the 80001 error code is returned.
-To send one-to-one custom (signaling) messages, call [sendC2CCustomMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#a20c6ea174904a99fafebb5c1b3475b39) or [sendGroupCustomMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#af8b149e054d532a8fb5ca12a7160c90f). A custom message is essentially a section of the binary buffer, and is often used to transfer custom signaling in your application. Its content is not filtered for sensitive words.
+To send text messages, call [sendC2CTextMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a8f4eb13fbf039c0216f14f178d9f9f36) or [sendGroupTextMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a74fc1a30a7c1a292e625c5b2cf1e91f0). Text messages will be filtered by IM for sensitive words. If a message containing sensitive words is sent, the 80001 error code is returned.
+To send one-to-one custom (signaling) messages, call [sendC2CCustomMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a20c6ea174904a99fafebb5c1b3475b39) or [sendGroupCustomMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#af8b149e054d532a8fb5ca12a7160c90f). A custom message is essentially a section of the binary buffer, and is often used to transfer custom signaling in your application. Its content is not filtered for sensitive words.
 
 ### Receiving text and signaling messages (simplified APIs)
-To listen to simple text and signaling messages, call [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88). To listen to image, video, and voice messages, call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) defined in [V2TIMManager + Message.h](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html).
+To listen to simple text and signaling messages, call [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88). To listen to image, video, and voice messages, call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) defined in [V2TIMManager + Message.h](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html).
 
->! Do not use [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88) together with [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab); otherwise, logic bugs may occur.
+>! Do not use [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88) together with [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab); otherwise, logic bugs may occur.
 
 ### Typical example: sending and receiving on-screen comments in an audio-video group
 In the live streaming scenario, it is a common way of communication to send or receive on-screen comments in an audio-video group. This can be easily implemented through the simple message APIs.
 
-1. The anchor can call [createGroup](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#a4bada5d6a06fac04a1424ae2c597e389) to create an audio-video group (AVChatRoom) and record the group ID in the list of rooms in "Broadcasting" state.
-2. A viewer can select an anchor that he/she likes, and call [joinGroup](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#a9979ed856657724d317791c723bacef5) to join the audio-video group created by this anchor.
-3. The message sender can call [sendGroupTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#a74fc1a30a7c1a292e625c5b2cf1e91f0) to send a group text message as an on-screen comment.
-4. The message recipient can call [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88) to register a simple message listener, and use the listener callback function [onRecvGroupTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/protocolV2TIMSimpleMsgListener-p.html#a3a25f772d74fd81698d087ec043d9366) to obtain text messages.
+1. The anchor can call [createGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a4bada5d6a06fac04a1424ae2c597e389) to create an audio-video group (AVChatRoom) and record the group ID in the list of rooms in "Broadcasting" state.
+2. A viewer can select an anchor that he/she likes, and call [joinGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a9979ed856657724d317791c723bacef5) to join the audio-video group created by this anchor.
+3. The message sender can call [sendGroupTextMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a74fc1a30a7c1a292e625c5b2cf1e91f0) to send a group text message as an on-screen comment.
+4. The message recipient can call [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88) to register a simple message listener, and use the listener callback function [onRecvGroupTextMessage](https://im.sdk.qcloud.com/doc/en/protocolV2TIMSimpleMsgListener-p.html#a3a25f772d74fd81698d087ec043d9366) to obtain text messages.
 
 "FlyHeart" is an instruction. To configure the "FlyHeart" feature for a live room, perform the steps below:
 1. Define a custom message type, for example, a JSON string ` { "command": "favor", "value": 101 }`.
-2. Call [sendGroupCustomMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#af8b149e054d532a8fb5ca12a7160c90f) to send a message, and call [onRecvGroupCustomMessage](https://im.sdk.qcloud.com/doc/zh-cn/protocolV2TIMSimpleMsgListener-p.html#ad01776119c059bff49b804c8152c70d9) to receive the message.
+2. Call [sendGroupCustomMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#af8b149e054d532a8fb5ca12a7160c90f) to send a message, and call [onRecvGroupCustomMessage](https://im.sdk.qcloud.com/doc/en/protocolV2TIMSimpleMsgListener-p.html#ad01776119c059bff49b804c8152c70d9) to receive the message.
 
 ## Sending and Receiving Rich Media Messages
 Image, video, voice, file, and location messages are called rich media messages. Compared with simple messages, it is more complex to send or receive rich media messages.
-- Before sending a rich media message, use the `create` function to create a [V2TIMMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMessage.html) object. Then, call the corresponding `send` API to send this message.
+- Before sending a rich media message, use the `create` function to create a [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html) object. Then, call the corresponding `send` API to send this message.
 - When receiving the rich media message, check `elemType` and perform secondary parsing on `Elem` obtained based on `elemType`.
 
 
 ### Sending rich media messages
 The following takes an image message as an example to describe the process of sending a rich media message.
-1. The sender calls [createImageMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a23033a764f0d95ce83c52f3cdeea4137) to create an image message and obtain the [V2TIMMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMessage.html) message object.
-2. The sender calls [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send the created message object.
+1. The sender calls [createImageMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a23033a764f0d95ce83c52f3cdeea4137) to create an image message and obtain the [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html) message object.
+2. The sender calls [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send the created message object.
 
 ### Receiving rich media messages
 
-1. The recipient calls [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) to set the advanced message listener.
-2. The recipient obtains the[V2TIMMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMessage.html) image message through the [onRecvNewMessage](https://im.sdk.qcloud.com/doc/zh-cn/protocolV2TIMAdvancedMsgListener-p.html) listener callback.
-3. The recipient parses `elemType` in [V2TIMMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMessage.html), and performs secondary parsing based on the message type to obtain the content of `Elem` in the message.
+1. The recipient calls [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) to set the advanced message listener.
+2. The recipient obtains the[V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html) image message through the [onRecvNewMessage](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html) listener callback.
+3. The recipient parses `elemType` in [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html), and performs secondary parsing based on the message type to obtain the content of `Elem` in the message.
 
 ### Typical example: sending and receiving image messages
 The sender creates and sends an image message.
@@ -125,14 +125,14 @@ For a group @ message, the sender can listen to the input of the @ character in 
 
 ### Sending group @ messages
 
-1. The sender listens to the text input box on the chat interface and launches the group member selection interface. After selection is completed, the ID and nickname of the selected member are returned. The ID is used to construct the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMessage.html), and the nickname is to be displayed in the text box.
-2. The sender calls [createTextAtMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#ad33b6f7cb849054333b18eeb1e9c187d) of [V2TIMManager+Message](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html) to create an @ text message and obtain the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMessage.html).
-3. The sender calls [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send the created @ message object.
+1. The sender listens to the text input box on the chat interface and launches the group member selection interface. After selection is completed, the ID and nickname of the selected member are returned. The ID is used to construct the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html), and the nickname is to be displayed in the text box.
+2. The sender calls [createTextAtMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad33b6f7cb849054333b18eeb1e9c187d) of [V2TIMManager+Message](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html) to create an @ text message and obtain the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html).
+3. The sender calls [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send the created @ message object.
 
 ### Receiving group @ messages
 
-1. During conversation loading and update, you need to call the [groupAtInfolist](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMConversation.html#a5659c29a54304e89e61c25c2b073f8da) API of [V2TIMConversation](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMConversation.html) to obtain the @ data list of the conversation.
-2. Obtain and update the @ data type to the @ information of the current conversation through the [atType](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMGroupAtInfo.html#a1486d853fd6f8ae074714ec8059f7621) API of the [V2TIMGroupAtInfo](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMGroupAtInfo.html) object on the list.
+1. During conversation loading and update, you need to call the [groupAtInfolist](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a5659c29a54304e89e61c25c2b073f8da) API of [V2TIMConversation](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html) to obtain the @ data list of the conversation.
+2. Obtain and update the @ data type to the @ information of the current conversation through the [atType](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMGroupAtInfo.html#a1486d853fd6f8ae074714ec8059f7621) API of the [V2TIMGroupAtInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMGroupAtInfo.html) object on the list.
 
 ### Typical example: sending and receiving group @ messages
 
@@ -216,11 +216,11 @@ Usually when we receive a combined message, the chat screen will look like this:
 | Vinson: OK | abstract3  |
 
 The chat interface will display only the title and abstract information of the combined message, and the combined message list will be displayed only when the user clicks the combined message. When we create a combined message, we need to set not only the combined message list, but also the title and abstract information. The implementation process is as follows:
-1. Call the [createMergerMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a0f56dde34bd350dd6e829e5bff067722) API to create a combined message.
-2. Call the [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) API to send the combined message.
+1. Call the [createMergerMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a0f56dde34bd350dd6e829e5bff067722) API to create a combined message.
+2. Call the [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) API to send the combined message.
 
 - **Receiving combined messages**
-When receiving a combined message [V2TIMMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMessage.html), use [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMergerElem.html) to get [title](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) and [abstractList](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) for UI display. When a user clicks the combined message, call the [downloadMergerMessage](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMMergerElem.html#ad77abfe27eabf237aee7c951100e6755) API to download the combine message list for UI display.
+When receiving a combined message [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html), use [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html) to get [title](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) and [abstractList](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) for UI display. When a user clicks the combined message, call the [downloadMergerMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad77abfe27eabf237aee7c951100e6755) API to download the combine message list for UI display.
 
 ### Typical example: sending and receiving combined messages
 - **Sending combined messages**
@@ -277,7 +277,7 @@ The recipient receives the combined message and parses it:
 ```
 
 ## Sending Messages That Are Excluded from the Unread Count (Only Available in Lite Edition v5.3.425 and Above)
-Normally, when you send one-to-one messages and group messages, the messages are included in the unread count (you can get the unread message count of a conversation via the [unreadCount](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMConversation.html#a816b83eb32d84ea5345f14ced92bb7f6) API of the [V2TIMConversation](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMConversation.html) conversation object). If you need to send messages that are excluded from the unread count, such as tips and control messages, send them as follows:
+Normally, when you send one-to-one messages and group messages, the messages are included in the unread count (you can get the unread message count of a conversation via the [unreadCount](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a816b83eb32d84ea5345f14ced92bb7f6) API of the [V2TIMConversation](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html) conversation object). If you need to send messages that are excluded from the unread count, such as tips and control messages, send them as follows:
 
 ```
 // Create the message object
@@ -319,7 +319,7 @@ In certain scenarios, if you need to send messages that are excluded from the co
 When the recipient's app is killed or when the recipient switches to the backend, the IM SDK cannot receive new messages through the normal network connection. In this scenario, the APNs service provided by Apple must be used to notify the recipient of new messages. For more information, see [Offline Push (iOS)](https://intl.cloud.tencent.com/document/product/1047/34347).
 
 ### Setting the title and voice for APNs offline push
-When sending messages, you can use the **offlinePushInfo** field in the [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) API to set the title and voice for APNs offline push.
+When sending messages, you can use the **offlinePushInfo** field in the [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) API to set the title and voice for APNs offline push.
 
 ```
 // Create and send an image message to groupA, and customize the title and voice for offline push.
@@ -369,13 +369,13 @@ onlineUserOnly:NO offlinePushInfo:info progress:^(uint32_t progress) {
 ## Setting onlineUserOnly so that Messages Can Be Received Only Online
 
 In some scenarios, you may wish that sent messages can only be received by online users or that a recipient is not aware of the message when the recipient is offline. For this purpose, you can set 
-`onlineUserOnly` to `YES` when calling [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a6ea32e6c119c1d771ee1123c5fb2dbae). After the setting, the sent messages differ from common messages in the following ways:
+`onlineUserOnly` to `YES` when calling [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a6ea32e6c119c1d771ee1123c5fb2dbae). After the setting, the sent messages differ from common messages in the following ways:
 - Messages cannot be stored offline. That is, the recipient cannot receive messages unless he/she is online.
 - Messages do not support multi-device roaming. That is, if the recipient has received messages on one terminal, these messages cannot be received on any other terminal no matter whether these messages are read or not.
 - Messages cannot be stored locally. That is, these messages cannot be retrieved from the local historical messages in the cloud.
 
 **Typical example: displaying "The other party is typing..."
-In the one-to-one chat scenario, you can call [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send the "I am typing..." message. When the recipient receives this message, "The other party is typing..." is displayed on the UI. The sample code is as follows:
+In the one-to-one chat scenario, you can call [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send the "I am typing..." message. When the recipient receives this message, "The other party is typing..." is displayed on the UI. The sample code is as follows:
 ```
 // Send the "I am typing..." message to userA
 NSString *customStr = @"{\"command\": \"textInput\"}";
@@ -397,11 +397,11 @@ The SDK supports the following types of message receiving options:
 - V2TIM_NOT_RECEIVE_MESSAGE: messages will not be received no matter whether the user is online or offline.
 - V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE: messages will be received when the user is online, and offline push notifications will not be received when the user is offline.
 
-You can call the [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#ace29641a1c691bc44705b9bc8b08be37) API to set the Mute Notifications option for one-to-one messages and call the [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) API to set the Mute Notifications option for group messages.
+You can call the [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ace29641a1c691bc44705b9bc8b08be37) API to set the Mute Notifications option for one-to-one messages and call the [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) API to set the Mute Notifications option for group messages.
 
 ## Recalling Messages
-The sender can call the [revokeMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a972ac3fb7744458eb0d6abd96ce35126) API to recall a successfully sent message. By default, the sender can recall a message that is sent within 2 minutes. You can change the time limit for message recall. For detailed operations, see [Message recall settings](https://intl.cloud.tencent.com/document/product/1047/34419).
-Message recall requires cooperation of the UI code at the recipient side. When the sender recalls a message, the recipient will receive a message recall notification, [onRecvMessageRevoked](https://im.sdk.qcloud.com/doc/zh-cn/protocolV2TIMAdvancedMsgListener-p.html). This notification contains the `msgID` of the recalled message. Based on this `msgID`, you can identify the message that has been recalled and change the corresponding message bubble to the "Message recalled" state on the UI.
+The sender can call the [revokeMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a972ac3fb7744458eb0d6abd96ce35126) API to recall a successfully sent message. By default, the sender can recall a message that is sent within 2 minutes. You can change the time limit for message recall. For detailed operations, see [Message recall settings](https://intl.cloud.tencent.com/document/product/1047/34419).
+Message recall requires cooperation of the UI code at the recipient side. When the sender recalls a message, the recipient will receive a message recall notification, [onRecvMessageRevoked](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html). This notification contains the `msgID` of the recalled message. Based on this `msgID`, you can identify the message that has been recalled and change the corresponding message bubble to the "Message recalled" state on the UI.
 
 ### The sender recalls a message
 
@@ -414,8 +414,8 @@ Message recall requires cooperation of the UI code at the recipient side. When t
 ```
 
 ### The recipient learns that the message is recalled
-1. Call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) to set the advanced message listener.
-2. Call [onRecvMessageRevoked](https://im.sdk.qcloud.com/doc/zh-cn/protocolV2TIMAdvancedMsgListener-p.html) to receive the message recall notification.
+1. Call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) to set the advanced message listener.
+2. Call [onRecvMessageRevoked](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html) to receive the message recall notification.
 
 ```
 - (void)onRecvMessageRevoked:(NSString *)msgID {
@@ -429,9 +429,9 @@ Message recall requires cooperation of the UI code at the recipient side. When t
 ```
 
 ## Adding Read Receipts for Messages
-In the one-to-one chat scenario, when the recipient calls the [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) API to mark an incoming message as read, the message sender will receive a read receipt, indicating that the recipient has read his/her message.
+In the one-to-one chat scenario, when the recipient calls the [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) API to mark an incoming message as read, the message sender will receive a read receipt, indicating that the recipient has read his/her message.
 
->!Currently, only one-to-one chats support the read receipt feature, and group chats do not support this feature. Although the [markGroupMessageAsRead](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a40afaf1f06edd10c90d8d67fa98c2b14) API is also available to group chats, the group message senders currently cannot receive any read receipts.
+>!Currently, only one-to-one chats support the read receipt feature, and group chats do not support this feature. Although the [markGroupMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40afaf1f06edd10c90d8d67fa98c2b14) API is also available to group chats, the group message senders currently cannot receive any read receipts.
 
 ### The recipient marks messages as read
 
@@ -443,7 +443,7 @@ In the one-to-one chat scenario, when the recipient calls the [markC2CMessageAsR
 ```
 
 ### The sender learns that the messages are read
-The event notification of the message receipt is located in the advanced message listener [V2TIMAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/protocolV2TIMAdvancedMsgListener-p.html). To learn that a message is already read, the sender must call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) to set the listener. Then, the sender can receive a read receipt from the recipient through the [onRecvC2CReadReceipt](https://im.sdk.qcloud.com/doc/zh-cn/protocolV2TIMAdvancedMsgListener-p.html) callback.
+The event notification of the message receipt is located in the advanced message listener [V2TIMAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html). To learn that a message is already read, the sender must call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) to set the listener. Then, the sender can receive a read receipt from the recipient through the [onRecvC2CReadReceipt](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html) callback.
 
 ```
 - (void)onRecvC2CReadReceipt:(NSArray<V2TIMMessageReceipt *> *)receiptList {
@@ -459,7 +459,7 @@ The event notification of the message receipt is located in the advanced message
 ```
 
 ## Viewing Historical Messages
-You can call [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a63d51af9d34e0cd8011da374b7e7a786) to obtain historical messages of one-to-one chats, or call [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#acc79b07f0ac1b4b29b72878850ce4ad1) to obtain historical messages of group chats. If the network connection of the current device is normal, the IM SDK pulls historical messages from the server by default. If the network connection is unavailable, the IM SDK directly reads historical messages from the local database.
+You can call [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a63d51af9d34e0cd8011da374b7e7a786) to obtain historical messages of one-to-one chats, or call [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acc79b07f0ac1b4b29b72878850ce4ad1) to obtain historical messages of group chats. If the network connection of the current device is normal, the IM SDK pulls historical messages from the server by default. If the network connection is unavailable, the IM SDK directly reads historical messages from the local database.
 
 ### Pulling historical messages by page
 The IM SDK supports the feature of pulling historical messages by page. The number of messages pulled per page cannot be too large; otherwise, the pulling speed is affected. We recommend that you pull 20 messages per page.
@@ -491,25 +491,25 @@ In actual scenarios, pulling by page is often triggered by your swipe operation.
 ### Precautions
 - The storage period of historical messages is as follows: <ul style="margin:0;"><li>Trial edition: free storage for 7 days, no extension supported.</li><li>Pro edition: free storage for 7 days, extension supported.</li><li>Flagship edition: free storage for 30 days, extension supported.</li></ul>It is a value-added service to extend the storage period of historical messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. For information about billing, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.
 - Only the meeting group (corresponding to the ChatRoom of the earlier version) supports pulling historical messages of members **before they join the group**.
-- Messages in an audio-video group (AVChatRoom) do not support local storage and multi-device roaming. Therefore, the [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#acc79b07f0ac1b4b29b72878850ce4ad1) API does not take effect on an audio-video group.
+- Messages in an audio-video group (AVChatRoom) do not support local storage and multi-device roaming. Therefore, the [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acc79b07f0ac1b4b29b72878850ce4ad1) API does not take effect on an audio-video group.
 
 ## Deleting Messages
-You can call the [deleteMessages](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a989a11c62ba2001a6a8360d6421d9dd3) API to delete historical messages. After deletion, historical messages cannot be recovered.
+You can call the [deleteMessages](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a989a11c62ba2001a6a8360d6421d9dd3) API to delete historical messages. After deletion, historical messages cannot be recovered.
 
 ## Setting Message Permissions
 ### Allowing message sending and receiving only among friends
 By default, the IM SDK does not prevent message sending and receiving among strangers. If you wish that one-to-one messages can be sent or received only among friends, you can log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** -> **Login and Message** -> **Relationship Check**, and enable **Check Relationship for One-to-One Messages**. After this feature is enabled, you can send messages only to friends. When you try to send messages to strangers, the IM SDK returns the 20009 error code.
 
 ### Not receiving messages from a specific user 
-To avoid receiving messages from a specific user, you can blocklist the user or set the Mute Notifications option for messages from the user. After setting the Mute Notifications option, you can change the [Mute Notifications status](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#ae4064d7096592f71587cc9f54ea3253e).
+To avoid receiving messages from a specific user, you can blocklist the user or set the Mute Notifications option for messages from the user. After setting the Mute Notifications option, you can change the [Mute Notifications status](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ae4064d7096592f71587cc9f54ea3253e).
 **Blocklisting a user:**
-Call the [addToBlackList](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Friendship_08.html#ad1de7b4712309ce4164e4db6574486f0) API to add the user to the blocklist. When the user is blocklisted, the user does not know that he/she is in the blocklist by default. That is, after this user sends a message, the prompt still indicates that the message is sent successfully, but in fact the recipient will not receive the message. If you want a user on the blocklist to know that his/her message fails to be sent, you can log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** -> **Login and Message** -> **Blocklist Check**, and disable **Show "Sent successfully" After Sending Messages**. After this feature is disabled, the IM SDK will return the 20007 error code when a user in the blocklist sends a message.
+Call the [addToBlackList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Friendship_08.html#ad1de7b4712309ce4164e4db6574486f0) API to add the user to the blocklist. When the user is blocklisted, the user does not know that he/she is in the blocklist by default. That is, after this user sends a message, the prompt still indicates that the message is sent successfully, but in fact the recipient will not receive the message. If you want a user on the blocklist to know that his/her message fails to be sent, you can log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** -> **Login and Message** -> **Blocklist Check**, and disable **Show "Sent successfully" After Sending Messages**. After this feature is disabled, the IM SDK will return the 20007 error code when a user in the blocklist sends a message.
 
 **Setting "Mute Notifications" for messages from a specified user (only available in Lite Edition v5.3.425 and above):**
-Call the [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) API to set the message receiving option to `V2TIM_NOT_RECEIVE_MESSAGE`.
+Call the [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) API to set the message receiving option to `V2TIM_NOT_RECEIVE_MESSAGE`.
 
 ### Not receiving messages from a specified group
-For Lite Edition v5.3.425 and above, call the [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) API to set the message receiving option to `V2TIM_NOT_RECEIVE_MESSAGE`.
+For Lite Edition v5.3.425 and above, call the [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) API to set the message receiving option to `V2TIM_NOT_RECEIVE_MESSAGE`.
 For SDKs of other versions, call the `setReceiveMessageOpt` API to set the message receiving option to `V2TIM_GROUP_NOT_RECEIVE_MESSAGE`.
 
 ## Filtering Sensitive Words
@@ -518,14 +518,14 @@ Text messages sent by the IM SDK are filtered by IM for sensitive words. If a se
 
 ## FAQs
 ### 1. Why am I receiving duplicate messages?
-- Check whether [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88) is used together with [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab). If yes, when text or custom messages are received, both listeners trigger a callback, and consequently duplicate messages are received.
-- Check whether the same listener object is added repeatedly. If a listener object is no longer needed, call the corresponding [removeSimpleMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMManager.html#afa3040f676105f3fb78d4835ee3c898b) or [removeAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a28aeebff4a791c9bb8f91a4f61e020e6) API to remove this listener.
+- Check whether [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88) is used together with [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab). If yes, when text or custom messages are received, both listeners trigger a callback, and consequently duplicate messages are received.
+- Check whether the same listener object is added repeatedly. If a listener object is no longer needed, call the corresponding [removeSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#afa3040f676105f3fb78d4835ee3c898b) or [removeAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a28aeebff4a791c9bb8f91a4f61e020e6) API to remove this listener.
 
 ### 2. Why do the read receipts become invalid after the app is uninstalled and then reinstalled?
-In the one-to-one chat scenario, if the recipient calls [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) to mark a message as read, the read receipt received by the sender contains `timestamp`. Based on `timestamp`, the SDK determines whether the other party reads the message. Currently, `timestamp` is stored locally, and will be lost when the app is reinstalled.
+In the one-to-one chat scenario, if the recipient calls [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) to mark a message as read, the read receipt received by the sender contains `timestamp`. Based on `timestamp`, the SDK determines whether the other party reads the message. Currently, `timestamp` is stored locally, and will be lost when the app is reinstalled.
 
 ### 3. How can I send a message containing multiple `Elem` objects?
-You can call [appendElem](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMElem.html#a632f3740c4c42014dc38a4c074a700c9) after creating a `Message` object via the `Elem` member of the `Message` object to add the next `Elem` member.
+You can call [appendElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMElem.html#a632f3740c4c42014dc38a4c074a700c9) after creating a `Message` object via the `Elem` member of the `Message` object to add the next `Elem` member.
 Below is an example of text message + custom message:
 
 ```
@@ -536,7 +536,7 @@ customElem.data = [@"custom message" dataUsingEncoding:NSUTF8StringEncoding];
 ```
 ### 4. How can I parse a message containing multiple `Elem` objects?
 1. Use the `Message` object to parse the first `Elem` object.
-2. Use the [nextElem](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMElem.html) method of the first `Elem` object to obtain the next `Elem` object. If the next `Elem` object exists, the `Elem` object instance is returned. Otherwise, `nil` is returned.
+2. Use the [nextElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMElem.html) method of the first `Elem` object to obtain the next `Elem` object. If the next `Elem` object exists, the `Elem` object instance is returned. Otherwise, `nil` is returned.
 
 ```
 - (void)onRecvNewMessage:(V2TIMMessage *)msg {
@@ -564,5 +564,5 @@ customElem.data = [@"custom message" dataUsingEncoding:NSUTF8StringEncoding];
 
 [](id:msgAnalyze)
 ### 5. How are different types of messages parsed?
-It is complex to parse a message. We provide the [sample code](hhttps://github.com/tencentyun/TIMSDK/blob/master/iOS/Demo/TUIKitDemo/SampleCode/message.m) for parsing different types of messages. You can copy the code to your project, and perform secondary development based on your actual needs.
+It is complex to parse a message. We provide the [sample code](https://github.com/tencentyun/TIMSDK/blob/master/iOS/Demo/TUIKitDemo/SampleCode/message.m) for parsing different types of messages. You can copy the code to your project, and perform secondary development based on your actual needs.
 
