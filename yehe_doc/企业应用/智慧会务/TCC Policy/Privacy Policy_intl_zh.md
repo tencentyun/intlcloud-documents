@@ -28,7 +28,7 @@
   </tr>
   <tr>
   <td>日志数据访问日志：页面地址、页面标题、用户 ID、播放状态、播放时间</td>
-   <td> 报告相关服务的页面浏览数，并生成仪表板数据（如在腾讯云智慧会务的数据隐私和安全协议模块中所述 https://intl.cloud.tencent.com/document/product/301/17347）。 </td>
+   <td> 报告相关服务的页面浏览数，并生成仪表板数据（如在<a href="https://intl.cloud.tencent.com/document/product/301/17347">腾讯云智慧会务的数据隐私和安全协议模块 </a>中所述。）</td>
   <td  rowspan="2">我们会处理此类信息，因为这对于我们履行与您签订的合同以便提供服务而言是必要的。</td>
   </tr>
   <tr>

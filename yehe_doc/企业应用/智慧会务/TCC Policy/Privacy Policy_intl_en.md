@@ -23,7 +23,7 @@ We will use the information in the following ways and in accordance with the fol
   <tr>
   <td>Log Data 
 Access Log: Page Address, Page Title, User ID, Play Status, Play Time</td>
-   <td> To report page views for the relevant service and to generate Dashboard Data (as described in the Data Privacy and Security Agreement Module for Tencent Cloud Conference https://intl.cloud.tencent.com/document/product/301/17347). </td>
+   <td> To report page views for the relevant service and to generate Dashboard Data (<a href="https://intl.cloud.tencent.com/document/product/301/17347"> as described in the Data Privacy and Security Agreement Module for Tencent Cloud Conference </a>. )</td>
   <td  rowspan="2">We process this information as it’s necessary for us to perform our contract with you to provide the Services.</td>
   </tr>
   <tr>

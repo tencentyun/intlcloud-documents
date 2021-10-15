@@ -28,13 +28,24 @@ Este Recurso está disponível para usuários globalmente, mas destinado princip
 
 Usaremos as informações nos seguintes modos e de acordo com as seguintes bases legais:
 
- 
-
-| **Informações pessoais**                      | **Uso**                                                      | **Base Jurídica**                                        |
-| --------------------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------- |
-| Dados de login da Tencent Cloud, APPID e UIN. | Usamos essas informações para autenticar e fornecer-lhe acesso ao Recurso. | Processamos Estas informações conforme é necessário para executar nosso contrato com você de fornecimento do recurso.|
-| **Log de resolução de DNS**incluindo: log carimbo de data/hora, IP intranet do cliente CVM, IP de gateway VPC, id de inteiro VPC, registro de resolução, codificação do tipo de registro e bit de bandeira do tipo de solicitação de reserva/resolução. | ![img](file:///C:\Users\V_VZMG~1\AppData\Local\Temp\ksohtml\wps8702.tmp.png)Usamos essas informações para: estatísticas de volume de resolução e carregamento;![img](file:///C:\Users\V_VZMG~1\AppData\Local\Temp\ksohtml\wps8703.tmp.png)fornecer acesso à quantidade de resolução; e![img](file:///C:\Users\V_VZMG~1\AppData\Local\Temp\ksohtml\wps8704.tmp.png)para localização e resolução de mau funcionamento/solução de problemas. | Processamos essas informações conforme é necessário para a execução de nosso contrato com você para fornecimento do Recurso. |
-
+<table>
+  <tr>
+  <td><b>Informações pessoais</b></td>
+  <td><b>Uso</b> </td>
+  <td><b>Base Jurídica</b> </td>
+  </tr>
+  <tr>
+  <td>Dados de login da Tencent Cloud, APPID e UIN.</td>
+   <td> Usamos essas informações para autenticar e fornecer-lhe acesso ao Recurso. </td>
+  <td>Processamos Estas informações conforme é necessário paraexecutar nosso contrato com você de fornecimento do recurso.</td>
+  </tr>
+  <tr>
+  <td><b>Log de resolução de DNS</b>incluindo: log carimbo de data/hora, IP intranet do cliente CVM, IP de gateway VPC, id de inteiro VPC, registro de resolução, codificação do tipo de registro e bit de bandeira do tipo de solicitação de reserva/resolução.</td>
+  <td>Usamos essas informações para:<li>estatísticas de volume de 
+resolução e carregamento;</li><li> fornecer acesso à quantidade de resolução; </li> e <li> para localização e resolução de mau funcionamento/solução de problemas.</li></td>
+  <td>Processamos essas informações conforme é necessário para a execução de nosso contrato com você para fornecimento do Recurso.</td>    
+  </tr>
+</table>
  
 
  
