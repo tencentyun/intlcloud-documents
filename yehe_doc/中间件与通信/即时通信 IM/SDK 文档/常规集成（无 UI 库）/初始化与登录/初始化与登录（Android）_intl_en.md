@@ -1,6 +1,6 @@
 
 ## Initialization
-[V2TIMManager](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html) is a core class and also an entry class of the IM SDK. It implements features such as IM SDK initialization and login, message sending/receiving, group creation, and group leaving. To complete initialization, call the [initSDK](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ac905c315726b517ba62421471bbecf56) API.
+[V2TIMManager](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html) is a core class and also an entry class of the IM SDK. It implements features such as IM SDK initialization and login, message sending/receiving, group creation, and group leaving. To complete initialization, call the [initSDK](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ac905c315726b517ba62421471bbecf56) API.
 
 <pre><code><span class="hljs-comment">// 1. Obtain the SDKAppID of the application from the IM console. For more information, see <a href="#SDKAppID">SDKAppID</a>.</span>
 <span class="hljs-comment">// 2. Initialize the `config` object.</span>
@@ -35,7 +35,7 @@ You can view all `SDKAppIDs` in the [IM console](https://console.cloud.tencent.c
 
 [](id:SDKConfig)
 ### SDKConfig
-The `V2TIMSDKConfig` parameter is used for SDK initialization configuration. It is often used to set the log level, that is, the [setLogLevel](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSDKConfig.html#a033c4e90397236427f3dd65038df8033) API. The following table lists the log levels:
+The `V2TIMSDKConfig` parameter is used for SDK initialization configuration. It is often used to set the log level, that is, the [setLogLevel](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSDKConfig.html#a033c4e90397236427f3dd65038df8033) API. The following table lists the log levels:
 
 | Log Level | Log Output |
 |---------|---------|
@@ -54,7 +54,7 @@ python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
 ```
 
 ### Listener
-[V2TIMSDKListener](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSDKListener.html) is used to listen to the network status and changes to user information.
+[V2TIMSDKListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSDKListener.html) is used to listen to the network status and changes to user information.
 
 | Event Callback | Event Description | Recommended Operation |
 |---------|---------|---------|
@@ -88,4 +88,4 @@ You do not need to call the `login` function in the following scenarios:
 You cannot use the same account to log in on two mobile phones of the same model. For example, you cannot use the same account for login on two Apple mobile phones. However, one Android mobile phone and one Apple mobile phone will be considered as two different devices, and you can use the same account to log in on these two devices. For more information on configurations related to multi-device login, see the **Login settings** section in [Feature Configuration](https://intl.cloud.tencent.com/document/product/1047/34419).
 
 ### Logout
-To log out of the SDK, call the [logout](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a0398924fa1b62a8f5cc9b51673273b48) function.
+To log out of the SDK, call the [logout](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a0398924fa1b62a8f5cc9b51673273b48) function.
