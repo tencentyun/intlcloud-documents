@@ -1,6 +1,4 @@
-## 1. **INTRODUÇÃO
-
-**
+## 1. **INTRODUÇÃO**
 
 Este módulo se aplica se você usa o Tencent Cloud Elastic Microservice (“Recurso”). Este módulo está incorporado à política de privacidade localizada em [Política de privacidade](https://intl.cloud.tencent.com/document/product/301/17345). Os termos usados mas não definidos neste módulo devem ter o significado que lhes é atribuído na Política de privacidade. No caso de algum conflito entre a Política de privacidade e este módulo, o módulo deve ser aplicado na inconsistência.
 
