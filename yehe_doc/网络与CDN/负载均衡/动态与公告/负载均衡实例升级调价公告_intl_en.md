@@ -14,7 +14,7 @@ The price adjustment covers all CLB instances (former "Application Load Balancer
 
 See below for the new instance prices:
 <dx-tabs>
-::: Pay-as-you-go instance billing
+::: Pay-as-you-go\sinstance\sbilling
 Prices provided in this notice take effect from 00:00:00, November 2, 2021 (UTC +8) until next price adjustment. This document describes only the price adjustments. For specific prices, see the pricing on purchase page or in your actual order.
 
 <table>
@@ -38,7 +38,9 @@ Prices provided in this notice take effect from 00:00:00, November 2, 2021 (UTC 
        <td>1.029</td>
 		</tr>
 </tbody></table>
+:::
 
+</dx-tabs>
 <dx-alert infotype="notice" title="">
 The price adjustment may cause overdue payments, leading to account suspension and business interruption. Please delete unnecessary CLB instances based on your usage and monthly cost.
 </dx-alert>
