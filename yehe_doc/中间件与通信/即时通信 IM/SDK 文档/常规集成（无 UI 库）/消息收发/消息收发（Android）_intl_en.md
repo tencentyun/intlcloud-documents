@@ -657,4 +657,4 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 
 [](id:msgAnalyze)
 ### 5. How are different types of messages parsed?
-It is complex to parse a message. We provide the [sample code](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/sampleCode/message.java) for parsing different types of messages. You can copy the code to your project, and perform secondary development based on your actual needs.
+It is complex to parse a message. We provide the [sample code](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIKit/sampleCode/message.java) for parsing different types of messages. You can copy the code to your project, and perform secondary development based on your actual needs.
