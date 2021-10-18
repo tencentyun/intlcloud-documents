@@ -4,7 +4,10 @@ If unicast is used, the sending server needs to separately send to N servers for
 - Multicast: Tencent Cloud supports multicast on the VPC dimension.
 - Broadcast: Tencent Cloud supports broadcast on the subnet dimension.
 
->? The broadcast and multicast features are currently in beta. If you do need to use them, please submit an application.
+>?
+>- The broadcast and multicast features are currently in beta phase. To become a beta user, please submit an application for broadcast or multicast.
+>- Currently, the broadcast and multicast features are available in Beijing, Shanghai, Guangzhou, Nanjing, Chengdu, Chongqing, and Hong Kong, China.
+>
 
 ## Overview
 Multicast and broadcast are mostly used in the financial and game industries:
@@ -24,6 +27,6 @@ This document describes how to enable or disable broadcast for subnets.
 2. Click **Subnet** on the left sidebar to access the management page.
 3. In the VPC list, locate the VPC for which you want to disable broadcast, and slide to **Disable** under the **Subnet broadcast** column.
 
-## Operations
-For detailed directions regarding VPC multicast, see [Enabling or Disabling the Broadcasting and Multicasting](https://intl.cloud.tencent.com/document/product/215/31809).
+## Relevant Operations
+For detailed directions regarding VPC multicast, see [Enabling or Disabling Multicast](https://intl.cloud.tencent.com/document/product/215/40072).
 
