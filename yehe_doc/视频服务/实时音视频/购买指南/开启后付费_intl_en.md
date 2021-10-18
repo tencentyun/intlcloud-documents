@@ -12,7 +12,7 @@ Basic services include [interactive live audio streaming](https://intl.cloud.ten
 2. Enter an application name such as `TestTRTC`.
 3. Add or edit tags for your application if necessary, and click **Create**.
 ![](https://main.qcloudimg.com/raw/db5d85f5352ebbe6af38db655798750f.png)
-4. In the pop-up window, select **Do not suspend services. You will be billed at pay-as-you-go rates.**
+4. In the pop-up window, select **Do not suspend services. You can purchase a package to deduct the extra duration or switch to the pay-as-you-go mode.**
 
 [](id:case2)
 #### Enabling pay-as-you-go via the application list

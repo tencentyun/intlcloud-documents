@@ -6,7 +6,7 @@ Notes:
 - The free trial is valid from the day it is offered to the last day of the same month next year.
  For example, if you got a free trial on May 1, 2021, it would be valid from May 1, 2021 to May 31, 2022.
 - Audio duration and SD/HD/FHD video duration are all deducted **1:1** from your trial package. That is to say, for 1 minute of audio duration or SD/HD/FHD duration used, 1 minute is deducted from your trial package.
-- When creating your first application in the [TRTC console](https://console.cloud.tencent.com/trtc/quickstart), you can select **Do not suspend services. You will be billed at pay-as-you-go rates.** or go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, select **Application Info**, and enable the pay-as-you-go mode. For detailed directions, please see [Enabling Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/647/41979).
+- When creating your first application in the [TRTC console](https://console.cloud.tencent.com/trtc/quickstart), you can select **Do not suspend services. You can purchase a package to deduct the extra duration or switch to the pay-as-you-go mode.** or go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, select **Application Info**, and enable the pay-as-you-go mode. For detailed directions, please see [Enabling Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/647/41979).
 - Once your trial package expires, the remaining minutes in the package will become invalid and cannot be retrieved.
 
 

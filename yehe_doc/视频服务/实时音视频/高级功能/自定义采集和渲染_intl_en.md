@@ -12,9 +12,9 @@
 
 ## Supported Platforms
 
-|   iOS    | Android  |  macOS  | Windows  | web |
-| :------: | :------: | :------: | :------: | :--------: |
-| &#10003; | &#10003; | &#10003; | &#10003; |    ×       |
+|   iOS    | Android  |  macOS  | Windows  | web |  Flutter  |
+| :------: | :------: | :------: | :------: | :--------: |:--------: |
+| &#10003; | &#10003; | &#10003; | &#10003; | &#10003;（[Web](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-20-advanced-customized-capture-rendering.html)）     |     ×    |
 
 ## Custom Video Capturing
 

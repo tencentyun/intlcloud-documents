@@ -15,10 +15,9 @@ Tencent Cloud TRTC Web SDKの詳細なサポートレベルの表については
 [](id:requirements)
 ## 環境要件
 - 最新バージョンのChromeブラウザを使用してください。
-- TRTC Web SDKは以下のポートに依存してデータ伝送を行います。それをファイアウォールのホワイトリストに追加して設定を完了してから、[公式サイトDemo](https://web.sdk.qcloud.com/trtc/webrtc/demo/latest/official-demo/index.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
- - TCPポート：8687
- - UDPポート：8000、8080、8800、843、443、16285
- - ドメイン名：qcloud.rtc.qq.com
+- TRTC Web SDKは以下のポートに依存してデータ伝送を行います。それをファイアウォールのホワイトリストに追加して設定を完了してから、[公式サイトDemo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
+
+より詳細な説明をご覧になる場合は [ファイアウォール制限対策に関するご質問](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
 
 ## URLドメイン名プロトコルの制限
 | ユースケース     | プロトコル             | 受信（再生） | 送信（マイク・オン） | 画面共有 | 備考 |
@@ -54,7 +53,7 @@ Tencent Cloud TRTC Web SDKの詳細なサポートレベルの表については
 [](id:step3)
 ### 手順3：Demoプロジェクトファイルの設定
 1. 設定変更画面に進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
-2. `Web/base-js/debug/GenerateTestUserSig.js`ファイルを見つけて開きます。
+2. `Web/js/debug/GenerateTestUserSig.js`ファイルを見つけて開きます。
 3. `GenerateTestUserSig.js`のファイルの関連するパラメータを設定します。
   <ul><li>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。</li>
   <li>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</li></ul> 
