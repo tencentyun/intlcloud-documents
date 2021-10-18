@@ -17,7 +17,7 @@ Tencent Cloud TRTC Web SDKの詳細なサポートレベルの表については
 - 最新バージョンのChromeブラウザを使用してください。
 - TRTC Web SDKは以下のポートに依存してデータ伝送を行います。それをファイアウォールのホワイトリストに追加して設定を完了してから、[公式サイトDemo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
 
-자세한 내용은 [방화벽 제한 관련 대응](https://intl.cloud.tencent.com/document/product/647/35164)을 참조하십시오.
+より詳細な説明をご覧になる場合は [ファイアウォール制限対策に関するご質問](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
 
 ## URLドメイン名プロトコルの制限
 | ユースケース     | プロトコル             | 受信（再生） | 送信（マイク・オン） | 画面共有 | 備考 |
