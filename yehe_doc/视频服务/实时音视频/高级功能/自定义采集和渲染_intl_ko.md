@@ -12,9 +12,9 @@
 
 ## 지원 플랫폼
 
-|   iOS    | Android  |  Mac OS  | Windows  | web|
-| :------: | :------: | :------: | :------: | :--------: |
-| &#10003; | &#10003; | &#10003; | &#10003; |    ×       |
+|   iOS    | Android  |  Mac OS  | Windows  | web     |     Flutter  |
+| :------: | :------: | :------: | :------: | :--------: |:--------: |
+| &#10003; | &#10003; | &#10003; | &#10003; |  &#10003;（[Web](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-20-advanced-customized-capture-rendering.html)）     |     ×    |
 
 ## 사용자 정의 비디오 수집
 
