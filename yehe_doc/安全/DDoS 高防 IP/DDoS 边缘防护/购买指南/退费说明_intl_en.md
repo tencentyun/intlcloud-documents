@@ -1,0 +1,1 @@
+DDoS Edge Defender does not support a five-day unconditional refund. If you have bought this product, you cannot cancel and return your order.
