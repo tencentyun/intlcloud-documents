@@ -3,7 +3,7 @@
 
 
 ## Basic Message Types
-For the basic message types of `TUIKit`, see [MessageInfo.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/message/MessageInfo.java).
+For the basic message types of `TUIKit`, see [MessageInfo.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/bean/MessageInfo.java).
 
 <table>
      <tr>
