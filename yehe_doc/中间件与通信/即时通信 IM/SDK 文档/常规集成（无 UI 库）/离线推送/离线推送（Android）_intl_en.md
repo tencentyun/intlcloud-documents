@@ -154,7 +154,7 @@ Select **Open app** or **Open specified in-app page** in **Response after Click*
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -285,7 +285,7 @@ You need to select **Open webpage** when [adding a certificate](#huaweiStep1_2) 
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -416,7 +416,7 @@ Select **Open app** or **Open specified in-app page** in **Response after Click*
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -542,7 +542,7 @@ Select **Open app** or **Open specified in-app page** in **Response after Click*
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -633,7 +633,7 @@ Select **Open app** or **Open specified in-app page** in **Response after Click*
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -702,7 +702,7 @@ After the certificate ID and regId are successfully reported, the IM server send
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
