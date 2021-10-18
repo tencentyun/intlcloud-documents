@@ -233,10 +233,10 @@ a. 당사는 아래에서 설명하는 바와 같이 사용자의 개인 정보 
 |수령자 (정보 관리자의 연락처 정보)|	개인 정보가 전송되는 국가|	전송 날짜 및 방법	|전송되는 개인 정보의 유형|	수령자의 사용 목적|
 | -- | ------- | -------| ----------------------- | -------------------------------------- | 
 |Adyen Singapore Pte Ltd. </br>dpo@adyen.com|싱가포르|	암호화된 전송| 신용 카드 번호, 이름, 유효 기간, CVV, 주소| 	결제 처리 및 위험 관리| 
-| Frensworkz Software Technology Co., Limited</br> support@frensworkz.com| 중국| 	온라인 전송| <li>이름과 성</li> <li>직책</li> <li>역할</li> <li>직위</li> <li>산업</li> <li>고용주</li> <li>연락처 정보(회사, 부서, 역할, 이메일, 전화, QQ 번호, 물리적 우편 주소, 웹사이트)</li> <li>계정, 계정 이름, 계정 표시 이름</li> <li> ID 데이터</li> <li>청구 주소, 청구 국가, 청구 거리, 청구 도시, 청구 주/지방, 청구 zip/우편 번호</li>|집계 구현 서비스|
+| Frensworkz Software Technology Co., Limited</br> support@frensworkz.com| 중국| 	온라인 전송| <li>이름과 성</li> <li>직책</li> <li>역할</li> <li>직위</li> <li>산업</li> <li>고용주</li> <li>연락처</br> 정보(회사, 부서, 역할, 이메일, 전화, QQ 번호, 물리적 우편 주소, 웹사이트)</li> <li>계정, 계정 이름, 계정 표시 이름</li> <li> ID 데이터</li> <li>청구</br> 주소, 청구 국가, 청구 거리, 청구 도시, 청구 주/지방, 청구 zip/우편 번호</li>|집계 구현 서비스|
 |Image Frame Investment (HK) Limited </br>dataprotection@tencent.com|홍콩|	온라인 전송|	휴대폰 번호, SMS 내용|	SMS 전송|
-|Salesforce.com Singapore Pte. Ltd </br>https://www.salesforce.com/ </br>ap/company/privacy/ |	미국|	온라인 전송|	<li>이름과 성</li> <li>직책</li> <li>역할</li> <li>직위</li> <li>산업</li> <li>고용주</li> <li>연락처 정보(회사, 부서, 역할, 이메일, 전화, QQ 번호, 물리적 우편 주소, 웹사이트) </li> <li>계정, 계정 이름, 계정 표시 이름</li> <li>ID 데이터</li> <li>청구 주소, 청구 국가, 청구 거리, 청구 도시, 청구 주/지방, 청구 zip/우편 번호</li>| 클라이언트 관계 관리|
-|Tencent Computing (Beijing) Co., Ltd. </br>meeting_info@tencent.com|중국|	계정 생성 및 결제 시점에 온라인 전송|	**필수 사항: **생년월일, 이름, 휴대폰 번호, 이메일 주소, 위치, 주소(도시 및 우편번호 포함), 신용 카드 정보, 비즈니스 유형, 비밀번호 </br>**선택 사항:** 사진이 나오는 신분증(예: 운전면허증, 여권 또는 사업자등록증) 이름, 주소|	시스템 운영 및 유지 보수|
+|Salesforce.com Singapore Pte. Ltd </br>https://www.salesforce.com/ </br>ap/company/privacy/ |	미국|	온라인 전송|	<li>이름과 성</li> <li>직책</li> <li>역할</li> <li>직위</li> <li>산업</li> <li>고용주</li> <li>연락처</br> 정보(회사, 부서, 역할, 이메일, 전화, QQ 번호, 물리적 우편 주소, 웹사이트) </li> <li>계정, 계정 이름, 계정 표시 이름</li> <li>ID 데이터</li> <li>청구</br> 주소, 청구 국가, 청구 거리, 청구 도시, 청구 주/지방, 청구 zip/우편 번호</li>| 클라이언트 관계 관리|
+|Tencent Computing (Beijing) Co., Ltd. </br>meeting_info@tencent.com|중국|	계정 생성 및 결제 시점에 온라인 전송|	**필수 사항:** 생년월일, 이름, 휴대폰 번호, 이메일 주소, 위치, 주소(도시 및 우편번호 포함), 신용 카드 정보, 비즈니스 유형, 비밀번호 </br>**선택 사항:** 사진이 나오는 신분증(예: 운전면허증, 여권 또는 사업자등록증) 이름, 주소|	시스템 운영 및 유지 보수|
 
  
 
