@@ -154,7 +154,7 @@
 **步骤1：发送端设置自定义内容**
 在发消息前设置每条消息的通知栏自定义内容。
 
-- 下面是 Android 端简单示例，也可以参考 TUIKit 中的 [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) 类的 sendMessage() 方法中对应的逻辑：
+- 下面是 Android 端简单示例，也可以参考 TUIKit 中的 [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) 类的 sendMessage() 方法中对应的逻辑：
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -285,7 +285,7 @@
 **步骤1：发送端设置自定义内容**
 在发消息前设置每条消息的通知栏自定义内容。
 
-- 下面是 Android 端简单示例，也可以参考 TUIKit 中 [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java)  类的 sendMessage() 方法中对应的逻辑：
+- 下面是 Android 端简单示例，也可以参考 TUIKit 中 [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java)  类的 sendMessage() 方法中对应的逻辑：
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -416,7 +416,7 @@ String value = bundle.getString("ext");
 **步骤1：发送端设置自定义内容**
 在发消息前设置每条消息的通知栏自定义内容。
 
-- 下面是 Android 端简单示例，也可以参考 TUIKit 中的 [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) 类的 sendMessage() 方法中对应的逻辑：
+- 下面是 Android 端简单示例，也可以参考 TUIKit 中的 [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) 类的 sendMessage() 方法中对应的逻辑：
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -542,7 +542,7 @@ Bundle bundle = intent.getExtras();
 **步骤1：发送端设置自定义内容**
 在发消息前设置每条消息的通知栏自定义内容。
 
-- 下面是 Android 端简单示例，也可以参考 TUIKit 中的 [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) 类的 sendMessage() 方法中对应的逻辑：
+- 下面是 Android 端简单示例，也可以参考 TUIKit 中的 [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) 类的 sendMessage() 方法中对应的逻辑：
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -633,7 +633,7 @@ String extContent = paramMap.get("ext");
 **步骤1：发送端设置自定义内容**
 在发消息前设置每条消息的通知栏自定义内容。
 
-- 下面是 Android 端简单示例，也可以参考 TUIKit 中的 [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) 类的 sendMessage() 方法中对应的逻辑：
+- 下面是 Android 端简单示例，也可以参考 TUIKit 中的 [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) 类的 sendMessage() 方法中对应的逻辑：
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -702,7 +702,7 @@ String extContent = bundle.getString("ext");
 **步骤1：发送端设置自定义内容**
 在发消息前设置每条消息的通知栏自定义内容。
 
-- 下面是 Android 端简单示例，也可以参考 TUIKit 中 [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) 类的 sendMessage() 方法中对应的逻辑：
+- 下面是 Android 端简单示例，也可以参考 TUIKit 中 [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) 类的 sendMessage() 方法中对应的逻辑：
 
   ```
   JSONObject jsonObject = new JSONObject();
