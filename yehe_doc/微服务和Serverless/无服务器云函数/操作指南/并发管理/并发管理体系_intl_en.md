@@ -5,8 +5,8 @@ The SCF platform provides concurrency management capabilities at the function gr
 Currently, SCF allows concurrency management at two levels: account-level concurrency quota and function-level maximum dedicated concurrency quota.
 
 ```
-账号级并发额度
-  |- 函数级最大独占配额
+Account-Level concurrency quota
+|- Function-Level reserved concurrency quota
 ```
 
 >?[Provisioned concurrency](https://intl.cloud.tencent.com/document/product/583/37704) is not included in the concurrency management capabilities; instead, it only serves as the ability to start instances in advance. Versions under the same function share the concurrency of the function.
