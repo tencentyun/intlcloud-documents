@@ -5,9 +5,9 @@ Given that it is difficult for users to detect device problems during a call, we
 
 ## Platform Support
 
-| iOS | Android | macOS | Windows  | Web|
-|:-------:|:-------:|:-------:|:-------:|:-------:|
-|     ×  |    ×    |    &#10003;   |    &#10003;    |&#10003;    |  ×   |
+| iOS | Android | macOS | Windows  | Electron  |Web|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|     ×  |    ×    |    &#10003;   |    &#10003;    |&#10003;    |  &#10003;（[Web 端](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-23-advanced-support-detection.html)）   |
 
 ## Testing Camera
 
