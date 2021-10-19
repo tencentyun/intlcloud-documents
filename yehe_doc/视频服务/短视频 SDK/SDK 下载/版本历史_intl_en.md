@@ -1,3 +1,9 @@
+### Version 9.1 Released on September 2, 2021
+- Android: fixed several stability issues.
+- Android: improved the clarity of generated videos.
+- Android: fixed crash during playback on certain Android 5.x devices.
+- iOS: fixed the issue of color saturation distortion of exported videos on iPhone 12 and later models.
+
 ### Version 9.0 Released on August 6, 2021
 - Android: fixed slow loading of the duet feature.
 - Android: improved the performance of the UGC SDK.
@@ -41,7 +47,7 @@ iOS: fixed the electrical noise of the shooting module.
 - Android: fixed the problem of failure to splice together video segments if users delete segments during shooting.
 - Android: fixed multiple crash issues.
 - iOS: fixed the problem of the SDK crashing when playing back videos in slow motion.
-- iOS: fixed the problem of black screens during image transition in some operations.
+- iOS: fixed the problem of black screens in certain steps of slideshow generation.
 - iOS: fixed some crash issues caused by incompatibility.
 
 ### Version 8.2 Released on December 24, 2020
@@ -155,7 +161,7 @@ Fixed a number of bugs reported recently and enhanced the stability of the SDK.
 
 ### Version 5.4 Released on January 4, 2019
 -iOS & Android: improved the success rate of UGSV uploading.
-- iOS: fixed some crash issues during the use of the image transition and composition feature.
+- iOS: fixed some crash issues during the use of the slideshow feature.
 
 ### Version 5.3 Released on October 25, 2018
 - iOS & Android: supported fade-in and fade-out for background music.
@@ -163,7 +169,7 @@ Fixed a number of bugs reported recently and enhanced the stability of the SDK.
 - iOS & Android: supported splicing videos without audio.
 - Android: fixed the delay in the callback of the shooting progress.
 - Android: fixed the problem of wrong rotation degrees for some video thumbnails.
-- Android: fixed the lag in pre-processing.
+- Android: fixed stutter for pre-processing.
 - iOS: allowed users to choose whether to loop background music.
 - iOS: optimized the uploading of UGSV.
 - iOS: added the feature of generating GIFs of original videos to the demo.
@@ -214,7 +220,7 @@ Fixed a number of bugs reported recently and enhanced the stability of the SDK.
 - Android: sped up the generation of UGSV after editing and fixed memory leaks.
 - iOS: sped up the loading of local background music and thumbnails, as well as the acquisition of video information.
 - iOS: optimized the image quality of post-editing UGSV.
-- iOS: fixed problems including occasional lag and black frames during shooting, occasional flashing of watermarks towards the end of videos, memory leaks, etc.
+- iOS: fixed problems including occasional stutter and black frames during shooting, occasional flashing of watermarks towards the end of videos, memory leaks, etc.
 
 ### Version 4.7 Released on May 25, 2018
 - iOS & Android: added filters for UGSV, including blinds, phantom, lightning, mirror, illusion, etc.
