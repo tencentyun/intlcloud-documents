@@ -1,3 +1,15 @@
+## v8.9.102 Released on August 11, 2021
+
+**New features**
+Windows & macOS: added the new parameter `gatewayRtt` to the [onStatistics](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onStatistics) callback.
+
+**Bug fixing**
+- macOS: fixed crash caused by logging on special devices.
+- macOS: fixed the issue where, after `setAudioCaptureVolume(0)` is used to mute audio, the mic testing volume is 0.
+- Windows: improved performance and fixed the issue of black screen after the camera is turned on.
+- Windows: fixed the issue where the resolution is not restored after being automatically reduced during screen sharing.
+- Windows & macOS: fixed other bugs.
+
 ## Version 8.6.101 Released on May 28, 2021
 
 **New features**
@@ -46,13 +58,13 @@
 - Windows & macOS: added [resumePlayMusic](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#resumePlayMusic) to resume background music.
 - Windows & macOS: added [getMusicDurationInMS](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getMusicDurationInMS) to get the total length of the background music file, in milliseconds.
 - Windows & macOS: added [seekMusicToPosInTime](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#seekMusicToPosInTime) to set the playback progress of background music.
-- Windows & macOS: added [setAllMusicVolume](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setAllMusicVolume) to set background music volume. This API is used to control the volume of background music when background music is mixed into played audio.
+- Windows & macOS: added [setAllMusicVolume](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setAllMusicVolume) to set the audio mixing volume of background music.
 - Windows & macOS: added [setMusicPlayoutVolume](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setMusicPlayoutVolume) to set the local playback volume of background music.
 - Windows & macOS: added [setMusicPublishVolume](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setMusicPublishVolume) to set the remote playback volume of background music.
-- Windows & macOS: added [onSwitchRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSwitchRoom) for the callback of room switching.
+- Windows & macOS: added the [onSwitchRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSwitchRoom) callback for room switching.
 - Windows & macOS: added [setRemoteAudioVolume](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setRemoteAudioVolume) to set the playback volume of a remote user.
 - Windows & macOS: added [snapshotVideo](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#snapshotVideo) to take a video screenshot.
-- Windows & macOS: added [onSnapshotComplete](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSnapshotComplete) for the callback of the completion of a screenshot.
+- Windows & macOS: added the [onSnapshotComplete](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSnapshotComplete) callback for the completion of a screenshot.
 
 **Improvements**
 - Windows & macOS: supported string-type `strRoomId` for the `enterRoom` and `switchRoom` APIs.
@@ -67,12 +79,12 @@
 ## v7.8.342 Released on October 10, 2020
 
 **New features**
-- Windows & macOS: added [onAudioDeviceCaptureVolumeChanged](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onAudioDeviceCaptureVolumeChanged) for volume change callback on the current audio capturing device.
-- Windows & macOS: added [onAudioDevicePlayoutVolumeChanged](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onAudioDevicePlayoutVolumeChanged) for volume change callback on the current audio playback device.
+- Windows & macOS: added the [onAudioDeviceCaptureVolumeChanged](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onAudioDeviceCaptureVolumeChanged) callback for volume change of the current audio capturing device.
+- Windows & macOS: added the [onAudioDevicePlayoutVolumeChanged](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onAudioDevicePlayoutVolumeChanged) callback for volume change of the current audio playback device.
 
 ## v7.7.330 Released on September 11, 2020
 
-**New features**
+**New APIs**
 Windows & macOS: added [setAudioQuality](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setAudioQuality) to adjust audio quality.
 
 **Improvements**
@@ -83,7 +95,7 @@ Windows & macOS: added [setAudioQuality](https://web.sdk.qcloud.com/trtc/electro
 
 ## v7.6.300 Released on August 26, 2020
 
-**New features**
+**New APIs**
 Windows & macOS: added [setCurrentMicDeviceMute](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setCurrentMicDeviceMute), [getCurrentMicDeviceMute](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getCurrentMicDeviceMute), [setCurrentSpeakerDeviceMute](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setCurrentSpeakerDeviceMute), and [getCurrentSpeakerDeviceMute](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getCurrentSpeakerDeviceMute) to control mics and speakers on PC.
 
 ## v7.5.210 Released on August 11, 2020
@@ -116,7 +128,7 @@ Windows & macOS: added [setCurrentMicDeviceMute](https://web.sdk.qcloud.com/trtc
 
 ## v7.1.157 Released on April 02, 2020
 
-**New Features**
+**New APIs**
 
 Supported [screen sharing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) via the [primary stream](ttps://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoStreamType).
 
@@ -128,6 +140,6 @@ Supported [screen sharing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/tr
 
 ## v7.0.149 Released on March 19, 2020
 
-**New file**
+**New features**
 
 Added the [trtc.d.ts](https://intl.cloud.tencent.com/document/product/647/35141) file for TypeScript developers.

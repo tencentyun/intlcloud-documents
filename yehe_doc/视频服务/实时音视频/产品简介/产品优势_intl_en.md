@@ -1,16 +1,20 @@
-### Cross-platform Global Interconnection
-**Implementing authentic cross-platform compatibility in the industry, TRTC is perfectly compatible with over 5,000 device models.** It provides client SDKs and TencentCloud APIs for iOS and Android mobile devices and Windows/macOS desktops to make it easy for users to access the TRTC service for global interconnection on WeChat, QQ, WeChat Work, WeChat Mini Program, and desktop browsers.
-### Low-Threshold Quick Integration
-You can run the TRTC demo with merely two lines of code, integrate the general capabilities of TRTC with ten lines of code, and build a low-latency, low-lag, and high-quality real-time audio/video interactive product from scratch within 1 minute at the soonest. For detailed directions, please see [Quick Demo Run](https://intl.cloud.tencent.com/document/product/647/35086) and [Quick SDK Integration](https://intl.cloud.tencent.com/document/product/647/35092).
+### Cross-platform global interconnection
+**TRTC is a cross-platform solution compatible with more than 5,000 device models.** It provides client SDKs and TencentCloud APIs for mobile and desktop platforms including iOS, Android, Windows, macOS, and web. End users can also use its services via the Mini Program of WeChat, QQ, and WeCom.
 
-### Scenario-based Custom Components
-TRTC provides a rich set of scenario-based custom components to help you quickly implement various features in the simplest way, such as voice chat, conferencing, interactive live streaming, and interactive teaching. For detailed directions, please see [Use Cases](https://intl.cloud.tencent.com/document/product/647/36065).
+### Collaboration with WeChat Mini Program
+As the provider of WeChat’s built-in SDK, TRTC offers user experience in WeChat Mini Program comparable to that of native applications.
 
-### Low Latency
-TRTC offers a highly connected, reliable, and secure network across the globe. Leveraging our proprietary multi-addressing algorithms, TRTC has the ability to stream users' audio/video data to optimal nodes across the entire network. With abundant high-bandwidth resources and globally-distributed edge servers, it can ensure **an average end-to-end latency of below 300 ms** between countries/regions.
+### Easy and quick integration
+You can run the TRTC demo and integrate basic TRTC features into your project with simple code. In as short as 1 minute, you can build from scratch a real-time audio/video communication product featuring low latency, low stutter rate, and high-quality. For detailed directions, please see [Quick Demo Start](https://intl.cloud.tencent.com/document/product/647/35086) and [SDK Quick Integration](https://intl.cloud.tencent.com/document/product/647/35092).
 
-### Low Lag
-TRTC reduces lags through intelligent QoS and optimized encoding, and is resilient against **a packet loss rate of over 80%** and **network jitter of over 1,000 ms**. Even with poor network condition, it can ensure a high-quality and stable audio/video communication.
+### Scenario-specific components
+TRTC provides a rich set of scenario-specific components to help you quickly and easily implement different features, including audio chat, conferencing, interactive live streaming, and interactive teaching. For detailed directions, please see [Scenario-specific Practice](https://intl.cloud.tencent.com/document/product/647/36062).
 
-### High Quality
-**TRTC supports 720p and 1080p HD video** and enables you to have smooth video calls even at a 70% packet loss rate. **It also supports 128 kHz high-quality audio** and enables you to make clear audio calls even at a 80% packet loss rate. In addition, leveraging its industry-leading 3A processing technologies (i.e., acoustic echo cancellation (AEC), active noise suppression (ANS), and automatic gain control (AGC)), it eliminates echoes and howling, rendering a lossless audio quality comparable to that of CDs.
+### Low latency
+TRTC offers reliable and secure network connection across the globe. It uses Tencent Cloud’s proprietary multi-level addressing algorithm and can connect to nodes across the entire network. Abundant high-bandwidth resources and globally-distributed edge servers allow it to keep the **average global end-to-end latency below 300 ms**.
+
+### Low stutter rate
+TRTC reduces stutter through intelligent QoS control and encoding optimization. It can ensure high-quality, smooth, and stable audio/video communication even under poor network conditions (**packet loss over 80%** and **network jitter over 1,000 ms**).
+
+### High quality
+TRTC allows **720p and 1080p** video calls and guarantees smooth calling experience at 70% packet loss. It allows **48 kHz audio calls at a bitrate of 128 Kbps** and guarantees smooth calling experience at 80% packet loss. Furthermore, it leverages industry-leading 3A (i.e., AEC, ANS, and AGC) processing technologies to remove echo and prevent howling, delivering a lossless audio quality comparable to that of CDs.
