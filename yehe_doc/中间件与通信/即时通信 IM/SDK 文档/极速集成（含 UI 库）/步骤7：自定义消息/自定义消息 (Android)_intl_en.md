@@ -36,7 +36,6 @@ For the basic message types of `TUIKit`, see [MessageInfo.java](https://github.c
 ## Customizing Messages
 >- If the basic message types do not meet your requirements, you can customize messages as needed.
 >- This document uses sending a custom hypertext message that can redirect to the browser as an example to help you quickly understand the implementation process. **This document uses version '5.4.666' as an example, which is different from previous versions.**
->- You can refer to [Implementing welcome message customization](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/helper/HelloChatController.java) and [Implementing group live streaming message customization](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit-live/src/main/java/com/tencent/qcloud/tim/tuikit/live/helper/TUIKitLiveChatController.java).
 
 ### Process of implementing message customization
 Message customization process
