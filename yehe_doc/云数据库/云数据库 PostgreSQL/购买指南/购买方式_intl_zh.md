@@ -3,7 +3,7 @@
 已 [注册腾讯云账号](https://intl.cloud.tencent.com/register)，并 [完成实名认证](https://console.cloud.tencent.com/developer)。
 
 ## 控制台购买
-1. 登录 [PostgreSQL 购买页](https://intl.buy.cloud.tencent.com/pgsql)，根据需求指定数据库实例信息，确认无误后，单击【立即购买】。
+1. 登录 [PostgreSQL 购买页](https://intl.buy.cloud.tencent.com/pgsql)，根据需求指定数据库实例信息，确认无误后，单击**立即购买**。
  - **计费模式**：支持按量计费。
  - **地域**：实例实际部署的地域；建议与需要对接的云服务器保持一致，以便延迟最低。
  - **可用区**：在同一地域内电力和网络互相独立的物理数据中心；建议与需要对接的云服务器保持一致，以便延迟最低。

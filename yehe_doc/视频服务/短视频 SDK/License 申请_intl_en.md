@@ -2,6 +2,8 @@
 **You can apply for a Basic Edition trial license (14-day validity period) to explore the SDK. Each account is eligible for two applications. See below for detailed instructions.**
 1. Go to the Tencent Cloud website, log in to the [VOD console](https://console.cloud.tencent.com/vod/license), click **Edit**, and enter the information as required. For **Package Name**, enter the package name of your Android app, and for **Bundle ID**, enter the Bundle ID of your iOS app.
 2. After adding a trial license successfully, you will be able to view the information of the license. Note the **Key** and **LicenseUrl**, which you must pass in when initializing the SDK.
+For the full version, please contact [Tencent Cloud sales](https://intl.cloud.tencent.com/contact-us) to purchase a license.
+
 
 [](id:use)
 ## Using a License

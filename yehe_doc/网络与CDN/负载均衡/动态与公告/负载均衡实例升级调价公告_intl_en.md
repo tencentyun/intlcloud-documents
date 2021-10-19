@@ -54,4 +54,4 @@ How do I optimize my bill?
 ## References
 - [Bill-by-IP Account Billing Description](https://intl.cloud.tencent.com/document/product/214/36998)
 - [Bill-by-CVM Account Billing Description](https://intl.cloud.tencent.com/document/product/214/8848)
-- [LCU Billing](https://intl.cloud.tencent.com/document/product/214/41563)
+- [LCU Pricing](https://intl.cloud.tencent.com/document/product/214/41563)

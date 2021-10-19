@@ -1,65 +1,64 @@
 
 ## Quick Start
-This document describes how to submit a job in the BatchCompute Console to render and export a 3ds Max 2018 image.
+This document guides you through the console steps to submit a job, render objects with 3ds Max 2018, and export the rendered objects. 
 
-### Step 1. Make a custom image
-1. Create a custom image.
-2. Install 3ds Max 2018 as instructed by the [official website](https://www.autodesk.com/products/3ds-max/overview).
->
->- Please temporarily disable the Windows Firewall to avoid blocking software downloads.
-> For more information on how to select an appropriate graphics card type to avoid graphics card initialization failure, please see [Display Driver Selection Dialog](https://knowledge.autodesk.com/zh-hans/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2015/CHS/3DSMax/files/GUID-3D6B4C8E-8C0D-4A9C-BFB0-2463803268CE-htm.html). In normal circumstances, you are recommended to select "Nitrous Software".
+### Step 1 Create a custom image
+1. Create a custom image. See [Windows Custom Image](https://intl.cloud.tencent.com/document/product/599/13035) 
+2. Install 3ds Max 2018. See [Official Homepage](https://www.autodesk.com/products/3ds-max/overview) 
+>- Disable the Windows Firewall temporarily to avoid blocking software downloads.
+>- Select an appropriate graphics card model by referring to the [Graphics Card Selection Guide](https://knowledge.autodesk.com/zh-hans/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2015/CHS/3DSMax/files/GUID-3D6B4C8E-8C0D-4A9C-BFB0-2463803268CE-htm.html) to avoid graphics card initialization failures. Nitrous Software is recommended for general usage.
 
-### Step 2. Prepare the rendering files
-There are two mainstream ways to store the rendering materials: [Cloud Object Storage (COS)](https://intl.cloud.tencent.com/document/product/436) and [Cloud File Storage (CFS)](https://intl.cloud.tencent.com/document/product/582). By configuring the mount parameters, BatchCompute will mount COS or CFS to the local storage before the rendering job runs, so the renderer can access COS or CFS as if it were a local file.
+### Step 2 Prepare files to render
+You can choose to store the files to render on [COS](https://intl.cloud.tencent.com/zh/document/product/436) or [CFS](https://intl.cloud.tencent.com/zh/document/product/582). Complete the mounting configuration. BatchCompute will mounts the COS or CFS path to the local machine before the rendering job runs, which allows the rendering software to access files stored on COS or CFS as local files.
 
-- If the rendering materials are small, you are recommended to compress them into a gzip package and upload the package to COS. For more information, please see [Uploading Object](https://intl.cloud.tencent.com/document/product/436/13321).
-- If the rendering materials are large, you are recommended to store them in CFS.
+- COS is recommended for small-sized objects. See [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
+- CFS is recommended for large-sized objects.
 
-### Step 3. Create a task template
-1. Log in to the BatchCompute Console and select **[Task Template](https://console.cloud.tencent.com/batch/task)** on the left sidebar.
-2. Select the target region at the top on the "Task Template" page and click **Create**.
-3. Click **Create** to enter the "Create Task Template" page and create a template as shown below:
-![](https://main.qcloudimg.com/raw/ebfa42f6ffda0420c78e902fbe420134.png)
-  * **Name**: custom name, such as `rendering`.
-  * **Description**: custom description, such as `3ds Max 2018 Demo`.
-  * **Compute Environment Type**: select as needed. **Automatic Compute Environment** is selected in this example.
-  * **Resource Configuration**: S1.LARGE8 (4-core 8 GB).
-  * **Image**: custom image ID. Please select one as needed.
-  * **Number of Resources**: number of concurrent renderings, such as 1
-  * **Timeout Period and Number of Retries**: keep the default values.
-3. Click **Next** to configure the program information as shown below:
+### Step 3. Create a Task template
+1. Log in to the BatchCompute console and choose **[Task Template](https://console.cloud.tencent.com/batch/task)** on the left sidebar.
+2. Select the target region at the top on the **Task Template** page and click **Create**.
+3. Click **Create**, complete the configurations in the **New Task Template** page.
+![](https://main.qcloudimg.com/raw/0a6bff4423320bb7318225f13a56a24e.png)
+ - **Name**: enter a custom name for the template. “rendering” is used here as an example.
+ - **Description**: enter the description of the template. “3ds Max 2018 Demo” is used here as an example.
+ - **Compute Environment**: Select as needed. **Auto** is selected in this example.
+ - **Specification**: choose as needed
+ - **Image**: enter the ID of image used to create the compute environment.
+ - **Instance Quantity**: number of instances to launch
+ - **Timeout period**, **Retry attempts**: Keep the default values.
+3. Click **Next** and configure application information, as shown below: 
 ![](https://main.qcloudimg.com/raw/15650e325d5507a0302896e44de45f7f.png)
-  * **Execution Method**: PACKAGE.
-  * **Package Address**: COS as an example, `cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`.
-  * **Stdout Log**: for more information on the format, please see [How to Enter COS and CFS Paths](https://intl.cloud.tencent.com/document/product/599/13996).
-  * **Stderr Log**: same as Stdout log.
-  * **Command Line**: `3dsmaxcmd Demo.max -outputName:c:\\render\\image.jpg`.
-4. Click **Next** to set the storage mapping as shown below:
+ - **Execution method**: Package.
+ - **Package address**: enter the Take the COS as example, `cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
+ - **Stdout log**: see [Entering COS & CFS Paths](https://intl.cloud.tencent.com/document/product/599/13996)
+ - **Stderr log**: See above
+ - **Command line**: `3dsmaxcmd Demo.max -outputName:c:\\render\\image.jpg`.
+4. Click **Next** to configure storage mapping, as shown below:
 ![](https://main.qcloudimg.com/raw/a7d312aa78f460b30ed67d1758b395ba.png)
-  * **Output path mapping - local path**: `C:\\render\\`.
-  * **Output path mapping - COS or CFS path**: for formats, please see [Entering COS or CFS Path](https://intl.cloud.tencent.com/document/product/599/13996).
-5. Click **Next** to preview the task's JSON file.
-6. After confirming that everything is correct, click **Save**.
+ - **Output path mapping - Local path**: `C:\\render\\`.
+ - **Output path mapping - COS/CFS path**: See [Entering COS & CFS Paths](https://intl.cloud.tencent.com/document/product/599/13996)
+5. Click **Next** to preview the JSON file of the task.
+6. Confirm that the configuration is correct and click **Save**.
 
 ### Step 4. Submit a job
-1. Click **Job** on the left sidebar to enter the "Job" list page.
-2. Select the target region at the top of the page and click **Create**.
-3. In the "Create Job" window, configure basic information of the job as shown below:
-  ![](https://main.qcloudimg.com/raw/95ad2a781a05eb5306a6afadc4096565.png)
-  * **Job Name**: `max`.
-  * **Priority**: default value.
-  * **Description**: `3ds Max 2018 Demo`.
-3. Select the **rendering** task on the left on the task flow page and drag the task to the canvas on the right.
+1. Click **Job** on the left sidebar to enter the **Jobs* page.
+2. Select a target region at the top on the page and click **Create**.
+3. Configure the basic job information in the **New Job** window, as shown below:
+![](https://main.qcloudimg.com/raw/95ad2a781a05eb5306a6afadc4096565.png)
+ - **Job name**: enter a custom name. “max” is used here for example.
+ - **Priority**: keep as default.
+ - **Description**: enter the description of the job. “3ds Max 2018 Demo” is used here as an example.
+3. Open the **Task flow** page, locate the task **rendering** from the left and drag it to the canvas.
 ![](https://main.qcloudimg.com/raw/6465facbf8bcac90153b4a055d78c4a1.png)
-4. Enable **Task Details** on the right on the task flow page, confirm that the configuration is correct, and click **Complete**.
-5. Query the job running information. For more information, please see [Querying Information](https://intl.cloud.tencent.com/document/product/599/14567).
-6. Below is the rendering process demonstration.
+4. Open **Task Details** on the right, check the configuration, and click **Complete**.
+5. To query job running information, please see [Querying Information](https://intl.cloud.tencent.com/document/product/599/14567)
+6. See below for the demonstration of rendering.
 ![](https://main.qcloudimg.com/raw/940a3048a62c3db4379ff18b5219832e.jpg)
-7. Query the rendering result. For more information, please see [Viewing Object Information](https://intl.cloud.tencent.com/document/product/436/13326).
+7. Query the rendering results. See **Viewing Object Information**
 
 
 ## Subsequent Operations
-This document illustrates a simple single-instance rendering job to show the most basic capabilities of BatchCompute. You can continue to test the advanced capabilities of BatchCompute as instructed in the Console User Guide.
+This document illustrates a simple rendering job to demonstrate fundamental BatchCompute capabilities. You can try the advanced capabilities of BatchCompute as instructed in the Console User Guide.
 - **Various CVM configurations**: BatchCompute provides a variety of CVM configuration options. You can customize your own CVM configuration based on your business scenario.
 - **Remote storage mapping**: BatchCompute optimizes storage access and simplifies access to remote storage services into operations in the local file system.
-- **Concurrent multi-image rendering**: BatchCompute supports specifying the number of concurrent rendering instances which are distinguished between through [environment variables](https://intl.cloud.tencent.com/document/product/599/11752) with each instance reading a different material for concurrent rendering.
+- **Concurrent multi-object rendering**: you can launch multiple instances to read and render different objects at the same time. The instances are distinguished by [environment variables](https://intl.cloud.tencent.com/document/product/599/11752).

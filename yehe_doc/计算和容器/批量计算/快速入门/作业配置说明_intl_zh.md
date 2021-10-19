@@ -124,7 +124,7 @@ PackagePath | String | 否 | 远程代码包路径，必须 .tgz 格式 | ```htt
 #### ComputeEnv
 名称 | 类型  | 是否必选 | 描述 | 示例
 -----|------|-----|------|------
-EnvType | String | 是 | 计算环境管理类型，包括托管和非托管两种 | LOCAL 本地，PACKAGE 远程代码包
+EnvType | String | 是 | 计算环境管理类型，包括托管和非托管两种 | MANAGED 托管，UNMANAGED 非托管
 EnvData | EnvData object | 是 | 计算环境具体参数 |-
 
 #### EnvData
@@ -132,7 +132,7 @@ EnvData | EnvData object | 是 | 计算环境具体参数 |-
 -----|------|-----|------|------
 InstanceType | String | 是 | CVM实例类型，托管类型必填 | S1.SMALL1
 ImageId | String | 是 | CVM镜像 ID，托管类型必填 | img-m4q71qnf
-others | others | 否 | 参考 CVM API文档 [创建实例](https://intl.cloud.tencent.com/document/product/213/33237) 提供的参数 | 支持 SystemDisk、DataDisks、VirtualPrivateCloud 等
+others | others | 否 | 参考 CVM API文档 [创建实例](https://intl.cloud.tencent.com/zh/document/product/213/33237) 提供的参数 | 支持 SystemDisk、DataDisks、VirtualPrivateCloud 等
 
 #### RedirectInfo
 名称 | 类型  | 是否必选 | 描述 | 示例
