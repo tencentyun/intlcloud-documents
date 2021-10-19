@@ -68,7 +68,7 @@ public static void customizeConversation(final ConversationLayout layout) {
 }
 ```
 
-For more information, please see [ConversationLayoutHelper.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/helper/ConversationLayoutHelper.java).
+For more information, please see [ConversationLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIConversation/tuiconversation/src/main/java/com/tencent/qcloud/tuikit/tuiconversation/setting/ConversationLayoutSetting.java).
 
 
 ### Setting the profile photo
@@ -157,7 +157,7 @@ noticeLayout.setOnNoticeClickListener(new View.OnClickListener() {
 
 ### Modifying the MessageLayout style
 
-MessageLayout is inherited from RecyclerView. This document describes how to customize the chat background, bubbles, text, and nicknames. For more information, please see [IMessageProperties](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/interfaces/IMessageProperties.java).
+MessageLayout is inherited from RecyclerView. This document describes how to customize the chat background, bubbles, text, and nicknames. For more information, please see [ IMessageProperties.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/ui/interfaces/IMessageProperties.java).
 
 #### Modifying the chat background
 
