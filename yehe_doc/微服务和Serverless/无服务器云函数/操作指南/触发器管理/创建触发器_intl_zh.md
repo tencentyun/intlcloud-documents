@@ -2,28 +2,30 @@
 
 通过控制台或 Serverless Framework CLI 命令行均可以完成云函数触发器创建。
 
+>! Web 类型函数只支持创建 API 网关触发器，详情请查看 [创建 Web 函数](https://intl.cloud.tencent.com/zh/document/product/583/40689)。
+
 ## 通过控制台完成触发器创建
 
-1. 登录云函数控制台，选择左侧导航栏中的【[函数服务](https://console.cloud.tencent.com/scf/list)】。
+1. 登录云函数控制台，选择左侧导航栏中的 **[函数服务](https://console.cloud.tencent.com/scf/list)**。
 2. 在“函数服务”列表页面上方，选择期望创建触发器函数所在的地域及命名空间。如下图所示：
 ![](https://main.qcloudimg.com/raw/e48bbf014e8c15fe22622fda5e2b8ffc.png)
 函数列表中包括了函数名、监控、运行环境、创建时间、修改时间等，您可根据自身需求进行操作。
 3. 单击函数名，进入该函数的详情页面。
-函数详情页面包括了函数管理页、触发管理页、监控信息页和日志查询页。
-4. 在该函数的详情页面，选择左侧的【触发管理】，进入触发器浏览及操作界面，单击【创建触发器】，开始创建一个新的触发器。如下图所示：
+函数详情页面包括了函数管理页、触发管理页、监控信息页、日志查询页和并发配额页等。
+4. 在该函数的详情页面，选择左侧的**触发管理**，进入触发器浏览及操作界面，单击**创建触发器**，开始创建一个新的触发器。如下图所示：
 ![](https://main.qcloudimg.com/raw/89740ff73c89c3baa18ba995c86f3c0d.png)
 5. 在弹出的“创建触发器”窗口中，可在“触发方式”中不同的触发方式。选择不同触发方式，所需填写的内容也将不同。
 例如：定时触发器需添加触发器名称、周期和启用情况，对象存储 COS 触发器需要添加触发的 COS Bucket、事件类型以及前后缀过滤方式。
-> 更加具体的触发器相关填写内容说明，可见各 [触发器](https://intl.cloud.tencent.com/document/product/583/9705) 的说明文档。
-7. 完成触发器配置后，单击【提交】，完成触发器创建。
-> 如需取消创建过程，单击【取消】即可。
+>? 更加具体的触发器相关填写内容说明，可见各 [触发器](https://intl.cloud.tencent.com/document/product/583/9705) 的说明文档。
+7. 完成触发器配置后，单击**提交**，完成触发器创建。
+>? 如需取消创建过程，单击**关闭**即可。
 
 
 
 
 
 ## 通过 Serverless Framework CLI 命令行完成触发器创建
->在使用 Serverless Framework CLI 工具之前，请通过 [安装 Serverless Framework](https://intl.cloud.tencent.com/document/product/583/36263) 完成安装。
+>?在使用 Serverless Framework CLI 工具之前，请通过 [安装 Serverless Framework](https://intl.cloud.tencent.com/document/product/583/36263) 完成安装。
 >
 本地函数请在 `serverless.yml` 文件下新增触发器描述 ，并通过 Serverless Framework CLI 执行 `sls deploy` 命令，即可为函数新增触发器。
 
@@ -34,4 +36,5 @@
 
 使用函数具体版本创建触发器时，如果通过控制台操作，可通过函数界面右上角的版本列表，切换至期望创建触发器的版本，然后在触发方式页面创建触发器即可。
 
-> 云函数的触发器总数量、各种类触发器数量的限制，依据云函数配置，版本下配置的触发器会占用当前函数的触发器配置限额。如需调大触发器限额，可 [联系我们](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) 提升限额。
+>! 云函数的触发器总数量、各种类触发器数量的限制，依据云函数配置，版本下配置的触发器会占用当前函数的触发器配置限额。如需调大触发器限额，可 [联系我们](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) 提升限额。
+
