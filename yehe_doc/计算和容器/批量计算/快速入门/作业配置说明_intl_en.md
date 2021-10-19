@@ -3,59 +3,59 @@ The job configuration of Batch is provided in JSON format as described below. Th
 
 ```
 {
-    "JobName": "TestJob",       // 作业名称
-    "JobDescription": "for test ",    // 作业描述
-    "Priority": "1",            // 作业优先级
-    "Tasks": [                  // 任务列表（本例包含两个任务）
+    "JobName": "TestJob",       // Job name
+    "JobDescription": "for test ",    // Job description
+    "Priority": "1",            // Job priority
+    "Tasks": [                  // Task list (two tasks in this example)
         {       
-            // 任务1 （最简化的任务配置，去除所有非必选项） 
-            "TaskName": "Task1",   // 任务1名称
-            "Application": {        // 任务执行命令
-                "DeliveryForm": "LOCAL",    // 应用程序的交付方式
-                "Command": "echo hello"     // 命令具体内容（输出 hello）
+            // Task 1 (the most simplified task configuration with all non-essential options removed) 
+            "TaskName": "Task1",   // Task 1 name
+            "Application": {        // Task execution command
+                "DeliveryForm": "LOCAL",    // Application delivery method
+                "Command": "echo hello"     // Command content (to output hello)
                 
             },
-            "ComputeEnv": {         // 计算环境配置
-                "EnvType": "MANAGED",   // 计算环境类型，托管型和非托管型
-                "EnvData": {        // 具体配置（当前托管型，可参照CVM 创建实例说明）
-                    "InstanceType": "S1.SMALL1",    // CVM 实例类型
-                    "ImageId": "img-m4q71qnf",      // CVM 镜像 ID
+            "ComputeEnv": {         // Compute environment configuration
+                "EnvType": "MANAGED",   // Compute environment types: MANAGED or UNMANAGED
+                "EnvData": {        // Specific configuration (the current type is MANAGED. For more information, please see CVM instance creation description)
+                    "InstanceType": "S1.SMALL1",    // CVM instance type
+                    "ImageId": "img-m4q71qnf",      // CVM image ID
                 }
             },
-            "RedirectInfo": {       // 标准输出重定向配置           
-                "StdoutRedirectPath": "cos://dondonbatchv5- 1251783334.cosgz.myqcloud.com/logs/",  // 标准输出（需替换）
-                "StderrRedirectPath": "cos://dondonbatchv5-1251783334.cosgz.myqcloud.com/logs/"    // 标准错误（需替换）
+            "RedirectInfo": {       // Configuration of standard output redirection           
+                "StdoutRedirectPath": "cos://dondonbatchv5- 1251783334.cosgz.myqcloud.com/logs/",  // Standard output (to be replaced)
+                "StderrRedirectPath": "cos://dondonbatchv5-1251783334.cosgz.myqcloud.com/logs/"    // Standard error (to be replaced)
             },
-            "Authentications": [        // 鉴权相关信息（选填，访问非本人COS场景使用）
+            "Authentications": [        // Authentication information (optional, for use in case of COS of others)
                 {
-                    "Scene": "COS",     // 场景（当前是 COS）
-                    "SecretId": "***",  // SecretId（需替换）
-                    "SecretKey": "***"  // SecretKey（需替换）
+                    "Scene": "COS",     // Scenarios (COS currently)
+                    "SecretId": "***",  // SecretId (to be replaced)
+                    "SecretKey": "***"  // SecretKey (to be replaced)
                 }
             ]
         },
         {
-            // 任务2
-            "TaskName": "Task2",   // 任务2名称
-            "TaskInstanceNum": 1,   // 任务2并发实例数目
-            "Application": {        // 任务执行命令
-                "DeliveryForm": "LOCAL",    // 执行本地命令
-                "Command": "python -c \"fib=lambda n:1 if n<=2 else fib(n-1)+fib(n-2); print(fib(20))\" "   // 命令具体内容（斐波拉契求和）
+            // Task 2
+            "TaskName": "Task2",   // Task 2 name
+            "TaskInstanceNum": 1,   // Number of concurrent instances in task 2
+            "Application": {        // Task execution command
+                "DeliveryForm": "LOCAL",    // Run the local command
+                "Command": "python -c \"fib=lambda n:1 if n<=2 else fib(n-1)+fib(n-2); print(fib(20))\" "   // Command content (Fibonacci summation)
             },
-            "ComputeEnv": {         // 计算环境配置
-                "EnvType": "MANAGED",   // 计算环境类型，托管型和非托管型
-                "EnvData": {        // 具体配置（当前托管型，可参照CVM 创建实例说明）
-                    "InstanceType": "S1.SMALL1",    // CVM 实例类型
-                    "ImageId": "img-m4q71qnf",      // CVM 镜像 ID（可替换）
-                    "VirtualPrivateCloud": {        // CVM 网络配置（选填）
-                        "VpcId": "vpc-cg18la4l",             // VpcId（需替换）
-                        "SubnetId": "subnet-8axej2jc"           // SubnetId（需替换）
+            "ComputeEnv": {         // Compute environment configuration
+                "EnvType": "MANAGED",   // Compute environment types: MANAGED or UNMANAGED
+                "EnvData": {        // Specific configuration (the current type is MANAGED. For more information, please see CVM instance creation description)
+                    "InstanceType": "S1.SMALL1",    // CVM instance type
+                    "ImageId": "img-m4q71qnf",      // CVM image ID (to be replaced)
+                    "VirtualPrivateCloud": {        // CVM network configuration (optional)
+                        "VpcId": "vpc-cg18la4l",             // VpcId (to be replaced)
+                        "SubnetId": "subnet-8axej2jc"           // SubnetId (to be replaced)
                     },
-                    "SystemDisk": {                 // CVM 系统盘配置
+                    "SystemDisk": {                 // CVM system disk configuration
                         "DiskType": "CLOUD_BASIC",
                         "DiskSize": 50
                     },
-                    "DataDisks": [                  // CVM 数据盘配置
+                    "DataDisks": [                  // CVM data disk configuration
                         {
                             "DiskType": "CLOUD_BASIC",
                             "DiskSize": 50
@@ -63,16 +63,16 @@ The job configuration of Batch is provided in JSON format as described below. Th
                     ]
                 }
             },
-            "RedirectInfo": {       // 标准输出重定向配置           
-                "StdoutRedirectPath": "cos://dondonbatchv5- 1251783334.cosgz.myqcloud.com/logs/",  // 标准输出（需替换）
-                "StderrRedirectPath": "cos://dondonbatchv5-1251783334.cosgz.myqcloud.com/logs/"    // 标准错误（需替换）
+            "RedirectInfo": {       // Configuration of standard output redirection           
+                "StdoutRedirectPath": "cos://dondonbatchv5- 1251783334.cosgz.myqcloud.com/logs/",  // Standard output (to be replaced)
+                "StderrRedirectPath": "cos://dondonbatchv5-1251783334.cosgz.myqcloud.com/logs/"    // Standard error (to be replaced)
             },
-            "MaxRetryCount": 1,         // 最大重试数目
-            "Authentications": [        // 鉴权相关信息（选填，访问非本人COS场景使用）
+            "MaxRetryCount": 1,         // Maximum number of retries
+            "Authentications": [        // Authentication information (optional, for use in case of COS of others)
                 {
-                    "Scene": "COS",     // 场景（当前是 COS）
-                    "SecretId": "***",  // SecretId（需替换）
-                    "SecretKey": "***"  // SecretKey（需替换）
+                    "Scene": "COS",     // Scenarios (COS currently)
+                    "SecretId": "***",  // SecretId (to be replaced)
+                    "SecretKey": "***"  // SecretKey (to be replaced)
                 }
             ]
         }
