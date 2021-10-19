@@ -5,9 +5,10 @@
 
 ## この機能のプラットフォームのサポート
 
-| iOS | Android | Mac OS | Windows  | Web端末|
+| iOS | Android | Mac OS | Windows  |Electron  | Web端末|
 |:-------:|:-------:|:-------:|:-------:|:-------:|
-|     ×  |    ×    |    &#10003;   |    &#10003;    |&#10003;    |  ×   |
+|     ×  |    ×    |    &#10003;   |    &#10003;    |&#10003;    |  &#10003;（[Web 端](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-23-advanced-support-detection.html)）   |
+
 
 ## カメラテスト
 
