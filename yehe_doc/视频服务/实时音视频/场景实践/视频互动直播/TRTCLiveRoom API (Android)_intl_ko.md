@@ -1,155 +1,155 @@
-TRTCLiveRoom은 Tencent Cloud의 TRTC와 IM 서비스를 기반으로 구성되며, 다음 기능을 지원합니다.
-- 호스트가 신규 라이브 룸을 생성하면 시청자가 라이브 룸에 입장해 시청
-- 호스트와 시청자가 비디오의 마이크를 연결해 소통 가능
-- 서로 다른 두 라이브 룸간에 호스트 PK 연결
-- 다양한 텍스트 메시지 및 사용자 정의 메시지 지원, 사용자 정의 메시지를 이용해 댓글 자막, 좋아요, 선물 기능 구현 가능
+TRTCLiveRoom은 Tencent Real-Time Communication(TRTC)과 Instant Messaging(IM)을 기반으로 하며, 다음 기능을 지원합니다.
+- 호스트가 신규 라이브 룸을 생성하면 시청자가 라이브 룸에 입장해 시청.
+- 호스트와 시청자가 비디오의 마이크를 연결하여 소통 진행.
+- 서로 다른 두 라이브 룸 사이의 호스트 PK 인터랙션.
+- 다양한 텍스트 메시지 및 사용자 정의 메시지 지원. 사용자 정의 메시지를 통한 댓글 자막, 좋아요, 선물 기능 구현.
 
-TRTCLiveRoom는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [비디오 마이크 연결 라이브 방송(Android）](https://intl.cloud.tencent.com/document/product/647/36061)을 참조하십시오.
-- TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 저딜레이 라이브 방송 모듈로 사용합니다.
-- IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)의 AVChatroom을 이용해 라이브 방송 채팅방 기능을 구현하고, IM 메시지를 통해 호스트 간의 마이크 연결 프로세스를 연결합니다.
+TRTCLiveRoom는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [비디오 마이크 연결 라이브 방송(Android)](https://intl.cloud.tencent.com/document/product/647/36061)을 참고하십시오.
+- TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647/34615)를 저지연 라이브 방송 컴포넌트로 사용합니다.
+- IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047/33996)의 AVChatroom을 이용해 라이브 방송 채팅방 기능을 구현하고, IM 메시지를 통해 호스트 간의 마이크 연결 프로세스를 연결합니다.
 
-
-<h2 id="TRTCLiveRoom">TRTCLiveRoom API 개요</h2>
+[](id:TRTCLiveRoom)
+## TRTCLiveRoom API 개요
 
 ### SDK 기본 함수
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [sharedInstance](#sharedinstance) | 단일 항목 객체 획득 |
-| [destroySharedInstance](#destroysharedinstance) | 단일 항목 객체 폐기 |
-| [setDelegate](#setdelegate) | 이벤트 콜백 설정|
-| [setDelegateHandler](#setdelegatehandler) | 이벤트 콜백이 존재하는 스레드 설정 |
-| [login](#login) | 로그인|
-| [logout](#logout) | 로그아웃 |
-| [setSelfProfile](#setselfprofile) | 개인 정보 수정 |
+| [sharedInstance](#sharedinstance)               | 컴포넌트 싱글톤 가져오기.           |
+| [destroySharedInstance](#destroysharedinstance) | 컴포넌트 싱글톤 폐기.           |
+| [setDelegate](#setdelegate) | 이벤트 콜백 설정.|
+| [setDelegateHandler](#setdelegatehandler) | 이벤트 콜백이 속한 스레드 설정. |
+| [login](#login) | 로그인.|
+| [logout](#logout) | 로그아웃. |
+| [setSelfProfile](#setselfprofile) | 개인 프로필 정보 수정.|
 
-### 방 관련 인터페이스 함수
+### 방 관련 API
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [createRoom](#createroom) | 방(호스트 호출) 생성. 방이 존재하지 않는 경우 시스템에서 자동으로 새로운 방 생성 |
-| [destroyRoom](#destroyroom) | 방 폐기(호스트 호출) |
-| [enterRoom](#enterroom) | 방 입장(시청자 호출) |
-| [exitRoom](#exitroom) | 방 퇴장(시청자 호출) |
-| [getRoomInfos](#getroominfos) | 방 리스트의 상세 정보 획득 |
-| [getAnchorList](#getanchorlist) | 방 안의 모든 호스트 리스트 획득, enterRoom() 성공 후 호출해야만 유효 |
-| [getAudienceList](#getaudiencelist) | 방 안의 모든 시청자 정보 획득, enterRoom() 성공 후 호출해야만 유효 |
+| [createRoom](#createroom) | 방(호스트 호출) 생성. 방이 존재하지 않는 경우 시스템에서 자동으로 새로운 방 생성. |
+| [destroyRoom](#destroyroom) | 방 폐기(호스트 호출). |
+| [enterRoom](#enterroom) | 방 입장(시청자 호출). |
+| [exitRoom](#exitroom) | 방 퇴장(시청자 호출). |
+| [getRoomInfos](#getroominfos) | 방 리스트의 상세 정보 획득. |
+| [getAnchorList](#getanchorlist) | 방 안의 모든 호스트 리스트 획득, enterRoom() 성공 후 호출해야만 유효. |
+| [getAudienceList](#getaudiencelist) | 방 안의 모든 시청자 정보 획득, enterRoom() 성공 후 호출해야만 유효. |
 
-### 푸시/풀 스트림 관련 인터페이스 함수
+### 푸시/풀 스트림 관련 API
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [startCameraPreview](#startcamerapreview) | 로컬 비디오 화면 미리보기 시작 |
-| [stopCameraPreview](#stopcamerapreview) | 로컬 비디오 수집 및 미리보기 종료 |
-| [startPublish](#startpublish) | 라이브 방송 시작(푸시 스트림) |
-| [stopPublish](#stoppublish) | 라이브 방송 중단(푸시 스트림) |
-| [startPlay](#startplay) | 원격 비디오 화면 재생. 일반 시청 및 마이크 연결 시나리오에서 호출 가능 |
-| [stopPlay](#stopplay) | 원격 비디오 화면 렌더링 중단 |
+| [startCameraPreview](#startcamerapreview) | 로컬 비디오 화면 미리보기 시작. |
+| [stopCameraPreview](#stopcamerapreview) | 로컬 비디오 수집 및 미리보기 종료. |
+| [startPublish](#startpublish) | 라이브 방송 시작(푸시 스트림). |
+| [stopPublish](#stoppublish) | 라이브 방송 중단(푸시 스트림). |
+| [startPlay](#startplay) | 원격 비디오 화면 재생. 일반 시청 및 마이크 연결 시나리오에서 호출 가능. |
+| [stopPlay](#stopplay) | 원격 비디오 화면 렌더링 중단. |
 
 ### 호스트와 시청자 마이크 연결
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [requestJoinAnchor](#requestjoinanchor) | 시청자 마이크 연결 요청 |
-| [responseJoinAnchor](#responsejoinanchor) | 호스트가 마이크 연결 요청 처리 |
-| [kickoutJoinAnchor](#kickoutjoinanchor) | 호스트가 시청자 마이크 연결 강제 해제 |
+| [requestJoinAnchor](#requestjoinanchor) | 시청자 마이크 연결 요청. |
+| [responseJoinAnchor](#responsejoinanchor) | 호스트가 마이크 연결 요청 처리. |
+| [kickoutJoinAnchor](#kickoutjoinanchor) | 호스트가 시청자 마이크 연결 강제 해제. |
 
 ### 호스트 크로스 룸 PK
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [requestRoomPK](#requestroompk) | 호스트가 크로스 룸 PK 요청|
-| [responseRoomPK](#responseroompk) | 호스트가 크로스 룸 PK 요청에 응답 |
-| [quitRoomPK](#quitroompk) | 크로스 룸 PK 퇴장|
+| [requestRoomPK](#requestroompk) | 호스트가 크로스 룸 PK 요청.|
+| [responseRoomPK](#responseroompk) | 호스트가 크로스 룸 PK 요청에 응답. |
+| [quitRoomPK](#quitroompk) | 크로스 룸 PK 퇴장.|
 
-### 멀티미디어 제어 관련 인터페이스 함수
+### 멀티미디어 제어 관련 API
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [switchCamera](#switchcamera) | 전면/후면 카메라 전환 |
-| [setMirror](#setmirror) | 미러 이미지 표시 여부 설정 |
-| [muteLocalAudio](#mutelocalaudio) | 로컬 오디오 음소거 |
-| [muteRemoteAudio](#muteremoteaudio) | 원격 오디오 음소거 |
-| [muteAllRemoteAudio](#muteallremoteaudio) | 모든 원격 오디오 음소거|
+| [switchCamera](#switchcamera) | 전면/후면 카메라 전환. |
+| [setMirror](#setmirror) | 미러 이미지 표시 여부 설정. |
+| [muteLocalAudio](#mutelocalaudio) | 로컬 오디오 음소거. |
+| [muteRemoteAudio](#muteremoteaudio) | 원격 오디오 음소거. |
+| [muteAllRemoteAudio](#muteallremoteaudio) | 모든 원격 오디오 음소거.|
 
-### 배경 음악 음향 효과 관련 인터페이스 함수
+### 배경 음악 음향 효과 관련 API
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](#trtcaudioeffectmanagerapi) 획득 |
+| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html#interfacecom_1_1tencent_1_1liteav_1_1audio_1_1TXAudioEffectManager) 가져오기.|
 
-### 뷰티 필터 관련 인터페이스 함수
+### 뷰티 필터 관련 API
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [getBeautyManager](#getbeautymanager) | 뷰티 필터 관리 객체 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager) 획득 |
+| [getBeautyManager](#getbeautymanager) | 뷰티 필터 관리 객체 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager) 가져오기.|
 
-### 메시지 발송 관련 인터페이스 함수
+### 메시지 발송 관련 API
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [sendRoomTextMsg](#sendroomtextmsg) | 방 안에서 텍스트 메시지 발송, 일반적으로 댓글 자막 채팅에 사용 |
-| [sendRoomCustomMsg](#sendroomcustommsg) | 사용자 정의 텍스트 메시지 발송 |
+| [sendRoomTextMsg](#sendroomtextmsg) | 방 안에서 텍스트 메시지 발송, 일반적으로 댓글 자막 채팅에 사용. |
+| [sendRoomCustomMsg](#sendroomcustommsg) | 사용자 정의 텍스트 메시지 발송. |
 
-### 디버깅 관련 인터페이스 함수
+### 디버깅 관련 API
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [showVideoDebugLog](#showvideodebuglog) | 인터페이스에 debug 정보 표시 여부 |
+| [showVideoDebugLog](#showvideodebuglog) | 인터페이스에 debug 정보 표시 여부. |
 
 <h2 id="TRTCLiveRoomDelegate">TRTCLiveRoomDelegate API 개요</h2>
 
-### 범용 이벤트 콜백
+### 일반적인 이벤트 콜백
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [onError](#onerror) | 오류 콜백 |
-| [onWarning](#onwarning) | 경고 콜백 |
-| [onDebugLog](#ondebuglog) | Log 콜백 |
+| [onError](#onerror) | 오류 콜백.|
+| [onWarning](#onwarning) | 경고 콜백. |
+| [onDebugLog](#ondebuglog) | Log 콜백. |
 
 ### 방 이벤트 콜백
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [onRoomDestroy](#onroomdestroy) | 방 폐기 콜백 |
-| [onRoomInfoChange](#onroominfochange) | 라이브 방송 방 정보 변경 콜백 |
+| [onRoomDestroy](#onroomdestroy) | 방 폐기 콜백. |
+| [onRoomInfoChange](#onroominfochange) | 라이브 방송 방 정보 변경 콜백. |
 
 ### 호스트와 시청자 방 입장/퇴장 이벤트 콜백
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [onAnchorEnter](#onanchorenter) | 새로운 호스트 방 입장 알림 수신 |
-| [onAnchorExit](#onanchorexit) | 호스트 퇴장 알림 수신 |
-| [onAudienceEnter](#onaudienceenter) | 시청자 입장 알림 수신 |
-| [onAudienceExit](#onaudienceexit) | 시청자 퇴장 알림 수신 |
+| [onAnchorEnter](#onanchorenter) | 새로운 호스트 방 입장 알림 수신. |
+| [onAnchorExit](#onanchorexit) | 호스트 퇴장 알림 수신. |
+| [onAudienceEnter](#onaudienceenter) | 시청자 입장 알림 수신. |
+| [onAudienceExit](#onaudienceexit) | 시청자 퇴장 알림 수신. |
 
 ### 호스트와 시청자 마이크 연결 이벤트 콜백
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [onRequestJoinAnchor](#onrequestjoinanchor) | 호스트가 시청자의 마이크 연결 요청을 수신할 때의 콜백 |
-| [onKickoutJoinAnchor](#onkickoutjoinanchor) | 마이크가 연결된 시청자가 마이크 연결 강제 해제 알림 수신 |
+| [onRequestJoinAnchor](#onrequestjoinanchor) | 호스트가 시청자의 마이크 연결 요청을 수신할 때의 콜백. |
+| [onKickoutJoinAnchor](#onkickoutjoinanchor) | 마이크가 연결된 시청자가 마이크 연결 강제 해제 알림 수신. |
 
 ### 호스트 PK 이벤트 콜백
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [onRequestRoomPK](#onrequestroompk) | 크로스 룸 PK 요청 알림 수신|
-| [onQuitRoomPK](#onquitroompk) | 크로스 룸 PK 종료 알림 수신 |
+| [onRequestRoomPK](#onrequestroompk) | 크로스 룸 PK 요청 알림 수신.|
+| [onQuitRoomPK](#onquitroompk) | 크로스 룸 PK 종료 알림 수신. |
 
 ### 메시지 이벤트 콜백
 
-| API | 설명 |
+| API                 | 설명       |
 |-----|-----|
-| [onRecvRoomTextMsg](#onrecvroomtextmsg) | 텍스트 메시지 수신 |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | 사용자 정의 메시지 수신 |
+| [onRecvRoomTextMsg](#onrecvroomtextmsg) | 텍스트 메시지 수신. |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | 사용자 정의 메시지 수신. |
 
 ## SDK 기본 함수
 
-<span id="sharedInstance"></span>
+[](id:sharedInstance)
 ### sharedInstance
 
-[TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/36061) 단일 항목 객체를 가져옵니다.
+[TRTCLiveRoom](https://cloud.tencent.com/document/product/647/43182) 컴포넌트 싱글톤 가져오기.
 ```java
  public static synchronized TRTCLiveRoom sharedInstance(Context context);
 ```
@@ -157,18 +157,18 @@ TRTCLiveRoom는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드
 
 | 매개변수 | 유형 | 의미 |
 |-----|-----|-----|
-| context | Context | Android 콘텍스트이며, 내부가 ApplicationContext로 전환되어 시스템 API 호출에 사용됩니다. |
+| context | Context | Android 컨텍스트로, 내부가 ApplicationContext로 전환되어 시스템 API 호출에 사용됩니다. |
 
    
 
 ### destroySharedInstance
 
-[TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/36061) 단일 항목 객체를 폐기합니다.
+[TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/36061) 컴포넌트 싱글톤 폐기.
 >?인스턴스 폐기 후에는 외부에 캐시된 TRTCLiveRoom 인스턴스를 다시 사용할 수 없으며, 다시 [sharedInstance](#sharedInstance)를 호출해 새로운 인스턴스를 획득해야 합니다.
 
 ```java
 public static void destroySharedInstance();
-```   
+```
 
 ### setDelegate
 
@@ -181,13 +181,13 @@ public abstract void setDelegate(TRTCLiveRoomDelegate delegate);
 
 ### setDelegateHandler
 
-이벤트 콜백이 존재하는 스레드를 설정합니다.
+이벤트 콜백이 속한 스레드를 설정합니다.
 ```java
 public abstract void setDelegateHandler(Handler handler);
 ```
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | handler | Handler | TRTCLiveRoom 상의 다양한 상태 알림 콜백은 해당 handler를 통해 통지합니다. setDelegate와 함께 사용하지 마십시오. |
 
@@ -196,21 +196,24 @@ public abstract void setDelegateHandler(Handler handler);
 ### login
 
 로그인.
-```java
+
+<dx-codeblock>
+::: java java
 public abstract void login(int sdkAppId,
  String userId, String userSig,
  TRTCLiveRoomDef.TRTCLiveRoomConfig config, 
  TRTCLiveRoomCallback.ActionCallback callback);
-```
+:::
+</dx-codeblock>
 
-매개변수는 다음과 같습니다.
+매개변수 리스트
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | sdkAppId | int | TRTC 콘솔>[애플리케이션 관리(https://console.cloud.tencent.com/trtc/app)>애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다. |
-| userId  | String | 현재 사용자 ID, 문자열 유형은 영어 알파벳(a~z, A~Z), 숫자(0~9), 대시부호(-), 언더바(\_)만 허용됩니다. |
-| userSig | String | Tencent Cloud가 설계한 일종의 보안 서명으로, 취득 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참조하십시오. |
-| config | TRTCLiveRoomConfig | 전체 설정 정보입니다. 로그인 시 초기화하십시오. 로그인 후에는 변경할 수 없습니다.<ul style="margin:0;"><li>useCDNFirst 속성: 시청자의 시청 방식을 설정하는 데 사용합니다. true는 일반 시청자가 CDN을 통해 시청하도록 설정하며, 요금이 저렴하지만 딜레이가 비교적 많이 발생합니다. false는 일반 시청자가 저딜레이를 통해 시청하도록 설정하며, 요금이 CDN과 마이크 연결 요금의 중간 정도지만 딜레이가 1초 이내로 제어됩니다.</li><li>CDNPlayDomain 속성: useCDNFirst를 true로 설정해야만 적용됩니다. CDN을 시청하는 재생 도메인으로 지정하는 데 사용되며, 라이브 방송 콘솔>[<a href="https://console.cloud.tencent.com/live/domainmanage">도메인 관리</a>] 페이지에서 설정할 수 있습니다.</li></ul> |
+| userId   | String | 현재 사용자 ID.입니다. 영어 알파벳(a-z, A-Z), 숫자(0~9), 하이픈(-), 언더바(\_)의 문자열로 구성합니다. |
+| userSig  | String                                    | Tencent Cloud가 설계한 일종의 보안 서명으로, 취득 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
+| config | TRTCLiveRoomConfig | 전체 설정 정보입니다. 로그인 시 초기화하십시오. 로그인 후에는 변경할 수 없습니다.<ul style="margin:0;"><li>useCDNFirst 속성: 시청자의 시청 방식을 설정하는 데 사용합니다. true는 일반 시청자가 CDN을 통해 시청하도록 설정하며, 요금이 저렴하지만 딜레이가 비교적 많이 발생합니다. false는 일반 시청자가 저지연를 통해 시청하도록 설정하며, 요금이 CDN과 마이크 연결 요금의 중간 정도지만 딜레이가 1초 이내로 제어됩니다.</li><li>CDNPlayDomain 속성: useCDNFirst를 true로 설정해야만 적용됩니다. CDN을 시청하는 재생 도메인으로 지정하는 데 사용되며, 라이브 방송 콘솔>[<a href="https://console.cloud.tencent.com/live/domainmanage">도메인 관리</a>] 페이지에서 설정할 수 있습니다.</li></ul> |
 | callback | ActionCallback | 로그인 콜백이며, 성공 시 code는 0입니다. |
 
    
@@ -223,9 +226,9 @@ public abstract void logout(TRTCLiveRoomCallback.ActionCallback callback);
 ```
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| callback | ActionCallback | 로그아웃 콜백이며, 성공 시code는 0입니다. |
+| callback | ActionCallback | 로그아웃 콜백이며, 성공 시 code는 0입니다. |
 
    
 
@@ -238,26 +241,26 @@ public abstract void setSelfProfile(String userName, String avatarURL, TRTCLiveR
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수      | 유형   | 의미       |
 |-----|-----|-----|
-| name | String | 닉네임 |
-| avatarURL | String | 프로필 사진 주소 |
-| callback | ActionCallback | 개인 정보 설정 콜백이며, 성공 시 code는 0입니다. |
+| userName  | String         | 닉네임.                              |
+| avatarURL | String         | 프로필 사진 주소.                          |
+| callback  | ActionCallback | 개인 정보 설정 콜백이며, 성공 시 code는 0입니다. |
 
    
 
 
-## 방 관련 인터페이스 함수
+## 방 관련 API
 ### createRoom
 
-방(호스트 호출)을 생성합니다.
+방 생성(호스트 호출).
 ```java
 public abstract void createRoom(int roomId, TRTCLiveRoomDef.TRTCCreateRoomParam roomParam, TRTCLiveRoomCallback.ActionCallback callback);
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | roomId | int | 방 식별 번호이며, 귀하가 할당하고 통합 관리합니다. 여러 개의 roomID를 1개의 라이브 룸 리스트로 통합할 수 있으며, Tencent Cloud는 현재 라이브 룸 리스트 관리 서비스를 제공하지 않으므로 직접 관리하시기 바랍니다. |
 | roomParam | TRTCCreateRoomParam | 방 정보입니다. 방 이름, 썸네일 정보 등과 같이 방을 설명하는 데 사용됩니다. 방 리스트 및 방 정보가 귀하의 서버에서 직접 관리되고 있다면 해당 매개변수는 생략할 수 있습니다. |
@@ -279,10 +282,10 @@ public abstract void destroyRoom(TRTCLiveRoomCallback.ActionCallback callback);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | callback | ActionCallback | 방 폐기 결과 콜백이며, 성공 시 code는 0입니다. |
-   
+
 
 ### enterRoom
 
@@ -293,9 +296,9 @@ public abstract void enterRoom(int roomId, TRTCLiveRoomCallback.ActionCallback c
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수   | 유형 | 의미       |
 |-----|-----|-----|
-| roomId | int | 방 식별 번호 |
+| roomId   | int            | 방 식별 번호.                            |
 | callback | ActionCallback | 방 입장 결과 콜백이며, 성공 시 code는 0입니다. |
 
 
@@ -317,7 +320,7 @@ public abstract void exitRoom(TRTCLiveRoomCallback.ActionCallback callback);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | callback | ActionCallback | 방 퇴장 결과 콜백이며, 성공 시 code는 0입니다. |
 
@@ -335,11 +338,11 @@ public abstract void getRoomInfos(List<Integer> roomIdList, TRTCLiveRoomCallback
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| roomIdList | List&lt;Integer&gt; | 방 번호 리스트 |
-| callback | RoomInfoCallback | 방 상세 정보 콜백 |
-   
+| roomIdList | List&lt;Integer&gt; | 방 번호 리스트.       |
+| callback | RoomInfoCallback | 방 상세 정보 콜백. |
+
 
 ### getAnchorList
 
@@ -350,9 +353,9 @@ public abstract void getAnchorList(TRTCLiveRoomCallback.UserListCallback callbac
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| callback | UserListCallback | 사용자 상세 정보 콜백 |
+| callback | UserListCallback | 사용자 상세 정보 콜백. |
 
    
 
@@ -365,13 +368,13 @@ public abstract void getAudienceList(TRTCLiveRoomCallback.UserListCallback callb
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| callback | UserListCallback | 사용자 상세 정보 콜백 |
+| callback | UserListCallback | 사용자 상세 정보 콜백. |
 
    
 
-## 푸시/풀 스트림 관련 인터페이스 함수
+## 푸시/풀 스트림 관련 API
 ### startCameraPreview
 
 로컬 비디오 화면 미리보기를 시작합니다.
@@ -381,11 +384,11 @@ public abstract void startCameraPreview(boolean isFront, TXCloudVideoView view, 
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| isFront | boolean | true: 전면 카메라, false: 후면 카메라 |
-| view | TXCloudVideoView | 비디오 모니터를 탑재한 컨트롤러 |
-| callback | ActionCallback | 작업 콜백 |
+| isFront | boolean | true: 전면 카메라, false: 후면 카메라. |
+| view | TXCloudVideoView | 비디오 모니터를 탑재한 컨트롤러. |
+| callback | ActionCallback | 작업 콜백. |
 
    
 
@@ -410,11 +413,11 @@ public abstract void startPublish(String streamId, TRTCLiveRoomCallback.ActionCa
 ```
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | streamId | String | 라이브 방송 CDN의 streamId를 바인딩하는 데 사용. 시청자가 라이브 방송 CDN을 통해 시청하도록 설정하고 싶은 경우 현재 호스트의 라이브 방송 streamId를 지정해야 합니다. |
-| callback | ActionCallback | 작업 콜백 |
-   
+| callback | ActionCallback | 작업 콜백. |
+
 
 ### stopPublish
 
@@ -429,9 +432,9 @@ public abstract void stopPublish(TRTCLiveRoomCallback.ActionCallback callback);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| callback | ActionCallback | 작업 콜백 |
+| callback | ActionCallback | 작업 콜백. |
 
 
 
@@ -446,11 +449,11 @@ public abstract void startPlay(String userId, TXCloudVideoView view, TRTCLiveRoo
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userId | String | 시청하는 사용자 id |
-| view | TXCloudVideoView | 비디오 화면 view 컨트롤러 |
-| callback | ActionCallback | 작업 콜백 |
+| userId | String | 시청하는 사용자 id. |
+| view | TXCloudVideoView | 비디오 화면 view 컨트롤러. |
+| callback | ActionCallback | 작업 콜백. |
 
 **일반 시청 시나리오**
 - 라이브 룸 리스트에 호스트의 userId 정보가 포함되어 있는 경우, 시청자 측에서 직접 `enterRoom()` 성공 후 `startPlay(userId)`를 호출하여 호스트의 화면을 재생할 수 있습니다.
@@ -470,26 +473,27 @@ public abstract void stopPlay(String userId, TRTCLiveRoomCallback.ActionCallback
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userId | String | 상대방 사용자 정보 |
-| callback | ActionCallback | 작업 콜백 |
-   
+| userId | String | 상대방 사용자 정보. |
+| callback | ActionCallback | 작업 콜백. |
+
 
 ## 호스트와 시청자 마이크 연결
 ### requestJoinAnchor
 
 시청자가 마이크 연결을 요청합니다.
 ```java
-public abstract void requestJoinAnchor(String reason, TRTCLiveRoomCallback.ActionCallback callback);
+public abstract void requestJoinAnchor(String reason, int timeout, TRTCLiveRoomCallback.ActionCallback callback);
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| reason | String | 마이크 연결 이유 설명 |
-| responseCallback | ActionCallback | 호스트 응답 콜백 |
+| reason | String | 마이크 연결 이유 설명. |
+| timeout | int | 타임 아웃 시간. |
+| callback | ActionCallback | 호스트 응답 콜백.           |
 
 
 호스트와 시청자 마이크 연결 프로세스는 다음과 같습니다.
@@ -514,12 +518,12 @@ public abstract void responseJoinAnchor(String userId, boolean agree, String rea
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userId | String | 시청자 ID |
-| agree | boolean | true: 동의, false: 거절 |
-| reason | String | 마이크 연결 동의/거절 이유 설명 |
-   
+| userId | String | 시청자 ID. |
+| agree | boolean | true: 동의, false: 거절. |
+| reason | String | 마이크 연결 동의/거절 이유 설명. |
+
 
 ### kickoutJoinAnchor
 
@@ -531,11 +535,11 @@ public abstract void kickoutJoinAnchor(String userId, TRTCLiveRoomCallback.Actio
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userId | String | 마이크가 연결된 시청자 ID |
-| callback | ActionCallback | 작업 콜백 |
-  
+| userId | String | 마이크가 연결된 시청자 ID. |
+| callback | ActionCallback | 작업 콜백. |
+
 
 
 ## 호스트 크로스 룸 PK
@@ -548,11 +552,11 @@ public abstract void requestRoomPK(int roomId, String userId, TRTCLiveRoomCallba
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| roomId | int | 초대된 방 ID |
-| userId | String | 초대된 호스트 ID |
-| responseCallback | ActionCallback | 크로스 룸 PK 요청 결과 콜백 |
+| roomId | int | 초대된 방 ID. |
+| userId | String | 초대된 호스트 ID. |
+| callback | ActionCallback | 크로스 룸 PK 요청 결과 콜백. |
 
 호스트와 호스트 사이에 크로스 룸 PK를 진행할 수 있으며, 두 정식 라이브 방송의 호스트 A와 B 사이의 크로스 룸 PK 프로세스는 다음과 같습니다.
 1. [호스트 A] `requestRoomPK()`을 호출하여 호스트 B에게 마이크 연결을 요청합니다.
@@ -573,12 +577,12 @@ public abstract void responseRoomPK(String userId, boolean agree, String reason)
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userId | String | PK를 요청한 호스트 ID |
-| agree | boolean | true: 동의, false: 거절 |
-| reason | String | PK 동의/거절 이유 설명 |
-   
+| userId | String | PK를 요청한 호스트 ID. |
+| agree | boolean | true: 동의, false: 거절. |
+| reason | String | PK 동의/거절 이유 설명. |
+
 
 ### quitRoomPK
 
@@ -589,12 +593,12 @@ public abstract void quitRoomPK(TRTCLiveRoomCallback.ActionCallback callback);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| callback | ActionCallback | 작업 콜백 |
-   
+| callback | ActionCallback | 작업 콜백. |
 
-## 멀티미디어 제어 관련 인터페이스 함수
+
+## 멀티미디어 제어 관련 API
 ### switchCamera
 
 전면/후면 카메라를 전환합니다.
@@ -613,9 +617,9 @@ public abstract void setMirror(boolean isMirror);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| isMirror | boolean | 미러 이미지 활성화/비활성화 |
+| isMirror | boolean | 미러 이미지 활성화/비활성화. |
 
    
 
@@ -628,9 +632,9 @@ public abstract void muteLocalAudio(boolean mute);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| mute | boolean | true: 음소거 켜기, false: 음소거 끄기|
+| mute | boolean | true: 음소거 켜기, false: 음소거 끄기.|
 
    
 
@@ -643,10 +647,10 @@ public abstract void muteRemoteAudio(String userId, boolean mute);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userId | String | 원격 사용자 ID |
-| mute | boolean | true: 음소거 켜기, false: 음소거 끄기|
+| userId | String | 원격 사용자 ID. |
+| mute | boolean | true: 음소거 켜기, false: 음소거 끄기.|
 
    
 
@@ -659,72 +663,72 @@ public abstract void muteAllRemoteAudio(boolean mute);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| mute | boolean | true: 음소거 켜기, false: 음소거 끄기|
+| mute | boolean | true: 음소거 켜기, false: 음소거 끄기.|
 
    
 
-## 배경 음악 음향 효과 관련 인터페이스 함수
+## 배경 음악 음향 효과 관련 API
 ### getAudioEffectManager
 
-배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)를 가져옵니다.
+배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 가져오기.
 ```java
 public abstract TXAudioEffectManager getAudioEffectManager();
 ```
-   
 
-## 뷰티 필터 관련 인터페이스 함수
+
+## 뷰티 필터 관련 API
 ### getBeautyManager
 
-뷰티 필터 관리 객체 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)를 가져옵니다.
+뷰티 필터 관리 객체 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)를 가져옵니다.
 ```java
 public abstract TXBeautyManager getBeautyManager();
 ```
 
 뷰티 필터 관리를 통해 다음 기능을 사용할 수 있습니다.
-- “뷰티 필터 스타일”, “미백”, “안색 보정”, “눈 크게”，“갸름하게”，“V라인”，“턱 조정”, “얼굴 짧게”, “코 작게”, “반짝이는 눈”, “치아 미백”, “아래 눈꺼풀 조정”, “주름 제거”, “팔자 주름 제거” 등 뷰티 효과를 설정할 수 있습니다.
-- “헤어 라인”, “눈 간격”, “눈 각도”, “입 모양”, “콧볼”, “코 위치”, “입술 두께”, “얼굴형”을 조정할 수 있습니다.
+- '뷰티 필터 스타일', '미백', '안색 보정', '눈 크게', '갸름하게', 'V라인', '턱 조정', '얼굴 짧게', '코 작게', '반짝이는 눈', '치아 미백', '아래 눈꺼풀 조정', '주름 제거', '팔자 주름 제거' 등 뷰티 효과를 설정할 수 있습니다.
+- '헤어 라인', '눈 간격', '눈 각도', '입 모양', '콧볼', '코 위치', '입술 두께', '얼굴형'을 조정할 수 있습니다.
 - 얼굴 효과(소재) 등 동적 효과를 설정할 수 있습니다.
 - 메이크업 효과를 추가합니다.
 - 손 동작을 인식합니다.
 
 
-## 메시지 발송 관련 인터페이스 함수
+## 메시지 발송 관련 API
 ### sendRoomTextMsg
 
-방 안에서 텍스트 메시지를 발송합니다. 일반적으로 댓글 자막 채팅에 사용합니다.
+방 안에서 텍스트 메시지 발송, 일반적으로 댓글 자막 채팅에 사용.
 ```java
 public abstract void sendRoomTextMsg(String message, TRTCLiveRoomCallback.ActionCallback callback);
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수     | 유형     | 의미             |
 |-----|-----|-----|
-| message | String | 텍스트 메시지 |
-| callback | ActionCallback | 발송 결과 콜백 |
+| message  | String         | 텍스트 메시지.     |
+| callback | ActionCallback | 발송 결과 콜백. |
 
    
 
 ### sendRoomCustomMsg
 
-사용자 정의 텍스트 메시지를 발송합니다.
+사용자 정의 텍스트 메시지 발송.
 ```java
 public abstract void sendRoomCustomMsg(String cmd, String message, TRTCLiveRoomCallback.ActionCallback callback);
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| cmd | String | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
-| message | String | 텍스트 메시지 |
-| callback | ActionCallback | 발송 결과 콜백 |
+| cmd      | String         | 명령어. 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
+| message  | String         | 텍스트 메시지.     |
+| callback | ActionCallback | 발송 결과 콜백. |
 
    
 
-## 디버깅 관련 인터페이스 함수
+## 디버깅 관련 API
 ### showVideoDebugLog
 
 인터페이스에 debug 정보 표시 여부를 설정합니다.
@@ -734,18 +738,18 @@ public abstract void showVideoDebugLog(boolean isShow);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| isShow | boolean | Debug 정보 표시/표시하지 않음 |
+| isShow | boolean | Debug 정보 표시/표시하지 않음. |
 
    
 
 ## TRTCLiveRoomDelegate 이벤트 콜백
 
-## 범용 이벤트 콜백
+## 일반적인 이벤트 콜백
 ### onError
 
-오류 콜백입니다.
+오류 콜백.
 >?SDK가 복구할 수 없는 오류는 반드시 모니터링하고 상황에 따라 적절한 인터페이스를 사용자에게 제시해야 합니다.
 
 ```java
@@ -754,40 +758,40 @@ void onError(int code, String message);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| code | int | 에러 코드 |
-| message | String | 오류 정보 |
-   
+| code    | int    | 오류 코드.   |
+| message | String | 오류 정보. |
+
 
 ### onWarning
 
-경고 콜백입니다.
+경고 콜백.
 ```java
 void onWarning(int code, String message);
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| code | int | 에러 코드 |
-| message | String | 경고 정보 |
+| code    | int    | 오류 코드.   |
+| message | String | 경고 정보. |
 
    
 
 ### onDebugLog
 
-Log 콜백입니다.
+Log 콜백.
 ```java
 void onDebugLog(String message);
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| message | String | 로그 정보 |
+| message | String | 로그 정보. |
 
    
 
@@ -802,9 +806,9 @@ void onRoomDestroy(String roomId);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수   | 유형   | 의미      |
 |-----|-----|-----|
-| roomId | String | 방 ID |
+| roomId | String | 방 ID. |
 
 
 
@@ -819,9 +823,9 @@ void onRoomInfoChange(TRTCLiveRoomDef.TRTCLiveRoomInfo roomInfo);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| roomInfo | TRTCLiveRoomInfo | 방 정보 |
+| roomInfo | TRTCLiveRoomInfo | 방 정보. |
 
    
 
@@ -836,10 +840,10 @@ void onAnchorEnter(String userId);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userId | String | 새로 방에 입장한 호스트 ID |
-   
+| userId | String | 새로 방에 입장한 호스트 ID. |
+
 
 ### onAnchorExit
 
@@ -850,38 +854,38 @@ void onAnchorExit(String userId);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userId | String | 퇴장한 사용자 ID |
-   
+| userId | String | 퇴장한 사용자 ID. |
+
 
 ### onAudienceEnter
 
-시청자가 방 입장 시 알림을 수신합니다.
+시청자 방 입장 공지 수신.
 ```java
 void onAudienceEnter(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo);
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userInfo | TRTCLiveUserInfo | 입장 시청자 정보 |
+| userInfo | TRTCLiveUserInfo | 입장 시청자 정보. |
 
    
 
 ### onAudienceExit
 
-시청자가 방 퇴장 시 알림을 수신합니다.
+시청자 방 퇴장 공지 수신.
 ```java
 void onAudienceExit(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo);
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userInfo | TRTCLiveUserInfo | 퇴장 시청자 정보 |
+| userInfo | TRTCLiveUserInfo | 퇴장 시청자 정보. |
 
    
 
@@ -896,11 +900,11 @@ void onRequestJoinAnchor(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, String reaso
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userInfo | TRTCLiveUserInfo | 마이크 연결을 요청한 시청자 정보 |
-| reason | String | 마이크 연결 이유 설명 |
-| timeout | int | 요청 처리 만료 시간. 상위 레이어에서 해당 시간이 초과하여 처리하지 않은 경우 자동으로 해당 요청 폐기 |
+| userInfo | TRTCLiveUserInfo | 마이크 연결을 요청한 시청자 정보. |
+| reason | String | 마이크 연결 이유 설명. |
+| timeout | int | 요청 처리 만료 시간. 상위 레이어에서 해당 시간이 초과하여 처리하지 않은 경우 자동으로 해당 요청 폐기. |
 
    
 
@@ -910,7 +914,7 @@ void onRequestJoinAnchor(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, String reaso
 ```java
 void onKickoutJoinAnchor();
 ```
-  
+
 
 
 ## 호스트 PK 이벤트 콜백
@@ -923,11 +927,11 @@ void onRequestRoomPK(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, int timeout);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| userInfo | TRTCLiveUserInfo | 크로스 룸 마이크 연결을 요청한 호스트 정보 |
-| timeout | int | 요청 처리 만료 시간 |
-   
+| userInfo | TRTCLiveUserInfo | 크로스 룸 마이크 연결을 요청한 호스트 정보. |
+| timeout | int | 요청 처리 만료 시간. |
+
 
 ### onQuitRoomPK
 
@@ -942,37 +946,37 @@ void onQuitRoomPK();
 ## 메시지 이벤트 콜백
 ### onRecvRoomTextMsg
 
-텍스트 메시지를 수신합니다.
+텍스트 메시지 수신.
 ```java
 void onRecvRoomTextMsg(String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo);
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| message | String | 텍스트 메시지|
-| user | TRTCLiveUserInfo | 발신자 정보 |
+| message | String | 텍스트 메시지.|
+| userInfo | TRTCLiveUserInfo | 발신자 정보.|
 
    
 
 ### onRecvRoomCustomMsg
 
-사용자 정의 메시지를 수신합니다.
+사용자 정의 메시지 수신.
 ```java
 void onRecvRoomCustomMsg(String cmd, String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo);
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | command | String | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
-| message | String | 텍스트 메시지|
-| user | TRTCLiveUserInfo | 발신자 정보 |
+| message | String | 텍스트 메시지.|
+| userInfo | TRTCLiveUserInfo | 발신자 정보. |
 
-   
-<span id="TRTCAudioEffectManager"></span>
+
+[](id:TRTCAudioEffectManager)
 ## TRTCAudioEffectManager
 ### playBGM
 
@@ -983,9 +987,9 @@ void playBGM(String url, int loopTimes, int bgmVol, int micVol, TRTCCloud.BGMNot
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| url | String | 배경 음악 파일 경로 |
+| url | String | 배경 음악 파일 경로. |
 | loopTimes | int | 루프 횟수 |
 | bgmVol | int | BGM 음량 |
 | micVol | int | 수집 음량 |
@@ -1029,7 +1033,7 @@ void setBGMVolume(int volume);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | volume | int | 음량 크기이며, 100으로 표시되면 정상 음량입니다. 0 - 100으로 설정할 수 있으며, 기본값은 100입니다. |
 
@@ -1044,13 +1048,13 @@ int setBGMPosition(int position);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | position | int | 배경 음악 재생 진행 상황으로, 단위는 밀리초(ms)입니다. |
 
 __반환__
 
-0: 성공
+0: 성공.
 
    
 
@@ -1063,7 +1067,7 @@ void setMicVolume(int volume);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | volume | Int | 음량 크기. 0 - 100으로 설정할 수 있으며, 기본값은 100입니다. |
 
@@ -1078,9 +1082,9 @@ void setReverbType(int reverbType);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| reverbType | int | 에코 유형이며, 자세한 내용은 `TRTCCloudDef`의 [TRTC_REVERB_TYPE](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a60ecba31f49f70780e623d24bcfa1a7d) 정의를 참조하십시오. |
+| reverbType | int | 에코 유형이며, 자세한 내용은 `TRTCCloudDef`의 [TRTC_REVERB_TYPE](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a60ecba31f49f70780e623d24bcfa1a7d) 정의를 참고하십시오. |
 
    
 
@@ -1093,9 +1097,9 @@ void setVoiceChangerType(int type);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| type | int | 음성 변조 유형이며, 자세한 내용은 `TRTCCloudDef`의 [TRTC_VOICE_CHANGER_TYPE](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a899e72b3e4a16288e6c2edfd779e3beb) 정의를 참조하십시오. |
+| type | int | 음성 변조 유형이며, 자세한 내용은 `TRTCCloudDef`의 [TRTC_VOICE_CHANGER_TYPE](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a899e72b3e4a16288e6c2edfd779e3beb) 정의를 참고하십시오. |
 
    
 
@@ -1108,12 +1112,12 @@ void playAudioEffect(int effectId, String path, int count, boolean publish, int 
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| effectId | int | 음향 효과 ID |
-| path | String | 음향 효과 경로 |
-| count | int | 루프 횟수 |
-| publish | boolean | 푸시 스트림 여부 / true: 시청자에게 푸시, false: 로컬 미리듣기 |
+| effectId | int | 음향 효과 ID. |
+| path | String | 음향 효과 경로. |
+| count | int | 루프 횟수. |
+| publish | boolean | 푸시 스트림 여부 / true: 시청자에게 푸시, false: 로컬 미리듣기. |
 | volume | int | 음량 크기. 0 - 100으로 설정할 수 있으며, 기본값은 100입니다. |
 
    
@@ -1127,9 +1131,9 @@ void pauseAudioEffect(int effectId);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| effectId | int | 음향 효과 ID |
+| effectId | int | 음향 효과 ID. |
 
    
 
@@ -1142,9 +1146,9 @@ void resumeAudioEffect(int effectId);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| effectId | int | 음향 효과 ID |
+| effectId | int | 음향 효과 ID. |
 
    
 
@@ -1157,9 +1161,9 @@ void stopAudioEffect(int effectId);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| effectId | int | 음향 효과 ID |
+| effectId | int | 음향 효과 ID. |
 
    
 
@@ -1181,9 +1185,9 @@ void setAudioEffectVolume(int effectId, int volume);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
-| effectId | int | 음향 효과 ID |
+| effectId | int | 음향 효과 ID. |
 | volume | int | 음량 크기. 0 - 100으로 설정할 수 있으며, 기본값은 100입니다. |
 
    
@@ -1197,7 +1201,7 @@ void setAllAudioEffectsVolume(int volume);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미 |
+| 매개변수 | 유형   | 의미       |
 |-----|-----|-----|
 | volume | int | 음량 크기. 0 - 100으로 설정할 수 있으며, 기본값은 100입니다. |
 

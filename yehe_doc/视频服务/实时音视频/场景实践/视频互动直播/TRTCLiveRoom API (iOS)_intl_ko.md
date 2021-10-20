@@ -1,14 +1,14 @@
-TRTCLiveRoom은 Tencent Cloud의 TRTC와 IM 서비스를 기반으로 구성되며, 다음 기능을 지원합니다.
+TRTCLiveRoom은 Tencent Real-Time Communication(TRTC)과 Instant Messaging(IM)을 기반으로 하며, 다음 기능을 지원합니다.
 
-- 호스트가 신규 라이브 룸을 생성하면 시청자가 라이브 룸에 입장해 시청
-- 호스트와 시청자가 비디오의 마이크를 연결해 소통 가능
-- 서로 다른 두 라이브 룸간에 호스트 PK 연결
-- 다양한 텍스트 메시지 및 사용자 정의 메시지 지원, 사용자 정의 메시지를 이용해 댓글 자막, 좋아요, 선물 기능 구현 가능
+- 호스트가 신규 라이브 룸을 생성하면 시청자가 라이브 룸에 입장해 시청.
+- 호스트와 시청자가 비디오의 마이크를 연결하여 소통 진행.
+- 서로 다른 두 라이브 룸 사이의 호스트 PK 인터랙션.
+- 다양한 텍스트 메시지 및 사용자 정의 메시지 지원. 사용자 정의 메시지를 통한 댓글 자막, 좋아요, 선물 기능 구현.
 
-TRTCLiveRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [비디오 마이크 연결 라이브 방송(iOS）](https://intl.cloud.tencent.com/document/product/647/36060)을 참조하십시오.
+TRTCLiveRoom는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [비디오 마이크 연결 라이브 방송(iOS）](https://intl.cloud.tencent.com/document/product/647/36060)을 참고하십시오.
 
-- TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 저딜레이 라이브 방송 모듈로 사용합니다.
-- IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)의 AVChatroom을 이용해 라이브 방송 채팅방 기능을 구현하고, IM 메시지를 통해 호스트 간의 마이크 연결 프로세스를 연결합니다.
+- TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647/34615)를 저지연 라이브 방송 컴포넌트로 사용합니다.
+- IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047/33996)의 AVChatroom을 이용해 라이브 방송 채팅방 기능을 구현하고, IM 메시지를 통해 호스트 간의 마이크 연결 프로세스를 연결합니다.
 
 
 
@@ -18,131 +18,131 @@ TRTCLiveRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드
 
 | API                               | 설명           |
 | --------------------------------- | -------------- |
-| [delegate](#delegate)             | 이벤트 콜백 설정 |
-| [login](#login)                   | 로그인         |
-| [logout](#logout)                 | 로그아웃         |
-| [setSelfProfile](#setselfprofile) | 개인 정보 수정 |
+| [delegate](#delegate)             | 이벤트 콜백 설정. |
+| [login](#login)                   | 로그인.         |
+| [logout](#logout)                 | 로그아웃.         |
+| [setSelfProfile](#setselfprofile)               | 개인 정보 수정.           |
 
-### 방 관련 인터페이스 함수
+### 방 관련 API
 
 | API                                 | 설명                                                         |
 | ----------------------------------- | ------------------------------------------------------------ |
-| [createRoom](#createroom)           | 방(호스트 호출) 생성. 방이 존재하지 않는 경우 시스템에서 자동으로 새로운 방을 생성. |
-| [destroyRoom](#destroyroom)         | 방 폐기(호스트 호출)                                       |
-| [enterRoom](#enterroom)             | 방 입장(시청자 호출)                                       |
-| [exitRoom](#exitroom)               | 방 퇴장(시청자 호출)                                       |
-| [getRoomInfos](#getroominfos)       | 방 리스트의 상세 정보 획득                                     |
-| [getAnchorList](#getanchorlist)     | 방 안의 모든 호스트 리스트 획득, enterRoom() 성공 후 호출해야만 유효     |
-| [getAudienceList](#getaudiencelist) | 방 안의 모든 시청자 정보 획득, enterRoom() 성공 후 호출해야만 유효     |
+| [createRoom](#createroom)           | 방 생성(호스트 호출). 방이 없는 경우 시스템에서 자동으로 새로운 방 생성. |
+| [destroyRoom](#destroyroom)         | 방 폐기(호스트 호출).                                       |
+| [enterRoom](#enterroom)             | 방 입장(시청자 호출).                                       |
+| [exitRoom](#exitroom)               | 방 퇴장(시청자 호출).                                       |
+| [getRoomInfos](#getroominfos)       | 방 리스트의 상세 정보 획득.                                     |
+| [getAnchorList](#getanchorlist)     | 방 안의 모든 호스트 리스트 획득, enterRoom() 성공 후 호출해야만 유효.     |
+| [getAudienceList](#getaudiencelist) | 방 안의 모든 시청자 정보 획득, enterRoom() 성공 후 호출해야만 유효.     |
 
-### 푸시/풀 스트림 관련 인터페이스 함수
+### 푸시/풀 스트림 관련 API
 
 | API                                       | 설명                                               |
 | ----------------------------------------- | -------------------------------------------------- |
-| [startCameraPreview](#startcamerapreview) | 로컬 비디오 화면 미리보기 시작                           |
-| [stopCameraPreview](#stopcamerapreview)   | 로컬 비디오 수집 및 미리보기 종료                           |
-| [startPublish](#startpublish)             | 라이브 방송 시작(푸시 스트림)                                 |
-| [stopPublish](#stoppublish)               | 라이브 방송 중단(푸시 스트림)                                 |
-| [startPlay](#startplay)                   | 원격 비디오 화면 재생. 일반 시청 및 마이크 연결 시나리오에서 호출 가능 |
-| [stopPlay](#stopplay)                     | 원격 비디오 화면 렌더링 중단                             |
+| [startCameraPreview](#startcamerapreview) | 로컬 비디오 화면 미리보기 시작.                           |
+| [stopCameraPreview](#stopcamerapreview)   | 로컬 비디오 수집 및 미리보기 종료.                           |
+| [startPublish](#startpublish)             | 라이브 방송 시작(푸시 스트림).                                 |
+| [stopPublish](#stoppublish)               | 라이브 방송 중단(푸시 스트림).                                 |
+| [startPlay](#startplay)                   | 원격 비디오 화면 재생. 일반 시청 및 마이크 연결 시나리오에서 호출 가능. |
+| [stopPlay](#stopplay)                     | 원격 비디오 화면 렌더링 중단.                             |
 
 ### 호스트와 시청자 마이크 연결
 
 | API                                       | 설명               |
 | ----------------------------------------- | ------------------ |
-| [requestJoinAnchor](#requestjoinanchor)   | 시청자 마이크 연결 요청     |
-| [responseJoinAnchor](#responsejoinanchor) | 호스트가 마이크 연결 요청 처리 |
-| [kickoutJoinAnchor](#kickoutjoinanchor)   | 호스트가 시청자 마이크 연결 강제 해제 |
+| [requestJoinAnchor](#requestjoinanchor)   | 시청자 마이크 연결 요청.     |
+| [responseJoinAnchor](#responsejoinanchor) | 호스트가 마이크 연결 요청 처리. |
+| [kickoutJoinAnchor](#kickoutjoinanchor)   | 호스트가 시청자 마이크 연결 강제 해제. |
 
 ### 호스트 크로스 룸 PK
 
 | API                               | 설명                   |
 | --------------------------------- | ---------------------- |
-| [requestRoomPK](#requestroompk)   | 호스트가 크로스 룸 PK 요청      |
-| [responseRoomPK](#responseroompk) | 호스트가 크로스 룸 PK 요청에 응답 |
-| [quitRoomPK](#quitroompk)         | 크로스 룸 PK 퇴장          |
+| [requestRoomPK](#requestroompk)   | 호스트가 크로스 룸 PK 요청.      |
+| [responseRoomPK](#responseroompk) | 호스트가 크로스 룸 PK 요청에 응답. |
+| [quitRoomPK](#quitroompk)         | 크로스 룸 PK 퇴장.          |
 
-### 멀티미디어 제어 관련 인터페이스 함수
+### 멀티미디어 제어 관련 API
 
 | API                                       | 설명               |
 | ----------------------------------------- | ------------------ |
-| [switchCamera](#switchcamera)             | 전면/후면 카메라 전환   |
-| [setMirror](#setmirror)                   | 미러 이미지 표시 여부 설정 |
-| [muteLocalAudio](#mutelocalaudio)         | 로컬 오디오 음소거     |
-| [muteRemoteAudio](#muteremoteaudio)       | 원격 오디오 음소거   |
-| [muteAllRemoteAudio](#muteallremoteaudio) | 모든 원격 오디오 음소거 |
+| [switchCamera](#switchcamera)             | 전면/후면 카메라 전환.   |
+| [setMirror](#setmirror)                   | 미러 이미지 표시 여부 설정. |
+| [muteLocalAudio](#mutelocalaudio)         | 로컬 오디오 음소거.    |
+| [muteRemoteAudio](#muteremoteaudio)       | 원격 오디오 음소거.  |
+| [muteAllRemoteAudio](#muteallremoteaudio) | 모든 원격 오디오 음소거. |
 
-### 배경 음악 음향 효과 관련 인터페이스 함수
+### 배경 음악 음향 효과 관련 API
 
 | API                                             | 설명                                                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](#trtcaudioeffectmanagerapi) 획득 |
+| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__ios.html#interfaceTXAudioEffectManager) 가져오기. |
 
-### 뷰티 필터 관련 인터페이스 함수
+### 뷰티 필터 관련 API
 
 | API                                   | 설명                                                         |
 | ------------------------------------- | ------------------------------------------------------------ |
-| [getBeautyManager](#getbeautymanager) | 뷰티 필터 관리 객체 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#interfaceTXBeautyManager) 획득 |
+| [getBeautyManager](#getbeautymanager) | 뷰티 필터 관리 객체 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#interfaceTXBeautyManager) 가져오기. |
 
-### 메시지 발송 관련 인터페이스 함수
+### 메시지 발송 관련 API
 
 | API                                     | 설명                                     |
 | --------------------------------------- | ---------------------------------------- |
-| [sendRoomTextMsg](#sendroomtextmsg)     | 방 안에서 텍스트 메시지 발송, 일반적으로 댓글 자막 채팅에 사용 |
-| [sendRoomCustomMsg](#sendroomcustommsg) | 사용자 정의 텍스트 메시지를 발송합니다.                     |
+| [sendRoomTextMsg](#sendroomtextmsg)     | 방 안에서 텍스트 메시지 발송, 일반적으로 댓글 자막 채팅에 사용. |
+| [sendRoomCustomMsg](#sendroomcustommsg) | 사용자 정의 텍스트 메시지 발송.                     |
 
-### 디버깅 관련 인터페이스 함수
+### 디버깅 관련 API
 
 | API                                     | 설명                        |
 | --------------------------------------- | --------------------------- |
-| [showVideoDebugLog](#showvideodebuglog) | 인터페이스에 debug 정보 표시 여부 |
+| [showVideoDebugLog](#showvideodebuglog) | 인터페이스에 debug 정보 표시 여부. |
 
 <h2 id="TRTCLiveRoomDelegate">TRTCLiveRoomDelegate API 개요</h2>
 
-### 범용 이벤트 콜백
+### 일반적인 이벤트 콜백
 
 | API                       | 설명       |
 | ------------------------- | ---------- |
-| [onError](#onerror)       | 오류 콜백 |
-| [onWarning](#onwarning)   | 경고 콜백 |
-| [onDebugLog](#ondebuglog) | Log 콜백 |
+| [onError](#onerror)       | 오류 콜백. |
+| [onWarning](#onwarning)   | 경고 콜백. |
+| [onDebugLog](#ondebuglog) | Log 콜백. |
 
 ### 방 이벤트 콜백
 
 | API                                   | 설명                   |
 | ------------------------------------- | ---------------------- |
-| [onRoomDestroy](#onroomdestroy)       | 방 폐기 콜백     |
-| [onRoomInfoChange](#onroominfochange) | 라이브 방송 방 정보 변경 콜백 |
+| [onRoomDestroy](#onroomdestroy)       | 방 폐기 콜백.     |
+| [onRoomInfoChange](#onroominfochange) | 라이브 방송 방 정보 변경 콜백. |
 
 ### 호스트와 시청자 방 입장/퇴장 이벤트 콜백
 
 | API                                 | 설명                 |
 | ----------------------------------- | -------------------- |
-| [onAnchorEnter](#onanchorenter)     | 새로운 호스트 방 입장 알림 수신 |
-| [onAnchorExit](#onanchorexit)       | 호스트 퇴장 알림 수신   |
-| [onAudienceEnter](#onaudienceenter) | 시청자 입장 알림 수신   |
-| [onAudienceExit](#onaudienceexit)   | 시청자 퇴장 알림 수신   |
+| [onAnchorEnter](#onanchorenter)     | 새로운 호스트 방 입장 알림 수신. |
+| [onAnchorExit](#onanchorexit)       | 호스트 퇴장 알림 수신.   |
+| [onAudienceEnter](#onaudienceenter) | 시청자 입장 알림 수신.   |
+| [onAudienceExit](#onaudienceexit)   | 시청자 퇴장 알림 수신.   |
 
 ### 호스트와 시청자 마이크 연결 이벤트 콜백
 
 | API                                         | 설명                           |
 | ------------------------------------------- | ------------------------------ |
-| [onRequestJoinAnchor](#onrequestjoinanchor) | 호스트가 시청자의 마이크 연결 요청을 수신할 때의 콜백 |
-| [onKickoutJoinAnchor](#onkickoutjoinanchor) | 마이크가 연결된 시청자가 마이크 연결 강제 해제 알림 수신 |
+| [onRequestJoinAnchor](#onrequestjoinanchor) | 호스트가 시청자의 마이크 연결 요청을 수신할 때의 콜백. |
+| [onKickoutJoinAnchor](#onkickoutjoinanchor) | 마이크가 연결된 시청자가 마이크 연결 강제 해제 알림 수신. |
 
 ### 호스트 PK 이벤트 콜백
 
 | API                                 | 설명                   |
 | ----------------------------------- | ---------------------- |
-| [onRequestRoomPK](#onrequestroompk) | 크로스 룸 PK 요청 알림 수신 |
-| [onQuitRoomPK](#onquitroompk)       | 크로스 룸 PK 종료 알림 수신 |
+| [onRequestRoomPK](#onrequestroompk) | 크로스 룸 PK 요청 알림 수신. |
+| [onQuitRoomPK](#onquitroompk)       | 크로스 룸 PK 종료 알림 수신. |
 
 ### 메시지 이벤트 콜백
 
 | API                                         | 설명             |
 | ------------------------------------------- | ---------------- |
-| [onRecvRoomTextMsg](#onrecvroomtextmsg)     | 텍스트 메시지를 수신합니다.   |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | 사용자 정의 메시지를 수신합니다. |
+| [onRecvRoomTextMsg](#onrecvroomtextmsg)     | 텍스트 메시지 수신.   |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | 사용자 정의 메시지 수신. |
 
 
 
@@ -164,11 +164,11 @@ TRTCLiveRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드
 로그인.
 
 ```objc
-/// 모듈 시스템에 로그인
+/// 컴포넌트 시스템에 로그인
 /// - Parameters:
 ///   - sdkAppID: TRTC 콘솔>[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)]>애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다.
-///   - userID: 현재 사용자의 ID로, 문자열 유형은 영어 알파벳(a~z, A~Z), 숫자(0~9), 대시부호(-), 언더바(\_)만 허용됩니다.
-///   - userSig: Tencent Cloud가 설계한 일종의 보안 서명으로, 취득 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참조하십시오.
+///   - userID: 현재 사용자 ID.입니다. 영어 알파벳(a-z, A-Z), 숫자(0~9), 하이픈(-), 언더바(\_)의 문자열로 구성합니다.
+///   - userSig: Tencent Cloud가 설계한 일종의 보안 서명으로, 취득 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오.
 ///   - config: 전체 설정 정보입니다. 로그인 시 초기화하십시오. 로그인 후에는 변경할 수 없습니다. isAttachedTUIKit 항목은 TUIKit 가져오기 및 사용 여부입니다.
 ///   - callback: 로그인 콜백이며, 성공 시 code는 0입니다.
 /// - Note:
@@ -186,8 +186,8 @@ NS_SWIFT_NAME(login(sdkAppID:userID:userSig:config:callback:));
 | 매개변수     | 유형                                      | 의미                                                         |
 | -------- | ----------------------------------------- | ------------------------------------------------------------ |
 | sdkAppID | Int                                       | TRTC 콘솔>[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)>애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다. |
-| userID   | String                                    | 현재 사용자 ID. 문자열 유형은 영어 알파벳(a~z, A~Z), 숫자(0~9), 대시부호(-), 언더바(\_)만 허용됩니다. |
-| userSig  | String                                    | Tencent Cloud가 설계한 일종의 보안 서명으로, 취득 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참조하십시오. |
+| userID   | String                                    | 현재 사용자 ID.입니다. 영어 알파벳(a-z, A-Z), 숫자(0~9), 하이픈(-), 언더바(\_)의 문자열로 구성합니다. |
+| userSig  | String                                    | Tencent Cloud가 설계한 일종의 보안 서명으로, 취득 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
 | config   | TRTCLiveRoomConfig                        | 전체 설정 정보입니다. 로그인 시 초기화하십시오. 로그인 후에는 변경할 수 없습니다.<ul style="margin:0;"><li>useCDNFirst 속성: 시청자의 시청 방식을 설정하는 데 사용합니다. true는 일반 시청자가 CDN을 통해 시청하도록 설정하며, 요금이 저렴하지만 딜레이가 비교적 많이 발생합니다. false는 일반 시청자가 저딜레이를 통해 시청하도록 설정하며, 요금이 CDN과 마이크 연결 요금의 중간 정도지만 딜레이가 1초 이내로 제어됩니다.</li><li>CDNPlayDomain 속성: useCDNFirst를 true로 설정해야만 적용됩니다. CDN을 시청하는 재생 도메인으로 지정하는 데 사용되며, 라이브 방송 콘솔>[<a href="https://console.cloud.tencent.com/live/domainmanage">도메인 관리</a>] 페이지에서 설정할 수 있습니다.</li></ul> |
 | callback | (_ code: Int, _ message: String?) -> Void | 로그인 콜백이며, 성공 시 code는 0입니다.                                  |
 
@@ -230,16 +230,16 @@ NS_SWIFT_NAME(setSelfProfile(name:avatarURL:callback:));
 
 | 매개변수      | 유형                                      | 의미                                |
 | --------- | ----------------------------------------- | ----------------------------------- |
-| name      | String                                    | 닉네임                              |
-| avatarURL | String                                    | 프로필 사진 주소                          |
+| name      | String                                    | 닉네임.                              |
+| avatarURL | String                                    | 프로필 사진 주소.                          |
 | callback  | (_ code: Int, _ message: String?) -> Void | 개인 정보 설정 콜백이며, 성공 시 cod는 0입니다. |
 
 
-## 방 관련 인터페이스 함수
+## 방 관련 API
 
 ### createRoom
 
-방(호스트 호출)을 생성합니다.
+방 생성(호스트 호출).
 
 ```objc
 /// 방(호스트 호출) 생성을 생성합니다. 방이 존재하지 않는 경우 시스템에서 자동으로 새로운 방을 생성합니다.
@@ -308,7 +308,7 @@ NS_SWIFT_NAME(destroyRoom(callback:));
 /// 귀하가 관리하는 방 리스트에 roomid만 있어도 괜찮습니다. 시청자는 enterRoom()에 성공한 후 TRTCLiveRoomDelegate의 onAnchorEnter(userID) 콜백을 빠르게 수신합니다.
 /// 이때 콜백에 포함되어 있는 userID를 사용해 startPlay(userID)를 호출하여 호스트 화면을 재생합니다.
 /// - Parameters:
-///   - roomID: 방 식별 번호
+///   - roomID: 방 식별 번호.
 ///   - useCDNFirst: CDN 재생 우선 사용 여부
 ///   - cdnDomain: CDN 도메인
 ///   - callback: 방 입장 결과 콜백이며, 성공 시 code는 0입니다.
@@ -326,7 +326,7 @@ NS_SWIFT_NAME(enterRoom(roomID:useCDNFirst:cdnDomain:callback:));
 
 | 매개변수     | 유형                                      | 의미                                  |
 | -------- | ----------------------------------------- | ------------------------------------- |
-| roomID   | UInt32                                    | 방 식별 번호                            |
+| roomID   | UInt32                                    | 방 식별 번호.                            |
 | callback | (_ code: Int, _ message: String?) -> Void | 방 입장 결과 콜백이며, 성공 시 code는 0입니다. |
 
 
@@ -382,8 +382,8 @@ NS_SWIFT_NAME(getRoomInfos(roomIDs:callback:));
 
 | 매개변수     | 유형                                                         | 의미               |
 | -------- | ------------------------------------------------------------ | ------------------ |
-| roomIDs  | [UInt32]                                                     | 방 번호 리스트       |
-| callback | (_ code: Int, _ message: String?, _ roomList: [TRTCLiveRoomInfo]) -> Void | 방 상세 정보 콜백 |
+| roomIDs  | [UInt32]                                                       | 방 번호 리스트.       |
+| callback | (_ code: Int, _ message: String?, _ roomList: [TRTCLiveRoomInfo]) -> Void | 방 상세 정보 콜백. |
 
 
 
@@ -403,7 +403,7 @@ NS_SWIFT_NAME(getAnchorList(callback:));
 
 | 매개변수     | 유형                                                         | 의미               |
 | -------- | ------------------------------------------------------------ | ------------------ |
-| callback | (_ code: Int, _ message: String, _ userList: [TRTCLiveUserInfo]) -> Void | 사용자 상세 정보 콜백 |
+| callback | (_ code: Int, _ message: String, _ userList: [TRTCLiveUserInfo]) -> Void | 사용자 상세 정보 콜백. |
 
 
 ### getAudienceList
@@ -422,10 +422,10 @@ NS_SWIFT_NAME(getAudienceList(callback:));
 
 | 매개변수     | 유형                                                         | 의미               |
 | -------- | ------------------------------------------------------------ | ------------------ |
-| callback | (_ code: Int, _ message: String, _ userList: [TRTCLiveUserInfo]) -> Void | 사용자 상세 정보 콜백 |
+| callback | (_ code: Int, _ message: String, _ userList: [TRTCLiveUserInfo]) -> Void | 사용자 상세 정보 콜백. |
 
 
-## 푸시/풀 스트림 관련 인터페이스 함수
+## 푸시/풀 스트림 관련 API
 
 ### startCameraPreview
 
@@ -434,9 +434,9 @@ NS_SWIFT_NAME(getAudienceList(callback:));
 ```objc
 /// 로컬 비디오 화면 미리보기 시작
 /// - Parameters:
-///   - frontCamera: true: 전면 카메라, false: 후면 카메라
-///   - view: 비디오 모니터를 탑재한 컨트롤러
-///   - callback: 작업 콜백
+///   - frontCamera: true: 전면 카메라, false: 후면 카메라.
+///   - view: 비디오 모니터를 탑재한 컨트롤러.
+///   - callback: 작업 콜백.
 - (void)startCameraPreviewWithFrontCamera:(BOOL)frontCamera
                                      view:(UIView *)view
                                  callback:(Callback _Nullable)callback
@@ -448,9 +448,9 @@ NS_SWIFT_NAME(startCameraPreview(frontCamera:view:callback:));
 
 | 매개변수        | 유형                                      | 의미                                  |
 | ----------- | ----------------------------------------- | ------------------------------------- |
-| frontCamera | Bool                                      | true: 전면 카메라, false: 후면 카메라 |
-| view        | UIView                                    | 비디오 화면 컨트롤러                  |
-| callback    | (_ code: Int, _ message: String?) -> Void | 작업 콜백                            |
+| frontCamera | Bool                                      | true: 전면 카메라, false: 후면 카메라. |
+| view        | UIView                                    | 비디오 화면 컨트롤러.                  |
+| callback    | (_ code: Int, _ message: String?) -> Void | 작업 콜백.                            |
 
 
 ### stopCameraPreview
@@ -489,21 +489,21 @@ NS_SWIFT_NAME(startPublish(streamID:callback:));
 | 매개변수     | 유형                                      | 의미                                                         |
 | -------- | ----------------------------------------- | ------------------------------------------------------------ |
 | streamID | String                                    | 라이브 방송 CDN의 streamID를 바인딩하는 데 사용. 시청자가 라이브 방송 CDN을 통해 시청하도록 설정하고 싶은 경우 현재 호스트의 라이브 방송 streamID를 지정해야 합니다. |
-| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백                                                   |
+| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백.                                                   |
 
 
 ### stopPublish
 
 라이브 방송(푸시 스트림)을 중단합니다. 다음과 같은 시나리오에 적용할 수 있습니다.
 
-- 호스트가 라이브 방송을 종료할 때 호출
-- 시청자가 마이크 연결을 종료할 때 호출
+- 호스트가 라이브 방송을 종료할 때 호출.
+- 시청자가 마이크 연결을 종료할 때 호출.
 
 ```objc
 /// 라이브 방송(푸시 스트림)을 중단합니다. 다음 두 가지 시나리오에 적용할 수 있습니다.
 /// 1. 호스트가 라이브 방송을 종료할 때 호출
 /// 2. 시청자가 마이크 연결을 종료할 때 호출
-/// - Parameter callback: 작업 콜백
+/// - Parameter callback: 작업 콜백.
 - (void)stopPublish:(Callback _Nullable)callback
 NS_SWIFT_NAME(stopPublish(callback:));
 ```
@@ -512,7 +512,7 @@ NS_SWIFT_NAME(stopPublish(callback:));
 
 | 매개변수     | 유형                                      | 의미       |
 | -------- | ----------------------------------------- | ---------- |
-| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백 |
+| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백. |
 
 
 
@@ -529,9 +529,9 @@ NS_SWIFT_NAME(stopPublish(callback:));
 /// [라이브 방송 마이크 연결 시나리오]
 /// 마이크 연결 요청 후 호스트가 TRTCLiveRoomDelegate의 onAnchorEnter(userID) 콜백을 수신하면 콜백에 있는 userID를 사용하여 startPlay(userID)를 호출해 마이크 연결 화면을 재생할 수 있습니다.
 /// - Parameters:
-///   - userID: 시청하는 사용자 ID
-///   - view: 비디오 화면 view 컨트롤러
-///   - callback: 작업 콜백
+///   - userID: 시청하는 사용자 ID.
+///   - view: 비디오 화면 view 컨트롤러.
+///   - callback: 작업 콜백.
 - (void)startPlayWithUserID:(NSString *)userID
                        view:(UIView *)view
                    callback:(Callback _Nullable)callback
@@ -542,9 +542,9 @@ NS_SWIFT_NAME(startPlay(userID:view:callback:));
 
 | 매개변수     | 유형                                      | 의미                       |
 | -------- | ----------------------------------------- | -------------------------- |
-| userID   | String                                    | 시청하는 사용자 ID        |
-| view     | UIView                                    | 비디오 화면 view 컨트롤러 |
-| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백                 |
+| userID   | String                                    | 시청하는 사용자 ID.        |
+| view     | UIView                                    | 비디오 화면 view 컨트롤러. |
+| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백.                 |
 
 
 **일반 시청 시나리오**
@@ -564,8 +564,8 @@ NS_SWIFT_NAME(startPlay(userID:view:callback:));
 ```objc
 /// 원격 비디오 화면 렌더링 중단
 /// - Parameters:
-///   - userID: 상대방 사용자 정보
-///   - callback: 작업 콜백
+///   - userID: 상대방 사용자 정보.
+///   - callback: 작업 콜백.
 /// - Note:
 ///   - onAnchorExit 콜백 시 해당 인터페이스를 호출합니다.
 - (void)stopPlayWithUserID:(NSString *)userID
@@ -577,8 +577,8 @@ NS_SWIFT_NAME(stopPlay(userID:callback:));
 
 | 매개변수     | 유형                                      | 의미             |
 | -------- | ----------------------------------------- | ---------------- |
-| userID   | String                                    | 상대방 사용자 정보 |
-| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백       |
+| userID   | String                                    | 상대방 사용자 정보. |
+| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백.       |
 
 
 
@@ -592,8 +592,8 @@ NS_SWIFT_NAME(stopPlay(userID:callback:));
 ```objc
 /// 시청자가 마이크 연결 요청
 /// - Parameters:
-///   - reason: 마이크 연결 요청 이유
-///   - responseCallback: 마이크 연결 요청 콜백
+///   - reason: 마이크 연결 요청 이유.
+///   - responseCallback: 마이크 연결 요청 콜백.
 /// - Note: 시청자가 요청한 후 호스트 측에서 `onRequestJoinAnchor` 콜백을 수신합니다.
 - (void)requestJoinAnchor:(NSString *)reason
                   timeout:(double)timeout
@@ -605,8 +605,9 @@ NS_SWIFT_NAME(requestJoinAnchor(reason:timeout:responseCallback:));
 
 | 매개변수             | 유형                                        | 의미           |
 | ---------------- | ------------------------------------------- | -------------- |
-| reason           | String?                                     | 마이크 연결 이유 설명     |
-| responseCallback | (_ agreed: Bool, _ reason: String?) -> Void | 호스트 응답 콜백 |
+| reason           | String                                     | 마이크 연결 이유 설명.     |
+| timeout | long | 호스트 콜백에 응답. |
+| responseCallback | (_ agreed: Bool, _ reason: String?) -> Void | 호스트 응답 콜백. |
 
 호스트와 시청자 마이크 연결 프로세스는 다음과 같습니다.
 
@@ -628,9 +629,9 @@ NS_SWIFT_NAME(requestJoinAnchor(reason:timeout:responseCallback:));
 ```objc
 /// 호스트가 시청자의 마이크 연결 요청에 응답
 /// - Parameters:
-///   - user: 시청자 ID
-///   - agree: true: 동의, false: 거절
-///   - reason: 마이크 연결 동의/거절 이유 설명
+///   - user: 시청자 ID.
+///   - agree: true: 동의, false: 거절.
+///   - reason: 마이크 연결 동의/거절 이유 설명.
 /// - Note: 호스트가 응답하면 시청자 측에서 `requestJoinAnchor`가 전달된 `responseCallback` 콜백을 수신합니다.
 - (void)responseJoinAnchor:(NSString *)userID
                      agree:(BOOL)agree
@@ -642,9 +643,9 @@ NS_SWIFT_NAME(responseJoinAnchor(userID:agree:reason:));
 
 | 매개변수   | 유형    | 의미                      |
 | ------ | ------- | ------------------------- |
-| userID | String  | 시청자 ID                 |
-| agree  | Bool    | true: 동의, false: 거절 |
-| reason | String? | 마이크 연결 동의/거절 이유 설명 |
+| userID | String  | 시청자 ID.                 |
+| agree  | Bool    | true: 동의, false: 거절. |
+| reason | String? | 마이크 연결 동의/거절 이유 설명. |
 
 
 ### kickoutJoinAnchor
@@ -654,8 +655,8 @@ NS_SWIFT_NAME(responseJoinAnchor(userID:agree:reason:));
 ```objc
 /// 호스트가 시청자 마이크 연결 강제 해제
 /// - Parameters:
-///   - userID: 마이크 연결된 시청자 ID
-///   - callback: 작업 콜백
+///   - userID: 마이크 연결된 시청자 ID.
+///   - callback: 작업 콜백.
 /// - Note: 호스트가 해당 인터페이스를 호출하여 관중의 마이크 연결을 강제 해제하면, 강제 해제된 시청자는 trtcLiveRoomOnKickoutJoinAnchor() 콜백 알림을 수신합니다.
 - (void)kickoutJoinAnchor:(NSString *)userID
                  callback:(Callback _Nullable)callback
@@ -666,8 +667,8 @@ NS_SWIFT_NAME(kickoutJoinAnchor(userID:callback:));
 
 | 매개변수     | 유형                                      | 의미          |
 | -------- | ----------------------------------------- | ------------- |
-| userID   | String                                    | 마이크가 연결된 시청자 ID |
-| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백    |
+| userID   | String                                    | 마이크가 연결된 시청자 ID. |
+| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백.    |
 
 
 
@@ -680,9 +681,9 @@ NS_SWIFT_NAME(kickoutJoinAnchor(userID:callback:));
 ```objc
 /// 호스트가 크로스 룸 PK 요청
 /// - Parameters:
-///   - roomID: 초대된 방 ID
-///   - userID: 초대된 호스트 ID
-///   - responseCallback: 크로스 룸 PK 요청 결과 콜백
+///   - roomID: 초대된 방 ID.
+///   - userID: 초대된 호스트 ID.
+///   - responseCallback: 크로스 룸 PK 요청 결과 콜백.
 /// - Note: 요청하면 상대방 호스트가 `onRequestRoomPK` 콜백 수신
 - (void)requestRoomPKWithRoomID:(UInt32)roomID
                          userID:(NSString *)userID
@@ -694,9 +695,9 @@ NS_SWIFT_NAME(requestRoomPK(roomID:userID:responseCallback:));
 
 | 매개변수             | 유형                                        | 의미                     |
 | ---------------- | ------------------------------------------- | ------------------------ |
-| roomID           | UInt32                                      | 초대된 방 ID          |
-| userID           | String                                      | 초대된 호스트 ID          |
-| responseCallback | (_ agreed: Bool, _ reason: String?) -> Void | 크로스 룸 PK 요청 결과 콜백 |
+| roomID           | UInt32                                      | 초대된 방 ID.          |
+| userID           | String                                      | 초대된 호스트 ID.          |
+| responseCallback | (_ agreed: Bool, _ reason: String?) -> Void | 크로스 룸 PK 요청 결과 콜백. |
 
 호스트와 호스트 사이에 크로스 룸 PK를 진행할 수 있으며, 두 정식 라이브 방송의 호스트 A와 B 사이의 크로스 룸 PK 프로세스는 다음과 같습니다.
 
@@ -730,9 +731,9 @@ NS_SWIFT_NAME(responseRoomPK(userID:agree:reason:));
 
 | 매개변수   | 유형    | 의미                      |
 | ------ | ------- | ------------------------- |
-| userID | String  | PK를 요청한 호스트 ID   |
-| agree  | Bool    | true: 동의, false: 거절 |
-| reason | String? | PK 동의/거절 이유 설명 |
+| userID | String  | PK를 요청한 호스트 ID.   |
+| agree  | Bool    | true: 동의, false: 거절. |
+| reason | String? | PK 동의/거절 이유 설명. |
 
 
 ### quitRoomPK
@@ -751,10 +752,10 @@ NS_SWIFT_NAME(quitRoomPK(callback:));
 
 | 매개변수     | 유형                                      | 의미       |
 | -------- | ----------------------------------------- | ---------- |
-| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백 |
+| callback | (_ code: Int, _ message: String?) -> Void | 작업 콜백. |
 
 
-## 멀티미디어 제어 관련 인터페이스 함수
+## 멀티미디어 제어 관련 API
 
 ### switchCamera
 
@@ -772,16 +773,16 @@ NS_SWIFT_NAME(quitRoomPK(callback:));
 
 ```objc
 /// 미러 이미지 표시 여부 설정
-/// - Parameter isMirror: 미러 이미지 활성화/비활성화
+/// - Parameter isMirror: 미러 이미지 활성화/비활성화.
 - (void)setMirror:(BOOL)isMirror
-NS_SWIFT_NAME(setMirror(_:));
+NS_SWIFT_NAME(setMirror(isMirror:));
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수     | 유형 | 의미            |
+| 매개변수     | 유형                                      | 의미       |
 | -------- | ---- | --------------- |
-| isMirror | Bool | 미러 이미지 활성화/비활성화 |
+| isMirror | Bool | 미러 이미지 활성화/비활성화. |
 
 
 ### muteLocalAudio
@@ -789,17 +790,17 @@ NS_SWIFT_NAME(setMirror(_:));
 로컬 오디오를 음소거합니다.
 
 ```objc
-/// 로컬 오디오 음소거
-/// - Parameter isMuted: true: 음소거 켜기, false: 음소거 끄기
+/// 로컬 오디오 음소거.
+/// - Parameter isMuted: true: 음소거 켜기, false: 음소거 끄기.
 - (void)muteLocalAudio:(BOOL)isMuted
-NS_SWIFT_NAME(muteLocalAudio(_:));
+NS_SWIFT_NAME(muteLocalAudio(isMuted:));
 ```
 
 매개변수는 다음과 같습니다.
 
 | 매개변수    | 유형 | 의미                              |
 | ------- | ---- | --------------------------------- |
-| isMuted | Bool | true: 음소거 켜기, false: 음소거 끄기 |
+| isMuted | Bool | true: 음소거 켜기, false: 음소거 끄기. |
 
 ### muteRemoteAudio
 
@@ -808,8 +809,8 @@ NS_SWIFT_NAME(muteLocalAudio(_:));
 ```objc
 /// 원격 오디오 음소거
 /// - Parameters:
-///   - userID: 원격 사용자 ID
-///   - isMuted: true: 음소거 켜기, false: 음소거 끄기
+///   - userID: 원격 사용자 ID.
+///   - isMuted: true: 음소거 켜기, false: 음소거 끄기.
 - (void)muteRemoteAudioWithUserID:(NSString *)userID isMuted:(BOOL)isMuted
 NS_SWIFT_NAME(muteRemoteAudio(userID:isMuted:));
 ```
@@ -818,8 +819,8 @@ NS_SWIFT_NAME(muteRemoteAudio(userID:isMuted:));
 
 | 매개변수    | 유형   | 의미                              |
 | ------- | ------ | --------------------------------- |
-| userID  | String | 원격 사용자 ID                   |
-| isMuted | Bool   | true: 음소거 켜기, false: 음소거 끄기 |
+| userID  | String | 원격 사용자 ID.                   |
+| isMuted | Bool   | true: 음소거 켜기, false: 음소거 끄기. |
 
 
 
@@ -829,7 +830,7 @@ NS_SWIFT_NAME(muteRemoteAudio(userID:isMuted:));
 
 ```objc
 /// 모든 원격 오디오 음소거
-/// - Parameter isMuted: true: 음소거 켜기, false: 음소거 끄기
+/// - Parameter isMuted: true: 음소거 켜기, false: 음소거 끄기.
 - (void)muteAllRemoteAudio:(BOOL)isMuted
 NS_SWIFT_NAME(muteAllRemoteAudio(_:));
 ```
@@ -838,7 +839,7 @@ NS_SWIFT_NAME(muteAllRemoteAudio(_:));
 
 | 매개변수    | 유형 | 의미                              |
 | ------- | ---- | --------------------------------- |
-| isMuted | Bool | true: 음소거 켜기, false: 음소거 끄기 |
+| isMuted | Bool | true: 음소거 켜기, false: 음소거 끄기. |
 
 ### setAudioQuality
 
@@ -848,38 +849,38 @@ NS_SWIFT_NAME(muteAllRemoteAudio(_:));
 /// 오디오 품질 설정. 값은 1, 2, 3으로 설정할 수 있으며 저, 중, 고를 의미
 /// - Parameter quality 오디오 품질
 - (void)setAudioQuality:(NSInteger)quality
-NS_SWIFT_NAME(setAudioiQuality(_:));
+NS_SWIFT_NAME(setAudioiQuality(quality:));
 ```
 
 매개변수는 다음과 같습니다.
 
 | 매개변수    | 유형      | 의미                         |
 | ------- | --------- | ---------------------------- |
-| quality | NSInteger | 1: 음성, 2: 표준, 3: 음악 |
+| quality | NSInteger | 1: 음성, 2: 표준, 3: 음악. |
 
-## 배경 음악 음향 효과 관련 인터페이스 함수
+## 배경 음악 음향 효과 관련 API
 
 ### getAudioEffectManager
 
-배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af962213fefe6988a08820ac9af00df66)를 가져옵니다.
+배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af962213fefe6988a08820ac9af00df66) 가져오기.
 
 ```objc
 /// 음향 효과 관리 객체 획득
 - (TXAudioEffectManager *)getAudioEffectManager;
 ```
 
-## 뷰티 필터 관련 인터페이스 함수
+## 뷰티 필터 관련 API
 
 ### getBeautyManager
 
-뷰티 필터 관리 객체 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#interfaceTXBeautyManager)를 가져옵니다.
+뷰티 필터 관리 객체 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#interfaceTXBeautyManager) 가져오기.
 
 ```objc
 /* 뷰티 필터 관리 객체 TXBeautyManager 획득
 *
 * 뷰티 필터 관리를 통해 다음 기능을 사용할 수 있습니다.
-* - “뷰티 필터 스타일”, “미백”, “안색 보정”, “눈 크게”, “갸름하게”, “V라인”, “턱 조정”, “얼굴 짧게”, “코 작게”, “반짝이는 눈”, “치아 미백”, “아래 눈꺼풀 조정”, “주름 제거”, “팔자 주름 제거” 등 뷰티 효과를 설정할 수 있습니다.
-* - “헤어 라인”, “눈 간격”, “눈 각도”, “입 모양”, “콧볼”, “코 위치”, “입술 두께”, “얼굴형”을 조정할 수 있습니다.
+* - '뷰티 필터 스타일', '미백', '안색 보정', '눈 크게', '갸름하게', 'V라인', '턱 조정', '얼굴 짧게', '코 작게', '반짝이는 눈', '치아 미백', '아래 눈꺼풀 조정', '주름 제거', '팔자 주름 제거' 등 뷰티 효과를 설정할 수 있습니다.
+* - '헤어 라인', '눈 간격', '눈 각도', '입 모양', '콧볼', '코 위치', '입술 두께', '얼굴형'을 조정할 수 있습니다.
 * - 얼굴 효과(소재) 등 동적 효과를 설정할 수 있습니다.
 * - 메이크업 효과 추가합니다.
 * - 손 동작을 인식합니다.
@@ -889,25 +890,25 @@ NS_SWIFT_NAME(setAudioiQuality(_:));
 
 뷰티 필터 관리를 통해 다음 기능을 사용할 수 있습니다.
 
-- “뷰티 필터 스타일”, “미백”, “안색 보정”, “눈 크게”，“갸름하게”，“V라인”，“턱 조정”, “얼굴 짧게”, “코 작게”, “반짝이는 눈”, “치아 미백”, “아래 눈꺼풀 조정”, “주름 제거”, “팔자 주름 제거” 등 뷰티 효과를 설정할 수 있습니다.
-- “헤어 라인”, “눈 간격”, “눈 각도”, “입 모양”, “콧볼”, “코 위치”, “입술 두께”, “얼굴형”을 조정할 수 있습니다.
+- '뷰티 필터 스타일', '미백', '안색 보정', '눈 크게', '갸름하게', 'V라인', '턱 조정', '얼굴 짧게', '코 작게', '반짝이는 눈', '치아 미백', '아래 눈꺼풀 조정', '주름 제거', '팔자 주름 제거' 등 뷰티 효과를 설정할 수 있습니다.
+- '헤어 라인', '눈 간격', '눈 각도', '입 모양', '콧볼', '코 위치', '입술 두께', '얼굴형'을 조정할 수 있습니다.
 - 얼굴 효과(소재) 등 동적 효과를 설정할 수 있습니다.
 - 메이크업 효과를 추가합니다.
 - 손 동작을 인식합니다.
 
 
 
-## 메시지 발송 관련 인터페이스 함수
+## 메시지 발송 관련 API
 
 ### sendRoomTextMsg
 
-방 안에서 텍스트 메시지를 발송합니다. 일반적으로 댓글 자막 채팅에 사용합니다.
+방 안에서 텍스트 메시지 발송, 일반적으로 댓글 자막 채팅에 사용.
 
 ```objc
 /// 텍스트 메시지 발송, 방 안 모든 사용자가 볼 수 있음
 /// - Parameters:
-///   - message: 텍스트 메시지
-///   - callback: 발송 콜백
+///   - message: 텍스트 메시지.
+///   - callback: 발송 콜백.
 - (void)sendRoomTextMsg:(NSString *)message callback:(Callback _Nullable)callback
 NS_SWIFT_NAME(sendRoomTextMsg(message:callback:));
 ```
@@ -916,22 +917,22 @@ NS_SWIFT_NAME(sendRoomTextMsg(message:callback:));
 
 | 매개변수     | 유형                                      | 의미           |
 | -------- | ----------------------------------------- | -------------- |
-| message  | String                                    | 텍스트 메시지     |
-| callback | (_ code: Int, _ message: String?) -> Void | 발송 결과 콜백 |
+| message  | String                                    | 텍스트 메시지.     |
+| callback | (_ code: Int, _ message: String?) -> Void | 발송 결과 콜백. |
 
 
 ### sendRoomCustomMsg
 
-사용자 정의 텍스트 메시지를 발송합니다.
+사용자 정의 텍스트 메시지 발송.
 
 ```objc
 /// 사용자 정의 메시지 발송
 /// - Parameters:
 ///   - command: 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용
-///   - message: 텍스트 메시지
-///   - callback: 발송 콜백
-- (void)sendRoomCustomMsgWithCommand:(NSString *)cmd message:(NSString *)message callback:(Callback _Nullable)callback
-NS_SWIFT_NAME(sendRoomCustomMsg(cmd:message:callback:));
+///   - message: 텍스트 메시지.
+///   - callback: 발송 콜백.
+- (void)sendRoomCustomMsgWithCommand:(NSString *)command message:(NSString *)message callback:(Callback _Nullable)callback
+NS_SWIFT_NAME(sendRoomCustomMsg(command:message:callback:));
 ```
 
 매개변수는 다음과 같습니다.
@@ -939,11 +940,11 @@ NS_SWIFT_NAME(sendRoomCustomMsg(cmd:message:callback:));
 | 매개변수     | 유형                                      | 의미                                               |
 | -------- | ----------------------------------------- | -------------------------------------------------- |
 | command  | String                                    | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
-| message  | String                                    | 텍스트 메시지                                         |
-| callback | (_ code: Int, _ message: String?) -> Void | 발송 결과 콜백                                     |
+| message  | String                                    | 텍스트 메시지.                                         |
+| callback | (_ code: Int, _ message: String?) -> Void | 발송 결과 콜백.                                     |
 
 
-## 디버깅 관련 인터페이스 함수
+## 디버깅 관련 API
 
 ### showVideoDebugLog
 
@@ -951,7 +952,7 @@ NS_SWIFT_NAME(sendRoomCustomMsg(cmd:message:callback:));
 
 ```objc
 /// 인터페이스에 debug 정보 표시 여부 설정
-/// - Parameter isShow: Debug 정보 표시/표시하지 않음
+/// - Parameter isShow: Debug 정보 표시/표시하지 않음.
 - (void)showVideoDebugLog:(BOOL)isShow
 NS_SWIFT_NAME(showVideoDebugLog(_:));
 ```
@@ -965,11 +966,11 @@ NS_SWIFT_NAME(showVideoDebugLog(_:));
 
 ## TRTCLiveRoomDelegate 이벤트 콜백
 
-## 범용 이벤트 콜백
+## 일반적인 이벤트 콜백
 
 ### onError
 
-오류 콜백입니다.
+오류 콜백.
 
 >?SDK가 복구할 수 없는 오류는 반드시 모니터링하고 상황에 따라 적절한 인터페이스를 사용자에게 제시해야 합니다.
 
@@ -984,14 +985,14 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onError:message:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| code         | Int              | 에러 코드                     |
-| message      | String?          | 오류 정보                   |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스. |
+| code         | Int              | 오류 코드.                     |
+| message      | String?          | 오류 정보.                   |
 
 
 ### onWarning
 
-경고 콜백입니다.
+경고 콜백.
 
 ```objc
 - (void)trtcLiveRoom:(TRTCLiveRoom *)trtcLiveRoom
@@ -1004,15 +1005,15 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onWarning:message:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| code         | Int              | 에러 코드 TRTCWarningCode     |
-| message      | String?          | 경고 정보                   |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| code         | Int              | 오류 코드 TRTCWarningCode.     |
+| message      | String?          | 경고 정보.                   |
 
 
 
 ### onDebugLog
 
-Log 콜백입니다.
+Log 콜백.
 
 ```objc
 - (void)trtcLiveRoom:(TRTCLiveRoom *)trtcLiveRoom
@@ -1024,8 +1025,8 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onDebugLog:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| log          | String           | 로그 정보                   |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| log          | String           | 로그 정보.                   |
 
 
 ## 방 이벤트 콜백
@@ -1044,8 +1045,8 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onRoomDestroy:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| roomID       | String           | 방 ID                    |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| roomID       | String           | 방 ID.                    |
 
 
 ### onRoomInfoChange
@@ -1062,8 +1063,8 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onRoomInfoChange:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| info         | TRTCLiveRoomInfo | 방 정보                   |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| info         | TRTCLiveRoomInfo | 방 정보.                   |
 
 
 
@@ -1084,8 +1085,8 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onAnchorEnter:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| userID       | String           | 새로 입장한 사용자 ID              |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| userID       | String           | 새로 입장한 사용자 ID.              |
 
 
 
@@ -1103,14 +1104,14 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onAnchorExit:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| userID       | String           | 퇴장한 사용자 ID                |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| userID       | String           | 퇴장한 사용자 ID.               |
 
 
 
 ### onAudienceEnter
 
-시청자가 방 입장 시 알림을 수신합니다.
+시청자 방 입장 공지 수신.
 
 ```objc
 - (void)trtcLiveRoom:(TRTCLiveRoom *)trtcLiveRoom
@@ -1122,13 +1123,13 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onAudienceEnter:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| user         | TRTCLiveUserInfo | 입장한 시청자 정보               |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| user         | TRTCLiveUserInfo | 입장한 시청자 정보.               |
 
 
 ### onAudienceExit
 
-시청자가 방 퇴장 시 알림을 수신합니다.
+시청자 방 퇴장 공지 수신.
 
 ```objc
 - (void)trtcLiveRoom:(TRTCLiveRoom *)trtcLiveRoom
@@ -1140,8 +1141,8 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onAudienceExit:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| user         | TRTCLiveUserInfo | 퇴장한 시청자 정보               |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| user         | TRTCLiveUserInfo | 퇴장한 시청자 정보.               |
 
 
 ## 호스트와 시청자 마이크 연결 이벤트 콜백
@@ -1162,10 +1163,10 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onRequestJoinAnchor:reason:timeout:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| user         | TRTCLiveUserInfo | 마이크 연결을 요청한 시청자 정보           |
-| reason       | String?          | 마이크 연결 이유 설명               |
-| timeout      | Double           | 요청 처리 만료 시간         |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| user         | TRTCLiveUserInfo | 마이크 연결을 요청한 시청자 정보.           |
+| reason       | String?          | 마이크 연결 이유 설명.               |
+| timeout      | Double           | 요청 처리 타임 아웃 시간.         |
 
 
 ### onKickoutJoinAnchor
@@ -1181,7 +1182,7 @@ NS_SWIFT_NAME(trtcLiveRoomOnKickoutJoinAnchor(_:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
 
 
 
@@ -1202,9 +1203,9 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onRequestRoomPK:timeout:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| user         | TRTCLiveUserInfo | 크로스 룸 마이크 연결을 요청한 호스트 정보     |
-| timeout      | Double           | 요청 처리 만료 시간         |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| user         | TRTCLiveUserInfo | 크로스 룸 마이크 연결을 요청한 호스트 정보.     |
+| timeout      | Double           | 요청 처리 타임 아웃 시간.         |
 
 
 ### onQuitRoomPK
@@ -1220,7 +1221,7 @@ NS_SWIFT_NAME(trtcLiveRoomOnQuitRoomPK(_:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
 
 
 
@@ -1228,7 +1229,7 @@ NS_SWIFT_NAME(trtcLiveRoomOnQuitRoomPK(_:));
 
 ### onRecvRoomTextMsg
 
-텍스트 메시지를 수신합니다.
+텍스트 메시지 수신.
 
 ```objc
 - (void)trtcLiveRoom:(TRTCLiveRoom *)trtcLiveRoom
@@ -1241,15 +1242,15 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onRecvRoomTextMsg:fromUser:));
 
 | 매개변수         | 유형             | 의미                         |
 | ------------ | ---------------- | ---------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스 |
-| message      | String           | 텍스트 메시지                   |
-| user         | TRTCLiveUserInfo | 발신자 정보             |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
+| message      | String           | 텍스트 메시지.                   |
+| user         | TRTCLiveUserInfo | 발신자 정보.             |
 
 
 
 ### onRecvRoomCustomMsg
 
-사용자 정의 메시지를 수신합니다.
+사용자 정의 메시지 수신.
 
 ```objc
 - (void)trtcLiveRoom:(TRTCLiveRoom *)trtcLiveRoom
@@ -1263,7 +1264,7 @@ NS_SWIFT_NAME(trtcLiveRoom(_:onRecvRoomCustomMsg:message:fromUser:));
 
 | 매개변수         | 유형             | 의미                                               |
 | ------------ | ---------------- | -------------------------------------------------- |
-| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 모듈 인스턴스                       |
+| trtcLiveRoom | TRTCLiveRoomImpl | 현재 TRTCLiveRoom 컴포넌트 인스턴스.                       |
 | command      | String           | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
-| message      | String           | 텍스트 메시지                                         |
-| user         | TRTCLiveUserInfo | 발신자 정보                                   |
+| message      | String           | 텍스트 메시지.                                         |
+| user         | TRTCLiveUserInfo | 발신자 정보.                                   |
