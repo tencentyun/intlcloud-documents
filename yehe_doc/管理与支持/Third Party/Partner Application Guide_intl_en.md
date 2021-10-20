@@ -6,15 +6,15 @@
 
 1)Fill in the company information
 
-![img](file:///C:/Users/v_vjqye/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/12a4b5016f9c3f91d9c05efd1f60b0f4.png)
 
 2)Fill in the company bank information
 
-![img](file:///C:/Users/v_vjqye/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/2a58a66e001a4a1de0031eff3be2305a.png)
 
 3)Fill in the contact information
 
-![img](file:///C:/Users/v_vjqye/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/2edf8cf837894423960e5aabc14691f4.png)
 
 3.After completing the information, click [Submit].
 
