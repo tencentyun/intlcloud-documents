@@ -89,6 +89,7 @@ pod 'TXIMSDK_iOS'
 pod 'TXLiteAVSDK_TRTC'
 :::
 </dx-codeblock>
+
 >?You can view the latest version numbers of the two SDKs by visiting their GitHub pages at [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK).
 - **Method 2: adding dependencies through local files**
 If your access to the CocoaPods repository is slow, you can download the ZIP files of the SDKs and manually integrate them into your project as instructed in the documents below.
