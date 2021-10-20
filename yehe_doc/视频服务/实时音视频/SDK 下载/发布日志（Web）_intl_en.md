@@ -7,70 +7,89 @@ A version number is in the format of `major.minor.patch`, where:
 > - You are advised to update to the latest version in a timely manner for service stability and better online support.
 > - For notes on version updates, please see [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html).
 
-## Version 8.6.101 Released on May 28, 2021
+## Version 4.11.6 Released on September 10, 2021
 
 **Improvements**
 
-- 提升在 oppo & vivo 内置浏览器中，H.264 支持度检测的准确性。
-- 新增自动恢复采集逻辑（当设备采集异常时触发）。
-- 新增 subscribe 接口的超时逻辑，参考错误码：[API_CALL_TIMEOUT](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.API_CALL_TIMEOUT)。
+Optimized the signaling scheduling logic, improving the success rate of room entry under poor network conditions. If you are using SDK v4.11.5, we recommend that you update to this version.
+
+## Version 4.11.5 Released on September 4, 2021
+
+**Improvements**
+
+- Supported dynamic signaling channel scheduling, improving connection success rate under poor network conditions.
+- Supported cross-room stream mixing. For details, please see [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode).
 
 **Bug fixing**
 
-- 修复部分老版本 iOS Safari 偶现拉流失败的问题。
-- 修复切换设备后 mute 状态不准的问题。
-- 修复进房超时后，重新调用进房接口，偶现异常的问题。
-- 修复远端取消推流后，未及时销毁音视频播放器的问题。
+- Fixed occasional failure to receive the `stream-added` event callback after reconnection.
+- Fixed the occasional issue where the frame rate drops to 0 after screen sharing continues for a long time.
 
-## Version 4.3.3 Released on December 25, 2019
+
+## Version 4.11.4 Released on August 20, 2021
 
 **Improvements**
 
-- 优化 publish & subscribe 接口异常处理逻辑。
-- 优化混音插件的恢复策略。
+- Improved the accuracy of the H.264 support check for OPPO and vivo built-in browsers.
+- Supported auto capturing resumption (triggered in case of capturing error).
+- Added timeout logic for the `subscribe` API. For details, see the error code [API_CALL_TIMEOUT](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.API_CALL_TIMEOUT).
 
 **Bug fixing**
 
-- 修复偶现 peer-leave 通知不准的问题。
+- Fixed occasional failure to pull streams on Safari for iOS in some older versions.
+- Fixed the issue where the mute status is inaccurate after the switching of devices.
+- Fixed the occasional issue where exceptions occur when the room entry API is called again after timeout.
+- Fixed the issue where, after a remote stream is unpublished, the audio/video player is not terminated in a timely manner.
 
-## Version 8.6.101 Released on May 28, 2021
+## Version 4.11.3 Released on July 30, 2021
 
 **Improvements**
 
-- 支持 turn server 调度，提升连接成功率。
-- [Client.getRemoteMutedState](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getRemoteMutedState) 新增属性 hasSmall，标识远端是否有推小流。
+- Optimized the exception handling logic for the `publish` and `subscribe` APIs.
+- Optimized the recovery policy for audio mixing plugins.
 
 **Bug fixing**
 
-- 修复 LocalStorage 被禁用时，无法使用 SDK 的问题。
-- 修复偶现 publish 异常时，接口未 rejected 的问题。
+- Fixed the occasional inaccuracy of the `peer-leave` notification.
 
-
-## Version 4.3.3 Released on December 25, 2019
+## Version 4.11.2 Released on July 23, 2021
 
 **Improvements**
 
-- 支持美颜插件，参考：[开启美颜](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)。
-- 优化数据统计准确性。
+- Supported TURN server scheduling, improving connection success rate.
+- Added the `hasSmall` property, which indicates whether a remote user has substream video, to [Client.getRemoteMutedState](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getRemoteMutedState).
 
-## Version 8.6.101 Released on May 28, 2021
+**Bug fixing**
+
+- Fixed the issue where the SDK is unavailable when LocalStorage is disabled.
+- Fixed the occasional issue where API requests are not rejected when publishing exceptions occur.
+
+
+## Version 4.11.1 Released on June 25, 2021
+
+**Improvements**
+
+- Supported the beauty filter plugin. For details, please see [Enabling Beauty Filters](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html).
+- Improved statistical accuracy.
+
+## Version 4.11.0 Released on June 18, 2021
 
 **New features**
 
-支持大小流，参考教程：[开启大小流传输](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html)。
+Supported dual streams (primary and substream). For detailed directions, please see [Enabling Dual Streams](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html).
 
 **Improvements**
 
-优化事件通知时序。
+Optimized the event notification order.
 
-## Version 4.3.3 Released on December 25, 2019
+## Version 4.10.3 Released on June 11, 2021
 
 **Improvements**
 
-- 优化质量数据统计逻辑，支持服务端 API 获取通话质量数据。
-- [ClientEvent.NETWORK_QUALITY](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.NETWORK_QUALITY) 事件返回 rtt 和 loss 数据。
-- 优化接口校验逻辑，防止重复调用出现异常。
-- 优化播放逻辑，降低音频播放耗时。
+- Optimized the quality measuring logic and allowed getting call quality statistics via a server-side API.
+- Added statistics on RTT and packet loss to [ClientEvent.NETWORK_QUALITY](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.NETWORK_QUALITY).
+- Optimized the API verification logic to prevent exceptions caused by repeated calls.
+- Optimized the playback logic, reducing audio loading time.
 
 ## Version 4.10.2 Released on May 24, 2021
 
@@ -123,7 +142,7 @@ Optimized the parameter verification logic of the [localStream.switchDevice](htt
 
 Changed the default port number of the WebSocket protocol to 443.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the issue where audience cannot receive the callbacks of room entry and exit by an anchor in live streaming scenarios.
 - Fixed occasional failure to reconnect when string-type room IDs are used.
@@ -192,7 +211,7 @@ Fixed the occasional `Cannot read property 'isConnected' of null` error during r
 
 **Breaking change**
 
-Deleted the disused API `setDefaultMuteRemoteStreams`. Please use the [client.unsubscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#unsubscribe) API instead.
+Deleted the disused API `setDefaultMuteRemoteStreams`. Please use the `autoSubscribe` parameter of [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient) instead.
 
 ## Version 4.8.1 Released on December 25, 2020
 
@@ -314,7 +333,7 @@ Allowed stopping the collection of network quality statistics after room exit.
 - Optimized error messages.
 - Supported automatically resuming push when change of the stream capturing device is detected.
 
-**Bug fixing**
+**Bugs fixed**
 
 Fixed failure to publish again immediately after `unpublish` succeeds.
 
@@ -326,7 +345,7 @@ Fixed failure to publish again immediately after `unpublish` succeeds.
 - Optimized the parameter verification logic for the `subscribe` and `unsubscribe` APIs.
 - Added network quality logs.
 
-**Bug fixed**
+**Bugs fixed**
 
 - Fixed the “OverconstrainedError” error when access to media devices is not granted and an empty device ID is passed in the `TRTC.createStream` API.
 - Fixed the issue where no log is printed when upstream peer connection is lost.

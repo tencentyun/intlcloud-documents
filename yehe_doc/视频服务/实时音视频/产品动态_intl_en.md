@@ -1,3 +1,28 @@
+## September 2021
+<table>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
+</tr><tr>
+<td>SDK 9.1 release</td>
+<td>All platforms:<ul style="margin:0">
+	<li>Supported using a C++ API to set the format of called back audio frames.</li>
+	<li>Improved experience under poor network conditions.</li>
+</ul><br>Windows:<ul style="margin:0">
+	<li>Supported streaming VOD files in AC3 format.</li>
+	<li>Supported getting the resolutions supported by a camera. For details, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ad502f48cb2a4470943134e4b48904450">ITXDeviceCollection.getDeviceProperties</a>.</li>
+	<li>Supported NVIDIA, Intel, and AMD hardware decoding.</li>
+</ul><br>macOS:<ul style="margin:0">
+Supported recording local media.
+</ul><br>Android:<ul style="margin:0">
+	<li>Improved audio status management during room exit.</li>
+	<li>Improved the logic of recovery in the case of audio capturing failure, to increase the success rate of audio capturing.</li>
+	<li>Fixed video overexposure under certain conditions.</li>
+</ul></td>
+<td>2021-09-04</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr>
+</table>
+
+
 ## August 2021
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
@@ -8,7 +33,7 @@
 <li>Separated audio and video packet loss in the status callback. For details, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCStatistic__cplusplus.html#structliteav_1_1TRTCRemoteStatistics" >TRTCRemoteStatistics</a>.</li>
 <li>Optimized the subscription process to improve instant streaming performance for manual subscription.</li>
 <li>Fixed the issue of repeated `onExitRoom` callback in some scenarios.</li>
-</ul><br>iOS:<ul style="margin:0">
+</ul><br>iOS:<ul style="margin:0;">
 Allowed setting the capturing volume of system audio. For details, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afc45226807d84673bab78b21d1be54ae">setSystemAudioLoopbackVolume</a>.
 </ul></td>
 <td>2021-08-06</td>
@@ -27,7 +52,7 @@ Allowed setting the capturing volume of system audio. For details, please see <a
 <li>Added the stream type parameter to the APIs `muteLocalVideo` and `muteRemoteVideoStream`.</li>
 <li>Added the gateway RTT parameter `gatewayRtt` to the status callback `onStatistics`, which indicates the quality of network between users and their Wi-Fi routers.</li>
 <li>Supported recording audio into more formats using the `startAudioRecording` API.</li>
-</ul><br>Android:<ul style="margin:0">
+</ul><br>Android: <ul style="margin:0">
 <li>Improved instant streaming performance.</li>
 <li>Upgraded the audio pre-processing algorithm for clearer audio in calls.</li>
 <li>Supported specifying external GL contexts for custom capturing, allowing more flexible use of OpenGL contexts.</li>
@@ -53,7 +78,7 @@ Allowed playing audio via peripheral devices. For details, please see <a href="h
 </ul><br>macOS:<ul style="margin:0">
 Reduced the CPU usage of screen sharing when mouse cursor capturing is enabled.
 </ul><br>Windows:<ul style="margin:0">
-<li/>Made AGC faster and timelier for better results.
+<li/>Made AGC faster and more timely for better results.
 <li/>Reduced the performance overhead of screen sharing when the window filtering feature is enabled.
 </ul></td>
 <td>2021-06-21</td>
@@ -109,7 +134,7 @@ Added native support for Apple M1.
 <li>Supported custom capturing of substream data. For details, please see the API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6">sendCustomVideoData</a>.</li>
 <li>Supported custom audio mixing. You can feed a custom audio track into the SDK’s audio processing. The SDK will mix the two tracks before publishing. For details, please see the API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3c99feacd22af10926d5a521ca598ecd">mixExternalAudioFrame</a>.</li>
 <li>Supported mixing only video streams, allowing more flexible stream mixing control.</li>
-<li>Added end-to-end latency to the status callback.</li>
+<li>Added end-to-end latency to status callback.</li>
 </ul>
 <br>Windows:<ul style="margin:0">
 Supported automatic switch to the slideshow window when a slideshow is selected for screen sharing.
@@ -196,7 +221,7 @@ iOS & Android: <ul style="margin:0">Supported the callback of the combination of
 <td>SDK 8.1 release</td>
 <td>
 All platforms: <ul style="margin:0">
-	<li/>Added remote video stutter to `onStatistics`.
+	<li/>Added statistics on remote video lag to `onStatistics`.
 	<li/>Supported using the volume adjusting API `setAudioPlayoutVolume` (100-150) for audio gain.
 	<li/>Optimized the audio processing algorithm to deliver better audio quality when earphones are used.
 </ul>
@@ -208,7 +233,7 @@ All platforms: <ul style="margin:0">
  Updated C# to the latest APIs.
 </ul>
 </td>
-<td>2020-12-03</td>
+<td>December 3, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
 </tr>
 </table> 
@@ -311,7 +336,7 @@ Supported pushing a specified image when stream pushing pauses. For more informa
 <br>Windows:<ul style="margin:0">
 <li>Supported specifying content for screen sharing across screens.
 <li>Supported filtering out specified windows from screen sharing to prevent the target window from being covered. For more information, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac2a8a65dc2c1d0e4ffbd89eeae768fff">TRTCCloud.addExcludedShareWindow</a> and <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0bbbff5ea3cd764dbaaad0db887760bf">TRTCCloud.removeExcludedShareWindow</a>.
-<li>Added the callback for system volume change. For details, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12">ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged</a>.
+<li>Added the callback of system volume change. For details, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12">ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged</a>.
 <li>Made the SDK compatible with the virtual webcam e2eSoft VCam.
 <li>Allowed calling `startLocalPreview` and `startCameraDeviceTest` at the same time.
 <li>Allowed publishing screen sharing images via the primary stream and at the same time calling `startLocalPreview` to enable local preview.
@@ -409,7 +434,7 @@ All platforms: <ul style="margin:0">
 <li>Improved the success rate of turning on mics.</li>
 </ul>
 <br>Windows:<ul style="margin:0">
-<li>Supported username and password verification for SOCKS5 proxies.</li>
+<li>Supported username and password verification for SOCKS5 proxies.
 <li>Fixed the issue of extremely low frame rate on some cameras when streams are pushed in the portrait mode.</li>
 </ul></td>
 <td>2020-07-31</td>
@@ -427,7 +452,7 @@ All platforms: <ul style="margin:0">
 </tr><tr>
 <td>Change of billing standards</td>
 <td>Added the <b>bill-by-duration</b>mode for on-cloud recording.</td>
-<td>2020-07-01</td>
+<td>July 01, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/38385">Billing of on-cloud recording</a></td>
 </tr>
 </table>
@@ -453,7 +478,7 @@ All platforms: <ul style="margin:0">
 </ul>
 </td>
 <td>2020-06-24</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>SDK 7.3 release</td>
@@ -481,7 +506,7 @@ All platforms: <ul style="margin:0">
 </ul>
 </td>
 <td>2020-06-01</td>
-<td>-</td>
+<td>N/A</td>
 </tr></table>
 
 
@@ -531,7 +556,7 @@ All platforms: <ul style="margin:0">
   <td>New usage statistics module in the console</td>   
   <td>Redesigned the usage statistics module, which shows in real time your billable minutes of audio as well as SD, HD, and FHD video. The data is refreshed once every 5 minutes.</td>   
   <td>2020-04-01</td>   
-  <td>-</td>   
+  <td>N/A</td>   
 </tr> 
 </table>
 
@@ -561,7 +586,7 @@ All platforms: <ul style="margin:0">
          <td>General audio/video packages launch</td>   
          <td>Launched general audio/video packages, including fixed-time and custom ones. They can be used to deduct audio as well as SD, HD, and FHD duration. For 1 minute of audio, SD, HD, and FHD usage, 1, 2, 4, and 15 minutes are deducted from a general package respectively.</td>   
        <td>2020-03-11</td>   
-       <td>-</td>   
+       <td>N/A</td>   
      </tr> 
 </table>
 
@@ -597,7 +622,7 @@ All platforms: <ul style="margin:0">
 </ul><br>Windows: <ul style="margin:0;"><li>The SDK for C# supported onscreen rendering and custom rendering.</li>
      <li>The SDK for C# supported local audio recording.</li>
 </ul></td>   
-       <td>2020-01-14</td>   
+       <td>January 14, 2020</td>   
        <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>   
      </tr> 
    <tr>      
@@ -610,8 +635,8 @@ All platforms: <ul style="margin:0">
      <li>Used Tencent's proprietary quality evaluation system, which is more suitable for actual use cases.</li>
      <li>Improved user experience by making data more comprehensive and easier to understand and use.</li>
 </ul></td>   
-       <td>2020-01-07</td>   
-       <td>-</td>   
+       <td>January 07, 2020</td>   
+       <td>N/A</td>   
      </tr> 
 </table>
 
@@ -629,7 +654,7 @@ All platforms: <ul style="margin:0">
 <td>Change of billing standards</td>   
 <td>Raised the upper limit of SD from 640 x 360 to 640 x 480. Videos whose resolution is at or below 640 x 480 are all billed as SD duration.</td>   
 <td>December 04, 2019</td>   
-<td>-</td>   
+<td>N/A</td>   
 </tr>
 </table>
 
@@ -643,7 +668,7 @@ All platforms: <ul style="margin:0">
          <td>Console 2.0 release</td>   
          <td>Redesigned the console, adding a left sidebar to improve the ease of use, with modules including Overview, Usage Statistics, Monitoring Dashboard, Development Assistance, Package Management, and Application Management.</td>   
        <td>2019-11-18</td>   
-       <td>-</td>   
+       <td>N/A</td>   
      </tr> 
    <tr>      
          <td>SDK 6.8 release</td>   
@@ -804,7 +829,7 @@ Windows: <ul style="margin:0;"><li>Supported anti-covering for screen sharing.</
      <li>Optimized the camera selection policy, and supported passing in `deviceId` for device selection.</li>
      <li>Increased the compatibility and performance of the beauty filter and rendering modules on some Windows versions.</li>
 </ul><br>iOS & macOS: <ul style="margin:0;"><li>Fixed the duplicate symbol bug.</li>
-     <li>Improved the performance on low-end iOS devices.</li>
+     <li>Increased the performance on low-end iOS devices.</li>
      <li>Supported the Enterprise Edition for iOS, which integrates features including eye enlarging, face slimming, chin slimming, and animated effect widgets.</li>
      <li>Added APIs for mirroring the local image and encoded images.</li>
      <li>Supported `NSData` for `sendCustomVideoData`.</li>
@@ -830,7 +855,7 @@ Windows: <ul style="margin:0;"><li>Supported anti-covering for screen sharing.</
          <td>Monthly feature fee canceled</td>   
          <td>Canceled the 1500 CNY monthly feature fee in March 2019, and this will be indicated in the bills generated on April 1, 2019 and afterwards.</td>   
        <td>2019-04-01</td>   
-       <td>-</td>   
+       <td>N/A</td>   
      </tr> 
 </table>
 
