@@ -91,6 +91,7 @@ pod 'TXIMSDK_iOS'
 pod 'TXLiteAVSDK_TRTC'
 :::
 </dx-codeblock>
+
 >?두 SDK 제품의 최신 버전 번호는 [TRTC](https://github.com/tencentyun/TRTCSDK)와 [IM](https://github.com/tencentyun/TIMSDK)의 GitHub 메인 페이지에서 획득할 수 있습니다.
 - **방법2: 로컬을 통한 종속**
 cocoapods 라이브러리 액세스가 비교적 느린 개발 환경인 경우, 직접 ZIP 패키지를 다운로드하고 통합 가이드 문서를 참고하여 프로젝트에 통합할 수 있습니다.
