@@ -154,7 +154,7 @@ TRTCCloud의 `startSpeakerDeviceTest` 함수를 사용해 일부 기본 설정�
 
 // 스피커 볼륨 측정기 업데이트
 - (void)_updateOutputVolume:(NSInteger)volume {
-    // speakerVolumeMeter 为 NSLevelIndicator
+    // speakerVolumeMeter는 NSLevelIndicator임
     self.speakerVolumeMeter.doubleValue = volume / 255.0 * 10;
 }
 :::
