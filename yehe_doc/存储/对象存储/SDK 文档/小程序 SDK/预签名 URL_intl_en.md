@@ -2,7 +2,12 @@
 
 The mini program SDK provides samples for calculating signatures and getting object URLs and pre-signed request URLs.
 
-## Signature calculation
+>?
+> - You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
+> 
+
+## Signature Calculation
 
 In all COS XML API requests, the authentication credential `Authorization` is required for all operations on private resources for COS to determine whether a request is valid.
 
@@ -16,7 +21,7 @@ The `COS.getAuthorization` method is used to calculate the authentication creden
 >! It is recommended that this method is only used for frontend debugging but not in actual projects, as it may disclose keys.
 >
 
-#### Examples
+#### Example
 
 Obtain the authentication credential for object download:
 
@@ -38,13 +43,13 @@ var Authorization = COS.getAuthorization({
 
 | Parameter | Description | Type | Required |
 | --------- | ------------------------------------------------------------ | ------ | ---- |
-| SecretId | User's `SecretId` | String | No |
+| SecretId | User SecretId | String | Yes |
 | SecretKey | User's `SecretKey` | String | Yes |
 | Method | HTTP request method such as `GET`, `POST`, `DELETE`, or `HEAD` | String | Yes |
-| Key | Object key (object name), unique ID of an object in a bucket. <br><li>**If the request operation is to be performed on a file, this parameter is required and should be a filename.** <br><li>If the operation is on a bucket, this parameter should be left empty | String | No |
+| Key | Object key (object name), unique ID of an object in a bucket. </br><li>**If the requested operation is performed on an object, this parameter is required and should be the object name.** </li><li>If the operation is on a bucket, this parameter should be left empty.</li> | String | No |
 | Query | `query` parameter object of the request | Object | No |
 | Headers | `header` parameter object of the request | Object | No |
-| Expires | Signature expiration time in seconds. Default value: `900` | Number | No |
+| Expires | Signature expiration time in seconds. Default value: 900 seconds | Number | No |
 
 #### Returned value description
 
@@ -81,9 +86,10 @@ var url = cos.getObjectUrl({
 });
 ```
 
-Sample 3. Get a signed URL through callback
+Sample 3. Get a signed URL through `callback`
 
-> ? If the signing process is asynchronous, you need to get the signed URL through a callback.
+>? If the signing process is asynchronous, you need to get the signed URL through a callback.
+>
 
 [//]: # (.cssg-snippet-get-presign-download-url-callback)
 ```js
@@ -143,7 +149,7 @@ cos.getObjectUrl({
 | ------- | ------------------------------------------------------------ | ------- | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Key | Object key (object name), unique ID of an object in a bucket. <br><li>**If the request operation is to be performed on a file, this parameter is required and should be a filename.** <br><li>If the operation is on a bucket, this parameter should be left empty | String | Yes |
+| Key | Object key (object name), unique ID of an object in a bucket. </br><li>**If the requested operation is performed on an object, this parameter is required and should be the object name.** </li><li>If the operation is on a bucket, this parameter should be left empty. </li> | String | Yes |
 | Sign | Whether to return a signed URL. Default value: `true` | Boolean | No |
 | Protocol    | It can be `http:` (default) or `https:` | String | No |
 | Domain    | Bucket access domain. Default value: `{BucketName-APPID}.cos.{Region}.myqcloud.com` | String | No |
@@ -167,7 +173,7 @@ function(err, data) { ... }
 
 | Parameter | Description | Type |
 | ------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
 | - Url | Calculated URL | String |
 

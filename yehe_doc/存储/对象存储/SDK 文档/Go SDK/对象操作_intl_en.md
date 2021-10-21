@@ -6,35 +6,36 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying an object list | Queries some or all objects in a bucket |
+| [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying objects | Queries some or all the objects in a bucket. |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
-| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Gets object metadata | Gets the meta information of an object |
+| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | Appending parts  | Uploads an object by appending parts   |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object (file) to the local file system |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies an object to a destination path |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies a file to the destination path. |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
-| [DELETE Multiple Object](https://cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access|
+| [DELETE Multiple Object](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access. |
 
 
-**Multipart upload operations**
+**Multipart operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart upload operations |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a part in a multipart upload |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload operation | Aborts a multipart upload and deletes the uploaded parts |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads a file in parts. |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of a file. |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts. |
 
 
 ## Simple Operations
 
-### Querying an object list
+### Querying objects
 
-#### API description
+#### Description
 
-This API is used to query some or all objects in a bucket.
+This API is used to query some or all the objects in a bucket.
 
 #### Method prototype
 
@@ -63,7 +64,7 @@ COS does not have folders, but users can use slashes (/) as the delimiter to sti
 ```go
     var marker string
     opt := &cos.BucketGetOptions{
-        Prefix:  "folder/",  // "prefix" indicates the directory to delete.
+        Prefix:  "folder/",  // "prefix" indicates the directory to query.
         Delimiter: "/", // Set the delimiter to "/" to list objects in the current directory. To list all objects, leave it empty.
         MaxKeys: 1000,       // Set the maximum number of traversed objects (up to 1,000 per `listobject` request).
     }
@@ -101,11 +102,11 @@ type BucketGetOptions struct {
 
 | Parameter | Description | Type | Required |
 | ------------ | ------------------------------------------------------------ | ------ | ---- |
-| Prefix | Filters object keys prefixed with the value of this parameter. It is left empty by default. | string | No |
-| Delimiter | A separator that is left empty by default. For example, you can specify it as `/` to indicate folders. | string | No |
+| Prefix | Filters the object keys prefixed with the value of this parameter. It is left empty by default. | String | No |
+| Delimiter | A separator that is left empty by default. For example, you can specify it as `/` to indicate folders. | String | No |
 | EncodingType | Specifies the encoding method of the returned value. It is left empty by default. Valid value: url. | string | No |
-| Marker | Specifies the object after which the listing should begin. Objects are listed using UTF-8 binary order by default. | string | No |
-| MaxKeys | Maximum number of returned objects. It defaults to 1000. | int | No |
+| Marker | Marks the starting point of the returned object list. Entries are listed in UTF-8 binary order by default. | String | No |
+| MaxKeys | Maximum number of returned objects. Defaults to `1000`. | Int | No |
 
 #### Response description
 
@@ -126,20 +127,20 @@ type BucketGetResult struct {
 
 | Parameter | Description | Type |
 | -------------- | ------------------------------------------------------------ | -------- |
-| Name           | Bucket name in the format: BucketName-APPID, e.g. examplebucket-1250000000. | string   |
-| Prefix | Filters the object keys prefixed with the value of this parameter. It is left empty by default. | string   |
-| Marker | Specifies the object after which the listing should begin. Objects are listed using UTF-8 binary order by default. | string |
-| NextMarker | Specifies the object after which the next listing should begin if IsTruncated is `true`. | string |
-| Delimiter | A separator that is left empty by default. For example, you can specify it as `/` to indicate folders. | string |
-| MaxKeys | Maximum number of returned objects. It defaults to 1000. | int |
+| Name | Bucket name in the format of `BucketName-APPID`, such as `examplebucket-1250000000`. | String |
+| Prefix | Filters the object keys prefixed with the value of this parameter. It is left empty by default. | String |
+| Marker | Marks the starting point of the returned object list. Entries are listed in UTF-8 binary order by default. | String |
+| NextMarker | Specifies the object after which the next listing should begin if `IsTruncated` is set to `true`. | String |
+| Delimiter | A separator that is left empty by default. For example, you can specify it as `/` to indicate folders. | String |
+| MaxKeys | Maximum number of returned objects. It defaults to 1000. | Int |
 | IsTruncated | Indicates whether the returned objects are truncated | bool |
-| Contents | Lists metadata of all objects, including ETag, StorageClass, Key, Owner, LastModified, and Size. | []Object |
-| CommonPrefixes | All keys starting with Prefix and ending with Delimiter are grouped as a common prefix. | []string |
-| EncodingType | Specifies the encoding method of the returned value. It is left empty by default. Valid value: url. | string |
+| Contents | Lists the metadata of all objects, including ETag, StorageClass, Key, Owner, LastModified, and Size. | []Object |
+| CommonPrefixes | Groups all keys starting with `Prefix` and ending with `Delimiter` as a common prefix. | []string |
+| EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
 
 ### Uploading an object using simple upload
 
-#### API description
+#### Description
 
 This API (PUT Object) is used to upload an object (file) of up to 5 GB to a bucket. For objects larger than 5 GB, please use [multipart upload](#.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89). Simple uploads, creating folders, and batch uploads are supported.
 
@@ -163,7 +164,7 @@ opt := &cos.ObjectPutOptions{
         ContentType: "text/html",
     },
     ACLHeaderOptions: &cos.ACLHeaderOptions{
-        We recommend you not to set permissions on individual files when uploading so as to avoid reaching the limit. Bucket permission sets the default limit.
+        // Considering the ACL limit, we recommend not setting an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
         XCosACL: "private",
     },
 }
@@ -171,11 +172,18 @@ _, err = client.Object.Put(context.Background(), key, f, opt)
 if err != nil {
     panic(err)
 }
+
 // Sample 2: Using PUtFromFile to upload a file to COS
 filepath := "./test"
 _, err = client.Object.PutFromFile(context.Background(), key, filepath, opt)
 if err != nil {
     panic(err)
+}
+
+// Sample 3: Uploading a zero-byte file and setting the input stream length to 0 
+_, err = client.Object.Put(context.Background(), key, strings.NewReader(""), nil)
+if err != nil {
+    // ERROR
 }
 ```
 
@@ -235,7 +243,7 @@ func main() {
             Listener:    &cos.DefaultProgressListener{},
         },
         ACLHeaderOptions: &cos.ACLHeaderOptions{
-            We recommend you not to set permissions on individual files when uploading so as to avoid reaching the limit. Bucket permission sets the default limit.
+            // Considering the ACL limit, we recommend not setting an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
             XCosACL: "private",
         },
     }
@@ -319,7 +327,7 @@ type ObjectPutHeaderOptions struct {
     ContentType        string 
     ContentLength      int64  
     Expires            string 
-    Custom x-cos-meta-* header
+    // Custom x-cos-meta-* header
     XCosMetaXXX        *http.Header 
     XCosStorageClass   string      
     XCosTrafficLimit   int
@@ -329,20 +337,20 @@ type ObjectPutHeaderOptions struct {
 
 | Parameter | Description | Type | Required |
 | -------------------- | ------------------------------------------------------------ | ----------- | ---- |
-| r | The content of the uploaded file, which can be a file stream or a byte stream. When r is not bytes.Buffer/bytes.Reader/strings.Reader, opt.ObjectPutHeaderOptions.ContentLength must be specified. | io.Reader | Yes |
-| key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| XCosACL | Sets the file ACL, such as private, public-read, and public-read-write. | string | No |
-| XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | string | No |
-| XCosGrantRead | Grants read permission in the format: id="[OwnerUin]" | string | No |
-| XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE. | string | No |
-| Expires | Sets Content-Expires. | string | No |
-| CacheControl | Cache policy. Sets Cache-Control. | string | No |
-| ContentType | Content Type. Sets Content-Type. | string | No |
-| ContentDisposition | File name. Sets Content-Disposition. | string | No |
-| ContentEncoding | Encoding format. Sets Content-Encoding. | string | No |
-| ContentLength | Sets the length of the request content. | int64 | No |
-| XCosMetaXXX | User-defined file metadata. It must start with x-cos-meta. Otherwise, it will be ignored. | http.Header | No |
-| XCosTrafficLimit     | Limits the speed for a single URL.       | int    | No |
+| r | Content of the uploaded file, which can be a file stream or a byte stream. When `r` is not `bytes.Buffer/bytes.Reader/strings.Reader`, `opt.ObjectPutHeaderOptions.ContentLength` must be specified | io.Reader | Yes |
+| key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| XCosACL | Sets the file ACL, such as private, public-read, and public-read-write | String | No |
+| XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | String | No |
+| XCosGrantRead | Grants read permission in the format: id="[OwnerUin]" | String | No |
+| XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE | String | No |
+| Expires | Sets `Content-Expires` | String | No |
+| CacheControl | Cache policy. Sets `Cache-Control` | String | No |
+| ContentType | Content Type. Sets `Content-Type` | String | No |
+| ContentDisposition | Filename. Sets `Content-Disposition` | String | No |
+| ContentEncoding | Encoding format. Sets `Content-Encoding` | String | No |
+| ContentLength | Sets the length of the request content | int64 | No |
+| XCosMetaXXX | User-defined file metadata. It must start with x-cos-meta. Otherwise, it will be ignored | http.Header | No |
+| XCosTrafficLimit     | Limits the speed for a single URL       | Int    | No |
 | Listener             | Progress callback API                        | Struct | No |
 
 #### Response description
@@ -361,14 +369,54 @@ resp, err := client.Object.Put(context.Background(), key, f, nil)
 etag := resp.Header.Get("ETag")
 exp := resp.Header.Get("x-cos-expiration")
 ```
+
+
 | Parameter | Description | Type |
 | ---------------- | -------------------------------- | ------ |
 | ETag | MD5 checksum of the uploaded file  | string |
 | x-cos-expiration | Returns the file expiration rule if a lifecycle is configured. | string |
 
+### Appending parts
+
+#### Description
+
+This API is used to upload an object by appending parts.
+
+#### Method prototype
+
+```go
+func (s *ObjectService) Append(ctx context.Context, name string, position int, r io.Reader, opt *ObjectPutOptions) (int, *Response, error)
+```
+#### Sample request
+```go
+name := "exampleobject"
+pos, _, err := c.Object.Append(context.Background(), name, 0, strings.NewReader("test1"), opt)
+if err != nil {
+    // ERROR
+}
+_, _, err = c.Object.Append(context.Background(), name, pos, strings.NewReader("test2"), opt)
+if err != nil {
+    // ERROR
+}
+```
+#### Parameter description
+
+| Parameter | Description | Type |
+| ---------- | ------------------------------------------------------------ | ------ |
+| name  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` |  string |
+| position | Starting point for the append operation (in bytes). For the first append, the value of this parameter is 0. For subsequent appends, the value is the `content-length` of the current object. | int |
+| r | Content of the uploaded file, which can be a file stream or a byte stream. When `r` is not `bytes.Buffer/bytes.Reader/strings.Reader`, `opt.ObjectPutHeaderOptions.ContentLength` must be specified | io.Reader |
+|  opt       |  Upload parameters (see `ObjectPutOptions`) | struct |
+
+#### Response description
+
+| Parameter | Description | Type |
+| ---------- | ------------------------------------------------------------ | ------ |
+| x-cos-next-append-position | Starting point of the next append, in bytes | int |
+
 ### Querying object metadata
 
-#### API description
+#### Description
 
 The API is used to query object metadata.
 
@@ -399,8 +447,8 @@ type ObjectHeadOptions struct {
 
 | Parameter | Description | Type | Required |
 | --------------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| IfModifiedSince | Returned only if the object has been modified after the specified time | string | No |
+| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| IfModifiedSince | Returns the object only if it has been modified after the specified time | String | No |
 
 #### Response description
 
@@ -425,11 +473,12 @@ reqid := resp.Header.Get("X-Cos-Request-Id")
 
 | Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| Metadata | Includes both predefined object metadata, including Etag and X-Cos-Request-Id, and custom object metadata. | string |
+| Metadata | Metadata of the queried file, including Etag and X-Cos-Request-Id. The metadata of the configured file is also returned. | String |
+
 
 ### Downloading an object
 
-#### API description
+#### Description
 
 This API (GET Object) is used to download an object (file) to a local file system. Simple downloads and batch downloads are supported.
 
@@ -450,7 +499,7 @@ opt := &cos.ObjectGetOptions{
     ResponseContentType: "text/html",
     Range:               "bytes=0-3",
 }
-// "opt" is optional. It can be set to “nil” unless otherwise specified.
+// `opt` is optional. It can be set to `nil` unless otherwise specified.
 // 1. Obtain the object from the response body
 resp, err := client.Object.Get(context.Background(), key, opt)
 if err != nil {
@@ -459,7 +508,7 @@ if err != nil {
 ioutil.ReadAll(resp.Body)
 resp.Body.Close()
 
-// 2. Download the object locally
+// 2. Download the object to the local file system
 _, err = client.Object.GetToFile(context.Background(), key, "example.txt", nil)
 if err != nil {
     panic(err)
@@ -503,7 +552,23 @@ func main() {
 }
 ```
 
-#### Sample 3: obtaining the download progress
+#### Sample 3: limiting single-URL speed
+```go
+
+key := "exampleobject"
+opt := &cos.ObjectGetOptions{
+    // The speed range is 819200 to 838860800, that is 100 KB/s to 100 MB/s. If the value is not within this range, 400 will be returned.
+    XCosTrafficLimit: 819200,
+}
+// `opt` is optional. It can be set to `nil` unless otherwise specified.
+// 1. Obtain the object from the response body
+_, err := client.Object.GetToFile(context.Background(), key, "example.txt", opt)
+if err != nil {
+    panic(err)
+}
+```
+
+#### Sample 4: obtaining the download progress
 
 The Go SDK allows you to obtain the download progress via a callback. You need to implement the `cos.ProgressListener` API, which is defined as follows:
 
@@ -552,7 +617,7 @@ func main() {
         // View the progress using the default progress listener.
 	Listener: &cos.DefaultProgressListener{},
     }
-    // "opt" is optional. It can be set to “nil” unless otherwise specified.
+    // `opt` is optional. It can be set to `nil` unless otherwise specified.
     // 1. Obtain the object from the response body
     resp, err := client.Object.Get(context.Background(), key, opt)
     if err != nil {
@@ -561,7 +626,7 @@ func main() {
     ioutil.ReadAll(resp.Body)
     resp.Body.Close()
 
-    // 2. Download the object locally
+    // 2. Download the object to the local file system
     // Use the custom progress callback method.
     opt.Listener = &SelfListener{}
     _, err = client.Object.GetToFile(context.Background(), key, "example.txt", opt)
@@ -591,17 +656,17 @@ type ObjectGetOptions struct {
 
 | Parameter | Description | Type | Required |
 | -------------------------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
+| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | localfile | Name of the file downloaded to the local file system | string | Yes |
-| ResponseContentType | Sets the Content-Type in the response header | string | No |
-| ResponseContentLanguage | Sets the Content-Language in the response header | string | No |
-| ResponseExpires | Sets the Content-Expires in the response header | string | No |
-| ResponseCacheControl | Sets the Cache-Control in the response header | string | No |
-| ResponseContentDisposition | Sets the Content-Disposition in the response header | string | No |
-| ResponseContentEncoding | Sets the Content-Encoding in the response header | string | No |
-| Range | Sets the range of bytes for the file to download in the format of bytes=first-last | string | No |
-| IfModifiedSince | Returned only if the object has been modified after the specified time | string | No |
-| XCosTrafficLimit           | Limits the speed for a single URL                            | int    | No |
+| ResponseContentType | Sets `Content-Type` in the response header | String | No |
+| ResponseContentLanguage | Sets `Content-Language` in the response header | String | No |
+| ResponseExpires | Sets `Expires` in the response header  | String | No |
+| ResponseCacheControl | Sets `Cache-Control` in the response header | String | No |
+| ResponseContentDisposition | Sets `Content-Disposition` in the response header | String | No |
+| ResponseContentEncoding | Sets `Content-Encoding` in the response header | String | No |
+| Range | Sets the byte range of the file to download in the format of `bytes=first-last`. | String | No |
+| IfModifiedSince | Returns the object only if it is modified after the specified time | String | No |
+| XCosTrafficLimit           | Limits the speed for a single URL                            | Int    | No |
 | Listener                   | Progress callback API                              | Struct | No |
 
 #### Response description
@@ -629,14 +694,16 @@ etag := resp.Header.Get("ETag")
 reqid := resp.Header.Get("X-Cos-Request-Id")
 
 ```
+
+
 | Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ---------- |
-| Body | The content of the downloaded file | StreamBody |
-| File meta information | The meta information of the downloaded file, including Etag and X-Cos-Request-Id. The meta information of the configured file is also returned. | string |
+| Body | Content of the downloaded file | StreamBody |
+| File metadata | Metadata of the downloaded file, including Etag and X-Cos-Request-Id. The metadata of the configured file is also returned. | String |
 
 ### Copying an object
 
-This API (PUT Object-Copy) is used to copy files to the destination path.
+This API (PUT Object-Copy) is used to copy an object to a destination path.
 
 #### Method prototype
 
@@ -667,7 +734,7 @@ if err != nil {
 ```go
 source := "test/oldfile"
 f := strings.NewReader("test")
-// Upload the object.
+// Upload the object
 _, err := c.Object.Put(context.Background(), source, f, nil)
 if err != nil {
     // Error
@@ -683,6 +750,32 @@ if err == nil {
  		// Error
  	}
 }
+```
+
+#### Sample 3: modifying storage class
+
+>!You can change STANDARD to STANDARD_IA, INTELLIGENT TIERING, ARCHIVE, or DEEP ARCHIVE. To modify ARCHIVE or DEEP ARCHIVE to other storage classes, you need to call `PostRestore` to restore objects in ARCHIVE or DEEP ARCHIVE first before calling this API. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
+
+```go
+name := "exampleobject"
+// Upload the source object
+f := strings.NewReader("test")
+_, err := client.Object.Put(context.Background(), name, f, nil)
+assert.Nil(s.T(), err, "Test Failed")
+
+sourceURL := fmt.Sprintf("%s/%s", client.BaseURL.BucketURL.Host, name)
+opt := &cos.ObjectCopyOptions{
+    &cos.ObjectCopyHeaderOptions{
+        XCosMetadataDirective: "Replaced",
+        XCosStorageClass: "Archive",        // Modify the storage class to ARCHIVE.
+    },
+    nil,
+}
+_, _, err = client.Object.Copy(context.Background(), name, sourceURL, opt)
+if err != nil {
+    panic(err)
+}
+
 ```
 
 #### Parameter description
@@ -713,19 +806,19 @@ type ObjectCopyHeaderOptions struct {
 
 | Parameter | Description | Type | Required |
 | ------------------------------- | ------------------------------------------------------------ | ----------- | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | sourceURL | URL of the source file to copy | string | Yes |
 | XCosACL | Sets the file ACL, such as private, public-read, and public-read-write | string | No |
 | XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | string | No |
 | XCosGrantRead| Grants the read permission in the format: id="[OwnerUin]" | string | No |
-|  XCosMetadataDirective | Valid values:</br><li>`Copy`: copies the source object along with its metadata.</br><li>`Replaced`: copies the source object while replacing its metadata.</br>If the destination path is the same as the source path, this parameter must be set to `Replaced`. | string | Yes |
-| XCosCopySourceIfModifiedSince | The operation is performed if the object is modified after the specified time; otherwise, error code 412 is returned. It can be used with `XCosCopySourceIfNoneMatch`. Using it with other conditions can cause a conflict. | string | No |
-| XCosCopySourceIfUnmodifiedSince | The operation is performed if the object is unmodified after the specified time; otherwise, error code 412 is returned. It can be used with `XCosCopySourceIfMatch`. Using it with other conditions can cause a conflict. | string | No |
-| XCosCopySourceIfMatch | The operation is performed if the Etag of the object is the same as the specified one, otherwise error code 412 is returned. It can be used with XCosCopySourceIfUnmodifiedSince. Using it with other conditions can cause a conflict. | string | No |
-| XCosCopySourceIfNoneMatch | The operation is performed if the Etag of the object is different from the specified one, otherwise error code 412 is returned. It can be used with XCosCopySourceIfModifiedSince. Using it with other conditions can cause a conflict. | string | No |
-| XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE. | string | No |
+|  XCosMetadataDirective | Valid values:</br><li>`Copy`: copies the source object along with its metadata.</br><li>`Replaced`: copies the source object while replacing its metadata.</br>If the destination path is the same as the source path, this parameter must be set to `Replaced`. | String | Yes |
+| XCosCopySourceIfModifiedSince | If the object is modified after the specified time, the operation will be performed; otherwise, 412 will be returned. This parameter can be used together with `XCosCopySourceIfNoneMatch`. If it is used together with other conditions, a conflict will be returned. | String | No |
+| XCosCopySourceIfUnmodifiedSince | If the object is not modified after the specified time, the operation will be performed; otherwise, 412 will be returned. This parameter can be used together with `XCosCopySourceIfMatch`. If it is used together with other conditions, a conflict will be returned. | String | No |
+| XCosCopySourceIfMatch | If the `ETag` of the object is the same as the specified one, the operation will be performed; otherwise, 412 will be returned. This parameter can be used together with `XCosCopySourceIfUnmodifiedSince`. If it is used together with other conditions, a conflict will be returned. | String | No |
+| XCosCopySourceIfNoneMatch | If the `Etag` of the object is different from the specified one, the operation will be performed; otherwise, 412 will be returned. This parameter can be used together with `XCosCopySourceIfModifiedSince`. If it is used together with other conditions, a conflict will be returned. | String | No |
+| XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE. | String | No |
 | XCosMetaXXX | User-defined file metadata. | http.Header | No |
-| XCosCopySource | Source file URL. You can specify a historical version using the `versionid` sub-resource. | string | No |
+| XCosCopySource | Source file URL. You can specify a historical version using the `versionid` sub-resource. | String | No |
 
 #### Response description
 
@@ -737,14 +830,16 @@ type ObjectCopyResult struct {
     LastModified string
 }
 ```
+
+
 | Parameter | Description | Type |
 | ------------ | -------------------------- | ------ |
-| ETag | MD5 of the copied file | string |
-| LastModified | The last time that the copied file was modified | string |
+| ETag | MD5 of the copied file | String |
+| LastModified | Last modified time of the copied file | String |
 
-### Deleting a single object
+### Deleting an object
 
-#### API description
+#### Description
 
 This API is used to delete an object (folder) from a bucket.
 
@@ -781,11 +876,11 @@ if err != nil {
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 
 ### Deleting multiple objects
 
-#### API description
+#### Description
 
 The API is used to delete multiple objects from a bucket. You can delete up to 1,000 objects in one request.
 
@@ -807,8 +902,8 @@ for _, v := range objects {
 }
 opt := &cos.ObjectDeleteMultiOptions{
     Objects: obs,
-    // Boolean, which indicates whether to enable Quiet or Verbose mode.
-    // “true” indicates the Quiet mode while “false” (default) indicates the Verbose mode.
+    // Boolean, which indicates whether to enable the Quiet or Verbose mode.
+    // `true` indicates the Quiet mode while `false` (default) indicates the Verbose mode.
     // Quiet: true,
 }
 
@@ -890,17 +985,17 @@ type ObjectDeleteMultiResult struct {
 | -------------- | ---------------------------------- | --------- |
 | DeletedObjects |Describes each object deleted | Container |
 | Errors| Describes objects that failed to be deleted | Container |
-| Key | Names of the objects that failed to be deleted | string |
-| Code | Error code for the deletion failure | string |
-| Message | Error message for the deletion failure | string |
+| Key | Names of the objects that failed to be deleted | String |
+| Code | Error code for the deletion failure | String |
+| Message | Error message for the deletion failure | String |
 
 
 
 ### Restoring an archived object 
 
-#### API description
+#### Description
 
-This (POST Object restore) API is used to restore an archived object for access.
+This API (`POST Object restore`) is used to restore an archived object for access.
 
 #### Method prototype
 
@@ -923,7 +1018,7 @@ opt := &cos.ObjectPutOptions{
         XCosStorageClass: "ARCHIVE", //ARCHIVE storage class
     },
     ACLHeaderOptions: &cos.ACLHeaderOptions{
-        We recommend you not to set permissions on individual files when uploading so as to avoid reaching the limit. Bucket permission sets the default limit.
+        // Considering the ACL limit, we recommend not setting an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
         XCosACL: "private",
     },
 }
@@ -961,19 +1056,19 @@ type CASJobParameters struct {
 
 | Parameter | Description | Type | Required |
 | -------------------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| ObjectRestoreOptions | Describes rules for retrieved temporary files | struct | Yes |
-| Days | Specifies the number of days before a temporary object expires | int | Yes |
-| CASJobParameters |Specifies the restoration configuration | struct | No |
-| Tier | Object restoration mode. For ARCHIVE, valid values are `Expedited`, `Standard`, and `Bulk`. For DEEP ARCHIVE, valid values are `Standard` and `Bulk` | string | No |
+| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| ObjectRestoreOptions | Describes rules for retrieved temporary files | Struct | Yes |
+| Days | Specifies the number of days before a temporary object expires | Int | Yes |
+| CASJobParameters | Specifies the restoration configuration | Struct | No |
+| Tier | Object restoration mode. For ARCHIVE, valid values are `Expedited`, `Standard`, and `Bulk`. For DEEP ARCHIVE, valid values are `Standard` and `Bulk` | String | No |
 
 
 
-## Multipart operations
+## Multipart Operations
 
-### Querying multipart upload operations
+### Querying multipart uploads
 
-#### API description
+#### Description
 
 This API is used to query in-progress multipart uploads in a specified bucket.
 
@@ -1008,11 +1103,11 @@ type ListMultipartUploadsOptions struct {
 
 | Parameter | Description | Type | Required |
 | -------------- | ------------------------------------------------------------ | ------ | ---- |
-| Delimiter | A symbol. The identical paths between `Prefix` and the first occurrence of the `Delimiter` are grouped and defined as a common prefix. If no `Prefix` is specified, the common prefix starts with the beginning of the path | string | No |
-| encodingType | Specifies the encoding type of returned values; valid value: `url` | string |No |
-| prefix | Specifies that returned object keys must be prefixed with this value. Note that if you use this parameter, returned keys will contain the prefix | string |No |
-| MaxUploads | Sets the maximum number of multipart uploads that can be returned at a time. Value range: 1−1000. Defaults to `1000`. | int | No |
-| KeyMarker | This parameter is used together with `upload-id-marker`: </li><li>If `upload-id-marker` is not specified, multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed.</li><li>If `upload-id-marker` is specified, multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed, and multipart uploads whose `ObjectName` is lexicographically equal to `key-marker` with `UploadID` greater than `upload-id-marker` will be listed. | string | No |
+| delimiter | The delimiter is a symbol. The identical paths between `prefix` or, if no `prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix  | String | No |
+| encodingType | Encoding type of the returned value. Valid value: `url` | String | No |
+| prefix | Specifies that returned object keys must be prefixed with this value. Note that if you use this parameter, returned keys will contain the prefix | String | No |
+| MaxUploads | Sets the maximum number of multipart uploads that can be returned at a time. Value range: 1−1000. Defaults to `1000`. | Int | No |
+| KeyMarker | This parameter is used together with `upload-id-marker`: </li><li>If `upload-id-marker` is not specified, multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed.</li><li>If `upload-id-marker` is specified, multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed, and multipart uploads whose `ObjectName` is lexicographically equal to `key-marker` with `UploadID` greater than `upload-id-marker` will be listed. | String | No |
 | UploadIDMarker | This parameter is used together with `key-marker`: </li><li>If `key-marker` is not specified, `upload-id-marker` will be ignored. </li><li>If `key-marker` is specified, multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed, and multipart uploads whose `ObjectName` is lexicographically equal to `key-marker` with `UploadID` greater than `upload-id-marker` will be listed.</li> | String | No |
 
 
@@ -1052,35 +1147,35 @@ type Owner struct {
 
 | Parameter | Description | Type |
 | ------------------ | ------------------------------------------------------------ | --------- |
-| Bucket | Destination bucket for multipart upload in the format of BucketName, e.g. examplebucket-1250000000 | string |
-| EncodingType | Specifies the encoding method of the returned value. It is left empty by default. Valid value: url | string |
-| KeyMarker | Specifies the key after which the listing should begin | string |
-|UploadIDMarker | Specifies the uploadId after which the listing should begin | string |
-| NextKeyMarker | Specifies the key after which the next listing should begin if the returned list is truncated | string |
-| NextUploadIdMarker | Specifies the uploadId after which the next listing should begin if the returned list is truncated | string |
-| MaxUploads | The maximum number of returned multipart uploads. It defaults to 1000. | string    |
-| IsTruncated | Indicates whether the returned list is truncated | bool |
+| Bucket | Destination bucket for multipart upload in the format of `BucketName`, for example, `examplebucket-1250000000` | String |
+| EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
+| KeyMarker | Specifies the key where the list starts | String |
+| UploadIDMarker | Specifies the `uploadId` where the list starts | String |
+| NextKeyMarker | If the returned list is truncated, the `NextKeyMarker` returned will be the starting point of the subsequent list | String |
+| NextUploadIdMarker | If the returned list is truncated, the `UploadId` returned will be the starting point of the subsequent list | String |
+| MaxUploads | Maximum number of parts to return at a time. Default value: `1000` | String    |
+| IsTruncated | Indicates whether the returned list is truncated | Bool |
 | Uploads | Information on each upload | Container |
-| Key | Object name | string |
-| UploadID | ID that identifies the multipart upload | string |
-| Key | Indicates whether the returned list is truncated | bool |
-| StorageClass | Specifies the storage class for parts. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE` | string |
+| Key | Object name | String |
+| UploadID | ID that identifies the multipart upload | String |
+| Key | Indicates whether the returned list is truncated | Bool |
+| StorageClass | Specifies the storage class for parts. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE` | String |
 | Initiator | Indicates information about the initiator of this upload | Container |
 | Owner | Indicates information about the owner of these parts | Container |
-| Initiated | Start time of the multipart upload | string |
-| Prefix | Specifies that returned object keys must be prefixed with this value. Note that if you use this parameter, returned keys will contain the prefix | struct    |
-| Delimiter | A symbol. The identical paths between `Prefix` and the first occurrence of the `Delimiter` are grouped and defined as a common prefix. If no `Prefix` is specified, the common prefix starts with the beginning of the path | string |
-| CommonPrefixes | The identical paths between `Prefix` and `Delimiter` are grouped and defined as a common prefix | string    |
-| ID | Unique CAM ID of users | string |
-| DisplayName | User Identifier (UIN) | string |
+| Initiated | Start time of the multipart upload | String |
+| Prefix | Specifies that returned object keys must be prefixed with this value. Note that if you use this parameter, returned keys will contain the prefix | Struct    |
+| Delimiter | A symbol. The identical paths between `Prefix` and the first occurrence of the `Delimiter` are grouped and defined as a common prefix. If no `Prefix` is specified, the common prefix starts with the beginning of the path | String |
+| CommonPrefixes | The identical paths between `Prefix` and `Delimiter` are grouped and defined as a common prefix | String    |
+| ID | Unique CAM ID of users | String |
+| DisplayName | User Identifier (UIN) | String |
 
 
 ### Multipart upload operations
 
-Operations related to multipart upload include the following:
+Multipart operations include:
 
 - Multipart upload: initializing a multipart upload operation, uploading parts, and completing a multipart upload operation
-- Deleting uploaded parts.
+- Deleting uploaded parts
 
 >? Uploading the object via multipart upload, you can also use [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload (recommended).
 >
@@ -1088,9 +1183,9 @@ Operations related to multipart upload include the following:
 <span id="INIT_MULIT_UPLOAD"></span>
 ###  Initializing a multipart upload 
 
-#### API description
+#### Description
 
-This API is used to initialize a multipart upload operation and gets its uploadId.
+This API is used to initialize a multipart upload operation and get its `uploadId`.
 
 #### Method prototype
 
@@ -1131,7 +1226,7 @@ type ObjectPutHeaderOptions struct {
     ContentType        string 
     ContentLength      int64   
     Expires            string 
-    Custom x-cos-meta-* header
+    // Custom x-cos-meta-* header
     XCosMetaXXX        *http.Header 
     XCosStorageClass   string      
 }
@@ -1140,18 +1235,18 @@ type ObjectPutHeaderOptions struct {
 
 | Parameter | Description | Type | Required |
 | -------------------- | ------------------------------------------------------------ | ----------- | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| XCosACL | Sets the file ACL, such as private，public-read | string | No |
-| XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | string | No |
-| XCosGrantRead | Grants read permission in the format: id="[OwnerUin]" | string | No |
-| XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE. | string | No |
-| Expires | Sets Content-Expires. | string | No |
-| CacheControl | Cache policy. Sets Cache-Control. | string | No |
-| ContentType | Content Type. Sets Content-Type. | string | No |
-| ContentDisposition | File name. Sets Content-Disposition. | string | No |
-| ContentEncoding | Encoding format. Sets Content-Encoding. | string | No |
-| ContentLength | Sets the length of the request content. | int64 | No |
-| XCosMetaXXX | User-defined file metadata. It must start with x-cos-meta. Otherwise, it will be ignored. | http.Header | No |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| XCosACL | Sets the file ACL, such as `private` or `public-read` | String | No |
+| XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | String | No |
+| XCosGrantRead | Grants read permission in the format: id="[OwnerUin]" | String | No |
+| XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE | String | No |
+| Expires | Sets `Content-Expires` | String | No |
+| CacheControl | Cache policy. Sets `Cache-Control` | String | No |
+| ContentType | Content Type. Sets `Content-Type` | String | No |
+| ContentDisposition | Filename. Sets `Content-Disposition` | String | No |
+| ContentEncoding | Encoding format. Sets `Content-Encoding` | String | No |
+| ContentLength | Sets the length of the request content | int64 | No |
+| XCosMetaXXX | User-defined file metadata. It must start with x-cos-meta. Otherwise, it will be ignored | http.Header | No |
 
 #### Response description
 
@@ -1167,13 +1262,13 @@ type InitiateMultipartUploadResult struct {
 | -------- | ------------------------------------------------------------ | ------ |
 | UploadId | ID that identifies the multipart upload | string |
 | Bucket | Bucket name in the format: `BucketName-APPID` | string |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 
 
 <span id="MULIT_UPLOAD_PART"></span>
-###  Uploading a part 
+###  Uploading parts 
 
-This API is used to upload a part in a multipart upload.
+This API (`Upload Part`) is used to upload an object in parts.
 
 #### Method prototype
 
@@ -1208,11 +1303,11 @@ type ObjectUploadPartOptions struct {
 
 | Parameter | Description | Type | Required |
 | ------------- | ------------------------------------------------------------ | --------- | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| UploadId | ID that identifies the multipart upload; generated by InitiateMultipartUpload | string | Yes |
-| PartNumber | Number that identifies the uploaded part | int | Yes |
-| r | The content of the uploaded part, which can be a local file stream or an input stream. When r is not bytes.Buffer/bytes.Reader/strings.Reader, opt.ContentLength must be specified. | io.Reader | Yes |
-| ContentLength | Sets the length of the request content. | int64 | No |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| UploadId | ID that identifies the multipart upload; generated by `InitiateMultipartUpload` | String | Yes |
+| PartNumber | Number that identifies the uploaded part | Int | Yes |
+| r | Content of the uploaded part, which can be a local file stream or an input stream. When `r` is not `bytes.Buffer/bytes.Reader/strings.Reader`, `opt.ContentLength` must be specified | io.Reader | Yes |
+| ContentLength | Sets the length of the request content | int64 | No |
 
 #### Response description
 
@@ -1226,17 +1321,19 @@ The result can be obtained from the response.
 resp, err := client.Object.UploadPart(context.Background(), key, UploadID, 1, f, nil)
 etag := resp.Header.Get("ETag")
 ```
+
+
 | Parameter | Description | Type |
 | -------- | ----------------- | ------ |
-| ETag | MD5 of the uploaded part | string |
+| ETag | MD5 of the uploaded part | String |
 
 
 <span id = "LIST_MULIT_UPLOAD"></span>
 ###  Querying uploaded parts 
 
-#### API description
+#### Description
 
-This API (List Parts) is used to query the uploaded parts of a multipart upload.
+This API (`List Parts`) is used to query the uploaded parts of a multipart upload.
 
 #### Method prototype
 
@@ -1268,11 +1365,11 @@ type ObjectListPartsOptions struct {
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| UploadId | ID that identifies the multipart upload; generated by InitiateMultipartUpload | string | Yes |
-| EncodingType | Specifies the encoding type of the returned value | string | No |
-| MaxParts | Maximum number of parts to return at a time. Defaults to `1000`. | string | No |
-| PartNumberMarker | By default, entries are listed in UTF-8 binary order starting with the part number after the marker | string | No |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| UploadId | ID that identifies the multipart upload; generated by `InitiateMultipartUpload` | String | Yes |
+| EncodingType | Encoding type of the returned value | String | No |
+| MaxParts | Maximum number of parts to return at a time. Defaults to `1000` | String | No |
+| PartNumberMarker | By default, entries are listed in UTF-8 binary order starting with the part number after the marker | String | No |
 
 #### Response description
 
@@ -1314,26 +1411,26 @@ type Object struct {
 
 | Parameter | Description | Type |
 | -------------------- | ------------------------------------------------------------ | ------ |
-| Bucket     |  Bucket name in the format: BucketName-APPID, e.g. examplebucket-1250000000. | string |
-| EncodingType | Specifies the encoding method of the returned value. It is left empty by default. Valid value: url | string |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string |
-| UploadId | ID that identifies the multipart upload; generated by InitiateMultipartUpload | string |
-| Initiator | Initiator information on the multipart upload, including DisplayName, UIN and ID | struct |
-| Owner | Information on the file owner, including DisplayName, UIN and ID | struct |
-| StorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE. | string |
-| PartNumberMarker | Specifies the part number after which the listing should begin. It defaults to 0, which means the listing begins with the first part | string |
-| NextPartNumberMarker | Specifies the part number after which the next listing should begin | int |
-| MaxParts | The maximum number of returned parts. It defaults to 1000. | int |
-| IsTruncated | Indicates whether the returned list is truncated | bool |
-| Part | Information on the uploaded part, including ETag, PartNumber, Size, and LastModified | struct |
+| Bucket               | Bucket name in the format: `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
+| EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
+| UploadId | ID that identifies the multipart upload; generated by `InitiateMultipartUpload` | String |
+| Initiator | Initiator of the multipart upload, including `DisplayName`, `UIN` and `ID` | Struct |
+| Owner | Information on the file owner, including `DisplayName`, `UIN` and `ID` | Struct |
+| StorageClass | Object storage class. Valid values: `STANDARD` (default), `STANDARD_IA`, `ARCHIVE` | String |
+| PartNumberMarker | Specifies the part number after which the listing should begin. It defaults to 0, which means the listing begins with the first part | String |
+| NextPartNumberMarker | Specifies the part number after which the next listing should begin | Int |
+| MaxParts | Maximum number of parts to return at a time. Default value: `1000` | Int |
+| IsTruncated | Indicates whether the returned list is truncated | Bool |
+| Part | Information on the uploaded part, including `ETag`, `PartNumber`, `Size`, and `LastModified` | Struct |
 
 
 <span id = "COMPLETE_MULIT_UPLOAD"></span>
 ###  Completing a multipart upload 
 
-#### API description
+#### Description
 
-This API (Complete Multipart Upload) is used to complete the multipart upload of the entire file.
+This API (`Complete Multipart Upload`) is used to complete the multipart upload of a file.
 
 #### Method prototype
 
@@ -1377,9 +1474,9 @@ type Object struct {
 
 | Parameter | Description | Type | Required |
 | ------------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| UploadId | ID that identifies the multipart upload; generated by InitiateMultipartUpload | string | Yes |
-| CompleteMultipartUploadOptions | ETag and PartNumber for all parts | struct | Yes |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| UploadId | ID that identifies the multipart upload; generated by `InitiateMultipartUpload` | String | Yes |
+| CompleteMultipartUploadOptions | Information on all parts, including `ETag` and `PartNumber` | Struct | Yes |
 
 #### Response description
 
@@ -1395,17 +1492,17 @@ type CompleteMultipartUploadResult struct {
 
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Location | URL address | string |
-| Bucket        | Bucket name in the format: BucketName-APPID, e.g. examplebucket-1250000000. | string   |
-| key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | 
-| ETag | The unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | string |
+| Location | URL address | String |
+| Bucket               | Bucket name in the format: `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
+| ETag | Unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | String |
 
 <span id = "ABORT_MULIT_UPLOAD"></span>
 ###  Aborting a multipart upload 
 
-#### API description
+#### Description
 
-This API (Abort Multipart Upload) is used to abort a multipart upload and delete the uploaded parts.
+This API (`Abort Multipart Upload`) is used to abort a multipart upload and delete the uploaded parts.
 
 #### Method prototype
 
@@ -1429,8 +1526,8 @@ if err != nil {
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | ---- |
-| key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | Yes |
-| UploadId | ID that identifies the multipart upload | string |Yes |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| UploadId | ID of the multipart upload | String | Yes |
 
 
 
@@ -1438,7 +1535,7 @@ if err != nil {
 
 ### Uploading an object
 
-#### API description
+#### Description
 
 The advanced upload API automatically divides your data into parts according to the file size. It’s easier to use, eliminating the need to follow each step of the multipart upload process. If the file is larger than 64 MB, multipart upload will be used. You can use the `PartSize` parameter to adjust the part size.
 
@@ -1473,14 +1570,15 @@ type MultiUploadOptions struct {
 }
 ```
 
+
 | Parameter | Description | Type | Required |
 | -------------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| filepath | Name of the local file | string | Yes |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| filepath | Name of the local file | String | Yes |
 | opt | Object attributes | Struct | No |
 | OptIni | Sets object attributes and ACL. For details, see [InitiateMultipartUploadOptions](#.E6.96.B9.E6.B3.95.E5.8E.9F.E5.9E.8B9) | Struct | No |
 | PartSize | Part size (in MB). If this parameter is not specified or is set to a value smaller than or equal to 0, its value will be automatically determined. In the new version, the default size is 64 (MB). | int | No |
-| ThreadPoolSize | Size of the thread pool. Default: 1 | int | No |
+| ThreadPoolSize | Size of the thread pool. Default: 1 | Int | No |
 
 #### Response description
 
@@ -1494,16 +1592,17 @@ type CompleteMultipartUploadResult struct {
 
 ```
 
+
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Location | URL address | string |
-| Bucket        | Bucket name in the format: BucketName-APPID, e.g. examplebucket-1250000000. | string   |
-| key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string |
-| ETag | The unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | string |
+| Location | URL address | String |
+| Bucket               | Bucket name in the format: `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
+| ETag | Unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | String |
 
 ### Downloading an object
 
-#### API description
+#### Description
 
 The multipart download API automatically downloads data concurrently with `Range` according to the object size. If you use `Range` to download an object larger than 64 MB, you can use the `PartSize` parameter to adjust the part size.
 
@@ -1518,7 +1617,7 @@ func (s *ObjectService) Download(ctx context.Context, name string, filepath stri
 [//]: # ".cssg-snippet-download-file"
 ```go
 key := "exampleobject"
-file := "localfile""
+file := "localfile"
 
 opt := &cos.MultiDownloadOptions{
 	ThreadPoolSize: 5,
@@ -1545,14 +1644,14 @@ type MultiDownloadOptions struct {
 
 | Parameter | Description | Type | Required |
 | -------------- | ------------------------------------------------------------ | ------ | ---- |
-| name | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| filepath | Name of the local file | string | Yes |
+| name | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| filepath | Name of the local file | String | Yes |
 | opt            | Object download parameter             | Struct | No |
 | Opt | Request parameter. For more information, please see [ObjectGetOptions](#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1). | Struct | No |
 | PartSize | Part size (in MB). If this parameter is not specified or is set to a value smaller than or equal to 0, its value will be automatically determined. In the new version, the default size is 64 (MB). | int64 | No |
-| ThreadPoolSize | Size of the thread pool. Default: 1 | int | No |
-| CheckPoint     | Whether to enable checkpoint restart. Default value: `false`  | bool   | No   |
-| CheckPointFile | Path to save the download progress file when checkpoint restart is enabled. The default value is `<filepath>.cosresumabletask`. When the download is completed, this progress file will be cleared. | String   | No |
+| ThreadPoolSize | Size of the thread pool. Default: 1 | Int | No |
+| CheckPoint     | Whether to enable checkpoint restart. Default value: `false`  | Bool   | No   |
+| CheckPointFile | Path to save the download progress file when checkpoint restart is enabled. The default value is `&lt;filepath>.cosresumabletask`. When the download is completed, this progress file will be cleared. | String   | No |
 
 #### Response description
 
@@ -1565,7 +1664,7 @@ type MultiDownloadOptions struct {
 
 ### Moving an object
 
-#### API description
+#### Description
 
 Object movement can be implemented using the object copy API and object delete API.
 
@@ -1574,7 +1673,7 @@ Object movement can be implemented using the object copy API and object delete A
 ```go
 source := "test/oldfile"
 f := strings.NewReader("test")
-// Upload the object.
+// Upload the object
 _, err := c.Object.Put(context.Background(), source, f, nil)
 if err != nil {
    // Error
