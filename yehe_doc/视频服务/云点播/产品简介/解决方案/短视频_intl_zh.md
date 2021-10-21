@@ -10,7 +10,7 @@
 - 提供短视频 Demo、开源代码以及相关注释，便于用户更好的理解和使用短视频 SDK。
 
 ### 方案架构
-![](https://main.qcloudimg.com/raw/73ddb32ea58515cc362d19f262818c14.png)456785t8li0-=7n
+![](https://main.qcloudimg.com/raw/73ddb32ea58515cc362d19f262818c14.png)
 
 ### 流程指引
 1. 注册：注册腾讯云账号，开通云点播服务，请参考 [快速入门步骤1：开通云点播](https://intl.cloud.tencent.com/document/product/266/8757)。
