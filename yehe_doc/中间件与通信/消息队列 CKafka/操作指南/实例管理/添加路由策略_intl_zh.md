@@ -41,7 +41,7 @@
 5. 单击**提交**，完成公网路由策略添加。
 <dx-alert infotype="explain">
 <ul>
- <li>CKafka 默认提供3Mbps 免费公网带宽，专业版实例可以额外升配公网带宽，最高可提升至198Mbps。</li>
+ <li>CKafka 默认提供3Mbps 免费公网带宽，专业版实例可以额外升配公网带宽，最高可提升至198Mbps。具体操作参考 [升配公网带宽](https://intl.cloud.tencent.com/document/product/597/42386)。</li>
 </ul>
 </dx-alert>
 
