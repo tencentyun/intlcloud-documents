@@ -4,7 +4,6 @@ QUIC(Quick UDP Internet Connections)는 범용 네트워크 프로토콜로서 �
 
 현재 h3 Draft 28, h3-Q050, h3-Q046, h3-Q043, Q046, Q043 버전이 기본 지원됩니다.
 
-Tencent Cloud CDN의 QUIC 베타 서비스가 오픈되었습니다. CDN 서비스를 활성화한 경우, 루트 계정으로 [신청 양식 제출](https://cloud.tencent.com/apply/p/2j0i34wqyw8)을 통해 사용을 신청할 수 있습니다. 이미 신청을 완료한 경우, 15 영업일 이내에 신청 심사를 진행합니다.
 
 ## 베타 기간
 Tencent Cloud CDN는**2021-08-31 23:59:59**에 1차 QUIC 액세스 베타 신청을 완료합니다. 참여해 주셔서 감사합니다! 2차 베타 테스트와 정식 출시에도 많은 관심 부탁드립니다. 
