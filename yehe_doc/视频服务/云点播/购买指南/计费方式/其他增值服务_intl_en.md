@@ -17,6 +17,7 @@ UGSV SDK license overview:
 |Enterprise edition license|1 year|25,999|
 |Enterprise Pro edition license|1 year|71,999|
 
+For details, please see [SDK Download](https://intl.cloud.tencent.com/document/product/1069/37914)
 
 ## AI-Based Video Analysis Feature
 AI-based video analysis feature is billed on a postpaid monthly basis. The billing unit is USD/min and this service is billed based on service types and corresponding durations.
