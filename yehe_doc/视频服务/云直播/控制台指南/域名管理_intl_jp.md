@@ -2,13 +2,13 @@
 CSSは、デフォルトでテストドメイン名 `xxxx.livepush.myqcloud.com`を提供します。このドメイン名をプッシュテストに使用できますが、正式なサービスでこのドメイン名をプッシュドメイン名として使用することはお勧めしません。またこのプッシュドメイン名は削除操作をサポートしていません。
 
 ## 前提条件
-1.  [Tencent CSSサービス](https://intl.cloud.tencent.com/zh/product/css)がアクティブ化されていること。
-2.  [独自のドメイン名の追加](https://intl.cloud.tencent.com/zh/document/product/267/35970)が完了していること。
+1. [Tencent CSSサービス](https://intl.cloud.tencent.com/product/css)がアクティブ化されていること。
+2. [独自のドメイン名の追加](https://intl.cloud.tencent.com/document/product/267/35970)が完了していること。
 
 
 
-## ドメイン名のクエリー
-[【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)ページで、追加済みのドメイン名CNAME設定状態、タイプ、現在の状態、ドメイン名開始時間およびドメイン名有効期限をクエリーできます。ドメイン名の詳細をクエリーしたい場合は、クエリーしたいドメイン名をクリックするか、右側の【管理】をクリックすれば、ドメイン名情報に移動できます。
+## ドメイン名の照会
+[【ドメイン名管理】](https://console.cloud.tencent.com/live/domainmanage)ページで、追加済みのドメイン名CNAME設定状態、タイプ、シナリオ、リージョン、現在の状態、ドメイン名開始時間およびドメイン名有効期限を照会できます。ドメイン名の詳細を照会したい場合は、照会したいドメイン名をクリックするか、右側の【管理】をクリックすれば、ドメイン名情報に移動できます。
 ![](https://main.qcloudimg.com/raw/b26af663a41a018e6bda8920c65e2dca.png)
 
 ## ドメイン名の設定
@@ -30,3 +30,4 @@ CSSは、デフォルトでテストドメイン名 `xxxx.livepush.myqcloud.com`
 ## ドメイン名の削除
 ドメイン名を削除したい場合は、対象のドメイン名右側の【削除】をクリックし、ポップアップウィンドウで現在のドメイン名を削除したいかどうかを確認し、【OK】をクリックすれば、そのドメイン名を削除することができます。
 ![](https://main.qcloudimg.com/raw/16c8c3f389c8e3a3c06c77e3c3ad8a23.png)
+
