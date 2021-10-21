@@ -3,7 +3,8 @@
 
 ## 課金状況
 課金状況では現在のTencent Cloudアカウントの**課金方式**を表示します。
-![](https://main.qcloudimg.com/raw/a786077e2852c8e350f213278112f967.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/715bad667789a7b83c1d706cafce2eb1.png)
+
 <table border=0 cellpadding="0" cellspacing="0">
 <thead>
 <tr>
@@ -17,7 +18,7 @@
 <td >日次決済課金：課金の詳細は、 <a href="https://intl.cloud.tencent.com/document/product/266/14666"> 日次決済（後払い）をご参照ください。</a><br>月次決済課金：営業担当にご連絡ください。</td>
 <tr>
 <td>今月の課金帯域幅（月次決済課金）</td>
-<td>現在のアカウントの今月の課金帯域幅。月次決済課金：営業担当にご連絡ください。</td>
+<td>現在のアカウントの今月の課金帯域幅。</td>
 </tr>
 </tbody></table>
 
@@ -61,9 +62,7 @@
 
 ## 主要データ
 
-主要データでは最近1週間のストレージキャパシティ、トランスコーディング時間、使用トラフィック、使用帯域幅、監査時間および週の動向が表示されます。列をクリックして確認するか、または右上角の【詳細データ】をクリックして[データセンター - 使用量の統計](https://console.cloud.tencent.com/vod/dosage-statistics/index/cos)に移動し、より詳しい情報を確認することができます。
-![](https://main.qcloudimg.com/raw/7b9bad31fa7fc81ee388d9717bff6f15.png)
-
-
+主要データでは最近1週間のストレージキャパシティ、トランスコーディング時間、使用トラフィック、使用帯域幅、監査時間および週の動向が表示されます。
+![](https://qcloudimg.tencent-cloud.cn/raw/f89c9d6522803feff727465a8d0f7470.png)
 
 
