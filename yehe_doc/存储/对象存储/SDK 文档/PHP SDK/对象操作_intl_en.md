@@ -137,7 +137,7 @@ Guzzle\Service\Resource\Model Object
 | ------------ | ------ | ------------------------------------------------------------ | -------- |
 | Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
 | Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | String | | Encoding method of the returned value | None |
+| EncodingType | String | Encoding method of the returned value | None |
 | Marker | String | The object after which the returned list begins. Objects are listed in UTF-8 binary order by default.  | None |
 | Prefix | String | Key prefix by which objects are queried       | None |
 | MaxKeys | Int | The maximum number of returned objects, which is `1000` (the maximum value allowed) by default | None |
@@ -252,7 +252,7 @@ Guzzle\Service\Resource\Model Object
 | ------------------- | ------ | ------------------------------------------------------------ | -------- |
 | Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
 | Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | Encoding method of the returned value | None |
+| EncodingType | String  |Encoding method of the returned value | None |
 | KeyMarker | String  | The key of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.  | None |
 | VersionIdMarker | String |  The version ID of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.   |  None |
 | NextKeyMarker | String | The key of the object after which the next returned list begins if `IsTruncated` is `true` | None |
