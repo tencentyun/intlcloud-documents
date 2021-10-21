@@ -41,7 +41,7 @@ The VPC access address provided in the console (such as `172.16.0.12:9092`) repr
 5. Click **Submit** to add the public network routing policy.
 <dx-alert infotype="explain">
 <ul>
- <li>CKafka provides 3 Mbps public network bandwidth free of charge by default, which can be increased to up to 198 Mbps for Pro Edition instances.</li>
+ <li>CKafka provides 3 Mbps public network bandwidth free of charge by default, which can be increased to up to 198 Mbps for Pro Edition instances. For detailed directions, please see [Upgrading public network bandwidth](https://intl.cloud.tencent.com/document/product/597/42386).</li>
 </ul>
 </dx-alert>
 
