@@ -3,7 +3,7 @@
 If the current instance specifications cannot meet your business needs, you can upgrade them in the console.
 
 > ?
-> - The instance specifications you can upgrade include peak bandwidth, disk capacity, and the number of topics/partitions. You can also increase the disk capacity only. The upgrade is smooth, without suspending your services.
+> - The instance specifications you can upgrade include peak bandwidth, disk capacity, and the number of topics/partitions. You can also increase the disk capacity only. The upgrade is smooth without suspending your services.
 > - A topic currently consists of up to 24 partitions. To increase the partition limit (which can be increased to 500 at most), please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Prerequisites
