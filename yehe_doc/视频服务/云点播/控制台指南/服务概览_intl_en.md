@@ -3,7 +3,7 @@ Log in to the [VOD console](https://console.cloud.tencent.com/vod) and the "Serv
 
 ## Billing
 The billing section displays the **billing mode** under the current Tencent Cloud account.
-![](https://main.qcloudimg.com/raw/a786077e2852c8e350f213278112f967.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/715bad667789a7b83c1d706cafce2eb1.png)
 
 <table border=0 cellpadding="0" cellspacing="0">
 <thead>
@@ -18,7 +18,7 @@ The billing section displays the **billing mode** under the current Tencent Clou
 <td >Daily billing: for more information, please see <a href="https://intl.cloud.tencent.com/document/product/266/14666">Pay-as-You-Go (Postpaid Daily Billing Cycle)</a><br>Monthly billing: please contact your Tencent Cloud rep for billing details</td>
 <tr>
 <td>Billable bandwidth of current month (monthly billing)</td>
-<td>Billable bandwidth of the current month for the current account. Monthly billing: please contact your Tencent Cloud rep for billing details</td>
+<td>Billable bandwidth of the current month for the current account.</td>
 </tr>
 </tbody></table>
 
@@ -62,6 +62,6 @@ The resource usage section displays VOD resource usage information in the curren
 
 ## Key Data
 
-The key data section displays the storage capacity, transcoding duration, traffic used, bandwidth used, and intelligent recognition duration in the past week as well as the weekly trend. You can click a tab for a detailed view. You can also click **Details** in the top-right corner to go to [Data Center - Usage Statistics](https://console.cloud.tencent.com/vod/dosage-statistics/index/cos) to view more information.
-![](https://main.qcloudimg.com/raw/7b9bad31fa7fc81ee388d9717bff6f15.png)
+The key data section displays the storage capacity, transcoding duration, traffic used, bandwidth used, and intelligent recognition duration in the past week as well as the weekly trend.
+![](https://qcloudimg.tencent-cloud.cn/raw/f89c9d6522803feff727465a8d0f7470.png)
 
