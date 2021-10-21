@@ -17,6 +17,7 @@
 |企业版 License|1年|25999|
 |企业版 Pro License|1年|71999|
 
+详细功能请参考[短视频SDK文档](https://intl.cloud.tencent.com/zh/document/product/1069/37914)
 
 ## 音视频 AI-视频分析
 音视频 AI-视频分析采用后付费月结计费方式。计费单位为美元/分钟，根据用户使用对应服务及对应时长进行计费。使用说明如下：
