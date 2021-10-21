@@ -10,12 +10,12 @@ O CDN fornece uma solução eficaz para os seguintes problemas de rede:
 O CDN é fácil de usar. Não é necessário ajustar sua estrutura empresarial ou gerenciar configurações complexas. Para obter mais informações, consulte [Introdução](https://intl.cloud.tencent.com/document/product/228/32978).
 
 ## Como funciona a aceleração
-Por exemplo, se o nome de domínio do servidor de origem da sua empresa for ```www.test.com``` e tiver sido conectado ao CDN para ativar o serviço de aceleração, quando um usuário fizer uma solicitação HTTP, ela será processada conforme mostrado abaixo:
+Por exemplo, se o nome de domínio do servidor de origem da sua empresa for  `www.test.com` e tiver sido conectado ao CDN para ativar o serviço de aceleração, quando um usuário fizer uma solicitação HTTP, ela será processada conforme mostrado abaixo:
 ![](https://main.qcloudimg.com/raw/c155f8268c6ebdcc84f50cfb06f1f638.png)
 
 **O processo está detalhado abaixo:**
-1. Quando um usuário faz uma solicitação de acesso para um recurso de imagem (por exemplo, 1.jpg) em ```www.test.com```, uma solicitação de resolução de nome de domínio será iniciada para o DNS local.
-2. Quando o DNS local resolver ```www.test.com```, ele encontrará que o ```www.test.com.cdn.dnsv1.com``` do CNAME foi configurado, então a solicitação de resolução será enviada ao Tencent DNS (GSLB), o sistema de agendamento proprietário do Tencent Cloud que atribuirá o IP do nó ideal para a solicitação.
+1. Quando um usuário faz uma solicitação de acesso para um recurso de imagem (por exemplo, 1.jpg) em `www.test.com`, uma solicitação de resolução de nome de domínio será iniciada para o DNS local.
+2. Quando o DNS local resolver `www.test.com`, ele encontrará que o `www.test.com.cdn.dnsv1.com` do CNAME foi configurado, então a solicitação de resolução será enviada ao Tencent DNS (GSLB), o sistema de agendamento proprietário do Tencent Cloud que atribuirá o IP do nó ideal para a solicitação.
 3. O DNS local recebe o IP resolvido retornado pelo Tencent DNS.
 4. O usuário recebe o IP resolvido.
 5. O usuário faz uma solicitação de acesso de 1.jpg ao IP recebido.
