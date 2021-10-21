@@ -33,8 +33,8 @@ static std::string Sign(const std::string& secret_id,
 | secret_key      | Key owned by the developer to verify identity for the project  |
 | http_method | HTTP method, such as POST, GET, HEAD, and PUT; case-insensitive | String |
 | in_uri      | HTTP uri                                              | String                   |
-| headers     | HTTP header key-value pair                  | map&lt;string,string&gt; |
-| params      | HTTP params key-value pair                 | map&lt;string,string&gt; |
+| headers     | HTTP header key-value pair                  | map<string,string> |
+| params      | HTTP params key-value pair                 | map<string,string> |
 
 #### Response description
 
@@ -61,8 +61,8 @@ static std::string Sign(const std::string& secret_id,
 | secret_key      | Key owned by the developer to verify identity for the project  |
 | http_method     | HTTP method, such as POST, GET, HEAD, and PUT; case-insensitive | String    |
 | in_uri          | HTTP uri                                             | String                    |
-| headers         | HTTP header key-value pair                    | map &lt;string,string&gt; |
-| params          | HTTP params key-value pair                    | map &lt;string,string&gt; |
+| headers         | HTTP header key-value pair                    | map<string,string> |
+| params          | HTTP params key-value pair                    | map<string,string> |
 | start_time_in_s | Start time of the signature                | uint64_t                  |
 | end_time_in_s   | End time of the signature                | uint64_t                  |
 
