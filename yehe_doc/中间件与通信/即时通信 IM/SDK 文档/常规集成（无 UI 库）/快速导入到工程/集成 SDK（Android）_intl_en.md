@@ -34,14 +34,14 @@ dependencies {
 		api 'com.tencent.imsdk:imsdk-plus:Version number'
 }
 ```
->?Replace `version number` with the actual version number of the SDK. You are advised to use the [latest version]( https://github.com/tencentyun/TIMSDK/tree/master/Android/Demo/tuikit/libs).
+>?Replace `version number` with the actual version number of the SDK. You are advised to use the [latest version]( https://github.com/tencentyun/TIMSDK/tree/master/Android/IMSDK).
 >Take the version number `5.4.666` as an example:
 >```
->dependencies {
->api 'com.tencent.imsdk:imsdk-plus:5.4.666'
->}
->```
-
+dependencies {
+		api 'com.tencent.imsdk:imsdk-plus:5.4.666'
+}
+```
+>
 
 - **Step 2: specify the app architecture**
 In `defaultConfig`, specify the CPU architecture used by the app (armeabi-v7a, arm64-v8a, x86, and x86_64 are supported starting from IM SDK v4.3.118).
