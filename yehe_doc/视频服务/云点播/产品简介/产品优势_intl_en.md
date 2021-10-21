@@ -2,10 +2,6 @@
 + VOD supports multiple video upload methods such as local upload, video pull from URL, upload via API, and upload from client.
 + VOD can convert live recording to video on-demand and has various features such as multi-format video upload, large file upload, upload resumption, and redundant file backup.
 
-### Video Production
-+ VOD provides a wide variety of video production features such as frame-by-frame clipping, multi-track production, picture-in-picture, cropping, filters, adjustable-speed playback, audio mixing, transitions, audio/video separation, text animated effects, image animated effects, and shortcut keys, fully meeting your diverse content production needs.
-+ VOD features video production in console, which makes it easy for you to produce videos in the cloud.
-
 
 ### Video Storage
 + VOD features redundant storage of video files across architectures and devices to support remote disaster recovery and isolation of resources.
@@ -24,8 +20,6 @@
 + VOD has various intelligent features such as speech and text recognition, which can effectively perform automated operations like video editing, splicing, and screencapturing, as well as AI-based intelligent video recognition and sensitive information processing, so as to reduce the manual workload.
 + VOD features intelligent recognition in console, which makes it easy for you to customize intelligent video recognition in the VOD console.
 
-### Video Ecosystem
-+ VOD is connected to the resources in Tencent Video's V+ channel, providing you with a diversity of video publishing platforms and monetization methods.
 
 ### Adaptive Bitrate Streaming
 + VOD can determine the change in network connection speed to select the most suitable bitstream for playback, ensuring the smoothness of video playback and improving the user experience.
