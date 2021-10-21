@@ -2,7 +2,7 @@
 
 #### 관련 리소스
 - COS의 XML Go SDK 소스 코드 다운로드 주소: [XML Go SDK](https://github.com/tencentyun/cos-go-sdk-v5)
-- 예시 Demo 다운로드 주소: [COS XML Go SDK 예시](https://github.com/tencentyun/cos-go-sdk-v5/tree/master/example)
+- 예시 Demo 다운로드 주소:[COS XML Go SDK 예시](https://github.com/tencentyun/cos-go-sdk-v5/tree/master/example).
 - 자세한 내용은 [COS Go SDK API](https://godoc.org/github.com/tencentyun/cos-go-sdk-v5) 문서를 참고하십시오.
 - SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/Go)를 참고하십시오.
 - SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-go-sdk-v5/blob/master/CHANGELOG.md)를 참고하십시오.
@@ -26,7 +26,7 @@ COS Go SDK를 사용한 클라이언트 초기화, 버킷 생성, 버킷 리스�
 ### 초기화
 COS 도메인을 사용해 COS GO 클라이언트 구성을 생성합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 ```Go
 func NewClient(uri *BaseURL, httpClient *http.Client) *Client
 ```
@@ -109,8 +109,31 @@ client := cos.NewClient(b, &http.Client{
     },
 })
 ```
+#### 요청 예시 4: CRC64 인증
 
-### 버킷 생성하기
+COS Go SDK는 기본적으로 파일 업로드에 대한 CRC64 검사를 활성화합니다.
+
+>! 
+>- COS Go SDK는 v0.7.23 이후 버전이어야 합니다.
+>- CRC64 검사 비활성화 하지 말 것을 강력히 권장합니다.
+```
+// examplebucket-1250000000과 COS_REGION을 실제 정보로 수정합니다.
+u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
+b := &cos.BaseURL{BucketURL: u}
+// 2. 임시 키
+client := cos.NewClient(b, &http.Client{
+    Transport: &cos.AuthorizationTransport{
+        SecretID:     "SECRETID",
+        SecretKey:    "SECRETKEY",
+        SessionToken: "SECRETTOKEN",
+    },
+})
+// CRC64 인증 비활성화
+client.Conf.EnableCRC = false
+
+```
+
+### 버킷 생성
 
 ```Go
 package main
@@ -134,7 +157,7 @@ func main() {
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey:    "SECRETKEY",
+            SecretKey: "SECRETKEY",
         },
     })
 
@@ -167,7 +190,7 @@ func main() {
     c := cos.NewClient(nil, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey:    "SECRETKEY",
+            SecretKey: "SECRETKEY",
         },
     })
 
@@ -207,7 +230,7 @@ func main() {
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey:    "SECRETKEY",
+            SecretKey: "SECRETKEY",
         },
     })
     // 객체 키(Key)는 버킷 내 객체의 고유 식별자입니다.
@@ -262,7 +285,7 @@ func main() {
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey:    "SECRETKEY",
+            SecretKey: "SECRETKEY",
         },
     })
 
@@ -307,7 +330,7 @@ func main() {
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey:    "SECRETKEY",
+            SecretKey: "SECRETKEY",
         },
     })
     // 1. 응답 본문으로 객체 가져오기
@@ -349,7 +372,7 @@ func main() {
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey:    "SECRETKEY",
+            SecretKey: "SECRETKEY",
         },
     })
     name := "test/objectPut.go"

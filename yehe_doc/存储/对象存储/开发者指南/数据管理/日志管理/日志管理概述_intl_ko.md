@@ -29,21 +29,21 @@
 | 16       | resErrorCode    | 에러 코드               | NoSuchKey                               |
 | 17       | resErrorMsg     | 에러 정보            | The specified key does not exist.                                      |
 | 18       | resBytesSent    | 반환 바이트 수(Bytes)   | 197                                                                           |
-| 19       | resTotalTime    | 요청 총 소요 시간(밀리 초, 마지막 바이트 응답 시간-첫 바이트 요청 시간에 해당) | 4295                                                                          |
+| 19       | resTotalTime    | 요청 총 소요 시간(밀리 초, 마지막 바이트 응답 시간-첫 바이트 요청 시간에 해당) | 4295        |
 | 20       | logSourceType   | 로그 소스 유형          | USER(사용자 액세스 요청), CDN(CDN 원본 요청)   |
 | 21       | storageClass    | 스토리지 유형         | STANDARD, STANDARD_IA, ARCHIVE                                              |
 | 22       | accountId    | 버킷 소유자 ID             | 100000000001                                              |
 | 23       | resTurnAroundTime    | 요청 서버 소요 시간(밀리초, 첫 바이트 응답 시간-마지막 바이트 요청 시간에 해당) | 4295                                                                          |
-| 24       | requester    | 방문자             | 루트 계정 ID: 서브 계정 ID, 닉네임 액세스일 경우 `-`로 나타남            |
+| 24       | requester    | 방문자             | 루트 계정 ID: 서브 계정 ID, 닉네임 액세스일 경우 `-`로 표시됨            |
 | 25       | requestId    | 요청 ID             | NWQ1ZjY4MTBfMjZiMjU4NjRfOWI1N180NDBiYTY=      |
-| 26       | objectSize    | 객체 크기(Bytes)             | 808, 멀티파트 업로드를 사용할 경우 objectSize 필드는 업로드를 완료했을 때만 나타나며, 각 멀티파트 업로드 기간에 해당 필드는 `-`로 나타남 |
+| 26       | objectSize    | 객체 크기(Bytes)             | 808, 멀티파트 업로드를 사용할 경우 objectSize 필드는 업로드를 완료했을 때만 나타나며, 각 멀티파트 업로드 기간에 해당 필드는 `-`로 표시됨 |
 | 27       | versionId    | 객체 버전 ID             | 랜덤 문자열                                            |
-| 28       | targetStorageClass    | 타깃 스토리지 유형, 복사 작업 요청을 시작하면 해당 필드를 기록함            | STANDARD, STANDARD_IA, ARCHIVE                                              |
-| 29       | referer    | 원본 서버 리전             | `*.example.com` 또는 111.111.111.1       |
+| 28       | targetStorageClass    | 타깃 스토리지 유형, 복사 작업 요청을 시작하면 해당 필드를 기록            | STANDARD, STANDARD_IA, ARCHIVE                                                     |
+| 29     | referer    | 요청 HTTP referer             | `*.example.com`또는111.111.111.1       |
 | 30       | requestUri    | 요청 URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
 
 >!
-> - 현재 COS의 로그 관리 기능을 지원하는 리전에는 베이징, 상하이, 광저우, 난징, 충칭, 청두, 중국홍콩, 싱가포르, 토론토, 실리콘밸리, 뭄바이가 포함됩니다.
+> - 현재 COS의 로그 관리 기능이 지원되는 리전은 베이징, 상하이, 광저우, 난징, 충칭, 청두, 중국 홍콩, 싱가포르, 토론토, 실리콘밸리, 뭄바이입니다.
 > - 로그 관리 기능은 소스 버킷과 타깃 버킷이 반드시 같은 리전에 있어야 합니다.
 > - 로그를 보관한 타깃 버킷은 소스 버킷 자체가 될 수 있지만, 권장하지는 않습니다.
 > - 현재 XML API 및 XML API 기반으로 구현된 SDK, 툴 등에서 버킷 액세스를 요청했을 경우에만 로그가 기록됩니다. JSON API 및 JSON API 기반으로 구현된 SDK, 툴 등에서의 액세스는 로그를 기록하지 않습니다.
@@ -51,16 +51,16 @@
 
 ## 로그 관리 활성화
 ### 콘솔 사용
-사용자는 콘솔을 통해 로그 관리 기능을 빠르게 활성화할 수 있습니다. 작업 가이드는 [로그 관리 설정](https://intl.cloud.tencent.com/document/product/436/17040) 콘솔 가이드를 참조하십시오.
+사용자는 콘솔을 통해 로그 관리 기능을 빠르게 활성화할 수 있습니다. 작업 가이드는 [로그 관리 설정](https://intl.cloud.tencent.com/document/product/436/17040) 콘솔 가이드를 참고하십시오.
 
 ### API 사용 
-API를 사용해 지정 버킷에 로그 관리 기능을 활성화할 경우 다음 순서를 참조하십시오.
+API를 사용해 지정 버킷에 로그 관리 기능을 활성화할 경우 다음 순서를 참고하십시오.
 1. 로그 역할을 생성합니다.
 2. 로그 역할로 권한을 바인딩합니다.
 3. 로그 관리를 활성화합니다.
 
 #### 1. 로그 역할 생성
-로그 역할 생성과 구체적인 인터페이스 정보는 [CreateRole](https://intl.cloud.tencent.com/jp/document/product/598/33561)을 참조하십시오.
+로그 역할 생성과 구체적인 인터페이스 정보는 [CreateRole](https://intl.cloud.tencent.com/document/product/598/33561)을 참고하십시오.
 roleName은 반드시 CLS_QcsRole이어야 합니다.
 policyDocument:
 ```
@@ -76,8 +76,8 @@ policyDocument:
 }
 ```
 #### 2. 로그 역할 바인딩 권한
-역할 권한 바인딩 권한과 구체적인 인터페이스 정보는 [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562)를 참조하십시오.
+역할 권한 바인딩 권한과 구체적인 인터페이스 정보는 [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562)를 참고하십시오.
 policyName은 QcloudCOSAccessForCLSRole, roleName은 1단계의 CLS_QcsRole 또는 roleName 생성 시 반환된 roleID를 사용할 수 있습니다.
 
 #### 3. 로그 관리 활성화
-인터페이스 호출 및 로그 관리 기능 활성화와 구체적인 인터페이스 정보는 [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054)을 참조하십시오. 로그를 보관한 타깃 버킷과 소스 버킷은 같은 리전에 있어야 합니다.
+인터페이스 호출 및 로그 관리 기능 활성화와 구체적인 인터페이스 정보는 [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054)을 참고하십시오. 로그를 보관한 타깃 버킷과 소스 버킷은 같은 리전에 있어야 합니다.

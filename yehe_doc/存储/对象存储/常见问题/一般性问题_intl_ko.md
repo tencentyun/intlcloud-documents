@@ -3,7 +3,7 @@ Tencent Cloud 객체 스토리지 COS는 디렉터리 레이어 구조가 없는
 
 사용자는 CVM 인스턴스 혹은 인터넷을 통해 Web API 인터페이스를 사용하여 데이터를 저장하고 검색할 수 있습니다. 또한 도메인 URL주소를 지정하여 HTTP/HTTPS 프로토콜을 통해 개별 데이터 객체 콘텐츠를 COS에 저장하고 검색할 수 있습니다.
 
-Tencent Cloud COS에 대한 자세한 정보는 [COS 제품 문서](https://intl.cloud.tencent.com/document/product/436)를 참조하십시오.
+Tencent Cloud COS에 대한 자세한 정보는 [COS 제품 문서](https://intl.cloud.tencent.com/document/product/436)를 참고하십시오.
 
 
 ### COS 와 CFS의 차이점은 무엇인가요?
@@ -56,7 +56,7 @@ COS의 데이터 이중화 스토리지 메커니즘은 서버 등 하드웨어 
   - [COSCMD 툴](https://intl.cloud.tencent.com/document/product/436/10976)을 사용해 COS 내의 객체를 로컬 시스템이나 3rd party 서버에 다운로드합니다.
   - [COS Migration 툴](https://intl.cloud.tencent.com/document/product/436/30585)이나 리전 간 복제 기능을 사용하여 같은 리전 또는 다른 리전 간의 버킷 데이터를 백업합니다.
   - COS API, SDK를 정기적으로 사용하여 데이터를 COS의 다른 버킷에 백업합니다.
-  - 버전 관리를 이용해 이전 버전 데이터를 저장합니다.
+  - 버전 관리를 이용해 기존 버전 데이터를 저장합니다.
 - COS 권한 관리 사용 방법은 [CAM 실행](https://intl.cloud.tencent.com/document/product/436/12469)을 참고하십시오.
   - 읽기 권한만 필요한 경우, 읽기 권한만 가진 서브 계정이 필요할 경우, 임시 키로 액세스를 진행할 경우에는 읽기/쓰기 권한을 분리합니다.
   - 버킷(Bucket) 권리 분할은 비즈니스에 따라 대응하는 비즈니스 범위 내의 버킷, 디렉터리 및 조작에 한해 권한을 부여 받을 수 있습니다.
@@ -67,14 +67,14 @@ COS의 데이터 이중화 스토리지 메커니즘은 서버 등 하드웨어 
 
 ### COS는 데이터 통계 자료 수집 기능을 지원하나요?
 
-객체 스토리지 COS는 스토리지 데이터에 대해 모니터링 기능을 제공하여 사용자가 데이터 창을 모니터링하고 각 데이터의 상황과 추세를 알 수 있습니다. 모든 드라이브의 데이터 추세를 조회해야 할 경우 [COS 콘솔](https://console.cloud.tencent.com/cos5)의 [Overview] 페이지에서 스토리지 유형에 따른 저장용량, 요청 수, 트래픽 등의 데이터를 조회할 수 있습니다. 
+객체 스토리지 COS는 스토리지 데이터에 대해 모니터링 기능을 제공하여 사용자가 데이터 창을 모니터링하고 각 데이터의 상황과 추세를 알 수 있습니다. 모든 드라이브의 데이터 추세를 조회해야 할 경우 [COS 콘솔](https://console.cloud.tencent.com/cos5)의 [Overview] 페이지에서 스토리지 유형에 따른 스토리지 용량, 요청 수, 트래픽 등의 데이터를 조회할 수 있습니다. 
 단일 버킷 데이터 통계를 조회해야 할 경우 [모니터링 리포트 조회](https://intl.cloud.tencent.com/document/product/436/31634)를 참고할 수 있습니다.
 
 이외에도 Tencent Cloud [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) 페이지에서 버킷 유형별 모니터링 정보를 조회할 수 있으며 비즈니스 요구사항에 따라 다양한 알람 정책을 설정할 수 있습니다.
 
 ### COS는 이미지 처리 기능을 지원하나요?
 
-CI(Cloud Infinite)를 COS 콘솔과 통합하였기 때문에 이미지 확대/축소, 자르기, 워터마크 추가 등의 작업이 가능합니다. 자세한 사항은 [이미지 처리 활성화](https://intl.cloud.tencent.com/document/product/436/35278) 문서를 참고하십시오.
+CI(Cloud Infinite)를 COS 콘솔과 통합하였기 때문에 이미지 확대/축소, 자르기, 워터마크 추가 등의 작업이 가능합니다. 자세한 사항은 [이미지 처리 활성화](https://intl.cloud.tencent.com/document/product/436/36569) 문서를 참고하십시오.
 
 
 
@@ -92,21 +92,32 @@ COS는 비구조화 데이터의 분산형 스토리지 서비스입니다. 서�
 
 ### COS는 파일 업로드 시 자동 압축 해제를 지원하나요?
 
-COS는 비구조화 데이터의 분산형 스토리지 서비스입니다. 서비스 자체는 파일 압축 해제를 지원하지 않지만 SCF 결합 서비스로 압축 해제 기능을 실현할 수 있습니다. 자세한 사항은 [문서 압축 해제](https://intl.cloud.tencent.com/document/product/436/35663)] 를 참고하십시오.
+COS 서비스는 비정형 데이터를 위한 분산형 스토리지 서비스로, 서비스 자체는 파일 압축 해제를 지원하지 않지만 SCF 서비스와 결합하여 압축 해제 기능을 구현할 수 있습니다. 자세한 내용은 [파일 압축 해제](https://intl.cloud.tencent.com/document/product/436/35663)를 참고하십시오.
 
 ### COS는 어떤 규격과 제한이 있나요?
 
 규격과 제한에 대한 자세한 사항은 [규격 및 제한](https://intl.cloud.tencent.com/document/product/436/14518) 문서를 참고하십시오.
 
 
+### 버킷 생성 시 버킷 이름의 길이에 제한이 있나요?
+
+2021년 9월 COS 콘솔은 버전 업데이트를 통해 버킷 이름 길이에 대한 제한 정책을 재조정하였습니다. 새로운 제한 정책에서는 버킷 이름이 **리전 약칭**과 **APPID** 글자 수에 영향을 받습니다. 요청 도메인의 최대 글자 수는 60자입니다. 사용자가 기존 생성한 버킷 이름 길이는 서비스에 지장을 주지 않으므로 조정할 필요가 없습니다.
+
+
+### COS 기존 버전과 새 버전이 존재합니다. 어떤 것을 사용해야 합니까?
+
+COS의 기존 버전과 새 버전은 구현 측면에서 큰 차이가 있습니다. 기존 버전과 비교할 때 새 버전은 더 풍부한 기능을 가지고 있으며 기존 버전은 더 이상 새로운 기능이 추가되지 않습니다. **새 버전 사용을 추천합니다**. 기존 버전 사용자는 [문의하기] (https://intl.cloud.tencent.com/contact-sales)를 통해 새 버전을 활성화할 수 있습니다.
+
+새 버전과 기존 버전에서 사용하는 API 및 SDK 인터페이스가 다릅니다. 기존 버전은 JSON API를 사용하고 현재 버전은 XML API를 사용합니다. 두 API의 기본 아키텍처는 동일하고 데이터가 상호 운용 가능하며 교차 사용이 가능하지만 인터페이스가 호환되지 않고 도메인 이름이 일치하지 않습니다.
+
 ### 어떻게 에러 코드 정보를 모니터링할 수 있나요?
 
-[Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) 기능을 사용하여 다양한 유형의 HTTP 반환 코드 정보를 확인할 수 있습니다. 자세한 내용은 [모니터링 및 경보](https://intl.cloud.tencent.com/document/product/436/31649) 문서를 참고하십시오. Cloud Monitoring 기능 사용 및 관련 데이터 획득 방법은 Cloud Monitoring의 [콘솔 가이드](https://intl.cloud.tencent.com/document/product/248/6212) 또는 [API 문서](https://intl.cloud.tencent.com/document/product/248/13655)를 참고하십시오.  
+[Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) 기능을 사용하여 다양한 유형의 HTTP 반환 코드 정보를 확인할 수 있습니다. 자세한 내용은 [모니터링 및 경보](https://intl.cloud.tencent.com/document/product/436/31649) 문서를 참고하십시오. Cloud Monitoring 기능 사용 및 관련 데이터 획득 방법은 Cloud Monitoring의 [콘솔 가이드](https://intl.cloud.tencent.com/document/product/248/13517) 또는 [API 문서](https://intl.cloud.tencent.com/document/product/248/37269)를 참고하십시오.  
 
 
 ### COS 가용성은 어떻게 계산하나요?
 다음은 COS에서 제공하는 가용성 계산 예시입니다. 참고해 주십시오.
-샤오밍은 Tencent Cloud COS 서비스를 온라인 상거래 비즈니스에 사용했습니다. 비즈니스는 2018년 11월 1일부터 11월 30일까지 이루어졌으며 월 서비스 요금은 100달러이고, 한 달간 사용 불가 상황이 두 차례 있었습니다. 사용 불가 상황 기록은 아래와 같습니다.
+샤오밍은 Tencent Cloud COS 서비스를 이커머스 비즈니스에 사용했습니다. 비즈니스는 2018년 11월 1일부터 11월 30일까지 이루어졌으며 월 서비스 요금은 100USD이고, 한 달간 사용 불가 상황이 두 차례 있었습니다. 사용 불가 상황 기록은 아래와 같습니다.
 
 <table>
    <tr>
@@ -200,7 +211,7 @@ COS는 원클릭 서비스 취소 기능이 없습니다. 장기간 COS 서비�
 
 더 이상 COS 서비스를 사용하지 않을 경우 COS 내 모든 데이터(업로드하지 못한 파일 조각 및 지난 버전 객체 등을 포함)를 삭제하여 추가 과금을 피할 수 있습니다. 계정은 말소하지 않아도 됩니다. Tencent Cloud의 다른 서비스를 이용할 경우 계정 말소에도 영향을 받을 수 있습니다.
 
->?COS 내의 데이터 및 업로드하지 못한 파일 조각을 삭제하려면 [객체 삭제](https://intl.cloud.tencent.com/document/product/436/13323) 및 [조각 삭제](https://intl.cloud.tencent.com/document/product/436/31632)를 참고하십시오.
+>?COS 내의 데이터 및 업로드하지 못한 파일 조각을 삭제하려면 [객체 삭제](https://intl.cloud.tencent.com/document/product/436/13323) 및 [파일 조각 삭제](https://intl.cloud.tencent.com/document/product/436/31632)를 참고하십시오.
 
 삭제하기 전에 아래 사항을 유의하시기 바랍니다.
 
