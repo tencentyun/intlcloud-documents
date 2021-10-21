@@ -8,7 +8,7 @@ Se você já tem uma conta do Tencent Cloud, ignore esta etapa.
 ## Etapa 2. Ativar o serviço do CDN
 #### 1. Concluir a verificação de identidade
 Primeiro, os usuários registrados devem concluir a verificação de identidade para ativar o CDN. É possível verificar sua identidade no console do CDN ou no Centro de contas. Para obter mais informações sobre o processo de verificação, consulte [Guia de verificação de identidade](https://intl.cloud.tencent.com/document/product/378/3629).
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/cdn" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">Acessar o console do CDN</a></div><br>
+<div style="background-color:#00A4FF; width: 250px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/cdn" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">Acessar o console do CDN</a></div><br>
 
 ![](https://main.qcloudimg.com/raw/e593cf6199d64fbcc5c6f50089778cf9.png)
 #### 2. Ativar o serviço do CDN
