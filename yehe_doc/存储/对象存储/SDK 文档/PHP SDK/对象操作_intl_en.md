@@ -9,6 +9,7 @@ This document provides an overview of advanced APIs and APIs for simple object o
 | [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying objects | Queries some or all the objects in a bucket. |
 | [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying objects and their version history | Queries some or all the objects in a bucket and their version history. |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object in whole | Uploads an object in whole to a bucket. |
+| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | Appending parts | Appends object parts to a bucket.                      |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object. |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system. |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies a file to the destination path. |
@@ -16,23 +17,24 @@ This document provides an overview of advanced APIs and APIs for simple object o
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket. |
 | [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access. |
 
+
 **Multipart operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload task. |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload. |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading an object in parts | Uploads an object in parts. |
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying an object part | Copies a part of an object. |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload task. |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an object. |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload task and deletes the uploaded parts. |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts. |
 
 ## Simple Operations
 
 ### Querying objects
 
-#### API description
+#### Description
 
 This API (`List Objects`) is used to query all the objects in a specified bucket.
 
@@ -145,9 +147,9 @@ Guzzle\Service\Resource\Model Object
 
 ### Querying objects and their version history 
 
-#### API description
+#### Description
 
-This API is used to query some or all objects in a bucket as well as their version history.
+This API is used to query some or all the objects in a bucket and their version history.
 
 #### Method prototype
 
@@ -250,7 +252,7 @@ Guzzle\Service\Resource\Model Object
 | ------------------- | ------ | ------------------------------------------------------------ | -------- |
 | Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
 | Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | String | Encoding method of the returned value | None |
+| EncodingType | String  |Encoding method of the returned value | None |
 | KeyMarker | String  | The key of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.  | None |
 | VersionIdMarker | String |  The version ID of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.   |  None |
 | NextKeyMarker | String | The key of the object after which the next returned list begins if `IsTruncated` is `true` | None |
@@ -264,11 +266,11 @@ Guzzle\Service\Resource\Model Object
 
 
 
-### Uploading an object in whole
+### Uploading an object using simple upload
 
-#### API description
+#### Description
 
-This API (`PUT Object`) is used to upload an object of up to 5 GB to a specified bucket. To upload objects larger than 5 GB, please use [multipart upload APIs](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
+This API (`PUT Object`) is used to upload an object of up to 5 GB to a specified bucket. To upload objects larger than 5 GB, please use [multipart upload APIs] (#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
 
 #### Method prototype
 
@@ -344,7 +346,7 @@ try {
 ```php
 try {
     $result = $cosClient->putObject(array(
-        'Bucket' => 'examplebucket-125000000', //Format：BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
         'Key' => 'folder/',
         'Body' => "",
     ));
@@ -375,6 +377,24 @@ try {
 }
 ```
 
+#### Sample 6. Uploading an object (limiting single-URL speed)
+>? For more information about the speed limits on object uploads, please see [Single-URL Speed Limits](https://intl.cloud.tencent.com/document/product/436/34072).
+
+```php
+try {
+$result = $cosClient->putObject(array(
+        'Bucket' => 'examplebucket-125000000', // Format: BucketName-APPID
+        'Key' => 'exampleobject',
+        'Body' => fopen($local_path, 'rb'),
+        'TrafficLimit' => 8 * 1024 * 1024 // Limit the speed to 1 MB/s.
+    ));
+    // Request successful
+    print_r($result);
+} catch (\Exception $e) {
+    // Request failed
+    echo($e);
+}
+```
 #### Parameter description
 
 | Parameter | Type | Description | Required |
@@ -387,9 +407,9 @@ try {
 | ContentDisposition | String | File name | No |
 | ContentEncoding | String | Encoding format | No |
 | ContentLanguage | String | Language type | No |
-| ContentLength | Int | Length of the uploaded content | No |
+| ContentLength | Int | Length of the content | No |
 | ContentType | String | Content type | No |
-| Expires | String | Content-Expires | No |
+| Expires | String | `Content-Expires` | No |
 | Metadata             | Array       | User-defined file metadata                                       | No       |
 | StorageClass | String | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | No |
 | ContentMD5           | Boolean      | Whether to upload the MD5 checksum of the file for verification                                  | No       |
@@ -407,6 +427,7 @@ Guzzle\Service\Resource\Model Object
             [VersionId] => MTg0NDUxODMyMTE2ODY0OTExOTk
             [RequestId] => NWQwOGRkNDdfMjJiMjU4NjRfNzVjXzEwNmVjY2M=
             [ObjectURL] => http://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/123
+            [CRC] => 16749565679157681890
         )
 
 )
@@ -420,9 +441,112 @@ Guzzle\Service\Resource\Model Object
 | ETag | String | MD5 checksum of the uploaded file  | None |
 | VersionId | String | Version ID of the file if versioning is enabled. | None  |
 
+### Appending parts
+
+#### Description
+
+This API (`APPEND Object`) is used to append object parts to a bucket.
+
+#### Method prototype
+
+```php
+public Guzzle\Service\Resource\Model appendObject(array $args = array());
+```
+
+#### Sample request
+
+#### Sample 1. Appending input stream
+```php
+try {
+    $result = $cosClient->appendObject(array(
+        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Key' => 'exampleobject',
+        'Position' => 0,
+        'Body' => "hello,world",
+    ));
+    // Request successful
+    print_r($result);
+} catch (\Exception $e) {
+    // Request failed
+    echo($e);
+}
+```
+
+#### Sample 2. Appending local file stream
+```php
+try {
+    $result = $cosClient->appendObject(array(
+        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Key' => 'exampleobject',
+        'Position' => 0,
+        'Body' => fopen('path/to/localFile', 'rb'),
+    ));
+    // Request successful
+    print_r($result);
+} catch (\Exception $e) {
+    // Request failed
+    echo($e);
+}
+```
+
+#### Sample 3. Appending multiple data
+
+```php
+try {
+    $result = $cosClient->appendObject(array(
+        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Key' => 'exampleobject',
+        'Position' => 0, // Position to append the object
+        'Body' => fopen('path/to/localFile', 'rb'),// Read the file content.
+    ));
+    
+    $result = $cosClient->appendObject(array(
+        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Key' => 'exampleobject',
+        'Position' => (integer)$result['Position'], // Append to the position of the last append.
+        'Body' => "hello, world", 
+    ));
+    // Request successful
+    print_r($result);
+} catch (\Exception $e) {
+    // Request failed
+    echo($e);
+}
+```
+
+#### Parameter description
+
+| Parameter | Type | Description | Required |
+| --------- | ------ | ------------------------------------------------------------ | -------- |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| Key | String | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | Yes |
+| Position | Integer | Starting point for the append operation. For the first append, the value of this parameter is 0. For subsequent appends, the value is the `content-length` of the current object. | Yes |
+| Body | File/String | Content of the uploaded part, which can be file stream or byte stream     | Yes |
+
+#### Sample response
+
+```php
+GuzzleHttp\Command\Result Object
+(
+    [ETag] => "9a74ded332531da4c295934ba5a9cf8b"
+    [Position] => 4
+    [RequestId] => NjExNWU4NTlfZDIyZjJjMGJfM2Q2ZV8xMzJjZThhZg==
+    [Key] => exampleobject
+    [Bucket] => examplebucket-1250000000
+    [Location] => examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject
+)
+```
+
+#### Response description
+
+| Parameter Name | Type | Description | Parent Node | 
+| -------------------- | ------ | -------------------------------------------------- | ------ |
+| ETag | String | MD5 checksum of the file | None |
+| Position              | Integer | Starting point of the append operation | None  |
+
 ### Querying object metadata
 
-#### API description
+#### Description
 
 The API is used to query object metadata.
 
@@ -493,6 +617,7 @@ Guzzle\Service\Resource\Model Object
             [RequestCharged] => 
             [ReplicationStatus] => 
             [RequestId] => NWNhMzU3Y2ZfMzFhYzM1MGFfODdhMF8xOTExM2U=
+            [CRC] => 16749565679157681890
         )
 
 )
@@ -516,7 +641,7 @@ Guzzle\Service\Resource\Model Object
 
 ### Downloading an object
 
-#### API description
+#### Description
 
 This API (`GET Object`) is used to download an object.
 
@@ -584,6 +709,25 @@ try {
 }
 ```
 
+#### Sample 4. Downloading an object (limiting single-URL speed)
+>?For more information about the speed limits on object downloads, please see [Single-URL Speed Limits](https://intl.cloud.tencent.com/document/product/436/34072).
+
+```php
+try {
+   $result = $cosClient->getObject(array(
+        'Bucket' => 'examplebucket-125000000', // Format: BucketName-APPID
+        'Key' => 'exampleobject',
+        'SaveAs' => '/data/exampleobject',
+        'TrafficLimit' => 8 * 1024 * 1024 // Limit the speed to 1 MB/s.
+    ));
+    // Request successful
+    print_r($result);
+} catch (\Exception $e) {
+    // Request failed
+    echo($e);
+}
+```
+
 #### Parameter description
 
 | Parameter Name | Type | Description | Required |
@@ -639,6 +783,7 @@ Guzzle\Service\Resource\Model Object
             [RequestCharged] => 
             [ReplicationStatus] => 
             [RequestId] => NWNhNDBmYzBfNmNhYjM1MGFfMmUzYzFfMWIzMDYz
+            [CRC] => 16749565679157681890
         )
 
 )
@@ -661,7 +806,7 @@ Guzzle\Service\Resource\Model Object
 | ContentLanguage | String | Language type                              | None |
 | ContentLength | Int | Length of the content | None |
 | ContentType | String | Content type | None |
-| Metadata             | Array       | User-defined file metadata                                       | None       |
+| Metadata | Array | User-defined file metadata | None |
 | Restore | String | Restoration information of the archived file | None |
 
 ### Copying an object
@@ -769,7 +914,7 @@ try {
 
 ### Deleting an object
 
-#### API description
+#### Description
 
 This API is used to delete a specified object (file) from a bucket.
 
@@ -808,7 +953,7 @@ try {
 
 ### Deleting multiple objects
 
-#### API description
+#### Description
 
 This API is used to delete multiple objects (files) from a specified bucket.
 
@@ -857,7 +1002,7 @@ $isTruncated = true;
 while ( $isTruncated ) {
     try {
         $result = $cosClient->listObjects(
-            ['Bucket' => 'examplebucket-125000000', //Format: BucketName-APPID
+            ['Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
             'Delimiter' => '',
             'EncodingType' => 'url',
             'Marker' => $nextMarker,
@@ -869,10 +1014,10 @@ while ( $isTruncated ) {
         foreach ( $result['Contents'] as $content ) {
             $cos_file_path = $content['Key'];
             $local_file_path = $content['Key'];
-            // Splice the download path as needed
+            // Splice a download path as needed
             try {
                 $cosClient->deleteObject(array(
-                    'Bucket' => 'examplebucket-125000000', //Format：BucketName-APPID
+                    'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
                     'Key' => $cos_file_path,
                 ));
                 echo ( $cos_file_path . "\n" );
@@ -940,7 +1085,7 @@ Guzzle\Service\Resource\Model Object
 
 ### Restoring an archived object 
 
-#### API description
+#### Description
 
 This API (`POST Object restore`) is used to restore an archived object for access.
 
@@ -992,7 +1137,7 @@ Multipart operations include:
 
 ### Querying multipart uploads
 
-#### API description
+#### Description
 
 This API (`List Multipart Uploads`) is used to query in-progress multipart uploads in a specified bucket.
 
@@ -1121,7 +1266,7 @@ Guzzle\Service\Resource\Model Object
 
 ### Initializing a multipart upload
 
-#### API description
+#### Description
 
 This API (`Initiate Multipart Upload`) is used to initialize a multipart upload.
 
@@ -1195,7 +1340,7 @@ Guzzle\Service\Resource\Model Object
 
 
 
-### Uploading an object in parts
+###  Uploading parts
 
 This API (`Upload Part`) is used to upload an object in parts.
 
@@ -1248,6 +1393,7 @@ Guzzle\Service\Resource\Model Object
         (
             [ETag] => "96e79218965eb72c92a549dd5a330112"
             [RequestId] => NWNhNDdjYWFfNjNhYjM1MGFfMjk2NF8xY2ViMWM=
+            [CRC] => 16749565679157681890
         )
 
 )
@@ -1262,9 +1408,9 @@ Guzzle\Service\Resource\Model Object
 
 
 
-### Copying a part of an object
+### Copying an object part
 
-#### API description
+#### Description
 
 This API (`Upload Part - Copy`) is used to copy a part of an object.
 
@@ -1320,6 +1466,7 @@ Guzzle\Service\Resource\Model Object
             [ETag] => "96e79218965eb72c92a549dd5a330112"
             [LastModified] => "2017-09-04T04:45:45"
             [RequestId] => NWNhNDdjYWFfNjNhYjM1MGFfMjk2NF8xY2ViMWM=
+            [CRC] => 16749565679157681890
         )
 
 )
@@ -1335,7 +1482,7 @@ Guzzle\Service\Resource\Model Object
 
 ### Querying uploaded parts
 
-#### API description
+#### Description
 
 This API (`List Parts`) is used to query the uploaded parts of a multipart upload.
 
@@ -1446,7 +1593,7 @@ Guzzle\Service\Resource\Model Object
 
 ### Completing a multipart upload
 
-#### API description
+#### Description
 
 This API (`Complete Multipart Upload`) is used to complete the multipart upload of a file.
 
@@ -1496,7 +1643,7 @@ try {
 
 ### Aborting a multipart upload
 
-#### API description
+#### Description
 
 This API (`Abort Multipart Upload`) is used to abort a multipart upload and delete the uploaded parts.
 
@@ -1535,18 +1682,18 @@ try {
 
 
 
-## Advanced APIs (recommended)
+## Advanced APIs (Recommended)
 
 This section is about the advanced upload and copy APIs COS provides. Pass in the parameters required, and the APIs will determine whether to upload (copy) an object in whole or in parts based on the file size. Before using the APIs, make sure you have completed the initialization step in [Getting Started](https://intl.cloud.tencent.com/document/product/436/12266).
 
-### Composite upload
+### Uploading an object
 
 #### Method prototype
 
 ```php
 public Qcloud\Cos\Client upload(string $bucket, string $key, $body, array $options = array());
 ```
-#### API description
+#### Description
 
 This API is used to upload an object. It calls the `PUT Object` API for small files, and the `Upload Part` API for large files. For the parameters required, please see those of the `PUT Object` and `Upload Part` APIs.
 
@@ -1563,8 +1710,8 @@ This API is used to upload an object. It calls the `PUT Object` API for small fi
 
 | options Parameter | Type   | Description | Required |
 | -------- | ------ | ---------------------------------- | -------- |
-| Progress         | Function      | Progress callback. `$totolSize` indicates the total size, and `$uploadedSize` indicates the uploaded size. | No       |
-| PartSize         | Int      | Minimum part size. Default value: 50 MB | No       |
+| Progress         | Function      | Progress callback. `$totalSize` indicates the total size, and `$uploadedSize` indicates the uploaded size. | No       |
+| PartSize         | Int      | Minimum part size. Default value: 5 MB | No       |
 | Concurrency         | Int      | Concurrency. Default value: 10 | No       |
 | ACL | String | ACL of the object, such as private or public-read | No |
 | CacheControl | String | Cache policy | No |
@@ -1647,7 +1794,13 @@ try {
 }
 ```
 
-#### Sample 4. Uploading a folder (batch upload)
+### Batch uploading files (uploading a local folder)
+
+#### Description
+
+This API is used to upload all files in a local folder to COS.
+
+#### Sample request
 
 [//]: # ".cssg-snippet-transfer-upload-folder"
 
@@ -1656,9 +1809,9 @@ try {
 
 require dirname( __FILE__ ) . '/../vendor/autoload.php';
 
-$secretId = 'COS_SECRETID';
+$secretId = 'SECRETID';
 // Cloud API key SecretId
-$secretKey = 'COS_SECRETKEY';
+$secretKey = 'SECRETKEY';
 // Cloud API key SecretKey
 $region = 'ap-beijing';
 // Set a default bucket region
@@ -1684,7 +1837,7 @@ function uploadfiles( $path, $cosClient ) {
             // Splice an upload path as needed
             try {
                 $cosClient->upload(
-                    $bucket = 'examplebucket-125000000', //Format: BucketName-APPID
+                    $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
                     $key = $cos_file_path,
                     $body = fopen( $cos_file_path, 'rb' )
                 );
@@ -1698,9 +1851,10 @@ function uploadfiles( $path, $cosClient ) {
 $local_path = '/data/home/folder';
 uploadfiles( $local_path, $cosClient );
 ```
-### Composite download
 
-#### API description
+### Downloading an object (according to `Range`)
+
+#### Description
 
 This API is used to download an object. It calls the `GET Object` API to download a small file in whole and a large file by byte range. For the parameters required, please see those of the `GET Object` API.
 
@@ -1721,30 +1875,28 @@ public Qcloud\Cos\Client download(string $bucket, string $key, string $saveAs, a
 
 | options Parameter | Type   | Description | Required |
 | -------- | ------ | ---------------------------------- | -------- |
-| Progress         | Function      | Progress callback. `$totolSize` indicates the total size, and `$downloadedSize` indicates the downloaded size. | No       |
-| PartSize         | Int      | Minimum part size. Default value: 50 MB | No       |
+| Progress         | Function      | Progress callback. `$totalSize` indicates the total size, and `$downloadedSize` indicates the downloaded size. | No       |
+| PartSize         | Int      | Minimum part size. Default value: 5 MB | No       |
 | Concurrency         | Int      | Concurrency. Default value: 10 | No       |
-| ResumableDownload         | Bool      | Whether to enable checkpoint restart. It’s disabled by default. | No       |
-| ResumableTaskFile         | Int      | Checkpoint file path. Default value: `<saveAs.cosresumabletask>` | No       |
+| ResumableDownload         | Bool      | Whether to enable checkpoint restart. Default value: `False` | No       |
+| ResumableTaskFile         | Int      | Checkpoint file path. Default value: `&lt;saveAs.cosresumabletask>` | No       |
 
 
 #### Sample request
 
-#### Sample 1. Downloading an object
-
 [//]: # ".cssg-snippet-download-object"
 
 ```php
-$printbar = function($totolSize, $downloadedSize) {
-    printf("downloaded [%d/%d]\n", $downloadedSize, $totolSize);
+$printbar = function($totalSize, $downloadedSize) {
+    printf("downloaded [%d/%d]\n", $downloadedSize, $totalSize);
 };
 
 try {
     $result = $cosClient->download(
-        $bucket = 'examplebucket-125000000', //Format: BucketName-APPID
+        $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
         $key = 'exampleobject',
         $saveAs = $local_path,
-        $options=['Progress' => $printbar, //Specify the progress
+        $options=['Progress' => $printbar, // Specify the progress.
                   'PartSize' => 10 * 1024 * 1024, //Part size
                   'Concurrency' => 5, //Number of concurrent parts
                   'ResumableDownload' => true, //Whether to enable checkpoint restart. It’s disabled by default.
@@ -1759,7 +1911,13 @@ try {
 }
 ```
 
-#### Sample 2. Downloading a folder
+### Batch downloading files (downloading a COS directory)
+
+#### Description
+
+This API is used to download a COS directory and the files in it to the local disk.
+
+#### Sample request
 
 [//]: # ".cssg-snippet-download-folder"
 
@@ -1771,7 +1929,7 @@ $isTruncated = true;
 while ( $isTruncated ) {
     try {
         $result = $cosClient->listObjects(
-            ['Bucket' => 'examplebucket-125000000', //Format: BucketName-APPID
+            ['Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
             'Delimiter' => '',
             'EncodingType' => 'url',
             'Marker' => $nextMarker,
@@ -1789,7 +1947,7 @@ while ( $isTruncated ) {
         // Splice a download path as needed
         try {
             $result = $cosClient->download(
-                $bucket = 'examplebucket-125000000', //Format: BucketName-APPID
+                $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
                 $key = $cos_file_path,
                 $saveAs = $local_file_path
             );
@@ -1801,11 +1959,11 @@ while ( $isTruncated ) {
 }
 ```
 
-### Composite replication
+### Copying objects
 
-#### API description
+#### Description
 
-This API is used to copy an object. It calls the `PUT Object - Copy` API for small files, and the `Upload Part - Copy` API for large files. For the parameters required, please see those of the `PUT Object - Copy` and `Upload Part - Copy` APIs.
+This API is used to copy an object. It calls the `PUT Object - Copy` API for small files, and the `Upload Part - Copy` API for large files. This API is usually used to modify object attributes. For the parameters required, please see those of the `PUT Object - Copy` and `Upload Part - Copy` APIs.
 
 #### Sample request
 

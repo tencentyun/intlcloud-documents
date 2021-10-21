@@ -5,7 +5,7 @@ COSBench is an open-source benchmark tool developed by Intel for testing the per
 
 ## System Environment
 
-CentOS 7.0 or later.
+It is recommended that you run COSBench in CentOS 7.0 or a later version. If you run it in Ubuntu, unexpected issues may occur.
 
 
 ## Performance Factors
@@ -21,19 +21,25 @@ CentOS 7.0 or later.
 
 ## Directions
 
-1. Download COSBench 0.4.2.c4 from [CosBench GitHub](https://github.com/intel-cloud/cosbench/releases), and decompress it in your server.
+1. Download COSBench 0.4.2.c4.zip at [COSBench GitHub](https://github.com/intel-cloud/cosbench/releases) and decompress it in your server.
 2. Install the COSBench dependent library and run the following command.
+ - For CentOS, run the following command to install the dependencies:
 ```
-yum install nmap-ncat java curl java-1.8.0-openjdk-devel -y
+sudo yum install nmap-ncat java curl java-1.8.0-openjdk-devel -y
+```
+ - For Ubuntu, run the following command to install the dependencies:
+```
+sudo apt install nmap openjdk-8-jdk 
 ```
 3. Edit the file `s3-config-sample.xml` and configure a test job. The test job is divided into the following five stages.
- 1. init: creates a bucket.
- 1. prepare: uses parallel threads (or workers) to PUT (upload) objects with specified size to read in the main stage.
- 1. main: uses parallel workers to read and write objects for a specified period of time.
- 1. cleanup: deletes the created objects.
- 1. dispose: deletes buckets.
+   1. init: creates a bucket.
+   2. prepare: uses parallel threads (or workers) to PUT (upload) objects with specified size to read in the main stage.
+   3. main: uses parallel workers to read and write objects for a specified period of time.
+   4. cleanup: deletes the created objects.
+   5. dispose: deletes buckets.
 
 The sample configuration is as shown below.
+
 ```shell
 <?xml version="1.0" encoding="UTF-8" ?>
 <workload name="s3-50M-sample" description="sample benchmark for s3">
@@ -70,39 +76,48 @@ The sample configuration is as shown below.
 </workload>
 ```
 
-**Parameters**
+**Parameter description**
 
 | Parameter | Description |
-|-----------|----------------|
+| -------------------- | ------------------------------------------------------------ |
 |    accesskey, secretkey    | Access key information, which you should replace with your own SecretId and SecretKey  |
 |      cprefix         | Prefix of the bucket name, such as examplebucket            |
 |  containers |  Value range for bucket names. A bucket name is made up of `cprefix` and `containers`, such as `examplebucket1` or `examplebucket2`.   |
 |    csuffix          | User account APPID, which should be prefixed with the endash `-`, e.g. -1250000000      |
-|     runtime        | Specifies how long the test should run     |
-|     ratio       | The ratio of reads to writes          |
-|   workers          |  Specifies the number of parallel threads for the test       |
+| runtime              |  COSBench running time                     |
+| ratio                | Read/Write ratio                    |
+| workers              | Number of workers                       |
 
 4. Edit the file `cosbench-start.sh` and add the following parameter to the Java startup command line to disable S3 MD5 verification.
 ```plaintext
 -Dcom.amazonaws.services.s3.disableGetObjectMD5Validation=true
 ```
-5. Run the following command to submit the job.
+5. Start the COSBench service.
+ - For CentOS, run the following command:
 ```plaintext
-sh cli.sh submit conf/s3-config-sample.xml
+sudo bash start-all.sh
+```
+ - For Ubuntu, run the following command:
+```plaintext
+sudo bash start-driver.sh &
+sudo bash start-controller.sh &
+```
+6. Run the following command to submit the job.
+```plaintext
+sudo bash cli.sh submit conf/s3-config-sample.xml
 ```
 Check the test status at `http://ip:19088/controller/index.html` (replace “ip” in this link with the IP of your own testing server).
 ![](https://main.qcloudimg.com/raw/77f1631fa15141332d123fb472bab7ac.png)
 You can see the five work stages as shown below.
 ![](https://main.qcloudimg.com/raw/3ccb5a60253ceb20c6da9292582c4355.png)
-6. The following example shows the performance tests of the uploads and downloads of Tencent Cloud CVM with 32 cores and 17 Gbps private network bandwidth in Beijing region. The test includes the following two stages.
- 1. prepare: 100 workers threads. 1,000 50 MB.objects are uploaded.
- 2. main: 100 workers read and write objects in parallel for 300 seconds.
+7. The following example shows the performance tests of the uploads and downloads of Tencent Cloud CVM with 32 cores and 17 Gbps private network bandwidth in Beijing region. The test includes the following two stages.
+    1. prepare: 100 workers threads. 1,000 50 MB.objects are uploaded.
+    2. main: 100 workers read and write objects in parallel for 300 seconds.
+
 The test results after two stages above are as shown below.
 ![](https://main.qcloudimg.com/raw/e3ac34b6f8340c5cbc834d4f98ba9341.png)
 
-7. Run the following command to stop the test.
+8. Run the following command to stop the test.
 ```plaintext
-sh stop-all.sh
+sudo bash stop-all.sh
 ```
-
-

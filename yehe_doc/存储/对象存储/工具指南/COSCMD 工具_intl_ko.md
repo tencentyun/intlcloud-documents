@@ -10,7 +10,7 @@ COSCMD 툴을 사용하여 간단한 명령 라인을 통해 객체(Object)의 �
 Windows, Linux, macOS 시스템을 지원합니다.
 
 > ?
-> - 로컬 문자 형식을 UTF-8로 유지하십시오. 그렇지 않을 경우 중국어 버전의 파일 작업 시 오류가 발생합니다.
+> - 로컬 문자 형식을 UTF-8로 유지합니다. 그렇지 않을 경우 중국어 버전의 파일 작업 시 오류가 발생합니다.
 > - 해당 기기의 시간을 국제 표준 시간과 동일하게 조정합니다. 오차가 큰 경우 정상적으로 사용할 수 없습니다.
 
 #### 소프트웨어 종속
@@ -56,7 +56,7 @@ cd coscmd
 python setup.py install
 ```
 
->! Python 2.6 버전의 경우 pip로 종속 라이브러리 설치 시 실패할 수 있으므로 본 방법을 통해 설치하기를 권장합니다. 
+>! Python 2.6 버전의 경우 pip로 종속 라이브러리 설치 시 실패할 수 있으므로 본 방법을 통해 설치할 것을 권장합니다. 
 >
 
 #### 3. 오프라인 설치
@@ -64,14 +64,14 @@ python setup.py install
 >! 두 기기의 Python 버전은 동일해야 하며, 동일하지 않을 경우 설치에 실패합니다.
 >
 ```sh
-# 공인 네트워크가 연결된 기기에서 다음 명령어를 실행합니다.
+# 외부 네트워크가 연결된 기기에서 다음 명령어를 실행합니다.
 mkdir coscmd-packages
 pip download coscmd -d coscmd-packages
 tar -czvf coscmd-packages.tar.gz coscmd-packages
 
 
 
-# 설치 패키지를 공인 네트워크가 연결되지 않은 기기에 복사한 후 다음 명령어를 실행합니다.
+# 설치 패키지를 외부 네트워크가 연결되지 않은 기기에 복사한 후 다음 명령어를 실행합니다.
 tar -xzvf coscmd-packages.tar.gz
 pip install coscmd --no-index -f coscmd-packages
 ```
@@ -139,7 +139,7 @@ optional arguments:
                         specify log backup num
   -v, --version         show program's version number and exit
 ```
-이외에도 사용자는 모든 명령어 뒤에(매개변수 입력하지 않음) `-h`를 입력하여 해당 명령어의 구체적인 사용 방법을 확인할 수 있습니다. 예시:
+이외에도 사용자는 모든 명령어 뒤에(매개변수 추가하지 않음) `-h`를 입력하여 해당 명령어의 구체적인 사용 방법을 확인할 수 있습니다. 예시:
 ```plaintext
 coscmd upload -h  //upload 명령어 사용 방법 조회
 ```
@@ -190,23 +190,23 @@ coscmd config [OPTION]...<FILE>...
               [--anonymous]   
 ```
 
->? 그 중 '[]' 필드는 옵션 항목이며, '<>' 필드는 반드시 매개변수를 입력해야 합니다.
+>? 이 중 '[]' 필드는 옵션 항목이며, '<>' 필드는 반드시 매개변수를 입력해야 합니다.
 >
 
 매개변수 설정 설명:
 
-| 옵션 항목             | 매개변수 설명                                                     | 유효값 | 필수 여부 |
+| 옵션 항목             | 매개변수 설명                                                     | 유효값 | 필수/옵션 여부 |
 | ---------------- | ------------------------------------------------------------ | ------ | -------- |
-| -a               | 키 ID는 [API Keys 콘솔](https://console.cloud.tencent.com/cam/capi)에서 획득하십시오. | 문자열 | 예       |
-| -s               | 키(Key)는 [API Keys 콘솔](https://console.cloud.tencent.com/cam/capi)에서 획득하십시오. | 문자열 | 예       |
-| -t               | 임시 키 token. 임시 키 사용 시 설정해야 하며 x-cos-security-token 헤더를 설정해야 합니다. | 문자열 | 아니오       |
-| -b               | 지정한 버킷 이름. 버킷 이름 형식은 BucketName-APPID이며 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. 처음 설정 사용 시 COS 콘솔에서 버킷을 생성해야 하며 툴 설정에 사용합니다. | 문자열 | 예       |
-| -r               | 버킷이 위치한 리전. [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | 문자열 | 예       |
-| -e               | 요청한 ENDPOINT를 설정합니다. ENDPOINT 매개변수를 설정하면 REGION 매개변수는 유효하지 않습니다. 기본 도메인을 사용한 경우 `cos.<region>.myqcloud.com`으로 설정하고, 글로벌 가속 도메인을 사용한 경우 `cos.accelerate.myqcloud.com`으로 설정합니다. | 문자열 | 아니오       |
-| -m               | 멀티 스레드 작업의 최대 스레드 수(기본값: 5, 설정 가능 범위: 1~30)입니다.             | 숫자   | 아니오       |
-| -p               | 멀티파트 작업의 단일 파트 크기(단위: MB, 기본값: 1MB, 설정 가능 범위: 1~1000)입니다.             | 숫자   | 아니오       |
-| --do-not-use-ssl | HTTP 프로토콜을 사용하고 HTTPS는 사용하지 않습니다.                              | 문자열 | 아니오       |
-| --anonymous      | 익명 작업(서명 없음)                                       | 문자열 | 아니오       |
+| -a               | 키 ID는 [API Keys 콘솔](https://console.cloud.tencent.com/cam/capi)에서 획득합니다. | 문자열 | 필수       |
+| -s               | 키(Key)는 [API Keys 콘솔](https://console.cloud.tencent.com/cam/capi)에서 획득합니다. | 문자열 | 필수       |
+| -t               | 임시 키 token. 임시 키 사용 시 설정하며, x-cos-security-token 헤더를 설정합니다. | 문자열 | 옵션       |
+| -b               | 지정한 버킷 이름. 버킷 이름 형식은 BucketName-APPID입니다. [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. 처음 설정 및 사용 시 COS 콘솔에서 버킷을 생성해야 하며 이는 툴 설정에 사용됩니다. | 문자열 | 필수       |
+| -r               | 버킷이 위치한 리전. [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | 문자열 | 필수       |
+| -e               | 요청의 ENDPOINT를 설정합니다. ENDPOINT 매개변수를 설정하면 REGION 매개변수는 효력을 상실합니다. 기본 도메인을 사용한 경우 `cos.<region>.myqcloud.com`으로 설정하고, 글로벌 가속 도메인을 사용한 경우 `cos.accelerate.myqcloud.com`으로 설정합니다. | 문자열 | 옵션       |
+| -m               | 멀티 스레드 작업의 최대 스레드 수(기본값: 5, 설정 가능 범위: 1 - 30)입니다.             | 숫자   | 옵션       |
+| -p               | 멀티파트 작업의 단일 파트 크기(단위: MB, 기본값: 1MB, 설정 가능 범위: 1 - 1000)입니다.             | 숫자   | 옵션       |
+| --do-not-use-ssl | HTTP 프로토콜을 사용하고 HTTPS는 사용하지 않습니다.                              | 문자열 | 옵션       |
+| --anonymous      | 익명 작업(서명 없음)                                       | 문자열 | 옵션       |
 
 config 명령어 사용 예시는 다음과 같습니다.
 
@@ -222,7 +222,7 @@ coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe****
 
 >?
 > - `-b <BucketName-APPID>` 매개변수를 통해 버킷 이름을 지정하며, 버킷의 이름 생성 형식은 BucketName-APPID입니다. 입력하는 버킷 이름은 반드시 해당 형식이어야 합니다.
->- `-r <region>`을 통해 Region을 지정합니다. 버킷의 소속 리전을 지정할 수 있습니다. 
+> - `-r <region>`을 통해 Region을 지정합니다. 버킷의 소속 리전을 지정할 수 있습니다. 
 >
 
 - 명령어 형식
@@ -273,7 +273,9 @@ coscmd -d upload -rs D:/folder/ /
 
 ### Silence 모드에서 명령어 실행
 
-각 명령어 앞에 `-s` 또는 `--silence`를 추가하면 명령어 실행 과정에서 어떠한 정보도 출력하지 않습니다. 예시:
+각 명령어 앞에 `-s` 또는 `--silence`를 추가하면 명령어 실행 과정에서 어떠한 정보도 출력되지 않습니다.
+
+>?1.8.6.24 및 이후 버전이어야 합니다.
 
 - 명령어 형식
 ```plaintext
@@ -286,9 +288,9 @@ coscmd -s upload D:/picture.jpg /
 
 ## 자주 사용하는 버킷 명령어
 
-###버킷 생성하기
+### 버킷 생성
 
->?버킷 생성 명령어 실행 시, 매개변수 `-b <BucketName-APPID>`로 버킷 이름을 지정하고 `-r <Region>`으로 소속 리전을 지정하십시오. 직접 coscmd createbucket 실행 시 오류가 발생하며, 이는 버킷 이름과 소속 리전을 지정하지 않아 이미 존재하는 버킷(즉, 매개변수 설정 시 입력하는 버킷)을 생성하는 것으로 인식하기 때문입니다.
+>? 버킷 생성 명령어 실행 시, 매개변수 `-b <BucketName-APPID>`로 버킷 이름을 지정하고 `-r <Region>`으로 소속 리전을 지정합니다. 직접 coscmd createbucket 실행 시 오류가 발생하며, 이는 버킷 이름과 소속 리전을 지정하지 않아 이미 존재하는 버킷(즉, 매개변수 설정 시 입력하는 버킷)을 생성하는 것으로 인식하기 때문입니다.
 >
 
 - 명령어 형식
@@ -329,7 +331,7 @@ coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket -f
 ```plaintext
 coscmd upload <localpath> <cospath>
 ```
->! '<>'의 매개변수를 업로드할 로컬 파일 경로(localpath) 및 COS 저장 경로(cospath)로 대체하세요.
+>! '<>'의 매개변수를 업로드할 로컬 파일 경로(localpath) 및 COS 저장 경로(cospath)로 대체하십시오.
 >
 - 작업 예시 - D 드라이브의 picture.jpg 파일을 COS의 doc 디렉터리로 업로드
 ```plaintext
@@ -371,7 +373,7 @@ coscmd upload -r D:/doc doc
 ```plaintext
 coscmd upload -rs D:/doc doc
 ```
->!-s 매개변수를 사용하여 동기화 업로드를 진행할 수 있으며, md5가 동일한 파일(COS 상의 원본 파일은 반드시 1.8.3.2 버전 이상의 COSCMD로 업로드해야 하며, 기본적으로 x-cos-meta-md5의 header가 존재)은 건너뜁니다.
+>! -s 매개변수를 사용하여 동기화 업로드를 진행할 수 있으며, md5가 동일한 파일(COS 상의 원본 파일은 반드시 1.8.3.2 버전 이상의 COSCMD로 업로드해야 하며, 기본적으로 x-cos-meta-md5의 header가 존재)은 건너뜁니다.
 >
 - 작업 예시 - 동기화 업로드하고, 파일 크기 및 이름이 동일한 파일은 건너뛰기
 ```plaintext
@@ -427,7 +429,7 @@ coscmd list -v
 ```
 
 >?
-> - '<>' 매개변수를 파일 리스트를 쿼리할 COS 파일 경로(cospath)로 대체하세요. `<cospath>`를 입력하지 않을 경우 현재 버킷의 루트 디렉터리를 쿼리합니다.
+> - '<>' 매개변수를 파일 리스트를 쿼리할 COS 파일 경로(cospath)로 대체하십시오. `<cospath>`를 입력하지 않을 경우 현재 버킷의 루트 디렉터리를 쿼리합니다.
 > - `-a`를 사용하여 모든 파일을 쿼리합니다.
 > - `-r`을 사용하여 재귀 쿼리를 실행하고 마지막에 파일의 수량 및 크기의 합을 반환합니다.
 > - `-n num`을 사용하여 쿼리 수의 최대값을 설정합니다.
@@ -447,7 +449,7 @@ coscmd info <cospath>
 coscmd info doc/picture.jpg
 ```
 
->?'<>'의 매개변수를 표시할 COS 파일 경로(cospath)로 대체하십시오.
+>?' <>'의 매개변수를 표시할 COS 파일 경로(cospath)로 대체하십시오.
 >
 
 
@@ -458,7 +460,7 @@ coscmd info doc/picture.jpg
 ```plaintext
 coscmd download <cospath> <localpath>
 ```
->!'<>'의 매개변수를 다운로드할 COS 파일 경로(cospath)와 로컬 저장 경로(localpath)로 대체하십시오.
+>! '<>'의 매개변수를 다운로드할 COS 파일 경로(cospath)와 로컬 저장 경로(localpath)로 대체하십시오.
 >
 - 작업 예시 - COS의 doc/picture.jpg를 D:/picture.jpg로 다운로드
 ```plaintext
@@ -535,8 +537,8 @@ coscmd signurl doc/picture.jpg -t 100
 ```
 
 >?
-> - '<>'의 매개변수를 다운로드 URL을 획득해야 할 COS 파일 경로(cospath)로 대체하세요.
-> - `-t time`을 사용하여 해당 URL 서명의 유효 시간(단위: 초)을 설정합니다. 기본값: 10000s
+> - '<>'의 매개변수를 다운로드 URL을 획득해야 할 COS 파일 경로(cospath)로 대체하십시오.
+> - `-t time`을 사용하여 해당 URL 서명의 유효 시간(단위: 초)을 설정합니다. 기본값: 10000s.
 >
 
 
@@ -546,7 +548,7 @@ coscmd signurl doc/picture.jpg -t 100
 ```plaintext
 coscmd delete <cospath>
 ```
->!'<>'의 매개변수를 삭제할 COS 파일 경로(cospath)로 대체하세요. 툴에서 사용자에게 삭제 진행 여부를 안내해 작업을 수행합니다.
+>! '<>'의 매개변수를 삭제할 COS 파일 경로(cospath)로 대체하십시오. 툴에서 사용자에게 삭제 진행 여부를 안내해 작업을 수행합니다.
 >
 - 작업 예시 - doc/exampleobject.txt 삭제
 ```plaintext
@@ -724,7 +726,7 @@ coscmd getbucketversioning
 ```plaintext
 coscmd restore <cospath>
 ```
-- 작업 예시 - 고속 모드로 picture.jpg 복구, 유효기간 3일
+- 작업 예시 - 고속 모드로 picture.jpg 복구(유효기간: 3일)
 ```plaintext
 coscmd restore -d 3 -t Expedited picture.jpg
 ```
@@ -732,15 +734,15 @@ coscmd restore -d 3 -t Expedited picture.jpg
 ```plaintext
 coscmd restore -r <cospath>
 ```
-- 작업 예시 - 고속 모드로 examplefolder/ 디렉터리 복구, 유효기간 3일
+- 작업 예시 - 고속 모드로 examplefolder/ 디렉터리 복구(유효기간: 3일)
 ```plaintext
 coscmd restore -r -d 3 -t Expedited examplefolder/
 ```
 
 >?
-> - '<>'의 매개변수를 파일 리스트를 쿼리할 COS 파일 경로(cospath)로 대체하세요.
->- `-d <day>`를 사용하여 임시 사본의 만료 시간을 설정하며, 기본값은 7입니다.
->- `-t <tier>`를 사용하여 복구 모드를 지정합니다. 열거 값: Expedited(고속 모드), Standard(표준 모드), Bulk(일괄 모드), 기본값: Standard
+> - '<>'의 매개변수를 파일 리스트를 쿼리할 COS 파일 경로(cospath)로 대체합니다.
+> - `-d <day>`를 사용하여 임시 사본의 만료 시간을 설정합니다. 기본값: 7.
+> - `-t <tier>`를 사용하여 복구 모드를 지정합니다. 열거 값: Expedited(고속 모드), Standard(표준 모드), Bulk(일괄 모드), 기본값: Standard.
 >
 
 ## FAQ

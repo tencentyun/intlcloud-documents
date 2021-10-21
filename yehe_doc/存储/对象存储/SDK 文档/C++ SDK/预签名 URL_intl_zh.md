@@ -33,8 +33,8 @@ static std::string Sign(const std::string& secret_id,
 | secret_key  | 开发者拥有的项目身份密钥                              | String                   |
 | http_method | HTTP 方法，如 POST/GET/HEAD/PUT 等， 传入大小写不敏感 | String                   |
 | in_uri      | HTTP uri                                              | String                   |
-| headers     | HTTP header 的键值对                                  | map&lt;string,string&gt; |
-| params      | HTTP params 的键值对                                  | map&lt;string,string&gt; |
+| headers     | HTTP header 的键值对                                  | map <string,string>|
+| params      | HTTP params 的键值对                                  | map <string,string> |
 
 #### 返回结果说明
 
@@ -61,8 +61,8 @@ static std::string Sign(const std::string& secret_id,
 | secret_key      | 开发者拥有的项目身份密钥                             | String                    |
 | http_method     | HTTP 方法，如 POST/GET/HEAD/PUT 等，传入大小写不敏感 | String                    |
 | in_uri          | HTTP uri                                             | String                    |
-| headers         | HTTP header 的键值对                                 | map &lt;string,string&gt; |
-| params          | HTTP params 的键值对                                 | map &lt;string,string&gt; |
+| headers         | HTTP header 的键值对                                 | map <string,string> |
+| params          | HTTP params 的键值对                                 | map <string,string>|
 | start_time_in_s | 签名生效的开始时间                                   | uint64_t                  |
 | end_time_in_s   | 签名生效的截止时间                                   | uint64_t                  |
 

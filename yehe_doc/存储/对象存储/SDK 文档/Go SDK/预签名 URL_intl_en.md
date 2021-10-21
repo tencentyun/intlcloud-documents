@@ -1,9 +1,12 @@
 ## Overview
 The Go SDK provides pre-signed request URLs. For detailed operations, please see the following examples.
 
+>?
+> - You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
+> 
 
-
-## Obtaining a pre-signed request URL 
+## Getting a Pre-signed Request URL 
 
 ```go
 func (s *ObjectService) GetPresignedURL(ctx context.Context, httpMethod, name, ak, sk string, expired time.Duration, opt interface{}) (*url.URL, error)
@@ -19,7 +22,7 @@ func (s *ObjectService) GetPresignedURL(ctx context.Context, httpMethod, name, a
 | expired | time.Duration | Validity period of the signature |
 | opt    | interface{} | Can be nil |
 
-## Using a permanent key to generate a pre-signed URL
+## Generating Pre-signed URL with Permanent Key
 
 ### Upload request sample
 
@@ -57,7 +60,7 @@ if err != nil {
 }
 ```
 
-#### Download request sample
+#### Samples for download requests
 
 [//]: # (.cssg-snippet-get-presign-download-url)
 ```go
@@ -118,7 +121,7 @@ func main() {
 		fmt.Printf("Error: %v\n", err)
 		return
 	}
-	// Get object by presigned URL
+	// Get object by pre-signed URL
 	resp, err := http.Get(presignedURL.String())
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
@@ -140,7 +143,7 @@ func main() {
 		fmt.Printf("Error: %v\n", err)
 		return
 	}
-	// Get object by presigned URL
+	// Get object by pre-signed URL
 	resp, err = http.Get(presignedURL.String())
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)

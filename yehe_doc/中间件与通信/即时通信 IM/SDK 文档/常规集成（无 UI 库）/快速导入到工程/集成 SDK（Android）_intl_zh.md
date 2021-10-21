@@ -34,14 +34,14 @@ dependencies {
 		api 'com.tencent.imsdk:imsdk-plus:版本号'
 }
 ```
->?“版本号”应替换为 SDK 的实际版本号，建议使用 [最新版本]( https://github.com/tencentyun/TIMSDK/tree/master/Android/Demo/tuikit/libs)。
+>?“版本号”应替换为 SDK 的实际版本号，建议使用 [最新版本]( https://github.com/tencentyun/TIMSDK/tree/master/Android/IMSDK)。
 >以版本号是`5.4.666`为例：
 >```
->dependencies {
->	api 'com.tencent.imsdk:imsdk-plus:5.4.666'
->}
->```
-
+dependencies {
+		api 'com.tencent.imsdk:imsdk-plus:5.4.666'
+}
+```
+>
 
 - **第二步：指定 App 使用架构**
 在 defaultConfig 中，指定 App 使用的 CPU 架构（从 IM SDK 4.3.118 版本开始支持 armeabi-v7a，arm64-v8a，x86，x86_64）：

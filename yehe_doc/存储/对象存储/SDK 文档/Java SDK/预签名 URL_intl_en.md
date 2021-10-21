@@ -3,6 +3,12 @@ Java SDK provides a pre-signed URL for obtaining a request and an API for genera
 A generated pre-signed URL contains the protocol name (HTTP or HTTPS), which should be the same as that set in the COS client that requests the pre-signed URL.
 For details, please see the request samples.
 
+>?
+> - You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
+> 
+
+
 ## Getting a Pre-signed Request URL 
 
 #### Method prototype
@@ -24,14 +30,14 @@ The request members are described as follows:
 | method | Constructor or set method | HTTP method. Options: GET, POST, PUT, DELETE, HEAD | HttpMethodName |
 | bucketName | Constructor or set method | Bucket name, bucket naming format is BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | Key | Constructor or set method | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| expiration | Set method | Signature expiration date | Date |
+| expiration      | set method | Expiration time of the signature, which can be any time in the future. If this parameter is not specified, the signature will expire in one hour.  | Date                    |
 | contentType | Set method | Content-Type in the request to get a signature | String |
 | contentMd5 | Set method | Content-Md5 in the request to get a signature | String |
 | responseHeaders | Set method | The returned http header to be overridden in the request to download a signature | ResponseHeaderOverrides |
 | versionId | Set method | Specifying the version number of the object when the bucket is enabled with multiple versions | String |
 
 
-#### Example 1
+#### Sample 1
 
 Use a permanent key to generate a signed download link. The sample code is as follows:
 
@@ -55,15 +61,22 @@ String key = "exampleobject";
 GeneratePresignedUrlRequest req =
         new GeneratePresignedUrlRequest(bucketName, key, HttpMethodName.GET);
 // Set the signature expiration time (optional). If it is not set, the signature expiration time in ClientConfig (1 hour) is used by default.
+// Set it to any time in the future (10 minutes to 3 days are recommended).
 // Set the signature to expire in half an hour.
 Date expirationDate = new Date(System.currentTimeMillis() + 30L * 60L * 1000L);
 req.setExpiration(expirationDate);
+
+// Parameters of the current request
+req.addRequestParameter("param1", "value1");
+// Headers of the current request. The Host header will be autocompleted.
+req.putCustomRequestHeader("header1", "value1");
+
 URL url = cosClient.generatePresignedUrl(req);
 System.out.println(url.toString());
 cosClient.shutdown();
 ```
 
-#### Example 2
+#### Sample 2
 
 Use a permanent key to generate a signed download URL that will never expire. The sample code is as follows:
 
@@ -83,17 +96,24 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 String bucketName = "examplebucket-1250000000";
 // Object key, the unique identifier of the object in the bucket.
 String key = "exampleobject";
+
 GeneratePresignedUrlRequest req =
         new GeneratePresignedUrlRequest(bucketName, key, HttpMethodName.GET);
 // Set the signature expiration time to a very distant time, for example, December 31, 3000 in this case.
 Date expirationDate = new Date(3000, 12, 31);
 req.setExpiration(expirationDate);
+
+// Parameters of the current request
+req.addRequestParameter("param1", "value1");
+// Headers of the current request. The Host header will be autocompleted.
+req.putCustomRequestHeader("header1", "value1");
+
 URL url = cosClient.generatePresignedUrl(req);
 System.out.println(url.toString());
 cosClient.shutdown();
 ```
 
-#### Example 3
+#### Sample 3
 
 Use a temporary key to generate a signed download URL and set it to overwrite some public headers to be returned (such as `content-type` and `content-language`). The sample code is as follows:
 
@@ -137,12 +157,18 @@ req.setResponseHeaders(responseHeaders);
 // Set the signature to expire in half an hour.
 Date expirationDate = new Date(System.currentTimeMillis() + 30L * 60L * 1000L);
 req.setExpiration(expirationDate);
+
+// Parameters of the current request
+req.addRequestParameter("param1", "value1");
+// Headers of the current request. The Host header will be autocompleted.
+req.putCustomRequestHeader("header1", "value1");
+
 URL url = cosClient.generatePresignedUrl(req);
 System.out.println(url.toString());
 cosClient.shutdown();
 ```
 
-#### Example 4
+#### Sample 4
 
 Generate a public read bucket (anonymous and readable) without a signed URL. The sample code is as follows:
 
@@ -180,7 +206,13 @@ String key = "exampleobject";
 // Set the signature expiration time (optional). If it is not set, the signature expiration time in ClientConfig (1 hour) is used by default.
 // Set the signature to expire in half an hour.
 Date expirationTime = new Date(System.currentTimeMillis() + 30L * 60L * 1000L);
-URL url = cosClient.generatePresignedUrl(bucketName, key, expirationTime, HttpMethodName.PUT);
+
+// Headers of the current request. The Host header will be autocompleted.
+Map<String, String> headers = new HashMap<String,String>();
+// params of the current request
+Map<String, String> params = new HashMap<String,String>();
+
+URL url = cosClient.generatePresignedUrl(bucketName, key, expirationTime, HttpMethodName.PUT, headers, params);
 System.out.println(url.toString());
 cosClient.shutdown();
 ```
@@ -193,12 +225,7 @@ The COSSigner class provides methods for constructing COS signatures to be distr
 
 ```java
 // Construct a COS signature.
-public String buildAuthorizationStr(HttpMethodName methodName, String resouce_path,
-        COSCredentials cred, Date expiredTime);
-
-// Construct a COS signature.
-// Compared with the first method, the second method provides additional signatures for some HTTP Headers and all parameters in the entered URL.
-// It is used for more complicated signature control. The generated signature must also carry the corresponding header and param for upload and download operations.
+// The generated signature must also carry the corresponding header and param for uploads and downloads.
 public String buildAuthorizationStr(HttpMethodName methodName, String resouce_path,
         Map<String, String> headerMap, Map<String, String> paramMap, COSCredentials cred,
         Date expiredTime);
@@ -212,10 +239,10 @@ public String buildAuthorizationStr(HttpMethodName methodName, String resouce_pa
 | resouce_path | Path to be signed, same as the key of the uploaded file, must start with `/` | HttpMethodName |
 | cred | Credential Information | COSCredentials |
 | expiredTime  | Expiration Date | Date |
-| headerMap | HTTP Header map to be signed, only sign Content-Type and Content-Md5 as well as headers that start with x  | Map |
+| headerMap | HTTP Header map to be signed. Only `Host`, `Content-Type`, `Content-Md5`, and headers that start with x can be signed.  | Map |
 | paramMap | URL Param map to be signed | Map |
 
-#### Response description
+#### Returned values
 Signature string of the String type.
 
 
@@ -230,10 +257,16 @@ COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 COSSigner signer = new COSSigner();
 // Setting the expiration time to 1 hour
 Date expiredTime = new Date(System.currentTimeMillis() + 3600L * 1000L);
-// The key that needs signature. The generated signature can only be used for uploading the corresponding key.
+// For the key needing a signature, the generated signature can only be used for uploading the corresponding key.
 // Object key, the unique identifier of the object in the bucket.
 String key = "exampleobject";
-String sign = signer.buildAuthorizationStr(HttpMethodName.PUT, key, cred, expiredTime);
+
+// Headers of the current request. The Host header will be autocompleted.
+Map<String, String> headers = new HashMap<String,String>();
+// params of the current request
+Map<String, String> params = new HashMap<String,String>();
+
+String sign = signer.buildAuthorizationStr(HttpMethodName.PUT, key, headers, params, cred, expiredTime);
 ```
 
 #### Example 2: Generate a download signature
@@ -247,10 +280,16 @@ COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 COSSigner signer = new COSSigner();
 // Set the expiration time to 1 hour.
 Date expiredTime = new Date(System.currentTimeMillis() + 3600L * 1000L);
-// The key that needs signature. The generated signature can only be used for deleting the corresponding key.
+// For the key needing a signature, the generated signature can only be used for downloading the corresponding key.
 // Object key, the unique identifier of the object in the bucket.
 String key = "exampleobject";
-String sign = signer.buildAuthorizationStr(HttpMethodName.GET, key, cred, expiredTime);
+
+// Headers of the current request. The Host header will be autocompleted.
+Map<String, String> headers = new HashMap<String,String>();
+// params of the current request
+Map<String, String> params = new HashMap<String,String>();
+
+String sign = signer.buildAuthorizationStr(HttpMethodName.GET, key, headers, params, cred, expiredTime);
 ```
 
 #### Example 3: Generate a delete signature
@@ -267,5 +306,11 @@ Date expiredTime = new Date(System.currentTimeMillis() + 3600L * 1000L);
 // For the key needing a signature, the generated signature can only be used for deleting the corresponding key.
 // Object key, the unique identifier of the object in the bucket.
 String key = "exampleobject";
-String sign = signer.buildAuthorizationStr(HttpMethodName.DELETE, key, cred, expiredTime);
+
+// Headers of the current request. The Host header will be autocompleted.
+Map<String, String> headers = new HashMap<String,String>();
+// params of the current request
+Map<String, String> params = new HashMap<String,String>();
+
+String sign = signer.buildAuthorizationStr(HttpMethodName.DELETE, key, headers, params, cred, expiredTime);
 ```

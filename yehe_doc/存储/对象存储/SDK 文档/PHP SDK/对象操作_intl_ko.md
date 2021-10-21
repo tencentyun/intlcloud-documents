@@ -1,6 +1,6 @@
 ## 소개
 
-본 문서는 객체의 고급 인터페이스, 간단한 작업, 멀티파트 작업 관련 API 개요 및 SDK 예시 코드를 제공합니다.
+본문은 객체의 고급 인터페이스, 간단한 작업, 멀티파트 작업 관련 API 개요 및 SDK 예시 코드를 제공합니다.
 
 **간단한 작업**
 
@@ -9,12 +9,14 @@
 | [GET Bucket(List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회   | 버킷의 일부 또는 모든 객체 조회                 |
 | [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | 객체 및 이전 버전 리스트 조회 |   버킷의 일부 또는 모든 객체와 이전 버전 정보 조회|
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 간편한 객체 업로드             | 버킷에 객체 1개 업로드                           |
+| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | 객체 추가 업로드             | 객체를 멀티파트로 추가하여 버킷에 업로드                       |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 조회           | 객체 메타데이터 정보 조회                           |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드                 | 하나의 객체를 로컬에 다운로드                             |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드                 |로컬에 객체 1개 다운로드                             |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사 설정             | 파일을 타깃 경로에 복사                             |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 단일 객체 삭제 | 버킷에서 지정 객체 삭제                         |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 다수의 객체 삭제             | 버킷에서 다수의 객체 일괄 삭제                         |
 | [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구             | 아카이브 유형의 객체 검색 및 액세스                       |
+
 
 **멀티파트 작업**
 
@@ -23,7 +25,7 @@
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 멀티파트 업로드 조회   | 현재 진행 중인 멀티파트 업로드 정보 조회         |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 멀티파트 업로드 초기화 | 멀티파트 업로드 작업 초기화                   |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 멀티파트 업로드       | 객체 멀티파트 업로드                         |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 파트 복사       | 다른 객체를 한 파트로 복사             |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 멀티파트 복사       | 다른 객체를 한 파트로 복사             |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 업로드된 파트 조회   | 특정 멀티파트 업로드 작업에서 업로드된 파트 조회   |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 멀티파트 업로드 완료   | 전체 객체의 멀티파트 업로드 완료               |
 | [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 하나의 멀티파트 업로드 작업 중지 및 이미 업로드한 파트 삭제 |
@@ -36,7 +38,7 @@
 
 지정 버킷의 모든 객체를 조회합니다(List Objects).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model listObjects(array $args = array());
@@ -70,12 +72,12 @@ try {
 
 | 매개변수 이름     | 유형   | 설명                                                         | 필수 입력 여부 |
 | ------------ | ------ | ------------------------------------------------------------ | -------- |
-| Bucket       | String | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Delimiter    | String | 기본값 null. 세퍼레이터 설정(예시: `/`을 설정해 가상 폴더화)                | 아니오       |
-| EncodingType | String | 기본 인코딩 없음. 반환값의 인코딩 방식 규정. url 선택 가능                | 아니오       |
-| Marker       | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 시작 위치 표시 | 아니오       |
-| Prefix       | String | 기본값 null. 객체 키를 필터링해 지정 접두사(prefix)로 시작하는 객체와 매칭 | 아니오       |
-| MaxKeys      | Int    | 반환되는 최대 객체 수량. 기본값은 최대 1,000개                    | 아니오       |
+| Bucket       | String | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Delimiter    | String | 기본값 null. 세퍼레이터 설정(예시: `/`을 설정해 가상 폴더화)                | 옵션       |
+| EncodingType    | String | 기본 인코딩 없음. 반환값의 인코딩 방식 규정. url 선택 가능                | 옵션       |
+| Marker       | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 시작 위치 표시 | 옵션       |
+| Prefix       | String | 기본값 null. 객체 키를 필터링해 지정 접두사(prefix)로 시작하는 객체와 매칭 | 옵션       |
+| MaxKeys      | Int    | 반환되는 최대 객체 수량. 기본값은 최대 1,000개                    | 옵션       |
 
 #### 반환 결과 예시
 
@@ -135,7 +137,7 @@ Guzzle\Service\Resource\Model Object
 | ------------ | ------ | ------------------------------------------------------------ | -------- |
 | Name         | String | 버킷 이름. 형식은 BucketName-APPID                           | 없음       |
 | Delimiter    | String | 세퍼레이터 설정(예시: `/`을 설정해 가상 폴더화)                          | 없음       |
-| EncodingType | String | 반환값의 인코딩 방식 규정                                         | 없음       |
+| EncodingType        | String | 반환값의 인코딩 방식 규정                                         | 없음       |
 | Marker       | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 시작 위치 표시 | 없음       |
 | Prefix       | String | 객체 키를 필터링해 지정 접두사(prefix)로 시작하는 객체와 매칭  | 없음       |
 | MaxKeys      | Int    | 반환되는 최대 객체 수량. 기본값은 최대 1,000개                 | 없음       |
@@ -147,9 +149,9 @@ Guzzle\Service\Resource\Model Object
 
 #### 기능 설명
 
-버킷의 일부 또는 모든 객체와 이전 버전 정보를 조회합니다.
+버킷의 일부 또는 모든 객체 및 이전 버전 정보 조회
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```
 public Guzzle\Service\Resource\Model listObjectVersions(array $args = array());
@@ -182,13 +184,13 @@ try {
 
 | 매개변수 이름        | 유형   | 설명                                                         | 필수 입력 여부 |
 | --------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket          | String | 버킷 이름. BucketName-APPID로 구성                         | 예       |
-| Prefix          | String | 기본값 null. 객체 키를 필터링해 prefix로 시작하는 객체와 매칭   | 아니오       |
-| Delimiter       | String | 기본값 null. 세퍼레이터 설정(예시: `/`을 설정해 가상 폴더화)                | 아니오       |
-| KeyMarker       | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 key 시작 위치 표시 | 아니오       |
-| VersionIdMarker | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 VersionId 시작 위치 표시 | 아니오       |
-| MaxKeys         | Int    | 반환되는 최대 객체 수량. 기본값은 최대 1,000개                         | 아니오       |
-| EncodingType    | String | 기본 인코딩 없음. 반환값의 인코딩 방식 규정. url 선택 가능                | 아니오       |
+| Bucket          | String | 버킷 이름. BucketName-APPID로 구성                         | 필수       |
+| Prefix          | String | 기본값 null. 객체 키를 필터링해 prefix로 시작하는 객체와 매칭   | 옵션       |
+| Delimiter       | String | 기본값 null. 세퍼레이터 설정(예시: `/`을 설정해 가상 폴더화)                | 옵션       |
+| KeyMarker       | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 key 시작 위치 표시 | 옵션       |
+| VersionIdMarker | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 VersionId 시작 위치 표시 | 옵션       |
+| MaxKeys         | Int    | 반환되는 최대 객체 수량. 기본값은 최대 1,000개                         | 옵션       |
+| EncodingType    | String | 기본 인코딩 없음. 반환값의 인코딩 방식 규정. url 선택 가능                | 옵션       |
 
 #### 반환 결과 예시
 
@@ -264,13 +266,13 @@ Guzzle\Service\Resource\Model Object
 
 
 
-### 간편한 객체 업로드
+### 객체 간편 업로드
 
 #### 기능 설명
 
 객체를 지정 버킷에 업로드합니다(PUT Object). 최대 5GB 미만인 객체의 업로드를 지원합니다. 5GB를 초과하는 경우 [멀티파트 업로드](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) 또는 [고급 인터페이스](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89)를 사용하여 업로드하십시오.
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model putObject(array $args = array())
@@ -286,7 +288,7 @@ public Guzzle\Service\Resource\Model putObject(array $args = array())
 try { 
     $result = $cosClient->putObject(array( 
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID 
-        'Key' => 'exampleobject', 
+        'Key'    => 'exampleobject', 
         'Body' => fopen('path/to/localFile', 'rb'), 
     )); 
     // 요청 완료 
@@ -305,7 +307,7 @@ try {
 try { 
     $result = $cosClient->putObject(array( 
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID 
-        'Key' => 'exampleobject', 
+        'Key'    => 'exampleobject', 
         'Body' => fopen('path/to/localFile', 'rb'), 
         'StorageClass' => 'Archive'
     )); 
@@ -325,7 +327,7 @@ try {
 try { 
     $result = $cosClient->putObject(array( 
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID 
-        'Key' => 'exampleobject', 
+        'Key'    => 'exampleobject', 
         'Body' => fopen('path/to/localFile', 'rb'), 
         'ContentType' => 'text/xml'
     )); 
@@ -344,7 +346,7 @@ try {
 ```php
 try {
     $result = $cosClient->putObject(array(
-        'Bucket' => 'examplebucket-125000000', //형식: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
         'Key' => 'folder/',
         'Body' => "",
     ));
@@ -357,13 +359,13 @@ try {
 
 ```
 
-#### 예제 5: ContentMD5 검증을 생성하는 로컬 파일 업로드
+#### 예시5: ContentMD5 검증을 생성하는 로컬 파일 업로드
 
 ```php
 try { 
     $result = $cosClient->putObject(array( 
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID 
-        'Key' => 'exampleobject', 
+        'Key'    => 'exampleobject', 
         'Body' => fopen('path/to/localFile', 'rb'), 
         'ContentMD5' => true, 
     )); 
@@ -375,25 +377,43 @@ try {
 }
 ```
 
+#### 예시6: 객체 업로드(단일 링크 속도 제한)
+>?객체 업로드 속도 제한에 대한 자세한 설명은 [단일 링크 속도 제한](https://intl.cloud.tencent.com/document/product/436/34072)을 참고하십시오.
+
+```php
+try {
+$result = $cosClient->putObject(array(
+        'Bucket' => 'examplebucket-125000000', //형식: BucketName-APPID
+        'Key'    => 'exampleobject',
+        'Body' => fopen($local_path, 'rb'),
+        'TrafficLimit' => 8 * 1024 * 1024 // 1MB/s로 제한합니다.
+    ));
+    // 요청 완료
+    print_r($result);
+} catch (\Exception $e) {
+    // 요청 실패
+    echo($e);
+}
+```
 #### 매개변수 설명
 
 | 매개변수 이름             | 유형        | 설명                                                         | 필수 입력 여부 |
 | -------------------- | ----------- | ------------------------------------------------------------ | -------- |
-| Bucket               | String      | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Key                  | String      | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 아니오       |
-| ACL                  | String      | 객체 ACL 설정, 예시: private, public-read                    | 아니오       |
-| Body                 | Stream/String | 업로드한 콘텐츠                                                  | 예       |
-| CacheControl         | String | 캐시 정책. Cache-Control 설정                                 | 아니오       |
-| ContentDisposition   | String | 파일 이름. Content-Disposition 설정                           | 아니오       |
-| ContentEncoding      | String | 인코딩 형식. Content-Encoding 설정                              | 아니오       |
-| ContentLanguage      | String | 언어 유형. Content-Language 설정                              | 아니오       |
-| ContentLength        | Int         | 전송 길이 설정                                                 | 아니오       |
-| ContentType          | String | 콘텐츠 유형. Content-Type 설정                                  | 아니오       |
-| Expires              | String      | Content-Expires 설정                                              | 아니오     |
-| Metadata             | Array       | 사용자 정의 파일 메타정보                                       | 아니오     |
-| StorageClass         | String      | 파일의 스토리지 유형이며(예시: STANDARD, STANDARD_IA, ARCHIVE), 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고    | 아니오       |
-| ContentMD5         | Boolean     | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                                 | No     |
-| ServerSideEncryption | String      | 서버 암호화 방법                                               | 아니오     |
+| Bucket               | String      | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Key                  | String      | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 옵션       |
+| ACL                  | String      | 객체 ACL 설정, 예시: private, public-read                    | 옵션       |
+| Body                 | Stream/String | 업로드한 콘텐츠                                                  | 필수       |
+| CacheControl         | String | 캐시 정책. Cache-Control 설정                                 | 옵션       |
+| ContentDisposition   | String | 파일 이름. Content-Disposition 설정                           | 옵션       |
+| ContentEncoding      | String | 인코딩 형식. Content-Encoding 설정                              | 옵션       |
+| ContentLanguage      | String | 언어 유형. Content-Language 설정                              | 옵션       |
+| ContentLength        | Int         | 전송 길이 설정                                                 | 옵션       |
+| ContentType          | String | 콘텐츠 유형. Content-Type 설정                                  | 옵션       |
+| Expires              | String      | Content-Expires 설정                                              | 옵션     |
+| Metadata             | Array       | 사용자 정의 파일 메타정보                                       | 옵션     |
+| StorageClass         | String      | 파일의 스토리지 유형이며(예시: STANDARD, STANDARD_IA, ARCHIVE), 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고    | 옵션       |
+| ContentMD5           | Boolean      | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                                | 옵션       |
+| ServerSideEncryption | String      | 서버 암호화 방법                                               | 옵션     |
 
 #### 반환 결과 예시
 
@@ -407,6 +427,7 @@ Guzzle\Service\Resource\Model Object
             [VersionId] => MTg0NDUxODMyMTE2ODY0OTExOTk
             [RequestId] => NWQwOGRkNDdfMjJiMjU4NjRfNzVjXzEwNmVjY2M=
             [ObjectURL] => http://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/123
+            [CRC] => 16749565679157681890
         )
 
 )
@@ -420,13 +441,116 @@ Guzzle\Service\Resource\Model Object
 | ETag                 | String      | 업로드된 파일의 MD5 값          | 없음     |
 | VersionId | String | 버전 제어 활성화 후 파일의 버전 넘버 | 없음     |
 
+### 객체 추가 업로드
+
+#### 기능 설명
+
+객체를 멀티파트에 추가하는 방식으로 버킷(APPEND object)에 업로드합니다.
+
+#### 메소드 프로토타입 
+
+```php
+public Guzzle\Service\Resource\Model appendObject(array $args = array());
+```
+
+#### 요청 예시
+
+#### 예시1: 입력 스트림 추가 업로드
+```php
+try {
+    $result = $cosClient->appendObject(array(
+        'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
+        'Key'    => 'exampleobject',
+        'Position' => 0,
+        'Body' => "hello,world",
+    ));
+    // 요청 완료
+    print_r($result);
+} catch (\Exception $e) {
+    // 요청 실패
+    echo($e);
+}
+```
+
+#### 예시2: 로컬 파일 스트림 추가 업로드
+```php
+try {
+    $result = $cosClient->appendObject(array(
+        'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
+        'Key'    => 'exampleobject',
+        'Position' => 0,
+        'Body' => fopen('path/to/localFile', 'rb'),
+    ));
+    // 요청 완료
+    print_r($result);
+} catch (\Exception $e) {
+    // 요청 실패
+    echo($e);
+}
+```
+
+#### 예시3: 멀티 데이터 추가 업로드
+
+```php
+try {
+    $result = $cosClient->appendObject(array(
+        'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
+        'Key'    => 'exampleobject',
+        'Position' => 0, //객체 위치 추가
+        'Body' => fopen('path/to/localFile', 'rb'),//파일 콘텐츠 읽기
+    ));
+    
+    $result = $cosClient->appendObject(array(
+        'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
+        'Key'    => 'exampleobject',
+        'Position' => (integer)$result['Position'], //마지막으로 추가된 파일의 객체 위치를 추가합니다.
+        'Body' => "hello, world", 
+    ));
+    // 요청 완료
+    print_r($result);
+} catch (\Exception $e) {
+    // 요청 실패
+    echo($e);
+}
+```
+
+#### 매개변수 설명
+
+| 매개변수 이름  | 유형   | 설명                                                         | 필수 입력 여부 |
+| --------- | ------ | ------------------------------------------------------------ | -------- |
+| Bucket    | String | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Key       | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 필수       |
+| Position | Integer | 추가 작업의 시작점. 최초 추가는 Position=0으로 설정하고 후속 추가는 Position을 현재 Object의 content-length로 설정                             | 필수       |
+| Body | File/String | 로컬 파일 스트림 또는 입력 스트림 등 멀티파트 업로드의 콘텐츠                             | 필수       |
+
+#### 반환 결과 예시
+
+```php
+GuzzleHttp\Command\Result Object
+(
+    [ETag] => "9a74ded332531da4c295934ba5a9cf8b"
+    [Position] => 4
+    [RequestId] => NjExNWU4NTlfZDIyZjJjMGJfM2Q2ZV8xMzJjZThhZg==
+    [Key] => exampleobject
+    [Bucket] => examplebucket-1250000000
+    [Location] => examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject
+)
+```
+
+#### 반환 결과 설명
+
+| 매개변수 이름             | 유형   | 설명                                               | 부모 노드 |
+| -------------------- | ------ | -------------------------------------------------- | ------ |
+| ETag                 | String | 파일의 MD5 값                                      | 없음     |
+| Position              | Integer | 추가 작업의 시작점                                 | 없음     |
+
 ### 객체 메타데이터 조회
 
 #### 기능 설명
 
 Object의 Meta 정보를 조회합니다(HEAD Object).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model headObject(array $args = array());
@@ -440,7 +564,7 @@ public Guzzle\Service\Resource\Model headObject(array $args = array());
 try {
     $result = $cosClient->headObject(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
     )); 
     // 요청 완료
     print_r($result);
@@ -454,9 +578,9 @@ try {
 
 | 매개변수 이름  | 유형   | 설명                                                         | 필수 입력 여부 |
 | --------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket    | String | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Key       | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 예       |
-| VersionId | String | 버전 제어 활성화 후 지정 파일 상세 버전 지정                             | 아니오       |
+| Bucket    | String | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Key       | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 필수       |
+| VersionId                  | String | 버전 제어 활성화 후 지정 파일 상세 버전 지정                             | 옵션       |
 
 #### 반환 결과 예시
 
@@ -493,6 +617,7 @@ Guzzle\Service\Resource\Model Object
             [RequestCharged] => 
             [ReplicationStatus] => 
             [RequestId] => NWNhMzU3Y2ZfMzFhYzM1MGFfODdhMF8xOTExM2U=
+            [CRC] => 16749565679157681890
         )
 
 )
@@ -520,7 +645,7 @@ Guzzle\Service\Resource\Model Object
 
 객체를 로컬에 다운로드합니다(GET Object).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model getObject(array $args = array());
@@ -536,7 +661,7 @@ public Guzzle\Service\Resource\Model getObject(array $args = array());
 try {
     $result = $cosClient->getObject(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
         'SaveAs' => 'path/to/localFile',
     )); 
     // 요청 완료
@@ -554,7 +679,7 @@ try {
 try {
     $result = $cosClient->getObject(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
         'Range' => 'bytes=0-10'
     )); 
     // 요청 완료
@@ -573,9 +698,28 @@ try {
 try {
     $result = $cosClient->getObject(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
         'VersionId' => 'exampleVersionId'
     )); 
+    // 요청 완료
+    print_r($result);
+} catch (\Exception $e) {
+    // 요청 실패
+    echo($e);
+}
+```
+
+#### 예시4: 파일 다운로드(단일 링크 속도 제한)
+>?객체 다운로드 속도 제한에 대한 자세한 설명은 [단일 링크 속도 제한](https://intl.cloud.tencent.com/document/product/436/34072)을 참고하십시오.
+
+```php
+try {
+   $result = $cosClient->getObject(array(
+        'Bucket' => 'examplebucket-125000000', //형식: BucketName-APPID
+        'Key'    => 'exampleobject',
+        'SaveAs' => '/data/exampleobject',
+        'TrafficLimit' => 8 * 1024 * 1024 // 1MB/s로 제한합니다.
+    ));
     // 요청 완료
     print_r($result);
 } catch (\Exception $e) {
@@ -588,17 +732,17 @@ try {
 
 | 매개변수 이름                   | 유형   | 설명                                                         | 필수 입력 여부 |
 | -------------------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket                     | String | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Key                        | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 예       |
-| SaveAs                     | String | 로컬에 저장한 로컬 파일 경로                                     | 아니오       |
-| VersionId                  | String | 버전 제어 활성화 후 지정 파일 상세 버전 지정                             | 아니오       |
-| Range                      | String | 다운로드 파일의 범위 설정(형식: bytes=first-last)                  | 아니오       |
-| ResponseCacheControl       | String | 응답 헤더의 Cache-Control 설정                                   | 아니오       |
-| ResponseContentDisposition | String | 응답 헤더의 Content-Disposition 설정                             | 아니오       |
-| ResponseContentEncoding    | String | 응답 헤더의 Content-Encoding 설정                                | 아니오       |
-| ResponseContentLanguage    | String | 응답 헤더의 Content-Language 설정                                | 아니오       |
-| ResponseContentType        | String | 응답 헤더의 Content-Type 설정                                    | 아니오       |
-| ResponseExpires            | String | 응답 헤더의 Content-Expires 설정                                 | 아니오       |
+| Bucket                     | String | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Key                        | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 필수       |
+| SaveAs                     | String | 로컬에 저장한 로컬 파일 경로                                     | 옵션       |
+| VersionId                  | String | 버전 제어 활성화 후 지정 파일 상세 버전 지정                             | 옵션       |
+| Range                      | String | 다운로드 파일의 범위 설정(형식: bytes=first-last)                  | 옵션       |
+| ResponseCacheControl       | String | 응답 헤더의 Cache-Control 설정                                   | 옵션       |
+| ResponseContentDisposition | String | 응답 헤더의 Content-Disposition 설정                             | 옵션       |
+| ResponseContentEncoding    | String | 응답 헤더의 Content-Encoding 설정                                | 옵션       |
+| ResponseContentLanguage    | String | 응답 헤더의 Content-Language 설정                                | 옵션       |
+| ResponseContentType        | String | 응답 헤더의 Content-Type 설정                                    | 옵션       |
+| ResponseExpires            | String | 응답 헤더의 Content-Expires 설정                                 | 옵션       |
 
 #### 반환 결과 예시
 
@@ -639,6 +783,7 @@ Guzzle\Service\Resource\Model Object
             [RequestCharged] => 
             [ReplicationStatus] => 
             [RequestId] => NWNhNDBmYzBfNmNhYjM1MGFfMmUzYzFfMWIzMDYz
+            [CRC] => 16749565679157681890
         )
 
 )
@@ -668,7 +813,7 @@ Guzzle\Service\Resource\Model Object
 
 객체를 타깃 경로에 복사합니다(PUT Object - Copy).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model copyObject(array $args = array());
@@ -684,7 +829,7 @@ public Guzzle\Service\Resource\Model copyObject(array $args = array());
 try {
     $result = $cosClient->copyObject(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
         'CopySource' => 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject',
     )); 
     // 요청 완료
@@ -703,7 +848,7 @@ try {
 try {
     $result = $cosClient->copyObject(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
         'CopySource' => 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject?versionId=MTg0NDUxNjI3NTM0ODE2Njc0MzU',
     )); 
     // 요청 완료
@@ -722,7 +867,7 @@ try {
 try {
     $result = $cosClient->copyObject(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
         'CopySource' => 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject',
         'StorageClass' => 'Archive'
     )); 
@@ -742,7 +887,7 @@ try {
 try {
     $result = $cosClient->copyObject(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
         'CopySource' => 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject',
         'MetadataDirective' => 'Replaced',
         'Metadata' => array(
@@ -762,10 +907,10 @@ try {
 
 | 매개변수 이름          | 유형   | 설명                                                         | 필수 입력 여부 |
 | ----------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket            | String | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Key               | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 예       |
-| CopySource        | String | Appid, Bucket, Key, Region을 포함한 원본 파일의 복사 경로 설명<br>예시: `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` | 예       |
-| MetadataDirective | String | 옵션 값은 Copy와 Replaced. Copy로 설정하는 경우 설정된 사용자 메타데이터 정보를 무시하고 바로 파일 복사. Replaced로 설정하는 경우 설정된 메타정보에 따라 메타데이터 수정. 타깃 경로와 소스 경로가 같은 경우 반드시 Replaced로 설정 | 아니오       |
+| Bucket            | String | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Key               | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 필수       |
+| CopySource        | String | Appid, Bucket, Key, Region을 포함한 원본 파일의 복사 경로 설명<br>예시: `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` | 필수       |
+| MetadataDirective | String | 옵션 값은 Copy와 Replaced. Copy로 설정하는 경우 설정된 사용자 메타데이터 정보를 무시하고 바로 파일 복사. Replaced로 설정하는 경우 설정된 메타정보에 따라 메타데이터 수정. 타깃 경로와 소스 경로가 같은 경우 반드시 Replaced로 설정 | 옵션       |
 
 ### 단일 객체 삭제
 
@@ -773,7 +918,7 @@ try {
 
 버킷에서 지정 Object(파일/객체)를 삭제합니다.
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model deleteObject(array $args = array());
@@ -787,7 +932,7 @@ public Guzzle\Service\Resource\Model deleteObject(array $args = array());
 try {
     $result = $cosClient->deleteObject(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
         'VersionId' => 'exampleVersionId' //버킷의 버전 제어가 비활성화된 경우 해당 매개변수 사용 불가
     )); 
     // 요청 완료
@@ -802,9 +947,9 @@ try {
 
 | 매개변수 이름  | 유형   | 설명                                                         | 필수 입력 여부 |
 | --------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket    | String | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Key       | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 예       |
-| VersionId | String | 파일 버전 넘버 삭제                                             | 아니오       |
+| Bucket    | String | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Key       | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 필수       |
+| VersionId | String | 파일의 버전 넘버 삭제                                             | 옵션       |
 
 ### 다수의 객체 삭제
 
@@ -812,7 +957,7 @@ try {
 
 버킷에서 다수의 객체(파일/객체)를 일괄 삭제합니다.
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model deleteObjects(array $args = array());
@@ -831,7 +976,7 @@ try {
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
         'Objects' => array(
             array(
-                'Key' => 'exampleobject',
+                'Key'    => 'exampleobject',
                 'VersionId' => 'string' //버킷의 버전 제어가 비활성화된 경우 해당 매개변수 사용 불가
             ),  
             // ... repeated
@@ -857,7 +1002,7 @@ $isTruncated = true;
 while ( $isTruncated ) {
     try {
         $result = $cosClient->listObjects(
-            ['Bucket' => 'examplebucket-125000000', //형식: BucketName-APPID
+            ['Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
             'Delimiter' => '',
             'EncodingType' => 'url',
             'Marker' => $nextMarker,
@@ -872,7 +1017,7 @@ while ( $isTruncated ) {
             // 필요에 따라 다운로드 경로 사용자 정의 스티칭
             try {
                 $cosClient->deleteObject(array(
-                    'Bucket' => 'examplebucket-125000000', //형식: BucketName-APPID
+                    'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
                     'Key' => $cos_file_path,
                 ));
                 echo ( $cos_file_path . "\n" );
@@ -891,11 +1036,11 @@ while ( $isTruncated ) {
 
 | 매개변수 이름  | 유형   | 설명                                                         | 필수 입력 여부 |
 | --------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket    | String | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Objects   | Array  | 객체 리스트 삭제                                                 | 예       |
-| Object   | Array  | 삭제한 객체                                                 | 예       |
-| Key       | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 예       |
-| VersionId | String | 파일의 버전 넘버 삭제                                             | 아니오       |
+| Bucket    | String | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Objects   | Array  | 객체 리스트 삭제                                                 | 필수       |
+| Object   | Array  | 삭제한 객체                                                 | 필수       |
+| Key       | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 필수       |
+| VersionId | String | 파일의 버전 넘버 삭제                                             | 옵션       |
 
 #### 반환 결과 예시
 
@@ -944,7 +1089,7 @@ Guzzle\Service\Resource\Model Object
 
 아카이브 유형의 객체를 검색하여 액세스합니다(POST Object restore).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model restoreObject(array $args = array());
@@ -958,7 +1103,7 @@ public Guzzle\Service\Resource\Model restoreObject(array $args = array());
 try {
     $result = $cosClient->restoreObject(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
         'Days' => 10,
         'CASJobParameters' => array(
             'Tier' =>'Expedited'
@@ -976,11 +1121,11 @@ try {
 
 | 매개변수 이름         | 유형   | 설명                                                         | 필수 입력 여부 |
 | ---------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket           | String | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Key              | String | 객체 키                                                       | 예       |
-| Days             | String | 임시 사본 만료 기간 설정(단위: 일)                             | 예       |
-| CASJobParameters | Array  | 정보 복구                                                     | 예       |
-| Tier             | String | CAS 유형의 데이터를 복구하는 경우 Tier는 COS가 지원하는 3가지 복구 모드(Expedited, Standard, Bulk) 중 지정 가능. DEEP ARCHIVE 유형의 데이터를 복구하는 경우 Tier는 COS가 지원하는 2가지 복구 모드(Standard, Bulk) 중 지정 가능 | 예       |
+| Bucket           | String | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Key              | String | 객체 키                                                       | 필수       |
+| Days             | String | 임시 사본 만료 기간 설정(단위: 일)                             | 필수       |
+| CASJobParameters | Array  | 정보 복구                                                     | 필수       |
+| Tier             | String | CAS 유형의 데이터를 복구하는 경우 Tier는 COS가 지원하는 3가지 복구 모드(Expedited, Standard, Bulk) 중 지정 가능. DEEP ARCHIVE 유형의 데이터를 복구하는 경우 Tier는 COS가 지원하는 2가지 복구 모드(Standard, Bulk) 중 지정 가능 | 필수       |
 
 ## 멀티파트 작업
 
@@ -996,7 +1141,7 @@ try {
 
 지정 버킷에서 진행 중인 멀티파트 업로드를 조회합니다(List Multipart Uploads).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model listMultipartUploads(array $args = array());
@@ -1029,13 +1174,13 @@ try {
 
 | 매개변수 이름       | 유형   | 설명                                                         | 필수 입력 여부 |
 | -------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket         | String | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Delimiter      | String | 기본값 null. 세퍼레이터 설정(예시: `/`을 설정해 가상 폴더화)                | 아니오       |
-| EncodingType   | String | 기본 인코딩이 없음. 반환값의 인코딩 방식 규정. url 선택 가능                | 아니오       |
-| KeyMarker      | String | 반환된 parts 리스트의 시작 위치 표시                            | 아니오       |
-| UploadIdMarker | String | 반환된 parts 리스트의 시작 위치 표시                            | 아니오       |
-| Prefix         | String | 기본값 null. parts 키를 필터링해 지정 접두사(prefix)로 시작하는 객체와 매칭 | 아니오       |
-| MaxUploads     | Int    | 반환되는 최대 parts 수량. 기본값은 최대 1,000개                      | 아니오       |
+| Bucket         | String | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Delimiter      | String | 기본값 null. 세퍼레이터 설정(예시: `/`을 설정해 가상 폴더화)                | 옵션       |
+| EncodingType   | String | 기본 인코딩이 없음. 반환값의 인코딩 방식 규정. url 선택 가능                | 옵션       |
+| KeyMarker      | String | 반환된 parts 리스트의 시작 위치 표시                            | 옵션       |
+| UploadIdMarker | String | 반환된 parts 리스트의 시작 위치 표시                            | 옵션       |
+| Prefix         | String | 기본값 null. parts 키를 필터링해 지정 접두사(prefix)로 시작하는 객체와 매칭 | 옵션       |
+| MaxUploads     | Int    | 반환되는 최대 parts 수량. 기본값은 최대 1,000개                      | 옵션       |
 
 #### 반환 결과 예시
 
@@ -1125,7 +1270,7 @@ Guzzle\Service\Resource\Model Object
 
 Multipart Upload 업로드 작업 초기화합니다(Initiate Multipart Upload).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model createMultipartUpload(array $args = array());
@@ -1139,7 +1284,7 @@ public Guzzle\Service\Resource\Model createMultipartUpload(array $args = array()
 try {
     $result = $cosClient->createMultipartUpload(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
     )); 
     // 요청 완료
     print_r($result);
@@ -1153,19 +1298,19 @@ try {
 
 | 매개변수 이름             | 유형   | 설명                                                         | 필수 입력 여부 |
 | -------------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket               | String | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Key                  | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 예       |
-| CacheControl         | String | 캐시 정책. Cache-Control 설정                                 | 아니오       |
-| ContentDisposition   | String | 파일 이름. Content-Disposition 설정                           | 아니오       |
-| ContentEncoding      | String | 인코딩 형식. Content-Encoding 설정                              | 아니오       |
-| ContentLanguage      | String | 언어 유형. Content-Language 설정                              | 아니오       |
-| ContentLength | Int    | 전송 길이 설정                                                 | 아니오       |
-| ContentType          | String | 콘텐츠 유형. Content-Type 설정                                  | 아니오       |
-| Expires              | String      | Content-Expires 설정                                              | 아니오     |
-| Metadata             | Array  | 사용자 정의 파일 메타정보                                       | 아니오       |
-| StorageClass         | String | 파일의 스토리지 유형이며(예시: STANDARD, STANDARD_IA, ARCHIVE), 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고.       |    아니오       |
-| ContentMD5           | Boolean | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                           | 아니오       |
-| ServerSideEncryption | String      | 서버 암호화 방법                                               | 아니오     |
+| Bucket               | String | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Key                  | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인 <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | 필수       |
+| CacheControl         | String | 캐시 정책. Cache-Control 설정                                 | 옵션       |
+| ContentDisposition   | String | 파일 이름. Content-Disposition 설정                           | 옵션       |
+| ContentEncoding      | String | 인코딩 형식. Content-Encoding 설정                              | 옵션       |
+| ContentLanguage      | String | 언어 유형. Content-Language 설정                              | 옵션       |
+| ContentLength | Int    | 전송 길이 설정                                                 | 옵션       |
+| ContentType          | String | 콘텐츠 유형. Content-Type 설정                                  | 옵션       |
+| Expires              | String      | Content-Expires 설정                                              | 옵션     |
+| Metadata             | Array  | 사용자 정의 파일 메타정보                                       | 옵션       |
+| StorageClass         | String | 파일의 스토리지 유형이며(예시: STANDARD, STANDARD_IA, ARCHIVE), 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고.       |    옵션       |
+| ContentMD5           | Boolean | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                           | 옵션       |
+| ServerSideEncryption | String      | 서버 암호화 방법                                               | 옵션     |
 
 #### 반환 결과 예시
 
@@ -1199,7 +1344,7 @@ Guzzle\Service\Resource\Model Object
 
 파일을 멀티파트 업로드합니다(Upload Part).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model uploadPart(array $args = array());
@@ -1213,7 +1358,7 @@ public Guzzle\Service\Resource\Model uploadPart(array $args = array());
 try {
     $result = $cosClient->uploadPart(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject', 
+        'Key'    => 'exampleobject', 
         'Body' => 'string',
         'UploadId' => 'exampleUploadId', //UploadId는 객체 멀티파트 업로드 ID. 멀티파트 업로드를 초기화한 반환 매개변수에서 획득 
         'PartNumber' => 1, //PartNumber는 멀티파트의 일련 번호, COS는 일련 번호에 따라 멀티파트를 병합
@@ -1230,13 +1375,13 @@ try {
 
 | 매개변수 이름      | 유형        | 설명                                                         | 필수 입력 여부 |
 | ------------- | ----------- | ------------------------------------------------------------ | -------- |
-| Bucket        | String      | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Key           | String      | 객체 키                                                       | 예       |
-| UploadId      | String      | UploadId는 객체 멀티파트 업로드 ID, 멀티파트 업로드를 초기화한 반환 매개변수에서 획득 | 예       |
-| Body          | File/String | 업로드한 콘텐츠                                                   | 예       |
-| PartNumber    | Int         | PartNumber는 멀티파트의 일련 번호, COS는 일련 번호에 따라 멀티파트를 병합      | 예       |
-| ContentLength | Int         | 전송 길이 설정                                                 | 아니오       |
-| ContentMD5    | Boolean      | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                         | 아니오       |
+| Bucket        | String      | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Key           | String      | 객체 키                                                       | 필수       |
+| UploadId      | String      | UploadId는 객체 멀티파트 업로드 ID, 멀티파트 업로드를 초기화한 반환 매개변수에서 획득 | 필수       |
+| Body          | File/String | 업로드한 콘텐츠                                                   | 필수       |
+| PartNumber    | Int         | PartNumber는 멀티파트의 일련 번호, COS는 일련 번호에 따라 멀티파트를 병합      | 필수       |
+| ContentLength        | Int         | 전송 길이 설정                                                 | 옵션       |
+| ContentMD5    | Boolean      | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                         | 옵션       |
 
 #### 반환 결과 예시
 
@@ -1248,6 +1393,7 @@ Guzzle\Service\Resource\Model Object
         (
             [ETag] => "96e79218965eb72c92a549dd5a330112"
             [RequestId] => NWNhNDdjYWFfNjNhYjM1MGFfMjk2NF8xY2ViMWM=
+            [CRC] => 16749565679157681890
         )
 
 )
@@ -1266,9 +1412,9 @@ Guzzle\Service\Resource\Model Object
 
 #### 기능 설명
 
-다른 객체를 멀티파트에 복사합니다(Upload Part-Copy).
+다른 객체를 한 파트로 복사합니다(Upload Part - Copy).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model uploadPartCopy(array $args = array());
@@ -1282,7 +1428,7 @@ public Guzzle\Service\Resource\Model uploadPartCopy(array $args = array());
 try {
     $result = $cosClient->uploadPartCopy(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject', 
+        'Key'    => 'exampleobject', 
         'CopySource' => 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject',
         'CopySourceRange' => 'bytes=0-1', //예시에서는 처음의 2바이트만 복사
         'UploadId' => 'exampleUploadId', //UploadId는 객체 멀티파트 업로드 ID. 멀티파트 업로드를 초기화한 반환 매개변수에서 획득 
@@ -1300,14 +1446,14 @@ try {
 
 | 매개변수 이름      | 유형   | 설명                                                         | 필수 입력 여부 |
 | ------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket        | String      | 버킷 이름. 형식은 BucketName-APPID                           | 예       |
-| Key           | String      | 객체 키                                                       | 예       |
-| UploadId      | String | UploadId는 객체 멀티파트 업로드 ID. 멀티파트 업로드를 초기화한 반환 매개변수에서 획득 | 예       |
-| CopySource    | String | Appid, Bucket, Key, Region을 포함한 원본 파일의 복사 경로 설명<br>예시: `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` | 예       |
-| CopySourceRange    | String | 소스 객체 복사의 범위 설명(형식: bytes=first-last). 범위를 지정하지 않으면 전체 소스 객체 복사 | 아니오       |
-| PartNumber    | Int    | PartNumber는 멀티파트의 일련 번호. COS는 일련 번호에 따라 멀티파트 병합      | 예       |
-| ContentLength | Int    | 전송 길이 설정                                                 | 아니오       |
-| ContentMD5    | Boolean | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                             | 아니오       |
+| Bucket        | String      | 버킷 이름. 형식은 BucketName-APPID                           | 필수       |
+| Key           | String      | 객체 키                                                       | 필수       |
+| UploadId      | String      | UploadId는 객체 멀티파트 업로드 ID, 멀티파트 업로드를 초기화한 반환 매개변수에서 획득 | 필수       |
+| CopySource    | String | Appid, Bucket, Key, Region을 포함한 원본 파일의 복사 경로 설명<br>예시: `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` | 필수       |
+| CopySourceRange    | String | 소스 객체 복사의 범위 설명(형식: bytes=first-last). 범위를 지정하지 않으면 전체 소스 객체 복사 | 옵션       |
+| PartNumber    | Int    | PartNumber는 멀티파트의 일련 번호. COS는 일련 번호에 따라 멀티파트 병합      | 필수       |
+| ContentLength | Int    | 전송 길이 설정                                                 | 옵션       |
+| ContentMD5    | Boolean | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                             | 옵션       |
 
 #### 반환 결과 예시
 
@@ -1320,6 +1466,7 @@ Guzzle\Service\Resource\Model Object
             [ETag] => "96e79218965eb72c92a549dd5a330112"
             [LastModified] => "2017-09-04T04:45:45"
             [RequestId] => NWNhNDdjYWFfNjNhYjM1MGFfMjk2NF8xY2ViMWM=
+            [CRC] => 16749565679157681890
         )
 
 )
@@ -1339,7 +1486,7 @@ Guzzle\Service\Resource\Model Object
 
 특정 멀티파트 업로드 작업에서 업로드된 파트를 조회합니다(List Parts).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model listParts(array $args = array());
@@ -1353,7 +1500,7 @@ public Guzzle\Service\Resource\Model listParts(array $args = array());
 try {
     $result = $cosClient->listParts(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject',
+        'Key'    => 'exampleobject',
         'UploadId' => 'exampleUploadId',
         'PartNumberMarker' => 1,
         'MaxParts' => 1000,
@@ -1370,11 +1517,11 @@ try {
 
 | 매개변수 이름         | 유형   | 설명                                    | 필수 입력 여부 |
 | ---------------- | ------ | --------------------------------------- | -------- |
-| Bucket           | String | 버킷 이름. 형식은 BucketName-APPID      | 예       |
-| Key              | String | 객체 키                                  | 예       |
-| UploadId         | String | 객체 멀티파트 업로드 ID                       | 예       |
-| PartNumberMarker | Int    | 반환된 parts 리스트의 시작 위치 표시       | 아니오       |
-| MaxParts         | Int    | 반환되는 최대 parts 수량. 기본값은 최대 1,000개 | 아니오       |
+| Bucket           | String | 버킷 이름. 형식은 BucketName-APPID      | 필수       |
+| Key              | String | 객체 키                                  | 필수       |
+| UploadId         | String | 객체 멀티파트 업로드 ID                       | 필수       |
+| PartNumberMarker | Int    | 반환된 parts 리스트의 시작 위치 표시       | 옵션       |
+| MaxParts         | Int    | 반환되는 최대 parts 수량. 기본값은 최대 1,000개 | 옵션       |
 
 #### 반환 결과 예시
 
@@ -1428,7 +1575,7 @@ Guzzle\Service\Resource\Model Object
 
 | 매개변수 이름         | 유형   | 설명                                    | 부모 노드 |
 | ---------------- | ------ | --------------------------------------- | ------ |
-| Bucket           | String | 버킷 이름. 형식은 BucketName-APPID      | 없음     |
+| Bucket           | String | 버킷 이름. 형식: BucketName-APPID      | 없음     |
 | Key              | String | 객체 키                                                       | 없음     |
 | UploadId         | String | 객체 멀티파트 업로드 ID                       | 없음     |
 | IsTruncated      | Int    | 반환된 객체의 자르기 여부 표시             | 없음     |
@@ -1450,7 +1597,7 @@ Guzzle\Service\Resource\Model Object
 
 전체 파일의 멀티파트 업로드를 완료합니다(Complete Multipart Upload).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model completeMultipartUpload(array $args = array());
@@ -1465,7 +1612,7 @@ public Guzzle\Service\Resource\Model completeMultipartUpload(array $args = array
 try {
     $result = $cosClient->completeMultipartUpload(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject', 
+        'Key'    => 'exampleobject', 
         'UploadId' => 'exampleUploadId',
         'Parts' => array(
             array(
@@ -1486,13 +1633,13 @@ try {
 
 | 매개변수 이름   | 유형   | 설명                               | 필수 입력 여부 |
 | ---------- | ------ | ---------------------------------- | -------- |
-| Bucket     | String | 버킷 이름. 형식은 BucketName-APPID | 예       |
-| Key        | String | 객체 키                             | 예       |
-| UploadId   | String | 객체 멀티파트 업로드 ID                  | 예       |
-| Parts      | Array  | 멀티파트 정보 리스트                       | 예       |
-| Part       | Array  | 멀티파트 업로드한 콘텐츠 정보                 | 예       |
-| ETag       | String | 멀티파트 MD5 값                     | 예       |
-| PartNumber | Int    | 멀티파트 일련 번호                           | 예       |
+| Bucket     | String | 버킷 이름. 형식은 BucketName-APPID | 필수       |
+| Key        | String | 객체 키                             | 필수       |
+| UploadId   | String | 객체 멀티파트 업로드 ID                  | 필수       |
+| Parts      | Array  | 멀티파트 정보 리스트                       | 필수       |
+| Part       | Array  | 멀티파트 업로드한 콘텐츠 정보                 | 필수       |
+| ETag       | String | 멀티파트 MD5 값                     | 필수       |
+| PartNumber | Int    | 멀티파트 일련 번호                           | 필수       |
 
 ### 멀티파트 업로드 중지
 
@@ -1500,7 +1647,7 @@ try {
 
 멀티파트 업로드 작업을 중지하고 업로드된 파트를 삭제합니다(Abort Multipart Upload).
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Guzzle\Service\Resource\Model abortMultipartUpload(array $args = array());
@@ -1514,7 +1661,7 @@ public Guzzle\Service\Resource\Model abortMultipartUpload(array $args = array())
 try {
     $result = $cosClient->abortMultipartUpload(array(
         'Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
-        'Key' => 'exampleobject', 
+        'Key'    => 'exampleobject', 
         'UploadId' => 'exampleUploadId',
     )); 
     // 요청 완료
@@ -1529,19 +1676,19 @@ try {
 
 | 매개변수 이름   | 유형   | 설명                               | 필수 입력 여부 |
 | -------- | ------ | ---------------------------------- | -------- |
-| Bucket   | String | 버킷 이름. 형식은 BucketName-APPID | 예       |
-| Key      | String | 객체 키                             | 예       |
-| UploadId | String | 객체 멀티파트 업로드 ID                  | 예       |
+| Bucket   | String | 버킷 이름. 형식은 BucketName-APPID | 필수       |
+| Key      | String | 객체 키                             | 필수       |
+| UploadId   | String | 객체 멀티파트 업로드 ID                  | 필수       |
 
 
 
 ## 고급 인터페이스(권장)
 
-이 챕터에서는 업로드 및 복사 작업을 캡슐화한 COS의 고급 인터페이스를 소개합니다. 사용자는 상응하는 매개변수만 설정하면 됩니다. 해당 인터페이스는 파일 크기에 따라 간편 업로드(복사)와 멀티파트 업로드(복사)를 결정합니다. 인터페이스 사용 전 [시작하기](https://intl.cloud.tencent.com/document/product/436/12266)에서 안내한 초기화 작업이 완료되었는지 확인하십시오.
+이 챕터에서는 업로드 및 복사 작업을 캡슐화한 COS의 고급 인터페이스를 소개합니다. 사용자는 상응하는 매개변수만 설정하면 됩니다. 해당 인터페이스는 파일 크기에 따라 간편 업로드(복사)와 멀티파트 업로드(복사)를 결정합니다. 인터페이스 사용 전 [매뉴얼](https://intl.cloud.tencent.com/document/product/436/12266)에서 안내한 초기화 작업이 완료되었는지 확인하십시오.
 
-### 복합 업로드
+### 객체 업로드
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Qcloud\Cos\Client upload(string $bucket, string $key, $body, array $options = array());
@@ -1554,30 +1701,30 @@ public Qcloud\Cos\Client upload(string $bucket, string $key, $body, array $optio
 
 | 매개변수 이름   | 유형   | 설명                               | 필수 입력 여부 |
 | -------- | ------ | ---------------------------------- | -------- |
-| bucket   | String | 버킷 이름. 형식: BucketName-APPID | 예       |
-| key      | String | 객체 키                             | 예       |
-| body     | Stream/String | 업로드한 콘텐츠 | 예       |
-| options     | Array | 추가된 구성 항목            | 아니요       |
+| bucket   | String | 버킷 이름. 형식: BucketName-APPID | 필수       |
+| key      | String | 객체 키                             | 필수       |
+| body     | Stream/String | 업로드한 콘텐츠 | 필수       |
+| options     | Array | 추가된 구성 항목            | 옵션       |
 
 
 
 | options 매개변수 | 유형   | 설명                               | 필수 입력 여부 |
 | -------- | ------ | ---------------------------------- | -------- |
-| Progress         | Function      | 프로그레스 바 콜백，매개변수는 총 크기($totolSize), 업로드된 사이즈($uploadedSize) | 아니요       |
-| PartSize         | Int      | 최소 멀티파트 파일 크기, 기본적으로 50M |아니요       |
-| Concurrency         | Int      | 동시 실행 정도，기본 설정값: 10 | 아니요       |
-| ACL                  | String      | 객체 ACL 설정, 예시: private, public-read                    | 아니오       |
-| CacheControl         | String | 캐시 정책. Cache-Control 설정                                 | 아니오       |
-| ContentDisposition   | String | 파일 이름. Content-Disposition 설정                           | 아니오       |
-| ContentEncoding      | String | 인코딩 형식. Content-Encoding 설정                              | 아니오       |
-| ContentLanguage      | String | 언어 유형. Content-Language 설정                              | 아니오       |
-| ContentLength        | Int         | 전송 길이 설정                                                 | 아니오       |
-| ContentType          | String | 콘텐츠 유형. Content-Type 설정                                  | 아니오       |
-| Expires              | String      | Content-Expires 설정                                              | 아니오     |
-| Metadata             | Array       | 사용자 정의 파일 메타데이터                                       | 아니오     |
-| StorageClass         | String      | 파일의 스토리지 유형이며(예시: STANDARD, STANDARD_IA, ARCHIVE), 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고    | 아니오       |
-| ContentMD5           | Boolean      | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                                | 아니오       |
-| ServerSideEncryption | String      | 서버 암호화 방법                                               | 아니오     |
+| Progress         | Function      | 프로그레스 바 콜백，매개변수는 총 크기($totalSize), 업로드된 사이즈($uploadedSize) | 옵션       |
+| PartSize         | Int      | 최소 멀티파트 파일 크기, 기본적으로 5M |옵션       |
+| Concurrency         | Int      | 동시 실행 정도，기본 설정값: 10 | 옵션       |
+| ACL                  | String      | 객체 ACL 설정, 예시: private, public-read                    | 옵션       |
+| CacheControl         | String | 캐시 정책. Cache-Control 설정                                 | 옵션       |
+| ContentDisposition   | String | 파일 이름. Content-Disposition 설정                           | 옵션       |
+| ContentEncoding      | String | 인코딩 형식. Content-Encoding 설정                              | 옵션       |
+| ContentLanguage      | String | 언어 유형. Content-Language 설정                              | 옵션       |
+| ContentLength        | Int         | 전송 길이 설정                                                 | 옵션       |
+| ContentType          | String | 콘텐츠 유형. Content-Type 설정                                  | 옵션       |
+| Expires              | String      | Content-Expires 설정                                              | 옵션     |
+| Metadata             | Array       | 사용자 정의 파일 메타정보                                       | 옵션     |
+| StorageClass         | String      | 파일의 스토리지 유형이며(예시: STANDARD, STANDARD_IA, ARCHIVE), 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고    | 옵션       |
+| ContentMD5           | Boolean      | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                                | 옵션       |
+| ServerSideEncryption | String      | 서버 암호화 방법                                               | 옵션     |
 
 #### 요청 예시
 
@@ -1589,7 +1736,7 @@ public Qcloud\Cos\Client upload(string $bucket, string $key, $body, array $optio
 try {
     $result = $cosClient->upload(
         $bucket = 'examplebucket-1250000000', //형식: BucketName-APPID
-        $key = 'exampleobject', //그 외의 key는 객체 키
+        $key = 'exampleobject', //해당 key는 객체 키
         $body = fopen('path/to/localFile', 'rb')
     );
     // 요청 완료
@@ -1647,7 +1794,13 @@ try {
 }
 ```
 
-#### 예시4: 폴더 1개 업로드(일괄 업로드)
+### 일괄 업로드(로컬 폴더 업로드)
+
+#### 기능 설명
+
+로컬 폴더 안에 있는 모든 파일을 COS로 업로드합니다.
+
+#### 요청 예시
 
 [//]: # ".cssg-snippet-transfer-upload-folder"
 
@@ -1656,9 +1809,9 @@ try {
 
 require dirname( __FILE__ ) . '/../vendor/autoload.php';
 
-$secretId = 'COS_SECRETID';
+$secretId = 'SECRETID';
 //'Tencent Cloud API 키 SecretId';
-$secretKey = 'COS_SECRETKEY';
+$secretKey = 'SECRETKEY';
 //'Tencent Cloud API 키 SecretKey';
 $region = 'ap-beijing';
 // 기본 버킷 리전 설정
@@ -1667,7 +1820,7 @@ $cosClient = new Qcloud\Cos\Client(
         'region' => $region,
         'schema' => 'https', //프로토콜 헤더, 기본값: http
         'credentials'=> array(
-            'secretId'  => $secretId ,
+            'secretId'  => $secretId,
             'secretKey' => $secretKey
         )
     )
@@ -1684,7 +1837,7 @@ function uploadfiles( $path, $cosClient ) {
             // 필요에 따라 업로드 경로 사용자 정의 스티칭
             try {
                 $cosClient->upload(
-                    $bucket = 'examplebucket-125000000', //형식: BucketName-APPID
+                    $bucket = 'examplebucket-1250000000', //형식: BucketName-APPID
                     $key = $cos_file_path,
                     $body = fopen( $cos_file_path, 'rb' )
                 );
@@ -1698,13 +1851,14 @@ function uploadfiles( $path, $cosClient ) {
 $local_path = '/data/home/folder';
 uploadfiles( $local_path, $cosClient );
 ```
-### 복합 다운로드
+
+### 객체 다운로드(Range를 눌러 다운로드)
 
 #### 기능 설명
 
 해당 인터페이스는 파일의 크기에 따라, 용량이 작은 파일은 객체 복사 인터페이스를, 용량이 큰 파일은 동시 실행 range 다운로드를 호출합니다. 인터페이스 매개변수는 `GET Object` 인터페이스를 참고하십시오.
 
-#### 메소드 프로토타입
+#### 메소드 프로토타입 
 
 ```php
 public Qcloud\Cos\Client download(string $bucket, string $key, string $saveAs, array $options = array());
@@ -1712,36 +1866,34 @@ public Qcloud\Cos\Client download(string $bucket, string $key, string $saveAs, a
 
 | 매개변수 이름   | 유형   | 설명                               | 필수 입력 여부 |
 | -------- | ------ | ---------------------------------- | -------- |
-| bucket   | String | 버킷 이름. 형식: BucketName-APPID | 예       |
-| key      | String | 객체 키                             | 예       |
-| saveAs     | String | 저장한 로컬 경로   | 예       |
-| options     | Array | 추가한 구성 항목            | 아니요       |
+| bucket   | String | 버킷 이름. 형식: BucketName-APPID | 필수       |
+| key      | String | 객체 키                             | 필수       |
+| saveAs     | String | 저장한 로컬 경로   | 필수       |
+| options     | Array | 추가된 구성 항목            | 옵션       |
 
 
 
 | options 매개변수 | 유형   | 설명                               | 필수 입력 여부 |
 | -------- | ------ | ---------------------------------- | -------- |
-| Progress         | Function      | 프로그레스 바 콜백，매개변수는 총 크기($totolSize)，업로드된 크기($downloadedSize) | 아니요       |
-| PartSize         | Int      | 최소 멀티파트 파일 크기, 기본적으로 50M |아니요       |
-| Concurrency         | Int      | 동시 실행 정도，기본 설정값: 10 | 아니요       |
-| ResumableDownload         | Bool      | 중단 지점부터 이어서 전송 활성화 여부. 기본값: false | 아니오      |
-| ResumableTaskFile         | Int      | 중단 지점 파일 경로. 기본 설정값: <saveAs.cosresumabletask> | 아니요       |
+| Progress         | Function      | 프로그레스 바 콜백，매개변수는 총 크기($totalSize)，업로드된 크기($downloadedSize) | 옵션       |
+| PartSize         | Int      | 최소 멀티파트 파일 크기, 기본적으로 5M | 옵션       |
+| Concurrency         | Int      | 동시 실행 정도，기본 설정값: 10 | 옵션       |
+| ResumableDownload         | Bool      | 중단 지점부터 전송 재개개 활성화 여부. 기본값: false | 옵션       |
+| ResumableTaskFile         | Int      | 중단 지점 파일 경로. 기본 설정값: &lt;saveAs.cosresumabletask> | 옵션       |
 
 
 #### 요청 예시
 
-#### 예시1: 객체 다운로드
-
 [//]: # ".cssg-snippet-download-object"
 
 ```php
-$printbar = function($totolSize, $downloadedSize) {
-    printf("downloaded [%d/%d]\n", $downloadedSize, $totolSize);
+$printbar = function($totalSize, $downloadedSize) {
+    printf("downloaded [%d/%d]\n", $downloadedSize, $totalSize);
 };
 
 try {
     $result = $cosClient->download(
-        $bucket = 'examplebucket-125000000', //형식: BucketName-APPID
+        $bucket = 'examplebucket-1250000000', //형식: BucketName-APPID
         $key = 'exampleobject',
         $saveAs = $local_path,
         $options=['Progress' => $printbar, // 프로그레스 바 지정
@@ -1759,7 +1911,13 @@ try {
 }
 ```
 
-#### 예시2: 다운로드 디렉터리
+### 일괄 다운로드(COS에서 디렉터리 다운로드)
+
+#### 기능 설명
+
+COS 디렉터리 및 해당 파일을 로컬 디스크에 다운로드합니다.
+
+#### 요청 예시
 
 [//]: # ".cssg-snippet-download-folder"
 
@@ -1771,7 +1929,7 @@ $isTruncated = true;
 while ( $isTruncated ) {
     try {
         $result = $cosClient->listObjects(
-            ['Bucket' => 'examplebucket-125000000', //형식: BucketName-APPID
+            ['Bucket' => 'examplebucket-1250000000', //형식: BucketName-APPID
             'Delimiter' => '',
             'EncodingType' => 'url',
             'Marker' => $nextMarker,
@@ -1789,7 +1947,7 @@ while ( $isTruncated ) {
         // 필요에 따라 다운로드 경로 사용자 정의 스티칭
         try {
             $result = $cosClient->download(
-                $bucket = 'examplebucket-125000000', //형식: BucketName-APPID
+                $bucket = 'examplebucket-1250000000', //형식: BucketName-APPID
                 $key = $cos_file_path,
                 $saveAs = $local_file_path
             );
@@ -1801,11 +1959,11 @@ while ( $isTruncated ) {
 }
 ```
 
-### 복합 복사
+### 객체 복사
 
 #### 기능 설명
 
-해당 인터페이스는 용량이 작은 파일에는 객체 복사 인터페이스를, 용량이 큰 파일에는 멀티파트 복사 인터페이스를 호출합니다. 인터페이스 매개변수는 `PUT Object - Copy`와 `Upload Part - Copy` 인터페이스를 참고하십시오.
+해당 인터페이스는 용량이 작은 파일에는 객체 복사 인터페이스를, 용량이 큰 파일에는 멀티파트 복사 인터페이스를 호출합니다. 이 기능은 객체 속성을 수정하는 데 주로 사용됩니다. 인터페이스 매개변수는 `PUT Object - Copy`와 `Upload Part - Copy` 인터페이스를 참고하십시오.
 
 #### 요청 예시
 
@@ -1817,7 +1975,7 @@ while ( $isTruncated ) {
 try {
     $result = $cosClient->Copy(
         $bucket = 'examplebucket-1250000000', //형식: BucketName-APPID
-        $key = 'exampleobject', // 해당 key는 객체 키
+        $key = 'exampleobject', //해당 key는 객체 키
         $copySorce = array(
             'Region' => 'COS_REGION', 
             'Bucket' => 'sourcebucket-1250000000', 
@@ -1844,7 +2002,7 @@ try {
         $copySorce = array(
             'Region' => 'COS_REGION', 
             'Bucket' => 'examplebucket-1250000000', 
-            'Key' => 'exampleobject', 
+            'Key'    => 'exampleobject', 
         ),
         $options = array(
             'StorageClass' => 'Archive'

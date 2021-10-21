@@ -1,26 +1,26 @@
 ## Overview
 
-This document describes the bandwidth limit on a single connection when calling the COS APIs for upload or download.
+This document describes how to limit the speed on a single URL when calling the upload or download API.
 
-## Samples
+## Use Instructions
 
-This limit should have a value in bit/s ranging from **819200 - 838860800**, i.e. 100 KB/s - 100 MB/s. If this range is exceeded, a 400 error will be returned.
+The speed range is **819200 to 838860800** (in bit/s), that is, 100 KB/s to 100 MB/s. If a value is not within this range, 400 will be returned.
 
-#### Sample 1. Single-connection bandwidth limit when uploading
+#### Sample 1: limiting single-URL speed on uploads
 
 [//]: # (.cssg-snippet-upload-object-traffic-limit)
 ```cs
 TransferConfig transferConfig = new TransferConfig();
 
-// Initialize TransferManager
+// Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
 string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
 string cosPath = "dir/exampleObject"; // Object key
-string srcPath = @"temp-source-file";// Absolute path to the local file
+string srcPath = @"temp-source-file";// Absolute path of the local file
 
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, srcPath);
-putObjectRequest.LimitTraffic(8 * 1024 * 1024); // Set the limit to 1 MB/s
+putObjectRequest.LimitTraffic(8 * 1024 * 1024); // Limit the speed to 1 MB/s.
 
 COSXMLUploadTask uploadTask = new COSXMLUploadTask(putObjectRequest);
 
@@ -29,29 +29,29 @@ uploadTask.SetSrcPath(srcPath);
 await transferManager.UploadAsync(uploadTask);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
+> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
 
-#### Sample 2. Single-connection bandwidth limit when downloading
+#### Sample 2: limiting single-URL speed on downloads
 
 [//]: # (.cssg-snippet-download-object-traffic-limit)
 ```cs
 TransferConfig transferConfig = new TransferConfig();
 
-// Initialize TransferManager
+// Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e. the object key
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 string localDir = System.IO.Path.GetTempPath();// Local file directory
-string localFileName = "my-local-temp-file"; // Specify the name of the file to be saved locally
+string localFileName = "my-local-temp-file"; // Filename of the local file
 
 GetObjectRequest request = new GetObjectRequest(bucket, 
         cosPath, localDir, localFileName);
-request.LimitTraffic(8 * 1024 * 1024); // Set the limit to 1 MB/s
+request.LimitTraffic(8 * 1024 * 1024); // Limit the speed to 1 MB/s.
 
 COSXMLDownloadTask downloadTask = new COSXMLDownloadTask(request);
 await transferManager.DownloadAsync(downloadTask);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs).
+> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs).
 

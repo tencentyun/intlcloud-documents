@@ -1,7 +1,7 @@
 You can view network monitoring data of CCN instances in the console to facilitate your troubleshooting.
 
 ## Directions
-1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and click **Cloud Connect Network** on the left sidebar.
+1. Log in to the [CCN console](https://console.cloud.tencent.com/vpc/ccn) and access the CCN management page.
 2. On the CCN instance list page, click the **ID/Name** of the target monthly-subscribed CCN instance to enter its details page. Click the **Monitoring** tab.
 3. View the following monitoring data of the current bandwidth limit type:
   - Region outbound bandwidth limit
