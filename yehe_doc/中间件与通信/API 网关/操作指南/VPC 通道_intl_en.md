@@ -34,7 +34,7 @@ A VPC upstream is to open the services deployed in the VPC for external access t
 | Node List     | Yes       | List of backend nodes to which API Gateway forwards messages. A list can contain up to 200 nodes. You need to set the node address, port number, and weight for each node. |
 | Retry Attempts     | Yes       | Number of retry attempts for a failed node request of API Gateway. The default value is 5. Enter an integer ranging from 1 to 100. |
 
-![](https://main.qcloudimg.com/raw/5c71c6adbde441c01cbfe8cba590a59b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/616613c74e0b9fa196f8258642accd60.png)
 
 ### Step 2: create an API for the backend to connect to resources in the VPC and associate it with the VPC upstream
 
@@ -44,8 +44,6 @@ A VPC upstream is to open the services deployed in the VPC for external access t
 4. Click **Create**, configure the API frontend, and click **Next**.
 5. In **Backend Configuration**, set **Backend Type** to **VPC resources**, set **Connection Mode** to **VPC Upstream**, and select the VPC upstream created in step 1.
 6. Complete the rest configuration.
-
-![](https://main.qcloudimg.com/raw/6d1487f4b5ff233db93d5fa314ed7ca9.png)
 
 ### Step 3: call the API
 
