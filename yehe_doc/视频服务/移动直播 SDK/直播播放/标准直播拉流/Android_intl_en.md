@@ -26,7 +26,7 @@ Regarding frequently asked questions among developers, Tencent Cloud offers a st
 
 | Platform |                         GitHub Address                          |
 | :------: | :----------------------------------------------------------: |
-| iOS| [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example) |
+| iOS| [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC) |
 | Android  | [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/Android/MLVB-API-Example) |
 
 ## Integration
