@@ -12,7 +12,7 @@ The host's mobile phone keeps publishing audio and video data during live stream
 Poor downstream connection means slow download speed or instable network for audience. A bitrate of 2 Mbps in live streaming means 2 Mb of data needs to be downloaded per second. Audience will experience stuttering if their network bandwidth is low, but users with sufficient bandwidth will not.
 
 ## Checking SDK Status Metrics
-Tencent Cloud’s MLVB SDK has a status feedback mechanism that reports status metrics of the SDK every 1-2 seconds. If you use the MLVB SDK to push streams, you can register TXLivePushListener to get the metrics. The metrics reported are as follows:
+The MLVB SDK of Tencent Video Cloud Toolkit has a status feedback mechanism that reports status metrics of the SDK every 1-2 seconds. If you use the MLVB SDK to push streams, you can register TXLivePushListener to get the metrics. The metrics reported are as follows:
 
 |  Items                   |  Description                    |
 | :------------------------  |  :------------------------ |
