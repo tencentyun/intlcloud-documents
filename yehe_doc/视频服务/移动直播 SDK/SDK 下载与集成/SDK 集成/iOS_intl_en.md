@@ -1,5 +1,5 @@
 
-This document describes how to quickly integrate LiteAVSDK for iOS into your project. The directions below use the full-featured [MLVB Professional Edition](https://intl.cloud.tencent.com/document/product/1071/38150) as an example.
+This document describes how to quickly integrate the MLVB SDK (iOS) of Tencent Video Cloud Toolkit into your project. The directions below use the full-featured [MLVB Professional Edition](https://intl.cloud.tencent.com/document/product/1071/38150) as an example.
 
 ## Environment Requirements
 - Xcode 9.0 or above
