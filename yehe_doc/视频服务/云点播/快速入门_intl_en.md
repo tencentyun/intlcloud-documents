@@ -22,6 +22,7 @@ This document guides you through how to quickly upload a video from your local f
 2. Select the **Watermark** tab.
 3. Click **Create Watermark Template**, configure the following settings, and click **Create**. <br>
 <img src="https://main.qcloudimg.com/raw/423f29236a2e12bb8546682db5eb97fc.png" width="450">
+
 ## Step 4. Process the video
 1. Select **Uploaded** on the **[Media Assets > Video Management](https://console.cloud.tencent.com/vod/media)** page.
 2. Check "Tencent Cloud.mp4" and click **Process Video**.

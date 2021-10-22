@@ -22,6 +22,7 @@
 2. 在页签栏选择【水印模板】。
 3. 单击【创建水印模板】，在该页面进行如下设置，最后单击【创建】。<br>
 <img src="https://main.qcloudimg.com/raw/423f29236a2e12bb8546682db5eb97fc.png" width="450">
+
 ## 步骤4：处理视频
 1. 在 [媒资管理](https://console.cloud.tencent.com/vod/media) 页签栏选择【已上传】。
 2. 选中“腾讯云.mp4”前的勾选框，单击【视频处理】。
