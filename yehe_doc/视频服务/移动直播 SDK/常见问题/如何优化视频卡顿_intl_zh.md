@@ -1,4 +1,4 @@
-
+![](https://main.qcloudimg.com/raw/b5873f21d38360c3afbeb47e119d3337.png)
 造成播放端卡顿的原因主要有三种：
 
 - **原因1：推流帧率太低**
