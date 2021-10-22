@@ -4,7 +4,8 @@ This document describes how to process videos in the VOD Console, such as transc
 ## Directions
 1. Log in to the VOD Console and select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** to enter the "Uploaded" page by default.
 2. Select one or more target video files, click **Process Video** above the list, configure video processing parameters in the "Process Video" pop-up window according to the table below, and click **OK** to start executing the video processing task.
-![](https://main.qcloudimg.com/raw/e38db4214a5d6e8e33ae3de26a2acc11.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2f3e527fc7a03ece7ffa5a9bbee0fdaf.png)
+
 <table>
      <tr>
          <th nowrap="nowrap">Processing Type</th>  
