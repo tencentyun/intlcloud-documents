@@ -1,3 +1,29 @@
+## September 2021
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add monitoring metrics</td>
+<td>Enriched Alluxio service monitoring metrics and added COSRanger monitoring metrics.</td>
+<td>September 15, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39434" target="_blank">Alluxio Monitoring Metrics</a><br/><a href="https://intl.cloud.tencent.com/document/product/1026/42330" target="_blank">COSRanger Monitoring Metrics</a></td>
+</tr>
+<tr>
+<td>Connected to Cloud Monitor's default alarms</td>
+<td>Cloud Monitor supports default alarm policies for Elastic MapReduce metrics/events.</td>
+<td>September 15, 2021</td>
+<td>N/A</td>
+</tr>
+</tbody></table>
+
+
 ## August 2021
 <table>
 <thead>
