@@ -34,7 +34,7 @@ VPC 通道的作用是将部署在 VPC 内的服务通过 API 网关开放给外
 | 节点列表     | 是       | API 网关转发到的后端节点列表，支持最多200个节点，每个节点需要填写节点地址、端口、权重 |
 | 重试次数     | 是       | API 网关请求节点失败的重试次数，默认为5次，支持填写1-100间的正整数 |
 
-![](https://main.qcloudimg.com/raw/5c71c6adbde441c01cbfe8cba590a59b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/616613c74e0b9fa196f8258642accd60.png)
 
 ### 步骤2：创建后端对接 VPC 内资源的 API，关联 VPC 通道
 
@@ -44,8 +44,6 @@ VPC 通道的作用是将部署在 VPC 内的服务通过 API 网关开放给外
 4. 单击【新建】，填写 API 前端配置，填写完成后点击【下一步】按钮。
 5. 填写后端配置，选择 API 后端类型为“VPC 内资源”，选择对接方式为“通过 VPC 通道”，选择步骤1中创建的 VPC 通道。
 6. 完成后续配置，成功创建一个后端对接 VPC 内资源的 API。
-
-![](https://main.qcloudimg.com/raw/6d1487f4b5ff233db93d5fa314ed7ca9.png)
 
 ### 步骤3：调用 API
 
