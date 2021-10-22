@@ -27,7 +27,7 @@
 <table>
 <thead>
 <tr><th>动态名称</th><th>动态描述</th><th>发布时间</th><th>相关文档</th></tr></thead>
-<tbody><tr><td>RRPC 通信</td><td>物联网通信平台增加网关子设备功能，网关设备可通过网关 Topic 自助完成与子设备的绑定和解绑操作</td><td>2020-7-31</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41833'>RRPC通信</a></td></tr><tr><td>Broadcast 通信</td><td>联网通信平台增加网关子设备功能，网关设备可通过网关 Topic 代理与其绑定的子设备进行上下线操作</td><td>2020-7-31</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41832'>广播通信</a></td></tr><tr><td>规则引擎-规则函数</td><td>联网通信平台增加网关子设备功能，网关设备可通过网关 Topic 代理与其绑定的子设备进行上下线操作</td><td>2020-7-23</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41486'>规则函数</a></td></tr></tbody>
+<tbody><tr><td>RRPC 通信</td><td>物联网集线器支持还原 RPC(RRPC) 技术来实现同步通信机制</td><td>2020-7-31</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41833'>RRPC通信</a></td></tr><tr><td>Broadcast 通信</td><td>国际电信中心支持广播通信</td><td>2020-7-31</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41832'>广播通信</a></td></tr><tr><td>规则引擎-规则函数</td><td>规则函数被添加到规则引擎中，用于不同的数据处理</td><td>2020-7-23</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41486'>规则函数</a></td></tr></tbody>
 </table>
 
 
@@ -60,7 +60,7 @@
 <table>
 <thead>
 <tr><th>动态名称</th><th>动态描述</th><th>发布时间</th><th>相关文档</th></tr></thead>
-<tbody><tr><td>控制台支持批量创建设备</td><td>物联网通信控制台支持自动生成和上传文件的方式批量添加设备，并可以通过批次管理查看创建设备的历史任务与进程</td><td>2020-12-29</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41476'>设备接入准备</a></td></tr><tr><td>支持设备禁用功能</td><td>物联网通信平台增加设备禁用的功能，设备被禁用之后无法像正常设备一样建立连接，进行收发消息等操作</td><td>2020-12-29</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41500'>功能组件</a></td></tr><tr><td>删除 NB-IoT 类型产品</td><td>创建产品时 NB-IoT 类型不再作为单独的产品类型，可使用普通类型产品基于 MQTT 协议接入</td><td>2020-12-29</td><td>-</td></tr></tbody>
+<tbody><tr><td>控制台支持批量创建设备</td><td>物联网通信控制台支持自动生成和上传文件的方式批量添加设备，并可以通过批次管理查看创建设备的历史任务与进程</td><td>2019-12-29</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41476'>设备接入准备</a></td></tr><tr><td>支持设备禁用功能</td><td>物联网通信平台增加设备禁用的功能，设备被禁用之后无法像正常设备一样建立连接，进行收发消息等操作</td><td>2019-12-29</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41500'>功能组件</a></td></tr><tr><td>删除 NB-IoT 类型产品</td><td>创建产品时 NB-IoT 类型不再作为单独的产品类型，可使用普通类型产品基于 MQTT 协议接入</td><td>2020-12-29</td><td>-</td></tr></tbody>
 </table>
 
 ## 2019年9月
@@ -68,7 +68,7 @@
 <table>
 <thead>
 <tr><th>动态名称</th><th>动态描述</th><th>发布时间</th><th>相关文档</th></tr></thead>
-<tbody><tr><td>控制台支持 CA 证书下载</td><td>创建证书类型的设备时，控制台支持可视化下载鉴权连接时所需的 CA 证书</td><td>2020-8-23</td><td>-</td></tr><tr><td>控制台支持 MQTT 签名计算</td><td>为减少用户在开发测试阶段的工作量，对于密钥认证类型的设备，支持在控制台一键生成直接可用的 MQTT 密码，用于连接调试</td><td>2020-8-23</td><td>-</td></tr></tbody>
+<tbody><tr><td>控制台支持 CA 证书下载</td><td>创建证书类型的设备时，控制台支持可视化下载鉴权连接时所需的 CA 证书</td><td>2019-8-23</td><td>-</td></tr><tr><td>控制台支持 MQTT 签名计算</td><td>为减少用户在开发测试阶段的工作量，对于密钥认证类型的设备，支持在控制台一键生成直接可用的 MQTT 密码，用于连接调试</td><td>2019-8-23</td><td>-</td></tr></tbody>
 </table>
 
 
@@ -77,7 +77,7 @@
 <table>
 <thead>
 <tr><th>动态名称</th><th>动态描述</th><th>发布时间</th><th>相关文档</th></tr></thead>
-<tbody><tr><td>新增设备标签功能</td><td>控制台支持给设备添加标签，并可以根据标签名称进行检索</td><td>2020-7-12</td><td>-</td></tr><tr><td>新增在线调试功能</td><td>控制台支持在线调试功能，用户可以指定 Topic、QOS、Payload 对指定设备下发消息进行调试</td><td>2020-7-12</td><td>-</td></tr></tbody>
+<tbody><tr><td>新增设备标签功能</td><td>控制台支持给设备添加标签，并可以根据标签名称进行检索</td><td>2019-7-12</td><td>-</td></tr><tr><td>新增在线调试功能</td><td>控制台支持在线调试功能，用户可以指定 Topic、QOS、Payload 对指定设备下发消息进行调试</td><td>2019-7-12</td><td>-</td></tr></tbody>
 </table>
 
 ## 2019年05月
@@ -99,7 +99,7 @@
 	<tr><td>增加设备内容日志</td><td>为满足用户接入调试与业务运营的需求，物联网通信平台新增设备内容（payload）日志。
 </br>用户可以在控制台或通过 API 获取设备与云端通信的消息内容日志，支持按设备名、RequestID、关键字进行检索，最长可查询当前日期15天前的内容日志。</td><td>2019-04-05</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41482">云日志</a></td>
 <tr><td>修改对 Shadow Version 的强校验逻辑</td><td>为减少用户在使用设备影子时，可能遇到版本号不一致，导致更新影子失败的问题。修改了对 Shadow Version 的强校验，现云端处理逻辑如下：<li>对于云 API 更新 Shadow 的操作：增加 Shadow Version 参数的缺省字段，若该字段为0时，则 IoT Hub 不校验影子版本号。</li>
-<li>对于设备更新 Shadow 的操作：如果 Version 不存在或者 Version=0 时，IoT Hub 不校验影子版本号。</li></td><td>2019-04-05</td><td>更新设备影子</a></td></tr>
+<li>对于设备更新 Shadow 的操作：如果 Version 不存在或者 Version=0 时，IoT Hub 不校验影子版本号。</li></td><td>2019-04-05</td><td><a href="">更新设备影子</a></td></tr>
 </table>
 
 ## 2019年03月
@@ -120,7 +120,7 @@
 ## 2018年08月
 <table>
 	<tr><th style="width: 15%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 15%;">发布时间</th><th style="width: 20%;">相关文档</th></tr>
-	<tr><td>云 API 支持腾讯云 API3.0 规范</td><td>物联网通信 API 升级到3.0版本，全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码，统一的 SDK/CLI 版本与 API 文档严格一致，给您带来简单快捷的使用体验；支持全地域就近接入让您更快连接腾讯云产品。</td><td>2018-08-30</td><td>API 文档	</a></td></tr>
+	<tr><td>云 API 支持腾讯云 API3.0 规范</td><td>物联网通信 API 升级到3.0版本，全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码，统一的 SDK/CLI 版本与 API 文档严格一致，给您带来简单快捷的使用体验；支持全地域就近接入让您更快连接腾讯云产品。</td><td>2018-08-30</td><td><a href="">API 文档	</a></td></tr>
 	<tr><td>规则引擎支持二进制数据</td><td>规则引擎操作的数据支持由 JSON 扩展为二进制数据（数据格式需要在创建产品时定义），针对用户的私有协议、加密数据，覆盖场景更广。二进制数据转发场景下，没有条件过滤和数据清洗功能。</td><td>2018-08-20</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41476">设备接入准备</a></td>
 <tr><td>支持自定义/修改设备密钥</td><td>考虑兼容已有系统下设备资料，支持自定义设备密钥（4 - 64位 Base64 编码的字符串）和修改能力。</td><td>2018-08-20</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41476">设备接入准备</a></td></tr>
 <tr><td>支持设备类别（标签）和备注管理</td><td>针对生产环境下租户形式的管理需求，支持同一产品下对设备分类设置标签（用于检索过滤和分组操作）和备注，方便上层应用更好管理设备资产。</td><td>2018-08-20</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41476">设备接入准备</a></td></tr>
@@ -145,7 +145,7 @@
 ## 2018年03月
 <table>
 	<tr><th style="width: 15%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 15%;">发布时间</th><th style="width: 20%;">相关文档</th></tr>
-	<tr><td>数据转发到消息队列 CKAFKA</td><td>规则引擎支持用户配置规则将符合条件的设备上报数据转发到消息队列 CKAFKA ，用户的应用服务器再从 CKAFKA 中读取数据内容进行处理。以此利用 CKAFKA 高吞吐量的优势，为用户打造高可用性的消息链路。</td><td>2018-03-13</td><td>数据转发到消息队列 CKAFKA</a></td></tr>
+	<tr><td>数据转发到消息队列 CKAFKA</td><td>规则引擎支持用户配置规则将符合条件的设备上报数据转发到消息队列 CKAFKA ，用户的应用服务器再从 CKAFKA 中读取数据内容进行处理。以此利用 CKAFKA 高吞吐量的优势，为用户打造高可用性的消息链路。</td><td>2018-03-13</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/1105/41489">数据转发到消息队列 CKAFKA</a></td></tr>
 	<tr><td>固件升级</td><td>设备固件升级又称 OTA，是物联网通信服务的重要组成部分。当物联设备有新功能或者需要修复漏洞时，设备可以通过 OTA 服务快速的进行固件升级。</td><td>2018-03-13</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41474">固件升级</a></td></tr>
 </table>
 
@@ -157,8 +157,8 @@
 	<tr><td>子数据转发到第三方服务（forward）</td><td>当将通过规则提取出来的消息字段转发给第三方服务时，用户可自定义如何处理这些数据。这种方式是提供给用户灵活性最高的一种消息处理方式。需注意第三方服务必须以 HTTP 的方式提供服务。要配置转发第三方服务，需要提供支持 HTTP 的网站 url 和端口。</td><td>2018-02-08</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41488">数据转发到第三方服务</a></td></tr>
 	<tr><td>C 语言 SDK</td><td><li>新增 MQTT/CoAP 对称加密连接支持</li>
 <li>Linux c 编译优化</li></td><td>2018-02-08</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41849">C-SDK</a></td></tr>
-	<tr><td>SDK 版本更新</td><td>新增发布 PHP/Java API SDK，支持基础功能。</td><td>2018-02-08</td><td>JAVA-SDK</a></td></tr>
-	<tr><td>配置转发 CKafka</td><td>CKafka 配置消息类型有两个选项：【设备上报消息】和【设备状态变化通知】</td><td>2018-02-08</td><td>配置转发 CKafka</a></td></tr>
+	<tr><td>SDK 版本更新</td><td>新增发布 PHP/Java API SDK，支持基础功能。</td><td>2018-02-08</td><td><a href="">JAVA-SDK</a></td></tr>
+	<tr><td>配置转发 CKafka</td><td>CKafka 配置消息类型有两个选项：【设备上报消息】和【设备状态变化通知】</td><td>2018-02-08</td><td><a href="">配置转发 CKafka</a></td></tr>
 </table>
 
 ## 2018年01月
@@ -172,5 +172,5 @@
 <li>支持 Android SDK。</li></td><td>2018-01-16</td><td>-</td></tr>
 	<tr><td>云日志</td><td>对设备消息链路主场景节点和上下线行为提供关键日志信息，用户可以根据日志分析设备行为，排查异常场景。</td><td>2018-01-16</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41482">云日志</a></td></tr>
 	<tr><td>设备通信</td><td>为更符合用户的使用场景，产品默认 topic 权限变更为 ${productId}/${deviceName}/event（发布权限），${productId}/${deviceName}/control（订阅权限）</td><td>2018-01-16</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41500">功能组件</a></td></tr>
-	<tr><td>云 API</td><td><li>云 API 访问域名更新为 iotcloud.api.qcloud.com ，对接新系统；</li><li>引入 productId 概念，云 API 参数以 productId + deviceName 作为设备的唯一标识符。</li></td><td>2018-01-16</td><td>物联网通信 API 概览</a></td></tr>
+	<tr><td>云 API</td><td><li>云 API 访问域名更新为 iotcloud.api.qcloud.com ，对接新系统；</li><li>引入 productId 概念，云 API 参数以 productId + deviceName 作为设备的唯一标识符。</li></td><td>2018-01-16</td><td><a href="">物联网通信 API 概览</a></td></tr>
 </table>
