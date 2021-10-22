@@ -34,4 +34,3 @@ Example: 172.16.0.7@tcp0:/01184207/cfs /root/turbo lustre defaults,_netdev 0 0
 
 ### Automatically mounting a file system on Windows
 When mounting a file system, select "Reconnect at logon" as shown below. For more information, please see [Using CFS File Systems on Windows Clients](https://intl.cloud.tencent.com/document/product/582/11524).
-<img src="https://main.qcloudimg.com/raw/2143b1982d00e449372959cc01231ef6.png" width="70%">
