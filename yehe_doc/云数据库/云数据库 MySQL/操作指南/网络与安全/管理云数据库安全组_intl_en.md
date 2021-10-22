@@ -1,5 +1,5 @@
-## Scenarios
-A [security group](https://intl.cloud.tencent.com/doc/product/213/12452) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. For specific rules and limitations, please see [Security Group Overview](https://intl.cloud.tencent.com/document/product/215/38750).
+## Overview
+A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. For specific rules and limitations, please see [Security Group Overview](https://intl.cloud.tencent.com/document/product/215/38750).
 
 >?
 >- TencentDB for MySQL security groups currently only support network access control for VPCs and public networks but not the classic network.
@@ -12,8 +12,8 @@ A [security group](https://intl.cloud.tencent.com/doc/product/213/12452) is a st
 ## Configuring Security Groups for TencentDB
 ### Step 1. Create a security group
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/securitygroup).
-2. Select **Security Group** on the left sidebar, select a region, and click **New**.
-3. In the pop-up dialog box, configure the following items and click **OK**.
+2. Select **Security Group** on the left sidebar, select a region, and click **Create**.
+3. In the pop-up dialog window, configure the following items, and click **OK**.
  - **Template**: select a template based on the service to be deployed on the TencentDB instance in the security group, which simplifies the security group rule configuration, as shown below:
 <table>
 	<tr><th>Template</th><th>Description</th><th>Remarks</th></tr>
@@ -30,7 +30,7 @@ A [security group](https://intl.cloud.tencent.com/doc/product/213/12452) is a st
 1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click **Modify Rule** in the **Operation** column on the row of the security group for which to configure a rule.
 2. On the security group rule page, click **Inbound rule** > **Add Rule**.
 3. In the pop-up dialog box, set the rule.
- - **Type**: **Custom** is selected by default. You can also choose another system rule template, such as MySQL(3306).
+ - **Type**: **Custom** is selected by default. You can also choose another system rule template. MySQL(3306) is recommended.
  - **Source** or **Target**: traffic source (inbound rules) or target (outbound rules). You need to specify one of the following options:
 <table>
 	<tr><th>Source or Target</th><th>Description</th></tr>
