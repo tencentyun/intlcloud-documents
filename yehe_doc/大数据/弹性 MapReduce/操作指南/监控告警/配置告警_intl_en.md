@@ -1,8 +1,12 @@
 ## Overview
 Elastic MapReduce (EMR) has been connected to Cloud Monitor (CM). You can configure alarm policies for EMR nodes and service monitoring metrics in the CM console.
 
-## Operation Directions
-1. Log in to the [CM console] and click **Alarm Configuration** > [Alarm Policy](https://console.cloud.tencent.com/monitor/alarm2/policy) on the left sidebar.
+>?
+>- EMR has been connected to CM's default alarms. CM will automatically create a default alarm policy. For information about metrics/events or alarm rules supported by the EMR default policy, see [Default Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38914).
+>- You can manually create an alarm policy and set it as the default alarm policy. After the default policy is set, newly purchased instances will be automatically associated with the default policy without requiring manual addition.
+
+## Directions
+1. Log in to the Cloud Monitor console and click **Alarm Configuration** > [Alarm Policy](https://console.cloud.tencent.com/monitor/alarm2/policy) on the left sidebar.
 2. On the **Alarm Policy** page, click **Create**.
 3. In the pop-up window, configure the basic information, alarm policy, and notification template as instructed below.
 <table>
@@ -44,7 +48,7 @@ Elastic MapReduce (EMR) has been connected to Cloud Monitor (CM). You can config
 </tr>
 <tr>
 <td>Manual configuration (event alarm)</td>
-<td>You can select which events of the Tencent Cloud service resources or underlying infrastructure will trigger alarms for you to take measures.</td>
+<td>Create an event alarm policy to get notifications in case of service resources or underlying infrastructure exceptions.</td>
 </tr>
 <tr>
 <td>Select template</td>
@@ -57,3 +61,4 @@ Elastic MapReduce (EMR) has been connected to Cloud Monitor (CM). You can config
 </tr>
 </table>
 4. Click **Complete**.
+
