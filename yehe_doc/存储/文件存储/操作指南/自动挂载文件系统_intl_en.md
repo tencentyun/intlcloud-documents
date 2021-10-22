@@ -13,13 +13,19 @@ vi /etc/fstab
 2. Then, enter "i" (insert) and add the following command to `/etc/fstab`. The mounting methods are as follows:
 ```shell
 Mount the file system with NFS v4.0
-<mount target IP>:/ <target mount directory> nfs4 vers=4,minorversion=0,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
+<mount point IP>:/ <target mount directory> nfs4 vers=4,minorversion=0,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
 Example: 10.10.19.12:/ /local/test nfs4 vers=4,minorversion=0,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
 ```
 ```shell
 Mount the file system with NFS v3.0
-<mount target IP>:/<fsid> <target mount directory> nfs nfsvers=3,nolock,proto=tcp,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
+<mount point IP>:/<fsid> <target mount directory> nfs nfsvers=3,nolock,proto=tcp,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
 Example: 10.10.19.12:/djoajeo4 /local/test nfs nfsvers=3,nolock,proto=tcp,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
+```
+```shell
+Mount the file system with Turbo
+<mount point IP>@tcp0:/<fsid>/cfs <target mount directory> lustre defaults,_netdev 0 0 
+Example: 172.16.0.7@tcp0:/01184207/cfs /root/turbo lustre defaults,_netdev 0 0
+
 ```
 3. Press Esc and enter ":wq" to save the change. Restart the client, and the file system will be automatically mounted.
 
@@ -28,4 +34,4 @@ Example: 10.10.19.12:/djoajeo4 /local/test nfs nfsvers=3,nolock,proto=tcp,hard,t
 
 ### Automatically mounting a file system on Windows
 When mounting a file system, select "Reconnect at logon" as shown below. For more information, please see [Using CFS File Systems on Windows Clients](https://intl.cloud.tencent.com/document/product/582/11524).
-<img src="https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/2143b1982d00e449372959cc01231ef6.png" width="70%">

@@ -1,6 +1,6 @@
-## Overview
+## Scenarios
 This document describes how to use CFS Turbo on Linux clients. The standard login method, i.e., login via WebShell, is used in the example below.
-For other login methods, please see [Logging into Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436).
+For other login methods, please see [Logging into Linux Instance](https://intl.cloud.tencent.com/zh/document/product/213/32493).
 
 ## Prerequisites
 
@@ -133,20 +133,20 @@ yum install
 10. Click <img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" /> to copy the command.
 
 11. Switch to the CVM instance to run the mount command copied.
-In most cases, you are advised to use the first mount command. The mount commands are described as follows:
- - Copy and run the first command if you want extended attributes supported and all operations to be executed synchronously by default (data will not be lost due to instance reboots, but I/O performance will be compromised).
+The mount commands are described as follows. You can select one to fit your business needs.
+ -If you want extended attributes supported and all operations to be executed synchronously by default (data will not be lost due to instance reboots, but the performance will be affected), copy and run the following command:
  Example:
-```
+```shell
 sudo mount.lustre -o sync,user_xattrXXXXXXXXXXXXXXXXXXX
 ```
- - Copy and run the second command if you want extended attributes supported but don’t need operations to be executed synchronously (some data cached in memory might be lost due to instance reboots, but I/O performance is good).
+ - If you want extended attributes supported but don’t need operations to be executed synchronously (some data cached in memory might be lost due to instance reboots, but the performance is good), copy and run the following command:
  Example:
-```
+```shell
 sudo mount.lustre -o user_xattrXXXXXXXXXXXXXXXXXXX
 ```
- - Copy and run the third command if you don’t need extended attributes supported, nor the operations executed synchronously.
+ - If you do not need the extended attributes supported or the operations to be executed synchronously (some data cached in memory might be lost due to instance reboots, but the performance is good): copy and run the following command:
  Example:
-```
+```shell
 sudo mount.lustre XXXXXXXXXXXXXXXXXXX
 ```
 
