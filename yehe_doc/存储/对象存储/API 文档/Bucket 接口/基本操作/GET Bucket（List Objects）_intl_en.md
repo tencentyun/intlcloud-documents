@@ -34,21 +34,24 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> 
 
 #### Request parameters
 
-| Parameter | Description | Type | Required |
+| Header | Description | Type | Required |
 | --- | --- | --- | --- |
 | prefix | Matching prefix for object keys. The response will contain only object keys with the specified prefix. | string | No |
-| delimiter | A character delimiter used to group object keys. Keys that contain identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the samples below. | string | No |
+| delimiter | A character delimiter used to group object keys. Keys that contain identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the examples below | string | No |
 | encoding-type | Encoding type of the returned value. Valid value: `url`, meaning that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded to `%E8%85%BE%E8%AE%AF%E4%BA%91`. | string | No |
 | marker | Marker for the starting object key. Object key entries will be returned in UTF-8 lexicographical order, starting from the first object key after the marker. | string | No |
 | max-keys | The maximum number (up to 1,000) of keys returned in the response. Defaults to `1000`. <br>**Note**: This parameter limits the maximum number of keys (the sum of `CommonPrefixes` and `Contents`) COS can return in each `List Objects` response. If not all objects are listed in a single response, COS will return the `NextMarker` node, the value of which can be used to specify `marker` so that the remaining objects can be listed in your next request. | integer | No |
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -60,13 +63,13 @@ This API does not have a request body.
 
 In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-| Parameter | Description | Type |
+| Header | Description | Type |
 | --- | --- | --- |
 | x-cos-bucket-region | Bucket region, such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224) | Enum |
 
 #### Response body
 
-A successful query returns **application/xml** data, which contains information about objects in the bucket. For the response bodies of different scenarios, see the sample below.
+A successful query returns **application/xml** data, which contains information about objects in the bucket. For the response bodies of different scenarios, see the examples below.
 
 ```xml
 <?xml version='1.0' encoding='utf-8' ?>
@@ -162,9 +165,9 @@ The nodes are described as follows:
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1. Simple use case
+#### Example 1: simple use case
 
 #### Request
 
@@ -233,7 +236,7 @@ x-cos-request-id: NWZkMTk4MDVfNjViODJhMDlfNDZkYl8xNzU0****
 </ListBucketResult>
 ```
 
-#### Sample 2. Specifying the `encoding-type` parameter (object keys are URL-encoded)
+#### Example 2. Specifying the `encoding-type` parameter (object keys are URL-encoded)
 
 #### Request
 
@@ -301,7 +304,7 @@ x-cos-request-id: NWZkMGVkMWRfZjdjNzJhMDlfMjJhYTlfYmJk****
 </ListBucketResult>
 ```
 
-#### Sample 3. Specifying the `delimiter` parameter (listing objects and subdirectories in the root directory)
+#### Example 3. Specifying the `delimiter` parameter (listing objects and subdirectories in the root directory)
 
 #### Request
 
@@ -364,7 +367,7 @@ x-cos-request-id: NWZkMTk4MDVfNjRiMDJhMDlfOTZjZV8xOTgw****
 </ListBucketResult>
 ```
 
-#### Sample 4. Specifying the `prefix` and `delimiter` parameters (listing objects and subdirectories in a specified subdirectory)
+#### Example 4. Specifying the `prefix` and `delimiter` parameters (listing objects and subdirectories in a specified subdirectory)
 
 #### Request
 
@@ -428,7 +431,7 @@ x-cos-request-id: NWZkMTk4MDVfZGZjNzJhMDlfMzJiMjRfMTY0****
 </ListBucketResult>
 ```
 
-#### Sample 5. Obtaining the first page of keys when there are more than one page (this sample specifies the value of `max-keys`. If not specified, the value `1000` is used by default)
+#### Example 5. Obtaining the first page of keys when there are more than one page (this example specifies the value of `max-keys`. If not specified, the value `1000` is used by default)
 
 #### Request
 
@@ -496,7 +499,7 @@ x-cos-request-id: NWZjZjZiZjZfZGRjODJhMDlfMWFjZDVfMTlmZTY5****
 </ListBucketResult>
 ```
 
-#### Sample 6. Obtaining the subsequent pages (a continuity of sample 5)
+#### Example 6. Obtaining the subsequent pages (a continuity of example 5)
 
 #### Request
 
@@ -552,7 +555,7 @@ x-cos-request-id: NWZjZjZiZjdfMjRhZjJhMDlfMjc2NV8xYmE2****
 </ListBucketResult>
 ```
 
-#### Sample 7. Obtaining the first page of keys when there are more than one page (with `delimiter` specified and the sum of `CommonPrefixes` and `Contents` not exceeding the value of `max-keys`)
+#### Example 7. Obtaining the first page of keys when there are more than one page (with `delimiter` specified and the sum of `CommonPrefixes` and `Contents` not exceeding the value of `max-keys`)
 
 #### Request
 
@@ -597,7 +600,7 @@ x-cos-request-id: NWZkMDQyZmVfYTJjMjJhMDlfYmQwOF8xYjkw****
 </ListBucketResult>
 ```
 
-#### Sample 8. Obtaining subsequent pages with `delimiter` specified (a continuity of sample 7)
+#### Example 8. Obtaining subsequent pages with `delimiter` specified (a continuity of example 7)
 
 #### Request
 

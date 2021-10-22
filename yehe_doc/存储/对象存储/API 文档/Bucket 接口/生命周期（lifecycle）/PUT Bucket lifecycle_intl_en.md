@@ -1,6 +1,6 @@
 ## Overview
 
-COS allows you to manage the lifecycle of objects in buckets through the lifecycle configuration, which contains one or more rule sets that will be applied to a set of objects. Each rule defines a COS operation.
+COS introduces the lifecycle feature for you to manage the lifecycle of objects in buckets. The lifecycle configuration contains one or more rules that apply to a set of objects. Each rule defines one operation.
 There are two types of operations:
 
 - **Transition**: defines when an object is transitioned to another storage class. For example, you can transition an object to STANDARD_IA (suitable for infrequently accessed objects) 30 days after its creation. You can also transition the object to INTELLIGENT TIERING (suitable for objects with irregular access patterns) or ARCHIVE (offering lower costs). For specific parameters, please see `Transition` in the sample request description.
@@ -11,7 +11,7 @@ There are two types of operations:
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                You are advised to use API Explorer.
+                API Explorer is recommended.
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutBucketLifecycle&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
@@ -44,11 +44,14 @@ Authorization: Auth String
 Content-MD5: MD5
 ```
 
-> ?Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> 
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 
 #### Request body
@@ -120,8 +123,7 @@ The nodes are described as follows:
 | Prefix | LifecycleConfiguration.Rule<br>.Filter.And | Matching prefix for the rule. It specifies objects that the lifecycle rule applies to. There can be one `Prefix` at most. | String | No |
 | Tag | LifecycleConfiguration.Rule<br>.Filter.And | A set of tags. Up to 10 tags are supported. | Container | No |
 | Key | LifecycleConfiguration.Rule<br>.Filter.And.Tag | Key of the tag. It can be up to 128 bytes. Letters, digits, spaces, plus signs (+), minus signs (-), underscores (_), equal signs (=), dots (.), colons (:), and slashes (/) are supported. | String | No |
-|  Value  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag | Value of the tag. It can be up to 256 bytes. Letters, digits, spaces, plus signs (+), minus signs (-), underscores (_), equal signs (=), dots (.), colons (:), and slashes (/) are supported. | String | No |
-| Status | LifecycleConfiguration.Rule | Indicates whether the rule is enabled. Enumerated values: `Enabled`, `Disabled` | String | Yes |
+|  Value  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag  | Value of the tag. It can be up to 256 bytes. Letters, digits, spaces, plus signs (+), minus signs (-), underscores (_), equal signs (=), dots (.), colons (:), and slashes (/) are supported. |   String |  No  | Status | LifecycleConfiguration.Rule                                  | Whether to enable the rule. Enumerated values: `Enabled`, `Disabled`    | String    | Yes |
 | Expiration | LifecycleConfiguration.Rule | Expiration attributes of the rule | Container | No |
 | Transition | LifecycleConfiguration.Rule    | Specifies when to transition the object and the target storage class. | Container | No  |
 | Days | LifecycleConfiguration.Rule<br>.Transition or Expiration | Specifies the number of days between the date an object was last modified and the date when the operation corresponding to the rule is performed. <br><li>If it is a `Transition` operation, this value should be a non-negative integer. <br><li>If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer | No |
@@ -132,13 +134,13 @@ The nodes are described as follows:
 | NoncurrentVersionExpiration | LifecycleConfiguration.Rule | Specifies when noncurrent object versions shall expire. | Container | No |
 | NoncurrentVersionTransition | LifecycleConfiguration.Rule | Specifies when to transition objects of noncurrent versions and the target storage class. | Container | No |
 | NoncurrentDays | LifecycleConfiguration.Rule<br>.NoncurrentVersionExpiration <br>or NoncurrentVersionTransition | Specifies the number of days between the date when an object becomes noncurrent and the date when the operation corresponding to a rule is performed.<br><li>If it is a `Transition` operation, this value should be a non-negative integer.<br><li>If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer | No |
-| StorageClass | LifecycleConfiguration.Rule<br>.Transition or <br>NoncurrentVersionTransition | Specifies the storage class of the transitioned object. Enumerated values: `STANDARD_IA`, `INTELLIGENT_TIERING`, `ARCHIVE`, `DEEP_ARCHIVE`. | String | Yes |
+| StorageClass | LifecycleConfiguration.Rule<br>.Transition or <br>NoncurrentVersionTransition | Specifies the storage class of the transitioned object. Enumerated values: `STANDARD_IA`, `INTELLIGENT_TIERING`, `ARCHIVE`, `DEEP_ARCHIVE`. For more information about storage classes, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | Yes |
 
 ## Response
 
 #### Response headers
 
-This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -148,7 +150,7 @@ The response body is empty.
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Sample
+## Samples
 
 #### Request
 

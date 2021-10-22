@@ -1,6 +1,22 @@
-## API Description
+## Overview
 
 This API is used to get all objects in a bucket and their historical version information. You can also filter certain objects and their version information by specifying relevant parameters. To call this API, you need to have permission to read the bucket.
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetBucketObjectVersions&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Request
 
@@ -13,14 +29,17 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> 
 
 #### Request parameters
 
-| Parameter | Description | Type | Required |
+| Header | Description | Type | Required |
 | --- | --- | --- | --- |
 | prefix | Matching prefix for object keys. The response will contain only object keys with the specified prefix. | string | No |
-| delimiter | A character delimiter used to group object keys. Keys that contain identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the samples below. | string | No |
+| delimiter | A character delimiter used to group object keys. Keys that contain identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the examples below | string | No |
 | encoding-type | Encoding type of the returned value. Valid value: `url`, meaning that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded to `%E8%85%BE%E8%AE%AF%E4%BA%91`. | string | No |
 | key-marker | Marker for the starting object key. Object version entries after this marker will be returned in UTF-8 lexicographical order. | string | No |
 | version-id-marker | Marker for the starting version ID. Object version entries after this marker will be returned. If `NextVersionIdMarker` is empty in the last `ListVersionsResult` response, leave this parameter empty. | string | No |
@@ -28,7 +47,7 @@ Authorization: Auth String
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -38,11 +57,11 @@ This API does not have a request body.
 
 #### Response headers
 
-This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
-A successful query returns **application/xml** data, which contains information about object versions in the bucket. For the response bodies in different scenarios, see the samples below.
+A successful query returns **application/xml** data, which contains information about object versions in the bucket. For the response bodies of different scenarios, see the examples below.
 ```xml
 <ListVersionsResult>
 		<EncodingType>string</EncodingType>
@@ -119,7 +138,7 @@ The nodes are described as follows:
 | --- | --- | --- | --- |
 | ListVersionsResult | None | Stores the result of `GET Bucket Object versions`. | Container |
 
-**Content of the Container node ListVersionsResult**:
+**Content of `ListVersionsResult`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
@@ -137,13 +156,13 @@ The nodes are described as follows:
 | Version | ListVersionsResult | Object version entry | Container |
 | DeleteMarker | ListVersionsResult | Object delete marker entry | Container |
 
-**Content of the Container node CommonPrefixes**:
+**Content of `CommonPrefixes`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | Prefix | ListVersionsResult.CommonPrefixes | A single common prefix | string |
 
-**Content of the Container node Version**:
+**Content of `Version`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
@@ -157,14 +176,14 @@ The nodes are described as follows:
 | StorageTier | ListVersionsResult.Version | Access tier (for INTELLIGENT TIERING) the object is currently stored in. Enumerated values: `FREQUENT`, `INFREQUENT`. This node is returned only when `StorageClass` is set to `INTELLIGENT_TIERING`. | Enum |
 | Owner | ListVersionsResult.Version | Information of the object owner | Container |
 
-**Content of the Container node Version.Owner**:
+**Content of `Version.Owner`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | ID | ListVersionsResult.Version.Owner | `APPID` of the object owner | string |
 | DisplayName | ListVersionsResult.Version.Owner | Name of the object owner | string |
 
-**Content of the Container node DeleteMarker**:
+**Content of `DeleteMarker`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
@@ -174,7 +193,7 @@ The nodes are described as follows:
 | LastModified | ListVersionsResult.DeleteMarker | Last modified time of the current delete marker, in ISO 8601 format (for example, 2019-05-24T10:56:40Z) | date |
 | Owner | ListVersionsResult.DeleteMarker | Information of the object owner | Container |
 
-**Content of the Container node DeleteMarker.Owner**:
+**Content of `DeleteMarker.Owner`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
@@ -185,9 +204,9 @@ The nodes are described as follows:
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1. Versioning disabled
+#### Example 1: versioning not enabled
 
 #### Request
 
@@ -249,7 +268,7 @@ x-cos-request-id: NWZkMTk3ODZfZDUyNzVkNjRfNDgxYl8xNjU5****
 </ListVersionsResult>
 ```
 
-#### Sample 2. Uploading an object and then enabling versioning, making its version ID `null` (a continuity of sample 1)
+#### Example 2. Uploading an object and then enabling versioning, making its version ID `null` (a continuity of example 1)
 
 #### Request
 
@@ -347,7 +366,7 @@ x-cos-request-id: NWZkMTk3YTVfYjFiODJhMDlfNTg0MDZfMTdj****
 </ListVersionsResult>
 ```
 
-#### Sample 3. Suspending versioning and then uploading an object, making its version ID `null` (each object can have only one object version whose ID is `null`) (a continuity of sample 2)
+#### Example 3. Suspending versioning and then uploading an object, making its version ID `null` (each object can have only one object version whose ID is `null`) (a continuity of example 2)
 
 #### Request
 
@@ -457,7 +476,7 @@ x-cos-request-id: NWZkMTk3YjlfNDhhOTBiMDlfMTYzNTZfMTIw****
 </ListVersionsResult>
 ```
 
-#### Sample 4. Specifying the `encoding-type` parameter (object keys are URL-encoded)
+#### Example 4. Specifying the `encoding-type` parameter (object keys are URL-encoded)
 
 #### Request
 
@@ -555,7 +574,7 @@ x-cos-request-id: NWZkMWE5ZmVfZTdjODJhMDlfMzgxZl8xMzQ1****
 </ListVersionsResult>
 ```
 
-#### Sample 5. Specifying the `delimiter` parameter (listing object versions and subdirectories in the root directory)
+#### Example 5. Specifying the `delimiter` parameter (listing object versions and subdirectories in the root directory)
 
 #### Request
 
@@ -647,7 +666,7 @@ x-cos-request-id: NWZkMWM4NjNfNzFjODJhMDlfMjlhZTRfMTg5****
 </ListVersionsResult>
 ```
 
-#### Sample 6. Specifying the `prefix` and `delimiter` parameters (listing object versions and subdirectories in a specified subdirectory)
+#### Example 6. Specifying the `prefix` and `delimiter` parameters (listing object versions and subdirectories in a specified subdirectory)
 
 #### Request
 
@@ -738,7 +757,7 @@ x-cos-request-id: NWZkMWM4NjNfZWVjODJhMDlfNTNmN18xNWNj****
 </ListVersionsResult>
 ```
 
-#### Sample 7. Obtaining the first page of keys when there are more than one page (this sample specifies `max-keys`. If it is not specified, the value `1000` is used by default. The sum of `Version` and `DeleteMarker` cannot exceed the value of `max-keys`)
+#### Example 7. Obtaining the first page of keys when there are more than one page (this example specifies `max-keys`. If not specified, the value `1000` is used by default. The sum of `Version` and `DeleteMarker` cannot exceed the value of `max-keys`)
 
 #### Request
 
@@ -811,7 +830,7 @@ x-cos-request-id: NWZjZjc1YjBfYjBhODBiMDlfZDU5Yl9jYjBl****
 </ListVersionsResult>
 ```
 
-#### Sample 8: Obtaining the subsequent pages with `key-marker` and `version-id-marker` specified (a continuity of sample 7)
+#### Example 8: Obtaining the subsequent pages with `key-marker` and `version-id-marker` specified (a continuity of example 7)
 
 #### Request
 
@@ -872,7 +891,7 @@ x-cos-request-id: NWZjZjc1YjFfNjljMDBiMDlfNjQwOV8xYjM2****
 </ListVersionsResult>
 ```
 
-#### Sample 9. Specifying the object to start with using the `key-marker` parameter but not the `version-id-marker` parameter (a continuity of sample 7)
+#### Example 9. Specifying the object to start with using the `key-marker` parameter but not the `version-id-marker` parameter (a continuity of example 7)
 
 #### Request
 
@@ -920,7 +939,7 @@ x-cos-request-id: NWZjZjc1YjJfZGZjMTBiMDlfNzAyYl8xMzkx****
 </ListVersionsResult>
 ```
 
-#### Sample 10. Obtaining the first page of keys when there are more than one page (with `delimiter` specified and the sum of `CommonPrefixes`, `Version`, and `DeleteMarker` not exceeding the value of `max-keys`)
+#### Example 10. Obtaining the first page of keys when there are more than one page (with `delimiter` specified and the sum of `CommonPrefixes`, `Version`, and `DeleteMarker` not exceeding the value of `max-keys`)
 
 #### Request
 
@@ -966,7 +985,7 @@ x-cos-request-id: NWZkMGQzYzhfYmIwMmEwOV83OGU4XzZj****
 </ListVersionsResult>
 ```
 
-#### Sample 11. Obtaining the subsequent pages with `delimiter` specified and `version-id-marker` left empty (as the value of `NextVersionIdMarker` is empty on the first page) (a continuity of sample 10)
+#### Example 11. Obtaining the subsequent pages with `delimiter` specified and `version-id-marker` left empty (as the value of `NextVersionIdMarker` is empty on the first page) (a continuity of example 10)
 
 #### Request
 

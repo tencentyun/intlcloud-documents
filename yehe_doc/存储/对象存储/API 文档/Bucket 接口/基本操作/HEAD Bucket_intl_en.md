@@ -1,14 +1,33 @@
-## Feature
+## Overview
 
-This API is used to check whether a bucket exists and whether you have the permission to access it. Possible scenarios include:
+This API is used to verify whether a bucket exists and whether you have permission to access it.
 
-- If the bucket exists and you have the permission to read it, HTTP status code 200 will be returned.
-- If you do not have the permission to read the bucket, HTTP status code 403 will be returned.
+- If the bucket exists and you have permission to read it, HTTP status code 200 will be returned.
+- If you do not have permission to read the bucket, HTTP status code 403 will be returned.
 - If the bucket does not exist, HTTP status code 404 will be returned.
+
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=HeadBucket&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 ## Request
 
-#### Request samples
+#### Sample request
 
 ```plaintext
 HEAD / HTTP/1.1
@@ -17,15 +36,18 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> 
 
 #### Request parameters
 
-This API does not use any request parameter.
+This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -35,12 +57,12 @@ This API does not have a request body.
 
 #### Response headers
 
-In addition to common response headers, this API also returns the following response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-| Name | Description | Type |
+| Header | Description | Type |
 | -------------------- | ------------------------------------------------------------ | ---- |
-| x-cos-bucket-az-type | Bucket type. Fixed value: MAZ. Returned if it is a MAZ bucket. | Enum |
-| x-cos-bucket-region | Bucket region such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | Enum |
+| x-cos-bucket-az-type | AZ type of the bucket. This header is returned only for MAZ buckets. Fixed to `MAZ`. | Enum |
+| x-cos-bucket-region | Bucket region, such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | Enum |
 
 #### Response body
 
@@ -48,11 +70,11 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Examples
 
-#### Example 1. OAZ bucket
+#### Example 1: OAZ bucket
 
 #### Request
 
@@ -77,7 +99,7 @@ x-cos-bucket-region: ap-beijing
 x-cos-request-id: NWNlY2E3ZmNfZjhjMDBiMDlfMTBjOWRfZDcz****
 ```
 
-#### Example 2. MAZ bucket
+#### Example 2: MAZ bucket
 
 #### Request
 
