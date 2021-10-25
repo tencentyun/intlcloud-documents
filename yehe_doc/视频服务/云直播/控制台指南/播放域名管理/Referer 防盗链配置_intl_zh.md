@@ -5,8 +5,9 @@
 基于 HTTP 协议支持的 Referer 机制，Referer 防盗链通过 HTTP request 中携带的 Referer 字段识别请求的来源，验证访问的合法性，进而允许或拒绝对直播内容的请求。
 
 ## 注意事项
-- Referer 信息包含在 HTTP 中，开启配置后 RTMP 无法播放，快直播流不校验 Referer 配置，如需配置 Referer 建议使用 FLV 或 HLS 播放。
+- Referer 信息包含在 HTTP 中，RTMP、WebRTC 和 QUIC 等非 HTTP 协议不受 Referer 配置限制。若需限制 RTMP 拉流，防止客户通过 RTMP 拉流绕过 Referer 防盗链，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系线下修改。
 - 开启、关闭或修改 Referer 防盗链配置后，约15分钟-20分钟即可生效，无需重新推流。
+- Referer 防盗链是通过 HTTP 请求 header 中的 Referer 信息进行验证，确认请求合法来控制是否允许直播，但可能存在伪造 Referer 绕过校验盗用服务的情况，故不建议业务强依赖 于Referer 进行内容保护。
 
 ## 前提条件
 
@@ -17,11 +18,12 @@
 [](id:open)
 ## 开启 Referer 防盗链
 
-1.   选择【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】，单击需配置 Referer 防盗链的**播放域名**或右侧的【管理】，进入域名管理页。
-2.   在【访问控制】>【Referer防盗链配置】中，单击【编辑】进入 Referer 防盗链配置页。
+1.  选择 **[域名管理](https://console.cloud.tencent.com/live/domainmanage)**，单击需配置 Referer 防盗链的 **播放域名** 或右侧的 **管理**，进入域名管理页。
+2.  在 **访问控制**>**Referer防盗链配置** 中，单击**编辑**进入 Referer 防盗链配置页。
  ![](https://main.qcloudimg.com/raw/32461edf0353c2c95925b74d80dc25b3.png)
-3.   单击![](https://main.qcloudimg.com/raw/c032c517e25867ff592f128424154688.png)按钮，选择开启 Referer 防盗链，并进行如下配置：
+3.  单击![](https://main.qcloudimg.com/raw/c032c517e25867ff592f128424154688.png)按钮，选择开启 Referer 防盗链，并进行如下配置：
  ![](https://main.qcloudimg.com/raw/551044de4acd79683ae69cf106a87c0b.png)
+
 <table id="setmess">
 <tr><th width="14%">配置项</th><th>说明</th>
 </tr><tr>
@@ -30,7 +32,7 @@
 <ul style="margin:0">
 <li>黑名单和白名单互斥，同一时间仅可生效一种。</li>
 <li>若配置了 Referer 白名单，则允许白名单内用户的访问，可请求到直播内容；拒绝白名单外用户的访问，无法请求直播内容。</li>
-<li>若配置了 Referer 黑名单，则拒绝黑名单内请求源的访问，无法请求直播内容；允许黑名单外用户的访问，可请求到直播内容。</li>
+<li>若配置了 Referer 黑名单，则拒绝黑名单内用户的访问，无法请求直播内容；允许黑名单外用户的访问，可请求到直播内容。</li>
 </ul></td>
 </tr><tr>
 <td>允许空 Referer</td>
@@ -48,14 +50,14 @@
 <li>若规则内容为空则表示黑白名单均未配置。</li>
 </ul></td>
 </tr></table>
-4. 单击【保存】，即可保存配置。
+4. 单击**保存**，即可保存配置。
 
 
 [](id:change)
 ## 修改 Referer 防盗链
-1.   选择【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】，单击需修改 Referer 防盗链配置的**播放域名**或右侧的【管理】，进入域名管理页。
-2.   在【访问控制】>【Referer防盗链配置】中，单击【编辑】进入 Referer 防盗链配置页。
-3.   根据您的实际需求修改 [配置项](#setmess) 信息，单击【保存】即可完成修改。
+1.   选择 **[域名管理](https://console.cloud.tencent.com/live/domainmanage)**，单击需修改 Referer 防盗链配置的 **播放域名** 或右侧的 **管理**，进入域名管理页。
+2.   在 **访问控制**>**Referer防盗链配置** 中，单击 **编辑** 进入 Referer 防盗链配置页。
+3.   根据您的实际需求修改 [配置项](#setmess) 信息，单击 **保存** 即可完成修改。
 
 ![](https://main.qcloudimg.com/raw/a8c79376ed22b4e47f35e69411c6df10.png)
 
@@ -63,10 +65,10 @@
 ## 关闭 Referer 防盗链
 [开启 Referer 防盗链](#open) 后，若您需关闭此功能，具体操作如下：
 
-1.   选择【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】，单击需关闭 Referer 防盗链配置的**播放域名**或右侧的【管理】，进入域名管理页。
-2.   在【访问控制】>【Referer防盗链配置】中，单击【编辑】进入 Referer 防盗链配置页。
+1.   选择 **[域名管理](https://console.cloud.tencent.com/live/domainmanage)**，单击需关闭 Referer 防盗链配置的 **播放域名** 或右侧的 **管理**，进入域名管理页。
+2.   在 **访问控制**>**Referer防盗链配置** 中，单击 **编辑** 进入 Referer 防盗链配置页。
 3.   单击![](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png)按钮，选择关闭 Referer 防盗链。
-4.   单击【保存】即可。
+4.   单击**保存**即可。
 
 ![](https://main.qcloudimg.com/raw/eb36bc40cca9f19e198fc742256fed21.png)
 

@@ -3,17 +3,15 @@
 本文主要讲解触发鉴黄回调事件后，腾讯云直播发送给用户的回调消息通知字段。
 
 ## 注意事项
-
 - 阅读本文之前，希望您已经了解腾讯云直播是如何配置回调功能、您是如何接收回调消息的，具体请参见 [如何接收事件通知](https://intl.cloud.tencent.com/document/product/267/38080)。
 - 直播鉴黄默认只会将可疑结果进行回调，正常结果不会回调。
 - 建议使用图片的 [type](#type) 对黄图进行评判，由于检测系统判定无法做到100%准确率，会有少量图片会识别成疑似色情或识别结果不对，可根据实际应用场景判断是否需要进行人工二次确认。
 
 ## 截图事件参数说明
-
 ### 事件类型参数
 
-| 事件类型 | 字段取值说明     |
-| :------- | :--------------- |
+| 事件类型 | 字段取值说明           |
+| :------- | :------------- |
 | 直播鉴黄 | event_type = 317 |
 
 
@@ -31,168 +29,161 @@
 <td>事件通知安全签名 sign = MD5（key + t）。<br>说明：腾讯云把加密 <a href="#key">key</a> 和 t 进行字符串拼接后通过 MD5 计算得出 sign 值，并将其放在通知消息里，您的后台服务器在收到通知消息后可以根据同样的算法确认 sign 是否正确，进而确认消息是否确实来自腾讯云后台。</td>
 </tr></table>
 
+>? [](id:key)key 为 **事件中心>[直播回调](https://console.cloud.tencent.com/live/config/callback)** 中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
 
->? [](id:key)key 为【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
->
->> ![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
+![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 
 
 
 ### 回调消息参数
-
-| 参数           | 是否必填 | 数据类型                               | 描述                                                         |
-| -------------- | -------- | -------------------------------------- | ------------------------------------------------------------ |
-| streamId       | 选填     | String                                 | 流名称                                                       |
-| channelId      | 选填     | string                                 | 频道 ID                                                      |
-| img            | 必填     | string                                 | 预警图片链接                                                 |
-| type           | 必填     | Array                                  | 返回检测结果（labelResults）中所对应的**优先级最高的恶意标签**，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。返回值：<ul style="margin:0"><li/>0：正常<li/>1：色情<li/>6：谩骂<li/>8：广告<li/>2-5、7：自定义违规；以及其他令人反感、不安全或不适宜的内容类型</ul> |
-| score          | 必填     | Array                                  | type 对应的评分                                              |
-| hotScore       | 必填     | Number                                 | 图片为性感图片的评分                                         |
-| pornScore      | 必填     | Number                                 | 图片为色情图片的评分                                         |
-| illegalScore   | 必填     | Number                                 | 图片为违法图片的评分                                         |
-| polityScore    | 必填     | Number                                 | 图片为涉政图片的评分                                         |
-| terrorScore    | 必填     | Number                                 | 图片为暴恐图片的评分                                         |
-| abuseScore     | 必填     | Number                                 | 图片为谩骂图片的评分                                         |
-| teenagerScore  | 必填     | Number                                 | 图片为青少年不适宜图片的评分                                 |
-| adScore        | 必填     | Number                                 | 图片为 adScore 图片的评分                                    |
-| ocrMsg         | 选填     | string                                 | 图片的 OCR 识别信息（如果存在）                              |
-| suggestion     | 必填     | string                                 | 建议值，取值可选：<ul style="margin:0"><li/>Block：打击<li/>Review：待复审<li/>Pass：正常</ul> |
-| label          | 必填     | string                                 | 返回检测结果（labelResults）中所对应的**优先级最高的恶意标签**，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。返回值：<ul style="margin:0"><li/>Normal：正常<li/>Porn：色情<li/>Abuse：谩骂<li/>Ad：广告<li/>Custom：自定义违规；以及其他令人反感、不安全或不适宜的内容类型</ul> |
-| subLabel       | 必填     | string                                 | 子标签名称，当未命中子标签时，返回空字符串                   |
-| labelResults   | 选填     | Array of [LabelResult](#labelresult)   | 分类检测模型审核结果，包括涉黄、性感、涉暴、违法违规等审核结果 |
-| objectResults  | 选填     | Array of [ObjectResult](#objectresult) | 实体检测模型审核结果，包括政治实体、广告台标、二维码等审核信息 |
-| ocrResults     | 选填     | Array of [OcrResult](#ocrresult)       | OCR文本审核结果，包括 OCR 文本相关信息，以及文本审核明细结果 |
-| libResults     | 选填     | Array of [LibResult](#libresult)       | 风险图库审核结果                                             |
-| screenshotTime | 必填     | Number                                 | 截图时间                                                     |
-| sendTime       | 必填     | Number                                 | 请求发送时间，UNIX 时间戳                                    |
-| similarScore   | 选填     | Number                                 | 图片相识度评分                                               |
-| stream_param   | 选填     | String                                 | 推流参数                                                     |
-| app            | 选填     | String                                 | 推流域名                                                     |
-| appid          | 选填     | Number                                 | 业务 ID                                                      |
-| appname        | 选填     | String                                 | 推流 path 路径                                               |
+| 参数        | 是否必填        | 数据类型        | 描述        |
+| ---------- | ---------- | ---------- | --------------------------- |
+| streamId | 选填     | String | 流名称 |
+| channelId | 选填     | string | 频道 ID |
+| img | 必填     | string | 预警图片链接 |
+| type | 必填     | Array | 返回检测结果（labelResults）中所对应的优先级最高的恶意标签，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。返回值为数字：<ul style="margin:0"><li/>0：正常<li/>1-8：分别表示下列参数 hotScore 到 adScore 的不同类型顺序，比如1-色情，6-谩骂，8-广告，其他以此类推</ul> |
+| score | 必填     | Array | type 对应的评分 |
+| hotScore                    | 必填     | Number | 图片为性感图片的评分 |
+| pornScore | 必填     | Number | 图片为色情图片的评分 |
+| illegalScore | 必填     | Number | 图片为违法图片的评分 |
+| polityScore | 必填     | Number | 图片为涉政图片的评分 |
+| terrorScore | 必填     | Number | 图片为暴恐图片的评分 |
+| abuseScore | 必填     | Number | 图片为谩骂图片的评分 |
+| teenagerScore | 必填     | Number | 图片为青少年不适宜图片的评分 |
+| adScore | 必填     | Number | 图片为 adScore 图片的评分 |
+| ocrMsg | 选填     | string | 图片的 OCR 识别信息（如果存在） |
+| suggestion | 必填     | string | 建议值，取值可选：<ul style="margin:0"><li/>Block：打击<li/>Review：待复审<li/>Pass：正常</ul>     |
+| label | 必填     | string                | 对参数 type 返回类型值的补充文字描述，比如对返回值**0**补充描述为 Normal、对返回值为**6**补充描述为 Abuse、对返回值为**8**补充描述为 Ad 等 |
+| subLabel | 必填     | string | 子标签名称，当未命中子标签时，返回空字符串              |
+| labelResults | 选填     | Array of [LabelResult](#labelresult)  | 分类检测模型审核结果，包括涉黄、性感、涉暴、违法违规等审核结果 |
+| objectResults | 选填     | Array of [ObjectResult](#objectresult) | 实体检测模型审核结果，包括政治实体、广告台标、二维码等审核信息 |
+| ocrResults | 选填     | Array of [OcrResult](#ocrresult) | OCR文本审核结果，包括 OCR 文本相关信息，以及文本审核明细结果 |
+| libResults | 选填     | Array of [LibResult](#libresult) | 风险图库审核结果 |
+| screenshotTime | 必填     | Number | 截图时间 |
+| sendTime | 必填     | Number | 请求发送时间，UNIX 时间戳 |
+| similarScore | 选填     | Number | 图片相识度评分 |
+| stream_param | 选填     | String | 推流参数 |
+| app | 选填     | String | 推流域名 |
+| appid | 选填     | Number | 业务 ID |
+| appname | 选填     | String | 推流 path 路径 |
 
  
 
 #### LabelResult
-
 分类模型命中结果。
 
-| 名称       | 类型                                         | 描述                                                         |
-| ---------- | -------------------------------------------- | ------------------------------------------------------------ |
+| 名称   | 类型                 | 描述                                                     |
+| ---------- | ------------------------ | ------------------------ |
 | Scene      | String                                       | 返回模型识别出的场景结果，如广告、色情、有害内容等场景。     |
 | Suggestion | String                                       | 返回针对当前恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。 返回值：<ul style="margin:0"><li/>Block：建议屏蔽<li/>Review ：建议人工复审<li/>Pass：建议通过</ul> |
-| Label      | String                                       | 返回检测结果所对应的恶意标签。 返回值：<ul style="margin:0"><li/>Normal：正常<li/>Porn：色情<li/>Abuse：谩骂<li/>Ad：广告<li/>Custom：自定义违规；以及其他令人反感、不安全或不适宜的内容类型</ul> |
-| SubLabel   | String                                       | 子标签名称                                                   |
-| Score      | Integer                                      | 该标签模型命中的分值                                         |
+| label | String                                       | 对回调消息参数 type 返回类型值的补充文字描述，比如对返回值为**0**补充描述为 Normal、对返回值为**6**补充描述为 Abuse、对返回值为**8**补充描述为 Ad 等 |
+| SubLabel   | String | 子标签名称                                                   |
+| Score      | Integer | 该标签模型命中的分值                                         |
 | Details    | Array of [LabelDetailItem](#labeldetailitem) | 分类模型命中子标签明细结果                                   |
 
 #### LabelDetailItem
 
 分类模型命中子标签结果。
 
-| 名称  | 类型    | 描述                            |
-| ----- | ------- | ------------------------------- |
-| Id    | Integer | 序号                            |
-| Name  | String  | 子标签名称                      |
-| Score | Integer | 子标签分数，取值范围0分 - 100分 |
+| 名称 | 类型 | 描述                    |
+| -------- | -------- | --------------------------- |
+| Id       | Integer  | 序号                        |
+| Name     | String   | 子标签名称                  |
+| Score    | Integer  | 子标签分数，取值范围0分 - 100分|
 
 
 #### ObjectResult
 
 实体检测结果详情。
 
-| 名称       | 类型                                   | 描述                                                         |
-| ---------- | -------------------------------------- | ------------------------------------------------------------ |
+| 名称   | 类型              | 描述              |
+| ---------- | --------------------- | --------------------- |
 | Scene      | String                                 | 返回实体识别出的实体场景结果，如二维码、logo、图片 OCR 等场景。 |
 | Suggestion | String                                 | 返回针对当前恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。返回值：<ul style="margin:0"><li/>Block：建议屏蔽<li/>Review ：建议人工复审<li/>Pass：建议通过</ul> |
-| Label      | String                                 | 返回检测结果所对应的恶意标签，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。返回值：<ul style="margin:0"><li/>Normal：正常<li/>Porn：色情<li/>Abuse：谩骂<li/>Ad：广告<li/>Custom：自定义违规；以及其他令人反感、不安全或不适宜的内容类型</ul> |
-| SubLabel   | String                                 | 子标签名称                                                   |
-| Score      | Integer                                | 所属场景模型命中子标签的分值，取值范围0分 - 100分            |
-| Names      | Array of String                        | 实体名称列表                                                 |
-| Details    | Array of [ObjectDetail](#objectdetail) | 实体检测结果明细                                             |
+| label | String                                 | 对回调消息参数 type 返回类型值的补充文字描述，比如对返回值为**0**补充描述为 Normal、对返回值为**6**补充描述为 Abuse、对返回值为**8**补充描述为 Ad 等 |
+| SubLabel   | String | 子标签名称 |
+| Score      | Integer | 所属场景模型命中子标签的分值，取值范围0分 - 100分 |
+| Names      | Array of String       | 实体名称列表 |
+| Details    | Array of [ObjectDetail](#objectdetail) | 实体检测结果明细 |
 
 #### ObjectDetail
 
 实体检测结果明细，当检测场景为政治实体、涉政人物、广告台标、二维码和人脸属性时表示模型检测目标框的标签名称、标签值、标签分数以及检测框的位置信息。
 
-| 名称     | 类型                  | 描述                                                         |
-| -------- | --------------------- | ------------------------------------------------------------ |
-| Id       | Integer               | 序号                                                         |
-| Name     | String                | 标签名称                                                     |
-| Value    | String                | 标签值：<ul style="margin:0"><li/>当场景为 Ad 时，表示 URL 地址。例如 Name 为 QrCode 时，Value 取值为 `http//abc.com/aaa`<br><li/>当场景为  FaceAttribute 时，代表人脸属性信息。例如 Name 为 Age 时，Value 取值为 `18` </ul> |
-| Score    | Integer               | 分数，取值范围0分 - 100分                                    |
-| Location | [Location](#location) | 检测框坐标                                                   |
+| 名称 | 类型 | 描述 |
+| -------- | -------- | -------- |
+| Id       | Integer  | 序号  |
+| Name     | String   | 标签名称  |
+| Value    | String   | 标签值：<ul style="margin:0"><li/>当场景为 Ad 时，表示 URL 地址。例如 Name 为 QrCode 时，Value 取值为 `http//abc.com/aaa`<br><li/>当场景为  FaceAttribute 时，代表人脸属性信息。例如 Name 为 Age 时，Value 取值为 `18` </ul>|
+| Score    | Integer  | 分数，取值范围0分 - 100分 |
+| Location | [Location](#location) | 检测框坐标 |
 
 #### Location
 
 坐标。
 
-| 名称   | 类型  | 描述             |
-| ------ | ----- | ---------------- |
-| X      | Float | 左上角横坐标     |
-| Y      | Float | 左上角纵坐标     |
-| Width  | Float | 宽度             |
-| Height | Float | 高度             |
-| Rotate | Float | 检测框的旋转角度 |
+| 名称 | 类型 | 描述         |
+| -------- | -------- | ---------------- |
+| X        | Float    | 左上角横坐标     |
+| Y        | Float    | 左上角纵坐标     |
+| Width    | Float    | 宽度             |
+| Height   | Float    | 高度             |
+| Rotate   | Float    | 检测框的旋转角度 |
 
 #### OcrResult
 
 OCR 结果检测详情。
 
-| 名称       | 类型                                     | 描述                                                         |
-| ---------- | ---------------------------------------- | ------------------------------------------------------------ |
+| 名称   | 类型               | 描述                |
+| ---------- | ---------------------- | ---------------------- |
 | Scene      | String                                   | 表示识别场景，取值默认为 OCR（图片 OCR 识别）。              |
 | Suggestion | String                                   | 返回优先级最高的恶意标签对应的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。返回值：<ul style="margin:0"><li/>Block：建议屏蔽<li/>Review ：建议人工复审<li/>Pass：建议通过</ul> |
-| Label      | String                                   | 返回 OCR 检测结果所对应的优先级最高的恶意标签，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。返回值：<ul style="margin:0"><li/>Normal：正常<li/>Porn：色情<li/>Abuse：谩骂<li/>Ad：广告<li/>Custom：自定义违规；以及其他令人反感、不安全或不适宜的内容类型</ul> |
-| SubLabel   | String                                   | 子标签名称                                                   |
-| Score      | Integer                                  | 所属场景模型命中子标签的分值，取值范围0分 - 100分            |
-| Text       | String                                   | 文本内容                                                     |
-| Details    | Array of [OcrTextDetail](#ocrtextdetail) | OCR 结果详情                                                 |
+| label | String                                   | 对回调消息参数 type 返回类型值的补充文字描述，比如对返回值为**0**补充描述为 Normal、对返回值为**6**补充描述为 Abuse、对返回值为**8**补充描述为 Ad 等 |
+| SubLabel   | String | 子标签名称 |
+| Score      | Integer | 所属场景模型命中子标签的分值，取值范围0分 - 100分 |
+| Text       | String | 文本内容 |
+| Details    | Array of [OcrTextDetail](#ocrtextdetail) | OCR 结果详情 |
 
 
 #### OcrTextDetail
-
 OCR 文本结果详情。
 
-| 名称     | 类型                  | 描述                                                         |
-| -------- | --------------------- | ------------------------------------------------------------ |
+| 名称 | 类型        | 描述                                                     |
+| -------- | --------------- | --------------- |
 | Text     | String                | 返回 OCR 识别出的文本内容（OCR 文本识别上限在**5000字节内**） 。 |
-| Label    | String                | 返回检测结果所对应的恶意标签。返回值：<ul style="margin:0"><li/>Normal：正常<li/>Porn：色情<li/>Abuse：谩骂<li/>Ad：广告<li/>Custom：自定义违规；以及其他令人反感、不安全或不适宜的内容类型</ul> |
-| Keywords | Array of String       | 该标签下命中的关键词                                         |
-| Score    | Integer               | 该标签模型命中的分值，取值范围0分 - 100分                    |
-| Location | [Location](#location) | OCR 文本坐标位置                                             |
+| label | String                | 对回调消息参数 type 返回类型值的补充文字描述，比如对返回值为**0**补充描述为 Normal、对返回值为**6**补充描述为 Abuse、对返回值为**8**补充描述为 Ad 等 |
+| Keywords | Array of String | 该标签下命中的关键词 |
+| Score    | Integer         | 该标签模型命中的分值，取值范围0分 - 100分 |
+| Location | [Location](#location) | OCR 文本坐标位置 |
 
 
 #### LibResult
-
 黑白库结果明细。
 
-| 名称       | 类型                             | 描述                                                         |
-| ---------- | -------------------------------- | ------------------------------------------------------------ |
+| 名称   | 类型           | 描述                                                     |
+| ---------- | ------------------ | ------------------------------------------------------------ |
 | Scene      | String                           | 表示模型的场景识别结果，默认取值为 Similar。                 |
 | Suggestion | String                           | 返回后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。 返回值：<ul style="margin:0"><li/>Block：建议屏蔽<li/>Review ：建议人工复审<li/>Pass：建议通过</ul> |
-| Label      | String                           | 返回检测结果所对应的恶意标签。返回值：<ul style="margin:0"><li/>Normal：正常<li/>Porn：色情<li/>Abuse：谩骂<li/>Ad：广告<li/>Custom：自定义违规；以及其他令人反感、不安全或不适宜的内容类型</ul> |
-| SubLabel   | String                           | 子标签名称                                                   |
-| Score      | Integer                          | 图片检索模型识别分值，取值范围0分 - 100分                    |
-| Details    | Array of [LibDetail](#libdetail) | 黑白库结果明细                                               |
+| label | String                           | 对回调消息参数 type 返回类型值的补充文字描述，比如对返回值为**0**补充描述为 Normal、对返回值为**6**补充描述为 Abuse、对返回值为**8**补充描述为 Ad 等 |
+| SubLabel   | String             | 子标签名称 |
+| Score      | Integer            | 图片检索模型识别分值，取值范围0分 - 100分 |
+| Details    | Array of [LibDetail](#libdetail) | 黑白库结果明细 |
 
 #### LibDetail
-
 自定义库/黑白库明细。
 
-| 名称    | 类型    | 描述                                                         |
-| ------- | ------- | ------------------------------------------------------------ |
-| Id      | Integer | 序号                                                         |
-| ImageId | String  | 图片ID                                                       |
-| Label   | String  | 返回检测结果所对应的恶意标签。返回值：<ul style="margin:0"><li/>Normal：正常<li/>Porn：色情<li/>Abuse：谩骂<li/>Ad：广告<li/>Custom：自定义违规；以及其他令人反感、不安全或不适宜的内容类型</ul> |
-| Tag     | String  | 自定义标签                                                   |
-| Score   | Integer | 模型识别分值，取值范围0分 - 100分                            |
+| 名称 | 类型 | 描述                                                     |
+| -------- | -------- | ------------------------------------------------------------ |
+| Id       | Integer  | 序号                                                         |
+| ImageId  | String   | 图片ID                                                       |
+| label | String  | 对回调消息参数 type 返回类型值的补充文字描述，比如对返回值为**0**补充描述为 Normal、对返回值为**6**补充描述为 Abuse、对返回值为**8**补充描述为 Ad 等 |
+| Tag      | String   | 自定义标签                                                   |
+| Score    | Integer  | 模型识别分值，取值范围0分 - 100分                               |
 
 
 
 ### 回调消息示例
-
 <dx-codeblock>
 ::: HTTPbody  json
 {

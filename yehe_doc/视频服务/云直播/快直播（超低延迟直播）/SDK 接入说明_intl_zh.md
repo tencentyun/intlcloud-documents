@@ -1,4 +1,5 @@
 快直播（LEB）是标准直播在超低延迟播放场景下的延伸，比传统直播协议延迟更低，为观众提供毫秒级的极致**直播观看**体验。
+在您使用快直播服务前，建议您提前阅读 [快直播服务费用](https://intl.cloud.tencent.com/document/product/267/39969)，清楚收费项目和价格，避免产生误解。
 
 > ! 由于快直播使用的是 WebRTC 协议的低延迟特性，默认不支持 B 帧且音频编解码方式为 opus 编解码。为了保证快直播流可播放，当推流时带 B 帧或音频编码非 opus 编码时，云直播后台会自动发起转码去B帧并转码为 opus 编码，从而产生 [标准转码费用](https://intl.cloud.tencent.com/document/product/267/39604)。
 
@@ -31,13 +32,13 @@ iOS、Android 上的应用可以通过集成移动直播 SDK 来实现 App 端�
     </td>
     <td rowspan="2">
       <div align="center">
-        <img  width="200"  src="https://main.qcloudimg.com/raw/6dd7c02dc2381d84225c2f2f286e7358.png"/>
+        <img  width="200"  src="https://sdk-liteav-1252463788.cos.ap-hongkong.myqcloud.com/doc/res/mlvb/picture/pull.gif"/>
       </div>
     </td>
   </tr>
   <tr>
       <td >iOS</td>
-    <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/12c7da97cc910eda673cb19b66fc7cb3.png" width="150"></td>
+    <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/6dd7c02dc2381d84225c2f2f286e7358.png" width="150"></td>
   </tr>
 </table>
 
@@ -51,7 +52,7 @@ iOS、Android 上的应用可以通过集成移动直播 SDK 来实现 App 端�
 
 - **Web 端直播推流**：基于浏览器通用的 WebRTC 标准进行设计和封装，通过引入代码片段就能实现在浏览器中进行直播推流，详情请参见 [WebRTC 推流](https://intl.cloud.tencent.com/document/product/267/41620)。
 > ! WebRTC 推流时音频编码方式为 opus 编码，若使用标准直播的播放协议（RTMP、FLV、HLS）进行播放时，为保证能正常观看，云直播后台会自动发起音频转码转为 aac 编码，从而会产生音频转码费用，详情请参见[音频转码费用说明](https://intl.cloud.tencent.com/document/product/267/39604#a_trans)。（若只使用快直播则不会发起音频转码）
-- **Web 端直播播放**：推荐您选用播放器 SDK 的 TCPlayerLite ，支持在手机浏览器和 PC 浏览器上播放**快直播 WebRTC 协议**直播流，相比传统的直播协议延迟更低，为观众提供毫秒级的极致直播观看体验。
+- **Web 端直播播放**：推荐您选用播放器 SDK 的 TCPlayerLite，支持在手机浏览器和 PC 浏览器上播放**快直播 WebRTC 协议**直播流，相比传统的直播协议延迟更低，为观众提供毫秒级的极致直播观看体验。
 > ! 在不支持 WebRTC 的浏览器环境，传入播放器的 WebRTC 地址会自动进行协议转换来更好的支持媒体播放，在移动端浏览器会默认转换为 HLS，PC 端浏览器默认转换为 FLV。
 
 ### Demo 体验
@@ -62,6 +63,7 @@ iOS、Android 上的应用可以通过集成移动直播 SDK 来实现 App 端�
 >- Web 端直播推流和拉流均使用标准 WebRTC 协议，Web 端推流时不包含 B帧 ，且音频编码为 OPUS 音频格式，所以不会产生音频转码及去 B 帧转码费用。
 >- WebRTC Live Demo 支持多清晰度功能，可在云直播控制台 **功能配置**>[**直播转码**](https://console.cloud.tencent.com/live/config/transcode) 配置高清-HD、标清-SD 的转码模板，将带有转码模板的 WebRTC 流地址填入 Demo 中对应的栏目后测试播放（如不需要测试此功能则只需要在 Demo 中填入一条 WebRTC 原始流即可）。
 >- 直播转码操作指引及转码计费内容，请参见文档 [直播转码](https://intl.cloud.tencent.com/document/product/267/31071)。
+
 
 [](id:obs)
 ## OBS WebRTC 协议推流接入
@@ -84,7 +86,8 @@ WebRTC 协议推流主要用于视频云的快直播（超低延迟直播）推�
 [](id:push)
 1. **生成 WebRTC 推流地址**。
 	1. 登录腾讯云直播控制台，在 **直播工具箱**>**[地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** 生成推流地址，具体操作请参见 [地址生成器](https://intl.cloud.tencent.com/document/product/267/31084)。
-	2. 把生成的 `rtmp` 前缀修改成 `webrtc`，具体使用说明请参见 [自主拼装直播 URL](https://intl.cloud.tencent.com/document/product/267/38393)。    
+	2. 把生成的 `rtmp` 前缀修改成 `webrtc`，具体使用说明请参见 [自主拼装直播 URL](https://intl.cloud.tencent.com/document/product/267/38393)。
+	![](https://qcloudimg.tencent-cloud.cn/raw/e4e8118922b8f4be309e33f740152006.png)    
 2. **配置 OBS 推流服务**。[](id:set_obs)
 	1. 打开 OBS，您可通过底部工具栏的 **控件**>**设置** 按钮进入设置界面。
 	2. 单击 **推流** 进入流设置页签，选择服务类型为 `Tenent webrtc`，服务器为 `Default`，串流密钥中输入之前生成的 [WebRTC 推流地址](#push)，并在后面拼接上 `&stopstream_api=https://webrtcpush.myqcloud.com/webrtc/v1/stopstream`。
@@ -92,6 +95,8 @@ WebRTC 协议推流主要用于视频云的快直播（超低延迟直播）推�
 ```
 webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx &stopstream_api=https://webrtcpush.myqcloud.com/webrtc/v1/stopstream 
 ```
+如下图：
+![](https://qcloudimg.tencent-cloud.cn/raw/8035e95d3f62e62dcb3c33db2e5560d6.png)     
 
 [](id:play)
 ### 快直播拉流播放
