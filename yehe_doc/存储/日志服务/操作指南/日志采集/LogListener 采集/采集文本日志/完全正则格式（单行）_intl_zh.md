@@ -50,7 +50,7 @@ upstream_response_time: 0.354
 1. 日志主题创建成功后，进入该日志主题管理页面。
 2. 选择【采集配置】页签，单击您需要采集的日志数据源格式。
 3. 在“机器组管理”页面，勾选需要与当前日志主题进行绑定的机器组，单击【下一步】。
-即可进入采集配置阶段，更多详情请参阅 [管理机器组](https://cloud.tencent.com/document/product/614/17412)。
+即可进入采集配置阶段，更多详情请参阅 [管理机器组](https://intl.cloud.tencent.com/document/product/614/17412)。
 
 
 ### 采集配置
