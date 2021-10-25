@@ -6,7 +6,7 @@ VODコンソールで、画像のカテゴリーを変更できます。ここ�
 
 1. VODコンソールにログインし、【メディア資産管理】>[【画像管理】](https://console.cloud.tencent.com/vod/pics)を選択して、デフォルトで「アップロード済み」画面に進みます。
 2. 対象とする画像ファイルにチェックを入れ、リスト情報の【画像カテゴリーの変更】をクリックし、プルダウンリストから，画像ファイルを割り付けるカテゴリーを選択し、【OK】をクリックして、修正を完了します。
-![](https://main.qcloudimg.com/raw/a567309928fc4f00a1251c0f45da04cd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4f64011276d870ede95f640c9d76db80.png)
 >?
 >- 画像カテゴリーとビデオカテゴリーは同一のカテゴリーセットを使用します。
 >- カテゴリー管理操作については、 [カテゴリー管理手順](https://intl.cloud.tencent.com/document/product/266/18874) をご参照ください。
