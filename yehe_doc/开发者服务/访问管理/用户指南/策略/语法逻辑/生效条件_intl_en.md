@@ -87,8 +87,6 @@ The following table lists condition operators, condition names, and examples. Fo
 | string_not_equal             | String is not equal to (case-sensitive)   | qcs:tag          | {"string_not_equal":{"qcs:tag/tag_name1":"tag_value1"}}      |
 | string_equal_ignore_case     | String is equal to (case-insensitive)   | qcs:tag          | {"string_equal_ignore_case":{"qcs:tag/tag_name1":"tag_value1"}} |
 | string_not_equal_ignore_case | String is not equal to (case-insensitive) | qcs:tag          | {"string_not_equal_ignore_case":{"qcs:tag/tag_name1":"tag_value1"}} |
-| string_like                  | String matches (case-sensitive)     | qcs:tag          | {"string_like":{"qcs:tag/tag_name1":"tag_value1"}}           |
-| string_not_like              | String does not match (case-sensitive)   | qcs:tag          | {"string_not_like":{"qcs:tag/tag_name1":"tag_value1"}}       |
 | binary_equal                 | String is equal to (case-sensitive)     | qcs:tag          | {"binary_equal":{"qcs:tag/tag_name1":"tag_value1"}}          |
 | date_not_equal               | Time is not equal to                 | qcs:current_time | {"date_not_equal":{"qcs:current_time":"2016-06-01T00:01:00Z"}} |
 | date_greater_than            | Time is greater than                   | qcs:current_time | {" date_greater_than ":{"qcs:current_time":"2016-06-01T00:01:00Z"}} |
