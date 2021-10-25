@@ -93,7 +93,7 @@ Common error messages, causes and solutions are as follows:
 </tr>
 <tr>
 <td align="left">SearchTimeout</td>
-<td align="left">The query is timed out</td>
+<td align="left">The query is timed out</td></tr>
 <td align="left">Reduce the scope of data query and SQL complexity as appropriate, or try again later.</td>
 </tr>
 <tr>
