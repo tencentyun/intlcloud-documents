@@ -6,7 +6,7 @@ StopLogging 用于关闭日志采集。
 
 |参数名称|必选|类型|描述|
 |---------|---------|---------|--------|
-|Name|是|String|CloudAudit 名称|
+|Name|是|String|CloudAudit 名称。|
 ## 响应参数
 响应参数为空。
 
@@ -14,8 +14,8 @@ StopLogging 用于关闭日志采集。
 ### 请求示例
 
 ```
-$config = array('SecretId'       => '你的secretId',
-                'SecretKey'      => '你的secretKey',
+$config = array('SecretId'       => '您的secretId',
+                'SecretKey'      => '您的secretKey',
                 'RequestMethod'  => 'GET',
                 'DefaultRegion'  => 'gz');
 $ca = QcloudApi::load(QcloudApi::MODULE_CLOUDAUDIT, $config);

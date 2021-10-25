@@ -42,9 +42,9 @@ histogram(__TIMESTAMP__, interval)
 >- interval 指时间间隔，支持单位为 SECOND（秒）、MINUTE（分）、HOUR（小时）、DAY（天）、MONTH（月）、YEAR（年）。例如时间间隔5分钟，即 INTERVAL 5 MINUTE。
 >- 兼容支持以下语法，其中 long 为毫秒时间戳，即 \_\_TIMESTAMP\_\_ 字段。
 >```
->histogram(long, interval)
+histogram(long, interval)
 >```
-```
+
 
 
 ### 示例
@@ -52,25 +52,4 @@ histogram(__TIMESTAMP__, interval)
 统计每5分钟访问次数 PV 值。
 ```
 * | select histogram(cast(__TIMESTAMP__ as timestamp),INTERVAL 5 MINUTE) AS dt, count(*) as PV group by dt order by dt limit 1000
-```
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```

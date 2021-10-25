@@ -1,5 +1,5 @@
 
-## Use Cases
+## Overview
 
 CLS allows you to embed the [CLS console](https://console.cloud.tencent.com/cls) into an external system so you can conduct log search and analysis without logging in to Tencent Cloud console. This feature offers benefits as follows:
 
@@ -19,23 +19,23 @@ See the figure below for an overview of this feature:
 <span id="step1"></span>
  - **Creating a CAM role using the console**:
 	1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview).
-	2. Click **Roles** in the left sidebar to enter the roles list page.
+	2. Click **Roles** on the left sidebar to go to the roles list page.
 	3. Select **Create Role** > **Tencent Cloud Account** to create a custom role.
 	4. Select **Current root account **, check **Allow the current role to access console**, and click **Next**.
 
-	>!If the option **Allow the current role to access console* is not available, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be whitelisted for this feature.
+	>!If the option **Allow the current role to access console* is not available, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for adding the role to the allowlist.
 	5. Set access policies for the role, e.g., the read-only policy `QcloudCLSReadOnlyAccess`, and click **Next**.
 
 	6. Enter the role name and click **Done**.
 
 <span id="step2"></span>
  - **Creating a CAM role using APIs**:
- For detailed directions, see [CreateRole](https://intl.cloud.tencent.com/document/product/598/33561). Note that you need to enter `1` as the value of `onsoleLogin` to allow the role to log in to the console.
+ For detailed directions, see [CreateRole](https://intl.cloud.tencent.com/document/product/598/33561). Note that you need to enter `1` as the value of ConsoleLogin to allow the role to log in to the console.
  Sample request:
 ```plaintext
 https://cam.tencentcloudapi.com/?Action=CreateRole&RoleName=CompanyOpsRole&ConsoleLogin=1&PolicyDocument={"version":"2.0","statement":[{"action":["cls:get*","cls:list*","cls:GetHistogram","cls:GetFastAnalysis","cls:GetChart","cls:ListChart","cls:ListDashboard","cls:GetDashboard","cls:searchLog","cls:downloadLog","cls:pullLogs"],"effect":"allow","principal":{"qcs":["qcs::cam::uin/100001234567:root"]}}]}
 ```
-2. Obtain the access key of current user. For more information, see [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228).
+2. Obtain the access key of the current user. For more information, see [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228).
 
 ## Directions
 
@@ -49,7 +49,7 @@ https://cam.tencentcloudapi.com/?Action=CreateRole&RoleName=CompanyOpsRole&Conso
 <table>
 <thead>
 <tr>
-<th align="left">Parameter Name</th>
+<th align="left">Parameter</th>
 <th align="left">Required</th>
 <th align="left">Type</th>
 <th align="left">Description</th>
@@ -125,7 +125,7 @@ echo $signStr;
      $secretId  = "AKI***";            //Temporary AK returned by STS
      $secretKey = "Gu5***PLE";         //Temporary SecretKey returned by STS
      $token     = "ADE***fds";         //Security Token returned by STS
-     $param["nonce"]     = 11886;      //rand();
+     $param["nonce"]     = 11886;      //rand(10000,100000000);
      $param["timestamp"] = 1465185768; //time();
      $param["secretId"]  = $secretId;
      $param["action"]    = "roleLogin";
@@ -147,7 +147,7 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 <table>
 <thead>
 <tr>
-<th align="left">Parameter Name</th>
+<th align="left">Parameter</th>
 <th align="left">Required</th>
 <th align="left">Type</th>
 <th align="left">Description</th>
@@ -157,7 +157,7 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 <td align="left">region</td>
 <td align="left">Yes</td>
 <td align="left">String</td>
-<td align="left">Region abbreviation, e.g. `ap-shanghai` for Shanghai region. For other available region abbreviations, see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a></td>
+<td align="left">Region abbreviation, e.g., ap-shanghai for Shanghai region. For other available region abbreviations, see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a></td>
 </tr>
 <tr>
 <td align="left">logset_id</td>
@@ -181,7 +181,7 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 <td align="left">query</td>
 <td align="left">No</td>
 <td align="left">String</td>
-<td align="left">Keyword search syntax. Reserved URL characters (if any) in keywords must be URL encoded.</td>
+<td align="left">Keyword search syntax. Reserved URL characters (if any) in keywords must be URL encoded</td>
 </tr>
 <tr>
 <td align="left">hideWidget</td>
@@ -193,56 +193,56 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 <td align="left">hideTopNav</td>
 <td align="left">No</td>
 <td align="left">Boolean</td>
-<td align="left">Indicates whether to hide the top navigation bar in Tencent Cloud console. `true`: Yes; `false`: No (default)</td>
+<td align="left">Indicates whether to hide the top navigation bar in the Tencent Cloud console. `true`: Yes; `false`: No (default)</td>
 </tr>
 <tr>
 <td align="left">hideLeftNav</td>
 <td align="left">No</td>
 <td align="left">Boolean</td>
-<td align="left">Indicates whether to hide the left sidebar in Tencent Cloud console. `true`: Yes; `false`: No (default)</td>
+<td align="left">Indicates whether to hide the left sidebar in the Tencent Cloud console. `true`: Yes; `false`: No (default)</td>
 </tr>
 <tr>
 <td align="left">hideHeader</td>
 <td align="left">No</td>
 <td align="left">Boolean</td>
-<td align="left">Indicates whether to hide the top navigation bar in CLS page (title and region options). `true`: Yes; `false`: No (default)</td>
+<td align="left">Indicates whether to hide the top navigation bar on the CLS page (title and region options). `true`: Yes; `false`: No (default)</td>
 </tr>
 <tr>
 <td align="left">hideTopTips</td>
 <td align="left">No</td>
 <td align="left">Boolean</td>
-<td align="left">Indicates whether to hide the tips in CLS page. `true`: Yes; `false`: No (default)</td>
+<td align="left">Indicates whether to hide the tips on the CLS page. `true`: Yes; `false`: No (default)</td>
 </tr>
 <tr>
 <td align="left">hideRegion</td>
 <td align="left">No</td>
 <td align="left">Boolean</td>
-<td align="left">Indicates whether to hide region options at the top of CLS page. `true`: Yes; `false`: No (default)</td>
+<td align="left">Indicates whether to hide region options at the top of the CLS page. `true`: Yes; `false`: No (default)</td>
 </tr>
 <tr>
 <td align="left">hideLogsetSelect</td>
 <td align="left">No</td>
 <td align="left">Boolean</td>
-<td align="left">Indicates whether to hide logset options in CLS page. `true`: Yes; `false`: No (default)</td>
+<td align="left">Indicates whether to hide logset options on the CLS page. `true`: Yes; `false`: No (default)</td>
 </tr>
 <tr>
 <td align="left">hideTopicSelect</td>
 <td align="left">No</td>
 <td align="left">Boolean</td>
-<td align="left">Indicates whether to hide log topic options in CLS page. `true`: Yes; `false`: No (default)</td>
+<td align="left">Indicates whether to hide log topic options on the CLS page. `true`: Yes; `false`: No (default)</td>
 </tr>
 </tbody>
 </table>
  2. Splice your login information and destination page URL into a login URL. <b>The parameter values should be URL-encoded.</b>
 ```plaintext
 https://cloud.tencent.com/login/roleAccessCallback
-?algorithm=<encryption algorithm for signing; currently only supports sha1 (used by default) and sha256
+?algorithm=<encryption algorithm for signing; currently only supports SHA1 (used by default) and SHA256
 &secretId=<secretId for signing>
 &token=<Temporary key token>
 &nonce=<nonce for signing>
-&timestamp=<Timestamp for signing>
-&signature=<Signature string>
-&s_url=<Destination URL after login>
+&timestamp=<timestamp for signing>
+&signature=<signature string>
+&s_url=<destination URL after login>
 ```
 7. Use the final URL to access the embedded CLS page of the Tencent Cloud console. The sample below is a URL to the CLS search analysis page:
 ```plaintext

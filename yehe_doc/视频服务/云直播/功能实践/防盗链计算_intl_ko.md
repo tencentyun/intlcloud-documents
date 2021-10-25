@@ -42,4 +42,4 @@ rtmp://livepush.tcloud.com/live/test?txSecret=f85a2ab363fe4deaffef9754d79da6fe&t
 
 
 ## 푸시 스트림 예시 코드
-[CSS 콘솔]>[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 이벤트 설정의 푸시 스트림 도메인을 선택한 후, [관리]>[푸시 스트림 설정] 페이지 아래 쪽에 [푸시 스트림 주소 예시 코드](두 버전: PHP 및 Java)가 있습니다. 링크 도용 방지 주소를 생성하는 방법을 보여줍니다.
+**CSS 콘솔**>[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 이벤트 설정의 푸시 스트림 도메인을 선택한 후, **관리 >푸시 스트림 설정** 페이지 아래 쪽에 **푸시 스트림 주소 예시 코드**(두 버전: PHP 및 Java)가 있습니다. 링크 도용 방지 주소를 생성하는 방법을 보여줍니다. 자세한 방법은 [푸시 스트림 설정](https://intl.cloud.tencent.com/document/product/267/31059#sample-code-of-push-url)을 참조하십시오.

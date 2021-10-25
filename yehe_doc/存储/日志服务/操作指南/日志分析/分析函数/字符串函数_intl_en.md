@@ -99,17 +99,17 @@ Analysis statement sample:
 ```
 * | SELECT strpos(http_protocol, 'H')
 ```
-<img src="https://main.qcloudimg.com/raw/041c63d8621e1c3db743bac88dede070.png" style="zoom:50%;" />
+
 - Split the value of the **http_protocol** field into 2 substrings using a slash (/) and return the collection of the substrings:
 ```
 * | SELECT split(http_protocol, '/', 2)
 ```
-<img src="https://main.qcloudimg.com/raw/bb5365da7df4b4dc4e66bfda68980529.png" style="zoom:50%;" />
+
 - Replace 'Oct' in the value of the **time_local** field with '10':
 ```
 * | select replace(time_local, 'Oct', '10')
 ```
-<img src="https://main.qcloudimg.com/raw/06193096955fa7fb72e818aa36567880.png" style="zoom:50%;" />
+
 
 
 
