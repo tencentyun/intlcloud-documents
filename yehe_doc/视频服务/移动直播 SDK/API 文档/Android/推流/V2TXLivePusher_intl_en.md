@@ -4,17 +4,17 @@ Tencent Cloud’s live stream publisher
 
 __Features__
 
-`V2TXLivePusher` encodes local audio and video and publishes the encoded data to a specified URL. It supports any publishing server.
-`V2TXLivePusher` has the following capabilities:
+`V2TXLivePusher` encodes local audio/video and publishes the encoded data to a specified URL. It supports any publishing server.
+It has the following capabilities:
 - Custom video capturing. You can customize audio and video data sources based on your project requirements.
 - Retouching, filters, and stickers. `V2TXLivePusher` integrates multiple retouching algorithms (natural & smooth) and color space filters (custom filters are supported).
 - QoS control technology. `V2TXLivePusher` can adapt automatically to different upstream network conditions by controlling audio/video traffic in real time based on the network conditions of hosts.
-- Facial feature adjustment and animated widgets. Powered by YouTu’s AI face recognition technology, `V2TXLivePusher` supports animated widgets and fine-tuning of facial features, such as eye enlarging, face slimming, and nose reshaping. You need to purchase a **YouTu license** to use these live streaming effects.
+- Facial feature adjustment and animated widgets. Powered by YouTu’s AI facial recognition technology, `V2TXLivePusher` supports animated widgets and fine-tuning of facial features, such as eye enlarging, face slimming, and nose reshaping. You need to purchase a **YouTu license** to use these live streaming effects.
 
 ## Basic SDK APIs
 ### setObserver
 
-This API is used to set the callbacks of the publisher. After the setting, you can listen for callbacks of [V2TXLivePusher](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html), including publisher status, volume, statistics, warning and error messages, etc.
+This API is used to set the callbacks of the publisher. After the setting, you can listen for the callback events of [V2TXLivePusher](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html), including publisher status, volume, statistics, alerts, and error messages.
 
 ```
 public abstract void setObserver(V2TXLivePusherObserver observer);
@@ -22,7 +22,7 @@ public abstract void setObserver(V2TXLivePusherObserver observer);
 
 #### Parameters 
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | observer | V2TXLivePusherObserver | Target object for the publisher’s callbacks. For more information, please see [V2TXLivePusherObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html). |
 
@@ -31,14 +31,14 @@ public abstract void setObserver(V2TXLivePusherObserver observer);
 ## Basic Publishing APIs
 ### setRenderView
 
-This API is used to set the view for local camera preview. Images collected by the local camera are displayed on the view passed in after retouching, facial feature adjustments, and filter application.
+This API is used to set the view for local camera preview. Images captured by the local camera are displayed on the view passed in after retouching, facial feature adjustments, and filter application.
 ```
 public abstract int setRenderView(TXCloudVideoView view);
 ```
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | view | TXCloudVideoView | View for local camera preview |
 
@@ -51,14 +51,14 @@ V2TXLiveCode:
 
 ### setRenderView
 
-This API is used to set the view for local camera preview. Images collected by the local camera are displayed on the view passed in after retouching, facial feature adjustments, and filter application.
+This API is used to set the view for local camera preview. Images captured by the local camera are displayed on the view passed in after retouching, facial feature adjustments, and filter application.
 ```
 public abstract int setRenderView(SurfaceView view);
 ```
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | view | SurfaceView | View for local camera preview |
 
@@ -71,14 +71,14 @@ V2TXLiveCode:
 
 ### setRenderView
 
-This API is used to set the view for local camera preview. Images collected by the local camera are displayed on the view passed in after retouching, facial feature adjustments, and filter application.
+This API is used to set the view for local camera preview. Images captured by the local camera are displayed on the view passed in after retouching, facial feature adjustments, and filter application.
 ```
 public abstract int setRenderView(TextureView view);
 ```
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | view | TextureView | View for local camera preview |
 
@@ -98,15 +98,15 @@ public abstract int startPush(String url);
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | url |  String | URL to which data is published. Any publishing server is supported. |
 
 #### Response
 
 V2TXLiveCode:
-- `V2TXLIVE_OK`: successful
-- `V2TXLIVE_ERROR_INVALID_PARAMETER`: failed because the URL is invalid.
+`V2TXLIVE_OK`: successful
+- `V2TXLIVE_ERROR_INVALID_PARAMETER`: operation failed because the URL is invalid.
 - `V2TXLIVE_ERROR_REFUSED`: RTC does not support using the same stream ID for publishing and playback on the same device.
 
 ***
@@ -134,74 +134,22 @@ public abstract int isPushing();
 
 #### Response
 
-Whether streams are being published
+Whether streams are being played
 - `1`: yes
 - `0`: no
 
-### startScreenCapture
-This API is used to start screen recording.
-```
-public abstract int startScreenCapture();
-```
-#### Response
-
-V2TXLiveCode:
-`V2TXLIVE_OK`: successful
-
-***
-
-### stopScreenCapture
-This API is used to stop screen recording.
-```
-public abstract int stopScreenCapture();
-```
-#### Response
-
-V2TXLiveCode:
-`V2TXLIVE_OK`: successful
-
-***
 
 ## Video APIs
 ### setVideoQuality
-This API is used to set the resolution and aspect ratio mode (portrait/landscape) of published video.
+// Set video encoding parameters for publishing
 ```
-public abstract int setVideoQuality(V2TXLiveVideoResolution resolution, V2TXLiveVideoResolutionMode resolutionMode);
+public abstract int setVideoQuality(V2TXLiveVideoEncoderParam param);
 ```
 #### Parameters
 
-| Parameter | Type | Description |
-|-----|-----|-----|
-| resolution | [V2TXLiveVideoResolution](#V2TXLiveVideoResolution) | Video resolution |
-| resolutionMode | [V2TXLiveVideoResolutionMode](#V2TXLiveVideoResolutionMode) | Orientation (portrait/landscape) |
-
-[](id:V2TXLiveVideoResolution)
-
-#### `V2TXLiveVideoResolution` enumerated values
-
-| Value | Description |
-|---------|---------|
-| V2TXLiveVideoResolution160x160 | Resolution: 160 x 160; bitrate: 100-150 Kbps; frame rate: 15 FPS |
-| V2TXLiveVideoResolution270x270 | Resolution: 270 x 270; bitrate: 200-300 Kbps; frame rate: 15 FPS |
-| V2TXLiveVideoResolution480x480 | Resolution: 480 x 480; bitrate: 350-525 Kbps; frame rate: 15 FPS |
-| V2TXLiveVideoResolution320x240 | Resolution: 320 x 240; bitrate: 250-375 Kbps; frame rate: 15 FPS|
-| V2TXLiveVideoResolution480x360 | Resolution: 480 x 360; bitrate: 400-600 Kbps; frame rate: 15 FPS |
-| V2TXLiveVideoResolution640x480 | Resolution: 640 x 480; bitrate: 600-900 Kbps; frame rate: 15 FPS |
-| V2TXLiveVideoResolution320x180 | Resolution: 320 x 180: bitrate: 250-400 Kbps; frame rate: 15 FPS |
-| V2TXLiveVideoResolution480x270 | Resolution: 480 x 270; bitrate: 350-550 Kbps; frame rate: 15 FPS |
-| V2TXLiveVideoResolution640x360 | Resolution: 640 x 360; bitrate: 500-900 Kbps; frame rate: 15 FPS |
-| V2TXLiveVideoResolution960x540 | Resolution: 960 x 540; bitrate: 800-1500 Kbps; frame rate: 15 FPS |
-| V2TXLiveVideoResolution1280x720 | Resolution: 1280 x 720; bitrate: 1000-1800 Kbps; frame rate: 15 FPS |
-| V2TXLiveVideoResolution1920x1080 | Resolution: 1920 x 1080; bitrate: 2500-3000 Kbps; frame rate: 15 FPS |
-
-[](id:V2TXLiveVideoResolutionMode)
-
-#### `V2TXLiveVideoResolutionMode` enumerated values
-
-| Value | Description |
-|---------|---------|
-| V2TXLiveVideoResolutionModeLandscape | Resolution in the landscape mode: V2TXLiveVideoResolution640_360 + V2TXLiveVideoResolutionModeLandscape = 640 x 360 |
-| V2TXLiveVideoResolutionModePortrait | Resolution in the portrait mode: V2TXLiveVideoResolution640_360 + V2TXLiveVideoResolutionModePortrait = 360 x 640 |
+| Parameter        | Type    | Description                                                                                                      |
+| ---- | ---- | ---- |
+| param | [V2TXLiveVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLiveDef__android.html#classcom_1_1tencent_1_1live2_1_1V2TXLiveDef_1_1V2TXLiveVideoEncoderParam) | Video encoding parameters |
 
 ***
 
@@ -214,7 +162,7 @@ public abstract int setRenderRotation(V2TXLiveRotation rotation);
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | rotation | [V2TXLiveRotation](#V2TXLiveRotation) | Degrees by which the image is rotated. Default value: `V2TXLiveRotation0` |
 
@@ -243,7 +191,7 @@ public abstract int setRenderMirror(V2TXLiveMirrorType mirrorType);
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | mirrorType | [V2TXLiveMirrorType](#V2TXLiveMirrorType) | Mirror mode of the camera. Default value: `V2TXLiveMirrorTypeAuto` |
 
@@ -267,6 +215,9 @@ V2TXLiveCode:
 ### startCamera
 
 This API is used to turn the local camera on.
+
+>? Among `startVirtualCamera`, `startCamera`, and `startScreenCapture`, only one can be used to publish data under the same pusher instance. If, for example, `startCamera` is called first and then `startVirtualCamera`, the SDK will pause the publishing of camera data and start image publishing.
+
 ```
 public abstract int startCamera(boolean frontCamera);
 ```
@@ -292,6 +243,64 @@ V2TXLiveCode:
 `V2TXLIVE_OK`: successful
 
 ***
+### startVirtualCamera
+
+This API is used to start image publishing.
+
+>? Among `startVirtualCamera`, `startCamera`, and `startScreenCapture`, only one can be used to publish data under the same pusher instance. If, for example, `startCamera` is called first and then `startVirtualCamera`, the SDK will pause the publishing of camera data and start image publishing.
+
+```
+public abstract int startVirtualCamera(Bitmap image);
+```
+
+#### Response
+
+V2TXLiveCode:
+`V2TXLIVE_OK`: successful
+
+***
+
+### stopVirtualCamera
+
+This API is used to stop image publishing.
+
+```
+public abstract int stopVirtualCamera();
+```
+
+#### Response
+
+V2TXLiveCode:
+`V2TXLIVE_OK`: successful
+
+***
+
+### startScreenCapture
+This API is used to start screen recording.
+
+>? Among `startVirtualCamera`, `startCamera`, and `startScreenCapture`, only one can be used to publish data under the same pusher instance. If, for example, `startCamera` is called first and then `startVirtualCamera`, the SDK will pause the publishing of camera data and start image publishing.
+
+```
+public abstract int startScreenCapture();
+```
+#### Response
+
+V2TXLiveCode:
+`V2TXLIVE_OK`: successful
+
+***
+
+### stopScreenCapture
+This API is used to stop screen recording.
+```
+public abstract int stopScreenCapture();
+```
+#### Response
+
+V2TXLiveCode:
+`V2TXLIVE_OK`: successful
+
+***
 
 ### snapshot
 
@@ -306,24 +315,25 @@ public abstract int snapshot();
 #### Response
 
 V2TXLiveCode:
-- `V2TXLIVE_OK`: successful
-- `V2TXLIVE_ERROR_REFUSED`: failed to take a screenshot because publishing has stopped
+`V2TXLIVE_OK`: successful
+- `V2TXLIVE_ERROR_REFUSED`: failed to take a screenshot because publishing has stopped.
 
 ***
 
+
 ### setWatermark
-This API is used to set a watermark for the publisher. Watermarks are disabled by default.
+This API is used to set a watermark for the publisher. Watermarking is disabled by default.
 ```
 public abstract int setWatermark(Bitmap image, float x, float y, float scale);
 ```
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | image | Bitmap | Watermark image. If this parameter is `null`, it means watermarks are disabled. |
 | x | float | Horizontal coordinate of the watermark |
 | y | float | Vertical coordinate of the watermark |
-| scale | float | The ratio by which the watermark image is resized |
+| scale | float | Scale ratio of the watermark image |
 
 ***
 
@@ -334,7 +344,7 @@ public abstract int setEncoderMirror(boolean mirror);
 ```
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | mirror | Boolean | Whether to mirror encoded images. Default value: `false` |
 
@@ -349,7 +359,7 @@ public abstract int enableCustomVideoCapture(boolean enable);
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | enable | Boolean | Whether to enable custom video capturing. Default value: `false`. |
 
@@ -362,15 +372,15 @@ public abstract int sendCustomVideoFrame(V2TXLiveVideoFrame videoFrame);
 ```
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
-| videoFrame | V2TXLiveVideoFrame | Video frames sent to the SDK |
+| videoFrame | V2TXLiveVideoFrame | Video frame sent to the SDK |
 
 
 #### Response
 V2TXLiveCode:
-- `V2TXLIVE_OK`: successful
-- `TXLIVE_ERROR_INVALID_PARAMETER`: failed because the video data is invalid.
+`V2TXLIVE_OK`: successful
+- `V2TXLIVE_ERROR_INVALID_PARAMETER`: operation failed because the video data is invalid.
 - `V2TXLIVE_ERROR_REFUSED`: failed. You must call `enableCustomVideoCapture` to enable custom video capturing first.
 
 ### enableCustomVideoProcess
@@ -380,7 +390,7 @@ public abstract int enableCustomVideoProcess(boolean enable, V2TXLivePixelFormat
 ```
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | enable | Boolean | Whether to enable custom video processing. Default value: `false` |
 | pixelFormat | [V2TXLivePixelFormat](#V2TXLivePixelFormat) | Pixel format of video frames |
@@ -407,10 +417,13 @@ public abstract int enableCustomVideoProcess(boolean enable, V2TXLivePixelFormat
 
 ## Beauty Filter APIs
 ### getBeautyManager
-This API is used to get the beauty filter management object [TXBeautyManager](https://intl.cloud.tencent.com/zh/document/product/1071/38569).
+This API is used to get the beauty filter management object [TXBeautyManager](https://intl.cloud.tencent.com/document/product/1071/41677).
 You can do the following using `TXBeautyManager`:
-
-Set the beauty filter style and apply effects including skin brightening, rosy skin, eye enlarging, face slimming, chin slimming, chin lengthening/shortening, face shortening, nose narrowing, eye brightening, teeth whitening, eye bag removal, wrinkle removal, and smile line removal
+- Set the beauty filter style and apply effects including skin brightening, rosy skin, eye enlarging, face slimming, chin slimming, chin lengthening/shortening, face shortening, nose narrowing, eye brightening, teeth whitening, eye bag removal, wrinkle removal, and smile line removal.
+- Adjust the hairline, eye spacing, eye corners, lip shape, nose wings, nose position, lip thickness, and face shape.
+- Apply animated effects such as face widgets (materials).
+- Add makeup effects.
+- Recognize gestures.
 
 ```
 public TXBeautyManager getBeautyManager()
@@ -453,7 +466,7 @@ public abstract int setAudioQuality(V2TXLiveAudioQuality quality);
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | quality | V2TXLiveAudioQuality | Audio quality |
 
@@ -467,23 +480,24 @@ public abstract int setAudioQuality(V2TXLiveAudioQuality quality);
 #### Response
 
 V2TXLiveCode:
-- `V2TXLIVE_OK`: successful
+`V2TXLIVE_OK`: successful
 - `V2TXLIVE_ERROR_REFUSED`: you cannot change audio quality settings when streams are being published.
 ***
 
 ### enableVolumeEvaluation
 
 This API is used to enable the volume reminder for audio capturing.
->? After enabling the volume reminder, you can get the SDK’s volume evaluation through the `V2TXLivePusherObserver#onMicrophoneVolumeUpdate(int)` callback.
+>? After enabling the volume reminder, you can get the volume measured by the SDK in the `V2TXLivePusherObserver#onMicrophoneVolumeUpdate(int)` callback.
+
 ```
 public abstract int enableVolumeEvaluation(int intervalMs);
 ```
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
-| intervalMs | int | Interval (ms) for triggering the `onMicrophoneVolumeUpdate` callback. The minimum interval allowed is 100 ms. If the value is `0` (default) or smaller, the callback is disabled. `300` is recommended.
+| intervalMs | int | Interval (ms) for volume callbacks. The minimum interval allowed is 100 ms. If the value is `0` (default) or smaller, the callback is disabled. `300` is recommended.
 
 #### Response
 
@@ -498,10 +512,10 @@ V2TXLiveCode:
 This API is used to get the audio effect management object [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html).
 You can do the following using `TXAudioEffectManager`:
 
-- Set the volume of audio captured by the mic
-- Set reverb and voice changing effects
-- Enable in-ear monitoring and set its volume
-- Add background music and specify how to play it
+- Set the volume of audio captured by the mic.
+- Set reverb and voice changing effects.
+- Enable in-ear monitoring and set its volume.
+- Add background music and specify how to play it.
 
 ```
 public TXAudioEffectManager getAudioEffectManager()
@@ -515,10 +529,10 @@ public TXAudioEffectManager getAudioEffectManager()
 This API is used to get the device management object [TXDeviceManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__android.html).
 You can do the following using `TXDeviceManager`:
 
-- Switch between the front and rear cameras
-- Enable autofocus
-- Set camera zoom level
-- Enable/Disable flashlight
+- Switch between the front and rear cameras.
+- Enable autofocus.
+- Set camera zoom level.
+- Enable/Disable flashlight.
 
 ```
 public abstract TXDeviceManager getDeviceManager();
@@ -535,7 +549,7 @@ public abstract int setProperty(String key, Object value);
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | key | String | Key of the advanced API to call |
 | value | Object | Parameters required by the advanced API |
@@ -543,8 +557,8 @@ public abstract int setProperty(String key, Object value);
 #### Response
 
 V2TXLiveCode:
-- `V2TXLIVE_OK`: successful
-- `V2TXLIVE_ERROR_INVALID_PARAMETER`: failed because `key` is empty.
+`V2TXLIVE_OK`: successful
+- `V2TXLIVE_ERROR_INVALID_PARAMETER`: operation failed because `key` is empty.
 
 ***
 
@@ -555,32 +569,32 @@ public abstract int setMixTranscodingConfig(V2TXLiveTranscodingConfig config);
 ```
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | config | [V2TXLiveTranscodingConfig](#V2TXLiveTranscodingConfig) | On-Cloud MixTranscoding configuration |
 
 [](id:V2TXLiveTranscodingConfig)
 
-  
+#### V2TXLiveTranscodingConfig 
 
- 
+| Value | Description |
 |---------|---------|
- 
- 
- 
- 
+| V2TXLiveBufferTypeUnknown | Unknown |
+| V2TXLiveBufferTypeByteBuffer| `DirectBuffer`, which carries buffers in the format of I420 and others and is used at the native layer. |
+|  V2TXLiveBufferTypeByteArray| `byte[]`, which carries buffers in the format of I420 and others and is used at the Java layer. |
+|  V2TXLiveBufferTypeTexture| Texture ID, which allows direct operation. It delivers the best performance and has the smallest impact on video quality. |
 
 ***
 
 ### showDebugView
 
-This API is used to display the dashboard.
+This API is used to set whether to display the dashboard.
 ```
 public abstract void showDebugView(boolean isShow);
 ```
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | isShow | boolean | Whether to display the dashboard. Default value: `false` |
