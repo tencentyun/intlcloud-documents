@@ -75,7 +75,7 @@ Return the interval value in seconds between '2020-03-01 00:00:00' and '2020-03-
 ```
 * ｜ SELECT date_diff('second', TIMESTAMP '2020-03-01 00:00:00', TIMESTAMP '2020-03-02 00:00:00')
 ```
-![image-20210715010326425](https://main.qcloudimg.com/raw/30aa668d55d1689a15840f8a14ebae43.png)
+
 
 
 
