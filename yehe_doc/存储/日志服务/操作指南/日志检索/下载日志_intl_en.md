@@ -25,10 +25,12 @@ You can select **Recent Time** or **Relative Time** or customize the time range.
 	<li>Log sorting: logs can be sorted in "ascending" or "descending" (default) order by time.</li>
 	<li>Log quantity: "All logs" are exported by default. You can also select a "custom log quantity".</li>
 </ul>
+
 >? 
 > - For the CSV format, only fields with configured indexes can be exported, and the downloaded logs may be empty.
 > - For the JSON format, all fields can be exported, regardless of index configuration.
 > 
+
 8. Click **Export** to switch to the **Export Logs** page.
 
 9. After the **File Name/Task ID** status changes to **File generated successfully**, click **Download** to export the logs.
