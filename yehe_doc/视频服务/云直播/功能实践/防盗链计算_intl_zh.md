@@ -42,4 +42,4 @@ rtmp://livepush.tcloud.com/live/test?txSecret=f85a2ab363fe4deaffef9754d79da6fe&t
 
 
 ## 推流示例代码
-【云直播控制台】>[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，选中事先配置的推流域名，【管理】>【推流配置】页面下半部分有【推流地址示例代码】（PHP 和 Java 两个版本）演示如何生成防盗链地址。
+**云直播控制台**>[**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，选中事先配置的推流域名,**管理>推流配置** 页面下半部分有 **推流地址示例代码**（PHP 和 Java 两个版本）演示如何生成防盗链地址。详情可参见 [推流配置](https://intl.cloud.tencent.com/document/product/267/31059#sample-code-of-push-url)。
