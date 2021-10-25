@@ -8,7 +8,7 @@ This document describes how to upload images through the VOD Console, including 
 
 
 1. Log in to the VOD Console and select **Media Assets** > **[Image Management](https://console.cloud.tencent.com/vod/pics)** to enter the "Uploaded" page by default. Click **Upload Image** to enter the image upload page.
-![](https://main.qcloudimg.com/raw/5aaa381ddabb4fc177a341af85b00104.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/082b64eabda8615e87ef4686ce2607cb.png)
 2. Select **Local Upload** to upload a local file to the console. Click **Select Image** to select a local image file or drag and drop the file into the upload list zone.
 >?
 >- Batch upload is supported. You can upload up to 200 images at a time, and all the selected images will be displayed in the upload list.

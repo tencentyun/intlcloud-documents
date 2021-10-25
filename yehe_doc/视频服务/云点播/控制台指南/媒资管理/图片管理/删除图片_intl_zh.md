@@ -7,4 +7,4 @@
 
 1. 登录云点播控制台，选择【媒资管理】>[【图片管理】](https://console.cloud.tencent.com/vod/pics)，默认进入“已上传”页面。
 2. 勾选目标图片文件后，单击列表上方的【批量删除】，在“删除图片”对话框中单击【确定】，即可删除您勾选的所有图片。
-![](https://main.qcloudimg.com/raw/99b7dee138bb3fffd1021300fcbb32f6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9539a9e509aeacc56bcfc4f28f48b689.png)
