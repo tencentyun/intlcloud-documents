@@ -54,21 +54,4 @@ Count the PV value every 5 minutes:
 ```
 * | select histogram(cast(__TIMESTAMP__ as timestamp),INTERVAL 5 MINUTE) AS dt, count(*) as PV group by dt order by dt limit 1000
 ```
-  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
