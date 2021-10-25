@@ -7,4 +7,4 @@ VODコンソールで画像の削除操作が行えます。ここでは、画�
 
 1. VODコンソールにログインし、【メディア資産管理】>[【画像管理】](https://console.cloud.tencent.com/vod/pics)を選択して、デフォルトで「アップロード済み」画面に進みます。
 2. 対象の画像ファイルにチェックを入れた後、リスト上方にある【一括削除】をクリックして、「画像の削除」ダイヤログボックスで【OK】をクリックすれば、チェックを入れたすべての画像が削除できます。
-![](https://main.qcloudimg.com/raw/99b7dee138bb3fffd1021300fcbb32f6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9539a9e509aeacc56bcfc4f28f48b689.png)
