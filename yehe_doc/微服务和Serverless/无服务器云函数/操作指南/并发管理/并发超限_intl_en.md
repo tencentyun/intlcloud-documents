@@ -5,7 +5,7 @@ Concurrency overrun (ResourceLimitReached) refers to a situation where the numbe
 ### Async invocation
 
 Types of async invocation include async invocation by [TencentCloud API trigger](https://intl.cloud.tencent.com/document/product/583/18198), [COS trigger](https://intl.cloud.tencent.com/document/product/583/9707), [scheduled trigger](https://intl.cloud.tencent.com/document/product/583/9708), [CMQ topic trigger](https://intl.cloud.tencent.com/document/product/583/11517), [CLS trigger](https://intl.cloud.tencent.com/document/product/583/38845), [MPS trigger](https://intl.cloud.tencent.com/document/product/583/39163), etc. For specific trigger invocation types, please see the relevant trigger documentation.
-When concurrency overrun occurs in an async invocation, the function will automatically retry. For more information, please see [Error Types and Retry Policies](https://intl.cloud.tencent.com/document/product/583/34383).
+When concurrency overrun occurs in an async invocation, the function will automatically retry. For more information, please see [Error Types and Retry Policies](https://intl.cloud.tencent.com/document/product/583/39851).
 
 ### Sync invocation
 
@@ -24,7 +24,7 @@ You can view the number of limited times and specific logs of the function in th
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Function Service** on the left sidebar.
 2. On the **Function Service** page, select the name of the function you want to view to enter its details page.
 3. In **Function Management**, select **Monitoring information** > **Limited times** to view the limited times of the function as shown below:
-   ![](https://main.qcloudimg.com/raw/7c0a3f2d7cbb966e995c0041177bf86f.png)
+      ![](https://main.qcloudimg.com/raw/7c0a3f2d7cbb966e995c0041177bf86f.png)
 
 #### Viewing function limit log
 
@@ -32,7 +32,7 @@ You can view the number of limited times and specific logs of the function in th
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Function Service** on the left sidebar.
 2. On the **Function Service** page, select the name of the function you want to view to enter its details page.
 3. In **Log Query**, select **Invocation Logs** > **Too many invocations** to view specific limit logs of the function as shown below:
-   ![](https://main.qcloudimg.com/raw/e0645ba74973604fbfecbd4c4eb21248.png)
+      ![](https://main.qcloudimg.com/raw/e0645ba74973604fbfecbd4c4eb21248.png)
 
 
 ### Fixing concurrency overrun

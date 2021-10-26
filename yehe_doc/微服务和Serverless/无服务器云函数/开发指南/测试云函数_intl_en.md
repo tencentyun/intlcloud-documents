@@ -1,6 +1,6 @@
 After creating a function, you can directly test it in the following ways to understand the function execution conditions and check the code execution process.
 
-- SCF console: [Creating Event-Triggered Function in Console](https://intl.cloud.tencent.com/document/product/583/32742)
+- SCF console: [Cloud Test](https://intl.cloud.tencent.com/document/product/583/32742)
 
 ## Test Events and Templates
 
@@ -22,8 +22,7 @@ In addition to the system-provided event templates, you can create more custom t
 
 ## Notes
 When using the test event template feature, you need to pay attention to the following:
-- The test event template name can contain letters, digits, hyphens, and underscores and must begin with a letter.
+- The test event template name can contain letters, digits, -, and \_ and must begin with a letter.
 - On the same page, the created custom test templates can be deleted if they are no longer needed.
 - Up to five custom test templates can be configured for one single function. After the limit is reached, to configure a new one, please first delete an old one that is no longer in use.
-
 

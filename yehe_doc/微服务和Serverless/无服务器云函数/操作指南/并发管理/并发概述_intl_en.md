@@ -26,11 +26,8 @@ SCF concurrency refers to the number of requests or invocations processed by the
 
 Concurrency = request rate * function execution duration = QPS * average time per request
 
-You can view the average time per request in **execution duration** in the monitoring data. 
+You can view the average time per request in **execution duration** in the monitoring data.
 For example, if the QPS of a business is 2,000, and the average time per request is 0.02 seconds, then the concurrency during function execution will be 2000 * 0.02 = 40.
-
-
-
 
 
 
@@ -56,15 +53,15 @@ The elastic concurrency expansion speed of 500 instances per minute can meet the
 
 ### Provisioned concurrency
 
-Concurrent instances in elastic concurrency expansion in the SCF platform need to be initialized, which includes initialization of the runtime environment and the business code. 
+Concurrent instances in elastic concurrency expansion in the SCF platform need to be initialized, which includes initialization of the runtime environment and the business code.
 You can use the **provisioned concurrency** feature to configure concurrent instances in advance. **The SCF platform will start the concurrent instances after you configure them and will not actively repossess the provisioned instances, so as to guarantee a certain number of concurrent instances as much as possible.** If errors such as code memory leak occur on a concurrent instance, the SCF platform will replace it with a new instance. For more information, please see [Provisioned Concurrency](https://intl.cloud.tencent.com/document/product/583/37704).
 
 ### Concurrency service level
 
 #### Elastic concurrency expansion limit
-|Individual User|Organizational User|Additional Quota Available for Application|
+| Individual User | Organizational User | Additional Quota Available for Application |
 |---------|---------|---------|
-|Elastic concurrency expansion limit|500 concurrent instances/minute|1,000 concurrent instances/minute|
+| Elastic concurrency expansion limit | 500 concurrent instances/minute | 1,000 concurrent instances/minute | Concurrency expansion speed at the 10,000 concurrent instances/minute level is supported, which you can apply for by submitting a ticket. |
 
 At the region level, the elastic concurrency expansion speed is limited to 500 concurrent instances/minute for individual users and 1,000 concurrent instances/minute for organizational users by default. For example, if you need 100,000 concurrent instances, it will take 100000/1000 = 100 minutes to complete the expansion at the maximum elastic concurrency expansion speed. If you need to increase the quotas, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
@@ -100,17 +97,17 @@ Each account has concurrency restrictions at the region level, and you cannot mo
 The SCF platform provides concurrency management capabilities at the function granularity for you to flexibly control the concurrency of different functions. For more information, please see [Concurrency Management System](https://intl.cloud.tencent.com/zh/document/product/583/39464).
 
 
-Each account has a total concurrency quota limit at the region level. The default value is 128,000 MB or 64,000 MB. For more information, please see [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637). The concurrency quotas between regions are independent of each other and don't affect each other.
+Each account has a total concurrency quota limit at the region level. The default value is 128,000 MB or 64,000 MB. For more information, please see [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637). The concurrency quotas between regions are independent of each other.
 
 ### Concurrent memory and concurrency
 
 To help you manage concurrency more precisely, the SCF concurrency quota is calculated by memory; for example, a 256 MB concurrency quota represents one concurrent instance with 256 MB memory or two instances with 128 MB memory each.
 
-### Maximum dedicated quota
+### Reserved quota
 
-When you set a maximum dedicated quota for a function, it will have the following two effects:
+When you set a reserved quota for a function, it will have the following two effects:
 
-- The maximum dedicated quota is the **upper limit of the concurrency quota of this function.** The sum of the concurrency quotas of all versions is less than or equal to the maximum dedicated quota.
+- The reserved quota is the **upper limit of the concurrency quota of this function**. The sum of the concurrency quotas of all versions is less than or equal to the reserved quota.
 - After the concurrency quota is allocated to this function, it will be **exclusive to** this function and will no longer be provided to other functions.
 
 
@@ -122,7 +119,7 @@ When a concurrent instance of a function is processing actual requests, it will 
 
 ## Use Cases
 
-By using maximum dedicated quota and provisioned concurrency together, you can flexibly allocate resources among multiple functions and warm up functions as needed.
+By using reserved quota and provisioned concurrency together, you can flexibly allocate resources among multiple functions and warm up functions as needed.
 
 ### Shared quota
 
@@ -130,7 +127,7 @@ If nothing is configured, all functions share the account quota by default. If a
 
 ### Guaranteed concurrency
 
-If the business features of a specific function are sensitive or critical, and you need to do your best to ensure a high request success rate, then you can use the maximum dedicated quota feature to this end. Maximum dedicated quota can give the function exclusive quota to guarantee the concurrency reliability and avoid overruns caused by concurrency preemption by multiple functions.
+If the business features of a specific function are sensitive or critical, and you need to do your best to ensure a high request success rate, then you can use the reserved quota feature to this end. Reserved quota can give the function exclusive quota to guarantee the concurrency reliability and avoid overruns caused by concurrency preemption by multiple functions.
 
 ### Provisioned concurrency
 

@@ -21,13 +21,13 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>400<br>InvalidParameterValue</td>
 <td>The request event passed in by the event execution function is not of the JSON type.</td>
-<td>Please make modifications as instructed in <a href="https://intl.cloud.tencent.com/document/product/583/17234">Introduction</a> and <a href="https://cloud.tencent.com/document/product/583/58400">InvokeFunction</a> and try again.</td>
+<td>Please make modifications as instructed in <a href="https://intl.cloud.tencent.com/document/product/583/17234">Introduction</a> and <a href="https://intl.cloud.tencent.com/document/product/583/41408">InvokeFunction</a> and try again.</td>
 </tr>
 
 <tr>
 <td>401<br>InvalidCredentials</td>
 <td>The verification fails.</td>
-<td>Your account does not have the permission to manipulate this function. Please make modifications as instructed in the authorization description in <a href="https://intl.cloud.tencent.com/document/product/583/18014">Permission Management Overview</a> and try again.</td>
+<td>Your account does not have the permission to manipulate this function. Please make modifications as instructed in the authorization description in <a href="https://intl.cloud.tencent.com/document/product/583/18014" >Permission Management Overview</a> and try again.</td>
 </tr>
 
 <tr>
@@ -77,15 +77,15 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>432<br>ResourceLimitReached</td>
 <td>The account-level or region-level concurrency limit is reached.</td>
-<td><ul class="params"><li>For a function with a maximum dedicated quota configured, if the function concurrency exceeds the quota, this message will be returned. You can assess your business needs and increase the quota or refer to <a href="https://cloud.tencent.com/document/product/583/51585#.E8.A7.A3.E5.86.B3.E5.B9.B6.E5.8F.91.E8.B6.85.E9.99.90.E7.9B.B8.E5.85.B3.E6.8C.87.E5.BC.95">Concurrency Overrun Troubleshooting</a>.</li>
-<li>For a function with no maximum dedicated quota configured, if the concurrency quota actually used by the function exceeds the region-level unused concurrency quota, this message will be returned. You can assess your business needs and configure a maximum dedicated quota for the function. If the remaining available quota in the corresponding region cannot meet your business needs, you can <a href="https://cloud.tencent.com/online-service?from=connect-us">contact us</a> to increase the total concurrency quota in the region.</td>
+<td><ul class="params"><li>For a function with a reserved quota configured, if the function concurrency exceeds the quota, this message will be returned. You can assess your business needs and increase the quota or refer to <a href="https://intl.cloud.tencent.com/document/product/583/39848">Concurrency Overrun Troubleshooting</a>.</li>
+<li>For a function with no reserved quota configured, if the concurrency quota actually used by the function exceeds the region-level unused concurrency quota, this message will be returned. You can assess your business needs and configure a reserved quota for the function. If the remaining available quota in the corresponding region cannot meet your business needs, you can <a href="https://cloud.tencent.com/online-service?from=connect-us">contact us</a> to increase the total concurrency quota in the region.</td>
 </tr>
 
 <tr>
 <td>433<br>TimeLimitReached</td>
 <td>Function execution is not completed after the <a href="https://intl.cloud.tencent.com/document/product/583/19805">execution timeout period</a> elapses.</td>
 <td><ul class="params"><li>Please check whether a large number of time-consuming operations exists in the service code.</li>
-<li>Please set a longer timeout period on the **Function Configuration** page. If the current timeout period has been set to the maximum value, you can create an async function as instructed in <a href="https://cloud.tencent.com/document/product/583/51519">Async Execution</a> to get a function execution duration of up to 24 hours.</li></ul></td>
+<li>Please set a longer timeout period on the **Function Configuration** page. If the current timeout period has been set to the maximum value, you can create an async function as instructed in <a href="https://intl.cloud.tencent.com/document/product/583/39466">Async Execution</a> to get a function execution duration of up to 24 hours.</li></ul></td>
 </tr>
 
 <tr>
@@ -103,7 +103,7 @@ If an error code is returned after the function is executed, you can find the ca
 
 <tr>
 <td>436<br>InvalidParameterValue</td>
-<td>The parameter passed in for `invoke` does not conform to the specification. </td>
+<td>The parameter passed in for `invoke` does not conform to the specification.</td>
 <td>The parameter does not conform to the specification. Please modify it as instructed in <a href="https://intl.cloud.tencent.com/document/product/583/17234">Introduction</a> and try again.</td>
 </tr>
 
@@ -129,7 +129,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>441<br>UnauthorizedOperation</td>
 <td>CAM authentication fails.</td>
-<td>Please check whether the CAM authentication parameters for the function invoker are passed correctly. For more information, please see the authorization description in <a href="https://intl.cloud.tencent.com/document/product/583/18014">Permission Management Overview</a>.</td>
+<td>Please check whether the CAM authentication parameters for the function invoker are passed correctly. For more information, please see the authorization description in <a href="https://intl.cloud.tencent.com/document/product/583/18014" >Permission Management Overview</a>.</td>
 </tr>
 
 <tr>
@@ -159,7 +159,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>446<br>PortBindingFailed</td>
 <td>Port listening fails.</td>
-<td>The container initialization duration exceeds the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a>.<li>Please check whether the listening port is <code>9000</code>.</li><li>Please check whether all the files in the code package or container image are required files. Appropriate streamlining can improve the initialization speed of the container.</li><li>Please check whether there are any exceptions or time-consuming business logic in the initialization code. You can appropriately increase the initialization timeout period and try again.</li></td>
+<td>The container initialization duration exceeds the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a>.<li>Please check whether the listening port is<code>9000</code>.</li><li>Please check whether all the files in the code package or container image are required files. Appropriate streamlining can improve the initialization speed of the container.</li><li>Please check whether there are any exceptions or time-consuming business logic in the initialization code. You can appropriately increase the initialization timeout period and try again.</li></td>
 </tr>
 	
 <tr>
@@ -186,8 +186,8 @@ If an error code is returned after the function is executed, you can find the ca
 
 <tr>
 <td>500<br>InternalError</td>
-<td>Internal error.</td>
-<td>Internal error. Please try again. If the problem persists, please contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+<td>An internal error occurs.</td>
+<td>An internal error occurs. Please try again later. If the problem persists, please contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 
 </tbody>
@@ -198,7 +198,7 @@ If an error code is returned after the function is executed, you can find the ca
 </style>
 
 
-## Related Concepts
+## Concepts
 
 #### Execution method<div id="handler"></div>
 
@@ -208,7 +208,7 @@ The execution method specifies the starting file and function while invoking the
 - For Go programming, use the **FileName** format, such as `main`.
 
 - For Python, Node.js, or PHP programming, use the **FileName.FunctionName** format, such as `index.main_handler`.
-  - Please note that **FileName does not include the file name extension, and FunctionName is the name of the entry function.** Ensure that the file name extension matches the programming language. For example, for Python programming, the file name extension is `.py`, and for Node.js programming, the file name extension is `.js`. For more information, please see "Execution Method" in [Basic Concepts](https://intl.cloud.tencent.com/document/product/583/9210).
+  - Please note that **FileName does not include the file name extension, and FunctionName is the name of the entry function.** Ensure that the file name extension matches the programming language. For example, for Python programming, the file name extension is `.py`, and for Node.js programming, the file name extension is `.js`. For more information, please see "Execution Method" in [Basic Concepts](https://intl.cloud.tencent.com/document/product/583/9210). 
 
 - For Java programming, use the **package.class::method** format, such as `example.Hello::mainHandler`.
 
