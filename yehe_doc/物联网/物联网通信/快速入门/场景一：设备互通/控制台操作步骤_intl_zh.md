@@ -33,7 +33,7 @@
 
 查询设备详情页面，设备证书、设备私钥用于 MQTT 的 TLS 非对称加密；对称密钥用于对称加密通信（两种通信方式差别请参考 [功能组件 > 设备接入](https://intl.cloud.tencent.com/document/product/1105/41500)）。
 
-> !以上资源的创建可通过 restAPI 由后台创建，具体请参见 [API 概览](https://cloud.tencent.com/document/product/634/12056)。
+> !以上资源的创建可通过 restAPI 由后台创建，具体请参见 API 概览。
 
 ## 创建规则引擎
 
