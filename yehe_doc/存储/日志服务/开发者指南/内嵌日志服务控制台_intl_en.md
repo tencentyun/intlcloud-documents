@@ -175,7 +175,11 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 <td align="left">time </td>
 <td align="left">No</td>
 <td align="left">String</td>
-<td align="left">Time range for log search. Format example: ```2021-07-15T10:00:00.000,2021-07-15T12:30:00.000```</td>
+<td align="left">Time range for log search. Format example: 
+```
+2021-07-15T10:00:00.000,2021-07-15T12:30:00.000
+```
+</td>
 </tr>
 <tr>
 <td align="left">query</td>

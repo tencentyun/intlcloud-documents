@@ -36,7 +36,7 @@
 | translate(key, from, to)             | 将 key 中出现在 from 中的字符全部替换为 to 中对应位置的字符。如果 from 包含重复字符，则只算第一个字符。如果 source 中没出现 from 中的字符，则 source 直接复制。如果 from 长度超过 to 的长度，则对应字符会被删除。返回结果为 varchar 类型。 | 将 remote 字符串中 ‘123’ 的字符替换为 ‘ABC’ 对应的字符。</br> `* | SELECT translate(remote_user, '123', 'ABC')            ` |
 | trim(key)                            | 删除字符串中前后的空白字符。返回结果为 varchar 类型。          | 删除 http_cookies 字符串中前后的空白字符。</br> `* | SELECT trim(http_cookies)            ` |
 | upper(key)                           | 将字符串转化为大写字符。 返回结果为 varchar 类型，大写形式。   | 将 host 字符串中的小写字符转换为大写。</br> `* | SELECT upper(host)            ` |
-| word_stem(word)                      | 返回 word 的英语单词。返回结果为 varchar 类型。                  | 返回  Mozila 的单词。</br> `* | SELECT word_stem('Mozilla')      ` |
+| word_stem(word)                      | 返回 word 的英语单词。返回结果为 varchar 类型。                  | 返回  Mozilla 的单词。</br> `* | SELECT word_stem('Mozilla')      ` |
 | word_stem(word, lang)                | 返回 word 的 lang 语言词根。返回结果为 varchar 类型。              | 返回 selects 词根的单词。</br> `* | SELECT word_stem('selects', 'en')            ` |
 
 #### Unicode 函数
