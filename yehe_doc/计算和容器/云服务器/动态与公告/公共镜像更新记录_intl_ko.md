@@ -1,6 +1,6 @@
 >!
 >- 리전별로 이미지 업데이트 시간이 다를 수 있습니다. 본 문서가 제공하는 이미지 업데이트 시간은 전체 리전의 이미지 업데이트 시간입니다.
->- Tencent Cloud가 제공하는 공용 이미지 유지보수 주기는 공식 유지보수 주기와 같습니다. 공식 유지보수 일정 관련 정보는 [부록: 공식 유지보수 일정](#OfficialMaintenanceTime)을 참고하십시오.
+>- Tencent Cloud가 제공하는 공용 이미지의 점검 주기는 운영사가 배포한 점검 주기와 같습니다. 운영사가 배포한 점검 시간 정보는 [부록: 운영사 점검 시간](#OfficialMaintenanceTime)을 참고하십시오.
 >
 
 ## TencentOS Server
@@ -60,7 +60,7 @@
 	<tr>
 		<td rowspan="3">CentOS 8.0</td>
 		<td rowspan="3">이미지 ID:
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-25szkc8t">img-25szkc8t</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-25szkc8t">img-25szkc8t</a>
 		<br />현재 커널 버전: 4.18.0-193.28.1.el8_2.x86_64</td>
 		</tr>
 	<tr>
@@ -79,7 +79,7 @@
 	<tr>
 		<td>CentOS 7.9</td>
 		<td>이미지 ID:
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-l8og963d">img-l8og963d</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-25szkc8t">img-l8og963d</a>
 		<br />현재 커널 버전: kernel-3.10.0-1160.11.1.el7.x86_64</td>
 		<td>2021-05-31</td>
 		<td>신규 이미지 런칭.</td>
@@ -87,7 +87,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.8</td>
 		<td rowspan="3">이미지 ID:
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-3la7wgnt">img-3la7wgnt</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-3la7wgnt">img-3la7wgnt</a>
 		<br />현재 커널 버전: kernel-3.10.0-1160.11.1.el7.x86_64</td>
 	</tr>
 	<tr>
@@ -110,8 +110,8 @@
 	</tr>
 	<tr>
 		<td>CentOS 7.7</td>
-		<td>이미지 ID: 
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-1u6l2i9l">img-1u6l2i9l</a>
+		<td>이미지 ID:
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-1u6l2i9l">img-1u6l2i9l</a>
 		<br />현재 커널 버전: 3.10.0-1062.18.1.el7.x86_64</td>
 		<td>2020-04-15</td>
 		<td>최신 시스템 패치 업데이트.</td>
@@ -119,7 +119,7 @@
 	<tr>
 		<td rowspan="6">CentOS 7.6</td>
 		<td rowspan="6">이미지 ID:
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9qabwvbn">img-9qabwvbn</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-9qabwvbn">img-9qabwvbn</a>
 		<br />현재 커널 버전: 3.10.0-1160.11.1.el7.x86_64</td>
 	</tr>
 	<tr>
@@ -161,7 +161,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.5</td>
 		<td rowspan="3">이미지 ID:
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-oikl1tzv">img-oikl1tzv</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-oikl1tzv">img-oikl1tzv</a>
 		<br />현재 커널 버전: 3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -187,7 +187,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.4</td>
 		<td rowspan="3">이미지 ID:
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-8toqc6s3">img-8toqc6s3</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-8toqc6s3">img-8toqc6s3</a>
 		<br />현재 커널 버전: 3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -208,7 +208,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.3</td>
 		<td rowspan="3">이미지 ID:
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-dkwyg6sr">img-dkwyg6sr</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-dkwyg6sr">img-dkwyg6sr</a>
 		<br />현재 커널 버전: 3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -229,7 +229,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.2</td>
 		<td rowspan="3">이미지 ID:
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-31tjrtph">img-31tjrtph</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-31tjrtph">img-31tjrtph</a>
 		<br />현재 커널 버전: 3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -250,7 +250,7 @@
 	<tr>
 		<td rowspan="2">CentOS 6.9</td>
 		<td rowspan="2">이미지 ID:
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-i5u2lkoz">img-i5u2lkoz</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-i5u2lkoz">img-i5u2lkoz</a>
 		<br />현재 버전: 2.6.32-754.30.2.el6.x86_64</td>
 		<td>2020-03-04</td>
 		<td>최신 시스템 패치 업데이트.</td>
@@ -261,8 +261,8 @@
 	</tr>
 	<tr>
 		<td>CentOS 6.8</td>
-		<td>이미지 ID: 
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-6ns5om13">img-6ns5om13</a>
+		<td>이미지 ID:
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-6ns5om13">img-6ns5om13</a>
 		<br />현재 커널 버전: 2.6.32-642.6.2.el6.x86_64</td>
 		<td>2019-03-26</td>
 		<td>OpenSSH 버전 업데이트.</td>
@@ -390,7 +390,7 @@
   <tr>
 	<td rowspan="3">Debian 10.2</td>
 	<td rowspan="3">이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-h1yvvfw1">img-h1yvvfw1</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-h1yvvfw1">img-h1yvvfw1</a>
 	<br />현재 커널 버전: 4.19.0-11-amd64</td>
   </tr>
   <tr>
@@ -421,7 +421,7 @@
   <tr>
 	<td rowspan="3">OpenSUSE Leap 15.1</td>
 	<td rowspan="3">이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-4orfgj3l">img-4orfgj3l</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-4orfgj3l">img-4orfgj3l</a>
 	<br />현재 커널 버전: 4.12.14-lp151.28.75.1.x86_64</td>
   </tr>
   <tr>
@@ -440,7 +440,7 @@
   <tr>
 	<td rowspan="4">OpenSUSE 42.3</td>
 	<td rowspan="4">이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-0ytr67o7">img-0ytr67o7</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-0ytr67o7">img-0ytr67o7</a>
 	<br />현재 커널 버전: 4.4.175-89.1-default</td>
   </tr>
   <tr>
@@ -470,7 +470,7 @@
   <tr>
 	<td rowspan="4">Windows Server 2019 데이터센터 버전의 64비트 중국어 버전</td>
 	<td rowspan="4">이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-mmy6qctz">img-mmy6qctz</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-mmy6qctz">img-mmy6qctz</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -478,7 +478,11 @@
   </tr>
   <tr>
 	<td>2021-01-21</td>
-	<td>최신 시스템 패치 업데이트.
+	<td>
+	  <ul class="params">
+		<li>최신 시스템 패치 업데이트.</li>
+		<li>CPM 2.0 미지원.</li>
+	  </ul>
 	</td>
   </tr>
   <tr>
@@ -488,7 +492,7 @@
   <tr>
 	<td rowspan="4">Windows Server 2016 데이터센터 버전의 64비트 중국어 버전</td>
 	<td rowspan="4">이미지 ID: 
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9id7emv7">img-9id7emv7</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-9id7emv7">img-9id7emv7</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -505,7 +509,7 @@
   <tr>
 	<td rowspan="4">Windows Server 2016 데이터센터 버전의 64비트 영어 버전</td>
 	<td rowspan="4">이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-1eckhm4t">img-1eckhm4t</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-1eckhm4t">img-1eckhm4t</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -517,12 +521,12 @@
   </tr>
   <tr>
 	<td>2019-08-19</td>
-	<td>Windows-CVE-2019-1125 취약점 복구 및 8월 패치 업데이트.</td>
+	<td>Windows-CVE-2019-1125 취약점 수정 및 8월 패치 업데이트.</td>
   </tr>
   <tr>
 	<td rowspan="4">Windows Server 2012 R2 데이터센터 버전의 64비트 중국어 버전</td>
 	<td rowspan="4">이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-29hl923v">img-29hl923v</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-29hl923v">img-29hl923v</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -539,7 +543,7 @@
   <tr>
 	<td rowspan="4">Windows Server 2012 R2 데이터센터 버전의 64비트 영어 버전</td>
 	<td rowspan="4">이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-2tddq003">img-2tddq003</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-2tddq003">img-2tddq003</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -551,31 +555,31 @@
   </tr>
   <tr>
 	<td>2019-08-19</td>
-	<td>Windows-CVE-2019-1125 취약점 복구 및 8월 패치 업데이트.</td>
+	<td>Windows-CVE-2019-1125 취약점 수정 및 8월 패치 업데이트.</td>
   </tr>
 </table>
 
 
 
-## [부록: 공식 유지보수 일정](id: OfficialMaintenanceTime)
+## [부록: 운영사 점검 시간](id: OfficialMaintenanceTime)
 
 
 ### CentOS
-CentOS의 공식 지원 종료(EOL)일자 정보는 다음 표와 같습니다. 자세한 정보는 [CentOS 제품 사양](https://wiki.centos.org/zh/About/Product#fnref-f049f6268e56bd37228bb469075b54ae8645fa40)을 참고하십시오.
+CentOS의 운영사가 공시한 지원 종료(EOL) 일자 정보는 다음 표와 같습니다. 자세한 정보는 [CentOS 제품 사양](https://wiki.centos.org/zh/About/Product#fnref-f049f6268e56bd37228bb469075b54ae8645fa40)을 참고하십시오.
 <table>
   <tr>
 	<th>시스템 버전</th>
 	<th>무결성 업데이트</th>
-	<th>유지보수 업데이트</th>
+	<th>점검성 업데이트</th>
   </tr>
   <tr>
 	<td>CentOS 6</td>
-	<td>2017년 제 2분기</td>
+	<td>2017년 제2분기</td>
 	<td>2020년 11월 30일</td>
   </tr>
   <tr>
 	<td>CentOS 7</td>
-	<td>2020년 제 4분기</td>
+	<td>2020년 제4분기</td>
 	<td>2024년 06월 30일</td>
   </tr>
   <tr>
@@ -587,15 +591,15 @@ CentOS의 공식 지원 종료(EOL)일자 정보는 다음 표와 같습니다. 
 
 
 ### Ubuntu
-Ubuntu의 공식 장기 지원 일정 정보는 다음 표와 같습니다. 자세한 정보는 [Long term support and interim releases](https://ubuntu.com/about/release-cycle)을 참고하십시오.
+Ubuntu의 운영사가 공시한 장기 지원 일정 정보는 다음 표와 같습니다. 자세한 정보는 [Long term support and interim releases](https://ubuntu.com/about/release-cycle)을 참고하십시오.
 <table>
   <tbody>
 	<tr>
 	  <th style="width: 23%;">시스템 버전</th>
-	  <th>하드웨어 유지보수 업데이트</th>
-	  <th>유지보수 업데이트</th>
+	  <th>하드웨어 점검 업데이트</th>
+	  <th>점검 업데이트</th>
 	  <th>임시 배포 표준 지원</th>
-	  <th>보안 유지보수 확장</th>
+	  <th>보안 점검 확장</th>
 	</tr>
 	<tr>
 	  <td>Ubuntu 14.04 LTS</td>
@@ -660,7 +664,7 @@ Ubuntu의 공식 장기 지원 일정 정보는 다음 표와 같습니다. 자�
 
 
 ### Debian
-Debian의 공식 지원 관련 정보는 다음 표와 같습니다. 자세한 정보는 [Debian Long Term Support](https://wiki.debian.org/LTS)를 참고하십시오.
+Debian의 운영사가 공시한 지원 정보는 다음 표와 같습니다. 자세한 정보는 [Debian Long Term Support](https://wiki.debian.org/LTS)를 참고하십시오.
 
 <table>
   <tr>

@@ -1,8 +1,9 @@
 ### 如何查看云服务器操作日志？
-
-云服务器的操作日志可以在 [控制台](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) 右上角查看。
-
-
+可通过云审计的操作记录功能查看云服务器的操作日志，步骤如下：
+1. 登录 [云服务器控制台](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) ，选择页面右上角的【工具】>【操作记录】。
+2. 在“操作记录”页面，“资源事件名称”选择 “CVM”，其他筛选条件请按需选择。
+3. 单击【查询】即可获取云服务器操作日志。
+如需了解云审计操作记录功能更多信息，请参见 [查看操作记录事件详情](https://intl.cloud.tencent.com/document/product/1021/40499)。
 
 ### 控制台无法看到云服务器，如何处理？
 
@@ -11,5 +12,5 @@
 2. 请确认是否过期时间超过7天，已被销毁。
 3. 请确认是否选错了项目。
 
-若以上情况均不符合，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
+若以上情况均不符合，请通过 [提交工单](https://console.cloud.tencent.com/workorder/category)  联系我们。
 

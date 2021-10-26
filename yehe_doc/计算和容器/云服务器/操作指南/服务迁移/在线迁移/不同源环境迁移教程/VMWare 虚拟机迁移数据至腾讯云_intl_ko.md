@@ -14,7 +14,7 @@
 마이그레이션 전, 소스 서버 및 타깃 CVM에 별도의 점검이 필요합니다. 소스 서버 및 타깃 CVM에 점검이 필요한 내용은 다음과 같습니다.
 <table>
 	<tr><th style="width: 15%;">타깃 CVM</th><td><ol  style="margin: 0;"><li>스토리지 용량: 소스 데이터를 불러오기에 충분한 타깃 CVM CBS(시스템 디스크, 데이터 디스크 포함) 스토리지 용량을 확보해야 합니다.</li><li>보안 그룹: 보안 그룹에 443 포트 및 80 포트는 제한할 수 없습니다.</li><li>대역폭 설정: 마이그레이션 속도 향상을 위해, 대역폭의 범위를 가능한 크게 조정하기를 권장합니다. 마이그레이션 과정에서 데이터 용량과 거의 동일한 트래픽이 소모되므로, 필요할 경우 네트워크 과금 방식을 먼저 변경해 주시기 바랍니다.</li><li>타깃 CVM 및 소스 서버의 운영 체제 유형 일치 여부: 운영 체제 불일치 시, 후속 제작 이미지의 정보가 실제 운영 체제와 부합하지 않게 되므로, 타깃 CVM과 소스 서버의 운영 체제 유형을 통일해 주시기 바랍니다. 예를 들어, CentOS 7 시스템의 소스 서버 마이그레이션 시 타깃 CVM도 CentOS 7 시스템이어야 합니다.</li></ol></td></tr>
-	<tr><th>Linux 소스 서버</th><td><ol  style="margin: 0;"><li> Virtio 점검 및 설치. 자세한 작업 방식은 <a href="https://intl.cloud.tencent.com/document/product/213/9929">Linux 시스템 Virtio 드라이버 점검</a>을 참고 바랍니다.</li><li>rsync와 grub2-install(또는 grub-install)이 설치되어 있는지 확인합니다.</li><li>SELinux가 열려있는지 확인합니다. 만약 SELinux가 열려있다면, SELinux를 종료하시기 바랍니다.</li><li>Tencent Cloud API에 마이그레이션 요청을 보내면, 클라우드 API가 현재 UNIX 시간을 사용하여 생성된 Token을 점검합니다. 현재 시스템 시간이 정확한지 확인하시기 바랍니다.</li><li> 소스 서버에 DHCP 서비스가 활성화되어있는지 확인하십시오. DHCP 서비스가 활성화 상태가 아니라면 DHCP 서비스를 활성화하십시오.</li></ol></td></tr>
+	<tr><th>Linux 소스 서버</th><td><ol  style="margin: 0;"><li> Virtio 점검 및 설치. 자세한 작업 방식은 <a href="https://intl.cloud.tencent.com/document/product/213/9929">Linux 시스템 Virtio 드라이버 점검</a>을 참고하십시오.</li><li>rsync가 설치되어 있는지 확인합니다.</li><li>SELinux가 열려있는지 확인합니다. 만약 SELinux가 열려있다면, SELinux를 종료하시기 바랍니다.</li><li>Tencent Cloud API에 마이그레이션 요청을 보내면, 클라우드 API가 현재 UNIX 시간을 사용하여 생성된 Token을 점검합니다. 현재 시스템 시간이 정확한지 확인하시기 바랍니다.</li><li> 소스 서버에 DHCP 서비스가 활성화되어있는지 확인하시기 바랍니다. DHCP 서비스가 활성화 상태가 아니라면 DHCP 서비스를 활성화하십시오.</li></ol></td></tr>
 </table>
 
 >? 

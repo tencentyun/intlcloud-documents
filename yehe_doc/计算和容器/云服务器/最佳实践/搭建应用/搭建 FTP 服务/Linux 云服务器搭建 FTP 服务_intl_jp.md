@@ -1,4 +1,4 @@
-## シナリオ
+##  操作シナリオ
 Vsftpd（very secure FTP daemon）は、多数のLinuxディストリビューションのデフォルトのFTPサーバーです。本節では、CentOS 7.6 64ビットOSのTencent Cloud Server（CVM）を例に、vsftpdを使用してLinux CVMのFTPサービスを構築します。
 
 ## サンプルソフトウェアバージョン
@@ -10,8 +10,8 @@ Vsftpd（very secure FTP daemon）は、多数のLinuxディストリビュー�
 ## 操作手順
 ### 手順１：CVMにログインする
 [標準的な方法を使用してLinuxインスタンスにログインする（推奨）](https://intl.cloud.tencent.com/document/product/213/5436)。実際の操作方法に応じて、他のログイン方法を選択することもできます：
-- [リモートログインソフトウェアを使用してLinuxインスタンスにログインします](https://intl.cloud.tencent.com/document/product/213/32502)
-- [SSHキーを使用してLinuxインスタンスにログインします](https://intl.cloud.tencent.com/document/product/213/32501)
+- [リモートログインソフトウェアを使用してLinuxインスタンスにログインする](https://intl.cloud.tencent.com/document/product/213/32502)
+- [SSHを使用してLinuxインスタンスにログイン] (https://intl.cloud.tencent.com/document/product/213/32501)
 
 ### 手順2：vsftpdのインストール
 1. 次のコマンドを実行し、vsftpdをインストールします。
@@ -32,10 +32,10 @@ netstat -antup | grep ftp
 ```
 次の結果が表示され、FTPサービスが正常に開始されたことを示します。
 ![](https://main.qcloudimg.com/raw/2a7abf80253a8469c9340878d89b452a.png)
-現在、vsftpdはデフォルトで匿名アクセスモードを有効にしており、ユーザー名とパスワード不要でFTPサーバーにログインできます。この方法でFTPサーバーにログインするユーザーは、ファイルを変更またはアップロードする権限がありません。
+このとき、vsftpdはデフォルトで匿名アクセスモードを有効化しており、ユーザー名およびパスワードを必要とすることなくFTPサーバーにログインできます。この方法でFTPサーバーにログインするユーザーには、ファイルを変更またはアップロードする権限がありません。
 
 
-### 手順3：vsftpd<span id="user"></span>の設定
+### 手順3：vsftpdの設定<span id="user"></span>
 1. 次のコマンドを実行して、FTPサービス用のLinuxユーザーを作成します。本節では、ftpuserを例に説明します。
 ```
 useradd ftpuser
@@ -60,7 +60,7 @@ vim /etc/vsftpd/vsftpd.conf
 6. **i**を押して編集モードに切り替え、必要に応じてFTPモードを選択し、設定ファイル `vsftpd.conf`：<span id="config"></span>を変更します。
 >!  FTPは、アクティブモードとパッシブモードでクライアント端末に接続してデータを転送できます。ほとんどのクライアント端末のファイアウォール設定および実際のIPアドレスを取得できないため、**パッシブモード**を選択してFTPサービスを構築することをお勧めします。次の変更では、パッシブモードの設定を例として説明します。アクティブモードを選択したい場合は、[FTPアクティブモードの設定](#port)に進んでください。
 >
- 1 .以下の構成パラメータを変更し、匿名ユーザーとローカルユーザーのログイン権限を設定して、指定された例外ユーザーリストファイルのパスを設定し、IPv4 socketsのリスニングを有効にします。
+ 1. 以下の設定パラメータを変更し、匿名ユーザーおよびローカルユーザーのログイン権限を設定し、例外ユーザーリストファイルのパス指定を設定し、さらにIPv4 socketsの監視を有効化します。
 ```
 anonymous_enable=NO
 local_enable=YES
@@ -117,7 +117,7 @@ ftp://CVMパブリックIP:21
 
 ## 付録
 ### FTPアクティブモードの設定<span id="port"></span>
-アクティブモードで変更が必要な設定は次のとおりであり、それ以外の設定項目はデフォルトのままにします。
+アクティブモードで変更する必要がある設定は次のとおりです。その他の設定はデフォルト設定を維持してください。
 ```
 anonymous_enable=NO      #匿名ユーザーのログインを禁止する
 local_enable=YES         #ローカルユーザーのログインを許可する
@@ -152,9 +152,9 @@ df -h
 ls -l /home/test      
 # /home/testがFTP ディレクトリです。実際のFTPディレクトリに変更してください。
 ```
- - 戻された結果に「w」がない場合は、当該ユーザーに書き込み権限がないことを示し、次のステップを実行してください。
- - 戻された結果に「w」があった場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してください。
-3. 次のコマンドを実行し、FTPディレクトリへの書き込み権限を付与します。
+ - 返された結果の中に`w`がなければ、そのユーザーに書き込み権限がないことを表します。次の手順を実行してください。
+ - 返された結果の中に`w`があれば、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してフィードバックしてください。
+3. 次のコマンドを実行し、FTPディレクトリに書き込み権限を追加します。
 ```
 chmod +w /home/test 
 # /home/testがFTPディレクトリです。実際のFTP ディレクトリに変更してください。

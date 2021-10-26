@@ -8,13 +8,13 @@ Linux CVMは、メモリ使用率が100%でない場合、OOM(Out Of Memory)を�
  - `vm.panic_on_oom =1`の場合、システムは自動的に再起動します。
 
 ## 解決方法
-1. [処理手順](#ProcessingSteps)を参照して、トラブルシューティングを行います。インスタンスのメモリ使用率が高すぎないか、またスレッド総数が制限されていないか確認してください。
+1. [処理手順](#ProcessingSteps)を参照して、トラブルシューティングを行います。インスタンスのメモリ使用率が高すぎないか、またプロセス総数が制限されていないか確認してください。
 2. `min_free_kbytes`値の設定を確認し、正しい設定に変更します。
 
 
 ## 処理手順[](id:ProcessingSteps)
 1. [メモリ使用率が高すぎる問題の処理](https://intl.cloud.tencent.com/document/product/213/40501)を参照して、インスタンスのメモリ使用率が高すぎないかどうかを確認します。インスタンスのメモリ使用率が正常な場合は、次の手順に進みます。
-2. [ログエラーfork：Cannot allocate memory](https://intl.cloud.tencent.com/document/product/213/40502)を参照して、スレッド数が制限を超えていないかどうか確認してください。 スレッド数が制限を超えていない場合は、次の手順に進んでください。
+2. [ログエラーfork：Cannot allocate memory](https://intl.cloud.tencent.com/document/product/213/40502)を参照して、プロセス数が限度を超えていないかどうか確認してください。プロセス総数が限度を超えていない場合は、次の手順に進んでください。
 3. CVMにログインし、以下のコマンドを実行して、`min_free_kbytes`の値を確認します。
 ```
 sysctl -a | grep min_free
