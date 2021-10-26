@@ -8,11 +8,11 @@ The migration methods are compared as follows:
 <table>
 <tr>
 <th>Migration Method</th>
-<th>Applicable Scenario</th>
+<th>Use Case</th>
 </tr>
 <tr>
 <td>COS snapshot</td>
-<td><li>Scenarios with high volume of data (at the gigabyte, terabyte, or petabyte level)</li><li>Scenarios with higher requirement for migration speed</li> </td>
+<td><li>Scenarios with high volumes of data (gigabyte, terabyte, or petabyte scale)</li><li>Scenarios with higher requirement for migration speed</li> </td>
 </tr>
 <tr>
 <td>Logstash</td>
@@ -20,7 +20,7 @@ The migration methods are compared as follows:
 </tr>
 <tr>
 <td>elasticsearch-dump</td>
-<td>Scenarios with small volume of data</td>
+<td>Scenarios with small volumes of data</td>
 </tr>
 </table>
 
@@ -61,11 +61,11 @@ PUT _snapshot/my_cos_backup
 }
 ```
 	
-- app_id: `APPID` of your Tencent Cloud account.
+- app_id: APPID of your Tencent Cloud account.
 - access\_key\_id: `SecretId` of your TencentCloud API key.
 - access\_key\_secret: `SecretKey` of your TencentCloud API key.
 - bucket: COS bucket name, which should not contain the `-{appId}` suffix.
-- region: COS bucket region. You must select the same region as the ES cluster.
+- region: COS bucket region, which must be same as the region of your ES cluster.
 - base_path: backup directory.   
 	
 ### Creating snapshot in source cluster
@@ -80,7 +80,7 @@ This command will be returned immediately and executed asynchronously in the bac
 ```
 PUT _snapshot/my_cos_backup/snapshot_1?wait_for_completion=true
 ```
->!The duration of the command execution depends on the index size.
+>!The time it takes to execute the command depends on the index size.
 
 #### Backing up specified index
 You can specify the index to be backed up when creating a snapshot:
@@ -116,9 +116,9 @@ POST /_snapshot/my_cos_backup/snapshot_1/_restore
     "rename_replacement": "restored_index_$1"
 }
 ```
-- indices: only restores the index "index_1" and ignores other indices in the snapshot.
+- indices: only restores `index_1` and ignores other indices in the snapshot.
 - rename_pattern: finds the index being restored that can be matched by the specified pattern.
-- rename_replacement: renames the matching index to an alternate name.   
+- rename_replacement: renames the matching index to the name specified in this parameter.   
 
 	
 ### Viewing index restoration status
@@ -167,42 +167,37 @@ The above configuration file syncs all the indices in the source cluster to the 
 elasticsearch-dump is an open-source Elasticsearch data migration tool available on [GitHub](https://github.com/taskrabbit/elasticsearch-dump).
 1. Install elasticsearch-dump
 elasticsearch-dump is developed using Node.js and can be installed directly using the npm package manager:
-
 ```
 npm install elasticdump -g
 ```
-
 2. Main parameters
-
 ```
---input: the source address in the format of `{protocol}://{host}:{port}/{index}`, which can be an Elasticsearch cluster URL, file, or stdin and allows you to specify an index
---input-index: index in source cluster
---output: target address in the format of `{protocol}://{host}:{port}/{index}`, which can be an Elasticsearch cluster URL, file, or stdout and allows you to specify an index
---output-index: index in target cluster
---type: migration type, which is `data` by default, indicating that only data will be migrated. Valid values: settings, analyzer, data, mapping, alias
+--input: the source address in the format of {protocol}://{host}:{port}/{index}, which can be an Elasticsearch cluster URL, file, or stdin and allows you to specify an index
+--input-index: the index in the source cluster
+--output: the target address in the format of {protocol}://{host}:{port}/{index}, which can be an Elasticsearch cluster URL, file, or stdout and allows you to specify an index
+--output-index: the index in the target cluster
+--type: the migration type, which is data by default, indicating that only data will be migrated. Value range: settings, analyzer, data, mapping, alias
 ```
-
+3. If the cluster requires security authentication, you can use reindex to authenticate it as instructed below:
+Add `user:password@` after the corresponding `http`. Please refer to the sample `elasticsearch-dump --input=http://192.168.1.2:9200/my_index --output=http://user:password@192.168.1.2:9200/my_index --type=data`.
 3. Migrate a single index
  The following operation migrates the `companydatabase` index in the `172.16.0.39` cluster to the `172.16.0.20` cluster by running the `elasticdump` command.
- >!The first command migrates the settings of the index. If you directly migrate the mapping or data, the configuration information of the index in the source cluster will be lost, such as the number of shards and number of replicas. Of course, you can also directly create an index in the target cluster first before syncing the mapping and data.
- >
-
+>!The first command migrates the settings of the index. If you directly migrate the mapping or data, the configuration information of the index in the source cluster will be lost, such as the number of shards and number of replicas. Of course, you can also directly create an index in the target cluster first before syncing the mapping and data.
+>
 ```
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=settings
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=mapping
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=data
 ```
-
 4. Migrate all indices
-The following operation migrates all the indices in the `172.16.0.39` cluster to the `172.16.0.20` cluster by running the `elasticdump` command. 
+The following operation migrates all indices in the `172.16.0.39` cluster to the `172.16.0.20` cluster by running the `elasticdump` command. 
 >!This operation cannot migrate the configurations of indices, such as the number of shards and number of replicas. You must migrate the configuration of each index separately, or directly create an index in the target cluster first before migrating the data.
 >
-
 ```
 elasticdump --input=http://172.16.0.39:9200 --output=http://172.16.0.20:9200
 ```
 
 ## Summary
-1. When elasticsearch-dump or Logstash is used to migrate data from one cluster to another, the machine used to perform the migration task is required to have access to both clusters at the same time, because migration cannot be performed if there is no network connection. This limitation does not apply if snapshot is used, as it is completely offline. Therefore, elasticsearch-dump and Logstash are more suitable for migrating data between clusters on the same network. If you want to migrate your data across cloud vendors, such as from an Alibaba Cloud Elasticsearch cluster to a Tencent Cloud ES cluster, you can use snapshot or establish a connection between the vendors to achieve cluster connectivity, which, however, is costly.
+1. When elasticsearch-dump or Logstash is used to migrate data from one cluster to another, the machine used to perform the migration task is required to have access to both clusters at the same time, because migration cannot be performed if there is no network connection. This limitation does not apply if snapshot is used, as it is completely offline. Therefore, elasticsearch-dump and Logstash are more suitable for migrating data between clusters on the same network. If you want to migrate your data between cloud vendors, such as from an Alibaba Cloud Elasticsearch cluster to a Tencent Cloud ES cluster, you can use snapshot or establish a connection between the vendors to achieve cluster connectivity, which, however, is costly.
 2. elasticsearch-dump is similar to MySQL's mysqldump which is used for data backup, and both of them perform logical backup that involves exporting data entries one by one and then importing them. Therefore, this tool is suitable for migrating a small amount of data.
 3. Snapshot is suitable for migrating a large amount of data.
