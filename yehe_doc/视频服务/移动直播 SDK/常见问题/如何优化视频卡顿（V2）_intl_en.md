@@ -13,7 +13,7 @@ Poor downstream connection means slow download speed or instable network for aud
 
 [](id:deal0)
 ## Checking SDK Performance Metrics
-The MLVB SDK has a feedback mechanism that reports different performance metrics every 2 seconds. If you use the MLVB SDK for publishing, you can register a [V2TXLivePusherObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html) listener and get the statistics in the `onStatisticsUpdate` callback. The table below lists the metrics included in `V2TXLivePusherStatistics` and their meanings.
+The MLVB SDK of Tencent Video Cloud Toolkit has a feedback mechanism that reports different performance metrics every 2 seconds. If you use the MLVB SDK for publishing, you can register a [V2TXLivePusherObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html) listener and get the statistics in the `onStatisticsUpdate` callback. The table below lists the metrics included in `V2TXLivePusherStatistics` and their meanings.
 
 | Metric                | Description                    |
 | :------------------------  |  :------------------------ |

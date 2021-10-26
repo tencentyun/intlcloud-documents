@@ -1,9 +1,18 @@
+<blockquote class="d-mod-alarm">
+              <div class="d-mod-title d-alarm-title">
+                <i class="d-icon-alarm"></i>공지: 
+              </div>
+               <p>CDN 공식 홈페이지 범용 로그 필드 - HTTP 프로토콜 식별자(실시간 로그 proto 필드)에 ‘HTTP/3’ 값을 추가할 예정으로, 2021-09-13일부터 카나리 테스트를 배포합니다. 이는 콘솔 및 인터페이스의 모니터링 통계에 영향을 미치지 않습니다. 하지만 오프라인 로그 다운로드 패키지로 데이터 분석을 진행하는 경우, 구체적인 영향을 확인하여 필요에 따라 조정하시기 바랍니다. 양해와 협조에 감사드립니다. </br></br>배경: QUIC 액세스 기능은 베타 테스트 중으로 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/228/39746">QUIC</a>를 참고하십시오.</p>
+            </blockquote>
+
+
+
 ## 기능 소개
 
 Content Delivery Network(CDN)는 CDN 액세스 로그에 대한 실시간 수집 및 푸시를 지원함으로써, 로그 데이터에 대해 빠르게 검색 및 분석할 수 있습니다. 사용자는 CDN 콘솔에서 간편한 원스톱 연결을 통해 로그 수집 및 저장부터 검색까지 안정적이고 신뢰도 높은 Cloud Log Service(CLS)를 이용할 수 있습니다.
 
 >? 
->- 실시간 CLS는 전체 배포되었습니다. 콘솔을 통해 루트 계정으로 활성화하고 사용할 수 있습니다. 사용 전에 인증하고[CLS](https://console.cloud.tencent.com/cls/search?region=ap-shanghai)를 활성화해야 합니다. 
+>- 실시간 CLS는 전체 배포되었습니다. 콘솔을 통해 루트 계정으로 활성화하고 사용할 수 있습니다. 사용 전에 인증하고 [CLS](https://console.cloud.tencent.com/cls/search?region=ap-shanghai)를 활성화해야 합니다. 
 >- 실시간 CLS는 현재 중국 외 지역 로그 전송은 지원하지 않습니다. 
 >- 실시간 CLS는 루트 계정으로만 활성화할 수 있습니다. 
 >- 같은 로그 토픽에서 CDN과 ECDN을 혼합하여 선택할 수 없습니다. 
@@ -15,7 +24,7 @@ Content Delivery Network(CDN)는 CDN 액세스 로그에 대한 실시간 수집
 ### 로그셋
 로그셋(Logset)은 CLS의 프로젝트 관리 단위로, 서로 다른 프로젝트의 로그를 구분하기 위해 사용되며, 한 로그셋에는 하나의 프로젝트 혹은 애플리케이션이 상응하게 됩니다. CDN 로그셋에는 다음과 같은 기본 속성 정보가 포함됩니다.
 + 로그셋 이름: cdn_logset
-+ 리전: 로그셋 소속 [리전](https://intl.cloud.tencent.com/document/product/614/18940)
++ 지역: 로그셋 소속 [리전](https://intl.cloud.tencent.com/document/product/614/18940)
 + 저장 시간: 로그셋 내 데이터의 현재 저장 시간 주기
 + 생성 시간: 로그셋의 생성 시간
 
@@ -24,7 +33,7 @@ Content Delivery Network(CDN)는 CDN 액세스 로그에 대한 실시간 수집
 
 CLS 시스템은 로그 토픽을 단위로 사용자의 각 로그 데이터를 구분 및 관리하며, 로그 토픽마다 데이터 소스, 검색 및 전송 규칙을 다르게 설정할 수 있습니다. 따라서, 로그 토픽은 CLS에서 로그 데이터를 설정 및 관리하는 기본적인 단위이며, 로그 토픽을 생성한 후에는 관련 규칙을 설정해야만 정상적으로 로그를 수집함과 동시에 검색 분석, 전송 등의 기능을 사용할 수 있습니다.
 
-시나리오 기능 면에서 로그 토픽은 다음의 기능을 제공합니다.
+시나리오 기능 면에서 로그 토픽은 다음과 같은 기능을 제공합니다.
 - 로그 토픽으로 로그 수집
 - 로그 토픽을 단위로 로그 저장 및 관리
 - 로그 토픽을 단위로 로그 검색 및 분석
@@ -37,7 +46,7 @@ CLS 시스템은 로그 토픽을 단위로 사용자의 각 로그 데이터를
 
 ### 신규 로그 토픽 생성
 [생성]을 클릭하여 로그 토픽을 생성합니다.
->! 하나의 로그셋에는 최대 10개까지 토픽을 생성할 수 있습니다.
+>! 1개의 로그셋에 최대 500개의 로그 토픽을 생성할 수 있습니다.
 >
 ![](https://main.qcloudimg.com/raw/94136aa047219848f82948e19cd8dc06.png)
 
@@ -55,7 +64,7 @@ CLS 시스템은 로그 토픽을 단위로 사용자의 각 로그 데이터를
 ![](https://main.qcloudimg.com/raw/46d8293f0819b693b4b17fa6a79ca78c.png)
 
 #### 로그 전송 중지 / 시작
-로그 토픽으로의 로그 전송을 수동으로 중지/시작할 수 있습니다.
+로그 토픽으로 로그 전송을 수동으로 중지/시작할 수 있습니다.
 >!
 >- 중지한 후에는 해당 로그 토픽에 바인딩된 모든 도메인의 로그를 해당 토픽으로 더는 전송하지 않습니다. 이미 전송된 로그는 계속 보관되며, 적용되기까지 약 5 - 15분 정도 소요됩니다.
 >- 시작한 후에는 해당 로그 토픽에 바인딩된 모든 도메인의 로그를 해당 토픽으로 전송하며, 적용되기까지 약 5 - 15분 정도 소요됩니다.
@@ -93,11 +102,11 @@ CLS 시스템은 로그 토픽을 단위로 사용자의 각 로그 데이터를
 | method        | String       | text         | HTTP Method                                                  |
 | param         | String       | text         | URL에 포함된 매개변수                                               |
 | proto         | String       | text         | HTTP 프로토콜 식별자                                                |
-| prov          | String       | text         | 통신사의 성(지역)                                                   |
+| prov          | String       | text         | 통신사 지역                                                   |
 | referer       | String       | text         | Referer 정보, HTTP  출처 주소                                 |
 | request_range | String       | text         | Range 매개변수. 요청 범위                                         |
 | request_time  | Integer      | long         | 응답 시간(ms), 노드가 요청을 받은 후부터 모든 리턴 패킷에 응답하고, 다시 클라이언트로 도달하기까지 소요된 시간 |
-| request_port  | String      | long         | 클라이언트 포트, 없는 경우- |
+| request_port  | String      | long         | 클라이언트와 CDN 노드를 연결하는 포트, 없는 경우: - |
 | rsp_size      | Integer      | long         | 리턴한 바이트 수                                                   |
 | time          | Integer      | long         | 요청 시간, UNIX 타임스탬프, 단위: 초.                                        |
 | ua            | String       | text         | User-Agent 정보                                              |

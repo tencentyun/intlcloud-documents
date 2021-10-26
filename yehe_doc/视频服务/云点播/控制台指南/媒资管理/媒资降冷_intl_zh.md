@@ -5,7 +5,7 @@
 
 ## 智能降冷策略
 1、登录云点播控制台，选择【媒资管理】>[【媒资降冷】](https://console.cloud.tencent.com/vod/pics)，默认进入“智能降冷策略”页面。
-![](https://main.qcloudimg.com/raw/75e67d4e4e873921e2e2cf7b1c9117f9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/489e80b1035adb73926db9b6d46b0725.png)
 
 
 | 属性 | 说明 | 
@@ -24,15 +24,15 @@
  
 ## 直接降冷
 1. 登录云点播控制台，选择【媒资管理】>[【媒资降冷】](https://console.cloud.tencent.com/vod/pics)，单击“直接降冷”页面，用户可以通过 FileID 触发降冷。
-![](https://main.qcloudimg.com/raw/5387186435b2bbcd2b868148c9795628.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0eb7eb77ed62962fd26f353ae79a434a.png)
 >?直接降冷一次仅支持提供100个 FileID 降冷。
 
 
 ## 创建智能降冷策略
 1. 单击【创建智能降冷策略】即可填写策略名称，仅支持`中文`、`英文`、`数字`、`空格`、`_`、`-`和`.` 七种格式，长度不能超过20个字符。
-![](https://main.qcloudimg.com/raw/46a3e5afe3f74fe5a37533b27dfa8b63.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3ef4fa3afca1eac8a4fac27a186efdb1.png)
 2. 降冷策略：通过该条降冷策略，媒资文件最后的存储类型，一条降冷策略仅支持一个存储类型。
-![](https://main.qcloudimg.com/raw/3f15d5cb5e54db1c48c4a6d5d615ff30.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8d8d508d682f1adc9ace2b0c78ae0fbe.png)
 3. 策略配置：用户可以通过配置不同的策略来实现降冷逻辑。
  - 时间：支持指定上传时间和指定存放时间两种策略。
 		- 指定上传时间：用户可以指定时间点/时间段，进行降冷策略配置。

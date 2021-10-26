@@ -5,7 +5,7 @@ This API is used to create an inventory job for a bucket. For more information, 
 > !
 > - You can create up to 1,000 inventory jobs for each COS bucket.
 > - You must add a bucket policy to the destination bucket for COS to write the output file of the inventory job to the destination bucket.
-> - To call this API, make sure that you have the necessary permission for bucket inventory jobs; the bucket owner has this permission by default. If you do not have it, you should request it from the bucket owner first.  
+> - To call this API, ensure that you have obtained required permissions from the bucket owner to operate on the inventory jobs for the bucket. The bucket owner has such permissions by default. For the authorization directions, please see [Inventory Overview - Directions](https://intl.cloud.tencent.com/document/product/436/30622#.E4.BD.BF.E7.94.A8.E6.96.B9.E6.B3.95).
 > - If you specify a prefix for the destination path of the inventory report, COS will automatically append a slash (/) to the specified prefix. For example, if you set the prefix to `Prefix`, COS will deliver the inventory report to `Prefix/inventory_report`.
 > 
 
@@ -39,24 +39,27 @@ Authorization: Auth String
 Content-MD5: MD5
 ```
 
->?Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> 
 
 #### Request parameters
 
 To call `PUT Bucket inventory`, specify the following parameter:
 
-| Parameter | Description | Type | Required |
+| Parameter | Description | Type |Required |
 | ---- | ------------------------------------------------------------ | ------ | ---- |
 | Id | ID of the inventory job. Default value: `None` <br>Letters, digits, hyphens (-), underscores (_), and dots (.) are supported. | String | Yes |
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 
 #### Request body
 
-You can configure the inventory job in the request body using the XML markup language. The configuration includes objects to analyze, analysis frequency, analysis items, and the format and destination path of the analysis result. 
+You can configure the inventory job in the request body using the XML markup language. The configuration includes objects to analyze, analysis frequency, analysis dimensions, and the format and destination path of the analysis result. 
 
 ```shell
 <InventoryConfiguration>
@@ -101,8 +104,8 @@ The nodes are described as follows:
 | IncludedObjectVersions | InventoryConfiguration | Whether to include object versions in the inventory <br><li>`All`: yes (the inventory will include all object versions and the additional fields `VersionId`, `IsLatest`, and `DeleteMarker`.)<br><li>`Current`: no | String | Yes |
 | Filter  | InventoryConfiguration | Filters objects prefixed with the specified value to analyze. | Container | No |
 | Prefix | Filter | Prefix of the objects to analyze | String | No |
-| OptionalFields | InventoryConfiguration | Analysis items to include in the inventory result | Container | No |
-| Field | OptionalFields | Optional analysis items, including `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, and `ReplicationStatus` | String | No |
+| OptionalFields | InventoryConfiguration | Analysis dimensions to include in the inventory result | Container | No |
+| Field | OptionalFields | Optional analysis dimensions, including `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, and `ReplicationStatus` | String | No |
 | Schedule | InventoryConfiguration | Inventory job cycle | Container | Yes |
 | Frequency | Schedule | Frequency of the inventory job. Enumerated values: `Daily`, `Weekly` | String | Yes   |
 | Destination | InventoryConfiguration | Information about the inventory result destination | Container | Yes |
@@ -118,11 +121,11 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
-The response body of this API is empty.
+The response body is empty.
 
 #### Error codes
 
@@ -136,7 +139,7 @@ This API returns common error responses and error codes. For more information, p
 This sample adds an inventory job named `list1` to the `examplebucket-1250000000` bucket.
 - Objects to analyze: objects prefixed with `myPrefix` and all their versions in the bucket
 - Analysis frequency: daily
-- Analysis items: `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, and `ReplicationStatus`
+- Analysis dimensions: `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, and `ReplicationStatus`
 - Analysis result: to be stored in the `examplebucket-1250000000` bucket as a CSV file, which is prefixed with `list1` and encrypted with SSE-COS.
 
 ```shell

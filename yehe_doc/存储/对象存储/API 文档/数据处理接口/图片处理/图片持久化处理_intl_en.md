@@ -14,13 +14,13 @@ Pic-Operations: <PicOperations>
 ```
 
 >?
->- API for simply uploading a COS file. For more information, see COS [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
-> Authorization: Auth String. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>- For more information about the simple upload API of COS, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
+>- Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
 >- The QPS for Persistent Image Processing is limited to 100. For a higher QPS, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 ### Request content
 
-`Pic-Operations` is JSON string. Its parameters are as follows:
+`Pic-Operations` is a JSON string. Its parameters are as follows:
 
 | Parameter | Type | Required | Description |
 | ----------- | ----- | ---- | -------------------------------------- |
@@ -32,7 +32,7 @@ Pic-Operations: <PicOperations>
 | Parameter | Type | Required | Description |
 | ------ | ------ | ---- | ---------------------------------------- |
 | bucket | String | No | Name of the destination bucket to store the results, formatted as `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket. |
-| fileid | String | Yes | Path of the processing results. If the value of this parameter starts with a slash (/), the results will be stored in a specified folder. Otherwise, the results will be stored in the directory of the input image. |
+| fileid   | String | Yes | The path and name of the output file <br>The rules for setting this parameter are as follows (assume that the input file is stored in `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` is created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash. Otherwise, an empty filename will be generated.    |
 | rule | String | Yes | Processing parameters. For more information, please see COS’s image processing API. To process an image using a specified style, the value must start with `style/` with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. |
 
 ### Response
@@ -40,25 +40,25 @@ Parameters in the response body are as follows:
 
 | Parameter | Type | Description |
 | ---------------- | --------- | ---- |
-| UploadResult | Container | Input image information |
+| UploadResult | Container | Original image information |
 
- Content of the `UploadResult` node:
+ Content of `UploadResult`:
 
 | Parameter | Type | Description |
 | -------------- | --------- | ------ |
 | OriginalInfo | Container | Input image information |
 | ProcessResults | Container | Image processing results |
 
- Content of the `OriginalInfo` node:
+ Content of `OriginalInfo`:
 
 | Parameter | Type | Description |
 | --------- | --------- | ------ |
 | Key | String | Name of the input image |
 | Location | String | Location of the image |
-| ImageInfo | Container | Input image information |
+| ImageInfo | Container | Information of the original image                                           |
 |      ETag     | String    | ETag of the input image. If the output image overwrites the input image, the value of `ETag` will be that of the output image. |
 
- Content of the `ImageInfo` node:
+ Content of `ImageInfo`:
 
 | Parameter | Type | Description |
 | ----------- | ------ | ------ |
@@ -66,29 +66,29 @@ Parameters in the response body are as follows:
 | Width | Int | Image width |
 | Height | Int | Image height |
 | Quality | Int | Image quality |
-| Ave | String | Average hue of an image |
+| Ave | String | Image average hue |
 | Orientation | Int | Image rotation angle |
 
- Content of the `ProcessResults` node:
+ Content of `ProcessResults`:
 
 | Parameter | Type | Description |
 | ------ | --------- | --------- |
 | Object | Container | Processing result of each image |
 
- Content of the `Object` node:
+ Content of `Object`:
 
 | Parameter | Type | Description |
 | -------- | ------ | ---- |
 | Key | String | Filename |
-| Location | String | Location of the image |
+| Location | String | Image path |
 | Format | String | Image format |
-| Width | Int | Image width |
+| Width    | Int    | Image width             |
 | Height | Int | Image height |
-| Size | Int | Image size |
+| Size     | Int    | Image size             |
 | Quality | Int | Image quality |
 | ETag | String | ETag of the output image |
 
-### Example
+### Samples
 #### Request
 
 ```shell
@@ -110,7 +110,6 @@ Content-Length: 645
 Date: Tue, 03 Apr 2018 09:06:16 GMT
 Status: 200 OK
 x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
-
 
 <UploadResult>
 		<OriginalInfo>
@@ -183,7 +182,7 @@ Pic-Operations: <PicOperations>
 | Parameter | Type | Required | Description |
 | ------ | ------ | ---- | ---------------------------------------- |
 | bucket | String | No | Name of the destination bucket to store the results, formatted as `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket. |
-| fileid | String | Yes | Path of the processing results. If the value of this parameter starts with a slash (/), the results will be stored in a specified folder. Otherwise, the results will be stored in the directory of the input image. |
+| fileid   | String | Yes | The path and name of the output file <br>The rules for setting this parameter are as follows (assume that the input file is stored in `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` is created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash. Otherwise, an empty filename will be generated.    |
 | rule | String | Yes | Processing parameters. For more information, please see COS’s image processing API. To process an image using a specified style, the value must start with `style/` with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. |
 
 ### Response
@@ -193,23 +192,23 @@ Parameters in the response body are as follows:
 | ---------------- | --------- | ---- |
 | UploadResult | Container | Input image information |
 
- Content of the `UploadResult` node:
+ Content of `UploadResult`:
 
 | Parameter | Type | Description |
 | -------------- | --------- | ------ |
 | OriginalInfo | Container | Input image information |
 | ProcessResults | Container | Image processing results |
 
- Content of the `OriginalInfo` node:
+ Content of `OriginalInfo`:
 
 | Parameter | Type | Description |
 | --------- | --------- | ------ |
 | Key | String | Name of the input image |
 | Location | String | Location of the image |
-| ImageInfo | Container | Input image information |
-| ETag | String | ETag of the input image. If the output image overwrites the input image, the value of `ETag` will be that of the output image. |
+| ImageInfo | Container | Information of the original image                                           |
+| ETag | String | ETag of the original image. If the output image overwrites the original image, the value of `etag` will be that of the output image |
 
- Content of the `ImageInfo` node:
+ Content of `ImageInfo`:
 
 | Parameter | Type | Description |
 | ----------- | ------ | ------ |
@@ -217,36 +216,36 @@ Parameters in the response body are as follows:
 | Width | Int | Image width |
 | Height | Int | Image height |
 | Quality | Int | Image quality |
-| Ave | String | Average hue of an image |
+| Ave | String | Image average hue |
 | Orientation | Int | Image rotation angle |
 
- Content of the `ProcessResults` node:
+ Content of `ProcessResults`:
 
 | Parameter | Type | Description |
 | ------ | --------- | --------- |
 | Object | Container | Processing result of each image |
 
- Content of the `Object` node:
+ Content of `Object`:
 
 | Parameter | Type | Description |
 | -------- | ------ | ---- |
 | Key | String | Filename |
-| Location | String | Location of the image |
+| Location | String | Image path |
 | Format | String | Image format |
-| Width | Int | Image width |
+| Width    | Int    | Image width             |
 | Height | Int | Image height |
-| Size | Int | Image size |
+| Size     | Int    | Image size             |
 | Quality | Int | Image quality |
 | ETag | String | ETag of the output image |
 
-### Example
+### Samples
 
 #### Request
 
  ```shell
 POST /filename.jpg?image_process HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-chengdu.myqcloud.com
-Date: Wed，18 Jan 2017 16:17:03 GMT
+Date: Wed, 18 Jan 2017 16:17:03 GMT
 Authorization: XXXXXXXXXX
 Pic-Operations: {"is_pic_info":1,"rules":[{"fileid":"test.jpg","rule":"imageView2/format/png"}]}
 Content-Length: XX
@@ -261,8 +260,6 @@ Content-Length: 645
 Date: Tue, 03 Apr 2018 09:06:16 GMT
 Status: 200 OK
 x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
-
-
 
 <UploadResult>
 			<OriginalInfo>

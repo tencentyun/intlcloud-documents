@@ -7,7 +7,7 @@
 - SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md)를 참고하십시오.
 - SDK FAQ는 [Android SDK FAQ](https://intl.cloud.tencent.com/document/product/436/38955)를 참고하십시오.
 
->? XML 버전 SDK 사용 시 함수 또는 메소드 없음 등 오류가 발생하였을 경우, 먼저 XML 버전 SDK를 최신 버전으로 업데이트한 후 재시도하십시오.
+>? XML 버전의 SDK를 사용할 때 함수나 메소드가 존재하지 않는 등의 오류가 발생하는 경우, SDK의 XML 버전을 최신 버전으로 업그레이드한 후 다시 시도하십시오.
 >
 
 
@@ -15,7 +15,7 @@
 
 1. Android 애플리케이션이 필요합니다. 기존의 프로젝트 또는 새로 생성한 프로젝트 모두 가능합니다.
 2. Android 애플리케이션의 타깃은 API 레벨 15(Ice Cream Sandwich) 버전 이상이어야 합니다.
-3. Tencent Cloud 임시 키를 받을 수 있는 원격 주소가 필요합니다. 임시 키에 대한 설명은 [모바일 애플리케이션 다이렉트 업로드 사례](https://intl.cloud.tencent.com/document/product/436/30618)를 참고하십시오.
+3. Tencent Cloud 임시 키를 받을 수 있는 원격 주소가 필요합니다. 임시 키에 관한 설명은 [모바일 애플리케이션 다이렉트 업로드 사례](https://intl.cloud.tencent.com/document/product/436/30618)를 참고하십시오.
 
 ## 1단계: SDK 설치
 
@@ -42,7 +42,7 @@ repositories {
 dependencies {
 	...
     // 다음 행 추가
-    implementation 'com.qcloud.cos:cos-android:5.6.+'
+    implementation 'com.qcloud.cos:cos-android:5.7.+'
 }
 ```
 
@@ -62,7 +62,7 @@ dependencies {
 dependencies {
 	...
     // 다음 행 추가
-    implementation 'com.qcloud.cos:cos-android-lite:5.6.+'
+    implementation 'com.qcloud.cos:cos-android-lite:5.7.+'
 }
 ```
 
@@ -270,11 +270,12 @@ String uploadId = null;
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 
-//업로드 진행률 콜백 설정
+//업로드 진행률 콜백 설정. 업로드 재개에 사용되는 uploadId를 획득할 수 있습니다.
 cosxmlUploadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
     @Override
     public void onProgress(long complete, long target) {
         // todo Do something to update progress...
+        uploadId = cosxmlUploadTask.getUploadId();  
     }
 });
 //반환 결과 콜백 설정
@@ -296,12 +297,11 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
         }
     }
 });
-//작업 상태 콜백을 설정하면 작업 과정을 확인하고 uploadId를 가져와 이어서 전송할 수 있습니다.
+//작업 상태 콜백 설정. 작업 진행 과정을 확인할 수 있습니다.
 cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
     @Override
     public void onStateChanged(TransferState state) {
         // todo notify transfer state
-        uploadId = cosxmlUploadTask.getUploadId();  
     }
 });
 ```
@@ -316,7 +316,7 @@ ktx를 사용하는 경우 아래 업로드 예시 코드를 참고하십시오.
 viewModelScope.launch {
     val `object` = cosObject {
         bucket = cosBucket {
-            service = cos
+            service = cosXmlService
             name = "examplebucket-1250000000"
         }
         key = "exampleObject"
@@ -324,7 +324,7 @@ viewModelScope.launch {
     // 로컬 예시 파일
     val sourceFile = File(appContext.externalCacheDir, "sourceFile")
 
-    try{
+    try {
         // upload 방법: suspend function
         val result = `object`.upload(
             localFile = sourceFile,
@@ -355,7 +355,7 @@ viewModelScope.launch {
 // 고급 다운로드 인터페이스는 중단된 지점부터 이어 올리기를 지원합니다. 따라서 다운로드 전에 HEAD를 요청하여 파일 정보를 획득하시기 바랍니다.
 // 임시 키 또는 서브 계정을 사용해 액세스하는 경우 권한 리스트에 HeadObject 권한이 포함되어 있는지 확인하십시오.
 
-// TransferConfig 초기화. 본 예시에서는 기본 설정을 사용합니다. 사용자 정의할 경우에는 SDK 인터페이스 문서를 참고하십시오.
+// TransferConfig 초기화. 본 예시는 기본 설정을 사용합니다. 사용자 정의할 경우에는 SDK 인터페이스 문서를 참고하십시오.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
 //TransferManager 초기화
 TransferManager transferManager = new TransferManager(cosXmlService,
@@ -425,7 +425,7 @@ viewModelScope.launch {
         key = "exampleObject"
     }
 
-    try{
+    try {
         // download 방법: suspend function
         val result = `object`.download(
             context = appContext,

@@ -6,4 +6,4 @@
 
 1. 登录云点播控制台，选择【媒资管理】>[【图片管理】](https://console.cloud.tencent.com/vod/pics)，默认进入“已上传”页面。
 2. 单击目标图片“操作”栏下的【管理】，进入相应管理页面，该页面展示了图片的详细信息，并且您可以编辑图片名称和图片分类。
-![](https://main.qcloudimg.com/raw/4cc723debb90bbd8115b2e23ad384bb0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/211da58bbcf6d63a65d1d83d8413aeb4.png)

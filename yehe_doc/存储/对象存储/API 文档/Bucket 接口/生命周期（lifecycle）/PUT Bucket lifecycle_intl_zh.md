@@ -123,7 +123,8 @@ Content-MD5: MD5
 | Prefix                         | LifecycleConfiguration.Rule<br>.Filter.And                           | 指定规则所适用的前缀。匹配前缀的对象受该规则影响，Prefix <br>最多只能有一个 | String    | 否       |
 |  Tag   |    LifecycleConfiguration.Rule<br>.Filter.And   |         标签集合，最多支持10个标签    |   Container  |  否|
 |  Key  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag  |    标签的 Key，长度不超过128字节，支持英文字母、数字、空格、加号、<br>减号、下划线、等号、点号、冒号、斜线     |     String	|   否    |
-|  Value  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag  |   标签的 Value，长度不超过256字节, 支持英文字母、数字、空格、加号、<br>减号、下划线、等号、点号、冒号、斜线	    |   String	 |  否    | Status                         | LifecycleConfiguration.Rule                                  | 指明规则是否启用，枚举值：Enabled，Disabled                  | String    | 是       |
+|  Value  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag  |   标签的 Value，长度不超过256字节, 支持英文字母、数字、空格、加号、<br>减号、下划线、等号、点号、冒号、斜线	    |   String	 |  否    | 
+|Status                         | LifecycleConfiguration.Rule                                  | 指明规则是否启用，枚举值：Enabled，Disabled                  | String    | 是       |
 | Expiration                     | LifecycleConfiguration.Rule                                  | 规则过期属性                                                 | Container | 否       |
 | Transition                     | LifecycleConfiguration.Rule                                  | 规则转换属性，用于描述对象何时进行存储类型的转换和转换的存储类型        | Container | 否       |
 | Days                           | LifecycleConfiguration.Rule<br>.Transition 或 Expiration      | 指明规则对应的动作在对象最后的修改日期过后多少天操作：<br><li>如果是 Transition，该字段有效值是非负整数<br><li>如果是 Expiration，该字段有效值为正整数，最大支持3650天 | Integer   | 否       |

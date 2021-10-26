@@ -1,5 +1,5 @@
 ## Video Portal
-VOD provides a rich set of features such as video upload, video production, video management, intelligent thumbnail generation, superplayer, and sub-account management, making it suitable for video websites, news portals, internal training platforms, and other scenarios where video playback is required.
+VOD provides a rich set of features such as video upload, video management, intelligent thumbnail generation, superplayer, and sub-account management, making it suitable for video websites, news portals, internal training platforms, and other scenarios where video playback is required.
 
 ## E-commerce
 VOD provides features such as transcoding template, player SDK, video production, and video keyframe description, making it suitable for video websites, e-commerce platforms, short video distribution services, and other scenarios where video transcoding and playback are required.

@@ -5,7 +5,7 @@
 
 1. 登录云点播控制台，选择【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)，默认进入“已上传”页面。
 2. 单击列表右上方的![](https://main.qcloudimg.com/raw/f4d3608e1d8319051883e90226a86f50.png)，勾选需要展示的列表字段后，单击【确定】即可。最多可勾选14个字段。视频名称/ID与操作为默认勾选字段。
-![](https://main.qcloudimg.com/raw/1721036f682088b8a4e50432fcef35ff.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/473896085055dc9a382e363cec4db9dc.png)
 
 
 
@@ -13,10 +13,10 @@
 
 1. 登录云点播控制台，选择【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)，默认进入“已上传”页面。用户勾选媒资后进行导出，则导出勾选的媒资信息。
 2. 单击列表右上方的![](https://main.qcloudimg.com/raw/e530c6f8adeb603d98e1bc7e0ae8e255.png)，选择【导出格式】和【导出数据】后，单击【确定】即可。用户如未勾选，则导出全部点播媒资信息。
-![](https://main.qcloudimg.com/raw/87ceafbe93956dac18287d6162838783.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c390702b9e17fb783cae7e8047873e22.png)
 3. 云点播支持 CSV 和 JSONLINES 格式的文件导出，您可以选择导出勾选文件信息或所有文件信息。
  1. CSV 格式文件为字符分隔值文件，其文件以纯文本形式存储表格数据，文件内容预览如下：
- ![](https://main.qcloudimg.com/raw/86c5b645989dfc9689e8ef8e7f73a167.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/858c2dac0136337f560d52833921ff00.png)
 <table>
    <tr>
       <th width="120px" style="text-align:center">文件格式</td>
@@ -70,10 +70,6 @@
    <tr>
       <td>AdaptiveDynamicStreamingInfo</td>
       <td>转自适应码流信息。</td>
-   </tr>
-   <tr>
-      <td>MiniProgramReviewInfo</td>
-      <td>小程序审核信息。</td>
    </tr>
    <tr>
       <td>SubtitleInfo</td>

@@ -1,4 +1,4 @@
-The Mobile Live Video Broadcasting (MLVB) SDK extends CSS to mobile devices. CSS offers mainly cloud-based live streaming services, while MLVB provides not only an RTMP SDK that allows quick integration, but also a one-stop solution that integrates Tencent Cloud services including LVB, LEB, VOD, IM, and COS.
+The MLVB SDK of Tencent Video Cloud Toolkit extends CSS to mobile devices. CSS offers mainly cloud-based live streaming services, while MLVB provides not only an RTMP SDK that allows quick integration, but also a one-stop solution that integrates Tencent Cloud services including LVB, LEB, VOD, IM, and COS.
 
 
 ## Architecture and Solutions

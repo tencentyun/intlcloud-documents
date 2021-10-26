@@ -13,22 +13,22 @@ Beats 有多种采集器，您可以根据自身的需求下载对应的采集�
 ### 步骤1：获取 CKafka 实例接入地址
 
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
-2. 在左侧导航栏选择【实例列表】，单击实例的“ID”，进入实例基本信息页面。
-3. 在实例的基本信息页面的【接入方式】模块，可获取实例的接入地址。
-   ![](https://main.qcloudimg.com/raw/fea1f55c3cf311d1393347853cf183fc.png)
+2. 在左侧导航栏选择**实例列表**，单击实例的“ID”，进入实例基本信息页面。
+3. 在实例的基本信息页面的**接入方式**模块，可获取实例的接入地址。
+     ![](https://main.qcloudimg.com/raw/fea1f55c3cf311d1393347853cf183fc.png)
 
 ### 步骤2：创建 Topic
 
-1. 在实例基本信息页面，选择顶部【Topic管理】页签。
-2. 在 Topic 管理页面，单击【新建】，创建一个名为 test 的 Topic。
-  ![](https://main.qcloudimg.com/raw/bd8fb967eb2e46f14cee52c3a34014e2.png)
+1. 在实例基本信息页面，选择顶部**Topic管理**页签。
+2. 在 Topic 管理页面，单击**新建**，创建一个名为 test 的 Topic。
+    ![](https://main.qcloudimg.com/raw/bd8fb967eb2e46f14cee52c3a34014e2.png)
 
 ### 步骤3：准备配置文件
 
 进入 Filebeat 的安装目录，创建配置监控文件 filebeat.yml。
 <dx-codeblock>
 :::  yaml
-#======= Filebeat prospectors ==========
+#======= Filebeat7.x之后的版本，将 filebeat.prospectors 修改为 filebeat.inputs 即可 =======
 filebeat.prospectors:
 
 - input_type: log 
@@ -121,5 +121,4 @@ output.kafka:
   version:0.10.2 // 根据不同 CKafka 实例开源版本配置
 :::
 </dx-codeblock>
-
 

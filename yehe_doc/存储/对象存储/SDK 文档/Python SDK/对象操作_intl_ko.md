@@ -6,17 +6,17 @@
 
 | API                                                          | 작업명         | 작업 설명                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket(List Object)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회	|   버킷의 일부 또는 모든 객체 조회|
+| [GET Bucket(List Object)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회|   버킷의 일부 또는 모든 객체 조회|
 | [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | 객체 및 이전 버전 리스트 조회 |   버킷의 일부 또는 모든 객체와 이전 버전 정보 조회|
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 객체 간편 업로드       | 하나의 객체를 버킷에 업로드    |
-| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 	객체 메타데이터 조회  | 객체 메타데이터 정보 조회                |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 객체를 로컬에 다운로드        |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 조회  | 객체 메타데이터 정보 조회                |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 로컬에 객체 다운로드        |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사 설정   | 객체를 타깃 경로에 복사                        |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 단일 객체 삭제   | 버킷에서 지정 객체 삭제 |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 다수의 객체 삭제   | 버킷에서 지정 객체를 일괄 삭제 |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구 | 아카이브 유형의 객체 검색 및 액세스                      |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구 | 보관 유형의 객체 검색 및 액세스                      |
 | [SELECT Object content](https://intl.cloud.tencent.com/document/product/436/32360) | 객체 콘텐츠 인덱스 | 지정된 객체에서 콘텐츠 인덱스                      |
-| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | 객체 추가 업로드 | 객체를 멀티파트로 추가하여 버킷에 업로드 |
+| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | 객체 추가 업로드 | 객체를 멀티파트로 추가하여 버킷에 업로드                      |
 
 
 **멀티파트 작업**
@@ -29,7 +29,7 @@
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 멀티파트 복사       | 다른 객체를 한 파트로 복사             |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 업로드된 파트 조회   | 특정 멀티파트 업로드 작업에서 업로드된 파트 조회   |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 멀티파트 업로드 완료   | 전체 파일의 멀티파트 업로드 완료               |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 멀티파트 업로드 작업 중지 및 업로드된 파트 삭제 |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 하나의 멀티파트 업로드 작업 중지 및 이미 업로드한 파트 삭제 |
 
 
 
@@ -40,7 +40,7 @@
 
 #### 기능 설명
 
-버킷의 일부 또는 모든 객체를 조회합니다.
+버킷의 일부 또는 모든 객체 조회
 
 #### 메소드 프로토타입
 
@@ -74,12 +74,12 @@ response = client.list_objects(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket   | 버킷 이름은 BucketName-APPID로 구성  | String  | 예|
-| Prefix   |  기본값 null. 객체 키를 필터링해 prefix로 시작하는 객체와 매칭  | String  |  아니요|
-| Delimiter   |   기본값 null. 세퍼레이터 설정(예: `/`을 설정해 가상 폴더화)  | String|  아니요|
-| Marker   |  기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 시작 위치 표시  | String  |  아니요|
-| MaxKeys   | 반환되는 최대 객체 수. 기본값은 최대 1000개  | Int  |  아니요|
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 아니요|
+| Bucket   | 버킷 이름. BucketName-APPID로 구성  | String  | 필수|
+| Prefix   |  기본값 null. 객체 키를 필터링해 prefix로 시작하는 객체와 매칭  | String  |  옵션|
+| Delimiter   |   기본값 null. 세퍼레이터 설정(예: `/`을 설정해 가상 폴더화)  | String|  옵션|
+| Marker   |  기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 시작 위치 표시  | String  |  옵션|
+| MaxKeys   | 반환되는 최대 객체 수. 기본값은 최대 1000개  | Int  |  옵션|
+| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 옵션|
 
 #### 반환 결과 설명
 
@@ -125,15 +125,15 @@ response = client.list_objects(
 | NextMarker| IsTruncated가 true면 다음에 반환된 객체 리스트의 시작 위치 표시  | String  |
 | Name   | 버킷 이름은 BucketName-APPID로 구성  | String  |
 | IsTruncated   |  반환된 객체의 잘림 여부 표시  | String|
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 
-|Contents | 'ETag', 'StorageClass', 'Key', 'Owner', 'LastModified', 'Size' 등의 정보를 포함한 모든 객체 메타데이터가 담긴 리스트|List|
+| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 옵션|
+|Contents |'ETag', 'StorageClass', 'Key', 'Owner', 'LastModified', 'Size' 등의 정보를 포함한 모든 객체 메타데이터가 담긴 리스트|List|
 |CommonPrefixes |Prefix로 시작하고 Delimiter로 끝나는 모든 객체를 동일한 클래스로 분류|List|
 
 ### 객체 및 이전 버전 리스트 조회 
 
 #### 기능 설명
 
-버킷의 일부 또는 모든 객체와 이전 버전 정보를 조회합니다.
+버킷의 일부 또는 모든 객체 및 이전 버전 정보 조회
 
 #### 메소드 프로토타입
 
@@ -168,13 +168,13 @@ response = client.list_objects_versions(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket   | 버킷 이름은 BucketName-APPID로 구성  | String  | 예|
-| Prefix   |  기본값 null. 객체 키를 필터링해 prefix로 시작하는 객체와 매칭  | String  |  아니요|
-| Delimiter   |   기본값 null. 세퍼레이터 설정(예: `/`을 설정해 가상 폴더화)  | String|  아니요|
-| KeyMarker   |  기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 key 시작 위치 표시  | String  |  아니요|
-| VersionIdMarker|  기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 VersionId 시작 위치 표시  | String  |  아니요|
-| MaxKeys   | 반환되는 최대 객체 수. 기본값은 최대 1000개  | Int  |  아니요|
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 아니요|
+| Bucket   | 버킷 이름. BucketName-APPID로 구성  | String  | 필수|
+| Prefix   |  기본값 null. 객체 키를 필터링해 prefix로 시작하는 객체와 매칭  | String  |  옵션|
+| Delimiter   |   기본값 null. 세퍼레이터 설정(예: `/`을 설정해 가상 폴더화)  | String|  옵션|
+| KeyMarker   |  기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 key 시작 위치 표시  | String  |  옵션|
+| VersionIdMarker|  기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 VersionId 시작 위치 표시  | String  |  옵션|
+| MaxKeys   | 반환되는 최대 객체 수. 기본값은 최대 1000개  | Int  |  옵션|
+| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 옵션|
 
 #### 반환 결과 설명
 
@@ -231,16 +231,16 @@ response = client.list_objects_versions(
 | -------------- | -------------- |---------- |
 | MaxKeys   | 반환되는 최대 객체 수. 기본값은 최대 1000개  | String |
 | Prefix   |  기본값 null. prefix로 시작하는 객체와 매칭 | String|
-| Delimiter   |   기본값 null. 세퍼레이터 설정(예: `/`을 설정해 가상 폴더화)  | String|
+| Delimiter   |   기본값 null. 세퍼레이터 설정(예: `/`를 설정해 가상 폴더화)  | String|
 | KeyMarker   |  기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트 키의 시작 위치 표시  | String  |
 | VersionIdMarker|  기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 VersionId 시작 위치 표시  | String  |
-| NextKeyMarker| IsTruncated가 true면 다음에 반환된 객체 리스트 키의 시작 위치 표시  | String  |
-| NextVersionIdMarker| IsTruncated가 true면 다음에 반환된 객체 리스트의 VersionId 시작 위치 표시  | String  |
+| NextKeyMarker|  IsTruncated가 true면 다음에 반환된 객체 리스트 키의 시작 위치 표시  | String  |
+| NextVersionIdMarker | IsTruncated가 true면 다음에 반환된 객체 리스트의 VersionId 시작 위치 표시  | String  |
 | Name   | 버킷 이름은 BucketName-APPID로 구성  | String  |
 | IsTruncated   |  반환된 객체의 잘림 여부 표시  | String|
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 
-|Version | 'ETag', 'StorageClass', 'Key', 'VersionId', 'IsLatest', 'Owner', 'LastModified', 'Size' 등의 정보를 포함한 여러 버전의 객체 메타데이터가 담긴 리스트|List|
-|DeleteMarker| 'Key', 'VersionId', 'IsLatest', 'Owner', 'LastModified' 등의 정보를 포함한 모든 delete marker 객체 메타데이터가 담긴 리스트|List|
+| EncodingType   | 기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 옵션|
+|Version |'ETag', 'StorageClass', 'Key', 'VersionId', 'IsLatest', 'Owner', 'LastModified', 'Size' 등의 정보를 포함한 여러 버전의 객체 메타데이터가 담긴 리스트|List|
+|DeleteMarker|'Key', 'VersionId', 'IsLatest', 'Owner', 'LastModified' 등의 정보를 포함한 모든 delete marker 객체 메타데이터가 담긴 리스트|List|
 |CommonPrefixes |Prefix로 시작하고 Delimiter로 끝나는 모든 객체를 동일한 클래스로 분류|List|
 
 ### 객체 간편 업로드
@@ -267,11 +267,9 @@ from qcloud_cos import CosClientError
 import sys
 import logging
 
-
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-
-# secret_id, secret_key, region을 포함한 사용자 속성을 설정합니다.
+# secret_id, secret_key, region을 포함한 사용자 속성을 설정합니다. secret_id와 secret_key는 CAM 콘솔에 로그인하여 조회 및 관리하십시오.
 # APPID는 설정에서 삭제되었으니 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
 secret_id = 'secret_id'     # 사용자 secret_id로 변경
 secret_key = 'secret_key'     # 사용자 secret_key로 변경
@@ -328,27 +326,26 @@ response = client.put_object(
     }
 )
 print(response['ETag'])
-
-
-# 디렉터리 생성
-# COS에서 디렉터리는 경로가 ‘/’로 끝나는 특수 object입니다. Put Object 인터페이스를 호출하면 됩니다.
-try:
-    dir_to_create='path/to/create/dir/'
-    response = client.put_object(
-        Bucket=bucket,
-        Key=dir_to_create,
-        Body=b'',
-    )
-    print(response)
-except CosServiceError as e:
-    print(e.get_status_code())
 ```
+#### 요청 예시2: 디렉터리 생성
+COS에서 디렉터리는 ‘/’로 끝나는 특수 객체 이름입니다. Put Object 인터페이스를 호출하면 됩니다.
 
-#### 요청 예시2: 지정 디렉터리에 업로드
-[//]: # ".cssg-snippet-put-object-comp"
-
+[//]: # ".cssg-snippet-put-object-diretory"
 ```python
-#'/'로 구분되는 객체 이름을 업로드하면 파일이 포함된 폴더를 자동으로 생성합니다. 해당 폴더에 새로운 파일을 추가할 경우 COS에 파일 업로드 시 Key를 해당 디렉터리 접두사로 입력하기만 하면 됩니다.  
+# 디렉터리 생성
+dir_to_create='path/to/create/dir/'
+response = client.put_object(
+    Bucket='examplebucket-1250000000',  # Bucket은 BucketName-APPID로 구성
+    Key=dir_to_create,
+    Body=b'',
+)
+print(response)
+```
+#### 요청 예시3: 지정 디렉터리에 객체 업로드
+
+[//]: # ".cssg-snippet-put-object-comp"
+```python
+#'/'로 구분되는 객체 이름을 업로드하면 파일이 포함된 폴더를 자동으로 생성합니다. 해당 폴더에 새로운 파일을 추가할 경우 COS에 파일 업로드 시 Key를 해당 디렉터리 접두사로 입력하기만 하면 됩니다.
 dir_name = 'path/to/dir/'
 file_name = 'test.txt'
 object_key = dir_name + file_name
@@ -359,6 +356,20 @@ with open('test.txt', 'rb') as fp:
         Key=object_key,
         StorageClass='STANDARD',
         ContentType='text/html; charset=utf-8'
+    )
+    print(response['ETag'])
+```
+#### 요청 예시4: 업로드 속도 제한
+TrafficLimit 매개변수를 사용하여 업로드 제한 속도를 설정합니다. 단위는 bit/s이며 설정 범위는 819200 - 838860800, 즉 100KB/s - 100MB/s입니다.
+
+[//]: # ".cssg-snippet-put-object-by-limit"
+```python
+with open('test.bin', 'rb') as fp:
+    response = client.put_object(
+        Bucket='examplebucket-1250000000',  # Bucket은 BucketName-APPID로 구성
+        Key='exampleobject',
+        Body=fp,
+        TrafficLimit='819200'
     )
     print(response['ETag'])
 ```
@@ -395,24 +406,24 @@ response = client.put_object(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 버킷 이름은 BucketName-APPID로 구성 | String |  예 |
-|  Body  | 업로드하는 객체의 콘텐츠. 파일 스트림 또는 바이트 스트림이 될 수 있음 |  file/bytes |  예 |
-|  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String |  예 |
-| EnableMD5 | SDK의 Content-MD5 계산 여부. 기본적으로 비활성화 상태이며, 활성화 시 업로드 시간 증가|Bool | 아니요|
-| ACL |객체 ACL 설정. 예: 'private', 'public-read' |String| 아니요|
-| GrantFullControl |권한을 부여받은 계정에 모든 권한 부여. 형식: `id="OwnerUin"`|String|아니요|
-|GrantRead |권한을 부여받은 계정에 읽기 권한 부여. 형식: `id="OwnerUin"`  |String|아니요|
-|  StorageClass  |  객체의 스토리지 유형 설정. STANDARD, STANDARD_IA, ARCHIVE가 있으며, 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고 | String | 아니요 |
-|  Expires  | Expires 설정 | String|  아니요 |
-|  CacheControl  |  캐시 정책. Cache-Control 설정 | String |   아니요 |
-|  ContentType  | 콘텐츠 유형. Content-Type 설정 |String |   아니요 |
-|  ContentDisposition  |  객체 이름. Content-Disposition 설정 | String |   아니요 |
-|  ContentEncoding  |  인코딩 형식. Content-Encoding 설정 | String |   아니요 |
-|  ContentLanguage  |  언어 유형. Content-Language 설정 | String |   아니요 |
-|  ContentLength  | 전송 길이 설정 | String |   아니요 |
-|  ContentMD5  | 검증에 사용할 업로드 객체의 MD5 값 설정 | String |   아니요 |
-|  Metadata | 사용자 정의 객체 메타데이터. 반드시 x-cos-meta로 시작해야 하며, 그렇지 않을 경우 무시됨 | Dict |  아니요 |
-|  TrafficLimit | 단일 링크의 제한 속도. 단위는 bit/s이며 설정 범위는 819200 ~ 838860800, 즉 100KB/s~100MB/s로 설정| String |  아니요 |
+|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |   필수 |
+|  Body  | 업로드하는 객체의 콘텐츠. 파일 스트림 또는 바이트 스트림이 될 수 있음 |  file/bytes |  필수 |
+|  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String |  필수 |
+| EnableMD5 | SDK의 Content-MD5 계산 여부. 기본적으로 비활성화 상태이며, 활성화 시 업로드 시간 증가|Bool | 옵션|
+| ACL |객체 ACL 설정. 예: 'private', 'public-read' |String| 옵션|
+| GrantFullControl |권한을 부여받은 계정에 모든 권한 부여. 형식: `id="OwnerUin"`|String|옵션|
+|GrantRead |권한을 부여받은 계정에 읽기 권한 부여. 형식: `id="OwnerUin"`  |String|옵션|
+|  StorageClass  |  객체의 스토리지 유형 설정. STANDARD, STANDARD_IA, ARCHIVE가 있으며, 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고 | String |   옵션 |
+|  Expires  | Expires 설정 | String|  옵션 |
+|  CacheControl  |  캐시 정책. Cache-Control 설정 | String |   옵션 |
+|  ContentType  | 콘텐츠 유형. Content-Type 설정 |String |   옵션 |
+|  ContentDisposition  |  객체 이름. Content-Disposition 설정 | String |   옵션 |
+|  ContentEncoding  |  인코딩 형식. Content-Encoding 설정 | String |   옵션 |
+|  ContentLanguage  |  언어 유형. Content-Language 설정 | String |   옵션 |
+|  ContentLength  | 전송 길이 설정 | String |   옵션 |
+|  ContentMD5  | 검증에 사용할 업로드 객체의 MD5 값 설정 | String |   옵션 |
+|  Metadata | 사용자 정의 객체 메타데이터. 반드시 x-cos-meta로 시작해야 하며, 그렇지 않을 경우 무시됨 | Dict |  옵션 |
+|  TrafficLimit | 단일 링크의 제한 속도. 단위는 bit/s이며 설정 범위는 819200 - 838860800, 즉 100KB/s - 100MB/s로 설정| String |  옵션 |
 
 #### 반환 결과 설명
 업로드한 객체의 속성(dict 유형):
@@ -459,17 +470,17 @@ response = client.head_object(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
     VersionId='string',
-    IfModifiedSince='Wed, 28 Oct 2014 20:30:00 GMT',
+    IfModifiedSince='Wed, 28 Oct 2020 20:30:00 GMT',
 )
 ```
 #### 매개변수 설명
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket   | 버킷 이름은 BucketName-APPID로 구성  | String  |  예 |
-| Key   |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임  |String  | 예 |
-| VersionId   | 버전 제어 활성화 후 지정 객체의 버전  | String  | 아니요 |
-| IfModifiedSince   | 지정 시간 이후 수정될 경우에만 반환. 시간 형식: GMT | String  | 아니요 |
+| Bucket   | 버킷 이름은 BucketName-APPID로 구성  | String  |  필수 |
+| Key   |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임  |String  | 필수 |
+| VersionId   | 버전 제어 활성화 후 지정 객체의 버전  | String  | 옵션 |
+| IfModifiedSince   | 지정 시간 이후 수정될 경우에만 반환. 시간 형식: GMT | String  | 옵션 |
 
 #### 반환 결과 설명
 
@@ -498,10 +509,10 @@ response = client.head_object(
 | ETag  |  멀티파트 업로드 시 해당 값은 객체 콘텐츠의 MD5 검증값이 아니므로, 객체 고유성 검사에만 사용 가능 |String|
 | Last-Modified | 객체 최종 수정 시간| String|
 |  Cache-Control  |  캐시 정책. 표준 HTTP 헤더| String |
-|  Content-Type  | 콘텐츠 유형. 표준 HTTP 헤더| String |
-|  Content-Disposition  |  파일 이름. 표준 HTTP 헤더| String |
+|  Content-Type  | 콘텐츠 유형. 표준 HTTP 헤더 |String |
+|  Content-Disposition  |  파일 이름. 표준 HTTP 헤더 |String |
 |  Content-Encoding  |  인코딩 포맷. 표준 HTTP 헤더| String |
-|  Content-Language  |  언어 유형. 표준 HTTP 헤더| String |
+|  Content-Language  |  언어 유형. 표준 HTTP 헤더 | String |
 |  Content-Length  | 객체의 크기 | String |
 |  Expires | 캐시 만료 시간. 표준 HTTP 헤더| String |
 |  x-cos-meta-* | 사용자 정의 객체 메타데이터. 반드시 x-cos-meta로 시작해야 하며, 그렇지 않을 경우 무시됨 | String |
@@ -519,13 +530,36 @@ response = client.head_object(
 ```
  get_object(Bucket, Key, **kwargs)
 ```
-#### 요청 예시
+#### 요청 예시1: 객체 다운로드
+
+[//]: # ".cssg-snippet-get-object"
 ```python
 response = client.get_object(
     Bucket='examplebucket-1250000000',
     Key='exampleobject'
 )
+response['Body'].get_stream_to_file('exampleobject')
+```
+#### 요청 예시2: 다운로드 속도 제한
 
+[//]: # ".cssg-snippet-get-object-by-limit"
+```python
+response = client.get_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    TrafficLimit='819200'
+)
+response['Body'].get_stream_to_file('exampleobject')
+```
+#### 요청 예시3: 객체 일부 콘텐츠 다운로드
+
+[//]: # ".cssg-snippet-get-object-by-range"
+```python
+response = client.get_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    Range='bytes=0-100'
+)
 response['Body'].get_stream_to_file('exampleobject')
 ```
 #### 모든 매개변수 요청 예시
@@ -554,21 +588,21 @@ response = client.get_object(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 버킷 이름은 BucketName-APPID로 구성 | String  |  예 |
-|  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String  | 예 |
-|  Range  |  다운로드할 객체의 범위 설정. 형식: bytes=first-last  | String  |  아니요 |
-|  IfMatch  |  ETag가 지정된 콘텐츠와 일치해야 반환 |String  | 아니요 |
-|  IfModifiedSince  |   지정 시간 이후 수정될 경우에만 반환. 시간 형식: GMT | String  | 아니요 |
-|  IfNoneMatch  |  ETag가 지정 콘텐츠와 불일치해야 반환 | String  | 아니요 |
-|  IfUnmodifiedSince  |  객체 수정 시간이 지정 시간보다 이르거나 같을 경우에만 반환. 시간 형식: GMT | String  | 아니요|
-|  ResponseCacheControl  |  응답 헤더의 Cache-Control 설정 | String  | 아니요 |
-|  ResponseContentDisposition  |  응답 헤더의 Content-Disposition 설정 | String  | 아니요 |
-|  ResponseContentEncoding  |   응답 헤더의 Content-Encoding 설정 | String  | 아니요 |
-|  ResponseContentLanguage  |  응답 헤더의 Content-Language 설정 | String  | 아니요 |
-|  ResponseContentType  |   응답 헤더의 Content-Type 설정 | String  | 아니요 |
-|  ResponseExpires  |응답 헤더의 Expires 설정 |   String  | 아니요 |
-|  VersionId  | 다운로드할 객체 버전 지정 |  String  | 아니요 |
-|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200 ~ 838860800, 즉 100KB/s~100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한함| String |  아니요 |
+|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String  |  필수 |
+|  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String  | 필수 |
+|  Range  |  다운로드할 객체의 범위 설정. 형식: bytes=first-last  | String  |  옵션 |
+|  IfMatch  |  ETag가 지정된 콘텐츠와 일치해야 반환 |String  | 옵션 |
+|  IfModifiedSince  |   지정 시간 이후 수정될 경우에만 반환. 시간 형식: GMT | String  | 옵션 |
+|  IfNoneMatch  |  ETag가 지정 콘텐츠와 불일치해야 반환 | String  | 옵션 |
+|  IfUnmodifiedSince  |  객체 수정 시간이 지정 시간보다 이르거나 같을 경우에만 반환. 시간 형식: GMT| String  | 옵션|
+|  ResponseCacheControl  |  응답 헤더의 Cache-Control 설정 | String  | 옵션 |
+|  ResponseContentDisposition  |  응답 헤더의 Content-Disposition 설정 | String  | 옵션 |
+|  ResponseContentEncoding  |   응답 헤더의 Content-Encoding 설정 | String  | 옵션 |
+|  ResponseContentLanguage  |  응답 헤더의 Content-Language 설정 | String  | 옵션 |
+|  ResponseContentType  |   응답 헤더의 Content-Type 설정 | String  | 옵션 |
+|  ResponseExpires  |응답 헤더의 Expires 설정 |   String  | 옵션 |
+|  VersionId  | 다운로드할 객체 버전 지정 |  String  | 옵션 |
+|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200 - 838860800, 즉 100KB/s - 100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한| String |  옵션 |
 
 #### 반환 결과 설명
 
@@ -685,7 +719,8 @@ response = client.get_object(
 ```
 copy_object(Bucket, Key, CopySource, CopyStatus='Copy', **kwargs)
 ```
-#### 요청 예시
+#### 요청 예시1: 객체 복사
+소스와 타깃은 다른 객체이며 새로운 타깃 객체를 생성할 수 있고 타깃 객체는 소스 객체의 메타데이터 정보를 복사할 수 있습니다.
 
 [//]: # ".cssg-snippet-copy-object"
 ```python
@@ -697,6 +732,41 @@ response = client.copy_object(
         'Key': 'exampleobject', 
         'Region': 'ap-guangzhou'
     }
+)
+```
+#### 요청 예시2: 객체 메타데이터 수정
+소스와 타깃은 동일한 객체이며 CopyStatus를 Replaced로 설정한 후 헤더 필드를 통해 객체의 메타데이터를 수정할 수 있습니다.
+
+[//]: # ".cssg-snippet-copy-object-metadata"
+```python
+response = client.copy_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    CopySource={
+        'Bucket': 'sourcebucket-1250000000', 
+        'Key': 'exampleobject', 
+        'Region': 'ap-guangzhou'
+    },
+    CopyStatus='Replaced', 
+    ContentType='text/plain', # 객체 ContentType 수정
+    Metadata={'x-cos-meta-key1': 'value1', 'x-cos-meta-key2': 'value2'} # 사용자 정의 메타데이터 수정
+)
+```
+#### 요청 예시3: COS 유형 수정
+소스와 타깃은 동일한 객체이며 CopyStatus를 Replaced로 설정한 후 StorageClass 매개변수를 통해 객체의 스토리지 유형을 수정할 수 있습니다.
+
+[//]: # ".cssg-snippet-copy-object-storage-class"
+```python
+response = client.copy_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    CopySource={
+        'Bucket': 'examplebucket-1250000000', 
+        'Key': 'exampleobject', 
+        'Region': 'ap-guangzhou'
+    },
+    CopyStatus='Replaced', 
+    StorageClass='STANDARD_IA' # 표준IA 스토리지로 수정
 )
 ```
 #### 모든 매개변수 요청 예시
@@ -732,21 +802,21 @@ response = client.copy_object(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 버킷 이름은 BucketName-APPID로 구성 | String|  예 |
-|  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String| 예 |
-|  CopySource  | Bucket, Key, Region, VersionId를 포함한 소스 객체의 경로 복사|  Dict | 예 |
-|  CopyStatus  |  선택값은 Copy와 Replaced. Copy로 설정하는 경우 설정된 사용자 메타데이터 정보를 무시하고 바로 복사. Replaced로 설정하는 경우 설정된 메타정보에 따라 메타데이터 수정. 타깃 경로와 소스 경로가 같은 경우 반드시 Replaced로 설정 필요 | String| 예 |
-| ACL |객체 ACL 설정. 예: private, public-read |String| 아니요|
-| GrantFullControl |지정 계정에 객체에 대한 모든 권한 부여. 형식: `id="OwnerUin"` |String|아니요|
-|GrantRead |지정 계정에 객체의 읽기 권한 부여. 형식: `id="OwnerUin"`|String|아니요|
-|  StorageClass  |  객체의 스토리지 유형 설정. STANDARD, STANDARD_IA가 있으며, 기본값은 STANDARD. | String|  아니요 |
-|  Expires  | Expires 설정 | String| 아니요 |
-|  CacheControl  | 캐시 정책. Cache-Control 설정 | String|  아니요 |
-|  ContentType  | 콘텐츠 유형. Content-Type 설정 | String |  아니요 |
-|  ContentDisposition  |  파일 이름. Content-Disposition 설정 | String|  아니요 |
-|  ContentEncoding  | 인코딩 포맷. Content-Encoding 설정 | String|  아니요 |
-|  ContentLanguage  |  언어 유형. Content-Language 설정 | String|  아니요 |
-|  Metadata |사용자 정의 객체 메타데이터 | Dict |  아니요 |
+|  Bucket  | 버킷 이름은 BucketName-APPID로 구성 | String|  필수 |
+|  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String| 필수 |
+|  CopySource  | Bucket, Key, Region, VersionId를 포함한 원본 객체의 경로 복사 |  Dict | 필수 |
+|  CopyStatus  |  선택값은 Copy와 Replaced. Copy로 설정하는 경우 설정된 사용자 메타데이터 정보를 무시하고 바로 복사. Replaced로 설정하는 경우 설정된 메타정보에 따라 메타데이터 수정. 타깃 경로와 소스 경로가 같은 경우 반드시 Replaced로 설정 필요 | String| 필수 |
+| ACL |객체 ACL 설정. 예: private, public-read |String| 옵션|
+| GrantFullControl |지정 계정에 객체에 대한 모든 권한 부여. 형식: `id="OwnerUin"` |String|옵션|
+|GrantRead |지정 계정에 객체의 읽기 권한 부여. 형식: `id="OwnerUin"`|String|옵션|
+|  StorageClass  |  객체의 스토리지 유형 설정. STANDARD, STANDARD_IA가 있으며, 기본값은 STANDARD. | String|  옵션 |
+|  Expires  | Expires 설정 | String| 옵션 |
+|  CacheControl  | 캐시 정책. Cache-Control 설정 | String|  옵션 |
+|  ContentType  | 콘텐츠 유형. Content-Type 설정 | String |  옵션 |
+|  ContentDisposition  |  파일 이름. Content-Disposition 설정 | String|  옵션 |
+|  ContentEncoding  | 인코딩 포맷. Content-Encoding 설정 | String|  옵션 |
+|  ContentLanguage  |  언어 유형. Content-Language 설정 | String|  옵션 |
+|  Metadata |사용자 정의 객체 메타데이터 | Dict |  옵션 |
 
 
 #### 반환 결과 설명
@@ -821,17 +891,7 @@ import sys
 import os
 import logging
 
-# -*- coding=utf-8
-from qcloud_cos import CosConfig
-from qcloud_cos import CosS3Client
-from qcloud_cos import CosServiceError
-from qcloud_cos import CosClientError
-
-import sys
-import os
-import logging
-
-# secret_id, secret_key, region을 포함한 사용자 속성을 설정합니다.
+# secret_id, secret_key, region을 포함한 사용자 속성을 설정합니다. secret_id와 secret_key는 CAM 콘솔에 로그인하여 조회 및 관리하십시오.
 # APPID는 설정에서 삭제되었으니 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
 secret_id = ''     # 사용자 secret_id로 변경
 secret_key = ''     # 사용자 secret_key로 변경
@@ -881,9 +941,9 @@ response = client.delete_object(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket  |버킷 이름은 BucketName-APPID로 구성 |  String |  예 |
-| Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String | 예 |
-| VersionId   | 버전 제어 활성화 후 지정 객체의 버전  | String  | 아니요 |
+| Bucket  |버킷 이름은 BucketName-APPID로 구성 |  String |  필수 |
+| Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String | 필수 |
+| VersionId   | 버전 제어 활성화 후 지정 객체의 버전  | String  | 옵션 |
 
 #### 반환 결과 설명
 
@@ -899,7 +959,7 @@ response = client.delete_object(
 | 매개변수 이름   | 매개변수 설명   |유형 |
 | -------------- | -------------- |---------- |
 | x-cos-version-id | 삭제한 객체의 버전 넘버 | String |
-| x-cos-delete-marker | 삭제한 객체가 delete marker인지 표시| String |
+| x-cos-delete-marker | 삭제한 객체가 delete marker인지 표시 | String |
 
 
 
@@ -957,12 +1017,12 @@ response = client.delete_objects(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |  예 |
-| Delete  | 이번에 삭제된 반환 결과 방식과 타깃 Object 설명 | Dict | 예 |
-| Object  | 삭제 예정인 타깃 Object 정보 설명 | List | 예 |
-| Key     | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임| String|아니요|
-| VersionId | 버전 제어 활성화 후 타깃 객체의 버전 넘버 | String |아니요|
-| Quiet   |삭제 반환 결과 방식 지정. true, false 중 선택 가능. 기본값은 false. true로 설정할 경우 실패 오류 정보만 반환. false로 설정할 경우 성공과 실패 정보를 모두 반환|String|아니요|
+| Bucket  | 버킷 이름. BucketName-APPID로 구성 |  String |  필수 |
+| Delete  | 이번에 삭제된 반환 결과 방식과 타깃 Object 설명 | Dict | 필수 |
+| Object  | 삭제 예정인 타깃 Object 정보 설명 | List | 필수 |
+| Key     | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임| String|옵션|
+| VersionId | 버전 제어 활성화 후 타깃 객체의 버전 넘버 | String |옵션|
+| Quiet   |삭제 반환 결과 방식 지정. true, false 중 선택 가능. 기본값은 false. true로 설정할 경우 실패 오류 정보만 반환. false로 설정할 경우 성공과 실패 정보를 모두 반환|String|옵션|
 
 #### 반환 결과 설명
 객체 일괄 삭제 결과(dict 유형):
@@ -1049,15 +1109,15 @@ response = client.restore_object(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|Bucket|버킷 이름은 BucketName-APPID로 구성|String| 예|
-|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임|String|예|
-|RestoreRequest| 검색한 임시 객체의 규칙| Dict|예|
-|Days| 임시 객체의 만료 시간| Int|예|
-|CASJobParameters| 복구 유형의 설정 정보| Dict|아니요|
-|Tier| 복구 객체의 모드. CAS 유형의 데이터를 복구할 경우 Expedited, Standard, Bulk 세 가지 모드 선택 가능. DEEP ARCHIVE 유형의 데이터를 복구할 경우 Standard, Bulk 중 선택 가능| String|아니요|
+|Bucket|버킷 이름. BucketName-APPID로 구성|String| 필수|
+|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임|String|필수|
+|RestoreRequest| 검색한 임시 객체의 규칙| Dict|필수|
+|Days| 임시 객체의 만료 시간| Int|필수|
+|CASJobParameters| 복구 유형의 설정 정보| Dict|옵션|
+|Tier| 복구 객체의 모드. CAS 유형의 데이터를 복구할 경우 Expedited, Standard, Bulk 세 가지 모드 선택 가능. DEEP ARCHIVE 유형의 데이터를 복구할 경우 Standard, Bulk 중 선택 가능| String|옵션|
 
 #### 반환 결과 설명
-해당 방법의 반환값은 None입니다.
+해당 메소드의 반환값은 None입니다.
 
 
 ### 객체 콘텐츠 인덱스 
@@ -1121,13 +1181,13 @@ response = client.select_object_content(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|Bucket|버킷 이름. BucketName-APPID로 구성|String| 예|
-|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg|String|예|
-|Expression|SQL 표현식. 요청할 인덱스 작업을 나타냄| String|예|
-|ExpressionType| 표현식 유형. 본 항목은 확장 항목으로, 현재 SQL 표현식과 SQL 매개변수만 지원| String|예|
-|InputSerialization| 인덱스 할 객체의 형식. 자세한 내용은 [요청 예시](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82) 참고| Dict|예|
-|OutputSerialization| 인덱스 결과의 출력 형식. 자세한 내용은 [요청 예시](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82) 참고| Dict|예|
-|RequestProgress| QueryProgress 쿼리 진행률 정보 반환 여부. COS Select를 선택할 경우 주기적으로 쿼리 진행률 반환| Dict|아니요|
+|Bucket|버킷 이름. BucketName-APPID로 구성|String| 필수|
+|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg|String|필수|
+|Expression| SQL 표현식. 요청할 인덱스 작업을 나타냄 | String|필수|
+|ExpressionType| 표현식 유형. 본 항목은 확장 항목으로 현재 SQL 표현식과 SQL 매개변수만 지원| String|필수|
+|InputSerialization| 인덱스 할 객체의 형식. 자세한 내용은 [요청 예시](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82) 참고| Dict|필수|
+|OutputSerialization| 인덱스 결과의 출력 형식. 자세한 내용은 [요청 예시](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82) 참고| Dict|필수|
+|RequestProgress| QueryProgress 쿼리 진행률 정보 반환 여부. COS Select를 선택할 경우 주기적으로 쿼리 진행률 반환| Dict|옵션|
 
 #### 반환 결과 설명
 객체의 Body 및 메타 정보(dict 유형):
@@ -1187,10 +1247,10 @@ response = client.append_object(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|Bucket|버킷 이름. BucketName-APPID로 구성|String| 예|
-|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임|String|예|
-|Position|추가 작업의 시작점으로 단위는 바이트입니다. 첫 번째 추가의 경우 Position=0을 설정하고 후속 추가의 경우 Position을 현재 Object의 content-length로 설정합니다| Int|예|
-|data|파트의 컨텐츠 업로드. 로컬 파일 스트림 또는 입력 스트림| file/bytes|예|
+|Bucket|버킷 이름. BucketName-APPID로 구성|String| 필수|
+|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg|String|필수|
+|Position|추가 작업의 시작점으로 단위는 바이트입니다. 첫 번째 추가의 경우 Position=0을 설정하고 후속 추가의 경우 Position을 현재 Object의 content-length로 설정합니다| Int|필수|
+|data|파트의 컨텐츠 업로드. 로컬 파일 스트림 또는 입력 스트림| file/bytes|필수|
 
 #### 반환 결과 설명
 다음에 추가될 위치를 포함한 추가 업로드 후의 객체 속성. dict 유형
@@ -1246,13 +1306,13 @@ response = client.list_multipart_uploads(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket   | 버킷 이름. BucketName-APPID로 구성  | String  | 예|
-| Prefix   |  기본값 null. 멀티파트 업로드 키를 필터링해 prefix로 시작하는 멀티파트 업로드와 매칭  | String  |  아니요|
-| Delimiter   |   기본값 null. 세퍼레이터 설정| String|  아니요|
-| KeyMarker   |  UploadIdMarker와 함께 사용하며, 멀티파트 업로드 시작 위치 표시  | String  |  아니요|
-| UploadIdMarker   |  KeyMarker와 함께 사용하며, 멀티파트 업로드 시작 위치 표시. KeyMarker를 지정하지 않으면 UploadIdMarker가 무시됨| String  |  아니요|
-| MaxUploads   |반환되는 멀티파트 업로드 최대 수. 기본값은 최대 1000개  | Int  |  아니요|
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 아니요|
+| Bucket   | 버킷 이름. BucketName-APPID로 구성  | String  | 필수|
+| Prefix   |  기본값 null. 멀티파트 업로드 키를 필터링해 prefix로 시작하는 멀티파트 업로드와 매칭  | String  |  옵션|
+| Delimiter   |   기본값 null. 세퍼레이터 설정| String|  옵션|
+| KeyMarker   |  UploadIdMarker와 함께 사용하며, 멀티파트 업로드 시작 위치 표시  | String  |  옵션|
+| UploadIdMarker   |  KeyMarker와 함께 사용하며, 멀티파트 업로드 시작 위치 표시. KeyMarker를 지정하지 않으면 UploadIdMarker가 무시됨| String  |  옵션|
+| MaxUploads   | 반환되는 멀티파트 업로드 최대 수. 기본값은 최대 1000개  | Int  |  옵션|
+| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 옵션|
 
 #### 반환 결과 설명
 
@@ -1298,14 +1358,14 @@ response = client.list_multipart_uploads(
 | -------------- | -------------- |---------- |
 | Bucket   | 버킷 이름. BucketName-APPID로 구성  | String  |
 | Prefix   |  기본값 null. 멀티파트 업로드 키를 필터링해 prefix로 시작하는 멀티파트 업로드와 매칭  | String  |
-| Delimiter   |  기본값 null. 세퍼레이터 설정| String|
+| Delimiter   |   기본값 null. 세퍼레이터 설정| String|
 | KeyMarker   |  UploadIdMarker와 함께 사용하며, 멀티파트 업로드의 key 시작 위치 표시   | String  |
 | UploadIdMarker   |  KeyMarker와 함께 사용하며, 멀티파트 업로드의 uploadId 시작 위치 표시. KeyMarker를 지정하지 않으면 UploadIdMarker가 무시됨| String  |
 | NextKeyMarker   |  IsTruncated가 true면 다음 멀티파트 업로드의 key 시작 위치 표시  | String  |
 | NextUploadIdMarker   |  IsTruncated가 true면 다음 멀티파트 업로드의 uploadId 시작 위치 표시| String  |
 | MaxUploads   | 반환되는 멀티파트 업로드 최대 수. 기본값은 최대 1000개  | Int  |
 | IsTruncated   |  반환된 멀티파트 업로드의 잘림 여부 표시  | String|
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url   | String  |
+| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  |
 |Upload |'UploadId', 'StorageClass', 'Key', 'Owner', 'Initiator', 'Initiated' 등의 정보를 포함한 모든 멀티파트 업로드가 담긴 리스트|List|
 |CommonPrefixes |Prefix로 시작하고 Delimiter로 끝나는 key를 동일한 클래스에 분류|List|
 
@@ -1359,19 +1419,19 @@ uploadid = response['UploadId']
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |  예 |
-| Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String | 예 |
-|  StorageClass  |  객체의 스토리지 유형 설정. STANDARD, STANDARD_IA, ARCHIVE가 있으며, 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고 | String | 아니요 |
-| Expires  |  Expires 설정 | String| 아니요 |
-| CacheControl  | 캐시 정책. Cache-Control 설정 | String |  아니요 |
-| ContentType  | 콘텐츠 유형. Content-Type 설정 | String |  아니요 |
-| ContentDisposition  | 파일 이름. Content-Disposition 설정 | String |  아니요 |
-| ContentEncoding  | 인코딩 형식. Content-Encoding 설정 | String |  아니요 |
-| ContentLanguage  | 언어 유형. Content-Language 설정 |  String |  아니요 |
-| Metadata |사용자 정의 객체 메타데이터 | Dict |  아니요 |
-| ACL |객체 ACL 설정. 예: 'private', 'public-read' |String| 아니요|
-| GrantFullControl |권한을 부여받은 계정에 모든 권한 부여. 포맷: `id="OwnerUin"`|String|아니요|
-|GrantRead |권한을 부여받은 계정에 읽기 권한 부여. 형식: `id="OwnerUin"` |String|아니요|
+| Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |  필수 |
+|  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String | 필수 |
+| StorageClass  | 객체의 스토리지 유형 설정. STANDARD, STANDARD_IA, ARCHIVE가 있으며, 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고 | String |  옵션 |
+| Expires  |  Expires 설정 | String| 옵션 |
+| CacheControl  | 캐시 정책. Cache-Control 설정 | String |  옵션 |
+| ContentType  | 콘텐츠 유형. Content-Type 설정 | String |  옵션 |
+| ContentDisposition  | 파일 이름. Content-Disposition 설정 | String |  옵션 |
+| ContentEncoding  | 인코딩 형식. Content-Encoding 설정 | String |  옵션 |
+| ContentLanguage  | 언어 유형. Content-Language 설정 |  String |  옵션 |
+| Metadata |사용자 정의 객체 메타데이터 | Dict |  옵션 |
+| ACL |객체 ACL 설정. 예: 'private', 'public-read' |String| 옵션|
+| GrantFullControl |권한을 부여받은 계정에 모든 권한 부여. 형식: `id="OwnerUin"`|String|옵션|
+|GrantRead |권한을 부여받은 계정에 읽기 권한 부여. 형식: `id="OwnerUin"` |String|옵션|
 
 #### 반환 결과 설명
 
@@ -1390,9 +1450,9 @@ uploadid = response['UploadId']
 | -------------- | -------------- |---------- |
 |UploadId | 멀티파트 업로드의 식별 ID|String|
 |Bucket|버킷 이름은 BucketName-APPID로 구성|String|
-|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임|String|
+|key | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임|String|
 
-###  멀티파트 업로드
+### 멀티파트 업로드
 
 객체를 멀티파트 업로드합니다(Upload Part).
 
@@ -1434,15 +1494,15 @@ response = client.upload_part(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |  예 |
-| Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String |  예|
-| Body  | 멀티파트 업로드의 콘텐츠. 로컬 파일 스트림 또는 입력 스트림   | file/bytes |  예|
-| PartNumber  |업로드하는 파트의 시리얼 넘버 |  Int |  예|
-| UploadId  | 멀티파트 업로드의 식별 ID | String |  예|
-| EnableMD5 | SDK의 Content-MD5 계산 여부. 기본적으로 비활성화 상태이며, 활성화 시 업로드 시간 증가|Bool | 아니요|
-| ContentLength  |전송 길이 설정 |  String |  아니요|
-| ContentMD5  | 검증에 사용할 업로드 객체의 MD5 값 설정 | String |  아니요|
-|  TrafficLimit | 단일 링크의 제한 속도. 단위는 bit/s이며 설정 범위는 819200 ~ 838860800, 즉 100KB/s~100MB/s로 설정| String |  아니요 |
+| Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |  필수 |
+| Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String |  필수|
+| Body  | 멀티파트 업로드의 콘텐츠. 로컬 파일 스트림 또는 입력 스트림 | file/bytes |  필수|
+| PartNumber  |업로드하는 파트의 시리얼 넘버 |  Int |  필수|
+| UploadId  | 멀티파트 업로드의 식별 ID | String |  필수|
+| EnableMD5 | SDK의 Content-MD5 계산 여부. 기본적으로 비활성화 상태이며, 활성화 시 업로드 시간 증가|Bool | 옵션|
+| ContentLength  |전송 길이 설정 |  String |  옵션|
+| ContentMD5  | 검증에 사용할 업로드 객체의 MD5 값 설정 | String |  옵션|
+|  TrafficLimit | 단일 링크의 제한 속도. 단위는 bit/s이며 설정 범위는 819200 - 838860800, 즉 100KB/s - 100MB/s로 설정| String |  옵션 |
 
 #### 반환 결과 설명
 
@@ -1456,7 +1516,7 @@ response = client.upload_part(
 
 | 매개변수 이름   | 매개변수 설명   |유형 |
 | -------------- | -------------- |---------- |
-| ETag |업로드된 멀티파트의 MD5 값 |String|
+| ETag |업로드된 멀티파트의 MD5 값|String|
 
 ### 멀티파트 복사
 
@@ -1509,16 +1569,16 @@ response = client.upload_part_copy(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 버킷 이름은 BucketName-APPID로 구성 | String|  예 |
-|  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String| 예 |
-| PartNumber  |업로드하는 파트의 시리얼 넘버 |  Int |  예|
-| UploadId  | 멀티파트 업로드의 식별 ID | String |  예|
-|  CopySource  | Bucket, Key, Region, VersionId를 포함한 원본 객체의 경로 복사 |  Dict | 예 |
-|CopySourceRange| 복사할 원본 객체의 범위(형식: bytes=first-last). 지정하지 않으면 원본 객체 전체 복사|String|아니요|
-|CopySourceIfMatch| 원본 객체의 Etag와 주어진 값이 동일한 경우에만 복사|String|아니요|
-|CopySourceIfModifiedSince| 지정된 시간 이후 원본 객체가 수정되면 복사|String|아니요|
-|CopySourceIfNoneMatch| 원본 객체의 Etag와 주어진 값이 동일하지 않은 경우에만 복사|String|아니요|
-|CopySourceIfUnmodifiedSince| 지정된 시간 이후 원본 객체가 수정되지 않으면 복사|String|아니요|
+|  Bucket  | 버킷 이름은 BucketName-APPID로 구성 | String|  필수 |
+|  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String| 필수 |
+| PartNumber  |업로드하는 파트의 시리얼 넘버 |  Int |  필수|
+| UploadId  | 멀티파트 업로드의 식별 ID | String |  필수|
+|  CopySource  | Bucket, Key, Region, VersionId를 포함한 원본 객체의 경로 복사 |  Dict | 필수 |
+|CopySourceRange| 복사할 원본 객체의 범위(형식: bytes=first-last). 지정하지 않으면 원본 객체 전체 복사|String|옵션|
+|CopySourceIfMatch| 원본 객체의 Etag와 주어진 값이 동일한 경우에만 복사|String|옵션|
+|CopySourceIfModifiedSince| 지정된 시간 이후 원본 객체가 수정되면 복사|String|옵션|
+|CopySourceIfNoneMatch| 원본 객체의 Etag와 주어진 값이 동일하지 않은 경우에만 복사|String|옵션|
+|CopySourceIfUnmodifiedSince| 지정된 시간 이후 원본 객체가 수정되지 않으면 복사|String|옵션|
 
 #### 반환 결과 설명
 
@@ -1535,7 +1595,7 @@ response = client.upload_part_copy(
 | -------------- | -------------- |---------- |
 | ETag |파트의 MD5 값 복사|String|
 | LastModified |파트의 마지막 수정 시간 복사|String|
-| x-cos-copy-source-version-id | 원본 객체의 버전 넘버             | String |
+| x-cos-copy-source-version-id | 원본 객체의 버전 넘버 | String |
 
 ### 업로드된 파트 조회
 
@@ -1574,12 +1634,12 @@ response = client.list_parts(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|Bucket|버킷 이름. BucketName-APPID로 구성|String| 예|
-|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 |String| 예|
-|UploadId |멀티파트 업로드의 식별 ID|String| 예|
-|MaxParts |반환되는 멀티파트의 최대 수. 기본값은 최대 1000개|Int| 아니요|
-|PartNumberMarker |기본값: 0. 첫 파트부터 나열하며, PartNumberMarker의 다음 파트부터 나열|Int| 아니요|
-|EncodingType |기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url|String|아니요|
+|Bucket|버킷 이름. BucketName-APPID로 구성|String| 필수|
+|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 |String| 필수|
+|UploadId |멀티파트 업로드의 식별 ID|String| 필수|
+|MaxParts |반환되는 멀티파트의 최대 수. 기본값은 최대 1000개|Int| 옵션|
+|PartNumberMarker |기본값: 0. 첫 파트부터 나열하며, PartNumberMarker의 다음 파트부터 나열|Int| 옵션|
+|EncodingType |기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url|String|옵션|
 
 #### 반환 결과 설명
 
@@ -1620,11 +1680,11 @@ response = client.list_parts(
 | Bucket   | 버킷 이름. BucketName-APPID로 구성  | String  |
 |  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String |
 |  UploadId  |  멀티파트 업로드의 식별 ID | String |
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url   | String  |
+| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  |
 | MaxParts   | 반환하는 멀티파트의 최대 수. 기본값: 최대 1000  | String  |
 | IsTruncated   |  반환된 파트의 잘림 여부 표시  | String|
 | PartNumberMarker   | 기본값: 0. 첫 파트부터 나열하며, PartNumberMarker의 다음 파트부터 나열  | String  |
-| NextPartNumberMarker   |  다음에 나열하는 멀티파트의 시작 위치 표시   | String  |
+| NextPartNumberMarker   |  다음에 나열하는 멀티파트의 시작 위치 표시  | String  |
 |  StorageClass  |  객체의 스토리지 유형 설정. STANDARD, STANDARD_IA, ARCHIVE가 있으며, 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고 | String |
 |  Part |ETag, PartNumber, Size, LastModified 등 업로드된 파트 관련 정보 | String |
 |  Initiator  | DisplayName과 ID 등 멀티파트 업로드 생성자| Dict |
@@ -1670,10 +1730,10 @@ response = client.complete_multipart_upload(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |   예 |
-|  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String  |   예|
-|  UploadId  | 멀티파트 업로드의 식별 ID | String  |   예|
-|  MultipartUpload  |모든 파트의 ETag와 PartNumber 정보 |  Dict |   예|
+|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |   필수 |
+|  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String  |   필수|
+|  UploadId  | 멀티파트 업로드의 식별 ID | String  |   필수|
+|  MultipartUpload  |모든 파트의 ETag와 PartNumber 정보 |  Dict |   필수|
 
 #### 반환 결과 설명
 
@@ -1721,9 +1781,9 @@ response = client.abort_multipart_upload(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|Bucket|버킷 이름. BucketName-APPID로 구성|String| 예|
-|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임|String| 예|
-|UploadId |멀티파트 업로드의 식별 ID|String| 예|
+|Bucket|버킷 이름. BucketName-APPID로 구성|String| 필수|
+|key |객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임|String| 필수|
+|UploadId |멀티파트 업로드의 식별 ID|String| 필수|
 
 #### 반환 결과 설명
 해당 메소드의 반환값은 None입니다.
@@ -1807,27 +1867,27 @@ response = client.upload_file(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |  예 |
-|  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String |  예 |
-|  LocalFilePath  | 로컬 파일의 경로명 |  String |  예 |
-|  PartSize  | 멀티파트 업로드의 파트 크기. 기본값: 1MB |  Int |  아니요 |
-|  MAXThread  | 멀티파트 업로드의 동시 업로드 수량. 기본적으로 5개 스레드로 멀티파트 업로드 |  Int |  아니요 |
-|progress_callback |  업로드 진행률 콜백 함수. 이 함수를 사용자 정의하여 업로드 진행률 확인 가능| Func| 아니요 |
-| EnableMD5 | SDK의 Content-MD5 계산 여부. 기본적으로 비활성화 상태이며, 활성화 시 업로드 시간 증가|Bool | 아니요|
-| ACL |객체 ACL 설정. 예: private, public-read |String| 아니요|
-| GrantFullControl |권한을 부여받은 계정에 모든 권한 부여. 형식: `id="OwnerUin"`|String|아니요|
-|GrantRead |권한을 부여받은 계정에 읽기 권한 부여. 형식: `id="OwnerUin"`  |String|아니요|
-|  StorageClass  |  객체의 스토리지 유형 설정. STANDARD, STANDARD_IA, ARCHIVE가 있으며, 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고 | String | 아니요 |
-|  Expires  | Expires 설정 | String|  아니요 |
-|  CacheControl  |  캐시 정책. Cache-Control 설정 | String |   아니요 |
-|  ContentType  | 콘텐츠 유형. Content-Type 설정 |String |   아니요 |
-|  ContentDisposition  | 파일 이름. Content-Disposition 설정 | String |  아니요 |
-|  ContentEncoding  |  인코딩 형식. Content-Encoding 설정 | String |   아니요 |
-|  ContentLanguage  |  언어 유형. Content-Language 설정 | String |   아니요 |
-|  ContentLength  | 전송 길이 설정 | String |   아니요 |
-|  ContentMD5  | 검증에 사용할 업로드 객체의 MD5 값 설정 | String |   아니요 |
-|  Metadata | 사용자 정의 객체 메타데이터 | Dict |   아니요 |
-|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200 ~ 838860800, 즉 100KB/s~100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한| String |  아니요 |
+|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |   필수 |
+|  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String |  필수 |
+|  LocalFilePath  | 로컬 파일의 경로명 |  String |  필수 |
+|  PartSize  | 멀티파트 업로드의 파트 크기. 기본값: 1MB |  Int |  옵션 |
+|  MAXThread  | 멀티파트 업로드의 동시 업로드 수량. 기본적으로 5개 스레드로 멀티파트 업로드 |  Int |  옵션 |
+|progress_callback |  업로드 진행률 콜백 함수. 이 함수를 사용자 정의하여 업로드 진행률 확인 가능| Func| 옵션 |
+| EnableMD5 | SDK의 Content-MD5 계산 여부. 기본적으로 비활성화 상태이며, 활성화 시 업로드 시간 증가|Bool | 옵션|
+| ACL |객체 ACL 설정. 예: private, public-read  |String| 옵션|
+| GrantFullControl |권한을 부여받은 계정에 모든 권한 부여. 형식: `id="OwnerUin"`|String|옵션|
+|GrantRead |권한을 부여받은 계정에 읽기 권한 부여. 형식: `id="OwnerUin"`  |String|옵션|
+|  StorageClass  |  객체의 스토리지 유형 설정. STANDARD, STANDARD_IA, ARCHIVE가 있으며, 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고 | String |   옵션 |
+|  Expires  | Expires 설정 | String|  옵션 |
+|  CacheControl  |  캐시 정책. Cache-Control 설정 | String |   옵션 |
+|  ContentType  | 콘텐츠 유형. Content-Type 설정 |String |   옵션 |
+|  ContentDisposition  |  파일 이름. Content-Disposition 설정 | String |   옵션 |
+|  ContentEncoding  |  인코딩 형식. Content-Encoding 설정 | String |   옵션 |
+|  ContentLanguage  |  언어 유형. Content-Language 설정 | String |   옵션 |
+|  ContentLength  | 전송 길이 설정 | String |   옵션 |
+|  ContentMD5  | 검증에 사용할 업로드 객체의 MD5 값 설정 | String |   옵션 |
+|  Metadata | 사용자 정의 객체 메타데이터 | Dict |   옵션 |
+|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200 - 838860800, 즉 100KB/s - 100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한| String |  옵션 |
 
 #### 반환 결과 설명
 업로드한 객체의 속성(dict 유형):
@@ -1892,24 +1952,24 @@ response = client.download_file(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String  |  예 |
-|  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 에서 객체 키는 doc/pic.jpg임 | String | 예 |
-|  DestFilePath  | 파일을 다운로드하는 로컬 타깃 경로명 |  String |  예 |
-|  PartSize  | 멀티파트 다운로드의 파트 크기. 기본값: 20MB |  Int |  아니요 |
-|  MAXThread  | 멀티파트 다운로드의 동시 다운로드 수량. 기본적으로 5개 스레드로 파트 다운로드 |  Int |  아니요 |
-|  EnableCRC  | 로컬 파일과 원격 파일의 crc 검증 활성화 여부. 기본값: False |  Bool |  아니요 |
-|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200 ~ 838860800, 즉 100KB/s~100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한함| String |  아니요 |
-|  IfMatch  |  ETag가 지정된 콘텐츠와 일치해야 반환 |String  | 아니요 |
-|  IfModifiedSince  |   지정 시간 이후 수정될 경우에만 반환. 시간 형식: GMT | String  | 아니요 |
-|  IfNoneMatch  |  ETag가 지정 콘텐츠와 불일치해야 반환 | String  | 아니요 |
-|  IfUnmodifiedSince  |  객체 수정 시간이 지정 시간보다 이르거나 같을 경우에만 반환. 시간 형식: GMT | String  | 아니요|
-|  ResponseCacheControl  |  응답 헤더의 Cache-Control 설정 | String  | 아니요 |
-|  ResponseContentDisposition  |  응답 헤더의 Content-Disposition 설정 | String  | 아니요 |
-|  ResponseContentEncoding  |   응답 헤더의 Content-Encoding 설정 | String  | 아니요 |
-|  ResponseContentLanguage  |  응답 헤더의 Content-Language 설정 | String  | 아니요 |
-|  ResponseContentType  |   응답 헤더의 Content-Type 설정 | String  | 아니요 |
-|  ResponseExpires  |응답 헤더의 Expires 설정 |   String  | 아니요 |
-|  VersionId  | 다운로드할 객체 버전 지정 |  String  | 아니요 |
+|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String  |  필수 |
+|  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 에서 객체 키는 doc/pic.jpg | String  | 필수 |
+|  DestFilePath  | 파일을 다운로드하는 로컬 타깃 경로명 |  String |  필수 |
+|  PartSize  | 멀티파트 다운로드의 파트 크기. 기본값: 20MB |  Int |  옵션 |
+|  MAXThread  | 멀티파트 다운로드의 동시 다운로드 수량. 기본적으로 5개 스레드로 파트 다운로드 |  Int |  옵션 |
+|  EnableCRC  | 로컬 파일과 원격 파일의 crc 검증 활성화 여부. 기본값: False |  Bool |  옵션 |
+|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200 - 838860800, 즉 100KB/s - 100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한| String |  옵션 |
+|  IfMatch  |  ETag가 지정된 콘텐츠와 일치해야 반환 |String  | 옵션 |
+|  IfModifiedSince  |   지정 시간 이후 수정될 경우에만 반환. 시간 형식: GMT | String  | 옵션 |
+|  IfNoneMatch  |  ETag가 지정 콘텐츠와 불일치해야 반환 | String  | 옵션 |
+|  IfUnmodifiedSince  |  객체 수정 시간이 지정 시간보다 이르거나 같을 경우에만 반환. 시간 형식: GMT| String  | 옵션|
+|  ResponseCacheControl  |  응답 헤더의 Cache-Control 설정 | String  | 옵션 |
+|  ResponseContentDisposition  |  응답 헤더의 Content-Disposition 설정 | String  | 옵션 |
+|  ResponseContentEncoding  |   응답 헤더의 Content-Encoding 설정 | String  | 옵션 |
+|  ResponseContentLanguage  |  응답 헤더의 Content-Language 설정 | String  | 옵션 |
+|  ResponseContentType  |   응답 헤더의 Content-Type 설정 | String  | 옵션 |
+|  ResponseExpires  |응답 헤더의 Expires 설정 |   String  | 옵션 |
+|  VersionId  | 다운로드할 객체 버전 지정 |  String  | 옵션 |
 
 #### 반환 결과 설명
 None
@@ -1934,7 +1994,7 @@ import sys
 import os
 import logging
 
-# secret_id, secret_key, region을 포함한 사용자 속성을 설정합니다.
+# secret_id, secret_key, region을 포함한 사용자 속성을 설정합니다. secret_id와 secret_key는 CAM 콘솔에 로그인하여 조회 및 관리하십시오.
 # APPID는 설정에서 삭제되었으니 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
 secret_id = ''     # 사용자 secret_id로 변경
 secret_key = ''     # 사용자 secret_key로 변경
@@ -1963,7 +2023,7 @@ for path, dir_list, file_list in g:
             else:
                 print("Error happened, reupload it.")
         if not exists:
-            rint("File %s not exists in cos, upload it", srcKey)
+            print("File %s not exists in cos, upload it", srcKey)
             pool.add_task(client.upload_file, bucket, cosObjectKey, srcKey)
 
 
@@ -1994,7 +2054,7 @@ from qcloud_cos.cos_threadpool import SimpleThreadPool
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# secret_id, secret_key, region을 포함한 사용자 속성을 설정합니다.
+# secret_id, secret_key, region을 포함한 사용자 속성을 설정합니다. secret_id와 secret_key는 CAM 콘솔에 로그인하여 조회 및 관리하십시오.
 # appid는 설정에서 삭제되었으니 매개변수 Bucket에 appid를 입력하십시오. Bucket은 bucketname-appid로 구성됩니다.
 secret_id = 'secret_id'  # 사용자 secret_id로 변경
 secret_key = 'secret_key'  # 사용자 secret_key로 변경
@@ -2164,7 +2224,7 @@ import sys
 import os
 import logging
 
-# secret_id, secret_key, region을 포함한 사용자 속성을 설정합니다.
+# secret_id, secret_key, region을 포함한 사용자 속성을 설정합니다. secret_id와 secret_key는 CAM 콘솔에 로그인하여 조회 및 관리하십시오.
 # APPID는 설정에서 삭제되었으니 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
 secret_id = ''     # 사용자 secret_id로 변경
 secret_key = ''     # 사용자 secret_key로 변경
@@ -2215,12 +2275,12 @@ response = client.copy(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String  |  예 |
-|  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 에서 객체 키는 doc/pic.jpg | String | 예 |
-|  CopySource  | Bucket, Key, Region, VersionId를 포함한 원본 객체의 경로 복사 |  Dict | 예 |
- |  CopyStatus  |복사 상태. 선택값: Copy, Replaced | String | 아니요 |
- |  PartSize  |멀티파트 다운로드의 멀티파트 크기. 기본값: 10MB |  Int |  아니요 |
- |  MAXThread  | 멀티파트 다운로드의 동시 다운로드 수량. 기본적으로 5개 스레드로 파트 다운로드 |  Int |  아니요 |
+|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String  |  필수 |
+|  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 에서 객체 키는 doc/pic.jpg | String | 필수 |
+|  CopySource  | Bucket, Key, Region, VersionId를 포함한 원본 객체의 경로 복사 |  Dict | 필수 |
+ |  CopyStatus  |복사 상태. 선택값: Copy, Replaced | String | 옵션 |
+ |  PartSize  |멀티파트 다운로드의 멀티파트 크기. 기본값: 10MB |  Int |  옵션 |
+ |  MAXThread  | 멀티파트 다운로드의 동시 다운로드 수량. 기본적으로 5개 스레드로 파트 다운로드 |  Int |  옵션 |
 
 #### 반환 결과 설명
 5GB 미만 파일은 copy_object의 반환 결과이고, 5GB 이상 파일은 complete_multipart_upload의 반환 결과입니다(dict 유형).
@@ -2251,9 +2311,9 @@ Python은 클라이언트 암호화를 지원해 파일을 암호화하여 업�
 
 [//]: # ".cssg-snippet-put-object-cse-c-aes"
 ```python
-# 사용자 개인정보를 초기화합니다(SECRET_ID, SECRET_KEY).
-SECRET_ID = "COS_SECRETID"
-SECRET_KEY = "COS_SECRETKEY"
+# 사용자 개인정보(SECRET_ID, SECRET_KEY)를 초기화합니다. SECRET_ID와 SECRET_KEY는 CAM 콘솔에 로그인하여 조회 및 관리하십시오.
+SECRET_ID = "SECRETID"
+SECRET_KEY = "SECRETKEY"
 REGION = "COS_REGION"
 conf = CosConfig(
     Region=REGION,
@@ -2317,9 +2377,9 @@ response = client_for_aes.upload_file(
 
 [//]: # ".cssg-snippet-put-object-cse-c-rsa"
 ```python
-# 사용자 개인정보를 초기화합니다(SECRET_ID, SECRET_KEY).
-SECRET_ID = "COS_SECRETID"
-SECRET_KEY = "COS_SECRETKEY"
+# 사용자 개인정보(SECRET_ID, SECRET_KEY)를 초기화합니다. SECRET_ID와 SECRET_KEY는 CAM 콘솔에 로그인하여 조회 및 관리하십시오.
+SECRET_ID = "SECRETID"
+SECRET_KEY = "SECRETKEY"
 REGION = "COS_REGION"
 conf = CosConfig(
     Region=REGION,

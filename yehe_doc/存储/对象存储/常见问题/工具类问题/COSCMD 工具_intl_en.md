@@ -20,6 +20,13 @@ COSCMD automatically converts uppercase letters to lowercase ones. A bucket name
 Yes. You need to use the `--ignore /folder/*` parameter.
 For example, if you want to exclude a folder during download, use `coscmd download --ignore /folder/*` to filter out the files in the folder. If you want to ignore files with a certain suffix in the folder, be sure to append `,` to the "*" character, or enclose it with `""`.
 
+
+### How can I transfer a large number of files with quicker speed?
+Configure an appropriate value for `MAX_THREAD`, which defaults to 5. The number of threads depends on the server performance, and generally, setting its value to 30 can easily take up full bandwidth. For example, you can set the number of concurrent threads to 30 by running the following command:
+```plaintext
+coscmd config -m 30
+```
+
 ### Does COSCMD support using \* to determine objects with a specified prefix to download?
 
 No. You need to use the following command format for download:
@@ -28,9 +35,6 @@ coscmd download prefix/ localpath/ -r
 ```
 
 
-### How do I use COSCMD to access multiple buckets?
-
-You can use the `-b` and `-r` parameters to specify multiple buckets, for example, `coscmd -b examplebucket-1250000000 examplebucket-1250000001 -r ap-beijing`. Alternatively, you can use the `-c` parameter to specify the configuration file `cos.conf` and configure multiple buckets in the `cos.conf` file.
 
 ### Can I use the `list` command to list files by file upload time in COSCMD?
 
@@ -46,14 +50,14 @@ coscmd config -a SecretID -s SecretKey -b BucketName-APPID -r region
 
 ### Can I specify multiple buckets in the COSCMD configuration file?
 
-You can configure only one bucket in the COSCMD configuration file. If you need to manage another bucket, specify the bucket name and region in the COSCMD command for bucket switching. 
+You can configure only one bucket in the COSCMD configuration file. If you need to manage another bucket, specify the bucket name and region COSCMD command for bucket switching. 
 
 - Use the `-b <bucketname-appid>` parameter to specify the bucket name, which must be formatted as `BucketName-APPID`.
 - Use the `-r <region>` parameter to specify the region where the bucket resides.
 
 ### Does COSCMD verify filename duplication for uploaded files?
 
-No. If you upload a file with a duplicate name as an existing file, COSCMD will overwrite the existing file.
+No. If you upload a file whose name is duplicated with that of an existing file, COSCMD will overwrite the existing file.
 
 ### How do I transfer a large number of files with a quicker speed?
 
@@ -69,7 +73,7 @@ No. COSCMD adopts the overwrite upload mode by default. If you need to skip exis
 
 ### How do I skip existing identical files when uploading files with COSCMD?
 
-When you upload files with COSCMD, you can add the `-rs` parameter to skip existing files with the same MD5 value. For more information, please see **the methods for uploading files or folders** in [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
+You can use the `-rs` parameter to skip files with the same MD5 checksum. For more information, please see [Uploading a folder](https://intl.cloud.tencent.com/document/product/436/10976#.E4.B8.8A.E4.BC.A0.E6.96.87.E4.BB.B6.E5.A4.B9) in [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
 
 ### How do I skip identical files when downloading files with COSCMD?
 

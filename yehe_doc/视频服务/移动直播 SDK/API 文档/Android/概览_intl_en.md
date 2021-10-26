@@ -12,13 +12,13 @@ The player has the following capabilities:
 
 ### Basic SDK APIs
 
-| API                                                          | Description                  |
-| ------------------------------------------------------------ | ---------------- |
+| API                                             | Description                                                         |
+| --------------- | ---------------- |
 | [setObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#aa851c4bf90929cddfd7067cfdd6049b4) | Sets player callbacks. |
 
 ### Basic playback APIs  
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | --------------------------- |
+| API                                             | Description                                                         |
+| --------------- | --------------------------- |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#afc848d88fe99790b8c0988b8525dd4d9) | Sets the player’s rendering view `TXCloudVideoView`. |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#af2ac91d628fe510008b3c169896a7e81) | Sets the player’s rendering view `TextureView`. |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#a6b8f02711afe98f327743e699632e6ee) | Sets the player’s rendering view `SurfaceView`. |
@@ -58,27 +58,27 @@ Player callbacks
 ### Basic SDK callback APIs
 
 | API                                             | Description                                                         |
-| --------- | ---------------------------------------------------- |
+| --------- | --------------- |
 | [onError](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#af2195d3dbecb37826a101dfe525202c0)   | Callback for error. This callback is returned when the player encounters an error. |
 | [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a88c8cba39a928dd7964f8f1753bd5bfe) | Callback for warning                                 |
 
 ### Video callback APIs
 | API                                             | Description                                                         |
-| --------- | ---------------------------------------------------- |
+| --------- | --------------- |
 | [onVideoPlayStatusUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#ab5d1818293008fc16bed308d8b2b71a3)   | Callback for the change of video status |
 | [onSnapshotComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a2ae183e19890e89e216051653ccdfb89) | Callback for a screenshot taken                                 |
 | [onRenderVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a346a3206ad4d0f38385844c1456a012f) | Callback for custom video rendering|
 
 ### Audio callback APIs
 | API                                             | Description                                                         |
-| --------- | ---------------------------------------------------- |
+| --------- | --------------- |
 | [onAudioPlayStatusUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a316fd3f01f22b0be2ad0c406b5786170)   | Callback for the change of audio status|
-| [onPlayoutVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a57fc000bf5e935f7253fa94e1750359e) | Callback for the player’s volume                       |
+| [onPlayoutVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a57fc000bf5e935f7253fa94e1750359e) | Callback of the player’s volume                       |
 
 ### Statistics callback APIs
 | API                                             | Description                                                         |
-| --------- | ---------------------------------------------------- |
-| [onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#ab10e1f4e22e9bb73e3cea4ae15c36465)   | Callback for player statistics |
+| --------- | --------------- |
+| [onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#ab10e1f4e22e9bb73e3cea4ae15c36465)   | Callback of player statistics |
 
 ## V2TXLivePusher
 
@@ -102,25 +102,27 @@ It has the following capabilities:
 ### Basic publishing APIs
 
 | API                                             | Description                                                         |
-| ------------------ | ------------------------------------------------------------ |
+| ------------------ | --------------- |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#afc848d88fe99790b8c0988b8525dd4d9)      | Sets the rendering view for local camera preview. |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#af2ac91d628fe510008b3c169896a7e81)      | Sets the rendering view for local camera preview. |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a6b8f02711afe98f327743e699632e6ee)      | Sets the rendering view for local camera preview. |
 | [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ab4f8adaa0616d54d6ed920e49377a08a)          | Starts publishing audio/video data.                                         |
 | [stopPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#af07c1dcff91b43a2309665b8663ed530)           | Stops publishing audio/video data.                                         |
 | [isPushing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aa328c59a0cba2e7231cdc8260c675eef)          | Gets whether publishing is ongoing.                                   |
-| [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#acd14289e3bbf2708f23e61348136d9f9) | Starts screen capturing.                                               |
-| [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aab42643520b611c1f14a353d69c4782f)  | Stops screen capturing.                                               |
 
 ### Video APIs
 
-| API                                                          | Description                                                         |
-| ------------------------------------------------------------ | --------------------------------------------------- |
-| [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a2695806cb6c74ccce4b378d306ef0a02) | Sets the resolution and aspect ratio mode (portrait/landscape) of published video. |
+| API                                             | Description                                                         |
+| --------------- | --------------------------------------------------- |
+| [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ae678ad67285baf08852712abee2e3cc5) | Sets video encoding parameters for publishing. |
 | [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aa08046b0f429f318f36249fa9d0276f2) | Sets video rotation for local camera preview.                  |
 | [setRenderMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#afd909d85fd0dda0db4078692b319681f) | Sets the mirror mode for local camera preview.                            |
 | [startCamera](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aefa5da30143194b8cf4b4d44b0388809)                                                  | Turns the local camera on.                                    |
 | [stopCamera](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aa4bf1dee9de8e4e6b2525ec58568a696) | Turns the local camera off.                                    |
+| [startVirtualCamera](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a06bdcdfab3764a18e25e83e62892d610) | Starts image publishing.                  |
+| [stopVirtualCamera](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ad29d896264d10ee765b52e53f8726af4)  | Stops image publishing.                  |
+| [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#acd14289e3bbf2708f23e61348136d9f9) | Starts screen capturing.                                               |
+| [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aab42643520b611c1f14a353d69c4782f)  | Stops screen capturing.                                               |
 | [snapshot](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a2a507ea1cd894a1635dbfd772802fefd) | Takes a screenshot of published video.                          |
 | [setWatermark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a4f56a5a937d87e5b1ae6f77c5bab2335)                                                 | Sets watermarks for the publisher. Watermarking is disabled by default.            |
 | [setEncoderMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ae025945b6f2633d8e3b879a6fe24dd99) | Sets the mirror mode for encoded video.                                  |
@@ -128,52 +130,52 @@ It has the following capabilities:
 
 ### Beauty filter APIs
 
-| API                                                          | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| API                                             | Description                                                         |
+| --------------- | --------------- |
 | [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html) | Gets the beauty filter management object [TXBeautyManager](https://intl.cloud.tencent.com/document/product/1071/41677), which is used to set beauty filters. |
 
 
 ### Audio APIs
 
-| API                                                          | Description                  |
-| ------------------------------------------------------------ | ---------------------- |
+| API                                             | Description                                                         |
+| --------------- | ---------------------- |
 | [startMicrophone](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a26deb222d84392f554a698ef49bc45db) | Turns the mic on.           |
 | [stopMicrophone](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a7dbdb37c3f274ce540d6c9b31e2db57f) | Turns the mic off.           |
 | [setAudioQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a1e7830ca4c9ab2abab20b1415cf1d698) | Sets the quality of published audio.     |
 | [enableVolumeEvaluation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aaa893a96eff34a7ba660441f7597d6d8)                                       | Enables the volume reminder for capturing. |
 
 ### Audio effect APIs
-| API                                                          | Description               |
-| ------------------------------------------------------------ | ------------------ |
+| API                                             | Description                                                         |
+| --------------- | ------------------ |
 | [getAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html) | Gets the audio effect management object. |
 
 ### Device management APIs
-| API                                                          | Description               |
-| ------------------------------------------------------------ | ------------------ |
+| API                                             | Description                                                         |
+| --------------- | ------------------ |
 | [getDeviceManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__android.html) | Gets the device management object. |
 
 ### Other APIs
 
-| API                                                          | Description                                 |
-| ------------------------------------------------------------ | ------------------------------------- |
+| API                                             | Description                                                         |
+| --------------- | ------------------------------------- |
 | [setProperty](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aa3c76edc981e68a754d5a450cb85eb43) | Calls an advanced API of `V2TXLivePusher`. |
 | [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ade16e8f15b9f64e0339012554c1a8f67) | Sets On-Cloud MixTranscoding parameters.              |
-| [showDebugView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ad3e02a7295f3ba2221fea015f352616b) | Displays the dashboard. |
+| [showDebugView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ad3e02a7295f3ba2221fea015f352616b) | Sets whether to display the dashboard. |
 
 
 ## V2TXLivePusherObserver
 
 ### Basic SDK callback APIs
 
-| API                                                          | Description                                                         |
-| ------------------------------------------------------------ | ---------------------------------------------------- |
+| API                                             | Description                                                         |
+| --------------- | --------------- |
 | [onError](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a1c111d2497b029114f3d3ea755fbf9ae) | Callback for error. This callback is returned when the publisher encounters an error. |
 | [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#abd54414cbd5d52c096f9cc090cfe1fec) | Callback for warning                                 |
 
 ### Video callback APIs
-| API                                                          | Description                               |
-| ------------------------------------------------------------ | ---------------------------------- |
-| [onPushStatusUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a430ba5120ee20b0120a952535aa3cdbc) | Callback for the publisher’s connection status           |
+| API                                             | Description                                                         |
+| --------------- | ---------------------------------- |
+| [onPushStatusUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a430ba5120ee20b0120a952535aa3cdbc) | Callback of the publisher’s connection status           |
 | [onSnapshotComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#aa01faf2222f9c945025c4826a26e3a40) | Callback for a screenshot taken                         |
 | [onProcessVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a42eccd0ebc9aeee6905cea8b035750bf) | Callback for custom video processing                   |
 | [onGLContextCreated](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#af4a7a3a4e4945bf216d87f81b6926dab) | Callback for creating an OpenGL context in the SDK |
@@ -181,18 +183,17 @@ It has the following capabilities:
 | [onCaptureFirstVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#af6c3d8ad3f460670aee56187a001f587) | Callback for capturing the first video frame       |
 
 ### Audio callback APIs
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ---------------------------- |
+| API                                             | Description                                                         |
+| --------------- | ---------------------------- |
 | [onCaptureFirstAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#ad10ac31050e915d349a2a953915cbefe) | Callback for capturing the first audio frame |
-| [onMicrophoneVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a8a9798da9f593fb00878a823bc3fdbc7) | Callback for mic capturing volume       |
+| [onMicrophoneVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a8a9798da9f593fb00878a823bc3fdbc7) | Callback of mic capturing volume       |
 
 ### Mixtranscoding callback APIs
-| API                                                          | Description |
-| ------------------------------------------------------------ | ------------------------------ |
+| API                                             | Description                                                         |
+| --------------- | ------------------------------ |
 | [onSetMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a0f11cee9e2659f7ea8484fdffd6b8583) | Callback for setting On-Cloud MixTranscoding parameters |
 
 ### Statistics callback APIs
-| API                                                          | Description                  |
-| ------------------------------------------------------------ | ------------------------ |
-| [onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#ab10e1f4e22e9bb73e3cea4ae15c36465) | Callback for publisher statistics |
-
+| API                                             | Description                                                         |
+| --------------- | ------------------------ |
+| [onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#ab10e1f4e22e9bb73e3cea4ae15c36465) | Callback of publisher statistics |

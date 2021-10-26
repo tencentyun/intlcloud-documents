@@ -1,9 +1,9 @@
 ## 다운로드 및 설치
 
 #### 관련 리소스
-- COS의 XML PHP SDK 소스 코드 다운로드 주소: [XML PHP SDK](https://github.com/tencentyun/cos-php-sdk-v5/releases)
-- SDK 고속 다운로드 주소: [XML PHP SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-php-sdk-v5/latest/cos-php-sdk-v5.zip)
-- 예시 Demo 프로그램 주소: [PHP sample](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample)
+- COS의 XML PHP SDK 소스 코드 다운로드 주소: [XML PHP SDK](https://github.com/tencentyun/cos-php-sdk-v5/releases).
+- SDK 고속 다운로드 주소: [XML PHP SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-php-sdk-v5/latest/cos-php-sdk-v5.zip).
+- 예시 Demo 프로그램 주소: [PHP sample](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample).
 - SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/php)를 참고하십시오.
 - SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/CHANGELOG.md)를 참고하십시오.
 - SDK FAQ는 [PHP SDK FAQ](https://intl.cloud.tencent.com/document/product/436/40543)를 참고하십시오.
@@ -16,7 +16,7 @@
 
 -   PHP 5.6+
 `php -v` 명령어를 통해 현재의 PHP 버전을 확인할 수 있습니다.
->! PHP 버전`>=5.3`, `<5.6`인 경우 [v1.3](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3) 버전을 사용하십시오.
+>! PHP 버전`>=5.3` 및 `<5.6`인 경우 [v1.3](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3) 버전을 사용하십시오.
 >
 -  cURL 확장
 `php -m` 명령어를 통해 cURL 확장 설치 여부를 확인할 수 있습니다.
@@ -31,9 +31,6 @@ sudo yum install php-curl
 
 #### SDK 설치
 SDK 설치에는 [Composer 방식](#composer), [Phar 방식](#phar), [소스 코드 방식](#Source)의 세 가지 방법이 있습니다.
-
->! 아래의 설치 방법은 SDK의 guzzle6 버전을 기준으로 하고 있으며, guzzle7 버전을 사용하실 경우에는 [guzzle7](https://github.com/tencentyun/cos-php-sdk-v5/tree/guzzle7) 코드를 다운로드하고 소스 코드를 통해 설치할 수 있습니다.
->
 
 <span id="composer"></span>
 
@@ -64,6 +61,8 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 ```
 해당 명령어를 사용하면 현재 디렉터리에 vendor 폴더가 생성됩니다. 폴더 안에는 SDK의 종속 라이브러리와 autoload.php 스크립트가 포함되어 있어 프로젝트에서 편리하게 호출할 수 있습니다.
+>! Composer로 현재 PHP 버전에 따라 guzzle6 또는 guzzle7을 다운로드할 수 있으며 guzzle7 버전은 laravel8 프레임워크를 지원합니다. PHP 7.2.5 이후 버전은 guzzle7 버전을, 이전 버전은 guzzle6 버전을 자동 다운로드합니다.
+>
 5. autoloader 스크립트를 통해 cos-php-sdk-v5를 호출합니다.
 ```php
 require '/path/to/sdk/vendor/autoload.php';
@@ -77,22 +76,29 @@ require '/path/to/sdk/vendor/autoload.php';
 #### Phar 방식
 Phar 방식으로 SDK를 설치하는 방법은 다음과 같습니다.
 1. [GitHub 배포 페이지](https://github.com/tencentyun/cos-php-sdk-v5/releases)에서 상응하는 phar 파일을 다운로드합니다.
+>? 
+> - PHP 버전 `>= 5.6` 및 `<7.2.5`인 경우 Guzzle6 버전 사용을 위해 `cos-sdk-v5-6.phar`를 다운로드하십시오. 
+> - PHP 버전 `>=7.2.5`인 경우 Guzzle7 버전 사용을 위해 `cos-sdk-v5-7.phar`를 다운로드하십시오.
+> 
 2. 코드에 phar 파일을 가져옵니다.
 ```php
-require  '/path/to/cos-sdk-v5.phar';
+require  '/path/to/cos-sdk-v5-x.phar';
 ```
 
 <span id="Source"></span>
 #### 소스 코드 방식
 소스 코드 방식으로 SDK를 설치하는 방법은 다음과 같습니다.
 1. [SDK 다운로드 페이지](https://github.com/tencentyun/cos-php-sdk-v5/releases)에서 `cos-sdk-v5.tar.gz` 압축 파일을 다운로드합니다.
->! `Source code`압축 패키지는 Github 기본 패키지의 코드 패키지이며, `vendor` 디렉터리가 포함되어 있지 않습니다.
->
+>? 
+> - PHP 버전 `>= 5.6` 및 `<7.2.5`인 경우 Guzzle6 버전 사용을 위해 `cos-sdk-v5-6.tar.gz`를 다운로드하십시오. 
+> - PHP 버전 `>=7.2.5인 경우 Guzzle7 버전 사용을 위해 `cos-sdk-v5-7.tar.gz`를 다운로드하십시오.
+> 
 2. 압축 해제 후, `autoload.php` 스크립트를 통해 SDK를 로딩합니다.
 ```php
 require '/path/to/sdk/vendor/autoload.php';
 ```
-
+>! `Source code` 압축 패키지는 Github 기본 패키지의 코드 패키지이며 `vendor` 디렉터리가 포함되어 있지 않습니다. Source 패키지가 아닌 release 패키지(cos-sdk-v5-x.tar.gz 패키지)를 다운로드하십시오. 전체 라이브러리를 직접 clone하지 마십시오. 그렇지 않으면 index.php 및 vendor 패키지가 누락될 수 있습니다.
+>
 
 ## 사용하기
 COS PHO SDK를 사용한 클라이언트 초기화, 버킷 생성, 버킷 리스트 조회, 객체 업로드, 객체 리스트 조회, 객체 다운로드, 객체 삭제 등의 기본 작업 방법은 아래와 같습니다. 예시에 나온 매개변수 설명은 [버킷 작업](https://intl.cloud.tencent.com/document/product/436/31470) 및 [객체 작업](https://intl.cloud.tencent.com/document/product/436/31542) 문서를 참고하십시오.
@@ -111,7 +117,7 @@ $cosClient = new Qcloud\Cos\Client(
         'region' => $region,
         'schema' => 'https', //프로토콜 헤더, 기본값: http
         'credentials'=> array(
-            'secretId'  => $secretId ,
+            'secretId'  => $secretId,
             'secretKey' => $secretKey)));
 ```
 
@@ -170,7 +176,7 @@ try {
 >!
 > - putObject 인터페이스를 사용하여 파일을 업로드(최대 5G)합니다.
 > - Upload 인터페이스를 사용하여 파일을 멀티파트 업로드합니다. Upload 인터페이스는 복합 업로드 인터페이스로, 용량이 작은 파일은 간편 업로드를 진행하고, 용량이 큰 파일은 멀티파트 업로드를 진행합니다.
-> -매개변수 설명은 [객체 작업](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 문서를 참고하십시오.
+> - 매개변수 설명은 [객체 작업](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 문서를 참고하십시오.
 > 
 
 [//]: # ".cssg-snippet-put-object-comp"

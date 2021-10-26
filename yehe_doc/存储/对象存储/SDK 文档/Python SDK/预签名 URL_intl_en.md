@@ -1,9 +1,14 @@
 ## Overview
-The Python SDK provides examples for getting request signatures, pre-signed URLs, and pre-signed download URLs. The method for getting a pre-signed URL is the same regardless of whether you are using permanent or temporary keys, except that the latter requires `x-cos-security-token` to be included in the header or query_string.
+The Python SDK provides examples for getting request signatures, pre-signed URLs, and pre-signed download URLs. The method for getting a pre-signed URL is the same whether you are using permanent or temporary keys, with the only difference being that the latter requires `x-cos-security-token` included in the header or query_string.
+
+>?
+> - You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
+> 
 
 ## Getting Signatures
 
-#### Feature description
+#### Description
 The SDK allows you to obtain a signature for a specified operation. This feature is commonly used for signature distribution to mobile devices.
 
 #### Method prototype
@@ -23,7 +28,7 @@ response = client.get_auth(
 )
 ```
 
-#### Download request sample
+#### Samples for download requests
 
 [//]: # (.cssg-snippet-get-authorization-download)
 ```python
@@ -59,8 +64,8 @@ response = client.get_auth(
 | -------------- | -------------- |---------- | ----------- |
  | Method  | Operation method. Valid values: 'PUT', 'POST', 'GET', 'DELETE', 'HEAD'|  String |  Yes | 
  | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes | 
- | Key  | Root path `/` for a bucket operation or the file path for an object operation | String | Yes| 
- | Expired | Time in seconds before a signature expires | Int| No |
+ | Key  | Specifies the root path `/` for a bucket operation or the file path for an object operation | String | Yes| 
+ | Expired | Specifies the time in seconds before a signature expires | Int| No |
  | Headers | Request headers that need to be included in the signature | Dict| No|
  | Params | Request parameters that need to be included in the signature | Dict | No |
 
@@ -70,7 +75,7 @@ The signature value for the corresponding operation is returned upon success.
 
 ## Getting Pre-Signed URLs
 
-#### Feature description
+#### Description
 
 The SDK allows you to get a pre-signed URL that can be used for distribution purposes.
 
@@ -85,7 +90,7 @@ response = client.get_presigned_url(
 )
 ```
 
-#### Download request sample
+#### Samples for download requests
 
 [//]: # (.cssg-snippet-get-presign-download-url)
 ```python
@@ -141,9 +146,9 @@ response = client.get_presigned_url(
 | Parameter | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
  | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes | 
- | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes | 
+ | Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes | 
  | Method  | Operation method. Valid values: 'PUT', 'POST', 'GET', 'DELETE', 'HEAD'|  String |  Yes | 
- | Expired | Time in seconds before a signature expires | Int| No |
+ | Expired | Specifies the time in seconds before a signature expires | Int| No |
  | Params | Request parameters that need to be included in the signature | Dict| No |
  | Headers | Request headers that need to be included in the signature | Dict | No |
  
@@ -154,7 +159,7 @@ A pre-signed URL is returned upon success.
 
 ## Getting Pre-Signed Download URLs
 
-#### Feature description
+#### Description
 The SDK allows you to get a pre-signed download URL that can be used to directly download an object.
 
 
@@ -201,8 +206,8 @@ response = client.get_presigned_download_url(
 | Parameter | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
  | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes | 
- | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes | 
- | Expired | Time in seconds before a signature expires | Int| No |
+ | Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes | 
+ | Expired | Specifies the time in seconds before a signature expires | Int| No |
  | Params | Request parameters that need to be included in the signature | Dict| No |
  | Headers | Request headers that need to be included in the signature | Dict | No |
 

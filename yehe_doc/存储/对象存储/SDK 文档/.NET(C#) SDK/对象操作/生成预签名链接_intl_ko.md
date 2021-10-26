@@ -12,6 +12,14 @@
 
 SDK 모든 인터페이스의 구체적인 매개변수와 방법 설명은 [SDK API](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/)를 참고하십시오.
 
+## 서명되지 않은 링크 생성
+
+객체의 ACL 속성을 ‘공개 읽기’로 설정하면 다음 SDK 인터페이스로 생성된 URL을 통해 객체에 직접 액세스할 수 있습니다.
+
+```C#
+ string GetObjectUrl(string bucket, string key);
+ ```
+
 ## 객체 사전 서명된 링크 생성
 
 #### 예시 코드1: 사전 서명된 업로드 링크 생성
@@ -38,7 +46,7 @@ try
   PutObjectRequest request = new PutObjectRequest(null, null, srcPath);
   //업로드 요청을 위해 미리 서명된 URL 설정
   request.RequestURLWithSign = requestSignURL;
-  //진행율 콜백 설정
+  //진행률 콜백 설정
   request.SetCosProgressCallback(delegate (long completed, long total)
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
@@ -88,7 +96,7 @@ try
   GetObjectRequest request = new GetObjectRequest(null, null, localDir, localFileName);
   //다운로드 요청을 위해 미리 서명된 URL 설정
   request.RequestURLWithSign = requestSignURL;
-  //진행율 콜백 설정
+  //진행률 콜백 설정
   request.SetCosProgressCallback(delegate (long completed, long total)
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));

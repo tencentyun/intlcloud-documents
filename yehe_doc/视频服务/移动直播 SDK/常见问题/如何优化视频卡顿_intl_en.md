@@ -1,19 +1,18 @@
+![](https://main.qcloudimg.com/raw/b5873f21d38360c3afbeb47e119d3337.png)
+There are three main reasons for playback stuttering.
 
-There are three main reasons for playback lag.
+- **Reason 1: low upstream frame rate**
+Low upstream frame rate may be a result of poor performance of the host’s mobile phone or the running of CPU-intensive apps in the background. Normally, to ensure smooth playback, the upstream frame rate must be 15 fps or higher. Frame rate lower than 10 fps is deemed **too low**, which will cause **all audience** to experience stuttering. However, when the host’s video image changes little, for example, when the host is showing a static image or PowerPoint, low frame rate will not cause stuttering.
+- **Reason 2: upstream congestion**
+The host's mobile phone keeps publishing audio and video data during live streaming. If the phone’s upstream bandwidth is too low, the data waiting to be published will accumulate, causing congestion in data transfer and stuttering playback experience for **all audience**.
 
-- **Reason 1: Low push frame rate
-Low push frame rate may be a result of poor performance of the host’s mobile phone or the running of CPU-consuming apps on the host’s phone. Normally, to ensure smooth playback, push frame rate must be 15 FPS or higher. Frame rate of lower than 10 FPS is deemed **too low**, which will cause **all viewers** to experience lag when watching the live broadcast. The exception is when the host’s video image changes little, for example, when the host is showing a static image or PowerPoint, in which case low frame rate will not cause lag.
-**Reason 2: upstream congestion**
-During a live broadcast, the host's mobile phone keeps generating audio and video data. If the phone’s upstream bandwidth is too low, the data waiting to be pushed will accumulate, causing congestion in data transfer and resulting in poor watching experience for **all viewers**.
-
-  
-  
-
-**Reason 3: poor downstream networking**
-Poor downstream networking means slow download speed or network instability on the part of viewers. Suppose the bitrate of a live broadcast stream is 2 Mbps. It means 2 Mb of data needs to be downloaded per second. Therefore, a viewer whose network bandwidth is low experiences lag when watching a live broadcast, but other viewers with sufficient bandwidth are not affected.
+ Even though **ISPs in the Chinese mainland** offer broadband packages with downstream bandwidth as high as 10 Mbps or 20 Mbps, or even 100 Mbps or 200 Mbps, upstream bandwidth remains small. In many small cities, upstream bandwidth is up to 512 Kbps, which means that a maximum of 64 KB data can be uploaded per second.
+ **Wi-Fi** uses the carrier-sense multiple access and collision avoidance (CSMA/CA) strategy specified in IEEE 802.11. To put it simply, a Wi-Fi hotspot can communicate with only one phone at a time, and other phones must query if communication is possible before initiating a connection to a hotspot. Therefore, the more people using a Wi-Fi hotspot, the slower the connection is. Furthermore, Wi-Fi signals are weakened significantly when passing through walls. Among average Chinese households, few take this into consideration when designing and decorating their houses, and hosts probably pay little attention to how many walls they are apart from their routers when they stream at home.
+- **Reason 3: poor downstream connection**
+Poor downstream connection means slow download speed or instable network for audience. A bitrate of 2 Mbps in live streaming means 2 Mb of data needs to be downloaded per second. Audience will experience stuttering if their network bandwidth is low, but users with sufficient bandwidth will not.
 
 ## Checking SDK Status Metrics
-Tencent Cloud’s MLVB SDK has a status feedback mechanism that reports status metrics of the SDK every 1-2 seconds. If you use the MLVB SDK to push streams, you can register TXLivePushListener to get the metrics. The metrics reported are as follows:
+The MLVB SDK of Tencent Video Cloud Toolkit has a status feedback mechanism that reports status metrics of the SDK every 1-2 seconds. If you use the MLVB SDK to push streams, you can register TXLivePushListener to get the metrics. The metrics reported are as follows:
 
 |  Items                   |  Description                    |
 | :------------------------  |  :------------------------ |
@@ -40,7 +39,7 @@ The stream pushing SDK is not the only CPU consumer in a live streaming app. Lea
 **2.3 Choosing a reasonable resolution**
 High resolution does not necessarily result in high video quality. To begin with, high resolution translates into improved video quality only when the bitrate is high too. Low bitrate and high resolution usually produce lower video quality than high bitrate and low resolution. In addition, viewers may be able to sense notable differences between a resolution of 1280 x 720 pixels and 960 x 540 pixels when watching videos full screen on PCs, but not on mobile phones, whose average screen size is only around 5 inches. High resolution increases the CPU usage of the SDK significantly. Therefore, you are advised to set [setVideoQuality](https://intl.cloud.tencent.com/document/product/1071/38158) in TXLivePusher of the MLVB SDK to **High Definition**. You may not get the high video quality expected by setting the resolution too high.
 
-- **2.4 Using hardware for acceleration if necessary**
+**2.4 Using hardware for acceleration if necessary**
 Most smartphones today use hardware encoders to reduce the CPU consumption of video encoding. When the CPU usage of your app is too high, you can enable hardware encoding to lower the usage. When `setVideoQuality` of TXLivePusher is set to **High Definition**, software encoders are used by default (hardware encoding doesn't work well on some Android devices and results in blurry video). You can use `enableHWAcceleration` of TXLivePushConfig to enable hardware encoding.
 
 ## Fixing Upstream Congestion

@@ -1,11 +1,11 @@
-## Feature description
+## Overview
 
-This API is used to configure a custom domain name for a bucket.
+This API is used to configure a custom domain for a bucket.
 
->
-> - Currently, you are allowed to add 20 custom domain names. To add more, please contact our technical services team by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
-> - The custom domain name supports 3 types of origin servers, default, static website, and global acceleration. To use a static website origin server, you need to [enable a static website](https://intl.cloud.tencent.com/document/product/436/14984). To use a global acceleration origin server, you need to [enable global acceleration](https://intl.cloud.tencent.com/document/product/436/33406).
-> - By default, the root account has the permission to add a custom domain name to a bucket and can grand such permission to a sub-account by granting it permission on the `PutBucketDomain` API in the [CAM Console](https://console.cloud.tencent.com/cam/overview).
+> !
+> - You can add up to 20 custom domains. To add more, please [contact us](https://cloud.tencent.com/act/event/Online_service).
+> - The custom domain supports 3 types of origin servers (default, static website, and global acceleration). To use a static website origin server, [enable a static website](https://intl.cloud.tencent.com/document/product/436/14984). To use a global acceleration origin server, [enable global acceleration](https://intl.cloud.tencent.com/document/product/436/33406).
+> - By default, the root account has permission to add a custom domain to a bucket and can go to the [CAM console](https://console.cloud.tencent.com/cam/overview) to grant such permission to a sub-account by allowing it to call the `PutBucketDomain` API.
 
 ## Request
 
@@ -23,19 +23,22 @@ Authorization: Auth String
 [Request Body]
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> 
 
 #### Request parameters
 
-This API does not use any request parameters.
+This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
-This request body submits the **application/xml** request data which includes all the information on the custom domain name of a bucket.
+This request body submits the **application/xml** data that includes all information about the custom domain of the bucket.
 
 ```xml
 <DomainConfiguration>
@@ -52,32 +55,32 @@ This request body submits the **application/xml** request data which includes al
 </DomainConfiguration>
 ```
 
-The detailed nodes are described as follows:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------- | ------ | ----------------------------------------- | --------- | -------- |
-| DomainConfiguration | None     | Contains all the request information for PUT Bucket domain | Container | No       |
+| DomainConfiguration | None | All configurations of the `PUT Bucket domain` request | Container | No |
 
-**Content of the Container node `DomainConfiguration`:**
+**Content of `DomainConfiguration`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------------------- | -------- | --------- | -------- |
 | DomainRule         | DomainConfiguration | Domain entry | Container | Yes       |
 
-**Content of the Container node `DomainRule`:**
+**Content of `DomainRule`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------------------------------ | ------------------------------------------------------------ | ------ | -------- |
 | Status             | DomainConfiguration.DomainRule | Domain status. Enumerated values:<br><li>`ENABLED`, <li>`DISABLED`    | Enum   | Yes       |
 | Name               | DomainConfiguration.DomainRule | Full domain name                                                     | string | Yes       |
-| Type               | DomainConfiguration.DomainRule | Type of the origin server. Enumerated values: <br><li>REST: default<li>WEBSITE: static website<li>ACCELERATE: global acceleration | Enum   |
-| ForcedReplacement  | DomainConfiguration.DomainRule | If the specified domain name has been used for another bucket, you can specify the element to force the domain name to be a custom domain name for the current bucket. With only CNAME currently supported, this API can set up the custom domain name only after you point its CNAME to the current bucket’s origin domain name, which is associated with a default origin server, static website origin server, or global acceleration origin server, depending on the `Type` element value. | Enum   | No       |
+| Type | DomainConfiguration.DomainRule | Type of the origin server. Enumerated values: <br><li>`REST`: default origin server<li>`WEBSITE`: static website origin server<li>`ACCELERATE`: global acceleration origin server | Enum | Yes |
+| ForcedReplacement  | DomainConfiguration.DomainRule | If the specified domain has been used for another bucket, you can use this node to forcibly use this domain for the current bucket. Currently, only CNAME is supported. Therefore, you need to point this domain’s CNAME to this bucket’s origin server domain (which can be the default origin server, static website origin server, or global acceleration origin server depending on `Type`) before calling this API. | Enum | No |
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -85,9 +88,9 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Use cases
+## Samples
 
 #### Request
 

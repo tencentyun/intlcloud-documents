@@ -3,7 +3,7 @@
 
 ## 计费情况
 计费情况展示当前腾讯云账户的**计费方式**。
-![](https://main.qcloudimg.com/raw/a786077e2852c8e350f213278112f967.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/715bad667789a7b83c1d706cafce2eb1.png)
 
 <table border=0 cellpadding="0" cellspacing="0">
 <thead>
@@ -19,7 +19,7 @@
 </tr>
 <tr>
 <td>当月计费带宽（月结计费）</td>
-<td>当前账户当月计费带宽，点击历史记录可以查询一年有效期内的历史结算带宽。</td>
+<td>当前账户当月计费带宽。</td>
 </tr>
 </tbody></table>
 
@@ -63,6 +63,6 @@
 
 ## 关键数据
 
-关键数据展示为最近一周内存储空间、转码时长、使用流量、使用带宽、智能识别时长以及周趋势，您可以单击分栏进行查看，也可以单击右上角【详情数据】跳转至 [数据中心 - 用量统计](https://console.cloud.tencent.com/vod/dosage-statistics/index/cos) 查看更多详细信息。
-![](https://main.qcloudimg.com/raw/7b9bad31fa7fc81ee388d9717bff6f15.png)
+关键数据展示为最近一周内存储空间、转码时长、使用流量、使用带宽、智能识别时长以及周趋势，您可以单击分栏进行查看。
+![](https://qcloudimg.tencent-cloud.cn/raw/f89c9d6522803feff727465a8d0f7470.png)
 

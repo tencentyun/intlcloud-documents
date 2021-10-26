@@ -11,11 +11,11 @@ This document describes how to upload videos through the VOD Console, including 
 
 1. Log in to the VOD Console and select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** to enter the "Uploaded" page by default.
 2. Click **Upload Video** to enter the "Upload Video" page.
-![](https://main.qcloudimg.com/raw/098125ef7743bdb344087248eeea2f1b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/50c01e2bc231a24b497310b876dc0d3f.png)
 3. Select **Local Upload** to upload a local file to the console. Click **Select Video** to select a local video file or drag and drop the file into the upload list zone.
 
 4. In the upload list, you can check the filename and size of a selected video, modify its name and category, or delete it.
-![](https://main.qcloudimg.com/raw/f97e4fac9cd9d3a55bd302a36df75f35.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2b5afcb82c221fffcffeaf5f2b1565b3.png)
 5. You can choose whether to process the uploaded video.
    - If no processing is needed, select **No Processing After Upload**.
    - If processing is needed, select **Automatic Processing After Upload** and configure video processing parameters according to the table below.
@@ -62,7 +62,7 @@ This document describes how to upload videos through the VOD Console, including 
  - Cover URL: enter the URL of the cover to be pulled.
  - Category: select a video category.
 5. Click **Pull Video** to upload the video.
-![](https://main.qcloudimg.com/raw/bd901cf366af7e5a695929db7d41dfdf.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/60135e118c111a8ec917a4e72d8f5677.png)
 
 >?It takes several minutes to upload a video. You can view the upload progress in **Video Management** > **Uploading**. After videos are successfully uploaded, you can view and manage all of them in **Video Management** > **Uploaded**.
 
@@ -75,7 +75,7 @@ You need to fill in the TXT or CSV file in the specified format, which can be vi
 
 | Column 1 | Column 2 | Column 3 |
 |---------|---------|---------|
-| Video Resource URL | Video Name | Video Cover URL
+| Video Resource URL | Video Name | Video Cover URL|
 
 - TXT file: columns should be separated by commas.
 - CSV file: columns should be separated by commas (you can directly fill in the table columns in the CSV file).
@@ -83,6 +83,3 @@ You need to fill in the TXT or CSV file in the specified format, which can be vi
 >?
 >- The columns are video resource URL, video name, and video cover URL, respectively. **Please fill in the columns in sequence.**
 >- After the list is parsed, please check whether there are any errors and upload after confirmation.
->- We recommend that you download the sample files to check the uploading file format.
-
-![](https://main.qcloudimg.com/raw/6cb755579222617d63441fae07a2195a.png)

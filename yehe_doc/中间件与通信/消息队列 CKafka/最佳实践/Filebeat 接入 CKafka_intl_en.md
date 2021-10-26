@@ -13,13 +13,13 @@ Beats offers a wide variety of shippers, and you can download the one which best
 ### Step 1. Get the CKafka instance access address
 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
-2. Select **Instance List** on the left sidebar and click the **ID** of an instance to enter the instance basic information page.
+2. Select **Instance List** on the left sidebar and click the **ID** of the target instance to enter its basic information page.
 3. On the instance basic information page, get the instance access address in the **Access Mode** module.
-    ![](https://main.qcloudimg.com/raw/fea1f55c3cf311d1393347853cf183fc.png)
+     ![](https://main.qcloudimg.com/raw/fea1f55c3cf311d1393347853cf183fc.png)
 
 ### Step 2. Create a topic
 
-1. On the instance basic information page, select the **Topic Management** tab on the top.
+1. On the instance's basic information page, select the **Topic Management** tab on the top.
 2. On the topic management page, click **Create** to create a topic named `test`.
     ![](https://main.qcloudimg.com/raw/bd8fb967eb2e46f14cee52c3a34014e2.png)
 
@@ -28,7 +28,7 @@ Beats offers a wide variety of shippers, and you can download the one which best
 Enter the installation directory of Filebeat and create the configuration monitoring file `filebeat.yml`.
 <dx-codeblock>
 :::  yaml
-#======= Filebeat prospectors ==========
+#======= For versions after Filebeat 7.x, change `filebeat.prospectors` to `filebeat.inputs` =======
 filebeat.prospectors:
 
 - input_type: log 
@@ -41,7 +41,7 @@ filebeat.prospectors:
 
 #------------------ kafka -------------------------------------
 output.kafka:
-  version:0.10.2 // Set the value to the open-source version of the CKafka instance.
+  version:0.10.2 //Set the value to the open-source version of the CKafka instance.
   # Set to the access address of the CKafka instance
   hosts: ["xx.xx.xx.xx:xxxx"]
   # Set the name of the target topic
@@ -118,8 +118,7 @@ Check the version configuration in the configuration file:
 <dx-codeblock>
 :::  yaml
 output.kafka:
-  version:0.10.2 // Set the value to the open-source version of the CKafka instance.
+  version:0.10.2 //Set the value to the open-source version of the CKafka instance.
 :::
 </dx-codeblock>
-
 

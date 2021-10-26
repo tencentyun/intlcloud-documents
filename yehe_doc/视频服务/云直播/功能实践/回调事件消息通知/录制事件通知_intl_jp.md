@@ -65,9 +65,9 @@ LVBレコーディングでは、プッシュドメイン名にバインドし�
 
 "appid":12345678,
 
-"app":yourapp
+"app":yourapp,
 
-"appname":yourappname
+"appname":yourappname,
 
 "stream_id":"stream_test",
 
@@ -90,7 +90,7 @@ LVBレコーディングでは、プッシュドメイン名にバインドし�
 
 "video_url":"http://12345678.vod2.myqcloud.com/xxxx/yyyy/zzzz.m3u8",
 
-"sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
+"sign":"ca3e25e**********09a9ae7281e300d",
 
 "t":1545030873
 }

@@ -12,7 +12,7 @@ If your application scenario is mainly in the education sector, consider using t
 <th>SDK Version Requirements</th>
 <th>Receive (Playback)</th>
 <th>Send (Publish)</th>
-<th>Screen Sharing</th>
+<th>Share Screen</th>
 </tr>
 <tr>
 <td rowspan="11">Windows</td>
@@ -222,7 +222,7 @@ If your application scenario is mainly in the education sector, consider using t
 <td>iOS 14.3+</td>
 <td>WeChat built-in browser</td>
 <td>WeChat 6.5+</td>
-<td>-</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Not supported</td>
@@ -266,8 +266,18 @@ If your application scenario is mainly in the education sector, consider using t
 </table>
 
 >! 
->- You can run a [WebRTC Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in a browser, for example, WeChat’s built-in browser, to test whether the environment fully supports WebRTC.
->- Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support the TRTC SDK for desktop browsers.
+>- You can run the [TRTC Web SDK Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in a browser, for example, WebView, to test whether the environment fully supports WebRTC.
+>- Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support the TRTC SDK for web.
+
+## URL Protocol Support
+| Scenario     | Protocol             | Receive (Playback) | Send (Publish) | Share Screen | Remarks |
+| ------------ | :--------------- | :----------- | ------------ | -------- | ---- |
+| Commercial     | HTTPS        | Supported         | Supported         | Supported     | Recommended |
+| Commercial     | HTTP         | Supported         | Not supported       | Not supported   |      |
+| Local development | http://localhost | Supported         | Supported         | Supported     | Recommended |
+| Local development | http://127.0.0.1 | Supported         | Supported         | Supported     |      |
+| Local development | http://[local IP address]  | Supported         | Not supported       | Not supported   |      |
+| Local development | file:///         | Supported         | Supported         | Supported     |      |
 
 ## API Guide
 The tutorials below offer detailed instructions on how to use different APIs.
@@ -288,14 +298,14 @@ The tutorials below offer detailed instructions on how to use different APIs.
 
 ## TRTC
 
->!This document applies to TRTC SDK for Web 4.x.x.
+>!This document applies to 4.x.x versions of the TRTC SDK for web.
 
-`TRTC` is the main entry to the [TRTC SDK for Web](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/index.html). You can use `TRTC` APIs to create a client object (`Client`) and local audio/video stream object (`Stream`) for real-time communication, check a browser's compatibility and whether it supports screen sharing, as well as set the log output level and enable/disable log upload.
+`TRTC` is the main entry to the [TRTC SDK for web](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/index.html). You can use `TRTC` APIs to create a client object (`Client`) and local audio/video stream object (`Stream`) for real-time communication, check a browser's compatibility and whether it supports screen sharing, as well as set the log output level and enable/disable log upload.
 
 | API                                             | Description                                                         |
 | ----------------------------------------- | ---------------------------------------- |
-| [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.VERSION)                                 | Version of the TRTC SDK for Web                                                                                                                                  |
-| [checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.checkSystemRequirements) | Checks whether a browser is compatible with the TRTC SDK for Web. If not, ask users to download the latest version of Chrome. |
+| [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.VERSION)                                 | Version of the TRTC SDK for web                                                                                                                                  |
+| [checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.checkSystemRequirements) | Checks whether a browser is compatible with the TRTC SDK for web. If not, ask users to download the latest version of Chrome. |
 | [isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.isScreenShareSupported) | Checks whether a browser supports screen sharing. Call this API before creating a screen sharing stream.                                                                  |
 | [getDevices](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.getDevices)                           | Gets the list of media input/output devices.                                                                                                                                    |
 | [getCameras](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.getCameras)                           | Gets the list of cameras.                                                                                                                                          |
@@ -351,22 +361,22 @@ A local audio/video stream is created through [createStream](https://web.sdk.qcl
 | [addTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#addTrack)                       | Adds an audio or video track to the local stream.                                                                                                                                                                     |
 | [removeTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#removeTrack)                 | Removes the video track of the local stream.                                                                                                                                                                           |
 | [replaceTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#replaceTrack)               | Replaces the audio or video track of the local stream.                                                                                                                                                                     |
-| [play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#play)                               | Starts playing an audio/video stream.                                                                                                                                                                         |
-| [stop](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#stop)                               | Stops playing an audio/video stream.                                                                                                                                                                       |
-| [resume](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#resume)                           | Resumes playing an audio/video stream.                                                                                                                                                                         |
-| [close](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#close)                   | Closes an audio/video stream.                                                                                     |
-| [muteAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#muteAudio)                     | Disables the audio track of a stream.                                                                                                                                                                           |
-| [muteVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#muteVideo)                     | Disables the video track of a stream.                                                                                                                                                                           |
-| [unmuteAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#unmuteAudio)                 | Enables the audio track of a stream.                                                                                                                                                                           |
-| [unmuteVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#unmuteVideo)                 | Enables the video track of a stream.                                                                                                                                                                           |
+| [play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#play)                               | Starts playing the local audio/video stream.                                                                                                                                                                         |
+| [stop](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#stop)                               | Stops playing the local audio/video stream.                                                                                                                                                                       |
+| [resume](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#resume)                           | Resumes playing the local audio/video stream.                                                                                                                                                                         |
+| [close](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#close)                   | Closes the local audio/video stream.                                                                                     |
+| [muteAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#muteAudio)                     | Disables the audio track of the local stream.                                                                                                                                                                           |
+| [muteVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#muteVideo)                     | Disables the video track of the local stream.                                                                                                                                                                           |
+| [unmuteAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#unmuteAudio)                 | Enables the audio track of the local stream.                                                                                                                                                                           |
+| [unmuteVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#unmuteVideo)                 | Enables the video track of the local stream.                                                                                                                                                                           |
 | [getId](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getId)                   | Gets the stream ID.                                                                          |
-| [getUserId](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getUserId)                     | Gets the ID of the user to whom a stream belongs.                                                                                                                                                                  |
+| [getUserId](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getUserId)                     | Gets the ID of the user to whom the stream belongs.                                                                                                                                                                  |
 | [setAudioOutput](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setAudioOutput)           | Sets the audio output device.                                                                                                                                                                       |
 | [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioLevel)             | Gets the current volume. This API works only if there is audio data in the local stream or a remote stream.                                                                                                                               |
 | [hasAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#hasAudio)                       | Queries whether there is an audio track.                                                                                                                                                                       |
 | [hasVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#hasVideo)                       | Queries whether there is a video track.                                                                                                                                                                       |
-| [getAudioTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioTrack)             | Gets the audio track of a stream.                                                                                                                                                                           |
-| [getVideoTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getVideoTrack)             | Gets the video track of a stream.                                                                                                                                                                           |
+| [getAudioTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioTrack)             | Gets the audio track of the local stream.                                                                                                                                                                           |
+| [getVideoTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getVideoTrack)             | Gets the video track of the local stream.                                                                                                                                                                           |
 | [getVideoFrame](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getVideoFrame)             | Gets the current video frame.                                                                                                                                                                         |
 | [on](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#on) | Listens for `Stream` events. |
 

@@ -27,13 +27,14 @@ TXLivePusher 推流 SDK 主要用于视频云的快直播（超低延迟直播�
 在需要直播推流的页面（桌面端）中引入初始化脚本。
 
 ```html
-<script src="https://imgcache.qq.com/open/qcloud/live/webrtc/js/TXLivePusher-1.0.1.min.js" charset="utf-8"></script>
+<script src="https://imgcache.qq.com/open/qcloud/live/webrtc/js/TXLivePusher-1.0.2.min.js" charset="utf-8"></script>
 ```
+>? 需要在 HTML 的 body 部分引入脚本，如果在 head 部分引入会报错。
 
 如果在域名限制区域，可以引入以下链接：
 
 ```html
-<script src="https://cloudcache.tencent-cloud.com/open/qcloud/live/webrtc/js/TXLivePusher-1.0.1.min.js" charset="utf-8"></script>
+<script src="https://cloudcache.tencent-cloud.com/open/qcloud/live/webrtc/js/TXLivePusher-1.0.2.min.js" charset="utf-8"></script>
 ```
 
 ### 步骤2：在 HTML 中放置容器
@@ -45,6 +46,7 @@ TXLivePusher 推流 SDK 主要用于视频云的快直播（超低延迟直播�
 ```
 
 ### 步骤3：直播推流
+
 1. **生成推流 SDK 实例：**
 通过全局对象 `TXLivePusher` 生成 SDK 实例，后续操作都是通过实例完成。
 ```javascript
@@ -58,11 +60,11 @@ livePusher.setRenderView('id_local_video');
 >?调用 `setRenderView` 生成的 video 元素默认有声音，如果需要静音的话，可以直接获取 video 元素进行操作。
 >```javascript
 >document.getElementById('id_local_video').getElementsByTagName('video')[0].muted = true;
->```
 ```
+
 3. **设置音视频质量：**
 采集音视频流之前，先进行音视频质量设置，如果预设的质量参数不满足需求，可以单独进行自定义设置。
-​```javascript
+```javascript
 // 设置视频质量
 livePusher.setVideoQuality('720p');
 // 设置音频质量
@@ -70,6 +72,7 @@ livePusher.setAudioQuality('standard');
 // 自定义设置帧率
 livePusher.setProperty('setVideoFPS', 25);
 ```
+
 4. **开始采集流：**
 目前支持采集摄像头设备、麦克风设备、屏幕录制和本地媒体文件的流。当音视频流采集成功时，播放器容器中开始播放本地采集到的音视频画面。
 ```javascript
@@ -78,11 +81,13 @@ livePusher.startCamera();
 // 打开麦克风
 livePusher.startMicrophone();
 ```
+
 5. **开始推流：**
 传入腾讯云快直播推流地址，开始推流。推流地址的格式参考 [腾讯云标准直播 URL](https://intl.cloud.tencent.com/document/product/267/38393) ，只需要将 RTMP 推流地址前面的 `rtmp://` 替换成 `webrtc://` 即可。
 ```javascript
 livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx');
 ```
+
 >?推流之前要保证已经采集到了音视频流，否则推流接口会调用失败，如果要实现采集到音视频流之后自动推流，可以通过回调事件通知，当收到采集首帧成功的通知后，再进行推流。如果同时采集了视频流和音频流，需要在视频首帧和音频首帧的采集成功回调通知都收到后再发起推流。
 >```javascript
 >var hasVideo = false;
@@ -104,13 +109,14 @@ livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx
 >		}
 >	}
 >});
->```
 ```
+
 </dx-codeblock>
 6. **停止快直播推流：**
-​```javascript
+```javascript
 livePusher.stopPush();
 ```
+
 7. **停止采集音视频流：**
 ```javascript
 // 关闭摄像头
@@ -179,9 +185,6 @@ deviceManager.getDevicesList().then(function(data) {
 deviceManager.switchCamera('camera_device_id');
 :::
 </dx-codeblock>
-
-
-
 
 
 

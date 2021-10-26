@@ -1,6 +1,23 @@
-## API Description
+## Overview
 
-This API is used to configure the cross-origin resource sharing (CORS) access control configuration for a bucket. To do so, you need to pass in a configuration file in XML format of up to 64 KB in size.
+This API is used to configure CORS for a bucket. You need to pass in an XML configuration file within 64 KB.
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutBucketCors&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
+
 
 ## Request
 
@@ -18,21 +35,24 @@ Authorization: Auth String
 [Request Body]
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> 
 
 #### Request parameters
 
-This API does not use any request parameters.
+This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
-This request body submits the **application/xml** request data which includes all information about the CORS configuration on the bucket.
+The request body submits **application/xml** data, which contains all CORS configurations of the bucket.
 
-```xml
+```plaintext
 <CORSConfiguration>
 	<CORSRule>
 		<AllowedOrigin>string</AllowedOrigin>
@@ -58,34 +78,34 @@ This request body submits the **application/xml** request data which includes al
 </CORSConfiguration>
 ```
 
-The nodes are described in details below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| CORSConfiguration  | None     | Contains all information on a PUT Bucket cors request | Container | No       |
+| CORSConfiguration | None  | All configurations of the `PUT Bucket cors` request | Container | No |
 
-**Container node `CORSConfiguration`:**
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| --- | --- | --- | --- | --- |
-| CORSRule | CORSConfiguration  | Contains all information on a CORS rule. You can specify up to 100 CORS rules | Container | Yes |
-
-**Container node `CORSRule`:**
+**Content of `CORSConfiguration`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| AllowedOrigin | CORSConfiguration.CORSRule | Allowed access source(s) in a CORS rule.<br><li>`*` is supported, indicating all domain names are allowed (not recommended).<br><li>A single domain name is supported, e.g. `http://www.example.com`.<br><li>The use of only one `*` wildcard in a domain name is supported. It can appear in any position, including protocol, domain name, and port, indicating matching 0 or more characters. Please use this option with caution, as it may accidentally match unexpected sources.<br><li>Remember to specify http or https, and also port, except the default port 80(http) or 443(https), e.g. `https://example.com:8443`. | string | Yes |
-| AllowedMethod | CORSConfiguration.CORSRule | Allowed HTTP method(s) in a CORS rule; corresponds to the Access-Control-Allow-Methods header in a CORS response. Enumerated values: PUT, GET, POST, DELETE, HEAD. | enum | Yes |
-| AllowedHeader | CORSConfiguration.CORSRule | Specifies one or more custom HTTP request headers (case-insensitive) in a CORS rule that the browser is allowed to include in a CORS request.<br><li>`*` is supported, indicating allowing all headers (recommended).<br><li>Alternatively, specify headers the same as those in the `Access-Control-Request-Headers` of the OPTIONS preflight request. | string | Yes |
-| ExposeHeader | CORSConfiguration.CORSRule | CORS response header(s) in a CORS rule that can be exposed to the browser; cast-insensitive.<br><li>If this parameter is not specified, the browser can access only simple response headers Cache-Control, Content-Type, Expires, and Last-Modified by default.<br><li>Headers must be specified, with `*` not supported.<br><li>Depending on your browser needs, it is recommended to use ETag by default. For more information, see the API-specific documentation about response headers and [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729). | string | Yes |
-| MaxAgeSeconds | CORSConfiguration.CORSRule | Sets only one validity duration in sec of a CORS configuration in a CORS rule. Within this duration, the browser need not send another OPTIONS preflight request for the same request. This parameter corresponds to the CORS response header `Access-Control-Max-Age`. | integer | Yes |
-| ID | CORSConfiguration.CORSRule | ID of a CORS rule used to search for a specified CORS rule for a GET Bucket cors action. | string | No |
+| CORSRule | CORSConfiguration | A single CORS rule. You can configure up to 100 `CORSRule`. | Container | Yes |
+
+**Content of `CORSRule`:**
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| --- | --- | --- | --- | --- |
+| AllowedOrigin | CORSConfiguration.CORSRule | An origin allowed. More than one `AllowedOrigin` can be configured for a single `CORSRule`.<br><li>You can set it to `*` to allow all domains (not recommended). <br><li>You can set it to a single domain such as `http://www.example.com`.<br><li>`*` can be placed in any positions, including the protocol, domain name, or port to match 0 or more characters. There can only be one `*`. Note that if you use `*`, unexpected origins might be matched.<br><li>Do not omit “http” or “https”, and if the port number is not the default port (HTTP: 80; HTTPS: 443), also include the port (e.g., `https://example.com:8443`). | string | Yes |
+| AllowedMethod | CORSConfiguration.CORSRule | An HTTP method allowed, which corresponds to the `Access-Control-Allow-Methods` header in the response to a CORS request. More than one `AllowedMethod` can be configured for a single `CORSRule`. Enumerated values: `PUT`, `GET`, `POST`, `DELETE`, `HEAD` | enum | Yes |
+| AllowedHeader | CORSConfiguration.CORSRule | A custom HTTP header (case-insensitive) that the browser is allowed to send in a CORS request. When an `OPTIONS` request is sent, the browser will let the server know what custom HTTP headers will be used in the actual request. More than one `AllowedHeader` can be configured for a single `CORSRule`.<br><li>You can set it to `*` to allow all headers. To avoid missing headers, `*` is recommended. <br><li>If you don’t set it to `*`, every header specified in `Access-Control-Request-Headers` in the `OPTIONS` request must have a corresponding one in `AllowedHeader`. | string | Yes |
+| ExposeHeader | CORSConfiguration.CORSRule | A CORS response header (case-insensitive) that can be exposed to the browser. More than one `ExposeHeader` can be configured for a single `CORSRule`. <br><li>If this parameter is not specified, the browser can only access simple response headers (`Cache-Control`, `Content-Type`, `Expires`, and `Last-Modified`) by default. Therefore, if you want the browser to access more response headers, specify them using this parameter. <br><li>You cannot set this parameter to `*`, meaning you must set it to a specific header.<br><li>You are advised to set this parameter according to the needs of your browser. `ETag` is recommended. For more information, please see the response header parts in API Documentation and [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729). | string | Yes |
+| MaxAgeSeconds | CORSConfiguration.CORSRule | Validity period of the CORS configuration, in seconds. This parameter corresponds to the `Access-Control-Max-Age` header in the response to the CORS request. During the validity period, the browser does not have to issue more `OPTIONS` requests for the same request. Only one `MaxAgeSeconds` can be configured for a single `CORSRule`. | integer | Yes |
+| ID | CORSConfiguration.CORSRule | ID of the `CORSRule`. It can be used to specify a specific `CORSRule` when you call `GET Bucket cors`. You can configure only one ID for a single `CORSRule` at most. | string | No |
 
 ## Response
 
 #### Response headers
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -93,7 +113,7 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Samples
 

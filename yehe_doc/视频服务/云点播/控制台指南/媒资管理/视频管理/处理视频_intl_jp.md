@@ -4,7 +4,8 @@ VODコンソールを介して、ビデオトランスコーディング、ビ�
 ## 操作手順
 1. VODコンソールにログインし、【メディア資産管理】>[【ビデオ管理】](https://console.cloud.tencent.com/vod/media)を選択して、デフォルトで「アップロード済み」画面に進みます。
 2. 1つまたは複数の対象のビデオファイルにチェックを入れ、リストの上にある【ビデオ処理】をクリックすると、「ビデオ処理」設定ボックスが表示されます。次の表に従ってビデオ処理パラメータを設定し、【OK】をクリックしてビデオ処理タスクを開始します。
-![](https://main.qcloudimg.com/raw/e38db4214a5d6e8e33ae3de26a2acc11.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2f3e527fc7a03ece7ffa5a9bbee0fdaf.png)
+
 <table>
      <tr>
          <th nowrap="nowrap">処理タイプ</th>  

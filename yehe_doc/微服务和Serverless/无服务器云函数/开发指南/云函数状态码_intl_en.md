@@ -65,7 +65,7 @@ If an error code is returned after the function is executed, you can find the ca
 <td>429<br>ResourceLimit</td>
 <td>The container request rate is too high and exceeds the limit due to concurrency surges.</td>
 <td>The default speed of elastic concurrency expansion for each account is 500 concurrent instances per region per minute. During a sudden concurrency surge, if there are not enough containers to carry the requests, a large number of container request actions will be triggered, and this message will be returned when the account limit is exceeded.<ul class="params"><li>After assessing the function concurrency, please configure <a href="https://intl.cloud.tencent.com/document/product/583/37040">provisioned concurrency</a> for the function and prepare containers in advance to avoid sudden concurrency surges from causing the container request speed to exceed the limit.</li>
-<li>If assessment shows that the provisioned concurrency cannot meet the needs of your business scenario, you can <a href="https://cloud.tencent.com/online-service?from=connect-us">contact us</a> to increase the container request speed quota in the corresponding region.</td>
+<li>If assessment shows that the provisioned concurrency cannot meet the needs of your business scenario, you can <a href="https://console.intl.cloud.tencent.com/workorder">smart customer service</a> to increase the container request speed quota in the corresponding region.</td>
 </tr>
 
 <tr>
@@ -77,8 +77,13 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>432<br>ResourceLimitReached</td>
 <td>The account-level or region-level concurrency limit is reached.</td>
+<<<<<<< HEAD
 <td><ul class="params"><li>For a function with a reserved quota configured, if the function concurrency exceeds the quota, this message will be returned. You can assess your business needs and increase the quota or refer to <a href="https://intl.cloud.tencent.com/document/product/583/39848">Concurrency Overrun Troubleshooting</a>.</li>
 <li>For a function with no reserved quota configured, if the concurrency quota actually used by the function exceeds the region-level unused concurrency quota, this message will be returned. You can assess your business needs and configure a reserved quota for the function. If the remaining available quota in the corresponding region cannot meet your business needs, you can <a href="https://cloud.tencent.com/online-service?from=connect-us">contact us</a> to increase the total concurrency quota in the region.</td>
+=======
+<td><ul class="params"><li>For a function with a maximum dedicated quota configured, if the function concurrency exceeds the quota, this message will be returned. You can assess your business needs and increase the quota or refer to <a href="https://cloud.tencent.com/document/product/583/51585#.E8.A7.A3.E5.86.B3.E5.B9.B6.E5.8F.91.E8.B6.85.E9.99.90.E7.9B.B8.E5.85.B3.E6.8C.87.E5.BC.95">Concurrency Overrun Troubleshooting</a>.</li>
+<li>For a function with no maximum dedicated quota configured, if the concurrency quota actually used by the function exceeds the region-level unused concurrency quota, this message will be returned. You can assess your business needs and configure a maximum dedicated quota for the function. If the remaining available quota in the corresponding region cannot meet your business needs, you can <a href="https://console.intl.cloud.tencent.com/workorder">smart customer service</a> to increase the total concurrency quota in the region.</td>
+>>>>>>> 73d567d552bc9c5309ef6644008c9fa3dfa83c58
 </tr>
 
 <tr>
@@ -147,7 +152,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>444<br>PullImageFailed</td>
 <td>Image pull fails.</td>
-<td>Please check the integrity and validity of the selected image and try again; for example, check whether it can be downloaded locally. If the problem persists, please contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket.</td>
+<td>Please check the integrity and validity of the selected image and try again; for example, check whether it can be downloaded locally. If the problem persists, please contact the <a href="https://console.intl.cloud.tencent.com/workorder">smart customer service</a> or <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket.</td>
 </tr>
 
 <tr>
@@ -165,7 +170,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>447<br>PullImageTimeOut</td>
 <td>Image pull times out.</td>
-<td>It may be a timeout caused by a large image or network jitters. Please minimize the image or increase the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a> and try again. If the problem persists, please contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket.</td>
+<td>It may be a timeout caused by a large image or network jitters. Please minimize the image or increase the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a> and try again. If the problem persists, please contact the <a href="https://console.intl.cloud.tencent.com/workorder">smart customer service</a> or <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket.</td>
 </tr>
 
 <tr>
@@ -186,8 +191,13 @@ If an error code is returned after the function is executed, you can find the ca
 
 <tr>
 <td>500<br>InternalError</td>
+<<<<<<< HEAD
 <td>An internal error occurs.</td>
 <td>An internal error occurs. Please try again later. If the problem persists, please contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+=======
+<td>Internal error.</td>
+<td>Internal error. Please try again. If the problem persists, please contact the <a href="https://console.intl.cloud.tencent.com/workorder">smart customer service</a> or <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+>>>>>>> 73d567d552bc9c5309ef6644008c9fa3dfa83c58
 </tr>
 
 </tbody>

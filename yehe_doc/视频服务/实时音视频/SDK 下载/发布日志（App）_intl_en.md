@@ -1,3 +1,83 @@
+## Version 9.1 Released on September 4, 2021
+
+**New features**
+- All platforms: supported using a C++ API to set the format of called back audio frames.
+- Windows: supported streaming VOD files in AC3 format.
+- Windows: supported getting the resolutions supported by a camera. For details, please see [ITXDeviceCollection.getDeviceProperties](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ad502f48cb2a4470943134e4b48904450).
+- Windows: supported NVIDIA, Intel, and AMD hardware decoding.
+- macOS: supported recording local media.
+
+**Bug fixing**
+- All platforms: fixed occasional failure to enter a room.
+- macOS: fixed the issue where, during screen sharing, the preview flickers when the resolution is changed.
+- Android: fixed display error of the substream video after switching from a sub-room to the main room.
+- Android: fixed the occasional issue where the frame rate setting does not take effect in some scenarios.
+- Windows: fixed failure to pull streams after audience switch to CDN playback.
+- Windows: fixed the issue where the image disappears when VOD files in certain formats are streamed.
+
+**Quality improvement**
+- All platforms: improved experience under poor network conditions.
+- Android: improved audio status management during room exit.
+- Android: improved the logic of recovery in the case of audio capturing failure, to increase the success rate of audio capturing.
+- Android: fixed video overexposure under certain conditions.
+
+## Version 9.0 Released on August 6, 2021
+
+**New features**
+- iOS: allowed setting the capturing volume of system audio. For details, please see [setSystemAudioLoopbackVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afc45226807d84673bab78b21d1be54ae).
+- All platforms: allowed setting the volume of custom audio tracks. For details, please see [setMixExternalAudioVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418).
+- All platforms: separated audio and video packet loss in the status callback. For details, please see [TRTCRemoteStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCStatistic__cplusplus.html#structliteav_1_1TRTCRemoteStatistics).
+
+**Quality improvement**
+- All platforms: optimized the subscription process to improve instant streaming performance for manual subscription.
+- All platforms: fixed the issue of repeated `onExitRoom` callback in some scenarios.
+
+**Bug fixing**
+- Android: fixed the issue where bitrate and frame rate settings during custom capturing do not take effect.
+- iOS: fixed failure to publish streams if users enable the screen sharing substream first and then turn the camera on.
+- iOS: fixed blurriness of recorded local video.
+- iOS: fixed several stability issues.
+- Windows: fixed frame rate exception for the capturing of screen sharing images.
+- Windows: fixed the issue where, after the sharing source is changed during screen sharing, audience see a frame of the old source before the new source is played.
+
+## Version 8.9 Released on July 15, 2021
+
+**New features** 
+- Android: supported specifying external GL contexts for custom capturing, allowing more flexible use of OpenGL contexts.
+- Windows: allowed specifying the speaker for system audio capturing ([startSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a157639a4fa3cc73ffc1982bbd8a8985e)).
+- Windows: supported NVIDIA hardware encoding, improving stream publishing performance.
+- All platforms: supported cloud proxies, which are a secure and easy way to access TRTC from inside a corporate firewall.
+- All platforms: added the stream type parameter to the APIs [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a22804c4112dee8c76475619f891e2eb5) and [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a74d8d9922a771114804517db66657f65).
+- All platforms: added the gateway RTT parameter `gatewayRtt` to the status callback [onStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#ae7e4117f9c8004c9bcc5a29d64e840c9), which indicates the quality of network between users and their Wi-Fi routers.
+- All platforms: supported recording audio into more formats using the [startAudioRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5224523e00d5167eb75cee9b65f72677) API.
+
+**Quality improvement**
+- All platforms: fixed shaky audio in some scenarios.
+- Android: improved instant streaming performance.
+- Android: upgraded the audio pre-processing algorithm for clearer audio in calls.
+
+**Bug fixing**
+- Windows: fixed the issue of echo in recorded local video if VODPlayer is used to stream VOD files.
+- Windows: fixed crash when the window filtering feature is enabled during screen sharing on high DPI displays.
+- iOS: fixed the issue where the landscape mode does not take effect for system-level screen sharing via the substream.
+- iOS: fixed the issue of memory leak when custom rendering is enabled only for remote videos and the RGBA format is used.
+- All platforms: fixed occasional failure to enter a room.
+
+## Version 8.8 Released on June 21, 2021
+
+**New features**
+Android & macOS & iOS: allowed playing audio via peripheral devices. For details, please see the API [enableCustomAudioRendering](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#addb4c87719393cd4c4765d66a8cd9803).
+
+**Quality improvement**
+- All platforms: made it easier to use `mixExternalAudioFrame`. You no longer need to call the API at a regular interval.
+- macOS: reduced the CPU usage of screen sharing when mouse cursor capturing is enabled.
+- Windows: made AGC faster and more timely for better results.
+- Windows: reduced the performance overhead of screen sharing when the window filtering feature is enabled.
+
+**Bug fixing**
+- iOS: fixed the issue where, when a local audio file in AAC format is played, the total length is inaccurate.
+- Android: fixed the issue of audio stutter after the SDK is switched to the background on some devices.
+
 ## Version 8.7 Released on May 25, 2021
 **New features**
 - All platforms: supported anomaly detection for peripheral audio devices. After registering `onStatistics`, you can detect in real time when there is no audio for a long time and when audio cracks or is interrupted via the `audioCaptureState` field in [TRTCLocalStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics).
@@ -54,7 +134,7 @@
 - Windows: improved performance by 20%-30% in some scenarios.
 
 **Bug fixing**
-- Windows: fixed crash when the desktop is shared on Windows Server 2019 Datacenter x64.
+- Windows: fixed the issue where the SDK crashes when the desktop is shared on Windows Server 2019 Datacenter x64.
 - Windows: fixed the issue where screen sharing sometimes ends unexpectedly when the target window is resized during screen sharing.
 - Windows: fixed image capturing failure with some cameras.
 - iOS: fixed the issue where `snapvideoshot` causes stuttering with CAAnimation.
@@ -128,7 +208,7 @@ Optimized the business logic of custom capturing:
 
 ## Version 8.0 Released on November 13, 2020
 
-**New features**
+**Added**
 - All platforms: added cross-platform C++ APIs. For more information, see cpp_interface/[ITRTCCloud.h](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html).
 - All platforms: supported string-type room IDs. For more information, see `TRTCParams.strRoomId`.
 - All platforms: added the device management class `TXDeviceManager`.
@@ -164,7 +244,7 @@ Optimized the business logic of custom capturing:
 
 
 ## Version 7.9 Released on October 27, 2020
-**New features**
+**Added**
 - macOS: supported filtering out selected windows from screen sharing. Users can exclude windows they do not want to share, better ensuring privacy.
 - Windows: supported configuring the border color and width of the "Sharing" message box during screen sharing.
 - Windows: supported the high performance mode during desktop sharing.
@@ -193,8 +273,8 @@ Optimized the business logic of custom capturing:
 - All platforms: fixed occasional crash, improving the SDK’s performance stability.
 
 ## Version 7.8 Released on September 29, 2020
-**New features**
-- Mac: added the callback of system volume change. For details, please see [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f).
+**Added**
+- macOS: added the callback of system volume change. For details, please see [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f).
 - Windows: supported specifying content for screen sharing across screens.
 - Windows: supported filtering out specified windows from screen sharing to prevent the target window from being covered. For more information, please see [TRTCCloud.addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) and [TRTCCloud.removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2).
 - Windows: added the callback of system volume change. For details, please see [ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12).
@@ -240,7 +320,7 @@ Optimized the business logic of custom capturing:
 - iOS & Android: improved the performance of the audio module and reduced the capturing delay of the first audio frame.
 - iOS & Android: improved volume and audio quality when VODPlayer and TRTC are used at the same time.
 - iOS & Android: supported files in WAV format for audio effects and background music.
-- Windows: fixed high CPU usage when low-end cameras are used.
+- Windows: fixed the issue of high CPU utilization when some low-end cameras are used.
 - Windows: optimized the compatibility with multiple USB cameras and mics to make it easier to turn on such devices.
 - Windows: optimized the selection policy of cameras and mics to avoid audio/video capturing exceptions caused by the connection/disconnection of cameras and mics.
 
@@ -258,7 +338,7 @@ Optimized the business logic of custom capturing:
 
 
 ## Version 7.6 Released on August 21, 2020
-**New features**
+**Added**
 
 - Windows: added the [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5211a2739df8d8ec6017559b3aa0299) and [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8c8247cbc679ea144ffb393b6b940c9e) APIs to improve user experience in adjusting HWND rendering windows in real time.
 - Windows: added the [getCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) API to get whether the PC is muted.
@@ -291,7 +371,7 @@ Optimized the business logic of custom capturing:
 
 ## Version 7.5 Released on July 31, 2020
 
-**New features**
+**Added**
 
 - Supported dual-stack IPv6 and IPv6-only.
 - Allowed playing back streams in multiple rooms. This feature can be used for ultra-small classes.
@@ -330,7 +410,7 @@ Allowed setting volume for in-ear monitoring.
 
 ## Version 7.3 Released on June 1, 2020
 
-**New features**
+**Added**
 
 - Added a new audio effect management API `TXAudioEffectManager` to offer more diverse audio effects while continuing to support the legacy API.
 - Added the `minVideoBitrate` option to `setVideoEncoderParam`, the API used to set video encoding parameters. The option is recommended for scenarios with high requirements on video quality.
@@ -362,7 +442,7 @@ Allowed setting volume for in-ear monitoring.
 
 ## Version 7.2 Released on April 16, 2020 
 
-**New features**
+**Added**
 
 Supported screen recording on Android, allowing users to stream screen recording on phones.
 
@@ -406,7 +486,7 @@ Fixed the occasional issue where the custom stream ID fails to take effect in ti
 
 ## Version 6.9 Released on January 14, 2020 
 
-**New features**
+**Added**
 
 - Supported Android 10.0.
 - Added the `snapshotVideo()` API for taking screenshots of local or remote video.
@@ -437,7 +517,7 @@ Fixed the occasional issue where the custom stream ID fails to take effect in ti
 
 ## Version 6.8 Released on November 15, 2019 
 
-**New features**
+**Added**
 
 - Added the in-ear monitoring capability.
 - Allowed users to disable automatic stream pulling upon room entry.
@@ -459,7 +539,7 @@ Fixed known crashes.
 
 ## Version 6.7 Released on September 30, 2019 
 
-**New features**
+**Added**
 
 - Added permission requesting configuration for AAR packaging.
 - Supported CPU usage evaluation on Android 8.0 and above.
@@ -471,7 +551,7 @@ Fixed known crashes.
 
 ## Version 6.6 Released on August 2, 2019 
 
-**New features**
+**Added**
 
 - Supported local audio recording.
 - Added callback APIs for sending the first audio and video frame.
@@ -499,7 +579,7 @@ Fixed known crashes.
 
 ## Version 6.5 Released on June 12, 2019 
 
-**New features**
+**Added**
 
 Added the "low-latency big room" feature for the live streaming mode (`TRTCAppSceneLIVE`):
 
@@ -531,7 +611,7 @@ Added the "low-latency big room" feature for the live streaming mode (`TRTCAppSc
 
 ## Version 6.4 Released on April 25, 2019 
 
-**New features**
+**Added**
 
 - Added APIs for mirroring local video and encoded video.
 - Added a callback for the `setMixTranscodingConfig` API.
@@ -558,7 +638,7 @@ Added the "low-latency big room" feature for the live streaming mode (`TRTCAppSc
 
 ## Version 6.3 Released on April 2, 2019 
 
-**New features**
+**Added**
 
 - Supported 64-bit Android.
 - Added a custom video capturing API: TRTCCloud > sendCustomVideoData.
@@ -575,7 +655,7 @@ Added the "low-latency big room" feature for the live streaming mode (`TRTCAppSc
 
 ## Version 6.2 Released on March 8, 2019 
 
-**New features**
+**Added**
 
 - Added the filter strength setting API `setFilterConcentration()`.
 - Added the `sendSEIMsg()` API for sending custom messages through SEI headers in video frames. The feature is mainly used to insert timestamp information into video streams.

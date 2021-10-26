@@ -26,8 +26,8 @@ Hadoop cluster is available in Standard Edition and TianQiong Edition. For more 
 ## EMR Standard
 
 Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, and Doris clusters.
-
-**Hadoop v2.X Standard supports the component versions listed in the following table:**
+<dx-accordion>
+::: Hadoop v2.X Standard supports the component versions listed in the following table:
 
 | Component | EMR v1.3.1 | EMR v2.0.1 | EMR v2.1.0 | EMR v2.2.0 | EMR v2.3.0 | EMR v2.4.0 |EMR v2.5.0 | EMR v2.5.1 | EMR v2.6.0 |
 | -------------------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
@@ -64,51 +64,57 @@ Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, and Doris
 | Kudu                       | -           | -           | -           | -           | -           | 1.12.0      | 1.12.0      | 1.12.0      | 1.12.0      |
 | OpenLDAP (required)         | -           | -           | -           | -           | -           | -           | -           | -           | 2.4.44      |
 
+:::
+::: Hadoop v3.X Standard supports the component versions listed in the following table:
 
-**Hadoop v3.X Standard supports the component versions listed in the following table:**
+| Component              | EMR v3.0.0 | EMR v3.1.0 | EMR v3.2.0 | EMR v3.2.1 | EMR v3.3.0 |
+| :-------------------- | :---------- | :---------- | :---------- | :---------- | :---------- |
+| Release Date   | November 2019     | December 2020     | April 2021     | July 2021     | September 2021     |
+| Hadoop (required)        | 3.1.2       | -           | -           | -           | 3.2.2       |
+| HDFS (required)          | -           | 3.1.2       | 3.2.2       | 3.2.2       | 3.2.2       |
+| Yarn (required)          | -           | 3.1.2       | 3.2.2       | 3.2.2       | 3.2.2       |
+| Spark_ Hadoop         | 3.12.4.3    | -           | -           | -           | -           |
+| Spark                 | -           | 2.4.3       | 3.0.2       | 3.0.2       | 3.0.2       |
+| Hive                  | 3.1.1       | 3.1.1       | 3.1.2       | 3.1.2       | 3.1.2       |
+| Tez                   | 0.9.2       | 0.9.2       | 0.10.0      | 0.10.0      | 0.10.1      |
+| Presto                | 0.222       | -           | -           | -           |             |
+| PrestoSQL             | -           | 332         | 350         | 350         | 350         |
+| Flink                 | 1.8.1       | 1.10.0      | 1.12.1      | 1.12.1      | 1.12.1      |
+| HBase                 | 2.2.0       | 2.3.3       | 2.3.3       | 2.3.3       | 2.3.5       |
+| Hue                   | 4.4.0       | 4.4.0       | 4.4.0       | 4.4.0       | 4.10.0      |
+| Sqoop                 | 1.4.7       | 1.4.7       | 1.4.7       | 1.4.7       | 1.4.7       |
+| Oozie                 | 5.1.0       | 5.1.0       | 5.1.0       | 5.1.0       | 5.1.0       |
+| Ranger                | 2.0.0       | 2.0.0       | 2.1.0       | 2.1.0       | 2.1.0       |
+| ZooKeeper (required) | 3.4.9       | 3.6.1       | 3.6.1       | 3.6.1       | 3.6.1       |
+| Flume                 | 1.9.0       | 1.9.0       | 1.9.0       | 1.9.0       | 1.9.0       |
+| Impala                | 2.10.0      | 3.4.0       | 3.4.0       | 3.4.0       | 3.4.0       |
+| Alluxio               | 1.8.1       | 2.3.0       | 2.5.0       | 2.5.0       | 2.5.0       |
+| Knox (required)      | 1.2.0       | 1.2.0       | 1.2.0       | 1.2.0       | 1.2.0       |
+| Kudu                  | -           | 1.13.0      | 1.13.0      | 1.13.0      | 1.15.0      |
+| Kerberos              | 1.15.1      | 1.15.1      | 1.51.1      | 1.51.1      | 1.15.1      |
+| Zeppelin              | -           | 0.8.2       | 0.9.1       | 0.9.1       | 0.9.1       |
+| Iceberg               | -           | -           | 0.11.0      | 0.11.0      | 0.11.0      |
+| OpenLDAP (required)  | -           | -           | -           | 2.4.44      | 2.4.44      |
+| Hudi                  | -           | -           | -           | -           | 0.8.0       |
+| Kyuubi                | -           | -           | -           | --          | 1.1.0       |
+| Livy                  | -           | -           | -           | -           | 0.8.0       |
+| Ganglia               | -           | -           | -           | -           | 3.7.2       |
 
-| Component              | EMR v3.0.0 | EMR v3.1.0 | EMR v3.2.0 | EMR v3.2.1
-| --------------------- | ----------------- | --------------- | ----------------- |--------------- |
-| Release Date              | November 2019     | December 2020     | April 2021     | July 2021 |
-| Hadoop (required)        | 3.1.2       | -           | -                 |   -         |
-| HDFS (required)          | -           | 3.1.2       | 3.2.2       |3.2.2       |
-| YARN (required)          | -           | 3.1.2       | 3.2.2         |3.2.2       |
-| Spark\_ Hadoop        | 3.12.4.3    | -           | -           | -            |
-| Spark                 | -           | 2.4.3       | 3.0.2           | 3.0.2       |
-| Hive                  | 3.1.1       | 3.1.1       | 3.1.2         |  3.1.2       |
-| Tez                   | 0.9.2       | 0.9.2       | 0.10.0       | 0.10.0      |
-| Presto                | 0.222       | -           | -               |  -            |
-| PrestoSQL             | -           | 332         | 350         | 350         |
-| Flink                 | 1.8.1       | 1.10.0      | 1.12.1      | 1.12.1      |
-| HBase                 | 2.2.0       | 2.3.3       | 2.3.3       | 2.3.3       |
-| Hue                   | 4.4.0       | 4.4.0       | 4.4.0       | 4.4.0       |
-| Sqoop                 | 1.4.7       | 1.4.7       | 1.4.7       | 1.4.7       |
-| Oozie                 | 5.1.0       | 5.1.0       | 5.1.0       | 5.1.0       |
-| Ranger                | 2.0.0       | 2.0.0       | 2.1.0       |2.1.0       |
-| ZooKeeper (required) | 3.4.9 | 3.6.1     | 3.6.1       |3.6.1       |
-| Flume                 | 1.9.0       | 1.9.0       | 1.9.0       |1.9.0       |
-| Impala                | 2.10.0      | 3.4.0       | 3.4.0       | 3.4.0       |
-| Alluxio               | 1.8.1       | 2.3.0       | 2.5.0       | 2.5.0       |
-| Knox (required)      | 1.2.0  | 1.2.0     | 1.2.0       | 1.2.0       |
-| Kudu                  | -           | 1.13.0      | 1.13.0      | 1.13.0      |
-| Kerberos              | 1.15.1      | 1.15.1  | 1.51.1      |1.51.1      |
-| Zeppelin              | -           | 0.8.2       | 0.9.1       | 0.9.1       |
-| Iceberg               | -           | -           | 0.11.0      |0.11.0      |
-| OpenLDAP (required)          | -           | -           |  -             |2.4.44      |
-
-**Druid clusters support the component versions listed in the following table:**
+:::
+::: Druid clusters support the component versions listed in the following table:
 
 | Component  | Druid v1.0.0 |
 | --------------------- | ------------- |
-| Release Date  | April 2020      |
+| Release Date  | April 2020       |
 | Hadoop (required)    | 2.8.5         |
 | Druid (required)     | 0.17.0        |
 | ZooKeeper (required) | 3.5.5         |
 | Knox (required)      | 1.2.0         |
-| Superset   | 0.35.2               |
-| Ganglia               | 3.7.2                |
+| Superset              | 0.35.2        |
+| Ganglia               | 3.7.2         |
 
-**ClickHouse clusters support the component versions listed in the following table:**
+:::
+::: ClickHouse clusters support the component versions listed in the following table:
 
 | Component | ClickHouse v1.0.0 | ClickHouse v1.1.0 |
 | ---------------------- | ------------------ | ------------------ |
@@ -117,7 +123,8 @@ Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, and Doris
 | ZooKeeper (required)  | 3.4.9              | 3.4.9              |
 | Superset               | -                  | 0.35.2             |
 
-**Kafka clusters support the component versions listed in the following table:**
+:::
+::: Kafka clusters support the component versions listed in the following table:
 
 | Component  | Kafka v1.0.0 |
 | ------------------------ | ------------- |
@@ -127,7 +134,8 @@ Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, and Doris
 | Knox (required)         | 1.2.0         |
 | ZooKeeper (required)    | 3.6.1         |
 
-**Doris clusters support the component versions listed in the following table:**
+:::
+::: Doris clusters support the component versions listed in the following table:
 
 | Component          | Doris v1.0.0 |
 | ----------------- | ------------- |
@@ -135,11 +143,16 @@ Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, and Doris
 | Doris (required) | 0.13.0        |
 | Knox (required)  | 1.2.0         |
 
+:::
+</dx-accordion>
+
+
 ## EMR TianQiong
 
 Currently, EMR TianQiong supports Hadoop clusters only. It has integrated the enhanced edition of Spark and Tencent's proprietary JDK Kona.
 
-**Hadoop v2.X TianQiong supports the component versions listed in the following table:**
+<dx-accordion>
+:::  Hadoop v2.X TianQiong supports the component versions listed in the following table:**
 
 | Component | EMR TianQiong v1.0.0 |
 | --------------------- | -------------------- |
@@ -171,3 +184,6 @@ Currently, EMR TianQiong supports Hadoop clusters only. It has integrated the en
 | TensorFlowSpark       | 1.4.4                |
 | Jupyter               | 4.6.3                |
 | Kudu                  | 1.12.0               |
+
+:::
+</dx-accordion>

@@ -5,10 +5,6 @@ VOD supports transcoding videos to adaptive bitstream in HLS format. This featur
 * Mainstream players natively support HLS adaptive bitstream with no customization required.
 * VOD provides a [superplayer SDK](https://intl.cloud.tencent.com/document/product/266/7836) which can play back adaptive bitstreams quickly and conveniently after integration.
 
->! Differences between **adaptive bitrate streaming** and **transcoding**:
->- An adaptive bitrate streaming URL contains outputs in multiple resolutions, while a transcoding URL contains an output in only one resolution.
->- When adaptive bitstreams are played back, the player will switch to the optimal resolution under the current network conditions in real time, while videos output by transcoding do not support intelligent switch during playback.
->- The superplayer SDK provided by VOD supports playing back only outputs of adaptive bitrate streaming but not outputs of transcoding.
 <span id = "zsy"></span>
 ## Adaptive Bitrate Streaming Template
 

@@ -6,18 +6,19 @@ This document describes how to manage the topics under an existing instance in t
 
 ## Directions
 
-### Creating topic
+### Creating a topic
 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
-2. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
-3. On the instance details page, click **Topic Management** at the top and click **Create**.
-4. In the **Create Topic** window, set the number of partitions and replicas and other parameters.
+2. In the **Instance List**, click the **ID/Name** of your instance to enter the instance details page.
+3. On the instance details page, select **Topic Management** and click **Create**.
+4. In the **Create Topic** dialog box, set parameters as needed.
    ![](https://main.qcloudimg.com/raw/b059e7bddbb29b16b9449e1dbbcf1b4d.png)
-  - Name: the topic name, which cannot be changed once entered and can contain only letters, digits, underscores, hyphens, and periods.
-  - Partition Count: it is a concept in physical partition, where one topic can contain one or more partitions. CKafka uses partition as an allocation unit.
-  - Replica Count: the number of partition replicas is used to ensure the high availability of the partition. To ensure data reliability, creating a single-replica topic is not supported. Two replicas are enabled by default.
-    Replicas are also counted into the number of partitions. For example, if you create 1 topic with 6 partitions and 2 replicas for each partition, then you have a total of 12 partitions (1 x 6 x 2).
-  - Allowlist: when the allowlist is enabled, only IPs in the allowlist can access the topic, which ensures data security. You can enable allowlist in either the **Create Topic** or **Edit Topic** window.
+
+- Name: topic name, which cannot be changed once entered and can contain only letters, digits, underscores (_), hyphens (-), and dots (.).
+- Partition Count: partition is the actual unit of storage. A topic can contain one or multiple partitions. CKafka allocates resources by partition.
+- Replica Count: the number of partition replicas, which ensure the availability of partitions. For data reliability concerns, CKafka does not support single-replica topics currently. 2 replicas are created by default.
+  Replicas are also counted into the number of partitions. For example, if you create 1 topic with 6 partitions, and 2 replicas for each partition, then you have a total of 12 partitions (1 x 6 x 2).
+- Allowlist: if the allowlist is enabled, the topic can be accessed only from IP addresses in the allowlist, which ensures data security. You can enable allowlist in either the **Create Topic** or **Edit Topic** window.
 
 5. Click **Submit**.
    ![](https://main.qcloudimg.com/raw/e7bc2169b2d7985f287854f509f330c0.png)
@@ -30,25 +31,25 @@ This document describes how to manage the topics under an existing instance in t
 4. On the topic list page, click the right triangle icon on the left of the topic name to view the topic details.
    ![](https://main.qcloudimg.com/raw/6fea6378fa2710a6f8083723e1849601.png)
 
+| Item      | Description                                                         |
+| ----------- | ------------------------------------------------------------ |
+| Partition Name   | Partition name                                              |
+| Leader     | The leader processes all read/write requests in the partition, and the follower passively and periodically copies the data on the leader. |
+| Replica       | Replica list                                                     |
+| ISR        | Replicas with synced messages                                             |
+| Start Offset | The last position of message consumption                                           |
+| End Offset | The last position of message write. If the end offset is greater than the start offset, there are messages that have not been consumed yet |
+| Messages     | Number of stored messages                                               |
+| Unsynced Replicas | Number of unsynced replicas. You can filter partitions with unsynced replicas          |
 
-   | Item      | Description                                                         |
-   | ---------- | ------------------------------------------------------------ |
-   | Partition Name   | Partition name                                              |
-   | Leader     | The leader processes all read/write requests in the partition, and the follower passively and periodically copies the data on the leader. |
-   | Replica       | Replica list                                                     |
-   | ISR        | Replicas with synced messages                                             |
-   | Start Offset | The last position of message consumption                                           |
-   | End Offset | The last position of message write. If the end offset is greater than the start offset, there are messages that have not been consumed yet |
-   | Messages     | Number of stored messages                                               |
-   | Unsynced Replicas | Number of unsynced replicas. You can filter partitions with unsynced replicas          |
+### Deleting a topic
 
-### Deleting topic
 > !
->- Deleting a topic will also delete the messages stored in the topic. Please do so with caution.
+>
+>- Deleting a topic will delete the messages stored in the topic too. Please do so with caution.
 >- Topic deletion is an async operation. After you finish the steps required to delete a topic, it takes 1 minute for the configuration to take effect with ZooKeeper. During this period, if you try to create a topic with the same name as the deleted one, the system will return the error code `[4000]10011`. Please wait and try again later.
 
-
-1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
+1. In the instance list, click the **ID/Name** of your instance to enter the instance details page.
 2. On the instance details page, select **Topic Management** and click **Delete** in the **Operation** column.
 3. In the window that pops up, click **Confirm** to delete the topic.
 
@@ -56,19 +57,19 @@ This document describes how to manage the topics under an existing instance in t
 
 ### Configuring advanced topic parameters
 
-1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
+1. In the instance list, click the **ID/Name** of your instance to enter the instance details page.
 2. On the instance details page, select **Topic Management**.
 3. In the **Operation** column, click **Edit** > **Show advanced configuration** and set the following parameters:
    ![](https://main.qcloudimg.com/raw/52c8c0c4e99edd52247c1152129e5ddd.png)
 
 The parameters are described as follows:
 
-| Parameter                         | Default Value                   | Valid Values         | Description                                                         |
+| Parameter                         | Default Value                   | Valid Values         | Note                                                         |
 | :----------------------------- | :----------------------- | :--------------- | :----------------------------------------------------------- |
-| cleanup.policy                 | delete                   | delete/compact   | Logs can be deleted by retention time or can be compacted by key (the compact mode is required for Kafka Connect). |
+| cleanup.policy                 | delete                   | delete/compact   | Logs can be deleted by saving time or compacted by key. The compact mode is used for Kafka Connect. |
 | min.insync.replicas            | 1                        | -                | When the "producer" sets `request.required.acks` to 1, `min.insync.replicas` will specify the minimum number of replicas. |
-| unclean.leader.election.enable | true                     | true/false       | Whether to allow the setting of a replica not in the ISR set as the leader.            |
-| segment.ms                     | -                        | 1–90 days    | The period (ms) after which a segment is rolled, with the minimum value being 86,400,000 ms.       |
-| retention.ms                   | The message retention time of the instance | 60000 ms–90 days | Message retention time at the topic level.                                   |
-| max.message.bytes              | -                        | 0–8 MB         | Maximum message size at the topic level. If it is not set, the instance-level maximum message size (1 MB) is used by default. |
+| unclean.leader.election.enable | true                     | true/false       | Whether to allow the setting of a replica not in the ISR set as the leader            |
+| segment.ms                     | -                        | 1-90 days    | The period (ms) after which a segment is rolled, the minimum value being 86,400,000 ms.       |
+| retention.ms                   | The message retention time of the instance | 60000 ms-90 days | Message retention time at the topic level                                   |
+| max.message.bytes              | -                        | 1 KB - 12 MB         | Maximum message size at the topic level. If it is not set, the instance-level maximum message size (1 MB) is used by default. |
 

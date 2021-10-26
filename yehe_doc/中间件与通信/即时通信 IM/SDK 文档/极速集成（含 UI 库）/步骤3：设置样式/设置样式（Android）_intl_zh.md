@@ -68,7 +68,7 @@ public static void customizeConversation(final ConversationLayout layout) {
 }
 ```
 
-更多详细信息请参见 [ConversationLayoutHelper.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/helper/ConversationLayoutHelper.java)。
+更多详细信息请参见 [ConversationLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIConversation/tuiconversation/src/main/java/com/tencent/qcloud/tuikit/tuiconversation/setting/ConversationLayoutSetting.java)。
 
 
 ### 设置头像
@@ -157,7 +157,7 @@ noticeLayout.setOnNoticeClickListener(new View.OnClickListener() {
 
 ### 修改消息区域 MessageLayout 样式
 
-MessageLayout 继承自 RecyclerView ，本文提供自定义修改聊天背景、气泡、文字、是否显示昵称等常见的用法，更多详情请参见 [IMessageProperties](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/interfaces/IMessageProperties.java)。
+MessageLayout 继承自 RecyclerView ，本文提供自定义修改聊天背景、气泡、文字、是否显示昵称等常见的用法，更多详情请参见 [IMessageProperties.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/ui/interfaces/IMessageProperties.java)。
 
 #### 修改聊天背景
 

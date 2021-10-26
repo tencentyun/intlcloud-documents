@@ -1,14 +1,11 @@
 转自适应码流是指将视频转码并打包生成自适应码流输出文件的过程。它的特点是包含多个码率的音视频文件和一个描述性文件（manifest），播放器能够根据当前带宽，动态选择最合适的码率播放。目前应用最广泛的自适应码流格式，是 [Master Playlist](https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/creating_a_master_playlist) 格式下的 HLS。
 
-云点播支持将视频转出 HLS 格式的自适应码流，使用该功能您将获得：
+云点播支持将视频转出 HLS 和 MPEG-DASH 格式的自适应码流，使用该功能您将获得：
 * 播放器根据当前带宽动态选择合适的码率播放，为观看者带来良好的体验。
 * 主流播放器原生支持 HLS 自适应码流，无需定制播放器。
 * 云点播提供了 [超级播放器 SDK](https://intl.cloud.tencent.com/document/product/266/7836)，集成后可以快速便利地播放自适应码流。
 
->! **转自适应码流**和**转码**的区别：
->- 自适应码流 URL 包含多个分辨率的输出，转码视频的 URL 只包含一种分辨率的输出。
->- 自适应码流播放时，播放器会实时切换当前网络下能流畅播放的最佳分辨率，转码视频播放时不会智能切换。
->- 云点播提供的超级播放器 SDK 仅支持播放自适应码流的输出，不支持播放转码后的输出。
+
 
 ## [](id:zsy)转自适应码流模板
 
@@ -16,7 +13,8 @@
 
 | 参数 | 说明 |
 | -- | -- |
-| 打包类型 | 自适应码流的格式，目前仅支持 HLS |
+| 打包类型 | 自适应码流的格式，目前支持 HLS 和 MPEG-DASH |
+|加密类型|	加密类型目前仅 HLS 格式支持 SimpleAES 加密，DASH 不支持加密|
 | 子流规格 | 控制输出多少个子流，以及各个子流的视频转码参数和音频转码参数：<li>视频转码参数：分辨率、码率、帧率、编码格式等</li><li>音频转码参数：采样频率、声道数、编码格式等</li> |
 | 是否过滤“低分辨率转高分辨率” | 通常来说，低分辨率的原始视频转码高分辨率无法获得画质和音质的提升。开启过滤“低分辨率转高分辨率”，可以避免不必要的转码|
 
@@ -29,10 +27,10 @@
 以下是各种方式发起转自适应码流任务的说明：
 
 * 调用服务端 API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) 发起任务：在请求中的`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`参数指定 [转自适应码流模板](#zsy) 的模板 ID。
-* 通过控制台对视频发起任务：调用 [服务端 API](https://intl.cloud.tencent.com/zh/document/product/266/38277) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；在控制台使用该任务流 [发起视频处理](https://intl.cloud.tencent.com/document/product/266/33892)。
-* 服务端上传时指定任务：调用 [服务端 API](https://intl.cloud.tencent.com/zh/document/product/266/38277) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；[申请上传] 中的`procedure`参数指定为该任务流。
-* 客户端上传时指定任务：调用 [服务端 API](https://intl.cloud.tencent.com/zh/document/product/266/38277) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922) 中的`procedure`指定该任务流。
-* 控制台上传：调用 [服务端 API](https://intl.cloud.tencent.com/zh/document/product/266/38277) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；通过控制台上传视频，选择[【上传的同时对视频进行处理操作】](https://intl.cloud.tencent.com/document/product/266/33890)并指定视频上传后执行该任务流。
+* 通过控制台对视频发起任务：调用 [服务端 API](https://intl.cloud.tencent.com/document/product/266/34167) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；在控制台使用该任务流 [发起视频处理](https://intl.cloud.tencent.com/document/product/266/33892)。
+* 服务端上传时指定任务：调用 [服务端 API](https://intl.cloud.tencent.com/document/product/266/34167) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；[申请上传](https://intl.cloud.tencent.com/document/product/266/34120) 中的`procedure`参数指定为该任务流。
+* 客户端上传时指定任务：调用 [服务端 API](https://intl.cloud.tencent.com/document/product/266/34167) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922) 中的`procedure`指定该任务流。
+* 控制台上传：调用 [服务端 API](https://intl.cloud.tencent.com/document/product/266/34167) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；通过控制台上传视频，选择[【上传的同时对视频进行处理操作】](https://intl.cloud.tencent.com/document/product/266/33890)并指定视频上传后执行该任务流。
 
 ## 结果获取
 

@@ -57,11 +57,16 @@
 <span id="example"></span> 
 ### 콜백 메시지 예시
 
+
 ```
 {
 "event_type":100,
 
 "appid":12345678,
+
+"app":yourapp,
+
+"appname":yourappname,
 
 "stream_id":"stream_test",
 
@@ -70,6 +75,7 @@
 "file_id":"1234567890",
 
 "file_format":"hls",
+"task_id":"UpTbk5RSVhRQ********************0xTSlNTQltlRVRLU1JAWW9EUb",
 
 "start_time":1545047010,
 
@@ -83,12 +89,11 @@
 
 "video_url":"http://12345678.vod2.myqcloud.com/xxxx/yyyy/zzzz.m3u8",
 
-"sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
+"sign":"ca3e25e**********09a9ae7281e300d",
 
 "t":1545030873
 }
 ```
-
 
 
 

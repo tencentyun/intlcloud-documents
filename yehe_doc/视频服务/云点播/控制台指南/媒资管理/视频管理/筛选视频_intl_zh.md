@@ -4,6 +4,7 @@
 ## 操作步骤
 1. 登录云点播控制台，选择【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)，默认进入“已上传”页面。
 2. 在列表上方的搜索框，选择**媒资属性**或输入**关键字**，对已上传的文件进行筛选。
+![](https://qcloudimg.tencent-cloud.cn/raw/1163c0eec3d6e04b051e41634f736c9c.png)
 
 	>?若您不对属性进行选择，则默认匹配文件名称。
 

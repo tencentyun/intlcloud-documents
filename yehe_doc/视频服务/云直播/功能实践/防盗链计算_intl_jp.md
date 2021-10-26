@@ -42,4 +42,4 @@ rtmp://livepush.tcloud.com/live/test?txSecret=f85a2ab363fe4deaffef9754d79da6fe&t
 
 
 ## プッシュサンプルコード
-【CSSコンソール】>[【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で、事前に設定されたプッシュドメイン名を選択すると、【管理】>【プッシュ設定】ページの下半分にホットリンク保護アドレスの発行方法を示す【プッシュアドレスサンプルコード】（PHPとJavaの両バージョン）が表示されます。
+**CSSコンソール** >[【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で、事前に設定されたプッシュドメイン名を選択すると、**管理 > プッシュ設定**ページの下半分にホットリンク保護アドレスの発行方法を示す **プッシュアドレスサンプルコード**（PHPとJavaの両バージョン）が表示されます。より詳細な説明をご覧になる場合は [プッシュ設定](https://intl.cloud.tencent.com/document/product/267/31059#sample-code-of-push-url)ドキュメントをご参照ください。

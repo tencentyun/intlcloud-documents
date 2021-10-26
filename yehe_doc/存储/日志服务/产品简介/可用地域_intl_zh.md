@@ -6,23 +6,22 @@
 
 | 地域     | 域名简称         | 内网域名                            | 外网域名                           |
 | :------- | :--------------- | :---------------------------------- | :--------------------------------- |
-| 北京     | ap-beijing       | ap-beijing.cls.tencentyun.com       | ap-beijing.cls.tencentcs.com       |
-| 广州     | ap-guangzhou     | ap-guangzhou.cls.tencentyun.com     | ap-guangzhou.cls.tencentcs.com     |
-| 上海     | ap-shanghai      | ap-shanghai.cls.tencentyun.com      | ap-shanghai.cls.tencentcs.com      |
-| 成都     | ap-chengdu       | ap-chengdu.cls.tencentyun.com       | ap-chengdu.cls.tencentcs.com       |
-| 南京     | ap-nanjing       | ap-nanjing.cls.tencentyun.com       | ap-nanjing.cls.tencentcs.com       |
-| 重庆     | ap-chongqing     | ap-chongqing.cls.tencentyun.com     | ap-chongqing.cls.tencentcs.com     |
-| 中国香港 | ap-hongkong      | ap-hongkong.cls.tencentyun.com      | ap-hongkong.cls.tencentcs.com      |
-| 硅谷     | na-siliconvalley | na-siliconvalley.cls.tencentyun.com | na-siliconvalley.cls.tencentcs.com |
-| 弗吉尼亚 | na-ashburn       | na-ashburn.cls.tencentyun.com       | na-ashburn.cls.tencentcs.com |
-| 新加坡   | ap-singapore     | ap-singapore.cls.tencentyun.com     | ap-singapore.cls.tencentcs.com     |
-| 泰国  | ap-bangkok   | ap-bangkok.cls.tencentyun.com  | ap-bangkok.cls.tencentcs.com  |
-| 孟买     | ap-mumbai        | ap-mumbai.cls.tencentyun.com        | ap-mumbai.cls.tencentcs.com   |
-| 法兰克福 | eu-frankfurt     | eu-frankfurt.cls.tencentyun.com     | eu-frankfurt.cls.tencentcs.com   |
-| 东京     | ap-tokyo         | ap-tokyo.cls.tencentyun.com         | ap-tokyo.cls.tencentcs.com         |
-| 首尔     | ap-seoul         | ap-seoul.cls.tencentyun.com         | ap-seoul.cls.tencentcs.com         |
-| 莫斯科  | eu-moscow   |  eu-moscow.cls.tencentyun.com  |  eu-moscow.cls.tencentcs.com  |
-
+| 北京     | ap-beijing       | ap-beijing.cls.tencentyun.com       | ap-beijing.cls.tencentcs.com/ap-beijing.cls.tencentcs.cn       |
+| 广州     | ap-guangzhou     | ap-guangzhou.cls.tencentyun.com     | ap-guangzhou.cls.tencentcs.com/ap-guangzhou.cls.tencentcs.cn     |
+| 上海     | ap-shanghai      | ap-shanghai.cls.tencentyun.com      | ap-shanghai.cls.tencentcs.com/ap-shanghai.cls.tencentcs.cn      |
+| 成都     | ap-chengdu       | ap-chengdu.cls.tencentyun.com       | ap-chengdu.cls.tencentcs.com/ap-chengdu.cls.tencentcs.cn       |
+| 南京     | ap-nanjing       | ap-nanjing.cls.tencentyun.com       | ap-nanjing.cls.tencentcs.com/ap-nanjing.cls.tencentcs.cn       |
+| 重庆     | ap-chongqing     | ap-chongqing.cls.tencentyun.com     | ap-chongqing.cls.tencentcs.com/ap-chongqing.cls.tencentcs.cn     |
+| 中国香港 | ap-hongkong      | ap-hongkong.cls.tencentyun.com      | ap-hongkong.cls.tencentcs.com/ap-hongkong.cls.tencentcs.cn      |
+| 硅谷     | na-siliconvalley | na-siliconvalley.cls.tencentyun.com | na-siliconvalley.cls.tencentcs.com/na-siliconvalley.cls.tencentcs.cn |
+| 弗吉尼亚 | na-ashburn       | na-ashburn.cls.tencentyun.com       | na-ashburn.cls.tencentcs.com/na-ashburn.cls.tencentcs.cn |
+| 新加坡   | ap-singapore     | ap-singapore.cls.tencentyun.com     | ap-singapore.cls.tencentcs.com/ap-singapore.cls.tencentcs.cn     |
+| 泰国  | ap-bangkok   | ap-bangkok.cls.tencentyun.com  | ap-bangkok.cls.tencentcs.com/ap-bangkok.cls.tencentcs.cn  |
+| 孟买     | ap-mumbai        | ap-mumbai.cls.tencentyun.com        | ap-mumbai.cls.tencentcs.com/ap-mumbai.cls.tencentcs.cn   |
+| 法兰克福 | eu-frankfurt     | eu-frankfurt.cls.tencentyun.com     | eu-frankfurt.cls.tencentcs.com/eu-frankfurt.cls.tencentcs.cn   |  
+| 东京     | ap-tokyo         | ap-tokyo.cls.tencentyun.com         | ap-tokyo.cls.tencentcs.com/ap-tokyo.cls.tencentcs.cn         |
+| 首尔     | ap-seoul         | ap-seoul.cls.tencentyun.com         | ap-seoul.cls.tencentcs.com/ap-seoul.cls.tencentcs.cn         |
+| 莫斯科  | eu-moscow   |  eu-moscow.cls.tencentyun.com  |  eu-moscow.cls.tencentcs.com/eu-moscow.cls.tencentcs.cn  |
 
 ## 注意事项
 

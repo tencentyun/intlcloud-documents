@@ -6,7 +6,11 @@ Currently, SCF allows concurrency management at two levels: account-level concur
 
 ```
 Account-Level concurrency quota
+<<<<<<< HEAD
   |- Function-Level reserved quota
+=======
+|- Function-Level reserved concurrency quota
+>>>>>>> 73d567d552bc9c5309ef6644008c9fa3dfa83c58
 ```
 
 >? [Provisioned concurrency](https://intl.cloud.tencent.com/document/product/583/37704) is not included in the concurrency management capabilities; instead, it only serves as the ability to start instances in advance. Versions under the same function share the concurrency of the function.

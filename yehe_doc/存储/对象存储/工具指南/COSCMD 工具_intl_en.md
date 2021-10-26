@@ -1,11 +1,11 @@
-## Overview
+## Feature Description
 
 COSCMD enables you to use simple command lines to batch-operate objects, such as upload, download, and delete.
 
 
 ## Operating Environments
 
-#### System environment
+#### Operating system
 
 Windows, Linux, and macOS
 
@@ -13,7 +13,7 @@ Windows, Linux, and macOS
 > - Local characters should use UTF-8 encoding. Otherwise, exceptions will occur when you operate on Chinese files.
 > - Ensure that the local time is in sync with UTC. If there is a large deviation between the two, COSCMD might not function properly.
 
-#### Software requirements
+#### Software dependency
 
 - Python 2.7/3.5/3.6/3.9
 - Latest version of pip
@@ -273,7 +273,9 @@ coscmd -d upload -rs D:/folder/ /
 
 ### Running commands in silence mode
 
-You can prefix `-s` or `--silence` in each command so that no message will be output. A command sample is as follows:
+You can prefix `-s` or `--silence` in each command so that no message will be output.
+
+>?To run this command, the version should be at least 1.8.6.24.
 
 - Command syntax
 ```plaintext
@@ -323,7 +325,7 @@ coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket -f
 
 ## Common Object Commands
 
-### Uploading a file
+### Uploading files
 
 - Command syntax for uploading a file
 ```plaintext

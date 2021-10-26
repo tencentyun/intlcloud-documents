@@ -45,4 +45,4 @@ rtmp://livepush.tcloud.com/live/test?txSecret=f85a2ab363fe4deaffef9754d79da6fe&t
 
 
 ## Sample Push Code
-Go to **CSS Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, select a pre-configured push domain name, click **Manage** > **Push Configuration** to display the **Push Address Sample Code** (for both PHP and Java) that demonstrates how to generate a hotlink protection address.
+Go to **CSS Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, select a pre-configured push domain name, click **Manage** > **Push Configuration** to display the **Push Address Sample Code** (for both PHP and Java) that demonstrates how to generate a hotlink protection address. For details, please see[Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059#sample-code-of-push-url).

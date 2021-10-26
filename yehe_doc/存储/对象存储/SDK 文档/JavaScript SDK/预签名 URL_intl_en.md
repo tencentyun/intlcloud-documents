@@ -2,7 +2,14 @@
 
 The JavaScript SDK provides the API for getting an object URL and the presigned URL for a request. 
 
-## Signature calculation
+>?
+> - You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
+> 
+
+
+
+## Signature Calculation
 
 In all COS XML API requests, the authentication credential `Authorization` is required for all operations on private resources for COS to determine whether a request is valid.
 
@@ -16,7 +23,7 @@ The `COS.getAuthorization` method is used to calculate the authentication creden
 >! It is recommended that this method is only used for frontend debugging but not in actual projects, as it may disclose keys.
 >
 
-#### Examples
+#### Example
 
 Obtain the authentication credential for object download:
 
@@ -38,23 +45,23 @@ var Authorization = COS.getAuthorization({
 
 | Parameter | Description | Type | Required |
 | --------- | ------------------------------------------------------------ | ------ | ---- |
-| SecretId | User's `SecretId` | String | No |
+| SecretId | User SecretId | String | Yes |
 | SecretKey | User's `SecretKey` | String | Yes |
 | Method | HTTP request method such as `GET`, `POST`, `DELETE`, or `HEAD` | String | Yes |
 | Key | Object key (object name) is the unique ID of an object in a bucket. **If the request operation is to be performed on a file, this parameter is required and should be a filename.** If the operation is on a bucket, this parameter should be left empty | String | No |
 | Query | `query` parameter object of the request | Object | No |
 | Headers | `header` parameter object of the request | Object | No |
-| Expires | Signature expiration time in seconds. Default value: `900` | Number | No |
+| Expires | Signature expiration time in seconds. Default value: 900 seconds | Number | No |
 
 #### Returned value description
 
 The returned value is the calculated authentication credential string `authorization`.
 
-## Obtaining pre-signed URL used for requests
+## Getting a Pre-signed Request URL
 
 ### Download request samples
 
-Sample 1. Get an unsigned object URL
+Sample 1. Get an object URL without a signature
 
 [//]: # (.cssg-snippet-get-presign-download-url)
 ```js

@@ -1,4 +1,16 @@
 
+## 2021년 07월
+<table>
+<tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=10%>배포일</th><th width=20%>관련 문서</th></tr>
+<tbody>
+<tr>
+<td>터보 변경 지원</td>
+<td>TencentDB for MySQL은 터보 변경 기능을 추가하여 로컬 잔여 리소스가 충분한 상황에서 데이터베이스 설정을 조정할 경우 터보 변경 기능을 사용할 수 있습니다. 터보 변경은 데이터 마이그레이션과 무관하게 진행되며 준비 단계의 대기 시간을 줄여 더욱 빠르게 인스턴스 사양을 변경할 수 있습니다. </td>
+<td>2021-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/19707" target="_blank">데이터베이스 인스턴스 사양 변경</a></td></tr>
+</tbody></table>
+
+
 ## 2021년 04월
 <table>
 <tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=10%>배포일</th><th width=20%>관련 문서</th></tr>

@@ -1,5 +1,3 @@
-
-
 ## Overview
 
 This document describes how to use CFS file systems on Windows clients. The example below shows how to do so on Windows Server 2012 R2. The operations are the same on other Windows editions such as Windows Server 2008 and Windows Server 2016.
@@ -31,7 +29,7 @@ You have logged in to the CVM instance with an admin account.
 
 #### Verifying network communication
 
-Before mounting, you need to check the network connectivity between the client and the file system (the Telnet service needs to be enabled on Windows clients). You can use the `telnet` command for verification, such as `telnet 192.168.1.1 445`. The specific protocols and ports as follows:
+Before mounting, you need to confirm the network connectivity between the client and the file system (the Telnet service needs to be enabled on Windows clients). You can use the `telnet` command for verification, such as `telnet 192.168.1.1 445`. The specific protocols and open ports for clients are as follows:
 
 | File System Protocol | Ports | Check Network Connectivity |
 | ------------ | -------------- | ------------------------- |
@@ -39,7 +37,6 @@ Before mounting, you need to check the network connectivity between the client a
 | NFS 4.0      | 2049           | telnet 2049               |
 | CIFS/SMB     | 445            | telnet 445                |
 
-> !Currently, CFS does not support `ping`.
 
 ## Step 3. Mount a File System
 
@@ -48,9 +45,8 @@ Before mounting, you need to check the network connectivity between the client a
 #### 1. Enable the NFS service
 
 Before mounting, please make sure that the NFS service has been enabled.
-1.1. Select **Control Panel** > **Programs** > **Turn Windows Features on or off** > **Server Roles** and check **Server for NFS**.
-<img src="https://mc.qcloudimg.com/static/img/eaeed922e9d1f673e47137d80a88fa70/image.png" width="80%">
-1.2. Select **Control Panel** > **Programs** > **Turn Windows Features on or off** > **Features** and check **Client for NFS** to enable the NFS client service for Windows.
+
+Select **Control Panel** > **Programs** > **Turn Windows Features on or off** > **Features** and check **Client for NFS** to enable the NFS client service for Windows.
 <img src="https://mc.qcloudimg.com/static/img/4f9d7ac7b877ceffc5bc2b1d7c050a24/image.png" width="80%">
 
 #### 2. Verify whether the NFS service is enabled
@@ -68,7 +64,6 @@ mount -h
 Enter the `regedit` command in the command-line tool and press Enter to open the Registry.
 <img src="https://mc.qcloudimg.com/static/img/c9fca9a1b123a5b2dbc69b0ce66d539f/image.png" width="80%">
 
-
 3.2. Add configuration items `AnonymousUid` and `AnonymousGid.`
 Find the following path in the registry and select it. 
 ```bash
@@ -81,9 +76,20 @@ Right-click the blank space on the right, click **New**, and select **DWORD (32-
 Then, the configuration items are successfully added as shown below:
 <img src="https://main.qcloudimg.com/raw/9af3f35d4b78a2e17cf2ef44fa6863d7.png" width="80%">
 
-
 3.3. Restart the system for the configuration to take effect
-Close the Registry and restart Windows to complete the Registry modification.
+Close the Registry and then run the commands below in sequence to restart the NFS client service so that the modified Registry can take effect. You can also restart the Windows OS for the modified Registry to take effect.
+```
+net stop nfsclnt
+```
+```
+net stop nfsrdr
+```
+```
+net start nfsrdr
+```
+```
+net start nfsclnt
+```
 
 #### 4. Mount the file system
 
@@ -92,6 +98,7 @@ A file system can be mounted via a graphical interface or command line (CMD).
 - Mount via a graphical interface
   a. Open "Map Network Drive"
   Log in to the Windows instance where you need to mount the file system, find "Computer" in the "Start" menu, right-click it, and then click "Map Network Drive" in the menu that appears. 
+
   ![](https://main.qcloudimg.com/raw/759b315c65db82db3feacd811aa93bdd.png)
   b. Enter the access path
   In the pop-up window, set the drive letter for "Drive" and folder (i.e., the mount directory you see in the NFS file system).
@@ -107,12 +114,11 @@ A file system can be mounted via a graphical interface or command line (CMD).
 If the Windows command-line tool displays "Locking=yes", to avoid read/write exception (NFS v3 does not support locking), you can modify the Registry by performing the following steps:
 
 (1) Find the following registry path: **HKEY_LOCAL_MACHINE** > **SOFTWARE** > **Microsoft** > **ClientForNFS** > **CurrentVersion** > **User** > **Default** > **Mount**.
-(2) Move the mouse to the right pane and right-click there. Click **New** and choose **DWORD (64-bit) Value** from the drop-down menu. Then, change the name to **Locking** and set the value to `0`.
-
+(2) Move the mouse to the right pane and right-click there. Click **New** and choose **DWORD (32-bit) Value** from the drop-down menu. Then, change the name to **Locking** and set the value to `0`.
 
 d. Verify reads/writes
   After checking the file system, the page goes directly to the file system that has been mounted. You can right-click to create a file to verify reads/writes.
-	<img src="https://main.qcloudimg.com/raw/208537681d0ab96cd801e22332a419a9.jpeg" width="80%">
+
 - Mount via CMD
   Enter the following command on the Windows command-line tool to mount the file system. The default subdirectory is `FSID`.
 ```bash
@@ -123,6 +129,7 @@ Example:
 mount 10.10.0.12:/z3r6k95r X:
 ```
 > ! You can go to the **CFS console**, click the file system ID, and choose the **Mount Target Info** tab to obtain the `FSID` mount command.
+> 
 
 ### Mounting a CIFS/SMB file system
 
@@ -151,7 +158,8 @@ Example:
 net use X: \\10.10.11.12\fjie120
 ```
 
-> ! You can go to the [CFS console](https://console.cloud.tencent.com/cfs), click the file system ID, and choose the **Mount Target Info** tab to obtain the `FSID` mount command.
+>! You can go to the [CFS console](https://console.cloud.tencent.com/cfs), click the file system ID, and choose the **Mount Target Info** tab to obtain the `FSID` mount command.
+>
 
 
 
@@ -175,7 +183,8 @@ umount X:
 
 ## Step 5. Terminate Resources
 
->!Resources cannot be recovered from a deleted file system. Therefore, you are advised to back up all resources before deleting the file system.
+>! Resources cannot be recovered from a deleted file system. Therefore, you are advised to back up all resources before deleting the file system.
+>
 
 You can terminate a file system in the console. Specifically, go to the [CFS console](https://console.cloud.tencent.com/cfs/fs), locate the file system to be terminated, and click **Delete** > **Confirm**.
 

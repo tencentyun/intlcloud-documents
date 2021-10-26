@@ -6,7 +6,7 @@ VODコンソールでビデオ操作の確認ができます。ここでは、�
 	- このウィンドウには、ビデオのID、名称、カテゴリー、タグ、サイズ、長さ、有効期限、ファイルの説明が表示されます（一部属性は編集可能）。
 	- ビデオのURLアドレスをコピーして、ビデオ処理およびビデオ再生などで使用することができます。
 
-![](https://main.qcloudimg.com/raw/987ecd49bf7e7add5d0538fcb12bbc53.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3c731bddb1977a1dbdcebf5f6fb958a1.png)
 
 
 

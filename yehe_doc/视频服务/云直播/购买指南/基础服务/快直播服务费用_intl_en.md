@@ -83,7 +83,7 @@ LEB bill-by-bandwidth utilizes tiered pricing by the daily peak bandwidth with a
 
 LEB displays the usage of downstream traffic and bandwidth generated when connecting users and global acceleration origin servers. LEB provides two daily pay-as-you-go billing modes: [bill-by-traffic]() and [bill-by-bandwidth](). The default billing mode for new users is bill-by-traffic.
 
-> - **LEB bill-by-traffic/bandwidth rules for regions outside Chinese mainland took effect on April 20, 2021. Since April 21, 2021, all bills have been generated according to the new billing rules.**
+>! **LEB bill-by-traffic/bandwidth rules for regions outside Chinese mainland took effect on April 20, 2021. Since April 21, 2021, all bills have been generated according to the new billing rules.**
 
 [](id:overseas_flow)
 ### Global bill-by-traffic
@@ -107,9 +107,9 @@ Global LEB bill-by-traffic utilizes tiered pricing with a daily billing cycle, a
 
 **Billing example**
 
-- Suppose an LEB session lasts for 1 hour at a bitrate of 500 Kbps, which is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing. If there are 200 viewers, the consumed traffic will be approximately: 500/8 x 3600 x 200 = 22,500,000 KB = 45 GB.
+- Suppose an LEB session lasts for 1 hour at a bitrate of 500 Kbps, which is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing. If there are 200 viewers, the consumed traffic will be approximately: 500/8 × 3600 × 100 = 22500000KB = 22.5GB.
 - If you held a global LEB session that generated 22.5 GB of downstream traffic on April 20, 2021, then the LEB traffic fees you would need to pay on April 21, 2021 would be as follows:
-  Daily LEB traffic fees = 0.1445 (USD/GB) × 45 (GB) = 6.5025 USD.
+  Daily LEB traffic fees = 0.1445 (USD/GB) × 22.5 (GB) = 3.25125 USD.
 -  By default, LEB fees are billed by downstream usage. However, upstream usage will also be billed when the ratio of upstream usage and downstream usage is larger than 1:10 and the daily upstream peak bandwidth exceeds 100 Mbps. Upstream usage will be billed according to the same billing modes and tiered pricing rules as downstream usage is billed by.
 
 ### Global bill-by-bandwidth

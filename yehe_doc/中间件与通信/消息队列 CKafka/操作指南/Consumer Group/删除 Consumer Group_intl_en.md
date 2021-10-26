@@ -2,7 +2,7 @@
 
 In some cases, a consumer group may not consume for a long time before consuming again. You can delete it, so that when the consumers in it establish a connection again, the offset will be reset, and consumption will start from the beginning.
 
->?Only empty consumer groups with a broker version not below 1.1.1 can be deleted.
+>?Only empty consumer groups with a broker version not below v1.1.1 can be deleted.
 
 ## Directions
 
