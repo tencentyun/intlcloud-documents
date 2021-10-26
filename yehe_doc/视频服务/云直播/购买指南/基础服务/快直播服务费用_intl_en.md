@@ -83,7 +83,7 @@ LEB bill-by-bandwidth utilizes tiered pricing by the daily peak bandwidth with a
 
 LEB displays the usage of downstream traffic and bandwidth generated when connecting users and global acceleration origin servers. LEB provides two daily pay-as-you-go billing modes: [bill-by-traffic]() and [bill-by-bandwidth](). The default billing mode for new users is bill-by-traffic.
 
-> - **LEB bill-by-traffic/bandwidth rules for regions outside Chinese mainland took effect on April 20, 2021. Since April 21, 2021, all bills have been generated according to the new billing rules.**
+>! **LEB bill-by-traffic/bandwidth rules for regions outside Chinese mainland took effect on April 20, 2021. Since April 21, 2021, all bills have been generated according to the new billing rules.**
 
 [](id:overseas_flow)
 ### Global bill-by-traffic
