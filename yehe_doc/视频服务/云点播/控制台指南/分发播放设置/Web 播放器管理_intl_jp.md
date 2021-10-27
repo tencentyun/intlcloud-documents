@@ -26,7 +26,7 @@ Webプレーヤー管理を通じて、Tencent Cloudが提供するビデオプ�
 	
 >?
 >- プレーヤーリストでは、デフォルトのプレーヤーとして設定できるプレーヤーは1つだけです。
->- 選択したプレーヤーがビデオファイルに関連付けられている場合、そのプレーヤーは削除できません。[メディア資産管理](https://console.cloud.tencent.com/vod/media)で関連付けられているプレーヤーを変更して関連付けを解除してから削除する必要があります。関連ドキュメントについては、[Webプレーヤーコード生成手順](https://intl.cloud.tencent.com/document/product/266/33896#web-.E6.92.AD.E6.94.BE.E5.99.A8.E4.BB.A3.E7.A0.81.E7.94.9F.E6.88.90.E6.AD.A5.E9.AA.A4)をご参照ください。
+>- 選択したプレーヤーがビデオファイルに関連付けられている場合、そのプレーヤーは削除できません。[メディア資産管理](https://console.cloud.tencent.com/vod/media)で関連付けられているプレーヤーを変更して関連付けを解除してから削除する必要があります。関連ドキュメントについては、[Webプレーヤーコード生成手順](https://intl.cloud.tencent.com/document/product/266/33896?lang=en&pg=#web-player-code-generation)をご参照ください。
 
 
 
