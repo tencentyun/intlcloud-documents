@@ -1,7 +1,7 @@
 ## CVM 인스턴스 구매 계정의 제한
 
-- 사용자는 Tencent Cloud 계정을 등록해야 하며, 등록 안내는 [Tencent Cloud 가입]을 참고하십시오(https://intl.cloud.tencent.com/document/product/378/17985).
-- 사용자는 실명 인증을 진행해야 하며, 인증 자격은 [실명 인증 가이드]를 참고하십시오(https://intl.cloud.tencent.com/document/product/378/3629).
+- 사용자는 Tencent Cloud 계정을 등록해야 하며, 등록 안내는[Tencent Cloud 가입](https://intl.cloud.tencent.com/document/product/378/17985)을 참고하십시오.
+- 사용자는 실명 인증을 진행해야 하며, 인증 자격은 [실명 인증 가이드](https://intl.cloud.tencent.com/document/product/378/3629)를 참고하십시오.
 - 종량제 클라우드 서버를 생성할 때 시스템은 1시간 동안 호스트 비용을 동결하므로 지불 진행을 위해 계정에 충분한 잔액을 충전하십시오.
 
 ## CVM 인스턴스의 이용 제한
@@ -13,7 +13,7 @@
 ## CVM 인스턴스의 구매 제한
 
 - 각각의 가용존에서 사용자가 구매할 수 있는 종량제 CVM 인스턴스의 **총 수량**은 30개 또는 60개이며 CVM 구매 페이지의 실제 상황에 따라 정해집니다.
-- 자세한 내용은 [CVM 인스턴스 구매 제한]을 참고하십시오(https://intl.cloud.tencent.com/document/product/213/2664).
+- 자세한 내용은 [CVM 인스턴스 구매 제한](https://intl.cloud.tencent.com/document/product/213/2664)을 참고하십시오.
 
 
 ## 미러 이미지 관련 제한
@@ -23,21 +23,13 @@
 - 공유 이미지: 사용자 정의 이미지는 최대 50개의 Tencent cloud 사용자에게 공유될 수 있으며, 상대방 사용자 계정의 같은 리전 내에서만 공유됩니다. 
 - 자세한 내용은 [이미지 유형 제한](https://intl.cloud.tencent.com/document/product/213/4941)을 참고하십시오.
 
-## EIP 관련 제한
-
-<table>
-	<tr><th>제한 유형</th><th>제한 설명</th></tr>
-	<tr><td>EIP 할당 제한</td><td>관련 자세한 내용은 <a href="https://cloud.tencent.com/document/product/1199/41648#eip-.E9.85.8D.E9.A2.9D.E9.99.90.E5.88.B6">EIP 할당 제한</a>을 참고하십시오.</td></tr>
-	<tr><td>CVM 공용 네트워크 IP 바인딩 제한</td><td>관련 자세한 내용은 <a href="https://cloud.tencent.com/document/product/1199/41648#.E7.BB.91.E5.AE.9A.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E9.99.90.E5.88.B6">CVM 바인딩 제한</a>을 참고하십시오.</td></tr>
-</table>
-
 ## ENI 관련 제한
 
 CPU와 메모리 구성에 따라 클라우드 서버가 바인딩할 수 있는 ENI 수와 단일 ENI를 바인딩할 수 있는 개인 네트워크 IP 수는 크게 다르며, ENI 및 단일 ENI IP 할당 수는 아래 표와 같습니다.
->! 단일 ENI의 바인딩 IP 수량은 ENI로 바인딩할 수 있는 IP 수의 최대 수량을 의미하는 것으로 최대 수량에 따른 EIP 할당은 보장되지 않으며, 계정의 EIP 할당은 [EIP 사용 제한] (https://intl.cloud.tencent.com/document/product/213/5733) 에 따라 제공됩니다.
+>! 단일 ENI의 바인딩 IP 수량은 ENI로 바인딩할 수 있는 IP 수의 최대 수량을 의미하는 것으로 최대 수량에 따른 EIP 할당은 보장되지 않으며, 계정의 EIP 할당은 [EIP 사용 제한](https://intl.cloud.tencent.com/document/product/213/5733) 에 따라 제공됩니다.
 
 <dx-tabs>
-::: CVM이 지원하는 ENI 바인딩 할당량
+::: CVM이\s지원하는\sENI\s바인딩\s할당량
 <table>
    <tr>
     <th width="6%"  rowspan="2" style = "text-align:center;">모델</th>
@@ -459,7 +451,7 @@ CPU와 메모리 구성에 따라 클라우드 서버가 바인딩할 수 있는
    </tr>
   </table>
 :::
-::: CVM 단일 ENI에 바인딩된 개인 IP 할당량
+::: CVM\s단일\sENI에\s바인딩된\s개인\sIP\s할당량
 <table>
    <tr>
     <th width="6%"  rowspan="2" style = "text-align:center;">모델</th>
@@ -927,7 +919,7 @@ CPU와 메모리 구성에 따라 클라우드 서버가 바인딩할 수 있는
 
 <table>
 	<tr><th>제한 유형</th><th>제한 설명</th></tr>
-	<tr><td>CBS 기능</td><td>2018년 5월부터 CVM과 함께 구매하는 데이터 디스크는 모두 엘라스틱 CBS로서, CVM에서 언마운트한 후 다시 마운트할 수 있습니다. 해당 기능은 모든 <a href="https://cloud.tencent.com/document/api/213/15707">가용존</a>에서 사용할 수 있습니다. </td></tr>
+	<tr><td>CBS 기능</td><td>2018년 5월부터 CVM과 함께 구매하는 데이터 디스크는 모두 엘라스틱 CBS로서, CVM에서 언마운트한 후 다시 마운트할 수 있습니다. 해당 기능은 모든 <a href="https://intl.cloud.tencent.com/zh/document/product/213/35071">가용존</a>에서 사용할 수 있습니다. </td></tr>
 	<tr><td>CBS 성능 제한</td><td> I/O 성능이 동시에 적용됩니다. </br>예를 들어 1TB의 SSD CBS가 최대 랜덤 IOPS 26,000에 도달한다면 읽기 IOPS와 쓰기 IOPS 모두 해당 값에 도달할 수 있음을 의미합니다. 동시에 여러 성능 제한으로 인하여 해당 예시에서 block size가 4KB/8KB인 I/O를 사용하면 IOPS 최대치에 도달할 수 있지만, block size가 16KB인 I/O를 사용하면 IOPS 최대치에 도달할 수 없습니다(처리량은 260MB/s의 제한에 도달함).</td></tr>
 	<tr><td>단일 CVM이 마운트할 수 있는 엘라스틱 CBS 수량</td><td>은 최대 20블록입니다. </td></tr>
 	<tr><td>단일 리전의 스냅샷 할당량</td><td>64 + 리전 내 CBS 수량 * 64(개). </td></tr>
