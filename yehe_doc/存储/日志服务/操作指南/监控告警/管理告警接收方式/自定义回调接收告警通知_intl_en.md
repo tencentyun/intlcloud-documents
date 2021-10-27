@@ -18,7 +18,7 @@ Generate custom callback links (webhooks) for custom services requiring callback
 
 ### Configuring custom API callbacks (custom webhooks)
 
-On the **Notification Channel** page in the CLS console, enter the custom callback link address, and set the custom request content as required. For more information on the configuration, please see [Adding Notification Channel Groups](https://intl.cloud.tencent.com/document/product/614/41987).
+On the **Notification Channel** page in the CLS console, enter the custom callback link address, and set the custom request content as required. For more information on the configuration, please see Adding Notification Channel Groups.
 
 
 After custom API callbacks are configured, when alarm policies are triggered, CLS will call the custom APIs according to the configured request formats.
