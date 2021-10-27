@@ -23,7 +23,7 @@ Tencent Cloud CDN mendukung pengelolaan versi untuk satu nama domain.Anda dapat 
 ## Mengaktifkan Pengelolaan Versi
 
 Masuk ke [Konsol CDN](https://console.cloud.tencent.com/cdn) dan pilih **Domain Management** (Pengelolaan Domain) untuk melihat daftar nama domain.Klik nama domain sasaran untuk masuk ke halaman konfigurasi, dan centang **Enable Version Management** (Aktifkan Pengelolaan Versi) di pojok kanan atas.
-![](https://main.qcloudimg.com/raw/8c60d15a989ded86ad697f4cc8e588ea.png)
+![](https://main.qcloudimg.com/raw/52d05f1d49c1143e572d5bd2ff7cb88c.png)
 
 Setelah pengelolaan versi diaktifkan, Ver.1 akan dibuat dengan konfigurasi nama domain saat itu dan di-deploy ke lingkungan produksi maupun lingkungan percobaan.
 
@@ -31,20 +31,20 @@ Setelah pengelolaan versi diaktifkan, Ver.1 akan dibuat dengan konfigurasi nama 
 
 Setelah mengaktifkan pengelolaan versi, Anda dapat melihat dan mengelola versi di halaman **Version Management** (Pengelolaan Versi).Setiap versi diidentifikasi dengan nomor versi Ver.n (n=1,2,3,...).
 Untuk mengakses halaman pengelolaan versi, Anda dapat memilih **More** > **Version Management** (Selengkapnya > Pengelolaan Versi) di bawah kolom operasi pada daftar nama domain.Anda juga bisa mengeklik nama domain untuk mencari **Version Management** (Pengelolaan Versi) di halaman konfigurasinya.
-![](https://main.qcloudimg.com/raw/5646d1b1a5c812dc04af690b9efb457c.png)
+![](https://main.qcloudimg.com/raw/6d74d6b53b75ef97a63926718f50cda4.png)
 
 
 
 ### Menambahkan Versi
 Klik **Add Version** (Tambahkan Versi).Suatu versi akan dibuat berdasarkan konfigurasi lingkungan produksi saat itu menurut pengaturan default.Anda dapat mengubah konfigurasi sesuai kebutuhan dan kemudian membuat versi baru.
-![](https://main.qcloudimg.com/raw/f748948c5a279709b713b2da4dfa7fb9.png)
+![](https://main.qcloudimg.com/raw/7d6277fad76dd1391f9be965c4c99df0.png)
 
 >! Jika Anda mendapat pesan kesalahan setelah mengirimkan versi baru tersebut, Anda tidak perlu membuat yang baru.Kembali ke halaman pengelolaan versi dan ubah versi yang Anda kirimkan.
 
 ### Mengedit versi
 
 Versi terbaru dapat diedit sebelum dirilis ke lingkungan percobaan.Anda dapat memilih **More** > **Edit** (Selengkapnya > Edit) di bawah kolom operasi.
-![](https://main.qcloudimg.com/raw/b874c1ce46736815efe6ade4147e7a5a.png)
+![](https://main.qcloudimg.com/raw/ccd2e75a24c5076c0a624b5cd8cbbecb.png)
 Versi lama (semua versi sebelum versi terbaru), walaupun telah dirilis ke lingkungan percobaan, hanya dapat dilihat, tetapi tidak dapat diedit.
 
 >!Sebelum menambahkan versi baru, pastikan semua versi yang ada sudah dirilis.Jika tidak, versi yang tidak dirilis akan menjadi versi lama yang tidak dapat diedit dan dirilis ke lingkungan percobaan.
@@ -55,11 +55,11 @@ Versi lama (semua versi sebelum versi terbaru), walaupun telah dirilis ke lingku
 Untuk nama domain yang pengelolaan versinya diaktifkan, rilis versi sebagai berikut:
 
 1.Cari versi yang perlu dirilis ke lingkungan percobaan, pilih **More** > **Release to the staging environment** (Selengkapnya > Rilis ke lingkungan percobaan) di bawah kolom operasi.
-![](https://main.qcloudimg.com/raw/06196f7c4bef077be3721ece2682f48b.png)
+![](https://main.qcloudimg.com/raw/13b8f5a168719c31c2c1b03b532933a9.png)
 2.CDN akan memberikan IP IPv4 ke nama domain tersebut.Untuk menguji versi yang di-deploy di lingkungan percobaan, ubah HOSTS klien, dan arahkan nama domain ke IP tersebut.
 3.Jika Anda ingin menyesuaikan konfigurasi dan melakukan pengujian lagi, Anda harus menambahkan dan mengirimkan versi baru, dan kemudian mengulangi langkah 1 dan 2.
 4.Setelah pengujian, klik **Sync to Production Env.** (Sinkronkan ke Lingkungan Produksi) di sebelah nomor versi untuk menyinkronkannya dengan lingkungan produksi dan men-deploy konfigurasi tersebut ke situs operasional.
-![](https://main.qcloudimg.com/raw/a6eb38ef147e2347654c8c6b21cd1819.png)
+![](https://main.qcloudimg.com/raw/89b2d937dcba03f68c62a2aad60b9f6f.png)
 5.Jika Anda perlu mengubah versi di lingkungan produksi, langkah 1 sampai 4.
 
 >!
@@ -77,7 +77,7 @@ Jika Anda ingin melihat perincian konfigurasi suatu versi, klik **View** (Lihat)
 
 ### Mengaktifkan/Menonaktifkan Versi
 Klik **Disable** (Nonaktifkan) pada bagian lingkungan produksi.Versi yang di-deploy di lingkungan produksi dan lingkungan percobaan akan dinonaktifkan pada saat yang sama sehingga nama domain akan dinonaktifkan dan layanan akselerasi akan ditutup.
-![](https://main.qcloudimg.com/raw/7a09e9b936cdeae90283315dcac900b7.png)
+
 Untuk mengaktifkan kembali versi tersebut, klik **Enable** (Aktifkan) pada bagian lingkungan produksi dan versi tersebut akan diaktifkan baik di lingkungan produksi maupun lingkungan percobaan.
 
 ## Menonaktifkan Pengelolaan Versi
