@@ -7,7 +7,7 @@
 ## 添加域名
 1. 登录 [云点播控制台](https://console.cloud.tencent.com/vod/overview)，选择左侧导航栏的【分发播放设置】>【域名管理】。
 2. 单击【添加域名】，在弹出的对话框中输入域名，单击【确定】。
-![](https://main.qcloudimg.com/raw/c80510a0917529ca9ea0f550ac9ebeae.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6ce1d60d21bf80b237a5a46a4b1aafed.png)
 >?
 >- 添加域名需要几分钟时间，域名添加完成后，在域名列表中，您可以查看该域名的状态、CNAME 和域名类型信息。
 >- 单个腾讯云账号最多可以添加20个域名。
