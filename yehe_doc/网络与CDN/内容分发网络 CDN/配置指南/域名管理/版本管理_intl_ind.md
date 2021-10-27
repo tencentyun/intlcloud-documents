@@ -7,7 +7,7 @@ Tencent Cloud CDN mendukung pengelolaan versi untuk satu nama domain.Anda dapat 
 - Lingkungan percobaan: lingkungan pengujian untuk menguji konfigurasi nama domain saja.Lingkungan ini dibuat dalam skala kecil dan hanya digunakan untuk pengujian konfigurasi nama domain pada konsol.Lingkungan ini tidak boleh digunakan untuk menjalankan bisnis yang sebenarnya atau untuk pengujian kinerja.
 
 >!
->1.Wilayah akselerasi harus di Tiongkok daratan.Nama domain tidak boleh menggunakan sertifikat eksternal, dan fitur [Optimisasi Gambar](https://cloud.tencent.com/document/product/228/43121) tidak boleh diaktifkan.
+>1.Wilayah akselerasi harus di Tiongkok daratan.Nama domain tidak boleh menggunakan sertifikat eksternal, dan fitur Optimisasi Gambar tidak boleh diaktifkan.
 >2.Hanya satu versi yang dapat di-deploy dalam satu waktu di setiap lingkungan.
 >3.Penyegaran URL didukung di lingkungan produksi dan lingkungan percobaan, sedangkan penyegaran direktori dan pramuat URL hanya diizinkan di lingkungan produksi.Untuk informasi selengkapnya, lihat [Pembersihan dan Pramuat](https://intl.cloud.tencent.com/document/product/228/6299).
 >4.Fitur pemantauan data dan penggunaan, seperti [konfigurasi batas bandwidth](https://intl.cloud.tencent.com/document/product/228/7541), hanya tersedia di lingkungan produksi.
