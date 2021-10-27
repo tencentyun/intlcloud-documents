@@ -10,7 +10,7 @@ CBS를 확장한 후에는 [파티션 및 파일 시스템(Windows) 확장](http
 
 <dx-tabs>
 ::: CVM 콘솔을 사용하여 확장. (권장함) [](id:useCVMConsole)
-1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인합니다.
+1. [CVM 콘솔](https://console.intl.cloud.tencent.com/cvm/instance/index)에 로그인합니다.
 2. 타깃 CVM이 있는 행에서 [더 보기]>[리소스 변경]>[CBS 확장]을 선택합니다.
 3. ‘CBS 확장’ 팝업창에서 확장할 데이터 디스크를 선택하고 [다음 단계]를 클릭합니다.
 4. ‘용량 변경’ 단계에서 타깃 용량(반드시 현재 용량 이상이어야 함)을 설정하고 [다음 단계]를 클릭합니다.
@@ -19,11 +19,11 @@ CBS를 확장한 후에는 [파티션 및 파일 시스템(Windows) 확장](http
 6. 타깃 클라우드 서비스의 운영 체제 유형에 따라 사용자는 [파티션 및 파일 시스템 (Windows) 확장](https://intl.cloud.tencent.com/document/product/362/31601) 또는 [파티션 및 파일 시스템 (Linux) 확장](https://intl.cloud.tencent.com/document/product/362/31602)으로 확장된 부분의 용량을 기존 파티션 안으로 나누거나 확장된 부분의 용량을 독립된 새로운 파티션으로 포맷해야 합니다.
 :::
 ::: CBS 콘솔을 사용하여 확장[](id:useCBSConsole)
-1. [CBS 콘솔](https://console.cloud.tencent.com/cvm/cbs)에 로그인합니다.
+1. [CBS 콘솔](https://console.intl.cloud.tencent.com/cvm/cbs/index)에 로그인합니다.
 2. 타깃 CBS의 [더 보기]>[확장]을 선택합니다.
 3. 필요한 새로운 용량 크기(반드시 현재 크기보다 크거나 같아야 함)를 선택합니다.
 4. 결제를 완료합니다.
-5. 타깃 클라우드 서비스의 운영 체제 유형에 따라 사용자는 [파티션 및 파일 시스템 (Windows) 확장](https://cloud.tencent.com/document/product/362/31601) 또는 [파티션 및 파일 시스템(Linux) 확장](https://cloud.tencent.com/document/product/362/31602)을 실행하여 확장된 부분의 용량을 기존 파티션 안으로 나누거나 확장된 부분의 용량을 독립된 새로운 파티션으로 포맷해야 합니다.
+5. 타깃 클라우드 서비스의 운영 체제 유형에 따라 사용자는 [파티션 및 파일 시스템 (Windows) 확장](https://intl.cloud.tencent.com/zh/document/product/362/31601) 또는 [파티션 및 파일 시스템(Linux) 확장](https://intl.cloud.tencent.com/zh/document/product/362)을 실행하여 확장된 부분의 용량을 기존 파티션 안으로 나누거나 확장된 부분의 용량을 독립된 새로운 파티션으로 포맷해야 합니다.
 :::
 ::: \sAPI\s를 사용하여 확장[](id:useAPI)
 ResizeDisk 인터페이스를 사용하여 지정된 엘라스틱 CBS의 용량을 확장할 수 있습니다. 자세한 작업 내용은 [CBS 용량 확장](https://intl.cloud.tencent.com/document/product/362/16310)을 참조하십시오.
