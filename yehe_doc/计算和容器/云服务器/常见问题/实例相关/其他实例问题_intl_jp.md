@@ -1,6 +1,6 @@
 ### CVMの操作ログを確認するにはどうすればよいですか。
 CloudAuditの操作記録機能によってCVMの操作ログを確認することができます。手順は次のとおりです。
-1. [CVMコンソール](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm)にログインし、画面の右上隅の【ツール】>【操作の記録】を選択します。
+1. [CVMコンソール](https://console.intl.cloud.tencent.com/cvm/instance/index?rid=1)にログインし、画面の右上隅の【ツール】>【操作の記録】を選択します。
 2. 「操作の記録」画面で、「リソースイベントの名称」に「CVM」を選択します。その他のフィルタリング条件は必要に応じて選択してください。
 3. 【照会】をクリックすると、CVMの操作ログを取得できます。
 CloudAuditの操作記録機能について、その他の情報をお知りになりたい場合は、[操作記録イベントの詳細を確認](https://intl.cloud.tencent.com/document/product/1021/40499)をご参照ください。
