@@ -1,12 +1,12 @@
 
-TRTCMeeting은 Tencent Cloud의 TRTC와 IM 서비스를 기반으로 구성되며, 다음 기능을 지원합니다.
-- 주최자가 회의 방을 생성하고 참여자가 방 번호를 입력한 후 회의 참여
-- 참여자 간 화면 공유
-- 다양한 텍스트 메시지 및 사용자 정의 메시지 발송 지원
+TRTCMeeting은 Tencent Real-Time Communication(TRTC)과 Instant Messaging(IM) 서비스를 기반으로 구성되며, 다음 기능을 지원합니다.
+- 호스트가 회의 방을 생성하고 참석자가 방 번호를 입력한 후 회의 참여.
+- 참석자 간 화면 공유.
+- 다양한 텍스트 메시지 및 사용자 정의 메시지 발송 지원.
 
-TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [다중 사용자 화상 회의(iOS)](https://intl.cloud.tencent.com/document/product/647/37284)를 참조하십시오.
+TRTCMeeting은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [다중 사용자 화상 회의(iOS)](https://intl.cloud.tencent.com/document/product/647/37284)를 참고하십시오.
 
-- TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 사용하는 저 딜레이 화상 회의 모듈입니다.
+- TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 사용하는 저지연 화상 회의 컴포넌트입니다.
 - IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)의 MeetingRoom을 이용해 회의 중 채팅방 기능을 구현합니다.
 
 ## TRTCMeeting API 개요
@@ -15,89 +15,89 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | API                                 | 설명                     |
 | ----------------------------------- | ------------------------ |
-| [sharedInstance](#sharedinstance) | 단일 항목 객체 획득           |
-| [delegateQueue](#delegatequeue)  | 이벤트 콜백이 존재하는 스레드 설정 |
-| [delegate](#delegate)             | 이벤트 콜백이 존재하는 스레드 설정           |
-| [login](#login)                   | 로그인                   |
-| [logout](#logout)                 | 로그아웃                   |
-| [setSelfProfile](#setselfprofile) | 사용자 정보 설정           |
+| [sharedInstance](#sharedinstance) | 싱글톤 객체 가져오기.           |
+| [delegateQueue](#delegatequeue)   | 이벤트 콜백이 존재하는 스레드 설정. |
+| [delegate](#delegate)             | 이벤트 콜백이 존재하는 스레드 설정.           |
+| [login](#login)                   | 로그인.                   |
+| [logout](#logout)                 | 로그아웃.                   |
+| [setSelfProfile](#setselfprofile) | 사용자 정보 설정.           |
 
-### 회의룸 관련 인터페이스 함수
+### 회의 방 관련 인터페이스 함수
 
 | API                                 | 설명                           |
 | ----------------------------------- | ------------------------------ |
-| [createMeeting](#createmeeting)   | 회의 방 생성(주최자 호출)   |
-| [destroyMeeting](#destroymeeting) | 회의 방 폐기(주최자 호출)   |
-| [enterMeeting](#entermeeting)     | 회의 방 입장(참여자 호출)  |
-| [leaveMeeting](#leavemeeting)     | 회의 방 퇴장(참여자 호출) |
+| [createMeeting](#createmeeting)   | 회의 방 생성(호스트 호출).   |
+| [destroyMeeting](#destroymeeting) | 회의 방 폐기(호스트 호출).   |
+| [enterMeeting](#entermeeting)     | 회의 방 입장(참석자 호출). |
+| [leaveMeeting](#leavemeeting)     | 회의 방 퇴장(참석자 호출). |
 
 ### 원격 사용자 인터페이스
 
 | API                                               | 설명                                                         |
 | ------------------------------------------------- | ------------------------------------------------------------ |
-| [getUserInfoList](#getuserinfolist)             | 방 안의 모든 참여자 리스트 획득, enterMeeting() 성공 후 호출해야만 유효  |
-| [getUserInfo](#getuserinfo)                     | 방 안에 있는 특정 참여자 상세 정보, enterMeeting() 성공 후 호출해야만 유효 |
-| [startRemoteView](#startremoteview)             | 특정 참여자의 원격 비디오 화면 재생                                 |
-| [stopRemoteView](#stopremoteview)               | 원격 비디오 화면 재생 정지                                        |
-| [setRemoteViewFillMode](#setremoteviewfillmode) | 사용자 ID에 따라 원격 이미지 렌더링 모드 설정                         |
-| [setRemoteViewRotation](#setremoteviewrotation) | 원격 이미지의 시계 방향 회전 각도 설정                               |
-| [muteRemoteAudio](#muteremoteaudio)             | 원격 특정 사용자 오디오 차단                                     |
-| [muteRemoteVideoStream](#muteremotevideostream) | 원격 특정 사용자 비디오 차단                                   |
+| [getUserInfoList](#getuserinfolist)             | 방 안의 모든 참석자 리스트 가져오기, enterMeeting() 성공 후 호출해야만 유효.  |
+| [getUserInfo](#getuserinfo)                     | 방 안의 지정된 참석자 상세 정보 가져오기, enterMeeting() 성공 후 호출해야만 유효. |
+| [startRemoteView](#startremoteview)             | 지정된 참석자의 원격 비디오 화면 재생.                                 |
+| [stopRemoteView](#stopremoteview)               | 원격 비디오 화면 재생 중지.                                        |
+| [setRemoteViewFillMode](#setremoteviewfillmode) | 사용자 ID에 따라 원격 이미지 렌더링 모드 설정.                         |
+| [setRemoteViewRotation](#setremoteviewrotation) | 원격 이미지의 시계 방향 회전 각도 설정.                               |
+| [muteRemoteAudio](#muteremoteaudio)             | 원격 지정된 참석자 오디오 차단.                                     |
+| [muteRemoteVideoStream](#muteremotevideostream) | 원격 지정된 참석자 비디오 차단.                                   |
 
 ### 로컬 비디오 작업 인터페이스
 
 | API                                         | 설명                       |
 | ------------------------------------------- | -------------------------- |
-| [startCameraPreview](#startcamerapreview) | 로컬 비디오 화면 미리보기 시작   |
-| [stopCameraPreview](#stopcamerapreview)   | 로컬 비디오 수집 및 미리보기 종료   |
-| [switchCamera](#switchcamera)   |  전면/후면 카메라 전환           |
-| [setVideoResolution](#setvideoresolution) | 해상도 설정               |
-| [setVideoFps](#setvideofps)               | 프레임 레이트 설정                 |
-| [setVideoBitrate](#setvideobitrate)       | 비트 레이트 설정                 |
-| [setLocalViewMirror](#setlocalviewmirror) | 로컬 화면 미리보기 모드 설정 |
+| [startCameraPreview](#startcamerapreview) | 로컬 비디오 화면 미리보기 시작.   |
+| [stopCameraPreview](#stopcamerapreview)   | 로컬 비디오 수집 및 미리보기 중지.   |
+| [switchCamera](#switchcamera)   | 전면/후면 카메라 전환.           |
+| [setVideoResolution](#setvideoresolution) | 해상도 설정.               |
+| [setVideoFps](#setvideofps)               | 프레임 레이트 설정.                 |
+| [setVideoBitrate](#setvideobitrate)       | 비트 레이트 설정.                 |
+| [setLocalViewMirror](#setlocalviewmirror) | 로컬 화면 미리보기 모드 설정. |
 
 ### 로컬 오디오 작업 인터페이스
 
 | API                                               | 설명                 |
 | ------------------------------------------------- | -------------------- |
-| [startMicrophone](#startmicrophone)             | 마이크 수집 시작     |
-| [stopMicrophone](#stopmicrophone)               | 마이크 수집 종료     |
-| [setAudioQuality](#setaudioquality)             | 오디오 품질 설정           |
-| [muteLocalAudio](#mutelocalaudio)               | 로컬 음소거 활성화       |
-| [setSpeaker](#setspeaker)                       | 스피커 활성화 설정     |
-| [setAudioCaptureVolume](#setaudiocapturevolume) | 마이크 수집 음량을 설정합니다. |
-| [setAudioPlayoutVolume](#setaudioplayoutvolume) | 재생 음량을 설정합니다.       |
-| [startFileDumping](#startfiledumping)           | 녹음 시작           |
-| [stopFileDumping](#stopfiledumping)             | 녹음 종료           |
-| [enableAudioEvaluation](#enableaudioevaluation) | 음량 크기 알림 활성화   |
+| [startMicrophone](#startmicrophone)             | 마이크 수집 시작.     |
+| [stopMicrophone](#stopmicrophone)               | 마이크 수집 중지.     |
+| [setAudioQuality](#setaudioquality)             | 오디오 품질 설정.           |
+| [muteLocalAudio](#mutelocalaudio)               | 로컬 음소거 활성화.       |
+| [setSpeaker](#setspeaker)                       | 스피커 활성화 설정.     |
+| [setAudioCaptureVolume](#setaudiocapturevolume) | 마이크 수집 볼륨 설정. |
+| [setAudioPlayoutVolume](#setaudioplayoutvolume) | 재생 볼륨 설정.       |
+| [startFileDumping](#startfiledumping)           | 녹음 시작.           |
+| [stopFileDumping](#stopfiledumping)             | 녹음 중지.           |
+| [enableAudioEvaluation](#enableaudioevaluation) | 볼륨 크기 알림 활성화.   |
 
 ### 녹화 인터페이스
 
 | API                                           | 설명           |
 | --------------------------------------------- | -------------- |
-| [startScreenCapture](#startscreencapture)   | 화면 공유 시작 |
-| [stopScreenCapture](#stopscreencapture)     | 화면 수집 중지 |
-| [pauseScreenCapture](#pausescreencapture)   | 화면 공유 일시 정지 |
-| [resumeScreenCapture](#resumescreencapture) | 화면 공유 재개 |
+| [startScreenCapture](#startscreencapture)   | 화면 공유 시작. |
+| [stopScreenCapture](#stopscreencapture)     | 화면 수집 중지. |
+| [pauseScreenCapture](#pausescreencapture)   | 화면 공유 일시 정지. |
+| [resumeScreenCapture](#resumescreencapture) | 화면 공유 재개. |
 
 ### 뷰티 필터 관련 인터페이스 함수
 
 | API                                     | 설명                                                         |
 | --------------------------------------- | ------------------------------------------------------------ |
-| [getBeautyManager](#getbeautymanager) | 뷰티 필터 관리 객체 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html) 획득 |
+| [getBeautyManager](#getbeautymanager) | 뷰티 필터 관리 객체 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html) 가져오기. |
 
 ### 공유 인터페이스
 
 | API                                                 | 설명              |
 | --------------------------------------------------- | ----------------- |
-| [getLiveBroadcastingURL](#getlivebroadcastingurl) | CDN 공유 링크 획득 |
+| [getLiveBroadcastingURL](#getlivebroadcastingurl) | CDN 공유 링크 가져오기. |
 
 ### 메시지 발송 관련 인터페이스 함수
 
 | API                                       | 설명                                                       |
 | ----------------------------------------- | ---------------------------------------------------------- |
-| [sendRoomTextMsg](#sendroomtextmsg)     | 방 안에서 텍스트 메시지 발송, 일반적으로 텍스트 채팅에 사용                     |
-| [sendRoomCustomMsg](#sendroomcustommsg) | 방 안에서 사용자 정의(신호) 메시지 발송 |
+| [sendRoomTextMsg](#sendroomtextmsg)     | 방 안에서 텍스트 메시지 발송, 일반적으로 텍스트 채팅에 사용.                     |
+| [sendRoomCustomMsg](#sendroomcustommsg) | 방 안에서 사용자 정의(신호) 메시지 발송. |
 
 ## TRTCMeetingDelegate API 개요
 
@@ -105,54 +105,54 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | API                   | 설명       |
 | --------------------- | ---------- |
-| [onError](#onerror) | 오류 콜백 |
+| [onError](#onerror) | 오류 콜백. |
 
-### 회의룸 이벤트 콜백
+### 회의 방 이벤트 콜백
 
 | API                                         | 설명                   |
 | ------------------------------------------- | ---------------------- |
-| [onRoomDestroy](#onroomdestroy)           | 회의 방 폐기 콜백 |
-| [onNetworkQuality](#onnetworkquality)     | 네트워크 상태 콜백         |
-| [onUserVolumeUpdate](#onuservolumeupdate) | 사용자 통화 음량 콜백     |
+| [onRoomDestroy](#onroomdestroy)           | 회의 방 폐기 콜백. |
+| [onNetworkQuality](#onnetworkquality)     | 네트워크 상태 콜백.         |
+| [onUserVolumeUpdate](#onuservolumeupdate) | 사용자 통화 볼륨 콜백.     |
 
-### 참여자 입장/퇴장 이벤트 콜백
+### 참석자 입장/퇴장 이벤트 콜백
 
 | API                                   | 설명                 |
 | ------------------------------------- | -------------------- |
-| [onUserEnterRoom](#onuserenterroom) | 새로운 참여자 입장 알림 수신 |
-| [onUserLeaveRoom](#onuserleaveroom) | 참여자 퇴장 알림 수신   |
+| [onUserEnterRoom](#onuserenterroom) | 새로운 참석자 입장 알림 수신. |
+| [onUserLeaveRoom](#onuserleaveroom) | 참석자 퇴장 알림 수신.   |
 
-### 참여자 멀티미디어 이벤트 콜백
+### 참석자 멀티미디어 이벤트 콜백
 
 | API                                             | 설명                        |
 | ----------------------------------------------- | --------------------------- |
-| [onUserVideoAvailable](#onuservideoavailable) | 참여자 카메라 On/Off 알림 |
-| [onUserAudioAvailable](#onuseraudioavailable) | 참여자 마이크 On/Off 알림 |
+| [onUserVideoAvailable](#onuservideoavailable) | 참석자 카메라 On/Off 알림. |
+| [onUserAudioAvailable](#onuseraudioavailable) | 참석자 마이크 On/Off 알림. |
 
 ### 녹화 이벤트 콜백
 
 | API                                                 | 설명           |
 | --------------------------------------------------- | -------------- |
-| [onScreenCaptureStarted](#onscreencapturestarted) | 녹화 시작 알림 |
-| [onScreenCapturePaused](#onscreencapturepaused)   | 녹화 일시 정지 콜백 |
-| [onScreenCaptureResumed](#onscreencaptureresumed) | 녹화 재개 콜백 |
-| [onScreenCaptureStoped](#onscreencapturestoped)   | 녹화 중지 콜백 |
+| [onScreenCaptureStarted](#onscreencapturestarted) | 녹화 시작 알림. |
+| [onScreenCapturePaused](#onscreencapturepaused)   | 녹화 일시 정지 콜백. |
+| [onScreenCaptureResumed](#onscreencaptureresumed) | 녹화 재개 콜백. |
+| [onScreenCaptureStoped](#onscreencapturestoped)   | 녹화 중지 콜백. |
 
 ### 메시지 이벤트 콜백
 
 | API                                           | 설명             |
 | --------------------------------------------- | ---------------- |
-| [onRecvRoomTextMsg](#onrecvroomtextmsg)     | 텍스트 메시지를 수신합니다.   |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | 사용자 정의 메시지를 수신합니다. |
+| [onRecvRoomTextMsg](#onrecvroomtextmsg)     | 텍스트 메시지 수신.   |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | 사용자 정의 메시지 수신. |
 
 ### 녹화 이벤트 콜백
 
 | API                                                 | 설명           |
 | --------------------------------------------------- | -------------- |
-| [onScreenCaptureStarted](#onscreencapturestarted) | 녹화 시작 알림 |
-| [onScreenCapturePaused](#onscreencapturepaused)   | 녹화 일시 정지 콜백 |
-| [onScreenCaptureResumed](#onscreencaptureresumed) | 녹화 재개 콜백 |
-| [onScreenCaptureStoped](#onscreencapturestoped)   | 녹화 중지 콜백 |
+| [onScreenCaptureStarted](#onscreencapturestarted) | 녹화 시작 알림. |
+| [onScreenCapturePaused](#onscreencapturepaused)   | 녹화 일시 정지 콜백. |
+| [onScreenCaptureResumed](#onscreencaptureresumed) | 녹화 재개 콜백. |
+| [onScreenCaptureStoped](#onscreencapturestoped)   | 녹화 중지 콜백. |
 
 ## TRTCMeetingDef API 개요
 
@@ -160,20 +160,20 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 속성                                    | 설명                                   |
 | --------------------------------------- | -------------------------------------- |
-| [userId](#userid)       | 사용자 ID           |
-| [userName](#username)   | 사용자 이름(닉네임) |
-| [avatarURL](#avatarurl) | 사용자 프로필 사진 URL      |
-| [isVideoAvailable](#isvideoavailable) | 사용자 비디오 On/Off 여부                   |
-| [isAudioAvailable](#isaudioavailable) | 사용자 오디오 On/Off 여부                     |
-| [isMuteVideo](#ismutevideo)           | 사용자의 화면 정지 여부(해당 사용자의 비디오 재생하지 않음) |
-| [isMuteAudio](#ismuteaudio)           | 사용자의 오디오 음소거 여부(해당 사용자의 오디오 재생하지 않음 |
+| [userId](#userid)       | 사용자 ID.           |
+| [userName](#username)   | 사용자 이름(닉네임). |
+| [avatarURL](#avatarurl) | 사용자 프로필 사진 URL.      |
+| [isVideoAvailable](#isvideoavailable) | 사용자 비디오 On/Off 여부.                   |
+| [isAudioAvailable](#isaudioavailable) | 사용자 오디오 On/Off 여부.                     |
+| [isMuteVideo](#ismutevideo)           | 사용자의 화면 정지 여부(해당 사용자의 비디오 재생하지 않음). |
+| [isMuteAudio](#ismuteaudio)           | 사용자의 오디오 음소거 여부(해당 사용자의 오디오 재생하지 않음). |
 
 
 ## SDK 기본 함수
 
 ### sharedInstance
 
-[TRTCMeeting](https://intl.cloud.tencent.com/document/product/647/37284) 단일 항목 객체를 가져옵니다.
+[TRTCMeeting](https://intl.cloud.tencent.com/document/product/647/37284) 싱글톤 객체를 가져옵니다.
 
 ```objective-c
 + (instancetype)sharedInstance;
@@ -199,7 +199,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 ### login
 
-로그인.
+로그인합니다.
 
 ```objective-c
 - (void)login:(UInt32)sdkAppId userId:(NSString *)userId userSig:(NSString *)userSig callback:(TRTCMeetingCallback)callback;
@@ -209,14 +209,14 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수     | 유형                | 의미                                                         |
 | -------- | ------------------- | ------------------------------------------------------------ |
-| sdkAppId | UInt32              | TRTC 콘솔>[애플리케이션 관리(https://console.cloud.tencent.com/trtc/app)>애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다. |
-| userId   | NSString            | 현재 사용자 ID, 문자열 유형은 영어 알파벳(a~z, A~Z), 숫자(0~9), 대시부호(-), 언더바(_)만 허용됩니다. |
-| userSig  | NSString            | Tencent Cloud가 설계한 일종의 보안 서명으로, 취득 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참조하십시오. |
+| sdkAppId | UInt32              | TRTC 콘솔 >[[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)]> 애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다. |
+| userId   | NSString            | 현재 사용자 ID, 문자열 유형은 영어 알파벳(a-z, A-Z), 숫자(0-9), 대시부호(-), 언더바(_)만 허용됩니다. |
+| userSig  | NSString            | Tencent Cloud가 설계한 일종의 보안 서명으로, 가져오는 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
 | callback | TRTCMeetingCallback | 로그인 콜백이며, 성공 시 code는 0입니다.                                  |
 
 ### logout
 
-로그아웃.
+로그아웃합니다.
 
 ```objective-c
 - (void)logout:(TRTCMeetingCallback)callback;
@@ -230,7 +230,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 ### setSelfProfile
 
-개인 정보 수정.
+개인 정보를 수정합니다.
 
 ```objective-c
 - (void)setSelfProfile:(NSString *)userName avatarURL:(NSString *)avatarURL callback:(TRTCMeetingCallback)callback;
@@ -238,9 +238,9 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수      | 유형                | 의미                                      |
 | --------- | ------------------- | ----------------------------------------- |
-| userName  | NSString            | 사용자 닉네임                                |
-| avatarURL | NSString            | 사용자 프로필 사진                                |
-| callback  | TRTCMeetingCallback | 사용자 정보 설정 결과를 콜백하며, 성공 시 code는 0입니다. |
+| userName  | NSString            | 사용자 닉네임.                                |
+| avatarURL | NSString            | 사용자 프로필 사진.                                |
+| callback  | TRTCMeetingCallback | 사용자 정보 설정 결과 콜백이며, 성공 시 code는 0입니다. |
 
 
 
@@ -248,7 +248,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 ### createMeeting
 
-회의 생성(주최자 호출).
+회의를 생성합니다(호스트 호출).
 
 ```objective-c
 - (void)createMeeting:(UInt32)roomId callback:(TRTCMeetingCallback)callback;
@@ -258,18 +258,18 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수     | 유형                | 의미                                   |
 | -------- | ------------------- | -------------------------------------- |
-| roomId   | UInt32              | 방 식별 번호이며, 귀사에서 할당하고 통합 관리합니다.  |
+| roomId   | UInt32              | 방 식별 번호이며, 귀하가 직접 할당하고 통합 관리합니다.  |
 | callback | TRTCMeetingCallback | 방 생성 결과 콜백이며, 성공 시 code는 0입니다.  |
 
-주최자 정상 호출 프로세스는 다음과 같습니다. 
+호스트 정상 호출 프로세스는 다음과 같습니다. 
 
-1. [주최자]가 `createMeeting()`을 호출하여 회의를 생성하면, 회의 방 생성 여부가 `TRTCMeetingCallback`을 통해 주최자에게 통지됩니다.
-2. [주최자]가 `startCameraPreview()`를 호출하여 카메라 미리보기를 시작할 때 뷰티 필터 매개변수를 조정할 수 있습니다. 
-3. [주최자]가 `startMicrophone()`을 호출해 마이크 수집을 시작합니다.
+1. [호스트]가 `createMeeting()`을 호출하여 회의를 생성하면, 회의 방 생성 여부가 `TRTCMeetingCallback`을 통해 호스트에게 통지됩니다.
+2. [호스트]가 `startCameraPreview()`를 호출하여 카메라 미리보기를 시작할 때 뷰티 필터 매개변수를 조정할 수 있습니다. 
+3. [호스트]가 `startMicrophone()`을 호출해 마이크 수집을 시작합니다.
 
 ### destroyMeeting
 
-회의 방 폐기(주최자 호출). 주최자는 회의 생성 후 해당 함수를 호출해 회의를 폐기할 수 있습니다.
+회의 방을 폐기합니다(호스트 호출). 호스트는 회의 생성 후 해당 함수를 호출해 회의를 폐기할 수 있습니다.
 
 ```objective-c
 - (void)destroyMeeting:(UInt32)roomId callback:(TRTCMeetingCallback)callback;
@@ -279,12 +279,12 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수     | 유형                | 의미                                   |
 | -------- | ------------------- | -------------------------------------- |
-| roomId   | UInt32              | 방 식별 번호이며, 귀사에서 할당하고 통합 관리합니다.  |
+| roomId   | UInt32              | 방 식별 번호이며, 귀하가 직접 할당하고 통합 관리합니다.  |
 | callback | TRTCMeetingCallback | 방 생성 결과 콜백이며, 성공 시 code는 0입니다.  |
 
 ### enterMeeting
 
-회의 방 입장(참여자 호출.)
+회의 방에 입장합니다(참석자 호출).
 
 ```objective-c
 - (void)enterMeeting:(UInt32)roomId callback:(TRTCMeetingCallback)callback;
@@ -294,17 +294,17 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수     | 유형                | 의미                                   |
 | -------- | ------------------- | -------------------------------------- |
-| roomId   | UInt32              | 방 식별 번호이며, 귀사에서 할당하고 통합 관리합니다.  |
+| roomId   | UInt32              | 방 식별 번호이며, 귀하가 직접 할당하고 통합 관리합니다. |
 | callback | TRTCMeetingCallback | 방 입장 결과 콜백이며, 성공 시 code는 0입니다.  |
 
-참여자의 회의 입장 정상 호출 프로세스는 다음과 같습니다. 
-1. [참여자]가 `enterMeeting`을 호출하고 roomId를 전달하면 회의 방에 입장합니다.
-2. [참여자]가 `startCameraPreview()`를 호출해 카메라 미리보기를 시작하고 `startMicrophone()`을 호출해 마이크 수집을 시작합니다.
-3. [참여자]가 `onUserVideoAvailable` 이벤트를 수신하면 `startRemoteView(userId)`를 호출하고 참여자 userId를 전달하면 재생이 시작됩니다.
+참석자의 회의 입장 정상 호출 프로세스는 다음과 같습니다. 
+1. [참석자]가 `enterMeeting`을 호출하고 roomId를 전달하면 회의 방에 입장합니다.
+2. [참석자]가 `startCameraPreview()`를 호출해 카메라 미리보기를 시작하고 `startMicrophone()`을 호출해 마이크 수집을 시작합니다.
+3. [참석자]가 `onUserVideoAvailable` 이벤트를 수신하면 `startRemoteView(userId)`를 호출하고 참석자 userId를 전달하면 재생이 시작됩니다.
    
 ### leaveMeeting
 
-회의 방 퇴장(참여자 호출)
+회의 방에서 퇴장합니다(참석자 호출).
 
 ```objective-c
 - (void)leaveMeeting:(TRTCMeetingCallback)callback;
@@ -322,7 +322,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 ### getUserInfoList
 
-방 안의 모든 참여자 리스트를 획득합니다. enterMeeting() 성공 후 호출해야만 유효합니다.
+방 안의 모든 참석자 리스트를 가져옵니다. enterMeeting() 성공 후 호출해야만 유효합니다.
 
 ```objective-c
 - (void)getUserInfoList:(TRTCMeetingUserListCallback)callback;
@@ -332,11 +332,11 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수     | 유형                        | 의미               |
 | -------- | --------------------------- | ------------------ |
-| callback | TRTCMeetingUserListCallback | 사용자 상세 정보 콜백 |
+| callback | TRTCMeetingUserListCallback | 사용자 상세 정보 콜백. |
 
 ### getUserInfo
 
-방 안에 있는 특정 참여자 상세 정보를 획득합니다. enterMeeting() 성공 후 호출해야만 유효합니다.
+방 안의 지정된 참석자 상세 정보를 가져옵니다. enterMeeting() 성공 후 호출해야만 유효합니다.
 
 ```objective-c
 - (void)getUserInfo:(NSString *)userId callback:(TRTCMeetingUserListCallback)callback;
@@ -346,12 +346,12 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수     | 유형                        | 의미               |
 | -------- | --------------------------- | ----------- |
-| userId | NSString | 원격 사용자 ID                   |
-| callback | TRTCMeetingUserListCallback | 사용자 상세 정보 콜백 |
+| userId | NSString | 원격 사용자 ID.                   |
+| callback | TRTCMeetingUserListCallback | 사용자 상세 정보 콜백. |
 
 ### startRemoteView
 
-특정 참여자의 원격 비디오 화면을 재생합니다. `onUserVideoAvailable()`가 true로 콜백되면 해당 인터페이스를 호출합니다.
+지정된 참석자의 원격 비디오 화면을 재생합니다. `onUserVideoAvailable()`이 true로 콜백되면 해당 인터페이스를 호출합니다.
 
 ```objective-c
 - (void)startRemoteView:(NSString *)userId view:(UIView *)view callback:(TRTCMeetingCallback)callback;
@@ -361,13 +361,13 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수     | 유형                | 의미                       |
 | -------- | ------------------- | -------------------------- |
-| userId   | NSString            | 시청하는 사용자 ID         |
-| view     | UIView              | 비디오 화면 view 컨트롤러 |
-| callback | TRTCMeetingCallback | 작업 콜백                 |
+| userId   | NSString            | 시청할 사용자 ID.         |
+| view     | UIView              | 비디오 화면 view 컨트롤러. |
+| callback | TRTCMeetingCallback | 작업 콜백.                 |
 
 ### stopRemoteView
 
-원격 비디오 화면을 렌더링을 중단합니다. `onUserVideoAvailable()`이 false로 콜백되면 해당 인터페이스를 호출합니다.
+원격 비디오 화면 렌더링을 중지합니다. `onUserVideoAvailable()`이 false로 콜백되면 해당 인터페이스를 호출합니다.
 
 ```objective-c
 - (void)stopRemoteView:(NSString *)userId callback:(TRTCMeetingCallback)callback;
@@ -377,8 +377,8 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수     | 유형                | 의미             |
 | -------- | ------------------- | ---------------- |
-| userId   | NSString            | 재생을 중지할 사용자 ID |
-| callback | TRTCMeetingCallback | 작업 콜백       |
+| userId   | NSString            | 재생을 중지할 사용자 ID. |
+| callback | TRTCMeetingCallback | 작업 콜백.       |
 
 ### setRemoteViewFillMode
 
@@ -392,8 +392,8 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수     | 유형              | 의미                                                         |
 | -------- | ----------------- | ------------------------------------------------------------ |
-| userId   | NSString          | 사용자 ID                                                    |
-| fillMode | TRTCVideoFillMode | 화면 꽉 채우기 또는 원본에 맞추기 모드가 있으며, 기본값은 화면 꽉 채우기(TRTCVideoFillMode_Fill)입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff)를 참조하십시오. |
+| userId   | NSString          | 사용자 ID.                                                    |
+| fillMode | TRTCVideoFillMode | 채우기 또는 맞추기 모드, 기본값: 채우기(TRTCVideoFillMode_Fill), 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff)를 참고하십시오. |
 
 ### setRemoteViewRotation
 
@@ -407,8 +407,8 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수     | 유형      | 의미                                                         |
 | -------- | --------- | ------------------------------------------------------------ |
-| userId   | NSString  | 상대방 사용자 ID                                              |
-| rotation | NSInteger | 시계 방향 회전 각도이며, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90)를 참조하십시오. |
+| userId   | NSString  | 상대방 사용자 ID.                                              |
+| rotation | NSInteger | 시계 방향 회전, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90)를 참고하십시오. |
 
 ### muteRemoteAudio
 
@@ -422,12 +422,12 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수   | 유형     | 의미                              |
 | ------ | -------- | --------------------------------- |
-| userId | NSString | 원격 사용자 ID                   |
-| mute   | BOOL     | true: 음소거 켜기, false: 음소거 끄기 |
+| userId | NSString | 원격 사용자 ID.                   |
+| mute   | BOOL     | true: 음소거 켜기, false: 음소거 끄기. |
 
 ### muteRemoteVideoStream
 
-특정 사용자의 비디오 스트림을 차단합니다.
+지정된 참석자의 비디오 스트림을 차단합니다.
 
 ```objective-c
 - (void)muteRemoteVideoStream:(NSString *)userId mute:(BOOL)mute;
@@ -437,8 +437,8 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수   | 유형     | 의미                          |
 | ------ | -------- | ----------------------------- |
-| userId | NSString | 원격 사용자 ID               |
-| mute   | BOOL     | true: 차단, false: 차단 해제 |
+| userId | NSString | 원격 사용자 ID.               |
+| mute   | BOOL     | true: 차단, false: 차단 해제. |
 
 
 
@@ -456,12 +456,12 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수    | 유형   | 의미                                  |
 | ------- | ------ | ------------------------------------- |
-| isFront | BOOL   | true: 전면 카메라, false: 후면 카메라 |
-| view    | UIView | 비디오 화면 컨트롤러                  |
+| isFront | BOOL   | true: 전면 카메라, false: 후면 카메라. |
+| view    | UIView | 비디오 화면 컨트롤러.                  |
 
 ### stopCameraPreview
 
-로컬 비디오 수집 및 미리보기를 종료합니다.
+로컬 비디오 수집 및 미리보기를 중지합니다.
 
 ```objective-c
 - (void)stopCameraPreview;
@@ -479,7 +479,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수    | 유형 | 의미                                                  |
 | ------- | ---- | ----------------------------------------------------- |
-| isFront | BOOL | 전면/후면 카메라를 전환합니다. true: 전면 카메라, false: 후면 카메라 |
+| isFront | BOOL | 전면/후면 카메라를 전환합니다. true: 전면 카메라, false: 후면 카메라. |
 
 ### setVideoResolution
 
@@ -493,7 +493,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수       | 유형                | 의미                                                         |
 | ---------- | ------------------- | ------------------------------------------------------------ |
-| resolution | TRTCVideoResolution | 비디오 해상도이며, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5)를 참조하십시오. |
+| resolution | TRTCVideoResolution | 비디오 해상도, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5)를 참고하십시오. |
 
 ### setVideoFps
 
@@ -507,13 +507,13 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수 | 유형 | 의미           |
 | ---- | ---- | -------------- |
-| fps  | int  | 비디오에서 수집하는 프레임 레이트 |
+| fps  | int  | 비디오에서 수집하는 프레임 레이트. |
 
->? [권장 설정값] 15fps 또는 20fps를 권장합니다. 5fps는 랙이 심하게 발생하며, 10fps 이하는 약간의 랙이 발생하고, 20fps 이상은 너무 높습니다(영화 프레임 레이트가 24fps).
+>? [권장 설정값] 15fps 또는 20fps를 권장합니다. 5fps는 랙이 심하게 발생하며, 10fps 이하는 약간의 랙이 발생하고, 20fps 이상은 너무 높습니다(영화 프레임 레이트 24fps).
 
 ### setVideoBitrate
 
-비트레이트를 설정합니다.
+비트 레이트를 설정합니다.
 
 ```objective-c
 - (void)setVideoBitrate:(int)bitrate;
@@ -523,9 +523,9 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수    | 유형 | 의미                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| bitrate | int  | 비트 레이트입니다. SDK는 타깃 비트레이트에 따라 인코딩하며, 네트워크가 불안정한 상태에서만 자체적으로 비디오 비트레이트를 줄입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)를 참조하십시오. |
+| bitrate | int  | 비트 레이트, SDK는 타깃 비트 레이트에 따라 인코딩하며, 네트워크가 불안정한 상태에서만 자체적으로 비디오 비트 레이트를 줄입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)를 참고하십시오. |
 
->?[권장 설정값] TRTCVideoResolution의 각 단계별 권장 최적 비트레이트를 참고하고, 이를 기반으로 적합하게 높일 수 있습니다. 예를 들어 TRTC_VIDEO_RESOLUTION_1280_720의 권장 비트레이트는 1200kbps이지만, 1500kbps로 설정하여 더 선명한 화면을 볼 수도 있습니다.
+>?[권장 설정값] TRTCVideoResolution의 각 단계별 권장 최적 비트 레이트를 참고하고, 이를 기반으로 적합하게 높일 수 있습니다. 예를 들어 TRTC_VIDEO_RESOLUTION_1280_720의 권장 비트 레이트는 1200kbps이지만, 1500kbps로 설정하여 더 선명한 화면을 볼 수도 있습니다.
 
 ### setLocalViewMirror
 
@@ -539,7 +539,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수 | 유형                     | 의미                                                         |
 | ---- | ------------------------ | ------------------------------------------------------------ |
-| type | TRTCLocalVideoMirrorType | 화면 모드로, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)를 참조하십시오. |
+| type | TRTCLocalVideoMirrorType | 이미지 모드. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)를 참고하십시오. |
 
 
 
@@ -555,7 +555,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 ### stopMicrophone
 
-마이크 수집을 종료합니다.
+마이크 수집을 중지합니다.
 
 ```objective-c
 - (void)stopMicrophone;
@@ -573,7 +573,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수    | 유형             | 의미                                                         |
 | ------- | ---------------- | ------------------------------------------------------------ |
-| quality | TRTCAudioQuality | 오디오의 품질로, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53)를 참조하십시오. |
+| quality | TRTCAudioQuality | 오디오 음질. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53)를 참고하십시오. |
 
 ### muteLocalAudio
 
@@ -587,7 +587,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수 | 유형 | 의미                                                         |
 | ---- | ---- | ------------------------------------------------------------ |
-| mute | BOOL | 오디오를 음소거/음소거 취소합니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9)를 참조하십시오. |
+| mute | BOOL | 오디오 음소거/음소거 취소. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9)를 참고하십시오. |
 
 ### setSpeaker
 
@@ -601,11 +601,11 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수       | 유형 | 의미                         |
 | ---------- | ---- | ---------------------------- |
-| useSpeaker | BOOL | true：: 스피커 ；false：: 헤드셋 |
+| useSpeaker | BOOL | true: 스피커, false: 헤드셋. |
 
 ### setAudioCaptureVolume
 
-마이크의 수집 음량을 설정합니다.
+마이크 수집 볼륨을 설정합니다.
 
 ```objective-c
 - (void)setAudioCaptureVolume:(NSInteger)volume;
@@ -615,11 +615,11 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수   | 유형      | 의미                        |
 | ------ | --------- | --------------------------- |
-| volume | NSInteger | 수집 음량으로, 0-100으로 설정할 수 있으며 기본 값은 100입니다. |
+| volume | NSInteger | 수집 볼륨, 0-100으로 설정할 수 있으며 기본 값은 100입니다. |
 
 ### setAudioPlayoutVolume
 
-재생 음량을 설정합니다.
+재생 볼륨을 설정합니다.
 
 ```objective-c
 - (void)setAudioPlayoutVolume:(NSInteger)volume;
@@ -629,7 +629,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수   | 유형      | 의미                        |
 | ------ | --------- | --------------------------- |
-| volume | NSInteger | 재생 음량으로, 0-100으로 설정할 수 있으며 기본 값은 100입니다. |
+| volume | NSInteger | 재생 볼륨, 0-100으로 설정할 수 있으며 기본 값은 100입니다. |
 
 ### startFileDumping
 
@@ -643,13 +643,13 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수   | 유형                     | 의미                                                         |
 | ------ | ------------------------ | ------------------------------------------------------------ |
-| params | TRTCAudioRecordingParams | 녹음 매개변수 입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams)를 참조하십시오. |
+| params | TRTCAudioRecordingParams | 녹음 매개변수. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams)를 참고하십시오. |
 
->? 해당 방법으로 호출하면 SDK에서 통화 중 모든 오디오(로컬 오디오, 원격 오디오, BGM 등 포함)를 하나의 파일로 녹음합니다 .방 입장 여부에 상관 없이 해당 인터페이스를 호출하면 모두 적용되며, exitMeeting 호출 시 녹음 중인 경우 녹음은 자동으로 중단됩니다.
+>? 해당 방법으로 호출하면 SDK에서 통화 중 모든 오디오(로컬 오디오, 원격 오디오, BGM 등 포함)를 하나의 파일로 녹음합니다. 방 입장 여부에 상관 없이 해당 인터페이스를 호출하면 모두 적용되며, exitMeeting 호출 시 녹음 중인 경우 녹음은 자동으로 중지됩니다.
 
 ### stopFileDumping
 
-녹음을 종료합니다.
+녹음을 중지합니다.
 
 ```objective-c
 - (void)stopFileDumping;
@@ -657,7 +657,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 ### enableAudioEvaluation
 
-음량 크기 알림을 활성화합니다.
+볼륨 크기 알림을 활성화합니다.
 
 ```objective-c
 - (void)enableAudioEvaluation:(BOOL)enable;
@@ -667,9 +667,9 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수   | 유형 | 의미                      |
 | ------ | ---- | ------------------------- |
-| enable | BOOL | true: 활성화, false: 비활성화 |
+| enable | BOOL | true: 활성화, false: 비활성화. |
 
->? 활성화하면 음량 크기값에 대한 SDK의 평가를 onUserVolumeUpdate에서 획득합니다.
+>? 활성화하면 볼륨 크기값에 대한 SDK의 평가를 onUserVolumeUpdate에서 가져옵니다.
 
 
 
@@ -689,7 +689,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 | ------ | ----------------- | ------------------------------------------------------------ |
 | params | TRTCVideoEncParam | 화면 공유 설정 시 인코딩 매개변수입니다. 위의 권장 설정을 참고하십시오. encParams가 nil인 경우, startScreenCapture 호출 전 인코딩 매개변수 설정이 적용됩니다. |
 
->? 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff)를 참조하십시오.
+>? 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff)를 참고하십시오.
 
 ### stopScreenCapture
 
@@ -721,17 +721,17 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 ### getLiveBroadcastingURL
 
-CDN 공유 링크를 획득합니다.
+CDN 공유 링크를 가져옵니다.
 
 ```objective-c
 - (NSString *)getLiveBroadcastingURL;
 ```
 
-반환값 리스트
+반환값 리스트:
 
 | 반환값 | 유형     | 의미          |
 | ------ | -------- | ------------- |
-| url    | NSString | CDN 공유 링크 |
+| url    | NSString | CDN 공유 링크. |
 
 
 
@@ -747,8 +747,8 @@ CDN 공유 링크를 획득합니다.
 
 뷰티 필터 관리를 통해 다음 기능을 사용할 수 있습니다.
 
-- “뷰티 필터 스타일”, “미백”, “안색 보정”, “눈 크게”，“갸름하게”，“V라인”，“턱 조정”, “얼굴 짧게”, “코 작게”, “반짝이는 눈”, “치아 미백”, “아래 눈꺼풀 조정”, “주름 제거”, “팔자 주름 제거” 등 뷰티 효과를 설정할 수 있습니다.
-- “헤어 라인”, “눈 간격”, “눈 각도”, “입 모양”, “콧볼”, “코 위치”, “입술 두께”, “얼굴형”을 조정할 수 있습니다.
+- '뷰티 필터 스타일', '미백', '안색 보정', '눈 크게', '갸름하게', 'V라인', '턱 조정', '얼굴 짧게', '코 작게', '반짝이는 눈', '치아 미백', '아래 눈꺼풀 조정', '주름 제거', '팔자 주름 제거' 등 뷰티 효과를 설정할 수 있습니다.
+- '헤어 라인', '눈 간격', '눈 각도', '입 모양', '콧볼', '코 위치', '입술 두께', '얼굴형'을 조정할 수 있습니다.
 - 얼굴 효과(소재) 등 동적 효과를 설정할 수 있습니다.
 - 메이크업 효과를 추가합니다.
 - 손 동작을 인식합니다.
@@ -769,8 +769,8 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수     | 유형                | 의미           |
 | -------- | ------------------- | -------------- |
-| message  | NSString            | 텍스트 메시지     |
-| callback | TRTCMeetingCallback | 발송 결과 콜백 |
+| message  | NSString            | 텍스트 메시지.     |
+| callback | TRTCMeetingCallback | 발송 결과 콜백. |
 
 ### sendRoomCustomMsg
 
@@ -784,9 +784,9 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수     | 유형                | 의미                                               |
 | -------- | ------------------- | -------------------------------------------------- |
-| cmd      | NSString            | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는데 사용합니다. |
-| message  | NSString            | 텍스트 메시지                                         |
-| callback | TRTCMeetingCallback | 발송 결과 콜백                                     |
+| cmd      | NSString            | 명령어, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는데 사용합니다. |
+| message  | NSString            | 텍스트 메시지.                                         |
+| callback | TRTCMeetingCallback | 발송 결과 콜백.                                     |
 
 
 
@@ -796,7 +796,7 @@ CDN 공유 링크를 획득합니다.
 
 ### onError
 
->?SDK가 복구할 수 없는 오류는 반드시 모니터링하고 상황에 따라 적절한 인터페이스를 사용자에게 제시해야 합니다.
+>?SDK가 복구할 수 없는 오류는 반드시 수신하고 상황에 따라 적절한 인터페이스를 사용자에게 제시해야 합니다.
 
 ```objective-c
 - (void)onError:(NSInteger)code message:(NSString* _Nullable)message;
@@ -806,8 +806,8 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수    | 유형      | 의미       |
 | ------- | --------- | ---------- |
-| code    | NSInteger | 에러 코드   |
-| message | NSString  | 오류 정보 |
+| code    | NSInteger | 오류 코드.   |
+| message | NSString  | 오류 정보. |
 
 
 
@@ -815,7 +815,7 @@ CDN 공유 링크를 획득합니다.
 
 ### onRoomDestroy
 
-방 폐기 콜백입니다. 주최자가 퇴장하면 방 안에 있는 모든 사용자는 해당 알림을 받게 됩니다.
+방 폐기 콜백. 호스트가 퇴장하면 방 안에 있는 모든 사용자는 해당 알림을 받게 됩니다.
 
 ```objective-c
 - (void)onRoomDestroy:(NSString *)roomId;
@@ -825,11 +825,11 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수   | 유형     | 의미      |
 | ------ | -------- | --------- |
-| roomId | NSString | 방 ID |
+| roomId | NSString | 방 ID. |
 
 ### onNetworkQuality
 
-네트워크 상태 콜백입니다.
+네트워크 상태 콜백.
 
 ```objective-c
 - (void)onNetworkQuality:(TRTCQualityInfo *)localQuality
@@ -840,14 +840,14 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수          | 유형                       | 의미           |
 | ------------- | -------------------------- | -------------- |
-| localQuality  | TRTCQualityInfo            | 업스트림 네트워크 품질 |
-| remoteQuality | NSArray&lt;TRTCQualityInfo *&gt; | 다운스트림 네트워크 품질 |
+| localQuality  | TRTCQualityInfo            | 업스트림 네트워크 품질. |
+| remoteQuality | NSArray&lt;TRTCQualityInfo *&gt; | 다운스트림 네트워크 품질. |
 
->? 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28)를 참조하십시오.
+>? 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28)를 참고하십시오.
 
 ### onUserVolumeUpdate
 
-음량 크기 알림을 활성화하여 모든 참여자의 음량 크기를 통지합니다.
+볼륨 크기 알림을 활성화하여 모든 참석자의 볼륨 크기를 통지합니다.
 
 ```objective-c
 - (void)onUserVolumeUpdate:(NSString *)userId volume:(NSInteger)volume;
@@ -857,16 +857,16 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수   | 유형      | 의미                  |
 | ------ | --------- | --------------------- |
-| userId | NSString  | 사용자 ID            |
-| volume | NSInteger | 음량 크기이며, 0-100으로 설정할 수 있습니다. |
+| userId | NSString  | 사용자 ID.            |
+| volume | NSInteger | 볼륨 크기, 0-100으로 설정할 수 있습니다. |
 
 
 
-## 참여자 입장/퇴장 이벤트 콜백
+## 참석자 입장/퇴장 이벤트 콜백
 
 ### onUserEnterRoom
 
-새로운 참여자 입장을 통지합니다.
+새로운 참석자 입장을 통지합니다.
 
 ```objective-c
 - (void)onUserEnterRoom:(NSString *)userId;
@@ -876,12 +876,12 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수   | 유형     | 의미            |
 | ------ | -------- | --------------- |
-| userId | NSString | 새로 방에 입장한 사용자 ID |
+| userId | NSString | 새로 방에 입장한 참석자의 사용자 ID. |
 
 
 ### onUserLeaveRoom
 
-참여자의 퇴장을 통지합니다.
+참석자의 퇴장을 통지합니다.
 
 ```objective-c
 - (void)onUserLeaveRoom:(NSString *)userId;
@@ -891,15 +891,15 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수   | 유형     | 의미          |
 | ------ | -------- | ------------- |
-| userId | NSString  | 퇴장한 참여자의 사용자 ID |
+| userId | NSString | 퇴장한 참석자의 사용자 ID. |
 
 
 
-## 참여자 멀티미디어 이벤트 콜백
+## 참석자 멀티미디어 이벤트 콜백
 
 ### onUserVideoAvailable
 
-참여자의 카메라 On/Off를 통지합니다.
+참석자의 카메라 On/Off를 통지합니다.
 
 ```objective-c
 - (void)onUserVideoAvailable:(NSString *)userId available:(BOOL)available;
@@ -909,12 +909,12 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수      | 유형     | 의미                                          |
 | --------- | -------- | --------------------------------------------- |
-| userId    | NSString | 사용자 ID                                    |
-| available | BOOL     | true: 사용자가 카메라 켬, false: 사용자가 카메라 끔 |
+| userId    | NSString | 사용자 ID.                                    |
+| available | BOOL     | true: 사용자가 카메라를 켬, false: 사용자가 카메라를 끔. |
 
 ### onUserAudioAvailable
 
-참여자의 마이크 On/Off를 통지합니다.
+참석자의 마이크 On/Off를 통지합니다.
 
 ```objective-c
 - (void)onUserAudioAvailable:(NSString *)userId available:(BOOL)available;
@@ -924,8 +924,8 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수      | 유형     | 의미                                          |
 | --------- | -------- | --------------------------------------------- |
-| userId    | NSString | 사용자 ID                                    |
-| available | BOOL     | true: 사용자가 마이크 켬, false: 사용자가 마이크 끔 |
+| userId    | NSString | 사용자 ID.                                    |
+| available | BOOL     | true: 사용자가 마이크를 켬, false: 사용자가 마이크를 끔. |
 
    
 
@@ -943,8 +943,8 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수    | 유형                | 의미             |
 | ------- | ------------------- | ---------------- |
-| message | NSString            | 텍스트 메시지       |
-| user    | TRTCMeetingUserInfo | 발신자 사용자 정보 |
+| message | NSString            | 텍스트 메시지.       |
+| userInfo | TRTCMeetingUserInfo | 발신자 사용자 정보. |
 
 ### onRecvRoomCustomMsg
 
@@ -956,11 +956,11 @@ CDN 공유 링크를 획득합니다.
 
 매개변수는 다음과 같습니다.
 
-| 매개변수    | 유형                | 의미                                               |
-| ------- | ------------------- | -------------------------------------------------- |
-| command | NSString            | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는데 사용합니다. |
-| message | NSString            | 텍스트 메시지                                         |
-| user    | TRTCMeetingUserInfo | 발신자 사용자 정보                                   |
+| 매개변수     | 유형                | 의미                                               |
+| -------- | ------------------- | -------------------------------------------------- |
+| cmd      | NSString            | 명령어, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는데 사용합니다. |
+| message  | NSString            | 텍스트 메시지.                                         |
+| userInfo | TRTCMeetingUserInfo | 발신자 사용자 정보.                                   |
 
 
 
@@ -986,7 +986,7 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수   | 유형 | 의미                                               |
 | ------ | ---- | -------------------------------------------------- |
-| reason | int  | 일시 정지 사유입니다. 0: 사용자가 일시 정지, 1: 화면 창을 볼 수 없어 일시 정지 |
+| reason | int  | 일시 정지 사유입니다. 0: 사용자가 일시 정지, 1: 화면 창을 볼 수 없어 일시 정지. |
 
 ### onScreenCaptureResumed
 
@@ -1014,7 +1014,7 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수   | 유형 | 의미                                                 |
 | ------ | ---- | ---------------------------------------------------- |
-| reason | int  | 중지 사유입니다. 0: 사용자가 중지, 1: 화면 창이 닫혀 중지됨  |
+| reason | int  | 중지 사유입니다. 0: 사용자가 중지, 1: 화면 창이 닫혀 중지됨. |
 
 
 
@@ -1024,7 +1024,7 @@ CDN 공유 링크를 획득합니다.
 
 ### userId
 
-사용자 ID
+사용자 ID.
 
 ```objective-c
 @property (nonatomic, strong) NSString *userId;
@@ -1032,7 +1032,7 @@ CDN 공유 링크를 획득합니다.
 
 ### userName
 
-사용자 이름(닉네임)
+사용자 이름(닉네임).
 
 ```objective-c
 @property (nonatomic, strong) NSString *userName;
@@ -1040,7 +1040,7 @@ CDN 공유 링크를 획득합니다.
 
 ### avatarURL
 
-사용자 프로필 사진 URL
+사용자 프로필 사진 URL.
 
 ```objective-c
 @property (nonatomic, strong) NSString *avatarURL;
@@ -1048,7 +1048,7 @@ CDN 공유 링크를 획득합니다.
 
 ### roomId
 
-방 번호
+방 번호.
 
 ```objective-c
 @property (nonatomic, assign) UInt32 roomId;
@@ -1056,7 +1056,7 @@ CDN 공유 링크를 획득합니다.
 
 ### isVideoAvailable
 
-사용자의 비디오 On/Off 여부
+사용자의 비디오 On/Off 여부.
 
 ```objective-c
 @property (nonatomic, assign) BOOL isVideoAvailable;
@@ -1064,7 +1064,7 @@ CDN 공유 링크를 획득합니다.
 
 ### isAudioAvailable
 
-사용자의 오디오 On/Off 여부
+사용자의 오디오 On/Off 여부.
 
 ```objective-c
 @property (nonatomic, assign) BOOL isAudioAvailable;
@@ -1072,7 +1072,7 @@ CDN 공유 링크를 획득합니다.
 
 ### isMuteVideo
 
-사용자의 화면 정지 여부(해당 사용자의 비디오 재생하지 않음)
+사용자의 화면 정지 여부(해당 사용자의 비디오 재생하지 않음).
 
 ```objective-c
 @property (nonatomic, assign) BOOL isMuteVideo;
@@ -1080,8 +1080,9 @@ CDN 공유 링크를 획득합니다.
 
 ### isMuteAudio
 
-사용자의 오디오 음소거 여부(해당 사용자의 오디오 재생하지 않음)
+사용자의 오디오 음소거 여부(해당 사용자의 오디오 재생하지 않음).
 
 ```objective-c
 @property (nonatomic, assign) BOOL isMuteAudio;
 ```
+
