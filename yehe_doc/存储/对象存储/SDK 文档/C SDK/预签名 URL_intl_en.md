@@ -35,8 +35,7 @@ int cos_gen_presigned_url(const cos_request_options_t *options,
 | object | Object name | String |
 | expire        | Validity time of the signature, in seconds                      | Int    |
 | method        | HTTP request method. Enumerated values: `HTTP_GET`, `HTTP_HEAD`, `HTTP_PUT`, `HTTP_POST`, `HTTP_DELETE` | Enum   |
-| presigned_url | The generated per-signed URL                  | String                      | String |
-
+| presigned_url | The generated per-signed URL                  | String                      | 
 #### Response description
 
 | Response | Description | Type |
