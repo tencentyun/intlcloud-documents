@@ -4,7 +4,7 @@ In scenarios such as flash sales and limited-time offers, a large number of user
 
 ### 1.2. How to use
 Hotspot update: the statement as shown below is used to frequently update a data object.
-Currently, this feature is only supported in TencentDB for MariaDB 5.7.17, which can be purchased on the [TencentDB for MariaDB instance purchase page](https://buy.cloud.tencent.com/mariadb).
+Currently, this feature is only supported in TencentDB for Percona 5.7.17, which can be purchased on the [TencentDB for MariaDB instance purchase page](https://buy.cloud.tencent.com/mariadb).
 ```
 UPDATE COMMIT_ON_SUCCESS ROLLBACK_ON_FAIL QUEUE_ON_PK 88 TARGET_AFFECT_ROW 1 table_name  SET k=k+1 WHERE id=88
 ```

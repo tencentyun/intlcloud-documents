@@ -125,7 +125,7 @@ response = client.list_objects(
 | NextMarker| IsTruncated가 true면 다음에 반환된 객체 리스트의 시작 위치 표시  | String  |
 | Name   | 버킷 이름은 BucketName-APPID로 구성  | String  |
 | IsTruncated   |  반환된 객체의 잘림 여부 표시  | String|
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 옵션|
+| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 
 |Contents |'ETag', 'StorageClass', 'Key', 'Owner', 'LastModified', 'Size' 등의 정보를 포함한 모든 객체 메타데이터가 담긴 리스트|List|
 |CommonPrefixes |Prefix로 시작하고 Delimiter로 끝나는 모든 객체를 동일한 클래스로 분류|List|
 
@@ -238,7 +238,7 @@ response = client.list_objects_versions(
 | NextVersionIdMarker | IsTruncated가 true면 다음에 반환된 객체 리스트의 VersionId 시작 위치 표시  | String  |
 | Name   | 버킷 이름은 BucketName-APPID로 구성  | String  |
 | IsTruncated   |  반환된 객체의 잘림 여부 표시  | String|
-| EncodingType   | 기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 옵션|
+| EncodingType   | 기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 
 |Version |'ETag', 'StorageClass', 'Key', 'VersionId', 'IsLatest', 'Owner', 'LastModified', 'Size' 등의 정보를 포함한 여러 버전의 객체 메타데이터가 담긴 리스트|List|
 |DeleteMarker|'Key', 'VersionId', 'IsLatest', 'Owner', 'LastModified' 등의 정보를 포함한 모든 delete marker 객체 메타데이터가 담긴 리스트|List|
 |CommonPrefixes |Prefix로 시작하고 Delimiter로 끝나는 모든 객체를 동일한 클래스로 분류|List|

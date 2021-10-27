@@ -173,7 +173,7 @@
 <td>Lowered disk pricing</td>
 <td>Disk prices are lowered in certain regions.</td>
 <td>2020-09-27</td>
-<td><a href="https://cloud.tencent.com/developer/article/1690897" target="_blank">Elasticsearch Service Price Reduction Notice</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/845/18376" target="_blank">Elasticsearch Service Price Reduction Notice</a></td></tr>
 </tbody></table>
 
 ## July 2020

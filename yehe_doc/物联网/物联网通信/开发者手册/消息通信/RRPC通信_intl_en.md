@@ -37,7 +37,7 @@ The sample completes device connection through the device-side [C-SDK](https://i
 
 #### Creating product and device
 
-Create an air conditioner product and an `airConditioner1` device as instructed in [Device Interconnection](https://intl.cloud.tencent.com/document/product/1105/41467).
+Create an air conditioner product and an `airConditioner1` device as instructed in [Device Interconnection](https://intl.cloud.tencent.com/document/product/1105/42335).
 
 ### Compiling and running demo (with key-authenticated device as example)
 

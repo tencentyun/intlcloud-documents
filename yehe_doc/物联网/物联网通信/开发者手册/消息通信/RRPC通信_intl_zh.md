@@ -37,7 +37,7 @@
 
 #### 创建产品和设备
 
-请参考 [设备互通](https://intl.cloud.tencent.com/document/product/1105/41467)  创建空调产品，并创建 airConditioner1 空调设备。
+请参考 [设备互通](https://intl.cloud.tencent.com/document/product/1105/42335)  创建空调产品，并创建 airConditioner1 空调设备。
 
 ### 编译运行示例程序（以密钥认证设备为例）
 

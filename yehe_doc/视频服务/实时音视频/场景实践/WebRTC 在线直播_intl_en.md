@@ -136,17 +136,18 @@ To help you reduce development and labor costs, in addition to the TWebLive SDK,
 #### Step 1. Create a TRTC application
 On the left sidebar of the [TRTC console](https://console.cloud.tencent.com/trtc/app), click **Application Management** > **Create Application**, enter an application name, and click **Confirm**. Take note of the `SDKAPPID` of the application you have created.
 
->? An IM application with the same `SDKAppID` will be created automatically.
+<dx-alert infotype="explain"> An IM application with the same `SDKAppID` will be created automatically.</dx-alert>
 
 #### Step 2: enable relayed push
 1. In the [TRTC console](https://console.cloud.tencent.com/trtc/app), click **Application Management** on the left sidebar, find the app you have created, and click **Function Configuration**.
 2. Click **Enable Relayed Push**, and select **Global auto-relayed push** for **Relayed Push Mode**. This will give each stream in a TRTC room a dedicated playback address.
->? You can skip this step if you don’t need to enable CDN live streaming.
+<dx-alert infotype="explain">You can skip this step if you don’t need to enable CDN live streaming.</dx-alert>
+  
 3. Click **Quick Start** to view and note your key.[](id:step2)
 ![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
 4. In the [CSS console](https://console.cloud.tencent.com/live/), configure the playback domain name and CNAME record. For detailed instructions, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
 
->? You can skip this step if you don’t need to enable CDN live streaming.
+<dx-alert infotype="explain">You can skip this step if you don’t need to enable CDN live streaming.</dx-alert>
 
 #### Step 3: download and configure the demo source code
 
@@ -172,17 +173,18 @@ Vue.prototype.TWebLive = TWebLive
 <script src="./tim-js.js"></script>
 <script src="./tweblive.js"></script>
 ```
->!
->- The local UserSig calculation method is used for local development and debugging only. Do not publish it to your online systems. Once your SECRETKEY is disclosed, attackers can use your Tencent Cloud traffic without authorization.
->- The correct UserSig distribution method is to integrate the computing code of UserSig into your server and provide an app-oriented API. When UserSig is required, your app can send a request to the business server to obtain the dynamic UserSig. For more information, please see "Generating a UserSig on the Server" in [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
+<dx-alert infotype="notice"> 
+- The local UserSig calculation method is used for local development and debugging only. Do not publish it to your online systems. Once your SECRETKEY is disclosed, attackers can use your Tencent Cloud traffic without authorization.
+- The correct UserSig distribution method is to integrate the computing code of UserSig into your server and provide an app-oriented API. When UserSig is required, your app can send a request to the business server to obtain the dynamic UserSig. For more information, please see "Generating a UserSig on the Server" in [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).</dx-alert>
 
 #### Step 4: run the demo
 Open the `index.html` file in the `dist` directory with Chrome to run the demo.
->!
->- Normally, the demo needs to be deployed on the server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.
-> - Currently, the desktop version of Chrome offers better support for the features of TRTC SDK for web; therefore, Chrome is recommended for the demo.
->- TWebLive uses the camera and mic to capture audio and video. During the demo run, when prompted by Chrome, you should click **Allow**.
->  :::
+<dx-alert infotype="notice"> 
+- Normally, the demo needs to be deployed on the server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.
+- Currently, the desktop version of Chrome offers better support for the features of TRTC SDK for web; therefore, Chrome is recommended for the demo.
+- TWebLive uses the camera and mic to capture audio and video. During the demo run, when prompted by Chrome, you should click **Allow**.</dx-alert>
+:::
+  
 ::: Method 2: via IM\sIM
 #### Step 1. Create an IM application
 1. Log in to the [IM console](https://console.cloud.tencent.com/im), and click **Create Application**.
@@ -191,7 +193,7 @@ Open the `index.html` file in the `dist` directory with Chrome to run the demo.
 
 #### Step 2: obtain the key and activate TRTC
 1. On the overview page of the [IM console](https://console.cloud.tencent.com/im), click the app you have created to go to the **Basic Configuration** page. In the **Basic Information** section, click **Display key**, and copy and save the key.
->! Please store the key information properly to prevent leakage.
+<dx-alert infotype="notice"> Please store the key information properly to prevent leakage.</dx-alert>
 2. On the **Basic Configuration** page, activate TRTC.
 
 #### Step 3: download and configure the demo source code
@@ -217,17 +219,18 @@ Vue.prototype.TWebLive = TWebLive
 <script src="./tim-js.js"></script>
 <script src="./tweblive.js"></script>
 ```
->!
->- The local UserSig calculation method is used for local development and debugging only. Do not publish it to your online systems. Once your SECRETKEY is disclosed, attackers can use your Tencent Cloud traffic without authorization.
->- The correct UserSig distribution method is to integrate the computing code of UserSig into your server and provide an app-oriented API. When UserSig is required, your app can send a request to the business server to obtain the dynamic UserSig. For more information, please see "Generating a UserSig on the Server" in [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
+<dx-alert infotype="notice"> 
+- The local UserSig calculation method is used for local development and debugging only. Do not publish it to your online systems. Once your SECRETKEY is disclosed, attackers can use your Tencent Cloud traffic without authorization.
+- The correct UserSig distribution method is to integrate the computing code of UserSig into your server and provide an app-oriented API. When UserSig is required, your app can send a request to the business server to obtain the dynamic UserSig. For more information, please see "Generating a UserSig on the Server" in [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).</dx-alert>
 
 #### Step 4: run the demo
 Open the `index.html` file in the `dist` directory with Chrome to run the demo.
->!
->- Normally, the demo needs to be deployed on the server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.
-> - Currently, the desktop version of Chrome offers better support for the features of TRTC SDK for web; therefore, Chrome is recommended for the demo.
->- TWebLive uses the camera and mic to capture audio and video. During the demo run, when prompted by Chrome, you should click **Allow**.
->  :::
+<dx-alert infotype="notice"> 
+- Normally, the demo needs to be deployed on the server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.
+- Currently, the desktop version of Chrome offers better support for the features of TRTC SDK for web; therefore, Chrome is recommended for the demo.
+- TWebLive uses the camera and mic to capture audio and video. During the demo run, when prompted by Chrome, you should click **Allow**.</dx-alert>
+
+:::
 </dx-tabs>
 
 ## Architecture and Supported Platforms

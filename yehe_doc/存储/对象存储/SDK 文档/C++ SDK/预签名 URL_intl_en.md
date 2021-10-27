@@ -30,7 +30,7 @@ static std::string Sign(const std::string& secret_id,
 | Parameter | Description | Type |
 | ----------- | ----------------------------------------------------- | ------------------------ |
 | secret_id   | ID to verify the developer’s identity for the project  | String                   |
-| secret_key      | Key owned by the developer to verify identity for the project  |
+| secret_key      | Key owned by the developer to verify identity for the project  |String                   |
 | http_method | HTTP method, such as POST, GET, HEAD, and PUT; case-insensitive | String |
 | in_uri      | HTTP uri                                              | String                   |
 | headers     | HTTP header key-value pair                  | map<string,string> |
@@ -58,7 +58,7 @@ static std::string Sign(const std::string& secret_id,
 | Parameter | Description | Type |
 | --------------- | ---------------------------------------------------- | ------------------------- |
 | secret_id       |  ID to verify the developer’s identity for the project  | String                    |
-| secret_key      | Key owned by the developer to verify identity for the project  |
+| secret_key      | Key owned by the developer to verify identity for the project  | String                    |
 | http_method     | HTTP method, such as POST, GET, HEAD, and PUT; case-insensitive | String    |
 | in_uri          | HTTP uri                                             | String                    |
 | headers         | HTTP header key-value pair                    | map<string,string> |

@@ -173,7 +173,7 @@
 <td>磁盘定价下调</td>
 <td>下调部分地域磁盘定价</td>
 <td>2020-09-27</td>
-<td><a href="https://cloud.tencent.com/developer/article/1690897" target="_blank">Elasticsearch Service 价格下调通知</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/845/18376" target="_blank">Elasticsearch Service 价格下调通知</a></td></tr>
 </tbody></table>
 
 ## 2020年07月
