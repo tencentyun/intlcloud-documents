@@ -9,7 +9,7 @@
 `TRTCVoiceRoom` is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, please see [Audio Chat Room (iOS)](https://intl.cloud.tencent.com/document/product/647/37287).
 
 - TRTC SDK: the [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as a low-latency audio chat component.
-- IM SDK: the `AVChatRoom` feature of the [IM SDK](https://intl.cloud.tencent.com/document/product/1047)) is used to implement chat rooms. The attribute APIs of IM are used to store room information such as the speaker list, and invitation signaling is used to send requests to speak or invite others to speak.
+- IM SDK: the `AVChatRoom` feature of the [IM SDK](https://intl.cloud.tencent.com/document/product/1047) is used to implement chat rooms. The attribute APIs of IM are used to store room information such as the seat list, and invitation signaling is used to send requests to speak or invite others to speak.
 
 
 <h2 id="TRTCVoiceRoom">TRTCVoiceRoom API Overview</h2>
@@ -39,7 +39,7 @@
 
 ### Seat management APIs
 
-| API                                                          | Description                                                         |
+| API | Description |
 | ----------------------- | ----------------------------------- |
 | [enterSeat](#enterseat) | Becomes a speaker (called by room owner or listener). |
 | [leaveSeat](#leaveseat) | Becomes a listener (called by speaker).    |
@@ -50,7 +50,7 @@
 
 ### Local audio APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ----------------------------------------------- | -------------------- |
 | [startMicrophone](#startmicrophone)             | Enables mic capturing.     |
 | [stopMicrophone](#stopmicrophone)               | Stops mic capturing.     |
@@ -64,7 +64,7 @@
 
 ### Remote audio APIs
 
-| API                                             | Description                                                         |
+| API | Description |
 | ----------------------------------------- | ----------------------- |
 | [muteRemoteAudio](#muteremoteaudio)       | Mutes/Unmutes a specified member. |
 | [muteAllRemoteAudio](#muteallremoteaudio) | Mutes/Unmutes all members. |
@@ -84,7 +84,7 @@
 
 ### Invitation signaling APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ------------------------------------- | ---------------- |
 | [sendInvitation](#sendinvitation)     | Sends an invitation. |
 | [acceptInvitation](#acceptinvitation) | Accepts an invitation.       |
@@ -95,7 +95,7 @@
 
 ### Common event callback APIs
 
-| API                                               | Description               |
+| API                                             | Description                                                         |
 | ------------------------- | ---------- |
 | [onError](#onerror) | Error |
 | [onWarning](#onwarning) | Warning |
@@ -103,7 +103,7 @@
 
 ### Room event callback APIs
 
-| API                                       | Description                   |
+| API                                             | Description                                                         |
 | ----------------------------------------- | ---------------------- |
 | [onRoomDestroy](#onroomdestroy) | Room termination |
 | [onRoomInfoChange](#onroominfochange)     | Room information change |
@@ -111,13 +111,13 @@
 
 ### Seat list change callback APIs
 
-| API | Description |
+| API                                     | Description                                  |
 | --------------------------------------- | ------------------------------------- |
 | [onSeatListChange](#onseatlistchange)   | All seat changes                |
 | [onAnchorEnterSeat](#onanchorenterseat) | Someone became a speaker after requesting or being invited by the room owner. |
 | [onAnchorLeaveSeat](#onanchorleaveseat) | Someone became a listener or was moved to listeners by the room owner. |
 | [onSeatMute](#onseatmute) | The room owner muted a speaker. |
-| [onUserMicrophoneMute](#onusermicrophonemute)               | Whether a user’s mic is muted                          |
+| [onUserMicrophoneMute](#onusermicrophonemute)               | Whether a user's mic is muted                          |
 | [onSeatClose](#onseatclose)             | The room owner blocked a seat.                          |
 
 ### Callback APIs for room entry/exit by listeners
@@ -136,7 +136,7 @@
 
 ### Signaling event callback APIs
 
-| API                                               | Description               |
+| API | Description |
 | ------------------------------------------------- | ------------------ |
 | [onReceiveNewInvitation](#onreceivenewinvitation) | Receipt of an invitation |
 | [onInviteeAccepted](#oninviteeaccepted)           | Invitation accepted by invitee   |
@@ -234,9 +234,9 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | -------- | -------------- | ------------------------------------------------------------ |
 | sdkAppId | int | You can view the `SDKAppID` via **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info** in the TRTC console. |
-| userId | String | ID of current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (\_). |
-| userSig | String | Tencent Cloud's proprietary security protection signature. For more information on how to get it, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
-| callback | ActionCallback | Callback for login. The code is 0 if login succeeds. |
+| userId | String | ID of current user, which is a string that can contain only letters (a-z and A-Z), digits (0–9), hyphens (-), and underscores (\_). |
+| userSig | String | Tencent Cloud's proprietary security signature. For more information on how to get it, please see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
+| callback | ActionCallback | Callback for login. The `code` will be 0 if login succeeds. |
 
    
 
@@ -290,11 +290,11 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | --------- | ------------------- | ------------------------------------------------------------ |
 | roomId | int | Room ID. You need to assign and manage the IDs in a centralized manner. Multiple `roomID` values can be aggregated into an audio chat room list. Currently, Tencent Cloud does not provide management services for room lists. Please manage the list on your own. |
-| roomParam | TRTCCreateRoomParam | Room description information, such as room name, seat information, and cover information. To manage seats, you must enter the number of seats in the room. |
+| roomParam | TRTCCreateRoomParam | Room information, such as room name, seat list information, and cover information. To manage seats, you must enter the number of seats in the room. |
 | callback | ActionCallback | Callback for room creation result. The code is 0 if the operation succeeds.  |
 
 The process of creating an audio chat room and becoming a speaker is as follows: 
-1. A user calls `createRoom` to create an audio chat room, passing in room attributes (e.g. room ID, whether listeners require room owner’s consent to speak, number of seats).
+1. A user calls `createRoom` to create an audio chat room, passing in room attributes (e.g. room ID, whether listeners require room owner's consent to speak, number of seats).
 2. After creating the room, the user calls `enterSeat` to become a speaker.
 3. The user will receive an `onSeatListChanget` notification about the change of the seat list, and can update the change to the UI.
 4. The user will also receive an `onAnchorEnterSeat` notification that someone became a speaker, and mic capturing will be enabled automatically.
@@ -329,18 +329,18 @@ The parameters are as detailed below:
 | Parameter        | Type    | Description                                                                                                      |
 | -------- | -------------- | ------------------------------------- |
 | roomId | int | Room ID |
-| callback | ActionCallback | Callback for room entry result. The code is 0 if the operation succeeds. |
+| callback | ActionCallback | Callback for room entry result. The `code` is 0 if the operation succeeds. |
 
 
 The process of entering a room as a listener is as follows: 
 
 1. A user gets the latest audio chat room list from your server. The list may contain the `roomId` and room information of multiple audio chat rooms.
 2. The user selects a room, and calls `enterRoom` with the room ID passed in to enter the room.
-3. After entering the room, the user receives an `onRoomInfoChange` notification about room attribute change from the component. The attributes can be recorded, and corresponding changes can be made to the UI, including room name, whether room owner’s consent is required for listeners to speak, etc.
+3. After entering the room, the user receives an `onRoomInfoChange` notification about room attribute change from the component. The attributes can be recorded, and corresponding changes can be made to the UI, including room name, whether room owner's consent is required for listeners to speak, etc.
 4. The user will receive an `onSeatListChange` notification about the change of the seat list and can update the change to the UI.
 5. The user will also receive an `onAnchorEnterSeat` notification that someone became a speaker.
 
-### exitRoom()
+### exitRoom
 
 This API is used to exit a room.
 
@@ -360,7 +360,7 @@ The parameters are as detailed below:
 
 This API is used to get room list details. The room name and cover are set by the room owner via `roomInfo` when calling `createRoom()`.
 
->?You don’t need this API if both the room list and room information are managed on your server.
+>?You don't need this API if both the room list and room information are managed on your server.
 
 
 ```Objective-C
@@ -410,7 +410,7 @@ The parameters are as detailed below:
 | seatIndex | int            | The number of the seat to take |
 | callback | ActionCallback | Callback for operation |
 
-Calling this API will immediately modify the seat list. In cases where listeners need the room owner’s consent to speak, you can call `sendInvitation` first to send a request and, after receiving `onInvitationAccept`, call `enterSeat`.
+Calling this API will immediately modify the seat list. In cases where listeners need the room owner's consent to speak, you can call `sendInvitation` first to send a request and, after receiving `onInvitationAccept`, call `enterSeat`.
 
 ### leaveSeat
 
@@ -446,7 +446,7 @@ The parameters are as detailed below:
 | userId | String | User ID |
 | callback | ActionCallback | Callback for operation |
 
-Calling this API will immediately modify the seat list. In cases where the room owner needs listeners’ consent to make them speakers, you can call `sendInvitation` first to send a request and, after receiving `onInvitationAccept`, call `pickSeat`.
+Calling this API will immediately modify the seat list. In cases where the room owner needs listeners' consent to make them speakers, you can call `sendInvitation` first to send a request and, after receiving `onInvitationAccept`, call `pickSeat`.
 
 
 ### kickSeat
@@ -466,7 +466,7 @@ The parameters are as detailed below:
 | seatIndex | int            | The number of the seat from which the speaker is to be removed |
 | callback | ActionCallback | Callback for operation |
 
-Calling this API will immediately modify the seat list.
+Calling this API will immediately modify the speaker list.
 
 ### muteSeat
 
@@ -480,7 +480,7 @@ This API is used to mute/unmute a seat (called by room owner).
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | --------- | -------------- | --------------------------------------------- |
 | seatIndex | int            | The number of the seat to mute/unmute                          |
 | isMute    | boolean        | `true`: mute; `false`: unmute |
@@ -500,7 +500,7 @@ This API is used to block/unblock a seat (called by room owner).
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | --------- | -------------- | ------------------------------------------ |
 | seatIndex | int            | The number of the seat to block/unblock                          |
 | isClose   | boolean        | `true`: block; `false`: unblock |
@@ -509,7 +509,7 @@ The parameters are as detailed below:
 Calling this API will immediately modify the seat list. The speaker on the seat specified by `seatIndex` will leave the seat.
 
 
-## Local Audio Operation APIs
+## Local Audio APIs
 
 ### startMicrophone
 
@@ -568,7 +568,7 @@ This API is used to turn the speaker on.
 
 The parameters are as detailed below:
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter | Type | Description |
 | ---------- | ------- | --------------------------- |
 | useSpeaker | boolean | `true`: speaker; `false`: receiver |
 
@@ -586,7 +586,7 @@ The parameters are as detailed below:
 
 | Parameter    | Type   | Description                                                                                                                    |
 | ------ | ---- | ----------------------------- |
-| volume | int | Capturing volume. Value range: 0-100 (default value: 100) |
+| volume | int | Capturing volume. Value range: 0-100 (default: 100) |
 
 
 ### setAudioPlayoutVolume
@@ -628,7 +628,7 @@ This API is used to mute/unmute all users.
 
 The parameters are as detailed below:
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter | Type | Description |
 | ---- | ------- | --------------------------------- |
 | mute | boolean | `true`: mute; `false`: unmute |
 
@@ -641,7 +641,7 @@ This API is used to enable/disable in-ear monitoring.
 ```
 The parameters are as detailed below:
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter | Type | Description |
 | ---- | ------- | --------------------------------- |
 | enable | boolean | `true`: enable; `false`: disable |
 
@@ -712,7 +712,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------------- | ---------------- |
 | cmd      | String         | Custom command of business |
-| userId   | String         | Invitee’s user ID  |
+| userId   | String         | Invitee's user ID  |
 | content  | String         | Invitation content     |
 | callback | ActionCallback | Callback for operation |
 
@@ -727,7 +727,7 @@ Returned value:
 This API is used to accept an invitation.
 
 ```Objective-C
-- (void)acceptInvitation:(NSString *)identifier callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(acceptInvitation(identifier:callback:));
+- (void)acceptInvitation:(NSString *)identifier callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(acceptInvitation(id:callback:));
 ```
 
 The parameters are as detailed below:
@@ -742,7 +742,7 @@ The parameters are as detailed below:
 This API is used to decline an invitation.
 
 ```Objective-C
-- (void)rejectInvitation:(NSString *)identifier callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(rejectInvitation(identifier:callback:));
+- (void)rejectInvitation:(NSString *)identifier callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(rejectInvitation(id:callback:));
 ```
 
 The parameters are as detailed below:
@@ -758,7 +758,7 @@ The parameters are as detailed below:
 This API is used to cancel an invitation.
 
 ```Objective-C
-- (void)cancelInvitation:(NSString *)identifier callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(cancelInvitation(identifier:callback:));
+- (void)cancelInvitation:(NSString *)identifier callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(cancelInvitation(id:callback:));
 ```
 
 The parameters are as detailed below:
@@ -787,7 +787,7 @@ NS_SWIFT_NAME(onError(code:message:));
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------- | ------ | ---------- |
 | code    | int    | Error code   |
 | message | String | Error message |
@@ -805,7 +805,7 @@ NS_SWIFT_NAME(onWarning(code:message:));
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------- | ------ | ---------- |
 | code    | int    | Error code   |
 | message | String | Warning message |
@@ -823,7 +823,7 @@ NS_SWIFT_NAME(onDebugLog(message:));
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------- | ------ | ---------- |
 | message | String | Log information |
 
@@ -837,8 +837,8 @@ The parameters are as detailed below:
 Callback for room termination. When the owner terminates the room, all users in the room will receive this callback.
 
 ```Objective-C
-- (void)onRoomDestroy:(NSString *)message
-NS_SWIFT_NAME(onRoomDestroy(message:));
+- (void)onRoomDestroy:(NSString *)roomId
+NS_SWIFT_NAME(onRoomDestroy(roomId:));
 ```
 
 The parameters are as detailed below:
@@ -866,7 +866,7 @@ The parameters are as detailed below:
 
 ### onUserMicrophoneMute
 
-Callback of whether a user’s mic is muted. When a user calls `muteLocalAudio`, all members in the room will receive this callback.
+Callback of whether a user's mic is muted. When a user calls `muteLocalAudio`, all members in the room will receive this callback.
 
 ```Objective-C
 - (void)onUserMicrophoneMute:(NSString *)userId mute:(BOOL)mute
@@ -931,7 +931,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | ----- | -------- | -------------------- |
 | index | int      | The seat taken     |
-| user | UserInfo | Details of the user who became a listener |
+| user  | UserInfo | Details of the user who took the seat |
 
 ### onAnchorLeaveSeat
 
@@ -948,7 +948,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | ----- | -------- | -------------------- |
 | index | int      | The seat previously occupied by the speaker         |
-| user | UserInfo | Details of the user who became a listener |
+| user  | UserInfo | Details of the user who took the seat |
 
 ### onSeatMute
 
@@ -1044,10 +1044,10 @@ The parameters are as detailed below:
 A custom message was received.
 
 ```Objective-C
-- (void)onRecvRoomCustomMsg:(NSString *)cmd
+- (void)onRecvRoomCustomMsg:(NSString *)command
                     message:(NSString *)message
                    userInfo:(VoiceRoomUserInfo *)userInfo
-NS_SWIFT_NAME(onRecvRoomCustomMsg(cmd:message:userInfo:));
+NS_SWIFT_NAME(onRecvRoomCustomMsg(command:message:userInfo:));
 ```
 
 The parameters are as detailed below:
@@ -1069,7 +1069,7 @@ An invitation was received.
                        inviter:(NSString *)inviter
                            cmd:(NSString *)cmd
                        content:(NSString *)content
-NS_SWIFT_NAME(onReceiveNewInvitation(identifier:inviter:cmd:content:));
+NS_SWIFT_NAME(onReceiveNewInvitation(id:inviter:cmd:content:));
 ```
 
 The parameters are as detailed below:
@@ -1077,7 +1077,7 @@ The parameters are as detailed below:
 | Parameter        | Type    | Description                                                                                                      |
 | ------- | -------- | ---------------------------------- |
 | id      | String   | Invitation ID                          |
-| inviter | String   | Inviter’s user ID                  |
+| inviter | String   | Inviter's user ID                  |
 | cmd     | String   | Custom command word specified by business |
 | content | UserInfo | Content specified by business                   |
 
@@ -1088,15 +1088,15 @@ The invitee accepted the invitation.
 ```Objective-C
 - (void)onInviteeAccepted:(NSString *)identifier
                   invitee:(NSString *)invitee
-NS_SWIFT_NAME(onInviteeAccepted(identifier:invitee:));
+NS_SWIFT_NAME(onInviteeAccepted(id:invitee:));
 ```
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------- | ------ | ------------------- |
 | id      | String | Invitation ID           |
-| invitee | String | Invitee’s user ID |
+| invitee | String | Invitee's user ID |
 
 ### onInviteeRejected
 
@@ -1105,15 +1105,15 @@ The invitee declined the invitation.
 ```Objective-C
 - (void)onInviteeRejected:(NSString *)identifier
                   invitee:(NSString *)invitee
-NS_SWIFT_NAME(onInviteeRejected(identifier:invitee:));
+NS_SWIFT_NAME(onInviteeRejected(id:invitee:));
 ```
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------- | ------ | ------------------- |
 | id      | String | Invitation ID           |
-| invitee | String | Invitee’s user ID |
+| invitee | String | Invitee's user ID |
 
 ### onInvitationCancelled
 
@@ -1121,7 +1121,7 @@ The inviter canceled the invitation.
 
 ```Objective-C
 - (void)onInvitationCancelled:(NSString *)identifier
-                      invitee:(NSString *)invitee NS_SWIFT_NAME(onInvitationCancelled(identifier:invitee:));
+                      invitee:(NSString *)invitee NS_SWIFT_NAME(onInvitationCancelled(id:invitee:));
 ```
 
 The parameters are as detailed below:
@@ -1129,4 +1129,4 @@ The parameters are as detailed below:
 | Parameter        | Type    | Description                                                                                                      |
 | ------- | ------ | ----------------- |
 | id      | String | Invitation ID         |
-| inviter | String | Inviter’s user ID |
+| inviter | String | Inviter's user ID |

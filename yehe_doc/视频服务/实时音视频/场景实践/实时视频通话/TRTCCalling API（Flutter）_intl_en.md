@@ -1,7 +1,7 @@
-`TRTCCalling` is an open-source class based on two closed-source SDKs: Tencent Cloud Real-Time Communication (TRTC) and Instant Messaging (IM). It supports one-to-one audio/video calls. For detailed instructions how to implement it, see [Real-Time Video Call (Flutter)](https://intl.cloud.tencent.com/zh/document/product/647).
+`TRTCCalling` is an open-source class based on two closed-source SDKs: Tencent Cloud Real-Time Communication (TRTC) and Instant Messaging (IM). It supports one-to-one audio/video calls. For detailed instructions how to implement it, please see [Real-Time Video Call (Flutter)](https://intl.cloud.tencent.com/document/product/647/41691).
 
 - TRTC SDK: the [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as a low-latency audio/video call component.
-- IM SDK: the [IM SDK](https://intl.cloud.tencent.com/zh/document/product/1047) is used to send and process signaling messages.
+- IM SDK: the [IM SDK](https://intl.cloud.tencent.com/document/product/1047) is used to send and process signaling messages.
 
 
 <h2 id="TRTCCalling">`TRTCCalling` API Overview</h2>
@@ -28,14 +28,14 @@
 | [reject](#reject) | Declines the current call. |
 | [hangup](#hangup) | Ends the current call. |
 
-### Push/Pull APIs
+### Stream pushing/pulling APIs
 
 | API                                             | Description                                                         |
 | ----------------------------------- | ------------------------------------------------------ |
 | [startRemoteView](#startremoteview) | Renders the camera data of a remote user in the specified `TXCloudVideoView`. |
 | [stopRemoteView](#stopremoteview)               | Stops rendering the data of a remote user.                                      |
 
-### Audio/Video control APIs
+### Audio/Video APIs
 
 | API                                             | Description                                                         |
 | ----------------------------- | ------------------------------------------------ |
@@ -51,7 +51,7 @@
 
 | API                                             | Description                                                         |
 | ------------------- | ---------- |
-| [onError](#onerror) | Error |
+| [onError](#onerror) | Callback for error. |
 
 ### Inviter callback APIs
 
@@ -132,11 +132,11 @@ Future<ActionCallback> login(int sdkAppId, String userId, String userSig);
 
 The parameters are as detailed below:
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter | Type | Description |
 | -------- | ------ | ------------------------------------------------------------ |
-| sdkAppID | UInt32 | You can view the `SDKAppID` on **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info** of the TRTC console. |
-| userId | String | ID of current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (\_). |
-| userSig | String | Tencent Cloud's proprietary security signature. For more information on how to obtain it, please see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
+| sdkAppID | int | You can view the `SDKAppID` via **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info** in the TRTC console. |
+| userId | String | ID of the current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (\_). |
+| userSig | String | Tencent Cloud's proprietary security signature. For more information on how to get it, please see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
 
 ### logout
 
@@ -188,7 +188,7 @@ void hangup();
 ```
 
 
-## Push/Pull APIs
+## Stream Pushing/Pulling APIs
 
 ### startRemoteView
 
@@ -200,11 +200,11 @@ void startRemoteView(String userId, int streamType, int viewId);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
-| ------ | ------ | -------------------------------------------------- |
+| Parameter | Type | Description |
+| ---------- | ------ | ----------------------------------------------------- |
 | userId | String | ID of the remote user |
-| view   | int    | `viewId` returned by `TRTCCloudVideoView`, the class that loads video images |
-
+| streamType | int    | Video stream type of the `userId` specified for stopping watching |
+| viewId     | int    | `viewId` called back by `TRTCCloudVideoView`, the control that carries the video image |
 
 ### stopRemoteView
 
@@ -221,7 +221,7 @@ The parameters are as detailed below:
 | userId | String | ID of the remote user |
 | streamType | int    | Type of video stream of the specified `userId` to stop rendering |
 
-## Audio/Video Control APIs
+## Audio/Video APIs
 
 ### openCamera
 
@@ -254,7 +254,7 @@ The parameters are as detailed below:
 
 ### closeCamara
 
-This API is used to turn off the camera.
+This API is used to turn the camera off.
 
 ```java
 void closeCamera();
@@ -296,7 +296,7 @@ The parameters are as detailed below:
 
 Callback for error.
 
-This callback indicates that the SDK encountered an unrecoverable error. Such errors must be listened for, and UI reminders should be sent to users if necessary.
+>?This callback indicates that the SDK encountered an unrecoverable error. Such errors must be listened for, and UI reminders should be sent to users if necessary.
 
 The parameters are as detailed below:
 
@@ -314,7 +314,7 @@ The call was declined.
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------ | ------ | --------------- |
 | userId | String | User ID of the invitee who declined the call |
 
@@ -335,7 +335,7 @@ The line is busy.
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------ | ------ | --------------- |
 | userId | String | User ID of the invitee whose line is busy |
 
@@ -392,18 +392,18 @@ Whether a user is sending audio.
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | --------- | ------- | ------------------ |
 | userId | String | User ID |
 | available | boolean| Whether the user has available audio |
 
 ### onUserVideoAvailable
 
-Whether a user is sending video. After receiving this callback, you can call `startRemoteView` to render the remote user’s video.
+Whether a user is sending video. After receiving this callback, you can call `startRemoteView` to render the remote user's video.
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | --------- | ------- | ------------------ |
 | userId | String | User ID |
 | available | boolean | Whether the user has available video |

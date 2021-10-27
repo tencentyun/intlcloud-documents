@@ -1,85 +1,105 @@
 ## Demonstration
-You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the demo we provide to try out TRTC’s audio chat room features, including seat management, low-latency audio interaction, text chat, etc.
+You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the app we provide to try out TRTC's audio chat room features, including seat management, low-latency audio interaction, text chat, etc.
 
 
-To quickly implement the audio chat room feature, you can modify the demo we provide and adapt it to your needs. You can also use the `TRTCVoiceRoom` component and customize your own UI.
+To quickly implement the audio chat room feature, you can modify the app we provide and adapt it to your needs. You can also use the `TRTCVoiceRoom` component and customize your own UI.
 
 [](id:DemoUI)
-## Using the Demo UI
+## Using the Demo App's UI
 
 [](id:ui.step1)
 ### Step 1. Create an application
 1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Enter an application name, e.g. `TestVoiceRoom`, and click **Create**.
+2. Enter an application name such as `TestVoiceRoom` and click **Create**.
+3. Click **Next** to skip this step.
 
+![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 >!This feature uses two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When you activate TRTC, IM will be activated automatically. IM is a value-added service. See [Value-added Service Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) for its billing details.
 
 
 
 [](id:ui.step2)
-### Step 2. Download the SDK and demo source code
-1. Download the SDK and demo source code for your platform.
-2. Click **Next**.
-![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
+### Step 2. Download the app source code
+Clone or download the [TUIVoiceRoom](https://github.com/tencentyun/TUIVoiceRoom) source code.
 
 [](id:ui.step3)
-### Step 3. Configure demo project files.
+### Step 3. Configure app project files
 1. In the **Modify Configuration** step, select the development platform in line with the source package downloaded.
-2. Find and open the `Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java` file.
-3. Set parameters in `GenerateTestUserSig.java`:
-<ul style="margin:0"><li/>SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.
-<li/>SECRETKEY: left empty by default. Set it to the actual key.</ul>
+2. Find and open `Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java`.
+3. Set parameters in `GenerateTestUserSig.java` as follows:
+<ul style="margin:0"><li/>SDKAPPID: a placeholder by default. Set it to the actual `SDKAppID`.
+<li/>SECRETKEY: a placeholder by default. Set it to the actual key.</ul>
+<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 
 4. Click **Next** to complete the creation.
 5. After compilation, click **Return to Overview Page**.
 
 
->!The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for the local execution and debugging of the demo**.
->The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
+>!
+>- The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is suitable only for the local execution and debugging of the demo app**.
+>- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, please see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
 
 [](id:ui.step4)
-### Step 4. Run the demo
-Open the `TRTCScenesDemo` project with Android Studio (version 3.5 or above) and click **Run**.
+### Step 4. Run the demo app
+Open the source code project `TUIVoiceRoom` with Android Studio (version 3.5 or above) and click **Run**.
 
 [](id:ui.step5)
-### Step 5. Modify the demo source code
-The `trtcvoiceroomdemo` folder in the source code contains two subfolders: `ui` and `model`. The `ui` subfolder contains UI code. The table below lists the files (folders) and the UI views they represent. You can refer to it when making UI changes.
+### Step 5. Modify the demo app's source code
+The `Source` folder in the source code contains two subfolders: `ui` and `model`. The `ui` subfolder contains UI code. The table below lists the files (folders) and the UI views they represent. You can refer to it when making UI changes.
 
 | File or Folder | Description |
 |-------|--------|
-| base | Basic classes used by the UI |
-| list | List view and room creation view |
+| base | Base class used by the UI |
 | room | Main room views for room owner and listener |
 | widget | Common controls |
 
-[](id:model)
-## Customizing UI
+## Tryout
+>! You need at least two devices to try out the demo app.
 
-The `trtcvoiceroomdemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcvoiceroomdemo/src/main/java/com/tencent/liteav/trtcvoiceroom) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCVoiceRoom`. You can find the component’s APIs in `TRTCVoiceRoom.java` and use them to customize your own UI.
+### User A
+1. Enter a username (**which must be unique**) and log in.
+2. Tap **Create Room**.
+3. Enter a room topic and tap **Chat**.
+
+### User B
+1. Enter a username (**which must be unique**) and log in.
+2. Enter the ID of the room created by user A, and tap **Join**.<br>
+
+>! You can find the room ID at the top of user A's room view.
+
+[](id:model)
+
+## Customizing Your Own UI
+
+The `Source` folder in the [source code](https://github.com/tencentyun/TUIVoiceRoom/tree/main/Android/Source/src/main/java/com/tencent/liteav/trtcvoiceroom) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCVoiceRoom`. You can find the component's APIs in `TRTCVoiceRoom.java` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/319beb14d72a43120e102380278aa1da.png)
 
 [](id:model.step1)
-### Step 1. Integrate the SDKs
+### Step 1. Integrate the SDK
 The audio chat room component `TRTCVoiceRoom` depends on the TRTC SDK and IM SDK. Follow the steps below to integrate the two SDKs into your project.
 
 **Method 1: adding dependencies via Maven**
 1. Add the TRTC SDK and IM SDK dependencies to `dependencies`.
-```
+<dx-codeblock>
+::: java java
 dependencies {
        complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
        complie 'com.tencent.imsdk:imsdk:latest.release'
        compile 'com.google.code.gson:gson:2.3.1'
 }
-```
+:::
+</dx-codeblock>
 >?You can view the latest version numbers of the two SDKs by visiting their GitHub pages at [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK).
 2. In `defaultConfig`, specify the CPU architecture to be used by your application.
-```
+<dx-codeblock>
+::: java java
 defaultConfig {
       ndk {
           abiFilters "armeabi-v7a"
       }
 }
-```
+:::
+</dx-codeblock>
 3. Click **Sync Now** to automatically download the SDKs and integrate them into your project.
 
 **Method 2: adding dependencies through local AAR files**
@@ -105,7 +125,8 @@ If your access to the Maven repository is slow, you can download the ZIP files o
 [](id:model.step2)
 ### Step 2. Configure permission requests and obfuscation rules
 Configure permission requests for your app in `AndroidManifest.xml`. The SDKs need the following permissions (on Android 6.0 and above, the read storage permission must be requested at runtime.)
-```
+<dx-codeblock>
+::: java java
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -115,25 +136,30 @@ Configure permission requests for your app in `AndroidManifest.xml`. The SDKs ne
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.BLUETOOTH" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-```
+:::
+</dx-codeblock>
 
 In the `proguard-rules.pro` file, add the SDK classes to the "do not obfuscate" list.
-```
+<dx-codeblock>
+::: java java
 -keep class com.tencent.** { *; }
-```
+:::
+</dx-codeblock>
 
 [](id:model.step3)
 ### Step 3. Import the `TRTCVoiceRoom` component
 Copy all the files in the directory below to your project:
-```
-trtcvoiceroomdemo/src/main/java/com/tencent/liteav/trtcvoiceroom/model
-```
+<dx-codeblock>
+::: java java
+Source/src/main/java/com/tencent/liteav/trtcvoiceroom/model
+:::
+</dx-codeblock>
 
 [](id:model.step4)
 ### Step 4. Create an instance and log in
 1. Call the `sharedInstance` API to create an instance of the `TRTCVoiceRoom` component.
 2. Call the `setDelegate` function to register event callbacks of the component.
-3. Call the `login` function to log in to the component. Set the key parameters as described below.
+3. Call the `login` function to log in to the component, and set the key parameters as described below.
  <table>
 <tr>
 <th>Parameter</th>
@@ -149,7 +175,7 @@ trtcvoiceroomdemo/src/main/java/com/tencent/liteav/trtcvoiceroom/model
 </tr>
 <tr>
 <td>userSig</td>
-<td>Tencent Cloud's proprietary security signature. To obtain one, see <a href="https://intl.cloud.tencent.com/document/product/647/35166">UserSig</a>.</td>
+<td>Tencent Cloud's proprietary security signature. To obtain one, please see <a href="https://intl.cloud.tencent.com/document/product/647/35166">UserSig</a>.</td>
 </tr>
 <tr>
 <td>callback</td>
@@ -163,7 +189,7 @@ mTRTCVoiceRoom.setDelegate(this);
 mTRTCVoiceRoom.login(SDKAPPID, userId, userSig, new TRTCVoiceRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
-        if (code == 0) {![](https://main.qcloudimg.com/raw/be8ee8461f8e06295d5ae1ad1502d745.png)
+        if (code == 0) {![](https://main.qcloudimg.com/raw/3151fc0df16c063db7a75f6c1facf562.png)
             // Logged in
         }
     }
@@ -174,10 +200,10 @@ mTRTCVoiceRoom.login(SDKAPPID, userId, userSig, new TRTCVoiceRoomCallback.Action
 [](id:model.step5)
 ### Step 5. Create a room and become a speaker
 1. After performing [step 4](#model.step4) to log in, call `setSelfProfile` to set your nickname and profile photo.
-2. Call `createRoom` to create an audio chat room and pass in room-related parameters such as room ID, whether to request your consent for listeners to speak, and the number of seats.
-3. After creating the room, call `enterSeat` to take a seat.
-4. You will receive an `onSeatListChange` notification about seat change from the component. Update the change to the UI.
-5. You will also receive an `onAnchorEnterSeat` notification about the occupation of a seat, and mic capturing will be enabled automatically.
+2. A user calls `createRoom` to create an audio chat room, passing in room attributes (e.g. room ID, whether listeners require room owner's consent to speak, number of seats).
+3. After creating the room, the user calls `enterSeat` to become a speaker.
+4. The user will receive an `onSeatListChanget` notification about the change of the seat list, and can update the change to the UI.
+5. The user will also receive an `onAnchorEnterSeat` notification that someone became a speaker, and mic capturing will be enabled automatically.
 
 ![](https://main.qcloudimg.com/raw/256ebe5ce1426b3f175c8c8b68095d5b.png)
 
@@ -192,7 +218,7 @@ final TRTCVoiceRoomDef.RoomParam roomParam = new TRTCVoiceRoomDef.RoomParam();
 roomParam.roomName = "Room ID";
 roomParam.needRequest = false; // Whether your consent is required for listeners to speak
 roomParam.seatCount = 7; // Number of room seats. In this example, the number is 7. 6 seats are available after you take one.
-roomParam.coverUrl = "room cover URL";
+roomParam.coverUrl = "URL of room cover image";
 mTRTCVoiceRoom.createRoom(mRoomId, roomParam, new TRTCVoiceRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
@@ -212,7 +238,7 @@ mTRTCVoiceRoom.createRoom(mRoomId, roomParam, new TRTCVoiceRoomCallback.ActionCa
 // 4. After taking a seat, you receive an `onSeatListChange` notification
 @Override
 public void onSeatListChange(final List<TRTCVoiceRoomDef.SeatInfo> seatInfoList) {
-    // Display the seat list.
+    // Display the seat list
 }
 
 // 5. You receive an `onAnchorEnterSeat` notification
@@ -226,13 +252,13 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 ### Step 6. Enter a room as a listener
 1. After performing [step 4](#model.step4) to log in, you can call `setSelfProfile` to set your nickname and profile photo.
 2. Get the latest audio chat room list from the backend.
- >?The audio chat room list in the demo is for demonstration only. The logic of audio chat room lists varies significantly. Tencent Cloud does not provide list management services for the time being. Please manage the list by yourself.
+>?The audio chat room list in the app is for demonstration only. The logic of audio chat room lists varies significantly. Tencent Cloud does not provide list management services for the time being. Please manage the list by yourself.
 3. Call `getRoomInfoList` to get short descriptions of the rooms, which are provided by the room owner during room creation via the calling of `createRoom`.
- >!If your audio chat room list already displays enough room information, you can skip the step of calling `getRoomInfoList`.
-4. Select an audio chat room, and call `enterRoom` with the room ID passed in to enter the room.
-5. After entering the room, you will receive an `onRoomInfoChange` notification about room change from the component. Record the room information, including room name, whether the room owner’s consent is required for listeners to speak, etc., and update it to the UI.
-6. You will receive an `onSeatListChange` notification about seat change from the component. Update the change to the UI.
-7. You will also receive an `onAnchorEnterSeat` notification about the occupation of a seat.
+>!If your audio chat room list already displays enough room information, you can skip the step of calling `getRoomInfoList`.
+4. The user selects a room, and calls `enterRoom` with the room ID passed in to enter the room.
+5. After entering the room, the user receives an `onRoomInfoChange` notification about room attribute change from the component. The attributes can be recorded, and corresponding changes can be made to the UI, including room name, whether room owner's consent is required for listeners to speak, etc.
+6. The user will receive an `onSeatListChange` notification about the change of the seat list and can update the change to the UI.
+7. The user will also receive an `onAnchorEnterSeat` notification that someone became a speaker.
 
 ![](https://main.qcloudimg.com/raw/33432f97eb632fbb9710a59cba9e4469.png)
 <dx-codeblock>
@@ -263,7 +289,7 @@ mTRTCVoiceRoom.enterRoom(roomId, new TRTCVoiceRoomCallback.ActionCallback() {
         }
 });
 
-// 5. After successful room entry, you receive an `onRoomInfoChange` notification
+// 5. After entering the room, you receive an `onRoomInfoChange` notification.
 @Override
 public void onRoomInfoChange(TRTCVoiceRoomDef.RoomInfo roomInfo) {
     mNeedRequest = roomInfo.needRequest;
@@ -300,7 +326,7 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 1. A listener can take a seat by passing the seat number in `enterSeat`. All members in the room will receive an `onSeatListChange` notification and an `onAnchorEnterSeat` notification.
 2. A listener can leave a seat by calling `leaveSeat`. All members in the room will receive an `onSeatListChange` notification and an `onAnchorLeaveSeat` notification.
 
-![](https://main.qcloudimg.com/raw/5ccdb15f63efa127aa883ca6a7bcd80d.png)
+![](https://main.qcloudimg.com/raw/8d385dd387b6255b8512dbff5829e88a.png)
 
 After a seat operation, the order in which different notifications are sent is: callbacks > `onSeatListChange` > independent events such as `onAnchorEnterSeat`.
 
@@ -316,7 +342,7 @@ mTRTCVoiceRoom.pickSeat(1, "123", new TRTCVoiceRoomCallback.ActionCallback() {
     }
 });
 
-// 3. The anchor receives an `onSeatListChange` callback and refreshes the seat list
+// 3. The listener receives the `onSeatListChange` callback and refreshes the seat list
 @Override
 public void onSeatListChange(final List<TRTCVoiceRoomDef.SeatInfo> seatInfoList) {
 }
@@ -355,15 +381,15 @@ public void onAnchorEnterSeat(int index, TRTCVoiceRoomDef.UserInfo user) {
 
 [](id:model.step8)
 ### Step 8. Use signaling for invitations
-In [seat management](#model.step7), listeners can take and leave seats without the room owner’s consent, and the room owner can put listeners in seats without the listeners’ consent.
-If you want listeners and room owners to obtain each other’s consent before performing the above actions in your application, you can use signaling for invitation sending.
+In [seat management](#model.step7), listeners can take and leave seats without the room owner's consent, and the room owner can put listeners in seats without the listeners' consent.
+If you want listeners and room owners to obtain each other's consent before performing the above actions in your app, you can use signaling for invitation sending.
 
 <dx-tabs>
-::: Listener requesting to take seat
-1. A listener calls `sendInvitation`, passing in information including the room owner’s `userId` and custom command words. The API will return an `inviteId`, which should be recorded.
+::: Listener requesting to speak
+1. A listener calls `sendInvitation`, passing in information including the room owner's `userId` and custom command words. The API will return an `inviteId`, which should be recorded.
 2. The room owner receives an `onReceiveNewInvitation` notification, and a window pops up on the UI asking the room owner whether to accept the request.
 3. The room owner calls `acceptInvitation` with the `inviteId` passed in to accept the request.
-4. The listener receives an `onInviteeAccepted` notification and calls `enterSeat` to take a seat.
+4. The listener receives an `onInviteeAccepted` notification and calls `enterSeat` to become a speaker.
 
 ![](https://main.qcloudimg.com/raw/5ccdb15f63efa127aa883ca6a7bcd80d.png)
 
@@ -373,7 +399,7 @@ If you want listeners and room owners to obtain each other’s consent before pe
 // 1. Call `sendInvitation` to request to take seat 1
 String inviteId = mTRTCVoiceRoom.sendInvitation("ENTER_SEAT", ownerUserId, "1", null);
 
-// 2. Take the seat when the request is accepted by the room owner
+// 2. Put the user in the seat when the invitation is accepted by the user
 @Override
 public void onInviteeAccepted(String id, String invitee) {
     if(id.equals(inviteId)) {
@@ -394,11 +420,10 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 </dx-codeblock>
 :::
 ::: Room owner inviting listener to take seat
-
 1. The room owner calls `sendInvitation`, passing in information including the listener's `userId` and custom command words. The API will return an `inviteId`, which should be recorded.
-2. The listener receives an `onReceiveNewInvitation` notification, and a window pops up asking the listener whether to agree to speak.
-3. The listener agrees, and calls `acceptInvitation` with the `inviteId` passed in.
-4. The room owner receives an `onInviteeAccepted` notification and calls `pickSeat` to put the listener in a seat.
+2. The listener receives an `onReceiveNewInvitation` notification, and a window pops up asking the listener whether to accept the invitation.
+3. The listener calls `acceptInvitation` with the `inviteId` passed in to accept the invitation.
+4. The room owner receives an `onInviteeAccepted` notification and calls `pickSeat` to make the listener a speaker.
 
 ![](https://main.qcloudimg.com/raw/5515f49d6e30410e12cd828b75a8db0b.png)
 
@@ -435,24 +460,24 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 ### Step 9. Enable text chat and on-screen comments
 - Call `sendRoomTextMsg` to send common text messages. All users in the room will receive an `onRecvRoomTextMsg` callback.
  IM has its default content moderation rules. Text messages that contain restricted terms will not be forwarded by the cloud.
- <dx-codeblock>
- ::: java java
- // Sender: sends text messages
- mTRTCVoiceRoom.sendRoomTextMsg("Hello Word!", null);
- // Recipient: listen for text messages
- mTRTCVoiceRoom.setDelegate(new TRTCVoiceRoomDelegate() {
+  <dx-codeblock>
+  ::: java java
+  // Sender: send text messages
+  mTRTCVoiceRoom.sendRoomTextMsg("Hello Word!", null);
+  // Recipient: listen for text messages
+  mTRTCVoiceRoom.setDelegate(new TRTCVoiceRoomDelegate() {
     @Override
     public void onRecvRoomTextMsg(String message, TRTCVoiceRoomDef.UserInfo userInfo) {
         Log.d(TAG, "Received a message from" + userInfo.userName + ": " + message);
     }
- });
- :::
- </dx-codeblock>
+  });
+  :::
+  </dx-codeblock>
 - Call `sendRoomCustomMsg` to send custom (signaling) messages. All users in the room will receive an `onRecvRoomCustomMsg` callback.
-Custom messages are often used to transfer custom signals, e.g., giving and broadcasting likes.
+Custom messages are often used to transfer custom signals, e.g., to give and broadcast likes.
 <dx-codeblock>
 ::: java java
-// A sender can customize commands to distinguish on-screen comments and likes
+// Sender: customize CMD to distinguish between on-screen comments and likes
 // For example, use "CMD_DANMU" to indicate on-screen comments and "CMD_LIKE" to indicate likes
 mTRTCVoiceRoom.sendRoomCustomMsg("CMD_DANMU", "Hello world", null);
 mTRTCVoiceRoom.sendRoomCustomMsg("CMD_LIKE", "", null);
@@ -461,14 +486,13 @@ mTRTCVoiceRoom.setDelegate(new TRTCVoiceRoomDelegate() {
     @Override
     public void onRecvRoomCustomMsg(String cmd, String message, TRTCVoiceRoomDef.UserInfo userInfo) {
         if ("CMD_DANMU".equals(cmd)) {
-            // Receive an on-screen comment
+            // Received an on-screen comment
             Log.d(TAG, "Received an on-screen comment from" + userInfo.userName + ": " + message);
         } else if ("CMD_LIKE".equals(cmd)) {
-            // Receive a like
+            // Received a like
             Log.d(TAG, userInfo.userName + "liked you.");
         }
     }
 });
 :::
 </dx-codeblock>
-

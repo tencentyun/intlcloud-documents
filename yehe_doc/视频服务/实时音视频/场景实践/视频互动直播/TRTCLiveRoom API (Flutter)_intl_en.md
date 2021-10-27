@@ -5,10 +5,10 @@
 - Anchors in two rooms can compete and interact with each other.
 - All users can send text and custom messages. Custom messages can be used to send on-screen comments, give likes, and send gifts.
 
-`TRTCLiveRoom` is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, please see [Interactive Live Video Streaming (Flutter)](https://cloud.tencent.com/document/product/647/57388).
+`TRTCLiveRoom` is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, please see [Interactive Live Video Streaming (Flutter)](https://intl.cloud.tencent.com/document/product/647/41944).
 
-- TRTC SDK: the [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as a low-latency live streaming component.
-- IM SDK: the `AVChatRoom` feature of the [IM SDK](https://intl.cloud.tencent.com/document/product/1047) is used to implement chat rooms, and IM messages are used to facilitate the co-anchoring process between anchors.
+- TRTC SDK: the [TRTC SDK](https://intl.cloud.tencent.com/document/product/647/34615) is used as the low-latency live streaming component.
+- IM SDK: the `AVChatRoom` feature of the [IM SDK](https://intl.cloud.tencent.com/document/product/1047/33996) is used to implement chat rooms, and IM messages are used to facilitate the co-anchoring process between anchors.
 
 [](id:TRTCLiveRoom)
 
@@ -143,14 +143,14 @@
 
 | API                                             | Description                                                         |
 | ------------------------------------------- | ---------------- |
-| [onRecvRoomTextMsg](#onrecvroomtextmsg)     | A text message was received.  |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | A custom message was received. |
+| [onRecvRoomTextMsg](#onrecvroomtextmsg)     | Receipt of a text message  |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | Receipt of a custom message |
 
 ## Basic SDK APIs
 
 ### sharedInstance
 
-This API is used to get a [TRTCLiveRoom](https://cloud.tencent.com/document/product/647/57388) singleton object.
+This API is used to get a [TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/41944) singleton object.
 
 ```java
  static Future<TRTCLiveRoom> sharedInstance()
@@ -158,7 +158,7 @@ This API is used to get a [TRTCLiveRoom](https://cloud.tencent.com/document/prod
 
 ### destroySharedInstance
 
-This API is used to terminate a [TRTCLiveRoom](https://cloud.tencent.com/document/product/647/57388) singleton object.
+This API is used to terminate a [TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/41944) singleton object.
 
 >?After the instance is terminated, the externally cached `TRTCLiveRoom` instance can no longer be used. You need to call [sharedInstance](#sharedinstance) again to get a new instance.
 
@@ -168,7 +168,7 @@ static void destroySharedInstance()
 
 ### registerListener
 
-This API is used to set event callbacks for [TRTCLiveRoom](https://cloud.tencent.com/document/product/647/57388). You can use `TRTCLiveRoomDelegate` to get different status notifications of [TRTCLiveRoom](https://cloud.tencent.com/document/product/647/57388).
+This API is used to get the event callback of [TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/41944). You can use `TRTCLiveRoomDelegate` to get various status notifications of [TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/41944).
 
 ```java
 void registerListener(VoiceListenerFunc func);
@@ -224,7 +224,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | --------- | ------ | ---------- |
-| name      | String | Name     |
+| userName | String | Nickname |
 | avatarURL | String | Profile photo address |
 
 ## Room APIs
@@ -234,15 +234,15 @@ The parameters are as detailed below:
 This API is used to create a room (called by anchor).
 
 ```java
-Future<ActionCallback> createRoom(int roomId, RoomParam roomParam);
+Future<ActionCallback> createRoom(int roomId, TRTCCreateRoomParam roomParam);
 ```
 
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
-| --------- | ------------------- | ------------------------------------------------------------ |
+| --------- | --------- | ------------------------------------------------------------ |
 | roomId | int | Room ID. You need to assign and manage the IDs in a centralized manner. Multiple `roomId` values can be aggregated into a live room list. Currently, Tencent Cloud does not provide list management services. Please manage the list on your own. |
-| roomParam | TRTCCreateRoomParam | Room information, such as room name and cover information. If both the room list and room information are managed on your server, you can ignore this parameter. |
+| roomParam | RoomParam | Room information, such as room name and cover information. If both the room list and room information are managed on your server, you can ignore this parameter. |
 
 The process of creating a room and starting live streaming as an anchor is as follows: 
 
@@ -277,8 +277,8 @@ The process of entering a room and starting playback as audience is as follows:
 
 1. A user gets the latest room list from your server. The list may contain `roomId` and other room information of multiple rooms.
 2. The user selects a room and calls `enterRoom()` to enter the room.
-3. The user calls `startPlay(userId)`, passing in the anchor’s `userId` to start playback.
- - If the room list contains the anchor’s `userId`, the user can call `startPlay(userId)` to start playback.
+3. The user calls `startPlay(userId)`, passing in the anchor's `userId` to start playback.
+ - If the room list contains the anchor's `userId`, the user can call `startPlay(userId)` to start playback.
  - If the user does not have the anchor's `userId` before room entry, he or she can find it in the `onAnchorEnter(userId)` callback of `TRTCLiveRoomDelegate`, which is returned after room entry. The user can then call `startPlay(userId)` to start playback. 
 
 ### exitRoom
@@ -294,7 +294,7 @@ Future<ActionCallback> exitRoom();
 
 This API is used to get room list details, which are set by anchors via `roomInfo` when they call `createRoom()`.
 
->?If both the room list and room information are managed on your server, you can ignore this parameter.
+>?You don't need this API if both the room list and room information are managed on your server.
 
 
 ```java
@@ -304,8 +304,8 @@ Future<RoomInfoCallback> getRoomInfos(List<String> roomIdList);
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
-| ---------- | ------------------- | ------------ |
-| roomIdList | List&lt;Integer&gt; | Room ID list |
+| ---------- | ------------------ | ------------ |
+| roomIdList | List&lt;String&gt; | Room ID list |
 
 ### getAnchorList
 
@@ -344,8 +344,8 @@ Future<void> startCameraPreview(bool isFrontCamera, int viewId);
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
-| ------- | ---- | ------------------------------------- |
-| isFront | bool | `true`: turns the front camera on; `false`: turns the rear camera on. |
+| ------------- | ---- | ------------------------------------- |
+| isFrontCamera | bool | `true`: turns the front camera on; `false`: turns the rear camera on. |
 | viewId  | int  | Called back video view ID                 |
 
 ### stopCameraPreview
@@ -365,14 +365,14 @@ This API is used to start live streaming (pushing streams), which can be called 
 - A viewer starts co-anchoring.
 
 ```java
-Future<void> startPublish(String? streamId);
+Future<void> startPublish(String streamId);
 ```
 
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
-| -------- | ------ | ------------------------------------------------------------ |
-| streamId | String | The `streamId` used to bind live streaming CDNs. You need to specify the `streamId` of the anchor if you want audience to play the anchor’s streams via live streaming CDNs. |
+| -------- | ------- | ------------------------------------------------------------ |
+| streamId | String? | The `streamId` used to bind live streaming CDNs. You need to specify the `streamId` of the anchor if you want audience to play the anchor's streams via live streaming CDNs. |
 
 
 ### stopPublish
@@ -402,8 +402,8 @@ The parameters are as detailed below:
 | viewId | int    | Called back video view ID |
 
 - **Common playback:**
-    - If the room list contains the anchor’s `userId`, audience can call `startPlay(userId)` to play the anchor's video after `enterRoom()`.
-    - If audience do not have the anchor's `userId` before room entry, they can find it in the `onAnchorEnter(userId)` callback of `TRTCLiveRoomDelegate`, which is returned after room entry. They can then call `startPlay(userId)` to play the anchor’s video.
+    - If the room list contains the anchor's `userId`, audience can call `startPlay(userId)` to play the anchor's video after `enterRoom()`.
+    - If audience do not have the anchor's `userId` before room entry, they can find it in the `onAnchorEnter(userId)` callback of `TRTCLiveRoomDelegate`, which is returned after room entry. They can then call `startPlay(userId)` to play the anchor's video.
 
 - **Co-anchoring:**
 After co-anchoring is initiated, the anchor will receive the `onAnchorEnter(userId)` callback from `TRTCLiveRoomDelegate` and can call `startPlay(userId), passing in the `userId` returned by the callback to play co-anchoring video.
@@ -418,7 +418,7 @@ Future<void> stopPlay(String userId);
 
 The parameters are as detailed below:
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter | Type | Description |
 | ------ | ------ | ---------------- |
 | userId | String | ID of the remote user |
 
@@ -437,12 +437,12 @@ The process of co-anchoring between anchor and audience is as follows:
 1. A **viewer** calls `requestJoinAnchor()` to send a co-anchoring request to the anchor.
 2. The **anchor** receives the `onRequestJoinAnchor()` callback of `TRTCLiveRoomDelegate`.
 3. The **anchor** calls `responseJoinAnchor()` to accept or reject the co-anchoring request.
-4. The **viewer** receives the `responseCallback` callback, which carries the anchor’s response.
+4. The **viewer** receives the `responseCallback` callback, which carries the anchor's response.
 5. If the request is accepted, the **viewer** calls `startCameraPreview()` to enable local camera preview.
 6. The **viewer** calls `startPublish()` to push streams.
 7. After the viewer starts pushing streams, the **anchor** receives the `onAnchorEnter()` callback of `TRTCLiveRoomDelegate`.
-8. The **anchor** calls `startPlay()` to play the co-anchoring viewer’s video.
-9. If there are other viewers co-anchoring with the anchor in the room, the new co-anchoring **viewer** will receive the `onAnchorEnter()` callback and can call `startPlay()` to play other co-anchoring viewers’ video.
+8. The **anchor** calls `startPlay()` to play the co-anchoring viewer's video.
+9. If there are other viewers co-anchoring with the anchor in the room, the new co-anchoring **viewer** will receive the `onAnchorEnter()` callback and can call `startPlay()` to play other co-anchoring viewers' video.
 
    
 
@@ -451,15 +451,15 @@ The process of co-anchoring between anchor and audience is as follows:
 This API is used by anchors to respond to a co-anchoring request after receiving the `onRequestJoinAnchor()` callback of `TRTCLiveRoomDelegate`.
 
 ```java
-Future<ActionCallback> responseJoinAnchor(String userId, bool agreee);
+Future<ActionCallback> responseJoinAnchor(String userId, boolean agreee);
 ```
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
-| ------ | ------- | ------------------------- |
+| Parameter        | Type    | Description                                                                                                      |
+| ------ | ------ | ------------------------- |
 | userId | String  | User ID of the viewer                  |
-| agree | boolean | `true`: accepts; `false`: rejects. |
+| agree | bool | `true`: accepts; `false`: rejects. |
 
 
 ### kickoutJoinAnchor
@@ -501,7 +501,7 @@ Two anchors in different rooms can compete with each other. The process is as fo
 3. **Anchor B** calls `responseRoomPK()` to respond to the competition request.
 4. After accepting the request, **anchor B** waits for the `onAnchorEnter()` callback of `TRTCLiveRoomDelegate` and calls `startPlay()` to play anchor A's video.
 5. **Anchor A** receives the `onRoomPKAccepted` or `onRoomPKRejected` callback.
-6. If the request is accepted, **anchor A** waits for the `onAnchorEnter()` callback of `TRTCLiveRoomDelegate` and calls `startPlay()` to play anchor B’s video.
+6. If the request is accepted, **anchor A** waits for the `onAnchorEnter()` callback of `TRTCLiveRoomDelegate` and calls `startPlay()` to play anchor B's video.
 
    
 
@@ -510,15 +510,15 @@ Two anchors in different rooms can compete with each other. The process is as fo
 This API is used by anchors to respond to a cross-room competition request, after which the request sending anchor will receive the `responseCallback` callback, which carries the response passed in to `requestRoomPK`.
 
 ```java
-Future<ActionCallback> responseRoomPK(String userId, bool agree);
+Future<ActionCallback> responseRoomPK(String userId, boolean agree);
 ```
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
-| ------ | ------- | ------------------------- |
+| Parameter        | Type    | Description                                                                                                      |
+| ------ | ------ | ------------------------- |
 | userId | String | User ID of the anchor sending the competition request |
-| agree | boolean | `true`: accepts; `false`: rejects. |
+| agree | bool | `true`: accepts; `false`: rejects. |
 
 
 ### quitRoomPK
@@ -537,7 +537,7 @@ Future<ActionCallback> quitRoomPK();
 This API is used to switch between the front and rear cameras.
 
 ```java
-Future<void> switchCamera(bool isFrontCamera);
+Future<void> switchCamera(boolean isFrontCamera);
 ```
 
 ### setMirror
@@ -545,14 +545,14 @@ Future<void> switchCamera(bool isFrontCamera);
 This API is used to set the mirror mode.
 
 ```java
-Future<void> setMirror(bool isMirror);
+Future<void> setMirror(boolean isMirror);
 ```
 
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
-| -------- | ------- | --------------- |
-| isMirror | boolean | Enables/Disables mirroring. |
+| -------- | ---- | --------------- |
+| isMirror | bool | Enables/Disables mirroring. |
 
    
 
@@ -561,23 +561,23 @@ The parameters are as detailed below:
 This API is used to mute or unmute the local user.
 
 ```java
-Future<void> muteLocalAudio(bool mute);
+Future<void> muteLocalAudio(boolean mute);
 ```
 
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ---- | ---- | --------------------------------- |
-| mute | bool | `true`: mutes; `false`: unmutes. |
+| mute | boolean | `true`: mute; `false`: unmute |
 
    
 
 ### muteRemoteAudio
 
-This API is used to mute or unmute a remote user.
+This API is used to enable the hands-free mode.
 
 ```java
-Future<void> muteRemoteAudio(String userId, bool mute);
+Future<void> muteRemoteAudio(String userId, boolean mute);
 ```
 
 The parameters are as detailed below:
@@ -585,7 +585,7 @@ The parameters are as detailed below:
 | Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | --------------------------------- |
 | userId | String | ID of the remote user |
-| mute   | bool   | `true`: mutes; `false`: unmutes. |
+| mute | boolean | `true`: mute; `false`: unmute |
 
    
 
@@ -594,14 +594,14 @@ The parameters are as detailed below:
 This API is used to mute or unmute all remote users.
 
 ```java
-Future<void> muteAllRemoteAudio(bool mute);
+Future<void> muteAllRemoteAudio(boolean mute);
 ```
 
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ---- | ---- | --------------------------------- |
-| mute | bool | `true`: mutes; `false`: unmutes. |
+| mute | boolean | `true`: mute; `false`: unmute |
 
    
 
@@ -639,7 +639,7 @@ You can do the following using `TXBeautyManager`:
 
 ### sendRoomTextMsg
 
-This API is used to broadcast a text message in the room, which is generally used for on-screen comments.
+This API is used to broadcast a text message in a room, which is generally used for on-screen comments.
 
 ```java
 Future<ActionCallback> sendRoomTextMsg(String message);
@@ -675,7 +675,7 @@ The parameters are as detailed below:
 
 Callback for error.
 
-This callback indicates that the SDK encountered an unrecoverable error. Such errors must be listened for, and UI reminders should be sent to users if necessary.
+>?This callback indicates that the SDK encountered an unrecoverable error. Such errors must be listened for, and UI reminders should be sent to users if necessary.
 
 The parameters are as detailed below:
 
@@ -729,7 +729,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | --------- | ------ | -------------- |
 | userId    | String | User ID |
-| available | bool | Whether the user’s video is enabled |
+| available | boolean | Whether the user's video is enabled |
 
 ## Callback APIs for Anchors and Audience
 
@@ -755,7 +755,7 @@ The parameters are as detailed below:
 | Parameter        | Type    | Description                                                                                                      |
 | ---------- | ------ | -------------- |
 | userId   | String | ID of the user who quitted co-anchoring  |
-| userName | String | Nickname |
+| userName | String | Username |
 | userAvatar | String | Profile photo address |
 
 
@@ -769,11 +769,9 @@ void onAudienceEnter(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
-| ---------- | ------ | -------------- |
-| userId | String  | User ID of the viewer                  |
-| userName | String | Nickname |
-| userAvatar | String | Profile photo address |
+| Parameter | Type | Description |
+| -------- | -------------------------------- | ----------------------------------- |
+| userInfo | TRTCLiveRoomDef.TRTCLiveUserInfo | Information of the viewer who enters the room, such as user ID, nickname, and profile photo. |
 
 
 ### onAudienceExit
@@ -796,7 +794,7 @@ Callback for receiving a co-anchoring request from a viewer.
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ---------- | ------ | ----------------- |
 | userId | String | ID of the request sending user |
 | userName | String | Username |
@@ -823,7 +821,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------ | ------ | --------------- |
-| userId   | String | User ID of the anchor |
+| userId | String | User ID of the anchor |
 
 ### onKickoutJoinAnchor
 
@@ -834,11 +832,11 @@ Callback for being removed from co-anchoring. A co-anchoring viewer needs to cal
 
 ### onRequestRoomPK
 
-Callback for receiving a cross-room competition request. If an anchor accepts the request after receiving this callback, he or she should wait for the `onAnchorEnter()` callback of `TRTCLiveRoomDelegate` and call `startPlay()` to play the other anchor’s video.
+Callback for receiving a cross-room competition request. If an anchor accepts the request after receiving this callback, he or she should wait for the `onAnchorEnter()` callback of `TRTCLiveRoomDelegate` and call `startPlay()` to play the other anchor's video.
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ---------- | ------ | ----------------- |
 | userId | String | User ID of the request sending anchor |
 | userName | String | Username |
@@ -874,7 +872,7 @@ Callback for ending cross-room competition.
 
 ### onRecvRoomTextMsg
 
-Callback for receiving a text message.
+A text message was received.
 
 
 The parameters are as detailed below:
@@ -886,7 +884,7 @@ The parameters are as detailed below:
 
 ### onRecvRoomCustomMsg
 
-Callback for receiving a custom message.
+A custom message was received.
 
 
 The parameters are as detailed below:

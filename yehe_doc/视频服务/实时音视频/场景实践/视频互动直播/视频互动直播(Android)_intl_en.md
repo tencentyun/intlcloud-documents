@@ -1,25 +1,26 @@
 ## Demonstration
-You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the demo app we provide to try out TRTC’s interactive live streaming features, including co-anchoring, anchor competition, low-latency watch, and on-screen comments.
+You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the demo app we provide to try out TRTC's interactive live streaming features, including co-anchoring, anchor competition, low-latency watch, and on-screen comments.
+
+
 
 To quickly enable the interactive live video streaming feature, you can modify the demo app we provide and adapt it to your needs. You can also use the `TRTCLiveRoom` component and customize your own UI.
 
 [](id:DemoUI)
-
-## Using the Demo App’s UI
+## Using the Demo App's UI
 
 [](id:ui.step1)
 ### Step 1. Create an application
 1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name such as `TestLiveRoom` and click **Create**.
+3. Click **Next** to skip this step.
 
+![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 >!This feature uses two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When you activate TRTC, IM will be activated automatically. IM is a value-added service. See [Value-added Service Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) for its billing details.
 
 
 [](id:ui.step2)
-### Step 2. Download the SDK and demo app source code
-1. Download the [SDK](https://intl.cloud.tencent.com/document/product/647/34615) and [source code of the demo app](https://github.com/tencentyun/TUILiveRoom).
-2. Click **Next**.
-
+### Step 2. Download the app source code
+Clone or download the [TUILiveRoom](https://github.com/tencentyun/TUILiveRoom) source code.
 
 
 [](id:ui.step3)
@@ -28,21 +29,22 @@ To quickly enable the interactive live video streaming feature, you can modify t
 2. Find and open `Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java`.
 3. Set parameters in `GenerateTestUserSig.java` as follows:
 <ul style="margin:0"><li/>SDKAPPID: a placeholder by default. Set it to the actual `SDKAppID`.
-<li>SECRETKEY: a placeholder by default. Set it to the actual key.</ul>
-<img src="https://main.qcloudimg.com/raw/09a7c2e06bb792e1c3d651a61aff4000.png">
+<li/>SECRETKEY: a placeholder by default. Set it to the actual key.</ul>
+
+![](https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png)
 
 4. Click **Next** to complete the creation.
 5. After compilation, click **Return to Overview Page**.
 
 >!The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is suitable only for the local execution and debugging of the demo app**.
->The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
+> The correct `UserSig` distribution method is to integrate the computing code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is needed, your app can send a request to the business server to obtain the dynamic `UserSig`. For more information, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 [](id:ui.step4)
 ### Step 4. Run the demo app
 Open the source code project `TUILiveRoom` with Android Studio (version 3.5 or above) and click **Run**.
 
 [](id:ui.step5)
-### Step 5. Modify the demo app’s source code
+### Step 5. Modify the demo app's source code
 The `Source` folder in the source code contains two subfolders: `ui` and `model`. The `ui` subfolder contains UI code. The table below lists the files (folders) and the UI views they represent. You can refer to it when making UI changes.
 
 | File or Folder | Description |
@@ -59,24 +61,21 @@ The `Source` folder in the source code contains two subfolders: `ui` and `model`
 
 ### User A
 1. Enter a username (**which must be unique**) and log in.
-<img src="https://main.qcloudimg.com/raw/8295052d4cd42f0387bced09f8e145d9.png" width="320"/>
 2. Tap **Create Room**.
-<img src="https://main.qcloudimg.com/raw/0f86a3a46403bd1b106d96691fce92c9.png" width="320"/>
 3. Enter a room name and tap **Start**.
 
 ### User B
 1. Enter a username (**which must be unique**).
-<img src="https://main.qcloudimg.com/raw/e39abca80039bd3b80e0f2d1a01d3e70.png" width="320"/>
-2. Enter the ID of the room created by user A, and tap **Join**.
-<img src="https://main.qcloudimg.com/raw/7439f305fd52a5f314b5140caa1babc4.png" width="320"/>
+2. Enter the ID of the room created by user A, and tap **Join**.<br>
 
-	>! You can find the room ID at the top of user A’s room view.
-<img src="https://main.qcloudimg.com/raw/da47658a199fc295ccf7447a91b117b7.png" width="320"/>
+>! You can find the room ID at the top of user A's room view.
+
 
 
 ## Listening for Room Status and Getting Room List for Co-Anchoring
 You can use `LiveRoomManager` to listen for room status.
-```
+<dx-codeblock>
+::: java java
 LiveRoomManager.getInstance().addCallback(new LiveRoomManager.RoomCallback() {
     /**
      * A room was created
@@ -97,7 +96,7 @@ LiveRoomManager.getInstance().addCallback(new LiveRoomManager.RoomCallback() {
     public void onRoomDestroy(int roomId, final LiveRoomManager.ActionCallback callback) {
         // doSomething
     }
-
+    
     /**
      * The room list was obtained
      * @param callback
@@ -116,38 +115,42 @@ LiveRoomManager.getInstance().addCallback(new LiveRoomManager.RoomCallback() {
         }
     }
 });
-```
+:::
+</dx-codeblock>
 Getting the room list may involve async operations. Using callbacks to get the list provides greater convenience and flexibility.
 
 
 [](id:model)
-## Customizing UI
+## Customizing Your Own UI
 
-The `Source` folder in the [source code](https://github.com/tencentyun/TUILiveRoom/tree/master/Android/Source/src/main/java/com/tencent/liteav/liveroom) contains two subfolders: `ui` and `model`. The `model` subfolder contains the reusable open-source component `TRTCLiveRoom`. You can find the component’s APIs in `TRTCLiveRoom.java` and use them to customize your own UI.
+The `Source` folder in the [source code](https://github.com/tencentyun/TUILiveRoom/tree/master/Android/Source/src/main/java/com/tencent/liteav/liveroom) contains two subfolders: `ui` and `model`. The `model` subfolder contains the reusable open-source component `TRTCLiveRoom`. You can find the component's APIs in `TRTCLiveRoom.java` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/710358e4e170d44304cdb9bc991ad209.jpg)
 
 [](id:model.step1)
-### Step 1. Integrate the SDKs
+### Step 1. Integrate the SDK
 The `TRTCLiveRoom` component depends on the TRTC SDK and IM SDK. Follow the steps below to integrate them into your project.
 
 **Method 1: adding dependencies via Maven**
 1. Add the TRTC SDK and IM SDK dependencies to `dependencies`.
-```
+<dx-codeblock>
+::: java java
 dependencies {
-       complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
-       complie 'com.tencent.imsdk:imsdk:latest.release'
+       compile "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
+       compile 'com.tencent.imsdk:imsdk:latest.release'
 }
-```
+:::
+</dx-codeblock>
 >?You can view the latest version numbers of the two SDKs by visiting their GitHub pages at [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK).
->
-2. In `defaultConfig`, specify the CPU architecture to be used by the app.
-```
+2. In `defaultConfig`, specify the CPU architecture to be used by your application.
+<dx-codeblock>
+::: java java
 defaultConfig {
       ndk {
           abiFilters "armeabi-v7a"
       }
 }
-```
+:::
+</dx-codeblock>
 3. Click **Sync Now** to automatically download the SDKs and integrate them into your project.
 
 **Method 2: adding dependencies through local AAR files**
@@ -173,7 +176,8 @@ If your access to the Maven repository is slow, you can download the ZIP files o
 [](id:model.step2)
 ### Step 2. Configure permission requests and obfuscation rules
 Configure permission requests for your app in `AndroidManifest.xml`. The SDKs need the following permissions (on Android 6.0 and above, the camera and read storage permissions must be requested at runtime.)
-```
+<dx-codeblock>
+::: java java
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -186,25 +190,30 @@ Configure permission requests for your app in `AndroidManifest.xml`. The SDKs ne
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-feature android:name="android.hardware.camera"/>
 <uses-feature android:name="android.hardware.camera.autofocus" />
-```
+:::
+</dx-codeblock>
 
 In the `proguard-rules.pro` file, add the SDK classes to the "do not obfuscate" list.
-```
--keep class com.tencent.** { *;}
-```
+<dx-codeblock>
+::: java java
+-keep class com.tencent.** { *; }
+:::
+</dx-codeblock>
 
 [](id:model.step3)
 ### Step 3. Import the `TRTCLiveRoom` component
 Copy all the files in the directory below to your project:
-```
+<dx-codeblock>
+::: java java
 src/main/java/com/tencent/liteav/liveroom/model
-```
+:::
+</dx-codeblock>
 
 [](id:model.step4)
 ### Step 4. Create an instance and log in
 1. Call the `sharedInstance` API to create an instance of the `TRTCLiveRoom` component.
 2. Create a `TRTCLiveRoomConfig` object, and set its `useCDNFirst` and `CDNPlayDomain` attributes.
- - `useCDNFirst` specifies the way audience watch live streams. `true` means that audience watch live streams over CDNs, which is cost-efficient but has high latency. `false` means that audience watch live streams under the low latency mode, the cost of which is between that of CDN live streaming and co-anchoring, but the latency is lower than 1 second.
+ - `useCDNFirst`: specifies the way audience watch live streams. `true` means that audience watch live streams over CDNs, which is cost-efficient but has high latency. `false` means that audience watch live streams in the low latency mode, the cost of which is between that of CDN live streaming and co-anchoring, but the latency is within 1 second.
  - `CDNPlayDomain`: specifies the domain name for CDN live streaming, which takes effect only if `useCDNFirst` is set to `true`. You can set it in CSS console > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**.
 3. Call the `login` function to log in to the component, and set the key parameters as described below.
  <table>
@@ -214,7 +223,7 @@ src/main/java/com/tencent/liteav/liveroom/model
 </tr>
 <tr>
 <td>SDKAPPID</td>
-<td>You can view the `SDKAPPID` in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC console</a>.</td>
+<td>You can view the `SDKAppID` of your application in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC console</a>.</td>
 </tr>
 <tr>
 <td>userId</td>
@@ -222,11 +231,11 @@ src/main/java/com/tencent/liteav/liveroom/model
 </tr>
 <tr>
 <td>userSig</td>
-<td>Tencent Cloud's proprietary security signature. To obtain one, see <a href="https://intl.cloud.tencent.com/document/product/647/35166">UserSig</a>.</td>
+<td>Tencent Cloud's proprietary security signature. To obtain one, please see <a href="https://intl.cloud.tencent.com/document/product/647/35166">UserSig</a>.</td>
 </tr>
 <tr>
 <td>config</td>
-<td>Global configuration information. Please initialize it during login as it cannot be modified after login.<ul style="margin:0;">
+<td>Global configuration information. Please initialize it during login as it cannot be modified after login.<ul style="margin:0;">
 <li>`useCDNFirst`: specifies the way audience watch live streams. `true` means that audience watch live streams over CDNs, which is cost-efficient but has high latency. `false` means that audience watch live streams in the low latency mode, the cost of which is between that of CDN live streaming and co-anchoring, but the latency is within 1 second.</li>
 <li>`CDNPlayDomain`: specifies the domain name for CDN live streaming, which takes effect only if `useCDNFirst` is set to `true`. You can set it in CSS console > **<a href="https://console.cloud.tencent.com/live/domainmanage">Domain Management</a>**.</li>
 </ul></td>
@@ -256,11 +265,10 @@ mLiveRoom.login(SDKAPPID, userId, userSig, config,
 </dx-codeblock>
 
 [](id:model.step5)
-### Step 5. Create a room and push streams
+### Step 5. Create a room and become a speaker
 1. After performing [step 4](#model.step4) to log in, call `setSelfProfile` to set your nickname and profile photo.
 2. Before streaming, you can call `startCameraPreview` to enable camera preview, add beauty filter buttons to the UI, and set beauty filters through `getBeautyManager`.
- >?Only the Enterprise Edition SDK supports face changing and stickers.
- >
+>?Only the Enterprise Edition SDK supports advanced beauty filter features such as face changing and stickers.
 3. After setting beauty filters, call `createRoom` to create a live streaming room.
 4. Call `startPublish` to start streaming. To enable CDN live streaming, specify `useCDNFirst` and `CDNPlayDomain` in the `TRTCLiveRoomConfig` parameter, which is passed in during login, and specify `streamID` for playback when calling `startPublish`.
 
@@ -294,15 +302,15 @@ mLiveRoom.createRoom(123456789, param, new TRTCLiveRoomCallback.ActionCallback()
 </dx-codeblock>
 
 [](id:model.step6)
-### Step 6. Play back streams
-1. After performing [step 4](#model.step4) to log in, call `setSelfProfile` to set your nickname and profile photo.
+### Step 6. Enter a room as a listener
+1. After performing [step 4](#model.step4) to log in, you can call `setSelfProfile` to set your nickname and profile photo.
 2. Get the latest room list from the backend.
- >?The room list in the demo app is for demonstration only. The business logic of live streaming room lists varies significantly. Tencent Cloud does not provide list management services for the time being. Please manage the list by yourself.
+>?The room list in the demo app is for demonstration only. The business logic of live streaming room lists varies significantly. Tencent Cloud does not provide list management services for the time being. Please manage the list by yourself.
 3. Call `getRoomInfos` to get short descriptions of the rooms, which are provided by anchors when they call `createRoom` to create the rooms.
- >!If your room list already displays enough information, you can skip the step of calling `getRoomInfos`.
+>!If your room list already displays enough information, you can skip the step of calling `getRoomInfos`.
 4. Select a room, call `enterRoom`, with the room ID passed in to enter the room.
-5. Call `startPlay`, with the anchor’s `userId` passed in to start playback.
- - If the room list displays the `userId` of the anchor, you can call `startPlay`, passing in the anchor’s `userId` to start playback.
+5. Call `startPlay`, with the anchor's `userId` passed in to start playback.
+ - If the room list displays the `userId` of the anchor, you can call `startPlay`, passing in the anchor's `userId` to start playback.
  - If you do not know the anchor's `userId`, you can find it in the `onAnchorEnter` event callback, which you will receive after entering the room. You can then call `startPlay` to start playback. 
 
 ![](https://main.qcloudimg.com/raw/2ff8b30de38a3084c12af0513068dc6e.jpg)
@@ -325,7 +333,7 @@ mLiveRoom.getRoomInfos(roomList, new TRTCLiveRoomCallback.RoomInfoCallback() {
 // 3. Select a `roomid` and enter the room
 mLiveRoom.enterRoom(roomid, null);
 
-// 4. After receiving the notification about the anchor’s entry, start playback
+// 4. After receiving the notification about the anchor's entry, start playback
 mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onAnchorEnter(final String userId) {  
@@ -341,10 +349,10 @@ mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
 1. Audience calls `requestJoinAnchor` to send a co-anchoring request to the anchor.
 2. The anchor receives a notification (`TRTCLiveRoomDelegate#onRequestJoinAnchor`) about the co-anchoring request.
 3. The anchor calls `responseJoinAnchor` to accept or decline the co-anchoring request.
-4. The audience receives the `TRTCLiveRoomDelegate#responseCallback` event notification, which carries the anchor’s response.
+4. The audience receives the `TRTCLiveRoomDelegate#responseCallback` event notification, which carries the anchor's response.
 5. If the anchor accepts the co-anchoring request, the audience can call `startCameraPreview` to turn the local camera on and then `startPublish` to push streams.
-6. The anchor receives a notification (`TRTCLiveRoomDelegate#onAnchorEnter`) that a new stream is available, which carries the audience’s `userId`.
-7. The anchor calls `startPlay` to play the audience’s video.
+6. The anchor receives a notification (`TRTCLiveRoomDelegate#onAnchorEnter`) that a new stream is available, which carries the audience's `userId`.
+7. The anchor calls `startPlay` to play the audience's video.
 
 ![](https://main.qcloudimg.com/raw/05a8c6af8bdc8b441f90b297e83106fc.jpg)
 
@@ -359,7 +367,7 @@ mLiveRoom.requestJoinAnchor(mSelfUserId + "requested to co-anchor",
             // 4. The request is accepted by the anchor
             TXCloudVideoView view = new TXCloudVideoView(context);
             parentView.add(view);
-            // 5. The audience turns the camera on and starts pushing streams
+            // 5. The audience turns on the camera and starts pushing streams
             mLiveRoom.startCameraPreview(true, view, null);
             mLiveRoom.startPublish(mSelfUserId + "_stream", null);
         }
@@ -377,10 +385,10 @@ mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
 
     @Override
     public void onAnchorEnter(final String userId) {
-        // 6. The anchor receives a notification that the audience has joined co-anchoring
+        // 6. The anchor receives a notification that the co-anchoring audience has turned on the mic
         TXCloudVideoView view = new TXCloudVideoView(context);
         parentView.add(view);
-        // 7. The anchor plays the audience’s video
+        // 7. The anchor plays the audience's video
         mLiveRoom.startPlay(userId, view, null);
     }
 });
@@ -407,7 +415,7 @@ mLiveRoom.createRoom(12345, param, null);
 mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onAnchorEnter(final String userId) {
-        // 6. Receive a notification about anchor B’s entry
+        // 6. Receive a notification about anchor B's entry
         mLiveRoom.startPlay(userId, mTXCloudVideoView, null);
     }
 });
@@ -430,7 +438,7 @@ mLiveRoom.requestRoomPK(54321, "B",
 // Create room 54321
 mLiveRoom.createRoom(54321, param, null);
 
-// 2. Receive anchor A’s request
+// 2. Receive anchor A's request
 mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRequestRoomPK(
@@ -440,7 +448,7 @@ mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     }
     @Override
     public void onAnchorEnter(final String userId) {
-        // 4. Receive a notification about anchor A’s entry and play anchor A's video
+        // 4. Receive a notification about anchor A's entry and play anchor A's video
         mLiveRoom.startPlay(userId, mTXCloudVideoView, null);
     }
 });
@@ -451,24 +459,24 @@ mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
 ### Step 9. Enable text chat and on-screen comments
 - Call `sendRoomTextMsg` to send common text messages. All users in the room will receive an `onRecvRoomTextMsg` callback.
  IM has its default content moderation rules. Text messages that contain restricted terms will not be forwarded by the cloud.
-<dx-codeblock>
-::: java java
-// Sender: send text messages
-mLiveRoom.sendRoomTextMsg("Hello Word!", null);
-// Recipient: listen for text messages
-mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
+  <dx-codeblock>
+  ::: java java
+  // Sender: send text messages
+  mLiveRoom.sendRoomTextMsg("Hello Word!", null);
+  // Recipient: listen for text messages
+  mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRecvRoomTextMsg(String roomId, 
         String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
         Log.d(TAG, "Received a message from" + userInfo.userName + ": " + message);
     }
-});
-:::
-</dx-codeblock>
+  });
+  :::
+  </dx-codeblock>
 - Call `sendRoomCustomMsg` to send custom (signaling) messages. All users in the room will receive an `onRecvRoomCustomMsg` callback.
 Custom messages are often used to transfer custom signals, e.g., to give and broadcast likes.
 <dx-codeblock>
-::: java java// Sender: customize commands to distinguish between on-screen comments and likes
+::: java java// Sender: customize commands to distinguish on-screen comments and likes
 // For example, use "CMD_DANMU" to indicate on-screen comments and "CMD_LIKE" to indicate likes
 mLiveRoom.sendRoomCustomMsg("CMD_DANMU", "Hello world", null);
 mLiveRoom.sendRoomCustomMsg("CMD_LIKE", "", null);
@@ -488,4 +496,3 @@ mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
 });
 :::
 </dx-codeblock>
-
