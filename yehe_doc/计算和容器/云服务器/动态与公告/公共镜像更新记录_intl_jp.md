@@ -60,7 +60,7 @@
 	<tr>
 		<td rowspan="3">CentOS 8.0</td>
 		<td rowspan="3">イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-25szkc8t">img-25szkc8t</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-25szkc8t">img-25szkc8t</a>
 		<br />現在のカーネルバージョン：4.18.0-193.28.1.el8_2.x86_64</td>
 		</tr>
 	<tr>
@@ -79,7 +79,7 @@
 	<tr>
 		<td>CentOS 7.9</td>
 		<td>イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-l8og963d">img-l8og963d</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-25szkc8t">img-l8og963d</a>
 		<br />現在のカーネルバージョン：kernel-3.10.0-1160.11.1.el7.x86_64</td>
 		<td>2021-05-31</td>
 		<td>新しいイメージがリリースされました。</td>
@@ -87,7 +87,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.8</td>
 		<td rowspan="3">イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-3la7wgnt">img-3la7wgnt</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-3la7wgnt">img-3la7wgnt</a>
 		<br />現在のカーネルバージョン：kernel-3.10.0-1160.11.1.el7.x86_64</td>
 	</tr>
 	<tr>
@@ -111,7 +111,7 @@
 	<tr>
 		<td>CentOS 7.7</td>
 		<td>イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-1u6l2i9l">img-1u6l2i9l</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-1u6l2i9l">img-1u6l2i9l</a>
 		<br />現在のカーネルバージョン：3.10.0-1062.18.1.el7.x86_64</td>
 		<td>2020-04-15</td>
 		<td>最新のシステムパッチへ更新。</td>
@@ -119,7 +119,7 @@
 	<tr>
 		<td rowspan="6">CentOS 7.6</td>
 		<td rowspan="6">イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9qabwvbn">img-9qabwvbn</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-9qabwvbn">img-9qabwvbn</a>
 		<br />現在のカーネルバージョン：3.10.0-1160.11.1.el7.x86_64</td>
 	</tr>
 	<tr>
@@ -142,11 +142,11 @@
 	</tr>
 	<tr>
 		<td>2020-06-30</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のシステムパッチを更新します。</td>
 	</tr>
 	<tr>
 		<td>2019/12/16</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のシステムパッチを更新します。</td>
 	</tr>
 	<tr>
 		<td>2019-05-06</td>
@@ -161,7 +161,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.5</td>
 		<td rowspan="3">イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-oikl1tzv">img-oikl1tzv</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-oikl1tzv">img-oikl1tzv</a>
 		<br />現在のカーネルバージョン：3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -173,7 +173,7 @@
 	</tr>
 	<tr>
 		<td>2020-02-10</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のシステムパッチを更新します。</td>
 	</tr>
 	<tr>
 		<td>2019-05-31</td>
@@ -187,7 +187,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.4</td>
 		<td rowspan="3">イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-8toqc6s3">img-8toqc6s3</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-8toqc6s3">img-8toqc6s3</a>
 		<br />現在のカーネルバージョン：3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -199,7 +199,7 @@
 	</tr>
 	<tr>
 		<td>2020-03-01</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のシステムパッチを更新します。</td>
 	</tr>
 	<tr>
 		<td>2019-03-11</td>
@@ -208,7 +208,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.3</td>
 		<td rowspan="3">イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-dkwyg6sr">img-dkwyg6sr</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-dkwyg6sr">img-dkwyg6sr</a>
 		<br />現在のカーネルバージョン：3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -220,7 +220,7 @@
 	</tr>
 	<tr>
 		<td>2020-03-15</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のシステムパッチを更新します。</td>
 	</tr>
 	<tr>
 		<td>2019-03-26</td>
@@ -229,7 +229,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.2</td>
 		<td rowspan="3">イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-31tjrtph">img-31tjrtph</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-31tjrtph">img-31tjrtph</a>
 		<br />現在のカーネルバージョン：3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -241,7 +241,7 @@
 	</tr>
 	<tr>
 		<td>2020-03-15</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のシステムパッチを更新します。</td>
 	</tr>
 	<tr>
 		<td>2019-03-26</td>
@@ -250,10 +250,10 @@
 	<tr>
 		<td rowspan="2">CentOS 6.9</td>
 		<td rowspan="2">イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-i5u2lkoz">img-i5u2lkoz</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-i5u2lkoz">img-i5u2lkoz</a>
 		<br />現在のカーネルバージョン：2.6.32-754.30.2.el6.x86_64</td>
 		<td>2020-03-04</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のシステムパッチを更新します。</td>
 	</tr>
 	<tr>
 		<td>2019-03-26</td>
@@ -262,7 +262,7 @@
 	<tr>
 		<td>CentOS 6.8</td>
 		<td>イメージID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-6ns5om13">img-6ns5om13</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-6ns5om13">img-6ns5om13</a>
 		<br />現在のカーネルバージョン：2.6.32-642.6.2.el6.x86_64</td>
 		<td>2019-03-26</td>
 		<td>OpenSSHのバージョンを更新します。</td>
@@ -373,7 +373,7 @@
   </tr>
   <tr>
 	<td>2020-03-25</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のシステムパッチを更新します。</td>
   </tr>
 </table>
 
@@ -390,7 +390,7 @@
   <tr>
 	<td rowspan="3">Debian 10.2</td>
 	<td rowspan="3">イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-h1yvvfw1">img-h1yvvfw1</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-h1yvvfw1">img-h1yvvfw1</a>
 	<br />現在のカーネルバージョン：4.19.0-11-amd64</td>
   </tr>
   <tr>
@@ -421,7 +421,7 @@
   <tr>
 	<td rowspan="3">OpenSUSE Leap 15.1</td>
 	<td rowspan="3">イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-4orfgj3l">img-4orfgj3l</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-4orfgj3l">img-4orfgj3l</a>
 	<br />現在のカーネルバージョン：4.12.14-lp151.28.75.1.x86_64</td>
   </tr>
   <tr>
@@ -440,16 +440,16 @@
   <tr>
 	<td rowspan="4">OpenSUSE 42.3</td>
 	<td rowspan="4">イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-0ytr67o7">img-0ytr67o7</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-0ytr67o7">img-0ytr67o7</a>
 	<br />現在のカーネルバージョン：4.4.175-89.1-default</td>
   </tr>
   <tr>
 	<td>2020-06-30</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のシステムパッチを更新します。</td>
   </tr>
   <tr>
 	<td>2020-06-04</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のシステムパッチを更新します。</td>
   </tr>
   <tr>
 	<td>2019-03-13</td>
@@ -470,7 +470,7 @@
   <tr>
 	<td rowspan="4">Windows Server 2019データセンターバージョン64ビット中国語版</td>
 	<td rowspan="4">イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-mmy6qctz">img-mmy6qctz</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-mmy6qctz">img-mmy6qctz</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -478,17 +478,21 @@
   </tr>
   <tr>
 	<td>2021-01-21</td>
-	<td>最新のシステムパッチを更新します。
+	<td>
+	  <ul class="params">
+		<li>最新のシステムパッチを更新します。</li>
+		<li>Cloud Physical Machine2.0はサポートしていません。</li>
+	  </ul>
 	</td>
   </tr>
   <tr>
 	<td>2020-03-18</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のシステムパッチを更新します。</td>
   </tr>
   <tr>
 	<td rowspan="4">Windows Server 2016データセンターバージョン64ビット中国語版</td>
 	<td rowspan="4">イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9id7emv7">img-9id7emv7</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-9id7emv7">img-9id7emv7</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -505,7 +509,7 @@
   <tr>
 	<td rowspan="4">Windows Server 2016データセンターバージョン64ビット英語版</td>
 	<td rowspan="4">イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-1eckhm4t">img-1eckhm4t</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-1eckhm4t">img-1eckhm4t</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -522,7 +526,7 @@
   <tr>
 	<td rowspan="4">Windows Server 2012 R2データセンターバージョン64ビット中国語版</td>
 	<td rowspan="4">イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-29hl923v">img-29hl923v</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-29hl923v">img-29hl923v</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -530,7 +534,7 @@
   </tr>
   <tr>
 	<td>2020-01-13</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のシステムパッチを更新します。</td>
   </tr>
   <tr>
 	<td>2019-08-19</td>
@@ -539,7 +543,7 @@
   <tr>
 	<td rowspan="4">Windows Server 2012 R2データセンターバージョン64ビット英語版</td>
 	<td rowspan="4">イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-2tddq003">img-2tddq003</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-2tddq003">img-2tddq003</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -547,7 +551,7 @@
   </tr>
   <tr>
 	<td>2020-01-13</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のシステムパッチを更新します。</td>
   </tr>
   <tr>
 	<td>2019-08-19</td>
@@ -673,7 +677,7 @@ CentOSは、サポート終了（EOL）の日付情報を次のように正式�
   </tr>
   <tr>
 	<td>Debian 7</td>
-	<td>2016年04月26日～2018年05月31日</td>
+	<td>2016年4月26日～2018年5月31日</td>
   </tr>
   <tr>
 	<td>Debian 8</td>

@@ -72,11 +72,11 @@ PUT _snapshot/my_cos_backup
 调用 snapshot api 创建快照以备份索引数据，创建快照时可以指定只对部分索引进行备份，也可以备份所有的索引，具体的 api 接口参数可以查阅 [官方文档](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/modules-snapshots.html)。
 
 #### 备份所有索引
-将源 ES 集群中的所有索引备份到`my_cos_backup`仓库下，并命名为`snapshot_1`：
+将源 ES 集群中的所有索引备份到 `my_cos_backup` 仓库下，并命名为 `snapshot_1`：
 ```
 PUT _snapshot/my_cos_backup/snapshot_1
 ```
-这个命令会立刻返回，并在后台异步执行直到结束。如果希望创建快照命令阻塞执行，可以添加`wait_for_completion`参数：
+这个命令会立刻返回，并在后台异步执行直到结束。如果希望创建快照命令阻塞执行，可以添加 `wait_for_completion` 参数：
 ```
 PUT _snapshot/my_cos_backup/snapshot_1?wait_for_completion=true
 ```
@@ -122,11 +122,11 @@ POST /_snapshot/my_cos_backup/snapshot_1/_restore
 
 	
 ### 查看索引恢复状态
-您可以通过调用`_recovery` API，查看指定索引恢复的进度：
+您可以通过调用 `_recovery` API，查看指定索引恢复的进度：
 ```
 GET index_1/_recovery
 ```
-另外可以通过调用以下 API，查看指定索引的状态，返回结果中`status`为`green`则说明索引已经完全恢复：
+另外可以通过调用以下 API，查看指定索引的状态，返回结果中 `status` 为 `green`，则说明索引已经完全恢复：
 ```
 GET _cluster/health/index_1
 ```
@@ -178,28 +178,26 @@ npm install elasticdump -g
 --output-index: 目标 ES 集群的索引
 --type: 迁移类型，默认为 data，表明只迁移数据，可选 settings, analyzer, data, mapping, alias
 ```
+3. 如果集群有安全认证，可以参照下面的方法使用 reindex 集群鉴权。
+在对应的 http 后面，添加 user:password@ 参考样例 `elasticsearch-dump --input=http://192.168.1.2:9200/my_index --output=http://user:password@192.168.1.2:9200/my_index --type=data`。
 3. 迁移单个索引
  以下操作通过 elasticdump 命令将集群172.16.0.39中的 companydatabase 索引迁移至集群172.16.0.20。
- >!第一条命令先将索引的 settings 先迁移，如果直接迁移 mapping 或者 data 将失去原有集群中索引的配置信息如分片数量和副本数量等，当然也可以直接在目标集群中将索引创建完毕后再同步 mapping 与 data。
- >
-
+>!第一条命令先将索引的 settings 先迁移，如果直接迁移 mapping 或者 data 将失去原有集群中索引的配置信息如分片数量和副本数量等，当然也可以直接在目标集群中将索引创建完毕后再同步 mapping 与 data。
+>
 ```
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=settings
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=mapping
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=data
 ```
-
 4. 迁移所有索引
 以下操作通过 elasticdump 命令将集群172.16.0.39中的所有索引迁移至集群172.16.0.20。 
 >!此操作并不能迁移索引的配置，例如分片数量和副本数量，必须对每个索引单独进行配置的迁移，或者直接在目标集群中将索引创建完毕后再迁移数据。
 >
-
 ```
 elasticdump --input=http://172.16.0.39:9200 --output=http://172.16.0.20:9200
 ```
 
 ## 总结
-
 1. elasticsearch-dump 和 logstash 做跨集群数据迁移时，都要求用于执行迁移任务的机器可以同时访问到两个集群，因为网络无法连通的情况下就无法实现迁移。而使用 snapshot 的方式则没有这个限制，因为 snapshot 方式是完全离线的。因此 elasticsearch-dump 和 logstash 迁移方式更适合于源 ES 集群和目标 ES 集群处于同一网络的情况下进行迁移。而需要跨云厂商的迁移，可以选择使用 snapshot 的方式进行迁移，例如从阿里云 ES 集群迁移至腾讯云 ES 集群，也可以通过打通网络实现集群互通，但是成本较高。
 2. elasticsearch-dump 工具和 MySQL 数据库用于做数据备份的工具 mysqldump 类似，都是逻辑备份，需要将数据一条一条导出后再执行导入，所以适合数据量小的场景下进行迁移。
 3. snapshot 的方式适合数据量大的场景下进行迁移。

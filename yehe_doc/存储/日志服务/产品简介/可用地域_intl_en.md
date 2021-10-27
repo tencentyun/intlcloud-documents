@@ -6,22 +6,22 @@ You can create logsets and log topics in different regions when using CLS. Regio
 
 | Region     | Abbreviation         | Private Domain Name                            | Public Domain Name                           |
 | :------- | :--------------- | :---------------------------------- | :--------------------------------- |
-| Beijing     | ap-beijing       | ap-beijing.cls.tencentyun.com       | ap-beijing.cls.tencentcs.com       |
-| Guangzhou     | ap-guangzhou     | ap-guangzhou.cls.tencentyun.com     | ap-guangzhou.cls.tencentcs.com     |
-| Shanghai     | ap-shanghai      | ap-shanghai.cls.tencentyun.com      | ap-shanghai.cls.tencentcs.com      |
-| Chengdu     | ap-chengdu       | ap-chengdu.cls.tencentyun.com       | ap-chengdu.cls.tencentcs.com       |
-| Nanjing     | ap-nanjing       | ap-nanjing.cls.tencentyun.com       | ap-nanjing.cls.tencentcs.com       |
-| Chongqing     | ap-chongqing     | ap-chongqing.cls.tencentyun.com     | ap-chongqing.cls.tencentcs.com     |
-| Hong Kong (China) | ap-hongkong      | ap-hongkong.cls.tencentyun.com      | ap-hongkong.cls.tencentcs.com      |
-| Silicon Valley     | na-siliconvalley | na-siliconvalley.cls.tencentyun.com | na-siliconvalley.cls.tencentcs.com |
-| Virginia | na-ashburn       | na-ashburn.cls.tencentyun.com       | na-ashburn.cls.tencentcs.com |
-| Singapore   | ap-singapore     | ap-singapore.cls.tencentyun.com     | ap-singapore.cls.tencentcs.com     |
-| Thailand  | ap-bangkok   | ap-bangkok.cls.tencentyun.com  | ap-bangkok.cls.tencentcs.com  |
-| Mumbai     | ap-mumbai        | ap-mumbai.cls.tencentyun.com        | ap-mumbai.cls.tencentcs.com        |
-| Frankfurt | eu-frankfurt     | eu-frankfurt.cls.tencentyun.com     | eu-frankfurt.cls.tencentcs.com   |
-| Tokyo     | ap-tokyo         | ap-tokyo.cls.tencentyun.com         | ap-tokyo.cls.tencentcs.com         |
-| Seoul     | ap-seoul         | ap-seoul.cls.tencentyun.com         | ap-seoul.cls.tencentcs.com         |
-| Moscow  | eu-moscow   |  eu-moscow.cls.tencentyun.com  |  eu-moscow.cls.tencentcs.com  |
+| Beijing    | ap-beijing       | ap-beijing.cls.tencentyun.com       | ap-beijing.cls.tencentcs.com/ap-beijing.cls.tencentcs.cn       |
+| Guangzhou      | ap-guangzhou     | ap-guangzhou.cls.tencentyun.com     | ap-guangzhou.cls.tencentcs.com/ap-guangzhou.cls.tencentcs.cn     |
+| Shanghai      | ap-shanghai      | ap-shanghai.cls.tencentyun.com      | ap-shanghai.cls.tencentcs.com/ap-shanghai.cls.tencentcs.cn      |
+| Chengdu     | ap-chengdu       | ap-chengdu.cls.tencentyun.com       | ap-chengdu.cls.tencentcs.com/ap-chengdu.cls.tencentcs.cn       |
+| Nanjing     | ap-nanjing       | ap-nanjing.cls.tencentyun.com       | ap-nanjing.cls.tencentcs.com/ap-nanjing.cls.tencentcs.cn       |
+| Chongqing     | ap-chongqing     | ap-chongqing.cls.tencentyun.com     | ap-chongqing.cls.tencentcs.com/ap-chongqing.cls.tencentcs.cn     |
+| Hong Kong (China) | ap-hongkong      | ap-hongkong.cls.tencentyun.com      | ap-hongkong.cls.tencentcs.com/ap-hongkong.cls.tencentcs.cn      |
+| Silicon Valley    | na-siliconvalley | na-siliconvalley.cls.tencentyun.com | na-siliconvalley.cls.tencentcs.com/na-siliconvalley.cls.tencentcs.cn |
+| Virginia | na-ashburn       | na-ashburn.cls.tencentyun.com       | na-ashburn.cls.tencentcs.com/na-ashburn.cls.tencentcs.cn |
+| Singapore   | ap-singapore     | ap-singapore.cls.tencentyun.com     | ap-singapore.cls.tencentcs.com/ap-singapore.cls.tencentcs.cn     |
+| Thailand  | ap-bangkok   | ap-bangkok.cls.tencentyun.com  | ap-bangkok.cls.tencentcs.com/ap-bangkok.cls.tencentcs.cn  |
+| Mumbai      | ap-mumbai        | ap-mumbai.cls.tencentyun.com        | ap-mumbai.cls.tencentcs.com/ap-mumbai.cls.tencentcs.cn   |
+| Frankfurt| eu-frankfurt     | eu-frankfurt.cls.tencentyun.com     | eu-frankfurt.cls.tencentcs.com/eu-frankfurt.cls.tencentcs.cn   |  
+| Tokyo    | ap-tokyo         | ap-tokyo.cls.tencentyun.com         | ap-tokyo.cls.tencentcs.com/ap-tokyo.cls.tencentcs.cn         |
+| Seoul     | ap-seoul         | ap-seoul.cls.tencentyun.com         | ap-seoul.cls.tencentcs.com/ap-seoul.cls.tencentcs.cn         |
+| Moscow  | eu-moscow   |  eu-moscow.cls.tencentyun.com  |  eu-moscow.cls.tencentcs.com/eu-moscow.cls.tencentcs.cn  |
 
 
 ## Notes:

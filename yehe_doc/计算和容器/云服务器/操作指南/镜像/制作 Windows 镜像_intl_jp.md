@@ -3,7 +3,7 @@
 
 ## 操作手順
 
-### 準備
+### 準備作業
 
 システムディスクイメージを作成してエクスポートする前に、以下の操作を行う必要があります​。
 >?データディスクイメージをエクスポートする場合は、この手順をスキップしてください。
@@ -15,7 +15,8 @@
 2. Windows PowerShellウィンドウで、**diskmgmt.msc**を入力し、**Enter**キーを押して「ディスクの管理」ウィンドウを開きます。
 3. チェックするディスクを右クリックし、 【プロパティ】をクリックして、【ボリューム】タブを選択することにより、ディスクのパーティション形式を確認できます。
 2. ディスクのパーティション形式がGPTパーティションかどうかを確認します。
- - GPTパーティションの場合、サービス移行はGPTパーティションをサポートしていないため、[チケットを提出](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8CVM&step=1)してサポートを求めることができます。
+ - GPTパーティションである場合、マイグレーションサービスは現在GPTパーティションをサポートしていないため、[チケットを提出](https://console.intl.cloud.tencent.com/workorder
+)してフィードバックしてください。
  - そうでない場合は、次の手順に進みます。
 3. 管理者としてコマンドプロンプト（CMD）を開き、次のコマンドを実行して、現在のOSがEFIモードで起動するかどうかを確認します。
 ```
@@ -41,7 +42,8 @@ resumeobject            {1bcd0c6f-1935-11e8-8d3e-3464a915af28}
 nx                      OptIn
 bootmenupolicy          Standard
 ```
- - `path` パラメータに「efi」が含まれている場合、現在のOSはEFIモードで起動することを示します。[チケットを提出](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8CVM&step=1)してフィードバックしてください。
+ - `path`パラメータに「efi」が含まれている場合、現在のOSがEFIモードで起動することを示すため、[チケットを提出](https://console.intl.cloud.tencent.com/workorder
+)してフィードバックしてください。
  - `path` パラメータに「efi」が含まれていない場合、次の手順に進みます。
 
 #### ソフトウエアのアンインストール
@@ -75,26 +77,26 @@ bootmenupolicy          Standard
 <dx-tabs>
 ::: プラットフォームツールを使用してイメージをエクスポートする[](id:Useplatform)
 VMWare vCenter ConvertまたはCitrix XenConvert などの仮想化プラトフォームのイメージエクスポートツールを使用できます。詳細について、対象プラットフォームのエクスポートツールのドキュメントをご参照ください。
-<dx-alert infotype="explain">
-現在、Tencent Cloudのサービス移行は、qcow2、vhd、raw、およびvmdk形式のイメージをサポートします。
-</dx-alert>
+>? 現在、Tencent Cloudのサービス移行は、qcow2、vhd、raw、およびvmdk形式のイメージをサポートします。
+>
 :::
-::: disk2vhd\sを使用してイメージをエクスポートする[](id:Usedisk2vhd)
+::: disk2vhd を使用してイメージをエクスポートする[](id:Usedisk2vhd)
 物理マシンのシステムをエクスポートする場合、またはプラットフォームツールを使用してイメージをエクスポートしたくない場合は、disk2vhdツールを使用してイメージをエクスポートします。
 1. disk2vhdツールをインストールして実行します。
 [ここをクリックしてdisk2vhdツールをダウンロードする >>](https://download.sysinternals.com/files/Disk2vhd.zip)
-2. エスクポートするイメージの保存場所を選択し、コピーするボリュームをチェックして、【作成】をクリックします。次の図に示すように：
-
-<dx-alert infotype="notice">
-<li>disk2vhdは、Windowsシステムにボリュームシャドウコピーサービス（VSS）がインストールされた後にのみ起動できます。VSS機能の詳細については、 <a href="https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN">Volume Shadow Copy Service</a>をご参照ください。</li>
-<li>「Use Vhdx」をチェックしないでください。システムは現在vhdx 形式のイメージをサポートしていません。</li>
-<li>データの整合性を確保するために、「Use volume Shadow Copy」を選択することをお勧めします。</li>
-</dx-alert>
-
+3. エスクポートするイメージの保存場所を選択し、コピーするボリュームをチェックして、【作成】をクリックします。次の図に示すように：
+>! 
+> - disk2vhdは、Windowsシステムにボリュームシャドウコピーサービス（VSS）がインストールされた後にのみ起動できます。VSS機能の詳細については、 [Volume Shadow Copy Service](https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN)をご参照ください。
+> - 「Use Vhdx」をチェックしないでください。システムは現在vhdx 形式のイメージをサポートしていません。
+> - データの整合性を確保するために、「Use volume Shadow Copy」を選択することをお勧めします。
+> 
 ![image](https://main.qcloudimg.com/raw/68d9c4e5e7db49c4cefdd3785ce9b68d.jpg)
 :::
 </dx-tabs>
 
+
+### イメージ形式の変換（任意）
+変換イメージ形式を参照し、`qemu-img` を使用して、イメージファイルをサポート形式に変換します。
 
 ### イメージの確認
 

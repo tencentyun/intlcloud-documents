@@ -6,4 +6,4 @@
  - プライマリ配信プロトコルタイプ：HTTPとHTTPSをサポートします。
  - デフォルト配信ドメイン名：システムが割り当てた`xxx.vod2.myqcloud.com`がデフォルトで使用されます。カスタムドメイン名を[追加](https://intl.cloud.tencent.com/document/product/266/35572) し [解決](https://intl.cloud.tencent.com/document/product/266/35572) 完了してデフォルト配信ドメイン名とすることもできます。
  
-![](https://main.qcloudimg.com/raw/a7be2ffd1ec48a3fea0b5a661700a6f0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/63d948da67e7b1d9c48b7bcfae3567c9.png)

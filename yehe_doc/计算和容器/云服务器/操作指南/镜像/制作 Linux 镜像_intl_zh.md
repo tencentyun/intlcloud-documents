@@ -16,12 +16,14 @@
 sudo parted -l /dev/sda | grep 'Partition Table'
 ```
  - 若返回结果为 msdos，即表示为 MBR 分区，请执行下一步。
- - 若返回结果为 gpt，即表示为 GPT 分区。目前服务迁移不支持 GPT 分区，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 反馈。
+ - 若返回结果为 gpt，即表示为 GPT 分区。目前服务迁移不支持 GPT 分区，请通过 [提交工单](https://console.intl.cloud.tencent.com/
+) 反馈。
 2. 执行以下命令，检查操作系统是否以 EFI 方式启动。
 ```
 sudo ls /sys/firmware/efi
 ```
- - 若存在文件，则表示当前操作系统以 EFI 方式启动，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 反馈。
+ - 若存在文件，则表示当前操作系统以 EFI 方式启动，请通过 [提交工单](https://console.intl.cloud.tencent.com/
+) 反馈。
  - 若不存在文件，请执行下一步。
 
 #### 检查系统关键文件
@@ -94,20 +96,15 @@ gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime
 
 ### 导出镜像
 根据实际需求，选择不同的方式导出镜像。
-
 <dx-tabs>
-<span id="Useplatform"></span>
-:::使用平台工具导出镜像
+::: 使用平台工具导出镜像[](id:Useplatform)
 使用 VMWare vCenter Converter 或 Citrix XenConvert 等虚拟化平台的导出镜像工具。详情请参见各平台的导出工具文档。
-<dx-alert infotype="explain">
-目前腾讯云服务迁移支持的镜像格式有：qcow2，vhd，raw，vmdk。
-</dx-alert>
+>? 目前腾讯云服务迁移支持的镜像格式有：qcow2，vhd，raw，vmdk。
+>
 :::
-<span id="ExportImageForUsingCommand"></span>
-::: 使用命令导出镜像
-<dx-alert infotype="notice">
-由于使用命令手工导出镜像的风险比较大（如在 IO 繁忙时可能造成文件系统的 metadata 错乱等）。建议您在导出镜像后，[检查镜像](#CheckMirror) 完整无误。
-</dx-alert>
+::: 使用命令导出镜像[](id:ExportImageForUsingCommand)
+>! 由于使用命令手工导出镜像的风险比较大（如在 IO 繁忙时可能造成文件系统的 metadata 错乱等）。建议您在导出镜像后，[检查镜像](#CheckMirror) 完整无误。
+>
 
 您可选择 [使用 qemu-img 命令](#qemuimg) 或 [使用 dd 命令](#dd) 其中一种方式导出镜像：
 - **使用 `qemu-img` 命令**<span id="qemuimg"></span>
@@ -118,8 +115,7 @@ apt-get install qemu-utils
  2. 执行以下命令，将 `/dev/sda` 导出至 `/mnt/sdb/test.qcow2`。
 ```
 sudo qemu-img convert -f raw -O qcow2 /dev/sda /mnt/sdb/test.qcow2
-```
-其中，`/mnt/sdb`为挂载的新磁盘或者其他网络存储。
+``` 其中，`/mnt/sdb`为挂载的新磁盘或者其他网络存储。
 如果您需要转换成其他格式，请修改`-O`的参数值。可修改的参数值如下：
 <span id="-OParameterValue"></span>
 <table>
@@ -133,13 +129,11 @@ sudo qemu-img convert -f raw -O qcow2 /dev/sda /mnt/sdb/test.qcow2
 例如，执行以下命令，导出 raw 格式的镜像。
 ```
 sudo dd if=/dev/sda of=/mnt/sdb/test.imag bs=1K count=$count
-```
-其中，`count` 参数即为需要复制分区的数量，您可以通过 `fdisk` 命令查出该数量值。如果您需要全盘复制，`count` 参数则可以忽略。
+``` 其中，`count` 参数即为需要复制分区的数量，您可以通过 `fdisk` 命令查出该数量值。如果您需要全盘复制，`count` 参数则可以忽略。
 例如，执行以下命令，查看 `/dev/sda` 的分区数量。
 ```
 fdisk -lu /dev/sda
-```
-返回类似如下结果：
+``` 返回类似如下结果：
 ```
 Disk /dev/sda: 1495.0 GB, 1494996746240 bytes
 255 heads, 63 sectors/track, 181756 cylinders, total 2919915520 sectors
@@ -153,25 +147,18 @@ Disk identifier: 0x0008f290
 /dev/sda2        41945088    46123007     2088960   82  Linux swap / Solaris
 /dev/sda3        46123008    88066047    20971520   83  Linux
 /dev/sda4        88066048  2919910139  1415922046   8e  Linux LVM
-```
-由`fdisk` 命令的返回结果可得知，sda1 结束位置在41945087 \* 512字节处，`count`设置为20481M即可。
-<dx-alert infotype="explain">
-通过 `dd` 命令导出的镜像为 raw 格式，建议 [转换为 qcow2，vhd 或者其他镜像格式](#ImageFormatConversion)。
-</dx-alert>
+``` 由`fdisk` 命令的返回结果可得知，sda1 结束位置在41945087 \* 512字节处，`count`设置为20481M即可。
+>? 通过 `dd` 命令导出的镜像为 raw 格式，建议 [转换为 qcow2，vhd 或者其他镜像格式](#ImageFormatConversion)。
+>
 :::
 </dx-tabs>
 
-<span id="ImageFormatConversion"></span>
-### 镜像格式转换
->? 目前腾讯云的服务迁移支持的镜像格式有：qcow2，vhd，vmdk，raw。建议使用压缩的镜像格式，节省传输和迁移的时间。
-> 
-使用 `qemu-img` 命令转换镜像格式。
-例如，执行以下命令，将 raw 格式的镜像转换为 qcow2 格式。
-```
-sudo qemu-img convert -f raw -O qcow2 test.img test.qcow2
-```
-- `-f`为源端镜像文件格式。
-- `-O` 为目的端镜像文件格式，支持的格式请参考 [`-O`的参数值](#-OParameterValue)。
+
+
+
+### 转换镜像格式（可选）[](id:ImageFormatConversion)
+参考转换镜像格式，使用 `qemu-img` 将镜像文件转换为支持的格式。
+
 
 <span id="CheckMirror"></span>
 ### 检查镜像
@@ -196,5 +183,4 @@ mount /dev/nbd0p1 /mnt
 ```
 执行 `qemu-nbd` 命令后，`/dev/nbd0` 就映射了 `xxx.qcow2` 中的内容。而 `/dev/nbd0p1` 代表该虚拟磁盘的第一个分区，若 nbd0p1 不存在或 mount 不成功，则很可能是镜像错误。
 此外，您还可以在上传镜像前，先启动云服务器测试镜像文件是否可以使用。
-
 

@@ -8,924 +8,41 @@ You can create a video transcoding template and customize it according to your b
 + Container format: MP4, FLV, or HLS
 + Configuration items: video and audio parameters
 + Video parameters:
-	+ Codec: H.264 or H.265
-	+ Video bitrate: 0 or 128–35,000 Kbps
-	+ Resolution: the value range of the long side/short side (width/height) of the video is 0 or 128–4096 px
-	+ Frame rate: 0–60 fps
+	+ Codec: H.264, H.265, AOMedia Video1
+	+ Video bitrate: 128kbps-35000kbps
+	+ Resolution: the value range of the long side/short side (width/height) of the video is 128–4096 px
+	+ Frame rate: 1～100fps
 + Audio parameters:
 	+ Codec: AAC or MP3
 	+ Sampling rate: three default sampling rates, i.e., 32000 Hz, 44100 Hz, and 48000 Hz
-	+ Audio bitrate: 0 or 26–256 Kbps
+	+ Audio bitrate: 26kbps-256kbps
 	+ Sound channel: mono-channel or dual-channel
 + Common template: specify whether to set it as a common template
 
 The created template will be displayed in the template list. You can view, edit, or delete the template, or set it as a common template.
 
-#### List of preset parameter templates
-
-<table>
-    <tr>
-        <th rowspan=2>
-            Specification                
-        </th>
-        <th rowspan=2>
-            Template ID                
-        </th>
-        <th rowspan=2>
-            Format
-        </th>
-        <th colspan=4>    
-            Video Parameters
-        </th>
-        <th colspan=1>    
-            Audio Parameters
-        </th>
-    </tr>
-    <tr>
-        <th>
-            Resolution
-        </th>
-        <th>
-            Bitrate
-        </th>
-        <th>
-            FPS
-        </th>
-        <th>
-            Codec
-        </th>
-        <th>
-            Codec
-        </th>
-    </tr>
-    <tr>
-        <td rowspan=6>
-            LD
-        </td>
-        <td>
-            10
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            320 * proportionally scaled
-        </td>
-        <td>
-            256 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            510
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            Proportionally scaled * 240
-        </td>
-        <td>
-            250 Kbps
-        </td>
-        <td>
-            15
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            210
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            320 * proportionally scaled
-        </td>
-        <td>
-            256 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            610
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            Proportionally scaled * 240
-        </td>
-        <td>
-            250 Kbps
-        </td>
-        <td>
-            15
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            10046
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            320 * proportionally scaled
-        </td>
-        <td>
-            256 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            MP3
-        </td>
-    </tr>
-    <tr>
-        <td>
-            710
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            Proportionally scaled * 240
-        </td>
-        <td>
-            250 Kbps
-        </td>
-        <td>
-            15
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td rowspan=6>
-            SD
-        </td>
-        <td>
-            20
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            640 * proportionally scaled
-        </td>
-        <td>
-            512 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            520
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            Proportionally scaled * 480
-        </td>
-        <td>
-            600 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            220
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            640 * proportionally scaled
-        </td>
-        <td>
-            512 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            620
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            Proportionally scaled * 480
-        </td>
-        <td>
-            600 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            10047
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            640 * proportionally scaled
-        </td>
-        <td>
-            512 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            MP3
-        </td>
-    </tr>
-    <tr>
-        <td>
-            720
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            Proportionally scaled * 480
-        </td>
-        <td>
-            600 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td rowspan=6>
-            HD
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            1280 * proportionally scaled
-        </td>
-        <td>
-            1,024 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            530
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            Proportionally scaled * 720
-        </td>
-        <td>
-            800 Kbps
-        </td>
-        <td>
-            25
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            230
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            1280 * proportionally scaled
-        </td>
-        <td>
-            1,024 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            630
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            Proportionally scaled * 720
-        </td>
-        <td>
-            800 Kbps
-        </td>
-        <td>
-            25
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            10048
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            1280 * proportionally scaled
-        </td>
-        <td>
-            1,024 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            MP3
-        </td>
-    </tr>
-    <tr>
-        <td>
-            730
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            Proportionally scaled * 720
-        </td>
-        <td>
-            800 Kbps
-        </td>
-        <td>
-            25
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td  rowspan=6>
-            FHD
-        </td>
-        <td>
-            40
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            1920 * proportionally scaled
-        </td>
-        <td>
-            2,500 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            540
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            Proportionally scaled * 1080
-        </td>
-        <td>
-            1,400 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            240
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            1920 * proportionally scaled
-        </td>
-        <td>
-            2,500 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            640
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            Proportionally scaled * 1080
-        </td>
-        <td>
-            1,400 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            10049
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            1920 * proportionally scaled
-        </td>
-        <td>
-            2,500 Kbps
-        </td>
-        <td>
-            24
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            MP3
-        </td>
-    </tr>
-    <tr>
-        <td>
-            740
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            Proportionally scaled * 1080
-        </td>
-        <td>
-            1,400 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td  rowspan=6>
-            2K
-        </td>
-        <td>
-            70
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            Proportionally scaled * 1440
-        </td>
-        <td>
-            3,072 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            570
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            Proportionally scaled * 1440
-        </td>
-        <td>
-            2,048 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            270
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            Proportionally scaled * 1440
-        </td>
-        <td>
-            3,072 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            670
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            Proportionally scaled * 1440
-        </td>
-        <td>
-            2,048 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            370
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            Proportionally scaled * 1440
-        </td>
-        <td>
-            3,072 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            MP3
-        </td>
-    </tr>
-    <tr>
-        <td>
-            770
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            Proportionally scaled * 1440
-        </td>
-        <td>
-            2,048 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td  rowspan=6>
-            4K
-        </td>
-        <td>
-            80
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            Proportionally scaled * 2160
-        </td>
-        <td>
-            6,144 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            580
-        </td>
-        <td>
-            MP4
-        </td>
-        <td>
-            Proportionally scaled * 2160
-        </td>
-        <td>
-            4,096 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            280
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            Proportionally scaled * 2160
-        </td>
-        <td>
-            6,144 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            680
-        </td>
-        <td>
-            HLS
-        </td>
-        <td>
-            Proportionally scaled * 2160
-        </td>
-        <td>
-            4,096 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-    <tr>
-        <td>
-            380
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            Proportionally scaled * 2160
-        </td>
-        <td>
-            6,144 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.264
-        </td>
-        <td>
-            MP3
-        </td>
-    </tr>
-    <tr>
-        <td>
-            780
-        </td>
-        <td>
-            FLV
-        </td>
-        <td>
-            Proportionally scaled * 2160
-        </td>
-        <td>
-            4,096 Kbps
-        </td>
-        <td>
-            30
-        </td>
-        <td>
-            H.265
-        </td>
-        <td>
-            AAC
-        </td>
-    </tr>
-</table>
+For details, please see [Preset transcoding templates](https://intl.cloud.tencent.com/document/product/266/33932#preset-transcoding-templates).
 
 ## TESHD Template
 
 You can create a TESHD template and customize it according to your business needs. Select **TESHD** and click **Create Transcoding Template** to enter the custom template configuration page.
 + Template name: enter up to 64 characters. Only letters, digits, spaces, underscores (_), hyphens (-), and periods (.) are supported
-+ Container format: MP4
++ Container format: MP4, FLV, HLS
 + Configuration items: video and audio parameters
 + Video parameters:
-	+ Codec: H.264
+	+ Codec: H.264, H.265, AOMedia Video1
 	+ Average bitrate limit: if it is left empty or 0 is entered, no upper limit is set for video bitrate
-	+ Resolution: the value range of the long side/short side (width/height) of the video is 0 or 128–4096 px
-	+ Frame rate: 0–60 fps
+	+ Resolution: the value range of the long side/short side (width/height) of the video is 128–4096 px
+	+ Frame rate: 1～100fps
 + Audio parameters:
 	+ Codec: AAC or MP3
 	+ Sampling rate: three default sampling rates, i.e., 32000 Hz, 44100 Hz, and 48000 Hz
-	+ Audio bitrate: 0 or 26–256 Kbps
+	+ Audio bitrate: 26–256 Kbps
 	+ Sound channel: mono-channel or dual-channel
 + Common template: specify whether to set it as a common template
 
 The created template will be displayed in the template list. You can view, edit, or delete the template, or set it as a common template.
->?You can view the [preset TESHD templates](https://console.cloud.tencent.com/vod/video-process/template/tehd) in the VOD console.
+>?You can view the [preset TESHD templates](https://intl.cloud.tencent.com/document/product/266/33932#preset-teshd-templates) in the VOD console.
 
 
 ## <a id="yp"></a>Audio Transcoding Template
@@ -938,7 +55,7 @@ You can create an audio transcoding template and customize it according to your 
 + Audio parameters:
 	+ Audio codec: MP3 (when the container format is MP3); FLAC (when the container format is FLAC or OGG); MP3, AAC, or AC3 (when the container format is M4A).
 	+ Sampling rate: three default sampling rates, i.e., 32000 Hz, 44100 Hz, and 48000 Hz
-	+ Audio bitrate: 0 or 26–256 Kbps
+	+ Audio bitrate: 26–256 Kbps
 	+ Sound channel: mono-channel or dual-channel
 + Common template: specify whether to set it as a common template
 
@@ -1114,23 +231,23 @@ The created template will be displayed in the template list. You can view, edit,
 You can use the preset adaptive bitrate streaming template or create custom templates according to your business needs.
 + **Basic info**
 	+ Template name: enter up to 64 characters. Only letters, digits, spaces, underscores (_), hyphens (-), and periods (.) are supported
-	+ Muxing Format: HLS
+	+ Muxing Format: HLS, MPEG-DASH
 	+ Encryption: no encryption or SimpleAES
 	+ Switch from Low Resolution to High Resolution: enable or disable
 + **Substream info**
 	+ Video codec: H.264 or H.265.
-	+ Video bitrate: 0 or 128–35,000 Kbps
-	+ Video resolution: the value range of the short/long side of the video is 0 or 128–4,096 px
-	+ Video frame rate: 0–60 fps
+	+ Video bitrate: 128–35,000 Kbps
+	+ Video resolution: the value range of the short/long side of the video is 128–4,096 px
+	+ Video frame rate: 1-100fps
 	+ Audio codec: AAC or MP3
 	+ Audio sampling rate: 32,000 Hz, 44,100 Hz, or 48,000 Hz
-	+ Audio bitrate: 0 or 26–256 Kbps
+	+ Audio bitrate: 26–256 Kbps
 	+ Sound channel: mono-channel or dual-channel
 
 The created template will be displayed in the template list. You can view, edit, or delete the template.
 >?
 >- You need to add the information of at least one substream when creating a template.
->- You can view the [preset adaptive bitrate streaming templates](https://console.cloud.tencent.com/vod/video-process/template/ads) in the VOD console.
+>- You can view the [preset adaptive bitrate streaming templates](https://intl.cloud.tencent.com/document/product/266/33932#preset-adaptive-bitrate-streaming-templates) in the VOD console.
 
 ## Watermark Template
 
@@ -1154,11 +271,11 @@ You can create a screencapture template according to your business needs for upl
 The template name, screenshot type, and image dimensions are displayed in the screencapture template. You can view, edit, or delete the template in the **Operation** column.
 
 ### Time point screenshot
-Select **Time Point Screenshot** as the screenshot type. **You can only use the template to set the screenshot type. To specify sample timestamps, please go to screenshot task configuration.** For more information on the configuration of a time point screencapture task, please see [Task Configuration](https://intl.cloud.tencent.com/document/product/266/14058).
+Select **Time Point Screenshot** as the screenshot type. **You can only use the template to set the screenshot type. To specify sample timestamps, please go to screenshot task configuration.** For more information on the configuration of a time point screencapture task, please see [Task Configuration](https://intl.cloud.tencent.com/document/product/266/14058#custom-task-flow).
 
 - Template name: enter up to 64 characters. Only letters, digits, spaces, underscores (_), hyphens (-), and periods (.) are supported
 - Image format: JPG
-- Image dimensions: 0 or 128–4,096 px
+- Image dimensions: 128–4,096 px
 
 #### List of preset parameter templates
 
@@ -1171,7 +288,7 @@ Select **Sampled Screenshot** as the screenshot type.
 
 - Template name: enter up to 64 characters. Only letters, digits, spaces, underscores (_), hyphens (-), and periods (.) are supported
 - Image format: JPG
-- Image dimensions: 0 or 128–4,096 px
+- Image dimensions: 128–4,096 px
 - Sample interval: percentage (up to 100%) or duration (s).
 
 #### List of preset parameter templates
@@ -1187,7 +304,7 @@ Select **Image Sprite Screenshot** as the screenshot type.
 
 - Template name: enter up to 64 characters. Only letters, digits, spaces, underscores (_), hyphens (-), and periods (.) are supported
 - Image format: JPG
-- Image dimensions: 0 or 128–4,096 px
+- Image dimensions: 128–4,096 px
 - Sample interval: percentage (up to 100%) or duration (s).
 - Rows: enter a positive integer. The number of subimage rows multiplied by the number of subimage columns cannot exceed 100.
 - Columns: enter a positive integer. the number of subimage rows multiplied by the number of subimage columns cannot exceed 100.
@@ -1202,12 +319,12 @@ Select **Image Sprite Screenshot** as the screenshot type.
 
 
 ## Animated Image Generating Template
-You can create an animated image generating template to take screenshots within the specified time period and generate an animated image. **You can only use the template to set the screenshot type. To specify time periods for generating animated image, please go to task configuration.** For more information on the configuration of an animated image generating task, please see [Task Configuration](https://intl.cloud.tencent.com/document/product/266/14058).
+You can create an animated image generating template to take screenshots within the specified time period and generate an animated image. **You can only use the template to set the screenshot type. To specify time periods for generating animated image, please go to task configuration.** For more information on the configuration of an animated image generating task, please see [Task Configuration](https://intl.cloud.tencent.com/document/product/266/14058#custom-task-flow).
 
 - Image type: WebP or GIF
 - Frame rate: 1–30 fps
 - Image quality: 1–100
-- Image dimensions: 0–1,920 px
+- Image dimensions: 128px-4, 096px
 
 #### List of preset parameter templates
 
@@ -1284,4 +401,4 @@ For each intelligent recognition subitem, you can set a **certainty confidence t
  
 The created template will be displayed in the template list. You can view, edit, or delete the template.
 
->?You can view the [preset intelligent recognition templates](https://console.cloud.tencent.com/vod/video-process/template/audit) in the VOD console.
+>?You can view the [preset intelligent recognition templates](https://intl.cloud.tencent.com/document/product/266/33932#video-ai) in the VOD console.

@@ -4,7 +4,6 @@ You can use this feature to set the quota of provisioned concurrent instances fo
 
 >?
 >
->- Provisioned concurrency is currently in beta test..
 >- Provisioned concurrency is available free of charge during the beta test. After this feature is officially launched, small fees will be charged when provisioned concurrent instances are idle, and fees will be charged based on the actual execution duration of requests when they process requests. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/583/17299).
 
 ## Overview
@@ -54,18 +53,18 @@ For a published function version, you can set a desired number of provisioned co
 
 >! Provisioned concurrency can be set for a function version only after the [version is published](https://intl.cloud.tencent.com/document/product/583/15371).
 
-1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
+1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** in the left sidebar.
 2. On the **Function Service** list page, select the name of the target function to enter the **Function Management** page.
 3. On the **Function Management** page, select **Concurrency Quota** on the left sidebar to enter the **Concurrency Quota** page.
 4. On the **Concurrency Quota** page, click **Add Provisioned Concurrency**.
-5. In the **Add Function Provisioned Concurrency** window that pops up, select the desired version and the number of provisioned concurrent instances and click **Submit** .
+5. In the **Add Function Provisioned Concurrency** window that pops up, select the desired version and the number of provisioned concurrent instances and click **Submit**.
    After completing the settings, you can view the configuration status in **Provisioned Concurrency**. It will take some time for the SCF backend to add the instances and display the number of ready-to-start concurrent instances and completion status in the list.
 
 ### Updating provisioned concurrency
 
 After the SCF backend adds the provisioned concurrent instances, you can modify the number of concurrent instances as needed.
 
-1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
+1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** in the left sidebar.
 2. On the **Function Service** list page, select the function for which to update the provisioned concurrency to enter the **Function Management** page.
 3. On the **Function Management** page, select **Concurrency Quota** on the left sidebar to enter the **Concurrency Quota** page.
 4. On the **Concurrency Quota** page, select **Set** on the right of the target version.
@@ -77,14 +76,14 @@ After the SCF backend adds the provisioned concurrent instances, you can modify 
 
 If you no longer use a provisioned concurrency configuration, you can delete it.
 
-1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
+1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** in the left sidebar.
 2. On the **Function Service** list page, select the function for which to delete the provisioned concurrency to enter the **Function Management** page.
 3. On the **Function Management** page, select **Concurrency Quota** on the left sidebar to enter the **Concurrency Quota** page.
 4. On the **Concurrency Quota** page, select **Delete** on the right of the target version.
 5. In the **Delete Function Provisioned Concurrency Quota** window that pops up, click **OK**.
    After the configuration is deleted, the SCF backend will gradually repossess concurrent instances.
 
-## Relevant Operations
+## Related Operations
 
 ### [Using provisioned concurrency for traffic switch](id:grayscale)
 
@@ -98,7 +97,7 @@ You can set the reserved quota for a function based on the volume of concurrent 
 
 Taking the scenario listed in the following table as an example, when a function has a reserved quota of 150 concurrent instances (the function can concurrently process up to 150 requests), you can set 100 provisioned concurrent instances for multiple versions (100 instances are started for each version), so as to switch the traffic with no initialization needed.
 
-| Business Scenario | Average Business Concurrency | Provisioned Concurrency              | Function's Reserved Quota          | Effect                                                         |
+| Business Scenario | Average Business Concurrency | Provisioned Concurrency              | Function Reserved Quota          | Effect                                                         |
 | :------: | ------------ | --------------------- | --------------------- | ------------------------------------------------------------ |
 |   100% provisioning   | 100 concurrent instances      | 12,800 MB (100 concurrent instances) | 19,200 MB (150 concurrent instances) | 100 concurrent instances don't need to be initialized, and excessive concurrent instances need to be initialized when they are invoked for the first time. 150 concurrent instances can be guaranteed, and an overrun error will occur if this limit is exceeded. |
 

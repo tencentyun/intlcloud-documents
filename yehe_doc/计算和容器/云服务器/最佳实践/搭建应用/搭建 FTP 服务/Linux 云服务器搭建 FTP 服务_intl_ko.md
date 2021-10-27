@@ -1,5 +1,5 @@
 ## 작업 시나리오
-Vsftpd(very secure FTP daemon)는 수많은 Linux 릴리스 버전의 기본 FTP 서버입니다. 본 문서는 CentOS 7.6 64비트 운영 체제의 Tencent Cloud Virtual Machine(CVM)을 예로 들어, vsftpd 소프트웨어를 사용해 Linux CVM의 FTP 서비스 구축 방법을 설명합니다.
+Vsftpd(very secure FTP daemon)는 수많은 Linux 릴리스 버전의 기본 FTP 서버입니다. 본문은 CentOS 7.6 64비트 운영 체제의 Tencent Cloud Virtual Machine(CVM)을 예시로, vsftpd 소프트웨어를 사용하여 Linux CVM의 FTP 서비스를 구축하는 방법을 설명합니다.
 
 ## 소프트웨어 버전 예시
 본 문서에 구축한 FTP 서비스 구성 버전은 아래와 같습니다.
@@ -9,9 +9,9 @@ Vsftpd(very secure FTP daemon)는 수많은 Linux 릴리스 버전의 기본 FTP
 
 ## 작업 순서
 ### 1단계: CVM(Cloud Virtual Machine) 로그인
-[표준 방식으로 Linux 인스턴스 로그인(권장)](https://intl.cloud.tencent.com/document/product/213/5436). 실제 작업 스타일에 따라 다른 로그인 방식을 선택할 수도 있습니다.
+[Linux 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/5436)합니다. 실제 작업 스타일에 따라 다른 로그인 방식을 선택할 수도 있습니다.
 - [원격 로그인 소프트웨어를 사용하여 Linux 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/32502)
-- [SSH를 사용하여 Linux 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/32501)
+- [SSH를 사용하여 Linux 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/32501)
 
 ### 2단계: vsftpd 설치
 1. 다음 명령어를 실행하여 vsftpd를 설치합니다.
@@ -32,7 +32,7 @@ netstat -antup | grep ftp
 ```
 아래와 같은 결과가 표시되면 FTP 서비스가 실행된 것입니다.
 ![](https://main.qcloudimg.com/raw/2a7abf80253a8469c9340878d89b452a.png)
-이때 vsftpd가 익명 액세스 모드를 기본값으로 설정하므로 사용자 이름, 비밀번호 없이도 바로 FTP 서버에 로그인할 수 있습니다. 이 방식으로 FTP 서버에 로그인한 사용자는 파일 수정 및 업로드 권한이 없습니다.
+이때 vsftpd가 익명 액세스 모드를 기본값으로 설정하므로 사용자 이름, 비밀번호 없이도 바로 FTP 서버에 로그인할 수 있습니다. 이 방식으로 FTP 서버에 로그인한 사용자는 수정 및 파일 업로드 권한이 없습니다.
 
 
 ### 3단계: vsftpd 설정<span id="user"></span>
@@ -153,7 +153,7 @@ ls -l /home/test
 # /home/test가 FTP 디렉터리입니다. 실제 FTP 디렉터리로 수정하십시오.
 ```
  - 출력 결과에 ‘w’가 없으면 사용자에게 쓰기 권한이 없음을 의미합니다. 다음 단계를 진행하십시오.
- - 출력 결과에 ‘w’가 있으면 [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 피드백 주시기 바랍니다.
+ - 출력 결과에 ‘w’가 있으면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 피드백 주시기 바랍니다.
 3. 다음 명령어를 실행하여 FTP 디렉터리에 쓰기 권한을 추가합니다.
 ```
 chmod +w /home/test 

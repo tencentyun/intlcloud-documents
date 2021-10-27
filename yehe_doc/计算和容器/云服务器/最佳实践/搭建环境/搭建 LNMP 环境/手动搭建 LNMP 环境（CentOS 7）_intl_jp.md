@@ -1,7 +1,9 @@
-## シナリオ
+## 概要
 LNMP環境とは、LinuxでのNginx+MySQL/MariaDB+PHPで構成されるウェブサイトサーバーアーキテクチャです。本ドキュメントは、Tencent Cloud CVMでLNMP環境を手動で構築する方法について説明します。
 
-手動でLNMP 環境を構築するには、 Linux コマンド（例：[CentOS環境でのYUMを使用してソフトウェアのインストール](https://cloud.tencent.com/document/product/213/2046)）等の常用コマンドに精通している必要があります。また、インストールするソフトウェアの使用方法及びバージョン間の互換性を把握することも必要です。
+手動でLNMP 環境を構築するには、 Linux コマンド（例：[CentOS環境でのYUMを使用してソフトウェアのインストール](https://intl.cloud.tencent.com/document/product/213/2046)）等の常用コマンドに精通している必要があります。また、インストールするソフトウェアの使用方法及びバージョン間の互換性を把握することも必要です。
+>!Tencent Cloudでは、クラウドマーケットのイメージ環境を通じてLNMP環境をデプロイすることをお勧めしています。LNMP環境を手動で構築すると時間がかかる可能性があります。
+
 ## ソフトウェアのバージョン
 この例では、LNMP環境の構築に使用されるソフトウェアのバージョンと説明は次のとおりです。
 - Linux：Linux OS、本ドキュメントはCentOS 7.6を例として説明します。
@@ -11,14 +13,13 @@ LNMP環境とは、LinuxでのNginx+MySQL/MariaDB+PHPで構成されるウェブ
 
 
 ## 前提条件
-Linux CVMを購入しました。
+Linux CVMを購入済みであること。CVMを購入していない場合は、[Linux CVMのクイック設定](https://intl.cloud.tencent.com/zh/document/product/213/10517)をご参照ください。
 
 
 ## 操作手順
 
 ### ステップ1：Linuxインスタンスにログインする
 [標準的な方法を使用してLinuxインスタンスにログインする（推奨）](https://intl.cloud.tencent.com/document/product/213/5436)。実際の操作方法に応じて、他のログイン方法を選択することもできます：
-
 - [リモートログインソフトウェアを使用してLinuxインスタンスにログインする](https://intl.cloud.tencent.com/document/product/213/32502)
 - [SSHキーを使用してLinuxインスタンスにログインする](https://intl.cloud.tencent.com/document/product/213/32501)
 
@@ -27,7 +28,7 @@ Linux CVMを購入しました。
 ```
 vi /etc/yum.repos.d/nginx.repo
 ```
-2. 「**i**」キーを押して編集モードに切り替えます。下記の内容を入力してください。
+2. **i**キーを押して編集モードに切り替え、以下の内容を書き込みます。
 ```
 [nginx] 
 name = nginx repo 
@@ -35,19 +36,17 @@ baseurl = https://nginx.org/packages/mainline/centos/7/$basearch/
 gpgcheck = 0 
 enabled = 1
 ```
-3.  「**Esc**」を押して、「**:wq**」を入力し、ファイルを保存して戻ります。
+3. **Esc**を押し、**:wq**を入力して、ファイルを保存して戻ります。
 4. 以下のコマンドを実行して、nginxをインストールします。
 ```
 yum install -y nginx
 ```
-5. 以下のコマンドを実行して、`nginx.conf` ファイルを開きます。
+5. 以下のコマンドを実行し、`default.conf`ファイルを開きます。
 ```
-vim /etc/nginx/nginx.conf
+vim /etc/nginx/conf.d/default.conf
 ```
-6.「**i**」を押して編集モードに切り替えます。`nginx.conf` ファイルを編集します。
+6. **i**を押して編集モードに切り替え、`default.conf`ファイルを編集します。
 7.`server{...}`を見つけて、 `server` 大括弧内の対応する設定情報を次の内容に置き換えます。 
->? `Ctrl+F`キーを押してページを下に移動し、`Ctrl+B`キーを押してページを上に移動します。
->
 ```
 server {
 	listen       80;
@@ -76,9 +75,7 @@ server {
 	}
 }
 ```
- `nginx.conf` ファイルで `server{...}`が見つからない場合は、以下に示すように、上記の`server{...}` コンテンツを `include /etc/nginx/conf.d/*conf;`の先頭に追加してください。
-![](https://main.qcloudimg.com/raw/901a3957ccd992c2fb345287271c4bef.png)
-7.  「**Esc**」を押して、 「**:wq**」を入力し、ファイルを保存して閉じます。
+7.  **Esc**を押し、 **:wq**を入力し、ファイルを保存してから戻ります。
 8.  以下のコマンドを実行して、Nginxを起動します。
 ```
 systemctl start nginx
@@ -111,7 +108,7 @@ yum -y remove パッケージ名
 ```
 vi /etc/yum.repos.d/MariaDB.repo
 ```
-3. 「**i**」キーを押して編集モードに切り替えます。下記の内容を入力し、MariaDBのソフトウェアライブラリを追加してください。
+3. **i**キーを押して編集モードに切り替え、以下の内容を書き込み、MariaDBソフトウェアライブラリを追加します。
 >? 
 >- 異なるOSのMariaDBソフトウェアライブラリが違うため、[MariaDB 公式サイト](https://downloads.mariadb.org) にアクセスして、他のOSに対応するMariaDBソフトウェアライブラリのインストール情報を取得できます。
 >- CVMが[プライベートネットワークサービス](https://intl.cloud.tencent.com/document/product/213/5225)を使用する場合、`mirrors.cloud.tencent.com` をプライベートネットワークアドレス `mirrors.tencentyun.com`に変更します。このようにして、パブリックネットワークトラフィックは影響を受けず、アクセス速度が高速になります。 
@@ -125,7 +122,7 @@ baseurl = https://mirrors.cloud.tencent.com/mariadb/yum/10.4/centos7-amd64
 gpgkey=https://mirrors.cloud.tencent.com/mariadb/yum/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
-4.  **Esc**キーを押して、 「**:wq**」を入力し、ファイルを保存して閉じます。
+4. ** Esc **を押して**：wq **を入力し、ファイルを保存して戻ります。
 5. 以下のコマンドを実行して、MariaDBをインストールします。このプロセスには時間がかかります。インストールの進行状況に注意し、インストールが完了するまでお待ちください。
 ```
 yum -y install MariaDB-client MariaDB-server
@@ -171,7 +168,7 @@ systemctl start php-fpm
 systemctl enable php-fpm
 ```
 
-#### 環境設定の検証
+## 環境設定の検証
 環境設定が完了した後、以下の手順でLNMP環境が正常に構築されたことを確認します。
 1. 以下のコマンドを実行して、テストファイルを作成します。
 ```
@@ -183,7 +180,7 @@ systemctl restart nginx
 ```
 3. ローカルブラウザに次のURLを入力して、環境設定が成功したかどうかを確認します。
 ```
-http://CVMインスタンスのパブリックIP
+http://CVMインスタンスのパブリックIPアドレス
 ```
 以下のような結果が表示されたら、環境設定が成功したことを示します。
 ![](https://main.qcloudimg.com/raw/640812413941a61efe29d7faa546ad80.png)
@@ -193,7 +190,7 @@ http://CVMインスタンスのパブリックIP
 LNMP環境を構築した後、CVMに関する機能をより多く理解と把握するために、[WordPress Webサイトを手動で構築](https://intl.cloud.tencent.com/document/product/213/8044)できます。
 
 ## よくあるご質問
-CVMの使用中に問題が発生した場合は、下記のドキュメントを参照して、実際の状況に応じて問題を分析して解決できます。
+CVMの使用中に問題が発生した場合は、下記のドキュメントを参照しながら実際状況に合わせ分析した上で問題を解決することが可能です。
 - CVMのログインに関する問題は、[パスワードとキー](https://intl.cloud.tencent.com/document/product/213/18120)、[ログインとリモート接続](https://intl.cloud.tencent.com/document/product/213/17278)ドキュメントをご参照ください。
 - CVMのネットワークに関する問題は、 [IPアドレス](https://intl.cloud.tencent.com/document/product/213/17285)、[ポートとセキュリティグループ](https://intl.cloud.tencent.com/document/product/213/2502)ドキュメントをご参照ください。
 - CVMのハードディスクに関する問題は、[システムディスクとデータディスク](https://intl.cloud.tencent.com/document/product/213/17351)ドキュメントをご参照ください。

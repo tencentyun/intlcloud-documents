@@ -33,7 +33,7 @@
 
 In the device information page, device certificate and device private key are used for MQTT over TLS asymmetric encryption. Symmetric key is used for symmetric encryption (for the differences between the two communication methods, see [Feature Components - Device Connection](https://intl.cloud.tencent.com/document/product/1105/41500)).
 
-> !The creation of the above resources can be done by the backend through RESTful APIs. For more information, please see [API Overview](https://cloud.tencent.com/document/product/634/12056).
+> !The creation of the above resources can be done by the backend through RESTful APIs. For more information, please see API Overview.
 
 ## Creating Rule
 

@@ -56,7 +56,7 @@ Only LogListener v2.5.4 and above support collection and monitoring service logs
 
 ## Dashboard of Service Logs
 
-When the LogListener service logs are enabled, CLS will create a dashboard `search_log_dashboard` by the type of recorded logs to display LogListener’s collection and monitoring statistics.
+When the LogListener service logs are enabled, CLS will create a dashboard `service_log_dashboard` by the type of recorded logs to display LogListener’s collection and monitoring statistics.
 
 #### Collection statistics dashboard
 You can go to the [Dashboard](https://console.cloud.tencent.com/cls/dashboard) page of the CLS console, click the ID of the target dashboard to view LogListener collection statistics, including its status, parsing failure rate, sending success rate, and other metrics.

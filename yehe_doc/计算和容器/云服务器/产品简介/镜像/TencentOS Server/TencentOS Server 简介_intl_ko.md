@@ -4,14 +4,14 @@ TencentOS Server(Tencent Linux, TS 또는 tlinux라고도 함)는 Tencent에서 
 
 TencentOS Server는 다음과 같은 시나리오에 적용할 수 있습니다.
 
-- CVM 각 사양군 대부분 유형의 인스턴스.
+- BM 2.0 서버를 포함한 CVM 각 사양 제품군 대부분의 인스턴스 
 - 인스턴스 실행 시, 동적 설정을 진행하기 위해 사용자 데이터(즉 userdata 방식)로 관련 작업을 cloud-init에 전달해야 합니다.
 
-## TencentOS Server 2.4 환경 설명
+## TencentOS Server 환경 설명
 
 ### 사용자 모드 환경
-
-사용자 모드 소프트웨어 패키지가 최신 버전의 CentOS 7과 호환되면, 해당 버전의 소프트웨어 패키지를 TencentOS Server 2.4에서 그대로 사용할 수 있습니다.
+- TencentOS Server 2 사용자 모드 소프트웨어 패키지는 최신 버전의 CentOS 7과 호환되므로, CentOS 7 버전의 소프트웨어 패키지를 TencentOS Server 2.4에서 그대로 사용할 수 있습니다. 
+- TencentOS Server 3 사용자 모드 소프트웨어 패키지는 최신 버전의 RHEL 8과 호환되므로, RHEL 8 버전의 소프트웨어 패키지를 TencentOS Server 3.1에서 그대로 사용할 수 있습니다. 
 
 ### 시스템 서비스 및 최적화 설정
 
@@ -51,9 +51,32 @@ Usage:
 - **`/etc/hosts`**: TENCENT64 및 TENCENT64.site 추가.
 - **`/root/.bashrc`**: 최적화 설정.
 
-#### TencentOS Server 2.4 커널
 
-longterm 4.14 버전의 커널을 기반으로 하며, 자세한 내용은 [TencentOS-kernel](https://github.com/Tencent/TencentOS-kernel)을 참조하십시오.
+### TencentOS Server 커널
+TencentOS-kernel 4.14, 5.4 두 버전을 제공합니다. 자세한 내용은 [TencentOS-kernel](https://github.com/Tencent/TencentOS-kernel)을 참고하십시오.
+
+## 배포 설명
+
+<table>
+  <tr>
+	<th>배포 시간</th>
+	<th style="width:30%">이미지 버전</th>
+	<th>버전 설명</th>
+	<th>배포 리전</th>
+  </tr>
+  <tr>
+	<td>2021년 07월 13일</td>
+	<td>TencentOS Server 3.1</td>
+	<td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail?rid=16&id=img-eb30mz89">img-eb30mz89</a><br>커널 버전5.4.119</td>
+	<td>모든 리전</td>
+  </tr>
+  <tr>
+	<td>2019년 09월 17일</td>
+	<td>TencentOS Server 2.4，기존 명칭 Tencent linux release 2.4 (Final)</td>
+	<td>이미지 ID：<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=16&id=img-hdt9xxkt">img-hdt9xxkt</a><br>커널 버전: 4.14.105</td>
+	<td>모든 리전</td>
+  </tr>
+</table>
 
 
 ## TencentOS Server 다운로드
@@ -61,20 +84,14 @@ longterm 4.14 버전의 커널을 기반으로 하며, 자세한 내용은 [Tenc
 다음의 방법을 통해 TencentOS Server를 다운로드하고 사용할 수 있습니다.
 
 - CVM 인스턴스 생성 시 공용 이미지를 선택하고, 상응하는 TencentOS Server 버전을 선택합니다.
-  작업에 대한 자세한 내용은 [인스턴스 생성](https://intl.cloud.tencent.com/document/product/213/4855)을 참조하십시오.
+  작업에 대한 자세한 내용은 [인스턴스 생성](https://intl.cloud.tencent.com/document/product/213/4855)을 참고하십시오.
 - 이미 생성된 CVM 인스턴스는 시스템 재설치를 통해 기존의 운영 체제를 TencentOS Server로 변경할 수 있습니다.
-  작업에 대한 자세한 내용은 [시스템 재설치](https://intl.cloud.tencent.com/document/product/213/4933)를 참조하십시오.
-
-## 배포 설명
-
-| 출시일      | 이미지 버전                                                     | 버전 설명                                                     |
-| ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 2019년 9월 17일 | TencentOS Server 2.4, 기존 명칭 Tencent linux release 2.4 (Final) | 이미지 ID: img-hdt9xxkt<br>커널 버전: 4.14.105<br>배포 리전: 모든 리전 |
+  작업에 대한 자세한 내용은 [시스템 재설치](https://intl.cloud.tencent.com/document/product/213/4933)를 참고하십시오.
 
 
 ## 기술 지원
 
 Tencent Cloud는 TencentOS Server에 다음과 같은 기술 지원을 제공합니다.
 
-- YUM 저장소에서 보안 업데이트(Security Updates)를 제공하며, `yum update` 명령어를 실행하여 버전을 업데이트할 수 있습니다.
-- TencentOS Server는 커널 커뮤니티가 장기간 지원하는 4.14.105 버전을 기반으로 클라우드 환경에 맞춰 사용자 정의된 운영 체제 이미지입니다. Tencent Cloud에서는 TencentOS Server 사용 중 발생하는 문제에 대한 기술 지원을 제공합니다.
+- YUM 저장소에서 보안 업데이트(Security Updates)를 제공하며 `yum update` 명령어를 실행하여 버전을 업데이트 할 수 있습니다.
+- TencentOS Server는 커널 커뮤니티가 장기간 지원해온 버전을 기반으로 클라우드 환경에 맞춰 사용자 정의된 운영 체제 이미지입니다. Tencent Cloud는 TencentOS Server 사용 중 발생하는 문제에 대한 기술 지원을 제공합니다.

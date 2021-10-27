@@ -10,7 +10,7 @@
 当使用 SSH 登录 Linux 实例失败，并返回报错信息时，您可记录报错信息，并匹配以下常见的报错信息，快速定位问题并参考步骤进行解决。
 
 <dx-accordion>
-::: SSH\s登录报错\sUser\sroot\snot\sallowed\sbecause\snot\slisted\sin\sAllowUsers
+::: SSH 登录报错 User root not allowed because not listed in AllowUsers
 
 #### 问题原因[](id:userNotListAllowUsers)
 该问题通常是由于 SSH 服务启用了用户登录控制参数，对登录用户进行了限制。参数说明如下：
@@ -57,7 +57,7 @@ service sshd restart
 
 
 ::: 
-::: SSH\s登录报错\sDisconnected:No\ssupported\sauthentication\smethods\savailable
+::: SSH 登录报错 Disconnected:No supported authentication methods available
 
 #### 现象描述[](id:noSupportesAuthentication)
 使用 SSH 登录时，出现如下报错信息：
@@ -96,7 +96,7 @@ service sshd restart
 重启 SSH 服务后，即可使用 SSH 登录。详情请参见 <a href="https://intl.cloud.tencent.com/document/product/213/32501">使用 SSH 登录 Linux 实例</a>。
 
 :::
-::: SSH\s登录报错\sssh_exchange_identification:\sread:\sConnection\sreset\sby\speer
+::: SSH 登录报错 ssh_exchange_identification: read: Connection reset by peer
 
 #### 现象描述[](id:connectionResetByPeer)
 使用 SSH 登录时，出现报错信息 “ssh_exchange_identification: read: Connection reset by peer”。或出现以下报错信息：
@@ -179,7 +179,7 @@ service sshd restart
 
 若至此您仍未解决 SSH 登录问题，则可能是由于系统内核出现异常或其他潜在原因导致，请通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们进一步处理问题。
 :::
-::: SSH\s登录报错\sPermission\sdenied,\splease\stry\sagain
+::: SSH 登录报错 Permission denied, please try again
 
 #### 现象描述[](id:permissionDenied)
 root 用户使用 SSH 登录 Linux 实例时，出现报错信息 “Permission denied, please try again”。
@@ -240,7 +240,7 @@ service sshd restart
 ```
 重启 SSH 服务后，即可使用 SSH 登录。详情请参见 <a href="https://intl.cloud.tencent.com/document/product/213/32501">使用 SSH 登录 Linux 实例</a>。
 :::
-::: SSH\s登录时报错\sToo\smany\sauthentication\sfailures\sfor\sroot
+::: SSH 登录时报错 Too many authentication failures for root
 
 #### 现象描述[](id:tooManyFailures)
 使用 SSH 登录时，登录时多次输入密码后返回报错信息 “Too many authentication failures for root”，并且连接中断。
@@ -280,7 +280,7 @@ service sshd restart
 重启 SSH 服务后，即可使用 SSH 登录。详情请参见 <a href="https://intl.cloud.tencent.com/document/product/213/32501">使用 SSH 登录 Linux 实例</a>。
 
 :::
-::: SSH\s启动时报错\serror\swhile\sloading\sshared\slibraries
+::: SSH 启动时报错 error while loading shared libraries
 
 #### 现象描述[](id:errorLibraries)
 Linux 实例启动 SSH 服务，在 secure 日志文件中，或直接返回类似如下错误信息：
@@ -390,7 +390,7 @@ service sshd start
 </dx-alert>
 
 :::
-::: SSH\s服务启动时报错\sfatal:\sCannot\sbind\sany\saddress
+::: SSH 服务启动时报错 fatal: Cannot bind any address
 #### 现象描述[](id:cannotBindAddress)
 Linux 实例启动 SSH 服务，在 secure 日志文件中，或直接返回类似如下错误信息：
 ```
@@ -438,7 +438,7 @@ service sshd restart
 重启 SSH 服务后，即可使用 SSH 登录。详情请参见 <a href="https://intl.cloud.tencent.com/document/product/213/32501">使用 SSH 登录 Linux 实例</a>。
 
 :::
-::: SSH\s服务启动时报错\sBad\sconfiguration\soptions
+::: SSH 服务启动时报错 Bad configuration options
 
 #### 现象描述[](id:badConfigureOptions)
 Linux 实例启动 SSH 服务，在 secure 日志文件中，或直接返回类似如下错误信息：
@@ -517,6 +517,6 @@ service sshd start
 </dx-accordion>
 
 
-
+<br>
 若您的问题仍未解决，请通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们寻求帮助。
 

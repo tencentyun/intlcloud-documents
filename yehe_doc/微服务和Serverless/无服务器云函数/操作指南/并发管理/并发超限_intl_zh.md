@@ -5,7 +5,7 @@
 ### 异步调用
 
 异步调用包含 [云 API 触发器](https://intl.cloud.tencent.com/document/product/583/18198) 的异步调用、[COS 触发器](https://intl.cloud.tencent.com/document/product/583/9707)、[定时触发器](https://intl.cloud.tencent.com/document/product/583/9708)、[CMQ Topic 触发器](https://intl.cloud.tencent.com/document/product/583/11517)、[CLS 触发器](https://intl.cloud.tencent.com/document/product/583/38845) 及 [MPS 触发器](https://intl.cloud.tencent.com/document/product/583/39163) 等，具体触发器调用类型请参考相关触发器说明文档。
-当异步调用并发超限时其处理逻辑由云函数 SCF 进行自动重试，详情可参见 [异步调用重试策略](https://intl.cloud.tencent.com/document/product/583/34383)。
+当异步调用并发超限时其处理逻辑由云函数 SCF 进行自动重试，详情可参见 [异步调用重试策略](https://intl.cloud.tencent.com/document/product/583/39851)。
 
 ### 同步调用
 
@@ -21,18 +21,18 @@
 
 ####  查看函数受限次数
 
-1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择【函数服务】。
+1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择**函数服务**。
 2. 在“函数服务”页中，选择需要查看的函数名，进入该函数的详情页面。
-3. 在“函数管理”中，选择【监控信息】>【受限次数】，查看相关函数的受限次数情况。如下图所示：
-   ![](https://main.qcloudimg.com/raw/7c0a3f2d7cbb966e995c0041177bf86f.png)
+3. 在“函数管理”中，选择**监控信息** > **受限次数**，查看相关函数的受限次数情况。如下图所示：
+      ![](https://main.qcloudimg.com/raw/7c0a3f2d7cbb966e995c0041177bf86f.png)
 
 #### 查看函数受限日志
 
 
-1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择【函数服务】。
+1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择**函数服务**。
 2. 在“函数服务”页中，选择需要查看的函数名，进入该函数的详情页面。
-3. 在“日志查询”中，选择【调用日志】>【调用超限】，查看相关函数的具体受限日志。如下图所示：
-   ![](https://main.qcloudimg.com/raw/e0645ba74973604fbfecbd4c4eb21248.png)
+3. 在“日志查询”中，选择**调用日志** > **调用超限**，查看相关函数的具体受限日志。如下图所示：
+      ![](https://main.qcloudimg.com/raw/e0645ba74973604fbfecbd4c4eb21248.png)
 
 
 ### 并发超限处理
@@ -40,7 +40,7 @@
 - **异步调用**对并发超限场景有平台重试策略帮助用户自动对并发超限进行处理并重试，通常情况下异步调用的并发超限用户无需进行任何操作，在设定的最长等待时间内，函数平台会自动对并发超限错误进行重试。
 - **同步调用**发生错误时，错误信息会直接返回给用户，请求不会进行重试。
 
->! 异步调用中，如对实效性比较敏感可以通过配置保留配额来减少或降低超限对业务系统的影响。例如需要重要消息超过设置的最长保留时间后不会丢失则应设置死信队列兜底。
+>! 异步调用中，如对实效性比较敏感可以通过配置最大独占配额来减少或降低超限对业务系统的影响。例如需要重要消息超过设置的最长保留时间后不会丢失则应设置死信队列兜底。
 
 #### 配置死信队列
 
@@ -48,6 +48,6 @@
 
 
 
-#### 配置保留配额
+#### 配置最大独占配额
 
-保留配额额度是用于保障函数可用并发的最大额度，通过配置保留配额额度，函数可以在额度内启动足够并发数量，并发最大可以达到配置额度。通过设置保留配额额度，函数不再与其他函数共享账号并发额度，可以降低出现并发超限的可能，获得更有保障的运行。详情可参见 [设置保留配额](https://intl.cloud.tencent.com/document/product/583/39464)。
+最大独占配额额度是用于保障函数可用并发的最大额度，通过配置最大独占配额额度，函数可以在额度内启动足够并发数量，并发最大可以达到配置额度。通过设置最大独占配额额度，函数不再与其他函数共享账号并发额度，可以降低出现并发超限的可能，获得更有保障的运行。详情可参见 [设置最大独占配额](https://intl.cloud.tencent.com/document/product/583/39464)。

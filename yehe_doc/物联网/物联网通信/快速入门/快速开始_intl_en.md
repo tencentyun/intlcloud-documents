@@ -1,7 +1,7 @@
 To get started quickly, you are advised to connect to IoT Hub using MQTT.fx. Find the connection guide as follows:
 
 - [MQTT.fx Connection Guide](https://intl.cloud.tencent.com/document/product/1105/41469)
-- To use sites other than Chinese mainland, see [Device Connection Regions](https://cloud.tencent.com/document/product/634/61228) to select a suitable site for connection.
+- To use sites other than Chinese mainland, see [Device Connection Regions](https://intl.cloud.tencent.com/document/product/1105/42712) to select a suitable site for connection.
 
 We have built a smart home demo to demonstrate the features of IoT Hub. Scenarios include:
 
@@ -18,6 +18,6 @@ You can refer to the demo and customize based on your own needs:
 
 | Demo   | Content                                                         |
 | ------ | ------------------------------------------------------------ |
-| Scenario 1 | [Device Interconnection](https://intl.cloud.tencent.com/document/product/1105/41467) |
-| Scenario 2 | [Device Status Reporting and Setting](https://intl.cloud.tencent.com/document/product/1105/41468) |
+| Scenario 1 | [Device Interconnection](https://intl.cloud.tencent.com/document/product/1105/42335) |
+| Scenario 2 | [Device Status Reporting and Setting](https://intl.cloud.tencent.com/document/product/1105/42340) |
 

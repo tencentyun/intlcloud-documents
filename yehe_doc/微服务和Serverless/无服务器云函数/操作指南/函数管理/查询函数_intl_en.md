@@ -1,16 +1,16 @@
 A function can be queried in the console or on Serverless Framework CLI.
 
 ## Viewing Function in Console
-1. Log in to the [SCF](https://console.cloud.tencent.com/scf) console and select **Function Service** on the left sidebar.
-2. Select the region and namespace for which to view functions at the top of the **Function Service** page. In the function list, you can view all the functions in the specified region and namespace. 
+1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and select **Function Service** on the left sidebar.
+2. Select the region and namespace for which to view functions at the top of the "Function Service" page. In the function list, you can view all the functions in the specified region and namespace.
 The list page includes information such as function name, monitoring information, function runtime environment, creation time, and modification time.
-3. Click the function name to enter the function details page. 
+3. Click the function name to enter the function details page.
 The function details page contains the function management, trigger management, monitoring information, log query, and concurrency quota tabs:
  - **Function management tab**: you can view and manage function configuration, function code, function layer, function version and alias, function monitoring data, and log information.
  - **Trigger management tab**: it displays the configured triggers for the function, and you can create a trigger on this tab.
  - **Monitoring information tab**: it displays function execution monitoring information.
  - **Log query tab**: it displays the function execution logs, where you can filter logs by certain criteria for display.
- - **Concurrency quota tab**: it displays the concurrency quota of the function. You can set the maximum dedicated quota and provisioned concurrency of the function here.
+ - **Concurrency quota tab**: it displays the concurrency quota of the function. You can set the reserved quota and provisioned concurrency of the function here.
 
 
 ## Getting Deployment Information on Serverless Framework CLI

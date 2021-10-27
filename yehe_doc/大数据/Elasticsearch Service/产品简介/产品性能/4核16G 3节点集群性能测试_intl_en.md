@@ -1,4 +1,4 @@
-This document describes the performance metrics of a 3-node ES cluster with 4 CPU cores and 16 GB memory.
+This document describes the performance metrics of a 3-node ES cluster with 4 CPU cores, 16 GB memory, and 200 GB SSD storage capacity.
 
 >? The data comes from [GeoNames](http://www.geonames.org/) and contains 11,396,503 entries of geographic location data in text, long, geo, and other types stored in columns and rows with a total size of around 3 GB.
 

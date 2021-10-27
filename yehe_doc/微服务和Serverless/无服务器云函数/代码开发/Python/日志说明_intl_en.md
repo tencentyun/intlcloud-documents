@@ -1,18 +1,22 @@
 ## Log Development
 
-You can use the `print` or `logging` module in the program to output a log. For example, you can query the output content in the function log by running the following code:
+You can use the following statements in the program to output a log:
+- print
+- logging module
 
-```python
+For example, you can query the output content in the function log by running the following code:
+<dx-codeblock>
+::: python
 import logging
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-	
 
 def main_handler(event, context):
-      logger.info('got event{}'.format(event))
-      print("got event{}".format(event))
-      return 'Hello World!'  
-```
+	logger.info('got event{}'.format(event))
+	print("got event{}".format(event))
+	return 'Hello World!'  
+:::
+</dx-codeblock>
 
 
 
@@ -26,7 +30,7 @@ You can query function execution logs on the log query page of SCF or CLS. For m
 
 ## Custom Log Fields
 
-Currently, the string content output by simple `print` or `logger` in the function code will be recorded in the `SCF_Message` field when it is delivered to CLS. For descriptions of CLS fields, please see [Log Delivery Configuration](https://intl.cloud.tencent.com/document/product/583/39778).
+Currently, the string content output by simple `print` or `logger` in the function code will be recorded in the `SCF_Message` field when it is delivered to CLS. For descriptions of CLS fields, please see [Log Delivery Configuration](https://intl.cloud.tencent.com/document/product/583/39778#.E7.B4.A2.E5.BC.95.E9.85.8D.E7.BD.AE).
 
 At present, SCF supports adding custom fields to the content output to CLS. By doing so, you can output business fields and related data content to logs and use the search capability of CLS to query and track them in the execution process.
 
@@ -35,15 +39,16 @@ At present, SCF supports adding custom fields to the content output to CLS. By d
 If a single-line log output by a function is in JSON format, the JSON content will be parsed into the format of `field:value` when it is delivered to CLS. Only the first level of the JSON content can be parsed in this way, while other nested structures will be recorded as values.
 
 You can run the following code to test:
-
-```python
+<dx-codeblock>
+::: python
 # -*- coding: utf8 -*-
 import json
 		
 def main_handler(event, context):
 	print(json.dumps({"key1": "test value 1","key2": "test value 2"}))
 	return("Hello World!")
-```
+:::
+</dx-codeblock>
 
 ### Search method
 

@@ -1,18 +1,22 @@
 ## 日志开发
 
-您可以在程序中使用 `print` 或使用 `logging` 模块来完成日志输出。例如，执行以下代码，您可在函数日志中查询输出内容。
+您可以在程序中使用以下语句来完成日志输出：
+- print
+- logging 模块
 
-```python
+例如，执行以下代码，您可在函数日志中查询输出内容。
+<dx-codeblock>
+::: python
 import logging
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-	
 
 def main_handler(event, context):
-      logger.info('got event{}'.format(event))
-      print("got event{}".format(event))
-      return 'Hello World!'  
-```
+	logger.info('got event{}'.format(event))
+	print("got event{}".format(event))
+	return 'Hello World!'  
+:::
+</dx-codeblock>
 
 
 
@@ -26,7 +30,7 @@ def main_handler(event, context):
 
 ## 自定义日志字段
 
-当前在函数代码中通过简单的 `print`，或通过 `logger` 输出的字符串内容，将会在投递到日志服务时，记录在 `SCF_Message` 字段中。日志服务的字段说明可见 [索引说明](https://intl.cloud.tencent.com/document/product/583/39778)。
+当前在函数代码中通过简单的 `print`，或通过 `logger` 输出的字符串内容，将会在投递到日志服务时，记录在 `SCF_Message` 字段中。日志服务的字段说明可见 [索引说明](https://intl.cloud.tencent.com/document/product/583/39778#.E7.B4.A2.E5.BC.95.E9.85.8D.E7.BD.AE)。
 
 目前云函数已经支持在输出到日志服务的内容中增加自定义字段，通过增加自定义字段，您可以将业务字段及相关数据内容输出到日志中，并通过使用日志服务的检索能力，对执行过程中的业务数据及相关内容进行查询跟踪。
 
@@ -35,15 +39,16 @@ def main_handler(event, context):
 当函数输出的单行日志为 JSON 格式时，JSON 内容将被解析并在投递至日志服务时按`字段:值`的方式进行投递。JSON 内容的解析仅能解析第一层，更多的嵌套结构将作为值进行记录。
 
 您可执行以下代码进行测试：
-
-```python
+<dx-codeblock>
+::: python
 # -*- coding: utf8 -*-
 import json
 		
 def main_handler(event, context):
 	print(json.dumps({"key1": "test value 1","key2": "test value 2"}))
 	return("Hello World!")
-```
+:::
+</dx-codeblock>
 
 ### 检索方法
 

@@ -1,7 +1,7 @@
 为了更好地帮助用户入门，我们推荐用户在第一次使用 IoT Hub 时使用 MQTT.fx 接入。以下是接入指南：
 
 - [MQTT.fx 接入指南](https://intl.cloud.tencent.com/document/product/1105/41469)
-- 如果您需要使用除中国大陆以外的其它站点，我们推荐您参考 [设备接入地域说明](https://cloud.tencent.com/document/product/634/61228) 选择合适的站点接入。
+- 如果您需要使用除中国大陆以外的其它站点，我们推荐您参考 [设备接入地域说明](https://intl.cloud.tencent.com/document/product/1105/42712) 选择合适的站点接入。
 
 为了更好地介绍腾讯云物联网通信的功能，我们构建了一个简单的智能家居 Demo。应用场景包括：
 
@@ -18,6 +18,6 @@ Demo 涉及物联网通信的功能包括：
 
 | Demo   | 内容                                                         |
 | ------ | ------------------------------------------------------------ |
-| 场景一 | [设备互通](https://intl.cloud.tencent.com/document/product/1105/41467) |
-| 场景二 | [设备状态上报与状态设置](https://intl.cloud.tencent.com/document/product/1105/41468) |
+| 场景一 | [设备互通](https://intl.cloud.tencent.com/document/product/1105/42335) |
+| 场景二 | [设备状态上报与状态设置](https://intl.cloud.tencent.com/document/product/1105/42340) |
 

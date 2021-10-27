@@ -3,6 +3,9 @@ LNMP 环境是指在 Linux 系统下，由 Nginx + MySQL/MariaDB + PHP 组成的
 
 进行手动搭建 LNMP 环境，您需要熟悉 Linux 命令，例如 [CentOS 环境下通过 YUM 安装软件](https://intl.cloud.tencent.com/document/product/213/2046) 等常用命令，并对所安装软件的使用及版本兼容性比较了解。
 
+>!腾讯云建议您可以通过云市场的镜像环境部署 LNMP 环境，手动搭建 LNMP 环境可能需要较长的时间。
+
+
 ## 示例软件版本
 本文搭建的 LNMP 环境软件组成版本及说明如下：
 Linux：Linux 操作系统，本文以 CentOS 6.9 为例。
@@ -12,7 +15,7 @@ PHP：脚本语言，本文以 PHP 7.1.32 为例。
 
 ## 前提条件
 
-已购买 Linux 云服务器。如果您还未购买云服务器，请参考 [自定义配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/10517)。
+已购买 Linux 云服务器。如果您还未购买云服务器，请参考 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/zh/document/product/213/10517)。
 
 
 ## 操作步骤
@@ -26,7 +29,7 @@ PHP：脚本语言，本文以 PHP 7.1.32 为例。
 ```
 vi /etc/yum.repos.d/nginx.repo
 ```
-2. 按 “**i**” 切换至编辑模式，写入以下内容。
+2. 按 **i** 切换至编辑模式，写入以下内容。
 ```
 [nginx]
 name=nginx repo
@@ -34,16 +37,16 @@ baseurl=https://nginx.org/packages/mainline/centos/6/$basearch/
 gpgcheck=0
 enabled=1
 ```
-3. 按 “**Esc**”，输入 “**:wq**”，保存文件并返回。
+3. 按 **Esc**，输入 **:wq**，保存文件并返回。
 4. 执行以下命令，安装 Nginx。
 ```
 yum install -y nginx
 ```
-5. 执行以下命令，打开 `nginx.conf` 文件。
+5. 执行以下命令，打开 `default.conf` 文件。
 ```
-vim /etc/nginx/nginx.conf
+vim /etc/nginx/conf.d/default.conf
 ```
-6. 按 “**i**” 切换至编辑模式，编辑 `nginx.conf` 文件。
+6. 按 **i** 切换至编辑模式，编辑 `default.conf` 文件。
 7. 找到 `server{...}`，并将 `server` 大括号中相应的配置信息替换为如下内容。用于取消对 IPv6 地址的监听，同时配置 Nginx，实现与 PHP 的联动。
 ```
 server {
@@ -73,9 +76,7 @@ server {
 	}
 }
 ```
-若 `nginx.conf` 文件中未找到 `server{...}`，请在 `include /etc/nginx/conf.d/*conf;`上方添加以上的 `server{...}` 配置内容。如下图所示：
-![](https://main.qcloudimg.com/raw/d438c6aa947a30441e3a86cfb3d9867c.png)
-8. 按 “**Esc**”，输入 “**:wq**”，保存文件并返回。
+8. 按 **Esc**，输入 **:wq**，保存文件并返回。
 9. 执行以下命令，启动 Nginx。
 ```
 service nginx start
@@ -105,7 +106,7 @@ rpm -qa | grep -i mysql
 为避免安装版本不同造成冲突，请执行下面命令移除已安装的 MySQL。
 ```
 yum remove -y 包名
-``` 
+```
  - 若返回结果为空，则说明未预先安装，则执行下一步。
 2.  执行以下命令，安装 MySQL。
 ```
@@ -149,7 +150,7 @@ yum -y install mod_php71w.x86_64 php71w-cli.x86_64 php71w-common.x86_64 php71w-m
 ```
 service php-fpm start
 ```
-4. 依次执行以下命令，设置 PHP-FPM 为开机自启动。
+3. 依次执行以下命令，设置 PHP-FPM 为开机自启动。
 ```bash
 chkconfig --add php-fpm  
 ```
@@ -187,6 +188,3 @@ http://云服务器实例的公网 IP
 - 云服务器的登录问题，可参考 [密码及密钥](https://intl.cloud.tencent.com/document/product/213/18120)、[登录及远程连接](https://intl.cloud.tencent.com/document/product/213/17278)。
 - 云服务器的网络问题，可参考 [IP 地址](https://intl.cloud.tencent.com/document/product/213/17285)、[端口与安全组](https://intl.cloud.tencent.com/document/product/213/2502)。
 - 云服务器硬盘问题，可参考 [系统盘和数据盘](https://intl.cloud.tencent.com/document/product/213/17351)。
-
-
-
