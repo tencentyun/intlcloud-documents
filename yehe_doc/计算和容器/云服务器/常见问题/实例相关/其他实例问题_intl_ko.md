@@ -1,6 +1,6 @@
 ### CVM 작업 로그는 어떻게 조회합니까?
 CA의 작업 기록 기능을 통해 CVM의 작업 로그를 조회할 수 있으며, 작업 순서는 다음과 같습니다.
-1. [CVM 콘솔](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) 로그인 후, 페이지 우측 상단의 [도구] > [작업 기록]을 선택합니다.
+1. [CVM 콘솔](https://console.intl.cloud.tencent.com/cvm/instance/index?rid=1) 로그인 후, 페이지 우측 상단의 [도구] > [작업 기록]을 선택합니다.
 2. ‘작업 기록’ 페이지에서 '리소스 이벤트 이름'을 'CVM'으로 선택하고, 기타 조건은 필요에 따라 선택합니다.
 3. [쿼리]를 클릭하여 CVM 작업 로그를 가져옵니다.
 CA 작업 기록 기능에 대한 더 많은 정보는 [작업 기록 이벤트 상세 내용 보기](https://intl.cloud.tencent.com/document/product/1021/40499)를 참고하십시오.
