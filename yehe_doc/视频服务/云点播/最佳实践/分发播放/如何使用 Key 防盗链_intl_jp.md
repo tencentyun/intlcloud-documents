@@ -59,7 +59,7 @@ Keyホットリンク防止署名配布サービスのDemoのデプロイおよ�
 
 - まだキーを作成していない場合は、[キー作成ドキュメント](https://intl.cloud.tencent.com/document/product/598/34228) を参照して、新しいAPIキーを作成してください。キーを作成済みの場合は、[キー表示ドキュメント](https://intl.cloud.tencent.com/document/product/598/34228)を参照してAPIキーを取得してください。
 - コンソールの [アカウント情報](https://console.cloud.tencent.com/developer) 画面で下部に示すとおり、APPIDを表示することができます。
-  ![](https://main.qcloudimg.com/raw/0e7dda93add5f53b2da07d16cf6f4406.png)
+  ![](https://main.qcloudimg.com/raw/6c9fe4238232392c8d914f9ebf0f53aa.png)
 
 ### 手順4：ホットリンク防止署名配布サービスのデプロイ
 
