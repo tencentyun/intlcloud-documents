@@ -3,7 +3,7 @@ You can manage file categories and storage regions in the **Upload Storage** sec
 
 ## Category Management
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview), and click **Upload Storage** > **Category Management** on the left sidebar to enter the **Category Management** page.
-![](https://main.qcloudimg.com/raw/e9b6b780809c9857bc410c1b6c9a0a02.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/95d60acb6d5c9bbfbb4c602ef27f5b4e.png)
 2. Click **Add Category**, enter a category name in the pop-up, and click **OK**.
 3. The newly added category will be displayed in the category list on this page, where you can rename or delete a category or add a subcategory.
 	- Rename: click the target category name, and then click the edit icon to rename the category.
@@ -19,11 +19,11 @@ You can manage file categories and storage regions in the **Upload Storage** sec
 
 ## Storage Region
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview), and click **Upload Storage** > **Storage Region** on the left sidebar.
-![](https://main.qcloudimg.com/raw/43deae2ce3e366a448daf6fa692b6b80.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f6239d2a24ad590e9a67fd7e61b2f6a2.png)
 2. Toggle **Status** on for the target region to enable it. You can set an enabled region as the default region.
 >?
-	- You can enable multiple regions, but can set only one default region.
-	- When a region is enabled, you cannot perform operations on it until it is successfully configured. Enabling a region takes effect in 5-10 minutes. **Once enabled, a region cannot be disabled**.
+>- You can enable multiple regions, but can set only one default region.
+>- When a region is enabled, you cannot perform operations on it until it is successfully configured. Enabling a region takes effect in 5-10 minutes. **Once enabled, a region cannot be disabled**.
 
 #### Storage rules
 - If only the default region is enabled, all files will be stored in it.
