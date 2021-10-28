@@ -1,4 +1,4 @@
-Starting from November 2, 2021, we offer Tencent Cloud users who haven't used any Tencent WAF services a one-month free trial of WAF Pro. WAF Pro includes two first-level domain names and supports 2500 QPS. For more details about WAF Pro, please [click here](https://buy.intl.cloud.tencent.com/waf).
+Starting from November 2, 2021, we offer Tencent Cloud users who haven't used any Tencent WAF services a one-month free trial of WAF Pro. WAF Pro includes two first level domain names and supports 2500 QPS. For more details about WAF Pro, please [click here](https://buy.intl.cloud.tencent.com/waf).
 
 ### Eligibility
 The one-month free trial is only available to new users of Tencent Cloud WAF. Users who have purchased WAF plans or joined WAF free trial can not join the free trial.
