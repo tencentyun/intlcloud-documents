@@ -11,6 +11,7 @@ You can apply for a trial license to try out various features available in the U
 
 ### Step 2. Save the trial license
 After the free trial license is successfully created, the page will display the information of the generated license. You need to pass in two parameters `Key` and `LicenseUrl` during initial SDK configuration. Please save the information properly.
+![](https://qcloudimg.tencent-cloud.cn/raw/1500204df3029e9bbb23aa7161ad94bd.png)
 
 ## Renewing a Trial License
 You can check the validity period of the trial license in the [VOD console](https://console.cloud.tencent.com/vod/license), which is up to 28 days. Before the trial license expires in 14 days after application, you need to renew it by following the steps below:
