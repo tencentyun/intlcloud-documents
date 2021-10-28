@@ -1,6 +1,6 @@
 ## 操作场景
 通过应用管理，用户可以停用和销毁该应用内的资源，便于用户更灵活的管理自己的应用。点播的应用存在三种状态分别为正常、停用、销毁状态，应用的生命周期和相关状态含义如下图所示：
-![](https://main.qcloudimg.com/raw/3755664f1c7bd8c086be3607fa999c57.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5d453fecd052b987f8219a2fe4e331a2.png)
 
 
 

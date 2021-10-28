@@ -49,8 +49,11 @@ SCF is billed by the following four parts. Each part is billed according to its 
 - **Invocation fees**: each function triggering and execution is calculated as an invocation.
 - **Public network outbound fees**: the outbound traffic consumed when the function code accesses the public network is counted as the public network outbound traffic in GB.
 - **Idle provisioned concurrency fees**: the number of idle instances is calculated by subtracting the number of actually running concurrent instances from the number of started provisioned instances, and the idle resource usage is calculated in GBs by multiplying the number of idle instances by the configured memory size.
+<<<<<<< HEAD
 
 HTTP-Triggered functions and event-triggered functions are billed in the same way. For more information, please see [Billing Mode](https://cloud.tencent.com/document/product/583/61678).
+=======
+>>>>>>> ddc813913d543596bac38096f9829a3a4e8bf914
 
 ## Pricing
 
