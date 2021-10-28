@@ -209,7 +209,8 @@ ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/transcode_api/; python3 process_me
 
 在“视频管理”页面看到测试视频的状态为“处理中”，则表示视频正在转码：
 ![](https://qcloudimg.tencent-cloud.cn/raw/5fcd99f766d6587f1644daac23c10d4d.png)
-等待测试视频的状态变为“正常”，此时表示转码已完成。单击测试视频右侧的【管理】，进入视频管理页面
+等待测试视频的状态变为“正常”，此时表示转码已完成。单击测试视频右侧的【管理】，进入视频管理页面：
+![](https://qcloudimg.tencent-cloud.cn/raw/be5fa72994d786fa6737bf3590d4324f.png)
 在“基本信息”标签页下的【标准转码列表】中，转出了对应规格的视频。开发者可以单击右侧的【预览】直接观看视频，还可以单击【复制地址】复制转码视频的 URL，然后通过其它渠道发布给观众。
 ![](https://qcloudimg.tencent-cloud.cn/raw/9067b71ebcac7658c58222499f47fcf0.png)
 
