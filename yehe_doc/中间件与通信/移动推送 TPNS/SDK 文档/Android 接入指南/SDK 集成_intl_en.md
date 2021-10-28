@@ -14,7 +14,7 @@ The SDK for Android is a set of APIs provided by TPNS Service for clients to imp
 
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns) and get the application's `AccessID` and `AccessKey` in **Product Management** > **Configuration Management**.
 2. Get the latest SDK version number on the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page.
-
+![](https://main.qcloudimg.com/raw/37b19f4e6c8dba5084c052f7e442be7f.png)
 3. In the `build.gradle` file of the application, configure the following content:
 ```
 android {
@@ -54,25 +54,25 @@ dependencies {
 >- If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
 >Add the following metadata in the `application` tag in the `AndroidManifest` file:
 >```
-<application>
-// Other Android components
-<meta-data
-android:name="XG_SERVER_SUFFIX"
-android:value="Domain names of other service access points" />
-</application>
+><application>
+>// Other Android components
+><meta-data
+>android:name="XG_SERVER_SUFFIX"
+>android:value="Domain names of other service access points" />
+></application>
 >```
+```
 >The domain names of other service access points are as follows:
 >   - Shanghai: `tpns.sh.tencent.com`
 >   - Singapore: `tpns.sgp.tencent.com`
 >   - Hong Kong (China): `tpns.hk.tencent.com`
 >  
 
-#### Precautions
+#### Notes
 
  - If the following notification pops up in Android Studio after you add the above-mentioned `abiFilter` configuration:
    "NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin", then you need to add `android.useDeprecatedNdk=true` to the `gradle.properties` file in the project root directory.
  - If you need to listen on messages, please see the `XGPushBaseReceiver` API or the `MessageReceiver` class in the demo (in the SDK compression package, which can be obtained from the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page). You can inherit `XGPushBaseReceiver` and configure the following content in the configuration file (do not process time-consuming operations in the receiver):
-
 ​```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
     <intent-filter>
@@ -273,13 +273,14 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 > - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
 > Add the following metadata in the `application` tag in the `AndroidManifest` file:
 >```
-<application>
-// Other Android components
-<meta-data
-android:name="XG_SERVER_SUFFIX"
-android:value="Domain names of other service access points" />
-</application>
+><application>
+>// Other Android components
+><meta-data
+>android:name="XG_SERVER_SUFFIX"
+>android:value="Domain names of other service access points" />
+></application>
 >```
+```
 >The domain names of other service access points are as follows:
 >   - Shanghai: `tpns.sh.tencent.com`
 >   - Singapore: `tpns.sgp.tencent.com`
@@ -299,7 +300,10 @@ XGPushConfig.enableDebug(this,true);
 
 
 ### Registering token
+Call the push service registration API where you need to start the push service:
 
+>! You can advised to call the registration API only in the main process of your app.
+>
 
 ```java
 XGPushManager.registerPush(this, new XGIOperateCallback() {
@@ -399,20 +403,20 @@ If the following log is printed in the console, the session keep-alive feature h
 ### Suggestions on getting the TPNS token
 
 After you integrate the SDK, we recommend you use gestures or other methods to display the TPNS token in the application's less commonly used UIs such as **About** or **Feedback**. The console and RESTful API requires the TPNS token to push messages. Subsequent troubleshooting will also require the TPNS token for problem locating.
-Below is sample code:
+The sample code is as follows:
 
 ```java
 // Get the token
 XGPushConfig.getToken(getApplicationContext());
 ```
 
-
+![](https://main.qcloudimg.com/raw/854020af14428df9972629e7dbbee55f.png)
 
 ### Suggestions on getting TPNS running logs
 
 The SDK provides a log reporting API. If you encounter push-related problems after the application is launched, trigger this API to upload SDK running logs and get the download address of the log file returned by the callback to facilitate troubleshooting. For more information, see [here](https://intl.cloud.tencent.com/document/product/1024/30715#reporting-logs).
 
-Below is sample code:
+The sample code is as follows:
 ```java
 XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
     @Override
@@ -425,6 +429,3 @@ XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
     }
 });
 ```
-
-
-
