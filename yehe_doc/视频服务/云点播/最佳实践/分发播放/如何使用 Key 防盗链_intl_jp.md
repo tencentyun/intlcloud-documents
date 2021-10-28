@@ -10,7 +10,7 @@
 Demoは、Serverless Cloud Function（SCF）を基にHTTPサービスを構築して、クライアントからホットリンク防止署名を取得するためのリクエストを受信します。サービスは、リクエストBodyからのVODのビデオオリジナルURLを取得し、ホットリンク防止署名を計算して、ホットリンク防止署名付きのURLをクライアントに返します。
 
 システムは主に4つの構成部分に及びます：開発者、API Gateway、Serverless Cloud Function、VODであり、このうちAPI GatewayおよびServerless Cloud Functionは、下図に示すとおりこのDemoのデプロイオブジェクトです。
-<img src="https://main.qcloudimg.com/raw/e2397093b8cd9d0aabf228ef41ecac45.png" width="600">
+<img src="https://main.qcloudimg.com/raw/f30d9b832b388c9ffe35551ef26743b4.png" width="600">
 
 具体的な業務フローは次のとおりです。
 
@@ -50,7 +50,7 @@ CVMの購入方法は [操作ガイド - インスタンス作成](https://intl.
 
 1. [クイックスタート - 手順1](https://intl.cloud.tencent.com/document/product/266/8757) を参照してVODサービスをアクティブにします。
 2. アクティブにした後、 [ホットリンク防止の設定](https://intl.cloud.tencent.com/document/product/266/14060) ドキュメントを参照して、 Keyホットリンク防止を有効にし、ホットリンク防止Keyを記録します。
-![](https://main.qcloudimg.com/raw/04d1a39b76fdb3bef5acebe57f3edb16.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c43642ea12afda47aff5ca5205f63f4f.png)
 >!ここではKeyホットリンク防止をアクティブにして、Refererホットリンク防止はアクティブにはしません。 Refererホットリンク防止を同時にアクティブにした場合、以下のテスト方法では、Refererホットリンク防止要件に適合しないことから、リクエストが失敗することがあります。
 
 ### 手順3：APIキーおよびAPPIDの取得[](id:p3)
@@ -95,7 +95,7 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 ### 手順5： Keyホットリンク防止のテスト
 
 [ビデオのアップロード - ローカルからのアップロード手順](https://intl.cloud.tencent.com/document/product/266/33890) の説明に従って、1個のテストビデオをVODにアップロードします。アップロードの完了後、【クイックビュー】をクリックしてから、右側の【アドレスコピー】をクリックしてそのビデオのURLをコピーします。
-![](https://main.qcloudimg.com/raw/b93899bb2d2335ce3212ca9c024df10a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ac27b65a2bb0cc91ac9f71b141a31cb2.png)
 CVMのコマンドラインで`curl`コマンドを実行してこのURLへの直接アクセスをテストします。結果はKeyホットリンク防止規則に適合しなかったことから、サーバーにアクセスを拒絶されます。HTTPリターンコードは403になります（テスト時は、コマンドのURLを実際のURLに置換してください。以下同じ）。
 
 ```
