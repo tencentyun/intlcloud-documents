@@ -50,7 +50,7 @@ For detailed directions on how to purchase a CVM instance and reinstall the syst
 
 1. Activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
 2. After activation, enable key hotlink protection as instructed in [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/14060) and record the hotlink protection key:
-![](https://main.qcloudimg.com/raw/209bb5a252765cc77fe4402fe7e76d49.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c43642ea12afda47aff5ca5205f63f4f.png)
 >!Here, enable key hotlink protection instead of referer hotlink protection. If you enable referer hotlink protection at the same time, the request may fail as the test method below does not meet the corresponding requirements.
 <span id="p3"></span>
 ### Step 3. Get the API key and APPID
@@ -95,7 +95,7 @@ Copy the address of the signature distribution service in the output log (which 
 ### Step 5. Test key hotlink protection
 
 Upload a test video to VOD as instructed in [Uploading Video - Local Upload](https://intl.cloud.tencent.com/document/product/266/33890). After the video is uploaded, click **Quick View** and click **Copy Address** on the right to copy the video URL.
-![](https://main.qcloudimg.com/raw/1f319a8d52f046ad979ea9b66eec1023.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ac27b65a2bb0cc91ac9f71b141a31cb2.png)
 On the command line on the CVM instance, run the `curl` command to try directly accessing this URL. The access will be rejected by the server for non-compliance with the key hotlink protection rule, and the HTTP return code will be 403 (during the test, please replace the URL in the command with the actual URL, which also applies below):
 
 ```
