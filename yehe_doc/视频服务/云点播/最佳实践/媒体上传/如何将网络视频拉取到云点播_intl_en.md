@@ -16,7 +16,7 @@ The code provided in this document is open-source and free of charge, but it may
 
 The pull from URL feature provided by VOD has the following limits:
 
-- The URL should directly point to a video file but cannot be a link to a video website page (such as a [Tencent Video page](https://v.qq.com/x/cover/mzc00200jl5tm9a/s0034tt66v7.html)).
+- The URL should directly point to a video file but cannot be a link to a video website page.
 - If the URL has a timestamp for hotlink protection, please make sure that the hotlink protection limits (such as the validity period and number of allowed access requests) are favorable; otherwise, the access may fail.
 - URLs with referer hotlink protection enabled are not supported.
 - DASH (MPD file type) is unsupported.
