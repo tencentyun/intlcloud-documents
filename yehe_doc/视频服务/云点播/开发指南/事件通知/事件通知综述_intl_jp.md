@@ -44,12 +44,6 @@ VODは、次のタイプのイベント通知をサポートします。
         <td>
             <a href="https://intl.cloud.tencent.com/document/product/266/35571">ビデオ合成の完了</a>
         </td>
-    </tr>
-		<tr>
-        <td>
-            <a href="https://intl.cloud.tencent.com/document/product/266/33955">WeChat公開の完了</a>
-        </td>
-    </tr>
 </table>
 
 イベント通知方法には、「通常のコールバック」と「信頼できるコールバック」があります。 [VODコンソール](https://console.cloud.tencent.com/vod) にログインしてコールバックモードを設定し、コールバックを受信するイベントを設定します。具体的な操作については、 [コールバック設定](https://intl.cloud.tencent.com/document/product/266/14055) をご参照ください。
