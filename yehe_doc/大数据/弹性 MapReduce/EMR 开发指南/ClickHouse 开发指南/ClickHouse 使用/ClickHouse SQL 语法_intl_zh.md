@@ -15,42 +15,42 @@ ClickHouse 支持整数、浮点数、字符型、日期、枚举值、数组等
       <td rowspan="8">整数</td>
       <td>单字节整数</td>
       <td>Int8</td>
-			<td>-128 - 127</td>
+			<td>[-128，127]</td>
    </tr>
 	 <tr>
       <td>双字节整数</td>
       <td>Int16</td>
-			<td>-32768 - 32767</td>
+			<td>[-32768，32767]</td>
    </tr>
 	 <tr>
       <td>四字节整数</td>
       <td>Int32</td>
-			<td>-2147483648 - 2147483647</td>
+			<td>[-2147483648，2147483647]</td>
    </tr>
 	 <tr>
       <td>八字节整数</td>
       <td>Int64</td>
-			<td>-9223372036854775808 - 9223372036854775807</td>
+			<td>[-9223372036854775808，9223372036854775807]</td>
    </tr>
 	 <tr>
       <td>无符号单字节整数</td>
       <td>UInt8</td>
-			<td>0 - 255</td>
+			<td>[0，255]</td>
    </tr>
    <tr>
       <td>无符号双字节整数</td>
       <td>UInt16</td>
-			<td>0 - 65535</td>
+			<td>[0，65535]</td>
    </tr>
 	 <tr>
       <td>无符号四字节整数</td>
       <td>UInt32</td>
-			<td>0 - 4294967295</td>
+			<td>[0，4294967295]</td>
    </tr>
 	 <tr>
       <td>无符号八字节整数</td>
       <td>UInt64</td>
-			<td>0 - 18446744073709551615</td>
+			<td>[0，18446744073709551615]</td>
    </tr>
 	 <tr>
       <td rowspan="5">浮点数</td>
@@ -66,15 +66,15 @@ ClickHouse 支持整数、浮点数、字符型、日期、枚举值、数组等
 	 <tr>
       <td rowspan="3">自定义浮点</td>
       <td>Decimal32(S)</td>
-			<td>浮点数有效数字 S，S 取值范围1 - 9</td>
+			<td>浮点数有效数字 S，S 取值范围[1，9]</td>
    </tr>
 	 <tr>
       <td>Decimal64(S)</td>
-      <td>浮点数有效数字 S，S 取值范围10 - 18</td>
+      <td>浮点数有效数字 S，S 取值范围[10，18]</td>
    </tr>
 	 <tr>
       <td>Decimal128(S)</td>
-      <td>浮点数有效数字 S，S 取值范围19 - 38</td>
+      <td>浮点数有效数字 S，S 取值范围[19，38]</td>
    </tr>
 	 <tr>
       <td rowspan="3">字符型</td>
@@ -112,12 +112,12 @@ ClickHouse 支持整数、浮点数、字符型、日期、枚举值、数组等
       <td rowspan="2">枚举类型</td>
       <td>单字节枚举</td>
       <td>Enum8</td>
-			<td>提供-128 - 127共256个值</td>
+			<td>提供[-128，127]共256个值</td>
    </tr>
    <tr>
       <td>双字节枚举</td>
       <td>Enum16</td>
-			<td>提供-32768 - 32767 共65536个值</td>
+			<td>提供[-32768，32767]共65536个值</td>
    </tr>
 	 <tr>
 	    <td>数组类型</td>
@@ -231,7 +231,7 @@ INSERT INTO [db.]table [(c1, c2, c3)] SELECT ...
 
 ## 删除数据
 ClickHouse 使用 DROP 或 TRUNCATE 语句来完成数据删除。
->DROP 删除元数据和数据，TRUNCATE 只删除数据。
+>?DROP 删除元数据和数据，TRUNCATE 只删除数据。
 
 ```
 DROP DATABASE [IF EXISTS] db [ON CLUSTER cluster]
@@ -357,7 +357,7 @@ ClickHouse 函数有两种类型：常规函数和聚合函数，区别是常规
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | count                                                        | 统计行数或者非 NULL 值个数                                     | count(expr)、COUNT(DISTINCT expr)、count()、count(\*)         |
 | [any(x)](https://clickhouse.tech/docs/en/query_language/agg_functions/reference/#agg_function-any) | 返回第一个遇到的值，结果不确定                               | any(column)                                                  |
-| [anyHeavy(x)](https://clickhouse.tech/docs/en/query_language/agg_functions/reference/#anyheavyx) | 基于 [heavy hitters](http://www.cs.umd.edu/~samir/498/karp.pdf) 算法，返回经常出现的值。通常结果不确定 | anyHeavy(column)                                             |
+| [anyHeavy(x)](https://clickhouse.tech/docs/en/query_language/agg_functions/reference/#anyheavyx) | 基于 heavy hitters 算法，返回经常出现的值。通常结果不确定 | anyHeavy(column)                                             |
 | [anyLast(x)](https://clickhouse.tech/docs/en/query_language/agg_functions/reference/#anylastx) | 返回最后一个遇到的值，结果不确定                             | anyLast(column)                                              |
 | [groupBitAnd](https://clickhouse.tech/docs/en/query_language/agg_functions/reference/#groupbitand) | 按位与                                                       | groupBitAnd(expr)                                            |
 | [groupBitOr](https://clickhouse.tech/docs/en/query_language/agg_functions/reference/#groupbitor) | 按位或                                                       | groupBitOr(expr)                                             |
