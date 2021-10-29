@@ -37,8 +37,8 @@
       <td>A marketing message must contain a keyword (TD, T, or N) so that recipients can reply to the message with the keyword to unsubscribe.</td>
    </tr>
    <tr>
-      <td>The keyword “验证码” is not contained in Chinese mainland verification code messages, or the keyword “code” is not contained in global verification code messages.</td>
-      <td>Please add the keyword “验证码” to Chinese mainland verification code messages and the keyword “code” to global verification code messages.</td>
+  <td>The keyword "verification code" (in Chinese) is not contained in Chinese mainland verification code messages, or the keyword “code” is not contained in global verification code messages.</td>
+      <td>Please add the keyword "verification code" (in Chinese) to Chinese mainland verification code messages and the keyword “code” to global verification code messages.</td>
    </tr>
    <tr>
       <td style="text-align:center">Containing forbidden content.</td>
