@@ -42,7 +42,7 @@
 - <span id = "p1"></span>**上传时指定任务流**
 如果开发者需要在视频上传完成后自动发起 [视频处理任务流](https://intl.cloud.tencent.com/document/product/266/33931#.E4.BB.BB.E5.8A.A1.E6.B5.81)（例如转码、截图等），可以在生成 [上传签名](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0) 时通过`procedure`参数来实现，参数值为任务流模板名，云点播支持 [创建任务流模板](https://intl.cloud.tencent.com/document/product/266/14058) 并为模板命名，发起任务流时，可以用任务流模板名来表示要发起的任务。
 - **上传时指定存储地域**
-云点播默认提供的存储地域设置在重庆，如果需要存储到其他区域，可以在控制台上自助添加其他存储地域，详细请参见 [上传存储设置](https://intl.cloud.tencent.com/document/product/266/18874)。设置完成后，在生成 [上传签名](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0) 时通过`storageRegion`参数来指定，参数值为存储地域的 [英文简称](https://intl.cloud.tencent.com/document/product/266/33910)。
+云点播默认提供的存储地域设置在新加坡，如果需要存储到其他区域，可以在控制台上自助添加其他存储地域，详细请参见 [上传存储设置](https://intl.cloud.tencent.com/document/product/266/18874)。设置完成后，在生成 [上传签名](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0) 时通过`storageRegion`参数来指定，参数值为存储地域的 [英文简称](https://intl.cloud.tencent.com/document/product/266/33910)。
 - **上传时附带封面**
 云点播允许在视频上传过程中，携带封面上传，即在上传 SDK 接口中填写相关的封面路径，详细请参见：
 	- [Android 上传 SDK](https://intl.cloud.tencent.com/document/product/266/33925)
