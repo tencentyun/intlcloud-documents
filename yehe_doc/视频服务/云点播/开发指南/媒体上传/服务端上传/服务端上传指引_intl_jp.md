@@ -49,7 +49,7 @@ SDK方式のアップロードと比べ、API方式によるアップロード�
 	- [Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 - **アップロード時にストレージリージョンを指定**
-VODが提供するストレージリージョンは、デフォルトで重慶に設定されています。他のリージョンに保存する必要がある場合は、コンソールで他のストレージリージョンを自分で追加できます。詳細については、[アップロードストレージ設定](https://intl.cloud.tencent.com/document/product/266/18874)をご参照ください。設定が完了すると、サーバーAPI [アップロードの申請](https://intl.cloud.tencent.com/document/product/266/34120) を呼び出す時に、`StorageRegion`パラメータによって実現でき、このパラメータの値をストレージリージョンの[英語の略称](https://intl.cloud.tencent.com/document/product/266/9760)にします。VODが提供する多言語 SDKはいずれもアップロード時のストレージリージョンの指定をサポートしています。詳細については以下をご参照ください。
+VODが提供するストレージリージョンは、デフォルトでシンガポール に設定されています。他のリージョンに保存する必要がある場合は、コンソールで他のストレージリージョンを自分で追加できます。詳細については、[アップロードストレージ設定](https://intl.cloud.tencent.com/document/product/266/18874)をご参照ください。設定が完了すると、サーバーAPI [アップロードの申請](https://intl.cloud.tencent.com/document/product/266/34120) を呼び出す時に、`StorageRegion`パラメータによって実現でき、このパラメータの値をストレージリージョンの[英語の略称](https://intl.cloud.tencent.com/document/product/266/9760)にします。VODが提供する多言語 SDKはいずれもアップロード時のストレージリージョンの指定をサポートしています。詳細については以下をご参照ください。
 	- [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
