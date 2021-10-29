@@ -17,7 +17,6 @@ Video on Demandは、2019年にイベント通知形式を改訂しました。
 | ビデオ削除の完了 | [リンク](https://intl.cloud.tencent.com/document/product/266/33952) | [リンク](#FileDeleted) |
 | タスクフローステータスの変更 | [リンク](https://intl.cloud.tencent.com/document/product/266/33953) | [リンク](#ProcedureStateChanged) |
 | ビデオ編集の完了 | [リンク](https://intl.cloud.tencent.com/document/product/266/33954) | - |
-| WeChatでの公開の完了 | [リンク](https://intl.cloud.tencent.com/document/product/266/33955) | - |
 | ビデオトランスコードの完了 | [リンク](https://intl.cloud.tencent.com/document/product/266/33957) | [リンク](#TranscodeComplete) |
 | 指定タイムポイントスクリーンキャプチャの完了| [リンク](https://intl.cloud.tencent.com/document/product/266/33958) | [リンク](#CreateSnapshotByTimeOffsetComplete) |
 | ビデオキャプチャスプライトイメージの完了 | [リンク](https://intl.cloud.tencent.com/document/product/266/33959) | [リンク](#CreateImageSpriteComplete) |
