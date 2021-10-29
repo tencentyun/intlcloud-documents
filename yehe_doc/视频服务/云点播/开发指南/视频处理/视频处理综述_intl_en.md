@@ -65,11 +65,6 @@ Video processing is a process in which a source video is analyzed or processed t
 <td >Intelligently recognizes video content.</td>
 </tr>
 
-<td rowspan='2' >Video release</td>
-<td  >Release on WeChat</td>
-<td >Publishes videos on WeChat and gets QR codes for sharing</td>
-</tr>
-
 
 </table>
 
