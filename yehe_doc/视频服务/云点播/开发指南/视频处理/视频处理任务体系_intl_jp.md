@@ -38,7 +38,6 @@ VODのビデオ処理タスクの大部分は、特殊な「タスク」と見�
 - [指定URLのビデオにビデオ処理を開始](https://intl.cloud.tencent.com/document/product/266/34123)
 - [タスクフローテンプレートによるビデオ処理を実施](https://intl.cloud.tencent.com/document/product/266/34124)
 - [ビデオ編集](https://intl.cloud.tencent.com/document/product/266/34126)
-- WeChatでの公開
 
 #### コンソールから開始する方法
 
@@ -61,7 +60,6 @@ VODは、クライアントからのアップロード、サーバーからの�
 
 - [タスクフロー状態の変更](https://intl.cloud.tencent.com/document/product/266/33953)
 - [ビデオ編集の完了](https://intl.cloud.tencent.com/document/product/266/33954)
-- [WeChat公開の完了](https://intl.cloud.tencent.com/document/product/266/33955)
 
 ビデオ処理の結果通知はVODの「イベント通知」に該当し、「HTTP通常コールバック」と「信頼できるコールバック」の2つの受信タイプがあります。イベント通知の受信方法などの情報については、 [イベントの通知](https://intl.cloud.tencent.com/document/product/266/33948) をご参照ください。
 
