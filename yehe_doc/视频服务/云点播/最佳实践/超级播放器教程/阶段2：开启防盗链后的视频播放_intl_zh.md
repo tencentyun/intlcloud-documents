@@ -12,7 +12,7 @@
 1. 登录云点播控制台，选择【分发播放设置】>[【域名管理】](https://console.cloud.tencent.com/vod/distribute-play/domain)，单击“默认分发域名”的【设置】，进入设置页面。
 <img src="https://main.qcloudimg.com/raw/06259e41a62ea14ce8eb19ef6480182c.png" width="800" />
 2. 单击“Key 防盗链”右侧的【编辑】，打开【启用 Key 防盗链】，并单击【生成随机 Key】生成一个随机的 Key（2WExxx48eW），将生成好的 Key 复制下来，然后单击【确定】保存生效。
-![](https://main.qcloudimg.com/raw/3ac65245b77a1b138ec51cb0f5144adf.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1b4f1f0d9e3d36c153b1e91f64160f00.png)
 
 ## 步骤2：预览播放体验
 
@@ -21,7 +21,7 @@
 1. 选择【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)，找到**步骤1**上传和处理过的视频，单击“操作”栏下的【管理】，选择【超级播放器预览】。
 2. 【超级播放器配置】选择 default。
 >? default 是预置超级播放器配置，用于播放10模板转自适应码流输出，10模板截雪碧图输出。
- <img src="https://main.qcloudimg.com/raw/17e2552964195c6919239d2d13a0d012.png" width="500" />
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/e66e46d10480c5fb00a2881b275a9cdc.png" width="500" />
 3. 因为默认分发域名开启了防盗链，【播放控制】选项卡支持预览时选定防盗链的过期时间、试看时长等。此处可维持默认参数（播放防盗链过期时间默认1天，试看时长和最多可播放 IP 个数不填写）。
  
 4. 在【Web 播放器】中，单击播放器中间的按钮，即可在 Web 端播放体验。
