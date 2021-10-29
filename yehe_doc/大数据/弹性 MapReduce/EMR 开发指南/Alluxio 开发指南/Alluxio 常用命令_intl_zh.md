@@ -352,7 +352,7 @@ mount 命令将一个底层存储中的路径链接到 Alluxio 路径，并且�
 --readonly 选项在 Alluxio 中设置挂载点为只读。
 --option `<key>=<val>` 选项传递一个属性到这个挂载点（如 S3 credential）。
 
-**操作示例**
+#### 操作示例
 使用 mount 命令可以让其他存储系统中的数据在 Alluxio 中也能获取。
 
 ```
