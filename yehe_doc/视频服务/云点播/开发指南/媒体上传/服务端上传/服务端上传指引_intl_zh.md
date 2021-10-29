@@ -49,7 +49,7 @@
 	- [Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 - **上传时指定存储地域**
-云点播默认提供的存储地域设置在重庆，如果需要存储到其他区域，可以在控制台上自助添加其他存储地域，详情请参见 [上传存储设置](https://intl.cloud.tencent.com/document/product/266/18874)。设置完成后调用服务端 API [申请上传](https://intl.cloud.tencent.com/document/product/266/34120) 时通过`StorageRegion`参数来实现，参数值为存储地域的 [英文简称](https://intl.cloud.tencent.com/document/product/266/9760)。云点播提供的多语言 SDK 都支持上传时指定存储地域，详情请参见：
+云点播默认提供的存储地域设置在新加坡，如果需要存储到其他区域，可以在控制台上自助添加其他存储地域，详情请参见 [上传存储设置](https://intl.cloud.tencent.com/document/product/266/18874)。设置完成后调用服务端 API [申请上传](https://intl.cloud.tencent.com/document/product/266/34120) 时通过`StorageRegion`参数来实现，参数值为存储地域的 [英文简称](https://intl.cloud.tencent.com/document/product/266/9760)。云点播提供的多语言 SDK 都支持上传时指定存储地域，详情请参见：
 	- [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
