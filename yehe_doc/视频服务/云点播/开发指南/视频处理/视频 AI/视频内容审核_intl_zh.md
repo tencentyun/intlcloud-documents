@@ -29,7 +29,7 @@
 * 指定过滤分数：智能识别的置信度达到多少分的结果才返回。
 * 指定过滤标签：智能识别的标签在什么范围内的结果才返回。
 
-针对常见的操作组合，云点播提供了 [预置视频内容识别模板](https://intl.cloud.tencent.com/document/product/266/33932)。另外，您还可以调用 [服务端 API]https://intl.cloud.tencent.com/zh/document/product/266/37583) 创建和管理自定义视频内容识别模板。
+针对常见的操作组合，云点播提供了 [预置视频内容识别模板](https://intl.cloud.tencent.com/document/product/266/33932)。另外，您还可以调用 [服务端 API](https://intl.cloud.tencent.com/document/product/266/37568) 创建和管理自定义视频内容识别模板。
 
 ## 任务发起
 
