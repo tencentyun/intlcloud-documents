@@ -37,7 +37,6 @@
 - [视频处理](https://intl.cloud.tencent.com/document/product/266/34125)
 - [对指定 URL 的视频发起视频处理](https://intl.cloud.tencent.com/document/product/266/34123)
 - [编辑视频](https://intl.cloud.tencent.com/document/product/266/34126)
-- 微信发布
 
 #### 通过控制台发起
 
@@ -60,7 +59,6 @@
 
 - [任务流状态变更](https://intl.cloud.tencent.com/document/product/266/33953)
 - [视频编辑完成](https://intl.cloud.tencent.com/document/product/266/33954)
-- [微信发布完成](https://intl.cloud.tencent.com/document/product/266/33955)
 
 视频处理的结果通知属于云点播的“事件通知”，有“HTTP 普通回调”和“可靠回调”两种接收类型，事件通知的接收方式等信息请参见 [事件通知](https://intl.cloud.tencent.com/document/product/266/33948)。
 
