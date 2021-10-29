@@ -2,7 +2,7 @@
 X-Pack features are Elasticsearch's official commercial features, including security, SQL, machine learning, and monitoring. It facilitates the application development and OPS management of Elasticsearch services. ES offers editions that come with such features, which you can select when purchasing and creating a cluster. The features in different editions are detailed below.
 
 ## Purchase Guide
-![](https://main.qcloudimg.com/raw/f5c67db43be36b578fb9d1f9d20e2531.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8d9406c0969abcd32e70c44f6f06efa6.png)
 As shown in the figure above, there are options for the X-Pack features on the ES purchase page. ES offers three editions that have different X-Pack features as follows:
 
 | Item | Basic | Platinum | Open Source |
