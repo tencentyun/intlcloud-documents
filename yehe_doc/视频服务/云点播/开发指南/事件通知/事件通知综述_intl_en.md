@@ -45,11 +45,6 @@ VOD supports the following types of event notifications:
             <a href="https://intl.cloud.tencent.com/document/product/266/35571">Video composing completion</a>
         </td>
     </tr>
-		<tr>
-        <td>
-            <a href="https://intl.cloud.tencent.com/document/product/266/33955">Publishing on WeChat completion</a>
-        </td>
-    </tr>
 </table>
 
 Event notification modes include "normal callback" and "reliable callback". You can log in to the [VOD Console](https://console.cloud.tencent.com/vod) to set the callback mode and select the events for which you want to receive callbacks. For detailed directions, please see [Callback Settings](https://intl.cloud.tencent.com/document/product/266/14055).
