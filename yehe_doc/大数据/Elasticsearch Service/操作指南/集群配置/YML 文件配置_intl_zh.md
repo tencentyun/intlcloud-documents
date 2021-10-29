@@ -3,7 +3,7 @@
 ## 使用步骤
 ### 查看配置项
 登录 [Elasticsearch Service 控制台](https://console.cloud.tencent.com/es)，单击需要修改配置的【集群ID/名称】，进入集群详情页，然后单击【高级配置】，即可查看配置项参数。
-![](https://main.qcloudimg.com/raw/ef01a6daf2bed529adb747a8566c6ec1.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/a47d59faff4d1f0bf132fbb47a9ee714.png)
 
 ### 修改配置项
 单击【修改配置】，可对相应的配项进行修改，配置项的输入限制，见表格最后一列“取值说明”。【更多配置】支持 YML 语法，可以自定义其他配置项的设置。
