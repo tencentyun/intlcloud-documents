@@ -4,7 +4,7 @@
 
 此功能用于提高 ES 集群的数据访问安全（可参阅 [保护您在 Elastic Stack 中的数据](https://www.elastic.co/what-is/elastic-stack-security)），用户必须通过用户名和密码认证，才被允许访问 ES 集群。无论是通过 Kibana、客户端或者 API 等方式访问集群都需要经过认证。详情请参考 [通过 API 访问集群](https://intl.cloud.tencent.com/document/product/845/19540)、[通过客户端访问集群](https://intl.cloud.tencent.com/document/product/845/19538)、[通过 Kibana 访问集群](https://intl.cloud.tencent.com/document/product/845/19541)。
 
->在创建 ES 集群时会要求设置用户名和密码。
+>?在创建 ES 集群时会要求设置用户名和密码。
 > - 对于未开启此功能的集群，用户名和密码仅用于 Kibana 的登录。
 > - 对于已开启此功能的集群，用户名和密码可用于任何方式下的 ES 集群用户登录认证。
 
@@ -25,5 +25,5 @@
 
 - 在创建集群时可以选择开启或关闭 ES 集群用户认证。
 - 集群创建完成后，如果需要再次调整开关状态，可以到集群详情页进行操作。
-![](https://main.qcloudimg.com/raw/8141983518b22bc6951094bc2b3ebbae.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/26015c19840211ff58852c202fe85725.png)
 
