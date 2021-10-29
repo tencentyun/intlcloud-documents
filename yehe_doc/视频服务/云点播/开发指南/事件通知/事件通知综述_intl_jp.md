@@ -29,7 +29,7 @@ VODは、次のタイプのイベント通知をサポートします。
         </td>
     </tr>
     <tr>
-        <td rowspan=4>
+        <td rowspan=3>
             ビデオ処理
         </td>
         <td>
