@@ -37,7 +37,6 @@ Through server APIs, you can directly initiate a task for a video in VOD or edit
 - [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125)
 - [ProcessMediaByUrl](https://intl.cloud.tencent.com/document/product/266/34123)
 - [EditMedia](https://intl.cloud.tencent.com/document/product/266/34126)
-- Publishing on WeChat
 
 #### Initiating through console
 
@@ -60,7 +59,6 @@ Video processing result notifications mainly include the following types:
 
 - [Task Flow Status Change](https://intl.cloud.tencent.com/document/product/266/33953)
 - [Video Editing Completion](https://intl.cloud.tencent.com/document/product/266/33954)
-- [Publishing on WeChat Completion](https://intl.cloud.tencent.com/document/product/266/33955)
 
 Video processing result notifications are a type of "event notifications" in VOD, which can be received in two modes: "HTTP normal callback" and "reliable callback". For more information, please see [Event Notification](https://intl.cloud.tencent.com/document/product/266/33948).
 
