@@ -17,7 +17,7 @@ There are multiple ways to create a custom policy. The table below shows a compa
 >- VOD does not support creating custom policies by product feature.
 >- **Manual selection** means that you can select an object from the candidate list displayed in the console, while **syntax description** means that you can describe objects through policy syntax.
 
-## <span id = "p1"></span>Policy Syntax Description for Resource
+## Policy Syntax Description for Resource<span id = "p1"></span>
 
 As mentioned above, the resource granularity of permission control in VOD is subapplication. The subapplication description in policy syntax follows the [CAM rules](https://intl.cloud.tencent.com/document/product/598/10606). In the example below, the developer's root account ID is 12345678, `APPID` is 1250000001 (which is equivalent to the primary application ID), and the developer has created two VOD subapplications with IDs of 1400000001 and 1400000002 respectively.
 
