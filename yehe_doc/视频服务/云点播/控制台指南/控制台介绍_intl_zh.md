@@ -12,34 +12,7 @@
 <td><ul style= "margin: 0"><li>可进行视频、音频和图片的上传、删除、查看、编辑、筛选等操作。</li><li>可进行转码、添加水印、视频审核等音视频处理操作。</li></ul></td>
 </tr>
 <tr>
-<td>任务管理</td>
-<td>可查看点播内任务处理的进度及详情。</td>
-</tr>
-<tr>
-<td><a href = "https://intl.cloud.tencent.com/document/product/266/14059">任务流</a></td>
-<td><ul style= "margin: 0"><li>可对音视频转码、极速高清、自适应码流、水印、截图、转动图、智能识别等音视频处理模板进行设置。</li><li>可对任务流模板进行设置，以流程化的对音视频进行处理。</li></ul></td>
-</tr>
-<tr>
-<td><a href = "https://intl.cloud.tencent.com/document/product/266/33896#editing-basic-info">视频播放</a></td>
-<td><ul style= "margin: 0"><li>可获取视频加速播放链接。</li><li>可以对和视频链接设置鉴权和访问控制。</li></ul></td>
-</tr>
-<tr>
-<td><a href = "https://intl.cloud.tencent.com/document/product/266/7836">播放器 SDK</a></td>
-<td><ul style= "margin: 0"><li>支持多种端（iOS、Web、Android）多版本播放器。</li><li>提供可供第三方播放器接入云 PAAS 资源的播放器 Adapter 版本。</li><li>提供自动切换清晰度，首屏秒开，手势控制等多种功能。</li><li>支持多种编码方式的视频播放。</li></ul></td>
-</tr>
-</table>
-
-<table>
-<tr><th width="17%">功能名称</th><th>功能描述</th></tr>
-<tr>
-<td ><a href = "https://intl.cloud.tencent.com/document/product/266/2841">服务概览</a></td>
-<td><ul style = "margin-bottom: 0px;"><li>可查看当前账户计费方式及计费带宽等计费情况。</li><li>可查看存储空间、转码时长、使用流量、使用带宽、审核时长。</li></ul></td>
-</tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/document/product/266/33890">视频管理</a></td>
-<td><ul style= "margin: 0"><li>可进行视频、音频和图片的上传、删除、查看、编辑、筛选等操作。</li><li>可进行转码、添加水印、视频审核等音视频处理操作。</li></ul></td>
-</tr>
-<tr>
-<td>任务管理</td>
+<td>[任务管理](https://intl.cloud.tencent.com/document/product/266/39706 )</td>
 <td>可查看点播内任务处理的进度及详情。</td>
 </tr>
 <tr>
@@ -58,27 +31,23 @@
 
 
 ## 场景服务
-场景服务提供了从云点播使用场景衍生而来的升级服务，包括媒资降冷、视频制作、视频智能识别、应用管理、License 管理等。如需要使用相关服务可在本模块进行操作。
+场景服务提供了从云点播使用场景衍生而来的升级服务，包括媒资降冷、视频智能识别、应用管理、License 管理等。如需要使用相关服务可在本模块进行操作。
 <table>
 <tr><th width="17%">功能名称</th><th>功能描述</th></tr>
 <tr>
 <td ><a href = "https://intl.cloud.tencent.com/document/product/266/42092">媒资降冷</a></td>
 <td><ul style = "margin-bottom: 0px;"><li>可变更媒体资源存储类型，提供媒资降冷和数据取回能力，可有效降低用户存储成本。</li><li>可设置智能降冷策略，实现对指定媒体资源的自动降冷。</li></ul></td>
 </tr><tr>
-<td>视频制作</td>
-<td>可对音视频进行编辑，包括设置音量、透明度、剪裁、滤镜、文本、转场动画、字幕等内容。</td>
-</tr>
-<tr>
 <td><a href = "https://intl.cloud.tencent.com/document/product/266/33897">视频智能识别</a></td>
 <td><ul style= "margin: 0"><li>可查看视频智能识别任务结果，确认视频中是否存在不适宜内容，协助用户建设绿色健康的社交网络环境。</li><li>可根据智能识别结果对视频发起新的识别任务。</li></ul></td>
 </tr>
 <tr>
-<td>应用管理</td>
+<td>[应用管理](https://intl.cloud.tencent.com/document/product/266/42093)</td>
 <td><ul style= "margin: 0"><li>可创建子应用实现资源隔离。</li><li>可对子应用进行编辑、停用、销毁和启用等操作。</li></ul></td>
 </tr>
 <tr>
 <td><a href = "https://intl.cloud.tencent.com/document/product/266/39429">License 管理</a></td>
-<td>可管理短视频 SDK License和腾讯微剪 License。</td>
+<td>可管理短视频 SDK License。</td>
 </tr>
 </table>
 
