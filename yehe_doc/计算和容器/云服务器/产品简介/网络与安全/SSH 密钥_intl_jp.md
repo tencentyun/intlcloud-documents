@@ -24,8 +24,8 @@ Tencent Cloudでは**SSHキーペアを使用**したLinuxインスタンスへ�
 ## ユースケース
 - キーの作成、バインディング/バインド解除、および削除方法については、[SSHキーの管理](https://intl.cloud.tencent.com/document/product/213/16691)をご参照ください。。
 - SSHキーを使用してCVMインスタンスにリモートでログインする方法については、以下をご参照ください。
- - [リモートログインソフトウェアを使用してLinuxインスタンスにログイン] (https://intl.cloud.tencent.com/document/product/213/32502)
- - [SSHを使用してLinuxインスタンスにログイン] (https://intl.cloud.tencent.com/document/product/213/32501)
+ - [リモートログインソフトウェアを使用してLinuxインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32502)
+ - [SSHを使用してLinuxインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32501)
 
 
 
