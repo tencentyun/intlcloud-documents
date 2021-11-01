@@ -1,6 +1,9 @@
-TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SDK는 모두 동일한 기본 모듈을 사용하기 때문에 프로젝트 중 동시에 두 개 이상의 LiteAV 체제의 SDK를 통합하게 되면 부호 충돌(symbol duplicate) 문제가 발생할 수 있습니다. 따라서 Tencent Cloud에서는 다양한 제품 기능을 통합한 **라이트 버전(TRTC)**, 프로 버전(Professional)**과 **엔터프라이즈 버전(Enterprise)**을 제공하여 사용자가 실제 비즈니스에 적합한 버전을 선택할 수 있습니다.
+TRTC는 Tencent Cloud의 LiteAV 시리즈 제품입니다. LiteAV 시스템의 SDK는 모두 동일한 기본 모듈을 사용하기 때문에 프로젝트에 두 개 이상의 LiteAV 시스템 SDK를 동시에 통합하면 부호 충돌 문제(symbol duplicate)가 발생할 수 있습니다. 이에 따라 Tencent Cloud는 서로 다른 제품 기능을 통합한 **라이트 버전(TRTC)**, **프로 버전(Professional)**, **엔터프라이즈 버전(Enterprise)**을 제공하고 있으며, 실제 비즈니스 필요에 따라 각 버전을 선택할 수 있습니다.
 
-라이트 버전은 TRTC와 라이브 방송 재생(TXLivePlayer) 기능만 제공하며 App 설치 패키지 용량 증분이 가장 적어 TRTC 관련 기능만 사용하는 사용자에게 적합합니다.
+
+
+<h2 id="TRTC">라이트 버전(TRTC)</h2>  
+라이트 버전은 TRTC와 라이브 방송 재생(TXLivePlayer) 기능만 제공하며, App 설치 패키지 용량 증분이 가장 적어 TRTC 관련 기능만 사용하는 사용자에게 적합합니다.
 
 <table>
    <tr>
@@ -10,7 +13,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <th width="0px" style="text-align:center">Gitee</td>
       <th width="0px" style="text-align:center">Demo 실행 설명</td>
       <th width="0px" style="text-align:center">SDK 통합 가이드</td>
-      <th width="0px" style="text-align:center">설치 패키지 증량</td>
+      <th width="0px" style="text-align:center">설치 패키지 증분</td>
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
@@ -19,7 +22,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center">3M（arm64）</td>
+      <td style="text-align:center">3M(arm64)</td>
    </tr>
      <tr>
       <td style="text-align:center">Android</td>
@@ -37,7 +40,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
-      <td style="text-align:center">12.7M（C++ x86）<br>15.6M（C++ x64）</td>
+      <td style="text-align:center">12.7M(C++ x86)<br>15.6M(C++ x64)</td>
    </tr>
      <tr>
       <td style="text-align:center">Windows(C#) </td>
@@ -46,7 +49,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
-      <td style="text-align:center">13.8M（C# x64）<br>13.3M（C# x86）</td>
+      <td style="text-align:center">13.8M(C# x64)<br>13.3M(C# x86)</td>
    </tr>
      <tr>
       <td style="text-align:center">Mac</td>
@@ -55,15 +58,15 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35094">DOC</a></td>
-      <td style="text-align:center">2.05M（arm64）</td>
+      <td style="text-align:center">2.05M(arm64)</td>
    </tr>
      <tr>
-      <td style="text-align:center">web</td>
+      <td style="text-align:center">Web</td>
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_web_trtc") href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35607">DOC</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35096">DOC</a></td>
+      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32398">DOC</a></td>
+      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/16863">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
    <tr>
@@ -75,13 +78,6 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35097">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
-   <tr>
-      <td style="text-align:center">WeChat 미니프로그램</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_wxmini_trtc") href="https://web.sdk.qcloud.com/trtc/miniapp/download/trtc-room.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-       <td style="text-align:center">N/A</td>
-   </tr>
 	    <tr>
       <td style="text-align:center">Flutter</td>
       <td style="text-align:center">N/A</td>
@@ -91,23 +87,17 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35098">DOC</a></td>
       <td style="text-align:center">13M</td>
    </tr>
-<tr>
-      <td style="text-align:center">Unity</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_unity_trtc") href="https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/unity/TRTCUnitySDK.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a href="https://github.com/c1avie/TRTCUnity ">Github</a></td>
-      <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a href="">DOC</a></td>
-      <td style="text-align:center"><a href="">DOC</a></td>
-      <td style="text-align:center">N/A</td>
-   </tr>
 </table>
 
 >? 
-> - SDK가 가져오는 설치 패키지 용량 증분을 줄여야 할 경우, [설치 패키지 용량 축소 방법](https://intl.cloud.tencent.com/document/product/647/35165)을 참조하십시오.
+>- SDK로 인한 설치 패키지 용량 증분을 줄여야 할 경우, [설치 패키지 용량 축소 방법](https://intl.cloud.tencent.com/document/product/647/35165)을 참고하십시오.
+>- QR 코드를 스캔해서 공식 계정을 팔로우하고 SDK의 버전 업데이트 및 최신 기술 동향을 알아보십시오.
+> ![](https://main.qcloudimg.com/raw/d8a8c8c130ef7799feff6efbc0260ea2.jpg)
+
 
 <h2 id="Professional">프로 버전(Professional)</h2>
 
-프로 버전은 [Player+](https://intl.cloud.tencent.com/), [MLVB]와 [UGSV] 등 TRTC를 포함한 다양한 멀티미디어 관련 핵심 기능이 통합되어 있습니다. 하위 레이어 모듈을 효율적으로 재사용하여 통합 프로 버전의 증분 용량이 독립적인 SDK 2개를 통합한 용량보다 작으며, 부호 충돌(symbol duplicate) 문제도 방지할 수 있습니다.
+프로 버전은 TRTC를 포함한 멀티미디어에 관한 핵심 기능이 집약되어 있으며, [Player+](https://intl.cloud.tencent.com/document/product/266/7836), [Mobile Live Video Broadcasting](https://intl.cloud.tencent.com/product/mlvb), [User Generated Short Video SDK](https://intl.cloud.tencent.com/product/ugsv) 등의 다양한 멀티미디어 관련 핵심 기능이 통합되어 있어, 하위 레이어 모듈을 효율적으로 재사용해 증분 용량이 독립적인 SDK 2개를 통합한 용량보다 작고, symbol duplicate 문제를 방지할 수 있습니다.
 
 <table>
    <tr>
@@ -117,7 +107,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <th width="0px" style="text-align:center">64비트 지원</td>      
       <th width="0px" style="text-align:center">Demo 실행 설명</td>
       <th width="0px" style="text-align:center">SDK 통합 가이드</td>
-      <th width="0px" style="text-align:center">설치 패키지 증량</td>
+      <th width="0px" style="text-align:center">설치 패키지 증분</td>
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
@@ -126,7 +116,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <td style="text-align:center">지원</td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center">3.2M（arm64）</td>
+      <td style="text-align:center">3.2M(arm64)</td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
@@ -140,14 +130,14 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
 </table>
 
 >? 
->- Windows와 Mac 버전의 SDK는 현재 하나의 버전밖에 없으며, 라이트 버전, 프로 버전 및 엔터프라이즈 버전의 구분이 없습니다.
->- LiteAV 체제의 SDK는 모두 동일한 기초 모듈을 사용하기 때문에 프로젝트 중 동시에 두 개 이상의 LiteAV 체제의 SDK를 통합하게 되면 부호 충돌(symbol duplicate) 문제가 발생할 수 있습니다. 해결 방법은 프로 버전의 LiteAVSDK로 통합하는 것입니다.
->- SDK가 가져오는 설치 패키지 용량 증분을 줄여야 할 경우, [설치 패키지 용량 축소 방법](https://intl.cloud.tencent.com/document/product/647/35165)을 참조하십시오.
+>- Windows와 Mac 버전의 SDK는 현재 단일 버전만 제공되며, 라이트 버전, 프로 버전 및 엔터프라이즈 버전의 구분이 없습니다.
+>- LiteAV 시스템의 SDK는 모두 동일한 기본 모듈을 사용하기 때문에 프로젝트에 두 개 이상의 LiteAV 시스템 SDK를 동시에 통합하면 부호 충돌 문제(symbol duplicate)가 발생할 수 있습니다. 이는 프로 버전의 LiteAVSDK를 통합하여 해결할 수 있습니다.
+>- SDK로 인한 설치 패키지 용량 증분을 줄여야 할 경우, [설치 패키지 용량 축소 방법](https://intl.cloud.tencent.com/document/product/647/35165)을 참고하십시오.
 
 
 <h2 id="Enterprise">엔터프라이즈 버전(Enterprise)</h2>
 
-엔터프라이즈 버전은 프로 버전의 모든 기능을 포함할 뿐 아니라 AI 뷰티 필터 특수 효과 컴포넌트가 포함되어 큰 눈, 갸름한 얼굴, 메이크업, 움직이는 스티커, 액세서리 등 AI 뷰티 필터 특수 효과 기능을 지원합니다.
+프로 버전의 모든 기능 외에도 엔터프라이즈 버전에는 눈 확대, 얼굴 슬리밍, 뷰티 필터 및 애니메이션 스티커와 같은 AI 뷰티 필터 특수 효과 컴포넌트가 포함되어 있습니다. 과금에 관한 내용은 [문의하기](https://intl.cloud.tencent.com/contact-us)를 참고하십시오. 엔터프라이즈 버전 다운로드 후 뷰티 필터 SDK의 압축 해제 비밀번호와 인증 License가 있어야 실행되므로, [문의하기](https://intl.cloud.tencent.com/contact-us)를 통해 암호 해제 비밀번호와 인증 License를 획득하십시오.
 
 <table>
    <tr>
@@ -156,7 +146,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <th width="0px" style="text-align:center">64비트 지원</td>
       <th width="0px" style="text-align:center">Demo 실행 설명</td>
       <th width="0px" style="text-align:center">SDK 통합 가이드</td>
-      <th width="0px" style="text-align:center">설치 패키지 증량</td>
+      <th width="0px" style="text-align:center">설치 패키지 증분</td>
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
@@ -164,7 +154,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <td style="text-align:center">지원</td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center"> 5.5M（arm64）</td>
+      <td style="text-align:center"> 5.5M(arm64)</td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
@@ -177,8 +167,8 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
 </table>
 
 >?
->- Windows와 Mac 버전의 SDK는 현재 AI 뷰티 필터 특수 효과 컴포넌트가 없으며, 라이트 버전, 프로 버전 및 엔터프라이즈 버전의 구분이 없습니다.
->- SDK가 가져오는 설치 패키지 용량 증분을 줄여야 할 경우, [설치 패키지 용량 축소 방법](https://intl.cloud.tencent.com/document/product/647/35165)을 참조하십시오.
+>- Windows와 Mac 버전의 SDK는 현재 AI 뷰티 필터 특수 효과 모듈을 지원하지 않으며, 라이트 버전, 프로 버전 및 엔터프라이즈 버전의 구분이 없습니다.
+>- SDK가 가져오는 설치 패키지 용량 증분을 줄여야 할 경우, [설치 패키지 용량 축소 방법](https://intl.cloud.tencent.com/document/product/647/35165)을 참고하십시오.
 
 
 ## 각 버전 차이 대조표
@@ -189,10 +179,10 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
   <tr>
     <th width="100px" style="text-align:center">기능 모듈</th>
     <th width="100px" style="text-align:center">기능 항목</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">라이브 방송 라이트 버전</a><br>LiteAV_Smart</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">라이브 방송 기본 버전</a><br>LiteAV_Smart</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/37914">UGSV 버전</a><br>LiteAV_UGC</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC 버전</a><br>LiteAV_TRTC</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/zh/document/product/647/34615">플레이어 버전</a><br>LiteAV_Player</th>
+    <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/881/20205">플레이어 버전</a><br>LiteAV_Player</th>
     <th width="100px" style="text-align:center"><a href="#Professional">프로 버전</a><br>Professional</th>
     <th width="100px" style="text-align:center"><a href="#Enterprise">엔터프라이즈 버전</a><br>Enterprise</th>
   </tr>
@@ -273,7 +263,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
   </tr>
   <tr>
     <td rowspan='2' style="text-align:center">뷰티 필터</td>
-    <td style="text-align:center">기초 뷰티 필터</td>
+    <td style="text-align:center">기본 뷰티 필터</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
@@ -282,7 +272,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td style="text-align:center">기초 필터</td>
+    <td style="text-align:center">기본 필터</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
@@ -339,7 +329,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td style="text-align:center">편집</td>
+    <td style="text-align:center">편집 및 스티칭</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">-</td>
@@ -348,7 +338,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td style="text-align:center">'틱톡' 특수 효과</td>
+    <td style="text-align:center">‘TikTok’ 특수 효과</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">-</td>
@@ -367,7 +357,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
   </tr>
   <tr>
     <td rowspan='4' style="text-align:center">AI 뷰티 필터 특수 효과</td>
-    <td style="text-align:center">큰 눈 & 갸름한 얼굴</td>
+    <td style="text-align:center">큰 눈과 갸름한 얼굴</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">-</td>
@@ -376,7 +366,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td style="text-align:center">V라인 & 오똑한 코</td>
+    <td style="text-align:center">V라인과 오똑한 코</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">-</td>
@@ -385,7 +375,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td style="text-align:center">움직이는 스티커</td>
+    <td style="text-align:center">애니메이션 스티커</td>
    <td style="text-align:center">-</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">-</td>
@@ -417,5 +407,4 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
     s.parentNode.insertBefore(mta, s);
   })();
 </script>
-
 

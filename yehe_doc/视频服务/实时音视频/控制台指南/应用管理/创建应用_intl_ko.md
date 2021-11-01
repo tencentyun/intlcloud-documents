@@ -1,32 +1,35 @@
 TRTC는 애플리케이션 형태로 다양한 서비스 또는 항목을 관리합니다. TRTC 콘솔에서 다양한 비즈니스 또는 항목별로 애플리케이션을 생성해 비즈니스 및 항목 데이터를 격리할 수 있습니다.
 
 ## 주의 사항
-Tencent Cloud 계정당 최대 100개의 TRTC 애플리케이션을 생성할 수 있습니다.
+Tencent Cloud 계정당 최대 100개의 TRTC 애플리케이션을 생성할 수 있습니다. 
 
 ## 애플리케이션 생성
-1. [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에 로그인한 후 왼쪽 열에 있는 [Application Management]를 클릭합니다.
-2. 상단에 있는 [Create Application]을 클릭하고 실제 비즈니스 수요에 따라 애플리케이션 이름을 입력합니다.
-> ? 숫자, 중문, 영문, 언더바만 입력할 수 있으며, 최대 15자까지 입력할 수 있습니다.
-3. [확인]을 클릭하면 바로 생성됩니다.
+1. [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에 로그인한 후 왼쪽 열에 있는 [애플리케이션 관리]를 클릭합니다.
+![](https://main.qcloudimg.com/raw/a88a4f5fbb885b419edbcc98fbfbe029.png)
+2. 상단에 있는 [애플리케이션 생성]을 클릭하고 실제 비즈니스 수요에 따라 애플리케이션 이름을 입력하고 태그를 설정합니다.
+![](https://main.qcloudimg.com/raw/b5b2b29fe4117bd0c02808f3a9ca4f67.png)
+> ? 숫자, 중국어, 영어, 언더바만 입력할 수 있으며, 최대 15자까지 입력할 수 있습니다.
+3. [확인]을 클릭하면 바로 생성할 수 있습니다.
 
 
 ## 애플리케이션 리스트 조회
 애플리케이션 생성 완료 후 해당 애플리케이션 정보는 애플리케이션 리스트에 표시되며, 해당 정보에는 SDKAppID, 애플리케이션 이름, 태그, 서비스 상태, 생성 시간이 포함됩니다.
+![](https://main.qcloudimg.com/raw/0432fbcb57941feb8797c70dfd017ea4.png)
 
 | 정보 항목  | 설명  |
 | ---------------------- | ---------------------- |
-| SDKAppID | 애플리케이션 생성 완료 후 자동으로 생성되며 애플리케이션의 유일한 식별 번호로, 음성 API 인터페이스 호출 시 해당 매개변수를 제공해야 합니다.  |
+| SDKAppID | 애플리케이션 생성 완료 후 자동으로 생성되며 애플리케이션의 유일한 식별 번호로, 음성 API 인터페이스 호출 시 해당 매개변수를 제공해야 합니다. |
 | 애플리케이션 이름 | 애플리케이션 생성 시 사용자 정의하는 애플리케이션 이름입니다. |
-| 태그 | [애플리케이션 정보](https://intl.cloud.tencent.com/zh/document/product/647/39079)에서 설정하는 태그 값입니다.<br/>Tencent Cloud의 각종 리소스를 식별하고 관리하는 데 사용됩니다. 예를 들어, 기업의 각 비즈니스 부서별로 하나 혹은 여러 개의 TRTC 애플리케이션을 사용하고 있을 경우 태그 추가를 통해 부서별 정보를 표기할 수 있습니다. |
-| 서비스 상태 | 현재 애플리케이션 서비스 상태로 **정상**, **중지됨** 두 가지 상태로 표시됩니다.<br/>별도로 중지 작업을 하지 않았으나 서비스 상태에 "중지됨"이 표시되는 경우 [패키지 잔여량 ](https://console.cloud.tencent.com/trtc/package)이 0인지, [Tencent Cloud 계정](https://console.cloud.tencent.com/expense/overview)이 연체 상태인지 확인하십시오. |
+| 태그 | [애플리케이션 정보](https://intl.cloud.tencent.com/document/product/647/39079)에서 설정한 태그 값입니다.<br/>Tencent Cloud의 각종 리소스를 식별하고 관리하는 데 사용됩니다. 예를 들어, 기업의 각 비즈니스 부서별로 하나 혹은 여러 개의 TRTC 애플리케이션을 사용하고 있을 경우 태그 추가를 통해 부서별 정보를 표기할 수 있습니다. |
+| 서비스 상태 | 현재 애플리케이션 서비스 상태로 **정상**, **중지됨** 두 가지 상태로 표시됩니다.<br/>별도로 중지 작업을 하지 않았으나 서비스 상태에 ‘중지됨’이 표시되는 경우 [패키지 잔여량](https://console.cloud.tencent.com/trtc/package)이 0인지, [Tencent Cloud 계정](https://console.cloud.tencent.com/expense/overview)이 연체 상태인지 확인하십시오. |
 | 생성 시간 | 애플리케이션 생성 완료 시간입니다.                                         |
 | 작업 | [애플리케이션 통계], [기능 설정], [애플리케이션 정보] 등의 작업을 지원합니다.     |
 
 
 
 ## 관련 문서
-- 애플리케이션 리스트에서 관련 애플리케이션을 검색하는 자세한 방법은 [애플리케이션 검색](https://intl.cloud.tencent.com/zh/document/product/647/39078)을 참조하십시오.
-- 애플리케이션 기본 정보를 조회하는 자세한 방법은 [애플리케이션 정보](https://intl.cloud.tencent.com/zh/document/product/647/39079)를 참조하십시오.
-- 애플리케이션 기능 설정 또는 설정 정보 확인에 대한 자세한 방법은 [기능 설정](https://intl.cloud.tencent.com/zh/document/product/647/39080)을 참조하십시오.
-- 클라우드에서 혼합 스트리밍 트랜스 코딩 시 사용자 정의 배경 이미지 설정이 필요한 경우 리소스 관리에서 해당하는 이미지 리소스를 추가할 수 있으며, 자세한 방법은 [리소스 관리](https://intl.cloud.tencent.com/zh/document/product/647/39081)를 참조하십시오.
-- 애플리케이션 빠른 실행 관련 Demo 소스 코드에 대한 자세한 내용은 [퀵 스타트](https://intl.cloud.tencent.com/zh/document/product/647/39082)를 참조하십시오.
+- 애플리케이션 리스트에서 관련 애플리케이션을 검색하는 자세한 방법은 [애플리케이션 검색](https://intl.cloud.tencent.com/document/product/647/39078)을 참고하십시오.
+- 애플리케이션 기본 정보 조회에 대한 자세한 방법은 [애플리케이션 정보](https://intl.cloud.tencent.com/document/product/647/39079)를 참고하십시오.
+- 애플리케이션 기능 설정 또는 설정 정보 확인에 대한 자세한 방법은 [기능 설정](https://intl.cloud.tencent.com/document/product/647/39080)을 참고하십시오.
+- 클라우드 혼합 스트림 트랜스 코딩 시 사용자 정의 배경 이미지 설정이 필요한 경우 리소스 관리에서 해당하는 이미지 리소스를 추가할 수 있습니다. 자세한 방법은 [리소스 관리](https://intl.cloud.tencent.com/document/product/647/39081)를 참고하십시오.
+- 애플리케이션 빠른 실행 관련 Demo 소스 코드에 대한 자세한 내용은 [퀵 스타트](https://intl.cloud.tencent.com/document/product/647/39082)를 참고하십시오.
