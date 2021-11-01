@@ -12,7 +12,7 @@
 <td><ul style= "margin: 0"><li>可进行视频、音频和图片的上传、删除、查看、编辑、筛选等操作。</li><li>可进行转码、添加水印、视频审核等音视频处理操作。</li></ul></td>
 </tr>
 <tr>
-<td>[任务管理](https://intl.cloud.tencent.com/document/product/266/39706 )</td>
+<td><a href = "https://intl.cloud.tencent.com/document/product/266/39706">任务管理</a></td>
 <td>可查看点播内任务处理的进度及详情。</td>
 </tr>
 <tr>
@@ -42,7 +42,7 @@
 <td><ul style= "margin: 0"><li>可查看视频智能识别任务结果，确认视频中是否存在不适宜内容，协助用户建设绿色健康的社交网络环境。</li><li>可根据智能识别结果对视频发起新的识别任务。</li></ul></td>
 </tr>
 <tr>
-<td>[应用管理](https://intl.cloud.tencent.com/document/product/266/42093)</td>
+<td><a href = "https://intl.cloud.tencent.com/document/product/266/42093">应用管理</a></td>
 <td><ul style= "margin: 0"><li>可创建子应用实现资源隔离。</li><li>可对子应用进行编辑、停用、销毁和启用等操作。</li></ul></td>
 </tr>
 <tr>
