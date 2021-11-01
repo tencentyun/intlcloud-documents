@@ -8,20 +8,21 @@ Linux 버전/Windows 버전/macOS 버전: [ XML Linux C++ SDK](https://github.co
 - 예시 Demo 다운로드 주소: [COS XML C++ SDK 예시](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/demo/cos_demo.cpp).
 - SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/CHANGELOG.md)를 참고하십시오.
 
->? XML 버전의 SDK를 사용할 때 함수나 메소드가 존재하지 않는 등의 오류가 발생하는 경우, SDK의 XML 버전을 최신 버전으로 업그레이드한 후 다시 시도하십시오.
+>? XML 버전 SDK 사용 중 함수 또는 메소드가 존재하지 않는 등의 오류 발생 시, XML 버전 SDK를 최신 버전으로 업그레이드한 후 재시도하십시오.
+>
 
 
-## 컴파일 완료 (추천)
+## 컴파일 완료(추천)
 
 [XML C++ SDK 소스 코드](https://github.com/tencentyun/cos-cpp-sdk-v5)를 다운로드하고, libs 디렉터리에 컴파일 완료된 라이브러리가 있으면 직접 사용할 수 있습니다. 사용 시, 해당 시스템 버전을 선택하시기 바랍니다. 
 
 ```shell
 libs/linux/libcossdk.a #linux의 정적 라이브러리
 libs/linux/libcossdk-shared.so #linux 동적 라이브러리
-libs/Win32/cossdk.lib #Win32라이브러리
-libs/x64/cossdk.lib #Win64라이브러리
-libs/macOS/libcossdk.a #macOS정적 라이브러리
-libs/macOS/libcossdk-shared.dylib #macOS동적 라이브러리
+libs/Win32/cossdk.lib #Win32 라이브러리
+libs/x64/cossdk.lib #Win64 라이브러리
+libs/macOS/libcossdk.a #macOS 정적 라이브러리
+libs/macOS/libcossdk-shared.dylib #macOS 동적 라이브러리
 ```
 
 >? 사용 시, 해당 시스템의 라이브러리 파일과 SDK include 헤더 파일을 프로그램으로 복사하십시오.
@@ -29,12 +30,12 @@ libs/macOS/libcossdk-shared.dylib #macOS동적 라이브러리
 Third-party 디렉터리에 3rd party 종속 라이브러리가 있는 경우는 다음과 같습니다. 
 
 ```shell
-third_party/lib/linux/poco/ #linux에 종속된 Poco동적 라이브러리
-third_party/lib/Win32/openssl/ #Win32 종속된 openssl라이브러리
-third_party/lib/Win32/poco/ #Win32 종속된 poco라이브러리
-third_party/lib/x64/openssl/ #Win64 종속된 openssl라이브러리
-third_party/lib/x64/poco/ #Win64 종속된 poco라이브러리
-third_party/lib/macOS/poco/ #macOS 종속된 poco라이브러리
+third_party/lib/linux/poco/ #linux에 종속된 Poco 동적 라이브러리
+third_party/lib/Win32/openssl/ #Win32 종속된 openssl 라이브러리
+third_party/lib/Win32/poco/ #Win32 종속된 poco 라이브러리
+third_party/lib/x64/openssl/ #Win64 종속된 openssl 라이브러리
+third_party/lib/x64/poco/ #Win64 종속된 poco 라이브러리
+third_party/lib/macOS/poco/ #macOS 종속된 poco 라이브러리
 ```
 
 >? 사용 시, 해당 시스템의 종속 라이브러리를 프로그램으로 복사하십시오.
@@ -45,7 +46,7 @@ third_party/lib/macOS/poco/ #macOS 종속된 poco라이브러리
 
 ### 컴파일 옵션
 
-루트 디렉터리의 CMakeLists.txt 파일은 다음과 같은 컴파일 옵션을 설정할 수 있습니다. 
+루트 디렉터리의 CMakeLists.txt 파일은 다음과 같은 컴파일 옵션을 설정할 수 있습니다.
 
 ```shell
 option(BUILD_UNITTEST "Build unittest" OFF) #유닛 테스트 컴파일 설정
@@ -55,7 +56,7 @@ option(BUILD_SHARED_LIB "Build shared library" OFF) #동적 라이브러리 컴�
 
 ### 종속 라이브러리
 
-종속 동적 라이브러리: poco、openssl、crypto.
+종속 동적 라이브러리: poco, openssl, crypto.
 
 
 ### Linux버전 SDK 컴파일
@@ -74,14 +75,14 @@ cd build
 cmake .. 
 make
 ```
-3. Poco 라이브러리 설치 
+3. Poco 라이브러리 설치
 ```shell
 cd ${cos-cpp-sdk} 
 sh install-libpoco.sh
 ```
->? 해당 스크립트는 Poco 동적 라이브러리를 /usr/lib64 디렉터리에 설치하고, 소프트 링크를 생성합니다. 프로덕션 환경에서 COS SDK를 사용하려는 경우에도 프로덕션 환경에 Poco 라이브러리를 설치해야 합니다. 
+>? 해당 스크립트는 Poco 동적 라이브러리를 /usr/lib64 디렉터리에 설치하고, 소프트 링크를 생성합니다. 프로덕션 환경에서 COS SDK를 사용하려는 경우에도 프로덕션 환경에 Poco 라이브러리를 설치해야 합니다.
 >
-4. 테스트 Demo  
+4. 테스트 Demo 
 >? 테스트 demo가 필요하지 않은 경우, 이 단계를 건너 뛰십시오.
 >
 ```shell
@@ -91,7 +92,7 @@ vim CMakeLists.txt #루트 디렉터리 내 CMakeLists.txt의 BUILD_DEMO를 ON�
 cd build && make #컴파일demo
 ls bin/cos_demo #생성된 실행 가능 파일은 bin 디렉터리에 있음
 vim bin/config.json #키 및 단지 수정
-cd bin && ./cos_demo #demon 실행
+cd bin && ./cos_demo #demo 실행
 ```
 5. SDK 사용 
 컴파일하여 생성된 라이브러리 파일은 build/lib 디렉터리에 있으며 정적 라이브러리 이름은 `libcossdk.a`, 동적 라이브러리 이름은 `libcossdk-shared.so`입니다. 사용 시, 라이브러리는 프로그램에 복사하고 include 디렉터리는 프로그램의 include 경로에 복사하십시오.
@@ -104,13 +105,13 @@ visual studio 2017 개발 환경 설치
 2. CMake 툴 설치
 [CMake 공식 홈페이지](https://cmake.org/download/)에서 Windows버전 CMake 컴파일 툴을 다운로드하고 `${CMake의 설치 경로}\bin`을 Windows 시스템 환경 변수 Path에 설정합니다.
 3. SDK 컴파일 
- i. [XML Windows C++ SDK 소스코드](https://github.com/tencentyun/cos-cpp-sdk-v5/tree/windows_dev)를 개발 환경에 다운로드합니다. 
+ i. [XML Windows C++ SDK 소스 코드](https://github.com/tencentyun/cos-cpp-sdk-v5/tree/windows_dev)를 개발 환경에 다운로드합니다.
  ii. Windows 명령 라인을 열어 C++ SDK 소스 코드 디렉터리에 cd 명령어를 사용하여 다음 명령을 실행합니다.
 ```shell
 mkdir build
 cd build
-cmake .. #Win32 makefile생성
-cmake -G "Visual Studio 15 Win64" .. #Win64 makefile생성
+cmake .. #Win32 makefile 생성
+cmake -G "Visual Studio 15 Win64" .. #Win64 makefile 생성
 ```
  iii. visual studio 2017로 솔루션 리소스 관리자를 열고 컴파일을 진행합니다.
 4. 테스트 demo <br>
@@ -137,10 +138,10 @@ make
 ```
 3. Poco 라이브러리 설치
 Poco 라이브러리는 third_party/lib/macOS/poco 디렉터리에 있습니다. 직접 설치해 주십시오.
-4. 테스트 Demo  
->? 테스트 demo가 필요하지 않은 경우, 이 단계를 건너 뛰십시오.
+4. 테스트 Demo 
+>?테스트 demo가 필요하지 않은 경우, 이 단계를 건너 뛰십시오.
 >
-demo 코드를 수정 및 컴파일하여 생성된 cos_demo는 bin 디렉터리에 있으며 bin/config.json을 수정하여 cos_demo를 실행할 수 있습니다. 
+demo 코드를 수정 및 컴파일하여 생성된 cos_demo는 bin 디렉터리에 있으며 bin/config.json을 수정하여 cos_demo를 실행할 수 있습니다.
 5. SDK 사용 
 컴파일하여 생성된 라이브러리 파일은 build/lib 디렉터리에 있으며 정적 라이브러리 이름은 `libcossdk.a`, 동적 라이브러리 이름은 `libcossdk-shared.dylib`입니다. 사용 시, 라이브러리는 프로그램에 복사하고, include 디렉터리는 include 경로에 복사하십시오.
 
@@ -162,21 +163,21 @@ COS C++ SDK를 사용한 클라이언트 초기화, 버킷 생성, 버킷 리스
 "SignExpiredTime":360,              // 서명 타임아웃 시간, 단위s
 "ConnectTimeoutInms":6000,          // connect 타임아웃 시간, 단위ms
 "ReceiveTimeoutInms":60000,         // recv 타임아웃 시간, 단위ms
-"UploadPartSize":10485760,          // 파일 파트 업로드 크기, 1M~5G, 기본값은 10M
-"UploadCopyPartSize":20971520,      // 복사 파일 파트 업로드 크기, 5M~5G, 기본값은 20M
+"UploadPartSize":10485760,          // 파일 파트 업로드 크기, 1M-5G, 기본값은 10M
+"UploadCopyPartSize":20971520,      // 복사 파일 파트 업로드 크기, 5M-5G, 기본값은 20M
 "UploadThreadPoolSize":5,           // 단일 파일 멀티파트 업로드 스레드 풀 크기
 "DownloadSliceSize":4194304,        // 파일 멀티파트 다운로드 크기
 "DownloadThreadPoolSize":5,         // 단일 파일 다운로드 스레드 풀 크기
 "AsynThreadPoolSize":2,             // 비동기화 업로드/다운로드 스레드 풀 크기
-"LogoutType":1,                     // 로그 출력 유형,0: 출력하지 않음,1: 화면에 출력,2: syslog에 출력
-"LogLevel":3,                       // 로그 레벨:1: ERR, 2: WARN, 3:INFO, 4:DBG
+"LogoutType":1,                     // 로그 출력 유형, 0: 출력하지 않음, 1: 화면에 출력, 2: syslog에 출력
+"LogLevel":3,                       // 로그 레벨:1: ERR, 2: WARN, 3: INFO, 4: DBG
 "IsDomainSameToHost":false,         // 전용 host 사용 여부
-"DestDomain":"",                    // 특정host
-"IsUseIntranet":false,              // 특정ip와 포트 번호 사용 여부
-"IntranetAddr":""                   // 특정ip와 포트 번호, 예‘127.0.0.1:80’               
+"DestDomain":"",                    // 특정 host
+"IsUseIntranet":false,              // 특정 ip와 포트 번호 사용 여부
+"IntranetAddr":""                   // 특정 ip와 포트 번호, 예‘127.0.0.1:80’               
 ```
 
-### 사용자 정의 도메인으로 COS 액세스 
+### 사용자 정의 도메인으로 COS 액세스
 
 본인의 도메인을 사용하여 COS에 액세스할 경우, 우선 COS 콘솔에서 사용자 정의 도메인을 설정하십시오. 작업 가이드는 [사용자 정의 원본 서버 도메인 활성화](https://intl.cloud.tencent.com/document/product/436/31507)를 참고하십시오.
 
@@ -205,7 +206,7 @@ int main(int argc, char *argv[]) {
 
 ### SDK 내부 로그를 사용자 정의 로그 파일로 출력합니다.
 
-SDK 내부 로그를 사용자 정의 로그 파일 특히 Windows 시스템으로 출력할 경우, 다음 코드를 참고하십시오. 
+SDK 내부 로그를 사용자 정의 로그 파일 특히 Windows 시스템으로 출력할 경우, 다음 코드를 참고하십시오.
 
 ```cpp
 #include "cos_api.h"
@@ -320,9 +321,9 @@ int main(int argc, char *argv[]) {
     // 2. 파일 업로드 요청 구성
     std::string bucket_name = "examplebucket-1250000000"; // 업로드한 타깃 Bucket 이름
     std::string object_name = "exampleobject"; //exampleobject는 객체 키(Key)이며 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg에서 객체 키는 doc/pic.jpg임
-    // request의 구조 함수에 로컬 파일 경로 입력 필요
+    // request의 생성자에 로컬 파일 경로 전달 필요
     qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file");
-    req.SetXCosStorageClass("STANDARD_IA")； // Set 메소드를 호출하여 메타데이터 등을 설정
+    req.SetXCosStorageClass("STANDARD_IA"); // Set 메소드를 호출하여 메타데이터 등을 설정
     qcloud_cos::PutObjectByFileResp resp;
     
     // 3. 파일 업로드 인터페이스 호출
@@ -399,7 +400,7 @@ int main(int argc, char *argv[]) {
     
     // 2. 객체 다운로드 요청 구성
     std::string bucket_name = "examplebucket-1250000000"; // 업로드한 타깃 Bucket 이름
-    std::string object_name = "exampleobject"; // exampleobject는 객체 키(Key)이며 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg에서 객체 키는 doc/pic.jpg임
+    std::string object_name = "exampleobject"; // exampleobject는 객체 키(Key)이며 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg에서 객체 키는 doc/pic.jpg임.
     std::string local_path = "/tmp/exampleobject";
     // request는 appid, bucketname, object, 로컬 경로를 제공해야 함(파일 이름 포함)
     qcloud_cos::GetObjectByFileReq req(bucket_name, object_name, local_path);
@@ -438,7 +439,7 @@ int main(int argc, char *argv[]) {
     
     // 2. 객체 삭제 요청 구성
     std::string bucket_name = "examplebucket-1250000000"; // 업로드한 타깃 버킷 이름
-    std::string object_name = "exampleobject"; // exampleobject는 객체 키(Key)이며 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg에서 객체 키는 doc/pic.jpg임
+    std::string object_name = "exampleobject"; // exampleobject는 객체 키(Key)이며 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg에서 객체 키는 doc/pic.jpg임.
     // 3. 객체 삭제 인터페이스 호출
 	qcloud_cos::DeleteObjectReq req(bucket_name, object_name);
 	qcloud_cos::DeleteObjectResp resp;

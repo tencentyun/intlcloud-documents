@@ -9,16 +9,16 @@
 - SDK FAQ는 [PHP SDK FAQ](https://intl.cloud.tencent.com/document/product/436/40543)를 참고하십시오.
 
 
->? XML 버전의 SDK를 사용할 때 함수나 메소드가 존재하지 않는 등의 오류가 발생하는 경우, SDK의 XML 버전을 최신 버전으로 업그레이드한 후 다시 시도하십시오.
+>? XML 버전 SDK 사용 중 함수 또는 메소드가 존재하지 않는 등의 오류 발생 시, XML 버전 SDK를 최신 버전으로 업그레이드한 후 재시도하십시오.
 >
 
 #### 환경 종속
 
--   PHP 5.6+
+- PHP 5.6+
 `php -v` 명령어를 통해 현재의 PHP 버전을 확인할 수 있습니다.
 >! PHP 버전`>=5.3` 및 `<5.6`인 경우 [v1.3](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3) 버전을 사용하십시오.
 >
--  cURL 확장
+- cURL 확장
 `php -m` 명령어를 통해 cURL 확장 설치 여부를 확인할 수 있습니다.
  - Ubuntu 시스템에서는 apt-get 패키지 관리자를 사용해 PHP의 cURL 확장을 설치할 수 있으며, 설치 명령어는 다음과 같습니다.
 ```shell
@@ -61,7 +61,7 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 ```
 해당 명령어를 사용하면 현재 디렉터리에 vendor 폴더가 생성됩니다. 폴더 안에는 SDK의 종속 라이브러리와 autoload.php 스크립트가 포함되어 있어 프로젝트에서 편리하게 호출할 수 있습니다.
->! Composer로 현재 PHP 버전에 따라 guzzle6 또는 guzzle7을 다운로드할 수 있으며 guzzle7 버전은 laravel8 프레임워크를 지원합니다. PHP 7.2.5 이후 버전은 guzzle7 버전을, 이전 버전은 guzzle6 버전을 자동 다운로드합니다.
+>! Composer는 현재 PHP 버전에 따라 guzzle6 또는 guzzle7 다운로드를 지원합니다. guzzle7 버전은 laravel8 프레임워크를 지원합니다. PHP 버전이 `>= 7.2.5`인 경우 guzzle7 버전을 자동으로 다운로드하고, 그렇지 않으면 guzzle6 버전을 다운로드합니다.
 >
 5. autoloader 스크립트를 통해 cos-php-sdk-v5를 호출합니다.
 ```php
@@ -77,10 +77,10 @@ require '/path/to/sdk/vendor/autoload.php';
 Phar 방식으로 SDK를 설치하는 방법은 다음과 같습니다.
 1. [GitHub 배포 페이지](https://github.com/tencentyun/cos-php-sdk-v5/releases)에서 상응하는 phar 파일을 다운로드합니다.
 >? 
-> - PHP 버전 `>= 5.6` 및 `<7.2.5`인 경우 Guzzle6 버전 사용을 위해 `cos-sdk-v5-6.phar`를 다운로드하십시오. 
-> - PHP 버전 `>=7.2.5`인 경우 Guzzle7 버전 사용을 위해 `cos-sdk-v5-7.phar`를 다운로드하십시오.
+> - PHP 버전이 `>= 5.6` 및 `<7.2.5`인 경우 `cos-sdk-v5-6.phar`를 다운로드하여 Guzzle6 버전을 사용하십시오.
+> - PHP 버전이 `>=7.2.5`인 경우 `cos-sdk-v5-7.phar`을 다운로드하여 Guzzle7 버전을 사용하십시오.
 > 
-2. 코드에 phar 파일을 가져옵니다.
+2.  코드에 phar 파일을 가져옵니다.
 ```php
 require  '/path/to/cos-sdk-v5-x.phar';
 ```
@@ -88,16 +88,16 @@ require  '/path/to/cos-sdk-v5-x.phar';
 <span id="Source"></span>
 #### 소스 코드 방식
 소스 코드 방식으로 SDK를 설치하는 방법은 다음과 같습니다.
-1. [SDK 다운로드 페이지](https://github.com/tencentyun/cos-php-sdk-v5/releases)에서 `cos-sdk-v5.tar.gz` 압축 파일을 다운로드합니다.
+1.  [ SDK 다운로드 페이지](https://github.com/tencentyun/cos-php-sdk-v5/releases)에서 `cos-sdk-v5.tar.gz` 압축 파일을 다운로드합니다.
 >? 
-> - PHP 버전 `>= 5.6` 및 `<7.2.5`인 경우 Guzzle6 버전 사용을 위해 `cos-sdk-v5-6.tar.gz`를 다운로드하십시오. 
-> - PHP 버전 `>=7.2.5인 경우 Guzzle7 버전 사용을 위해 `cos-sdk-v5-7.tar.gz`를 다운로드하십시오.
+> - PHP 버전이 `>= 5.6` 및 `<7.2.5`인 경우 `cos-sdk-v5-6.tar.gz`를 다운로드하여 Guzzle6 버전을 사용하십시오.
+> - PHP 버전이 `>=7.2.5`인 경우 `cos-sdk-v5-7.tar.gz`를 다운로드하여 Guzzle7 버전을 사용하십시오.
 > 
-2. 압축 해제 후, `autoload.php` 스크립트를 통해 SDK를 로딩합니다.
+2.  압축 해제 후, `autoload.php` 스크립트를 통해 SDK를 로딩합니다.
 ```php
 require '/path/to/sdk/vendor/autoload.php';
 ```
->! `Source code` 압축 패키지는 Github 기본 패키지의 코드 패키지이며 `vendor` 디렉터리가 포함되어 있지 않습니다. Source 패키지가 아닌 release 패키지(cos-sdk-v5-x.tar.gz 패키지)를 다운로드하십시오. 전체 라이브러리를 직접 clone하지 마십시오. 그렇지 않으면 index.php 및 vendor 패키지가 누락될 수 있습니다.
+>! `Source code` 압축 패키지는 Github 기본 패키징 코드 패키지이며, `vendor` 디렉터리가 포함되어 있지 않습니다. Source 패키지 대신 release 패키지(cos-sdk-v5-x.tar.gz 패키지)를 다운로드하고 전체 리포지토리를 직접 clone 하지 마십시오. 그렇지 않으면 index.php 및 vendor 패키지가 누락됩니다.
 >
 
 ## 사용하기
@@ -108,7 +108,7 @@ COS PHO SDK를 사용한 클라이언트 초기화, 버킷 생성, 버킷 리스
 
 [//]: # ".cssg-snippet-global-init"
 ```php
-// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리합니다.
 $secretId = "SECRETID"; //"Tencent Cloud API 키 SecretId";
 $secretKey = "SECRETKEY"; //"Tencent Cloud API 키 SecretKey";
 $region = "COS_REGION"; //기본 버킷 리전 설정
@@ -117,7 +117,7 @@ $cosClient = new Qcloud\Cos\Client(
         'region' => $region,
         'schema' => 'https', //프로토콜 헤더, 기본값: http
         'credentials'=> array(
-            'secretId'  => $secretId,
+            'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 ```
 
@@ -147,7 +147,7 @@ $cosClient = new Qcloud\Cos\Client(
 [//]: # ".cssg-snippet-put-bucket"
 ```php
 try {
-    $bucket = "examplebucket-1250000000"; //버킷 이름 형식: BucketName-APPID
+    $bucket = "examplebucket-1250000000"; //버킷 이름. 형식: BucketName-APPID
     $result = $cosClient->createBucket(array('Bucket' => $bucket));
     //요청 완료
     print_r($result);
@@ -266,7 +266,7 @@ try {
 }
 ```
 
-`listObjects` 인터페이스 1회 호출당 조회 가능한 객체 수는 1000개입니다. 모든 객체를 조회할 경우 순환 호출이 필요합니다.
+`listObjects` 인터페이스 1회 호출당 쿼리 가능한 객체 수는 1000개입니다. 모든 객체를 조회할 경우 순환 호출이 필요합니다.
 
 [//]: # ".cssg-snippet-get-bucket-recursive"
 ```php
@@ -307,7 +307,7 @@ try {
 ### 메모리에 다운로드
 try {
     $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
-    $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
+    $key = "exampleobject";  //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,
         'Key' => $key));
@@ -321,7 +321,7 @@ try {
 ### 로컬에 다운로드
 try {
     $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
-    $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
+    $key = "exampleobject";  //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $localPath = @"path/to/localFile";//지정된 로컬 경로에 다운로드
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,
@@ -338,7 +338,7 @@ try {
  */
 try {
     $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
-    $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
+    $key = "exampleobject";  //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $localPath = @"path/to/localFile";//지정된 로컬 경로에 다운로드
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,
@@ -353,7 +353,7 @@ try {
 ## getObjectUrl(파일 UrL 획득)
 try {    
     $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
-    $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
+    $key = "exampleobject";  //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $signedUrl = $cosClient->getObjectUrl($bucket, $key, '+10 minutes');
     // 요청 완료
     echo $signedUrl;
@@ -371,7 +371,7 @@ try {
 ## deleteObject
 try {
     $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
-    $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
+    $key = "exampleobject";  //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $result = $cosClient->deleteObject(array(
         'Bucket' => $bucket,
         'Key' => $key,

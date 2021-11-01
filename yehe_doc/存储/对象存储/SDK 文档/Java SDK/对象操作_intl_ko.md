@@ -4,17 +4,18 @@
 
 **간단한 작업**
 
-| API                                                          | 작업명         | 작업 설명                                 |
+| API                                                          | 작업명         | 작업 설명                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [GET Bucket(List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회   | 버킷의 일부 또는 모든 객체 조회            |
-| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | 객체 버전 조회 |   버킷의 일부 또는 모든 객체와 이전 버전 정보 조회|
-| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 조회 | 객체 메타데이터 정보 조회           |
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | 객체 버전 조회 |   버킷의 일부 또는 모든 객체와 이전 버전 정보 조회   |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 조회 | 객체의 메타데이터 정보 조회                  |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 객체 업로드   | 객체를 버킷에 업로드                      |
+| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | 객체 추가 업로드 | 멀티파트에 추가하는 방식으로 객체 업로드               |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 로컬에 객체 다운로드        |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사   | 파일을 타깃 경로에 복사                        |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 객체 삭제   | 버킷에서 지정 객체 삭제 |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 객체 일괄 삭제   | 버킷에서 지정 객체를 일괄 삭제                |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구 | 아카이브 유형의 객체 검색 후 액세스           |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구 | 아카이브 유형의 객체 검색 및 액세스           |
 
 **멀티파트 작업**
 
@@ -22,11 +23,11 @@
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 멀티파트 업로드 조회   | 현재 진행 중인 멀티파트 업로드 정보 조회         |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 멀티파트 업로드 초기화 | Multipart Upload 작업 초기화     |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 멀티파트 업로드       | 파일 멀티파트 업로드                         |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 파트 업로드       | 파일 멀티파트 업로드                         |
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 멀티파트 복사       | 다른 객체를 한 파트로 복사             |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 업로드된 파트 조회   | 특정 멀티파트 업로드 작업에서 업로드된 파트 조회   |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 멀티파트 업로드 완료   | 전체 파일의 멀티파트 업로드 완료               |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 멀티파트 업로드 작업 중지 및 업로드된 파트 삭제 |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 하나의 멀티파트 업로드 작업 중지 및 이미 업로드한 파트 삭제 |
 
 ## 간단한 작업
 
@@ -36,17 +37,20 @@
 
 버킷의 일부 또는 모든 객체를 조회합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public ObjectListing listObjects(ListObjectsRequest listObjectsRequest) throws CosClientException, CosServiceException;
 ```
 
+>! COS에서 나열된 객체 키가 project/ 이면 비어있는 객체를 통해 전형적인 폴더 표시 방법으로 재현한 것입니다. [폴더와 디렉터리](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오.
+>
+
 #### 요청 예시
 
 [//]: # ".cssg-snippet-get-bucket"
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 ListObjectsRequest listObjectsRequest = new ListObjectsRequest();
 // bucket 이름 설정
@@ -55,7 +59,7 @@ listObjectsRequest.setBucketName(bucketName);
 listObjectsRequest.setPrefix("images/");
 // delimiter는 세퍼레이터를 의미합니다. /로 설정하면 현재 디렉터리의 object를 나열하고, 공백으로 설정하면 전체 object를 나열합니다.
 listObjectsRequest.setDelimiter("/");
-// 순회 가능한 객체의 최대 수량을 설정합니다. listobject 1회당 최대 1000개까지 지원합니다.
+// 순회할 객체의 최대 수량을 설정합니다. listobject 1회당 최대 1000개까지 지원합니다.
 listObjectsRequest.setMaxKeys(1000);
 ObjectListing objectListing = null;
 do {
@@ -71,10 +75,11 @@ do {
     // common prefix는 delimiter로 잘린 경로를 표시합니다. 예를 들어 delimiter를 /로 설정하면 common prefix는 모든 서브 디렉터리의 경로를 표시합니다.
     List<String> commonPrefixs = objectListing.getCommonPrefixes();
 
-    // object summary는 나열된 모든 object 리스트를 의미합니다.
+    // object summary는 나열된 모든 object 리스트를 표시합니다.
     List<COSObjectSummary> cosObjectSummaries = objectListing.getObjectSummaries();
     for (COSObjectSummary cosObjectSummary : cosObjectSummaries) {
         // 파일의 경로 key
+        // "aaa/"와 같은 파일이 나열될 수 있습니다. 디렉터리로 착각하지 마십시오. 실제로는 일반 파일이기도 합니다.
         String key = cosObjectSummary.getKey();
         // 파일의 etag
         String etag = cosObjectSummary.getETag();
@@ -96,26 +101,26 @@ do {
 | ------------------ | ---------------- | ------------------ |
 | listObjectsRequest | 파일 리스트 요청 획득 | ListObjectsRequest |
 
-Request 멤버 설명:
+Request 멤버 설명 :
 
-| Request 멤버 | 설정 방법          | 설명                                                         | 유형    |
+| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형    |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
-| bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String  |
-| prefix       | 구조 함수 또는 set 방법 | 반환되는 결과 객체를 제한하고 prefix를 접두사로 합니다. 기본적으로 Bucket의 모든 멤버를 제한하지 않습니다.<br>기본값: ""(공백) | String  |
-| marker       | 구조 함수 또는 set 방법 | list의 시작 위치를 표시합니다. 처음에는 공백으로 설정해도 되지만, 다음 요청은 이전 listObjects 반환값의 nextMarker로 설정해야 합니다. | String  |
-| delimiter    | 구조 함수 또는 set 방법 | 세퍼레이터. prefix로 시작하며 delimiter가 처음 나타나 끝나는 경로의 반환을 제한합니다. | String  |
-| maxKeys      | 구조 함수 또는 set 방법 | 멤버 최대 반환 수(1000을 초과할 수 없음).<br>기본값: 1000          | Integer |
+| bucketName   | 구조 함수 또는 set 메소드 | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String  |
+| prefix       | 구조 함수 또는 set 메소드 | 반환되는 결과 객체를 제한하고 prefix를 접두사로 합니다. 기본적으로 Bucket의 모든 멤버를 제한하지 않습니다.<br>기본값: ""(공백) | String  |
+| marker       | 구조 함수 또는 set 메소드 | list의 시작 위치를 표시합니다. 처음에는 공백으로 설정해도 되지만, 다음 요청은 이전 listObjects 반환값의 nextMarker로 설정해야 합니다. | String  |
+| delimiter    | 구조 함수 또는 set 메소드 | 세퍼레이터. prefix로 시작하며 delimiter가 처음 나타나 끝나는 경로의 반환을 제한합니다. | String  |
+| maxKeys      | 구조 함수 또는 set 메소드 | 멤버 최대 반환 수(1000을 초과할 수 없음).<br>기본값: 1000          | Integer |
 
 #### 반환 결과 설명
 
 - 성공: 모든 멤버 및 nextMarker를 포함한 ObjectListing 유형을 반환합니다.  
-- 실패: 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 ### 객체 버전 조회
 
 #### 기능 설명
 
-버킷의 일부 또는 모든 객체와 이전 버전 정보를 조회합니다.
+버킷의 일부 또는 모든 객체 및 이전 버전 정보를 조회합니다.
 
 #### 메소드 프로토타입
 
@@ -127,7 +132,7 @@ public VersionListing listVersions(ListVersionsRequest listVersionsRequest)
 #### 요청 예시
 
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 
 ListVersionsRequest listVersionsRequest = new ListVersionsRequest();
@@ -170,21 +175,21 @@ do {
 | ------------------ | ---------------- | ------------------ |
 | listVersionsRequest | 객체 버전 정보 요청 획득 | ListVersionsRequest |
 
-Request 멤버 설명:
+Request 멤버 설명 :
 
-| Request 멤버    | 설정 방법            | 설명                                                         | 유형                    |
+| Request 멤버 | 설정 방법            | 설명                                                         | 유형    |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
-| bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String  |
-| prefix       | 구조 함수 또는 set 방법 | 반환되는 결과 객체를 제한하고 prefix를 접두사로 합니다. 기본적으로 Bucket의 모든 멤버를 제한하지 않습니다. <기본값: ""(공백) | String  |
-| keyMarker       | 구조 함수 또는 set 방법 | list의 시작 위치를 표시합니다. 처음에는 공백으로 설정해도 되지만, 다음 요청은 이전 listObjects 반환값의 nextKeyMarker로 설정해야 합니다. | String  |
-| versionIdMarker | 구조 함수 또는 set 방법 | list의 시작 위치를 표시합니다. 처음에는 공백으로 설정해도 되지만, 다음 요청은 이전 listObjects 반환값의 nextVersionIdMarker로 설정해야 합니다. | String  |
-| delimiter    | 구조 함수 또는 set 방법 | 세퍼레이터. prefix로 시작하며 delimiter가 처음 나타나 끝나는 경로의 반환을 제한합니다. | String  |
-| maxResults      | 구조 함수 또는 set 방법 | 멤버 최대 반환 수(1000을 초과할 수 없음). 기본값: 1000          | Integer |
+| bucketName   | 구조 함수 또는 set 메소드 | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String  |
+| prefix       | 구조 함수 또는 set 메소드 | 반환되는 결과 객체를 제한하고 prefix를 접두사로 합니다. 기본적으로 Bucket의 모든 멤버를 제한하지 않습니다. <기본값: ""(공백) | String  |
+| keyMarker       | 구조 함수 또는 set 메소드 | list의 시작 위치를 표시합니다. 처음에는 공백으로 설정해도 되지만, 다음 요청은 이전 listObjects 반환값의 nextKeyMarker로 설정해야 합니다. | String  |
+| versionIdMarker | 구조 함수 또는 set 메소드 | list의 시작 위치를 표시합니다. 처음에는 공백으로 설정해도 되지만, 다음 요청은 이전 listObjects 반환값의 nextVersionIdMarker로 설정해야 합니다. | String  |
+| delimiter    | 구조 함수 또는 set 메소드 | 세퍼레이터. prefix로 시작하며 delimiter가 처음 나타나 끝나는 경로의 반환을 제한합니다. | String  |
+| maxResults      | 구조 함수 또는 set 메소드 | 멤버 최대 반환 수(1000을 초과할 수 없음). 기본값: 1000          | Integer |
 
 #### 반환 결과 설명
 
 - 성공: 모든 멤버 및 nextKeyMarker와 nextVersionIdMarker를 포함한 ObjectListing 유형을 반환합니다.
-- 실패: 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 ### 객체 메타데이터 조회
 
@@ -203,14 +208,14 @@ public ObjectMetadata getObjectMetadata(String bucketName, String key)
 
 [//]: # ".cssg-snippet-head-object"
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 ObjectMetadata objectMetadata = cosClient.getObjectMetadata(bucketName, key);
 
 // 이번 요청의 requestId 획득
 System.out.println(objectMetadata1.getRequestId());
-// 객체의 CRC64 검증값 획득
+// 객체의 CRC64 검사값 획득
 System.out.println(objectMetadata.getCrc64Ecma());
 // 객체의 마지막 업로드 시간 획득
 System.out.println(objectMetadata1.getLastModified());
@@ -224,13 +229,13 @@ System.out.println(objectMetadata.getStorageClass());
 
 | 매개변수 이름   | 설명                                                         | 유형   |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| key        | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
+| bucketName | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
+| key        | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
 
 #### 반환 결과 설명
 
 - 성공: 사용자 정의 헤더, Etag 등 객체 메타 정보를 포함한 ObjectMetadata 유형을 반환합니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 #### 반환 매개변수 설명
 
@@ -251,22 +256,22 @@ ObjectMetadata 유형은 객체의 메타 정보를 기록하는 데 사용됩�
 
 객체를 지정한 버킷에 업로드합니다(PUT Object). 로컬 파일 또는 길이를 알고 있는 입력 스트림 콘텐츠를 COS에 업로드합니다. 이미지 유형의 크기가 작은 파일(20MB 이하) 업로드에 적합하며, 최대 5GB까지 지원합니다. 5GB를 초과하는 파일은 [멀티파트 업로드](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) 또는 [고급 API](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89)로 업로드하십시오.
 
-- 업로드 과정에서 기본적으로 파일의 길이와 MD5에 대한 검증을 진행합니다. MD5 검증 비활성화는 예시 코드를 참조하십시오.
+- 업로드 과정에서 기본적으로 파일의 길이와 MD5에 대한 검사를 진행합니다. MD5 검사 비활성화는 예시 코드를 참고하십시오.
 - COS에 Key가 동일한 객체가 있을 경우 업로드 과정에서 덮어씁니다.
-- 업로드 후 동일한 key로 GetObject 인터페이스를 호출하여 파일을 로컬에 다운로드할 수 있으며, [사전 서명된 링크](https://intl.cloud.tencent.com/document/product/436/31536)를 생성(다운로드 시 method를 GET으로 지정. 자세한 인터페이스 설명은 아래 참조)하여 다른 포트로 전송 후 다운로드할 수도 있습니다.
+- 업로드 후 동일한 key로 GetObject 인터페이스를 호출하여 파일을 로컬에 다운로드할 수 있으며, [사전 서명된 링크](https://intl.cloud.tencent.com/document/product/436/31536)를 생성(다운로드 시 method를 GET으로 지정. 자세한 인터페이스 설명은 아래 참고)하여 다른 포트로 전송 후 다운로드할 수도 있습니다.
 - COS는 '/'로 구분하는 객체 경로를 가상 폴더로 인식합니다. 이러한 특성에 따라 이름이 '/'로 끝나는 빈 스트림을 업로드하면 COS에 빈 폴더를 생성할 수 있습니다.
 또는, '/'로 구분되는 객체 이름을 업로드하면 파일이 포함된 폴더를 자동으로 생성합니다. 이에 따라 해당 폴더에 새로운 파일을 추가할 경우 COS에 파일 업로드 시 Key를 해당 디렉터리 접두사로 입력하기만 하면 됩니다. 
 
 #### 메소드 프로토타입
 
 ```java
-// 방법1 로컬 파일을 COS에 업로드
+// 방법1  로컬 파일을 COS에 업로드
 public PutObjectResult putObject(String bucketName, String key, File file)
             throws CosClientException, CosServiceException;
-// 방법2 입력 스트림을 COS에 업로드
+// 방법2  입력 스트림을 COS에 업로드
 public PutObjectResult putObject(String bucketName, String key, InputStream input, ObjectMetadata metadata)
             throws CosClientException, CosServiceException;
-// 방법3 위의 두 가지 방법 패키지에 더 세분화된 매개변수 제어를 지원(예: content-type, content-disposition 등)
+// 방법3  위의 두 가지 방법 패키지에 더 세분화된 매개변수 제어를 지원(예: content-type, content-disposition 등)
 public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws CosClientException, CosServiceException;
 ```
@@ -276,7 +281,7 @@ public PutObjectResult putObject(PutObjectRequest putObjectRequest)
 [//]: # ".cssg-snippet-put-object-flex"
 <dx-codeblock>
 :::  java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 
 File localFile = new File(localFilePath);
@@ -290,7 +295,7 @@ String etag = putObjectResult.getETag();  // 파일의 etag 획득
 
 <dx-codeblock>
 :::  java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 
 File localFile = new File(localFilePath);
@@ -308,14 +313,14 @@ String etag = putObjectResult.getETag();  // 파일의 etag 획득
 
 <dx-codeblock>
 :::  java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 
 FileInputStream fileInputStream = new FileInputStream(localFile);
 ObjectMetadata objectMetadata = new ObjectMetadata();
-// 입력 스트림 길이를 설정합니다.（STREAMLENGTH는 자신의 스트림 크기에 맞게 교체）
+// 입력 스트림 길이를 설정합니다.(STREAMLENGTH는 자신의 스트림 크기에 맞게 교체)
 objectMetadata.setContentLength(STREAMLENGTH);
-// Content type을 설정합니다. 기본값은 application/octet-stream입니다.
+// Content type을 설정. 기본값: application/octet-stream
 objectMetadata.setContentType("application/pdf");
 PutObjectResult putObjectResult = cosClient.putObject(bucketName, key, fileInputStream, objectMetadata);
 String etag = putObjectResult.getETag();
@@ -327,7 +332,7 @@ String etag = putObjectResult.getETag();
 
 <dx-codeblock>
 :::  java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 
 // 생성할 디렉터리 이름을 지정합니다. '/'로 끝나야 합니다.
@@ -342,19 +347,19 @@ String etag = putObjectResult.getETag();
 :::
 </dx-codeblock>
 
-#### 요청 예시5: 더 세분화된 제어 제공
+#### 요청 예시5: 업로드 속도 제한
 
 <dx-codeblock>
 :::  java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 
-// 1 storage-class 스토리지 유형의 열거 값은 Standard, Standard_IA, Archive이며, 기본값은 Standard입니다. 더 많은 스토리지 유형은 https://intl.cloud.tencent.com/document/product/436/30925를 참조하십시오.
+// 1 storage-class 스토리지 유형의 열거 값은 Standard, Standard_IA, Archive이며, 기본값은 Standard입니다. 더 많은 스토리지 유형은 https://intl.cloud.tencent.com/document/product/436/30925를 참고하십시오.
 // 2 content-type, 로컬 파일 업로드의 기본값은 로컬 파일의 확장명에 따라 매핑됩니다(예: jpg 파일은 image/jpeg로 매핑).
 // 스트림 업로드의 기본값은 application/octet-stream입니다.
-// 3 전역에서 MD5 업로드 검증을 비활성화하려면 시스템 환경에 변수를 설정해야 합니다. 이 설정은 모든 업로드 검증에 영향을 줍니다. 기본값은 검증 활성화입니다.
-// MD5 검증 비활성화: System.setProperty(SkipMd5CheckStrategy.DISABLE_PUT_OBJECT_MD5_VALIDATION_PROPERTY, "true");
-// MD5 검증 활성화: System.setProperty(SkipMd5CheckStrategy.DISABLE_PUT_OBJECT_MD5_VALIDATION_PROPERTY, null);
+// 3 전역에서 MD5 업로드 검사를 비활성화하려면 시스템 환경에 변수를 설정해야 합니다. 이 설정은 모든 업로드 검사에 영향을 줍니다. 기본값은 검사 활성화입니다.
+// MD5 검사 비활성화:  System.setProperty(SkipMd5CheckStrategy.DISABLE_PUT_OBJECT_MD5_VALIDATION_PROPERTY, "true");
+// MD5 검사 활성화:  System.setProperty(SkipMd5CheckStrategy.DISABLE_PUT_OBJECT_MD5_VALIDATION_PROPERTY, null);
 File localFile = new File(localFilePath);
 String key = "picture.jpg";
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
@@ -362,7 +367,7 @@ PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localF
 putObjectRequest.setStorageClass(StorageClass.Standard_IA);
 // 사용자 정의 속성을 설정(예: content-type, content-disposition 등)
 objectMetadata = new ObjectMetadata();
-// 사용 단위는 bit/s로 제한되며, 여기서는 업로드 대역폭 제한을 10MB/s로 설정합니다.
+// 속도 제한 단위는 bit/s이며, 업로드 속도를 10MB/s로 제한합니다.
 putObjectRequest.setTrafficLimit(80*1024*1024);
 // Content type을 설정. 기본값: application/octet-stream
 objectMetadata.setContentType("image/jpeg");
@@ -385,16 +390,16 @@ String crc64Ecma = putObjectResult.getCrc64Ecma();
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법    | 설명                                                         | 유형   | 필수 입력 |
+| Request 멤버 | 설정 방법 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 설명                                                         | 유형   | 필수 입력 |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
-| bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String         | 예|
-| key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String         | 예|
-| file         | 구조 함수 또는 set 방법 | 로컬 파일                                                     | File           |아니요|
-| input        | 구조 함수 또는 set 방법 | 입력 스트림                                                       | InputStream    | 아니요|
-| metadata     | 구조 함수 또는 set 방법 | 객체의 메타데이터                                                 | ObjectMetadata | 아니요|
-|trafficLimit     | set 방법       | 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다.     | Int      |     아니요|
+| bucketName   | 구조 함수 또는 set 메소드 | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String         | Yes|
+| key          | 구조 함수 또는 set 메소드 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String         | Yes|
+| file         | 구조 함수 또는 set 메소드 | 로컬 파일                                                     | File           |No|
+| input        | 구조 함수 또는 set 메소드 | 입력 스트림                                                       | InputStream    | No|
+| metadata     | 구조 함수 또는 set 메소드 | 객체의 메타데이터                                                 | ObjectMetadata | No|
+|trafficLimit | set 메소드| 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다. | Int|No|
 
-ObjectMetadata 유형은 객체의 메타데이터를 기록하는 데 사용됩니다. 주요 멤버 설명은 다음과 같습니다.
+ObjectMetadata 유형은 객체의 메타 정보를 기록하는 데 사용됩니다. 주요 멤버 설명은 다음과 같습니다.
 
 | 멤버 이름        | 설명                                                | 유형                |
 | --------------- | --------------------------------------------------- | ------------------- |
@@ -408,7 +413,7 @@ ObjectMetadata 유형은 객체의 메타데이터를 기록하는 데 사용됩
 #### 반환 결과 설명
 
 - 성공: 파일의 eTag 등 정보를 포함한 PutObjectResult입니다.
-- 실패: 오류 발생(실명 인증 실패), 오류 osClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 #### 반환 매개변수 설명
 
@@ -421,6 +426,78 @@ PutObjectResult 유형은 결과 정보 반환에 사용됩니다. 주요 멤버
 | versionId    | 버전을 제어하는 버킷을 활성화한 후 객체의 버전 넘버 ID를 반환              | String |
 | eTag        | 간편 업로드 인터페이스에서 반환하는 객체의 MD5값                    | String |
 |crc64Ecma| 서버에서 객체 콘텐츠에 따라 계산한 CRC64| String |
+
+### 객체 추가 업로드
+
+#### 기능 설명
+
+멀티파트 추가 방식으로 객체를 업로드합니다(APPEND Object).
+
+#### 메소드 프로토타입
+
+```java
+public AppendObjectResult appendObject(AppendObjectRequest appendObjectRequest)
+        throws CosServiceException, CosClientException
+```
+
+#### 요청 예시
+
+```java
+// bucket 이름에는 반드시 appid가 포함됨
+String bucketName = "examplebucket-1251668577";
+String key = "aaa/bbb.txt";
+try {
+    File localFile = new File("1M.txt");
+    AppendObjectRequest appendObjectRequest = new AppendObjectRequest(bucketName, key, localFile);
+    appendObjectRequest.setPosition(0L);
+    AppendObjectResult appendObjectResult = cosclient.appendObject(appendObjectRequest);
+    long nextAppendPosition = appendObjectResult.getNextAppendPosition();
+    System.out.println(nextAppendPosition);
+
+    localFile = new File("2M.txt");
+    appendObjectRequest = new AppendObjectRequest(bucketName, key, localFile);
+    appendObjectRequest.setPosition(nextAppendPosition);
+    appendObjectResult = cosclient.appendObject(appendObjectRequest);
+    nextAppendPosition = appendObjectResult.getNextAppendPosition();
+    System.out.println(nextAppendPosition);
+} catch (CosServiceException e) {
+    e.printStackTrace();
+} catch (CosClientException e) {
+    e.printStackTrace();
+}
+```
+
+#### 매개변수 설명
+
+| 매개변수 이름         | 설명         | 유형             |
+| -------------------- | ------------ | ---------------- |
+| appendObjectRequest | 파일 추가 업로드 요청 | AppendObjectRequest |
+
+AppendObjectRequest 참석자 설명: 
+
+| Request 멤버 | 설정 방법   | 설명                                                         | 유형   | 필수 입력 여부 |
+| ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
+| bucketName | 구조 함수 또는 set 메소드 | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String         | Yes|
+| key          | 구조 함수 또는 set 메소드 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String         | Yes|
+| localfile    | 구조 함수 또는 set 메소드 | 로컬 파일                                                     | File           |No|
+| input        | 구조 함수 또는 set 메소드 | 입력 스트림                                                       | InputStream    | No|
+| metadata     | 구조 함수 또는 set 메소드 | 객체의 메타데이터                                                 | ObjectMetadata | No|
+|trafficLimit | set 메소드| 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다. | Int|No|
+| position | set 메소드| 작업 시작 위치 추가, 단위: byte | Long | Yes |
+
+#### 반환 결과 설명
+
+- 성공: AppendObjectResult.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
+
+#### 반환 매개변수 설명
+
+AppendObjectResult 유형은 결과 정보 반환에 사용됩니다. 주요 멤버 설명은 다음과 같습니다.
+
+| 멤버 이름        | 설명                                                | 유형                |
+| --------------- | --------------------------------------------------- | ------------------- |
+| metadata | 헤더 반환 | ObjectMetadata               |
+| nextAppendPosition| 다음에 추가될 위치 | Long |
 
 
 ### 객체 다운로드
@@ -435,7 +512,7 @@ PutObjectResult 유형은 결과 정보 반환에 사용됩니다. 주요 멤버
 // 방법1 파일을 다운로드하고 입력 스트림을 획득
 public COSObject getObject(GetObjectRequest getObjectRequest)
             throws CosClientException, CosServiceException;
-// 방법2 로컬에 파일 다운로드
+// 방법2 로컬에 파일 다운로드.
 public ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinationFile)
             throws CosClientException, CosServiceException;
 ```
@@ -444,19 +521,26 @@ public ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinat
 
 [//]: # ".cssg-snippet-get-object"
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
-// 사용 단위는 bit/s로 제한되며, 여기서는 다운로드 대역폭 제한을 10MB/s로 설정합니다.
-getObjectRequest.setTrafficLimit(80*1024*1024);
 COSObject cosObject = cosClient.getObject(getObjectRequest);
 COSObjectInputStream cosObjectInput = cosObject.getObjectContent();
+
+// 입력 스트림
+byte[] bytes = null;
+try {
+    bytes = IOUtils.toByteArray(cosObjectInput);
+} catch (IOException e) {
+    e.printStackTrace();
+} finally {
+    cosObjectInput.close(); 
+}
+
 //객체의 CRC64 다운로드
 String crc64Ecma = cosObject.getObjectMetadata().getCrc64Ecma();
-// 입력 스트림 비활성화
-cosObjectInput.close();
 
 // 방법2 로컬에 파일 다운로드
 String outputFilePath = "exampleobject";
@@ -468,7 +552,7 @@ ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 #### 요청 예시2: 로컬에 파일 다운로드
 
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 
@@ -476,6 +560,34 @@ String outputFilePath = "exampleobject";
 File downFile = new File(outputFilePath);
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
+```
+
+#### 요청 예시3: 다운로드 속도 제한
+
+[//]: # ".cssg-snippet-get-object"
+```java
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
+String bucketName = "examplebucket-1250000000";
+String key = "exampleobject";
+
+GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
+// 속도 제한 단위는 bit/s이며, 다운로드 속도를 10MB/s로 제한합니다.
+getObjectRequest.setTrafficLimit(80*1024*1024);
+COSObject cosObject = cosClient.getObject(getObjectRequest);
+COSObjectInputStream cosObjectInput = cosObject.getObjectContent();
+
+// 입력 스트림
+byte[] bytes = null;
+try {
+    bytes = IOUtils.toByteArray(cosObjectInput);
+} catch (IOException e) {
+    e.printStackTrace();
+} finally {
+    cosObjectInput.close();
+}
+
+// 객체의 CRC64 다운로드
+String crc64Ecma = cosObject.getObjectMetadata().getCrc64Ecma();
 ```
 
 #### 매개변수 설명
@@ -487,22 +599,22 @@ ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법          | 설명                                                         | 유형   |
+| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName   | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
-| range  | set 방법             | 다운로드 range 범위                                            | Long[] |
-| trafficLimit | set 방법    | 객체 다운로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다.  | Int |
+| bucketName   | 구조 함수 또는 set 메소드 | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
+| key          | 구조 함수 또는 set 메소드 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
+| range  | set 메소드             | 다운로드 range 범위                                            | Long[] |
+| trafficLimit | set 메소드    | 객체 다운로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다.  | Int |
 
 
 #### 반환 결과 설명
 
 - **방법1 (다운로드한 파일의 입력 스트림 획득)**
   - 성공: 입력 스트림 및 객체 속성을 포함한 COSObject 유형을 반환합니다.
-  - 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+  - 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 - **방법2 (로컬에 파일 다운로드)**
   - 성공: 파일의 사용자 정의 헤더와 content-type 등 속성을 포함한 파일의 속성 ObjectMetadata를 반환합니다.
-  - 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+  - 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 #### 반환 매개변수 설명
 
@@ -510,8 +622,8 @@ COSObject 유형은 결과 정보 반환에 사용됩니다. 주요 멤버 설�
 
 | 멤버 이름        | 설명                                                | 유형                |
 | --------------- | --------------------------------------------------- | ------------------- |
-| bucketName   |  Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| key          | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
+| bucketName   |  Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
+| key          | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
 | metadata | 객체의 메타데이터  | ObjectMetadata |
 | objectContent | COS 객체 콘텐츠를 포함한 데이터 스트림  | COSObjectInputStream |
 
@@ -529,18 +641,18 @@ public CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
             throws CosClientException, CosServiceException
 ```
 
-#### 요청 예시
+#### 요청 예시1: 객체 복사
 
 [//]: # ".cssg-snippet-copy-object"
 ```java
 // 리전 내 동일 계정 복사
-// 원본 Bucket. Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 원본 Bucket. Bucket 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String srcBucketName = "sourcebucket-1250000000";
-// 복사할 원본 파일입니다.
+// 복사할 원본 파일
 String srcKey = "sourceObject";
-// 타깃 버킷. Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 타깃 버킷. Bucket 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String destBucketName = "examplebucket-1250000000";
-// 복사할 타깃 파일입니다.
+// 복사할 타깃 파일
 String destKey = "exampleobject";
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketName, srcKey, destBucketName, destKey);
 CopyObjectResult copyObjectResult = cosClient.copyObject(copyObjectRequest);
@@ -549,6 +661,34 @@ CopyObjectResult copyObjectResult = cosClient.copyObject(copyObjectRequest);
 String srcBucketNameOfDiffAppid = "bucket-own-by-others-1251668577";
 Region srcBucketRegion = new Region("ap-shanghai");
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketRegion, srcBucketNameOfDiffAppid, srcKey, destBucketName, destKey);
+CopyObjectResult copyObjectResult = cosClient.copyObject(copyObjectRequest);
+// 객체의 CRC64 획득
+String crc64Ecma = copyObjectResult.getCrc64Ecma();
+```
+
+#### 요청 예시2: COS 유형 수정
+
+>!표준 스토리지는 표준IA 스토리지, 인텔리전트 티어링 스토리지, 아카이브 스토리지 및 딥 아카이브 스토리지 등으로 수정할 수 있습니다. 아카이브 스토리지 또는 딥 아카이브 스토리지 객체를 다른 스토리지 유형으로 수정하려면 먼저 PostRestore를 사용하여 아카이브 스토리지 또는 딥 아카이브 스토리지 객체가 워밍업해야만 이 인터페이스를 사용하여 스토리지 유형 수정을 요청할 수 있습니다. 스토리지 유형에 대한 자세한 설명은 [스토리지 유형 개요](https://intl.cloud.tencent.com/ko/document/product/436/30925)를 참고하십시오.
+
+```java
+// 리전 내 동일 계정 복사
+// 원본 Bucket. Bucket 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
+String srcBucketName = "sourcebucket-1250000000";
+// 복사할 원본 파일
+String srcKey = "sourceObject";
+// 타깃 버킷. Bucket 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
+String destBucketName = "examplebucket-1250000000";
+// 복사할 타깃 파일
+String destKey = "exampleobject";
+CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketName, srcKey, destBucketName, destKey);
+CopyObjectResult copyObjectResult = cosClient.copyObject(copyObjectRequest);
+
+// 계정 간, 리전 간 복사(원본 파일의 읽기 권한 및 타깃 파일의 쓰기 권한 필요)
+String srcBucketNameOfDiffAppid = "bucket-own-by-others-1251668577";
+Region srcBucketRegion = new Region("ap-shanghai");
+CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketRegion, srcBucketNameOfDiffAppid, srcKey, destBucketName, destKey);
+// 객체 스토리지 유형을 Standard_IA로 설정
+copyObjectRequest.setStorageClass(StorageClass.Standard_IA);
 CopyObjectResult copyObjectResult = cosClient.copyObject(copyObjectRequest);
 // 객체의 CRC64 획득
 String crc64Ecma = copyObjectResult.getCrc64Ecma();
@@ -566,24 +706,24 @@ Request 멤버 설명:
 | 매개변수 이름              | 설명                                                         | 유형   |
 | --------------------- | ------------------------------------------------------------ | ------ |
 | sourceBucketRegion    | 원본 Bucket region. 기본값은 현재 clientConfig의 region과 일치하며, 리전 내 복사를 의미합니다. | String |
-| sourceBucketName      | 원본 버킷 이름. 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| sourceKey             | 원본 객체 키. 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
+| sourceBucketName      | 원본 버킷 이름. 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
+| sourceKey             | 원본 객체 키. 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
 | sourceVersionId       | 원본 파일 version id(버전 제어를 활성화한 원본 Bucket에 적용). 기본값: 원본 파일의 최신 버전 | String |
-| destinationBucketName | 타깃 버킷의 이름. Bucket의 이름 생성 포맷은 BucketName-APPID이며, name은 알파벳, 숫자, 하이픈으로 구성됩니다.| String |
-| destinationKey        | 타깃 객체 키. 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
-| storageClass          | 복사된 타깃 파일의 스토리지 유형. 열거 값은 Standard, Standard_IA이며 기본값은 Standard입니다. 더 많은 스토리지 유형은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참조하십시오. | String |
+| destinationBucketName | 타깃 버킷의 이름. Bucket의 이름 생성 형식은 BucketName-APPID이며, name은 알파벳, 숫자, 하이픈으로 구성됩니다.| String |
+| destinationKey        | 타깃 객체 키. 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
+| storageClass          | 복사된 타깃 파일의 스토리지 유형. 열거 값은 Standard, Standard_IA이며 기본값은 Standard입니다. 더 많은 스토리지 유형은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하십시오. | String |
 
 #### 반환 결과 설명
 
 - 성공: 신규 파일의 Etag 등 정보를 포함한 CopyObjectResult가 반환됩니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 객체 삭제
 
 #### 기능 설명
 
-버킷에서 지정 객체(파일/객체)를 삭제합니다.
+버킷에서 지정 Object(파일/객체)를 삭제합니다.
 
 #### 메소드 프로토타입
 
@@ -592,11 +732,11 @@ public void deleteObject(String bucketName, String key)
             throws CosClientException, CosServiceException;
 ```
 
-#### 요청 샘플
+#### 요청 예시
 
 [//]: # ".cssg-snippet-delete-object"
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 cosClient.deleteObject(bucketName, key);
@@ -607,13 +747,13 @@ cosClient.deleteObject(bucketName, key);
 
 | 매개변수 이름   | 설명                                                         | 유형   |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| key        | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
+| bucketName | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String             |
+| key        | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
 
 #### 반환 결과 설명
 
-- 성공: 반환 값 없음
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 성공: 반환값 없음.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 객체 일괄 삭제
@@ -633,7 +773,7 @@ public DeleteObjectsResult deleteObjects(DeleteObjectsRequest deleteObjectsReque
 
 [//]: # ".cssg-snippet-delete-multi-object"
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 
 DeleteObjectsRequest deleteObjectsRequest = new DeleteObjectsRequest(bucketName);
@@ -672,7 +812,7 @@ Request 멤버 설명:
 
 | 매개변수 이름   | 설명                                                         | 유형               |
 | ---------- | ------------------------------------------------------------ | ------------------ |
-| bucketName | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String             |
+| bucketName | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String             |
 | quiet      | 삭제한 반환 결과 방식 지정. true, false 중 선택 가능. 기본값은 false. true로 설정할 경우 실패 오류 정보만 반환. false로 설정할 경우 성공과 실패 정보를 모두 반환 | boolean            |
 | keys       | 객체 경로 리스트. 객체 버전 넘버를 선택할 수 있습니다.                             | List&lt;DeleteObjectsRequest.KeyVersion&gt; |
 
@@ -680,13 +820,13 @@ DeleteObjectsRequest.KeyVersion 멤버 설명:
 
 | 매개변수 이름 | 설명                                                         | 유형   |
 | -------- | ------------------------------------------------------------ | ------ |
-| key      | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
+| key      | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
 | version  | 버킷에 버전 제어가 활성화된 경우 삭제할 객체의 버전 넘버를 지정할 수 있습니다(옵션).           | String |
 
 #### 반환 결과 설명
 
-- 성공: 반환 값이 없습니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 성공: 반환값 없음.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 보관된 객체 복구 
@@ -706,7 +846,7 @@ public void restoreObject(RestoreObjectRequest restoreObjectRequest)
 
 [//]: # ".cssg-snippet-restore-object"
 ```java
-// 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 본 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 
@@ -729,24 +869,24 @@ Request 멤버 설명:
 
 | 매개변수 이름         | 설명                                                         | 유형             |
 | ---------------- | ------------------------------------------------------------ | ---------------- |
-| bucketName | 버킷의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| key              | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String           |
+| bucketName       | 버킷의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String           |
+| key              | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String           |
 | expirationInDays | 복구된 임시 파일의 유효 기간                      | int              |
 | casJobParameters | 복구 유형의 설정 정보를 설명합니다. CAS 유형의 데이터를 복구하는 경우 setTier 함수를 호출하여 Tier.Standard, Tier.Expedited, Tier.Bulk의 세 가지 복구 유형 중 하나로 설정할 수 있습니다. DEEP ARCHIVE 유형을 복구할 경우 Tier.Standard와 Tier.Bulk만 지원됩니다. | CASJobParameters |
 
 #### 반환 결과 설명
 
-- 성공: 반환값이 없습니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 성공: 반환값 없음.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ## 멀티파트 작업
 
-다음은 객체의 멀티파트 업로드 작업 내용입니다. 
+다음은 객체의 멀티파트 업로드 작업 내용입니다.
 
 - 객체 멀티파트 업로드: 멀티파트 업로드를 초기화하고 멀티파트를 업로드하면 완료됩니다.
 - 멀티파트 이어 보내기: 업로드된 멀티파트를 조회하고 멀티파트를 업로드하면 완료됩니다.
-- 업로드된 멀티파트를 삭제합니다. 
+- 업로드된 파트를 삭제합니다.
 
 ### 멀티파트 업로드 조회
 
@@ -766,7 +906,7 @@ public MultipartUploadListing listMultipartUploads(
 
 [//]: # ".cssg-snippet-list-multi-upload"
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 ListMultipartUploadsRequest listMultipartUploadsRequest = new ListMultipartUploadsRequest(bucketName);
 listMultipartUploadsRequest.setDelimiter("/");
@@ -787,18 +927,18 @@ Request 멤버 설명:
 
 | 매개변수 이름       | 설명                                                         | 유형   |
 | -------------- | ------------------------------------------------------------ | ------ |
-| bucketName     | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
+| bucketName     | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
 | keyMarker      | 해당 key값부터 시작하여 항목 열거                                      | String |
 | delimiter      | 구분 문자는 하나의 부호입니다. Prefix가 있으면 Prefix에서 delimiter 사이의 동일한 경로를 하나로 분류하고 Common Prefix로 정의한 후 모든 Common Prefix를 나열합니다. Prefix가 없으면 경로의 시작점부터 시작합니다. | String |
 | prefix         | 접두사가 Prefix인 Object key를 반환하도록 한정. Prefix를 사용하여 조회할 경우 반환되는 key에는 Prefix가 포함되므로 주의해야 합니다. | String |
 | uploadIdMarker | 해당 UploadId 값부터 시작하여 항목 열거                                 | String |
-| maxUploads     | 반환되는 최대 multipart 수량 설정. 유효한 값 범위: 1~1000.                 | String |
+| maxUploads     | 반환되는 최대 multipart 수량 설정. 유효한 값 범위: 1-1000.                 | String |
 | encodingType   | 반환값의 인코딩 방식을 규정. 옵션값: url                            | String |
 
 #### 반환 결과 설명
 
 - 성공: 현재 진행 중인 멀티파트 업로드 정보를 포함한 MultipartUploadListing을 반환합니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 
@@ -819,7 +959,7 @@ public InitiateMultipartUploadResult initiateMultipartUpload(
 
 [//]: # ".cssg-snippet-init-multi-upload"
 ```java
-// Bucket의 이름 생성 포맷은 BucketName-APPID입니다.
+// Bucket의 이름 생성 형식은 BucketName-APPID입니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest(bucketName, key);
@@ -838,18 +978,18 @@ Request 멤버 설명:
 
 | 매개변수 이름   | 설정 방법            | 설명                                                         | 유형   |
 | ---------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String  |
-| key        | 구조 함수 또는 set 방법 | 멀티파트 업로드할 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 지정합니다. 예를 들어 객체 키는 folder/picture.jpg입니다. | String |
+| bucketName | 구조 함수 또는 set 메소드 | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
+| key        | 구조 함수 또는 set 메소드 | 멀티파트 업로드할 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 지정합니다. 예를 들어 객체 키는 folder/picture.jpg입니다.  | String |
 
 #### 반환 결과 설명
 
 - 성공: 이번 멀티파트 업로드의 uploadId를 포함한 InitiateMultipartUploadResult를 반환합니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 멀티파트 업로드
 
-멀티파트 업로드합니다(Upload Part).
+멀티파트를 업로드합니다(Upload Part).
 
 #### 메소드 프로토타입
 
@@ -861,8 +1001,8 @@ public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest) throws C
 
 [//]: # ".cssg-snippet-upload-part"
 ```java
-// 멀티파트 업로드 시 최대 10000개까지 가능하며, 1MB~5GB 크기의 멀티파트를 지원합니다.
-// 멀티파트 크기를 4MB로 설정합니다. 총 n개의 멀티파트가 있다면 1~n-1개의 멀티파트는 크기가 동일하고, 마지막 한 개 멀티파트는 이전 멀티파트와 동일하거나 작습니다.
+// 멀티파트 업로드 시 최대 10000개까지 가능하며, 1MB-5GB 크기의 멀티파트를 지원합니다.
+// 멀티파트 크기를 4MB로 설정합니다. 총 n개의 멀티파트가 있다면 1 ~ n-1개의 멀티파트는 크기가 동일하고, 마지막 한 개 멀티파트는 이전 멀티파트와 동일하거나 작습니다.
 List<PartETag> partETags = new ArrayList<PartETag>();
 int partNumber = 1;
 int partSize = 4 * 1024 * 1024;
@@ -886,7 +1026,7 @@ partETags.add(new PartETag(partNumber, etag));  // partETags는 업로드된 par
 
 #### 매개변수 설명
 
-| 매개변수 이름          | 설명 | 유형              |
+| 매개변수 이름          | 설명         | 유형              |
 | ----------------- | ---- | ----------------- |
 | uploadPartRequest | 요청 | UploadPartRequest |
 
@@ -894,18 +1034,18 @@ Request 멤버 설명:
 
 | 매개변수 이름    | 설정 방법 | 설명                                                         | 유형        |
 | ----------- | -------- | ------------------------------------------------------------ | ----------- |
-| bucketName  | set 방법  | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String      |
-| key         | set 방법 | 멀티파트 업로드할 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 지정합니다. 예를 들어 객체 키는 folder/picture.jpg입니다. | String      |
-| uploadId    | set 방법  | 지정한 멀티파트 업로드의 uploadId를 식별                                  | String      |
-| partNumber  | set 방법  | 지정한 멀티파트의 번호를 식별. 번호는 반드시 1보다 크거나 같아야 합니다.                                | int         |
-| inputStream | set 방법  | 멀티파트를 업로드할 입력 스트림을 기다립니다.                                           | InputStream |
-|trafficLimit| set 방법| 멀티파트 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어는 비활성화되어 있습니다.  | Int|
+| bucketName  | set 메소드  | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String      |
+| key         | set 메소드 | 멀티파트 업로드할 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 지정합니다. 예를 들어 객체 키는 folder/picture.jpg입니다. | String      |
+| uploadId    | set 메소드  | 지정한 멀티파트 업로드의 uploadId를 식별                                  | String      |
+| partNumber  | set 메소드  | 지정한 멀티파트의 번호를 식별. 번호는 반드시 1보다 크거나 같아야 합니다.                                | int         |
+| inputStream | set 메소드  | 멀티파트를 업로드할 입력 스트림을 기다립니다.                                           | InputStream |
+|trafficLimit| set 메소드| 멀티파트 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어는 비활성화되어 있습니다.  | Int|
 
 
 #### 반환 결과 설명
 
 - 성공: 멀티파트 업로드의 eTag 정보를 포함한 UploadPartResult를 반환합니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 #### 반환 매개변수 설명
@@ -935,7 +1075,7 @@ public CopyPartResult copyPart(CopyPartRequest copyPartRequest) throws CosClient
 
 [//]: # ".cssg-snippet-upload-part-copy"
 ```java
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 // 타깃 버킷 이름, 객체 이름, 멀티파트 업로드 ID를 설정합니다.
 String destinationBucketName = "examplebucket-1250000000";
 String destinationTargetKey = "exampleobject";
@@ -973,20 +1113,20 @@ Request 멤버 설명:
 
 | 매개변수 이름              | 설정 방법 | 설명                                                         | 유형   |
 | --------------------- | -------- | ------------------------------------------------------------ | ------ |
-| destinationBucketName | set 방법 | 타깃 버킷의 이름. Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| destinationKey        | set 방법 | 타깃 객체의 이름. 멀티파트가 복사되어 저장될 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 지정합니다. 예를 들어, 객체 키는 folder/picture.jpg입니다. | String |
-| uploadId              | set 방법 | 지정한 멀티파트 업로드의 uploadId를 식별                                  | String |
-| partNumber            | set 방법 | 지정한 멀티파트의 번호를 식별. 번호는 반드시 1보다 크거나 같아야 합니다.                                | int    |
-| sourceBucketRegion    | set 방법 | 원본 버킷의 리전                                               | Region |
-| sourceBucketName      | set 방법 | 원본 버킷의 이름                                               | String |
-| sourceKey             | set 방법 | 원본 객체 이름. 복사하기 전에 멀티파트가 속한 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)입니다. 예를 들어, 객체 키는 folder/picture.jpg입니다. | String |
-| firstByte             | set 방법 | 원본 객체의 첫 바이트 오프셋입니다.                                           | Long   |
-| lastByte              | set 방법 | 원본 객체의 마지막 바이트 오프셋입니다.                                       | Long   |
+| destinationBucketName | set 메소드 | 타깃 버킷의 이름. Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
+| destinationKey        | set 메소드 | 타깃 객체의 이름. 멀티파트가 복사되어 저장될 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 지정합니다. 예를 들어, 객체 키는 folder/picture.jpg입니다. | String |
+| uploadId              | set 메소드 | 지정한 멀티파트 업로드의 uploadId를 식별                                  | String |
+| partNumber            | set 메소드 | 지정한 멀티파트의 번호를 식별. 번호는 반드시 1보다 크거나 같아야 합니다.                                | int    |
+| sourceBucketRegion    | set 메소드 | 원본 버킷의 리전                                               | Region |
+| sourceBucketName      | set 메소드 | 원본 버킷의 이름                                               | String |
+| sourceKey             | set 메소드 | 원본 객체 이름. 복사하기 전에 멀티파트가 속한 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)입니다. 예를 들어, 객체 키는 folder/picture.jpg입니다. | String |
+| firstByte             | set 메소드 | 원본 객체의 첫 바이트 오프셋입니다.                                           | Long   |
+| lastByte              | set 메소드 | 원본 객체의 마지막 바이트 오프셋입니다.                                       | Long   |
 
 #### 반환 결과 설명
 
 - 성공: 멀티파트의 ETag 정보를 포함한 CopyPartResult를 반환합니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 업로드된 파트 조회
@@ -1026,17 +1166,17 @@ do {
 
 | 매개변수 이름         | 설정 방법            | 설명                                                         | 유형   |
 | ---------------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName       | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String  |
-| key              | 구조 함수 또는 set 방법 | 객체의 이름                                                   | String |
-| uploadId         | 구조 함수 또는 set 방법 | 이번에 조회할 멀티파트 업로드의 uploadId                               | String |
-| maxParts         | set 방법            | 한 번에 반환 가능한 최대 항목 수. 기본값: 1000                             | String |
-| partNumberMarker | set 방법            | 기본적으로 UTF-8 이진법 순서로 열거되며, 모든 열거 값은 marker부터 시작  | String |
-| encodingType     | set 방법            | 반환값의 인코딩 방식을 규정                                         | String |
+| bucketName       | 구조 함수 또는 set 메소드 | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
+| key              | 구조 함수 또는 set 메소드 | 객체의 이름                                                   | String |
+| uploadId         | 구조 함수 또는 set 메소드 | 이번에 조회할 멀티파트 업로드의 uploadId                               | String |
+| maxParts         | set 메소드            | 한 번에 반환 가능한 최대 항목 수. 기본값: 1000                             | String |
+| partNumberMarker | set 메소드            | 기본적으로 UTF-8 이진법 순서로 열거되며, 모든 열거 값은 marker부터 시작  | String |
+| encodingType     | set 메소드            | 반환값의 인코딩 방식을 규정                                         | String |
 
 #### 반환 결과 설명
 
 - 성공: 모든 파트의 ETag와 번호 및 다음 list의 시작 marker를 포함한 PartListing을 반환합니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 멀티파트 업로드 완료 
@@ -1065,17 +1205,17 @@ CompleteMultipartUploadResult result = cosClient.completeMultipartUpload(compReq
 
 #### 매개변수 설명
 
-| 매개변수 이름   | 설정 방법          | 설명                                                         | 유형              |
+| 매개변수 이름   | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형              |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
-| bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String            |
-| key        | 구조 함수 또는 set 방법 | 멀티파트 업로드할 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 지정합니다. 예를 들어 객체 키는 folder/picture.jpg입니다. | String            |
-| uploadId   | 구조 함수 또는 set 방법 | 지정한 멀티파트 업로드의 uploadId를 식별                                  | String            |
-| partETags  | 구조 함수 또는 set 방법 | 멀티파트의 번호와 업로드에서 반환하는 eTag를 식별                            | List&lt;PartETag&gt; |
+| bucketName | 구조 함수 또는 set 메소드 | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String            |
+| key        | 구조 함수 또는 set 메소드 | 멀티파트 업로드할 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 지정합니다. 예를 들어 객체 키는 folder/picture.jpg입니다. | String            |
+| uploadId   | 구조 함수 또는 set 메소드 | 지정한 멀티파트 업로드의 uploadId를 식별                                  | String            |
+| partETags  | 구조 함수 또는 set 메소드 | 멀티파트의 번호와 업로드에서 반환하는 eTag를 식별                            | List&lt;PartETag&gt; |
 
 #### 반환 결과 설명
 
 - 성공: 완료된 객체의 eTag 정보를 포함한 CompleteMultipartUploadResult를 반환합니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 멀티파트 업로드 중지
@@ -1106,14 +1246,14 @@ cosClient.abortMultipartUpload(abortMultipartUploadRequest);
 
 | 매개변수 이름   | 설정 방법            | 설명                                                         | 유형   |
 | ---------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| key        | 구조 함수 또는 set 방법 | 멀티파트 업로드할 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)입니다. 예를 들어 객체 키는 folder/picture.jpg입니다. | String |
-| uploadId   | 구조 함수 또는 set 방법 | 지정한 멀티파트 업로드의 uploadId를 식별                                  | String |
+| bucketName | 구조 함수 또는 set 메소드 | Bucket의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
+| key        | 구조 함수 또는 set 메소드 | 멀티파트 업로드할 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)입니다. 예를 들어 객체 키는 folder/picture.jpg입니다. | String |
+| uploadId   | 구조 함수 또는 set 메소드 | 지정한 멀티파트 업로드의 uploadId를 식별                                  | String            |
 
 #### 반환 결과 설명
 
-- 성공: 반환값이 없습니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 성공: 반환값 없음.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 
@@ -1151,29 +1291,29 @@ TransferManagerConfiguration 유형은 고급 인터페이스의 설정 정보�
 
 |  멤버 이름 | 설정 방법            | 설명                                                         | 유형           |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
-| minimumUploadPartSize   | set 방법 | 멀티파트 업로드의 파트 크기입니다. 단위는 바이트(Byte)이며, 기본값은 5MB입니다. | long         |
-| multipartUploadThreshold   | set 방법 | 해당 값보다 크거나 같고 동시 접속하는 멀티파트 업로드 파일입니다. 단위는 바이트(Byte)이며, 기본값은 5MB입니다.  | long         |
-| multipartCopyThreshold         | set 방법 | 해당 값보다 크거나 같고 동시 접속하는 멀티파트 복사 파일입니다. 단위는 바이트(Byte)이며, 기본값은 5GB입니다. | long           |
-| multipartCopyPartSize        | set 방법 | 멀티파트 복사 시 파트의 크기입니다. 단위는 바이트(Byte)이며, 기본값은 100MB입니다.           | long    |
+| minimumUploadPartSize   | set 메소드 | 멀티파트 업로드의 파트 크기입니다. 단위는 바이트(Byte)이며, 기본값은 5MB입니다. | long         |
+| multipartUploadThreshold   | set 메소드 | 해당 값보다 크거나 같고 동시 접속하는 멀티파트 업로드 파일입니다. 단위는 바이트(Byte)이며, 기본값은 5MB입니다. | long         |
+| multipartCopyThreshold         | set 메소드 | 해당 값보다 크거나 같고 동시 접속하는 멀티파트 복사 파일입니다. 단위는 바이트(Byte)이며, 기본값은 5GB입니다. | long           |
+| multipartCopyPartSize        | set 메소드 | 멀티파트 복사 시 파트의 크기입니다. 단위는 바이트(Byte)이며, 기본값은 100MB입니다.           | long    |
 
 ### 객체 업로드(진행률 가져오기)
 
 #### 기능 설명
 
-고급 업로드 인터페이스는 사용자 파일의 길이와 데이터 유형에 따라 자동으로 간편 업로드 또는 멀티파트 업로드 중 하나를 선택합니다. 자세한 설명은 아래를 참조하십시오.
+고급 업로드 인터페이스는 사용자 파일의 길이와 데이터 유형에 따라 자동으로 간편 업로드 또는 멀티파트 업로드 중 하나를 선택합니다. 자세한 설명은 아래를 참고하십시오.
 - 멀티파트 업로드 임계값보다 작거나 Content-Length 헤더가 없는 스트림 업로드의 경우 고급 인터페이스는 간편 업로드를 선택합니다.
 - 멀티파트 업로드 임계값보다 크지만 Content-Length 헤더가 없는 스트림 업로드의 경우 고급 인터페이스는 멀티파트 업로드를 선택합니다.
 - 데이터 유형이 File 유형인 파일 업로드의 경우 고급 인터페이스는 멀티 스레드로 다수의 파트를 동시에 업로드합니다.
 - 고급 업로드 인터페이스는 멀티파트 업로드에 대해 진행률 확인 기능을 제공하며, getProgress() 방법으로 확인할 수 있습니다.
 - 파일 크기가 5MB 이상인 파일을 멀티파트 업로드하는 경우, 해당 임계값은 요청 예시 3을 통해 조정할 수 있습니다.
 
->? 기타 관련 설정 속성, 스토리지 유형, MD5 검증 등은 [PUT Object API](https://intl.cloud.tencent.com/document/product/436/7749)를 참고하십시오.
+>? 기타 관련 설정 속성, 스토리지 유형, MD5 검사 등은 [PUT Object API](https://intl.cloud.tencent.com/document/product/436/7749)를 참고하십시오.
 >
 
 #### 메소드 프로토타입
 
 ```java
-// 객체 업로드
+// 객체 업로드.
 public Upload upload(final PutObjectRequest putObjectRequest)
             throws CosServiceException, CosClientException;
 ```
@@ -1182,7 +1322,7 @@ public Upload upload(final PutObjectRequest putObjectRequest)
 
 [//]: # ".cssg-snippet-transfer-upload-file1"
 ```java
-// 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 본 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 File localFile = new File(localFilePath);
@@ -1215,7 +1355,7 @@ void showTransferProgress(Transfer transfer) {
     System.out.println(transfer.getState());
 }
 
-// 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 본 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 File localFile = new File(localFilePath);
@@ -1231,7 +1371,7 @@ UploadResult uploadResult = upload.waitForUploadResult();
 
 #### 요청 예시3: 고급 인터페이스를 사용하여 업로드 및 멀티파트 업로드의 임계값을 설정
 ```java
-// 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 본 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 File localFile = new File(localFilePath);
@@ -1254,20 +1394,21 @@ UploadResult uploadResult = upload.waitForUploadResult();
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법          | 설명                                                         | 유형           |
+| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형           |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
-| bucketName   | 구조 함수 또는 set 방법 | 버킷의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String         |
-| key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String         |
-| file         | 구조 함수 또는 set 방법 | 로컬 파일                                                     | File           |
-| input        | 구조 함수 또는 set 방법 | 입력 스트림                                                       | InputStream    |
-| metadata     | 구조 함수 또는 set 방법 | 파일의 메타데이터                                                 | ObjectMetadata |
-|trafficLimit  | set 방법    | 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다.      | Int    |  
+| bucketName   | 구조 함수 또는 set 메소드 | 버킷의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String         |
+| key          | 구조 함수 또는 set 메소드 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String         |
+| file         | 구조 함수 또는 set 메소드 | 로컬 파일                                                     | File           |
+| input        | 구조 함수 또는 set 메소드 | 입력 스트림                                                       | InputStream    |
+| metadata     | 구조 함수 또는 set 메소드 | 파일의 메타데이터                                                 | ObjectMetadata |
+|trafficLimit | set 메소드| 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다. | Int|No|
+
 >?다수의 멀티파트를 동시 업로드할 경우 trafficLimit은 모든 멀티파트의 업로드 속도를 제한합니다. 이때 스레드 풀의 스레드 수를 조정하여 파일의 업로드 속도를 제어해야 합니다.
 
-#### 반환 값
+#### 반환값
 
 - 성공: Upload를 반환합니다. 업로드의 종료 여부를 확인할 수 있으며, 업로드가 끝날 때까지 기다릴 수도 있습니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 #### 반환 매개변수 설명
 
@@ -1275,8 +1416,8 @@ Upload의 waitForUploadResult() 방법을 호출하여 획득한 객체 업로�
 
 | 멤버 이름   | 설명                                                         | 유형   |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | 버킷의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| key        | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br/>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
+| bucketName | 버킷의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
+| key        | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br/>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
 | requestId  | 요청 Id                                                       | String |
 | dateStr    | 현재 서버 시간                                               | String |
 | versionId  | 버킷의 버전 제어 기능이 활성화되면 객체의 버전 넘버 Id 반환                      | String |
@@ -1316,7 +1457,7 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 
 [//]: # ".cssg-snippet-transfer-download-object"
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 File localDownFile = new File(localFilePath);
@@ -1325,7 +1466,7 @@ GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 getObjectRequest.setTrafficLimit(80*1024*1024);
 // 파일 다운로드
 Download download = transferManager.download(getObjectRequest, localDownFile);
-// 전송 종료를 기다립니다(업로드 종료 대기와 동기화를 원하는 경우 waitForCompletion을 호출합니다).
+// 전송 종료를 기다립니다. 업로드가 끝날 때까지 기다리려면 waitForCompletion을 호출합니다.
 download.waitForCompletion();
 ```
 
@@ -1350,7 +1491,7 @@ void showTransferProgress(Transfer transfer) {
     System.out.println(transfer.getState());
 }
 
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 File localDownFile = new File(localFilePath);
@@ -1360,7 +1501,7 @@ GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
 Download download = transferManager.download(getObj, localDownFile, true);
 // 서브 스레드를 통해 이 함수를 호출할 수 있습니다. 하지만 waitForCompletion 전에 서브 스레드를 실행해야 합니다. 그렇지 않으면 download 완료로 인해 진행률을 볼 수 없습니다.
 showTransferProgress(download);
-try{
+try {
     download.waitForCompletion();
 } catch (CosServiceException e) {
     e.printStackTrace();
@@ -1386,17 +1527,17 @@ transferManager.shutdownNow();
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법           | 설명                                                         | 유형   |
+| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName   | 구조 함수 또는 set 방법 | 버킷의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
-| range    | set 방법            | 다운로드 range 범위                       | Long[] |
-| trafficLimit | set 방법    | 객체 다운로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다.  | int |
+| bucketName   | 구조 함수 또는 set 메소드 | 버킷의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String |
+| key          | 구조 함수 또는 set 메소드 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
+| range    | set 메소드            | 다운로드 range 범위                       | Long[] |
+| trafficLimit | set 메소드    | 객체 다운로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다.  | int |
 
 #### 반환값
 
 - 성공: Download를 반환합니다. 다운로드의 종료 여부를 확인할 수 있으며, 다운로드가 끝날 때까지 기다릴 수도 있습니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 객체 복사
@@ -1418,18 +1559,18 @@ public Copy copy(final CopyObjectRequest copyObjectRequest);
 
 [//]: # ".cssg-snippet-transfer-copy-object"
 ```java
-// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리합니다.
 String secretId = "SECRETID";
 String secretKey = "SECRETKEY";
 // 복사할 bucket region
 COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
 Region bucketRegion = new Region("COS_REGION");
 
-// 원본 Bucket입니다. 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 원본 Bucket입니다. 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String srcBucketName = "sourcebucket-1250000000";
 // 복사할 원본 파일
 String srcKey = "sourceObject";
-// 타깃 Bucket입니다. 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 타깃 Bucket입니다. 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 
 String destBucketName = "examplebucket-1250000000";
 // 복사할 타깃 파일
@@ -1462,12 +1603,11 @@ try {
 #### 요청 예시2: 리전 간 복제
 
 >!
->
 >- 리전 간 복제란 원본 파일을 다른 리전의 버킷으로 복사하는 것을 의미합니다(예: 파일을 베이징 리전에서 광저우 리전으로 복사).
-
+>- 금융 클라우드 리전과 퍼블릭 클라우드 리전은 서로 통신할 수 없으며, 리전 간 복제를 진행할 수 없습니다.
 
 ```java
-// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리합니다.
 String secretId = "SECRETID";
 String secretKey = "SECRETKEY";
 
@@ -1477,11 +1617,11 @@ COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
 Region srcBucketRegion = new Region("COS_SRC_REGION");
 Region destBucketRegion = new Region("COS_DEST_REGION");
 
-// 원본 Bucket입니다. 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 원본 Bucket입니다. 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String srcBucketName = "sourcebucket-1250000000";
 // 복사할 원본 파일
 String srcKey = "sourceObject";
-// 타깃 Bucket입니다. 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 타깃 Bucket입니다. 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 
 String destBucketName = "examplebucket-1250000000";
 // 복사할 타깃 파일
@@ -1511,20 +1651,20 @@ try {
 }
 ```
 
-#### 요청 예시3：비동기화 사용 복제
+#### 요청 예시3: 비동기화 사용 복제
 ```java
-// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리합니다.
 String secretId = "SECRETID";
 String secretKey = "SECRETKEY";
 // 복사할 bucket region
 COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
 Region bucketRegion = new Region("COS_REGION");
 
-// 원본 Bucket입니다. 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 원본 Bucket입니다. 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String srcBucketName = "sourcebucket-1250000000";
 // 복사할 원본 파일
 String srcKey = "sourceObject";
-// 타깃 Bucket입니다. 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 타깃 Bucket입니다. 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 
 String destBucketName = "examplebucket-1250000000";
 // 복사할 타깃 파일
@@ -1577,17 +1717,17 @@ Request 멤버 설명:
 | 매개변수 이름              | 설명                                                         | 유형   |
 | --------------------- | ------------------------------------------------------------ | ------ |
 | sourceBucketRegion    | 원본 Bucket Region. 기본값은 현재 clientconfig의 region과 일치하며, 통합 리전 복사를 의미합니다. | String |
-| sourceBucketName      | 원본 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다. | String |
-| sourceKey             | 원본 객체 키. 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
+| sourceBucketName      | 원본 버킷 이름. 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다. | String |
+| sourceKey             | 원본 객체 키. 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
 | sourceVersionId       | 원본 파일 version id(버전 제어를 활성화한 원본 Bucket에 적용). 기본값: 원본 파일의 최신 버전 | String |
-| destinationBucketName | 타깃 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다. | String |
-| destinationKey        | 타깃 객체 키. 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
-| storageClass          | 복사된 타깃 파일의 스토리지 유형. 열거 값은 Standard, Standard_IA이며 기본값은 Standard입니다. 더 많은 스토리지 유형은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참조하십시오. | String |
+| destinationBucketName | 타깃 버킷 이름. 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다. | String |
+| destinationKey        | 타깃 객체 키. 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
+| storageClass          | 복사된 타깃 파일의 스토리지 유형. 열거 값은 Standard, Standard_IA이며 기본값은 Standard입니다. 더 많은 스토리지 유형은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하십시오. | String |
 
 #### 반환값
 
 - 성공: Copy를 반환합니다. Copy의 종료 여부를 확인할 수 있으며, 업로드가 끝날 때까지 기다릴 수도 있습니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 객체 일괄 업로드
@@ -1632,7 +1772,8 @@ String dir_path = "/to/mydir";
 Boolean recursive = false;
 
 try {
-    // 비동기 결과 Upload를 반환합니다. 동시에 waitForUploadResult를 호출하여 upload 결과를 기다릴 수 있습니다. 성공하면 UploadResult를 반환하고, 실패하면 이상 경고 메시지를 표시합니다.
+    // 비동기 결과 Upload를 반환합니다. 동시에 waitForUploadResult를 호출하여 upload 결과를 기다릴 수 있습니
+다. 성공하면 UploadResult를 반환하고, 실패하면 이상 경고 메시지를 표시합니다.
     MultipleFileUpload upload = transferManager.uploadDirectory(bucketName, cos_path, new File(dir_path), recursive);
 
     // 업로드 진행률 조회를 선택할 수 있습니다.
@@ -1664,7 +1805,7 @@ try {
 #### 반환값
 
 - 성공: MultipleFileUpload를 반환합니다. 업로드의 종료 여부를 확인할 수 있으며, 업로드가 끝날 때까지 기다릴 수도 있습니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 객체 일괄 다운로드
@@ -1740,7 +1881,7 @@ transferManager.shutdownNow();
 #### 반환값
 
 - 성공: MultipleFileUpload를 반환합니다. 다운로드의 종료 여부를 확인할 수 있으며, 다운로드가 끝날 때까지 기다릴 수도 있습니다.
-- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 해결](https://intl.cloud.tencent.com/document/product/436/31537)을 참고하십시오.
 
 
 ### 폴더 및 하위 파일 삭제
@@ -1774,7 +1915,7 @@ public void delete(ArrayList<DeleteObjectsRequest.KeyVersion> keyList) {
     }
 }
 
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 ListObjectsRequest listObjectsRequest = new ListObjectsRequest();
 // bucket 이름 설정
@@ -1783,7 +1924,7 @@ listObjectsRequest.setBucketName(bucketName);
 listObjectsRequest.setPrefix("images/");
 // delimiter는 세퍼레이터를 의미합니다. /로 설정하면 현재 디렉터리의 object를 나열하고, 공백으로 설정하면 전체 object를 나열합니다.
 listObjectsRequest.setDelimiter("/");
-// 순회 가능한 객체의 최대 수량을 설정합니다. listobject 1회당 최대 1000개까지 지원합니다.
+// 순회할 객체의 최대 수량을 설정합니다. listobject 1회당 최대 1000개까지 지원합니다.
 listObjectsRequest.setMaxKeys(1000);
 ObjectListing objectListing = null;
 
@@ -1803,7 +1944,7 @@ do {
     // common prefix는 delimiter로 잘린 경로를 표시합니다. 예를 들어 delimiter를 /로 설정하면 common prefix는 모든 서브 디렉터리의 경로를 표시합니다.
     List<String> commonPrefixs = objectListing.getCommonPrefixes();
 
-    // object summary는 나열된 모든 object 리스트를 의미합니다.
+    // object summary는 나열된 모든 object 리스트를 표시합니다.
     List<COSObjectSummary> cosObjectSummaries = objectListing.getObjectSummaries();
     for (COSObjectSummary cosObjectSummary : cosObjectSummaries) {
         // 파일의 경로 key
@@ -1839,13 +1980,13 @@ COS는 버킷 이름(Bucket)과 객체 키(ObjectKey)로 객체를 식별하므�
 #### 요청 예시
 
 ```java
-// 리전 내 복사. [객체 복사] 요청 예시를 참조하십시오.
+// 리전 내 복사. [객체 복사] 요청 예시를 참고하십시오.
 public void copySameRegion(String srcBucket, String srcKey, String destBucket, String destKey) {
     CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucket, srcKey, destBucket, destKey);
     CopyObjectResult copyObjectResult = cosClient.copyObject(copyObjectRequest);
 }
 
-// 리전 간 복제. [객체 복사] 요청 예시를 참조하십시오.
+// 리전 간 복제. [객체 복사] 요청 예시를 참고하십시오.
 public void copyDiffRegion(String srcRegion, String srcBucket, String srcKey,
         String destRegion, String destBucket, String destKey){
     CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketRegion, srcBucket, srcKey, destBucketName, destKey);
