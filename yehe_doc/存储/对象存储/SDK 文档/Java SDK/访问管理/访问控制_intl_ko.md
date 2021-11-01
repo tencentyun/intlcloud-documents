@@ -220,7 +220,7 @@ cosClient.setObjectAcl(bucketName, key, CannedAccessControlList.PublicReadWrite)
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형           |
+| Request 멤버 | 설정 방법          | 설명                                                         | 유형           |
 | ------------ | ------------------- | ------------------------------------------------------------ | ----------------------- |
 | bucketName   | 구조 함수 혹은 set 메소드 | 버킷의 이름 생성 형식은 BucketName-APPID이며, 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) 참고 | String                  |
 | key          | 구조 함수 혹은 set 메소드 | 객체 키(Key)는 버킷에 있는 객체의 고유 표식입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 에서, 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String                  |
