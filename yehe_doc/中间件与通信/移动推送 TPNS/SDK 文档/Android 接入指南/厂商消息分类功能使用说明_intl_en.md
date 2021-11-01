@@ -75,17 +75,7 @@ The default channel on the OPPO PUSH platform is the public message channel. Now
 >
 
 2. Currently, the OPPO private message channel can take effect only after you apply for it through email. Please send an application email to the OPPO PUSH platform according to the following requirements. For more information, see [OPPO PUSH Channel Upgrade Beta Invitation](https://open.oppomobile.com/wiki/doc#id=10614).
-```plaintext
-Standard for applying for the public/private message channel beta eligibility: total number of users for OPPO PUSH ≥ 300,000
-Application method: send an email to push@oppo.com for application. You can use the following email template:
-Application ID: XXX
-Application name: XXX
-Total number of users: XXX
-Dedicated private channel name:
-Dedicated private channel ID:
-WeChat account of business contact:
-I apply for connection to the OPPO PUSH beta public/private message service for the XX application. I undertake to comply with the operational rules and will not use the private message channel to push any marketing messages.
-```
+
 
 ### Using the OPPO private message channel
 
