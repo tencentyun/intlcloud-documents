@@ -487,7 +487,7 @@ function(err, data) { ... }
 
 ```
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형    |
+| 매개변수 이름| 매개변수 설명                                                     | 유형    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object  |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number  |
@@ -545,7 +545,7 @@ cos.optionsObject({
 function(err, data) { ... }
 ```
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형    |
+| 매개변수 이름 | 매개변수 설명                                                     | 유형    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object  |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number  |
@@ -744,7 +744,7 @@ deleteFiles();
 function(err, data) { ... }
 ```
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형        |
+| 매개변수 이름 | 매개변수 설명                                                     | 유형        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object      |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예: 200, 204, 403, 404 등)             | Number     |
@@ -860,7 +860,7 @@ cos.multipartList({
 function(err, data) { ... }
 ```
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형        |
+| 매개변수 이름 | 매개변수 설명                                                     | 유형        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object      |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number      |
@@ -1104,7 +1104,7 @@ cos.multipartListPart({
 function(err, data) { ... }
 ```
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형        |
+| 매개변수 이름 | 매개변수 설명                                                     | 유형        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object      |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number      |
@@ -1278,7 +1278,7 @@ cos.uploadFile({
 
 #### 매개변수 설명
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
+| 매개변수 이름 | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 이 형식을 따라야 합니다. | String    | Yes   |
 | Region                                                       | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String    | Yes   |
@@ -1355,7 +1355,7 @@ cos.sliceUploadFile({
 
 #### 매개변수 설명
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
+| 매개변수 이름 | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 이 형식을 따라야 합니다. | String    | Yes   |
 | Region                                                       | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String    | Yes   |
