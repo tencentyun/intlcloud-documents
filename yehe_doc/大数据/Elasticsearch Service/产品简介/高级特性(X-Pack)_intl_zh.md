@@ -2,7 +2,7 @@
 高级特性，是指 Elasticsearch 官方商业特性（原 X-Pack 商业版插件包含的特性），包含了安全（Security）、SQL、机器学习（Machine Learning）、监控（Monitor）等高级功能，可以为 Elasticsearch 服务的应用开发和运维管理，提供更有力的帮助。腾讯云 ES 已提供了包含高级特性的版本，您可以在创建购买集群时选择，下文介绍各版本详细功能。
 
 ## 购买指引
-![](https://main.qcloudimg.com/raw/14e15a198caf801ccb35300e90a9b74e.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/8d9406c0969abcd32e70c44f6f06efa6.png)
 如上图所示，在腾讯云 ES 创建购买页，有高级特性版本选项。腾讯云 ES 提供了3种可选的高级特性版本，版本说明如下：
 
 | 对比项            | 基础版 | 白金版 | 开源版 |

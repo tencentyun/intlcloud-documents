@@ -167,11 +167,11 @@
 
 多存储地域的一个重要作用是提升媒体上传质量（成功率和速度）。上传者与存储节点的距离对上传质量有影响，一般来说近距离的上传质量要优于远距离。
 
-开发者开通云点播服务后，云点播会自动分配**重庆**存储地域。开发者可以根据业务需要开通其它的存储地域，具体操作请参见 [上传存储设置](https://intl.cloud.tencent.com/document/product/266/18874)。**存储地域一旦开通将无法关闭**。
+开发者开通云点播服务后，云点播会自动分配**新加坡**存储地域。开发者可以根据业务需要开通其它的存储地域，具体操作请参见 [上传存储设置](https://intl.cloud.tencent.com/document/product/266/18874)。**存储地域一旦开通将无法关闭**。
 
 ### 默认存储地域
 
-开发者已有的存储地域中，有且仅有一个将作为默认存储地域。如果开发者仅有1个存储地域（即重庆），那么它将是默认存储地域；如果开发者开通了多个存储地域，那么可以在控制台选择其它地域作为默认存储地域。具体操作请参见 [存储地域设置](https://intl.cloud.tencent.com/document/product/266/18874#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)。
+开发者已有的存储地域中，有且仅有一个将作为默认存储地域。如果开发者仅有1个存储地域（即新加坡），那么它将是默认存储地域；如果开发者开通了多个存储地域，那么可以在控制台选择其它地域作为默认存储地域。具体操作请参见 [存储地域设置](https://intl.cloud.tencent.com/document/product/266/18874#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)。
 
 默认存储地域的作用：在某些场景下，优先选择该地域作为媒体上传的目标地域。具体说明请阅读下文。
 
@@ -180,7 +180,7 @@
 媒体上传时需要选择一个存储地域，默认由云点播后台自动选择，也可以由开发者在上传请求中指定。
 
 - 当云点播后台自动选择存储地域时：
-  - 如果开发者仅有1个存储地域（即重庆），那么所有上传的媒体都会存储在该地域。
+  - 如果开发者仅有1个存储地域（即新加坡），那么所有上传的媒体都会存储在该地域。
   - 如果开发者开通了多个存储地域，那么各种上传方式的选择策略如下：
  <table border=0 cellpadding="0" cellspacing="0">
 <thead>
@@ -315,8 +315,8 @@
 | 功能           | 控制台本地上传       | 控制台拉取上传 | 服务端上传                                                   | 客户端上传                                                   | API 拉取上传 | 直播录制                                                     |
 | -------------- | -------------------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
 | 断点续传       | 不支持               | 不涉及         | 不支持                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | 不涉及       | 不涉及                                                       |
-| 暂停和恢复上传 | 不支持               | 不涉及         | 不支持                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>小程序 SDK 不支持 | 不涉及       | 不涉及                                                       |
-| 取消上传       | 刷新或关闭浏览器页面 | 不涉及         | 不支持                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>小程序 SDK 不支持 | 不涉及       | [终止录制任务](https://intl.cloud.tencent.com/document/product/267/30837) |
+| 暂停和恢复上传 | 不支持               | 不涉及         | 不支持                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li> | 不涉及       | 不涉及                                                       |
+| 取消上传       | 刷新或关闭浏览器页面 | 不涉及         | 不支持                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li> | 不涉及       | [终止录制任务](https://intl.cloud.tencent.com/document/product/267/30837) |
 | 获取上传进度   | 页面默认显示进度     | 不支持         | 不支持                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | 不支持       | 不涉及                                                       |
 | 分片上传       | 已启用               | 不涉及         | <ul style="margin:0;"><li> [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0) | <ul style="margin:0;"><li> Web SDK 默认启用</li><li>Android SDK 默认启用</li><li>iOS SDK 默认启用</li> | 不涉及       | 不涉及                                                       |
 

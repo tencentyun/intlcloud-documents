@@ -124,29 +124,29 @@
 
 ### 步骤2：上传视频[](id:p12)
 
-参考 [快速入门 - 步骤2](https://intl.cloud.tencent.com/document/product/266/8757) 上传一个测试视频。单击 [此处](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) 查看本 Demo 使用的测试视频，对应的 FileId 是3701925921390170339，如下图所示：
-![](https://main.qcloudimg.com/raw/bb2d019bc46847b00620b51d23f60a90.png)
+参考 [快速入门 - 步骤2](https://intl.cloud.tencent.com/document/product/266/8757) 上传一个测试视频。单击 [此处](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) 查看本 Demo 使用的测试视频，对应的 FileId 是8602268010602075659，如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/9d10415aff42613a6b9899c552d053d2.png)
 >?建议使用较短的视频文件进行测试（例如时长为几十秒的视频），避免转码过程耗时太长。
 
 ### 步骤3：发起转码[](id:p13)
 
 在控制台 [视频管理](https://console.cloud.tencent.com/vod/media) 页面勾选新上传的测试视频，然后单击【视频处理】：
-![](https://main.qcloudimg.com/raw/a4ff4f65cc651781583b7c8c812535cb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9d10415aff42613a6b9899c552d053d2.png)
 在弹框中，处理类型选择【转码】，然后单击【转码模板】：
-![](https://main.qcloudimg.com/raw/34dea19debc1ff3e0b119c853d36b5b3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bb552a5454fe649f2b61edf2d5fe50fa.png)
 选择所需的转码模板，然后单击【确定】。本 Demo 以系统预置模板 STD-H264-MP4-360P（模板 ID 100010）和 STD-H264-MP4-540P（模板 ID 100020）为例，如果开发者需要使用自定义的转码模板，请参考 [模板设置文档](https://intl.cloud.tencent.com/document/product/266/14059)。
-![](https://main.qcloudimg.com/raw/fc7811c1d0fbc0633d3c1af0ac899033.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d26764d535ee63e216969e21ee7e6e46.png)
 单击【确定】，发起转码：
-![](https://main.qcloudimg.com/raw/1673cc42b5eea281904a5e9b1b564578.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e370f7ee3ae245e5b97d47fa383e2be8.png)
 在“视频管理”页面看到测试视频的状态为“处理中”，则表示视频正在转码：
-![](https://main.qcloudimg.com/raw/31aae3296dbf4d6ecedec05008333586.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9c329fbf018cd251c2280d2df453f041.png)
 
 ### 步骤4：查看转码结果[](id:p14)
 
 在控制台 [视频管理](https://console.cloud.tencent.com/vod/media) 页面等待测试视频的状态变为“正常”，此时表示转码已完成。单击测试视频右侧的【管理】，进入视频管理页面：
-![](https://main.qcloudimg.com/raw/92de2d087295b2614d26dfa3007436be.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/be5fa72994d786fa6737bf3590d4324f.png)
 在“基本信息”标签页下的【标准转码列表】中，转出了 STD-H264-MP4-360P 和 STD-H264-MP4-540P 两个规格。开发者可以单击右侧的【预览】直接观看视频，还可以单击【复制地址】复制转码视频的 URL，然后通过其它渠道发布给观众。
-![](https://main.qcloudimg.com/raw/1e1d4da179ceafdd742bc1d3e6db7e4a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/48867ad69971690bc6a528cf9f14473c.png)
 
 ## 调用云 API 发起转码
 
@@ -173,7 +173,7 @@
 
 ### 步骤4：上传视频[](id:p24)
 参考 [快速入门 - 步骤2](https://intl.cloud.tencent.com/document/product/266/8757) 上传一个测试视频。单击 [此处](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) 查看本 Demo 使用的测试视频，对应的 FileId 为5285890804162014755，如下图所示：
-![](https://main.qcloudimg.com/raw/7d153d6bfc8cbbcab175a8d67ea04005.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fb2ac8243834a909cee60aaf19426bea.png)
 >?建议使用较短的视频文件进行测试（例如时长为几十秒的视频），避免转码过程耗时太长。
 
 
@@ -208,11 +208,11 @@ ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/transcode_api/; python3 process_me
 ### 步骤6：查看转码结果[](id:p14)
 
 在“视频管理”页面看到测试视频的状态为“处理中”，则表示视频正在转码：
-![](https://main.qcloudimg.com/raw/32039992fb01196c12d046257e96c88c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5fcd99f766d6587f1644daac23c10d4d.png)
 等待测试视频的状态变为“正常”，此时表示转码已完成。单击测试视频右侧的【管理】，进入视频管理页面：
-![](https://main.qcloudimg.com/raw/6aa13e977450eb426663d52bb53644cc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/be5fa72994d786fa6737bf3590d4324f.png)
 在“基本信息”标签页下的【标准转码列表】中，转出了对应规格的视频。开发者可以单击右侧的【预览】直接观看视频，还可以单击【复制地址】复制转码视频的 URL，然后通过其它渠道发布给观众。
-![](https://main.qcloudimg.com/raw/8a4855b492f2c2d1e67fcb70dd7c56e4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9067b71ebcac7658c58222499f47fcf0.png)
 
 ## 上传视频后自动转码（任务流）
 

@@ -12,7 +12,7 @@ The following takes enabling key hotlink protection for the default distribution
 1. Log in to the VOD Console, select **Distribution and Playback Settings** > **[Domain Management](https://console.cloud.tencent.com/vod/distribute-play/domain)**, and click **Settings** of the "default distribution domain name" to enter the settings page.
 <img src="https://main.qcloudimg.com/raw/06259e41a62ea14ce8eb19ef6480182c.png" width="800" />
 2. Click **Edit** on the right of "Key Hotlink Protection", toggle on **Enable Key Hotlink Protection**, and click **Generate Random Key** to generate a random key (2WExxx48eW). Copy the generated key and click **OK** to save the configuration and make it take effect.
-![](https://main.qcloudimg.com/raw/3ac65245b77a1b138ec51cb0f5144adf.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1b4f1f0d9e3d36c153b1e91f64160f00.png)
 
 ## Step 2. Preview video playback
 
@@ -21,7 +21,7 @@ In the previous step, you have enabled hotlink protection for the default distri
 1. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**, find the video uploaded and processed in **step 1**, click **Manage** in the "Operation" column, and select **Superplayer Preview**.
 2. Select "default" as **Superplayer Configuration**.
 >? `default` is a preset superplayer configuration, which is used to output the adaptive bitstream with template 10 and the image sprite with template 10.
- <img src="https://main.qcloudimg.com/raw/17e2552964195c6919239d2d13a0d012.png" width="500" />
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/e66e46d10480c5fb00a2881b275a9cdc.png" width="500" />
 3. As hotlink protection is enabled for the default distribution domain name, you can set the hotlink protection expiration time and the preview duration on the **Playback Control** tab. You can use the default parameter settings here (the default expiration time of playback hotlink protection is 1 day, and the preview duration and maximum number of IPs allowed for playback are left empty).
  
 4. In **Web Player**, click the button in the middle of the player, and you can play back the video on web.

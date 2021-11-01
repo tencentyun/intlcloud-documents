@@ -20,7 +20,7 @@ You need to make sure that hotlink protection for your default distribution doma
 1. Log in to the VOD Console, select **Distribution and Playback Settings** > **[Domain Management](https://console.cloud.tencent.com/vod/distribute-play/domain)**, and click **Settings** of the "default distribution domain name" to enter the settings page.
 <img src="https://main.qcloudimg.com/raw/06259e41a62ea14ce8eb19ef6480182c.png" width="800" />
 2. Confirm that the statuses of **Referer Hotlink Protection** and **Key Hotlink Protection** are both "Not Enabled".
-![](https://main.qcloudimg.com/raw/239391fa14a4b4a59fe260bd9582c82b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/12689eb5bed63fc76cd7d88e38907c09.png)
 
 
 ## Step 1. Upload and process a video

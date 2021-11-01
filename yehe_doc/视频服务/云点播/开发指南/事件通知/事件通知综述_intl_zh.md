@@ -29,7 +29,7 @@
         </td>
     </tr>
     <tr>
-        <td rowspan=4>
+        <td rowspan=3>
             视频处理类
         </td>
         <td>
@@ -43,11 +43,6 @@
 		<tr>
         <td>
             <a href="https://intl.cloud.tencent.com/document/product/266/35571">视频合成完成</a>
-        </td>
-    </tr>
-		<tr>
-        <td>
-            <a href="https://intl.cloud.tencent.com/document/product/266/33955">微信发布完成</a>
         </td>
     </tr>
 </table>

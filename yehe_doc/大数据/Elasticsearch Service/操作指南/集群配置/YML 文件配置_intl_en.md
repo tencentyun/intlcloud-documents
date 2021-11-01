@@ -3,7 +3,7 @@ You can configure common parameters by modifying the YML parameter configuration
 ## Directions
 ### Viewing configuration items
 Log in to the [ES Console](https://console.cloud.tencent.com/es) and click the **ID/name** of the cluster you want to modify to enter the details page. Click **Advanced configuration** to view configuration items.
-![](https://main.qcloudimg.com/raw/ef01a6daf2bed529adb747a8566c6ec1.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/a47d59faff4d1f0bf132fbb47a9ee714.png)
 
 ### Modifying configuration items
 Click **Modify Configuration** in the **YML Configuration** section to modify the configuration items. Please see the "Value Description" column for descriptions of the specific input. You can customize other configuration items under **More Configurations** with YML syntax support.

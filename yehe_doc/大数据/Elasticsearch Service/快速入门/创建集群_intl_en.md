@@ -38,7 +38,7 @@ Log in to the [ES Console](https://console.cloud.tencent.com/es) and click **Cre
 - Number of Dedicated Master Nodes: 3 or 5. An odd number of nodes ensures high availability and prevents the risk of split-brain.
 - Kibana Node: it is provided free of charge with the 1-core 2 GB MEM specification. Currently, it cannot be modified.
 
-![](https://main.qcloudimg.com/raw/9f1f7bfe2988f7e57235c66f5162c20c.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/ebd4ffbc0a3fa28a53ef875ac901c007.png)
 
 #### 2. Set the name and password
 
@@ -48,12 +48,12 @@ Click **Next** and set a name and password.
 - Password: password corresponding to the aforementioned username. Please set it as required and keep it private. If you forgot it, you can reset it on the details page.
 - Tag: tag is a unified management service provided by Tencent Cloud and can be used to manage existing Tencent Cloud resources in a categorized manner. You can create or modify tags either before or after ES cluster purchase. For more information, please see [Tag](https://intl.cloud.tencent.com/document/product/651/13334).
 
-![](https://main.qcloudimg.com/raw/9eab152498cd0bfa0ae0531243c7fe5f.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/935fae85c0d70dd3dd8fbafe0ce76ee2.png)
 
 #### 3. Confirm configuration information
 
 Click **Next** and confirm configuration information.
-![](https://main.qcloudimg.com/raw/d151fbccf049b07854c9f2420994088a.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/83a44e6f31a17f347af28f3021997fa4.png)
 - Click **Activate** to create the cluster directly if the pay-as-you-go billing mode is selected. You do not need to confirm the order or pay for it, as your account balance will be deducted on an hourly basis during cluster use.
 
 #### 4. Complete the creation

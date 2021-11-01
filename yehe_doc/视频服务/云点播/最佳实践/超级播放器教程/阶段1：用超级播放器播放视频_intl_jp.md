@@ -20,7 +20,7 @@ VODをアクティブにする必要があります。手順は以下のとお�
 1. VODコンソールにログインし、【配信と再生の設定】>[【Domain Management】](https://console.cloud.tencent.com/vod/distribute-play/domain)と選択し、「デフォルトの配信ドメイン名」の操作バーの下の【設定】をクリックして、設定画面に入ります。
 <img src="https://main.qcloudimg.com/raw/06259e41a62ea14ce8eb19ef6480182c.png" width="800" />
 2. 「Refererホットリンク防止」と「Keyホットリンク防止」の状態を確認し、いずれも「無効」状態であることを確認します。
-![](https://main.qcloudimg.com/raw/239391fa14a4b4a59fe260bd9582c82b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/12689eb5bed63fc76cd7d88e38907c09.png)
 
 
 ## 手順1：ビデオのアップロードおよび処理

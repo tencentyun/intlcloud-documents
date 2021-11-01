@@ -18,7 +18,6 @@
 | 视频删除完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33952) | [链接](#FileDeleted) |  
 | 任务流状态变更 | [链接](https://intl.cloud.tencent.com/document/product/266/33953) | [链接](#ProcedureStateChanged) | 
 | 视频编辑完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33954) | - | 
-| 微信发布完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33955) | - | 
 | 视频转码完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33957) | [链接](#TranscodeComplete) | 
 | 指定时间点截图完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33958) | [链接](#CreateSnapshotByTimeOffsetComplete) | 
 | 视频截取雪碧图完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33959) | [链接](#CreateImageSpriteComplete) | 

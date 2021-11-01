@@ -1,5 +1,3 @@
-
-
 ## Overview
 Tencent is the earliest and biggest instant messaging developer in China. QQ and WeChat, both developed by Tencent, have become indispensable apps for every Internet user. In conformity with the trend of industrial digital transformation, Tencent now shares its high-concurrency and highly reliable instant messaging capabilities. With SDKs provided by Tencent, you can easily integrate instant messaging features into your apps to meet various business needs.
 For developer requirements and scenarios in different phases, the Instant Messaging (IM) team provides a series of solutions, including the Android, iOS, Windows, and web SDK components, as well as capabilities for integrating [RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/34620) and [Third-Party Callback APIs](https://intl.cloud.tencent.com/document/product/1047/34354) on the server. With these components and capabilities, developers can construct reliable and stable IM products for free and global communication.
@@ -29,7 +27,7 @@ One-to-one chat supports various message types including text, emojis, locations
 ### Group chat
 A group chat involves multiple participants. IM supports the following four group types based on group joining and organization management methods to meet the requirements of different group chat scenarios.
 
-- A **work group (Work)** is like an ordinary WeChat group. After a work group is created, a user can only join the group by being invited by a friend who is a member of the group. The invitation does not need to be accepted by the invitee or approved by the group owner.
+- A **work group for friends (Work)** is like an ordinary WeChat group. After a work group is created, a user can only join the group by being invited by a friend who is a member of the group. The invitation does not need to be accepted by the invitee or approved by the group owner.
 - A **public group (Public)** is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send a request, and the request needs to be approved by the group owner or an admin before the user can join the group.
 - A **meeting group (Meeting)** allows users to join and exit freely and supports viewing message history from before the user joined the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio and video conferences and online education.
 - An **audio-video group (AVChatRoom)** allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Cloud Streaming Services (CSS) to support on-screen comment chat scenarios.
@@ -62,3 +60,8 @@ IM provides a diverse set of callback APIs, which are free of charge. For more i
 ## Support for Private Deployment
 Private deployment allows an enterprise to deploy systems directly to its own servers and save data locally. IM provides the private deployment feature to assist enterprises in the deployment, implementation, and OPS of the private version. If needed, please apply for the [IM private service](https://intl.cloud.tencent.com/apply/p/itvi76h023).
 >?To apply for the IM private service, you need to log in with your root account of Tencent Cloud.
+
+## Security and Compliance
+Compliance is the foundation for the development of Tencent Cloud IM, which meets the compliance requirements of different countries and industries. In addition to ensuring the **security, compliance, availability, confidentiality, and privacy** of the services it provides, IM also provide relevant support for its customers to **meet their and their customers' compliance requirements, reduce repeated investment in audit work, and improve auditing and management efficiency**.
+
+**IM has passed SOC reports (including SOC 1, SOC 2, and SOC 3), Cybersecurity Classified Protection 2.0, and ISO certifications (including ISO 9001 and ISO 20000).**

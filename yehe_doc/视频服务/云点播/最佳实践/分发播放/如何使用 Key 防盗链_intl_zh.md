@@ -49,7 +49,7 @@ Demo 基于云函数（SCF）搭建了一个 HTTP 服务，用于接收来自客
 
 1. 参考 [快速入门 - 步骤1](https://intl.cloud.tencent.com/document/product/266/8757) 开通云点播服务。
 2. 开通完成后，参考 [设置防盗链](https://intl.cloud.tencent.com/document/product/266/14060) 文档启用 Key 防盗链，并记录下防盗链 Key：
-![](https://main.qcloudimg.com/raw/209bb5a252765cc77fe4402fe7e76d49.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c43642ea12afda47aff5ca5205f63f4f.png)
 >!此处是开通 Key 防盗链，而非开通 Referer 防盗链。如果您同步开通了 Referer 防盗链，那么下文的测试方法有可能因为不符合 Referer 防盗链的要求而导致请求失败。
 
 ### 步骤3：获取 API 密钥和 APPID<span id="p3"></span>
@@ -94,7 +94,7 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 ### 步骤5：测试 Key 防盗链
 
 按照 [上传视频 - 本地上传步骤](https://intl.cloud.tencent.com/document/product/266/33890) 的说明，上传一个测试视频到云点播。上传完成后，单击【快捷查看】，然后单击右侧【复制地址】复制该视频的 URL。
-![](https://main.qcloudimg.com/raw/1f319a8d52f046ad979ea9b66eec1023.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ac27b65a2bb0cc91ac9f71b141a31cb2.png)
 在 CVM 命令行执行`curl`命令尝试直接访问该 URL，结果会因不符合 Key 防盗链规则而被服务器拒绝访问，HTTP 返回码为403（测试时，请将命令中的 URL 替换为实际 URL，下同）：
 
 ```

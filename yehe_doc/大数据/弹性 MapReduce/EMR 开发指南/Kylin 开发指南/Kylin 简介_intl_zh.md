@@ -43,11 +43,11 @@ Kylin 能提供低延迟（sub-second latency）的秘诀就是预计算，即�
 ```
 /usr/local/service/kylin/bin/sample.sh
 ```
-使用默认用户名和密码 ADMIN/KYLIN 登录 Kylin 网站，在左上角项目下拉框中选择`learn_kylin`工程，然后选择名为`kylin_sales_cube`的样例 Cube，选择【Actions】>【Build】，选择一个在2014-01-01之后的日期（覆盖所有的10000样例记录）。
+使用默认用户名和密码 ADMIN/KYLIN 登录 Kylin 网站，在左上角项目下拉框中选择`learn_kylin`工程，然后选择名为`kylin_sales_cube`的样例 Cube，选择**Actions**>**Build**，选择一个在2014-01-01之后的日期（覆盖所有的10000样例记录）。
 ![](https://main.qcloudimg.com/raw/a1a6c3b4dfb1d75411480d2a17227ac8.png)
-单击【Monitor】，查看 build 进度直至 100%。
+单击**Monitor**，查看 build 进度直至 100%。
 ![](https://main.qcloudimg.com/raw/6af053d26b3a044d3f13dcd8bf6a511a.png)
-单击【Insight】，执行 SQLs，例如：
+单击**Insight**，执行 SQLs，例如：
 ![](https://main.qcloudimg.com/raw/d2bf312a8be722bbdd44318da80f54f5.png)
 ```
 select part_dt, sum(price) as total_sold, count(distinct seller_id) as sellers from kylin_sales group by part_dt order by part_dt
@@ -60,7 +60,7 @@ select part_dt, sum(price) as total_sold, count(distinct seller_id) as sellers f
 kylin.env.hadoop-conf-dir=/usr/local/service/hadoop/etc/hadoop
 ```
 2. 检查 Spark 配置
-Kylin 在 `$KYLIN_HOME/spark` 中嵌入一个 Spark binary (v2.1.2)，所有使用 `kylin.engine.spark-conf.` 作为前缀的 Spark 配置属性都能在 `$KYLIN_HOME/conf/kylin.properties` 中进行管理。这些属性当运行提交 Spark job 时会被提取并应用。例如，如果您配置 `kylin.engine.spark-conf.spark.executor.memory=4G`，Kylin 将会在执行 `spark-submit` 操作时使用 `–conf spark.executor.memory=4G` 作为参数。
+Kylin 在`$KYLIN_HOME/spark`中嵌入一个 Spark binary (v2.1.2)，所有使用`kylin.engine.spark-conf.`作为前缀的 Spark 配置属性都能在`$KYLIN_HOME/conf/kylin.properties`中进行管理。这些属性当运行提交 Spark job 时会被提取并应用。例如，如果您配置`kylin.engine.spark-conf.spark.executor.memory=4G`，Kylin 将会在执行`spark-submit`操作时使用`–conf spark.executor.memory=4G`作为参数。
 
  运行 Spark cubing 前，建议查看一下这些配置并根据您集群的情况进行自定义。下面是建议配置，开启了 Spark 动态资源分配：
 ```
@@ -90,7 +90,7 @@ kylin.engine.spark-conf.spark.history.fs.logDirectory=hdfs\:///kylin/spark-histo
 #kylin.engine.spark-conf.spark.yarn.am.extraJavaOptions=-Dhdp.version=current
 #kylin.engine.spark-conf.spark.executor.extraJavaOptions=-Dhdp.version=current
 ```
- 为了在 Hortonworks 平台上运行，需要将 `hdp.version` 指定为 Yarn 容器的 Java 选项，因此需取消 `kylin.properties` 中最后三行的注释。
+ 为了在 Hortonworks 平台上运行，需要将`hdp.version`指定为 Yarn 容器的 Java 选项，因此需取消`kylin.properties`中最后三行的注释。
 
  除此之外，为了避免重复上传 Spark jar 包到 Yarn，您可以手动上传一次，然后配置 jar 包的 HDFS 路径。**HDFS 路径必须是全路径名。**
 ```
@@ -98,26 +98,26 @@ jar cv0f spark-libs.jar -C $KYLIN_HOME/spark/jars/ .
 hadoop fs -mkdir -p /kylin/spark/
 hadoop fs -put spark-libs.jar /kylin/spark/
 ```
-然后，要在 `kylin.properties` 中进行如下配置：
+然后，要在`kylin.properties`中进行如下配置：
 ```
 kylin.engine.spark-conf.spark.yarn.archive=hdfs://sandbox.hortonworks.com:8020/kylin/spark/spark-libs.jar
 ```
-所有 `kylin.engine.spark-conf.*` 参数都可以在 Cube 或 Project 级别进行重写，这为用户提供了灵活性。
+所有`kylin.engine.spark-conf.*`参数都可以在 Cube 或 Project 级别进行重写，这为用户提供了灵活性。
 3. 创建和修改样例 cube
-运行 `sample.sh` 创建样例 cube，然后启动 Kylin 服务器：
+运行`sample.sh`创建样例 cube，然后启动 Kylin 服务器：
 ```
 /usr/local/service/kylin/bin/sample.sh
 /usr/local/service/kylin/bin/kylin.sh start
 ```
-Kylin 启动后，访问 Kylin 网站，在“Advanced Setting”页，编辑名为 `kylin_sales` 的 cube，将【Cube Engine】由【MapReduce】修改为【Spark(Beta)】：
+Kylin 启动后，访问 Kylin 网站，在“Advanced Setting”页，编辑名为`kylin_sales`的 cube，将**Cube Engine**由**MapReduce**修改为**Spark(Beta)**：
 ![](https://main.qcloudimg.com/raw/6fa490fc0ef201b59ebe40fc43fb165b.png)
- 单击【Next】进入“Configuration Overwrites”页面，单击【+ Property】添加属性 `kylin.engine.spark.rdd-partition-cut-mb` 其值为500。
+ 单击**Next**进入“Configuration Overwrites”页面，单击**+ Property**添加属性`kylin.engine.spark.rdd-partition-cut-mb`其值为500。
 ![](https://main.qcloudimg.com/raw/641edfcbcc8c63efbbc5827f70585adc.png)
-样例 cube 有两个耗尽内存的度量：COUNT DISTINCT 和 TOPN(100)。当源数据较小，它们预估的大小会比真实的大很多，导致了更多的 RDD partitions 被切分，使得 build 的速度降低。500是一个较为合理的数字。单击【Next】和【Save】保存 cube。
+样例 cube 有两个耗尽内存的度量：COUNT DISTINCT 和 TOPN(100)。当源数据较小，它们预估的大小会比真实的大很多，导致了更多的 RDD partitions 被切分，使得 build 的速度降低。500是一个较为合理的数字。单击**Next**和**Save**保存 cube。
 >? 对于没有 COUNT DISTINCT 和 TOPN 的 cube，请保留默认配置。
 >
 4. 用 Spark 构建 Cube
-单击【Build】，选择当前日期为 end date。Kylin 会在“Monitor”页生成一个构建 job，第7步是 Spark cubing。Job engine 开始按照顺序执行每一步。
+单击**Build**，选择当前日期为 end date。Kylin 会在“Monitor”页生成一个构建 job，第7步是 Spark cubing。Job engine 开始按照顺序执行每一步。
 ![](https://main.qcloudimg.com/raw/bed9a9eee9d53c3ac23f11e0cabd242c.png)
 当 Kylin 执行这一步时，您可以监视 Yarn 资源管理器中的状态，单击“Application Master”链接将会打开 Spark 的 UI 网页，它会显示每一个 stage 的进度以及详细的信息。
 ![](https://main.qcloudimg.com/raw/4bc73b8571b39eaee400d4b318a3ff63.png)

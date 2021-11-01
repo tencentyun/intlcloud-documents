@@ -1,6 +1,6 @@
 ## 操作シナリオ
 クライアントからのビデオアップロードとは、AppのエンドユーザーがローカルビデオをVODプラットフォームにアップロードすることです。フローチャートは次のとおりです。ここでは、クライアントを使用してビデオをアップロードする方法をご説明します。
-![](https://main.qcloudimg.com/raw/6d4c9f32e257ca84fda505d5307c856e.png)
+![](https://main.qcloudimg.com/raw/b92eb9f4b61aa7f3605e3a372ace494e.png)
 
 ## 前提条件
 
@@ -59,7 +59,7 @@ VODは、クライアントからビデオを手軽にアップロードでき�
 - ### [](id:p1) アップロード時のタスクフローの指定
 開発者がビデオのアップロード完了後に[ビデオ処理タスクフロー](https://intl.cloud.tencent.com/document/product/266/33931)（例：トランスコード、スクリーンキャプチャなど）を自動的に開始したい場合は、[アップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)の生成時に`procedure`パラメータによって実現することができ、パラメータの値をタスクフローテンプレート名にします。VODでは[タスクフローテンプレートの作成](https://intl.cloud.tencent.com/document/product/266/14058)およびテンプレートの命名をサポートし、タスクフローの開始時に、タスクフローテンプレート名によって開始が必要なタスクを示すことができます。
 - ### アップロード時のストレージリージョンの指定
-VODがデフォルトで提供するストレージリージョンは、重慶に設定されています。その他のエリアに保存したい場合は、コンソール上でご自身でその他ストレージリージョンを追加することができます。詳細については、[アップロードストレージ設定](https://intl.cloud.tencent.com/document/product/266/18874)をご参照ください。設定完了後、[アップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)の生成時に`storageRegion`パラメータによって指定でき、パラメータの値をストレージリージョンの[英語の略称](https://intl.cloud.tencent.com/document/product/266/9760)にします。
+VODがデフォルトで提供するストレージリージョンは、シンガポール に設定されています。その他のエリアに保存したい場合は、コンソール上でご自身でその他ストレージリージョンを追加することができます。詳細については、[アップロードストレージ設定](https://intl.cloud.tencent.com/document/product/266/18874)をご参照ください。設定完了後、[アップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)の生成時に`storageRegion`パラメータによって指定でき、パラメータの値をストレージリージョンの[英語の略称](https://intl.cloud.tencent.com/document/product/266/9760)にします。
 - ### アップロード時のカバー追加
 VODでは、アップロードSDKインターフェースに関連するカバーへのパスを入力することで、カバー付きのビデオをアップロードできます。詳細については、以下をご参照ください。
 	- [AndroidのアップロードSDK](https://intl.cloud.tencent.com/document/product/266/33925)

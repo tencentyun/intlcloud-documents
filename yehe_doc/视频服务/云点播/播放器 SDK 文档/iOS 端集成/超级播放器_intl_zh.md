@@ -67,7 +67,6 @@ model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMy
 
 
 运行代码，可以看到视频在手机上播放，并且界面上大部分功能都处于可用状态。
-<img src="https://main.qcloudimg.com/raw/128c45edfc77b319475868c21caec2de.png" width="550">
 
 ### 选择 FileId[](id:FileId)
 
@@ -77,7 +76,7 @@ model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMy
 2. 服务端视频上传时，在 确认上传的通知中包含对应的 FileId。
 
 如果文件已存在腾讯云，则可以进入 [媒资管理](https://console.cloud.tencent.com/vod/media) ，找到对应的文件，查看 FileId。如下图所示，ID 即表示 FileId：
-![](https://main.qcloudimg.com/raw/1a3677d5fe618227a117d7502be42793.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b07b18356d680f156b9ae5fdb1e19f85.png)
 
 
 
@@ -86,7 +85,6 @@ model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMy
 在播放长视频时，打点信息有助于观众找到感兴趣的点。使用 [修改媒体文件属性](https://intl.cloud.tencent.com/document/product/266/37570) API，通过 AddKeyFrameDescs.N 参数可以为视频设置打点信息。
 
 调用后，播放器的界面会增加新的元素。
-<img src="https://main.qcloudimg.com/raw/55ebce6d0c703dafa1ac131e1852e025.png" width="550">
 
 
 ### 小窗播放[](id:smallWindow)
@@ -98,7 +96,7 @@ model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMy
 [[SuperPlayerWindow sharedInstance] show]; // 悬浮显示
 ```
 
-<img src="https://main.qcloudimg.com/raw/e3d4336dce1756d6811bd1d5f70ea3f2.png" width="350">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c5882ec8b3258a06174a9a2dd06dcbf4.png" width="350">
 
 ### 退出播放[](id:exitPlayer)
 

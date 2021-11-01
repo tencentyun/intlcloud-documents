@@ -22,12 +22,12 @@ export PYTHONPATH=/usr/local/service/superset/conf
 
 ## 登录
 
-在浏览器地址栏中输入`http://${master_ip}:18088`（或者通过【 [EMR 控制台](https://console.cloud.tencent.com/emr)】>【组件管理】页面进入）, 打开 Supserset 登录界面，默认用户名为 admin，密码为您创建集群时的密码。
+在浏览器地址栏中输入`http://${master_ip}:18088`（或者通过** [EMR 控制台](https://console.cloud.tencent.com/emr)**>**组件管理**页面进入）, 打开 Supserset 登录界面，默认用户名为 admin，密码为您创建集群时的密码。
 ![](https://main.qcloudimg.com/raw/d250be3123fb3e7da47d69b73ef6343a.png)
 
 ## 添加 DataBase
 
-进入【Sources】>【Databases】界面，单击【Filter List】。
+进入**Sources**>**Databases**界面，单击**Filter List**。
 ![](https://main.qcloudimg.com/raw/c98760953f38fc23d27abcbf5208bd83.png)
 进入如下页面，在 SQLAlchemy URI 中加入您需要添加的组件的 URI。
 ![](https://main.qcloudimg.com/raw/57b69ecbd6f5c2ac0ca4adde380325ae.png)

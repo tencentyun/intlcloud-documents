@@ -4,7 +4,7 @@ Apache Zeppelin 是一个可以进行大数据可视化分析的交互式开发�
 
 
 ### 使用 spark 功能完成 wordcount
-1. 单击页面左侧【Create new note】，在弹出页面中创建 notebook。
+1. 单击页面左侧**Create new note**，在弹出页面中创建 notebook。
  ![](https://main.qcloudimg.com/raw/c31d7b714f22b1170d9c6799572227a3.png)
 2. 配置 spark 对接 EMR 的集群（spark on yarn），修改并保存配置。
 ![](https://main.qcloudimg.com/raw/3794475f902450a00a86e2bb00dd3c42.png)

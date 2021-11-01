@@ -14,8 +14,6 @@ Web 端播放器支持 PC 端和移动端的浏览器视频播放，丰富灵活
 |超级播放器 - URL 播放|[Web 端超级播放器 - 基础播放 Demo](https://imgcache.qq.com/open/qcloud/video/vcplayer/demo/tcplayer-test.html)|
 |超级播放器 - FileID 播放|[Web 端超级播放器 - 点播播放 Demo](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)|
 
-#### Web 端超级播放器 Demo 展示
-![](https://main.qcloudimg.com/raw/e4b8edb05ab7ce9e2122301fd07b5ac0.png)
 
 [](id:mobileDemo)
 ## 移动端播放器 Demo
@@ -42,4 +40,4 @@ Web 端播放器支持 PC 端和移动端的浏览器视频播放，丰富灵活
 </tr></table>
 
 #### 移动端超级播放器 Demo 展示
-![](https://main.qcloudimg.com/raw/1a7f02e1f5b473ac19921307b322d4d6.png)           
+![](https://qcloudimg.tencent-cloud.cn/raw/89a4f989bae14f0c71c55304262b244f.png)           

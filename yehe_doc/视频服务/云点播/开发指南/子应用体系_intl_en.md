@@ -32,7 +32,7 @@ The VOD subapplication system provides the following capabilities:
 - Independent statistics are generated for each subapplication, such as storage usage, bandwidth/traffic, transcoding duration, intelligent video recognition duration, and playback data.
 - Aggregated statistics for all subapplications are provided.
 
-### <span id ="p4"></span>Limits
+### Limits<span id ="p4"></span>
 The VOD subapplication system has the following limits:
 
 - The name and description of the primary application cannot be modified.
@@ -40,7 +40,7 @@ The VOD subapplication system has the following limits:
 - Up to 50 subapplications can be created under one VOD account.
 - No separate billing logic (such as billing mode and separate bill generation) can be set for subapplications. All subapplications under a VOD account belong to the same account, and all VOD usage data (including but not limited to VOD billable items such as storage, traffic, transcoding duration, and intelligent video recognition duration) is aggregated for fee calculation and unified billing.
 
-## <span id="p3"></span>Console Use Instructions
+## Console Use Instructions<span id="p3"></span>
 
 ### Enabling subapplication feature
 
@@ -52,7 +52,7 @@ The VOD subapplication system has the following limits:
 
 ### Selecting role
 After the subapplication feature is enabled, a drop-down list will be displayed in the top-left corner of the [VOD console](https://console.cloud.tencent.com/vod) where you can select a role. If you have just enabled the subapplication feature, there are only two roles in the drop-down list: **admin** and **primary application**. After you create a subapplication, it will be displayed as a role in the drop-down list.
-![](https://main.qcloudimg.com/raw/21a4dd738c969fae9615a77e065ffe66.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0dc90b954520c36cddac7a9d78c24cf8.png)
 
 ### Admin
 Under the admin role, the left sidebar displays the following entries: **Service Overview**, **Application Management**, and **UGSV License**.
@@ -66,7 +66,7 @@ Under the subapplication role, usage of the VOD console is basically the same as
 ## Server API Use Instructions
 After enabling the subapplication feature, you must specify the subapplication whose resources you want to access when using VOD server APIs.
 
-### <span id = "p2"></span>Specifying subapplication in server API
+### Specifying subapplication in server API<span id = "p2"></span>
 VOD server API has been upgraded to [TencentCloud API 3.0](https://intl.cloud.tencent.com/product/api). You can use the `SubAppId` parameter in each API to specify the subapplication you want to access. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
 
 ### Specifying subapplication in server API 2017

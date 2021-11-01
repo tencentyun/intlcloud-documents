@@ -46,7 +46,7 @@ Additional provisions with respect to certain jurisdictions are included in the 
 
 **Modules**
 
-The Modules set out below in the section [Modules](#MODULES) to this privacy policy shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module. See below at [Modules](#MODULES) for more information.
+The Modules set out below in the section [Modules](https://intl.cloud.tencent.com/document/product/301/17345#modules) to this privacy policy shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module. See below at [Modules](https://intl.cloud.tencent.com/document/product/301/17345#modules) for more information.
 
 ### INTRODUCTION
 
@@ -82,7 +82,7 @@ We use cookies and other similar technologies (e.g. web beacons, Flash cookies, 
 
 You have the option to permit installation of such Cookies or subsequently disable them. You may accept all Cookies, or instruct the web browser to provide notice at the time of installation of Cookies, or refuse to accept all Cookies by adjusting the relevant function in the web browser of your computer. However, in the event of your refusal to install Cookies, Tencent Cloud may be prevented from providing some of its Services available to you.
 
-For more information about the Cookies we use, please see our [Cookies Policy](https://intl.cloud.tencent.com/document/product/301/17346)
+For more information about the Cookies we use, please see our [Cookies Policy](https://intl.cloud.tencent.com/document/product/301/17346).
 
 #### Children
 
@@ -469,7 +469,7 @@ This right may be exercised upon your discovery and substantial proof of any of 
 By consenting to this Privacy Policy, you consent to us:
  - collecting and processing your personal information as described in the section “[How We Use Your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#how-we-use-your-personal-information)”;
  - sharing your personal information with third parties, companies within our corporate group, and a third party that acquires substantially all or substantially all of us or our business, as described in this Privacy Policy and for the purposes stated herein; and
- - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “[How We Store and Share Your Personal Information](#How-We-Share-and-Store-Your-Personal-Information)”.
+ - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “[How We Store and Share Your Personal Information](#how-we-share-and-store-your-personal-information)”.
 
 ### SAUDI ARABIA 
 You consent to the disclosure, transfer and export of your personal information outside of Saudi Arabia or any other jurisdiction in which you provided it.
@@ -535,7 +535,7 @@ Your personal information, if required to be disclosed to the law enforcement ag
 
 You have the right to access, correct, and erase the personal information we hold about you. You also have the right to withdraw your earlier provided consent to collect, store, process, use and disclose your personal information and to request us to stop providing your personal information to a third party.
 
-### MODULES
+### MODULES 
 Last updated: [2020-08-17]
 The following Modules shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module:
 1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36175).

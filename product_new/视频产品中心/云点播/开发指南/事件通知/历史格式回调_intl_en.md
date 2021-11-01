@@ -18,7 +18,6 @@ The comparison between callbacks in v2.0 and v3.0 API formats is as follows:
 | Video deletion completion | [Link](https://intl.cloud.tencent.com/document/product/266/33952) | [Link](#FileDeleted) |  
 | Task flow status change | [Link](https://intl.cloud.tencent.com/document/product/266/33953) | [Link](#ProcedureStateChanged) | 
 | Video editing completion | [Link](https://intl.cloud.tencent.com/document/product/266/33954) | - | 
-| Release on WeChat completion | [Link](https://intl.cloud.tencent.com/document/product/266/33955) | - | 
 | Video transcoding completion | [Link](https://intl.cloud.tencent.com/document/product/266/33957) | [Link](#TranscodeComplete) | 
 | Time point screencapturing completion | [Link](https://intl.cloud.tencent.com/document/product/266/33958) | [Link](#CreateSnapshotByTimeOffsetComplete) | 
 | Image sprite generating completion | [Link](https://intl.cloud.tencent.com/document/product/266/33959) | [Link](#CreateImageSpriteComplete) | 

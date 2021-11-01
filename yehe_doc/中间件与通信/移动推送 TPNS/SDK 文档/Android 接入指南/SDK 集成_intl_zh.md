@@ -14,7 +14,7 @@ Android SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供�
 
 1. 登录 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)，在【产品管理】>【配置管理】页面获取应用的 AccessID、AccessKey。
 2. 在 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面，获取当前最新版本号。
-
+![](https://main.qcloudimg.com/raw/37b19f4e6c8dba5084c052f7e442be7f.png)
 3. 在 app build.gradle 文件下，配置以下内容：
 ```
 android {
@@ -54,15 +54,16 @@ dependencies {
 >- 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
 >在 AndroidManifest 文件 application 标签内添加以下元数据：
 >```
-<application>
-// 其他安卓组件
-<meta-data
-		android:name="XG_SERVER_SUFFIX"
-		android:value="其他服务接入点域名" />
-</application>
+><application>
+>// 其他安卓组件
+><meta-data
+>		android:name="XG_SERVER_SUFFIX"
+>		android:value="其他服务接入点域名" />
+></application>
 >```
+```
 > 其他服务接入点域名如下：
->  - 上海：`tpns.sh.tencent.com`
+>   - 上海：`tpns.sh.tencent.com`
 >  - 新加坡：`tpns.sgp.tencent.com`
 >  - 中国香港：`tpns.hk.tencent.com`
 >  
@@ -72,7 +73,6 @@ dependencies {
  - 如在添加以上 abiFilter 配置后， Android Studio 出现以下提示：
    NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin，则在 Project 根目录的 gradle.properties 文件中添加  `android.useDeprecatedNdk=true`。
  - 如需监听消息请参考 XGPushBaseReceiver 接口或 Demo（在 SDK 压缩包内，可前往 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面获取 ）的 MessageReceiver 类。自行继承 XGPushBaseReceiver 并且在配置文件中配置如下内容（请勿在 receiver  里处理耗时操作）：
-
 ​```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
     <intent-filter>
@@ -85,7 +85,6 @@ dependencies {
 ```
 
  - 如需兼容 Android P，需要添加使用 Apache HTTP client 库，在 AndroidManifest 的 application 节点内添加以下配置即可。
-
 ```
 <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 ```
@@ -274,13 +273,14 @@ dependencies {
 > - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
 > 在 AndroidManifest 文件 application 标签内添加以下元数据：
 >```
-<application>
-// 其他安卓组件
-<meta-data
-		android:name="XG_SERVER_SUFFIX"
-		android:value="其他服务接入点域名" />
-</application>
+><application>
+>// 其他安卓组件
+><meta-data
+>		android:name="XG_SERVER_SUFFIX"
+>		android:value="其他服务接入点域名" />
+></application>
 >```
+```
 > 其他服务接入点域名如下：
 >   - 上海：`tpns.sh.tencent.com`
 >   - 新加坡：`tpns.sgp.tencent.com`
@@ -293,13 +293,17 @@ dependencies {
 
 >! 上线时请设置为 false。
 >
+
 ​```java
 XGPushConfig.enableDebug(this,true);
 ```
 
 
 ### Token 注册
+在需要启动推送服务的地方调用推送服务注册接口：
 
+>! 建议仅在 App 的主进程内调用注册接口。
+>
 
 ```java
 XGPushManager.registerPush(this, new XGIOperateCallback() {
@@ -406,7 +410,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 XGPushConfig.getToken(getApplicationContext());
 ```
 
-
+![](https://main.qcloudimg.com/raw/854020af14428df9972629e7dbbee55f.png)
 
 ### 获取 TPNS 运行日志交互建议
 
@@ -425,6 +429,3 @@ XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
     }
 });
 ```
-
-
-

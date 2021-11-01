@@ -24,9 +24,6 @@ Please [contact us](https://intl.cloud.tencent.com/document/product/266/19905) t
 ### What should I do if a 403 error is returned for a video link and the video cannot be loaded?
 Please check whether referer or key hotlink protection has been enabled and whether there are authentication parameters during playback.
 
-### How do I solve the problem where a video can be played back normally except on WeChat?
-This is because the WeChat browser blocks the video. You need to appeal to WeChat to remove the blockage.
-
 ### What should I do if a video cannot be played back on PCs and an error message about cross-domain access appears in the web console?
 To play back videos with Flash on PCs, the `crossdomain.xml` file and correct access policy need to be configured and cross-domain access need to be enabled for the video storage server.
 

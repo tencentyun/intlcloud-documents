@@ -31,7 +31,8 @@ Currently, video compression is not supported.
 
 ### How do I upload a large number of video files to VOD?
 
-VOD uses a queuing upload method to ensure sequential uploading of video files. If you have special needs (for example, you need to upload terabytes to petabytes of files), please submit a ticket.
+VOD uses a queuing upload method to ensure sequential uploading of video files. If you have special needs (for example, you need to upload terabytes to petabytes of files), please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
+
 ### The upload return URL is in HTTP. How do I set it to HTTPS?
 For more information, please see [Default Distribution Configuration](https://intl.cloud.tencent.com/document/product/266/35768).
 

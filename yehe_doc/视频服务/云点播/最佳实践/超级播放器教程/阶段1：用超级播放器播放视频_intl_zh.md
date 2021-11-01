@@ -20,7 +20,7 @@
 1. 登录云点播控制台，选择【分发播放设置】>[【域名管理】](https://console.cloud.tencent.com/vod/distribute-play/domain)，单击“默认分发域名”操作栏下的【设置】，进入设置页面。
 <img src="https://main.qcloudimg.com/raw/06259e41a62ea14ce8eb19ef6480182c.png" width="800" />
 2. 查看“Referer 防盗链”和“Key 防盗链”的启用状态，确认均为“未启用”状态。
-![](https://main.qcloudimg.com/raw/239391fa14a4b4a59fe260bd9582c82b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/12689eb5bed63fc76cd7d88e38907c09.png)
 
 
 ## 步骤1：上传及处理视频
