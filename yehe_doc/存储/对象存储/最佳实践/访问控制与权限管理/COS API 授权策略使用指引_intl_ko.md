@@ -445,7 +445,9 @@ APPID가 1250000000이고 리전이 ap-beijing이며 버킷 이름이 examplebuc
 
 ### 멀티파트 업로드 
 
-멀티파트 업로드에는 Initiate Multipart Upload, List Multipart Uploads, List Parts, Upload Part, Complete Multipart Upload, Abort Multipart Upload가 포함되며, 해당 작업 권한을 부여할 경우 정책의 action을 `"name/cos:InitiateMultipartUpload","name/cos:ListMultipartUploads","name/cos:ListParts","name/cos:UploadPart","name/cos:CompleteMultipartUpload","name/cos:AbortMultipartUpload"`의 집합으로 설정합니다.
+멀티파트 업로드에는 Initiate Multipart Upload, List Multipart Uploads, List Parts, Upload Part, Complete Multipart Upload, Abort Multipart Upload가 포함되며, 해당 작업 권한을 부여할 경우 정책의 action을 
+`"name/cos:InitiateMultipartUpload","name/cos:ListMultipartUploads",
+"name/cos:ListParts","name/cos:UploadPart","name/cos:CompleteMultipartUpload","name/cos:AbortMultipartUpload"`의 집합으로 설정합니다.
 
 #### 예시 
 
@@ -637,7 +639,10 @@ APPID가 1250000000이고 리전이 ap-beijing이며 버킷 이름이 examplebuc
 
 ### 멀티파트 복사
 
-API는 Upload Part - Copy이며, 해당 작업 권한을 부여할 경우 정책의 타깃 객체의 action은 `"name/cos:InitiateMultipartUpload","name/cos:ListMultipartUploads","name/cos:ListParts","name/cos:PutObject","name/cos:CompleteMultipartUpload","name/cos:AbortMultipartUpload"`의 집합으로 설정하고, 원본 객체의 action은 name/cos:GetObject로 설정합니다.
+API는 Upload Part - Copy이며, 해당 작업 권한을 부여할 경우 정책의 타깃 객체의 action은 
+`"name/cos:InitiateMultipartUpload","name/cos:ListMultipartUploads",
+"name/cos:ListParts","name/cos:PutObject","name/cos:CompleteMultipartUpload","name/cos:AbortMultipartUpload"`
+의 집합으로 설정하고, 원본 객체의 action은 name/cos:GetObject로 설정합니다.
 
 #### 예시 
 
