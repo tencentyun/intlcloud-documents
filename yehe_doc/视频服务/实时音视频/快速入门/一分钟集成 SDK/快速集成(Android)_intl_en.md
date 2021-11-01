@@ -1,32 +1,32 @@
 This document describes how to quickly integrate the Tencent Cloud TRTC SDK for Android into your project in the following steps.
 
-## Development Environment Requirements
+## Environment Requirements
 - Android Studio 3.5 or above.
 - Android 4.1 (SDK API 16) or above.
 
-## Integrating the SDK (aar)
+## Integrating the SDK (AAR)
 
-You can choose to use Gradle for automatic loading or manually download the aar and import it into your current project.
+You can use Gradle to automatically load the AAR file or manually download the AAR file and import it into your project.
 
 ### Method 1. Automatic loading (aar)
 The TRTC SDK has been released to the JCenter repository, and you can configure Gradle to download updates automatically.
-Simply use Android Studio to open the project that needs to be integrated with the SDK ([TRTCSimpleDemo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo) is used as an example in this document), and then modify the `app/build.gradle` file in three simple steps to complete SDK integration:
-![](https://main.qcloudimg.com/raw/fd01c252724cbf31ec7356286a931661.png)
+Simply use Android Studio to open the project that needs to be integrated with the SDK ([TRTCScenesDemo](https://github.com/tencentyun/LiteAVClassic/tree/master/Android/TRTCScenesDemo) is used as an example in this document), and then modify the `app/build.gradle` file in three simple steps to complete SDK integration:
+![](https://main.qcloudimg.com/raw/47b8e9f7ee41895a479334f16dd50a12.png)
 
-1. Add the TRTC SDK dependencies to `dependencies`.
+1. Add the TRTC SDK dependency to `dependencies`.
  - Run the following command to use com.android.tools.build:gradle v3.x:
 ```
 dependencies {
          implementation 'com.tencent.liteav:LiteAVSDK_TRTC:latest.release'
 }
 ```
- - Run the following command to use com.android.tools.build:gradle v2.x:
+ - Run the following command if you use the 2.x version of com.android.tools.build:gradle.
 ```
 dependencies {
          compile 'com.tencent.liteav:LiteAVSDK_TRTC:latest.release'
 }
 ```
-2. In `defaultConfig`, specify the CPU architecture to be used by the application.
+2. In `defaultConfig`, specify the CPU architecture to be used by your application.
 ```
 defaultConfig {
        ndk {
@@ -35,20 +35,19 @@ defaultConfig {
 }
 ```
 >?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
->
-3. Click **Sync Now** to automatically download and integrate the SDK into the project.
+3. Click **Sync Now** to automatically download the SDKs and integrate them into your project.
 
 
-### Method 2. Manual download (aar)
-If JCenter cannot be connected to, you can manually download the SDK and integrate it into your project:
+### Method 2: manual download (AAR)
+If you have difficulty accessing JCenter, you can manually download the SDK and integrate it into your project.
 
-1. [Download the SDK](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip).
-2. Copy the downloaded aar file to the **app/libs** directory of the project.
-3. Add **flatDir** to `build.gradle` under the project’s root directory and specify the local repository path.
-![](https://main.qcloudimg.com/raw/bc3215028103fe980aedcbf011b97b02.png)
-4. Add the code that imports the aar library to `app/build.gradle`.
-![](https://main.qcloudimg.com/raw/449a4a2d8d7cb2503da9fb480beb9c32.png)
-5. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application.
+1. [Download the SDK](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip).
+2. Copy the downloaded AAR file to the **app/libs** directory of your project.
+3. Add **flatDir** to `build.gradle` under the project's root directory and specify a local path for the repository.
+![](https://main.qcloudimg.com/raw/3b07d38f105167ae52ffdda9a1712cec.png)
+4. Add code in `app/build.gradle` to import the AAR file.
+![](https://main.qcloudimg.com/raw/143621f900eb6f7b867d89b71c0dd13d.png)
+5. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by your application.
 ```
 defaultConfig {
        ndk {
@@ -56,21 +55,20 @@ defaultConfig {
        }
 }
 ```
->Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
->
+>?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
 6. Click **Sync Now** to complete the integration of TRTC SDK.
 
 
-## Integrating the SDK (jar)
-If you do not want to integrate the aar library, you can choose to integrate the TRTC SDK by importing the jar and so libraries:
+## Integrating SDK (JAR)
+If you do not want to import the AAR library, you can also integrate TRTC SDK by importing JAR and SO libraries.
 
-1. [Download the jar library](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip). The file path is `SDK/LiteAVSDK_TRTC_xxx.zip` (xxx indicates the version number of TRTC SDK).
-2. After decompression, you can get the `libs` directory which contains the jar files and so folders.
-3. Copy the extracted jar files as well as armeabi, armeabi-v7a, and arm64-v8a folders to the `app/libs` directory.
-![](https://main.qcloudimg.com/raw/5bf82ca89b3a14cca470fcedc048d7fa.png)
-4. Add the code that imports the jar library to `app/build.gradle`.
-![](https://main.qcloudimg.com/raw/6ffbb4b79c06555376b137c849b43bb7.png)	
-5. Add the code that imports the so library to `app/build.gradle`.
+1. [Download the JAR library](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip). The file path is `SDK/LiteAVSDK_TRTC_xxx.zip` (xxx indicates the version number of TRTC SDK).
+2. Decompress the file, and you will find a `libs` directory that contains a JAR file and several SO folders.
+3. Copy the JAR file and `armeabi`, `armeabi-v7a`, and `arm64-v8a` folders to the `app/libs` directory.
+![](https://main.qcloudimg.com/raw/c7b498b40bff8c248cd72fcd01f07933.png)
+4. Add the code that imports the JAR library to `app/build.gradle`.
+![](https://main.qcloudimg.com/raw/5369b8c9bbb855622b22c7843a591e2e.png)	
+5. Add the code that imports the SO library to `app/build.gradle`.
 ```
 sourceSets {
        main {
@@ -78,8 +76,8 @@ sourceSets {
        }
 }
 ```
-![](https://main.qcloudimg.com/raw/299eeb5b3e8961e816f3ce17b97b4339.png)
-6. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application. 
+![](https://main.qcloudimg.com/raw/7aa7eea5d26086b0b9c54ef7a910c6dd.png)
+6. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by your application. 
 ```
 defaultConfig {
        ndk {
@@ -87,7 +85,7 @@ defaultConfig {
        }
 }
 ```
->？Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
+>?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
 >
 7. Click **Sync Now** to complete the integration of TRTC SDK.
 
@@ -109,7 +107,9 @@ Configure application permissions in `AndroidManifest.xml`. The TRTC SDK require
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
->! Do not run the `android:hardwareAccelerated="false"` code to disable hardware acceleration; otherwise, the video streams of the peer cannot be rendered.
+
+>! Do not set `android:hardwareAccelerated="false"`; otherwise, the video stream of the remote user cannot be rendered after hardware acceleration is disabled.
+
 ## Setting Obfuscation Rules
 In the `proguard-rules.pro` file, add the classes related to the TRTC SDK to the "do not obfuscate" list:
 
@@ -128,6 +128,46 @@ packagingOptions {
 	doNotStrip "*/arm64-v8a/libYTCommon.so"
 }
 ```
-![](https://main.qcloudimg.com/raw/e40d5c294a59d56a1f89f20960c7e4c1.png)
+![](https://main.qcloudimg.com/raw/b847d95fc05d2b97f85ffdb0b89438cc.png)
 
 
+[](id:using_cpp)
+## Using SDK Through C++ APIs (Optional)
+If you prefer to use C++ APIs instead of Java for development, you can perform this step. If you only use Java to call the TRTC SDK, please skip this step.
+1. First, you need to integrate the TRTC SDK by importing JAR and SO libraries as instructed above.
+2. Copy the C++ header file in the SDK to the project (path: `SDK/LiteAVSDK_TRTC_xxx/libs/include`) and configure the `include` folder path and dynamic link to the SO library in `CMakeLists.txt`.
+```
+cmake_minimum_required(VERSION 3.6)
+
+# Configure the C++ API header file path
+include_directories(
+        ${CMAKE_CURRENT_SOURCE_DIR}/include  # Copied from `SDK/LiteAVSDK_TRTC_xxx/libs/include`
+)
+
+add_library(
+        native-lib
+        SHARED
+        native-lib.cpp)
+
+# Configure the path of the `libliteavsdk.so` dynamic library
+add_library(libliteavsdk SHARED IMPORTED)
+set_target_properties(libliteavsdk  PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/../../../libs/${ANDROID_ABI}/libliteavsdk.so)
+
+find_library(
+        log-lib
+        log)
+
+# Configure the dynamic link as `libliteavsdk.so`
+target_link_libraries(
+        native-lib
+        libliteavsdk
+        ${log-lib})
+```
+3. Use the namespace: the methods and types of cross-platform C++ APIs are defined in the `trtc` namespace. To simplify your code, you are advised to use the `trtc` namespace.
+```
+using namespace trtc;
+```
+
+>?
+>- For more information on how to configure the Android Studio C/C++ development environments, please see [Add C and C++ code to your project](https://developer.android.com/studio/projects/add-native-code). 
+>- Currently, only the TRTC edition of the SDK supports C++ APIs. For more information on how to use C++ APIs, please see [Overview](https://intl.cloud.tencent.com/document/product/647/35131).
