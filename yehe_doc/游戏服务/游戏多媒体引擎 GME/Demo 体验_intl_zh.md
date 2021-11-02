@@ -76,7 +76,7 @@
 
 ### 1. 下载
 
-单击下载 [3D语音演示程序](https://picture-1256313114.cos.ap-beijing.myqcloud.com/GMEDemo.zip)，下载完后进行解压。
+单击下载 [3D语音演示程序](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.4/Other/GMEDemo_intl.zip)，下载完后进行解压。
 
 ### 2. 打开 Demo
 
