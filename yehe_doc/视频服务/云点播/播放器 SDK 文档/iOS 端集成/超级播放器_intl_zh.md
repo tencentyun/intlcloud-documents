@@ -34,6 +34,7 @@ pod 'SuperPlayer'
 ### 使用播放器[](id:usePlayer)
 
 播放器主类为`SuperPlayerView`，创建后即可播放视频。
+
 ```objc
 // 引入头文件
 #import <SuperPlayer/SuperPlayer.h>
@@ -54,6 +55,7 @@ model.videoId = [[SuperPlayerVideoId alloc] init];
 model.videoId.fileId = "5285890799710670616"; // 配置 FileId
 [_playerView playWithModel:model];
 ```
+
 ```objc
 //开启防盗链需填写 psign，psign 即超级播放器签名，签名介绍和生成方式参见链接：https://cloud.tencent.com/document/product/266/42436
 SuperPlayerModel *model = [[SuperPlayerModel alloc] init];
@@ -88,6 +90,7 @@ model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMy
 
 
 ### 小窗播放[](id:smallWindow)
+
 小窗播是指在 App 内，悬浮在主 Window 上的播放器。使用小窗播放非常简单，只需要在适当位置调用下面代码即可：
 
 ```objc
