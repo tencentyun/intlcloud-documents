@@ -76,7 +76,7 @@ After [login](#test), click **Voice Message** to enter the language setting page
 
 ### 1. Download
 
-Download and then decompress the [3D Audio Demo](https://picture-1256313114.cos.ap-beijing.myqcloud.com/GMEDemo.zip).
+Download and then decompress the [3D Audio Demo](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.4/Other/GMEDemo_intl.zip).
 
 ### 2. Run the demo
 
