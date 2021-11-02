@@ -11,7 +11,7 @@ Vsftpd（very secure FTP daemon）は、多数のLinuxディストリビュー�
 ### 手順１：CVMにログインする
 [標準的な方法を使用してLinuxインスタンスにログインする（推奨）](https://intl.cloud.tencent.com/document/product/213/5436)。実際の操作方法に応じて、他のログイン方法を選択することもできます：
 - [リモートログインソフトウェアを使用してLinuxインスタンスにログインする](https://intl.cloud.tencent.com/document/product/213/32502)
-- [SSHを使用してLinuxインスタンスにログイン] (https://intl.cloud.tencent.com/document/product/213/32501)
+-[SSHを使用してLinuxインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32501)
 
 ### 手順2：vsftpdのインストール
 1. 次のコマンドを実行し、vsftpdをインストールします。

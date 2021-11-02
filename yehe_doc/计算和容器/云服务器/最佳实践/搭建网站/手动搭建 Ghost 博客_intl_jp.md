@@ -23,7 +23,7 @@ Ghostウェブサイトを構築するには、Lunux OSおよびコマンドに�
 ### ステップ1：Linuxインスタンスにログインする
 [標準方式を使用してLinuxインスタンスにログイン（推奨）](https://intl.cloud.tencent.com/document/product/213/5436)します。実際の操作方法に応じて、他のログイン方法を選択することもできます。
 - [リモートログインソフトウェアを使用してLinuxインスタンスにログインする](https://intl.cloud.tencent.com/document/product/213/32502)
-- [SSHを使用してLinuxインスタンスにログイン] (https://intl.cloud.tencent.com/document/product/213/32501)
+-[SSHを使用してLinuxインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32501)
 
 ### 手順2：新規ユーザーの作成
 1. Ubuntu OSのCVMにログインした後、[Ubuntuシステムでrootユーザーを使用してログイン](https://intl.cloud.tencent.com/document/product/213/17278)を参照して、rootユーザーに切り替えてください。

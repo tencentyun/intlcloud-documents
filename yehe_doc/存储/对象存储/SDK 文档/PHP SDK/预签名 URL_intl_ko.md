@@ -2,7 +2,7 @@
 PHP SDK는 사전 서명된 URL을 가져오는 인터페이스를 제공하며, 요청 예시는 다음과 같습니다.
 
 >?
-> - 사용자는 임시 키를 사용하여 사전 서명을 생성하고, 임시 승인을 통해 사전 서명 업로드 및 다운로드 요청의 보안성을 강화할 것을 권장합니다. 임시 키 신청 시, [최소 권한의 원칙 관련 가이드](https://intl.cloud.tencent.com/document/product/436/32972)를 준수하여 타깃 버킷이나 객체 이외의 리소스가 유출되지 않도록 하시기 바랍니다.
+> - 사용자는 임시 키를 사용하여 사전 서명을 생성하고, 임시 승인을 통해 사전 서명 업로드 및 다운로드 요청의 보안성을 강화할 것을 권장합니다. 임시 키 신청 시, [최소 권한의 원칙 설명](https://intl.cloud.tencent.com/document/product/436/32972)을 준수하여 타깃 버킷이나 객체 이외의 리소스가 유출되지 않도록 하시기 바랍니다.
 > - 사전 서명 생성을 위해 영구 키를 사용해야 하는 경우, 리스크 방지를 위해 영구 키 권한을 업로드 또는 다운로드 작업으로 제한할 것을 권장합니다.
 > 
 
@@ -21,16 +21,14 @@ $cosClient = new Qcloud\Cos\Client(
         'region' => $region,
         'schema' => 'https', //프로토콜 헤더, 기본값: http
         'credentials'=> array(
-            'secretId'  => $secretId,
+            'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 ### 사전 서명 간편 업로드
 try {
     $signedUrl = $cosClient->getPreSignedUrl('putObject', array(
         'Bucket' => "examplebucket-1250000000", //버킷, 형식: BucketName-APPID
         'Key' => "exampleobject", //버킷 내 객체의 위치, 즉 객체 키
-        'Body' => 'string', //비어 있거나 임의의 문자열일 수 있습니다.
-        'Params' => array(), //서명을 삽입할 요청 매개변수
-        'Headers' => array() //서명을 삽입할 요청 헤더
+        'Body' => 'string' //비어 있거나 임의의 문자열일 수 있습니다.
     ), '+10 minutes'); //서명 유효기간
     // 요청 완료
     echo ($signedUrl);
@@ -46,9 +44,7 @@ try {
             'Key' => "exampleobject", //버킷 내 객체의 위치, 즉 객체 키
             'UploadId' => 'string',
             'PartNumber' => '1',
-            'Body' => 'string',
-            'Params' => array(), //서명을 삽입할 요청 매개변수
-            'Headers' => array() //서명을 삽입할 요청 헤더
+            'Body' => 'string'
             ), '+10 minutes'); //서명 유효기간
     // 요청 완료
     echo ($signedUrl);
@@ -75,9 +71,7 @@ $cosClient = new Qcloud\Cos\Client(
 try {
     $signedUrl = $cosClient->getPreSignedUrl('getObject', array(
         'Bucket' => "examplebucket-1250000000", //버킷, 형식: BucketName-APPID
-        'Key' => "exampleobject", //버킷 내 객체의 위치, 즉 객체 키
-        'Params' => array(), //서명을 삽입할 요청 매개변수
-        'Headers' => array() //서명을 삽입할 요청 헤더
+        'Key' => "exampleobject" //버킷 내 객체의 위치, 즉 객체 키
         ), '+10 minutes'); //서명 유효기간
     // 요청 완료
     echo ($signedUrl);
@@ -121,9 +115,7 @@ try {
     $signedUrl = $cosClient->getPreSignedUrl('putObject', array(
         'Bucket' => "examplebucket-1250000000", //버킷, 형식: BucketName-APPID
         'Key' => "exampleobject", //버킷 내 객체의 위치, 즉 객체 키
-        'Body' => 'string',
-        'Params' => array(), //서명을 삽입할 요청 매개변수
-        'Headers' => array() //서명을 삽입할 요청 헤더
+        'Body' => 'string'
         ), '+10 minutes'); //서명 유효기간
     // 요청 완료
     echo ($signedUrl);
@@ -139,9 +131,7 @@ try {
         'Key' => "exampleobject", //버킷 내 객체의 위치, 즉 객체 키
         'UploadId' => '',
         'PartNumber' => '1',
-        'Body' => '',
-        'Params' => array(), //서명을 삽입할 요청 매개변수
-        'Headers' => array() //서명을 삽입할 요청 헤더
+        'Body' => ''
         ), '+10 minutes'); //서명 유효기간
     // 요청 완료
     echo ($signedUrl);
@@ -171,8 +161,6 @@ try {
     $signedUrl = $cosClient->getPreSignedUrl('getObject', array(
         'Bucket' => "examplebucket-1250000000", //버킷, 형식: BucketName-APPID
         'Key' => "exampleobject" //버킷 내 객체의 위치, 즉 객체 키
-        'Params' => array(), //서명을 삽입할 요청 매개변수
-        'Headers' => array() //서명을 삽입할 요청 헤더
     ), '+10 minutes'); //서명 유효기간
     // 요청 완료
     echo ($signedUrl);

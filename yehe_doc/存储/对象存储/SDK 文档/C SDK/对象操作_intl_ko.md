@@ -4,13 +4,13 @@
 
 **간단한 작업**
 
-| API                                                          | 작업명         | 작업 설명                       |
+| API                                                          | 작업 이름         | 작업 설명                   |
 | ------------------------------------------------------------ | -------------- | ------------------------------ |
-| [GET Bucket(List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회   | 버킷의 일부 또는 모든 객체 조회           |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 간편한 객체 업로드   | 버킷에 객체 업로드           |
+| [GET Bucket(List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회   | 버킷의 일부 또는 모든 객체 조회 |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 객체 간편 업로드(폴더 생성)   | 하나의 객체를 버킷에 업로드           |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 조회 | 객체 메타데이터 정보 조회           |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 객체를 로컬에 다운로드        |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사 설정   | 타깃 경로에 파일 복사             |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 로컬에 객체 다운로드             |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사 설정(속성 수정)   | 파일을 타깃 경로에 복사                       |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 단일 객체 삭제   | 버킷에서 지정 객체 삭제         |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 다수의 객체 삭제   | 버킷에서 객체 일괄 삭제         |
 
@@ -19,19 +19,19 @@
 | API                                                          | 작업명         | 작업 설명                             |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 멀티파트 업로드 조회   | 현재 진행 중인 멀티파트 업로드 정보 조회         |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 멀티파트 업로드 초기화 | 	멀티파트 업로드 작업 초기화     |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 멀티파트 업로드 초기화 | 멀티파트 업로드 작업 초기화                   |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 파트 업로드       | 파일 멀티파트 업로드                         |
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 멀티파트 복사       | 다른 객체를 한 파트로 복사             |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 업로드된 파트 조회   | 특정 멀티파트 업로드 작업에서 업로드된 파트 조회   |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 멀티파트 업로드 완료   | 전체 파일의 멀티파트 업로드 완료               |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 멀티파트 업로드 작업 중지 및 업로드된 파트 삭제 |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 하나의 멀티파트 업로드 작업 중지 및 이미 업로드한 파트 삭제 |
 
 **기타 작업**
 
 | API                                                          | 작업명       | 작업 설명                           |
 | ------------------------------------------------------------ | ------------ | ---------------------------------- |
 | [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구 | 아카이브 유형의 객체 검색 및 액세스           |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | 객체 ACL 설정| 버킷의 특정 객체의 액세스 제어 리스트 설정 |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | 객체 ACL 설정 | 버킷의 특정 객체의 액세스 제어 리스트 설정 |
 | [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | 객체 ACL 조회 | 객체 액세스 제어 리스트 조회             |
 
 ## 간단한 작업
@@ -63,7 +63,7 @@ cos_status_t *cos_list_object(const cos_request_options_t *options,
 | marker             | 기본적으로 UTF-8 이진법 순서로 열거되며, 모든 열거 값은 marker부터 시작  | String  |
 | delimiter          | 세퍼레이터 조회, 객체 키 그룹 나누기에 사용                             | String  |
 | max_ret            | 한 번에 반환하는 최대 항목 수, 기본값: 1000                             | Struct  |
-| truncated          | 반환 항목의 잘림 여부는 'true' 또는 'false'                      | Boolean |
+| truncated          | 반환 항목의 잘림 여부는 ’true’ 또는 ’false’                      | Boolean |
 | next_marker        | 반환 항목이 잘린 경우, 반환된 NextMarker가 다음 항목의 시작점이 됨   | String  |
 | object_list        | Get Bucket 작업에서 반환한 객체 정보 리스트                            | Struct  |
 | key                | Get Bucket 작업에서 반환한 Object 이름                            | Struct  |
@@ -97,7 +97,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -128,7 +128,7 @@ cos_pool_destroy(p);
 
 #### 예시2: 디렉터리의 객체 나열
 
-COS 자체에는 폴더 및 디렉터리의 개념이 없습니다. 사용자의 습관에 맞춰 세퍼레이터 /로 '폴더'를 구현할 수 있습니다.
+COS 자체에는 폴더 및 디렉터리의 개념이 없습니다. 사용자의 습관에 맞춰 세퍼레이터 /로 ‘폴더’를 구현할 수 있습니다.
 
 ```c
 cos_pool_t *p = NULL;
@@ -154,17 +154,17 @@ cos_str_set(&bucket, TEST_BUCKET_NAME);
 //list object (get bucket)
 cos_list_object_params_t *list_params = NULL;
 list_params = cos_create_list_object_params(p);
-// prefix는 나열된 object의 key가 prefix로 시작함을 의미합니다.
+// prefix는 나열된 object의 key가 prefix로 시작함을 의미함
 cos_str_set(&list_params->prefix, "folder/");
-// delimiter는 세퍼레이터를 의미합니다. /로 설정하면 현재 디렉터리의 object를 나열하고, 공백으로 설정하면 전체 object를 나열합니다.
+// delimiter는 세퍼레이터를 의미함. /로 설정하면 현재 디렉터리의 object를 나열하고, 공백으로 설정하면 전체 object를 나열함
 cos_str_set(&list_params->delimiter, "/");
-// 순회할 최대 객체 수를 설정합니다. 한 번에 지원되는 listobject는 최대 1000개입니다.
+// 순회할 객체의 최대 수량 설정. listobject 1회당 최대 1000개까지 지원함
 list_params->max_ret = 1000;
 cos_str_set(&marker, "");
 while (is_truncated) {
     list_params->marker = marker;
     s = cos_list_object(options, &bucket, list_params, &resp_headers);
-    if (!cos_status_is_ok(s)) {
+    if (! cos_status_is_ok(s)) {
         printf("list object failed, req_id:%s\n", s->req_id);
         break;
     }
@@ -173,7 +173,7 @@ while (is_truncated) {
     cos_list_for_each_entry(cos_list_object_content_t, content, &list_params->object_list, node) {
         printf("object: %s\n", content->key.data);
     }
-    // list_params->common_prefix_list는 delimiter로 잘린 경로를 표시합니다. 예를 들어 delimiter를 /로 설정하면 common prefix는 모든 서브 디렉터리의 경로를 표시합니다.
+    // list_params->common_prefix_list는 delimiter로 잘린 경로를 표시함. 예를 들어 delimiter를 /로 설정하면 common prefix는 모든 서브 디렉터리의 경로를 표시함
     cos_list_object_common_prefix_t *common_prefix = NULL;
     cos_list_for_each_entry(cos_list_object_common_prefix_t, common_prefix, &list_params->common_prefix_list, node) {
         printf("common prefix: %s\n", common_prefix->prefix.data);
@@ -185,13 +185,13 @@ while (is_truncated) {
 cos_pool_destroy(p);
 ```
 
-### 간단한 객체 업로드
+### 간편 객체 업로드(폴더 생성)
 
 #### 기능 설명
 
 객체를 버킷에 업로드합니다. 최대 5GB 이하인 객체의 업로드를 지원하며, 5GB를 초과하는 객체의 경우 [멀티파트 업로드](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) 또는 [고급 인터페이스](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89)를 사용하여 업로드하십시오.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_put_object_from_file(const cos_request_options_t *options,
@@ -211,7 +211,7 @@ cos_status_t *cos_put_object_from_file(const cos_request_options_t *options,
 | object       | Object 이름                                                  | String |
 | filename     | Object 로컬에 저장된 파일 이름                                      | String |
 | headers      | COS에서 부가 헤더 필드 요청                                             | Struct |
-| resp_headers            | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct  |
+| resp_headers | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
 
 #### 반환 결과 설명
 
@@ -238,7 +238,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -331,13 +331,61 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p);
 ```
 
+#### 예시4: 객체 업로드(단일 링크 속도 제한)
+
+>?객체 업로드 및 다운로드 속도 제한 설명은 [단일 링크 속도 제한](https://intl.cloud.tencent.com/document/product/436/34072)을 참고하시기 바랍니다.
+
+```cpp
+cos_pool_t *p = NULL;
+int is_cname = 0;
+cos_status_t *s = NULL;
+cos_request_options_t *options = NULL;
+cos_string_t bucket;
+cos_string_t object;
+cos_string_t file;
+cos_table_t *resp_headers = NULL;
+cos_table_t *headers = NULL;
+
+//메모리 풀 생성
+cos_pool_create(&p, NULL);
+
+//초기화 요청 옵션
+options = cos_request_options_create(p);
+options->config = cos_config_create(options->pool);
+cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
+cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
+cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
+cos_str_set(&options->config->appid, TEST_APPID);
+options->config->is_cname = is_cname;
+options->ctl = cos_http_controller_create(options->pool, 0);
+cos_str_set(&bucket, TEST_BUCKET_NAME);
+
+//속도 제한값은 819200 - 838860800, 즉 100KB/s - 100MB/s 범위에서 설정할 수 있으며, 이 범위를 넘으면 400 오류가 반환됨
+headers = cos_table_make(p, 1);
+cos_table_add_int(headers, "x-cos-traffic-limit", 819200);
+
+//객체 업로드
+cos_str_set(&file, TEST_DOWNLOAD_NAME);
+cos_str_set(&object, TEST_OBJECT_NAME);
+s = cos_put_object_from_file(options, &bucket, &object, &file, headers, &resp_headers);
+if (cos_status_is_ok(s)) {
+    printf("put object succeeded\n");
+} else {
+    printf("put object failed\n");
+}
+
+//메모리 풀 폐기
+cos_pool_destroy(p); 
+```
+
+
 ### 객체 메타데이터 조회
 
 #### 기능 설명
 
-객체의 메타데이터 정보를 조회합니다.
+객체의 메타데이터 정보 조회
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_head_object(const cos_request_options_t *options, 
@@ -355,7 +403,7 @@ cos_status_t *cos_head_object(const cos_request_options_t *options,
 | bucket       | 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
 | object       | Object 이름                                                  | String |
 | headers      | COS에서 부가 헤더 필드 요청                                             | Struct |
-| resp_headers            | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct  |
+| resp_headers | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
 
 #### 반환 결과 설명
 
@@ -380,7 +428,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -410,7 +458,7 @@ cos_pool_destroy(p);
 
 객체를 로컬에 다운로드합니다. 해당 작업은 타깃 객체에 대한 읽기 권한을 가지고 있거나 타깃 객체의 읽기 권한이 개방되어 있어야 합니다(공개 읽기).
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_get_object_to_file(const cos_request_options_t *options,
@@ -432,7 +480,7 @@ cos_status_t *cos_get_object_to_file(const cos_request_options_t *options,
 | headers      | COS에서 부가 헤더 필드 요청                                             | Struct |
 | params       | COS에서 작업 매개변수 요청                                             | Struct |
 | filename     | Object 로컬에 저장된 파일 이름                                      | String |
-| resp_headers            | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct  |
+| resp_headers | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
 
 #### 반환 결과 설명
 
@@ -443,7 +491,7 @@ cos_status_t *cos_get_object_to_file(const cos_request_options_t *options,
 | error_msg  | 에러 코드 설명  | String |
 | req_id     | 메시지 ID 요청 | String |
 
-#### 예시
+#### 예시1: 일반 다운로드
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -458,7 +506,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -483,13 +531,62 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### 객체 복사 설정
+#### 예시2: 객체 다운로드(단일 링크 속도 제한)
+
+>?객체 업로드 및 다운로드 속도 제한 설명은 [단일 링크 속도 제한](https://intl.cloud.tencent.com/document/product/436/34072)을 참고하시기 바랍니다.
+
+```cpp
+cos_pool_t *p = NULL;
+int is_cname = 0;
+cos_status_t *s = NULL;
+cos_request_options_t *options = NULL;
+cos_string_t bucket;
+cos_string_t object;
+cos_string_t file;
+cos_table_t *headers = NULL;
+cos_table_t *resp_headers = NULL;
+
+//메모리 풀 생성
+cos_pool_create(&p, NULL);
+
+//초기화 요청 옵션
+options = cos_request_options_create(p);
+options->config = cos_config_create(options->pool);
+cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
+cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
+cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
+cos_str_set(&options->config->appid, TEST_APPID);
+options->config->is_cname = is_cname;
+options->ctl = cos_http_controller_create(options->pool, 0);
+cos_str_set(&bucket, TEST_BUCKET_NAME);
+
+//속도 제한값은 819200 - 838860800, 즉 100KB/s - 100MB/s 범위에서 설정할 수 있으며, 이 범위를 넘으면 400 오류가 반환됨
+headers = cos_table_make(p, 1);
+cos_table_add_int(headers, "x-cos-traffic-limit", 819200);
+
+//객체 획득
+cos_str_set(&file, TEST_DOWNLOAD_NAME);
+cos_str_set(&object, TEST_OBJECT_NAME);
+s = cos_get_object_to_file(options, &bucket, &object, headers, NULL, &file, &resp_headers);
+if (cos_status_is_ok(s)) {
+    printf("get object succeeded\n");
+} else {
+    printf("get object failed\n");
+}
+
+//메모리 풀 폐기
+cos_pool_destroy(p); 
+```
+
+
+
+### 객체 복사 설정(속성 수정)
 
 #### 기능 설명
 
-타깃 경로에 파일을 복사합니다.
+파일을 타깃 경로에 복사합니다. 이 인터페이스는 객체 스토리지 유형 수정 등 객체 속성을 수정할 수 있습니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_copy_object(const cos_request_options_t *options,
@@ -507,11 +604,11 @@ cos_status_t *cos_copy_object(const cos_request_options_t *options,
 
 | 매개변수 이름          | 매개변수 설명                                                     | 유형   |
 | ----------------- | ------------------------------------------------------------ | ------ |
-| options           | COS 요청 옵션                                                 | Struct |
+| options           | COS 요청 옵션                                                 | Struct   |
 | src_bucket        | 원본 버킷                                                     | String |
 | src_object        | 원본 객체 이름                                                   | String |
 | src_endpoint      | 원본 객체 액세스 도메인 정보                                           | String |
-| dest_bucket       | 타깃 버킷 이름, 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
+| dest_bucket       | 타깃 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
 | dest_object       | 타깃 Object 이름                                             | String |
 | headers           | COS에서 부가 헤더 필드 요청                                             | Struct |
 | copy_object_param | Put Object Copy 작업 매개변수                                     | Struct |
@@ -528,7 +625,7 @@ cos_status_t *cos_copy_object(const cos_request_options_t *options,
 | error_msg  | 에러 코드 설명  | String |
 | req_id     | 메시지 ID 요청 | String |
 
-#### 예시
+#### 예시1: 일반 객체 복사
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -545,7 +642,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -575,13 +672,71 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p);  
 ```
 
+#### 예시2: 스토리지 유형 변경
+
+>!표준 스토리지는 표준IA 스토리지, 인텔리전트 티어링, 아카이브 스토리지 및 딥 아카이브 스토리지 등으로 변경할 수 있습니다. 아카이브 스토리지 또는 딥 아카이브 스토리지의 객체를 다른 스토리지 유형으로 수정하려면 먼저 cos_post_object_restore() 인터페이스를 사용하여 복구해야 합니다. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하시기 바랍니다.
+
+
+```cpp
+cos_pool_t *p = NULL;
+int is_cname = 0;
+cos_status_t *s = NULL;
+cos_request_options_t *options = NULL;
+cos_string_t bucket;
+cos_string_t object;
+cos_string_t src_bucket;
+cos_string_t src_object;
+cos_string_t src_endpoint;
+cos_table_t *resp_headers = NULL;
+
+//메모리 풀 생성
+cos_pool_create(&p, NULL);
+
+//초기화 요청 옵션
+options = cos_request_options_create(p);
+options->config = cos_config_create(options->pool);
+cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
+cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
+cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
+cos_str_set(&options->config->appid, TEST_APPID);
+options->config->is_cname = is_cname;
+options->ctl = cos_http_controller_create(options->pool, 0);
+cos_str_set(&bucket, TEST_BUCKET_NAME);
+//원본 객체와 타깃 객체가 일치함
+cos_str_set(&object, "test.txt");
+cos_str_set(&src_object, "test.txt");
+cos_str_set(&src_bucket, TEST_BUCKET_NAME);
+cos_str_set(&src_endpoint, TEST_COS_ENDPOINT);
+
+// x-cos-metadata-directive 및 x-cos-storage-class 헤더 필드를 설정하고, 변경하려는 스토리지 유형으로 대체
+cos_table_t *headers = cos_table_make(p, 2);
+apr_table_add(headers, "x-cos-metadata-directive", "Replaced");
+// 스토리지 유형에는 NTELLIGENT_TIERING, MAZ_INTELLIGENT_TIERING, STANDARD_IA, ARCHIVE, DEEP_ARCHIVE가 있음
+apr_table_add(headers, "x-cos-storage-class", "ARCHIVE");
+
+//객체 복사, 스토리지 유형 설정
+cos_copy_object_params_t *params = NULL;
+params = cos_create_copy_object_params(p);
+s = cos_copy_object(options, &src_bucket, &src_object, &src_endpoint, & bucket, &object, headers, params, &resp_headers);
+if (cos_status_is_ok(s)) {
+    printf("copy object succeeded\n");
+} else {
+    printf("copy object failed\n");
+}
+
+//메모리 풀 폐기
+cos_pool_destroy(p); 
+```
+
+
+
 ### 단일 객체 삭제
 
 #### 기능 설명
 
 버킷에서 지정 객체를 삭제합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_delete_object(const cos_request_options_t *options,
@@ -597,7 +752,7 @@ cos_status_t *cos_delete_object(const cos_request_options_t *options,
 | options      | COS 요청 옵션                                                 | Struct |
 | bucket       | 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
 | object       | Object 이름                                                  | String |
-| resp_headers            | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct  |
+| resp_headers | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
 
 #### 반환 결과 설명
 
@@ -623,7 +778,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -664,7 +819,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -696,7 +851,7 @@ cos_pool_destroy(p);
 
 버킷의 객체 일괄 삭제는 한 번에 최대 1000개의 객체 삭제를 지원합니다. COS는 반환 결과에 대해 Verbose와 Quiet 두 가지 결과 모드를 제공합니다. Verbose 모드는 모든 Object의 삭제 결과를 반환하고, Quiet 모드는 오류가 보고된 Object 정보만 반환합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_delete_objects(const cos_request_options_t *options,
@@ -712,7 +867,7 @@ cos_status_t *cos_delete_objects(const cos_request_options_t *options,
 | 매개변수 이름            | 매개변수 설명                                                     | 유형   |
 | ------------------- | ------------------------------------------------------------ | ------- |
 | options             | COS 요청 옵션                                                 | Struct  |
-| bucket              | 버킷 이름, 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String  |
+| bucket              | 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String  |
 | object_list         | 삭제 대기 Object 리스트                                            | Struct  |
 | key                 | 삭제 대기 Object 이름                                           | String  |
 | is_quiet            | Quiet 모드의 실행 여부 결정: <br>True(1): Quiet 모드 실행, False(0): Verbose 모드 실행, 기본값은 False(0) | Boolean |
@@ -730,7 +885,7 @@ cos_status_t *cos_delete_objects(const cos_request_options_t *options,
 
 
 
-#### 예시1：다수의 객체 삭제
+#### 예시1: 다수의 객체 삭제
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -744,7 +899,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -776,7 +931,7 @@ int is_quiet = COS_TRUE;
 cos_str_set(&object, TEST_OBJECT_NAME);
 s = cos_delete_objects(options, &bucket, &object_list, is_quiet, &resp_headers, &deleted_object_list);
 if (cos_status_is_ok(s)) {
-    'printf("delete objects succeeded\n");
+    printf("delete objects succeeded\n");
 } else {
     printf("delete objects failed\n");
 }
@@ -788,7 +943,7 @@ cos_pool_destroy(p);
 
 #### 예시2: 폴더 및 해당 파일 삭제
 
-COS 자체에는 폴더 및 디렉터리의 개념이 없습니다. 사용자의 습관에 맞춰 세퍼레이터 /로 '폴더'를 모방할 수 있습니다.
+COS 자체에는 폴더 및 디렉터리의 개념이 없습니다. 사용자의 습관에 맞춰 세퍼레이터 /로 ‘폴더’를 구현할 수 있습니다.
 
 폴더 및 파일 삭제는 실제로 COS에서 동일한 접두사를 가진 객체를 삭제하는 것과 같습니다. 현재 COS C SDK는 이러한 작업을 구현할 인터페이스를 제공하지 않지만, **객체 리스트 조회**와 **객체 일괄 삭제**를 함께 사용하는 기본 작업으로 폴더 및 파일을 삭제할 수 있습니다.
 
@@ -822,7 +977,7 @@ cos_str_set(&marker, "");
 while (is_truncated) {
 	list_params->marker = marker;
 	s = cos_list_object(options, &bucket, list_params, &resp_headers);
-	if (!cos_status_is_ok(s)) {
+	if (! cos_status_is_ok(s)) {
 		printf("list object failed, req_id:%s\n", s->req_id);
 		break;
 	}
@@ -849,7 +1004,7 @@ cos_pool_destroy(p);
 
 현재 진행 중인 멀티파트 업로드 정보를 조회합니다. 한 번에 최대 1000의 현재 진행 중인 멀티파트 업로드를 나열합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_list_multipart_upload(const cos_request_options_t *options,
@@ -863,7 +1018,7 @@ cos_status_t *cos_list_multipart_upload(const cos_request_options_t *options,
 | 매개변수 이름              | 매개변수 설명                                                     | 유형    |
 | --------------------- | ------------------------------------------------------------ | ------- |
 | options               | COS 요청 옵션                                                 | Struct  |
-| bucket                | 버킷 이름, 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String  |
+| bucket                | 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String  |
 | params                | List Multipart Uploads 작업 매개변수                              | Struct  |
 | encoding_type         | 규정된 반환 값의 인코딩 방식                                         | String  |
 | prefix                | 접두사 매칭, 반환 파일의 접두사 주소 규정에 사용                         | String  |
@@ -871,7 +1026,7 @@ cos_status_t *cos_list_multipart_upload(const cos_request_options_t *options,
 | max_ret               | 한 번에 반환하는 최대 항목 수, 기본값: 1000                             | String  |
 | key_marker            | upload-id-marker와 함께 사용합니다. <br><li>upload-id-marker가 지정되지 않은 경우 ObjectName 알파벳 순서가 key-marker보다 큰 항목이 나열되며, <br><li>upload-id-marker가 지정된 경우 ObjectName 알파벳 순서가 key-marker보다 큰 항목이 나열됩니다. ObjectName 알파벳 순서가 key-marker와 동일하고 UploadID가 upload-id-marker보다 큰 항목이 나열됩니다. | String  |
 | upload_id_marker      | key-marker와 함께 사용합니다. <br><li>key-marker가 지정되지 않은 경우 upload-id-marker는 무시되며, <br><li> key-marker가 지정된 경우 ObjectName 알파벳 순서가 key-marker보다 큰 항목이 나열됩니다. ObjectName 알파벳 순서가 key-marker와 동일하고 UploadID가 upload-id-marker보다 큰 항목이 나열됩니다. | String  |
-| truncated             | 반환 항목의 잘림 여부는 'true' 또는 'false'                      | Boolean |
+| truncated             | 반환 항목의 잘림 여부는 ’true’ 또는 ’false’                      | Boolean |
 | next_key_marker       | 반환 항목이 잘린 경우, 반환된 NextKeyMarker가 다음 항목의 시작점이 됨   | String  |
 | next_upload_id_marker | 반환 항목이 잘린 경우, 반환된 UploadId가 다음 항목의 시작점이 됨     | String  |
 | upload_list           | 멀티파트 업로드 정보                                               | Struct  |
@@ -930,13 +1085,13 @@ cos_pool_destroy(p);
 
 ```
 
-###  멀티파트 업로드 초기화
+### 멀티파트 업로드 초기화
 
 #### 기능 설명
 
 Initiate Multipart Uploads 요청은 멀티파트 업로드 초기화를 구현합니다. 요청을 성공적으로 처리하면 다음 Upload Part 요청에 사용할 Upload ID를 반환합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_init_multipart_upload(const cos_request_options_t *options, 
@@ -956,7 +1111,7 @@ cos_status_t *cos_init_multipart_upload(const cos_request_options_t *options,
 | object       | Object 이름                                                  | String |
 | upload_id    | 작업에서 반환한 Upload ID                                         | String |
 | headers      | COS에서 부가 헤더 필드 요청                                             | Struct |
-| resp_headers            | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct  |
+| resp_headers | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
 
 #### 반환 결과 설명
 
@@ -982,7 +1137,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1013,9 +1168,9 @@ cos_pool_destroy(p);
 
 #### 기능 설명
 
-파일을 멀티파트 업로드합니다. Upload Part는 초기화 이후의 멀티파트 업로드를 요청합니다. 지원되는 파트의 수는 1~10000개이며, 파트의 크기는 1MB~5GB입니다. Upload Part를 요청할 때마다 partNumber와 uploadID가 필요합니다. partNumber는 파트의 번호이며, 비순차적 업로드를 지원합니다.
+파일을 멀티파트 업로드합니다. Upload Part는 초기화 이후의 멀티파트 업로드를 요청합니다. 지원되는 파트의 수는 1 - 10000개이며, 파트의 크기는 1MB - 5GB입니다. Upload Part를 요청할 때마다 partNumber와 uploadID가 필요합니다. partNumber는 파트의 번호이며, 비순차적 업로드를 지원합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_upload_part_from_file(const cos_request_options_t *options,
@@ -1066,7 +1221,7 @@ int64_t file_length = 0;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1114,7 +1269,7 @@ cos_pool_destroy(p);
 
 다른 객체를 한 파트로 복사합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_upload_part_copy(const cos_request_options_t *options,
@@ -1130,7 +1285,7 @@ cos_status_t *cos_upload_part_copy(const cos_request_options_t *options,
 | options      | COS 요청 옵션                                                 | Struct |
 | params       | 멀티파트 매개변수 정보 복사                                             | Struct |
 | copy_source  | 원본 파일 경로                                                 | String |
-| dest_bucket  | 타깃 버킷 이름, 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
+| dest_bucket  | 타깃 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
 | dest_object  | 타깃 Object 이름                                             | String |
 | upload_id    | 업로드 작업 번호                                                 | String |
 | part_num     | 멀티파트 번호                                                     | Int    |
@@ -1139,7 +1294,7 @@ cos_status_t *cos_upload_part_copy(const cos_request_options_t *options,
 | rsp_content  | 멀티파트 결과 정보 복사                                             | Struct |
 | etag         | 반환 파일의 MD5 알고리즘 검증값                                    | String |
 | last_modify  | 반환 파일의 최종 수정 시간, GMT 포맷                               | String |
-| resp_headers      | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
+| resp_headers | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
 
 #### 반환 결과 설명
 
@@ -1284,13 +1439,13 @@ cos_pool_destroy(p);
 
 
 
-###  업로드된 파트 조회
+### 업로드된 파트 조회
 
 #### 기능 설명
 
 특정 멀티파트 업로드 작업에서 업로드된 파트를 조회합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_list_upload_part(const cos_request_options_t *options,
@@ -1306,14 +1461,14 @@ cos_status_t *cos_list_upload_part(const cos_request_options_t *options,
 | 매개변수 이름                | 매개변수 설명                                                     | 유형    |
 | ----------------------- | ------------------------------------------------------------ | ------- |
 | options                 | COS 요청 옵션                                                 | Struct  |
-| bucket                  | 버킷 이름, 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String  |
+| bucket                  | 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String  |
 | object                  | Object 이름                                                  | String  |
 | upload_id               | 업로드 작업 번호                                                 | String  |
 | params                  | List Parts 작업 매개변수                                          | Struct  |
 | part_number_marker      | 기본적으로 UTF-8 이진법 순서로 열거되며, 모든 열거 값은 marker부터 시작  | String  |
 | encoding_type           | 규정된 반환 값의 인코딩 방식                                         | String  |
 | max_ret                 | 한 번에 반환하는 최대 항목 수, 기본값: 1000                             | String  |
-| truncated               | 반환 항목의 잘림 여부는 'true' 또는 'false'                      | Boolean |
+| truncated               | 반환 항목의 잘림 여부는 ’true’ 또는 ’false’                      | Boolean |
 | next_part_number_marker | 반환 항목이 잘린 경우, 반환된 NextMarker가 다음 항목의 시작점이 됨   | String  |
 | part_list               | 완료된 파트의 정보                                               | Struct  |
 | part_number             | 멀티파트 번호                                                     | String  |
@@ -1351,7 +1506,7 @@ int64_t file_length = 0;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1404,13 +1559,13 @@ cos_pool_destroy(p);
 
 
 
-###  멀티파트 업로드 완료
+### 멀티파트 업로드 완료
 
 #### 기능 설명
 
 전체 파일의 멀티파트 업로드를 완료합니다. Upload Parts로 모든 파트를 업로드한 후, 해당 API로 업로드를 완료할 수 있습니다. 해당 API 사용 시 반드시 Body에서 각 파트의 PartNumber와 ETag로 파트의 정확성을 검증해야 합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_complete_multipart_upload(const cos_request_options_t *options,
@@ -1432,9 +1587,9 @@ cos_status_t *cos_complete_multipart_upload(const cos_request_options_t *options
 | upload_id    | 업로드 작업 번호                                                 | String |
 | part_list    | 멀티파트 업로드가 완료된 매개변수                                           | Struct |
 | part_number  | 멀티파트 번호                                                     | String |
-| etag         | 멀티파트의 ETag 값은 sha1의 검증값이며, 검증값 앞뒤에 큰따옴표를 붙여야 합니다. 예시: '3a0f1fd698c235af9cf098cb74aa25bc' | String |
+| etag         | 멀티파트의 ETag 값은 sha1의 검증값이며, 검증값 앞뒤에 큰따옴표를 붙여야 합니다. 예시: "3a0f1fd698c235af9cf098cb74aa25bc" | String |
 | headers      | COS에서 부가 헤더 필드 요청                                             | Struct |
-| resp_headers            | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct  |
+| resp_headers | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
 
 #### 반환 결과 설명
 
@@ -1465,7 +1620,7 @@ int64_t file_length = 0;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1513,13 +1668,13 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-###  멀티파트 업로드 중지
+### 멀티파트 업로드 중지
 
 #### 기능 설명
 
 멀티파트 업로드 작업을 중지하고 업로드된 파트를 삭제합니다. Abort Multipart Upload 호출 시 해당 Upload Parts를 사용한 파트 업로드 요청이 있는 경우 Upload Parts는 실패를 반환하게 됩니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_abort_multipart_upload(const cos_request_options_t *options,
@@ -1537,7 +1692,7 @@ cos_status_t *cos_abort_multipart_upload(const cos_request_options_t *options,
 | bucket       | 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
 | object       | Object 이름                                                  | String |
 | upload_id    | 업로드 작업 번호                                                 | String |
-| resp_headers            | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct  |
+| resp_headers | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
 
 #### 반환 결과 설명
 
@@ -1607,9 +1762,9 @@ cos_pool_destroy(p);
 
 #### 기능 설명
 
-아카이브 유형의 객체를 검색하여 액세스합니다.
+아카이브 유형의 객체를 검색 및 액세스합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_post_object_restore(const cos_request_options_t *options,
@@ -1626,11 +1781,11 @@ cos_status_t *cos_post_object_restore(const cos_request_options_t *options,
 | 매개변수 이름       | 매개변수 설명                                                     | 유형   |
 | -------------- | ------------------------------------------------------------ | ------ |
 | options        | COS 요청 옵션                                                 | Struct |
-| bucket         | 버킷 이름, 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
+| bucket         | 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
 | object         | Object 이름                                                  | String |
 | restore_params | Post Object Restore 작업 매개변수                                 | Struct |
 | days           | Post Object Restore 작업에 설정된 임시 사본 만료 시간               | Int    |
-| tier           | Post Object Restore 작업에 지정된 세 가지 CAS 지원 복구 유형: Expedited, Standard, Bulk | String |
+| tier           | Post Object Restore 작업에 지정된 세 가지 아카이브 스토리지 지원 복구 유형: Expedited, Standard, Bulk | String |
 | headers        | COS에서 부가 헤더 필드 요청                                             | Struct |
 | params         | COS에서 작업 매개변수 요청                                             | Struct |
 | resp_headers   | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
@@ -1658,7 +1813,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1689,9 +1844,9 @@ cos_pool_destroy(p);
 
 #### 기능 설명
 
-버킷의 한 객체의 액세스 제어 리스트 설정
+버킷 내 객체의 액세스 제어 리스트를 설정합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_put_object_acl(const cos_request_options_t *options, 
@@ -1709,13 +1864,15 @@ cos_status_t *cos_put_object_acl(const cos_request_options_t *options,
 | 매개변수 이름        | 매개변수 설명                                                     | 유형   |
 | --------------- | ------------------------------------------------------------ | ------ |
 | options         | COS 요청 옵션                                                 | Struct |
-| bucket          | 버킷 이름, 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
+| bucket          | 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String |
 | object          | Object 이름                                                  | String |
-| cos_acl         | 사용자 정의 권한을 허용합니다. 유효값: COS_ACL_PRIVATE(0), COS_ACL_PUBLIC_READ(1)<br>기본값: COS_ACL_PRIVATE(0) | Enum   |
-| grant_read      | 읽기 권한 부여자                                                 | String |
-| grant_write     | 쓰기 권한 부여자                                                 | String |
-| grant_full_ctrl | 읽기/쓰기 권한 부여자                                               | String |
+| cos_acl         | 사용자 정의 권한 허용. 유효값: COS_ACL_PRIVATE(0)，COS_ACL_PUBLIC_READ(1), COS_ACL_PUBLIC_READ_WRITE(2)<br>기본값: COS_ACL_PRIVATE(0) | Enum   |
+| grant_read      |권한 수여자에게 객체 읽기 권한 부여. 형식: id="[OwnerUin]", 예: id="100000000001". 쉼표(,)를 사용하여 여러 인증자 그룹 구분 가능. 예: `id="100000000001",id="100000000002"`   | String |
+| grant_write     |승인된 자에게 객체 쓰기 권한 부여. 형식: id="[OwnerUin]", 예: id="100000000001". 쉼표(,)를 사용하여 여러 권한 수여자 그룹 구분 가능. 예: `id="100000000001",id="100000000002"`   | String |
+| grant_full_ctrl | 권한 수여자에게 버킷 작업의 모든 권한 부여. 형식: id="[OwnerUin]", 예: id="100000000001". 쉼표(,)를 사용하여 여러 권한 수여자 그룹 구분 가능. 예: `id="100000000001",id="100000000002"`   | String |
 | resp_headers    | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
+
+>?자세한 내용은 API 문서 [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) 및 [ACL 개요](https://intl.cloud.tencent.com/document/product/436/30583)를 참고하시기 바랍니다.
 
 #### 반환 결과 설명
 
@@ -1740,7 +1897,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1770,9 +1927,9 @@ cos_pool_destroy(p);
 
 #### 기능 설명
 
-객체 액세스 제어 리스트 조회
+객체의 액세스 제어 리스트를 조회합니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_get_object_acl(const cos_request_options_t *options, 
@@ -1797,7 +1954,7 @@ cos_status_t *cos_get_object_acl(const cos_request_options_t *options,
 | id           | 작업에서 반환한 권한 피부여자의 사용자 ID 요청                                | String |
 | name         | 작업에서 반환한 권한 피부여자의 사용자 이름 요청                               | String |
 | permission   | 작업에서 반환한 권한 피부여자의 권한 정보 요청                               | String |
-| resp_headers            | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct  |
+| resp_headers | HTTP 응답 메시지의 헤더 필드 반환                                     | Struct |
 
 #### 반환 결과 설명
 
@@ -1822,7 +1979,7 @@ cos_table_t *resp_headers = NULL;
 //메모리 풀 생성
 cos_pool_create(&p, NULL);
 
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1860,7 +2017,7 @@ cos_pool_destroy(p);
 
 업로드 인터페이스는 사용자의 파일 길이에 따라 자동으로 데이터를 분할하여 사용이 편리합니다. 사용자는 멀티파트 업로드의 모든 절차를 신경 쓸 필요가 없으며, 멀티파트 업로드가 완료되지 않은 파일에 대해 업로드가 중단된 지점부터 이어서 전송할 수 있습니다. 멀티파트 크기는 기본적으로 1048576(1MB)이며, part_size 매개변수를 통해 조정할 수 있습니다. 
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_resumable_upload_file(cos_request_options_t *options,
@@ -1880,13 +2037,13 @@ cos_status_t *cos_resumable_upload_file(cos_request_options_t *options,
 | 매개변수 이름          | 매개변수 설명                                                     | 유형   |
 | ----------------- | ------------------------------------------------------------ | -------- |
 | options           | COS 요청 옵션                                                 | Struct   |
-| bucket            | 버킷 이름, 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String   |
+| bucket            | 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String   |
 | object            | Object 이름                                                  | String   |
 | filepath          | Object 로컬 파일 이름                                          | String   |
 | headers           | COS에서 부가 헤더 필드 요청                                             | Struct   |
 | params            | COS에서 작업 매개변수 요청                                             | Struct   |
 | clt_params        | 객체 업로드 제어 매개변수                                             | Struct   |
-| part_size         | 파트 크기(단위: bytes), 사용자 지정 part_size가 1048576(1 MB) 미만인 경우 C SDK에서 자동 분할, 멀티파트 크기는 기본적으로 1048576(1 MB)이며, 멀티파트 수가 10,000을 초과하는 경우 파일 크기에 따라 조정  | Int      |
+| part_size         | 파트 크기(단위: bytes), 사용자 지정 part_size가 1048576(1MB) 미만인 경우 C SDK에서 자동 분할, 멀티파트 크기는 기본적으로 1048576(1MB)이며, 멀티파트 수가 10,000을 초과하는 경우 파일 크기에 따라 조정 | Int      |
 | thread_num        | 스레드 풀 크기, 기본값: 1                                          | Int      |
 | enable_checkpoint | 중단된 지점부터 이어서 전송할 수 있는지 여부                                             | Int      |
 | checkpoint_path   | 중단된 지점부터 이어서 전송할 수 있는 경우 업로드 진행률을 저장하는 파일 경로를 의미, 기본 경로는 `<filepath>.cp`이며 filepath는 Object 로컬 파일 이름 | String   |
@@ -1953,7 +2110,7 @@ cos_pool_destroy(p);
 
 멀티파트 다운로드 인터페이스는 사용자 객체 길이에 따라 자동으로 Range를 통해 데이터를 다운로드 하며, 동시 다운로드를 구현합니다. 멀티파트 크기는 기본적으로 1048576(1MB)이며, part_size 매개변수를 통해 조정할 수 있습니다.
 
-#### 프로토타입 메소드
+#### 메소드 프로토타입
 
 ```cpp
 cos_status_t *cos_resumable_download_file(cos_request_options_t *options,
@@ -1971,7 +2128,7 @@ cos_status_t *cos_resumable_download_file(cos_request_options_t *options,
 | 매개변수 이름          | 매개변수 설명                                                     | 유형   |
 | ----------------- | ------------------------------------------------------------ | -------- |
 | options           | COS 요청 옵션                                                 | Struct   |
-| bucket            | 버킷 이름, 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String   |
+| bucket            | 버킷 이름. 버킷의 이름 생성 포맷은 BucketName-APPID로 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 함 | String   |
 | object            | Object 이름                                                  | String   |
 | filepath          | Object 로컬 파일 이름                                          | String   |
 | headers           | COS에서 부가 헤더 필드 요청                                             | Struct   |
@@ -2036,8 +2193,8 @@ cos_pool_destroy(p);
 
 COS는 버킷 이름(Bucket)과 객체 키(ObjectKey)로 객체를 식별하므로 객체를 이동하는 경우 해당 객체의 식별자를 수정해야 합니다. 현재 COS C SDK는 객체의 고유 식별자를 수정할 수 있는 개별 인터페이스를 제공하지 않습니다. 그러나 **객체 복사**와 **객체 삭제**를 함께 사용하는 기본 작업으로 객체 식별자를 수정하고 객체를 이동할 수 있습니다.
 
-- 객체 복사 방법에 대한 상세 설명은 [객체 복사 설정](#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)을 참고하십시오.
-- 객체 삭제 방법에 대한 상세 설명은 [객체 Delete](#.E5.88.A0.E9.99.A4.E5.8D.95.E4.B8.AA.E5.AF.B9.E8.B1.A1)를 참고하십시오.
+- 객체 복사 방법에 대한 자세한 내용은 [객체 복사 설정](#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6.EF.BC.88.E4.BF.AE.E6.94.B9.E5.B1.9E.E6.80.A7.EF.BC.89)을 참고하십시오.
+- 객체 삭제 방법에 대한 자세한 내용은 [객체 삭제](#.E5.88.A0.E9.99.A4.E5.8D.95.E4.B8.AA.E5.AF.B9.E8.B1.A1)를 참고하십시오.
 
 #### 예시
 ```c
@@ -2053,7 +2210,7 @@ cos_table_t *resp_headers = NULL;
   
 //메모리 풀 생성
 cos_pool_create(&p, NULL);                                                               
-// 초기화 요청 옵션
+//초기화 요청 옵션
 options = cos_request_options_create(p);                                                 
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -2079,3 +2236,5 @@ if (cos_status_is_ok(s)) {
 //메모리 풀 폐기
 cos_pool_destroy(p);
 ```
+	
+	

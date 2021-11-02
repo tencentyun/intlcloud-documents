@@ -16,7 +16,7 @@ GooseFS에서 CosN의 경로 매핑 관계는 다음과 같습니다.
 /warehouse/folder/test.txt -> cosn://examplebucket-1250000000/data/warehouse/folder/test.txt
 ```
 
-CosN Scheme은 GooseFS 기능에 액세스하여, 클라이언트 측에서 GooseFS 경로와 기본 파일 시스템의 CosN 경로 간의 매핑 관계를 유지하고, CosN 경로의 요청을 GooseFS의 요청으로 변환합니다. 매핑 관계는 주기적으로 갱신되며, GooseFS 설정 파일 goosefs-site.properties 중의 설정 항목 goosefs.client.namespace.refresh.interval을 수정하여 갱신 주기를 조정할 수 있으며, 기본값은 60초입니다.
+CosN Scheme은 GooseFS 기능에 액세스하여, 클라이언트 측에서 GooseFS 경로와 기본 파일 시스템의 CosN 경로 간의 매핑 관계를 유지하고, CosN 경로의 요청을 GooseFS의 요청으로 변환합니다. 매핑 관계는 주기적으로 갱신되며, GooseFS 설정 파일 goosefs-site.properties 중의 설정 항목 goosefs.user.client.namespace.refresh.interval을 수정하여 갱신 주기를 조정할 수 있으며, 기본값은 60초입니다.
 
 >! 액세스한 CosN 경로를 GooseFS 경로로 변환할 수 없는 경우, 해당 Hadoop API 호출에서 이상 경고가 발생합니다.
 
@@ -139,7 +139,7 @@ hadoop fs -ls cosn://examplebucket-1250000000/unknow-path
 ls: Failed to convert ufs path cosn://examplebucket-1250000000/unknow-path to GooseFs path, check if namespace mounted 
 ```
 
-다시 Hive를 실행하여 구문 조회.
+Hive를 재실행하여 구문 조회.
 
 ```plaintext
 select sum(age) from u_user_cosn;

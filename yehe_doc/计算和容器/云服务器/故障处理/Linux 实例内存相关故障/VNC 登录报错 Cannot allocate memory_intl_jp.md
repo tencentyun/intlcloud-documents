@@ -14,7 +14,7 @@ VNCを使用してCVMにログインすると、システムに正常にアク�
 
 ## 処理手順[](id:ProcessingSteps)
 1. [ログエラーfork：Cannot allocate memory](https://intl.cloud.tencent.com/document/product/213/40502)を参照して、プロセス数が限度を超えていないかどうか確認してください。プロセス数が限度を超えていない場合は、次の手順に進んでください。
-2. シングルユーザーモードでCVMにログインします。詳細については、Linux CVMを設定してシングルユーザーモードに入る](https://intl.cloud.tencent.com/document/product/213/34819)をご参照ください。
+2. シングルユーザーモードでCVMにログインします。[詳細については、Linux CVMを設定してシングルユーザーモードに入る](https://intl.cloud.tencent.com/document/product/213/34819)をご参照ください。
 3. 以下のコマンドを実行して、[考えられる原因](#PossibleCauses)を参照し、ラージページのメモリ構成を確認します。
 ```
 cat /etc/sysctl.conf | grep hugepages
