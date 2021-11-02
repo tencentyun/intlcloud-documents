@@ -458,7 +458,7 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-For more information, please refer to <http://unlicense.org\>
+For more information, please refer to `<`http://unlicense.org`>`
 
 ----------------------------------------------------------------------------------------------
 glslang:
@@ -493,7 +493,7 @@ The core of glslang-proper, minus the preprocessor is licenced as follows:
 
 //
 // Copyright (C) 2015-2018 Google, Inc.
-// Copyright (C) <various other dates and companies\>
+// Copyright (C) `<`various other dates and companies`>`
 //
 // All rights reserved.
 //
@@ -782,7 +782,7 @@ GPL 3 with special bison exception
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/\>.
+   along with this program.  If not, see `<`http://www.gnu.org/licenses/`>`.
 
    As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -1727,8 +1727,8 @@ To apply these terms, attach the following notices to the library.  It is safest
 start of each source file to most effectively convey the exclusion of warranty; and each file should
 have at least the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the library's name and a brief idea of what it does.\>
-    Copyright (C) <year\>  <name of author\>
+    `<`one line to give the library's name and a brief idea of what it does.`>`
+    Copyright (C) `<`year`>`  `<`name of author`>`
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -1752,7 +1752,7 @@ You should also get your employer (if you work as a programmer) or your school, 
   Yoyodyne, Inc., hereby disclaims all copyright interest in the
   library `Frob' (a library for tweaking knobs) written by James Random Hacker.
 
-  <signature of Ty Coon\>, 1 April 1990
+  `<`signature of Ty Coon`>`, 1 April 1990
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -2310,7 +2310,7 @@ Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd  and Clark C
 Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Expat maintainers.
 
 2. jansson
-Copyright (c) 2009-2013 Petri Lehtinen <petri@digip.org\>
+Copyright (c) 2009-2013 Petri Lehtinen `<`petri@digip.org`>`
 
 3. Masonry
 Copyright (c) 2011-2012 Masonry Team - https://github.com/Masonry
@@ -2911,8 +2911,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Open Source Software Licensed under the Mozilla Public License Version 2.0 License:
 --------------------------------------------------------------------
 1. eigen
-Copyright (C) 2008 Gael Guennebaud <gael.guennebaud@inria.fr\>
-Copyright (C) 2007-2011 Benoit Jacob <jacob.benoit.1@gmail.com\>
+Copyright (C) 2008 Gael Guennebaud `<`gael.guennebaud@inria.fr`>`
+Copyright (C) 2007-2011 Benoit Jacob `<`jacob.benoit.1@gmail.com`>`
 The source code of the software can be obtained from: https://gitlab.com/libeigen/eigen/-/tree/3.3
 
 
@@ -3967,8 +3967,8 @@ To apply these terms, attach the following notices to the library.  It is safest
 start of each source file to most effectively convey the exclusion of warranty; and each file should
 have at least the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the library's name and a brief idea of what it does.\>
-    Copyright (C) <year\>  <name of author\>
+    `<`one line to give the library's name and a brief idea of what it does.`>`
+    Copyright (C) `<`year`>`  `<`name of author`>`
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -3992,7 +3992,7 @@ You should also get your employer (if you work as a programmer) or your school, 
   Yoyodyne, Inc., hereby disclaims all copyright interest in the
   library `Frob' (a library for tweaking knobs) written by James Random Hacker.
 
-  <signature of Ty Coon\>, 1 April 1990
+  `<`signature of Ty Coon`>`, 1 April 1990
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -4002,7 +4002,7 @@ Terms of the GNU Lesser General Public License, version 3 (LGPL-3):
  GNU LESSER GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
- Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/\>
+ Copyright (C) 2007 Free Software Foundation, Inc. `<`http://fsf.org/`>`
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -4459,8 +4459,8 @@ to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.\>
-    Copyright (C) <year\>  <name of author\>
+    `<`one line to give the program's name and a brief idea of what it does.`>`
+    Copyright (C) `<`year`>`  `<`name of author`>`
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -4498,7 +4498,7 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the program
   `Gnomovision' (which makes passes at compilers) written by James Hacker.
 
-  <signature of Ty Coon\>, 1 April 1989
+  `<`signature of Ty Coon`>`, 1 April 1989
   Ty Coon, President of Vice
 
 This General Public License does not permit incorporating your program into
@@ -4512,7 +4512,7 @@ Terms of the GNU General Public License, version 3 (GPL-3):
  GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
- Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/\>
+ Copyright (C) 2007 Free Software Foundation, Inc. `<`http://fsf.org/`>`
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -5142,8 +5142,8 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.\>
-    Copyright (C) <year\>  <name of author\>
+    `<`one line to give the program's name and a brief idea of what it does.`>`
+    Copyright (C) `<`year`>`  `<`name of author`>`
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -5156,14 +5156,14 @@ the "copyright" line and a pointer to where the full notice is found.
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/\>.
+    along with this program.  If not, see `<`http://www.gnu.org/licenses/`>`.
 
 Also add information on how to contact you by electronic and paper mail.
 
   If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-    <program\>  Copyright (C) <year\>  <name of author\>
+    `<`program`>`  Copyright (C) `<`year`>`  `<`name of author`>`
     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.
@@ -5175,14 +5175,14 @@ might be different; for a GUI interface, you would use an "about box".
   You should also get your employer (if you work as a programmer) or school,
 if any, to sign a "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU GPL, see
-<http://www.gnu.org/licenses/\>.
+`<`http://www.gnu.org/licenses/`>`.
 
   The GNU General Public License does not permit incorporating your program
 into proprietary programs.  If your program is a subroutine library, you
 may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
-<http://www.gnu.org/philosophy/why-not-lgpl.html\>.
+`<`http://www.gnu.org/philosophy/why-not-lgpl.html`>`.
 
 
 
