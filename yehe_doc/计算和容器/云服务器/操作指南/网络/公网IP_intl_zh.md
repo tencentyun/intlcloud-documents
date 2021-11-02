@@ -7,7 +7,7 @@
 - **获取**
 在创建云服务器时，在网络中设置带宽大于0Mbps，完成后腾讯云系统会自动从腾讯云公有 IP 地址池中为该实例分配一个公有 IP 地址，此地址可更改，操作详情请参考 [更换公网 IP](https://cloud.tencent.com/document/product/213/16642)。
 - **配置**
-您可以在 Internet 上登录有公网 IP 地址的云服务器实例对其进行相应配置，有关登录云服务器实例的更多内容，请参考 [登录 Linux 实例](https://cloud.tencent.com/document/product/213/16515) 和 [登录 Windows 实例](https://cloud.tencent.com/document/product/213/35697)。
+您可以在 Internet 上登录有公网 IP 地址的云服务器实例对其进行相应配置，有关登录云服务器实例的更多内容，请参考 [登录 Linux 实例](https://intl.cloud.tencent.com/zh/document/product/213/5436) 和 [登录 Windows 实例](https://cloud.tencent.com/document/product/213/35697)。
 - **转换**
 公有 IP 地址通过网络地址转换（NAT）映射到实例的 [内网 IP 地址](https://cloud.tencent.com/document/product/213/5225)。
 - **维护**
