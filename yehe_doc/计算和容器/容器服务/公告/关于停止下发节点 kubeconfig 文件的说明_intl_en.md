@@ -1,4 +1,4 @@
->? We plan to carry out an operation from 23:00 September 21 (Monday) to 06:00 September 22 (Tuesday) UTC+8 to stop delivering the Kubeconfig file.
+>? We plan to carry out an operation from 23:00 September 21，2020 (Monday) to 06:00 September 22,2020 (Tuesday) UTC+8 to stop delivering the Kubeconfig file.
 
 ## Background
 Currently, TKE stores the Kubeconfig file with the admin token in nodes by default. By using this Kubeconfig file, users can easily operate on Kubernetes clusters. However, if users fail to conduct node login permission management carefully, clusters may face security risks. Therefore, we decided to stop delivering the Kubeconfig file.
