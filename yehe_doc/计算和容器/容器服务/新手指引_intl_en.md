@@ -28,7 +28,6 @@ Open the Tencent Cloud console, select **Products** > **Tencent Kubernetes Engin
 
 
 #### 3.3 Creating a cluster
-You can refer to the document [Quickly Creating a Standard Cluster](https://intl.cloud.tencent.com/document/product/457/40029) to know how to quickly create a standard managed cluster.
 If you need more types of clusters, please see [Creating Elastic Cluster] (https://intl.cloud.tencent.com/document/product/457/34048) and [Creating Edge Cluster](https://intl.cloud.tencent.com/document/product/457/35385).
 
 
