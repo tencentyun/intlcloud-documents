@@ -28,7 +28,6 @@
 
 
 #### 3.3 创建集群
-您可参考 [快速创建一个标准集群](https://intl.cloud.tencent.com/document/product/457/40029) 文档，了解快速创建标准托管版集群的方法。
 如果您需要使用更多类型的集群，请参见 [创建弹性集群](https://intl.cloud.tencent.com/document/product/457/34048) 和 [创建边缘集群](https://intl.cloud.tencent.com/document/product/457/35385) 文档。
 
 
