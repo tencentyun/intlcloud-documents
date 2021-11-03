@@ -10,12 +10,15 @@
     - 地域入带宽：该地域网络实例的平均每秒入流量。
     - 地域出包量：该地域网络实例的出方向的流量累计值。
     - 地域入包量：该地域网络实例的入方向的流量累计值。
- >?单击每条监控数据后的![](https://main.qcloudimg.com/raw/58861f008a814f64adb91130767f684d.png)可以展开该条数据；单击每条监控数据后的![](https://main.qcloudimg.com/raw/592e164589b53ed1205fbc9e5844e487.png)可以下载该条监控数据。
+![](https://qcloudimg.tencent-cloud.cn/raw/8b81a4604b69053dafb9757f0c91e4ca.png)
+ >?单击每条监控数据后的![](https://main.qcloudimg.com/raw/58861f008a814f64adb91130767f684d.png) 可以展开该条数据；单击每条监控数据后的![](https://main.qcloudimg.com/raw/592e164589b53ed1205fbc9e5844e487.png)可以下载该条监控数据。
   - 地域间限速
   在地域间限速的监控详情页面，可查看所有云联网关联网络实例的地域间出带宽、地域间入带宽、出包量、入包量数据，并通过单击【近24小时】、【近7天】或自定义日期，调整监控数据的时间轴。
     - 地域间出带宽：两地域间平均每秒出流量。
     - 地域间入带宽：两地域间平均每秒入流量。
     - 出包量：两地域间出方向的流量累计值。
     - 入包量：两地域间入方向的流量累计值。
- >?单击每条监控数据后的![](https://main.qcloudimg.com/raw/58861f008a814f64adb91130767f684d.png)可以展开该条数据；单击每条监控数据后的![](https://main.qcloudimg.com/raw/592e164589b53ed1205fbc9e5844e487.png)可以下载该条监控数据。
+![](https://qcloudimg.tencent-cloud.cn/raw/4038cd43e1874815e036bcf13c84982a.png)
+ >?单击每条监控数据后的![](https://main.qcloudimg.com/raw/58861f008a814f64adb91130767f684d.png) 可以展开该条数据；单击每条监控数据后的![](https://main.qcloudimg.com/raw/592e164589b53ed1205fbc9e5844e487.png)可以下载该条监控数据。
 4. 若需导出监控数据，则在监控详情页面右上角单击【导出数据】，并在“导出数据”对话框中选择时间范围、粒度和导出指标，然后单击【导出】。
+![](https://qcloudimg.tencent-cloud.cn/raw/d4e20b3fd4f02b2e823a1611625001bf.png)
