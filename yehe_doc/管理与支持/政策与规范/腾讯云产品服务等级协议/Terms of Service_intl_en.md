@@ -19,7 +19,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 | European Economic Area and Switzerland | Tencent Cloud Europe B.V., a Dutch registered company located at Atrium Building,8<sup>th</sup> Floor, Strawinskylaan 3127, 1077 ZX, Amsterdam, the Netherlands | England and Wales |
 | North America                          | Tencent Cloud LLC, a Delaware corporation registered company located at Claremont2747 Park Blvd, Palo Alto, CA 94306. | California, USA   |
 | South Korea                          | Tencent Korea Yuhan Hoesa, 152, Taeheran-ro, Gangnam-gu (Gangnam Finance Center, Yeoksam-dong), Seoul, Korea | Singapore   |
-| Rest of the world                      | Aceville Pte Ltd, a Singapore-registered company located at 1 Fullerton Road, #02-095, One Fullerton Singapore 049213. | Singapore         |
+| Rest of the world                      | Aceville Pte Ltd, a Singapore-registered company located at 30 Raffles Place, #12-01, Oxley @ Raffles, Singapore 048622. | Singapore         |
 | People's Republic of China             | Tencent Cloud Computing (Beijing) Co., Ltd.                  | PRC               |
 
  (b) The country specified in your registered billing information may cause additional or different terms to apply as follows. If your use of the Services is subject to consumer protections as determined under applicable law, additional terms apply, as set forth in the EEA Consumer Terms and the Germany Terms below. If the country specified in your registered billing information is in North America, you shall be subject to the North America Terms below. In addition to the above, additional or different terms may apply to your use based on your local laws. 
