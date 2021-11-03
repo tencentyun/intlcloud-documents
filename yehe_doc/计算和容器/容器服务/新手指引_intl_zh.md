@@ -6,7 +6,7 @@
 腾讯云容器服务（Tencent Kubernetes Engine，TKE）是基于原生 kubernetes 提供以容器为核心的、高度可扩展的高性能容器管理服务，您可以在托管的云服务器实例集群上轻松运行应用程序。同时腾讯云也提供 [弹性容器服务](https://intl.cloud.tencent.com/document/product/457/34040)（Elastic Kubernetes Service，EKS）和 [边缘容器服务](https://intl.cloud.tencent.com/document/product/457/35390)（Tencent Kubernetes Engine for Edge，TKE Edge），方便您按需选择。
 
 
-腾讯云容器服务支持您通过 [容器服务控制台](https://console.cloud.tencent.com/tke2/overview)、[Kubectl](https://intl.cloud.tencent.com/document/product/457/30639) 或 [云 API](https://intl.cloud.tencent.com/document/product/1080/38759) 操作集群与服务。
+腾讯云容器服务支持您通过 [容器服务控制台](https://console.cloud.tencent.com/tke2/overview)、[Kubectl](https://intl.cloud.tencent.com/document/product/457/30639) 操作集群与服务。
 
 
 
