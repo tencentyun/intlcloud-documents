@@ -12,11 +12,12 @@ VPC1 and VPC2 are peer connected and you want to migrate them to CCN, to allow t
 1. Create a CCN instance by referring to [Creating a CCN Instance](https://intl.cloud.tencent.com/document/product/1003/30062). Skip this step if you already have one.
 2. Associate VPC1 (Guangzhou) and VPC2 (Shanghai) with the corresponding CCN instance. For more information, see [Associating Network Instances](https://intl.cloud.tencent.com/document/product/1003/30064).
    And then, in the CCN instance route table, you should see routing policies with VPC1 (Guangzhou) and VPC2 (Shanghai) subnets as destination. There are four routing policies in this example, pointing to subnets A, B, C, and D.
-   
+   ![](https://qcloudimg.tencent-cloud.cn/raw/fd4bc095bf06c8253cc74fadb6a9a6d5.png)
 3. Check the subnet route tables of VPC1 (Guangzhou) and VPC2 (Shanghai). By default, CCN route will be distributed to subnet routes. If the distribution fails, you need to enable or disable necessary route manually complete the migration. There’re three possible scenarios as follows.
 >? Access the subnet route tables of VPC1 (Guangzhou) and VPC2 (Shanghai) as needed, and operate depending on the scenarios.
 >
  - **Scenario 1: the CCN route does not conflict with existing peering connections, the CCN route will take effect.**
+![](https://qcloudimg.tencent-cloud.cn/raw/83a1e5bde6e3250b39772f3fdb8a2f43.png)
       Complete the migration as follows:
 		1. **Disable** the route that using this peering connection as the next hop.
 		
@@ -24,6 +25,7 @@ VPC1 and VPC2 are peer connected and you want to migrate them to CCN, to allow t
 		>? You can delete the peering connection if there is no traffic go through it.
  - **Scenario 2: the CCN route is included in the route of peering connection, the CCN route will be ignored by default.**
  The route with the longest mask will be matched and used for forwarding. You can manually enable the CCN route to make it effective.
+![](https://qcloudimg.tencent-cloud.cn/raw/99c098e813feb896b44bee223827d625.png)
    Complete the migration as follows:
    
      1. **Enable** the routing policies using CCN as the next hop.
