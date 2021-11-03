@@ -4,7 +4,7 @@
 1. 获取 SecretId 和 SecretKey。
    请在控制台 [云 API 密钥](https://console.cloud.tencent.com/capi) 页面可获取。
 2. 确定开发语言：
-   根据不同开发语言，确定对应的 HMAC-SHA1 函数。日志服务 CLS 提供 C#，C++，Go，Java，Node.js，PHP，Python 开发语言的 [签名计算 demo](http://signature-1254139626.file.myqcloud.com/signature.zip) 供用户参考。
+   根据不同开发语言，确定对应的 HMAC-SHA1 函数。日志服务 CLS 提供 C#，C++，Go，Java，Node.js，PHP，Python 开发语言的 [签名计算 demo](https://mirrors.tencent.com/install/cls/signature.zip) 供用户参考。
 
 
 通过 API 对 CLS 发起的 HTTP 签名请求，使用标准的 HTTP Authorization 头部来传递，如下例所示：
@@ -88,7 +88,7 @@ q-sign-algorithm=[Algorithm]&q-ak=[SecretId]&q-sign-time=[SignTime]&q-key-time=[
 
 
 
->关于 q-sign-time 和 q-key-time， 结束时间要大于起始时间，否则会导致签名马上过期。
+> !关于 q-sign-time 和 q-key-time， 结束时间要大于起始时间，否则会导致签名马上过期。
 
 ### 计算方法
 
@@ -99,7 +99,7 @@ Signature 计算步骤：
 3. 使用 SecretKey 对 q-key-time 进行加密，得到 SignKey。
 4. 使用 SignKey 对 StringToSign 进行加密，生成 Signature。
 
->特殊字符的 urlencode 结果要使用大写字符，例如`/`编码为`%2F`，不能使用`%2f`。
+> !特殊字符的 urlencode 结果要使用大写字符，例如`/`编码为`%2F`，不能使用`%2f`。
 
 
 
@@ -144,7 +144,7 @@ get\n/logset\nlogset_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\nhost=ap-shanghai.c
 get\n/logset\n\nhost=ap-shanghai.cls.tencentyun.com\n
 ```
 
->无参数不能省去`\n`， 所以生成`\n\n`。
+>?无参数不能省去`\n`， 所以生成`\n\n`。
 
 #### 步骤2：拼接 StringToSign
 
@@ -158,7 +158,7 @@ StringToSign = q-sign-algorithm + "\n"
 
 上述中的`\n`表示换行转义字符， `+`表示字符串连接操作，其他参数上面已经描述过，其中 HttpRequestInfo 的 sha1 哈希值为16进制的小写字符串。
 
->您需事先将`\n`转义为换行符，再对 HttpRequestInfo 进行 sha1 计算。
+> !您需事先将`\n`转义为换行符，再对 HttpRequestInfo 进行 sha1 计算。
 
 对应的结果如下:
 
@@ -280,7 +280,7 @@ Content-Length: 50
 HttpRequestInfo = put\n/logset\n\ncontent-type=application%2Fjson&host=ap-shanghai.cls.tencentyun.com\n
 ```
 
->uri 参数为空，所以是为空字符，但是不能省去`\n`， 所以生成`\n\n`。
+>?uri 参数为空，所以是为空字符，但是不能省去`\n`， 所以生成`\n\n`。
 
 根据 sha1(HttpRequestInfo) 组成签名原串为：
 
