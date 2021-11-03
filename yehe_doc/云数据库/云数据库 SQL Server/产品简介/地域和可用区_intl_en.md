@@ -64,6 +64,17 @@
 <table class="table-striped">
 <tbody><tr><th>Region</th><th>Availability Zone</th></tr>
 <tr>
+<td rowspan="1">Southeast Asia (Singapore)<br>ap-singapore</td>
+<td>Singapore Zone 2 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-2</td></tr>
+</tr>
+<td>Southeast Asia (Jakarta)<br>ap-jakarta</td>
+<td>Jakarta Zone 1 (Jakarta nodes cover services in Southeast Asia)<br>ap-jakarta-1</td></tr>
+<tr>
+<td rowspan="2">Southeast Asia (Bangkok)<br>ap-bangkok</td>
+<td>Bangkok Zone 1 (Bangkok nodes cover services in Southeast Asia)<br>ap-bangkok-1</td>
+<tr>
+<td>Bangkok Zone 2 (Bangkok nodes cover services in Southeast Asia)<br>ap-bangkok-2</td>
+<tr>
 <td>Northeast Asia (Seoul)<br>ap-seoul</td>
 <td>Seoul Zone 1 (Seoul nodes cover services in Northeast Asia)<br>ap-seoul-1</td></tr>
 <tr>
