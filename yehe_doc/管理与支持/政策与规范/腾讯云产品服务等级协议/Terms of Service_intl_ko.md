@@ -19,7 +19,7 @@ Tencent가 제공하는 관련 웹사이트, 네트워크, 애플리케이션 �
 |유럽경제지역 및 스위스|	Tencent Cloud Europe B.V.,Atrium Building, 8th Floor, Strawinskylaan 3127, 1077 ZX, Amsterdam, the Netherlands에 소재한 네덜란드 등록 법인|	잉글랜드 및 웨일스|
 |북미|	Tencent Cloud LLC, Claremont2747 Park Blvd, Palo Alto, CA 94306에 소재한 델라웨어주 등록 법인|	미국 캘리포니아주|
 |대한민국|	한국 서울시 강남구 테헤란로 152(역삼동 강남파이낸스센터) 텐센트코리아유한회사|	싱가포르|
-|기타 국가들|	Aceville Pte Ltd, 1 Fullerton Road, #02-095, One Fullerton Singapore 049213에 소재한 싱가포르 등록 법인|	싱가포르|
+|기타 국가들|	Aceville Pte Ltd, 30 Raffles Place, #12-01, Oxley @ Raffles, Singapore 048622에 소재한 싱가포르 등록 법인|	싱가포르|
 |중화인민공화국|	Tencent Cloud Computing (Beijing) Co., Ltd.|	중국|
 
 (b) 귀하의 등록된 청구지 정보에 명시된 국가에 따라 다음과 같이 추가 약관 또는 다른 약관이 적용될 수 있습니다. 귀하의 본 서비스 이용에 관계 법률에 따른 소비자 보호가 적용되는 경우, 아래 유럽경제지역 소비자 약관 및 독일 약관에 명시된 추가적인 조건들이 적용됩니다. 귀하의 등록된 청구지 정보에 명시된 국가가 북미에 소재하는 경우, 귀하는 아래 북미 약관의 적용을 받습니다. 또한, 귀하의 현지 법률에 따라 귀하의 이용에 추가 약관 또는 다른 약관이 적용될 수 있습니다. 

@@ -1,4 +1,65 @@
 
+## October 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Cross-AZ migration is supported</td>
+<td>You can now migrate an instance to another AZ in the same region. All attributes and configurations (including the private network address and the subnet) of the instance remain unchanged after migration.</td>
+<td>2021-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/42695" target="_blank">Migrating across AZs</a></td></tr>
+</tbody></table>
+
+## September 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Performance test report has been updated</td>
+<td>TencentDB for SQL Server has been comprehensively upgraded with the new ultra-high specification of 90 cores, 720 GB MEM, and 4.5 million TPM. Both performance and cost performance have been improved by more than 30% once again, breaking Tencent Cloud's own performance record in the industry. Besides, the performance test report now covers the high availability edition and basic edition instances.</td>
+<td>2021-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/32561">Performance Test Report</a></td></tr>
+<tr>
+<td>Unarchived backup files can be uploaded to COS</td>
+<td>By default, backup files (i.e., .bak files) will be archived into a .tar file and then uploaded to COS. If you select "unarchived files" as the backup file format, the .bak file of each database in the instance will be directly uploaded to COS without being archived, which means that you can now download the backup file of a single database.</td>
+<td>2021-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35790">Creating and Viewing Backup Tasks</a></td></tr>
+<tr>
+<td>Backup at the replica node is supported</td>
+<td>You can now back up data at the replica node of a cluster edition 2017/2019 instance.</td>
+<td>2021-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35790">Creating and Viewing Backup Tasks</a></td></tr>
+<tr>
+<td>Available in the Bangkok region</td>
+<td>TencentDB for SQL Server is now available in Bangkok Zone 1 and Bangkok Zone 2.</td>
+<td>2021-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520">Regions and AZs</a></td></tr>
+<tr>
+<td>Available in the Singapore region</td>
+<td>TencentDB for SQL Server is now available in Singapore Zone 2.</td>
+<td>2021-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520">Regions and AZs</a></td></tr>
+<tr>
+<td>Available in the Jakarta region</td>
+<td>TencentDB for SQL Server is now available in Jakarta Zone 2.</td>
+<td>2021-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520">Regions and AZs</a></td></tr>
+</tbody></table>
+
+## August 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
+<tbody><tr>
+<td>Available in Beijing Zone 6</td>
+<td>TencentDB for SQL Server is now available in Beijing Zone 6.</td>
+<td>2021-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520" target="_blank">Regions and AZs</a></td></tr>
+<tr>
+<td>Available in Guangzhou Zone 7</td>
+<td>TencentDB for SQL Server is now available in Guangzhou Zone 7.</td>
+<td>2021-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520" target="_blank">Regions and AZs</a></td></tr>
+</tbody></table>
+
+
 ## July 2021
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr></thead>
