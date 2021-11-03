@@ -472,16 +472,16 @@ using tools of your choice, without using bison or any bison files.
 
 Other parts, outside of glslang proper, include:
 
-- gl_types.h, only needed for OpenGL-like reflection, and can be left out of
+-gl_types.h, only needed for OpenGL-like reflection, and can be left out of
   a parse and codegen project.  See it for its license.
 
-- update_glslang_sources.py, which is not part of the project proper and does
+-update_glslang_sources.py, which is not part of the project proper and does
   not need to be used.
 
-- the SPIR-V "remapper", which is optional, but has the same license as
+-the SPIR-V "remapper", which is optional, but has the same license as
   glslang proper
 
-- Google tests and SPIR-V tools, and anything in the external subdirectory
+-Google tests and SPIR-V tools, and anything in the external subdirectory
   are external and optional; see them for their respective licenses.
 
 --------------------------------------------------------------------------------
@@ -855,9 +855,9 @@ spriv-cross and spirv-tools are licensed under the Apache 2.0 License.
 smol-v
 
 ------------------------------------------------------------------------------
-This software is available under 2 licenses -- choose whichever you prefer.
+This software is available under 2 licenses --choose whichever you prefer.
 ------------------------------------------------------------------------------
-ALTERNATIVE A - MIT License
+ALTERNATIVE A -MIT License
 Copyright (c) 2016-2018 Aras Pranckevicius
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -875,7 +875,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ------------------------------------------------------------------------------
-ALTERNATIVE B - Public Domain (www.unlicense.org)
+ALTERNATIVE B -Public Domain (www.unlicense.org)
 This is free and unencumbered software released into the public domain.
 Anyone is free to copy, modify, publish, use, compile, sell, or distribute this
 software, either in source code form or as a compiled binary, for any purpose,
@@ -2008,14 +2008,14 @@ Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
 
-- Redistributions of source code must retain the above copyright
+-Redistributions of source code must retain the above copyright
 notice, this list of conditions and the following disclaimer.
 
-- Redistributions in binary form must reproduce the above copyright
+-Redistributions in binary form must reproduce the above copyright
 notice, this list of conditions and the following disclaimer in the
 documentation and/or other materials provided with the distribution.
 
-- Neither the name of Internet Society, IETF or IETF Trust, nor the
+-Neither the name of Internet Society, IETF or IETF Trust, nor the
 names of specific contributors, may be used to endorse or promote
 products derived from this software without specific prior written
 permission.
@@ -2315,7 +2315,7 @@ Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Expat maintainers.
 Copyright (c) 2009-2013 Petri Lehtinen <\petri@digip.org/>
 
 3. Masonry
-Copyright (c) 2011-2012 Masonry Team - https://github.com/Masonry
+Copyright (c) 2011-2012 Masonry Team -https://github.com/Masonry
 
 4. lua
 Copyright © 1994–2021 Lua.org, PUC-Rio.
@@ -2428,19 +2428,19 @@ maintained libraries.
 
 The externally maintained libraries used by libuv are:
 
-- tree.h (from FreeBSD), copyright Niels Provos. Two clause BSD license.
+-tree.h (from FreeBSD), copyright Niels Provos. Two clause BSD license.
 
-- inet_pton and inet_ntop implementations, contained in src/inet.c, are
+-inet_pton and inet_ntop implementations, contained in src/inet.c, are
  copyright the Internet Systems Consortium, Inc., and licensed under the ISC
  license.
 
-- stdint-msvc2008.h (from msinttypes), copyright Alexander Chemeris. Three
+-stdint-msvc2008.h (from msinttypes), copyright Alexander Chemeris. Three
  clause BSD license.
 
-- pthread-fixes.c, copyright Google Inc. and Sony Mobile Communications AB.
+-pthread-fixes.c, copyright Google Inc. and Sony Mobile Communications AB.
  Three clause BSD license.
 
-- android-ifaddrs.h, android-ifaddrs.c, copyright Berkeley Software Design
+-android-ifaddrs.h, android-ifaddrs.c, copyright Berkeley Software Design
  Inc, Kenneth MacKay and Emergya (Cloud4all, FP7/2007-2013, grant agreement
  n° 289016). Three clause BSD license.
 
@@ -2514,7 +2514,7 @@ consideration of benefits the Licensor receives from making the
 Licensed Material available under these terms and conditions.
 
 
-Section 1 -- Definitions.
+Section 1 --Definitions.
 
 a. Adapted Material means material subject to Copyright and Similar
   Rights that is derived from or based upon the Licensed Material
@@ -2578,7 +2578,7 @@ k. You means the individual or entity exercising the Licensed Rights
   under this Public License. Your has a corresponding meaning.
 
 
-Section 2 -- Scope.
+Section 2 --Scope.
 
 a. License grant.
 
@@ -2614,7 +2614,7 @@ b. produce, reproduce, and Share Adapted Material.
 
 5. Downstream recipients.
 
-a. Offer from the Licensor -- Licensed Material. Every
+a. Offer from the Licensor --Licensed Material. Every
 recipient of the Licensed Material automatically
 receives an offer from the Licensor to exercise the
 Licensed Rights under the terms and conditions of this
@@ -2655,7 +2655,7 @@ b. Other rights.
  reserves any right to collect such royalties.
 
 
-Section 3 -- License Conditions.
+Section 3 --License Conditions.
 
 Your exercise of the Licensed Rights is expressly made subject to the
 following conditions.
@@ -2707,7 +2707,7 @@ hyperlink to, this Public License.
  Material from complying with this Public License.
 
 
-Section 4 -- Sui Generis Database Rights.
+Section 4 --Sui Generis Database Rights.
 
 Where the Licensed Rights include Sui Generis Database Rights that
 apply to Your use of the Licensed Material:
@@ -2729,7 +2729,7 @@ replace Your obligations under this Public License where the Licensed
 Rights include other Copyright and Similar Rights.
 
 
-Section 5 -- Disclaimer of Warranties and Limitation of Liability.
+Section 5 --Disclaimer of Warranties and Limitation of Liability.
 
 a. UNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE
   EXTENT POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS
@@ -2758,7 +2758,7 @@ c. The disclaimer of warranties and limitation of liability provided
   waiver of all liability.
 
 
-Section 6 -- Term and Termination.
+Section 6 --Term and Termination.
 
 a. This Public License applies for the term of the Copyright and
   Similar Rights licensed here. However, if You fail to comply with
@@ -2787,7 +2787,7 @@ d. Sections 1, 5, 6, 7, and 8 survive termination of this Public
   License.
 
 
-Section 7 -- Other Terms and Conditions.
+Section 7 --Other Terms and Conditions.
 
 a. The Licensor shall not be bound by any additional or different
   terms or conditions communicated by You unless expressly agreed.
@@ -2797,7 +2797,7 @@ b. Any arrangements, understandings, or agreements regarding the
   independent of the terms and conditions of this Public License.
 
 
-Section 8 -- Interpretation.
+Section 8 --Interpretation.
 
 a. For the avoidance of doubt, this Public License does not, and
   shall not be interpreted to, reduce, limit, restrict, or impose
@@ -3183,7 +3183,7 @@ prior to termination shall survive termination.
 /************************************************************************
 /* *
 /*  6. Disclaimer of Warranty *
-/*------------------------- *
+/*-------------------------*
 /* /*
 /*  Covered Software is provided under this License on an "as is" *
 /*  basis, without warranty of any kind, either expressed, implied, or  *
@@ -3274,7 +3274,7 @@ If You choose to distribute Source Code Form that is Incompatible With
 Secondary Licenses under the terms of this version of the License, the
 notice described in Exhibit B of this License must be attached.
 
-Exhibit A - Source Code Form License Notice
+Exhibit A -Source Code Form License Notice
 -------------------------------------------
 
   This Source Code Form is subject to the terms of the Mozilla Public
@@ -3288,7 +3288,7 @@ for such a notice.
 
 You may add additional accurate notices of copyright ownership.
 
-Exhibit B - "Incompatible With Secondary Licenses" Notice
+Exhibit B -"Incompatible With Secondary Licenses" Notice
 ---------------------------------------------------------
 
   This Source Code Form is "Incompatible With Secondary Licenses", as
@@ -3310,12 +3310,12 @@ May you share freely, never taking more than you give.
 Open Source Software Licensed under the Specific License: The below software in this distribution may have been modified by THL A29 Limited ("Tencent Modifications"). All Tencent Modifications are Copyright (C) 2021 THL A29 Limited.
 --------------------------------------------------------------------
 1. fdk-aac (Third-Party Modified Version of the Fraunhofer FDK AAC Codec Library for Android.)
-© Copyright  1995 - 2012 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.  All rights reserved.
+© Copyright  1995 -2012 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.  All rights reserved.
 Original Source code of this software can be obtained from: https://archive.mozilla.org/pub/opus/opus-1.3.1.tar.gz
 
 Software License for The Fraunhofer FDK AAC Codec Library for Android
 
-© Copyright  1995 - 2012 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+© Copyright  1995 -2012 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
   All rights reserved.
 
 1. INTRODUCTION
@@ -3386,7 +3386,7 @@ advised of the possibility of such damage.
 5. CONTACT INFORMATION
 
 Fraunhofer Institute for Integrated Circuits IIS
-Attention: Audio and Multimedia Departments - FDK AAC LL
+Attention: Audio and Multimedia Departments -FDK AAC LL
 Am Wolfsmantel 33
 91058 Erlangen, Germany
 
@@ -5195,14 +5195,14 @@ Open Source Software Licensed under the Specific License:
 The below software in this distribution may have been modified by THL A29 Limited (“Tencent Modifications”). All Tencent Modifications are Copyright (C) 2016 THL A29 Limited.
 --------------------------------------------------------------------
 1. fdk-aac
-© Copyright  1995 - 2012 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+© Copyright  1995 -2012 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
   All rights reserved.
 
 Terms of the Specific License:
 
 Software License for The Fraunhofer FDK AAC Codec Library for Android
 
-© Copyright  1995 - 2012 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+© Copyright  1995 -2012 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
   All rights reserved.
 
 1. INTRODUCTION
@@ -5273,7 +5273,7 @@ advised of the possibility of such damage.
 5. CONTACT INFORMATION
 
 Fraunhofer Institute for Integrated Circuits IIS
-Attention: Audio and Multimedia Departments - FDK AAC LL
+Attention: Audio and Multimedia Departments -FDK AAC LL
 Am Wolfsmantel 33
 91058 Erlangen, Germany
 
