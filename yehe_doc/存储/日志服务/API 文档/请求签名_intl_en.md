@@ -4,7 +4,7 @@
 1. Get `SecretId` and `SecretKey`.
    They can be obtained on the [TencentCloud API Key](https://console.cloud.tencent.com/capi) page in the console.
 2. Determine the programming language:
-   Determine the HMAC-SHA1 function to use based on your development language. CLS provides a [demo for signature calculation](http://signature-1254139626.file.myqcloud.com/signature.zip) for C#, C++, Go, Java, Node.js, PHP, and Python languages.
+   Determine the HMAC-SHA1 function to use based on your development language. CLS provides a [demo for signature calculation](https://mirrors.tencent.com/install/cls/signature.zip) for C#, C++, Go, Java, Node.js, PHP, and Python languages.
 
 An HTTP signature request initiated to CLS through an API is transmitted by using the standard HTTP Authorization header as shown in the following example:
 
@@ -87,7 +87,7 @@ The key-value (Key=Value) pairs constituting the signing information above are d
 
 
 
->For `q-sign-time` and `q-key-time`, the end time should be after the start time; otherwise, the signature will expire immediately.
+> !For `q-sign-time` and `q-key-time`, the end time should be after the start time; otherwise, the signature will expire immediately.
 
 ### Calculation method
 
@@ -98,7 +98,7 @@ Signature calculation steps:
 3. Use `SecretKey` to encrypt `q-key-time` to get `SignKey`.
 4. Use `SignKey` to encrypt `StringToSign` to generate `Signature`.
 
->URL-encoded special symbols should be in uppercase; for example, `/` should be encoded as `%2F` instead of `%2f`,
+> !URL-encoded special symbols should be in uppercase; for example, `/` should be encoded as `%2F` instead of `%2f`,
 
 
 
@@ -143,7 +143,7 @@ Without request parameter:
 get\n/logset\n\nhost=ap-shanghai.cls.tencentyun.com\n
 ```
 
->Even without parameters, `\n` cannot be omitted, so `\n\n` is generated.
+>?Even without parameters, `\n` cannot be omitted, so `\n\n` is generated.
 
 #### Step 2. Concatenate StringToSign
 
@@ -157,7 +157,7 @@ StringToSign = q-sign-algorithm + "\n"
 
 The `\n` above indicates a line break escape character, `+` indicates a string concatenation operation, and other parameters have been described above, where the sha1 hash value of `HttpRequestInfo` is a hexadecimal lowercase string.
 
->You need to escape `\n` to a line break first and then perform `sha1` calculation on `HttpRequestInfo`.
+> !You need to escape `\n` to a line break first and then perform `sha1` calculation on `HttpRequestInfo`.
 
 The corresponding result is as follows:
 
@@ -279,7 +279,7 @@ For the above request, after the signature is added in the request header `Host`
 HttpRequestInfo = put\n/logset\n\ncontent-type=application%2Fjson&host=ap-shanghai.cls.tencentyun.com\n
 ```
 
->The `uri` parameter is empty, so it is a null character; however, `\n` cannot be omitted, so `\n\n` is generated.
+>?The `uri` parameter is empty, so it is a null character; however, `\n` cannot be omitted, so `\n\n` is generated.
 
 The original string of the signature generated according to `sha1(HttpRequestInfo)` is:
 
