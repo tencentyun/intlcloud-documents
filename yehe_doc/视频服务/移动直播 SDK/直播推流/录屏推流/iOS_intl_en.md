@@ -2,25 +2,26 @@
 
 Screen recording is a new feature in iOS 10. In addition to using ReplayKit to record video from the screen, which is possible in iOS 9, with iOS 10, users can also stream live video from the screen. For details, see [Go Live with ReplayKit](https://developer.apple.com/videos/play/wwdc2016/601/). In iOS 11, Apple made ReplayKit more usable and more universally applicable and launched [ReplayKit2](https://developer.apple.com/videos/play/wwdc2017/606/), going from supporting ReplayKit alone to allowing the recording of the entire screen. Therefore, we recommend using ReplayKit2 in iOS 11 to enable the screen sharing feature. Screen sharing relies on extensions, which operate as independent processes. However, to ensure system smoothness, iOS allocates limited resources to extensions and may kill extensions with high memory usage. Given this, Tencent Cloud has further reduced the memory usage of LiteAVSDK while retaining its high streaming quality and low latency to ensure the stability of extensions.
 
->!This document describes how to use ReplayKit2 in iOS 11 to publish streams from the screen. The parts about the use of the SDK also apply to other custom stream publishing scenarios. For details, please see the sample code in the `ReplaykitUpload` file of the [demo](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/Demo).
+>!This document describes how to use ReplayKit2 in iOS 11 to publish streams from the screen. The parts about the use of the SDK also apply to other custom stream publishing scenarios. For details, please see the sample code in the `TXReplayKit_Screen` file of the [demo](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC/Basic/LivePushScreen).
 
 ## Tryout
 
 To try out the screen sharing feature, [click here](https://itunes.apple.com/cn/app/%E8%A7%86%E9%A2%91%E4%BA%91%E5%B7%A5%E5%85%B7%E5%8C%85/id1152295397?mt=8) or scan the QR code below to download Video Cloud Toolkit.
 ![](https://main.qcloudimg.com/raw/386c06636b522fbd0f85714acf73209b.png)
+
 >! You can publish streams from the screen only in iOS 11 or above.
 
 ## Sample Code
-Regarding frequently asked questions among developers, Tencent Cloud offers a straightforward API example project, which you can use to quickly learn how to use different APIs.
+Regarding frequently asked questions among developers, Tencent Cloud offers an easy-to-understand API example project, which you can use to quickly learn how to use different APIs.
 
 | Platform |                         GitHub Address                          |
 | :------: | :----------------------------------------------------------: |
-| iOS| [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example) |
+| iOS| [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC) |
 | Android  | [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/Android/MLVB-API-Example) |
 
 #### Directions
 1. Open Control Center, touch and hold the record button, and select **Video Cloud Toolkit**.
-2. Open **Video Cloud Toolkit**, go to **MLVB** >**Screen Sharing**, enter a publishing URL or tap **New** to generate one, and tap **Start**.
+2. Open **Video Cloud Toolkit**, tap **Screen Sharing**, enter a publishing URL or tap **New** to get a publishing URL, and tap **Start**.
 
 
 
@@ -33,7 +34,7 @@ If the configuration is successful, you will receive a banner notification about
 Xcode 9 or above is required, and your iPhone must be updated to iOS 11 or above. Screen recording is not supported on emulators.
 
 ### Create a broadcast upload extension
-Open your project with Xcode, click **New** > **Target**, and select **Broadcast Upload Extension**.
+Open your project with Xcode and select **New** > **Target…** > **Broadcast Upload Extension**, as shown below.
 ![](https://main.qcloudimg.com/raw/c4c0b0ee049c733640f813a318a25adb.png)
 Enter a product name and click **Finish**. A new directory with the product name entered will appear in your project. Under the directory, there is an automatically generated `SampleHandler` class, which is responsible for screen recording operations.
 
@@ -58,8 +59,8 @@ static NSString *s_rtmpUrl;
 <dx-codeblock>
 ::: objective objective
  - (void)initPublisher {
-		 if (s_txLivePublisher) {
-			 [s_txLivePublisher stopPush];
+         if (s_txLivePublisher) {
+             [s_txLivePublisher stopPush];
     }
     s_txLivePublisher = [[V2TXLivePusher alloc] initWithLiveMode:V2TXLiveMode_RTMP];
     [s_txLivePublisher setObserver:self];
@@ -88,7 +89,7 @@ Call [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLi
 ### Step 3. Publish video
 ReplayKit transfers video to`-[SampleHandler processSampleBuffer:withType]` though callbacks.
 
-```objective-c
+```objectivec
 - (void)processSampleBuffer:(CMSampleBufferRef)sampleBuffer withType:(RPSampleBufferType)sampleBufferType {
     switch (sampleBufferType) {
         case RPSampleBufferTypeVideo:
@@ -128,16 +129,16 @@ We recommend the former, as there are three major drawbacks to watermarking in t
 
 The watermark image must be in PNG format. PNG images carry opacity information, which allows the SDK to better address the image aliasing issue. Please note that PNG images require processing by professional designers. You are not advised to change the extension of a JPG image to PNG in Windows and use it as a watermark directly.
 
-```objective-c
+```objectivec
 // Set a video watermark
 [s_txLivePublisher setWatermark:image x:0 y:0 scale:1];
 ```
 
 [](id:step5)
-### Step 5. Stop publishing streams
+### Step 5. Stop publishing
 ReplayKit calls `-[SampleHandler broadcastFinished]` to stop stream publishing. Below is an example:
 
-```objective-c
+```objectivec
 - (void)broadcastFinished {
     // User has requested to finish the broadcast.
     if (s_txLivePublisher) {
@@ -228,10 +229,10 @@ The extension and host app may also need to interact with each other in real tim
 <dx-codeblock>
 ::: code 
 CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(),
-									kDarvinNotificationNamePushStart,
-									NULL,
-									nil,
-									YES);
+                                    kDarvinNotificationNamePushStart,
+                                    NULL,
+                                    nil,
+                                    YES);
 :::
 </dx-codeblock>
 The extension can start publishing streams after receiving this notification. As the notification is at the CF layer, to facilitate operations, it needs to be sent to the Cocoa layer via NSNotificationCenter.

@@ -1,6 +1,7 @@
 ## Overview
 
-Publishing from camera refers to the process of collecting video and audio data from the mobile phone’s camera and mic, encoding the data, and publishing it to cloud-based live streaming platforms. Tencent Cloud’s LiteAVSDK provides the camera publishing capability via `V2TXLivePusher`. 
+Publishing from camera refers to the process of collecting video and audio data from the mobile phone’s camera and mic, encoding the data, and publishing it to cloud-based live streaming platforms. Tencent Cloud’s LiteAVSDK provides the camera publishing capability via `V2TXLivePusher`.
+
 
 ## Notes
 **Testing on real devices:** The SDK uses a lot of audio and video APIs of the Android system, most of which cannot be used on emulators. Therefore, we recommend that you test your project on a real device.
@@ -10,8 +11,9 @@ Publishing from camera refers to the process of collecting video and audio data 
 | :------: | :----------------------------------------------------------: | :-------------------------: |
 |   iOS    | [GitHub](https://github.com/tencentyun/LiteAVProfessional_iOS/blob/master/Demo/TXLiteAVDemo/LivePusherDemo/CameraPushDemo/CameraPushViewController.m) | CameraPushViewController.m  |
 | Android  | [GitHub](https://github.com/tencentyun/LiteAVProfessional_Android/blob/master/Demo/livepusherdemo/src/main/java/com/tencent/liteav/demo/livepusher/camerapush/ui/CameraPushMainActivity.java) | CameraPushMainActivity.java |
->?In addition to the above sample code, regarding frequently asked questions among developers, Tencent Cloud offers a straightforward API example project, which you can use to quickly learn how to use different APIs.
->- iOS: [MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example)
+
+>? In addition to the above sample code, regarding frequently asked questions among developers, Tencent Cloud offers a straightforward API example project, which you can use to quickly learn how to use different APIs.
+>- iOS: [MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC)
 >- Android: [MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/Android/MLVB-API-Example)
 
 ## Integration
@@ -24,7 +26,7 @@ Publishing from camera refers to the process of collecting video and audio data 
 [](id:step2)
 ### 2. Configure a license for the SDK
 Click [Get License](https://console.cloud.tencent.com/live/license) to obtain a trial license. You will get two strings: the license URL `licenceURL` and the decryption key `licenceKey`.
-Before you use the features of the Enterprise Edition SDK in your application, complete the following configurations (preferably in the application class):
+Before you use the features of MLVB Enterprise Edition in your application, complete the following configurations (preferably in the application class).
 ```java
 public class MApplication extends Application {
 
@@ -67,29 +69,28 @@ mLivePusher.startCamera(true);
 ```
 
 [](id:step5)
-### 5. Start and stop publishing streams  
-
-After enabling camera preview, you can call [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ab4f8adaa0616d54d6ed920e49377a08a) in `V2TXLivePusher` to start stream publishing.  
-<dx-codeblock>
-::: java java
-//Start publishing streams
-String rtmpURL = "rtmp://test.com/live/xxxxxx"; // Enter the RTMP URL for stream publishing  
+### 5. Start and stop publishing
+After calling `startCamera` to enable camera preview, you can call the [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ab4f8adaa0616d54d6ed920e49377a08a) API in `V2TXLivePusher` to start publishing. You can use [TRTC’s URL](https://intl.cloud.tencent.com/document/product/1071/39359) or an [RTMP URL](https://intl.cloud.tencent.com/document/product/1071/39359) for publishing. The former uses UDP. It offers better streaming quality and supports co-anchoring.
+```objectivec 
+// Start publishing. You can use the `trtc://` or `rtmp://` protocol. The former supports co-anchoring.
+String rtmpURL = "trtc://cloud.tencent.com/push/streamid?sdkappid=1400188888&userId=A&usersig=xxxxx";  //This URL supports co-anchoring.
+String rtmpURL = "rtmp://test.com/live/streamid?txSecret=xxxxx&txTime=xxxxxxxx";    //This URL does not support co-anchoring. The stream is published to a live streaming CDN.
 int ret = mLivePusher.startPush(rtmpURL.trim());  
 if (ret == V2TXLIVE_ERROR_INVALID_LICENSE) {    
     Log.i(TAG, "startRTMPPush: license verification failed");  
 }       
-:::
-</dx-codeblock>
+```
 
 Call [stopPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#af07c1dcff91b43a2309665b8663ed530) in `V2TXLivePusher` to stop publishing streams.
-```java 
-//Stop publishing streams
+```objectivec
+//Stop publishing
 mLivePusher.stopPush();
 ```
->!If you have enabled camera preview, please disable it when you stop publishing streams.  
+>! If you have enabled camera preview, please disable it when you stop publishing streams. 
 
 - **How can I obtain a valid publishing URL?** 
-Activate CSS and, in the CSS console, go to [**CSS Toolkit** > **Address Generator**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) to generate a publishing URL. For more information, see [Publishing/Playback URL](https://intl.cloud.tencent.com/document/product/1071/39359).    
+Activate CSS and, in the CSS console, go to [**CSS Toolkit** > **Address Generator**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) to generate a publishing URL. For more information, see [Publishing/Playback URL](https://intl.cloud.tencent.com/document/product/1071/39359). 
+
 - **Why is `V2TXLIVE_ERROR_INVALID_LICENSE` returned?**    
 If the `startPush` API returns `V2TXLIVE_ERROR_INVALID_LICENSE`, it means your license verification failed. Please check your configuration against [Step 2. Configure a license for the SDK](#step2).   
 
@@ -100,7 +101,9 @@ If your live streaming scenarios involve audio only, you can skip [Step 4](#step
 ```java     
 V2TXLivePusher mLivePusher = new V2TXLivePusherImpl(this, V2TXLiveDef.V2TXLiveMode.TXLiveMode_RTMP); // Set the live streaming protocol to RTMP
 mLivePusher.startMicrophone();
-String rtmpURL = "rtmp://test.com/live/xxxxxx"; // Enter the RTMP URL for stream publishing  
+// Start publishing. You can use the `trtc://` or `rtmp://` protocol. The former supports co-anchoring.
+String rtmpURL = "trtc://cloud.tencent.com/push/streamid?sdkappid=1400188888&userId=A&usersig=xxxxx";  //This URL supports co-anchoring.
+String rtmpURL = "rtmp://test.com/live/streamid?txSecret=xxxxx&txTime=xxxxxxxx";    //This URL does not support co-anchoring. The stream is published to a live streaming CDN.
 int ret = mLivePusher.startPush(rtmpURL.trim());  
 ```
 
@@ -154,7 +157,7 @@ You can call the `setBeautyStyle` API of `TXBeautyManager` to set the beauty fil
 - Call the `setFilter` API in `TXBeautyManager` to set color filters. Color filters are a technology that adjusts the color tone of sections of an image. For example, it may lighten the yellow sections of an image to achieve the effect of skin brightening, or add warm tones to a video to give it a refreshing and soft boost.   
 - Call the `setFilterStrength` API in `TXBeautyManager` to set the strength of a color filter. The higher the strength, the more obvious the effect. 
 
-Based on our experience of operating Mobile QQ and Now Live, it’s not enough to use only the `setBeautyStyle` API in `TXBeautyManager` to set the beauty filter style. The `setBeautyStyle` API must be used together with `setFilter` to produce richer effects. Given this, our designers have developed 17 color filters and integrated them into the [demo](https://github.com/tencentyun/MLVBSDK/tree/master/Android/Demo). 
+Based on our experience of operating Mobile QQ and Now Live, it’s not enough to use only the `setBeautyStyle` API in `TXBeautyManager` to set the beauty filter style. The `setBeautyStyle` API must be used together with `setFilter` to produce richer effects. Given this, our designers have developed 17 built-in color filters for you to choose from. 
 
 ```java 
 // Select a color filter file to use   

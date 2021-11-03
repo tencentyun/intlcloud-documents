@@ -1,6 +1,7 @@
 ## Overview
 Publishing from camera refers to the process of collecting video and audio data from the mobile phone’s camera and mic, encoding the data, and publishing it to cloud-based live streaming platforms. Tencent Cloud’s LiteAVSDK provides the camera publishing capability via `V2TXLivePusher`. 
 
+
 ## Notes
 **About running projects on x86 emulators:** The SDK uses a lot of audio and video APIs of the iOS system, most of which cannot be used on the x86 emulator built into macOS. Therefore, we recommend that you test your project on a real device.
 
@@ -10,13 +11,13 @@ Publishing from camera refers to the process of collecting video and audio data 
 |   iOS    | [GitHub](https://github.com/tencentyun/LiteAVProfessional_iOS/blob/master/Demo/TXLiteAVDemo/LivePusherDemo/CameraPushDemo/CameraPushViewController.m) | CameraPushViewController.m  |
 | Android  | [GitHub](https://github.com/tencentyun/LiteAVProfessional_Android/blob/master/Demo/livepusherdemo/src/main/java/com/tencent/liteav/demo/livepusher/camerapush/ui/CameraPushMainActivity.java) | CameraPushMainActivity.java |
 >?In addition to the above sample code, regarding frequently asked questions among developers, Tencent Cloud offers a straightforward API example project, which you can use to quickly learn how to use different APIs.
->- iOS: [MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example)
+>- iOS: [MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC)
 >- Android: [MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/Android/MLVB-API-Example)
 
 ## Integration
 [](id:step1)
 ### 1. Download the SDK
-[Download](https://intl.cloud.tencent.com/document/product/1071/38150) the SDK ZIP file and integrate the SDK into your application as instructed in the SDK integration document.
+[Download](https://intl.cloud.tencent.com/document/product/1071/38150) the SDK and follow the instructions in [SDK Integration](https://intl.cloud.tencent.com/document/product/1071/38155) to integrate the SDK into your application.
 
 [](id:step2)
 ### 2. Configure a license for the SDK
@@ -67,23 +68,23 @@ Call `setRenderView` in [V2TXLivePusher](https://liteav.sdk.qcloud.com/doc/api/z
             _localView.transform = CGAffineTransformMakeScale(0.3, 0.3); // Shrink by 1/3
         }];
      ```
-```
 
 [](id:step5)
-### 5. Start and stop publishing streams
-After calling `startCamera` to enable camera preview, you can call the [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a33b38f236a439e7d848606acb68cc087) API in `V2TXLivePusher` to start stream publishing.
+### 5. Start and stop publishing
+After calling `startCamera` to enable camera preview, you can call the [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a33b38f236a439e7d848606acb68cc087) API in `V2TXLivePusher` to start publishing. You can use [TRTC’s URL](https://intl.cloud.tencent.com/document/product/1071/39359) or an [RTMP URL](https://intl.cloud.tencent.com/document/product/1071/39359) for publishing. The former uses UDP. It offers better streaming quality and supports co-anchoring.
 ​```objectivec 
-// Start publishing streams
-NSString* rtmpUrl = @"rtmp://test.com/live/xxxxxx"; // Enter your RTMP URL for stream publishing
-[_pusher startPush:rtmpUrl];
+// Start publishing. You can use the `trtc://` or `rtmp://` protocol. The former supports co-anchoring.
+NSString* url = @"trtc://cloud.tencent.com/push/streamid?sdkappid=1400188888&userId=A&usersig=xxxxx";  //This URL supports co-anchoring.
+NSString* url = @"rtmp://test.com/live/streamid?txSecret=xxxxx&txTime=xxxxxxxx";    //This URL does not support co-anchoring. The stream is published to a live streaming CDN.
+[_pusher startPush:url];
 ```
 
 Call [stopPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a7332411d6264bc743b0b2bae0b8a73ae) in `V2TXLivePusher` to stop publishing streams.
-```objectivec
-// Stop publishing streams
+​```objectivec
+//Stop publishing streams
 [_pusher stopPush];
 ```
->! If you have enabled camera preview, please disable it when you stop publishing streams.  
+>! If you have enabled camera preview, please disable it when you stop publishing streams. 
 
 -  **How can I obtain a valid publishing URL?**
 Activate CSS and, in the CSS console, go to [**CSS Toolkit** > **Address Generator**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) to generate a publishing URL. For more information, see [Publishing/Playback URL](https://intl.cloud.tencent.com/document/product/1071/39359).
@@ -96,15 +97,17 @@ If the `startPush` API returns `V2TXLIVE_ERROR_INVALID_LICENSE`, it means your l
 If your live streaming scenarios involve audio only, you can skip [Step 4](#step4) or do not call `startCamera` before `startPush`.
 ```objectivec
 V2TXLivePusher *_pusher = [[V2TXLivePusher alloc] initWithLiveMode:V2TXLiveMode_RTMP]; 
-NSString* rtmpUrl = @"rtmp://test.com/live/xxxxxx";    
+// Start publishing. You can use the `trtc://` or `rtmp://` protocol. The former supports co-anchoring.
+NSString* url = @"trtc://cloud.tencent.com/push/streamid?sdkappid=1400188888&userId=A&usersig=xxxxx";  //This URL supports co-anchoring.
+NSString* url = @"rtmp://test.com/live/streamid?txSecret=xxxxx&txTime=xxxxxxxx";    //This URL does not support co-anchoring. The stream is published to a live streaming CDN.
+[_pusher startPush:url];
 [_pusher startMicrophone];
-[_pusher startPush:rtmpUrl];
 ```
 >? If you publish audio-only streams but no streams can be pulled from an RTMP, FLV, or HLS playback URL, there is a problem with your line configuration, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for help.
 
 [](id:step7)
 ### 7. Set video quality
-Call [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a0b08436c1e14a8d7d9875fae59ac6d84) in `V2TXLivePusher` to set the quality of videos watched by audience. The encoding parameters set determine the quality of videos presented to audience. The local video watched by the host is the original HD version that has not been encoded or compressed, and is therefore not affected by the settings. For details, please see [Setting Video Quality](https://cloud.tencent.com/document/product/454/56600).
+Call [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a0b08436c1e14a8d7d9875fae59ac6d84) in `V2TXLivePusher` to set the quality of videos watched by audience. The encoding parameters set determine the quality of videos presented to audience. The local video watched by the host is the original HD version that has not been encoded or compressed, and is therefore not affected by the settings. For details, please see [Setting Video Quality](https://intl.cloud.tencent.com/document/product/1071/41861).
 
 [](id:step8)
 ### 8. Set the beauty filter style and skin brightening and rosy skin effects
@@ -145,7 +148,7 @@ You can call the [setBeautyStyle](https://liteav.sdk.qcloud.com/doc/api/zh-cn/gr
 - Call the `setFilter` API in `TXBeautyManager` to set color filters. Color filters are a technology that adjusts the color tone of sections of an image. For example, it may lighten the yellow sections of an image to achieve the effect of skin brightening, or add warm tones to a video to give it a refreshing and soft boost.   
 - Call the `setFilterStrength` API in `TXBeautyManager` to set the strength of a color filter. The higher the strength, the more obvious the effect. 
 
-Based on our experience of operating Now Live, it’s not enough to use the `setBeautyStyle` API in `TXBeautyManager` to set the beauty filter style. The `setBeautyStyle` API must be used together with `setFilter` in order to produce richer effects. Given this, our designers have developed 17 color filters and integrated them into the [demo](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/Demo).
+Based on our experience of operating Mobile QQ and Now Live, it’s not enough to use only the `setBeautyStyle` API in `TXBeautyManager` to set the beauty filter style. The `setBeautyStyle` API must be used together with `setFilter` to produce richer effects. Given this, our designers have developed 17 built-in color filters for you to choose from.
 ```objectivec
 NSString * path = [[NSBundle mainBundle] pathForResource:@"FilterResource" ofType:@"bundle"];
 path = [path stringByAppendingPathComponent:lookupFileName];
@@ -160,13 +163,13 @@ UIImage *image = [UIImage imageWithContentsOfFile:path];
 `V2TXLivePusher` provides a series of APIs for the control of devices. You can call `getDeviceManager` to get a `TXDeviceManager` instance for device management. For detailed instructions, please see [TXDeviceManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__ios.html#interfaceTXDeviceManager).
 
 [](id:step11)
-### 11. Set the mirror effect for audience
+### 11. Set the video mirroring effect for audience
 Call [setRenderMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#adf4cd57c705a1022d6730fd722f8dab5) in `V2TXLivePusher` to set the camera mirror mode, which affects the way video images are presented to audience. By default, the local image seen by the host is flipped when the front camera is used.
 ![](https://main.qcloudimg.com/raw/520d16280962523809e5695d2483d9ef.png)
 
 [](id:step12)
 ### 12. Publish streams in landscape mode
-In most cases, hosts stream while holding their phones vertically, and audience watch videos in portrait resolutions (e.g., 540 × 960). However, there are also cases where hosts hold phones horizontally, and ideally, audience should watch videos in landscape resolutions (960 × 540).
+In most cases, hosts stream while holding their phones vertically, and audience watch videos in portrait resolutions (e.g., 540 × 960). However, there are also cases where hosts hold phones horizontally, and ideally, audience should watch videos in landscape resolutions (960 × 540), as shown below: 
 
 
 By default, `V2TXLivePusher` outputs videos in portrait resolutions. You can publish landscape-mode videos to audience by modifying a parameter of the [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a0b08436c1e14a8d7d9875fae59ac6d84) API.

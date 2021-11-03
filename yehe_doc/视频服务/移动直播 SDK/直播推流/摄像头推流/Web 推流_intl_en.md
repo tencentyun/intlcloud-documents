@@ -20,20 +20,21 @@ The audio/video capturing feature is poorly supported on mobile browsers. For ex
 
 To publish streams on mobile browsers, use the [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38157).
 
-## Integration
+## SDK Integration
 
 ### Step 1. Prepare the page
 
 Add an initialization script to the (desktop) page from which streams are to be published.
 
 ```html
-<script src="https://imgcache.qq.com/open/qcloud/live/webrtc/js/TXLivePusher-1.0.1.min.js" charset="utf-8"></script>
+<script src="https://imgcache.qq.com/open/qcloud/live/webrtc/js/TXLivePusher-1.0.2.min.js" charset="utf-8"></script>
 ```
+>? You must add the script to the body section of the HTML page. Adding it to the head section will cause an error.
 
 If your business is in a domain-limited region, you can import the following link:
 
 ```html
-<script src="https://cloudcache.tencent-cloud.com/open/qcloud/live/webrtc/js/TXLivePusher-1.0.1.min.js" charset="utf-8"></script>
+<script src="https://cloudcache.tencent-cloud.com/open/qcloud/live/webrtc/js/TXLivePusher-1.0.2.min.js" charset="utf-8"></script>
 ```
 
 ### Step 2. Add a container to the HTML page
@@ -45,6 +46,7 @@ Add a player container to the section of the page where local video is to be pla
 ```
 
 ### Step 3. Publish streams
+
 1. **Generate an instance of the publishing SDK:**
 Generate an instance of the global object `TXLivePusher`. All subsequent operations will be performed via the instance.
 ```javascript
@@ -60,6 +62,7 @@ livePusher.setRenderView('id_local_video');
 >document.getElementById('id_local_video').getElementsByTagName('video')[0].muted = true;
 >```
 ```
+
 3. **Set audio/video quality:**
 Audio/video quality should be set before capturing. You can specify quality parameters if the default settings do not meet your requirements.
 ​```javascript
@@ -70,6 +73,7 @@ livePusher.setAudioQuality('standard');
 // Set the frame rate
 livePusher.setProperty('setVideoFPS', 25);
 ```
+
 4. **Capture streams:**
 You can capture streams from the camera, mic, screen and local media files. If capturing is successful, the player container will start playing the audio/video captured.
 ```javascript
@@ -78,26 +82,29 @@ livePusher.startCamera();
 // Turn the mic on
 livePusher.startMicrophone();
 ```
+
 5. **Publish streams:**
 Pass in the LEB publishing URL to start publishing streams. For the format of publishing URLs, please see [Splicing CSS URLs](https://intl.cloud.tencent.com/document/product/267/38393). You need to replace the prefix `rtmp://` with `webrtc://`.
 ```javascript
 livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx');
 ```
->?Before publishing streams, make sure that audio/video streams are captured successfully, or you will fail to call the publishing API. You can use the code below to publish streams automatically after audio/video is captured, that is, after the callback for capturing the first audio or video frame is received. If both audio and video are captured, publishing starts only after both the callback for capturing the first audio frame and that for the first video frame are received.
+
+>?Before publishing, make sure that audio/video streams are captured successfully, or you will fail to call the publishing API. You can use the code below to publish streams automatically after audio/video is captured, that is, after the callback for capturing the first audio or video frame is received. If both audio and video are captured, publishing starts only after both the callback for capturing the first audio frame and that for the first video frame are received.
+
 >```javascript
 >var hasVideo = false;
 >var hasAudio = false;
 >var isPush = false;
 >livePusher.setObserver({
->onCaptureFirstAudioFrame: function() {
->hasAudio = true;
->if (hasVideo && !isPush) {
+>	onCaptureFirstAudioFrame: function() {
+>		hasAudio = true;
+>		if (hasVideo && !isPush) {
 >isPush = true;
 >livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx');
 >		}
 >	},
->onCaptureFirstVideoFrame: function() {
->hasVideo = true;
+>	onCaptureFirstVideoFrame: function() {
+>		hasVideo = true;
 >		if (hasAudio && !isPush) {
 >isPush = true;
 >livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx');
@@ -106,11 +113,13 @@ livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx
 >});
 >```
 ```
+
 </dx-codeblock>
-6. **Stop publishing streams:**
-​```javascript
+6. **Stop publishing:**
+```javascript
 livePusher.stopPush();
 ```
+
 7. **Stop capturing audio and video:**
 ```javascript
 // Turn the camera off
@@ -179,9 +188,6 @@ deviceManager.getDevicesList().then(function(data) {
 deviceManager.switchCamera('camera_device_id');
 :::
 </dx-codeblock>
-
-
-
 
 
 
