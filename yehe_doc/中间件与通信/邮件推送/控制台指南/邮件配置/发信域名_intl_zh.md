@@ -18,3 +18,4 @@
 2. 进入新建发信域名配置，请输入您的域名地址，单击**提交**即可完成保存。
 ![](https://main.qcloudimg.com/raw/c2c75b71aaaf762f545ad530c6554aeb.png)
 >? 不可使用企业邮箱域名，以免产生 SPF、MX 记录的冲突。
+>如果您需要更换发信域名，请[提交工单](https://console.cloud.tencent.com/workorder/category)。
