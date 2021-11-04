@@ -28,7 +28,7 @@ Signatures are already implemented in COS SDKs, which means when you initiate re
 | Java SDK | [COSSigner.java](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/auth/COSSigner.java) |
 | JavaScript SDK | [util.js](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/src/util.js) (getAuth) |
 | Node.js SDK | [util.js](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/sdk/util.js) (getAuth) |
-| PHP SDK | [Signature.php](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/src/Qcloud/Cos/Signature.php) |
+| PHP SDK | Signature.php |
 | Python SDK | [cos_auth.py](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/cos_auth.py) |
 | Mini Program SDK | [util.js](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/src/util.js) (getAuth) |
 
