@@ -19,7 +19,7 @@
 <td align="center">5</td>
 </tr>
 <tr>
-<td>每个私有网络支持关联的基础网络主机个数</td>
+<td>每个私有网络支持关联的基础网络云服务器个数</td>
 <td align="center">100</td>
 </tr>
 </tbody></table>
@@ -58,6 +58,20 @@
 </tr>
 </table>
 
+### HAVIP
+<table >
+<thead>
+<tr>
+<th width="70%">资源</th>
+<th width="30%">限制（单位：个）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>每个私有网络的 HAVIP 默认配额数</td>
+<td>10</td>
+</tr>
+</tbody></table>
+
 ### 安全组
 <table>
 <tr><th width="70%">功能描述</th><th width="30%">限制</th></tr>
@@ -65,7 +79,7 @@
 <tr><td>安全组规则数</td><td>100条/入站方向，100条/出站方向</td></tr>
 <tr><td>单个安全组关联的云服务器实例数</td><td>2000个</td></tr>
 <tr><td>每个云服务器实例可以关联的安全组个数</td><td>5个</td></tr>
-<tr><td>每个安全组引用安全组 ID 的规则条目数</td><td>10条</td></tr>
+<tr><td>每个安全组可以引用的安全组ID的个数</td><td>10条</td></tr>
 </table>
 
 ### 网络 ACL
