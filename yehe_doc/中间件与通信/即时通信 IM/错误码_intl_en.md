@@ -356,7 +356,7 @@
 | 10035 | Audio-video chat rooms and broadcast chat rooms do not support message recalls. |
 | 10036 | The number of audio-video chat rooms exceeds the limit allowed. To purchase a prepaid package of “IM audio-video chat rooms”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
 | 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade a prepaid package of “Expanding the number of groups that can be created and joined by a single user”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10038 | The number of group members exceeds the limit allowed. To purchase or upgrade a prepaid package of “Increasing the limit of group members”, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10038 | The number of group members exceeds the limit allowed. To purchase or upgrade a prepaid package of “Increasing the limit of group members”, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).(After upgrade, you need to call the [v4/group_open_http_svc/modify_group_base_info](https://intl.cloud.tencent.com/document/product/1047/34962) API to modify the maximum number of members allowed per group. |
 | 10041 | The app (SDKAppID) is configured not to support group message recalls. |
 | 10045 | The size of the custom attribute key exceeds the limit of 32 bytes. |
 | 10046 | The size of a single value of the custom attribute exceeds the limit of 4,000 bytes. |
