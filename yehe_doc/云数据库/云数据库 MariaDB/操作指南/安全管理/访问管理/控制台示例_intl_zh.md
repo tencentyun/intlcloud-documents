@@ -1,13 +1,13 @@
 
 ## 云数据库访问管理策略示例
-您可以通过使用 CAM 策略让用户拥有在云数据库控制台中查看和使用特定资源的权限。该部分的示例能够使用户使用控制台的特定部分的策略。目前仅支持“按策略语法创建”方式配置云数据库 MariaDB 支持访问管理 CAM 功能。访问入口为【[访问管理](https://console.cloud.tencent.com/cam/policy)】>【策略】>【新建自定义策略】>【按策略语法创建】>【自定义】。
+您可以通过使用 CAM 策略让用户拥有在云数据库控制台中查看和使用特定资源的权限。该部分的示例能够使用户使用控制台的特定部分的策略。目前仅支持**按策略语法创建**方式配置云数据库 MariaDB 支持访问管理 CAM 功能。
 >!云数据库 MariaDB 在访问管理的接口关键词为 mariadb。
 
 ### 第一步、创建自定义策略语法
-1. 进入 [策略语法](https://console.cloud.tencent.com/cam/policy) 配置页面，单击【新建自定义策略】。
-2. 在弹出的对话框，选择【按策略语法创建】。
+1. 进入 [策略语法](https://console.cloud.tencent.com/cam/policy) 配置页面，单击**新建自定义策略**。
+2. 在弹出的对话框，选择**按策略语法创建**。
 ![](https://main.qcloudimg.com/raw/c75a0306c187c5754d30dd3b77891ffa.png)
-3. 选择空白模板并单击【下一步】。
+3. 选择空白模板并单击**下一步**。
 ![](https://main.qcloudimg.com/raw/9c6bcdc90c02059a5abb67e73a74d739.png)
 4. 填入对应的策略语法。
 ![](https://main.qcloudimg.com/raw/bcf53e1eecb4c6f76f133bd6fa7dfeec.png)
