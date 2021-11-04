@@ -1,6 +1,8 @@
+[](id:Q1)
 ### 同时集成了即时通信 IM 和 TPNS，存在大量的厂商类冲突，这种问题怎么解决？
-目前即时通信 IM 已使用 [移动推送 TPNS](https://intl.cloud.tencent.com/product/tpns) 提供的厂商 jar 包，您可参见文档 [IM 离线推送（Android）](https://intl.cloud.tencent.com/document/product/1047/34336)替换相关依赖包即可解决该问题。
+目前即时通信 IM 已使用 [移动推送 TPNS](https://intl.cloud.tencent.com/product/tpns) 提供的厂商 jar 包，您可参见文档 [IM 离线推送（Android）](https://intl.cloud.tencent.com/document/product/1047/39156)替换相关依赖包即可解决该问题。
 
+[](id:Q2)
 ### 消息没有收到或消息丢失如何处理？
 
 -  单聊消息
@@ -18,11 +20,11 @@
 3. Android 的需要确认是否注册了多个消息监听器，并且在消息监听器中返回了`true`。
 
 
-
+[](id:Q3)
 ### 收不到离线推送怎么处理？
 
 - APNs
-参考 离线推送（iOS）说明文档进行以下确认：
+参考 [离线推送（iOS）](https://intl.cloud.tencent.com/zh/document/product/1047/34347) 说明文档进行以下确认：
  - 确认是否正确上传证书到腾讯云控制台。
  - 确认在登录成功后，是否成功上传 token 到腾讯云。
  - 确认在上报 token 时，是否上报了正确的证书 ID。
@@ -32,7 +34,7 @@
  - 如果是群消息，是否设置了消息不提醒选项。
 
 - Android
-参考 离线推送 说明文档进行以下确认：
+参考 [离线推送](https://intl.cloud.tencent.com/document/product/1047/34336) 说明文档进行以下确认：
  - 确认是否正确上传了推送证书。
  - 确认是否成功上报 token。
  - 如果不是第三方离线推送（华为，小米，魅族），确认一下 QALService 进程是否存活，不存活的情况下确实会收不到离线推送，需要依赖系统的自启动权限。
@@ -45,13 +47,13 @@
 不管是 APNs 推送还是 Android 上的离线推送，在以上步骤无法确认问题时，需要继续确认以下情况：
 1. 确认接收方 ID 是否与消息要推送的用户 ID 一致。
 2. 确认是否设置了离线推送监听器（Android）。
-3. 确认是否设置了免打扰，iOS 参考 设置自定义推送提示音，Android 参考 设置全局离线推送配置。
+3. 确认是否设置了免打扰，iOS 参考 [设置自定义推送提示音](https://intl.cloud.tencent.com/zh/document/product/1047/34347)，Android 参考 [设置全局离线推送配置](https://intl.cloud.tencent.com/document/product/1047/34336#.E8.AE.BE.E7.BD.AE.E5.85.A8.E5.B1.80.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81.E9.85.8D.E7.BD.AE)。
 4. 确认消息是否是通过 `sendOnlineMessage` 接口发送的在线消息，或者通过 REST API 推送的时候设置了 `MsgLifeTime` 为 `0`。
-5. 确认消息是否设置了不进行离线推送的标识，iOS 参考 自定义离线消息属性，Android 参考 设置单条消息的离线推送配置。
+5. 确认消息是否设置了不进行离线推送的标识，iOS 参考 [自定义离线消息属性](https://intl.cloud.tencent.com/zh/document/product/1047/34347)，Android 参考 [设置单条消息的离线推送配置](https://intl.cloud.tencent.com/document/product/1047/34336#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81)。
 6. 若还是无法定位，可提供相关信息给技术人员进行排查。
 
+[](id:Q4)
 ### 群 @ 消息怎么处理？
-
 群内 @ 消息与普通消息没有本质区别，仅是在被 @ 的人收到消息时，需要在 UI 上做特殊处理。例如 QQ 的消息列表中会有标红提示。具体实现可以参考以下方案：
 1. 在发送消息时监听键盘事件，是否输入了 @ 字符，当检测到发送方输入了 @ 字符时，在 UI 上弹出群成员列表，以供发送方选择需要 @ 的人，假设被选到的用户为 user1。
 2. 选择完需要被 @ 的人后，在消息输入框里添加上 @ 及被选中的人的 ID， 例如 "@user1"。
@@ -100,6 +102,7 @@ try{
 5. 群里的成员接收到消息后，检查消息中的 `TIMCustomElem` 中的消息协议是否是 @ 消息协议。如果是， 则进行下一步处理，否则跳过。
 6. 判断被 @ 的人是否与当前登录用户一致，如果是，则在 UI 中进行特殊处理，否则不需要处理。
 
+[](id:Q5)
 ### 红包消息怎么处理？
 
 红包消息与 @ 消息类似，可以通过 `TIMCustomElem` 来实现。需要应用在 UI 上做相应的特殊处理，例如检查到当前消息为红包消息后，消息展示为红包的样式。
@@ -137,5 +140,12 @@ try{
 msg.setPriority(TIMMessagePriority.High);
 ```
 
+[](id:Q6)
 ### 即时通信 IM 消息存储时长是多久？
 单聊消息及非直播群消息具备历史消息存储能力，您可以登录 <a href="https://console.cloud.tencent.com/im">即时通信 IM 控制台</a> 修改相关配置。不同套餐包默认配置如下：<ul style="margin:0;"><li>体验版：7天，不支持延长</li><li>专业版：7天，支持延长</li><li>旗舰版：30天，支持延长</li></ul>延长历史消息存储时长是付费增值服务，具体计费说明请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">增值服务资费</a>
+
+[](id:Q7)
+
+### 为什么发送者已经被拉入黑名单但消息依旧显示发送成功？
+即时通信 IM 在控制台的 [黑名单检查](https://intl.cloud.tencent.com/document/product/1047/34419) 管理中提供发送消息后展示发送成功功能，当启用该功能时被拉黑用户侧发消息后仍展示发送成功 (实际对方不会收到消息) 。停用本设置项，则被拉黑用户侧发消息后会提示失败，SDK 会收到 [错误码 20007](https://intl.cloud.tencent.com/document/product/1047/34348) 。具体配置请参照文档 [黑名单检查](https://intl.cloud.tencent.com/document/product/1047/34419)。
+

@@ -69,7 +69,6 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 
 受信者がiOSまたはAndroidで、アプリケーションがバックグラウンドにある場合、中国語版のオフラインプッシュテキストは「[位置]となり、英語版のオフラインプッシュテキストは「[Location]」となります。
 
-
 ### 顔絵文字メッセージ要素
 
 ```
@@ -122,7 +121,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 
 ### 音声メッセージ要素
 
->!サーバー側に統合されたRest APIインターフェースを介して音声メッセージを送信する場合は、音声のURLを入力し、さらにこのURLを介して対応する音声をダウンロードできるようにする必要があります。Download_Flagフィールドには、必ず2を入力してください。
+>!サーバーに統合されたRest APIインターフェースを介して音声メッセージを送信する場合、必ず音声のUrl、UUID、Download_Flagフィールドに入力してください。対応する音声がUrl経由でダウンロードできることを確認する必要があります。UUIDフィールドは、グローバルに一意のString値を入力する必要があり、通常、音声ファイルのMD5値を入力します。メッセージ受信者はV2TIMSoundElem.getUUID()を介して設定されたUUIDフィールドを取得できます。ビジネスAppはこのフィールドを使用することで音声を区別できます。Download_Flagフィールドには、必ず2を入力してください。
 
 4.XバージョンIM SDK（Android、iOS、MacおよびWindows）によって送信される音声メッセージ要素の形式は次のとおりです。
 ```
@@ -130,9 +129,10 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
     "MsgType": "TIMSoundElem",
     "MsgContent": {
         "Url": "https://1234-5678187359-1253735226.cos.ap-shanghai.myqcloud.com/abc123/c9be9d32c05bfb77b3edafa4312c6c7d",
+        "UUID": "1053D4B3D61040894AC3DE44CDF28B3EC7EB7C0F",
         "Size": 62351,
         "Second": 1,
-		"Download_Flag": 2
+        "Download_Flag": 2
     }
 }
 ```
@@ -140,6 +140,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
 | Url | String | 音声ダウンロードアドレス。対応する音声は、このURLアドレスから直接ダウンロードできます。 |
+| UUID | String | 音声の一意の識別子。クライアントが音声にインデックスを付けるために用いるキー値。 |
 | Size | Number | 音声データサイズ。単位：バイト。 |
 | Second | Number | 音声の長さ。単位：秒。 |
 | Download_Flag | Number | 音声ダウンロード方法のフラグ。現在、Download_Flagの値は2のみです。これは、`Url`フィールド値のURLアドレスを介して音声を直接ダウンロードできることを意味します。 |
@@ -149,8 +150,8 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
-        "UUID": "305c0201"、//音声のシリアル番号。タイプはStringです。バックグラウンドで音声にインデックスを付けるために用いられるキー値です。このフィールドからは、対応する音声をダウンロードできません。音声を取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
-        "Size": 62351、//音声データサイズ、タイプはNumber、単位：バイト。
+        "UUID": "305c0201"、//音声の一意の識別子。タイプはStringです。クライアントが音声にインデックスを付けるために用いるキー値です。このフィールドからは、対応する音声をダウンロードできません。音声を取得する必要がある場合は、IM SDKバージョンを4.Xにアップグレードしてください。
+        "Size": 62351、      //音声データサイズ、タイプはNumber、単位：バイト。
         "Second": 1         //音声の長さ、タイプはNumber。単位：秒。
     }
 }
@@ -159,7 +160,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 
 ### 画像メッセージ要素
 
->!サーバーに統合されたRest APIインターフェースを介して画像メッセージを送信する場合は、画像のURLを入力し、さらにこのURLを介して対応する画像をダウンロードできるようにする必要があります。UUIDフィールドは、グローバルに一意な文字列値を入力する必要があり、通常は画像のMD5値を入力します。IM SDKは、メッセージオブジェクトV2TIMImageElem.V2TIMImageを介してこの値をメッセージ受信者に渡します。業務Appはこのフィールドを使用して画像を区別することができます。
+>!サーバーに統合されたRestAPIインターフェースを介して画像メッセージを送信する場合、必ず画像の以下のフィールド(URL、UUID、Width、Height)に入力してください。対応する画像がURLからダウンロードできることを確認する必要があります。WidthとHeightは、画像の幅と高さで、単位はピクセルです。UUIDフィールドは、グローバルに一意のString値を入力する必要があります。通常、画像のMD5値を入力します。メッセージ受信者は、V2TIMImageElem.getImageList()を呼び出してV2TIMImageオブジェクトを取得し、次にV2TIMImage.getUUID()を呼び出して設定されたUUIDフィールドを取得します。ビジネスAppはこのフィールドを使用することで画像を区別できます。
 
 ```
 {
@@ -196,18 +197,18 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
-| UUID | String | 画像のシリアル番号。バックグラウンドが画像にインデックスを付けるために用いるキー値。 |
+| UUID | String | 画像の一意の識別子。クライアントが画像にインデックスを付けるために用いるキー値。 |
 | ImageFormat | Number | 画像形式。JPG = 1、GIF = 2、PNG = 3、BMP = 4、その他 = 255。 |
 | ImageInfoArray | Array | 元の画像、サムネイル、または大きな画像のダウンロード情報。 |
 | Type | Number | 画像タイプ：1-元の画像、2-大きな画像、3-サムネイル。 |
 | Size | Number | 画像データサイズ。単位：バイト。 |
-| Width | Number | 画像幅。 |
-| Height | Number | 画像高さ。 |
+| Width | Number | 画像幅。単位はピクセル。 |
+| Height | Number | 画像高さ。単位はピクセル。 |
 | URL | String | 画像のダウンロードアドレス。 |
 
 ### ファイルメッセージ要素
 
->!サーバー側に統合されたRest APIインターフェースを介してファイルメッセージを送信する場合は、ファイルのURLを入力し、さらにこのURLを介して対応するファイルをダウンロードできるようにする必要があります。Download_Flagフィールドには、必ず2を入力してください。
+>!サーバーに統合されたRest APIインターフェースを介してファイルメッセージを送信する場合、ファイルのUrl、UUID、Download_Flagフィールドに入力し、対応するファイルがこのUrl経由でダウンロードできることを確認する必要があります。UUIDフィールドは、グローバルに一意のString値を入力する必要があり、通常、ファイルのMD5値を入力します。メッセージ受信者はV2TIMFileElem.getUUID()を呼び出すことで設定されたUUIDフィールドを取得できます。ビジネスAppはこのフィールドを使用することでファイルを区別できます。Download_Flagフィールドには、必ず2を入力してください。
 
 4.XバージョンIM SDK（Android、iOS、MacおよびWindows）によって送信されるファイルメッセージ要素の形式は次のとおりです。
 ```
@@ -215,6 +216,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
     "MsgType": "TIMFileElem",
     "MsgContent": {
         "Url": "https://7492-5678539059-1253735326.cos.ap-shanghai.myqcloud.com/abc123/49be9d32c0fbfba7b31dafa4312c6c7d",
+        "UUID": "1053D4B3D61040894AC3DE44CDF28B3EC7EB7C0F",
         "FileSize": 1773552,
         "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV",
 		"Download_Flag": 2
@@ -225,6 +227,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
 | Url | String | ファイルのダウンロードアドレス。対応するファイルは、このURLアドレスから直接ダウンロードできます。 |
+| UUID | String | ファイルの一意の識別子。クライアントがファイルにインデックスを付けるために用いるキー値。 |
 | FileSize | Number | ファイルデータサイズ。単位：バイト。 |
 | FileName | String | ファイル名。 |
 | Download_Flag | Number | ファイルダウンロード方法のフラグ。現在、Download_Flagの値は2のみです。これは、`Url`フィールドの値のURLアドレスを介してファイルを直接ダウンロードできることを意味します。 |
@@ -234,17 +237,17 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 >{
 >"MsgType": "TIMFileElem",
 >"MsgContent": {
->  "UUID": "305c02010", //ファイルのシリアル番号。タイプはStringです。バックグラウンドでファイルにインデックスを付けるために用いられるキー値です。このフィールドからは、対応するファイルをダウンロードできません。このファイルを取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
+>  "UUID": "305c02010", //ファイルの一意の識別子。タイプはStringです。クライアントがファイルにインデックスを付けるために用いるキー値です。このフィールドからは、対応するファイルをダウンロードできません。このファイルを取得する必要がある場合は、IM SDKバージョンを4.Xにアップグレードしてください。
 >  "FileSize": 1773552、//ファイルデータサイズ。タイプはNumber、単位：バイト。
 >  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //ファイル名。タイプはStringです。
 >}
 >}
 >```
-
+```
 
 ### ビデオメッセージ要素
 
->!サーバーに統合されたRest APIインターフェースを介してビデオメッセージを送信する場合は、ビデオのURLを入力を入力し、さらにこのURLを介して対応するビデオをダウンロードできるようにする必要があります。VideoDownloadFlagとThumbDownloadFlagフィールドには、必ず2を入力してください。
+>!サーバーに統合されたRestAPIインターフェースを介してビデオメッセージを送信する場合、必ずVideoUrl、VideoUUID、ThumbUrl、ThumbUUID、ThumbWidth、ThumbHeight、VideoDownloadFlagおよびThumbDownloadFlagフィールドに入力してください。対応するビデオがVideoUrlを介してダウンロードできること、および対応するビデオサムネイルがThumbUrlを介してダウンロードできることを確認する必要があります。VideoUUIDとThumbUUIDフィールドには、グローバルに一意のString値を入力する必要があります。通常、対応するビデオとビデオサムネイルのMD5値を入力します。メッセージ受信者は、V2TIMVideoElem.getVideoUUID()とV2TIMVideoElem.getSnapshotUUID()をそれぞれ呼び出すことで、設定されたUUIDフィールドを取得できます。ビジネスAppは、このフィールドを使用することでビデオを区別できます。VideoDownloadFlagとThumbDownloadFlagフィールドには、必ず2を入力してください。
 
 4.XバージョンIM SDK（Android、iOS、MacおよびWindows）によって送信されるビデオメッセージ要素の形式は次のとおりです。
 ```
@@ -252,11 +255,13 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
         "VideoUrl": "https://0345-1400187352-1256635546.cos.ap-shanghai.myqcloud.com/abcd/f7c6ad3c50af7d83e23efe0a208b90c9",
+        "VideoUUID": "5da38ba89d6521011e1f6f3fd6692e35",
         "VideoSize": 1194603,
         "VideoSecond": 5,
 		"VideoFormat": "mp4",
 		"VideoDownloadFlag":2,
 		"ThumbUrl": "https://0345-1400187352-1256635546.cos.ap-shanghai.myqcloud.com/abcd/a6c170c9c599280cb06e0523d7a1f37b",
+		"ThumbUUID": "6edaffedef5150684510cf97957b7bc8",
 		"ThumbSize": 13907,
 		"ThumbWidth": 720,
 		"ThumbHeight": 1280,
@@ -269,36 +274,37 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
 | VideoUrl | String | ビデオダウンロードアドレス。対応するビデオは、このURLアドレスから直接ダウンロードできます。 |
+| VideoUUID | String | ビデオの一意の識別子、クライアントがビデオにインデックスを付けるために用いるキー値。 |
 | VideoSize | Number | ビデオデータサイズ。単位：バイト。 |
 | VideoSecond | Number | ビデオの長さ。単位：秒。 |
 | VideoFormat | String | mp4などのビデオ形式。 |
 | VideoDownloadFlag | Number | ビデオダウンロード方法のフラグ。現在、`VideoDownloadFlagの値は2のみです。これは、``VideoUrl`フィールドの値のURLアドレスを介してビデオを直接ダウンロードできることを意味します。 |
 | ThumbUrl | String | ビデオサムネイルアドレス。対応するビデオサムネイルは、このURLアドレスから直接ダウンロードできます。 |
+| ThumbUUID | String | ビデオサムネイルの一意の識別子。クライアントがビデオサムネイルにインデックスを付けるために用いるキー値。 |
 | ThumbSize | Number | サムネイルサイズ。単位：バイト。 |
-| ThumbWidth | Number | サムネイル幅。 |
-| ThumbHeight | Number | サムネイル高さ。 |
+| ThumbWidth | Number |サムネイルの幅。単位はピクセル。 |
+| ThumbHeight | Number | サムネイルの高さ。単位はピクセル。 |
 | ThumbFormat | String | JPG、BMPなどのサムネイル形式。 |
 | ThumbDownloadFlag | Number | ビデオサムネイルダウンロード方法のフラグ。現在、`ThumbDownloadFlagの値は2のみです。これは、``ThumbUrl`フィールド値のURLアドレスを介してビデオサムネイルを直接ダウンロードできることを意味します。 |
 
 
 >?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信されるビデオメッセージ要素は次のとおりです。
 >```
->{
->"MsgType": "TIMVideoFileElem",
->"MsgContent": {
->  "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5"、//ビデオのシリアル番号。タイプはStringです。バックグラウンドでビデオにインデックスを付けるために用いられるキー値です。このフィールドからは、対応するビデオをダウンロードできません。このビデオを取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
->  "VideoSize": 1194603、//ビデオデータサイズ。タイプはNumber。単位：バイト。
->  "VideoSecond": 5、//ビデオの長さ。タイプはNumber。単位：秒。
->	"VideoFormat": "mp4"、//ビデオ形式。タイプはmp4などのStringです。
->	"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a"、//ビデオサムネイルのシリアル番号。タイプはStringです。バックグラウンドでビデオサムネイルにインデックスを付けるために用いられるキー値です。このフィールドからは、対応するビデオサムネイルをダウンロードできません。このビデオサムネイルを取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
->	"ThumbSize": 13907、//サムネイルサイズ。タイプは数値。単位：バイト。
->	"ThumbWidth": 720、//サムネイルの幅。 タイプはNumberです。
->	"ThumbHeight": 1280、//サムネイルの高さ。タイプはNumberです。
->	"ThumbFormat": "JPG"  //サムネイル形式。タイプはJPG、BMPなどのStringです。
->}
->}
->```
-
+{
+    "MsgType": "TIMVideoFileElem",
+    "MsgContent": {
+        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5"、//ビデオの一意の識別子。タイプはStringです。クライアントがビデオにインデックスを付けるために用いるキー値です。このフィールドからは、対応するビデオをダウンロードできません。このビデオを取得する必要がある場合は、IM SDKバージョンを4.Xにアップグレードしてください。
+        "VideoSize": 1194603、//ビデオデータサイズ。タイプはNumber。単位：バイト。
+        "VideoSecond": 5、//ビデオの長さ。タイプはNumber。単位：秒。
+		"VideoFormat": "mp4"、//ビデオ形式。タイプはmp4などのStringです。
+		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a"、//ビデオサムネイルの一意の識別子。タイプはStringです。クライアントがビデオサムネイルにインデックスを付けるために用いるキー値です。このフィールドからは、対応するビデオサムネイルをダウンロードできません。このビデオサムネイルを取得する必要がある場合は、IM SDKバージョンを4.Xにアップグレードしてください。
+		"ThumbSize": 13907、//サムネイルサイズ。タイプは数値。単位：バイト。
+		"ThumbWidth": 720、//サムネイルの幅。 タイプはNumberです。
+		"ThumbHeight": 1280、//サムネイルの高さ。タイプはNumberです。
+		"ThumbFormat": "JPG"  //サムネイル形式。タイプはJPG、BMPなどのStringです。
+    }
+}
+```
 
 ## MsgBodyメッセージ内容インスタンス
 
@@ -374,10 +380,10 @@ CloudCustomDataとMsgBodyの形式の例は次のとおりです。
 ### クライアントプッシュ表示形式の説明
 - **アカウントのニックネームは設定されていません**
 アカウントにニックネームがない場合、APNsプッシュはプッシュテキスト内容のみを表示します。シングルチャットメッセージは「プッシュテキスト」のみを表示し、グループメッセージは「（グループ名）：プッシュテキスト」を表示します。
-![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **アカウントのニックネームが設定されています**
 アカウントにニックネームが設定されている場合、シングルチャットメッセージの表示形式は「ニックネーム：プッシュテキス内容」、グループメッセージの表示形式はニックネーム（グループ名）：プッシュテキスト内容になります。
+![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **結合されたメッセージ表示形式**
 結合されたメッセージの場合、各メッセージ要素のプッシュテキストが表示テキストとして順番に重ねられます。 以下は、アカウントのニックネームが設定されたシングルチャットメッセージであり、プッシュテキストは「helloworld」です。helloworldにはスペースがなく、バックグラウンドが順番に重ね合わされ、各メッセージ要素のプッシュテキストの間にいかなる文字も追加されないことにご注意ください。それぞれの異なるメッセージ要素の間にスペースやその他の文字を追加する必要がある場合は、呼び出し元がそれを制御する必要があります。
@@ -520,9 +526,4 @@ OffsetPushInfoの形式の例は次のとおりです。
 ## 参考
 
 Apple Push Notification Service(APNs) [Appleプッシュ開発ドキュメント](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
-iOSオフラインメッセージプッシュの設定：[オフラインプッシュ(iOS)](https://intl.cloud.tencent.com/document/product/1047/34347)。
-
-
-```
-
-```
+iOSオフラインメッセージプッシュの設定：[オフラインプッシュ(iOS)](https://intl.cloud.tencent.com/zh/document/product/1047/34347)。

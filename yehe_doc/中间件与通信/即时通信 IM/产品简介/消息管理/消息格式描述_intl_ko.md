@@ -1,4 +1,4 @@
-## 메시지 콘텐츠 MsgBody 설명
+## 메시지 바디 MsgBody
 메시지 내용은 MsgBody 필드에 입력됩니다. IM은 하나의 메시지에 텍스트 메시지 요소와 이모티콘 메시지 요소를 모두 포함하는 등 여러 메시지 요소 유형을 포함할 수 있습니다. 그렇기 때문에 MsgBody를 Array 형식으로 정의하면 필요에 맞게 여려 종류의 메시지 요소를 추가할 수 있습니다. 메시지 요소 이름은 TIMMsgElement, 메시지 요소는 TIMMsgElement로 구성된 MsgBody의 예시는 [MsgBody 예시](https://intl.cloud.tencent.com/document/product/1047/33527)를 참고하십시오.
 
 TIMMsgElement의 형식은 다음과 같습니다.
@@ -9,7 +9,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 }
 ```
 
-| 필드 | 유형 | 설명 |
+| 필드 | 유형 | 설명|
 |---------|---------|---------|
 | MsgType | String | 메시지 요소 유형. 현재 지원하는 메시지 객체: TIMTextElem(텍스트 메시지), TIMLocationElem(위치 메시지), TIMFaceElem(이모티콘 메시지), TIMCustomElem(사용자 정의 메시지), TIMSoundElem(음성 메시지), TIMImageElem(이미지 메시지), TIMFileElem(파일 메시지), TIMVideoFileElem(영상 메시지). |
 |MsgContent|Object|메시지 요소의 콘텐츠. MsgType별로 MsgContent 형식이 다릅니다. 자세한 내용은 아래 내용을 참고하십시오. |
@@ -69,7 +69,6 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 수신측이 iOS 또는 Android 디바이스이며, 백그라운드 실행 상태인 경우, 영문 버전 오프라인 푸시 텍스트는 ‘[Location]’입니다.
 
-
 ### 이모티콘 메시지 요소
 
 ```
@@ -122,7 +121,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 ### 음성 메시지 요소
 
->!서버측 통합 REST API를 통해 음성 메시지를 발송하려면, 음성을 다운로드할 수 있는 음성 URL을 입력해야 합니다. Download_Flag 필드는 2를 입력해야 합니다.
+>!서버 통합 Rest API를 통해 음성 메시지를 보내려면 음성 Url, UUID, Download_Flag 필드를 입력해야 하며, 해당 음성을 다운로드할 수 있는 Url을 입력해야 합니다. UUID 필드는 전역적으로 고유한 String 값을 입력해야 하는데 일반적으로 음성 파일의 MD5 값을 입력합니다. 메시지 수신자는 V2TIMSoundElem.getUUID()를 통해 설정된 UUID 필드를 수신하며 서비스 App은 해당 필드를 사용하여 음성을 구분할 수 있습니다. Download_Flag 필드는 2를 입력해야 합니다.
 
 4. X버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 음성 메시지 요소를 발송합니다.
 ```
@@ -130,9 +129,10 @@ TIMMsgElement의 형식은 다음과 같습니다.
     "MsgType": "TIMSoundElem",
     "MsgContent": {
         "Url": "https://1234-5678187359-1253735226.cos.ap-shanghai.myqcloud.com/abc123/c9be9d32c05bfb77b3edafa4312c6c7d",
+        "UUID": "1053D4B3D61040894AC3DE44CDF28B3EC7EB7C0F",
         "Size": 62351,
         "Second": 1,
-		"Download_Flag": 2
+        "Download_Flag": 2
     }
 }
 ```
@@ -140,6 +140,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 | 필드 | 유형 | 설명|
 |---------|---------|---------|
 | Url | String | 음성 다운로드 주소. 이 URL 주소로 관련 음성을 다운로드 할 수 있습니다. |
+| UUID | String | 음성의 유일한 식별자. 클라이언트에서 음성 인덱스에 사용하는 키 값 입니다. |
 | Size | Number | 음성 데이터 크기. 단위: 바이트. |
 | Second | Number | 음성 시간. 단위: 초. |
 | Download_Flag | Number | 음성 다운로드 메소드 플래그. 현재 Download_Flag 값은 2만 가능하며 `Url` 필드에 지정된 URL을 통해 바로 음성을 다운로드할 수 있음을 의미합니다. |
@@ -149,8 +150,8 @@ TIMMsgElement의 형식은 다음과 같습니다.
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
-        ‘UUID’: ‘305c0201’, //음성 일련 번호로 유형은 String입니다. 백엔드에서 음성 인덱스 시 키 값으로 사용합니다. 이 필드를 통해 관련 음성을 다운로드할 수 없습니다. 음성을 가져오기하려면, IM SDK 버전을 4.X로 업데이트하십시오.
-        "Size": 62351,//Number 유형 음성 데이터 크기. 단위: 바이트.
+        "UUID": "305c0201", //음성의 유일한 식별자로 유형은 String입니다. 클라이언트에서 음성 인덱스 시 키 값으로 사용합니다. 이 필드를 통해 관련 음성을 다운로드할 수 없습니다. 음성을 가져오려면, IM SDK 버전을 4.X로 업데이트하십시오.
+        "Size": 62351,      //음성 데이터 크기. 유형: Number. 단위: 바이트.
         "Second": 1         //Number 유형 음성 길이. 단위: 초.
     }
 }
@@ -159,7 +160,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 ### 이미지 메시지 요소
 
->!서버측 통합 RESTful API를 통해 이미지 메시지를 발송하려면 이미지를 다운로드할 수 있는 이미지 URL을 입력해야 합니다. UUID 필드는 전역에서 유일한 String 값(일반적으로 이미지의 MD5 값)을 입력합니다. IM SDK는 해당 값을 메시지 객체 V2TIMImageElem.V2TIMImage를 통해 메시지 수신측에 전달하고 비즈니스 App은 이 필드를 사용하여 이미지를 구별합니다.
+>!서버 통합 Rest API를 통해 이미지 메시지를 보내려면 이미지 URL, UUID, Width, Height 필드를 입력해야 하며, 해당 이미지를 다운로드할 수 있는 URL을 입력해야 합니다. Width와 Height는 이미지의 폭과 높이이며 단위는 픽셀입니다. UUID 필드는 전역적으로 고유한 String 값을 입력해야 하는데 일반적으로 이미지의 MD5 값을 입력합니다. 메시지 수신자는 V2TIMImageElem.getImageList()를 호출하여 V2TIMImage 객체를 받은 후, V2TIMImage.getUUID()를 호출하여 설정된 UUID 필드를 수신하며, 서비스 App은 이 필드를 사용하여 이미지를 구분할 수 있습니다.
 
 ```
 {
@@ -196,18 +197,18 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 | 필드 | 유형 | 설명|
 |---------|---------|---------|
-| UUID | String | 이미지 일련 번호로 백엔드에서 이미지 인덱스에 사용하는 키 값입니다. |
+| UUID | String | 이미지의 유일한 식별자. 클라이언트에서 이미지 인덱스에 사용하는 키 값입니다. |
 | ImageFormat | Number | 이미지 형식. JPG = 1, GIF = 2, PNG = 3, BMP = 4, 기타 = 255. |
 | ImageInfoArray | Array | 원본 이미지, 썸네일 또는 큰 이미지 다운로드 정보 |
 | Type | Number | 이미지 유형: 1-원본 이미지, 2-큰 이미지, 3-썸네일. |
 | Size | Number | 이미지 데이터 크기. 단위: 바이트. |
-| Width | Number | 이미지 폭 |
-| Height | Number | 이미지 높이 |
+| Width | Number | 이미지 폭. 단위: 픽셀 |
+| Height | Number | 이미지 높이. 단위: 픽셀 |
 | URL | String | 이미지 다운로드 주소 |
 
 ### 파일 메시지 요소
 
->!서버측 통합 RESTful API를 통해 파일 메시지를 발송하려면, 파일을 다운로드할 수 있는 파일 URL을 입력해야 합니다. Download_Flag 필드는 2를 입력해야 합니다.
+>!서버 통합 Rest API를 통해 파일 메시지를 보내려면 파일의 Url, UUID, Download_Flag 필드를 입력해야 하며, 해당 파일을 다운로드 할 수 있는 URL을 입력해야 합니다. UUID 필드는 전역적으로 고유한 String 값을 입력해야 하는데 일반적으로 이미지의 MD5 값을 입력합니다. 메시지 수신자는 V2TIMFileElem.getUUID()를 호출하여 설정된 UUID 필드를 수신하며 서비스 App은 이 필드를 사용하여 파일을 구분할 수 있습니다. Download_Flag 필드는 2를 입력해야 합니다.
 
 4. X버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 파일 메시지 요소를 발송합니다.
 ```
@@ -215,6 +216,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
     "MsgType": "TIMFileElem",
     "MsgContent": {
         "Url": "https://7492-5678539059-1253735326.cos.ap-shanghai.myqcloud.com/abc123/49be9d32c0fbfba7b31dafa4312c6c7d",
+        "UUID": "1053D4B3D61040894AC3DE44CDF28B3EC7EB7C0F",
         "FileSize": 1773552,
         "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV",
 		"Download_Flag": 2
@@ -225,6 +227,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 | 필드 | 유형 | 설명|
 |---------|---------|---------|
 | Url | String | 파일 다운로드 주소. 이 URL을 통해 관련 파일을 바로 다운로드할 수 있습니다. |
+| UUID | String | 파일의 유일한 식별자. 클라이언트에서 파일 인덱스에 사용하는 키 값입니다. |
 | FileSize | Number | 파일 데이터 크기. 단위: 바이트. |
 | FileName | String | 파일 이름 |
 | Download_Flag | Number | 파일 다운로드 메소드 플래그. 현재 Download_Flag 값은 2만 가능하며 `Url` 필드 값의 URL을 통해 바로 파일을 다운로드할 수 있음을 의미합니다. |
@@ -234,17 +237,17 @@ TIMMsgElement의 형식은 다음과 같습니다.
 >{
 >"MsgType": "TIMFileElem",
 >"MsgContent": {
-> ‘UUID’: ‘305c02010’, //파일 일련 번호로 유형은 String입니다. 백엔드에서 파일 인덱스에 사용하는 키 값이며 이 필드를 통해 파일을 다운로드할 수 없습니다. 파일을 가져오기 하려면 IM SDK 버전을 4.X로 업데이트하십시오.
+>  "UUID": "305c02010", //파일의 유일한 식별자로 유형은 String입니다. 클라이언트에서 파일 인덱스에 사용하는 키 값이며 이 필드를 통해 파일을 다운로드할 수 없습니다. 파일을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
 >  "FileSize": 1773552, //Number 유형 파일 데이터 크기. 단위: 바이트.
 >  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //파일 이름. 유형: String.
 >}
 >}
 >```
-
+```
 
 ### 영상 메시지 요소
 
->!서버측 통합 RESTful API를 통해 영상 메시지를 발송하려면, 영상을 다운르드할 수 있는 영상 URL을 입력해야 합니다. .VideoDownloadFlag 및 ThumbDownloadFlag 필드는 2를 입력해야 합니다. 
+>!서버 통합 Rest API를 통해 비디오 메시지를 보내려면 VideoUrl, VideoUUID, ThumbUrl, ThumbUUID, ThumbWidth, ThumbHeight, VideoDownloadFlag 및 ThumbDownloadFlag 필드를 입력해야 하며, 해당 비디오를 다운로드할 수 있는 VideoUrl, 해당 비디오 썸네일을 다운로드할 수 있는 ThumbUrl을 입력해야 합니다. VideoUUID와 ThumbUUID 필드는 전역적으로 고유한 String 값을 입력해야 하는데 일반적으로 해당 비디오와 썸네일의 MD5 값을 입력합니다. 메시지 수신자는 V2TIMVideoElem.getVideoUUID()와 V2TIMVideoElem.getSnapshotUUID()를 호출하여 설정한 UUID 필드를 수신하며 서비스 App은 이 필드를 사용하여 비디오를 구분할 수 있습니다. VideoDownloadFlag와 ThumbDownloadFlag 필드는 2를 입력해야 합니다.
 
 4. X버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 영상 메시지 요소를 발송합니다.
 ```
@@ -252,11 +255,13 @@ TIMMsgElement의 형식은 다음과 같습니다.
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
         "VideoUrl": "https://0345-1400187352-1256635546.cos.ap-shanghai.myqcloud.com/abcd/f7c6ad3c50af7d83e23efe0a208b90c9",
+        "VideoUUID": "5da38ba89d6521011e1f6f3fd6692e35",
         "VideoSize": 1194603,
         "VideoSecond": 5,
 		"VideoFormat": "mp4",
 		"VideoDownloadFlag":2,
 		"ThumbUrl": "https://0345-1400187352-1256635546.cos.ap-shanghai.myqcloud.com/abcd/a6c170c9c599280cb06e0523d7a1f37b",
+		"ThumbUUID": "6edaffedef5150684510cf97957b7bc8",
 		"ThumbSize": 13907,
 		"ThumbWidth": 720,
 		"ThumbHeight": 1280,
@@ -269,36 +274,37 @@ TIMMsgElement의 형식은 다음과 같습니다.
 | 필드 | 유형 | 설명|
 |---------|---------|---------|
 | VideoUrl | String | 비디오 다운로드 주소. 해당 URL을 통해 바로 영상을 다운로드 할 수 있습니다.  |
+| VideoUUID | String | 비디오의 유일한 식별자. 클라이언트에서 비디오 인덱스에 사용하는 키 값입니다. |
 | VideoSize | Number |  비디오 데이터 크기. 단위: 바이트. |
 | VideoSecond | Number |  비디오 길이. 단위: 초. |
 | VideoFormat | String | mp4 같은 비디오 형식입니다. |
 | VideoDownloadFlag | Number | 비디오 다운로드 메소드 플래그. 현재 VideoDownloadFlag 값은 2만 가능하며 `VideoUrl` 필드 값의 URL을 통해 바로 비디오를 다운로드할 수 있음을 의미합니다. |
 | ThumbUrl | String | 비디오 썸네일 다운로드 주소. 해당 URL을 통해 바로 비디오 썸네일을 다운로드할 수 있습니다.  |
+| ThumbUUID | String | 비디오 썸네일의 유일한 식별자. 클라이언트에서 비디오 썸네일 인덱스에 사용하는 키 값입니다. |
 | ThumbSize | Number | 썸네일 크기. 단위: 바이트. |
-| ThumbWidth | Number | 썸네일 폭 |
-| ThumbHeight | Number | 썸네일 높이 |
+| ThumbWidth | Number | 썸네일 폭. 단위: 픽셀 |
+| ThumbHeight | Number | 썸네일 높이. 단위: 픽셀 |
 | ThumbFormat | String | JPG, BMP 같은 썸네일 형식. |
 | ThumbDownloadFlag | Number | 비디오 썸네일 다운로드 메소드 플래그. 현재 ThumbDownloadFlag 값은 2만 가능하며 `ThumbUrl` 필드 값의 URL을 통해 바로 비디오 썸네일을 다운로드할 수 있음을 의미합니다. |
 
 
 >?2.X 및 3.X 버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 영상 메시지 요소를 발송합니다.
 >```
->{
->"MsgType": "TIMVideoFileElem",
->"MsgContent": {
->  ‘VideoUUID’: ‘1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5’,// 영상 일련 번호로 유형은 String입니다. 백엔드에서 영상 인덱스에 사용하는 키 값으로 이 필드를 통해 영상을 다운로드할 수 없습니다. 영상을 가져오기 하려면 IM SDK 버전을 4.X로 업데이트하십시오.
->  "VideoSize": 1194603, // 영상 데이터 크기. 유형: Number. 단위: 바이트.
->  "VideoSecond": 5,     // 영상 길이. 유형: Number. 단위: 초.
->"VideoFormat": "mp4", // mp4 같은 비디오 형식. 유형: String. 
->’ThumbUUID’: ‘1400123456_dramon_893f5a7a4872676ae142c08acd49c18a’,// 비디오 썸네일 일련 번호로유형은 String입니다. 백엔드에서 비디오 썸네일 인덱스에 사용하는 키 값으로 이 필드를 통해 비디오 썸네일을 다운로드할 수 없습니다. 비디오 썸네일을 가져오기 하려면 IM SDK 버전을 4.X로 업데이트하십시오.
->"ThumbSize": 13907,   //썸네일 크기. 유형: Number. 단위: 바이트.
->"ThumbWidth": 720,    //썸네일 폭. 유형: Number.
->"ThumbHeight": 1280,  //썸네일 높이. 유형: Number.
->"ThumbFormat": "JPG"  //JPG, BMP 같은 썸네일 형식. 유형: String.
->}
->}
->```
-
+{
+    "MsgType": "TIMVideoFileElem",
+    "MsgContent": {
+        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",// 영상의 유일한 식별자로 유형은 String입니다. 클라이언트에서 영상 인덱스에 사용하는 키 값으로 이 필드를 통해 영상을 다운로드할 수 없습니다. 영상을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
+        "VideoSize": 1194603, //영상 데이터 크기. 유형: Number. 단위: 바이트.
+        "VideoSecond": 5,     //영상 길이. 유형: Number. 단위: 초.
+		"VideoFormat": "mp4", //비디오 형식. 유형: String. 예: mp4.
+		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",// 비디오 썸네일의 유일한 식별자로 유형은 String입니다. 클라이언트에서 비디오 썸네일 인덱스에 사용하는 키 값으로 이 필드를 통해 비디오 썸네일을 다운로드할 수 없습니다. 비디오 썸네일을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
+		"ThumbSize": 13907,   //썸네일 크기. 유형: Number. 단위: 바이트.
+		"ThumbWidth": 720,    //썸네일 폭. 유형: Number.
+		"ThumbHeight": 1280,  //썸네일 높이. 유형: Number.
+		"ThumbFormat": "JPG"  //썸네일 형식. 유형: String. 예: JPG, BMP 등.
+    }
+}
+```
 
 ## MsgBody 메시지 콘텐츠 예시
 
@@ -350,7 +356,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 >!한 개의 결합된 메시지에는 한 개의 TIMCustomElem 사용자 정의 메시지 요소만 포함할 수 있으며 다른 메시지 요소 수량은 제한이 없습니다. 
 
-## 메시지 사용자 정의 데이터 CloudCustomData 설명
+##  메시지 사용자 정의 데이터 CloudCustomData
 모든 메시지는 사용자 정의 데이터 CloudCustomData를 포함할 수 있습니다.
 
 CloudCustomData는 해당 메시지 MsgBody와 함께 클라우드에 저장됩니다. CloudCustomData는 피어에 발송되며 애플리케이션 삭제 및 재설치 후에도 계속 풀링할 수 있습니다. 
@@ -370,14 +376,14 @@ CloudCustomData 및 MsgBody 형식 예시는 다음과 같습니다.
 }
 ```
 
-## Apple Push Notification Service(APNs) 관련 설명
-### 클라이언트 푸시가 표시되는 형식 설명
+## Apple Push Notification Service(APNs)
+### 클라이언트 푸시가 표시되는 형식
 - **닉네임 미설정 계정**
 계정에 닉네임을 설정하지 않은 경우 APNs 푸시에는 푸시된 텍스트 콘텐츠만 표시됩니다. 1:1 채팅 메시지는 ‘푸시 텍스트’, 그룹 채팅 메시지에는 ‘(그룹 이름): 푸시 텍스트’만 표시됩니다. 
-![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **닉네임 설정 계정**
 계정에 닉네임을 설정한 경우 1:1 채팅 메시지에는 ‘닉네임: 푸시 텍스트’ 형식으로 표시되고, 그룹 채팅 메시지에는 ‘닉네임(그룹 이름): 푸시 텍스트’ 형식으로 표시됩니다.
+![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **결합된 메시지가 표시되는 형식**
 결합된 메시지의 경우, 순서에 따라 각 메시지 요소의 푸시 텍스트가 순서대로 표시됩니다. 계정에 닉네임을 설정한 1:1 채팅 메시지의 경우 푸시 텍스트는 ‘helloworld’가 됩니다. 텍스트(예:helloworld)에는 공백이 포함되어 있지 않습니다. 백엔드에서 순서대로 각 메시지 요소를 순서대로 연결하며 텍스트 사이에 어떤 것도 추가하지 않습니다. 메시지 요소 사이에 빈 칸이나 다른 문자를 추가하려면 호출측에서 자체적으로 제어해야 합니다. 
@@ -408,10 +414,10 @@ CloudCustomData 및 MsgBody 형식 예시는 다음과 같습니다.
 
 | MsgType 값 | 유형 |메시지 요소 푸시 텍스트|
 |---------|---------|---------|
-| TIMTextElem | 텍스트 메시지|Text  필드 |
-|TIMLocationElem|지리적 위치 메시지|영문 버전: ‘[Location]’|
-|TIMFaceElem|이모티콘 메시지|영문 버전: ‘[Face]’|
-|TIMCustomElem|사용자 정의 메시지|Desc  필드 |
+| TIMTextElem | 텍스트 메시지|Text  필드. |
+|TIMLocationElem|지리적 위치 메시지.|영문 버전: "[Location]".|
+|TIMFaceElem|이모티콘 메시지.|영문 버전: "[Face]".|
+|TIMCustomElem|사용자 정의 메시지.|Desc  필드. |
 
 ### 닉네임 및 그룹 이름 설정 REST API
 계정 닉네임 설정 REST API: [프로필 정보 설정](https://intl.cloud.tencent.com/document/product/1047/34916).
@@ -497,7 +503,7 @@ OfflinePushInfo의 형식 예시는 다음과 같습니다.
 
 | 필드 | 유형 | 속성 | 설명 |
 |---------|---------|---------|---------|
-| PushFlag | Integer | 옵션| 0: 푸시 활성화, 1: 오프라인 푸시 비활성화  |
+| PushFlag | Integer | 옵션 | 0: 푸시 활성화, 1: 오프라인 푸시 비활성화  |
 | Title | String | 옵션| 오프라인 푸시 제목. 이 필드는 iOS 및 Android에 모두 적용됩니다.|
 | Desc | String | 옵션| 오프라인 푸시 콘텐츠. 이 필드는 위에서 언급한 [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527) 메시지 요소의 오프라인 푸시 텍스트를 덮어씁니다.<br> 발송된 메시지에 [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527)이 하나만 있는 경우, 이 Desc 필드는 TIMCustomElem의 Desc 필드를 덮어씁니다. 2개의 Desc 필드를 모두 입력하지 않으면 해당 사용자 정의 메시지에 대한 오프라인 푸시를 수신할 수 없습니다.|
 | Ext | String | 옵션| 오프라인 푸시 패스스루 콘텐츠. 중국 내 Android 휴대폰 벤더의 푸시 플랫폼 요구 사항이 모두 다르기 때문에 해당 필드는 JSON 형식을 사용하기 바랍니다. 그렇지 않으면 일부 벤더의 오프라인 푸시를 수신할 수 없습니다. |
@@ -520,9 +526,4 @@ OfflinePushInfo의 형식 예시는 다음과 같습니다.
 ## 참고
 
 Apple Push Notification Service(APNs) [Apple 푸시 개발 문서](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1).
-iOS 오프라인 메시지 푸시 설정: [오프라인 푸시(iOS)](https://intl.cloud.tencent.com/document/product/1047/34347).
-
-
-```
-
-```
+iOS 오프라인 메시지 푸시 설정: [오프라인 푸시(iOS)](https://intl.cloud.tencent.com/zh/document/product/1047/34347).
