@@ -1,7 +1,6 @@
 ## Pay-As-You-Go by Monthly 95th Percentile
-### Arrears alert
+### Arrears notification
 1. Arrears notification: you will receive a notification when your account balance becomes negative.
-2. Arrears pre-alert: this feature is disabled by default. <!-- To subscribe this service, please refer to [Balance Alert Guideline]().-->
 
 ### Arrears policy
 The arrears policy is applied from the moment when the balance drops to 0. The details are as follows:
