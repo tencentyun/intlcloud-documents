@@ -1,6 +1,6 @@
 
 ## Sample CAM Policies for TencentDB
-You can grant a user the permission to view and use specific resources in the TencentDB console by using a CAM policy. The sample below shows how to allow a user to use certain policies in the console. Currently, you can configure TencentDB for MariaDB to support the CAM feature only by using the "create by policy syntax" method. You can do so in **[CAM](https://console.cloud.tencent.com/cam/policy)** > **Policy** > **Create Custom Policy** > **Create by Policy Syntax** > **Custom**.
+You can grant a user the permission to view and use specific resources in the TencentDB console by using a CAM policy. The sample below shows how to allow a user to use certain policies in the console. Currently, you can configure TencentDB for MariaDB to support the CAM feature only by using the **creation by policy syntax** method.
 >!The API keyword of TencentDB for MariaDB in CAM is `mariadb`.
 
 ### Step 1. Create a custom policy
@@ -60,7 +60,7 @@ The policy syntax is as follows:
 ```
 The above policy achieves its goal by allowing the user to separately authorize the use of all operations beginning with "Describe" in TencentDB with the CAM policy.
 
->?As not all functional APIs are covered currently, you may see that a small number of operations are not included in CAM, which is normal.
+>?Because not all functional APIs are now supported, a limited number of operations may be excluded from CAM, which is normal.
 
 ### Policy for granting user permission to manipulate TencentDB instances in one specific region
 To grant a user the permission to manipulate TencentDB instances in a specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou.
