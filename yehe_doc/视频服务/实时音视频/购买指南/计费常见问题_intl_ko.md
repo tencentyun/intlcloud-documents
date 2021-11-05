@@ -1,13 +1,16 @@
 [](id:que0)
 
+### 서비스 사용량이 많은데 할인을 받을 수 있나요?
+
+- 일반 할인: 패키지 크기가 클수록 할인율이 커집니다. 예를 들어, 3M 이상의 패키지를 구매하면 20% 할인을 받을 수 있습니다.
+- 장기 할인: TRTC 월간 소비 금액이 3,000USD를 초과하는 경우 문의하기 [링크]를 통해 계약 체결 후 장기 할인 혜택을 받을 수 있습니다.
+
 ### TRTC는 어떻게 과금됩니까?
-TRTC 요금은 서비스 종류에 따라 기본 서비스와 부가 서비스로 구분되며, 자세한 과금 안내는 [과금 개요](https://intl.cloud.tencent.com/document/product/647/34610)를 참고하시기 바랍니다. 신규 사용자는 10,000분 [무료 베타 테스트](https://intl.cloud.tencent.com/document/product/647/39784)가 제공됩니다.
+
+TRTC 요금은 서비스 종류에 따라 기본 서비스와 부가 서비스로 구분되며, 자세한 과금 안내는 [과금 개요](https://intl.cloud.tencent.com/document/product/647/34610)를 참고하시기 바랍니다. 신규 사용자는 10,000분의 [무료 시간](https://intl.cloud.tencent.com/document/product/647/42735)이 제공됩니다.
 
 [](id:que1)
-### 무료 베타 패키지는 어떻게 얻을 수 있나요?
-2021년 8월 20일부터 [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에서 처음으로 애플리케이션을 생성하는 Tencent Cloud 계정에 10,000분 무료 베타 패키지를 증정합니다. 무료 패키지는 [영상 통화](https://intl.cloud.tencent.com/document/product/647/39788), [음성 통화](https://intl.cloud.tencent.com/document/product/647/39787), [비디오 ILVB](https://intl.cloud.tencent.com/document/product/647/39786), [음성 ILVB](https://intl.cloud.tencent.com/document/product/647/39785) 서비스 사용량을 차감하는 방식으로 사용할 수 있습니다. 자세한 내용은 [무료 베타 테스트](https://intl.cloud.tencent.com/document/product/647/39784)를 참고하십시오.
 
-[](id:que2)
 ### 청구서와 차감 상세 내역은 어떻게 조회하나요?
 [과금 센터 > 청구서 상세 내역](https://console.cloud.tencent.com/expense/bill/summary)에서 자세한 청구서와 차감 내역을 조회할 수 있습니다.
 
@@ -15,7 +18,7 @@ TRTC 요금은 서비스 종류에 따라 기본 서비스와 부가 서비스�
 ### 과금 사용량의 상세 내역은 어떻게 조회/확인하나요?
 - 실시간 사용량: TRTC 콘솔 - [사용량 통계](https://console.cloud.tencent.com/trtc/statistics) 페이지에서 사용량 그래프와 상세한 데이터를 조회할 수 있습니다. 당일 조회는 5분 단위의 상세 내역을, 기간 조회는 일별 취합 내역을 확인할 수 있습니다(분 단위 표시).
 - 청구서 사용량: Tencent Cloud 과금 센터에서 청구서에 해당하는 상세 사용 내역을 [다운로드](https://console.cloud.tencent.com/expense/bill/dosageDownload)할 수 있습니다. 다운로드 결과는 Excel 파일로 저장되며, 5분 단위의 상세 내역과 일별 세부 내역을 확인할 수 있습니다(초 단위 표시).
-- 서버 API: 더 자세한 과금 사용량 데이터는 서버 API에서 확인할 수 있습니다. 조회 기간이 1일 이하일 경우 5분 단위의 데이터가 반환되며, 1일을 초과할 경우 일별 취합 데이터가 반환됩니다(초 단위 표시).
+- 서버 API: 더 높은 수준의 요구 사항이 있는 경우 [서버 API](https://cloud.tencent.com/document/product/647/49981)를 통해서도 과금 사용량 데이터를 조회할 수 있습니다. 조회 기간이 1일 이하인 경우, 5분 단위 데이터가 반환되며, 조회 기간이 1일을 초과하는 경우 일별 통계 데이터가 반환됩니다(초 단위 표시).
 
 >!사용량 데이터는 실시간으로 변하므로 최종 결산된 사용량과 소폭 차이가 있을 수 있습니다. **청구서 사용량을 기준으로 하십시오**.
 
@@ -55,7 +58,7 @@ TRTC 요금은 서비스 종류에 따라 기본 서비스와 부가 서비스�
 
 [](id:que16)
 ### 기본 서비스 예상 사용량과 비용은 어떻게 계산해야 하나요?
-예상 사용량과 비용은 [TRTC 가격 계산기](https://buy.intl.cloud.tencent.com/pricing/trtc)로 계산할 수 있습니다.
+예상 사용량과 비용은 [TRTC 가격 계산기](https://buy.cloud.tencent.com/price/trtc/calculator)로 계산할 수 있습니다.
 
 [](id:que8)
 ### 영상 통화 또는 비디오 ILVB를 사용했는데 왜 음성 시간이 집계되나요?
@@ -66,30 +69,17 @@ TRTC 요금은 서비스 종류에 따라 기본 서비스와 부가 서비스�
 화면 공유는 개별적인 비디오 스트림 채널입니다. 사용자가 화면 공유한 비디오 스트림을 구독하고 비디오 화면을 수신하면, 비디오의 길이에 따라 과금됩니다.
 
 [](id:que10)
-### 클라우드 녹화는 어떻게 과금되나요?
-TRTC는 릴레이 푸시 스트림을 통해 [CSS](https://intl.cloud.tencent.com/document/product/267) 시스템에서 녹화를 진행하며, 녹화한 파일은 [VOD](https://intl.cloud.tencent.com/document/product/266) 플랫폼에 저장해 언제든지 재생할 수 있습니다.
->- 2020년 7월 1일부터 TRTC 콘솔에서 처음으로 애플리케이션을 생성한 Tencent Cloud 계정의 경우, 클라우드 녹화 기능 사용으로 발생하는 녹화 요금은 [클라우드 녹화 과금 설명](https://intl.cloud.tencent.com/document/product/647/38385)의 과금 규정을 기준으로 합니다.
-- 2020년 7월 1일 이전에 TRTC 콘솔에서 애플리케이션을 생성한 적이 있는 Tencent Cloud 계정의 경우, 애플리케이션 생성일자와 상관없이 클라우드 녹화 기능 사용으로 발생하는 요금은 기본적으로 [CSS > 라이브 방송 녹화](https://intl.cloud.tencent.com/document/product/267/39605)의 과금 규정을 적용합니다.
-- 클라우드 녹화 완료 후 출력되는 녹화 파일은 기본적으로 VOD 플랫폼에 저장되며, VOD는 사용 현황에 따라 스토리지 요금과 재생 요금이 부과됩니다. 자세한 내용은 [클라우드 녹화 > 관련 요금](https://intl.cloud.tencent.com/document/product/647/35426)을 참고하십시오.
-- 클라우드 녹화 전 CSS의 클라우드 혼합 스트림 기능을 사용한 경우 [라이브 방송 트랜스 코딩 > 표준 트랜스 코딩](https://intl.cloud.tencent.com/document/product/267/39604) 요금이 추가로 부과됩니다.
 
-
-[](id:que11)
 ### CDN 라이브 방송 시청은 어떻게 과금되나요?
-TRTC는 릴레이 푸시 스트림을 통해 [CSS](https://intl.cloud.tencent.com/document/product/267) 기능을 사용하여 CDN 라이브 방송 시청 기능을 제공합니다. **CSS**는 실제 사용 현황에 따라 [CDN 라이브 방송 시청 > 관련 요금](https://intl.cloud.tencent.com/document/product/647/35242)을 청구합니다.
+TRTC는 릴레이 푸시 스트림을 통해 [Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267) 기능을 사용하여 CDN 라이브 방송 시청 기능을 제공합니다. **CSS**는 실제 사용 현황에 따라 [CDN 라이브 방송 시청 > 관련 요금](https://intl.cloud.tencent.com/document/product/647/35242)을 청구합니다.
 
 [](id:que12)
+
 ### 방에 혼자 있어도 과금되나요?
 방에 혼자 있는 경우, 푸시 스트림을 하지 않더라도(업스트림 데이터가 발생하지 않음) TRTC 클라우드 서비스 리소스를 차지합니다. 방에 혼자 있으면 다른 사람의 멀티미디어 스트림을 구독할 수 없어 비디오 화면을 수신할 수 없으므로, **음성 시간**으로 서비스 사용량을 통계합니다.
 
 [](id:que13)
 ### 서비스 상태가 ‘비활성화됨’으로 표시되는 이유는 무엇입니까?
-- 후불 결제를 활성화하지 않은 경우, 무료 체험 패키지 소진 또는 만료 시 자동으로 서비스 중지됩니다. [패키지 구매](https://buy.cloud.tencent.com/trtc) 후 서비스를 재활성화하거나 직접 후불 결제를 활성화하십시오.
-- 후불 결제를 이미 활성화한 상태라면, Tencent Cloud 계정이 연체로 서비스가 중지되었을 수 있습니다. [연체 요금 납부](https://console.cloud.tencent.com/expense/overview) 후 서비스가 자동 복구됩니다.
+- Tencent Cloud 계정이 연체로 서비스가 중지되었을 수 있습니다. [연체 요금 납부](https://console.cloud.tencent.com/expense/overview) 후 서비스가 자동 복구됩니다.
 - 애플리케이션을 수동으로 비활성화하여 서비스 중지 상태가 된 경우, [애플리케이션 활성화]를 클릭하여 서비스를 복구할 수 있습니다.
-
-[](id:que14)
-### 서비스 사용량이 많은데 할인을 받을 수 있나요?
-- 일반 할인: 패키지 크기가 클수록 할인율이 커집니다. 예를 들어, 300만분 이상의 패키지를 구매하면 80% 할인을 받을 수 있습니다.
-- 장기 할인 : TRTC 월간 소비 금액이 10,000USD를 초과하는 경우 [문의하기](https://intl.cloud.tencent.com/contact-us)를 통해 계약 체결 후 장기적 할인을 받을 수 있습니다.
 

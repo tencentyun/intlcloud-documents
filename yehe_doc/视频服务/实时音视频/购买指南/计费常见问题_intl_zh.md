@@ -1,13 +1,16 @@
 [](id:que0)
 
+### 我的服务用量很大，能打折吗？
+
+- 日常折扣：套餐包规格越大，折扣越多。例如，您可以通过购买 3M 分钟以上规格的套餐包来获取20%的折扣。
+- 长期折扣：如果您的 TRTC 月消耗金额超过 3,000 美金，可以联系我们[链接]，通过签订合同的方式约定长期折扣。
+
 ### 实时音视频如何收费？
-实时音视频收费项根据服务类型划分为基础服务和增值服务两大类，详细计费说明请参见 [计费概述](https://intl.cloud.tencent.com/document/product/647/34610)，新用户可以获得10000分钟 [免费试用](https://intl.cloud.tencent.com/document/product/647/39784) 时长。
+
+实时音视频收费项根据服务类型划分为基础服务和增值服务两大类，详细计费说明请参见 [计费概述](https://intl.cloud.tencent.com/document/product/647/34610)，新用户可以获得10000分钟 [免费时长](https://intl.cloud.tencent.com/document/product/647/42735) 。
 
 [](id:que1)
-### 如何获取免费试用时长？
-自2021年8月20日起，首次在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建应用的腾讯云账号，可获赠一个10000分钟的免费试用包。免费试用包可用于抵扣 [视频通话](https://intl.cloud.tencent.com/document/product/647/39788)、[语音通话](https://intl.cloud.tencent.com/document/product/647/39787)、[视频互动直播](https://intl.cloud.tencent.com/document/product/647/39786)、[语音互动直播](https://intl.cloud.tencent.com/document/product/647/39785) 的服务用量，更多详情请参阅 [免费试用](https://intl.cloud.tencent.com/document/product/647/39784)。
 
-[](id:que2)
 ### 如何查看账单及扣费明细？
 您可以在 [费用中心 > 账单详情](https://console.cloud.tencent.com/expense/bill/summary) 中查看详细账单及扣费明细。
 
@@ -15,7 +18,7 @@
 ### 如何查看/获取计费用量明细？
 - 实时用量：您可以在 TRTC 控制台 - [用量统计](https://console.cloud.tencent.com/trtc/statistics) 页面直接查看用量曲线图和详细流水数据。单日查看显示每5分钟明细，多日查看显示每日汇总明细。单位精确到分钟。
 - 账单用量：您也可以在腾讯云费用中心[下载](https://console.cloud.tencent.com/expense/bill/dosageDownload) 已出账单对应的用量明细，下载结果为 Excel 文件，内含每5分钟明细和每日明细。单位精确到秒。
-- 服务端 API：如果您有更高阶的需求，还可以通过服务端API获取详细的计费用量数据。查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。单位精确到秒。
+- 服务端 API：如果您有更高阶的需求，还可以通过[服务端API](https://cloud.tencent.com/document/product/647/49981)获取详细的计费用量数据。查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。单位精确到秒。
 
 >!实时用量数据实时变化，与最终结算用量可能会略有差异，**请以账单用量为准**。
 
@@ -55,7 +58,7 @@
 
 [](id:que16)
 ### 如何预估自己业务的基础服务用量和费用？
-若您不知道如何预估自己业务将产生的用量和费用，可以通过 [TRTC 价格计算器](https://buy.intl.cloud.tencent.com/pricing/trtc) 来辅助计算。
+若您不知道如何预估自己业务将产生的用量和费用，可以通过 [TRTC 价格计算器](https://buy.cloud.tencent.com/price/trtc/calculator) 来辅助计算。
 
 [](id:que8)
 ### 视频通话或视频互动直播为什么会产生语音时长？
@@ -66,30 +69,17 @@
 屏幕分享，又称屏幕共享，是单独的一路视频流。用户订阅屏幕分享的视频流并且接收到了视频画面时，按照视频时长计费。
 
 [](id:que10)
-### 云端录制如何计费？
-TRTC 通过旁路推流到 [云直播](https://intl.cloud.tencent.com/document/product/267) 系统进行录制，并将录制下来的文件存储到 [云点播](https://intl.cloud.tencent.com/document/product/266) 平台，方便随时进行回放。
-- 自2020年7月1日起首次在 TRTC 控制台创建应用的腾讯云账号，使用云端录制功能后产生的录制费用以 [云端录制计费说明](https://intl.cloud.tencent.com/document/product/647/38385) 的计费规则为准。
-- 在2020年7月1日之前已经在 TRTC 控制台创建过应用的腾讯云账号，无论是在2020年7月1日之前还是之后创建的应用，使用云端录制功能后产生的录制费用均默认继续延用 [云直播 > 直播录制](https://intl.cloud.tencent.com/document/product/267/39605) 的计费规则。
-- 云端录制完成后输出的录制文件默认保存在云点播平台，云点播将根据您的使用情况收取存储费用和观看费用，详情请参见 [云端录制 > 相关费用](https://intl.cloud.tencent.com/document/product/647/35426)。
-- 如果在云端录制之前使用了云直播的云端混流功能，还会产生额外的 [直播转码 > 标准转码](https://intl.cloud.tencent.com/document/product/267/39604) 费用。
 
-
-[](id:que11)
 ### CDN 直播观看如何计费？
 TRTC 通过旁路推流使用 [云直播](https://intl.cloud.tencent.com/document/product/267) 的能力为您提供 CDN 直播观看的功能。**云直播**将根据实际使用情况向您收取 [CDN 直播观看 > 相关费用](https://intl.cloud.tencent.com/document/product/647/35242)。
 
 [](id:que12)
+
 ### 只有1个人在房间也会计费吗？
 只有1个人在房间的时候，即使不推流（不产生上行数据），也会占用 TRTC 的云服务资源。1个人在房间时无法订阅他人的音视频流，因此不会接收到视频画面，按照**语音时长**统计服务用量。
 
 [](id:que13)
 ### 为什么我的服务状态显示“已停用”？
-- 未开启后付费，免费试用套餐包用完或过期自动停服：您可以 [购买套餐包](https://buy.cloud.tencent.com/trtc) 重新激活服务或直接 开启后付费。
-- 已开启后付费，腾讯云账户欠费后导致停服：[欠费冲正](https://console.cloud.tencent.com/expense/overview) 后将自动恢复服务。
+- 腾讯云账户欠费后导致停服：[欠费冲正](https://console.cloud.tencent.com/expense/overview) 后将自动恢复服务。
 - 您手动操作将应用停用使其处于停服状态：单击【启用应用】即可重新恢复服务。
-
-[](id:que14)
-### 我的服务用量很大，能打折吗？
-- 日常折扣：套餐包规格越大，折扣越多。例如，您可以通过购买300万分钟以上规格的套餐包来获取80%的折扣。
-- 长期折扣：如果您的 TRTC 月消费超10,000美金，可以[联系我们](https://intl.cloud.tencent.com/contact-us)，通过签订合同的方式约定长期折扣。
 
