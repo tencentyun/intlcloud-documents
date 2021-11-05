@@ -3,7 +3,7 @@
 ### Are there discounts for high-demand customers?
 
 - Regular discounts: The more minutes a package contains, the higher the discount. For example, you can purchase packages that contain 3 million or more minutes at a discount of 20%.
-- Contractual discounts: If your monthly spending on TRTC services exceeds 3,000 USD, you can [contact us]() for contractual discounts.
+- Contractual discounts: If your monthly spending on TRTC services exceeds 3,000 USD, you can [contact us](https://intl.cloud.tencent.com/contact-us) for contractual discounts.
 
 ### How are TRTC services billed?
 
