@@ -83,7 +83,7 @@ Create a `pom.xml` file in the root directory of the project folder and enter th
 ```
 
 #### Using Maven Central library to handle package dependencies
-If you need to reference the external package of Maven Central, you can add dependencies as needed. The content of the `pom.xml` file is as follows:
+If you need to reference the external package of Maven Central, you can add dependencies as needed. The content of the `pom.xml` file is as follows. To add dependencies, pay attention to the `<dependencies>` section.
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
