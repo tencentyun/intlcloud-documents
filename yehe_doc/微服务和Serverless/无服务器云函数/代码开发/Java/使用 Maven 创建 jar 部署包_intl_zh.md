@@ -7,7 +7,7 @@
 ### Maven 安装
 
 具体安装方法可见 `https://maven.apache.org/install.html`，以下说明手工安装过程：
-1. 下载 Maven 的 [zip 包](http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.zip) 或 [tar.gz 包](http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz) 。
+1. 下载 Maven 的 zip 包或 tar.gz 包 。
 2. 解压包到自己所期望的目录。例如，Windows 下的 `C:\Maven` 目录或 Linux 下的 `/opt/mvn/apache-maven-3.5.0` 目录。
 3. 将解压目录下 bin 目录的路径添加到系统 PATH 环境变量中，请对应操作系统执行以下步骤：
  - Linux：通过 `export PATH=$PATH:/opt/mvn/apache-maven-3.5.0/bin` 完成添加。
