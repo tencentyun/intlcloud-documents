@@ -1,6 +1,4 @@
-# Prepaid Package
-
-[Prepaid packages]() are offered at discounted prices.
+[Prepaid packages](https://intl.cloud.tencent.com/document/product/647/42736) are offered at discounted prices.
 
 From general packages, audio, SD video, HD video, and FHD video durations are deducted in the proportion of **1:1, 2:1, 4:1, and 15:1** respectively. For example, for 1 minute of HD video duration used, 4 minutes will be deducted from a general package.
 
@@ -96,6 +94,7 @@ About general packages:
   For example, if you purchased a package on May 1, 2021, it would be valid from May 1, 2021 to May 31, 2022.
 - You can purchase multiple packages. Durations are deducted in real time from the package that expires the fastest.
 - A new package takes effect in about 5 minutes after payment. **After taking effect, it will be used to deduct durations generated after 00:00 of the day.**
+- To avoid interrupting your businesses, **TRTC will not suspend services for your account when your package is used up or expires**. The minutes not deducted from any package will be billed at pay-as-you-go rates.
 - Once a general package expires, the remaining minutes in the package will become invalid and cannot be retrieved.
 
 
