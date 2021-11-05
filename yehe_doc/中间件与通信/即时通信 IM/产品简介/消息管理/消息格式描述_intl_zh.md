@@ -145,7 +145,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | Second | Number | 语音时长，单位：秒。 |
 | Download_Flag | Number | 语音下载方式标记。目前 Download_Flag 取值只能为2，表示可通过`Url`字段值的 URL 地址直接下载语音。 |
 
->?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素如下：
+?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素如下：
 ```
 {
     "MsgType": "TIMSoundElem",
@@ -153,14 +153,13 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
         "UUID": "305c0201", //语音的唯一标识，类型为 String。客户端用于索引语音的键值。无法通过该字段下载相应的语音。若需要获取该语音，请升级 IM SDK 版本至4.X。
         "Size": 62351,      //语音数据大小，类型为 Number，单位：字节。
         "Second": 1         //语音时长，类型为 Number，单位：秒。
-    }
+   }
 }
-```
+```   
 
 
 ### 图像消息元素
-
->!通过服务端集成的 Rest API 接口发送图像消息时，必须填入图像的以下字段：URL、UUID、Width、Height。需保证通过 URL 能下载到对应图像。Width 和 Height 分别为图片的宽度和高度，单位为像素。UUID 字段需填写全局唯一的 String 值，一般填入图片的 MD5 值。消息接收者通过调用 V2TIMImageElem.getImageList() 拿到 V2TIMImage 对象，然后通过调用V2TIMImage.getUUID() 拿到设置的 UUID 字段，业务 App 可以用这个字段做图片的区分。
+>!通过服务端集成的 Rest API 接口发送图像消息时，必须填入图像的以下字段：URL、UUID、Width、Height。需保证通过 URL 能下载到对应图像。Width 和 Height 分别为图片的宽度和高度，单位为像素。UUID 字段需填写>全局唯一的 String 值，一般填入图片的 MD5 值。消息接收者通过调用 V2TIMImageElem.getImageList() 拿到 V2TIMImage 对象，然后通过调用V2TIMImage.getUUID() 拿到设置的 UUID 字段，业务 App 可以用这个字段做图>片的区分。
 
 ```
 {
@@ -233,17 +232,17 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | Download_Flag | Number | 文件下载方式标记。目前 Download_Flag 取值只能为2，表示可通过`Url`字段值的 URL 地址直接下载文件。 |
 
 >?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素如下：
->```
->{
->"MsgType": "TIMFileElem",
->"MsgContent": {
->  "UUID": "305c02010", //文件的唯一标识，类型为 String。客户端用于索引文件的键值。无法通过该字段下载相应的文件。若需要获取该文件，请升级 IM SDK 版本至4.X。
->  "FileSize": 1773552, //文件数据大小，类型为 Number，单位：字节。
->  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //文件名称，类型为 String。
->}
->}
->```
 ```
+{
+"MsgType": "TIMFileElem",
+"MsgContent": {
+  "UUID": "305c02010", //文件的唯一标识，类型为 String。客户端用于索引文件的键值。无法通过该字段下载相应的文件。若需要获取该文件，请升级 IM SDK 版本至4.X。
+  "FileSize": 1773552, //文件数据大小，类型为 Number，单位：字节。
+  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //文件名称，类型为 String。
+}
+}
+```
+
 
 ### 视频消息元素
 
