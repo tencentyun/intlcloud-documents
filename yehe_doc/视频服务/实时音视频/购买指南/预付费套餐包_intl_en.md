@@ -85,8 +85,8 @@ Below are the prices of general packages:
 >
 >- The package unit prices in the table are rounded up to 3 decimal places. However, in actual billing, unit prices are rounded to 8 decimal places.
 >
->- Currently, you need to be on our allowlist to use TRTC prepaid packages. You can [contact us]() to add your account to the list.
->- If your monthly usage exceeds 3 million minutes on average, you can [contact us]() for deeper discounts.
+>- Currently, you need to be on our allowlist to use TRTC prepaid packages. You can [contact us](https://intl.cloud.tencent.com/contact-us) to add your account to the list.
+>- If your monthly usage exceeds 3 million minutes on average, you can [contact us](https://intl.cloud.tencent.com/contact-us) for deeper discounts.
 
 
 
@@ -96,7 +96,6 @@ About general packages:
   For example, if you purchased a package on May 1, 2021, it would be valid from May 1, 2021 to May 31, 2022.
 - You can purchase multiple packages. Durations are deducted in real time from the package that expires the fastest.
 - A new package takes effect in about 5 minutes after payment. **After taking effect, it will be used to deduct durations generated after 00:00 of the day.**
-- To avoid interrupting your businesses, **TRTC will not suspend services for your account when your package is used up or expires**. The minutes not deducted from any package will be billed at pay-as-you-go rates.
 - Once a general package expires, the remaining minutes in the package will become invalid and cannot be retrieved.
 
 
