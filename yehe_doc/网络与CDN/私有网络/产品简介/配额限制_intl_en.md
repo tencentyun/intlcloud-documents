@@ -1,13 +1,13 @@
-### VPCs and subnets
+### VPCs and Subnets
 <table>
 <thead>
 <tr>
 <th width="70%">Resource</th>
-<th width="30%">Upper Limit</th>
+<th width="30%">Quota Limit</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Number of VPC instances per region for each account</td>
+<td>Number of VPCs per account per region</td>
 <td align="center">20</td>
 </tr>
 <tr>
@@ -19,21 +19,21 @@
 <td align="center">5</td>
 </tr>
 <tr>
-<td>Number of classic network CVMs can be associated with each VPC instance</td>
+<td>Number of classic network CVM instances associated with each VPC</td>
 <td align="center">100</td>
 </tr>
 </tbody></table>
 
-### Route tables
+### Route Tables
 <table>
 <thead>
 <tr>
 <th width="70%">Resource</th>
-<th width="30%">Upper Limit</th>
+<th width="30%">Quota Limit</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Number of route tables per VPC </td>
+<td>Number of route tables per VPC</td>
 <td align="center">10</td>
 </tr>
 <tr>
@@ -50,52 +50,66 @@
 <table>
 <tr>
 <th width="70%">Resource</th>
-<th width="30%">Upper Limit</th>
+<th width="30%">Quota Limit</th>
 </tr>
 <tr>
 <td>Number of secondary ENIs per VPC</td>
-<td>1000</td>
+<td>1,000</td>
 </tr>
 </table>
 
-### Security groups
-<table>
-<tr><th width="70%">Description</th><th width="30%">Limit</th></tr>
-<tr><td>Number of security groups</td><td>50 per region</td></tr>
-<tr><td>Number of rules in a security group</td><td>100 for inbound rules and 100 for outbound rules</td></tr>
-<tr><td>Number of CVM instances associated with a security group</td><td>2,000</td></tr>
-<tr><td>Number of security groups associated with a CVM instance</td><td>5</td></tr>
-<tr><td>Number of rules in each security group that reference the security group ID</td><td>10</td></tr>
-</table>
-
-### Network ACL
+### HAVIPs
 <table >
 <thead>
 <tr>
 <th width="70%">Resource</th>
-<th width="30%">Limit</th>
+<th width="30%">Quota Limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Number of default HAVIPs per VPC</td>
+<td>10</td>
+</tr>
+</tbody></table>
+
+### Security Groups
+<table>
+<tr><th width="70%">Item</th><th width="30%">Description</th></tr>
+<tr><td>Number of security groups</td><td>50 per region</td></tr>
+<tr><td>Number of rules in a security group</td><td>100 for inbound rules and 100 for outbound rules</td></tr>
+<tr><td>Number of CVM instances associated with a security group</td><td>2,000</td></tr>
+<tr><td>Number of security groups associated with a CVM instance</td><td>5</td></tr>
+<tr><td>Number of security groups that can be imported by a security group</td><td>10</td></tr>
+</table>
+
+### Network ACLs
+<table >
+<thead>
+<tr>
+<th width="70%">Resource</th>
+<th width="30%">Restrictions</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Number of network ACLs per VPC</td>
-<td>50</td>
+<td>50 partitions</td>
 </tr>
 <tr>
 <td>Number of rules per network ACL</td>
-<td>Inbound rules: 20<br>Outbound rules: 20</td>
+<td>Inbound: 20<br>Outbound: 20</td>
 </tr>
 <tr>
-<td>Number of network ACLs associated with a subnet</td>
-<td>1</td>
+<td>Number of network ACLs associated with each subnet</td>
+<td>1 partitions</td>
 </tr>
 </tbody></table>
 
-### Parameter template
+### Parameter Templates
 <table>
 <thead>
 <tr>
-<th width="70%">Instance</th>
-<th width="30%">Quota per Tenant</th>
+<th width="70%">Resource Type</th>
+<th width="30%">Quota Limit</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -140,16 +154,16 @@
 </tr>
 </tbody></table>
 
-### Network probe 
+### Network Probes 
 <table >
 <thead>
 <tr>
 <th width="70%">Resource</th>
-<th width="30%">Upper Limit</th>
+<th width="30%">Quota Limit</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Number of network probes per VPC</td>
+<td>Number of network probes created in each VPC</td>
 <td>50</td>
 </tr>
 </tbody></table>
