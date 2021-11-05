@@ -262,7 +262,7 @@ You need to judge whether a request is successful based on the `error` field. If
 ### 6. Sample code for curl
 Request:
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/_rollup/ctsdb_rollup_task_test/update -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.16.345.14:9201/_rollup/ctsdb_rollup_task_test/update -d'
 {
     "state":"running",
     "start_time": "1511918989",
