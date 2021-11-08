@@ -1,3 +1,43 @@
+
+## September 2021
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK v1.2.7.1 release</td>
+	<td>Fixed the occasional issue of cross-process storage inconsistency.</td>
+        <td>September 01, 2021</td><td><li>When using the newly added in-app messaging capability, please pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
+<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
+    </tr>
+<tr>
+</table>
+
+## August 2021
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK v1.2.7.0 release</td><td>
+		<li> Added support for in-app message display.
+		<li> Optimized the TPNS registration process
+		<li> Fixed the issue when a user can obtain the device model before agreeing to the Privacy Agreement.</td>
+        <td>August 27, 2021</td><td><li>When using the newly added in-app messaging capability, please pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
+    </tr>
+<tr>
+</table>
+
 ## July 2021
 
 <table>
@@ -174,7 +214,7 @@
     <tr>
         <td>SDK v1.1.6.3 release</td>
         <td>Optimized third-party vendor channel integration.</td>
-        <td>June 04, 2020</td>
+        <td>June 4, 2020</td>
         <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">-</a></td>
     </tr>
 </table>
@@ -332,3 +372,4 @@
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/30713#.E9.9B.86.E6.88.90.E6.96.B9.E6.B3.95">Usage of audiovisual rich media</a></td>
     </tr>
 </table>
+

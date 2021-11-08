@@ -245,7 +245,7 @@ public abstract void onNotificationShowedResult(Context context,XGPushShowedResu
 
 >?
 > - 自 SDK 版本 v1.2.0.1 起，支持各厂商通道、TPNS 通道下发的通知点击事件的监听。
-> - 如需下发并获取推送自定义参数，推荐使用 Intent 方式，请参考文档 [通知点击跳转](https://intl.cloud.tencent.com/document/product/1024/38354) 。
+> - 如需下发并获取推送自定义参数，推荐使用 Intent 方式，请参考文档 [通知点击跳转](https://intl.cloud.tencent.com/document/product/1024/38354)。
 > 
 
 #### 接口说明
@@ -401,6 +401,40 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 | getCustomContent() | String | 无     | 消息自定义 key-value                                 |
 | getTitle()         | String | 无     | 消息标题（从前台下发应用内消息字中的描述不属于标题） |
 
+
+## 应用内消息展示
+SDK 1.2.7.0 新增，设置是否允许应用内消息窗口的展示，例如在允许展示应用内消息窗口的 Activity 页面设置开启，在不允许展示的 Activity 页面设置关闭。
+
+>! 应用内消息基于 Android WebView 框架进行展示，默认情况下，TPNS SDK 提供的应用内消息展示 WebView 运行在 App 主进程中。**自 Android 9 起，应用无法再让多个进程共享一个 WebView 数据目录，如果您的 App 必须在多个进程中使用 WebView 实例，则您必须先使用 `WebView.setDataDirectorySuffix()` 方法为每个进程指定唯一的数据目录后缀，否则可能引起程序崩溃**。配置示例代码如下：
+>```java
+>if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
+>// 自 Android 9 起，未非 app 主进程的 WebView 实例设置不同的 WebView 数据目录
+>String processName = getProcessName()
+>if (processName != null 
+>      && !processName.equals(context.getPackageName())) {
+>  WebView.setDataDirectorySuffix(processName)
+>}
+>}
+>```
+```
+> 参考文档：谷歌开发者 [按进程分设基于网络的数据目录](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs)。
+
+### 设置是否允许展示应用内消息窗口
+​```java
+XGPushConfig.enableShowInMsg(Context context, boolean flag);
+```
+
+#### 参数说明
+
+context：Context 对象。
+flag：是否允许应用内消息展示，true：允许，false：不允许；默认值 false。
+
+#### 示例代码
+```java
+XGPushConfig.enableShowInMsg(context, true);
+```
+
+
 ## 本地通知
 
 ### 增加本地通知
@@ -426,7 +460,7 @@ local_msg.setHour("19");
 local_msg.setMin("31");
 //设置消息样式，默认为0或不设置
 local_msg.setBuilderId(0);
-//设置动作类型：1打开activity或app本身，2打开浏览器，3打开Intent ，4通过包名打开应用
+//设置动作类型：1打开activity或App本身，2打开浏览器，3打开Intent ，4通过包名打开应用
 local_msg.setAction_type(1);
 //设置拉起应用页面
 local_msg.setActivity("com.qq.xgdemo.SettingActivity");
@@ -515,7 +549,6 @@ XGPushManager.upsertAccounts(context, accountInfoList, xgiOperateCallback);
 >?
 > - 每个账号最多支持绑定100个 token。
 > - 账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号，账号类型取值可参考 [账号类型取值表](https://intl.cloud.tencent.com/document/product/1024/40598)。
-> - TPNS 控制台「账号推送」仅支持账号类型取值为0的账号 ID，其他类型的账号 ID 可通过 [REST API](https://intl.cloud.tencent.com/document/product/1024/33764) 进行推送。
 > - 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
 > 
 
@@ -1238,15 +1271,14 @@ XGPushConfig.setAccessKey(context, accessKey);
 - false：失败。
 
 >? 通过本接口设置的 accessKey 会同时存储在文件中。
-
-
+>
 
 
 ### 新增日志上报接口
 
 #### 接口说明
 
-开发者如果发现 TPush 相关功能异常，可以调用该接口，触发本地 Push 日志的上报，反馈问题时，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 将文件地址给到我们，便于我们排查问题。
+开发者如果发现 TPush 相关功能异常，可以调用该接口，触发本地 Push 日志的上报，反馈问题时， [提交工单](https://console.cloud.tencent.com/workorder/category) 将文件地址给到我们，便于我们排查问题。
 
 ```
 public static void uploadLogFile(Context context, HttpRequestCallback httpRequestCallback)

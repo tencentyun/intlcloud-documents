@@ -1,47 +1,95 @@
+## September 2021
+
+<table>
+ <tr>
+ <th width=20%>Update</th>
+ <th width=44%>Description</th>
+ <th width=16%>Release Date</th>
+ <th width=20%>Documentation</th>
+ </tr>
+<tr>
+ <td>SDK v1.3.4.1 release</td>
+ <td>  
+  <li> Improves the accuracy of notification bar status.</li>
+  <li> Modifies the in-app messaging API.</li>
+ </td>
+ <td>September 10, 2021</td>
+ <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+ </tr>
+</table>
+
+## August 2021
+
+<table>
+ <tr>
+	 <th width=20%>Update</th>
+	 <th width=44%>Description</th>
+	 <th width=16%>Release Date</th>
+	 <th width=20%>Documentation</th>
+ </tr>
+ <tr>
+	 <td>SDK v1.3.4.0 release</td>
+	 <td>  
+		 <li> Fixes the issue where the network connection occasionally fails after a persistent connection is reconnected many times.</li>
+		 <li> Fixes the occasional issue of inaccurate TPNS online status caused by app redirection.</li>
+		 <li> Adds support for supplementary push via in-app messages. </li>
+	 </td>
+	 <td>August 26, 2021</td>
+	 <td><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40597">Upgrade Guide</a></li>
+	 </td>
+ </tr>
+ </table>
+
+
 ## July 2021
 
 <table>
  <tr>
- <th width=20%>Update</th>
- <th width=44%>Description</th>
- <th width=16%>Release Date</th>
- <th width=20%>Documentation</th>
+	 <th width=20%>Update</th>
+	 <th width=44%>Description</th>
+	 <th width=16%>Release Date</th>
+	 <th width=20%>Documentation</th>
  </tr>
- <td>SDK v1.3.3.0 release</td>
- <td>  
-<li> Fixes the issue where cluster switching does not take effect in real time.
-<li> Fixes the issue of inaccurate binding when tag APIs are called frequently.
-<li> Upgraded the SDK deployment target to version 9.0.
-<li> Improved the performance of account binding and registration callback.
-<li> Supports the `show_type` field of RESTful APIs. The field can be used to configure not to display notifications at the app foreground.
-<li> Supports SSL in persistent connections.
-<li> Supports the feature of identifying whether an app start is triggered by notification clicking.
- <td>2021-07-06</td>
- <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+ <tr>
+	 <td>SDK v1.3.3.0 release</td>
+	 <td>  
+		<li> Fixes the issue where cluster switching does not take effect in real time.</li>
+		<li> Fixes the issue of inaccurate binding when tag APIs are called frequently.</li>
+		<li> Upgrades the SDK deployment target to version 9.0.</li>
+		<li> Improves the performance of account binding and registration callback.</li>
+		<li> Adds support for the `show_type` field of RESTful APIs. This field can be used to configure not to display notifications when the app is running in the foreground.</li>
+		<li> Adds support for SSL in persistent connections.</li>
+		<li> Supports the feature of identifying whether an app start is triggered by notification clicking.</li>
+	 </td>
+	 <td>July 06, 2021</td>
+	 <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
  </tr>
  </table>
- 
-## June 2021
+
+## July 2021
 
 <table>
  <tr>
- <th width=20%>Update</th>
- <th width=44%>Description</th>
- <th width=16%>Release Date</th>
- <th width=20%>Documentation</th>
+	 <th width=20%>Update</th>
+	 <th width=44%>Description</th>
+	 <th width=16%>Release Date</th>
+	 <th width=20%>Documentation</th>
  </tr>
- <td>SDK v1.3.2.1 release</td>
- <td>  
-<li>Fixes the compatibility issue of referencing `TPNSInAppMessage.framework` under Xcode v12.5.
-<li>Fixes the issue where two devices have the same TPNS token during iCloud backup and restoration.
-<li>Optimizes the logic to make sure that after a user switches access points, the logs of the original access point will not be reported.
-<li>Adds the API for binding mobile numbers to send ordinary and intelligent SMS messages.
-<li>Demo demonstrates the method of push notification pop-up window after "License Agreement".
-<li>Supports log prompt when incorrectly calling the `startXGWithAccessID` API.
-<li>Supports log prompt when a hook conflict between the third-party SDK and `AppDelegate` occurs.
-<li>Deletes unnecessary log prompts in production environments.</td>
- <td>June 1, 2021</td>
- <td><a href="https://intl.cloud.tencent.com/document/product/1024/40597">Upgrade Guide</a></td>
+	 <tr>
+	 <td>SDK v1.3.2.1 release</td>
+	 <td>  
+			<li>Fixes the compatibility issue of referencing `TPNSInAppMessage.framework` under Xcode v12.5.</li>
+			<li>Fixes the issue where two devices have the same TPNS token during iCloud backup and restoration.</li>
+			<li>Optimizes the logic to make sure that after a user switches access points, the logs of the original access point will not be reported.</li>
+			<li>Adds the API for binding mobile numbers to send ordinary and intelligent SMS messages.</li>
+			<li>The demo demonstrates the "License Agreement" before the method of push notification pop-up window.</li>
+			<li>Supports log prompt when the `startXGWithAccessID` API is incorrectly called.</li>
+			<li>Supports log prompt when a hook conflict between the third-party SDK and `AppDelegate` occurs.</li>
+			<li>Deletes unnecessary log prompts in production environments.</li>
+	 </td>
+	 <td>June 1, 2021</td>
+	 <td><a href="https://intl.cloud.tencent.com/document/product/1024/40597">Upgrade Guide</a></td>
  </tr>
  </table>
 
@@ -49,35 +97,36 @@
 
 <table>
  <tr>
- <th width=20%>Update</th>
- <th width=44%>Description</th>
- <th width=16%>Release Date</th>
- <th width=20%>Documentation</th>
+	 <th width=20%>Update</th>
+	 <th width=44%>Description</th>
+	 <th width=16%>Release Date</th>
+	 <th width=20%>Documentation</th>
  </tr>
  <tr>
- <td>SDK v1.3.1.1 release</td>
- <td>Fixes the issue where the GCDAsync library may cause compilation conflicts.</td>
- <td>April 19, 2021</td>
- <td>-</li> </td>
+	 <td>SDK v1.3.1.1 release</td>
+	 <td>Fixes the issue where the GCDAsync library may cause compilation conflicts.</td>
+	 <td>April 19, 2021</td>
+	 <td>-</li> </td>
  </tr>
  <tr>
- <td>SDK v1.3.1.0 release</td>
- <td>  
-<li>Fixes the issue where the audio playback rules of TPNS and APNs channels are inconsistent.
-<li>Fixes the issue where the encrypted fields delivered via the cloud control emergency solution become invalid during cluster switching.
-<li>Fixes the issue where sometimes statistical log reporting fails.
-<li>Fixes the issue where it might fail to overwrite notifications that carried `thread-id`.
-<li>Optimizes the prompts of some error logs.
-<li>Improves the accuracy of the terminal's environmental verification of TPNS token.
-<li>Supports automatic reissue of the badge number set when the TPNS network connection fails.
-<li>Improves the arrival and reporting of silent messages to make them more timely.
-<li>Supports querying tags.
-<li>Supports callbacks for notification permission applications.
-<li>TPNS channel supports `thread_id` message grouping.
-<li>Demo adds sample code for global cluster switching.
-<li>Supports callbacks for successful TPNS network connection and disconnection.</td>
- <td>April 12, 2021</td>
- <td>-</td>
+	 <td>SDK v1.3.1.0 release</td>
+	 <td>  
+		<li>Fixes the issue where the audio playback rules of TPNS and APNs channels are inconsistent.</li>
+		<li>Fixes the issue where the encrypted fields delivered via the cloud control emergency solution become invalid during cluster switching.</li>
+		<li>Fixes the issue where sometimes statistical log reporting fails.</li>
+		<li>Fixes the issue where it might fail to overwrite notifications that carried `thread-id`.</li>
+		<li>Optimizes the prompts of some error logs.</li>
+		<li>Improves the accuracy of the terminal's environmental verification of TPNS token.</li>
+		<li>Supports automatic reissue of the badge number set when the TPNS network connection fails.</li>
+		<li>Improves the arrival and reporting of silent messages to make them more timely.</li>
+		<li>Supports querying tags.</li>
+		<li>Supports callbacks for notification permission applications.</li>
+		<li>TPNS channel supports `thread_id` message grouping.</li>
+		<li>Adds sample code for global cluster switching to the demo.</li>
+		<li>Adds support for callbacks for successful TPNS network connection and disconnection.</li>
+	</td>
+	 <td>April 12, 2021</td>
+	 <td>-</td>
  </tr>
  </table>
 
@@ -98,7 +147,8 @@
 <li>Reduces the size of the in-app message plugin package.
 <li>Encrypts the request that obtains the TPNS token.
 <li>Adds parameter checking logic and error callback for account, tag, and user attributes.
-<li>Deletes account type enumeration and makes it customizable.</td>
+<li>Deletes account type enumeration and makes it customizable. 
+</td>
  <td>January 25, 2021</td>
  <td>-</li> </td>
  </tr>
@@ -240,7 +290,7 @@
         <td>SDK v1.2.5.3 release</td>
         <td><li>Supports unregistering free TPNS clusters to avoid repeated pushes.</li><li>Supports replacing repeated messages in the notification extension.</li></td>
         <td>March 19, 2020</td>
-        <td>Unregistering XG Platform Service</a></td>
+        <td>Unregisters the XG platform service.</a></td>
     </tr>
     <tr>
         <td>SDK v1.2.5.2 release</td>
