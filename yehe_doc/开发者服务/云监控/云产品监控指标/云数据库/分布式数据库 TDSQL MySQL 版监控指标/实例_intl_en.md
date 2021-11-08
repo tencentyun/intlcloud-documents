@@ -6,325 +6,340 @@ Namespace=QCE/TDMYSQL
 <table style = "table-layout:fixed;">
 <thead>
 <tr>
+<th width="20%">Parameter</th>
 <th width="20%">Metric</th>
-<th width="20%">Meaning</th>
 <th width="20%">Description</th>
 <th width="8%">Unit</th>
 <th width="20%">Dimension</th>
-<th width="12%">Statistical Periods</th>
+<th width="12%">Statistical Period</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>ActiveThreadCount</td>
-<td>Number of active threads</td>
-<td>Instance-level metric, which is the sum of active threads in all the shards’ primary and replica nodes</td>
-<td>Threads</td>
+<td>Active Threads</td>
+<td>Instance-Level metric, which is the sum of active threads on source and replica nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>BinlogDiskAvailable</td>
-<td>Available binlog disk space</td>
-<td>Instance-level metric, which is the sum of the value of `BinlogDiskAvailableShard` in all the shards</td>
+<td>Available Binlog Disk Space</td>
+<td>Instance-Level metric, which is the sum of the values of `BinlogDiskAvailableShard` in all shards</td>
 <td>GB</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>BinlogUsedDisk</td>
-<td>Used binlog disk space</td>
-<td>Instance-level metric, whose value is the sum of binlog disk space used in all the shards’ primary nodes</td>
+<td>Used Binlog Disk Space</td>
+<td>Instance-Level metric, which is the sum of binlog disk space used on source nodes in all shards</td>
 <td>GB</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>ConnUsageRate</td>
-<td>Connection usage</td>
-<td>Instance-level metric, whose value is the highest connection usage among all the shards’ primary and replica nodes</td>
+<td>Database Connection Utilization</td>
+<td>Instance-Level metric, whose value is the highest database connection utilization of the instance's source and replica nodes in all shards</td>
 <td>%</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>CpuUsageRate</td>
-<td>CPU usage</td>
-<td>Instance-level metric, whose value is the highest CPU usage in all the shards’ primary nodes</td>
+<td>CPU utilization</td>
+<td>Instance-Level metric, whose value is the highest CPU utilization of the instance's source nodes in all shards</td>
 <td>%</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>DataDiskAvailable</td>
-<td>Available data disk space</td>
-<td>Instance-level metric, which is the sum of the available data disk space in all the shards’ primary nodes</td>
+<td>Available Data Disk Space</td>
+<td>Instance-Level metric, which is the sum of the available data disk space on source nodes in all shards</td>
 <td>GB</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>DataDiskUsedRate</td>
-<td>Data disk usage</td>
-<td>Instance-level metric, whose value is the highest data disk usage in all the shards’ primary nodes</td>
+<td>Data Disk Utilization</td>
+<td>Instance-Level metric, whose value is the highest data disk utilization of the instance's source nodes in all shards</td>
 <td>%</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>DeleteTotal</td>
-<td>Number of DELETE queries</td>
-<td>Instance-level metric, which is the sum of DELETE queries executed in all the shards’ primary nodes</td>
-<td>Queries/sec</td>
+<td>DELETE Requests</td>
+<td>Instance-Level metric, which is the sum of DELETE requests on the instance's source nodes in all shards</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>InnodbBufferPoolReads</td>
-<td>Number of InnoDB disk page reads</td>
-<td>Instance-level metric, which is the sum of InnoDB disk page reads in all the shards’ primary and replica nodes</td>
-<td>Times</td>
+<td>Logical Reads from InnoDB Disk</td>
+<td>Instance-Level metric, which is the sum of logical reads from InnoDB disks on the instance's source and replica nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>InnodbBufferPool<br>ReadAhead</td>
-<td>Page read-ahead count of the InnoDB buffer pool</td>
-<td>Instance-level metric, which is the sum of page read-aheads in the InnoDB buffer pool in all the shards’ primary and replica nodes</td>
-<td>Times</td>
+<td>Pages Read into InnoDB Buffer Pool by read-ahead Thread</td>
+<td>Instance-Level metric, which is the sum of pages read into InnoDB buffer pools by read-ahead thread on the instance's source and replica nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>InnodbBufferPool<br>ReadRequests</td>
-<td>Page read count of the InnoDB buffer pool </td>
-<td>Instance-level metric, which is the sum of page reads in the InnoDB buffer pool in the instance's primary and replica nodes</td>
-<td>Times</td>
+<td>Logical Reads from InnoDB Buffer Pool</td>
+<td>Instance-Level metric, which is the sum of logical reads from InnoDB buffer pools on the instance's source and replica nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>InnodbRowsDeleted</td>
-<td>Number of rows deleted by InnoDB</td>
-<td>Instance-level metric, which is the sum of rows deleted by InnoDB in all the shards’ primary nodes</td>
-<td>Rows</td>
+<td>Rows Deleted from InnoDB Tables</td>
+<td>Instance-Level metric, which is the sum of rows deleted from InnoDB tables on the instance's source nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>InnodbRowsInserted</td>
-<td>Number of rows inserted by InnoDB</td>
-<td>Instance-level metric, which is the sum of rows inserted by InnoDB in all the shards’ primary nodes</td>
-<td>Rows</td>
+<td>Rows Inserted into InnoDB Tables</td>
+<td>Instance-Level metric, which is the sum of rows inserted into InnoDB tables on the instance's source nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>InnodbRowsRead</td>
-<td>Number of rows read by InnoDB</td>
-<td>Instance-level metric, which is the sum of rows read by InnoDB in all the shards’ primary and replica nodes</td>
-<td>Rows</td>
+<td>Rows Read from InnoDB Tables</td>
+<td>Instance-Level metric, which is the sum of rows read from InnoDB tables on the instance's source and replica nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>InnodbRowsUpdated</td>
-<td>Number of rows updated by InnoDB</td>
-<td>Instance-level metric, which is the sum of rows updated by InnoDB in all the shards’ primary nodes</td>
-<td>Rows</td>
+<td>Rows Updated to InnoDB Tables</td>
+<td>Instance-Level metric, which is the sum of rows updated to InnoDB tables on the instance's source nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>InsertTotal</td>
-<td>Number of INSERT queries</td>
-<td>Instance-level metric, which is the sum of INSERT queries executed in all the shards’ primary nodes</td>
-<td>Queries/sec</td>
+<td>INSERT Requests</td>
+<td>Instance-Level metric, which is the sum of INSERT requests on the instance's source nodes in all shards</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>LongQueryCount</td>
-<td>Slow queries</td>
-<td>Instance-level metric, which is the sum of slow queries executed in all the shards’ primary nodes</td>
-<td>Queries</td>
+<td>Slow Queries</td>
+<td>Instance-Level metric, which is the sum of slow queries on the instance's source nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>MemAvailable</td>
-<td>Available memory</td>
-<td>Instance-level metric, which is the sum of available memory in all the shards’ primary nodes</td>
+<td>Available Cache</td>
+<td>Instance-Level metric, which is the sum of available cache space on the instance's source nodes in all shards</td>
 <td>GB</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>MemHitRate</td>
-<td>Cache hit ratio</td>
-<td>Instance-level metric, whose value is the lowest cache hit ratio in all the shards’ primary nodes</td>
+<td>Cache Hit Ratio</td>
+<td>Instance-Level metric, whose value is the smallest cache hit ratio of the instance's source nodes in all shards</td>
 <td>%</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>ReplaceSelectTotal</td>
-<td>Number of REPLACE_SELECT queries</td>
-<td>Instance-level metric, which is the sum of REPLACE-SELECT queries executed in all the shards’ primary nodes</td>
-<td>Queries/sec</td>
+<td>REPLACE_SELECT Requests</td>
+<td>Instance-Level metric, which is the sum of REPLACE-SELECT requests on the instance's source nodes in all shards</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>ReplaceTotal</td>
-<td>Number of REPLACE queries</td>
-<td>Instance-level metric, which is the sum of REPLACE queries executed in all the shards’ primary nodes</td>
-<td>Queries/sec</td>
+<td>REPLACE Requests</td>
+<td>Instance-Level metric, which is the sum of REPLACE requests on the instance's source nodes in all shards</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>RequestTotal</td>
-<td>Total requests</td>
-<td>Instance-level metric, which is the total number of queries executed in the instance's primary node plus the number of SELECT queries executed in the replica nodes</td>
-<td>Queries/sec</td>
+<td>DML Throughput</td>
+<td>Instance-Level metric, which is the sum of total number of requests on the instance's all source nodes and the number of SELECT requests on all replica nodes</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>SelectTotal</td>
-<td>Number of SELECT queries</td>
-<td>Instance-level metric, which is the sum of SELECT queries executed in all the shards’ primary and replica nodes</td>
-<td>Queries/sec</td>
+<td>SELECT Requests</td>
+<td>Instance-Level metric, which is the sum of SELECT requests on the instance's source and replica nodes in all shards</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>SlaveDelay</td>
-<td>Primary-replica synchronization delay</td>
-<td>Instance-level metric. Instance-level synchronization delay is the delay of whichever shard has the longest delay, and shard-level synchronization delay is the shortest delay among the shard’s all replica nodes.</td>
+<td>Replica Node Delay</td>
+<td>Instance-Level metric. The replica node delay of each shard is calculated first, and the greatest value is taken as the instance's replica node delay. The replica node delay of a shard is the smallest replica node delay of all replica nodes in the shard</td>
 <td>Sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>UpdateTotal</td>
-<td>Number of UPDATE queries</td>
-<td>Instance-level metric, which is the sum of UPDATE queries executed in all the shards’ primary nodes</td>
-<td>Queries/sec</td>
+<td>UPDATE Requests</td>
+<td>Instance-Level metric, which is the sum of UPDATE requests on the instance's source nodes in all shards</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>ThreadsConnected</td>
-<td>Number of threads currently connected</td>
-<td>Instance-level metric, which is the sum of threads currently connected in all the shards’ primary and replica nodes</td>
-<td>Threads</td>
+<td>Open Connections</td>
+<td>Instance-Level metric, whose value is the sum of open connections to the instance's source and replica nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>ConnMax</td>
-<td>Maximum connections</td>
-<td>Instance-level metric, which is the sum of the maximum number of connections of all the shards’ primary and replica nodes</td>
-<td>Connections</td>
+<td>Max Connections</td>
+<td>Instance-Level metric, which is the sum of maximum connections to the instance's source and replica nodes in all shards</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>ClientConnTotal</td>
-<td>Number of client connections</td>
-<td>Instance-level metric, which is the sum of connections in the instance’s proxy. This metric represents the actual number of clients connected to the database instance.</td>
-<td>Connections</td>
+<td>Total Client Connections</td>
+<td>Instance-Level metric, which is the sum of connections to the instance's proxy. This metric represents the actual number of clients connected to the database instance.</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>SQLTotal</td>
-<td>Total number of SQL queries</td>
-<td>Instance-level metric, which represents the number of SQL queries sent to the instance</td>
-<td>Queries</td>
+<td>SQL Throughput</td>
+<td>Instance-Level metric, which represents the number of SQL statements sent to the instance</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>ErrorSQLTotal</td>
-<td>SQL error count</td>
-<td>Instance-level metric, which represents the number of queries with execution errors</td>
-<td>Queries</td>
+<td>SQL Error Throughput</td>
+<td>Instance-Level metric, which represents the number of SQL statements with execution errors</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>SuccessSQLTotal</td>
-<td>Number of successful SQL queries</td>
-<td>Instance-level metric, which represents the number of SQL queries executed successfully</td>
-<td>Queries</td>
+<td>SQL Success Throughput</td>
+<td>Instance-Level metric, which represents the number of SQL statements executed successfully</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>TimeRange0</td>
-<td>Number of queries that take shorter than 5 ms to execute</td>
-<td>Instance-level metric, which represents the number of queries that take shorter than 5 ms to execute</td>
-<td>Queries/sec</td>
+<td>DML Latency (below 5 ms)</td>
+<td>Instance-Level metric, which represents the number of requests that take less than 5 ms to execute</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>TimeRange1</td>
-<td>Number of queries that take 5-20 ms to execute</td>
-<td>Instance-level metric, which represents the number of queries that take 5-20 ms to execute</td>
-<td>Queries/sec</td>
+<td>DML Latency (5-20 ms)</td>
+<td>Instance-Level metric, which represents the number of requests that take 5-20 ms to execute</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>TimeRange2</td>
-<td>Number of queries that take 20-30 ms to execute</td>
-<td>Instance-level metric, which represents the number of queries that take 20-30 ms to execute</td>
-<td>Queries/sec</td>
+<td>DML Latency (20-30 ms)</td>
+<td>Instance-Level metric, which represents the number of requests that take 20-30 ms to execute</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>TimeRange3</td>
-<td>Number of queries that take longer than 30 ms to execute</td>
-<td>Instance-level metric, which represents the number of queries that take longer than 30 ms to execute</td>
-<td>Queries/sec</td>
+<td>DML Latency (over 30 ms)</td>
+<td>Instance-Level metric, which represents the number of requests that take more than 30 ms to execute</td>
+<td>Counts/sec</td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>MasterSwitchedTotal</td>
-<td>Number of primary node switchovers</td>
-<td>Instance-level metric, which represents the number of times the primary node is switched</td>
-<td>Times</td>
+<td>Source-Replica Switches</td>
+<td>Instance-Level metric, which represents the number of source-replica switches in the instance</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 <tr>
 <td>IOUsageRate</td>
-<td>IO usage</td>
-<td>Instance-level metric, whose value is the highest IO usage in all the shards’ primary nodes</td>
+<td>IO Utilization</td>
+<td>Instance-Level metric, whose value is the highest IO utilization of the instance's source nodes in all shards</td>
 <td>%</td>
+<td>InstanceId</td>
+<td>60s, 300s, 3600s, 86400s</td>
+</tr>
+<tr>
+<td>MaxSlaveCpuUsageRate</td>
+<td>Max CPU Utilization of Replica Node</td>
+<td>Instance-Level metric, whose value is the highest CPU utilization of all replica nodes</td>
+<td>%</td>
+<td>InstanceId</td>
+<td>60s, 300s, 3600s, 86400s</td>
+</tr>
+<td>ThreadsRunningCount</td>
+<td>Total Running Threads</td>
+<td>Instance-Level metric, whose value is the sum of Threads_running values of the instance's all nodes. Threads_running is the result of running `show status like 'Threads_running'`</td>
+<td> - </td>
 <td>InstanceId</td>
 <td>60s, 300s, 3600s, 86400s</td>
 </tr>
 </tbody></table>
 
-> ?Statistical periods (period) may vary from metric to metric. You can get the periods different metrics support by calling the `DescribeBaseMetrics` API.
+> ?Statistical periods (`period`) may vary by metric. You can get the periods different metrics support by calling the [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API.
 
-## Dimensions and Parameters
+## Overview of Parameters in Each Dimension
 
-| Parameter | Dimension Name | Dimension Description | Format |
+| Parameter | Dimension | Dimension Description | Format |
 | ------------------------------ | ---------- | ------------------ | ------------------------------------- |
-| Instances.N.Dimensions.0.Name | instanceId | Dimension name of the instance ID | Enter a string-type dimension name: `InstanceId`  |
-| Instances.N.Dimensions.0.Value | InstanceId | Instance ID | Enter an instance ID, e.g. `tdsqlshard-9kjauqq1` |
+| Instances.N.Dimensions.0.Name | InstanceId | Dimension name of the instance ID | Enter a string-type dimension name: InstanceId |
+| Instances.N.Dimensions.0.Value | InstanceId | Specific instance ID | Enter an instance ID, such as tdsqlshard-9kjauqq1 |
 
-## Input Parameters
+## Input Parameter Description
 
 To query the instance-level monitoring metrics of TDSQL for MySQL, use the following input parameters:
 
 &Namespace=QCE/TDMYSQL
 &Instances.N.Dimensions.0.Name=InstanceId
-&Instances.N.Dimensions.0.Value=ID of the instance
+&Instances.N.Dimensions.0.Value=Instance ID

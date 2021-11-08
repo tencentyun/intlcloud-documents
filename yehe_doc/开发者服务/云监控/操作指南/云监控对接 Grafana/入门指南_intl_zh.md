@@ -1,5 +1,5 @@
 ## 前置条件
-腾讯云监控应用插件需运行在 Grafana ≥ 7.3且 < 8.0 的版本上。请优先安装 Grafana 环境，详情请参见 [Grafana 安装文档](https://grafana.com/grafana/download)。
+腾讯云监控应用插件需运行在 Grafana 7.3 或更高的版本上。请优先安装 Grafana 环境，详情请参见 [Grafana 安装文档](https://grafana.com/grafana/download)。
 
 ## 步骤1：安装与更新
 
@@ -71,15 +71,15 @@ grafana-cli plugins --help
 
 ## 步骤3：配置数据源
 
-腾讯云监控应用插件通过调用云监控 API 的方式获取各云产品的监控指标数据，通过以下步骤，配置相应云产品的数据源。    
-1. 鼠标悬浮左侧导航栏的 **齿轮** 图标，单击【Data Sources】选项，进入数据源管理页面；
+腾讯云监控应用插件通过调用云监控 API的方式获取各云产品的监控指标数据，通过以下步骤，配置相应云产品的数据源。    
+1. 鼠标悬浮左侧导航栏的 **齿轮** 图标，单击 **Data Sources** 选项，进入数据源管理页面；
 ![](https://main.qcloudimg.com/raw/5e2c922ebb1b8c6c6f5c2769cd7b8b59.png)
-2. 单击右上角的【Add data source】按钮，然后单击【Tencent Cloud Monitoring】数据源，进入数据源配置页面；
+2. 单击右上角的 **Add data source**，然后单击 **Tencent Cloud Monitoring** 数据源，进入数据源配置页面；
 ![](https://main.qcloudimg.com/raw/51d09bf84540ecb6f1730912a5d5bdf9.png)
 3. `Name` 数据源名称，可以是任意名称，默认为 `Tencent Cloud Monitoring`；  
 4. `SecretId` 和 `SecretKey` 是调用云监控 API 必需的安全证书信息，二者可以通过腾讯云控制台 [云 API 密钥页面](https://console.cloud.tencent.com/cam/capi) 获取；
 5. 选择需要获取监控数据的云产品；  
-6. 单击【Save & Test】按钮，测试数据源的配置信息是否正确，配置成功后，即可以在 Dashboard 中使用该数据源。
+6. 单击 **Save & Test**，测试数据源的配置信息是否正确，配置成功后，即可以在 Dashboard 中使用该数据源。
 ![](https://main.qcloudimg.com/raw/85ed048d5a163c8028e9cfe19b4d35d1.png)
 
 ## 步骤4：创建 Dashboard
@@ -89,15 +89,15 @@ grafana-cli plugins --help
 
 ### 快捷创建
 
-鼠标悬浮左侧导航栏的 **加号** 图标，单击【Dashboard】选项，即可创建一个新的 Dashboard。
+鼠标悬浮左侧导航栏的 **加号** 图标，单击 **Dashboard** 选项，即可创建一个新的 Dashboard。
 
 ### 管理页面
 
-鼠标悬浮左侧导航栏的 **田字格** 图标，单击【Manage】选项，进入 Dashboard 管理页面，单击【New Dashboard】按钮，即可创建一个新的 Dashboard。同时，在该页面可以对 Dashboard 进行各种管理操作，如新建文件夹、移动 Dashboard、导入 Dashboard 等。
+鼠标悬浮左侧导航栏的 **田字格** 图标，单击 **Manage** 选项，进入 Dashboard 管理页面，单击 **New Dashboard**，即可创建一个新的 Dashboard。同时，在该页面可以对 Dashboard 进行各种管理操作，如新建文件夹、移动 Dashboard、导入 Dashboard 等。
 
 ### 导入模板
 
-鼠标悬浮左侧导航栏的 **齿轮** 图标，单击【Plugins】选项，进入 Plugins 管理页面。然后，单击【Tencent Cloud Monitor】应用，进入应用详情页面，切换至 `Dashboards` 选项卡，选择 Dashbboard 模板导入。
+鼠标悬浮左侧导航栏的 **齿轮** 图标，单击 **Plugins** 选项，进入 Plugins 管理页面。然后，单击 **Tencent Cloud Monitor** 应用，进入应用详情页面，切换至 `Dashboards` 选项卡，选择 Dashbboard 模板导入。
 ![](https://main.qcloudimg.com/raw/c2678540c0eeb27b2d6acca5712ba2c5.png)
 
 
@@ -107,11 +107,11 @@ grafana-cli plugins --help
 
 创建 Dashboard 之后，通过配置 Panel 信息，即可获取腾讯云监控的相应监控数据。现在以简单的 Graph 为例，展示如何配置 Panel 信息。
 1. 单击 **New Panel** 面板的 **Add Query** 选项，进入 Panel 配置页面。在左侧第一个 `Query` 选项卡，选择 上面配置的腾讯云监控数据源。
-2. `Namespace` 命名空间，例如云服务器监控的命名空间为 `QCE/CVM`，[单击查看](https://intl.cloud.tencent.com/document/product/248/40019)其它云产品命名空间。
+2. `Namespace` 命名空间，例如云服务器监控的命名空间为 `QCE/CVM`，[单击查看](https://intl.cloud.tencent.com/zh/document/product/248/40019)其它云产品命名空间。
 3. `Region` 地域，地域列表会根据 `Namespace` 选项自动获取，单击选择某一地域。
-4. `MetricName` 指标名称，指标列表会根据 `Namespace` 和 `Region` 选项自动获取，单击选择某一指标。[单击查看](https://intl.cloud.tencent.com/document/product/248/40019)各个云产品的指标文档。
+4. `MetricName` 指标名称，指标列表会根据 `Namespace` 和 `Region` 选项自动获取，单击选择某一指标。[单击查看](https://intl.cloud.tencent.com/zh/document/product/248/40019)各个云产品的指标文档。
 5. `Period` 监控统计粒度，周期列表会根据 `MetricName` 选项自动获取，单击选择某一统计粒度。
-6. `Instance` 实例，对应输入参数的 `Instances.N` 字段，实例列表会自动获取。[单击查看](https://intl.cloud.tencent.com/document/product/248/40019)各个云产品的实例列表接口文档。
+6. `Instance` 实例，对应输入参数的 `Instances.N` 字段，实例列表会自动获取。[单击查看](https://intl.cloud.tencent.com/zh/document/product/248/40019)各个云产品的实例列表接口文档。
    - 为了适应不同用户的习惯，实例列表会以不同的字段展示，默认以各产品的 **ID** 展示。
    - `Show Details` 按钮仅在选择非模板变量时显示，切换 `Show Details` 为 `true`，可展示实例请求参数，默认参数为`Offset = 0` 和 `Limit = 20`。如果需要变更实例查询条件，可参考接口文档，配置相应参数。
    - **注意：** 在本应用中，监控数据的单次查询为原子操作，即查询某一实例的某一指标的监控数据，故实例只能单选，如需查询多实例的监控数据，单击底部 `+ Query` 增加新的查询。

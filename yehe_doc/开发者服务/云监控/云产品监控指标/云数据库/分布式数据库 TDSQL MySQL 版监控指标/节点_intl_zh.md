@@ -11,7 +11,7 @@ Namespace=QCE/TDMYSQL
 <th width="20%">指标含义</th>
 <th width="8%">单位</th>
 <th width="20%">维度</th>
-<th width="12%">统计周期</th>
+<th width="12%">统计粒度</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -185,7 +185,7 @@ Namespace=QCE/TDMYSQL
 <tr>
 <td>ReplaceTotalNode</td>
 <td>REPLACE 请求数</td>
-<td>DB 节点REPLACE请求数</td>
+<td>DB 节点总请求数</td>
 <td>次/秒</td>
 <td>InstanceId,<br>NodeId</td>
 <td>60s、300s、 3600s、86400s</td>
@@ -216,7 +216,7 @@ Namespace=QCE/TDMYSQL
 </tr>
 <tr>
 <td>UpdateTotalNode</td>
-<td>UPDATE 请求数</td>
+<td>当前打开连接数</td>
 <td>DB 节点 UPDATE 请求数</td>
 <td>次/秒</td>
 <td>InstanceId,<br>NodeId</td>
@@ -224,7 +224,7 @@ Namespace=QCE/TDMYSQL
 </tr>
 <tr>
 <td>Threads<br>ConnectedNode</td>
-<td>当前打开连接数</td>
+<td>UPDATE 请求数</td>
 <td>DB 节点连接数，计算方式为 show processlist 得到的 session 个数</td>
 <td>个</td>
 <td>InstanceId,<br>NodeId</td>
@@ -246,9 +246,17 @@ Namespace=QCE/TDMYSQL
 <td>InstanceId,<br>NodeId</td>
 <td>60s</td>
 </tr>
+<tr>
+<td>ThreadsRunningCountNode</td>
+<td>运行线程数</td>
+<td>DB 节点 Threads_running 数值</td>
+<td>个</td>
+<td>InstanceId,<br>NodeId</td>
+<td>60s、300s、 3600s、86400s</td>
+</tr>
 </tbody></table>
 
-> ?每个指标的统计粒度（Period）可取值不一定相同，可通过DescribeBaseMetrics接口获取每个指标支持的统计粒度
+> ?每个指标的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度
 
 ## 各维度对应参数总览
 
