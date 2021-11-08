@@ -32,7 +32,6 @@ App 通知栏推送的抵达率和抵达速度往往会因「App 进程不在后
 4. 前往[ 移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)。
 5. 在左侧导航栏中，单击**第三方服务授权**，进入第三方服务授权管理页面。
 6. 单击**立即授权**。
-![](https://main.qcloudimg.com/raw/6089b5e64c2dfda9dc25b284a6caf14c.png)
 7. 在弹出的窗口中，将 `SecretId` 和 `SecretKey` 配置到文本框中，单击**确认**保存即可。
 
 ### 步骤3：申请短信签名模板
