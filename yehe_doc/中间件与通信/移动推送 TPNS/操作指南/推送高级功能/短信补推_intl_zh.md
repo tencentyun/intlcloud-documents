@@ -93,7 +93,7 @@ App 通知栏推送的抵达率和抵达速度往往会因「App 进程不在后
 ```
 
 推送完成后，可前往 [短信控制台](https://console.cloud.tencent.com/smsv2) 统计分析页面查看短信记录。
-![](https://main.qcloudimg.com/raw/e7d950231847e2c2a1a3ab422f5d6adf.png)
+
 
 ## 常见问题
 

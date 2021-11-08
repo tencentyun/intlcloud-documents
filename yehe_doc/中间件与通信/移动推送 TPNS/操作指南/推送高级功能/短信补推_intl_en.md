@@ -93,7 +93,7 @@ Below is a sample push:
 ```
 
 After completing the push, you can view the SMS message records on the statistics page in the [SMS console](https://console.cloud.tencent.com/smsv2).
-![](https://main.qcloudimg.com/raw/e7d950231847e2c2a1a3ab422f5d6adf.png)
+
 
 ## FAQs
 
