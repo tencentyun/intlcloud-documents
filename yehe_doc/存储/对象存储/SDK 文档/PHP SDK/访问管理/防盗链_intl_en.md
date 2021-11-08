@@ -4,8 +4,8 @@ This document provides an overview of APIs and SDK code samples related to bucke
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------- |
-| [PUT Bucket referer](https://cloud.tencent.com/document/product/436/32492) | Setting a bucket referer | Sets a bucket referer allowlist or blocklist |
-| [GET Bucket referer](https://cloud.tencent.com/document/product/436/32493) | Querying a bucket referer | Queries a bucket referer allowlist or blocklist |
+| [PUT Bucket referer](https://intl.cloud.tencent.com/document/product/436/31423) | Setting a bucket referer | Sets a bucket referer allowlist or blocklist |
+| [GET Bucket referer](https://intl.cloud.tencent.com/document/product/436/30615) | Querying a bucket referer | Queries a bucket referer allowlist or blocklist |
 
 ### Setting a bucket referer
 
