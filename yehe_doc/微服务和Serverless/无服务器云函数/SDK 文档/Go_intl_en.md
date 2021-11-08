@@ -367,7 +367,7 @@ Starting from `v1.0.189`, Tencent Cloud SDK for Go supports the use of `Common R
 
 >?You must clearly know the parameters required by the called API; otherwise, the call may fail.
 
-Currently, only the POST method is supported, and the signature algorithm must be signature algorithm v3. For detailed usage, please see the [Using Common Request to Call](https://github.com/TencentCloud/tencentcloud-sdk-go/blob/master/examples/common/common_request.go) sample.
+Currently, only the POST method is supported, and the signature algorithm must be signature algorithm v3. For detailed usage, please see the [Using Common Request to Call](https://github.com/TencentCloud/tencentcloud-sdk-go/blob/master/examples/common/common_client.go) sample.
 
 ## Request Retry
 ### Retry upon network error
