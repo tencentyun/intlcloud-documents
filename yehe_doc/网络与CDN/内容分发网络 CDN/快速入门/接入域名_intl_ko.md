@@ -1,4 +1,4 @@
-![](https://main.qcloudimg.com/raw/eb904bfddef689cd5d4382e69b728a12.png)
+
 
 ## 준비 작업
 
@@ -100,7 +100,7 @@ Tencent Cloud CDN은 일반적으로 사용되는 서비스 설정을 제공하�
 ## 연결 완료
 
 도메인 작업 추가 완료 후 도메인 설정이 전체 네트워크 노드에 전달될 때까지 약 5 - 10 분이 소요됩니다.
-<img src="hhttps://main.qcloudimg.com/raw/d5bcb556ac1b89946ec15642d3249676.png" width="80%">
+<img src="https://main.qcloudimg.com/raw/d5bcb556ac1b89946ec15642d3249676.png" width="80%">
 
 ## 후속 작업
 
