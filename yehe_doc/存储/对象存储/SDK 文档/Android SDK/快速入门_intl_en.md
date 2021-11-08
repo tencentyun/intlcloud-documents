@@ -1,7 +1,7 @@
 ## Resources
 
 - Download the XML Android SDK source code [here](https://github.com/tencentyun/qcloud-sdk-android).
-- Download Demo [here](https://github.com/tencentyun/qcloud-sdk-android-samples).
+- Download the demo [here](https://github.com/tencentyun/qcloud-sdk-android-samples).
 - For SDK APIs and parameters, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/Android).
 - For the SDK changelog, please see [ChangeLog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md).
@@ -42,7 +42,7 @@ Add dependencies to the app-level `build.gradle` file (usually under the app mod
 dependencies {
 	...
     // Add the following line
-    implementation 'com.qcloud.cos:cos-android:5.6.+'
+    implementation 'com.qcloud.cos:cos-android:5.7.+'
 }
 ```
 
@@ -62,7 +62,7 @@ Add dependencies to the app-level `build.gradle` file (usually under the app mod
 dependencies {
 	...
     // Add the following line
-    implementation 'com.qcloud.cos:cos-android-lite:5.6.+'
+    implementation 'com.qcloud.cos:cos-android-lite:5.7.+'
 }
 ```
 
@@ -85,7 +85,7 @@ dependencies {
 ```
 
 
-### Method 2. Manual integration 
+### Method 2: Manually integrate
 
 #### 1. Download the SDK version
 
@@ -129,7 +129,7 @@ The SDK needs network permission to communicate with the COS server. Please add 
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
 
-### Storage permission
+### Storage permissions
 
 If you need to read and write files from external storage, please add the following permission declarations to `AndroidManifest.xml` under the app module:
 
@@ -182,7 +182,7 @@ QCloudCredentialProvider myCredentialProvider = new MySessionCredentialProvider(
 
 #### Using a permanent key for local debugging
 
-You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to switch to the temporary key method before launching your application.**
+You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to replace it with a temporary key before launching your application.**
 
 ```java
 String secretId = "SECRETID"; // SecretId of the permanent key
@@ -248,33 +248,34 @@ val cos = cosService(context = application.applicationContext) {
 
 ### Uploading an object
 
-The SDK supports uploading local files, binary data, URIs, and input streams. The following uses uploading a local file as an example.
+The SDK supports uploading local files, binary data, URIs, and input streams. The following uses uploading a local file as an example:
 
 [//]: # ".cssg-snippet-transfer-upload-file"
 ```java
 // Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
-// Initialize TransferManager
+// Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket, formatted as BucketName-APPID
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
-        .toString(); // The absolute path of the local file
+        .toString(); // Absolute path of the local file
 // If there is an `uploadId` for an initialized multipart upload, assign the value of the `uploadId` here to resume the upload; otherwise, assign `null`
 // uploadId for the current upload task can be obtained from the callback of TransferStateListener.
 String uploadId = null; 
 
-// Upload the object.
+// Upload the object
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 
-// Set the upload progress callback
+// Set the upload progress callback. After this, you can obtain “uploadId” for checkpoint restart.
 cosxmlUploadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
     @Override
     public void onProgress(long complete, long target) {
         // todo Do something to update progress...
+        uploadId = cosxmlUploadTask.getUploadId();  
     }
 });
 // Set the response callback
@@ -296,12 +297,11 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
         }
     }
 });
-// Set the task status callback to view the task process and obtain the uploadId for checkpoint restart.
+// Set the job status callback to view the job progress
 cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
     @Override
     public void onStateChanged(TransferState state) {
         // todo notify transfer state
-        uploadId = cosxmlUploadTask.getUploadId();  
     }
 });
 ```
@@ -316,7 +316,7 @@ If you use KTX, please refer to the following sample code for the upload:
 viewModelScope.launch {
     val `object` = cosObject {
         bucket = cosBucket {
-            service = cos
+            service = cosXmlService
             name = "examplebucket-1250000000"
         }
         key = "exampleObject"
@@ -355,14 +355,14 @@ viewModelScope.launch {
 // The advanced download API supports checkpoint restart. Therefore, a HEAD request will be sent before the download to obtain the file information.
 // If you are using a temporary key or accessing with a sub-account, ensure that your permission list includes HeadObject.
 
-// Initialize `TransferConfig`. The default configuration is used here. If you need to customize it, please see the SDK API documentation.
+// Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
 // Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket, formatted as BucketName-APPID
-String cosPath = "exampleobject"; // Location identifier of the object in the bucket, namely the object key
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 // Path of the local directory
 String savePathDir = context.getExternalCacheDir().toString();
 // File name saved locally. If not specified (null), it will be the same as the COS file name
@@ -381,7 +381,7 @@ cosxmlDownloadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
         // todo Do something to update progress...
     }
 });
-// Set the response callback 
+// Set the response callback
 cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
@@ -409,7 +409,7 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
-#### Use the KTX package to download an object
+#### Using the KTX package to download an object
 
 If you use KTX, please refer to the following sample code for the download:
 

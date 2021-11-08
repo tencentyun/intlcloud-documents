@@ -1,4 +1,4 @@
-## Scenarios
+## Overview
 
 There are two buckets under root account A (APPID: `1250000000`): `examplebucket1-1250000000` and `examplebucket2-1250000000`, which sub-account B0 under root account B wants to manipulate to meet its business needs. This document describes how to authorize it to do so.
 
@@ -24,7 +24,7 @@ There are two buckets under root account A (APPID: `1250000000`): `examplebucket
 
 1. Log in to the CAM Console with root account B and go to the [Policy](https://console.cloud.tencent.com/cam/policy) page.
 2. Click **Create Custom Policy** > **Create by Policy Syntax**, select a blank template, and click **Next**.
->Root account B can grant its sub-account B0 permissions only using a custom policy, but not a preset policy.
+>?Root account B can grant its sub-account B0 permissions only using a custom policy, but not a preset policy.
 3. Fill in the form as shown below:
 	- **Policy Name**: Designate a unique and meaningful name for the policy, such as `cos-child-account`.
 	- **Remarks**: Optional; add remarks as needed.
@@ -41,9 +41,8 @@ There are two buckets under root account A (APPID: `1250000000`): `examplebucket
     ]
 }
 ```
-Specifically, "1250000000" in `uid/1250000000` is the APPID of root account A, and `examplebucket1-1250000000` is the bucket name to be authorized. The `examplebucket1-1250000000/*`, meaning that all buckets under root account A that root account B are authorized to manipulate will be authorized to sub-account B0.
+`1250000000` in `uid/1250000000` is the `APPID` of root account A, and `examplebucket1-1250000000` is the name of the bucket to authorize. `examplebucket1-1250000000/*` means that all buckets under root account A that have been authorized to root account B will be authorized to its sub-account B0.
 ![](https://main.qcloudimg.com/raw/f53be7ca4360edd0547e440868506c8e.png)
-
 4. Click **Done**.
 5. Locate the created policy in the **policy list** and click **Bind User/User Group** on the right.
 ![](https://main.qcloudimg.com/raw/4ebafe21d09f664e49d0dfc23020229d.png)

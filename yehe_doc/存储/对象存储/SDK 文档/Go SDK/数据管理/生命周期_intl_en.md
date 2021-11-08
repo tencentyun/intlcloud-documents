@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to lifecycle.
+This document provides an overview of APIs and SDK code samples related to lifecycles.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
@@ -10,7 +10,7 @@ This document provides an overview of APIs and SDK code samples related to lifec
 
 ## Setting a Lifecycle Configuration
 
-#### Feature description
+#### API description
 
 This API (PUT Bucket lifecycle) is used to set the lifecycle configuration for a bucket.
 
@@ -20,7 +20,7 @@ func (s *BucketService) PutLifecycle(ctx context.Context, opt *BucketPutLifecycl
 ```
 
 #### Sample request
-[//]: # ".cssg-snippet-put-bucket-lifecycle"
+[//]: # (.cssg-snippet-put-bucket-lifecycle)
 ```go
 lc := &cos.BucketPutLifecycleOptions{
     Rules: []cos.BucketLifecycleRule{
@@ -54,7 +54,7 @@ if err != nil {
 type BucketLifecycleRule struct {
 	ID                             string
 	Status                         string
-	Filter                            *BucketLifecycleFilter
+	Filter                         *BucketLifecycleFilter
 	Transition                     *BucketLifecycleTransition
 	Expiration                     *BucketLifecycleExpiration
 	AbortIncompleteMultipartUpload  *BucketLifecycleAbortIncompleteMultipartUpload 
@@ -65,7 +65,7 @@ type BucketLifecycleFilter struct {
 type BucketLifecycleTransition struct {
 	Date         string 
 	Days         int    
-	'StorageClass' => 'string'
+	StorageClass string
 }
 type BucketLifecycleExpiration struct {
 	Date string 
@@ -79,16 +79,16 @@ type BucketLifecycleAbortIncompleteMultipartUpload struct {
 | Parameter | Description | Type | Required |
 | ------------------------------ | ------------------------------------------------------------ | ------ | ---- |
 | BucketLifecycleRule | Lifecycle rules, including `ID`, `Filter`, `Status`, `Expiration`, `Transition`, and `AbortIncompleteMultipartUpload` | List | Yes |
-| ID | Rule ID | String | No |
-| Status | Sets whether a rule is enabled. Valid values: `Enabled`, `Disabled` | String | Yes |
-| Filter | Specifies a set of objects that the rules apply to. To set the rules for all objects in the bucket, leave `Prefix` empty. | Struct | Yes |
-| Transition | Sets the rule for changing the storage class of the object. You can specify a certain number of days (Days) or a specified date (Date). The date must be in GMT ISO 8601 format. Valid values for `StorageClass` are `Standard_IA` and `Archive`. Multiple rules can be set at a time. | Struct | No |
-| Expiration | Sets the expiration rule for the object. You can specify a certain number of days (Days) or a specified date (Date). The date must be in GMT ISO 8601 format. | Struct | No |
-| AbortIncompleteMultipartUpload | Indicates the number of days within which a multipart upload operation must be completed once it starts | Struct | No |
+| ID                             | Unique ID of the lifecycle rule   | String | No |
+| Status | Whether to enable the rule. Valid values: `Enabled`, `Disabled` | String | Yes |
+| Filter | Filters objects that the rule applies to. If you want the rule to apply to all objects in the bucket, leave `Prefix` empty. | Struct | Yes |
+| Transition | A rule to transition objects between storage classes. You can specify a certain number of days (Days) or a specified date (Date). The date must be in GMT ISO 8601 format. `StorageClass` can be set to `Standard_IA` or `Archive`. You can set more than one rule. | Struct | No |
+| Expiration | Specifies when the objects should expire. You can specify a certain number of days (Days) or a specified date (Date). The date must be in GMT ISO 8601 format. | Struct | No |
+| AbortIncompleteMultipartUpload | The number of days within which a multipart upload must be completed | Struct | No |
 
 ## Querying a Lifecycle Configuration
 
-#### Feature description
+#### API description
 
 This API (GET Bucket lifecycle) is used to query the lifecycle configuration of a bucket.
 
@@ -99,7 +99,7 @@ func (s *BucketService) GetLifecycle(ctx context.Context) (*BucketGetLifecycleRe
 
 #### Sample request
 
-[//]: # ".cssg-snippet-get-bucket-lifecycle"
+[//]: # (.cssg-snippet-get-bucket-lifecycle)
 ```go
 _, _, err := client.Bucket.GetLifecycle(context.Background())
 if err != nil {
@@ -115,7 +115,7 @@ The result of the request is returned through `GetBucketLifecycleResult`.
 type BucketLifecycleRule struct {
 	ID                             string
 	Status                         string
-	Filter                            *BucketLifecycleFilter
+	Filter                         *BucketLifecycleFilter
 	Transition                     *BucketLifecycleTransition
 	Expiration                     *BucketLifecycleExpiration
 	AbortIncompleteMultipartUpload  *BucketLifecycleAbortIncompleteMultipartUpload 
@@ -126,7 +126,7 @@ type BucketLifecycleFilter struct {
 type BucketLifecycleTransition struct {
 	Date         string 
 	Days         int    
-	'StorageClass' => 'string'
+	StorageClass string
 }
 type BucketLifecycleExpiration struct {
 	Date string 
@@ -140,19 +140,19 @@ type BucketLifecycleAbortIncompleteMultipartUpload struct {
 | Parameter | Description | Type | Required |
 | ------------------------------ | ------------------------------------------------------------ | ------ | ---- |
 | BucketLifecycleRule | Lifecycle rules, including `ID`, `Filter`, `Status`, `Expiration`, `Transition`, and `AbortIncompleteMultipartUpload` | List | Yes |
-| ID | Rule ID | String | No |
-| Status | Sets whether a rule is enabled. Valid values: `Enabled`, `Disabled` | String | Yes |
-| Filter | Specifies a set of objects that the rules apply to. To set the rules for all objects in the bucket, leave `Prefix` empty. | Struct | Yes |
-| Transition | Sets the rule for changing the storage class of the object. You can specify a certain number of days (Days) or a specified date (Date). The date must be in GMT ISO 8601 format. Valid values for `StorageClass` are `Standard_IA` and `Archive`. Multiple rules can be set at a time. | Struct | No |
-| Expiration | Sets the expiration rule for the object. You can specify a certain number of days (Days) or a specified date (Date). The date must be in GMT ISO 8601 format. | Struct | No |
-| AbortIncompleteMultipartUpload | Indicates the number of days within which a multipart upload operation must be completed once it starts | Struct | No |
+| ID                             | Unique ID of the rule                                         | String | No  |
+| Status | Whether a rule is enabled. Valid values: `Enabled`, `Disabled` | String | Yes |
+| Filter | Filters objects that the rule applies to. If you want the rule to apply to all objects in the bucket, leave `Prefix` empty. | Struct | Yes |
+| Transition | A rule to transition objects between storage classes. You can specify a certain number of days (Days) or a specified date (Date). The date must be in GMT ISO 8601 format. `StorageClass` can be set to `Standard_IA` or `Archive`. You can set more than one rule. | Struct | No |
+| Expiration | Specifies when the objects should expire. You can specify a certain number of days (Days) or a specified date (Date). The date must be in GMT ISO 8601 format. | Struct | No |
+| AbortIncompleteMultipartUpload | The number of days within which a multipart upload must be completed | Struct | No |
 
 
 ## Deleting a Lifecycle Configuration
 
-#### Feature description
+#### API description
 
-This API (DELETE Bucket lifecycle) is used to delete the lifecycle configuration of a bucket.
+This API (DELETE Bucket lifecycle) is used to delete the lifecycle configuration from a bucket.
 
 #### Method prototype
 
@@ -162,7 +162,7 @@ func (s *BucketService) DeleteLifecycle(ctx context.Context) (*Response, error)
 
 #### Sample request
 
-[//]: # ".cssg-snippet-delete-bucket-lifecycle"
+[//]: # (.cssg-snippet-delete-bucket-lifecycle)
 ```go
 _, err := client.Bucket.DeleteLifecycle(context.Background())
 if err != nil {

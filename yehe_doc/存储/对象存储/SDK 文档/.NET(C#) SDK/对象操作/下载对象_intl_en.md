@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to object downloads.
+This document provides an overview of APIs and SDK sample codes related to object download.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------- | ------------------ |
@@ -16,7 +16,10 @@ For the parameters and method description of all the APIs in the SDK, see [Api D
 
 The advanced version of the GET Object API uses more encapsulated logic to allow you to suspend, resume (via checkpoint restart), or cancel download requests.
 
-#### Sample 1: downloading an object
+>? If your .NET Framework version is 4.0 or earlier, advanced APIs are not available. For more information, please see [Backward Compatibility](https://intl.cloud.tencent.com/document/product/436/42378).
+> 
+
+#### Sample 1. Downloading an object
 
 [//]: #	".cssg-snippet-transfer-download-object"
 
@@ -51,7 +54,8 @@ try {
 }
 ```
 
-> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs).
+>
 
 #### Sample 2: setting checkpoint restart for downloads
 
@@ -72,9 +76,10 @@ COSXMLDownloadTask downloadTask = new COSXMLDownloadTask(request);
  }
 ```
 
-> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs).
+>
 
-#### Sample 3: batch downloads
+#### Sample code 3: Batch download
 
 [//]: #	".cssg-snippet-transfer-batch-download-objects"
 
@@ -97,7 +102,8 @@ for (int i = 0; i < 5; i++) {
 }
 ```
 
-> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs).
+>
 
 ## Simple Operations
 
@@ -124,7 +130,7 @@ try
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
   });
-  // Execute the request
+  // Execute the request.
   GetObjectResult result = cosXml.GetObject(request);
   // Request successful
   Console.WriteLine(result.GetResultInfo());
@@ -141,4 +147,5 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/GetObject.cs).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/GetObject.cs).
+>

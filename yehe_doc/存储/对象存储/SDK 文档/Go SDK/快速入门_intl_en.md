@@ -1,20 +1,20 @@
 ## Download and Installation
 
-#### Related resources
+#### Relevant resources
 - Download the source code for the COS XML Go SDK [here](https://github.com/tencentyun/cos-go-sdk-v5).
 - Download the demo [here](https://github.com/tencentyun/cos-go-sdk-v5/tree/master/example).
 - For more information, please see [COS Go SDK API](https://godoc.org/github.com/tencentyun/cos-go-sdk-v5).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/Go).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-go-sdk-v5/blob/master/CHANGELOG.md).
-- For SDK FAQs, please see Go SDK FAQs.
+- For SDK FAQs, please see [Go SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40774).
 
 >? If you encounter errors such as non-existent functions or methods when using the SDK, please update the SDK to the latest version and try again.
 >
 
-#### Environment dependencies
+#### Environmental dependencies
 Golang is used to download and install the Go operating environment; it can be downloaded from the Golang official website.
 
-#### Installing SDKs
+#### Installing SDK
 Execute the following command to install the COS Go SDK:
 ```sh
 go get -u github.com/tencentyun/cos-go-sdk-v5
@@ -74,7 +74,7 @@ client := cos.NewClient(b, &http.Client{
 
 [//]: # (.cssg-snippet-global-init-sts)
 ```go
-// Replace examplebucket-1250000000 and COS_REGION with the actual information.
+// Replace examplebucket-1250000000 and COS_REGION with the actual information
 u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u}
 // 2. Temporary key
@@ -108,6 +108,29 @@ client := cos.NewClient(b, &http.Client{
         SessionToken: "SECRETTOKEN",
     },
 })
+```
+#### Sample request 4: CRC64 verification
+
+By default, CRC64 verification is enabled in the COS Go SDK for the uploaded objects.
+
+>! 
+>- The COS Go SDK version should be or later than v0.7.23.
+>- You are strongly advised not to disable CRC64 verification.
+```
+// Replace examplebucket-1250000000 and COS_REGION with the actual information
+u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
+b := &cos.BaseURL{BucketURL: u}
+// 2. Temporary key
+client := cos.NewClient(b, &http.Client{
+    Transport: &cos.AuthorizationTransport{
+        SecretID:     "SECRETID",
+        SecretKey:    "SECRETKEY",
+        SessionToken: "SECRETTOKEN",
+    },
+})
+// Disable CRC64 verification.
+client.Conf.EnableCRC = false
+
 ```
 
 ### Creating a bucket
@@ -147,7 +170,7 @@ func main() {
 ```
 
 
-### Querying a bucket list
+### Querying the bucket list
 ```go
 package main
 
@@ -239,7 +262,7 @@ func main() {
 }
 ```
 
-### Querying an object list
+### Querying objects
 ```go
 package main
 
