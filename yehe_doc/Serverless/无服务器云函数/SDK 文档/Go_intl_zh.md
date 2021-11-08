@@ -1,7 +1,7 @@
 ## 简介
 * 欢迎使用腾讯云开发者工具套件（SDK）3.0，SDK 3.0 是云 API 3.0 平台的配套工具。SDK 3.0 实现了统一化，各个语言版本的 SDK 具备使用方法相同、接口调用方式相同、错误码和返回包格式相同等优点。
 * 本文以 GO SDK 3.0 为例，介绍如何使用、调试并接入腾讯云产品 API。
-* 目前已支持云服务器 CVM、私有网络 VPC 、云硬盘 CBS 等 腾讯云产品，后续会支持其他云产品接入。
+* 目前已支持云服务器 CVM、私有网络 VPC 、云硬盘 CBS 等腾讯云产品，后续会支持其他云产品接入。
 
 ## 依赖环境
 
@@ -9,7 +9,7 @@
 * 获取安全凭证。安全凭证包含 SecretId 及 SecretKey 两部分。SecretId 用于标识 API 调用者的身份，SecretKey 用于加密签名字符串和服务器端验证签名字符串的密钥。前往 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面，即可进行获取，如下图所示：
 ![](https://main.qcloudimg.com/raw/53199c4c8465fb2c13a26fe18e42e63b.png)
 >!**您的安全凭证代表您的账号身份和所拥有的权限，等同于您的登录密码，切勿泄露他人。**
-* 获取调用地址。调用地址（endpoint）一般形式为`*.tencentcloudapi.com`，产品的调用地址有一定区别，例如，云服务器的调用地址为`cvm.tencentcloudapi.com`。具体调用地址可参见对应产品的 [API 文档](https://intl.cloud.tencent.com/document/api)。
+* 获取调用地址。调用地址（endpoint）一般形式为`*.tencentcloudapi.com`，产品的调用地址有一定区别，例如，云服务器的调用地址为`cvm.tencentcloudapi.com`。具体调用地址可参见对应产品的 [API 文档](https://intl.cloud.tencent.com/zh/document/apii)。
 
 ## 安装 SDK
 
@@ -19,6 +19,7 @@
    <tr>
       <th width="0px" style="text-align:center">系统平台</td>
       <th width="0px" style="text-align:center">运行命令 </td>
+
    </tr>
    <tr>
       <td style="text-align:center">
@@ -362,12 +363,12 @@ func (c *Client) DescribeInstances(request *DescribeInstancesRequest) (response 
 
 
 
-## Common Request
-从 `v1.0.189`开始，腾讯云 GO SDK 支持使用 `泛用型的API调用方式(Common Request)` 进行请求。您只需安装 `common` 包, 即可向任何产品发起调用。
+## Common Client
+从 `v1.0.189`开始，腾讯云 GO SDK 支持使用 `泛用型的API调用方式(Common Client)` 进行请求。您只需安装 `common` 包, 即可向任何产品发起调用。
 
 >?您必须明确知道您调用的接口所需参数，否则可能会调用失败。
 
-目前仅支持使用 POST 方式，且签名方法必须使用 签名方法 v3。详细使用请参阅示例：[使用 Common Request 进行调用](https://github.com/TencentCloud/tencentcloud-sdk-go/blob/master/examples/common/common_client.go)。
+目前仅支持使用 POST 方式，且签名方法必须使用 签名方法 v3。详细使用请参阅示例：[使用 Common Client 进行调用](https://github.com/TencentCloud/tencentcloud-sdk-go/blob/master/examples/common/common_client.go)。
 
 ## 请求重试
 ### 网络错误重试

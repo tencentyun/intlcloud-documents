@@ -100,7 +100,7 @@
 ## 接入完成
 
 完成添加域名操作后，请耐心等待域名配置下发至全网节点，下发时间约5 - 10分钟。
-<img src="hhttps://main.qcloudimg.com/raw/d5bcb556ac1b89946ec15642d3249676.png" width="80%">
+<img src="https://main.qcloudimg.com/raw/d5bcb556ac1b89946ec15642d3249676.png" width="80%">
 
 ## 后续工作
 

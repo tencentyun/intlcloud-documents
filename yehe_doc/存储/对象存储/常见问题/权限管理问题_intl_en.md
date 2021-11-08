@@ -10,7 +10,7 @@ Currently, a temporary key can be valid for up to 2 hours (i.e., 7,200 seconds) 
 
 ### What do I do if my key information such as `SecretId` and `SecretKey` is compromised?
 
-You can delete the compromised key and create a new one. For more information, please see [Access Key](https://intl.cloud.tencent.com/document/product/598/34228).
+You can delete the compromised key and create a new one. For more information, please see [Access Key](https://intl.cloud.tencent.com/document/product/598/34227).
 
 ### How can I generate a time-bound access URL for a Private Read/Write file?
 
@@ -21,6 +21,7 @@ You can set a validity period for your key by referring to [Generating and Using
 ### How can I grant a sub-account permission to access a specific folder?
 
 You can grant such permission by referring to [Setting Folder Permissions](https://intl.cloud.tencent.com/document/product/436/35261). To grant more advanced permissions to a sub-account, please see [Cases of Permission Setting](https://intl.cloud.tencent.com/document/product/436/12514).
+
 
 
 ### What do I do if “AccessDenied” is reported?
@@ -38,6 +39,16 @@ Each root account (i.e., each `APPID`) can have up to 1,000 bucket ACLs. If more
 
 >?You are not advised to use file-level ACLs or policies. When calling APIs or SDKs, if you do not need ACL control over a file, we recommend leaving the ACL-related parameters (such as x-cos-acl and ACL) empty to inherit the bucket permissions.
 
+### What should I do if an incorrect permission error is reported when I am creating a bucket?
+
+This is because your bucket is set to public read/private write, or public read/write. These permissions occupy the number of ACLs your root account is allowed to use. This error is reported because the root account has used up the number of ACLs allowed, which cannot be adjusted.
+
+The following two solutions are provided for your reference:
+
+Solution 1: Set the access permission of the bucket to private read/write. For more information, please see [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315).
+Solution 2: In **Permission Policy Settings**, click **Add Policy** and configure access permissions as needed. For more information, please see [Adding Bucket Policies](https://intl.cloud.tencent.com/document/product/436/30927).
+
+
 ### Can I access a public-read file using a signed URL whose signature has expired?
 
 If you use an expired signed URL to access a public-read file, COS will first verify the permissions. If the URL has expired, the access will be denied.
@@ -49,7 +60,6 @@ You can troubleshoot as follows:
 1. Check whether the configuration of `BucketName`, `APPID`, `Region`, `SecretId`, and `SecretKey` is correct.
 2. If the configuration above is correct, check whether a sub-account is used for the operation. If yes, check whether the sub-account has been authorized by the root account. If it has not yet been authorized, log in using the root account to authorize the sub-account. For more information about authorization, please see [Cases of Permission Settings](https://intl.cloud.tencent.com/document/product/436/12514).
 3. If a temporary key is used, check whether the current operation is in the policy set when the temporary key is obtained; if not, modify the relevant policy settings. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
-
 
 
 ### How can I prevent users from downloading COS data?

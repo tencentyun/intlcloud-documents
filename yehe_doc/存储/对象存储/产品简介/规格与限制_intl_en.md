@@ -1,21 +1,21 @@
 <table>
     <tr>
         <th>Category</th> 
-        <th>Specifications and Limits</th> 
+        <th>Rule and Restriction</th> 
     			<th>Description</th> 
    </tr>
     <tr>
         <td>QPS</td>
     			<td>Limits</td>
-    			<td>1. READ/WRITE requests: by default, each bucket enjoys up to 30,000 QPS in public cloud regions in the Chinese mainland, and up to 3,000 QPS in any other regions.
-<br>2. LIST requests: by default, each bucket enjoys up to 1,200 QPS in any region.
-<br>3. RETRIEVE requests: each bucket enjoys up to 100 QPS in any region.
-<br>To increase your QPS limit, please see <a href="/document/product/436/13653">Request Rate and Performance Optimization</a>.</td>
+    			<td><ul  style="margin: 0;"><li>Read/Write requests: 30,000 for each bucket residing in a public cloud region in the Chinese mainland, and 3,000 for each bucket in other regions</li>
+					<li> List requests: 1,200 for all regions</li>
+					<li>Retrieval requests: 100 for all regions
+<br>To raise your QPS threshold, see <a href="https://intl.cloud.tencent.com/document/product/436/13653">Request Rate and Performance Optimization</a>.</li></ul></td>
     </tr>
 		    <tr>
         <td>Bandwidth</td>
     			<td>Limits</td>
-					<td>By default, the bandwidth limit on each account is 15 Gbit/s in each public cloud region in the Chinese mainland, and 10 Gbit/s in any other regions. If this threshold is exceeded, traffic throttling will be triggered for requests. To increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>	
+					<td>15 Gbps of upstream and downstream bandwidth for a single bucket residing in a public cloud region in the Chinese mainland, and 10 Gbps for any bucket in other regions. If this threshold is reached, requests will trigger traffic throttling. To raise the threshold, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>	
     </tr>
     	 <tr>
         <td rowspan="5">Storage class</td>
@@ -24,32 +24,38 @@
     </tr>
     	 <tr>
         <td>STANDARD_IA limits</td>
-    			<td>Billing limits:<br><li>An object stored less than 30 days is billed as 30 days.<br><li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it is billed based on its actual size.<br>For more information about the billing of STANDARD_IA, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Billing</a>.</td>
+    			<td>Billing limits: <ul  style="margin: 0;"><li>An object stored less than 30 days is billed as 30 days.</li>
+					<li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it is billed based on its actual size.<br>For more information about the billing of STANDARD_IA, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Billing</a>.</li></ul></td>
     </tr>
     	 <tr>
         <td>INTELLIGENT TIERING limits</td>
-    			<td>Billing limits:<br><li>An object stored less than 30 days is billed as 30 days.<br><li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it will be billed based on its actual size.<br>For more information about the billing of INTELLIGENT TIERING, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
+    			<td>Billing limits: <ul  style="margin: 0;"><li>An object stored less than 30 days is billed as 30 days.</li>
+					<li>An object smaller than 64 KB is always be stored in the frequent access tier. Objects are billed based on their actual sizes. <br>For more information about the billing of INTELLIGENT TIERING, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
     </tr>
     	 <tr>
         <td>ARCHIVE limits</td>
-    			<td>Billing limits:<br><li>An object stored less than 90 days is billed as 90 days.<br><li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it will be billed based on its actual size.<br>For more information about the billing of ARCHIVE, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
+    			<td>Billing limits: <ul  style="margin: 0;"><li>An object stored less than 90 days is billed as 90 days.</li>
+					<li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it will be billed based on its actual size.<br>For more information about the billing of ARCHIVE, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</li></ul></td>
     </tr>
     	 <tr>
         <td>DEEP ARCHIVE limits</td>
-    			<td>Billing limits:<br><li>An object stored less than 180 days is billed as 180 days.<br><li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it will be billed based on its actual size.<br>For more information about the billing of DEEP ARCHIVE, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
+    			<td>Billing limits: <ul  style="margin: 0;"><li>An object stored less than 180 days is billed as 180 days.</li>
+					<li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it will be billed based on its actual size.<br>For more information about the billing of DEEP ARCHIVE, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</li></ul></td>
     </tr>
      <tr>
         <td rowspan="4">Bucket</td>
     			<td>Limits</td>
-    			<td>1. Once a bucket is created, its name and region cannot be modified.<br>2. The name of each bucket under a given account is unique and cannot be changed.<br>3. A bucket name cannot start or end with a hyphen (-). It can only contain lowercase letters [a-z], digits [0-9], hyphens (-), or a combination thereof, and can contain 1-50 characters.</td>
+    			<td><ul  style="margin: 0;"><li>Once a bucket is created, you cannot modify its name or region.</li>
+					<li>Names of buckets belonging to the same account must be unique and cannot be renamed.</li>
+					<li> Bucket names cannot start with a hyphen (-), and can contain only lowercase letters, digits, and hyphens. The length of a bucket name is limited by the number of characters in the <a href="https://buy.cloud.tencent.com/price/cos">region abbreviation</a> and `APPID`. A complete domain can contain up to 60 characters.</li></ul></td>
      </tr>
     	 <tr>
     			<td> Number of buckets</td>
-    			<td>A maximum of 200 (default) buckets is allowed per root account.</td>
+    			<td>Each root account can have up to 200 (default) buckets.</td>
     		</tr>
 				<tr>
     			<td> Number of objects</td>
-    			<td> For each bucket, there is no limit on the number of objects.</td>
+    			<td> There is no limit on the number of objects stored in each bucket.</td>
     		</tr>
 				<tr>
     			<td> Bucket tagging</td>
@@ -58,15 +64,27 @@
     		<tr>
     			<td rowspan="5">Object</td>
     			<td>Limits</td>
-					<td >An object key should be between 1-850 bytes. For more information, please see <a href="https://cloud.tencent.com/document/product/436/13324">Object Overview</a>.</td>
+					<td >An object key can be 1 to 850 bytes. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/13324">Object Overview</a>.</td>
     		</tr>
     			<tr>
     			<td>Upload</td>
-    			<td>1. The maximum size of an object to be uploaded via the console is 512 GB.<br>2. The maximum size of an object to be uploaded via APIs/SDKs is 48.82 TB (50,000 GB).<br>Upload API requirements:<br>&nbsp;&nbsp;(a) Simple upload: uploads a single object of up to 5 GB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14113">Simple Upload</a>.<br>&nbsp;&nbsp;(b) Multipart upload: uploads a single object of up to 48.82 TB in a maximum of 10,000 parts. Each part should be 1 MB to 5 GB in size, except the last one, which can be less than 1 MB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14112">Multipart Upload</a>.<br>3. Currently, objects can be uploaded into the INTELLIGENT TIERING storage class only if the INTELLIGENT TIERING configuration has been enabled on the bucket. How objects are moved between the access tiers depends on the configuration.</td>
+    			<td><ul  style="margin: 0;"><li>A single object to upload via the console can be up to 512 GB.</li>
+					<li> A single object to upload via an API/SDK can be up to 48.82 TB (50,000 GB).
+						<br>Limits on upload APIs:
+						<ul  style="margin: 0;"><li>Simple upload: a single object can be up to 5 GB. For details, see <a href="https://intl.cloud.tencent.com/document/product/436/14113">Simple Upload</a>.</li>
+						<li>Multipart upload: a single object can be up to 48.82 TB, and the part size should be 1 MB to 5 GB. The last part can be smaller than 1 MB. There can be 1 to 10,000 parts. For details, see <a href="https://intl.cloud.tencent.com/document/product/436/14112">Multipart Upload</a>.</li></ul>
+					</li>
+					<li>You can only upload objects to the INTELLIGENT TIERING storage class if you have enabled INTELLIGENT TIERING for the bucket. How objects are transitioned between tiers depends on the INTELLIGENT TIERING configurations.</li></ul></td>
     		</tr>
     		<tr>
     			<td >Replication</td>
-    			<td >1. You can perform intra-region or cross-region object replication with a Tencent Cloud account.<br>2. The intra-region object replication is free of charge while the cross-region object replication incurs traffic fees. For more information, please see traffic fees in <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.<br>3. Replication API requirements:<br>&nbsp;&nbsp;(a) Simple replication: replicates a single object of up to 5 GB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14117">Simple Replication</a>.<br>&nbsp;&nbsp;(b) Multipart replication must be used for an object larger than 5 GB and up to 48.82 TB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14118">Multipart Replication</a>.<br>4. Currently, objects cannot be replicated from STANDARD, STANDARD_IA or INTELLIGENT TIERING to INTELLIGENT TIERING.</td>
+    			<td ><ul  style="margin: 0;"><li>Objects belonging to the same account can be replicated within and across buckets.</li>
+					<li> Intra-region replication is free of charge. However, cross-region replication incurs traffic fees. For details, see traffic fees in <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>. </li>
+					<li>Copy APIs limits:
+						<ul  style="margin: 0;"><li>Simple copy: A single object to copy can be up to 5 GB. For details, see <a href="https://intl.cloud.tencent.com/document/product/436/14117">Simple Copy</a>.</li>
+						<li>If an object is larger than 5 GB, you must use multipart copy. A single object to copy can be up to 48.82 TB. For details, see <a href="https://intl.cloud.tencent.com/document/product/436/14118">Multipart Copy</a>.</li></ul>
+					</li>
+					<li>Currently, you cannot replicate STANDARD, STANDARD_IA, or INTELLIGENT TIERING objects to the INTELLIGENT TIERING storage class.</li></ul></td>
     		</tr>
     		<tr>
     			<td>Deleting multiple objects</td>

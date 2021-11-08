@@ -9,7 +9,7 @@
 * Get the security credential, which consists of `SecretId` and `SecretKey`. `SecretId` is used to identify the API requester, while `SecretKey` is a key used for signature string encryption and authentication by the server. You can get them on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page as shown below:
 ![](https://main.qcloudimg.com/raw/53199c4c8465fb2c13a26fe18e42e63b.png)
 >!**Your security credential represents your account identity and granted permissions, which is equivalent to your login password. Do not disclose it to others.**
-* Get the calling address (endpoint), which is generally in the format of `*.tencentcloudapi.com` and varies by product. For example, the endpoint of CVM is `cvm.tencentcloudapi.com`. For specific endpoints, please see the [API documentation](https://intl.cloud.tencent.com/document/api) of the corresponding product.
+* Get the calling address (endpoint), which is generally in the format of `*.tencentcloudapi.com` and varies by product. For example, the endpoint of CVM is `cvm.tencentcloudapi.com`. For specific endpoints, please see the [API documentation](https://intl.cloud.tencent.com/zh/document/apii) of the corresponding product.
 
 ## Installing SDK
 
@@ -19,6 +19,7 @@ We recommend you use a Tencent Cloud mirror for faster download:
    <tr>
       <th width="0px" style="text-align:center">OS</td>
       <th width="0px" style="text-align:center">Command</td>
+
    </tr>
    <tr>
       <td style="text-align:center">
@@ -164,7 +165,7 @@ func main() {
      cpf.Language = "en-US"
      // Print logs. The default value is `false`
      // cpf.Debug = true
-     // Instantiate the client object of the requested product (with CVM as an example)
+     // Instantiate the client object to request the product (with CVM as an example).
      // The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant
      client, _ := cvm.NewClient(credential, regions.Guangzhou, cpf)
      // Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
@@ -192,7 +193,7 @@ func main() {
          },
      }
 
-     // Call the API you want to access through the client object. You need to pass in the request object
+     // Call the API you want to access through the client object; you need to pass in the request object.
      response, err := client.DescribeInstances(request)
      // Handle the exception
      if _, ok := err.(*errors.TencentCloudSDKError); ok {
@@ -212,7 +213,7 @@ func main() {
 
 >?For the purpose of demonstration, some nonessential items such as modification of the default configuration have been included to show the features of the SDK. When you write code to use the SDK, we recommend you use the default configuration as much as possible and make changes as needed.
 
-## More Samples
+## More Examples
 For more samples, please see the [examples](https://github.com/TencentCloud/tencentcloud-sdk-go/tree/master/examples) directory. For the sample of initializing a request for a complicated API, please see [example 1](https://github.com/TencentCloud/tencentcloud-sdk-go/blob/master/examples/cvm/v20170312/run_instances.go). For the sample of initializing a request by using a JSON string, please see [example 2](https://github.com/TencentCloud/tencentcloud-sdk-go/blob/master/examples/cvm/v20170312/describe_instances.go).
 
 
@@ -239,7 +240,7 @@ cpf.HttpProfile.ReqMethod = "POST"
 ### Timeout period
 
 The SDK has a default timeout period. Do not adjust it unless absolutely necessary. If needed, check in the code to get the latest default value.  
-Unit: seconds
+Unit: second
 
 ```go
 cpf.HttpProfile.ReqTimeout = 30
@@ -362,12 +363,12 @@ func (c *Client) DescribeInstances(request *DescribeInstancesRequest) (response 
 
 
 
-## Common Request
-Starting from `v1.0.189`, Tencent Cloud SDK for Go supports the use of `Common Request` mode for requests. You only need to install the `common` package to initiate calls to any Tencent Cloud product.
+## Common Client
+Starting from `v1.0.189`, Tencent Cloud SDK for Go supports the use of `Common Client` mode for requests. You only need to install the `common` package to initiate calls to any Tencent Cloud product.
 
 >?You must clearly know the parameters required by the called API; otherwise, the call may fail.
 
-Currently, only the POST method is supported, and the signature algorithm must be signature algorithm v3. For detailed usage, please see the [Using Common Request to Call](https://github.com/TencentCloud/tencentcloud-sdk-go/blob/master/examples/common/common_client.go) sample.
+Currently, only the POST method is supported, and the signature algorithm must be signature algorithm v3. For detailed usage, please see the [Using Common Client to Call](https://github.com/TencentCloud/tencentcloud-sdk-go/blob/master/examples/common/common_client.go) sample.
 
 ## Request Retry
 ### Retry upon network error

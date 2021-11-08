@@ -1,6 +1,6 @@
 ## Download and Installation
 
-#### Related resources
+#### Relevant resources
 - Download the source code for the COS XML PHP SDK [here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
 - Download the XML PHP SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-php-sdk-v5/latest/cos-php-sdk-v5.zip).
 - Download the PHP demo [here](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample).
@@ -12,11 +12,12 @@
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
 >
 
-#### Environment dependencies
+#### Environmental dependencies
 
--   PHP 5.6+
-    You can run the `php -v` command to view the current PHP version.
->!If your PHP version is `>=5.3` and `<5.6`, please use [v1.3](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3).
+- PHP 5.6+
+You can run the `php -v` command to view the current PHP version.
+>! If your PHP version is `>=5.3` and `<5.6`, please use [v1.3](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3).
+>
 - cURL extension
 You can run the `php -m` command to check whether the cURL extension has been installed properly.
  - On Ubuntu, you can install PHP's cURL extension using the apt-get package manager with the following command:
@@ -28,15 +29,20 @@ sudo apt-get install php-curl
 sudo yum install php-curl
 ```
 
-#### Installing SDKs
+#### Installing SDK
 You can install the SDK using [Composer](#composer), [Phar](#phar), or the [source code](#Source).
 
 <span id="composer"></span>
-#### Composer
-It is recommended to install cos-php-sdk-v5 with Composer, a PHP dependency manager that allows you to declare the dependencies necessary for your project and then automatically installs them into your project.
->!You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at [Composer official website](https://getcomposer.org/).
 
-**Installation steps**
+#### Composer
+
+It is recommended to install cos-php-sdk-v5 with Composer, a PHP dependency manager that allows you to declare the dependencies necessary for your project and then automatically installs them into your project.
+
+>? You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at [Composer website](https://getcomposer.org/).
+>
+
+**Installation Steps**
+
 1. Start the terminal.
 2. Run the following command to download Composer:
 ```shell
@@ -55,66 +61,81 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 ```
 This command will create a `vendor` folder in the current directory. The folder will contain the SDK's dependent library and an `autoload.php` script file for future calls in your project.
+>! Composer will download Guzzle 6 or Guzzle 7 according to the PHP version. Guzzle 7 supports the Laravel 8 framework. If the PHP version is or later than 7.2.5, Guzzle 7 will be downloaded by default. Otherwise, Guzzle 6 will be downloaded.
+>
 5. Call cos-php-sdk-v5 with the autoloader script.
 ```php
 require '/path/to/sdk/vendor/autoload.php';
 ```
+>! After running the Composer installation command, you need to change the path here to the path to the `autoload.php` file. Otherwise, the corresponding method cannot be called. For example, if your installation path is `/Users/username/project`, set the referenced path in the project to `/Users/username/project/vendor/autoload.php`.
+>
+
 Now, you can use COS XML SDK for PHP in your project.
 
 <span id="phar"></span>
 #### Phar
 Install the SDK using the Phar method as instructed below:
 1. Download the phar file [here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
+>? 
+> - If your PHP version is or later than = 5.6 but earlier than 7.2.5, download `cos-sdk-v5-6.phar` to use Guzzle 6.
+> - If your PHP version is or later than 7.2.5, download `cos-sdk-v5-7.phar` to use Guzzle 7.
+> 
 2. Import the phar file into your code.
-
 ```php
-require  '/path/to/cos-sdk-v5.phar';
+require  '/path/to/cos-sdk-v5-x.phar';
 ```
 
 <span id="Source"></span>
 #### Source code
 Install the SDK using the source code as instructed below:
 1. Download `cos-sdk-v5.tar.gz` compressed file on the [SDK releases page](https://github.com/tencentyun/cos-php-sdk-v5/releases).
->!`Source code` is packaged by GitHub by default. The `vendor` directory is not included.
->
->2.  After decompressing it, load the SDK through the `autoload.php` script.
-
+>? 
+> - If your PHP version is or later than 5.6 but earlier than 7.2.5, download `cos-sdk-v5-6.tar.gz` to use Guzzle 6.
+> - If your PHP version is or later than 7.2.5, download `cos-sdk-v5-7.tar.gz` to use Guzzle 7.
+> 
+2. After decompressing it, load the SDK through the `autoload.php` script.
 ```php
 require '/path/to/sdk/vendor/autoload.php';
 ```
-
+>! `Source code` is the default GitHub-compressed code package, which does not include the `vendor` directory. Note that you should download the release (`cos-sdk-v5-x.tar.gz`) rather than the Source package, and should not clone the entire repository (otherwise, `index.php` and the vendor package will be missing).
+>
 
 ## Getting Started
 The following describes how to use the PHP SDK of COS to perform basic operations, such as initializing the client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object. For more information about the parameters involved in the samples, please see [Bucket Operations](https://intl.cloud.tencent.com/document/product/436/31470) and [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542).
 
 ### Initialization
+If you use a permanent key to initialize a `COSClient`, you need to get your `SecretId` and `SecretKey` on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page in the CAM console. A permanent key is suitable for most application scenarios.
 
 [//]: # ".cssg-snippet-global-init"
 ```php
-$secretId = "COS_SECRETID"; //"TencentCloud API key's SecretId";
-$secretKey = "COS_SECRETKEY"; // "SecretKey of your Tencent Cloud API key";
+// You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
+$secretId = "SECRETID"; // "SecretId of your Tencent Cloud API key";
+$secretKey = "SECRETKEY"; // "SecretKey of your Tencent Cloud API key";
 $region = "COS_REGION"; // Set the default bucket region
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header; http by default
+        'schema' => 'https', // Protocol, http by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 ```
 
+>! If no HTTPS certificate is configured, you need to delete the `schema` parameter or enter `'schema' => 'http'`. If you enter `https`, a certificate problem will be reported. If you want to configure the HTTPS certificate, see [PHP SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40543).
+>
+
 If you initialize a client with a [temporary key](https://intl.cloud.tencent.com/document/product/436/14048), create an instance in the following way.
 
 [//]: # ".cssg-snippet-global-init-sts"
 ```php
-$tmpSecretId = "COS_SECRETID"; //"Temporary key's SecretId";
-$tmpSecretKey = "COS_SECRETKEY"; //"Temporary key's SecretKey";
+$tmpSecretId = "SECRETID"; // "SecretId of the temporary key";
+$tmpSecretKey = "SECRETKEY"; // "SecretKey of the temporary key";
 $tmpToken = "COS_TOKEN"; // "Token of the temporary key";
 $region = "COS_REGION"; // Set the default bucket region
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header; http by default
+        'schema' => 'https', // Protocol, http by default
         'credentials'=> array(
             'secretId'  => $tmpSecretId,
             'secretKey' => $tmpSecretKey,
@@ -128,7 +149,7 @@ $cosClient = new Qcloud\Cos\Client(
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $result = $cosClient->createBucket(array('Bucket' => $bucket));
-    //Request succeeded
+    // Request successful
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -136,12 +157,12 @@ try {
 }
 ```
 
-### Querying a bucket list
+### Querying the bucket list
 
 [//]: # ".cssg-snippet-get-service"
 ```php
 try {
-    // Request successful 
+    // Request successful
     $result = $cosClient->listBuckets();
     print_r($result);
 } catch (\Exception $e) {
@@ -153,9 +174,10 @@ try {
 
 ### Uploading an object
 >!
->* Upload a file (up to 5 GB) using the putObject API.
->* Upload a file using the Upload API. The Upload API is a composition API that uses simple upload for small files and uses multipart upload for large files.
->* For the parameter description, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1).
+> - Upload a file (up to 5 GB) using the `putObject` API.
+> - Upload a file using the Upload API. The Upload API is a composition API that uses simple upload for small files and uses multipart upload for large files.
+> - For the parameter description, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1).
+> 
 
 [//]: # ".cssg-snippet-put-object-comp"
 ```php
@@ -164,7 +186,7 @@ try {
 ### Upload strings in memory
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $key = "exampleobject"; // Object key, the unique identifier of the object in the bucket
+    $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
         'Key' => $key,
@@ -177,7 +199,7 @@ try {
 ### Upload a file stream
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $key = "exampleobject"; // Object key, the unique identifier of the object in the bucket
+    $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
     $srcPath = "path/to/localFile";// Absolute path to local file
     $file = fopen($srcPath, "rb");
     if ($file) {
@@ -195,7 +217,7 @@ try {
 ### Upload strings in memory
 try {    
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $key = "exampleobject"; // Object key, the unique identifier of the object in the bucket
+    $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
     $result = $cosClient->Upload(
         $bucket = $bucket,
         $key = $key,
@@ -208,7 +230,7 @@ try {
 ### Upload a file stream
 try {    
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $key = "exampleobject"; // Object key, the unique identifier of the object in the bucket
+    $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
     $srcPath = "path/to/localFile";// Absolute path to local file
     $file = fopen($srcPath, 'rb');
     if ($file) {
@@ -223,7 +245,7 @@ try {
 }
 ```
 
-### Querying an object list
+### Querying objects
 
 [//]: # ".cssg-snippet-get-bucket"
 ```php
@@ -244,7 +266,7 @@ try {
 }
 ```
 
-A single call to the `listObjects` API can query up to 1,000 objects. If you want to query all objects, you need to call it repeatedly.
+Calling the `listObjects` API once can query up to 1,000 objects. If you want to query all objects, you need to call it repeatedly.
 
 [//]: # ".cssg-snippet-get-bucket-recursive"
 ```php
@@ -275,8 +297,8 @@ try {
 ```
 
 ### Downloading an object
-* Download a file using the getObject API.
-* Get the file download URL using the getObjectUrl API.
+- Download a file using the `getObject` API.
+- Get the file download URL using the `getObjectUrl` API.
 
 [//]: # ".cssg-snippet-get-object-comp"
 ```php
@@ -289,7 +311,7 @@ try {
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,
         'Key' => $key));
-    // Request succeeded
+    // Request successful
     echo($result['Body']);
 } catch (\Exception $e) {
     // Request failed

@@ -28,7 +28,7 @@ Open the Tencent Cloud console, select **Products** > **Tencent Kubernetes Engin
 
 
 #### 3.3 Creating a cluster
-If you need more types of clusters, please see [Creating Elastic Cluster] (https://intl.cloud.tencent.com/document/product/457/34048) and [Creating Edge Cluster](https://intl.cloud.tencent.com/document/product/457/35385).
+If you need more types of clusters, please see [Creating Elastic Cluster](https://intl.cloud.tencent.com/document/product/457/34048) and [Creating Edge Cluster](https://intl.cloud.tencent.com/document/product/457/35385).
 
 
 #### 3.4 Deploying workloads
@@ -39,7 +39,7 @@ If you want to deploy workloads through custom images, see directions in [Buildi
 
 
 
-####. 3.5 Cluster operations
+#### 3.5 Cluster operations
 TKE is a management platform for clusters, applications, storage and networks. For more information or directions, please refer to the table below.
 
 | Feature | Reference |
