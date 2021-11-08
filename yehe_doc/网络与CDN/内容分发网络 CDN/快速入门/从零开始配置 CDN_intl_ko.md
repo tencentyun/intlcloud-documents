@@ -1,12 +1,12 @@
 
-![](https://main.qcloudimg.com/raw/5b01ac43dbc5897108d1c2e3fc08a10b.png)
+
 
 ## 준비 작업
 
 ### Tencent Cloud 계정 생성
 
 이미 Tencent Cloud 계정이 있는 경우는 이 단계를 생략할 수 있습니다.
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn1">Tencent Cloud 계정 생성</a></div>
+<div style="background-color:#00A4FF; width: 230px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn1">Tencent Cloud 계정 생성</a></div>
 
 ### 실명 인증
 
