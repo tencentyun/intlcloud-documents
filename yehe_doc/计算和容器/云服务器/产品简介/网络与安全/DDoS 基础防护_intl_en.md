@@ -6,5 +6,5 @@ Anti-DDoS Basic service is free of charge. For details on other DDoS protection 
 
 ## Enabling Anti-DDoS Basic
 Tencent Cloud CVM can enable Anti-DDoS Basic for free by default when creating an instance. You can click "Security Reinforcement" on the CVM instance purchase page and check "Free Enablement" to enable Anti-DDoS Basic.
-After Anti-DDoS Basic enabled, you can view the protection configuration of CVM on the [Overview Page of CVM Console] (https://console.cloud.tencent.com/cvm/overview) or [Anti-DDoS Basic] (https://console.cloud.tencent.com/ddos/ddos-basic) page of DDOS protection console.
+After Anti-DDoS Basic enabled, you can view the protection configuration of CVM on the [Overview Page of CVM Console](https://console.cloud.tencent.com/cvm/overview) or [Anti-DDoS Basic](https://console.cloud.tencent.com/ddos/ddos-basic) page of DDOS protection console.
 
