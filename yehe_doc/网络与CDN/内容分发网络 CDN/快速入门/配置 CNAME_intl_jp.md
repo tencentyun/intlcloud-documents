@@ -1,4 +1,4 @@
-![](https://main.qcloudimg.com/raw/705a1315248316e32c25a8093fd9f799.png)
+
 
 ## 準備作業
 
