@@ -3,18 +3,18 @@
 ## 函数相关概念
 
 - 地域：函数资源必须归属于某个地域，SCF 已经支持的地域可参考 [支持地域](https://intl.cloud.tencent.com/document/product/583/17299)。
-- 命名空间：函数资源必须创建在某个地域的某个命名空间下，每个地域默认具有一个 `default` 命名空间，支持用户 新建命名空间，命名空间名称创建后不可修改。
+- 命名空间：函数资源必须创建在某个地域的某个命名空间下，每个地域默认具有一个 `default` 命名空间，支持用户新建命名空间，命名空间名称创建后不可修改。
 - 函数名称：函数名称为函数的唯一标识，同一个命名空间下的函数名称不可重复，创建后不可修改。
 - 函数类型：SCF 支持 `event` 函数和 `Web` 函数两种函数类型。
   - `event` 函数由指定格式的事件触发，例如定时触发事件、COS 触发事件等，事件结构详情请查看 [触发器](https://intl.cloud.tencent.com/document/product/583/9705)。
-  - `Web`函数专注于优化 Web 服务场景，可以直接接受并处理 HTTP 请求，详情请查看 [Web 函数](https://intl.cloud.tencent.com/document/product/583/40688)。
-- 运行环境：函数的代码运行环境，SCF 现已支持 [Python](https://intl.cloud.tencent.com/document/product/583/40323)、[Node.js](https://intl.cloud.tencent.com/document/product/583/11060)、[PHP](https://intl.cloud.tencent.com/document/product/583/17531)、[JAVA](https://intl.cloud.tencent.com/document/product/583/12214)、[Golang](https://intl.cloud.tencent.com/document/product/583/18032)、[Custom Runtime](https://intl.cloud.tencent.com/document/product/583/38129) 和 [镜像部署](https://intl.cloud.tencent.com/document/product/583/41076)。
+  - `Web`函数专注于优化 Web 服务场景，可以直接接受并处理 HTTP 请求，详情请查看 [Web 函数](https://intl.cloud.tencent.com/zh/document/product/583/40688)。
+- 运行环境：函数的代码运行环境，SCF 现已支持 [Python](https://intl.cloud.tencent.com/zh/document/product/583/40323)、[Node.js](https://intl.cloud.tencent.com/document/product/583/11060)、[PHP](https://intl.cloud.tencent.com/document/product/583/17531)、[JAVA](https://intl.cloud.tencent.com/document/product/583/12214)、[Golang](https://intl.cloud.tencent.com/document/product/583/18032)、[Custom Runtime](https://intl.cloud.tencent.com/document/product/583/38129) 和 [镜像部署](https://intl.cloud.tencent.com/zh/document/product/583/41076)。
 - 函数执行方法：执行方法表明了调用云函数时需要从哪个文件中的哪个函数开始执行，可分为以下三种方式：
   - 一段式格式为**"[文件名]"**，支持 Golang 环境时使用，例如 "main"。
   - 两段式格式为**"[文件名].[函数名]"**，支持 Python、Node.js 及 PHP 环境时使用，例如 "index.main_handler"。
-<dx-alert infotype="explain" title="">
-两段式的执行方法中，前一段指向代码包中不包含后缀的文件名，后一段指向文件中的入口函数名。需确保代码包中的文件名后缀与语言环境匹配，例如 Python 环境为 `.py` 文件，Node.js 环境为 `.js` 文件。 
-</dx-alert>
+  <dx-alert infotype="explain" title="">
+  两段式的执行方法中，前一段指向代码包中不包含后缀的文件名，后一段指向文件中的入口函数名。需确保代码包中的文件名后缀与语言环境匹配，例如 Python 环境为 `.py` 文件，Node.js 环境为 `.js` 文件。 
+  </dx-alert>
   - 三段式格式为 **"[package].[class]::[method]"**，支持 Java 环境时使用，例如 "example.Hello::mainHandler"。
 - 函数描述：可选，可用于记录函数相关作用等信息。
 
@@ -26,35 +26,40 @@
 ## 函数相关配置
 
 
-除上述配置外，还可通过控制台编辑函数配置或 [更新函数配置](https://intl.cloud.tencent.com/document/product/583/19806) 修改以下内容，配置更多函数运行时的信息：
+除上述配置外，还可通过控制台编辑函数配置或 [更新函数配置](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806) 修改以下内容，配置更多函数运行时的信息：
 - 内存：指定函数运行时可用的内存大小。最小64MB ，最大3072MB。从128MB起，以128MB为阶梯递增，默认128MB。SCF 的 CPU 处理能力与函数配置内存成正比，您可以增加或减少函数配置内存控制分配给函数的配置内存和 CPU 处理能力。
+- 初始化超时时间：指定函数初始化阶段最长运行时间，可选值范围为3秒-300秒，镜像部署函数默认90秒，其他函数默认60秒。
+<dx-alert infotype="notice" title="">
+- 函数初始化阶段包括准备函数代码、准备镜像、准备层等相关资源以及执行函数主流程代码。如果您的函数具有较大的镜像或复杂的函数主流程业务逻辑，请适当调大初始化超时时间。
+- 初始化超时时间仅在触发容器冷启动调用的场景下生效。
+- 客户端的等待时间建议稍大于初始化超时时间与执行超时时间的和。
+</dx-alert>
 - 执行超时时间：指定函数的最长运行时间，可选值范围为1秒- 900秒，默认3秒。
 - 环境变量：在配置中定义的环境变量可在函数运行时从环境中获取到。
 - 运行角色：将角色中包含的策略对应权限授权给函数。详情请查看 [权限管理](https://intl.cloud.tencent.com/document/product/583/38176)。例如，函数代码中执行将某对象写入对象存储 COS 的动作，需要为该函数配置具有写 COS 权限的运行角色。
-- 日志配置：将函数调用日志投递至指定的日志主题，详情请参考 [日志管理](https://intl.cloud.tencent.com/document/product/583/39777)。
+- 日志配置：将函数调用日志投递至指定的日志主题，详情请参考 [日志管理](https://intl.cloud.tencent.com/zh/document/product/583/39777)。
 - 网络配置：配置函数网络访问权限，详情请参考 [网络配置](https://intl.cloud.tencent.com/document/product/583/38377)。
   - 公网访问：默认启用，关闭后函数无法访问公网资源。
   - 固定出口 IP：启用后平台将为函数分配一个固定的公网出口 IP。
   - 私有网络：启用后，函数可以访问同一个私有网络下的资源。
 - 文件系统：启用后，函数可以访问所挂载的文件系统的资源。
-- [执行配置](https://intl.cloud.tencent.com/document/product/583/39466)：
-  
+- [执行配置](https://intl.cloud.tencent.com/zh/document/product/583/39466)：
   - 异步执行：启用后，函数执行超时时间最大可支持 24 小时，函数创建后该配置无法修改。
   - 链路追踪：仅在异步执行启用的情况下可开启，开启后针对异步执行的事件，将开始记录响应事件的实时状态，并提供事件的统计、查询及终止服务，产生的事件状态数据将为您保留3天。
-- [异步调用配置](https://intl.cloud.tencent.com/document/product/583/39851)：通过该配置设置异步调用场景下的重试策略，还可以配置 [死信队列](https://intl.cloud.tencent.com/document/product/583/39704) 收集错误事件信息、分析失败原因。
+- [异步调用配置](https://intl.cloud.tencent.com/document/product/583/34383)：通过该配置设置异步调用场景下的重试策略，还可以配置 [死信队列](https://intl.cloud.tencent.com/zh/document/product/583/39704) 收集错误事件信息、分析失败原因。
 
   
 
 ## 函数可执行的操作
 - [创建函数](https://intl.cloud.tencent.com/document/product/583/19806)：创建一个新的函数。
-- [更新函数](https://intl.cloud.tencent.com/document/product/583/19806)：
+- [更新函数](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806)：
    - 更新函数配置：更新函数的各项配置。
    - 更新函数代码：更新函数的运行代码。
 - [获取详情](https://intl.cloud.tencent.com/document/product/583/19809)：获取函数配置、触发器及代码详情。
 - [测试运行函数](https://intl.cloud.tencent.com/document/product/583/14572)：根据需要，通过同步或异步方法触发函数运行。
 - [获取日志](https://intl.cloud.tencent.com/document/product/583/19810)：获取函数运行情况及输出的日志。
 - [删除函数](https://intl.cloud.tencent.com/document/product/583/19807)：删除不再需要的函数。
-- [复制函数](https://cloud.tencent.com/document/product/583/33664)：复制函数到指定的地域、指定的名称、指定的配置。
+
 
 
 
