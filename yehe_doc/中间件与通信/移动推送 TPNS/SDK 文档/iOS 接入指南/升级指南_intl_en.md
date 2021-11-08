@@ -1,4 +1,30 @@
 
+
+## TPNS iOS SDK v1.3.4.0
+
+### 1. Adding support for in-app message display
+#### 1.1 setting the polling time of in-app messages
+
+##### API description
+
+This API can be used to set the polling time (minimum: 10s; default: 258s) of in-app messages.
+
+```objective-c
+/// Set the message polling time interval (minimum: 10s). This API should be called before the singleton initialization.
+(void)setMessageTimerInterval:(NSTimeInterval)interval;
+```
+
+#### 1.2. Custom event handling for in-app messages
+
+##### XGInAppMessageActionDelegate proxy description
+
+You can obtain custom event parameters through the proxy method `onClickWithCustomAction` to handle related businesses.
+
+```objective-c
+/// Button event response proxy
+@property (weak, nonatomic, nullable) id<XGInAppMessageActionDelegate> actionDelegate;
+```
+
 ## TPNS iOS SDK v1.3.2.1
 
 ### 1. The SDK has added the API for binding mobile numbers to send ordinary and intelligent SMS messages.
@@ -19,7 +45,7 @@ phoneNumber: mobile number in E.164 format `[+][country code or area code][subsc
 #### Sample code
 
 ```Objective-C
-[[XGPushTokenManager defaultTokenManager] upsertPhoneNumber:@"13712345678"];;
+[[XGPushTokenManager defaultTokenManager] upsertPhoneNumber:@"+8613712345678"];;
 ```
 
 >! 

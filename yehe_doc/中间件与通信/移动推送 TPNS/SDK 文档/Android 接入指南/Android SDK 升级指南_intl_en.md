@@ -1,3 +1,8 @@
+## TPNS Android SDK v1.2.7.0
+
+### Adding support for supplementary push via in-app messages
+The API for setting whether to allow in-app message display is added. Please pay attention to the compatibility between WebView and higher Android version. For more information, see [API Documentation](https://intl.cloud.tencent.com/document/product/1024/30715).
+
 ## TPNS Android SDK v1.2.5.0
 
 ### 1. Configure the dependent environment for your project (optional)
@@ -7,7 +12,6 @@ If you cannot pull the dependencies when using SDK dependencies, you can conside
 allprojects {
     repositories {
         google()
-
         // Google-recommended image source `MavenCentral`
         mavenCentral()
         jcenter()
@@ -30,3 +34,4 @@ public class MessageReceiver extends XGPushBaseReceiver {
     }
 }
 ```
+
