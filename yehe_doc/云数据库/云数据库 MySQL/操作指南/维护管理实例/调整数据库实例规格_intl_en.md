@@ -8,7 +8,7 @@ TencentDB for MySQL supports quick adjustment of instance specification and allo
 
 ## Configuration Adjustment Description
 By default, the instance configuration is adjusted in the normal mode, which requires a data migration for the adjustment to complete after you adjust the instance configuration in the console. But if the physical machine where the instance is located has sufficient remaining resources (aka local resources), you can choose the QuickChange mode. The adjustment process is as follows:
-![](https://main.qcloudimg.com/raw/4e442621a184456d573145e3186ee25e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8e7702c81886573a459dbf73b2846701.png)
 - **Normal mode**: to adjust the instance configuration, instance data needs to be migrated from the original physical machine to a new one. Because adjustment in this mode requires data migration, comparison, and verification, the overall adjustment process will take a long time in case of a huge amount of data. Besides, an instance switch may occur after the adjustment is completed.
 - **QuickChange mode**: the instance configuration can be adjusted without migrating data or switching to another physical machine. As no migration preparation is needed, the overall adjustment process is much shorter.
 >!
