@@ -1,75 +1,483 @@
 ## 功能简介
-访问日志功能用于记录 Web 应用防火墙防护域名的访问日志信息，提供防御域名最近30天访问日志查询和下载功能，及不少180天的访问日志存储服务。启用访问日志功能后，您可以根据需要查询和下载访问日志，满足安全合规、安全运维等需求。
->使用访问日志功能，需要先 [购买安全日志服务包](https://intl.cloud.tencent.com/document/product/627/11730)，并且根据 [使用说明](#sysm) 启用访问日志开关。只有开启访问日志开关的域名，Web 应用防火墙才会记录该域名的访问日志。
+访问日志功能用于记录 Web 应用防火墙防护域名的访问日志信息，提供防御域名最近30天访问日志查询和下载功能，及不少于180天的访问日志存储服务。启用访问日志功能后，您可以根据需要查询和下载访问日志，满足安全合规、安全运维等需求。
+>!
+>- 使用访问日志功能，需要先 [购买安全日志服务包](https://intl.cloud.tencent.com/document/product/627/11730)，并且根据 [操作步骤](#sysm) 启用访问日志开关。只有开启访问日志开关的域名，Web 应用防火墙才会记录该域名的访问日志。
+>- 如需关闭访问日志功能，可以在 [续费管理](https://console.cloud.tencent.com/account/renewal) 中，找到相应计费项目，取消续费即可。
 
-<span id ="sysm"></span>
-## 使用说明
+## 操作步骤[](id:sysm)
 ### 启用访问日志
-登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/config)，在左侧导航栏中，选择【Web 应用防火墙】>【防护设置】，进入防护设置页面，选择域名，单击开启访问日志开关。 
-![](https://main.qcloudimg.com/raw/0d6ec65518d8c4beabe3bc6ccfb283c2.png)
+登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/config)，在左侧导航栏中，选择**实例管理** > **域名接入**，进入域名接入页面，在域名列表中选择域名，单击开启访问日志开关。 
+![](https://qcloudimg.tencent-cloud.cn/raw/2fbe9fd1743f9368529ec6b9eff37171.png)
 
-###  查询访问日志
-1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/config)，在左侧导航栏单击【安全概览】，进入安全概览页面，选择【访问日志】>【日志查询】，选择域名，查看对应域名的访问日志信息。
-![](https://main.qcloudimg.com/raw/8747d77ac8d40fa3a2daa51ebca513f6.png)
-2. 您可以单击上图中，右上角的设置按钮<img src="https://main.qcloudimg.com/raw/81e64100ad0ed8422617c10b08fee09f.png"  style="margin:0;"> ，在弹出的“自定义列表字段”页面中，选择您想显示的列表详细信息。如下图所示：
-![](https://main.qcloudimg.com/raw/2becf70cc2f40a89a2d417b480e68be5.png)
-3. 查询访问日志。查询功能支持多关键字组合搜索，输入对应日志字段的关键字后，单击回车键进行分隔，单击【查询】进行日志搜索。
-![](https://main.qcloudimg.com/raw/9166164f1d6ecaa33222df10000b22ee.png)
- >
->- 访问日志检索支持键值 kv 检索，其中指定 key 为7个，value 值按照分词符（默认分词符为：!@#%^&*()-_="', <>/?|\;:\n\t\r[]{}）将日志数据切分成多个关键词，方便用户检索，关键词不区分大小写。
->- 模糊关键字搜索，访问日志支持模糊查询能力，通过特殊的模糊关键字进行日志检索，具体说明如下：
+### 查看日志
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
+2. 在日志服务页面，单击左上角的域名下拉框，选择所需域名后，单击**确定**，即可该域名的访问日志。
+![](https://qcloudimg.tencent-cloud.cn/raw/42a77d62f290d2b298e3ed9d38763143.png)
+3. 在日志服务页面，右上角可查看日志已使用容量进度条，单击**了解详情**，可跳转到 Web 应用防火墙的计费详情页面。
+![](https://main.qcloudimg.com/raw/bfbe41a5c9250c4ea952db0e9130f074.png)
+4.  在日志服务页面，单击右上角**存储配置**，可以查看日志已使用容量进度条，和设置日志保存天数，单击**保存**，即可保存修改。
+>?日志保存天数为1-30天。
 
-| 元字符 | 描述 |
-|---------|---------|
-|*	|模糊查询关键字，匹配零个、单个或多个任意字符。例如，输入`abc*`，会返回以`abc`开头的所有命中日志，不支持`*`开头。|
-|?	|模糊查询关键字，特定位置匹配单个字符。例如，输入`ab?c`，会返回以`ab`为开头，以`c`为结尾字符，且两者之间且有一个字符。|
+![](https://main.qcloudimg.com/raw/770ab95666033ce0094bf2e80c2e2f5c.png)
+
+### 查询日志
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
+2. 在日志服务页面，可以用快速检索、过滤检索和语句检索查询所需日志。
+ - 快速检索：主要是针对时间的快捷选择检索。
+   ![](https://main.qcloudimg.com/raw/6804c1f59920743e3f10f45b4502b317.png)
+ - 过滤检索：选择所需字段和操作符，输入字段值后，单击**确定**，即可针对每个字段对日志进行筛选，并支持添加多个字段限制。
+![](https://main.qcloudimg.com/raw/08ae0aa785727b6fcce939673b8d0866.png)
+- 语句检索：为用户提供专业的语句日志检索功能，满足更复杂的日志检索需求。输入所需内容后，单击![](https://main.qcloudimg.com/raw/de2de3ad90917a2dba3259716cb87963.png)，即可查询。
+![](https://main.qcloudimg.com/raw/a24899d83e393b89ea8ec2c85b307a41.png)
+**检索语法**
+<table>
+<thead>
+<tr>
+<th align="left">保留字符</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">AND</td>
+<td align="left">“与”逻辑操作符，例如 <code>level:ERROR AND pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">OR</td>
+<td align="left">“或”逻辑操作符，例如 <code>level:ERROR OR level:WARNING</code></td>
+</tr>
+<tr>
+<td align="left">NOT</td>
+<td align="left">“非”逻辑操作符，例如 <code>level:ERROR NOT pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">TO</td>
+<td align="left">“范围”逻辑操作符，例如 <code>request_time:[0.1 TO 1.0]</code></td>
+</tr>
+<tr>
+<td align="left">""</td>
+<td align="left">双引号，引用一个短语词组（短语当作一个整体词组），例如 <code>name:"john Smith"</code></td>
+</tr>
+<tr>
+<td align="left">：</td>
+<td align="left">冒号，表示作用于的 key 字段，即键值检索，例如 <code>level:ERROR</code></td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">通配符查询，匹配零个、单个、多个字符，例如 <code>host:www.test*.com</code></td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">通配符查询，匹配单个字符，例如 <code>host:www.te?t.com</code></td>
+</tr>
+<tr>
+<td align="left">()</td>
+<td align="left">分组操作符，控制逻辑运算优先级，例如 <code>(ERROR OR WARNING) AND pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">&gt;</td>
+<td align="left">范围操作符，表示大于某个数值，例如 <code>status:&gt;400</code></td>
+</tr>
+<tr>
+<td align="left">&gt;=</td>
+<td align="left">范围操作符，表示大于等于某个数值，例如 <code>status:&gt;=400</code></td>
+</tr>
+<tr>
+<td align="left">&lt;</td>
+<td align="left">范围操作符，表示小于某个数值，例如 <code>status:&lt;400</code></td>
+</tr>
+<tr>
+<td align="left">&lt;=</td>
+<td align="left">范围操作符，表示小于等于某个数值，例如 <code>status:&lt;=400</code></td>
+</tr>
+<tr>
+<td align="left">[]</td>
+<td align="left">范围操作符，包含边界值的范围，例如 <code>age:[20 TO 30]</code></td>
+</tr>
+<tr>
+<td align="left">{}</td>
+<td align="left">范围操作符，不包含边界值的范围，例如 <code>age:{20 TO 30}</code></td>
+</tr>
+<tr>
+<td align="left">\</td>
+<td align="left">转义符号，转义后的字符表示符号本身，例如 <code>url:\/images\/favicon.ico</code>，如不想使用转义符，可使用<code>""</code>包裹，例如<code>url:"/images/favicon.ico"</code>，但需注意，双引号内的词会被当作一个整体，两种查询方式的详细区别可参见 <a href="https://intl.cloud.tencent.com/document/product/614/39594">配置索引</a> 中的查询示例</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left">逻辑操作符，类似 AND，<code>+A</code> 表示 <code>A</code> 一定存在，例如 <code>+level:ERROR +pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">逻辑操作符，类似 NOT，<code>-A</code> 表示 <code>A</code> 不存在，例如 <code>+level:ERROR -pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">&amp;&amp;</td>
+<td align="left">与逻辑，类似 AND，例如 <code>level:ERROR &amp;&amp; pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">!</td>
+<td align="left">非逻辑，类似 NOT，例如 <code>level:ERROR !pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">/</td>
+<td align="left">正则表达式标识符，/${regExp}/ ,  例如 <code>/[mb]oat/</code>表示搜索包含 moat 或 boat 的结果</td>
+</tr>
+<tr>
+<td align="left">_exists_</td>
+<td align="left">_exists_:key，返回 key 不为空的值，例如 <code>_exists_:userAgent</code>  表示搜索 <code>userAgent</code> 字段有值的结果</td>
+</tr>
+<tr>
+<td align="left">~</td>
+<td align="left">相似搜索，例如 <code>level:errro~</code>，可以命中 level 为 error 关键字的结果</td>
+</tr>
+</tbody></table>
+>!
+> - 操作符区分大小写，例如 AND、OR 表示检索逻辑运算符，而 and、or 视为普通词组。
+> - 多个检索语句用空格连接时，视为”或“逻辑，例如 `warning error` 表示包含 `warning` 或 `error` 关键字的结果。
+> - 检索关键字中存在特殊字符时，需使用转义符进行转义，特殊字符包括 + - && || ! ( ) { } [ ] ^ " ~ * ? : \。
+> - 使用键值检索时（形如 key:value），键名（key）必须在日志主题的键值索引配置项里面。
+> - 同时使用 AND 和 OR 逻辑运算符时，请使用()对检索条件进行分组，以明确逻辑优先级，例如`(ERROR OR WARNING) AND pid:1234`。
 
 
-日志查询字段说明：
-
-| 字段名称 | 字段说明 |
-|---------|---------|
-| 访问源 IP | 客户端请求的源 IP。 |
-|访问 URI	|客户端访问的 URI。|
-|Referer	|客户端向服务器表明访问请求的来源 URL 信息。|
-|Cookie	|客户端访问服务器所携带的 Cookie 信息。|
-|User-Agent	|客户端向服务器表明自己的浏览器类型和操作系统标识等信息。|
-|X-Forworder-For	|客户端访问服务时，用来识别通过 HTTP 代理或负载均衡方式连接到 Web 服务器的客户端最原始的 IP 地址。|
-|WAF 响应码	|Web 应用防火墙返回给客户端的响应状态码。|
-|源站响应码	|源站返回给 Web 应用防火墙的响应状态码。|
-|Body	|客户端访问服务器请求所携带的 Body 信息。|
+### 展示日志
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
+2. 在日志服务页面的展示模块，单击“字段名称”，会展示与本字段匹配的日志数前五的占比。
+![](https://main.qcloudimg.com/raw/2c3edd0c0b6e28dc2f81ef32e3a1dfb6.png)
+3. 在展示模块，单击每条展示日志发生时间左侧的![](https://main.qcloudimg.com/raw/f85fc295aaf54ed8855edb882bb1ce06.png)，可以查看字段详情；单击 **JSON**，可以查看 JSON 格式的详情。
+![](https://main.qcloudimg.com/raw/345afe143b46018e290c2c517f254bfd.png)
+**JSON 字段说明**
+<table>
+<thead>
+<tr>
+<th><strong>字段名</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>domain</td>
+<td>所属泛域名</td>
+</tr>
+<tr>
+<td>request_time</td>
+<td>请求耗时，客户端请求达到 Web 应用防火墙和从 Web 应用防火墙返回需要的时间</td>
+</tr>
+<tr>
+<td>uuid</td>
+<td>HTTP 请求唯一标识</td>
+</tr>
+<tr>
+<td>schema</td>
+<td>请求协议，HTTP 或者 HTTPS</td>
+</tr>
+<tr>
+<td>method</td>
+<td>客户端请求方法。</td>
+</tr>
+<tr>
+<td>url</td>
+<td>请求的 uri，客户端完整请求路径中，域名后第一个“/”到“?”之间的内容</td>
+</tr>
+<tr>
+<td>host</td>
+<td>客户端请求域名</td>
+</tr>
+<tr>
+<td>http_user_agent</td>
+<td>请求 UA</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>HTTP 请求的头部</td>
+</tr>
+<tr>
+<td>upstream_status</td>
+<td>源站返回给 Web 应用防火墙的响应状态码</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Web 应用防火墙返回给客户端的响应状态码</td>
+</tr>
+<tr>
+<td>body_bytes_sent</td>
+<td>响应体大小</td>
+</tr>
+<tr>
+<td>upstream_response_time</td>
+<td>客户端请求从源站返回到 Web 应用防火墙需要的时间</td>
+</tr>
+<tr>
+<td>ip_info.country</td>
+<td>国家</td>
+</tr>
+<tr>
+<td>ip_info.city</td>
+<td>城市</td>
+</tr>
+<tr>
+<td>ip_info.province</td>
+<td>省份</td>
+</tr>
+<tr>
+<td>ip_info.operator</td>
+<td>运营商</td>
+</tr>
+<tr>
+<td>ip_info.ip_type</td>
+<td>IP 类型</td>
+</tr>
+<tr>
+<td>ip_info.idc</td>
+<td>IDC 机房</td>
+</tr>
+<tr>
+<td>ip_info.longtitude</td>
+<td>经度</td>
+</tr>
+<tr>
+<td>ip_info.dimensionality</td>
+<td>纬度</td>
+</tr>
+</tbody></table>
+4. 在展示模块，展示已筛选出来的日志内容，目前支持列表和字段两种展示方式。
+ - 字段展示：默认展示字段模式，右上角切换图标可以操作切换。
+![](https://main.qcloudimg.com/raw/f176fa9feb57157d9bda1472c49b82c7.png)
+ - 列表展示：单击![](https://main.qcloudimg.com/raw/1c901122eac1bd6e8f21815d777551b7.png)，切换至列表模式。
+![](https://main.qcloudimg.com/raw/930e8e9e511797dedbaf2d8dcd46da8f.png)
+**列表展示字段说明**
+<table>
+<thead>
+<tr>
+<th><strong>字段名</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>msec</td>
+<td>请求发生时候的时间戳</td>
+</tr>
+<tr>
+<td>schema</td>
+<td>请求协议，HTTP 或者 HTTPS</td>
+</tr>
+<tr>
+<td>method</td>
+<td>客户端请求方法</td>
+</tr>
+<tr>
+<td>host</td>
+<td>客户端请求域名</td>
+</tr>
+<tr>
+<td>url</td>
+<td>请求的 uri，客户端完整请求路径中，域名后第一个“/”到“?”之间的内容</td>
+</tr>
+<tr>
+<td>query</td>
+<td>HTTP 请求的 Query String，最大长度为 1K</td>
+</tr>
+<tr>
+<td>body</td>
+<td>请求的 body 数据</td>
+</tr>
+<tr>
+<td>http_referer</td>
+<td>源页面</td>
+</tr>
+<tr>
+<td>http_user_agent</td>
+<td>请求 UA</td>
+</tr>
+<tr>
+<td>http_x_forwarded_for</td>
+<td>出经过的所有代理</td>
+</tr>
+<tr>
+<td>cookie</td>
+<td>请求的 cookie 信息，最大长度为 1K</td>
+</tr>
+<tr>
+<td>upstream_status</td>
+<td>源站返回给 Web 应用防火墙的响应状态码</td>
+</tr>
+<tr>
+<td>upstream_response_time</td>
+<td>客户端请求从源站返回到 Web 应用防火墙需要的时间</td>
+</tr>
+<tr>
+<td>upstream_addr</td>
+<td>请求经过的上游服务器 IP</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Web 应用防火墙返回给客户端的响应状态码</td>
+</tr>
+<tr>
+<td>upstream_status</td>
+<td>源站返回给 Web 应用防火墙的响应状态码</td>
+</tr>
+<tr>
+<td>upstream_response_length</td>
+<td>上游服务器返回的响应长度</td>
+</tr>
+<tr>
+<td>edition</td>
+<td>WAF 的版本，分成 sparta-waf,clb-waf,cdn-waf</td>
+</tr>
+</tbody></table>
 
 ### 下载访问日志
-1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/config)，在左侧导航栏单击【安全概览】，进入安全概览页面，选择【访问日志】>【日志查询】，单击右上方的下载图标，创建下载任务。
-![](https://main.qcloudimg.com/raw/7d0fe9615ddb279f90124f64b3f20a59.png)
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
+2. 在日志服务页面的展示模块， 单击![](https://main.qcloudimg.com/raw/789f18df056dbc4e37f5a325b613ca70.png)，进入下载任务页面，单击**确定**，即可创建下载任务。
+>?	
+>- 同一时间段内只允许创建一个下载任务，请耐心等待。
+>- 单次最多下载100万条日志，如果您需要下载的日志超过100万条，建议您分多次任务进行下载。
+>- 当选择泛域名（如：*.abc.com）时，所有关联子域名（以.abc.com结尾）的日志也将会被下载。
+>- 最多创建五条下载任务，请注意下载的任务数。
 
->
-- 同一时间段内只允许创建一个下载任务，请耐心等待。
-- 单次最多支持下载1万条日志，如果您需要下载的日志超过1万条，建议您分多次任务进行下载，或 [联系我们](https://intl.cloud.tencent.com/support) 为您提供支持服务。
-- 当选择泛域名（如：*.abc.com）时，所有关联子域名（如以.abc.com结尾）的日志也将会被下载。
-
-2. 单击【查询下载任务】，选择下载任务，单击【下载】，将日志文件下载到本地。
-![](https://main.qcloudimg.com/raw/0dfe2da477191d8f6576c1691e1cc336.png)
-日志文件字段说明如下：
-
-| 下载字段 | 字段描述 |
-|---------|---------|
-| time | 访问时间。 |
-|host	|客户端请求域名。|
-|client	|客户端来源 IP。|
-|ipinfo_nation	|客户端来源 IP 的国家信息。|
-|ipinfo_province	|客户端来源 IP 的省份信息。|
-|schema	|客户端请求协议。|
-|method	|客户端请求方法。|
-|url	|客户端完整请求路径中，域名后第一个“/”到“?”之间的内容。|
-|query	|也称为 query string，客户端完整请求路径中“?”之后的内容。|
-|cookie	|客户端访问服务器所携带的 Cookie 信息。|
-|referer	|客户端向服务器表明访问请求的来源 URL 信息。|
-|user-agent	|客户端向服务器表明自己的浏览器类型和操作系统标识等信息。|
-|x-forwarded-for	|客户端访问服务器时，用来识别通过 HTTP 代理或负载均衡方式，连接到 Web 服务器的客户端最原始的 IP 地址。|
-|status	|Web 应用防火墙返回给客户端的响应状态码。|
-|upstream_status	|源站返回给 Web 应用防火墙的响应状态码。|
-|upstream	|客户端请求经过 Web 应用防火墙之后的回源 IP 和端口。|
-|upstream_connect_time	|客户端请求从 Web 应用防火墙到源站需要的时间。|
-|upstream_response_time	|客户端请求从源站返回到 Web 应用防火墙需要的时间。|
-|request_time	|客户端请求达到 Web 应用防火墙和从 Web 应用防火墙返回需要的时间。|
+![](https://main.qcloudimg.com/raw/a90d022c6cbd68714842d3c2fd9fa915.png)
+3. 在下载任务页面，单击**查看任务**，可以查看下载任务的序号、创建时间、日志总数等信息。
+![](https://main.qcloudimg.com/raw/3df5294988d053c5a64dc9dbbe915349.png)
+**日志文件字段说明**
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>domain</td>
+<td>所属泛域名</td>
+</tr>
+<tr>
+<td>bytes_sent</td>
+<td>响应大小，包含响应头，单位字节，下行带宽</td>
+</tr>
+<tr>
+<td>method</td>
+<td>客户端请求方法</td>
+</tr>
+<tr>
+<td>request_time</td>
+<td>请求耗时，客户端请求达到 Web 应用防火墙和从 Web 应用防火墙返回需要的时间。</td>
+</tr>
+<tr>
+<td>http_connection</td>
+<td>HTTP 请求的 Connection 头</td>
+</tr>
+<tr>
+<td>upstream_connect_time</td>
+<td>客户端请求从 Web 应用防火墙到源站需要的连接时间</td>
+</tr>
+<tr>
+<td>uuid</td>
+<td>HTTP 请求唯一标识</td>
+</tr>
+<tr>
+<td>upstream_addr</td>
+<td>请求经过的上游服务器 IP</td>
+</tr>
+<tr>
+<td>host</td>
+<td>客户端请求域名</td>
+</tr>
+<tr>
+<td>upstream_response_length</td>
+<td>上游服务器返回的响应长度</td>
+</tr>
+<tr>
+<td>schema</td>
+<td>请求协议，HTTP 或者 HTTPS</td>
+</tr>
+<tr>
+<td>http_user_agent</td>
+<td>请求 UA</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>HTTP 请求的头部</td>
+</tr>
+<tr>
+<td>url</td>
+<td>请求的 uri，客户端完整请求路径中，域名后第一个“/”到“?”之间的内容</td>
+</tr>
+<tr>
+<td>http_x_forwarded_for</td>
+<td>出经过的所有代理</td>
+</tr>
+<tr>
+<td>http_referer</td>
+<td>源页面</td>
+</tr>
+<tr>
+<td>body</td>
+<td>请求的 body 数据</td>
+</tr>
+<tr>
+<td>remote_addr</td>
+<td>请求者 IP</td>
+</tr>
+<tr>
+<td>cookie</td>
+<td>请求的 cookie 信息，最大长度为 1K</td>
+</tr>
+<tr>
+<td>bot_client_ip</td>
+<td>bot 检测使用到的客户端 IP，一般和 remote_addr 一致</td>
+</tr>
+<tr>
+<td>request_length</td>
+<td>请求的大小，上行带宽</td>
+</tr>
+<tr>
+<td>http_accept</td>
+<td>HTTP 请求的 Accep t头</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Web 应用防火墙返回给客户端的响应状态码。</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>HTTP 协议版本，例如：1.1、1.0 和 2.0等</td>
+</tr>
+<tr>
+<td>msec</td>
+<td>请求发生时候的时间戳</td>
+</tr>
+<tr>
+<td>pipe</td>
+<td>请求的 PIPE，nginx 的内置变量</td>
+</tr>
+<tr>
+<td>content_type</td>
+<td>HTTP 请求的 Content-Type 头</td>
+</tr>
+<tr>
+<td>time_local</td>
+<td>NGINX 的本地可读性的时间字符串</td>
+</tr>
+<tr>
+<td>upstream_response_time</td>
+<td>客户端请求从源站返回到 Web 应用防火墙需要的时间。</td>
+</tr>
+<tr>
+<td>server_addr</td>
+<td>WAF 的引擎内网 IP</td>
+</tr>
+<tr>
+<td>edition</td>
+<td>WAF 的版本，分成 sparta-waf,clb-waf,cdn-waf</td>
+</tr>
+<tr>
+<td>upstream_status</td>
+<td>源站返回给 Web 应用防火墙的响应状态码。</td>
+</tr>
+<tr>
+<td>body_bytes_sent</td>
+<td>响应体大小</td>
+</tr>
+<tr>
+<td>query</td>
+<td>HTTP 请求的 Query String，最大长度为 1K</td>
+</tr>
+</tbody></table>
