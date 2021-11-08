@@ -19,9 +19,8 @@ The following table lists existing templates for typical use cases and their spe
 
 | Function Processing Scenario | Description |
 | ------------------------------------------------------------ | --------------------------------------- |
-| High-availability scheduled testing | Use SCF to implement high-availability scheduled testing. |
-| [Scheduled task execution](https://intl.cloud.tencent.com/document/product/583/39015) | Use SCF and Puppeteer to perform scheduled tasks on webpage content such as data collection and storage. |
-| Scheduled report push | Use SCF, MTA, and WeCom bot to perform scheduled tasks such as report content collection and data display. |
+| High-Availability scheduled testing | Use SCF to implement high-availability scheduled testing. |
+| [Scheduled task execution](https://intl.cloud.tencent.com/zh/document/product/583/39015) | Use SCF and Puppeteer to perform scheduled tasks on webpage content such as data collection and storage. |
 | Scheduled data archiving and backup | Use SCF to regularly back up databases to COS. |
 
 

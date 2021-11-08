@@ -7,7 +7,7 @@ Make sure that you have installed Java and Maven. For the Java version, please u
 ### Installing Maven
 
 The specific installation instructions can be found at `https://maven.apache.org/install.html`. The following describes how to install it manually:
-1. Download Maven's [zip package](http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.zip) or [tar.gz package](http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz).
+1. Download Maven's zip packageor tar.gz package.
 2. Unzip the package to a desired directory, such as `C:\Maven` (Windows) or `/opt/mvn/apache-maven-3.5.0` (Linux).
 3. Add the path of the `bin` directory in the unzipped directory to the system environment variable `PATH` in the following way as appropriate:
  - Linux: add through `export PATH=$PATH:/opt/mvn/apache-maven-3.5.0/bin`.

@@ -196,4 +196,4 @@ On web, a target resolution may be unattainable due to device and browser restri
 
 ### Cost of using other products/services
 
-If your application scenario involves TRTC products or services other than video call and interactive live streaming, for example, On-Cloud MixTranscoding, you will be charged additional fees. You can refer to the billing document of the corresponding product or service for details.
+If your application scenario involves TRTC products or services other than video call and interactive live streaming, for example, [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/38929), you will be charged additional fees. You can refer to the billing document of the corresponding product or service for details.

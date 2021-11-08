@@ -1,5 +1,3 @@
-# Billing Overview
-
 - **Pay-as-you-go, detailed bills**
 
   [Contact us](https://intl.cloud.tencent.com/contact-us) to learn more.
