@@ -55,7 +55,7 @@ Check the configuration of the CDN-accelerated domain name by following the step
 ### What should I do if 404 is returned on refresh if the static website is used together with the frontend Vue framework and the router is set to History mode?
 
 On the static website configuration page of the bucket, set the error document path to the landing page of the web application (mostly index.html) and set the status code of the error document to 200. For the configuration directions of static websites, please see [Setting up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984).
-![](https://main.qcloudimg.com/raw/9bf814df9706a8cef39969c12f6fd77a.png)
+
 
 >! After the configurations above are complete, if you need 404 to respond normally, you can configure it at the most bottom layer of the Vue frontend router configuration (in most cases, asterisks match the custom 404 component).
 >
