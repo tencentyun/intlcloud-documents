@@ -1,169 +1,194 @@
-본 문서에서는 CDN의 신규 사용자를 위한 학습 경로를 제공합니다.
-
-## 1. CDN 기본 지식 숙지
-
-- [CDN은 어떤 작업인가요?](https://intl.cloud.tencent.com/document/product/228/2939)
-- [왜 Tencent Cloud CDN을 선택해야 할까요?](https://intl.cloud.tencent.com/document/product/228/2941)
-- [CDN의 응용 시나리오 소개](https://intl.cloud.tencent.com/document/product/228/32980)
-- [Tencent Cloud CDN 사용 시 어떤 제한 사항이 있나요?](https://intl.cloud.tencent.com/document/product/228/32981)
-- [CDN의 일반적 개념](https://intl.cloud.tencent.com/document/product/228/36183)
-
-
-
-## 2. CDN의 과금 방식
-
-Tencent Cloud CDN의 과금 방식에는 **대역폭 과금 방식**과 **트래픽 과금 방식**이 있습니다. CDN 과금 방식을 완벽히 이해하면 가장 유리한 과금 방식을 선택할 수 있습니다. [과금 설명](https://intl.cloud.tencent.com/document/product/228/2949)을 참조하십시오.
 
 
 
 
+## 기본 개념
 
+복잡한 네트워크 환경에 대처하고 인터넷 비즈니스 네트워크 수준의 많은 문제를 개선하기 위해, Tencent Cloud는 기존 네트워크 구조에 글로벌 고성능 가속 노드 계층을 추가하여 새로운 버츄얼 네트워크 아키텍처를 형성했습니다. 이를 통해 캐싱 정책에 따라 비즈니스 콘텐츠를 사용자와 더 가까운 엣지 노드에 저장하여, 사용자와 비즈니스 콘텐츠 간의 거리를 좁히고, 액세스 딜레이를 낮추어 가용성을 향상시킵니다.
 
-## 3. 신규 사용자
+Tencent Cloud는 다양한 가속 유형에 따라 다양한 제품을 제공합니다.
 
-#### 3.1 서비스 활성화 및 과금 방식 선택
+- 정적 리소스 대상 **CDN - Content Delivery Network**: 사용자가 한 리소스에 여러 번 액세스하며, **동일한** 콘텐츠 반환.
+예시: html, css 및 js 파일, 이미지, 비디오, 소프트웨어 설치 패키지, apk 파일, 압축 파일 등.
+권장 시나리오: 웹사이트 정적 리소스 가속, 파일 다운로드 가속, 오디오 및 비디오 가속.
+- 동적 리소스 대상 **ECDN - Enterprise Content Delivery Network**: 사용자가 한 리소스에 여러 번 액세스하며, 각각 **다른** 콘텐츠 반환.
+예시: API, .jsp, .asp, .php, .perl 및 .cgi 파일 등.
+권장 시나리오: 동적 가속, 동적 및 정적 가속.
 
-Tencent Cloud CDN을 사용하려면 우선 Tencent Cloud 계정에 가입하고 CDN 서비스를 활성화해야 합니다. [CDN 처음부터 설정 시작하기](https://intl.cloud.tencent.com/document/product/228/32978)를 참조하십시오.
-
-#### 3.2 도메인 엑세스
-
-가속 작업을 위해서는 가속 도메인에 연결해야 합니다. CDN이 가속 도메인을 통해 원본 서버 리소스를 CDN 가속 노드에 캐싱하면 사용자가 가까운 곳에서 필요한 리소스를 가져와 리소스 액세스 가속을 실현할 수 있습니다. 자세한 내용은 [도메인 엑세스](https://intl.cloud.tencent.com/document/product/228/5734)를 참조하십시오.
-
-#### 3.3 CNAME 설정
-
-액세스가 완료되면 Tencent Cloud CDN에서 해당 CNAME 주소를 할당하므로 CDN 서비스를 적용하려면 CNAME 설정을 완료해야 합니다. 자세한 내용은 [CNAME 설정](https://intl.cloud.tencent.com/document/product/228/3121)을 참조하십시오.
-
->? 다음의 모범 사례를 참조해 Tencent Cloud CDN 사용을 시작하여 도메인을 가속화할 수 있습니다.
->- [Tencent Cloud CDN 가속 클라우드 서버 CVM의 인스턴스.](https://intl.cloud.tencent.com/document/product/228/34035)
->- [Tencent Cloud CDN 객체 스토리지 COS의 인스턴스.](https://intl.cloud.tencent.com/document/product/228/34036)
-
-
-
-
-## 4. 콘솔 인터페이스
-
-다음은 CDN 콘솔의 총람 페이지입니다.
-![](https://main.qcloudimg.com/raw/95fff730b132974403698b512260f3fb.png)
-
-
-
-
-## 5. 콘솔 기능 개요
+  
 
 <table>
-<thead>
-<tr>
-<th>희망 작업 유형</th>
-<th>참고 자료</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>액세스한 도메인을 조회하거나 활성화 또는 비활성화. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/5736" target="_blank">도메인 작업</a></td>
-</tr>
-<tr>
-<td>리스트를 필터링 조회하거나 클라우드 리소스를 태그, 프로젝트별로 관리. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/32913" target="_blank">도메인 검색</a></td>
-</tr>
-<tr>
-<td>CDN 가속 효과를 극대화하여 CDN에서 여러 항목의 사용자 정의 설정 지원. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/6288" target="_blank">설정 개요</a></td>
-</tr>
-<tr>
-<td>콘솔 기능과 Action의 매핑 관계 조회. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/35229" target="_blank">콘솔 권한 설명</a></td>
-</tr>
-<tr>
-<td>사용자 정의 정책을 통한 도메인 수준의 권한 부여. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/35228" target="_blank">정책 생성</a></td>
-</tr>
-<tr>
-<td>프로젝트 수준에 대한 권한 부여 작업 세분화. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/35743" target="_blank">프로젝트별 권한 설명</a></td>
-</tr>
-<tr>
-<td>실시간 모니터링 데이터를 바탕으로 운영 상황 분석. </td>
-<td>실시간 모니터링</a></td>
-</tr>
-<tr>
-<td>사용자 출처와 분포, 사용 현황 분석. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/32923" target="_blank">데이터 분석</a></td>
-</tr>
-<tr>
-<td>주기적으로 노드 캐시 리소스를 정리하고 원본 서버에서 최신 리소스를 불러와 다시 캐싱. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/6299" target="_blank">캐시 퍼지</a></td>
-</tr>
-<tr>
-<td>지정된 리소스를 미리 가속 노드에 로딩. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/39000" target="_blank">캐시 프리패치</a></td>
-</tr>
-<tr>
-<td>액세스 로그를 다운로드하여 니즈에 따라 인기 리소스와 활성 사용자 등을 분석. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/6316" target="_blank">로그 다운로드</a></td>
-</tr>
-<tr>
-<td>로그 데이터를 빠르게 검색하고 분석. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/35380" target="_blank">실시간 로그</a></td>
-</tr>
-<tr>
-<td>전체 네트워크의 실시간 상태 개요 및 세부 사항 점검. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/6311" target="_blank">전체 네트워크 상태 모니터링</a></td>
-</tr>
-<tr>
-<td>사용자가 서비스 상태를 분석할 수 있도록 서비스 상태를 다양한 범주의 리포트 형식으로 표시. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/6312" target="_blank">운영 리포트</a></td>
-</tr>
-<tr>
-<td>CDN 콘솔에서 중국 내 트래픽 패키지 사용 현황 조회. </td>
-<td>트래픽 패키지 관리</a></td>
-</tr>
-<tr>
-<td>지정된 IP가 Tencent Cloud의 CDN 노드인지 확인. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/10747" target="_blank">Tencent Cloud CDN IP 확인</a></td>
-</tr>
-<tr>
-<td>액세스 오류가 발생한 URL을 진단하여 문제를 신속히 진단. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/6304" target="_blank">자가 진단 툴</a></td>
-</tr>
-<tr>
-<td>DDoS, CC, WAF 공격 완벽 차단 및 모니터링. </td>
-<td>SCDN</a></td>
-</tr>
-<tr>
-<td>Tencent Cloud CDN을 통한 이미지 대량 배포. </td>
-<td>이미지 최적화</a></td>
-</tr>
-</tbody></table>
-
-
-## 6. 신규 사용자 FAQ
-#### 과금 관련 문제
-- [CDN 청구서는 어떻게 조회하나요?](https://intl.cloud.tencent.com/document/product/228/31479)
-- [구매한 CDN 중국 내 트래픽 패키지가 필요 없어진 경우 환불받을 수 있나요?](https://intl.cloud.tencent.com/document/product/228/31479)
-- [CDN은 요청 횟수에 따른 과금 방식을 지원하나요?](https://intl.cloud.tencent.com/document/product/228/31479)
-- [원본 서버가 COS를 사용할 경우, CDN이 COS에 원본을 요청할 때 발생하는 트래픽에 대해서도 과금되나요?](https://intl.cloud.tencent.com/document/product/228/31479)
-- [CDN 비활성화(CDN 서비스 종료) 후에도 트래픽이나 요금이 발생하나요?](https://intl.cloud.tencent.com/document/product/228/31479)
-- [CDN 과금 방식을 변경할 수 있나요?](https://intl.cloud.tencent.com/document/product/228/31479)
-- [CDN 중국 내 트래픽 패키지 사용 관리](https://intl.cloud.tencent.com/document/product/228/31479)
-- [CDN 과금 시 다운스트림 트래픽에만 비용이 청구되나요?](https://intl.cloud.tencent.com/document/product/228/31479)
-
-#### 도메인 엑세스 관련 문제
-
-- [CDN은 와일드카드 서브도메인 액세스를 지원하나요?](https://intl.cloud.tencent.com/document/product/228/31476)
-- [ICP 비안 등록이 완료된 도메인임에도 불구하고 CDN 가속 도메인 추가 시 ICP 비안 미등록이라고 뜨는 이유는 무엇인가요?](https://intl.cloud.tencent.com/document/product/228/31476)
-- [CDN을 설정하는 데 시간이 얼마나 걸리나요?](https://intl.cloud.tencent.com/document/product/228/31476)
-- [원본 서버 IP를 여러 개 설정할 수 있나요?](https://intl.cloud.tencent.com/document/product/228/31476)
-- [CDN이 적용되었는지 어떻게 확인하나요?](https://intl.cloud.tencent.com/document/product/228/31476)
-- [도메인이 비활성화만 가능하고, 삭제는 불가능한 이유는 무엇인가요?](https://intl.cloud.tencent.com/document/product/228/31476)
-- [가속 서비스를 비활성화하려면 어떻게 해야 하나요?](https://intl.cloud.tencent.com/document/product/228/31476)
-- [가속 도메인은 어떻게 삭제하나요?](https://intl.cloud.tencent.com/document/product/228/31476)
-- [가속 도메인 / 원본 서버에서 포트를 설정할 수 있나요?](https://intl.cloud.tencent.com/document/product/228/31476)
--[CDN 파일을 다운로드할 수 없습니다](https://intl.cloud.tencent.com/document/product/228/31476)
+  <tr>
+    <td>비교 내용</td>
+    <td align='middle'><b>CDN</b></td>
+    <td align='middle'><b>ECDN</b></td>
+  </tr>
+  <tr>
+    <td>응용 시나리오</td>
+    <td>웹사이트 정적 리소스 가속, 파일 다운로드, 오디오 및 비디오 주문형 웹사이트</td>
+    <td>전자상거래, 게임 결제, 금융 웹 사이트, 온라인 교육</td>
+  </tr>
+  <tr>
+    <td>커버리지 범위</td>
+    <td colspan="2" align="middle">중국 내<br>중국 외<br>글로벌</td>
+  </tr>
+  <tr>
+    <td>과금 방식</td>
+    <td align="middle">트래픽 시간 과금<br>중국 내 사용자는 트래픽 패키지 서비스 이용 가능<br>자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/228/2949">CDN 과금 설명</a>을 참고하십시오.</td>
+    <td align="middle">요청 횟수 + 트래픽 초과분 과금<br>자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/570/37505">ECDN 과금 설명</a>을 참고하십시오.</td>
+  </tr>
+  <tr>
+    <td>가속 방식</td>
+    <td align="middle">정적 콘텐츠 가속, 동적 콘텐츠 Origin-pull</td>
+    <td align="middle">동적 가속 및 동적/정적 혼합 가속 지원<br></td>
+  </tr>
+  <tr>
+    <td>리소스</td>
+    <td colspan='2' align='middle'>전 세계적으로 2800개 이상의 노드, 총 150Tbps 이상의 대역폭 보유, 70개 이상의 국가 및 지역 커버</td>
+  </tr>
+</table>
 
 
 
-## 7. 피드백 및 의견
-Tencent Cloud CDN 제품 및 서비스 사용 중 문의사항 또는 의견이 있는 경우 다음 채널을 통해 피드백을 보내주십시오. 전문가가 문제를 해결해 드립니다.
-- 링크, 내용, API 오류 등 제품 문서에 문제가 발생하는 경우 문서 페이지 오른쪽 [문서 피드백]을 클릭하거나 문제가 있는 내용을 선택하여 피드백을 보낼 수 있습니다.
-- 제품 관련 문제가 발생한 경우 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 도움을 요청할 수 있습니다.
+Tencent Cloud에 가속하고자 하는 도메인을 연결할 때 [CDN 콘솔](https://console.cloud.tencent.com/cdn)의 가속 유형에서 두 가지 제품을 선택할 수 있습니다.
 
+![](https://main.qcloudimg.com/raw/27887f0f21e2ad39b956d86754c99653.png)
+
+두 가지 가속 유형은 서로 다른 가속 정책과 과금 기준을 사용합니다. 자세한 내용은 [CDN 과금 설명](https://intl.cloud.tencent.com/document/product/228/2949) 및 [ECDN 과금 설명](https://intl.cloud.tencent.com/document/product/570/37505)을 참고하십시오.
+
+
+
+
+
+## CDN 연결 예시
+
+![](https://main.qcloudimg.com/raw/b3d3c9207414b55253cbf80b6ad1146b.png)
+
+### CDN 가속 설정 사용자 액세스 사례:
+
+선전에 있는 사용자는 cdntest.com을 통해 서버가 베이징에 있고 주소가 1.1.1.1인 원본 서버에 액세스합니다.
+
+1. 사용자가 액세스할 도메인 ‘cdntest.com’을 입력하면 로컬 DNS는 사용자가 설정한 CNAME 값 ‘cdntest.com.cdn.dnsv1.com’을 리졸브하고, 요청은 Tencent가 독자적으로 개발한 Tencent DNS 스케쥴링 시스템으로 전송되며, 사용자에게 가장 가까운 최상의 CDN 엣지 노드 IP 2.2.2.2를 할당합니다.
+2. 사용자는 IP가 2.2.2.2인 CDN 노드를 요청하며, CDN 노드가 해당 콘텐츠를 이미 캐싱한 경우 사용자가 요청한 콘텐츠를 반환하고 프로세스를 종료합니다.
+3. CDN 노드가 콘텐츠를 캐싱하지 않은 경우, 베이징 주소 1.1.1.1에 위치한 원본 서버에 요청합니다. 요청 콘텐츠는 사용자가 설정한 호스트 헤더에 의해 결정됩니다.
+4. CDN 엣지 노드는 원본 서버에서 리소스를 얻은 후 사용자 정의 캐시 정책에 따라 IP 주소가 2.2.2.2인 엣지 노드로 캐시되어 사용자에게 반환되고 요청을 종료합니다.
+5. 선전 근처의 다른 사용자가 ‘cdntest.com’에 다시 액세스하면 Tencent DNS 스케쥴링은 IP 2.2.2.2의 CDN 엣지 노드에 우선적으로 스케줄링합니다. 이 때 해당 엣지 노드는 이미 해당 콘텐츠를 캐싱한 상태이므로, 사용자는 원본 서버에 요청할 필요 없이 엣지 노드를 통해 콘텐츠를 가져올 수 있습니다.
+
+### 난독화 개념: 
+
+- 사용자는 ‘cdntest.com’을 통해 액세스하며 ‘cdntest.com’은 가속 도메인입니다.
+- 도메인 연결 가속 후, 시스템은 접미사가 `.cdn.dnsv1.com` 또는 `.dsa.dnsv1.com`인 CNAME 도메인을 자동 할당하므로 도메인 리졸브 콘솔에서 리졸브해야 합니다. 예시: ‘cdntest.com.cdn.dnsv1.com’/‘cdntest.com.dsa.dnsv1.com’.
+- CDN 노드가 사용자가 요청한 콘텐츠를 캐시하지 않는 경우 CDN 노드는 원본 서버 주소인 1.1.1.1에 콘텐츠를 요청합니다.
+- CDN 노드가 1.1.1.1을 요청할 때 실제 요청 주소는 ‘originhost.com’이며, ‘originhost.com’은 호스트 헤더입니다. 일반적으로 가속 도메인은 호스트 헤더 도메인과 일치하며 비즈니스 요구 사항에 따라 조정할 수 있습니다.
+
+| 설정 이름          | 설정 설명                                                     | 사용 위치          |
+| ----------------- | ------------------------------------------------------------ | ----------------- |
+| 가속 도메인          | CDN에 연결할 도메인. 사용자가 단말에서 실제로 액세스하는 도메인. | 도메인 추가 - 도메인 설정 |
+| 원본 서버 주소/원본 서버 도메인 | 서버의 원본 서버에 해당하는 IP 주소(도메인). CDN 노드에 요청된 콘텐츠가 포함되지 않은 경우, 해당 주소(도메인)에 액세스하여 요청한 콘텐츠를 얻습니다.<br /><br />**원본 서버:** 서비스를 제공하는 서버. 사용자 요청 처리 및 응답을 진행합니다. 사용자는 원본 서버 주소(도메인 또는 IP 주소)를 통해 액세스합니다. **원본 서버 도메인은 가속 도메인과 같을 수 없습니다**. | 도메인 추가-원본 서버 설정 |
+| 호스트 헤더          | CDN 노드가 Origin-pull 시 실제로 요청한 서버 콘텐츠.                          | 도메인 추가-원본 서버 설정 |
+| CNAME 도메인         | 가속 도메인 연결 후 시스템은 접미사가 `.cdn.dnsv1.com` 또는 `.dsa.dnsv1.com`인 CNAME 도메인을 자동 할당합니다.<br />가속 도메인을 CNAME 도메인에 매핑하면 Tencent Cloud는 CNAME이 지정한 IP 주소를 동적으로 수정하여 모든 가속 도메인을 업데이트합니다. 각 가속 도메인 지정 IP 주소를 수동으로 변경할 필요가 없습니다. | CNAME 설정         |
+
+
+
+## CDN을 사용하는 이유는 무엇입니까?
+
+#### 사용자가 원본 서버의 정적 콘텐츠에 직접 액세스하면 다음과 같은 문제가 발생할 수 있습니다.
+
+- 클라이언트가 서버에서 멀수록 액세스 속도가 느려집니다.
+- 고객 수가 많을수록 네트워크 대역폭 요금이 높아집니다.
+- 해외 사용자의 액세스 경험이 좋지 않습니다.
+
+![](https://main.qcloudimg.com/raw/158ee8b568de3bed61ab3127f03ff232.png)
+
+>?상기 데이터는 참고용이며 복잡한 네트워크 환경에서의 데이터 변동은 정상적인 현상입니다.
+
+#### CDN을 통해 네트워크 경험을 개선하는 방법:
+
+- CDN이 콘텐츠를 캐시한 후 사용자는 가까운 CDN 노드에 액세스하기만 하면 정적 콘텐츠를 가져올 수 있습니다.
+- 원본 서버의 대역폭 부하를 완화하고 네트워크 요금을 낮춥니다.
+- 세계 각지에 분산된 글로벌 노드로 국경 간 액세스 경험을 개선합니다.
+
+![](https://main.qcloudimg.com/raw/25f2f688bc1e32b64cb3bb82e9839aa1.png)
+
+>?상기 데이터는 참고용이며 복잡한 네트워크 환경에서의 데이터 변동은 정상적인 현상입니다.
+
+#### CDN 권장 시나리오:
+
+- 웹 사이트 정적 리소스 가속: **자주 사용하는 웹 사이트의 정적 콘텐츠**(포털 웹 사이트, 전자상거래 웹 사이트, UGC 커뮤니티 등)에 적합하며, 이미지, 비디오, 각종 html 파일 등에 캐시 가속을 통해 사용자가 원활한 액세스 경험을 누릴 수 있도록 합니다.
+- 파일 다운로드 가속: **각종 파일 다운로드**에 적합합니다. 파일을 엣지에 배포함으로써 다운로드 피크 시간대 대역폭 부하를 완화하고 안정적인 다운로드 경험을 제공합니다.
+- 멀티미디어 가속: **각종 오디오 및 비디오 주문형 웹사이트**에 적합합니다. Tencent의 다년간의 축적한 온라인 비디오 운영 경험을 기반으로, 오디오 및 비디오 동시 액세스량이 높은 시간대에 각 지역의 사용자가 오디오 및 비디오를 원활하게 수신할 수 있도록 보장합니다.
+
+## ECDN을 사용하여 네트워크를 가속화하는 이유는 무엇입니까?
+
+### 사용자가 원본 서버에서 동적 콘텐츠를 직접 요청할 때 직면할 수 있는 문제
+
+- 네트워크, 지역 및 대역폭의 영향으로 인해 리소스 요청에 긴 딜레이 시간 및 높은 패킷 손실률 등의 문제가 발생합니다.
+- 라우팅 프로세스 품질이 저조하고 링크가 혼잡합니다.
+- 공용 네트워크 환경이 복잡하여 사용자의 정상적인 서비스 경험에 영향을 미칩니다.
+
+![](https://main.qcloudimg.com/raw/9f1584bf29f278e8b4a3a1653635b193.png)
+
+>?상기 데이터는 참고용이며 복잡한 네트워크 환경에서의 데이터 변동은 정상적인 현상입니다.
+
+
+
+### ECDN은 네트워크 경험을 어떻게 개선합니까?
+
+- 사용자는 가장 가까운 ECDN 노드에 액세스하여 리소스 액세스, Origin-pull 작업 등을 진행합니다.
+- 전체 네트워크 상태를 실시간 모니터링하고 최적의 링크를 선택하여 혼잡 및 저품질 링크를 방지합니다.
+
+![](https://main.qcloudimg.com/raw/d4102c625559ebb81452bac91dcc50b5.png)
+
+>?상기 데이터는 참고용이며 복잡한 네트워크 환경에서의 데이터 변동은 정상적인 현상입니다.
+
+
+
+### ECDN 권장 시나리오
+
+- 동적/정적 가속: **동적 및 정적 리소스가 혼합**된 시나리오에 적합합니다. 동적 및 정적 혼합 시나리오를 위한 원스톱 솔루션이며, 동적 및 정적 리소스의 자동 식별, 동적 및 정적 콘텐츠의 원스톱 가속을 구현하기 위한 다양한 가속화 정책을 활용합니다. ECDN 링크를 사용하므로 **동적 및 정적 과금은 ECDN 과금 기준**을 따릅니다.
+- 동적 가속: 게임 배틀, 전자상거래, 금융 결제, 온라인 교육 등 **동적 리소스에 대한 요청이 많은** 시나리오에 적합합니다. 동적 경로 탐지, 지능형 라우팅 등 기술을 통해 Origin-pull에 대한 최적 링크를 선택하여 액세스 딜레이를 대폭 줄였습니다.
+
+  
+### ECDN은 어떻게 활성화하나요?
+
+1. 신규 사용자는 <a href="https://console.cloud.tencent.com/cdn">CDN 콘솔</a>에서 CDN 및 ECDN 서비스를 동시에 활성화할 수 있습니다. 미사용 서비스는 비용이 부과되지 않습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/228/32978">CDN 설정 시작하기</a>를 참고하십시오.
+2. CDN 서비스만 활성화하고 ECDN은 활성화하지 않은 경우, 아래 이미지와 같이 동적·정적 가속/동적 가속 도메인을 처음 추가할 때 시스템이 자동으로 ECDN 서비스를 활성화합니다.
+
+3. 기존 ECDN 콘솔에서 이미 ECDN 서비스를 활성화한 경우, 티켓 제출을 통해 백그라운드에서 계정 마이그레이션을 진행할 수 있습니다 마이그레이션 완료 후 CDN 콘솔에서 ECDN 서비스를 사용할 수 있습니다.
+
+>!
+>- 동적/정적 가속: 각종 웹 사이트의 메인 페이지 등 동적/정적 데이터가 통합된 비즈니스 시나리오에 적합합니다.
+>- 동적 가속: 계정 로그인, 주문 거래, API 호출, 실시간 쿼리 등의 시나리오에 적합합니다.
+>
+>ECDN 도메인 발생 요금은 [ECDN 과금 방식](https://intl.cloud.tencent.com/document/product/570/37505)에 따라 과금됩니다.
+
+ 
+
+
+​	
+​	
+​	
+
+## 어떤 상황에서 SCDN을 사용합니까?
+
+비즈니스 보안에 대한 추가적 니즈가 있는 경우, CDN에 보안 서비스, 즉 SCDN 서비스를 추가 구매할 수 있습니다. SCDN 관련 자세한 내용은 [Secure Content Delivery Network](https://intl.cloud.tencent.com/document/product/1032)를 참고하십시오.
+
+
+
+## 가속 리전을 선택하는 방법은 무엇입니까?
+
+| 고객 위치                 | 가속 효과                                             | 가속 리전 선택 |
+| :--------------------------- | ---------------------------------------------------- | ------------ |
+| 중국 내                     | 글로벌 사용자의 액세스는 모두 중국대륙 내 가속 노드로 스케쥴링되어 서비스를 진행합니다. | 중국 내     |
+| 중국 외(중국 홍콩·마카오·대만 포함) | 글로벌 사용자의 액세스는 중국대륙 외의 가속 노드로 스케쥴링되어 서비스를 진행합니다. | 중국 외     |
+| 중국 내 + 중국 외          | 글로벌 사용자 액세스는 가장 가까운 노드에 최적화 스케쥴링되어 서비스를 진행합니다.           | 글로벌         |
+
+Tencent Cloud CDN, ECDN 모두 세계 각지에 분포된 엣지 노드를 가지고 있습니다. 사용자의 소재 리전과 가장 가까운 노드를 할당합니다. 각 가속 리전의 요금 기준이 변경되었습니다. [과금 설명](https://intl.cloud.tencent.com/document/product/228/2949)을 참고하십시오.
+
+>?트래픽 패키지를 구매하셨다면 트래픽 패키지 가용존이 귀하의 가속 리전과 일치하는지 확인하십시오.
+
+
+
+## CDN/ECDN 설정 시작하기
+
+본 튜토리얼은 CDN/ECDN을 빠르게 설정하는 방법과 각 매개변수에 대한 설명을 제공합니다. [CDN 설정 시작하기](https://intl.cloud.tencent.com/document/product/228/32978)를 클릭하여 확인하십시오.
