@@ -7,9 +7,9 @@ Tencent Cloud TRTC는 Android 시스템에서 화면 공유를 지원하며, 현
 
 ## 지원 플랫폼
 
-| iOS | Android | Mac OS | Windows |Electron| WeChat 미니프로그램 | Chrome 브라우저|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
+| iOS | Android | Mac OS | Windows |Electron|  Chrome 브라우저|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |  &#10003;  |
 
 ## 화면 공유 실행
 Android의 화면 공유를 활성화해야 합니다. `TRTCCloud`의 [startScreenCapture()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) 인터페이스를 호출하면 됩니다. 하지만 안정적이고 선명한 공유 효과를 구현하려면 다음 세 가지 문제를 확인하십시오.

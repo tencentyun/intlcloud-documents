@@ -7,9 +7,9 @@
 
 ## 支持的平台
 
-| iOS | Android | Mac OS | Windows |Electron| 微信小程序 | Chrome 浏览器|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
+| iOS | Android | Mac OS | Windows |Electron|  Chrome 浏览器|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  | &#10003;  |
 
 ## 获取分享目标
 通过 [getScreenCaptureSourcesWithThumbnailSize](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a37df498cbc8d9b1135e3caafdcee906f) 可以枚举可共享的窗口列表，每一个可共享的目标都是一个`TRTCScreenCaptureSourceInfo` 对象。
@@ -23,12 +23,12 @@ Mac OS 里的桌面屏幕也是一个可共享目标，普通的 Mac 窗口的 t
 | type |TRTCScreenCaptureSourceType| 采集源类型：指定类型为窗口或屏幕|
 | sourceId | NSString| 采集源 ID：对于窗口，该字段指示窗口句柄；<br>对于屏幕，该字段指示屏幕 ID |
 | sourceName| NSString | 窗口名字，如果是屏幕则返回 Screen0 Screen1... |
-| extInfo| NSDictionary | 共享窗口的附加信息 | 
+| extInfo| NSDictionary | 共享窗口的附加信息 |
 | thumbnail| NSImage | 窗口缩略图 |
 | icon | NSImage | 窗口图标 |
 
-有了上面这些信息，您就可以实现一个简单的列表页面，将可以分享的目标罗列出来供用户选择，如下图：
-![](https://main.qcloudimg.com/raw/ae43c4ec148a0e25368fea0ea20063b7.jpg)
+有了上面这些信息，您就可以实现一个简单的列表页面，将可以分享的目标罗列出来供用户选择。
+
 
 ## 选择分享目标
 TRTC SDK 支持三种分享模式，您可以通过 [selectScreenCaptureTarget](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a01ead6fb3106ea266caa922f5901bf18) 来指定：
@@ -52,7 +52,7 @@ TRTC SDK 支持三种分享模式，您可以通过 [selectScreenCaptureTarget](
 
  - 选取分享目标之后，使用 [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97) 接口可以启动屏幕分享。
  - 两个函数 [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6f536bcc3df21b38885809d840698280) 和  [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 的区别在于 pause 会停止屏幕内容的采集，并以暂停那一刻的画面垫片，所以在远端看到一直都是最后一帧画面，直到 [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af257a8fb6969fe908ca68a039e6dba15)。
- 
+
 ```Objective-C
  /**
  *  7.6 【屏幕共享】启动屏幕分享
@@ -83,8 +83,8 @@ TRTC SDK 支持三种分享模式，您可以通过 [selectScreenCaptureTarget](
 ## 设定画面质量
 您可以通过 [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abc0f3cd5c320d0e65163bd07c3c0a735) 接口设定屏幕分享的画面质量，包括分辨率、码率和帧率，我们提供如下建议参考值：
 
-| 清晰度级别 | 分辨率 | 帧率 | 码率 | 
-|:-------------:|:---------:|:---------:| :---------: | 
+| 清晰度级别 | 分辨率 | 帧率 | 码率 |
+|:-------------:|:---------:|:---------:| :---------: |
 | 超高清（HD+） | 1920 × 1080 | 10 | 800kbps |
 | 高清（HD） | 1280 × 720 | 10 | 600kbps |
 | 标清（SD） | 960 × 720 | 10 | 400kbps |

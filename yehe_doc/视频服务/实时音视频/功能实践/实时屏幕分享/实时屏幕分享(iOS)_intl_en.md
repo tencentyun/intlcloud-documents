@@ -9,7 +9,7 @@ Based on Apple's ReplayKit scheme, cross-app sharing allows the sharing of conte
 ## Supported Platforms
 
 | iOS | Android | macOS | Windows | Electron| Chrome |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   &#10003;  |
 
 ## In-app Sharing

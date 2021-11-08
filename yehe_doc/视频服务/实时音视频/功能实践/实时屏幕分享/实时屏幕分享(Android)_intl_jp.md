@@ -7,9 +7,9 @@ Tencent CloudのTRTCは、Androidシステムでの画面共有をサポート�
 
 ## サポートするプラットフォーム
 
-| iOS | Android | Mac OS | Windows |Electron| WeChat Mini Program | Chromeブラウザ|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
+| iOS | Android | Mac OS | Windows |Electron| Chromeブラウザ|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |  &#10003;  |
 
 ## 画面共有を開始
 Androidデバイスでの画面共有は、`TRTCCloud`の[startScreenCapture()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58)インターフェースを呼び出すだけで開始することができます。ただし、明瞭で安定した共有効果を実現するには、次の3つの点に注意する必要があります。

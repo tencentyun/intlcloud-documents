@@ -8,7 +8,7 @@ TRTC supports screen sharing on Android. This means a user can share the screen 
 ## Supported Platforms
 
 | iOS | Android | macOS | Windows | Electron| Chrome |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |  &#10003;  |
 
 ## Starting Screen Sharing

@@ -7,9 +7,9 @@ TRTC에서 일반적으로 카메라 데이터가 지나가는 터널을 '메인
 
 ## 지원 플랫폼
 
-| iOS | Android | Mac OS | Windows |Electron| WeChat 미니프로그램 | Chrome 브라우저|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
+| iOS | Android | Mac OS | Windows |Electron|  Chrome 브라우저|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  | &#10003;  |
 
 ## 공유 타깃 획득
 [getScreenCaptureSourcesWithThumbnailSize](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a37df498cbc8d9b1135e3caafdcee906f) 를 통해 공유할 수 있는 창 리스트를 열거할 수 있으며, 모든 공유 가능한 타깃은 `TRTCScreenCaptureSourceInfo` 객체입니다.

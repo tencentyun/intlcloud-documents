@@ -7,9 +7,9 @@ TRTCでは、通常、カメラが動くチャネルを「ビッグストリー�
 
 ## サポートするプラットフォーム
 
-| iOS | Android | Mac OS | Windows |Electron| WeChat Mini Program | Chromeブラウザ|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
+| iOS | Android | Mac OS | Windows |Electron| Chromeブラウザ|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  | &#10003;  |
 
 ## 共有ターゲットの取得
 [getScreenCaptureSourcesWithThumbnailSize](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a37df498cbc8d9b1135e3caafdcee906f)を介して共有可能なウィンドウをリストアップでき、共有可能な各ターゲットはいずれも`TRTCScreenCaptureSourceInfo`オブジェクトです。

@@ -7,13 +7,13 @@
 
 ## 支持的平台
 
-| iOS | Android | Mac OS | Windows | Electron|微信小程序 | Chrome 浏览器|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003;  |  &#10003;  |   &#10003; |   &#10003; | &#10003;  | ×    |  &#10003; |
+| iOS | Android | Mac OS | Windows | Electron| Chrome 浏览器|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003;  |  &#10003;  |   &#10003; |   &#10003; | &#10003;  | &#10003; |
 
 ## 依赖的 API
 
-| API 功能 | C++ 版本 |  C# 版本 | Electron 版本 | 
+| API 功能 | C++ 版本 |  C# 版本 | Electron 版本 |
 |---------|---------|---------|---------|
 |选择分享目标| [selectScreenCaptureTarget](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a9d16af81b2ea2db7b91a8346add13393) | [selectScreenCaptureTarget](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__csharp.html#a2aabe079ed38fb5122be988434a81a92) | [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget) |
 |开始屏幕分享| [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a984f461eebe77819f40c4129fc5a71bb) | [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__csharp.html#adde6382876b0afab78bab89e8be8e254) | [startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) |
@@ -33,16 +33,16 @@ sourceInfoList 中每一个 sourceInfo 可以分享的目标，它由如下字�
 | type |TRTCScreenCaptureSourceType| 采集源类型，指定类型为窗口或屏幕|
 | sourceId | HWND| 采集源 ID<li>对于窗口，该字段指示窗口句柄</li><li>对于屏幕，该字段指示屏幕 ID</li> |
 | sourceName| string | 窗口名字，如果是屏幕则返回 Screen0 Screen1... |
-| thumbWidth| int32 | 窗口缩略图宽度 | 
+| thumbWidth| int32 | 窗口缩略图宽度 |
 | thumbHeight| int32 | 窗口缩略图高度 |
 | thumbBGRA| buffer | 窗口缩略图的二进制 buffer |
 | iconWidth | int32 | 窗口图标的宽度 |
 | iconHeight| int32 | 窗口图标的高度 |
 | iconBGRA | buffer | 窗口图标的二进制 buffer |
 
-根据上述信息，您可以实现一个简单的列表页面，将可以分享的目标罗列出来供用户选择，如下图：
+根据上述信息，您可以实现一个简单的列表页面，将可以分享的目标罗列出来供用户选择。
 
-![](https://main.qcloudimg.com/raw/e370bcac46cc9ab5eb75e34378664d97.jpg)
+
 
 ## 选择分享目标
 TRTC SDK 支持三种分享模式，您可以通过 `selectScreenCaptureTarget` 来指定：
@@ -67,7 +67,7 @@ TRTC SDK 支持三种分享模式，您可以通过 `selectScreenCaptureTarget` 
  - 选取分享目标后，使用 `startScreenCapture` 接口可以启动屏幕分享。
  - 分享过程中，您依然可以通过调用 `selectScreenCaptureTarget` 更换分享目标。
  - `pauseScreenCapture` 和  `stopScreenCapture` 的区别在于 pause 会停止屏幕内容的采集，并以暂停那一刻的画面垫片，所以在远端看到一直都是最后一帧画面，直到 resume。
- 
+
 ```C++
     /**
     * \brief 7.5 【屏幕共享】启动屏幕分享
@@ -94,8 +94,8 @@ TRTC SDK 支持三种分享模式，您可以通过 `selectScreenCaptureTarget` 
 ## 设定画面质量
 您可以通过 `setSubStreamEncoderParam` 接口设定屏幕分享的画面质量，包括分辨率、码率和帧率，我们提供如下建议参考值：
 
-| 清晰度级别 | 分辨率 | 帧率 | 码率 | 
-|:-------------:|:---------:|:---------:| :---------: | 
+| 清晰度级别 | 分辨率 | 帧率 | 码率 |
+|:-------------:|:---------:|:---------:| :---------: |
 | 超高清（HD+） | 1920 × 1080 | 10 | 800kbps |
 |  高清（HD） | 1280 × 720 | 10 | 600kbps |
 | 标清（SD） | 960 × 720 | 10 | 400kbps |

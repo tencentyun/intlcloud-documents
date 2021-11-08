@@ -6,9 +6,9 @@
 
 ## 支持的平台
 
-| iOS | Android | Mac OS | Windows |Electron| 微信小程序 | Chrome 浏览器|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
+| iOS | Android | Mac OS | Windows |Electron|  Chrome 浏览器|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  | &#10003;  |
 
 ## 应用内分享
 
@@ -16,9 +16,9 @@
 
 我们推荐的用于 iOS 屏幕分享的编码参数是：
 
-| 参数项 | 参数名称 | 常规推荐值 |  文字教学场景 | 
+| 参数项 | 参数名称 | 常规推荐值 |  文字教学场景 |
 |---------|---------|---------|-----|
-| 分辨率 | videoResolution | 1280 × 720 | 1920 × 1080 | 
+| 分辨率 | videoResolution | 1280 × 720 | 1920 × 1080 |
 | 帧率 | videoFps | 10 FPS | 8 FPS |
 | 最高码率 | videoBitrate| 1600 kbps | 2000 kbps |
 | 分辨率自适应 | enableAdjustRes | NO | NO |
@@ -172,8 +172,7 @@ iOS 系统上的跨应用屏幕分享，需要增加 Extension 录屏进程以�
 按照如下步骤，对接主 App 端的接收逻辑。也就是在用户触发屏幕分享之前，要让主 App 处于“等待”状态，以便随时接收来自 Broadcast Upload Extension 进程的录屏数据。
 1. 确保 TRTCCloud 已经关闭了摄像头采集，如果尚未关闭，请调用 [stopLocalPreview](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3) 关闭摄像头采集。
 2. 调用 [startScreenCaptureByReplaykit:appGroup:](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a78a8da8c2f235446d03cd2db26f97b60) 方法，并传入 [步骤1](#createGroup) 中设置的 AppGroup，让 SDK 进入“等待”状态。
-3. 等待用户触发屏幕分享。如果不实现 [步骤4](#launch) 中的“触发按钮”，屏幕分享就需要用户在 iOS 系统的控制中心，通过长按录屏按钮来触发，这一操作步骤如下图所示：
-![](https://main.qcloudimg.com/raw/4082c8bcc7f41328a17f7ede78577bd9.png)
+3. 等待用户触发屏幕分享。如果不实现 [步骤4](#launch) 中的“触发按钮”，屏幕分享就需要用户在 iOS 系统的控制中心，通过长按录屏按钮来触发。
 4. 通过调用 [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 接口可以随时中止屏幕分享。
 <dx-codeblock>
 ::: iOS object-c
@@ -202,8 +201,7 @@ iOS 系统上的跨应用屏幕分享，需要增加 Extension 录屏进程以�
 
 [](id:launch)
 #### 步骤4：增加屏幕分享的触发按钮（可选）
-截止到 [步骤3](#receive) ，我们的屏幕分享还必须要用户从控制中心中长按录屏按钮来手动启动。您可通过下述方法实现类似腾讯会议的单击按钮即可触发的效果：
-![](https://main.qcloudimg.com/raw/4a759043c613a558400cce8b539fd7d9.png)
+截止到 [步骤3](#receive) ，我们的屏幕分享还必须要用户从控制中心中长按录屏按钮来手动启动。您可通过下述方法实现类似腾讯会议的单击按钮即可触发的效果。
 
 1. 在 [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC/Basic/ScreenShare) 中寻找 `TRTCBroadcastExtensionLauncher` 这个类，并将其加入到您的工程中。
 2. 在您的界面上放置一个按钮，并在按钮的响应函数中调用 `TRTCBroadcastExtensionLauncher` 中的 `launch` 函数，就可以唤起屏幕分享功能了。

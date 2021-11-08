@@ -8,7 +8,7 @@ In TRTC, the channel via which camera images are published is the primary stream
 ## Supported Platforms
 
 | iOS | Android | macOS | Windows | Electron| Chrome |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |  &#10003;  |  &#10003;  |   &#10003; |   &#10003; | &#10003;  | &#10003; |
 
 ## APIs
