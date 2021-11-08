@@ -6,7 +6,7 @@
 
 如果您已在腾讯云注册，可忽略此步骤。
 
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/378/17985" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
 
 ## 步骤2：在线充值
 
@@ -38,7 +38,7 @@
  - **创建方式**：选择 “模版函数”。
  - **模板搜索**：输入 helloworld 后按 “Enter” 进行搜索，选择 “helloworld” 模版。云函数支持多重运行环境，此函数以使用 Python2.7 为例。
 4. 函数名称默认填充，可根据需要自行修改。函数配置保持默认，并单击**完成**。如下图所示：
-![](https://main.qcloudimg.com/raw/472e83c5cd19b3d8a776d27363c8d6cd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1f97c60e8cffc2b089d41c187d7b4609.png)
 函数创建完成后，自动进入创建成功函数的“函数配置”页面，可查看该云函数的函数配置信息。
 5. 选择**函数代码**，查看或在线编辑函数代码。如下图所示：
 ![](https://main.qcloudimg.com/raw/80b6fbaccc151814b4fdfd9012929b3a.png)
@@ -78,8 +78,9 @@
 :::
 ::: 触发器配置测试
 在“触发管理”页中，查看触发器详情。
+
 1. 触发器创建成功后，会在该函数的“触发管理”页面生成访问路径。如下图所示：
-![](https://main.qcloudimg.com/raw/9643ba1735426af11150e6260d84aa7e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1f97c60e8cffc2b089d41c187d7b4609.png)
 2. 在浏览器里打开该访问路径，显示 “hello from scf”，则说明函数部署成功。
 :::
 </dx-tabs>
@@ -103,12 +104,12 @@
 
 
 
-![](https://main.qcloudimg.com/raw/11d4ee39e4d824112fa97fe2905e4b1a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/820ae3b24fc7a0ca30de878ea201599a.png)
 更多关于监控信息请参见 [监控指标说明](https://intl.cloud.tencent.com/document/product/583/32739)。
 :::
 ::: 配置告警
 在已创建函数的详情页面，单击**前往新增告警**为云函数配置告警策略，对函数运行状态进行监控。如下图所示：
-![](https://main.qcloudimg.com/raw/3896565465fcbfc86fc7b5bce9dc9545.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/34d0c93904c98c189cead318e9a7a090.png)
 更多关于配置告警请参见 [告警配置说明](https://intl.cloud.tencent.com/document/product/583/32738)。
 
 :::
