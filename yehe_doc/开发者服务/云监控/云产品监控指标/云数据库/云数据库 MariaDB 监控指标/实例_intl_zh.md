@@ -11,7 +11,7 @@ Namespace=QCE/MARIADB
 <th width="20%">指标含义</th>
 <th width="8%">单位</th>
 <th width="20%">维度</th>
-<th width="12%">统计周期</th>
+<th width="12%">统计粒度</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -248,7 +248,7 @@ Namespace=QCE/MARIADB
 </tr>
 <tr>
 <td>SQLTotal</td>
-<td>SQL总数</td>
+<td>SQL 总数</td>
 <td>实例级别监控指标，表示您有多少条 SQL 发往数据库实例</td>
 <td>条</td>
 <td>InstanceId</td>
@@ -256,7 +256,7 @@ Namespace=QCE/MARIADB
 </tr>
 <tr>
 <td>ErrorSQLTotal</td>
-<td>SQL错误数</td>
+<td>SQL 错误数</td>
 <td>实例级别监控指标，表示有多少条 SQL 执行错误</td>
 <td>条</td>
 <td>InstanceId</td>
@@ -310,10 +310,26 @@ Namespace=QCE/MARIADB
 <td>InstanceId</td>
 <td>60s、300s、 3600s、86400s</td>
 </tr>
+<tr>
+<td>MaxSlaveCpuUsageRate</td>
+<td>最大备节点 CPU 利用率</td>
+<td>实例级别监控指标，取值为所有备节点 CPU 利用率的最大值</td>
+<td>%</td>
+<td>InstanceId</td>
+<td>60s、300s、 3600s、86400s</td>
+</tr>
+<td>ThreadsRunningCount</td>
+<td>汇总运行线程数</td>
+<td>
+实例级别监控指标，取值为累加实例所有节点 Threads_running 数值。Threads_running 为执行 show status like 'Threads_running' 得到的结果</td>
+<td>个</td>
+<td>InstanceId</td>
+<td>60s、300s、 3600s、86400s</td>
+</tr>
 </tbody>
 </table>
 
-> ?每个指标的统计粒度（Period）可取值不一定相同，可通过DescribeBaseMetrics接口获取每个指标支持的统计粒度
+> ?每个指标的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度
 
 ## 各维度对应参数总览
 

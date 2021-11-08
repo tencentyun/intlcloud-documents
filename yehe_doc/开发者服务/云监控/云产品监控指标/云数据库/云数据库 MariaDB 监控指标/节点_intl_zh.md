@@ -11,7 +11,7 @@ Namespace=QCE/MARIADB
 <th width="20%">指标含义</th>
 <th width="8%">单位</th>
 <th width="20%">维度</th>
-<th width="12%">统计周期</th>
+<th width="12%">统计粒度</th>
 </tr>
 <tr>
 <td>ActiveThread<br>CountNode</td>
@@ -245,10 +245,18 @@ Namespace=QCE/MARIADB
 <td>InstanceId,<br>NodeId</td>
 <td>60s</td>
 </tr>
+<tr>
+<td>ThreadsRunningCountNode</td>
+<td>运行线程数</td>
+<td>DB 节点 Threads_running 数值</td>
+<td>个</td>
+<td>InstanceId,<br>NodeId</td>
+<td>60s、300s、 3600s、86400s</td>
+</tr>
 </table>
 </escape>
 
-> ?每个指标的统计粒度（Period）可取值不一定相同，可通过DescribeBaseMetrics接口获取每个指标支持的统计粒度
+> ?每个指标的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度
 
 ## 各维度对应参数总览
 <table>
