@@ -1,13 +1,13 @@
-
 如果您按照 [最佳实践 - 直播推流](https://intl.cloud.tencent.com/document/product/267/31558) 中的范例来操作，发现仍推流不成功。可以依照本文档中罗列的视频推流过程中的常见问题，按照下列思路依次排查。
 
 [](id:check1)
 ### 1. 域名是否 CNAME 到了腾讯云地址？
-推流域名只有 CNAME 到腾讯云地址才能推流成功，可以在【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】里面查看已经创建的推流域名是否有 CNAME。其中有个 CNAME 标题栏，可以根据此项中的状态来查看推流域名是否有 CNAME。已经 CNAME 的状态如下：
-![](https://main.qcloudimg.com/raw/e922a7222929e256b76ca92d91afc7c0.png)
+推流域名只有 CNAME 到腾讯云地址才能推流成功，可以在 **[域名管理](https://console.cloud.tencent.com/live/domainmanage)** 里面查看已经创建的推流域名是否有 CNAME。其中有个 CNAME 标题栏，可以根据此项中的状态来查看推流域名是否有 CNAME。已经 CNAME 的状态如下：
+
 如果还没 CNAME，可以根据 [CNAME 配置](https://intl.cloud.tencent.com/document/product/267/31057) 来配置。 
 	 
 [](id:check2)
+
 ### 2. 网络是否正常？
 RTMP 推流所使用的默认端口号是**1935** ，如果您测试时所在网络的防火墙不允许1935端口通行，就会遇到连不上与服务器的问题。此时您可以通过切换网络（例如4G ）来排查是不是这个原因导致的问题。
 
@@ -18,13 +18,16 @@ txTime 建议设置为当前时间往后推12或者24小时为宜，也就是要
 
 [](id:check4)
 ### 4. txSecret 是否正确？
-腾讯云目前要求推流地址都要加防盗链以确保安全，防盗链计算错误或者已经过了有效期的推流 URL，都会被腾讯云**踢掉**，这种情况下直播 SDK 会抛出 **PUSH_WARNING_SERVER_DISCONNECT** 事件， [直播 SDK DEMO](https://intl.cloud.tencent.com/document/product/1071/38147) 此时的表现如下：
-![](https://main.qcloudimg.com/raw/2d4127554dbcf6bdd53d34ade07ea82d.png)
+腾讯云目前要求推流地址都要加防盗链以确保安全，防盗链计算错误或者已经过了有效期的推流 URL，都会被腾讯云**踢掉**，这种情况下直播 SDK 会抛出 **PUSH_WARNING_SERVER_DISCONNECT** 事件。
 阅读 [最佳实践 - 直播推流](https://intl.cloud.tencent.com/document/product/267/31558) 了解如何获取可靠的推流 URL。
 
 [](id:check5)
 ### 5. 推流 URL 是否被占用？
-一个推流 URL 同时只能有一个推流端，第二个尝试去推流的 Client 会被腾讯云拒绝掉。此种情况可以登录直播控制台，在【[流管理](https://console.cloud.tencent.com/live/streammanage)】的【在线流】中查看此条流是否已经在推，也可以在【禁推流】中查看该条流是否被禁推。
+一个推流 URL 同时只能有一个推流端，第二个尝试去推流的 Client 会被腾讯云拒绝掉。此种情况可以登录直播控制台，在 **[流管理](https://console.cloud.tencent.com/live/streammanage)** 的 **在线流** 中查看此条流是否已经在推，也可以在 **禁推流** 中查看该条流是否被禁推。
 
- 
- 
+[](id:check6)
+### 6. 使用 V2TXLivePusher 调用 startPush 推流返回-2错误？
+目前有以下几个场景会报错-2：
+- 使用 LiteAVSDK_Smart 版本 V2TXLivePusher 推流 `trtc://` 协议，因为 smart 版本不支持 TRTC 协议，需要专业版和企业版才支持。
+- 调用 startPush 推流传的推流地址缺少必要参数，请参考 [推拉流 URL](https://intl.cloud.tencent.com/document/product/1071/39359) 拼接正确的流地址。
+- 播放器初始化模式选择的是 V2TXLiveMode_RTC，但是传的 URL 是 `rtmp://` 协议地址。

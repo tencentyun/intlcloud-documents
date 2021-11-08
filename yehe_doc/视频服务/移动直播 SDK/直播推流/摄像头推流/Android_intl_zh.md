@@ -18,6 +18,7 @@
 ## 功能对接
 
 [](id:step1)
+
 ### 1. 下载 SDK 开发包
 
 [下载](https://intl.cloud.tencent.com/document/product/1071/38150) SDK 开发包，并按照 [SDK 集成指引](https://intl.cloud.tencent.com/document/product/1071/38156) 将 SDK 嵌入您的 App 工程中。
@@ -88,8 +89,7 @@ mLivePusher.stopPush();
 >! 如果已经启动了摄像头预览，请在结束推流时将其关闭。 
 
 - **如何获取可用的推流 URL？** 
-开通直播服务后，可以使用 [【直播控制台】>【直播工具箱】>【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成推流地址，详细信息请参见 [推拉流 URL](https://intl.cloud.tencent.com/document/product/1071/39359)。 
-![](https://main.qcloudimg.com/raw/7110d39cdb464b789bd68301f4de7ebe.png)   
+开通直播服务后，可以使用 [【直播控制台】>【直播工具箱】>【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成推流地址，详细信息请参见 [推拉流 URL](https://intl.cloud.tencent.com/document/product/1071/39359)。    
 - **返回 V2TXLIVE_ERROR_INVALID_LICENSE 的原因？**    
 如果 `startPush` 接口返回 `V2TXLIVE_ERROR_INVALID_LICENSE`，则代表您的 License 校验失败了，请检查 [第2步：给 SDK 配置 License 授权](#step2) 中的工作是否有问题。   
 
@@ -114,7 +114,7 @@ int ret = mLivePusher.startPush(rtmpURL.trim());
 
 [](id:step8)
 ### 8. 美颜美白和红润特效    
-![](https://main.qcloudimg.com/raw/b0ddfe1f97d73c9fc8e42caf994211b7.jpg)
+
 调用 V2TXLivePusher 中的 [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) 接口可以获取 TXBeautyManager 实例进一步设置美颜效果。
 
 #### 美颜风格
@@ -151,7 +151,7 @@ SDK 内置三种不同的磨皮算法，每种磨皮算法即对应一种美颜�
 
 [](id:step9)
 ### 9. 色彩滤镜效果   
-![](https://main.qcloudimg.com/raw/eb06687c79243fa3a6befb30ff62e09e.jpg)
+
 - 调用 V2TXLivePusher 中的 [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) 接口可以获取 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html) 实例进一步设置美色彩滤镜效果。
 - 调用 TXBeautyManager 的 `setFilter` 接口可以设置色彩滤镜效果。所谓色彩滤镜，是指一种将整个画面色调进行区域性调整的技术，例如将画面中的淡黄色区域淡化实现肤色亮白的效果，或者将整个画面的色彩调暖让视频的效果更加清新和温和。   
 - 调用 TXBeautyManager 的 `setFilterStrength` 接口可以设定滤镜的浓度，设置的浓度越高，滤镜效果也就越明显。 
@@ -169,7 +169,7 @@ mLivePusher.getBeautyManager().setFilterStrength(0.5f);
 ### 10. 设备管理
 
 V2TXLivePusher 提供了一组 API 用户控制设备的行为。您通过 `getDeviceManager` 获取 TXDeviceManager 实例进一步进行设备管理，详细用法请参见 [TXDeviceManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__android.html)。
-![](https://main.qcloudimg.com/raw/c4d8e442558891c66f315d4c0799fce3.jpg)
+
 
 [](id:step11)
 ### 11. 观众端的镜像效果    
@@ -180,17 +180,19 @@ V2TXLivePusher 提供了一组 API 用户控制设备的行为。您通过 `getD
 [](id:step12)
 ### 12. 横屏推流    
 
-大多数情况下，主播习惯以“竖屏持握”手机进行直播拍摄，观众端看到的也是竖屏分辨率的画面（例如 540 × 960 这样的分辨率）；有时主播也会“横屏持握”手机，这时观众端期望能看到是横屏分辨率的画面（例如 960 × 540 这样的分辨率），如下图所示： 
-![](https://main.qcloudimg.com/raw/b1e58275542aac52fb861745d95246cc.png)    
+大多数情况下，主播习惯以“竖屏持握”手机进行直播拍摄，观众端看到的也是竖屏分辨率的画面（例如 540 × 960 这样的分辨率）；有时主播也会“横屏持握”手机，这时观众端期望能看到是横屏分辨率的画面（例如 960 × 540 这样的分辨率）。
+    
 V2TXLivePusher 默认推出的是竖屏分辨率的视频画面，如果希望推出横屏分辨率的画面，可以修改`setVideoQuality`接口的参数来设定观众端的画面横竖屏模式。
+
 ```java 
 mLivePusher.setVideoQuality(mVideoResolution, isLandscape ? V2TXLiveVideoResolutionModeLandscape : V2TXLiveVideoResolutionModePortrait);   
 ```
 
+[](id:step13)
 ### 13. 音效设置
 
 调用 V2TXLivePusher 中的 `getAudioEffectManager` 获取 TXAudioEffectManager 实例可以实现背景混音、耳返、混响等音效功能。背景混音是指主播在直播时可以选取一首歌曲伴唱，歌曲会在主播的手机端播放出来，同时也会被混合到音视频流中被观众端听到，所以被称为“混音”。
-![](https://main.qcloudimg.com/raw/269e653bc68c73c69feeb6418c513c25.jpg)
+
 - 调用 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html) 中的 `enableVoiceEarMonitor` 选项可以开启耳返功能，“耳返”指的是当主播带上耳机来唱歌时，耳机中要能实时反馈主播的声音。
 - 调用 TXAudioEffectManager 中的 `setVoiceReverbType` 接口可以设置混响效果，例如 KTV、会堂、磁性、金属等，这些效果也会作用到观众端。
 - 调用 TXAudioEffectManager 中的 `setVoiceChangerType` 接口可以设置变调效果，例如“萝莉音”，“大叔音”等，用来增加直播和观众互动的趣味性，这些效果也会作用到观众端。
@@ -198,6 +200,7 @@ mLivePusher.setVideoQuality(mVideoResolution, isLandscape ? V2TXLiveVideoResolut
 ![](https://main.qcloudimg.com/raw/f8282bd6e1ba20e1e902bad52fa3131f.png)
 >? 详细用法请参见 [TXAudioEffectManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__android.html)。
 
+[](id:step14)
 ### 14. 设置 Logo 水印  
 
 设置 V2TXLivePusher 中的 [setWatermark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a4f56a5a937d87e5b1ae6f77c5bab2335) 可以让 SDK 在推出的视频流中增加一个水印，水印位置位是由传入参数 `(x, y, scale)` 所决定。
@@ -210,6 +213,7 @@ mLivePusher.setVideoQuality(mVideoResolution, isLandscape ? V2TXLiveVideoResolut
 mLivePusher.setWatermark(BitmapFactory.decodeResource(getResources(),R.drawable.watermark), 0.03f, 0.015f, 1f);
 ```
 
+[](id:step15)
 ### 15. 主播端弱网提醒 
 如果主播在推流时遇到网络很差的情况，需要有一个友好的提示，提示主播应当检查网络。    
 通过 V2TXLivePusherObserver 里的 [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#abd54414cbd5d52c096f9cc090cfe1fec) 可以捕获 **V2TXLIVE_WARNING_NETWORK_BUSY** 事件，它代表当前主播的网络已经非常糟糕，出现此事件即代表观众端会出现卡顿。此时可以在 UI 上弹出一个“弱网提示”来强提醒主播检查网络。
@@ -223,6 +227,28 @@ public void onWarning(int code, String msg, Bundle extraInfo) {
 } 
 :::
 </dx-codeblock>
+
+[](id:step16)
+### 16. 发送 SEI 消息 
+调用 V2TXLivePusher 中的 [sendSeiMessage](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a5ba3762815f11bf5005f151e06ae0b38) 接口可以发送 SEI 消息。所谓 SEI，是视频编码数据中规定的一种附加增强信息，平时一般不被使用，但我们可以在其中加入一些自定义消息，这些消息会被直播 CDN 转发到观众端。使用场景有：
+- 答题直播：推流端将题目下发到观众端，可以做到“音-画-题”完美同步。
+- 秀场直播：推流端将歌词下发到观众端，可以在播放端实时绘制出歌词特效，因而不受视频编码的降质影响。
+- 在线教育：推流端将激光笔和涂鸦操作下发到观众端，可以在播放端实时地划圈划线。
+
+由于自定义消息是直接被塞入视频数据中的，所以不能太大（几个字节比较合适），一般常用于塞入自定义的时间戳等信息。
+```java
+//Android 示例代码
+int payloadType = 5;
+String msg = "test";
+mTXLivePusher.sendSeiMessage(payloadType, msg.getBytes("UTF-8"));
+```
+常规开源播放器或者网页播放器是不能解析 SEI 消息的，必须使用 LiteAVSDK 中自带的 V2TXLivePlayer 才能解析这些消息：
+1. 设置：
+```java
+int payloadType = 5;
+mTXLivePlayer.enableReceiveSeiMessage(true, payloadType)
+```
+2. 当 V2TXLivePlayer 所播放的视频流中有 SEI 消息时，会通过 V2TXLivePlayerObserver 中的 onReceiveSeiMessage 回调来接收该消息。
 
 ## 事件处理
 
