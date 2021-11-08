@@ -367,7 +367,7 @@ func (c *Client) DescribeInstances(request *DescribeInstancesRequest) (response 
 
 >?您必须明确知道您调用的接口所需参数，否则可能会调用失败。
 
-目前仅支持使用 POST 方式，且签名方法必须使用 签名方法 v3。详细使用请参阅示例：[使用 Common Request 进行调用](https://github.com/TencentCloud/tencentcloud-sdk-go/blob/master/examples/common/common_request.go)。
+目前仅支持使用 POST 方式，且签名方法必须使用 签名方法 v3。详细使用请参阅示例：[使用 Common Request 进行调用](https://github.com/TencentCloud/tencentcloud-sdk-go/blob/master/examples/common/common_client.go)。
 
 ## 请求重试
 ### 网络错误重试
