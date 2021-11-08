@@ -32,7 +32,6 @@ You need to save Tencent Cloud's API keys on the TPNS platform first, so that TP
 4. Go to the [TPNS console](https://console.cloud.tencent.com/tpns).
 5. On the left sidebar, click **Third-Party Service Authorization** to go to the third-party service authorization management page.
 6. Click **Authorize Now**.
-![](https://main.qcloudimg.com/raw/6089b5e64c2dfda9dc25b284a6caf14c.png)
 7. In the pop-up dialog box, enter the `SecretId` and `SecretKey` and click **Confirm** to save.
 
 ### Step 3. Apply for SMS signatures and body templates
