@@ -401,6 +401,40 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 | getCustomContent() | String | None     | Customer `key-value` of message                                 |
 | getTitle()         | String | None | Message title (the description of the in-app message delivered from the console is not a title) |
 
+
+## In-App Message Display
+Starting with SDK v1.2.7.0, you can set whether to allow the display of in-app message windows. For example, you can enable the display of in-app message windows in one Activity page, while disable it in another Activity page.
+
+>! In-app messages are displayed based on the Android WebView framework. By default, the in-app message display WebView provided by the TPNS SDK runs in the main process of an app. **Since Android 9, apps can no longer share a single WebView data directory among multiple processes. If your app must use WebView instances in multiple processes, you must first use the `WebView.setDataDirectorySuffix()` method to specify a unique data directory suffix for each process; otherwise, app crash may occur**. The sample configuration code is as follows:
+>```java
+>if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
+>// Starting with Android 9, you need to set different WebView data directories for the WebView instances of apps’ non-main processes.
+>String processName = getProcessName()
+>if (processName != null 
+>      && !processName.equals(context.getPackageName())) {
+>  WebView.setDataDirectorySuffix(processName)
+>}
+>}
+>```
+```
+> Reference document: [Behavior changes: apps targeting API level 28+](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs) (Google Developers).
+
+### Setting whether to allow the display of in-app message windows
+​```java
+XGPushConfig.enableShowInMsg(Context context, boolean flag);
+```
+
+#### Parameter description
+
+- `context`: `Context` object
+`flag`: whether to allow in-app message display. `true`: allow; `false`: not allow; default: `false`.
+
+#### Sample code
+```java
+XGPushConfig.enableShowInMsg(context, true);
+```
+
+
 ## Local Notification
 
 ### Adding local notifications
@@ -655,7 +689,7 @@ XGPushManager.clearAccounts(getApplicationContext());
 
 ```
 
-## Tag Management
+## Bucket Tag
 
 The following are tag management API methods. For more information on the timing and principle of calls, please see [Tag flow](https://intl.cloud.tencent.com/document/product/1024/32609#tag-flow).
 
@@ -838,7 +872,7 @@ Get the tags bound to the device.
 
 #### Parameter description
 
-- `context`: `Context` object.
+- `context`: `Context` object
 - `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
 - `offset`: the starting point
 - `limit`: number of tags to get;  maximum value: `100`
@@ -1238,8 +1272,7 @@ XGPushConfig.setAccessKey(context, accessKey);
 - false: failure.
 
 >? The access key set through this API will also be stored in the `AndroidManifest.xml` file.
-
-
+>
 
 
 ### Reporting logs
