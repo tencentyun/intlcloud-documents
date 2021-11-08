@@ -1,4 +1,3 @@
-![](https://main.qcloudimg.com/raw/eb904bfddef689cd5d4382e69b728a12.png)
 
 ## 準備作業
 
@@ -100,8 +99,8 @@ Tencent Cloud CDNは、一般的に使用されるサービス設定を提供し
 ## 設定の完了
 
 ドメイン名追加操作を完了した後、ドメイン名の設定をネットワーク全体のノードに配信するには約5～10分かかります。しばらくお待ちください。
-<img src="hhttps://main.qcloudimg.com/raw/d5bcb556ac1b89946ec15642d3249676.png" width="80%">
+<img src="https://main.qcloudimg.com/raw/d5bcb556ac1b89946ec15642d3249676.png" width="80%">
 
 ## 後続作業
 
->アクセスが完了した後、Tencent Cloud CDNは対応するCNAMEアドレスをアサインします。CDNサービスを有効にするには、まずCNAMEを設定する必要があります。詳細については、[CNAMEの設定](https://intl.cloud.tencent.com/document/product/228/3121)をご参照ください。
+アクセスが完了した後、Tencent Cloud CDNは対応するCNAMEアドレスをアサインします。CDNサービスを有効にするには、まずCNAMEを設定する必要があります。詳細については、[CNAMEの設定](https://intl.cloud.tencent.com/document/product/228/3121)をご参照ください。
