@@ -22,7 +22,7 @@ TKE Resilience Chart mainly consists of a virtual node manager, scheduler, and t
 | admission-controller | Toleration controller     | It adds a toleration to a Pod in `pending` status to make it able to be scheduled to a virtual node.       |
 
 ### Main features
-1. If you want to connect an EKS Pod to a Pod in your local cluster, the local cluster should be in an underlay network model (where a CNI plugin based on BGP routing instead of SDN encapsulation, such as Calico, is used), and you need to add the local Pod's CIDR block routing information in the VPC. For more information, please see [Setting Communication Between Cluster Container and IDC](https://intl.cloud.tencent.com/document/product/457/30647).
+1. If you want to connect an EKS Pod to a Pod in your local cluster, the local cluster should be in an underlay network model (where a CNI plugin based on BGP routing instead of SDN encapsulation, such as Calico, is used), and you need to add the local Pod's CIDR block routing information in the VPC. For more information, please see Setting Communication Between Cluster Container and IDC.
 2. The workload resilience feature switch `AUTO_SCALE_EKS=true|false` is available in global and local dimensions respectively to control whether workloads in `pending` status should be elastically scheduled to EKS as detailed below:
  - Global switch: `AUTO_SCALE_EKS` in `kubectl get cm -n kube-system eks-config` is enabled by default.
  - Local switch: `spec.template.metadata.annotations ['AUTO_SCALE_EKS']`
