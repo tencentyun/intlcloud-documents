@@ -1,6 +1,6 @@
 ## 操作场景
 本文介绍如何在弹性集群中选择多种工作负载形式来运行您的服务。
-> 
+>! 
 > - 弹性集群没有 Node，工作负载在创建时会根据参数设置为每个 Pod 分配实际的资源。详情请参见 [指定资源规格](https://intl.cloud.tencent.com/document/product/457/36161)。
 > - 如果您需要通过 yaml 来创建、管理您的 Kubernetes 对象，可通过指定 annotation 完成。详情请参见 [Annotation 说明](https://intl.cloud.tencent.com/document/product/457/36162)。
 
@@ -35,10 +35,10 @@ Cron 格式说明如下：
 ```
 
 ## 操作步骤
-1. 登录容器服务控制台，选择左侧导航栏中的【[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)】。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)**。
 2. 在 “弹性集群” 列表页面，单击需创建工作负载的集群 ID，进入集群 “Deployment” 页面。如下图所示：
-![](https://main.qcloudimg.com/raw/ad1f42c40dd0d7cc71f8980e31d851ed.png)
-3. 单击【新建】，进入 “新建Workload” 页面。
+![](https://qcloudimg.tencent-cloud.cn/raw/dd712bafab8210a8904b4f57c1302d2a.png)
+3. 单击**新建**，进入 “新建Workload” 页面。
 4. 填写工作负载名，并选择要创建的工作负载类型。
   - 各类型工作负载的具体参数设置请参考：
      - [Deployment 管理](https://intl.cloud.tencent.com/document/product/457/30662)
