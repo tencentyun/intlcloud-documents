@@ -4,6 +4,8 @@
 
 如果你已与我们的销售签约，则实际计费信息以合同为准。
 
+>? 2021年10月27日起首次在 TRTC 控制台创建[应用](https://intl.cloud.tencent.com/zh/document/product/647/37714)的账号，开始按照本文档中的“集合分辨率”方式计量计费。
+
 ## 费用组成
 
 每月结束时，TRTC 会统计你 [腾讯云账号](https://console.intl.cloud.tencent.com/trtc)下所有项目当月产生的音频和视频时长用量（单位为分钟）。需注意，视频时长用量按照集合分辨率分为三个档位，分档定价。扣除 TRTC 为每个开发者账号提供的[每月一万分钟免费分钟数](https://intl.cloud.tencent.com/document/product/647/42735)后，TRTC 将剩余的音频时长用量和视频时长用量乘以对应的单价，最后相加得出本月总费用。
