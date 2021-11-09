@@ -30,7 +30,7 @@ GooseFS를 Ranger 인증 플랫폼에 통합할 수 있도록 GooseFS Ranger Plu
 
 #### Ranger Admin 측에 GooseFS Ranger Plugin을 배포하고 해당 서비스를 등록합니다.
 
->? [여기](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/ranger-goosefs-plugin-1.0.0.jar)를 클릭하여 GooseFS Ranger Plugin을 다운로드하십시오.
+>? 여기를 클릭하여 GooseFS Ranger Plugin을 다운로드하십시오.
 >
 
 배포 단계는 다음과 같습니다.
