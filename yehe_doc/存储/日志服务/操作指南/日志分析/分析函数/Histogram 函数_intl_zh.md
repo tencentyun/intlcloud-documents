@@ -1,4 +1,4 @@
->? 当前日志服务已支持大部分地域使用 CLS 函数。北京、上海、广州、南京地域如有需要，请联系 [在线客服](https://intl.cloud.tencent.com/contact-sales)。
+>? Histogram 函数与分析函数中的部分函数不能同时使用，例如 IP 地理函数、估算函数等。若报错信息提示 “Unknown function[函数名称]”，可使用 [时间补全函数](https://intl.cloud.tencent.com/document/product/614/41989) 替代该报错函数。
 >
 
 时间函数支持对日志时间进行格式转换，分组聚合等处理，通常应用于根据日志时间做统计分析的场景。
@@ -42,9 +42,9 @@ histogram(__TIMESTAMP__, interval)
 >- interval 指时间间隔，支持单位为 SECOND（秒）、MINUTE（分）、HOUR（小时）、DAY（天）、MONTH（月）、YEAR（年）。例如时间间隔5分钟，即 INTERVAL 5 MINUTE。
 >- 兼容支持以下语法，其中 long 为毫秒时间戳，即 \_\_TIMESTAMP\_\_ 字段。
 >```
-histogram(long, interval)
+>histogram(long, interval)
 >```
-
+```
 
 
 ### 示例
@@ -52,4 +52,25 @@ histogram(long, interval)
 统计每5分钟访问次数 PV 值。
 ```
 * | select histogram(cast(__TIMESTAMP__ as timestamp),INTERVAL 5 MINUTE) AS dt, count(*) as PV group by dt order by dt limit 1000
+```
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
