@@ -2,7 +2,7 @@
 
 
 ## 注册与登录
-- 如果您还没完成腾讯云账户的注册，请先 [注册](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F%3FfromSource%3Dgwzcw.184926.184926.184926%26gclid%3DEAIaIQobChMIoaGVwcT21gIVFSNoCh3VxAi-EAAYASAAEgId7PD_BwE)，注册完成后您需要进行实名认证，具体操作可参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)，注册完成后您需要进行实名认证，具体操作可参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
+- 如果您还没完成腾讯云账户的注册，请先 [注册](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F%3FfromSource%3Dgwzcw.184926.184926.184926%26gclid%3DEAIaIQobChMIoaGVwcT21gIVFSNoCh3VxAi-EAAYASAAEgId7PD_BwE)，注册完成后您需要进行实名认证，具体操作可参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
 - 如果您已注册腾讯云账户，并进行了实名认证，可直接登录 [腾讯云](https://console.cloud.tencent.com/)， 选择**云产品** > **管理与审计** > **云审计**，进入云审计页面。
 
 ##  查看操作记录
