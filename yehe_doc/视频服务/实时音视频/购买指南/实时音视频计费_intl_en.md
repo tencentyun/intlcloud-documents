@@ -6,7 +6,7 @@ If you have a contract with TRTC, the billing details in the contract will apply
 
 ## Billable Items
 
-TRTC adds up the audio and video durations of all projects under your [account](https://console.intl.cloud.tencent.com/trtc) at the end of each month. Note that video durations are classified into three categories based on resolution and priced differently. TRTC offers each account a [10,000-minute free package per month](), which will be deducted from your total monthly durations. The remaining durations multiplied by their unit prices are your total monthly cost.
+TRTC adds up the audio and video durations of all projects under your [account](https://console.intl.cloud.tencent.com/trtc) at the end of each month. Note that video durations are classified into three categories based on resolution and priced differently. TRTC offers each account a [10,000-minute free package per month](https://intl.cloud.tencent.com/document/product/647/42735), which will be deducted from your total monthly durations. The remaining durations multiplied by their unit prices are your total monthly cost.
 
 Cost formula:
 
@@ -42,7 +42,7 @@ For example, if a user subscribes to two 960 × 720 video streams, the aggregate
 
 ## Prepaid Package
 
-TRTC offers [general packages](), from which audio, SD video, HD video, and FHD video durations are deducted in the proportion of **1:1, 2:1, 4:1, and 15:1** respectively. For example, for 1 minute of HD video duration used, 4 minutes will be deducted from a general package.
+TRTC offers [general packages](https://intl.cloud.tencent.com/document/product/647/42736), from which audio, SD video, HD video, and FHD video durations are deducted in the proportion of **1:1, 2:1, 4:1, and 15:1** respectively. For example, for 1 minute of HD video duration used, 4 minutes will be deducted from a general package.
 
 Below are the prices of general packages:
 
@@ -120,8 +120,8 @@ Below are the prices of general packages:
 
 > ?
 >- The package unit prices in the table are rounded up to 3 decimal places. However, in actual billing, unit prices are rounded to 8 decimal places.
->- Currently, you need to be on our allowlist to use TRTC prepaid packages. You can [contact us]() to add your account to the list.
->- If your monthly usage exceeds 3 million minutes on average, you can [contact us]() for deeper discounts.
+>- Currently, you need to be on our allowlist to use TRTC prepaid packages. You can [contact us](](https://intl.cloud.tencent.com/contact-us)) to add your account to the list.
+>- If your monthly usage exceeds 3 million minutes on average, you can [contact us](](https://intl.cloud.tencent.com/contact-us)) for deeper discounts.
 
 ## Billing Examples
 

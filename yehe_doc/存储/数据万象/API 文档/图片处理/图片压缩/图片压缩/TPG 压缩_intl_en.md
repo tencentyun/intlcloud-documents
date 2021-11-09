@@ -12,7 +12,7 @@ Image compression refers to reducing an image’s size as much as possible witho
 
 ## Prerequisites
 
-- To use TPG compression, enable the image advanced compression feature for your bucket on the bucket’s configuration page. For more information, please see [Setting Image Advanced Compression](https://intl.cloud.tencent.com/document/product/436/40117).
+- To use TPG compression, enable the image advanced compression feature for your bucket on the bucket’s configuration page. For more information, please see [Setting Image Advanced Compression](https://intl.cloud.tencent.com/zh/document/product/436/40117).
 - To use the TPG format, ensure that **the environment where images are loaded supports TPG decoding**. CI provides TPG decoder−integrated SDKs for iOS, Android, and [Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip) clients to facilitate quick integration with TPG.
 
 ## How to Use
@@ -81,7 +81,7 @@ Pic-Operations:
 | download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
 | /format/&lt;Format> | Compression format, which is `tpg`                             |
 
-## Examples
+## Example
 
 Assume that the input image is a 1,335.2 KB image in PNG format, as shown below:
 ![img](https://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png)

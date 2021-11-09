@@ -12,7 +12,7 @@
 
 ## 前提条件
 
-使用 HEIF 压缩，需要先开通存储桶的图片高级压缩功能，您需要在相应的存储桶配置页中通过开关按钮开启功能，详情请参见 [设置图片高级压缩](https://intl.cloud.tencent.com/document/product/436/40117)。
+使用 HEIF 压缩，需要先开通存储桶的图片高级压缩功能，您需要在相应的存储桶配置页中通过开关按钮开启功能，详情请参见 [设置图片高级压缩](https://intl.cloud.tencent.com/zh/document/product/436/40117)。
 
 ## 使用方式
 

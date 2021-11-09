@@ -3,7 +3,7 @@
 
 
 ## 发送短信
-目前短信服务提供国内短信和国际/港澳台短信服务，您可以通过控制台配置短信内容，发送国内短信和国际/港澳台短信。您可以通过以下文档，获取相关操作指引：
+目前短信服务提供中国大陆地区短信和国际/港澳台短信服务，您可以通过控制台配置短信内容，发送中国大陆地区短信和国际/港澳台短信。您可以通过以下文档，获取相关操作指引：
 
 <table>
 <tr>
@@ -12,9 +12,9 @@
 <th>说明</th>
 </tr>
 <tr>
-<td>国内短信</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/382/35449">国内短信快速入门（新版）</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35456">管理国内短信签名</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35457">管理国内短信正文模板</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35458">发送国内短信</a></li></td>
-<td>分别介绍如何配置国内短信内容，如何通过控制台发送国内短信。</td>
+<td>中国大陆地区短信</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/382/35449">中国大陆地区短信快速入门（新版）</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35456">管理中国大陆地区短信签名</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35457">管理中国大陆地区短信正文模板</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35458">发送中国大陆地区短信</a></li></td>
+<td>分别介绍如何配置中国大陆地区短信内容，如何通过控制台发送中国大陆地区短信。</td>
 </tr>
 <tr>
 <td>国际/港澳台短信</td>
@@ -24,7 +24,7 @@
 </table>
 
 ## 业务统计
-短信控制台将从多个维度分别统计并展示国内短信和国际/港澳台短信的发送详情、下发记录以及失败分析等数据。您可以通过以下文档，获取相关操作指引：
+短信控制台将从多个维度分别统计并展示中国大陆地区短信和国际/港澳台短信的发送详情、下发记录以及失败分析等数据。您可以通过以下文档，获取相关操作指引：
 
 <table>
 <tr>
@@ -32,8 +32,8 @@
 <th>说明</th>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/382/35464">国内短信业务统计</a></td>
-<td>介绍如何查看指定时间段内的国内短信发送详情、下发记录以及失败分析等信息。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35464">中国大陆地区短信业务统计</a></td>
+<td>介绍如何查看指定时间段内的中国大陆地区短信发送详情、下发记录以及失败分析等信息。</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/382/35465">国际/港澳台短信业务统计</a></td>

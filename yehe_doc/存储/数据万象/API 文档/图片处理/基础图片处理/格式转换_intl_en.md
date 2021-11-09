@@ -72,8 +72,8 @@ Pic-Operations:
 | -------------------- | ------------------------------------------------------------ |
 | download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
 | /format/<Format> | Converts the image format. The target format can be JPG, BMP, GIF, PNG, WebP, or YJPEG (a JPEG-based format optimized by CI). Default format: format of the input image |
-| /cgif/&lt;FrameNumber&gt; | Optimizes a GIF image by reducing the number of frames and colors. Valid values of `FrameNumber`: <li>`1`: cuts the input GIF to the default number of frames (30). If the original number of frames is greater than 30, the exceeded frames will be cut. <li>(1,100]: compresses the image to the specified number of frames. |
-| /interlace/&lt;Mode> | Progressive mode of the output JPG image. Valid values of `Mode`: <br>`0` (default): disables the progressive mode. <br>`1`: enables the progressive mode. <br>This parameter takes effect only when the output image is in JPG format. Otherwise, this parameter will be ignored. |
+| /cgif/&lt;FrameNumber&gt; | Optimizes a GIF image by reducing the number of frames and colors. Valid values: <li>`1`: cuts the input GIF to the default number of frames (30). If the original number of frames is greater than 30, the exceeded frames will be cut. <li>(1,100]: compresses the image to the specified number of frames. |
+| /interlace/&lt;Mode> | Progressive mode of the output JPG image. Valid values: <br>`0` (default): disables the progressive mode. <br>`1`: enables the progressive mode. <br>This parameter takes effect only when the output image is in JPG format. Otherwise, this parameter will be ignored. |
 | /ignore-error/1 | If this parameter is carried and the image failed to be processed because it is too large, the input image will be returned with no error reported. |
 
 

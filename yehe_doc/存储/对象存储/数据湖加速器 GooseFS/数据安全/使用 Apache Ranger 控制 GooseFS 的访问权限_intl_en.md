@@ -30,7 +30,7 @@ Before you start, ensure that you have deployed and configured Ranger components
 
 #### Deploying GooseFS Ranger plugin to Ranger Admin and registering service
 
->? Click [here](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/ranger-goosefs-plugin-1.0.0.jar) to download the GooseFS Ranger plugin.
+>? Click here to download the GooseFS Ranger plugin.
 >
 
 Deploy as follows:

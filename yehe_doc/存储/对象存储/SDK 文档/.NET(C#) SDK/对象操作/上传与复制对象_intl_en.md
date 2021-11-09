@@ -40,7 +40,7 @@ The advanced APIs encapsulate the simple upload and multipart upload APIs and ca
 >?
 > - If the file size is less than the multipart upload threshold, simple upload is used. Otherwise, multiple upload is used. The multipart upload threshold is configurable and is 5 MB by default.
 > - The part size is configurable and is 1 MB by default.
-> - If your .NET Framework version is 4.0 or earlier, advanced APIs are not available. For more information, please see [Backward Compatibility](https://intl.cloud.tencent.com/document/product/436/42378).
+> - If your .NET Framework version is 4.0 or earlier, advanced APIs are not available. For more information, please see Backward Compatibility.
 > 
 
 #### Sample code 1. Uploading a local file

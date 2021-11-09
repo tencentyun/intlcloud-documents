@@ -12,7 +12,7 @@
 
 ## 前提条件
 
-- 使用 TPG 压缩，需要先开通存储桶的图片高级压缩功能，您需要在相应的存储桶配置页中通过开关按钮开启功能，详情请参见 [设置图片高级压缩](https://intl.cloud.tencent.com/document/product/436/40117)。
+- 使用 TPG 压缩，需要先开通存储桶的图片高级压缩功能，您需要在相应的存储桶配置页中通过开关按钮开启功能，详情请参见 [设置图片高级压缩](https://intl.cloud.tencent.com/zh/document/product/436/40117)。
 - TPG 是腾讯自研的图片格式，使用前请确认**图片加载环境已支持 TPG 解码**，腾讯云数据万象提供集成 TPG 解码器的 iOS、Android、[Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip) 终端 SDK，可帮助您快速接入和使用 TPG。
 
 ## 使用方式

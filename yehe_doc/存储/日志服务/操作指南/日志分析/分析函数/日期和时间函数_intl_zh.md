@@ -1,7 +1,5 @@
 日志服务（Cloud Log Service，CLS）提供时间函数、日期函数、时间阶段函数、时间间隔函数和时序补全函数，支持对日志中的日期和时间进行格式转换，分组聚合等处理。
 
->? 当前日志服务已支持大部分地域使用 CLS 函数。北京、上海、广州、南京地域如有需要，请联系 [在线客服](https://intl.cloud.tencent.com/contact-sales)。
->
 
 ## Date and time 函数
 
@@ -18,7 +16,7 @@
 | from_iso8601_date(string)      | 把 ISO8601 格式的日期表达式转化为 DATE 类型的日期表达式。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD，例如2021-05-31。</li><li>返回值类型：DATE</li></ul> | `* | select from_iso8601_date('2021-03-21')`          |
 | from_iso8601_timestamp(string) | 把 ISO8601 格式的日期时间表达式转化为具有时区的 Timestamp 类型的日期时间表达式。<ul  style="margin: 0;"><li>返回值格式：HH:MM:SS.Ms Time zone，例如17:07:52.143+08:00。</li><li>返回值类型：TIMESTAMP</li></ul> | `* | select from_iso8601_timestamp('2020-05-13')`       |
 | from_unixtime(unixtime)        | 把 Unix 时间戳转化为 TIMESTAMP 类型的日期时间表达式。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD HH:MM:SS.Ms，例如：2017-05-17 01:41:15.000。</li><li>返回值类型：TIMESTAMP </li></ul>| `* | select from_unixtime(1494985275) `            |
-| from_unixtime(unixtime, zone)  | 2017-05-17 01:41:15.02017-05-17 01:41:15.0把 Unix 时间戳转化为具有时区的 TIMESTAMP 类型的日期时间表达式。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD HH:MM:SS.Ms Time zone，例如：2017-05-17T09:41:15+08:00[Asia/Shanghai]。</li><li>返回值类型：TIMESTAMP | `* | select from_unixtime(1494985275, 'Asia/Shanghai')` </li></ul>|
+| from_unixtime(unixtime, zone)  | 把 Unix 时间戳转化为具有时区的 TIMESTAMP 类型的日期时间表达式。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD HH:MM:SS.Ms Time zone，例如：2017-05-17T09:41:15+08:00[Asia/Shanghai]。</li><li>返回值类型：TIMESTAMP</li></ul> | `* | select from_unixtime(1494985275, 'Asia/Shanghai')` |
 | to_unixtime(timestamp)         | 把 TIMESTAMP 类型的日期时间表达式转化为 Unixtime 时间戳。</br>返回值类型：LONG。例如：1626347592.037。 | `* | select to_unixtime(cast(__TIMESTAMP__ as timestamp)) ` |
 | to_milliseconds(interval)      | 以毫秒为单位返回间隔的时间值。<br/>返回值类型：BIGINT。例如：300000。 | `* | select to_milliseconds(INTERVAL 5 MINUTE)`        |
 
@@ -38,8 +36,8 @@ date_trunc() 函数根据您指定的日期时间部分截断日期时间表达�
 | second  | 2021-05-21 05:20:01.000 | -                          |
 | minute  | 2021-05-21 05:20:00.000 |-                          |
 | hour    | 2021-05-21 05:00:00.000 | -                         |
-| day     | 2021-05-21 00:00:00.000 | 返回指定日志的零点。       |
-| week    | 2021-05-17 00:00:00.000 | 返回指定周的周一零点       |
+| day     | 2021-05-21 00:00:00.000 | 返回指定日期的零点。       |
+| week    | 2021-05-19 00:00:00.000 | 返回指定周的周一零点       |
 | month   | 2021-05-01 00:00:00.000 | 返回指定月份的第一天零点。 |
 | quarter | 2021-04-01 00:00:00.000 | 返回指定季度的第一天零点   |
 | year    | 2021-01-01 00:00:00.000 | 返回本年度第一天零点。     |
@@ -75,6 +73,7 @@ unit 取值如下：
 ```
 * ｜ SELECT date_diff('second', TIMESTAMP '2020-03-01 00:00:00', TIMESTAMP '2020-03-02 00:00:00')
 ```
+
 
 
 
@@ -180,32 +179,10 @@ time_series(time_column, interval, format, padding)
 
 **示例**
 
-按照2小时的时间粒度进行数据补全，查询和分析语句如下：
+按照2分钟的时间粒度进行数据补全，查询和分析语句如下：
 ```
-* | select time_series(__TIMESTAMP__, '2h', '%Y-%m-%d %H:%i:%s', '0')  as time, count(*) as count group by time order by time limit 1000
+* | select time_series(__TIMESTAMP__, '2m', '%Y-%m-%dT%H:%i:%s+08:00', '0')  as time, count(*) as count group by time order by time limit 1000
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

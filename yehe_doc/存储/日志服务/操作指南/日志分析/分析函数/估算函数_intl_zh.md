@@ -1,8 +1,5 @@
 本文介绍估算函数的基本语法及示例。
 
->? 当前日志服务已支持大部分地域使用 CLS 函数。北京、上海、广州、南京地域如有需要，请联系 [在线客服](https://intl.cloud.tencent.com/contact-sales)。
->
-
 <table>
 	<thead>
 		<tr>
@@ -57,7 +54,7 @@ bigint 类型。
 * | SELECT count(*) AS PV, approx_distinct(ip) AS UV
 ```
 
-![image-20210817004306514](https://main.qcloudimg.com/raw/ad47ca879e1149a3a4fb5aa378154f41.png)
+
 
 ## approx_percentile 函数
 
@@ -100,6 +97,5 @@ double 类型或 array 类型。
 ```
 * | select approx_percentile(resTotalTime, array[0.2,0.4,0.6])
 ```
-
 
 
