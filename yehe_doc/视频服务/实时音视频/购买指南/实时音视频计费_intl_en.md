@@ -6,7 +6,7 @@ If you have a contract with TRTC, the billing details in the contract will apply
 
 ## Billable Items
 
-TRTC adds up the audio and video durations of all projects under your [account](https://console.intl.cloud.tencent.com/trtc) at the end of each month. Note that video durations are classified into three categories based on resolution and priced differently. TRTC offers each account a [10,000-minute free package per month](), which will be deducted from your total monthly durations. The remaining durations multiplied by their unit prices are your total monthly cost.
+TRTC adds up the audio and video durations of all projects under your [account](https://console.intl.cloud.tencent.com/trtc) at the end of each month. Note that video durations are classified into three categories based on resolution and priced differently. TRTC offers each account a [10,000-minute free package per month](https://intl.cloud.tencent.com/document/product/647/42735), which will be deducted from your total monthly durations. The remaining durations multiplied by their unit prices are your total monthly cost.
 
 Cost formula:
 
