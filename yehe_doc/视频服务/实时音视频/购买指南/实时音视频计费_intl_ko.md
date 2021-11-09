@@ -6,7 +6,7 @@
 
 ## 과금 구성
 
-매월 말에 TRTC는 해당 월의 [Tencent Cloud 계정](https://console.intl.cloud.tencent.com/trtc)에 속한 모든 프로젝트에서 생성된 오디오 및 비디오 사용량(분 단위)을 계산합니다. 비디오 사용량은 총 해상도 집계를 3등급으로 구분해 가격을 책정합니다. TRTC가 각 개발자 계정별로 제공하는 [매월 10,000분의 무료 시간](https://docs.agora.io/cn/faq/billing_free)을 차감한 후, 잔여 오디오 사용량과 비디오 사용량에 해당하는 단가를 곱하고 합산하여 해당 월의 총 요금을 계산합니다.
+매월 말에 TRTC는 해당 월의 [Tencent Cloud 계정](https://console.intl.cloud.tencent.com/trtc)에 속한 모든 프로젝트에서 생성된 오디오 및 비디오 사용량(분 단위)을 계산합니다. 비디오 사용량은 총 해상도 집계를 3등급으로 구분해 가격을 책정합니다. TRTC가 각 개발자 계정별로 제공하는 [매월 10,000분의 무료 시간](https://intl.cloud.tencent.com/document/product/647/42735)을 차감한 후, 잔여 오디오 사용량과 비디오 사용량에 해당하는 단가를 곱하고 합산하여 해당 월의 총 요금을 계산합니다.
 
 기본 과금 공식은 다음과 같습니다.
 
