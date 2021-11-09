@@ -49,30 +49,20 @@ pod 'TPNS-macOS'
 //    [[XGPush defaultManager] setEnableDebug:YES];
     [XGPush defaultManager].launchOptions = [[aNotification userInfo] mutableCopy];
     [[XGPush defaultManager] startXGWithAccessID:TPNS_ACCESS_ID accessKey:TPNS_ACCESS_KEY delegate:self];
-    if (@available(macOS 10.14, *)) {
-        /// 系统版本高于10.14内部处理无需上报
-    } else {
-        UNNotificationResponse *rep = [aNotification userInfo][NSApplicationLaunchUserNotificationKey];
-        if (rep) {
-            [[XGPush defaultManager] reportXGNotificationInfo:rep.notification.request.content.userInfo];
-        }
-    }
 }
 ```
 2. 在 `AppDelegate`中选择实现 `XGPushDelegate ` 协议中的方法：
-
-```
-objective-c
+```objective-c
 /// 注册推送服务成功回调
 /// @param deviceToken APNs 生成的Device Token
 /// @param xgToken TPNS 生成的 Token，推送消息时需要使用此值。TPNS 维护此值与APNs 的 Device Token的映射关系
 /// @param error 错误信息，若error为nil则注册推送服务成功
-- (void)xgPushDidRegisteredDeviceToken:(NSString *)deviceToken xgToken:(NSString *)xgToken error:(NSError *)error {
+   - (void)xgPushDidRegisteredDeviceToken:(NSString *)deviceToken xgToken:(NSString *)xgToken error:(NSError *)error {
     if (!error) {
         NSLog(@"%s, register success, deviceToken:%@, xgToken:%@", __FUNCTION__, deviceToken, xgToken);
     } else {
         NSLog(@"%s, register failed:%@, deviceToken:%@, xgToken:%@", __FUNCTION__,error.description, deviceToken, xgToken);
-    }
+         }
 }
 
 /// 统一收到通知消息的回调
@@ -80,20 +70,20 @@ objective-c
 /// @param completionHandler 完成回调
 /// 区分消息类型说明：xg字段里的msgtype为1则代表通知消息msgtype为2则代表静默消息
 /// notification消息对象说明：有2种类型NSDictionary和UNNotification具体解析参考示例代码
-- (void)xgPushDidReceiveRemoteNotification:(id)notification withCompletionHandler:(void (^)(NSUInteger))completionHandler {
+  - (void)xgPushDidReceiveRemoteNotification:(id)notification withCompletionHandler:(void (^)(NSUInteger))completionHandler {
     NSLog(@"[TPNS Demo] receive notification: %@", notification);
 }
 
 /// 统一点击回调
 /// @param response 如果iOS 10+/macOS 10.14+则为UNNotificationResponse，低于目标版本则为NSDictionary
 /// 区分消息类型说明：xg字段里的msgtype为1则代表通知消息,msgtype为9则代表本地通知
-- (void)xgPushDidReceiveNotificationResponse:(nonnull id)response withCompletionHandler:(nonnull void (^)(void))completionHandler {
+  - (void)xgPushDidReceiveNotificationResponse:(nonnull id)response withCompletionHandler:(nonnull void (^)(void))completionHandler {
     if ([response isKindOfClass:[UNNotificationResponse class]]) {
         NSLog(@"[TPNS Demo] click notification: %@", ((UNNotificationResponse *)response).notification.request.content.userInfo);
     } else if ([response isKindOfClass:[NSDictionary class]]) {
         NSLog(@"[TPNS Demo] click notification: %@", response);
-    }
-    completionHandler();
+       }
+      completionHandler();
 }
 ```
 
