@@ -22,7 +22,7 @@ TKE Resilience Chart 主要是由虚拟节点管理器，调度器，容忍控�
 | admission-controller | 容忍控制器     | 负责为处于 `pending` 状态的 Pod 添加容忍，使其可以调度到虚拟节点上。       |
 
 ### 主要特性
-1. 如需要 EKS Pod 和本地集群的 Pod 互通，则要求本地集群是 Underlay 的网络模型（使用 Calico 之类的基于 BGP 路由，而不是 SDN 封装的 CNI 插件），并且需要在腾讯云 VPC 中添加本地 Pod CIDR 的路由信息，详情见 [路由配置](https://intl.cloud.tencent.com/document/product/457/30647)。
+1. 如需要 EKS Pod 和本地集群的 Pod 互通，则要求本地集群是 Underlay 的网络模型（使用 Calico 之类的基于 BGP 路由，而不是 SDN 封装的 CNI 插件），并且需要在腾讯云 VPC 中添加本地 Pod CIDR 的路由信息。
 2. Workload resilience 特性控制开关 `AUTO_SCALE_EKS=true|false` 分为全局开关和局部开关，用来控制 workload 在 `pending` 的情况下是否弹性调度到腾讯云 EKS，如表格所示：
  - 全局开关：`kubectl get cm -n kube-system eks-config` 中 `AUTO_SCALE_EKS`，默认开启。
  - 局部开关：`spec.template.metadata.annotations ['AUTO_SCALE_EKS']`
