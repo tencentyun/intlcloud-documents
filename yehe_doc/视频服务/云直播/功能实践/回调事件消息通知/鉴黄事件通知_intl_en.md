@@ -1,144 +1,306 @@
-Porn detection takes real-time screenshots of suspiciously pornographic video images in live streams and stores them in COS. The porn detection callback is used to push the information of detected pornographic images, including their type, score, and screenshot time. You need to configure the server address receiving porn detection callback messages in the callback template and bind the template to the push domain name. When a porn detection event is triggered by a live stream, the Tencent Cloud CSS backend will call back the pornographic image information to the configured receiving server.
+CSS porn detection takes real-time screenshots of suspiciously pornographic video images in live streams and stores them in COS. The porn detection callback is used to push the information of detected pornographic images, including their type, score, and screenshot time. You need to configure the server address for receiving porn detection callback messages in the callback template and bind the template to the push domain name. When a porn detection event is triggered by a live stream, the Tencent Cloud CSS backend will call back the pornographic image information to the configured receiving server.
 
 This document describes the fields in callback message notifications sent by Tencent Cloud CSS after a porn detection callback event is triggered.
 
-## Notes
-- You need to understand how to configure the callback feature and receive callback messages on Tencent Cloud CSS before reading this document. For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080).
-- By default, only questionable results will be called back for porn detection.
+## Note
+- You need to understand how to configure callbacks and how you will receive messages via Tencent Cloud CSS before reading this document. For more information, see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080).
+- By default, only questionable results of porn detection will be called back.
 - We recommend you use the `[type](#type)` of an image to determine whether it is pornographic. As the detection results are not 100% accurate and there may be false positives or false negatives, you can confirm them manually if necessary.
 
-## Screencapture Event Parameter Description
+## Screencapturing Event Parameters
 ### Event type parameters
 
-| Event Type | Field Value Description           |
+| Event Type | Parameter Value           |
 | :------- | :------------- |
-| Porn detection | event_type = 317 |
+| CSS porn detection | event_type = 317 |
 
 
 ### Common callback parameters
 
 <table>
-<tr><th>Field Name</th><th>Type</th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
 <tr>
 <td>t</td>
 <td>int64</td>
-<td>Expiration time, which is the Unix timestamp when the event notification signature expires. <ul style="margin:0"><li>The default expiration time of a message notification from Tencent Cloud is 10 minutes. If the time specified by the `t` value in a message notification has elapsed, it can be determined that this notification is invalid, thereby preventing network replay attacks. <li>The format of `t` is a decimal Unix timestamp, i.e., the number of seconds that has elapsed since January 01, 1970 00:00 (UTC/GMT time).</ul></td>
+<td>Expiration time, which is the Unix timestamp when the event notification signature expires. <ul style="margin:0"><li>The default expiration time of a message notification from Tencent Cloud is 10 minutes. If the time specified by the `t` value in a message notification has elapsed, it can be determined that this notification is invalid, thereby preventing network replay attacks. <li>The format of `t` is a decimal Unix timestamp, i.e., the number of seconds that have elapsed since 00:00:00 (UTC/GMT time), January 1, 1970.</ul></td>
 </tr><tr>
 <td>sign</td>
 <td>string</td>
-<td>Security signature of event notification (sign = MD5(key + t)). <br>Note: Tencent Cloud splices the encryption `<a href="#key">key</a>` and `t`, calculates the `sign` value through MD5, and places it in the notification message. After your backend server receives the notification message, it can confirm whether the `sign` is correct based on the same algorithm and then determine whether the message is indeed from the Tencent Cloud backend.</td>
+<td>Event notification security signature sign = MD5(key + t). <br>Note: Tencent Cloud concatenates the encryption <a href="#key">key</a> and `t`, calculates the `sign` value through MD5, and places it in the notification message. When your backend server receives the notification message, it can confirm whether the `sign` is correct based on the same algorithm and then determine whether the message is indeed from the Tencent Cloud backend.</td>
 </tr></table>
 
->? `<span id="key"></span>key` is the callback key in **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. In order to protect the security of your data, we recommend you enter it.
->![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
+>? [](id:key)`key` is the callback key in **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. We recommend filling in this field to ensure data security.
+![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 
 
 
 ### Callback message parameters
-
-| **Parameter** | **Required** | **Data Type** | **Description**                                                     |
-| :------------- | :----------- | :----------- | :----------------------------------------------------------- |
-| tid            | No         | Number       | Alert policy ID. Video content alert: 20001                             |
-| streamId       | No         | String       | Stream name                                                       |
-| channelId      | No         | string       | Channel ID                                                      |
-| img            | Yes         | string       | Link to alerted image                                                 |
-| <span id="type"></span> type | Yes | Array | Image type. 0: normal, 1–5: non-compliant, 6–9: others |
-| confidence     | Yes         | Number       | Confidence level of the detected pornographic image ranges from 0 to 100, which is an overall score factoring in `normalScore`, `hotScore`, and `pornScore` |
-| normalScore    | Yes         | Number       | Score for normal image                                         |
-| hotScore    | Yes         | Number       | Score for sexy image                                         |
-| pornScore    | Yes         | Number       | Score for pornographic image                                         |
-| level          | No         | Number       | Image level                                                   |
-| ocrMsg         | No         | string       | OCR recognition information of image (if any)                              |
-| screenshotTime | Yes         | Number       | Screenshot time                                                     |
-| sendTime       | Yes         | Number       | Request sent time (UNIX timestamp)                                    |
-| abductionRisk  | No         | Array        | An array containing the [AbductionRisk](#abductionrisk) structure                            |
-| [gameDetails](#gamedetails)    | No         | Object       | Game details                                                 |
-| similarScore   | No         | Number       | Score for image similarity                                               |
+| Parameter | Required | Data Type | Description |
+| ---------- | ---------- | ---------- | --------------------------- |
+| streamId       | No         | String       | Stream name                                       |
+| channelId | No | String | Channel ID |
+| img | Yes | String | Link to the alerted image |
+| type | Yes | Array | Returns the **maliciousness label with the highest priority** in the detection result (labelResults), which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: <ul style="margin:0"><li/>0: normal<li/>1: pornographic<li/>6: abusive<li/>8: advertising<li/>2–5 and 7: other offensive, unsafe, or inappropriate types of content</ul> |
+| score | Yes | Array | The score of `type` |
+| hotScore    | Yes         | Number       | The score for a sexy image                                       |
+| pornScore    | Yes         | Number       | The score for a porn image                                         |
+| illegalScore   | Yes | Number       | The score for an image with illegal content    |
+| polityScore    | Yes | Number       | The score for an image with politically sensitive content                                        |
+| terrorScore    | Yes | Number       | The score for an image with terrorism content|
+| abuseScore    | Yes         | Number       | The score for an abusive image                                       |
+| teenagerScore    | Yes         | Number       | The score for an image with content inappropriate for teenagers                                       |
+| adScore    | Yes         | Number       | The score for an advertising image                                       |
+| ocrMsg         | No         | String       | OCR text (if applicable)                              |
+| suggestion | Yes | string | Suggestion. Valid values: <ul style="margin:0"><li/>Block<li/>Review<li/>Pass</ul>     |
+| label | Yes | string | Returns the **maliciousness label with the highest priority** in the detection result (labelResults), which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned value: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| subLabel | Yes     | string | Sub-label name. If no sub-labels are hit, an empty string will be returned              |
+| labelResults | No     | Array of [LabelResult](#labelresult)  | Moderation result of the category detection model, including pornographic, sexy, terrorism, illegal, and other results |
+| objectResults | No     | Array of [ObjectResult](#objectresult) | Moderation result of the object detection model, including politically sensitive object, advertising logo, QR code, and other information |
+| ocrResults | No     | Array of [OcrResult](#ocrresult) | Moderation result of the OCR text, including OCR text and text moderation result details |
+| libResults | No    | Array of [LibResult](#libresult) | Moderation result of the risky image library |
+| screenshotTime | Yes | Number | Screenshot time |
+| sendTime       | Yes        | Number       | The time the request was sent in UNIX timestamp format |
+| similarScore   | No   | Number  | Image similarity score   |
 | stream_param   | No         | String       | Push parameter                                                     |
-| app            | No         | String       | Push domain name                                                     |
-| appid          | No         | Number       | APPID                                                      |
-| appname        | No         | String       | Push path                                               |
+| app   | No | String | Push domain name   |
+| appid  | No | Number |  APPID |
+| appname        | No        | String       | Push path  |
 
-#### AbductionRisk
+ 
 
-| **Parameter** | **Required** | **Data Type** | **Description** |
-| :------- | :----------- | :----------- | :----------------------------------------------------------- |
-| level    | Yes         | Number       | Risk level ranges from 0 to 4. The larger the number, the greater the risk. 3 and 4 indicate maliciousness and we recommend you deal with such images |
-| type     | Yes         | Number       | Risk type. 20002: porn                                        |
+#### LabelResult
+Hit result of the category model.
 
-#### faceDetail
+| Name | Type | Description |
+| ---------- | ------------------------ | ------------------------ |
+| Scene      | String                                       | Returns the scenario identified by the model, such as advertising, pornographic, and harmful.     |
+| Suggestion | String                                       | Returns the operation suggestion for the current maliciousness label. When you get the determination result, the returned value indicates the action suggested by the system. We recommend you handle different types of violations and suggestions according to your business needs. Returned values:<ul style="margin:0"><li/>Block<li/>Review<li/>Pass</ul> |
+| Label  | String | Returns the maliciousness label in the detection result. Returned values: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| SubLabel   | String | Sub-label name                                                   |
+| Score      | Integer | Hit score of the label model                                         |
+| Details    | Array of [LabelDetailItem](#labeldetailitem) | Sub-label hit result details of the category model                                   |
 
-| **Parameter** | **Required** | **Type** | **Description** |
-| :----------- | :----------- | :------- | :---------------------------------------- |
-| gender       | No         | Number   | Gender [0 (female)–100 (male)]              |
-| age          | No         | Number   | Age                                      |
-| expression   | No         | Number   | Expression [0 (normal)–50 (smile)–100 (laugh)] |
-| beauty       | No         | Number   | Attractiveness [0–100]                            |
-| x            | No         | Number   | x coordinate of the top-left corner of face frame                            |
-| y            | No         | Number   | y coordinate of the top-left corner of face frame                            |
-| width        | No         | Number   | Face frame width                                |
-| height       | No         | Number   | Face frame height                                |
+#### LabelDetailItem
 
-#### gameDetails
+Sub-label hit result details of the category model.
 
-| **Parameter** | **Required** | **Type** | **Description** |
-| :------------ | :----------- | :------- | :----------- |
-| battlegrounds | No         | Object   | PUBG information |
-| [gameList](#gamelist)      | No         | Array    | Game list     |
+| Name | Type | Description |
+| -------- | -------- | --------------------------- |
+| Id       | Integer  | ID                        |
+| Name     | String   | Sub-label name                  |
+| Score    | Integer  | Sub-label score. Value range: 0–100 |
 
-#### gameList
 
-| **Parameter** | **Required** | **Type** | **Description** |
-| :----------- | :----------- | :------- | :------- |
-| name         | No         | String   | Game name |
-| confidence   | No         | Number   | Probability     |
+#### ObjectResult
+
+Object detection result details.
+
+| Name | Type | Description |
+| ---------- | --------------------- | --------------------- |
+| Scene      | String                                       | Returns the identified object scenario, such as QR code, logo, and image OCR.     |
+| Suggestion | String                                       | Returns the operation suggestion for the current maliciousness label. When you get the determination result, the returned value indicates the action suggested by the system. We recommend you handle different types of violations and suggestions according to your business needs. Returned values:<ul style="margin:0"><li/>Block<li/>Review<li/>Pass</ul> |
+| Label      | String                                 | Returns the maliciousness label in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned value: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| SubLabel   | String | Sub-label name |
+| Score    | Integer  | Sub-label hit score of the scenario model. Value range: 0–100 |
+| Names      | Array of String       | List of object names |
+| Details    | Array of [ObjectDetail](#objectdetail) | Object detection result details |
+
+#### ObjectDetail
+
+Object detection result details. When the detection scenario is a politically sensitive object/figure, advertising logo, QR code, or face attribute, it represents the label name, label value, label score, and location information of the model detection frame.
+
+| Name | Type | Description |
+| -------- | -------- | -------- |
+| Id       | Integer  | ID  |
+| Name | String | Label name |
+| Value | String | Label value: <ul style="margin:0"><li/>When the scenario is `Ad`, it represents the URL. For example, when `Name` is `QrCode`, `Value` will be `http//abc.com/aaa`<br><li/>When the scenario is `FaceAttribute`, it represents the face attribute information; for example, when `Name` is `Age`, `Value` will be `18` </ul>|
+| Score    | Integer  | Score. Value range: 0–100 |
+| Location | [Location](#location) | Detection frame coordinates |
+
+#### Location
+
+Coordinates.
+
+| Name | Type | Description |
+| -------- | -------- | ---------------- |
+| X        | Float    | Horizontal coordinate of the top-left corner     |
+| Y        | Float    | Vertical coordinate of the top-left corner     |
+| Width    | Float    | Width             |
+| Height   | Float    | Height             |
+| Rotate   | Float    | Rotation angle of the detection frame |
+
+#### OcrResult
+
+Detailed OCR result.
+
+| Name | Type | Description |
+| ---------- | ---------------------- | ---------------------- |
+| Scene      | String                                   | Indicates  the recognition scenario. Default value: OCR (image OCR).              |
+| Suggestion | String                                       | Returns the operation suggestion for the maliciousness label with the highest priority. When you get the determination result, the returned value indicates the action suggested by the system. We recommend you handle different types of violations and suggestions according to your business needs. Returned values:<ul style="margin:0"><li/>Block<li/>Review<li/>Pass</ul> |
+| Label      | String                                 | Returns the maliciousness label with the highest priority in the OCR detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned value: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| SubLabel   | String | Sub-label name |
+| Score    | Integer  | Sub-label hit score of the scenario model. Value range: 0–100 |
+| Text       | String | Text content |
+| Details    | Array of [OcrTextDetail](#ocrtextdetail) | OCR result details |
+
+
+#### OcrTextDetail
+OCR text result details.
+
+| Name | Type | Description |
+| -------- | --------------- | --------------- |
+| Text | String | Returns the text content recognized by OCR (up to **5,000 bytes**) |
+| Label  | String | Returns the maliciousness label in the detection result. Returned values: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| Keywords | Array of String | Keywords hit under the label |
+| Score    | Integer  | Hit score of the label model. Value range: 0–100 |
+| Location | [Location](#location) | OCR text coordinates |
+
+
+#### LibResult
+Blocklist/Allowlist result details.
+
+| Name | Type | Description |
+| ---------- | ------------------ | ------------------------------------------------------------ |
+| Scene      | String                           | Scenario recognition result of the model. Default value: Similar                 |
+| Suggestion | String                                       | Returns the operation suggestion. When you get the determination result, the returned value indicates the action suggested by the system. We recommend you handle different types of violations and suggestions according to your business needs. Returned values:<ul style="margin:0"><li/>Block<li/>Review<li/>Pass</ul> |
+| Label  | String | Returns the maliciousness label in the detection result. Returned values: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| SubLabel   | String | Sub-label name |
+| Score | Integer | Recognition score of the image search model. Value range: 0–100 |
+| Details    | Array of [LibDetail](#libdetail) | Blocklist/Allowlist result details |
+
+#### LibDetail
+Custom list/blocklist/allowlist details.
+
+| Name | Type | Description |
+| -------- | -------- | ------------------------------------------------------------ |
+| Id       | Integer  | ID                                                         |
+| ImageId  | String   | Image ID                                                       |
+| Label  | String | Returns the maliciousness label in the detection result. Returned values: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| Tag | String | Custom label |
+| Score | Integer | Model recognition score. Value range: 0–100 |
+
+
 
 ### Sample callback message
-
-```
+<dx-codeblock>
+::: HTTPbody  json
 {
-    "event_type":317,
-    
-    "ocrMsg":"",
-    
-    "type":[2],
-    
-    "confidence":0,
-    
-    "normalScore":2,
-    
-    "hotScore":97,
-    
-    "pornScore":0,
-    
-    "screenshotTime":1575513174,
-    
-    "level":0,
-    
-    "img":"http://test-10000.cos.ap-shanghai.myqcloud.com/2019-12-05/teststream-screenshot-10-32-54-960x540.jpg",
-    
-    "abductionRisk":[ ],
-    
-    "sendTime":1575513176,
-    
-    "similarScore":0,
-    
-    "tid":20001,
-    
-    "streamId":"teststream",
-    
-    "channelId":"teststream",
-    
-    "stream_param":"txSecret=40f38f69f574fd51126c421a3d96c374&txTime=5DEBEC80",
-    
-    "app":"testlive.myqcloud.com",
-    
-    "appname":"live",
-    
-    "appid":10000
-}  
-```
+        "ocrMsg": "",
+        "type": [1],
+        "socre": 99,
+        "hotScore": 0,
+        "pornScore": 99,
+        "screenshotTime": 1610640000,
+        "level": 0,
+        "img": "http://1.1.1.1/download/porn/test.jpg",
+        "abductionRisk": [],
+        "faceDetails": [],
+        "sendTime": 1615859827,
+        "illegalScore": 0,
+        "polityScore": 0,
+        "similarScore": 0,
+        "terrorScore": 0,
+        "abuseScore": 0,
+        "teenagerScore": 0,
+        "adScore": 0,
+        "suggestion": "Block",
+        "label": "Porn",
+        "subLabel": "PornHigh",
+        "labelResults": [{
+                "HitFlag": 0,
+                "Scene": "Illegal",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Details": []
+        }, {
+                "HitFlag": 1,
+                "Scene": "Porn",
+                "Suggestion": "Block",
+                "Label": "Porn",
+                "SubLabel": "PornHigh",
+                "Score": 99,
+                "Details": [{
+                        "Id": 0,
+                        "Name": "PornHigh",
+                        "Score": 99
+                }, {
+                        "Id": 1,
+                        "Name": "WomenChest",
+                        "Score": 99
+                }]
+        }, {
+                "HitFlag": 0,
+                "Scene": "Sexy",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Details": []
+        }, {
+                "HitFlag": 0,
+                "Scene": "Terror",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Details": []
+        }],
+        "objectResults": [{
+                "HitFlag": 0,
+                "Scene": "QrCode",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Names": [],
+                "Details": []
+        }, {
+                "HitFlag": 0,
+                "Scene": "MapRecognition",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Names": [],
+                "Details": []
+        }, {
+                "HitFlag": 0,
+                "Scene": "PolityFace",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Names": [],
+                "Details": []
+        }],
+        "ocrResults": [{
+                "HitFlag": 0,
+                "Scene": "OCR",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Text": "",
+                "Details": []
+        }],
+        "streamId": "teststream",
+        "channelId": "teststream",
+        "stream_param": "txSecret=40f38f69f574fd51126c421a3d96c374&txTime=5DEBEC80",
+        "app": "5000.myqcloud.com",
+        "appname": "live",
+        "appid": 10000,
+        "event_type": 317,
+        "sign": "ac920c3e66**********78cf1b5de2c63",
+        "t": 1615860427
+}
+
+:::
+</dx-codeblock>
+
+
 
 
 

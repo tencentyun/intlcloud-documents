@@ -4,21 +4,22 @@ You can set referer blocklist/allowlist and rules to block/allow playback reques
 
 Referer URL supports HTTP protocol. CSS uses the referer field in an HTTP request to identify the source and verify the request, and then determine whether to accept or reject the request.
 
-## Notes
+## Note
 - Referer information is included in HTTP requests. Therefore, referer configuration is ineffective for non-HTTP (such as RTMP, WebRTC, QUIC) requests. If you want to restrict the access of RTMP requests, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Enabling, disabling, or modifying the referer takes effects in 15-20 minutes after the configuration. You don't need to push again.
+- The referer hotlink protection feature verifies the referer information in the header of an HTTP request so as to check whether the request is valid and allow or reject live streaming accordingly. However, there may be cases where a forged referer bypasses the verification to hotlink the service. Therefore, we recommend you not strongly rely on referer for content protection.
 
 ## Prerequisites
 
 - You have activated CSS service and logged in to the [CSS console](https://console.cloud.tencent.com/live/livestat).
 - You have [added a playback domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 
-
 [](id:open)
+
 ## Enabling Referer
 
 1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target **playback domain** or click **Manage** on the right to enter the domain management page.
-2. Go to **Access Control** > **Referer Configuration** and click **Edit**.
+2. In **Access Control** > **Referer Configuration**, click **Edit** to enter the referer configuration page.
  ![](https://main.qcloudimg.com/raw/32461edf0353c2c95925b74d80dc25b3.png)
 3. Click ![](https://main.qcloudimg.com/raw/c032c517e25867ff592f128424154688.png) to enable the referer and configure as follows:
  ![](https://main.qcloudimg.com/raw/551044de4acd79683ae69cf106a87c0b.png)
@@ -48,13 +49,13 @@ Referer URL supports HTTP protocol. CSS uses the referer field in an HTTP reques
 <li>If you enter no referer pattern, the blocklist/allowlist is not configured.</li>
 </ul></td>
 </tr></table>
-4. Click **Save**.
+4. Click **Save** to save the configuration.
 
 
 [](id:change)
 ## Modifying Referer
 1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target **playback domain** or click **Manage** on the right to enter the domain management page.
-2. Go to **Access Control** > **Referer Configuration** and click **Edit**.
+2. In **Access Control** > **Referer Configuration**, click **Edit** to enter the referer configuration page.
 3. Modify the [configuration items](#setmess) and click **Save**.
 
 ![](https://main.qcloudimg.com/raw/a8c79376ed22b4e47f35e69411c6df10.png)
@@ -64,11 +65,11 @@ Referer URL supports HTTP protocol. CSS uses the referer field in an HTTP reques
 After [enabling the referer](#open), you can disable it by performing the following steps:
 
 1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target **playback domain** or click **Manage** on the right to enter the domain management page.
-2. Go to **Access Control** > **Referer Configuration** and click **Edit**.
+2. In **Access Control** > **Referer Configuration**, click **Edit** to enter the referer configuration page.
 3. Click ![](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png) to disable the referer.
 4. Click **Save**.
 
-![](https://main.qcloudimg.com/raw/eb36bc40cca9f19e198fc742256fed21.png))
+![](https://main.qcloudimg.com/raw/eb36bc40cca9f19e198fc742256fed21.png)
 
 
 
