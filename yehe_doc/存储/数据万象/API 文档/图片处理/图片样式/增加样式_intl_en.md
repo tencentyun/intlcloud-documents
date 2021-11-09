@@ -1,5 +1,5 @@
 ## Overview
-This API is used to add a style to a bucket. This style will be added to images newly uploaded to this bucket.
+This API is used to set a style for a bucket to process images in the same way.
 
 >? Currently, the QPS for bucket writes is limited to 1, and bucket reads to 10.
 >
@@ -43,8 +43,8 @@ This API uses only common request headers. For more information, please see [Com
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <AddStyle>
-  <StyleName>string</StyleName>
-  <StyleBody>string</StyleBody>
+    <StyleName>string</StyleName>
+    <StyleBody>string</StyleBody>
 </AddStyle>
 ```
 
@@ -85,8 +85,8 @@ Authorization:XXXXXXXXXXXX
 
 <?xml version="1.0" encoding="UTF-8" ?>
 <AddStyle>
-  <StyleName>style_name</StyleName>
-  <StyleBody>imageMogr2/thumbnail/!50px</StyleBody>
+    <StyleName>style_name</StyleName>
+    <StyleBody>imageMogr2/thumbnail/!50px</StyleBody>
 </AddStyle>
 ```
 

@@ -1,78 +1,77 @@
-Tencent Cloud Infinite (CI) verifies the validity of requests through signatures. Developers grant a signature to the client to allow it to upload, download, and manage specific resources.
+CI uses signatures to verify the validity of requests. The developer authorizes a signature to the client for it to upload, download, and manage the specified resources.
 
-With CI, an anonymous HTTP request or signed HTTP request can be made by using the RESTful API. For a signature request, the server will authenticate the initiator.
+When using CI, you can call RESTful APIs to initiate anonymous or signed HTTP requests. For signed requests, the server will validate the identity of the requester.
 
-- Anonymous request: the HTTP request does not include any identity or authentication information, and the HTTP request is made through the RESTful API.
-- Signature request: a signature is included in the HTTP request, and authentication is performed after the server receives the request. The request is approved and executed after a successful authentication, otherwise it is discarded with an error message.
+- Anonymous request: an HTTP request that does not carry any authentication information, and is sent using RESTful APIs.
+- Signed request: an HTTP request that carries a signature. The server will authenticate requesters and only execute requests initiated by authenticated ones. If the authentication fails, the server will return an error message and deny the request.
 
-Cloud Infinite uses the same signature algorithm as [Cloud Object Storage (COS)](https://intl.cloud.tencent.com/document/product/436) on which it is based. It performs authentication using a custom scheme based on HMAC (Hash Message Authentication Code).
+CI uses the same signature algorithm as [Cloud Object Storage (COS)](https://intl.cloud.tencent.com/zh/document/product/436) and uses Hash-based message authentication code (HMAC) custom solutions for identity verification.
 
-### Signature Algorithm
+### Signature algorithm
 
-There are XML and JSON signatures:
+Currently, CI has integrated with COS, meaning that you can use a COS domain to process images. The signature version required is different for CI and COS domains.
 
-- Use **JSON** signatures for **downloading** operations.
-- Use **XML** signatures for the **uploading** and **bucket API** operations. For more information, see XML [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+- **CI domain**: formatted as `<BucketName-APPID>.<picture region>.myqcloud.com/<picture name>` (for example, `examplebucket-1250000000.picsh.myqcloud.com/picture.jpeg`). It uses **JSON** signatures.
+- **COS domain**: formatted as `<BucketName-APPID>.cos.<Region>.myqcloud.com` (for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`). It uses **XML** signatures. For more information about XML signatures, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
->
-- The host in the downloading request header looks like `<BucketName-APPID>.<picture region>.myqcloud.com/<picture name>`, for example, `examplebucket-1250000000.picsh.myqcloud.com/picture.jpeg`.
-- The host in the uploading request header looks like `<BucketName-APPID>.pic.<Region>.myqcloud.com`, for example `examplebucket-1250000000.pic.ap-shanghai.myqcloud.com/picture.jpeg`.
-
-### Scenarios
+### Signature scenarios
 
 <table>
    <tr>
-      <th colspan=2>Scenario</th>
+      <th colspan="2">Scenario</th>
       <th>Applicable Signature</th>
    </tr>
    <tr>
-      <td rowspan=2>Processing during data downloading</td>
-      <td>Hotlink protection is disabled</td>
+      <td rowspan=2>Processing data upon download</td>
+      <td>Hotlink protection not enabled</td>
       <td>No signature verification</td>
    </tr>
    <tr>
-      <td>Hotlink protection is enabled</td>
-      <td>JSON signature</td>
+      <td>Hotlink protection enabled</td>
+      <td>Signature verification</td>
    </tr>
    <tr>
-      <td>Processing during data uploading</td>
-      <td>Persistence processing</td>
-      <td>XML signature</td>
+      <td>Processing data upon upload</td>
+      <td>Persistent processing</td>
+      <td>XML signatures</td>
    </tr>
    <tr>
-      <td>Bucket API operations</td>
-      <td>Query, enable, delete, and others</td>
-      <td>XML signature</td>
+      <td>Bucket API calls </td>
+      <td>Query, activation, deletion, etc.</td>
+      <td>XML signatures</td>
    </tr>
    <tr>
       <td>Content recognition</td>
-      <td>Detect content related to pornography, politics, violence, and terrorism</td>
-      <td>XML signature</td>
+      <td>Detecting pornographic, political, or violent/terror content</td>
+      <td>XML signatures</td>
    </tr>
 </table>
 
-### Signature Tool
 
-The information that is required for generating a signature includes the APPID (such as 1250000000), bucket name (such as examplebucket-ci), and SecretID and SecretKey of the project.
+### Signature tools
 
-The preceding information can be obtained as follows:
-1. Log in to [CI Console](https://console.cloud.tencent.com/ci/index), and click **Bucket Management** in the left sidebar.
-2. Click the bucket that you want to manage to go to the bucket management page.
-3. Click **Bucket Configuration** to view the bucket name and bucket ID. Create a bucket if the current project does not contain one yet. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/1045/33436).
-4. Go to the API key management page in [CAM](https://console.cloud.tencent.com/cam/capi) to get the SecretID and SecretKey.
+To generate a signature, you need the `APPID` (e.g., 1250000000), bucket name (e.g., `examplebucket-ci`), as well as the `SecretID` and `SecretKey` of the project.
 
-
-
-CI follows the same process for computing a signature as COS.
+The following describes how to obtain the information above:
+1. Log in to the [CI console](https://console.cloud.tencent.com/ci/index) and click **Bucket Management** on the left sidebar.
+2. Click the name of the desired bucket.
+3. Click **Bucket Configuration** to view the bucket name and bucket ID. If there is no bucket created for the current project, you can create one by referring to [Creating Buckets](https://intl.cloud.tencent.com/document/product/1045/33436).
+3. Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) and go to **Manage API Key** to get `SecretID` and `SecretKey`.
 
 
-### Using Signatures
 
-Signed HTTP requests initiated through RESTful APIs can pass signatures in the following ways:
-
-1. Pass through a standard HTTP Authorization header, such as `Authorization: q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753;1557996953&...&q-signature=...`
-2. Pass as an HTTP request parameter (be sure to implement UrlEncode), such as `/exampleobject?q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753%3B1557996953&...&q-signature=...`
+The signature calculation process of CI is the same as that of COS. You can use a COS signature tool to generate a signature version you need according to the **signature scenario**.
 
 
->In the preceding example, `...` is used to substitute the specific signing information.
+### Using a signature
+
+Signed HTTP requests sent via RESTful APIs can pass the signature in the following ways:
+
+1. Pass through a standard HTTP `Authorization` header, such as `Authorization: q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753;1557996953&...&q-signature=...`
+2. Pass as an HTTP request parameter (be sure to URL-encode), such as `/exampleobject?q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753%3B1557996953&...&q-signature=...`
+
+
+>!In the example above, `...` are the signatures.
+
+
 

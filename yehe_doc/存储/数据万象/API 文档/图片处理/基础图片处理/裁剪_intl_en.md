@@ -108,7 +108,7 @@ Operation: crop
 | /crop/x&lt;Height> | Height of the output image with the width unchanged. The value must be greater than 0 and smaller than the height of the input image. |
 | /crop/&lt;Width>x&lt;Height> | Width and height of the output image. The values of width and height should be greater than 0 and smaller than those of the input image, respectively. |
 
-When performing scaling and cropping, you can also use the gravity parameter to specify the start position of the operation. For more information, see [Example of scaling and cropping](#Scaling and cropping).
+When performing scaling and cropping, you can also use the `gravity` parameter to specify the start position of the operation. For more information, see [Scaling and Cropping](#Scaling and cropping).
 
 <span id="1"></span>
 
@@ -157,7 +157,7 @@ The 3x3 grid position diagram is as follows. Once you specify the `gravity` para
 
 #### Example 1: regular cropping
 
-This example shows how to translate by 100 pixels horizontally to the right and 10 pixels vertically to the bottom relative to the top-left vertex of the image. It also shows how to crop the image according to the specified target image resolution of 600 × 600 pixels:
+This example shows how to translate by 100 pixels horizontally to the right and 10 pixels vertically to the bottom relative to the top-left vertex of the image. It also shows how to crop the image according to the specified target image resolution of 600 × 600 pixels.
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/cut/600x600x100x10
@@ -185,7 +185,7 @@ Output image:
 
 #### Example 3: inscribed circle cropping
 
-This example shows you how to perform inscribed circle cropping when the radius is 200.
+This example shows you how to perform inscribed circle cropping with the radius of 200.
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/iradius/200
@@ -195,7 +195,7 @@ Output image:
 ![](https://main.qcloudimg.com/raw/1e449274ea00eebc87454168e7056abc.jpeg)
 
 #### Example 4: rounded corner cropping
-This example shows you how to perform rounded corner cropping when the radius is 100.
+This example shows you how to perform rounded corner cropping with the radius of 100.
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/rradius/100 
 ```
@@ -205,7 +205,7 @@ Output image:
 
 
 #### Example 5: smart cropping
-This example shows how to crop an image to the specified resolution of 100 × 600 pixels based on the location of the human face in the image:
+This example shows how to crop an image to the specified resolution of 100 × 600 pixels based on the location of the human face in the image.
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/scrop/100x600
@@ -215,7 +215,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/s
 
 #### Example 6: smart cropping with a signature carried
 
-This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&):
+This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/scrop/100x600

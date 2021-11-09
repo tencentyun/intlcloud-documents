@@ -68,7 +68,7 @@ Operation: blur
 | Parameter | Description |
 | -------------- | ----------------------------- |
 | download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| radius&lt;radius> | Blurring radius. Value range: 1 - 50. |
+| radius&lt;radius> | Blurring radius. Value range: 1–50 |
 | sigma&lt;sigma> | Standard deviation of normal distribution. The value must be greater than 0. |
 | /ignore-error/1 | If this parameter is carried and the image failed to be processed because it is too large, the input image will be returned with no error reported. |
 
