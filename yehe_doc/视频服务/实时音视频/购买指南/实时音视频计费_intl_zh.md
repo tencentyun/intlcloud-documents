@@ -6,7 +6,7 @@
 
 ## 费用组成
 
-每月结束时，TRTC 会统计你 [腾讯云账号](https://console.intl.cloud.tencent.com/trtc)下所有项目当月产生的音频和视频时长用量（单位为分钟）。需注意，视频时长用量按照集合分辨率分为三个档位，分档定价。扣除 TRTC 为每个开发者账号提供的[每月一万分钟免费分钟数](https://docs.agora.io/cn/faq/billing_free)后，TRTC 将剩余的音频时长用量和视频时长用量乘以对应的单价，最后相加得出本月总费用。
+每月结束时，TRTC 会统计你 [腾讯云账号](https://console.intl.cloud.tencent.com/trtc)下所有项目当月产生的音频和视频时长用量（单位为分钟）。需注意，视频时长用量按照集合分辨率分为三个档位，分档定价。扣除 TRTC 为每个开发者账号提供的[每月一万分钟免费分钟数](https://intl.cloud.tencent.com/document/product/647/42735)后，TRTC 将剩余的音频时长用量和视频时长用量乘以对应的单价，最后相加得出本月总费用。
 
 基础的计费公式如下：
 
