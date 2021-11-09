@@ -1,5 +1,5 @@
 ## Use Cases
-As your IDC resources may be limited, if you need to handle business traffic surges, the computing resources in your IDC may be insufficient to meet the requirements. In this case, you can use public cloud resources to handle temporary traffic. Based on custom scheduling policies and by leveraging <a href="https://cloud.tencent.com/product/eks">EKS</a>, TKE Resilience Chart adds virtual nodes to elastically migrate workloads in your IDC cluster to the cloud, so your cluster can get greater elastic scalability and enjoy the following benefits:
+As your IDC resources may be limited, if you need to handle business traffic surges, the computing resources in your IDC may be insufficient to meet the requirements. In this case, you can use public cloud resources to handle temporary traffic. Based on custom scheduling policies and by leveraging <a href="https://intl.cloud.tencent.com/zh/product/eks">EKS</a>, TKE Resilience Chart adds virtual nodes to elastically migrate workloads in your IDC cluster to the cloud, so your cluster can get greater elastic scalability and enjoy the following benefits:
 
 1. The hardware and maintenance costs of your IDC/private cloud do not increase.
 2. You can implement high availability for applications at the IDC/private cloud grade and public cloud grade.
