@@ -1,3 +1,8 @@
+## TPNS Android SDK 1.2.7.0
+
+###  新增应用内消息补推能力
+新增是否允许应用内消息展示接口，请注意高版本安卓使用 WebView 的兼容性详见 [Android 接口文档](https://intl.cloud.tencent.com/document/product/1024/30715)。
+
 ## TPNS Android SDK 1.2.5.0
 
 ###  1. 配置工程依赖环境（可选）
@@ -7,8 +12,6 @@
 allprojects {
     repositories {
         google()
-
-
         // 谷歌推荐 MavenCentral 镜像源
         mavenCentral()
         jcenter()
@@ -31,3 +34,4 @@ public class MessageReceiver extends XGPushBaseReceiver {
     }
 }
 ```
+

@@ -1,19 +1,27 @@
+### What should I do when Xcode 13 for iOS 9 reports an error during compilation saying that it is unable to load `UserNotifications.framework` or start the archive package.
+Error message:
+```xml
+Dyld Error Message:
+Dyld Message: Library not loaded: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
+```
+
+Solution: go to `Targets` > `Build Phases` > `Link Binary With Libraries` and set `UserNotifications.framework` to `Optional` or use an earlier version for packaging.
+
 ### Why is a development environment token considered as a production environment token in iOS? How do I deal with the issue?
 
 If an application is installed in the Xcode development environment, and development environment messages are pushed through TPNS, the following error messages are reported:
 - Error message reported when you query the token using the push troubleshooting tool in the TPNS console
-
 - Error log recorded when you debug the TPNS SDK in Xcode
 ```xml
 Missing Provisioning Profile - iOS Apps must contain a provisioning profile  named embedded.mobileprovision.
- 
+The provisioning profile is missing. iOS apps must contain a provisioning profile named `embedded.mobileprovision`.
 ```
 
 Error cause: the application package does not contain the `embedded.mobileprovision` configuration file, making the token environment unknown.
 Solution:
-1. In the Xcode menu bar, choose **File** > **Project Settings**.
+1. In the Xcode menu bar, choose **File** -> **Project Settings**.
 ![](https://main.qcloudimg.com/raw/c470889681e34e87cc7f661ffb677e7d.png)
-2. Set **Build System** to **Legacy Build System** and click **Done**.
+2. Set **Build System** to **Legacy Build System (Deprecated)** and click **Done**.
 ![](https://main.qcloudimg.com/raw/812b625ddfe5c2e7c40c0ad52cae9aec.png)
 3. Build the application again, and uninstall and reinstall it.
 4. After successful registration, push messages to test the token.
@@ -25,7 +33,7 @@ Solution:
 
 ### What should I do if the error `building for iOS Simulator, but linking in object file built for iOS` is reported when the Xcode 12 simulator integrates with the notification extension plugin during the build?
 
-You need to find the extension plugin target, click **Build Settings** > **Excluded Architectures**, and add the ARM64 instruction set, as shown in the following figure:
+You need to find the extension plugin target, click **Build Settings** -> **Excluded Architectures**, and add the ARM64 instruction set, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/1b62d4bc884c1870c70209b99200d6a6.png)
 
 ### What should I do if push certificate upload failed in the TPNS console?
@@ -70,7 +78,7 @@ Message push involves various associated modules, and exception in any steps can
 
 **Client troubleshooting**
 - Check the notification settings of the device
-Please go to **Notifications** > **App name** to check whether your app has enabled message push.
+Please go to **Notifications** -> **App name** to check whether your app has enabled message push.
 - Check the network settings of the device
 If there is a network issue, the client may fail to obtain the message-receiving token when registering for APNs. As a result, TPNS cannot be used to push messages to specified devices.
 
@@ -138,7 +146,7 @@ Release the preview version in TestFlight: upload the IPA package to [App Store 
 
 ### For iOS, how do I configure to change the badge number only without displaying the message?
 When creating a push, you can use the API to specify the notification bar message type, leave the title empty, and only set `badge_type`. For more information, please see [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
-Example:
+The example is as follows:
 <dx-codeblock>
 :::  json
 {
@@ -176,9 +184,9 @@ The following error is reported during Xcode debugging: "Error Domain=NSCocoaErr
 **Troubleshooting process:**
 1. Use a relevant method in the TPNS SDK to avoid running at the same time as other methods for registering remote notifications.
 2. Change Xcode's build system to the legacy build system to see if there is any repeated class definition caused by repeated import of the static library. The procedure is as follows:
-	1. In the Xcode menu bar, choose **File** > **Project Settings**.
+	1. In the Xcode menu bar, choose **File** -> **Project Settings**.
 	![](https://main.qcloudimg.com/raw/bec61fe573cfe656b426f2e76a6e7310.png)
-	2. Set **Build System** to **Legacy Build System** and click **Done**.
+	2. Set **Build System** to **Legacy Build System (Deprecated)** and click **Done**.
 	![](https://main.qcloudimg.com/raw/e3ac972a5e6c6c7f8ebdab886c7f2342.png)
 	3. Compile again. If a compilation error occurs, make modifications accordingly.
 

@@ -1,8 +1,16 @@
+### Xcode13 iOS9 编译报 UserNotifications.framework 无法加载或 archive 包无法启动，该如何处理？
+错误信息：
+```xml
+Dyld Error Message:
+Dyld Message: Library not loaded: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
+```
+
+解决：`Target > Build Phases > Link Binary With Libraries `将 `UserNotifications.framework` 设置成 `Optional` 或者使用低版本打包。
+
 ### iOS 的开发环境 token，被当做生产环境 token 是什么原因？该如何处理？
 
 在 Xcode 开发环境下安装 App，并使用 TPNS 推送开发环境的消息时，出现以下两种错误提示：
 - 在 TPNS 控制台推送排查工具查询，出现提示"Token注册环境为：product，推送环境为：dev两者不匹配"。
-
 - Xcode 调试 TPNS SDK 错误日志提示 embedded.mobileprovision 缺失。
 ```xml
 Missing Provisioning Profile - iOS Apps must contain a provisioning profile  named embedded.mobileprovision.
@@ -139,7 +147,6 @@ TestFlight 发布预览版，先将 ipa 包上传到 [App Store Connect](https:/
 ### iOS 如何只更改角标而不弹出信息？
 可使用 API 在创建推送时使用通知栏消息类型，且标题内容设为空，同时只设置 badge_type 即可，详情可参考 [API 文档说明](https://intl.cloud.tencent.com/document/product/1024/33764)。
 示例如下：
-
 <dx-codeblock>
 :::  json
 {
@@ -172,7 +179,7 @@ TestFlight 发布预览版，先将 ipa 包上传到 [App Store Connect](https:/
 
 ###  Xcode 调试提示“Error Domain=NSCocoaErrorDomain Code=1001 "APNS 请求 token 失败，如何处理？
 **问题描述**：
-Xcode 调试提示“Error Domain=NSCocoaErrorDomain Code=1001 "APNS请求token失败-->请依次按以下方法解决：优先使用4G网络并重启手机，若多次重启仍然不行，建议更换手机测试!" 
+Xcode 调试提示“Error Domain=NSCocoaErrorDomain Code=1001 "APNS请求token失败-->请依次按以下方法解决：优先使用4G网络并重启手机，若多次重启仍然不行，建议更换手机测试!" UserInfo={NSLocalizedDescription=APNS请求token失败-->请依次按以下方法解决：优先使用4G网络并重启手机，若多次重启仍然不行，建议更换手机测试!“，按照提示操作后问题还是存在。
 
 **排查思路**：
 1. 建议使用 TPNS SDK 的相关方法，避免与其他注册远程通知的方法同时运行。
