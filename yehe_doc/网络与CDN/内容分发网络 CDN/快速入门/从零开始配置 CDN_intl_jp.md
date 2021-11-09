@@ -5,7 +5,7 @@
 ### Tencent Cloudアカウントの登録
 
 Tencent Cloudのアカウント登録が済んでいる場合は、このステップを無視してかまいません。
-<div style="background-color:#00A4FF; width: 450px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn1">ここをクリックしてTencent Cloudアカウントを登録します</a></div>
+<div style="background-color:#00A4FF; width: 450px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn1">ここをクリックしてTencent Cloudアカウントを登録します</a></div>
 
 ### 実名認証
 
