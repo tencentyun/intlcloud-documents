@@ -10,7 +10,8 @@
 
 ### 测试 License 到期后是否可以延期？
 
-您可以免费申请测试版 License（免费测试有效期为14天，可续期1次，共28天）体验测试。到期后请尽快 [购买正式 License](https://intl.cloud.tencent.com/document/product/266/42077)。
+您可以免费申请测试版 License（免费测试有效期为14天，可续期1次，共28天）体验测试。到期后请尽快购买正式license，详情可提交工单咨询或[联系商务](https://intl.cloud.tencent.com/contact-us)。
+
 
 >! 试用期内申请测试续期，则续期到期时间以申请测试时刻为准；若试用期结束后申请测试续期，则续期到期时间以申请测试续期时刻为准。
 >- 当申请测试开始时间为 `2021-08-12 10:28:41`，则14天后到期时间为 `2021-08-26 10:28:41`。
@@ -23,38 +24,14 @@
 测试 License 支持更改，在 [云点播控制台](https://console.cloud.tencent.com/vod/license/video) 选择测试 License 信息右上角，单击【编辑】即可进行修改。
 
 
-
-### 正式 License 能否更改 Android 的 PackageName 和 iOS 的 BundleID?
-
-当前版本，正式 License **不能**更改 PackageName 和 BundleID，后续版本会加以支持。
-
-
-
 ### License 可以同时支持多个 App 吗？
 
 一个 License 只能对应一个 PackageName 和 BundleID，不支持多个 App。
 
 
-
 ### License 应该如何确认绑定关系（Android 的 PackageName 和 iOS 的 BundleID）?
 
 在填写时用户需要确认绑定正式上架 App Store 的 iOS 所对应的 Bundle ID 和正式上架应用市场 Android 的 Package Name。
-
-
-
-### 续期 License 时出现“license not exist”问题，如何解决？
-
-您可登录【云点播控制台】>【License 管理】 >【[SDK License](https://console.cloud.tencent.com/vod/license/video)】根据以下方式排查：
-
-1. 请确认是否在**管理员**页面进行 License 绑定续期。
-   ![img](https://main.qcloudimg.com/raw/446b60171da15bee7b10537ea2f63f32.png)
-2. 如果您是在**非管理员**页面下进行操作，请联系**管理员**协助您进行 License 变更操作。
-
-
-
-### License 无法添加/新增，如何解决？
-
-查看绑定页面是否为**管理员**页面，请选择管理员页面进行绑定。
 
 
 
@@ -75,30 +52,6 @@
 bundleid 类似于 Android 端的 package name，若您不集成 iOS 端，可随意填写，不使用即可。
 
 
-
-### 精简版的短视频 SDK，想升级成基础版 License，要怎么操作？
-
-购买点播流量资源包 50TB、200TB 或 1PB 获取基础版 License 使用权。
-
->? 目前只支持短视频 License 由精简版升级至基础版，升级的 License 为对应的资源包赠送的 License 规格。
-
-
-
 ### 个人购买的短视频 SDK License 可以用于企业吗？
 
 短视频 SDK 暂仅支持购买所在账号进行使用，暂无个人实名认证以及企业实名认证的限制。
-
-
-
-### 为什么我的子账户已经授权了直播和点播所有权限，但是还是无法访问 License 控制台相关界面？
-
-![img](https://main.qcloudimg.com/raw/7423d2e7912de344052c7891629d528b.png)
-
-新版 SDK License 本次升级更新了接口，需要主账号为子账号独立进行重新授权策略后方可访问 License 控制台页面。
-
-- 若您仅需要提供子账号查询 License 的权限，请授权 QcloudVCUBEReadOnlyAccess 策略。
-- 若您需要提供子账号所有 License 操作权限，请授权 QcloudVCUBEFullAccess 策略。
-
-为用户/用户组关联策略以授权相关操作权限的关联指引请参见 [策略授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
-
->?  License 界面所有功能操作已独立于云直播、云点播策略外，即原 QcloudVODFullAccess、QcloudLIVEFullAccess 策略已不包含 License 相关接口，需按照上述说明单独授权。
