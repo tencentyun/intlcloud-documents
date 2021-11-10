@@ -13,7 +13,6 @@
 
 ### 专用宿主机上的云服务器支持迁移吗？
 - 支持实例在不同专用宿主机之间进行迁移，详情请参见 [在 CDH 间迁移实例](https://intl.cloud.tencent.com/document/product/416/41222)。
-- 支持实例在专用宿主机资源池与普通 CVM 实例资源池间进行迁移，详情请参见 [CDH 实例转换为 CVM 实例](https://intl.cloud.tencent.com/document/product/416/42207) 及 [CVM 实例迁移至 CDH](https://intl.cloud.tencent.com/document/product/416/42208)。
 
 ### 专用宿主机上的实例支持调整配置么？
 
