@@ -63,7 +63,7 @@ TEMは、**アプリケーションインスタンス+CFS**を通じて静的ウ
 1. [TEMコンソール](https://console.cloud.tencent.com/tem)にログインして、上記で購入したCFSインスタンスをアプリケーションがデプロイされている環境に関連付けます。
 ![](https://main.qcloudimg.com/raw/065bea19e71061eb3e314c294254d9f6.png)
 
-2. 【[アプリケーション管理](https://console.cloud.tencent.com/tem/service)】ページで、hugoという名前のアプリケーションを作成します。
+2. 【[アプリケーション管理](https://console.intl.cloud.tencent.com/tem/env)】ページで、hugoという名前のアプリケーションを作成します。
 ![](https://main.qcloudimg.com/raw/db37dc37340615e024871c65832972e4.png)
 
 3. アプリケーションをデプロイし、【永続ストレージ】モジュールで関連付けたCFSストレージリソースを選択します。
@@ -73,7 +73,7 @@ TEMは、**アプリケーションインスタンス+CFS**を通じて静的ウ
 ### 手順4：TEMでnginxのネットワークアクセスを設定する[](id:step4)
 <dx-tabs>
 ::: 方法1：転送ルールを設定する（推奨）
-1. 【[アプリケーション管理](https://console.cloud.tencent.com/tem/service)】ページで、作成したアプリケーションの「ID」をクリックして、アプリケーションの基本情報ページに進みます。
+1. 【[アプリケーション管理](https://console.intl.cloud.tencent.com/tem/env)】ページで、作成したアプリケーションの「ID」をクリックして、アプリケーションの基本情報ページに進みます。
 2. アプリケーションの基本情報ページの【アクセス設定】モジュールで、【設定に進む】をクリックして環境アクセス設定ページに進みます。
 ![](https://main.qcloudimg.com/raw/80b914a4a5419cf717d26c67c480fc76.png)
 
@@ -90,7 +90,7 @@ TEMは、**アプリケーションインスタンス+CFS**を通じて静的ウ
 ![](https://main.qcloudimg.com/raw/9b76fee79a65e46760235629b05f244f.png)
 :::
 ::: 方法2：パブリックネットワークCLBを設定する
-1. 【[アプリケーション管理](https://console.cloud.tencent.com/tem/service)】ページで、作成したアプリケーションの「ID」をクリックして、アプリケーションの基本情報ページに進みます。
+1. 【[アプリケーション管理](https://console.intl.cloud.tencent.com/tem/env)】ページで、作成したアプリケーションの「ID」をクリックして、アプリケーションの基本情報ページに進みます。
 2. アプリケーションの基本情報ページの【アクセス設定】モジュールで、右上隅の【編集と更新】をクリックしてパブリックネットワークCLBを追加します。
 ![](https://main.qcloudimg.com/raw/5bf8823dccf189f8be4fb495a87ea0c8.png)
 
