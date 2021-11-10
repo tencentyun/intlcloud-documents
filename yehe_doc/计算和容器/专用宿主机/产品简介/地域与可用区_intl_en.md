@@ -1,18 +1,19 @@
-## Region
+## Regions
+
 ### Overview
 
 A region is the physical location of an IDC. In Tencent Cloud, regions are fully isolated from each other, ensuring cross-region stability and fault tolerance. We recommend that you choose the region closest to your end users to minimize access latency and improve access speed.
 
-You can view the following table or use the [DescribeRegions](https://intl.cloud.tencent.com/document/product/213/15708) API to get a complete list region list.
+You can view the following table or use the [DescribeRegions](https://intl.cloud.tencent.com/document/product/213/15708) API to get a complete region list.
 
 ### Characteristics
 
 - The networks of different regions are fully isolated. Tencent Cloud services in different regions **cannot communicate via a private network by default**.
 - Tencent Cloud services across regions can communicate with each other through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224) over the Internet, while those in different VPCs can communicate with each other through [CCN](https://intl.cloud.tencent.com/document/product/1003), which is faster and more stable.
-- [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If you enable the [cross-region binding](https://intl.cloud.tencent.com/ko/document/product/214/38441) feature, cross-region binding of CLB and CVM instances is supported.
+- [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If you enable the [cross-region binding](https://intl.cloud.tencent.com/document/product/214/38441) feature, a CLB instance can be bound to CVM instances in another region.
 
+## Availability Zones
 
-## Availability Zone
 ### Overview
 
 An availability zone (AZ) is a physical IDC of Tencent Cloud with independent power supply and network in the same region. It can ensure business stability, as failures (except for major disasters or power failures) in one AZ are isolated without affecting other AZs in the same region. By starting an instance in an independent availability zone, users can protect their applications from being affected by a single point of failure.
@@ -20,10 +21,9 @@ You can view the following table or use the [DescribeZones](https://intl.cloud.t
 
 ### Characteristics
 
-Tencent Cloud services in the same VPC are interconnected via the private network, which means they can communicate using [private IPs](https://intl.cloud.tencent.com/document/product/213/5225), even if they are in different AZs of the same region.
+Tencent Cloud services in the same VPC are interconnected via the private network, which means they can communicate using [private IPs](https://intl.cloud.tencent.com/document/product/213/5225), even if they are in different availability zones of the same region.
 >? Private network interconnection refers to the interconnection of resources under the same account. Resources under different accounts are completely isolated on the private network.
 >
-
 
 <span id="MainlandChina"></span>
 ## China
@@ -38,7 +38,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 		<td>Guangzhou Zone 1 (sold out)<br>ap-guangzhou-1</td>
 	</tr>	
 	<tr>
-		<td>Guangzhou Zone 2<br>ap-guangzhou-2</td>
+		<td>Guangzhou Zone 2 (sold out)<br>ap-guangzhou-2</td>
 	</tr>
 	<tr>
 		<td>Guangzhou Zone 3<br>ap-guangzhou-3</td>
@@ -54,7 +54,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 	</tr>
 	<tr>
 		<td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
-		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
+		<td>Shanghai Zone 1 (sold out)<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
 		<td>Shanghai Zone 2<br>ap-shanghai-2</td>
@@ -65,10 +65,10 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 	<tr>
 		<td>Shanghai Zone 4<br>ap-shanghai-4</td>
 	</tr>
-	<tr>
+ <tr>
 		<td>Shanghai Zone 5<br>ap-shanghai-5</td>
 	</tr>
-		<tr>
+	<tr>
 			<td rowspan="3">East China (Nanjing)<br>ap-nanjing</td>
 			<td>Nanjing Zone 1<br>ap-nanjing-1</td>
 	</tr>
@@ -94,10 +94,10 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 	<tr>
 			<td>Beijing Zone 5<br>ap-beijing-5</td>
 	</tr>
-	<tr>
+		<tr>
 			<td>Beijing Zone 6<br>ap-beijing-6</td>
 	</tr>
-	<tr>
+		<tr>
 			<td>Beijing Zone 7<br>ap-beijing-7</td>
 	</tr>
 	<tr>
@@ -108,12 +108,12 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Chengdu Zone 2<br>ap-chengdu-2</td>
 	</tr>    
 	<tr>
-			<td >Southwest China (Chongqing)<br>ap-chongqing</td>
+			<td>Southwest China (Chongqing)<br>ap-chongqing</td>
 			<td>Chongqing Zone 1<br>ap-chongqing-1</td>
 	</tr>
 	<tr>
-			<td rowspan="3">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
-			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-1</td>
+			<td rowspan="3">Hong Kong/Macao/Taiwan (Hong Kong, China)<br>ap-hongkong</td>
+			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions) (sold out)<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
 			<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
@@ -133,13 +133,13 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<th>AZ</th>
 		</tr>
 		<tr>
-			<td rowspan="3">Southeast Asia (Singapore)<br>ap-singapore</td>
+			<td  rowspan="3">Southeast Asia (Singapore)<br>ap-singapore</td>
 			<td>Singapore Zone 1 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-1</td>
 		</tr>
-			<tr>
+		<tr>
 			<td>Singapore Zone 2 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-2</td>
 		</tr>
-			<tr>
+		<tr>
 			<td>Singapore Zone 3 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-3</td>
 		</tr>
 		<tr>
@@ -147,10 +147,13 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Jakarta Zone 1 (Nodes in Jakarta can cover Southeast Asia)<br>ap-jakarta-1</td>
 		</tr>
 		<tr>
-			<td >Northeast Asia (Seoul)<br>ap-seoul</td>
+			<td  rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
 			<td>Seoul Zone 1 (Nodes in Seoul can cover Northeast Asia)<br>ap-seoul-1</td>
 		</tr>
 		<tr>
+			<td>Seoul Zone 2 (Nodes in Seoul can cover Northeast Asia)<br>ap-seoul-2</td>
+		</tr>
+		<tr >
 			<td rowspan="2">Northeast Asia (Tokyo)<br>ap-tokyo</td>
 			<td>Tokyo Zone 1 (Nodes in Tokyo can cover Northeast Asia)<br>ap-tokyo-1</td>
 		</tr>
@@ -165,9 +168,12 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Mumbai Zone 2 (Nodes in Mumbai can cover South Asia) <br>ap-mumbai-2</td>
 		</tr>
 		<tr>
-		  	<td >Southeast Asia (Bangkok)<br>ap-bangkok </td>
-				 <td >Bangkok Zone 1 (Nodes in Bangkok can cover Southeast Asia)<br>ap-bangkok-1</td>
+		  	<td rowspan="2">Southeast Asia (Bangkok)<br>ap-bangkok</td>
+			<td>Bangkok Zone 1 (Nodes in Bangkok can cover Southeast Asia)<br>ap-bangkok-1</td>
+		</tr>
 		<tr>
+			<td>Bangkok Zone 2 (Nodes in Bangkok can cover Southeast Asia)<br>ap-bangkok-2</td>
+		</tr>
 			<td>North America (Toronto)<br>na-toronto</td>
 			<td>Toronto Zone 1 (Nodes in Toronto can cover North America)<br>na-toronto-1</td>
 		</tr>
@@ -220,7 +226,7 @@ The following table describes which Tencent Cloud resources are global, which ar
 	  <td>User Account</td>
 	  <td>No limit</td>
 	  <td>Globally unique</td>
-	  <td>Users can use the same account to access Tencent Cloud resources around the world.</td>
+	  <td>Users can use the same account to access Tencent Cloud resources from around the world.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/213/6092">SSH Keys</a> </td>
@@ -235,7 +241,7 @@ The following table describes which Tencent Cloud resources are global, which ar
 	  <td>A CVM instance created in an availability zone is not available to other availability zones.</td>
 	</tr>
 	<tr>
-	<td> <a href="https://intl.cloud.tencent.com/document/product/213/4941">Custom Images</a></td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/213/4941">Custom Images</a> </td>
 	  <td>img-xxxxxxxx</td>
 	  <td>Regional</td>
 	  <td>Custom images created for the instance are available to all availability zones of the same region. Use <b>Copy Image</b> to copy a custom image if you need to use it in other regions.</td>
@@ -255,8 +261,8 @@ The following table describes which Tencent Cloud resources are global, which ar
 	<tr>
 	<td> <a href="https://cloud.tencent.com/document/product/362">Cloud Block Storage</a> </td>
 	  <td>disk-xxxxxxxx</td>
-	  <td>CVM instances are specific to an availability zone</td>
-	  <td>Users can only create a Cloud Block Storage disk in a specific AZ and mount it to instances in the same AZ.</td>
+	  <td>CBS disks are specific to an availability zone.</td>
+	  <td>Users can only create a Cloud Block Storage disk in a specific AZ and attach it to instances in the same availability zone.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/362/31638">Snapshots</a> </td>
@@ -279,7 +285,7 @@ The following table describes which Tencent Cloud resources are global, which ar
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/215/535#.E5.AD.90.E7.BD.91">Subnets</a> </td>
 	  <td>subnet-xxxxxxxx</td>
-	  <td>CVM instances are specific to an availability zone</td>
+	  <td>Subnets are specific to an availability zone.</td>
 	  <td>Users cannot create subnets across availability zones.</td>
 	</tr>
 	<tr>
@@ -292,15 +298,13 @@ The following table describes which Tencent Cloud resources are global, which ar
 </table>
 
 
-
-
 ## Relevant Operations
 
 ### Migrating an instance to another availability zone
 
 Once launched, an instance cannot be migrated. However, you can create a custom image of your CVM instance and use the image to launch or update an instance in a different availability zone.
 1. Create a custom image from the current instance. For more information, see [Creating Custom Images](https://intl.cloud.tencent.com/document/product/213/4942).
-2. If the instance is on a [VPC](https://intl.cloud.tencent.com/document/product/213/5227) and you want to retain its current private IP address after the migration, first delete the subnet in the current availability zone and then create a subnet in the new availability zone with the same IP address range. Note that a subnet can be deleted only when it contains no available instances. Therefore, all the instances in the current subnet should be migrated to the new subnet.
+2. If the instance is on a VPC [network environment](https://intl.cloud.tencent.com/document/product/213/5227) and you want to retain its current private IP address after the migration, first delete the subnet in the current availability zone and then create a subnet in the new availability zone with the same IP address range. Note that a subnet can be deleted only when it contains no available instances. Therefore, all the instances in the current subnet should be migrated to the new subnet.
 3. Create a new instance in the new availability zone by using the custom image you have just created. You can choose the same type and configuration as the original instance, or choose new settings. For more information, see [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).
 4. If an elastic IP is associated with the original instance, dissociate it from the old instance and associate it with the new instance. For more information, see [Elastic IP (EIP)](https://intl.cloud.tencent.com/document/product/213/5733).
 5. (Optional) If the original instance is [pay-as-you-go](https://intl.cloud.tencent.com/document/product/213/2180), you can choose to terminate it. For more information, see [Terminating Instances](https://intl.cloud.tencent.com/document/product/213/4930).
@@ -308,4 +312,3 @@ Once launched, an instance cannot be migrated. However, you can create a custom 
 ### Copying images to other regions
 
 Operations such as launching and viewing instances are region-specific. If the image of the instance that you need to launch does not exist in the region, copy the image to the desired region. For more information, see [Copying Images](https://intl.cloud.tencent.com/document/product/213/4943).
-
