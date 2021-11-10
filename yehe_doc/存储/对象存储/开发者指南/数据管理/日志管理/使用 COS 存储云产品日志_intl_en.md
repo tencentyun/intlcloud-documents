@@ -7,6 +7,7 @@ COS log storage offers the following benefits:
 - **Persistent storage**: COS provides stable, persistent storage that allows you to store logs in COS at a very low cost. You can access your logs anytime, anywhere for business analysis or decision-making.
 - **COS Select**: this feature allows for the simple extraction of logs stored on COS. You can combine log fields to make it easier to extract the information you need and reduce data download traffic.
 
+
 ## Shipping Logs
 
 You can ship your Tencent Cloud product logs to COS in one of the following 2 ways:
@@ -19,14 +20,14 @@ The table below shows the particular log shipping method or methods currently su
 | Product          | Supports Direct Shipping to COS | Supports Shipping to CLS     |
 | ------------------- | ---------------------- | ---------------------- |
 | CA           | Yes                     | No                     |
-| CLB        | Yes                     | Yes                     |
+| CLB        | No                     | Yes                     |
 | CKafka     | Yes                     | No                     |
 | APIGateway | No                     | Yes                     |
 | SCF      | No                     | Yes                     |
 | TKE        | No                     | Yes                     |
 | LVB          | No                     | Yes                     |
 | TCB          | No                     | Yes (however, TCB does not support shipping logs to COS through CLS) |
-| COS        | Yes                     | No          |
+| COS        | Yes                     |  Yes for accounts on the allowlist. You can [contact us](https://intl.cloud.tencent.com/contact-sales) to add your account to the allowlist.        |
 
 ### Directly shipping logs to COS
 
@@ -35,7 +36,6 @@ The Tencent Cloud products outlined below allow you to ship logs directly to COS
 | Product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | Documentation                                                 | Shipping Interval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        | Shipping Path                                                |
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 | CA | [Click here to view](https://intl.cloud.tencent.com/document/product/1021/30338) | 10-15 min |  cloudaudit/customprefix/timestamp|
-| CLB    | [Click here to view](https://intl.cloud.tencent.com/document/product/214) | 60 min               | lb-id/timestamp                                              |
 | CKafka | [Click here to view](https://intl.cloud.tencent.com/document/product/597) | 5-60 min<br>You can specify the interval | instance id/topic id/timestamp                           |
 | COS    | [Click here to view](https://intl.cloud.tencent.com/document/product/436/17040) | 5 min                | You can specify the path prefix. We recommend specifying an identifiable path, e.g. `cos_bucketname_access_log/timestamp`. |
 
@@ -49,7 +49,7 @@ The Tencent Cloud products outlined below allow you to ship logs directly to CLS
 | -------------------- | ------------------------------------------------------------ |
 | API Gateway | [Click here to view](https://intl.cloud.tencent.com/document/product/628/34636) |
 | TKE         | [Click here to view](https://intl.cloud.tencent.com/document/product/457/32419) |
-| LVB           | - |
+| CSS           | Click here to view|
 
 CLS can ship the following 3 types of logs to COS:
 
@@ -74,12 +74,12 @@ You can download logs to the local file system through the Tencent Cloud console
 | Console         | [Click here to view](https://intl.cloud.tencent.com/document/product/436/13322) |
 | cosbrowser     | [Click here to view](https://intl.cloud.tencent.com/document/product/436/32565) |
 | coscmd         | [Click here to view](https://intl.cloud.tencent.com/document/product/436/10976) |
-| Android SDK    | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31514) |
+| Android SDK    | [Click here to view](https://intl.cloud.tencent.com/document/product/436/37675) |
 | C SDK          | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31518) |
 | C++ SDK        | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31522) |
-| .NET SDK       | [Click here to view](https://intl.cloud.tencent.com/document/product/436/30596) |
+| .NET SDK       | [Click here to view](https://intl.cloud.tencent.com/document/product/436/30594) |
 | Go SDK         | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31526) |
-| iOS SDK        | [Click here to view](https://intl.cloud.tencent.com/document/product/436/11280) |
+| iOS SDK        | [Click here to view](https://intl.cloud.tencent.com/document/product/436/37684) |
 | Java SDK       | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31534) |
 | JavaScript SDK | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31538) |
 | Node.js SDK    | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31710) |

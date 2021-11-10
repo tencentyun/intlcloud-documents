@@ -22,7 +22,7 @@ func (s *ObjectService) GetPresignedURL(ctx context.Context, httpMethod, name, a
 | expired | time.Duration | Validity period of the signature |
 | opt    | interface{} | Can be nil |
 
-## Generating Pre-signed URL with Permanent Key
+## Using a permanent key to generate a pre-signed URL
 
 ### Upload request sample
 
@@ -115,13 +115,13 @@ func main() {
 	ctx := context.Background()
 
 	// Method 1. Use tags to configure “x-cos-security-token”.
-	// Get presigned
+	// Get the pre-signed URL.
 	presignedURL, err := c.Object.GetPresignedURL(ctx, http.MethodGet, name, tak, tsk, time.Hour, token)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
 	}
-	// Get object by pre-signed URL
+	// Access the object with the pre-signed URL.
 	resp, err := http.Get(presignedURL.String())
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
@@ -137,13 +137,13 @@ func main() {
 		Header: &http.Header{},
 	}
 	opt.Query.Add("x-cos-security-token", "<token>")
-	// Get presigned
+	// Get the pre-signed URL.
 	presignedURL, err = c.Object.GetPresignedURL(ctx, http.MethodGet, name, tak, tsk, time.Hour, opt)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
 	}
-	// Get object by pre-signed URL
+	// Access the object with the pre-signed URL.
 	resp, err = http.Get(presignedURL.String())
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
@@ -153,3 +153,79 @@ func main() {
 	fmt.Printf("resp:%v\n", resp)
 }
 ```
+
+## Sample of Generating a Pre-Signed URL for a Custom Domain
+```go
+func main() {
+    // Replace it with your temporary key.
+    tak := os.Getenv("SECRETID")
+    tsk := os.Getenv("SECRETKEY")
+    // Change it to the custom domain.
+    u, _ := url.Parse("https://<custom domain>")
+    b := &cos.BaseURL{BucketURL: u}
+    c := cos.NewClient(b, &http.Client{})
+
+    name := "exampleobject"
+    ctx := context.Background()
+
+    // Get the pre-signed URL.
+    presignedURL, err := c.Object.GetPresignedURL(ctx, http.MethodGet, name, tak, tsk, time.Hour, nil)
+    if err != nil {
+        fmt.Printf("Error: %v\n", err)
+        return
+    }
+    // Access the object with the pre-signed URL.
+    resp, err := http.Get(presignedURL.String())
+    if err != nil {
+        fmt.Printf("Error: %v\n", err)
+    }
+    defer resp.Body.Close()
+    fmt.Println(presignedURL.String())
+    fmt.Printf("resp:%v\n", resp)
+}
+```
+
+## Adding Request Parameters or Headers
+```go
+func main() {
+	// Replace it with your temporary key.
+	tak := os.Getenv("SECRETID")
+	tsk := os.Getenv("SECRETKEY")
+	u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+	b := &cos.BaseURL{BucketURL: u}
+	c := cos.NewClient(b, &http.Client{})
+
+	name := "exampleobject"
+	ctx := context.Background()
+
+	// You can add request parameters and request headers through “PresignedURLOptions”.
+	opt := &cos.PresignedURLOptions{
+		Query:  &url.Values{},
+		Header: &http.Header{},
+	}
+	// Add request parameters. The returned pre-signed URL will include the parameters added.
+	opt.Query.Add("x-cos-security-token", "<token>")
+	// Add request headers. The returned pre-signed URL only sets the request headers to the signature. Therefore, you still need to set the headers when issuing requests.
+	opt.Header.Add("Content-Type", "text/html")
+
+	// Get the pre-signed URL.
+	presignedURL, err := c.Object.GetPresignedURL(ctx, http.MethodPut, name, tak, tsk, time.Hour, opt)
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+		return
+	}
+	// Access the object with the pre-signed URL.
+	req, _ := http.NewRequest(http.MethodPut, presignedURL.String(), strings.NewReader("test"))
+	// Set headers when issuing requests.
+	req.Header.Set("Content-Type", "text/html")
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+	}
+	defer resp.Body.Close()
+	fmt.Println(presignedURL.String())
+	fmt.Printf("resp:%v\n", resp)
+}
+```
+
+

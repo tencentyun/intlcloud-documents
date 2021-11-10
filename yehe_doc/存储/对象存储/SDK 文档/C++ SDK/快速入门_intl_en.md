@@ -1,6 +1,6 @@
 ## Download and Installation
 
-### Relevant resources
+#### Relevant resources
 
 - Download COS XML C++ SDK source code below:
 Linux/Windows/macOS: [ XML Linux C++ SDK](https://github.com/tencentyun/cos-cpp-sdk-v5)
@@ -9,6 +9,7 @@ Linux/Windows/macOS: [ XML Linux C++ SDK](https://github.com/tencentyun/cos-cpp-
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/CHANGELOG.md).
 
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
+>
 
 
 ## Pre-Compiled (Recommended)
@@ -74,14 +75,14 @@ cd build
 cmake .. 
 make
 ```
-3. Install the POCO library.
+3. Install the POCO libraries.
 ```shell
 cd ${cos-cpp-sdk} 
 sh install-libpoco.sh
 ```
 >? This script installs the POCO dynamic library to the `/usr/lib64` directory and creates a soft link. To use a COS SDK in the production environment, install the POCO library to the production environment as well.
 >
-4. Test the demo. 
+4. Run the demo. 
 >?You can skip this step if you don’t need to test the demo.
 >
 ```shell
@@ -320,9 +321,9 @@ int main(int argc, char *argv[]) {
     // 2. Construct a request to upload a file
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
     std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object’s access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
-    // The local file path is required in the constructor of `request`.
+    // The local file path is required in the request constructor.
     qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file");
-    req.SetXCosStorageClass("STANDARD_IA"); // Call the `Set` method to set metadata
+    req.SetXCosStorageClass("STANDARD_IA"); // Call the `Set` method to set metadata, etc.
     qcloud_cos::PutObjectByFileResp resp;
     
     // 3. Call the PUT Object API
@@ -344,7 +345,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-### Querying the object list
+### Querying objects
 
 ```cpp
 #include "cos_api.h"
@@ -401,7 +402,7 @@ int main(int argc, char *argv[]) {
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
     std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
     std::string local_path = "/tmp/exampleobject";
-    // The request needs to carry the appid, bucketname, object, and local path (including the file name)
+    // appid, bucketname, object, and a local path (including filename) are required for the request.
     qcloud_cos::GetObjectByFileReq req(bucket_name, object_name, local_path);
     qcloud_cos::GetObjectByFileResp resp;
     

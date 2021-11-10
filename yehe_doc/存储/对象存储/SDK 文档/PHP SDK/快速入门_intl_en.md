@@ -12,7 +12,7 @@
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
 >
 
-#### Environmental dependencies
+#### Environment requirements
 
 - PHP 5.6+
 You can run the `php -v` command to view the current PHP version.
@@ -38,10 +38,10 @@ You can install the SDK using [Composer](#composer), [Phar](#phar), or the [sour
 
 It is recommended to install cos-php-sdk-v5 with Composer, a PHP dependency manager that allows you to declare the dependencies necessary for your project and then automatically installs them into your project.
 
->? You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at [Composer website](https://getcomposer.org/).
+>? You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at the [Composer website](https://getcomposer.org/).
 >
 
-**Installation Steps**
+**Directions**
 
 1. Start the terminal.
 2. Run the following command to download Composer:
@@ -104,7 +104,7 @@ require '/path/to/sdk/vendor/autoload.php';
 The following describes how to use the PHP SDK of COS to perform basic operations, such as initializing the client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object. For more information about the parameters involved in the samples, please see [Bucket Operations](https://intl.cloud.tencent.com/document/product/436/31470) and [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542).
 
 ### Initialization
-If you use a permanent key to initialize a `COSClient`, you need to get your `SecretId` and `SecretKey` on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page in the CAM console. A permanent key is suitable for most application scenarios.
+If you use a permanent key to initialize a `COSClient`, you can get the `SecretId` and `SecretKey` on the [Manage API Key](https://console.cloud.tencent.com/cam/capi) page of the CAM console. A permanent key is suitable for most application scenarios.
 
 [//]: # ".cssg-snippet-global-init"
 ```php
@@ -117,7 +117,7 @@ $cosClient = new Qcloud\Cos\Client(
         'region' => $region,
         'schema' => 'https', // Protocol, http by default
         'credentials'=> array(
-            'secretId'  => $secretId ,
+            'secretId'  => $secretId,
             'secretKey' => $secretKey)));
 ```
 
@@ -128,8 +128,8 @@ If you initialize a client with a [temporary key](https://intl.cloud.tencent.com
 
 [//]: # ".cssg-snippet-global-init-sts"
 ```php
-$tmpSecretId = "SECRETID"; // "SecretId of the temporary key";
-$tmpSecretKey = "SECRETKEY"; // "SecretKey of the temporary key";
+$tmpSecretId = "SECRETID"; //"SecretId of the temporary key";
+$tmpSecretKey = "SECRETKEY"; //"SecretKey of the temporary key";
 $tmpToken = "COS_TOKEN"; // "Token of the temporary key";
 $region = "COS_REGION"; // Set the default bucket region
 $cosClient = new Qcloud\Cos\Client(
@@ -146,7 +146,7 @@ $cosClient = new Qcloud\Cos\Client(
 
 [//]: # ".cssg-snippet-put-bucket"
 ```php
-try {
+try{
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $result = $cosClient->createBucket(array('Bucket' => $bucket));
     // Request successful
@@ -161,7 +161,7 @@ try {
 
 [//]: # ".cssg-snippet-get-service"
 ```php
-try {
+try{
     // Request successful
     $result = $cosClient->listBuckets();
     print_r($result);
@@ -174,7 +174,7 @@ try {
 
 ### Uploading an object
 >!
-> - Upload a file (up to 5 GB) using the `putObject` API.
+> - Upload a file (up to 5 GB) using the putObject API.
 > - Upload a file using the Upload API. The Upload API is a composition API that uses simple upload for small files and uses multipart upload for large files.
 > - For the parameter description, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1).
 > 
@@ -184,9 +184,9 @@ try {
 # Upload a file.
 ## putObject (an API that can upload files of up to 5 GB)
 ### Upload strings in memory
-try {
+try{
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
+    $key = "exampleobject"; // Object key, the unique identifier of the object in the bucket
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
         'Key' => $key,
@@ -197,9 +197,9 @@ try {
 }
 
 ### Upload a file stream
-try {
+try{
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
+    $key = "exampleobject"; // Object key, the unique identifier of the object in the bucket
     $srcPath = "path/to/localFile";// Absolute path to local file
     $file = fopen($srcPath, "rb");
     if ($file) {
@@ -215,9 +215,9 @@ try {
 
 ## Upload (advanced upload API, which can upload files of up to 50 TB with multipart upload)
 ### Upload strings in memory
-try {    
+try{    
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
+    $key = "exampleobject"; // Object key, the unique identifier of the object in the bucket
     $result = $cosClient->Upload(
         $bucket = $bucket,
         $key = $key,
@@ -228,9 +228,9 @@ try {
 }
 
 ### Upload a file stream
-try {    
+try{    
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
+    $key = "exampleobject"; // Object key, the unique identifier of the object in the bucket
     $srcPath = "path/to/localFile";// Absolute path to local file
     $file = fopen($srcPath, 'rb');
     if ($file) {
@@ -249,7 +249,7 @@ try {
 
 [//]: # ".cssg-snippet-get-bucket"
 ```php
-try {
+try{
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $result = $cosClient->listObjects(array(
         'Bucket' => $bucket
@@ -266,11 +266,11 @@ try {
 }
 ```
 
-Calling the `listObjects` API once can query up to 1,000 objects. If you want to query all objects, you need to call it repeatedly.
+A single call to the `listObjects` API can query up to 1,000 objects. If you want to query all objects, you need to call it repeatedly.
 
 [//]: # ".cssg-snippet-get-bucket-recursive"
 ```php
-try {
+try{
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $prefix = ''; // Prefix of the objects to be listed
     $marker = ''; // End marker in the last list
@@ -297,15 +297,15 @@ try {
 ```
 
 ### Downloading an object
-- Download a file using the `getObject` API.
-- Get the file download URL using the `getObjectUrl` API.
+- Download a file using the getObject API.
+- Get the file download URL using the getObjectUrl API.
 
 [//]: # ".cssg-snippet-get-object-comp"
 ```php
 # Download a file.
 ## getObject (download file)
 ### Download to memory
-try {
+try{
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
     $result = $cosClient->getObject(array(
@@ -319,7 +319,7 @@ try {
 }
 
 ### Download to the local file system
-try {
+try{
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
     $localPath = @"path/to/localFile";// Download to a specific local path
@@ -336,7 +336,7 @@ try {
 /*
  * Range field is in the format of 'bytes=a-b'
  */
-try {
+try{
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
     $localPath = @"path/to/localFile";// Download to a specific local path
@@ -351,7 +351,7 @@ try {
 }
 
 ## getObjectUrl (get the file URL)
-try {    
+try{    
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
     $signedUrl = $cosClient->getObjectUrl($bucket, $key, '+10 minutes');
@@ -369,7 +369,7 @@ try {
 ```php
 # Delete an object.
 ## deleteObject
-try {
+try{
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject";  // Object key, the unique identifier of the object in the bucket
     $result = $cosClient->deleteObject(array(
@@ -385,7 +385,7 @@ try {
 }
 # Delete multiple objects.
 ## deleteObjects
-try {
+try{
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key1 = "exampleobject1";  // Object key, the unique identifier of the object in the bucket
     $key2 = "exampleobject2";  // Object key, the unique identifier of the object in the bucket
