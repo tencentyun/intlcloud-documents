@@ -63,7 +63,7 @@ TEM 通过 **应用实例+CFS** 的方式提供静态网站资源托管的能力
 1. 登录 [弹性微服务控制台](https://console.cloud.tencent.com/tem)，在应用部署所在的环境中关联上述购买的 CFS 实例。
 ![](https://main.qcloudimg.com/raw/065bea19e71061eb3e314c294254d9f6.png)
 
-2. 在【[应用管理](https://console.cloud.tencent.com/tem/service)】页面创建一个名为 hugo 的应用。
+2. 在【[应用管理](https://console.intl.cloud.tencent.com/tem/env)】页面创建一个名为 hugo 的应用。
 ![](https://main.qcloudimg.com/raw/db37dc37340615e024871c65832972e4.png)
 
 3. 部署应用，在【持久化存储】模块选择已关联的 CFS 存储资源。
@@ -73,7 +73,7 @@ TEM 通过 **应用实例+CFS** 的方式提供静态网站资源托管的能力
 ### 步骤4：在 TEM 上配置 nginx 的网络访问[](id:step4)
 <dx-tabs>
 ::: 方案一：配置转发规则（推荐）
-1. 在【[应用管理](https://console.cloud.tencent.com/tem/service)】页面，单击刚刚创建的应用的“ID”，进入应用基本信息页面。
+1. 在【[应用管理](https://console.intl.cloud.tencent.com/tem/env)】页面，单击刚刚创建的应用的“ID”，进入应用基本信息页面。
 2. 在应用基本信息页面，在【访问配置】模块单击【前往配置】，进入环境访问配置页面。
 ![](https://main.qcloudimg.com/raw/80b914a4a5419cf717d26c67c480fc76.png)
 
@@ -90,7 +90,7 @@ TEM 通过 **应用实例+CFS** 的方式提供静态网站资源托管的能力
 ![](https://main.qcloudimg.com/raw/9b76fee79a65e46760235629b05f244f.png)
 :::
 ::: 方案二：配置公网 CLB
-1. 在【[应用管理](https://console.cloud.tencent.com/tem/service)】页面，单击刚刚创建的应用的“ID”，进入应用基本信息页面。
+1. 在【[应用管理](https://console.intl.cloud.tencent.com/tem/env)】页面，单击刚刚创建的应用的“ID”，进入应用基本信息页面。
 2. 在应用基本信息页面，在【访问配置】模块单击右上角的【编辑并更新】，添加公网 CLB。
 ![](https://main.qcloudimg.com/raw/5bf8823dccf189f8be4fb495a87ea0c8.png)
 
