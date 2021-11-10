@@ -33,7 +33,7 @@
 
 以下腾讯云产品拥有直接投递日志到 COS 的能力，您可以按照对应的产品文档指引，配置日志投递规则，将日志投递到 COS 。
 
-| 云产品名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | 日志投递文档                                                 | 日志投递间隔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        | 日志投递路径                                                 |
+| 云产品名称     | 日志投递文档                                                 | 日志投递间隔      | 日志投递路径                                                 |
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 |云审计 CA |[点此查阅](https://intl.cloud.tencent.com/document/product/1021/30338) | 10-15分钟 |  cloudaudit/customprefix/timestamp|
 | 消息队列 CKafka | [点此查阅](https://intl.cloud.tencent.com/document/product/597) | 5分钟 - 60分钟<br>可指定投递间隔 | instance id/topic id/timestamp                           |
