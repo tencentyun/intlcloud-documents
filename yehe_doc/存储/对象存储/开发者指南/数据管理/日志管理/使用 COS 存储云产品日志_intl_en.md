@@ -33,7 +33,7 @@ The table below shows the particular log shipping method or methods currently su
 
 The Tencent Cloud products outlined below allow you to ship logs directly to COS by setting log shipping rules as instructed in the product-specific documentation.
 
-| Product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | Documentation                                                 | Shipping Interval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        | Shipping Path                                                |
+| Product      | Documentation                                                 | Shipping Interval      | Shipping Path                                                |
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 | CA | [Click here to view](https://intl.cloud.tencent.com/document/product/1021/30338) | 10-15 min |  cloudaudit/customprefix/timestamp|
 | CKafka | [Click here to view](https://intl.cloud.tencent.com/document/product/597) | 5-60 min<br>You can specify the interval | instance id/topic id/timestamp                           |
