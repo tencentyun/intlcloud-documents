@@ -11,13 +11,13 @@ Before using GooseFS, you need to:
 
 ## Downloading and Configuring GooseFS
 
-1. Download the GooseFS installation package from the repository at goosefs-1.0.0-bin.tar.gz.
+1. Download the GooseFS installation package from the repository at [goosefs-1.1.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.1.0/release/goosefs-1.1.0-bin.tar.gz).
 2. Run the following command to decompress the installation package:
 ```shell
-tar -zxvf goosefs-1.0.0-bin.tar.gz
-cd goosefs-1.0.0
+tar -zxvf goosefs-1.1.0-bin.tar.gz
+cd goosefs-1.1.0
 ```
- After the decompression, the home directory of GooseFS `goosefs-1.0.0` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
+ After the decompression, the home directory of GooseFS `goosefs-1.1.0` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
 3. Create the `conf/goosefs-site.properties` configuration file in `${GOOSEFS_HOME}/conf`. You can use a built-in configuration template.
 ```shell
 $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
@@ -117,7 +117,7 @@ To mount COS or Tencent Cloud HDFS to the root directory of GooseFS, configure t
 
 >?
 >- For the complete configuration of COSN, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
->- For the complete configuration of CHDFS, please see [Mounting CHDFS](https://cloud.tencent.com/document/product/1105/36368).
+>- For the complete configuration of CHDFS, please see [Mounting CHDFS Instance](https://intl.cloud.tencent.com/document/product/1106/41965).
 
 The following describes how to create a namespace to mount COS or CHDFS.
 
@@ -180,17 +180,14 @@ Information recorded in the metadata is as follows:
 ## Loading Table Data to GooseFS
 
 1. You can load Hive table data to GooseFS. Before the loading, attach the database to GooseFS using the following command:
-
 ```shell
 $ goosefs table attachdb --db test_db hive thrift://
 172.16.16.22:7004 test_for_demo
 ```
-
 >! Replace `thrift` in the command with the actual Hive Metastore address.
 >
 2. After the database is attached, run the `ls` command to view information about the attached database and table:
-```
-shell
+```shell
 $ goosefs table ls test_db web_page
 
 OWNER: hadoop
@@ -222,7 +219,6 @@ PARTITION LIST (
    }
 )
 ```
-
 3. Run the `load` command to load table data:
 ```shell
 $ goosefs table load test_db web_page
@@ -250,6 +246,7 @@ $ goosefs fs ls /LICENSE
 ```
 
 4. Run the `cat` command to view the file content:
+
 ```shell
 $ goosefs fs cat /LICENSE                                                                         
 Apache License
@@ -258,7 +255,9 @@ http://www.apache.org/licenses/
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 ...
 ```
+
 5. By default, GooseFS uses the local disk as the underlying file system. The default file system path is `./underFSStorage`. You can run the `persist` command to store files to the local system persistently as follows:
+
 ```shell
 $ goosefs fs persist /LICENSE
 persisted file /LICENSE with size 26847
@@ -274,14 +273,15 @@ $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 ```
 
 2. Count how many times “tencent” appeared in the file and calculate the time consumed:
-```
-shell
+
+```shell
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
 889
 real	0m22.857s
 user	0m7.557s
 sys	0m1.181s
 ```
+
 3. Caching data in memory can effectively speed up queries. An example is as follows:
 
 ```shell

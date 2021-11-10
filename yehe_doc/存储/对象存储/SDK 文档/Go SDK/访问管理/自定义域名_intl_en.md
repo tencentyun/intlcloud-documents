@@ -1,17 +1,20 @@
+
+
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to custom domain name.
+This document provides an overview of APIs and SDK code samples related to custom domains.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ----------------- | -------------- | -------------------------- |
-| PUT Bucket domain    | Setting custom domain name | Sets custom domain name information for a bucket |
-| GET Bucket domain | Querying custom domain name | Queries the custom domain name information of a bucket |
+| PUT Bucket domain    | Setting a custom domain | Sets a custom domain for a bucket |
+| GET Bucket domain    | Querying a custom domain | Queries the custom domain of a bucket |
+| DELETE Bucket domain | Deleting custom domains | Deletes custom domains from a bucket |
 
-## Setting Custom Domain Name
+## Setting Custom Domains
 
-#### Feature description
+#### API description 
 
-This API (PUT Bucket domain) is used to configure a custom domain name for a bucket.
+This API (PUT Bucket domain) is used to set a custom domain for a bucket.
 
 #### Method prototype
 
@@ -21,12 +24,17 @@ func (s *BucketService) PutDomain(ctx context.Context, opt *BucketPutDomainOptio
 
 #### Sample request
 
+[//]: # (.cssg-snippet-put-bucket-domain)
 ```go
 opt := &cos.BucketPutDomainOptions{
- Status:            "ENABLED",
- Name:              "www.example.com",
- Type:              "REST",
- ForcedReplacement: "CNAME",
+    Rules: []cos.BucketDomainRule{
+    {
+        Status:            "ENABLED",
+        Name:              "www.example.com",
+        Type:              "REST",
+        ForcedReplacement: "CNAME",
+    },
+    },
 }   
 resp, err := c.Bucket.PutDomain(context.Background(), opt)
 ```
@@ -34,37 +42,42 @@ resp, err := c.Bucket.PutDomain(context.Background(), opt)
 #### Parameter description
 
 ```go
+type BucketDomainRule struct {
+    Status            string
+    Name              string
+    Type              string
+    ForcedReplacement string
+}
+
 type BucketPutDomainOptions struct {
-    XMLName           xml.Name
-    Status            string   
-    Name              string   
-    Type              string   
-    ForcedReplacement string   
+    XMLName xml.Name
+    Rules   []BucketDomainRule
 }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ---------------------- | ------------------------------------------------------------ | ------ |
-| BucketPutDomainOptions | Custom domain name configuration                                               | Struct |
-| Status                 | Domain name status. Valid values: ENABLED/DISABLED                   | String |
-| Name                   | Custom domain name. Valid values: letter, digit, dot                     | String |
-| Type                   | Type of bound origin server. Valid values: REST/WEBSITE                          | String |
-| ForcedReplacement | Overwrites existing configuration. Valid values: CNAME/TXT. If this parameter is entered, the configuration will be distributed after the domain name ownership is forcibly verified | String |
+| BucketPutDomainOptions | Custom domain configurations                                   | Struct |
+| Rules                  | Domain configuration rules                                     | Array  |
+| Status                 | Domain status. Valid values: `ENABLED`, `DISABLED`             | String |
+| Name                   | Custom domain. Letters, digits, and dots (.) are supported.          | String |
+| Type                   | Type of the origin server to bind. Valid values: `REST`, `WEBSITE`                          | String |
+| ForcedReplacement      | Replaces existing configurations. Valid values: `CNAME`, `TXT`. If this parameter is specified, configurations will only be delivered after the domain ownership is verified. | String |
 
-#### Returned error code description
+#### Error codes
 
-Some frequent special errors that may occur with this request are listed below:
+The following describes some common errors that may occur when you call this API:
 
 | Status Code | Description |
 | -------------------------------------- | ------------------------------------------------------------ |
-| HTTP 409 Conflict                      | The domain name record already exists, and no forced overwriting is set in the request. Or, the domain name record does not exist, but forced overwriting is set in the request. |
-| HTTP 451 Unavailable For Legal Reasons | The domain name is served in Mainland China but has no ICP filing.                          |
+| HTTP 409 Conflict | The domain record already exists, and forced overwrite is not specified in the request; OR the domain record does not exist, and forced overwrite is specified in the request |
+| HTTP 451 Unavailable For Legal Reasons | The domain does not have an ICP filing in the Chinese mainland                          |
 
-## Querying Custom Domain Name
+## Querying a Custom Domain
 
-#### Feature description
+#### API description 
 
-This API (GET Bucket domain) is used to query the custom domain name information of a bucket.
+This API (GET Bucket domain) is used to query the custom domain set for a bucket.
 
 #### Method prototype
 
@@ -74,20 +87,39 @@ func (s *BucketService) GetDomain(ctx context.Context) (*BucketGetDomainResult, 
 
 #### Sample request
 
+[//]: # (.cssg-snippet-get-bucket-domain)
 ```go
 v, resp, err := c.Bucket.GetDomain(context.Background())
 ```
 
-#### Returned result description
+#### Response description
 
 ```go
 type BucketGetDomainResult BucketPutDomainOptions
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------ |
-| BucketGetDomainResult | Custom domain name configuration                                               | Struct |
-| Status                 | Domain name status. Valid values: ENABLED/DISABLED                   | String |
-| Name                   | Custom domain name. Valid values: letter, digit, dot                     | String |
-| Type                   | Type of bound origin server. Valid values: REST/WEBSITE                          | String |
-| ForcedReplacement | Overwrites existing configuration. Valid values: CNAME/TXT. If this parameter is entered, the configuration will be distributed after the domain name ownership is forcibly verified | String |
+| BucketGetDomainResult | Custom domain configurations                                          | Struct |
+| Rules                 | Domain configuration rules                            | Array  |
+| Status                | Domain status. Valid values: `ENABLED`, `DISABLED`                   | String |
+| Name                  | Custom domain. Letters, digits, and dots (.) are supported. | String |
+| Type                  | Type of the origin server bound. Valid values: `REST`, `WEBSITE`                          | String |
+| ForcedReplacement      | Replaces existing configurations. Valid values: `CNAME`, `TXT`. If this parameter is specified, configurations will only be delivered after the domain ownership is verified. | String |
+
+## Deleting Custom Domains
+
+This API (DELETE  Bucket domain) is used to delete all custom domains bound to a bucket.
+
+#### Method prototype
+
+```go
+func (s *BucketService) DeleteDomain(ctx context.Context) (*Response, error)
+```
+
+#### Sample request
+
+[//]: # (.cssg-snippet-delete-bucket-domain)
+```go
+_, err := c.Bucket.DeleteDomain(context.Background())
+```

@@ -9,7 +9,7 @@ To purchase instances, you need to verify your identity first. For more informat
   - **Architecture**: single-node, two-node, or three-node. For more information, please see [Database Architecture](https://intl.cloud.tencent.com/document/product/236/38328).
  - **Source AZ and Replica AZ**: select different source and replica AZs (i.e., [multi-AZ deployment](https://intl.cloud.tencent.com/document/product/236/8459)) to protect your database from failures and AZ outages.
  >?If the source and replica nodes are in different AZs, there may be an additional network sync delay of 2–3 ms.
- - **Resource Isolation Policy**: basic, general, or dedicated. For more information, please see [Resource Isolation Policy](https://intl.cloud.tencent.com/document/product/236/39794).
+ - **Resource Isolation Policy**: general, or dedicated. For more information, please see [Resource Isolation Policy](https://intl.cloud.tencent.com/document/product/236/39794).
  - **Instance Specification**: two instance specifications are provided: general and dedicated.
     - General: the instance uses the allocated memory and disk resources exclusively and share the CPU resources with other general instances on the same physical machine.
     - Dedicated: the instance uses the allocated CPU, memory, and storage resources exclusively.

@@ -44,5 +44,5 @@ TEM 提供 HTTP 请求的方法进行健康检查，相应的 HTTP API 需要应
 3. 单击【提交】，并在弹框中单击【确定】，前往部署应用。
 4. 在部署应用页面，根据您的应用具体情况配置相关参数。
 	请求路径和端口填写用于健康检查的 HTTP API 路径和端口。
-![](https://main.qcloudimg.com/raw/67d66ab61be905810246c1053bd78d45.png)
+	![](https://main.qcloudimg.com/raw/67d66ab61be905810246c1053bd78d45.png)
 5. 单击【部署应用】，平台会自动根据健康检查的配置管理应用。

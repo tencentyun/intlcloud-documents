@@ -7,11 +7,11 @@ When you use Tencent Kubernetes Engine (TKE), you need to authorize services to 
 
 After TKE is activated, Tencent Cloud grants your account the permissions of the role `TKE_QCSRole`, which is associated with multiple preset policies by default. To obtain relevant permissions, you need to perform the corresponding preset policy authorization operations in specific authorization scenarios. After these operations are completed, the corresponding policy will appear in the role’s list of authorized policies. The preset policies associated with `TKE_QCSRole` by default include:
 
-#### The default associated preset policies
+#### Default preset policies
 - [`QcloudAccessForTKERole`](#QcloudAccessForTKERole): the permission for TKE to access cloud resources
 - [`QcloudAccessForTKERoleInOpsManagement`](#QcloudAccessForTKERoleInOpsManagement): the permission for OPS management, including the log service
 
-#### Other associated preset policies
+#### Other preset policies
 
 - [`QcloudAccessForTKERoleInCreatingCFSStorageclass`](#QcloudAccessForTKERoleInCreatingCFSStorageclass): the permission for TKE to operate on Cloud File Storage (CFS), including adding/deleting/querying CFS systems, and querying the mount targets of a file system.
 - [`QcloudCVMFinanceAccess`](#QcloudCVMFinanceAccess): CVM finance permission
@@ -27,9 +27,10 @@ After TKE is activated, Tencent Cloud grants your account the permissions of the
 When you log in to the [TKE console](https://console.cloud.tencent.com/tke2) for the first time after registering and logging in to a Tencent Cloud account, you need to go to the “Cloud Access Management” page to grant the current account TKE permissions for operating on CVMs, CLBs, CBS, and other cloud resources.
 
 #### Authorization steps[](id:Step)
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar. The "Service Authorization" window is displayed.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar. The **Service Authorization** window is displayed.
 2. Click **Go to Cloud Access Management** to go to the **Role management** page.
-3. Click **Grant** to complete authentication.
+3. Click **Grant** to complete authentication as shown in the figure below:
+![](https://qcloudimg.tencent-cloud.cn/raw/29e4678ce05a602f4a2b1cb13571446d.png)
 
 #### Permission content
 - CVM
@@ -85,11 +86,11 @@ When you log in to the [TKE console](https://console.cloud.tencent.com/tke2) for
 </thead>
 <tbody><tr>
 <td><code>ccs:DescribeCluster</code></td>
-<td>Querying a cluster list</td>
+<td>Querying the cluster list</td>
 </tr>
 <tr>
 <td><code>ccs:DescribeClusterInstances</code></td>
-<td>Querying cluster node information</td>
+<td>Querying information of nodes in the cluster</td>
 </tr>
 </tbody></table>
 
@@ -100,7 +101,7 @@ This policy is associated with `TKE_QCSRole` by default. After TKE is activated 
 
 
 
-#### Authorization Steps
+#### Authorization steps
 
 This policy and the [preset policy QcloudAccessForTKERole](#QcloudAccessForTKERole) are authorized at the same time, so no extra operation is needed.
 
@@ -116,11 +117,11 @@ Log service
 </thead>
 <tbody><tr>
 <td><code>cls:listTopic</code></td>
-<td>Displaying the list of log topics under a specified logset</td>
+<td>Listing all log topics under a specified logset</td>
 </tr>
 <tr>
 <td><code>cls:getTopic</code></td>
-<td>Viewing log topic information</td>
+<td>Querying the information of a log topic</td>
 </tr>
 <tr>
 <td><code>cls:createTopic</code></td>
@@ -136,11 +137,11 @@ Log service
 </tr>
 <tr>
 <td><code>cls:listLogset</code></td>
-<td>Displaying the logset list</td>
+<td>Querying the list of logsets</td>
 </tr>
 <tr>
 <td><code>cls:getLogset</code></td>
-<td>Viewing logset information</td>
+<td>Querying the information of a logset</td>
 </tr>
 <tr>
 <td><code>cls:createLogset</code></td>
@@ -160,7 +161,7 @@ Log service
 </tr>
 <tr>
 <td><code>cls:getMachineGroup</code></td>
-<td>Viewing server group information</td>
+<td>Querying the information of a server group</td>
 </tr>
 <tr>
 <td><code>cls:createMachineGroup</code></td>
@@ -176,7 +177,7 @@ Log service
 </tr>
 <tr>
 <td><code>cls:getMachineStatus</code></td>
-<td>Viewing server group status</td>
+<td>Querying the server group status</td>
 </tr>
 <tr>
 <td><code>cls:pushLog</code></td>
@@ -196,11 +197,11 @@ Log service
 </tr>
 <tr>
 <td><code>cls:getIndex</code></td>
-<td>Viewing indexes</td>
+<td>Querying the indexes</td>
 </tr>
 <tr>
 <td><code>cls:modifyIndex</code></td>
-<td>Modifying indexes</td>
+<td>Modifying an index</td>
 </tr>
 <tr>
 <td><code>cls:agentHeartBeat</code></td>
@@ -218,11 +219,12 @@ Log service
 #### Authorization scenario
 The Tencent Cloud CFS add-on can help you use file storage in TKE clusters. When using this add-on for the first time, you need to authorize relevant resources, such as file systems in CFS, via TKE.
 
-#### Authorization Steps
+#### Authorization steps
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and select **Add-ons** in the left sidebar to go to the “Add-On” management page.
-2. In the “Add-On” page, click **Create**.
-3. On the “Create an Add-On” page, if the add-on is selected as “CFS” for the first time, click **Service Authorization** at the bottom of the page.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and select **Add-ons** in the left sidebar to go to the **Add-On** management page.
+2. In the **Add-On** page, click **Create**.
+3. On the “Create an Add-On” page, if the add-on is selected as “CFS” for the first time, click **Service Authorization** at the bottom of the page, as shown below: 
+![](https://qcloudimg.tencent-cloud.cn/raw/fabb0c3c2ea1cc8cff4b9832d8761d3e.png)
 4. In the displayed "Service Authorization" window, click **Cloud Access Management**.
 5. On the "Role Management" page, click **Grant** to complete authentication.
 
@@ -241,7 +243,7 @@ File storage
 </tr>
 <tr>
 <td>cfs:DescribeCfsFileSystems</td>
-<td>Querying a file system</td>
+<td>Querying the list of file systems</td>
 </tr>
 <tr>
 <td>cfs:DescribeMountTargets</td>
@@ -249,7 +251,7 @@ File storage
 </tr>
 <tr>
 <td>cfs:DeleteCfsFileSystem</td>
-<td>Deletes a file system</td>
+<td>Deleting a file system</td>
 </tr>
 </tbody></table>
 
@@ -259,11 +261,13 @@ File storage
 
 When you need to purchase a cloud disk with monthly subscription, you need to add this policy to the `TKE_QCSRole` to configure payment permissions. Otherwise, the creation of a PVC based on a monthly subscription storageclass may fail due to lack of payment permissions.
 
-#### Authorization Steps
+#### Authorization steps
 1. Log in to the CAM console, and select **[Roles](https://console.cloud.tencent.com/cam/role)** in the left sidebar.
-2. In the role list page, click **TKE_QCSRole** to enter the role management page.
+2. In the role list page, click **TKE_QCSRole** to enter the role management page, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/193fb4be9a8a012582b2008669f215f7.png)
 3. Choose **Associate Policy** on the “TKE_QCSRole” page, and confirm the operation in the displayed “Risk Tips” window.
-4. In the displayed “Associate Policy” window, find the policy `QcloudCVMFinanceAccess` and select it.
+4. In the displayed **Associate Policy** window, find the policy `QcloudCVMFinanceAccess` and select it, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/107752118a3383452c132bb352eba1c9.png)
 5. Click **OK** to complete the authorization.
 
 
@@ -299,13 +303,14 @@ When you need to purchase a cloud disk with monthly subscription, you need to ad
 
 When using the VPC-CNI network mode to create a cluster for the first time, you need to grant permission for TKE IPAMD to access cloud resources, so that you can use the VPC-CNI network mode normally.
 
-#### Authorization Steps
+#### Authorization steps
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
-2. On the "Cluster Management" page, click **Create** or **Create with a Template** above the cluster list.
-3. In the "Create Cluster" page, select **VPC-CNI** for **Container Network Add-on** in "Cluster Information" section, and click "Service Authorization".
-4. In the displayed "Service Authorization" window, click **Go to Cloud Access Management**.
-5. On the "Role Management" page, click **Grant** to complete authentication.
+2. On the **Cluster Management** page, click **Create** or **Create with a Template** above the cluster list.
+3. On the **Create Cluster** page, select **VPC-CNI** for **Container Network Add-on** in **Cluster Information** section, and click **Service Authorization**, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/d8bcf825e6abfae234b8ee398d0cbe65.png)
+4. In the displayed **Service Authorization** window, click **Go to Cloud Access Management**.
+5. On the *Role Management* page, click **Grant** to complete authentication.
 
 
 #### Permission content
@@ -321,7 +326,7 @@ When using the VPC-CNI network mode to create a cluster for the first time, you 
 <tbody>
 <tr>
 <td><code>cvm:DescribeInstances</code></td>
-<td>Viewing the list of instances</td>
+<td>Querying the list of instances</td>
 </tr>
 </tbody></table>
 - Tag

@@ -60,13 +60,13 @@ metadata:
 **使用示例：**
 
 - 创建 NAT64 IPv6 实例：
-  `kubernetes.io/ingress.extensiveParameters: '{"AddressIPVersion":"IPV6"}'`
+  `service.kubernetes.io/service.extensiveParameters: '{"AddressIPVersion":"IPV6"}'`
 - 创建 IPv6 实例：
-  `kubernetes.io/ingress.extensiveParameters: '{"AddressIPVersion":"IPv6FullChain"}'`
+  `service.kubernetes.io/service.extensiveParameters: '{"AddressIPVersion":"IPv6FullChain"}'`
 - 购买电信负载均衡：
-  `kubernetes.io/ingress.extensiveParameters: '{"VipIsp":"CTCC"}'`
+  `service.kubernetes.io/service.extensiveParameters: '{"VipIsp":"CTCC"}'`
 - 指定可用区创建：
-  `kubernetes.io/ingress.extensiveParameters: '{"ZoneId":"ap-guangzhou-1"}'`
+  `service.kubernetes.io/service.extensiveParameters: '{"ZoneId":"ap-guangzhou-1"}'`
 :::
 ::: kubernetes.io/ingress.subnetId
 **说明：**
@@ -90,17 +90,23 @@ metadata:
 **使用示例：**
 使用方式详情见 [使用 LoadBalancer 直连 Pod 模式 Service](https://intl.cloud.tencent.com/document/product/457/36837)。
 :::
+::: ingress.cloud.tencent.com/enable-grace-shutdown
+**说明：**
+支持工作负载在接入层进行优雅停机。在 Pod 进入 Terminating 状态时，工作负载将不会被直接摘除而是权重变成0。配合工作负载的 PreStop 特性控制工作负载停机时的流量。
+**使用示例：**
+`ingress.cloud.tencent.com/enable-grace-shutdown: "true"`
+:::
 ::: ingress.cloud.tencent.com/tke-service-config
 **说明：**
 通过 tke-service-config 配置负载均衡相关配置，包括监听器、转发规则等。
 **使用示例：**
-`ingress.cloud.tencent.com/tke-service-config: "nginx-config"`，详情可参见 [Ingress 使用 TkeServiceConfig 配置 CLB](https://intl.cloud.tencent.com/document/product/457/37015)。
+`ingress.cloud.tencent.com/tke-service-config: "nginx-config"`，详情可参见 [Ingress 使用 TKEServiceConfig 配置 CLB](https://intl.cloud.tencent.com/document/product/457/37015)。
 :::
 ::: ingress.cloud.tencent.com/tke-service-config-auto
 **说明：**
 通过该注解可自动创建 TkeServiceConfig 资源，并提供配置的模板，用户可以按需进行配置。
 **使用示例：**
-`ingress.cloud.tencent.com/tke-service-config-auto: "true"`，详情可参见 [Ingress 使用 TkeServiceConfig 配置 CLB](https://intl.cloud.tencent.com/document/product/457/37015)。
+`ingress.cloud.tencent.com/tke-service-config-auto: "true"`，详情可参见 [Ingress 使用 TKEServiceConfig 配置 CLB](https://intl.cloud.tencent.com/document/product/457/37015)。
 :::
 ::: ingress.cloud.tencent.com/rewrite-support
 **说明：**
@@ -119,7 +125,6 @@ metadata:
 **说明：**
 Ingress 跨域绑定功能，指定需要从哪个地域接入。需要和 `kubernetes.io/ingress.existLbId`或`ingress.cloud.tencent.com/cross-vpc-id` 配合使用。
 **使用示例：**
-
 - 创建异地接入的负载均衡：
   `ingress.cloud.tencent.com/cross-region-id: "ap-guangzhou"`
   `ingress.cloud.tencent.com/cross-vpc-id: "vpc-646vhcjj"`
@@ -136,12 +141,6 @@ Ingress 跨域绑定功能，指定需要接入的 VPC。可以和 `ingress.clou
 创建异地接入的负载均衡：
 `ingress.cloud.tencent.com/cross-region-id: "ap-guangzhou"`
 `ingress.cloud.tencent.com/cross-vpc-id: "vpc-646vhcjj"`
-:::
-::: ingress.cloud.tencent.com/enable-grace-shutdown
-**说明：**
-支持 CLB 直连模式的优雅停机。
-**使用示例：**
-仅在直连模式下支持，需要配合使用 `ingress.cloud.tencent.com/direct-access`，使用方式详情见 [Ingress 优雅停机](https://intl.cloud.tencent.com/document/product/457/42069)。
 :::
 </dx-accordion>
 

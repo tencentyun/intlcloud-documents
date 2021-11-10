@@ -1401,7 +1401,7 @@ Request 멤버 설명:
 | file         | 구조 함수 또는 set 메소드 | 로컬 파일                                                     | File           |
 | input        | 구조 함수 또는 set 메소드 | 입력 스트림                                                       | InputStream    |
 | metadata     | 구조 함수 또는 set 메소드 | 파일의 메타데이터                                                 | ObjectMetadata |
-|trafficLimit | set 메소드| 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다. | Int|No|
+|trafficLimit | set 메소드| 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다. | Int|
 
 >?다수의 멀티파트를 동시 업로드할 경우 trafficLimit은 모든 멀티파트의 업로드 속도를 제한합니다. 이때 스레드 풀의 스레드 수를 조정하여 파일의 업로드 속도를 제어해야 합니다.
 

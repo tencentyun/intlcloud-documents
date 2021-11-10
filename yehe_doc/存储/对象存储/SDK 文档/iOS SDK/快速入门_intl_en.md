@@ -8,12 +8,13 @@
 - For SDK FAQs, please see [iOS SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38957).
 
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
+>
 
 ## Preparations
 
 1. Prepare an iOS application; this can be an existing project or a new empty project.
 2. Make sure that the application is built using an SDK running on iOS 8.0 or above.
-3. You need a remote address where users can obtain your Tencent Cloud temporary key. For more information on temporary keys, see [Practice of Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
+3. Prepare a remote address that can be used to obtain your Tencent Cloud temporary key. For more information on temporary keys, please see [Implementing Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
 
 ## Step 1. Install the SDK
 
@@ -159,7 +160,7 @@ For the detailed procedure, see the following sample code:
     credential.secretKey = @"SECRETKEY";
     // Temporary key token
     credential.token = @"TOKEN";
-    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
+    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
     */
     credential.startDate = [NSDate dateWithTimeIntervalSince1970:startTime]; // Unit: second
     credential.expirationDate = [NSDate dateWithTimeIntervalSince1970:expiredTime]]; // Unit: second
@@ -177,7 +178,7 @@ For the detailed procedure, see the following sample code:
 **Swift**
 
 ```swift
-//AppDelegate.swift
+// AppDelegate.swift
 // `AppDelegate` must follow `QCloudSignatureProvider` 
 
 class AppDelegate: UIResponder, UIApplicationDelegate,
@@ -222,7 +223,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         credential.secretKey = "SECRETKEY";
         // Temporary key token
         credential.token = "TOKEN";
-        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
+        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
         */
         credential.startDate = Date.init(timeIntervalSince1970: TimeInterval(startTime)!) DateFormatter().date(from: "startTime");
         credential.expirationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
@@ -235,6 +236,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 }
 ```
 
+>! 
+>- APPID is a permanent unique application ID assigned to you after you sign up for a Tencent Cloud account. You can view your APPID on the [Account Information](https://console.cloud.tencent.com/developer) page.
+>- SecretId and SecretKey, collectively referred to as the cloud API key, are the security credential used for authentication when a user accesses a Tencent Cloud API and can be viewed in [Manage API Key](https://console.cloud.tencent.com/cam/capi) of the console. SecretKey is the key used to encrypt the signature string and server-side authentication signature string, and SecretId identifies an API caller. Multiple cloud API keys can be created under an APPID.
+>
 
 The SDK provides the `QCloudCredentailFenceQueue` scaffolding tool for you to cache and reuse your temporary key. After a key expires, the scaffolding tool will call the protocol again to retrieve the new key until the key expiration time is later than the current device time.
 
@@ -247,6 +252,7 @@ It is recommended to place the initialization process in 'AppDelegate' or **appl
 
 
 The following is the sample code:
+
 
 **Objective-c**
 
@@ -299,7 +305,7 @@ The following is the sample code:
     credential.secretKey = @"SECRETKEY";
     // Temporary key token
     credential.token = @"TOKEN";
-    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
+    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
     */
     credential.startDate = [NSDate dateWithTimeIntervalSince1970:startTime]; // Unit: second
     credential.expirationDate = [NSDate dateWithTimeIntervalSince1970:expiredTime]]; // Unit: second
@@ -334,7 +340,7 @@ The following is the sample code:
 **Swift**
 
 ```swift
-//AppDelegate.swift
+// AppDelegate.swift
 // `AppDelegate` needs to follow the `QCloudSignatureProvider` and 
 // `QCloudCredentailFenceQueueDelegate` protocols
 
@@ -382,7 +388,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         credential.secretKey = "SECRETKEY";
         // Temporary key token
         credential.token = "TOKEN";
-        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
+        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
         */
         credential.startDate = Date.init(timeIntervalSince1970: TimeInterval(startTime)!) DateFormatter().date(from: "startTime");
         credential.expirationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
@@ -398,7 +404,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         urlRequest urlRequst: NSMutableURLRequest!, 
         compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
         self.credentialFenceQueue?.performAction({ (creator, error) in
-            if error != nil {
+            if error != nil{
                 continueBlock(nil,error!);
             }else{
                 let signature = creator?.signature(forData: urlRequst);
@@ -414,6 +420,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 > - We recommend requesting data over HTTPS. However, if you want to use HTTP protocol, you need to enable HTTP transfer for your application so that it can run on iOS 9.0 or above. For detailed directions, please see Apple's official documentation [Preventing Insecure Network Connections](https://developer.apple.com/documentation/security/preventing_insecure_network_connections).
 > 
 
+
 If your `QCloudServiceConfiguration` has changed, you can register a new instance by using the following method:
 
 ```objective-c
@@ -422,7 +429,7 @@ If your `QCloudServiceConfiguration` has changed, you can register a new instanc
 ```
 #### Method 2. Using a permanent key for local debugging
 
-You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to switch to the temporary key method before launching your application.**
+You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to replace it with a temporary key before launching your application.**
 
 When using a permanent key, you can choose not to implement the `QCloudCredentailFenceQueueDelegate` protocol.
 
@@ -436,9 +443,9 @@ When using a permanent key, you can choose not to implement the `QCloudCredentai
 {
     
     QCloudCredential* credential = [QCloudCredential new];
-    // You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
-    credential.secretID = @"SECRETID"; // SecretId of the permanent key
-    credential.secretKey = @"SECRETKEY"; // SecretKey of the permanent key
+    // Log in to the CAM console to check and manage the `SecretId` and `SecretKey` of your project.
+    credential.secretID = @"SECRETID"; // Permanent key SecretId
+    credential.secretKey = @"SECRETKEY"; // Permanent key SecretKey
 
     // Use the permanent key to calculate the signature
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc] 
@@ -456,9 +463,9 @@ func signature(with fileds: QCloudSignatureFields!,
                 urlRequest urlRequst: NSMutableURLRequest!, 
                 compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
     let credential = QCloudCredential.init();
-    // You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
-    credential.secretID = "SECRETID"; // SecretId of the permanent key
-    credential.secretKey = "SECRETKEY"; // SecretKey of the permanent key
+    // Log in to the CAM console to check and manage the `SecretId` and `SecretKey` of your project.
+    credential.secretID = "SECRETID"; // Permanent key SecretId
+    credential.secretKey = "SECRETKEY"; // Permanent key SecretKey
 
     // Use the permanent key to calculate the signature
     let auth = QCloudAuthentationV5Creator.init(credential: credential);
@@ -505,7 +512,7 @@ func signature(with fileds: QCloudSignatureFields!,
 
 ## Step 3. Access COS
 
-### Uploading an Object
+### Uploading an object
 
 The SDK allows you to upload local files and binary data in NSData format. The following uses local file upload as an example:
 
@@ -515,9 +522,9 @@ The SDK allows you to upload local files and binary data in NSData format. The f
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 // Local file path
 NSURL* url = [NSURL fileURLWithPath:@"file URL"];
-// Bucket name in the format of `BucketName-APPID`
+// Bucket name in the format: `BucketName-APPID`
 put.bucket = @"examplebucket-1250000000";
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 put.object = @"exampleobject";
 // Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
 put.body =  url;
@@ -547,9 +554,9 @@ put.body =  url;
 
 ```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
-// Bucket name in the format of `BucketName-APPID`
+// Bucket name in the format: `BucketName-APPID`
 put.bucket = "examplebucket-1250000000";
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 put.object = "exampleobject";
 // Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
 put.body = NSURL.fileURL(withPath: "Local File Path") as AnyObject;
@@ -593,9 +600,9 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```objective-c
 QCloudCOSXMLDownloadObjectRequest * request = [QCloudCOSXMLDownloadObjectRequest new];
     
-// Bucket name in the format of `BucketName-APPID`
+// Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 // Set the download URL. Once set, the file will be downloaded to the specified path

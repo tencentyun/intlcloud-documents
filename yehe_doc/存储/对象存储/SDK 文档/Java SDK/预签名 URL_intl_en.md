@@ -1,5 +1,5 @@
 ## Overview
-Java SDK provides a pre-signed URL for obtaining a request and an API for generating a signature, which can be distributed to the client for download or upload. If your files have private read permissions, please note that the pre-signed URL is only valid for a certain period of time.
+The COS SDK for Java provides APIs for getting pre-signed request URLs and for generating signatures. The URLs and signatures can be distributed to clients for download or upload. For private-read files, please note that a pre-signed URL is only valid for a certain period of time.
 A generated pre-signed URL contains the protocol name (HTTP or HTTPS), which should be the same as that set in the COS client that requests the pre-signed URL.
 For details, please see the request samples.
 
@@ -193,7 +193,7 @@ System.out.println(url.toString());
 cosClient.shutdown();
 ```
 
-#### Example 5
+#### Sample 5
 
 Generate pre-signed upload URLs that can be directly distributed to the client for file uploads. The sample code is as follows:
 
@@ -246,7 +246,7 @@ public String buildAuthorizationStr(HttpMethodName methodName, String resouce_pa
 Signature string of the String type.
 
 
-#### Example 1: Generate an upload signature
+#### Sample 1: Generate an upload signature
 
 [//]: # (.cssg-snippet-get-authorization-for-upload)
 ```java
@@ -269,7 +269,7 @@ Map<String, String> params = new HashMap<String,String>();
 String sign = signer.buildAuthorizationStr(HttpMethodName.PUT, key, headers, params, cred, expiredTime);
 ```
 
-#### Example 2: Generate a download signature
+#### Sample 2: Generate a download signature
 
 [//]: # (.cssg-snippet-get-authorization-for-download)
 ```java
@@ -292,7 +292,7 @@ Map<String, String> params = new HashMap<String,String>();
 String sign = signer.buildAuthorizationStr(HttpMethodName.GET, key, headers, params, cred, expiredTime);
 ```
 
-#### Example 3: Generate a delete signature
+#### Sample 3: Generate a delete signature
 
 [//]: # (.cssg-snippet-get-authorization-for-delete)
 ```java

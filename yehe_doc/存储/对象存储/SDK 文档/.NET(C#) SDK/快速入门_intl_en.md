@@ -14,11 +14,11 @@
 
 ## Step 1. Integrate the SDK
 
-#### Environment dependencies
+#### Environment requirements
 
 The .NET SDK is developed based on .NET Standard 2.0.
 
-- For Windows users: Install .NET Core 2.0 or above or .NET Framework 4.6.1 or above. 
+- Windows: Install .NET Core 2.0 or above or .NET Framework 2.0 or above. 
 - For Linux/Mac users: Install .NET Core 2.0 or above.
 
 #### Installing the SDK
@@ -35,7 +35,15 @@ If .NET CLI is used instead, run the following command:
 dotnet add package Tencent.QCloud.Cos.Sdk
 ```
 
-## Step 2. Initiate COS services
+If you develop for the target framework .Net Framework 4.0 or below, please download [Releases](https://github.com/tencentyun/qcloud-sdk-dotnet/releases) and use `COSXML-Compatible.dll`.
+
+In your Visual Studio project, click **Project** > **Add Reference** > **Browse** > **COSXML-Compatible.dll** to add the .NET(C#) SDK.
+
+>? About the backward compatibility of the .NET SDK, please see [Backward Compatibility](https://cloud.tencent.com/document/product/436/61569).
+>
+
+
+## Step 2. Initialize COS Services
 
 The section below describes how to perform basic COS operations with the .NET SDK, such as initializing a client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object.
 
@@ -75,15 +83,15 @@ CosXmlConfig config = new CosXmlConfig.Builder()
   .Build();  // Create a CosXmlConfig object.
 ```
 
-### 2. Provide access credentials.
+### 2. Provide access credentials
 
 The SDK supports three types of access credentials: permanent keys, updated temporary keys, and unchanging temporary keys.
 
 **Type 1: permanent key**
 
 ```cs
-String secretId = "SECRET_ID"; // “SecretId of your TencentCloud API key”
-String secretKey = "SECRE_TKEY"; // “SecretKey of your TencentCloud API key”
+string secretId = "SECRET_ID"; //“SecretId of your TencentCloud API key”;
+string secretKey = "SECRET_KEY"; //“SecretKey of your TencentCloud API key”;
 long durationSecond = 600;          // Validity period of each request signature in seconds
 QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProvider(
   secretId, secretKey, durationSecond);
@@ -105,8 +113,8 @@ public class CustomQCloudCredentialProvider : DefaultSessionQCloudCredentialProv
   public override void Refresh()
   {
     //... First, request a temporary key from Tencent Cloud.
-    String tmpSecretId = "SECRET_ID"; // “SecretId of the temporary key”;
-    String tmpSecretKey = "SECRET_KEY"; // “SecretKey of the temporary key”;
+    string tmpSecretId = "SECRET_ID"; // “SecretId of the temporary key”;
+    string tmpSecretKey = "SECRET_KEY"; // “SecretKey of the temporary key”;
     string tmpToken = "COS_TOKEN"; // “Token of the temporary key”;
     long tmpStartTime = 1546860702;// Start time in seconds of the temporary key’s validity period
     long tmpExpireTime = 1546862502;// End time in seconds of the temporary key’s validity period
@@ -121,20 +129,21 @@ QCloudCredentialProvider cosCredentialProvider = new CustomQCloudCredentialProvi
 
 **Type 3: unchanging temporary key (not recommended)**
 
-Note that your request may fail if you use an expired temporary key from a previous request.
+>! This method is not recommended as a request may fail if the temporary key has expired at the time of request.
+>
 
 ```cs
-String tmpSecretId = "SECRET_ID"; // “SecretId of the temporary key”;
-String tmpSecretKey = "SECRET_KEY"; // “SecretKey of the temporary key”;
+string tmpSecretId = "SECRET_ID"; // “SecretId of the temporary key”;
+string tmpSecretKey = "SECRET_KEY"; // “SecretKey of the temporary key”;
 string tmpToken = "COS_TOKEN"; // “Token of the temporary key”;
 long tmpExpireTime = 1546862502;// End time in seconds of the temporary key’s validity period
 QCloudCredentialProvider cosCredentialProvider = new DefaultSessionQCloudCredentialProvider(
   tmpSecretId, tmpSecretKey, tmpExpireTime, tmpToken);
 ```
 
-### 3. Initialize CosXmlServer.
+### 3. Initialize CosXmlServer
 
-We recommend using `CosXmlConfig` and `QCloudCredentialProvider` to initialize the `CosXmlServer` service class as a **singleton** in your program.
+Use `CosXmlConfig` and `QCloudCredentialProvider` to initialize the `CosXmlServer` service class. We recommend you use the service class as a **singleton** in your project.
 
 ```cs
 CosXml cosXml = new CosXmlServer(config, cosCredentialProvider);
@@ -165,12 +174,12 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-### Querying a bucket list
+### Querying the bucket list
 ```cs
 try
 {
   GetServiceRequest request = new GetServiceRequest();
-  // Execute the request
+  // Execute the request.
   GetServiceResult result = cosXml.GetService(request);
   // Get the list of all buckets.
   List<ListAllMyBuckets.Bucket> allBuckets = result.listAllMyBuckets.buckets;
@@ -195,8 +204,8 @@ TransferConfig transferConfig = new TransferConfig();
 // Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket, format: BucketName-APPID
-String cosPath = "exampleobject"; // Identifies the location of the object in the bucket, i.e., the object key
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 String srcPath = @"temp-source-file";// Absolute path to the local file
 
 // Upload an object.
@@ -208,7 +217,7 @@ uploadTask.progressCallback = delegate (long completed, long total)
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
 };
 
-try {
+try{
   COSXML.Transfer.COSXMLUploadTask.UploadTaskResult result = await 
     transferManager.UploadAsync(uploadTask);
   Console.WriteLine(result.GetResultInfo());
@@ -218,7 +227,7 @@ try {
 }
 ```
 
-### Querying an object list
+### Querying objects
 
 ```cs
 try
@@ -255,7 +264,7 @@ TransferConfig transferConfig = new TransferConfig();
 // Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket, format: BucketName-APPID
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 string localDir = System.IO.Path.GetTempPath();// Local file directory
 string localFileName = "my-local-temp-file"; // Specify the name of the file to be saved locally
@@ -269,7 +278,7 @@ downloadTask.progressCallback = delegate (long completed, long total)
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
 };
 
-try {
+try{
   COSXML.Transfer.COSXMLDownloadTask.DownloadTaskResult result = await 
     transferManager.DownloadAsync(downloadTask);
   Console.WriteLine(result.GetResultInfo());
@@ -284,12 +293,12 @@ try {
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
   string key = "exampleobject"; // Object key
   DeleteObjectRequest request = new DeleteObjectRequest(bucket, key);
   // Execute the request.
   DeleteObjectResult result = cosXml.DeleteObject(request);
-  // Request successful 
+  // Request successful
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
