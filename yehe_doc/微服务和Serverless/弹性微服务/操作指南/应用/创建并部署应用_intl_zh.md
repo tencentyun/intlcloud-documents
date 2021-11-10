@@ -74,7 +74,7 @@
 1. 参考 [配置应用访问与路由](https://intl.cloud.tencent.com/document/product/1094/40359) 建立一条公网访问路由。
 
 2. 您可以在环境详情页中的【访问管理】下，查看应用的公网访问 IP。
-![](https://main.qcloudimg.com/raw/bfb77deab6549a5c2f4ef908fc7ef133.png)
+   	![](https://main.qcloudimg.com/raw/bfb77deab6549a5c2f4ef908fc7ef133.png)
 
 3. 在浏览器地址栏中输入以下 URL。
   ```xml

@@ -9,7 +9,7 @@
 1. 登录 [弹性微服务控制台](https://console.cloud.tencent.com/tem)。
 2. 在【环境】页面，选择部署地域后，单击目标环境卡片下方的【查看详情】，进入环境详情页面。
 3. 选择页面顶部的【配置管理】页签，单击【新建】，填写配置详情。
-   ![](https://main.qcloudimg.com/raw/0d21038c62529740595082de292ba811.png)
+   ![]https://main.qcloudimg.com/raw/0d21038c62529740595082de292ba811.png)
    - 名称：配置文件的名称。
    - 内容：输入配置的 Key-Value 组合。
 4. 单击【提交】，完成配置创建。

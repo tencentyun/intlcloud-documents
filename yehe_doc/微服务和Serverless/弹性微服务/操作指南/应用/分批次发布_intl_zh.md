@@ -26,4 +26,4 @@
 	![](https://main.qcloudimg.com/raw/be40523f08eaf6f04a0a5f0535f8d4d3.png)
 6. 单击【应用概览】状态下的【查看详情】，可在【发布单】中查看和操作分批次部署流程。    
 	![](https://main.qcloudimg.com/raw/dce950b78faa40a66b7b9ff4eaa131ed.png)
-回滚：终止当前部署进程，并将所有实例恢复为上一个版本。
+	回滚：终止当前部署进程，并将所有实例恢复为上一个版本。
