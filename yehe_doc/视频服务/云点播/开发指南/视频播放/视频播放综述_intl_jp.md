@@ -16,7 +16,7 @@ VODは、アップロードおよびトランスコードされたビデオを�
 * eコマースショッピングプラットフォーム（京東（JD.com）、拼多多 （Pinduoduo））の商品PRビデオ。
 * WeChat公式アカウント、メディア で共有されるショートムービー。
 
-<img src="https://main.qcloudimg.com/raw/36d901de64420df8e7d49bae570eaeb3.png" width="800" />
+
 
 ### 再生アーキテクチャ
 短編ビデオの再生シーンでは、VODでは**基本的なプレーヤーSDK**を提供し、URLをパラメータとして、VODのビデオを再生します。
@@ -48,19 +48,18 @@ VODは、アップロードおよびトランスコードされたビデオを�
 
 長編ビデオの再生シーンでは、VODは**Super Player SDK**を提供し、FileIdをパラメータとして、VODのビデオを再生します。
 
-
 <img src="https://main.qcloudimg.com/raw/f6b52d9429111812b0ee0e78654f2e34.png" width="700" />
 
 Super Player SDKを使用して再生する全体的なアーキテクチャフローは次のとおりです。
 1. **サーバーからのアップロード**：ビジネスバックエンドでは、コンソールやサーバーAPIといった形式により、ビデオをVODにアップロードします。
-2. <b>ビデオ処理のトリガー</b>：ビデオをアップロードすると同時に、アダプティブビットレートストリーミングが指定されます。アップロード後、ビデオ処理が開始されます。
+2. **ビデオ処理のトリガー**：ビデオをアップロードすると同時に、アダプティブビットレートストリーミングが指定されます。アップロード後、ビデオ処理が開始されます。
 3. **アダプティブビットレートストリーミングとストレージへの書き込み**：ビデオがアダプティブビットレートストリーミングに変換された後、出力されたビデオコンテンツはVODのストレージに書き込まれます。
 4. **メディア資産の更新**：アダプティブビットレートストリーミングに変換されたビデオ情報は、メディア資産管理モジュールに書き込まれます。
 5. **ダウンロードアドレスのリクエスト**：Super Playerは、再生するビデオの FileIdを指定した後、VODの再生サービスからビデオのダウンロードアドレスを取得します。
 6. **コンテンツのダウンロード**：Super Playerは、ダウンロードアドレスを介してVOD CDNからコンテンツをダウンロードします。
 7. **再生**：Super Playerは、出力されたアダプティブビットレートストリーミングの再生を開始します。
 
-再生するビデオの [Keyホットリンク防止](https://intl.cloud.tencent.com/document/product/266/33986)が有効になっている場合は、再生時に [Super Player署名](https://intl.cloud.tencent.com/document/product/266/38099)を指定する必要があります。この時のアーキテクチャフローは次のとおりです。
+再生するビデオの [Keyリンク不正アクセス防止](https://intl.cloud.tencent.com/document/product/266/33986)が有効になっている場合は、再生時に [Super Player署名](https://intl.cloud.tencent.com/document/product/266/38099)を指定する必要があります。この時のアーキテクチャフローは次のとおりです。
 
 1. ビジネスバックエンドに「署名配付」サービスを構築し、署名は [プレーヤー署名計算ルール](https://intl.cloud.tencent.com/document/product/266/38099#.E7.AD.BE.E5.90.8D.E8.AE.A1.E7.AE.97) に基づいて生成される必要があります。
 2. Super Playerは、ビデオ再生前にプレーヤー署名を取得する必要があります（下図手順5をご参照ください）。
@@ -78,15 +77,14 @@ VODのSuper Playerをすばやく統合できるように、Super Playerの[ア�
 VODは [ビデオ暗号化の概要](https://intl.cloud.tencent.com/document/product/266/38131) と [ビデオ暗号化の統合ガイド](https://intl.cloud.tencent.com/document/product/266/38294) でそれぞれビデオ暗号化の原理と統合方法について説明しています。
 
 ## Player+
-<span id="p2"></span>
-### ダウンロードと使用
+### ダウンロードと使用[](id:p2)
 
 | プレーヤーのタイプ| SDKダウンロードアドレス | 使用するドキュメント |
 | -- | -- | -- |
-| Super Player | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E5.9C.A8.E9.A1.B5.E9.9D.A2.E4.B8.AD.E5.BC.95.E5.85.A5.E6.96.87.E4.BB.B6)</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li> |
+| Super Player |  <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li><li>[Flutter](https://intl.cloud.tencent.com/document/product/266/42099)</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li><li>[Flutter](https://intl.cloud.tencent.com/document/product/266/42099)</li> |
 
-<span id="p1"></span>
-### 機能リスト
+
+### 機能リスト[](id:p1)
 #### 基本的なプレーヤー
 | 機能 | 説明 | モバイル端末（Android と iOS）| Web端末  |
 | -- | -- | -- | -- |
@@ -112,11 +110,11 @@ VODは [ビデオ暗号化の概要](https://intl.cloud.tencent.com/document/pro
 | プレーヤーサイズの設定 | プレーヤーの幅と高さを設定します | &#10003; | &#10003; |
 | HTTPSをサポート | HTTPSビデオリソースの再生をサポートします | &#10003; | &#10003; |
 | URLを介した再生 | ネットワークビデオをURLで再生 | &#10003; | &#10003; |
-| LVBレコーディング | LVBレコーディングのビデオを再生します | &#10003; | &#10003; |
+| CSSレコーディング | CSSレコーディングのビデオを再生します | ✓ | ✓ |
 | ビデオレンダリングのカスタマイズ | デコード後にスクリーンにレンダリングできます | &#10003; | × |
 | シームレスループ再生 | 1つのビデオの再生が完了した後にループ再生します | &#10003; | &#10003; |
 | インタラクティブフローティングウィンドウ |  フローティングウィンドウで再生します | ＆＃10003; | × |
-| ビデオの自動回転 | ビデオファイル内の rotate パラメータに基づきビデオを回転させます | &#10003; | × | 
+| ビデオの自動回転 | ビデオファイル内の rotate パラメータに基づきビデオを回転させます | &#10003; | × |
 | プログレスコールバック間隔のカスタマイズ | プログレスコールバック間隔のカスタマイズをサポートします | &#10003; | × |
 
 #### Super Player
@@ -127,7 +125,7 @@ VODは [ビデオ暗号化の概要](https://intl.cloud.tencent.com/document/pro
 | 高速 seek | 指定位置をすばやく見つけて再生できます | &#10003; | &#10003; |
 | H.265ハードウェアデコード | H.265ハードウェアのデコードと再生をサポート | &#10003; | × |
 | ソフトウェアとハードウェアデコード自動切り替え | 端末がハードウェアデコードをサポートしていない場合、自動的にソフトウェアデコードに切り替えます | &#10003; | × |
-|ホットリンク防止 | ホットリンク防止が有効化されたビデオをサポートします | &#10003; | &#10003;  |
+|リンク不正アクセス防止 | リンク不正アクセス防止機能が有効化されたビデオをサポートします | &#10003; | &#10003;  |
 | プレビュー | プレビュー機能が有効化されたビデオをサポートします | &#10003; | &#10003;  |
 | 暗号化ビデオの再生 | 暗号化されたビデオを再生します | &#10003; | &#10003;  |
 | HTTPヘッダーのカスタマイズ | ビデオリソースリクエスト時のHTTP Headersのカスタマイズ | &#10003; | × |
@@ -155,5 +153,5 @@ VODは [ビデオ暗号化の概要](https://intl.cloud.tencent.com/document/pro
 | ビデオレンダリングのカスタマイズ | デコード後にスクリーンにレンダリングできます | &#10003; | × |
 | シームレスループ再生 | 1つのビデオの再生が完了した後にループ再生します | &#10003; | &#10003; |
 | インタラクティブフローティングウィンドウ |  フローティングウィンドウで再生します | ＆＃10003; | × |
-| ビデオの自動回転 | ビデオファイル内の rotate パラメータに基づきビデオを回転させます | &#10003; | × | 
+| ビデオの自動回転 | ビデオファイル内の rotate パラメータに基づきビデオを回転させます | &#10003; | × |
 | プログレスコールバック間隔のカスタマイズ | プログレスコールバック間隔のカスタマイズをサポートします | &#10003; | × |

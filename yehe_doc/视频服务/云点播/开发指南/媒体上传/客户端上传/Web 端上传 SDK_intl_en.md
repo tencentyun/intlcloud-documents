@@ -11,7 +11,7 @@ If webpack is not used, a `script` tag can be used for import in the following w
 ```html
 <script src="./vod-js-sdk-v6.js"></script>
 ```
->?Modify the value of `src` to the path to the source code you saved locally.
+>?Change the value of `src` to the path to the source code you saved locally.
 - **Import with CDN**
 	Import with CDN in the following ways:
 ```html
@@ -85,6 +85,7 @@ uploader.done().then(function (doneResult) {
 >?
 >- `opts` in `new TcVod(opts)` refers to parameters of the `TcVod` API. For more information, please see [API Description](#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0).
 >- The upload method automatically selects simple upload or multipart upload based on the file size, eliminating your need to take care of every step in multipart upload.
+>- To upload to the specified subapplication, please see [Subapplication System - Upload from client](https://intl.cloud.tencent.com/document/product/266/33987).
 
 ## Advanced Features
 
@@ -149,13 +150,13 @@ uploader.cancel()
 
 ### Checkpoint restart
 
-The SDK supports automatically resumable upload with no human intervention required. When the upload is terminated unexpectedly (for reasons such as the browser is closed or the network connection is interrupted), you can upload the file again from where it left off, which helps reduce the upload time.
+The SDK supports automatic checkpoint restart with no human intervention required. When the upload is terminated unexpectedly (for reasons such as the browser is closed or the network connection is interrupted), you can upload the file again from where it left off, which helps reduce the upload time.
 
 ## API Description
 
 ### TcVod
 
-| Parameter Name | Required | Type | Description |
+| Parameter  | Required | Type | Description |
 | ------------ | ---- | -------- | --------- |
 | getSignature | Yes | Function | Function used to acquire the upload signature. |
 | appId | No | number | Once entered, this parameter will be automatically carried in the built-in statistics report. |
@@ -163,7 +164,7 @@ The SDK supports automatically resumable upload with no human intervention requi
 
 ### TcVod.upload
 
-| Parameter Name | Required | Type | Description |
+| Parameter  | Required | Type | Description |
 | ------------ | ---- | -------- | --------- |
 | mediaFile | No | File | Media file (video, audio, or image). |
 | coverFile | No | File | Cover file. |
@@ -189,6 +190,5 @@ Up to 60 GB.
 3. **What browsers does the SDK support?**
 Chrome, Firefox, and other mainstream browsers that support `HTML5` as well as IE 10 or above.
 4. **How to implement upload pause or resumable upload?**
-Automatically resumable upload is implemented at the underlying layer of the SDK; therefore, the essence of pause is to call the `uploader.cancel()` method. Similarly, upload resumption after pause is also done by calling the initial `tcVod.upload` method. The difference lies in that the parameters of this method when the upload is resumed should be the previously cached parameters (for example, a global variable can be used to store the parameters when the upload is started and then cleared after upload is completed).
-
+Automatic resumable upload is implemented at the underlying layer of the SDK; therefore, the essence of pause is to call the `uploader.cancel()` method. Similarly, upload resumption after pause is also done by calling the initial `tcVod.upload` method. The difference lies in that the parameters of this method when the upload is resumed should be the previously cached parameters (for example, a global variable can be used to store the parameters when the upload is started and then cleared after upload is completed).
 

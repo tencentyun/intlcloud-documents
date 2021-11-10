@@ -2,20 +2,20 @@ VOD provides an SDK for uploading videos on Android client. For more information
 
 ## Downloading Source Code
 
-1. Click [here](https://ugcupload-1252463788.file.myqcloud.com/LiteAVSDK_UGC_Upload_Android.zip) to download Android upload demo and source code.
+1. Click [here](https://ugcupload-1252463788.file.myqcloud.com/LiteAVSDK_UGC_Upload_Android.zip) to download the Android Upload Demo and source code.
 2. After decompressing the downloaded zip file, you can see the demo directory and find the upload source code in `Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload`.
 
-##  Integrating Upload Library and Source Code
+## Integrating Upload Library and Source Code
 
 1. Copy `Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload` to your project directory, and modify the package name manually.
 2. Refer to `Demo/app/build.gradle` to add dependencies in your project:
     ```
     implementation ('com.tencent.qcloud:cosxml:5.5.3') {
-        exclude group:'com.tencent.qcloud', module: 'mtaUtils' // Disable MTA reporting
+        exclude group: 'com.tencent.qcloud', module: 'mtaUtils' // Disable MTA reporting}
     }
     ```
-    >?You can also refer to [Manual integration](https://intl.cloud.tencent.com/document/product/436/12159) and integrate corresponding dependent libraries.
-3. Network and storage access permissions are required for video-uploading. You can add the following permission declarations in `AndroidManifest.xml`:
+>?You can also refer to [Manual integration](https://intl.cloud.tencent.com/document/product/436/12159) and integrate corresponding dependent libraries.
+3. Network and storage access permissions are required for video uploading. You can add the following permission declarations in `AndroidManifest.xml`:
 	```xml
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -25,13 +25,13 @@ VOD provides an SDK for uploading videos on Android client. For more information
 	<receiver android:name=".videoupload.impl.TVCNetWorkStateReceiver">
 		<intent-filter>
 			<!--Action to detect network changes-->
-			<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+			<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
 			<category android:name="android.intent.category.DEFAULT" />
 		</intent-filter>
 	</receiver>
 	```
 
-##  Uploading Videos
+## Uploading Videos
 #### Initializing upload object
 
 ```java
@@ -54,7 +54,7 @@ mVideoPublish.setListener(new TXUGCPublishTypeDef.ITXVideoPublishListener() {
 });
 ```
 
-#### Constructing upload parameter
+#### Constructing upload parameters
 
 ```java
 TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishParam();
@@ -110,13 +110,15 @@ For details on how to calculate `signature`, please see [Signature for Upload fr
 int publishCode = mVideoPublish.publishMedia(param);
 ```
 
->?The upload method automatically selects simple upload or multipart upload based on the file size, saving efforts of users.
-
+>?
+>- The upload method automatically selects simple upload or multipart upload based on the file size, eliminating your need to take care of every step in multipart upload.
+>- To upload to the specified subapplication, please see [Subapplication System - Upload from client](https://intl.cloud.tencent.com/document/product/266/33987).
+>
 ## Advanced Features
 
 #### Uploading a cover image
 
-Add path to the cover image as an upload parameter.
+Add the path to the cover image as an upload parameter.
 
 ```java
 TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishParam();
@@ -128,10 +130,10 @@ For details on how to calculate `signature`, please see [Signature for Upload fr
 
 #### Canceling and resuming upload
 
-To cancel an upload, call `canclePublish()` of `TXUGCPublish`.
+To cancel an upload, call the `cancelPublish()` API of `TXUGCPublish`.
 
 ```java
-mVideoPublish.canclePublish();
+mVideoPublish.cancelPublish();
 ```
 
 To resume an upload, call `publishVideo` of `TXUGCPublish` again using the same upload parameters and same video and cover image paths.
@@ -148,14 +150,14 @@ The upload parameter `enableResume` is the switch for checkpoint restart, enable
 
 Most of errors in upload are caused by network connection failures or timeout. To fix such problems, we have added an optimized pre-upload logic, including resolving HTTPDNS, getting the recommended upload target region, and detecting the optimal upload target region.
 
-We recommend you call `TXUGCPublishOptCenter.getInstance().prepareUpload(signature)` when enabling the App. The pre-upload module will cache the mapping table of `<domain name, IP>` and the optimal upload target region locally, and automatically purge and refresh the cache when a network switch is detected.
+We recommend you call `TXUGCPublishOptCenter.getInstance().prepareUpload(signature)` when enabling the app. The pre-upload module will cache the mapping table of `<domain name, IP>` and the optimal upload target region locally, and automatically purge and refresh the cache when a network switch is detected.
 
 >!Be sure to register the network monitoring module in `AndroidManifest.xml`:
 ```xml
 <receiver android:name=".videoupload.impl.TVCNetWorkStateReceiver">
   <intent-filter>
     <!--Action to detect network changes-->
-    <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+    <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
     <category android:name="android.intent.category.DEFAULT" />
   </intent-filter>
 </receiver>
@@ -164,42 +166,42 @@ We recommend you call `TXUGCPublishOptCenter.getInstance().prepareUpload(signatu
 For details on how to calculate `signature`, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 
-## Video Upload API
+## Video Upload API Description
 
 Initialize the upload object: `TXUGCPublish`
 
-| Parameter Name      | Description                   | Type      | Required   |
+| Parameter | Description                   | Type      | Required   |
 | --------- | ---------------------- | ------- | ---- |
 | context   | Application context.        | Context | Yes    |
-| customKey | This parameter is used to distinguish users. We recommend using your App account ID as the value of this parameter for future troubleshooting. | String  | No    |
+| customKey | This parameter is used to distinguish users. We recommend using your app account ID as the value of this parameter for future troubleshooting. | String  | No    |
 
 Set VOD appId: `TXUGCPublish.setAppId`
 
-| Parameter Name      | Description                   | Type      | Required   |
+| Parameter | Description                   | Type      | Required   |
 | --------- | ---------------------- | ------- | ---- |
 | appId   | VOD appId.        | int | Yes    |
 
 
 Upload a video: `TXUGCPublish.publishVideo`
 
-| Parameter Name  | Description | Type                                 | Required |
+| Parameter | Description | Type                                 | Required |
 | ----- | ---- | ---------------------------------- | ---- |
 | param | Upload parameter. |  TXUGCPublishTypeDef.TXPublishParam | Yes |
 
 Upload parameter: `TXUGCPublishTypeDef.TXPublishParam`
 
-| Parameter Name         | Description                               | Type   | Required   |
+| Parameter | Description                               | Type   | Required   |
 | ------------ | ---------------------------------- | ------- | ---- |
-| signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/zh/document/product/266/33922). | String  | Yes    |
+| signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922). | String  | Yes    |
 | videoPath    | Path to a local video file. | String                           | Yes    |
 | coverPath | Path to a local cover image file. No cover file will be used by default.                  | String  | No.    |
-| enableResume | This parameter specifies whether to enable checkpoint restart. It is enabled by default.                      | boolean | No    |
-| enableHttps | This parameter specifies whether to enable HTTPS, which is disabled by default.                      | boolean | No |
+| enableResume | Whether to enable checkpoint restart. It is enabled by default.                      | boolean | No    |
+| enableHttps | Whether to enable HTTPS, which is disabled by default.                      | boolean | No |
 | fileName     | Name of a video file uploaded to Tencent Cloud. If this parameter is left empty, the name of the local file will be used by default. | String  | No    |
 
 Set upload callback: `TXUGCPublish.setListener`
 
-| Parameter Name     | Description        | Type                                       | Required   |
+| Parameter | Description        | Type                                       | Required   |
 | -------- | ----------- | ---------------------------------------- | ---- |
 | listener | Listening callback of upload progress and result. | TXUGCPublishTypeDef.ITXVideoPublishListener | Yes    |
 
@@ -229,44 +231,44 @@ Upload result: `TXUGCPublishTypeDef.TXPublishResult`
 
 Pre-upload: `TXUGCPublishOptCenter.prepareUpload`
 
-| Parameter Name      | Description                   | Type      | Required   |
+| Parameter | Description                   | Type      | Required   |
 | --------- | ---------------------- | ------- | ---- |
 | signature   | [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).        | String | Yes    |
 
 ## Image Upload API
 
-Initialize upload object: `TXUGCPublish`
+Initialize the upload object: `TXUGCPublish`
 
-| Parameter Name | Description                                                  | Type    | Required |
+| Parameter | Description                                                  | Type    | Required |
 | --------- | --------------------------------------------------------- | ------- | ---- |
 | context   | Application context. | Context                                        | Yes   |
 | customKey | This parameter is used to distinguish users. We recommend using your App account ID as the value of this parameter to facilitate subsequent troubleshooting. | String | No   |
 
 Set VOD appId: `TXUGCPublish.setAppId`
 
-| Parameter Name | Description  | Type | Required |
+| Parameter | Description  | Type | Required |
 | -------- | --------- | ---- | ---- |
 | appId      | VOD appId.    | int  | Yes   |
 
 Upload image: `TXUGCPublish.publishMedia`
 
-| Parameter Name | Description | Type                                    | Required |
+| Parameter | Description | Type                                    | Required |
 | -------- | -------- | --------------------------------------- | ---- |
 | param | Upload parameter. | TXUGCPublishTypeDef.TXMediaPublishParam | Yes   |
 
 Upload parameter: `TXUGCPublishTypeDef.TXPublishParam`
 
-| Parameter Name      | Description                                            Type    | Required |
+| Parameter | Description                                            Type    | Required |
 | ------------ | -------------------------------------------------- | ------- | ---- |
 | signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
 | mediaPath    | Path to a local image file.                                   | String  | Yes   |
-| enableResume | This parameter specifies whether to enable checkpoint restart. It is enabled by default.                         | boolean | No   |
-| enableHttps | This parameter specifies whether to enable HTTPS, which is disabled by default.                       | boolean | No |
+| enableResume | Whether to enable checkpoint restart. It is enabled by default.                         | boolean | No   |
+| enableHttps | Whether to enable HTTPS, which is disabled by default.                       | boolean | No |
 | fileName     | Name of a video file uploaded to Tencent Cloud. If this parameter is left empty, the name of the local file will be used by default. | String  | No   |
 
 Set upload callback: `TXUGCPublish.setListener`
 
-| Parameter Name | Description               | Type                                        | Required |
+| Parameter | Description               | Type                                        | Required |
 | -------- | ---------------------- | ------------------------------------------- | ---- |
 | listener | Listening callback of upload progress and result. | TXUGCPublishTypeDef.ITXVideoPublishListener | Yes   |
 
@@ -294,7 +296,7 @@ Upload result: `TXUGCPublishTypeDef.TXPublishResult`
 
 Pre-upload: `TXUGCPublishOptCenter.prepareUpload`
 
-| Parameter Name  | Description                                     | Type    | Required |
+| Parameter | Description                                     | Type    | Required |
 | --------- | -------------------------------------------- | ------ | ---- |
 | signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922). | String | Yes    |
 

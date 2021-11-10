@@ -16,7 +16,7 @@ Short videos generally refer to videos of less than 5 minutes in length, mainly 
 * Product promotion videos shared on ecommerce platforms (such as JD.com and Pinduoduo).
 * Videos shared on WeChat Official Account and we media.
 
-<img src="https://main.qcloudimg.com/raw/36d901de64420df8e7d49bae570eaeb3.png" width="800" />
+
 
 ### Playback architecture
 For short video playback scenarios, VOD provides the **basic player SDK**, which uses the URL as a parameter to play back the selected video on demand.
@@ -48,7 +48,6 @@ Long videos generally refer to videos produced by professional organizations and
 
 For long video playback scenarios, VOD provides the **superplayer SDK**, which uses the `FileId` as a parameter to play back the selected video on demand.
 
-
 <img src="https://main.qcloudimg.com/raw/f6b52d9429111812b0ee0e78654f2e34.png" width="700" />
 
 The overall architecture of playback with the superplayer SDK is as follows:
@@ -78,15 +77,14 @@ Video encryption is a specific scenario of long video playback scenarios, where 
 For more information on how video encryption works and the integration methods, please see [Video Encryption Overview](https://intl.cloud.tencent.com/document/product/266/38131) and [Video Encryption Integration Guide](https://intl.cloud.tencent.com/document/product/266/38294).
 
 ## Player SDK
-<span id="p2"></span>
-### Download and use
+### Download and use[](id:p2)
 
 | Player Type | SDK Download Address | User Guide |
 | -- | -- | -- |
-| Superplayer | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E5.9C.A8.E9.A1.B5.E9.9D.A2.E4.B8.AD.E5.BC.95.E5.85.A5.E6.96.87.E4.BB.B6)</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li> |
+| Superplayer | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li><li>[Flutter](https://intl.cloud.tencent.com/document/product/266/42099)</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li><li>[Flutter](https://intl.cloud.tencent.com/document/product/266/42099)</li> |
 
-<span id="p1"></span>
-### Feature list
+
+### Feature list[](id:p1)
 #### Basic player
 | Feature | Description | Mobile (Android and iOS) | Web |
 | -- | -- | -- | -- |
@@ -99,12 +97,12 @@ For more information on how video encryption works and the integration methods, 
 | Custom HTTP header | The HTTP headers in video resource requests are customizable | &#10003; | × |
 | Adaptive bitrate | If an HLS adaptive bitstream is played back, the bitrate is adaptive to the network bandwidth | &#10003; | &#10003; |
 | Small window playback | Videos can be played back in a small window | &#10003; | × |
-| Speed-adjustable playback | Videos can be played back at different speeds, and the audio tone will stay the same even if the speed changes | &#10003; | × |
-| Streaming | When a video is played back, its rest content is downloaded and buffered at the same time | &#10003; | &#10003; |
+| Adjustable-speed playback | Videos can be played back at different speeds, without changing the audio tone | &#10003; | × |
+| Playing video while downloading | When a video is played back, its remaining content is downloaded and buffered at the same time | &#10003; | &#10003; |
 | On-screen commenting | Comments can be displayed above video | &#10003; | × |
 | Mute | Audio can be muted during video playback | &#10003; | &#10003; |
 | Video screencapturing | The video image can be captured as screenshots | &#10003; | × |
-| Video rotation | The video image can be rotated at the specified angle | &#10003; | × |
+| Video rotation | The video image can be rotated by a specified angle | &#10003; | × |
 | Video mirroring | The video image can be mirrored horizontally or vertically | &#10003; | × |
 | Screen filling/fitting | Different display modes can be selected for the video image to match the screen size | &#10003; | × |
 | Custom streaming start time | The time when streaming starts is customizable | &#10003; | &#10003; |
@@ -134,16 +132,16 @@ For more information on how video encryption works and the integration methods, 
 | Adaptive bitrate | If an HLS adaptive bitstream is played back, the bitrate is adaptive to the network bandwidth | &#10003; | &#10003; |
 | Custom substream specification name | During the playback of a custom bitstream, the specification name of each substream is customizable | &#10003; | &#10003; |
 | Small window playback | Videos can be played back in a small window | &#10003; | × |
-| Speed-adjustable playback | Videos can be played back at different speeds, and the audio tone will stay the same even if the speed changes | &#10003; | × |
-| Streaming | When a video is played back, its rest content is downloaded and buffered at the same time | &#10003; | &#10003; |
+| Adjustable-speed playback | Videos can be played back at different speeds, without changing the audio tone | &#10003; | × |
+| Playing video while downloading | When a video is played back, its remaining content is downloaded and buffered at the same time | &#10003; | &#10003; |
 | On-screen commenting | Comments can be displayed above video | &#10003; | × |
 | Mute | Audio can be muted during video playback | &#10003; | &#10003; |
 | Video screencapturing | The video image can be captured as screenshots | &#10003; | × |
-| Video rotation | The video image can be rotated at the specified angle | &#10003; | × |
+| Video rotation | The video image can be rotated by a specified angle | &#10003; | × |
 | Video mirroring | The video image can be mirrored horizontally or vertically | &#10003; | &#10003; |
 | Screen filling/fitting | Different display modes can be selected for the video image to match the screen size | &#10003; | × |
 | Custom streaming start time | The time when streaming starts is customizable | &#10003; | &#10003; |
-| Gesture | The brightness, volume level, and progress can be adjusted through gestures | &#10003; | × |
+| Gesture | The brightness, volume, and progress can be adjusted through gestures | &#10003; | × |
 | Cover configuration | The cover of the video to be played back can be set | &#10003; | &#10003; |
 | Thumbnail preview | Thumbnails can be displayed on the progress bar for preview | &#10003; | &#10003; |
 | Progress bar timestamp | Timestamp information can be added to the progress bar | &#10003; | &#10003; |

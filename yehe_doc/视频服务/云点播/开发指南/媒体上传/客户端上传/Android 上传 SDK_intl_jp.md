@@ -14,7 +14,7 @@ VODは、Androidプラットフォームでビデオをアップロードする�
         exclude group: 'com.tencent.qcloud', module: 'mtaUtils' //mtaレポート機能を無効にする}
     }
     ```
-    >?[手動統合](https://intl.cloud.tencent.com/document/product/436/12159) を参照して、対応するバージョンの依存ライブラリを統合することもできます。
+>?[手動統合](https://intl.cloud.tencent.com/document/product/436/12159) を参照して、対応するバージョンの依存ライブラリを統合することもできます。
 3. ビデオアップロードを使用するには、ネットワークとストレージ関連のアクセス許可が必要です。`AndroidManifest.xml`に次の許可ステートメントを追加することができます。
 	```xml
 	<uses-permission android:name="android.permission.INTERNET"/>
@@ -110,8 +110,10 @@ param.mediaPath = "xxx";
 int publishCode = mVideoPublish.publishMedia(param);
 ```
 
->?アップロード方法は、ファイルのサイズに応じて、通常アップロードとマルチパートアップロードが自動的に選択されます。マルチパートアップロードの各手順を気にすることなく、マルチパートアップロードを行うことができます。
-
+>?
+>- アップロード方法は、ファイルのサイズに応じて、通常アップロードとマルチパートアップロードが自動的に選択されます。マルチパートアップロードの各手順を気にすることなく、マルチパートアップロードを行うことができます。
+>- 指定されたサブアプリケーションにアップロードする必要がある場合は、[サブアプリケーションシステム-クライアントからのアップロード](https://intl.cloud.tencent.com/document/product/266/33987)をご参照ください。
+>
 ## 高度な機能
 
 #### カバーの付加
@@ -124,7 +126,7 @@ param.signature = "xxx";
 param.videoPath = "xxx";
 param.coverPath = "xxx";
 ```
-> `signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
+ `signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
 
 #### アップロードのキャンセルと再開
 
@@ -161,7 +163,7 @@ Appを起動するときに`TXUGCPublishOptCenter.getInstance().prepareUpload(si
 </receiver>
 ```
 
-> `signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
+`signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
 
 
 ## ビデオアップロードインターフェースの説明
@@ -195,7 +197,7 @@ VOD appIdの設定：`TXUGCPublish.setAppId`
 | coverPath    | ローカルカバーファイルパス。デフォルトではカバーファイルは含まれません。                  | String  | いいえ    |
 | enableResume | 中断ポイントからの再開の有効無効を指定。デフォルトでは有効になっています。                      | boolean | いいえ    |
 | enableHttps  | HTTPSの有効無効を指定。デフォルトでは無効になっています。                      | boolean | いいえ    |
-| fileName     | Tencent Cloudにアップロードされたビデオファイル名です。空のままの場合、デフォルトでローカルファイル名が使用されます。 | String  | いいえ    |
+| fileName     | Tencent Cloudにアップロードされたビデオファイル名。空のままの場合、デフォルトでローカルファイル名が使用されます。 | String  | いいえ    |
 
 アップロードコールバックの設定：`TXUGCPublish.setListener`
 

@@ -1,4 +1,4 @@
-## 2020年12月
+## 2021年8月
 <table>
 <thead>
 <tr>
@@ -9,6 +9,126 @@
 </tr>
 </thead>
 <tbody><tr>
+<td>V3.5バージョンをリリース</td>
+<td>CSSレコーディングはVOD冷却ポリシーに連動するとともに、タスクフローとバインドし、レコーディングファイルのVOD関連機能とのインタラクション最適化を実現しました。</td> 
+ <td>2021-07</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/267/34223">CSSレコーディング</a></td>
+</tr>
+<tr>
+<td>V3.6バージョンをリリース</td>
+<td>Tencent Cloudプレーヤー Demoをリリース、完全な製品レベルのインタラクティブインターフェイスとビジネスソースコードを提供します。</td>
+ <td>	2021-08</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/42091">プレーヤー Demoの展示</a>
+</td>
+</tr>
+<tr>
+<td>V3.7バージョンをリリース</td>
+<td>新バージョンの価格計算機。</td>
+ <td>	2021-08</td> 
+<td>
+<a href="https://buy.intl.cloud.tencent.com/pricing/vod">VOD料金</a>
+</td>
+</tr>
+</tbody></table>
+
+## 2021年6月
+<table>
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+ <th width="15%">リリース時間</th> 
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V3.3バージョンをリリース</td>
+<td>VODがBCMに全面的に接続されました。</td> 
+ <td>2021-05</td> 
+<td>CDN指標のモニタリングとアラームの設定方法</td>
+</tr>
+<tr>
+<td>V3.4バージョンをリリース</td>
+<td>VODがメディア資産冷却機能をサポートしました。</td>
+ <td>	2021-06</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/42092">メディア資産冷却</a>
+</td>
+</tr>
+</tbody></table>
+
+## 2021年4月
+<table>
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+ <th width="15%">リリース時間</th> 
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V3.0バージョンをリリース</td>
+<td>VODがタスク管理システムをリリースし、タスク詳細の確認をサポートしました。</td> 
+ <td>2021-03</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/266/39706">タスク管理</a></td>
+</tr>
+<tr>
+<td>V3.1バージョンをリリース</td>
+<td>VOD画像メディア資産管理システムがアップグレードし、フィルタリング、検索、リストのカスタマイズなどの機能をサポートしました。</td>
+ <td>2021-03</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/37899">画像管理</a>
+</td>
+</tr>
+<tr>
+<td>V3.2バージョンをリリース</td>
+<td>VODはサブアプリケーションのライフサイクル管理システムをサポートし、サブアプリケーションの使用停止、破棄、有効化などの管理メカニズムをサポートしました。</td>
+ <td>2021-04</td> 
+<td>アプリケーション管理</td>
+</tr>
+</tbody></table>
+
+## 2021年2月
+<table>
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+ <th width="15%">リリース時間</th> 
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V2.8バージョンをリリース</td>
+<td>VODの超高速HD（TESHD）設定機能を公開しました。</td> 
+ <td>2021-01</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14059">超高速HD（TESHD）</a></td>
+</tr>
+<tr>
+<td>V2.9バージョンをリリース</td>
+<td>VODのCDN設定機能をアップグレード・公開し、海外アクセラレーションのみサポートしました。</td>
+ <td>2021-11</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/35572">ドメイン名管理</a>
+</td>
+</tr>
+</tbody></table>
+
+
+## 2020年12月
+<table>
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+ <th width="15%">リリース時間</th> 
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td>V2.6バージョンをリリース</td>
 <td>VODコンソールの中国国外エリアでの課金およびデータ統計を正式にリリースしました。</td>
  <td>2020-11</td> 
@@ -69,8 +189,7 @@
 <td>V2.2バージョンをリリース</td>
 <td>画像メディア資源を直接使用して、ビデオカバーを設定することができます。</td> 
  <td>2020-08</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33896">ビデオ管理</a>
-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33896">ビデオ管理</a></td>
 </tr>
 </tbody></table>
 
@@ -106,27 +225,6 @@
 </tr>
 </tbody></table>
 
-
-
-
-## 2020年03月
-
-<table >
-<thead>
-<tr>
-<th width="20%">動的名称</th>
-<th width="50%">動的記述</th>
- <th width="15%">リリース時間</th>  
-<th width="15%">関連ドキュメント</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ビデオ制作専用バージョンのリリース</td>
-<td >ビデオトリミング制作のサービスを開始しました。オーディオ・ビデオのトリミング、スプライシング、トランジションおよびエクスポート機能を提供しています。</td>
- <td>2020-03-02</td> 
-<td>-</td>
-</tr>
-</tbody></table>
 
 
 ## 2019年10月
@@ -243,7 +341,7 @@
 <td>V1.3バージョンをリリース</td>
 <td>VODのWebプレーヤーとUGSV Licenseが再構築されました。</td>
  <td>2019-05-15</td> 
-<td><a href="https://cloud.tencent.com/document/product/266/14056">Webプレーヤー管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14056">Webプレーヤー管理</a></td>
 </tr>
 
 </tbody></table>
