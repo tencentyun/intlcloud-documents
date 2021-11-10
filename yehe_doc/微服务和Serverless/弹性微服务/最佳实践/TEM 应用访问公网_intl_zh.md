@@ -75,7 +75,7 @@ TEM 中的应用部署在用户的环境中，环境和用户的 VPC 关联，�
 
 ## 额外费用
 
-使用 [NAT 网关](https://intl.cloud.tencent.com/product/nat) 和 [EIP](https://intl.cloud.tencent.com/product/eip) 产生额外费用，定价详情参见：
+使用 [NAT 网关](https://intl.cloud.tencent.com/product/nat) 和 EIP产生额外费用，定价详情参见：
 
 - [NAT 网关定价](https://intl.cloud.tencent.com/document/product/1015/30248)
 - [EIP 定价](https://intl.cloud.tencent.com/document/product/213/17156)
