@@ -34,11 +34,11 @@ TencentDB for MySQL은 콘솔을 통한 빠른 인스턴스 사양 변경을 지
 2. 팝업 대화 상자에서 변경된 설정을 선택한 후 [제출]을 클릭합니다.
 >?
 >- 로컬의 남은 리소스가 충분할 경우 터보 변경 기능을 사용할 수 있습니다. 본 페이지의 ‘터보 변경’ 버튼을 통해 활성화 또는 비활성화를 선택할 수 있습니다. 
->![](https://main.qcloudimg.com/raw/6b748799ced5f4a079e2d5929af15ef4.png)
+>![](https://main.qcloudimg.com/raw/c37bb99f0a2db0a9108c7068ad72ba7c.png)
 >- 일부 터보 변경 시나리오는 재시작하지 않으며 이 경우 제출한 변경은 설정 변경이 완료된 후 바로 적용됩니다. 다음 이미지를 참고하십시오. 
-![](https://main.qcloudimg.com/raw/c5a6655393390f749501d69641976149.png)
+![](https://main.qcloudimg.com/raw/6f5e9ab54f270c0833f5545cccbc8c6d.png)
 >
-![](https://main.qcloudimg.com/raw/97fa5655a5e451456658c0797b163609.png)
+![](https://main.qcloudimg.com/raw/ef2bf519dabe88cb23b9c73993602b9b.png)
 
 ## API로 인스턴스 설정 변경
 UpgradeDBInstance 인터페이스를 사용해 인스턴스 설정을 변경할 수 있습니다. 자세한 내용은 [CDB 인스턴스 설정 변경](https://intl.cloud.tencent.com/document/product/236/15876)을 참고하십시오.
@@ -67,19 +67,19 @@ UpgradeDBInstance 인터페이스를 사용해 인스턴스 설정을 변경할 
 
 #### 인스턴스가 메모리 확장(디스크 확장)에 터보 변경을 지원하는지 어떻게 확인할 수 있나요?
 변경 페이지에서 터보 변경 버튼 상태를 확인하여 관련 기능을 사용할 수 있는지 확인할 수 있습니다. 필요하지 않으면 수동으로 비활성화할 수 있으며 터보 변경 요구 사항에 맞지 않으면 해당 기능을 활성화할 수 없습니다. 
-![](https://main.qcloudimg.com/raw/6b748799ced5f4a079e2d5929af15ef4.png)
+![](https://main.qcloudimg.com/raw/0ecdc6d86e3727e7a688a559ce217d7d.png)
 
 #### 메모리 또는 디스크를 확장하면 인스턴스 마이너 버전에 영향을 미치나요? 
 인스턴스 마이너 버전이 최신 버전이 아니면 최신 인스턴스 커널 마이너 버전으로 업데이트 될 수 있으며 이 경우 터보 변경 기능으로 인해 데이터베이스가 재시작될 수 있습니다. 
 
 #### 터보 변경 시 인스턴스가 재시작되나요?
 특정 상황에서 인스턴스가 재시작될 수 있습니다. 재시작 여부는 다음 이미지와 같이 변경 페이지 하단의 관련 알람을 통해 알 수 있습니다.
-![](https://main.qcloudimg.com/raw/a105869f7e8ded950ea06b0a25cc7ab9.png)
+![](https://main.qcloudimg.com/raw/d97d2daa7cb8e5aa0924355c59bc4fc8.png)
 >?인스턴스 마이너 버전이 최신 버전이고 터보 변경 기능을 사용할 수 있는 경우 디스크만 변경한다고 해서 인스턴스가 재시작되지는 않습니다. 
 
 #### 콘솔 업그레이드 시, 터보 변경인지 어떻게 확인하나요?
 변경 페이지의 ‘터보 변경’ 버튼 활성화 여부를 통해 확인할 수 있습니다.  
-![](https://main.qcloudimg.com/raw/6b748799ced5f4a079e2d5929af15ef4.png)
+![](https://main.qcloudimg.com/raw/0ecdc6d86e3727e7a688a559ce217d7d.png)
 
 #### API 인터페이스 설정 변경 시, 터보 변경인지 어떻게 확인하나요?
 API 인터페이스는 현재 터보 변경이 아닌 마이그레이션 방식의 변경 업그레이드만 지원합니다. 추후 API 기능을 제공할 예정입니다.  
