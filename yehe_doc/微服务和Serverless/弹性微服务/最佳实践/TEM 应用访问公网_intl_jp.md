@@ -75,7 +75,7 @@ TEMのアプリケーションはユーザーの環境にデプロイされ、�
 
 ## 追加料金
 
-[NAT Gateway](https://intl.cloud.tencent.com/product/nat)および[EIP](https://intl.cloud.tencent.com/product/eip)を使用すると、料金が発生します。料金の詳細については以下をご参照ください。
+[NAT Gateway](https://intl.cloud.tencent.com/product/nat)およびEIPを使用すると、料金が発生します。料金の詳細については以下をご参照ください。
 
 - [NAT Gateway料金](https://intl.cloud.tencent.com/document/product/1015/30248)
 - [EIP料金](https://intl.cloud.tencent.com/document/product/213/17156)
