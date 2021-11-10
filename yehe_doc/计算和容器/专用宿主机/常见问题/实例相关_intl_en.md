@@ -13,7 +13,6 @@ You can customize the sizes of the system disk and data disk when creating a CVM
 
 ### Does CVM on a CDH support migration?
 - Yes. Instances can be migrated among different dedicated hosts. For detailed directions, see [Migrating Instances Among CDHs](https://intl.cloud.tencent.com/document/product/416/41222).
-- Tencent Cloud also supports migration from CDH to CVM and vice versa. For detailed directions, see [Converting CVM on a CDH to a CVM Instance](https://intl.cloud.tencent.com/document/product/416/42207) and [Migrating a CVM Instance to CDH](https://intl.cloud.tencent.com/document/product/416/42208).
 
 ### Does CVM on a CDH support configuration adjustment?
 
