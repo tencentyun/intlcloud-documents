@@ -6,7 +6,7 @@
 ### 领取方式
 
 - 通过[联系我们](https://intl.cloud.tencent.com/contact-us)给我留下联系方式，我们会尽快联系您。
-- 通过提交Ticket，选择产品“Web Application Firewall”，选择“Free-trial request”，问题描述为“Apply free-trial of WAF”并提交即可，我们会立即处理该工单。
+- 通过提交Ticket，选择产品“T-Sec-Web应用防火墙”，选择“Free-trial request”，问题描述为“Apply free-trial of WAF”并提交即可，我们会立即处理该工单。
 
 ### 说明
 免费试用期为一个月，限购一个实例。

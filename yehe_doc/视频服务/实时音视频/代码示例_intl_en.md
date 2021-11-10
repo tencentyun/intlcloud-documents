@@ -155,7 +155,7 @@
     <div class="scene-card-container">
         <div class="scene-card">
             <div style="float: left; margin-top: 20px;">
-                <img src="https://main.qcloudimg.com/raw/7e8f22434b73f10204d749ab9f1aaf63.png" width="160" data-nonescope="true">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/82cfd639a13f1f65cf18c0415bfb37c4.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Interactive Live Streaming</h3>
@@ -168,7 +168,7 @@
     <div class="scene-card-container">
         <div class="scene-card">
             <div style="float: left; margin-top: 20px;">
-                <img src="https://main.qcloudimg.com/raw/34c6a249523cf03344c6938989e7acd4.png" width="160" data-nonescope="true">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/bee791cf7cdccf175b70918f83115c7f.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Chat Salon</h3>
@@ -181,7 +181,7 @@
     <div class="scene-card-container">
         <div class="scene-card">
             <div style="float: left; margin-top: 20px;">
-                <img src="https://main.qcloudimg.com/raw/ab32f135f2847eaf22733e9a9ad1636a.png" width="160" data-nonescope="true">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/80a7a3e917e4e65908bf2fb1736f7121.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Audio Chat Room</h3>
@@ -229,7 +229,7 @@
     <div class="scene-card-container">
         <div class="scene-card">
             <div style="float: left; margin-top: 20px;">
-                <img src="https://main.qcloudimg.com/raw/129edf43d9adf4df6f022dec79ba6db0.png" width="160" data-nonescope="true">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/c8b92d2457467e3c349cb56e83b37ef4.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Video Conferencing</h3>
@@ -242,7 +242,7 @@
     <div class="scene-card-container">
         <div class="scene-card">
             <div style="float: left; margin-top: 20px;">
-                <img src="https://main.qcloudimg.com/raw/15a6e78b4a29c95b3cd9ba9d973f9f57.png" width="160" data-nonescope="true">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/2dffabbe27521eb08c95dc5e72101886.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Audio Call</h3>
@@ -255,7 +255,7 @@
     <div class="scene-card-container">
         <div class="scene-card">
             <div style="float: left; margin-top: 20px;">
-                <img src="https://main.qcloudimg.com/raw/4f6e018388bce36b0f5b7807ed76c82a.png" width="160" data-nonescope="true">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/96f08d55e04928ddd1d731192a3dc8a4.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Video Call</h3>
