@@ -53,7 +53,7 @@
 </tr>
 </table>
 
- >配置文件必须和 toa_win.exe 放在同一个目录下。
+>!配置文件必须和 toa_win.exe 放在同一个目录下。
  
  ![](https://main.qcloudimg.com/raw/d53c1cb161f45c9ad75789ac1c832af6.png)
 2. 修改 program_auto_up.bat。
