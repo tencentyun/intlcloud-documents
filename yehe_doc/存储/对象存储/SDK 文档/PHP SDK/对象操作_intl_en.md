@@ -137,7 +137,7 @@ Guzzle\Service\Resource\Model Object
 | ------------ | ------ | ------------------------------------------------------------ | -------- |
 | Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
 | Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | String | Encoding method of the returned value | None |
+| EncodingType | String | | Encoding method of the returned value | None |
 | Marker | String | The object after which the returned list begins. Objects are listed in UTF-8 binary order by default.  | None |
 | Prefix | String | Key prefix by which objects are queried       | None |
 | MaxKeys | Int | The maximum number of returned objects, which is `1000` (the maximum value allowed) by default | None |
@@ -252,7 +252,7 @@ Guzzle\Service\Resource\Model Object
 | ------------------- | ------ | ------------------------------------------------------------ | -------- |
 | Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
 | Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | String  |Encoding method of the returned value | None |
+| EncodingType | Encoding method of the returned value | None |
 | KeyMarker | String  | The key of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.  | None |
 | VersionIdMarker | String |  The version ID of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.   |  None |
 | NextKeyMarker | String | The key of the object after which the next returned list begins if `IsTruncated` is `true` | None |
@@ -383,7 +383,7 @@ try {
 ```php
 try {
 $result = $cosClient->putObject(array(
-        'Bucket' => 'examplebucket-125000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-125000000', //Format：BucketName-APPID
         'Key' => 'exampleobject',
         'Body' => fopen($local_path, 'rb'),
         'TrafficLimit' => 8 * 1024 * 1024 // Limit the speed to 1 MB/s.
@@ -715,7 +715,7 @@ try {
 ```php
 try {
    $result = $cosClient->getObject(array(
-        'Bucket' => 'examplebucket-125000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-125000000', //Format：BucketName-APPID
         'Key' => 'exampleobject',
         'SaveAs' => '/data/exampleobject',
         'TrafficLimit' => 8 * 1024 * 1024 // Limit the speed to 1 MB/s.
@@ -928,6 +928,21 @@ public Guzzle\Service\Resource\Model deleteObject(array $args = array());
 
 [//]: # ".cssg-snippet-delete-object"
 
+#### Sample 1. Deleting an object
+```php
+try {
+    $result = $cosClient->deleteObject(array(
+        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Key' => 'exampleobject'
+    )); 
+    // Request successful
+    print_r($result);
+} catch (\Exception $e) {
+    // Request failed
+    echo($e);
+}
+```
+#### Sample 2. Deleting an object with a version ID
 ```php
 try {
     $result = $cosClient->deleteObject(array(
@@ -942,6 +957,7 @@ try {
     echo($e);
 }
 ```
+
 
 #### Parameter description
 
@@ -965,7 +981,27 @@ public Guzzle\Service\Resource\Model deleteObjects(array $args = array());
 
 #### Sample request
 
-#### Sample 1. Deleting multiple specified objects
+#### Sample 1. Deleting multiple objects
+```php
+try {
+    $result = $cosClient->deleteObjects(array(
+        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Objects' => array(
+            array(
+                'Key' => 'exampleobject',
+            ),  
+            // ... repeated
+        ),  
+    )); 
+    // Request successful
+    print_r($result);
+} catch (\Exception $e) {
+    // Request failed
+    echo($e);
+}
+```
+
+#### Sample 2. Deleting multiple objects with version IDs
 
 
 [//]: # ".cssg-snippet-delete-multi-object"
@@ -991,7 +1027,7 @@ try {
 ```
 
 
-#### Sample 2. Deleting objects with a specified prefix
+#### Sample 3. Deleting objects with a specified prefix
 
 [//]: # ".cssg-snippet-delete-prefix"
 
@@ -1896,7 +1932,7 @@ try {
         $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
         $key = 'exampleobject',
         $saveAs = $local_path,
-        $options=['Progress' => $printbar, // Specify the progress.
+        $options=['Progress' => $printbar, //Specify the progress
                   'PartSize' => 10 * 1024 * 1024, //Part size
                   'Concurrency' => 5, //Number of concurrent parts
                   'ResumableDownload' => true, //Whether to enable checkpoint restart. It’s disabled by default.

@@ -125,7 +125,7 @@ The response contains object metadata in dict format:
 | NextMarker | The object after which the next returned list begins if `IsTruncated` is `true` | String |
 | Name | Bucket name in the format of `BucketName-APPID` | String |
 | IsTruncated   |  Whether the returned object list is truncated. | String |
-| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | 
+| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
 | Contents | List of all object metadata, including `ETag`, `StorageClass`, `Key`, `Owner`, `LastModified`, `Size` | List |
 | CommonPrefixes | All objects starting with the specified prefix and ending with the specified delimiter | List |
 
@@ -238,7 +238,7 @@ The response contains object metadata in dict format:
 | NextVersionIdMarker | The version ID of the object after which the next returned list begins if `IsTruncated` is `true` | String |
 | Name | Bucket name in the format of `BucketName-APPID` | String |
 | IsTruncated   |  Whether the returned object list is truncated. | String |
-| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | 
+| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
 | Version | List of the metadata of all objects with multiple versions, including `ETag`, `StorageClass`, `Key`, `VersionId`, `IsLatest`, `Owner`, `LastModified`, and `Size`  | List |
 | DeleteMarker | List of the metadata of all delete markers, including `Key`, `VersionId`, `IsLatest`, `Owner`, and `LastModified` | List |
 | CommonPrefixes | All objects starting with the specified prefix and ending with the specified delimiter | List |
@@ -269,12 +269,13 @@ import logging
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# Set user attributes, such as secret_id, secret_key, and region. secret_id and secret_key can be queried and managed in the CAM console.
-# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
-secret_id = 'secret_id'     # Replace it with the actual secret_id.
-secret_key = 'secret_key'     # Replace it with the actual secret_key.
-region = 'ap-beijing'    # Replace it with the actual region.
-token = None               # If a temporary key is used, the token needs to be specified. This is optional and is left empty by default.
+# Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
 client = CosS3Client(config)
 
@@ -779,7 +780,7 @@ response = client.copy_object(
         'Bucket': 'sourcebucket-1250000000', 
         'Key': 'exampleobject', 
         'Region': 'ap-guangzhou',
-        'VesionId': 'string'
+        'VersionId': 'string'
     },
     CopyStatus='Copy'|'Replaced',
     ACL='private'|'public-read',
@@ -891,12 +892,13 @@ import sys
 import os
 import logging
 
-# Set user attributes, such as secret_id, secret_key, and region. secret_id and secret_key can be queried and managed in the CAM console.
-# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
-secret_id = ''     # Replace it with the actual secret_id.
-secret_key = ''     # Replace it with the actual secret_key.
-region = 'ap-guangzhou'    # Replace it with the actual region.
-token = None               # If a temporary key is used, the token needs to be specified. This is optional and is left empty by default.
+# Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
 client = CosS3Client(config)
 
@@ -1020,7 +1022,7 @@ response = client.delete_objects(
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Delete  | Response method and target objects to delete  | Dict | Yes |
 | Objects | Information of each object to delete | List | Yes |
-| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String |No |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String |
 | VersionId | Version ID of the target object if versioning is enabled | String  | No |
 | Quiet | Response method. Valid values: `true`: returns only the failed results; `false` (default): returns all results. | String | No |
 
@@ -1733,7 +1735,7 @@ response = client.complete_multipart_upload(
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
 | UploadId | ID of the multipart upload | String | Yes |
-| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict | Yes |
+| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict |
 
 #### Response description
 
@@ -1994,12 +1996,13 @@ import sys
 import os
 import logging
 
-# Set user attributes, such as secret_id, secret_key, and region. secret_id and secret_key can be queried and managed in the CAM console.
-# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
-secret_id = ''     # Replace it with the actual secret_id.
-secret_key = ''     # Replace it with the actual secret_key.
-region = 'ap-guangzhou'    # Replace it with the actual region.
-token = None               # If a temporary key is used, the token needs to be specified. This is optional and is left empty by default.
+# Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
 client = CosS3Client(config)
 
@@ -2054,14 +2057,14 @@ from qcloud_cos.cos_threadpool import SimpleThreadPool
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# Set user attributes, such as secret_id, secret_key, and region. secret_id and secret_key can be queried and managed in the CAM console.
-# appid has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `bucketname-appid`.
-secret_id = 'secret_id'  # Replace it with the actual secret_id.
-secret_key = 'secret_key'  # Replace it with the actual secret_key.
-region = 'ap-shanghai'  # Replace it with the actual region.
+# Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+scheme = 'http'            # Specify whether to use HTTP or HTTPS protocol to access COS. This is optional and is https by default.
 
-token = None  # If a temporary key is used, the token needs to be specified. This is optional and is left empty by default.
-scheme = 'http'
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)  # Obtain the object to configure.
 client = CosS3Client(config)
 
@@ -2224,12 +2227,13 @@ import sys
 import os
 import logging
 
-# Set user attributes, such as secret_id, secret_key, and region. secret_id and secret_key can be queried and managed in the CAM console.
-# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
-secret_id = ''     # Replace it with the actual secret_id.
-secret_key = ''     # Replace it with the actual secret_key.
-region = 'ap-guangzhou'    # Replace it with the actual region.
-token = None               # If a temporary key is used, the token needs to be specified. This is optional and is left empty by default.
+# Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
 client = CosS3Client(config)
 
@@ -2311,15 +2315,14 @@ Sample 1. Using symmetric AES256 encryption for randomly generated keys
 
 [//]: # ".cssg-snippet-put-object-cse-c-aes"
 ```python
-# Initialize user identity information, that is, SECRET_ID and SECRET_KEY, which can be queried and managed in the CAM console.
-SECRET_ID = "SECRETID"
-SECRET_KEY = "SECRETKEY"
-REGION = "COS_REGION"
-conf = CosConfig(
-    Region=REGION,
-    SecretId=SECRET_ID,
-    SecretKey=SECRET_KEY,
-)
+# Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+
+conf = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)
 
 # Method 1: initializing the encryption client using the key value
 aes_provider = AESProvider(aes_key='aes_key_value')
@@ -2377,15 +2380,14 @@ Sample 2. Using asymmetric RSA encryption for randomly generated keys
 
 [//]: # ".cssg-snippet-put-object-cse-c-rsa"
 ```python
-# Initialize user identity information, that is, SECRET_ID and SECRET_KEY, which can be queried and managed in the CAM console.
-SECRET_ID = "SECRETID"
-SECRET_KEY = "SECRETKEY"
-REGION = "COS_REGION"
-conf = CosConfig(
-    Region=REGION,
-    SecretId=SECRET_ID,
-    SecretKey=SECRET_KEY,
-)
+# Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+
+conf = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)
 
 # Method 1: initializing the encryption client using the key value
 rsa_key_pair = RSAProvider.get_rsa_key_pair('public_key_value', 'private_key_value')

@@ -7,23 +7,23 @@ This document provides an overview of APIs and SDK sample codes related to uploa
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to bucket |
-| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using an HTML form | Uploads an object using an HTML form |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object | Uploads an object to a bucket. |
+| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using an HTML form | Uploads an object using an HTML form. |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object (modifying object attributes) | Copies a file to a destination path |
 
 **Multipart operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries the information about ongoing multipart uploads |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads an object in multiple parts |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying an object part | Copies a part of an object. |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of a file. |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts. |
 
-## SDK API Reference
+## SDK API References
 
 For parameters and method description of all APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
@@ -59,9 +59,9 @@ put.body =  url;
     //      totalBytesExpectedToSend  Total number of bytes expected to send, i.e. the size of the file
 }];
 // Monitor the upload result
-[put setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject contains information such as the ETag or custom headers in the response.
-    NSDictionary * result = (NSDictionary *)outputObject;
+[put setFinishBlock:^(QCloudUploadObjectResult *result, NSError *error) {
+    // Obtain the download link of the file uploaded using result.location
+    NSString * fileUrl = result.location;
 }];
 [put setInitMultipleUploadFinishBlock:^(QCloudInitiateMultipartUploadResult *
                                         multipleUploadInitResult,
@@ -98,6 +98,8 @@ put.setFinish { (result, error) in
     if let result = result {
         // ETag of the file
         let eTag = result.eTag
+        // File download link
+        let location = result.location;
     } else {
         print(error!);
     }
@@ -141,7 +143,7 @@ put.object = @"exampleobject";
 // Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type
 put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 
-// Monitor the upload progress.
+// Monitor the upload progress
 [put setSendProcessBlock:^(int64_t bytesSent,
                            int64_t totalBytesSent,
                            int64_t totalBytesExpectedToSend) {
@@ -151,9 +153,9 @@ put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 }];
 
 // Monitor the upload result
-[put setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject contains all the HTTP response headers
-    NSDictionary* info = (NSDictionary *) outputObject;
+[put setFinishBlock:^(QCloudUploadObjectResult *result, NSError *error) {
+    // Obtain the download link of the file uploaded using result.location
+    NSString * fileUrl = result.location;
 }];
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 ```
@@ -184,6 +186,9 @@ put.setFinish { (result, error) in
     if let result = result {
         // ETag of the file
         let eTag = result.eTag
+
+        // File download link
+        let location = result.location;
     } else {
         print(error!);
     }
@@ -216,7 +221,7 @@ NSError *error;
 NSData *resmeData = [put cancelByProductingResumeData:&error];
 ```
 
-To resume a suspended download, run the code below:
+To resume a suspended download, use the code below:
 
 [//]: # (.cssg-snippet-transfer-upload-resume)
 ```objective-c
@@ -247,7 +252,7 @@ var error : NSError?;
 var uploadResumeData:Data = put.cancel(byProductingResumeData:&error) as Data;
 ```
 
-To resume a suspended download, run the code below:
+To resume a suspended download, use the code below:
 
 [//]: # (.cssg-snippet-transfer-upload-resume)
 ```swift
@@ -285,7 +290,7 @@ for (int i = 0; i<20; i++) {
     // Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type
     put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
     
-    // Monitor the upload progress.
+    // Monitor the upload progress
     [put setSendProcessBlock:^(int64_t bytesSent,
                                int64_t totalBytesSent,
                                int64_t totalBytesExpectedToSend) {
@@ -295,9 +300,9 @@ for (int i = 0; i<20; i++) {
     }];
     
     // Monitor the upload result
-    [put setFinishBlock:^(id outputObject, NSError *error) {
-        // outputObject contains all the HTTP response headers
-        NSDictionary* info = (NSDictionary *) outputObject;
+    [put setFinishBlock:^(QCloudUploadObjectResult *result, NSError *error) {
+        // Obtain the download link of the file uploaded using result.location
+        NSString * fileUrl = result.location;
     }];
     [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 }
@@ -326,6 +331,9 @@ for i in 1...10 {
         if let result = result {
             // ETag of the file
             let eTag = result.eTag
+
+            // File download link
+            let location = result.location;
         } else {
             print(error!);
         }
@@ -372,9 +380,9 @@ for (int i = 0; i<20; i++) {
     }];
     
     // Monitor the upload result
-    [put setFinishBlock:^(id outputObject, NSError *error) {
-        // outputObject contains all the HTTP response headers
-        NSDictionary* info = (NSDictionary *) outputObject;
+    [put setFinishBlock:^(QCloudUploadObjectResult *result, NSError *error) {
+        // Obtain the download link of the file uploaded using result.location
+        NSString * location = result.location;
     }];
     [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 }
@@ -404,6 +412,8 @@ for i in 1...10 {
         if let result = result {
             // ETag of the file
             let eTag = result.eTag
+            // File download link
+            let location = result.location;
         } else {
             print(error!);
         }
@@ -451,9 +461,9 @@ for (int i = 0; i<20; i++) {
     }];
     
     // Monitor the upload result
-    [put setFinishBlock:^(id outputObject, NSError *error) {
-        // outputObject contains all the HTTP response headers
-        NSDictionary* info = (NSDictionary *) outputObject;
+    [put setFinishBlock:^(QCloudUploadObjectResult *result, NSError *error) {
+        // Obtain the download link of the file uploaded using result.location
+        NSString * location = result.location;
     }];
     [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 }
@@ -483,6 +493,9 @@ for i in 1...10 {
         if let result = result {
             // ETag of the file
             let eTag = result.eTag
+
+            // File download link
+            let location = result.location;
         } else {
             print(error!);
         }
@@ -514,9 +527,9 @@ put.object = @"dir1";
 put.body  = [@"" dataUsingEncoding:NSUTF8StringEncoding];
     
     // Monitor the upload result
-[put setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject contains all the HTTP response headers
-    NSDictionary* info = (NSDictionary *) outputObject;
+[put setFinishBlock:^(QCloudUploadObjectResult *result, NSError *error) {
+    // Obtain the download link of the file uploaded using result.location
+    NSString * location = result.location;
 }];
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 ```
@@ -545,6 +558,9 @@ put.body = dataBody;
 put.setFinish { (result, error) in
     // Get the upload result
     if let result = result {
+        // File download link
+        let location = result.location;
+
         } else {
             print(error!);
         }
@@ -592,7 +608,7 @@ request.sourceRegion= @"COS_REGION";
 // Note that for cross-region replication, the region used for `transferManager` must be the region of the destination bucket
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] CopyObject:request];
 
-// Cancel the copy.
+// Cancel the copy
 // To cancel the copy operation, call `cancel`
 [request cancel];
 ```
@@ -647,7 +663,7 @@ copyRequest.cancel();
 
 ### Uploading an object using simple upload
 
-#### API description
+#### Description
 
 This API (PUT Object) is used to upload an object smaller than 5 GB to a specified bucket. To call this API, you need to have permission to write the bucket. If the object size is larger than 5 GB, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) for the upload.
 
@@ -669,9 +685,9 @@ put.object = @"exampleobject";
 // Content of the object. You can pass in variables in `NSData*` or `NSURL*` format.
 put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 
-[put setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject contains all the HTTP response headers
-    NSDictionary* info = (NSDictionary *) outputObject;
+[put setFinishBlock:^(QCloudUploadObjectResult *result, NSError *error) {
+    // Obtain the download link of the file uploaded using result.location
+    NSString * location = result.location;
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] PutObject:put];
@@ -698,6 +714,8 @@ putObject.object = "exampleobject";
 putObject.finishBlock = {(result,error) in
     if let result = result {
         // "result" contains response headers.
+        // File download link
+        let location = result.location;
     } else {
         print(error!);
     }
@@ -736,7 +754,7 @@ request.accessControlList = @"default";
 // Path of the source object
 request.objectCopySource =
 @"sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended.
+// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended
 request.versionID = @"objectVersion1";
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
                           NSError * _Nonnull error) {
@@ -768,7 +786,7 @@ putObjectCopy.metadataDirective = "Copy";
 // Note: If you do not need ACL for the object, please use default
 // or simply leave it blank, and the object will inherit the permissions of the bucket by default.
 putObjectCopy.accessControlList = "default";
-// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended.
+// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended
 putObjectCopy.versionID = "versionID";
 putObjectCopy.setFinish { (result, error) in
     if let result = result {
@@ -813,7 +831,7 @@ request.accessControlList = @"private";
 request.objectCopySource =
     @"sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
 
-// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended.
+// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended
 request.versionID = @"objectVersion1";
 
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
@@ -855,7 +873,7 @@ request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
 request.accessControlList = "Source file ACL";
 // Path of the source object
 request.objectCopySource = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended.
+// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended
 request.versionID = "versionID";
 request.setFinish { (result, error) in
     if let result = result {
@@ -1019,7 +1037,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ModifyObjectProperty.swift).
 
-## Multipart Upload Operations
+## Multipart Operations
 
 The multipart upload process is outlined below.
 
@@ -1034,18 +1052,18 @@ The multipart upload process is outlined below.
 1. If you did not record the `UploadId` of the multipart upload, you can query the multipart upload job with `List Multipart Uploads` to get the `UploadId` of the corresponding file.
 2. Use the `UploadId` to list the uploaded parts with `List Parts`.
 3. Use the `UploadId` to upload the remaining parts with `Upload Part` or copy the remaining parts with `Upload Part Copy`.
-4. Complete the multipart upload with `Complete Multipart Upload`.
+3. Complete the multipart upload with `Complete Multipart Upload`.
 
 #### How to abort a multipart upload/copy operation
 
 1. If you did not record the `UploadId` of the multipart upload, you can query the multipart upload job with `List Multipart Uploads` to get the `UploadId` of the corresponding file.
 2. Abort the multipart upload and delete the uploaded parts with `Abort Multipart Upload`.
 
-### Querying multipart upload operations
+### Querying multipart uploads
 
-#### API description
+#### Description
 
-This API (List Multipart Uploads) is used to query the ongoing multipart uploads in a bucket.
+This API (`List Multipart Uploads`) is used to query in-progress multipart uploads in a specified bucket.
 
 #### Sample code
 **Objective-C**
@@ -1096,9 +1114,9 @@ QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
 
 ### Initializing a multipart upload
 
-#### API description
+#### Description
 
-This API (Initiate Multipart Upload) is used to initialize a multipart upload operation and get its `UploadID`.
+This API is used to initialize a multipart upload operation and get its `uploadId`.
 
 #### Sample code
 **Objective-C**
@@ -1158,9 +1176,9 @@ QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift).
 
-### Uploading a part
+###  Uploading parts
 
-This API (Upload Part) is used to upload parts in a multipart upload.
+This API (`Upload Part`) is used to upload an object in parts.
 
 #### Sample code
 **Objective-C**
@@ -1232,7 +1250,7 @@ uploadPart.setFinish { (result, error) in
         // Get the ETag of the part.
         mutipartInfo.eTag = result.eTag;
         mutipartInfo.partNumber = "1";
-        // Save it for completing the upload.
+        // Save it for completing the upload
         self.parts = [mutipartInfo];
     } else {
         print(error!);
@@ -1251,9 +1269,9 @@ QCloudCOSXMLService.defaultCOSXML().uploadPart(uploadPart);
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift).
 
-### Copying parts
+### Copying an object part
 
-#### API description
+#### Description
 
 This API is used to copy an object as a part.
 
@@ -1319,7 +1337,7 @@ req.partNumber = 1;
 req.setFinish { (result, error) in
     if let result = result {
         let mutipartInfo = QCloudMultipartInfo.init();
-        // Get the ETag of the copied part.
+        // Get the ETag of the copied part
         mutipartInfo.eTag = result.eTag;
         mutipartInfo.partNumber = "1";
         // Save it for completing the copying
@@ -1335,9 +1353,9 @@ QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
 
 ### Querying uploaded parts
 
-#### API description
+#### Description
 
-This API is used to query the uploaded parts of a specified multipart upload operation.
+This API (`List Parts`) is used to query the uploaded parts of a multipart upload.
 
 #### Sample code
 **Objective-C**
@@ -1400,9 +1418,9 @@ QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 
 ### Completing a multipart upload
 
-#### API description
+#### Description
 
-This API (Complete Multipart Upload) is used to complete the multipart upload of an entire file.
+This API (`Complete Multipart Upload`) is used to complete the multipart upload of a file.
 
 #### Sample code
 **Objective-C**
@@ -1493,9 +1511,9 @@ QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
 
 ### Aborting a multipart upload
 
-#### API description
+#### Description
 
-This API (Abort Multipart Upload) is used to abort a multipart upload and delete the uploaded parts.
+This API (`Abort Multipart Upload`) is used to abort a multipart upload and delete the uploaded parts.
 
 #### Sample code
 **Objective-C**
