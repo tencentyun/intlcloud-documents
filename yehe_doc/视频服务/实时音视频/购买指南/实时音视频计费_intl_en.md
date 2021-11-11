@@ -1,8 +1,8 @@
-# Billing of TRTC Basic Services
-
 This document describes how [audio call](https://intl.cloud.tencent.com/document/product/647/36064), [video call](https://intl.cloud.tencent.com/document/product/647/36063), and [interactive live audio/video streaming](https://intl.cloud.tencent.com/document/product/647/36059) are billed on a monthly basis.
 
 If you have a contract with TRTC, the billing details in the contract will apply.
+
+>? The concept of aggregate resolution mentioned in this document applies to accounts that create their first [application](https://intl.cloud.tencent.com/zh/document/product/647/37714) in the TRTC console on or after October 27, 2021.
 
 ## Billable Items
 
