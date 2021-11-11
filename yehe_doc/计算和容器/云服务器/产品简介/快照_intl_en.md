@@ -27,7 +27,7 @@ For more information about snapshot quota limits, see [Use Limits](https://intl.
 - **Manual snapshot**
 You can manually create a snapshot for a cloud disk at a certain point in time. This snapshot can be used to create more cloud disks with identical data, or to restore the cloud disk to the point in time when the snapshot was created. For more information, see [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755).
 - **Scheduled snapshot**
-For businesses that are updated continuously, you can use scheduled snapshots to provide continuous data backups. To achieve continuous backups of cloud disk data over a certain time period, you only need to configure a backup policy and associate it with cloud disks, which significantly enhancing data security. For more information, see [Scheduled Snapshot](https://intl.cloud.tencent.com/document/product/362/35238).
+For businesses that are updated continuously, you can use scheduled snapshots to provide continuous data backups. To achieve continuous backups of cloud disk data over a certain time period, you only need to configure a backup policy and associate it with cloud disks, which significantly enhances data security. For more information, see [Scheduled Snapshot](https://intl.cloud.tencent.com/document/product/362/35238).
 
 >?During snapshot creation, application data saved in the memory may not be persistently stored. As such, snapshots may not capture the latest and most complete cloud disk data. For more information, refer to [Notes](https://intl.cloud.tencent.com/document/product/362/5755#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9) to ensure snapshot data consistency.
 

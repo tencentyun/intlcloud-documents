@@ -26,7 +26,7 @@
 ## 函数相关配置
 
 
-除上述配置外，还可通过控制台编辑函数配置或 [更新函数配置](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806) 修改以下内容，配置更多函数运行时的信息：
+除上述配置外，还可通过控制台编辑函数配置或 [更新函数配置](https://intl.cloud.tencent.com/zh/document/product/583/19806) 修改以下内容，配置更多函数运行时的信息：
 - 内存：指定函数运行时可用的内存大小。最小64MB ，最大3072MB。从128MB起，以128MB为阶梯递增，默认128MB。SCF 的 CPU 处理能力与函数配置内存成正比，您可以增加或减少函数配置内存控制分配给函数的配置内存和 CPU 处理能力。
 - 初始化超时时间：指定函数初始化阶段最长运行时间，可选值范围为3秒-300秒，镜像部署函数默认90秒，其他函数默认60秒。
 <dx-alert infotype="notice" title="">
@@ -52,7 +52,7 @@
 
 ## 函数可执行的操作
 - [创建函数](https://intl.cloud.tencent.com/document/product/583/19806)：创建一个新的函数。
-- [更新函数](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806)：
+- [更新函数](https://intl.cloud.tencent.com/zh/document/product/583/19806)：
    - 更新函数配置：更新函数的各项配置。
    - 更新函数代码：更新函数的运行代码。
 - [获取详情](https://intl.cloud.tencent.com/document/product/583/19809)：获取函数配置、触发器及代码详情。
