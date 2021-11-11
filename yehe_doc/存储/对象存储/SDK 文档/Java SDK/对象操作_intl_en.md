@@ -103,7 +103,7 @@ do {
 
 The request parameters are described as follows:
 
-| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Request Member | Setting Method  | Description                                                     | Type   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
 | bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | prefix | Constructor or set method | Returns objects prefixed with this value. <br>Default value: `""` (left empty), meaning to return all objects in the bucket | String |
@@ -390,7 +390,7 @@ String crc64Ecma = putObjectResult.getCrc64Ecma();
 
 The request members are described as follows:
 
-| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Description                                                     | Type   | Required |
+| Request Member | Setting Method   | Description                                                     | Type   | Required |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
 | bucketName   | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String         | Yes |
 | key | Constructor or set method | Unique identifier of the object in the bucket.<br>For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
@@ -599,7 +599,7 @@ String crc64Ecma = cosObject.getObjectMetadata().getCrc64Ecma();
 
 The request members are described as follows:
 
-| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Request Member | Setting Method  | Description                                                     | Type   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
 | bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | key | Constructor or set method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
@@ -1205,7 +1205,7 @@ CompleteMultipartUploadResult result = cosClient.completeMultipartUpload(compReq
 
 #### Parameter description
 
-| Parameter | Set Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Parameter | Set Method  | Description                                                     | Type   |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
 | bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | key | Constructor or set method | Specifies the path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, for example, `folder/picture.jpg`. | String            |
@@ -1394,7 +1394,7 @@ UploadResult uploadResult = upload.waitForUploadResult();
 
 The request members are described as follows:
 
-| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Request Member | Setting Method  | Description                                                     | Type   |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
 | bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)  | String |
 | key | Constructor or set method |The object key is the unique identifier of the object in the bucket.<br>For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is doc/picture.jpg, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
@@ -1527,7 +1527,7 @@ transferManager.shutdownNow();
 
 The request members are described as follows:
 
-| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Request Member | Setting Method  | Description                                                     | Type   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
 | bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)  | String |
 | key | Constructor or set method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
