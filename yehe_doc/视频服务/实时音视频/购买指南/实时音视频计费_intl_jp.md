@@ -1,8 +1,8 @@
-# TRTC課金
-
 ここでは、TRTCが[音声通話](https://intl.cloud.tencent.com/document/product/647/36064)、[ビデオ通話](https://intl.cloud.tencent.com/document/product/647/36063)、[オーディオビデオインタラクティブストリーミング](https://intl.cloud.tencent.com/document/product/647/36059)の使用料金を月次集計する方法についてご紹介します。
 
 当社と販売契約を結んでいる場合、実際の課金情報は契約書のとおりとなります。
+
+>? 2021年10月27日以降、初めてTRTCコンソールで[アプリケーション](https://intl.cloud.tencent.com/zh/document/product/647/37714) を作成したアカウントについては、このドキュメントの「集約解像度」方式に従って課金されます。
 
 ## 料金の構成
 
