@@ -26,7 +26,7 @@ A function is the basic unit of management and operation in SCF, which usually c
 ## Relevant Configurations of Function
 
 
-In addition to the above configuration items, you can also modify the following configuration items for function execution by editing the function configuration in the console or [updating function configuration](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806):
+In addition to the above configuration items, you can also modify the following configuration items for function execution by editing the function configuration in the console or [updating function configuration](https://intl.cloud.tencent.com/zh/document/product/583/19806):
 - Memory: amount of memory available for the function during execution. It ranges from 64 to 3,072 MB in increments of 128 MB starting from 128 MB (default value). The CPU processing capacity of a function is directly proportional to its configured memory. You can increase or decrease the memory to control the configured memory and CPU processing capacity allocated to the function.
 - Initialization timeout period: maximum initialization duration of the function between 3 and 300 seconds (90 seconds for image deployment-based functions and 60 seconds for other functions by default).
 <dx-alert infotype="notice" title="">
@@ -52,7 +52,7 @@ In addition to the above configuration items, you can also modify the following 
 
 ## Executable Operations for a Function
 - [Creating function](https://intl.cloud.tencent.com/document/product/583/19806): creates a function.
-- [Updating function](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806):
+- [Updating function](https://intl.cloud.tencent.com/zh/document/product/583/19806):
    - Updating function configuration: updates the configuration items of the function.
    - Updating function code: updates the execution code of the function.
 - [Getting details](https://intl.cloud.tencent.com/document/product/583/19809): gets function configuration, trigger, and code details.
