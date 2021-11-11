@@ -1,8 +1,8 @@
-# TRTC 과금
-
 본 문서는 TRTC가 월간 통계에 따라 [실시간 음성 통화](https://intl.cloud.tencent.com/document/product/647/36064), [실시간 영상 통화](https://intl.cloud.tencent.com/document/product/647/36063) 및 [인터랙티브 라이브 비디오 스트리밍](https://intl.cloud.tencent.com/document/product/647/36059)의 사용 요금을 계산하는 방법을 소개합니다.
 
 당사 영업팀과 계약을 체결한 경우, 실제 과금 정보는 계약을 기준으로 합니다.
+
+>? 2021년 10월 27일부터 TRTC 콘솔에서 처음으로 [애플리케이션](https://intl.cloud.tencent.com/zh/document/product/647/37714)을 생성한 계정은 본 문서의 ‘총 해상도 집계’방식으로 과금됩니다.
 
 ## 과금 구성
 
