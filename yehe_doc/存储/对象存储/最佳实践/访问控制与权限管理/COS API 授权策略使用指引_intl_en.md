@@ -56,17 +56,17 @@ A COS API access policy is a JSON string. For example, below is a policy that gr
 | effect | Allow or deny |
 | resource | Specific data authorized to be operated on. It can be any resource, a resource in a path with a specified prefix, a resource in a specified absolute path, or a combination thereof. |
 | action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, e.g. `name/cos:GetService`. **Note that this value is case-sensitive**.       |
-| condition | Condition (this value is optional). For more information, see [Condition](https://intl.cloud.tencent.com/document/product/598/10603#6.-condition) |
+| condition | Condition (this value is optional). For more information, see [Condition](https://intl.cloud.tencent.com/document/product/598/10603) |
 
 Examples of access policy settings for each COS API are listed below.
 
-## Service APIs
+## Service API
 
-### Querying a bucket list
+### Querying the bucket list
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:GetService`, and the `resource` field should be set to `*`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to query a bucket list:
 
@@ -87,7 +87,7 @@ The following policy grants the permission to query a bucket list:
 }
 ```
 
-## Bucket APIs
+## Bucket API
 
 The `resource` field for bucket API access policies is outlined in further detail below:
 
@@ -106,7 +106,7 @@ The `action` field for bucket API policies varies by operation. The following se
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:PutBucket`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the user with the APPID `1250000000` permission to create a bucket named `examplebucket-1250000000` in the Beijing region:
 
@@ -133,7 +133,7 @@ The following policy grants the user with the APPID `1250000000` permission to c
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:HeadBucket`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to extract only the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -155,11 +155,11 @@ The following policy grants the permission to extract only the bucket `examplebu
 ```
 
 
-### Querying an object list
+### Querying objects
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:GetBucket`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to query only the list of objects in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -184,7 +184,7 @@ The following policy grants the permission to query only the list of objects in 
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:DeleteBucket`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to delete only the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -209,7 +209,7 @@ The following policy grants the permission to delete only the bucket `examplebuc
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:PutBucketACL`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to set an ACL only for the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -234,7 +234,7 @@ The following policy grants the permission to set an ACL only for the bucket `ex
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:GetBucketACL`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to get the ACL only of the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -255,11 +255,11 @@ The following policy grants the permission to get the ACL only of the bucket `ex
 }
 ```
 
-### Setting a cross-origin access configuration
+### Setting CORS
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:PutBucketCORS`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to set a cross-origin access configuration only for the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -280,11 +280,11 @@ The following policy grants the permission to set a cross-origin access configur
 }
 ```
 
-### Querying a cross-origin access configuration
+### Querying a CORS configuration
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:GetBucketCORS`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to query the cross-origin access configuration only of the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -305,11 +305,11 @@ The following policy grants the permission to query the cross-origin access conf
 }
 ```
 
-### Deleting a cross-origin access configuration
+### Deleting CORS configuration
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:DeleteBucketCORS`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to delete the cross-origin access configuration only of the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -330,11 +330,11 @@ The following policy grants the permission to delete the cross-origin access con
 }
 ```
 
-### Setting a lifecycle configuration
+### Setting lifecycle configuration
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:PutBucketLifecycle`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to set a lifecycle configuration only for the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -359,7 +359,7 @@ The following policy grants the permission to set a lifecycle configuration only
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:GetBucketLifecycle`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to query the lifecycle configuration only of the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -384,7 +384,7 @@ The following policy grants the permission to query the lifecycle configuration 
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:DeleteBucketLifecycle`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to delete the lifecycle configuration only of the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -406,7 +406,7 @@ The following policy grants the permission to delete the lifecycle configuration
 ```
 
 
-## Object APIs
+## Object API
 
 The `resource` field for object API access policies is outlined in further detail below:
 
@@ -422,7 +422,7 @@ The `action` field for Object API access policies varies by operation. All Objec
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:PutObject`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to use simple upload to upload only objects with the path prefix `doc` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -447,7 +447,7 @@ The following policy grants the permission to use simple upload to upload only o
 
 Multipart upload APIs include Initiate Multipart Upload, List Multipart Uploads, List Parts, Upload Part, Complete Multipart Upload, and Abort Multipart Upload. To grant permission for these APIs, the `action` field in the policy should be a collection of `"name/cos:InitiateMultipartUpload","name/cos:ListMultipartUploads","name/cos:ListParts","name/cos:UploadPart","name/cos:CompleteMultipartUpload","name/cos:AbortMultipartUpload"`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to use multipart upload to upload only objects with the path prefix `doc` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -473,11 +473,11 @@ The following policy grants the permission to use multipart upload to upload onl
 }
 ```
 
-### Querying multipart upload operations
+### Querying multipart uploads
 
 To grant the permission to access this API, the `action` field in the policy should be set to `name/cos:ListMultipartUploads`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to query in-progress multipart uploads only in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -503,7 +503,7 @@ The following policy grants the permission to query in-progress multipart upload
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:PostObject`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to use the POST method to upload only objects with the path prefix `doc` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -524,11 +524,36 @@ The following policy grants the permission to use the POST method to upload only
 }
 ```
 
+### Appending parts
+
+To grant permission to access this API (Append Object), set the `action` field in the policy to `name/cos:AppendObject`.
+
+#### Samples 
+
+The following policy grants permission to use append upload for objects with the path prefix `doc` in the bucket `examplebucket-1250000000` residing in the region `ap-beijing` under the account whose `APPID` is `1250000000`:
+
+```shell
+ {
+  "version": "2.0",
+  "statement": [
+    {
+      "action": [
+        "name/cos:AppendObject"
+      ],
+      "effect": "allow",
+      "resource": [
+        "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/doc/*"
+      ]
+    }
+  ]
+}
+```
+
 ### Querying object metadata
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:HeadObject`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to query objects only with the path prefix `doc` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -553,7 +578,7 @@ The following policy grants the permission to query objects only with the path p
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:GetObject`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to download only objects with the path prefix `doc` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -574,11 +599,11 @@ The following policy grants the permission to download only objects with the pat
 }
 ```
 
-### Copying an object
+### Copying objects
 
 To grant permission to access this API, the `action` field for the destination object should be set to `name/cos:PutObject` and the `action` field for the source object should be set to `name/cos:GetObject`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to use multipart copy to copy any objects between the path prefixed with `doc` and the path prefixed with `doc2` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -610,11 +635,11 @@ The following policy grants the permission to use multipart copy to copy any obj
 
 Here, `"qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/doc2/*"` is the source object.
 
-### Copying a part
+### Copying an object part
 
 To grant permission to access this API, the `action` field for the destination object should be a collection of `"name/cos:InitiateMultipartUpload","name/cos:ListParts","name/cos:PutObject","name/cos:CompleteMultipartUpload","name/cos:AbortMultipartUpload"` and the `action` field for the source object should be set to `name/cos:GetObject`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to use multipart copy to copy any objects between the path prefixed with `doc` and the path prefixed with `doc2` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -655,7 +680,7 @@ Here, `"qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/doc2/*"` is 
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:PutObjectACL`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to set an ACL only for objects with the path prefix `doc` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -680,7 +705,7 @@ The following policy grants the permission to set an ACL only for objects with t
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:GetObjectACL`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to query the ACL only for objects with the path prefix `doc` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID ·1250000000·:
 
@@ -701,11 +726,11 @@ The following policy grants the permission to query the ACL only for objects wit
 }
 ```
 
-### Configuring a pre-flight request for cross-origin access
+### Checking CORS configuration
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:OptionsObject`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to send an OPTIONS request only for objects with the path prefix `doc` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -730,7 +755,7 @@ The following policy grants the permission to send an OPTIONS request only for o
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:PostObjectRestore`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to restore an archived object only with the path prefix `doc` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -751,11 +776,11 @@ The following policy grants the permission to restore an archived object only wi
 }
 ```
 
-### Deleting a single object
+### Deleting an object
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:DeleteObject`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to delete only the object `audio.mp3` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 
@@ -780,7 +805,7 @@ The following policy grants the permission to delete only the object `audio.mp3`
 
 To grant permission to access this API, the `action` field in the policy should be set to `name/cos:DeleteObject`.
 
-#### Sample 
+#### Samples 
 
 The following policy grants the permission to batch delete only the objects `audio.mp3` and `video.mp4` in the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`:
 

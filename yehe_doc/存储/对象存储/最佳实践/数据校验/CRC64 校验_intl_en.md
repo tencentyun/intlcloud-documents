@@ -1,10 +1,10 @@
 ## Overview
 
-Errors may occur when data is transferred between the client and the server. COS can verify data integrity using [MD5 and custom attributes](https://intl.cloud.tencent.com/document/product/436/32467), or the CRC64 check code.
+Errors may occur when data is transferred between the client and the server. COS can not only verify data integrity through [MD5 and custom attributes](https://intl.cloud.tencent.com/document/product/436/32467), but also the CRC64 check code.
 
-COS calculates the CRC64 value according to [ECMA-182 standard](https://www.ecma-international.org/publications/standards/Ecma-182.htm) for each newly uploaded object, and stores it as part of the object attributes. It then includes `x-cos-hash-crc64ecma` in the response headers to represent this CRC64 value. Objects that were created before this CRC64 feature was launched will have no CRC64 value for COS to return when the object is requested.
+COS will calculate the CRC64 of the newly uploaded object and store the result as object attributes. It will carry x-cos-hash-crc64ecma in the returned response header, which indicates the CRC64 value of the uploaded object calculated according to [ECMA-182 standard](https://www.ecma-international.org/publications/standards/Ecma-182.htm). If an object already has a CRC64 value stored before this feature is activated, COS will not calculate its CRC64 value, nor will it be returned when the object is obtained.
 
-## Directions
+## Description
 
 APIs that currently support CRC64 include:
 
@@ -53,6 +53,8 @@ x-cos-request-id: NWRlODY0ZWRfMjNiMjU4NjRfOGQ4Ml81MDEw****
 
 ## SDK Samples
 
+### Python SDK
+
 The following example uses the Python SDK to verify object integrity. The complete sample code is as follows.
 
 > ?The code is based on Python 2.7. For more information on how to use the Python SDK, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31546).
@@ -79,7 +81,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = COS_SECRETID           # Replace with your own SecretId
 secret_key = COS_SECRETKEY         # Replace with your own SecretKey
 region = 'ap-beijing'      # Replace with your own region (which is Beijing in this sample)
-token = None               # If a temporary key is used, Token needs to be passed in, which is left empty by default
+token = None               # If a temporary key is used, the token needs to be specified. This is optional and is left empty by default.
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
 client = CosS3Client(config)
 ```
@@ -113,7 +115,7 @@ upload_id = response['UploadId']
 
 #### 4. Upload the object using multipart upload
 
-During a multipart upload, an object is divided into multiple (up to 10,000) parts for upload. The size of each part ranges from 1 MB to 5 GB, except the last part that can be less than 1 MB. When uploading parts, configure the PartNumber of each part and calculate its corresponding CRC64 value. After the parts are successfully uploaded, check the returned CRC64 value with the locally calculated value to verify the object integrity.
+During a multipart upload, an object is divided into multiple (up to 10,000) parts for upload. The size of each part ranges from 1 MB to 5 GB, except the last part can be less than 1 MB. When uploading parts, configure the PartNumber of each part and calculate its corresponding CRC64 value. After the parts are successfully uploaded, check the returned CRC64 value with the locally calculated value to verify the object integrity.
 
 ```python
 #Upload an object in parts where the size of each part is OBJECT_PART_SIZE except the last part which may be smaller
@@ -166,3 +168,42 @@ if crc64ecma != local_crc64:# Data Check
     exit(-1)
 ```
 
+### Java SDK
+
+You are advised to use advanced APIs of the Java SDK to upload objects. For more information, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31534).
+
+#### Calculating CRC64 locally
+
+```java
+String calculateCrc64(File localFile) throws IOException {
+    CRC64 crc64 = new CRC64();
+
+    try (FileInputStream stream = new FileInputStream(localFile)) {
+        byte[] b = new byte[1024 * 1024];
+        while (true) {
+            final int read = stream.read(b);
+            if (read <= 0) {
+                break;
+            }
+            crc64.update(b, read);
+        }
+    }
+
+    return Long.toUnsignedString(crc64.getValue());
+}
+```
+
+#### Getting CRC64 of a COS file and verifying it with the local one
+
+```java
+// For more information about how to create COSClient, see [Getting Started](https://intl.cloud.tencent.com/document/product/436/10199).
+ObjectMetadata cosMeta = COSClient().getObjectMetadata(bucketName, cosFilePath); 
+String cosCrc64 = cosMeta.getCrc64Ecma();
+String localCrc64 = calculateCrc64(localFile);
+
+if (cosCrc64.equals(localCrc64)) {
+    System.out.println("ok");
+} else {
+    System.out.println("fail");
+}
+```
