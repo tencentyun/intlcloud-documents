@@ -445,7 +445,9 @@ The following policy grants the permission to use simple upload to upload only o
 
 ### Multipart upload 
 
-Multipart upload APIs include Initiate Multipart Upload, List Multipart Uploads, List Parts, Upload Part, Complete Multipart Upload, and Abort Multipart Upload. To grant permission for these APIs, the `action` field in the policy should be a collection of `"name/cos:InitiateMultipartUpload","name/cos:ListMultipartUploads","name/cos:ListParts","name/cos:UploadPart","name/cos:CompleteMultipartUpload","name/cos:AbortMultipartUpload"`.
+Multipart upload APIs include Initiate Multipart Upload, List Multipart Uploads, List Parts, Upload Part, Complete Multipart Upload, and Abort Multipart Upload. To grant permission for these APIs, the `action` field in the policy should be a collection of `"name/cos:InitiateMultipartUpload","name/cos:ListMultipartUploads",
+"name/cos:ListParts","name/cos:UploadPart",
+"name/cos:CompleteMultipartUpload","name/cos:AbortMultipartUpload"`.
 
 #### Samples 
 
@@ -637,7 +639,9 @@ Here, `"qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/doc2/*"` is 
 
 ### Copying an object part
 
-To grant permission to access this API, the `action` field for the destination object should be a collection of `"name/cos:InitiateMultipartUpload","name/cos:ListParts","name/cos:PutObject","name/cos:CompleteMultipartUpload","name/cos:AbortMultipartUpload"` and the `action` field for the source object should be set to `name/cos:GetObject`.
+To grant permission to access this API, the `action` field for the destination object should be a collection of `"name/cos:InitiateMultipartUpload","name/cos:ListParts",
+"name/cos:PutObject","name/cos:CompleteMultipartUpload",
+"name/cos:AbortMultipartUpload"` and the `action` field for the source object should be set to `name/cos:GetObject`.
 
 #### Samples 
 
