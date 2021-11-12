@@ -24,33 +24,33 @@
 2. 选择左侧目录中的**安全** > **参数模板**，进入管理页面。
 3. 在“IP 地址”页签，单击**+新建**，分别新建用于添加入站、出站规则的 IP 地址参数模板。
 4. 在弹框中，输入来源 IP 地址范围，并单击**提交**。</br>
-<img src="" width="45%" />
-<img src="" width="45%" /></br>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/581bf5c79ec186d05290c8ab73138338.png" width="45%" />
+</br>
 新建成功的 IP 地址参数模板如下图所示。
-<img src="">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/67f474a18a1f4cca9001995700d80559.png">
 5. 在“协议端口”页签，单击**+新建**，分别新建用于添加入站、出站规则的协议端口参数模板。
-<img src="" width="45%" /> <img src="" width="45%" /> 
+<img src="https://qcloudimg.tencent-cloud.cn/raw/fa453b19c81e823dee3afc0e5b473d72.png" width="45%" /> 
+</br>
 新建成功的协议端口参数模板如下图所示。
-![]()
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9ce16cdc7fdbeec0f3117ca4c8e3a863.png">
+
 ### 步骤二：添加安全组规则
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 选择左侧目录中的**安全** > **安全组**，进入管理页面。
 3. 在列表中，找到需要引用参数模板的安全组，单击其 ID，进入详情页。
 4. 在入站规则 / 出站规则页签中，单击**添加规则**。
 5. 在弹框中选择自定义类型，来源/目标分别选择对应的 IP 参数模板，协议端口分别选择对应的协议端口参数模板，并单击**完成**。
-![]()
-![]()
-
+![](https://qcloudimg.tencent-cloud.cn/raw/9039d1de4a8a2891873faaec92627fee.png)
 	
 ### 步骤三：更新参数模板
 假设用户需要增加 IP 来源为10.0.1.0/27网段，协议端口为 UDP:58 的入站规则。可以直接更新 IP 地址 ipm-0ge3ob8e 和协议端口 ppm-4ty1ck3i 的参数模板。
 1. 在参数模板的“IP 地址”页签，找到 ipm-0ge3ob8e 参数模板。
 2. 在右侧单击**编辑**。
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/f7f28bf7fdb77f25c6c1e2fbf5555809.png)
 3. 在弹框中，换行增加10.0.1.0/27网段，单击**提交**。
-	 <img src="" width="45%" />
+![](https://qcloudimg.tencent-cloud.cn/raw/0be07de1ae0e9858ec94327cb0b3ba75.png)
 4. 在参数模板的“协议端口”页签，找到 ppm-4ty1ck3i 参数模板。
 5. 在右侧单击**编辑**。
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/9ba28cdac71dbded7259eee9e74d128a.png)
 6. 在弹框中，换行增加 UDP:58 入站协议端口，单击**提交**。</br>
-<img src="" width="45%" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b4f15b9ef711caae75920b2f70780667.png" width="45%" />
