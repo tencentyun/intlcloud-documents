@@ -18,7 +18,7 @@
 1. 登录容器服务控制台，选择左侧导航栏中的 **[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)**，单击需要修改容器网络的集群 ID。
 2. 在集群详情页中选择左侧的**虚拟节点**，进入“虚拟节点”页，单击**新建虚拟节点**。
 3. 在“新建虚拟节点”页面，选择 IP 充足的容器网络，单击**确定**即可完成新建。
-   ![](https://main.qcloudimg.com/raw/e23c76930b29b81f4ba0b48f92197bf4.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/28da152bf95cd0c8eb1898c50955547c.png)
 
 
 #### 步骤2：移出虚拟节点以删除容器网络
@@ -31,7 +31,7 @@
 
 1. 登录容器服务控制台，选择左侧导航栏中的 **[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)**，单击需要移出虚拟节点的集群 ID。
 2. 在集群详情页中选择左侧的**虚拟节点**，进入“虚拟节点”页，选择节点名称右侧的**更多** > **驱逐**。如下图所示：
-   ![](https://main.qcloudimg.com/raw/60e0e68228c1721de29f03e74236a062.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e6f6450c760f8d76f5b45146b74238d8.png)
 3. 在“驱逐节点”弹窗中，单击**确定**即可完成驱逐。
    <dx-alert infotype="notice" title="">
    驱逐会导致 Pod 重建，请谨慎操作。
@@ -48,7 +48,7 @@
 当 Pod 因容器网络的子网 IP 耗尽而发生调度失败时，会在节点日志中观察到如下图所示两种事件：
 
 - 事件一：
-  ![](https://main.qcloudimg.com/raw/da4980efe001e7a4a6cbd9c14b0451ec.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/632e4e3182548067ffe48939f475a03b.png)
 - 事件二：
   ![](https://main.qcloudimg.com/raw/eb021a08ade02738992c896b6ed1d5d5.png)
 
@@ -149,7 +149,7 @@ spec:
     volumeMounts:
     - mountPath: /cache
       name: cache-volume
-    volumes:
+      volumes:
   - name: nfs
         nfs:
           path: /dir
