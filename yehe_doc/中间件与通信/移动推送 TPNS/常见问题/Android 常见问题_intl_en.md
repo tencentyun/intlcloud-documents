@@ -1,3 +1,11 @@
+### How do I set a custom ringtone?
+
+You can set a custom ringtone by creating a notification channel.
+1. Create a notification channel with a specified custom ringtone file by calling the TPNS encapsulation API or Android native API. For more information, see the **Creating a notification channel** section in [API Documentation](https://intl.cloud.tencent.com/document/product/1024/30715).
+2. Call the TPNS push API and specify the same notification channel `n_ch_id` for push. For a vendor channel, you must specify the vendor channel ID. That is, for Huawei channel, specify `hw_ch_id`; for Mi channel, specify `xm_ch_id`.
+
+>? Currently, only Huawei, Mi, FCM, and TPNS channels support custom ringtones. To apply for a vendor channel ID, see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
+>
 
 ### How do I disable the session keep-alive feature of TPNS?
 
@@ -20,6 +28,7 @@ If you use Gradle automatic integration, configure the following node under the 
 ```
 
 If the following log is printed in the console, the session keep-alive feature has been disabled: `I/TPush: [ServiceUtil] disable pull up other app`
+
 
 
 ### Does TPNS SDK support push via HarmonyOS?
@@ -158,12 +167,13 @@ Below is an example of push API fields, where `icon_color: 123456` indicates the
 
 The display effect after adaption is as shown below. We recommend you draw an icon based on the demo logo.
 
+
 >?
 >- The small icon must be a PNG image with an alpha channel.
 >- The background must be transparent.
 >- Do not leave too much padding around the icon.
 >- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
-
+>
 
 ### Why can't messages be displayed in the notification bar after arriving at mobile phones on Meizu Flyme 6.0 or below?
 

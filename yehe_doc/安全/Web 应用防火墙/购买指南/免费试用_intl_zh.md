@@ -3,10 +3,10 @@
 ### 活动对象
 腾讯云官网注册且完成认证的新用户均可参与，已购买、体验过本产品的用户不能参加本活动。
 
-### 领取方式
+### 领取方式（二选一）
 
-- 通过[联系我们](https://intl.cloud.tencent.com/contact-us)给我留下联系方式，我们会尽快联系您。
-- 通过提交Ticket，选择产品“T-Sec-Web应用防火墙”，选择“Free-trial request”，问题描述为“Apply free-trial of WAF”并提交即可，我们会立即处理该工单。
+- 通过[联系我们](https://intl.cloud.tencent.com/contact-us)留下联系方式，我们会尽快联系您。
+- 通过[提交工单](https://console.cloud.tencent.com/workorder/category)，选择产品“T-Sec-Web应用防火墙”，选择“Free-trial request”，问题描述为“Apply free-trial of WAF”并提交即可，我们会立即处理该工单。
 
 ### 说明
 免费试用期为一个月，限购一个实例。

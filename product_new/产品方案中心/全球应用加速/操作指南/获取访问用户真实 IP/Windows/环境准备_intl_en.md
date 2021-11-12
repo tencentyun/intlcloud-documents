@@ -53,7 +53,7 @@ Click [here](https://main.qcloudimg.com/raw/037dee0e98e30eb15055645ff0a48694.zip
 </tr>
 </table>
 
- >The configuration file must be placed in the same directory as toa_win.exe.
+ >!The configuration file must be placed in the same directory as toa_win.exe.
  
  ![](https://main.qcloudimg.com/raw/d53c1cb161f45c9ad75789ac1c832af6.png)
 2. Modifying program_auto_up.bat.
