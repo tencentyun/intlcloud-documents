@@ -169,11 +169,11 @@ The display effect after adaption is as shown below. We recommend you draw an ic
 
 
 >?
-- The small icon must be a PNG image with an alpha channel.
-- The background must be transparent.
-- Do not leave too much padding around the icon.
-- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
-
+>- The small icon must be a PNG image with an alpha channel.
+>- The background must be transparent.
+>- Do not leave too much padding around the icon.
+>- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
+>
 
 ### Why can't messages be displayed in the notification bar after arriving at mobile phones on Meizu Flyme 6.0 or below?
 
