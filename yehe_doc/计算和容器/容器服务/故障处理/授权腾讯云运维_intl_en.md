@@ -1,36 +1,25 @@
-Tencent Cloud OPS team is not allowed to log in to your cluster for troubleshooting without your permission. If you need Tencent Cloud OPS team to assist in troubleshooting, please refer to the following steps to grant Tencent Cloud OPS team related permissions. You can cancel the permissions at any time.
+Tencent Cloud OPS team is not allowed to log in to your cluster for troubleshooting without your permission. If you need Tencent Cloud OPS team to assist in troubleshooting, please refer to the following steps to grant Tencent Cloud OPS team related permissions. You can cancel the permissions authorized to Tencent Cloud OPS team at any time.  
 
 
 
 
 
 ## Grant permissions to Tencent Cloud though console
-
-1. Log in to the Tencent Cloud TKE console
-
-2. Open the details page of the target cluster
-
-3. Enter the permission management page
-
-   ![](https://main.qcloudimg.com/raw/b17eb7c373aaba218568f715e4e4e02e.png)
-
-4. Click **Authorize Tencent Cloud OPS team**
-
-5. Select the permissions to be granted to Tencent Cloud OPS team
-
-   ![](https://main.qcloudimg.com/raw/75f16899f2c7e2a44656958e4fa8c740.png)
-
-6. Wait for the ticket reply or response from customer service
-
-7. Cancel the permissions
-
->! Tencent Cloud OPS team is only allowed to log in to the cluster authorized by you. You can withdraw permissions authorized to Tencent Cloud OPS team at any time by deleting relevant resources (ClusterRoleBinding/tkeopsaccount-ClusterRole, ServiceAccount/tkeopsaccount,  and Sercet/tkeopsaccount-token-xxxx).
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/overview).
+2. On **Cluster Management** page, select the cluster where Tencent Cloud assistance is needed.
+3. On the cluster details page, select **Authorization Management** > **Authorize Tencent Cloud OPS team**, as shown below:
+![](https://main.qcloudimg.com/raw/b17eb7c373aaba218568f715e4e4e02e.png)
+4. On the **Manage Permissions** page, select the operation permissions that you want to authorize to Tencent Cloud OPS team, as shown below:
+![](https://main.qcloudimg.com/raw/75f16899f2c7e2a44656958e4fa8c740.png)
+5. Click **Done**. You can check the progress in [My Tickets](https://console.cloud.tencent.com/workorder).
+>! Tencent Cloud can only log in to the cluster authorized by you. You can withdraw permissions authorized to Tencent Cloud OPS team at any time by deleting relevant resources (ClusterRoleBinding/tkeopsaccount-ClusterRole, ServiceAccount/tkeopsaccount, and Sercet/tkeopsaccount-token-xxxx).
+>
 
 
 
 ## Grant permissions to Tencent Cloud OPS team through Kubernetes API
 
-You can grant permissions to Tencent Cloud OPS team by creating the following kubernetes resources.
+You can grant permissions to Tencent Cloud OPS team by creating the following Kubernetes resources.
 
 #### ServiceAccount: authorize Tencent Cloud OPS team to access cluster credential
 
@@ -47,6 +36,12 @@ metadata:
 
 
 #### ClusterRoleBinding/RoleBing: rules on granting Tencent Cloud OPS team permissions
+
+>?
+1. Name and label should be created according to the following rule.
+2. roleRef can be replaced with the permissions you want to grant to Tencent Cloud OPS team.
+>
+
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -67,15 +62,13 @@ subjects:
   namespace: kube-system
 ```
 
-1. Names and labels should be created according to above rules
-2. roleRef can be replaced with the permissions you want to grant to Tencent Cloud OPS team
 
-#### (Optional) ClusterRole/Role specifies the permission to be granted to Tencent Cloud OPS team
 
-If there is relevant ClusterRole/Role in the cluster, you can use ClusterRoleBinding/RoleBinding to associate.Policies will be created automatically if you authorize through console.
-
+#### (Optional) ClusterRole/Role: permissions authorized to Tencent Cloud OPS team
+If there is relevant ClusterRole/Role in the cluster, you can use ClusterRoleBinding/RoleBinding to associate. Policies will be created automatically if you authorize through console.
 <dx-codeblock>
-:::Admin\sPermissions
+::: Admin permissions 
+```yaml
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
@@ -93,8 +86,11 @@ rules:
   - '*'
   verbs:
   - '*'
+
+```
 :::
-:::Read-only\sPermissions
+::: Read-only
+```yaml
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
@@ -278,6 +274,9 @@ rules:
   - get
   - list
   - watch
+
+```
+
 :::
 </dx-codeblock>
 
