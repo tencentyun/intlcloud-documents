@@ -6,8 +6,9 @@ The one-month free trial is only available to new users of Tencent Cloud WAF. Us
 
 ### Application Method
 
-- Leave your contact details on the [contact us](https://intl.cloud.tencent.com/contact-us) page and we will reach you ASAP.
-- Submit a ticket. Select Web Application Firewall > Free-trial request,  enter "Apply free-trial of WAF" in the description, and then submit your ticket. We will process it ASAP.
+To apply for the free trial, you can use one of the following methods:
+- Leave your contact details on the contact us page, and we will reach you soon. 
+- (Only applicable to Customer already has Tencent Cloud account) Submit a ticket through the Console. Select Web Application Firewall > Free-trial request, enter "Apply free-trial of WAF" in the description, and then submit your ticket. We will process it soon.
 
 ### Limits
 The free trial period is one month. The free trial can be used only once per account.
