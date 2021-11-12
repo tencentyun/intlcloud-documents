@@ -1,3 +1,11 @@
+### 如何设置自定义铃声？
+
+使用自定义铃声可以通过创建通知渠道实现：
+1. 创建通知渠道，通过 TPNS 封装 API 或安卓原生 API 创建指定自定义铃声文件的通知渠道，可参考 [创建通知渠道](https://intl.cloud.tencent.com/document/product/1024/30715)。
+2. 在 TPNS 推送 REST API 指定相同的通知渠道`n_ch_id `进行推送,厂商通道需指定厂商渠道 ID，如华为通道需指定`hw_ch_id`,小米通道需指定`xm_ch_id`。
+
+>? 目前仅华为、小米、FCM 和 TPNS 通道支持自定义铃声，厂商通道渠道 ID 申请步骤可参考 [厂商通道消息分类功能使用说明](https://intl.cloud.tencent.com/document/product/1024/36250)。
+>
 
 ### 如何关闭 TPNS 的保活功能？
 
@@ -20,6 +28,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 ```
 
 若控制台有以下日志打印，则表明联合保活功能已经关闭：`I/TPush: [ServiceUtil] disable pull up other app`。
+
 
 
 ### TPNS SDK 支持鸿蒙系统的推送吗？
@@ -158,11 +167,12 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 适配后的具体效果如下，建议参考 Demo logo 图标进行作图。
 
+
 >?
->- small icon 必须是带 Alpha 透明通道的 PNG 图片。
->- 背景必须是透明。
->- 周围不宜留过多 padding。
->- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
+- small icon 必须是带 Alpha 透明通道的 PNG 图片。
+- 背景必须是透明。
+- 周围不宜留过多 padding。
+- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
 
 
 ### Flyme 6.0 及以下版本的魅族手机，为何消息抵达设备却不在通知栏展示？
