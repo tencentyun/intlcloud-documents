@@ -20,7 +20,6 @@
 </tr>
 </table>
 
-
 ## 跨平台 Demo
 <table>
 <tr>
@@ -129,7 +128,7 @@
 互动课堂场景支持老师和学生互动连麦，最多支持50人同时连麦，平滑上下麦，切换过程无需等待，沟通时延低于300ms；低延时直播模式下，支持10万学生同时观看，观看时延低至1000ms，CDN 旁路直播下，观众人数无限制；支持屏幕共享、互动白板、录制回放等多种课堂应用功能，打造形式更加丰富的线上教学。常见业务场景有大班课、小班课、超级小班课、AI课堂、招生课、内训直播课、1V1在线教育等。
 
 | <img src="https://main.qcloudimg.com/raw/e08f0225d255b94c31b03512553a654b.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+
 
 
 ## 在线 K 歌（KTV 场景）
@@ -144,3 +143,19 @@ KTV 场景支持主播与观众上麦唱歌；支持平滑上下麦，切换过�
 <td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
 </tr>
 </table>
+
+## 实时合唱（Chorus 场景）
+
+Chorus 场景支持房主主唱与一名观众上麦唱歌；支持平滑上下麦，切换过程无需等待，主播延时小于100ms；低延时直播模式下，支持10万观众同时播放，播放延时低至1000ms；CDN 旁路直播模式下，观众数量无限制。常见应用场景有双人合唱、K 歌房、FM 电台等。
+
+<table>
+     <tr>
+         <th style="text-align:center;width:50%">房主点歌操作</th>  
+         <th style="text-align:center">副唱查看歌单操作</th>  
+     </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/0c3b9a7c40f2d0eb6cb7fa0b14acf547.png"/></td>
+<td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
+</tr>
+</table>
+

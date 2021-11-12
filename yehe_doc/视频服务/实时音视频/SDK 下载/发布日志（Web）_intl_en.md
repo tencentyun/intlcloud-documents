@@ -7,6 +7,16 @@ A version number is in the format of `major.minor.patch`, where:
 > - You are advised to update to the latest version in a timely manner for service stability and better online support.
 > - For notes on version updates, please see [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html).
 
+## Version 4.11.7 Released on September 30, 2021
+
+**Improvements**
+
+- Required parameter verification for key APIs.
+- Supported error messages in Chinese in the development mode (`LogLevel` set to [Debug](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.Logger.html#.LogLevel)).
+- Improved the recovery success rate in cases of device capturing error.
+- Optimized the logic of call resumption after the system wakes up from hibernation.
+- Added `trtc.esm.js` and `trtc.umd.js` to meet the needs in different scenarios. For details, please see [TRTC Web SDK](https://www.npmjs.com/package/trtc-js-sdk).
+
 ## Version 4.11.6 Released on September 10, 2021
 
 **Improvements**
@@ -100,7 +110,7 @@ Optimized the event notification order.
 
 **Bug fixing**
 
-- Fixed occasional failure to play back screen recording on a native client.
+- Fixed occasional failure to play screen sharing streams on native applications.
 - Fixed occasional failure to receive the `stream-removed` event after reconnection.
 
 ## Version 4.10.1 Released on April 30, 2021
@@ -124,8 +134,8 @@ Optimized the implementation logic of the [Client.switchRole](https://web.sdk.qc
 
 **New features**
 
-- Added the [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream) API for pushing streams to the CDN of Tencent Cloud or a third-party vendor.
-- Added the [client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream) API for stopping pushing streams to the CDN of Tencent Cloud or a third-party vendor.
+- Added the [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream) API for publishing streams to the CDN of Tencent Cloud or a third-party vendor.
+- Added the [client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream) API for stopping publishing streams to the CDN of Tencent Cloud or a third-party vendor.
 
 **Improvements**
 
@@ -243,7 +253,7 @@ Deleted the disused API `setDefaultMuteRemoteStreams`. Please use the `autoSubsc
 
 **Improvements**
 
-- Optimized the logic of automatically resuming auto capturing upon switch of media devices, which may be caused by a loose USB port or plugging in/unplugging.
+- Optimized the auto capturing resumption logic upon switch of media devices (which may be caused by a loose port or device plugging/unplugging).
 - Added the error code [DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED), which indicates failure to restart a device.
 
 **Bug fixing**
@@ -360,7 +370,7 @@ Added the `NETWORK_QUALITY` event.
 
 **New features**
 
-Added the `screenAudio` parameter for the `createStream` API.
+Added the `screenAudio` parameter to the `createStream` API.
 
 **Bugs fixed**
 
@@ -419,7 +429,7 @@ Fixed Boolean return types.
 
 **Improvements**
 
-Added the `streamId` and `userdefinerecordid` fields to `createClient`.
+Added the `streamId` and `userdefinerecordid` parameters to `createClient`.
 
 ## Version 4.3.7 Released on February 21, 2020
 
@@ -480,7 +490,7 @@ Optimized the TURN URL protocol format.
 **Bugs fixed**
 
 - Fixed the 1005 reconnection error of WebSocket signaling channels.
-- Fixed issue with downstream packet loss rate reporting.
+- Fixed the issue with the reporting of downstream packet loss rate.
 
 ## Version 4.3.1 Released on November 23, 2019
 
@@ -552,5 +562,5 @@ Provided APIs in the Client/Stream format, allowing for clearer role assignment 
 The new version is not compatible with the legacy version. In addition to APIs, the new version introduced the following changes:
 
 - Changed the method of setting video attributes. All video attributes (resolution, frame rate, and bitrate) are now set using the `localStream.setVideoProfile()` API of the SDK via applications. The new version does not support setting video attributes via “Image Settings” (Spear Role) in the Tencent Cloud console.
-- Audio and video players are integrated into the stream object, and playback is now solely controlled by the SDK.
+- Integrated an audio/video player into the stream object. Playback is now solely controlled by the SDK.
 - Supported subscribing to and unsubscribing from remote audio/video streams via the `client.subscribe()` and `client.unsubscribe()` APIs.

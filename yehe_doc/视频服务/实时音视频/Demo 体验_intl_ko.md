@@ -20,7 +20,6 @@
 </tr>
 </table>
 
-
 ## 크로스 플랫폼 Demo
 <table>
 <tr>
@@ -29,7 +28,7 @@
 <tr>
 </div></a></td>
 <td>
-<input type="button" value="웹측 코드 예" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html')" />
+<input type="button" value="Web 코드 예시" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" />
 </td>
 <td>
 <img style="width:150px" src="https://main.qcloudimg.com/raw/844e3de73cf2537e8a58e2263de5900e.png" data-nonescope="true">
@@ -39,7 +38,6 @@
 <input type="button" value="MacOS 버전" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-mac.zip')" /></td>
 </tr>
 </table>
-
 
 
 
@@ -130,7 +128,7 @@
 인터랙션 수업 시나리오는 선생님과 학생의 인터랙션 마이크 연결을 지원하며, 최대 50명이 동시에 마이크를 연결할 수 있습니다. 원활한 마이크 On/Off 지원으로 대기 시간 없이 전환되며, 딜레이 시간은 300ms 미만입니다. 저지연 라이브 방송 모드에서 10만 명의 학생이 동시에 시청할 수 있으며, 이때 딜레이 시간은 1000ms 미만입니다. CDN 릴레이 라이브 방송 모드는 시청자 인원 제한이 없습니다. 화면 공유, 인터랙션 화이트보드, 녹화 재생 등 다양한 기능을 수업에 응용하여 보다 다양한 온라인 수업을 진행할 수 있습니다. 주요 비즈니스 시나리오에는 대규모 수업, 소규모 수업, 슈퍼 소그룹 수업(대규모 강의/그룹 수업 복합 수업), AI 수업, 시범 강의, 사내 교육, 1:1 온라인 교육 등이 있습니다.
 
 | <img src="https://main.qcloudimg.com/raw/76cb1831b3f4b5340243a6b7406d8d73.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
-
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 
 
 ## 온라인 노래방(KTV 시나리오)
@@ -145,3 +143,19 @@ KTV 시나리오는 호스트와 시청자가 노래할 수 있도록 마이크 
 <td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
 </tr>
 </table>
+
+## 라이브 코러스(Chorus 시나리오)
+
+Chorus 시나리오에서는 방 주인 메인 보컬과 시청자가 마이크를 켜고 노래할 수 있습니다. 마이크 ON/OFF가 대기 없이 매끄럽게 전환되며, 호스트 지연 100ms 미만입니다. 저지연 라이브 방송 모드는 10만명 동시 재생을 지원하며, 재생 딜레이 1000ms로 매우 낮습니다. CDN 릴레이 라이브 방송 모드는 시청자 인원 제한이 없습니다. 주요 응용 시나리오에는 2인 합창, 노래방, FM 방송국 등이 있습니다.
+
+<table>
+     <tr>
+         <th style="text-align:center;width:50%">방 주인 노래 신청 작업</th>  
+         <th style="text-align:center">서브 보컬 플레이 리스트 조회 작업</th>  
+     </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/0c3b9a7c40f2d0eb6cb7fa0b14acf547.png"/></td>
+<td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
+</tr>
+</table>
+

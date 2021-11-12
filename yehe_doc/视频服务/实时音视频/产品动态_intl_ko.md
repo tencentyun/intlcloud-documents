@@ -1,15 +1,58 @@
+## 2021년 09월
+<table>
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
+</tr><tr>
+<td>Version 9.2 버전 배포</td>
+<td>전체 플랫폼: <ul style="margin:0">
+	<li>음성 설정 기능이 추가되었습니다.</li>
+	<li>약한 네트워크 환경에서 지터 방지 알고리즘을 최적화하여 동영상 재생이 더 원활해졌습니다.</li>
+</ul><br>Windows: <ul style="margin:0">
+	<li>TRTCAudioQualityMusic 고음질 시나리오에 에코 제거 기능이 추가되어 음질과 에코 제거 강도를 자동 균형 조정합니다.</li>
+	<li>AGC 알고리즘을 최적화해 소리가 너무 작거나 소리가 너무 큰 문제가 발생할 확률을 낮췄습니다.</li>
+</ul><br>Android&iOS:<ul style="margin:0">
+	<li>Socks5 프록시를 지원합니다.</li>
+	<li>합창 모드의 3A 정책이 최적되었습니다.</li>
+</ul><br>Android:<ul style="margin:0">
+	<li>하드 디코딩 시 발생하는 ANR 문제가 최적화되었습니다.</li>
+	<li>카메라의 로컬 미리보기 각도 호환 문제가 최적화되었습니다.</li>
+	<li>첫 프레임의 바로 재생 속도가 최적화되었습니다.</li>
+</ul></td>
+<td>2021-09-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
+</tr><tr>
+<td>Version 9.1 버전 배포</td>
+<td>전체 플랫폼: <ul style="margin:0">
+	<li>C++ 인터페이스에서 오디오 프레임 콜백 형식 설정을 지원합니다.</li>
+	<li>약한 네트워크 환경에서의 오디오 및 비디오 경험이 최적화되었습니다.</li>
+</ul><br>Windows: <ul style="margin:0">
+	<li>ac3 형식 VOD 파일 재생에 대한 지원이 추가되었습니다. </li>
+	<li>카메라 정보의 지원되는 해상도 목록 가져오기가 지원됩니다. 자세한 내용은 다음을 참고하십시오. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ad502f48cb2a4470943134e4b48904450">ITXDeviceCollection.getDeviceProperties</a></li>
+	<li>Nvidia, Intel, AMD 하드웨어 디코딩을 지원합니다.</li>
+</ul><br>Mac: <ul style="margin:0">
+로컬 미디어 녹화에 대한 지원이 추가되었습니다.
+</ul><br>Android:<ul style="margin:0">
+	<li>방 퇴장 시 오디오 상태 관리가 최적화되었습니다.</li>
+	<li>오디오 캡처 실행 실패 후 복구 로직을 최적화하여 성공률을 높였습니다.</li>
+	<li>특정 조건에서의 영상 화면 과다 노출 문제가 최적화되었습니다.</li>
+</ul></td>
+<td>2021-09-04</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
+</tr>
+</table>
+
+
 ## 2021년 08월
 <table>
 <tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
 </tr><tr>
-<td>Version 9.0  버전 배포</td>
+<td>Version 9.0 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
-<li>사용자 정의 오디오 트랙 볼륨 설정을 지원합니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418">setMixExternalAudioVolume</a>을 참고하십시오.</li>
-<li>상태 콜백에서 오디오와 비디오의 패킷 손실률을 구분할 수 있습니다. 자세한 내용은<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCStatistic__cplusplus.html#structliteav_1_1TRTCRemoteStatistics" >TRTCRemoteStatistics</a>를 참고하십시오.</li>
-<li>구독 프로세스가 최적화되어 수동 구독의 바로 재생 속도가 향상되었습니다.</li>
-<li>특정 시나리오에서 onExitRoom 콜백이 중복되는 문제가 수정되었습니다.</li>
-</ul><br>iOS: <ul style="margin:0">
-시스템 수집 볼륨 설정을 지원합니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afc45226807d84673bab78b21d1be54ae">setSystemAudioLoopbackVolume</a>을 참고하십시오.
+<li>사용자 정의 오디오 트랙의 볼륨 설정을 지원합니다. 자세한 내용은 다음을 참고하십시오. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418">setMixExternalAudioVolume</a></li>
+<li>상태 콜백으로 오디오와 비디오의 패킷 손실률을 구분할 수 있습니다. 자세한 내용은 다음을 참고하십시오. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCStatistic__cplusplus.html#structliteav_1_1TRTCRemoteStatistics" >TRTCRemoteStatistics</a></li>
+<li>구독 프로세스를 최적화하여 수동 구독의 바로 재생 속도를 개선했습니다.</li>
+<li>특정 시나리오에서의 onExitRoom 콜백 중복 문제를 수정했습니다.</li>
+</ul><br>iOS:<ul style="margin:0">
+시스템 수집 볼륨 설정을 지원합니다. 자세한 내용은 다음을 참고하십시오. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afc45226807d84673bab78b21d1be54ae">setSystemAudioLoopbackVolume</a>
 </ul></td>
 <td>2021-08-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
@@ -22,18 +65,18 @@
 </tr><tr>
 <td>Version 8.9 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
-<li>일부 시나리오에서 오디오 재생 시 발생하는 떨림 문제가 최적화되었습니다.</li>
-<li>기업 방화벽 내부 환경에 대해 보다 친화적인 보안 설정을 제공하는 클라우드 프록시 지원이 추가되었습니다.</li>
-<li>muteLocalVideo와 muteRemoteVideoStream 인터페이스에 스트림 유형에 대한 지원이 추가되었습니다.</li>
-<li>onStatistics 통계 상태 콜백에 WiFi 라우터에 대한 사용자의 네트워크 품질을 판단하는 데 사용되는 로컬 게이트웨이 지연에 대한 통계 gatewayRtt가 추가되었습니다.</li>
-<li>오디오 녹음 startAudioRecording 인터페이스에 더 많은 오디오 형식을 지원합니다.</li>
-</ul><br>Android: <ul style="margin:0">
+<li>특정 시나리오에서 소리가 떨리는 문제가 최적화되었습니다.</li>
+<li>회사 방화벽 내부 환경 보안 설정에 보다 친화적인 클라우드 프록시 지원이 추가되었습니다.</li>
+<li>muteLocalVideo 및 muteRemoteVideoStream 인터페이스에 스트림 유형 매개변수를 추가했습니다.</li>
+<li>통계 상태 콜백 onStatistics에 사용자가 WiFi 공유기의 네트워크 품질을 판단하는데 사용되는 로컬 게이트웨이 지연에 대한 통계 gatewayRtt를 새롭게 추가했습니다.</li>
+<li>오디오 녹음 인터페이스 startAudioRecording은 더 많은 오디오 형식을 지원합니다.</li>
+</ul><br>Android:<ul style="margin:0">
 <li>화면 바로 재생 속도가 최적화되었습니다.</li>
-<li>오디오 전처리 알고리즘을 업그레이드하여 통화음이 더 선명하게 들립니다.</li>
-<li>사용자 정의 렌더링에 외부 GLContext 지정을 지원하여 더 유연하게 OpenGL 환경을 사용할 수 있습니다.</li>
+<li>오디오 전처리 알고리즘을 업그레이드하여 통화 소리가 더 선명하게 들립니다.</li>
+<li>사용자 정의 렌더링의 외부 GLContext 지정을 지원하여 OpenGL 환경을 보다 효율적으로 사용할 수 있습니다.</li>
 </ul><br>Windows: <ul style="margin:0">
-<li>NVIDIA 플랫폼 하드코딩을 지원하여 푸시 스트림 성능이 향상되었습니다.</li>
-<li>수집 시스템에서 오디오(startSystemAudioLoopback) 재생 시 스피커 지정을 지원합니다.</li>
+<li>NVIDIA 플랫폼 하드 코딩을 지원하여 스트리밍 성능을 개선하였습니다.</li>
+<li>시스템 오디오 수집(startSystemAudioLoopback)을 위한 스피커 지정을 지원합니다.</li>
 </ul></td>
 <td>2021-07-15</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
@@ -48,13 +91,13 @@
 <td>Version 8.8 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 mixExternalAudioFrame의 사용 편의성이 최적화되어 더 이상 호출 타이밍을 완벽하게 제어할 필요가 없습니다.
-</ul><br>Android&Mac&iOS: <ul style="margin:0">
-외부 오디오 재생을 지원합니다. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#addb4c87719393cd4c4765d66a8cd9803" target="_blank">enableCustomAudioRendering</a> API를 참고하십시오.
+</ul><br>Android&Mac&iOS:<ul style="margin:0">
+주변 장치를 통한 오디오 재생을 지원합니다. 다음 API를 참고하십시오. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#addb4c87719393cd4c4765d66a8cd9803" target="_blank">enableCustomAudioRendering</a>
 </ul><br>Mac: <ul style="margin:0">
-화면 공유에서 마우스 캡처를 활성화했을 때의 CPU 부하를 줄였습니다.
+화면 공유 마우스 커서 캡처 활성화 시 CPU 사용량을 줄였습니다.
 </ul><br>Windows: <ul style="margin:0">
-<li/>AGC 오디오 부스터 효과를 최적화하여 보다 신속하게 조정할 수 있습니다.
-<li/>창 필터 활성화 시 화면 공유 성능 부하가 최적화되었습니다.
+<li/>AGC 사운드 증대 효과를 최적화하여 보다 빠르고 신속하게 조정됩니다.
+<li/>창 필터링 활성화 시 화면 공유의 성능 부하가 최적화되었습니다.
 </ul></td>
 <td>2021-06-21</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
@@ -67,11 +110,11 @@ mixExternalAudioFrame의 사용 편의성이 최적화되어 더 이상 호출 �
 </tr><tr>
 <td>Version 8.7 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
-<li>외부 연결 오디오 기기에 대한 이상 점검이 추가되었습니다. onStatistics 콜백 등록 후, <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics">TRTCLocalStatistics</a>의 audioCaptureState로 장시간 음소거, 파음, 이상 끊김 문제를 실시간 점검할 수 있습니다.</li>
-<li>BGM 리소스 관리를 최적화하여 메모리 점유율을 즉시 릴리스합니다.</li>
-<li>푸시 스트림측이 백그라운드에서 비디오 업스트림을 일시 중지하면, 재생측에서 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a">onUserVideoAvailable(false)</a> 알림을 즉시 수신할 수 있습니다.</li>
+<li>외부 연결 오디오 장치에 대한 예외 점검이 추가되었습니다. onStatistics 콜백 등록 후, <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics">TRTCLocalStatistics</a> 의 audioCaptureState로 장시간 음소거, 파음, 끊김 문제를 실시간으로 점검할 수 있습니다.</li>
+<li>BGM 리소스 관리가 최적화되어 메모리 점유율을 적시에 릴리스합니다.</li>
+<li>푸시 스트리밍측 백그라운드 전환 후 비디오 업스트림을 일시 중지하면 재생측에서 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a">onUserVideoAvailable(false)</a> 알림을 즉시 수신할 수 있습니다.</li>
 </ul><br>Mac: <ul style="margin:0">
-화면 공유 시 마우스의 CPU 및 메모리 점유율이 최적화되었습니다.
+화면 공유 시 마우스 커서 캡처의 CPU 및 메모리 점유율이 최적화되었습니다.
 </ul><br>Windows: <ul style="margin:0">
 사용자 정의 수집의 RGBA 포맷의 비디오 데이터 입력을 지원합니다.
 </ul></td>
@@ -105,9 +148,9 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 </tr><tr>
 <td>Version 8.5 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
-<li> 새로운 방송 기능이 추가되었습니다. TXVODPlayer와 TRTCCloud를 바인딩하여 현재 재생 중인 VOD 콘텐츠를 TRTC 서브 채널 푸시 스트림을 통해 공유할 수 있습니다.</li>
-<li>서브 채널 사용자 정의 수집 기능이 추가되었습니다. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6">sendCustomVideoData</a> API를 참고하십시오.</li>
-<li>사용자 정의 믹싱 기능이 추가되었습니다. 사용자의 오디오 트랙을 SDK의 오디오 처리 프로세스에 믹싱할 수 있으며, SDK가 먼저 두 오디오 트랙을 믹싱한 후 다시 배포합니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3c99feacd22af10926d5a521ca598ecd">mixExternalAudioFrame</a> API를 참고하십시오.</li>
+<li>VOD 파일 재생 기능이 추가되었습니다. TXVODPlayer와 TRTCCloud를 바인딩하여 현재 재생 중인 VOD 콘텐츠를 TRTC 서브 채널 푸시 스트림을 통해 공유할 수 있습니다.</li>
+<li>서브 채널 사용자 정의 수집이 추가되었습니다. API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6">sendCustomVideoData</a>를 참고하십시오.</li>
+<li>사용자 정의 믹싱 기능이 추가되었습니다. 사용자의 오디오 트랙을 SDK의 오디오 처리 프로세스에 믹싱할 수 있으며, SDK가 먼저 두 오디오 트랙을 믹싱한 후 다시 배포합니다. 자세한 내용은 API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3c99feacd22af10926d5a521ca598ecd">mixExternalAudioFrame</a>을 참고하십시오.</li>
 <li>지정 퓨어 비디오 혼합 스트림을 지원하여 더 효율적으로 혼합 스트림을 제어합니다.</li>
 <li>상태 콜백에 end to end 딜레이가 추가되었습니다.</li>
 </ul>
@@ -138,7 +181,7 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 </ul>
 <br>Windows: <ul style="margin:0">
 <li>일부 시나리오의 라이브 방송 음질을 최적화하여 오디오 품질 저하 문제가 대폭 감소하였습니다.</li>
-<li>성능 최적화를 통해 일부 사용 시나리오에서 구버전 대비 성능이 20%~30% 향상되었습니다.</li>
+<li>성능 최적화를 통해 일부 사용 시나리오에서 구버전 대비 성능이 20%- 30% 향상되었습니다.</li>
 <li>프로세스 음량 조절 기능이 추가되었습니다. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1">setApplicationPlayVolume</a>을 사용해 시스템 음량 믹서의 음량 크기를 설정할 수 있습니다.</li>
 </ul>
 <br>Mac: <ul style="margin:0">
@@ -215,12 +258,12 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 
 ## 2020년 11월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <tr>
 <td>Version 8.0 버전 배포</td>
 <td>
 전체 플랫폼: <ul style="margin:0">
-	<li/>C++ 통합 API가 추가되었습니다. cpp_interface/<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html">ITRTCCloud.h</a>를 참고하십시오.
+	<li/>C++ 통합 API가 추가되었습니다. 자세한 내용은 cpp_interface/<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html">ITRTCCloud.h</a>를 참고하십시오.
 	<li/>문자열 방 번호를 지원합니다. TRTCParams.strRoomId를 참고하십시오.
 	<li/>TXDeviceManager 장치 관리 클래스가 추가되었습니다.
 	<li/>API TRTCCloud.switchRoom이 추가되어 수집을 중단하지 않고 직접 방을 전환할 수 있습니다.
@@ -256,7 +299,7 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 
 ## 2020년 10월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <tr>
 <td>Version 7.9 버전 배포</td>
 <td>
@@ -290,7 +333,7 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 
 ## 2020년 09월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <td>Version 7.8 버전 배포</td>
 <td>
 Android: <ul style="margin:0">
@@ -306,16 +349,16 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 조정화면 푸시스트림을 지원합니다. 사용 방법은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>를 참고하십시오.
 </ul>
 <br>Mac: <ul style="margin:0">
-<li>Mac: 시스템 볼륨 변화 콜백이 추가되었습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#ad87c12c924b781b3b8429f8e8aafc338">TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged</a>를 참고하십시오.
+<li>Mac: 시스템 음량 변화 콜백이 추가되었습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#ad87c12c924b781b3b8429f8e8aafc338">TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged</a>를 참고하십시오.
 </ul>
 <br>Windows: <ul style="margin:0">
 <li>스크린 간 영역을 지정하여 화면을 공유하는 기능이 추가되었습니다.
-<li>창 공유 중 차단을 방지하는 창 필터링 기능이 추가되었습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac2a8a65dc2c1d0e4ffbd89eeae768fff">TRTCCloud.addExcludedShareWindow</a> 및 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0bbbff5ea3cd764dbaaad0db887760bf">TRTCCloud.removeExcludedShareWindow</a>를 참고하십시오.
+<li>창 공유에 지정 창 필터링 차단 기능을 추가하였습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac2a8a65dc2c1d0e4ffbd89eeae768fff">TRTCCloud.addExcludedShareWindow</a> 및 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0bbbff5ea3cd764dbaaad0db887760bf">TRTCCloud.removeExcludedShareWindow</a>를 참고하십시오.
 <li>시스템 음량 변화 콜백이 추가되었습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12">ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged</a>를 참고하십시오.
 <li>가상 카메라 e2eSoft Vacm과 호환됩니다.
 <li>startLocalPreview와 startCameraDeviceTest 동시 호출을 지원합니다.
 <li>화면을 메인 채널로 공유하고, startLocalPreview 호출 시 로컬 미리보기를 활성화합니다.
-<li>SDK 내부 재생 버퍼로 인한 오디오 딜레이가 커지는 문제가 감소하였습니다.
+<li> SDK 내부 재생 버퍼로 인한 오디오 딜레이가 커지는 문제가 감소하였습니다.
 <li>오디오 실행 로직이 최적화되어 재생 상황에 한정해 마이크를 점유하지 않습니다.
 </ul>
 </td>
@@ -350,7 +393,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 
 ## 2020년 08월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <tr>
 <td>Version 7.6 버전 배포</td>
 <td>
@@ -420,7 +463,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 <td>2020-07-29</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/38319">CAM</a></td>
 </tr><tr>
-<td>패키지에서 잔여량 알람 설정을 지원합니다.</td>
+<td>패키지에서 잔여량 알람 설정 지원</td>
 <td>콘솔에 패키지 잔여량 알람 스위치가 추가되었습니다. 활성화 시 패키지 잔여량을 알람 값까지 소모하면 SMS, 내부 메시지, 이메일을 통해 알려줍니다.</td>
 <td>2020-07-20</td>
 <td><a href="https://console.cloud.tencent.com/trtc/package">콘솔 패키지 관리</a></td>
@@ -471,7 +514,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
   <li> 인이어 모니터링에서 중복 잔향 등의 음향 효과를 지원합니다.</li>
    </ul>
 <br>Android&Windows: <ul style="margin:0">      
-  - 오디오에 순간 노이즈 감소 기능이 지원됩니다. setAudioQuality(TRTCAudioQualitySpeech)를 통해 활성화할 수 있습니다. 
+  오디오에 순간 노이즈 감소 기능이 지원됩니다. setAudioQuality(TRTCAudioQualitySpeech)를 통해 활성화할 수 있습니다. 
 </ul>
 <br>Android: <ul style="margin:0">      
   asset 패키지 음향 효과 파일을 지원합니다.
@@ -558,7 +601,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
        <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>   
      </tr> 
    <tr>      
-         <td>‘멀티미디어 범용 패키지’ 런칭</td>   
+         <td>'멀티미디어 범용 패키지' 런칭</td>   
          <td>멀티미디어 범용 패키지가 런칭되었습니다. 고정 패키지와 사용자 정의 패키지가 포함되어 있으며, 동시에 음성, 표준 화질, 고화질, 초고화질의 시간이 차감됩니다. 범용 패키지 시간에서 1분당 음성 1분, 표준 화질 2분, 고화질 4분, 초고화질 15분이 차감됩니다.</td>   
        <td>2020-03-11</td>   
        <td>-</td>   
@@ -573,7 +616,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
          <td>클라우드 자동 녹화 최적화</td>   
          <td>애플리케이션 단독 설정에 따라 클라우드 자동 녹화 활성화/비활성화를 지원하며, 각 애플리케이션별로 단독 녹화 파일 포맷 및 콜백 주소를 설정할 수 있습니다.</td>   
        <td>2020-02-14</td>   
-       <td><a href="https://intl.cloud.tencent.com/document/product/647/35426">클라우드 녹화 및 재생</a></td>   
+       <td><a href="https://intl.cloud.tencent.com/document/product/647/35426">클라우드 녹화 및 재생 구현</a></td>   
      </tr> 
 </table>
 
@@ -601,7 +644,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
        <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>   
      </tr> 
    <tr>      
-         <td>‘통화 품질 모니터링 대시보드 v2.0’ 배포</td>   
+         <td>'통화 품질 모니터링 대시보드 v2.0' 배포</td>   
          <td><ul style="margin:0;"><li>클라이언트 SDK에서 보고 데이터를 3초 이내에 조회할 수 있습니다.</li>
      <li>데이터를 15일간 저장하여 개발자가 언제든 조회할 수 있습니다.</li>
      <li>Web 프런트 엔드에서 10초 이내에 6명의 5시간 데이터를 모두 렌더링할 수 있습니다.</li>
@@ -676,11 +719,11 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 <tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <tr>      
     <td>과금 변경 및 베타 패키지 한도 확대</td>   
-    <td><ul style="margin:0;">
-            <li>음성과 비디오를 분리하여 과금합니다. 비디오는 표준 화질 SD, 고화질 HD, 초고화질 FHD로 분류하여 과금됩니다. 정가: 음성 7RMB/1,000분, 표준 화질 14RMB/1,000분, 고화질 28RMB/1,000분, 초고화질 105RMB/1,000분.</li>
+    <td><ul style="margin:0;">
+            <li>음성과 비디오를 분리하여 과금합니다. 비디오는 표준 화질 SD, 고화질 HD, 초고화질 FHD로 분류하여 과금됩니다. 정가: 음성 7위안/1,000분, 표준 화질 14위안/1,000분, 고화질 28위안/1,000분, 초고화질 105위안/1,000분</li>
            <li>고정 패키지와 사용자 정의 패키지가 포함된 새로운 음성, 표준 화질, 고화질 패키지가 동시에 런칭되었으며, 패키지 유효 기간은 모두 1년입니다.</li>
            <li>2019년 10월 11일부터 TRTC 콘솔에서 처음으로 애플리케이션을 생성하는 사용자는 기본 제공되는 베타 패키지 멀티미디어 시간이 1,000분에서 10,000분으로 늘어납니다. 유효 기간은 1년이며 순서대로 음성, 표준 화질, 고화질, 초고화질 시간이 차감됩니다.</li>
-           <li>TRTC 콘솔에서 처음으로 애플리케이션을 생성한 시간이 2019년 10월 11일 이전이거나 음성과 비디오를 구분하지 않는 이전 패키지를 구매한 사용자는 지속적으로 ‘음성과 비디오 동일 과금’ 방식이 적용됩니다. 이전 패키지(1,000분 베타 패키지, 6.6RMB에 300분 체험 패키지, 5만분 입문 패키지, 25만분 표준 패키지, 100만분 엔터프라이즈 패키지, 300만분 프리미엄 패키지 포함) 사용을 완료하였거나 만료된 후 익월에 신규 패키지(음성, 표준 화질, 고화질의 고정 패키지 및 사용자 정의 패키지 포함)를 구매할 수 있으며, 신규 패키지를 구매한 후에는 ‘음성과 비디오 분리 과금’ 방식으로 전환됩니다. 과금 방식 변경 작업은 철회가 불가능합니다.</li>
+           <li>TRTC 콘솔에서 처음으로 애플리케이션을 생성한 시간이 2019년 10월 11일 이전이거나 음성과 비디오를 구분하지 않는 이전 패키지를 구매한 사용자는 지속적으로 '음성과 비디오 동일 과금' 방식이 적용됩니다. 이전 패키지(1,000분 베타 패키지, 6.6위안에 300분 체험 패키지, 5만분 입문 패키지, 25만분 표준 패키지, 100만분 엔터프라이즈 패키지, 300만분 프리미엄 패키지 포함) 사용을 완료하였거나 만료된 후 익월에 신규 패키지(음성, 표준 화질, 고화질의 고정 패키지 및 사용자 정의 패키지 포함)를 구매할 수 있으며, 신규 패키지를 구매한 후에는 '음성과 비디오 분리 과금' 방식으로 전환됩니다. 과금 방식 변경 작업은 철회가 불가능합니다.</li>
 </ul></td>   
        <td>2019-10-11</td>   
        <td><a href="https://intl.cloud.tencent.com/document/product/647/34610">과금 개요</a></td>   
@@ -722,10 +765,10 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 <table>
 <tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <tr>      
-         <td>콘솔에 ‘신규 사용자 가이드’ 런칭</td>   
+         <td>콘솔에 '신규 사용자 가이드' 런칭</td>   
          <td>신규 사용자 가이드가 추가되어 4단계만으로 TRTC Demo의 빠른 실행이 가능합니다.</td>   
        <td>2019-08-16</td>   
-       <td><a href="https://intl.cloud.tencent.com/document/product/647/35083">Demo 1분 제작</a></td>   
+       <td><a href="https://intl.cloud.tencent.com/document/product/647/35083">1분 만에 Demo 실행하기</a></td>   
      </tr> 
    <tr>      
          <td>SDK Version 6.6 버전 배포</td>   
@@ -757,7 +800,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
         <li>라이브 방송 모드(TRTCAppSceneLIVE)에 ‘저딜레이 대형 방’ 기능이 추가되었습니다. 
             <ul style="margin:0;"><li>멀티미디어 최적화를 위한 UDP 프로토콜을 적용함으로써 약한 네트워크에 대한 저항 능력이 강화되었습니다.</li>
                                   <li>평균 시청 딜레이 시간이 1초로, 시청자와 호스트 간의 인터랙션 적극성이 향상되었습니다.</li>
-                                  <li>한 방에 최대 10만 명까지 입장할 수 있습니다.</li></ul></li>
+                                  <li>- 한 방에 최대 10만 명까지 입장할 수 있습니다.</li></ul></li>
      <li>오디오 평가 알고리즘(enableAudioVolumeEvaluation)이 최적화되어 음량 평가가 더욱 빠르게 이루어집니다.</li>
      <li>딜레이와 패킷 손실률이 높은 네트워크 환경에서의 QoE 알고리즘이 최적화되어 약한 네트워크에 대한 저항성이 향상되었습니다.</li>
      <li>onStatistics 상태 콜백이 최적화되어 존재하는 스트림만 콜백합니다.</li>
@@ -776,7 +819,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
        <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>   
      </tr>
    <tr>      
-         <td>무료 ‘베타 패키지’ 런칭</td>   
+         <td>무료 '베타 패키지' 런칭</td>   
          <td><ul style="margin:0;"><li>2019년 6월 1일부터 TRTC 콘솔에서 처음으로 애플리케이션을 생성하는 사용자에게 멀티미디어 시간 1,000분이 포함된 베타 패키지를 제공합니다. 유효 기간은 1년입니다(처음으로 애플리케이션을 생성한 날부터 내년 당월 마지막 날까지).</li>
      <li>2019년 6월 1일부터 체험 패키지, 입문 패키지, 표준 패키지, 엔터프라이즈 패키지를 신규 구매하면 일괄적으로 1년 연장됩니다.</li>
 </ul></td>   
@@ -815,20 +858,20 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
    <tr>      
          <td>SDK Version 6.3 버전 배포</td>   
          <td><ul style="margin:0;"><li>Android 플랫폼 64비트 지원이 추가되었습니다.</li>
-     <li>사용자 정의 비디오 수집 인터페이스 추가: TRTCCloud >> sendCustomVideoData.</li>
-     <li>사용자 정의 오디오 수집 인터페이스 추가: TRTCCloud >> sendCustomAudioData.</li>
-     <li>사용자 정의 비디오 렌더링 인터페이스 추가: TRTCCloud >> setLocalVideoRenderDelegate + setRemoteVideoRenderDelegate.</li>
-     <li>사용자 정의 오디오 데이터 콜백 인터페이스 추가: TRTCCloud >> setAudioFrameDelegate. 다음과 같은 기능을 지원합니다.<ul style="margin:0;">
-     <li>마이크 수집 데이터 반환: TRTCAudioFrameDelegate >> onCapturedAudioFrame.</li>
-     <li> 각 채널 원격 사용자의 오디오 데이터 반환: TRTCAudioFram eDelegate >> onPlayAudioFrame.</li>
-     <li>혼합 후 스피커로 재생한 오디오 데이터 반환: TRTCAudio FrameDelegate >>onMixedPlayAudioFrame.</li>
+     <li>사용자 정의 비디오 수집 인터페이스 TRTCCloud >> sendCustomVideoData가 추가되었습니다.</li>
+     <li>사용자 정의 오디오 수집 인터페이스 TRTCCloud >> sendCustomAudioData가 추가되었습니다.</li>
+     <li>사용자 정의 비디오 렌더링 인터페이스 TRTCCloud >> setLocalVideoRenderDelegate + setRemoteVideoRenderDelegate가 추가되었습니다.</li>
+     <li>사용자 정의 오디오 데이터 콜백 인터페이스 TRTCCloud >> setAudioFrameDelegate가 추가되었습니다. 다음과 같은 기능을 지원합니다.<ul style="margin:0;">
+     <li>마이크 수집 데이터 반환: TRTCAudioFrameDelegate >> onCapturedAudioFrame</li>
+     <li> 각 채널 원격 사용자의 오디오 데이터 반환: TRTCAudioFram eDelegate >> onPlayAudioFrame</li>
+     <li>혼합 후 스피커로 재생한 오디오 데이터 반환: TRTCAudio FrameDelegate >>onMixedPlayAudioFrame</li>
 </ul></ul></td>   
        <td>2019-04-02</td>   
        <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>   
      </tr> 
    <tr>      
          <td>월별 기능 사용 요금 취소</td>   
-         <td>2019년 3월부터 1500RMB/월의 월별 기능 사용 요금을 부과하지 않습니다. 과금 변경은 2019년 4월 1일 발송되는 청구서부터 적용됩니다.</td>   
+         <td>2019년 3월부터 1500위안/월의 월별 기능 사용 요금을 부과하지 않습니다. 과금 변경은 2019년 4월 1일 발송되는 청구서부터 적용됩니다.</td>   
        <td>2019-04-01</td>   
        <td>-</td>   
      </tr> 

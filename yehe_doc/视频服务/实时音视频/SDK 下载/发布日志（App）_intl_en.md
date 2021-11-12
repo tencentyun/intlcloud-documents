@@ -1,3 +1,23 @@
+## Version 9.2 Released on September 23, 2021
+
+**New features**
+- Android & iOS: supported SOCKS5 proxies.
+- Windows: enabled adaptive echo cancellation for the `TRTCAudioQualityMusic` mode to automatically balance between audio quality and echo cancellation strength.
+- All platforms: allowed audio pitch setting.
+
+**Bug fixing**
+- Windows: fixed the issue where some cameras do not output data on Windows installed on Mac.
+- Android: fixed the issue where there is no upstream audio after switch between CDN live streaming and TRTC.
+- iOS: fixed the issue where, when a screen is shared from web, users on iOS see pixelated video if they enable custom rendering.
+
+**Improvement**
+- Android: fixed the issue where the “Application Not Responding” error occurs during hardware decoding.
+- Android: fixed the compatibility issue for the rotation of local camera preview.
+- Android: improved instant streaming performance.
+- Android & iOS: optimized the 3A policy for the duet mode.
+- Windows: improved the AGC algorithm, reducing cases of excessively low or high volume.
+- All platforms: optimized the jitter control algorithm under poor network conditions, enabling smoother video playback.
+
 ## Version 9.1 Released on September 4, 2021
 
 **New features**

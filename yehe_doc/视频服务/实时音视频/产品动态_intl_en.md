@@ -2,6 +2,24 @@
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
 </tr><tr>
+<td>SDK 9.2 release</td>
+<td>All platforms:<ul style="margin:0">
+	<li>Allowed audio pitch setting.</li>
+	<li>Optimized the jitter control algorithm under poor network conditions, enabling smoother video playback.</li>
+</ul><br>Windows:<ul style="margin:0">
+	<li>Enabled adaptive echo cancellation for the `TRTCAudioQualityMusic` mode to automatically balance between audio quality and echo cancellation strength.</li>
+	<li>Improved the AGC algorithm, reducing cases of excessively low or high volume.</li>
+</ul><br>Android & iOS:<ul style="margin:0">
+	<li>Supported SOCKS5 proxies.</li>
+	<li>Optimized the 3A policy for the duet mode.</li>
+</ul><br>Android:<ul style="margin:0">
+	<li>Fixed the issue where the “Application Not Responding” error occurs during hardware decoding.</li>
+	<li>Fixed the compatibility issue for the rotation of local camera preview.</li>
+	<li>Improved instant streaming performance.</li>
+</ul></td>
+<td>2021-09-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr><tr>
 <td>SDK 9.1 release</td>
 <td>All platforms:<ul style="margin:0">
 	<li>Supported using a C++ API to set the format of called back audio frames.</li>
@@ -12,9 +30,9 @@
 	<li>Supported NVIDIA, Intel, and AMD hardware decoding.</li>
 </ul><br>macOS:<ul style="margin:0">
 Supported recording local media.
-</ul><br>Android:<ul style="margin:0">
+</ul><br>Android：<ul style="margin:0">
 	<li>Improved audio status management during room exit.</li>
-	<li>Improved the logic of recovery in the case of audio capturing failure, to increase the success rate of audio capturing.</li>
+	<li>Improved the logic of resuming failed audio capturing, increasing its success rate.</li>
 	<li>Fixed video overexposure under certain conditions.</li>
 </ul></td>
 <td>2021-09-04</td>
@@ -52,7 +70,7 @@ Allowed setting the capturing volume of system audio. For details, please see <a
 <li>Added the stream type parameter to the APIs `muteLocalVideo` and `muteRemoteVideoStream`.</li>
 <li>Added the gateway RTT parameter `gatewayRtt` to the status callback `onStatistics`, which indicates the quality of network between users and their Wi-Fi routers.</li>
 <li>Supported recording audio into more formats using the `startAudioRecording` API.</li>
-</ul><br>Android: <ul style="margin:0">
+</ul><br>Android：<ul style="margin:0">
 <li>Improved instant streaming performance.</li>
 <li>Upgraded the audio pre-processing algorithm for clearer audio in calls.</li>
 <li>Supported specifying external GL contexts for custom capturing, allowing more flexible use of OpenGL contexts.</li>
@@ -78,7 +96,7 @@ Allowed playing audio via peripheral devices. For details, please see <a href="h
 </ul><br>macOS:<ul style="margin:0">
 Reduced the CPU usage of screen sharing when mouse cursor capturing is enabled.
 </ul><br>Windows:<ul style="margin:0">
-<li/>Made AGC faster and more timely for better results.
+<li/>Made AGC faster and timelier for better results.
 <li/>Reduced the performance overhead of screen sharing when the window filtering feature is enabled.
 </ul></td>
 <td>2021-06-21</td>
@@ -635,7 +653,7 @@ All platforms: <ul style="margin:0">
      <li>Used Tencent's proprietary quality evaluation system, which is more suitable for actual use cases.</li>
      <li>Improved user experience by making data more comprehensive and easier to understand and use.</li>
 </ul></td>   
-       <td>January 07, 2020</td>   
+       <td>January 7, 2020</td>   
        <td>N/A</td>   
      </tr> 
 </table>
@@ -653,7 +671,7 @@ All platforms: <ul style="margin:0">
 <tr>      
 <td>Change of billing standards</td>   
 <td>Raised the upper limit of SD from 640 x 360 to 640 x 480. Videos whose resolution is at or below 640 x 480 are all billed as SD duration.</td>   
-<td>December 04, 2019</td>   
+<td>December 4, 2019</td>   
 <td>N/A</td>   
 </tr>
 </table>
@@ -682,7 +700,7 @@ All platforms: <ul style="margin:0">
 		<li>Added photo retouching features to the Enterprise Edition, including skin brightening, eye enlarging, teeth whitening, wrinkle removal, and eye bag removal.</li>
 		<li>Added `getBeautyManager`, which aggregates beauty filter, photo retouching, and animated effect APIs.</li>
 </ul>
-<br>macOS:<ul style="margin:0;">Fixed the compatibility issue with macOS 10.15.
+<br>Mac:<ul style="margin:0;">Fixed the compatibility issue with macOS 10.15.
 </ul>
 Windows: <ul style="margin:0;"><li>Supported anti-covering for screen sharing.</li>
      <li>Supported SOCKS5 proxies.</li>

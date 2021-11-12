@@ -20,7 +20,6 @@
 </tr>
 </table>
 
-
 ## Cross-Platform Demos
 <table>
 <tr>
@@ -29,7 +28,7 @@
 <tr>
 </div></a></td>
 <td>
-<input type="button" value="Web Demo" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" />
+<input type="button" value="Sample Code for Web" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" />
 </td>
 <td>
 <img style="width:150px" src="https://main.qcloudimg.com/raw/844e3de73cf2537e8a58e2263de5900e.png" data-nonescope="true">
@@ -103,7 +102,7 @@ In the interactive live audio streaming mode, listeners can become speakers and 
 <table>
      <tr>
          <th>Room Owner</th>  
-         <th>Listener</th>  
+         <th>Audience</th>  
      </tr>
 <tr>
 <td><img src="https://main.qcloudimg.com/raw/dd836080683a49418bc548bfb9f59857.jpeg"/></td>
@@ -128,8 +127,8 @@ The video conferencing mode offers smooth and HD conference experience. It suppo
 ## Interactive Classroom
 The interactive classroom mode allows teacher-student interaction and smooth mic on/off without waiting. Up to 50 participants can keep their mics on at the same time, with latency shorter than 300 ms. In the low-latency mode, up to 100,000 students can play the teacher’s video at the same time, with latency as low as 1,000 ms. In the CDN live streaming mode, there is no limit on audience size. The screen sharing, whiteboard, recording, and replay features help enrich online education experience. Common interactive classroom scenarios include large class, small class, mini class, AI class, open class for enrollment purposes, corporate training, one-to-one tutoring, etc.
 
-| <img src="https://main.qcloudimg.com/raw/e08f0225d255b94c31b03512553a654b.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://main.qcloudimg.com/raw/76cb1831b3f4b5340243a6b7406d8d73.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
+
 
 
 ## Online Karaoke
@@ -144,3 +143,19 @@ In the karaoke mode, the room owner and audience can turn their mics on and sing
 <td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
 </tr>
 </table>
+
+## Duet
+
+In the duet mode, the room owner can sing together with a user from the audience. It supports smooth mic on/off without waiting, with singer latency shorter than 100 ms. In the low-latency live streaming mode, up to 100,000 users can play back at the same time, with latency as low as 1,000 ms. In the CDN live streaming mode, there is no limit on audience size. Common duet scenarios include duet singing, karaoke room, FM radio, etc.
+
+<table>
+     <tr>
+         <th style="text-align:center;width:50%">Request Song (Room Owner)</th>  
+         <th style="text-align:center">View Song List (Mic-on Audience)</th>  
+     </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/0c3b9a7c40f2d0eb6cb7fa0b14acf547.png"/></td>
+<td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
+</tr>
+</table>
+
