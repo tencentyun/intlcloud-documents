@@ -8,8 +8,8 @@
 ### 控制台操作指引
 <span id="create"></span>
 #### 创建 StorageClass
-1. 登录[ 容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧栏中的【集群】，进入“集群管理”界面。
-2. 单击需创建 StorageClass 的集群 ID，进入集群详情页。
+1. 登录[ 容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧栏中的【集群】。
+2. 在“集群管理”页中，单击需创建 StorageClass 的集群 ID，进入集群详情页。
 3. 选择左侧菜单栏中的【存储】>【StorageClass】，进入 “StorageClass” 页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/9c08551ba5e4fe254cebf30eb34a01e1.png)
 4. 单击【新建】进入“新建StorageClass” 页面，参考以下信息进行创建。如下图所示：
@@ -17,6 +17,7 @@
 主要参数信息如下：
 	- **名称**：自定义，本文以 `cbs-test` 为例。
 	- **Provisioner**：选择【云硬盘CBS】。
+	- **地域**：当前集群所在地域。
 	- **可用区**：表示当前地域下支持使用云硬盘的可用区，请按需选择。
 	- **计费模式**：提供【按量计费】弹性计费模式，支持随时开通/销毁实例，按实例的实际使用量付费。支持删除和保留的回收策略。
 - **云盘类型**：通常提供【高性能云硬盘】、【SSD云硬盘】和【增强型SSD云硬盘】三种类型，不同可用区下提供情况有一定差异，详情请参见 [云硬盘类型说明 ](https://intl.cloud.tencent.com/document/product/213/33000)并结合控制台提示进行选择。
@@ -54,7 +55,7 @@
 >- 系统不允许在不指定 StorageClass 的情况下同时选择不指定 PersistVolume。
 >- 不指定 PersistentVolume。详情请参见 [查看 PV 和 PVC 的绑定规则](https://intl.cloud.tencent.com/document/product/457/37770)。
 
-   - **云盘类型**：根据所选的 StorageClass 展示所选的云盘类型为【高性能云硬盘】或【SSD云硬盘】。
+   **云盘类型**：根据所选的 StorageClass 展示所选的云盘类型为【高性能云硬盘】、【SSD云硬盘】和【增强型SSD云硬盘】。
    - **容量**：在不指定 PersistentVolume 时，需提供期望的云硬盘容量。
    - **费用**：根据上述参数计算创建对应云盘的所需费用，详情参考 [计费模式](https://intl.cloud.tencent.com/document/product/362/32415)。
 4. 单击【创建PersistentVolumeClaim】，即可完成创建。
@@ -95,8 +96,8 @@ metadata:
 provisioner: cloud.tencent.com/qcloud-cbs ## TKE 集群自带的 provisioner
 parameters:
   type: CLOUD_PREMIUM
-  # 支持 CLOUD_BASIC,CLOUD_PREMIUM,CLOUD_SSD  如果不识别则当做 CLOUD_BASIC
- # renewflag: NOTIFY_AND_AUTO_RENEW
+  # 支持 CLOUD_PREMIUM,CLOUD_SSD,CLOUD_HSSD 如果不识别则当做 CLOUD_PREMIUM
+  # renewflag: NOTIFY_AND_AUTO_RENEW
   # renewflag为云硬盘的续费模式，NOTIFY_AND_AUTO_RENEW模式支持通知过期且按月自动续费，NOTIFY_AND_MANUAL_RENEW模式支持通知过期但不支持自动续费，DISABLE_NOTIFY_AND_MANUAL_RENEW模式支持不通知过期也不自动续费。不指定该字段则默认为NOTIFY_AND_MANUAL_RENEW模式。
   # paymode: PREPAID
   # paymode为云盘的计费模式，默认是 POSTPAID（按量计费：支持 Retain 保留和 Delete 删除策略，Retain 仅在高于1.8的集群版本生效）
@@ -109,7 +110,7 @@ parameters:
 <th>参数</th> <th>描述</th>
 </tr>
 <tr>
-<td>type</td> <td>StorageClass 的类型，包括 <code>CLOUD_BASIC</code>、<code>CLOUD_PREMIUM</code> 和 <code>CLOUD_SSD</code>。</td>
+<td>type</td> <td>云硬盘类型，包括 <code>CLOUD_HSSD</code>、<code>CLOUD_PREMIUM</code> 和 <code>CLOUD_SSD</code>。</td>
 </tr>
 <tr>
 <td>zone</td> <td>用于指定可用区。如果指定，则云硬盘将创建到此可用区。如果不指定，则拉取所有 Node 的可用区信息，进行随机选取。 腾讯云各地域标识符请参见 <a href="https://intl.cloud.tencent.com/document/product/213/6091">地域和可用区</a>。</td>
