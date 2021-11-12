@@ -32,7 +32,8 @@ Allowlist the following ports:
 Allowlist the following domain names:
 
 ```
-qcloud.rtc.qq.com
+*.rtc.qq.com
+yun.tim.qq.com
 ```
 
 ### How do I configure proxies for clients to access the TRTC SDK for web from a private network?
