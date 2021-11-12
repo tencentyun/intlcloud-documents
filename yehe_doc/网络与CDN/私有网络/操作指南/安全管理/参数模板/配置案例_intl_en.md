@@ -24,33 +24,34 @@ Because you have the same security group policy for multiple IP ranges and proto
 2. Select **Security** > **Parameter Template** on the left sidebar to access the management page.
 3. On the **IP Address** tab, click **+ New** to create an IP address parameter template for adding inbound and outbound rules.
 4. In the pop-up window, enter the source IP range and click **Submit**.</br>
-<img src="" width="45%" />
-<img src="" width="45%" /></br>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/581bf5c79ec186d05290c8ab73138338.png" width="45%" />
+</br>
 The newly created IP address parameter template is as shown below.
-<img src="">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/67f474a18a1f4cca9001995700d80559.png" >
 5. On the **Protocol Port** tab, click **+ New** to create a protocol port parameter template for adding inbound and outbound rules.
-<img src="" width="45%" /> <img src="" width="45%" /> 
+<img src="https://qcloudimg.tencent-cloud.cn/raw/fa453b19c81e823dee3afc0e5b473d72.png" width="45%" /> 
+</br>
 The newly created protocol port parameter template is as shown below:
-![]()
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9ce16cdc7fdbeec0f3117ca4c8e3a863.png" >
+
 ### Step 2. Add a security group rule
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Select **Security** > **Security Group** on the left sidebar to access the management page.
 3. In the list, find the security group that needs to import the parameter template and click its ID to enter the details page.
 4. On the **Inbound/Outbound Rules** tab, click **Add Rule**.
 5. In the pop-up window, select the custom type, select the corresponding IP address parameter template for the source/target, select the corresponding protocol port parameter template for the protocol port, and click **Complete**.
-![]()
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/9039d1de4a8a2891873faaec92627fee.png)
 
 	
 ### Step 3. Update the parameter template
 Suppose you need to add an inbound rule with the IP source being the `10.0.1.0/27` IP range and the protocol port being `UDP:58`. You can directly update the parameter templates of the IP address `ipm-0ge3ob8e` and the protocol port `ppm-4ty1ck3i`.
 1. On the **IP Address** tab of the parameter template, find the `ipm-0ge3ob8e` parameter template.
 2. Click **Edit** on the right.
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/f7f28bf7fdb77f25c6c1e2fbf5555809.png)
 3. In the pop-up window, add the `10.0.1.0/27` IP range in a new line and click **Submit**.
-	 <img src="" width="45%" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0be07de1ae0e9858ec94327cb0b3ba75.png" width="45%" />
 4. On the **Protocol Port** tab of the parameter template, find the `ppm-4ty1ck3i` parameter template.
 5. Click **Edit** on the right.
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/9ba28cdac71dbded7259eee9e74d128a.png)
 6. In the pop-up window, add the `UDP:58` inbound protocol port in a new line and click **Submit**.</br>
-<img src="" width="45%" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b4f15b9ef711caae75920b2f70780667.png" width="45%" />
