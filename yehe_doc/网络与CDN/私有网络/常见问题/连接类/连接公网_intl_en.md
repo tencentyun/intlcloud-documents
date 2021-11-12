@@ -1,32 +1,31 @@
-### How Do I Apply for a Public IP Address if None Was Assigned When I Purchased the CVM?
-If no public IP address was assigned when you purchased the CVM, you cannot re-apply for a common public IP address for this CVM. However, you can achieve this purpose by using [EIPs](https://intl.cloud.tencent.com/document/product/213/5733). For details on how to apply for EIPs, see [Applying for EIPs](https://intl.cloud.tencent.com/document/product/213/16586).
-- An EIP is a public IP address that is fixed to a specific IP address in a certain region. Unlike a common public IP address, it is bound to your account. In other words, you can bind an EIP with and unbind it from different CVMs as required (only one EIP can be bound at a time.)
-- Due to the nature of EIPs, if you apply for an EIP but do not bind it with an instance, idleness fees incur. For details, see [EIP Billing](https://intl.cloud.tencent.com/document/product/213/17156).
+### How do I apply for a public IP if one was not assigned at the time of purchasing the CVM?
+If a public IP was not assigned when you purchased the CVM, then there is no way to re-apply for an ordinary public IP for this CVM. However, the same function can be accomplished using [EIPs](https://intl.cloud.tencent.com/document/product/213/5733). For more information on how to use this, please see [Applying for EIPs](https://intl.cloud.tencent.com/document/product/213/16586).
+- An EIP is a type of public IP that is fixed to a specific public IP address in a certain region. Unlike an ordinary public IP, it is bound to your account. In other words, you can bind and unbind an EIP with different CVMs as required (only one can be bound at a time).
+- Due to the special nature of an EIP, if you apply for an EIP but do not bind it to an instance, IP resource fees will be incurred. For details, please see [EIP Billing](https://intl.cloud.tencent.com/zh/document/product/213/17156).
 
-### How Can an Instance (CVM or Database) Access the Internet Without a Public IP Address?
-An instance without a public IP address can apply for an EIP (see the previous question) or can access the Internet through the NAT gateway.
-A [NAT gateway](https://intl.cloud.tencent.com/document/product/1015) provides CVMs in a VPC with the SNAT and DNAT features. If you have multiple CVMs that need to access the Internet through a public IP address, you can use a NAT gateway.
+### How can an instance (CVM or database) access the public network without a public IP address?
+An instance without a public IP can apply for an EIP (see the previous question) or can access the public network through NAT gateway.
+[NAT gateway](https://intl.cloud.tencent.com/document/product/1015) can provide SNAT and DNAT features for CVM instances in VPCs. If you have multiple instances and want them to access the public network through the same public IP, you can use a NAT gateway.
 
-### Can I Change the Public IP Address of a CVM?
-Yes, you can.
-- If your CVM was assigned a common public IP address at the time of purchase, see [Changing Public IP Addresses](https://intl.cloud.tencent.com/document/product/213/16642).
-- If your CVM is bound to an EIP, you need to [unbind the EIP](https://intl.intl.cloud.tencent.com/document/product/213/16586) and [apply for an EIP](https://intl.intl.cloud.tencent.com/document/product/213/16586) again or bind it to an existing EIP.
+### Can the public IP of a CVM be changed?
+Yes.
+- If your CVM instance uses the public IP assigned at the time of purchase, please see [Changing Public IP Addresses](https://intl.cloud.tencent.com/document/product/213/16642).
+- If your CVM instance is bound to an EIP, you need to [unbind the EIP](https://intl.intl.cloud.tencent.com/document/product/213/16586) first and then [apply for another EIP](https://intl.intl.cloud.tencent.com/document/product/213/16586) or bind an existing EIP.
+> ! We recommend you immediately release the EIP after it is converted from a public IP. Otherwise, the EIP that is not bound to an instance will incur [IP resource fees](https://intl.cloud.tencent.com/document/product/213/17156). 
 
-> After you convert a public IP address into an EIP, we recommend that you immediately release the EIP. Otherwise, the EIP that is not bound to any instance will incur [resource occupation fees](https://intl.intl.cloud.tencent.com/document/product/213/17156). 
+### Can a previously used public IP be recovered? Can a specific EIP be applied for?
+You can recover public IPs that you have previously used and are not currently assigned to other users. Recovered public IPs are all EIPs. For more information, please see [Retrieve the public network IP address](https://intl.cloud.tencent.com/document/product/213/32719).
 
-### Can I Retrieve a Previously Used Public IP Address, and Can I Apply for a Specific EIP?
-- Public IP addresses cannot be recovered after being released.
-- EIPs that were once used by you and have not yet been assigned to other users can be recovered. For details, see [Recovering Public IP Addresses](https://intl.cloud.tencent.com/document/product/213/32719).
+### Can an increased quota be requested after the number of EIPs reaches the top limit?
+Due to the limited EIP resources, you can apply for only 20 ones per account per region, and you cannot request an increased quota. CVM instances without public IPs can use NAT gateways and other methods to access the public network.
 
-### Can I Increase the Quota After the Number of EIPs Reaches the Upper Limit?
-Due to the limits on EIP resources, each account can apply for up to 20 EIPs in each region, and this quota cannot be increased. CVMs without public IP addresses can access the Internet through a NAT gateway or other means.
+### How does a CVM access the public network if it has a public IP or EIP and its subnet is also associated with a NAT gateway?
 
-### How Does a CVM Access the Internet if It Has a Public IP Address or EIP and Its Subnet Is Also Associated with a NAT Gateway?
+If a CVM has a public IP or EIP and its subnet is also associated with a NAT gateway (meaning the route table specifies that the next hop for the traffic of this subnet to access the public network is a NAT gateway), then the default setting is for all the traffic of this CVM to access the public network through the NAT gateway.
 
-If a CVM has a public IP address or EIP and its subnet is associated with a NAT gateway, the route table specifies that the next hop for the traffic of this subnet to access the Internet is a NAT gateway. In this case, all the traffic of this CVM to access the Internet flows through the NAT gateway by default.
+If you need to modify the priority so that the traffic from the CVM instance to the public network passes the public IP, please see [Adjusting the Priorities of NAT Gateways and EIPs](https://intl.cloud.tencent.com/document/product/1015/32734).
 
-If you need to modify the priorities to redirect the traffic of the CVM to access the Internet through a public IP address, see [Adjusting the Priorities of NAT Gateways and Public IP Addresses](https://intl.cloud.tencent.com/document/product/1015/30012).
+### When a CVM instance accesses the public network through public gateway or NAT gateway, will the network fee be charged twice?
 
-### If a CVM Accesses the Internet Through a Public Gateway or a NAT Gateway, Will the Network Fees Be Charged Twice?
+No, the network fee will only be charged once. When accessing the public network through public gateway or NAT gateway, only the corresponding public gateway network fee or NAT gateway network fee will be charged. 
 
-No, the network fees will be charged only once. When you access the Internet through a public gateway or NAT gateway, only the network fee for using the public gateway or NAT gateway will be charged. 

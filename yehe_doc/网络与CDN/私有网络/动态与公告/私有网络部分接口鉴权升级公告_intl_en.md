@@ -1,0 +1,21 @@
+After 0:00 on September 23, 2021, Beijing time, the authentication feature of some VPC APIs was upgraded and optimized. After the upgrade, sub-users need to apply for authorization from the root account to call these APIs; otherwise, the call will fail. For the application process, please see [Granting Sub-accounts the Policy Permission](#cam).
+
+## Related APIs
+<table>
+<tr><th>API</th><th>Feature</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/215/17876">CreateDefaultVpc</a></td><td>Creates the default VPC.</td></tr>
+</table>
+
+
+## Granting Sub-accounts the Policy Permission[](id:cam)
+Please complete the policy authorization for your sub-users as instructed below to prevent failed calls to the upgraded APIs.
+1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview).
+2. Click **Policies** on the left sidebar.
+3. Click **All Policies**.
+4. Click **Associate Users/Groups** on the right of the target policy.
+5. [](id:step5)In the pop-up window, select target users from the box on the left to the **Selected** box on the right, and click **Confirm**.
+![]()
+6. It is optional: if you need to associate a user group, please click **Switch to User Groups** -> **User Groups** in the pop-up window, and repeat the operations in <a href="#step5">step 5</a>.
+![]()
+
+
