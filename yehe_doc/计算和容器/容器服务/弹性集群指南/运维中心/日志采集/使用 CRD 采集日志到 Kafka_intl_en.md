@@ -47,7 +47,7 @@ spec:
       filePattern: app_*.log                ## Log file name. It supports the wildcards "*" and "?". "*" matches multiple random characters, and "?" matches a single random character.
   
 ```
->! You need to upgrade the cluster before using the Kafka feature. Please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1) to contact us.
+
 
 
 
