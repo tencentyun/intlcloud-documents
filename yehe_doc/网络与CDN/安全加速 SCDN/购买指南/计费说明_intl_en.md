@@ -37,8 +37,8 @@ An SCDN plan is prepaid in the monthly subscription billing mode for up to 36 mo
 
 > ?
 >
-> 1. The number of protected domain names can be added by purchasing [domain name extension packs](https://github.com/tencentyun/qcloud-documents/blob/master/product/storage-and-cdn/scdn/purchase-guide/billing.md#expand).
-> 2. A standard SCDN plan supports [elastic protection](https://github.com/tencentyun/qcloud-documents/blob/master/product/storage-and-cdn/scdn/purchase-guide/billing.md#elasticity), while a basic SCDN plan doesn't. The excessive protection is postpaid at the unit price in the corresponding tier reached by the daily attack defense peak.
+> 1. The number of protected domain names can be added by purchasing domain name extension packs.
+> 2. A standard SCDN plan supports elastic protection, while a basic SCDN plan doesn't. The excessive protection is postpaid at the unit price in the corresponding tier reached by the daily attack defense peak.
 
 ### Basic bot protection plan
 
