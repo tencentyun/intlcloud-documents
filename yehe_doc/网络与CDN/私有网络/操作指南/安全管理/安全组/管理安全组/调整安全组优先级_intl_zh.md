@@ -9,6 +9,8 @@
 2. 在实例管理页面，单击云服务器实例 ID，进入详情页面。
 3. 选择**安全组**选项卡，进入安全组管理页面。
 4. 在“已绑定安全组”模块中，单击**排序**。
+![](https://qcloudimg.tencent-cloud.cn/raw/17ba64fa2f4cceaa7420299fe8d2066b.png)
 5. 单击如下图标，并上下拖动，调整安全组的优先级，位置越靠上，安全组的优先级越高。
+![](https://qcloudimg.tencent-cloud.cn/raw/1f7f59f8e3ca49a3f73ef6649f69533b.png)
 5. 完成调整后，单击**保存**即可。
 
