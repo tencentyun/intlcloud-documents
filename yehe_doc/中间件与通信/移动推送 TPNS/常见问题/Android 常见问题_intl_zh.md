@@ -169,11 +169,11 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 
 >?
-- small icon 必须是带 Alpha 透明通道的 PNG 图片。
-- 背景必须是透明。
-- 周围不宜留过多 padding。
-- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
-
+>- small icon 必须是带 Alpha 透明通道的 PNG 图片。
+>- 背景必须是透明。
+>- 周围不宜留过多 padding。
+>- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
+>
 
 ### Flyme 6.0 及以下版本的魅族手机，为何消息抵达设备却不在通知栏展示？
 
