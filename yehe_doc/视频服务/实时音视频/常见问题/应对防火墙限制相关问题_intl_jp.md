@@ -32,7 +32,8 @@ query.tencent-cloud.com
 ドメイン名ホワイトリスト：
 
 ```
-qcloud.rtc.qq.com
+*.rtc.qq.com
+yun.tim.qq.com
 ```
 
 ## TRTC Web端末のプライベートネットワーク環境ではどのようにプロキシを設定しますか。

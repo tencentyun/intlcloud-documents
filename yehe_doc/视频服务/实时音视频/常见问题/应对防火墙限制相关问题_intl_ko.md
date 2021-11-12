@@ -31,9 +31,10 @@ query.tencent-cloud.com
 
 도메인 화이트리스트:
 
-<pre>
-qcloud.rtc.qq.com
-</pre>
+```
+*.rtc.qq.com
+yun.tim.qq.com
+```
 
 
 ### WeChat 미니프로그램에서 어떤 도메인을 화이트리스트로 설정해야 합니까?

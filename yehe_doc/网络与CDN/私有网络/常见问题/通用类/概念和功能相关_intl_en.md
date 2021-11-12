@@ -25,4 +25,4 @@ For more information, please see [Terminating Instance](https://intl.cloud.tence
 
 
 ### Why does an application for an EIP fail?
-When the EIP quota is exceeded, the application for EIP will fail. For more information on how to view the quota details, please see [EIP quota limit]().
+When the EIP quota is exceeded, the application for EIP will fail. For more information on how to view the quota details, please see [EIP quota limit](https://intl.cloud.tencent.com/document/product/213/5733).
