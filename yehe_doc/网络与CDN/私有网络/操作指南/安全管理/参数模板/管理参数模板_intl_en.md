@@ -1,57 +1,86 @@
-## Parameter Template Use Cases
-Parameter template is an efficient, fast, and easy-to-maintain way to add rules in security groups. For example, when you need to add multiple IP ranges, specified IPs, or protocol ports of multiple types, you can define a parameter template. You can also use the parameter template subsequently to maintain the IP sources and protocol ports in the security group rules.
->?All the IP addresses and protocol ports in this document are examples. Please replace them according to your actual business conditions during configuration.
->
+This document describes how to create and maintain parameter templates (IP address, IP address group, protocol port, and protocol port group) in the console and how to use them in security groups.
 
 
-## Example Description
-Suppose you want to configure the following security group rules and need to update the inbound source IP range and protocol port later:
-+ Inbound rules:
- + Allowed source IP range: 10.0.0.16-10.0.0.30; protocol port: TCP:80,443
- + Allowed source CIDR block: 192.168.3.0/24; protocol port: TCP:3600-15000
+## Creating Parameter Template
 
-+ Outbound rules:
- Rejected target IP address: 192.168.10.4; protocol port: TCP:800
+### Creating IP address parameter template
+Add the IPs with the same needs or frequently edited to this IP address object.
 
-
-## Solution
-Because you have the same security group policy for multiple IP ranges and protocol ports, and you need to update the source IP range later, you can use a parameter template to implement the addition and maintenance of security group rules.
-
-
-
-### Step 1. Create a parameter template
+#### Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
-2. Select **Security** > **Parameter Template** on the left sidebar to access the management page.
-3. On the **IP Address** tab, click **+ New** to create an IP address parameter template for adding inbound and outbound rules.
-4. In the pop-up window, enter the source IP range and click **Submit**.</br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/581bf5c79ec186d05290c8ab73138338.png" width="45%" />
-</br>
-The newly created IP address parameter template is as shown below.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/67f474a18a1f4cca9001995700d80559.png" >
-5. On the **Protocol Port** tab, click **+ New** to create a protocol port parameter template for adding inbound and outbound rules.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/fa453b19c81e823dee3afc0e5b473d72.png" width="45%" /> 
-</br>
-The newly created protocol port parameter template is as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/9ce16cdc7fdbeec0f3117ca4c8e3a863.png" >
+2. Click **Security** > **Parameter Template** on the left sidebar to access the management page.
+3. Select the **IP Address** tab and click **+ New**.
+4. In the pop-up window, enter the name and IP addresses and click **Submit**.
+ You can add multiple IPv4 addresses in the following ranges and separate them by line breaks:
+ - Single IP address: such as `10.0.0.1`;
+ - CIDR block: such as `10.0.1.0/24`; 
+ - IP range: such as `10.0.0.1` - `10.0.0.100`.
+![](https://main.qcloudimg.com/raw/64ecfd48ffdc728506ef328a0ee19921.png)
 
-### Step 2. Add a security group rule
+### Creating IP address group parameter template
+You can add multiple IP address objects to an IP address group for unified management.
+
+#### Directions
+1. Select the **IP Address Group** tab and click **+ New**.
+	![](https://qcloudimg.tencent-cloud.cn/raw/333211f6e4bb94b7611cb6d4bb327c98.png)
+2. In the pop-up window, enter the name, select the IP address objects to be added, and click **Submit**.
+	![](https://main.qcloudimg.com/raw/5b40b996461455a77b723cdd828fd4f3.png)
+
+### Creating protocol port parameter template
+You can add the protocol ports with the same needs or frequently edited to this protocol port object.
+
+#### Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
-2. Select **Security** > **Security Group** on the left sidebar to access the management page.
+2. Click **Security** > **Parameter Template** on the left sidebar to access the management page.
+3. Select the **Protocol Port** tab and click **+ New**.
+4. In the pop-up window, enter the name and protocol ports and click **Submit**.
+   You can add multiple protocol ports in the following ranges and separate them with line breaks:
+	- Single port: such as `TCP:80`;
+	- Multiple ports: such as `TCP:80,443`;
+	- Port range: such as `TCP:3306-20000`;
+	- All ports: such as `TCP:ALL`.
+![](https://main.qcloudimg.com/raw/aae45c5c950f4e6b6cc75aaedebc48e3.png)
+
+### Creating protocol port group parameter template
+You can add multiple created protocol port objects to a protocol port group for unified management.
+#### Directions	
+1. Select the **Protocol Port Group** tab and click **+ New**.
+	![](https://qcloudimg.tencent-cloud.cn/raw/5101e8b5139198a06f6d2a28036af32a.png)
+2. In the pop-up window, enter the name, select the protocol port object to be added, and click **Submit**.
+	![](https://main.qcloudimg.com/raw/91f6da2d037239206dcadbdf9a02570a.png)
+
+## Modifying Parameter Template
+If you need to modify a created parameter template, for example, to add/delete IP addresses or protocol ports, follow the steps below.
+
+### Directions
+1. Click the created IP address, IP address group, protocol port, or protocol port group parameter template and click **Edit** on the right. For example, the following figure shows how to modify IP address objects.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/cbb3cb328b614baad17cd236fbe5cb61.png)
+2. In the pop-up window, modify the corresponding parameters and click **Submit**.
+   
+## Deleting Parameter Template
+If you no longer use a parameter template, you can delete it. When this template is deleted, all the policy configurations containing it in the security group will be deleted at the same time. Please evaluate and proceed with caution.
+
+### Directions
+1. Click **Delete** on the right of the created parameter template.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/bc33be2141b5b267ba2d56cd40793258.png)
+2. When this template is deleted, all the policies containing the corresponding IP address or protocol port will also be deleted. After confirming that everything is correct, click **Delete** in the **Confirm Deletion** pop-up window.
+
+## Importing Parameter Template into Security Group
+After creating a parameter template, you can directly import it when adding rules in a security group to quickly add IP sources or protocol ports, which helps improve your efficiency of adding security group rules.
+
+### Directions
+1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
+2. Click **Security** > **Security Group** on the left sidebar to access the management page.
 3. In the list, find the security group that needs to import the parameter template and click its ID to enter the details page.
 4. On the **Inbound/Outbound Rules** tab, click **Add Rule**.
-5. In the pop-up window, select the custom type, select the corresponding IP address parameter template for the source/target, select the corresponding protocol port parameter template for the protocol port, and click **Complete**.
-![](https://qcloudimg.tencent-cloud.cn/raw/9039d1de4a8a2891873faaec92627fee.png)
+5. In the pop-up window, select the **Custom** type, select the created parameter template in **Source** and **Protocol Port**, and click **Complete**. For more information on how to add inbound/outbound rules, please see [Adding a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35513).
+>?If you need to add a new IP address or protocol port in the future, you only need to add it to the corresponding IP address group or protocol port group, and there is no need to modify the security group rules or create another security group.
+>
+ ![](https://main.qcloudimg.com/raw/3a06123b12ef4814c0c95e33418952cc.png)
 
-	
-### Step 3. Update the parameter template
-Suppose you need to add an inbound rule with the IP source being the `10.0.1.0/27` IP range and the protocol port being `UDP:58`. You can directly update the parameter templates of the IP address `ipm-0ge3ob8e` and the protocol port `ppm-4ty1ck3i`.
-1. On the **IP Address** tab of the parameter template, find the `ipm-0ge3ob8e` parameter template.
-2. Click **Edit** on the right.
-![](https://qcloudimg.tencent-cloud.cn/raw/f7f28bf7fdb77f25c6c1e2fbf5555809.png)
-3. In the pop-up window, add the `10.0.1.0/27` IP range in a new line and click **Submit**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/0be07de1ae0e9858ec94327cb0b3ba75.png" width="45%" />
-4. On the **Protocol Port** tab of the parameter template, find the `ppm-4ty1ck3i` parameter template.
-5. Click **Edit** on the right.
-![](https://qcloudimg.tencent-cloud.cn/raw/9ba28cdac71dbded7259eee9e74d128a.png)
-6. In the pop-up window, add the `UDP:58` inbound protocol port in a new line and click **Submit**.</br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b4f15b9ef711caae75920b2f70780667.png" width="45%" />
+## Viewing Associated Security Group
+You can view all security group instances that import a parameter template in the following steps.
+1. Click **View Association** on the right of the created parameter template.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/1a56775ee22def20e25cb6d54548712d.png)
+2. The associated security group list that pops up displays all security group instances associated with this parameter template.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/128b47cf7b2c8e2e9bf0f6a3bbbd37cf.png)
