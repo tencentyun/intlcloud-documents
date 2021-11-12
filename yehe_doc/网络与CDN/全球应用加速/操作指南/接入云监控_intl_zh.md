@@ -10,12 +10,12 @@
 
 1. 在左侧目录中，选择“告警策略”，单击**新建**，进入新建策略页面。
 2. 在“策略类型”中，选择**全球应用加速** > **通道监控**。
-![](https://main.qcloudimg.com/raw/136884ab152292b9c50419d67da81e1c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f951241047178c919b8bfef1a3894133.png)
 3. 在“配置告警规则”中，选择“告警对象”，您可根据需要添加通道进行监控。
    在“配置触发条件”中，您可选择“使用模板”或进行“手动配置”。
    如选择“使用模板”，您可使用之前已经配置的告警策略。如无合适模板，您可通过新建模板的方式进行配置。该模板会存储在控制台中，方便您的后续使用。新建模板具体配置过程如下：
 	1. 单击“新增触发条件模板”，进入模板配置页面。
-![](https://main.qcloudimg.com/raw/c8878869a5bb90d32390efdc442a77a4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/121bf297151fd5d14463d2a9f39a5989.png)
 	2.单击**新建**，在弹出的窗口中配置触发条件，条件说明如下。
 		- 模板名称：输入模板名称。
 		-	备注：输入模板备注。
@@ -23,24 +23,24 @@
 		-	使用预置触发条件：云监控内置对应监控项的触发条件，勾选则开启。
 		-	触发条件：分为指标告警和事件告警。在其下方单击添加，可以设置多个告警项。
 	如选择使用“手动配置”，您可根据需要添加多个告警触发条件。
-![](https://main.qcloudimg.com/raw/cc82f5683ed8734bf8e88a4a4f7bc9cc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4ce5c2222f27a23a50e29b7d6e675a61.png)
 4. 在“配置告警通知”中，单击**新建模板**，添加通知模板名称并选择接收对象及渠道。
 >! 接收对象需绑定对应渠道，否则将无法收到告警通知。
 >
-![](https://main.qcloudimg.com/raw/b52e7e8e5752b0f8f96cb8bcc7e62ca3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/96bc43097aed1a331162305ef08a6c61.png)
 单击**选择模板**，选择相应模板即可完成设置。
-![](https://main.qcloudimg.com/raw/ed42039a21a0feeba62db95292267ed2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4362a734429b1aadce77fd7b219358cb.png)
 
 ### 监听器监控
 
 1. 在左侧目录中，选择**告警策略**，单击**新建**，进入新建策略页面。
 2. 在“策略类型”中，选择**全球应用加速** > **4层监听器源站状态**/**7层监听器源站状态**。
-![](https://main.qcloudimg.com/raw/379600b381482eabcb3f186809303fbf.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/31a0c004e5b18e3715f4b197791dc20f.png)
 3. 在“配置告警规则”中，选择“告警对象”。在“配置触发条件”中，选择“使用模板”或进行“手动配置”。如选择使用“手动配置”，您可设置“监听器源站状态异常”触发条件。
-![](https://main.qcloudimg.com/raw/384c56254242028b7b80daf91f9687b2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d75fdfe6dc7394fb9bdcdcbd6672915f.png)
 4. 在“配置告警通知”中，单击**新建模板**，添加通知模板名称并选择接收对象及渠道。
 >!接收对象需绑定对应渠道，否则将无法收到告警通知。
 >
-![](https://main.qcloudimg.com/raw/73319e34c48f3863bb9ce906400cf0db.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/242dedea0ea3fb500e2c5cbf33ec449e.png)
 单击**选择模板**，选择相应模板即可完成设置。
-![](https://main.qcloudimg.com/raw/3127f8df638485a89ab4a864f85e30b4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/16a460eea88e69afbc2a3ca4e97f2d10.png)
