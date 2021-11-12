@@ -27,7 +27,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 
 建议您先阅读文档 [跑通 SimpleDemo(Electron)](https://intl.cloud.tencent.com/document/product/647/35089)，并按照文档的指引，跑通我们为您提供的官方 SimpleDemo。
 - 如果 SimpleDemo 能顺利运行，说明您已经掌握了在项目中安装 Electron 的方法。
-- 反之，如果运行 SimpleDemo 遇到问题，您大概率遭遇了 Electron 的下载、安装问题，此时您可以参考 Electron 官方的 [安装指引](https://www.electronjs.org/docs/tutorial/installation) 。
+- 反之，如果运行 SimpleDemo 遇到问题，您大概率遭遇了 Electron 的下载、安装问题，此时您可以参考我们总结的 [Electron常见问题收录](https://cloud.tencent.com/developer/article/1616668) ，也可以参考 Electron 官方的 [安装指引](https://www.electronjs.org/docs/tutorial/installation) 。
 
 [](id:step2)
 ### 步骤2：为您的项目集成 trtc-electron-sdk
@@ -70,7 +70,7 @@ trtcCloud.on('onError',onError);
 | sdkAppId | 数字   | 应用 ID，您可以在 [控制台](https://console.cloud.tencent.com/trtc/app) >【应用管理】>【应用信息】中查找到。 | 1400000123             |
 | userId   | 字符串 | 只允许包含大小写英文字母（a-z、A-Z）、数字（0-9）及下划线和连词符。 | test_user_001|
 | userSig  | 字符串 | 基于 userId 可以计算出 userSig，计算方法请参见 [如何计算 UserSig](https://intl.cloud.tencent.com/document/product/647/35166) 。 | eJyrVareCeYrSy1SslI... |
-| roomId   | 数字   | 默认不支持字符串类型的房间号，字符串类型的房间号会影响进房速度。如果您确实需要支持字符串类型的房间号，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。 | 29834  |
+| roomId   | 数字   | 数字类型的房间号。如果您想使用字符串形式的房间号，请使用 TRTCParams 中的 strRoomId。 | 29834  |
 
 <dx-codeblock>
 ::: javascript javascript

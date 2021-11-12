@@ -87,7 +87,7 @@ _trtcCloud.delegate = self;
 | sdkAppId | 数字 | 应用 ID，您可以在 <a href="https://console.cloud.tencent.com/trtc/app">实时音视频控制台</a> 中查看 SDKAppID。|1400000123 |
 | userId | 字符串 | 只允许包含大小写英文字母（a-z、A-Z）、数字（0-9）及下划线和连词符。 | test_user_001 |
 | userSig | 字符串 | 基于 userId 可以计算出 userSig，计算方法请参见 [如何计算 UserSig](https://intl.cloud.tencent.com/document/product/647/35166) 。| eJyrVareCeYrSy1SslI... |
-| roomId | 数字 | 默认不支持字符串类型的房间号，字符串类型的房间号会影响进房速度。如果您确实需要支持字符串类型的房间号，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。 | 29834 |
+| roomId | 数字 | 数字类型的房间号。如果您想使用字符串形式的房间号，请使用 TRTCParams 中的 strRoomId。 | 29834 |
 
 >! 
 >- TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互干扰。
@@ -130,7 +130,7 @@ encParams.videoFps = 15;
 4. 主播端调用 [setWhitenessLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) 可以设置美白级别，一般设置为5即可。
 5. 由于 iPhone 的摄像头调色默认偏黄，建议调用 [setFilter()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0) 为主播增加美白特效，美白特效所对应的滤镜文件的下载地址：[滤镜文件](https://liteav.sdk.qcloud.com/doc/res/trtc/filter/filterPNG.zip)。
 
-![](https://main.qcloudimg.com/raw/61ef817e3c12944665f1b7098c584ee3.jpg)
+
 
 [](id:step7)
 ### 步骤7：主播端创建房间并开始推流
