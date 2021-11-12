@@ -25,4 +25,4 @@ CIDR（Classless Inter-Domain Routing）即无类别域间路由，由您指定�
 
 
 ### 申请弹性公网 IP 失败？
-当超过弹性公网 IP 配额时，会导致申请弹性公网 IP 失败，请参考 [EIP 配额限制]() 查看配额详情。
+当超过弹性公网 IP 配额时，会导致申请弹性公网 IP 失败，请参考 [EIP 配额限制](https://intl.cloud.tencent.com/document/product/213/5733) 查看配额详情。
