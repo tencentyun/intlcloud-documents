@@ -2,6 +2,8 @@ DDoS Edge Defender protects your business outside the Chinese mainland from diff
 
 DDoS Edge Defender owns multiple Tencent Cloud entries around the world for handling bandwidth needs with all-out protection, making access to each node as smooth as possible. It provides near-source cleansing and near-source reinjection, with up to TB-level protection capability, and ensures smooth traffic and low latency by cleansing attack traffic and then forwarding normal traffic back to the real server close to the region of your instance deployed.
 
+>? DDoS Edge Defender is currently available to beta users. To use it, please [contact us](https://intl.cloud.tencent.com/contact-us).
+
 ## Key Features
 ### Multi-dimensional protection
 
