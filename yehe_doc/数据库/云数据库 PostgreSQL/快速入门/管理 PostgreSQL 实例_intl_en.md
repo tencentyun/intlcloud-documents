@@ -2,8 +2,7 @@
 You can log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/pgsql) and enter the instance list page to view instance information and manage your instances.
 ![](https://main.qcloudimg.com/raw/2c9a75e6898fdd2b542aaaf3ee937a0b.png)
 
-### Instance upgrade
-In the **Instance List**, click **Adjust Configurations** in the **Operation** column to upgrade the configuration of an instance, including its specification and disk capacity.
+
 
 ### Instance restart
 >?

@@ -6,7 +6,9 @@ Currently supported status codes are as follows:
 - 4XX: 400, 403, 404, 405, 414, 416, and 451
 - 5XX: 500, 501, 502, 503, and 504
 
->! This feature may be unavailable on some platforms. We will complete the server upgrade as soon as possible.
+>! 
+>- This feature may be unavailable on some platforms. We will complete the server upgrade as soon as possible.
+>- This feature is only for redirecting requests encountered status codes during origin-pull, but not applicable to requests with status codes returned by any access control features such as the UA blocklist/allowlist configuration.
 
 ## Configuration Guide
 
@@ -22,7 +24,7 @@ The custom error page configuration is disabled by default.
 ### Adding rules
 
 You can click **Add Rule** to add custom error page rules as needed.
-![](https://main.qcloudimg.com/raw/7af17d161ec2f4e499a5740383d4658e.jpg)
+<img src="https://main.qcloudimg.com/raw/7af17d161ec2f4e499a5740383d4658e.jpg" style="height:220px"/>
 
 
 

@@ -1,8 +1,7 @@
 [](id:q1)
-
-### What is cache validity configuration?
-Cache validity configuration refers to a set of validity policies the CDN cache nodes should follow when caching your business contents.
-All resources cached on CDN nodes have validity. For unexpired resources, when a request reaches the node, the node will directly return the requested resource to the user, so as to speed up the resource acquisition. For expired resources, the node will forward the user request to the origin server, reacquire the resource and cache it to the node, and then return it to the user. A proper cache validity can effectively improve the resource hit rate and lower the origin-pull rate, reducing bandwidth usage.
+### What's node cache validity configuration?
+Node cache validity configuration refers to a set of validity rules the CDN cache nodes should follow when caching your business contents.
+All resources cached on CDN nodes have validity. For unexpired resources, when a request reaches the node, the node will directly return the requested resources to the user, so as to speed up the resource acquisition. For expired resources, the node will forward the user request to the origin server. If the resources have been updated on the origin server, they will be reacquired, cached to the node, and then returned to the user; otherwise, only the resource validity will be updated on the node. A proper cache validity can effectively improve the resource hit rate and lower the origin-pull rate, reducing bandwidth usage.
 
 
 [](id:q2)
@@ -15,7 +14,7 @@ You can configure different cache validity periods for different types of direct
 
 [](id:q4)
 ### What cache validity configuration does Tencent Cloud support?
-Tencent Cloud CDN supports configuring cache actions and cache validity rules for various file types, and you can also adjust the priority of custom cache rules. Proper cache validity rules can effectively improve the resource hit rate and lower the origin-pull rate, reducing bandwidth usage. For more information, please see [Cache Configuration](https://intl.cloud.tencent.com/document/product/228/35315).
+Tencent Cloud CDN supports configuring cache actions and cache validity rules for various file types, and you can also adjust the priority of custom cache rules. Proper cache validity rules can effectively improve the resource hit rate and lower the origin-pull rate, reducing bandwidth usage. For more information, please see [Cache Configuration](https://intl.cloud.tencent.com/document/product/228/35316).
 
 [](id:q5)
 ### What is the default cache configuration of CDN?
