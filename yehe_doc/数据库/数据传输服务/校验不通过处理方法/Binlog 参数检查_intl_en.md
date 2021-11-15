@@ -35,6 +35,7 @@ binlog_row_image = FULL
 show variables like '%log_bin%';
 ```
 The system should display a result similar to the following:
+
 ```
 mysql> show variables like '%log_bin%';
 +---------------+-------+
@@ -67,6 +68,7 @@ binlog_format = ROW
 show variables like "%binlog_format%";
 ```
 The system should display a result similar to the following:
+
 ```
 mysql> show variables like '%binlog_format%';
 +---------------+-------+
@@ -99,6 +101,7 @@ binlog_row_image = FULL
 show variables like "%binlog_row_image%";
 ```
 The system should display a result similar to the following:
+
 ```
 mysql> show variables like '%binlog_row_image%';
 +------------------+-------+
@@ -137,6 +140,7 @@ set global gtid_mode = ON_PERMISSIVE;
 show variables like "%ONGOING_ANONYMOUS_TRANSACTION_COUNT%";
 ```
 The system should display a result similar to the following:
+
 ```
 mysql> show variables like '%ONGOING_ANONYMOUS_TRANSACTION_COUNT%';
 +-------------------------------------+-------+
@@ -180,6 +184,7 @@ server_id = 2         // We recommend you set it to an integer above 1. The valu
 show global variables like "%server_id%";
 ```
 The system should display a result similar to the following:
+
 ```
 mysql> show global variables like '%server_id%';
 +---------------+-------+
@@ -211,6 +216,7 @@ After `do_db` and `ignore_db` are set, some cross-database operations will not b
 show master status;
 ```
 The system should display a result similar to the following:
+
 ```
 mysql> show master status;
 +---------------+----------+--------------+------------------+-------------------+
@@ -239,6 +245,7 @@ set global log_slave_updates = 1;
 show global variables like '%log_slave_updates%';
 ```
 The system should display a result similar to the following:
+
 ```
 mysql> show global variables like '%log_slave_updates%';
 +-------------------+-------+
