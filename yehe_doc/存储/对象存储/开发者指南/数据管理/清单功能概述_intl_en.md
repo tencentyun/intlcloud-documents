@@ -68,7 +68,7 @@ You need to tell COS how often to export the inventory report, which bucket to s
 - Select an encryption mode: No encryption or SSE-COS. If SSE-COS is selected, COS encrypts the generated inventory report.
 - Configure the output location of the inventory: You need to specify the bucket where to store the inventory report.
 
-> The destination bucket must be in the same region as the source bucket. They can be the same bucket.
+>!The destination bucket must be in the same region as the source bucket. They can be the same bucket.
 
 
 ## Directions
@@ -138,13 +138,13 @@ In summary, there are two Manifest-related files: manifest.json and manifest.che
 
 >?
 > The following describes the related manifest files:
-> - Both manifest.json and manifest.chenksum are Manifest files. manifest.json describes the location of the inventory report, while manifest.checksum is the MD5 of the content of the manifest.json file. Each time a new inventory report is delivered, a new pair of Manifest files are carried.
-> - Each Manifest contained in manifest.json provides metadata and basic information about the inventory, including:
-> - Source bucket name.
-> - Destination bucket name.
-> - Inventory version.
-> - Timestamp, including the time and date when the bucket scan is started when the inventory report is generated.
-> - Format and architecture of the inventory file.
+>- Both manifest.json and manifest.chenksum are Manifest files. manifest.json describes the location of the inventory report, while manifest.checksum is the MD5 of the content of the manifest.json file. Each time a new inventory report is delivered, a new pair of Manifest files are carried.
+>- Each Manifest contained in manifest.json provides metadata and basic information about the inventory, including:
+>  - Source bucket name.
+>  - Destination bucket name.
+>  - Inventory version.
+>  - Timestamp, including the time and date when the bucket scan is started when the inventory report is generated.
+>  - Format and architecture of the inventory file.
 >  - Object key, size, and md5Checksum of the inventory report in the destination bucket.
 
 Below is a Manifest example in the manifest.json file of an inventory in CSV format:
