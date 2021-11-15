@@ -142,7 +142,7 @@
 <tr>
 <td>单行 - 完全正则</td>
 <td>指将一条完整日志按正则方式提取多个 key-value 的日志解析模式，您需先输入日志样例，其次输入自定义正则表达式，系统将根据正则表达式里的捕获组提取对应的 key-value。支持自动生成正则表达式。</td>
-<td><a href="https://cloud.tencent.com/document/product/614/32817">单行 - 完全正则格式</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/614/39589">单行 - 完全正则格式</a></td>
 </tr>
 <tr>
 <td>多行 - 完全正则</td>
