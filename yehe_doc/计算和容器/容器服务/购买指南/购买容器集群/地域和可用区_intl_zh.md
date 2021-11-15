@@ -9,8 +9,10 @@
 ### 相关特性
 
 - 不同地域之间的网络完全隔离，不同地域之间的云产品**默认不能通过内网通信**。
-- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式较为高速、稳定。
-- [负载均衡](https://intl.cloud.tencent.com/document/product/214 ) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/38441) 功能，则可支持负载均衡跨地域绑定云服务器。
+- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 进行通信，此通信方式较为高速、稳定。
+- [负载均衡](https://intl.cloud.tencent.com/zh/document/product/214 ) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/38441) 功能，则可支持负载均衡跨地域绑定云服务器。
+
+>
 
 ## 可用区
 
@@ -23,7 +25,7 @@
 
 处于相同地域不同可用区，但在同一个私有网络下的云产品之间均通过内网互通，可以直接使用 [内网 IP](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
 >? 内网互通是指同一账户下的资源互通，不同账户的资源内网完全隔离。
-
+>
 
 <span id="MainlandChina"></span>
 ## 中国
@@ -34,13 +36,7 @@
 		<th>可用区</th>
 	</tr>
 	<tr>
-		<td rowspan="6">华南地区（广州）<br> ap-guangzhou</td>
-		<td>广州一区（已售罄）<br> ap-guangzhou-1</td>
-	</tr>	
-	<tr>
-		<td>广州二区（已售罄）<br> ap-guangzhou-2</td>
-	</tr>
-	<tr>
+		<td rowspan="3">华南地区（广州）<br> ap-guangzhou</td>
 		<td>广州三区<br> ap-guangzhou-3</td>
 	</tr>
 	<tr>
@@ -50,13 +46,7 @@
 		<td>广州六区<br> ap-guangzhou-6</td>
 	</tr>
 	<tr>
-		<td>广州七区<br> ap-guangzhou-7</td>
-	</tr>
-	<tr>
-		<td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
-		<td>上海一区（已售罄）<br>ap-shanghai-1</td>
-	</tr>
-	<tr>
+		<td rowspan="4">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海二区<br>ap-shanghai-2</td>
 	</tr>
 	<tr>
@@ -68,24 +58,15 @@
  <tr>
 		<td>上海五区<br>ap-shanghai-5</td>
 	</tr>
-		<tr>
-			<td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
+	<tr>
+			<td rowspan="2">华东地区（南京）<br>ap-nanjing</td>
 			<td>南京一区<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
 			<td>南京二区<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
-			<td>南京三区<br>ap-nanjing-3</td>
-	</tr>
-	<tr>
-			<td rowspan="7">华北地区（北京）<br>ap-beijing</td>
-			<td>北京一区<br>ap-beijing-1</td>
-	</tr>
-	<tr>
-			<td>北京二区<br>ap-beijing-2</td>
-	</tr>
-	<tr>
+			<td rowspan="5">华北地区（北京）<br>ap-beijing</td>
 			<td>北京三区<br>ap-beijing-3</td>
 	</tr>
 	<tr>
@@ -94,10 +75,10 @@
 	<tr>
 			<td>北京五区<br>ap-beijing-5</td>
 	</tr>
-         <tr>
+		<tr>
 			<td>北京六区<br>ap-beijing-6</td>
 	</tr>
-         <tr>
+		<tr>
 			<td>北京七区<br>ap-beijing-7</td>
 	</tr>
 	<tr>
@@ -108,23 +89,15 @@
 			<td>成都二区<br>ap-chengdu-2</td>
 	</tr>    
 	<tr>
-			<td >西南地区（重庆）<br>ap-chongqing</td>
-			<td>重庆一区<br>ap-chongqing-1</td>
-	</tr>
-	<tr>
-			<td rowspan="3">港澳台地区（中国香港）<br>ap-hongkong</td>
-			<td>香港一区（中国香港节点可用于覆盖港澳台地区）（已售罄）<br>ap-hongkong-1</td>
-	</tr>
-	<tr>
+			<td rowspan="1">港澳台地区（中国香港）<br>ap-hongkong</td>
 			<td>香港二区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-2</td>
 	</tr>
 	<tr>
-			<td>香港三区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-3</td>
-	</tr>
 </tbody>
 </table>	
 
 <span id="InternationalArea"></span>
+
 ## 其他国家和地区	
 <table class="table-striped">
 	<tbody>
@@ -133,14 +106,15 @@
 			<th>可用区</th>
 		</tr>
 		<tr>
-			<td  rowspan="3">亚太东南（新加坡）<br>ap-singapore</td>
+			<td  rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
 		</tr>
 		<tr>
 			<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td>
 		</tr>
-        <tr>
-			<td>新加坡三区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td>
+		<tr>
+			<td>亚太东南（雅加达）<br>ap-jakarta</td>
+			<td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
@@ -149,14 +123,11 @@
 		<tr>
 			<td>首尔二区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-2</td>
 		</tr>
-		<tr>
-			<td rowspan="2" >亚太东北（东京）<br>ap-tokyo</td>
-			<td>东京一区（东京节点可用区覆盖亚太东北地区）<br>ap-tokyo-1</td>
-		</tr>
-       <tr>
+		<tr >
+			<td rowspan="1">亚太东北（东京）<br>ap-tokyo</td>
 			<td>东京二区（东京节点可用区覆盖亚太东北地区）<br>ap-tokyo-2</td>
 		</tr>
-		<tr>
+       <tr>
 			<td  rowspan="2">亚太南部（孟买）<br>ap-mumbai</td>
 			<td>孟买一区（孟买节点可用于覆盖亚太南部地区）<br>ap-mumbai-1</td>
 		</tr>
@@ -164,21 +135,12 @@
 			<td>孟买二区（孟买节点可用于覆盖亚太南部地区）<br>ap-mumbai-2</td>
 		</tr>
 		<tr>
-		  	<td  rowspan="2">亚太东南（曼谷）<br>ap-bangkok </td>
-			 <td >曼谷一区  （曼谷节点用户覆盖亚太东南地区）<br>ap-bangkok-1</td>
-		</tr>
-       <tr>
-			 <td >曼谷二区  （曼谷节点用户覆盖亚太东南地区）<br>ap-bangkok-2</td>
-		</tr>
-			<td>北美地区（多伦多）<br>na-toronto</td>
-			<td>多伦多一区（多伦多节点可用于覆盖北美地区）<br>na-toronto-1</td>
+		  	<td rowspan="1">亚太东南（曼谷）<br>ap-bangkok </td>
+				 <td>曼谷一区  （曼谷节点用户覆盖亚太东南地区）<br>ap-bangkok-1</td>
 		</tr>
 		<tr>
-			<td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
-			<td>硅谷一区（硅谷节点可用于覆盖美国西部）<br>na-siliconvalley-1</td>
-		</tr>
-    <tr>
-			<td>硅谷二区（硅谷节点可用于覆盖美国西部）<br>na-siliconvalley-2</td>
+			<td>北美地区（多伦多）<br>na-toronto</td>
+			<td>多伦多一区（多伦多节点可用于覆盖北美地区）<br>na-toronto-1</td>
 		</tr>
 		<tr>
 			<td rowspan="2">美国东部（弗吉尼亚）<br>na-ashburn</td>
@@ -188,12 +150,10 @@
 			<td>弗吉尼亚二区 （弗吉尼亚节点用户覆盖美国东部地区）<br>na-ashburn-2</td>
 		</tr>
 		<tr>
-			<td rowspan="2">欧洲地区（法兰克福）<br>eu-frankfurt</td>
+			<td rowspan="1">欧洲地区（法兰克福）<br>eu-frankfurt</td>
 			<td>法兰克福一区（法兰克福节点可用于覆盖欧洲地区）<br>eu-frankfurt-1</td>
 		</tr>
 		<tr>
-			<td>法兰克福二区（法兰克福节点可用于覆盖欧洲地区）<br>eu-frankfurt-2</td>
-		</tr>
 		<td >欧洲地区（莫斯科）<br>eu-moscow</td>
 		<td>莫斯科一区（莫斯科节点可用区覆盖欧洲地区）<br>eu-moscow-1</td>
 		</tr>
@@ -301,7 +261,7 @@
 
 一个已经启动的实例是无法更改其可用区的，但是用户可以通过其他方法把实例迁移至其他可用区。迁移过程包括从原始实例创建自定义镜像、使用自定义镜像在新可用区中启动实例以及更新新实例的配置。
 1. 创建当前实例的自定义镜像。更多信息，请参阅 [创建自定义镜像](https://intl.cloud.tencent.com/document/product/213/4942)。
-2. 如果当前实例的网络环境为 [私有网络](https://intl.cloud.tencent.com/document/product/213/5227) 且需要在迁移后保留当前私有 IP 地址，用户可以先删除当前可用区中的子网，然后在新可用区中用与原始子网相同的 IP 地址范围创建子网。需要注意的是，不包含可用实例的子网才可以被删除。因此，应该将在当前子网中的所有实例移至新子网。
+2. 如果当前实例的 [网络环境](https://intl.cloud.tencent.com/document/product/213/5227) 为私有网络且需要在迁移后保留当前私有 IP 地址，用户可以先删除当前可用区中的子网，然后在新可用区中用与原始子网相同的 IP 地址范围创建子网。需要注意的是，不包含可用实例的子网才可以被删除。因此，应该将在当前子网中的所有实例移至新子网。
 3. 使用刚创建的自定义镜像在新的可用区中创建一个新实例。用户可以选择与原始实例相同的实例类型及配置，也可以选择新的实例类型及配置。更多信息，请参阅 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
 4. 如果原始实例已关联弹性 IP 地址，则将其与旧实例解关联并与新实例相关联。更多信息，请参阅 [弹性 IP](https://intl.cloud.tencent.com/document/product/213/5733)。
 5. （可选）若原有实例为 [按量计费](https://intl.cloud.tencent.com/document/product/213/2180) 类型，可选择销毁原始实例。更多信息，请参阅 [销毁实例](https://intl.cloud.tencent.com/document/product/213/4930)。
