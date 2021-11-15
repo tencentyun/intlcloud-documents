@@ -2,9 +2,10 @@ DDoS Edge Defender supports configuring IP blocklist and allowlist to block or a
 
 ## Prerequisites
 You have successfully purchased a [DDoS Edge Defender](https://intl.cloud.tencent.com/document/product/297/42172) instance and set the object to protect.
->?The IP blocklist and allowlist filtering take effect only when your business is under DDoS attacks.
->- The allowed IPs will be allowed to access resources without being filtered by any protection policy.
->- The access requests from the blocked IPs will be directly denied.
+>?
+>- The IP blocklist and allowlist filtering take effect only when your business is under DDoS attacks.
+>   - The allowed IPs will be allowed to access resources without being filtered by any protection policy.
+>   -	The access requests from the blocked IPs will be directly denied.
 >- DDoS Edge Defender is currently available to beta users. To use it, please [contact us](https://intl.cloud.tencent.com/contact-us).
 
 ## Directions
