@@ -1,8 +1,8 @@
-### What should I do if a user does not receive an SMS message?
-Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) and select **Statistics and Analytics** > **Mainland China SMS** (or **Global SMS**) > **Message Records** to view the **Delivery Status** and **Remarks** for the mobile number.
-- If the **Delivery Status** is "failed", you can troubleshoot the issue based on the cause as described in **Remarks**. The cause may be that the request has hit the rate limit control policy, the SMS message format is incorrect, or the mobile number has been blocked due to unsubscription.
-If the **Delivery Status** is "successful", but an error code is displayed in **Remarks**, please troubleshoot the issue based on the specific [error code](https://intl.cloud.tencent.com/document/product/382/34861).
-- If the **Delivery Status** is "successful" and the **Remarks** display that "The user has successfully received the message", but the user actually has not received the message, you can troubleshoot the issue by following the steps below:
+### What should I do if a user fails to receive an SMS message?
+Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) and select **Statistics and Analytics** > **Chinese Mainland SMS** (or **Global SMS**) > **Message Records** to view the **Sending Status** and **Remarks** for the mobile number.
+- If the **Sending Status** is "failed", you can troubleshoot the issue based on the cause as described in **Remarks**. The cause may be that the request has hit the rate limit control policy, the SMS message format is incorrect, or the mobile number has been blocked due to unsubscription.
+- If the **Sending Status** is "succeeded", but an error code is displayed in **Remarks**, please troubleshoot the issue based on the specific [error code](https://intl.cloud.tencent.com/document/product/382/34861).
+- If the **Sending Status** is "succeeded" and the **Remarks** display that "The user has successfully received the message", but the user actually has not, you can troubleshoot the issue by following the steps below:
  - The mobile phone has been powered off or the mobile number has run out of credit or is out of service: check the status of the mobile phone/number, such as by dialing the number.
  - The mobile number is blocked: check whether the user has complained to the carrier or unsubscribed from the service.
  - The mobile phone cannot receive SMS messages because it has not been powered off for a long period of time: try restarting the mobile phone.
@@ -16,7 +16,7 @@ If the problem persists, please [submit a ticket](https://console.cloud.tencent.
 ### What should I do if it takes a long time to call an API?[](id:jump)
 If you find that it takes a long time to call a Tencent Cloud SMS API, you can troubleshoot the issue in the following steps:
 1. Run the `dig yun.tim.qq.com` command to check whether a private DNS is used, and if so, select a nearby Tencent Cloud SMS IP from the same carrier to configure the host and check whether the issue is fixed.
-  - If the issue persists, the cause may be that the DNS resolution is stuck or there is a latency caused by cross-region or cross-carrier access. We recommend you use a DNS proxy or set up a public DNS server.
+  - If the issue is fixed, the cause may be that the DNS resolution is stuck or there is a latency caused by cross-region or cross-carrier access. You are recommended to use a DNS proxy or set up a public DNS server.
   - If the issue persists, please follow [step 2](#Q2step2).
 2. Check which connection mode is used and whether a connection pool is used.[](id:Q2step2)
  - If a single persistent connection is used, according to the HTTP request/response model, if a request gets stuck, subsequent requests on the connection will be affected. The "persistent connection + connection pool" model is recommended.
@@ -29,10 +29,10 @@ If you find that it takes a long time to call a Tencent Cloud SMS API, you can t
 1. View the request sent time recorded in the local system and the SMS message sent time recorded in the console and calculate the difference between them.
  - If the difference is large (such as approximately or even more than 10 minutes), the cause may be that there is a delay in the API call. Please fix the issue by referring to [What should I do if it takes a long time to call an API?](#jump).
  - If the difference is small, please follow [step 2](#Q3step2).
-2. Check the **Delivery Time** and **Status Report Time** for the SMS message and calculate the difference between them.[](id:Q3step2)
+2. Check the **Sending Time** and **Status Report Time** for the SMS message and calculate the difference between them.[](id:Q3step2)
  - If the difference is large (such as more than 10 seconds for regular SMS or more than 5 minutes for marketing SMS), the cause may be that the SMS message is under review as it contains sensitive words, the mobile phone reception is poor, or the mobile number is in an exceptional state (for example, it has run out of credit or is out of service).
  - If the difference is small, the cause may be that the mobile phone reception is poor or the mobile phone is in an exceptional state (for example, it has been powered off).
-3. If the issue persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+3. If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ### What is a mobile number blocklist?
 
@@ -58,7 +58,7 @@ When you call a Tencent Cloud SMS API to send an SMS message, if the response pa
 4. Check whether the value of the `type` parameter in the request packet is the same as the type of the content template applied for (0 indicates regular SMS, while 1 indicates marketing SMS).
 5. Check whether the request content is in the same format as the content template applied for. For example, **a mismatch may occur due to invisible characters such as spaces.**
 6. If the content contains Chinese characters, please make sure that they need to be encoded in UTF-8.
-7. A Mainland China SMS template can only be used for sending messages to mobile numbers in Mainland China, while a Global SMS template can only be used for sending messages to mobile numbers outside Mainland China.
+7. A Chinese mainland SMS template can only be used for sending messages to mobile numbers in the Chinese mainland, while a Global SMS template can only be used for sending messages to mobile numbers outside the Chinese mainland.
 8. If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ### What should I do if error 1016 is returned?
@@ -70,7 +70,7 @@ When you call a Tencent Cloud SMS API to send an SMS message, if the response pa
 
 ### What should I do if error 60008 is returned?
 When you call a Tencent Cloud SMS API to send an SMS message, if the response packet returns error 60008, you can troubleshoot the issue in the following steps:
-1. If error code 60008 is returned within 1 second in response to the request, please check whether the request is in standard HTTP format.
+1. If error code 60008 is returned within one second in response to the request, please check whether the request is in standard HTTP format.
 2. Check whether the URL and body format of the request match the API.
 3. Check whether the `Content-Type` of the request is the same as that of the body (`Content-Type: application/json;charset=utf-8` for SMS).
 4. Check the DNS configuration to ensure that a public DNS server is used.
@@ -111,10 +111,10 @@ Please enter the path of the mini program page accessed through the scheme code 
 The recipient must reply within 72 hours, and the reply can be viewed.
 
 ### Can I view or receive user replies?
-Yes, and no additional fees will be incurred by SMS replies. Replies can be viewed in the [Reply Records](https://console.cloud.tencent.com/smsv2/statistics-csms/record) section in the console or obtained by setting the callback address.
+Yes, and no additional fees will be charged for SMS replies. Replies can be viewed in the [Reply Records](https://console.cloud.tencent.com/smsv2/statistics-csms/record) section in the console or obtained by setting the callback address.
 
 ### What is the number used to send SMS messages after I activate Tencent Cloud SMS?
-- For Mainland China SMS: the number contains 13–20 digits starting with 1069 and ending with a random number assigned by the carrier.
+- For Chinese Mainland SMS: the number contains 13–20 digits starting with 1069 and ending with a random number assigned by the carrier.
 - For Global SMS: no numbers but only Qsms or Qcloud will be displayed.
 
 ### Can I send different SMS messages to different mobiles numbers at the same time?
@@ -131,11 +131,11 @@ Individual users must obtain approval first before using the console to send SMS
 
 
 ### I sent an SMS message to a mobile number, but the message was not received, and the mobile number cannot be found in the console. What should I do?
-- If the message was sent through the console, we recommend you check whether the mobile number in the sent file contains any extra characters, and if so, delete them.
-- If the message was sent through the API, we recommend you check whether the request has been properly sent to Tencent Cloud and whether any response has been returned.
+- If the message was sent through the console, you are recommended to check whether the mobile number in the sent file contains any extra characters, and if so, delete them.
+- If the message was sent through the API, you are recommended to check whether the request has been properly sent to Tencent Cloud and whether any response has been returned.
 
 
-### Can I use a server outside Mainland China to send SMS messages?
+### Can I use a server outside the Chinese mainland to send SMS messages?
 A server outside Mainland China can be used to call an API to send SMS messages, and the domain name can be resolved nearby. You can use the `curl` API for testing first.
 
 ### Can I send bulk SMS?
@@ -148,8 +148,14 @@ In one SMS delivery request, the platform will check whether the recipient numbe
 ### Are invoices available?
 If you need an invoice, you can apply for it on the **[Invoice Management](https://console.cloud.tencent.com/expense/invoice)** page in the console.
 
-### Why does the number contain asterisks when I preview an SMS message? For example, `Dear customer, your top-up payment of 1**2 USD has been credited to your account. Please check it in the system!`.
+### Why does the number contain asterisks when I preview an SMS message? For example, `Dear customer, your top-up payment of 1**2 CNY has been credited to your account. Please check it in the system!`.
 The console will encrypt numbers for storage, so numbers will contain asterisks when being previewed, but SMS messages received by users will be fully displayed.
 
 ### What are the country/region codes?
 For more information on the country/region codes, please see [Pricing](https://intl.cloud.tencent.com/document/product/382/8414).
+
+### What is region?
+A region is the geographical area where a physical data center is located. Currently, Tencent Cloud International SMS supports two regions: Singapore and Frankfurt (Europe). Regions are fully isolated from each other, which means data cannot be stored across regions but in the local region. We suggest you select a region according to the data storage requirements in different regions. The features and prices of SMS services in each region are the same, but the data is not interconnected. Only the approved signatures and templates can be copied across regions.
+
+### How can I select a suitable region?
+The features and prices of SMS services in each region are the same, but regions are fully isolated from each other, which means data cannot be stored across regions but in the local region. You are recommended to select a region according to the data storage requirements in different regions. For example, select Frankfurt (Europe) if your users are in the EU. You can switch regions on the title bar in the SMS console or specify the `region` field through APIs. For more information, see [region list](https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list).

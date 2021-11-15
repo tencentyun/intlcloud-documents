@@ -1,14 +1,16 @@
-## Operation Scenarios
-Up to 500 applications can be created under one Tencent Cloud account. After the application is created, you can get the SDK `AppID` and `AppKey`. The former is the unique identifier of the application, while the latter is a password for verifying the validity of an SMS sending request.
->!The `AppKey` for the SDK `AppID` should be kept confidential.
+## Overview
+A Tencent Cloud account can create up to 500 applications. After creating an application, you will get the SDK AppID (unique ID of the application) and the App Key (password used to verify the validity of an SMS delivery request).
+>!The AppKey for the SDK AppID should be kept confidential.
 
 
 ## Prerequisites
-You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Directions
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
-2. Select **Application Management** > **Application List** on the left sidebar and click **Create Application**.
-3. In the **Create Application** dialog box, enter the **Application Name** and **Application Overview**.
-4. Click **Create**.
- Return to the **Application List** page and you can view the card of the newly created application.
+2. Select a region in the upper-left corner of the overview page.
+3. On the left sidebar, select **Application Management** > **Application List** and click **Create Application**.
+4. In the pop-up window, enter information for **Application Name** and **Application Intro**.
+5. Click **Create**.
+ Then you can return to the **Application List** page to view the new application block.
+>!SMS applications across regions are not interconnected.
