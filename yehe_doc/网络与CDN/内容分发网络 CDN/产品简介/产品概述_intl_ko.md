@@ -1,7 +1,6 @@
 ## CDN이란 무엇인가요?
 
 Content Delivery Network(CDN)은 전세계에 분포되어 있는 고성능 가속 노드로 구성된 새로운 네트워크 아키텍처입니다. 고성능 서비스 노드는 정해진 캐시 정책에 따라 서비스 콘텐츠를 저장하며, 사용자가 서비스 콘텐츠를 요청할 경우 사용자와 가장 가까운 서비스 노드에서 스케쥴링하여 빠르게 응답하므로, 사용자의 액세스 딜레이를 줄이고 가용성을 확장할 수 있습니다.
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/2208-31055?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 CDN은 현재 인터넷 서비스에서 다음과 같은 네트워크 문제를 효과적으로 해결합니다.
 1. 사용자와 서비스 서버 리전 사이의 물리적 거리가 멀어, 여러 번의 네트워크 전달이 필요하여 전송이 느리고 불안정한 경우.
@@ -11,12 +10,12 @@ CDN은 현재 인터넷 서비스에서 다음과 같은 네트워크 문제를 
 CDN 액세스 작업은 매우 간단하여, 서비스 구조를 변경하거나 복잡한 작업 설정을 진행하지 않아도 글로벌 CDN 가속 서비스를 이용하실 수 있습니다. [시작하기](https://intl.cloud.tencent.com/document/product/228/32978)를 통해 CDN 가속 서비스를 손쉽게 이용하실 수 있습니다.
 
 ## 가속 원리
-서비스 원본 서버의 도메인을 ```www.test.com```으로 가정하고, 해당 도메인이 CDN에 액세스하여 가속 서비스를 시작한 뒤 사용자가 HTTP 요청을 보낼 때의 실제 처리 프로세스는 아래 이미지와 같습니다.
+서비스 원본 서버의 도메인을 `www.test.com`으로 가정하고, 해당 도메인이 CDN에 액세스하여 가속 서비스를 시작한 뒤 사용자가 HTTP 요청을 보낼 때의 실제 처리 프로세스는 아래 이미지와 같습니다.
 ![](https://main.qcloudimg.com/raw/c155f8268c6ebdcc84f50cfb06f1f638.png)
 
 **상세 설명**
-1. 사용자가 ```www.test.com```의 특정 이미지 리소스(예: 1.jpg)에 요청을 보내면, 우선 Local DNS에 리졸브 요청이 전송됩니다.
-2. Local DNS는 ```www.test.com```을 리졸브하는 과정에서 이미 설정된 CNAME ```www.test.com.cdn.dnsv1.com```을 발견하면, Tencent DNS(GSLB)로 리졸브 요청을 전송합니다. GSLB는 Tencent Cloud에서 자체 개발한 스케쥴링 시스템으로, 해당 요청에 가장 적합한 노드 IP를 할당합니다.
+1. 사용자가 `www.test.com`의 특정 이미지 리소스(예: 1.jpg)에 요청을 보내면, 우선 Local DNS에 리졸브 요청이 전송됩니다.
+2. Local DNS는 `www.test.com`을 리졸브하는 과정에서 이미 설정된 CNAME `www.test.com.cdn.dnsv1.com`을 발견하면, Tencent DNS(GSLB)로 리졸브 요청을 전송합니다. GSLB는 Tencent Cloud에서 자체 개발한 스케쥴링 시스템으로, 해당 요청에 가장 적합한 노드 IP를 할당합니다.
 3. Local DNS가 Tencent DNS에서 리턴한 리졸브 IP를 획득합니다.
 4. 사용자가 리졸브 IP를 획득합니다.
 5. 사용자가 획득한 IP에 리소스 1.jpg에 대한 액세스 요청을 전송합니다.
