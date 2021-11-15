@@ -1,4 +1,5 @@
  This guide describes protection levels that DDoS Edge Defender provides in different scenarios and how to set them in the console.
+>? DDoS Edge Defender is currently available to beta users. To use it, please [contact us](https://intl.cloud.tencent.com/contact-us).
 
 ## Use Cases
 DDoS Edge Defender provides three available protection levels for you to adjust protection policies against different DDoS attacks. The details are as follows:
