@@ -18,7 +18,7 @@ When creating a cluster, you need to select a VPC as the cluster network and spe
 1. Log in to the TKE console, click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar, and click the ID of the cluster that you want to modify the container network.
 2. On the cluster details page, click **Virtual Node** in the left sidebar, and then click **Create Virtual Node**.
 3. On **Create Virtual Node** page, select the container network with sufficient IPs and click **Confirm**.
-   ![](https://main.qcloudimg.com/raw/e23c76930b29b81f4ba0b48f92197bf4.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/28da152bf95cd0c8eb1898c50955547c.png)
 
 
 #### Step 2: Remove the virtual node to delete the container network.
@@ -31,7 +31,7 @@ Before removing a virtual node, you need to drain all Pods on this virtual node 
 
 1. Log in to the TKE console, click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar, and click the ID of the cluster that you want to remove the virtual node.
 2. On the cluster details page, select **Virtual Node** in the left sidebar, and select **More** > **Drain** on the right of the node name. See the figure below:
-   ![](https://main.qcloudimg.com/raw/60e0e68228c1721de29f03e74236a062.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e6f6450c760f8d76f5b45146b74238d8.png)
 3. In the **Drain Node** window, click **OK**.
    <dx-alert infotype="notice" title="">
    Once drained, the Pod will be rebuilt.
@@ -48,7 +48,7 @@ Before removing a virtual node, you need to drain all Pods on this virtual node 
 When the Pod fails to schedule because of the insufficient subnet IPs, you can find two events in the node logs, as shown below:
 
 - Event 1:
-  ![](https://main.qcloudimg.com/raw/da4980efe001e7a4a6cbd9c14b0451ec.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/632e4e3182548067ffe48939f475a03b.png)
 - Event 2:
   ![](https://main.qcloudimg.com/raw/eb021a08ade02738992c896b6ed1d5d5.png)
 
@@ -149,7 +149,7 @@ spec:
     volumeMounts:
     - mountPath: /cache
       name: cache-volume
-    volumes:
+      volumes:
   - name: nfs
         nfs:
           path: /dir

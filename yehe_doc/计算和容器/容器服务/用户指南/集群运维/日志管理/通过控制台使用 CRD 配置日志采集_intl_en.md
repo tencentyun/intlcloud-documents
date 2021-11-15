@@ -42,23 +42,40 @@ You need to manually enable log collection for each cluster, and configure the c
 
 ### Configuring the log rules
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and choose **Cluster OPS** > **Log Collection Rules** in the left sidebar.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster OPS** > **Log Rules** in the left sidebar.
 2. At the top of the “Log Rules” page, select the region and the cluster where you want to configure the log collection rules and click **Create**, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/e94605fda5b4039d2c3eb285ffb415c0.png)
 3. On the **Create Log Collecting Policy** page, select the collection type and configure the log source. Currently, the following collection types are supported: **Container Standard Output**, **Container File Path**, and **Node File Path**.
 <dx-tabs>
-::: Collecting\sstandard\soutput\slogs\sof\sa\scontainer
+::: Collecting standard output logs of a container
 Select **Container Standard Output** as the collection type and configure the log source as needed. This type of log source allows you to select the workloads of multiple namespaces at a time, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/698a5beae709d6a78ac79579592dc70e.png)
 
 :::
-::: Collecting\sfile\slogs\sin\scontainers 
+::: Collecting file logs in containers 
 Select **Container File Path** as the collection type and configure the log source, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/5f1e65b240377f296eaf17a5750c9f91.png)
-You can specify a file path or use wildcards. For example, when the container file path is `/opt/logs/*.log`, you can specify the collection path as `/opt/logs` and the file name as `*.log`.
-
-<dx-alert infotype=“note”>For container standard output and container files (not mounted in hostPath), besides the original log content, the metadata related to the container or Kubernetes (such as the ID of the container that generated the logs) will also be reported to the CLS. Therefore, when viewing logs, users can trace the log source or search based on the container identifier or characteristics (such as container name and labels).
+You can specify a file path or use wildcards for the collection path. For example, when the container file path is `/opt/logs/*.log`, you can specify the collection path as `/opt/logs` and the file name as `*.log`.
+<dx-alert infotype="notice" title="">
+If the collection type is selected as "Container File Path", the corresponding path <b>cannot be a soft link</b>. Otherwise, the actual path of the soft link will not exist in the collector's container, resulting in log collection failure.
 </dx-alert>
+
+
+
+​	
+
+:::
+::: Collecting file logs on nodes
+Select **Node File Path** as the collection type. You can add custom `metadata` as needed. Attach `metadata` with a specified key-value pair to the collected log information to add the attached metadata to log records, as shown in the figure below:
+
+>! One node log file can be collected for only one log topic.
+>
+![](https://main.qcloudimg.com/raw/7c5c8341315408c5668add566a3ff550.png)
+You can specify a file path or use wildcards. For example, when the container file paths for collection are `/opt/logs/service1/*.log` and `/opt/logs/service2/*.log`, you can specify the folder of the collection path as `/opt/logs/service*` and the file name as `*.log`.
+:::
+</dx-tabs>
+<dx-alert infotype="explain" title="">
+For container standard output and container files (not mounted in hostPath), besides the original log content, the metadata related to the container or Kubernetes (such as the ID of the container that generated the logs) will also be reported to the CLS. Therefore, when viewing logs, users can trace the log source or search based on the container identifier or characteristics (such as container name and labels).
 The metadata related to the container or Kubernetes is shown in the table below:
 <table>
 	<tr>
@@ -89,16 +106,8 @@ the reported log will have two metadata entries attached: pod_label_app:nginx an
 	</tr>
 </table>
 
-:::
-::: Collecting\sfile\slogs\son\snodes
-Select **Node File Path** as the collection type. You can add custom `metadata` as needed. Attach `metadata` with a specified key-value pair to the collected log information to add the attached metadata to log records, as shown in the figure below:
-
-<dx-alert infotype="notice">One node log file can be collected for only one log topic.
 </dx-alert>
-![](https://main.qcloudimg.com/raw/7c5c8341315408c5668add566a3ff550.png)
-You can specify a file path or use wildcards. For example, when the container file paths for collection are `/opt/logs/service1/*.log` and `/opt/logs/service2/*.log`, you can specify the folder of the collection path as `/opt/logs/service*` and the file name as `*.log`.
-:::
-</dx-tabs>
+
 4. Configure the CLS as the consumer end. Select the desired logset and log topic. You can select new or existing log topics, as shown in the figure below:
 >!
 >- CLS currently only supports log collection and reporting for intra-region container clusters.
@@ -117,7 +126,7 @@ You can specify a file path or use wildcards. For example, when the container fi
 <tr>
 <th>Parsing Mode</th>
 <th>Description</th>
-<th>Documentation</th>
+<th>Related Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -127,18 +136,18 @@ You can specify a file path or use wildcards. For example, when the container fi
 </tr>
 <tr>
 <td>Full text in multi lines</td>
-<td>A log with full text in multi lines spans multiple lines and a first-line regular expression is used for match. When a log in a line matches the preset regular expression, it is considered as the beginning of a log, and the next matching line will be the end mark of the log. A default key value, <strong>CONTENT</strong>, will be set as well. The time attribute of a log is determined by the collection time. The <a href="#auto">regular expression</a> can be generated automatically.</td>
+<td>A log with full text in multi lines spans multiple lines and a first-line regular expression is used for match. When a log in a line matches the preset regular expression, it is considered as the beginning of a log, and the next matching line will be the end mark of the log. A default key value, <strong>CONTENT</strong>, will be set as well. The time attribute of a log is determined by the collection time. The regular expression can be generated automatically.</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/614/32284">Full Text in Multi Lines</a></td>
 </tr>
 <tr>
 <td>Single line - full regex</td>
-<td>The single-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from a complete log. When configuring the single-line - full regular expression mode, you need to enter a sample log first and then customize your regular expression. After the configuration is completed, the system will extract the corresponding key-value pairs according to the capture group in the regular expression. The <a href="#auto">regular expression</a> can be generated automatically.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/614/39589">Full Regular Format (Single-Line)</a></td>
+<td>The single-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from a complete log. When configuring the single-line - full regular expression mode, you need to enter a sample log first and then customize your regular expression. After the configuration is completed, the system will extract the corresponding key-value pairs according to the capture group in the regular expression. The regular expression can be generated automatically.</td>
+<td><a href="https://cloud.tencent.com/document/product/614/32817">Full Regular Format (Single-Line)</a></td>
 </tr>
 <tr>
 <td>Multiple lines - full regex</td>
-<td>The multi-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from a complete piece of log data that spans multiple lines in a log text file (such as Java program logs) based on a regular expression. When configuring the multi-line - full regular expression mode, you need to enter a sample log first and then customize your regular expression. After the configuration is completed, the system will extract the corresponding key-value pairs according to the capture group in the regular expression. The <a href="#auto">regular expression</a> can be generated automatically.</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/614/39590">Full Regular Format (Multi-Line)</a></td>
+<td>The multi-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from a complete piece of log data that spans multiple lines in a log text file (such as Java program logs) based on a regular expression. When configuring the multi-line - full regular expression mode, you need to enter a sample log first and then customize your regular expression. After the configuration is completed, the system will extract the corresponding key-value pairs according to the capture group in the regular expression. The regular expression can be generated automatically.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/39590">Full Regular Format (Multi-Line)</a></td>
 </tr>
 <tr>
 <td>JSON</td>
@@ -152,13 +161,13 @@ You can specify a file path or use wildcards. For example, when the container fi
 </tr>
 </tbody></table>
 
-6. Enable the filter and configure rules as needed and then click **Complete**, as shown in the figure below.
+6. Enable the filter and configure rules as needed and then click **Done**, as shown in the figure below.
 ![](https://main.qcloudimg.com/raw/0fe472207c3c923caeb664533c44ae00.png)
 
 
 ### Updating the log rules
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and choose **Cluster OPS** > **Log Collection Rules** in the left sidebar.
-2. At the top of the “Log Rules” page, select the region and the cluster where you want to update the log collection rules and click **Edit Rule** at the right, as shown in the figure below:
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster OPS** > **Log Rules** in the left sidebar.
+2. At the top of the “Log Rules” page, select the region and the cluster where you want to update the log collection rules and click **Edit Collecting Rule** at the right, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/31dad4c82bdb27197873b5141dcfa3b0.png)
 3. Update the configuration as needed and click **Done**.
- >! The logset and log topic cannot be updated.
+>! The logset and log topic cannot be updated.

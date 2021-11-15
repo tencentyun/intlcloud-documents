@@ -8,15 +8,16 @@ This document describes how to create a StorageClass of the Cloud Block Storage 
 ### Console operation instructions
 <span id="create"></span>
 #### Creating a StorageClass
-1. Log in to the [Tencent Kubernetes Engine console](https://console.cloud.tencent.com/tke2) and select **Cluster** in the left sidebar to go to the **Cluster Management** page.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. Click the ID of the cluster for which a StorageClass needs to be created to go to the cluster details page.
-3. Choose **Storage** > **StorageClass** in the left sidebar to go to the **StorageClass** page, as shown in the following figure.
+3. Select **Storage** > **StorageClass** in the left sidebar to go to the **StorageClass** page, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/9c08551ba5e4fe254cebf30eb34a01e1.png)
 4. Click **Create** to go to the **Create StorageClass** page, where you can set the parameters as required, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/f0a35d376991444679f3cd7dbb79b434.png)
 Main parameters are described as follows:
 	- **Name**: set a custom name. This document uses `cbs-test` as an example.
 	- **Provisioner**: select **Cloud Block Storage**.
+	- **Region**: the region where current cluster is located.
 	- **Availability Zone**: select the availability zones that support CBS disks in the current region as required.
 	- **Billing mode**: the elastic **pay-as-you-go** billing mode is provided. It allows you to enable and terminate instances at any time. The instances are billed based on actual usage, and the delete and retain reclaim policies are supported.
 - **Disk Type**: **Premium Cloud Disk**, **SSD Cloud Disk**, and **HSSD Cloud Disk** are supported. Different availability zones may have different disk types. For more information, see [Cloud Disk Types](https://intl.cloud.tencent.com/document/product/213/33000). Select a disk type as prompted by the console.
@@ -41,7 +42,7 @@ Main parameters are described as follows:
 Main parameters are described as follows:
    - **Name**: set a custom name. This document uses `cbs-pvc` as an example.
    - **Namespace**: select **default**.
-   - **Provisioner**: select **Cloud Block Storage**.
+   - **Provisioner**: select **CBS**.
    - **R/W permission**: CBS disks only support **Single machine read and write**.
    - **StorageClass**: specify a StorageClass as required. This document uses the `cbs-test` created in the step of [Creating a StorageClass](#create) as an example.
 >?
@@ -54,7 +55,7 @@ Main parameters are described as follows:
 >- If `StorageClass` is not specified, then `PersistVolume` must be specified.
 >- No PersistentVolume is specified. For more information, see [PV and PVC Binding Rules](https://intl.cloud.tencent.com/document/product/457/37770).
 
-   - **Disk Type**: based on the selected StorageClass, the available disk types are displayed: **Premium Cloud Disk** and **SSD Cloud Disk**.
+   **Disk Type**: based on the selected StorageClass, the available disk types are displayed: **Premium Cloud Disk**, **SSD Cloud Disk** and **Enhanced SSD Cloud Disk**.
    - **Capacity**: if no PersistentVolume is specified, specify the expected cloud disk capacity.
    - **Cost**: based on the above parameters, calculate the cost of the corresponding cloud disk. For more information, see [Billing Modes](https://intl.cloud.tencent.com/document/product/362/32415).
 4. Click **Create a PersistentVolumeClaim** to complete the creation.
@@ -67,7 +68,7 @@ Main parameters are described as follows:
 ![](https://main.qcloudimg.com/raw/9574b60607fc80b0226136ca13f6fbdb.png)
 	- **Volume (optional)**:
 		- **Mount method**: select **Use existing PVC**.
-		- **Volume name**: set a custom name. This document uses `cbs-vol` as an example.
+		- **Volume name**: set a custom name. This document uses `cbs-vol`as an example.
 		- **Select PVC**: select an existing PVC. This document uses the `cbs-pvc`, which you created in the step of [Creating a PVC by using a specified StorageClass](#createPVC), as an example.
 	- **Containers in the pod**: click **Add Mount Point** to set a mount point.
 		- **Volume**: select the volume `cbs-vol` that you added in this step.
@@ -95,8 +96,8 @@ metadata:
 provisioner: cloud.tencent.com/qcloud-cbs ## The provisioner coming with the TKE cluster
 parameters:
   type: CLOUD_PREMIUM
-  # CLOUD_BASIC, CLOUD_PREMIUM, and CLOUD_SSD are supported. If it is not recognized, CLOUD_BASIC is used by default.
- # renewflag: NOTIFY_AND_AUTO_RENEW
+  # CLOUD_PREMIUM, CLOUD_SSD and CLOUD_HSSD are supported. If it is not recognized, CLOUD_PREMIUM is used by default.
+  # renewflag: NOTIFY_AND_AUTO_RENEW
   # renewflag indicates the CBS renewal mode. NOTIFY_AND_AUTO_RENEW supports notifications upon expiration and automatic renewal by month. NOTIFY_AND_MANUAL_RENEW supports notifications upon expiration and but not automatic renewal. DISABLE_NOTIFY_AND_MANUAL_RENEW does not support notifications upon expiration or automatic renewal. If not specified, NOTIFY_AND_MANUAL_RENEW is used by default.
   # paymode: PREPAID
   - paymode: the billing method of the cloud disk. The default value is POSTPAID (pay-as-you-go, which supports the **Retain** and **Delete** reclaim policies. **Retain** is only available in cluster version 1.8 or later).
@@ -109,7 +110,7 @@ The following table lists the supported parameters.
 <th>Parameter</th> <th>Description</th>
 </tr>
 <tr>
-<td>type</td> <td>StorageClass type, which can be <code>CLOUD_BASIC</code>, <code>CLOUD_PREMIUM</code>, or <code>CLOUD_SSD</code>.</td>
+<td>type</td> <td>Cloud disk types, which can be <code>CLOUD_HSSD</code>, <code>CLOUD_PREMIUM</code> and <code>CLOUD_SSD</code>.</td>
 </tr>
 <tr>
 <td>zone</td> <td>Availability zone. If an availability zone is specified, the cloud disk is created in this availability zone. If no availability zone is specified, the availability zones of all nodes are obtained and one is selected at random. For the identifiers of all Tencent Cloud regions, see <a href="https://intl.cloud.tencent.com/document/product/213/6091">Regions and Availability Zones</a>.</td>
