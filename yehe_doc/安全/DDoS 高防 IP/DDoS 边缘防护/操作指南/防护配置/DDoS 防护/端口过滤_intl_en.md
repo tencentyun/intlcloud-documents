@@ -3,6 +3,7 @@ DDoS Edge Defender enables you to block or allow inbound traffic by ports. With 
 ## Prerequisites
 You have successfully purchased a [DDoS Edge Defender](https://intl.cloud.tencent.com/document/product/297/42172) instance and set the object to protect.
 
+>? DDoS Edge Defender is currently available to beta users. To use it, please [contact us](https://intl.cloud.tencent.com/contact-us).
 
 ## Directions
 1. Log in to the [DDoS Edge Defender Console](https://console.cloud.tencent.com/ddos/antiddos-edge/policy/ddos), click **Protection Policy** on the left sidebar, and then select the tab **DDoS Protection**.
