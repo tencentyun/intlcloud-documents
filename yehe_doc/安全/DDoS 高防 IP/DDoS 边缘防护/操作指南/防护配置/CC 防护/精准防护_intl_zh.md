@@ -1,4 +1,4 @@
- DDoS 边缘防护支持对已接入防护的网站业务配置精准防护策略。开启精确访问控制后您可以使用常见的 HTTP 字段（例如：URI、UA、Cookie、Referer、Accept 等），作为条件组合防护策略来筛选访问请求，并将已命中条件的请求，设置人机校验或丢弃策略动作。精准防护支持业务场景定制化的防护策略，可用于精准定制针对性的 CC 防御。
+ DDoS 边界防护支持对已接入防护的网站业务配置精准防护策略。开启精确访问控制后您可以使用常见的 HTTP 字段（例如：URI、UA、Cookie、Referer、Accept 等），作为条件组合防护策略来筛选访问请求，并将已命中条件的请求，设置人机校验或丢弃策略动作。精准防护支持业务场景定制化的防护策略，可用于精准定制针对性的 CC 防御。
 
 匹配条件定义了要识别的请求特征，具体指访问请求中 HTTP 字段属性特征。精确防护规则支持匹配的 HTTP 字段如下表所示。
 
@@ -13,11 +13,12 @@
 
 
 ## 前提条件
-您需要成功[ 购买 DDoS 边缘防护](https://intl.cloud.tencent.com/document/product/297/42172)，并设置防护对象。
+您需要成功[ 购买 DDoS 边界防护](https://intl.cloud.tencent.com/document/product/297/42172)，并设置防护对象。
 
+>?目前 DDoS 边界防护产品处于灰度优化中，如有需要，请 [联系我们](https://intl.cloud.tencent.com/contact-us) 申请。
 
 ## 操作步骤
-1. 登录 [DDoS 边缘防护管理控制台](https://console.cloud.tencent.com/ddos/antiddos-edge/policy/ddos) ，在左侧导航中，单击【防护策略】，并选择【CC 防护】。
+1. 登录 [DDoS 边界防护管理控制台](https://console.cloud.tencent.com/ddos/antiddos-edge/policy/ddos) ，在左侧导航中，单击【防护策略】，并选择【CC 防护】。
 2. 在左边的列表选中高防实例的 ID，如“edge-xxxxxxx”。
 ![](https://main.qcloudimg.com/raw/e43f351d75409dd50d4add1a2fd266f2.png)
 3. 在右侧卡片中单击“精准防护”卡片中的【设置】，进入精准防护页面。
