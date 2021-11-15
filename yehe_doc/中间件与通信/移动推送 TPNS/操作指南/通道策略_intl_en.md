@@ -40,7 +40,7 @@ The table below specifies the delivery rules of a custom policy.
 ### Console
 
 When creating a push in the console, you can select a channel policy for it in the following path:
-[**TPNS Console**](https://console.cloud.tencent.com/tpns) -> **Push Management** -> **Create Push** -> **Advanced Settings** -> **Channel Policy**
+[**TPNS Console**](https://console.cloud.tencent.com/tpns)  -> **Message Management**-> **Task List** -> **Create Push** -> **Advanced Settings** -> **Channel Policy**
 
 #### Smart assignment
 
