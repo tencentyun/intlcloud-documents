@@ -58,7 +58,7 @@ This document lists the check items for database migration, sync, and subscripti
 - [Migration network check](https://intl.cloud.tencent.com/document/product/571/42578)
 - [Source database connectivity check](https://intl.cloud.tencent.com/document/product/571/42552)
 - [Target database connectivity check](https://intl.cloud.tencent.com/document/product/571/42552)
-- [Disk space check](https://cloud.tencent.com/document/product/571/61276)
+- [Disk space check](https://intl.cloud.tencent.com/document/product/571/42575)
 - [Database version check](https://intl.cloud.tencent.com/document/product/571/42558)
 - [User permission check](https://intl.cloud.tencent.com/document/product/571/42555)
 - [Source database existence check](https://intl.cloud.tencent.com/document/product/571/42576)
