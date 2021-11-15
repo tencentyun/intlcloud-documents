@@ -10,12 +10,12 @@ CDN memberikan solusi yang efektif bagi masalah jaringan berikut:
 CDN itu mudah digunakan.Anda tidak perlu menyesuaikan struktur bisnis atau mengelola konfigurasi yang kompleksUntuk informasi selengkapnya, silakan baca [Memulai](https://intl.cloud.tencent.com/document/product/228/32978).
 
 ## Cara Kerja Akselerasi
-Misalnya, jika nama domain server asal bisnis Anda adalah ```www.test.com``` dan sudah terkoneksi dengan CDN untuk mengaktifkan layanan akselerasi, ketika seorang pengguna mengirim permintaan HTTP, maka permintaan akan diproses sebagai berikut:
+Misalnya, jika nama domain server asal bisnis Anda adalah `www.test.com` dan sudah terkoneksi dengan CDN untuk mengaktifkan layanan akselerasi, ketika seorang pengguna mengirim permintaan HTTP, maka permintaan akan diproses sebagai berikut:
 ![](https://main.qcloudimg.com/raw/c155f8268c6ebdcc84f50cfb06f1f638.png)
 
 **The process is detailed below:** (Perincian proses tercantum di bawah):
-1.Ketika pengguna mengirim permintaan akses ke sumber daya gambar (misalnya, 1.jpg) di ```www.test.com```, permintaan penyelesaian nama domain akan diinisiasikan ke DNS lokal.
-2.Ketika DNS lokal menyelesaikan ```www.test.com```, CNAME ```www.test.com.cdn.dnsv1.com``` telah mengalami konfigurasi, maka permintaan penyelesaian akan dikirimkan ke Tencent DNS (GSLB), yaitu sistem penjadwalan milik Tencent Cloud yang akan menetapkan IP simpul optimal untuk permintaan tersebut.
+1.Ketika pengguna mengirim permintaan akses ke sumber daya gambar (misalnya, 1.jpg) di `www.test.com`, permintaan penyelesaian nama domain akan diinisiasikan ke DNS lokal.
+2.Ketika DNS lokal menyelesaikan `www.test.com`, CNAME `www.test.com.cdn.dnsv1.com` telah mengalami konfigurasi, maka permintaan penyelesaian akan dikirimkan ke Tencent DNS (GSLB), yaitu sistem penjadwalan milik Tencent Cloud yang akan menetapkan IP simpul optimal untuk permintaan tersebut.
 3.DNS lokal menerima IP yang sudah jadi yang dikembalikan oleh Tencent DNS.
 4.Pengguna menerima IP yang sudah jadi.
 5.Pengguna mengirim permintaan akses untuk 1.jpg ke IP yang diterima.
