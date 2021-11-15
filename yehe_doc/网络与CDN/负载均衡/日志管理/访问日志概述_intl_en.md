@@ -28,7 +28,7 @@ CLB supports configuring access logs to collect and record the details of each c
 </tr>
 <tr>
 <td>Supported regions</td>
-<td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Mumbai, Seoul, Tokyo, Silicon Valley, Virginia, Toronto, Frankfurt. </td>
+<td>For more details on CLS available regions, see <a href="https://intl.cloud.tencent.com/zh/document/product/614/18940">Available Regions</a>.</td>
 </tr>
 <tr>
 <td>Supported CLB type</td>
