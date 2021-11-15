@@ -6,41 +6,41 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------ |
-| [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying an object list | Queries some or all objects in a bucket |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
+| [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying objects | Queries some or all the objects in a bucket. |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object (creating a directory) | Uploads an object to a bucket. |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies a file to a destination path |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
-| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects in a single request |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system. |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object (modifying attributes) | Copies an object to a destination path |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting an object | Deletes a specified object from a bucket. |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket. |
 
-**Multipart upload operations**
+**Multipart operations**
 
-| API          | Operation                   | Description                                       |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries the information about ongoing multipart uploads |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a part in a multipart upload |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload task and deletes the uploaded parts |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload. |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads a file in parts. |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying an object part | Copies a part of an object. |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of a file. |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts. |
 
-**Other Operations**
+**Other operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ---------------------------------- |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL of a specified object in a bucket |
-| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying object ACL | Queries the ACL of an object |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access. |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting an object ACL | Sets an ACL for an object in a bucket |
+| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying an object ACL | Queries the ACL of an object |
 
 ## Simple Operations
 
-### Querying an object list
+### Querying objects
 
-#### Feature description
+#### Description
 
-This API is used to query some or all objects in a bucket.
+This API is used to query some or all the objects in a bucket.
 
 #### Method prototype
 
@@ -122,7 +122,7 @@ if (cos_status_is_ok(s)) {
     printf("list object failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
@@ -156,7 +156,7 @@ cos_list_object_params_t *list_params = NULL;
 list_params = cos_create_list_object_params(p);
 // The prefix indicates that the key of the object to be listed must start with this value
 cos_str_set(&list_params->prefix, "folder/");
-// Set the delimiter to "/" to list objects in the current directory; and leave it empty to list all objects
+// Set the delimiter to "/" to list objects in the current directory. To list all objects, leave it empty.
 cos_str_set(&list_params->delimiter, "/");
 // Set the maximum number of traversed objects (up to 1,000 per listobject request)
 list_params->max_ret = 1000;
@@ -185,9 +185,9 @@ while (is_truncated) {
 cos_pool_destroy(p);
 ```
 
-### Uploading an object using simple upload
+### Uploading an object (creating a directory) using simple upload
 
-#### Feature description
+#### Description
 
 This API is used to upload an object of up to 5 GB in size to a specified bucket. To upload objects larger than 5 GB, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
 
@@ -207,7 +207,7 @@ cos_status_t *cos_put_object_from_file(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
 | filename | Filename of the local object before it is uploaded to COS | String |
 | headers      | Additional headers of a COS request | Struct |
@@ -259,7 +259,7 @@ if (cos_status_is_ok(s)) {
     printf("put object failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
@@ -331,9 +331,57 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p);
 ```
 
+#### Sample 4. Uploading an object (limiting single-URL speed)
+
+>? For more information about the speed limits on object uploads and downloads, please see [Single-URL Speed Limits](https://intl.cloud.tencent.com/document/product/436/34072).
+
+```cpp
+cos_pool_t *p = NULL;
+int is_cname = 0;
+cos_status_t *s = NULL;
+cos_request_options_t *options = NULL;
+cos_string_t bucket;
+cos_string_t object;
+cos_string_t file;
+cos_table_t *resp_headers = NULL;
+cos_table_t *headers = NULL;
+
+// Create a memory pool
+cos_pool_create(&p, NULL);
+
+// Initialize the request options
+options = cos_request_options_create(p);
+options->config = cos_config_create(options->pool);
+cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
+cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
+cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
+cos_str_set(&options->config->appid, TEST_APPID);
+options->config->is_cname = is_cname;
+options->ctl = cos_http_controller_create(options->pool, 0);
+cos_str_set(&bucket, TEST_BUCKET_NAME);
+
+// The speed range is 819200 to 838860800, that is 100 KB/s to 100 MB/s. If the value is not within this range, 400 will be returned.
+headers = cos_table_make(p, 1);
+cos_table_add_int(headers, "x-cos-traffic-limit", 819200);
+
+// Upload an object
+cos_str_set(&file, TEST_DOWNLOAD_NAME);
+cos_str_set(&object, TEST_OBJECT_NAME);
+s = cos_put_object_from_file(options, &bucket, &object, &file, headers, &resp_headers);
+if (cos_status_is_ok(s)) {
+    printf("put object succeeded\n");
+} else {
+    printf("put object failed\n");
+}
+
+// Destroy the memory pool.
+cos_pool_destroy(p); 
+```
+
+
 ### Querying object metadata
 
-#### Feature description
+#### Description
 
 This API is used to query the metadata of an object.
 
@@ -352,7 +400,7 @@ cos_status_t *cos_head_object(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
 | headers      | Additional headers of a COS request | Struct |
 | resp_headers | Returns the HTTP response headers | Struct |
@@ -366,7 +414,7 @@ cos_status_t *cos_head_object(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -400,13 +448,13 @@ if (cos_status_is_ok(s)) {
     printf("head object failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
 ### Downloading an object
 
-#### Feature description
+#### Description
 
 This API is used to download an object to the local file system. This operation requires that you have read permission for the object, or that the object has public read permission enabled.
 
@@ -427,7 +475,7 @@ cos_status_t *cos_get_object_to_file(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
 | headers      | Additional headers of a COS request | Struct |
 | params | Parameters for the COS request operation | Struct |
@@ -443,7 +491,7 @@ cos_status_t *cos_get_object_to_file(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Sample 1. Simple download
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -479,15 +527,64 @@ if (cos_status_is_ok(s)) {
     printf("get object failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
-### Copying an object
+#### Sample 2. Downloading an object (limiting single-URL speed)
 
-#### Feature description
+>? For more information about the speed limits on object uploads and downloads, please see [Single-URL Speed Limits](https://intl.cloud.tencent.com/document/product/436/34072).
 
-This API is used to copy a file to the destination path.
+```cpp
+cos_pool_t *p = NULL;
+int is_cname = 0;
+cos_status_t *s = NULL;
+cos_request_options_t *options = NULL;
+cos_string_t bucket;
+cos_string_t object;
+cos_string_t file;
+cos_table_t *headers = NULL;
+cos_table_t *resp_headers = NULL;
+
+// Create a memory pool
+cos_pool_create(&p, NULL);
+
+// Initialize the request options
+options = cos_request_options_create(p);
+options->config = cos_config_create(options->pool);
+cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
+cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
+cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
+cos_str_set(&options->config->appid, TEST_APPID);
+options->config->is_cname = is_cname;
+options->ctl = cos_http_controller_create(options->pool, 0);
+cos_str_set(&bucket, TEST_BUCKET_NAME);
+
+// The speed range is 819200 to 838860800, that is 100 KB/s to 100 MB/s. If the value is not within this range, 400 will be returned.
+headers = cos_table_make(p, 1);
+cos_table_add_int(headers, "x-cos-traffic-limit", 819200);
+
+// Get the object
+cos_str_set(&file, TEST_DOWNLOAD_NAME);
+cos_str_set(&object, TEST_OBJECT_NAME);
+s = cos_get_object_to_file(options, &bucket, &object, headers, NULL, &file, &resp_headers);
+if (cos_status_is_ok(s)) {
+    printf("get object succeeded\n");
+} else {
+    printf("get object failed\n");
+}
+
+// Destroy the memory pool.
+cos_pool_destroy(p); 
+```
+
+
+
+### Copying an object (modifying attributes)
+
+#### Description
+
+This API is used to copy an object to a destination path. You can also use this API to modify object attributes such as storage class.
 
 #### Method prototype
 
@@ -517,7 +614,7 @@ cos_status_t *cos_copy_object(const cos_request_options_t *options,
 | copy_object_param | Parameters of the `Put Object Copy` operation | Struct |
 | etag | Returns the MD5 checksum of the file                                          | String |
 | last_modify | Returns the time the file was last modified in GMT format | String |
-| resp_headers | Returns the HTTP response headers | Struct  |
+| resp_headers | Returns the HTTP response headers | Struct |
 
 #### Response description
 
@@ -528,7 +625,7 @@ cos_status_t *cos_copy_object(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Sample 1. Copying an object
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -571,15 +668,73 @@ if (cos_status_is_ok(s)) {
     printf("put object copy failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p);  
 ```
 
-### Deleting a single object
+#### Sample 2:. Modifying storage class
 
-#### Feature description
+>!You can change STANDARD to STANDARD_IA, INTELLIGENT TIERING, ARCHIVE, or DEEP ARCHIVE. To modify ARCHIVE or DEEP ARCHIVE to other storage classes, you need to call `cos_post_object_restore()` to restore objects in ARCHIVE or DEEP ARCHIVE first before calling this API. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 
-This API deletes a specified object from a bucket.
+
+```cpp
+cos_pool_t *p = NULL;
+int is_cname = 0;
+cos_status_t *s = NULL;
+cos_request_options_t *options = NULL;
+cos_string_t bucket;
+cos_string_t object;
+cos_string_t src_bucket;
+cos_string_t src_object;
+cos_string_t src_endpoint;
+cos_table_t *resp_headers = NULL;
+
+// Create a memory pool
+cos_pool_create(&p, NULL);
+
+// Initialize the request options
+options = cos_request_options_create(p);
+options->config = cos_config_create(options->pool);
+cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
+cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
+cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
+cos_str_set(&options->config->appid, TEST_APPID);
+options->config->is_cname = is_cname;
+options->ctl = cos_http_controller_create(options->pool, 0);
+cos_str_set(&bucket, TEST_BUCKET_NAME);
+// The source and destination objects are the same.
+cos_str_set(&object, "test.txt");
+cos_str_set(&src_object, "test.txt");
+cos_str_set(&src_bucket, TEST_BUCKET_NAME);
+cos_str_set(&src_endpoint, TEST_COS_ENDPOINT);
+
+// Set the x-cos-metadata-directive and x-cos-storage-class headers and replace it with the desired storage class.
+cos_table_t *headers = cos_table_make(p, 2);
+apr_table_add(headers, "x-cos-metadata-directive", "Replaced");
+// Valid storage classes are NTELLIGENT_TIERING, MAZ_INTELLIGENT_TIERING, STANDARD_IA, ARCHIVE, and DEEP_ARCHIVE.
+apr_table_add(headers, "x-cos-storage-class", "ARCHIVE");
+
+// Copy the object and set the storage class.
+cos_copy_object_params_t *params = NULL;
+params = cos_create_copy_object_params(p);
+s = cos_copy_object(options, &src_bucket, &src_object, &src_endpoint, & bucket, &object, headers, params, &resp_headers);
+if (cos_status_is_ok(s)) {
+    printf("copy object succeeded\n");
+} else {
+    printf("copy object failed\n");
+}
+
+// Destroy the memory pool.
+cos_pool_destroy(p); 
+```
+
+
+
+### Deleting an object
+
+#### Description
+
+This API is used to delete a specified object from a bucket.
 
 #### Method prototype
 
@@ -595,7 +750,7 @@ cos_status_t *cos_delete_object(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
 | resp_headers | Returns the HTTP response headers | Struct |
 
@@ -643,7 +798,7 @@ if (cos_status_is_ok(s)) {
     printf("delete object failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 
 ```
@@ -684,7 +839,7 @@ if (cos_status_is_ok(s)) {
     printf("delete object failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
@@ -692,7 +847,7 @@ cos_pool_destroy(p);
 
 ### Deleting multiple objects
 
-#### Feature description
+#### Description
 
 This API is used to delete multiple objects from a bucket in a single request. It can delete up to 1,000 objects in a single request. This API supports two response modes: Verbose and Quiet. Verbose mode returns the information on the deletion of each object, whereas Quiet mode only returns the information on the objects for which deletion errors were reported.
 
@@ -781,7 +936,7 @@ if (cos_status_is_ok(s)) {
     printf("delete objects failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 
 ```
@@ -841,11 +996,11 @@ cos_pool_destroy(p);
 
 
 
-## Multipart Upload Operations
+## Multipart Operations
 
 ### Querying multipart uploads
 
-#### Feature description
+#### Description
 
 This API is used to query in-progress multipart uploads. Up to 1,000 in-progress multipart uploads can be queried in a single request
 
@@ -898,7 +1053,7 @@ typedef struct {
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -925,14 +1080,14 @@ list_multipart_params->max_ret = 999;
 s = cos_list_multipart_upload(options, &bucket, list_multipart_params, &resp_headers);
 log_status(s);
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p);
 
 ```
 
 ### Initializing a multipart upload
 
-#### Feature description
+#### Description
 
 This API is used to initialize a multipart upload. After the request is executed successfully, the `Upload ID` is returned for the subsequent `Upload Part` requests.
 
@@ -952,7 +1107,7 @@ cos_status_t *cos_init_multipart_upload(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
 | upload_id | Returns the ID of the multipart upload operation | String |
 | headers      | Additional headers of a COS request | Struct |
@@ -967,7 +1122,7 @@ cos_status_t *cos_init_multipart_upload(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1003,15 +1158,15 @@ if (cos_status_is_ok(s)) {
     printf("init multipart upload failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
 
 
-### Uploading a part
+### Uploading parts
 
-#### Feature description
+#### Description
 
 This API is used to upload parts (possibly out of order) in an initiated multipart upload operation. This API supports the upload of between 1 to 10,000 parts, with each part ranging from 1 MB to 5 GB in size. The `Upload Part` request should include the `partNumber` and `uploadID`.
 
@@ -1032,9 +1187,9 @@ cos_status_t *cos_upload_part_from_file(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
-| upload_id | ID of the upload task | String |
+| upload_id | Upload task ID | String |
 | part_num | Part number | Int |
 | upload_file | Information on the file to be uploaded | Struct |
 | resp_headers | Returns the HTTP response headers | Struct |
@@ -1048,7 +1203,7 @@ cos_status_t *cos_upload_part_from_file(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1104,15 +1259,15 @@ while(pos < file_length) {
     }
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
-### Copying a part
+### Copying an object part
 
-#### Feature description
+#### Description
 
-This API is used to copy an object as a part.
+This API is used to copy a part of an object.
 
 #### Method prototype
 
@@ -1132,7 +1287,7 @@ cos_status_t *cos_upload_part_copy(const cos_request_options_t *options,
 | copy_source | Source file path | String |
 | dest_bucket | Name of the destination bucket in the format of `BucketName-APPID` | String |
 | dest_object | Name of the destination object                                            | String |
-| upload_id | ID of the upload task | String |
+| upload_id | Upload task ID | String |
 | part_num | Part number | Int |
 | range_start | The starting offset of the source file | Int |
 | range_end | The ending offset of the source file | Int |
@@ -1150,7 +1305,7 @@ cos_status_t *cos_upload_part_copy(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1278,7 +1433,7 @@ printf("local file len = %"APR_INT64_T_FMT", download file len = %"APR_INT64_T_F
 remove(download_filename);
 remove(local_filename);
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p);    
 ```
 
@@ -1286,9 +1441,9 @@ cos_pool_destroy(p);
 
 ### Querying uploaded parts
 
-#### Feature description
+#### Description
 
-This API is used to query the uploaded parts of a specified multipart upload operation.
+This API is used to query the uploaded parts of a specified multipart upload.
 
 #### Method prototype
 
@@ -1331,7 +1486,7 @@ cos_status_t *cos_list_upload_part(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1395,7 +1550,7 @@ if (cos_status_is_ok(s)) {
     printf("Complete multipart upload from file failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
@@ -1406,7 +1561,7 @@ cos_pool_destroy(p);
 
 ### Completing a multipart upload
 
-#### Feature description
+#### Description
 
 This API is used to complete the multipart upload of an entire file. You can use this API to complete the multipart upload when you have uploaded all the parts using the `Upload Parts` API. When using this API, you need to provide the `PartNumber` and `ETag` for every part in the body to verify the accuracy of the parts.
 
@@ -1427,9 +1582,9 @@ cos_status_t *cos_complete_multipart_upload(const cos_request_options_t *options
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
-| upload_id | ID of the upload task | String |
+| upload_id | Upload task ID | String |
 | part_list | Parameters for the `Complete Multipart Upload` operation | Struct |
 | part_number | Part number | String |
 | etag | ETag of the part, which is the `sha1` checksum value. It must be enclosed in double quotes, such as: `"3a0f1fd698c235af9cf098cb74aa25bc"`. | String |
@@ -1445,7 +1600,7 @@ cos_status_t *cos_complete_multipart_upload(const cos_request_options_t *options
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1509,13 +1664,13 @@ if (cos_status_is_ok(s)) {
     printf("Complete multipart upload from file failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
 ### Aborting a multipart upload
 
-#### Feature description
+#### Description
 
 This API is used to abort a multipart upload operation and delete the uploaded parts. When this API is called, a failure is returned for any request using the `Upload Parts` API.
 
@@ -1534,9 +1689,9 @@ cos_status_t *cos_abort_multipart_upload(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
-| upload_id | ID of the upload task | String |
+| upload_id | Upload task ID | String |
 | resp_headers | Returns the HTTP response headers | Struct |
 
 #### Response description
@@ -1548,7 +1703,7 @@ cos_status_t *cos_abort_multipart_upload(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1597,15 +1752,15 @@ if (cos_status_is_ok(s)) {
     printf("Abort multipart upload failed\n"); 
 }    
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p);
 ```
 
-##Other Operations
+## Other Operations
 
 ### Restoring an archived object
 
-#### Feature description
+#### Description
 
 This API is used to restore an archived object for access.
 
@@ -1644,7 +1799,7 @@ cos_status_t *cos_post_object_restore(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1681,15 +1836,15 @@ if (cos_status_is_ok(s)) {
     printf("post object restore failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
-### Setting object ACL
+### Setting an object ACL
 
-#### Feature description
+#### Description
 
-This API is used to set the ACL for a specified object in a bucket.
+This API is used to set an ACL for an object in a bucket.
 
 #### Method prototype
 
@@ -1711,11 +1866,13 @@ cos_status_t *cos_put_object_acl(const cos_request_options_t *options,
 | options | COS request options | Struct |
 | bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
-| cos_acl | Allowed user-defined permissions. Valid values: COS_ACL_PRIVATE(0), COS_ACL_PUBLIC_READ(1)<br>Default: COS_ACL_PRIVATE(0) | Enum   |
-| grant_read | Authorized user to which read permission is granted | String |
-| grant_write | Authorized user to which write permission is granted | String |
-| grant_full_ctrl | Authorized user to which full permission is granted | String |
+| cos_acl | Allow users to customize permissions. Valid values: COS_ACL_PRIVATE(0) (default), COS_ACL_PUBLIC_READ(1), COS_ACL_PUBLIC_READ_WRITE(2)  | Enum |
+| grant_read | Grants a user permission to read an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | String |
+| grant_write | Grants a user permission to write to an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | String |
+| grant_full_ctrl | Grants a user full permission to operate on an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | String |
 | resp_headers | Returns the HTTP response headers | Struct |
+
+>?For more information, please see [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) and [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).
 
 #### Response description
 
@@ -1726,7 +1883,7 @@ cos_status_t *cos_put_object_acl(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1762,13 +1919,13 @@ if (cos_status_is_ok(s)) {
     printf("put object acl failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p);  
 ```
 
 ### Querying an object ACL
 
-#### Feature description
+#### Description
 
 This API is used to query the ACL of an object.
 
@@ -1787,7 +1944,7 @@ cos_status_t *cos_get_object_acl(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
 | acl_param | Parameters for the request | Struct |
 | owner_id | ID of the bucket owner | String |
@@ -1808,7 +1965,7 @@ cos_status_t *cos_get_object_acl(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1848,7 +2005,7 @@ if (cos_status_is_ok(s)) {
     printf("get object acl failed\n");
 }
 
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p); 
 ```
 
@@ -1856,7 +2013,7 @@ cos_pool_destroy(p);
 
 ### Uploading an object (checkpoint restart)
 
-#### Feature description
+#### Description
 
 The upload API automatically divides your data into parts based on the size of your file. It's easier to use, eliminating the need to follow each step of the multipart upload process. The part size is 1,048,576 (1 MB) by default and can be adjusted via the `part_size` parameter. 
 
@@ -1880,7 +2037,7 @@ cos_status_t *cos_resumable_upload_file(cos_request_options_t *options,
 | Parameter | Description | Type |
 | ----------------- | ------------------------------------------------------------ | -------- |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
 | filepath | The local file name of the object                                          | String |
 | headers | Headers attached to the COS request | Struct |
@@ -1903,7 +2060,7 @@ cos_status_t *cos_resumable_upload_file(cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```c
 cos_pool_t *p = NULL;
@@ -1949,7 +2106,7 @@ cos_pool_destroy(p);
 
 ### Downloading an object (checkpoint restart)
 
-#### Feature description
+#### Description
 
 The multipart download API automatically downloads data concurrently with `Range` according to the object size. The part size is 1,048,576 (1 MB) by default and can be adjusted via the `part_size` parameter.
 
@@ -1971,7 +2128,7 @@ cos_status_t *cos_resumable_download_file(cos_request_options_t *options,
 | Parameter | Description | Type |
 | ----------------- | ------------------------------------------------------------ | -------- |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| bucket | Bucket name in the format: `BucketName-APPID` | String |
 | object | Object name | String |
 | filepath | The local file name of the object                                          | String |
 | headers | Headers attached to the COS request | Struct |
@@ -1983,7 +2140,7 @@ cos_status_t *cos_resumable_download_file(cos_request_options_t *options,
 | checkpoint_path | Indicates the file path for which the upload progress is saved when checkpoint restart is enabled. Default: `<filepath>.cp`, where `filepath` is the local file name of the object | String   |
 | progress_callback | Callback function for the download progress | Function |
 
-#### Result description
+#### Response
 
 | Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
@@ -1992,7 +2149,7 @@ cos_status_t *cos_resumable_download_file(cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Samples
 
 ```c
 cos_pool_t *p = NULL;
@@ -2030,16 +2187,16 @@ cos_pool_destroy(p);
 
 ### Moving an object
 
-#### Feature description
+#### Description
 
 Object movement involves copying the source object to the target location and deleting the source object.
 
 Since COS uses the bucket name (`Bucket`) and object key (`ObjectKey`) to identify objects, moving an object will change the object identifier. Currently, COS’s C SDK does not provide a standalone API to change object identifiers. However, you can still move the object with a combination of basic operations (**object copy** and **object delete**).
 
-- [Copying an object](#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
+- [Copying an object](#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6.EF.BC.88.E4.BF.AE.E6.94.B9.E5.B1.9E.E6.80.A7.EF.BC.89)
 - [Deleting an object](#.E5.88.A0.E9.99.A4.E5.8D.95.E4.B8.AA.E5.AF.B9.E8.B1.A1)
 
-#### Sample
+#### Samples
 ```c
 cos_pool_t *p = NULL;                                                                    
 int is_cname = 0;                                                                        
@@ -2076,6 +2233,8 @@ if (cos_status_is_ok(s)) {
 } else {
 	printf("move object failed\n");
 }
-// Destroy the memory pool
+// Destroy the memory pool.
 cos_pool_destroy(p);
 ```
+	
+	

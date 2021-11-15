@@ -1,50 +1,54 @@
-## What Is Inventory
+## What Is Inventory?
 
-Inventory is a feature that helps users manage bucket objects. It operates periodically and as an alternative to the COS synchronous List API operation. COS can daily or weekly scan a specified object or objects with a same prefix in a bucket based on an inventory task configured by the user, and export and store an inventory report as a CSV file in the bucket specified by the user. The file lists stored objects and corresponding metadata, and records the desired object attribute information based on the configuration.
+The inventory feature helps users manage objects in a bucket. It operates periodically as an alternative to the COS synchronous List API. COS can daily or weekly scan a specified object or objects with the same prefix in a bucket based on an inventory job configured, and export and save the inventory report in CSV format to a specified bucket. The report lists the objects stored and their metadata, and records the desired object attributes as configured.
 
 You can use the inventory feature for various purposes, including but not limited to:
 
-- Review and report replication and encryption states of an object.
-- Streamline and speed up service workflows and big data jobs.
+- Reviewing and reporting the replication and encryption status of objects.
+- Simplifying and accelerating business workflows and big data jobs.
 
-> !You can configure multiple inventory tasks for one bucket. COS doesn’t directly read the content of an object, but only scan the attribute information such as metadata of the object.
+>!
+>- You can configure multiple inventory tasks in one bucket. Such tasks do not directly read the object content during their execution; instead, they only scan the attribute information such as object metadata.
+>- Finance Cloud regions are not supported yet.
+>
 
 ## Inventory Parameters
 
 After you configures an inventory task for a bucket, COS regularly scans a specified object in the bucket based on your configuration, and exports an inventory report in .csv format. Currently, the inventory report can record the following information:
 
-| Inventory Information | Description |
+| Inventory information | Description |
 | ------------------- | ------------------------------------------------------------ |
-| AppID               | Account ID                                                |
-| Bucket | Name of the bucket for which an inventory task is executed. |
+| AppID | Account ID |
+| Bucket | Name of the bucket where the inventory job is performed |
 | fileFormat       |  File format  |
-| listObjectCount | Number of listed objects | 
-| listStorageSize | Size of listed objects | 
+| listObjectCount | Number of objects to list, which will be used for billing. For more information, please see the inventory feature fees in [Management Fees](https://intl.cloud.tencent.com/document/product/436/40098). |
+| listStorageSize | Size of listed objects |
 |filterObjectCount  |Number of filtered objects|
 |filterStorageSize  |  Size of filtered objects|
 | Key | Name of an object file in a bucket. When using the CSV file format, the key name is URL-encoded and must be decoded before you can use it. |
 | VersionId | Version ID of an object. After version control is enabled for a bucket, COS specifies a version ID for the object added to the bucket. If the list is for the current version only, the inventory does not include this field. |
 | IsLatest | Sets to True if the latest object version is used. This field is not included if the list is only for the current version of objects. |
 | IsDeleteMarker | Sets to True if the object is a delete marker. This field is not included if the list is only for the current version of objects. |
-| Size | Size of an object (in bytes) |
-| LastModifiedDate | Last modified date of an object (the most recent date prevails) |
+| Size | Object size in bytes |
+| LastModifiedDate | The last modified date of the object |
 | ETag | Hash value of an object. It displays only modification to the content of an object, rather than to its metadata. The ETag may be or may not be the MD5 checksum of the data of the object, and this depends on how the object is created and encrypted.|
 | StorageClass | Storage class of the object. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) |
 | IsMultipartUploaded | Sets to True if the object is uploaded in multiple parts. For more information, see [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112) |
-| Replicationstatus | Sets to PENDING, COMPLETED, FAILED, or REPLICA. For more information, see [Cross-Region Replication Descriptions](https://intl.cloud.tencent.com/document/product/436/19923).|
+| Replicationstatus | Replication status. Valid values: `PENDING`, `COMPLETED`, `FAILED`, `REPLICA`. For more information, please see [Cross-Bucket Replication Actions](https://intl.cloud.tencent.com/document/product/436/19923).|
+| Tag | Object tag |
 
-## How to Configure the Inventory
+## How to Configure Inventory
 
-Before configuring the inventory, you need to understand two concepts:
+Before configuring an inventory, you need to understand two concepts:
 
-- Source bucket: The bucket for which the inventory is to be enabled
+- Source bucket: The bucket for which you want to enable inventory, containing:
   - Objects listed in the inventory
   - Configuration of the inventory
 - Destination bucket: The bucket where to store the inventory report, containing
   - An inventory list file
   - Manifest files that describe the location of the inventory list file
 
-An inventory can be configured in the following steps:
+An inventory can be configured as follows:
 
 <span id="step1"></span>
 
@@ -58,33 +62,57 @@ To inform COS of object information to be analyzed, you need to configure the fo
 <span id="step2"></span>
 #### Configure the storage information for the inventory report
 
-You need to inform COS of an export frequency of the inventory report, a bucket used to store the inventory report, and whether the inventory report needs to be encrypted. Please see the configuration details as below:
+You need to tell COS how often to export the inventory report, which bucket to store the report in, and whether the report should be encrypted. The configuration information is as follows:
 
 - Select an export frequency: Daily or weekly. COS will execute the inventory feature at the specified frequency.
 - Select an encryption mode: No encryption or SSE-COS. If SSE-COS is selected, COS encrypts the generated inventory report.
-- Configure an export location: You need to specify the bucket to store the inventory report.
+- Configure the output location of the inventory: You need to specify the bucket where to store the inventory report.
 
-> !The destination bucket must be in the same region as the source bucket. They can be the same bucket.
+> The destination bucket must be in the same region as the source bucket. They can be the same bucket.
 
 
 ## Directions
 
-### Configuring an Inventory in the Console
+#### Configuring inventory via the console
 
 You can refer to the console document [Enabling Inventory](https://intl.cloud.tencent.com/document/product/436/30624) to learn how to configure the inventory feature in the console.
 
-### Configuring an Inventory Through APIs
+#### Configuring inventory via APIs
 
-You can refer to the following API documents to learn how to configure an inventory through APIs:
+To enable the inventory feature for a specified bucket using APIs, follow the steps below:
 
-- [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) 
-- [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) 
-- [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) 
-- [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627) 
+1. Create a COS role.
+2. Bind permissions to the COS role.
+3. Enable inventory.
 
-## Storage Path for the Inventory Report
+#### 1. Creating a COS role
+Create a COS role. For more information about the API, please see [CreateRole](https://intl.cloud.tencent.com/document/product/598/33561).
+Here, `roleName` must be `COS_QcsRole`.
+policyDocument must be:
+```
+{
+	"version": "2.0",
+	"statement": [{
+		"action": "name/sts:AssumeRole",
+		"effect": "allow",
+		"principal": {
+			"service": "cos.cloud.tencent.com"
+		}
+	}]
+}
+```
+#### 2. Binding permissions to the COS role
+Grant the log role permissions. For specific API information, see [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562).
+Here, `policyName` is set to `QcloudCOSFullAccess`, `roleName` is the `COS_QcsRole` in step 1, or the `roleID` returned when `roleName` was created.
 
-The inventory report and related manifest files are published in the destination bucket. The inventory report is published in the following path:
+#### 3. Enabling inventory
+Call the API to enable inventory. For more information about the API, please see [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625). Note that the destination bucket to store the inventory files should be in the same region as the source bucket.
+
+
+
+## Storage Path of the Inventory Report
+
+The inventory report and Manifest-related file are put in the destination bucket. The inventory report is located in the following path:
 
 ```shell
 destination-prefix/appid/source-bucket/config-ID/
@@ -97,28 +125,29 @@ destination-prefix/appid/source-bucket/config-ID/YYYYMMDD/manifest.json
 destination-prefix/appid/source-bucket/config-ID/YYYYMMDD/manifest.checksum
 ```
 
-Meaning of the path is as follows:
+The meanings of the paths are as follows:
 
-- **desitination-prefix**: "Destination Prefix" set by the user during configuration of the inventory. It may be used to group all inventory reports in a public location in the destination bucket.
-- **source-bucket**: Name of the source bucket corresponding to the inventory report. This folder is intended to prevent possible conflicts when inventory reports from multiple source buckets are sent to a same destination bucket.
-- **config-ID**: "Inventory Name" set by the user during configuration of the inventory. When multiple inventory reports are set for a same source bucket and sent to a same destination bucket, you can specify config-ID to distinguish between the different inventory reports.
-- **YYYY-MM-DD-HH-MM**: Timestamp, including the time and the date when the bucket starts to be scanned during generation of the inventory report.
-- **manifest.json**: Manifest file.
-- **manifest.checksum**: MD5 of the content of the manifest.json file.
+- **destination-prefix**: This is the "destination prefix" set when you configure the inventory, which can be used to group all inventory reports in a public location in the destination bucket.
+- **source-bucket**: This is the name of the source bucket corresponding to the inventory report. This folder is added to avoid conflicts that may occur when multiple source buckets send their inventory reports to the same destination bucket.
+- **config-ID**: This is the "inventory name" set when you configure the inventory. If multiple inventory reports are configured in the same source bucket and sent to the same destination bucket, config-ID can be used to distinguish among different reports.
+- **YYYY-MM-DD-HH-MM**: Timestamp, including the time and date when the bucket scan is started when the inventory report is generated.
+- **manifest.json**: This is the Manifest file.
+- **manifest.checksum**: This is the MD5 of the content of the manifest.json file.
 
-The related manifest files include two files: manifest.json and manifest.checksum.
+In summary, there are two Manifest-related files: manifest.json and manifest.checksum.
 
+>?
 > The following describes the related manifest files:
-> - Both manifest.json and manifest.checksum are manifest files. manifest.json describes the location of the inventory report, and manifest.checksum is the MD5 of manifest.json. Each newly delivered inventory report comes with a set of new manifest files.
-> - Each manifest included in manifest.json provides metadata and other basic information related to the inventory. The information includes:
->   - Name of the source bucket
->   - Name of the destination bucket
->   - Inventory version
->   - Timestamp, including the date and the time when the bucket starts to be scanned during generation of the inventory report.
->   - Format and architecture of the inventory file
+> - Both manifest.json and manifest.chenksum are Manifest files. manifest.json describes the location of the inventory report, while manifest.checksum is the MD5 of the content of the manifest.json file. Each time a new inventory report is delivered, a new pair of Manifest files are carried.
+> - Each Manifest contained in manifest.json provides metadata and basic information about the inventory, including:
+> - Source bucket name.
+> - Destination bucket name.
+> - Inventory version.
+> - Timestamp, including the time and date when the bucket scan is started when the inventory report is generated.
+> - Format and architecture of the inventory file.
 >  - Object key, size, and md5Checksum of the inventory report in the destination bucket.
 
-The following shows an example of the manifest content in the manifest.json file in .csv format:
+Below is a Manifest example in the manifest.json file of an inventory in CSV format:
 
 ```
 {
@@ -142,8 +171,8 @@ The following shows an example of the manifest content in the manifest.json file
 }
 ```
 
-### Inventory Consistency
+#### Inventory consistency
 
 All of your objects might not appear in each inventory list. The inventory list provides eventual consistency for PUTs of both new objects and overwrites, and DELETEs. Therefore, the inventory report possibly does not include the latest added or deleted object. For example, if the user uploads or deletes an object when COS is executing an inventory task configured by the user, the results of the upload or deletion operations may not be reflected in the inventory report.
 
-To validate the status of the object before COS performs an operation, you can search for the metadata of the object by using the [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) API, or check the attributes of the object in COS Console.
+If you want to verify the object status before the execution, you are advised to call the [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) API to extract the object metadata, or check the object attributes in the COS console.

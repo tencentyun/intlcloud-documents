@@ -36,18 +36,18 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 ### Querying objects
 
-#### API description
+#### Description
 
 This API is used to query some or all the objects in a bucket.
 
-#### Samples
+#### Example
 
 Sample 1. Listing all files in the `a` directory
 
 [//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Prefix: 'a/', /*Optional*/
 }, function(err, data) {
@@ -86,7 +86,7 @@ Sample 2. Listing the files in the `a` directory without deep traversal
 [//]: # (.cssg-snippet-get-bucket-with-delimiter)
 ```js
 cos.getBucket({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Prefix: 'a/',              /* Optional */
     Delimiter: '/',            /* Optional */
@@ -160,7 +160,7 @@ listFolder();
 | Delimiter | Separating symbol used to group object keys, which is usually `/`. Objects with identical paths between `Prefix` or, if no `Prefix` is specified, the beginning of their keys, and the first delimiter are grouped together and defined as common prefixes. All common prefixes are listed. | String | No |
 | Marker | Key of the object after which the returned list begins. Entries are listed in UTF-8 lexicographical order by default. | String | No |
 | MaxKeys | Maximum number of entries returned in a single response, which is `1000` (the maximum value allowed) by default | String | No |
-| EncodingType | Encoding type of the returned value. Valid value: `url`, meaning that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded to `%E8%85%BE%E8%AE%AF%E4%BA%91`. | String | No |
+| encoding-type | Indicates the encoding method of the returned value. Valid value: `url`, which means that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded as `Tencent%20Cloud`. | String | No |
 
 #### Callback function description
 
@@ -168,7 +168,7 @@ listFolder();
 function(err, data) { ... }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ----------------- | ------------------------------------------------------------ | ----------- |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
@@ -196,9 +196,9 @@ function(err, data) { ... }
 | - - - DisplayName | Name of the object owner | String |
 | - - StorageClass | Storage class of the object. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
 
-### Uploading an object in whole
+### Uploading an object using simple upload
 
-#### API description
+#### Description
 
 This API (`PUT Object`) is used to upload an object to a bucket. To call this API, you must have write access to the bucket.
 
@@ -208,16 +208,16 @@ This API (`PUT Object`) is used to upload an object to a bucket. To call this AP
 > - After an object is uploaded, you can use the same key to generate a pre-signed URL, which can be shared with other clients for downloading. To download, please use the `GET` method. The detailed API description is shown below. If your file is set to private-read, note that the pre-signed URL will only be valid for a certain period of time.
 > 
 
-#### Examples
+#### Example
 
 Uploading a small file
 
 [//]: # (.cssg-snippet-put-object)
 ```js
 cos.putObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
     StorageClass: 'STANDARD',
     Body: fileObject, // Upload the file object.
     onProgress: function(progressData) {
@@ -233,9 +233,9 @@ Uploading a string
 [//]: # (.cssg-snippet-put-object-string)
 ```js
 cos.putObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
     Body: 'hello!',
 }, function(err, data) {
     console.log(err || data);
@@ -261,7 +261,7 @@ var dataURLtoBlob = function (dataurl) {
 // Convert to BLOB for upload
 var body = dataURLtoBlob(base64Url);
 cos.putObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: 'exampleobject.png',              /* Required */
     Body: body,
@@ -275,7 +275,7 @@ Creating a directory
 [//]: # (.cssg-snippet-put-object-folder)
 ```js
 cos.putObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: 'examplefolder/',              /* Required */
     Body: '',
@@ -289,7 +289,7 @@ Uploading a file to a specified directory
 ```js
 var folder = 'examplefolder/';
 cos.putObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: folder + 'exampleobject',              /* Required */
     Body: fileObject, // Upload the file object.
@@ -342,10 +342,10 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
-| data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | - ETag | MD5 checksum of the object. The value of this parameter can be used to check whether the object was corrupted during the upload. <br>Example: `"09cba091df696af91549de27b8e7d0f6"`. **Note that double quotation marks are required at the beginning and the end.** | String |
 | - Location   | Access address of the uploaded file                                        | String |
@@ -357,16 +357,16 @@ The SDK for JS does not provide a method for the `POST Object` API. If you need 
 
 ### Querying object metadata
 
-#### API description
+#### Description
 
-This API is used to query object metadata.
+This API is used to query the metadata of an object.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-head-object)
 ```js
 cos.headObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: 'exampleobject', /*Required*/
 }, function(err, data) {
@@ -396,7 +396,7 @@ function(err, data) { ... }
 | - headers | Headers | Object |
 | data | Content returned when the request succeeds. If the request fails, it will be empty.| Object |
 | - statusCode | HTTP status code, such as `200` and `304`. `304` is returned if no modification is made after the specified time. | Number |
-| - headers | Headers returned by the request | Object |
+| - headers | Headers | Object |
 | - x-cos-object-type | Whether an object is appendable. Enumerated values: `normal`, `appendable`. The default value `normal` is not displayed. | String |
 | - x-cos-storage-class | Storage class of the object. For the enumerated values, such as `STANDARD` (default), `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). Note that `STANDARD` is not displayed if returned. | String  |
 | - x-cos-meta-\* | User-defined metadata | String |
@@ -409,18 +409,18 @@ function(err, data) { ... }
 >! This API is used to read object content. To download a file using your browser, you should first get a download URL through the `cos.getObjectUrl` method. For more information, please see [Pre-signed URLs](https://intl.cloud.tencent.com/document/product/436/31540).
 >
 
-#### API description
+#### Description
 
 This API (`GET Object`) is used to get the content, in string format, of a specified file in a bucket.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-get-object)
 ```js
 cos.getObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
 }, function(err, data) {
     console.log(err || data.Body);
 });
@@ -431,10 +431,24 @@ Getting file content with `Range` specified
 [//]: # (.cssg-snippet-get-object-range)
 ```js
 cos.getObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
     Range: 'bytes=1-3', /*Optional*/
+}, function(err, data) {
+    console.log(err || data.Body);
+});
+```
+
+Object content in BLOB format is returned.
+
+[//]: # (.cssg-snippet-get-object-data-type)
+```js
+cos.getObject({
+    Bucket: 'examplebucket-1250000000', /* Required */
+    Region: 'COS_REGION',     /* Bucket region. Required */
+    Key: 'exampleobject', /* Required */
+    DataType: 'blob',        /* Optional */
 }, function(err, data) {
     console.log(err || data.Body);
 });
@@ -447,6 +461,7 @@ cos.getObject({
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
+| DataType                     | Format of the object content returned. Enumerated values: `string` (default), `blob`, `arraybuffer` | String   | No  |
 | ResponseContentType | `Content-Type` parameter in the response header | String | No |
 | ResponseContentLanguage | `Content-Language` in the response header | String | No |
 | ResponseExpires | `Content-Expires` in the response header | String | No |
@@ -472,7 +487,7 @@ function(err, data) { ... }
 
 ```
 
-| Parameter  | Description | Type | 
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | 
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
@@ -488,23 +503,23 @@ function(err, data) { ... }
 | - x-cos-meta-\*                                               | User defined metadata                                           | String  |
 | - NotModified      | This field is returned if the request has `IfModifiedSince`. If the file hasn’t been modified after the specified time, `true` is returned. If not, `false` is returned. | Boolean |
 | - ETag | MD5 checksum of the object. The value of this parameter can be used to check whether the object was corrupted during the upload. </br>Example: `"09cba091df696af91549de27b8e7d0f6"`. **Note that double quotation marks are required at the beginning and the end.** | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  |
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | | String  |
 | - Body                | Returned file content, in string format by default        | String  |
 
 ### Checking CORS configuration
 
-#### API description
+#### Description
 
 This API (`OPTIONS Object`) is used to send a preflight request to check the CORS configuration of an object. Before making an actual CORS request, you can send an OPTIONS request that includes the source origin, HTTP method, and headers to COS to determine whether an actual CORS request can be sent. If there is no CORS configuration, "403 Forbidden" will be returned. **You can enable CORS for a bucket using the `PUT Bucket cors` API.**
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-option-object)
 ```js
 cos.optionsObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
     Origin: 'https://www.qq.com', /*Required*/
     AccessControlRequestMethod: 'PUT', /*Required*/
     AccessControlRequestHeaders: 'origin,accept,content-type' /*Optional*/
@@ -530,7 +545,7 @@ cos.optionsObject({
 function(err, data) { ... }
 ```
 
-| Parameter      | Description | Type | 
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | 
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
@@ -547,7 +562,7 @@ function(err, data) { ... }
 
 ### Copying an object
 
-#### API description
+#### Description
 
 This API (`PUT Object - Copy`) is used to create a copy of an existing COS object, that is, to copy an object from the source path (object key) to the destination path (object key). During the process, object metadata and ACLs can be modified.
 You can use this API to create a copy of an object, modify an object’s metadata (the source object and destination file have the same attributes), and move or rename an object (copy the object first and then call the deletion API).
@@ -555,7 +570,7 @@ You can use this API to create a copy of an object, modify an object’s metadat
 >! We recommend that you use this API to copy objects of 1-5 GB. For objects larger than 5 GB, please use the advanced API [Slice Copy File](#.E5.A4.8D.E5.88.B6.E5.AF.B9.E8.B1.A1).
 >
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-copy-object)
 ```js
@@ -605,20 +620,20 @@ function(err, data) { ... }
 | - headers | Headers | Object |
 | - ETag | MD5 checksum of the object, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end.** | String |
 | - LastModified | Last modified time of the object, for example, `2017-06-23T12:33:27.000Z` | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | 
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | | String  |
 
 ### Deleting an object
 
-#### API description
+#### Description
 
 This API (`DELETE Object`) is used to delete an object from a COS bucket. To call this API, you must have write access to the bucket.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: 'exampleobject'        /* Required */
 }, function(err, data) {
@@ -631,7 +646,7 @@ cos.deleteObject({
 | Parameter | Description | Type | Required |
 | --------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
+| Region | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | VersionId | Version ID of the object or delete marker to delete | String | No |
 
@@ -644,26 +659,26 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
 | - statusCode | HTTP status code, such as `200`, `204`, `403`, and `404`. **If the deletion is successful or the object does not exist, `204` or `200` will be returned. If the specified bucket is not found, `404` will be returned.** | Number |
-| - headers | Header information returned by the request | Object |
+| - headers | Headers | Object |
 
 ### Deleting multiple objects
 
-#### API description
+#### Description
 
 This API (`DELETE Multiple Objects`) is used to delete multiple objects from a bucket. You can delete up to 1,000 objects in a single request. There are two response modes for you to choose from: `Verbose` and `Quiet`. The `Verbose` mode returns the deletion result of each object, whereas the `Quiet` mode returns only information about the objects that fail to be deleted.
 
-#### Examples
+#### Example
 
 Deleting multiple files
 
 [//]: # (.cssg-snippet-delete-multi-object)
 ```js
 cos.deleteMultipleObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Objects: [
         {Key: 'exampleobject'},
@@ -679,7 +694,7 @@ Deleting multiple objects with a specified prefix (deleting files in a specified
 ```js
 var bucket: 'examplebucket-1250000000'; /* Required */
 var region: 'ap-beijing';     /* Region of the bucket (required) */
-var prefix = 'examplefolder/';  /* The directory/prefix of the objects to delete */
+var prefix = 'examplefolder/';  /* The directory/prefix of the objects to query*/
 var deleteFiles = function (marker) {
     cos.getBucket({
         Bucket: bucket,
@@ -729,7 +744,7 @@ deleteFiles();
 function(err, data) { ... }
 ```
 
-| Parameter  | Description  | Type |
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Parameter Description                                                     | Type |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as `200`, `204`, `403`, and `404` | Number |
@@ -750,16 +765,16 @@ function(err, data) { ... }
 
 ### Restoring an archived object
 
-#### API description
+#### Description
 
 This API (`POST Object restore`) is used to restore an archived COS object. The restored readable object is temporary. You can set the time during which the temporary object remains readable and the time to delete it. You can use the `Days` parameter to specify the expiration time of the temporary object. If you have not performed any operation on the object, such as copying it or extending its validity period, when it expires, the temporary object will be automatically deleted. A temporary object is only a copy of the archived object. The source object continues to exist throughout this period.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-restore-object)
 ```js
 cos.restoreObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: 'exampleobject',
     RestoreRequest: {
@@ -794,10 +809,10 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 
 
@@ -807,18 +822,18 @@ function(err, data) { ... }
 
 ### Querying multipart uploads
 
-#### API description
+#### Description
 
 This API (`List Multipart Uploads`) is used to query in-progress multipart uploads. Up to 1,000 multipart uploads can be listed at a time.
 
-#### Examples
+#### Example
 
 Getting a list of `UploadId` of uploads with the object key prefix `exampleobject`
 
 [//]: # (.cssg-snippet-list-multi-upload)
 ```js
 cos.multipartList({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Prefix: 'exampleobject', /*Optional*/
 }, function(err, data) {
@@ -845,7 +860,7 @@ cos.multipartList({
 function(err, data) { ... }
 ```
 
-| Parameter     | Description | Type |
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
@@ -879,18 +894,18 @@ function(err, data) { ... }
 
 ### Initializing a multipart upload
 
-#### API description
+#### Description
 
 This API (`Initiate Multipart Upload`) is used to initialize a multipart upload. After a successful initialization operation, an upload ID will be returned, which is required for the subsequent `Upload Part` request.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-init-multi-upload)
 ```js
 cos.multipartInit({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
     UploadId: 'exampleUploadId',
     Body: fileObject
 }, function(err, data) {
@@ -936,19 +951,19 @@ function(err, data) { ... }
 
 ### Uploading parts
 
-#### API description
+#### Description
 
 This API (`Upload Part`) is used to upload parts after a multipart upload is initialized. It can upload 1-10,000 parts of 1 MB to 5 GB at a time.
 - After calling the `Initiate Multipart Upload` API to initialize a multipart upload, you will get an upload ID. This ID uniquely identifies the part and marks its position in the object.
 - Every time you call the `Upload Part` API, you need to pass in `partNumber` (the part number) and `uploadId`. You can upload multiple parts out of order.
 - When the `uploadId` and `partNumber` of a new part are the same as those of a previously uploaded part, the old part will be overwritten. If the `uploadId` does not exist, `404` (NoSuchUpload) will be returned.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-upload-part)
 ```js
 cos.multipartUpload({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: 'exampleobject', /* Required */
     UploadId: 'exampleUploadId',
@@ -985,26 +1000,26 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 
 ### Copying an object part
 
-#### API description
+#### Description
 
 This API (`Upload Part - Copy`) is used to copy a part of an object from the source path to the destination path.
 
 > !To copy an object part, you must first initialize a multipart upload, after which a unique upload ID will be returned. This ID is required in the copy request.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-upload-part-copy)
 ```js
 cos.uploadPartCopy({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: 'exampleobject', /* Required */
     CopySource: 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject', /*Required*/
@@ -1025,7 +1040,7 @@ cos.uploadPartCopy({
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
-| CopySource | URL of the source object. You can specify a previous version using the URL parameter `?versionId=<versionId>`. | String | Yes |
+| CopySource | URL of the source object. You can specify a previous version using the URL parameter `?versionId=&lt;versionId>`. | String | Yes |
 | PartNumber | Part number | String | Yes |
 | uploadId | To copy an object part, you must first initialize a multipart upload, after which a unique upload ID will be returned. This ID is required in the copy request. | String | Yes |
 | CopySourceRange | Byte range of the source object. The range value must be in the format of `bytes=first-last`, where both `first` and `last` are offsets starting from 0. For example, `bytes=0-9` means to copy the first 10 bytes of the source object. If this parameter is not specified, the entire object will be copied. | String | No |
@@ -1053,18 +1068,18 @@ function(err, data) { ... }
 
 ### Querying uploaded parts
 
-#### API description
+#### Description
 
 This API (`List Parts`) is used to query the uploaded parts of a specified multipart upload, i.e., listing all successfully uploaded parts of a multipart upload with the specified `uploadId`.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-list-parts)
 ```js
 cos.multipartListPart({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
     UploadId: 'exampleUploadId', /*Required*/
 }, function(err, data) {
     console.log(err || data);
@@ -1076,7 +1091,7 @@ cos.multipartListPart({
 | Parameter | Description | Type | Required |
 | ---------------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
+| Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | UploadId | Multipart upload ID, which is obtained from the response of the `Initiate Multipart Upload` API | String | Yes |
 | EncodingType | Encoding type of the returned value | String | No |
@@ -1089,7 +1104,7 @@ cos.multipartListPart({
 function(err, data) { ... }
 ```
 
-| Parameter  | Description | Type |
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
@@ -1111,7 +1126,7 @@ function(err, data) { ... }
 | - PartNumberMarker      | The marker after which the returned list begins. By default, entries are listed in UTF-8 binary order.   | String    |
 | NextPartNumberMarker  | The part after which the next returned list begins if the list is truncated    | String    |
 | - MaxUploads                                                 | The maximum number of entries returned in a single request                 | String      |
-| - IsTruncated   |  Whether the returned list is truncated. Valid value: `true`; `false` | String |
+| - IsTruncated   |  Whether the returned list is truncated. Valid value: `true`; `false` | String|
 | - Part                                  | Parts information list                                                 | ObjectArray |
 | - - PartNumber                                               | Part number                                                    | String      |
 | - - LastModified                 | Last modified time of the part                                           | String      |
@@ -1120,26 +1135,26 @@ function(err, data) { ... }
 
 ### Completing a multipart upload
 
-#### API description
+#### Description
 
 This API (Complete Multipart Upload) is used to complete a multipart upload. After all parts are uploaded via the `Upload Part` API, you need to call this API to complete the multipart upload. When using this API, you need to specify the `PartNumber` and `ETag` of each part in the request body for the part information to be verified.
 The parts need to be reassembled after they are uploaded, which takes several minutes. When the assembly starts, COS will immediately return the status code `200` and will periodically return spaces during the process to keep the connection active until the assembly is completed. After that, COS will return the assembled result in the body.
 
 - If any uploaded part is less than 1 MB in size, `400` (EntityTooSmall) will be returned when this API is called.
-- If the uploaded part numbers are not continuous, `400` (InvalidPart) will be returned when this API is called.
-- If the part information entries in the request body are not sorted by number in ascending order, `400` (InvalidPartOrder) will be returned when this API is called.
+- If the part numbers are not continuous, "400 InvalidPart" will be returned when this API is called.
+- If the part numbers in the request body are not in ascending order, "400 InvalidPartOrder" will be returned when this API is called.
 - If the `uploadId` does not exist, `404` (NoSuchUpload) will be returned when this API is called.
 
 > !We recommend you either complete or abort a multipart upload as early as possible, as the uploaded parts of an incomplete multipart upload will take up storage capacity and incur storage fees.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-complete-multi-upload)
 ```js
 cos.multipartComplete({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
     UploadId: 'exampleUploadId', /*Required*/
     Parts: [
         {PartNumber: '1', ETag: 'exampleETag'},
@@ -1170,10 +1185,10 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | - Location   | Access address of the uploaded file                                        | String |
 | - Bucket | Destination bucket for the multipart upload | String |
@@ -1182,18 +1197,18 @@ function(err, data) { ... }
 
 ### Aborting a multipart upload
 
-#### API description
+#### Description
 
 This API (`Abort Multipart Upload`) is used to abort a multipart upload and delete the uploaded parts. If you call this API and there is an in-progress upload request with the specified `UploadId`, the upload request will fail. If the `uploadId` does not exist, `404` (NoSuchUpload) will be returned.
 
 > !We recommend you either complete or abort a multipart upload as early as possible, as the uploaded parts of an incomplete multipart upload will take up storage capacity and incur storage fees.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-abort-multi-upload)
 ```js
 cos.multipartAbort({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: 'exampleobject', /*Required*/
     UploadId: 'exampleUploadId' /*Required*/
@@ -1221,10 +1236,10 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 
 
@@ -1235,16 +1250,16 @@ The following methods encapsulate the native methods mentioned above. They can i
 
 ### Advanced upload
 
-#### API description
+#### Description
 This API is used to implement an advanced upload. You can use the `SliceSize` parameter to specify a file size threshold (1 MB by default). If a file is larger than this threshold, it will be uploaded in parts; otherwise, it will be uploaded in whole.
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-transfer-upload-file)
 ```js
 cos.uploadFile({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
     Body: fileObject,               /*Required*/
     SliceSize: 1024 * 1024 * 5,     /* Threshold (5 MB in this example) to trigger multipart upload. Optional */
     TaskReady: function(taskId) { /*Optional*/
@@ -1263,7 +1278,7 @@ cos.uploadFile({
 
 #### Parameter description
 
-| Parameter  | Description                                                     | Type      | Required |
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type      | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
@@ -1294,20 +1309,20 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | - Location   | Access address of the uploaded file                                        | String |
 | - Bucket     | Destination bucket for the multipart upload. This parameter is returned only when a multipart upload is triggered.                                       | String |
 | - Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324). This parameter is returned only when multipart upload is triggered. | String |
 | - ETag | Unique ID of the file after assembly in the format of `"uuid-<part quantity>"`. <br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880-3"`. **Note that double quotation marks are required at the beginning and the end.** | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | 
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  |
 
-### Uploading an object in parts
+### Multipart upload operations
 
-#### API description
+#### Description
 
 This API (`Slice Upload File`) is used to upload large files in parts.
 
@@ -1315,14 +1330,14 @@ This API (`Slice Upload File`) is used to upload large files in parts.
 >- If the browser is not closed, you can pause, resume, or cancel an upload.
 >- If you upload the same file to the same bucket path after refreshing the browser, the file content will be verified based on `UploadId` and the upload will proceed if the verification is passed.
 
-#### Examples
+#### Example
 
 [//]: # (.cssg-snippet-transfer-upload-file)
 ```js
 cos.sliceUploadFile({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
     Body: fileObject,               /*Required*/
     TaskReady: function(taskId) { /*Optional*/
         console.log(taskId);
@@ -1340,7 +1355,7 @@ cos.sliceUploadFile({
 
 #### Parameter description
 
-| Parameter  | Description                                                     | Type      | Required |
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type      | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
@@ -1372,20 +1387,20 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | - Location   | Access address of the uploaded file                                        | String |
 | - Bucket | Destination bucket for the multipart upload | String |
 | - Key | Object key (object name), the unique identifier of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 | - ETag | Unique ID of the file after assembly in the format of `"uuid-<part quantity>"`. <br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880-3"`. **Note that double quotation marks are required at the beginning and the end.** | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | 
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  |
 
-### Copying an object
+### Copying objects
 
-#### API description
+#### Description
 
 This API (`Slice Copy File`) is used to copy an object from the source path to the destination path in parts. During the process, the object metadata and ACL can be modified. You can use this API to move, rename, and copy a file, as well as modify its attributes.
 
@@ -1400,7 +1415,7 @@ cos.sliceCopyFile({
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: 'exampleobject', /*Required*/
     CopySource: 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject', /*Required*/
-    onProgress:function (progressData) { /*Optional*/
+    onProgress:function (progressData) {                     /* Optional */
         console.log(JSON.stringify(progressData));
     }
 },function (err,data) {
@@ -1417,7 +1432,7 @@ cos.sliceCopyFile({
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | CopySource | URL of the source object. You can specify a previous version using the URL parameter `?versionId=<versionId>`. | String | Yes |
 | ChunkSize | Size (in bytes) of each part in the multipart copy. Default: `1048576` (1 MB) | Number | No |
-| SliceSize | File size threshold in bytes, 5 GB by default. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No | 
+| SliceSize | File size threshold in bytes, 5 GB by default. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No | | Number | No |
 | onProgress | Callback for the upload progress, whose parameter is `progressData` | Function | No |
 | - progressData.loaded | Size of the uploaded parts, in bytes | Number | No |
 | - progressData.total | Size of the entire file, in bytes | Number | No |
@@ -1433,20 +1448,20 @@ function(err, data) { ... }
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
 | - Location   | Access address of the uploaded file                                        | String |
 | - Bucket | Destination bucket for the multipart upload | String |
-| - Key  | Object key (object name), the unique identifier of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| - Key | Object key (object name), the unique identifier of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 | - ETag | MD5 checksum of the file after assembly. <br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end.** | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | 
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  |
 
 ### Batch upload
 
-#### API description
+#### Description
 
 Method 1:
 You can call `putObject` or `sliceUploadFile` multiple times to implement batch uploads. Instantiate the `FileParallelLimit` parameter to limit the maximum number (default value: 3) of concurrently uploaded files allowed.
@@ -1542,7 +1557,7 @@ The SDK for JavaScript records all the upload tasks initiated with `putObject` a
 2. Use `cos.pauseTask`, `cos.restartTask`, and `cos.cancelTask` to perform operations on upload tasks.
 3. Use `cos.on('list-update', callback);` to listen for list and progress changes.
 
-For detailed instructions on ohow to use the upload queue, please see [Queue Demo](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo/queue).
+For detailed instructions on how to use the upload queue, please see [Queue Demo](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo/queue).
 
 #### Canceling an upload task
 
@@ -1562,7 +1577,7 @@ cos.cancelTask(taskId);
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | taskId | ID of the upload task. When `sliceUploadFile` is called, the `taskId` is returned via the `TaskReady`callback. | String | Yes |
 
-#### Pausing an upload task
+#### Suspending an upload task
 
 This API is used to pause an upload task by `taskId`.
 
@@ -1578,7 +1593,7 @@ cos.pauseTask(taskId);
 
 | Parameter | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| taskId | ID of the upload task. When `sliceUploadFile` is called, the `taskId` is returned via the `TaskReady` callback. | String | Yes |
+| taskId | ID of the upload task. When `sliceUploadFile` is called, the `taskId` is returned via the `TaskReady`callback. | String | Yes |
 
 #### Resuming an upload task
 

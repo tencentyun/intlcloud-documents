@@ -7,25 +7,25 @@ This document provides an overview of APIs and SDK sample codes related to uploa
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to bucket |
-| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using an HTML form | Uploads an object using an HTML form |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object | Uploads an object to a bucket. |
+| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using an HTML form | Uploads an object using an HTML form. |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object (modifying object attributes) | Copies a file to a destination path |
 
-**Multipart upload operations**
+**Multipart operations**
 
-| API          | Operation                   | Description                                       |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries the information about ongoing multipart uploads |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads an object in multiple parts |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as part |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload task and deletes the uploaded parts |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying an object part | Copies a part of an object. |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of a file. |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts. |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Advanced APIs (Recommended)
 
@@ -39,20 +39,21 @@ The advanced APIs encapsulate the simple upload and multipart upload APIs and ca
 ```java
 // Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
-// Initialize TransferManager
+// Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
-        .toString(); // The absolute path of the local file
+        .toString(); // Absolute path of the local file
 // If there is an uploadId for the initialized multipart upload, assign the value of uploadId here to resume the upload. Otherwise, assign null
 String uploadId = null;
-
+PutObjectRequest putObjectRequest= new PutObjectRequest(bucket, cosPath, srcPath);
+// Set the storage class for the object to upload.
+putObjectRequest.setStroageClass(COSStorageClass.STANDARD);
 // Upload the object
-COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
-        srcPath, uploadId);
+COSXMLUploadTask cosxmlUploadTask = transferManager.upload(putObjectRequest, uploadId);
 
 // Set the upload progress callback
 cosxmlUploadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
@@ -101,8 +102,8 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 
 // Upload a byte array
 byte[] bytes = "this is a test".getBytes(Charset.forName("UTF-8"));
@@ -142,8 +143,8 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 
 // Stream upload
 InputStream inputStream =
@@ -185,12 +186,12 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 
 // URI of the file
 Uri uri = Uri.parse("exampleObject");
-// If there is an uploadId for an initialized multipart upload, assign the value of the uploadId here to resume the upload; otherwise, assign null
+// If there is an `uploadId` for an initialized multipart upload, assign the value of the `uploadId` here to resume the upload; otherwise, assign `null`
 String uploadId = null;
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         uri, uploadId);
@@ -244,7 +245,7 @@ To suspend an upload, use the code below:
 boolean pauseSuccess = cosxmlUploadTask.pauseSafely();
 ```
 
-To resume a suspended download, run the code below:
+To resume a suspended download, use the code below:
 
 [//]: # (.cssg-snippet-transfer-upload-resume)
 ```java
@@ -306,7 +307,7 @@ for (File file : files) {
 
 [//]: # (.cssg-snippet-create-directory)
 ```java
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
 // The location identifier of a directory in a bucket (i.e., the object key), which must end with a slash (/).
 String cosPath = "exampleobject/";
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, new byte[0]);
@@ -398,7 +399,7 @@ CopyObjectRequest.CopySourceStruct copySourceStruct =
         new CopyObjectRequest.CopySourceStruct(
                 sourceAppid, sourceBucket, sourceRegion, sourceCosPath);
 // Destination bucket
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
 // Destination object
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 
@@ -440,7 +441,7 @@ cosxmlCopyTask.setTransferStateListener(new TransferStateListener() {
 
 ### Uploading an object using simple upload
 
-#### Feature description
+#### Description
 
 This API (PUT Object) is used to upload an object smaller than 5 GB to a specified bucket. To call this API, you need to have permission to write the bucket. If the object size is larger than 5 GB, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) for the upload.
 
@@ -452,7 +453,7 @@ This API (PUT Object) is used to upload an object smaller than 5 GB to a specifi
 
 [//]: # (.cssg-snippet-put-object)
 ```java
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString(); // The absolute path of the local file
@@ -490,7 +491,7 @@ cosXmlService.putObjectAsync(putObjectRequest, new CosXmlResultListener() {
 
 ### Uploading an object using an HTML form
 
-#### Feature description
+#### Description
 
 This API is used to upload an object using an HTML form.
 
@@ -541,7 +542,7 @@ This API (PUT Object-Copy) is used to copy an object to a destination path.
 
 [//]: # (.cssg-snippet-copy-object)
 ```java
-string sourceAppid = "1250000000"; // Account appid
+String sourceAppid = "1250000000"; // Account APPID
 String sourceBucket = "sourcebucket-1250000000"; // Bucket of the source object
 String sourceRegion = "COS_REGION"; // Region where the bucket of the source object resides
 String sourceCosPath = "sourceObject"; // Key of the source object
@@ -550,7 +551,7 @@ CopyObjectRequest.CopySourceStruct copySourceStruct =
         new CopyObjectRequest.CopySourceStruct(
         sourceAppid, sourceBucket, sourceRegion, sourceCosPath);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(bucket, cosPath,
         copySourceStruct);
@@ -580,7 +581,7 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
 
 [//]: # (.cssg-snippet-copy-object-replaced)
 ```java
-string sourceAppid = "1250000000"; // Account appid
+String sourceAppid = "1250000000"; // Account APPID
 String sourceBucket = "sourcebucket-1250000000"; // Bucket of the source object
 String sourceRegion = "COS_REGION"; // Region where the bucket of the source object resides
 String sourceCosPath = "sourceObject"; // Key of the source object
@@ -589,7 +590,7 @@ CopyObjectRequest.CopySourceStruct copySourceStruct =
         new CopyObjectRequest.CopySourceStruct(
         sourceAppid, sourceBucket, sourceRegion, sourceCosPath);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(bucket, cosPath,
         copySourceStruct);
@@ -622,7 +623,7 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
 [//]: # (.cssg-snippet-modify-object-metadata)
 ```java
 String appId = "1250000000"; // Account APPID
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
 String region = "COS_REGION"; // Region where the bucket of the source object resides
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 // Construct the source object attributes
@@ -662,7 +663,7 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
 [//]: # (.cssg-snippet-modify-object-storage-class)
 ```java
 String appId = "1250000000"; // Account APPID
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
 String region = "COS_REGION"; // Region where the bucket of the source object resides
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 // Construct the source object attributes
@@ -696,7 +697,7 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ModifyObjectProperty.java).
 
-## Multipart Upload Operations
+## Multipart Operations
 
 The multipart upload process is outlined below.
 
@@ -713,16 +714,16 @@ The multipart upload process is outlined below.
 3. Use the `UploadId` to upload the remaining parts with `Upload Part` or copy the remaining parts with `Upload Part Copy`.
 4. Complete the multipart upload with `Complete Multipart Upload`.
 
-#### Multipart upload/copy termination process
+#### How to abort a multipart upload/copy operation
 
 1. If you did not record the `UploadId` of the multipart upload, you can query the multipart upload job with `List Multipart Uploads` to get the `UploadId` of the corresponding file.
 2. Abort the multipart upload and delete the uploaded parts with `Abort Multipart Upload`.
 
 ### Querying multipart uploads
 
-#### Feature description
+#### Description
 
-This API (List Multipart Uploads) is used to query the ongoing multipart uploads in a bucket.
+This API (`List Multipart Uploads`) is used to query in-progress multipart uploads in a specified bucket.
 
 #### Sample code
 
@@ -756,9 +757,9 @@ cosXmlService.listMultiUploadsAsync(listMultiUploadsRequest,
 
 ### Initializing a multipart upload
 
-#### Feature description
+#### Description
 
-This API (Initiate Multipart Upload) is used to initialize a multipart upload operation and get its `UploadID`.
+This API is used to initialize a multipart upload operation and get its `uploadId`.
 
 #### Sample code
 g
@@ -793,15 +794,15 @@ cosXmlService.initMultipartUploadAsync(initMultipartUploadRequest,
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java).
 
-### Uploading a part
+###  Uploading parts
 
-This API (Upload Part) is used to upload parts in a multipart upload.
+This API (`Upload Part`) is used to upload an object in parts.
 
 #### Sample code
 
 [//]: # (.cssg-snippet-upload-part)
 ```java
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 UploadPartRequest uploadPartRequest = new UploadPartRequest(bucket, cosPath,
         partNumber, srcFile.getPath(), offset, PART_SIZE, uploadId);
@@ -835,9 +836,9 @@ cosXmlService.uploadPartAsync(uploadPartRequest, new CosXmlResultListener() {
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java).
 
-### Copying a part
+### Copying an object part
 
-#### Feature description
+#### Description
 
 This API is used to copy an object as a part.
 
@@ -845,7 +846,7 @@ This API is used to copy an object as a part.
 
 [//]: # (.cssg-snippet-upload-part-copy)
 ```java
-string sourceAppid = "1250000000"; // Account appid
+String sourceAppid = "1250000000"; // Account APPID
 String sourceBucket = "sourcebucket-1250000000"; // Bucket of the source object
 String sourceRegion = "COS_REGION"; // Region where the bucket of the source object resides
 String sourceCosPath = "sourceObject"; // Key of the source object
@@ -854,7 +855,7 @@ CopyObjectRequest.CopySourceStruct copySourceStruct =
         new CopyObjectRequest.CopySourceStruct(
         sourceAppid, sourceBucket, sourceRegion, sourceCosPath);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 
 String uploadId = "exampleUploadId";
@@ -890,9 +891,9 @@ cosXmlService.copyObjectAsync(uploadPartCopyRequest,
 
 ### Querying uploaded parts
 
-#### Feature description
+#### Description
 
-This API (List Parts) is used to query the uploaded parts of a multipart upload.
+This API (`List Parts`) is used to query the uploaded parts of a multipart upload.
 
 #### Sample code
 
@@ -926,9 +927,9 @@ cosXmlService.listPartsAsync(listPartsRequest, new CosXmlResultListener() {
 
 ### Completing a multipart upload
 
-#### Feature description
+#### Description
 
-This API (Complete Multipart Upload) is used to complete the multipart upload of an entire file.
+This API (`Complete Multipart Upload`) is used to complete the multipart upload of a file.
 
 #### Sample code
 [//]: # (.cssg-snippet-complete-multi-upload)
@@ -964,9 +965,9 @@ cosXmlService.completeMultiUploadAsync(completeMultiUploadRequest,
 
 ### Aborting a multipart upload
 
-#### Feature description
+#### Description
 
-This API (Abort Multipart Upload) is used to abort a multipart upload and delete the uploaded parts.
+This API (`Abort Multipart Upload`) is used to abort a multipart upload and delete the uploaded parts.
 
 #### Sample code
 
