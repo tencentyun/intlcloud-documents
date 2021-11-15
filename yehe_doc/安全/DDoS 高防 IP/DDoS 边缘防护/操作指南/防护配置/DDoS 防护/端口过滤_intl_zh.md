@@ -3,6 +3,7 @@ DDoS 边界防护支持针对访问 DDoS 高防的源流量，基于端口进行
 ## 前提条件
 您需要成功[ 购买 DDoS 边界防护](https://intl.cloud.tencent.com/document/product/297/42172)，并设置防护对象。
 
+>?目前 DDoS 边界防护产品处于灰度优化中，如有需要，请 [联系我们](https://intl.cloud.tencent.com/contact-us) 申请。
 
 ## 操作步骤
 1. 登录 [DDoS 边界防护管理控制台](https://console.cloud.tencent.com/ddos/antiddos-edge/policy/ddos) ，在左侧导航中，单击【防护策略】，并选择【DDoS防护】。
