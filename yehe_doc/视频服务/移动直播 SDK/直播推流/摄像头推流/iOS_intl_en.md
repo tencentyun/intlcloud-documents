@@ -1,5 +1,5 @@
 ## Overview
-Publishing from camera refers to the process of collecting video and audio data from the mobile phone’s camera and mic, encoding the data, and publishing it to cloud-based live streaming platforms. Tencent Cloud’s LiteAVSDK provides the camera publishing capability via `V2TXLivePusher`. 
+Publishing from camera refers to the process of collecting video and audio data from the mobile phone’s camera and mic, encoding the data, and publishing it to cloud-based live streaming platforms. Tencent Cloud’s LiteAVSDK provides the camera publishing capability via `V2TXLivePusher`.
 
 
 ## Notes
@@ -16,6 +16,7 @@ Publishing from camera refers to the process of collecting video and audio data 
 
 ## Integration
 [](id:step1)
+
 ### 1. Download the SDK
 [Download](https://intl.cloud.tencent.com/document/product/1071/38150) the SDK and follow the instructions in [SDK Integration](https://intl.cloud.tencent.com/document/product/1071/38155) to integrate the SDK into your application.
 
@@ -69,10 +70,11 @@ Call `setRenderView` in [V2TXLivePusher](https://liteav.sdk.qcloud.com/doc/api/z
         }];
      ```
 
+
 [](id:step5)
 ### 5. Start and stop publishing
 After calling `startCamera` to enable camera preview, you can call the [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a33b38f236a439e7d848606acb68cc087) API in `V2TXLivePusher` to start publishing. You can use [TRTC’s URL](https://intl.cloud.tencent.com/document/product/1071/39359) or an [RTMP URL](https://intl.cloud.tencent.com/document/product/1071/39359) for publishing. The former uses UDP. It offers better streaming quality and supports co-anchoring.
-​```objectivec 
+```objectivec 
 // Start publishing. You can use the `trtc://` or `rtmp://` protocol. The former supports co-anchoring.
 NSString* url = @"trtc://cloud.tencent.com/push/streamid?sdkappid=1400188888&userId=A&usersig=xxxxx";  //This URL supports co-anchoring.
 NSString* url = @"rtmp://test.com/live/streamid?txSecret=xxxxx&txTime=xxxxxxxx";    //This URL does not support co-anchoring. The stream is published to a live streaming CDN.
@@ -80,10 +82,11 @@ NSString* url = @"rtmp://test.com/live/streamid?txSecret=xxxxx&txTime=xxxxxxxx";
 ```
 
 Call [stopPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a7332411d6264bc743b0b2bae0b8a73ae) in `V2TXLivePusher` to stop publishing streams.
-​```objectivec
-//Stop publishing streams
+```objectivec
+//Stop publishing
 [_pusher stopPush];
 ```
+
 >! If you have enabled camera preview, please disable it when you stop publishing streams. 
 
 -  **How can I obtain a valid publishing URL?**
@@ -162,6 +165,7 @@ UIImage *image = [UIImage imageWithContentsOfFile:path];
 ### 10. Manage devices
 `V2TXLivePusher` provides a series of APIs for the control of devices. You can call `getDeviceManager` to get a `TXDeviceManager` instance for device management. For detailed instructions, please see [TXDeviceManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__ios.html#interfaceTXDeviceManager).
 
+
 [](id:step11)
 ### 11. Set the video mirroring effect for audience
 Call [setRenderMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#adf4cd57c705a1022d6730fd722f8dab5) in `V2TXLivePusher` to set the camera mirror mode, which affects the way video images are presented to audience. By default, the local image seen by the host is flipped when the front camera is used.
@@ -169,7 +173,7 @@ Call [setRenderMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLi
 
 [](id:step12)
 ### 12. Publish streams in landscape mode
-In most cases, hosts stream while holding their phones vertically, and audience watch videos in portrait resolutions (e.g., 540 × 960). However, there are also cases where hosts hold phones horizontally, and ideally, audience should watch videos in landscape resolutions (960 × 540), as shown below: 
+In most cases, hosts stream while holding their phones vertically, and audience watch videos in portrait resolutions (e.g., 540 × 960). However, there are also cases where hosts hold phones horizontally, and ideally, audience should watch videos in landscape resolutions (960 × 540).
 
 
 By default, `V2TXLivePusher` outputs videos in portrait resolutions. You can publish landscape-mode videos to audience by modifying a parameter of the [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a0b08436c1e14a8d7d9875fae59ac6d84) API.
@@ -209,10 +213,7 @@ Connecting phones to Wi-Fi does not necessarily guarantee network conditions. In
 ![](https://main.qcloudimg.com/raw/faaef46a80988270d3ddc96ec4e578b9.png)  
 
 You can capture the **V2TXLIVE_WARNING_NETWORK_BUSY** event using [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLiveCode__ios.html#ga5506c2171438841ab3e99c80786c7ba0) in `V2TXLivePusherObserver`. The event indicates poor network conditions for hosts, which result in stuttering for audience. When this event occurs, you can send a UI message about poor network conditions to hosts, as shown above.
-
-
-<dx-codeblock>
-::: objectiveC objectiveC
+```
 - (void)onWarning:(V2TXLiveCode)code
           message:(NSString *)msg
         extraInfo:(NSDictionary *)extraInfo {
@@ -223,8 +224,28 @@ You can capture the **V2TXLIVE_WARNING_NETWORK_BUSY** event using [onWarning](ht
         }
     });
 }
-:::
-</dx-codeblock>
+```
+
+[](id:step16)
+### 16. Send SEI messages
+Call the [sendSeiMessage](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a106dc65c2616b80e193aad95876f7fe6) API in `V2TXLivePusher` to send SEI messages. SEI refers to the supplementary enhancement information of encoded video. It is not used most of the time, but you can insert custom information into SEI messages. The information will be forwarded to audience by live streaming CDNs. The applications for SEI messages include:
+- Live quiz: The publisher can use SEI messages to send questions to the audience. SEI can ensure synchronization among audio, video, and the questions.
+- Live showroom: The publisher can use SEI messages to display lyrics to the audience in real time. The effects are not affected by reduction in video encoding quality.
+- Online education: The publisher can use SEI messages to display pointers and sketches on slides to the audience in real time.
+
+Custom data is inserted directly into video data and therefore cannot be too large in size (preferably several bytes). It’s common to insert information such as custom timestamps.
+```objectiveC
+int payloadType = 5;
+NSString* msg = @"test";
+[_pusher sendSeiMessage:payloadType data:[msg dataUsingEncoding:NSUTF8StringEncoding]];
+```
+Common open-source players or web players are incapable of parsing SEI messages. You must use `V2TXLivePlayer`, the built-in player of LiteAVSDK.
+1. Configuration:
+```objectiveC
+int payloadType = 5;
+[_player enableReceiveSeiMessage:YES payloadType:payloadType];
+```
+2. If the video streams played by `V2TXLivePlayer` contain SEI messages, you will receive the messages via the `onReceiveSeiMessage` callback in `V2TXLivePlayerObserver`.
 
 
 ## Event Handling

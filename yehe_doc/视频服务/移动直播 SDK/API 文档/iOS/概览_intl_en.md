@@ -22,13 +22,13 @@ The player has the following capabilities:
 | API | Description |
 | --------------- | --------------------------- |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#a5bf0688f150c9b724a7237e2bcff96cd) | Sets the player’s rendering view. |
-| [startPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#a5c186e91db27840ec1ff4c9605248359) | Starts playback.            |
+| [startPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#a5c186e91db27840ec1ff4c9605248359) | Starts playback. |
 | [stopPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#a768b1c3893d15ae73d76d1a4c3b29aa6) | Stops playback.                  |
 | [isPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#a0bdbaa951f2110e5f7af91be5dfd7c67) | Gets whether playback is ongoing.              |
 
 ### Video APIs
 
-| API        | Description   |
+| API                                             | Description                                                         |
 | --------------------- | -------------------------- |
 | [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#a953256f3f232eb24e18c54f0d5ef0eaa)     | Sets video rotation. |
 | [setRenderFillMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#ad1674b2b37e210af8a53f3684ac57a28)     | Sets the fill mode.       |
@@ -39,7 +39,7 @@ The player has the following capabilities:
 
 ### Audio APIs
 
-| API                                             | Description                                                         |
+| API  | Description       |
 | ---------------------- | ---------------------- |
 | [pauseAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#a8bb9976e8a0d9711a9e17f8888b2aa80)             | Pauses the player’s audio.   |
 | [resumeAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#a6c34ddc58f1715d905b9864afee7c4b7)            | Resumes the player’s audio.   |
@@ -48,7 +48,7 @@ The player has the following capabilities:
 
 ### Other APIs
 
-| API                                             | Description                                                         |
+| API  | Description       |
 | ---------------------- | ---------------------- |
 | [setCacheParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#ae439fa2774477dc54b8c27e994d0d42c)             | Sets the minimum and maximum cache time (s) for auto adjustment by the player.   |
 | [showDebugView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#a94005f62b788b1030636b51bb5a0210a)            | Sets whether to show the debug view of player status information.   |
@@ -124,6 +124,10 @@ It has the following capabilities:
 | [snapshot](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a7d6e28ab61e78b8185e5ea9713adad59) | Takes a screenshot of published video.                          |
 | [setWatermark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#ad48aacbfad38b8f5389c159283fae859)                                                 | Sets watermarks for the publisher. Watermarking is disabled by default.            |
 | [setEncoderMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#ae4464d33567ce1a31d92530e02a48dd7) | Sets the mirror mode for encoded video.                                  |
+|[enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a35e33064526da7f360c786a63d4e33e5) | Enables/Disables custom video capturing. |
+|[sendCustomVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a70770d15cc87cf91c174df97cf45a683) |  Sends captured video data to the SDK in the custom video capturing mode. |
+|[enableCustomVideoProcess](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a36a27d1112103ca70954c72a5d9109ce) | Enables/Disables custom video processing. |
+|[sendSeiMessage](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a106dc65c2616b80e193aad95876f7fe6) | Sends an SEI message. |
 
 ### Beauty filter APIs
 
@@ -181,7 +185,7 @@ It has the following capabilities:
 | API | Description |
 | --------------- | ---------------------------- |
 | [onCaptureFirstAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__ios.html#ad10ac31050e915d349a2a953915cbefe) | Callback for capturing the first audio frame |
-| [onMicrophoneVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__ios.html#a5813b9c6632a01b5d0e873c8a26873f5) | Callback of mic capturing volume       |
+| [onMicrophoneVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a8a9798da9f593fb00878a823bc3fdbc7) | Callback of mic capturing volume       |
 
 ### Mixtranscoding callback APIs
 | API                                             | Description                                                         |

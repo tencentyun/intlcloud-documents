@@ -22,7 +22,7 @@ This API is used to initialize the publisher.
 
 #### Parameters 
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | liveMode | V2TXLiveMode | Publishing protocol: RTMP (default) or ROOM |
 
@@ -38,7 +38,7 @@ This API is used to set the callbacks of the publisher. After the setting, you c
 
 #### Parameters 
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | observer | V2TXLivePusherObserver | Target object for the publisher’s callbacks. For more information, please see [V2TXLivePusherObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__ios.html). |
 
@@ -54,7 +54,7 @@ This API is used to set the view for local camera preview. Images captured by th
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | view | TXView * | View for local camera preview |
 
@@ -74,7 +74,7 @@ This API is used to start publishing audio/video data.
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | url |  NSString * | Publishing URL. Any publishing server is supported. |
 
@@ -141,7 +141,7 @@ This API is used to set the rotation of local camera preview.
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | rotation | [V2TXLiveRotation](#V2TXLiveRotation) | Degrees by which the image is rotated. Default value: `V2TXLiveRotation0` |
 
@@ -170,7 +170,7 @@ This API is used to set the mirror mode of local camera preview.
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | mirrorType | [V2TXLiveMirrorType](#V2TXLiveMirrorType) | Mirror mode of the camera. Default value: `V2TXLiveMirrorTypeAuto` |
 
@@ -269,7 +269,7 @@ This API is used to start screen recording.
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | appGroup |  NSString * | The App Group ID shared by the host app and Broadcast Upload Extension. It can be set to `nil`, but setting it as instructed in our documentation will make the feature more reliable.|
 
@@ -317,7 +317,7 @@ This API is used to set a watermark for the publisher. Watermarking is disabled 
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | image | TXImage * | Watermark image. If this parameter is `null`, it means watermarking is disabled. |
 | x | float | Horizontal coordinate of the watermark |
@@ -333,7 +333,7 @@ This API is used to set the mirror mode of encoded images.
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | mirror | BOOL | Whether to mirror encoded images. Default value: `NO` |
 
@@ -348,7 +348,7 @@ This API is used to enable/disable custom video capturing. In the custom video c
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | enable | BOOL | Whether to enable custom capturing. Default value: `NO` |
 
@@ -361,7 +361,7 @@ This API is used to send the custom video data captured to the SDK.
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | videoFrame | V2TXLiveVideoFrame * | Video frames sent to the SDK |
 
@@ -380,7 +380,7 @@ This API is used to enable/disable custom video processing.
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | enable | BOOL | Whether to enable custom video processing. Default value: `NO` |
 | pixelFormat | V2TXLivePixelFormat | Pixel format of video frames |
@@ -402,6 +402,23 @@ This API is used to enable/disable custom video processing.
 | V2TXLiveBufferTypeByteBuffer| `DirectBuffer`, which carries buffers in the format of I420 and others and is used at the native layer. |
 |  V2TXLiveBufferTypeByteArray| `byte[]`, which carries buffers in the format of I420 and others and is used at the Java layer. |
 |  V2TXLiveBufferTypeTexture| Texture ID, which allows direct operation. It delivers the best performance and has the smallest impact on video quality. |
+
+***
+
+### sendSeiMessage
+This API is used to send SEI messages. The player [V2TXLivePlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/interfaceV2TXLivePlayer.html) can receive SEI messages via the `onReceiveSeiMessage` callback in [V2TXLivePlayerObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#protocolV2TXLivePlayerObserver-p).
+```
+- (V2TXLiveCode)sendSeiMessage:(int)payloadType data:(NSData *)data;
+```
+#### Parameters
+| Parameter | Type | Description |
+|-----|-----|-----|
+| payloadType | int | Data type. Valid values: `5`, `242` (recommended) |
+| data | NSData * | Data to send | 
+
+ #### Response
+ V2TXLiveCode:
+ `V2TXLIVE_OK`: successful
 
 ***
 
@@ -457,7 +474,7 @@ This API is used to set audio quality.
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | quality | V2TXLiveAudioQuality | Audio quality |
 
@@ -486,7 +503,7 @@ This API is used to enable the volume reminder for audio capturing.
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | intervalMs | NSInteger | Interval (ms) for triggering the `onMicrophoneVolumeUpdate` callback. The minimum interval allowed is 100 ms. If the value is `0` (default) or smaller, the callback is disabled. `300` is recommended. |
 
@@ -541,7 +558,7 @@ This API is used to call the advanced APIs of `V2TXLivePusher`.
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | key | NSString * | Key of the advanced API to call |
 | value | NSObject * | Parameters required by the advanced API |
@@ -561,7 +578,7 @@ This API is used to set On-Cloud MixTranscoding parameters. If you have enabled 
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | config | V2TXLiveTranscodingConfig * | On-Cloud MixTranscoding configuration |
 
@@ -571,7 +588,7 @@ This API is used to set On-Cloud MixTranscoding parameters. If you have enabled 
 | V2TXLiveBufferTypeUnknown | Unknown |
 | V2TXLiveBufferTypeByteBuffer| `DirectBuffer`, which carries buffers in the format of I420 and others and is used at the native layer. |
 |  V2TXLiveBufferTypeByteArray| `byte[]`, which carries buffers in the format of I420 and others and is used at the Java layer. |
-|  V2TXLiveBufferTypeTexture| Texture ID, which allows direct operation. It delivers the best performance and has the smallest impact on video quality. |
+| V2TXLiveBufferTypeTexture| Texture ID, which allows direct operation. It delivers the best performance and has the smallest impact on video quality. |
 
 ***
 
@@ -584,6 +601,6 @@ This API is used to set whether to display the dashboard.
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | isShow | BOOL | Whether to show the debug view. Default value: `NO` |

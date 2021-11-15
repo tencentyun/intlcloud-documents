@@ -126,6 +126,10 @@ It has the following capabilities:
 | [snapshot](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a2a507ea1cd894a1635dbfd772802fefd) | Takes a screenshot of published video.                          |
 | [setWatermark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a4f56a5a937d87e5b1ae6f77c5bab2335)                                                 | Sets watermarks for the publisher. Watermarking is disabled by default.            |
 | [setEncoderMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ae025945b6f2633d8e3b879a6fe24dd99) | Sets the mirror mode for encoded video.                                  |
+| [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a9d945c58c4e0ff24e55aacef1ef3090f) | Enables/Disables custom video capturing.|
+| [sendCustomVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a3802124d90bf00434245d2956dad1fe4) | Sends captured video data to the SDK in the custom video capturing mode. |
+| [enableCustomVideoProcess](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ab3d49118931e09d1d4954674ff8a8102) | Enables/Disables custom video processing.|
+| [sendSeiMessage](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a5ba3762815f11bf5005f151e06ae0b38) | Sends an SEI message.                                      |
 
 
 ### Beauty filter APIs

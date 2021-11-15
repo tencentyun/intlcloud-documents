@@ -22,7 +22,7 @@ public abstract void setObserver(V2TXLivePusherObserver observer);
 
 #### Parameters 
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | observer | V2TXLivePusherObserver | Target object for the publisher’s callbacks. For more information, please see [V2TXLivePusherObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html). |
 
@@ -38,7 +38,7 @@ public abstract int setRenderView(TXCloudVideoView view);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | view | TXCloudVideoView | View for local camera preview |
 
@@ -58,7 +58,7 @@ public abstract int setRenderView(SurfaceView view);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | view | SurfaceView | View for local camera preview |
 
@@ -78,7 +78,7 @@ public abstract int setRenderView(TextureView view);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | view | TextureView | View for local camera preview |
 
@@ -98,7 +98,7 @@ public abstract int startPush(String url);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | url |  String | URL to which data is published. Any publishing server is supported. |
 
@@ -147,7 +147,7 @@ public abstract int setVideoQuality(V2TXLiveVideoEncoderParam param);
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ---- | ---- | ---- |
 | param | [V2TXLiveVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLiveDef__android.html#classcom_1_1tencent_1_1live2_1_1V2TXLiveDef_1_1V2TXLiveVideoEncoderParam) | Video encoding parameters |
 
@@ -162,7 +162,7 @@ public abstract int setRenderRotation(V2TXLiveRotation rotation);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | rotation | [V2TXLiveRotation](#V2TXLiveRotation) | Degrees by which the image is rotated. Default value: `V2TXLiveRotation0` |
 
@@ -191,7 +191,7 @@ public abstract int setRenderMirror(V2TXLiveMirrorType mirrorType);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | mirrorType | [V2TXLiveMirrorType](#V2TXLiveMirrorType) | Mirror mode of the camera. Default value: `V2TXLiveMirrorTypeAuto` |
 
@@ -328,7 +328,7 @@ public abstract int setWatermark(Bitmap image, float x, float y, float scale);
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | image | Bitmap | Watermark image. If this parameter is `null`, it means watermarks are disabled. |
 | x | float | Horizontal coordinate of the watermark |
@@ -344,7 +344,7 @@ public abstract int setEncoderMirror(boolean mirror);
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | mirror | Boolean | Whether to mirror encoded images. Default value: `false` |
 
@@ -359,7 +359,7 @@ public abstract int enableCustomVideoCapture(boolean enable);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | enable | Boolean | Whether to enable custom video capturing. Default value: `false`. |
 
@@ -372,16 +372,17 @@ public abstract int sendCustomVideoFrame(V2TXLiveVideoFrame videoFrame);
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | videoFrame | V2TXLiveVideoFrame | Video frame sent to the SDK |
-
 
 #### Response
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
 - `V2TXLIVE_ERROR_INVALID_PARAMETER`: operation failed because the video data is invalid.
 - `V2TXLIVE_ERROR_REFUSED`: failed. You must call `enableCustomVideoCapture` to enable custom video capturing first.
+
+***
 
 ### enableCustomVideoProcess
 This API is used to enable/disable custom video processing.
@@ -390,7 +391,7 @@ public abstract int enableCustomVideoProcess(boolean enable, V2TXLivePixelFormat
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | enable | Boolean | Whether to enable custom video processing. Default value: `false` |
 | pixelFormat | [V2TXLivePixelFormat](#V2TXLivePixelFormat) | Pixel format of video frames |
@@ -412,6 +413,23 @@ public abstract int enableCustomVideoProcess(boolean enable, V2TXLivePixelFormat
 | V2TXLiveBufferTypeByteBuffer| `DirectBuffer`, which carries buffers in the format of I420 and others and is used at the native layer. |
 |  V2TXLiveBufferTypeByteArray| `byte[]`, which carries buffers in the format of I420 and others and is used at the Java layer. |
 |  V2TXLiveBufferTypeTexture| Texture ID, which allows direct operation. It delivers the best performance and has the smallest impact on video quality. |
+
+***
+
+### sendSeiMessage
+This API is used to send SEI messages. The player [V2TXLivePlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/interfaceV2TXLivePlayer.html) can receive SEI messages via the `onReceiveSeiMessage` callback in [V2TXLivePlayerObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#protocolV2TXLivePlayerObserver-p).
+```
+public abstract int sendSeiMessage(int payloadType, byte[] data);
+```
+#### Parameters
+| Parameter | Type | Description |
+|-----|-----|-----|
+| payloadType | int | Data type. Valid values: `5`, `242` (recommended) |
+| data | byte[]  | Data to send |
+
+ #### Response
+ V2TXLiveCode:
+ `V2TXLIVE_OK`: successful
 
 ***
 
@@ -466,7 +484,7 @@ public abstract int setAudioQuality(V2TXLiveAudioQuality quality);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | quality | V2TXLiveAudioQuality | Audio quality |
 
@@ -495,9 +513,9 @@ public abstract int enableVolumeEvaluation(int intervalMs);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| intervalMs | int | Interval (ms) for volume callbacks. The minimum interval allowed is 100 ms. If the value is `0` (default) or smaller, the callback is disabled. `300` is recommended.
+| intervalMs | int | Interval (ms) for volume callbacks. The minimum interval allowed is 100 ms. If the value is `0` (default) or smaller, the callback is disabled. `300` is recommended.|
 
 #### Response
 
@@ -549,7 +567,7 @@ public abstract int setProperty(String key, Object value);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | key | String | Key of the advanced API to call |
 | value | Object | Parameters required by the advanced API |
@@ -569,7 +587,7 @@ public abstract int setMixTranscodingConfig(V2TXLiveTranscodingConfig config);
 ```
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | config | [V2TXLiveTranscodingConfig](#V2TXLiveTranscodingConfig) | On-Cloud MixTranscoding configuration |
 
@@ -595,6 +613,6 @@ public abstract void showDebugView(boolean isShow);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | isShow | boolean | Whether to display the dashboard. Default value: `false` |

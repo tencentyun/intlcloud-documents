@@ -11,14 +11,14 @@ Publishing from camera refers to the process of collecting video and audio data 
 | :------: | :----------------------------------------------------------: | :-------------------------: |
 |   iOS    | [GitHub](https://github.com/tencentyun/LiteAVProfessional_iOS/blob/master/Demo/TXLiteAVDemo/LivePusherDemo/CameraPushDemo/CameraPushViewController.m) | CameraPushViewController.m  |
 | Android  | [GitHub](https://github.com/tencentyun/LiteAVProfessional_Android/blob/master/Demo/livepusherdemo/src/main/java/com/tencent/liteav/demo/livepusher/camerapush/ui/CameraPushMainActivity.java) | CameraPushMainActivity.java |
-
->? In addition to the above sample code, regarding frequently asked questions among developers, Tencent Cloud offers a straightforward API example project, which you can use to quickly learn how to use different APIs.
+>?In addition to the above sample code, regarding frequently asked questions among developers, Tencent Cloud offers a straightforward API example project, which you can use to quickly learn how to use different APIs.
 >- iOS: [MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC)
 >- Android: [MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/Android/MLVB-API-Example)
 
 ## Integration
 
 [](id:step1)
+
 ### 1. Download the SDK
 
 [Download](https://intl.cloud.tencent.com/document/product/1071/38150) the SDK ZIP file and follow the instructions in [SDK Integration](https://intl.cloud.tencent.com/document/product/1071/38156) to integrate the SDK into your application.
@@ -89,8 +89,7 @@ mLivePusher.stopPush();
 >! If you have enabled camera preview, please disable it when you stop publishing streams. 
 
 - **How can I obtain a valid publishing URL?** 
-Activate CSS and, in the CSS console, go to [**CSS Toolkit** > **Address Generator**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) to generate a publishing URL. For more information, see [Publishing/Playback URL](https://intl.cloud.tencent.com/document/product/1071/39359). 
-
+Activate CSS and, in the CSS console, go to [**CSS Toolkit** > **Address Generator**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) to generate a publishing URL. For more information, see [Publishing/Playback URL](https://intl.cloud.tencent.com/document/product/1071/39359).    
 - **Why is `V2TXLIVE_ERROR_INVALID_LICENSE` returned?**    
 If the `startPush` API returns `V2TXLIVE_ERROR_INVALID_LICENSE`, it means your license verification failed. Please check your configuration against [Step 2. Configure a license for the SDK](#step2).   
 
@@ -171,6 +170,7 @@ mLivePusher.getBeautyManager().setFilterStrength(0.5f);
 
 `V2TXLivePusher` provides a series of APIs for the control of devices. You can call `getDeviceManager` to get a `TXDeviceManager` instance for device management. For detailed instructions, please see [TXDeviceManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__android.html).
 
+
 [](id:step11)
 ### 11. Set the video mirroring effect for audience    
 
@@ -180,7 +180,7 @@ Call [setRenderMirror](http://doc.qcloudtrtc.com/group__V2TXLivePusher__android.
 [](id:step12)
 ### 12. Publish streams in landscape mode    
 
-In most cases, hosts stream while holding their phones vertically, and audience watch videos in portrait resolutions (e.g., 540 × 960). However, there are also cases where hosts hold phones horizontally, and ideally, audience should watch videos in landscape resolutions (960 × 540), as shown below: 
+In most cases, hosts stream while holding their phones vertically, and audience watch videos in portrait resolutions (e.g., 540 × 960). However, there are also cases where hosts hold phones horizontally, and ideally, audience should watch videos in landscape resolutions (960 × 540).
     
 By default, `V2TXLivePusher` outputs videos in portrait resolutions. You can publish landscape-mode videos to audience by modifying a parameter of the `setVideoQuality` API.
 
@@ -188,6 +188,7 @@ By default, `V2TXLivePusher` outputs videos in portrait resolutions. You can pub
 mLivePusher.setVideoQuality(mVideoResolution, isLandscape ? V2TXLiveVideoResolutionModeLandscape : V2TXLiveVideoResolutionModePortrait);   
 ```
 
+[](id:step13)
 ### 13. Set audio effects
 
 Call `getAudioEffectManager` in `V2TXLivePusher` to get a `TXAudioEffectManager` instance, which can be used to mix background music and set in-ear monitoring, reverb, and other audio effects. Background music mixing means mixing into the published stream the music played by the host’s phone so that audience can also hear the music.
@@ -199,6 +200,7 @@ Call `getAudioEffectManager` in `V2TXLivePusher` to get a `TXAudioEffectManager`
 ![](https://main.qcloudimg.com/raw/f8282bd6e1ba20e1e902bad52fa3131f.png)
 >? For detailed instructions, please see [TXAudioEffectManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__android.html).
 
+[](id:step14)
 ### 14. Set watermarks  
 
 Call [setWatermark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a4f56a5a937d87e5b1ae6f77c5bab2335) in `V2TXLivePusher` to add a watermark to videos output by the SDK. The position of the watermark is determined by the `(x, y, scale)` parameter passed in.
@@ -211,6 +213,7 @@ Call [setWatermark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLiveP
 mLivePusher.setWatermark(BitmapFactory.decodeResource(getResources(),R.drawable.watermark), 0.03f, 0.015f, 1f);
 ```
 
+[](id:step15)
 ### 15. Inform hosts of poor network conditions 
 Hosts should be informed when their network conditions are bad and be prompted to check their network.    
 You can capture the **V2TXLIVE_WARNING_NETWORK_BUSY** event using [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#abd54414cbd5d52c096f9cc090cfe1fec) in `V2TXLivePusherObserver`. The event indicates poor network conditions for hosts, which result in stuttering for audience. When this event occurs, you can send a UI message about poor network conditions to hosts.
@@ -224,6 +227,28 @@ public void onWarning(int code, String msg, Bundle extraInfo) {
 } 
 :::
 </dx-codeblock>
+
+[](id:step16)
+### 16. Send SEI messages 
+Call the [sendSeiMessage](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a5ba3762815f11bf5005f151e06ae0b38) API in `V2TXLivePusher` to send SEI messages. SEI refers to the supplementary enhancement information of encoded video. It is not used most of the time, but you can insert custom information into SEI messages. The information will be forwarded to audience by live streaming CDNs. The applications for SEI messages include:
+- Live quiz: The publisher can use SEI messages to send questions to the audience. SEI can ensure synchronization among audio, video, and the questions.
+- Live showroom: The publisher can use SEI messages to display lyrics to the audience in real time. The effects are not affected by reduction in video encoding quality.
+- Online education: The publisher can use SEI messages to display pointers and sketches on slides to the audience in real time.
+
+Custom data is inserted directly into video data and therefore cannot be too large in size (preferably several bytes). It’s common to insert information such as custom timestamps.
+```java
+//Sample code for Android
+int payloadType = 5;
+String msg = "test";
+mTXLivePusher.sendSeiMessage(payloadType, msg.getBytes("UTF-8"));
+```
+Common open-source players or web players are incapable of parsing SEI messages. You must use `V2TXLivePlayer`, the built-in player of LiteAVSDK.
+1. Configuration:
+```java
+int payloadType = 5;
+mTXLivePlayer.enableReceiveSeiMessage(true, payloadType)
+```
+2. If the video streams played by `V2TXLivePlayer` contain SEI messages, you will receive the messages via the `onReceiveSeiMessage` callback in `V2TXLivePlayerObserver`.
 
 ## Event Handling
 

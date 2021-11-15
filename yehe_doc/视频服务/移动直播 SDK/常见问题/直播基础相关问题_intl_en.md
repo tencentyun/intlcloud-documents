@@ -51,8 +51,8 @@ HLS: **http://** or **https://**
 WebRTC: **webrtc://**
 - **Application name (`AppName`)**
 Application name specifies the storage path of a live streaming file. It is **live** by default.
-- [](id:streamname">**stream name (`StreamName`)**</span>
-Stream name (`StreamName`) is the unique identifier of a live stream.
+- **Stream name (`StreamName`)**[](id:streamname)
+Stream name (`StreamName`) uniquely identifies a live stream.
 - **Authentication key and other custom parameters**
 Authentication key: **txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)**.
 
@@ -69,3 +69,13 @@ If you use a webcam that supports RTMP, you can also set the RTMP publishing add
 ### What are the differences between stream interruption and stream disabling?
 - **Stream interruption**: If a live stream is interrupted, publishing will stop, and audience will be unable to watch the stream. However, the host can resume publishing the stream.
 - **Stream disabling**: If a live stream is disabled, publishing will stop, and audience will be unable to watch the stream. The host cannot resume publishing the stream. You can disable a stream on the stream management page of the CSS console. Disabled streams can be found in the list of disabled streams. You can click **Enable** to enable a disabled stream.
+
+[](id:Que9)
+### How do MLVB V1 APIs correspond to V2 APIs?
+We offer a table that lists the relationships between V1 and V2 APIs. For details, please see [Relationships Between MLVB SDK V1 and V2 APIs](https://docs.qq.com/sheet/DRkJUckpGdkNTUmt2?tab=BB08J2).
+
+[](id:Que10)
+### Regarding privacy, what data (e.g., MAC address, IMEI) does the MLVB SDK collect?
+The MLVB SDK complies with the privacy requirements of app stores. For details, please see [Privacy Policy](https://intl.cloud.tencent.com/document/product/1071/38543).
+
+
