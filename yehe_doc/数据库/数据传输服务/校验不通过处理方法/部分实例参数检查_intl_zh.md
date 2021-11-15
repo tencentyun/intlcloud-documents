@@ -21,6 +21,7 @@ alter table table_name row_format = DYNAMIC
 show table status like '%row_format%';
 ```
 系统显示结果类似如下：
+
 ```
 mysql> show table status like '%row_format%';
 +---------------+----------+
@@ -60,6 +61,7 @@ alter global lower_case_table_names = 1
 show variables like '%lower_case_table_names%';
 ```
 系统显示结果类似如下：
+
 ```
 mysql> show variables like '%lower_case_table_names%';
 +------------------------+-------+
@@ -85,6 +87,7 @@ set global max_allowed_packet = 4M
 show global variables like '%max_allowed_packet%';
 ```
 系统显示结果类似如下：
+
 ```
 mysql> show global variables like '%max_allowed_packet%';
 +------------------------+---------+
@@ -110,6 +113,7 @@ set global connect_timeout = 10
 show global variables like '%connect_timeout%';
 ```
 系统显示结果类似如下：
+
 ```
 mysql> show global variables like '%connect_timeout%';
 +------------------------+-------+
