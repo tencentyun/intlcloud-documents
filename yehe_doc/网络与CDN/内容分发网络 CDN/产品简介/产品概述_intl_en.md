@@ -14,8 +14,8 @@ For example, if your business origin server's domain name is ```www.test.com``` 
 ![](https://main.qcloudimg.com/raw/c155f8268c6ebdcc84f50cfb06f1f638.png)
 
 **The process is detailed below:**
-1. When a user makes an access request for an image resource (e.g., 1.jpg) at ```www.test.com```, a domain name resolution request will be initiated to the local DNS.
-2. When the local DNS resolves ```www.test.com```, it will find that CNAME ```www.test.com.cdn.dnsv1.com``` has been configured, so the resolution request will be sent to Tencent DNS (GSLB), the proprietary scheduling system of Tencent Cloud that will assign the optimal node IP for the request.
+1. When a user makes an access request for an image resource (e.g., 1.jpg) at `www.test.com`, a domain name resolution request will be initiated to the local DNS.
+2. When the local DNS resolves `www.test.com`, it will find that CNAME `www.test.com.cdn.dnsv1.com` has been configured, so the resolution request will be sent to Tencent DNS (GSLB), the proprietary scheduling system of Tencent Cloud that will assign the optimal node IP for the request.
 3. The local DNS receives the resolved IP returned by Tencent DNS.
 4. The user receives the resolved IP.
 5. The user makes an access request for 1.jpg to the received IP.
