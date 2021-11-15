@@ -10,7 +10,7 @@ CDN offers an effective solution to the following network issues:
 CDN is easy to use. You do not need to adjust your business structure or manage any complex configurations. For more information, please see [Getting Started](https://intl.cloud.tencent.com/document/product/228/32978).
 
 ## How Acceleration Works
-For example, if your business origin server's domain name is ```www.test.com``` and has been connected with the CDN to activate the acceleration service, when a user makes an HTTP request, the request will be processed as shown below:
+For example, if your business origin server's domain name is `www.test.com` and has been connected with the CDN to activate the acceleration service, when a user makes an HTTP request, the request will be processed as shown below:
 ![](https://main.qcloudimg.com/raw/c155f8268c6ebdcc84f50cfb06f1f638.png)
 
 **The process is detailed below:**
