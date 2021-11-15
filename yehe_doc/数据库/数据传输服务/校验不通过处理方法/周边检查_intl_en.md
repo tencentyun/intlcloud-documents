@@ -18,6 +18,7 @@ set global innodb_stats_on_metadata = OFF
 show global variables like "%innodb_stats_on_metadata%";
 ```
 The system should display a result similar to the following:
+
 ```
 mysql> show globle table status like '%innodb_stats_on_metadata%';
 +--------------------------+-------+
