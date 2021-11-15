@@ -28,7 +28,7 @@
 </tr>
 <tr>
 <td>支持地域 </td>
-<td>广州、上海、南京、北京、成都、重庆、中国香港、新加坡、孟买、首尔、东京、硅谷、弗吉尼亚、多伦多、法兰克福。</td>
+<td>地域支持详情请参见 CLS 的 <a href="https://intl.cloud.tencent.com/zh/document/product/614/18940">可用地域</a>。</td>
 </tr>
 <tr>
 <td>支持类型 </td>
