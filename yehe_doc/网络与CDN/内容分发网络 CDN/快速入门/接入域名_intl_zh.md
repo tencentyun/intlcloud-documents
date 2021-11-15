@@ -46,7 +46,7 @@
 3. 选择加速类型
 4. 其他选填项(后续可在域名管理中更改)
 
-<img src="https://main.qcloudimg.com/raw/6ec038f7f063b01cc1d68ecbfe4cb5c8.png" width="60%">
+![](https://main.qcloudimg.com/raw/6ec038f7f063b01cc1d68ecbfe4cb5c8.png）
 
 
 
