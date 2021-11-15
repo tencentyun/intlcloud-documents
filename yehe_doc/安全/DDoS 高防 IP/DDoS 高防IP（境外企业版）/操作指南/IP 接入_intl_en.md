@@ -3,7 +3,7 @@
 ![](https://main.qcloudimg.com/raw/9833d6ee8bfd5d26dc57c8c66af86fd5.png)
 3. Click **Add Rule** on the IP accessing page.
 ![](https://main.qcloudimg.com/raw/060116c9f092ae894f22f37c057e3fbd.png)
-4. In the pop-up **Bound Resource** window, select an Anycast IP and an Anti-DDoS Advanced instance, then click **OK** to bind the resource.
+4. In the pop-up **Bound Resource** window, select an Anycast IP, a region and an Anti-DDoS Advanced instance, and then click **OK** to bind the resource.
 >?You can select any region that is available to your Anti-DDoS Advanced instance.
 
 ![](https://main.qcloudimg.com/raw/9833d6ee8bfd5d26dc57c8c66af86fd5.png)
