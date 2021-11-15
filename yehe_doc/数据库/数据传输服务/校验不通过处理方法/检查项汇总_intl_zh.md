@@ -58,7 +58,7 @@
 - [迁移网络检查](https://intl.cloud.tencent.com/document/product/571/42578)
 - [源库连接性检查](https://intl.cloud.tencent.com/document/product/571/42552)
 - [目的库连接性检查](https://intl.cloud.tencent.com/document/product/571/42552)
-- [硬盘空间检查](https://cloud.tencent.com/document/product/571/61276)
+- [硬盘空间检查](https://intl.cloud.tencent.com/document/product/571/42575)
 - [数据库版本检查](https://intl.cloud.tencent.com/document/product/571/42558)
 - [用户权限检查](https://intl.cloud.tencent.com/document/product/571/42555)
 - [源库存在性检查](https://intl.cloud.tencent.com/document/product/571/42576)
