@@ -27,7 +27,7 @@ Temporary keys are generated with the permanent key. Get the SecretId and Secret
 
 For security purposes, we recommend you use temporary keys to calculate a signature. To create and use temporary keys, you need to set up the temporary key service on your server and an API for your application. For more information, see [Temporary Key Generation and Usage Guide](https://intl.cloud.tencent.com/document/product/436/14048).
 
-> In official deployment, add a layer of permission check of your website on the server side.
+>! In official deployment, add a layer of permission check of your website on the server side.
 
 #### Defining permissions
 
@@ -74,7 +74,7 @@ QCloudCredentialProvider credentialProvider = new SessionCredentialProvider(new 
                 
 CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig, credentialProvider);                
 ```
-> Because this method requires that the signature start time matches the local time on your mobile phone. A large difference (more than 10 minutes) between the time on your phone and the correct local time may cause a signature error. In this case, we recommend you use the custom response body for authorization as described below:
+>?Because this method requires that the signature start time matches the local time on your mobile phone. A large difference (more than 10 minutes) between the time on your phone and the correct local time may cause a signature error. In this case, we recommend you use the custom response body for authorization as described below:
 
 #### Authorization with custom response body
 For higher flexibility, you can inherit the `BasicLifecycleCredentialProvider` class and implement its `fetchNewCredentials()` for custom configurations. For example, you can customize the HTTP response body for the temporary key service to return the server time to the device as the signature start time so as to avoid signature error caused by big device time difference. You can also choose to use other protocols for the communication between the end device and the service side.
@@ -133,8 +133,7 @@ QCloudCredentialProvider credentialProvider = new MyCredentialProvider();
 CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig, credentialProvider);   
 ```
 
-For complete sample code, see [Android COS Transfer](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransfer).
-
+For complete code, see [Android COS Transfer Practice](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransferPractice).
 For more information on how files are uploaded and downloaded between an Android device and COS, see [Getting Started with Android SDK](https://intl.cloud.tencent.com/document/product/436/12159).
 
 #### iOS
@@ -215,6 +214,6 @@ Modify the file `QCloudCOSXMLDemo/QCloudCOSXMLDemo/key.json` by adding your APPI
 ```plaintext
 pod install
 ```
-> Get your APPID, secretID, and secretKey from the [API Key Management](https://console.cloud.tencent.com/cam/capi) page.
+>? Get your APPID, secretID, and secretKey from the [API Key Management](https://console.cloud.tencent.com/cam/capi) page.
 
 After executing the command, open QCloudCOSXMLDemo.xcworkspace to view the Demo.
