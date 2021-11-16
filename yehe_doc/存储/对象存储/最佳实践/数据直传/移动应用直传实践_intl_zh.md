@@ -27,7 +27,7 @@ COS 移动端 SDK（Android/IOS）均很好的支持了通过临时密钥来授�
 
 出于安全考虑，签名使用临时密钥，需要服务端搭建临时密钥服务，并提供 API 接口给客户端使用。具体搭建步骤请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
-> 正式部署时服务端请加一层您的网站本身的权限检验。
+>! 正式部署时服务端请加一层您的网站本身的权限检验。
 
 #### 选择合适的权限
 
@@ -74,7 +74,7 @@ QCloudCredentialProvider credentialProvider = new SessionCredentialProvider(new 
                 
 CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig, credentialProvider);                
 ```
->这种方式下签名的开始时间为手机本地时间，因此如果手机本地时间偏差较大（十分钟以上），可能会导致签名出错，这种情况建议使用下述的自定义响应体授权。
+>?这种方式下签名的开始时间为手机本地时间，因此如果手机本地时间偏差较大（十分钟以上），可能会导致签名出错，这种情况建议使用下述的自定义响应体授权。
 
 #### 自定义响应体授权
 如果您想获得更大的灵活性，例如自定义临时密钥服务的 HTTP 响应体，给终端返回服务器时间作为签名的开始时间，用来避免由于用户手机本地时间偏差过大导致的签名不正确，或者使用其他的协议来进行终端和服务端之间的通信，那么您可以继承 BasicLifecycleCredentialProvider 类，并实现其 fetchNewCredentials()：
@@ -133,7 +133,7 @@ QCloudCredentialProvider credentialProvider = new MyCredentialProvider();
 CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig, credentialProvider);   
 ```
 
-完整的示例代码请参见 [Android COS Transfer](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransfer)。
+完整的示例代码请参见 [Android COS Transfer Practice](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransferPractice)。
 
 更多关于 Android 如何向 COS 上传和下载文件，请参见 Android SDK [快速入门](https://intl.cloud.tencent.com/document/product/436/12159)。
 
@@ -216,6 +216,6 @@ iOS 的完整示例工程请参见 [COS iOS Demo](https://github.com/tencentyun/
 ```plaintext
 pod install
 ```
->APPID，secretID，secretKey 可前往 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取。
+>? APPID，secretID，secretKey 可前往 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取。
 
 执行命令之后，打开 QCloudCOSXMLDemo.xcworkspace 即可进入 Demo 体验。
