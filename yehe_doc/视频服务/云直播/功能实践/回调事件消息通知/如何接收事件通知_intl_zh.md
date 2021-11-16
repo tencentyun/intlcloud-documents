@@ -12,7 +12,7 @@
 3. 当直播服务内部有事件发生时，消息将会经由事件消息通知服务统一回调给客户后台。
 
 
-<span id="protocol"></span>
+[](id:protocol)
 ## 事件消息通知协议
 
 ### 网络协议
@@ -20,25 +20,24 @@
 - 应答：HTTP STATUS CODE = 200，服务端忽略应答包具体内容，为了协议友好，建议客户应答内容携带 JSON： `{"code":0}`
 
 ### 通知可靠性
-
-事件通知服务具备重试能力，重试间隔为60秒，总计重试3次。为了避免重试对您的服务器以及网络带宽造成冲击，请保持正常回包。触发重试条件如下：
-
+事件通知服务具备重试能力，截图事件通知重试间隔为2分钟，总计重试5次，除此之外直播推流、直播断流、直播录制、直播鉴黄事件通知重试间隔为1分钟，总计重试12次。
+为了避免重试对您的服务器以及网络带宽造成冲击，请保持正常回包。触发重试条件如下：
 - 长时间（20 秒）未回包应答。
 - 应答 HTTP STATUS 不为200。
 
-<span id="configuration"></span>
+[](id:configuration)
 ## 回调事件配置方式
 回调配置主要通过两种方式实现，一种是通过 [云直播控制台](#c_callback)，另一种是通过调用 [服务端 API](#api_callback)。
 >?直播回调事件消息通知 URL 支持对推流事件、断流事件、录制事件、截图事件、鉴黄事件配置独立回调 URL。
 
 
 
-<span id="c_callback"></span>
+[](id:c_callback)
 ### 云直播控制台
-1. 进入云直播控制台的【事件中心】>【[直播回调](https://console.cloud.tencent.com/live/config/callback)】，创建回调模板，具体操作可参见 [创建回调模板](https://intl.cloud.tencent.com/document/product/267/31074)。
-2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)找到您需操作的推流域名，单击【管理】>【模板配置】，将此域名与回调模板进行关联。具体操作请参见 [回调配置](https://intl.cloud.tencent.com/document/product/267/31065)。
+1. 进入云直播控制台的 **事件中心>[直播回调](https://console.cloud.tencent.com/live/config/callback)**，创建回调模板，具体操作可参见 [创建回调模板](https://intl.cloud.tencent.com/document/product/267/31074)。
+2. 在[ **域名管理** ](https://console.cloud.tencent.com/live/domainmanage)找到您需操作的推流域名，单击 **管理>模板配置**，将此域名与回调模板进行关联。具体操作请参见 [回调配置](https://intl.cloud.tencent.com/document/product/267/31065)。
 
-<span id="api_callback"></span>
+[](id:api_callback)
 ### 服务端 API
 1. 调用 [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) 创建回调模板接口，设置您需要的回调参数信息。
 2. 调用 [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) 创建回调规则，设置参数推流域名 DomainName 和 TemplateId（第1步返回），填写与推流和播放地址中一致的 AppName，实现部分直播流开启回调的效果。
