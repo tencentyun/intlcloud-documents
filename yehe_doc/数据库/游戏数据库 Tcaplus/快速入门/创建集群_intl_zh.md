@@ -5,8 +5,8 @@
 已 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并  [实名认证成功](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的游戏数据库 Tcaplus实例。
 
 ## 操作步骤
-1. 登录 [TcaplusDB 控制台](https://console.cloud.tencent.com/tcaplusdb/app)，在左侧导航选择【集群列表】页，单击【创建集群】。
-2. 在弹出的新建集群用对话框，配置集群信息后，单击【立即购买】。
+1. 登录 [TcaplusDB 控制台](https://console.cloud.tencent.com/tcaplusdb/app)，在左侧导航选择**集群列表**页，单击**创建集群**。
+2. 在弹出的新建集群用对话框，配置集群信息后，单击**立即购买**。
  - **网络**：选择私有网络 VPC 及子网 Subnet，每个集群只能在创建时选定私有网络和子网，创建完成后不能修改。
  - **连接协议**：选择 TcaplusDB 集群连接协议（数据描述协议）。
  - **集群名称**：同账号下集群名称不能重复，长度要求[1-32]个字符，可随时修改集群名称。
