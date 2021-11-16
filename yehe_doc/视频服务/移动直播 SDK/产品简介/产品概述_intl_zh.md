@@ -1,7 +1,7 @@
 腾讯云视立方·移动直播（Mobile Live Video Broadcasting，MLVB）SDK 是腾讯云视立方·音视频终端引擎针对移动直播场景专属打造的一体化产品，集成了腾讯云直播的推 / 拉流能力，为您提供高质量直播服务，快速满足手机直播的需求。为了更加贴合用户实际场景，我们提供**互动直播 Live** 和**基础直播 Smart** 两个版本，您可按需选择。
 
 腾讯云视立方·音视频终端引擎版本结构示意如下图。
-![](https://qcloudimg.tencent-cloud.cn/raw/d7346bef2b8786d5206d5c177557953e.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/8110e2a90ea26958e53502859a4d03e7.png)
 
 
 ## 方案与架构
@@ -11,7 +11,7 @@
 
 开通云直播服务后，只需要简单了解腾讯云直播地址的生成规则，就可以自定义自己的推流和播放地址，再配合移动直播提供的基于 RTMP SDK 的**快速集成方案**，一对推流和播放 URL + RTMP SDK 就可以为您的 App 快速添加直播能力。
 
-![](https://main.qcloudimg.com/raw/eb48f164da788994ac5d3cf9d8879de0.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/5f2d64aeb329299c775d50efe51ce7ac.png)
 
 ### 一体化集成方案
 
