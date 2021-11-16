@@ -1,14 +1,16 @@
 ## Overview
-Data Transmission Service (DTS) supports the migration of MySQL, MariaDB, PostgreSQL, Redis, MongoDB and other relational databases and NoSQL database. It can help you migrate your databases without interrupting your business and build a high-availability database architecture for disaster recovery through real-time sync channels. And through data subscription, DTS can meet the requirements of business data mining, business async decoupling and other scenarios.
+Tencent Cloud Data Transmission Service (DTS) supports the migration of various relational databases such as MySQL, MariaDB, PostgreSQL, Redis, and MongoDB as well as NoSQL databases. It enables you to migrate your databases to Tencent Cloud with no business interruptions, create a high-availability database disaster recovery architecture through real-time sync channels, and use data subscription to meet your requirements for commercial data mining and async business decoupling.
 
 
-## Product Features
-- **Data migration**
-Database migration is available for different database types, under different environments. Source databases that are supported for migration include self-built databases in a public network with public IP, self-built databases with access to Tencent Cloud via VPN, direct connection or other network environments, and self-built databases in CVM. Target database is TencentDB instance. Users can check the statuses of all migration tasks and carry out multi-task batch operation.
-The data migration feature of DTS is the best choice for you to migrate data onto cloud. You only need to configure a few steps for data migration, and then you can complete a series of tedious processes for migrating your local data onto the cloud. Meanwhile, the migration process does not prevent your source database from providing external service, thereby minimizing the effect on your business caused by the cloud migration task.
-- **Data Sync**
-The data synchronization feature of DTS implements real-time data synchronization between two TencentDB instances, which is applicable to scenarios such as remote disaster recovery. Currently, data synchronization is only supported for TencentDB for MySQL instances.
-- **Data subscription**
-DTS allows you to acquire real-time incremental update data of a cloud database and also to freely consume incremental data based on your business needs to achieve various business scenarios, such as implementation of cache update policy, async businesses decoupling, real-time synchronization of heterogeneous data sources and real-time synchronization of data containing complicated ETL. You can also dynamically add or delete the subscription object, view subscription data online and modify the consumption time point.
-Data subscription currently supports [Data Subscription (Legacy)](https://intl.cloud.tencent.com/document/product/571/8774) and [Data Subscription Kafka Edition](https://intl.cloud.tencent.com/document/product/571/39531).
 
+## Features
+- [**Data migration**](https://intl.cloud.tencent.com/document/product/571/13711)
+The data migration feature refers to data replication between different data sources. DTS supports non-stop data migration to minimize the impact of database downtime on the business. It is applicable to diverse business scenarios, including data migration to Tencent Cloud, cross-TencentDB instance data migration, and data migration from third-party cloud databases to TencentDB.
+
+- [**Data sync**](https://intl.cloud.tencent.com/document/product/571/42667)
+  The data sync feature refers to real-time data sync between two database sources. It is suitable for cloud-local active-active, multi-site active-active, and cross-border data sync as well as real-time data warehousing.   
+
+  Unlike data migration which is a one-time short-term task to migrate the entire database, data sync is a continuous task. After a task is created, the data will be continuously synced to keep consistency between the source and target databases.
+
+- [**Data subscription**](https://intl.cloud.tencent.com/document/product/571/13713)
+Data subscription refers to the process through which DTS gets the data change information of a key business from the database, converts it into message objects, and pushes them to Kafka for the downstream businesses to subscribe to, get, and consume. DTS allows you to directly consume data through a Kafka client, so you can build data sync features between TencentDB databases and heterogeneous systems, such as cache update, real-time ETL (data warehousing technology) sync, and async business decoupling.
