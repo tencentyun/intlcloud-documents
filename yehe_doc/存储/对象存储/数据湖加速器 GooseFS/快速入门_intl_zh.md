@@ -117,7 +117,7 @@ $ ./bin/goosefs-start.sh local SudoMount
 
 >?
 >- COSN 的完整配置可参考：[Hadoop 工具](https://intl.cloud.tencent.com/document/product/436/6884)。
->- CHDFS 的完整配置可参考：[ 挂载 CHDFS](https://intl.cloud.tencent.com/document/product/1106/41965)。
+>- CHDFS 的完整配置可参考：挂载 CHDFS。
 
 下面将介绍一下如何通过创建 Namespace 来挂载 COS 或 CHDFS 的方法和步骤。
 
