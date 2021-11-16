@@ -117,7 +117,7 @@ GooseFS가 COS(COSN）혹은 Tencent Cloud HDFS(CHDFS)를 GooseFS의 루트 경�
 
 >?
 >- COSN의 완전한 구성은 [Hadoop 툴](https://intl.cloud.tencent.com/document/product/436/6884)을 참고하십시오.
->- CHDFS의 완전한 구성은 [CHDFS 마운트](https://intl.cloud.tencent.com/document/product/1106/41965)를 참고하십시오.
+>- CHDFS의 완전한 구성은 CHDFS 마운트 를 참고하십시오.
 
 다음으로 Namespace 생성을 통해 COS 혹은 CHDFS를 마운트 하는 방법과 절차를 소개합니다.
 
