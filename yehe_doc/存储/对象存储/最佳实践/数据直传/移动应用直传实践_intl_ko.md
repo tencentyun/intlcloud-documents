@@ -27,7 +27,7 @@ COS의 모바일 SDK(Android/IOS)는 임시 키로 권한 부여 요청을 할 �
 
 보안 강화를 위해 임시 키로 서명하려면 서버에 임시 키 서비스를 구축하고, API 인터페이스를 클라이언트로 전달해야 합니다. 서비스 구축 단계에 관한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참조하십시오.
 
-> 정식 배포에 앞서 서버에 본인 웹 사이트의 권한 인증 기능을 추가하십시오.
+>! 정식 배포에 앞서 서버에 본인 웹 사이트의 권한 인증 기능을 추가하십시오.
 
 #### 적합한 권한 선택
 
@@ -74,7 +74,7 @@ QCloudCredentialProvider credentialProvider = new SessionCredentialProvider(new 
                 
 CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig, credentialProvider);                
 ```
->이 방법을 적용할 경우, 서명 시작 시간은 휴대폰 로컬 시간이 기준입니다. 휴대폰 로컬 시간이 10분 이상 차이가 난다면 서명 오류가 발생할 수 있습니다. 이런 경우 다음의 사용자 정의 응답 본문으로 권한을 부여하는 것을 권장합니다.
+>?이 방법을 적용할 경우, 서명 시작 시간은 휴대폰 로컬 시간이 기준입니다. 휴대폰 로컬 시간이 10분 이상 차이가 난다면 서명 오류가 발생할 수 있습니다. 이런 경우 다음의 사용자 정의 응답 본문으로 권한을 부여하는 것을 권장합니다.
 
 #### 사용자 정의 응답 본문에 의한 권한 부여
 사용자 정의한 임시 키 서비스의 HTTP 응답 본문이 단말에서 서버로 반환되는 시간을 서명 시작 시간으로 설정함으로써 사용자 휴대폰의 로컬 시간 오차로 서명 오류가 발생하는 것을 방지하거나 다른 프로토콜로 단말과 서버 간 통신하는 등 보다 효율적인 작업을 원한다면, BasicLifecycleCredentialProvider 클래스를 상속하여 fetchNewCredentials()를 출력합니다.
@@ -214,6 +214,6 @@ QCloudCOSXMLDemo/QCloudCOSXMLDemo/key.json 파일에 APPID, secretID, secretKey 
 ```plaintext
 pod install
 ```
->APPID, secretID, secretKey는 [API Keys](https://console.cloud.tencent.com/cam/capi) 페이지에서 받을 수 있습니다.
+>? APPID, secretID, secretKey는 [API Keys](https://console.cloud.tencent.com/cam/capi) 페이지에서 받을 수 있습니다.
 
 명령어를 실행한 뒤 QCloudCOSXMLDemo.xcworkspace를 열면 Demo 체험으로 이동할 수 있습니다.
