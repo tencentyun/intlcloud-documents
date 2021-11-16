@@ -63,7 +63,7 @@ spec:
       fs.cosn.bucket.region: ap-beijing
       fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
       fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-      fs.cos.app.id: "${your appid}"
+      fs.cosn.userinfo.appid: "${your appid}"
     encryptOptions:
       - name: fs.cosn.userinfo.secretKey
         valueFrom:
@@ -255,4 +255,3 @@ Defaulting container name to goosefs-master.
 [root@VM-2-40-tlinux goosefs-1.0.0-SNAPSHOT-noUI-noHelm]# goosefs fs ls /slice1/a/
              12       PERSISTED 06-25-2021 16:45:11:809 100% /slice1/a/1.xt
 ```
-
