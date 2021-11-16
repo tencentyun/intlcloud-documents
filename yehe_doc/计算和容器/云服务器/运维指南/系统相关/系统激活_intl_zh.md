@@ -5,7 +5,7 @@
 
 
 ## 激活前须知
-1. **Windows Server 2008** 中 SPP Notification Service 用来执行激活相关的服务，需要保证正常运行。如下图所示：
+1. 仅**Windows Server 2008** 中 SPP Notification Service 用来执行激活相关的服务，需要保证正常运行。如下图所示：
 ![](https://main.qcloudimg.com/raw/f84f7bd86fae0df1c2394cdc554b6a98.png)
 2. 某些优化软件可能会禁用修改服务相关执行程序的执行权限，例如 sppsvc.exe 进程的执行权限若被修改，会导致服务运行不正常。如下图所示：
 ![](https://main.qcloudimg.com/raw/c1ad23337b0f1b6e186d0c6e50c9e1b5.png)
