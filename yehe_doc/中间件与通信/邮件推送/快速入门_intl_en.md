@@ -53,7 +53,7 @@ After the free tier is used up, your plans will be used automatically. If no pla
 	- Template Type: select **HTML rich text**.
 	- Email Summary: for example, `notification email template`.
 	- Email Body: click **Choose a file** and select an HTML file as the email body.
->?The email content can be in plain text or rich text format. The rich text format requires HTML code prepared in advance. After the template is submitted, it will enter the review stage and can be used upon approval. The review will be finished within three business days.
+>?The email content can be in plain text or rich text format. The rich text format requires HTML code prepared in advance. After the template is submitted, it will enter the review stage and can be used upon approval. The review will be finished within one business days.
 
 4. Click **Preview** to preview the email template.
 
