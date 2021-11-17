@@ -503,7 +503,7 @@ function(err, data) { ... }
 | - x-cos-meta-\*                                               | User defined metadata                                           | String  |
 | - NotModified      | This field is returned if the request has `IfModifiedSince`. If the file hasn’t been modified after the specified time, `true` is returned. If not, `false` is returned. | Boolean |
 | - ETag | MD5 checksum of the object. The value of this parameter can be used to check whether the object was corrupted during the upload. </br>Example: `"09cba091df696af91549de27b8e7d0f6"`. **Note that double quotation marks are required at the beginning and the end.** | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | | String  |
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | 
 | - Body                | Returned file content, in string format by default        | String  |
 
 ### Checking CORS configuration
@@ -620,7 +620,7 @@ function(err, data) { ... }
 | - headers | Headers | Object |
 | - ETag | MD5 checksum of the object, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end.** | String |
 | - LastModified | Last modified time of the object, for example, `2017-06-23T12:33:27.000Z` | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | | String  |
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | 
 
 ### Deleting an object
 
@@ -1432,7 +1432,7 @@ cos.sliceCopyFile({
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | CopySource | URL of the source object. You can specify a previous version using the URL parameter `?versionId=<versionId>`. | String | Yes |
 | ChunkSize | Size (in bytes) of each part in the multipart copy. Default: `1048576` (1 MB) | Number | No |
-| SliceSize | File size threshold in bytes, 5 GB by default. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No | | Number | No |
+| SliceSize | File size threshold in bytes, 5 GB by default. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No | 
 | onProgress | Callback for the upload progress, whose parameter is `progressData` | Function | No |
 | - progressData.loaded | Size of the uploaded parts, in bytes | Number | No |
 | - progressData.total | Size of the entire file, in bytes | Number | No |
