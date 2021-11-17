@@ -17,11 +17,11 @@ You have created a CCN-based direct connect gateway as instructed in [Creating D
 The IP range published is an IDC IP range that specifies the direct connect gateway route to CCN. After the route is received, CCN will automatically add a route with the direct connect gateway as the next hop and IDC IP range as the destination.
 4. (Optional) Associate a CCN instance.
     If you did not specify a CCN instance when [creating the direct connect gateway](https://intl.cloud.tencent.com/document/product/216/19256), click **Associate with CCN**, select a CCN instance to be associated in the pop-up window, and click **OK**.
-	![]()
+	![](https://qcloudimg.tencent-cloud.cn/raw/3a269710e1003a92e83c63bd553635c1.png)
 	Then the CCN instance will be associated and the CCN icon becomes green. The dotted line between direct connect gateway and CCN changes to solid, indicating their interconnection.
 5. Create a dedicated tunnel.
     A dedicated tunnel is the network segmentation of a connection. It provides a linkage of IDC to Tencent Cloud.
-	Under the **Dedicated Tunnels** icon connected to the direct connect gateway, click **Create Dedicated Tunnel**. Then, a page for creating a dedicated tunnel is displayed, and you can configure dedicated tunnel settings on this page. ![]()
+	Under the **Dedicated Tunnels** icon connected to the direct connect gateway, click **Create Dedicated Tunnel**. Then, a page for creating a dedicated tunnel is displayed, and you can configure dedicated tunnel settings on this page. ![](https://qcloudimg.tencent-cloud.cn/raw/a604fb7eecda053a4a9a7be368a989d6.png)
 	For more information on the parameter configurations, see [Creating a Dedicated Tunnel](https://intl.cloud.tencent.com/document/product/216/19250).
 	Then the dedicated tunnel is created and the **Dedicated Tunnels** icon becomes green. The dotted line between direct connect gateway and dedicated tunnel changes to solid, indicating the direct connect gateway is configured with a dedicated tunnel.
 6. Publish IDC IP ranges to CCN.
@@ -50,12 +50,12 @@ Formerly named **BGP mode**. To use it, please [submit a ticket](https://console
    1. (Optional) Select a CCN instance in the **Publish Rules** section.
       Perform this step if you want to associate one CCN instance with the direct connect gateway or change the associated CCN instance.
 	
-
-<dx-alert infotype="explain" title="">
+      <dx-alert infotype="explain" title="">
 - The **Auto-propagation** is selected after this feature is enabled. If needed, you can check **Custom** and complete the relevant configurations.
 - Either custom or auto-propagation can be checked.
 </dx-alert>
-   2. Configure IDC IP ranges.
+
+   2.  Configure IDC IP ranges.
         The direct connect gateway automatically obtains the IDC IP range without needing configuration.
 		 <dx-alert infotype="explain" title="">
 Publishing IDC IP ranges may be delayed for one minute. If there are any updates on the IDC IP range, please refresh the current page.
