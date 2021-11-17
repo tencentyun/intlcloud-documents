@@ -142,8 +142,8 @@ try {
 }
 ```
 
-### 一時的な証明書の使用によるアップロード
-一時的な証明書の関連キー情報を渡し、一時的な証明書を使用して身分を検証し、アップロードします。
+### 臨時証明書の使用によるアップロード
+臨時証明書の関連キー情報を渡し、臨時証明書を使用して身分を検証し、アップロードします。
 ```
 VodUploadClient client = new VodUploadClient("Credentials TmpSecretId", "Credentials TmpSecretKey", "Credentials Token");
 VodUploadRequest request = new VodUploadRequest();
