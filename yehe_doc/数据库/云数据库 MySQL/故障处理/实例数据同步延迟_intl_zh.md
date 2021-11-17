@@ -29,22 +29,22 @@
 
 ## 处理步骤
 ### [无主键或二级索引](id:wzjhejsy)
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/performance/disk)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【空间分析】页。
-2. 在空间分析页下方，选择【无主键表】页，单击列表的无主键表，可查看表的字段和索引信息。
+1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/performance/disk)，在左侧导航选择**诊断优化**，在上方选择对应数据库，然后选择**空间分析**页。
+2. 在空间分析页下方，选择**无主键表**页，单击列表的无主键表，可查看表的字段和索引信息。
 ![](https://main.qcloudimg.com/raw/070bf60984827fb43a33048a38a5969b.png)
 >?无主键表列表支持定期扫描（频率为每天扫描1次）和手动刷新两种方式，可根据实际情况选择。
 3. 为步骤2中的无主键表创建主键，若表无法创建主键，建议选择基数高的列创建二级索引。
 
 ### [大事务](id:dsw)
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在“诊断项”勾选【事务导致复制延迟】，可过滤查看实例的大事务。
+1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在“诊断项”勾选**事务导致复制延迟**，可过滤查看实例的大事务。
 ![](https://main.qcloudimg.com/raw/508e3bfd033a2f5a5422aae9902cc598.png)
 2. 将大事务拆分为小事务，通过 where 条件限制每次要处理的数据量。
 >?通过 DBbrain 定位耗时的大事务，将大事务拆分成为小事务进行，这样只读节点就可以迅速完成事务的执行，不会造成数据延迟。
 
 ### [DDL 操作](id:dcz)
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在“诊断项”勾选【DDL导致复制延迟】，可过滤查看实例对应的 DDL 操作。
+1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在“诊断项”勾选**DDL导致复制延迟**，可过滤查看实例对应的 DDL 操作。
 ![](https://main.qcloudimg.com/raw/7d7c9ec01da894fa1554f6d9bf135366.png)
-2. 在告警列表单击“操作”列的【详情】，可跳转至事件详情页进行相应处理。
+2. 在告警列表单击“操作”列的**详情**，可跳转至事件详情页进行相应处理。
  - 事件详情：包括诊断项、起止时间、风险等级、持续时长、概要等信息。
  - 现场描述：异常事件（或健康巡检事件）的外在表现现象的快照和性能趋势。
  - 智能分析：分析导致性能异常的根本原因，定位具体操作。
