@@ -64,7 +64,7 @@ The Tencent Cloud access exchange uses a fixed MAC address of 3c:fd:fe:29:cb:c2.
 >?MAC address flapping (switching jump) occurs when a MAC address is learned by two outbound interfaces in the same VLAN and the MAC address entry learned later overrides the earlier one, making the MAC address unstable.
 
 The following are scenarios where MAC address flapping occurs.
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/17260e52033989f2c1dc743dbe2b3382.png)
 As shown in the figure above, CPE exchange B connects to Tencent Cloud exchanges A and A1 through two connections (connections 1 and 2).
 MAC address flapping occurs in exchange B when Tencent Cloud returns packets to the CPE.
 
