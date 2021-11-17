@@ -10,7 +10,7 @@
       - **Listeners communicate with the origin server using HTTP protocol** means that the HTTPS protocol is used between the client and the acceleration connection VIP, while the HTTP protocol is used between the VIP and the origin server, which requires an HTTP port to be opened on the origin server;
         **Listeners communicate with the origin server using HTTPS protocol** means that the HTTPS protocol is used between the client and the origin server, which requires an HTTPS port to be opened on the origin server.
       - SSL Parsing: both one-way and two-way authentication are supported.
-      - Server/Client Certificate: you need to upload a certificate or update it in **Certificate Management** in the GAAP console and then select it when creating/modifying an HTTPS listener. For more information, see [Certificate Management](https://intl.cloud.tencent.com/document/product/608/42343).
+      - Server/Client Certificate: you need to upload a certificate or update it in **Certificate Management** in the GAAP console and then select it when creating/modifying an HTTPS listener. For more information, see Certificate Management.
 
 ## Configuring HTTP/HTTPS Listener
 
