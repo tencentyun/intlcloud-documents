@@ -14,11 +14,11 @@
 
 ## タスクの開始
 
-ビデオ編集タスクは、[サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34126) 方式により開始されます。APIの呼び出しで戻される結果の中にタスクIDが含まれ、これを [結果の取得](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96) 時の対応するタスクの結果との関連付けに使用します。
+ビデオ編集タスクは、[サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34126) 方式により開始されます。APIの呼び出しで戻される結果の中にタスクIDが含まれ、これを [結果の取得](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96) 時の対応するタスクの結果とのバインドに使用します。
 
 ## 結果の取得
 
-タスクの開始後、非同期の[結果通知](https://intl.cloud.tencent.com/document/product/266/33931) または同期の [タスクの確認](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) の方式でビデオ編集の実行結果を取得できます。以下は、ビデオ編集タスクの開始後、通常のコールバック方式での結果通知の例となります（値がnullのフィールドは省略）。
+タスクの開始後、非同期の[結果通知](https://intl.cloud.tencent.com/document/product/266/33931) または同期の [タスク確認](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) 方式でビデオ編集の実行結果を取得できます。以下は、ビデオ編集タスクの開始後、通常のコールバック方式での結果通知の例となります（値がnullのフィールドは省略）。
 
 ```json
 {
