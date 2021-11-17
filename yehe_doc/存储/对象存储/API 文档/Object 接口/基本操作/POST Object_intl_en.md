@@ -74,7 +74,7 @@ The request body of this API is encoded with multipart/form-data. When sending t
 
 You can configure access permissions for the object by specifying the following form fields during upload:
 
-| Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
+| Field  | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
 | acl | Defines the ACL attribute of the object. For the enumerated values, such as `default` (default), `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). <br>**Note**: If you do not need to set an ACL for the object, set this parameter to `default` or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | Enum | No |
 | x-cos-grant-read | Grants a user permission to read the object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
@@ -147,7 +147,7 @@ Where,
 
 Form fields that can be limited are as follows:
 
-| Field | Description | Match Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Required |
+| Field | Description | Match Type  | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------------------- | -------- |
 | acl | ACL attribute of the object | Exact/Prefix | No |
 | bucket | Bucket for upload | Exact | No |
@@ -231,7 +231,19 @@ Log in to the CAM console and go to the [Manage API Key](https://console.cloud.t
 
 **Signature form fields**
 
-- policy = `ewogICAgImV4cGlyYXRpb24iOiAiMjAxOS0wOC0zMFQwOTozODoxMi40MTRaIiwKICAgICJjb25kaXRpb25zIjogWwogICAgICAgIHsgImFjbCI6ICJkZWZhdWx0IiB9LAogICAgICAgIHsgImJ1Y2tldCI6ICJleGFtcGxlYnVja2V0LTEyNTAwMDAwMDAiIH0sCiAgICAgICAgWyAic3RhcnRzLXdpdGgiLCAiJGtleSIsICJmb2xkZXIvc3ViZm9sZGVyLyIgXSwKICAgICAgICBbICJzdGFydHMtd2l0aCIsICIkQ29udGVudC1UeXBlIiwgImltYWdlLyIgXSwKICAgICAgICBbICJzdGFydHMtd2l0aCIsICIkc3VjY2Vzc19hY3Rpb25fcmVkaXJlY3QiLCAiaHR0cHM6Ly9teS53ZWJzaXRlLyIgXSwKICAgICAgICBbICJlcSIsICIkeC1jb3Mtc2VydmVyLXNpZGUtZW5jcnlwdGlvbiIsICJBRVMyNTYiIF0sCiAgICAgICAgeyAicS1zaWduLWFsZ29yaXRobSI6ICJzaGExIiB9LAogICAgICAgIHsgInEtYWsiOiAiQUtJRFFqejNsdG9tcFZqQm5pNUxpdGtXSEZsRnB3a245VTVxIiB9LAogICAgICAgIHsgInEtc2lnbi10aW1lIjogIjE1NjcxNTA2OTI7MTU2NzE1Nzg5MiIgfQogICAgXQp9`
+- policy = `ewogICAgImV4cGlyYXRpb24iOiAiMjAxOS0wOC0zMFQwOTozODoxMi40MTRaIiwKI
+CAgICJjb25kaXRpb25zIjogWwogI
+CAgICAgIHsgImFjbCI6ICJkZWZhdWx0IiB9LAogICAgICAgIHsgImJ1Y2tldCI6ICJleGFtcGxlYn
+Vja2V0LTEyNTAwMDAwMDAiIH0sCiAgI
+CAgICAgWyAic3RhcnRzLXdpdGgiLCAiJGtleSIsICJmb2xkZXIvc3ViZm9sZGVyLyIgXSwKICAgICAgI
+CBbICJzdGFydHMtd2l0aCIsICIkQ29ud
+GVudC1UeXBlIiwgImltYWdlLyIgXSwKICAgICAgICBbICJzdGFydHMtd2l0aCIsICIkc3VjY2Vzc19hY3
+Rpb25fcmVkaXJlY3QiLCAiaHR0cHM6Ly9te
+S53ZWJzaXRlLyIgXSwKICAgICAgICBbICJlcSIsICIkeC1jb3Mtc2VydmVyLXNpZGUtZW5jcnlwdGlvbiIsI
+CJBRVMyNTYiIF0sCiAgICAgICAgeyAic
+S1zaWduLWFsZ29yaXRobSI6ICJzaGExIiB9LAogICAgICAgIHsgInEtYWsiOiAiQUtJRFFqejNsdG9tc
+FZqQm5pNUxpdGtXSEZsRnB3a245VTVxIi
+B9LAogICAgICAgIHsgInEtc2lnbi10aW1lIjogIjE1NjcxNTA2OTI7MTU2NzE1Nzg5MiIgfQogICAgXQp9`
 - q-sign-algorithm = `sha1`
 - q-ak = `AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q`
 - q-key-time = `1567150692;1567157892`
