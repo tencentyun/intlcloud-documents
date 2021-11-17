@@ -118,7 +118,7 @@ VODでは、ビデオ画面、ASR文字、OCR文字の3種類のオブジェク�
 
 ## タスクの開始
 
-ビデオコンテンツ審査タスクの開始には、「サーバーAPIからの直接の開始」、「コンソールからの直接の開始」、「アップロード時に実行したいタスクを指定」の3種類の方法があります。具体的な内容は、ビデオ処理の [タスクの開始](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask)をご参照ください。
+ビデオコンテンツ審査タスクの開始には、「サーバーAPIから直接開始」、「コンソールから直接開始」、「アップロード時に実行したいタスクを指定」の3種類の方法があります。詳細内容は、ビデオ処理の [タスクの開始](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask)をご参照ください。
 
 以下は、各方法のビデオコンテンツ審査タスク開始についての説明です。
 
@@ -131,7 +131,7 @@ VODでは、ビデオ画面、ASR文字、OCR文字の3種類のオブジェク�
 
 ## 結果の取得
 
-ビデオコンテンツ審査タスクの開始後、非同期の [結果通知](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification)  待ちおよび同期の [タスクの確認](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) の2種類の方式でビデオコンテンツ審査タスクの実行結果を取得できます。以下は、コンテンツ審査タスク開始後、通常のコールバック方式での結果通知の例となります（値がnullのフィールドは省略）。
+ビデオコンテンツ審査タスクの開始後、非同期の [結果通知](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification)  待ちおよび同期の [タスク確認](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) の2種類の方式でビデオコンテンツ審査タスクの実行結果を取得できます。以下は、コンテンツ審査タスク開始後、通常のコールバック方式での結果通知の例となります（値がnullのフィールドは省略）。
 ```json
 {
     "EventType":"ProcedureStateChanged",
