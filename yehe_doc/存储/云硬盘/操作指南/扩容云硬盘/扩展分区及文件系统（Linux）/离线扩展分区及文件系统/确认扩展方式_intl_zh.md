@@ -35,7 +35,7 @@ fdisk -l
      </tr>
 		 	 <tr>      
          <td>-</td>   
-	     <td nowrap="nowrap"><a href="https://cloud.tencent.com/document/product/362/53364">扩容文件系统</a></td>
+	     <td nowrap="nowrap"><a href="https://intl.cloud.tencent.com/document/product/362/40952">扩容文件系统</a></td>
 			 <td>适用于<b>没有创建分区</b>、直接在裸设备上创建了文件系统的场景。</td>
      </tr>
 	 <tr>      
