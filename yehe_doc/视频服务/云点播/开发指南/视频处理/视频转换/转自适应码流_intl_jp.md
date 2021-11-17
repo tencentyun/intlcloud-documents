@@ -1,6 +1,6 @@
 ABSへのトランスコードとは、ビデオをトランスコードしてパッケージングし、ABSの出力ファイルを生成するプロセスを指します。その特徴は、複数のビットレートの音声ビデオファイルと1つのマニフェストファイル（manifest）が含まれていることで、プレーヤーは現在の帯域幅に応じて、最適なビットレートを動的に選択して再生することができます。現在最も幅広く活用されているABSの形式は、 [Master Playlist](https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/creating_a_master_playlist) 形式でのHLSです。
 
-VODは、ビデオをHLS形式のABSに変換する機能をサポートしています。この機能を使用することで、以下を手に入れることができます。
+VODは、ビデオをHLS形式のABSに変換する機能をサポートしています。この機能を使用することで、以下を入手可能です。
 * プレーヤーが現在の帯域幅に応じて最適なビットレートを動的に選択して再生し、視聴者に素晴らしい体験をもたらします。
 * メインストリームのプレーヤーそのものがHLSアダプティブビットレートストリーミングをサポートしているため、プレーヤーをカスタマイズする必要がありません。
 * VODでは [Super player SDK](https://intl.cloud.tencent.com/document/product/266/7836)を提供し、統合した後、ABSを素早く、簡単に再生できるようにしています。
