@@ -51,7 +51,7 @@ VODでは、参考と検証のために、**署名生成サンプルコード**�
 |<span id ="p3"></span> procedure | いいえ | String | 後続のビデオタスク操作、すなわち、ビデオのアップロードが完了した後、タスクフロー操作が自動的に開始されます。このパラメータ値はタスクフローテンプレート名です。VODは、[タスクフローテンプレートの作成](https://intl.cloud.tencent.com/document/product/266/14058) とテンプレートの命名をサポートします。| 
 | taskPriority | いいえ | Integer | 後続のビデオタスクの優先度（procedureが指定されている場合にのみ有効）。値の範囲は[-10，10]、デフォルトは0です。| 
 | taskNotifyMode | いいえ | String | タスクフロー状態の変更通知モード（procedureが指定されている場合にのみ有効）。<li>Finish：タスクフローが完全に実行された場合にのみ、イベント通知が開始されます。</li><li>Change：タスクフロー内の各サブタスクのステータスが変更された場合に限り、イベント通知が行われます。</li><li>None：タスクフローのコールバックは受け入れられません。 </li>デフォルトはFinishです。| 
-| sourceContext | いいえ | String | ソースコンテキストは、ユーザーリクエスト情報を渡すために使用されます。[アップロード完了コールバック](https://intl.cloud.tencent.com/document/product/266/33950) は、このフィールドの値を返します。最大250文字を含めることができます。 |
+| sourceContext | いいえ | String | ソースコンテキストは、ユーザーリクエスト情報を渡すために使用されます。[アップロード完了コールバック](https://intl.cloud.tencent.com/document/product/266/33950) は、このフィールドの値を返します。最大250文字を入力することが可能です。 |
 | oneTimeValid | いいえ | Integer | 署名がワンタイム署名かどうかについては、[クライアントからのアップロードガイド - ワンタイム署名](https://intl.cloud.tencent.com/document/product/266/33921#p4) をご参照ください。<br>デフォルトは0で、ワンタイム署名が無効であることを表し、1はワンタイム署名が有効であることを表します。<br>関連するエラーコードについては、[ワンタイム署名の説明](#p1)をご参照ください。 | 
 | vodSubAppId | いいえ | Integer | [サブアプリケーション](https://intl.cloud.tencent.com/document/product/266/33987) ID。このパラメータを入力しない、0を入力した、またはTencent Cloud AppIdを入力した場合、操作するサブアプリケーションが「メインアプリケーション」となります。 | 
 | sessionContext | いいえ | String | セッションコンテキストは、ユーザーリクエスト情報を渡すために使用されます。procedureパラメータが指定されている場合、[タスクフロー状態の変更コールバック](https://intl.cloud.tencent.com/document/product/266/33953) は、フィールド値を返します。最大1000文字を含めることができます。|
