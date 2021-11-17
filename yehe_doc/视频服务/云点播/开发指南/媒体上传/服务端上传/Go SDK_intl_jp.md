@@ -145,7 +145,7 @@ func main() {
 ```
 
 ### ストレージリージョンの指定
-[コンソール](https://console.cloud.tencent.com/vod)で目標ストレージリージョンがアクティブ化されているか確認します。アクティブ化されていない場合は、[アップロードストレージ設定](https://intl.cloud.tencent.com/document/product/266/18874)を参考とすることができます。最後に、`StorageRegion`の属性によって、ストレージリージョンの [英語の略称](https://intl.cloud.tencent.com/document/product/266/9760)を設定します。
+[コンソール](https://console.cloud.tencent.com/vod)で目標ストレージリージョンがアクティブ化されているか確認します。アクティブ化されていない場合は、[アップロードストレージ設定](https://intl.cloud.tencent.com/document/product/266/18874)をご参照ください。最後に、`StorageRegion`の属性によって、ストレージリージョンの [英語の略称](https://intl.cloud.tencent.com/document/product/266/9760)を設定します。
 ```
 package main
 
@@ -236,7 +236,7 @@ func main() {
 
 
 ### アップロードのプロキシ設定
-アップロードのプロキシ設定では、関係するプロトコルおよびデータはいずれもプロキシ経由で処理します。開発者はプロキシの助けを借りて、ファイルを自社イントラネットからTencent Cloudにアップロードすることができます。
+アップロードのプロキシ設定では、関係するプロトコルおよびデータはいずれもプロキシ経由で処理します。開発者はプロキシを参照しながら、ファイルを自社インターネットかたテンセントクラウドにアップロードします。
 ```
 package main
 
@@ -271,7 +271,7 @@ func main() {
 ```
 
 ### アダプティブビットレートストリーミング（ABS）ファイルのアップロード
-このSDKでアップロードをサポートするABS形式のパッケージにはHLSとDASHがあります。manifest（M3U8またはMPD）で引用するメディアファイルは、必ず相対パスとし（URLおよび絶対パスは不可）、同時にmanifestと同じクラスのディレクトリまたは下の階層のディレクトリに置く必要があります（`../`は使用不可）。SDKのアップロードインターフェースを呼び出す時に、`MediaFilePath`パラメータにmanifest パスを入力すると、SDKが関連するメディアファイルリストを解析し、一緒にアップロードします。
+このSDKでアップロードをサポートするABS形式のパッケージにはHLSとDASHがあります。manifest（M3U8またはMPD）で引用するメディアファイルは、必ず相対パスとし（URLおよび絶対パスは不可）、同時にmanifestと同じクラスのディレクトリまたは下の階層のディレクトリに置く必要があります（`../`は使用不可）。SDKのアップロードインターフェースを呼び出す時に、`MediaFilePath`パラメータにmanifest を入力すると、SDKが関連するメディアファイルリストを解析し、一緒にアップロードされます。
 
 ```
 package main
@@ -319,10 +319,10 @@ func main() {
 | CoverFilePath   | アップロード予定のカバーファイルパス。ローカルパスにする必要があります。URLはサポートしていません。 | Stringポインタ | いいえ    |
 | CoverType   | アップロード予定のカバーファイルタイプ。選択可能なタイプの詳細は、[メディアアップロードの概要](https://intl.cloud.tencent.com/document/product/266/9760)をご参照ください。CoverFilePathに拡張子が付いている場合は入力不要です。        | Stringポインタ | いいえ    |
 | Procedure   | アップロード後に自動的に実行させたいタスクフロー名。このパラメータは、タスクフローの作成（[API方式](https://intl.cloud.tencent.com/zh/document/product/266/33897) または[コンソール方式](https://console.cloud.tencent.com/vod/video-process/taskflow)）時にユーザーが指定します。具体的な内容は、[タスクフロー概要](https://intl.cloud.tencent.com/document/product/266/33931)をご参照ください。       | Stringポインタ | いいえ    |
-| ExpireTime   | メディアファイルの期限切れ時間。表記形式はISO 8601規格に準拠します。詳細については、[ISO日時表記形式の説明](https://intl.cloud.tencent.com/document/product/266/11732)をご参照ください。        | Stringポインタ | いいえ    |
+| ExpireTime   | メディアファイルの期限。表記形式はISO 8601規格に準拠します。詳細については、[ISO日時表記形式の説明](https://intl.cloud.tencent.com/document/product/266/11732)をご参照ください。        | Stringポインタ | いいえ    |
 | ClassId   | カテゴリーID。メディアのカテゴリー管理に使用します。[カテゴリー作成](https://intl.cloud.tencent.com/document/product/266/35325) インターフェースによってカテゴリーを作成し、カテゴリーIDを取得することができます。        |  int64ポインタ | いいえ    |
 | SourceContext   | ソースコンテキスト。ユーザーリクエスト情報のパススルーに使用します。アップロードコールバックインターフェースは、このフィールドの値を戻します。最長250文字。        | Stringポインタ | いいえ    |
-| SubAppId   | VOD [サブアプリケーション](https://intl.cloud.tencent.com/document/product/266/33987)ID。サブアプリケーションの中のリソースにアクセスしたい場合は、このフィールドにサブアプリケーションIDを入力します。アクセスしない場合、このフィールドは入力不要です。        | uint64ポインタ | いいえ    |
+| SubAppId   | VOD [サブアプリケーション](https://intl.cloud.tencent.com/document/product/266/33987)ID。サブアプリケーションの中のリソースにアクセスしたい場合は、このフィールドにサブアプリケーションIDを入力します。アクセスしない場合、この項目は入力不要です。        | uint64ポインタ | いいえ    |
 | StorageRegion   | ストレージリージョン。ストレージを予定/希望するリージョンを指定します。このフィールドにはストレージリージョンの[英語の略称](https://intl.cloud.tencent.com/document/product/266/9760)を入力します。        | Stringポインタ | いいえ    |
 | ConcurrentUploadNumber   | パート同時実行数。大きなファイルを対象にパートアップロードする時に有効となります。        | Integer | いいえ    |
 
@@ -334,7 +334,7 @@ func main() {
 | Response.FileId   | メディアファイルの一意の標識。        | String ポインタ |
 | Response.MediaUrl | メディア再生アドレス。 | String ポインタ  |
 | Response.CoverUrl | メディアカバーアドレス。 | String ポインタ  |
-| Response.RequestId | 一意のリクエストID。リクエストごとに返されます。問題を特定する時はその回のリクエストのRequestIdを提供する必要があります。 | Stringポインタ  |
+| Response.RequestId | 一時的なリクエストID。リクエストごとに返されます。問題を特定する時はその回のリクエストのRequestIdを提供する必要があります。 | Stringポインタ  |
 
 アップロードメソッド `VodUploadClient.Upload(region string, request *VodUploadRequest)`
 
@@ -348,7 +348,7 @@ func main() {
 | ステータスコード         | 意味               |
 | ----------- | ----------------- |
 | InternalError       | 内部エラー。 |
-| InvalidParameter.ExpireTime       | パラメータ値のエラー：期限切れ時間。 |
+| InvalidParameter.ExpireTime       | パラメータ値のエラー：期限。 |
 | InvalidParameterValue.CoverType       | パラメータ値のエラー：カバーのタイプ。     |
 | InvalidParameterValue.MediaType       | パラメータ値のエラー：メディアタイプ。           |
 | InvalidParameterValue.SubAppId       | パラメータ値のエラー：サブアプリケーションID。              |
