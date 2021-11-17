@@ -28,17 +28,16 @@
 <tr>
 </div></a></td>
 <td>
-<input type="button" value="Web Demo" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" />
+<input type="button" value="Web端末のコード例" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" />
 </td>
 <td>
 <img style="width:150px" src="https://main.qcloudimg.com/raw/844e3de73cf2537e8a58e2263de5900e.png" data-nonescope="true">
 </td>
 <td>
-<input type="button" value="Windows" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-windows.zip')" /><br><br>
-<input type="button" value="macOS" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-mac.zip')" /></td>
+<input type="button" value="Windows版" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-windows.zip')" /><br><br>
+<input type="button" value="MacOS版" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-mac.zip')" /></td>
 </tr>
 </table>
-
 
 
 
@@ -81,7 +80,7 @@
 </dx-tabs>
 
 ## ビデオ・インタラクティブストリーミングシーン
-ビデオ・インタラクティブストリーミングシーンは、キャスターと視聴者間のビデオ・マイク接続インタラクションやキャスターのルーム間（ライブストリーミングルーム間）PKをサポートしています。マイクのオン・オフはスムーズで、切り替え時に待つ必要がなく、キャスターの遅延は300ms未満です。1つのルームで接続できるマイク数は無制限で、最大50人の同時マイク接続が可能です。低遅延のライブストリーミングモードでは10万人の同時再生をサポートしており、再生遅延は低く、1000msです。CDN Relayed live streamingモードでは、視聴者数は無制限です。よくあるユースケースとしては、低遅延ライブストリーミング、10万人のインタラクティブ授業、ビデオライブストリーミングPK、ビデオお見合いルーム、インタラクティブ授業、リモートトレーニング、大規模ミーティングなどがあります。
+ビデオインタラクティブストリーミングシーンは、キャスターと視聴者間のビデオ・マイク接続インタラクションやキャスターのルーム間（ライブストリーミングルーム間）PKをサポートしています。マイクのオン・オフはスムーズで、切り替え時に待つ必要がなく、キャスターの遅延は300ms未満です。1つのルームで接続できるマイク数は無制限で、最大50人の同時マイク接続が可能です。低遅延ライブストリーミングモードでは10万人の同時再生をサポートしており、再生遅延は低く、1000msです。CDN Relayed live streamingモードでは、視聴者数は無制限です。よくあるユースケースとしては、低遅延ライブストリーミング、10万人のインタラクティブ授業、ビデオライブストリーミングPK、ビデオお見合いルーム、インタラクティブ授業、リモートトレーニング、大規模ミーティングなどがあります。
 <dx-tabs>
 ::: iOS&Android
 <table>
@@ -99,7 +98,7 @@
 </dx-tabs>
 
 ## ボイス・インタラクティブストリーミングシーン
-ボイス・インタラクティブストリーミングシーンは、キャスターと視聴者間の音声・マイク接続インタラクションやキャスターのルーム間（ライブストリーミングルーム間）PKをサポートしています。マイクのオン・オフはスムーズで、切り替え時に待つ必要がなく、キャスターの遅延は300ms未満です。1つのルームで接続できるマイク数は無制限で、最大50人の同時マイク接続が可能です。低遅延のライブストリーミングモードでは10万人の同時再生をサポートしており、再生遅延は低く、1000msです。CDN Relayed live streamingモードでは、視聴者数は無制限です。よくあるユースケースとしては、音声低遅延ライブストリーミング、音声ライブストリーミングマイク接続、音声ライブストリーミングPK、音声チャットルーム、音声お見合いルーム、カラオケルーム、FMラジオなどがあります。
+ボイス・インタラクティブストリーミングシーンは、キャスターと視聴者間の音声・マイク接続インタラクションやキャスターのルーム間（ライブストリーミングルーム間）PKをサポートしています。マイクのオン・オフはスムーズで、切り替え時に待つ必要がなく、キャスターの遅延は300ms未満です。1つのルームで接続できるマイク数は無制限で、最大50人の同時マイク接続が可能です。低遅延ライブストリーミングモードでは10万人の同時再生をサポートしており、再生遅延は低く、1000msです。CDN Relayed live streamingモードでは、視聴者数は無制限です。よくあるユースケースとしては、音声低遅延ライブストリーミング、音声ライブストリーミングマイク接続、音声ライブストリーミングPK、音声チャットルーム、音声お見合いルーム、カラオケルーム、FMラジオなどがあります。
 <table>
      <tr>
          <th>キャスターのマイク操作</th>  
@@ -126,10 +125,10 @@
 </table>
 
 ## インタラクティブ授業シーン
-インタラクティブ授業シーンとは、教師と学生のマイク接続インタラクション、最大50人の同時マイク接続をサポートしています。マイクのオン・オフはスムーズで、切り替え時に待つ必要がなく、キャスターの遅延は低く、300ms未満です。低遅延ライブストリーミングモードでは、学生10万人の同時視聴をサポートし、視聴遅延は低く、1000msです。CDN Relayed live streamingの場合、視聴者数は無制限です。画面共有、インタラクティブホワイトボード、録音・再生などさまざまな授業アプリケーション機能をサポートして、より豊かなオンライン教育を構築します。よくあるユースケースとしては、大規模クラス、小規模クラス、超小規模クラス、AI授業、体験授業、内部トレーニングライブストリーミングクラス、1V1eラーニングなどがあります。
+インタラクティブ授業シーンとは、教師と学生のマイク接続インタラクション、最大50人の同時マイク接続をサポートしています。マイクのオン・オフはスムーズで、切り替え時に待つ必要がなく、教師と学生間の遅延は低く、300ms未満です。低遅延ライブストリーミングモードでは、学生10万人の同時視聴をサポートし、視聴遅延は低く、1000msです。CDN Relayed live streamingの場合、視聴者数は無制限です。画面共有、インタラクティブホワイトボード、録音・再生などさまざまな授業アプリケーション機能をサポートして、より豊かなオンライン教育を構築します。よくあるユースケースとしては、大規模クラス、小規模クラス、超小規模クラス、AI授業、体験授業、社内トレーニングライブストリーミングクラス、1V1eラーニングなどがあります。
 
-| <img src="https://main.qcloudimg.com/raw/e08f0225d255b94c31b03512553a654b.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+ <img src="https://main.qcloudimg.com/raw/76cb1831b3f4b5340243a6b7406d8d73.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
+
 
 
 ## オンラインカラオケ（KTVシーン）
@@ -144,3 +143,19 @@ KTVシーンは、キャスターと視聴者間のマイク・オンによる�
 <td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
 </tr>
 </table>
+
+## リアルタイムコーラス（Chorusシーン）
+
+Chorusシーンは、管理者のメインボーカルと視聴者間のマイク・オンによる歌唱をサポートしています。マイクのオン・オフはスムーズで、切り替え時に待つ必要がなく、キャスターの遅延は100ms未満です。低遅延ライブストリーミングモードでは10万人の同時再生をサポートしており、再生遅延は低く、1000msです。CDN Relayed live streamingモードでは、視聴者数は無制限です。よくあるユースケースとしては、デュエットコーラス、カラオケルーム、FMラジオなどがあります。
+
+<table>
+     <tr>
+         <th style="text-align:center;width:50%">管理者の楽曲リクエスト操作</th>  
+         <th style="text-align:center">サブボーカルの楽曲リスト確認操作</th>  
+     </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/0c3b9a7c40f2d0eb6cb7fa0b14acf547.png"/></td>
+<td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
+</tr>
+</table>
+

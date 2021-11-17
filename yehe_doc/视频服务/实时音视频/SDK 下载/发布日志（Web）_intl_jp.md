@@ -7,6 +7,16 @@
 > - 製品の安定性を高め、より良いオンラインサポートをご利用いただくため、速やかに最新バージョンに更新することをお勧めします。
 > - バージョンのアップグレードに関する注意事項については、[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
 
+## Version 4.11.7 @2021.09.30
+
+**Improvement**
+
+- キーインターフェースは、パラメータタイプの強力な検証を追加します。
+- 開発モード（LogLevelは[Debug](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.Logger.html#.LogLevel)）での中国語のエラーメッセージプロンプトをサポートします。
+- デバイスの収集が異常な場合の、収集の自動回復の成功率を引き上げます。
+- システムがスリープ状態になり、再起動した後の通話再開ロジックを最適化しました。
+- trtc.esm.jsおよびtrtc.umd.jsを追加して、さまざまなシナリオのニーズを満たします。[参考ガイド](https://www.npmjs.com/package/trtc-js-sdk)。
+
 ## Version 4.11.6 @2021.09.10
 
 **Improvement**
