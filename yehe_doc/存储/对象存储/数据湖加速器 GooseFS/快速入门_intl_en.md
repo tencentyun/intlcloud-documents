@@ -117,7 +117,7 @@ To mount COS or Tencent Cloud HDFS to the root directory of GooseFS, configure t
 
 >?
 >- For the complete configuration of COSN, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
->- For the complete configuration of CHDFS, please see [Mounting CHDFS Instance](https://intl.cloud.tencent.com/document/product/1106/41965).
+>- For the complete configuration of CHDFS, please see Mounting CHDFS Instance.
 
 The following describes how to create a namespace to mount COS or CHDFS.
 

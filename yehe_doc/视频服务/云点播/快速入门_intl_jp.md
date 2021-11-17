@@ -1,7 +1,7 @@
 本節では、ローカルのビデオファイルをVODにすばやくアップロードし、VODサービスを利用してビデオを処理する方法について説明します。最終的に、**Webページでアクセラレーションされたウォーターマーク入りのトランスコード済みビデオを直接視聴できます**。ここでは、ローカルビデオファイルの「TencentCloud.mp4」を例として説明します。
 
 
-## ステップ1：VODをアクティブにする
+## ステップ1：VODをアクティブ化する
 1. [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985)で登録して、[Identity Verification](https://intl.cloud.tencent.com/document/product/378/3629)を完了する必要があります。
 2. VODサービスを購入します。
 3.【Cloud Products】> 【Video Services】 >[【Video on Demand】](https://console.cloud.tencent.com/vod)の順に選択して、VODコンソールに入ります。

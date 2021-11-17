@@ -133,7 +133,7 @@ QCloudCredentialProvider credentialProvider = new MyCredentialProvider();
 CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig, credentialProvider);   
 ```
 
-For complete code, see [Android COS Transfer Practice](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransferPractice).
+
 For more information on how files are uploaded and downloaded between an Android device and COS, see [Getting Started with Android SDK](https://intl.cloud.tencent.com/document/product/436/12159).
 
 #### iOS
@@ -204,7 +204,7 @@ Download the Demo by clicking [here](https://cos-terminal-resource-1253960454.co
 ![](https://main.qcloudimg.com/raw/8b19785ec487d3e89711063bf80716a6.png)
 
 
-For complete code, see [COS Android Demo](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransferPractice).
+
 
 #### iOS
 For complete sample project for iOS, see [COS iOS Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples).

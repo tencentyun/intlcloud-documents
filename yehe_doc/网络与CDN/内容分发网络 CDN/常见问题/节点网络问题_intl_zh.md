@@ -1,3 +1,4 @@
+
 [](id:q1)
 ### 腾讯云 CDN 节点默认超时时间是多长？
 腾讯云 CDN 节点默认超时时间是10秒。
@@ -9,7 +10,7 @@
 [](id:q3)
 ### 接入 CDN 之后网站打不开，如何排查？
 请先检查接入域名的 CDN 状态是否为“已关闭”，若为“已关闭”状态则对应网页无法打开。若非“已关闭”状态时，可按照下列步骤进一步检查：
-+ 通过 ping 或 nslookup 检查该域名的 CNAME 解析是否已生效。若未绑定 CNAME，您可以参考 [CNAME 配置](https://intl.cloud.tencent.com/zh/document/product/228/3121) 文档中的操作说明，在您的 DNS 服务商处绑定 CNAME。
++ 通过 ping 或 nslookup 检查该域名的 CNAME 解析是否已生效。若未绑定 CNAME，您可以参考 [CNAME 配置](https://intl.cloud.tencent.com/document/product/228/3121) 文档中的操作说明，在您的 DNS 服务商处绑定 CNAME。
 + 待 CNAME 生效后，检查源站是否能正常访问。
 
 若您无法通过上述步骤解决该问题，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们帮您处理。
@@ -42,7 +43,7 @@
 ### 为什么同名文件节点返回的文件大小不一致？
 因为所有文件类型都默认缓存，CDN 节点上可能存在不同的文件版本。解决方法：
 + 强制刷新文件，立即更新缓存。
-+ 带上版本号，例如：```http://www.xxx.com/xxx.js?version=1```。
++ 带上版本号，例如：`http://www.xxx.com/xxx.js?version=1`。
 + 更换其它文件名，不使用同名文件。
 
 若您无法通过上述步骤解决该问题，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们帮您处理。
@@ -56,7 +57,7 @@
 [](id:q10)
 ### 流量封顶能抗 DDOS 攻击吗？
 
-您好，CDN 主要功能非 DDOS 防护，主要是加速使用。您可以尝试使用 CDN 带宽封顶功能，在5分钟时间内会自动统计带宽使用情况，如达到封顶阈值，则根据配置，CDN 会进行不同的响应，**阈值最大可为 10000 Tbps** 。
+您好，CDN 主要功能非 DDOS 防护，主要是加速使用。您可以尝试使用 CDN 带宽封顶功能，在5分钟时间内会自动统计带宽使用情况，如达到封顶阈值，则根据配置，CDN 会进行不同的响应，**阈值最大可为 10000 Tbps** 。您如需对站点进行 DDOS 防护，您可以使用 [安全加速](https://intl.cloud.tencent.com/products/scdn) 进行抵御。
 
 [](id:q11)
 ### 能提供腾讯云 CDN 所有节点的 IP 吗？ 
