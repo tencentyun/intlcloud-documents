@@ -74,4 +74,4 @@
 
 ## 安全防护
 
-详情请见 [接入管理相关配置页面](https://intl.cloud.tencent.com/document/product/608/42338)。
+详情请见 接入管理相关配置页面。
