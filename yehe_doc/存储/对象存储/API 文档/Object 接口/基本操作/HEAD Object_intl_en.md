@@ -49,7 +49,7 @@ Authorization: Auth String
 
 In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Description | Type | Required |
+| Header  | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
 | If-Modified-Since | If the object is modified after the specified time, HTTP status code 200 (OK) will be returned. Otherwise, “304 (Not Modified)” will be returned. | string | No |
 | If-Unmodified-Since | If the object is not modified after the specified time, HTTP status code 200 (OK) will be returned. Otherwise, “412 (Precondition Failed)” will be returned. | string | No |
@@ -70,7 +70,7 @@ This API does not have a request body.
 
 In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-| Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
+| Header  | Description | Type |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
 | Cache-Control  | Cache directives as defined in RFC 2616, which will be returned only if it is contained in the object metadata | string |
 | Content-Disposition                                         | Filename as defined in RFC 2616, which will be returned only if it is contained in the object metadata | String  |
@@ -84,7 +84,7 @@ In addition to common response headers, this API also returns the following resp
 
 If the storage class of the object is `ARCHIVE` and `POST Object restore` has been called to restore it, the following response headers will be returned:
 
-| Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
+| Header  | Description | Type |
 | --- | --- | --- |
 | x-cos-restore | Indicates the status of the restoration process:<br><li>If the restoration is ongoing, the value of the response header will be `ongoing-request="true"`<li>If the object has already been restored, the response header will include the time when COS will delete the temporary copy, e.g., `ongoing-request="false", expiry-date="Tue, 19 Nov 2019 16:00:00 GMT"` | string
 | x-cos-restore-status | This parameter will be returned if the restoration is ongoing, indicating what restoration mode was used and when the restoration was requested, e.g., `tier="bulk"; request-date="Mon, 18 Nov 2019 09:34:50 GMT"`. For more information on restoration modes, see [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | string
