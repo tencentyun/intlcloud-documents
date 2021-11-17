@@ -1,6 +1,6 @@
 ## Overview
 
-As a new type of cloud integration service, [Tencent Cloud Enterprise Integration Service (EIS)](https://cloud.tencent.com/product/eis) connects different systems or businesses in and outside enterprises to the same platform and implements various features such as resource integration, data orchestration, and business connection between systems by reusing best practices and quickly building system integration models, which meet enterprises' requirements for a lightweight, all-around, and flexible integrated system.
+As a new type of cloud integration service, Tencent Cloud Enterprise Integration Service (EIS) connects different systems or businesses in and outside enterprises to the same platform and implements various features such as resource integration, data orchestration, and business connection between systems by reusing best practices and quickly building system integration models, which meet enterprises' requirements for a lightweight, all-around, and flexible integrated system.
 
 Currently, EIS has been fully connected to EventBridge. You can configure a SaaS connector to receive and consume the events of third-party SaaS services from EIS for linkage between cloud events and SaaS businesses. This document describes how to create a SaaS connector and the SaaS connector data structure.
 
