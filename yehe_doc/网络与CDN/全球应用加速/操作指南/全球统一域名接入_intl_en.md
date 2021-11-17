@@ -1,16 +1,34 @@
-## Creating a Unified Domain Name
-Click **Create** in the **Unified Domain Name** page, select a project in the pop-up window and enter the domain name, IP, or the domain name of the default entry.
+## Creating Unified Domain Name
+
+1. Log in to the [GAAP console](https://console.cloud.tencent.com/gaap), enter the **Unified Domain Name** page, and click **Create**.
+2. Configure the information of the **new unified domain name**.
 ![](https://main.qcloudimg.com/raw/ef657658a3746491785734a4b9436efe.png)
+- Project: the project to which the unified domain name belongs (changeable later).
+- Domain Name: it can contain up to 30 characters.
+- Default Entry: the access address for regions not accelerated, which is typically the IP address of the origin server.
 
-## Access Region Settings
-Click the target domain name or **Set** on the right of it to enter its settings page. Click **Add Setting Item** and then select the nearest acceleration region and connection in the pop-up window, and finally click **OK**.
-![](https://main.qcloudimg.com/raw/9ebb9dbdffbe57a7438b8ce169b9dd1e.png)
+> ! The number of unified domain names is 5 by default. If you need more, contact your Tencent Cloud rep.
 
-## Configuring the Default Entry
-After the globally unified domain name access service is enabled, global users can access the origin server through this domain name. You need to manage the access paths for the following users. Otherwise, detours will cause unnecessary network latency and incur unnecessary traffic fees:
-- Users in the origin server region: in principle, they can access the origin server directly via the public network to ensure minimum latency, instead of using an acceleration connection.
-- Users in regions close to the origin server region or far away from the acceleration connection entry: they can access the origin server directly via the public network with low latency, while connecting to an acceleration connection may not achieve a better result.
+## Configuring Access Region
 
-In the acceleration region configuration page, a **Default Entry** is provided. After the IP address of the entry is configured, both users in regions covered by the acceleration connection and users in other regions can directly access your origin server using this IP address over the public network.
+1. Enter the **[Unified Domain Name](https://console.cloud.tencent.com/gaap/domain)** page and click the specified domain name or **Set** to proceed to the next page.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/2be645caa6cbc7d1c0f6016e7ac70fec.png)
+   - Domain Name: the domain name used for client access.
+   - Default Entry: the access address for regions not accelerated, which is typically the IP address of the origin server.
+   - Number of Connections: number of connections under the unified domain name.
+   - Status: the unified domain name can work properly only in **Enabled** status.
+2. Click **Add Settings** to pop up the **Adding Settings** window, select the acceleration region from the list as well as the access node, and click **OK** for them to take effect as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/1d5e8a5fb087abcd21c2ce17a94c12ef.png)
 
-In the **Unified Domain Name** page, click the target domain name or **Set** on the right of it to enter its settings page. Click the pencil icon next to **Default Entry** to configure the entry.![](https://main.qcloudimg.com/raw/9f2f9980950bdb8b0273c0015b5a777d.png)
+## Configuring Default Entry
+
+After the globally unified domain name access service is activated, to avoid unnecessary network latency caused by detours and additional traffic fees, you need to configure the access path for users in the following types:
+
+1. Users in or close to the origin server region: they generally can access the origin server directly over the public network instead of using an acceleration connection.
+2. Users far away from the acceleration connection entry region: they generally access the origin server directly over the public network. Accessing over an acceleration connection does not have an ideal acceleration effect.
+
+On the **[Unified Domain Name](https://console.cloud.tencent.com/gaap/domain)** page, click the specified domain name or **Set** to proceed to the next page. Then, click the **Edit** icon on the right of the **Default Entry** at the top to configure the **Default Entry**.
+After you configure the IP address of the entry, except users in the regions covered by the selected acceleration connection, users in other regions will access your origin server directly at this IP over the public network.
+![](https://qcloudimg.tencent-cloud.cn/raw/c549724b7ac191aa4b45ca7d97144ce0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3aa59862dd00d759ee4933d8cf7b2a34.png)
+

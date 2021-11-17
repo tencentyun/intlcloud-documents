@@ -1,39 +1,63 @@
+## Creating TCP/UDP Listener
 
-## Creating a TCP/UDP Listener
-1. Log in to the [GAAP console](https://console.cloud.tencent.com/gaap), click **Access Management** on the left sidebar, and then click the **ID/Connection Name** of a connection.
-2. Open the **TCP/UDP Listener Management** tab and click **Create** to add a new TCP or UDP listener.
- 1. Configure the listener information to set the mapping between the protocol and port.
-![](https://main.qcloudimg.com/raw/ccb559a46fe23d7cbaf67e0a80cd21b2.png)
-**Origin Server Type**: It can be an IP address or a domain name, but the same listener only supports one type.
-**Source Port**: Access port of the acceleration connection VIP. Valid range: 1–65535 (port 21 is currently unavailable). A single port or a range of consecutive ports is supported. The port must be unique. A maximum of 20 consecutive ports can be added at a time, such as 8000–8019.
- 2. Configure the origin server processing policy, that is, if a listener is bound with multiple origin servers, you need to select a scheduling policy for origin servers.
-![](https://main.qcloudimg.com/raw/eada50bba6b187bbf1063c85a9bb82d8.png)
+1. Log in to the [GAAP console](https://console.cloud.tencent.com/gaap), enter the **Access Management** page, and click the **ID/Connection Name** of the specified connection.
+2. On the page that appears, select **TCP/UDP Listener Management** > **Create**. The specific configuration is as follows:
+   1. Configure the listener information to set the protocol-port mapping.
+		![](https://qcloudimg.tencent-cloud.cn/raw/84cfd2802fbed4a46323e9e543aabcb6.png)
+      
+      - Origin Server Type: this can be an IP address or a domain name, but only one type can be selected for one listener. (Note: currently, the domain name type is not supported for IPv6 connections).
+      - Get Client IP: you can select either TOA or Proxy Protocol to get the user's real IP. For more information, see [Basic Principle](https://intl.cloud.tencent.com/document/product/608/14429).
+      - Listening Port: this is the access port of the acceleration connection VIP. Valid port range: 1–64999 (port 21 is currently unavailable). A single port or a range of consecutive ports is supported. The port must be unique. A maximum of 20 consecutive ports can be added at a time, such as 8000–8019.
+   2. Configure the origin server processing policy; that is, if a listener is bound to multiple origin servers, you need to select a scheduling policy for origin servers.
+      ![](https://qcloudimg.tencent-cloud.cn/raw/6da057ddde07681f3056153ad2bd3096.png)
+      
+      - RR: multiple origin servers perform origin-pull according to the RR policy.
+      - Weighted RR: multiple origin servers perform origin-pull according to the weight ratio (you can set the weight of each origin server when binding the listener).
+      - Least Connections: this means to schedule the origin server with the least number of connections first.
+      - Least Latency: this means to schedule the origin server with the least latency first.
+      - Secondary Origin Server: you can choose whether to enable primary/secondary origin server switch (to enable this feature, you must enable origin server health check).
+      <blockquote class="d-mod-notice">
+      					<div class="d-mod-title d-notice-title">
+      						<i class="d-icon-notice"></i>Note:
+      					</div>
+             <p>Listeners with domain name-type origin servers only support **RR** and **Least Connections** as the scheduling policy and do not support secondary origin servers.</p>
+      				</blockquote>
+3. If a TCP listener is used, you can choose to configure the health check mechanism to automatically detect and remove exceptional origin servers. If secondary origin server is enabled, you will be unable to disable health check.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/b317846881f8cc41983077c44df92ff0.png)
+   
+      - Response Timeout: origin server response timeout period.
+      - Health Check Interval: the interval between two consecutive health checks.
+      - Unhealthy Threshold: it indicates the number of consecutive failed checks performed by the monitor before the origin server is deemed unhealthy. If an origin server is deemed unhealthy during a health check, no more data packets will be forwarded to it until it returns to normal status. 
+      - Healthy Threshold: it indicates the number of consecutive successful checks performed by the monitor before the origin server is deemed healthy. If an origin server is deemed healthy during a health check, data packets will be forwarded to it again.
+4. Choose whether to enable session persistence.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e2ee5834fc04cb1ef2d5ebda205a4193.png)
+   
+      - Session Persistence: user requests from the same IP will access the same origin server.
+      - Hold Time: session persistence duration. When the listener has no requests for a period longer than the hold time, session persistence will be automatically disconnected.
+3. Click **Complete**.
 
-**RR**: Round Robin scheduling policy
-**Weighted RR**: You can set the weight of each origin server when binding a listener.
-**Least Connections**: Origin server with the least number of connections is scheduled first.
+## Configuring TCP/UDP Listener
 
->!Listeners whose origin server type is domain name only support **RR** scheduling policy. If the domain name is resolved to multiple IPs, each resolved IP is scheduled according to the RR policy.
+Click the **TCP/UDP Listener Management** tab and click **Settings** in the **Operation** column of a listener to rename it or modify its scheduling policy and health check parameters.
 
- 3.Health check is required for using TCP.
-![](https://main.qcloudimg.com/raw/ffc68c9eacdbf9d84590fe749c0a6477.png)
+## Binding Origin Server
 
-**Response Timeout**: The timeout period for a response.
-**Health Check Interval**: It refers to the interval between two consecutive health checks. If an origin server is checked as abnormal, the origin server will stop forwarding packets until it recovers to a normal status upon another health check.
+1. Select the **TCP/UDP Listener Management** tab and click **Bind Origin Server** in the **Operation** column of a created "TCP/UDP listener" to bind or unbind one or more origin servers. If no origin server information is found as displayed in the console, it may be that the origin server type is invalid or the origin server is not added to [Origin Server Management](https://console.cloud.tencent.com/gaap/listrs).
+![](https://qcloudimg.tencent-cloud.cn/raw/2db94f9d3b3aae697dcfbb719fc44f40.png)
+2. Select an origin server and configure an origin-pull port.
+   - If primary/secondary RR is enabled for a listener, you need to set the **Primary Origin Server** and **Secondary Origin Server** on the **Bind Origin Server** page.
+   - If you want to set the ports of multiple origin servers, you can use the **Cover Port/Complement Port** features in the top-right corner. Regardless of the origin server ports you previously set, the **Cover Port** feature will set the destination origin servers you select to the port number you entered. If no port has been set for any of the selected destination origin servers, you can use the **Complement Port** feature for unified setting to reduce the repetitive workload.
+   - If the listener policy is **Weighted RR**, you can set the weight (1–100) of an origin server when binding it. The origin server is scheduled based on the ratio of its weight to the total weight. For example, if the weight of origin server 1 is 60 and that of origin server 2 is 80, then the scheduling ratio will be 60/(60 + 80) = 42.8% for origin server 1 or 57.2% for origin server 2.
+     ![](https://qcloudimg.tencent-cloud.cn/raw/d278faea3ac7a20e8a41b0a6f4dedbb0.png)
+   - If enabled, health check will start when the origin server is bound. You can determine whether the origin server is normal by checking the listener status. An acceleration connection will only forward packets to origin servers in normal status. Packets will not be forwarded to exceptional origin servers until they return to normal status during health check.
+   - If you don't enable health check, or if you use a UDP listener, the acceleration connection will always forward packets regardless of the status of the origin server.
+     ![](https://qcloudimg.tencent-cloud.cn/raw/ed13a74bd6a1187caeb2969f4f471ade.png)
+3. Confirm the configuration.
+   After completing the origin server configuration, click **Next** to enter the configuration confirmation page, where you can view the currently configured connection information and listener details.
+![](https://qcloudimg.tencent-cloud.cn/raw/04e81f74564fc1604ef7f154afb1b383.png)
+4. Click **Complete**.
 
-## Setting a TCP/UDP Listener
-Open the **TCP/UDP Listener Management** tab and click **Set** in the operation column of a listener to modify its name, scheduling policy, and health check parameters.
+## Deleting TCP/UDP Listener
 
-## Binding an Origin Server
-Open the **TCP/UDP Listener Management** tab and click **Bind Origin Servers** in the operation column of a listener to bind or unbind one or multiple origin servers. If no origin server information is found, the origin server type may be invalid or the origin server is not added to **Origin Server Management**.
-
-If the listener policy is **Weighted RR**, you can set the weight (1–100) of an origin server while binding it. The origin server is scheduled based on the ratio of its weight to the total weight. For example, if the weight of origin server A is 60 and that of origin server B is 80, the scheduling ratio will be 60/(60 + 80) = 42.8% for origin server A or 57.2% for origin server B.
-![](https://main.qcloudimg.com/raw/22ff9940b78c12c22388bb474f39295e.png)
-If enabled, health check will start when the origin server is bound. You can determine whether the origin server is normal by checking the listener status. An acceleration connection will only forward packets to origin servers in normal status. Packets will not be forwarded to abnormal origin servers until they return to normal status during health check.
-
-For UDP listeners or the ones without health checks, packets are always forwarded regardless of the status of the origin server.
-![](https://main.qcloudimg.com/raw/e4d6de71bdb62cdc6e2a475b65dcd0e2.png)
-
-## Deleting a TCP/UDP Listener
-Open the **TCP/UDP Listener Management** tab and click **Delete** to delete a listener. If the listener is bound with an origin server, you need to tick **Allow force deletion of listeners bound with origin server** first. After deletion, the acceleration service for the listener's port stops.
-![](https://main.qcloudimg.com/raw/987d8c8ca0937b698d60941959713c00.png)
+Open the **TCP/UDP Listener Management** tab and click **Delete** in the **Operation** column of the specified listener to be deleted. If the listener is bound to an origin server, you need to select **Allow force deletion of listeners with bound origin servers** first. After deletion, the acceleration service for the listener's port will stop.
+ ![](https://qcloudimg.tencent-cloud.cn/raw/200902ee0a9b4533825cae99a5050c94.png)
