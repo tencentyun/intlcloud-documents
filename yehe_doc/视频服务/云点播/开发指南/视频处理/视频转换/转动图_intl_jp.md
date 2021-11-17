@@ -16,7 +16,7 @@
 一般的な仕様を対象に、VODでは [プリセットのアニメーション画像生成テンプレート](https://intl.cloud.tencent.com/document/product/266/33932#cinemagraph)を提供しています。その外、コンソールを介して、カスタマイズしたアニメーション画像生成テンプレートを作成し、管理することができます。具体的な操作は、 [テンプレート設定](https://intl.cloud.tencent.com/document/product/266/14059#.E8.BD.AC.E5.8A.A8.E5.9B.BE.E6.A8.A1.E6.9D.BF)をご参照ください。
 
 ## タスクの開始
-アニメーション画像タスクの開始には、「サーバーAPIからの直接の開始」、「コンソールからの直接の開始」、「アップロード時に実行したいタスクを指定」の3種類の方法があります。具体的な内容は、ビデオ処理の [タスクの開始](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask)をご参照ください。
+アニメーション画像タスクの開始には、「サーバーAPIから直接開始」、「コンソールから直接開始」、「アップロード時に実行したいタスクを指定」の3種類の方法があります。詳細内容は、ビデオ処理の [タスクの開始](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask)をご参照ください。
 
 以下は、各種方式のアニメーション画像タスク開始についての説明です。
 
