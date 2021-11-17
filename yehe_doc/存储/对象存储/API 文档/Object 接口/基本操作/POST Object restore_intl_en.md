@@ -1,8 +1,26 @@
-## API Description
+## Overview
 
 This API allows you to send a request to restore an ARCHIVED/DEEP ARCHIVED object so that you can read it. The restored readable object is a temporary copy, for which you can set `Keep Readable` and the time at which to delete it at a later point. You can use the `Days` parameter to specify the expiration time of the temporary object. If the time is exceeded and you haven’t initiated a copy, extension, or any other operation, the temporary object will be automatically deleted. Temporary objects are only copies of the archived objects which always exist. For more information about ARCHIVE, please see [Storage Class Overview - ARCHIVE](https://intl.cloud.tencent.com/document/product/436/30925).
 
->?The QPS of the POST Object restore API is limited to 100.
+>? The QPS of the POST Object restore API is limited to 100.
+>
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PostObjectRestore&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
+
 
 #### Versioning
 
@@ -26,7 +44,10 @@ Authorization: Auth String
 [Request Body]
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
@@ -36,7 +57,7 @@ Authorization: Auth String
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -57,16 +78,16 @@ The nodes are described as follows:
 | --- | --- | --- | --- | --- |
 | RestoreRequest | None | Contains all request information of `POST Object restore`. | Container | Yes |
 
-**Content of Container node RestoreRequest:**
+**Content of `RestoreRequest`**:
 
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| Node Name (Keyword)          | Parent Node | Description                                    | Type        | Required |
 | --- | --- | --- | --- | --- |
 | Days | RestoreRequest | Specifies the valid duration (in days) for the temporary copy restored. | number | Yes |
 | CASJobParameters | RestoreRequest | Restores job parameters. | Container | Yes |
 
-**Content of Container node CASJobParameters:**
+**Content of `CASJobParameters`**:
 
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| Node Name (Keyword)          | Parent Node | Description                                    | Type        | Required |
 | --- | --- | --- | --- | --- |
 | Tier | RestoreRequest.CASJobParameters | Specifies the restoration mode.<br>The following three restoration modes are available for archived objects:<br><li>Expedited: restores an object within 1-5 minutes. <br> <li>Standard: restores an object within 3-5 hours. <br><li>Bulk: restores an object within 5-12 hours.<br>The following two modes are available for deep archived objects:<br><li>Standard: restores an object within 12-24 hours.<br><li>Bulk: restores an object within 24-48 hours. | Enum | Yes |
 
@@ -75,7 +96,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -85,9 +106,9 @@ The response body of this API is empty.
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1. Simple sample (versioning not enabled)
+#### Example 1: simple use case (with versioning disabled)
 
 #### Request
 
@@ -122,7 +143,7 @@ Server: tencent-cos
 x-cos-request-id: NWUwNWJlOTFfMjljOTBiMDlfMTQ2MmNfNzAw****
 ```
 
-#### Sample 2. Restoring a specific version of an object (versioning enabled)
+#### Example 2: restoring an object of a specific version (with versioning enabled)
 
 #### Request
 

@@ -18,7 +18,7 @@ This API is used to initialize a multipart upload. After a successful operation,
     </div>
 </div>
 
-## Requests
+## Request
 
 #### Sample request
 
@@ -31,7 +31,10 @@ Content-Length: 0
 Authorization: Auth String
 ```
 
-> ? Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
@@ -60,12 +63,12 @@ You can configure an access control list (ACL) for the object by specifying the 
 | Header | Description | Type | Required |
 | ------------------------ | ------------------------------------------------------------ | ------ | -------- |
 | x-cos-acl | Defines the ACL attribute of the object. For the enumerated values, such as `default`, `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `default`. <br>**Note**: If you do not need to set an ACL for the object, set this parameter to `default` or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | Enum | No |
-| x-cos-grant-read | Grants a user read permission for an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-read-acp | Grants a user read permission for the ACL of an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-write-acp | Grants a user write permission for the ACL of an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-full-control | Grants a user full permission to operate on an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-grant-read | Grants a user read permission for an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| x-cos-grant-read-acp | Grants a user read permission for the ACL of an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| x-cos-grant-write-acp | Grants a user write permission for the ACL of an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| x-cos-grant-full-control | Grants a user full permission to operate on an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 
-**Headers Related to Server-Side Encryption (SSE)**
+**Headers related to SSE**
 
 Server-side encryption can be used during object upload. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -81,7 +84,7 @@ In addition to common response headers, this API also returns the following resp
 
 **Headers related to SSE**
 
-If server-side encryption is used during object upload, this API will return the headers used specifically for server-side encryption. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used during object upload, this API will return headers used specifically for server-side encryption. For more information, please see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response body
 
@@ -114,9 +117,9 @@ The nodes are described as follows:
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1: simple use case
+#### Example 1: simple use case
 
 #### Request
 
@@ -150,7 +153,7 @@ x-cos-request-id: NWU3YjJkNDVfNDliNTJhMDlfYzZhMl8yOTVj****
 </InitiateMultipartUploadResult>
 ```
 
-#### Sample 2: specifying metadata and ACL using request headers
+#### Example 2: specifying metadata and ACL using request headers
 
 #### Request
 
@@ -188,7 +191,7 @@ x-cos-request-id: NWVjZjc3ZDZfOThjMjJhMDlfMjg5N18zNWYy****
 </InitiateMultipartUploadResult>
 ```
 
-#### Sample 3: using server-side encryption SSE-COS
+#### Example 3: using server-side encryption SSE-COS
 
 #### Request
 
@@ -224,7 +227,7 @@ x-cos-server-side-encryption: AES256
 </InitiateMultipartUploadResult>
 ```
 
-#### Sample 4: using server-side encryption SSE-KMS
+#### Example 4: using server-side encryption SSE-KMS
 
 #### Request
 
@@ -264,7 +267,7 @@ x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085***
 ```
 
 
-#### Sample 5: using server-side encryption SSE-C
+#### Example 5: using server-side encryption SSE-C
 
 #### Request
 

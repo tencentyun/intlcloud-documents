@@ -1,6 +1,23 @@
-## Description
+## Overview
 
 This API is used to query the uploaded parts of a specified multipart upload, i.e., listing all successfully uploaded parts of a multipart upload whose `uploadId` is specified.
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=ListParts&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
+
 
 ## Request
 
@@ -13,11 +30,14 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->?Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request parameters
 
@@ -36,7 +56,7 @@ The request body of this request is empty.
 
 #### Response headers
 
-This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -77,7 +97,7 @@ The nodes are described as follows:
 | ------------------ | ------ | ---------------------------------- | --------- |
 | ListPartsResult | None | Stores the response of `List Parts`. | Container |
 
-Content of the Container node `ListPartsResult`:
+Content of `ListPartsResult`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | -------------------- | --------------- | ------------------------------------------------------------ | --------- |
@@ -94,21 +114,21 @@ Content of the Container node `ListPartsResult`:
 | IsTruncated | ListPartsResult | Indicates whether the returned list is truncated. Valid values: `true`, `false` | boolean |
 | Part | ListPartsResult | Metadata | Container |
 
-Content of the Container node `Initiator`:
+Content of `Initiator`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------------------- | -------------------- | ------ |
 | ID | ListPartsResult.Initiator | Unique ID of the initiator | string |
 | DisplayName | ListPartsResult.Initiator | Username of the initiator | string |
 
-Content of the Container node `Owner`:
+Content of `Owner`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | --------------------- | -------------------- | ------ |
 | ID | ListPartsResult.Owner | Unique ID of the owner | string |
 | DisplayName | ListPartsResult.Owner | Username of the owner | string |
 
-Content of the Container node `Part`:
+Content of `Part`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | -------------------- | ----------------------- | ------ |
@@ -122,7 +142,7 @@ Content of the Container node `Part`:
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 
-## Sample
+## Example
 
 #### Request
 

@@ -1,9 +1,26 @@
-## API Description
+## Overview
 
-This API is used to initiate a preflight request for cross-origin resource sharing (CORS). Your browser may automatically send such a request before a real CORS request if it determines that it’s necessary to do so. Therefore, frontend developers normally need not call this API manually.
-- If the specified bucket has a CORS configuration which the preflight request matches, COS returns a success response, allowing the browser to continue the CORS request.
-- If the specified bucket has no CORS configuration or the preflight request does not match the bucket's CORS configuration, COS returns HTTP 403 Forbidden, and the browser stops the CORS request and throws an exception to the front end instead.
-- For information about bucket CORS configuration, see [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279).
+This API is used to issue a preflight request for cross-origin resource sharing (CORS). Before an actual CORS request is sent, your browser may determine whether a preflight request is necessary and if yes, it automatically issues a preflight request first. Therefore, frontend developers may not need to send such requests themselves in most cases.
+- If the preflight request matches the CORS configuration of the bucket, COS will respond successfully, allowing the browser to send the actual CORS request.
+- If the bucket does not have CORS configuration, or the preflight request does not match the configuration, COS returns the 403 Forbidden error, and the browser will stop the CORS request and throw an exception to the frontend.
+- For more information about CORS configurations, please see [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279).
+
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=OptionsObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Request
 
@@ -18,22 +35,24 @@ Access-Control-Request-Method: RequestMethod
 ```
 
 >!
->- Although the above example uses ObjectKey, a preflight request can actually be initiated for any resource (including root directory) under a bucket endpoint, such as `OPTIONS / HTTP/1.1` or `OPTIONS /?lifecycle HTTP/1.1`.
->- The preflight request is automatically sent by your browser, so you cannot and need not include an authorization request signature in the request.
+>- In the sample request above, an object key (`ObjectKey`) is specified. You can also specify any other resources in the bucket, such as `OPTIONS / HTTP/1.1` or `OPTIONS /?lifecycle HTTP/1.1`.
+>- As the preflight request is automatically sent by your browser, you cannot and need not include a request signature.
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> 
 
 #### Request parameters
 
-The request parameters of this API are automatically determined by the browser based on the destination resource for cross-origin access.
+The request parameters are determined by the browser based on the target cross-origin resource.
 
 #### Request headers
 
-The request headers of this API are automatically determined by the browser based on the cross-origin access action.
+The request headers are determined by the browser based on the target cross-origin resource.
 
-| Name | Description | Type | Required |
+| Header | Description | Type | Required |
 | --- | --- | --- | --- |
-| Origin | Domain name from which a CORS request is initiated. | string | Yes |
-| Access-Control-Request-Method | The method used for initiating a CORS request | string | Yes |
-| Access-Control-Request-Headers | HTTP request headers used for initiating a CORS request. Case-insensitive; separated with a comma (,) | string | No |
+| Origin | Domain that initiates the CORS request | string | Yes |
+| Access-Control-Request-Method | Method used for the CORS request | string | Yes |
+| Access-Control-Request-Headers | HTTP request headers used for the CORS request. You can use commas (,) to separate multiple headers (case-insensitive). | string | No |
 
 #### Request body
 
@@ -43,14 +62,14 @@ This API does not have a request body.
 
 #### Response headers
 
-The response headers of this API are automatically returned by the browser as it identifies, processes and allows a CORS request.
+The browser automatically identifies the response headers and controls whether the CORS request is allowed.
 
-| Name | Description | Type |
+| Header | Description | Type |
 | --- | --- | --- |
-| Access-Control-Allow-Origin | Domain name from which a CORS request is allowed. Valid values: <br><li>`*`: allows all domain names<br><li>Domain names specified in the `Origin` request header: allow only the specified domain names | string |
-| Access-Control-Allow-Methods | Methods allowed for initiating a CORS request and separated with a comma (,) | string |
-| Access-Control-Expose-Headers | HTTP response headers that the browser is allowed to return for a CORS request. Case-insensitive; separated with a comma (,) | string |
-| Access-Control-Max-Age | Validity duration in sec of a CORS configuration. Within the duration, the browser need not initiate a preflight request again for the same request | integer |
+| Access-Control-Allow-Origin | Domains that are allowed to send a CORS request. Valid values: <br><li>`*`: all domains<br><li>Domains specified in the `Origin` request header | string |
+| Access-Control-Allow-Methods | Methods allowed for the CORS request. Multiple methods are separated by commas (,). | string |
+| Access-Control-Expose-Headers | HTTP response headers (case-insensitive) of CORS requests that the browser can get. Multiple headers are separated by commas (,). | string |
+| Access-Control-Max-Age | Validity period of the CORS configuration, in seconds. Within the validity period, the browser does not need to issue a preflight request again for the same request. | integer |
 
 #### Response body
 
@@ -58,13 +77,13 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Examples
 
-In the following examples, preflight requests are all automatically initiated by the browser based on real CORS requests.
+The following sample preflight requests are all automatically issued by the browser according to the actual CORS requests.
 
-#### Example 1. Initiate a preflight request for PUT Object
+#### Example 1: initiating a preflight request for `PUT Object`
 
 #### Request
 
@@ -95,7 +114,7 @@ Server: tencent-cos
 x-cos-request-id: NWYwNzJlNzJfODRjOTJhMDlfMjU0MWNfMTNmZDM5****
 ```
 
-#### Example 2. Initiate a preflight request for GET Object with specified Range request header
+#### Example 2: initiating a preflight request when `GET Object` carries the `range` request header
 
 #### Request
 
@@ -125,7 +144,7 @@ Server: tencent-cos
 x-cos-request-id: NWYwNzJlNzJfZDUyNzVkNjRfYTA2Ml8yNGEz****
 ```
 
-#### Example 3. Initiate a preflight request for PUT Bucket lifecycle
+#### Example 3: initiating a preflight request for `PUT Bucket lifecycle`
 
 #### Request
 
@@ -156,7 +175,7 @@ Server: tencent-cos
 x-cos-request-id: NWYwNzI5ZDRfNjFiMDJhMDlfYzk2NF8xYmZl****
 ```
 
-#### Example 4. The specified bucket has no CORS configuration, or the preflight request does not match the CORS configuration
+#### Example 4: bucket with no CORS configuration, or preflight request not matching the CORS configuration
 
 #### Request
 

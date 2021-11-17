@@ -1,9 +1,9 @@
-## API Description
+## Overview
 This API is used to enable logging for a source bucket and store access logs in a specified destination bucket.
 
 >!
->- Only the owner of the source bucket can make this request.
->- To enable logging, you need to grant Cloud Log Service (CLS) write permission for COS. For information on the authorization process, see [Enabling Log Management](https://intl.cloud.tencent.com/document/product/436/16920).
+> Only the owner of the source bucket has permission to call this API.
+> To enable logging, you need to grant Cloud Log Service (CLS) permission to write to COS. For detailed directions, please see [Enabling Log Management](https://intl.cloud.tencent.com/document/product/436/16920).
 
 ## Request
 
@@ -18,16 +18,19 @@ Content-MD5: MD5
 Authorization: Auth String
 ```
 
->?Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 
 #### Request body
-This request uses a request body. An example request body with all nodes is as follows:
+This request requires a request body. A request body with all nodes is as follows:
 ```shell
 <BucketLoggingStatus>
   <LoggingEnabled>
@@ -37,31 +40,31 @@ This request uses a request body. An example request body with all nodes is as f
 </BucketLoggingStatus>
 ```
 
-The nodes are detailed as follows: <style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
+The nodes are as follows: <style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
 
-|Node Name (Keyword) | Parent Node | Description | Type | Required |
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:-- |:--|:--|:--|
-| BucketLoggingStatus | None | Indicates the status of logging configuration. If there is no child node, logging is disabled | Container | Yes |
+| BucketLoggingStatus | None | Logging status. If there is no child node information, logging is disabled. | Container | Yes |
 
-Container node `BucketLoggingStatus`:
+Content of `BucketLoggingStatus`:
 
-|Node Name (Keyword) | Parent Node | Description | Type | Required  |
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:-- |:--|:--|:--|
-| LoggingEnabled | BucketLoggingStatus | Specifies the logging configuration, mainly for the destination bucket | Container | No |
+| LoggingEnabled | BucketLoggingStatus | Specific logging configuration, mainly for the destination bucket | Container | No |
 
-Container node `LoggingEnabled`:
+Content of `LoggingEnabled`:
 
-|Node Name (Keyword) | Parent Node | Description | Type | Required  |
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:-- |:--|:--|:--|
-| TargetBucket | LoggingEnabled | The destination bucket used to store logs; this can be the same bucket (not recommended) or a bucket in the same region under the same account | String | No |
-| TargetPrefix | LoggingEnabled | The specified path in which logs are stored in the destination bucket | String | No |
+| TargetBucket | LoggingEnabled | Destination bucket to store logs. It can be a bucket under the same account or in the same region as the source bucket, or the source bucket itself (not recommended). | String | No |
+| TargetPrefix | LoggingEnabled | Path in the destination bucket used to store logs |  String | No |
 
->?After you specify the two nodes above, the generated log file name will take the format of `TargetBucket/TargetPrefix {YYYY}/{MM}/{DD}/{time}_{random}_{index}.gz`.
+>?After you specify the two nodes above, names of the generated logs will be in the format of `TargetBucket/TargetPrefix{YYYY}/{MM}/{DD}/{time}_{random}_{index}.gz`.
 
 ## Response
 
 #### Response headers
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 
 #### Response body
@@ -69,9 +72,9 @@ The response body is empty.
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Example
 
 #### Request
 ```shell

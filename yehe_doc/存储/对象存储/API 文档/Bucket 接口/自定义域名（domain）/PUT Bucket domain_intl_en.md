@@ -3,7 +3,7 @@
 This API is used to configure a custom domain for a bucket.
 
 > !
-> - You can add up to 20 custom domains. To add more, please [contact us](https://cloud.tencent.com/act/event/Online_service).
+> - You can add up to 20 custom domains. To add more, please contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
 > - The custom domain supports 3 types of origin servers (default, static website, and global acceleration). To use a static website origin server, [enable a static website](https://intl.cloud.tencent.com/document/product/436/14984). To use a global acceleration origin server, [enable global acceleration](https://intl.cloud.tencent.com/document/product/436/33406).
 > - By default, the root account has permission to add a custom domain to a bucket and can go to the [CAM console](https://console.cloud.tencent.com/cam/overview) to grant such permission to a sub-account by allowing it to call the `PutBucketDomain` API.
 
@@ -25,7 +25,7 @@ Authorization: Auth String
 
 >? 
 > - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 > 
 
 #### Request parameters
@@ -90,7 +90,7 @@ The response body of this API is empty.
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Example
 
 #### Request
 

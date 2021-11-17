@@ -1,14 +1,32 @@
-## Description
+## Overview
 
-This API is used to request all inventory jobs (up to 1,000) configured on a bucket.  
+This API is used to query all inventory jobs set for a bucket. You can configure up to 1,000 inventory jobs for a bucket.  
 
-This request supports pagination, with up to 100 inventory jobs listed per page. Please note the value of the `IsTruncated` node in the request:
-- `false` indicates that all inventory jobs for the bucket have been listed.
-- If `IsTruncated` is true and the `NextContinuationToken` node has been assigned with a value, you can pass that value to the `continuation-token` node to get the next page of inventory jobs.
+This request supports returning the results in multiple responses. Each response can contain up to 100 inventory jobs. Please pay attention to the value of `IsTruncated` in the request.
+- If the value of `IsTruncated` is `false`, all inventory jobs of the bucket have been listed.
+- If the value of `IsTruncated` is `true` and `NextContinuationToken` carries a value, you can pass this value to `continuation-token` in the next request to obtain the remaining inventory jobs from the next response.
 
 For more information, please see [Inventory Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 
->!To call this API, make sure that you have adequate access permission for the bucket's inventory jobs. The bucket owner has such permission by default. If you do not have it, apply for it to the bucket owner first.
+>! To call this API, make sure that you have the necessary permission for bucket inventory jobs; the bucket owner has this permission by default. If you do not have it, you should request it from the bucket owner first.
+>
+
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=ListBucketInventoryConfigurations&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Request
 
@@ -21,19 +39,22 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->?Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
-The request parameters are detailed as below:
+The request parameter is as follows:
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type |Required |
 | ------------------ | ------------------------------------------------------------ | ------ | ---- |
-| continuation-token | If `IsTruncated` is true in the response body, and the `NextContinuationToken` node has been assigned with a value, you can pass that value to this node to get the next page of inventory jobs.<br>Default value: None | String | No |
+| continuation-token | If the value of `IsTruncated` is `true` in the last COS response and `NextContinuationToken` carries a value, you can pass this value to `continuation-token` to obtain the inventory jobs in the response. <br>Default value: `None` | String | No |
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 
 #### Request body
@@ -44,11 +65,11 @@ The request body of this request is empty.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
-This response body returns **application/xml** data. The following example contains all the node data:
+The response body returns **application/xml** data. The following contains all the nodes:
 
 ```shell
 <ListInventoryConfigurationResult>
@@ -114,25 +135,25 @@ This response body returns **application/xml** data. The following example conta
 </ListInventoryConfigurationResult>
 ```
 
-The nodes are described in details below:
+The nodes are described as follows:
 
 | Node Name | Parent Node | Description | Type |
 | ------------------------------------ | ----------------------------------- | ------------------------------------------------------------ | --------- |
-| List Inventory Configuration Results | None | List of all inventory jobs in the bucket | Container |
-| Inventory Configuration | ListInventory Configuration Results | Details of the inventory jobs. See [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) for the XML structure | Container |
-| IsTruncated | ListInventory Configuration Results | A flag that indicates whether all inventory jobs have been listed. `false`: yes; `true`: no  | Boolean   |
-| Continuation Token | ListInventory Configuration Results | Identifies the current page for inventory listing; can be understood as the page number. It corresponds to the `continuation-token` in the request | String    |
-| NextContinuation Token               | ListInventory Configuration Results | Identifies the next page for inventory listing. If this parameter has a value, you can pass it to the `continuation-token` in the subsequent GET request for the next page of inventory jobs | String    |
+| ListInventoryConfigurationResult | None | Information about all inventory jobs of the bucket | Container |
+| InventoryConfiguration | ListInventoryConfigurationResult | Detailed configuration of an inventory job. For the XML structure, please see [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623). | Container |
+| IsTruncated | ListInventoryConfigurationResult | Whether all inventory jobs have been listed. If yes, the value is `false`. Otherwise, the value is `true`. | Boolean   |
+| ContinuationToken | ListInventoryConfigurationResult | Identifier of the current response. This parameter corresponds to the `continuation-token` request parameter. | String |
+| NextContinuationToken | ListInventoryConfigurationResult | Identifier of the next response. You can pass the value of this parameter to `continuation-token` and initiate a GET request to obtain the inventory jobs from the next response. | String    |
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Example
 
 #### Request
 
-The following request sample shows how to get the inventory job list1 from the bucket `examplebucket-1250000000`.
+The following example queries the inventory jobs of the `examplebucket-1250000000` bucket:
 
 ```shell
 GET /?inventory HTTP/1.1
@@ -143,22 +164,22 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 
 #### Response
 
-After the request succeeds, COS returns the following response indicating that currently there are inventory jobs list1 and list2 in the bucket.  
+After the request above is made, COS returns the following response, indicating that the inventory jobs `list1` and `list2` are set for the bucket.  
 
-**Inventory job list1**
+**Inventory job `list1`**
 
-- Analyze the objects prefixed with `myPrefix` and all their versions in the bucket `examplebucket-1250000000`.
-- The frequency of analysis is once a day.
-- Analysis dimensions include Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, and ReplicationStatus.
-- The analysis results are stored in the bucket `examplebucket-1250000000` as a CSV file, which is prefixed with `list1` and encrypted with SSE-COS.  
+- Objects to analyze: objects prefixed with `myPrefix` and all their versions in the `examplebucket-1250000000` bucket
+- Analysis frequency: daily
+- Analysis dimensions: `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, and `ReplicationStatus`
+- Analysis result: to be stored in the `examplebucket-1250000000` bucket as a CSV file, which is prefixed with `list1` and encrypted with SSE-COS.  
 
-**Inventory job list2**
+**Inventory job `list2`**
 
-- Analyze the objects prefixed with `myPrefix2` and all their versions in the bucket `examplebucket-1250000000`.
-- The frequency of analysis is once a week. The analysis dimensions include Size, LastModifiedDate, StorageClass, and ETag.
-- The analysis results are stored in the bucket `examplebucket-1250000000` as a CSV file, which is prefixed with `list2` and encrypted with SSE-COS.  
+- Objects to analyze: objects prefixed with `myPrefix2` and all their versions in the `examplebucket-1250000000` bucket
+- Analysis frequency: once a week<br>Analysis dimensions: `Size`, `LastModifiedDate`, `StorageClass`, and `ETag`
+- Analysis result: to be stored in the `examplebucket-1250000000` bucket as a CSV file, which is prefixed with `list2` and encrypted with SSE-COS.  
 
-Suppose there are 100 inventory jobs on this page. If `IsTruncated` is true, COS will further return `NextContinuationToken`, whose value can be used as that of `continuation-token` in a new GET request to get the next page of inventory jobs.
+Assume that 100 inventory jobs are listed in this response. If the value of `IsTruncated` is `true`, COS will return `NextContinuationToken`, whose value can be passed to `continuation-token` for a GET request to obtain the inventory jobs from the next response.
 
 ```shell
 HTTP/1.1 200 OK
