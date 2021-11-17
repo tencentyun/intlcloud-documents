@@ -18,17 +18,21 @@ This document shows you how to connect non-website applications to Anti-DDoS Adv
 	2. On the **Add forwarding rule** page, configure the following parameters as needed and click **OK**.
  - Forwarding protocol: TCP and UDP are supported.
  - Forwarding port: this is the Anti-DDoS Advanced port used for access. We recommend choosing the same port as that of the real server.
- >?Anti-DDoS Advanced does not support ports 1433, 1434, 3306, 3389, 36000, and 56000. Port 843 is supported in the Guangzhou and Beijing regions.
+
+
+
  - Real server port: the real port of the business website.
  - Forwarding method: **Forwarding via IP** and **Forwarding via domain name** are supported.
  - Load balancing mode: only weighted polling is supported currently.
  - Real server IP + weight/real server domain name: enter the real server IP + weight or real server domain name based on the **forwarding method**. Up to 20 pairs of IP + weight or domain name are supported.
-			- If you tick **Forwarding via IP**, enter the real server IP address + weight, such as `1.1.1.1 50`. If a domain name corresponds to multiple pairs of real server IP + weight, you can enter all of them and separate them with carriage return. Up to 20 entries are supported.
-     >?The weight ranges from 1 to 100.
-			- If you tick **Forwarding via domain name**, enter the forwarding domain name. If a domain name corresponds to multiple real server domain names, you can enter all of them and separate them with carriage return. Up to 20 entries are supported.
-	- Create multiple forwarding rules in batches:
+    - If you tick **Forwarding via IP**, enter the real server IP address + weight, such as `1.1.1.1 50`. If a domain name corresponds to multiple pairs of real server IP + weight, you can enter all of them and separate them with carriage return. Up to 20 entries are supported.
+    
+	- If you tick **Forwarding via domain name**, enter the forwarding domain name. If a domain name corresponds to multiple real server domain names, you can enter all of them and separate them with carriage return. Up to 20 entries are supported.
+- Create multiple forwarding rules in batches:
+		
 		1. Click **Batch import** -> **Import forwarding rules**.
-2. Paste rules in the rule input box.
+3. Paste rules in the rule input box.
+
 >!
 >- From left to right, paste the forwarding protocol, forwarding port, real server port, real server IP, and weight (or forwarding domain name); separate each one with a space; only one forwarding rule can be entered per line.
 >- The number of forwarding rule entries added in batches cannot exceed the current quota. Within the quota limit, up to 30 entries can be imported at a time.
