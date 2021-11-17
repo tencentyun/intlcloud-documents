@@ -22,19 +22,22 @@ TRTCCalling은 다음 포트에 종속되어 데이터를 전송합니다. 해�
 | Windows  | 데스크톱 QQ 브라우저(고속 커널) |       10.4+        |
 | Windows  |    데스크톱 Firefox 브라우저     |        56+         |
 | Windows  |      데스크톱 Edge 브라우저      |        80+         |
+...
+
+호환성 관련 조회는 [브라우저 지원 현황](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)을 참고하십시오. 동시에 [TRTC 점검 페이지](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)를 통해 온라인으로 점검하실 수 있습니다.
 
 ## 테스트 Demo 실행
 
 [](id:step1)
 ### 1단계: 신규 애플리케이션 생성
 1. [Tencent Cloud 가입](https://intl.cloud.tencent.com/document/product/378/17985)하여 계정을 생성하고 실명 인증을 완료합니다.
-2. TRTC 멀티미디어 콘솔에 로그인한 후, [개발 지원] > [Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)을 선택합니다.
-3. 애플리케이션 이름(예: `TestTRTC`)을 입력한 후 [생성]을 클릭합니다.
+2. TRTC 콘솔에 로그인한 후, **개발 지원>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)**을 선택합니다.
+3. 애플리케이션 이름(예시: `TestTRTC`)을 입력한 후 **생성**을 클릭합니다.
 
 [](id:step2)
 ### 2단계: SDK와 Demo 소스 코드 다운로드
 1. 실제 비즈니스 요구사항에 따라 SDK 및 관련 Demo 소스 코드를 다운로드합니다.
-2. 다운로드 완료 후 [다운로드 완료, 다음 단계]를 클릭합니다.
+2. 다운로드 완료 후 **다운로드 완료, 다음 단계**를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 
 [](id:step3)
@@ -44,10 +47,9 @@ TRTCCalling은 다음 포트에 종속되어 데이터를 전송합니다. 해�
 3. `GenerateTestUserSig.js` 파일에서 관련 매개변수를 설정합니다.
   <ul><li>SDKAPPID: 0으로 기본 설정되어 있으며 실제 SDKAppID로 설정하십시오.</li>
   <li>SECRETKEY: 공백으로 기본 설정되어 있으며 실제 키 정보로 설정하십시오.</li></ul> 
-
-![](https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png)
-4. 붙여넣기 완료 후 [붙여넣기 완료, 다음 단계]를 클릭하면 생성이 완료됩니다.
-5. 컴파일 완료 후 [콘솔 개요로 돌아가기]를 클릭합니다.
+  <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+4. 붙여넣기 완료 후 **붙여넣기 완료, 다음 단계**를 클릭하면 생성이 완료됩니다.
+5. 컴파일 완료 후 **콘솔 개요로 돌아가기**를 클릭합니다.
 
 
 >!
@@ -61,10 +63,10 @@ TRTCCalling은 다음 포트에 종속되어 데이터를 전송합니다. 해�
 npm install
 npm run serve
 ```
-2. Chrome 브라우저에서 `http://localhost:8080/` 링크를 실행합니다. 
-3. 사용자 userid를 입력하고 [로그인]을 클릭한 후 [음성 통화]를 선택합니다.
-4. 통화할 사용자의 userid를 입력하고 [통화]를 클릭합니다.
-5. 바로 음성 통화를 진행할 수 있습니다.
+2. Chrome 브라우저에서 `http://localhost:8080/` 링크를 실행합니다. 모두 정상일 경우 Demo 실행 인터페이스는 다음과 같습니다.
+3. 사용자 userid를 입력하고, **로그인**을 클릭한 후, **음성 통화**를 선택합니다.
+4. 통화할 사용자의 userid를 입력하고 **통화**를 클릭합니다.
+5. 음성 통화가 가능합니다.
 
 
 ## 음성 통화 구축
@@ -87,7 +89,7 @@ npm run serve
 </dx-codeblock>
 <dx-codeblock>
 ::: html html
-// script 방식으로 trtc-calling-js를 사용해야 하는 경우 순서에 따라 다음 리소스를 수동으로 가져와야 합니다.
+// script로 trtc-calling-js를 사용해야 하는 경우 순서에 따라 다음 리소스를 수동으로 가져와야 합니다.
 
   <script src="./trtc.js"></script>
   <script src="./tim-js.js"></script>
@@ -103,7 +105,7 @@ import TRTCCalling from 'trtc-calling-js';
 
 
 let options = {
-  SDKAppID: 0, // 액세스 시 0을 사용자의 SDKAppID로 대체합니다.
+  SDKAppID: 0, // 액세스 시 0을 사용자의 SDKAppID로 대체해야 합니다.
   // v0.10.2부터 tim 매개변수가 추가되었습니다.
   // tim 매개변수는 TIM 인스턴스의 고유성을 보장하기 위해 비즈니스의 기존 TIM 인스턴스에 적용됩니다.
   tim: tim
@@ -119,7 +121,7 @@ trtcCalling.login({
 });
 ```
 
-### 4단계: 1v1 통화 구현
+### 4단계: 1대1 통화
 - **발신자: 특정 사용자에게 호출**
 ```javascript
 trtcCalling.call({

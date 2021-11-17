@@ -5,7 +5,7 @@
 ## 環境要件
 最新バージョンのChromeブラウザをご使用ください。現在、デスクトップのChromeブラウザはTRTC Web SDKをサポートしており、関連機能は比較的整っていますので、Chromeブラウザを使用して体験することをお勧めします。
 
-TRTCCallingは以下のポートに依存してデータ送信を行っていますので、これらをファイアウォール・ホワイトリストに追加してください。設定が完了したら、[公式サイト Demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
+- TRTCCallingは以下のポートに依存してデータ送信を行っていますので、これらをファイアウォール・ホワイトリストに追加してください。設定が完了したら、[公式サイト Demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
   - TCPポート：8687
   - UDPポート：8000、8080、8800、843、443、16285
   - ドメイン名：qcloud.rtc.qq.com
@@ -22,48 +22,50 @@ TRTCCallingは以下のポートに依存してデータ送信を行っていま
 | Windows  | デスクトップ版QQブラウザ（クイックコア） |       10.4+        |
 |  Windows  |     デスクトップ版Firefoxブラウザ     |        56+         |
 |  Windows  |      デスクトップ版Edgeブラウザ      |        80+         |
+...
+
+詳細な互換性の照会については、[ブラウザサポート状況](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)をご参照ください。また、[TRTC検査ページ](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)でオンライン検査することも可能です。
 
 ## テストDemo実行
 
 [](id:step1)
 ### 手順1：アプリケーションの新規作成
 1.[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)を行い、実名認証を完了します。
-2．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
-3. アプリケーション名（例：`TestTRTC`）を入力し、【作成】をクリックします。
+2. TRTCコンソールにログインし、 **開発支援>[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)**を選択します。
+3. アプリケーション名（例：`TestTRTC`）を入力し、**作成**をクリックします。
 
 [](id:step2)
-### 手順2：SDKおよびDemoソースコードをダウンロード
-1. 実際の業務ニーズに基づき、SDKおよび付属のDemoソースコードをダウンロードします。
-2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。
+### ステップ2：SDKおよびDemoソースコードをダウンロード
+1. 実際のビジネスニーズに基づき、SDKおよび付属のDemoソースコードをダウンロードします。
+2. ダウンロード完了後、**ダウンロードしました。次のステップ**をクリックします。
 ![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 
 [](id:step3)
-### 手順3：Demoプロジェクトファイルの設定
-1. 設定変更ページに進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
+### ステップ3：Demo プログラムファイルの設定
+1. 設定変更画面に進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
 2. `Web/js/debug/GenerateTestUserSig.js`ファイルを見つけて開きます。
-3. `GenerateTestUserSig.js`のファイルの関連するパラメータを設定します。
+3. `GenerateTestUserSig.js` のファイルの関連するパラメータを設定します。
   <ul><li>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。</li>
   <li>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</li></ul> 
-
-
-4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
-5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
+  <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+4. 貼り付け完了後、**貼り付けました。次のステップ**をクリックすれば、作成が完了します。
+5. コンパイル完了後、 **コンソール概要に戻る** をクリックすれば終了です。
 
 
 >!
->- ここで言及したUserSigの新規作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**のこの手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します**。
->- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+>- ここで言及したUserSigの新規作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します**。
+>- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[UserSigに関するご質問](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 [](id:step4)
-### 手順4：Demoの実行
+### 手順4：Demoの動作
 1. Demoディレクトリに次のコマンドを順番に入力します。
 ```
 npm install
 npm run serve
 ```
 2. Chromeブラウザを起動し、リンク`http://localhost:8080/`を開きます。すべてが正常であれば、Demo実行インターフェースは次の図のようになります。
-3. ユーザーIDを入力し、【ログイン】をクリックして、【音声通話】を選択します。
-4. 呼び出し先のユーザーIDを入力し、【呼出】をクリックします。
+3. useridを入力し、**ログイン**をクリックして、**音声通話**を選択します。
+4. 呼び出し先のuseridを入力し、**呼出**をクリックします。
 5. 音声通話を開始できます。
 
 
