@@ -191,7 +191,7 @@ client.upload("ap-guangzhou", req, function (err, data) {
 | CoverFilePath   | アップロード予定のカバーファイルパス。ローカルパス（ユーザーサーバー上のパス）にする必要があります。URLはサポートしていません。| String | いいえ    |
 | CoverType   | アップロード予定のカバーファイルタイプ。選択可能なタイプの詳細は、[ビデオアップロードの概要](https://intl.cloud.tencent.com/document/product/266/9760)をご参照ください。CoverFilePathに拡張子が付いている場合は入力不要です。        | String | いいえ    |
 | Procedure   | アップロード後に自動的に実行させたいタスクフロー名。このパラメータは、タスクフローの作成（[API方式](https://intl.cloud.tencent.com/zh/document/product/266/33897) または[コンソール方式](https://console.cloud.tencent.com/vod/video-process/taskflow)）時にユーザーが指定します。具体的な内容は、[タスクフロー概要](https://intl.cloud.tencent.com/document/product/266/33931)をご参照ください。        | String | いいえ    |
-| ExpireTime   | メディアファイルの期限切れ時間。表記形式はISO 8601規格に準拠します。詳細については、[ISO日時表記形式の説明](https://intl.cloud.tencent.com/document/product/266/11732)をご参照ください。        | String | いいえ    |
+| ExpireTime   | メディアファイルの‘’。表記形式はISO 8601規格に準拠します。詳細については、[ISO日時表記形式の説明](https://intl.cloud.tencent.com/document/product/266/11732)をご参照ください。        | String | いいえ    |
 | ClassId   | カテゴリーID。メディアのカテゴリー管理に使用します。[カテゴリー作成](https://intl.cloud.tencent.com/document/product/266/35325) インターフェースによってカテゴリーを作成し、カテゴリーIDを取得することができます。        | Integer | いいえ    |
 | SourceContext   | ソースコンテキスト。ユーザーリクエスト情報のパススルーに使用します。アップロードコールバックインターフェースは、このフィールドの値を戻します。最長250文字。        | String | いいえ    |
 | SubAppId   | VOD [サブアプリケーション](https://intl.cloud.tencent.com/document/product/266/33987)ID。サブアプリケーションの中のリソースにアクセスしたい場合は、このフィールドにサブアプリケーションIDを入力します。アクセスしない場合、このフィールドは入力不要です。        | Integer | いいえ    |
@@ -226,7 +226,7 @@ client.upload("ap-guangzhou", req, function (err, data) {
 | ステータスコード         | 意味               |
 | ----------- | ----------------- |
 | InternalError       | 内部エラー。  |
-| InvalidParameter.ExpireTime       | パラメータ値のエラー：期限切れ時間。  |
+| InvalidParameter.ExpireTime       | パラメータ値のエラー：期限。  |
 | InvalidParameterValue.CoverType       | パラメータ値のエラー：カバーのタイプ。      |
 | InvalidParameterValue.MediaType       | パラメータ値のエラー：メディアタイプ。            |
 | InvalidParameterValue.SubAppId       | パラメータ値のエラー：サブアプリケーションID。               |
