@@ -46,7 +46,7 @@
 
 ## 結果の取得
 
-ビデオコンテンツ認識タスクを開始した後、非同期の[結果通知](https://intl.cloud.tencent.com/document/product/266/33931)または同期の [タスクの確認](https://intl.cloud.tencent.com/document/product/266/33931)の2種類の方式でビデオコンテンツ認識タスクの実行結果を取得できます。以下は、ビデオコンテンツ認識タスクの開始後、通常のコールバック方式での結果通知の例となります（値がnullのフィールドは省略）。
+ビデオコンテンツ認識タスクを開始した後、非同期の[結果通知](https://intl.cloud.tencent.com/document/product/266/33931)または同期の [タスク確認](https://intl.cloud.tencent.com/document/product/266/33931)の2種類の方式でビデオコンテンツ認識タスクの実行結果を取得できます。以下は、ビデオコンテンツ認識タスクの開始後、通常のコールバック方式での結果通知の例となります（値がnullのフィールドは省略）。
 
 ```json
 {
