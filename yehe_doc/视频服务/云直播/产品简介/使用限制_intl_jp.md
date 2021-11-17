@@ -35,7 +35,7 @@ CSSサービスをご利用される前に、サービスの使用制限事項�
 <td>再生サポートプロトコル</td>
 <td><ul style="margin:0">
 	<li>標準ライブストリーミングRTMP、FLVおよびHLS再生プロトコルをサポートしています。 詳細な説明は<a href="https://intl.cloud.tencent.com/document/product/267/7968">よくあるご質問</a>をご参照ください。</li>
-	<li>ライブイベントストリーミングはwebRTC再生プロトコルをサポートしています。</li>
+	<li>ライブイベントストリーミングはWebRTC再生プロトコルをサポートしています。</li>
 </ul></td>
 </tr><tr>
 <td>Live Video Caster</td>

@@ -5,7 +5,7 @@ Refererホットリンク防止の設定により、Refererブラック/ホワ�
 HTTPプロトコルでサポートされるRefererメカニズムに基づき、Refererホットリンク防止は、HTTPリクエストにともなうRefererフィールドを介してリクエストのソースを識別し、アクセスの合法性を検証し、ライブストリーミングコンテンツのリクエストを許可または拒否します。
 
 ## 注意事項
-- Referer情報はHTTP中に含まれており、RTMP、WebRTCおよびQUICなどの非HTTPプロトコルはReferer設定による制限を受けません。RTMPを制限したい場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してオフラインでの修正についてお問い合わせください。
+- Referer情報はHTTP中に含まれており、RTMP、WebRTCおよびQUICなどの非HTTPプロトコルはReferer設定による制限を受けません。RTMPプルを制限し、RTMPプルによりRefererホットリンク防止を回避されることを防ぎたい場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してオフラインでの修正についてお問い合わせください。
 - Refererホットリンク防止の設定をオン、オフ、または修正後は、約15分～20分経過すると有効となり、再度プッシュする必要はありません。
 - Refererホットリンク防止は、HTTPリクエストのheaderの中のReferer情報を検証することで、リクエストの合法性を確認し、ライブストリーミングの可否を制御しますが、Refererの偽造によって検証を回避し、サービスが盗用される可能性があります。従って、業務においてRefererに強く依存しコンテンツを保護することはお勧めしません。
 
@@ -14,8 +14,8 @@ HTTPプロトコルでサポートされるRefererメカニズムに基づき、
 - CSSサービスがアクティブになっており、かつ[CSSコンソール](https://console.cloud.tencent.com/live/livestat)にログインしていること。
 - [再生ドメイン名を追加](https://intl.cloud.tencent.com/document/product/267/35970)済みであること。
 
-[](id:open)
 
+[](id:open)
 ## Refererホットリンク防止の起動
 
 1. **[ドメイン名管理](https://console.cloud.tencent.com/live/domainmanage)**を選択し、Refererホットリンク防止を設定したい**再生ドメイン名** または右側の**管理**をクリックして、ドメイン名管理ページに入ります。
@@ -50,7 +50,6 @@ HTTPプロトコルでサポートされるRefererメカニズムに基づき、
 <li>ルール内容がブランクの場合は、ブラックリスト/ホワイトリストがいずれも設定されていないことを表します。</li>
 </ul></td>
 </tr></table>
-
 4. **保存**をクリックすると、設定が保存されます。
 
 
