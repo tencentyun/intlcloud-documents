@@ -41,10 +41,10 @@ If your data backups reach 800 GB and log backups reach 100 GB, your total backu
 - After 24 hours, the instance will be isolated into the recycle bin. At this time, automatic backup will stop, and rollback and manual backup will be prohibited; however, backups can still be downloaded (on the [Backup List](https://console.cloud.tencent.com/cdb/backup) page). Excessive backup space of the instance will not be billed. You can renew the instance in the recycle bin in the console to recover it.
 - After three days in the recycle bin, the instance will be deactivated and terminated, along with all data backups. Please save the needed backups in a timely manner.
 
-## Notes on Overdue Payment
+## Notes on Arrears
 
 ### Pay-as-You-Go instance
-After the account becomes overdue, the backup will change with the lifecycle of the instance. For more information, please see the backup lifecycle of pay-as-you-go instances as described above.
+After the account falls into arrears, the backup will change with the lifecycle of the instance. For more information, please see the backup lifecycle of pay-as-you-go instances as described above.
 
 
 ## Upgraded Services Available After Backup Billing Starts
@@ -52,8 +52,8 @@ After the account becomes overdue, the backup will change with the lifecycle of 
 
 | Improvement | Before Upgrade | After Upgrade |
 | ------------------ | -------------- | --------------- |
-| Data backup retention period | 30 days | 732 days |
-| Log backup retention period | 5 days | 732 days |
+| Data backup retention period | 30 days | 1830 days |
+| Log backup retention period | 5 days | 1830 days |
 | Backup compression rate | General | Ultra-high |
 | binlog centralization | Local storage | Centralized storage |
 
@@ -66,7 +66,7 @@ After the account becomes overdue, the backup will change with the lifecycle of 
 
 | Business Scenario | Recommended Backup Retention Period |
 | -------------------- | ------------------------------------------------------------ |
-| Core businesses | 7–732 days |
+| Core businesses | 7–1830 days |
 | Non-core, non-data businesses | 7 days |
 | Archival businesses | 7 days. You are recommended to manually back up data based on your actual business needs and delete the backups promptly after use |
 | Testing businesses | 7 days. You are recommended to manually back up data based on your actual business needs and delete the backups promptly after use |
