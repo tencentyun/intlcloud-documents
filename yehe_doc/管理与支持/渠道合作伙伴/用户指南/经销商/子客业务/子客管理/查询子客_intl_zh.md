@@ -16,7 +16,7 @@
 
 ### 2、导出客户
 
-伙伴可根可导出全部子客。
+伙伴可导出全部子客。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/eab7d9fa5196b5e3e5d783ed884fd5c8.png)
 
