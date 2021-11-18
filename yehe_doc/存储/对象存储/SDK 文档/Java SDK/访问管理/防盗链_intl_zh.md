@@ -55,9 +55,9 @@ cosClient.setBucketRefererConfiguration(bucketName, configuration);
 | 参数名                                   | 参数描述                                                     | 类型                                     |
 | ---------------------------------------- | ------------------------------------------------------------ | ---------------------------------------- |
 | bucketName                               | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String                                   |
-| configuration | 存储桶 Referer 配置                                               | BucketRerfererConfiguration |
+| configuration | 存储桶 Referer 配置                                               | BucketRefererConfiguration |
 
-BucketReferreConfiguration 说明：
+BucketRefererConfiguration 说明：
 
 | 参数名          | 参数描述                                         | 类型    | 必选 | 方法      |
 | -------------- | ----------------------------------------------- | ------ | ---- | -------- |
