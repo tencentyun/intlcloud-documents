@@ -32,7 +32,6 @@ download_url?imageInfo
 | height      | 图片的高度。单位为像素（px）              |
 | size        | 图片的大小。单位为 Bytes                   |
 | md5         | 图片的 md5 值                               |
-| photo_rgb   | 图片的主色调。例如0x736246                |
 | frame_count | 图片的帧数。静态图为1，动图为对应的帧数 |
 
 ## 实际案例
