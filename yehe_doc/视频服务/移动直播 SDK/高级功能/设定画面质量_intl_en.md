@@ -17,8 +17,7 @@ int setVideoQuality(V2TXLiveVideoResolution resolution, V2TXLiveVideoResolutionM
 #### Parameters
 | Parameter | Type | Description |
 |-----|-----|-----|
-| resolution | [V2TXLiveVideoResolution](#V2TXLiveVideoResolution) | Video resolution |
-| resolutionMode | [V2TXLiveVideoResolutionMode](#V2TXLiveVideoResolutionMode) | Resolution mode (landscape/portrait) |
+| param | [V2TXLiveVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLiveDef__android.html#classcom_1_1tencent_1_1live2_1_1V2TXLiveDef_1_1V2TXLiveVideoEncoderParam) | Video encoding parameters. |
 
 - **Enumerated values of V2TXLiveVideoResolution:**[](id:V2TXLiveVideoResolution)
 <table>
