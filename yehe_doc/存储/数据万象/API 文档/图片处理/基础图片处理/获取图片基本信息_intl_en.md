@@ -32,7 +32,6 @@ download_url?imageInfo
 | height      | Height of the image, in pixels   |
 | size        | Image size, in bytes |
 | md5         | MD5 checksum of the image                    |
-| photo_rgb   | Average hue of the image, such as `0x736246` |
 | frame_count | Number of frames. For static images, this value is `1`. |
 
 ## Examples
