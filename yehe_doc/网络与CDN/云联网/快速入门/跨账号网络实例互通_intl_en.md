@@ -36,7 +36,7 @@ IP range conflicts produce invalid routes. To check if such conflicts exist, per
 
 ## Step 5. Set Cross-region Bandwidth Cap (Optional)
 1. In the CCN list, click the **ID/Name** of the CCN instance for which to set the bandwidth.
-2. Select the **Bandwidth Management* tab on the details page of the CCN instance.
+2. Select the **Bandwidth Management** tab on the details page of the CCN instance.
 3. (Optional) Click **Change** to select the bandwidth limit mode as needed.
 ![](https://main.qcloudimg.com/raw/bc93b28f5c0fb5fee6ce51e1b73dab1c.png)
 ![](https://main.qcloudimg.com/raw/f7d06cf1f591f25950d0b8a745fafa71.png)
