@@ -1,6 +1,6 @@
 ### 登录伙伴中心
 
-第一步：登录[经销商账号](https://intl.cloud.tencent.com/)。
+第一步：登录[经销商账号](https://intl.cloud.tencent.com/login)。
 
 ![img](https://docimg3.docs.qq.com/image/aYs7uKuoKECk0Fy32a8Mgw?w=1012&h=362)
 
