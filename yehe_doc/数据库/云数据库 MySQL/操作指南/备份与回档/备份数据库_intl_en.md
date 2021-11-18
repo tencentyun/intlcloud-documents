@@ -50,9 +50,9 @@ This will not affect your business access, but may impact your automatic backup 
 <tr>
 <td>Backup Start Time</td><td><ul><li>The default backup start time is automatically assigned by the system. <li>You can set a start time as needed. We recommend that you set it to off-peak hours. This is just the start time of the backup process and does not indicate the end time. <br>For example, if the backup start time is set to 02:00-06:00, the system will initiate a backup at a point in time during 02:00-06:00, which depends on the backend backup policy and backup system conditions.</td></tr>
 <tr>
-<td>Data Backup Retention Time</td><td>Data backup files can be retained for 7 (default value) to 732 days.</td></tr>
+<td>Data Backup Retention Time</td><td>Data backup files can be retained for 3 (default value) to 1830 days.</td></tr>
 <tr>
-<td>Log Backup Retention Time</td><td>Log backup files can be retained for 7 (default value) to 732 days. <strong>The number of days set for log backup retention cannot exceed that for data backup retention.</strong></td></tr>
+<td>Log Backup Retention Time</td><td>Log backup files can be retained for 3 (default value) to 1830 days. <strong>The number of days set for log backup retention cannot exceed that for data backup retention.</strong></td></tr>
 </tbody></table>
 <img src="https://main.qcloudimg.com/raw/a371d4ba960264aa5630b59a3bfe5096.png"  style="margin:0;">
 
@@ -93,7 +93,7 @@ No. However, you can reduce the backup frequency and delete manual backups no lo
 
 | Business Scenario             | Recommended Backup Retention Period                                                 |
 | -------------------- | ------------------------------------------------------------ |
-| Core businesses             | 7-732 days                                              |
+| Core businesses             | 7-1830 days                                              |
 | Non-core and non-data businesses | 7 days                                                      |
 | Archive businesses             | 7 days. We recommend that you manually back up data based on your business needs and delete the backups promptly after use |
 | Testing businesses | 7 days. We recommend that you manually back up data based on your actual business needs and delete the backups promptly after use |
