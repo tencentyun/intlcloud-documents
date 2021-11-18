@@ -1401,7 +1401,7 @@ The request members are described as follows:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | Metadata of a file | ObjectMetadata |
-| trafficLimit | Set method | Traffic limits (in bit/s) on the uploaded object. The default setting is no limit. | Int | No |
+| trafficLimit | Set method | Traffic limits (in bit/s) on the uploaded object. The default setting is no limit. | Int | 
 
 >?When a file is uploaded in concurrent parts, `trafficLimit` is the limit on the upload speed of each part. In this case, you need to adjust the number of threads in your thread pool to control the upload speed.
 
