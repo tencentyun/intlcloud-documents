@@ -3,9 +3,9 @@
 
 
 ## 操作步骤
-1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID 或“操作”列的【管理】，进入实例管理页面。
-2. 在实例管理页面，选择【帐号管理】页签，选择所需帐号，在“操作”列单击【修改权限】。
+1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
+2. 在实例管理页面，选择**帐号管理**页签，选择所需帐号，在**操作**列单击**修改权限**。
 ![](https://main.qcloudimg.com/raw/80e76478890fb90d17a9113082bb4b3d.png)
-3. 在弹出的对话框，选中或者取消需要授予的权限库和权限，单击【确定】，完成修改。
+3. 在弹出的对话框，选中或者取消需要授予的权限库和权限，单击**确定**，完成修改。
 ![](https://main.qcloudimg.com/raw/f4c6101a16167d0306b8abc153731dcc.png)
 
