@@ -233,4 +233,4 @@ kubectl delete goosefsruntime hadoop
 kubectl delete dataset hadoop
 ```
 
-For more information about Fluid GooseFSRuntime, see the [feature list](https://cloud.tencent.com/document/product/436/59495). 
+For more information about Fluid GooseFSRuntime, see the [feature list](https://intl.cloud.tencent.com/document/product/436/42233). 
