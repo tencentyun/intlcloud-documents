@@ -50,9 +50,9 @@ Marketing SMS typically refers to SMS messages sent to registered members of web
 
 Sample 1:
 ```
-Great news! You can now apply to raise your store ranking at the official website. This helps increase the awareness of your brand, with a great number of materials offered free of charge. Try it now! Reply T to unsubscribe.
+Great news! On the official website, you may now apply to improve your store's ranking. With a large number of resources available for free, this helps to raise your brand recognition. Try it right now! Unsubscribe by replying T.
 ```
 Sample 2:
 ```
-Another round of new year promotion is coming! Up to 30% off for hairstyle products. Flash sale will start on 9:00 AM, February 17. For details, tap xxx. Reply T to unsubscribe.
+Another wave of new year promotions is on the way! Hairstyle goods are discounted by up to 30%. The flash sale will begin at 9:00 a.m. on February 17. Tap xxx for more information. Unsubscribe by replying T.
 ```

@@ -1,4 +1,4 @@
-This document helps you quickly get started with the Global SMS service by show you how an organization user sends the following message `Your verification code is 1234(valid for 5 minutes). For account safety, don't forward the code to others.` to mobile numbers outside the Chinese mainland. For more SMS concepts, see [Glossary](https://intl.cloud.tencent.com/document/product/382/13299).
+This document helps you quickly get started with the Global SMS service by show you how an organization user sends the following message “Your verification code is 1234 (valid for 5 minutes). For account safety, don't forward the code to others.” to mobile numbers outside the Chinese mainland. For more SMS concepts, see [Glossary](https://intl.cloud.tencent.com/document/product/382/13299).
 
 >?The new version of console is displayed to users who activate the SMS service after September 18, 2019 by default.
 

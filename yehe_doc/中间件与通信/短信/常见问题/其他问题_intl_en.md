@@ -1,8 +1,8 @@
 ### What should I do if a user fails to receive an SMS message?
 Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) and select **Statistics and Analytics** > **Chinese Mainland SMS** (or **Global SMS**) > **Message Records** to view the **Sending Status** and **Remarks** for the mobile number.
-- If the **Sending Status** is "failed", you can troubleshoot the issue based on the cause as described in **Remarks**. The cause may be that the request has hit the rate limit control policy, the SMS message format is incorrect, or the mobile number has been blocked due to unsubscription.
-- If the **Sending Status** is "succeeded", but an error code is displayed in **Remarks**, please troubleshoot the issue based on the specific [error code](https://intl.cloud.tencent.com/document/product/382/34861).
-- If the **Sending Status** is "succeeded" and the **Remarks** display that "The user has successfully received the message", but the user actually has not, you can troubleshoot the issue by following the steps below:
+- If the **Sending Status** is "Failed", you can troubleshoot the issue based on the cause as described in **Remarks**. The cause may be that the request has hit the rate limit control policy, the SMS message format is incorrect, or the mobile number has been blocked due to unsubscription.
+- If the **Sending Status** is "Succeeded", but an error code is displayed in **Remarks**, please troubleshoot the issue based on the specific [error code](https://intl.cloud.tencent.com/document/product/382/34861).
+- If the **Sending Status** is "Succeeded" and the **Remarks** display that "The user has successfully received the message", but the user actually has not, you can troubleshoot the issue by following the steps below:
  - The mobile phone has been powered off or the mobile number has run out of credit or is out of service: check the status of the mobile phone/number, such as by dialing the number.
  - The mobile number is blocked: check whether the user has complained to the carrier or unsubscribed from the service.
  - The mobile phone cannot receive SMS messages because it has not been powered off for a long period of time: try restarting the mobile phone.
@@ -136,7 +136,7 @@ Individual users must obtain approval first before using the console to send SMS
 
 
 ### Can I use a server outside the Chinese mainland to send SMS messages?
-A server outside Mainland China can be used to call an API to send SMS messages, and the domain name can be resolved nearby. You can use the `curl` API for testing first.
+A server outside the Chinese mainland can be used to call an API to send SMS messages, and the domain name can be resolved nearby. You can use the `curl` API for testing first.
 
 ### Can I send bulk SMS?
 Yes, you can send an SMS message to up to 200 mobile numbers at a time by calling the [SendSms API](https://intl.cloud.tencent.com/document/product/382/34859) or up to 100,000 mobile numbers through the console.
@@ -158,4 +158,4 @@ For more information on the country/region codes, please see [Pricing](https://i
 A region is the geographical area where a physical data center is located. Currently, Tencent Cloud International SMS supports two regions: Singapore and Frankfurt (Europe). Regions are fully isolated from each other, which means data cannot be stored across regions but in the local region. We suggest you select a region according to the data storage requirements in different regions. The features and prices of SMS services in each region are the same, but the data is not interconnected. Only the approved signatures and templates can be copied across regions.
 
 ### How can I select a suitable region?
-The features and prices of SMS services in each region are the same, but regions are fully isolated from each other, which means data cannot be stored across regions but in the local region. You are recommended to select a region according to the data storage requirements in different regions. For example, select Frankfurt (Europe) if your users are in the EU. You can switch regions on the title bar in the SMS console or specify the `region` field through APIs. For more information, see [region list](https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list).
+The features and prices of SMS services in each region are the same, but regions are fully isolated from each other, which means data cannot be stored across regions but in the local region. You are recommended to select a region according to the data storage requirements in different regions. For example, select Frankfurt (Europe) if your users are in the EU. You can switch regions on the title bar in the SMS console or specify the `region` field through APIs. For more information, see [Region List](https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list).

@@ -18,7 +18,7 @@ This document helps you quickly get started with the Chinese mainland SMS servic
 
 ### Selecting a region
 1. On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, select a region in the top-left corner.
-Tencent Cloud International provides services for multiple regions, where product features and prices are the same. However, data cannot be stored across regions but in the local region. Please select a region according to your data storage requirements.
+Tencent Cloud International offers services in many regions with the same product features and prices. However, data cannot be stored across regions and must instead be kept in the local region. Please select a region based on your data storage needs.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ec3a87b4037656c52d735f4d98f77b24.png)
 
 [](id:Sign)
