@@ -4,7 +4,7 @@
 ![基因测序](https://main.qcloudimg.com/raw/d278dddab5b44da4dfb2fec54e6031b7.png)
 
 #### 场景常见步骤
-1. 生物信息专家从测序仪或私有云上的存储获取原始信息，并上传到腾讯云存储服务，例如 COS、CFS。
+1. 生物信息专家从测序仪或私有云上的存储获取原始信息，并上传到腾讯云存储服务，例如 [对象存储 COS](https://intl.cloud.tencent.com/zh/document/product/436/6222)、[文件存储 CFS](https://intl.cloud.tencent.com/zh/document/product/582/9127)。
 2. 用户定义用来分析信息的 Batch 作业，然后提交作业，作业的存储配置与前一步上传的原始信息关联。
 3. Batch 自动调度资源，并将用户上传的自定义分析镜像部署到被调度的 CVM 里，同时自动调度作业开始分析原始信息。
 4. CVM 上的计算完毕后，Batch 会自动将分析结果上传到用户指定位置。
