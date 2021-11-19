@@ -101,7 +101,7 @@ When calling the [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group
 | sdkAppId | Numeric | Application ID. You can view the `SDKAppID` in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC Console</a>. |1400000123 | 
 | userId | String | It can contain only letters (a–z and A–Z), digits (0–9), underscores, and hyphens. | test_user_001 | 
 | userSig | String | `userSig` can be calculated based on `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
-| roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to used string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |
+| roomId | Numeric | Numeric room ID. For string-type room ID, use `strRoomId` in `TRTCParams`. | 29834 |
 
 >!In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
 
