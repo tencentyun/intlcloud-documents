@@ -3,22 +3,22 @@
 Cross-bucket replication enables COS to automatically and asynchronously replicate **incremental objects** from one bucket to another bucket. With cross-bucket replication, COS can accurately replicate the exact same objects, along with object metadata and version IDs, from a source bucket to a destination bucket. Additionally, object operations, such as adding or deleting an object, may also be synced to the destination bucket.
 
 >!
->
 >- To enable cross-bucket replication, make sure that versioning is enabled for both the source and destination buckets.
 >- After cross-bucket replication is enabled, the object copies will be of the same storage class as the source objects, unless you specify a different storage class during replication.
 >- During replication, COS will copy the access control list (ACL) of the source bucket. Currently, the source bucket and destination bucket must be owned by the same account.
+>
 
 
 
 ## Use Cases
 
-- **Remote disaster recovery:** COS boasts 12 9’s of durability for object data, but there is still a slight chance of data loss due to force majeure such as wars and natural disasters. To avoid data loss by explicitly having a separate copy in a different bucket, you can use cross-bucket replication that helps remote disaster recovery. In this way, when the IDC for one bucket is damaged due to force majeure, the IDC for the other bucket can still provide data copies for your use. 
+- **Remote disaster recovery:** COS boasts 12 9’s of durability for object data, but there is still a slight chance of data loss due to force majeure such as wars and natural disasters. To avoid data loss by explicitly having a separate copy in a different bucket, you can use cross-bucket replication that helps remote disaster recovery. In this way, when the IDC for one bucket is damaged due to force majeure, the IDC for the other bucket can still provide data copies for your use.
 - **Compliance:** COS ensures data availability by providing multiple copies and erasure codes for data in physical disks by default. However, some industries may have compliance requirements stipulating that you keep copies in another bucket. Cross-bucket replication allows data to be replicated across buckets to meet such requirements.
 - **Minimizing access latency:** when you have end users accessing objects from different regions, with cross-bucket replication, you can maintain object copies in the buckets closest to them. This minimizes access latency to deliver a better user experience.
 - **Special technical requirements:** if you have compute clusters in two different buckets and the clusters need to process the same set of data, with cross-bucket replication, you can maintain object copies in both buckets.
 - **Data migration and backup:** you can copy your business data from one bucket to another as needed for data migration and backup.
 
-## Considerations
+## Notes
 
 #### Replication time
 

@@ -16,7 +16,7 @@ GooseFS-to-CosN path mapping:
 /warehouse/folder/test.txt -> cosn://examplebucket-1250000000/data/warehouse/folder/test.txt
 ```
 
-The CosN schema maintains the mapping between GooseFS and UFS CosN paths on the client, and converts CosN-path requests to GooseFS-path requests. The mapping is refreshed periodically. You can modify the refresh interval (default: 60s) with `goosefs.client.namespace.refresh.interval` in the GooseFS configuration file `goosefs-site.properties`.
+The CosN schema maintains the mapping between GooseFS and UFS CosN paths on the client, and converts CosN-path requests to GooseFS-path requests. The mapping is refreshed periodically. You can modify the refresh interval (default: 60s) using `goosefs.user.client.namespace.refresh.interval` in the GooseFS configuration file `goosefs-site.properties`.
 
 >! If the accessed CosN path cannot be converted into a GooseFS path, the corresponding Hadoop API call will throw an exception.
 

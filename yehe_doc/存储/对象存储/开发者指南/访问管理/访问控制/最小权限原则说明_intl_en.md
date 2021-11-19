@@ -4,17 +4,14 @@ When using COS, you may need to use a temporary key to grant users permissions t
 
 The **principle of least privilege** means that when granting permission, you must specify the scope of the permission granted to the **specified user** for performing **what operation** and access **what resource** under **what conditions**.
 
-## Precautions
-You are recommended to strictly comply with the principle of least privilege to ensure that a user can only perform the specified operations (e.g., `action:GetObject`) or access the specified resources (e.g., `resource:examplebucket-1250000000/exampleobject.txt`). 
+## Notes
+You are advised to strictly comply with the principle of least privilege to ensure that a user can only perform the specified operations (e.g., `action:GetObject`) or access the specified resources (e.g., `resource:examplebucket-1250000000/exampleobject.txt`). 
 To prevent data security risks caused by unexpected and unauthorized operations with excessive permissions, it is strongly recommended that you avoid authorizing a user to access all resources (e.g., `resource:*`) or perform all operations (e.g., `action:*`).
 
 Below are some potential data security risks:
 - Data leakage: if you want to authorize a user to download the specified resources such as `examplebucket-1250000000/data/config.json` and `examplebucket-1250000000/video/` but include `examplebucket-1250000000/*` in the permission policy, then all objects in the bucket can be downloaded without your authorization, leading to unexpected data leakage.
 - Data overwriting: if you want to authorize a user to upload `examplebucket-1250000000/data/config.json` and `examplebucket-1250000000/video/` but include `examplebucket-1250000000/*` in the permission policy, then all objects in the bucket can be uploaded without your authorization, which may overwrite unintended objects. To avoid this risk, in addition to following the principle of least privilege, you can retain all versions of data for traceability as instructed in [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
 - Permission leakage: if you want to authorize a user to list the objects in the bucket (`cos:GetBucket`) but configured `cos:*` in the permission policy, then all operations on the bucket will be allowed, including reauthorizing the bucket, deleting objects, and deleting the bucket, which puts your data at extremely high risk.
-
-
-
 
 
 ## Usage Guide
@@ -28,12 +25,9 @@ Under the principle of least privilege, you should specify the following informa
 	-  resource: you must specify the resource authorized by the policy. A resource is described in a six-piece format. You can set the resource scope as the specified file (e.g., `exampleobject.jpg`) or the specified directory (e.g., `examplePrefix/*`). Unless it is required by your business, please do not grant any user access to all resources using the `*` wildcard.
 	-  condition: it describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address.
 
+### Least privilege guide for temporary keys
 
-
-
-### Least privilege guide for temporary key
-
-When applying for a temporary key, you can set the permission policy field [Policy] to limit the permissions to operations and resources within the specific scope. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+When applying for a temporary key, you can set the `policy` field to grant limited permissions on operations and resources. For more information about how to generate a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 #### Authorization example
 
@@ -57,7 +51,7 @@ public class Demo {
             // Replace with your own SecretKey
             config.put("SecretKey", "PdkhT9e2rZCfy6");
 
-            // Validity period of the temporary key in seconds; default value: 1,800s; maximum value: 7,200s
+            // Validity period of the temporary key, in seconds. Default value: 1800; maximum value: 7200
             config.put("durationSeconds", 1800);
 
             // Replace with your own bucket
@@ -77,7 +71,7 @@ public class Demo {
             config.put("allowActions", allowActions);
 
             JSONObject credential = CosStsClient.getCredential(config);
-            // If it succeeds, the temporary key information will be returned and printed out as shown below
+            // If it succeeds, the temporary key information will be returned and printed out as shown below:
             System.out.println(credential);
         } catch (Exception e) {
             // If it fails, an exception will be thrown
@@ -108,6 +102,63 @@ If you want to use an API to grant a user permission to download the `exampleObj
   ]
 }
 ```
+
+### Least privilege guide for signatures
+
+You can perform temporary uploads and downloads using pre-signed URLs. Moreover, if you send a valid pre-signed URL to others, he (or she) can upload or download the objects.
+
+>!Both temporary and permanent keys can be used to generate pre-signed URLs. However, you are advised to follow the least privilege principle when [generating a temporary key](https://intl.cloud.tencent.com/document/product/436/14048) and use the temporary key to calculate the signature. Try to avoid using a permanent key that has excessive permissions for the sake of security.
+
+#### Authorization example
+
+#### Granting a user permission to use a pre-signed URL to download an object
+
+Use a temporary key to generate a signed download URL and set it to overwrite some public headers to be returned (such as `content-type` and `content-language`). The Java code sample is as follows:
+
+```java
+// Pass in the obtained temporary key (tmpSecretId, tmpSecretKey, sessionToken)
+String tmpSecretId = "SECRETID";
+String tmpSecretKey = "SECRETKEY";
+String sessionToken = "TOKEN";
+COSCredentials cred = new BasicSessionCredentials(tmpSecretId, tmpSecretKey, sessionToken);
+// Set the bucket region. For abbreviations of COS regions, see https://cloud.tencent.com/document/product/436/6224
+// `clientConfig` contains the set methods to set region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, please see the source code or the FAQs about the SDK for Java.
+Region region = new Region("COS_REGION");
+ClientConfig clientConfig = new ClientConfig(region);
+// To generate a URL that uses the HTTPS protocol, configure this line (recommended).
+// clientConfig.setHttpProtocol(HttpProtocol.https);
+// Generate a COS client.
+COSClient cosClient = new COSClient(cred, clientConfig);
+// Enter the Bucket name in the format of `BucketName-APPID`. 
+String bucketName = "examplebucket-1250000000";
+// Object key, the unique identifier of the object in the bucket.
+String key = "exampleobject";
+GeneratePresignedUrlRequest req =
+        new GeneratePresignedUrlRequest(bucketName, key, HttpMethodName.GET);
+// Set the http header returned for download.
+ResponseHeaderOverrides responseHeaders = new ResponseHeaderOverrides();
+String responseContentType = "image/x-icon";
+String responseContentLanguage = "zh-CN";
+// Set the returned header to contain filename information.
+String responseContentDispositon = "filename=\"exampleobject\"";
+String responseCacheControl = "no-cache";
+String cacheExpireStr =
+        DateUtils.formatRFC822Date(new Date(System.currentTimeMillis() + 24L * 3600L * 1000L));
+responseHeaders.setContentType(responseContentType);
+responseHeaders.setContentLanguage(responseContentLanguage);
+responseHeaders.setContentDisposition(responseContentDispositon);
+responseHeaders.setCacheControl(responseCacheControl);
+responseHeaders.setExpires(cacheExpireStr);
+req.setResponseHeaders(responseHeaders);
+// Setting the signature expiration time (optional). If it is not configured, the signature expiration time in ClientConfig (1 hour) is used by default.
+// Set the signature to expire in half an hour.
+Date expirationDate = new Date(System.currentTimeMillis() + 30L * 60L * 1000L);
+req.setExpiration(expirationDate);
+URL url = cosClient.generatePresignedUrl(req);
+System.out.println(url.toString());
+cosClient.shutdown();
+```
+
 
 ### Least privilege guide for user policy
 
@@ -198,3 +249,4 @@ If you want to grant a sub-account whose UIN is `100000000011` (root account UNI
   "version": "2.0"
 }
 ```
+
