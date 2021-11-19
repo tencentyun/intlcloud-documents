@@ -104,6 +104,7 @@
 12.[腾讯云弹性微服务](https://intl.cloud.tencent.com/document/product/1094/41576)。
 13.[腾讯云时序数据库](https://intl.cloud.tencent.com/document/product/1100/41706)。
 14.[私有域解析 Private DNS](https://intl.cloud.tencent.com/document/product/1097/42073)。
+15.[数据库审计](https://intl.cloud.tencent.com/document/product/1102/43295)。
 
 ## 特定司法管辖区要求
 

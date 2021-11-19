@@ -1,18 +1,18 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to cross-bucket replication.
+This document provides an overview of APIs and SDK code samples related to bucket copying.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------- |
-| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-bucket replication | Sets a cross-bucket replication rule |
-| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying cross-bucket replication | Queries a cross-bucket replication rule |
-| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-bucket replication | Deletes a cross-bucket replication rule |
+| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-bucket replication | Sets a cross-bucket replication rule for a bucket |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying cross-bucket replication | Queries the cross-bucket replication rule of a bucket |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-bucket replication | Deletes a cross-bucket replication rule of a bucket |
 
 ## Setting Cross-Bucket Replication
 
-#### Feature description
+#### Description
 
-This API is used to set the cross-bucket replication rule on a bucket.
+This API (PUT Bucket replication) is used to set the cross-bucket replication rule for a bucket.
 
 #### Method prototype
 
@@ -30,7 +30,7 @@ public void setBucketReplicationConfiguration(
 String bucketName = "examplebucket-1250000000";
 
 BucketReplicationConfiguration bucketReplicationConfiguration = new BucketReplicationConfiguration();
-// Configure initiator identity in the format of qcs::cam::uin/<OwnerUin>:uin/<SubUin>
+// Configure initiator identity in the format: qcs::cam::uin/<OwnerUin>:uin/<SubUin>
 bucketReplicationConfiguration.setRoleName("qcs::cam::uin/100000000001:uin/100000000001");
 
 // Configure the destination bucket and storage class in the QCS format: qcs::cos:[region]::[bucketname-AppId]
@@ -56,22 +56,22 @@ cosClient.setBucketReplicationConfiguration(setBucketReplicationConfigurationReq
 
 #### Parameter description
 
-| Parameter | Description | Type |
+| Parameter  | Description | Type |
 | ---------------------------------------- | ------------------------------------------------------------ | ---------------------------------------- |
-| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| setBucketReplicationConfigurationRequest | Cross-bucket replication configuration                                               | SetBucketReplicationConfigurationRequest |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| setBucketReplicationConfigurationRequest | Cross-bucket replication configuration | SetBucketReplicationConfigurationRequest |
 
 #### Response description
 
-  - Success: no value is returned.
-  - Failure: an error (such as authentication failure) occurs, with a `CosClientException` or `CosServiceException` exception thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+  - Success: No value is returned.
+  - Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
 ## Querying Cross-Bucket Replication
 
-#### Feature description
+#### Description
 
-This API is used to query the cross-bucket replication rule of a bucket.
+This API (GET Bucket replication) is used to query the cross-bucket replication rule of a bucket.
 
 #### Method prototype
 ```java
@@ -104,19 +104,19 @@ BucketReplicationConfiguration brcfRet2 = cosClient.getBucketReplicationConfigur
 
 | Parameter  | Description | Type |
 | ---------------------------------------- | ------------------------------------------------------------ | ---------------------------------------- |
-| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| getBucketReplicationConfigurationRequest | Request to get the cross-bucket replication configuration | GetBucketReplicationConfigurationRequest |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| getBucketReplicationConfigurationRequest | Obtaining cross-bucket replication configuration requests                                       | GetBucketReplicationConfigurationRequest |
 
 #### Response description
-- Success: the cross-bucket replication rule of the bucket is returned.
-- Failure: an error (such as authentication failure) occurs, with a `CosClientException` or `CosServiceException` exception thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: Returns the cross-bucket replication rule for the bucket.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
 ## Deleting Cross-Bucket Replication
 
-#### Feature description
+#### Description
 
-This API is used to delete the cross-bucket replication rule from a bucket.
+This API (DELETE Bucket replication) is used to delete a cross-bucket replication rule from a bucket.
 
 #### Method prototype
 ```java
@@ -148,10 +148,10 @@ cosClient.deleteBucketReplicationConfiguration(new DeleteBucketReplicationConfig
 
 | Parameter | Description | Type |
 | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------- |
-| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| deleteBucketReplicationConfigurationRequest | Request to delete the cross-bucket replication configuration | DeleteBucketReplicationConfigurationRequest |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| deleteBucketReplicationConfigurationRequest | Deleting cross-bucket replication configuration requests                                       | DeleteBucketReplicationConfigurationRequest |
 
 #### Response description
 
-  - Success: no value is returned.
-  - Failure: an error (such as authentication failure) occurs, with a `CosClientException` or `CosServiceException` exception thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+  - Success: No value is returned.
+  - Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).

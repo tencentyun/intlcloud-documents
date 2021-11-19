@@ -1,13 +1,20 @@
 ## Overview
-This document provides an overview of SDK code samples related to generating pre-signed object links.
 
-## SDK API Reference
+This document provides an overview of SDK code samples related to generating pre-signed object URLs.
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+>?
+> - You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
+> 
 
-## Generating a Pre-signed Object Link
 
-#### Sample 1. Generating a pre-signed upload link
+## SDK API References
+
+For parameters and method description of all APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+
+## Generating a Pre-Signed Object URL
+
+#### Sample code 1. Generating a pre-signed upload URL
 **Objective-C**
 
 [//]: # (.cssg-snippet-get-presign-upload-url)
@@ -25,8 +32,7 @@ getPresignedURLRequest.object = @"exampleobject";
 
 [getPresignedURLRequest setFinishBlock:^(QCloudGetPresignedURLResult * _Nonnull result,
                                          NSError * _Nonnull error) {
-    
-    // Pre-signed URL
+    // Pre-Signed URL
     NSString* presignedURL = result.presienedURL;
     
 }];
@@ -34,7 +40,8 @@ getPresignedURLRequest.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m).
+>
 
 **Swift**
 
@@ -61,9 +68,10 @@ getPresign.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift).
+>
 
-#### Sample 2. Generating a pre-signed download link
+#### Sample code 2. Generating a pre-signed download URL
 **Objective-C**
 
 [//]: # (.cssg-snippet-get-presign-download-url)
@@ -81,7 +89,7 @@ getPresignedURLRequest.object = @"exampleobject";
 
 [getPresignedURLRequest setFinishBlock:^(QCloudGetPresignedURLResult * _Nonnull result,
                                          NSError * _Nonnull error) {
-    // Pre-signed URL
+    // Pre-Signed URL
     NSString* presignedURL = result.presienedURL;
    
 }];
@@ -89,7 +97,8 @@ getPresignedURLRequest.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m).
+>
 
 **Swift**
 
@@ -116,5 +125,6 @@ getPresign.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift).
+>
 

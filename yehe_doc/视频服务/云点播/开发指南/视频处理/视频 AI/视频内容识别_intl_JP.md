@@ -33,7 +33,7 @@
 
 ## タスクの開始
 
-ビデオコンテンツ認識タスクの開始には、「サーバーAPIから直接開始する」、「コンソールから直接開始する」、「アップロード時に実行したいタスクを指定する」の3種類の方法があります。具体的な内容は、ビデオ処理の[タスクの開始](https://intl.cloud.tencent.com/document/product/266/33931)をご参照ください。
+ビデオコンテンツ認識タスクの開始には、「サーバーAPIから直接開始」、「コンソールから直接開始」、「アップロード時に実行したいタスクを指定」の3種類の方法があります。詳細内容は、ビデオ処理の[タスクの開始](https://intl.cloud.tencent.com/document/product/266/33931)をご参照ください。
 
 以下は、各方法のビデオコンテンツ認識タスク開始についての説明です。
 
@@ -128,7 +128,7 @@
                             {
                                 "Id":236099,
                                 "Type":"Default",
-                                "Name":"李四",
+                                "Name":"lisi",
                                 "SegmentSet":[
                                     {
                                         "StartTimeOffset":120,
@@ -157,6 +157,6 @@
 
 コールバックの結果の中で、`ProcedureStateChangeEvent.AiRecognitionResultSet`に`Type`が`FaceRecognition`となる認識結果があります。
 
-`Type`が`FaceRecognition`の結果では、`Output.ResultSet`の中に認識した人物が2人含まれており、それぞれ`張三`と`李四`となっています。`SegmentSet`にはインテリジェント認識がビデオに登場した時間帯（`StartTimeOffset`と`EndTimeOffset`により確定）および画面の中の座標（`AreaCoordSet`により確定）が示されています。
+`Type`が`FaceRecognition`の結果では、`Output.ResultSet`の中に認識した人物が2人含まれており、それぞれ`張三`と`lisi`となっています。`SegmentSet`にはインテリジェント認識がビデオに登場した時間帯（`StartTimeOffset`と`EndTimeOffset`により確定）および画面の中の座標（`AreaCoordSet`により確定）が示されています。
 
 

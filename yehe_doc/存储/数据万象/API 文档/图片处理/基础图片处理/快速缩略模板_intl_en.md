@@ -1,10 +1,18 @@
 ## Overview
 CI uses the **imageView2** API to generate a thumbnail. You can append parameters to the download URL to generate the desired thumbnail. The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million.
 
+An image can be processed:
+
+- Upon download
+- Upon upload
+- In cloud
+
 ## API Format
 
-```shell
-imageView2/<mode>/w/<Width>
+#### 1. Processing upon download
+
+```plaintext
+download_url?imageView2/<mode>/w/<Width>
                  /h/<Height>
                  /format/<Format>
                  /q/<Quality>
@@ -12,7 +20,54 @@ imageView2/<mode>/w/<Width>
                  /lq/<Quality>
 ```
 
->! Quality parameters are applicable only to images in **JPG** and **WebP** formats.
+>! Quality parameters apply only to images in **JPG** and **WebP** formats.
+
+#### 2. Processing upon upload
+
+```plaintext
+PUT /<ObjectKey> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: GMT Date
+Authorization: Auth String
+Pic-Operations: 
+{
+  "is_pic_info": 1,
+  "rules": [{
+      "fileid": "exampleobject",
+      "rule": "imageView2/<mode>/w/<Width>
+                 /h/<Height>
+                 /format/<Format>
+                 /q/<Quality>
+                 /rq/<Quality>
+                 /lq/<Quality>"
+  }]
+}
+```
+
+#### 3. Processing in-cloud data
+
+```plaintext
+POST /<ObjectKey>?image_process HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: GMT Date
+Content-length: Size
+Authorization: Auth String
+Pic-Operations: 
+{
+  "is_pic_info": 1,
+  "rules": [{
+      "fileid": "exampleobject",
+      "rule": "imageView2/<mode>/w/<Width>
+                 /h/<Height>
+                 /format/<Format>
+                 /q/<Quality>
+                 /rq/<Quality>
+                 /lq/<Quality>"
+  }]
+}
+```
+
+>? Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
 >
 
 ## Parameters
@@ -33,22 +88,38 @@ imageView2/<mode>/w/<Width>
 
 ## Examples
 
-#### Using mode 1
+>? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, please see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use **Processing upon upload** or **Processing in-cloud data**.
+
+
+#### Example 1: using mode 1
 The following example uses mode 1, and sets the minimum width and height of the thumbnail to 400x600, and the absolute quality to 85:
 
-```
+```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageView2/1/w/400/h/600/q/85
 ```
 
 Generated thumbnail:
 ![](https://main.qcloudimg.com/raw/281a2f6474ad29b430355f785f158a5c.jpeg)
 
-#### Using mode 1 with a signature carried
+#### Example 2: using mode 1 with a signature carried
 This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&):
 
-```
+```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageView2/1/w/400/h/600/q/85
 ```
 
 >? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 >
+
+## Notes
+
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/14114).
+
+
+```plaintext
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=sha1&q-ak=AKID********************&q-sign-time=1593342360;1593342720&q-key-time=1593342360;1593342720&q-header-list=&q-url-param-list=watermark%252f1%252fimage%252fahr0cdovl2v4yw1wbgvzlteyntewmdawmdqucgljc2gubxlxy2xvdwquy29tl3nodwl5aw4uanbn%252fgravity%252fsoutheast&q-signature=26a429871963375c88081ef60247c5746e834a98&watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast
+```
+
+
+
+

@@ -1,5 +1,5 @@
 
-You can encrypt objects uploaded to COS in the following ways.
+You can encrypt uploaded objects in the following ways.
 
 #### Using server-side encryption with COS-managed encryption keys (SSE-COS) to protect data
 
@@ -9,7 +9,7 @@ With this method, your master key and data are managed by COS. COS can automatic
 ```php
 try {
     $result = $cosClient->putObject(array(
-	        'Bucket' => 'examplebucket-125000000', //Format：BucketName-APPID
+	        'Bucket' => 'examplebucket-125000000', //Format: BucketName-APPID
 	        'Key' => 'exampleobject'
 	        'Body' => 'string',
 	        'ServerSideEncryption' => 'AES256',// SSE-COS encryption
@@ -27,16 +27,16 @@ With this method, the encryption key is provided by the customer. When you uploa
 
 > !
 >- This type of encryption requires using HTTPS requests.
->- customerKey: the key provided by the user; this key should be a 32-byte string that contains numbers, letters, and special characters, but not Chinese characters.
->- If this encryption method was used when you uploaded a file, you should also use it when you GET (download) or HEAD (query) this file.
+>- customerKey: the key provided by the user; this key should be a 32-byte string consisting of numbers, letters, and symbols. Chinese characters are not supported.
+>- If this encryption method was used when you uploaded the source file, you should also use it when you GET (download) or HEAD (query) this file.
 
 [//]: # (.cssg-snippet-put-object-sse-c)
 ```php
 require 'vendor/autoload.php';
 
-$secretId = "COS_SECRETID"; //"TencentCloud API key's SecretId";
-$secretKey = "COS_SECRETKEY"; //"TencentCloud API key's SecretKey";
-$region = "ap-beijing"; // Set a default bucket region
+$secretId = "SECRETID"; // "SecretId of your Tencent Cloud API key";
+$secretKey = "SECRETKEY"; // "SecretKey of your Tencent Cloud API key";
+$region = "ap-beijing"; //Set a default bucket region
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
@@ -48,7 +48,7 @@ $cosClient = new Qcloud\Cos\Client(
     )
 );
 
-$bucket = 'examplebucket-125000000'; // Format: BucketName-APPID
+$bucket = 'examplebucket-125000000'; //Format: BucketName-APPID
 $key = 'exampleobject';
 try {
     $customerKey = 'abcdefghijklmnopqrstuvwxyz123456'; // A 32-byte character string that can contain numbers, letters, and special characters, but not Chinese characters

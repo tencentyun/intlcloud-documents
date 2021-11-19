@@ -106,7 +106,7 @@ In the new version of the MLVB SDK, you can use [V2TXLivePlayer](https://intl.cl
 [](id:RegistrationService)[](id:step1)
 ### Step 1. Download the SDK
 
-Download the Enterprise or Professional Edition of the MLVB SDK at [SDK Download](https://intl.cloud.tencent.com/document/product/1071/38150).
+Download LiteAV_All or Professional at [SDK Download](https://intl.cloud.tencent.com/document/product/1071/38150).
 
 [](id:step2)
 ### Step 2. Get a playback URL

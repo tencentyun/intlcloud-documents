@@ -1,4 +1,4 @@
 
-- For information on **APIs for iOS**, see [here](http://imgcache.qq.com/open/qcloud/video/act/liteav_ios_doc/index.html).
-- For information on **APIs for Android**, see [here](http://imgcache.qq.com/open/qcloud/video/act/liteav_android_doc/index.html).
+- For information on **APIs for iOS**, see [here](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVideoEditer__ios.html).
+- For information on **APIs for Android**, see [here](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVideoEditer__android.html).
 
