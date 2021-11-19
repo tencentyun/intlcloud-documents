@@ -2,7 +2,7 @@
 
 音视频作为信息传播中流量占比最大的部分在各行业的业务中都弥足重要，而不同的业务场景中对音视频的处理逻辑可能具备行业的特殊性。公有云虽然提供大量的视频处理服务供用户选择，但依然不能做到全面覆盖用户的特殊流程及定制化需求，使用对象存储（Cloud Object Storage，COS）工作流处理结合云函数（Serverless Cloud Function，SCF）定制逻辑此时就是一个绝佳选择，帮助用户快速创建满足需求的各种音视频处理服务。
 
-![](https://main.qcloudimg.com/raw/589b624ae298acb69a19df0d7993b93b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ba4c5169a249015ca11d190c98b0f9c8.png)
 
 ## 应用场景
 
@@ -30,9 +30,9 @@
 5. 在【高级配置】>【环境配置】中配置环境变量，该函数模板支持以下环境变量：
  - targetBucket：目标存储桶，必填。
  - targetRegion：目标存储桶地域，必填。
- - targetKeyTemplate：目标路径模板，可选，默认为`${InputPath}${InputName}_transcode.${ext}`。
- - ffmpegTemplate：转码命令模板，必填，例如`${ffmpeg} -loglevel error -i ${source} -r 10 -b:a 32k ${target}`。
- - localTmpPath：临时保存路径，当绑定 CFS 时可以更改临时路径，可选，默认为 `/tmp`。
+ - targetKeyTemplate：目标路径模板，可选，默认为`${InputPath}${InputName}_transcode.${ext}。`
+ - ffmpegTemplate：转码命令模板，必填，例如`${ffmpeg} -loglevel error -i ${source} -r 10 -b:a 32k ${target}。`
+ - localTmpPath：临时保存路径，当绑定 CFS 时可以更改临时路径，可选，默认为 `/tmp。`
 
 6. 启用权限配置，绑定包含当前存储桶读写权限的角色，如需创建运行角色，请参见 [角色与策略](https://intl.cloud.tencent.com/document/product/583/38176)。
 
