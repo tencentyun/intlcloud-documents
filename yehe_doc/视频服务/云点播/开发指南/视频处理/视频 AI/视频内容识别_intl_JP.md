@@ -157,6 +157,6 @@ https://yehe.woa.com/qcloud-official-i18n/intlDoc/product-article/266/33946ビ�
 
 コールバックの結果の中で、`ProcedureStateChangeEvent.AiRecognitionResultSet`に`Type`が`FaceRecognition`となる認識結果があります。
 
-`Type`が`FaceRecognition`の結果では、`Output.ResultSet`の中に認識した人物が2人含まれており、それぞれ`張三`と`李四`となっています。`SegmentSet`にはインテリジェント認識がビデオに登場した時間帯（`StartTimeOffset`と`EndTimeOffset`により確定）および画面の中の座標（`AreaCoordSet`により確定）が示されています。
+`Type`が`FaceRecognition`の結果では、`Output.ResultSet`の中に認識した人物が2人含まれており、それぞれ`張三`と`lisi`となっています。`SegmentSet`にはインテリジェント認識がビデオに登場した時間帯（`StartTimeOffset`と`EndTimeOffset`により確定）および画面の中の座標（`AreaCoordSet`により確定）が示されています。
 
 
