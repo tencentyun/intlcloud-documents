@@ -15,10 +15,10 @@
 使用录制功能需要先创建录制模板，直播录制功能的配置均保存在录制模板中。通过创建不同配置的录制模板，可以实现不同格式、不同录制文件时长等效果。
 - **通过控制台创建**：
    1. 进入 [云直播控制台](https://console.cloud.tencent.com/live/config/record) ，选择**功能配置**> [**直播录制**](https://console.cloud.tencent.com/live/config/record)。
-![](https://main.qcloudimg.com/raw/53b6e560f0227276dace090037985db9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2c70d96915ff91297434a1415aea49d0.png)
 
    2. 单击**创建录制模板**，选择需要的录制文件类型（至少选择一种格式）。更多配置项描述请参见 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223)。
-		![](https://main.qcloudimg.com/raw/b5d9d0c6dd462082a8f36fee5c9d0c45.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/af659794c5324cec4ed060377d74f04b.png)
 		
    3. 单击**保存**即可成功创建模板。
 - **通过 API 创建**：
@@ -33,10 +33,10 @@
 - **适用场景**：秀场直播、电商直播、在线课堂、视频监控等全录制场景。
 - **操作流程**：
 	1. 在创建录制模板成功后，将有弹框提醒您 [绑定域名](https://console.cloud.tencent.com/live/config/record)，单击**去绑定域名**并选择推流域名即可。
-![](https://main.qcloudimg.com/raw/dcf8c102c534a759523d1aa454baf327.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5286148ae522898575744fe54b16938a.png)
 
    2. 在 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)中，单击您的 [直播推流域名](https://console.cloud.tencent.com/live/domainmanage) 将会跳转到推流详情页，选择**模板配置**>**录制配置**，单击**编辑**即可绑定您的推流域名。详情请参见 [关联录制模板](https://intl.cloud.tencent.com/document/product/267/34224)。
-![](https://main.qcloudimg.com/raw/b916d1bd355bf9e5061f5c88abb714ed.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c74c5d420b6ed296859532e887541e7c.png)
 
    3. 通过 [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846) 接口传入录制模板的模板 ID 和推流域名，即可完成录制模板绑定推流域名。
 
@@ -104,7 +104,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 ### 步骤4：获取录制文件
 支持通过以下方式可查询、获取录制文件：
 - **通过录制回调获取**：在直播推流前配置好回调模板（模板需要 [配置录制回调地址](https://console.cloud.tencent.com/live/config/callback)），生成录制文件时会通过回调将文件发给回调服务器。更多详情请参见 [录制事件通知](https://intl.cloud.tencent.com/document/product/267/38082)。
-![](https://main.qcloudimg.com/raw/152c6228178c6595e4165ac66875ea6d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/137836f99132f0619ca4ccb6ca128fed.png)
 - **通过云点播控制台获取**：在 [云点播控制台](https://console.cloud.tencent.com/vod/media) 进行查询，具体请参见 [查看视频](https://intl.cloud.tencent.com/document/product/266/33895)。
 - **通过云点播 API 获取**：调用 [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179) 接口进行文件查询。
 
@@ -113,12 +113,12 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 - **适用场景**：直播录制后快速将录制文件自动进行转码和视频加速，供用户进行点播播放，适用于大部分不需要视频二次加工的直播场景。
 - **操作流程**：
 	1. 直播推流录制前先创建录制模板，单击**高级配置**进行任务流的配置。
-	![](https://main.qcloudimg.com/raw/ae8efdcf1b952a60a8ffe91393bf18da.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/643aa06605824bab31016d95a5607099.png)
 	2. 绑定预先在云点播控制台创建的任务流模板。
-	![](https://main.qcloudimg.com/raw/1984ce14c3879d4dd93b6bfd9ab78806.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/f2c1fdb36cee77be20e9fa366b1994ca.png)
 	3. 客户进行直播推流，具体可参见 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558)。
 	4. 直播录制完成后，获取点播 FileId。
-	![](https://main.qcloudimg.com/raw/1ee629efc169c559e7139c08e67c1c30.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/8a70ec2190bde5eb95401ad27b71f9fa.png)
 	5. 获取播放地址进行播放。
 
 #### 方案二：直播录制 + 手动转码 + 视频加速播放
@@ -129,7 +129,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 	2. 文件自动录制到点播。
 	3. 获取点播 FileId。
 	4. 配置转码模板，或者任务流进行手动转码，具体可参见 [模板设置](https://intl.cloud.tencent.com/document/product/266/14059)。
-	![](https://main.qcloudimg.com/raw/f7d60cb1427d323e7d5dfb6fe98e1357.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fef42635495040b17e98868ad9cd911a.png)
 	5. 客户可择需进行视频二次剪辑。
 	6. 转码和处理完成后获取视频地址进行后续播放。
 
@@ -142,8 +142,8 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 	2. 文件自动录制到点播。
 	3. 获取点播 FileId。
 	4. 配置任务流转出自适应码流，具体可参见 [任务流设置](https://intl.cloud.tencent.com/document/product/266/14058)。
-	![](https://main.qcloudimg.com/raw/57a319419e2cae0138237f2e359d04cf.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/461b55df5d688b52d94210f173368ddc.png)
 	5. 设置超级播放配置，选择所创建的用于播放的自适应码流。
-		![](https://main.qcloudimg.com/raw/99daa07695ebc2c02c07e1750e01114a.png)
+		![](https://qcloudimg.tencent-cloud.cn/raw/4fe2cb6836caad6861798bc38cde60cd.png)
 	6. 通过 FileId 进行视频的播放。
 

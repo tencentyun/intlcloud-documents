@@ -22,18 +22,18 @@
 ### 步骤2：添加时移播放域名[](id:step2)
 您需要添加用于时移播放的云点播域名，具体操作如下：
 1. 在[云点播控制台](https://console.cloud.tencent.com/vod/overview)，左侧导航栏里【分发播放管理】>【域名管理】。
-![](https://main.qcloudimg.com/raw/a945065b6369de2dbc3b6acdd54ee187.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f3a42999b551357b871b8b3381953ba1.png)
 2. 单击【添加域名】并填写已备案的云点播域名，具体操作请参见 [分发播放设置](https://intl.cloud.tencent.com/document/product/266/35572)。
-![](https://main.qcloudimg.com/raw/8c889bf37db61b99e6558c79d76cf35a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/167658ece2ff8138b1e3efdc53c5ebbc.png)
 
 3. 完成新增域名 CNAME 配置操作。
 
 ### 步骤3：关联录制模板[](id:step3)
 1. 进入 [云直播控制台](https://console.cloud.tencent.com/live/config/record)，单击【功能配置】>【[直播录制](https://console.cloud.tencent.com/live/config/record)】。
-![](https://main.qcloudimg.com/raw/86b879c221d7ab8cafae1ca479898d1a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/712036b264c79e34f02655fa83488e0a.png)
 
 2. 单击【创建录制模板】，具体操作请参见 [录制模板配置](https://intl.cloud.tencent.com/document/product/267/34223)。
-![](https://main.qcloudimg.com/raw/4da5fd6ac81582b8cc87e572b5e65602.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f3a89ef4c5b4ffded769dfcca0bb654b.png)
 >!
 >- 选择录制文件类型为 HLS 格式，开启 HLS 录制。
 >- 自定义文件存储时长，且该时长不得短于 [时移时长](https://intl.cloud.tencent.com/document/product/267/31565)。

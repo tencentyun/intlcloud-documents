@@ -1,38 +1,40 @@
-Adaptive bitrate streaming refers to the process of transcoding a video and muxing it into adaptive bitstream for output. It involves audio/video files with various bitrates and a descriptive file (manifest). A player can dynamically select the most appropriate bitrate for playback based on the current bandwidth. The most widely used adaptive bitstream format is HLS in the [Master Playlist](https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/creating_a_master_playlist) format.
+Adaptive bitrate streaming refers to the process of transcoding a video into adaptive bitrate streams. The results include audio/video files with different bitrates and a descriptive manifest file. A player can dynamically select the most appropriate bitrate for playback based on the current bandwidth. Currently, the most widely used adaptive bitrate streaming format is HLS [master playlist](https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/creating_a_master_playlist).
 
-VOD supports transcoding videos to adaptive bitstream in HLS format. This feature has the following benefits:
+VOD can transcode videos to adaptive bitrate streams in HLS and MPEG-DASH formats. This feature has the following benefits:
 * The player can dynamically select the most appropriate bitrate for playback based on the current bandwidth, delivering a smooth viewing experience.
-* Mainstream players natively support HLS adaptive bitstream with no customization required.
-* VOD provides a [superplayer SDK](https://intl.cloud.tencent.com/document/product/266/7836) which can play back adaptive bitstreams quickly and conveniently after integration.
+* Mainstream players natively support HLS adaptive bitrate with no customization required.
+* VOD provides a [superplayer SDK](https://intl.cloud.tencent.com/document/product/266/7836), which you can integrate into your project quickly and conveniently to enable the playback of adaptive bitrate streams.
 
-<span id = "zsy"></span>
-## Adaptive Bitrate Streaming Template
 
-The adaptive bitrate streaming parameters can specify "video transcoding parameter" and "audio transcoding parameter" of each substream. VOD uses an adaptive bitrate streaming template to represent the set of parameters as shown below:
+
+## [](id:zsy)Adaptive Bitrate Streaming Template
+
+You can specify the "video transcoding parameter", "audio transcoding parameter", and other parameters for each adaptive bitrate substream. VOD uses an adaptive bitrate streaming template to represent the parameters.
 
 | Parameter | Description |
 | -- | -- |
-| Container type | Adaptive bitstream format. Currently, only HLS is supported |
+| Protocol | Adaptive bitrate streaming protocol. Currently, HLS and MPEG-DASH are supported. |
+|Encryption|Currently, only HLS supports simple AES encryption. MPEG-DASH does not support encryption.|
 | Substream specification | Controls how many substreams are output and the video and audio transcoding parameters of each substream: <li>Video transcoding parameters: resolution, bitrate, frame rate, codec, etc.</li><li>Audio transcoding parameters: sample rate, sound channel, codec, etc.</li> |
 | Whether to filter "low resolution to high resolution" | Generally, a source video with a low resolution cannot be converted to high resolution to improve the video and sound quality. Enabling filtering "low resolution to high resolution" can help avoid unnecessary transcoding |
 
-For common parameter combinations, VOD provides a [preset adaptive bitrate streaming template](https://intl.cloud.tencent.com/document/product/266/33932), which cannot be customized for the time being.
+VOD provides [preset adaptive bitrate streaming templates](https://intl.cloud.tencent.com/document/product/266/33932) that include common parameter combinations. You can also customize your own template.
 
-## Task Initiation
+## Initiating a Task
 
-There are three ways to initiate an adaptive bitrate streaming, namely, directly initiating through server API, directly initiating through the console, and specifying a task upon upload. For more information, please see [Task Initiation](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask) for video processing.
+There are three ways to initiate a transcoding task, namely, through a server API, via the console, and by specifying a task for video upon upload. For more information, please see “Task Initiation” in [Video Processing Task System](https://intl.cloud.tencent.com/document/product/266/33931).
 
 Below are instructions for initiating adaptive bitrate streaming tasks in these ways:
 
-* Call the server API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) to initiate a task: specify the [adaptive bitrate streaming template](#zsy) ID in the `MediaProcessTask.AdaptiveDynamicStreamingTaskSet` parameter in the request.
-* Initiate a task on a video through the console: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create a task flow, configure an adaptive bitrate streaming task in it (by specifying `MediaProcessTask.AdaptiveDynamicStreamingTaskSet`), and use it to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33892) in the console.
-* Specify a task upon upload from server: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create a task flow, configure an adaptive bitrate streaming task in it (by specifying `MediaProcessTask.AdaptiveDynamicStreamingTaskSet`), and specify it as the `procedure` in the [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
-* Specify a task upon upload from client: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create a task flow, configure an adaptive bitrate streaming task in it (by specifying `MediaProcessTask.AdaptiveDynamicStreamingTaskSet`), and specify it as the `procedure` in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922#p3).
-* Upload through console: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create a task flow, configure an adaptive bitrate streaming task in it (by specifying `MediaProcessTask.AdaptiveDynamicStreamingTaskSet`), upload a video through the console, select **[Automatic Processing After Upload](https://intl.cloud.tencent.com/document/product/266/33890)**, and specify to execute this task flow upon video upload completion.
+* Call the server API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) to initiate a task: set `MediaProcessTask.AdaptiveDynamicStreamingTaskSet` to the ID of the [adaptive bitrate streaming template](#zsy) in the API request.
+* Initiate a task via the console: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create an adaptive bitrate task flow (by specifying `MediaProcessTask.AdaptiveDynamicStreamingTaskSet`), and use it to [process videos](https://intl.cloud.tencent.com/document/product/266/33892) in the console.
+* Specify a task upon upload from server: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create an adaptive bitrate streaming task flow, (by specifying `MediaProcessTask.AdaptiveDynamicStreamingTaskSet`), and in the [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120) request, set `procedure` to the created task flow.
+* Specify a task upon upload from client: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create an adaptive bitrate streaming task flow (by specifying `MediaProcessTask.AdaptiveDynamicStreamingTaskSet`), and in the [request to upload video from client](https://intl.cloud.tencent.com/document/product/266/33922), set `procedure` to the created task flow.
+* Specify a task upon upload from the console: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create an adaptive bitrate task flow (by specifying `MediaProcessTask.AdaptiveDynamicStreamingTaskSet`), and when uploading video via the console, choose [**Automatic Processing After Upload**](https://intl.cloud.tencent.com/document/product/266/33890) and select the created task flow.
 
-## Result Getting
+## Obtain Results
 
-After initiating an adaptive bitrate streaming task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the adaptive bitrate streaming task is initiated (the fields with null value are omitted):
+After initiating an adaptive bitrate streaming task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the adaptive bitrate streaming task is initiated (the fields with null value are omitted):
 
 ```json
 {
@@ -112,4 +114,5 @@ After initiating an adaptive bitrate streaming task, you can wait for [result no
 }
 ```
 
-In the callback result, `ProcedureStateChangeEvent.MediaProcessResultSet` contains two adaptive bitstreams in `Type` of `AdaptiveDynamicStreaming`, where `Definition` is 10 and 20, respectively.
+In the callback, `ProcedureStateChangeEvent.MediaProcessResultSet` contains two adaptive bitrate streams, whose `Type` is `AdaptiveDynamicStreaming` and `Definition` 10 and 20 respectively.
+

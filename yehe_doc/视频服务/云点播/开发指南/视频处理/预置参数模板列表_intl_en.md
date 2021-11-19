@@ -13,21 +13,21 @@ Preset parameter templates for video conversion:
 
 [](id:transcoding)
 ### Preset transcoding templates
-#### Transcoded video formats
+#### Video
 
 <table class="table auto-table"><tbody><tr><th colspan="1" rowspan="2">Clarity</th><th colspan="1" rowspan="2">Template ID</th><th colspan="1" rowspan="2">Format</th><th colspan="4">Video Parameters</th><th colspan="4">Audio Parameters</th></tr>
-<tr><th colspan="1">Resolution</th><th colspan="1">Bitrate</th><th colspan="1">Frame Rate</th><th colspan="1">Codec</th><th colspan="1">Bitrate</th><th colspan="1">Sample Rate</th><th colspan="1">Sound Channels</th><th colspan="1">Code</th></tr>
-<tr><td colspan="1" rowspan="2">LD</td><td colspan="1">100010</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 360</td><td colspan="1" rowspan="2">400 Kbps</td><td colspan="1" rowspan="12">25</td><td colspan="1" rowspan="12">H.264</td><td colspan="1" rowspan="4">64 Kbps</td ><td colspan="1" rowspan="12">44,100 Hz</td><td colspan="1" rowspan="12">Stereo</td><td colspan="1" rowspan="12">AAC</td></tr>
+<tr><th colspan="1">Resolution</th><th colspan="1">Bitrate (Kbps)</th><th colspan="1">Frame Rate (fps)</th><th colspan="1">Codec</th><th colspan="1">Bitrate (Kbps)</th><th colspan="1">Sample Rate (Hz)</th><th colspan="1">Sound Channels</th><th colspan="1">Codec</th></tr>
+<tr><td colspan="1" rowspan="2">Smooth</td><td colspan="1">100010</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Vertical: 360; horizontal: proportionally scaled</td><td colspan="1" rowspan="2">400</td><td colspan="1" rowspan="12">25</td><td colspan="1" rowspan="12">H.264</td><td colspan="1" rowspan="4">64</td><td colspan="1" rowspan="12">44100</td><td colspan="1" rowspan="12">Stereo</td><td colspan="1" rowspan="12">AAC</td></tr>
 <tr><td colspan="1">100210</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">SD</td><td colspan="1">100020</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 540</td><td colspan="1" rowspan="2">1000</td></tr>
+<tr><td colspan="1" rowspan="2">SD</td><td colspan="1">100020</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Vertical: 540; horizontal: proportionally scaled</td><td colspan="1" rowspan="2">1000</td></tr>
 <tr><td colspan="1">100220</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">HD</td><td colspan="1">100030</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 720</td><td colspan="1" rowspan="2">1800</td><td colspan="1" rowspan="4">128</td></tr>
+<tr><td colspan="1" rowspan="2">HD</td><td colspan="1">100030</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Vertical: 720; horizontal: proportionally scaled</td><td colspan="1" rowspan="2">1800</td><td colspan="1" rowspan="4">128</td></tr>
 <tr><td colspan="1">100230</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">FHD</td><td colspan="1">100040</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 1080</td><td colspan="1" rowspan="2">2500</td></tr>
+<tr><td colspan="1" rowspan="2">FHD</td><td colspan="1">100040</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Vertical: 1080; horizontal: proportionally scaled</td><td colspan="1" rowspan="2">2500</td></tr>
 <tr><td colspan="1">100240</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">2K</td><td colspan="1">100070</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 1440</td><td colspan="1" rowspan="2">3000</td><td colspan="1" rowspan="4">160</td></tr>
+<tr><td colspan="1" rowspan="2">2K</td><td colspan="1">100070</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Vertical: 1440; horizontal: proportionally scaled</td><td colspan="1" rowspan="2">3000</td><td colspan="1" rowspan="4">160</td></tr>
 <tr><td colspan="1">100270</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">4K</td><td colspan="1">100080</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 2160</td><td colspan="1" rowspan="2">6000</td></tr>
+<tr><td colspan="1" rowspan="2">4K</td><td colspan="1">100080</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Vertical: 2160; horizontal: proportionally scaled</td><td colspan="1" rowspan="2">6000</td></tr>
 <tr><td colspan="1">100280</td><td colspan="1">HLS</td></tr></tbody></table>
 
 #### Transcoded audio formats[](id:music)
@@ -61,7 +61,7 @@ Preset parameter templates for video conversion:
             M4A
         </td>
         <td>
-            24 kbps
+            24 Kbps
         </td>
         <td rowspan="5">
             AAC
@@ -78,7 +78,7 @@ Preset parameter templates for video conversion:
             1110
         </td>
         <td>
-            48 kbps
+            48 Kbps
         </td>
     </tr>
     <tr>
@@ -86,7 +86,7 @@ Preset parameter templates for video conversion:
             1120
         </td>
         <td>
-            96 kbps
+            96 Kbps
         </td>
     </tr>
      <tr>
@@ -94,7 +94,7 @@ Preset parameter templates for video conversion:
             1130
         </td>
         <td>
-            192 kbps
+            192 Kbps
         </td>
     </tr>
     <tr>
@@ -102,7 +102,7 @@ Preset parameter templates for video conversion:
             1140
         </td>
         <td>
-            256 kbps
+            256 Kbps
         </td>
     </tr>
     <tr>
@@ -113,7 +113,7 @@ Preset parameter templates for video conversion:
             MP3
         </td>
         <td>
-            128 kbps
+            128 Kbps
         </td>
         <td rowspan="2">
             MP3
@@ -124,7 +124,7 @@ Preset parameter templates for video conversion:
             1020
         </td>
         <td>
-            320 kbps
+            320 Kbps
         </td>
     </tr>
 </table>
@@ -135,10 +135,10 @@ Preset parameter templates for video conversion:
 <table class="table auto-table"><tbody><tr><th colspan="1" rowspan="2">Clarity</th><th colspan="1" rowspan="2">Template ID</th><th colspan="1" rowspan="2">Format</th><th colspan="4">Video Parameters</th><th colspan="4">Audio Parameters</th></tr>
 <tr><th colspan="1">Resolution</th><th colspan="1">Maximum Bitrate</th><th colspan="1">Frame Rate</th><th colspan="1">Code</th><th colspan="1">Bitrate</th><th colspan="1">Sample Rate</th><th colspan="1">Sound Channels</th><th colspan="1">Code</th></tr>
 <tr><td colspan="1">Same as source</td><td colspan="1" rowspan="">100800</td><td colspan="1" rowspan="5">MP4</td><td colspan="1">Same as source</td><td colspan="1" rowspan="5">No limit</td><td colspan="1" rowspan="5">25</td><td colspan="1" rowspan="5">H.264</td><td colspan="1">Same as source</td><td colspan="1" rowspan="5">44,100 Hz</td><td colspan="1" rowspan="5">Stereo</td><td colspan="1" rowspan="5">AAC</td></tr></tr>
-<tr><td colspan="1">LD</td><td colspan="1">100810</td><td colspan="1">x 360</td><td colspan="1" rowspan="2">64 kbps</td></tr>
-<tr><td colspan="1">SD</td><td colspan="1">100820</td><td colspan="1">x 540</td></tr>
-<tr><td colspan="1">HD</td><td colspan="1">100830</td><td colspan="1" rowspan="">x 720</td><td colspan="1" rowspan="2">128 kbps</td></tr>
-<tr><td colspan="1">FHD</td><td colspan="1">100840</td><td colspan="1">x 1080</td></tr></tbody></table>
+<tr><td colspan="1">Smooth</td><td colspan="1">100810</td><td colspan="1">Vertical: 360; horizontal: proportionally scaled</td><td colspan="1" rowspan="2">64 Kbps</td></tr>
+<tr><td colspan="1">SD</td><td colspan="1">100820</td><td colspan="1">Vertical: 540; horizontal: proportionally scaled</td></tr>
+<tr><td colspan="1">HD</td><td colspan="1">100830</td><td colspan="1" rowspan="">Vertical: 720; horizontal: proportionally scaled</td><td colspan="1" rowspan="2">128 Kbps</td></tr>
+<tr><td colspan="1">FHD</td><td colspan="1">100840</td><td colspan="1">Vertical: 1080; horizontal: proportionally scaled</td></tr></tbody></table>
 
 
 ### Preset remuxing templates
@@ -151,7 +151,7 @@ Preset parameter templates for video conversion:
 [](id:cinemagraph)
 ### Preset animated image generating templates
 
-| Template ID | Format | Resolution | Frame Rate |
+| Template ID | Format | Resolution | Frame Rate (fps) |
 | ------- | ------------------ | -------------------- | ----------- |
 | 20000   | GIF                | Same as source                 | 2           |
 | 20001   | WEBP               | Same as source                 | 2           |
@@ -175,7 +175,7 @@ Preset parameter templates for video conversion:
 
 | Template ID | Format | Subimage Width | Subimage Height | Subimage Rows | Subimage Columns | Interval Measurement | Interval (s) |
 | ------- | ------------------ | ----------------- | ------------------ | ---------------- | ------------------- | ---------------------- | -------------------- |
-| 10      | JPG   | 142    | 80      | 10       | 10    | By time   | 10s  |
+| 10      | JPG                | 142               | 80              | 10               | 10                  | By time             | 10                 |
 
 ### Preset adaptive bitrate streaming templates
 #### Template information
@@ -183,15 +183,15 @@ Preset parameter templates for video conversion:
 <table border="0" >
  <tr>
   <th>Template ID</td>
-  <th>PackageType</td>
+  <th>Package Type</td>
   <th>EncryptionType</td>
-  <th>SubstreamInfo</td>
+  <th>Substream Info</td>
   <th >Disable Low-Res to High-Res Conversion</td>
  </tr>
  <tr>
   <td>10</td>
   <td>HLS</td>
-  <td >Not encrypted</td>
+  <td>Not encrypted</td>
   <td >Contains substreams of 6 specifications from "Smooth" to "4K"</td>
   <td>Yes</td>
  </tr>
@@ -201,6 +201,13 @@ Preset parameter templates for video conversion:
   <td>SimpleAES</td>
   <td >Contains substreams of 6 specifications from "Smooth" to "4K"</td>
   <td>Yes</td>
+ </tr>
+  <tr>
+  <td>20</td>
+  <td>MPEG-DASH</td>
+  <td>Not encrypted</td>
+  <td >Contains substreams of 6 specifications from "Smooth" to "4K"</td>
+  <td>No</td>
  </tr>
 </table>
 
@@ -215,75 +222,75 @@ Preset parameter templates for video conversion:
  <tr>
   <th>Resolution</th>
   <th>Bitrate</th>
-  <th >FPS</th>
-  <th >Codec</th>
+  <th>Frame Rate</th>
+  <th>Codec</th>
   <th>Bitrate</th>
-  <th>SampleRate</th>
-  <th>SoundSystem</th>
+  <th>Sample Rate</td>
+  <th>Sound Channels</td>
   <th>Codec</td>
  </tr>
  <tr>
-  <td>LD</td>
-  <td>x 240</td>
-  <td>256 kbps</td>
+  <td>Smooth</td>
+  <td>Vertical: 240; horizontal: proportionally scaled</td>
+  <td>256 Kbps</td>
   <td>24</td>
   <td>H.264</td>
-  <td>48 kbps</td>
+  <td>48 Kbps</td>
   <td>44,100 Hz</td>
   <td>Stereo</td>
   <td>AAC</td>
  </tr>
  <tr>
   <td>SD</td>
-  <td>x 480</td>
-  <td>512 kbps</td>
+  <td>Vertical: 480; horizontal: proportionally scaled</td>
+  <td>512 Kbps</td>
   <td>24</td>
   <td>H.264</td>
-  <td>48 kbps</td>
+  <td>48 Kbps</td>
   <td>44,100 Hz</td>
   <td>Stereo</td>
   <td>AAC</td>
  </tr>
  <tr>
   <td>HD</td>
-  <td>x 720</td>
-  <td>512 kbps</td>
+  <td>Vertical: 720; horizontal: proportionally scaled</td>
+  <td>512 Kbps</td>
   <td>24</td>
   <td>H.264</td>
-  <td>48 kbps</td>
+  <td>48 Kbps</td>
   <td>44,100 Hz</td>
   <td>Stereo</td>
   <td>AAC</td>
  </tr>
  <tr>
-  <td>FHD</td>
-  <td>x 1080</td>
-  <td>1,024 kbps</td>
+  <td >FHD</td>
+  <td>Vertical: 1080; horizontal: proportionally scaled</td>
+  <td>1,024 Kbps</td>
   <td>24</td>
   <td>H.264</td>
-  <td>48 kbps</td>
+  <td>48 Kbps</td>
   <td>44,100 Hz</td>
   <td>Stereo</td>
   <td>AAC</td>
  </tr>
  <tr>
   <td>2K</td>
-  <td>x 1440</td>
-  <td>3,072 kbps</td>
+  <td>Vertical: 1440; horizontal: proportionally scaled</td>
+  <td>3,072 Kbps</td>
   <td>24</td>
   <td>H.264</td>
-  <td>48 kbps</td>
+  <td>48 Kbps</td>
   <td>44,100 Hz</td>
   <td>Stereo</td>
   <td>AAC</td>
  </tr>
  <tr>
   <td>4K</td>
-  <td>x 2160</td>
-  <td>6,144 kbps</td>
+  <td>Vertical: 2160; horizontal: proportionally scaled</td>
+  <td>6,144 Kbps</td>
   <td>24</td>
   <td>H.264</td>
-  <td>48 kbps</td>
+  <td>48 Kbps</td>
   <td>44,100 Hz</td>
   <td>Stereo</td>
   <td>AAC</td>
@@ -295,7 +302,7 @@ Preset parameter templates for video conversion:
 
 Preset parameter templates for video AI are divided into the following types:
 
-* Preset intelligent video content recognition templates
+* Preset video content audit templates
 * Preset video content analysis templates
 * Preset video content recognition templates
 
@@ -394,7 +401,7 @@ Preset parameter templates for video AI are divided into the following types:
     </tr>
 </table>
 
-### Preset video content analysis templates
+### Preset video analysis templates
 
 | Template ID | Intelligent Classification | Intelligent Tagging | Intelligent Cover Generation | Intelligent Frame Tagging |
 | -- | -- | -- | -- | -- |
@@ -403,9 +410,9 @@ Preset parameter templates for video AI are divided into the following types:
 
 ### Preset video recognition templates
 
-| Template ID | Face Recognition | Full Text Recognition | Text Keyword Recognition | Full Speech Recognition | Speech Keyword Recognition |
+| Template ID | Face Recognition | Full Text Recognition | Text Keyword Recognition | Full Speech Recognition | Speech Keyword Recognition | 
 | -- | -- | -- | -- | -- | -- |
-|10 | Yes (default figure library is used) | No | No | No | No |
+10 | Yes (default figure library is used) | No | No | No | No |
 
 
 
@@ -414,7 +421,7 @@ Preset parameter templates for video AI are divided into the following types:
 
 ### Legacy preset transcoding templates
 
-#### Transcoded video formats
+#### Video
 
 <table>
     <tr>
@@ -462,10 +469,10 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (320) x long side (proportionally scaled) of the screen
+            Horizontal: 320; vertical: proportionally scaled
         </td>
         <td>
-            256 kbps
+            256 Kbps
         </td>
         <td>
             24
@@ -485,7 +492,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (proportionally scaled) x long side (240) of the screen
+            Vertical: 240; horizontal: proportionally scaled
         </td>
         <td>
             250 Kbps
@@ -508,10 +515,10 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (320) x long side (proportionally scaled) of the screen
+            Horizontal: 320; vertical: proportionally scaled
         </td>
         <td>
-            256 kbps
+            256 Kbps
         </td>
         <td>
             24
@@ -531,7 +538,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (proportionally scaled) x long side (240) of the screen
+            Vertical: 240; horizontal: proportionally scaled
         </td>
         <td>
             250 Kbps
@@ -554,10 +561,10 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (320) x long side (proportionally scaled) of the screen
+            Horizontal: 320; vertical: proportionally scaled
         </td>
         <td>
-            256 kbps
+            256 Kbps
         </td>
         <td>
             24
@@ -577,7 +584,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (proportionally scaled) x long side (240) of the screen
+            Vertical: 240; horizontal: proportionally scaled
         </td>
         <td>
             250 Kbps
@@ -603,7 +610,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (640) x long side (proportionally scaled) of the screen
+            Horizontal: 640; vertical: proportionally scaled
         </td>
         <td>
             512 Kbps
@@ -626,7 +633,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (proportionally scaled) x long side (480) of the screen
+            Vertical: 480; horizontal: proportionally scaled
         </td>
         <td>
             600 Kbps
@@ -649,7 +656,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (640) x long side (proportionally scaled) of the screen
+            Horizontal: 640; vertical: proportionally scaled
         </td>
         <td>
             512 Kbps
@@ -672,7 +679,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (proportionally scaled) x long side (480) of the screen
+            Vertical: 480; horizontal: proportionally scaled
         </td>
         <td>
             600 Kbps
@@ -695,7 +702,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (640) x long side (proportionally scaled) of the screen
+            Horizontal: 640; vertical: proportionally scaled
         </td>
         <td>
             512 Kbps
@@ -718,7 +725,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (proportionally scaled) x long side (480) of the screen
+            Vertical: 480; horizontal: proportionally scaled
         </td>
         <td>
             600 Kbps
@@ -744,7 +751,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (1280) x long side (proportionally scaled) of the screen
+            Horizontal: 1280; vertical: proportionally scaled
         </td>
         <td>
             1,024 Kbps
@@ -767,7 +774,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (proportionally scaled) x long side (720) of the screen
+            Vertical: 720; horizontal: proportionally scaled
         </td>
         <td>
             800 Kbps
@@ -790,7 +797,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (1280) x long side (proportionally scaled) of the screen
+            Horizontal: 1280; vertical: proportionally scaled
         </td>
         <td>
             1,024 Kbps
@@ -813,7 +820,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (proportionally scaled) x long side (720) of the screen
+            Vertical: 720; horizontal: proportionally scaled
         </td>
         <td>
             800 Kbps
@@ -836,7 +843,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (1280) x long side (proportionally scaled) of the screen
+            Horizontal: 1280; vertical: proportionally scaled
         </td>
         <td>
             1,024 Kbps
@@ -859,7 +866,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (proportionally scaled) x long side (720) of the screen
+            Vertical: 720; horizontal: proportionally scaled
         </td>
         <td>
             800 Kbps
@@ -885,7 +892,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (1920) x long side (proportionally scaled) of the screen
+            Horizontal: 1920; vertical: proportionally scaled
         </td>
         <td>
             2,500 Kbps
@@ -908,7 +915,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (proportionally scaled) x long side (1080) of the screen
+            Vertical: 1080; horizontal: proportionally scaled
         </td>
         <td>
             1,400 Kbps
@@ -931,7 +938,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (1920) x long side (proportionally scaled) of the screen
+            Horizontal: 1920; vertical: proportionally scaled
         </td>
         <td>
             2,500 Kbps
@@ -954,7 +961,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (proportionally scaled) x long side (1080) of the screen
+            Vertical: 1080; horizontal: proportionally scaled
         </td>
         <td>
             1,400 Kbps
@@ -977,7 +984,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (1920) x long side (proportionally scaled) of the screen
+            Horizontal: 1920; vertical: proportionally scaled
         </td>
         <td>
             2,500 Kbps
@@ -1000,7 +1007,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (proportionally scaled) x long side (1080) of the screen
+            Vertical: 1080; horizontal: proportionally scaled
         </td>
         <td>
             1,400 Kbps
@@ -1026,7 +1033,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (proportionally scaled) x long side (1440) of the screen
+            Vertical: 1440; horizontal: proportionally scaled
         </td>
         <td>
             3,072 Kbps
@@ -1049,7 +1056,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (proportionally scaled) x long side (1440) of the screen
+            Vertical: 1440; horizontal: proportionally scaled
         </td>
         <td>
             2,048 Kbps
@@ -1072,7 +1079,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (proportionally scaled) x long side (1440) of the screen
+            Vertical: 1440; horizontal: proportionally scaled
         </td>
         <td>
             3,072 Kbps
@@ -1095,7 +1102,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (proportionally scaled) x long side (1440) of the screen
+            Vertical: 1440; horizontal: proportionally scaled
         </td>
         <td>
             2,048 Kbps
@@ -1118,7 +1125,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (proportionally scaled) x long side (1440) of the screen
+            Vertical: 1440; horizontal: proportionally scaled
         </td>
         <td>
             3,072 Kbps
@@ -1141,7 +1148,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (proportionally scaled) x long side (1440) of the screen
+            Vertical: 1440; horizontal: proportionally scaled
         </td>
         <td>
             2,048 Kbps
@@ -1167,7 +1174,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (proportionally scaled) x long side (2160) of the screen
+            Vertical: 2160; horizontal: proportionally scaled
         </td>
         <td>
             6,144 Kbps
@@ -1190,7 +1197,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            Short side (proportionally scaled) x long side (2160) of the screen
+            Vertical: 2160; horizontal: proportionally scaled
         </td>
         <td>
             4,096 Kbps
@@ -1213,7 +1220,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (proportionally scaled) x long side (2160) of the screen
+            Vertical: 2160; horizontal: proportionally scaled
         </td>
         <td>
             6,144 Kbps
@@ -1236,7 +1243,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            Short side (proportionally scaled) x long side (2160) of the screen
+            Vertical: 2160; horizontal: proportionally scaled
         </td>
         <td>
             4,096 Kbps
@@ -1259,7 +1266,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (proportionally scaled) x long side (2160) of the screen
+            Vertical: 2160; horizontal: proportionally scaled
         </td>
         <td>
             6,144 Kbps
@@ -1282,7 +1289,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            Short side (proportionally scaled) x long side (2160) of the screen
+            Vertical: 2160; horizontal: proportionally scaled
         </td>
         <td>
             4,096 Kbps
@@ -1310,7 +1317,7 @@ Parameters that are not listed in the above table are the same, as shown below:
             Parameter
         </th>
         <th>
-            Notes
+            Description
         </th>
     </tr>
     <tr>
@@ -1356,7 +1363,7 @@ Parameters that are not listed in the above table are the same, as shown below:
             Audio Parameter
         </td>
         <td>
-            SampleRate
+            Sampling Rate
         </td>
         <td>
             44,100 Hz
@@ -1367,7 +1374,7 @@ Parameters that are not listed in the above table are the same, as shown below:
             Bitrate
         </td>
         <td>
-            48 kbps
+            48 Kbps
         </td>
     </tr>
     <tr>
