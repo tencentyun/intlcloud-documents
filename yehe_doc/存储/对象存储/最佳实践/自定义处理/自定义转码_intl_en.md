@@ -2,7 +2,7 @@
 
 As the largest part of traffic in information dissemination, audio and video are very important in all industries, and the processing logic of audio and video in different business scenarios may be specific to the industry. Although public cloud provides a large number of video processing services for users to choose from, it still cannot fully cover users' requirements for special processes and customization. Using the workflow processing of Cloud Object Storage (COS) combined with the customization logic of Serverless Cloud Function (SCF) is an excellent choice to help users quickly create a variety of audio and video processing businesses to meet their needs.
 
-![](https://main.qcloudimg.com/raw/589b624ae298acb69a19df0d7993b93b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ba4c5169a249015ca11d190c98b0f9c8.png)
 
 ## Use Cases
 
@@ -30,9 +30,9 @@ As the largest part of traffic in information dissemination, audio and video are
 5. Choose **Advanced Settings** > **Environment Configuration** and configure environment variables. The function template supports the following environment variables:
  - targetBucket: target bucket. Required.
  - targetRegion: region of the target bucket. Required.
- - targetKeyTemplate: target path template. Optional. Defaults to `${InputPath}${InputName}_transcode.${ext}`.
- - ffmpegTemplate: transcoding command template. Required. Example: `${ffmpeg} -loglevel error -i ${source} -r 10 -b:a 32k ${target}`.
- - localTmpPath: temporary save path. When CFS is bound, you can change the temporary path. Optional. Defaults to `/tmp`.
+ - targetKeyTemplate: target path template. Optional. Defaults to `${InputPath}${InputName}_transcode.${ext}.`
+ - ffmpegTemplate: transcoding command template. Required. Example: `${ffmpeg} -loglevel error -i ${source} -r 10 -b:a 32k ${target}.`
+ - localTmpPath: temporary save path. When CFS is bound, you can change the temporary path. Optional. Defaults to `/tmp.`
 
 6. Enable permission configuration and bind a role that has the read/write permission of the current bucket. If you need to create an execution role, see [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/38176).
 
