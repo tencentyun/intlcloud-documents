@@ -157,7 +157,7 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 12.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41576).
 13.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41706).
 14.[Private DNS](https://intl.cloud.tencent.com/document/product/1097/42073).
-
+15.[Database Audit](https://intl.cloud.tencent.com/document/product/1102/43295).
 
 ## 관할권별 요구 사항
 
