@@ -14,7 +14,7 @@ Each SES account has a set of sending limits, including:
 
 - Maximum daily sends: the maximum number of emails that you can send within 24 hours. By default, this limit is 300,000 emails per day per account. However, you can raise this limit.
 - Maximum sending rate: the maximum number of emails you can send per second. By default, this limit is 20 emails per second per account.
-- Maximum sends to the same email address per hour: by default, you can send up to 10 emails to the same email address within an hour. If this limit is exceeded, extra emails to this address are blocked until 00:00 the next day. This is to avoid business exceptions.
+- Maximum sends to the same email address per hour: 10 (default). If this limit is exceeded, extra emails to this address will be blocked. You can resend it after 1 hour. This mechanism is to avoid business and push exceptions.
 
 >! 
 >- All the above three limits can be adjusted. Please contact Tencent Cloud technical support and provide the sending scenario and reason if you need to apply for adjustment.
