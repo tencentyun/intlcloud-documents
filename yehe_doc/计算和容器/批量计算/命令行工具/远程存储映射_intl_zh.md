@@ -121,7 +121,7 @@ python 3_StoreMapping.py
 
 ### 查看结果
 1. 登录对象存储控制台，单击左侧导航栏中的**[存储桶列表](https://console.cloud.tencent.com/cos5/bucket)**。
-2. 选择已创建的 Bucket ID>**文件列表**>output 文件。如下图所示：
+2. 选择已创建的 **Bucket ID**>**文件列表**>**output 文件**。如下图所示：
 Batch 会将输出数据从本地目录靠白道远程存储目录中，`3_StoreMapping.py` 的执行结果保存在 `result.txt` 中，`result.txt` 将自动同步到 COS 中。
 ![](https://main.qcloudimg.com/raw/3f72ff4fd2232fd4a5da62d8aabc11ae.png)
 `result.txt` 内容如下所示：
