@@ -4,7 +4,7 @@ Bioinformatics companies or laboratories use sequencers to obtain the raw files 
 ![](https://main.qcloudimg.com/raw/d278dddab5b44da4dfb2fec54e6031b7.png)
 
 #### General Steps
-1. The bioinformatics expert gets the raw information from the sequencer or private cloud storage and uploads it to Tencent Cloud storage services such as COS and CFS;
+1. The bioinformatics expert gets the raw information from the sequencer or private cloud storage and uploads it to Tencent Cloud storage services such as [COS](https://intl.cloud.tencent.com/zh/document/product/436/6222) and [CFS](https://intl.cloud.tencent.com/zh/document/product/582/9127);
 2. The user defines the BatchCompute job used to analyze the information and then submits the job. The storage configuration of the job is associated with the raw information uploaded in the previous step;
 3. BatchCompute automatically schedules resources, deploys the user-uploaded custom analysis image to the scheduled CVM instance, and schedules the job to analyze the raw information;
 4. After the computation on CVM is completed, BatchCompute will automatically upload the analysis results to the user-specified location;
