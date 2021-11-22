@@ -51,7 +51,7 @@ cosclient.putObject(bucketName, key, is, objectMetadata);
 | ------------------------------------ | ------------------ | ------------------------------------ |
 | setObjectTaggingRequest | Object tagging request | SetObjectTaggingRequest |
 
-Request member description:
+The request members are described as follows:
 
 | Request Member | Setting Method | Description | Type |
 | -------------------  | ----------------- | ------------------------ | -------------------------- |
@@ -106,7 +106,7 @@ System.out.println(resultTagSet.toString());
 | ---------- | ---------- | ------ |
 | getObjectTaggingRequest | Request to query the tags of an object | GetObjectTaggingRequest |
 
-Request member description:
+The request members are described as follows:
 
 | Request Member | Setting Method | Description | Type |
 | -------------------- | ----------------- | ------------------------ | ------------------------- |
@@ -145,7 +145,7 @@ cosclient.deleteObjectTagging(deleteObjectTaggingRequest);
 | --------- | ---------- | ------ |
 | deleteObjectTaggingRequest | Request to delete the tags of an object | DeleteObjectTaggingRequest |
 
-Request member description:
+The request members are described as follows:
 
 | Request Member | Setting Method | Description | Type |
 | -------------------- | ------------------ | ----------------------- | -------------------------- |

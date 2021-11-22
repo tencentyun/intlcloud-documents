@@ -67,7 +67,7 @@ TRTCクラウドレコーディングファイルは、デフォルトではTenc
 - **VODのメインアプリとサブアプリとは何ですか。**
   メインアプリとサブアプリとは、VODの1種類のリソース分割方式です。メインアプリはVODのメインアカウントに相当し、サブアプリは複数作成できます。各サブアプリは、ルートアカウント下の1個のサブアカウントに相当し、独立したリソース管理を備えています。ストレージ領域では、その他のサブアプリと相互に隔離することができます。
 
-- **VODサービスのサブアプリケーションを有効にする方法とは。**
+- **VODサービスのサブアプリケーションを有効にする方法。**
   ドキュメント[「VODサブアプリケーションを有効にする方法」](https://intl.cloud.tencent.com/document/product/266/33987) にもとづき、新規サブアプリケーションを追加することができます。このステップではVOD[コンソール](https://console.cloud.tencent.com/vod)に移動して操作する必要があります。
 
 [ ](id:recordCallback)
@@ -91,12 +91,12 @@ TRTCクラウドレコーディングファイルは、デフォルトではTenc
 
 TRTCでは、[Global Auto-Recording](#autoRecord)、[指定ユーザーレコーディング（SDK APIによる制御）](#recordSDKAPI)、 [指定ユーザーレコーディング（REST APIによる制御）](#recordRESTAPI)という3種類のクラウドレコーディング制御方法を提供しています。これらの方法を一つずつ、詳しくご紹介します。
 
-- コンソールでこの方式の使用設定をする方法とは。
-- レコーディングタスクを開始する方法とは。
-- レコーディングタスクを終了する方法とは。
-- ルームのマルチチャネル画面を1チャネルにミックスする方法とは。
-- レコーディングしたファイルをどのように命名しますか。
-- この方法をサポートするプラットフォームには何がありますか。
+- コンソールでこの方式の使用設定をする方法。
+- レコーディングタスクを開始する方法。
+- レコーディングタスクを終了する方法。
+- ルームのマルチチャネル画面を1チャネルにミックスする方法。
+- レコーディングしたファイルの命名方法。
+- ほかにどのような方法でプラットフォームをサポートするのか。
 
 
 [](id:autoRecord)
@@ -131,7 +131,7 @@ TRTCでは、[Global Auto-Recording](#autoRecord)、[指定ユーザーレコー
 
 TRTC SDKが提供するいくつかのAPIインターフェースとパラメータを呼び出すことで、クラウドミクスストリーミング、クラウドレコーディング、Relayed live streamingという3つの機能が実装可能です。
 
-| クラウド機能 | 開始方法とは。  | 停止方法とは。 |
+| クラウド機能 | 開始方法 | 停止方法 |
 | :------- | :------- | :------- |
 | クラウドレコーディング | 入室時にパラメータ`TRTCParams`の中の`userDefineRecordId`フィールドを指定します   | キャスター退室時に自動停止します                                           |
 | クラウドミクスストリーミング| SDK API  [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) を呼び出してクラウドミクスストリーミングを起動 | クラウドミクスを発出したキャスターが退室したら、ミクスストリーミングは自動的に停止するか、途中で [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) を呼び出してパラメータを `null/nil` 手動停止に設定します |
@@ -178,7 +178,7 @@ param.userDefineRecordId = @"1001_rexchang";  // レコーディングID。そ�
 
 TRTCのサーバーはREST APIのペア（ [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761)および[StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760)）を提供し、クラウドミクスストリーミング、クラウドレコーディング、Relayed live streamingという3つの機能を実装するために使用します。
 
-| クラウド機能 | 開始方法とは。  | 停止方法とは。 |
+| クラウド機能 | 開始方法  | 停止方法 |
 | :------- | :------- | :------- |
 | クラウドレコーディング |  [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761)を呼び出す時に、`OutputParams.RecordId`パラメータを指定すれば、レコーディングを開始できます | 自動停止、または途中で[StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760)を呼び出して停止します |
 | クラウドミクスストリーミング |  [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761)を呼び出す時に`LayoutParams` パラメータを指定すれば、レイアウトテンプレートとレイアウトパラメータを設定できます | 全ユーザーが退室した後自動停止、または途中で[StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760)を呼び出して手動停止します |

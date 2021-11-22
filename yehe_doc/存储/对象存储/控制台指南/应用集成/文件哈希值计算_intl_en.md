@@ -26,7 +26,7 @@ Hash calculation is a solution that allows users to verify the integrity of clou
  - **Trigger Condition**: the upload path that will trigger SCF. If you select **Specified Range**, SCF will be triggered only when a file is uploaded to a path with the specified prefix or suffix. If you choose **The whole bucket**, SCF will be triggered as long as a file is uploaded to any location of the bucket.
  - **SCF Authorization**: to enable hash calculation, you need to select this item to authorize SCF to read the corresponding file from your bucket and add the calculated hash to the custom header of the file.
 5. Click **Confirm**.
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/9c92852411105dbb48c41fcab36febd1.png)
 You can perform the following operations on the created function:
  - Click **View Log** to view the historical running status of the hash function. If an error is reported, you can click **View Log** to quickly redirect to the SCF console to view the error log details.
  - Click **Edit** to modify the hash rule.

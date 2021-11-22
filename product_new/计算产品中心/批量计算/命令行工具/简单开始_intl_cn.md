@@ -89,8 +89,8 @@ $ tccli batch DescribeJob --version 2017-03-12 --JobId job-xxx
  * FAILED：执行失败
 
 ### 查看结果
-1. 登录对象存储控制台，单击左侧导航栏中的【[存储桶列表](https://console.cloud.tencent.com/cos5/bucket)】。
-2. 选择已创建的 Bucket ID>【文件列表】>logs 文件，执行结果均保存在 logs 文件中。如下图所示：
+1. 登录对象存储控制台，单击左侧导航栏中的**[存储桶列表](https://console.cloud.tencent.com/cos5/bucket)**。
+2. 选择已创建的 **Bucket ID**>**文件列表**>**logs 文件**，执行结果均保存在 logs 文件中。如下图所示：
 ![](https://main.qcloudimg.com/raw/e6ffa709b7e843c44d00bedfd072f367.png)
  - 成功时请查看标准输出 stdout.job-xxx.xxxx.0.log，内容如下：
 ```

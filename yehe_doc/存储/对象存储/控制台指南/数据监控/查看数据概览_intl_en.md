@@ -1,22 +1,33 @@
 ## Overview
 
-The COS console features a Dashboard where you can have an overview of your storage data, including the number of buckets, number of objects, storage usage, request counts, and traffic.
+You can go to the **Statistic** page in the COS console to view the number of buckets/objects/requests, storage usage, traffic, and other data.
 
-> - To view the above data using a sub-account, you need to have the **bucket list access** permission. For more information, see “Adding a Preset Policy” in [Accessing Bucket List Using Sub-Account](https://intl.cloud.tencent.com/document/product/436/17061).
-> - Only **Number of Buckets** is a real-time metric on this dashboard, while the other metrics are delayed by approximately 2 hours. All of these metrics are for monitoring purposes only. For detailed billing data, please go to the [Billing Center](https://console.cloud.tencent.com/account).
+>!
+> - If a sub-account needs to view the statistics, it needs to have permission to **access the bucket list**. For more information, please see **Adding a Preset Policy** in [Accessing Bucket List Using Sub-Account](https://intl.cloud.tencent.com/document/product/436/17061).
+> - Except for the **number of buckets**, other data is not real-time and has a delay of about 2 hours. The data is for monitoring purposes only. To view the accurate billing data, go to [Billing Center](https://console.cloud.tencent.com/account).
+> 
 
-## Directions
+## Viewing Line Charts
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), and click **Monitoring Management** > **Dashboard** to open the data overview page.
-2. In the **Dashboard** window, you can view the following:
+### Directions
+
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5), click **Statistic** > **Basic Statistic** on the left sidebar.
+2. On the **Basic Statistic** page, you can view the following information:
    ![](https://main.qcloudimg.com/raw/036d7c5f1e31fa9f69507733c2a4d8d9.png)
-	- **Number of Buckets**: the total number of objects that have been created across all your buckets. You can view this data for different storage classes.          
-	- **Number of Objects**: the total number of objects that have been created across all buckets.                      
-	- **Daily Average XXX Storage of This Month**: the average daily storage usage for this month, as measured in current storage usage/days of this month. This metric is displayed by storage class:  STANDARD, STANDARD_IA, and ARCHIVE.
-	- **Storage**: shows your storage usage details for STANDARD, STANDARD_IA, and ARCHIVE for the month to date or the last 30 days.
-	- **Traffic**: shows your traffic details for the month to date or the last 30 days, currently covering public network downstream traffic, private network traffic, and CDN origin-pull traffic in STANDARD and STANDARD_IA storage classes.
-	- **Request Counts**: shows the number of your read/write requests to the STANDARD and STANDARD_IA storage classes for the month to date or the last 30 days. 
-	- **Success Rate of User Requests**: shows the success rate of your read/write requests to the STANDARD storage class for the month to date or the last 30 days. 
-	- **Data Retrieval**: shows your data retrievals for STANDARD_IA and ARCHIVE for the month to date or the last 30 days. For ARCHIVE storage class, it covers Expedited Retrieval, Standard Retrieval, and Bulk Retrieval.
-	- **Bucket Overview**: shows the key metrics for each bucket under Yesterday or This Month. These metrics may vary depending on the storage class you choose, including storage usage for STANDARD, STANDARD_IA, and ARCHIVE, data retrievals for STANDARD_IA and ARCHIVE, read/write requests to STANDARD and STANDARD_IA, public network downstream traffic, private network downstream traffic, and CDN origin-pull traffic.
-3. You can export the **Bucket Overview** list by clicking the download icon on the upper right corner. 
+   - **Number of Buckets**: number of buckets that have been created                                     
+    - **Total Objects**: number of objects that have been created in all buckets. You can view the number of objects by storage class.                      
+    - **Average Daily Usage for This Month**: the calculation formula is as follows: Current storage usage/Number of days in the month. You can view the average daily usage for this month by storage class (e.g., STANDARD, STANDARD_IA, and ARCHIVE).
+   - **Storage Usage**: storage usage for STANDARD, STANDARD_IA, and ARCHIVE. You can view the data in the year.
+   - **Traffic**: public/private downstream traffic and CDN origin-pull traffic for STANDARD and STANDARD_IA. You can view the data in the year.
+   - **Request Count**: number of read/write requests for STANDARD and STANDARD_IA. You can view the data in the year. 
+   - **Request Success Rate**: request success rate for STANDARD. You can view the data in the year. 
+   - **Data Retrieval**: the amount of data retrieved for STANDARD_IA and ARCHIVE. For ARCHIVE, the amount is classified into expedited retrievals, standard retrievals, and bulk retrievals. You can view the data in the year.
+   - **Bucket Overview**: displays metrics of yesterday or this month for each bucket. The metrics displayed vary depending on the storage class selected, and include STANDARD/STANDARD_IA/ARCHIVE storage usage, STANDARD_IA/ARCHIVE data retrievals, STANDARD/STANDARD_IA read/write requests, public/private downstream traffic, and CDN origin-pull traffic.
+3. You can click the download button in the upper-right corner of each chart to download the data. 
+
+## Viewing Bucket-Level Data
+
+### Directions
+
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5), click **Bucket List** on the left sidebar, and click **Statistical Data**.
+2. On the **Statistical Data** page,  you can view the bucket data such as storage usage, data retrievals, traffic, and request count within a specified period of time.

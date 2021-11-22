@@ -9,19 +9,21 @@ You can use the COS console to set or modify bucket access permissions of the fo
 
 **Directions**
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5). On the left sidebar, click **Bucket List**.
-2. Locate the bucket for which you want to set or modify access permissions, and then click the bucket name.
-3. Select **Permission Management** > **Bucket ACL** and you can set both public permissions and user ACLs for the bucket. For example, you can add a sub-account, whose ID can be viewed in the [CAM Console](https://console.cloud.tencent.com/cam).
-   ![](https://main.qcloudimg.com/raw/34e464b33c4b9bffe72c734d1c1dcb2d.png)
-4. Click **Save** under **Operation**.
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+2. On the left sidebar, click **Bucket List**.
+3. Locate the bucket for which you want to set or modify access permissions, and then click the bucket name.
+4. Select **Permission Management** > **Bucket ACL** and you can set both public permissions and user ACLs for the bucket. For example, you can add a sub-account, whose ID can be viewed in the [CAM console](https://console.cloud.tencent.com/cam).
+![](https://main.qcloudimg.com/raw/34e464b33c4b9bffe72c734d1c1dcb2d.png)
+5. Click **Save** under **Operation**.
 
 ## Granting Permissions for Multiple Buckets
 
 **Directions**
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5). On the left sidebar, click **Bucket List**.
-2. Click **Authorize Management** above the bucket list.
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+2. On the left sidebar, click **Bucket List**.
+3. Click **Manage Permissions** above the bucket list.
 ![](https://main.qcloudimg.com/raw/9bfbb2948c61a9b3a522d61331d90a51.png)
-3. In the pop-up window, select the buckets which you want to grant permissions for. Then, scroll down to set both public permissions and user ACLs. For example, you can add a sub-account, whose ID can be viewed in the [CAM Console](https://console.cloud.tencent.com/cam).
+4. In the pop-up window, select the buckets that you want to grant permissions for. Then, scroll down to set both public permissions and user ACLs. For example, you can add a sub-account, whose ID can be viewed in the [CAM console](https://console.cloud.tencent.com/cam).
 ![](https://main.qcloudimg.com/raw/23eff9055312eaa122e247f9cf0ebf53.png)
-4. Once completed, Click **OK**.
+5. Once completed, click **OK**.

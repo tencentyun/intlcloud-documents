@@ -1,5 +1,5 @@
 ## Overview
-COS supports direct upload to COS ARCHIVE storage via the console, APIs, SDKs, or COSCMD. You can also leverage the lifecycle feature of COS to transition uploaded objects to ARCHIVE or DEEP ARCHIVE.
+COS supports direct upload to COS archive storage using the console, APIs, SDK, or COSCMD. Alternatively, you can use the lifecycle feature of COS to transition your objects to the ARCHIVE or DEEP ARCHIVE storage class. For more information about archive, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 
 
 ## Supported Methods
@@ -10,7 +10,8 @@ COS supports direct upload to COS ARCHIVE storage via the console, APIs, SDKs, o
 
 - Uploading via APIs
 You can set `x-cos-storage-class` to `ARCHIVE` or `DEEP_ARCHIVE` in the `PUT Object`, `POST Object`, or `Initiate Multipart Upload` API to implement direct upload to COS ARCHIVE storage.
->!The `Append Object` API does not support direct upload to COS ARCHIVE storage.
+>! The `Append Object` API does not support direct upload to COS ARCHIVE storage.
+>
 
 - Uploading via SDKs
 Currently, all COS SDKs support direct upload to COS ARCHIVE storage. You can set `StorageClass` to `ARCHIVE` or `DEEP_ARCHIVE` during the upload.

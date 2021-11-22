@@ -5,7 +5,7 @@
 
 1. 请先下载相关 Demo 及 SDK。详细下载链接请查看  [SDK 下载指引](https://intl.cloud.tencent.com/document/product/607/18521)。
 2. 在界面中找到 Unity 版本的 SDK 资源。
-3. 单击【下载】。下载完的 SDK 资源解压后有以下几个部分。文件说明如下表：
+3. 单击**下载**。下载完的 SDK 资源解压后有以下几个部分。文件说明如下表：
 <table>
 <thead>
 <tr>
@@ -37,7 +37,7 @@ Unity SDK 已同时集成 Windows、Mac、Android、iOS 平台架构。
 
 ### 步骤1：导入 Plugins 文件
 
-将开发工具包中 Plugins 文件夹中的文件复制在 【Unity 工程】>【Assets】>【Plugins】文件夹中，如图所示。
+将开发工具包中 Plugins 文件夹中的文件复制在 **Unity 工程**>**Assets**>**Plugins**文件夹中，如图所示。
 <img src="https://main.qcloudimg.com/raw/ce80710126e82b2af58090207a3ae077.png"  width="65%" /></img>
 
 >?如果不需要导出 win32 架构的可执行文件，请删除 Plugins 文件夹下的 x86 文件夹。
@@ -53,7 +53,7 @@ Unity SDK 已同时集成 Windows、Mac、Android、iOS 平台架构。
 
 ## 音频设置
 
-在 Unity 编辑器中，【Edit】>【Project Setting】>【Audio】使用系统默认即可。如果进行修改，Unity 播放音效会因为在 iOS 上设置硬件缓存区受影响，表现为音效被打断。如图所示。
+在 Unity 编辑器中，**Edit**>**Project Setting**>**Audio**使用系统默认即可。如果进行修改，Unity 播放音效会因为在 iOS 上设置硬件缓存区受影响，表现为音效被打断。如图所示。
 <img src="https://main.qcloudimg.com/raw/db8975fcaefa3dc71732ede1b5f979db.png"  width="50%" /></img>
 
 

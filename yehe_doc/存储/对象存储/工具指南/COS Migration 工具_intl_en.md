@@ -1,4 +1,5 @@
-## Feature Overview
+
+## Overview
 COS Migration is an all-in-one tool that integrates the COS data migration feature. Users can quickly migrate data from various sources to COS through simple configurations and steps. It has the following features:
 - Diverse data sources:
    - Local data: migrate locally stored data to COS.
@@ -22,7 +23,7 @@ Windows, Linux, and macOS.
 - JDK 1.8 X64 or above. For more information, see [Java Installation and Configuration](https://intl.cloud.tencent.com/document/product/436/10865).
 - IFUNC needs to be supported on Linux and the binutils version should be later than 2.20.
 
-## Usage
+## Directions
 ### 1. Get the tool
 Download COS Migration [here](https://github.com/tencentyun/cos_migrate_tool_v5).
 
@@ -58,8 +59,8 @@ COS_Migrate_tool
 ```
 
 >?
->- The `db` directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in the `db` directory. If the ID of the current file has already been recorded, the current file will be skipped, otherwise it will be migrated.
->- The `log` directory keeps all the logs generated during tool migration. If an error occurs during migration, first check `error.log` in this directory.
+ - The `db` directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in the `db` directory. If the ID of the current file has already been recorded, the current file will be skipped, otherwise it will be migrated.
+ - The `log` directory keeps all the logs generated during tool migration. If an error occurs during migration, first check `error.log` in this directory.
 
 ### 3. Modify the config.ini file
 Before running the migration startup script, modify the config.ini file (path: `./conf/config.ini`) first. This file contains the following parts:
@@ -73,7 +74,7 @@ type=migrateLocal
 
 Currently, the following migration types are supported:
 
-| migrateType | Description |
+| Migration Type       | Description                          |
 | ------| ------ |
 | migrateLocal | From local system to COS |
 | migrateAws | From AWS S3 to COS |
@@ -112,9 +113,9 @@ skipSamePath=false
 | ------| ------ |----- |
 | secretId | SecretId of your key. Replace `COS_SECRETID` with your real key information, which can be obtained on the TencentCloud API key page in the [CAM Console](https://console.cloud.tencent.com/cam/capi) |-|
 | secretKey | SecretKey of your key. Replace `COS_SECRETKEY` with your real key information, which can be obtained on the TencentCloud API key page in the [CAM Console](https://console.cloud.tencent.com/cam/capi) |-|
-| bucketName | Name of the destination bucket in the format of `<BucketName-APPID>`. The bucket name must contain the APPID such as examplebucket-1250000000 |-|
+| bucketName | Name of the destination bucket in the format of `<BucketName-APPID>`. The bucket name must include the APPID such as examplebucket-1250000000 |-|
 | region | Region information of the destination bucket. For the region abbreviations in COS, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) |-|
-| storageClass | Storage class: Standard (standard storage), Standard_IA (standard infrequent access storage), or Archive (archive storage) | Standard |
+| storageClass| Storage class for the migrated data. Valid values: `Standard`, `Standard_IA`, `Archive`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).    | Standard 
 | cosPath | COS path to migrate to. `/` indicates to migrate to the root path of the bucket, `/folder/doc/` indicates to migrate to `/folder/doc/` in the bucket. If `/folder/doc/` does not exist, a path will be created automatically |/|
 | https | Whether to transfer via HTTPS. on: Yes, off: No. It takes time to enable transfer via HTTPS, which is suitable for scenarios that demand high security. | off |
 | tmpFolder | The directory used to store temporary files when data is migrated from another cloud storage service to COS, which will be deleted after the migration is completed. The format must be an absolute path: <br>The separator on Linux is /, such as `/a/b/c`<br>The separator on Windows is \\, such as `E:\\a\\b\\c`<br>The default value is the tmp directory in the path of the tool | ./tmp |
@@ -146,8 +147,8 @@ ignoreModifiedTimeLessThanSeconds=
 | Configuration Item | Description |
 | ------| ------ |
 | localPath | Absolute path of the local directory <ul  style="margin: 0;"><li>Linux uses a slash (/) as the delimiter, for example, `/a/b/c` </li><li>Windows uses two backlashes (\\) as the delimiter, for example, `E:\\a\\b\\c`</li></ul> |
-| excludes | Absolute path of the directory or file to be excluded, meaning some directories or files under `localPath` are not to be migrated. Multiple absolute paths are separated by semicolons. If this is left empty, all files in `localPath` will be migrated. |
-| ignoreModifiedTimeLessThanSeconds | Exclude files whose update time is less than a certain period of time from the current time. Unit in seconds. This is left empty by default, indicating files are not to be filtered by the time specified by `lastmodified`. This is suitable for scenarios where users run the migration tool while updating files, and do not want files being updated to be migrated to COS. For example, if this is configured as 300, only files updated at least 5 minutes ago will be uploaded. |
+| excludes | Absolute path of the directory or file to be excluded, meaning some directories or files under `localPath` are not to be migrated. Multiple absolute paths are separated by semicolons. If this is left blank, all files in `localPath` will be migrated |
+| ignoreModifiedTimeLessThanSeconds | Exclude files whose update time is less than a certain period of time from the current time. Unit in seconds. This is left blank by default, indicating files are not to be filtered by the time specified by `lastmodified`. This is suitable for scenarios where users run the migration tool while updating files, and do not want files being updated to be migrated to COS. For example, if this is configured as 300, only files updated at least 5 minutes ago will be uploaded |
 
 **3.3.2 Configure an Alibaba Cloud OSS data source migrateAli**
 
@@ -199,7 +200,7 @@ proxyPort=
 | proxyHost | If you want to use a proxy for access, enter the proxy IP address |
 | proxyPort | Proxy port |
 
-
+ 
 **3.3.4 Configure a Qiniu data source migrateQiniu**
 
 If you migrate from Qiniu to COS, configure this section. The specific configuration items and descriptions are as follows:
@@ -225,7 +226,7 @@ proxyPort=
 | proxyHost | If you want to use a proxy for access, enter the proxy IP address |
 | proxyPort | Proxy port |
 
-
+ 
 **3.3.5 Configure a URL list data source migrateUrl**
 
 If you migrate from a specified URL list to COS, configure this section. The specific configuration items and descriptions are as follows:
@@ -234,12 +235,12 @@ If you migrate from a specified URL list to COS, configure this section. The spe
 [migrateUrl]
 urllistPath=D:\\folder\\urllist.txt
 ```
-
+     
 | Configuration Item | Description |
 | ------| ------ |
 |urllistPath| Address of the URL list, whose content is URL text with one original URL address per line (such as `http://aaa.bbb.com/yyy/zzz.txt`, no need to add any double quotation marks or other symbols). The address of the URL list must be an absolute path: <ul  style="margin: 0;"><li>Linux uses a slash (/) as the delimiter, for example, `/a/b/c.txt` </li><li>Windows uses two backlashes (\\) as the delimiter, for example, `E:\\a\\b\\c.txt` <br>If a directory is entered, all files under the directory will be treated as URL list files for scan and migration</li></ul> |
 
-
+ 
 **3.3.6 Configure bucket replication migrateBucketCopy**
 
 If you migrate from one COS bucket to another bucket, configure this section. The specific configuration items and descriptions are as follows:
@@ -325,5 +326,6 @@ COS migration tool has a status. Successful migrations will be recorded in the f
 4. Statistics are printed out after the migration is completed, which include the total number of migrated, failed, and skipped files as well as the amount of time consumed. For failures, check the error log, or rerun the migration job as the migration tool will skip successfully migrated files and retry migrating failed ones. The execution result of a migration job is shown below:
 ![](https://main.qcloudimg.com/raw/2534fd390218db29bb03f301ed2620c8.png)
 
-## FAQ
+## FAQs
 If an exception such as migration failure or execution error occurs when you use COS Migration tool, see [COS Migration Tool](https://intl.cloud.tencent.com/document/product/436/30585) for troubleshooting.
+

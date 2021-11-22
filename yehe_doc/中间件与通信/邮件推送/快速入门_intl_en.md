@@ -25,7 +25,7 @@ After the free tier is used up, your plans will be used automatically. If no pla
 2. On the **Sender Domain** page, click **Create**.
 3. Enter a sender domain in the **Domain** field, for example, `mail.qcloud.com`, and click **Submit**.
     
->!A sender domain is the basis of an email address and represents the identity of the sender's corporate. To verify a sender domain, you need to configure the DNS information for it. Therefore, you must have the admin permissions on the domain.
+>!If a domain has been registered for Tencent Exmail, it cannot be used as the sender domain.
    
 4. After finishing DNS configuration, click **Verify**.
 5. In the **Sender Domain Configuration** dialog box, click **Submit** to verify the sender domain.

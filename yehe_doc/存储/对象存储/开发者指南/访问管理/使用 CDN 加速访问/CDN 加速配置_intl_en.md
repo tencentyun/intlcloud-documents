@@ -1,7 +1,11 @@
-## Scenarios
-- Scenarios that require low latency and high download speed.
-- Scenarios where gigabytes to terabytes of data need to be transmitted across regions, countries, and continents.
-- Scenarios where the same content needs to be downloaded frequently and repeatedly.
+## Use Cases
+- Requiring low delay and fast downloads
+- Scenarios where gigabytes to terabytes of data need to be transmitted across regions, countries, and continents
+- Downloading the same content frequently and repeatedly
+
+>!If the download request is from Tencent Cloud VPC (for example, using Tencent Cloud CVM to access a bucket), you are advised to use a standard COS domain directly. If you use a CDN acceleration domain, you will need to access the CDN node over a public network, which incurs additional fees such as CDN origin-pull traffic fees and traffic fees.
+>
+
 
 ## Notes
 For information on domain name definition, CDN origin-pull authentication, and CDN authentication configuration, see [CDN Acceleration Overview](https://intl.cloud.tencent.com/document/product/436/18669).
@@ -14,7 +18,7 @@ CDN origin-pull authentication and CDN authentication configuration affect how C
 | Public read | Enabled | Disabled | Yes | Yes | Not recommended |
 | Public read | Disabled | Enabled | URL authentication is required | Yes | Not recommended |
 | Public read | Enabled | Enabled | URL authentication is required | Accessible | Not recommended |
-| Private read + CDN service authorization | Enabled | Enabled | URL authentication is required | COS authentication is required | Protection throughout link |
+| Private read + CDN service authorization | Enabled | Enabled | URL authentication required | COS authentication required | Full-linkage protection |
 | Private read + CDN service authorization | Disabled | Enabled | URL authentication is required | COS authentication is required | Not recommended |
 | Private read + CDN service authorization | Enabled | Disabled | Yes | COS authentication is required | Origin server protection |
 | Private read + CDN service authorization | Disabled | Disabled | No | COS authentication is required | Not recommended |

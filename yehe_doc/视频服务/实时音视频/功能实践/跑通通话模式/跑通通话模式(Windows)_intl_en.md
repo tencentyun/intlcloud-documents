@@ -139,7 +139,7 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
   Calculated based on `SDKAppID` and `userID`. For details, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 - **roomId**
-  A custom number. Please note that **rooms under the same application cannot have identical `roomId`**.
+  A custom number. Please note that **rooms under the same application cannot have identical `roomId`**. For string-type room ID, use `strRoomId` in `TRTCParams`.
 
 ### 3. Enter (or create) a room
 Call `enterRoom` to enter the room specified by the `roomId` field in `TRTCParams`. If the room does not exist, the SDK will create one whose room number is the value of `roomId`.
