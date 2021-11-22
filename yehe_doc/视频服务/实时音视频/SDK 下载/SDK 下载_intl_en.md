@@ -80,13 +80,22 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
    </tr>
 	    <tr>
       <td style="text-align:center">Flutter</td>
-      <td style="text-align:center">N/A</td>
+      <td style="text-align:center"><a href="https://pub.dev/packages/tencent_trtc_cloud/versions">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/c1avie/trtc_demo">GitHub</a></td>
       <td style="text-align:center">N/A</td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/39243">Document</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35098">Document</a></td>
-      <td style="text-align:center">13 MB</td>
+      <td style="text-align:center">N/A</td>
    </tr>
+      <tr>
+      <td style="text-align:center">React Native</td>
+      <td style="text-align:center">N/A</td>
+      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCReactNative">Github</a></td>
+      <td style="text-align:center">N/A</td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/43297">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/43298">DOC</a></td>
+      <td style="text-align:center">N/A</td>
+</tr>
 </table>
 
 >? 
