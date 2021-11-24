@@ -1,12 +1,12 @@
 [](id:q1)
-### How do I add a domain name?
+### How do I connect a domain name?
 You can connect a domain name on the CDN console. For more information, please see [Adding Domain Names](https://intl.cloud.tencent.com/document/product/228/5734).
 
 [](id:q2)
 ### Are there any requirements for connecting a domain name to CDN?
 Yes. The following are the requirements for connecting a domain name to CDN:
-1. The length of the domain name cannot exceed 50 characters. Domain names in Chinese, even after they are transcoded, are not supported currently.
-2. If the Chinese mainland CDN is used, the domain name must have an ICP filing issued by the MIIT, and the business content of the origin server must be legal.
+1. The length of the domain name cannot exceed 81 characters.
+2. The domain name must have an ICP filling issued by the MIIT.
 3. The domain name is a sub-domain name in the format of `a.test.com` or `a.b.test.com` or a wildcard domain name in the format of `*.test.com` or `*.a.test.com`.
 4. Domain name ownership verification is required when connecting a domain name for the first time, a wildcard domain name, or a connected domain name.
 
@@ -14,12 +14,12 @@ Yes. The following are the requirements for connecting a domain name to CDN:
 ### Does CDN support connecting wildcard domain names?
 Yes, CDN supports connecting wildcard domain names, for which domain name ownership verification is required. Once verified, domain names can be connected or retrieved.
 In addition:
-1. If a wildcard domain name such as `*.test.com` is already connected to Tencent Cloud, then none of its sub-domain names can be connected Tencent Cloud by other accounts.
-2. If the wildcard domain name `*.test.com` is already connected to Tencent Cloud by your account, then wildcard domain names in formats such as `*.path.test.com` cannot be connected Tencent Cloud by your account.
+1. If a wildcard domain name such as `*.test.com` is already connected to Tencent Cloud, then none of its sub-domain names can be connected to another account.
+2. If the wildcard domain name `*.test.com` is already connected to your account, then wildcard domain names in formats such as `*.path.test.com` cannot be connected to your account.
 
 [](id:q4)
-### How long does it for the CDN configuration to take effect?
-Generally, it takes less than 30 minutes for the CDN configuration to take effect. If the configuration does not take effect within 30 minutes after configuration, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+### How long does it take to configure CDN?
+Generally, it takes less than 30 minutes for the CDN configuration to take effect. If the configuration does not take effect within 30 minutes, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 [](id:q5)
 ### Can I configure multiple origin server IPs?
@@ -30,12 +30,12 @@ Yes. After you configure multiple IPs, CDN will randomly access one of the IPs w
 See [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121) for how to bind CNAME with your DNS service provider.
 
 [](id:q7)
-### I can only disable a domain name but cannot delete it.
-Please check whether the user is a collaborator. The collaborator needs to get the relevant permission from the creator for the operation. If you are sure that the collaborator has been granted the permission but still cannot perform the operation, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+### Why can a domain name be disabled but not deleted?
+Please check whether the user is a collaborator. The collaborator's permission is configured by the creator of the CDN service. If the creator does not assign the relevant permission to the collaborator, the collaborator cannot perform the operation. If you are sure that the collaborator has been granted the permission but still cannot perform the operation, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 [](id:q8)
 ### Will the domain name configuration be retained after the acceleration service is disabled?
-Yes. After the acceleration service is disabled, the domain name configuration will be retained, but the acceleration service will no longer be available. A 404 status code will be returned for user requests.
+Yes. After the acceleration service is disabled, the domain name configuration will be retained, but the acceleration service will no longer be available. In this case, a 404 status code will be returned for user requests.
 
 [](id:q9)
 ### Will the domain name configuration be retained after an acceleration domain name is deleted?

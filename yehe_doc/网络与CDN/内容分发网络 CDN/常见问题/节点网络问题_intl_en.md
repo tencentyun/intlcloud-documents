@@ -1,3 +1,4 @@
+
 [](id:q1)
 ### How long is the default timeout for Tencent Cloud CDN nodes?
 The default timeout is 10 seconds.
@@ -42,7 +43,7 @@ View the `X-Cache-Lookup` information in the header of the request return. If mu
 ### Why do files with the same name returned by the node have different sizes?
 Since all file types are cached by default, there may be different versions of a file on the CDN node. To solve this problem, you can:
 + Manually purge files and update the cache immediately.
-+ Use a version number, e.g., ```http://www.xxx.com/xxx.js?version=1```.
++ Use a version number, e.g., `http://www.xxx.com/xxx.js?version=1`.
 + Change the file names to avoid using files with the same name.
 
 If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
@@ -56,7 +57,7 @@ Please select **Allow blank referer** when configuring the hotlink protection al
 [](id:q10)
 ### Can the traffic cap configuration defend against DDoS attacks?
 
-CDN mainly focuses on content delivery acceleration rather than DDoS prevention. You can use CDN's bandwidth cap feature to automatically collect bandwidth usage statistics in 5 minutes. If the cap threshold is reached, CDN will respond according to the configuration. **The maximum threshold is 10,000 Tbps**.
+CDN mainly focuses on content delivery acceleration rather than DDoS protection. You can use CDN’s bandwidth cap feature to automatically collect bandwidth usage statistics in 5 minutes. If the cap threshold is reached, CDN will respond according to the configuration. **The maximum threshold is 10,000 Tbps.** To protect your site against DDoS attacks, use [Secure Content Delivery Network](https://intl.cloud.tencent.com/products/scdn).
 
 [](id:q11)
 ### Can CDN provide all of its node IPs? 
