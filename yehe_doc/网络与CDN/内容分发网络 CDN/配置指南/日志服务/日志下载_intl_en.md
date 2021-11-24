@@ -30,10 +30,10 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), click **Log 
 
 
 >!
-- The access logs are packaged by hour by default. If there is no request to the domain name for the hour, no log package will be generated for this hour.
-- For the same domain name, logs of accesses from within and outside the Chinese mainland are packaged separately. Log packages are named in the format of "[time]-[domain name]-[acceleration region]".
-- The access logs are collected from each CDN cache node, so the delay may vary. Generally, the delay for querying and downloading log packages is about 30 minutes. Log packages will be added continuously and will stabilize after around 24 hours.
-- The access log packages of a domain name are retained for 30 days. You can use an SCF function to transfer the log packages to COS as instructed in [Regularly Storing CDN Logs](https://intl.cloud.tencent.com/document/product/228/36014) for permanent storage.
+>- The access logs are packaged by hour by default. If there is no request to the domain name for the hour, no log package will be generated for this hour.
+>- For the same domain name, logs of accesses from within and outside the Chinese mainland are packaged separately. Log packages are named in the format of "[time]-[domain name]-[acceleration region]".
+>- The access logs are collected from each CDN cache node, so the delay may vary. Generally, the delay for querying and downloading log packages is about 30 minutes. Log packages will be added continuously and will stabilize after around 24 hours.
+>- The access log packages of a domain name are retained for 30 days. You can use an SCF function to transfer the log packages to COS as instructed in [Regularly Storing CDN Logs](https://intl.cloud.tencent.com/document/product/228/36014) for permanent storage.
 
 ### Fields
 The fields (from left to right) in the logs are listed as below:
