@@ -100,7 +100,7 @@ CDN provides common service configuration items for you to configure as needed. 
 ## Completing the Configuration
 
 After adding the domain name, wait for the domain name configuration to be distributed to the entire network, which usually takes 5 to 10 minutes.
-<img src="hhttps://main.qcloudimg.com/raw/d5bcb556ac1b89946ec15642d3249676.png" width="80%">
+<img src="https://main.qcloudimg.com/raw/d5bcb556ac1b89946ec15642d3249676.png" width="80%">
 
 ## Subsequent Steps
 
