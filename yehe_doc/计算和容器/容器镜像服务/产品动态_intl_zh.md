@@ -1,9 +1,21 @@
 >? 本文为容器镜像服务 TCR 企业版产品动态，容器服务 TKE 产品动态请参见 [产品动态](https://intl.cloud.tencent.com/document/product/457/37358)。
 
-## 2021年06月
+
+## 2021年07月
 
 <table>
 	<tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
+<tr><td>支持跨主账号实例同步</td><td>实例同步功能支持跨主账号的目标实例，实现跨主账号的实例数据同步。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35494">配置实例同步</a></td></tr>
+<tr><td>支持镜像版本不可变</td><td>支持对托管在 TCR 的镜像开启版本不可变功能，可确保相同版本的镜像仅被成功推送一次。</td><td>配置镜像版本不可变</a></td></tr>
+</table>
+
+
+## 2021年06月
+<table>
+<tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
+<tr><td>TCR 控制台功能增强</td><td>原实例列表页升级为实例管理页，可查看实例概况、TCR 最新功能及产品动态。</td><td>-</td></tr>
+<tr><td>支持批量添加/编辑公网访问白名单</td><td>TCR 控制台支持单次输入多个白名单或导入已有安全组。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35491">公网访问控制</a></td></tr>
+<tr><td>管理自动解析新增多个地域支持</td><td>新增支持南京、中国香港、新加坡、法兰克福、成都、重庆。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35492">内网访问控制</a></td></tr>
 <tr><td>支持镜像清理</td><td>TCR 支持设置自定义规则批量清理企业版实例内的冗余镜像数据，释放存储空间，且支持模拟运行。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/41073">清理 COS 存储空间</a></td></tr>
 </table>
 
