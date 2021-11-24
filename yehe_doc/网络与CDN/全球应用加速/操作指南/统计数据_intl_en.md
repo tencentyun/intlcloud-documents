@@ -10,7 +10,7 @@ You can view the connection statistics, as shown below:
 - **Time Period**: Select a time period.
 - **Time Granularity**: Select a time granularity. The maximum query time is 15 days if you select a 1-minute granularity, 31 days for a 5-minute granularity, 93 days for a 1-hour granularity and 186 days for a 1-day granularity.
 
-![](https://main.qcloudimg.com/raw/ebcbf2519d0189f9437d5375aa50ece9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4d3f9eaea3e2ca9442ec8cfabf0ad73f.jpg)
 
 ## Connection Group
 
@@ -21,7 +21,7 @@ You can view the connection group statistics, as shown below:
 - **Time Period**: Select a time period.
 - **Time Granularity**: Select a time granularity. The maximum query time is 15 days if you select a 1-minute granularity, 31 days for a 5-minute granularity, 93 days for a 1-hour granularity and 186 days for a 1-day granularity.
 
-![](https://main.qcloudimg.com/raw/7517ea8a6d1bffccd5436b64882d7c8f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fce7e20b2dcaa474095a117380f41e85.jpg)
 
 ## Listener
 
@@ -33,7 +33,7 @@ You can view the listener statistics, as shown below:
 - **Time Period**: Select a time period.
 - **Time Granularity**: Select a time granularity. The maximum query time is 15 days if you select a 1-minute granularity, 31 days for a 5-minute granularity, 93 days for a 1-hour granularity and 186 days for a 1-day granularity.
 
-![](https://main.qcloudimg.com/raw/150adb14a909f5d954fb52b579d1cd72.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b1975214d1f82e89dcded5c4280d0bb9.jpg)
 
 ## Origin Server
 
@@ -45,12 +45,12 @@ You can view the statistics of the origin server’s health status, as shown bel
 - **Time Period**: Select a time period.
 - **Time Granularity**: Select a time granularity. The maximum query time is 15 days if you select a 1-minute granularity, and 31 days for a 5-minute granularity.
 
-![](https://main.qcloudimg.com/raw/cb936fbfbca6c9a7e370d0401f4b6c55.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/75ce6339c8d51048a066fd3df481a642.jpg)
 
 ## Exporting Data
 
 Enter the **Statistics** page, and click the download icon to export data.
-![](https://main.qcloudimg.com/raw/fada34020a50842ff1c7625cdee437f7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7646c6fb333f613b5dc1059de73b9847.jpg)
 
 ## Configuring an Alarm Policy
 Enter the [Statistics](https://console.cloud.tencent.com/gaap/data) page, and click **Configure Alarm** in the top right corner to configure an alarm policy. For more details, see [Access Cloud Monitoring](https://intl.cloud.tencent.com/document/product/608/17541).

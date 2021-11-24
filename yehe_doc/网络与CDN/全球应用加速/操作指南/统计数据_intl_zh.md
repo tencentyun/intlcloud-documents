@@ -10,7 +10,7 @@
 - 时间范围：选择时间范围。
 - 时间粒度：选择数据统计粒度，支持1分钟、5分钟、1小时和1天。选择1分钟粒度，最长可查看15天的数据；选择5分钟粒度，最长可查看31天的数据；选择1小时粒度，最长可查看93天数据；选择1天粒度，最长可查看186天数据。
 
-![](https://main.qcloudimg.com/raw/ebcbf2519d0189f9437d5375aa50ece9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4d3f9eaea3e2ca9442ec8cfabf0ad73f.jpg)
 
 ## 通道组
 
@@ -21,7 +21,7 @@
 - 时间范围：选择时间范围。
 - 时间粒度：选择数据统计粒度，支持1分钟、5分钟和1小时。选择1分钟粒度，最长可查看15天的数据；选择5分钟粒度，最长可查看31天的数据；选择1小时粒度，最长可查看93天数据；选择1天粒度，最长可查看186天数据。
 
-![](https://main.qcloudimg.com/raw/7517ea8a6d1bffccd5436b64882d7c8f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fce7e20b2dcaa474095a117380f41e85.jpg)
 
 ## 监听器
 
@@ -33,7 +33,7 @@
 - 时间范围：选择时间范围。
 - 时间粒度：选择数据统计粒度，支持1分钟、5分钟和1小时。选择1分钟粒度，最长可查看15天的数据；选择5分钟粒度，最长可查看31天的数据；选择1小时粒度，最长可查看93天数据；选择1天粒度，最长可查看186天数据。
 
-![](https://main.qcloudimg.com/raw/150adb14a909f5d954fb52b579d1cd72.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b1975214d1f82e89dcded5c4280d0bb9.jpg)
 
 ## 源站
 
@@ -45,12 +45,12 @@
 - 时间范围：选择时间范围。
 - 时间粒度：选择数据统计粒度，支持1分钟和5分钟。选择1分钟粒度，最长可查看15天的数据；选择5分钟粒度，最长可查看31天的数据；
 
-![](https://main.qcloudimg.com/raw/cb936fbfbca6c9a7e370d0401f4b6c55.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/75ce6339c8d51048a066fd3df481a642.jpg)
 
 ## 数据导出
 
 进入“统计数据”页面，点击数据展示页右上角的**下载**图标，即可导出数据。
-![](https://main.qcloudimg.com/raw/fada34020a50842ff1c7625cdee437f7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7646c6fb333f613b5dc1059de73b9847.jpg)
 
 ## 配置告警
 进入“[统计数据](https://console.cloud.tencent.com/gaap/data)”页面，点击右上角“配置告警”，即可进行数据报警配置，具体操作流程详见 [接入云监控](https://intl.cloud.tencent.com/document/product/608/17541)。

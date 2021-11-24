@@ -18,14 +18,14 @@
 1.	登录 [全球应用加速控制台](https://console.cloud.tencent.com/gaap)，在“源站管理”页面，单击健康状态下的**统计**图标。
 >!如源站尚未绑定监听器，则无法使用该功能。
 >
-![](https://main.qcloudimg.com/raw/bf9e90955fe8511fa3be4d8ae4dfc4cd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5d987f08bf034cb6cd1de5d7aad891d5.jpg)
 2.	在右上角的弹出框，查看不同时间范围/粒度的源站健康状态，1代表正常，0代表异常。
-<img src="https://main.qcloudimg.com/raw/0efb8e67c662f26c00a241edf8f03d44.png" width="70%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6317c3ccdb5cd1442a1cf4e0105c9896.jpg" width="70%">
 
  
 
 ## 编辑标签
 1.	登录 [全球应用加速控制台](https://console.cloud.tencent.com/gaap)，在“源站管理”页面，单击**编辑标签**。
- ![](https://main.qcloudimg.com/raw/cce3e88aee41d021d5d483fd87419a1f.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/9f10b4b55e4601c3ad6bf602bee99c83.jpg)
 2.	选择标签，用于从不同维度对源站进行分类管理，然后单击**确定**即可。
- ![](https://main.qcloudimg.com/raw/16d0bdf88b2c0ec31cd3df0671083b55.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/74527ba60e680b59f6cd0a7ccc23feac.jpg)
