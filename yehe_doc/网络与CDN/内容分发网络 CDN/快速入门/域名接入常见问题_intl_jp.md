@@ -19,11 +19,7 @@ CDNはすでに汎用ドメイン名アクセスをサポートしています�
 
 [](id:q4)
 ### CDNの設定にはどれくらい時間がかかりますか。
-通常、CDNの設定時間は30分以内です。設定後の待ち時間が30分以上の場合は、[
-
-
-
-提出](https://console.cloud.tencent.com/workorder/category)してください。
+通常、CDNの設定時間は30分以内です。設定後の待ち時間が30分以上の場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してください。
 
 [](id:q5)
 ###オリジンサーバーIPは複数設定できますか。
