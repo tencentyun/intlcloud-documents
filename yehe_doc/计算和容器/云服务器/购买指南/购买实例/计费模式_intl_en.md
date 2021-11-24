@@ -5,7 +5,7 @@ The following table compares the two billing plans:
 |---------|:---------:|:---------:|
 | Payment method  | [Deposit](https://intl.cloud.tencent.com/document/product/555/12039) upon purchase, billed hourly | [Deposit](https://intl.cloud.tencent.com/document/product/555/12039) upon purchase, billed hourly |
 | Payment unit  | USD/sec | USD/sec |
-| Unit price | Pricy | The price fluctuates. In most cases, the price is about 10-20% of the price of a pay-as-you-go instance with the same specifications. |
+| Unit price | Relatively higher | The price fluctuates. In most cases, the price is about 10-20% of the price of a pay-as-you-go instance with the same specifications. |
 | Minimal use time | Charged by the second and billed by the hour. Purchase and release at any time. | Charged by the second and billed by the hour. Purchase and release at any time. May be repossessed by the system. |
 | Changing instance configurations | No limit. Change at anytime. | Not supported. |
 | Use cases | Best for use cases where the business demand fluctuates greatly, such as ecommerce flash sales. | Best for use cases such as online and website services that use big data computing and load balancing. |
