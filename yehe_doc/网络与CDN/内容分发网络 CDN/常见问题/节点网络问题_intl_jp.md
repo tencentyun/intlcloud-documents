@@ -10,10 +10,10 @@ Tencent Cloud CDNノードはデフォルトのタイムアウト時間は10秒�
 [](id:q3)
 ### CDNにアクセスした後、ウェブサイトが開かなくなります。どうやって検査しますか。
 まず、アクセスドメイン名のCDN状態が「閉じました」であるかどうかを確認してください。「閉じました」状態である場合は、対応するページが開けられません。「閉じました」状態でない場合は、次の手順通りにさらにチェックしてください。
-+ pingまたはnslookupを使って、当該ドメイン名のCNAME解決が有効かどうかチェックします。CNAMEがバインドされていない場合は、[CNAME設定](https://intl.cloud.tencent.com/document/product/228/3121) ドキュメントの操作説明を参照し、お客様のDNSサービスプロバイダにてCNAMEをバインドしてください。
++ pingまたはnslookupを使って、当該ドメイン名のCNAME解決が有効かどうかチェックします。CNAMEがバインドされていない場合は、[CNAME設定](https://intl.cloud.tencent.com/document/product/228/3121)ドキュメントの操作説明を参照し、お客様のDNSサービスプロバイダにてCNAMEをバインドしてください。
 + CNAMEが有効になった後、オリジンサーバーに正常にアクセスできるかどうかをチェックします。
 
-上記の手順でこの問題を解決できない場合は、お手伝いしますので、[作業依頼書の提出]（https://console.cloud.tencent.com/workorder/category）にてご連絡ください。
+上記の手順でこの問題を解決できない場合は、お手伝いしますので、[作業依頼書の提出](https://console.cloud.tencent.com/workorder/category)にてご連絡ください。
 
 [](id:q4)
 ### ユーザーがアクセスしているどのCDNノードを判断する方法は？
@@ -46,7 +46,7 @@ nslookupおよびpingコマンドを使用して、ユーザーがアクセス�
 + バージョン番号をつけます。例：`http://www.xxx.com/xxx.js?version=1`。
 +同じ名前のファイルを使用せずに、他のファイル名に変更します。
 
-上記の手順でこの問題を解決できない場合は、お手伝いしますので、[作業依頼書の提出]（https://console.cloud.tencent.com/workorder/category）にてご連絡ください。
+上記の手順でこの問題を解決できない場合は、お手伝いしますので、[作業依頼書の提出](https://console.cloud.tencent.com/workorder/category)にてご連絡ください。
 
 [](id:q9)
 ### CDNでホットリンク防止のホワイトリストを設定すると、ウェブサイトに正常にアクセスできなくなるのでしょうか。
