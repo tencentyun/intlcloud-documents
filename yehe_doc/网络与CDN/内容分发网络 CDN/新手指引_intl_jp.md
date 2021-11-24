@@ -34,8 +34,8 @@ Tencent Cloudは、アクセラレーションサービスをより良く区別�
   </tr>
   <tr>
     <td>課金方式</td>
-    <td align="middle">トラフィック時間による課金<br>中国本土ユーザーはトラフィックパッケージサービスをご利用いただけます<br>詳細については、<a href="https://intl.cloud.tencent.com/document/product/228/2949">CDN課金説明</a></td>をご参照ください
-    <td align="middle">リクエスト回数+超過トラフィック課金<br>詳細については、<a href="https://intl.cloud.tencent.com/document/product/570/37505">ECDN課金説明</a></td>をご参照ください
+    <td align="middle">トラフィック時間による課金<br>中国本土ユーザーはトラフィックパッケージサービスをご利用いただけます<br>詳細については、<a href="https://intl.cloud.tencent.com/document/product/228/2949">CDN課金説明</a><をご参照ください/td>
+    <td align="middle">リクエスト回数+超過トラフィック課金<br>詳細については、<a href="https://intl.cloud.tencent.com/document/product/570/37505">ECDN課金説明</a>をご参照ください</td>
   </tr>
   <tr>
     <td>アクセラレーション方式</td>
@@ -162,12 +162,6 @@ Tencent Cloudは、アクセラレーションサービスをより良く区別�
 >
 >ECDNドメイン名で発生する料金は、[ECDNの課金方式](https://intl.cloud.tencent.com/document/product/570/37505)に基づいて課金されます。
 
- 
-
-
-​	
-​	
-​	
 
 ## CDNを使用するのはいつですか。
 
