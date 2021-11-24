@@ -52,7 +52,6 @@ Recommended scenarios: dynamic acceleration and dynamic/static acceleration.
 
 When connecting a domain name to be accelerated to Tencent Cloud, you can select either of the two products in the [CDN console](https://console.cloud.tencent.com/cdn):
 
-![](https://main.qcloudimg.com/raw/27887f0f21e2ad39b956d86754c99653.png)
 
 Note that the two acceleration types use different acceleration policies and billing standards. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/228/2949) of CDN and [Billing Overview](https://intl.cloud.tencent.com/document/product/570/37505) of ECDN respectively.
 
@@ -62,7 +61,7 @@ Note that the two acceleration types use different acceleration policies and bil
 
 ## CDN Connection Example
 
-![](https://main.qcloudimg.com/raw/b3d3c9207414b55253cbf80b6ad1146b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/af95ca14834f1fb163b4d98e17f721f6.png)
 
 ### User access configured with CDN acceleration
 
@@ -98,7 +97,7 @@ A user in Shenzhen accesses an origin server in Beijing whose address is `1.1.1.
 - The larger the number of end users, the higher the network bandwidth fees.
 - The cross-border access experience is poor.
 
-![](https://main.qcloudimg.com/raw/158ee8b568de3bed61ab3127f03ff232.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cb1dd401c8cbb0e3835d9e410c37c31d.png)
 
 >?The above data is for reference only. Data fluctuations in complicated network environments are normal.
 
@@ -108,7 +107,7 @@ A user in Shenzhen accesses an origin server in Beijing whose address is `1.1.1.
 - The bandwidth pressure on the origin server is relieved, and the network fees are reduced.
 - The globally deployed nodes improve the cross-border access experience.
 
-![](https://main.qcloudimg.com/raw/25f2f688bc1e32b64cb3bb82e9839aa1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7460b780994e836d97d549b79211f517.png)
 
 >?The above data is for reference only. Data fluctuations in complicated network environments are normal.
 
@@ -126,7 +125,7 @@ A user in Shenzhen accesses an origin server in Beijing whose address is `1.1.1.
 - The network linkage may have a poor quality or even be blocked during routing.
 - The public network environment is complicated, compromising the normal service experience.
 
-![](https://main.qcloudimg.com/raw/9f1584bf29f278e8b4a3a1653635b193.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3fcb611b6d5c37e63b692daab957350f.png)
 
 >?The above data is for reference only. Data fluctuations in complicated network environments are normal.
 
@@ -137,7 +136,7 @@ A user in Shenzhen accesses an origin server in Beijing whose address is `1.1.1.
 - End users access nearby ECDN nodes for operations such as resource access and origin-pull.
 - The status of the entire network is monitored in real time to select the optimal linkage and avoid blocked and low-quality linkages.
 
-![](https://main.qcloudimg.com/raw/d4102c625559ebb81452bac91dcc50b5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e8ef115ebb2a4f719454b23e33b2dd6b.png)
 
 >?The above data is for reference only. Data fluctuations in complicated network environments are normal.
 

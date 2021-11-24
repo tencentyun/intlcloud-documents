@@ -1,4 +1,4 @@
-![](https://main.qcloudimg.com/raw/705a1315248316e32c25a8093fd9f799.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1d6aa270579356fd95585e86c8d375b2.png)
 
 ## Preparations
 

@@ -52,7 +52,7 @@ Tencent Cloud는 다양한 가속 유형에 따라 다양한 제품을 제공합
 
 Tencent Cloud에 가속하고자 하는 도메인을 연결할 때 [CDN 콘솔](https://console.cloud.tencent.com/cdn)의 가속 유형에서 두 가지 제품을 선택할 수 있습니다.
 
-![](https://main.qcloudimg.com/raw/27887f0f21e2ad39b956d86754c99653.png)
+
 
 두 가지 가속 유형은 서로 다른 가속 정책과 과금 기준을 사용합니다. 자세한 내용은 [CDN 과금 설명](https://intl.cloud.tencent.com/document/product/228/2949) 및 [ECDN 과금 설명](https://intl.cloud.tencent.com/document/product/570/37505)을 참고하십시오.
 
@@ -62,7 +62,7 @@ Tencent Cloud에 가속하고자 하는 도메인을 연결할 때 [CDN 콘솔](
 
 ## CDN 연결 예시
 
-![](https://main.qcloudimg.com/raw/b3d3c9207414b55253cbf80b6ad1146b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/af95ca14834f1fb163b4d98e17f721f6.png)
 
 ### CDN 가속 설정 사용자 액세스 사례:
 
@@ -98,7 +98,7 @@ Tencent Cloud에 가속하고자 하는 도메인을 연결할 때 [CDN 콘솔](
 - 고객 수가 많을수록 네트워크 대역폭 요금이 높아집니다.
 - 해외 사용자의 액세스 경험이 좋지 않습니다.
 
-![](https://main.qcloudimg.com/raw/158ee8b568de3bed61ab3127f03ff232.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cb1dd401c8cbb0e3835d9e410c37c31d.png)
 
 >?상기 데이터는 참고용이며 복잡한 네트워크 환경에서의 데이터 변동은 정상적인 현상입니다.
 
@@ -108,7 +108,7 @@ Tencent Cloud에 가속하고자 하는 도메인을 연결할 때 [CDN 콘솔](
 - 원본 서버의 대역폭 부하를 완화하고 네트워크 요금을 낮춥니다.
 - 세계 각지에 분산된 글로벌 노드로 국경 간 액세스 경험을 개선합니다.
 
-![](https://main.qcloudimg.com/raw/25f2f688bc1e32b64cb3bb82e9839aa1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7460b780994e836d97d549b79211f517.png)
 
 >?상기 데이터는 참고용이며 복잡한 네트워크 환경에서의 데이터 변동은 정상적인 현상입니다.
 
@@ -126,7 +126,7 @@ Tencent Cloud에 가속하고자 하는 도메인을 연결할 때 [CDN 콘솔](
 - 라우팅 프로세스 품질이 저조하고 링크가 혼잡합니다.
 - 공용 네트워크 환경이 복잡하여 사용자의 정상적인 서비스 경험에 영향을 미칩니다.
 
-![](https://main.qcloudimg.com/raw/9f1584bf29f278e8b4a3a1653635b193.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3fcb611b6d5c37e63b692daab957350f.png)
 
 >?상기 데이터는 참고용이며 복잡한 네트워크 환경에서의 데이터 변동은 정상적인 현상입니다.
 
@@ -137,7 +137,7 @@ Tencent Cloud에 가속하고자 하는 도메인을 연결할 때 [CDN 콘솔](
 - 사용자는 가장 가까운 ECDN 노드에 액세스하여 리소스 액세스, Origin-pull 작업 등을 진행합니다.
 - 전체 네트워크 상태를 실시간 모니터링하고 최적의 링크를 선택하여 혼잡 및 저품질 링크를 방지합니다.
 
-![](https://main.qcloudimg.com/raw/d4102c625559ebb81452bac91dcc50b5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e8ef115ebb2a4f719454b23e33b2dd6b.png)
 
 >?상기 데이터는 참고용이며 복잡한 네트워크 환경에서의 데이터 변동은 정상적인 현상입니다.
 

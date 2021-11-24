@@ -1,4 +1,4 @@
-![](https://main.qcloudimg.com/raw/eb904bfddef689cd5d4382e69b728a12.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0ebdc0f0a97859cd5f41d425838a54ce.png)
 
 ## 准备工作
 

@@ -52,7 +52,7 @@
 
 将您期望加速的域名接入腾讯云时，您可以在 [内容分发网络控制台](https://console.cloud.tencent.com/cdn) 的加速类型中选择两种产品：
 
-![](https://main.qcloudimg.com/raw/27887f0f21e2ad39b956d86754c99653.png)
+
 
 请注意，两种加速类型使用不同的加速策略及计费标准，详情请参考 [CDN 计费说明](https://intl.cloud.tencent.com/document/product/228/2949) 和 [ECDN 计费说明](https://intl.cloud.tencent.com/document/product/570/37505)。
 
@@ -62,7 +62,7 @@
 
 ## CDN 接入示例
 
-![](https://main.qcloudimg.com/raw/b3d3c9207414b55253cbf80b6ad1146b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/af95ca14834f1fb163b4d98e17f721f6.png)
 
 ### 配置 CDN 加速的用户访问案例：
 
@@ -98,7 +98,7 @@
 - 客户数量越多，网络带宽费用越高。
 - 跨境用户访问体验较差。
 
-![](https://main.qcloudimg.com/raw/158ee8b568de3bed61ab3127f03ff232.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cb1dd401c8cbb0e3835d9e410c37c31d.png)
 
 >?以上数据仅供参考，复杂网络环境下数据波动为正常情况。
 
@@ -108,7 +108,7 @@
 - 缓解源站带宽压力，网络费用更低。
 - 分布全球的跨境节点提升跨境访问体验。
 
-![](https://main.qcloudimg.com/raw/25f2f688bc1e32b64cb3bb82e9839aa1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7460b780994e836d97d549b79211f517.png)
 
 >?以上数据仅供参考，复杂网络环境下数据波动为正常情况。
 
@@ -126,7 +126,7 @@
 - 路由过程面临质量较差及拥堵链路。
 - 公网环境复杂，影响用户正常体验服务。
 
-![](https://main.qcloudimg.com/raw/9f1584bf29f278e8b4a3a1653635b193.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3fcb611b6d5c37e63b692daab957350f.png)
 
 >?以上数据仅供参考，复杂网络环境下数据波动为正常情况。
 
@@ -137,7 +137,7 @@
 - 用户访问就近的 ECDN 节点进行资源访问，回源等操作。
 - 对全网状态进行实时监控，选择最优链路，避开拥堵及低质量链路。
 
-![](https://main.qcloudimg.com/raw/d4102c625559ebb81452bac91dcc50b5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e8ef115ebb2a4f719454b23e33b2dd6b.png)
 
 >?以上数据仅供参考，复杂网络环境下数据波动为正常情况。
 
@@ -153,7 +153,7 @@
 
 1. 新用户在 <a href="https://console.cloud.tencent.com/cdn">CDN 控制台 </a>开通服务将同时开通 CDN 与 ECDN 服务，不使用的服务不会产生费用，详情可见 <a href="https://intl.cloud.tencent.com/document/product/228/32978">从零开始配置 CDN</a>。
 2. 若当前仅开通了 CDN 服务，未开通 ECDN，则在第一次添加动静加速/动态加速域名时，系统将自动为您开通 ECDN 服务，如下图所示。
-![](https://qcloudimg.tencent-cloud.cn/raw/d6c22eae0192309d346d3017e1b64e02.png)
+
 3. 若您在已在原 ECDN 控制台已经开通了 ECDN 服务，可提交工单让后台进行账号迁移，迁移成功后即可在 CDN 控制台使用 ECDN 服务。
 
 >!
