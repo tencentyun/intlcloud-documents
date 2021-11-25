@@ -5,7 +5,7 @@ table th:nth-of-type(2){ width:82%; }
 
 This document describes how to accelerate access to resources in COS through CDN.
 
-## Prerequisites
+## Prerequisite
 
 1. You have signed up for a Tencent Cloud account and verified your identity.
 2. A COS bucket has been created. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
@@ -14,21 +14,20 @@ This document describes how to accelerate access to resources in COS through CDN
 
 ### Creating a Distribution
 
-Log in to the [CDN console](https://console.cloud.tencent.com/cdn) and click **Domain Management** in the left sidebar to enter the domain name management page. Then click **Create a Distribution**. ![img](https://main.qcloudimg.com/raw/d301ff1eea5fe534ce09ec5964e8c82b.png)
-
+Log in to the [CDN console](https://console.cloud.tencent.com/cdn), click **Domain Management** on the left sidebar to enter the domain name management page, and click **Create a Distribution**.
 ### Selecting COS as origin server
 
 #### Part 1: Domain name configuration
 
 Enter your business domain name in the domain field, select a project and acceleration type, choose whether to enable IPv6 access, and set a tag:
-![](https://main.qcloudimg.com/raw/ec7ea324171295b8fd0321e226d0e0a3.png)
+
 
 **Configuration description:**
 
 | Configuration | Description                                                     |
 | :------- | :----------------------------------------------------------- |
 | Region | **Chinese mainland**: all requests are scheduled to cache nodes in the Chinese mainland. <br/>**Outside the Chinese mainland**: all requests are scheduled to cache nodes outside the Chinese mainland. <br/>**Global**: requests are scheduled to the nearest optimal node. <br/><br/>**Notes:** Acceleration services in and outside the Chinese mainland are billed separately. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/228/2949). |
-| Domain | 1. The domain name can contain up to 81 characters. <br/>2. The domain name should have obtained an ICP filing from the MIIT. <br/>3. Subdomain names in the format of `a.test.com` or `a.b.test.com` and wildcard domain names in the format of `*.test.com` or `*.a.test.com` are supported. <br/>4. If the domain name is a wildcard domain name or has been connected by another user, you need to [verify the domain name ownership](https://intl.cloud.tencent.com/document/product/228/5734) to connect or retrieve it. <br/><br/>**Notes:<br/>** 1. After a wildcard domain name is configured, its subdomain names and second-level wildcard domain names cannot be connected to in another account.<br/> 2. Domain names in the formats of `*.test.com` and `*.a.test.com` cannot be configured at the same time. |
+| Acceleration Domain Name          | 1. The domain name can contain up to 81 characters.<br/>2. ICP filing is required for domain names running in the Chinese mainland.<br/>3. Sub-domains (`a.test.com` or `a.b.test.com`) and wildcard domain names (`*.test.com` or `*.a.test.com`) are supported.<br/>4. You need to [verify the domain name ownership](https://intl.cloud.tencent.com/document/product/228/5734) when connecting a wildcard domain name or a connected domain name.<br/><br/> **Notes:<br/>** 1. If a wildcard domain name is connected here, its sub-domains and second-level wildcard domain names cannot be connected by any other accounts.<br/> 2. Domain names in the format of `*.test.com` and `*.a.test.com` cannot be configured at the same time.<br/>3. Domain names containing underscores and punycode-converted Chinese characters are now available.<br/>　4. Malicious or high-risk domain names cannot be connected to. For more information, see [Use Limits](https://intl.cloud.tencent.com/document/product/228/32981). |
 | Project | (Optional) Project is a set of resources shared by all Tencent Cloud products. You can manage it on the [Project Management](https://console.cloud.tencent.com/project) page. |
 | Acceleration type | CDN optimizes acceleration performance based on service type. For better acceleration effect, we recommend selecting the acceleration type similar to that of your actual business.  <br/>Static acceleration: applicable to small-scale resource acceleration scenarios such as e-commerce, website, and game photos. <br/>Download acceleration: applicable to downloading scenarios such as game installation packages, audio and video source file downloads, and mobile phone firmware distribution. <br/>On-demand video streaming acceleration: applicable to online education and on-demand video streaming. |
 | IPv6 Access | (Optional) CDN nodes support IPv4 access by default. IPv6 access will be supported after it is enabled.<br /><br/>**Note:** IPv6 access is only available in the Chinese mainland. |
@@ -36,7 +35,7 @@ Enter your business domain name in the domain field, select a project and accele
 
 #### Part 2: Origin configuration
 
-Configure business origin server information. If a CDN node has no resource cache, the node will pull the resource from the origin server and cache it.
+Configure the origin. When the requested resource is not cached on CDN nodes, CDN will forward the request to the origin, pull the requested resource and cache it on CDN nodes.
 
 
 1. Select **COS** from the **Origin Type** drop-down list under **Domain Configuration**.
@@ -48,7 +47,7 @@ Configure business origin server information. If a CDN node has no resource cach
 #### Part 3: Service configuration
 
 Configure the node acceleration service:
-![](https://main.qcloudimg.com/raw/6264633c18801547e4aece61a94009cb.png)
+
 
 **Configuration description:**
 
@@ -63,7 +62,7 @@ After entering all configuration items on **Create a Distribution** page, click 
 ### Configuring CNAME
 
 After successfully adding a domain name, you can view the acceleration CNAME assigned by CDN on the **Domain Management** page.
-![](https://main.qcloudimg.com/raw/073b948565743f7947aae8503eef995d.png)
+
 
 You need to add the CNAME record for the domain name at your DNS service provider (such as DNSPod). Acceleration services will become available after **the DNS configuration takes effect**. For more details, see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
 

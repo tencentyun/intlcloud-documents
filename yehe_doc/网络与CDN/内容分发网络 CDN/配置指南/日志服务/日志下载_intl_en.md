@@ -1,14 +1,23 @@
-## Feature Overview
+<blockquote class="d-mod-alarm">
+              <div class="d-mod-title d-alarm-title">
+                <i class="d-icon-alarm"></i>Notice:
+              </div>
+               <p>Field value "HTTP/3" for the HTTP protocol identifier (the 14th field in the offline log) in general logs will be in beta from September 13, 2021, which will not affect the CDN console and APIs. Please note that getting log data from offline log packages may require adjustment.</br></br>QUIC access has been in beta. For more details, see <a href="https://cloud.tencent.com/document/product/228/51800">QUIC</a>.</p>
+            </blockquote>
+
+
+
+## Features
 
 After a domain name is connected to CDN, all requests will be scheduled to a CDN node. If the requested resource is cached on the node, the resource will be returned directly; otherwise, the request will be passed to the origin server to pull the requested resource.
 
-As CDN nodes respond to most user requests, to help you analyze user access, CDN packages access logs of the entire network at an hourly granularity and retains them for 30 days by default. These logs can also be downloaded.
+CDN nodes respond to most of the user requests. To facilitate access analysis, CDN packages access logs of the entire network at an hourly granularity and retains them for 30 days by default. These logs can also be downloaded.
 
 >? 
 >- Currently origin-pull logs are not provided. Only node access logs are provided.
 >- ECDN domain name offline logs cannot be queried by regions for now. For more information, see [Log Management](https://intl.cloud.tencent.com/document/product/570/15258).
 
-## Overview
+## Use Cases
 ### Access behavior analysis
 You can download access logs and analyze popular resources and active users.
 
@@ -17,13 +26,14 @@ By downloading access logs, you can stay on top of the service status of all CDN
 
 ## Directions
 ### How to use
-Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Log Service** on the left sidebar, and select a domain name and time range to query access logs. You can select multiple log packages and download them in batches:
+Log in to the [CDN console](https://console.cloud.tencent.com/cdn), click **Log Service** on the left sidebar, and select a domain name and time range to query access logs. You can select multiple log packages and download them in batches:
+
 
 >!
 >- The access logs are packaged by hour by default. If there is no request to the domain name for the hour, no log package will be generated for this hour.
 >- For the same domain name, logs of accesses from within and outside the Chinese mainland are packaged separately. Log packages are named in the format of "[time]-[domain name]-[acceleration region]".
->- The access logs are collected from each CDN cache node, so the delay may vary. Generally, log packages can be queried and downloaded after about 30 minutes. Log packages will be added continuously and will stabilize after 2–3 hours.
->- The access log packages of a domain name are retained for 30 days. You can use an SCF function to transfer the log packages to COS as instructed in [Regularly Storing CDN Logs](https://intl.cloud.tencent.com/zh/document/product/228/36014) for permanent storage.
+>- The access logs are collected from each CDN cache node, so the delay may vary. Generally, the delay for querying and downloading log packages is about 30 minutes. Log packages will be added continuously and will stabilize after around 24 hours.
+>- The access log packages of a domain name are retained for 30 days. You can use an SCF function to transfer the log packages to COS as instructed in [Regularly Storing CDN Logs](https://intl.cloud.tencent.com/document/product/228/36014) for permanent storage.
 
 ### Fields
 The fields (from left to right) in the logs are listed as below:
@@ -114,7 +124,7 @@ The fields (from left to right) in the logs are listed as below:
 <td>Cache hit/miss. A hit in a CDN edge server or parent node will be marked as hit.</td>
 </tr>
 <td>16</td>
-<td>Port that connects the client and CDN nodes. Its value will be <code> -</code> if there is no port. </td>
+<td>A port connecting the client and CDN nodes. This field will be displayed as `-` if the port does not exist.</td>
 </tr>
 </tbody></table>
 
@@ -722,15 +732,16 @@ The fields (from left to right) in the logs are listed as below:
 
 ### Notes
 The traffic/bandwidth data calculated based on the number of bytes recorded in the fifth field of an access log is different from the billable CDN traffic/bandwidth data for the following reason:
-- Only application-layer data can be recorded in access logs. The traffic generated during actual data transfer over the network is around 5 to 15% more than application-layer traffic, including the following two parts:
-	- Consumption by TCP/IP headers: in TCP/IP-based HTTP requests, each packet has a maximum size of 1,500 bytes. This includes TCP and IP headers which account for 40 bytes and generate traffic during transfer but cannot be counted by the application layer. The overhead of this part is around 3%.
-	- TCP retransmission: during normal data transfer over the network, around 3% to 10% of packets are lost on the internet and retransmitted by the server. This type of traffic cannot be counted by the application layer, which accounts for 3% to 7% of the total traffic.
+- Only application-layer data can be recorded in access logs. During actual data transfer, the traffic generated over the network is around 5-15% more than the application-layer traffic, including the following two parts:
+	- Consumption by TCP/IP headers: in TCP/IP-based HTTP requests, each packet has a maximum size of 1,500 bytes and includes TCP and IP headers of 40 bytes, which generate traffic during transfer but cannot be counted by the application layer. The overhead of this part is around 3%.
+	- TCP retransmission: during normal data transfer over the network, around 3% to 10% of packets are lost on the Internet and retransmitted by the server. This type of traffic, which accounts for 3-7% of the total traffic, cannot be counted at the application layer.
 - As an industry standard, the billable traffic is the sum of the application-layer traffic and the overheads described above. Tencent Cloud CDN takes 10% as the overheads proportion, so the monitored traffic is around 110% of the logged traffic.
 
-## Use Cases
+## Examples
 
-### Sample Chinese mainland access log
+### Sample log of accesses from within the Chinese mainland
 ![](https://mc.qcloudimg.com/static/img/a3ef1ea051dc277872ec10a7135872df/logs.png)
 
-### Sample access log outside the Chinese mainland
+### Sample log of accesses from outside the Chinese mainland
 ![](https://main.qcloudimg.com/raw/b0612a5204abdbdc6a4364ad02972900.png)
+

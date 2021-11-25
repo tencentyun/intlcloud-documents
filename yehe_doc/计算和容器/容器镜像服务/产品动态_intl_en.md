@@ -1,9 +1,21 @@
->? This document introduces the updates to the Tencent Container Registry (TCR) Enterprise Edition. For the updates to Tencent Kubernetes Engine (TKE), see [Release Notes](https://intl.cloud.tencent.com/document/product/457/37358).
+>? This document introduces the updates to Tencent Container Registry (TCR) Enterprise Edition. For more information about the updates to Tencent Kubernetes Engine (TKE), see [Release Notes](https://intl.cloud.tencent.com/document/product/457/37358).
 
-## June 2021
+
+## July 2021
 
 <table>
 	<tr><th style="width: 25%;">Update</th><th style="width: 50%;">Description</th><th style="width: 25%;">Related Documents</th></tr>
+<tr><td>Introduced cross-master account instance synchronization</td><td>The instance synchronization feature supports cross-master account target instances and realizes cross-master account instance data synchronization.</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35494">Configuring Instance Synchronization</a></td></tr>
+<tr><td>Introduced image tag immutability</td><td>Supports enabling the tag immutability feature for images hosted in TCR, which ensures that images of the same tag will only be successfully pushed once.</td><td>Configuring Image Tag Immutability</a></td></tr>
+</table>
+
+
+## June 2021
+<table>
+<tr><th style="width: 25%;">Update</th><th style="width: 50%;">Description</th><th style="width: 25%;">Related Documents</th></tr>
+<tr><td>Enhanced TCR console features</td><td>The original instance list page has been upgraded to an instance management page, where you can view the instance overview, the latest TCR features and product updates.</td><td>-</td></tr>
+<tr><td>Introduced batch adding/editing for public network access allowlist</td><td>TCR console supports entering multiple allowlists at a single time or importing existing security group.</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35491">Public Network Access Control</a></td></tr>
+<tr><td>Introduced auto-parsing management and added multiple supported regions</td><td>Adds Nanjing, HongKong, Singapore, Frankfurt, Chengdu, and Chongqing as the supported regions.</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35492">Private Network Access Control</a></td></tr>
 <tr><td>Introduced garbage collection</td><td>Users can set up rules to remove unused image data of Enterprise Edition instances in batch, freeing up storage space. Dry runs are supported.</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/41073">Releasing COS Storage Capacity</a></td></tr>
 </table>
 

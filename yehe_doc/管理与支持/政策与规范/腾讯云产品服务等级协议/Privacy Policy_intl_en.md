@@ -2,35 +2,35 @@
 
 #### What type of personal information do we collect?
 
-We collect information regarding your use and purchase of our Services and your interactions with Tencent. You also provide information when you make an enquiry on our website or register to use our Services. Examples include your name and contact details. If you are the administrator of the account, you have the ability to provide access rights to other persons by including their email address in the service console. For information that you provide to us to set up your account, and that we collect and generate in managing your Services, we act as the controller. For information that you store using the Services (for example, content that you upload to store on our servers), we act as a processor. See below at [The Types of Personal Information we Collect and Process](#section-1.3A-where-we-are-a-data-controller) for more information.
+We collect information regarding your use and purchase of our Services and your interactions with Tencent. You also provide information when you make an enquiry on our website or register to use our Services. Examples include your name and contact details. If you are the administrator of the account, you have the ability to provide access rights to other persons by including their email address in the service console. For information that you provide to us to set up your account, and that we collect and generate in managing your Services, we act as the controller. For information that you store using the Services (for example, content that you upload to store on our servers), we act as a processor. See below at [The Types of Personal Information we Collect and Process](#1) for more information.
 
 #### How will we use the collected personal information?
 
-We will use the collected information to create and verify your account, enable password change, process payments, and to communicate with you. See below at [How we use Your Personal Information](#how-we-use-your-personal-information) for more information.
+We will use the collected information to create and verify your account, enable password change, process payments, and to communicate with you. See below at [How we use Your Personal Information](#2) for more information.
 
 #### Who do we share the collected personal information with?
 
-We share your information with our third party service providers, related group companies and as required by law. See below at [How we share and store your Personal Information](#how-we-share-and-store-your-personal-information) for more information.
+We share your information with our third party service providers, related group companies and as required by law. See below at [How we share and store your Personal Information](#3) for more information.
 
 #### Where do we process the collected personal information?
 
-Our servers may be located outside of the country you are located, for example in Mainland China. See below at [How we share and store your Personal Information](#how-we-share-and-store-your-personal-information) for more information.
+Our servers may be located outside of the country you are located, for example in Mainland China. See below at [How we share and store your Personal Information](#3) for more information.
 
 #### How long do we hold on to the collected personal information?
 
-Your information is retained so long as your account exists. After which, the information is deleted within a set time period, depending upon the type of personal information. See below at [Data Retention](#data-retention) for more information.
+Your information is retained so long as your account exists. After which, the information is deleted within a set time period, depending upon the type of personal information. See below at [Data Retention](#4) for more information.
 
 #### How do I exercise my rights over my information?
 
-You may have special rights over your information and how we can use it. These include how you can access the information, erasing the information, restricting how your information can be used, objecting to its use and getting a copy of your information. See below at [Your Rights](#your-rights) for more information.
+You may have special rights over your information and how we can use it. These include how you can access the information, erasing the information, restricting how your information can be used, objecting to its use and getting a copy of your information. See below at [Your Rights](#5) for more information.
 
 #### Dispute Resolution
 
-If you have any concerns or complaints, please contact us at cloudlegalnotices\@tencent.com.See below at [Contact & Complaints](#contact-.26amp.3B-complaints) for more information.
+If you have any concerns or complaints, please contact us at cloudlegalnotices\@tencent.com.See below at [Contact & Complaints](#6) for more information.
 
 #### How will we notify you of changes?
 
-If there are any significant changes to this privacy policy, we will provide a notice on our website.See below at [Updates & Changes](#updates-.26amp.3B-changes) for more information.
+If there are any significant changes to this privacy policy, we will provide a notice on our website.See below at [Updates & Changes](#7) for more information.
 
 #### Contact Information
 
@@ -46,7 +46,7 @@ Additional provisions with respect to certain jurisdictions are included in the 
 
 **Modules**
 
-The Modules set out below in the section [Modules](#modules) to this privacy policy shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module. See below at [Modules](#modules) for more information.
+The Modules set out below in the section [Modules](#8) to this privacy policy shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module. See below at [Modules](#8) for more information.
 
 ### INTRODUCTION
 
@@ -62,6 +62,7 @@ If you are located in the European Economic Area or Switzerland, the data contro
 
 Our data protection officer can be contacted at **cloudlegalnotices@tencent.com.**
 
+<span id="1"></span>
 ### SECTION 1: WHERE WE ARE A DATA CONTROLLER
 
 #### The Types of Personal Information We Collect and Process
@@ -88,6 +89,7 @@ For more information about the Cookies we use, please see our [Cookies Policy](h
 
 Our Service is not intended for children. Children must not use the Service for any purpose. We will not knowingly allow anyone under 16 to register for our Services and/or provide any personal identification information. If you are under 16, please do not sign up to use our Services or provide any information about yourself through the Service.
 
+<span id="2"></span>
 ### How We Use Your Personal Information
 
 We will use the information in the following ways and in accordance with the following legal bases:
@@ -108,6 +110,7 @@ We will use the information in the following ways and in accordance with the fol
 | Marketing Data: Name, Business Email, Phone Number, Company Name, Country/Region, Industry and Job Title (Mandatory) | We use this information: <br/>· to reserve you a place on our online events and webinars<br/>· for product notifications; and<br/>· for order confirmations. | We process this information with your consent. You can withdraw this consent at any time. |
 | Name, Email Address, Country Code, Phone Number, Company Name, Business Service, Inquiry (Mandatory) | We use this information: <br/>· to process your application for the COVID-19 Cloud Resources Support Program;<br/>· to respond to requests for our products; <br/>· for product notifications; and <br/>· for order confirmations.  | We process this information pursuant to our contract with you to provide the support. |
 
+<span id="3"></span>
 ### How We Share and Store Your Personal Information
 
 We may share your personal information with selected third parties in and outside your country, including:
@@ -138,12 +141,12 @@ Tencent may provide links to other third party websites as a convenience to you 
 
 Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal information, we cannot guarantee the security of the information transmitted to our site.
 
-
+<span id="4"></span>
 ### Data Retention
 
 We will retain your personal information as described below (except if otherwise required to be retained by applicable law).
 
-| Information                                                  | Retention Period                                             |
+| **Information**                                                | **Retention Period**                                             |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Location, Email Address,  Password, IP Address, User Agent (or website browser), Device ID, Tencent  Cloud ID, Verification Code, Mobile Number, Name, Address (including city and  post code) | Account data is held for  so long as an account exists. Information is erased within thirty (30) days  of the date the account is deleted. |
 | Credit card information(card number, name, expiration  date, security code) | Account data is held for so long as an account exists.  Information is erased within thirty (30) days of the date the account is  deleted. |
@@ -162,6 +165,7 @@ Personal information, which has fulfilled the purpose for which it was collected
 
 In the event that the processing and retention period have terminated, but personal information is required to be retained continuously for other reasons including for the purposes as prescribed under applicable laws, the relevant personal information will be stored and maintained separately from other types of personal information.
 
+<span id="5"></span>
 ### Your Rights
 
 **This section ("Your Rights") applies to users who are located in the European Economic Area.  The sub-section entitled "Access, Correction & Deletion" also applies to users who are located in Japan and Korea and Macau Special Administrative Region.**.
@@ -194,12 +198,14 @@ If you have opted-in to the receipt of direct marketing from us, we may send you
 
 We may from time to time send you service-related announcements when we consider it necessary to do so (such as when we temporarily suspend Tencent Cloud for maintenance, or security, privacy or administrative-related communications). You may not opt-out of these service-related announcements, which are not promotional in nature.
 
+<span id="6"></span>
 ### Contact & Complaints
 
 Questions, comments and requests regarding this policy are welcomed and should be addressed to our Privacy Officer at [**cloudlegalnotices@tencent.com.**](mailto:cloudlegalnotices@tencent.com)
 
 **In the event that you wish to make a complaint about how we process your personal information, please contact our Privacy Officer in the first instance at cloudlegalnotices@tencent.com and we will endeavour to deal with your request as soon as possible. This is without prejudice to your right to launch a claim with the data protection supervisory authority in the EU country in which you live or work where you think we have infringed data protection laws.**
 
+<span id="7"></span>
 ### Updates & Changes
 
 If we make any material changes to this policy, we will post the updated policy here and provide a notice on our website. Please check this page frequently to see any updates or changes to this policy.
@@ -232,7 +238,7 @@ a.  We delegate the processing of your personal information as described below, 
 | Adyen  Singapore Pte Ltd.</br>dpo@adyen.com             | Singapore                                                    | Encrypted  transmission                                | Credit  card number, name, valid period, CVV, address        | Payment  processor and risk management | 7  years                                                     |
 |Frensworkz Software Technology Co., Limited</br>support@frensworkz.com</div> |PRC |Online transmission  |<li>First and last name</li> <li>Title</li> <li>Role</li> <li>Position</li> <li>Industry</li> <li>Employer</li> <li>Contact information (company, department, role, email, phone, QQ number, physical mail address, website)</li> <li>Account, account name, account remark name</li> <li>ID data</li> <li>Billing address, billing country, billing street, billing city, billing state/province, billing zip/postal code</li> |Aggregate implementing services |Until completion of system support services by Frensworkz or for 20 months (whichever is earlier)|
 | Image  Frame Investment (HK) Limited </br>dataprotection@tencent.com                    | Hong  Kong                                                   | Online  transmission                                   | Mobile  number, SMS content                                  | SMS  Sending                           | Account data is held for so long as an account exists. SMS messages are  deleted 13 months after the SMS messages have been sent. |
-|Salesforce.com Singapore Pte. Ltd</br>https://www.salesforce.com/</br>ap/company/privacy/ |United States|Online transmission |<li>First and last name</li> <li>Title</li> <li>Role</li> <li>Position</li> <li>Industry</li> <li>Employer</li>  </li>Contact information (company, department, role, email, phone, QQ number, physical mail address, website)<li>Account, account name, account remark name</li><li>ID data</li><li>Billing address, billing country, billing street, billing city, billing state/province, billing zip/postal code</li>|Client relationship management |Please refer to the retention periods set out in “[Data Retention](#data-retention)”, subject to termination of the contractual relationship between us and Salesforce, in which case data will be deleted within 300 days from termination.|
+|Salesforce.com Singapore Pte. Ltd</br>https://www.salesforce.com/</br>ap/company/privacy/ |United States|Online transmission |<li>First and last name</li> <li>Title</li> <li>Role</li> <li>Position</li> <li>Industry</li> <li>Employer</li>  </li>Contact information (company, department, role, email, phone, QQ number, physical mail address, website)<li>Account, account name, account remark name</li><li>ID data</li><li>Billing address, billing country, billing street, billing city, billing state/province, billing zip/postal code</li>|Client relationship management |Please refer to the retention periods set out in “[Data Retention](#4)”, subject to termination of the contractual relationship between us and Salesforce, in which case data will be deleted within 300 days from termination.|
 | Tencent  Computing (Beijing) Co., Ltd.</br>meeting_info@tencent.com                      | People’s  Republic of China                                  | Online  transmission upon account creation and payment | **Mandatory**：  Date  of birth, name, mobile phone number, email address, location, address (including  city and post code), credit card information, type of business, password  **Optional:**  Photo  ID (e.g., driver’s license, passport  or business license) name and address | System  operation and maintenance    | Account  data is held for so long as an account exists. Information is erased within  thirty (30) days of the date the account is deleted. |
 
 ### Data Destruction
@@ -467,9 +473,9 @@ This right may be exercised upon your discovery and substantial proof of any of 
 *Consent*
 
 By consenting to this Privacy Policy, you consent to us:
- - collecting and processing your personal information as described in the section “[How We Use Your Personal Information](#how-we-use-your-personal-information)”;
+ - collecting and processing your personal information as described in the section “[How We Use Your Personal Information](#2)”;
  - sharing your personal information with third parties, companies within our corporate group, and a third party that acquires substantially all or substantially all of us or our business, as described in this Privacy Policy and for the purposes stated herein; and
- - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “[How We Store and Share Your Personal Information](#how-we-share-and-store-your-personal-information)”.
+ - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “[How We Store and Share Your Personal Information](#3)”.
 
 ### SAUDI ARABIA 
 You consent to the disclosure, transfer and export of your personal information outside of Saudi Arabia or any other jurisdiction in which you provided it.
@@ -535,17 +541,18 @@ Your personal information, if required to be disclosed to the law enforcement ag
 
 You have the right to access, correct, and erase the personal information we hold about you. You also have the right to withdraw your earlier provided consent to collect, store, process, use and disclose your personal information and to request us to stop providing your personal information to a third party.
 
+<span id="8"></span>
 ### MODULES
 Last updated: [2020-08-17]
 The following Modules shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module:
 1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36175).
-2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36786).
+2.[Anti-Cheat Expert](https://intl.cloud.tencent.com/document/product/1018/36786).
 3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37005).
 4.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37524).
 5.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36805).
 6.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38786).
-7.[Tencent Cloud MediaLive](https://intl.cloud.tencent.com/document/product/1048/38990).
-8.[Tencent Cloud MediaPackage](https://intl.cloud.tencent.com/document/product/1063/38993).
+7.[StreamLive](https://intl.cloud.tencent.com/document/product/1048/38990).
+8.[StreamPackage](https://intl.cloud.tencent.com/document/product/1063/38993).
 9.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40237).
 10.[Cloud Native Database TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41228).
 11.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41578).

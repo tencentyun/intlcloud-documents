@@ -1,4 +1,4 @@
-![](https://main.qcloudimg.com/raw/eb904bfddef689cd5d4382e69b728a12.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0ebdc0f0a97859cd5f41d425838a54ce.png)
 
 ## 准备工作
 
@@ -46,10 +46,8 @@
 3. 选择加速类型
 4. 其他选填项(后续可在域名管理中更改)
 
-![](https://main.qcloudimg.com/raw/6ec038f7f063b01cc1d68ecbfe4cb5c8.png）
 
-
-
+![](https://main.qcloudimg.com/raw/6ec038f7f063b01cc1d68ecbfe4cb5c8.png)
 ##### 配置项详解: 
 
 | 配置项   | 配置说明                                                     |

@@ -34,8 +34,8 @@ Tencent Cloudは、アクセラレーションサービスをより良く区別�
   </tr>
   <tr>
     <td>課金方式</td>
-    <td align="middle">トラフィック時間による課金<br>中国本土ユーザーはトラフィックパッケージサービスをご利用いただけます<br>詳細については、<a href="https://intl.cloud.tencent.com/document/product/228/2949">CDN課金説明</a></td>をご参照ください
-    <td align="middle">リクエスト回数+超過トラフィック課金<br>詳細については、<a href="https://intl.cloud.tencent.com/document/product/570/37505">ECDN課金説明</a></td>をご参照ください
+    <td align="middle">トラフィック時間による課金<br>中国本土ユーザーはトラフィックパッケージサービスをご利用いただけます<br>詳細については、<a href="https://intl.cloud.tencent.com/document/product/228/2949">CDN課金説明</a><をご参照ください/td>
+    <td align="middle">リクエスト回数+超過トラフィック課金<br>詳細については、<a href="https://intl.cloud.tencent.com/document/product/570/37505">ECDN課金説明</a>をご参照ください</td>
   </tr>
   <tr>
     <td>アクセラレーション方式</td>
@@ -52,7 +52,7 @@ Tencent Cloudは、アクセラレーションサービスをより良く区別�
 
 アクセラレーションしたいドメイン名をTencent Cloudに接続する場合、[CDNコンソール](https://console.cloud.tencent.com/cdn)のアクセラレーションタイプから2つの製品を選択できます。
 
-![](https://main.qcloudimg.com/raw/27887f0f21e2ad39b956d86754c99653.png)
+
 
 2種類のアクセラレーションタイプには、異なるアクセラレーションポリシーと課金基準が使用される点にご注意ください。詳細については、[CDN課金説明](https://intl.cloud.tencent.com/document/product/228/2949)および[ECDN課金説明](https://intl.cloud.tencent.com/document/product/570/37505)をご参照ください。
 
@@ -62,7 +62,7 @@ Tencent Cloudは、アクセラレーションサービスをより良く区別�
 
 ## CDN接続例
 
-![](https://main.qcloudimg.com/raw/b3d3c9207414b55253cbf80b6ad1146b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/af95ca14834f1fb163b4d98e17f721f6.png)
 
 ### CDNアクセラレーションを設定するユーザーのアクセス例
 
@@ -98,7 +98,7 @@ Tencent Cloudは、アクセラレーションサービスをより良く区別�
 - クライアント数が多いほど、ネットワーク帯域幅の料金が高くなります。
 - 越境ユーザーのアクセシビリティは低くなります。
 
-![](https://main.qcloudimg.com/raw/158ee8b568de3bed61ab3127f03ff232.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cb1dd401c8cbb0e3835d9e410c37c31d.png)
 
 >?以上のデータはあくまでも参考であり、複雑なネットワーク環境ではデータのばらつきがあっても正常です。
 
@@ -108,7 +108,7 @@ Tencent Cloudは、アクセラレーションサービスをより良く区別�
 - オリジンサーバーの帯域幅のストレスを軽減し、ネットワーク料金を削減します。
 - 全世界に分布している越境ノードは、越境アクセス時の体験をより良いものにします。
 
-![](https://main.qcloudimg.com/raw/25f2f688bc1e32b64cb3bb82e9839aa1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7460b780994e836d97d549b79211f517.png)
 
 >?以上のデータはあくまでも参考であり、複雑なネットワーク環境ではデータのばらつきがあっても正常です。
 
@@ -126,7 +126,7 @@ Tencent Cloudは、アクセラレーションサービスをより良く区別�
 - ルーティングプロセスには、品質の低下とリンクの輻輳という問題が発生します。
 - パブリックネットワーク環境は複雑であり、ユーザーの通常のカスタマーエクスペリエンスに影響を与えます。
 
-![](https://main.qcloudimg.com/raw/9f1584bf29f278e8b4a3a1653635b193.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3fcb611b6d5c37e63b692daab957350f.png)
 
 >?以上のデータはあくまでも参考であり、複雑なネットワーク環境ではデータのばらつきがあっても正常です。
 
@@ -137,7 +137,7 @@ Tencent Cloudは、アクセラレーションサービスをより良く区別�
 - ユーザーは、最も近いECDNノードにアクセスして、リソースアクセスやback-to-originなどの操作を行います。
 - ネットワーク全体のステータスをリアルタイムで監視し、最適なリンクを選択し、輻輳や低品質のリンクを回避します。
 
-![](https://main.qcloudimg.com/raw/d4102c625559ebb81452bac91dcc50b5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e8ef115ebb2a4f719454b23e33b2dd6b.png)
 
 >?以上のデータはあくまでも参考であり、複雑なネットワーク環境ではデータのばらつきがあっても正常です。
 
@@ -162,12 +162,6 @@ Tencent Cloudは、アクセラレーションサービスをより良く区別�
 >
 >ECDNドメイン名で発生する料金は、[ECDNの課金方式](https://intl.cloud.tencent.com/document/product/570/37505)に基づいて課金されます。
 
- 
-
-
-​	
-​	
-​	
 
 ## CDNを使用するのはいつですか。
 

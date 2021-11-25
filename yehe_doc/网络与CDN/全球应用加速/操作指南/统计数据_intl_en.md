@@ -1,26 +1,56 @@
-You can view the statistics of a connection under a specified project and its corresponding listener's statistics through statistics overview and connection monitoring.
+Log in to the [GAAP console](https://console.cloud.tencent.com/gaap), and select **Statistics** on the left sidebar. The **Statistics** page displays data in the following four dimensions: connection, connection group, listener, and origin server.
 
-## Statistics Overview
-### Selecting a connection
-Log in to the [Global Application Acceleration Platform console](https://console.cloud.tencent.com/gaap). Click **Statistics** on the left sidebar, select a project, connection group (which is "Single connection" by default), and then a connection to view its statistics.
-![](https://main.qcloudimg.com/raw/ee8855b279a91831d35c09f12633b4c0.png)
-<span id ="Selecting a statistical period"></span>
+## Connection
 
-### Selecting a statistical period
-Five common statistical periods are available: Today, Yesterday, Last 7 days, Last 15 days, and Last 30 days. You can also customize a specific start and end date as shown below:
-![](https://main.qcloudimg.com/raw/33c0e700386d4080509118db2cbc6b6a.png)
-<span id="Selecting a data type"></span>
-### Selecting a data type
-Supported connection data types are: bandwidth (outbound bandwidth and inbound bandwidth), packet volume (outbound packet volume and inbound packet volume), latency, packet loss rate, and concurrent connections.
-**Outbound bandwidth** refers to the bandwidth that goes from the origin server to the client. **Inbound bandwidth** refers to the bandwidth that goes from the client to the origin server.
+You can view the connection statistics, as shown below:
 
-## Connection Monitoring
-Log in to the [Global Application Acceleration Platform console](https://console.cloud.tencent.com/gaap), select **Statistics** on the left sidebar, select **Listener** for **Dimension**, and then select a target connection or connection group. Finally, select a listener to view its statistics as shown below:
-![](https://main.qcloudimg.com/raw/eda0e6e3d403386a64fbefc0a0944060.png)
+- **Connection Type**: defaults to single connection. You can also select a connection group that has been created before.
+- **Connection**: Select a connection of the **Access Management** or of the connection group.
+- **Data Type**: Select one or all data types (bandwidth, traffic, packet volume, concurrent connections, HTTP QPS, HTTPS QPS, latency, and packet loss rate).
+- **Time Period**: Select a time period.
+- **Time Granularity**: Select a time granularity. The maximum query time is 15 days if you select a 1-minute granularity, 31 days for a 5-minute granularity, 93 days for a 1-hour granularity and 186 days for a 1-day granularity.
 
-### Selecting a statistical period
-See the previous [Selecting a statistical period](#Selecting a statistical period) section.
+![](https://qcloudimg.tencent-cloud.cn/raw/4d3f9eaea3e2ca9442ec8cfabf0ad73f.jpg)
 
-### Supported statistical items
-See the previous [Selecting a data type](#Selecting a data type) section.
+## Connection Group
 
+You can view the connection group statistics, as shown below:
+
+- **Connection Group**: Select one or more connection groups.
+- **Data Type**: Select one or all data types (bandwidth and traffic).
+- **Time Period**: Select a time period.
+- **Time Granularity**: Select a time granularity. The maximum query time is 15 days if you select a 1-minute granularity, 31 days for a 5-minute granularity, 93 days for a 1-hour granularity and 186 days for a 1-day granularity.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/fce7e20b2dcaa474095a117380f41e85.jpg)
+
+## Listener
+
+You can view the listener statistics, as shown below:
+
+- **Connection/Connection Group**: Select a connection or connection group for the listener.
+- **Listener**: Select a listener.
+- **Data Type**: Select one or all data types (bandwidth, traffic, packet volume and concurrent connections).
+- **Time Period**: Select a time period.
+- **Time Granularity**: Select a time granularity. The maximum query time is 15 days if you select a 1-minute granularity, 31 days for a 5-minute granularity, 93 days for a 1-hour granularity and 186 days for a 1-day granularity.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/b1975214d1f82e89dcded5c4280d0bb9.jpg)
+
+## Origin Server
+
+You can view the statistics of the origin server’s health status, as shown below:
+
+- **Connection/Connection Group**: Select a connection or connection group for the origin server.
+- **Listener**: Select a listener for the origin server.
+- **Origin**: Select an origin server.
+- **Time Period**: Select a time period.
+- **Time Granularity**: Select a time granularity. The maximum query time is 15 days if you select a 1-minute granularity, and 31 days for a 5-minute granularity.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/75ce6339c8d51048a066fd3df481a642.jpg)
+
+## Exporting Data
+
+Enter the **Statistics** page, and click the download icon to export data.
+![](https://qcloudimg.tencent-cloud.cn/raw/7646c6fb333f613b5dc1059de73b9847.jpg)
+
+## Configuring an Alarm Policy
+Enter the [Statistics](https://console.cloud.tencent.com/gaap/data) page, and click **Configure Alarm** in the top right corner to configure an alarm policy. For more details, see [Access Cloud Monitoring](https://intl.cloud.tencent.com/document/product/608/17541).
