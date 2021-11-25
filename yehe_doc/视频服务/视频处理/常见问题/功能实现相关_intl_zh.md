@@ -16,7 +16,7 @@
 1. 登录 [视频处理控制台](https://console.cloud.tencent.com/mps/workflows/add)，单击左侧导航栏的 **工作流管理**，进入“工作流管理”界面。
 2. 单击 **创建工作流**，进入“创建工作流”页面。在创建工作流时，您需要设置工作流名称、触发 Bucket、触发目录、输出 Bucket、输出目录、事件通知及配置项。
 3. 在截图类型中选择时间点截图，截图的时间点需在工作流管理中配置，模板仅进行模板名称、图片尺寸的配置。
-![](https://main.qcloudimg.com/raw/c01fec09f1de228668aea704c7019328.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/751f3dd9ea1c03ed9dce47a83d13008b.png)
  - 截图模板：包含时间点截图、采样截图和雪碧图截图的截图方式，每种截图方式只能选择对应方式下已配置好的模板，时间点截图需要进行时间点的选取。如果已有模板不符合使用要求，则可以在 [模板设置 - 截图模板](https://console.cloud.tencent.com/mps/templates?tab=snapshot) 中重新创建新的模板。
  - 水印模板：每个转码模板最多可以支持添加四个水印。如果已有水印不符合使用要求，则可以在 [模板设置 - 水印模板](https://console.cloud.tencent.com/mps/templates?tab=watermark) 中重新创建新的模板。
 
@@ -68,8 +68,9 @@
 由于视频处理服务需要对您上传到对象存储 COS 存储桶中的文件进行下载、转码和上传等读写操作，所以您需要创建服务角色，给视频处理授予 COS 的相关操作权限。
 操作步骤：
 1. 进入 [视频处理控制台](https://console.cloud.tencent.com/mps)，单击左侧导航栏的 **授权管理**，进入“授权管理”页面。如果您还未授权，则需要单击 **前往访问管理**，跳转到控制台统一的权限管理页面进行授权操作。同意赋予视频处理权限后，将创建服务预设角色并授予视频处理相关权限。
-![](https://main.qcloudimg.com/raw/ab48bd3956a3a15ee6cba4c298d7aac7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/acd667fb5514bc01da3deaf0f84fbcc8.png)
 
 > ! 如果您未完成授权，则无法在视频处理控制台进行其他操作。
 2. 授权完成后，回到“授权管理”页面，显示已完成授权。如果单击 **取消授权**，则会跳转至 **访问管理**，删除 [服务角色](https://intl.cloud.tencent.com/document/product/598/19388)，即可解除视频处理对 COS 的操作权限。
-![](https://main.qcloudimg.com/raw/b806997e39a27738a083c2b28cc06839.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f880511bc91dfbda8bde68990c93adcc.png)
+

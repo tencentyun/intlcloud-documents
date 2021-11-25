@@ -104,7 +104,7 @@ MPS 目前暂不支持批量下载视频。
 [](id:q9)
 ### 如何设置旧转码模版的分辨率？
 若您旧转码模版的高分辨率为720p，宽等比缩放。设置时选择按宽高设置，高度填720px，宽度填0即可，如下图：
-![](https://main.qcloudimg.com/raw/aeafa3229ebf271f58614b8e6be5daa0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8f506fb7b469cc022ae910fce6ee3606.png)
 
 [](id:q10)
 ### 触发目录和转码输出目录相同，是否会引发循环触发？
@@ -121,5 +121,5 @@ MPS 目前暂不支持批量下载视频。
 - 各转码类型情况：展示的是该转码类型下，该时间段的各转码分辨率的总趋势。
 - 各转码详情：展示的是该转码类型下，该时间段的转码详情，包含转码分辨率、转码时长及转码任务数。
 - 各转码占比：展示的该转码类型下，不同分辨率的转码占比。
-  ![image.png](https://img-cdn.wezhuiyi.com/yibot/456786921/images/k9kl00c3xyjtpz5nmj5mne.png)
+  ![image.png](https://qcloudimg.tencent-cloud.cn/raw/6df46aa04cdf2518580a166e06a4427b.png)
 

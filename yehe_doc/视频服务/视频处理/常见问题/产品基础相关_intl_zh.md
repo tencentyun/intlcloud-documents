@@ -80,7 +80,7 @@ MPS 按需将云存储中的音视频文件转码为适合在 OTT、PC 或移动
 [](id:f13)
 ### 工作流能同时监听多个目录吗？
 视频处理不能设置多个输出目录，但是能设置多个不同的输出 bucket，或者您可以设置多个工作流，来实现多输出目录的功能。
-![](https://main.qcloudimg.com/raw/9b8ba0e8dbdce579da1bea454e2900d7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/684c56181bcd670c616ab1b1f252281a.png)
 
 [](id:f14)
 ### 是否支持视频切片？
