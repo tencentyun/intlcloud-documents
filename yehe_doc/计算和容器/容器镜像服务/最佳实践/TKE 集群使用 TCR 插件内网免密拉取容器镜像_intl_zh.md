@@ -15,13 +15,13 @@
 #### 步骤1：创建命名空间
 新建的 TCR 企业版实例内无默认命名空间，且无法通过推送镜像自动创建。请参考 [创建命名空间](https://intl.cloud.tencent.com/document/product/1051/35487) 按需完成创建。
 建议命名空间名使用项目或团队名，本文以 `docker` 为例。创建成功后如下图所示：
-![](https://main.qcloudimg.com/raw/305c330e772b5e9547625e0ae77e7882.png)
+![](https://main.qcloudimg.com/raw/a28fba305ce10d5b5171bd8784858b1d.png)
 
 #### 步骤2：创建镜像仓库（可选）
 容器镜像托管在具体的镜像仓库内，请参考 [创建镜像仓库](https://intl.cloud.tencent.com/document/product/1051/35488) 按需完成创建。镜像仓库名称请设置为期望部署的容器镜像名称，本文以 `getting-started` 为例。创建成功后如下图所示：
 >?通过 docker cli 或其他镜像工具，例如 jenkins 推送镜像至企业版实例内时，若镜像仓库不存在，将会自动创建，无需提前手动创建。
 >
-![](https://main.qcloudimg.com/raw/b556fb9a5f6fc39250a2a279084842c3.png)
+![](https://main.qcloudimg.com/raw/dcdb8203395941831ca08c415c5b5544.png)
 
 #### 步骤3：推送容器镜像
 您可通过 docker cli 或其他镜像构建工具（例如 jenkins）推送镜像至指定镜像仓库内，本文以 docker cli 为例。此步骤需要您使用一台安装有 Docker 的云服务器或物理机，并确保访问的客户端已在 [配置网络访问策略](https://intl.cloud.tencent.com/document/product/1051/35490) 定义的公网或内网允许访问范围内。
@@ -36,10 +36,7 @@ docker push demo-tcr.tencentcloudcr.com/docker/getting-started:latest
 ```
 推送成功后，即可前往控制台的 “[镜像仓库](https://console.cloud.tencent.com/tcr/repository)” 页面，选择仓库名并进入详情页面查看。
 
-<span id="deployTKE"></span>
-
-### 配置 TKE 集群访问 TCR 实例
-
+### 配置 TKE 集群访问 TCR 实例[](id:deployTKE)
 TCR 企业版实例支持网络访问控制，默认拒绝全部来源的外部访问。您可根据 TKE 集群的网络配置，选择通过公网或内网访问指定实例，拉取容器镜像。若 TKE 集群与 TCR 实例部署在同一地域，建议通过内网访问方式拉取容器镜像，该方式可提升拉取速度，并节约公网流量成本。
 #### 步骤1：在 TCR 实例中关联集群 VPC
 为保障用户数据安全，新建的 TCR 实例默认拒绝全部来源的访问。为允许指定 TKE 集群可访问 TCR 实例拉取镜像，需将集群所在的 VPC 关联至 TCR 实例，并配置相应的内网域名解析。
@@ -53,22 +50,24 @@ TCR 企业版实例支持网络访问控制，默认拒绝全部来源的外部�
 如果当前您正在使用容器服务 TKE，请参考 [TCR 说明](https://intl.cloud.tencent.com/document/product/457/38710) 在 TKE 集群中安装 TCR 插件，并在 “TCR组件参数设置”窗口中勾选"启用内网解析功能"。该插件可自动为集群内节点配置关联 TCR 实例的内网解析，可实现内网免密拉取实例内镜像。
 插件安装完成后，集群将具备内网免密拉取该关联实例内镜像的能力，无需额外配置。
 
-
-
->? 当前 TCR 组件暂只支持 K8S 版本为1.14、1.16、1.18的集群，如集群版本暂不支持，请采用手动配置方式。
+<dx-alert infotype="explain" title="">
+当前 TCR 组件暂只支持 K8S 版本为1.14、1.16、1.18的集群，如集群版本暂不支持，请采用手动配置方式。
+</dx-alert>
 
 
 
 ### 使用 TCR 实例内容器镜像创建工作负载
-1. 登录容器服务控制台，选择左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster)】。
+1. 登录容器服务控制台，选择左侧导航栏中的**[集群](https://console.cloud.tencent.com/tke2/cluster)**。
 2. 选择需要创建工作负载的集群 ID，进入集群详情页。
-3. 在集群详情页面，选择左侧【工作负载】>【Deployment】。
-4. 进入“Deployment” 页面，并单击【新建】。
+3. 在集群详情页面，选择左侧**工作负载**>**Deployment**。
+4. 进入“Deployment” 页面，并单击**新建**。
 5. 进入“新建Workload” 页面，根据以下主要参数信息，创建工作负载。
  - **命名空间**：根据需要选择。请确认安装 TCR 插件时，配置支持免密拉取的命名空间已包含此时需要的命名空间。
  - **实例内容器**：
-    - **镜像**：单击【选择镜像】，并在弹出的“选择镜像”窗口中，选择 TCR 实例内容器镜像。
+    - **镜像**：单击**选择镜像**，并在弹出的“选择镜像”窗口中，选择容器镜像服务企业版，再根据需要选择地域、实例和镜像仓库。如下图所示：
+    ![](https://main.qcloudimg.com/raw/ca9b67d0d180e42fb08b17202cbb685b.png)
+    - **镜像版本**：选择好镜像后，单击**选择镜像版本**，在弹出的“选择镜像版本”窗口中，根据需要选择该镜像仓库的某个版本。若不选择则默认为latest。
  - **镜像访问凭证**：如集群已安装 TCR 扩展组件，无需显式配置。**请避免选择其他访问凭证，选择其他访问凭证将导致此工作负载无法加载 TCR 插件的免密拉取配置。**
-6. 完成其他参数设置后，单击【创建workload】，查看该工作负载的部署进度。
+6. 完成其他参数设置后，单击**创建workload**，查看该工作负载的部署进度。
 部署成功后，可在 “Deployment” 页面查看该工作负载的“运行/期望Pod数量”为“1/1”。
 
