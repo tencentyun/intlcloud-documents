@@ -10,6 +10,12 @@
 </thead>
 <tbody>
 <tr>
+<td>新增 hadoop 集群版本 EMR-V3.3.0</td>
+<td> 新增 Hadoop3.x 标准发行版 EMR-V3.3.0，支持 HBase2.3.5、Phoenix 5.1.2、Kudu1.15.0、Hue4.10.0、Hudi0.8.0、Tez0.10.1、Livy0.8.0、Ganglia3.7.2、Kyuubi1.1.0、LDAP2.4.44 </td>
+<td>2021-09-28</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+<tr>
 <td>新增监控指标</td>
 <td> 丰富 Alluxio 服务监控指标，新增 CosRanger 监控指标</td>
 <td>	2021-09-15</td>
@@ -22,7 +28,6 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
 
 
 ## 2021年08月
