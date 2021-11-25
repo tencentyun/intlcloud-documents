@@ -16,7 +16,10 @@ On the domain name configuration page, you can modify the following defense sett
 
 ### Web attack defense
 
-Based on Tencent's massive web attack samples, SCDN supports identifying good access requests from bad ones and protecting your origin server against web attacks including SQL injection, XSS attacks and local file inclusion in real time. ![](https://tva1.sinaimg.cn/large/008i3skNgy1gvbm3td1w8j611g05s3yl02.jpg)![](https://tva1.sinaimg.cn/large/008i3skNgy1gvbm4ehxhzj60h308haa802.jpg)
+Based on Tencent's massive web attack samples, SCDN supports identifying good access requests from bad ones and protecting your origin server against web attacks including SQL injection, XSS attacks and local file inclusion in real time. 
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gvbm3td1w8j611g05s3yl02.jpg)
+
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gvbm4ehxhzj60h308haa802.jpg)
 
 - You can enable web attack defense and set defense levels as needed.
 - Defense mode: supports **Block** and **Observe** modes. The **Block** mode enables SCDN nodes to detect web attack requests and block them based on your setting, returning the default blocking page and a 403 status code, or redirecting the requests to your custom blocking page.
@@ -25,7 +28,9 @@ Based on Tencent's massive web attack samples, SCDN supports identifying good ac
 
 ### Custom defense policy
 
-SCDN allows you to create complex access control rules by specifying fields, such as IP, URI, Referer, User-Agent and Params, to filter requests. You can also create and combine multiple conditions with the condition logic in a single rule depending on the business scenario. ![](https://tva1.sinaimg.cn/large/008i3skNgy1gvblp56xkij60wf06k74l02.jpg)![](https://tva1.sinaimg.cn/large/008i3skNgy1gvblq4rg28j60l90cqt9602.jpg)
+SCDN allows you to create complex access control rules by specifying fields, such as IP, URI, Referer, User-Agent and Params, to filter requests. You can also create and combine multiple conditions with the condition logic in a single rule depending on the business scenario. 
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gvblp56xkij60wf06k74l02.jpg)
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gvblq4rg28j60l90cqt9602.jpg)
 
 1. Adding and modifying defense rules
    - A maximum of five custom rules can be created and each rule can have up to five matching conditions. These rules and conditions are combined with OR and run in order from top to bottom. **If any of these conditions is met, the access is blocked**.
