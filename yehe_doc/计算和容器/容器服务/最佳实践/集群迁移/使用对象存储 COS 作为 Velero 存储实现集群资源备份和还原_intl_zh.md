@@ -207,5 +207,4 @@ kubectl delete crds -l component=velero
 
 - [Velero 官网](https://velero.io/)
 - [Restic 工具介绍](https://github.com/restic/restic)
-- [Minio 安装](https://github.com/minio/charts)
 - [restic 限制](https://velero.io/docs/v1.5/restic/#limitations)
