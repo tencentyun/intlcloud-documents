@@ -528,7 +528,7 @@ function(err, data) { ... }
 
 ```
 
-| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型    |
+| 参数名 | 参数描述                                                     | 类型    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object  |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number  |
@@ -586,7 +586,7 @@ cos.optionsObject({
 function(err, data) { ... }
 ```
 
-| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型    |
+| 参数名 | 参数描述                                                     | 类型    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object  |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number  |
@@ -803,7 +803,7 @@ deleteFiles();
 function(err, data) { ... }
 ```
 
-| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型        |
+| 参数名 | 参数描述                                                     | 类型        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object      |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200，204，403，404等             | Number      |
@@ -919,7 +919,7 @@ cos.multipartList({
 function(err, data) { ... }
 ```
 
-| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型        |
+| 参数名 | 参数描述                                                     | 类型        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object      |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
@@ -1163,7 +1163,7 @@ cos.multipartListPart({
 function(err, data) { ... }
 ```
 
-| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型        |
+| 参数名 | 参数描述                                                     | 类型        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object      |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
@@ -1337,7 +1337,7 @@ cos.uploadFile({
 
 #### 参数说明
 
-| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型      | 是否必填 |
+| 参数名 | 参数描述                                                     | 类型      | 是否必填 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String    | 是   |
 | Region                                                       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String    | 是   |
@@ -1414,7 +1414,7 @@ cos.sliceUploadFile({
 
 #### 参数说明
 
-| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型      | 是否必填 |
+| 参数名 | 参数描述                                                     | 类型      | 是否必填 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String    | 是   |
 | Region                                                       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String    | 是   |
