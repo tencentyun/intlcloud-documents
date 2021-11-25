@@ -49,4 +49,3 @@ You can view the rules on the “Tag Immutability” page after creation, and ta
 - **Configuration**: you can reconfigure the instance tag immutability rule but cannot modify the namespace for which it takes effect.
 - **Delete**: delete the tag immutability rule under the instance.
 
-
