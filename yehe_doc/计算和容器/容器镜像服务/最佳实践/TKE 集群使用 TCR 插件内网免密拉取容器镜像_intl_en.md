@@ -51,7 +51,7 @@ If you are using TKE, refer to [TCR](https://intl.cloud.tencent.com/document/pro
 After the add-on is installed, the cluster can pull images from the associated instance without needing a password through a private network.
 
 <dx-alert infotype="explain" title="">
-Currently, the TCR add-on only supports clusters in Kubernetes 1.14, 1.16, and 1.18. If you are using another cluster version, manually configure the access method.
+Currently, the TCR add-on only supports clusters in Kubernetes1.12, 1.14, 1.16, 1.18 and 1.20. If you are using another cluster version, manually configure the access method.
 </dx-alert>
 
 
