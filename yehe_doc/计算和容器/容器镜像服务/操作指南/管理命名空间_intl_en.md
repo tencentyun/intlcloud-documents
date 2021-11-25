@@ -9,7 +9,7 @@ TCR Enterprise Edition instances are exclusive for an enterprise. Therefore, you
 
 Before creating and managing a namespace in a TCR Enterprise Edition instance, complete the following preparations:
 - [Create an Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/35486).
-- If you are using a sub-account, you must have granted the sub-account operation permissions for the corresponding instance. For more information, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248).
+- If you are using a sub-account, you must have granted the sub-account required permissions for the instance. For more information, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248).
 
 ## Directions
 ### Creating a namespace
@@ -17,13 +17,13 @@ Before creating and managing a namespace in a TCR Enterprise Edition instance, c
 2. On the "Namespace" page, you can view the namespace list of the current instance. To change the instance, select the desired instance name from the **Instance** drop-down list at the top of the page.
 3. Click **Create**. In the "Create a Namespace" window, configure the name and access level of the namespace, as shown in the figure below.
 ![](https://main.qcloudimg.com/raw/48fbf6c0aeafc5614e67fde1bbc0c531.png)
- - **Associated Instance**: currently selected instance, to which the created namespace belongs.
- - **Name**: name of the namespace. It is a string of 2-30 characters. The name can only contain lowercase letters, number, and separators, which are periods (.), underscores (_), and hyphens (-). It cannot start or end with a separator or contain several consecutive separators. We recommend that you set this parameter to the name of an enterprise team or product project. You can also set this parameter to a personal name and use this namespace for personal testing.
+ - **Associated Instance**: the currently selected instance, to which the created namespace belongs.
+ - **Name**: the namespace name. It is a string of 2-30 characters. The name can only contain lowercase letters, number, and separators, which are periods (.), underscores (_), and hyphens (-). It cannot start or end with a separator or contain several consecutive separators. We recommend that you set this parameter to the name of an enterprise team or product project. You can also set this parameter to a personal name and use this namespace for personal testing. The namespace names must be unique in an instance.
  - **Access Level**: you can select either "Private" or "Public". The default value is "Private".
  If you set this parameter to "Public", all image repositories and Helm charts in the namespace are public repositories. If anonymous access is also enabled for this instance (which is enabled by default), any clients in the allowlist can pull images and Helm charts without having to log in. You can modify **Access Level** after the namespace is created.
 4. Click **Confirm** to create the namespace.
-After the namespace is created, you can view the namespace on the "Namespace" page. Then, you can perform the following operations to manage the namespace, as shown in the figure below.
-![](https://main.qcloudimg.com/raw/f9e8a249b7d79068cea2a83d1cdb44fa.png)
+5. After the namespace is created, you can view the namespace on the "Namespace" page. Then, you can perform the following operations to manage the namespace, as shown in the figure below.
+    ![](https://main.qcloudimg.com/raw/f9e8a249b7d79068cea2a83d1cdb44fa.png)
 
 
 ### Changing the access level
