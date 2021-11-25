@@ -1,4 +1,4 @@
-Saat Anda perlu mengenkripsi data yang disimpan di disk cloud karena alasan keamanan atau kepatuhan bisnis, Anda dapat mengaktifkan enkripsi disk cloud dan menggunakan infrastruktur yang disediakan oleh [Layanan Manajemen Kunci/Key Management Service (KMS) Tencent Cloud](https://cloud.tencent.com/product/kms) untuk melindungi privasi data secara efektif.
+Saat Anda perlu mengenkripsi data yang disimpan di disk cloud karena alasan keamanan atau kepatuhan bisnis, Anda dapat mengaktifkan enkripsi disk cloud dan menggunakan infrastruktur yang disediakan oleh [Layanan Manajemen Kunci/Key Management Service (KMS) Tencent Cloud](https://intl.cloud.tencent.com/product/kms) untuk melindungi privasi data secara efektif.
 >Fitur ini sedang dalam pengujian beta.Untuk menggunakannya, Anda perlu [mengirimkan tiket](https://console.cloud.tencent.com/workorder/category) untuk mendaftar.
 >
 
