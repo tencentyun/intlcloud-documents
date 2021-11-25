@@ -2,14 +2,13 @@
 云数据库 Redis 提供全方位的自定义告警功能，当指标数据超过一定的阈值时会通过短信进行告警，本文为您介绍在云数据库 Redis 控制台设置告警的过程。
 
 ## 操作步骤
-1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，单击以下图标进入告警页面。
+1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击以下图标进入告警页面。
 ![](https://main.qcloudimg.com/raw/5cac67565d4e08dbe7dd7e3b8726f027.png)
-2. 在告警页面单击【配置告警】。
+2. 在告警页面单击**配置告警**。
 ![](https://main.qcloudimg.com/raw/ee9553aef95de034ecb4c505a573d75f.png)
-3. 在新建策略页配置参数，更多告警服务介绍请参见 [告警服务概述](https://intl.cloud.tencent.com/document/product/248/6126)。
+3. 在新建策略页，配置参数，更多告警介绍请参见 [告警概述](https://intl.cloud.tencent.com/document/product/248/6126) ，确认无误后，单击**完成**。
  - 策略类型：选择云数据库 Redis。
  - 告警对象：选择需要关联的实例对象。
  - 告警渠道：设置接收组，选择短信接收的对象。
 ![](https://main.qcloudimg.com/raw/e164f26773457a00ca7e153383f51390.png)
-4. 确认无误后，单击【完成】。
 
