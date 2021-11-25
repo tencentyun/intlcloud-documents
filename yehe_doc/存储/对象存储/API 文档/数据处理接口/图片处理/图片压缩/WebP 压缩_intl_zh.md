@@ -20,7 +20,11 @@ COS 通过数据万象 imageMogr2 接口提供 WebP 压缩功能。
 - 上传时处理
 - 云上数据处理
 
->?WebP 压缩为付费服务，费用同基础图片处理，由数据万象收取，具体费用请参见数据万象图片处理费用。
+>?
+>- WebP 压缩为付费服务，费用同基础图片处理，由数据万象收取，具体费用请参见数据万象 [图片处理费用](https://intl.cloud.tencent.com/document/product/1045/33431)。
+>- 图片转换为 WebP 格式后，部分浏览器无法读取 WebP 图片的 exif 信息，导致没有旋转。您可参见 [旋转](https://intl.cloud.tencent.com/document/product/436/36368) 文档，增加 auto-orient 参数，对原图旋转后再进行压缩。
+
+
 
 ## 接口示例
 

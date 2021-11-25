@@ -22,7 +22,7 @@ This document provides an overview of APIs and SDK code samples related to simpl
 | :----------------------------------------------------------- | :------------- | :----------------------------------- |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload. |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading an object in parts | Uploads an object in parts. |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads an object in multiple parts. |
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying an object part | Copies a part of an object. |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a specified multipart upload. |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an object. |
@@ -39,7 +39,7 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 ## Simple Operations
 
-### Querying objects
+### Query objects
 
 #### Description
 
@@ -165,7 +165,7 @@ listFolder();
 | Delimiter | A separating symbol (usually `\`) used to group object keys. The identical paths between a prefix or, if no prefix is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix. All common prefixes will be listed. | String | No |
 | Marker | Marks the starting object key. Object key entries will be returned in UTF-8 lexicographical order starting from the first object key after the marker | String | No |
 | MaxKeys | Maximum number of entries returned in a single response. Defaults to `1000`. | String | No |
-| encoding-type | Indicates the encoding method of the returned value. Valid value: `url`, which means that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded as `Tencent%20Cloud`. | String | No |
+| EncodingType | Encoding type of the returned value. Valid value: `url`, meaning that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded to `%E8%85%BE%E8%AE%AF%E4%BA%91`. | String | No |
 
 #### Callback function description
 
@@ -237,6 +237,29 @@ cos.putObject({
     Region: 'ap-beijing',                                  /* Required */
     Key: 'a/', /*Required*/
     Body: '',
+}, function(err, data) {
+    console.log(err || data);
+});
+```
+
+Uploading an object (limiting single-URL speed):
+
+>? For more information about the speed limits on object uploads, please see [Single-URL Speed Limits](https://intl.cloud.tencent.com/document/product/436/34072).
+
+[//]: # (.cssg-snippet-put-object-traffic-limit)
+```js
+cos.putObject({
+    Bucket: 'examplebucket-1250000000', /* Required */
+    Region: 'COS_REGION',     /* Bucket region. Required */
+    Key: 'exampleobject', /* Required */
+    StorageClass: 'STANDARD',
+    Body: fileObject, // Upload the file object.
+    Headers: {
+      'x-cos-traffic-limit': 819200, // The speed range is 819200 to 838860800, that is 100 KB/s to 100 MB/s. If the value is not within this range, 400 will be returned.
+    },
+    onProgress: function(progressData) {
+        console.log(JSON.stringify(progressData));
+    }
 }, function(err, data) {
     console.log(err || data);
 });
@@ -370,7 +393,7 @@ function(err, data) { ... }
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
 | - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Headers | Object |
-| - ETag | Returns the MD5 checksum of the object. The value of `ETag` can be used to check whether the object was corrupted during upload. <br>For example, `"09cba091df696af91549de27b8e7d0f6"`. **Note: double quotation marks are required at the beginning and the end of the `ETag` value** | string|
+| - ETag | Returns the MD5 checksum of the object. The value of `ETag` can be used to check whether the object was corrupted during upload. <br>For example, `"09cba091df696af91549de27b8e7d0f6"`. **Note: double quotation marks are required at the beginning and the end of the `ETag` value string** |
 | - Location | Creates an object's access domain name for external networks | String |
 | - VersionId | The version ID of the returned object in a versioning-enabled bucket | String |
 
@@ -423,7 +446,7 @@ function(err, data) { ... }
 | - ETag | MD5 checksum of the object. The value of `ETag` can be used to check whether the object was corrupted during the upload. <br>Example: `"09cba091df696af91549de27b8e7d0f6"` <br>**Note that double quotation marks are required at the beginning and the end**. | String |
 | - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  |
 
-### Downloading an object
+### Download an object
 
 This API (`GET Object`) is used to get the content, in string format, of a specified file in a bucket.
 
@@ -449,6 +472,24 @@ cos.getObject({
     Region: 'ap-beijing',                                  /* Required */
     Key: 'picture.jpg',              /* Required */
     Range: 'bytes=1-3', /*Optional*/
+}, function(err, data) {
+    console.log(err || data.Body);
+});
+```
+
+Downloading an object (limiting single-URL speed):
+
+>?For more information about the speed limits on object downloads, please see [Single-URL Speed Limits](https://intl.cloud.tencent.com/document/product/436/34072).
+
+[//]: # (.cssg-snippet-get-object-traffic-limit)
+```js
+cos.getObject({
+    Bucket: 'examplebucket-1250000000', /* Required */
+    Region: 'COS_REGION',     /* Bucket region. Required */
+    Key: 'exampleobject', /* Required */
+    Headers: {
+      'x-cos-traffic-limit': 819200, // The speed range is 819200 to 838860800, that is 100 KB/s to 100 MB/s. If the value is not within this range, 400 will be returned.
+    },
 }, function(err, data) {
     console.log(err || data.Body);
 });
@@ -571,13 +612,30 @@ You can use this API to create a copy of an object, modify an object’s metadat
 
 #### Example
 
+Copying an object:
+
 [//]: # (.cssg-snippet-copy-object)
 ```js
 cos.putObjectCopy({
     Bucket: 'examplebucket-1250000000', /*Required*/
-    Region: 'ap-beijing',                                  /* Required */
-    Key: 'picture.jpg',                                            /* Required */
-    CopySource: 'test-1250000000.cos.ap-guangzhou.myqcloud.com/2.jpg', /* Required */
+    Region: 'COS_REGION',     /* Bucket region. Required */
+    Key: 'exampleobject', /*Required*/
+    CopySource: 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject', /*Required*/
+}, function(err, data) {
+    console.log(err || data);
+});
+```
+
+Modifying the object storage class:
+
+[//]: # (.cssg-snippet-copy-object)
+```js
+cos.putObjectCopy({
+    Bucket: 'examplebucket-1250000000', /*Required*/
+    Region: 'COS_REGION',     /* Bucket region. Required */
+    Key: 'sourceObject',                                            /* Key must be the same as that in CopySource (required) */
+    CopySource: 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject', /*Required*/
+    StorageClass: 'ARCHIVE',  /* Set the storage class to ARCHIVE. */
 }, function(err, data) {
     console.log(err || data);
 });
@@ -619,7 +677,7 @@ function(err, data) { ... }
 | - headers | Headers | Object |
 | - ETag | MD5 checksum of the object, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end.** | String |
 | - LastModified | Last modified time of the object, for example, `2017-06-23T12:33:27.000Z` | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | 
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | | String  |
 
 ### Deleting an object
 
@@ -646,7 +704,7 @@ cos.deleteObject({
 | --------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
+| Key | ObjectKey (object name) is the unique ID of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | VersionId | Version ID of the object or delete marker to delete | String | No |
 
 #### Callback function description
@@ -819,7 +877,7 @@ function(err, data) { ... }
 | - UploadIdMarker | Specifies the `UploadId` where the list starts. | String |
 | - NextKeyMarker | If the returned list is truncated, the `NextKeyMarker` returned will be the starting point of the subsequent list. | String |
 |-  NextUploadIdMarker |  The `UploadId` after which the next returned list begins if the list is truncated | String |
-| MaxUploads | Sets the maximum number of entries returned. Value range: 1-1000 | String | 
+| MaxUploads | Sets the maximum number of entries returned. Value range: 1-1000 | String | No |
 | - IsTruncated | Indicates whether returned objects are truncated. Valid value: `true` or `false` | String|
 | - Prefix | Matching prefix for object keys. This parameter specifies that the response can contain only object keys with the specified prefix. | String |
 | - Delimiter | Separating symbol used to group object keys. It is usually `/`. The identical paths between `Prefix` or, if no `Prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix. All common prefixes will be listed. | String |
@@ -1069,7 +1127,7 @@ function(err, data) { ... }
 | NextPartNumberMarker  | The part after which the next returned list begins if the list is truncated    | String    |
 | - MaxParts | Maximum number of entries returned at a time | String |
 | - IsTruncated | Indicates whether the returned list is truncated. Valid values: `true`, `false` | String |
-| - Part |  Part information list | ObjectArray |
+| - Part | Array | Part information list | ObjectArray |
 | - - PartNumber | Part number | String |
 | - - LastModified | Last modified time of a part | String |
 | - - ETag | MD5 checksum of a part | String |
@@ -1212,7 +1270,7 @@ cos.restoreObject({
 
 #### Parameter description
 
-| Parameter   | Description  | Type | Required |
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | Description  | Type | Required |
 | ------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
@@ -1310,7 +1368,7 @@ cos.putObjectAcl({
 | AccessControlPolicy | Sets the object's ACL attributes. | Object | No |
 | - Owner | Information about the object owner | Object | No |
 | - - - ID | Object owner ID in the format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, `&lt;OwnerUin>` and `&lt;SubUin>` have the same value | String | No |
-| - - DisplayName | Name of the object owner | String |No |
+| - - DisplayName | Name of the object owner | String |
 | - Grants | A list of information about the grantee and granted permissions | ObjectArray | No |
 | - - Permission | Permission granted. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | No |
 | - - Grantee | Information about the grantee | Object | No |
@@ -1430,7 +1488,7 @@ wx.chooseMessageFile({
 
 #### Parameter description
 
-| Parameter  | Description                                                     | Type      | Required |
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type      | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
@@ -1585,14 +1643,14 @@ cos.sliceCopyFile({
 
 #### Parameter description
 
-| Parameter                 | Description | Type | Required |
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 | Description | Type | Required |
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | CopySource | URL of the source object. You can specify a previous version using the URL parameter `?versionId=<versionId>`. | String | Yes |
 | ChunkSize | Size (in bytes) of each part in the multipart copy. Defaults to `1048576` (1 MB). | Number | No |
-| SliceSize | File size threshold in bytes, 5 GB by default. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No | 
+| SliceSize | File size threshold in bytes, 5 GB by default. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No | | Number | No |
 | onProgress | Callback for the upload progress, whose parameter is `progressData` | Function | No |
 | - progressData.loaded | Size of the uploaded parts, in bytes | Number | No |
 | - progressData.total | Size of the entire file, in bytes | Number | No |

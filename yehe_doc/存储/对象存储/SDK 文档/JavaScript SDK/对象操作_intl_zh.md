@@ -210,7 +210,7 @@ PUT Object 接口可以上传一个对象至指定存储桶中。该操作需要
 
 #### 使用示例
 
-简单上传文件，适用于小文件上传。
+简单上传文件，适用于小文件上传：
 
 [//]: # (.cssg-snippet-put-object)
 ```js
@@ -293,6 +293,29 @@ cos.putObject({
     Region: 'COS_REGION',     /* 存储桶所在地域，必须字段 */
     Key: folder + 'exampleobject',              /* 必须 */
     Body: fileObject, // 上传文件对象
+    onProgress: function(progressData) {
+        console.log(JSON.stringify(progressData));
+    }
+}, function(err, data) {
+    console.log(err || data);
+});
+```
+
+上传对象（单链接限速）：
+
+>?关于上传对象的限速说明，请参见 [单链接限速](https://intl.cloud.tencent.com/document/product/436/34072)。
+
+[//]: # (.cssg-snippet-put-object-traffic-limit)
+```js
+cos.putObject({
+    Bucket: 'examplebucket-1250000000', /* 必须 */
+    Region: 'COS_REGION',     /* 存储桶所在地域，必须字段 */
+    Key: 'exampleobject',              /* 必须 */
+    StorageClass: 'STANDARD',
+    Body: fileObject, // 上传文件对象
+    Headers: {
+      'x-cos-traffic-limit': 819200, // 限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，如果超出该范围将返回400错误。
+    },
     onProgress: function(progressData) {
         console.log(JSON.stringify(progressData));
     }
@@ -454,6 +477,24 @@ cos.getObject({
 });
 ```
 
+下载对象（单链接限速）：
+
+>?关于下载对象的限速说明，请参见 [单链接限速](https://intl.cloud.tencent.com/document/product/436/34072)。
+
+[//]: # (.cssg-snippet-get-object-traffic-limit)
+```js
+cos.getObject({
+    Bucket: 'examplebucket-1250000000', /* 必须 */
+    Region: 'COS_REGION',     /* 存储桶所在地域，必须字段 */
+    Key: 'exampleobject',              /* 必须 */
+    Headers: {
+      'x-cos-traffic-limit': 819200, // 限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，如果超出该范围将返回400错误。
+    },
+}, function(err, data) {
+    console.log(err || data.Body);
+});
+```
+
 #### 参数说明
 
 | 参数名                     | 参数描述                                                     | 类型     | 是否必填 |
@@ -487,7 +528,7 @@ function(err, data) { ... }
 
 ```
 
-| 参数名 | 参数描述                                                     | 类型    |
+| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object  |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number  |
@@ -545,7 +586,7 @@ cos.optionsObject({
 function(err, data) { ... }
 ```
 
-| 参数名 | 参数描述                                                     | 类型    |
+| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object  |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number  |
@@ -572,6 +613,8 @@ PUT Object - Copy 请求创建一个已存在 COS 的对象的副本，即将一
 
 #### 使用示例
 
+复制对象：
+
 [//]: # (.cssg-snippet-copy-object)
 ```js
 cos.putObjectCopy({
@@ -583,6 +626,22 @@ cos.putObjectCopy({
     console.log(err || data);
 });
 ```
+
+修改对象存储类型：
+
+[//]: # (.cssg-snippet-copy-object)
+```js
+cos.putObjectCopy({
+    Bucket: 'examplebucket-1250000000',                               /* 必须 */
+    Region: 'COS_REGION',     /* 存储桶所在地域，必须字段 */
+    Key: 'sourceObject',                                            /* Key与CopySource的Key相同，必须 */
+    CopySource: 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject', /* 必须 */
+    StorageClass: 'ARCHIVE',  /* 设置为归档存储 */
+}, function(err, data) {
+    console.log(err || data);
+});
+```
+
 
 #### 参数说明
 
@@ -744,7 +803,7 @@ deleteFiles();
 function(err, data) { ... }
 ```
 
-| 参数名 | 参数描述                                                     | 类型        |
+| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object      |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200，204，403，404等             | Number      |
@@ -860,7 +919,7 @@ cos.multipartList({
 function(err, data) { ... }
 ```
 
-| 参数名 | 参数描述                                                     | 类型        |
+| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object      |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
@@ -1104,7 +1163,7 @@ cos.multipartListPart({
 function(err, data) { ... }
 ```
 
-| 参数名 | 参数描述                                                     | 类型        |
+| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object      |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
@@ -1278,7 +1337,7 @@ cos.uploadFile({
 
 #### 参数说明
 
-| 参数名 | 参数描述                                                     | 类型      | 是否必填 |
+| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型      | 是否必填 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String    | 是   |
 | Region                                                       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String    | 是   |
@@ -1355,7 +1414,7 @@ cos.sliceUploadFile({
 
 #### 参数说明
 
-| 参数名 | 参数描述                                                     | 类型      | 是否必填 |
+| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型      | 是否必填 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String    | 是   |
 | Region                                                       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String    | 是   |

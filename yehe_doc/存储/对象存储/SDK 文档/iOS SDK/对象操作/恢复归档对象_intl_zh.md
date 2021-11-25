@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-12-07 10:53:33
+ * @LastEditTime: 2021-06-08 09:25:29
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /qcloud-documents/product/存储与CDN/对象存储 4.0/SDK文档/iOS SDK/对象操作/恢复归档对象.md
+-->
 ## 简介
 
 本文档提供关于恢复归档对象操作相关的 API 概览以及 SDK 示例代码。
@@ -23,29 +31,27 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 ```objective-c
 QCloudPostObjectRestoreRequest *req = [QCloudPostObjectRestoreRequest new];
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 req.bucket = @"examplebucket-1250000000";
 
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 req.object = @"exampleobject";
 
 // 设置临时副本的过期时间
-req.restoreRequest.days  = 10;
+req.restoreRequest.days = 10;
 
 // 复原的过程类型配置信息
-req.restoreRequest.CASJobParameters.tier =QCloudCASTierStandard;
+req.restoreRequest.CASJobParameters.tier = QCloudCASTierStandard;
 
 [req setFinishBlock:^(id outputObject, NSError *error) {
-    
     // outputObject 包含所有的响应 http 头部
     NSDictionary* info = (NSDictionary *) outputObject;
-    
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] PostObjectRestore:req];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/RestoreObject.m)查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/RestoreObject.m) 查看。
 
 **Swift**
 
@@ -53,7 +59,7 @@ req.restoreRequest.CASJobParameters.tier =QCloudCASTierStandard;
 ```swift
 let restore = QCloudPostObjectRestoreRequest.init();
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 restore.bucket = "examplebucket-1250000000";
 
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"

@@ -29,26 +29,27 @@ headerRequest.object = @"exampleobject";
 // versionId 当启用版本控制时，指定要查询的版本 ID，如不指定则查询对象的最新版本
 headerRequest.versionID = @"versionID";
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 headerRequest.bucket = @"examplebucket-1250000000";
 
 [headerRequest setFinishBlock:^(NSDictionary* result, NSError *error) {
     // result 返回具体信息
-
+    // 获取文件crc64
+     NSString * crc64 = [[outputObject __originHTTPURLResponse__].allHeaderFields valueForKey:@"x-cos-hash-crc64ecma"];
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] HeadObject:headerRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/HeadObject.m)查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/HeadObject.m) 查看。
 
 **Swift**
 
-[//]: # (.cssg-snippet-head-object)
+[//]: # (.cssg-snippet-head-object) 
 ```swift
 let headObject = QCloudHeadObjectRequest.init();
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 headObject.bucket = "examplebucket-1250000000";
 
 // versionId 当启用版本控制时，指定要查询的版本 ID，如不指定则查询对象的最新版本
@@ -58,7 +59,9 @@ headObject.versionID = "versionID";
 headObject.object  = "exampleobject";
 headObject.finishBlock =  {(result,error) in
     if let result = result {
-        // result 包含响应的 header 信息
+        // 获取文件crc64
+        let crc64 = result?.__originHTTPURLResponse__.allHeaderFields["x-cos-hash-crc64ecma"];
+       
     } else {
         print(error!);
     }

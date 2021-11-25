@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-12-07 10:53:33
+ * @LastEditTime: 2021-06-08 09:27:54
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /qcloud-documents/product/存储与CDN/对象存储 4.0/SDK文档/iOS SDK/对象操作/预请求跨域配置.md
+-->
 ## 简介
 
 本文档提供关于预请求跨域配置操作相关的 API 概览以及 SDK 示例代码。
@@ -42,7 +50,7 @@ request.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] OptionsObject:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m)查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m) 查看。
 
 **Swift**
 
@@ -58,17 +66,16 @@ optionsObject.origin = "http://www.qcloud.com";
 optionsObject.accessControlRequestMethod = "GET";
 optionsObject.accessControlRequestHeaders = "origin";
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 optionsObject.bucket = "examplebucket-1250000000";
 
 optionsObject.finishBlock = {(result,error) in
-    
- if let result = result {
+    if let result = result {
         // 可以从 result 中获取服务器返回的 header 信息
     }
 }
 QCloudCOSXMLService.defaultCOSXML().optionsObject(optionsObject);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift)查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift) 查看。
 
