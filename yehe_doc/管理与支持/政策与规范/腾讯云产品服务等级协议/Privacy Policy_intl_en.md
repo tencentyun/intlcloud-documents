@@ -62,9 +62,9 @@ If you are located in the European Economic Area or Switzerland, the data contro
 
 Our data protection officer can be contacted at **cloudlegalnotices@tencent.com.**
 
-<span id="1"></span>
 ### SECTION 1: WHERE WE ARE A DATA CONTROLLER
 
+<span id="1"></span>
 #### The Types of Personal Information We Collect and Process
 
 We will collect and use the following information about you:
@@ -261,8 +261,6 @@ If you have any questions or comments about the Privacy Policy, if you need to r
 
  - E-mail: cloudlegalnotices@tencent.com
 
-
-
 **Domestic Privacy Representative**
 
 Pursuant to the Network Act and Article 39-11 of the amended PIPA, the information regarding the domestic agent is as follows:
@@ -274,7 +272,6 @@ Pursuant to the Network Act and Article 39-11 of the amended PIPA, the informati
  - Telephone Number: +82-2185-0902
 
  - E-mail: cloudlegalnotices@tencent.com
-
 
 ### California
 
@@ -297,7 +294,7 @@ The terms of this Addendum apply to residents of California under the California
 - For security and verification purposes, including to prevent and detect fraudulent activity; and
 - To address and remediate technical issues and bugs.
 
-For additional information about what each type of personal information is used for, see [this chart](#how-we-use-your-personal-information) in the main portion of the Privacy Policy.
+For additional information about what each type of personal information is used for, see [this chart](#2) in the main portion of the Privacy Policy.
 
 We disclose personal information to the following types of entities:
 
