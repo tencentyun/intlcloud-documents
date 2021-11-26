@@ -13,41 +13,41 @@ Anda telah [melampirkan disk cloud](https://intl.cloud.tencent.com/document/prod
 ## Petunjuk[](id:Steps)
 
 <dx-tabs>
-::: Menginisialisasi disk cloud (Windows)[](id:2TBWindows2013)
+:::Menginisialisasi/sdisk/scloud/s(Windows)[](id:2TBWindows2013)
 >?Dokumen ini menggunakan CVM dengan Windows Server 2012 yang diinstal sebagai contoh.Perhatikan bahwa langkah-langkahnya dapat berbeda sesuai dengan versi sistem operasi.
 
 1.[Masuk ke instance CVM Windows](https://intl.cloud.tencent.com/document/product/213/5435).
 2.Pada desktop, klik <img src="https://main.qcloudimg.com/raw/0a02193a82217974f650bbcaf4e1ed2d.png"  style="margin:-5px 0px"> untuk masuk ke halaman **Server Manager** (Pengelola Server).
 3.Di pohon navigasi kiri, klik **File and Storage Services** (Layanan File dan Penyimpanan).
 4.Di pohon navigasi kiri, pilih **Volumes** > **Disks** (Volume > Disk).
-![](https://main.qcloudimg.com/raw/e21c6ae7dbd7b41a3bfe9c5e2fd25c50.png)
+
 >?Jika disk yang baru ditambahkan dalam status offline, jalankan [Langkah 5](#online) sebelum [Langkah 6](#initialize) untuk melakukan inisialisasi.Jika tidak, Anda dapat langsung menjalankan [Langkah 6](#initialize).
 >
 5. [](id:online)Disk terdaftar di panel sisi kanan.Klik kanan baris tempat 1 berada, dan pilih **Online** untuk membuatnya menjadi online.Maka statusnya menjadi **Online**.
-![](https://main.qcloudimg.com/raw/e8bf6970a2b203a3fc926a35322680c2.png)
+
 6. [](id:initialize)Klik kanan baris tempat 1 berada, dan pilih **Initialize** (Inisialisasi) di menu.
-![](https://main.qcloudimg.com/raw/9cb41b9ea7d29115035e15924e65a86f.png)
+
 7.Ikuti petunjuk pada antarmuka, dan klik **Yes** (Ya).
-![](https://main.qcloudimg.com/raw/4bd1346cb8f15bda39fb6ab399a3b2e2.png)
+
 8.Setelah inisialisasi, partisi 1 berubah dari **Unknown** (Tidak Diketahui) menjadi **GPT**.Klik kanan baris tempat 1 berada dan pilih **New Simple Volume** (Volume Sederhana Baru) di menu.
-![](https://main.qcloudimg.com/raw/d9dbae385dee6e92534db02b3a1cf443.png)
+
 9.Di kotak dialog pop-up **New Volume Wizard** (Wizard Volume Baru), ikuti petunjuk pada antarmuka dan klik **Next** (Selanjutnya).
-![](https://main.qcloudimg.com/raw/896583a11d0004c9172c0d1a31f0ff74.png)
+
 10.Pilih server dan disk, dan klik **Next** (Selanjutnya).
-![](https://main.qcloudimg.com/raw/368ee2e2a5b858504a931d0aa0888915.png)
+
 11.Tentukan ukuran volume sesuai kebutuhan, yang merupakan nilai maksimum secara default.Klik **Next** (Selanjutnya).
-![](https://main.qcloudimg.com/raw/4a6b81ca6a0034fd409289fee70374a1.png)
+
 12.Tetapkan huruf drive, dan klik **Next** (Selanjutnya).
-![](https://main.qcloudimg.com/raw/4c6f82f8e0027ffbbf20869ed4df5dfb.png)
+
 13.Konfigurasikan parameter sesuai kebutuhan, format partisi, dan klik **Next** (Selanjutnya) untuk menyelesaikan pembuatan partisi.
-![](https://main.qcloudimg.com/raw/952b5425be9d7b3c44730801b3563d6b.png)
+
 14.Konfirmasikan informasi dan klik **Create** (Buat).
-![](https://main.qcloudimg.com/raw/61f81b09d6244962379dda362e07b660.png)
+
 15.Tunggu hingga pembuatan volume selesai, lalu klik **Finish** (Selesai).
 Setelah inisialisasi selesai, masuk ke antarmuka **My Computer** (Komputer Saya) untuk melihat disk baru.
-![](https://main.qcloudimg.com/raw/1053f9ea5f3ab8cf85f7c81ba1bf53b8.png)
+
 :::
-::: Menginisialisasi disk cloud (Linux)[](id:2TBLinux)
+:::Menginisialisasi/sdisk/scloud/s(Linux)[](id:2TBLinux)
 Pilih metode inisialisasi sesuai dengan kasus penggunaan aktual Anda:
 - Jika seluruh disk ditampilkan sebagai satu partisi terpisah (tidak ada disk logis seperti vdb1 dan vdb2), kami sangat menyarankan Anda untuk tidak menggunakan partisi, dan langsung [membuat sistem file pada perangkat kosong](#CreateFileSystemOnBareDevice).
 - Jika seluruh disk perlu disajikan sebagai beberapa partisi logis (ada beberapa disk logis), Anda harus terlebih dahulu mempartisi disk, dan kemudian [membuat sistem file pada partisi](#CreateFileSystemOnPartition).
