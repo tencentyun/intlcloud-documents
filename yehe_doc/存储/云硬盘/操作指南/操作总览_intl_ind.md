@@ -9,7 +9,7 @@ Dokumen ini menjelaskan operasi disk cloud yang umum, termasuk pemantauan, alarm
 - Memperluas disk cloud
  - [Skenario perluasan disk cloud](https://cloud.tencent.com/document/product/362/32539)
  - [Memperluas disk cloud](https://intl.cloud.tencent.com/document/product/362/5747)
- - [Memperluas partisi dan sistem file (Windows)](https://cloud.tencent.com/document/product/362/6737)
+ - [Memperluas partisi dan sistem file (Windows)](https://intl.cloud.tencent.com/document/product/362/31601)
  - [Memperluas partisi dan sistem file (Linux)](https://intl.cloud.tencent.com/document/product/362/6738)
 - [Melepas disk cloud](https://intl.cloud.tencent.com/document/product/362/32400)
 - [Menghentikan disk cloud](https://intl.cloud.tencent.com/document/product/362/5752)
