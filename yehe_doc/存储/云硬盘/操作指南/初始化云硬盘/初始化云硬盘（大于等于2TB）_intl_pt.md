@@ -13,7 +13,7 @@ Ter [montado um disco em nuvem](https://intl.cloud.tencent.com/document/product/
 ## Instruções
 
 <dx-tabs>
-:::/sInicialização/sde/sdiscos/sem/snuvem/s(Windows)[](id:2TBWindows2013)
+:::sInicialização\sde\sdiscos\sem\snuvem\s(Windows) [](id:2TBWindows2013)
 Este documento usa o sistema operacional Windows Server 2012 como exemplo. A operação de formatação varia de acordo com o sistema operacional. As informações abaixo são apenas para referência.
 
 1. [Faça login no Cloud Virtual Machine do Windows](https://intl.cloud.tencent.com/document/product/213/5435).
@@ -40,7 +40,7 @@ Se o disco recém-adicionado estiver com o status offline (conforme exibido na f
  Após concluir a inicialização, acesse a interface **My Computer (Meu computador)** para exibir o novo disco.
 
 :::
-:::Inicialização/sde/sdiscos/sem/snuvem/s(Linux)[](id:2TBLinux)
+:::Inicialização\sde\sdiscos\sem\snuvem\s(Linux) [](id:2TBLinux)
 
 Selecione o método de inicialização de acordo com seus cenários de uso reais:
 - Se todo o disco for apresentado como uma partição independente (ou seja, não há discos lógicos como vdb1 e vdb2), recomendamos fortemente que você não use a partição e [crie diretamente o sistema de arquivos em dispositivos vazios](#CreateFileSystemOnBareDevice).
