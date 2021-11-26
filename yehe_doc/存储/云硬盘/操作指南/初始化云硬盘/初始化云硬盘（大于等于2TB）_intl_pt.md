@@ -11,16 +11,17 @@ Ter [montado um disco em nuvem](https://intl.cloud.tencent.com/document/product/
 - Para evitar exceções, verifique antes de formatar se o CVM interrompeu os serviços externos.
 
 ## Instruções
-<span id="2TBWindows2012"></span>
-### Inicialização de discos em nuvem (Windows)
->Este documento usa o sistema operacional Windows Server 2012 como exemplo. A operação de formatação varia de acordo com o sistema operacional. As informações abaixo são apenas para referência.
+
+<dx-tabs>
+:::/sInicialização/sde/sdiscos/sem/snuvem/s(Windows)[](id:2TBWindows2013)
+Este documento usa o sistema operacional Windows Server 2012 como exemplo. A operação de formatação varia de acordo com o sistema operacional. As informações abaixo são apenas para referência.
 
 1. [Faça login no Cloud Virtual Machine do Windows](https://intl.cloud.tencent.com/document/product/213/5435).
 2. Na área de trabalho do CVM, clique em <img src="https://main.qcloudimg.com/raw/0a02193a82217974f650bbcaf4e1ed2d.png"  style="margin:0;"> para acessar a página **Server Manager (Gerenciador do servidor)**.
 3. Na árvore de navegação à esquerda, clique em **File and Storage Services (Serviços de arquivos e armazenamento)**.
 4. Na árvore de navegação à esquerda, selecione **Volumes** > **Disks (Discos)**.
 
->Se o disco recém-adicionado estiver com o status offline (conforme exibido na figura acima), realize a [Etapa 5](#online) antes da [Etapa 6](#initialize) para inicializar. Caso contrário, você pode realizar diretamente a [Etapa 6](#initialize).
+Se o disco recém-adicionado estiver com o status offline (conforme exibido na figura acima), realize a [Etapa 5](#online) antes da [Etapa 6](#initialize) para inicializar. Caso contrário, você pode realizar diretamente a [Etapa 6](#initialize).
 
 <span id="online"></span>
 5. Os discos são listados no painel do lado direito. Clique com o botão direito na linha onde o 1 está localizado e selecione **Online** para que ele fique online. O status do 1 muda de **Offline** para **Online**.
@@ -38,8 +39,8 @@ Ter [montado um disco em nuvem](https://intl.cloud.tencent.com/document/product/
 15. Aguarde até que o sistema conclua a criação do novo volume e clique em **Finish (Concluir)**.
  Após concluir a inicialização, acesse a interface **My Computer (Meu computador)** para exibir o novo disco.
 
-<span id="2TBLinux"></span>
-### Inicialização de discos em nuvem (Linux)
+:::
+:::Inicialização/sde/sdiscos/sem/snuvem/s(Linux)[](id:2TBLinux)
 
 Selecione o método de inicialização de acordo com seus cenários de uso reais:
 - Se todo o disco for apresentado como uma partição independente (ou seja, não há discos lógicos como vdb1 e vdb2), recomendamos fortemente que você não use a partição e [crie diretamente o sistema de arquivos em dispositivos vazios](#CreateFileSystemOnBareDevice).
@@ -145,7 +146,7 @@ Se o comando for executado com êxito, o arquivo foi gravado. O sistema de arqui
 <span id="CreateFileSystemOnPartition"></span>
 #### Criação de um sistema de arquivos em uma partição
 
->Este exemplo usa a ferramenta de partição parted no sistema operacional CentOS 7.5 para configurar o disco de dados `/dev/vdc` como a partição principal. GPT foi usado como o formato de partição padrão, o formato EXT4 como o sistema de arquivos, `/data/newpart2` como o ponto de montagem e a montagem automática na inicialização foi configurada. A operação de formatação varia de acordo com o sistema operacional. As informações abaixo são apenas para referência.
+Este exemplo usa a ferramenta de partição parted no sistema operacional CentOS 7.5 para configurar o disco de dados `/dev/vdc` como a partição principal. GPT foi usado como o formato de partição padrão, o formato EXT4 como o sistema de arquivos, `/data/newpart2` como o ponto de montagem e a montagem automática na inicialização foi configurada. A operação de formatação varia de acordo com o sistema operacional. As informações abaixo são apenas para referência.
 
 1. [Faça login no Cloud Virtual Machine do Linux](https://intl.cloud.tencent.com/document/product/213/5436).
 2. Execute o seguinte comando como usuário raiz para exibir o nome do disco.
@@ -229,8 +230,8 @@ df -TH
  ![](https://main.qcloudimg.com/raw/774c2d9ff266634c4836df6456b9dd4d.png)
  Isso indica que a partição recém-criada `/dev/vdc1` foi montada em `/data/newpart2`.
 
->Se não for preciso configurar a montagem automática de discos na inicialização, pule as etapas a seguir.
->
+Se não for preciso configurar a montagem automática de discos na inicialização, pule as etapas a seguir.
+
 16. Confirme o método de montagem e obtenha as informações correspondentes.
  Com base nas necessidades empresariais, é possível usar o soft link de um disco em nuvem elástico, o UUID do sistema de arquivos (identificador exclusivo universal) ou o nome do dispositivo para montar um disco automaticamente. As descrições e os métodos de aquisição de informações são os seguintes:
  <table>
@@ -287,6 +288,8 @@ UUID=fc3f42cc-2093-49c7-b4fd-c616ba6165f4 /data/newpart2   ext4 defaults     0  
  mount -a 
 ```
 Se o comando for executado com êxito, o arquivo foi gravado. O sistema de arquivos recém-criado será montado automaticamente quando o sistema operacional for iniciado.
+:::
+</dx-tabs>
 
 ## Operações relacionadas
  [Inicialização de discos em nuvem (menores que 2 TB)](https://intl.cloud.tencent.com/document/product/362/31597).
