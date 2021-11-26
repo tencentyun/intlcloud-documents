@@ -9,7 +9,7 @@ Jika disk cloud adalah disk data, Anda dapat memperluasnya menggunakan tiga meto
 >
 
 <dx-tabs>
-::: Memperluas disk data melalui konsol CVM (direkomendasikan)[](id:useCVMConsole)
+:::Memperluas\sdisk\sdata\smelalui\skonsol\sCVM\s(direkomendasikan) [](id:useCVMConsole)
 1.Masuk ke [konsol CVM](https://console.cloud.tencent.com/cvm/index).
 2.Temukan CVM tempat Anda ingin memperluas disk data, dan pilih **More** > **Resource Adjustment** > **Expand Data Disk** (Selengkapnya > Penyesuaian Sumber Daya > Perluas Disk Data) di kolom **Operation** (Operasi).
 3.Pilih disk data yang akan diperluas di jendela pop-up, dan klik **Next** (Selanjutnya).
@@ -17,14 +17,14 @@ Jika disk cloud adalah disk data, Anda dapat memperluasnya menggunakan tiga meto
 5.Baca catatan dan klik **Adjust Now** (Sesuaikan Sekarang).
 6.Tetapkan kapasitasnya yang diperluas ke partisi yang ada, atau format menjadi partisi baru yang terpisah.Tergantung pada sistem operasi CVM, lihat [Memperluas Partisi dan Sistem File (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) atau [Menentukan Metode Perluasan](https://intl.cloud.tencent.com/document/product/362/39995).
 :::
-::: Memperluas disk data melalui konsol CBS[](id:useCBSConsole)
+:::Memperluas\sdisk\sdata\smelalui\skonsol\sCBS [](id:useCBSConsole)
 1.Masuk ke [konsol CBS](https://console.cloud.tencent.com/cvm/cbs).
 2.Temukan disk cloud yang akan diperluas, dan pilih **More** > **Expand** (Selengkapnya > Perluas) di kolom **Operation** (Operasi).
 3.Pilih kapasitas baru.Ini harus lebih besar dari atau sama dengan kapasitas saat ini.
 4.Selesaikan pembayaran.
 5.Tetapkan kapasitasnya yang diperluas ke partisi yang ada, atau format menjadi partisi baru yang terpisah.Tergantung pada sistem operasi CVM, lihat [Memperluas Partisi dan Sistem File (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) atau [Menentukan Metode Perluasan](https://intl.cloud.tencent.com/document/product/362/39995).
 :::
-::: Memperluas disk data melalui API[](id:useAPI)
+:::Memperluas\sdisk\sdata\smelalui\sAPI [](id:useAPI)
 Anda dapat menggunakan API `ResizeDisk` untuk memperluas disk cloud yang ditentukan.Untuk informasi selengkapnya, lihat [ResizeDisk](https://intl.cloud.tencent.com/document/product/362/16310).
 :::
 </dx-tabs>
@@ -73,7 +73,7 @@ Perhatikan bahwa `disk-xxxx` adalah ID dari disk cloud.Anda dapat menggunakannya
 ### Memeriksa konfigurasi cloudinit
 Periksa disk cloud sesuai dengan sistem operasi CVM.
 <dx-tabs>
-::: Memeriksa konfigurasi cloudinit untuk instance Linux[](id:confirmLinuxConfig)
+:::Memeriksa\skonfigurasi\scloudinit\suntuk\sinstance\sLinux [](id:confirmLinuxConfig)
 Setelah disk sistem diperluas, [masuk ke instance Linux](https://intl.cloud.tencent.com/document/product/213/5436) dan periksa apakah file `/etc/cloud/cloud.cfg` berisi item konfigurasi `growpart` dan `resizefs`.
 - Jika ya, abaikan operasi lainnya.
 ![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
@@ -81,11 +81,9 @@ Setelah disk sistem diperluas, [masuk ke instance Linux](https://intl.cloud.tenc
 - **resizefs**: memperluas atau menyesuaikan sistem file di partisi `/` ke ukuran partisi.
 - Jika tidak, secara manual [memperluas partisi dan sistem file (Linux)](https://intl.cloud.tencent.com/document/product/362/39995) sesuai dengan sistem operasi, dan menetapkan kapasitas yang diperluas ke partisi yang sudah ada, atau memformatnya menjadi partisi baru yang terpisah.
 :::
-::: Memeriksa konfigurasi cloudinit untuk instance Windows[](id:confirmwindowsConfig)
+:::Memeriksa\skonfigurasi\scloudinit\suntuk\sinstance\sWindows [](id:confirmwindowsConfig)
 Setelah disk sistem diperluas, [masuk ke instance Windows](https://intl.cloud.tencent.com/document/product/213/5435) dan periksa apakah item konfigurasi `ExtendVolumesPlugin` ada di bawah `plugin` di `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf`.
 - Jika ya, abaikan operasi lainnya.
 - Jika tidak, secara manual [memperluas partisi dan sistem file (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) sesuai dengan sistem operasi, dan tetapkan kapasitas yang diperluas ke partisi yang sudah ada, atau memformatnya menjadi partisi baru yang terpisah.
 :::
 </dx-tabs>
-
-```
