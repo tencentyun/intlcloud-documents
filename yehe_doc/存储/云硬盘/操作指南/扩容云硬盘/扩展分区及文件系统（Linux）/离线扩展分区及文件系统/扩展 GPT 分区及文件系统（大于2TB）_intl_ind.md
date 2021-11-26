@@ -235,7 +235,7 @@ Jika hasil seperti yang ditunjukkan pada gambar berikut dikembalikan, pemasangan
 ![](https://main.qcloudimg.com/raw/cd9d36d49388882f0cb898c13d565bb0.png)
 
 ## Dokumentasi
-[Memperluas Partisi dan Sistem File (Windows)](https://cloud.tencent.com/document/product/362/6737)
+[Memperluas Partisi dan Sistem File (Windows)](https://intl.cloud.tencent.com/document/product/362/31601)
 
 ## Pertanyaan Umum
 Jika Anda mengalami masalah saat menggunakan Tencent Cloud CBS, baca dokumen berikut untuk penanggulangan masalah sesuai  keperluan:
