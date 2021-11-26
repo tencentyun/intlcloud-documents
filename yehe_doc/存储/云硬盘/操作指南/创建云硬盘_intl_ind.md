@@ -79,10 +79,10 @@ Anda dapat membuat berbagai jenis disk cloud CBS berdasarkan kebutuhan bisnis.Un
 5.Anda dapat melihat disk cloud yang Anda buat di halaman daftar [Penyimpanan Blok Cloud](https://console.cloud.tencent.com/cvm/cbs).Disk cloud elastis yang baru berada dalam status **To be attached** (Akan dilampirkan).Untuk melampirkannya ke instance CVM di zona ketersediaan yang sama, lihat [Melampirkan Disk Cloud](https://intl.cloud.tencent.com/document/product/362/32401).
 
 :::
-::: Membuat/sdisk/scloud/smenggunakan/ssnapshot
+::: Membuat\sdisk\scloud\smenggunakan\ssnapshot
 Jika ingin membuat disk cloud yang berisi semua data saat dibuat, Anda dapat [membuat disk cloud menggunakan snapshot](https://intl.cloud.tencent.com/document/product/362/5757).
 :::
-::: Membuat/sdisk/scloud/smenggunakan/sAPI
+::: Membuat\sdisk\scloud\smenggunakan\sAPI
 Anda dapat menggunakan API `CreateDisks` untuk membuat disk cloud.Untuk informasi selengkapnya, lihat [CreateDisks](https://intl.cloud.tencent.com/document/product/362/16312).
 :::
 </dx-tabs>

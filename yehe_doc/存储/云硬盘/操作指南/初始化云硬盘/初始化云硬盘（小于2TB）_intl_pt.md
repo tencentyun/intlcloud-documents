@@ -12,8 +12,9 @@ Ter [montado um disco em nuvem](https://intl.cloud.tencent.com/document/product/
 
 ## Instruções
 
-<span id="Windows2008"></span>
-### Inicialização de discos em nuvem (Windows)
+
+<dx-tabs>
+:::Inicialização\sde\sdiscos\sem\snuvem\s(Windows) [](id:Windows2008)
 >Este artigo usa o sistema operacional Windows Server 2012 R2 como exemplo. A operação de formatação varia de acordo com o sistema operacional. As informações abaixo são apenas para referência.
 >
 1. [Faça login no Cloud Virtual Machine do Windows](https://intl.cloud.tencent.com/document/product/213/5435).
@@ -25,7 +26,7 @@ Ter [montado um disco em nuvem](https://intl.cloud.tencent.com/document/product/
 5. <span id="initialize"></span>Clique com o botão direito na área do disco 1 e selecione **Initialize Disk (Inicializar disco)** no menu.
 
 6. Na caixa de diálogo **Initialize Disk (Inicializar disco)**, o disco que você precisa inicializar é exibido. Selecione **MBR** ou **GPT** e clique em **OK**.
->Se o formato da partição do disco for alterado após o disco ser colocado em uso, os dados originais do disco serão apagados. Selecione um formato de partição apropriado com base nas suas necessidades reais.
+Se o formato da partição do disco for alterado após o disco ser colocado em uso, os dados originais do disco serão apagados. Selecione um formato de partição apropriado com base nas suas necessidades reais.
 
 7. Clique com o botão direito no espaço não alocado do disco e selecione **New Simple Volume (Novo volume simples)**.
 8. Na caixa de diálogo pop-up **New Simple Volume Wizard (Assistente do novo volume simples)**, siga as instruções na interface e clique em **Next (Avançar)**.
@@ -35,8 +36,8 @@ Ter [montado um disco em nuvem](https://intl.cloud.tencent.com/document/product/
 12. Clique em **Complete (Concluir)** para concluir o assistente. Aguarde até que o sistema conclua a operação de inicialização. Quando o status do volume se torna **Healthy (Em bom funcionamento)**, a inicialização do disco obteve êxito.
     Após concluir a inicialização com êxito, acesse a interface **Computer (Computador)** para exibir o novo disco.
 
-<span id="Linux"></span>
-### Inicialização de discos em nuvem (Linux)
+:::
+:::Inicialização\sde\sdiscos\sem\snuvem\s(Linux)  [](id:Linux)
 
 Selecione o método de inicialização de acordo com seus casos de uso reais:
 - Se todo o disco for apresentado como uma partição independente (não há disco lógico como vdb1 e vdb2), recomendamos fortemente que você não use a partição e [crie diretamente o sistema de arquivos em dispositivos vazios](#CreateFileSystemOnBareDevice).
@@ -291,6 +292,8 @@ UUID=d489ca1c-5057-4536-81cb-ceb2847f9954 /data/newpart   ext4 defaults     0   
  mount -a 
 ```
 Se o comando for executado com êxito, o arquivo foi gravado. O sistema de arquivos recém-criado será montado automaticamente quando o sistema operacional for iniciado.
+:::
+</dx-tabs>
 
 ## Operações relacionadas
 [Inicialização de discos em nuvem (maiores ou iguais a 2 TB)](https://intl.cloud.tencent.com/document/product/362/31598).
