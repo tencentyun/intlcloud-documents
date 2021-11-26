@@ -13,16 +13,16 @@ Anda telah [melampirkan disk cloud](https://intl.cloud.tencent.com/document/prod
 ## Petunjuk[](id:Steps)
 
 <dx-tabs>
-:::Menginisialisasi/sdisk/scloud/s(Windows)[](id:2TBWindows2013)
->?Dokumen ini menggunakan CVM dengan Windows Server 2012 yang diinstal sebagai contoh.Perhatikan bahwa langkah-langkahnya dapat berbeda sesuai dengan versi sistem operasi.
+:::Menginisialisasi\sdisk\scloud\s(Windows)  [](id:2TBWindows2013)
+Dokumen ini menggunakan CVM dengan Windows Server 2012 yang diinstal sebagai contoh.Perhatikan bahwa langkah-langkahnya dapat berbeda sesuai dengan versi sistem operasi.
 
 1.[Masuk ke instance CVM Windows](https://intl.cloud.tencent.com/document/product/213/5435).
 2.Pada desktop, klik <img src="https://main.qcloudimg.com/raw/0a02193a82217974f650bbcaf4e1ed2d.png"  style="margin:-5px 0px"> untuk masuk ke halaman **Server Manager** (Pengelola Server).
 3.Di pohon navigasi kiri, klik **File and Storage Services** (Layanan File dan Penyimpanan).
 4.Di pohon navigasi kiri, pilih **Volumes** > **Disks** (Volume > Disk).
 
->?Jika disk yang baru ditambahkan dalam status offline, jalankan [Langkah 5](#online) sebelum [Langkah 6](#initialize) untuk melakukan inisialisasi.Jika tidak, Anda dapat langsung menjalankan [Langkah 6](#initialize).
->
+Jika disk yang baru ditambahkan dalam status offline, jalankan [Langkah 5](#online) sebelum [Langkah 6](#initialize) untuk melakukan inisialisasi.Jika tidak, Anda dapat langsung menjalankan [Langkah 6](#initialize).
+
 5. [](id:online)Disk terdaftar di panel sisi kanan.Klik kanan baris tempat 1 berada, dan pilih **Online** untuk membuatnya menjadi online.Maka statusnya menjadi **Online**.
 
 6. [](id:initialize)Klik kanan baris tempat 1 berada, dan pilih **Initialize** (Inisialisasi) di menu.
@@ -47,7 +47,7 @@ Anda telah [melampirkan disk cloud](https://intl.cloud.tencent.com/document/prod
 Setelah inisialisasi selesai, masuk ke antarmuka **My Computer** (Komputer Saya) untuk melihat disk baru.
 
 :::
-:::Menginisialisasi/sdisk/scloud/s(Linux)[](id:2TBLinux)
+:::Menginisialisasi\sdisk\scloud\s(Linux)  [](id:2TBLinux)
 Pilih metode inisialisasi sesuai dengan kasus penggunaan aktual Anda:
 - Jika seluruh disk ditampilkan sebagai satu partisi terpisah (tidak ada disk logis seperti vdb1 dan vdb2), kami sangat menyarankan Anda untuk tidak menggunakan partisi, dan langsung [membuat sistem file pada perangkat kosong](#CreateFileSystemOnBareDevice).
 - Jika seluruh disk perlu disajikan sebagai beberapa partisi logis (ada beberapa disk logis), Anda harus terlebih dahulu mempartisi disk, dan kemudian [membuat sistem file pada partisi](#CreateFileSystemOnPartition).
@@ -87,7 +87,7 @@ mount /dev/vdb /data
 ```
 df -TH
 ```
->? Jika Anda tidak perlu mengonfigurasi pemasangan otomatis disk saat startup, lewati langkah-langkah berikut.
+Jika Anda tidak perlu mengonfigurasi pemasangan otomatis disk saat startup, lewati langkah-langkah berikut.
 7.Konfirmasikan metode pemasangan dan dapatkan informasi yang sesuai.
 Berdasarkan kebutuhan bisnis, Anda dapat menggunakan tautan lunak disk cloud elastis, UUID sistem file (pengidentifikasi unik universal), atau nama perangkat untuk memasang disk secara otomatis.Deskripsi dan metode perolehan informasi adalah sebagai berikut:
 <table>
@@ -148,7 +148,7 @@ mount -a
 
 ### Membuat sistem file pada partisi[](id:CreateFileSystemOnPartition)
 
->?Contoh ini menggunakan alat partisi parted di sistem operasi CentOS 7.5 untuk mengonfigurasi disk data `/dev/vdc` sebagai partisi utama.GPT digunakan sebagai format partisi default, format EXT4 sebagai sistem file, dan `/data/newpart2` sebagai titik pemasangan.Pemasangan otomatis disk saat startup dikonfigurasi.Perhatikan bahwa operasi pemformatan dapat berbeda berdasarkan sistem operasi.
+Contoh ini menggunakan alat partisi parted di sistem operasi CentOS 7.5 untuk mengonfigurasi disk data `/dev/vdc` sebagai partisi utama.GPT digunakan sebagai format partisi default, format EXT4 sebagai sistem file, dan `/data/newpart2` sebagai titik pemasangan.Pemasangan otomatis disk saat startup dikonfigurasi.Perhatikan bahwa operasi pemformatan dapat berbeda berdasarkan sistem operasi.
 
 1.[Masuk ke instance CVM Linux](https://intl.cloud.tencent.com/document/product/213/5436).
 2.Jalankan perintah berikut sebagai pengguna root untuk melihat nama disk.
@@ -221,7 +221,7 @@ df -TH
 ```Informasi yang dikembalikan mirip dengan yang ditunjukkan di bawah ini:
 ![](https://main.qcloudimg.com/raw/774c2d9ff266634c4836df6456b9dd4d.png)
 Ini menunjukkan bahwa partisi `/dev/vdc1` yang baru dibuat telah dipasang ke `/data/newpart2`.
->?Jika Anda tidak perlu mengonfigurasi pemasangan otomatis disk saat startup, lewati langkah-langkah berikut.
+Jika Anda tidak perlu mengonfigurasi pemasangan otomatis disk saat startup, lewati langkah-langkah berikut.
 >
 16.Konfirmasikan metode pemasangan dan dapatkan informasi yang sesuai.
 Berdasarkan kebutuhan bisnis, Anda dapat menggunakan tautan lunak disk cloud elastis, UUID sistem file (pengidentifikasi unik universal), atau nama perangkat untuk memasang disk secara otomatis.Deskripsi dan metode perolehan informasi adalah sebagai berikut:
