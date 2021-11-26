@@ -28,7 +28,7 @@ Untuk mengatasi masalah ini, jalankan perintah `sync` untuk secara paksa menulis
 ### Membuat snapshot melalui konsol
 1.Masuk ke [konsol CBS](https://console.cloud.tencent.com/cvm/cbs).
 2.Pilih disk cloud target, dan klik **Create a snapshot** (Buat snapshot) di bawah kolom **Operation** (Pengoperasian), seperti yang ditunjukkan di bawah ini:
-![](https://main.qcloudimg.com/raw/915ac748e739b49a295a06c965c93239.png)
+
 3.Di jendela pop-up, masukkan nama snapshot dan klik **OK**.
 
 ### Membuat snapshot melalui API
