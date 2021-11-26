@@ -1,7 +1,7 @@
 ## 功能概述
 对象存储通过数据万象 **imageInfo** 接口查询图片基本信息，包括格式、长、宽等。
 
->! 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象图片处理费用。
+>! 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象 [图片处理费用](https://intl.cloud.tencent.com/document/product/1045/33431)。
 >
 
 ## 使用限制
@@ -35,7 +35,6 @@ download_url?imageInfo
 | height      | 图片的高度。单位为像素（px）              |
 | size        | 图片的大小。单位为 Bytes                   |
 | md5         | 图片的 md5 值                               |
-| photo_rgb   | 图片的主色调。例如0x736246                |
 | frame_count | 图片的帧数。静态图为1，动图为对应的帧数 |
 
 ## 实际案例
@@ -49,7 +48,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageInfo
 
 #### 响应
 ```plaintext
-{"format": "jpeg", "width": "960", "height": "540", "size": "158421", "md5": "77a16fa70e2eba652fb42e8a639c52f2", "photo_rgb": "0x736246"}
+{"format": "jpeg", "width": "960", "height": "540", "size": "158421", "md5": "77a16fa70e2eba652fb42e8a639c52f2"}
 ```
 
 #### 案例二：私有读、携带签名

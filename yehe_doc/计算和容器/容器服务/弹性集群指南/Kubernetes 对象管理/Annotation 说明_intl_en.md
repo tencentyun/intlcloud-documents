@@ -1,12 +1,11 @@
-## Workload Template Annotation Description
-You can define `template annotation` in a YAML file to implement capabilities such as binding security groups and allocating resources for Pods. For more information about the configuration method, please see the following table.
+## Workload Pod Template Annotation Description
+You can define `spec.template.metadata.annotations` in a YAML file to implement capabilities such as binding security groups and allocating resources for Pods. For more information about the configuration method, see the following table.
 
->!
->- If no security group is specified, a Pod is bound with the `default` security group in the same region by default. Ensure that the network policy of the `default` security group does not affect the Pod.
->- To allocate GPU resources, you must enter `eks.tke.cloud.tencent.com/gpu-type`.
->- Except `eks.tke.cloud.tencent.com/gpu-type`, the other four annotations related to resource allocation in the following table are optional. If you specify them, ensure that they are correct.
-> - To allocate CPU resources, you must specify both `cpu` and `mem` annotations and make sure that their values meet the CPU specifications in [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057). In addition, you can select Intel or AMD CPUs to allocate by specifying `cpu-type`. AMD CPUs are more cost-effective. For more information, see [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055). 
->- To allocate GPU resources, you must specify the `cpu`, `mem`, `gpu-type`, and `gpu-count` annotations and ensure that their values meet the GPU specifications in [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057).
+<dx-alert infotype="notice" title="">
+- If no security group is specified, a Pod is bound with the `default` security group in the same region by default. Ensure that the network policy of the `default` security group does not affect the Pod.
+- To allocate CPU resources through the method specified by annotation, you must specify both `cpu` and `mem` annotations and make sure that their values meet the CPU specifications in [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057). In addition, you can select Intel or AMD CPUs to allocate by specifying `cpu-type`. AMD CPUs are more cost-effective. For more information, see [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055). 
+- To allocate GPU resources through the method specified by annotation, you must specify the `gpu-type` and `gpu-count` annotations and ensure that their values meet the GPU specifications in [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057).
+</dx-alert>
 
 
 <table>
@@ -22,7 +21,7 @@ You can define `template annotation` in a YAML file to implement capabilities su
 <td>eks.tke.cloud.tencent.com/security-group-id</td>
 <td>Default security group bound with a workload. Specify the <a href="https://console.cloud.tencent.com/cvm/securitygroup" target="_blank">security group ID</a>.
 	<ul class="params">
-	<li>Multiple security group IDs can be specified and separated by a comma (<code>,</code>), such as <code>sg-id1,sg-id2</code>.</li>
+	<li>You can specify multiple security group IDs and separate them by commas (<code>,</code>). For example, <code>sg-id1,sg-id2</code>.</li>
 	<li>Network policies take effect based on the sequence of security groups.</li>
 	<li>Please note that a single security group can be associated with only 2,000 computing instances, such as CVM instances and Elastic Kubernetes Service (EKS) Pods. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/15379" target="_blank">Security Group Restrictions</a>.</li>
 	</ul>
@@ -40,10 +39,11 @@ You can define `template annotation` in a YAML file to implement capabilities su
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/cpu-type</td>
-<td>Model of the CPU resources required by a Pod. Currently, the supported models include:
+<td>CPU resource types and models required by a Pod. The supported formats include:
 <ul  class="params">
 <li>intel</li>
 <li>amd</li>
+<li>S5,S4</li>
 <li>You can specify the model by priority. For example, `amd,intel` indicates AMD resource Pods will be created first. If the AMD resources in the selected region are insufficient, Intel resource Pods will be created.</li>
 </ul>
 For specific configurations supported by each model, please see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
@@ -69,12 +69,12 @@ For specific configurations supported by each model, please see <a href="https:/
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/retain-ip</td>
-<td>The static IP of a Pod. Enter the value <code>"true"</code> to enable this feature. If a Pod with the static IP enabled is terminated, its IP will be retained 24 hours by default. If the Pod is rebuilt within 24 hours after termination, its IP can still be used. Otherwise, its IP may be occupied by other Pod.</td>
+<td>The static IP of a Pod. Enter the value <code>"true"</code> to enable this feature. If a Pod with the static IP enabled is terminated, its IP will be retained 24 hours by default. If the Pod is rebuilt within 24 hours after termination, its IP can still be used. Otherwise, its IP may be occupied by other Pod.<b>Only valid for statefulset and rawpod.</b></td>
 <td>No</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/retain-ip-hours</td>
-<td>Modifies the default retention duration of the Pod’s static IP. Enter a number. Unit: hour. Default value: 24 hours. The IP can be retained up to one year.</td>
+<td>Modifies the default retention duration of the Pod’s static IP. Enter a number. Unit: hour. Default value: 24 hours. The IP can be retained up to one year.<b>Only valid for statefulset and rawpod.</td>
 <td>No</td>
 </tr>
 <tr>
@@ -107,71 +107,81 @@ For specific configurations supported by each model, please see <a href="https:/
 <td>When the value is "true", it indicates that the IP information of EIP will be exposed in the Pod. Run the `ip addr` command in the Pod to view the EIP address.</td>
 <td>No</td>
 </tr>
+<tr>
+<td>eks.tke.cloud.tencent.com/registry-insecure-skip-verify</td>
+<td>Image repository address (separate multiple addresses with “,”, or enter "all"). When you use an image from a HTTPS-based self-signed external image repository to create a workload in an elastic cluster, you may encounter the error “ErrImagePull” and fail to pull the image. You can solve this issue by adding the annotation. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028">How do I use an image from a self-signed or HTTP-based external image repository in an elastic cluster?</a></td>
+<td>No</td>
+</tr>
+<tr>
+<td>eks.tke.cloud.tencent.com/registry-http-endpoint</td>
+<td>Image repository address (separate multiple addresses with “,”, or enter "all"). When you use an image from a HTTP-based external image repository to create a workload in an elastic cluster, you may encounter the error “ErrImagePull” and fail to pull the image. You can solve this issue by adding the annotation. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028">How do I use an image from a self-signed or HTTP-based external image repository in an elastic cluster?</a></td>
+<td>No</td>
+</tr>
 </tbody></table>
 
-### Sample
+### Example
 The following example shows the complete GPU specifications of the security group bound to a Pod.
 ```
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-   generation: 1
-   labels:
-     k8s-app: nginx
-     qcloud-app: nginx
-   name: nginx
-   namespace: default
+  generation: 1
+  labels:
+    k8s-app: nginx
+    qcloud-app: nginx
+  name: nginx
+  namespace: default
 spec:
-   progressDeadlineSeconds: 600
-   replicas: 1
-   revisionHistoryLimit: 10
-   selector:
-     matchLabels:
-       k8s-app: nginx
-       qcloud-app: nginx
-   strategy:
-     rollingUpdate:
-       maxSurge: 1
-       maxUnavailable: 0
-     type: RollingUpdate
-   template:
-     metadata:
-       annotations:
-         eks.tke.cloud.tencent.com/cpu: "4"
-         eks.tke.cloud.tencent.com/gpu-count: "1"
-         eks.tke.cloud.tencent.com/gpu-type: 1/4*T4
-         eks.tke.cloud.tencent.com/mem: 10Gi
-         eks.tke.cloud.tencent.com/security-group-id: "sg-dxxxxxx5,sg-zxxxxxxu"
-         eks.tke.cloud.tencent.com/role-name: "cam-role-name"
-         eks.tke.cloud.tencent.com/monitor-port: "9123"
-         eks.tke.cloud.tencent.com/custom-metrics-url: "http://localhost:8080/metrics"
-       creationTimestamp: null
-       labels:
-         k8s-app: nginx
-         qcloud-app: nginx
-     spec:
-       containers:
-       - image: nginx:latest
-         imagePullPolicy: Always
-         name: nginx
-         resources:
-           limits:
-             cpu: "1"
-             memory: 2Gi
-             nvidia.com/gpu: "1"
-           requests:
-             cpu: "1"
-             memory: 2Gi
-             nvidia.com/gpu: "1"
-         terminationMessagePath: /dev/termination-log
-         terminationMessagePolicy: File
-       dnsPolicy: ClusterFirst
-       imagePullSecrets:
-       - name: qcloudregistrykey
-       restartPolicy: Always
-       schedulerName: default-scheduler
-       securityContext: {}
-       terminationGracePeriodSeconds: 30
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      k8s-app: nginx
+      qcloud-app: nginx
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        eks.tke.cloud.tencent.com/cpu: "4"
+        eks.tke.cloud.tencent.com/gpu-count: "1"
+        eks.tke.cloud.tencent.com/gpu-type: 1/4*T4
+        eks.tke.cloud.tencent.com/mem: 10Gi
+        eks.tke.cloud.tencent.com/security-group-id: "sg-dxxxxxx5,sg-zxxxxxxu"
+        eks.tke.cloud.tencent.com/role-name: "cam-role-name"
+        eks.tke.cloud.tencent.com/monitor-port: "9123"
+        eks.tke.cloud.tencent.com/custom-metrics-url: "http://localhost:8080/metrics"
+      creationTimestamp: null
+      labels:
+        k8s-app: nginx
+        qcloud-app: nginx
+    spec:
+      containers:
+      - image: nginx:latest
+        imagePullPolicy: Always
+        name: nginx
+        resources:
+          limits:
+            cpu: "1"
+            memory: 2Gi
+            nvidia.com/gpu: "1"
+          requests:
+            cpu: "1"
+            memory: 2Gi
+            nvidia.com/gpu: "1"
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: qcloudregistrykey
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
 ```
 
 
@@ -198,19 +208,17 @@ EKS supports the virtual nodes. You can specify annotations in a YAML file to im
 </tr>
 </tbody></table>
 
-### Sample
+### Example
 The example of a custom DNS configuration for a virtual node is as follows:
 
 ```
 apiVersion: v1
 kind: Node
 metadata:
-    annotations:
-      eks.tke.cloud.tencent.com/resolv-conf:|
-	   	nameserver 4.4.4.4
-        nameserver 8.8.8.8
-    
-	
+  annotations:
+    eks.tke.cloud.tencent.com/resolv-conf:|
+	  nameserver 4.4.4.4
+      nameserver 8.8.8.8
 ```
 
 
@@ -244,33 +252,33 @@ EKS allows you to use existing CLBs to create Services accessed via the public o
 The elastic cluster also supports the same expansion protocol as the TKE cluster. For more information, see [Service Extension Protocol](https://intl.cloud.tencent.com/document/product/457/39141).
 
 >!
->- Ensure that your EKS does not share the same CLB with the CVM.
+>- Ensure that your EKS and the CVM do not share the same CLB.
 >- When the existing CLBs are used:
 >   - Only CLBs created through the CLB console can be used. You cannot reuse CLBs automatically created by TKE.
 >   - Ports of Services that share the same existing CLB cannot be the same.
 >   - Cross-cluster Services cannot share the same CLB.
 
 
-### Sample
+### Example
 ```
 apiVersion: v1
 kind: Service
 metadata:
-   annotations:
-     service.kubernetes.io/tke-existed-lbid: lb-pxxxxxxq
-     service.kubernetes.io/qcloud-share-existed-lb: true
-   name: servicename
-   namespace: default
+  annotations:
+    service.kubernetes.io/tke-existed-lbid: lb-pxxxxxxq
+    service.kubernetes.io/qcloud-share-existed-lb: true
+  name: servicename
+  namespace: default
 spec:
-   externalTrafficPolicy: Cluster
-   ports:
-   - name: tcp-80-80
-     nodePort: 31728
-     port: 80
-     protocol: TCP
-     targetPort: 80
-   sessionAffinity: None
-   type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: tcp-80-80
+    nodePort: 31728
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  sessionAffinity: None
+  type: LoadBalancer
 ```
 
 <style>

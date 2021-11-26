@@ -207,5 +207,4 @@ This document mainly introduces Velero, a Kubernetes cluster resource backup too
 
 - [Velero Official Website](https://velero.io/)
 - [Restic Introduction](https://github.com/restic/restic)
-- [Minio Installation](https://github.com/minio/charts)
 - [Restic Limitations](https://velero.io/docs/v1.5/restic/#limitations)

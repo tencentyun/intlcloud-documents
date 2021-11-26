@@ -3,7 +3,6 @@
 
 
 ## 基本消息类型
-`TUIKit` 基本消息类型请参见 [MessageInfo.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/bean/MessageInfo.java)。
 
 <table>
      <tr>

@@ -9,7 +9,8 @@ Se o disco em nuvem for um disco de dados, é possível expandi-lo usando os tr�
 
 [](id:useCVMConsole)
 
-#### Expansão de discos de dados pelo console do CVM (recomendado)
+<dx-tabs>
+:::Expansão\sde\sdiscos\sde\sdados\spelo\sconsole\sdo\sCVM\s(recomendado)
 
 1. Faça login no [Console do CVM](https://console.cloud.tencent.com/cvm/index).
 2. Localize o CVM no qual deseja expandir o disco de dados e selecione **More (Mais)** > **Resource Adjustment (Ajuste de recursos)** > **Expand Data Disk (Expandir disco de dados)** na coluna **Operation (Operação)**.
@@ -19,16 +20,19 @@ Se o disco em nuvem for um disco de dados, é possível expandi-lo usando os tr�
 6. Atribua sua capacidade expandida a uma partição existente ou formate-a em uma nova partição independente. Dependendo do sistema operacional do CVM, consulte [Extensão de partições e sistemas de arquivos (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) ou [Determinação do método de expansão](https://intl.cloud.tencent.com/document/product/362/39995).
 
 [](id:useCBSConsole)
-#### Expansão de discos de dados pelo console do CBS
+:::
+:::Expansão\sde\sdiscos\sde\sdados\spelo\sconsole\sdo\sCBS
 1. Faça login no [Console do CBS](https://console.cloud.tencent.com/cvm/cbs).
 2. Localize o disco em nuvem a ser expandido e selecione **More (Mais)** > **Expand (Expandir)** na coluna **Operation (Operação)**.
 3. Selecione uma nova capacidade. Deve ser maior ou igual à capacidade atual.
 4. Conclua o pagamento.
 5. Atribua sua capacidade expandida a uma partição existente ou formate-a em uma nova partição independente. Dependendo do sistema operacional do CVM, consulte [Extensão de partições e sistemas de arquivos (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) ou [Determinação do método de expansão](https://intl.cloud.tencent.com/document/product/362/39995).
 
-#### Expansão de discos de dados por API[](id:useAPI)
+:::
+:::Expansão\sde\sdiscos\sde\sdados\spor\sAPI [](id:useAPI)
 É possível usar a API `ResizeDisk` para expandir os discos em nuvem especificados. Para obter mais informações, consulte [ResizeDisk](https://intl.cloud.tencent.com/document/product/362/16310).
-
+:::
+</dx-tabs>
 
 
 
@@ -55,7 +59,8 @@ Também é possível expandir o disco do sistema [reinstalando o sistema operaci
 
 ### Distinção de discos de dados
 Verifique os discos em nuvem de acordo com o sistema operacional do CVM.
-#### Linux
+<dx-tabs>
+::: Linux
 1. [Faça login em uma instância do Linux](https://intl.cloud.tencent.com/document/product/213/5436).
 2. Execute o seguinte comando para visualizar a relação entre os discos em nuvem elásticos e o nome do dispositivo.
 ```
@@ -65,7 +70,8 @@ As seguintes informações serão exibidas:
 ![](https://main.qcloudimg.com/raw/66b6a19695ef4ba21b74ce0cd96503db.png)
 `disk-xxxx` é o ID de um disco em nuvem. É possível usá-lo para visualizar os detalhes do disco em nuvem no [console do CBS](https://console.cloud.tencent.com/cvm/cbs).
 
-#### Windows
+:::
+::: Windows
 1. [Faça login em uma instância do Windows](https://intl.cloud.tencent.com/document/product/213/5435).
 2. Clique com o botão direito em <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-6px 0px"> e selecione **Run (Executar)**.
 3. Insira `cmd` na janela pop-up e pressione **Enter**.
@@ -81,13 +87,15 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 As seguintes informações serão exibidas:
 ![](https://main.qcloudimg.com/raw/e91aa2f938ddda304844d7ac28840859.png)
 `disk-xxxx` é o ID de um disco em nuvem. É possível usá-lo para visualizar os detalhes do disco em nuvem no [console do CBS](https://console.cloud.tencent.com/cvm/cbs).
-
+:::
+</dx-tabs>
 
 ### Verificação da configuração do cloudinit
 Verifique os discos em nuvem de acordo com o sistema operacional do CVM.
 
-[](id:confirmLinuxConfig)
-#### Verificação da configuração do cloudinit para instâncias do Linux
+
+<dx-tabs>
+:::Verificação\sda\sconfiguração\sdo\scloudinit\spara\sinstâncias\sdo\sLinux [](id:confirmLinuxConfig)
 Depois que o disco do sistema for expandido, [faça login na instância do Linux](https://intl.cloud.tencent.com/document/product/213/5436) e verifique se o arquivo `/etc/cloud/cloud.cfg` contém os itens de configuração `growpart` e `resizefs`.
  - Se sim, ignore as outras operações.
 ![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
@@ -95,8 +103,11 @@ Depois que o disco do sistema for expandido, [faça login na instância do Linux
     - **resizefs**: estende ou ajusta o sistema de arquivos na partição `/` para o tamanho da partição.
  - Se não, [estenda manualmente as partições e os sistemas de arquivos (Linux)](https://intl.cloud.tencent.com/document/product/362/39995) de acordo com o sistema operacional, e atribua sua capacidade estendida a uma partição existente ou formate-a em uma nova partição independente.
 
-[](id:confirmwindowsConfig)
-#### Verificação da configuração do cloudinit para instâncias do Windows
+
+:::
+:::Verificação\sda\sconfiguração\sdo\scloudinit\spara\sinstâncias\sdo\sWindows [](id:confirmwindowsConfig)
 Depois que o disco do sistema for expandido, [faça login na instância do Windows](https://intl.cloud.tencent.com/document/product/213/5435) e verifique se o item de configuração `ExtendVolumesPlugin` existe em `plugin` em `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf`.
  - Se sim, ignore as outras operações.
  Se não, [estenda manualmente as partições e os sistemas de arquivos (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) de acordo com o sistema operacional, e atribua sua capacidade expandida a uma partição existente ou formate-a em uma nova partição independente.
+:::
+</dx-tabs>

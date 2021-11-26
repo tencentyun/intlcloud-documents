@@ -84,48 +84,48 @@ $goosefs ns setPolicy [--wPolicy <1-6>] [--rPolicy <1-5>] <namespace>
 
 **写缓存策略**
 
-| 策略名字           | 行为                                                         | 对应 Write_Type | 数据安全性 | 写效率 |
-| :----------------- | :----------------------------------------------------------- | :-------------- | :--------- | :----- |
-| MUST_CACHE（1）    | 数据仅存储在 GooseFS，不会写入远端存储系统中。               | MUST_CACHE      | 不可靠     | 高     |
-| TRY_CACHE（2）     | 缓存有空间时就写入 GooseFS 中，缓存如果没空间则直接写入到底层存储中。 | TRY_CACHE       | 不可靠     | 中     |
-| CACHE_THROUGH（3） | 尽量缓存数据，同时同步写入远端存储系统。                     | CACHE_THROUGH   | 可靠       | 低     |
-| THROUGH（4）       | 数据不存储在 GooseFS，直接写远端存储系统。                   | THROUGH         | 可靠       | 中     |
-| ASYNC_THROUGH（5） | 数据写入 GooseFS 中，并异步刷新到远端存储系统。              | ASYNC_THROUGH   | 弱可靠     | 高     |
+| 策略名字      | 行为                                                         | 对应 Write_Type | 数据安全性 | 写效率 |
+| :------------ | :---------------------------------- | :--------- | :-----  | :-----  |
+| MUST_CACHE（1） | 数据仅存储在 GooseFS，不会写入远端存储系统中。 | MUST_CACHE | 不可靠     | 高     |
+| TRY_CACHE（2） | 缓存有空间时就写入 GooseFS 中，缓存如果没空间则直接写入到底层存储中。 | TRY_CACHE | 不可靠 | 中 |
+| CACHE_THROUGH（3） | 尽量缓存数据，同时同步写入远端存储系统。                    | CACHE_THROUGH | 可靠       | 低    |
+| THROUGH（4）       | 数据不存储在 GooseFS，直接写远端存储系统。                   | THROUGH | 可靠       | 中     |
+| ASYNC_THROUGH（5） | 数据写入 GooseFS 中，并异步刷新到远端存储系统。                 | ASYNC_THROUGH | 弱可靠     | 高     |
 
 >? Write_Type：指用户调用 SDK 或者 API 向 GooseFS 中写入数据时指定的文件缓存策略，对单个文件生效。
->
+> 
 
 **读缓存策略**
 
 | 策略名字                      | 行为                                                         | 元数据同步 | 对应 Read_Type | 数据一致性 | 读效率                  | 是否缓存数据 |
-| :---------------------------- | :----------------------------------------------------------- | :--------- | -------------- | :--------- | :---------------------- | :----------- |
-| NO_CACHE（1）                 | 不缓存数据，直接从远端存储系统中读数据。                     | NO         | NO_CACHE       | 强一致     | 低                      | 否           |
-| CACHE（2）                    | <li>元数据访问行为：如果命中缓存时，元数据以 Master 中的为准，不会主动从底层同步元数据。</li><li>数据流访问行为：数据流的 Read_Type 采用 CACHE 策略。</li> | Once       | CACHE          | 弱一致     | 命中：高<br/>未命中：低 | 是           |
-| CACHE_PROMOTE（3）            | <li>元数据访问行为：与 CACHE 模式相同。</li><li>数据流访问行为：数据流的 Read_Type 采用 CACHE_PROMOTE 策略。</li> | Once       | CACHE_PROMOTE  | 弱一致     | 命中：高<br/>未命中：低 | 是           |
-| CACHE_CONSISTENT_PROMOTE（4） | <li>元数据行为：每次读取操作前均先同步远端存储系统 UFS 上的元数据，如果 UFS 中不存在，则抛出异常 Not Exists。</li><li>数据流访问行为：数据流的 Read_Type 采用 CACHE_PROMOTE 策略，命中以后，缓存到最热的缓存介质中。</li> | Always     | CACHE          | 强一致     | 命中：中<br/>未命中：低 | 是           |
-| CACHE_CONSISTENT（5）         | <li>元数据行为：与 CACHE_CONSISTENT_PROMOTE  相同。</li><li>数据流访问行为：数据流的 Read_Type 采用 CACHE 策略，即 CACHE 命中，不会在不同的介质层中移动数据。</li> | Always     | CACHE_PROMOTE  | 强一致     | 命中：中<br/>未命中：低 | 是           |
+| :---------------------------- | :----------------------------------------------------------- | :--------- | ------------- | :--------- | :---------------------- | :----------- |
+| NO_CACHE（1）                 | 不缓存数据，直接从远端存储系统中读数据。                     | NO         | NO_CACHE      | 强一致     | 低                      | 否           |
+| CACHE（2）                    | <li>元数据访问行为：如果命中缓存时，元数据以 Master 中的为准，不会主动从底层同步元数据。</li><li>数据流访问行为：数据流的 ReadType 采用 CACHE 策略。</li> | Once       | CACHE         | 弱一致     | 命中：高<br/>未命中：低 | 是           |
+| CACHE_PROMOTE（3）            | <li>元数据访问行为：与 CACHE 模式相同。</li><li>数据流访问行为：数据流的 ReadType 采用 CACHE_PROMOTE 策略。</li> | Once       | CACHE_PROMOTE | 弱一致     | 命中：高<br/>未命中：低 | 是           |
+| CACHE_CONSISTENT_PROMOTE（4） | <li>元数据行为：每次读取操作前均先同步远端存储系统 UFS 上的元数据，如果 UFS 中不存在，则抛出异常 Not Exists。</li><li>数据流访问行为：数据流的 ReadType 采用 CACHE_PROMOTE 策略，命中以后，缓存到最热的缓存介质中。</li> | Always     | CACHE         | 强一致     | 命中：中<br/>未命中：低 | 是           |
+| CACHE_CONSISTENT（5）         | <li>元数据行为：与 CACHE_CONSISTENT_PROMOTE  相同。</li><li>数据流访问行为：数据流的 ReadType 采用 CACHE 策略，即 CACHE 命中，不会在不同的介质层中移动数据。</li> | Always     | CACHE_PROMOTE | 强一致     | 命中：中<br/>未命中：低 | 是           |
 
 >? Read_Type：指用户调用 SDK 或者 API 从 GooseFS 中读取数据时指定的文件缓存策略，对单个文件生效。
->
+>  
 
 结合目前大数据的业务实践，我们推荐的读写缓存策略组合主要如下：
 
-| 写缓存策略         | 读缓存策略            | 策略组合表现                   |
-| :----------------- | :-------------------- | :----------------------------- |
-| CACHE_THROUGH（3） | CACHE_CONSISTENT（5） | 缓存和远端存储系统数据强一致。 |
-| CACHE_THROUGH（3） | CACHE（2）            | 写强一致性，读最终一致性。     |
-| ASYNC_THROUGH（5） | CACHE_CONSISTENT（5） | 写最终一致性，读强一致性。     |
-| ASYNC_THROUGH（5） | CACHE（2）            | 读写最终一致性。               |
-| MUST_CACHE（1）    | CACHE（2）            | 只从缓存中读数据。             |
+| 写缓存策略                      | 读缓存策略                                                         | 策略组合表现 |
+| :---------------------------- | :----------------------------------------------------------- | :--------- |
+|CACHE_THROUGH（3）|CACHE_CONSISTENT（5）|缓存和远端存储系统数据强一致。|
+|CACHE_THROUGH（3）|CACHE（2）|写强一致性，读最终一致性。|
+|ASYNC_THROUGH（5）|CACHE_CONSISTENT（5）|写最终一致性，读强一致性。|
+|ASYNC_THROUGH（5）|CACHE（2）|读写最终一致性。|
+|MUST_CACHE（1）|CACHE（2）|只从缓存中读数据。|
 
 如下示例展示了将指定命名空间 test_cos 的读写缓存策略分别设置为 CACHE_THROUGH 和 CACHE_CONSISTENT：
 ```plaintext
 $ goosefs ns setPolicy --wPolicy 3 --rPolicy 5 test_cos
 ```
 
->!除了在创建命名空间时指定缓存策略，用户还可以通过在读写文件时，针对指定文件设置 Read_Type 或者 Write_Type，或者通过 properties 配置文件配置全局缓存策略。多个策略同时存在的时候，优先级为用户自定义优先级 >  Namespace 读写策略 > 配置文件的全局缓存策略配置。其中，针对读策略会采用用户自定义 Read_Type 和 Namespace 的 DirReadPolicy 的组合生效，即数据流读策略采用用户自定义 Read_Type，元数据采用 Namespace 的策略。 
+>!除了在创建命名空间时指定缓存策略，用户还可以通过在读写文件时，针对指定文件设置 ReadType 或者 Write_Type，或者通过 properties 配置文件配置全局缓存策略。多个策略同时存在的时候，优先级为用户自定义优先级 >  Namespace 读写策略 > 配置文件的全局缓存策略配置。其中，针对读策略会采用用户自定义 ReadType 和 Namespace 的 DirReadPolicy 的组合生效，即数据流读策略采用用户自定义 ReadType，元数据采用 Namespace 的策略。 
 >
->例如，GooseFS 中存在一个 COSN 命名空间，读策略为 CACHE_CONSISTENT；假设在该命名空间中存在一个 test.txt 的文件。客户端读取  test.txt  时，Read_Type 指定了 CACHE_PROMOTE。那么整个读取行为就是同步元数据并且 CACHE_PROMOTE。
+> 例如，GooseFS 中存在一个 COSN 命名空间，读策略为 CACHE_CONSISTENT；假设在该命名空间中存在一个 test.txt 的文件。客户端读取  test.txt  时，ReadType 指定了 CACHE_PROMOTE。那么整个读取行为就是同步元数据并且 CACHE_PROMOTE。
 
 如果需要重置读写缓存策略，可以通过 unsetPolicy 指令实现，如下策略展示了重置 test_cos 命名空间的读写缓存策略：
 ```plaintext

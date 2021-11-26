@@ -1,0 +1,173 @@
+<span id="CBS"></span>
+## Ikhtisar Harga CBS
+<table>
+	<tbody>
+		<tr>
+            <th style="width: 10%;" rowspan="2">Ikhtisar Harga CBS</th>
+            <th style="width: 50%;" colspan="3">Harga Pembayaran Sesuai Pemakaian (Satuan: USD/GB/jam)</th>
+            <th style="width: 50%;" colspan="3">Harga Berlangganan Bulanan (Satuan: USD/GB/bulan)</th>
+     </tr>
+      <tr>
+                <th>Premium Cloud Storage</th>
+                <th>SSD</th>
+                <th>Enhanced SSD</th>
+                <th>Premium Cloud Storage</th>
+                <th>SSD</th>
+<th>Enhanced SSD</th>
+            </tr>
+            <tr>
+                <td>Tiongkok Selatan (Guangzhou)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,07</td>
+                <td>0,15</td>
+                <td>0,15</td>
+            </tr>
+            <tr>
+                <td>Tiongkok Timur (Shanghai)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,07</td>
+                <td>0,15</td>
+                <td>0,15</td>
+            </tr>    
+                   <tr>
+                <td>Tiongkok Timur (Nanjing)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,07</td>
+                <td>0,15</td>
+                <td>0,15</td>
+            </tr> 
+            <tr>
+                <td>Tiongkok Utara (Beijing)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,07</td>
+                <td>0,15</td>
+                <td>0,15</td>
+            </tr>
+            <tr>
+                <td>Tiongkok Barat Daya (Chengdu)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,07</td>
+                <td>0,15</td>
+                <td>0,15</td>
+            </tr>
+            <tr>
+                <td>Tiongkok Barat Daya (Chongqing)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,07</td>
+                <td>0,15</td>
+                <td>0,15</td>
+            </tr>
+            <tr>
+                <td>Hong Kong, Makau dan Taiwan, Tiongkok (Hong Kong)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,17</td>
+                <td>0,17</td>
+            </tr>
+            <tr>
+                <td>Amerika Utara (Toronto)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,17</td>
+                <td>0,17</td>
+            </tr>
+            <tr>
+                <td>Asia Tenggara (Singapura)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,18</td>
+                <td>0,18</td>
+            </tr>
+            <tr>
+                <td>AS Barat (Lembah Silikon)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,16</td>
+                <td>0,16</td>
+            </tr>
+            <tr>
+                <td>Eropa (Frankfurt)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,18</td>
+                <td>0,18</td>
+            </tr>
+            <tr>
+                <td>Asia Timur Laut (Seoul)</td>
+               <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,19</td>
+                <td>0,19</td>
+            </tr>
+            <tr>
+                <td>Asia Pasifik (India)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,18</td>
+                <td>0,18</td>
+            </tr>
+            <tr>
+                <td>AS Timur (Virginia)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,18</td>
+                <td>0,18</td>
+            </tr>
+            <tr>
+                <td>Asia Tenggara (Thailand)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,18</td>
+                <td>0,18</td>
+            </tr>
+            <tr>
+                <td>Eropa Timur (Moskow)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,19</td>
+                <td>0,19</td>
+            </tr>        
+            <tr>
+                <td>Asia Timur Laut (Tokyo)</td>
+                <td>0,0001</td>
+                <td>0,0003</td>
+                <td>0,0003</td>
+                <td>0,05</td>
+                <td>0,22</td>
+                <td>0,22</td>
+            </tr>
+        </tbody>
+    </table>
+Harga yang dipublikasikan di sini hanya untuk referensi. Lihat tagihan Anda untuk harga akhir.

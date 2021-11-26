@@ -36,7 +36,7 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 ## Simple Operations
 
-### Querying objects
+### Query objects
 
 #### Description
 
@@ -47,14 +47,68 @@ This API is used to query some or all the objects in a bucket.
 ```
 list_objects(Bucket, Delimiter="", Marker="", MaxKeys=1000, Prefix="", EncodingType="", **kwargs)
 ```
-#### Sample request
+#### Sample 1: listing all objects in a bucket
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # ".cssg-snippet-get-all-objects"
 ```python
+response = client.list_objects(Bucket='examplebucket-1250000000')
+if 'Contents' in response:
+    for content in response['Contents']:
+        print(content['Key'])
+# Note: A maximum of 1,000 objects can be listed at a time. If there are too many objects, you need to list them in multiple responses (see sample 3).
+```
+
+#### Sample 2: listing objects with a specified prefix
+
+[//]: # ".cssg-snippet-get-prefix-objects"
+```python
+# List objects prefixed with “folder”.
 response = client.list_objects(
     Bucket='examplebucket-1250000000',
-    Prefix='folder1'
+    Prefix='folder' 
 )
+
+# List objects in the “folder1” directory: In COS, an object whose name ends with a slash (/) is considered a folder.
+response = client.list_objects(
+    Bucket='examplebucket-1250000000',
+    Prefix='folder1/' 
+)
+```
+
+#### Sample 3: listing objects in multiple responses
+
+[//]: # ".cssg-snippet-get-objects-by-page"
+```python
+# List objects in a bucket with multiple responses, and a maximum of 10 objects can be listed at a time.
+marker = ""
+while True:
+    response = client.list_objects(
+        Bucket='examplebucket-1250000000', Prefix='folder1/', Marker=marker, MaxKeys=10)
+    if 'Contents' in response:
+        for content in response['Contents']:
+            print(content['Key'])
+
+    if response['IsTruncated'] == 'false':
+        break
+
+    marker = response["NextMarker"]
+```
+
+#### Sample 4: listing objects and subdirectories in a directory
+
+[//]: # ".cssg-snippet-get-files-and-subfolder"
+```python
+# List objects and subdirectories in “folder1”.
+response = client.list_objects(
+    Bucket='examplebucket-1250000000', Prefix='folder1/', Delimiter='/')
+# Print the object list.
+if 'Contents' in response:
+    for content in response['Contents']:
+        print(content['Key'])
+# Print subdirectories.
+if 'CommonPrefixes' in response:
+    for folder in response['CommonPrefixes']:
+        print(folder['Prefix'])
 ```
 
 #### Sample request with all parameters
@@ -125,7 +179,7 @@ The response contains object metadata in dict format:
 | NextMarker | The object after which the next returned list begins if `IsTruncated` is `true` | String |
 | Name | Bucket name in the format of `BucketName-APPID` | String |
 | IsTruncated   |  Whether the returned object list is truncated. | String |
-| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | 
+| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
 | Contents | List of all object metadata, including `ETag`, `StorageClass`, `Key`, `Owner`, `LastModified`, `Size` | List |
 | CommonPrefixes | All objects starting with the specified prefix and ending with the specified delimiter | List |
 
@@ -238,7 +292,7 @@ The response contains object metadata in dict format:
 | NextVersionIdMarker | The version ID of the object after which the next returned list begins if `IsTruncated` is `true` | String |
 | Name | Bucket name in the format of `BucketName-APPID` | String |
 | IsTruncated   |  Whether the returned object list is truncated. | String |
-| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | 
+| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
 | Version | List of the metadata of all objects with multiple versions, including `ETag`, `StorageClass`, `Key`, `VersionId`, `IsLatest`, `Owner`, `LastModified`, and `Size`  | List |
 | DeleteMarker | List of the metadata of all delete markers, including `Key`, `VersionId`, `IsLatest`, `Owner`, and `LastModified` | List |
 | CommonPrefixes | All objects starting with the specified prefix and ending with the specified delimiter | List |
@@ -520,7 +574,7 @@ The response contains object metadata in dict format:
 | x-cos-version-id | Version ID of the object if versioning is enabled | String  |
 
 
-### Downloading an object
+### Download an object
 
 #### Description
 
@@ -1022,7 +1076,7 @@ response = client.delete_objects(
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Delete  | Response method and target objects to delete  | Dict | Yes |
 | Objects | Information of each object to delete | List | Yes |
-| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String |No |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String |
 | VersionId | Version ID of the target object if versioning is enabled | String  | No |
 | Quiet | Response method. Valid values: `true`: returns only the failed results; `false` (default): returns all results. | String | No |
 
@@ -1454,7 +1508,7 @@ This response contains information on the initialization of the multipart upload
 | Bucket | Bucket name in the format of `BucketName-APPID` | String |
 | Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String |
 
-###  Uploading parts
+### Uploading parts
 
 This API (`Upload Part`) is used to upload an object in parts.
 
@@ -1735,7 +1789,7 @@ response = client.complete_multipart_upload(
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
 | UploadId | ID of the multipart upload | String | Yes |
-| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict | Yes |
+| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict |
 
 #### Response description
 
@@ -1976,6 +2030,107 @@ response = client.download_file(
 #### Response description
 None
 
+
+
+### Copying objects
+
+#### Description
+This advanced API copies objects smaller than 5 GB by calling `copy_object`. If an object is larger than or equal to 5 GB, it calls `upload_part_copy`.
+
+#### Method prototype
+
+```
+copy(Bucket, Key, CopySource, CopyStatus='Copy', PartSize=10, MAXThread=5, **kwargs)
+```
+
+#### Sample 1. Copying an object
+
+[//]: # ".cssg-snippet-transfer-copy"
+```python
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import os
+import logging
+
+# Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
+client = CosS3Client(config)
+
+response = client.copy(
+    Bucket='test',
+    Key='copy_10G.txt',
+    CopySource={
+        'Bucket': 'sourcebucket-1250000000', 
+        'Key': 'exampleobject', 
+        'Region': 'ap-guangzhou'
+    }
+)
+```
+
+#### Sample 2: moving an object
+
+[//]: # ".cssg-snippet-transfer-copy-move"
+```python
+bucket = 'examplebucket-1250000000'
+srcKey = 'src_object_key'  # Path of the source object
+destKey = 'dest_object_key'   # Path of the destination object
+
+# COS does not offer an API to move objects. To move an object, you can copy it first and delete the old one.
+try:
+    response = client.copy(
+        Bucket=bucket,
+        Key=destKey,
+        CopySource={
+            'Bucket':bucket,
+            'Key':srcKey,
+            'Region':'ap-guangzhou',
+        })
+    client.delete_object(Bucket=bucket, Key=srcKey)
+except CosException as e:
+    print(e.get_error_msg())
+```
+
+#### Sample request with all parameters
+
+```python
+response = client.copy(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    CopySource={
+        'Bucket': 'sourcebucket-1250000000', 
+        'Key': 'exampleobject', 
+        'Region': 'ap-guangzhou'
+    }
+    CopyStatus='Copy'|'Replaced',
+    PartSize=20,
+    MAXThread=10
+)
+```
+#### Parameter description
+
+| Parameter | Description | Type | Required |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| CopySource  | Path of the source object to copy, which contains `Bucket`, `Key`, `Region`, and `VersionId` |  Dict | Yes |
+ | CopyStatus | Copy status. Valid values: `Copy`, `Replaced`                        | String | No |
+ | PartSize | Part size for multipart download. Default value: 10 MB |  Int | No |
+ |  MAXThread  | Maximum number of concurrent threads for a multipart download. Default value: 5 |  Int |  No |
+
+#### Response description
+If the object is smaller than 5 GB, the response of `copy_object` is returned. Otherwise, the response of `complete_multipart_upload` is returned. The format is dict.
+
+
 ### Batch uploading files (uploading a local folder)
 
 #### Description
@@ -2069,7 +2224,7 @@ config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Toke
 client = CosS3Client(config)
 
 # Bucket information
-test_bucket = 'chenxi-1253870963'
+test_bucket = 'examplebucket-1250000000'
 start_prefix = 'data/'
 # COS uses slashes (/) to indicate folders.
 # The delimiter parameter is left empty by default, which lists all subdirectories under the directories to achieve the recursive effect of a local folder.
@@ -2180,115 +2335,77 @@ if __name__ == "__main__":
     downLoadDirFromCos(start_prefix)
 ```
 
-### Copying objects
+
+### Deleting multiple objects (deleting a directory)
 
 #### Description
-This API is used to copy an object. If the object is smaller than 5 GB, it calls `copy_object`. If the object is larger than or equal to 5 GB, it calls `upload_part_copy`.
+COS does not have the concept of directories, but you can use slashes (/) as the delimiter to stimulate directories.
 
-#### Method prototype
+In COS, deleting a directory and the objects contained actually means deleting objects that have the same specified prefix. Currently, COS’s Python SDK does not provide a standalone API to perform this operation. However, you can still do so with a combination of basic operations (query object list + batch delete objects).
 
-```
-copy(Bucket, Key, CopySource, CopyStatus='Copy', PartSize=10, MAXThread=5, **kwargs)
-```
-#### Sample 1. Copying an object
-
-[//]: # ".cssg-snippet-transfer-copy"
+#### Sample request
 ```python
-response = client.copy(
-    Bucket='test',
-    Key='copy_10G.txt',
-    CopySource={
-        'Bucket': 'sourcebucket-1250000000', 
-        'Key': 'exampleobject', 
-        'Region': 'ap-guangzhou'
-    }
-)
-```
-
-#### Sample 2: moving an object
-```python
-# -*- coding=utf-8
-from qcloud_cos import CosConfig
-from qcloud_cos import CosS3Client
-from qcloud_cos import CosServiceError
-from qcloud_cos import CosClientError
-
+import logging
 import sys
 import os
-import logging
 
-# -*- coding=utf-8
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
-from qcloud_cos import CosServiceError
-from qcloud_cos import CosClientError
+from qcloud_cos.cos_threadpool import SimpleThreadPool
 
-import sys
-import os
-import logging
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
 secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
 token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+scheme = 'http'            # Specify whether to use HTTP or HTTPS protocol to access COS. This is optional and is https by default.
 
-config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)  # Obtain the object to configure.
 client = CosS3Client(config)
 
-# Move the object.
 bucket = 'examplebucket-1250000000'
-srcKey = 'src_object_key'  # Path of the source object
-destKey = 'dest_object_key'   # Path of the destination object
+folder = 'folder/' # A directory to delete (an object name ending with a slash (/) is a directory)
 
-# The following example shows how to use the SDK’s basic APIs to move an object.
-try:
-    response = client.copy_object(
-        Bucket=bucket,
-        Key=destKey,
-        CopySource={
-            'Bucket':bucket,
-            'Key':srcKey,
-            'Region':'ap-guangzhou',
-        })
-    client.delete_object(Bucket=bucket, Key=srcKey)
-except CosException as e:
-     print(e.get_error_msg())
+def delete_cos_dir():
+    pool = SimpleThreadPool()
+    marker = ""
+    while True:
+        file_infos = []
+
+        # List 100 objects in a response.
+        response = client.list_objects(Bucket=bucket, Prefix=folder, Marker=marker, MaxKeys=100)
+
+        if "Contents" in response:
+            contents = response.get("Contents")
+            file_infos.extend(contents)
+            pool.add_task(delete_files, file_infos)
+
+        # Quit after the listing.
+        if response['IsTruncated'] == 'false':
+            break
+        
+        # Get the next response.
+        marker = response["NextMarker"]
+
+    pool.wait_completion()
+    return None   
+
+def delete_files(file_infos):
+
+    # Construct the batch delete request.
+    delete_list = []
+    for file in file_infos:
+        delete_list.append({"Key": file['Key']})
+
+    response = client.delete_objects(Bucket=bucket, Delete={"Object": delete_list})
+    print(response)
+
+if __name__ == "__main__":
+    delete_cos_dir()
 ```
-
-
-
-#### Sample request with all parameters
-```python
-response = client.copy(
-    Bucket='examplebucket-1250000000',
-    Key='exampleobject',
-    CopySource={
-        'Bucket': 'sourcebucket-1250000000', 
-        'Key': 'exampleobject', 
-        'Region': 'ap-guangzhou'
-    }
-    CopyStatus='Copy',
-    PartSize=20,
-    MAXThread=10
-)
-```
-#### Parameter description
-
-
-| Parameter | Description | Type | Required |
-| -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
-| CopySource  | Path of the source object to copy, which contains `Bucket`, `Key`, `Region`, and `VersionId` |  Dict | Yes |
- | CopyStatus | Copy status. Valid values: `Copy`, `Replaced`                        | String | No |
- | PartSize | Part size for multipart download. Default value: 10 MB |  Int | No |
- |  MAXThread  | Maximum number of concurrent threads for a multipart download. Default value: 5 |  Int |  No |
-
-#### Response description
-If the object is smaller than 5 GB, the response of `copy_object` is returned. Otherwise, the response of `complete_multipart_upload` is returned. The format is dict.
-
 
 
 ## Client-Side Encryption

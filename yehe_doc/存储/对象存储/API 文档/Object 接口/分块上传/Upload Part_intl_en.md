@@ -24,7 +24,7 @@ This API is used to upload an object to COS in multiple parts. You can upload up
     </div>
 </div>
 
-## Requests
+## Request
 
 #### Sample request
 
@@ -42,7 +42,7 @@ Authorization: Auth String
 
 >? 
 > - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 #### Request parameters
@@ -56,11 +56,11 @@ Authorization: Auth String
 
 In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-**Headers related to SSE**
+**SSE-related headers**
 
 If SSE-C is used during the initialization of the current multipart upload, you need to specify the encryption algorithm and key that were specified during the initialization. Otherwise, you cannot specify the following headers.
 
-| Header |  Description | Type |Required |
+| Field |  Description | Type | Required |
 | ----------------------------------------------- | ------------------------------------------------------------ | ------ | -------- |
 | x-cos-server-side-encryption-customer-algorithm | Server-side encryption algorithm. Currently, only `AES256` is supported. | string | Yes |
 | x-cos-server-side-encryption-customer-key       | Base64-encoded server-side encryption key. <br>Example: `MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=` | string | Yes       |
@@ -77,7 +77,7 @@ The request body of this API is the part content of the object (file).
 
 In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-**Headers related to SSE**
+**SSE-related headers**
 
 If server-side encryption is used during the initialization of the current multipart upload, this API will return headers used specifically for server-side encryption. For more information, please see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 

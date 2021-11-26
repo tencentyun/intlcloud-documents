@@ -29,32 +29,27 @@ pod 'TPNS-iOS', '~> version'  // If the version is not specified, the latest ver
 	pod repo update
 	pod search TPNS-iOS
 	pod install // Install the SDK 
-		```
-	```  
-	
-	```
-
-	```
-	
 	```
 
 #### Method 2. Import manually
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns) and click **[SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload)** in the left sidebar to go to the download page. Select the SDK version to download, and click **Download** in the **Operations** column.
 2. Open the SDK folder under the `demo` directory. Add `XGPush.h` and `libXG-SDK-Cloud.a` to the project. Open the `XGPushStatistics` folder and obtain `XGMTACloud.framework`.
-3. Import the `InAppMessage` folder into the project and add the search path in **Build Setting > **Framework Search Paths** (if your SDK version is below 1.2.8.0, you can skip this step).
+3. Import the `InAppMessage` folder into the project and add the search path in **Build Setting** >  **Framework Search Paths** (if your SDK version is below 1.2.8.0, you can skip this step).
 4. Add the following frameworks to `Build Phases`:
+
+```
+* XGInAppMessage.framework
+  * XGMTACloud.framework
+  * CoreTelephony.framework
+  * SystemConfiguration.framework
+  * UserNotifications.framework
+  * libXG-SDK-Cloud.a 
+  * libz.tbd
+  * CoreData.framework
+  * CFNetwork.framework
+  * libc++.tbd
  ```
- * XGInAppMessage.framework
- * XGMTACloud.framework
- * CoreTelephony.framework
- * SystemConfiguration.framework
- * UserNotifications.framework
- * libXG-SDK-Cloud.a 
- * libz.tbd
- * CoreData.framework
- * CFNetwork.framework
- * libc++.tbd
- ```
+
 5. After the frameworks are added, the library references are as follows:
 ![](https://main.qcloudimg.com/raw/79976648574060954cebfb894cc5cdd4.png)
 
@@ -142,14 +137,6 @@ The SDK provides the Service Extension API, which can be called by the client to
 For the integration steps, please see [Notification Service Extension](https://intl.cloud.tencent.com/document/product/1024/30730).
 >!If the Service Extension API is not integrated, arrival statistics cannot be collected for the APNs channel.
 
-
-Before integration:
-![](https://main.qcloudimg.com/raw/79c01ccaffca8be63341b18ad48ea9a7.png)
-
-After integration:
-![](https://main.qcloudimg.com/raw/9930f71a63d23b2da0c86b023f8e769f.png)
-
-
 ## Debugging Method
 #### Enable debug mode
 After enabling debug mode, you can view the detailed TPNS debug information on the device for troubleshooting.
@@ -194,9 +181,9 @@ If the Xcode console displays a log similar to the one below, the client has pro
 - (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler;
 ```
 >?
-- When the application receives a notification message in the foreground or a silent message in all states, the unified message receipt callback `xgPushDidReceiveRemoteNotification` will be triggered.
-The following is the sample code for differentiating the receipt of a notification message in the foreground or a silent message in all states.
-```
+> -  When the application receives a notification message in the foreground or a silent message in all states, the unified message receipt callback `xgPushDidReceiveRemoteNotification` will be triggered.
+ The following is the sample code for differentiating the receipt of a notification message in the foreground or a silent message in all states.
+>  ```
 NSDictionary *tpnsInfo = notificationDic[@"xg"];
 NSNumber *msgType = tpnsInfo[@"msgtype"];
 if (msgType.integerValue == 1) {
@@ -206,6 +193,7 @@ if (msgType.integerValue == 1) {
     } else if (msgType.integerValue == 9) {
         /// Receipt of a local notification (TPNS local notification)
     }
+
 ```
 
 **Unified message click callback:** this callback applies to the notification messages of the application in states (foreground, background and shutdown).
@@ -217,39 +205,16 @@ if (msgType.integerValue == 1) {
 ```
 
 >!
->
->- The unified message receipt callback `xgPushDidReceiveRemoteNotification` of the TPNS will process message receipt and then automatically call the `application:didReceiveRemoteNotification:fetchCompletionHandler` method, which, however, may also be hooked by other SDKs.
-- If you have integrated only the TPNS platform, you are advised not to implement the system notification callback method; use only the TPNS notification callback method instead.
-- If you have integrated multiple push platforms and need to process the services of other platforms using the `application:didReceiveRemoteNotification:fetchCompletionHandler` method, please see the following guidelines to avoid repeated service processing:
- - You need to distinguish between message platforms. After getting the message dictionary in the two message callback methods, use the `xg` field to tell whether it is a TPNS message. If it is a TPNS message, process it using the `xgPushDidReceiveRemoteNotification` method; otherwise, process it using the `application:didReceiveRemoteNotification:fetchCompletionHandler` method.
- - If both `xgPushDidReceiveRemoteNotification` and `application:didReceiveRemoteNotification:fetchCompletionHandler` are executed, then `completionHandler` needs to be called only once in total. If it is also called by other SDKs, make sure that it is called only once overall; otherwise, crashes may occur.
+> - The unified message receipt callback `xgPushDidReceiveRemoteNotification` of the TPNS will process message receipt and then automatically call the `application:didReceiveRemoteNotification:fetchCompletionHandler` method, which, however, may also be hooked by other SDKs.
+> - If you have integrated only the TPNS platform, you are advised not to implement the system notification callback method; use only the TPNS notification callback method instead.
+> -  If you have integrated multiple push platforms and need to process the services of other platforms using the `application:didReceiveRemoteNotification:fetchCompletionHandler` method, please see the following guidelines to avoid repeated service processing:
+      - You need to distinguish between message platforms. After getting the message dictionary in the two message callback methods, use the `xg` field to tell whether it is a TPNS message. If it is a TPNS message, process it using the `xgPushDidReceiveRemoteNotification` method; otherwise, process it using the `application:didReceiveRemoteNotification:fetchCompletionHandler` method.
+      - If both `xgPushDidReceiveRemoteNotification` and `application:didReceiveRemoteNotification:fetchCompletionHandler` are executed, then `completionHandler` needs to be called only once in total. If it is also called by other SDKs, make sure that it is called only once overall; otherwise, crashes may occur.
 
 
 
 
 ## Advanced Configuration (Optional)
-<span id="zhuxiao"></span>
-### Unregistering XG platform service
-If the application push service is migrated from the [XG platform](https://xg.qq.com) to the TPNS platform, you need to call the API of `TPNS SDK(1.2.5.3+)` to unregister the device information on the XG platform.
-
-#### API
-
-```objective-c
-// TPNS `accessId` (TPNS SDK v2 and v3 supported)
-@property uint32_t freeAccessId;
-```
-
-#### Usage
-
-- Import the header file `XGForFreeVersion.h`.
-- Call this API before `startXGWithAccessID:accessKey:delegate:`. See the sample below:
-
-```objective-c
-[XGForFreeVersion defaultForFreeVersion].freeAccessId = 2200262432;
-[[XGPush defaultManager] startXGWithAccessID: <#your tpns access ID#>appKey:<#your tpns access key#> delegate:<#your delegate#>];
-```
->!If the above configuration is not completed, duplicate messages may be pushed if both the XG and TPNS platforms are used.
-
 
 <span id="QHToken"></span>
 ### Suggestions on getting the TPNS token
@@ -260,13 +225,10 @@ After you integrate the SDK, we recommend you use gestures or other methods to d
 // Get the token generated by TPNS.
 [[XGPushTokenManager defaultTokenManager] xgTokenString];
 ```
-![](https://main.qcloudimg.com/raw/f6ff84d3a50630bb4e8a0ab6fd090798.png)
 
 ### Suggestions on getting TPNS running logs
 After integrating the SDK, you are advised to use gestures or other methods to display TPNS running logs in the app’s less commonly used UI such as **About** or **Feedback**. Doing so will facilitate subsequent troubleshooting.
 
-The effect is shown below:
-![](https://main.qcloudimg.com/raw/8eaaba4bedf0a541ed7f077d2e374ca3.png)![](https://main.qcloudimg.com/raw/5c28586161aefb3c47c5cdb7e23ed57b.png)
 #### Sample code
 ```objective-c
 [[XGPush defaultManager] uploadLogCompletionHandler:^(BOOL result, NSString * _Nullable errorMessage) {

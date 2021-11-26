@@ -1,4 +1,5 @@
 ## September 2021
+
 <table>
 <thead>
 <tr>
@@ -10,7 +11,13 @@
 </thead>
 <tbody>
 <tr>
-<td>Add monitoring metrics</td>
+<td>Released a Hadoop cluster version—EMR v3.3.0.</td>
+<td>Added support for HBase 2.3.5, Phoenix 5.1.2, Kudu 1.15.0, Hue 4.10.0, Hudi 0.8.0, Tez 0.10.1, Livy 0.8.0, Ganglia 3.7.2, Kyuubi 1.1.0, and LDAP 2.4.44.</td>
+<td>September 28, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+</tr>
+<tr>
+<td>Added monitoring metrics.</td>
 <td>Enriched Alluxio service monitoring metrics and added COSRanger monitoring metrics.</td>
 <td>September 15, 2021</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/39434" target="_blank">Alluxio Monitoring Metrics</a><br/><a href="https://intl.cloud.tencent.com/document/product/1026/42330" target="_blank">COSRanger Monitoring Metrics</a></td>
@@ -19,9 +26,10 @@
 <td>Connected to Cloud Monitor's default alarms</td>
 <td>Cloud Monitor supports default alarm policies for Elastic MapReduce metrics/events.</td>
 <td>September 15, 2021</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
+
 
 
 ## August 2021
