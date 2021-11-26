@@ -1,12 +1,11 @@
-## 工作负载 template annotation 说明
-您可以通过在 yaml 中定义 `template annotation` 的方式，实现为 Pod 绑定安全组、分配资源等能力。配置方法见下表：
+## 工作负载 pod template annotation 说明
+您可以通过在 yaml 中定义 `spec.template.metadata.annotations` 的方式，实现为 Pod 绑定安全组、分配资源等能力。配置方法见下表：
 
->!
->- 如果不指定安全组，则 Pod 会默认绑定同地域的 `default` 安全组。请确保 `default` 安全组的网络策略不影响该 Pod 正常工作。
->- 如需分配 GPU 资源，则必须填写 `eks.tke.cloud.tencent.com/gpu-type`。
->- 下表中除 `eks.tke.cloud.tencent.com/gpu-type` 外，其余4个资源分配相关的 annotation 均为非必填，如填写则请确保正确性。
-> - 如需分配 CPU 资源，则必须同时填写 `cpu` 和 `mem` 2个 annotation，且数值必须符合 [资源规格](https://intl.cloud.tencent.com/document/product/457/34057) 中的 CPU 规格。另外，可以通过 `cpu-type` 指定分配 intel 或 amd CPU，其中 amd 具备更高的性价比，详情请参考 [产品定价](https://intl.cloud.tencent.com/document/product/457/34055)。 
-> - 如需分配 GPU 资源，则必须同时填写 `cpu`、`mem`、`gpu-type` 及 `gpu-count` 4个 annotation，且数值必须符合 [资源规格](https://intl.cloud.tencent.com/document/product/457/34057) 中的 GPU 规格。
+<dx-alert infotype="notice" title="">
+- 如果不指定安全组，则 Pod 会默认绑定同地域的 `default` 安全组。请确保 `default` 安全组的网络策略不影响该 Pod 正常工作。
+- 如需通过 annotation 指定的方式分配 CPU 资源，则必须同时填写 `cpu` 和 `mem` 2个 annotation，且数值必须符合 [资源规格](https://intl.cloud.tencent.com/document/product/457/34057) 中的 CPU 规格。另外，可以通过 `cpu-type` 指定分配 intel 或 amd CPU，其中 amd 具备更高的性价比，详情请参考 [产品定价](https://intl.cloud.tencent.com/document/product/457/34055)。 
+- 如需通过 annotation 指定的方式分配 GPU 资源，则必须同时填写`gpu-type` 及 `gpu-count` 2个 annotation，且数值必须符合 [资源规格](https://intl.cloud.tencent.com/document/product/457/34057) 中的 GPU 规格。
+</dx-alert>
 
 
 <table>
@@ -24,7 +23,7 @@
 	<ul class="params">
 	<li>可填写多个，以<code>,</code>分割。例如 <code>sg-id1,sg-id2</code>。</li>
 	<li>网络策略按安全组顺序生效。</li>
-	<li>请注意单个安全组默认只能关联 2000 个计算实例，如云服务器 CVM 或 弹性容器 Pod，详细请参考<a href="https://intl.cloud.tencent.com/document/product/213/15379" target="_blank">安全组限制</a>。</li>
+	<li>请注意单个安全组默认只能关联 2000 个计算实例，如云服务器 CVM 或 弹性容器 Pod，详细请参考 <a href="https://intl.cloud.tencent.com/document/product/213/15379" target="_blank">安全组限制</a>。</li>
 	</ul>
 </td>
 <td> 否。如不填写，则默认关联工作负载绑定同地域的 <code>default</code> 安全组。<br>如填写，请确保同地域已存在该安全组 ID。</td></tr>
@@ -40,10 +39,11 @@
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/cpu-type</td>
-<td>Pod 所需的 CPU 资源型号，目前支持型号如下：
+<td>Pod 所需的 CPU 资源类型及机型，格式如下：
 <ul  class="params">
 <li>intel</li>
 <li>amd</li>
+<li>S5,S4</li>
 <li>支持优先级顺序写法，如 “amd,intel” 表示优先创建 amd 资源 Pod，如果所选地域可用区 amd 资源不足，则会创建 intel 资源 Pod。</li>
 </ul>
 各型号支持的具体配置请参考 <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">资源规格</a>。</td>
@@ -69,12 +69,12 @@
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/retain-ip</td>
-<td>Pod 固定 IP，value 填写 <code>"true"</code> 开启此特性，开启特性的 Pod ，当 Pod 被销毁后，默认会保留这个 Pod 的 IP 24小时。24小时内 Pod 重建，仍可使用该 IP。24小时以后，该 IP 有可能被其他 Pod 抢占。</td>
+<td>Pod 固定 IP，value 填写 <code>"true"</code> 开启此特性，开启特性的 Pod ，当 Pod 被销毁后，默认会保留这个 Pod 的 IP 24小时。24小时内 Pod 重建，仍可使用该 IP。24小时以后，该 IP 有可能被其他 Pod 抢占。<b>仅对 statefulset、rawpod 生效。</b></td>
 <td>否</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/retain-ip-hours</td>
-<td>修改 Pod 固定 IP 的默认时长，value 填写数值，单位是小时。默认是24小时，最大可支持保留一年。</td>
+<td>修改 Pod 固定 IP 的默认时长，value 填写数值，单位是小时。默认是24小时，最大可支持保留一年。<b>仅对 statefulset、rawpod 生效。</td>
 <td>否</td>
 </tr>
 <tr>
@@ -107,6 +107,16 @@
 <td>值为 "true" 时，表明会在 Pod 内暴露 EIP 的 IP 信息。在 Pod 内使用 ip addr 命令可以查看到 EIP 的地址。</td>
 <td>否 </td>
 </tr>
+<tr>
+<td>eks.tke.cloud.tencent.com/registry-insecure-skip-verify</td>
+<td>镜像仓库地址（多个用“,”隔开，或者填写 all）。在弹性集群使用自建 HTTPS 自签名镜像仓库的镜像创建工作负载时，可能会遇到 “ErrImagePull” 报错，拉取镜像失败，可添加该 Annotation 来解决。详情见 <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028">弹性集群如何使用自建的自签名镜像仓库或 HTTP 协议镜像仓库？</a></td>
+<td>否 </td>
+</tr>
+<tr>
+<td>eks.tke.cloud.tencent.com/registry-http-endpoint</td>
+<td>镜像仓库地址（多个用“,”隔开，或者填写 all）。在弹性集群使用自建 HTTP 协议镜像仓库的镜像创建工作负载时，可能会遇到 “ErrImagePull” 报错，拉取镜像失败，可添加该 Annotation 来解决。详情见 <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028">弹性集群如何使用自建的自签名镜像仓库或 HTTP 协议镜像仓库？</a></td>
+<td>否 </td>
+</tr>
 </tbody></table>
 
 ### 示例
@@ -115,63 +125,63 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-   generation: 1
-   labels:
-     k8s-app: nginx
-     qcloud-app: nginx
-   name: nginx
-   namespace: default
+  generation: 1
+  labels:
+    k8s-app: nginx
+    qcloud-app: nginx
+  name: nginx
+  namespace: default
 spec:
-   progressDeadlineSeconds: 600
-   replicas: 1
-   revisionHistoryLimit: 10
-   selector:
-     matchLabels:
-       k8s-app: nginx
-       qcloud-app: nginx
-   strategy:
-     rollingUpdate:
-       maxSurge: 1
-       maxUnavailable: 0
-     type: RollingUpdate
-   template:
-     metadata:
-       annotations:
-         eks.tke.cloud.tencent.com/cpu: "4"
-         eks.tke.cloud.tencent.com/gpu-count: "1"
-         eks.tke.cloud.tencent.com/gpu-type: 1/4*T4
-         eks.tke.cloud.tencent.com/mem: 10Gi
-         eks.tke.cloud.tencent.com/security-group-id: "sg-dxxxxxx5,sg-zxxxxxxu"
-         eks.tke.cloud.tencent.com/role-name: "cam-role-name"
-         eks.tke.cloud.tencent.com/monitor-port: "9123"
-         eks.tke.cloud.tencent.com/custom-metrics-url: "http://localhost:8080/metrics"
-       creationTimestamp: null
-       labels:
-         k8s-app: nginx
-         qcloud-app: nginx
-     spec:
-       containers:
-       - image: nginx:latest
-         imagePullPolicy: Always
-         name: nginx
-         resources:
-           limits:
-             cpu: "1"
-             memory: 2Gi
-             nvidia.com/gpu: "1"
-           requests:
-             cpu: "1"
-             memory: 2Gi
-             nvidia.com/gpu: "1"
-         terminationMessagePath: /dev/termination-log
-         terminationMessagePolicy: File
-       dnsPolicy: ClusterFirst
-       imagePullSecrets:
-       - name: qcloudregistrykey
-       restartPolicy: Always
-       schedulerName: default-scheduler
-       securityContext: {}
-       terminationGracePeriodSeconds: 30
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      k8s-app: nginx
+      qcloud-app: nginx
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        eks.tke.cloud.tencent.com/cpu: "4"
+        eks.tke.cloud.tencent.com/gpu-count: "1"
+        eks.tke.cloud.tencent.com/gpu-type: 1/4*T4
+        eks.tke.cloud.tencent.com/mem: 10Gi
+        eks.tke.cloud.tencent.com/security-group-id: "sg-dxxxxxx5,sg-zxxxxxxu"
+        eks.tke.cloud.tencent.com/role-name: "cam-role-name"
+        eks.tke.cloud.tencent.com/monitor-port: "9123"
+        eks.tke.cloud.tencent.com/custom-metrics-url: "http://localhost:8080/metrics"
+      creationTimestamp: null
+      labels:
+        k8s-app: nginx
+        qcloud-app: nginx
+    spec:
+      containers:
+      - image: nginx:latest
+        imagePullPolicy: Always
+        name: nginx
+        resources:
+          limits:
+            cpu: "1"
+            memory: 2Gi
+            nvidia.com/gpu: "1"
+          requests:
+            cpu: "1"
+            memory: 2Gi
+            nvidia.com/gpu: "1"
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: qcloudregistrykey
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
 ```
 
 
@@ -205,12 +215,10 @@ spec:
 apiVersion: v1
 kind: Node
 metadata:
-    annotations:
-      eks.tke.cloud.tencent.com/resolv-conf：|
-	   	nameserver 4.4.4.4
-        nameserver 8.8.8.8
-    
-	
+  annotations:
+    eks.tke.cloud.tencent.com/resolv-conf：|
+	  nameserver 4.4.4.4
+      nameserver 8.8.8.8
 ```
 
 
@@ -256,21 +264,21 @@ metadata:
 apiVersion: v1
 kind: Service
 metadata:
-   annotations:
-     service.kubernetes.io/tke-existed-lbid: lb-pxxxxxxq
-     service.kubernetes.io/qcloud-share-existed-lb: true
-   name: servicename
-   namespace: default
+  annotations:
+    service.kubernetes.io/tke-existed-lbid: lb-pxxxxxxq
+    service.kubernetes.io/qcloud-share-existed-lb: true
+  name: servicename
+  namespace: default
 spec:
-   externalTrafficPolicy: Cluster
-   ports:
-   - name: tcp-80-80
-     nodePort: 31728
-     port: 80
-     protocol: TCP
-     targetPort: 80
-   sessionAffinity: None
-   type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: tcp-80-80
+    nodePort: 31728
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  sessionAffinity: None
+  type: LoadBalancer
 ```
 
 <style>
