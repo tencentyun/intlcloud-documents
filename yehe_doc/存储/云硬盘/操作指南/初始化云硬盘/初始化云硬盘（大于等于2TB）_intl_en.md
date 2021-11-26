@@ -13,7 +13,7 @@ You have [attached the cloud disk](https://intl.cloud.tencent.com/document/produ
 ## Directions[](id:Steps)
 
 <dx-tabs>
-::: Initializing\scloud\sdisks\s(Windows)[](id:2TBWindows2013)
+::: Initializing\scloud\sdisks\s(Windows) [](id:2TBWindows2013)
 This document uses a CVM with Windows Server 2012 installed as an example. Note that the steps may vary according to the operating system version.
 
 1. [Log in to the Windows CVM instance](https://intl.cloud.tencent.com/document/product/213/5435).
@@ -47,7 +47,7 @@ If the newly added disk is in offline status, execute [Step 5](#online) before [
  After the initialization is complete, enter the **My Computer** interface to view the new disk.
 
 :::
-::: Initializing\scloud\sdisks\s(Linux)[](id:2TBLinux)
+::: Initializing\scloud\sdisks\s(Linux) [](id:2TBLinux)
 Select the initialization method according to your actual use cases:
 - If the entire disk is presented as one independent partition (there is no logical disks such as vdb1 and vdb2), we strongly recommend that you not use partition, and directly [create the file system on bare devices](#CreateFileSystemOnBareDevice).
 - If the entire disk needs to be presented as multiple logical partitions (there are multiple logical disks), you need to first partition the disk, and then [create the file system on a partition](#CreateFileSystemOnPartition).
