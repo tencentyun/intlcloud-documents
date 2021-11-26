@@ -6,7 +6,8 @@ O CBS permite criar um disco em nuvem e adicioná-lo a qualquer CVM na mesma zon
 - Antes de criar um disco em nuvem, é preciso [criar uma conta no Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985) e concluir a [verificação de identidade](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Instruções
-### Criação de um disco em nuvem pelo console
+<dx-tabs>
+:::Criação/sde/sum/sdisco/sem/snuvem/spelo/sconsole
 
 1. Faça login no [Console do CBS](https://console.cloud.tencent.com/cvm/cbs).
 2. Selecione uma região e clique em **+ New (+ Novo)**.
@@ -73,8 +74,11 @@ O CBS permite criar um disco em nuvem e adicioná-lo a qualquer CVM na mesma zon
  </ol>
 5. É possível visualizar o(s) disco(s) em nuvem que você criou na página da lista do [Cloud Block Storage](https://console.cloud.tencent.com/cvm/cbs). O disco em nuvem elástico recém-adicionado tem o status **To be mounted (A ser montado)**. Para montá-lo em um CVM na mesma zona de disponibilidade, consulte [Montagem de discos em nuvem](https://intl.cloud.tencent.com/document/product/362/32401).
 
-### Criação de um disco em nuvem usando um snapshot
+:::
+:::Criação/sde/sum/sdisco/sem/snuvem/susando/sum/ssnapshot
 Se você deseja criar um disco em nuvem que contenha todos os dados após a criação, você pode [criar discos em nuvem usando snapshots](https://intl.cloud.tencent.com/document/product/362/5757).
-
-### Criação de um disco em nuvem usando API
+:::
+:::Criação/sde/sum/sdisco/sem/snuvem/susando/sAPI
 É possível usar a API `CreateDisks` para criar um disco em nuvem. Para obter mais informações, consulte [CreateDisks](https://intl.cloud.tencent.com/document/product/362/16312).
+:::
+</dx-tabs>
