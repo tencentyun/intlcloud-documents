@@ -52,28 +52,29 @@ Dokumen ini menjelaskan cara menggunakan snapshot untuk membuat disk cloud di ha
 <tr>
 <tr>
 <td>Snapshot Terjadwal</td>
-<td>Opsional.</br>Saat membuat disk cloud, Anda dapat memilih **Scheduled Snapshot** (Snapshot Terjadwal) untuk membuat snapshot untuk disk cloud secara berkala berdasarkan kebijakan snapshot terjadwal yang dibuat.Untuk informasi selengkapnya, lihat <a href="https://intl.cloud.tencent.com/document/product/362/35238">Snapshot Terjadwal</a>.
+<td>Opsional.</br>Saat membuat disk cloud, Anda dapat memilih <b>Scheduled Snapshot</b> (Snapshot Terjadwal) untuk membuat snapshot untuk disk cloud secara berkala berdasarkan kebijakan snapshot terjadwal yang dibuat.Untuk informasi selengkapnya, lihat <a href="https://intl.cloud.tencent.com/document/product/362/35238">Snapshot Terjadwal</a>.
 </tr>
 <tr>
 <td>Kuantitas</td>
-<td>Opsional.</br>Nilai default-nya adalah **1**, yang menunjukkan bahwa hanya satu disk cloud yang dibuat.Saat ini, hingga 50 disk cloud dapat dibuat sekaligus.</td>
+<td>Opsional.</br>Nilai default-nya adalah <b>1</b>, yang menunjukkan bahwa hanya satu disk cloud yang dibuat.Saat ini, hingga 50 disk cloud dapat dibuat sekaligus.</td>
 </tr>
 <tr>
 <td>Periode</td>
-<td></li><li>Jika **Billing Mode** (Cara Penagihan) diatur ke **Pay as you go** (Bayar sesuai pemakaian), parameter ini tidak terlibat.</li></ul></td>
+<td></li><li>Jika <b>Billing Mode</b> (Cara Penagihan) diatur ke <b>Pay as you go</b> (Bayar sesuai pemakaian), parameter ini tidak terlibat.</li></ul></td>
 </tr>
 <tr>
 <td>Perpanjangan Otomatis</td>
-<td> <li>Jika **Billing Mode** (Cara Penagihan) diatur ke **Pay as you go** (Bayar sesuai pemakaian), parameter ini tidak terlibat.</li></ul></td>
+<td> <li>Jika <b>Billing Mode</b> (Cara Penagihan) diatur ke <b>Pay as you go</b> (Bayar sesuai pemakaian), parameter ini tidak terlibat.</li></ul></td>
 </tr>
 </table>
-4.Klik **OK**.
-- Jika **Billing Mode** (Cara Penagihan) adalah **Pay as you go** (Bayar sesuai pemakaian), proses pembuatan selesai.
+4.Klik <b>OK</b>.
+- Jika <b>Billing Mode</b> (Cara Penagihan) adalah <b>Pay as you go</b> (Bayar sesuai pemakaian), proses pembuatan selesai.
 <ol>
-1.Setelah Anda mengonfirmasi konfigurasi Anda, pilih apakah akan menggunakan voucher berdasarkan kebutuhan aktualnya, lalu klik **OK**.
+1.Setelah Anda mengonfirmasi konfigurasi Anda, pilih apakah akan menggunakan voucher berdasarkan kebutuhan aktualnya, lalu klik <b>OK</b>.
 2.Selesaikan pembayaran.
 </ol>
-5.Anda dapat melihat disk cloud yang Anda buat di halaman daftar [Penyimpanan Blok Cloud](https://console.cloud.tencent.com/cvm/cbs).Disk cloud elastis baru berada dalam status **To be mounted** (Akan dipasang).Untuk informasi selengkapnya tentang cara memasang disk cloud elastis ke CVM di zona ketersediaan yang sama, lihat [Memasang Disk Cloud](https://intl.cloud.tencent.com/document/product/362/32401).
+
+5.Anda dapat melihat disk cloud yang Anda buat di halaman daftar [Penyimpanan Blok Cloud](https://console.cloud.tencent.com/cvm/cbs).Disk cloud elastis baru berada dalam status *<b>To be mounted</b>(Akan dipasang).Untuk informasi selengkapnya tentang cara memasang disk cloud elastis ke CVM di zona ketersediaan yang sama, lihat [Memasang Disk Cloud](https://intl.cloud.tencent.com/document/product/362/32401).
 
 ### Menggunakan API untuk membuat disk cloud dari snapshot
 Anda dapat menggunakan API `CreateDisks` untuk membuat disk cloud.Untuk informasi selengkapnya, lihat [CreateDisks](https://intl.cloud.tencent.com/document/product/362/16312).
