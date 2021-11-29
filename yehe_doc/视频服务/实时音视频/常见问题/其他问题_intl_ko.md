@@ -5,7 +5,7 @@
 - ILVB(키워드: 마이크 연결, PK)
  ILVB는 일종의 비즈니스 형태로, 호스트와 시청자 사이에서 인터랙션 마이크를 연결하고, 호스트와 호스트 사이에서 인터랙션 PK를 진행하는 일종의 라이브 방송 형태입니다.
 - TRTC(키워드: 다중 사용자 인터랙션, UDP 사유 프로토콜, 저지연)
- TRTC(Real-Time Communication, TRTC)의 주요 응용 시나리오는 멀티미디어 인터랙션과 저딜레이 라이브 방송이며, UDP 기반의 사유 프로토콜을 사용하여 딜레이가 100ms까지 낮아집니다. 전형적인 시나리오로는 QQ 전화, VooV Meeting, 대규모 수업 등이 있습니다. Tencent Cloud TRTC는 전 플랫폼을 커버하며 iOS/Android/Windows 이외에 미니프로그램, WebRTC 통신을 지원하고 클라우드 혼합 스트리밍 방식을 통해 릴레이 라이브 방송 화면을 CDN으로 전달합니다.
+ TRTC(Real-Time Communication, TRTC)의 주요 응용 시나리오는 멀티미디어 인터랙션과 저딜레이 라이브 방송이며, UDP 기반의 사유 프로토콜을 사용하여 딜레이가 100ms까지 낮아집니다. 전형적인 시나리오로는 QQ 전화, VooV Meeting, 대규모 수업 등이 있습니다. Tencent Cloud TRTC는 전 플랫폼을 커버하며 iOS/Android/Windows 이외에 WebRTC 통신을 지원하고 클라우드 혼합 스트리밍 방식을 통해 릴레이 라이브 방송 화면을 CDN으로 전달합니다.
 - 릴레이 라이브 방송(키워드: 클라우드 혼합 스트리밍, RTC 릴레이 공유，CDN)
  릴레이 라이브 방송은 저지연 마이크 연결 방 안의 여러 채널의 푸시 스트리밍 화면을 복사하여 클라우드에서 화면을 한 채널로 통합하고, 혼합 스트리밍 후의 화면을 라이브 방송 CDN으로 푸시 스트리밍하여 배포 재생하는 기술입니다. 
 
@@ -22,21 +22,20 @@ VideoCall 모드는 영상 통화에 최적화되어 있어 방에 1명의 사�
 [](id:que4)
 ###  온라인 방에 입장할 수 없는 이유는 무엇입니까?
 
-방 권한 제어를 활성화했기 때문입니다. 방 권한 제어 활성화 후 SDKAppID의 방은 TRTCParamEnc에서 privateMapKey를 설정해야 입장할 수 있습니다. 온라인 비즈니스를 운영하고 있으며 온라인 버전에 privateMapKey 관련 로직을 추가하지 않았을 경우 해당 기능을 활성화하지 마십시오. 자세한 내용은 [방 입장 권한 보호](https://intl.cloud.tencent.com/document/product/647/35157)를 참고하십시오.
+방 권한 제어를 활성화했기 때문입니다. 방 권한 제어 활성화 후 SDKAppID의 방은 TRTCParamEnc에서 privateMapKey를 설정해야 입장할 수 있습니다. 온라인 비즈니스를 운영하고 있으며 온라인 버전에 privateMapKey 관련 로직을 추가하지 않았을 경우 해당 기능을 활성화하지 마십시오. 자세한 내용은 [방 입장 권한 보호](https://intl.cloud.tencent.com/document/product/647/35157)를 참조하십시오.
 
 
 
 [](id:que5)
 ###  TRTC 로그는 어떻게 조회합니까?
-TRTC의 로그는 기본적으로 압축 암호화하여 .xlog라는 접미사가 붙어 있습니다. 로그 암호화 여부는 setLogCompressEnabled를 통해 제어할 수 있으며, 생성된 파일명에 C(compressed)가 포함되어 있으면 암호화 압축한 것이고, R(raw)이 포함되어 있으면 플레인 텍스트입니다.
+TRTC의 로그는 기본적으로 압축 암호화하여 .xlog라는 접미사가 붙어 있습니다. 로그 암호화 여부는 setLogCompressEnabled를 통해 제어할 수 있으며, 생성된 문서명에 C(compressed)가 포함되어 있으면 암호화 압축한 것이고, R(raw)이 포함되어 있으면 플레인 텍스트입니다.
 
 - iOS 및 Mac: `sandbox의 Documents/log`
 - Android:
  - 6.7 및 이전 버전: `/sdcard/log/tencent/liteav`
  - 6.8 이후 버전: `/sdcard/Android/data/패키지명/files/log/tencent/liteav/`
 - Windows: `%appdata%/tencent/liteav/log`
-- 웹: 브라우저 콘솔을 열거나 vConsole을 사용하여 SDK 출력 정보를 기록합니다.
-- 미니프로그램: &lt;live-pusher&gt;와 &lt;live-player&gt; 태그의 debug Attribute를 활성화하고 vConsole을 사용하여 출력 정보를 기록합니다.
+- Web: 브라우저 콘솔을 열거나 vConsole을 사용하여 SDK 출력 정보를 기록합니다.
 
 >?
 >- .xlog 파일을 조회하려면 복호화 툴을 다운로드해야 합니다. python 2.7 환경에서 툴을 xlog 파일과 동일한 디렉터리에 넣고 `python decode_mars_log_file.py`를 사용하여 실행하면 됩니다.
@@ -135,7 +134,7 @@ TRTC에서는 2개의 동일한 userID로 동시에 방에 입장하면 서로 �
 
 [](id:que25)
 ###  TRTC는 Tencent Cloud 콘솔에서만 자동 녹화를 활성화할 수 있습니까? 수동 녹화 활성화는 어떻게 합니까?
-TRTC는 수동 녹화를 지원합니다. 구체적인 작업 방법은 다음과 같습니다.
+TRTC는 수동 녹화를 지원합니다. 구체적인 조작 방법은 다음과 같습니다.
 1. **[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)**>**기능 설정**에서 **자동 릴레이 푸시 스트리밍**을 활성화하고 **클라우드 녹화 실행**을 비활성화합니다.
 2. 사용자는 방에 입장한 후 스트리밍 ID에 따라 규칙을 생성하고 userid에 상응하는 streamid를 산출합니다.
 3. LVB의 [녹화 작업 생성 API](https://intl.cloud.tencent.com/document/product/267/37309)를 사용하여 streamid에 대한 녹화 작업을 실행합니다.
@@ -154,7 +153,7 @@ TRTC 콘솔의 **[사용량 통계](https://console.cloud.tencent.com/trtc/stati
 
 [](id:que28)
 ### TRTC에서 어떻게 사용자 리스트를 점검하여 라이브 룸 시청자 수에 대한 통계를 진행합니까?	
-개발자 프로젝트에 통합 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047)이 있을 경우 IM 그룹 인원수 통계 인터페이스를 통해 통계를 낼 수 있습니다. 그러나 이 방법은 정확도가 떨어지므로 접속자 수에 대한 개발자의 요구 사항이 높지 않을 경우 사용하는 것이 좋습니다.
+개발자 프로젝트에 통합 [인스턴트 메시징 IM](https://intl.cloud.tencent.com/document/product/1047)이 있을 경우 IM 그룹 인원수 통계 인터페이스를 통해 통계를 낼 수 있습니다. 그러나 이 방법은 정확도가 떨어지므로 접속자 수에 대한 개발자의 요구 사항이 높지 않을 경우 사용하는 것이 좋습니다.
 개발자가 접속자 수에 대한 정확한 통계를 원할 경우 자체적으로 통계 로직을 실행하는 것을 권장합니다.
 1. 시청자 수 증가(Client -> Server) 신규 시청자가 들어왔을 경우 방의 시청자 수가 +1 되어야 한다는 의미로 앱의 시청자 측에서는 방 입장 시 Server에 누적 요청을 1회 발송합니다.
 2. 시청자 수 감소(Client -> Server) 시청자가 방에서 나갔을 경우 방의 시청자 수가 -1 되어야 한다는 의미로 앱의 시청자 측에서는 방에서 나갈 시 Server에 차감 요청을 1회 발송합니다.
@@ -167,7 +166,7 @@ TRTC 콘솔의 **[사용량 통계](https://console.cloud.tencent.com/trtc/stati
 
 [](id:que30)
 ###  TRTC는 어떻게 네트워크 상태를 모니터링하여 신호 강약 표시 기능을 나타냅니까? 	
-onNetworkQuality()를 사용하여 현재 네트워크의 업스트림과 다운스트림 품질을 리슨할 수 있습니다. [공식 Demo](https://github.com/tencentyun/TRTCSDK)를 참고하여 신호 강도 기능을 실행하십시오.
+onNetworkQuality()를 사용하여 현재 네트워크의 업스트림과 다운스트림 품질을 리슨할 수 있습니다. [공식 홈페이지 Demo](https://github.com/tencentyun/TRTCSDK)를 참조하여 신호 강약 기능을 실행하십시오.
 
 [](id:que31)
 ###  TRTC에서 사용하고 있는 것이 신규 mcu 혼합 스트리밍인지 아니면 기존 클라우드 혼합 스트리밍인지 어떻게 알 수 있습니까?
@@ -205,7 +204,7 @@ TRTC 콘솔의 **[모니터링 대시보드](https://console.cloud.tencent.com/t
 
 [](id:que36)
 ###  게스트 초대 연결 시 게스트에게 방 번호는 어떻게 알립니까?
-사용자 정의 메시지를 통해 게스트에게 방 번호를 공지하고, 메시지를 리졸브하여 roomid를 획득합니다. 자세한 내용은 [사용자 정의 메시지 생성](https://intl.cloud.tencent.com/document/product/1047/34322), [TIMMsgSendNewMsg](https://intl.cloud.tencent.com/document/product/1047/34391)를 참고하십시오.
+사용자 정의 메시지를 통해 게스트에게 방 번호를 공지하고, 메시지를 리졸브하여 roomid를 획득합니다. 자세한 내용은 [사용자 정의 메시지 생성](https://intl.cloud.tencent.com/document/product/1047/34322), [TIMMsgSendNewMsg](https://intl.cloud.tencent.com/document/product/1047/34391)을 참고하십시오.
 
 [](id:que37)
 ###  2인 이상 방에 입장한 후 녹음을 시작할 수 있습니까?
@@ -217,12 +216,15 @@ TRTC 콘솔의 **[모니터링 대시보드](https://console.cloud.tencent.com/t
 
 [](id:que39)
 ### Windows 회의 모드에서 호스트가 시청자에게 멀티미디어 연결 기능을 시작하려면 어떻게 해야 합니까?
-다른 클라우드 서비스와 연결이 필요한 경우 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/33996)에서 연결을 요청해야 합니다.
+다른 클라우드 서비스와 연결이 필요한 경우 [인스턴트 메시징 IM](https://intl.cloud.tencent.com/document/product/1047/33996)에서 연결을 요청해야 합니다.
 
-호출의 대략적인 로직은 다음과 같습니다. A가 B에게 사용자 정의 메시지 X를 발송하고 호출 페이지 알람을 설정하면 X 출력 효과를 자체적으로 처리하고 B는 X를 받은 후 호출된 페이지를 호출합니다. B가 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)을 클릭하여 방에 입장하고 사용자 정의 정보 X1을 A에게 발송하면 A가 X1(출력 여부 자체 결정)을 수신하고 동시에 enterRoom을 호출하여 방으로 들어가고 IM으로 사용자 정의 정보를 발송합니다.
+호출의 대략적인 로직은 다음과 같습니다. A가 B에게 사용자 정의 메시지 X를 발송하고 호출 페이지 알람을 설정하면 X 출력 효과를 자체적으로 처리하고 B는 X를 받은 후 호출된 페이지를 호출합니다. B가 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)을 클릭하여 방에 입장하고 사용자 정의 정보 X1을 A에게 발송하면 A가 X1(출력 여부 자체 결정) 수신하고 동시에 enterRoom을 호출하여 방으로 들어가고 IM으로 사용자 정의 정보를 발송합니다.
 
 [](id:que40)
-### 시청자가 어떻게 방 안에 있는 연결 화면을 볼 수 있나요?
+### 시청자들이 어떻게 방 안에 있는 연결 화면을 볼 수 있나요?
 시청자가 라이브 방송 모드를 사용하는 경우, 방 안으로 들어가 TRTCCloudDelegate의 [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a) 콜백을 통해 호스트의 userid(마이크 연결한 사람도 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)으로 방에 들어갈 수 있으며, 시청자에게는 해당 사용자가 호스트가 됨)를 알 수 있습니다. 그리고 시청자는 [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5c5ea936418b106c2e801db57938dde9)를 호출해 호스트의 비디오 화면을 볼 수 있습니다.
-자세한 작업 방법은 [라이브 방송 모드 실행(Windows)](https://intl.cloud.tencent.com/document/product/647/35109)을 참고하십시오.
+자세한 조작 방법은 [라이브 방송 모드 실행(Windows)](https://intl.cloud.tencent.com/document/product/647/35109)을 참조하십시오.
 
+[](id:que41)
+### TRTC에 Linux SDK가 있나요?
+Linux SDK는 현재 지원하지 않습니다. 서비스 관련 문의사항은 colleenyu@tencent.com으로 연락주시기 바랍니다.

@@ -16,8 +16,8 @@ UserID는 사용자 ID로, TRTC 애플리케이션에서 사용자의 고유 식
 - 사용자가 입장하고자 하는 방이 없을 경우 백그라운드에서 방이 자동으로 생성됩니다.
 
 [](id:que4)
-### TRTC는 비구독 멀티미디어 스트리밍을 지원합니까? 
-‘바로 재생’을 위해 방 입장 시 자동으로 스트리밍을 구독하게 되며, setDefaultStreamRecvMode 인터페이스를 통해 수동으로 구독 모드를 전환할 수 있습니다.
+### TRTC에서 비구독 멀티미디어 스트리밍을 지원합니까? 
+“바로 재생”을 위해 방 입장 시 자동으로 스트리밍을 구독하게 되며, setDefaultStreamRecvMode 인터페이스를 통해 수동으로 구독 모드를 전환할 수 있습니다.
 
 [](id:que5)
 ### TRTC에서 사용자 정의 릴레이 푸시 스트리밍의 스트리밍 ID를 지원합니까?  
@@ -36,9 +36,9 @@ UserID는 사용자 ID로, TRTC 애플리케이션에서 사용자의 고유 식
 ### TRTC 방에서 어떤 응용 시나리오를 지원합니까?  
 다음 시나리오를 지원합니다.
 - TRTCAppSceneVideoCall: 비디오 통화 시나리오. 일대일 비디오 통화, 300인 화상 회의, 온라인 진료, 화상 채팅, 원격 면접 등에 적합합니다.
-- TRTCAppSceneLIVE: 비디오 ILVB. 비디오 저지연 라이브 방송, 10만 인터랙션 강의, 비디오 라이브 방송 PK, 화상 소개팅, 인터랙션 강의, 원격 교육, 초대형 회의 등에 적합합니다.
+- TRTCAppSceneLIVE: 비디오 ILVB. 비디오 저 딜레이 라이브 방송, 10만 인터랙션 강의, 비디오 라이브 방송 PK, 화상 소개팅, 인터랙션 강의, 원격 교육, 초대형 회의 등에 적합합니다.
 - TRTCAppSceneAudioCall: 음성 통화 시나리오. 일대일 음성 통화, 300인 음성 회의, 음성 채팅, 음성 회의, 온라인 마피아 게임 등에 적합합니다.
-- TRTCAppSceneVoiceChatRoom: 음성 ILVB. 음성 저지연 라이브 방송, 음성 라이브 방송 마이크 연결, 음성 채팅, 노래방, FM 라디오 등에 적합합니다.
+- TRTCAppSceneVoiceChatRoom: 음성 ILVB. 음성 저 딜레이 라이브 방송, 음성 라이브 방송 마이크 연결, 음성 채팅, 노래방, FM 라디오 등에 적합합니다.
 
 
 [](id:que9)
@@ -46,7 +46,6 @@ UserID는 사용자 ID로, TRTC 애플리케이션에서 사용자의 고유 식
 iOS, Android, Windows(C++), Windows(C#), Mac, Web, Electron 등의 플랫폼을 지원합니다. 자세한 내용은 [플랫폼 지원](https://intl.cloud.tencent.com/document/product/647/35078)을 참고하십시오.
 
 [](id:que10)
-
 ### TRTC의 라이트 버전, 프로 버전, 엔터프라이즈 버전 등 각 버전의 차이점은 무엇입니까? 
 자세한 내용은 [각 버전 차이 대조표](https://intl.cloud.tencent.com/document/product/647/34615)를 참고하십시오.
 
@@ -67,11 +66,11 @@ iOS, Android, Windows(C++), Windows(C#), Mac, Web, Electron 등의 플랫폼을 
 
 [](id:que13)
 ### 방은 어떻게 생성합니까?
-방은 Tencent Cloud 백그라운드에서 클라이언트 방 입장 시 자동으로 생성합니다. 수동으로 생성할 필요 없이 클라이언트의 관련 인터페이스 ‘방 입장’을 호출하면 됩니다.
+방은 Tencent Cloud 백그라운드에서 클라이언트 방 입장 시 자동으로 생성합니다. 수동으로 생성할 필요 없이 클라이언트의 관련 인터페이스 “방 입장”을 호출하면 됩니다.
 - [iOS & Mac > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)
 - [Android > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c)
-- [Windows（C++） > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)
-- [Windows（C#） > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn//group__ITRTCCloud__csharp.html#afbb3a1e6f73f339d47368a7d620a995f)
+- [Windows（C++） > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)
+- [Windows（C#） > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__csharp.html#afbb3a1e6f73f339d47368a7d620a995f)
 - [Electron > enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom)
 - [Web > join](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join)
 
@@ -81,8 +80,8 @@ iOS, Android, Windows(C++), Windows(C#), Mac, Web, Electron 등의 플랫폼을 
 
 
 [](id:que15)
-### TRTC는 사유화 배포를 지원합니까?
-현재는 지원하지 않습니다.
+### TRTC는 프라이빗 배포를 지원합니까?
+TRTC 프라이빗 배포는 현재 지원하지 않습니다. 서비스 사용 관련 문의사항은 colleenyu@tencent.com으로 연락주시기 바랍니다. 
 
 [](id:que16)
 ### TRTC에서 릴레이 라이브 방송 활성화 시 도메인은 ICP비안이 필요합니까?
@@ -94,16 +93,16 @@ iOS, Android, Windows(C++), Windows(C#), Mac, Web, Electron 등의 플랫폼을 
 
 [](id:que18)
 ### TRTC는 액티브 콜 기능을 지원합니까?
-신호 터널을 결합해야 합니다. 예를 들어 [Instant Messaging](https://intl.cloud.tencent.com/product/im) 서비스의 사용자 정의 메시지를 사용하여 호출할 수 있습니다. [SDK](https://intl.cloud.tencent.com/document/product/647/34615) 소스 코드의 시나리오 Demo 사례를 참고하십시오.
+신호 터널을 결합해야 합니다. 예를 들어 [인스턴트 메시징 IM](https://intl.cloud.tencent.com/product/im) 서비스의 사용자 정의 메시지를 사용하여 호출할 수 있습니다. [SDK](https://intl.cloud.tencent.com/document/product/647/34615) 소스 코드의 시나리오 Demo 사례를 참고하십시오.
 
 [](id:que19)
 ### TRTC의 2인 비디오 통화는 블루투스 이어폰을 지원합니까?
-지원합니다.
+지원.
 
 
 [](id:que20)
 ### TRTC는 국외 사용을 지원합니까?
-지원합니다.
+지원.
 
 [](id:que21)
 ### TRTC의 PC 액세스에 화면 공유 기능을 지원합니까?
@@ -144,7 +143,7 @@ iOS, Android, Windows(C++), Windows(C#), Mac, Web, Electron 등의 플랫폼을 
 지원합니다. SDK의 비디오 코딩 매개변수 setVideoEncoderParam을 통해 해상도를 설정할 수 있습니다.
 
 [](id:que29)
-### TRTC는 사용자 정의 데이터 수집이 가능합니까?
+### TRTC는 사용자 정의 데이터 컬렉션이 가능합니까?
 일부 플랫폼에서만 지원합니다. 자세한 내용은 [사용자 정의 컬렉션 및 렌더링](https://intl.cloud.tencent.com/document/product/647/35158)을 참고하십시오.
 
 [](id:que30)
@@ -161,12 +160,12 @@ TRTC는 MLVB와 백그라운드 솔루션 아키텍처가 달라 직접적인 �
 ### TRTC 방 입장 모드 AppScene은 무엇이 다릅니까?
 TRTC는 4가지 모드를 지원합니다. 그중 비디오 통화(VideoCall), 음성 통화(VoiceCall)는 통화 모드라고 부르고, 비디오 ILVB(Live)와 음성 ILVB(VoiceChatRoom)는 라이브 방송 모드라고 부릅니다.
 - 통화 모드의 TRTC는 단일 방에 최대 300명이 동시 접속할 수 있으며 최대 50명이 동시에 발언할 수 있습니다. 일대일 영상 통화, 300명 화상 회의, 온라인 진료, 원격 면접, 화상 고객서비스, 온라인 마피아 게임 등의 응용 시나리오에 적합합니다.
-- 라이브 방송 모드의 TRTC는 단일 방에 최대 10만 명이 동시에 접속할 수 있으며 300ms 미만의 마이크 연결 딜레이 및 1000ms 미만의 시청 딜레이, 상하 이동 마이크 꺼짐 등의 기능을 갖추고 있습니다. 저지연 ILVB, 10만 인터랙션 강의, 화상 소개팅, 온라인 교육, 원격 교육, 초대형 회의 등의 응용 시나리오에 적합합니다.
+- 라이브 방송 모드의 TRTC는 단일 방에 최대 10만 명이 동시에 접속할 수 있으며 300ms 미만의 마이크 연결 딜레이 및 1000ms 미만의 시청 딜레이, 상하 이동 마이크 꺼짐 등의 기능을 갖추고 있습니다. 저 딜레이 ILVB, 10만 인터랙션 강의, 화상 소개팅, 온라인 교육, 원격 교육, 초대형 회의 등의 응용 시나리오에 적합합니다.
 
 
 [](id:que33)
 ### TRTC는 멀티미디어 통화 핸즈프리 모드를 지원합니까?
-지원합니다. 핸즈프리 모드는 음성 라우팅 설정을 통해 실현하며, Native SDK는 setAudioRoute 인터페이스를 통해 전환합니다.
+지원합니다. 핸즈프리 모드는 음성 라우팅 설정을 통해 활성화되며, Native SDK는 setAudioRoute 인터페이스를 통해 전환합니다. 미니프로그램은 &lt;live-player&gt; 태그의 sound-mode 속성을 통해 설정할 수 있습니다.
 
 [](id:que34)
 ### TRTC는 음량 크기 알림을 지원합니까?
@@ -186,7 +185,6 @@ TRTC는 4가지 모드를 지원합니다. 그중 비디오 통화(VideoCall), �
 [클라우드 녹화 및 재생](https://intl.cloud.tencent.com/document/product/647/35426)을 사용하여 비디오를 녹화할 수 있습니다.
 
 [](id:que38)
-
 ### TRTC는 WeChat 비디오 통화처럼 플로팅 창, 화면 크기 변경 등 기능을 지원합니까?
 해당 기능은 UI 레이아웃 로직으로 SDK에서 UI상의 표시 프로세스를 제한하지 않습니다. 공식 홈페이지 Demo에서 화면 전후 스택 및 아홉 개 칸 레이아웃 모드의 예시 코드를 제공하고 있으며, 플로팅 창, 화면 크기 변경, 화면 드래그를 지원합니다. 자세한 내용은 [공식 홈페이지 Demo](https://github.com/tencentyun/TRTCSDK)를 참고하십시오.
 
@@ -201,9 +199,9 @@ TRTC는 음성과 비디오 터널의 구분이 없어 startLocalAudio만 호출
 
 [](id:que41)
 ### TRTC 방에서 강제 퇴장, 발언 금지, 음소거 기능을 지원합니까?  
-지원합니다.
-- 간단한 작업 명령인 경우 TRTC의 사용자 정의 명령 인터페이스 sendCustomCmdMsg를 사용해 개발자가 해당 제어 명령을 사용자 정의할 수 있으며, 제어 명령을 수신하는 통화 상대방이 해당 작업을 실행하면 됩니다. 예를 들어 강제 퇴장의 경우 강제 퇴장 명령을 정의하면 되며, 해당 명령을 수신한 사용자는 스스로 방을 퇴장하게 됩니다.
-- 더 완벽한 작업 로직이 필요한 경우 개발자가 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047)을 통해 관련 로직을 실현하는 것이 좋습니다. TRTC의 방과 IM 그룹을 매핑하고 IM 그룹에서 사용자 정의 정보를 수신/발신해 해당 작업을 구현하십시오.
+지원
+- 간단한 조작 명령인 경우 TRTC의 사용자 정의 명령 인터페이스 sendCustomCmdMsg를 사용해 개발자가 해당 제어 명령을 사용자 정의할 수 있으며, 제어 명령을 수신하는 통화 상대방이 해당 조작을 실행하면 됩니다. 예를 들어 강제 퇴장의 경우 강제 퇴장 명령을 정의하면 되며, 해당 명령을 수신한 사용자는 스스로 방을 퇴장하게 됩니다.
+- 더 완벽한 조작 로직이 필요한 경우 개발자가 [인스턴트 메시징 IM](https://intl.cloud.tencent.com/document/product/1047)을 통해 관련 로직을 실현하는 것이 좋습니다. TRTC의 방과 IM 그룹을 매핑하고 IM 그룹에서 사용자 정의 정보를 수신/발신해 해당 조작을 실현하십시오.
 
 [](id:que42)
 ### TRTC는 RTMP/FLV 스트리밍의 풀 스트리밍 재생을 지원합니까?  
@@ -217,7 +215,7 @@ TRTC는 음성과 비디오 터널의 구분이 없어 startLocalAudio만 호출
 
 [](id:que44)
 ### TRTC는 라이브 방송 시나리오 애플리케이션을 어떻게 실행합니까?
-TRTC는 온라인 라이브 방송 시나리오 전용으로 10만 명 참여 시의 ILVB 저지연 솔루션을 출시했으며, 이를 통해 호스트와 마이크가 연결된 호스트의 최저지연 시간은 200ms 이내, 일반 관객의 딜레이 시간은 1s 이내로 보장합니다. 또한 약한 네트워크 보완 기술을 통해 복잡한 모바일 네트워크 환경에 대응합니다.
+TRTC는 온라인 라이브 방송 시나리오 전용으로 10만 명 참여 시의 ILVB 저 딜레이 솔루션을 출시했으며, 이를 통해 호스트와 마이크가 연결된 호스트의 최저 딜레이 시간은 200ms 이내, 일반 관객의 딜레이 시간은 1s 이내로 보장합니다. 또한 약한 네트워크 보완 기술을 통해 복잡한 모바일 네트워크 환경에 대응합니다.
 자세한 작업 가이드는 [라이브 방송 모드 실행](https://intl.cloud.tencent.com/document/product/647/35107)을 참고하십시오.
 
 [](id:que45)
@@ -238,9 +236,9 @@ TRTC는 온라인 라이브 방송 시나리오 전용으로 10만 명 참여 �
 [](id:que48)
 ### TRTC에서 연결 차단과 재연결을 어떻게 모니터링합니까?
 다음 리스너 콜백을 통해 리슨합니다.
-- onConnectionLost: SDK와 서버와의 연결 끊김
-- onTryToReconnect: SDK의 서버와의 재연결 시도
-- onConnectionRecovery: SDK와 서버의 연결 복구
+- onConnectionLost: SDK와 서버와의 연결 끊김.
+- onTryToReconnect: SDK의 서버와의 재연결 시도.
+- onConnectionRecovery: SDK와 서버의 연결 복구.
 
 [](id:que49)
 ### TRTC에는 첫 번째 프레임 렌더링 콜백이 있습니까? 화면 렌더링 시작, 음성 재생 시작을 리슨할 수 있습니까?
@@ -251,8 +249,8 @@ TRTC는 온라인 라이브 방송 시나리오 전용으로 10만 명 참여 �
 현재 iOS/Android에서 snapshotVideo()를 호출하여 로컬 및 원격 비디오의 화면을 캡처할 수 있습니다.
 
 [](id:que51)
-### TRTC에서 블루투스 이어폰 등 주변 기기 액세스 오류가 발생하는 이유는 무엇입니까?
-현재 TRTC는 많이 사용되는 블루투스 이어폰 및 주변 기기와 호환이 되나 일부 디바이스에서는 호환 문제가 발생하고 있습니다. 공식 홈페이지 Demo 및 WeChat, QQ 멀티미디어 통화를 사용하여 정상 여부를 확인해 보십시오.
+### TRTC에서 블루투스 이어폰 등 주변기기 액세스 오류가 발생하는 이유는 무엇입니까?
+현재 TRTC는 많이 사용되는 블루투스 이어폰 및 주변 기기와 호환이 되나 일부 디바이스에서는 호환 문제가 발생하고 있습니다. 공식 홈페이지 Demo, QQ 멀티미디어 통화를 사용하여 정상 여부를 확인해 보십시오.
 
 [](id:que52)
 ### TRTC에서 멀티미디어의 업스트림 다운스트림 비트 레이트, 해상도, 패킷 손실률, 오디오 샘플링 레이트 등의 정보를 어떻게 획득합니까?
@@ -263,17 +261,17 @@ SDK 인터페이스 onStatistics()를 통해 해당 통계 정보를 획득할 �
 현재는 로컬 음악만을 지원하며, 먼저 로컬에 다운로드한 후 playBGM()을 호출하여 재생할 수 있습니다.
 
 [](id:que54)
-### TRTC는 로컬 음량 수집 설정을 지원합니까? 원격 사용자의 재생 음량 설정을 지원합니까?
-지원합니다. setAudioCaptureVolume() 인터페이스를 통해 SDK의 음량 수집을 설정할 수 있으며, setRemoteAudioVolume() 인터페이스를 통해 원격 사용자의 재생 음량을 설정할 수 있습니다.
+### TRTC는 로컬 음량 컬렉션 설정을 지원합니까? 원격 사용자의 재생 음량 설정을 지원합니까?
+지원합니다. setAudioCaptureVolume() 인터페이스를 통해 SDK의 음량 컬렉션을 설정할 수 있으며, setRemoteAudioVolume() 인터페이스를 통해 원격 사용자의 재생 음량을 설정할 수 있습니다.
 
 [](id:que55)
 ### stopLocalPreview와 muteLocalVideo의 차이점은 무엇입니까?
-- stopLocalPreview는 로컬 비디오 수집을 중단합니다. 이 인터페이스를 호출하면 로컬 및 원격 화면에 블랙 스크린 현상이 나타납니다.
+- stopLocalPreview는 로컬 비디오 캡처를 중단합니다. 이 인터페이스를 호출하면 로컬 및 원격 화면에 블랙 스크린 현상이 나타납니다.
 - muteLocalVideo는 백그라운드에 비디오 화면 발송할지 여부를 설정합니다. 이 인터페이스를 호출하면 다른 이용자가 시청하는 화면에는 블랙 스크린 현상이 나타나며 로컬의 미리보기에서는 화면을 볼 수 있습니다.
 
 [](id:que56)
 ### stopLocalAudio와 muteLocalAudio의 차이점은 무엇입니까? 
-- stopLocalAudio는 로컬 오디오의 수집 및 업스트림을 비활성화합니다.
+- stopLocalAudio는 로컬 오디오의 캡처 및 업스트림을 차단합니다.
 - muteLocalAudio는 멀티미디어 데이터 발송을 멈추지 않으며, 비트 레이트가 매우 낮은 음소거 패키지를 계속해서 발송합니다.
 
 [](id:que57)
@@ -286,11 +284,11 @@ TRTCCloud의 setVideoEncoderParam() 인터페이스를 통해 TRTCVideoEncParam 
 
 [](id:que59)
 ### SDK의 화면 각도 및 방향 제어는 어떻게 이루어집니까?  
-자세한 내용은 [비디오 화면 회전 및 줌](https://intl.cloud.tencent.com/document/product/647/35154)을 참고하십시오.
+자세한 내용은 [비디오 화면 회전 및 축소/확대](https://intl.cloud.tencent.com/document/product/647/35154)를 참고하십시오.
 
 [](id:que60)
 ### 가로 모드 비디오 통화는 어떻게 실현합니까? 
-자세한 내용은 [가로 화면 영상 통화 구현](https://cloud.tencent.com/developer/article/1492095) 및 [비디오 화면 회전 및 축소와 확대](https://intl.cloud.tencent.com/document/product/647/35154)를 참고하십시오.
+자세한 내용은 [비디오 화면 회전 및 축소/확대](https://intl.cloud.tencent.com/document/product/647/35154)를 참고하십시오.
 
 [](id:que61)
 ### TRTC 로컬과 원격 화면 방향이 불일치할 경우 어떻게 조정합니까?  
@@ -302,7 +300,7 @@ TRTCCloud의 setVideoEncoderParam() 인터페이스를 통해 TRTCVideoEncParam 
 자세한 내용은 [권장 설정](https://intl.cloud.tencent.com/document/product/647/35153#.E6.8E.A8.E8.8D.90.E7.9A.84.E9.85.8D.E7.BD.AE)을 참고하십시오.
 
 [](id:que63)
-### TRTC는 네트워크 속도 테스트를 지원합니까? 어떻게 작업합니까?  
+### TRTC는 네트워크 속도 테스트를 지원합니까? 어떻게 조작합니까?  
 자세한 내용은 [통화 전 네트워크 속도 테스트](https://intl.cloud.tencent.com/document/product/647/35156)를 참고하십시오.
 
 [](id:que64)
@@ -334,8 +332,9 @@ TRTC는 각 플랫폼의 Demo 소스 코드를 제공하여 단 몇 분 만에 �
 ### TRTC는 클라우드 녹화 및 재생을 어떻게 구현하나요?
 자세한 내용은 [클라우드 녹화 및 재생 구현](https://intl.cloud.tencent.com/document/product/647/35426)을 참고하십시오.
 
-
-
+[](id:que71)
+### TRTC는 어떻게 서버 녹화를 구현하나요?
+서버 녹화는 Linux SDK를 사용해야 합니다. Linux SDK는 현재 지원하지 않으며 서비스 사용 관련 문의사항은 colleenyu@tencent.com으로 연락주시기 바랍니다. 
 
 
 

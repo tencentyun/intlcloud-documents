@@ -2,14 +2,14 @@ TRTCKaraokeRoomは、Tencent CloudのTRTCおよびIMサービスを基に組み�
 
 - 管理者が作成した新しいKaraokeルームが配信を開始すると、リスナーはKaraokeルームに入室して聴取/インタラクションを行います。
 - 管理者は、楽曲の順序を管理し、マイク・オンのキャスターをキックアウトすることもできます。
-- 管理者はまた、座席をクローズすることができ、その他のリスナーはマイク・オンを再度申請することができなくなります。
+- 管理者はまた、座席をクローズすることができ、その他のリスナーはマイク・オンを申請することができなくなります。
 - リスナーはマイク・オンを申請して、マイク・オンのキャスターになり、マイク・オン後は楽曲の選択や歌唱ができるようになります。また、いつでもマイク・オフにして、通常のリスナーになることも可能です。
 - ギフトや各種のテキストメッセージ、カスタムメッセージの送信をサポートします。カスタムメッセージを弾幕、「いいね」などを実装するために使用することができます。
 
 TRTCKaraokeRoomはオープンソースのClassであり、Tencent Cloudの2つのクローズドソースのSDKに依存しています。具体的な実装プロセスについては、[Karaoke（Android)](https://intl.cloud.tencent.com/document/product/647/41941)をご参照ください。
 
-- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のボイスチャットコンポーネントとして使用します。
-- IM SDK：[IM SDK](https://intl.cloud.tencent.com/document/product/1047)のAVChatroomを使用してチャットルーム機能を実装します。同時にIMの属性インターフェースによって、マイクリストなどのルーム情報を保存し、招待シグナリングはマイク・オン/ピックの申請に用いることができます。
+- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のボイスチャットコンポーネントとして使用しています。
+- IM SDK：[IM SDK](https://intl.cloud.tencent.com/document/product/1047)のAVChatroomを使用してチャットルーム機能を実装します。同時にIMの属性インターフェースによって、マイクリストなどのルーム情報を保存し、招待シグナリングはマイク・オン/ピックのリクエストに用いることができます。
 
 [](id:TRTCKaraokeRoom)
 ## TRTCKaraokeRoom API概要
@@ -30,10 +30,10 @@ TRTCKaraokeRoomはオープンソースのClassであり、Tencent Cloudの2つ�
 
 | API                                 | 説明                                                         |
 | ----------------------------------- | ------------------------------------------------------------ |
-| [createRoom](#createroom)           | ルームの作成（管理者が呼び出し）。ルームが存在しない場合は、システムが新しいルームを自動的に作成します。 |
+| [createRoom](#createroom)               | ルームの作成（管理者が呼び出し）。ルームが存在しない場合は、システムが新しいルームを自動的に作成します。 |
 | [destroyRoom](#destroyroom)        | ルームの破棄（管理者が呼び出し）。                                       |
-| [enterRoom](#enterroom)             | 入室（リスナーが呼び出し）。                                       |
-| [exitRoom](#exitroom)               | 退室（リスナーが呼び出し）。                                       |
+| [enterRoom](#enterroom)                 | 入室（リスナーが呼び出し）。                                       |
+| [exitRoom](#exitroom)                   | 退室（リスナーが呼び出し）。                                       |
 | [getRoomInfoList](#getroominfolist) | ルームリストの詳細情報を取得します。                              |
 | [getUserInfoList](#getuserinfolist) | 指定されたuserIdのユーザー情報を取得します。 nullの場合は、ルーム内全員の情報を取得します。 |
 
@@ -50,14 +50,14 @@ TRTCKaraokeRoomはオープンソースのClassであり、Tencent Cloudの2つ�
 
 | API                     | 説明                                  |
 | ----------------------- | ------------------------------------- |
-| [enterSeat](#enterseat) | ユーザーが発言者になる（リスナー側/管理者ともに呼び出し可）。    |
-| [leaveSeat](#leaveseat) | ユーザーが視聴者になる（キャスターが呼び出し）。    |
-| [pickSeat](#pickseat)   | 視聴者が発言できるように招待（管理者が呼び出し）。                  |
-| [kickSeat](#kickseat)   | キックアウトしてマイク・オフ（管理者が呼び出し）。                  |
+| [enterSeat](#enterseat) | ユーザーが発言者になる（リスナー側/管理者ともに呼び出し可）。  |
+| [leaveSeat](#leaveseat) | 自主的にマイク・オフ（キャスターが呼び出し）。    |
+| [pickSeat](#pickseat)   | 視聴者が発言できるように招待（管理者が呼び出し）。              |
+| [kickSeat](#kickseat)   | キックアウトしてマイク・オフ（管理者が呼び出し）。              |
 | [muteSeat](#muteseat)   | 任意のマイクのミュート/ミュート解除（管理者が呼び出し）。 |
-| [closeSeat](#closeseat) | 任意のマイクのクローズ/解除（管理者が呼び出し）。         |
+| [closeSeat](#closeseat) | 任意のマイクのクローズ/解除（管理者が呼び出し）。     |
 
-### ローカルのオーディオ操作インターフェース
+### ローカルの音声操作インターフェース
 
 | API                                             | 説明                  |
 | ----------------------------------------------- | -------------------- |
@@ -66,12 +66,12 @@ TRTCKaraokeRoomはオープンソースのClassであり、Tencent Cloudの2つ�
 | [setAudioQuality](#setaudioquality)             | 音質の設定。           |
 | [muteLocalAudio](#mutelocalaudio)               | ローカルオーディオミュートの開始/停止。  |
 | [setSpeaker](#setspeaker)                       | スピーカーの起動設定。     |
-| [setAudioCaptureVolume](#setaudiocapturevolume) | マイクの集音音量設定。 |
+| [setAudioCaptureVolume](#setaudiocapturevolume) | マイクの集音音量設定。|
 | [setAudioPlayoutVolume](#setaudioplayoutvolume) | 再生音量の設定。       |
 | [setVoiceEarMonitorEnable](#setvoiceearmonitorenable) | インイヤーモニタリングのオン/オフ。       |
 
 
-### リモートユーザーオーディオ操作インターフェース
+### リモートユーザー音声操作インターフェース
 
 | API                                       | 説明                 |
 | ----------------------------------------- | -------------------- |
@@ -80,20 +80,20 @@ TRTCKaraokeRoomはオープンソースのClassであり、Tencent Cloudの2つ�
 
 ### BGMサウンドエフェクト関連インターフェース
 
-| API                                             | 説明                                                          |
+| API                                             | 説明                                                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| [getAudioEffectManager](#getaudioeffectmanager) | BGMサウンドエフェクト管理オブジェクト[TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html#interfacecom_1_1tencent_1_1liteav_1_1audio_1_1TXAudioEffectManager)の取得。 |
+| [getAudioEffectManager](#getaudioeffectmanager) | BGMサウンドエフェクト管理オブジェクト[TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html#interfacecom_1_1tencent_1_1liteav_1_1audio_1_1TXAudioEffectManager)を取得します。|
 
 ### メッセージ送信関連インターフェース
 
 | API                                     | 説明                                     |
 | --------------------------------------- | ---------------------------------------- |
-| [sendRoomTextMsg](#sendroomtextmsg)     | ルーム内でのテキストメッセージのブロードキャスト。通常、弾幕によるチャットに使用します。|
+| [sendRoomTextMsg](#sendroomtextmsg)     | ルーム内でのテキストメッセージのブロードキャスト。通常、弾幕によるチャットに使用します。 |
 | [sendRoomCustomMsg](#sendroomcustommsg) | カスタマイズしたテキストメッセージを送信します。                     |
 
 ### 招待シグナリング関連インターフェース
 
-| API                                  | 説明             |
+| API                                   | 説明             |
 | ------------------------------------- | ---------------- |
 | [sendInvitation](#sendinvitation)     | ユーザーに招待を送信。 |
 | [acceptInvitation](#acceptinvitation) | 招待の同意。       |
@@ -109,13 +109,13 @@ TRTCKaraokeRoomはオープンソースのClassであり、Tencent Cloudの2つ�
 | ------------------------- | ---------- |
 | [onError](#onerror) | エラーのコールバック。 |
 | [onWarning](#onwarning)   | 警告のコールバック。 |
-| [onDebugLog](#ondebuglog) | Logコールバック。 |
+| [onDebugLog](#ondebuglog) | Logコールバック。|
 
 ### ルームイベントのコールバック
 
-| API                                       | 説明                   |
+| API                                       | 説明                 |
 | ----------------------------------------- | ---------------------- |
-| [onRoomDestroy](#onroomdestroy)           | ルームが破棄された時のコールバック。     |
+| [onRoomDestroy](#onroomdestroy)           | ルームが廃棄された時のコールバック。     |
 | [onRoomInfoChange](#onroominfochange) | Karaoke情報変更のコールバック。 |
 | [onUserVolumeUpdate](#onuservolumeupdate) | ユーザー通話音量のコールバック。     |
 
@@ -134,7 +134,7 @@ TRTCKaraokeRoomはオープンソースのClassであり、Tencent Cloudの2つ�
 
 | API                                 | 説明               |
 | ----------------------------------- | ------------------ |
-| [onAudienceEnter](#onaudienceenter) |リスナー入室通知の受信。|
+| [onAudienceEnter](#onaudienceenter) | リスナー入室通知の受信。|
 | [onAudienceExit](#onaudienceexit) | リスナー退室通知の受信。|
 
 ### メッセージイベントのコールバック
@@ -142,7 +142,7 @@ TRTCKaraokeRoomはオープンソースのClassであり、Tencent Cloudの2つ�
 | API                                         | 説明             |
 | ------------------------------------------- | ---------------- |
 | [onRecvRoomTextMsg](#onrecvroomtextmsg)     | テキストメッセージの受信。   |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | カスタムメッセージの受信。 |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | カスタムメッセージの受信。|
 
 ## シグナリングイベントのコールバック
 
@@ -150,12 +150,12 @@ TRTCKaraokeRoomはオープンソースのClassであり、Tencent Cloudの2つ�
 | ------------------------------------------------- | ---------------- |
 | [onReceiveNewInvitation](#onreceivenewinvitation) | 新規招待リクエストの受信。   |
 | [onInviteeAccepted](#oninviteeaccepted)           | 被招待者が招待に同意。   |
-| [onInviteeRejected](#oninviteerejected)           | 被招待者による招待の辞退。   |
-| [onInvitationCancelled](#oninvitationcancelled)   | 招待者が招待を取り消し。 |
+| [onInviteeRejected](#oninviteerejected)           | 被招待者が招待を拒否。   |
+| [onInvitationCancelled](#oninvitationcancelled)   | 招待者が招待を取り消し。   |
 
 ### 楽曲イベントコールバック
 
-| API                                               | 説明               |
+| API                                               | 説明             |
 | ------------------------------------------------- | ----------------- |
 | [onMusicProgressUpdate](#onmusicprogressupdate)   | 楽曲再生進捗度のコールバック。 |
 | [onMusicPrepareToPlay](#onmusicpreparetoplay)     | 音楽再生準備のコールバック。 |
@@ -218,7 +218,7 @@ public abstract void setDelegateHandler(Handler handler);
 
 ### login
 
-ログイン。
+ログイン
 
 ```java
 public abstract void login(int sdkAppId,
@@ -231,7 +231,7 @@ TRTCKaraokeRoomCallback.ActionCallback callback);
 | パラメータ     | タイプ           | 意味                                                         |
 | -------- | -------------- | ------------------------------------------------------------ |
 | sdkAppId | int         | TRTCコンソール> 【[アプリケーション管理]（https://console.cloud.tencent.com/trtc/app）】>アプリケーション情報の中でSDKAppIDを確認できます。 |
-| userId   | String                | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
+| userId   | String                | 現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
 | userSig  | String         |Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
 | callback | ActionCallback | ログインのコールバック。成功時にcodeは0になります。                                  |
 
@@ -287,8 +287,8 @@ public abstract void createRoom(int roomId, TRTCKaraokeRoomDef.RoomParam roomPar
 | パラメータ      | タイプ                | 意味                                                         |
 | --------- | ------------------- | ------------------------------------------------------------ |
 | roomI    | int            | ルームIDは、ご自身でアサインし、一元管理する必要があります。複数のroomIDを、一つのKaraokeルームリストにまとめることができます。Tencent Cloudでは現在、Karaokeルームリストの管理サービスを行っていませんので、ご自身でKaraokeルームリストを管理してください。 |
-| roomParam | TRTCCreateRoomParam | ルーム情報は、ルーム名、マイク情報、カバー情報などのルーム説明の情報に使用します。マイク管理が必要な場合は、ルームのマイク数を入力する必要があります。 |
-| callback | ActionCallback | ルームの作成結果のコールバック。成功時にcodeは0になります。                                  |
+| roomParam | TRTCCreateRoomParam | ルーム情報は、ルーム名、マイク情報、カバー情報など、ルームを説明するために用いる情報に使用します。マイク管理が必要な場合は、ルームのマイク数を記入する必要があります。 |
+| callback | ActionCallback | ルームの新規作成結果のコールバック。成功時にcodeは0になります。                                  |
 
 管理者が配信を開始する際の通常の呼び出しプロセスは次のとおりです。 
 1. 管理者は、`createRoom`を呼び出して新しいKaraokeルームを作成します。この時、ルームID、マイク・オンにすることの管理者の確認の要否、ルームタイプなどルームの属性情報を渡します。
@@ -315,7 +315,7 @@ public abstract void destroyRoom(TRTCKaraokeRoomCallback.ActionCallback callback
 
 ### enterRoom
 
-入室（リスナーが呼び出し）
+入室（リスナーが呼び出し）。
 
 ```java
 public abstract void enterRoom(int roomId, TRTCKaraokeRoomCallback.ActionCallback callback);
@@ -329,13 +329,13 @@ public abstract void enterRoom(int roomId, TRTCKaraokeRoomCallback.ActionCallbac
 | callback | ActionCallback | 入室結果のコールバック。成功時にcodeは0になります。 |
 
 
-リスナーが入室し視聴する際の通常の呼び出しプロセスは次のとおりです。 
+リスナーが入室し聴取する際の通常の呼び出しプロセスは次のとおりです。 
 
 1. リスナーがサーバーから取得する最新のKaraokeルームリストには、多くのKaraokeルームのroomIdおよびルーム情報が含まれる場合があります。
 2. リスナーは1つのKaraokeルームを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
 3. 入室後、コンポーネントの`onRoomInfoChange`ルーム属性変更イベント通知を受信します。この時、ルーム属性を記録し、それに応じた修正を行うことができます。例：UIに表示するルーム名、マイク・オンの際の管理者への同意リクエストの要否の記録など。
-4. 入室後は、コンポーネントの`onSeatListChange`マイクリストの変更イベント通知を受信します。この時、マイクリストの変更をUI上に更新することができます。
-5. 入室後、マイクリストにキャスターが参加した`onAnchorEnterSeat`というイベント通知も受信します。
+4. 入室後は、コンポーネントの`onSeatListChange`マイクリスト変更イベント通知を受信します。この時、マイクリストの変更をUI上に更新することができます。
+5. 入室後に、マイクリストにキャスターが参加した`onAnchorEnterSeat`のイベント通知も受信します。
 
 ### exitRoom
 
@@ -368,7 +368,7 @@ public abstract void getRoomInfoList(List<Integer> roomIdList, TRTCKaraokeRoomCa
 
 | パラメータ       | タイプ                | 意味               |
 | ---------- | ------------------- | ------------------ |
-| roomIdList | List&lt;Integer&gt; | ルームナンバーリスト。       |
+| roomIdList | List&lt;Integer&gt;   | ルームナンバーリスト。       |
 | callback   | RoomInfoCallback    | ルーム詳細情報のコールバック。 |
 
 
@@ -384,7 +384,7 @@ public abstract void getUserInfoList(List<String> userIdList, TRTCKaraokeRoomCal
 
 | パラメータ      | タイプ                      | 意味                                                       |
 | ---------------- | ------------------ | ------------------------------------------------------------ |
-| userIdList       | List&lt;String&gt; | 取得すべきユーザーIDリスト。nullの場合は、ルーム内全員の情報を取得します。 |
+| userIdList       | List&lt;String&gt;        |取得すべきユーザーIDリスト。nullの場合は、ルーム内全員の情報を取得します。 |
 | userlistcallback | UserListCallback   | ユーザーの詳細情報のコールバック。                                          |
 
 ## 音楽再生インターフェース
@@ -392,20 +392,22 @@ public abstract void getUserInfoList(List<String> userIdList, TRTCKaraokeRoomCal
 ### startPlayMusic
 
 音楽を再生します（マイク・オン後に呼び出し）。
->?音楽を再生すると、`onMusicPrepareToPlay`というイベント通知を受信します。
->?音楽の再生中、ルーム内の全メンバーは、`onMusicProgressUpdate`というイベント通知を継続して受け取ります。
->?音楽の再生が完了すると、`onMusicCompletePlaying`というイベント通知を受信します。
+>?
+>- 音楽を再生すると、`onMusicPrepareToPlay`というイベント通知を受信します。
+>- 音楽の再生中、ルーム内の全メンバーは、`onMusicProgressUpdate`というイベント通知を継続して受け取ります。
+>- 音楽の再生が完了すると、`onMusicCompletePlaying`というイベント通知を受信します。
 
 ```java
-public abstract void startPlayMusic(int musicID, String url);
+public abstract void startPlayMusic(int musicID, String originalUrl, String accompanyUrl);
 ```
 
 パラメータは下表に示すとおりです。
 
 | パラメータ      | タイプ            | 意味                 |
 | --------- | -------------- | -------------------- |
-| musicID 	| int            | 音楽のID。 |
-| url       | String         | 音楽の絶対パス。           |
+|musicID   |   int | 音楽のID。  |
+|originalUrl  | String | 原曲の絶対パス。   |
+|accompanyUrl |  String | 伴奏の絶対パス。  |
 
 このインターフェースを呼び出すと、最後に再生されていた楽曲が停止します。
 
@@ -421,8 +423,9 @@ public abstract void stopPlayMusic();
 ### pausePlayMusic
 
 音楽の再生を一時停止します（音楽を再生するときに呼び出します）。
->? `onMusicProgressUpdate`イベント通知が一時停止されます
->?`onMusicCompletePlaying`というイベント通知を受信しません。
+>? 
+>- `onMusicProgressUpdate`というイベント通知が一時停止されます
+>- `onMusicCompletePlaying`というイベント通知を受信しません。
 
 ```java
 public abstract void pausePlayMusic();
@@ -441,7 +444,7 @@ public abstract void resumePlayMusic();
 
 ### enterSeat
 
-ユーザーが発言者になる（リスナー側/管理者ともに呼び出し可）します。
+ユーザーが発言者になります（リスナー側/管理者ともに呼び出し可）。
 
 >?マイク・オンの成功後、ルーム内の全メンバーは、`onSeatListChange`および`onAnchorEnterSeat`というイベント通知を受信します。
 
@@ -451,12 +454,12 @@ public abstract void enterSeat(int seatIndex, TRTCKaraokeRoomCallback.ActionCall
 
 パラメータは下表に示すとおりです。
 
-| パラメータ        | タイプ             | 意味                           |
+| パラメータ       | タイプ           | 意味                 |
 | --------- | -------------- | -------------------- |
 | seatIndex | int            | マイク・オンの必要があるマイク番号。 |
 | callback  | ActionCallback | 操作コールバック。           |
 
-そのインターフェースを呼び出すと、直ちにマイクリストが変更されます。リスナーが管理者に同意を申請しなければマイク・オンできないユースケースの場合は、まず`sendInvitation`を呼び出してから管理者に申請し、`onInvitationAccept`を受信するとその関数を呼び出せるようになります。
+このインターフェースを呼び出すと、直ちにマイクリストが変更されます。リスナーによるマイク・オンの申請に管理者の同意が必要となるケースの場合は、まず`sendInvitation`を呼び出してから管理者に申請し、`onInvitationAccept`を受信するとこの関数を呼び出せるようになります。
 
 ### leaveSeat
 
@@ -472,7 +475,7 @@ public abstract void leaveSeat(TRTCKaraokeRoomCallback.ActionCallback callback);
 
 | パラメータ     | タイプ           | 意味       |
 | -------- | -------------- | ---------- |
-| callback | ActionCallback | 操作コールバック。 |
+| callback | ActionCallback | 操作コールバック。|
 
 ### pickSeat
 
@@ -488,11 +491,11 @@ public abstract void pickSeat(int seatIndex, String userId, TRTCKaraokeRoomCallb
 
 | パラメータ      | タイプ           | 意味                   |
 | --------- | -------------- | ---------------------- |
-| seatIndex | int            | 着席してマイク・オンの必要があるマイク番号。 |
+| seatIndex | int            | 視聴者が発言できるように招待する必要があるマイク番号。 |
 | userId | String           | ユーザーID。        |
-| callback  | ActionCallback | 操作コールバック。             |
+| callback  | ActionCallback | 操作コールバック。           |
 
-そのインターフェースを呼び出すと、すぐにマイクリストが修正されます。管理者がリスナーの同意がなければマイク・オンできないユースケースの場合は、まず`sendInvitation`を呼び出してからリスナーに申請し、`onInvitationAccept`を受信すると、その関数をコールできるようになります。
+このインターフェースを呼び出すと、すぐにマイクリストが修正されます。管理者がリスナーの同意がなければマイク・オンできないケースの場合は、まず`sendInvitation`を呼び出してからリスナーに申請し、`onInvitationAccept`を受信すると、この関数をコールできるようになります。
 
 
 ### kickSeat
@@ -510,7 +513,7 @@ public abstract void kickSeat(int seatIndex, TRTCKaraokeRoomCallback.ActionCallb
 | パラメータ      | タイプ           | 意味                   |
 | --------- | -------------- | ---------------------- |
 | seatIndex | int            | キックアウトしてマイク・オフの必要があるマイク番号。 |
-| callback  | ActionCallback | 操作コールバック。             |
+| callback  | ActionCallback | 操作コールバック。           |
 
 このインターフェースを呼び出すと、すぐにマイクリストが修正されます。
 
@@ -528,9 +531,9 @@ public abstract void muteSeat(int seatIndex, boolean isMute, TRTCKaraokeRoomCall
 
 | パラメータ      | タイプ           | 意味                                          |
 | --------- | -------------- | --------------------------------------------- |
-| seatIndex | int            | 操作の必要があるマイク番号。                          |
-| isMute    | boolean        | true：対応マイクのミュート、false：対応マイクのミュート解除。 |
-| callback  | ActionCallback | 操作コールバック。                                    |
+| seatIndex | int            | 操作の必要があるマイク番号。                       |
+| isMute    | boolean        | true：該当するマイクのミュート；false：該当するマイクのミュート解除。 |
+| callback  | ActionCallback | 操作コールバック。                                 |
 
 このインターフェースを呼び出すと、直ちにマイクリストが変更されます。seatIndexの座席に該当するキャスターは、muteAudioを自動的に呼び出してミュート/ミュートオフにします。
 
@@ -538,7 +541,7 @@ public abstract void muteSeat(int seatIndex, boolean isMute, TRTCKaraokeRoomCall
 
 任意のマイクのクローズ/解除（管理者が呼び出し）。
 
->? 管理者は、該当するマイクをクローズ/解除し、ルーム内の全参加者は`onSeatListChange`および`onSeatClose`というイベント通知を受信します。
+>? 管理者は、該当するマイクをクローズ/解除し、ルーム内の全メンバーは`onSeatListChange`および`onSeatClose`というイベント通知を受信します。
 
 ```java
 public abstract void closeSeat(int seatIndex, boolean isClose, TRTCKaraokeRoomCallback.ActionCallback callback);
@@ -549,13 +552,13 @@ public abstract void closeSeat(int seatIndex, boolean isClose, TRTCKaraokeRoomCa
 | パラメータ      | タイプ           | 意味                                       |
 | --------- | -------------- | ------------------------------------------ |
 | seatIndex | int            | 操作の必要があるマイク番号。                       |
-| isClose   | boolean        | true：該当するマイクのクローズ、false：該当するマイクのクローズ解除。 |
+| isClose   | boolean        | true：該当するマイクのクローズ； false：該当するマイクのクローズ解除。 |
 | callback  | ActionCallback | 操作コールバック。                                 |
 
-このインターフェースを呼び出すと、すぐにマイクリストが修正されます。対応するseatIndexをクローズされた座席上のキャスターは、自動的にマイク・オフになります。
+このインターフェースを呼び出すと、すぐにマイクリストが修正されます。該当するseatIndexの座席上のキャスターはクローズされ、自動的にマイク・オフになります。
 
 
-## ローカルのオーディオ操作インターフェース
+## ローカル音声操作のインターフェース
 
 ### startMicrophone
 
@@ -583,14 +586,14 @@ public abstract void setAudioQuality(int quality);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ    | タイプ | 意味                                                         |
+| パラメータ    | タイプ             | 意味                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| quality | int  | オーディオ品質。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
+| quality | int  | 音声品質。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
 
 
 ### muteLocalAudio
 
-ローカルのオーディオのミュート/ミュート取り消し。
+ローカルの音声のミュート/ミュート取り消し。
 
 ```java
 public abstract void muteLocalAudio(boolean mute);
@@ -598,7 +601,7 @@ public abstract void muteLocalAudio(boolean mute);
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ    | 意味                                                         |
+| パラメータ     | タイプ    | 意味                                                         |
 | ---- | ------- | ------------------------------------------------------------ |
 | mute | boolean | ミュート/ミュート取り消し。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
 
@@ -616,7 +619,7 @@ public abstract void setSpeaker(boolean useSpeaker);
 
 | パラメータ       | タイプ    | 意味                        |
 | ---------- | ------- | --------------------------- |
-| useSpeaker | boolean | true：スピーカー；false：ヘッドホン。 |
+| useSpeaker | boolean | true：スピーカー、false：ヘッドホン。|
 
 
 
@@ -662,7 +665,7 @@ public abstract void muteRemoteAudio(String userId, boolean mute);
 | パラメータ | タイプ  | 意味                              |
 | ---- | ------- | --------------------------------- |
 | userId | String  | 指定ユーザーID。                   |
-| mute   | boolean | true：ミュート起動；false：ミュート停止。 |
+| mute | boolean | true：ミュート起動、false：ミュート停止。|
 
 ### muteAllRemoteAudio
 
@@ -676,11 +679,11 @@ public abstract void muteAllRemoteAudio(boolean mute);
 
 | パラメータ | タイプ  | 意味                              |
 | ---- | ------- | --------------------------------- |
-| mute | boolean | true：ミュート起動、false：ミュート停止。 |
+| mute | boolean | true：ミュート起動、false：ミュート停止。|
 
 ### setVoiceEarMonitorEnable
 
-インイヤーモニタリングのオン/オフ
+インイヤーモニタリングのオン/オフ。
 
 ```java
 public abstract void setVoiceEarMonitorEnable(boolean enable);
@@ -689,14 +692,14 @@ public abstract void setVoiceEarMonitorEnable(boolean enable);
 
 | パラメータ | タイプ  | 意味                              |
 | ---- | ------- | --------------------------------- |
-| enable | boolean | true：インイヤーモニタリングをオン、false：インイヤーモニタリングをオフ。 |
+| enable | boolean | true：インイヤーモニタリングをオン。false：インイヤーモニタリングをオフ。 |
 
 
 ## BGMサウンドエフェクト関連インターフェース関数
 
 ### getAudioEffectManager
 
-BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
+バックグラウンド・サウンドエフェクト管理オブジェクト [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
 
 ```java
 public abstract TXAudioEffectManager getAudioEffectManager();
@@ -718,7 +721,7 @@ public abstract void sendRoomTextMsg(String message, TRTCKaraokeRoomCallback.Act
 | パラメータ     | タイプ           | 意味           |
 | -------- | -------------- | -------------- |
 | message  | String         | テキストメッセージ。     |
-| callback | ActionCallback | 送信結果のコールバック。 |
+| callback | ActionCallback | 送信結果のコールバック。|
 
    
 
@@ -778,11 +781,11 @@ public abstract void acceptInvitation(String id, TRTCKaraokeRoomCallback.ActionC
 | パラメータ     | タイプ           | 意味           |
 | -------- | -------------- | -------------- |
 | id       | String         | 招待ID。      |
-| callback | ActionCallback | 送信結果のコールバック。 |
+| callback | ActionCallback | 送信結果のコールバック。|
 
 ### rejectInvitation
 
-招待の辞退。
+招待の拒否。
 
 ```java
 public abstract void rejectInvitation(String id, TRTCKaraokeRoomCallback.ActionCallback callback);
@@ -809,7 +812,7 @@ public abstract void cancelInvitation(String id, TRTCKaraokeRoomCallback.ActionC
 | パラメータ     | タイプ           | 意味           |
 | -------- | -------------- | -------------- |
 | id       | String         | 招待ID。      |
-| callback | ActionCallback | 送信結果のコールバック。 |
+| callback | ActionCallback | 送信結果のコールバック。|
 
 [](id:TRTCKaraokeRoomDelegate)
 ## TRTCKaraokeRoomDelegateイベントコールバック
@@ -831,7 +834,7 @@ void onError(int code, String message);
 | パラメータ    | タイプ   | 意味       |
 | ------- | ------ | ---------- |
 | code   | int    | エラーコード。   |
-| message | String | エラー情報。 |
+| message | String | エラーメッセージ。 |
 
 
 ### onWarning
@@ -914,7 +917,7 @@ void onUserMicrophoneMute(String userId, boolean mute);
 
 | パラメータ   | タイプ   | 意味                            |
 | ------ | ------ | ------------------------- |
-| userId | String|  ユーザーID。                 |
+| userId | String           | ユーザーID。        |
 | mute | boolean    | 音量の大きさ。値：0～100。 |
 
 ### onUserVolumeUpdate
@@ -960,7 +963,7 @@ void onAnchorEnterSeat(int index, TRTCKaraokeRoomDef.UserInfo user);
 
 | パラメータ  | タイプ     | 意味                 |
 | ----- | -------- | -------------------- |
-| index | int      | 参加者がマイク・オンのマイク。     |
+| index | int      | メンバーがマイク・オンのマイク。     |
 | user  | UserInfo | マイク・オンのユーザーの詳細情報。 |
 
 ### onAnchorLeaveSeat
@@ -991,7 +994,7 @@ void onSeatMute(int index, boolean isMute);
 | パラメータ   | タイプ    | 意味                               |
 | ------ | ------- | ---------------------------------- |
 | index  | int     | 操作するマイク。                       |
-| isMute | boolean | true：マイクミュート、false：ミュート解除。 |
+| isMute | boolean | true：マイクミュート； false：ミュート解除。 |
 
 ### onSeatClose
 
@@ -1005,8 +1008,8 @@ void onSeatClose(int index, boolean isClose);
 
 | パラメータ    | タイプ    | 意味                                |
 | ------- | ------- | ----------------------------------- |
-| index   | int     | 操作するマイク。                       |
-| isClose | boolean | true：マイクのクローズ、 false：マイクのクローズ解除。 |
+| index   | int     | 操作するマイク。                        |
+| isClose | boolean | true：マイクのクローズ； false：マイクのクローズ解除。 |
 
 ## リスナーの入退室イベントのコールバック
 
@@ -1092,7 +1095,7 @@ void onReceiveNewInvitation(String id, String inviter, String cmd, String conten
 | id      | String   | 招待ID。                          |
 | inviter | String   | 招待者のユーザーID。                  |
 | cmd     | String   | 業務指定のコマンドワードは、開発者がカスタマイズします。 |
-| content    | String | 業務指定のコンテンツ。                   |
+| content | String   | 業務指定のコンテンツ。                   |
 
 ### onInviteeAccepted
 
@@ -1107,11 +1110,11 @@ void onInviteeAccepted(String id, String invitee);
 | パラメータ    | タイプ   | 意味                |
 | ------- | ------ | ------------------- |
 | id      | String | 招待ID。           |
-| inviter | String | 被招待者のユーザーID。 |
+| invitee    | String | 被招待者のユーザーID。 |
 
 ### onInviteeRejected
 
-被招待者による招待の辞退。
+被招待者による招待の拒否。
 
 ```java
 void onInviteeRejected(String id, String invitee);
@@ -1122,7 +1125,7 @@ void onInviteeRejected(String id, String invitee);
 | パラメータ    | タイプ   | 意味                |
 | ------- | ------ | ------------------- |
 | id      | String | 招待ID。           |
-| inviter | String | 被招待者のユーザーID。 |
+| invitee    | String | 被招待者のユーザーID。 |
 
 ### onInvitationCancelled
 
@@ -1137,7 +1140,7 @@ void onInvitationCancelled(String id, String inviter);
 | パラメータ    | タイプ   | 意味               |
 | ------- | ------ | ----------------- |
 | id      | String | 招待ID。         |
-| inviter | String | 招待者のユーザーID。 |
+| inviter    | String | 招待者のユーザーID。 |
 
 ## 音楽再生ステータスコールバック
 

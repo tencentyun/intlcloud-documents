@@ -1,11 +1,11 @@
 [](id:que1)
 ### ライブストリーミング、インタラクティブライブストリーミング、TRTCおよびRelayed live streamingの違いと関係性は何ですか。
 - ライブストリーミング（キーワード：一対多、RTMP/HLS/HTTP-FLV、CDN）
- ライブストリーミングは、プッシュ端末、再生端末およびライブストリーミングクラウドサービスに分かれます。クラウドサービスはCDNを使用してCSSストリームを配信します。プッシュには一般的な標準プロトコルRTMPが使用されます。CDNによって配信された場合、再生するときには通常、RTMP、HTTP-FLVまたはHLS（H5サポート）を選択して視聴することができます。
+ LVBは、プッシュ端末、再生端末およびライブストリーミングクラウドサービスに分かれます。クラウドサービスはCDNを使用してライブストリームを配信します。プッシュには一般的な標準プロトコルRTMPが使用されます。CDNによって配信された場合、再生するときには通常、RTMP、HTTP-FLVまたはHLS（H5サポート）を選択して視聴することができます。
 - インタラクティブライブストリーミング（キーワード：マイク接続、PK）
- インタラクティブライブストリーミングは、業務形式の1種で、キャスターと視聴者の間のインタラクティブなマイク接続や、キャスターとキャスターの間のインタラクティブなPKを行うライブストリーミングのタイプの1つです。
+ ILVBは、業務形式の1種で、キャスターと視聴者の間のインタラクティブなマイク接続や、キャスターとキャスターの間のインタラクティブなPKを行うライブストリーミングのタイプの1つです。
 - TRTC（キーワード：マルチプレイヤーインタラクション、UDPプライベートプロトコル、低遅延）
- TRTCの主なユースケースは、オーディオとビデオのインタラクションと低遅延のライブストリーミングです。UDPベースのプライベートプロトコルを使用し、ディレイは100ミリ秒まで引き下げることができます。典型的なシーンは、QQ電話、VooVMeeting、大規模セミナーなどです。Tencent CloudのTRTCはプラットフォーム全体をカバーし、iOS/Android/Windowsの外に、ミニプログラムやWebRTCでの相互通信もサポートしています。また、クラウドミクスストリーミングの方式で、画面のRelayed live streamingをCDNに渡す機能もサポートしています 。
+ TRTCの主なユースケースは、オーディオとビデオのインタラクションと低遅延のライブストリーミングです。UDPベースのプライベートプロトコルを使用し、ディレイは100ミリ秒まで引き下げることができます。典型的なシーンは、QQ電話、VooVMeeting、大規模セミナーなどです。Tencent CloudのTRTCはプラットフォーム全体をカバーし、iOS/Android/Windowsの外に、WebRTCでの相互通信もサポートしています。また、クラウドミクスストリーミングの方式で、画面のRelayed live streamingをCDNに渡す機能もサポートしています 。
 - Relayed live streaming（キーワード：クラウドミクスストリーミング、RTCバイパス・プッシュ転送、CDN）
  Relayed live streamingとは、低遅延のマイク接続ルームにおけるマルチチャンネルのプッシュ画面をコピーして、クラウド内で画面を混合して一つのチャネルにし、ミクスストリーミング後の画面をライブCDNにプッシュして配信、再生する技術のことです。 
 
@@ -31,12 +31,11 @@ VideoCallモードはビデオ通話用に最適化されているため、ル�
 TRTCのログは、デフォルトで、圧縮と暗号化を行うことになっています。拡張子は「.xlog」です。ログの暗号化の有無は、setLogCompressEnabledで制御でき、生成したファイル名の中に C(compressed)が含まれていれば、暗号化と圧縮が行われています。R(raw)が含まれていれば、平文です。
 
 - iOS&Mac：`sandboxのDocuments/log`
-- Android：
- - 6.7とそれ以前のバージョン：`/sdcard/log/tencent/liteav`
- - 6.8以後のバージョン：`/sdcard/Android/data/パッケージ名/files/log/tencent/liteav/`
+- Android:
+ - 6.7およびそれ以前のバージョン：`/sdcard/log/tencent/liteav`。
+ - 6.8およびそれ以降のバージョン：`/sdcard/Android/data/パッケージ名/files/log/tencent/liteav/`。
 - Windows：`%appdata%/tencent/liteav/log`
 - Web：ブラウザのコンソールを開くか、またはvConsoleを使ってSDKを記録し情報を印刷します。
-- ミニプログラム：<live-pusher>と<live-player>タグのdebug属性を有効化し、vConsoleを使って情報を記録し印刷します。
 
 >?
 >- .xlogファイルを見るには復号ツールのダウンロードが必要です。python 2.7の環境で、xlogファイルと同じディレクトリ下に置き、直接`python decode_mars_log_file.py`を使用して実行すれば、復号できます。
@@ -45,7 +44,7 @@ TRTCのログは、デフォルトで、圧縮と暗号化を行うことにな�
 
 [](id:que6)
 ### 10006 errorが発生したときはどう対処すればよいでしょうか。
-「Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it」が発生した場合、Tencent Real-Time Communicationアプリケーションのサーバー状態が使用可能かどうかご確認ください。
+"「Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it」"が発生した場合、Tencent Real-Time Communicationアプリケーションのサーバー状態が使用可能かどうかご確認ください。
 **TRTCコンソール**>**[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)**にログインして、作成したアプリケーションを選択し、**アプリケーション情報**をクリックすれば、アプリケーション情報パネルでサービス状態を確認できます。
 ![](https://main.qcloudimg.com/raw/57e63830a368520c5e81e8e4b43d09b7.png)
 
@@ -57,7 +56,7 @@ UserSigの検証に失敗したためです。次の要因が考えられます�
 
 
 [](id:que8)
-### ルーム間のマイク接続（キャスターPK）はどうやって行うのですか。
+### ルーム間のマイク連携（キャスター PK）はどうやって行うのですか?
 connectOtherRoomインターフェースを利用できます。キャスターがconnectOtherRoom()を呼び出したら、onConnectOtherRoomのコールバックによって、ルーム間 PK の結果を取得することができます。キャスター1がいるルーム内の全ての人が、onUserEnterのコールバックによって、キャスター2のルーム参加の通知を受け取れます。キャスター2がいるルームの全ての人も、onUserEnterのコールバックによってキャスター1のルーム参加の通知を受け取れます。
 
 [](id:que9)
@@ -153,7 +152,7 @@ TRTCコンソールにログインし、**開発支援**>**[UserSig生成&検証
 TRTCコンソールの**[使用量の統計](https://console.cloud.tencent.com/trtc/statistics)**ページで確認することができます。
 
 [](id:que28)
-### TRTCのユーザーリストのメンテナンスやライブストリーミングルームの視聴者数の統計を行うには、どうすればいいですか。	
+### TRTCのユーザーリストのメンテナンスやライブルームの視聴者数の統計を行うには、どうすればいいですか？	
 開発者がプロジェクトの工程の中で [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047)を統合している場合は、直接 IMのグループ人数統計インターフェースで統計を行うことが可能です。ただし、この方式で統計した人数は完全には正確ではありません。開発者のオンラインの人数に対する要求が高くない場合は、上記の方式をそのまま利用することができます。
 開発者がオンラインの人数を非常に正確に統計しなければならない場合は、ご自分で統計ロジックを実現させることをお勧めします。
 1. 視聴者数の追加（Client -> Server）新しい視聴者が参加した時は、あるルームの視聴者数を+ 1する必要があることを意味します。よって、ルーム参加時間に、Appの視聴者側からServer側に向けて累加リクエストを1回送信させます。
@@ -212,17 +211,20 @@ onNetworkQuality()を使用して現在のネットワークのアップスト�
 できます。レコーディングしたミクスストリーミング後の音声データを取得したい場合、 [クラウドミクスストリーミング起動](https://intl.cloud.tencent.com/document/product/647/34618)を行ってから、出力ストリームIDを制定して、ライブストリーミングのインターフェース [レコーディングタスク作成](https://intl.cloud.tencent.com/document/product/267/37309)を呼び出します。
 
  [](id:que38)
-###  Windows端末では、共有されたアプリケーションによって再生された音声をどのように収集しますか。
+###  Windows版で、共有されたアプリケーションの再生音声を採集する方法は？
 [startSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a157639a4fa3cc73ffc1982bbd8a8985e) インターフェースを呼び出すことによって、システム音声キャプチャをオンにすることができます。
 
 [](id:que39)
-###  Windowsのミーティングモードで、キャスターが視聴者に対しオーディオビデオ接続を開始する機能を実装するにはどうすればいいですか。
-別のクラウド製品[IM](https://intl.cloud.tencent.com/document/product/1047/33996)を組み合わせて、接続要件を満たす必要があります。
+###  Windows版のミーティングモードで、キャスターから視聴者への音声ビデオ接続のリクエストを実現する方法は？
+別のクラウドサービス [Instant Messaging（IM）](https://intl.cloud.tencent.com/document/product/1047/33996)と連携させて、接続のニーズを実現させる必要があります。
 
 呼び出しロジックは、概ね次のとおりです。AはカスタムメッセージXをBに送信して呼び出しページを呼び出します。Xの表示効果は自ら処理され、BはXを受信すると呼び出されたページを呼び出します。Bは[enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)をクリックして入室し、カスタムメッセージX1をAに送信します。AはX1（表示するかどうかは自ら決定）を受信するとともに、enterRoomを呼び出して入室します。IMを使用してカスタムメッセージを送信します。
 
 [](id:que40)
-###  視聴者がルーム内の接続画面を確認するには、どうすればいいですか。
+###  視聴者がルーム内で接続された画面を確認するにはどうすればいいですか？
 視聴者がライブストリーミングモードを使用する場合、視聴者は入室してTRTCCloudDelegateの [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a)コールバックを通じてキャスターのユーザーID（マイク接続されている人も [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)で入室すると、視聴者にとってはキャスターになります）を取得します。次に視聴者は[startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5c5ea936418b106c2e801db57938dde9)メソッドを呼び出すと、キャスターのビデオ画面を表示することができます。
-操作の詳細については、[ライブストリーミングクイックスタート(Windows)](https://intl.cloud.tencent.com/document/product/647/35109)をご参照ください。
+より詳しい操作については、 [ライブブロードキャストモード(Windows) クイックスタート](https://intl.cloud.tencent.com/document/product/647/35109)をご参照ください。
 
+[](id:que41)
+### TRTCにはLinux SDKはありますか。
+Linux SDKは現在まだ完全にはリリースされていません。関連サービスについて、お問い合わせまたはご利用を希望される場合は、colleenyu@tencent.comまでご連絡ください。
