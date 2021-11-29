@@ -13,11 +13,12 @@ Fitur ini tersedia untuk pengguna secara global tetapi terutama ditujukan untuk 
 ## 4.Cara Kami Menggunakan Informasi Pribadi
 
 Kami akan menggunakan informasi dengan cara berikut dan sesuai dengan dasar hukum berikut:
+
  <table>
   <tr>
   <td><b>Informasi Pribadi</b></td>
-  <td><b>Tujuan Penggunaan</b> </td>
-  <td><b>Dasar Hukum</b> </td>
+  <td><b>Tujuan Penggunaan</b></td>
+  <td><b>Dasar Hukum</b></td>
   </tr>
   <tr>
   <td>Data login Tencent Cloud, APPID, dan UIN.</td>
