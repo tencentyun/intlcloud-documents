@@ -1,3 +1,41 @@
+## October 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Instances can be downgraded</td>
+<td>You can now downgrade the compute and disk specifications of an instance in the console.</td>
+<td>2021-10</td><td><a href="https://intl.cloud.tencent.com/document/product/409/41596" target="_blank">Modifying Instance Configuration</a></td></tr>
+<tr>
+<td>PostgreSQL 9.4, 9.5, and 9.6 support incremental migration</td>
+<td>You can now install a migration plug-in to incrementally migrate PostgreSQL 9.4, 9.5, and 9.6 databases to reduce business cut-over costs.</td>
+<td>2021-10</td><td><a href="https://intl.cloud.tencent.com/document/product/571/42640" target="_blank">Migration from PostgreSQL to TencentDB for PostgreSQL</a></td></tr>
+</tbody></table>
+
+## September 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Parameter management is supported</td>
+<td>You can now set and modify common instance parameters in the console.</td>
+<td>2021-09</td><td><a href="https://intl.cloud.tencent.com/document/product/409/43239" target="_blank">Setting Instance Parameters</a></td></tr>
+</tbody></table>
+
+## August 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Disk capacity and instance specification have been optimized</td>
+<td>The mapping between disk capacity and instance specification has been optimized. Instances of low specification can now support a larger disk capacity.</td>
+<td>2021-08</td><td><a href="https://intl.cloud.tencent.com/document/product/409/7562" target="_blank">Instance Types</a></td></tr>
+<tr>
+<td>Slow query analysis has been optimized</td>
+<td>Slow query analysis has been upgraded. You can now view and compare the monitoring data of the slow query metric and another metric in the same chart, and view real-time slow query statements in the slow SQL list.</td>
+<td>2021-08</td><td><a href="https://intl.cloud.tencent.com/document/product/409/39978" target="_blank">Slow Query Analysis</a></td></tr>
+</tbody></table>
+
 
 ## July 2021
 <table>
