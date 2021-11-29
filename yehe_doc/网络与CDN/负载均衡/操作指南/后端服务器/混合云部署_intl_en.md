@@ -1,5 +1,5 @@
 In hybrid cloud deployment scenarios, you can directly bind CLB instances to IPs in the local IDC off the cloud so as to bind them to real servers across VPCs and IDCs.
-This feature is currently in beta. If you want to use it, for cross-region binding outside the Chinese mainland, please [contact your Tencent Cloud rep](https://intl.cloud.tencent.com/contact-sales).
+This feature is currently in beta. If you want to use it, please [submit a ticket](https://intl.cloud.tencent.com/apply/p/mzjxboiv2yq). 
 
 ## Solution Advantages
 - A hybrid cloud can be built quickly to seamlessly connect the environments in and off the cloud. CLB can forward requests to CVM instances in the in-cloud VPC and the off-cloud IDC at the same time.
