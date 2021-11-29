@@ -1,43 +1,31 @@
-## Overview
-An SQL statement query that takes more time than the specified value is referred to as a "slow query", and the corresponding statement is called a "slow query statement". The process where a database administrator (DBA) analyzes slow query statements and finds out the reasons why slow queries occur is known as slow log analysis.
+## Feature Description
+By default, an SQL query that takes more than one second is a slow query, and the corresponding statement is a slow query statement. The process where a database administrator (DBA) analyzes slow query statements and finds out the reasons why slow queries occur is known as slow query analysis.
 
-You can log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/pgsql), click an instance ID/name in the instance list to access the instance management page, and select the **Performance Optimization**tab to perform slow log analysis, as shown below:
+You can log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/pgsql), click an instance ID in the instance list to access the instance management page, and select the **Performance Optimization** tab to analyze slow queries, as shown below:
 ![](https://main.qcloudimg.com/raw/5837567fd0b5a75c1a682e7dfa80dc70.png)
 
-## Main Parameters
+## Monitoring Views
+There are two monitoring views in the console, visually and conveniently illustrating the monitoring data of database slow queries.
+**Combined View (Slow Log and Other Metrics)**: this view shows and compares the monitoring data of the slow query metric and another metric in the same chart. Supported metrics include CPU utilization, QPS, requests, read requests, write requests, other requests, buffer cache hit rate, and average execution latency.
+**Slow SQL Execution Time Distribution**: this view shows in what time period slow queries mainly occur.
 
-### Default settings of slow log analysis
-- **Slow log feature**: enabled by default.
-- **log_min_duration_statement**: slow query statements that have been executed for more than `log_min_duration_statement` seconds will be logged. Default value: `1`.
-- **Analyzed data output delay**: 1–5 minutes.
-- **Log retention period**: 7 days (up to the last 10,000 records).
+## Slow SQL List
+The slow SQL list shows slow query statements of the database in real time. The list is arranged in descending order by time, that is, the latest slow query statement is automatically displayed in the first row.
+The slow SQL list has the following fields: the execution time, the slow SQL statement, the total time, the client IP, the database name, and the account executing the statement.
 
-### Descriptions of analysis result list fields
-On the **Slow Log Analysis** tab, the analysis result list has the following fields.
+>! By default, the slow SQL list displays slow SQL data over the past seven days. The slow SQL data is stored in a log, and the oldest data is automatically deleted from the log to ensure that the log only stores data within the past seven days and the log size does not exceed 50 GiB.
 
-#### Basic information
-- **Last Execution Time**: the time when the abstract statement was executed for the last time within the specified time range. As some statements may be executed for a long time, we log the `begin_time` of the statement execution.
-- **Abstracted SQL Statement**: a slow query statement whose constants are removed. The abstracted statement can be used for summary statistics of similar statements to facilitate your analysis.
-- **Database**: the database called by the statement
-- **Account**: the account used by the statement
-- **First Execution Time**: the time when the slow query statement was executed for the first time within the specified time range. There may be many records after abstraction.
-- **Total**: the number of executions of the slow query statement within the specified time range
-- **Total Executions (%)**: the ratio of the total executions of the slow query statement to the total executions of all slow query statements within the specified time range
-- **Sent Rows**: the total number of result rows sent (returned) from database server to client within the specified time range
-
-#### Statistics of query information
-- **Total Time (sec)**: the total time consumed by the slow query statement within the specified time range
-- **Total Time (%)**: the ratio in percentage of the total time consumed by the slow query statement to the total time consumed by all slow query statements within the specified time range
-- **Avg. Time (sec)**: the average time is calculated by dividing the total time consumed by the slow query statement by the total number of executions of the slow query statement.
-- **Min. Time (sec)**: the minimum among all execution time of the slow query statement. This parameter is used to determine whether the statement is sporadic.
-- **Max. Time (sec)**: the maximum among all execution time of the slow query statement. This parameter is used to determine whether the statement is sporadic.
-
-#### Statistics of reads and writes
-- **Blocks Read from Shared Memory**: the blocks read by the slow query statement from the shared memory within the specified time range
-- **Blocks Written to Shared Memory**: the blocks written by the slow query statement to the shared memory within the specified time range
-
-
-#### Statistics of read/write I/O response time
-- **Read I/O Response Time**: the total time consumed by the slow query statement to perform read I/O operations within the specified time range. This parameter is used to determine whether the statement performs time-consuming operations such as full scans.
-- **Write I/O Response Time**: the total time consumed by the slow query statement to perform write I/O operations within the specified time range. This parameter is used to determine whether the statement writes large amounts of (temporary) data at once.
+## Slow SQL Statistics and Analysis
+The slow SQL statistics and analysis page shows the slow query statements with abstract parameter values within the specified time range and their aggregated statistical analysis results. The page has the following fields:
+- **Last Execution Time**: the time when the abstract statement is executed for the last time within the specified time range. As some statements may take a long time to execute, the `begin_time` of statement execution is logged as the last execution time.
+- **Abstract SQL Statement**: a slow query statement whose constants are removed. The abstract statement can be used for summary statistics of similar statements to facilitate your analysis.
+- **Database**: the database queried by the statement.
+- **Account**: the account executing the statement.
+- **Client IP**: the clients executing the statement.
+- **First Execution Time**: the time when the abstract slow query statement is executed for the first time within the specified time range (there may be many records after abstraction).
+- **Total Execution Time**: the total time consumed by the abstract slow query statement within the specified time range.
+- **Avg Execution Time**: the average time is calculated by dividing the total time consumed by the abstract slow query statement by the total number of its executions.
+- **Min Execution Time**: the minimum among all execution time of the abstract slow query statement. This parameter is used to determine whether the statement is sporadic.
+- **Max Execution Time**: the maximum among all execution time of the abstract slow query statement. This parameter is used to determine whether the statement is sporadic.
+- **Total Time (%)**: the ratio in percentage of the total time consumed by the abstract slow query statement to the total time consumed by all abstract slow query statements within the specified time range.
 
