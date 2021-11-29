@@ -21,7 +21,7 @@ MPSは、クラウドトランスコード、ウォーターマークのオー�
 ### MPSとは、主にどのような手順で行われますか。
 MPSを例に取った場合、ワークフローには主に、ワークフローの設定、トランスコードのトリガー、トランスコードタスクの処理、イベント通知の送信などがあります。[ワークフロー](https://intl.cloud.tencent.com/document/product/1041/33475)の原理図は次のとおりです。
 
-<img src="https://main.qcloudimg.com/raw/441cdf4910af7a4a0ef6c9d9091a7529.png" width=600px>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f2d33c2685ad9855b10bd1d808e5105b.png" width=600px>
 
 
 ## 機能サポート
