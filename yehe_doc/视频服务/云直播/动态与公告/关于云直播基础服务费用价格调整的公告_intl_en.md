@@ -1,10 +1,10 @@
-Due to operational cost changes, starting from **00:00 on January 3, 2022**, CSS will adjust the daily billing prices and pricing tiers of its basic services and bill usage outside the Chinese mainland by region instead of at a unified price.
+Due to operational cost changes, starting from **00:00 on January 4, 2022**, CSS will adjust the daily billing prices and pricing tiers of its basic services and bill usage outside the Chinese mainland by region instead of at a unified price.
 
 Billable items with price changes: LVB playback traffic/bandwidth, LEB playback traffic/bandwidth, live push traffic/bandwidth
 
 ### Notes
 
-- The changes will take effect at 00:00 on January 3, 2022, but will not apply to bills generated on January 3, 2022 for January 2.
+- The changes will take effect at 00:00 on January 4, 2022, but will not apply to bills generated on January 4, 2022 for January 3.
 - If you have contract prices agreed with Tencent Cloud, you can contact sales or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to confirm your future pricing strategies.
 - Billing regions outside the Chinese mainland:
   - Asia Pacific 1: Hong Kong (China), Singapore, Macao (China), Vietnam, Thailand, Nepal, Cambodia
@@ -459,7 +459,7 @@ The table below lists the bill-by-bandwidth prices, pricing tiers, and billing r
 </tr>
 </tbody></table>
 
-The price changes will take effect on **January 3, 2022**. Please keep track of your balance and adjust your business if necessary.
+The price changes will take effect on **January 4, 2022**. Please keep track of your balance and adjust your business if necessary.
 
 If you have any questions, feel free to [contact us](https://console.cloud.tencent.com/workorder/category).
 
