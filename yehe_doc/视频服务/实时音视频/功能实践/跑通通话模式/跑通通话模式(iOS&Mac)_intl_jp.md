@@ -82,7 +82,7 @@ _trtcCloud.delegate = self;
 | sdkAppId | 数字 | アプリケーションID。<a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a>でSDKAppIDを表示できます。|1400000123 |
 | userId | 文字列 | アルファベットの大文字、小文字（a-z、A-Z）、数字（0-9）、下線およびハイフンのみを許可。 | test_user_001 |
 | userSig | 文字列 | userIdを基にuserSigを計算します。計算方法は[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。| eJyrVareCeYrSy1SslI... |
-| roomId | 数字 | デフォルトでは文字列のタイプのルームナンバーをサポートしていません、文字列タイプのルームナンバーは入室速度に影響します。文字列タイプのルームナンバーをサポートする必要が確実にある場合は、 [チケットを提出](https://console.cloud.tencent.com/workorder/category) してご連絡ください。 | 29834 |
+| roomId | 数字 | 数字タイプのルームナンバー。文字列形式のルームナンバーを使用したい場合は、TRTCParamsのstrRoomIdをご使用ください。| 29834 |
 
 >! TRTCは、2つの同じuserIdによる同時入室をサポートしていません。同時に入室した場合は相互に干渉します。
 
