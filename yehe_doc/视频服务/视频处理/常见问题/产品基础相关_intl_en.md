@@ -21,7 +21,7 @@ MPS offers video processing services such as on-cloud transcoding, watermarking,
 ### What is the basic process involved in using MPS?
 The process includes configuring workflows, triggering transcoding tasks, executing transcoding tasks, and sending event notifications. The figure below shows how a [workflow](https://intl.cloud.tencent.com/document/product/1041/33475) works.
 
-<img src="https://main.qcloudimg.com/raw/441cdf4910af7a4a0ef6c9d9091a7529.png" width=600px>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f2d33c2685ad9855b10bd1d808e5105b.png" width=600px>
 
 
 ## Features
