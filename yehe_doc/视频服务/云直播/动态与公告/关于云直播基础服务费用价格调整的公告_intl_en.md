@@ -1,5 +1,3 @@
-## CSS to Adjust Prices of Basic Services
-
 Due to operational cost changes, starting from **00:00 on January 3, 2022**, CSS will adjust the daily billing prices and pricing tiers of its basic services and bill usage outside the Chinese mainland by region instead of at a unified price.
 
 Billable items with price changes: LVB playback traffic/bandwidth, LEB playback traffic/bandwidth, live push traffic/bandwidth
