@@ -12,6 +12,6 @@
 - 按量计费实例销毁后，将停止计费。
 
 ## 操作步骤
-1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/postgres)，在实例列表找到待销毁的实例，在“操作”列选择【更多】>【销毁实例】。
-2. 在弹出的对话框，勾选确认后，单击【立即销毁】。
+1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/postgres)，在实例列表找到待销毁的实例，在**操作**列选择**更多**>**销毁实例**。
+2. 在弹出的对话框，勾选确认后，单击**立即销毁**。
 ![](https://main.qcloudimg.com/raw/eee2085b2ede55bf5369e56a68524f71.png)
