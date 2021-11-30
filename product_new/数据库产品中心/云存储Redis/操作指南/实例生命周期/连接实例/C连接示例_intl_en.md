@@ -1,8 +1,9 @@
 ﻿**Preparations before running**:
 
-Download and install [hiredis](https://github.com/redis/hiredis).
+Doawnload and install [hiredis](https://github.com/redis/hiredis).
 
-**Sample code**:
+**Sample Code**:
+
 ```
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,7 +17,7 @@ int main(int argc, char **argv) {
     redisReply *reply;
 	
 if (argc < 4) {
-      printf("Usage: 192.168.0.195 6379 instance_id password\n");
+      printf("Usage: 192.xx.xx.195 6379 instance_id password\n");
       exit(0);
     }
     const char *hostname = argv[1];
@@ -38,7 +39,7 @@ if (argc < 4) {
     }
 	
 	/* AUTH */
-    reply = redisCommand(c, "AUTH %s:%s", instance_id, password);
+    reply = redisCommand(c, "AUTH %s", password);
     printf("AUTH: %s\n", reply->str);
     freeReplyObject(reply);
 
@@ -64,5 +65,5 @@ if (argc < 4) {
 }
 ```
 
-**Execution result**:
-![](//qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/Clianjie-1.png)
+**Execution results**:
+![](https://main.qcloudimg.com/raw/f6d6d6058d20fd156d8c50f6ec50bf44.png)
