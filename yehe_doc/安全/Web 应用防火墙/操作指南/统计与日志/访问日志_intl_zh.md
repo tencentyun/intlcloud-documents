@@ -14,22 +14,20 @@
 2. 在日志服务页面，单击左上角的域名下拉框，选择所需域名后，单击**确定**，即可该域名的访问日志。
 ![](https://qcloudimg.tencent-cloud.cn/raw/42a77d62f290d2b298e3ed9d38763143.png)
 3. 在日志服务页面，右上角可查看日志已使用容量进度条，单击**了解详情**，可跳转到 Web 应用防火墙的计费详情页面。
-![](https://main.qcloudimg.com/raw/bfbe41a5c9250c4ea952db0e9130f074.png)
 4.  在日志服务页面，单击右上角**存储配置**，可以查看日志已使用容量进度条，和设置日志保存天数，单击**保存**，即可保存修改。
 >?日志保存天数为1-30天。
 
-![](https://main.qcloudimg.com/raw/770ab95666033ce0094bf2e80c2e2f5c.png)
+
 
 ### 查询日志
 1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
 2. 在日志服务页面，可以用快速检索、过滤检索和语句检索查询所需日志。
  - 快速检索：主要是针对时间的快捷选择检索。
-   ![](https://main.qcloudimg.com/raw/6804c1f59920743e3f10f45b4502b317.png)
  - 过滤检索：选择所需字段和操作符，输入字段值后，单击**确定**，即可针对每个字段对日志进行筛选，并支持添加多个字段限制。
-![](https://main.qcloudimg.com/raw/08ae0aa785727b6fcce939673b8d0866.png)
-- 语句检索：为用户提供专业的语句日志检索功能，满足更复杂的日志检索需求。输入所需内容后，单击![](https://main.qcloudimg.com/raw/de2de3ad90917a2dba3259716cb87963.png)，即可查询。
-![](https://main.qcloudimg.com/raw/a24899d83e393b89ea8ec2c85b307a41.png)
+3. 语句检索：为用户提供专业的语句日志检索功能，满足更复杂的日志检索需求。输入所需内容后，单击![](https://main.qcloudimg.com/raw/de2de3ad90917a2dba3259716cb87963.png)，即可查询。
+
 **检索语法**
+
 <table>
 <thead>
 <tr>
@@ -130,6 +128,7 @@
 <td align="left">相似搜索，例如 <code>level:errro~</code>，可以命中 level 为 error 关键字的结果</td>
 </tr>
 </tbody></table>
+
 >!
 > - 操作符区分大小写，例如 AND、OR 表示检索逻辑运算符，而 and、or 视为普通词组。
 > - 多个检索语句用空格连接时，视为”或“逻辑，例如 `warning error` 表示包含 `warning` 或 `error` 关键字的结果。
@@ -141,9 +140,8 @@
 ### 展示日志
 1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
 2. 在日志服务页面的展示模块，单击“字段名称”，会展示与本字段匹配的日志数前五的占比。
-![](https://main.qcloudimg.com/raw/2c3edd0c0b6e28dc2f81ef32e3a1dfb6.png)
 3. 在展示模块，单击每条展示日志发生时间左侧的![](https://main.qcloudimg.com/raw/f85fc295aaf54ed8855edb882bb1ce06.png)，可以查看字段详情；单击 **JSON**，可以查看 JSON 格式的详情。
-![](https://main.qcloudimg.com/raw/345afe143b46018e290c2c517f254bfd.png)
+
 **JSON 字段说明**
 <table>
 <thead>
@@ -239,9 +237,8 @@
 </tbody></table>
 4. 在展示模块，展示已筛选出来的日志内容，目前支持列表和字段两种展示方式。
  - 字段展示：默认展示字段模式，右上角切换图标可以操作切换。
-![](https://main.qcloudimg.com/raw/f176fa9feb57157d9bda1472c49b82c7.png)
  - 列表展示：单击![](https://main.qcloudimg.com/raw/1c901122eac1bd6e8f21815d777551b7.png)，切换至列表模式。
-![](https://main.qcloudimg.com/raw/930e8e9e511797dedbaf2d8dcd46da8f.png)
+
 **列表展示字段说明**
 <table>
 <thead>
@@ -333,9 +330,9 @@
 >- 当选择泛域名（如：*.abc.com）时，所有关联子域名（以.abc.com结尾）的日志也将会被下载。
 >- 最多创建五条下载任务，请注意下载的任务数。
 
-![](https://main.qcloudimg.com/raw/a90d022c6cbd68714842d3c2fd9fa915.png)
+
 3. 在下载任务页面，单击**查看任务**，可以查看下载任务的序号、创建时间、日志总数等信息。
-![](https://main.qcloudimg.com/raw/3df5294988d053c5a64dc9dbbe915349.png)
+
 **日志文件字段说明**
 <table>
 <thead>

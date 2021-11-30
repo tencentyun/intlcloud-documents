@@ -3,9 +3,7 @@
 为了使 Web 应用防火墙识别出需要防护的域名，需要先在 Web 应用防火墙中添加域名。下面以防护 waf.qcloudwaf.com 为例，说明配置步骤。
 1. 登录 [Web 应用防火墙](https://console.cloud.tencent.com/guanjia/waf/config)，在左侧目录中，选择【实例管理】>【实例列表】，进入实例列表页面。
 2. 选择需要添加域名的实例，单击【域名接入】，进入域名接入页面。
-![](https://main.qcloudimg.com/raw/28e6ed4353e2cdafca2f28448e917e39.png)
-2. 单击【添加域名】，进入基础设置页面。
-<img src="https://main.qcloudimg.com/raw/8cfcb4ff548da5112f19fda711eb3e92.png" style="zoom:75%;" /><br>
+3. 单击【添加域名】，进入基础设置页面。
 
   - **域名配置**
      1. 在域名输入框中添加需要防护的域名 `waf.qcloudwaf.com` 。
@@ -18,7 +16,6 @@
  在 Web 应用防火墙前，是否接入了其他中间代理设备，若有，请选择【是】，若无，请选择【否】。
 3. 单击【保存】，完成配置后，可在域名列表看到刚刚添加的域名。
 4. 单击域名进入详情页，即可看到 Web 应用防火墙为站点分配的 CNAME。
- ![](https://main.qcloudimg.com/raw/10a4cf56a38eae0ff67200c9d81cddf9.png)
 
 >?Web 应用防火墙将会为每个添加到 Web 应用防火墙的域名（不区分一级域名和二级域名）分配一个唯一的 CNAME。
 

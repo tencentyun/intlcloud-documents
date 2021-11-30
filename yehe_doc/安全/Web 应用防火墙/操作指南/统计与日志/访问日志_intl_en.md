@@ -1,75 +1,481 @@
 ## Feature Overview
-The access log feature is used to record access logs of domain names protected by WAF. It allows you to query and download access logs generated in the last 30 days and retain them for up to 180 days. After enabling this feature, you can query and download access logs as needed to meet your security compliance and OPS requirements.
->To use the access log feature, you need to [purchase the security log service package](https://intl.cloud.tencent.com/document/product/627/11730) and enable access log as instructed in [Instructions](#sysm). Only after access log is enabled for a domain name can its access requests be logged by WAF.
+Access logging is used to record access logs of domain names protected by WAF. It allows you to query and download access logs generated in the last 30 days and retain them for up to 180 days. After enabling this feature, you can query and download access logs as needed to meet your security compliance and OPS requirements.
+>!
+>- To use access logging, you need to [purchase an extra log services pack](https://intl.cloud.tencent.com/document/product/627/11730) and enable access logging as instructed in [Directions](#sysm). Only after this feature is enabled for a domain name can its access requests be logged by WAF.
+>- To disable access logging, you can cancel renewal for the billing item at [Renewals](https://console.cloud.tencent.com/account/renewal).
 
-<span id ="sysm"></span>
-## Instructions
-### Enabling access log
-Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/config) and select **Web Application Firewall** > **Protection Setting** on the left sidebar to enter the protection settings page. Select a desired domain name and click **Enable Access Log**. 
-![](https://main.qcloudimg.com/raw/0d6ec65518d8c4beabe3bc6ccfb283c2.png)
+## Directions[](id:sysm)
+### Enabling access logging
+Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/config), select **Instant Management** > **Domain Name Connection** on the left sidebar, and then click **Enable** for domain names you choose on the Domain Name List. 
+![](https://qcloudimg.tencent-cloud.cn/raw/2fbe9fd1743f9368529ec6b9eff37171.png)
 
-### Querying access logs
-1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/config) and select **Security Overview** on the left sidebar to enter the security overview page. Select **Access Log** > **Log Query** and select a desired domain name to view its access logs.
-![](https://main.qcloudimg.com/raw/8747d77ac8d40fa3a2daa51ebca513f6.png)
-2. You can click <img src="https://main.qcloudimg.com/raw/81e64100ad0ed8422617c10b08fee09f.png"  style="margin:0;"> in the top-right corner as shown above. On the "Customize List Field" page, select the fields to be displayed in the list as shown below:
-![](https://main.qcloudimg.com/raw/2becf70cc2f40a89a2d417b480e68be5.png)
-3. Query the access logs. You can use multiple keywords separated by carriage return. After entering the keywords of the corresponding fields, click **Query** to search for logs.
-![](https://main.qcloudimg.com/raw/9166164f1d6ecaa33222df10000b22ee.png)
- >
->- Access logs can be queried by key-value (kv) pairs where up to 7 keys are supported. In `value`, you can enter multiple keywords of log data for easier search, which are case-insensitive and separated by separators (default separators include !@#%^&*()-_="', <>/?|\;:\n\t\r[]{}).
->- Access log supports fuzzy query. You can use certain fuzzy keywords to query logs as described below:
+### Viewing a log
+1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/overview). On the left sidebar, select **Log Services** > **Access Logs**.
+2. Click the drop-down list in the top left corner of the page to select domain names, and click **OK**.
+![](https://qcloudimg.tencent-cloud.cn/raw/42a77d62f290d2b298e3ed9d38763143.png)
+3. The usage capacity is displayed in top right corner. For more details about WAF billing, click **Learn More**.
+4. To view usage capacity and set the retention period at the same time, click **Storage Configuration**, and then click **Save** to save your setting.
+>?The retention period ranges from 1 to 30 days.
 
-| Metacharacter | Description |
-|---------|---------|
-| *	 | Fuzzy query of keywords that can match zero, single, or multiple random characters. `*` cannot be used as the first character. For example, if you enter `abc*`, all logs beginning with `abc` will be returned. |
-| ?	 | Fuzzy query of keywords that can match a single character at a specific position. For example, if you enter `ab?c`, logs that begin with `ab`, end with `c`, and contain only one character between `ab` and `c` will be returned. |
+### Querying a log
+1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/overview). On the left sidebar, select **Log Services** > **Access Logs**.
+2. Search logs by using quick search, filters, or statements.
+ - Quick search: supports quick searches based on the query period.
+   
+ - Search by filter: Select fields and operators, enter the filed values, and click **OK**. You can select multiple fields.
+
+3. Search by statement: supports professional searches by statement and enables you to run more complex log queries. Enter the required information, and then click ![](https://main.qcloudimg.com/raw/de2de3ad90917a2dba3259716cb87963.png).
+
+**Search statement**
+
+<table>
+<thead>
+<tr>
+<th align="left">Reserved Character</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">AND</td>
+<td align="left">"AND" logical operator, such as <code>level:ERROR AND pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">OR</td>
+<td align="left">"OR" logical operator, such as <code>level:ERROR OR level:WARNING</code></td>
+</tr>
+<tr>
+<td align="left">NOT</td>
+<td align="left">"NOT" logical operator, such as <code>level:ERROR NOT pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">TO</td>
+<td align="left">"TO" logical operator, such as <code>request_time:[0.1 TO 1.0]</code></td>
+</tr>
+<tr>
+<td align="left">""</td>
+<td align="left">Double quotation mark, which quotes a phrase, such as <code>name:"john Smith"</code></td>
+</tr>
+<tr>
+<td align="left">：</td>
+<td align="left">Colon, which is used for key-value search, such as <code>level:ERROR</code></td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">Wildcard, which is used to replace zero, one, or more characters, such as <code>host:www.test*.com</code></td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">Wildcard, which is used to replace one character, such as <code>host:www.te?t.com</code></td>
+</tr>
+<tr>
+<td align="left">()</td>
+<td align="left">Parentheses, which is used to group clauses to form sub queries and control the logic operations, such as <code>(ERROR OR WARNING) AND pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">&gt;</td>
+<td align="left"> Range operator, which indicates the left operand is greater than the right operand, such as <code>status:&gt;400</code></td>
+</tr>
+<tr>
+<td align="left">&gt;=</td>
+<td align="left">Range operator, which indicates the left operand is greater than or equal to the right operand, such as <code>status:&gt;=400</code></td>
+</tr>
+<tr>
+<td align="left">&lt;</td>
+<td align="left">Range operator, which indicates the left operand is less than the right operand, such as <code>status:&lt;400</code></td>
+</tr>
+<tr>
+<td align="left">&lt;=</td>
+<td align="left">Range operator, which indicates the left operand is less than or equal to the right operand, such as <code>status:&lt;=400</code></td>
+</tr>
+<tr>
+<td align="left">[]</td>
+<td align="left">Range operator, which includes the upper and lower boundary values, such as <code>age:[20 TO 30]</code></td>
+</tr>
+<tr>
+<td align="left">{}</td>
+<td align="left">Range operator, which excludes the upper and lower boundary values, such as <code>age:{20 TO 30}</code></td>
+</tr>
+<tr>
+<td align="left">\</td>
+<td align="left">Escape character. An escaped character represents the literal meaning of the character, such as <code>url:\/images\/favicon.ico</code>. You can also use <code>""</code> to wrap special characters as a whole, e.g., <code>url:"/images/favicon.ico"</code>. For details about the difference between these two search methods, see <a href="https://intl.cloud.tencent.com/document/product/614/39594">Configuring Indexes</a>.</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left">Logical operator (similar to AND). The term <code>+A</code> indicates <code>A</code> must exist, such as <code>+level:ERROR +pid:1234</code>.</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">Logical operator (similar to NOT). The term <code>-A</code> indicates <code>A</code> does not exist, such as <code>+level:ERROR -pid:1234</code>.</td>
+</tr>
+<tr>
+<td align="left">&amp;&amp;</td>
+<td align="left">Logical operator (similar to AND), such as <code>level:ERROR &amp;&amp; pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">!</td>
+<td align="left">Logical operator (similar to NOT), such as <code>level:ERROR !pid:1234</code></td>
+</tr>
+<tr>
+<td align="left">/</td>
+<td align="left">Regular expression identifier in the format of <code>/${regExp}/</code>, e.g., <code>/[mb]oat/</code> returns results containing <code>moat</code> or <code>boat</code>.</td>
+</tr>
+<tr>
+<td align="left">_exists_</td>
+<td align="left"><code>_exists_:key</code> returns results where the `key` value is not empty, e.g., <code>_exists_:userAgent</code> returns results where the <code>userAgent</code> value is not empty.</td>
+</tr>
+<tr>
+<td align="left">~</td>
+<td align="left">Fuzzy search, e.g., <code>level:errro~</code> returns results where <code>level</code> contains <code>error</code>.</td>
+</tr>
+</tbody></table>
+
+>!
+> - The operators are case-sensitive. For example, `AND` and `OR` represent logical search operators, while `and` and `or` are regarded as common words.
+> - When multiple search statements are connected with spaces, they are regarded as in the `OR` logic. For example, `warning error` indicates to return results containing the `warning` keyword or `error` keyword.
+> - The following special characters must be escaped: +, -, &&, ||, !, ( ), { }, [ ], ^, ", ~, *, ?, :, \
+> - Before performing a `key:value` search, make sure the key is configured in the index configuration of the log topic.
+> - Use () to group search conditions and clarify the precedency when using the "AND" and "OR" operators, such as `(ERROR OR WARNING) AND pid:1234`.
 
 
-Log query field description:
+### Displaying logs
+1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/overview). On the left sidebar, select **Log Services** > **Access Logs**.
+2. Click **Filed Name** to display top five logs that match the filed.
+3. Click ![](https://main.qcloudimg.com/raw/f85fc295aaf54ed8855edb882bb1ce06.png) on the left of the date that the log is generated to view filed details. If you want to view details in JSON format, click **JSON**.
 
-| Field Name | Description |
-|---------|---------|
-| Access source IP | Source IP of client request. |
-| Access URI	| URI accessed by client. |
-| Referer	| Source URL information of client's access request to server. |
-| Cookie	| Cookie information carried in client's access request to server. |
-| User-Agent	| Information such as browser type and OS ID in client's request to server. |
-| X-Forworder-For	| Used to identify the original IP address of client accessing web server through HTTP proxy or load balancer. |
-| WAF response code	| Response status code returned by WAF to client. |
-| Real server response code	| Response status code returned by real server to WAF. |
-| Body	| Body information carried in client's access request to server. |
+**JSON field description**
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>domain</td>
+<td>Wildcard domain name</td>
+</tr>
+<tr>
+<td>request_time</td>
+<td>Time that the client takes to send a request to WAF and receive a response</td>
+</tr>
+<tr>
+<td>uuid</td>
+<td>Unique identifier of an HTTP request</td>
+</tr>
+<tr>
+<td>schema</td>
+<td>Request protocol: HTTP or HTTPS</td>
+</tr>
+<tr>
+<td>method</td>
+<td>Client request method</td>
+</tr>
+<tr>
+<td>url</td>
+<td>Request URI, which resides between "/" and "?" in the client’s request path</td>
+</tr>
+<tr>
+<td>host</td>
+<td>Client domain name</td>
+</tr>
+<tr>
+<td>http_user_agent</td>
+<td>Request UA</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>HTTP request header</td>
+</tr>
+<tr>
+<td>upstream_status</td>
+<td>Status code returned to WAF from the real server</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Status code returned to the client from WAF</td>
+</tr>
+<tr>
+<td>body_bytes_sent</td>
+<td>Response body size</td>
+</tr>
+<tr>
+<td>upstream_response_time</td>
+<td>Time that WAF takes to receive the client request from the real server</td>
+</tr>
+<tr>
+<td>ip_info.country</td>
+<td>Country/Region</td>
+</tr>
+<tr>
+<td>ip_info.city</td>
+<td>City</td>
+</tr>
+<tr>
+<td>ip_info.province</td>
+<td>Province</td>
+</tr>
+<tr>
+<td>ip_info.operator</td>
+<td>ISP</td>
+</tr>
+<tr>
+<td>ip_info.ip_type</td>
+<td>IP type</td>
+</tr>
+<tr>
+<td>ip_info.idc</td>
+<td>IDC data center</td>
+</tr>
+<tr>
+<td>ip_info.longtitude</td>
+<td>Longitude</td>
+</tr>
+<tr>
+<td>ip_info.dimensionality</td>
+<td>Latitude</td>
+</tr>
+</tbody></table>
+4. Display the filtered log content in the list mode or field mode.
+ - Field mode: This is the default display mode. You can change to the other mode by clicking the icon in the top right corner.
+
+ - List mode: Click ![](https://main.qcloudimg.com/raw/1c901122eac1bd6e8f21815d777551b7.png) to change to list view.
+
+**Field description**
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>msec</td>
+<td>Timestamp of when the request is sent</td>
+</tr>
+<tr>
+<td>schema</td>
+<td>Request protocol: HTTP or HTTPS</td>
+</tr>
+<tr>
+<td>method</td>
+<td>Client request method</td>
+</tr>
+<tr>
+<td>host</td>
+<td>Client domain name</td>
+</tr>
+<tr>
+<td>url</td>
+<td>Request URI, which resides between "/" and "?" in the client’s request path</td>
+</tr>
+<tr>
+<td>query</td>
+<td>HTTP Query String. The maximum length is 1 KB.</td>
+</tr>
+<tr>
+<td>body</td>
+<td>Request body data</td>
+</tr>
+<tr>
+<td>http_referer</td>
+<td>Page source</td>
+</tr>
+<tr>
+<td>http_user_agent</td>
+<td>Request UA</td>
+</tr>
+<tr>
+<td>http_x_forwarded_for</td>
+<td>All the proxies that pass the request</td>
+</tr>
+<tr>
+<td>cookie</td>
+<td>Request cookie. The maximum length is 1 KB.</td>
+</tr>
+<tr>
+<td>upstream_status</td>
+<td>Status code returned to WAF from the real server</td>
+</tr>
+<tr>
+<td>upstream_response_time</td>
+<td>Time that WAF takes to receive the client request from the real server</td>
+</tr>
+<tr>
+<td>upstream_addr</td>
+<td>Upstream server IP</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Status code returned to the client from WAF</td>
+</tr>
+<tr>
+<td>upstream_status</td>
+<td>Status code returned to WAF from the real server</td>
+</tr>
+<tr>
+<td>upstream_response_length</td>
+<td>Response length returned from the upstream server</td>
+</tr>
+<tr>
+<td>edition</td>
+<td>WAF versions: `sparta-waf`, `clb-waf`, `cdn-waf</td>
+</tr>
+</tbody></table>
 
 ### Downloading access logs
-1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/config) and select **Security Overview** on the left sidebar to enter the security overview page. Select **Access Log** > **Log Query** and click the download icon in the top-right corner to create a download task.
-![](https://main.qcloudimg.com/raw/7d0fe9615ddb279f90124f64b3f20a59.png)
+1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/overview). On the left sidebar, select **Log Services** > **Access Logs**.
+2. Click ![](https://main.qcloudimg.com/raw/789f18df056dbc4e37f5a325b613ca70.png) to enter the download page. Click **OK** to create a download task.
+>?	
+>- You cannot create more than one download task simultaneously.
+>- Up to 1 million logs can be downloaded at a time. To download more logs, it is recommended that you create multiple tasks to download them in batches.
+>- If you select a wildcard domain name (for example, *.abc.com), logs of all associated subdomain names such as those suffixed with .abc.com will also be downloaded.
+>- Up to five download tasks can be created.
 
->
-- Only one download task can be created within a certain time period. Please be patient.
-- Up to 10,000 logs can be downloaded at a time. If you want to download more logs, you are recommended to download them in multiple batches or [contact us](https://intl.cloud.tencent.com/support) for assistance.
-- If you select a wildcard domain name (e.g., `*.abc.com`), logs of all associated subdomain names such as those suffixed with `.abc.com` will also be downloaded.
 
-2. Click **Query Download Task**, select the desired download task, and click **Download** to download the log file to your local file system.
-![](https://main.qcloudimg.com/raw/0dfe2da477191d8f6576c1691e1cc336.png)
-Log file field description:
+3. On the download page, click **View Task** to view the download details, such as the task number, creation time, and total number of logs.
 
-| Download Field | Description |
-|---------|---------|
-| time | Access time. |
-|host	| Client request domain name. |
-|client	| Client's source IP.|
-|ipinfo_nation	| Country/region information of client's source IP. |
-|ipinfo_province	| District information of client's source IP. |
-|schema	| Client request protocol. |
-|method	| Client request method. |
-|url	| Content between the first "/" and "?" after domain name in complete path of client request. |
-|query	| Content after "?" in complete path of client request, which is also called query string. |
-|cookie	| Cookie information carried in client's access request to server. |
-|referer	| Source URL information of client's access request to server. |
-|user-agent	| Information such as browser type and OS ID in client's request to server. |
-|x-forwarded-for	| Used to identify the original IP address of client accessing web server through HTTP proxy or load balancer. |
-|status	| Response status code returned by WAF to client. |
-|upstream_status	| Response status code returned by real server to WAF. |
-|upstream	| Intermediate IP and port after a client request passes through WAF. |
-|upstream_connect_time	| The time it takes for a client request to arrive at the real server from WAF. |
-|upstream_response_time	| The time it takes for a client request to arrive at WAF from the real server. |
-|request_time	| The time it takes for a client request to arrive at WAF and return from WAF. |
+**Log field description**
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>domain</td>
+<td>Wildcard domain name</td>
+</tr>
+<tr>
+<td>bytes_sent</td>
+<td>Response size, including response headers (in bytes) and downstream bandwidth</td>
+</tr>
+<tr>
+<td>method</td>
+<td>Client request method</td>
+</tr>
+<tr>
+<td>request_time</td>
+<td>Time that the client takes to send a request to WAF and receive a response</td>
+</tr>
+<tr>
+<td>http_connection</td>
+<td>HTTP request header Connection</td>
+</tr>
+<tr>
+<td>upstream_connect_time</td>
+<td>Time that WAF takes to send the client request to the real server</td>
+</tr>
+<tr>
+<td>uuid</td>
+<td>Unique identifier of an HTTP request</td>
+</tr>
+<tr>
+<td>upstream_addr</td>
+<td>Upstream server IP</td>
+</tr>
+<tr>
+<td>host</td>
+<td>Client domain name</td>
+</tr>
+<tr>
+<td>upstream_response_length</td>
+<td>Response length returned from the upstream server</td>
+</tr>
+<tr>
+<td>schema</td>
+<td>Request protocol: HTTP or HTTPS</td>
+</tr>
+<tr>
+<td>http_user_agent</td>
+<td>Request UA</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>HTTP request header</td>
+</tr>
+<tr>
+<td>url</td>
+<td>Request URI, which resides between "/" and "?" in the client’s request path</td>
+</tr>
+<tr>
+<td>http_x_forwarded_for</td>
+<td>All the proxies that pass the request</td>
+</tr>
+<tr>
+<td>http_referer</td>
+<td>Page source</td>
+</tr>
+<tr>
+<td>body</td>
+<td>Request body data</td>
+</tr>
+<tr>
+<td>remote_addr</td>
+<td>Requester IP</td>
+</tr>
+<tr>
+<td>cookie</td>
+<td>Request cookie. The maximum length is 1 KB.</td>
+</tr>
+<tr>
+<td>bot_client_ip</td>
+<td>Client IP, which is typically the same as `remote_addr`</td>
+</tr>
+<tr>
+<td>request_length</td>
+<td>Request length</td>
+</tr>
+<tr>
+<td>http_accept</td>
+<td>HTTP request header Accept</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Status code returned to the client from WAF</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>HTTP protocol, such as 1.1、1.0 and 2.0</td>
+</tr>
+<tr>
+<td>msec</td>
+<td>Timestamp of when the request is sent</td>
+</tr>
+<tr>
+<td>pipe</td>
+<td>Nginx built-in variable</td>
+</tr>
+<tr>
+<td>content_type</td>
+<td>HTTP request header Content-Type</td>
+</tr>
+<tr>
+<td>time_local</td>
+<td>Nginx readable local time string</td>
+</tr>
+<tr>
+<td>upstream_response_time</td>
+<td>Time that WAF takes to receive the client request from the real server</td>
+</tr>
+<tr>
+<td>server_addr</td>
+<td>WAF private IP</td>
+</tr>
+<tr>
+<td>edition</td>
+<td>WAF versions: `sparta-waf`, `clb-waf`, `cdn-waf`</td>
+</tr>
+<tr>
+<td>upstream_status</td>
+<td>Status code returned to WAF from the real server</td>
+</tr>
+<tr>
+<td>body_bytes_sent</td>
+<td>Response body size</td>
+</tr>
+<tr>
+<td>query</td>
+<td>HTTP Query String. The maximum length is 1 KB.</td>
+</tr>
+</tbody></table>

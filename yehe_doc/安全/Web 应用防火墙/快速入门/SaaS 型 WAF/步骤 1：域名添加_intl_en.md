@@ -1,25 +1,26 @@
-This document describes how to add domain names in WAF.
+This document describes how to add a domain name in the WAF console.
 ## Directions
-To apply WAF protection for a specified domain name, the domain name needs to be added to WAF first. This document takes `waf.qcloudwaf.com` as the sample domain name for directions.
-1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/config), and select **Web Application Firewall** -> **Defense Settings** on the left sidebar.
-2. Click **Add domains** to enter the **Domain Configuration** page.
-![](https://main.qcloudimg.com/raw/9e14c97169bacf7fca99411c5278457b.png)
- - **Domain configuration**
-     1. Enter `waf.qcloudwaf.com` in the **Domain Name** field.
-     2. Select the protocol and port as needed. For example, select HTTP and port 80, or select HTTPS and port 443.
-     3. You can select HTTP or HTTPS as the HTTPS origin-pull method.
-     >? The origin-pull port can be specified only when HTTP is selected as the origin-pull method. The origin-pull port for HTTPS is consistent with the opened port.
-     4. You can select a Tencent Cloud-hosted certificate or your own certificate.
-     5. In the **Real Server Address** field, enter the real origin server IP address of the target website, i.e., the public IP address of the real server.   
+To enable WAF detect the target domain name, you need to add it in the WAF console. The following takes `waf.qcloudwaf.com` as an example in configuration.
+1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/config) and select **Instance Management** -> **Instance List** on the left sidebar to enter the instance list.
+2. Select an instance for the domain name, and click **Domain Name Connection** to enter the domain name connection page.
+3. Click **Add domains** to enter the basic setting page.
+
+  - **Domain configuration**
+     1. For **Domain Name**, enter the domain name to be protected, for example, `waf.qcloudwaf.com`.
+     2. Select a protocol and port as needed. For example, select HTTP and port 80, or select HTTPS and port 443.
+     3. Select an origin-pull method as needed: HTTP or HTTPS.
+     >?For HTTP as an origin-pull method, you can specify a port for origin-pull. For HTTPS, the open port is also used for origin-pull.
+     4. Select a Tencent Cloud hosting certificate or your own certificate as needed.
+     5. For **Real Server Address**, enter the public IP address or domain name of the real server of the website to be protected.   
  - **Other configurations**
- If you have connected your domain name to an intermediate proxy device before WAF is used, tick **Yes**; otherwise, tick **No**.
-1. Click **Save** to complete the configuration. Then, you can view the domain name in the domain name list.
-2. Click the domain name to enter its details page, you can then view the CNAME that WAF assigned to the website.
- ![](https://main.qcloudimg.com/raw/9541ea01c087959b5f2882ca846faa02.png)
->?WAF assigns a unique CNAME to each domain name added to WAF irrespective of whether the domain name is of the first-level or second-level.
+ If you have connected your domain name to an intermediate proxy device before WAF is used, select **Yes**. Otherwise, select **No**.
+3. Click **Save** to complete the configuration. You can view the added domain name in the domain name list.
+4. Click the domain name to enter its details page, where you can see the CNAME assigned by WAF.
+
+>?WAF assigns a unique CNAME to each domain name added to WAF regardless of whether it is top-level or second-level.
 
 ## Subsequent Operations
-After adding a domain name, you can proceed:
+After adding a domain name, you can proceed to the following steps:
 - [Step 2. Perform Local Testing](https://intl.cloud.tencent.com/document/product/627/35652)
 - [Step 3. Modify DNS Resolution](https://intl.cloud.tencent.com/document/product/627/35653)
 - [Step 4. Set a Security Group](https://intl.cloud.tencent.com/document/product/627/35654)
