@@ -2,10 +2,12 @@
 
 - Billing mode: **Daily pay-as-you-go mode**
 - Billing cycle: daily billing cycle. Traffic fees generated in one day will be deducted the next day. Please see your billing statement for the actual bill generation time and amount.
+- The conversion scale for traffic/bandwidth is 1,000. For example, 1 TB = 1,000 GB.
 - A CSS service day is 00:00-23:59 (UTC + 8:00).
 - As LEB uses channels with ultra-low latency, its traffic/bandwidth fees are a bit higher than those of LVB.
 - LEB does not support playing back live streams with B-frames. If the pushed stream contains B-frames, the system will remove them by transcoding, which will incur transcoding fees.
 - Pull by web client browser only supports the standard WebRTC protocol and does not support the AAC audio codec. To push streams with audios in AAC format, the audios will be transcoded into Opus format, which will incur audio transcoding fees.
+- Starting from 00:00 on January 4, 2022, CSS will adjust the daily billing prices and pricing tiers of the basic services of LEB and will bill usage outside the Chinese mainland by region instead of at a unified price. For details, see [Notice: CSS to Adjust Prices of Basic Services]( https://intl.cloud.tencent.com/document/product/267/43055).
 
 >! 
 >- By default, LEB fees are billed by downstream usage. However, upstream usage will also be billed when the ratio of upstream usage and downstream usage is larger than 1:10 and the daily upstream peak bandwidth exceeds 100 Mbps.
