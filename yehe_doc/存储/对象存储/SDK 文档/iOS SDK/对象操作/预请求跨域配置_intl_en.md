@@ -4,7 +4,6 @@
  * @LastEditTime: 2021-06-08 09:27:54
  * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: /qcloud-documents/product/存储与CDN/对象存储 4.0/SDK文档/iOS SDK/对象操作/预请求跨域配置.md
 -->
 ## Overview
 
