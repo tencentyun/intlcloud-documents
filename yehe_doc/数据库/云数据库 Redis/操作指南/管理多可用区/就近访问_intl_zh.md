@@ -8,7 +8,7 @@
 通过参数配置页面，您可以开启或者关闭就近访问功能，就近访问功能默认不开启，您可以手动开启或者通过参数模版配置，在创建实例时指定参数模版。
 
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例管理页面。
-2. 在实例管理页面，选择【参数配置】页，通过 `read-local-node-only` 参数开启就近访问。
+2. 在实例管理页面，选择**参数配置**页，通过 `read-local-node-only` 参数开启就近访问。
 ![](https://main.qcloudimg.com/raw/07556436ee1853d0ba0db190921a812d.png)
 
 ## 只读路由策略
