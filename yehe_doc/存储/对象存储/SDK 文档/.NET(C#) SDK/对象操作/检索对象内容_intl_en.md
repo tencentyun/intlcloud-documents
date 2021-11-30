@@ -20,10 +20,10 @@ COS Select supports extracting content from objects in the following formats:
 * JSON: an object is stored in JSON format, which can be either a JSON file or a JSON list.
 
 > !
-- To use COS Select, you must have the permission on `cos:GetObject`.
-- CSV and JSON objects need to be encoded in UTF-8.
-- COS Select can extract CSV and JSON objects compressed by gzip or bzip2.
-- COS Select can extract CSV and JSON objects encrypted with SSE-COS.
+>- To use COS Select, you must have the permission on `cos:GetObject`.
+>- CSV and JSON objects need to be encoded in UTF-8.
+>- COS Select can extract CSV and JSON objects compressed by gzip or bzip2.
+>- COS Select can extract CSV and JSON objects encrypted with SSE-COS.
 
 #### Sample code
 
