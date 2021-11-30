@@ -1,21 +1,21 @@
 ## Overview
-This document provides an overview of APIs and SDK code samples related to lifecycle.
+This document provides an overview of APIs and SDK code samples related to lifecycles.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting a lifecycle configuration | Sets a lifecycle management configuration for a bucket |
-| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying a lifecycle configuration | Queries the lifecycle management configuration of a bucket |
-| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting a lifecycle configuration | Deletes the lifecycle management configuration from a bucket |
+| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting lifecycle configuration | Sets lifecycle for a bucket |
+| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying a lifecycle configuration | Queries the lifecycle configuration of a bucket |
+| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting a lifecycle configuration | Deletes the lifecycle configuration of a bucket |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Setting a Lifecycle Configuration
 
-#### API description 
+#### Description
 
-This API is used to set a lifecycle configuration for a specified bucket.
+This API is used to set the lifecycle configuration of a specified bucket.
 
 #### Sample code
 
@@ -23,17 +23,18 @@ This API is used to set a lifecycle configuration for a specified bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   PutBucketLifecycleRequest request = new PutBucketLifecycleRequest(bucket);
-  // Set lifecycle
+  // Set the lifecycle
   LifecycleConfiguration.Rule rule = new LifecycleConfiguration.Rule();
   rule.id = "lfiecycleConfigureId";
-  rule.status = "Enabled"; // Enabled, or Disabled
+  rule.status = "Enabled"; //Enabled，Disabled
 
   rule.filter = new COSXML.Model.Tag.LifecycleConfiguration.Filter();
   rule.filter.prefix = "2/";
 
-  // Specify the delete operation for incomplete multipart uploads
+  // Specify the operation for deleting expired parts
   rule.abortIncompleteMultiUpload = new LifecycleConfiguration.AbortIncompleteMultiUpload();
   rule.abortIncompleteMultiUpload.daysAfterInitiation = 2;
 
@@ -61,7 +62,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ## Querying a Lifecycle Configuration
 
-#### API description 
+#### Description
 
 This API is used to query the lifecycle management configuration of a bucket.
 
@@ -71,7 +72,8 @@ This API is used to query the lifecycle management configuration of a bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   GetBucketLifecycleRequest request = new GetBucketLifecycleRequest(bucket);
   // Execute the request
   GetBucketLifecycleResult result = cosXml.GetBucketLifecycle(request);
@@ -94,9 +96,9 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ## Deleting a Lifecycle Configuration
 
-#### API description 
+#### Description
 
-This API is used to delete the lifecycle management configuration from a bucket.
+This API is used to delete the lifecycle management configuration of a bucket.
 
 #### Sample code
 
@@ -104,7 +106,8 @@ This API is used to delete the lifecycle management configuration from a bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   DeleteBucketLifecycleRequest request = new DeleteBucketLifecycleRequest(bucket);
   // Execute the request
   DeleteBucketLifecycleResult result = cosXml.DeleteBucketLifecycle(request);

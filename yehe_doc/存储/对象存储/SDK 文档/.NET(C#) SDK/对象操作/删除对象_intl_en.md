@@ -1,29 +1,31 @@
 ## Overview
 
-This document provides an overview of APIs and SDK sample codes related to deleting objects.
+This document provides an overview of APIs and SDK code samples related to object deletion.
 
 | API | Operation | Description |
-| ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
-| [DELETE Multiple Object](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket in a single request |
+| ------------------------------------------------------------ | ------------ | ---------------------- |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting an object | Deletes an object from a bucket. |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket. |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Deleting a Single Object
 
-#### API description 
+#### Description
 
-This API is used to delete a specified object from a bucket.
+This API (`DELETE Object`) is used to delete a specified object.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: #	".cssg-snippet-delete-object"
+
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   DeleteObjectRequest request = new DeleteObjectRequest(bucket, key);
   // Execute the request
@@ -43,23 +45,25 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/DeleteObject.cs).
+> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/DeleteObject.cs).
 
 ## Deleting Multiple Objects
 
-#### API description 
+#### Description
 
-This API is used to delete multiple objects in a single request.
+The API (DELETE Multiple Objects) is used to delete multiple objects.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-delete-multi-object"
+[//]: #	".cssg-snippet-delete-multi-object"
+
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   DeleteMultiObjectRequest request = new DeleteMultiObjectRequest(bucket);
-  // Set the response mode
+  // Set the return result format
   request.SetDeleteQuiet(false);
   // Object key
   string key = "exampleobject"; // Object key
@@ -83,5 +87,67 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/DeleteObject.cs).
+> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/DeleteObject.cs).
 
+## Deleting Objects With a Specified Prefix
+
+#### Description
+
+If you delete objects with a specified prefix, it will be like you delete a directory.
+
+#### Sample code
+
+[//]: #	".cssg-snippet-delete-prefix"
+
+```cs
+try
+{
+  String nextMarker = null;
+
+  // Request repeatedly until there is no data on the next page.
+  do
+  {
+    // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+    string bucket = "examplebucket-1250000000";
+    string prefix = "folder1/"; // Specify a prefix.
+    GetBucketRequest listRequest = new GetBucketRequest(bucket);
+    // Obtain all objects and subdirectories in folder1/.
+    listRequest.SetPrefix(prefix);
+    listRequest.SetMarker(nextMarker);
+    // Execute the list object request.
+    GetBucketResult listResult = cosXml.GetBucket(listRequest);
+    ListBucket info = listResult.listBucket;
+    // List objects
+    List<ListBucket.Contents> objects = info.contentsList;
+    // nextMarker for the next page
+    nextMarker = info.nextMarker;
+    
+    DeleteMultiObjectRequest deleteRequest = new DeleteMultiObjectRequest(bucket);
+    // Set the return result format
+    deleteRequest.SetDeleteQuiet(false);
+    // List objects
+    List<string> deleteObjects = new List<string>();
+    foreach (var content in objects)
+    {
+      deleteObjects.Add(content.key);
+    }
+    deleteRequest.SetObjectKeys(deleteObjects);
+    // Execute the batch delete request.
+    DeleteMultiObjectResult deleteResult = cosXml.DeleteMultiObjects(deleteRequest);
+    // Print the request result.
+    Console.WriteLine(deleteResult.GetResultInfo());
+  } while (nextMarker != null);
+}
+catch (COSXML.CosException.CosClientException clientEx)
+{
+  // Request failed
+  Console.WriteLine("CosClientException: " + clientEx);
+}
+catch (COSXML.CosException.CosServerException serverEx)
+{
+  // Request failed
+  Console.WriteLine("CosServerException: " + serverEx.GetInfo());
+}
+```
+
+> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/DeleteObject.cs).

@@ -5,13 +5,13 @@ This document provides an overview of APIs and SDK code samples related to objec
 | API | Operation | Description |
 | ------------------------------------------------------------ | ---------------------------- | ---------------------- |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object (modifying object attributes) | Copies a file to a destination path |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting an object | Deletes a specified object from a bucket. |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Moving an object
+## Moving an Object
 
 Object movement involves copying the source object to the target location and deleting the source object.
 
@@ -36,7 +36,8 @@ string sourceKey = "sourceObject"; // Source object key
 CopySourceStruct copySource = new CopySourceStruct(sourceAppid, sourceBucket, 
     sourceRegion, sourceKey);
 
-string bucket = "examplebucket-1250000000"; // Destination bucket in the format of BucketName-APPID
+// Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+string bucket = "examplebucket-1250000000";
 string key = "exampleobject"; // Object key of the destination bucket
 
 COSXMLCopyTask copyTask = new COSXMLCopyTask(bucket, key, copySource);

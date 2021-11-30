@@ -4,28 +4,29 @@ This document provides an overview of APIs and SDK code samples related to resto
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access. |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Restoring an Archived Object 
 
-#### API description 
+#### Description
 
-This API is used to retrieve an archived object for access.
+This API (`POST Object restore`) is used to restore an archived object for access.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-restore-object"
+[//]: # (.cssg-snippet-restore-object)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   RestoreObjectRequest request = new RestoreObjectRequest(bucket, key);
-  // Validity duration of the restored copy
+  // Restoration time
   request.SetExpireDays(3);
   request.SetTier(COSXML.Model.Tag.RestoreConfigure.Tier.Bulk);
 

@@ -24,7 +24,7 @@ This document provides an overview of advanced APIs and APIs for simple object o
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload. |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading an object in parts | Uploads an object in parts. |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads an object in multiple parts. |
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying an object part | Copies a part of an object. |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an object. |
@@ -32,7 +32,7 @@ This document provides an overview of advanced APIs and APIs for simple object o
 
 ## Simple Operations
 
-### Querying objects
+### Query objects
 
 #### Description
 
@@ -60,7 +60,7 @@ try {
         'Prefix' => 'doc',
         'MaxKeys' => 1000,
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -137,7 +137,7 @@ Guzzle\Service\Resource\Model Object
 | ------------ | ------ | ------------------------------------------------------------ | -------- |
 | Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
 | Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | String | Encoding method of the returned value | None |
+| EncodingType | Encoding method of the returned value | None |
 | Marker | String | The object after which the returned list begins. Objects are listed in UTF-8 binary order by default.  | None |
 | Prefix | String | Key prefix by which objects are queried       | None |
 | MaxKeys | Int | The maximum number of returned objects, which is `1000` (the maximum value allowed) by default | None |
@@ -252,7 +252,7 @@ Guzzle\Service\Resource\Model Object
 | ------------------- | ------ | ------------------------------------------------------------ | -------- |
 | Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
 | Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | String | Encoding method of the returned value | None |
+| EncodingType | Encoding method of the returned value | None |
 | KeyMarker | String  | The key of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.  | None |
 | VersionIdMarker | String |  The version ID of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.   |  None |
 | NextKeyMarker | String | The key of the object after which the next returned list begins if `IsTruncated` is `true` | None |
@@ -266,7 +266,7 @@ Guzzle\Service\Resource\Model Object
 
 
 
-### Uploading an object using simple upload
+### Uploading an object in whole
 
 #### Description
 
@@ -291,7 +291,7 @@ try {
         'Key' => 'exampleobject', 
         'Body' => fopen('path/to/localFile', 'rb'), 
     )); 
-    // Request successful 
+    // Request succeeded 
     print_r($result);
 } catch (\Exception $e) { 
     // Request failed 
@@ -311,7 +311,7 @@ try {
         'Body' => fopen('path/to/localFile', 'rb'), 
         'StorageClass' => 'Archive'
     )); 
-    // Request successful 
+    // Request succeeded 
     print_r($result); 
 } catch (\Exception $e) { 
     // Request failed 
@@ -331,7 +331,7 @@ try {
         'Body' => fopen('path/to/localFile', 'rb'), 
         'ContentType' => 'text/xml'
     )); 
-    // Request successful 
+    // Request succeeded 
     print_r($result); 
 } catch (\Exception $e) { 
     // Request failed 
@@ -350,7 +350,7 @@ try {
         'Key' => 'folder/',
         'Body' => "",
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -369,7 +369,7 @@ try {
         'Body' => fopen('path/to/localFile', 'rb'), 
         'ContentMD5' => true, 
     )); 
-    // Request successful 
+    // Request succeeded 
     print_r($result);
 } catch (\Exception $e) { 
     // Request failed 
@@ -383,12 +383,12 @@ try {
 ```php
 try {
 $result = $cosClient->putObject(array(
-        'Bucket' => 'examplebucket-125000000', //Format：BucketName-APPID
+        'Bucket' => 'examplebucket-125000000', //Format: BucketName-APPID
         'Key' => 'exampleobject',
         'Body' => fopen($local_path, 'rb'),
         'TrafficLimit' => 8 * 1024 * 1024 // Limit the speed to 1 MB/s.
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -440,6 +440,7 @@ Guzzle\Service\Resource\Model Object
 | --------- | ------ | -------------------------- | ------ |
 | ETag | String | MD5 checksum of the uploaded file  | None |
 | VersionId | String | Version ID of the file if versioning is enabled. | None  |
+| CRC     | String | CRC64 for [Data Verification](https://intl.cloud.tencent.com/document/product/436/34078) | No |
 
 ### Appending parts
 
@@ -464,7 +465,7 @@ try {
         'Position' => 0,
         'Body' => "hello,world",
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -481,7 +482,7 @@ try {
         'Position' => 0,
         'Body' => fopen('path/to/localFile', 'rb'),
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -506,7 +507,7 @@ try {
         'Position' => (integer)$result['Position'], // Append to the position of the last append.
         'Body' => "hello, world", 
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -566,7 +567,7 @@ try {
         'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
         'Key' => 'exampleobject',
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -638,8 +639,9 @@ Guzzle\Service\Resource\Model Object
 | ServerSideEncryption | String | Server-side encryption method | None |
 | ETag | String | MD5 checksum of the file | None |
 | Restore | String | Restoration information of the archived file | None |
+| CRC     | String | CRC64 for [Data Verification](https://intl.cloud.tencent.com/document/product/436/34078) | No |
 
-### Downloading an object
+### Download an object
 
 #### Description
 
@@ -664,7 +666,7 @@ try {
         'Key' => 'exampleobject',
         'SaveAs' => 'path/to/localFile',
     )); 
-    // Request successful
+    // Request succeeded
 } catch (\Exception $e) {
     // Request failed
     echo($e);
@@ -682,7 +684,7 @@ try {
         'Key' => 'exampleobject',
         'Range' => 'bytes=0-10'
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -701,7 +703,7 @@ try {
         'Key' => 'exampleobject',
         'VersionId' => 'exampleVersionId'
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -715,12 +717,12 @@ try {
 ```php
 try {
    $result = $cosClient->getObject(array(
-        'Bucket' => 'examplebucket-125000000', //Format：BucketName-APPID
+        'Bucket' => 'examplebucket-125000000', //Format: BucketName-APPID
         'Key' => 'exampleobject',
         'SaveAs' => '/data/exampleobject',
         'TrafficLimit' => 8 * 1024 * 1024 // Limit the speed to 1 MB/s.
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -808,6 +810,7 @@ Guzzle\Service\Resource\Model Object
 | ContentType | String | Content type | None |
 | Metadata | Array | User-defined file metadata | None |
 | Restore | String | Restoration information of the archived file | None |
+| CRC     | String | CRC64 for [Data Verification](https://intl.cloud.tencent.com/document/product/436/34078) | No |
 
 ### Copying an object
 
@@ -832,7 +835,7 @@ try {
         'Key' => 'exampleobject',
         'CopySource' => 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject',
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -851,7 +854,7 @@ try {
         'Key' => 'exampleobject',
         'CopySource' => 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject?versionId=MTg0NDUxNjI3NTM0ODE2Njc0MzU',
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -871,7 +874,7 @@ try {
         'CopySource' => 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject',
         'StorageClass' => 'Archive'
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -895,7 +898,7 @@ try {
             'key2' => 'value2',
         )
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -935,7 +938,7 @@ try {
         'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
         'Key' => 'exampleobject'
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -950,7 +953,7 @@ try {
         'Key' => 'exampleobject',
         'VersionId' => 'exampleVersionId' // Do not carry this parameter if versioning is not enabled for the bucket.
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -993,7 +996,7 @@ try {
             // ... repeated
         ),  
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1018,7 +1021,7 @@ try {
             // ... repeated
         ),  
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1145,7 +1148,7 @@ try {
             'Tier' =>'Expedited'
         )    
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1198,7 +1201,7 @@ try {
         'Prefix' => 'prfix',
         'MaxUploads' => 1000,
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1322,7 +1325,7 @@ try {
         'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
         'Key' => 'exampleobject',
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1376,7 +1379,7 @@ Guzzle\Service\Resource\Model Object
 
 
 
-###  Uploading parts
+### Uploading parts
 
 This API (`Upload Part`) is used to upload an object in parts.
 
@@ -1399,7 +1402,7 @@ try {
         'UploadId' => 'exampleUploadId', // UploadId is the ID of the multipart upload, which you can get in the response returned after multipart upload initialization 
         'PartNumber' => 1, // PartNumber is the sequential number of a part, which COS uses to reassemble parts
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1440,6 +1443,7 @@ Guzzle\Service\Resource\Model Object
 | Parameter Name | Type | Description | Parent Node | 
 | -------- | ------ | ------------- | ------ |
 | ETag | String | MD5 checksum of the part | None |
+| CRC     | String | CRC64 for [Data Verification](https://intl.cloud.tencent.com/document/product/436/34078) | No |
 
 
 
@@ -1470,7 +1474,7 @@ try {
         'UploadId' => 'exampleUploadId', // UploadId is the ID of the multipart upload, which you can get in the response returned after multipart upload initialization 
         'PartNumber' => 1, // PartNumber is the sequential number of a part, which COS uses to reassemble parts
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1514,6 +1518,7 @@ Guzzle\Service\Resource\Model Object
 | ------------ | ------ | ------------------------------ | ------ |
 | ETag | String | MD5 checksum of the part | None |
 | LastModified | String | Time when the object was last modified, in GMT format | None |
+| CRC     | String | CRC64 for [Data Verification](https://intl.cloud.tencent.com/document/product/436/34078) | No |
 
 
 ### Querying uploaded parts
@@ -1541,7 +1546,7 @@ try {
         'PartNumberMarker' => 1,
         'MaxParts' => 1000,
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1627,7 +1632,7 @@ Guzzle\Service\Resource\Model Object
 
 
 
-### Completing a multipart upload
+###  Completing a multipart upload
 
 #### Description
 
@@ -1657,7 +1662,7 @@ try {
             )), 
             // ... repeated
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1677,7 +1682,7 @@ try {
 | ETag | String | MD5 checksum of the part | Yes |
 | PartNumber | Int | Part number | Yes |
 
-### Aborting a multipart upload
+###  Aborting a multipart upload
 
 #### Description
 
@@ -1700,7 +1705,7 @@ try {
         'Key' => 'exampleobject', 
         'UploadId' => 'exampleUploadId',
     )); 
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1775,7 +1780,7 @@ try {
         $key = 'exampleobject', // Object key
         $body = fopen('path/to/localFile', 'rb')
     );
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1797,7 +1802,7 @@ try {
             'StorageClass' => 'Archive'
         )
     );
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1822,7 +1827,7 @@ try {
             'PartSize' => 10 * 1024 * 1024
         )
     );
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -1854,7 +1859,7 @@ $region = 'ap-beijing';
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol, http by default
+        'schema' => 'https', // Protocol header, which is http by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey
@@ -1932,14 +1937,14 @@ try {
         $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
         $key = 'exampleobject',
         $saveAs = $local_path,
-        $options=['Progress' => $printbar, //Specify the progress
+        $options=['Progress' => $printbar, // Specify the progress.
                   'PartSize' => 10 * 1024 * 1024, //Part size
                   'Concurrency' => 5, //Number of concurrent parts
                   'ResumableDownload' => true, //Whether to enable checkpoint restart. It’s disabled by default.
                   'ResumableTaskFile' => 'tmp.cosresumabletask' //Breakpoint file path. Default value: <localpath>.cosresumabletask
                 ]
     );
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -2018,7 +2023,7 @@ try {
             'Key' => 'sourceobject', 
         )
     );
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -2044,7 +2049,7 @@ try {
             'StorageClass' => 'Archive'
         )
     );
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -2073,7 +2078,7 @@ try {
             ),
         )
     );
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed

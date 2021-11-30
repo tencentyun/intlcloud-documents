@@ -4,26 +4,27 @@ This document provides an overview of APIs and SDK code samples related to versi
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
-| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets a versioning configuration for a bucket |
-| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning configuration of a bucket |
+| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning for a bucket |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting Versioning
+## Setting versioning
 
-#### API description
+#### Description
 
-This API is used to set a versioning configuration for a specified bucket. Once enabled, versioning can only be suspended but not disabled.
+This API is used to set the versioning configuration of a specified bucket. Once enabled, versioning can only be suspended but not disabled.
 
 #### Sample code
 
 [//]: # ".cssg-snippet-put-bucket-versioning"
 ```cs
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+string bucket = "examplebucket-1250000000";
 PutBucketVersioningRequest request = new PutBucketVersioningRequest(bucket);
-request.IsEnableVersionConfig(true); //true: enables versioning; false: suspends versioning
+request.IsEnableVersionConfig(true); //true: enable versioning; false: suspend versioning
 
 try
 {
@@ -42,9 +43,9 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketVersioning.cs).
 
-## Querying Versioning
+## Querying versioning
 
-#### API description
+#### Description
 
 This API is used to query the versioning configuration of a specified bucket.
 
@@ -55,7 +56,8 @@ This API is used to query the versioning configuration of a specified bucket.
 
 [//]: # ".cssg-snippet-get-bucket-versioning"
 ```cs
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+string bucket = "examplebucket-1250000000";
 GetBucketVersioningRequest request = new GetBucketVersioningRequest(bucket);
 
 try
