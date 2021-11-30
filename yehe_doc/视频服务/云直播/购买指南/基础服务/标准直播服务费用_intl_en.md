@@ -5,7 +5,7 @@
 - The conversion scale for traffic/bandwidth is 1,000. For example, 1 TB = 1,000 GB.
 - **The default mode for new users of LVB is bill-by-traffic.**
 - A CSS service day is 00:00-23:59 (UTC+08:00).
-- **LVB has lowered its traffic/bandwidth list prices starting from 00:00, July 13, 2021, after which playback usage is billed according to the new prices.** The new prices apply to the bills of July 13 which are generated on July 14, but not to the bills of July 12 which are generated on July 13.
+- Starting from 00:00 on January 4, 2022, CSS will adjust the daily billing prices and pricing tiers of the basic services of LVB and will bill usage outside the Chinese mainland by region instead of at a unified price. For details, see [Notice: CSS to Adjust Prices of Basic Services]( https://intl.cloud.tencent.com/document/product/267/43055).
 
 >! 
 >- By default, fees are billed by downstream usage. However, upstream usage will also be billed when the ratio of upstream usage and downstream usage is larger than 1:10, and the daily upstream peak bandwidth exceeds 100 Mbps.

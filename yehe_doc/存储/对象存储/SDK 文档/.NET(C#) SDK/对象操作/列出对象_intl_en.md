@@ -2,35 +2,37 @@
 
 This document provides an overview of APIs and SDK code samples related to listing objects.
 
-| API | Operation Name | Description |
-| ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying an object list | Queries some or all objects in a bucket |
-| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying a list of objects and their version history | Queries some or all objects in a bucket as well as their version history |
+| API                                                          | Operation                   | Description                                       |
+| ------------------------------------------------------------ | ------------------------ | ---------------------------------------------- |
+| [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying objects | Queries some or all the objects in a bucket. |
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying objects and their version history | Queries some or all the objects in a bucket and their version history. |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Querying an Object List
 
-#### API description
+#### Description
 
-This API is used to query some or all objects in a bucket.
+This API is used to query some or all the objects in a bucket.
 
-#### Sample 1. Requesting the first page of objects
+#### Sample 1. Getting the first page of data
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: #	".cssg-snippet-get-bucket"
+
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   GetBucketRequest request = new GetBucketRequest(bucket);
   // Execute the request
   GetBucketResult result = cosXml.GetBucket(request);
   // Bucket information
   ListBucket info = result.listBucket;
   if (info.isTruncated) {
-    // Record the marker for the next page of truncated listing
+    // The data is truncated, and the next marker of the data is recorded.
     this.nextMarker = info.nextMarker;
   }
 }
@@ -46,15 +48,17 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ListObjects.cs).
+> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ListObjects.cs).
 
-#### Sample 2. Requesting the next page of objects
+#### Sample 2. Requesting the next page of data
 
-[//]: # ".cssg-snippet-get-bucket-next-page"
+[//]: #	".cssg-snippet-get-bucket-next-page"
+
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   GetBucketRequest request = new GetBucketRequest(bucket);
   // Use the “nextMarker” from the previous request
   request.SetMarker(this.nextMarker);
@@ -75,18 +79,21 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ListObjects.cs).
+> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ListObjects.cs).
 
-#### Sample 3. Getting an object list and common prefixes
+#### Sample 3. Getting an object list and subdirectories
 
-[//]: # ".cssg-snippet-get-bucket-with-delimiter"
+[//]: #	".cssg-snippet-get-bucket-with-delimiter"
+
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   GetBucketRequest request = new GetBucketRequest(bucket);
-  // List objects and common prefixes under a/
+  // Get the objects and subdirectories under “a/”
   request.SetPrefix("a/");
+  request.SetDelimiter("/");
   // Execute the request
   GetBucketResult result = cosXml.GetBucket(request);
   // Bucket information
@@ -108,21 +115,23 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ListObjects.cs).
+> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ListObjects.cs).
 
 ## Querying an Object Version List
 
-#### API description 
+#### Description
 
 This API is used to query some or all objects in a versioning-enabled bucket.
 
-#### Sample 1. Requesting the first page of listed object versions
+#### Sample 1. Getting the object version list’s first page of data
 
-[//]: # ".cssg-snippet-list-objects-versioning"
+[//]: #	".cssg-snippet-list-objects-versioning"
+
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   ListBucketVersionsRequest request = new ListBucketVersionsRequest(bucket);
   // Execute the request
   ListBucketVersionsResult result = cosXml.ListBucketVersions(request);
@@ -133,7 +142,7 @@ try
   List<ListBucketVersions.CommonPrefixes> prefixes = info.commonPrefixesList;
 
   if (info.isTruncated) {
-    // Record the marker for the next page of truncated listing
+    // The data is truncated, and the next marker of the data is recorded.
     this.keyMarker = info.nextKeyMarker;
     this.versionIdMarker = info.nextVersionIdMarker;
   }
@@ -150,15 +159,17 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ListObjectsVersioning.cs).
+> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ListObjectsVersioning.cs).
 
-#### Sample 2. Requesting the next page of listed object versions
+#### Sample 2. Getting the object version list’s next page of data
 
-[//]: # ".cssg-snippet-list-objects-versioning-next-page"
+[//]: #	".cssg-snippet-list-objects-versioning-next-page"
+
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   ListBucketVersionsRequest request = new ListBucketVersionsRequest(bucket);
 
   // Use the “nextMarker” from the previous request
@@ -170,7 +181,7 @@ try
   ListBucketVersions info = result.listBucketVersions;
 
   if (info.isTruncated) {
-    // Record the marker for the next page of truncated listing
+    // The data is truncated, and the next marker of the data is recorded.
     this.keyMarker = info.nextKeyMarker;
     this.versionIdMarker = info.nextVersionIdMarker;
   }
@@ -187,5 +198,4 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ListObjectsVersioning.cs).
-
+> ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ListObjectsVersioning.cs).

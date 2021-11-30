@@ -1,29 +1,29 @@
 ## Overview
 
-This document provides an overview of the API and SDK code samples related to extracting object content.
+This document provides an overview of APIs and SDK code samples related to object content extraction.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [SELECT Object Content](https://intl.cloud.tencent.com/document/product/436/32360) | Extracting object content | Extracts the content of a specified object (in CSV or JSON format) |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Extracting Object Content
 
-#### API description 
+#### Description
 
-This API is used by the COS Select feature to extract objects in the following formats:
+COS Select supports extracting content from objects in the following formats:
 
 * CSV: an object is stored in CSV format with its data records separated with a specific delimiter.
 * JSON: an object is stored in JSON format, which can be either a JSON file or a JSON list.
 
 > !
->- To use COS Select, you must have the permission for `cos:GetObject`.
->- CSV- or JSON-formatted objects need to be encoded in UTF-8.
->- COS Select can extract CSV- or JSON-formatted objects compressed by gzip or bzip2.
->- COS Select can extract CSV- or JSON-formatted objects encrypted with SSE-COS.
+>- To use COS Select, you must have the permission on `cos:GetObject`.
+>- CSV and JSON objects need to be encoded in UTF-8.
+>- COS Select can extract CSV and JSON objects compressed by gzip or bzip2.
+>- COS Select can extract CSV and JSON objects encrypted with SSE-COS.
 
 #### Sample code
 
@@ -31,7 +31,8 @@ This API is used by the COS Select feature to extract objects in the following f
 ```cs
 try
 {
-    string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
+    // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+    string bucket = "examplebucket-1250000000";
     string key = "exampleobject"; // Object key
 
     SelectObjectRequest request = new SelectObjectRequest(bucket, key);
@@ -51,7 +52,7 @@ try
             .OutputToFile(outputFile)
             ;
 
-    SelectObjectResult selectObjectResult =  cosXml.selectObject(request);
+    SelectObjectResult selectObjectResult =  cosXml.SelectObject(request);
     Console.WriteLine(selectObjectResult.stat);
 }
 catch (COSXML.CosException.CosClientException clientEx)

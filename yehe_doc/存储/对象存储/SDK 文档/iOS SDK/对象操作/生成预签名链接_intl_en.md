@@ -21,13 +21,22 @@ For parameters and method description of all APIs in the SDK, please see [SDK AP
 ```objective-c
 QCloudGetPresignedURLRequest* getPresignedURLRequest = [[QCloudGetPresignedURLRequest alloc] init];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getPresignedURLRequest.bucket = @"examplebucket-1250000000";
 
 // HTTP method of the request using a pre-signed URL. Valid values (case-sensitive): @"GET", @"PUT", @"POST", @"DELETE"
 getPresignedURLRequest.HTTPMethod = @"PUT";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Obtain the pre-signed URL function. By default, it is signed to the Host header. You can also choose not to sign it to Host (the request might fail or vulnerabilities might occur).
+getPresignedURLRequest.signHost = YES;
+
+// HTTP request parameters, which should be the same as those passed to the actual request. This can prevent users from tampering with the HTTP request parameters.
+getPresignedURLRequest.requestParameters = @{@"param1":@"value1",@"param1":@"value1"};
+
+// HTTP request headers, which should be included in the actual request. This can prevent users from tampering with the HTTP request headers that are signed here.
+getPresignedURLRequest.requestHeaders = @{@"param1":@"value1",@"param1":@"value1"};
+
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 getPresignedURLRequest.object = @"exampleobject";
 
 [getPresignedURLRequest setFinishBlock:^(QCloudGetPresignedURLResult * _Nonnull result,
@@ -49,14 +58,23 @@ getPresignedURLRequest.object = @"exampleobject";
 ```swift
 let getPresign  = QCloudGetPresignedURLRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getPresign.bucket = "examplebucket-1250000000" ;
 
 // HTTP method of the request using a pre-signed URL. Valid values (case-sensitive):
 // @"GET", @"PUT", @"POST", @"DELETE"
 getPresign.httpMethod = "PUT";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Obtain the pre-signed URL function. By default, it is signed to the Host header. You can also choose not to sign it to Host (the request might fail or vulnerabilities might occur).
+getPresignedURLRequest.signHost = YES;
+
+// HTTP request parameters, which should be the same as those passed to the actual request. This can prevent users from tampering with the HTTP request parameters.
+getPresignedURLRequest.requestParameters = {"param1":"value1","param1":"value1"};
+
+// HTTP request headers, which should be included in the actual request. This can prevent users from tampering with the HTTP request headers that are signed here.
+getPresignedURLRequest.requestHeaders = {"param1":"value1","param1":"value1"};
+
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
     if let result = result {
@@ -78,13 +96,22 @@ QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```objective-c
 QCloudGetPresignedURLRequest* getPresignedURLRequest = [[QCloudGetPresignedURLRequest alloc] init];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getPresignedURLRequest.bucket = @"examplebucket-1250000000";
 
 // HTTP method of the request using a pre-signed URL. Valid values (case-sensitive): @"GET", @"PUT", @"POST", @"DELETE"
 getPresignedURLRequest.HTTPMethod = @"GET";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Obtain the pre-signed URL function. By default, it is signed to the Host header. You can also choose not to sign it to Host (the request might fail or vulnerabilities might occur).
+getPresignedURLRequest.signHost = YES;
+
+// HTTP request parameters, which should be the same as those passed to the actual request. This can prevent users from tampering with the HTTP request parameters.
+getPresignedURLRequest.requestParameters = @{@"param1":@"value1",@"param1":@"value1"};
+
+// HTTP request headers, which should be included in the actual request. This can prevent users from tampering with the HTTP request headers that are signed here.
+getPresignedURLRequest.requestHeaders = @{@"param1":@"value1",@"param1":@"value1"};
+
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 getPresignedURLRequest.object = @"exampleobject";
 
 [getPresignedURLRequest setFinishBlock:^(QCloudGetPresignedURLResult * _Nonnull result,
@@ -106,14 +133,23 @@ getPresignedURLRequest.object = @"exampleobject";
 ```swift
 let getPresign  = QCloudGetPresignedURLRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getPresign.bucket = "examplebucket-1250000000" ;
 
 // HTTP method of the request using a pre-signed URL. Valid values (case-sensitive):
 // @"GET", @"PUT", @"POST", @"DELETE"
 getPresign.httpMethod = "GET";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Obtain the pre-signed URL function. By default, it is signed to the Host header. You can also choose not to sign it to Host (the request might fail or vulnerabilities might occur).
+getPresignedURLRequest.signHost = YES;
+
+// HTTP request parameters, which should be the same as those passed to the actual request. This can prevent users from tampering with the HTTP request parameters.
+getPresignedURLRequest.requestParameters = {"param1":"value1","param1":"value1"};
+
+// HTTP request headers, which should be included in the actual request. This can prevent users from tampering with the HTTP request headers that are signed here.
+getPresignedURLRequest.requestHeaders = {"param1":"value1","param1":"value1"};
+
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
     if let result = result {

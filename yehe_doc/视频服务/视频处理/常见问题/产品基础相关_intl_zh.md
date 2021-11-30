@@ -21,7 +21,7 @@
 ### MPS 服务的主要流程是什么？
 以视频处理为例，工作流程主要包括配置 工作流、触发转码、转码任务处理以及发送事件通知等。[工作流](https://intl.cloud.tencent.com/document/product/1041/33475) 原理图如下：
 
-<img src="https://main.qcloudimg.com/raw/441cdf4910af7a4a0ef6c9d9091a7529.png" width=600px>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f2d33c2685ad9855b10bd1d808e5105b.png" width=600px>
 
 
 ## 能力支持

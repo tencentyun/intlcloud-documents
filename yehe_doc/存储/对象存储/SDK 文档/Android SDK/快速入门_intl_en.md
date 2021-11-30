@@ -70,7 +70,9 @@ dependencies {
 
 #### Disabling the beacon report feature (applicable to 5.5.8 or later)
 
-We have introduced the beacon analysis feature into the SDK to track down and optimize the SDK quality for a better user experience.
+We have introduced the [Tencent Beacon](https://beacon.qq.com/) into the SDK to track down and optimize the SDK quality for a better user experience.
+>? Tencent Beacon monitors only the COS-side request performance, and will not report the business-side data.
+>
 
 To disable the beacon analysis feature, add the following statement to the app-level `build.gradle` file (usually under the app module):
 
@@ -258,7 +260,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString(); // Absolute path of the local file
@@ -348,7 +350,7 @@ viewModelScope.launch {
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
 >- After the upload, you can generate a download URL for the uploaded file with the same key. For detailed directions, please see [Generating Pre-signed Links](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
-### Downloading an object
+### Download an object
 
 [//]: # ".cssg-snippet-transfer-download-object"
 ```java
@@ -361,7 +363,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 // Path of the local directory
 String savePathDir = context.getExternalCacheDir().toString();

@@ -21,7 +21,7 @@ MPS는 클라우드 트랜스코딩, 워터마크 중첩, 비디오 화면 캡�
 ### MPS 서비스의 주요 프로세스는 무엇입니까?
 MPS를 예로 들면 워크플로에는 주로 워크플로 구성, 트랜스코딩 트리거, 트랜스코딩 작업 처리 및 이벤트 알림 보내기 등이 포함됩니다. [워크플로](https://intl.cloud.tencent.com/document/product/1041/33475)는 다음과 같습니다.
 
-<img src="https://main.qcloudimg.com/raw/441cdf4910af7a4a0ef6c9d9091a7529.png" width=600px>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f2d33c2685ad9855b10bd1d808e5105b.png" width=600px>
 
 
 ## 기능 지원

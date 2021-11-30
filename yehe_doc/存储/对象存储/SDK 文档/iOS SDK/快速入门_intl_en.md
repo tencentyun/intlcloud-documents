@@ -37,15 +37,15 @@ The simplified SDK is implemented through the CocoaPods subspec feature, so it c
 pod 'QCloudCOSXML/Transfer'
 ```
 
-### Method 2. Manual integration
+### Method 2: Manually integrate
 
 You can directly download the latest version of the SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-ios/latest/qcloud-sdk-ios.zip) or you can find all of the versions [here](https://github.com/tencentyun/qcloud-sdk-ios/releases).
 
 #### 1. Import binary libraries
 
-Drag `QCloudCOSXML.framework`, `QCloudCore.framework`, `BeaconAPI_Base.framework`, and `BeaconId.framework` into the project.
+Drag `QCloudCOSXML.framework`, `QCloudCore.framework`, `BeaconAPI_Base.framework`, and `QimeiSDK.framework` into the project.
 
-![](https://main.qcloudimg.com/raw/5bdcb1f0bb6ac5dc80e82b1cd1960a19.png)  
+![](https://qcloudimg.tencent-cloud.cn/raw/a461545c9de56424126943fc16a3d381.png)  
 
 Then, add the following dependent libraries:
  - CoreTelephony
@@ -117,7 +117,7 @@ For the detailed procedure, see the following sample code:
 **Objective-c**
 
 ```objective-c
-// AppDelegate.m
+//AppDelegate.m
 // `AppDelegate` must follow `QCloudSignatureProvider` 
 @interface AppDelegate()<QCloudSignatureProvider>
 @end
@@ -129,7 +129,9 @@ For the detailed procedure, see the following sample code:
 
     QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
     QCloudCOSXMLEndPoint* endpoint = [[QCloudCOSXMLEndPoint alloc] init];
-    // Service region abbreviation; for example, `ap-guangzhou` is the abbreviation for the Guangzhou region
+    
+    // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+    // For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
     endpoint.regionName = @"COS_REGION";
     // Use HTTPS
     endpoint.useHTTPS = true;
@@ -154,11 +156,15 @@ For the detailed procedure, see the following sample code:
         // Here, get the temporary key from the background server synchronously. It is highly recommended that the logic for getting a temporary key be placed here to maximize the availability of the key
     //...
     QCloudCredential* credential = [QCloudCredential new];
-    // Temporary key SecretId
+
+    // Temporary key SecretId 
+    // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretID = @"SECRETID";
     // Temporary key SecretKey
+    // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY";
     // Temporary key token
+    // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
     credential.token = @"TOKEN";
     /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
     */
@@ -178,7 +184,7 @@ For the detailed procedure, see the following sample code:
 **Swift**
 
 ```swift
-// AppDelegate.swift
+//AppDelegate.swift
 // `AppDelegate` must follow `QCloudSignatureProvider` 
 
 class AppDelegate: UIResponder, UIApplicationDelegate,
@@ -190,7 +196,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         let config = QCloudServiceConfiguration.init();
 
         let endpoint = QCloudCOSXMLEndPoint.init();
-        // Service region abbreviation; for example, `ap-guangzhou` is the abbreviation for the Guangzhou region
+
+        // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+        // For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
         endpoint.regionName = "COS_REGION";
         // Use HTTPS
         endpoint.useHTTPS = true;
@@ -217,11 +225,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         //...
 
         let credential = QCloudCredential.init();
-        // Temporary key SecretId
+        // Temporary key SecretId 
+        // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
         credential.secretID = "SECRETID";
         // Temporary key SecretKey
+        // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
         credential.secretKey = "SECRETKEY";
         // Temporary key token
+        // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
         credential.token = "TOKEN";
         /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
         */
@@ -257,7 +268,7 @@ The following is the sample code:
 **Objective-c**
 
 ```objective-c
-// AppDelegate.m
+//AppDelegate.m
 // `AppDelegate` needs to follow the `QCloudSignatureProvider` and 
 // `QCloudCredentailFenceQueueDelegate` protocols
 
@@ -274,7 +285,9 @@ The following is the sample code:
         didFinishLaunchingWithOptions:(NSDictionary * )launchOptions {
     QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
     QCloudCOSXMLEndPoint* endpoint = [[QCloudCOSXMLEndPoint alloc] init];
-    // Service region abbreviation; for example, `ap-guangzhou` is the abbreviation for the Guangzhou region
+
+    // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+    // For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
     endpoint.regionName = @"COS_REGION";
     // Use HTTPS
     endpoint.useHTTPS = true;
@@ -299,11 +312,14 @@ The following is the sample code:
     //...
 
     QCloudCredential* credential = [QCloudCredential new];
-    // Temporary key SecretId
+    // Temporary key SecretId 
+    // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretID = @"SECRETID";
     // Temporary key SecretKey
+    // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY";
     // Temporary key token
+    // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
     credential.token = @"TOKEN";
     /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
     */
@@ -340,7 +356,7 @@ The following is the sample code:
 **Swift**
 
 ```swift
-// AppDelegate.swift
+//AppDelegate.swift
 // `AppDelegate` needs to follow the `QCloudSignatureProvider` and 
 // `QCloudCredentailFenceQueueDelegate` protocols
 
@@ -355,7 +371,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         let config = QCloudServiceConfiguration.init();
 
         let endpoint = QCloudCOSXMLEndPoint.init();
-        // Service region abbreviation; for example, `ap-guangzhou` is the abbreviation for the Guangzhou region
+
+        // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+        // For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
         endpoint.regionName = "COS_REGION";
         // Use HTTPS
         endpoint.useHTTPS = true;
@@ -382,11 +400,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         //...
 
         let credential = QCloudCredential.init();
-        // Temporary key SecretId
+        // Temporary key SecretId 
+        // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
         credential.secretID = "SECRETID";
         // Temporary key SecretKey
+        // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
         credential.secretKey = "SECRETKEY";
         // Temporary key token
+        // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
         credential.token = "TOKEN";
         /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
         */
@@ -404,7 +425,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         urlRequest urlRequst: NSMutableURLRequest!, 
         compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
         self.credentialFenceQueue?.performAction({ (creator, error) in
-            if error != nil{
+            if error != nil {
                 continueBlock(nil,error!);
             }else{
                 let signature = creator?.signature(forData: urlRequst);
@@ -443,10 +464,13 @@ When using a permanent key, you can choose not to implement the `QCloudCredentai
 {
     
     QCloudCredential* credential = [QCloudCredential new];
-    // Log in to the CAM console to check and manage the `SecretId` and `SecretKey` of your project.
-    credential.secretID = @"SECRETID"; // Permanent key SecretId
-    credential.secretKey = @"SECRETKEY"; // Permanent key SecretKey
-
+    
+    // secretID of the permanent key 
+    // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    credential.secretID = @"SECRETID";
+    // SecretKey of the permanent key
+    // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    credential.secretKey = @"SECRETKEY"; 
     // Use the permanent key to calculate the signature
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc] 
         initWithCredential:credential];
@@ -463,9 +487,13 @@ func signature(with fileds: QCloudSignatureFields!,
                 urlRequest urlRequst: NSMutableURLRequest!, 
                 compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
     let credential = QCloudCredential.init();
-    // Log in to the CAM console to check and manage the `SecretId` and `SecretKey` of your project.
-    credential.secretID = "SECRETID"; // Permanent key SecretId
-    credential.secretKey = "SECRETKEY"; // Permanent key SecretKey
+    
+    // secretID of the permanent key 
+    // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    credential.secretID = "SECRETID";
+    // SecretKey of the permanent key
+    // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    credential.secretKey = "SECRETKEY"; 
 
     // Use the permanent key to calculate the signature
     let auth = QCloudAuthentationV5Creator.init(credential: credential);
@@ -522,7 +550,7 @@ The SDK allows you to upload local files and binary data in NSData format. The f
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 // Local file path
 NSURL* url = [NSURL fileURLWithPath:@"file URL"];
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 put.bucket = @"examplebucket-1250000000";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 put.object = @"exampleobject";
@@ -554,7 +582,7 @@ put.body =  url;
 
 ```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 put.bucket = "examplebucket-1250000000";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 put.object = "exampleobject";
@@ -593,14 +621,14 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift).
 >- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
-### Downloading an object
+### Download an object
 
 **Objective-C**
 
 ```objective-c
 QCloudCOSXMLDownloadObjectRequest * request = [QCloudCOSXMLDownloadObjectRequest new];
     
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
@@ -633,7 +661,7 @@ request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
 ```swift
 let request : QCloudCOSXMLDownloadObjectRequest = QCloudCOSXMLDownloadObjectRequest();
         
-// Bucket containing the file
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = "examplebucket-1250000000";
 // Object key
 request.object = "exampleobject";

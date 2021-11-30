@@ -139,7 +139,7 @@ TRTCParams는 SDK의 가장 주요한 매개변수로 SDKAppID, userId, userSig,
   SDKAppID와 userId를 기반으로 userSig를 계산할 수 있으며, 계산 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오.
 
 - **roomId**
-  방 번호는 숫자로 구성되어 있으며 자유롭게 지정할 수 있습니다. 단, **동일한 애플리케이션의 멀티미디어 방 2개에 동일한 roomId를 할당할 수 없습니다.**
+  방 번호는 숫자로 구성되어 있으며 자유롭게 지정할 수 있습니다. 단, **동일한 애플리케이션의 멀티미디어 방 2개에 동일한 roomId를 할당할 수 없습니다.** 문자열 형식의 방 번호를 사용하려면 TRTCParams의 strRoomId를 사용하십시오.
 
 ### 3. 방 입장(또는 생성)
 `enterRoom`을 호출하여 TRTCParams 매개변수 roomId가 지정한 멀티미디어 방에 입장할 수 있으며, 해당 방이 존재하지 않는 경우 SDK는 자동으로 roomId를 방 번호로 하는 새로운 방을 생성합니다.

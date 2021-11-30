@@ -4,18 +4,18 @@ This document provides an overview of APIs and SDK code samples related to objec
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting an object | Deletes an object from a bucket. |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket in a single request |
 
-## SDK API Reference
+## SDK API References
 
 For parameters and method description of all APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Deleting an Object
 
-#### Feature description
+#### Description
 
-This API (DELETE Object) is used to delete a specified object from a bucket.
+This API (`DELETE Object`) is used to delete a specified object.
 
 #### Sample code 1: deleting a single object
 **Objective-C**
@@ -24,11 +24,11 @@ This API (DELETE Object) is used to delete a specified object from a bucket.
 ```objective-c
 QCloudDeleteObjectRequest* deleteObjectRequest = [QCloudDeleteObjectRequest new];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 deleteObjectRequest.bucket = @"examplebucket-1250000000";
 
 
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 deleteObjectRequest.object = @"exampleobject";
 
 [deleteObjectRequest setFinishBlock:^(id outputObject, NSError *error) {
@@ -47,11 +47,11 @@ deleteObjectRequest.object = @"exampleobject";
 ```swift
 let deleteObject = QCloudDeleteObjectRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 deleteObject.bucket = "examplebucket-1250000000";
 
 
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 deleteObject.object = "exampleobject";
 
 deleteObject.finishBlock = {(result,error)in
@@ -67,15 +67,15 @@ QCloudCOSXMLService.defaultCOSXML().deleteObject(deleteObject);
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/DeleteObject.swift).
 
 
-#### Sample code 2: deleting a directory
+#### Sample code 2: deleting an object
 **Objective-C**
 
 [//]: # (.cssg-snippet-delete-dir)
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
-// Maximum number of entries to return at a time. The default value is 1,000
+// Maximum number of objects to return at a time. Default value: 1000
 request.maxKeys = 100;
 
 // Name of the directory to delete, prefixed with a slash (/)
@@ -119,10 +119,10 @@ request.prefix = @"prefix";
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
         
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getBucketReq.bucket = "examplebucket-1250000000";
         
-// Maximum number of entries to return at a time. The default value is 1,000
+// Maximum number of objects to return at a time. Default value: 1000
 getBucketReq.maxKeys = 100;
         
 // Name of the directory to delete, prefixed with a slash (/)
@@ -140,7 +140,7 @@ getBucketReq.setFinish { (result, error) in
         let mutipleDel = QCloudDeleteMultipleObjectRequest.init();
         // File set to be deleted
         let deleteInfos = QCloudDeleteInfo.init();
-        // Bucket name in the format: `BucketName-APPID`
+        // Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         mutipleDel.bucket = "examplebucket-1250000000";
                 
         deleteInfos.objects = infos as! [QCloudDeleteObjectInfo];
@@ -174,7 +174,7 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 
 ## Deleting Multiple Objects
 
-#### Feature description
+#### Description
 
 The API (DELETE Multiple Objects) is used to delete multiple objects.
 
@@ -190,7 +190,7 @@ delteRequest.bucket = @"examplebucket-1250000000";
 // Single file to be deleted
 QCloudDeleteObjectInfo* deletedObject0 = [QCloudDeleteObjectInfo new];
 
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 deletedObject0.key = @"exampleobject";
 
 // File set to be deleted
@@ -202,10 +202,10 @@ QCloudDeleteInfo* deleteInfo = [QCloudDeleteInfo new];
 // Default value: false
 deleteInfo.quiet = NO;
 
-// Array that stores the information of the objects to be deleted
+// Array that stores the information on the objects to be deleted
 deleteInfo.objects = @[deletedObject0];
 
-// Encapsulates the information of the multiple objects to be deleted in batches
+// Encapsulates the information on the multiple objects to be deleted in batches
 delteRequest.deleteObjects = deleteInfo;
 
 [delteRequest setFinishBlock:^(QCloudDeleteResult* outputObject,
@@ -225,13 +225,13 @@ delteRequest.deleteObjects = deleteInfo;
 ```swift
 let mutipleDel = QCloudDeleteMultipleObjectRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 mutipleDel.bucket = "examplebucket-1250000000";
 
 // Single file to be deleted
 let info1 = QCloudDeleteObjectInfo.init();
 
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 info1.key = "exampleobject";
 
 let info2 = QCloudDeleteObjectInfo.init();
@@ -239,7 +239,7 @@ let info2 = QCloudDeleteObjectInfo.init();
 // File set to be deleted
 let deleteInfos = QCloudDeleteInfo.init();
 
-// Array that stores the information of the objects to be deleted
+// Array that stores the information on the objects to be deleted
 deleteInfos.objects = [info1,info2];
 
 // Boolean value. Determines whether to enable the `Quiet` mode:
@@ -248,7 +248,7 @@ deleteInfos.objects = [info1,info2];
 // Default value: false
 deleteInfos.quiet = false;
 
-// Encapsulates the information of the multiple objects to be deleted in batches
+// Encapsulates the information on the multiple objects to be deleted in batches
 mutipleDel.deleteObjects = deleteInfos;
 
 mutipleDel.setFinish { (result, error) in
@@ -270,12 +270,12 @@ QCloudCOSXMLService.defaultCOSXML().deleteMultipleObject(mutipleDel);
 [//]: # (.cssg-snippet-delete-dir)
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
-// Maximum number of entries to return at a time. The default value is 1,000
+// Maximum number of objects to return at a time. Default value: 1000
 request.maxKeys = 100;
 
-//To delete files with a specified prefix, set `prefix` to the prefix of the files to delete
+//To delete files with a specified prefix, `prefix` should be the prefix of the files to delete
 request.prefix = @"prefix";
 
 [request setFinishBlock:^(QCloudListBucketResult * result, NSError* error) {
@@ -316,13 +316,13 @@ request.prefix = @"prefix";
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
         
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getBucketReq.bucket = "examplebucket-1250000000";
         
-// Maximum number of entries to return at a time. The default value is 1,000
+// Maximum number of objects to return at a time. Default value: 1000
 getBucketReq.maxKeys = 100;
         
-//To delete files with a specified prefix, set `prefix` to the prefix of the files to delete
+//To delete files with a specified prefix, `prefix` should be the prefix of the files to delete
 getBucketReq.prefix = "dir/";
 
         
@@ -338,7 +338,7 @@ getBucketReq.setFinish { (result, error) in
         let mutipleDel = QCloudDeleteMultipleObjectRequest.init();
         // File set to be deleted
         let deleteInfos = QCloudDeleteInfo.init();
-        // Bucket name in the format: `BucketName-APPID`
+        // Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         mutipleDel.bucket = "examplebucket-1250000000";
                 
         deleteInfos.objects = infos as! [QCloudDeleteObjectInfo];
@@ -349,7 +349,7 @@ getBucketReq.setFinish { (result, error) in
         // Default value: false
         deleteInfos.quiet = false;
                 
-        // Encapsulates the information of the multiple objects to be deleted in batches
+        // Encapsulates the information on the multiple objects to be deleted in batches
         mutipleDel.deleteObjects = deleteInfos;
                 
         mutipleDel.setFinish { (result, error) in

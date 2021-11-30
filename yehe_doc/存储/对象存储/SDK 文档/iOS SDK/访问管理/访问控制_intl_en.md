@@ -1,33 +1,33 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to bucket and object access control lists (ACL).
+This document provides an overview of APIs and SDK code samples related to the access control lists (ACLs) for buckets and objects.
 
-**Bucket ACLs**
+**Bucket ACL**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | --------------------------------------- |
-| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets the ACL for a specified bucket |
-| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Queries the ACL of specified bucket |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets an ACL for a bucket |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Queries the ACL of a bucket |
 
-**Object ACLs**
+**Object ACL**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting an object ACL | Sets an ACL for a specified object in a bucket |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting an object ACL | Sets an ACL for an object in a bucket |
 | [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying an object ACL | Queries the ACL of an object |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+For parameters and method description of all APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
 
-## Bucket ACLs
+## Bucket ACL
 
 ### Setting a bucket ACL
 
-#### API description 
+#### Description
 
-This API is used to set the access control list (ACL) on a specified bucket.
+This API is used to set an access control list (ACL) for a specified bucket.
 
 #### Sample code
 **Objective-C**
@@ -48,14 +48,11 @@ putACL.grantFullControl = grantString;
 // Grant read permission
 putACL.grantRead = grantString;
 
-// Grant write permission
-putACL.grantWrite = grantString;
-
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 putACL.bucket = @"examplebucket-1250000000";
 
 [putACL setFinishBlock:^(id outputObject, NSError *error) {
-    // “outputObject” contains headers returned by the server
+    // You can get the headers returned by the server from outputObject
     NSDictionary * result = (NSDictionary *)outputObject;
 
 }];
@@ -71,7 +68,7 @@ putACL.bucket = @"examplebucket-1250000000";
 ```swift
 let putBucketACLReq = QCloudPutBucketACLRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 putBucketACLReq.bucket = "examplebucket-1250000000";
 
 // ID of the authorized account
@@ -84,12 +81,12 @@ putBucketACLReq.grantWrite = grantString;
 // Grant read permission
 putBucketACLReq.grantRead = grantString;
 
-// Grant full control (both read and write permission)
+// Grant full control (read and write permission) grantFullControl == grantRead + grantWrite
 putBucketACLReq.grantFullControl = grantString;
 
 putBucketACLReq.finishBlock = {(result,error) in
     if let result = result {
-        // “result” contains headers returned by the server
+        // You can get the header information returned by the server from `result`
     } else {
         print(error!)
     }
@@ -101,7 +98,7 @@ QCloudCOSXMLService.defaultCOSXML().putBucketACL(putBucketACLReq);
 
 ### Querying a bucket ACL
 
-#### API description 
+#### Description
 
 This API is used to query the access control list (ACL) of a specified bucket.
 
@@ -112,12 +109,12 @@ This API is used to query the access control list (ACL) of a specified bucket.
 ```objective-c
 QCloudGetBucketACLRequest* getBucketACl = [QCloudGetBucketACLRequest new];
 
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format: `BucketName-APPID`
 getBucketACl.bucket = @"examplebucket-1250000000";
 
 [getBucketACl setFinishBlock:^(QCloudACLPolicy * _Nonnull result,
                                        NSError * _Nonnull error) {
-    // Grant information, including grantee and permission
+    // The authorized account and granted permissions
     QCloudAccessControlList *acl = result.accessControlList;
 }];
 
@@ -132,12 +129,12 @@ getBucketACl.bucket = @"examplebucket-1250000000";
 ```swift
 let getBucketACLReq = QCloudGetBucketACLRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getBucketACLReq.bucket = "examplebucket-1250000000";
 
 getBucketACLReq.setFinish { (result, error) in
     if let result = result {
-        // ACL grant information
+        // ACL authorization information
         let acl = result.accessControlList;
     } else {
         print(error!)
@@ -148,13 +145,13 @@ QCloudCOSXMLService.defaultCOSXML().getBucketACL(getBucketACLReq)
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketACL.swift).
 
-## Object ACLs
+## Object ACL
 
 ### Setting an object ACL
 
-#### API description 
+#### Description
 
-This API is used to set the access control list (ACL) on an object in a bucket.
+This API is used to set the access control list (ACL) for an object in a bucket.
 
 #### Sample code
 **Objective-C**
@@ -166,7 +163,7 @@ QCloudPutObjectACLRequest* request = [QCloudPutObjectACLRequest new];
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
 NSString *grantString = [NSString stringWithFormat:@"id=\"%@\"",@"100000000001"];
@@ -176,11 +173,9 @@ NSString *grantString = [NSString stringWithFormat:@"id=\"%@\"",@"100000000001"]
 request.grantFullControl = grantString;
 // Grant read permission
 request.grantRead = grantString;
-// Grants write permission
-request.grantWrite = grantString;
 
 [request setFinishBlock:^(id outputObject, NSError *error) {
-    // “outputObject” returns information such as the Etag or custom headers
+    // outputObject contains information such as the ETag or custom headers in the response.
     NSDictionary* info = (NSDictionary *) outputObject;
 }];
 
@@ -195,10 +190,10 @@ request.grantWrite = grantString;
 ```swift
 let putObjectACl = QCloudPutObjectACLRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 putObjectACl.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the format should be: "video/xxx/movie.mp4"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 putObjectACl.object = "exampleobject";
 let grantString = "id=\"100000000001\"";
 
@@ -210,7 +205,7 @@ putObjectACl.grantRead = grantString;
 
 putObjectACl.finishBlock = {(result,error)in
     if let result = result {
-        // “result” contains response headers
+        // "result" contains response headers.
     } else {
         print(error!);
     }
@@ -222,7 +217,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectACL(putObjectACl);
 
 ### Querying an object ACL
 
-#### API description 
+#### Description
 
 This API is used to query the ACL of an object.
 
@@ -236,7 +231,7 @@ QCloudGetObjectACLRequest *request = [QCloudGetObjectACLRequest new];
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
 __block QCloudACLPolicy* policy;
@@ -244,8 +239,8 @@ __block QCloudACLPolicy* policy;
                           NSError * _Nonnull error) {
     
     policy = result;
-    // “result.accessControlList” contains information on the grantee and granted permission
-    // “result.owner” is the object owner
+    // result.accessControlList; the authorized user and granted permissions
+    // result.owner; the object owner
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] GetObjectACL:request];
@@ -260,14 +255,14 @@ __block QCloudACLPolicy* policy;
 ```swift
 let getObjectACL = QCloudGetObjectACLRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getObjectACL.bucket = "examplebucket-1250000000";
 
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 getObjectACL.object = "exampleobject";
 getObjectACL.setFinish { (result, error) in
     if let result = result {
-        // ACL grant information
+        // Object authorization information
         let acl = result.accessControlList
     } else {
         print(error!);
