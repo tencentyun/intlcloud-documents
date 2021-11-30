@@ -82,7 +82,7 @@ _trtcCloud.delegate = self;
 | sdkAppId | 숫자 | 애플리케이션 ID, <a href="https://console.cloud.tencent.com/trtc/app">TRTC 콘솔</a>에서 SDKAppID를 확인할 수 있습니다.|1400000123 |
 | userId | 문자열 | 영어 알파벳(a-z, A-Z), 숫자(0-9), 대시부호(-), 언더바(_)만 허용됩니다. | test_user_001 |
 | userSig | 문자열 | userId를 기반으로 userSig를 계산할 수 있습니다. 계산 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. | eJyrVareCeYrSy1SslI... |
-| roomId | 숫자 | 기본값은 문자열 유형의 방 번호를 지원하지 않습니다. 문자열 유형의 방 번호는 입장 속도에 영향을 줄 수 있습니다. 반드시 문자열 유형의 방 번호를 사용해야 할 경우, [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 문의해 주십시오. | 29834 |
+| roomId | 숫자 | 숫자 유형의 방 번호입니다. 문자열 형식의 방 번호를 사용하려면 TRTCParams의 strRoomId를 사용하십시오. | 29834 |
 
 >! TRTC에서는 상호 간섭이 일어나는 상황을 방지하기 위해 같은 userId 2개의 동시 입장을 지원하지 않습니다.
 
