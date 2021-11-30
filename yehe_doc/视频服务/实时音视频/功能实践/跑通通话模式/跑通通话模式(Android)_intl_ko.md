@@ -1,5 +1,5 @@
 ## 적용 시나리오
-TRTC는 4가지 입장 모드를 지원합니다. 그중 영상 통화(VideoCall와 음성 통화(VoiceCall)는 통화 모드라고 부르고, 비디오 ILVB(Live)와 음성 ILVB(VoiceChatRoom)는 [라이브 방송 모드](https://intl.cloud.tencent.com/document/product/647/35108)라고 부릅니다.
+TRTC는 4가지 입장 모드를 지원합니다. 그중 영상 통화(VideoCall와 음성 통화(AudioCall)는 통화 모드라고 부르고, 비디오 ILVB(Live)와 음성 ILVB(VoiceChatRoom)는 [라이브 방송 모드](https://intl.cloud.tencent.com/document/product/647/35108)라고 부릅니다.
 통화 모드의 TRTC는 단일 방에 최대 300명이 동시에 접속할 수 있으며 최대 30명이 동시에 발언할 수 있습니다. 일대일 영상 통화, 300명 화상 회의, 온라인 진료, 원격 면접, 화상 고객서비스, 온라인 마피아 게임 등의 응용 시나리오에 적합합니다.
 
 ## 원리 분석
@@ -106,7 +106,7 @@ public void onError(int errCode, String errMsg, Bundle extraInfo) {
 | sdkAppId | 숫자 | 애플리케이션 ID, <a href="https://console.cloud.tencent.com/trtc/app">TRTC 콘솔</a>에서 SDKAppID 조회 가능 |1400000123 | 
 | userId  | 문자열 | 영문 알파벳 대소문자(a~z, A~Z), 숫자(0~9), 언더바, 하이픈만 입력 가능 |test_user_001 | 
 | userSig | 문자열 | userId로 userSig 계산, 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166) 참조  | eJyrVareCeYrSy1SslI... |
-| roomId | 숫자 | 문자열 타입의 방 번호 미지원이 기본값임. 이 타입으로 방 번호 설정 시 방 입장 속도 느려짐. 문자열 타입의 방 번호를 꼭 사용해야 할 경우 [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 문의 | 29834 |
+| roomId | 숫자 | 숫자 유형의 방 번호입니다. 문자열 형식의 방 번호를 사용하려면 TRTCParams의 strRoomId를 사용하십시오. | 29834 |
 
 >!TRTC에서는 2개의 동일한 userId로 동시에 입장하면 서로 영향을 미칠 수 있으므로 이를 지원하지 않습니다.
 
