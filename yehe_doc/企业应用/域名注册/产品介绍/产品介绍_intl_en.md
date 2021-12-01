@@ -1,4 +1,5 @@
-﻿## Domain Name Overview
+
+## Domain Name Overview
 There are tens of millions of hosts on the internet. Each host is allocated an IP address to be distinguished from one another. However, an IP address doesn't have any actual meaning to it which makes it hard to be remembered, and this is why domain names come into play.
 A domain name, comprised of letters, digits, `-`, `.`, and other symbols, is an easy-to-remember server address (such as website, email, and FTP) designed for better communication.
 A domain name corresponds to an IP. A specialized domain name server (DNS) on the internet is used to translate between domain names and IPs. When you enter a domain name in your browser, DNS will translate it into an IP to locate an appropriate server and open the requested page.
