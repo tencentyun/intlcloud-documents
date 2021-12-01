@@ -1,11 +1,3 @@
- 
-
- 
-
- 
-
- 
-
 ## 1.  Pengantar
 
 Modul ini berlaku jika Anda menggunakan Tencent Push Notiﬁcation Service ("**Fitur**”). Modul ini dimasukkan ke dalam kebijakan privasi yang berlokasi di [Kebijakan Privasi](https://intl.cloud.tencent.com/document/product/301/17345). Istilah yang digunakan tetapi tidak didefinisikan dalam Modul ini akan memiliki arti yang diberikan kepada mereka di dalam Kebijakan Privasi. Apabila terjadi konflik antara Kebijakan Privasi dan Modul ini, Modul ini akan berlaku sejauh inkonsistensi yang ada.
