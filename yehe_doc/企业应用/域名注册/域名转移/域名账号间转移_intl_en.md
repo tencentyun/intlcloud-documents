@@ -1,4 +1,7 @@
-﻿## Overview
+
+
+
+## Overview
 
 This document describes how to use cross-account domain transfer to transfer a domain under your account A to account B.
 >!
