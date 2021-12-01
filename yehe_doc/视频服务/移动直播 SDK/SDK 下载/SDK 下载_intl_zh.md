@@ -30,8 +30,7 @@
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35165">DOC</a></td>
    </tr>
 </table>
->? 根据您具体使用的服务，使用国际版需先购买对应产品授权，您可按需选购：
->
->1. 使用其中的移动直播请购买  [移动直播 SDK 国际版 License](https://intl.cloud.tencent.com/document/product/1071/38114)。
->1. 使用其中的实时音视频请购买 [实时音视频套餐包](https://intl.cloud.tencent.com/document/product/647/34610)。
 
+>? 根据您具体使用的服务，使用国际版需先购买对应产品授权，您可按需选购：
+>- 使用其中的移动直播请购买  [移动直播 SDK 国际版 License](https://intl.cloud.tencent.com/document/product/1071/38114)。
+>- 使用其中的实时音视频请购买 [实时音视频套餐包](https://intl.cloud.tencent.com/document/product/647/34610)。
