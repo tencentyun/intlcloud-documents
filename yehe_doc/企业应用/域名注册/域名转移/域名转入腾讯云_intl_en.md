@@ -1,4 +1,7 @@
-﻿## Overview
+
+
+
+## Overview
 It takes about **5–7** business days to transfer your domain to DNSPod from another registrar, after which Tencent Cloud will provide domain services for your domain. This process is called domain transfer in.
 
 
