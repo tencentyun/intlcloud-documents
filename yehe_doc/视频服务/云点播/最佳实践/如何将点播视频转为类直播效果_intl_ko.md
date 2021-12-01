@@ -23,33 +23,33 @@
 
 ### 용어 설명
 **시청 허용 시간 제한**: 비디오 게이트를 미리 시청자에게 배포할 수 있으며, 시청자는 가상 라이브 방송 시작 전 또는 종료 후에는 시청할 수 없고 가상 라이브 방송 ‘진행’ 중에만 시청이 가능합니다.
-**동시 시청 진도**: 가상 라이브 방송 ‘진행’ 중에는 모든 사청자의 시청 진도가 동기화(분 단위의 편차 존재)됩니다.
+**동시 시청 진행률**: 가상 라이브 방송 ‘진행’ 중에는 모든 사청자의 시청 진행률이 동기화(분 단위의 편차 존재)됩니다.
 
 
 ## 전제 조건
-- Tencent Cloud 계정에 [가입](https://intl.cloud.tencent.com/register) 및 [로그인](https://intl.cloud.tencent.com/login)되어있고, 계정 실명 인증이 완료되어 있어야 합니다.
-- Tencent Cloud CSS 및 VOD 서비스가 활성화되어 있어야 합니다. 서비스가 활성화되어 있지 않은 경우 [CSS 서비스](https://console.cloud.tencent.com/live/livestat)와 [VOD 서비스](https://console.cloud.tencent.com/vod/overview)를 통해 서비스를 활성화하십시오.
-- 라이브 방송을 녹화합니다. 자세한 내용은 [라이브 방송 녹화 VOD 변환](https://intl.cloud.tencent.com/document/product/266/39562)을 참조하십시오.
+- Tencent Cloud 계정에 [가입](https://intl.cloud.tencent.com/register) 및 [로그인](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fcloud.tencent.com)하고, 실명 인증을 완료해야 합니다. 실명 인증되지 않은 사용자는 중국 본토의 가상 라이브 인스턴스를 구매할 수 없습니다.
+- Tencent Cloud CSS 및 VOD 서비스가 활성화되어 있어야 합니다. 서비스가 활성화되어 있지 않은 경우 [CSS 서비스](https://console.cloud.tencent.com/live/livestat)와 [VOD 서비스](https://console.cloud.tencent.com/vod/overview)를 활성화하십시오.
+- 라이브 방송을 녹화합니다. 자세한 내용은 [라이브 방송 녹화 VOD 변환](https://intl.cloud.tencent.com/document/product/266/39562)을 참고하십시오.
 
 ## 실행 순서
-### 1단계: 비디오를 VOD로 업로드
-[VOD 콘솔](https://console.cloud.tencent.com/vod/media)(비관리자) 왼쪽 메뉴에서 [미디어 자원 관리]>[비디오 관리]를 선택하고 [비디오 업로드]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/5e3fc022bd8518b80d5b1aee147f5c9c.png)
-비즈니스 상황에 따라 적절한 방법을 선택하여 비디오 파일을 VOD에 업로드할 수 있습니다. 다양한 업로드 방식에 대한 내용은 [미디어 업로드 요약](https://intl.cloud.tencent.com/document/product/266/9760)과 [라이브 방송 녹화 VOD 변환](https://intl.cloud.tencent.com/document/product/266/39562)을 참조하십시오.
+### 1단계: 비디오를 VOD에 업로드
+[VOD 콘솔](https://console.cloud.tencent.com/vod/media)(비관리자) 왼쪽 메뉴에서 [미디어 자산 관리]>[비디오 관리]를 선택하고 [비디오 업로드]를 클릭합니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/fae7f0c7f7a7fba65da7a947903b58ad.png)
+비즈니스 상황에 따라 적절한 방법을 선택하여 비디오 파일을 VOD에 업로드할 수 있습니다. 다양한 업로드 방식에 대한 내용은 [미디어 업로드 개요](https://intl.cloud.tencent.com/document/product/266/9760)와 [라이브 방송 녹화 VOD 변환](https://intl.cloud.tencent.com/document/product/266/39562)을 참고하십시오.
 
 ### 2단계: 비디오를 HLS[](id:HLS)로 트랜스 코딩
 1. 가상 라이브 방송은 HLS 포맷을 사용해야 합니다. [트랜스 코딩 작업 시작](https://intl.cloud.tencent.com/document/product/266/33938)의 설명에 따라 업로드한 비디오를 HLS 포맷(구체적인 [트랜스 코딩 템플릿](https://intl.cloud.tencent.com/document/product/266/14059)은 비즈니스에 따라 선택하십시오)으로 트랜스 코딩할 수 있습니다.
-2. 트랜스 코딩 완료 후, [미디어 자원 관리](https://intl.cloud.tencent.com/document/product/266/33895)에서 HLS의 URL을 조회하거나 [이벤트 공지](https://intl.cloud.tencent.com/document/product/266/33938) 수신하는 방식으로 HLS의 URL을 가져올 수 있습니다.
-![](https://main.qcloudimg.com/raw/aa48a734eed94051506c3fe73090724d.png)
+2. 트랜스 코딩 완료 후, 콘솔의 [미디어 자산 관리](https://intl.cloud.tencent.com/document/product/266/33895)에서 HLS의 URL을 조회하거나 [이벤트 공지](https://intl.cloud.tencent.com/document/product/266/33938)를 수신하는 방식으로 HLS의 URL을 가져올 수 있습니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/ca003d8a162fb814938888b5678e6f33.png)
 
 ### 3단계: Key 링크 도용 방지 활성화
 1. 가상 라이브 방송은 반드시 링크 도용 방지를 활성화해야 합니다. [VOD 콘솔](https://console.cloud.tencent.com/vod)에 로그인하고 왼쪽 메뉴의 [배포 및 재생 설정]>[도메인 관리]를 선택한 뒤 타깃 도메인이 있는 행의 [설정]을 클릭하면 도메인 관련 설정 화면으로 이동합니다.
-![](https://main.qcloudimg.com/raw/e6041565fd4942e8588c5578c90403ed.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f21443e506aab6c9020d4a98575c1e7b.png)
 2. [편집]을 클릭하여 Referer 링크 도용 방지를 활성화합니다.
-![](https://main.qcloudimg.com/raw/83165cd0ed9676a22c1fcdcde2a9fa2a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e4fecb5f16b4157959b86acbc9d33ee0.png)
 2. Referer 링크 도용 방지, Key 링크 도용 방지를 활성화합니다.
-![](https://main.qcloudimg.com/raw/245dd0ba5f5475e5d375fed5f2014c09.png)
-옵션에 관한 더 자세한 내용은 [링크 도용 방지 설정](https://intl.cloud.tencent.com/document/product/266/14060)을 참조하십시오. 설정이 완료되면 링크 도용 방지 KEY의 내용을 저장하고 다음의 링크 도용 방지 서명 계산에 사용합니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/7f13f03767df78e476012158fb44eebd.png)
+옵션에 관한 더 자세한 내용은 [링크 도용 방지 설정](https://intl.cloud.tencent.com/document/product/266/14060)을 참고하십시오. 설정이 완료되면 링크 도용 방지 KEY의 내용을 저장하고 다음의 링크 도용 방지 서명 계산에 사용합니다.
 
 ### 4단계: 링크 도용 방지 서명 계산
 #### 서명 계산 공식[](id:function)
@@ -78,6 +78,18 @@ sign = md5(KEY + Dir + t + plive + exper + rlimit + us)
 - 랜덤 문자열 us가 `test`이어야 합니다.
 
 
+1. [서명 계산 공식](#function)에 따라 서명을 계산합니다.
+```plaintext
+sign = md5(11111111/vodtranscq125000000/12345678/5e5a8a805e344f0000test) = 0af5018df88c00e6629e0fb8939277dd
+```
+2. HLS URL의 QueryString에 생성된 서명을 추가하여 최종 링크 도용 방지 URL을 가져옵니다.
+```plaintext
+http://1250000000.vod2.myqcloud.com/vodtranscq125000000/12345678/v.f240.m3u8?t=5e5a8a80&plive=5e344f00&exper=0&rlimit=0&us=test&sign=0af5018df88c00e6629e0fb8939277dd
+```
+
+>?
+>- QueryString의 매개변수는 `sign` 계산과 동일한 순서로 계산되어야 합니다: `t-plive-exper-rlimit-us-sign`.
+>- 개발자의 디버깅을 용이하게 하기 위해 [링크 도용 방지 서명 생성 툴 페이지](https://vods.cloud.tencent.com/referer/gen_video_url.html)를 제공합니다. 페이지 내용에 따라 매개변수를 입력한 후, 서명 계산의 중간 결과와 최종 링크 도용 방지 링크를 볼 수 있습니다.
 
 ### 가상 라이브 방송 체험
 HLS 재생을 지원하는 플레이어(예: Safari 브라우저, VLC, PotPlayer 등)에서 앞서 언급한 링크 도용 방지 링크에 액세스하면 바로 체험해 볼 수 있습니다.
