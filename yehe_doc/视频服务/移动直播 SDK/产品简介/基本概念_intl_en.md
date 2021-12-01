@@ -20,7 +20,7 @@ It refers to the domain name used to play live streams, which is a required sett
 
 ### License
 
-There are three kinds of licenses for MLVB: trial license, LiteAV_Smart license, and Enterprise license. For instructions on how to obtain them, please see [Try and Purchase a License](https://intl.cloud.tencent.com/document/product/1071/38546). You can unlock different features of the MLVB SDK using different licenses. For details, please see [SDK and license](https://intl.cloud.tencent.com/document/product/1071/38149).
+The MLVB SDK has trial licenses and international licenses. For how to obtain them, see [Try and Purchase License](https://intl.cloud.tencent.com/document/product/1071/38546). You can unlock different features of the MLVB SDK using different licenses. For details, see [Feature Description](https://intl.cloud.tencent.com/document/product/1071/38149).
 
 ### Recording and replay
 
