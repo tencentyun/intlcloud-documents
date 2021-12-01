@@ -16,6 +16,6 @@ VOD製品は、**ビデオアクセラレーション**機能の提供を開始�
 
 ご質問がある場合は、随時、お気軽に [お問い合わせ](https://intl.cloud.tencent.com/document/product/266/19905)ください。ユーザーの皆様のTencent Cloud Video on Demand（VOD）製品に対する信頼とご愛顧に心より感謝申し上げます。
 
-2021-11-09
+2021-11-17
 
 Tencent Cloudチーム
