@@ -45,7 +45,7 @@ To grant a user permissions to operate specific PostgreSQL instances, you can as
     "statement": [
         {
             "action": "postgres:*",
-            "resource": "qcs::postgres:ap-shanghai:103xxx1481:DBinstanceId/postgres-0xxxx8e",
+            "resource": "qcs::postgres:ap-shanghai:103xxx1481:DBInstanceId/postgres-0xxxx8e",
             "effect": "allow"
         }
     ]
@@ -86,8 +86,8 @@ To deny a user permissions to operate specific PostgreSQL instances, you can ass
         {
             "action": "postgres:*",
             "resource": [
-						"qcs::postgres::16xxx472:DBinstanceId/postgres-c8xxxa4",
-						"qcs::postgres::16xxx472:DBinstanceId/postgres-d8xxxb4",
+						"qcs::postgres::16xxx472:DBInstanceId/postgres-c8xxxa4",
+						"qcs::postgres::16xxx472:DBInstanceId/postgres-d8xxxb4",
 						],
             "effect": "deny"
         }

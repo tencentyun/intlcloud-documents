@@ -16,7 +16,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
 | **Your Location**                      | **Tencent Contracting Entity**                               | **Governing Law** |
 | -------------------------------------- | ------------------------------------------------------------ | ----------------- |
-| European Economic Area and Switzerland | Tencent Cloud Europe B.V., a Dutch registered company located at Atrium Building,8<sup>th</sup> Floor, Strawinskylaan 3127, 1077 ZX, Amsterdam, the Netherlands | England and Wales |
+| European Economic Area and Switzerland | Tencent Cloud Europe B.V., a Dutch registered company located at Buitenveldertselaan 1-5, 1082 VA, Amsterdam, the Netherlands | England and Wales |
 | North America                          | Tencent Cloud LLC, a Delaware corporation registered company located at Claremont2747 Park Blvd, Palo Alto, CA 94306. | California, USA   |
 | South Korea                          | Tencent Korea Yuhan Hoesa, 152, Taeheran-ro, Gangnam-gu (Gangnam Finance Center, Yeoksam-dong), Seoul, Korea | Singapore   |
 | Rest of the world                      | Aceville Pte Ltd, a Singapore-registered company located at 30 Raffles Place, #12-01, Oxley @ Raffles, Singapore 048622. | Singapore         |

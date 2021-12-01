@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
     redisReply *reply;
 	
 if (argc < 4) {
-      printf("Usage: 192.168.0.195 6379 instance_id password\n");
+      printf("Usage: 192.xx.xx.195 6379 instance_id password\n");
       exit(0);
     }
     const char *hostname = argv[1];

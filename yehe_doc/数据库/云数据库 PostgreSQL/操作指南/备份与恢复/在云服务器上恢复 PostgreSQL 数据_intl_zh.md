@@ -18,7 +18,7 @@ yum install postgresql10-server postgresql10-contrib postgresql10 postgresql10.x
 >yum install https://yum.postgresql.org/9.5/redhat/rhel-7.6-x86_64/pgdg-centos95-9.5-3.noarch.rpm
 >yum install postgresql95-server postgresql95-contrib postgresql95
 >```
-```
+
 3. 执行如下命令，查看安装结果。
 ```
 rpm -aq| grep postgres
@@ -44,8 +44,8 @@ mkdir /var/lib/pgsql/9.5/recovery
 ```
 
 ### 3. 下载全量备份文件
-1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/pgsql)，在实例列表，单击操作列的【管理】进入管理页面。
-2. 选择【备份管理】页，在备份列表中，根据备份时间选择需要恢复的备份版本，单击操作列的【下载】。
+1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/pgsql)，在实例列表，单击**操作**列的**管理**进入管理页面。
+2. 选择**备份管理**页，在备份列表中，根据备份时间选择需要恢复的备份版本，单击**操作**列的**下载**。
 3. 根据提供的 VPC 网络地址或外网地址链接下载备份文件。
 >?
 >- 使用 VPC 网络地址下载备份时，云数据库须与云服务器处于同一 VPC，备份需下载至`/var/lib/pgsql/10/recovery`目录。
@@ -109,7 +109,7 @@ chown postgres:postgres /var/lib/pgsql/10/recovery -R
 >?PostgreSQL 版本为 9.x 时，则为`/var/lib/pgsql/9.x/recovery/pg_xlog`文件夹。
 >
 
-1. 在控制台【备份管理】页，获取 xlog 下载地址，下载增量备份文件（xlog）。
+1. 在控制台**备份管理**页，获取 xlog 下载地址，下载增量备份文件（xlog）。
 下载后如下图：
 ![](https://main.qcloudimg.com/raw/2f7bc19401dc01363de4df37d9624536.png)
 2. 解压日志至`pg_wal`文件夹。

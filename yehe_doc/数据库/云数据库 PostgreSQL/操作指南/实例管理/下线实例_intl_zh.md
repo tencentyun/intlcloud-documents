@@ -8,7 +8,7 @@
 >- 当主实例存在只读实例时，且只读实例正常运行时，主实例下线会导致只读实例立即下线，若实例需要继续使用，请及时关注实例到期信息。避免因为欠费导致实例下线而无法使用。
 
 ## 操作步骤
-1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/postgres/recycle)，在回收站列表找到待下线的实例，在“操作”列选择【下线】。
-2. 在弹出的对话框，确认无误后，单击【确定】。
+1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/postgres/recycle)，在回收站列表找到待下线的实例，在**操作**列选择**下线**。
+2. 在弹出的对话框，确认无误后，单击**确定**。
 ![](https://main.qcloudimg.com/raw/77e4ddf8f17342672d20a8dc212cc5fe.png)
 

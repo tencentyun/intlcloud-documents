@@ -6,11 +6,11 @@
 ## 5秒监控说明
 - 默认新购实例都支持5秒监控粒度（除 CKV 版本）。
 - 存量实例（最小粒度仅支持1分钟），后续将开放用户自助在控制台升级到5秒粒度，具体时间请关注 [Redis 控制台](https://console.cloud.tencent.com/redis) 公告与弹窗信息。
-- 5秒监控粒度和1分钟监控粒度的实例在 [云监控](https://console.cloud.tencent.com/monitor/policylist/create) 拥有不同的告警配置入口，业务需要将现有告警策略重新在【内存版(5秒粒度)】下全部新建一份，否则新建的实例将无法绑定原有设定的告警策略。
+- 5秒监控粒度和1分钟监控粒度的实例在 [云监控](https://console.cloud.tencent.com/monitor/policylist/create) 拥有不同的告警配置入口，业务需要将现有告警策略重新在**内存版(5秒粒度)**下全部新建一份，否则新建的实例将无法绑定原有设定的告警策略。
 ![](https://main.qcloudimg.com/raw/9bfa0b792d4c0ddc4b262ea5357575e3.png)
 
 ## 查看实例监控粒度
-- 通过 [Redis 控制台](https://console.cloud.tencent.com/redis) 查看：单击实例 ID 进入实例管理页面，选择【系统监控】>【监控指标】页面，如果实例监控的时间粒度支持5秒，说明该实例支持5秒监控粒度，否则该实例是1分钟监控粒度。
+- 通过 [Redis 控制台](https://console.cloud.tencent.com/redis) 查看：单击实例 ID 进入实例管理页面，选择**系统监控**>**监控指标**页面，如果实例监控的时间粒度支持5秒，说明该实例支持5秒监控粒度，否则该实例是1分钟监控粒度。
 ![](https://main.qcloudimg.com/raw/e7833ebba07a4dd949c911c58940a4d0.png)
 - 通过 API 接口 [DescribeInstances](https://intl.cloud.tencent.com/document/product/239/32065) 返回的字段 InstanceSet.MonitorVersion 判断：MonitorVersion = 5s，表示为5秒粒度；MonitorVersion = 1m，表示为1分钟粒度。
 
@@ -21,7 +21,7 @@ Redis 目前支持5秒、1分钟、5分钟、1小时、1天的粒度的指标监
 您可以通过 Redis 实例列表、Redis 实例监控页面、云监控控制台3个地方查看云数据库 Redis 的监控信息：
 - 实例列表：登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击如下监控图标，可快速浏览监控指标。
 ![](https://main.qcloudimg.com/raw/e4e9781c7dc38505a1e08624f72f9dff.png)
-- 实例监控页面：登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，单击实例 ID 进入实例管理页面，选择【系统监控】>【监控指标】，可查看实例监控信息详情。
+- 实例监控页面：登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，单击实例 ID 进入实例管理页面，选择**系统监控**>**监控指标**，可查看实例监控信息详情。
 ![](https://main.qcloudimg.com/raw/aba46b1c932f11f173634f596b1dd69f.png)
 - 云监控控制台：登录 [云监控控制台](https://console.cloud.tencent.com/monitor/product/redis_mem_edition)，可查看汇总监控数据。
 ![](https://main.qcloudimg.com/raw/7289958cd8a4f4c8b4374d50031eb438.png)

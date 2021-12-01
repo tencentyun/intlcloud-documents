@@ -13,7 +13,7 @@
 ## Solutions
 1. [Optimize your business](#ywyh)
  1. Go to the **System Monitoring** tab in the TencentDB for Redis console to check whether QPS (Queries per Second) is high and whether there are unexpected hot keys.
- 2. Optimize your business logic after troubleshooting exceptional access. For example, optimize commands with high time complexity, hot keys, and non-persistent connections, or disable AOF (Append Only File). If the problem persists, upgrade the instance.
+ 2. Optimize your business logic after troubleshooting exceptional access. For example, optimize commands with high time complexity, hot keys, and non-persistent connections. If the problem persists, upgrade the instance.
 
 2. [Upgrade the instance](#slsj)
  - If the read load is heavy, you can add replicas to share the read load. Please confirm that your business allows inconsistent data before enabling read/write separation, because after it is enabled, inconsistent data may be read from the replica node and the master node (the replica node lags behind the master node).

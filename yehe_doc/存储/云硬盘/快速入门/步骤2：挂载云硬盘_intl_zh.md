@@ -1,20 +1,25 @@
 ## 操作场景
 本文档介绍如何通过控制台，将北京二区下一块处于“待挂载”状态的云硬盘 `cbs-test` 挂载至云服务器。
->?
->- 云硬盘只能挂载到同一可用区内的云服务器上。
->- 关于挂载云硬盘的更多信息，请参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/32401)。
->
+
+
+<dx-alert infotype="explain" title="">
+- 云硬盘只能挂载到同一可用区内的云服务器上。
+- 关于挂载云硬盘的更多信息，请参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/32401)。
+</dx-alert>
+
+
 
 ## 前提条件
 - 已具备云硬盘 `cbs-test`，详情请参见 [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/31647)。
-- 请确保云硬盘所在可用区（本示例为北京二区）下有可用状态的云服务器。关于如何购买并启动云服务器，请参见 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/10517) 及 [快速配置 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/10516)。
+- 请确保云硬盘所在可用区（本示例为北京二区）下有可用状态的云服务器。
 
 ## 操作步骤
-1. 登录云服务器控制台，选择左侧导航栏中的【[云硬盘](https://console.cloud.tencent.com/cvm/cbs)】。
-2. 在云硬盘列表页上方选择“北京”，并选择云硬盘 `cbs-test` 所在行的右侧的【更多】>【挂载】。
-3. 在弹出框中选择云硬盘待挂载的云服务器，并选择【下一步】>【开始挂载】。
->?可根据实际情况勾选“随实例释放”。
->
+1. 登录云服务器控制台，选择左侧导航栏中的 **[云硬盘](https://console.cloud.tencent.com/cvm/cbs)**。
+2. 在云硬盘列表页上方选择“北京”，并选择云硬盘 `cbs-test` 所在行的右侧的**更多** > **挂载**。
+3. 在弹出框中选择云硬盘待挂载的云服务器，并选择**下一步** > **开始挂载**。
+<dx-alert infotype="explain" title="">
+可根据实际情况勾选“随实例释放”。
+</dx-alert>
 返回云硬盘列表页面，此时云硬盘状态为“挂载中”，表示云硬盘处于正在挂载至云服务器的过程中。当云硬盘状态为“已挂载”时，表示挂载至云服务器成功。
 
 

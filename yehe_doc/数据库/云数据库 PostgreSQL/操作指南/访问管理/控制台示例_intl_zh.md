@@ -45,14 +45,14 @@
     "statement": [
         {
             "action": "postgres:*",
-            "resource": "qcs::postgres:ap-shanghai:103xxx1481:DBinstanceId/postgres-0xxxx8e",
+            "resource": "qcs::postgres:ap-shanghai:103xxx1481:DBInstanceId/postgres-0xxxx8e",
             "effect": "allow"
         }
     ]
 }
 ```
-2. 找到创建的策略，在该策略行的 “操作” 列中，单击【关联用户/组】。
-3. 在弹出的 “关联用户/用户组” 窗口中，选择您需要授权的用户/组，单击【确定】。
+2. 找到创建的策略，在该策略行的**操作**列中，单击**关联用户/组**。
+3. 在弹出的关联用户/用户组窗口中，选择您需要授权的用户/组，单击**确定**。
 
 
 ### 授权用户拥有 PostgreSQL 所有资源的操作权限策略
@@ -71,8 +71,8 @@
     ]
 }
 ```
-2. 找到创建的策略，在该策略行的 “操作” 列中，单击【关联用户/组】。
-3. 在弹出的 “关联用户/用户组” 窗口中，选择您需要授权的用户/组，单击【确定】。
+2. 找到创建的策略，在该策略行的**操作**列中，单击**关联用户/组**。
+3. 在弹出的关联用户/用户组窗口中，选择您需要授权的用户/组，单击**确定**。
 
 
 ### 禁止用户拥有特定 PostgreSQL 部分实例的所有权限策略
@@ -86,16 +86,16 @@
         {
             "action": "postgres:*",
             "resource": [
-						"qcs::postgres::16xxx472:DBinstanceId/postgres-c8xxxa4",
-						"qcs::postgres::16xxx472:DBinstanceId/postgres-d8xxxb4",
+						"qcs::postgres::16xxx472:DBInstanceId/postgres-c8xxxa4",
+						"qcs::postgres::16xxx472:DBInstanceId/postgres-d8xxxb4",
 						],
             "effect": "deny"
         }
     ]
 }
 ```
-2. 找到创建的策略，在该策略行的 “操作” 列中，单击【关联用户/组】。
-3. 在弹出的 “关联用户/用户组” 窗口中，选择您需要授权的用户/组，单击【确定】。
+2. 找到创建的策略，在该策略行的**操作**列中，单击**关联用户/组**。
+3. 在弹出的关联用户/用户组窗口中，选择您需要授权的用户/组，单击**确定**。
 
 <span id="CAMCustomPolicy"></span>
 ### 自定义策略
