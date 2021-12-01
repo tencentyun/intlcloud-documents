@@ -1,4 +1,6 @@
-﻿## Overview
+
+
+## Overview
 As required by security compliance and ICANN policies and in order to enhance the authentication of domain identity information and prevent information frauds, you must use verified mobile number and email address in the domain information and information templates in Tencent Cloud Domains.
 This document describes how to create, verify, and use a new mobile number and email address and provides FAQs.
 
