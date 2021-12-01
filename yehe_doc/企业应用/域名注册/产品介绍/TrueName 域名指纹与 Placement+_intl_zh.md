@@ -1,4 +1,5 @@
-﻿## TrueName 介绍
+
+##  TrueName 介绍
 
 TrueName （又名：域名指纹）是由 Donuts 注册局推出的一项品牌利益保护服务。购买 Donuts 注册局旗下的域名后缀可自动开通该服务，无需进行手动操作，TrueName 服务有效期与域名有效期一致。购买带有<span ><img src="https://main.qcloudimg.com/raw/44903522c47c1469c82a0eb9683488e7.png" style="margin-bottom:-7px;"/></span>图标的域名成功后，Donuts 注册局将会阻断他人注册同形异义词汇域名，从而保护域名所有人的品牌利益，从根源上阻断网络钓鱼行为。
 
