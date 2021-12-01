@@ -1,11 +1,3 @@
- 
-
- 
-
- 
-
- 
-
 ## 1.  Latar Belakang
 
 Modul ini berlaku jika Anda menggunakan Tencent Push Notiﬁcation Service ("**Fitur**”). Modul ini dimasukkan ke dalam Perjanjian Pemrosesan dan Keamanan Data yang berlokasi di [DPSA](https://intl.cloud.tencent.com/document/product/301/17347). Istilah yang digunakan tetapi tidak didefinisikan dalam Modul ini akan memiliki arti yang diberikan kepada mereka di dalam DPSA. Apabila terjadi konflik antara DPSA dan Modul ini, Modul ini akan berlaku sejauh inkonsistensi yang ada.
