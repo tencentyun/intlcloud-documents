@@ -1,4 +1,7 @@
-﻿## Overview
+
+
+
+## Overview
 
 This document describes how to download the domain certificate automatically generated after successful domain registration and naming approval by the registry. The certificate can prove your ownership of the domain.
 >!If the naming is rejected, no certificate can be downloaded.
