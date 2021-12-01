@@ -45,20 +45,20 @@ Certifique-se de que o IP coletado e o IP de recebimento estejam no mesmo VPC, e
 1. Volte para a página **Traffic mirroring (Espelhamento de tráfego)**. Se o espelho de tráfego recém-criado for exibido com **Collect Traffic (Coletar tráfego)** habilitado, significa que ele foi criado com êxito.
 ![](https://main.qcloudimg.com/raw/fd6191f3c858d0f2dd799a467c0d1c40.png)
 2. Execute as etapas a seguir para verificar se o tráfego coletado é espelhado para o IP de recebimento.
-	1. Gere o tráfego de ENI. Por exemplo, você pode fazer login no CVM de origem e executar o comando `ping ***public IP***`.
+	1. Gere o tráfego de ENI. Por exemplo, você pode fazer login no CVM de origem e executar o comando  ping **public IP**.
     **Dados de origem:**
 	 ![](https://main.qcloudimg.com/raw/74ad4cbd7a6f2179b441cafee5976bba.png)
 	 <span id="buzhou2"></span>
-	2. Faça login no CVM de destino e execute os seguintes comandos para capturar os dados e salvá-los como um arquivo “.cap” ou “.pcap”. Este documento usa o arquivo “.pcap” como exemplo.
-	      ```plaintext
-	   tcpdump -i eth0 -w capture-2020-10-27.pcap    #Insira o nome do arquivo real.
-      ```
-	**Pacotes de destino:** 
-	    ![](https://main.qcloudimg.com/raw/404f6d2c612ae76b78aa63a624e98910.png)
+	2. Faça login no CVM de destino e execute os seguintes comandos para capturar os dados e salvá-los como um arquivo “.cap” ou “.pcap”. Este documento usa o arquivo “.pcap” como exemplo.   
+ ```plaintext
+tcpdump -i eth0 -w capture-2020-10-27.pcap    #Insira o nome do arquivo real.
+ ```
+       **Pacotes de destino:** 
+ ![](https://main.qcloudimg.com/raw/404f6d2c612ae76b78aa63a624e98910.png)
 	3. Use um simulador de terminal (como SecureCRT) para fazer login no CVM de destino e exportar o arquivo salvo na [Etapa ii](#buzhou2).
-       ```plaintext
-	    sz -bye capture-2020-10-27.pcap
-       ```
+ ```plaintext
+sz -bye capture-2020-10-27.pcap
+```
 	4. Use um analisador de pacotes (como o Wireshark) para obter dados do arquivo “capture-2020-10-27.pcap” baixado. Neste exemplo, 12 pacotes espelhados do CVM de origem são obtidos do CVM de destino.
 	 **Verificação de pacotes:**
 	 ![](https://main.qcloudimg.com/raw/8011aef82006411e35edd41bf5eae5c4.png)
