@@ -1,4 +1,5 @@
-﻿## Overview
+
+## Overview
 
 Before a domain expires, Tencent Cloud will send you email or SMS notifications. This document describes how to extend the validity period of a registered domain so as to ensure its continuity. You can also renew the domain as needed.
 >?
