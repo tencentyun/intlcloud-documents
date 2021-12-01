@@ -1,10 +1,10 @@
 [](id:type)
 ## Group Types
 Instant Messaging (IM) supports the following group types:
-- A **work group for friends (Work)** is like an ordinary WeChat group. After a work group is created, a user can only join the group by being invited by a friend who is a member of the group. The invitation does not need to be accepted by the invitee or approved by the group owner. 
+- A **work group (Work)** is like a WeChat group. After a work group is created, users can join the group only after being invited by group members. The invitation does not need to be accepted by the invitee or approved by the group owner. This group type is the same as private group (Private) in earlier versions. 
 - A **public group (Public)** is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send a request, and the request needs to be approved by the group owner or an admin before the user can join the group.
-- A **meeting group (Meeting)** allows users to join and exit freely and supports viewing message history from before the user joined the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio and video conferences and online education.
-- A **live streaming group (AVChatRoom)** allows users to join and exit freely, supports unlimited number of members and does not store message history. Livestreaming groups can be used with Live Video Broadcasting (LVB) to support the on-screen comment chatting scenario.
+- A **meeting group (Meeting)** allows users to join and leave freely and view historical messages sent before they join the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio/video conferencing and online education. This group type is the same as chat room (ChatRoom) in earlier versions.
+- An **audio-video group (AVChatRoom)** allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Cloud Streaming Services (CSS) to support on-screen comment chat scenarios.
 
 
 The following table describes the features and limitations of each group type:
@@ -12,12 +12,11 @@ The following table describes the features and limitations of each group type:
 <table>
 <tr>
 <th width="20%">Feature</th>
-<th width="16%">Work Group for Friends (Work)</th>
+<th width="16%">Work Group (Work)</th>
 <th width="16%">Public Group (Public)</th>
 <th width="16%">Meeting Group (Meeting)</th>
-<th>Live Streaming Group (AVChatRoom)</th>
+<th>Audio-Video Group (AVChatRoom)</th>
 </tr>
-
 <tr>
 <td>Available member roles</td>
 <td>Group owner and ordinary member</td>
@@ -87,8 +86,8 @@ The following table describes the features and limitations of each group type:
 </tr>
 <tr>
 <td>Number of groups</td>
-<td colspan="3"><ul style="margin:0;padding-left:10px"><li>Trial Edition: up to 100 existing groups, and disbanded groups do not count against the quota</li><li>Pro Edition or Flagship Edition: unlimited</li></ul></td>
-<td><ul style="margin:0;padding-left:10px"><li>Trial Edition: up to 10 existing groups, and disbanded groups do not count against the quota</li><li>Pro Edition: up to 50 existing groups, and disbanded groups do not count against the quota<br>You can upgrade to unlimited number of live streaming groups by purchasing <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a></li><li>Flagship Edition: unlimited</li></ul></td>
+<td colspan="3"><ul style="margin:0;padding-left:10px"><li>Trial Edition: up to 100 existing groups, and deleted groups do not count against the quota.</li><li>Pro Edition or Flagship Edition: unlimited</li></ul></td>
+<td><ul style="margin:0;padding-left:10px"><li>Trial Edition: up to 10 existing groups, and deleted groups do not count against the quota.</li><li>Pro Edition: up to 50 existing groups, and deleted groups do not count against the quota.<br>You can upgrade to unlimited number of audio-video groups by purchasing the <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a>.</li><li>Flagship Edition: unlimited</li></ul></td>
 </tr>
 <tr>
 <td>Number of group members</td>
@@ -97,7 +96,9 @@ The following table describes the features and limitations of each group type:
 </tr>
 </table>
 
->?In the Pro Edition or Flagship Edition SDKAppID, the maximum net increase in group quantity per day is 10,000 for all group types. Free peak group count is 100,000 per month, and you will need to <a href="https://intl.cloud.tencent.com/document/product/1047/34350"> pay for usage exceeding the free quota</a>.
+>?
+>- Group types are upgraded in the new SDK version and they are **work group (Work)**, **public group (Public)**, **meeting group (Meeting)**, and **audio-video group (AVChatRoom)**. Private group (Private) and chat room (ChatRoom) in earlier versions (which have Public, Private, ChatRoom, and AVChatRoom groups) correspond to work group (Work) and meeting group (Meeting) in the new version respectively.
+>- In the Pro Edition or Flagship Edition SDKAppID, the maximum net increase in group count per day is 10,000 for all group types. Free peak group count is 100,000 per month, and you will need to <a href="https://intl.cloud.tencent.com/document/product/1047/34350"> pay for usage not covered by the free quota</a>.
 
 
 ## Group Management
@@ -133,14 +134,14 @@ memberInfo.userID = @"vinson";
 ### Joining a group
 The processes for joining groups of different types are described as follows:
 
-| Type | Work Group (Work) | Social Networking Group (Public) | Temporary Meeting Group (Meeting) | Live Streaming Group (AVChatRoom) |
+| Type | Work Group (Work) | Public Group (Public) | Meeting Group (Meeting) | Audio-Video Group (AVChatRoom) |
 |---------|---------|---------|---------|---------|
 | How to join group | Must be invited by group member | User joins group after request is approved by group owner or admin | User can join freely | User can join freely |
 
 #### Scenario 1: users can join and quit the group freely
-Meeting groups (Meeting) and live streaming groups (AVChatRoom) can be used for interactive scenarios where users join and exit groups frequently, such as online conference and runway live streaming. The group joining procedure is therefore the simplest.
+Meeting groups (Meeting) and audio-video groups (AVChatRoom) can be used for interactive scenarios where users join and exit groups frequently, such as online conferencing and show live streaming. The group joining procedure is therefore the simplest.
 
-After a user successfully joins a group by calling [joinGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a9979ed856657724d317791c723bacef5), all group members (including the joined user), receive the [onMemberEnter](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#aa18644e5977300f3dcf29473e58be21c) callback. 
+After a user successfully joins a group by calling [joinGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a9979ed856657724d317791c723bacef5), all group members (including the joined user) receive the [onMemberEnter](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#aa18644e5977300f3dcf29473e58be21c) callback. 
 
 #### Scenario 2: users must be invited to join the group
 Resembling WeChat and WeCom groups, work groups (Work) are suitable for communication in work environments. The interaction pattern is designed to disable proactive group joining and only allows users to be invited to join the group by group members.
@@ -148,7 +149,7 @@ Resembling WeChat and WeCom groups, work groups (Work) are suitable for communic
 A group member calls [inviteUserToGroup](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#af9d9a04bf3fe5a38346af842f7335f39) to invite a user to group, then all group members (including the inviter) receive the [onMemberInvited](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a6664f9b1955f58f6445774f0247de5ed) callback.
 
 #### Scenario 3: users join the group after requests are approved
-Social networking groups (Public) are similar to the interest groups and tribes in QQ. Any user can request to join the group, but will not become a member of the group until the request is approved by the group owner or admin. While approval is required by default, the group owner or admin can call the [setGroupInfo](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a13b25d1f491e18ab0ba953ffc2ca9e82) API to set the group joining option (`V2TIMGroupAddOpt`) to "forbid anyone to join" which is tighter, or to "disable the approval process", which is more flexible.
+Public groups (Public) are similar to the interest groups and tribes in QQ. Any user can request to join the group, but will not become a member of the group until the request is approved by the group owner or admin. While approval is required by default, the group owner or admin can call the [setGroupInfo](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a13b25d1f491e18ab0ba953ffc2ca9e82) API to set the group joining option (`V2TIMGroupAddOpt`) to **forbid anyone to join** which is tighter, or to **disable the approval process**, which is more flexible.
 - V2TIM_GROUP_ADD_FORBID: forbid anyone to join the group
 - V2TIM_GROUP_ADD_AUTH: (default) group owner or admin approval is required for group joining.
 - V2TIM_GROUP_ADD_ANY: disable the approval process to allow any user to join the group.
@@ -157,28 +158,28 @@ The following diagram illustrates the process of group joining that requires app
 ![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
 
 1. **The user sends a request to join the group**
-  The user calls [joinGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a9979ed856657724d317791c723bacef5) to join the group.
-2. **The group owner or admin process the group joining application**
- After the [onReceiveJoinApplication](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a62e957192fd0ad88e79769a6266f5512) callback is received, the group owner or admin calls [getGroupApplicationList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#ae761e7a0c5fd2ad55219bb732edae9cb) to get the list of group joining applications, and approves or rejects an application with [acceptGroupApplication](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a72a9fc4dbb99d354121b944e98382e68) or [refuseGroupApplication](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#ad632874883b7b73e3fba773044bd8c1a).
+    The user calls [joinGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a9979ed856657724d317791c723bacef5) to join the group.
+2. **The group owner or admin processes the group joining request**
+ After receiving the [onReceiveJoinApplication](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a62e957192fd0ad88e79769a6266f5512) callback, the group owner or admin calls the [getGroupApplicationList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#ae761e7a0c5fd2ad55219bb732edae9cb) API to get the list of group joining requests, and accepts or rejects a request with [acceptGroupApplication](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a72a9fc4dbb99d354121b944e98382e68) or [refuseGroupApplication](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#ad632874883b7b73e3fba773044bd8c1a).
 3. **The user receives the result**
-The user receives the [onApplicationProcessed](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a440a39aad5fb7e342579d1ddf0eea8e5) callback in [V2TIMGroupListener](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html). If `isAgreeJoin` is `true`, the application is approved, otherwise the application is rejected. If the application is approved, all members (including the requestor) receive the [onMemberEnter](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#aa18644e5977300f3dcf29473e58be21c) callback.
+The user receives the [onApplicationProcessed](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a440a39aad5fb7e342579d1ddf0eea8e5) callback in [V2TIMGroupListener](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html). If `isAgreeJoin` is `true`, the request is accepted. Otherwise, the request is rejected. If the request is accepted, all members (including the requester) receive the [onMemberEnter](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#aa18644e5977300f3dcf29473e58be21c) callback.
 
 [](id:quit)
 ### Quitting a group
 Call [quitGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a9979ed856657724d317791c723bacef5) to quit a group. The user who quits the group then receives the [onQuitFromGroup](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a9d4a0c42366ea13f688a3c369f91e80f) callback and other group members receive the [onMemberLeave](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a70be19520a034b2f8fcba2428b6e4029) callback.
->!For group owner of social networking group (Public), temporary meeting group (Meeting), and live streaming group (AVChatRoom) who is not allowed to quit the group, the group owner can [disband the group](#dismiss).
+>!For a public group (Public), meeting group (Meeting), or audio-video group (AVChatRoom), the group owner is not allowed to quit the group but can [delete the group](#dismiss).
 
 [](id:dismiss)
 ### Deleting groups
-Call [dismissGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#af6605dd9624849843938573ef05b5463) to disband a group. Then all group members receive the [onGroupDismissed](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a2ba74c6627e1e77459bae84810af1d9d) callback.
+Call [dismissGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#af6605dd9624849843938573ef05b5463) to delete a group. Then all group members receive the [onGroupDismissed](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a2ba74c6627e1e77459bae84810af1d9d) callback.
 
 >! 
->- For a social networking group (Public), temporary meeting group (Meeting), and live streaming group (AVChatRoom), the group owner can disband the group at any time.
->- For a work group (Work), the group owner does not have the privilege to disband the group. To disband the group, you must have your service server call the RESTful API [Disbanding a Group](https://intl.cloud.tencent.com/document/product/1047/34896).
+>- For a public group (Public), meeting group (Meeting), or audio-video group (AVChatRoom), the group owner can delete the group at any time.
+>- For a work group (Work), the group owner does not have the permission to delete the group. To delete the group, you must have your service server call the [RESTful API](https://intl.cloud.tencent.com/document/product/1047/34896).
 
 
 ### Getting the list of joined groups
-Call [getJoinedGroupList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#ae12e170ad585eaa8fb9f080bdc3bf8b8) to get a list of work groups (Work), social networking groups (Public), and temporary meeting groups (Meeting) the current user has joined. Live streaming groups (AVChatRoom) will not be included in this list.
+Call [getJoinedGroupList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#ae12e170ad585eaa8fb9f080bdc3bf8b8) to get a list of work groups (Work), public groups (Public), and meeting groups (Meeting) the current user has joined. Audio-video groups (AVChatRoom) will not be included in this list.
 
 ## Group Profiles and Group Settings
 ### Getting group profiles
@@ -188,8 +189,8 @@ Call [getGroupsInfo](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Gro
 Call [setGroupInfo](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a13b25d1f491e18ab0ba953ffc2ca9e82) to modify the group profile. When the modification is complete, all group members receive the [onGroupInfoChanged](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#ae07b62dc7f41e4c0fe74e515fd80f6ad) callback.
 >!
 > - For work groups (Work), all group members can modify the basic group profile.
-> - For social networking groups (Public) and temporary meeting groups (Meeting), only the group owner and admin can modify the basic group profile.
-> - For live streaming groups (AVChatRoom), only the group owner can modify the group profile.
+> - For public groups (Public) and meeting groups (Meeting), only the group owner and admin can modify the group profile.
+> - For audio-video groups (AVChatRoom), only the group owner can modify the group profile.
 
 ```
 // Sample code: modify group profile
@@ -213,15 +214,15 @@ The group message receiving option allows you to mute group messages:
 - **No group message will be received**
 With the group message receiving option set to `V2TIM_GROUP_NOT_RECEIVE_MESSAGE`, no group message will be received, and the conversation list will not be updated.
 - **Group messages will be received but the user will not be notified. A badge without the unread count will be displayed on the conversation list interface**
->?This mode requires the unread count feature and therefore it applies only to work groups (Work) and social networking groups (Public).
+>?This mode requires the unread count feature and therefore it applies only to work groups (Work) and public groups (Public).
 >
-With the group message receiving option set to `V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE`, when new group messages are received and the conversation list needs to update, get the unread count through [unreadCount](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a816b83eb32d84ea5345f14ced92bb7f6). Use [recvOpt](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a851651878491c64d73aa83131134e6cc) to verify that the group message receiving option is `V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE` and then display a badge without the unread count.
+With the group message receiving option set to `V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE`, when new group messages are received and the conversation list needs to be updated, you can get the unread count through [unreadCount](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a816b83eb32d84ea5345f14ced92bb7f6). Use [recvOpt](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a851651878491c64d73aa83131134e6cc) to verify that a red dot instead of the unread count is displayed when the group message receiving option is `V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE`.
 
 ## Group Attributes (Custom Group Fields)
 New custom group fields, also called group attributes, are designed based on API 2.0. They have the following features:
 1. You can CRUD group attributes in the client instead of console.
 2. You can configure up to 16 group attributes. The size of each group attribute can be up to 4 KB, and the total size of all group attributes can be up to 16 KB.
-3. Only live streaming groups (AVChatRoom) support group attributes.
+3. Only audio-video groups (AVChatRoom) support group attributes.
 4. The `initGroupAttributes`, `setGroupAttributes`, and `deleteGroupAttributes` APIs each can be called by the SDK for up to 10 times per 5 seconds, and the 8511 error code will be called back if the limit is exceeded. The APIs each can be called by the backend for up to 5 times per second, and the 10049 error code will be called back if the limit is exceeded.
 5. The `getGroupAttributes` API can be called by the SDK for up to 20 times per 5 seconds.
 
@@ -264,7 +265,7 @@ When calling the [getGroupMemberList](https://im.sdk.qcloud.com/doc/en/categoryV
 nextSeq:0 succ:^(uint64_t nextSeq, NSArray<V2TIMGroupMemberInfo *> *memberList) {
     // Pulled successfully
 } fail:^(int code, NSString *msg) {
-    // Messages fail to be pulled
+    // Message pulling failed
 }];
 ```
 
@@ -309,11 +310,11 @@ The group owner or admin can mute the entire group via the [setGroupInfo](https:
 
 [](id:kick)
 ### Removing group members
-The group owner or admin can call the [kickGroupMember](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a21d4d4d5b5291d8eda74b3359d857714) API to remove a group member. As a live streaming group (AVChatRoom) can have unlimited members, it does not support the API. You can use [muteGroupMember](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a0ee1017ecded651208261ac7d1013ad0) to achieve the same effect instead.
-After the member is removed, all group members (including the removed member) receive the [onMemberKicked](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#afac4f4644954bf86a10d937c1a3499cf).
+The group owner or admin can call the [kickGroupMember](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a21d4d4d5b5291d8eda74b3359d857714) API to remove a group member. As an audio-video group (AVChatRoom) can have unlimited members, it does not support the API. You can use [muteGroupMember](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a0ee1017ecded651208261ac7d1013ad0) to achieve the same effect instead.
+After the member is removed, all group members (including the removed member) receive the [onMemberKicked](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#afac4f4644954bf86a10d937c1a3499cf) callback.
 
 ### Changing group member roles
-The group owner can call [setGroupMemberRole](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a548aef46b1ef435864678d56f0c0ce54) to change the role of a member of social networking group (Public) or temporary meeting group (Meeting). Roles available for changing are ordinary members and group admins.
+The group owner can call [setGroupMemberRole](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a548aef46b1ef435864678d56f0c0ce54) to change the role of a member of public group (Public) or meeting group (Meeting). Roles available for changing are ordinary members and group admins.
 - After a member is set as group admin, all group members (including the new admin) receive the [onGrantAdministrator](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a9e4f0397fa6ba7998ecf8b9c62312afe) callback.
 - After the admin role is removed for a member, all group members (including the member with admin role removed) receive the [onRevokeAdministrator](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#ab0b95c7cdfad6c21a1af7154df9cc677) callback.
 
@@ -324,15 +325,15 @@ After the group ownership is transferred, all group members receive the [onGroup
 
 ## FAQs
 
-### 1. Can a live streaming group (AVChatRoom) continue to receive messages after it was disconnected and then reconnected?
-Yes, but since live streaming group (AVChatRoom) does not support storing message history in the cloud, it cannot pull the messages that were sent when it was disconnected.
+### 1. Can an audio-video group (AVChatRoom) continue to receive messages after it was disconnected and then reconnected?
+Yes, but since an audio-video group (AVChatRoom) does not support storing message history in the cloud, it cannot pull the messages that were sent when it was disconnected.
 
 ### 2. Why doesn’t the group receive notifications when a user joins or quits the group?
 Verify the group type:
-- Temporary meeting group (Meeting) does not support member change notifications.
-- Live streaming group (AVChatRoom) can receive up to 40 messages per second, therefore it prioritizes the receiving and sending of high-priority messages and discards messages with the lowest priority first once the frequency limit is exceeded.
+- Meeting group (Meeting) does not support member change notifications.
+- Audio-video group (AVChatRoom) can receive up to 40 messages per second, therefore it prioritizes the receiving and sending of high-priority messages and discards messages with the lowest priority first once the frequency limit is exceeded.
 
-### 3. Why does the unread count of temporary meeting group (Meeting) remain at 0?
-Temporary meeting group (Meeting) and live streaming group (AVChatRoom) are designed for conference and live streaming scenarios respectively, and they do not support the unread count feature.
+### 3. Why does the unread count of meeting group (Meeting) remain at 0?
+Meeting group (Meeting) and audio-video group (AVChatRoom) are designed for conference and live streaming scenarios respectively, and they do not support the unread count feature.
 
 

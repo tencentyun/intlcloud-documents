@@ -33,17 +33,6 @@ Log level.
 | kTIMLog_Error | Error log |
 | kTIMLog_Assert | Assertion log |
 
-### TIMLoginStatus
-
-Login status.
-
-| Name | Description |
-|-----|-----|
-| kTIMLoginStatus_Logined | Logged in |
-| kTIMLoginStatus_Logining | Logging in |
-| kTIMLoginStatus_UnLogined | Not logged in |
-| kTIMLoginStatus_Logouting | Logging out |
-
 ### TIMNetworkStatus
 
 Connection event type.
@@ -64,8 +53,6 @@ Conversation event type.
 | kTIMConvEvent_Add | A conversation is added. For example, when a new message is received and a new conversation is generated, this event is triggered. |
 | kTIMConvEvent_Del | A conversation is deleted. For example, if you delete a conversation, this event is triggered. |
 | kTIMConvEvent_Update | A conversation is updated. When the number of unread messages in a conversation changes or a new message is received, this event is triggered. |
-| kTIMConvEvent_Start | A conversation is started. |
-| kTIMConvEvent_Finish | A conversation is ended. |
 
 ### TIMConvType
 
@@ -331,19 +318,14 @@ Message JSON keys.
 | kTIMMsgIsOnlineMsg | bool | Read/Write (optional) | Whether the message is an online message. `false` (default): common message; `true`: message that disappears after being viewed |
 | kTIMMsgIsPeerRead | bool | Read-only | Whether the message is read by the peer of the conversation |
 | kTIMMsgStatus | uint [TIMMsgStatus](#timmsgstatus) | Read/Write (optional) | Current status of the message |
-| kTIMMsgUniqueId | uint64 | Read-only | Unique ID of the message. `kTIMMsgMsgId` is recommended. |
-| kTIMMsgMsgId | string | Read-only | Unique ID of the message |
+| kTIMMsgUniqueId | uint64 | Read-only | Unique ID of the message |
 | kTIMMsgRand | uint64 | Read-only | Random code of the message |
 | kTIMMsgSeq | uint64 | Read-only | Sequence number of the message |
-| kTIMMsgCustomInt | uint32_t | Read/Write (optional) | Custom integer field (saved locally, will not be sent to the peer end, and will become invalid after the app is uninstalled and reinstalled) |
-| kTIMMsgCloudCustomStr | string | Read/Write (optional) | Custom message data (saved in the cloud, will be sent to the peer end, and can still be pulled after the app is uninstalled and reinstalled) |
-| kTIMMsgIsExcludedFromUnreadCount | bool | Read/Write (optional) | Whether the message is excluded from the conversation unread message count. NO (default): included in the unread message count of the conversation; YES: excluded from the conversation unread message count|
-| kTIMMsgGroupAtUserArray | string | Read/Write (optional) | List of users that need to be mentioned (@). If you need to @all, pass in `kImSDK_MesssageAtALL`. |
-| kTIMMsgIsForwardMessage | bool | Read/Write (optional) | If you need to forward a message, you cannot directly call the `sendMessage` API to send the original message. You need to set `kTIMMsgIsForwardMessage` in the original message to `true` before sending the original message. |
+| kTIMMsgCustomInt | uint32_t | Read/Write (optional) | Custom integer field |
+| kTIMMsgCustomStr | string | Read/Write (optional) | Custom data field |
 | kTIMMsgSenderProfile | object [UserProfile](#userprofile) | Read/Write (optional) | User profile of the message sender |
 | kTIMMsgSenderGroupMemberInfo | object [GroupMemberInfo](#groupmemberinfo) | Read/Write (optional) | Information of the message sender in a group. This parameter is only valid in a group session. Currently, only the `kTIMGroupMemberInfoIdentifier` and `kTIMGroupMemberInfoNameCard` fields can be obtained. For other fields, you are advised to obtain them via the `TIMGroupGetMemberInfoList` API. |
 | kTIMMsgOfflinePushConfig | object [OfflinePushConfig](#offlinepushconfig) | Read/Write (optional) | Offline push settings of the message |
-| kTIMMsgExcludedFromLastMessage | string | Read/Write (optional) | Whether the current message is used as the last message (`lastMessage`) of the conversation. `true`: no; `false`: yes |
 
 >?
 - Corresponding element sequence:
@@ -382,14 +364,13 @@ Element type.
 | kTIMElem_Sound | Sound element |
 | kTIMElem_Custom | Custom element |
 | kTIMElem_File | File element |
-| kTIMElem_GroupTips | Group or system message element |
+| kTIMElem_GroupTips | Group system message element |
 | kTIMElem_Face | Emoji element |
 | kTIMElem_Location | Location element |
 | kTIMElem_GroupReport | Group system message element |
 | kTIMElem_Video | Video element |
 | kTIMElem_FriendChange | Element of the relationship chain change message |
 | kTIMElem_ProfileChange | Profile change message element |
-| kTIMElem_Merge | Combined message element |
 | kTIMElem_Invalid | Unknown element type |
 
 ### Elem
@@ -602,22 +583,6 @@ Video element.
 | kTIMVideoElemImageUrl | string | Read-only | URL for screenshot file download |
 | kTIMVideoElemTaskId | uint | Read-only | Task ID |
 
-
-### MergerElem
-
-Elements of a combined message.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| kTIMMergerElemTitle | string | Read/Write (required) | Title of the combined message |
-| kTIMMergerElemAbstractArray | uint | Read/Write (required) | Abstract list of the combined message |
-| kTIMMergerElemCompatibleText | uint | Read/Write (required) | Combined messages are compatible with text. SDKs of early versions do not support combined messages, and they will send a text message with the content `compatibleText` by default. This parameter cannot be empty. |
-| kTIMMergerElemMsgArray | string | Read/Write (required) | Message list (Up to 300 messages are supported. The message object must be in the `kTIMMsg_SendSucc` status. The message type cannot be `GroupTipsElem` or `GroupReportElem`.) |
-| kTIMMergerElemLayersOverLimit | string | Read-only | When a combined message also contains combined messages, we call the situation combination nesting. The number of combination nesting levels cannot exceed 100. If the limit is exceeded, `layersOverLimit` will return `YES`, `kTIMMergerElemTitle` and `kTIMMergerElemAbstractArray` will return an empty string, and `DownloadMergerMessage` will return the `ERR_MERGER_MSG_LAYERS_OVER_LIMIT` error code. |
-| kTIMMergerElemRelayPbKey | int | Read-only | Key for downloading the message list on the native SDK. |
-| kTIMMergerElemRelayJsonKey | int | Read-only | Key for downloading the message list on the web SDK. |
-| kTIMMergerElemRelayBuffer | string | Read-only | Buffer for message forwarding. |
-
 ### TIMGroupTipGroupChangeFlag
 
 Group information modification type.
@@ -630,8 +595,7 @@ Group information modification type.
 | kTIMGroupTipChangeFlag_Notification | Modifies the group notice. |
 | kTIMGroupTipChangeFlag_FaceUrl | Modifies the URL of the group profile photo. |
 | kTIMGroupTipChangeFlag_Owner | Modifies the group owner. |
-| kTIMGroupTipChangeFlag_Custom | Modifies group custom information. |
-| kTIMGroupTipChangeFlag_Attribute | Modifies group attributes (new) |
+| kTIMGroupTipChangeFlag_Custom |Modifies group custom information. |
 
 ### GroupTipGroupChangeInfo
 
@@ -677,7 +641,7 @@ Message element of the group system (for all group members).
 | kTIMGroupTipsElemOpUser | string | Read-only | Operator ID |
 | kTIMGroupTipsElemGroupName | string | Read-only | Group name |
 | kTIMGroupTipsElemGroupId | string | Read-only | Group ID |
-| kTIMGroupTipsElemTime | uint | Read-only | Group message time (disused) |
+| kTIMGroupTipsElemTime | uint | Read-only | Group message time |
 | kTIMGroupTipsElemUserArray | array string | Read-only | List of accounts operated on |
 | kTIMGroupTipsElemGroupChangeInfoArray | array [GroupTipGroupChangeInfo](#grouptipgroupchangeinfo) | Read-only | Group profile change information list. This parameter is valid only when the value of `tips_type` is `kTIMGroupTip_GroupInfoChange`. |
 | kTIMGroupTipsElemMemberChangeInfoArray | array [GroupTipMemberChangeInfo](#grouptipmemberchangeinfo) | Read-only | Group member change information list. This parameter is valid only when the value of `tips_type` is `kTIMGroupTip_MemberInfoChange`. |
@@ -705,7 +669,7 @@ Group system message type.
 | kTIMGroupReport_Quit | Group leaving (received only by the user who leaves the group and not displayed) |
 | kTIMGroupReport_GrantAdmin | Admin status set (received only by the set admin) |
 | kTIMGroupReport_CancelAdmin | Admin status canceled (received only by the canceled admin) |
-| kTIMGroupReport_GroupRecycle | Group repossessed (received by all members and not displayed) |
+| kTIMGroupReport_RevokeAdmin | Group repossessed (received by all members and not displayed) |
 | kTIMGroupReport_InviteReq | Invitee received an invitation and needed to accept or reject the invitation |
 | kTIMGroupReport_InviteAccept | Group invitation request approved (received only by the inviter) |
 | kTIMGroupReport_InviteRefuse | Group invitation request rejected (received only by the inviter) |
@@ -829,9 +793,6 @@ Parameters of the message getting API.
 | kTIMMsgGetMsgListParamCount | uint | Write-only (optional) | Number of messages following the specified message |
 | kTIMMsgGetMsgListParamIsRamble | bool | Write-only (optional) | Whether the message is a roaming message |
 | kTIMMsgGetMsgListParamIsForward | bool | Write-only (optional) | Whether the sorting mode is forward sorting |
-| kTIMMsgGetMsgListParamLastMsgSeq | bool | Write-only (optional) | Sequence number of the message |
-| kTIMMsgGetMsgListParamTimeBegin | bool | Write-only (optional) | Start time; UTC timestamp, in seconds |
-| kTIMMsgGetMsgListParamTimePeriod | bool | Write-only (optional) | Duration, in seconds |
 
 ### MsgDeleteParam
 
@@ -841,26 +802,6 @@ Parameters of the message deletion API.
 |-----|-----|-----|-----|
 | kTIMMsgDeleteParamMsg | object [Message](#message) | Write-only (optional) | Message to be deleted |
 | kTIMMsgDeleteParamIsRamble | bool | Write-only (optional) | Whether to delete all local or roaming messages. `true`: delete roaming messages; `false` (default): delete local messages |
-
-### TIMReceiveMessageOpt
-
-Message receiving options.
-
-| Name | Description |
-|-----|-----|
-| kTIMRecvMsgOpt_Receive | Messages will be received when the user is online, and APNs push notifications will be received when the user is offline. |
-| kTIMRecvMsgOpt_Not_Receive | Messages will not be received when the user is online, and no push notification will be received when the user is offline. |
-| kTIMRecvMsgOpt_Not_Notify | Messages will be received when the user is online, and no push notification will be received when the user is offline. |
-
-### GetC2CRecvMsgOptResult
-
-Query result of the one-to-one message receiving option.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| kTIMMsgGetC2CRecvMsgOptResultIdentifier | string | Write-only | User ID. |
-| kTIMMsgDeleteParamIsRamble | TIMReceiveMessageOpt | Write-only | Message receiving option. |
-
 
 ### TIMDownloadType
 
@@ -894,53 +835,6 @@ Result returned by the element download API.
 | kTIMMsgDownloadElemResultCurrentSize | uint | Read-only | Size of the downloaded part of the file |
 | kTIMMsgDownloadElemResultTotalSize | uint | Read-only | Total size of the file to be downloaded |
 
-### KeywordListMatchType
-
-Combination types of message search keywords.
-
-| Name | Description |
-|-----|-----|
-| TIMKeywordListMatchType_Or |  |
-| TIMKeywordListMatchType_And |  |
-
-### MessageSearchParam
-
-Message search parameters.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| kTIMMsgSearchParamKeywordArray | array string | Write-only (required) | Search keyword list. Up to 5 keywords are supported. |
-| kTIMMsgSearchParamMessageTypeArray | array [TIMElemType]() | Read-only | Message types to search. If an empty array is passed in, all message types supported are searched (`FaceElem` and `GroupTipsElem` are not supported). For more information about valid values, see `TIMElemType`. |
-| kTIMMsgSearchParamConvId | string | Write-only (required) | Conversation ID. |
-| kTIMMsgSearchParamConvType | uint | Write-only (required) | Conversation type. `kTIMConv_Invalid`: search all conversations; other values: search specified conversations. |
-| kTIMMsgSearchParamSearchTimePosition | uint | Write-only (required) | Start time for search. The default value is `0`, indicating to start searching now. The value can also be the UTC timestamp, in seconds. |
-| kTIMMsgSearchParamSearchTimePeriod | uint | Write-only (required) | A time period in the past starting from the start time, in seconds. The default value `0` indicates that the time range is not limited. The value `24x60x60` indicates the past day. |
-| kTIMMsgSearchParamPageIndex | uint | Write-only (required) | Page number: used for the paginated display of the search results. Page numbers must start from 0. First call: call `searchLocalMessage` with `pageSize` being set to `10` and `pageIndex` to `0`. Then you can get the total number of results from totalCount in the callback. Page quantity calculation: totalPage = (totalCount % loadCount == 0) ? (totalCount / pageIndex) : (totalCount / pageIndex + 1). Second call: you can specify `pageIndex` (`pageIndex` < `totalPage`) to return the subsequent page number. |
-| kTIMMsgSearchParamPageSize | uint | Write-only (required) | Number of results per page: used for the paginated display of the search results. If you do not want to paginate the search results, set the parameter to 0. However, a large number of search results without pagination may cause performance issues. |
-| kTIMMsgSearchParamKeywordListMatchType | uint | Write-only (required) | Search messages by keywords combined with OR or AND. |
-| kTIMMsgSearchParamSenderIdentifierArray | uint | Write-only (required) | Search messages by sender UserID. |
-
-### MessageSearchResultItem
-
-Message search result items.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| kTIMMsgSearchResultItemConvId | string | Read-only | Conversation ID. |
-| kTIMMsgSearchResultItemConvType | uint | Read-only | Conversation type. `kTIMConv_Invalid`: search all conversations; other values: search specified conversations. |
-| kTIMMsgSearchResultItemTotalMessageCount | uint | Read-only | Total number of eligible messages found in the current conversation. |
-| kTIMMsgSearchResultItemMessageArray | array [Message]() | Read-only | List of eligible messages. |
-
-### MessageSearchResult
-
-Message search results.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| kTIMMsgSearchResultTotalCount | uint | Read-only | If you search **a specified conversation**, the total number of eligible messages is returned. If you search **all conversations**, the total number of conversations where the eligible messages reside is returned. |
-| kTIMMsgSearchResultItemConvType | uint | Read-only | Conversation type. `kTIMConv_Invalid`: search all conversations; other values: search specified conversations. |
-| kTIMMsgSearchResultItemArray | array [TIMMessageSearchResultItem]() | Read-only | If you search **a specified conversation**, the result list contains only the results found in the conversation. If you search **all conversations**, eligible messages are grouped by conversation ID and returned on multiple pages. |
-
 ## Key Conversation Types
 
 Definitions of conversation-related macros and JSON keys accessed by related structure members.
@@ -954,25 +848,6 @@ Draft information.
 | kTIMDraftMsg | object [Message](#message) | Read-only | Draft message |
 | kTIMDraftUserDefine | string | Read-only | User-defined data |
 | kTIMDraftEditTime | uint | Read-only | Latest edit time of the draft message |
-
-### TIMGroupAtType
-
-Mentioning (@) type.
-
-| Name | Description |
-|-----|-----|
-| kTIMGroup_At_Me | @me |
-| kTIMGroup_At_All | @all in the group |
-| kTIMGroup_At_All_At_ME | @all in the group and @me alone |
-
-### GroupAtInfo
-
-Group @ information.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| kTIMGroupAtInfoSeq | uint64 | Read-only | Sequence number of an @ message, i.e., message with the "@me" or "@all" identifier. |
-| kTIMGroupAtInfoAtType | uint [TIMGroupAtType]() | Read-only | @ notification type: "@me", "@all", or "@all in the group and @me alone". |
 
 ### ConvInfo
 
@@ -989,27 +864,6 @@ Conversation information.
 | kTIMConvLastMsg | object [Message](#message) |Read-only | Last message of the conversation |
 | kTIMConvIsHasDraft | bool | Read-only | Whether the conversation has a draft |
 | kTIMConvDraft | object [Draft](#draft) | Read-only (optional) | Draft message in the conversation |
-| kTIMConvRecvOpt | uint [TIMReceiveMessageOpt]() | Read-only (optional) | Message receiving option |
-| kTIMConvGroupAtInfoArray | array [GroupAtInfo]() | Read-only (optional) | @ information list of a group conversation, which is used to display "someone@me" or "@all" notifications |
-| kTIMConvIsPinned | object [Draft](#draft) | Read-only (optional) | Whether to pin on top |
-| kTIMConvShowName | object [Draft](#draft) | Read-only (optional) | Conversation display name. Conversation display name priorities are as follows: 1. group conversation — group name -> group ID; 2. C2C conversation — peer's remarks -> peer's nickname -> peer's userID |
-
-### GetConversationListParam
-
-Parameters for getting the conversation list.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| kTIMGetConversationListParamConvId | string | Write-only | Conversation ID |
-| kTIMConvType | uint [TIMConvType](#timconvtype) | Write-only | Conversation type |
-
-### GetTotalUnreadNumberResult
-
-Result of getting the unread message count of a conversation.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| kTIMConvGetTotalUnreadMessageCountResultUnreadCount | int | Read-only | Unread message count of the conversation |
 
 ## Key Group Types
 
@@ -1062,16 +916,12 @@ Group member information.
 | JSON Key | Value Type | Attribute | Description |
 |-----|-----|-----|-----|
 | kTIMGroupMemberInfoIdentifier | string | Read/write (required) | ID of the group member |
-| kTIMGroupMemberInfoGroupId | string | Read-only | Group ID |
 | kTIMGroupMemberInfoJoinTime | uint | Read-only | Group joining time of the group member |
 | kTIMGroupMemberInfoMemberRole | uint [TIMGroupMemberRole](#timgroupmemberrole) | Read/write (optional) | Role of the group member |
 | kTIMGroupMemberInfoMsgFlag | uint | Read-only | Message receiving option of the group member |
 | kTIMGroupMemberInfoMsgSeq | uint | Read-only | - |
 | kTIMGroupMemberInfoShutupTime | uint | Read-only | Muting period of the group member |
 | kTIMGroupMemberInfoNameCard | string | Read-only | Group name card of the group member |
-| kTIMGroupMemberInfoNickName | string | Read-only | Nickname of the friend |
-| kTIMGroupMemberInfoRemark | string | Read-only | Remarks of the friend |
-| kTIMGroupMemberInfoFaceUrl | string | Read-only | Profile photo of the friend |
 | kTIMGroupMemberInfoCustomInfo | array [GroupMemberInfoCustemString](#groupmemberinfocustemstring) | Read-only | See [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529). |
 
 ### GroupInfoCustemString
@@ -1397,51 +1247,6 @@ Parameters of the API for processing pending group messages.
 | kTIMGroupHandlePendencyParamHandleMsg | string | Write-only (optional) | Acceptance or rejection information. The default value is an empty string. |
 | kTIMGroupHandlePendencyParamPendency | object [GroupPendency](#grouppendency) | Write-only (optional) | Pending request details |
 
-### GroupGetOnlineMemberCountResult
-
-Result of getting the number of online members of a group.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| TIMGroupGetOnlineMemberCountResulCount | int | Read-only | Number of online members of the group |
-
-### TIMGroupSearchFieldKey
-
-Enumeration of group search fields.
-
-| Name | Description |
-|-----|-----|
-| kTIMGroupSearchFieldKey_GroupId | Group ID |
-| kTIMGroupSearchFieldKey_GroupName | Group name |
-
-### GroupSearchParam
-
-Group search parameters.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| TIMGroupMemberSearchParamGroupidList | array string | Write-only (optional) | Group ID list. If no value is passed in, group members of all groups are searched. |
-| TIMGroupMemberSearchParamKeywordList | array string | Write-only (optional) | Search keyword list. Up to 5 keywords are supported. |
-| TIMGroupMemberSearchParamFieldList | array [TIMGroupMemberSearchFieldKey] | Write-only (optional) | Search domain list. |
-
-### GroupAttributes
-
-Group attribute map object.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| TIMGroupAttributeKey | string | Write-only (optional) | Group attribute map key |
-| TIMGroupAttributeValue | array string | Write-only (optional) | Group attribute map value |
-
-### GroupMemberSearchParam
-
-Group member search parameters.
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| TIMGroupSearchParamKeywordList | array string | Write-only (optional) | Search keyword list. Up to 5 keywords are supported. |
-| TIMGroupSearchParamFieldList | array [TIMGroupSearchFieldKey] | Write-only (optional) | Search domain list. |
-
 ## Key Relationship Chain and Profile Types
 
 Definitions of macros related to relationship chains and profiles and definitions of JSON keys accessed by related structure members.
@@ -1712,41 +1517,3 @@ Parameters of the friend adding API.
 | kTIMFriendshipCheckFriendTypeResultCode | Int [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348) | Read-only | Check result |
 | kTIMFriendshipCheckFriendTypeResultDesc | string | Read-only | Description of friend check failure |
 
-### TIMFriendshipSearchFieldKey
-
-Friend search enumeration.
-
-| Name | Description |
-|-----|-----|
-| kTIMFriendshipSearchFieldKey_Identifier | User ID |
-| kTIMFriendshipSearchFieldKey_NikeName | Nickname |
-| kTIMFriendshipSearchFieldKey_Remark | Remarks |
-
-### FriendSearchParam
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| kTIMFriendshipSearchParamKeywordList | array string | Write-only | Search keyword list. Up to 5 keywords are supported. |
-| kTIMFriendshipSearchParamSearchFieldList | array int | Write-only | Friend search type. |
-
-### TIMFriendshipRelationType
-
-Relationship between the two parties.
-
-| Name | Description |
-|-----|-----|
-| kTIMFriendshipRelationType_None | Unknown relationship. |
-| kTIMFriendshipRelationType_InMyFriendList | One-way friend: the peer is my friend, but I am not the peer's friend. |
-| kTIMFriendshipRelationType_InOtherFriendList | One-way friend: the peer is not my friend, but I am the peer's friend. |
-| kTIMFriendshipRelationType_BothFriend | Two-way friend. |
-
-### FriendInfoGetResult
-
-| JSON Key | Value Type | Attribute | Description |
-|-----|-----|-----|-----|
-| kTIMFriendshipFriendInfoGetResultIdentifier | string | Read-only | User ID of the friend |
-| kTIMFriendshipFriendInfoGetResultRelationType | uint [TIMFriendshipRelationType] | Read-only | Friend relationship |
-
-| kTIMFriendshipFriendInfoGetResultErrorCode | uint | Read-only | Error code |
-| kTIMFriendshipFriendInfoGetResultErrorMessage | string | Read-only | Error description |
-| kTIMFriendshipFriendInfoGetResultFriendInfo | array [FriendProfile] | Read-only | Profile of the friend |
