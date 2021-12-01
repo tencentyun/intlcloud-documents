@@ -9,7 +9,7 @@
 
 移动直播 SDK 国际版 License 用于解锁移动直播 SDK 国际版在 iOS 和 Android 上的使用权限。 
 
-> ！本产品属于国际站包年预付费产品，**新用户首次下单购买前需要联系产品或者 [联系商务](https://intl.cloud.tencent.com/contact-sales) 添加白名单进行开白**，否则可能导致购买失败。详细购买流程请参见 [新增与续期 License](https://intl.cloud.tencent.com/zh/document/product/1071/38546) 。
+>! 本产品属于国际站包年预付费产品，**新用户首次下单购买前需要联系产品或者 [联系商务](https://intl.cloud.tencent.com/contact-sales) 添加白名单进行开白**，否则可能导致购买失败。详细购买流程请参见 [新增与续期 License](https://intl.cloud.tencent.com/zh/document/product/1071/38546) 。
 
 #### 计费价格
 
