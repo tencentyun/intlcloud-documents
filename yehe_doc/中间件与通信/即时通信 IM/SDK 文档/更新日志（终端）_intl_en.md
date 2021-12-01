@@ -1,4 +1,97 @@
-## Latest Enhanced Version 5.5.892 @2021.07.14
+## Latest Enhanced Version 5.7.1435 @2021.09.30
+
+### SDK
+
+- Fixed the issue where local data was not updated in time after group profile custom fields were modified.
+- Fixed the issue of synchronizing a large number of conversations to be pinned on top.
+- Fixed the issue where Android device timeout signaling did not contain the custom data entered during invitation.
+- Fixed the issue where empty profiles overwrote local profiles due to network request failures during non-friend profile pulling.
+- Fixed the issue where historical group messages could be pulled after a user left the group and then joined the group again.
+- Fixed the issue where the callback function `onFriendListDeleted` was called twice after a friend was deleted.
+- Fixed the issue where the friend remarks of the last message of a conversation were empty.
+- Fixed the issue where, after the IM SDK was initialized, there was no callback for a `getConversationList` API call by a user who has not logged in.
+- Fixed the issue where, if failed messages were sent in a group conversation after the network was disconnected, there was no unread message count displayed when the first message was received in the conversation after the network connection was restored.
+- Fixed the issue where the unread message count could not be obtained in the first conversation with a stranger.
+- Fixed the issue where the Mute Notifications option for group messages was not updated in certain conditions.
+- Fixed the issue where incomplete content was called back after group attribute update.
+- Added the listener addition and deletion APIs for SDKs, groups, relationships, and conversations.
+- iOS: fixed the issue where audio-video group (AVChatRoom) creation failed when the group joining mode was not set.
+
+## Latest Basic Version 5.1.66 @2021.09.22
+
+### Android
+
+- Removed the feature of getting Wi-Fi information.
+
+## 5.6.1202 @2021.09.10 - Enhanced Version
+
+### SDK
+
+- Fixed the issue where, after a user left a group and then joined the same group again, the system included the messages that were not received during this period into the unread message count of the conversation.
+- Fixed the failure to delete group messages that failed to be sent by muted users.
+- Fixed the issue where, when historical messages were pulled, the nicknames and profile photos of message senders were occasionally restored to previous ones.
+- Added support for setting whether to support unread message count in meeting groups.
+- Added support for the international websites of Singapore, South Korea, and Germany, supporting acceleration domain names.
+- Fixed the issue where received image messages occasionally had incorrect image formats.
+- Fixed the issue where, when video messages were sent in Windows, thumbnail sending occasionally failed.
+- Optimized the report of the success rate of receiving common group messages.
+- Fixed the issue where, after group members are muted in an audio-video group, the muting period obtained through getting the group member profile is 0.
+
+
+## 5.6.1200 @2021.08.31 - Enhanced Version 
+
+### SDK
+
+#### Common changes
+
+- Improved the login speed.
+- Added support for the international websites of Singapore, South Korea, and Germany.
+- Added support for commercial HTTP DNS.
+- Optimized the group attribute logic to solve the concurrency problem when group attributes are modified on multiple devices at the same time.
+- Improved the message database query speed.
+- Improved the network connection policy.
+- Optimized the search of image, video, and voice messages.
+- Reduced the time for getting the conversation list (`getConversationList`).
+- Optimized the third-party callback logic for server-side status change: when login on a device causes logout on another device, the server-side logout callback is no longer triggered.
+- Removed the feature of read reporting for audio-video groups.
+- Unified login error codes.
+- Changed the friend search callback parameter `V2TIMFriendInfo` to `V2TIMFriendInfoResult` so that the friend relationship can be determined based on `relationType`.
+- Added the API for getting offline push configuration for the message object.
+- Fixed the occasional database crash during the update of user profiles.
+- Fixed the database query and operation failures before SDK initialization is completed.
+- Fixed the issue where read receipts became invalid after an app is uninstalled and then reinstalled.
+- Fixed the issue where `onFriendListAdded` was occasionally called twice.
+- Fixed the failure to delete messages that are inserted locally.
+- Fixed the issue where group profile custom fields were not saved when group notifications are saved to the database.
+- iOS: removed the `Tag_Profile_Custom_` prefix when getting custom user fields and removed the `Tag_SNS_Custom_` prefix when getting custom friend fields.
+- Android: removed the carrier name and Wi-Fi information getting features and AndroidX dependency.
+- Android: fixed crashes caused by non-UTF-8 encoding.
+
+### TUIKit and demo
+
+- Added the pulling-by-page logic for group member list related pages.
+- Android: optimized the issue where the entire conversation list was loaded each time a message was deleted or recalled.
+- Android: optimized the issue where the group profile photo was loaded each time when the conversation list was loaded.
+- iOS: fixed the issue where the displayed number of records was incorrect when a user clears the original keyword and enters a new one to search for messages.
+- iOS: fixed the issue where searched custom messages were not displayed on the chat screen.
+
+## 5.5.897 @2021.07.29 - Enhanced Version
+
+### SDK
+
+- Fixed occasional crashes when data was reported.
+
+### Android
+
+Removed the calling of `getSimOperatorName()` for getting the carrier name.
+
+## 5.1.65 @2021.07.29 - Basic Version
+
+### Android
+
+Removed the calling of `getSimOperatorName()` for getting the carrier name.
+
+## 5.5.892 @2021.07.14 - Enhanced Version
 
 ### SDK
 
@@ -18,11 +111,6 @@
 - Fixed the issue where the obtained list of groups the user has joined contained groups to be approved by the group owner.
 - Fixed the stability issue reported online.
 
-## Latest Basic Version 5.1.62 @2021.05.20
-
-### SDK
-
-- Fixed known issues.
 
 ## 5.4.666 @2021.06.03 - Enhanced Version
 
@@ -54,6 +142,12 @@
 - Fixed the issue where conversations were out of order when you got them via the API for getting a conversation list.
 - Fixed the issue where group conversations in Mute Notifications mode were filtered out when getting the total message unread count.
 - Fixed the occasional crashes caused by iOS HTTP requests.
+
+## 5.1.62 @2021.05.20 - Basic Version
+
+### SDK
+
+- Fixed known issues.
 
 ## 5.3.425 @2021.04.19 - Lite Edition
 
@@ -1341,8 +1435,8 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Added the Blocklist interface for TUIKit.
 - Added the Search Friend interface for TUIKit.
 - Added the New Friends interface for TUIKit.
-- Optimized the friend's profile page for TUIKit: added the Remarks, Blocklist, and Delete Friend features.
-- Optimized the user profile page for TUIKit: added support for modification of nicknames, personal signature, date of birth, gender, and location.
+- Added the Remarks, Blocklist, and Delete Friend features to the friend's profile page for TUIKit.
+- Added support for modification of nicknames, personal signature, date of birth, gender, and location on the user profile page for TUIKit.
 - Improve the group pinning feature for TUIKit.
 
 **Android**
@@ -1729,7 +1823,7 @@ Fixed the issue where some .so libraries were incompatible with devices running 
 
 ## IM SDKV3 3.0 2017-5-8
 - Regrouped IM SDK and IMCore into IM SDK, IMMessageExt, IMGroupExt, and IMFriendExt.
-- Optimized the IM SDK initialization method to initSdk and setUserConfig.
+- Optimized the IM SDK initialization method to initSdk: and setUserConfig.
 - Names of IM SDK APIs and protocol callback methods start with lowercase letters.
 - IM SDK features: basic login, receiving and sending messages, profile, and group features
 - IMMessageExt features: full message features, including message pulling, local storage, and unread count
@@ -1756,7 +1850,7 @@ Fixed the issue where some .so libraries were incompatible with devices running 
 - Fixed issues that may cause crashes.
 
 **API changes:**
-- Changed how TIMMessageOfflinePushSettings.AndroidSettings and TIMMessageOfflinePushSettings.IOSSettings are constructed.
+- Changed how `TIMMessageOfflinePushSettings.AndroidSettings` and `TIMMessageOfflinePushSettings.IOSSettings` are constructed.
 For more information, see [Offline Push](https://intl.cloud.tencent.com/document/product/1047/34336)
 
 ## IM Android SDK 2.5.2 2017-3-1
@@ -1790,7 +1884,7 @@ For more information, see [Offline Push](https://intl.cloud.tencent.com/document
 
 ## IM SDK 2.4 2016-11-09
 - Full compatible with the ATS mode.
-- Message forwarding feature: The `copyFrom` API forwards image and file messages by copying images and files without downloading them.
+- Message forwarding feature: the `copyFrom` API forwards image and file messages by copying images and files without downloading them.
 - The number of members in an audio-video group is dynamically updated. `TIMGroupEventListener` returns the current number of group members.
 - Message filtering can be customized for audio-video groups.
 - `TIMOfflinePushInfo` attributes support push notification settings of Mi and Huawei mobile phones.

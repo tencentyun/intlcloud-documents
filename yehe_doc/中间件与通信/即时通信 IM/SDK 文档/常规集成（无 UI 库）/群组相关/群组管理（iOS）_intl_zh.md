@@ -1,9 +1,9 @@
 [](id:type)
 ## 群类型介绍
 即时通信 IM 群组分为以下类型：
-- **好友工作群（Work）**：类似普通微信群，创建后仅支持已在群内的好友邀请加群，且无需被邀请方同意或群主审批。 
+- **好友工作群（Work）**：类似普通微信群，创建后仅支持已在群内的好友邀请加群，且无需被邀请方同意或群主审批，同旧版本中的 Private。 
 - **陌生人社交群（Public）**：类似 QQ 群，创建后群主可以指定群管理员，用户搜索群 ID 发起加群申请后，需要群主或管理员审批通过才能入群。
-- **临时会议群（Meeting）**：创建后可以随意进出，且支持查看入群前消息；适合用于音视频会议场景、在线教育场景等与实时音视频产品结合的场景。
+- **临时会议群（Meeting）**：创建后可以随意进出，且支持查看入群前消息；适合用于音视频会议场景、在线教育场景等与实时音视频产品结合的场景，同旧版本中的 ChatRoom。
 - **直播群（AVChatRoom）**：创建后可以随意进出，没有群成员数量上限，但不支持历史消息存储；适合与直播产品结合，用于弹幕聊天场景。
 
 
@@ -17,7 +17,6 @@
 <th width="16%">临时会议群（Meeting）</th>
 <th>直播群（AVChatRoom）</th>
 </tr>
-
 <tr>
 <td>可用群成员角色</td>
 <td>群主、普通成员</td>
@@ -97,7 +96,9 @@
 </tr>
 </table>
 
->?专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">套餐外超量费用</a>。
+>?
+>- 新版 SDK 已全面升级群组类型。新群组类型有**好友工作群（Work）**、**陌生人社交群（Public）**、**临时会议群（Meeting）和直播群（AVChatRoom）** 四个群组类型。旧版群组类型（Public、Private、ChatRoom、AVChatRoom）中的 Private 类型对应新群组类型 Work（好友工作群），ChatRoom 类型对应新群组类型 Meeting（临时会议群）。
+>- 专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">套餐外超量费用</a>。
 
 
 ## 群组管理
@@ -157,7 +158,7 @@ memberInfo.userID = @"vinson";
 ![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
 
 1. **申请者提出加群申请**
-  申请者调用 [joinGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a9979ed856657724d317791c723bacef5) 申请加群。
+    申请者调用 [joinGroup](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a9979ed856657724d317791c723bacef5) 申请加群。
 2. **群主或管理员处理加群申请**
  群主或管理员在收到加群申请的回调 [onReceiveJoinApplication](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a62e957192fd0ad88e79769a6266f5512) 后调用接口 [getGroupApplicationList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#ae761e7a0c5fd2ad55219bb732edae9cb) 获取加群申请列表，然后通过 [acceptGroupApplication](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a72a9fc4dbb99d354121b944e98382e68) 或者 [refuseGroupApplication](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#ad632874883b7b73e3fba773044bd8c1a) 来同意或者拒绝某一条加群请求。
 3. **申请者收到处理结果**

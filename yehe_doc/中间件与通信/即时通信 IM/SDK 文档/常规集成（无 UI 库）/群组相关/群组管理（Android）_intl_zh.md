@@ -1,9 +1,9 @@
-<span id="type"> </span>
+[](id:type)
 ## 群类型介绍
 即时通信 IM 群组分为以下类型：
-- **好友工作群（Work）**：类似普通微信群，创建后仅支持已在群内的好友邀请加群，且无需被邀请方同意或群主审批。 
+- **好友工作群（Work）**：类似普通微信群，创建后仅支持已在群内的好友邀请加群，且无需被邀请方同意或群主审批，同旧版本中的 Private。 
 - **陌生人社交群（Public）**：类似 QQ 群，创建后群主可以指定群管理员，用户搜索群 ID 发起加群申请后，需要群主或管理员审批通过才能入群。
-- **临时会议群（Meeting）**：创建后可以随意进出，且支持查看入群前消息；适合用于音视频会议场景、在线教育场景等与实时音视频产品结合的场景。
+- **临时会议群（Meeting）**：创建后可以随意进出，且支持查看入群前消息；适合用于音视频会议场景、在线教育场景等与实时音视频产品结合的场景，同旧版本中的 ChatRoom。
 - **直播群（AVChatRoom）**：创建后可以随意进出，没有群成员数量上限，但不支持历史消息存储；适合与直播产品结合，用于弹幕聊天场景。
 
 
@@ -17,7 +17,6 @@
 <th width="16%">临时会议群（Meeting）</th>
 <th>直播群（AVChatRoom）</th>
 </tr>
-
 <tr>
 <td>可用群成员角色</td>
 <td>群主、普通成员</td>
@@ -97,11 +96,13 @@
 </tr>
 </table>
 
->?专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">套餐外超量费用</a>。
+>?
+>- 新版 SDK 已全面升级群组类型。新群组类型有**好友工作群（Work）**、**陌生人社交群（Public）**、**临时会议群（Meeting）和直播群（AVChatRoom）** 四个群组类型。旧版群组类型（Public、Private、ChatRoom、AVChatRoom）中的 Private 类型对应新群组类型 Work（好友工作群），ChatRoom 类型对应新群组类型 Meeting（临时会议群）。
+>- 专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">套餐外超量费用</a>。
 
 
 ## 群组管理
-<span id="create"> </span>
+[](id:create)
 ### 创建群组
 #### 简化版接口
 调用 [createGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#af836e4912f668dddf6cc679233cfb0bb) 接口，并指定需要的 `groupType`、`groupID` 和 `groupName` 参数，即可简单创建一个群组。
@@ -141,7 +142,7 @@ V2TIMManager.getGroupManager().createGroup(
 - 参数 `groupID` 用于指定群组 ID，它用于唯一标识一个群，请勿在同一个 SDKAppID 下创建相同 `groupID`  的群。如果您指定 `groupID` 为 null，系统会为您默认分配一个群 ID。
 - 参数 `groupName` 用于指定群的描述信息，最长支持30个字节。
 
-<span id="join"> </span>
+[](id:join)
 ### 加入群组
 不同类型的群，加群的方法不同， 下面根据加群流程从简单到复杂进行逐一介绍：
 
@@ -177,12 +178,12 @@ V2TIMManager.getGroupManager().createGroup(
 
 
 
-<span id="quit"> </span>
+[](id:quit)
 ### 退出群组
 调用 [quitGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a6d140dbeb44906de9cb69f69c2ce5919) 可以退出群组，退群者会收到 [onQuitFromGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a489004526f1bd8daba7ac63fb0ad965f) 回调，群其他成员会收到 [onMemberLeave](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a2169676423875e4c9c376796245ca8d5) 回调。
 >!对于陌生人社交群（Public）、临时会议群（Meeting）和直播群（AVChatRoom），群主不可以退群的，群主只能 [解散群组](#dismiss)。
 
-<span id="dismiss"> </span>
+[](id:dismiss)
 ### 解散群组
 调用 [dismissGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd0221c0c842a6dcfa0acc657e50caeb) 可以解散群组，全员会收到  [onGroupDismissed](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a6e89728e160e126460a6b8eeddf00ad5) 回调。
 
@@ -339,15 +340,13 @@ public void getGroupMemberList(long nextSeq) {
 ### 修改群成员资料
 群主或管理员可以调用 [setGroupMemberInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6f1cf8ede41348b4cd7b63b8e4caa77b) 接口修改群成员的群名片（`nameCard`）、 群成员角色（`role`）、禁言时间（`muteUntil`）以及自定义字段等与群成员相关的资料。
 
-
-
-<span id="mute"> </span>
+[](id:mute)
 ### 禁言
-群主或管理员可以通过 [muteGroupMember](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a450230c4d129611e1b0519827ec0f8b5) 禁言某一个群成员并设置禁言时间，禁言时间单位为秒，禁言信息存储于群成员的 [muteUtil](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberFullInfo.html#a2caecbec07bdd4fa8e6b8072bc39be58) 属性字段中。群成员被禁言后，全员（包括被禁言的群成员）都会收到 [onGroupMemberInfoChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a6d8bdea63f14a03faffeb21a274a1e12) 事件回调。
+群主或管理员可以通过 [muteGroupMember](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a450230c4d129611e1b0519827ec0f8b5) 禁言某一个群成员并设置禁言时间，禁言时间单位为秒，禁言信息存储于群成员的 [muteUtil](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberFullInfo.html#a2caecbec07bdd4fa8e6b8072bc39be58) 属性字段中。群成员被禁言后，全员（包括被禁言的群成员）都会收到 [onMemberInfoChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a4ac777faad07e32408ae7ef5e2e3fc86) 事件回调。
 群主或管理员也可以通过 [setGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) 接口对整个群进行禁言，将 [allMuted](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupInfo.html#a6faf73364372206bfee9c2b99ed5807e) 属性字段设置为 `true` 即可。全群禁言没有时间限制，需通过将群资料 `setAllMuted(false)` 解除禁言。
 
 
-<span id="kick"> </span>
+[](id:kick)
 ### 踢人
 群主或管理员调用 [kickGroupMember](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a2e4816131f15187ccfcee8fe30e69cda) 接口可以实现踢人。由于直播群（AVChatRoom）对进群没有限制，因此直播群（AVChatRoom）没有支持踢人的接口，您可以使用 [muteGroupMember](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a450230c4d129611e1b0519827ec0f8b5) 达到同样的目的。
 成员被踢后，全员（包括被踢人）会收到 [onMemberKicked](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a2874b768866c2d255144c128a766c7fe) 回调。
@@ -357,7 +356,7 @@ public void getGroupMemberList(long nextSeq) {
 - 被设置为管理员后，全员（包括被设置的成员）会收到 [onGrantAdministrator](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#ae4e23c72489eafc882a40a24f36f1ae9)  回调。
 - 被取消管理员后，全员（包括被设置的成员）会收到 [onRevokeAdministrator](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a089480ee71485b5842c75b8c1985f72f) 回调。
 
-<span id="transfer"> </span>
+[](id:transfer)
 ### 转让群主
 群主可以调用 [transferGroupOwner](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ac16d66c8e293c2ee95c7b673e5ad80c4) 把群主转让给其他群成员。
 群主转让后，全员会收到 [onGroupInfoChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#ad5968cdb7ca01e2f7a702e2ca2f648fb) 回调，其中 `V2TIMGroupChangeInfo` 的 type 为 `V2TIMGroupChangeInfo.V2TIM_GROUP_INFO_CHANGE_TYPE_OWNER`，value 值为新群主的 UserID。
@@ -374,5 +373,4 @@ public void getGroupMemberList(long nextSeq) {
 
 ### 3. 为什么会议群（Meeting） 中的未读数一直为零?
 临时会议群（Meeting）和直播群（AVChatRoom）分别配合会议和直播的音视频场景，因此这两类群组均不支持未读消息计数。
-
 

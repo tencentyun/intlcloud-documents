@@ -1,4 +1,4 @@
-The MLVB SDK of Tencent Video Cloud Toolkit offers solutions for different use cases for you to get started quickly.
+MLVB offers solutions for different use cases for you to get started quickly.
 
 ## One-time Events
 

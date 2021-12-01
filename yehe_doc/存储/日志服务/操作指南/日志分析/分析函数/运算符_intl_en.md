@@ -1,52 +1,53 @@
+>? 当前日志服务已支持大部分地域使用 CLS 函数。北京、上海、广州、南京地域如有需要，请联系 [在线客服](https://intl.cloud.tencent.com/contact-sales)。
+>
 
+运算符是一个保留字或字符，主要用于指定 SQL语句中的条件，并在语句中连接多个条件。
 
-An operator is a reserved word or character mainly used to specify conditions in an SQL statement and connect multiple conditions in the statement.
+- [算术运算符](#.E7.AE.97.E6.9C.AF.E8.BF.90.E7.AE.97.E7.AC.A6)
+- [比较运算符](#.E6.AF.94.E8.BE.83.E8.BF.90.E7.AE.97.E7.AC.A6)
+- [逻辑运算符](#.E9.80.BB.E8.BE.91.E8.BF.90.E7.AE.97.E7.AC.A6)
 
-- [Arithmetic Operators](#.E7.AE.97.E6.9C.AF.E8.BF.90.E7.AE.97.E7.AC.A6)
-- [Relational Operators](#.E6.AF.94.E8.BE.83.E8.BF.90.E7.AE.97.E7.AC.A6)
-- [Logical Operators](#.E9.80.BB.E8.BE.91.E8.BF.90.E7.AE.97.E7.AC.A6)
+## 算术运算符
 
-## Arithmetic Operators
+算术运算符是用来处理四则运算的符号，是最简单最常用的符号，尤其是数字的处理，几乎都会使用到算术运算符号。
 
-Arithmetic operators are the symbols used to process the four arithmetic operations. They are the simplest and most commonly used operators, especially when dealing with numbers.
+假设变量 a=1，变量 b=2，则：
 
-Suppose variable a = 1 and variable b = 2, then:
-
-| Operator | Description | Example |
+| 运算符 | 描述                                          | 实例  |
 | ------ | --------------------------------------------- | ----- |
-| + | Addition: adds the values on both sides of the operator | a + b |
-| - | Subtraction: subtracts the value on the right side of the operator from the value on the left side of the operator | a - b |
-| * | Multiplication: multiplies the values on both sides of the operator | a * b |
-| / | Division: divides the value on the left side of the operator by the value on the right side of the operator | b / a |
-| % | Modulo: gets the remainder after dividing the value on the left side of the operator by the value on the right side of the operator | b % a |
+| +      | 加法：运算符两边的值相加                      | a + b |
+| -      | 减法：运算符左边减去运算符右边                | a - b |
+| *      | 乘法 - 把运算符两边的值相乘                   | a * b |
+| /      | 除法 -   运算符左边除以运算符右边             | b / a |
+| %      | 取模 -   运算符左边除以运算符右边后得到的余数 | b % a |
 
-## Relational Operators
+## 比较运算符
 
-Relational operators are used to determine the relation between values and support any comparable types such as `int`, `long`, `double`, and `text`.
+比较运算符用于判断值的大小关系，支持任何可比较的类型，例如 int、long、double 和 text 等。
 
-Suppose variable a = 1 and variable b = 2, then:
+假设变量 a=1，变量 b=2，则：
 
-| Operator | Description | Example |
+| 运算符 | 描述                                                         | 实例              |
 | :----- | :----------------------------------------------------------- | :---------------- |
-| = | Determines whether the values on both sides of the operator are equal, and if so, the condition is true. | a = b |
-| != | Determines whether the values on both sides of the operator are equal, and if not, the condition is true. | a != b |
-| <> | Determines whether the values on both sides of the operator are equal, and if not, the condition is true. | a <> b |
-| > | Determines whether the value on the left side of the operator is greater than the value on the right side of the operator, and if so, the condition is true. | a > b |
-| < | Determines whether the value on the left side of the operator is less than the value on the right side of the operator, and if so, the condition is true. | a < b |
-| >= | Determines whether the value on the left side of the operator is greater than or equal to the value on the right side of the operator, and if so, the condition is true. | a >= b |
-| <= | Determines whether the value on the left side of the operator is less than or equal to the value on the right side of the operator, and if so, the condition is true. | a <= b |
-| IN | Compares a value with values in a specified series. | status IN (200,206,404) |
-| NOT IN | Compares a value with values not in a specified series (i.e., the opposite of the IN operator). | status NOT IN (200,206,404) |
-| BETWEEN AND | Searches for a value in a value range between the given minimum and maximum values. | status between 200 AND 400 |
-| LIKE | Compares a value with similar values using wildcard operators. `%` represents zero, one, or more characters. `_` represents one single digit or character. | url LIKE '%.mp4' |
-| IS NULL | Compares a value with the NULL value, and if null, the condition is true. | status IS NULL |
-| IS NOT NULL | Compares a value with the NULL value, and if not null, the condition is true. | status IS NOT NULL |
+| =      | 判断运算符两边的值是否相等，如果相等则条件为真。             | a = b             |
+| !=     | 判断运算符两边的值是否相等，如果不相等则条件为真。           | a != b            |
+| <>     | 判断运算符两边的值是否相等，如果不相等则条件为真。           | a <> b            |
+| >      | 判断运算符左边的值是否大于运算符右边的值，如果是则条件为真。 | a > b |
+| <      | 判断运算符左边的值是否小于运算符右边的值，如果是则条件为真。 | a < b   |
+| >=     | 判断运算符左边的值是否大于等于运算符右边的值，如果是则条件为真。 | a >= b |
+| <=     | 判断运算符左边的值是否小于等于运算符右边的值，如果是则条件为真。 | a <= b   |
+| IN      | IN 运算符用于把某个值与一系列指定列表的值进行比较。          |  status IN (200,206,404) |
+| NOT IN  | IN 运算符的对立面，用于把某个值与不在一系列指定列表的值进行比较。 | status NOT IN (200,206,404)  |
+| BETWEEN AND | BETWEEN 运算符用于在给定最小值和最大值范围内的一系列值中搜索值。 | status between 200 AND 400 |
+| LIKE    | LIKE 运算符用于把某个值与使用通配符运算符的相似值进行比较。%代表零个、一个或者多个字；_代表单个数字或者字符。  | url LIKE '%.mp4' |
+| IS NULL | NULL 运算符用于把某个值与 NULL 值进行比较，为空为真。 | status IS NULL |
+| IS NOT NULL | NULL 运算符用于把某个值与 NULL 值进行比较，不为空为真。 | status IS NOT NULL |
 
 
-## Logical Operators
+## 逻辑运算符
 
-| Operator | Description |
+| 运算符  | 描述                                                         |
 | :------ | :----------------------------------------------------------- |
-| AND | The AND operator requires all conditions on both sides of the operator to be true for the result to be true. |
-| OR | The OR operator requires any condition on either side of the operator to be true for the result to be true. |
-| NOT | The NOT operator is the opposite of the logical operator used, such as NOT EXISTS, NOT BETWEEN, and NOT IN. |
+| AND     | AND 运算符要求运算符两边条件同时存在为真。                   |
+| OR      | OR 运算符要求运算符两边任一条件存在即为真。                  |
+| NOT     | NOT 运算符是所用的逻辑运算符的对立面。例如 NOT EXISTS、NOT BETWEEN、NOT IN 等。 |

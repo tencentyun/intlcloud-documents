@@ -54,12 +54,15 @@ If you need to send/receive rich media messages (images, videos, files, etc.) an
 | [insertGroupMessageToLocalStorage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/insertGroupMessageToLocalStorage.html) | Adds a message to the group message list. |
 
 
+
 ## Group APIs
 Tencent Cloud IM SDK supports four preset group types, each of which pertains to different scenarios.
-- Work group (Work): similar to a regular WeChat group. Users can only join the group by being invited by existing group members.
+- Work group (Work): similar to a WeChat group. Users can join the group only after being invited by group members. Same as private group (Private) in earlier versions.
 - Public group (Public): similar to a QQ group. Users can join the group through requests, which need to be approved by the group owner or group admin.
-- Meeting group (Meeting): when used with [TRTC](https://intl.cloud.tencent.com/product/trtc), ideal for scenarios such as video conferencing and online education. Users can join and exit the group freely and view the existing message history before they join the group.
-- Audio-video group (AVChatRoom): suitable for scenarios such as live streaming and chat rooms with on-screen comments. Users can join and exit the group freely. There is no limit on the number of group members.
+- Meeting group (Meeting): used together with [TRTC](https://intl.cloud.tencent.com/product/trtc) to enable scenarios such as video conferencing and online education. Users can join and leave the group freely and view the message history before they join. Same as chat room (ChatRoom) in earlier versions.
+- Audio-video group (AVChatRoom): suitable for scenarios such as live streaming and chat rooms with on-screen comments. Users can join and leave the group freely. There is no limit on the number of group members.
+
+
 
 | API | Description |
 |---------|---------|
