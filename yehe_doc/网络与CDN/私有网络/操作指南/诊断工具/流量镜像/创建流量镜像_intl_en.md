@@ -19,7 +19,7 @@ Make sure that both the collected IP and receiving IP are in the same VPC and th
       ![](https://main.qcloudimg.com/raw/5a359241aabeccd7424324e8357d8251.png)
  - Choose **Collection Type**: select the traffic direction as needed. There are three options: All traffic, Traffic out and Traffic in.
  - Choose **Traffic filtering**: select a method to filter out unnecessary traffic and keep the mirror small and lightweight.
-    -**N/A**: all traffic configured will be collected.
+    - **N/A**: all traffic configured will be collected.
     - **Quintuple**: the traffic that meets 5-tuple conditions will be collected. After this option is selected, please specify **Protocol**, **Source IP range**, **Destination IP range**, **Source port**, and **Destination port**. You can click **Add** to create another filter condition. Only the traffic that meets all of filter conditions will be collected.
     ![](https://main.qcloudimg.com/raw/1b49eca6a1e7f736633ee2762f5d6620.png)
     - **The next hop is the NAT gateway**: collect traffic whose next hop address is the NAT gateway. After this option is selected, select the corresponding NAT gateway next to **Condition**.
@@ -50,11 +50,11 @@ Make sure that both the collected IP and receiving IP are in the same VPC and th
 	 ![](https://main.qcloudimg.com/raw/74ad4cbd7a6f2179b441cafee5976bba.png)
 	 <span id="buzhou2"></span>
 	2. Log in to the destination CVM and run the following commands to capture data and save it as a “.cap” or “.pcap” file. This document uses the “.pcap” file as an example.
-	      ```plaintext
-	   tcpdump -i eth0 -w capture-2020-10-27.pcap    #Enter the actual file name.
-      ```
+ ```plaintext
+ tcpdump -i eth0 -w capture-2020-10-27.pcap    #Enter the actual file name.
+ ```
 	**Destination packets:** 
-	    ![](https://main.qcloudimg.com/raw/404f6d2c612ae76b78aa63a624e98910.png)
+ ![](https://main.qcloudimg.com/raw/404f6d2c612ae76b78aa63a624e98910.png)
 	3. Use a terminal simulator (such as SecureCRT) to log in to the destination CVM and export the file saved in [Step ii](#buzhou2).
        ```plaintext
 	    sz -bye capture-2020-10-27.pcap
