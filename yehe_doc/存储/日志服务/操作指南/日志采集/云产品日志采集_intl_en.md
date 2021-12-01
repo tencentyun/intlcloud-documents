@@ -14,4 +14,3 @@ Currently, CLS can collect logs of the following Tencent Cloud services:
 | Flow Logs | Configure log collection in the Flow Logs console. For more information, see [Create Flow Logs](https://intl.cloud.tencent.com/document/product/682/18966). |
 | TI-ONE | Configure log collection in the TI-ONE console. |
 | MGOBE | Configure log collection in the MGOBE. |
-| WAF | Configure log collection in the WAF console. For more information, see [Access Log](https://intl.cloud.tencent.com/document/product/627/35648). |
