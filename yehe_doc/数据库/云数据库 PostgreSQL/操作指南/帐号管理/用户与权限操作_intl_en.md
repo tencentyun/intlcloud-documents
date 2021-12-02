@@ -3,36 +3,36 @@ TencentDB for PostgreSQL has disabled the superuser attribute and some special d
 The administrator role you specify when creating an instance is a tencentdb_superuser.
 
 ## tencentdb_superuser
-This role supports system privileges and database object privileges, as listed in the following tables.
+This role supports system permissions and database object permissions, as listed in the following tables.
 
-#### System privileges
-| Privilege        | Description                                                         |
+#### System permissions
+| Permission        | Description                                                         |
 | ----------- | ------------------------------------------------------------ |
 | CREATEDB    | Create a database.                                       |
 | BYPASSRLS   | Bypass all row-level security policy checks.                                |
-| REPLICATION | Have the REPLICATION privilege by default, and allow granting the REPLICATION privilege to other users.   |
-| CREATEROLE | Have the same CREATEROLE privilege as the community edition, except that the role cannot create the pg_read_server_files, pg_write_server_files, and pg_execute_server_program roles.   |
+| REPLICATION | Have the REPLICATION permission by default, and allow granting the REPLICATION permission to other users.   |
+| CREATEROLE | Have the same CREATEROLE permission as the community edition, except that the role cannot create the pg_read_server_files, pg_write_server_files, and pg_execute_server_program roles.   |
 
-#### Object privileges
+#### Object permissions
 | Object                 | Description                                                         |
 | -------------------- | ------------------------------------------------------------ |
-| database             | By default, have the privileges of all databases whose owner is not a superuser.               |
-| schema               | By default, have the privileges of all schemas whose owner is not a superuser.               |
-| table/sequence    | By default, have the privileges of all tables/sequences whose owner is not a superuser.       |
-| function               | By default, have the privileges of all functions whose owner is not a superuser.             |
-| language             | No privileges.                                                     |
-| tablespace           | No privileges.                                                     |
-| FDW/foreign server | By default, have the privileges of all FDWs/foreign servers whose owner is not a superuser. |
-| TYPE                       | By default, have the privileges of all TYPEs whose owner is not a superuser.                 |
+| database             | By default, have the permissions of all databases whose owner is not a superuser.               |
+| schema               | By default, have the permissions of all schemas whose owner is not a superuser.               |
+| table/sequence    | By default, have the permissions of all tables/sequences whose owner is not a superuser.       |
+| function               | By default, have the permissions of all functions whose owner is not a superuser.             |
+| language             | No permissions.                                                     |
+| tablespace           | No permissions.                                                     |
+| FDW/foreign server | By default, have the permissions of all FDWs/foreign servers whose owner is not a superuser. |
+| TYPE                       | By default, have the permissions of all TYPEs whose owner is not a superuser.                 |
 
 #### Other operations
 - Pub/Sub: the tencentdb_superuser role can implement the pub/sub messaging paradigm, create a publication for all tables, and create slots.
-- Extensions: the tencentdb_superuser role can create all supported extensions. When creating an extension, the tencentdb_superuser is temporarily escalated to superuser and passes all privilege checks. 
-- The load_file privilege only allows loading supported extension libraries.
+- Extensions: the tencentdb_superuser role can create all supported extensions. When creating an extension, the tencentdb_superuser is temporarily escalated to superuser and passes all permission checks. 
+- The load_file permission only allows loading supported extension libraries.
 - The tencentdb_superuser role can use the `pgstat_get_backend_current_activity` function to view deadlock details, so that users can easily troubleshoot deadlocks themselves.
 - The use of the `pg_signal_backend` function is restricted, and processes of the tencentdb_superuser role can only be killed by itself.
 
-## Privileges and Operations
+## Permission Operations
 For more information, please see the official documents in the PostgreSQL community:
 - [Create a user](https://www.postgresql.org/docs/13/sql-createuser.html):
 ```
