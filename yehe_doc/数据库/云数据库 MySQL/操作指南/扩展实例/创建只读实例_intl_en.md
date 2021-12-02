@@ -15,7 +15,7 @@ The MySQL source-replica binlog sync feature is adopted for read-only instances,
 
 ## Feature Limits
 - Read-only instances can be purchased only for **two-node or three-node source instances on MySQL 5.6 or above with the InnoDB engine at a specification of 1 GB memory and 50 GB disk capacity or above**. If your source instance is below this specification, upgrade it first.
-- The minimum specification of a read-only instance is 1 GB memory and 50 GB disk capacity and must be at least 1.1 times the storage capacity used by the source instance.
+- The minimum specification of a read-only instance is 1 GB memory and 50 GB disk capacity and must be greater than or equal to the purchased storage size of the source instance.
 - A source instance can create up to 5 read-only instances.
 - Backup and rollback features are not supported.
 - Data cannot be migrated to read-only instances.
@@ -40,7 +40,7 @@ The operation takes a long time, and the instance will be disconnected for sever
     - **Existing RO group**: specify an existing RO group. If multiple read-only replicas are purchased at a time, all of them will be assigned to the RO group.
     Their weights will be allocated as configured in the RO group. If assignment by the system is set for the RO group, the instances will be added to the group automatically according to the purchased specifications. If custom allocation is set, their weights will be zero by default.
 		As the same private IP is shared within an RO group, if a VPC is used, the same security group settings will be shared. If an RO group is specified, it is not possible to customize any security group when instances are purchased.
- >- Remove Delayed RO Instances: this option indicates whether to enable the removal policy. If a read-only instance is removed when its delay exceeds the threshold, it will become inactive, its weight will be set to 0 automatically, and warning notifications will be sent out (for more information on how to configure the read-only instance removal alarm and recipients, see [Alarming Feature](https://intl.cloud.tencent.com/document/product/236/8457). The instance will be put back into the RO group when its delay falls below the threshold. No matter whether this option is enabled, a read-only instance that is removed due to instance failure will rejoin the RO group when it is repaired.
+ - Remove Delayed RO Instances: this option indicates whether to enable the removal policy. If a read-only instance is removed when its delay exceeds the threshold, it will become inactive, its weight will be set to 0 automatically, and warning notifications will be sent out (for more information on how to configure the read-only instance removal alarm and recipients, see [Alarming Feature](https://intl.cloud.tencent.com/document/product/236/8457). The instance will be put back into the RO group when its delay falls below the threshold. No matter whether this option is enabled, a read-only instance that is removed due to instance failure will rejoin the RO group when it is repaired.
 ![](https://main.qcloudimg.com/raw/5c002d37fdeb72a5396a394133672338.png)
 4. After the purchase is completed, you will be redirected to the instance list. After the status of the read-only replica is displayed as **Running**, it can be used normally.
 

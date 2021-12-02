@@ -1,5 +1,5 @@
 
-Starting from November 22, 2021, TencentDB for MySQL will optimize parameter-related features and instance delivery process, including creating and applying parameter templates, comparing parameters, modifying modifiable parameters, and purchasing instances.
+Starting from December 7, 2021, TencentDB for MySQL will optimize parameter-related features and instance delivery process, including creating and applying parameter templates, comparing parameters, modifying modifiable parameters, and purchasing instances.
 
 >?If you want to try out the optimized parameter capabilities and delivery process in advance, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for beta test eligibility after September 27, 2021.
 Parameter capabilities are applicable only to two-node and three-node TencentDB for MySQL 5.6, 5.7, and 8.0.
@@ -7,7 +7,7 @@ Parameter capabilities are applicable only to two-node and three-node TencentDB 
 ## Instance Purchase Process Optimization
 Compared with the original instance purchase process, the initialization step is canceled, and you can select the character set, configure the table name case sensitivity, and enter the databases access port and root password on the instance purchase page.
 
-For more information, see [Creating TencentDB for MySQL Instance (New)](https://cloud.tencent.com/document/product/236/61667).
+For more information, see [Creating TencentDB for MySQL Instance (New)](https://intl.cloud.tencent.com/document/product/236/43472).
 
 ## Parameter Optimization
 ### Parameter application

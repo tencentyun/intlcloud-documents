@@ -22,7 +22,7 @@ Solution: you can modify parameters on the **Database Management** > **Parameter
 - Enclose the URL with quotation marks when downloading cold backup files to a CVM instance over the private network in the console; otherwise, a 404 error will occur.
 
 ### Suggestions
-- Avoid performing online DDL operations during peak hours. You can use tools such as `pt-online-schema-change`.
+- Avoid performing online DDL operations during peak hours. You can use tools such as`pt-online-schema-change`.
 - Avoid performing batch operations during peak hours.
 - Avoid running an instance for multiple businesses so as to minimize the risk of mutual interference between businesses due to high coupling.
 - Disable automatic transaction committing and develop a habit of using `begin;` for online operations, which can help minimize the risk of data loss caused by faulty operations. In case of a faulty operation, you can use the rollback feature of TencentDB for MySQL for data restoration (rollback to any point in time in the last 5 days is supported). For tables without cross-database and cross-table logic, you can use quick or instant rollback for even faster data restoration. The new table after rollback is named `original table name_bak`.
@@ -80,7 +80,7 @@ Solution: you can modify parameters on the **Database Management** > **Parameter
 - Avoid using large transactions. It is recommended to split a large transaction into multiple small ones to avoid source-replica delay.
 - Commit transactions in the business code in a timely manner to avoid unnecessary lock waits.
 - Minimize the use of join operations for multiple tables and do not perform join operations on big tables. When a join operation is performed on two tables, the smaller one must be used as the driving table, the columns to be joined must have the same character set, and all of them must have been indexed.
-- Use LIMIT for paging optimization. The operation "LIMIT 80000, 10" is to filter out 80,010 records and then return the last 10 ones. This may cause a high load on the database. It is recommended to locate the first record before paging, such as `SELECT * FROM test WHERE id = ( SELECT sql_no_cache id FROM test order by id LIMIT 80000,1 ) LIMIT 10 ;`.
+- Use LIMIT for paging optimization. The operation "LIMIT 80000, 10" is to filter out 80,010 records and then return the last 10 ones. This may cause a high load on the database. It is recommended to locate the first record before paging, such as `SELECT * FROM test WHERE id >= ( SELECT sql_no_cache id FROM test order by id LIMIT 80000,1 ) LIMIT 10 ;`.
 - Avoid using an SQL statement with multi-level nested subqueries. The query optimizer prior to MySQL v5.5 can convert IN to EXISTS and does not go through the indexes. In this case, a large external table may result in poor performance.
 
 >?
