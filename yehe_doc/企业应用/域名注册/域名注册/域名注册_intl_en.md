@@ -46,7 +46,7 @@ On the **Payment** page, select a payment method as appropriate.
 - [Can I refund after successfully registering a domain?](link)
 - [What should I do if domain registration fails?](link)
 
-If you encounter any problems during domain registration, you can try troubleshooting as instructed in [Registration Process](https://cloud.tencent.com/document/product/242/18622). If the problem persists, contact [technical support](https://intl.cloud.tencent.com/zh/contact-us) for assistance.
+If you encounter any problems during domain registration, you can try troubleshooting as instructed in Registration Process. If the problem persists, contact [technical support](https://intl.cloud.tencent.com/zh/contact-us) for assistance.
 
 
 

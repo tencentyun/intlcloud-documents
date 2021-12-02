@@ -46,7 +46,7 @@
 - [域名注册成功后还能退款吗？](链接)
 - [域名注册失败需要怎么做？](链接)
 
-若您在注册域名过程中遇到更多问题，您可以参考文档 [注册流程](https://cloud.tencent.com/document/product/242/18622) 进行处理，若仍无法解决您的问题，请您联系 [技术支持](https://intl.cloud.tencent.com/zh/contact-us) 协助您解决。
+若您在注册域名过程中遇到更多问题，您可以参考文档注册流程进行处理，若仍无法解决您的问题，请您联系 [技术支持](https://intl.cloud.tencent.com/zh/contact-us) 协助您解决。
 
 
 

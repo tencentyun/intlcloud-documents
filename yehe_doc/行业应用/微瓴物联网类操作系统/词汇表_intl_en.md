@@ -10,7 +10,7 @@ The 5A system is a smart building ELV system consisting of the building automati
 
 ### DIN	
 
-DIN is a unique ID provided to a device by Tencent Cloud LinkBase. You can locate a device by its DIN.
+DIN is a unique ID provided to a device by Tencent Cloud Weiling. You can locate a device by its DIN.
 
 ### Project	
 

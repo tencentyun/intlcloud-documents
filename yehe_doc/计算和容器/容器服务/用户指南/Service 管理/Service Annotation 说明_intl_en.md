@@ -102,7 +102,7 @@ Refer to [Creating a CLB Instance](https://intl.cloud.tencent.com/document/produ
 **Note:**
 This annotation is used to shut down CLB gracefully in direct access mode.
 **Use case:**
-It is only supported in direct access mode and needs to be used together with `service.cloud.tencent.com/direct-access`.
+It is only supported in direct access mode and needs to be used together with `service.cloud.tencent.com/direct-access`,For the detailed usage, see [Graceful Service Shutdown](https://intl.cloud.tencent.com/document/product/457/42070).
 :::
 ::: kubernetes.io/service.internetChargeType
 **Note:**

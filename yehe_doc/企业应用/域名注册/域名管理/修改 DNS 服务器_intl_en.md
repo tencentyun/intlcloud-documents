@@ -1,4 +1,7 @@
-﻿## Overview
+
+
+
+## Overview
 If you want to add a DNS record to a registered domain, you need to manage the domain at your DNS service provider to resolve it normally. This document describes how to change the DNS server address to specify the DNS service provider.
 
 
