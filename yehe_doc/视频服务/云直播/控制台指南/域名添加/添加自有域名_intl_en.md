@@ -1,36 +1,29 @@
-To use CSS, you should have at least **two** domain names, one as the push domain name, and the other as the playback domain name. Push and playback cannot use the same domain name.
-
-
+To use CSS, you should have at least two domain names, one as the push domain name, and the other as the playback domain name. Push and playback cannot use the same domain name.
 
 ## Prerequisites
-1. You have activated the [CSS](https://intl.cloud.tencent.com/product/css) service.
-2. You have a domain name. ICP filing is required for your domain name if you want to use resources for Chinese mainland.
-	- If your domain names have not obtained an ICP filing, you can go to Tencent Cloud Website ICP Filing Service to apply for ICP filing.
->!
->- You should apply for ICP filing for your domain names according to the regulations of the Ministry of Industry and Information Technology (MIIT) of China. The application process takes several business days to complete, so you are recommended to start an application in advance. For more information, please see [Domain Name ICP Filing and Configuration](https://intl.cloud.tencent.com/document/product/267/32478).
->- The time needed to complete an ICP filing application depends on your domain name service provider. If you have received a notification from MIIT that your domain name has been filed on record, please wait for 1 to 24 hours. After your domain name can be found on [MIIT's ICP filing query website](https://beian.miit.gov.cn/#/Integrated/index), it can be added to the CSS console.
->- A new ICP filing can be synced to Tencent Cloud servers in one business day; therefore, a newly filed domain name may appear to be not filed when it is added.
+You have activated the [CSS](https://cloud.tencent.com/product/css) service.
 
 
 ## Directions
-<span id="step1"></span>
-### Step 1. Add you own domain name
-1. Log in to the [CSS console](https://console.cloud.tencent.com/live) and select **Domain Management**.
+[](id:step1)
+### Step 1. Add your own domain name
+1. Log in to the [CSS console](https://console.cloud.tencent.com/live) and go to the **Domain Management** page.
 2. Click **Add Domain** to enter the domain name adding page and configure as follows:
-	1. To add a **push domain**, enter the domain name, select its type as **Push domain**, and click **OK**.
-	2. To add a **playback domain**, enter the domain name, select its type as **Playback domain**, select an acceleration region (**Chinese mainland** by default), and click **OK**.
+    1. To add a **push domain**, enter the domain name, select its type as **Push Domain**, and click **Confirm**.
+    2. To add a **playback domain**, enter the domain name, select its type as **Playback Domain**, select an acceleration region (**Chinese mainland** by default), and click **Confirm**.
 
 ![](https://main.qcloudimg.com/raw/a602d5953a0c0fcfd66ba8801c0266b3.png)
 >! 
->- The domain name can be up to**29** bits in length and cannot contain uppercase letters.
->- After your own domain names are added successfully, you can click the domain name to be modified or **Manage** on the right in the domain management list to enter the domain name details page, select **Advanced Configuration** to view the **Region Configuration** tab, click **Edit** to enter the region configuration modification page, select a new acceleration region, and click **Save**.
+>- The domain name can be up to **29** characters and cannot contain uppercase letters.
+>- By default, each account can add up to 100 domain names. To add more, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to increase the upper limit.
+>- After adding your own domain name successfully, you can go to the domain name management list, and click the target domain name or **Manage** on the right to enter the domain name details page. Then, select **Advanced Configuration** to view the **Region Configuration** tab, click **Edit** to enter the region configuration page, reselect an acceleration region, and click **Save**.
 
-<span id="step2"></span>
+[](id:step2)
 ### Step 2. Configure the CNAME record of the domain name
-Once your domain name is added, the system will automatically assign it a CNAME domain name (suffixed with `.liveplay.myqcloud.com`), which cannot be accessed directly before you complete the CNAME configuration at your domain name service provider. After the configuration takes effect, CSS can be used properly. For detailed directions, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057).
+Once your domain name is added, the system will automatically assign to it a CNAME, which ends with `.tlivecdn.com`. The CNAME can be accessed only after you configure it at your domain name service provider. You will be able to use CSS services once the configuration takes effect. For detailed directions, see [Configuring CNAME for Domain Name](https://intl.cloud.tencent.com/document/product/267/31057).
 
->?  If you need to manage it, please see [Domain Management](https://intl.cloud.tencent.com/document/product/267/31056).
+>? For how to manage added domain names, please see [Domain Management](https://intl.cloud.tencent.com/document/product/267/31056).
 
 ## FAQs
 - [What are the requirements for a playback domain name in CSS?](https://intl.cloud.tencent.com/document/product/267/7968)
-- [Can the playback and push domain names in CSS be the same? Can I use second-level domain names for them?](https://intl.cloud.tencent.com/document/product/267/7968)
+- [Can I use the same domain name for playback and push? Can I use second-level domain names?](https://intl.cloud.tencent.com/document/product/267/7968)

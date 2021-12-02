@@ -1,8 +1,8 @@
-CSS provides live stream mix feature, which can synchronously mix multiple streams of input sources into a new stream based on the configured stream mix layout for interactive live streaming. In addition, on-cloud stream mix has been connected to TencentCloud API 3.0. For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997). This document uses examples to describe how to implement live stream mix in different scenarios.
+CSS provides live stream mix feature, which can synchronously mix multiple streams of input sources into a new stream based on the configured stream mix layout for interactive live streaming. In addition, the stream mix feature has been connected to TencentCloud API 3.0. For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997). This document uses examples to describe how to implement live stream mix in different scenarios.
 
 ## Notes
-- Standard transcoding fees will be incurred for the stream mix feature.
-- To use the mixing and cropping feature, the value of cropping parameter cannot exceed the value of input stream parameter.
+- Using stream mix will incur transcoding fees. For details, please see [Live Transcoding (Watermarking, Stream Mixing)](https://intl.cloud.tencent.com/document/product/267/39604).
+- To use the mixing and cropping feature, the value of the cropping parameter cannot exceed the value of input stream parameter.
 
 
 ## Supported Features
@@ -18,7 +18,7 @@ CSS provides live stream mix feature, which can synchronously mix multiple strea
 
 
 ## Common Layout Templates
-Common templates include 10, 30, 40, 310, 390, 410, 510, and 610. When using them, you do not need to enter the position and length/width parameters of the input stream, and **the original image will be scaled proportionally.** You only need to pass in the template ID.
+Common templates include 10, 30, 40, 310, 390, 410, 510, and 610. When using them, you do not need to enter the position and length/width parameters of the input stream, and **the original image will be auto-scaled.** You only need to pass in the template ID.
 
 **Figures of common layout templates:**
 <table>
@@ -34,6 +34,7 @@ Common templates include 10, 30, 40, 310, 390, 410, 510, and 610. When using the
 <thead><tr><th>Template 390</th><th >Template 410</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/50157bb0b01d511c10b3637c13b1471a.png"  id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/6a420d03e7921453cbc461d1f1176f6c.jpg"  id="m_img"></td>
+
 </tr>
 <thead><tr><th>Template 510</th><th>Template 610</th></tr></thead>
 <td><img src="https://main.qcloudimg.com/raw/c0e5bd29f275a6f055af9830ceea0a02.jpg"  id="m_img"></td>
@@ -44,13 +45,14 @@ Common templates include 10, 30, 40, 310, 390, 410, 510, and 610. When using the
 
 
 
-## Creating a Stream Mix
-### Parameter Description
+
+## Creating Stream Mix Session
+### Parameters
 For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997).
 
 
 
-### Scenario 1. Apply for stream mix - use template 20
+### Scenario 1. Applying for stream mix - using template 20
 This example shows you how to use a preset stream mix template to mix streams.
 
 #### Sample input code
@@ -75,11 +77,11 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 }
 ```
 
-#### Stream mix effect for mic connection
+#### Stream mix effect for mic connect
 ![img](https://main.qcloudimg.com/raw/a9bdfd2622e3152e61d8cb15a1b21aa1.jpg)
 
 
-### Scenario 2. Apply for stream mix - use template 390
+### Scenario 2. Applying for stream mix - using template 390
 This example shows you how to use a preset stream mix template to mix streams.
 
 #### Sample input code
@@ -92,7 +94,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &InputStreamList.0.InputStreamName=test_stream1
 &InputStreamList.0.LayoutParams.ImageLayer=1
 &InputStreamList.0.LayoutParams.InputType=3
-&InputStreamList.0.LayoutParams.ImageWidth=1920  (canvas width)
+&InputStreamList.0.LayoutParams.ImageWidth=1920 (canvas width)
 &InputStreamList.0.LayoutParams.ImageHeight=1080 (canvas height)
 &InputStreamList.0.LayoutParams.Color=0x000000
 &InputStreamList.1.InputStreamName=test_stream2
@@ -148,7 +150,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 ```
 
 
-### Sample output code
+#### Sample output code
 ```
 {
   "Response": {
@@ -161,12 +163,12 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 #### Custom stream mix effect
 ![](https://main.qcloudimg.com/raw/db6a87baba1f1891f514d4bea9b38ee4.png)
 
-## Canceling a Stream Mix
-### Parameter description
-For more information, please see [CancelCommonMixStream](https://cloud.tencent.com/document/product/267/43405).
+## Canceling Stream Mix
+### Parameters
+For more information, please see [CancelCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35998).
 
 ### Examples
-Cancel a stream mix based on SessionId.
+This example shows you how to cancel a stream mix by session ID.
 #### Sample input code
 ```
 https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
@@ -183,18 +185,17 @@ https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
 ```
 
 >! 
->- The stream mix you apply for cannot be cancelled within 5 seconds.
->- After the cancellation, you can apply for a stream mix with the same SessionId at least 30 seconds later.
-
+>- After applying for canceling stream mix, wait at least for 5s before canceling it.
+>- After canceling the stream mix, wait at least for half a minute before you can apply for stream mix using the same session ID.
 
 ## Error Codes
-For on-cloud stream mix API 3.0, most common error codes have been transformed into the style of [API 3.0 error code](https://intl.cloud.tencent.com/document/product/267/35997#6.-.E9.94.99.E8.AF.AF.E7.A0.81). However, some error codes remain unchanged, which will be provided in the format of `err_code [ $code ],msg [ $message ]` in `Message` and prompted as an `InvalidParameter` error. The causes of specific codes are as detailed below:
+For stream mix API 3.0, most common error codes have been transformed into the style of [API 3.0 error code](https://intl.cloud.tencent.com/document/product/267/35997#6.-.E9.94.99.E8.AF.AF.E7.A0.81). However, some error codes remain unchanged, which will be provided in the format of `err_code [ $code ],msg [ $message ]` in `Message` and prompted as an `InvalidParameter` error. The causes of specific codes are as detailed below:
 
 <table>
 <thead><tr><th>Error Code</th><th>Reason</th><th>Troubleshooting</th></tr></thead>
 <tbody><tr>
 <td>-1</td>
-<td>Incorrect input parsing parameter</td>
+<td>An error occurred while parsing the input parameters</td>
 <td><ul style="margin:0">
     <li>Check whether the JSON format of the request body is correct.</li>
     <li>Check whether `InputStreamList` is empty.</li>
@@ -202,7 +203,7 @@ For on-cloud stream mix API 3.0, most common error codes have been transformed i
 </tr><tr>
 <td>-2</td>
 <td>Incorrect input parameter</td>
-<td>Check whether overflow of an image parameter occurred.</td>
+<td>Check whether the image parameter is too large.</td>
 </tr><tr>
 <td>-3</td>
 <td>The number of streams is incorrect</td>
@@ -222,7 +223,7 @@ For on-cloud stream mix API 3.0, most common error codes have been transformed i
 <td>Layer error</td>
 <td><ul style="margin:0">
     <li>Check whether the number of layers is the same as the number of input streams.</li>
-    <li>Check whether the layer ID is repeated.</li>
+    <li>Check whether the layer ID is duplicate.</li>
     <li>Check whether the layer ID is within the range of (0,16].</li>
     </ul></td>
 </tr><tr>
@@ -240,7 +241,7 @@ For on-cloud stream mix API 3.0, most common error codes have been transformed i
 <td>-28</td>
 <td>Failed to get the background length/width</td>
 <td><ul style="margin:0">
-    <li>Check whether the canvas length and width are set if the canvas is set.</li>
+    <li>Check whether the canvas length and width are set when setting the canvas.</li>
     <li>Check whether the background stream exists (stream mix needs to start 5 seconds after push starts).</li>
     </ul></td>
 </tr><tr>
@@ -259,8 +260,8 @@ For on-cloud stream mix API 3.0, most common error codes have been transformed i
 <td>-111</td>
 <td>The `OutputStreamName` parameter does not match `OutputStreamType`</td>
 <td><ul style="margin:0">
-    <li>If `OutputStreamType` is 0, `OutputStreamName` should be in `InputStreamList`.</li>
-    <li>If `OutputStreamType` is 1, `OutputStreamName` should not be in `InputStreamList`.</li>
+    <li>If `OutputStreamType` is set to `0`, `OutputStreamName` should be in `InputStreamList`.</li>
+    <li>If `OutputStreamType` is set to `1`, `OutputStreamName` should not be in `InputStreamList`.</li>
     </ul></td>
 </tr><tr>
 <td>-300</td>
@@ -298,15 +299,21 @@ For on-cloud stream mix API 3.0, most common error codes have been transformed i
 <td>The output stream bitrate is invalid</td>
 <td>Check whether the output stream bitrate is within the range of [1,50000].</td>
 </tr><tr>
-<td>Other</td>
-<td>For other errors, please <a href="https://intl.cloud.tencent.com/contact-sales">contact customer service</a> for assistance.</td>
+<td>Others</td>
+<td>For other errors, please <a href="https://cloud.tencent.com/act/event/connect-service">contact customer service</a> for assistance.</td>
 <td>-</td>
 </tr>
 </tbody></table>
 
 ## FAQs
-- [Why does the stream mix after push return the error code 505?](https://intl.cloud.tencent.com/document/product/267/38255)
-- [What happens if the applied stream mix is not canceled?](https://intl.cloud.tencent.com/document/product/267/38255)
-- [Why does the assistant host image of the stream mix sometimes appear at the unexpected position?](https://intl.cloud.tencent.com/document/product/267/38255)
+- [How do I ensure that the input streams can be auto scaled with no black bars in the video image during stream mix?](https://intl.cloud.tencent.com/document/product/267/38255)
+- [What should I do if error code -505 is returned for stream mix after push?](https://intl.cloud.tencent.com/document/product/267/38255)
+- [What will happen if stream mix is not canceled after it is applied for?](https://intl.cloud.tencent.com/document/product/267/38255)
+- [Why is the assistant host's video image in the mixed stream not in the expected position?](https://intl.cloud.tencent.com/document/product/267/38255)
 
->? For more questions about on-cloud stream mix, see [On-cloud Stream Mix FAQs](https://intl.cloud.tencent.com/document/product/267/38255)
+>? For more FAQs about stream mix, please see [On-cloud Stream Mix](https://intl.cloud.tencent.com/document/product/267/38255).
+
+
+
+
+
