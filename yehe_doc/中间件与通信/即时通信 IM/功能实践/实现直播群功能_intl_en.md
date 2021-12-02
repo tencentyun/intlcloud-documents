@@ -40,7 +40,7 @@ IM livestreaming groups (AVChatRooms) have the following features:
 
 1. Log in to the [IM console](https://console.cloud.tencent.com/im).
  >? If you already have an app, take note of the SDKAppID and go to [Step 2](#Step2).
- > A Tencent Cloud account supports a maximum of 100 IM apps. If you have reached that limit, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app before creating a new one. **Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be recovered, so proceed with caution.**
+ > A Tencent Cloud account supports a maximum of 300 IM apps. If you have reached that limit, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app before creating a new one. **Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be recovered, so proceed with caution.**
  >
 2. Click **Add Application**.
 3. In the **Create Application** dialog box, enter a name for your app and click **OK**. After the app is created, you can view the status, version, SDKAppID, creation time, and expiration time of the app on the overview page of the console.
