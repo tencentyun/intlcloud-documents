@@ -17,13 +17,13 @@
 ## 手順1：アプリケーションの作成
 1. [IMコンソール](https://console.cloud.tencent.com/im)にログインします。
  >?アプリケーションをすでに保有している場合は、そのSDKAppIDを記録してから[キー情報の取得](#step2)を実行してください。
- >同じTencent Cloudのアカウントで、最大100個のIMアプリケーションを作成することができます。すでにアプリケーションが100個ある場合は、使用する必要のないアプリケーションを[使用停止して削除](https://intl.cloud.tencent.com/document/product/1047/34540)すると、新しいアプリケーションを作成することができます。**アプリケーションを削除した後、そのSDKAppIDに対応するすべてのデータとサービスは失われます。慎重に操作を行ってください。**
+ >同じTencent Cloudのアカウントで、最大300個のIMアプリケーションを作成することができます。すでにアプリケーションが300個ある場合は、使用する必要のないアプリケーションを[使用停止して削除](https://intl.cloud.tencent.com/document/product/1047/34540)すると、新しいアプリケーションを作成することができます。**アプリケーションを削除した後、そのSDKAppIDに対応するすべてのデータとサービスは失われます。慎重に操作を行ってください。**
  >
-2. 【新しいアプリケーションの作成】をクリックし、【アプリケーションの作成】のダイアログボックスにアプリケーション名を入力し、【OK】をクリックします。
+2. **新しいアプリケーションの作成**をクリックし、**アプリケーションの作成**のダイアログボックスにアプリケーション名を入力し、**OK**をクリックします。
 ![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
 3. SDKAppID情報を保存してください。コンソールの概要ページで、作成したアプリケーションのステータス、サービスバージョン、SDKAppID、作成時間、有効期限を確認できます。
     ![](https://main.qcloudimg.com/raw/7954cc2882d050f68cd5d1df2ee776a6.png)
-4. 作成後のアプリケーションをクリックし、左側のナビゲーションバーで【支援ツール】>【UserSig発行&チェック】をクリックすると、UserIDおよびそれに対応するUserSigが作成されます。署名情報をコピーし、後でログインして使用します。
+4. 作成後のアプリケーションをクリックし、左側のナビゲーションバーで**支援ツール**>**UserSig発行&チェック**をクリックすると、UserIDおよびそれに対応するUserSigが作成されます。署名情報をコピーし、後でログインして使用します。
 ![](https://main.qcloudimg.com/raw/2286644d987d24caf565142ae30c4392.png)
 
 [](id:step2)
@@ -38,9 +38,9 @@
 
 ## 手順3：パッケージ化の実行
 ### Androidプラットフォーム
-1. Unity Editorを設定して、【File】>【Build Setting】をクリックし、Androidに切り替えます。
+1. Unity Editorを設定して、**File**>**Build Setting**をクリックし、Androidに切り替えます。
 ![](https://main.qcloudimg.com/raw/d913d32e36aa01ff93acf0316d4f103f.png)
-2. Androidのエミュレーターを起動して、【Build And Run】をクリックすると、Demoを実行できます。
+2. Androidのエミュレーターを起動して、**Build And Run**をクリックすると、Demoを実行できます。
 
 >- Demo内にはアップロード済みのAPIのすべてが含まれており、テストおよび参考のために呼び出すことができます。APIドキュメントについては[SDK API（Unity）](https://intl.cloud.tencent.com/document/product/1047/40125)をご参照ください。
 > - UIは部分的に調整され更新される可能性があります。最新バージョンを基準としてください。
@@ -49,9 +49,9 @@
 3. インターフェースをテストします。まず1行目2つ目の入力ボックス内にUserIDを追加してから、initSDKとloginをコールします。データ表示ウィンドウにコールの成功が表示されると、基本的にインターフェースのコールを試すことができます。
 
 ### iOSプラットフォーム
-1. Unity Editorを設定して、【File】>【Build Setting】をクリックし、iOSに切り替えます。
+1. Unity Editorを設定して、**File**>**Build Setting**をクリックし、iOSに切り替えます。
 ![](https://main.qcloudimg.com/raw/3982b96c4f9e76107bb4aadac33a5de5.png)
-2. iPhoneの実機に接続して、【Build And Run】をクリックします。1つの新しいディレクトリを選択して、コンパイルされたiOSプロジェクトに保存する必要があります。コンパイルが終了すると、新しいウィンドウにXcodeプロジェクトが表示されます。
+2. iPhoneの実機に接続して、**Build And Run**をクリックします。1つの新しいディレクトリを選択して、コンパイルされたiOSプロジェクトに保存する必要があります。コンパイルが終了すると、新しいウィンドウにXcodeプロジェクトが表示されます。
 3. iOSプロセスを開き、メインTargetのSigning & Capabilities（Apple開発者アカウントが必要）を設定すると、プロジェクトをiPhoneの実機で実行可能になります。
 4. プロジェクトを起動し、実機でDemoのデバッグを実行します。
 
@@ -64,10 +64,10 @@
 デバイスが他のリソースに使用されないことを保証するか、またはBuildをクリックしてapkパッケージを生成してから、エミュレーター内にドラッグして実行します。
 
 ### iOSで初回実行時にエラーが発生します。
-上のDemoで設定を実行した後もエラーが発生する場合、【Product】>【Clean】をクリックし、プロダクトを削除してから改めてBuildするか、またはXcodeをオフにして改めて開いて再度Buildします。
+上のDemoで設定を実行した後もエラーが発生する場合、**Product**>**Clean**をクリックし、プロダクトを削除してから改めてBuildするか、またはXcodeをオフにして改めて開いて再度Buildします。
 ### 2019.04バージョンのUnity、iOSプラットフォームでエラーが発生します。
 Library/PackageCache/com.unity.collab-proxy@1.3.9/Editor/UserInterface/Bootstrap.cs(23,20): error CS0117: 'Collab' does not contain a definition for 'ShowChangesWindow'
-Editorツールバーで【Window】>【Package Manager】をクリックし、Unity Collaborateを1.2.16にダウングレードします。
+Editorツールバーで**Window**>**Package Manager**をクリックし、Unity Collaborateを1.2.16にダウングレードします。
 
 ### 2019.04バージョンのUnity、iOSプラットフォームでエラーが発生します。
 Library/PackageCache/com.unity.textmeshpro@3.0.1/Scripts/Editor/TMP_PackageUtilities.cs(453,84): error CS0103: The name 'VersionControlSettings' does not exist in the current context
