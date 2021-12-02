@@ -1,3 +1,14 @@
+### Version 9.3 Released on November 4, 2021
+- iOS: fixed the issue of playback speed change when special effects are previewed during post-shooting editing.
+- iOS: fixed crash of `TXCRenderView`.
+- Android: fixed lag and crash during composition of triple split-screen videos on Xiaomi Mi 9.
+
+### Version 9.2 Released on September 26, 2021
+- Android: fixed the issue where only half of thumbnails are generated.
+- Android: fixed lag during video composition on MediaTek Dimensity 1200.
+- Android: improved compatibility with the 9:16 aspect ratio during video shooting.
+- iOS: fixed audio exception when videos with 48000 Hz mono audio are spliced.
+
 ### Version 9.1 Released on September 2, 2021
 - Android: fixed several stability issues.
 - Android: improved the clarity of generated videos.
@@ -21,7 +32,7 @@
 - iOS & Android: fixed the issue where videos load slowly after users pause VOD playback and adjust the playback progress.
 
 ### Version 8.7 Released on May 24, 2021
-iOS: fixed the electrical noise of the shooting module.
+iOS: fixed electrical noise of the shooting module on iOS 14.5.
 
 ### Version 8.6 Released on May 6, 2021
 - iOS: fixed occasional surge in memory usage by the VOD player.
@@ -67,7 +78,7 @@ iOS: fixed the electrical noise of the shooting module.
 - iOS: fixed the problem of apps occasionally freezing after multiple stickers are added.
 - iOS: fixed the problem of apps quitting unexpectedly during bubble subtitle editing.
 - Android: supported the uploading of thumbnails on Android 9.0 and above.
-- Android: fixed the problem of out-of-sync videos in triple split screens after users switch apps to the background and then back to the foreground.
+- Android: fixed the issue where triple split-screen videos are out of sync after users switch the app to the background and back again.
 - Android: fixed the UGCKit problem of occasional black screens when users preview compressed videos.
 - Android: fixed the problem of failure to set volume with UGCKit in video editing.
 - Android: fixed the UGCKit problem of the Undo button occasionally not showing on the actions UI.
@@ -120,7 +131,7 @@ iOS & Android: optimized visual effect APIs such as filters and green screen key
 
 ### Version 6.9 Released on January 15, 2020
 - iOS & Android: introduced UGC TUIKit to enable modular UI design and theme customization, facilitating integration and modification.
-- iOS & Android: supported shooting of triple split screen videos and volume adjustment.
+- iOS & Android: supported shooting of triple split-screen videos and volume adjustment.
 - Android: made the SDK supported on Android 10.
 - Android: started using hardware encoders for UGC to speed up pre-processing.
 - iOS: optimized the karaoke module and fixed problems including lip-sync errors.

@@ -1,6 +1,32 @@
+## November 2021
+<table>
+<tr><th width="20%">Update</th><th width="50%">Description</th> <th width="15%">Release Date</th> <th width="15%">Document</th>
+</tr><tr>
+<td>Version 9.3</td>
+<td ><ul style="margin:0;">
+<li>iOS: fixed the issue of playback speed change when special effects are previewed during post-shooting editing.</li>
+<li>iOS: fixed crash of `TXCRenderView`.</li>
+<li>Android: fixed lag and crash during composition of triple split-screen videos on Xiaomi Mi 9.</li>
+</ul>
+</td>
+ <td>2021-11-04</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
+</tr></table>
+
 ## September 2021
 <table>
 <tr><th width="20%">Update</th><th width="50%">Description</th> <th width="15%">Release Date</th> <th width="15%">Document</th>
+</tr><tr>
+<td>Version 9.2</td>
+<td ><ul style="margin:0;">
+<li>Android: fixed the issue where only half of thumbnails are generated.</li>
+<li>Android: fixed lag during video composition on MediaTek Dimensity 1200.</li>
+<li>Android: improved compatibility with the 9:16 aspect ratio during video shooting.</li>
+<li>iOS: fixed audio exception when videos with 48000 Hz mono audio are spliced.</li>
+</ul>
+</td>
+ <td>2021-09-26</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr><tr>
 <td>Version 9.1</td>
 <td ><ul style="margin:0;">
@@ -67,7 +93,7 @@
 <tr><th width="20%">Update</th><th width="50%">Description</th> <th width="15%">Release Date</th> <th width="15%">Document</th>
 </tr><tr>
 <td>Version 8.7</td>
-<td>iOS: fixed the electrical noise of the shooting module.
+<td>iOS: fixed electrical noise of the shooting module on iOS 14.5.
 </td>
  <td>2021-05-24</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
@@ -168,7 +194,7 @@
   <li/>iOS: fixed the problem of apps occasionally freezing after multiple stickers are added.
   <li/>iOS: fixed the problem of apps quitting unexpectedly during bubble subtitle editing.
   <li/>Android: supported the uploading of thumbnails on Android 9.0 and above.
-  <li/>Android: fixed the problem of out-of-sync videos in triple split screens after users switch apps to the background and then back to the foreground.
+  <li/>Android: fixed the issue where triple split-screen videos are out of sync after users switch the app to the background and back again.
   <li/>Android: fixed the UGCKit problem of occasional black screens when users preview compressed videos.
   <li/>Android: fixed the problem of failure to set volume with UGCKit in video editing.
   <li/>Android: fixed the UGCKit problem of the Undo button occasionally not showing on the actions UI.
@@ -213,7 +239,7 @@
   <li>Android: fixed the problem of the error log being printed during deinitialization of the UGSV SDK.
   <li>Android: fixed the problem of slow callback of end to a shooting.
   <li>Android: fixed multiple crash issues of the UGSV SDK reported recently.</td>
-<td>2020-09-27</td>
+<td>September 27, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr><tr>
 <td>Version 7.7 </td>
@@ -349,7 +375,7 @@ iOS & Android: optimized visual effect APIs such as filters and green screen key
 <td>Version 6.9</td>
 <td ><ul style="margin:0;">
 <li >iOS & Android: introduced UGC TUIKit to enable modular UI design and theme customization, facilitating integration and modification.
-<li > iOS & Android: supported shooting of triple split screen videos and volume adjustment.
+<li > iOS & Android: supported shooting of triple split-screen videos and volume adjustment.
 <li > Android: made the SDK supported on Android 10.
 <li > Android: started using hardware encoders for UGC to speed up pre-processing.
 <li >iOS: optimized the karaoke module, and fixed problems including lip-sync errors.
