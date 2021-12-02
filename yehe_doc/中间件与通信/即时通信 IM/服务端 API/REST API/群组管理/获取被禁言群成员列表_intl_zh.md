@@ -10,6 +10,7 @@
 |Public|支持|
 |ChatRoom|支持，同新版本中的 Meeting（临时会议群）|
 |AVChatRoom|支持|
+|Community|支持|
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
