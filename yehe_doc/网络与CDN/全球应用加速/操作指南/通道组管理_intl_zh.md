@@ -49,7 +49,7 @@
 
 1. 登录 [全球应用加速控制台](https://console.cloud.tencent.com/gaap)，进入“通道组管理”页面，单击指定通道组的 **ID/通道名**，进入下一级页面。
    ![](https://qcloudimg.tencent-cloud.cn/raw/a61839822d556c1dc21f0fc07d3f4df0.png)
-2. 在“通道组信息”标签页，可以查看各通道的详细信息。其中，“转发 IP”是指加速通道末端的转发节点 IP，该转发节点负责将加速通道的数据通过公网转发给源站。如果您希望多条通道使用同一个域名，可单击【统一域名】选项可直接跳转至“[统一域名](https://console.cloud.tencent.com/gaap/domain)”页面进行配置，通道组下不同通道可单独对【统一域名】进行配置。
+2. 在“通道组信息”标签页，可以查看各通道的详细信息。其中，“转发 IP”是指加速通道末端的转发节点 IP，该转发节点负责将加速通道的数据通过公网转发给源站。如果您希望多条通道使用同一个域名，可单击**统一域名**选项可直接跳转至“[统一域名](https://console.cloud.tencent.com/gaap/domain)”页面进行配置，通道组下不同通道可单独对**统一域名**进行配置。
    ![](https://qcloudimg.tencent-cloud.cn/raw/7ff4c01ffd322dd8577d426e6a3ce3fa.jpg)
 
 ## TCP/UDP 监听器管理
@@ -74,4 +74,4 @@
 
 ## 安全防护
 
-详情请见 接入管理相关配置页面。
+详情请见 [接入管理相关配置页面](https://intl.cloud.tencent.com/document/product/608/42338)。
