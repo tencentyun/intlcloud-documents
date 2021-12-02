@@ -7,12 +7,13 @@ DDoS 高防 IP 支持对已接入防护的网站业务设置基于地理区域�
 ## 操作步骤
 1. 登录 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) ，在左侧导航中，单击 **DDoS 高防 IP** > **防护配置**。
 2. 在左边的列表选中有接入域名防护的高防 IP 的 ID，如“xxx.xx.xx.xx bgpip-000003n2”。
-![](https://qcloudimg.tencent-cloud.cn/raw/3ec2332faedae900f600877e17fa2bf7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b30d358680cffd440e15c02407552995.png)
 3. 在右侧卡片中单击**区域封禁**卡片中的**设置**，进入区域封禁页面。
-![](https://qcloudimg.tencent-cloud.cn/raw/5dff892b71192f133334966272a5abbb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f0244dcd942744fd59fdeb16f40a807e.png)
 4. 在区域封禁页面，单击**新建**。
-![](https://qcloudimg.tencent-cloud.cn/raw/cb96e3225162b7d051aeb5739f7ed7f1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f71e1d724e9a0dd78551e4f58d0cf800.png)
 5. 在新建区域封禁弹窗中，选择 IP、协议、域名和所封禁的区域，单击**确定**，创建区域封禁规则。
-![](https://qcloudimg.tencent-cloud.cn/raw/6fc4b90e54bab026b6c4eb7f2829077d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/30a347a580fbc1536096fc67ffee4287.png)
 6. 新建完成后，在区域封禁列表，将新增一条区域封禁规则，可以在右侧操作列，单击**配置**，修改区域封禁规则。
-![](https://qcloudimg.tencent-cloud.cn/raw/7973de77786cafea3fa79b626bd91418.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0d779468bc60d2ce407e3cd4ff0a69fd.png)
+
