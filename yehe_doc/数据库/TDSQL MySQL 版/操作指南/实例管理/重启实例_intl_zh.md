@@ -11,6 +11,6 @@
 
 
 ## 操作步骤
-1. 登录 [TDSQL MySQL版 控制台](https://console.cloud.tencent.com/tdsqld)， 在实例列表勾选单个或多个需要重启的实例，在上方单击【重启】。
+1. 登录 [TDSQL MySQL版 控制台](https://console.cloud.tencent.com/tdsqld)， 在实例列表勾选单个或多个需要重启的实例，在上方单击**重启**。
 ![](https://main.qcloudimg.com/raw/1d970c3e711f6f7037a1620788b63f4b.png)
-3. 在弹出的对话框，确认无误后，单击【确定】，即可重启单个实例或批量重启实例。
+3. 在弹出的对话框，确认无误后，单击**确定**，即可重启单个实例或批量重启实例。
