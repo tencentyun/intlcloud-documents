@@ -87,7 +87,7 @@ im.on(TWebLive.EVENT.IM_TEXT_MESSAGE_RECEIVED, onTextMessageReceived);
 im.login({userID: 'your userID', userSig: 'your userSig'}).then((imResponse) => {
   console.log(imResponse.data); // 登录成功
   if (imResponse.data.repeatLogin === true) {
-    // 标识账号已登录，本次登录操作为重复登录
+    // 标识帐号已登录，本次登录操作为重复登录
     console.log(imResponse.data.errorInfo);
   }
 }).catch((imError) => {
@@ -118,7 +118,7 @@ im.enterRoom('your roomID').then((imResponse) => {
 ::: 方式1：基于实时音视频
 
 #### 步骤1：创建实时音视频 TRTC 应用[](id:step1)
-在 [实时音视频 TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，单击左侧导航栏【应用管理】>【创建应用】，输入您的应用名称，单击【确定】即可创建一个实时音视频应用。创建完毕后，请保存 SDKAPPID。
+在 [实时音视频 TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，单击左侧导航栏**应用管理**>**创建应用**，输入您的应用名称，单击**确定**即可创建一个实时音视频应用。创建完毕后，请保存 SDKAPPID。
 ![](https://main.qcloudimg.com/raw/b2acb7f79117f0828928e13a17ea9a6a.png)
 
 <dx-alert infotype="explain" title="">
@@ -128,9 +128,9 @@ im.enterRoom('your roomID').then((imResponse) => {
 
 
 #### 步骤2：开启自动旁路推流
-1. 在 [实时音视频 TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，单击左侧导航栏【应用管理】，在您创建的实时音视频应用上，单击【功能配置】进入应用详情。
+1. 在 [实时音视频 TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，单击左侧导航栏**应用管理**，在您创建的实时音视频应用上，单击**功能配置**进入应用详情。
 ![](https://main.qcloudimg.com/raw/2f92ee6867ff2f2b7456a0d03f296145.png)
-2. 单击【启用旁路推流】，将旁路推流方式选择：全局自动旁路。旁路推流开启后，实时音视频 TRTC 房间里的每一路画面都配备一路对应的播放地址。
+2. 单击**启用旁路推流**，将旁路推流方式选择：全局自动旁路。旁路推流开启后，实时音视频 TRTC 房间里的每一路画面都配备一路对应的播放地址。
 ![](https://main.qcloudimg.com/raw/8c6d2658b2101985fd3f4f202cf5aa77.png)
 
 <dx-alert infotype="explain" title="">
@@ -138,7 +138,7 @@ im.enterRoom('your roomID').then((imResponse) => {
 </dx-alert>
 
 
-3. 单击【快速上手】，可查看密钥信息，请保存密钥。[](id:step2)
+3. 单击**快速上手**，可查看密钥信息，请保存密钥。[](id:step2)
 ![](https://main.qcloudimg.com/raw/8996c74d3240aeb2eae4e20d8a769c0d.png)
 4. 在 [腾讯云直播控制台](https://console.cloud.tencent.com/live/) 配置播放域名并完成 CNAME 配置，详细操作指引请参见 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 文档。
 <dx-alert infotype="explain" title="">
@@ -181,7 +181,7 @@ Vue.prototype.TWebLive = TWebLive
 
 - 目前桌面端 Chrome 浏览器支持 TRTC 桌面浏览器 SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
 
-- TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击【允许】即可。
+- TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击**允许**即可。
 
   
 
@@ -191,14 +191,14 @@ Vue.prototype.TWebLive = TWebLive
 ::: 方式2：基于即时通信\sIM
 
 #### 步骤1：创建即时通信 IM 应用
-1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)，单击【创建新应用】将弹出对话框。
+1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)，单击**创建新应用**将弹出对话框。
 ![](https://main.qcloudimg.com/raw/d4eab7277cc150b47d2078d299e75544.png)
-2. 输入您的应用名称，单击【确认】即可完成创建。
+2. 输入您的应用名称，单击**确认**即可完成创建。
 ![](https://main.qcloudimg.com/raw/d52080f2e69932798685d9640f4587e4.png)
 3. 您可在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 总览页面查看新建应用的状态、业务版本、SDKAppID、创建时间以及到期时间。请记录 SDKAppID 信息。
 
 #### 步骤2：获取 IM 密钥并开通实时音视频服务
-1. 在 [即时通讯 IM 控制台](https://console.cloud.tencent.com/im) 总览页单击您创建完成的即时通信 IM 应用，随即跳转至该应用的基础配置页。在【基本信息】区域，单击【显示密钥】，复制并保存密钥信息。
+1. 在 [即时通讯 IM 控制台](https://console.cloud.tencent.com/im) 总览页单击您创建完成的即时通信 IM 应用，随即跳转至该应用的基础配置页。在**基本信息**区域，单击**显示密钥**，复制并保存密钥信息。
 ![](https://main.qcloudimg.com/raw/9f4662be270ed82fcda3eb41270364b3.png)
 <dx-alert infotype="notice" title="">
 请妥善保管密钥信息，谨防泄露。
@@ -242,7 +242,7 @@ Vue.prototype.TWebLive = TWebLive
 <dx-alert infotype="notice" title="">
 - 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口`访问。
 - 目前桌面端 Chrome 浏览器支持 TRTC 桌面浏览器 SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
-- TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击【允许】即可。
+- TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击**允许**即可。
 
 </dx-alert>
 
@@ -283,8 +283,8 @@ Web 推流和 Web 低延时观看用到了 WebRTC 技术。
 [](id:sos)
 ## 注意事项
 
-- 实时音视频应用与 IM 应用的 SDKAppID 一致，才能复用账号与鉴权。
-- IM 应用针对文本消息，提供基础版本的安全打击能力，如果希望使用自定义不雅词功能，可以单击【升级】。
+- 实时音视频应用与 IM 应用的 SDKAppID 一致，才能复用帐号与鉴权。
+- IM 应用针对文本消息，提供基础版本的安全打击能力，如果希望使用自定义不雅词功能，可以单击**升级**。
 - 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦 SECRETKEY 泄露，攻击者就可以盗用您的腾讯云流量。正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 ## 常见问题
@@ -300,7 +300,7 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
 出现该错误说明 TRTC 桌面浏览器 SDK 在 STUN 打洞失败，请根据环境要求检查防火墙配置。
 :::
 ::: 4.\s出现10006\serror\s该如何处理？
-如果出现 `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"`。请登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)，单击您创建的应用，单击【帐号信息】，在帐号信息面板请确认您的实时音视频应用的服务状态是否为可用状态。
+如果出现 `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"`。请登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)，单击您创建的应用，单击**帐号信息**，在帐号信息面板请确认您的实时音视频应用的服务状态是否为可用状态。
 ![](https://main.qcloudimg.com/raw/e3352d3a227a30326a7631d7d95feace.png)
 :::
 </dx-accordion>
