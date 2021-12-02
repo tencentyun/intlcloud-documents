@@ -233,7 +233,7 @@ If the value of `Complete` in the response is `0`, you need to continue pulling 
 | LastMsgKey | String | Identifier of the last message pulled this time |
 | MsgList | Array | List of returned messages |
 | MsgFlagBits | Integer | Message attribute. `0`: normal message; `8`: recalled message |
-| MsgBody | Object | Message body. For details on formats, please see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). (Note: a message can contain multiple message elements, in which case `MsgBody` is an array.) |
+| MsgBody | Array | Message body. For details on formats, please see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). (Note: a message can contain multiple message elements, in which case `MsgBody` is an array.) |
 | CloudCustomData | String | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
 | MsgKey | String | Message identifier. You can use this field when calling the [v4/openim/admin_msgwithdraw](https://intl.cloud.tencent.com/document/product/1047/35015) API to recall this message. |
 
