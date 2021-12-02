@@ -9,6 +9,7 @@ The app admin can use the group ID to obtain the number of online users in a liv
 | Public | No. |
 | ChatRoom | No. Same as Meeting (temporary meeting group) in the new version. |
 | AVChatRoom | Yes. |
+|Community|No. |
 
 Above are the IM built-in groups. For more information, see [Group system](https://intl.cloud.tencent.com/document/product/1047/33529).
 
