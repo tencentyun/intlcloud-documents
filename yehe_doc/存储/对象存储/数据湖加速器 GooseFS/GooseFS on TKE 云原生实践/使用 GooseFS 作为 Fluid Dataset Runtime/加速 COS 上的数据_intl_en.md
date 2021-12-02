@@ -12,8 +12,7 @@
  - Create a dataset CRD object, describing the source of the dataset, such as `test-bucket` in this example
  - Create a GooseFSRuntime, equivalent to starting a GooseFS cluster to provide the caching service
 
- <dx-codeblock>
-::: yaml yaml
+```yaml
 apiVersion: data.fluid.io/v1alpha1
 kind: Dataset
 metadata:
@@ -22,12 +21,12 @@ spec:
   mounts:
     - mountPoint: cosn://test-bucket/
       options:
-        fs.cosn.userinfo.secretId: <COS_ACCESS_KEY_ID>
-        fs.cosn.userinfo.secretKey: <COS_ACCESS_KEY_SECRET>
+        fs.cosn.userinfo.secretId: <COS_SECRET_ID>
+        fs.cosn.userinfo.secretKey: <COS_SECRET_KEY>
         fs.cosn.bucket.region: <COS_REGION>
         fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
         fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-        fs.cos.app.id: <COS_APP_ID>
+        fs.cosn.userinfo.appid: <COS_APP_ID>
   name: hadoop
 	
 ---
@@ -44,18 +43,16 @@ spec:
         quota: 100G
         high: "0.9"
         low: "0.2"
-:::
-</dx-codeblock>
+```
 To ensure the security of key information such as AK, you are advised to use `secret` to save related key information. For details about how to use `secret`, see <a href="https://cloud.tencent.com/document/product/436/59502">Using Parameters for Encryption</a>.
-<dx-codeblock>
-::: yaml yaml
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
   name: mysecret
 stringData:
-  fs.cosn.userinfo.secretId: <COS_ACCESS_KEY_ID>
-  fs.cosn.userinfo.secretKey: <COS_ACCESS_KEY_SECRET>
+  fs.cosn.userinfo.secretId: <COS_SECRET_ID>
+  fs.cosn.userinfo.secretKey: <COS_SECRET_KEY>
 ---
 apiVersion: data.fluid.io/v1alpha1
 kind: Dataset
@@ -68,7 +65,7 @@ spec:
         fs.cosn.bucket.region: <COS_REGION>
         fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
         fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-        fs.cos.app.id: <COS_APP_ID>
+        fs.cosn.userinfo.appid: <COS_APP_ID>
       name: hadoop
       encryptOptions:
         - name: fs.cosn.userinfo.secretId
@@ -95,13 +92,13 @@ spec:
         quota: 100G
         high: "0.9"
         low: "0.2"
-:::
-</dx-codeblock>
+```
+
 
  - Dataset:
     - mountPoint: indicates the UFS mount path. This path does not need to contain endpoint information.
     - options: specifies necessary bucket information. For details, see [API glossary](https://intl.cloud.tencent.com/document/product/436/7751).
-    - fs.cos.accessKeyId/fs.cos.accessKeySecret: information of the key with the permission to access the COS bucket.
+    - fs.cosn.userinfo.secretId/fs.cosn.userinfo.secretKey: information of the key with the permission to access the COS bucket.
  - GooseFSRuntime: for more APIs, see [api_doc.md](https://github.com/fluid-cloudnative/fluid/blob/master/docs/en/dev/api_doc.md).
     - replicas: indicates the number of nodes of the created GooseFS cluster.
     - mediumtype: GooseFS supports three types of cache media: HDD, SSD, and MEM, and provides multi-level cache configuration.

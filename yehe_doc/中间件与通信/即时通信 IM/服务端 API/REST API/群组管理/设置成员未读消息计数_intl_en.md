@@ -12,6 +12,7 @@
 | Public | Yes. |
 | ChatRoom | No. Same as meeting group (Meeting) in the new version. |
 | AVChatRoom | No. |
+|Community|Yes.|
 
 These are the built-in group types in IM. For detailed information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 

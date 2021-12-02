@@ -12,8 +12,7 @@
  - 예시의 test-bucket과 같은 데이터 세트 소스를 설명하는 Dataset CRD 객체 생성.
  - GooseFS 클러스터를 실행하여 캐싱 서비스를 제공하는 것과 같이, GooseFSRuntime 생성.
 
- <dx-codeblock>
-::: yaml yaml
+ ```yaml
 apiVersion: data.fluid.io/v1alpha1
 kind: Dataset
 metadata:
@@ -22,12 +21,12 @@ spec:
   mounts:
     - mountPoint: cosn://test-bucket/
       options:
-        fs.cosn.userinfo.secretId: <COS_ACCESS_KEY_ID>
-        fs.cosn.userinfo.secretKey: <COS_ACCESS_KEY_SECRET>
+        fs.cosn.userinfo.secretId: <COS_SECRET_ID>
+        fs.cosn.userinfo.secretKey: <COS_SECRET_KEY>
         fs.cosn.bucket.region: <COS_REGION>
         fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
         fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-        fs.cos.app.id: <COS_APP_ID>
+        fs.cosn.userinfo.appid: <COS_APP_ID>
   name: hadoop
 	
 ---
@@ -44,18 +43,16 @@ spec:
         quota: 100G
         high: "0.9"
         low: "0.2"
-:::
-</dx-codeblock>
+```
 AK 등 키 정보의 보안을 위해, secret 사용을 통한 관련 키 정보 저장을 권장하며, secret 사용은 <a href="https://cloud.tencent.com/document/product/436/59502">매개변수를 사용하여 암호화하기</a>를 참고하시기 바랍니다.
-<dx-codeblock>
-::: yaml yaml
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
   name: mysecret
 stringData:
-  fs.cosn.userinfo.secretId: <COS_ACCESS_KEY_ID>
-  fs.cosn.userinfo.secretKey: <COS_ACCESS_KEY_SECRET>
+  fs.cosn.userinfo.secretId: <COS_SECRET_ID>
+  fs.cosn.userinfo.secretKey: <COS_SECRET_KEY>
 ---
 apiVersion: data.fluid.io/v1alpha1
 kind: Dataset
@@ -68,7 +65,7 @@ spec:
         fs.cosn.bucket.region: <COS_REGION>
         fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
         fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-        fs.cos.app.id: <COS_APP_ID>
+        fs.cosn.userinfo.appid: <COS_APP_ID>
       name: hadoop
       encryptOptions:
         - name: fs.cosn.userinfo.secretId
@@ -95,13 +92,12 @@ spec:
         quota: 100G
         high: "0.9"
         low: "0.2"
-:::
-</dx-codeblock>
+```
 
  - Dataset：
     - mountPoint: UFS 마운트 경로를 나타내며, endpoint 정보를 포함할 필요가 없습니다.
     - options: options에서 버킷에 필요한 정보를 지정해야 하며, 자세한 내용은 [API 용어 정보](https://intl.cloud.tencent.com/document/product/436/7751)를 참고하십시오.
-    - fs.cos.accessKeyId/fs.cos.accessKeySecret: COS 버킷에 대한 액세스 권한이 있는 키 정보입니다.
+    - fs.cosn.userinfo.secretId/fs.cosn.userinfo.secretKey：COS 버킷에 대한 액세스 권한이 있는 키 정보입니다.
  - GooseFSRuntime: 더 많은 API는 [api_doc.md](https://github.com/fluid-cloudnative/fluid/blob/master/docs/en/dev/api_doc.md)를 참고하십시오.
     - replicas: 생성된 GooseFS 클러스터 노드 수량을 나타냅니다.
     - mediumtype: GooseFS는 HDD/SSD/MEM 세 가지 유형의 캐시 매체를 지원하여 다단계 캐시 구성을 제공합니다.
