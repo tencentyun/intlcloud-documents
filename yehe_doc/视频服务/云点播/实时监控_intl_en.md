@@ -10,10 +10,9 @@ Log in to the [VOD console](https://console.cloud.tencent.com/vod) and click **D
 ### Data on the details page
 
 Click **Learn More** under each metric to enter the metric details page.
-![](https://main.qcloudimg.com/raw/f07bfb4a06e39995e35d43ce39ef6941.png)
 
 You can also switch to another metric by selecting it from the drop-down list in the top-left corner of the details page.
-![](https://main.qcloudimg.com/raw/7d465cd4fcc4f7625ae181208a3d06cd.png)
+
 On the details page, you can view the following data:
 
 - Bandwidth: total peak bandwidth, real-time bandwidth curve, and domain name bandwidth rankings (from large to small)
@@ -63,10 +62,10 @@ The new **Instance Monitoring** page allows you to adjust the metrics panel as n
 
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod) and click **Statistical Analysis** > **Real-time Monitoring** on the left sidebar to enter the management page.
 2. Click the configuration icon on the right to enter the configuration page.
-   ![img](https://main.qcloudimg.com/raw/361fe39905fa49a705a3b34624dfedf1.png)
+
 3. Select data metrics to be displayed on the overview page as needed: Selected metrics will be displayed directly. If you clear a metric, it will no longer be displayed.
    You can customize the panel via real-time monitoring of **Access Monitoring** and **Origin-Pull Monitoring** overview pages.
-   ![img](https://main.qcloudimg.com/raw/a0481dd20a3ba63d1c84e72cc9e8846b.png)
+
 
 ## Data Comparison
 
@@ -74,8 +73,6 @@ Tabs on the new **Real-time Monitoring** page all support data curve comparison.
 
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod) and click **Statistical Analysis** > **Real-time Monitoring** on the left sidebar to enter the management page.
 2. Query the data curve of a specified time period, click **Data Comparison**, and specify another time period to start data comparison.
-   ![img](https://main.qcloudimg.com/raw/f0c7dd17f0a9434eaf7b3873bbfa860b.png)
    To facilitate your use, the system will automatically fill the start or end time accordingly after you specify the end or start time, ensuring the two time periods for comparison are of the same length.
-   ![img](https://main.qcloudimg.com/raw/91a7382c709fef8070e2fdac13ecba76.png)
 
 
