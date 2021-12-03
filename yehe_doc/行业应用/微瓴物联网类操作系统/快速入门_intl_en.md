@@ -1,6 +1,6 @@
 ﻿To use Tencent Cloud Weiling, please log in at the Tencent Cloud official website and submit your [application form](https://cloud.tencent.com/apply/p/06f15o860q2u). The application process is as shown below:
 
-![](https://main.qcloudimg.com/raw/c06cd908f0c2f9843ffd4b97387704ad.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/cf95a9b146992e864b9b6ae3ba755cc2.svg)
 ### Step 1. Log in
 Log in at the Tencent Cloud official website. If you don't have an account yet, please sign up as instructed in [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985).
 
