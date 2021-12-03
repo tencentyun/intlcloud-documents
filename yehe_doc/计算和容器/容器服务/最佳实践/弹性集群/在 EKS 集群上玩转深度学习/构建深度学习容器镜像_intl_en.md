@@ -80,5 +80,5 @@ For subsequent operations, please see [Running Deep Learning in EKS](https://int
 
 ## FAQs
 
-If you encounter any problems when performing this practice, please see [FAQs](https://cloud.tencent.com/document/product/457/60226) for troubleshooting.
+If you encounter any problems when performing this practice, please see [FAQs](https://intl.cloud.tencent.com/zh/document/product/457/42062) for troubleshooting.
 
