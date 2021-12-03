@@ -3,7 +3,7 @@ TDMQ for Pulsar is Tencent's proprietary messaging middleware based on Apache Pu
 TDMQ for Pulsar can add async decoupling and peak shifting capabilities to distributed application systems. It features massive message retention, high throughput, and reliable retry mechanism required by internet applications. Currently, it is widely used in Tencent's most billing scenarios, including primary payment process as well as real-time reconciliation, monitoring, and big data analysis.
 
 
-![](https://main.qcloudimg.com/raw/497b58604f9b0f1a2cb762991c1fd637.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d945d891e6adbe4dd6fa654c298e37e1.png)
 
 ## Features
 
