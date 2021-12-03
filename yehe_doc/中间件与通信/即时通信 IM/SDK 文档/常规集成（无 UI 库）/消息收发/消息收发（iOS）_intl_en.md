@@ -564,7 +564,7 @@ customElem.data = [@"custom message" dataUsingEncoding:NSUTF8StringEncoding];
 
 [](id:msgAnalyze)
 ### 5. How are different types of messages parsed?
-It is complex to parse a message. We provide the [sample code](https://github.com/tencentyun/TIMSDK/blob/master/iOS/Demo/TUIKitDemo/SampleCode/message.m) for parsing different types of messages. You can copy the code to your project, and perform secondary development based on your actual needs.
+It is complex to parse a message. We provide the [sample code](https://github.com/tencentyun/TIMSDK/blob/master/iOS/Demo/TUIKitDemo/SampleCode/MessageParser.m) for parsing different types of messages. You can copy the code to your project, and perform secondary development based on your actual needs.
 
 ### 6. Why did sending the PNG images in an Xcode project fail?
 

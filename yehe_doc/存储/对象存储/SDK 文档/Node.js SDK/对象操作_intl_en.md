@@ -687,7 +687,7 @@ function(err, data) { ... }
 | - headers | Headers | Object |
 | - ETag | MD5 checksum of the object, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end.** | String |
 | - LastModified | Last modified time of the object, for example, `2017-06-23T12:33:27.000Z` | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | | String  |
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | 
 
 ### Deleting an object
 
@@ -940,7 +940,7 @@ function(err, data) { ... }
 | - UploadIdMarker | Specifies the `UploadId` where the list starts. | String |
 | - NextKeyMarker | If the returned list is truncated, the `NextKeyMarker` returned will be the starting point of the subsequent list. | String |
 |-  NextUploadIdMarker |  The `UploadId` after which the next returned list begins if the list is truncated | String |
-| MaxUploads | Sets the maximum number of entries returned. Value range: 1-1000 | String | No |
+| MaxUploads | Sets the maximum number of entries returned. Value range: 1-1000 | String | 
 | - IsTruncated | Indicates whether returned objects are truncated. Valid value: `true` or `false` | String|
 | - Prefix | Matching prefix for object keys. This parameter specifies that the response can contain only object keys with the specified prefix. | String |
 | - Delimiter | Separating symbol used to group object keys. It is usually `/`. The identical paths between `Prefix` or, if no `Prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix. All common prefixes will be listed. | String |
@@ -1192,7 +1192,7 @@ function(err, data) { ... }
 | NextPartNumberMarker  | The part after which the next returned list begins if the list is truncated    | String    |
 | - MaxParts | Maximum number of entries returned at a time | String |
 | - IsTruncated | Indicates whether the returned list is truncated. Valid values: `true`, `false` | String |
-| - Part | Array | Part information list | ObjectArray |
+| - Part | Part information list | ObjectArray |
 | - - PartNumber | Part number | String |
 | - - LastModified | Last modified time of a part | String |
 | - - ETag | MD5 checksum of a part | String |

@@ -1,5 +1,5 @@
-## Introduction
-Anti-DDoS Pro supports precise protection for the connected web businesses. With the precise protection, you can configure protection policies combining multiple conditions of common HTTP fields, such as URI, UA, Cookie, Referer, and Accept to screen access requests. For the requests matched the conditions, you can configure CAPTCHA to verify the requesters or a policy to automatically lose the packets. Precise protection is available for policy customization in various use cases to precisely defend against CC attacks.
+## Use Cases
+Anti-DDoS supports precise protection for connected web applications. With the precise protection, you can configure protection policies combining multiple conditions of common HTTP fields, such as URI, UA, Cookie, Referer, and Accept to screen access requests. For the requests matched the conditions, you can configure CAPTCHA to verify the requesters or a policy to automatically drop or allow the requests. Precise protection is available for policy customization in various use cases to precisely defend against CC attacks.
 
 The match conditions define the request characteristics to be checked, i.e., the attribute characteristics of the HTTP field in a request. Precise protection supports checking the HTTP fields below:
 <table>
@@ -35,16 +35,16 @@ The match conditions define the request characteristics to be checked, i.e., the
     </tr>
 </table>
 
-## Prerequisites
-Purchase an [Anti-DDoS Pro instance](https://intl.cloud.tencent.com/document/product/1029/36115) and set the object to be protected.
+## Prerequisite
+You have purchased an [Anti-DDoS Advanced instance](https://intl.cloud.tencent.com/document/product/297/37241) and set the object to protect.
 
 ## Directions
-1. Log in to the [Anti-DDoS console](https://console.cloud.tencent.com/ddos/antiddos-native/package) and click **Anti-DDoS Pro (New)** -> **Configurations** on the left sidebar.
-2. Select an instance ID from the left list, e.g., `bgp-000000co`, and then open the **Domain name protection** tab.
-![](https://main.qcloudimg.com/raw/7c20e517d287e64f2b1edbc6a4c2648d.png)
+1. Log in to the [Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Anti-DDoS Advanced (New)** -> **Configurations** on the left sidebar.
+2. Select a domain name under an instance ID from the left list, e.g., **212.64.xx.xx bgpip-000002je** -> **http:80** -> **www.xxx.com**.
+![](https://main.qcloudimg.com/raw/560df07c97e00d499d0363fa9ae58977.png)
 3. Click **Set** in the **Precise Protection** section to view the rule list.
-![](https://main.qcloudimg.com/raw/e627637cce96bfc6bf65048a6b70c6a0.png)
-4. Click **Create** to create a precise protection rule. Please fill in the rule fields and click **OK**.
-![](https://main.qcloudimg.com/raw/6cd2b642946d053123a03387c7ab3cc5.png)
-5. Now the new rule is added to the rule list, you can click **Configuration** on the right of the rule to modify it.
-![](https://main.qcloudimg.com/raw/7b18c6cf421edabaae5e65efbeaa7f43.png)
+![](https://main.qcloudimg.com/raw/f2177416c56413c6b4bec977468e8255.png)
+4. Click **Create** to create a precise protection rule. Fill in the fields and click **OK**.
+![](https://main.qcloudimg.com/raw/0b4604f0d97e6059c6d35c3181beee60.png)
+5. Now the new rule is added to the rule list. You can click **Configuration** on the right of the rule to modify it.
+![](https://main.qcloudimg.com/raw/13ed1705034538fc6fc1b1090a65bc8e.png)
