@@ -13,7 +13,6 @@ cert-manager 支持许多 DNS provider，但不支持国内的 DNSPod，不过 c
 ### 1. 创建 DNSPod 密钥
 
 登录 DNSPod 控制台，在 [密钥管理](https://console.dnspod.cn/account/token) 中创建密钥，复制自动生成的 `ID` 和 `Token` 并保存。
-![](https://main.qcloudimg.com/raw/2c7f32cae8693fd855b835dfd1f9d532.png)
 
 ### 2. 安装 cert-manager
 安装 cert-manager，详情可参见 [使用 cert-manager 签发免费证书 ](https://intl.cloud.tencent.com/document/product/457/38713)。
@@ -94,7 +93,7 @@ kubectl -n istio-system describe certificates.cert-manager.io example-com-crt
 
 证书签发成功后会保存到指定的 Secret 中，可参考以下使用示例：
 <dx-tabs>
-::: 在 Ingress 中使用
+::: 在\sIngress\s中使用
 <dx-codeblock>
 :::  yaml
 apiVersion: networking.k8s.io/v1beta1
@@ -119,7 +118,7 @@ spec:
     :::
     </dx-codeblock>
     :::
-    ::: 在 Istio 的 ingressgateway 中使用
+    ::: 在\sIstio\s的\singressgateway\s中使用
     <dx-codeblock>
     :::  yaml
     apiVersion: networking.istio.io/v1alpha3
