@@ -118,7 +118,7 @@ spec:
 :::
 </dx-codeblock>
 :::
-::: Use in Istio ingress gateway
+::: Use\sin\sIstio\singress\sgateway
 <dx-codeblock>
 :::  yaml
 apiVersion: networking.istio.io/v1alpha3
