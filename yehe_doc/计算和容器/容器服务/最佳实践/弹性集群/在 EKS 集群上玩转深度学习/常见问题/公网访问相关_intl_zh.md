@@ -15,5 +15,4 @@ E tensorflow/core/platform/cloud/curl_http_request.cc:614] The transmission  of 
 
 - **使用 NAT 网关**：适用于某个 VPC 下的多个实例需要与公网通信。请按照 [通过 NAT 网关访问外网](https://intl.cloud.tencent.com/document/product/457/38369) 文档进行操作。
 >!创建的 NAT 网关和路由表需要与 EKS 集群同地域、同私有网络 VPC。
-- **使用弹性公网 IP（EIP）**：适用于单个或少量实例需要实现公网互通。请按照 [使用弹性公网 IP 访问外网](https://intl.cloud.tencent.com/document/product/457/42057) 文档进行操作。
-
+- **使用弹性公网 IP（EIP）**：适用于单个或少量实例需要实现公网互通。
