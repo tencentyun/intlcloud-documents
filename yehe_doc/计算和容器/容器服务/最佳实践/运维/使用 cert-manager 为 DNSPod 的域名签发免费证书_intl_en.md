@@ -12,8 +12,7 @@ We recommend you read [Using cert-manager to Issue Free Certificates](https://in
 
 ### 1. Create a DNSPod key
 
-Log in to the DNSPod console. In [Key Management](https://console.dnspod.cn/account/token), create a key and copy the automatically generated `ID` and `Token` as shown below:
-![](https://main.qcloudimg.com/raw/2c7f32cae8693fd855b835dfd1f9d532.png)
+Log in to the DNSPod console. In [Key Management](https://console.dnspod.cn/account/token), create a key and copy the automatically generated `ID` and `Token` 
 
 ### 2. Install cert-manager
 Install cert-manager. For more information, please see [Using cert-manager to Issue Free Certificates](https://intl.cloud.tencent.com/document/product/457/38713).
@@ -94,7 +93,7 @@ kubectl -n istio-system describe certificates.cert-manager.io example-com-crt
 
 After the certificate is successfully issued, it will be stored in the specified `Secret` as follows:
 <dx-tabs>
-::: Use in Ingress
+::: Use\sin\sIngress
 <dx-codeblock>
 :::  yaml
 apiVersion: networking.k8s.io/v1beta1
