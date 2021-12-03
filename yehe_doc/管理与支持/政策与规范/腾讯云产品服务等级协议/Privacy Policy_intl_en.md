@@ -20,7 +20,7 @@ Our servers may be located outside of the country you are located, for example i
 
 Your information is retained so long as your account exists. After which, the information is deleted within a set time period, depending upon the type of personal information. See below at [Data Retention](#4) for more information.
 
-#### How do I exercise my rights over my information?
+#### How do I exercise my rights over my information?	
 
 You may have special rights over your information and how we can use it. These include how you can access the information, erasing the information, restricting how your information can be used, objecting to its use and getting a copy of your information. See below at [Your Rights](#5) for more information.
 
@@ -87,7 +87,7 @@ For more information about the Cookies we use, please see our [Cookies Policy](h
 
 #### Children
 
-Our Service is not intended for children. Children must not use the Service for any purpose. We will not knowingly allow anyone under 16 to register for our Services and/or provide any personal identification information. If you are under 16, please do not sign up to use our Services or provide any information about yourself through the Service.
+Our Service is not intended for children. Children must not use the Service for any purpose. We will not knowingly allow anyone under 14 to register for our Services and/or provide any personal identification information. If you are under 14, please do not sign up to use our Services or provide any information about yourself through the Service.
 
 <span id="2"></span>
 ### How We Use Your Personal Information
@@ -96,7 +96,7 @@ We will use the information in the following ways and in accordance with the fol
 
 | **Personal Information**                                     | **Purpose of Use**                                           | **Legal Basis for Processing (only applicable for the EEA and UK)** |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Location, Name, Email Address, IP Address, User Agent (or website browser), Device ID and Tencent Cloud ID, Address (including city and post code) (Mandatory) | We use this information  to:   <br/>· create your Tencent Cloud account in accordance with your request;   <br/> · allow for password resets;   <br/> · provide you with user support; and  <br/> · enforce our terms, conditions and policies. | We process this  information as it’s necessary for us to perform our contract with you to  provide the Services. |
+| Location, Name, Email Address, IP Address, User Agent (or website browser), Device ID and Tencent Cloud ID, Address (including city and post code), date of birth and password (Mandatory) | We use this information  to:   <br/>· create your Tencent Cloud account in accordance with your request;   <br/> · allow for password resets;   <br/> · provide you with user support; and  <br/> · enforce our terms, conditions and policies. | We process this  information as it’s necessary for us to perform our contract with you to  provide the Services. |
 | Mobile Number, Email Address (Mandatory)                   | We use this information:    <br/>· to verify your Tencent Cloud account;    <br/>· for security protection (if you activate account verification, this will be  used to send you SMS alerts and two-factor authentication codes when you  modify account passwords, email addresses, etc.);    <br/>· for product notifications;    <br/>· for order confirmations; and    <br/>· for service information (e.g. account balance information, and to  communicate to you when your account balance is running low). | It is in our legitimate  interests to verify your identity and communicate with you about the  Services. |
 | Photo ID (e.g., driver’s license or passport) Name and Address (Mandatory) | If you elect to use  servers located in the PRC (excluding Hong Kong (China), Macau (China) and  Taiwan (China)) for the Services, we use your photo ID (or, where you are a  corporate customer, corporate documentation) to ensure that your account is  legally verified in accordance with local law. | It is in our legitimate  interests to process such data to ensure you are able to activate the service  for use in jurisdictions where this is a legal requirement. |
 | Credit card information (card number, name, expiration date, security code) (Mandatory) | We use your credit card information to process payments made by you for use of the Services. | We process this  information as it’s necessary for us to perform our contract with you to  facilitate payment for the Services. |
@@ -161,7 +161,7 @@ We will retain your personal information as described below (except if otherwise
 | Marketing Data: Name, Business Email, Phone Number, Company Name, Country, Industry and Job Title. | Such data is held until you tell us that you no longer wish to receive promotional information. |
 | Name, Email Address, Country Code, Phone Number, Company Name, Business Service, Inquiry. | This data is held for so long as the COVID-19 Cloud Resources Support Program operates. Information is erased within ninety (90) days of the date the COVID-19 Cloud Resources Support Program ends. |
 
-Personal information, which has fulfilled the purpose for which it was collected or used, and has reached the period of time during which personal information was to be possessed, will be destroyed in an irreversible way. Personal information stored in electronic files will be deleted safely in an irreversible manner by using technical methods, and printed information will be destroyed by shredding or incinerating such information.
+Personal information, which has fulfilled the purpose for which it was collected or used, or has reached the period of time during which personal information was to be possessed, will be destroyed in an irreversible way. Personal information stored in electronic files will be deleted safely in an irreversible manner by using technical methods, and printed information will be destroyed by shredding or incinerating such information. Also, we will delete your personal information within 10 days (i) upon your request to have your personal information deleted; (ii) upon your deletion of your account; and/or (iii) if any personal information is left behind with incomplete account registrations.
 
 In the event that the processing and retention period have terminated, but personal information is required to be retained continuously for other reasons including for the purposes as prescribed under applicable laws, the relevant personal information will be stored and maintained separately from other types of personal information.
 
@@ -216,7 +216,7 @@ If we make any material changes to this policy, we will post the updated policy 
 
 Last updated: 12 / 07 / 2020
 
-This Addendum to the Tencent Cloud Privacy Policy (the "Addendum") is to address matters that are necessary to process your personal information in compliance with the Act on Promotion of Information and Communications Network Utilization and Information Protection Etc. (the "Network Act") and the Personal Information Protection Act (the "PIPA") of Korea. Please refer Tencent Cloud Privacy Policy for more details on the conditions of using the Services.
+This Addendum to the Tencent Cloud Privacy Policy (the "Addendum") is to address matters that are necessary to process your personal information in compliance with the Personal Information Protection Act (the "PIPA") of Korea. Please refer Tencent Cloud Privacy Policy for more details on the conditions of using the Services.
 
 ### How We Share and Store Your Personal Information
 
@@ -261,9 +261,11 @@ If you have any questions or comments about the Privacy Policy, if you need to r
 
  - E-mail: cloudlegalnotices@tencent.com
 
+
+
 **Domestic Privacy Representative**
 
-Pursuant to the Network Act and Article 39-11 of the amended PIPA, the information regarding the domestic agent is as follows:
+Pursuant to Article 39-11 of the PIPA, the information regarding the designated domestic agent is as follows:
 
  - Name: Tencent Korea Yuhan Hoesa
 
@@ -272,6 +274,14 @@ Pursuant to the Network Act and Article 39-11 of the amended PIPA, the informati
  - Telephone Number: +82-2185-0902
 
  - E-mail: cloudlegalnotices@tencent.com
+
+If you need to report or consult any invasion of private information issue then please contact the below agencies:
+
+ - Private Information Invasion Report Center (privacy.kisa.or.kr / dial 118)
+
+ - Supreme Prosecutor’s Office’s Cyber Crime Investigations Division (spo.go.kr / dial 1301)
+
+ - Korean National Policy Agency’s Cyber Investigation Bureau (ecrm.cyber.go.kr/minwon / dial 182)
 
 ### California
 
@@ -399,7 +409,7 @@ We will retain your personal information as described in the Tencent Cloud Priva
 By clicking “accept”, you consent to the cross-border transfer of your information to any country where we have databases or affiliates, including outside of Japan.
 
 *Your Rights*
- 
+
 You may request us to notify you about the purposes of use of, to disclose, to make any correction to, to discontinue the use or provision of, and/or to delete any and all of your personal information which is stored by us, to the extent provided by the Act on the Protection of Personal Information of Japan. When you wish to make such requests, please contact us at **cloudlegalnotices@tencent.com**.
 
 ### MALAYSIA 
@@ -458,7 +468,7 @@ You are entitled to the following rights, to the extent provided by applicable l
 
  - *Right to rectification*. You have the right to dispute the inaccuracy or error in the personal information and have us correct it immediately and accordingly, unless the request is vexatious or otherwise unreasonable. If the personal information has been corrected, we shall ensure the accessibility of both the new and the retracted information and the simultaneous receipt of the new and the retracted information by the intended recipients thereof, provided that recipients or third parties who have previously received such processed personal data shall be informed of its inaccuracy and its rectification, upon your reasonable request.
  - *Right to erasure or blocking*. You shall have the right to suspend, withdraw or order the blocking, removal or destruction of your personal information from our filing system.
-This right may be exercised upon your discovery and substantial proof of any of the following:
+   This right may be exercised upon your discovery and substantial proof of any of the following:
     - your personal data is incomplete, outdated, false, or unlawfully obtained;
     - your personal data is being used for purpose not authorized by you;
     - your personal data is no longer necessary for the purposes for which they were collected;
@@ -480,7 +490,7 @@ You consent to the disclosure, transfer and export of your personal information 
 ### SINGAPORE 
 
 We may store your personal information in and outside your country, including in Singapore.  To the extent data is transferred outside of the EEA for processing (for example, to Mainland China and Singapore), we rely on the European Commission's model contracts for the transfer of personal data to third countries (i.e., the standard contractual clauses), pursuant to Decision 2001/497/EC (in the case of transfers to a controller) and Decision 2004/915/EC (in the case of transfers to a processor).
- 
+
 The paragraph entitled ‘Access, Correction and Deletion’ in the Privacy Policy is deleted and replaced with the following paragraph:
 
 You can access and correct some of your data in the account portal at any time. If you believe there is any other personal information we process about you, or you are unable to correct inaccurate information, you can make a request by contacting us at **cloudlegalnotices@tencent.com**. You may also have the right to receive a copy of certain personal information (see Portability below). In accordance with the laws in Singapore you do not have the legal right to delete your data, however we may delete your data on request to us. 
@@ -504,7 +514,7 @@ Our Service is not intended for children. Children must not use the Service for 
 With respect to the section “How We Use Your Personal Information”, for the purposes of Turkey the column “Legal Basis for Processing” shall be deemed to be amended such that the purposes for processing personal information for Turkey shall be Art. 5/2 c and Art 5/2 f of the Law on Protection of Personal Data w. no 6698.
 
 Your personal data can be transferred and stored into servers located in Turkey or abroad with your consent.
- 
+
 The paragraph headed “*The Security of Your Personal Information*” in the Tencent Cloud Privacy Policy is inapplicable with respect to personal data collected in Turkey.
 
 You have legal rights, which are set forth in Article 11 of the DPL, in relation to the personal information data we hold about you. As a Turkish data subject, you may have right to apply to the data controller and (and to the extent permitted under applicable laws and regulations):
@@ -521,7 +531,7 @@ These rights are not absolute.
 ### UAE
 
 Our Service is not intended for children. Children must not use the Service for any purpose. We will not knowingly allow anyone under 21 to register for our Services and/or provide any personal identification information. A user under 21 will need to obtain the relevant court order to use the Services.
- 
+
 We may voluntarily report a cyber-security incident where it constitutes a crime under UAE law (e.g. under the UAE Cybercrime Law). The incident can be reported to the relevant authorities for the purpose of investigations. Please note also that voluntary reporting of a cyber-security incident can also be made to the UAE Computer Emergency Response Team (“CERT”). CERT is a security awareness organisation that provides a process for logging incidents and advising on known cyber security threats in the UAE. 
 
 ### VIETNAM 
@@ -555,3 +565,4 @@ The following Modules shall apply and form part of this privacy policy if you us
 11.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41578).
 12.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41705).
 13.[Private DNS](https://intl.cloud.tencent.com/document/product/1097/42072).
+14.[TencentDB for Tendis](https://intl.cloud.tencent.com/document/product/1083/43456).

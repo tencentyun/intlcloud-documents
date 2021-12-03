@@ -15,7 +15,7 @@ Superplayer Adapter is a player plugin used to connect a third-party player with
 [](id:choosePlayer)
 ## How to Select Player
 To simplify connection and match your business scenarios, we recommend you select the most suitable player type when connecting the player service.
-![](https://main.qcloudimg.com/raw/df2eb125900cd9c28563a212dd744aab.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f793f98980f8f0adb38ee4292ed10d67.png)
 
 - **Superplayer**: suitable for users who haven't integrated a player but need to quickly build VOD playback capabilities. Player is fully featured and easy to connect. VOD provides a detailed [guide](https://intl.cloud.tencent.com/document/product/266/38098) on how to connect it through Superplayer.
 - **Superplayer Adapter**: suitable for users who need to play back resources in VOD with a proprietary or third-party player. VOD offers Superplayer Adapter to help you smoothly connect and use resources in VOD.
