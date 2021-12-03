@@ -80,5 +80,5 @@ docker run -it nvidia/cuda:[tag] /bin/bash
 
 ## 常见问题
 
-在进行本实践过程中遇到的问题，请参见 [常见问题](https://cloud.tencent.com/document/product/457/60226) 文档进行排查解决。
+在进行本实践过程中遇到的问题，请参见 [常见问题](https://intl.cloud.tencent.com/zh/document/product/457/42062) 文档进行排查解决。
 
