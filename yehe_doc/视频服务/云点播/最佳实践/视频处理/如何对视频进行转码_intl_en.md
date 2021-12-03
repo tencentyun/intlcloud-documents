@@ -1,58 +1,158 @@
 
 
-## Overview
+## Instructions
 
-### Introduction
+### Overview
 
-This document describes how to transcode a video in VOD and get the transcoding output result.
+This document describes how to transcode videos stored in VOD and how to get the outputs.
 
-### Fees
+### Costs
 
-The code provided in this document is open-source and free of charge, but it may incur the following fees during use:
+The open-source code provided here is free of charge, but the following costs may be incurred.
 
-- Fees for purchasing a Tencent Cloud CVM instance to run the TencentCloud API request script. For more information, please see [Instance Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180).
-- VOD storage space will be taken up by uploaded videos. For more information, please see [Video Storage Pricing](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E).
-- VOD transcoding service will be used for video transcoding. For more information, please see [Video Transcoding Pricing](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E).
-- VOD traffic will be consumed for accelerated video playback. For more information, please see [Traffic billing](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E).
+- Fees for purchasing a Tencent Cloud CVM instance to implement the request script of TencentCloud APIs. For more information, please see [CVM Billing Plans](https://intl.cloud.tencent.com/document/product/213/2180).
+- Fees for VOD storage of uploaded videos. For more information, please see [Video Storage](https://intl.cloud.tencent.com/document/product/266/14666).
+- Fees for VOD transcoding duration of uploaded videos. For more information, please see [Video Transcoding](https://intl.cloud.tencent.com/document/product/266/14666).
+- Fees for VOD traffic consumed by video playback. For more information, please see [Video Acceleration](https://intl.cloud.tencent.com/document/product/266/14666).
 
+### Parameters
+VOD video transcoding supports the following formats:
+<table>
+   <tr>
+      <th width="0px" style="text-align:center">Parameter</td>
+      <th width="0px" style="text-align:center">Type</td>
+      <th width="0px"  style="text-align:center">Description</td>
+   </tr>
+   <tr>
+      <td rowspan='2' style="text-align:center">Input format</td>
+      <td> Container format </td>
+      <td>WMV, RM, MOV, MPEG, MP4, 3GP, FLV, AVI, RMVB, TS, ASF, MPG, WebM, MKV, M3U8, WM, ASX, RAM, MPE, VOB, DAT, MP4V, M4V, F4V, MXF, QT, Ogg</td>
+   </tr>
+   <tr>
+      <td>Video codec</td>
+      <td>AV1, AVS2, H.264/AVC, H.263, H.263+, H.265, MPEG-1, MPEG-2, MPEG-4, MJPEG, VP8, VP9, QuickTime, RealVideo, Windows Media Video</td>
+   </tr>
+   <tr>
+      <td rowspan='4' style="text-align:center">Output format</td>
+      <td rowspan="3">Container format</td>
+      <td>Video: FLV, MP4, HLS (M3U8 + TS)</td>
+   </tr>
+   <tr>
+      <td>Audio: MP3, MP4, Ogg, FLAC, M4A</td>
+   </tr>
+   <tr>
+      <td>Image: GIF, WebP</td>
+   </tr>
+   <tr>
+      <td>Video codec</td>
+      <td>H.264/AVC, H.265/HEVC, AV1</td>
+   </tr>
+</table>
 
-## Initiating Transcoding in Console
-<span id="p11"></span>
-### Step 1. Activate VOD
+The target specification of an output video after transcoding is specified by parameters such as codec, resolution, and bitrate. VOD integrates these parameters in the transcoding template as shown below. For details, please see [Video Processing Overview](https://intl.cloud.tencent.com/document/product/266/33930).
+<table>
+   <tr>
+      <th width="108px" style="text-align:center">Type</td>
+      <th width="200px" style="text-align:center">Parameter</td>
+      <th width="0px"  style="text-align:center">Description</td>
+   </tr>
+   <tr>
+      <td rowspan='7' width="0px" style="text-align:center">Video encoding</td>
+      <td>Codec</td>
+      <td>Supported codecs: H.264, H.265, and AV1</td>
+   </tr>
+	  <tr>
+      <td>Bitrate</td>
+      <td>Supported bitrate range: 10 Kbps - 35 Mbps   </td>
+   </tr>
+	    <tr>
+      <td>Frame rate</td>
+      <td>Supported frame rate range: 1-60 fps; common values: 24, 25, 30</td>
+   </tr>
+	    <tr>
+      <td>Resolution</td>
+      <td><li>Value range of width: 128-4096 px</li><br><li>Value range of height: 128-4096 px</li><br></td>
+   </tr>
+	    <tr>
+      <td>GOP length</td>
+      <td>Value range: 1-10s </td>
+   </tr>
+	    <tr>
+      <td>Profile</td>
+      <td><li>When the video codec is H.264, the Baseline, Main, and High profiles are supported.</li><br><li>When the video codec is H.265, only the Main profile is supported.</li><br></td>
+   </tr>
+	    <tr>
+      <td>Color space</td>
+      <td> YUV420P is supported </td>
+   </tr>
+</table>
 
-Please activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
-<span id="p12"></span>
-### Step 2. Upload a video
+>?
+>- **Codec**: a method of converting video files from a certain format into another using specific compression technology. With advanced encoding mode for transcoding, an H.265 video has far lower bitrate than an H.264 video while the original quality is retained, which lowers the playback bandwidth usage.
+>-**Bitrate**: it refers to the size of data encoded by the encoder each second, in Kbps. For example, 800 Kbps indicates that the encoder generates 800 Kb of data per second.
+>- **Frame rate**: the number of frames that appear within a second
+>- **Resolution**: the number of pixels per inch
+>- **GOP**: the number of frames between two I-frames
 
-Upload a test video as instructed in [Getting Started - Step 2](https://intl.cloud.tencent.com/document/product/266/8757). Click [here](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) to view the test video used in the demo. The corresponding `FileId` is `5285890804162014755` as shown below:
-![](https://main.qcloudimg.com/raw/f8aa62bd40ab37b8cdd371798d4ff1e9.png)
->?We recommend you use a short video file (of dozens of seconds in duration) for the test to avoid taking too much time for transcoding.
-<span id="p13"></span>
-### Step 3. Initiate transcoding
+Recommended bitrates, resolutions, and configuration ranges are shown below:
 
-Check the uploaded test video on the [Video Management](https://console.cloud.tencent.com/vod/media) page in the console and click **Process Video**:
-![](https://main.qcloudimg.com/raw/cf6d8e0fa032b2a76acfd918cf5c3146.png)
-In the pop-up window, select **Transcoding** as the processing type and click **Transcoding Template**:
-![](https://main.qcloudimg.com/raw/fc857eebabee8b5c547774fed0fe2814.png)
-Select the desired transcoding template and click **OK**. This demo uses the preset templates `MP4-FLU` (ID: 100010) and `MP4-SD` (ID: 100020) as examples. You can also use a custom template as instructed in [Template Settings](https://intl.cloud.tencent.com/document/product/266/14059).
-![](https://main.qcloudimg.com/raw/e82be691470090beccf1ea27dbdcb4c3.png)
-Click **OK** to initiate transcoding:
-![](https://main.qcloudimg.com/raw/f52ec218600e19af3e42359a90d03298.png)
-On the "Video Management" page, you can see that the test video status is "Processing", which indicates that the video is being transcoded:
-![](https://main.qcloudimg.com/raw/30d3c90f55970568f55ce09be4cdb32b.png)
-<span id="p14"></span>
-### Step 4. View the transcoding result
+| **Clarity** | **Recommended Bitrate** | **Recommended Resolution** | **Resolution Range**            |
+| ------- | -------- | --------- | -------------------- |
+| SD      | 600      | 640 x 480   | SD (Image short side ≤ 480 px)   |
+| HD      | 2000     | 1280 x 720  | HD (Image short side ≤ 720 px)     |
+| FHD     | 4000     | 1920 x 1080 | FHD (Image short side ≤ 1080 px)  |
+| 2K      | 6000     | 2560 x 1440 | 2K (Image short side ≤ 1440 px)      |
+| 4K      | 8000     | 3840 x 2160 | 4K (Image short side ≤ 2160 px)     |
 
-On the [Video Management](https://console.cloud.tencent.com/vod/media) page in the console, wait for the test video status to become "Normal", which indicates that the transcoding is completed. Then, click **Manage** on the right of the test video to enter the video management page:
-![](https://main.qcloudimg.com/raw/694f1b000cea813d12397fcb1c3a86a0.png)
-In the **Standard Transcoding List** on the "Basic Information" tab, videos in `MP4-FLU` and `MP4-SD` specifications are output. You can click **Preview** on the right to directly watch the corresponding video. You can also click **Copy Address** to copy the URL of the corresponding output video and publish it to viewers through other channels.
-![](https://main.qcloudimg.com/raw/38db47dcfbd840bd6d67478ce42fd1cd.png)
+Tencent Cloud VOD's unique TESHD is a solution integrating image quality repair and enhancement, adaptive parameter selection, and V265 encoder among other video processing features. It provides granular transcoding methods and ensures higher definition, and this solution requires low consumption of network resources while delivering better watch experience. VOD provides a wide range of preset clarity settings, with parameters detailed as follows:
 
-## Calling TencentCloud API to Initiate Transcoding
-<span id="p21"></span>
-### Step 1. Prepare a CVM instance
+| **Clarity** | **Recommended Bitrate** | **Recommended Resolution** | **Resolution Range**            |
+| ------- | -------- | --------- | -------------------- |
+| SD      | 350 or leave it empty      | 640 x 480   | SD (Image short side ≤ 480 px)     |
+| HD      | 1350 or leave it empty    | 1280 x 720  | HD (Image short side ≤ 720 px)    |
+| FHD     | 2700 or leave it empty  | 1920 x 1080 | FHD (Image short side ≤ 1080 px)  |
+| 2K      | 3500 or leave it empty  | 2560 x 1440 | 2K (Image short side ≤ 1440 px)    |
+| 4K      | 7500 or leave it empty  | 3840 x 2160 | 4K (Image short side ≤ 2160 px)    |
 
-The TencentCloud API request script needs to be executed on a CVM instance meeting the following requirements:
+>? If the bitrate is left empty, TESHD will set the minimum bitrate based on intelligent analysis of the source video.
+
+## Initiating Transcoding Through the Console
+
+### Step 1. Activate VOD[](id:p11)
+
+See [Getting Started - Step 1. Activate VOD](https://intl.cloud.tencent.com/document/product/266/8757) for details.
+
+### Step 2. Upload a video[](id:p12)
+
+See [Getting Started - Step 2. Upload a video](https://intl.cloud.tencent.com/document/product/266/8757) for details. Click [here](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) to view the test video (FileId: 3701925921390170339) for this demo.
+![](https://qcloudimg.tencent-cloud.cn/raw/9d10415aff42613a6b9899c552d053d2.png)
+>?You’re advised to use a short video (dozens of seconds) for test to avoid long transcoding duration.
+
+### Step 3. Initiate transcoding[](id:p13)
+
+Check the uploaded test video on the [Video Management](https://console.cloud.tencent.com/vod/media) page, and then click **Process Video**.
+![](https://qcloudimg.tencent-cloud.cn/raw/9d10415aff42613a6b9899c552d053d2.png)
+In the pop-up, select **Transcoding** as the processing type, and then click **Transcoding Template**:
+![](https://qcloudimg.tencent-cloud.cn/raw/bb552a5454fe649f2b61edf2d5fe50fa.png)
+Select the desired transcoding template, and then click **Confirm**. This demo uses the system preset templates `STD-H264-MP4-360P` (template ID 100010) and `STD-H264-MP4-540P` (template ID 100020) as examples. If you need to use custom transcoding templates, please see [Template Settings](https://intl.cloud.tencent.com/document/product/266/14059).
+![](https://qcloudimg.tencent-cloud.cn/raw/d26764d535ee63e216969e21ee7e6e46.png)
+Click **Confirm** to initiate the transcoding.
+![](https://qcloudimg.tencent-cloud.cn/raw/e370f7ee3ae245e5b97d47fa383e2be8.png)
+If the status of the test video is **Processing** on the **Video Management** page, the video is being transcoded.
+![](https://qcloudimg.tencent-cloud.cn/raw/9c329fbf018cd251c2280d2df453f041.png)
+
+### Step 4. View the transcoding result [](id:p14)
+
+When the status of the test video changes to **Normal** on the [Video Management](https://console.cloud.tencent.com/vod/media) page, the transcoding is finished. Click **Manage** on the right to enter the video management page.
+![](https://qcloudimg.tencent-cloud.cn/raw/be5fa72994d786fa6737bf3590d4324f.png)
+In the **Standard Transcoding List** under the **Basic Info** tab, videos of `STD-H264-MP4-360P` and `STD-H264-MP4-540P` specifications are the transcoding outputs. You can click **Preview** on the right to watch them, or click **Copy URL** and then publish them through other channels.
+![](https://qcloudimg.tencent-cloud.cn/raw/48867ad69971690bc6a528cf9f14473c.png)
+
+## Calling TencentCloud APIs to initiate transcoding
+
+### Step 1. Prepare a CVM[](id:p21)
+
+The TencentCloud API script needs to be executed on a CVM instance meeting the following requirements:
 
 - Region: not limited.
 - Model: the minimum official configuration (1 CPU core and 1 GB memory) is sufficient.
@@ -62,24 +162,24 @@ The TencentCloud API request script needs to be executed on a CVM instance meeti
 For detailed directions on how to purchase a CVM instance and reinstall the system, please see [Operation Guide - Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855) and [Operation Guide - Reinstalling System](https://intl.cloud.tencent.com/document/product/213/4933), respectively.
 
 >!If you do not have a CVM instance satisfying the above conditions, you can also run the script on another Linux (such as CentOS or Debian) or macOS server with public network access, but you need to modify certain commands in the script based on the operating system. Please search for the specific modification method by yourself.
-<span id="p22"></span>
-### Step 2. Get the API key
 
-Your API key (i.e., `SecretId` and `SecretKey`) is required for TencentCloud API request. If you have not created an API key yet, please generate one as instructed in [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228). If you have already created a key, please get it as instructed in the same document.
-<span id="p23"></span>
-### Step 3. Activate VOD
+### Step 2. Get an API key[](id:p22)
 
-Please activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
-<span id="p24"></span>
-### Step 4. Upload a video
-Upload a test video as instructed in [Getting Started - Step 2](https://intl.cloud.tencent.com/document/product/266/8757). Click [here](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) to view the test video used in the demo. The corresponding `FileId` is `5285890804162014755` as shown below:
-![](https://main.qcloudimg.com/raw/f8aa62bd40ab37b8cdd371798d4ff1e9.png)
->?We recommend you use a short video file (of dozens of seconds in duration) for the test to avoid taking too much time for transcoding.
+The API key (`SecretId` and `SecretKey`) is required for calling TencentCloud APIs. If you have not created an API key yet, generate one as instructed in [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228). If you have already created a key, get it as instructed in the same document.
 
-<span id="p25"></span>
-### Step 5. Initiate transcoding
+### Step 3. Activate VOD[](id:p23)
 
-Log in to the CVM instance prepared in [step 1](#p21) as instructed in [Logging into Linux Instance in Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436) and enter and run the following command on the remote terminal:
+See [Getting Started - Step 1. Activate VOD](https://intl.cloud.tencent.com/document/product/266/8757) for details.
+
+### Step 4. Upload a video[](id:p24)
+See [Getting Started - Step 2. Upload a video](https://intl.cloud.tencent.com/document/product/266/8757) for details. Click [here](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) to view the test video (FileId: 5285890804162014755) for this demo.
+![](https://qcloudimg.tencent-cloud.cn/raw/fb2ac8243834a909cee60aaf19426bea.png)
+>?You’re advised to use a short video (dozens of seconds) for test to avoid long transcoding duration.
+
+
+### Step 5. Initiate transcoding[](id:p25)
+
+Log in to the [CVM instance prepared in step 1](#p21) as instructed in [Logging In to Linux Instance in Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436) and enter and run the following command on the remote terminal:
 ```
 ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/transcode_api.sh
 ```
@@ -89,36 +189,36 @@ This command will download the demo source code from GitHub and automatically ru
 ```
   [2020-06-15 20:39:56] Start installing pip3.
   [2020-06-15 20:40:06] pip3 is successfully installed.
-  [2020-06-15 20:40:06] Start installing the TencentCloud API SDK for Python.
-  [2020-06-15 20:40:07] The TencentCloud API SDK for Python is successfully installed.
+  [2020-06-15 20:40:06] Start installing TencentCloud API Python SDK.
+  [2020-06-15 20:40:07] TencentCloud API Python SDK is installed.
   [2020-06-15 20:40:07] Start configuring API parameters.
-  [2020-06-15 20:40:07] API parameter configuration is completed.
+  [2020-06-15 20:40:07] API parameters are configured.
 ```
-Run the `process_media.py` script to initiate transcoding:
+Execute the `process_media.py` script to initiate transcoding.
 ```
 ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/transcode_api/; python3 process_media.py 5285890804162014755
 ```
->?Please replace `5285890804162014755` in the command with the actual `FileId` obtained in [step 4](#p24).
+>? Replace `5285890804162014755` in the command with the actual `FileId` obtained in [Step 4](#p24).
 
-This command will initiate a [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) request to the `5285890804162014755` video so as to transcode it to two VOD [preset transcoding template](https://intl.cloud.tencent.com/document/product/266/33932) specifications (`100010` and `100020`) and print the request response content:
+This command will initiate a [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) request for the video `5285890804162014755`, perform transcoding according to specifications `100010` and `100020` as defined in the VOD [preset transcoding template](https://intl.cloud.tencent.com/document/product/266/33932), and print the response.
 ```
 {"TaskId": "1400329073-procedurev2-f6bf6f01612369b6db30f2224792a2aft0", "RequestId": "809918fb-791c-4937-b684-5027ba6bc5f0"}
 ```
-<span id="p14"></span>
-### Step 6. View the transcoding result
 
-On the "Video Management" page, you can see that the test video status is "Processing", which indicates that the video is being transcoded:
-![](https://main.qcloudimg.com/raw/30d3c90f55970568f55ce09be4cdb32b.png)
-Wait for the test video status to become "Normal", which indicates that the transcoding is completed. Then, click **Manage** on the right of the test video to enter the video management page:
-![](https://main.qcloudimg.com/raw/694f1b000cea813d12397fcb1c3a86a0.png)
-In the **Standard Transcoding List** on the "Basic Information" tab, videos in `MP4-FLU` and `MP4-SD` specifications are output. You can click **Preview** on the right to directly watch the corresponding video. You can also click **Copy Address** to copy the URL of the corresponding output video and publish it to viewers through other channels.
-![](https://main.qcloudimg.com/raw/38db47dcfbd840bd6d67478ce42fd1cd.png)
+### Step 6. View the transcoding result [](id:p14)
 
-## Automatic Transcoding After Video Upload (Through Task Flow)
+If the status of the test video is **Processing** on the **Video Management** page, the video is being transcoded.
+![](https://qcloudimg.tencent-cloud.cn/raw/5fcd99f766d6587f1644daac23c10d4d.png)
+When the status of the test video changes to **Normal**, the transcoding is finished. Click **Manage** on the right to enter the video management page.
+![](https://qcloudimg.tencent-cloud.cn/raw/be5fa72994d786fa6737bf3590d4324f.png)
+In the **Standard Transcoding List** under the **Basic Info** tab, videos of desired specifications are the transcoding outputs. You can click **Preview** on the right to watch them, or click **Copy URL** and then publish them through other channels.
+![](https://qcloudimg.tencent-cloud.cn/raw/9067b71ebcac7658c58222499f47fcf0.png)
 
-VOD provides multiple video upload methods such as upload through console, upload from server, upload from client, and pull from URL (for more information, please see [Overview](https://intl.cloud.tencent.com/document/product/266/9760)). All upload methods allow you to specify a [task flow](https://intl.cloud.tencent.com/document/product/266/33931), which can automatically trigger transcoding after the upload is completed.
+## Auto Transcoding After Uploading (Task Flow)
 
-## Automatic Transcoding After Video Upload (Through Event Notification)
+VOD supports uploading videos through the console, from the server, from the client, and by pulling from URLs, etc. (see [Media Upload](https://intl.cloud.tencent.com/document/product/266/9760) for details). Each upload method supports specifying a [task flow](https://intl.cloud.tencent.com/document/product/266/33931) that automatically triggers transcoding after the uploading is finished.
 
-After video upload or a transcoding task is completed, the VOD backend will initiate an [event notification](https://intl.cloud.tencent.com/document/product/266/33948) request. You can use the event notification mechanism to initiate transcoding for the newly uploaded video and automatically get the transcoding result through an event notification (the method of manually viewing the transcoding result in the console is as described above). For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/266/37542) under Best Practices.
+## Auto Transcoding After Uploading (Event Notification)
+
+The VOD backend will initiate [event notification](https://intl.cloud.tencent.com/document/product/266/33948) requests after completing both uploading and transcoding. Developers can initiate transcoding for newly uploaded videos based on the event notifications and can also get transcoding results from such notifications (the method above is to view transcoding results from the console). For details about how to use event notifications, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/266/37542).
 
