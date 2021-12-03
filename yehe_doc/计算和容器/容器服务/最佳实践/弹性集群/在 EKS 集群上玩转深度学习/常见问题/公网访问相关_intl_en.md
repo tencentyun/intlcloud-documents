@@ -15,5 +15,5 @@ For the above problem, two public network access methods are provided:
 
 - **NAT Gateway**: it is suitable for scenarios where many Pods in a VPC need to communicate with the public network. Please configure as instructed in [Accessing Internet Through NAT Gateway](https://intl.cloud.tencent.com/document/product/457/38369).
 >!The created NAT gateway and route table need to be in the same region and VPC as the EKS cluster.
-- **EIP**: it is suitable for scenarios where one or a few Pods need to interconnect with the public network. Please configure as instructed in [Using EIP to Access Public Network](https://intl.cloud.tencent.com/document/product/457/42057).
+- **EIP**: it is suitable for scenarios where one or a few Pods need to interconnect with the public network. 
 
