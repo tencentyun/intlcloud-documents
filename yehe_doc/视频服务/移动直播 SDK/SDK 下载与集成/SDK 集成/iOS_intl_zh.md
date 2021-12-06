@@ -1,5 +1,5 @@
 
-本文主要介绍如何快速地将腾讯云视立方·移动直播 LiteAVSDK（iOS）集成到您的项目中，按照如下步骤进行配置，就可以完成 SDK 的集成工作。下面以全功能的 [移动直播专业版 SDK](https://intl.cloud.tencent.com/document/product/1071/38150) 为例：
+本文主要介绍如何快速地将腾讯云视立方·移动直播 LiteAVSDK（iOS）集成到您的项目中，按照如下步骤进行配置，就可以完成 SDK 的集成工作。
 
 ## 开发环境要求
 - Xcode 9.0+。
@@ -31,7 +31,7 @@ pod init
   platform :ios, '9.0'
   
   target 'App' do
-  pod 'TXLiteAVSDK_Professional', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_Professional.podspec'
+  pod 'TXLiteAVSDK_International', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_International.podspec'
   end
 :::
 </dx-codeblock>
@@ -42,7 +42,7 @@ pod init
    source 'https://github.com/CocoaPods/Specs.git'
    
    target 'App' do
-   pod 'TXLiteAVSDK_Professional'
+   pod 'TXLiteAVSDK_International'
    end
 :::
 </dx-codeblock>
@@ -63,10 +63,10 @@ pod 命令执行完后，会生成集成了 SDK 的 `.xcworkspace` 后缀的工�
 ### 手动集成
 1. 下载 [LiveAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) ，下载完成后进行解压。
 2. 打开您的 Xcode 工程项目，选择要运行的 target , 选中 **Build Phases** 项。
-![](https://main.qcloudimg.com/raw/d78299d12be0f6c3255eabec91941e7a.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/5f0a196dd78a7858fca4f098bf3e3591.png)
 3. 单击 **Link Binary with Libraries** 项展开，单击底下的【+】添加依赖库。
-![](https://main.qcloudimg.com/raw/dffd804d78d3e5765add218cb228c842.png)
-4. 依次添加所下载的 `TXLiteAVSDK_Professional.framework` 及其所需依赖库 :
+![](https://qcloudimg.tencent-cloud.cn/raw/2e5db146788005de31337cd266315406.png)
+4. 依次添加所下载的 `TXLiteAVSDK_International.framework` 及其所需依赖库 :
 ```
 libz.tbd
 libc++.tbd
@@ -75,7 +75,7 @@ libsqlite3.tbd
 Accelerate.framework
 OpenAL.framework
 ```
-![](https://main.qcloudimg.com/raw/899f02c77d58f6e3b9a5d94995c767f8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/35c813a543e281c7edb408d35731779b.png)
 5. 选中 Build Settings 项，搜索 `Other Linker Flags`。添加 `-ObjC`。
 ![](https://main.qcloudimg.com/raw/818eedfb17f50f6041e84126fe4d76ed.png)
 
@@ -84,17 +84,17 @@ OpenAL.framework
 - **Privacy - Microphone Usage Description**，并填入麦克风使用目的提示语。
 - **Privacy - Camera Usage Description**，并填入摄像头使用目的提示语。
 
-![](https://main.qcloudimg.com/raw/a924a0e1e7e7d0451dbd49cf97650dd2.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/789b7cc4c57ce32d4d3bf76d8e0199e0.png)
 
 ## 在工程中引入 SDK
 项目代码中使用 SDK 有两种方式：
 - **方式一：** 在项目需要使用 SDK API 的文件里，添加模块引用。
 ```
-@import TXLiteAVSDK_Professional;
+@import TXLiteAVSDK_International;
 ```
 - **方式二：**在项目需要使用 SDK API 的文件里，引入具体的头文件。
 ```
-#import "TXLiteAVSDK_Professional/TXLiteAVSDK.h"
+#import "TXLiteAVSDK_International/TXLiteAVSDK.h"
 ```
 
 ## 给 SDK 配置 License 授权
@@ -104,7 +104,7 @@ OpenAL.framework
 在您的 App 调用 LiteAVSDK 的相关功能之前（建议在 `- [AppDelegate application:didFinishLaunchingWithOptions:]` 中）进行如下设置：
 
 ```objc
-@import TXLiteAVSDK_Professional;
+@import TXLiteAVSDK_International;
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString * const licenceURL = @"<获取到的licenseUrl>";
