@@ -23,13 +23,13 @@ After the Nginx-ingress addon is installed, there will be a Nginx-ingress operat
 >?For the details of installing Nginx Ingress instance, see [Installing Nginx-ingress Instance](https://intl.cloud.tencent.com/document/product/457/38981).
 6. When creating an Ingress, you can specify a specific IngressClass to bind the Ingress to a specific Nginx Ingress instance. You can create Ingress via console or YAML.
 <dx-tabs>
-::: Create an Ingress via console
+::: Create\san\sIngress\svia\sconsole
 See [Creating an Ingress](https://intl.cloud.tencent.com/document/product/457/30673) for more information on how to create an Ingress in the console.
 - **Ingress Type**: select **Nginx Load Balancer**.
 - **Class**: select the Nginx Ingress instance created in the previous steps.
 :::
-::: Creating an Ingress via YAML 
-See [Creating Ingress](https://intl.cloud.tencent.com/document/product/457/306732) for more information about how to create an Ingress via YAML and specify the annotation (`kubernetes.io/ingress.class`) of ingressClass.
+::: Creating\san\sIngress\svia\sYAML 
+See [Creating Ingress](https://intl.cloud.tencent.com/document/product/457/30673) for more information about how to create an Ingress via YAML and specify the annotation (`kubernetes.io/ingress.class`) of ingressClass.
 ![](https://main.qcloudimg.com/raw/e4ee61dd452ccc512ba8fc5b85ab5714.png)
 :::
 </dx-tabs>
@@ -68,11 +68,11 @@ If you have a bill-by-CVM account ([Checking Account Type](https://intl.cloud.te
 The Nginx Ingress instance can optimize the kernel parameters and the configuration of Nginx Ingress by default. For details, see [Nginx Ingress High-Concurrency Practices](https://intl.cloud.tencent.com/document/product/457/38300). You can refer to the following directions to customize.
 
 <dx-tabs>
-::: Modifying the kernel parameters
+::: Modifying\sthe\skernel\sparameters
 Edit the deployed Daemonset or Deployment of nginx-ingress-conntroller (depending on the instance deployment options), and modify initContainers (You cannot modify the resources under kube-system in the console. Please use Kubectl to modify.), as shown below:
 ![](https://main.qcloudimg.com/raw/821faeb4970ddebe190577d1ca213b84.png)
 :::
-::: Modifying Nginx Ingress configuration
+::: Modifying\sNginx\sIngress\sconfiguration
 In **Nginx Configuration** tab, select the instance to modify, click **Edit YAML**, and modify the ConfigMap configuration of the Ingress instance, as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/0dff8e74bbf2ca816ace212556ee7e55.png)
 
