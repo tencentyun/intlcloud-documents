@@ -1,51 +1,61 @@
-In the [VOD console](https://console.cloud.tencent.com/vod/overview), select **Data Center** > **Usage Statistics** where **bandwidth/traffic statistics**, **storage statistics**, **transcoding statistics**, and **intelligent video recognition statistics** are provided. The **bandwidth/traffic statistics** tab is displayed by default.
+In the [VOD console](https://console.cloud.tencent.com/vod/overview), select **Data Center** > **Usage Statistics** to view usage of bandwidth/traffic, storage, transcoding, and intelligent video recognition. The **Bandwidth/Traffic** tab is displayed by default.
 
-## Bandwidth/Traffic Statistics
+## Bandwidth/Traffic
 
 - You can view the bandwidth/traffic statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days. In addition, you can also filter the statistics by domain name, region, and ISP.
-- The data overview metrics are the **peak bandwidth (in bps)** and **total traffic (in B)** corresponding to the selected filter and time period.
-- The bandwidth usage details, traffic usage details, traffic usage by ISP, and top 10 districts for traffic are graphically displayed.
-- The bandwidth/traffic statistics displayed can be delayed by approximately 10 minutes.
+- You can view **Peak Bandwidth** and **Total Traffic** corresponding to filters and time period.
+- Bandwidth and traffic usage is displayed on graphs.
+- There is a delay of about 10 minutes for statistics here.
 
-## Storage Statistics
-
-
-- Details of storage statistics are graphically displayed, recording the trend in your storage capacity usage. You can query the statistics for today, yesterday, last 7 days, last 30 days, and any time period within the last 30 days.
-- The data overview metrics are the **current total files** and **currently used storage capacity (in B)**.
-- If the queried time period is 1 day, statistics at a granularity of 20 minutes will be displayed; and if the queried time period is multiple days, the statistics trend will be displayed.
-- The storage statistics displayed can be delayed by approximately 30 minutes.
+## Storage
 
 
-## Transcoding Statistics
+- You can view storage statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days. In addition, you can also filter the statistics by region and storage class.
+- You can view **Total Files** and **Current Storage (MB)** here.
+- Storage usage and early delete is displayed on graphs.
+- There is a delay of about 30 minutes for statistics here.
+
+## Data Retrievals
+- You can view data retrieval statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days. In addition, you can also filter the statistics by region and retrieval mode.
+- You can also view statistics of data retrievals from ARCHIVE (B) and DEEP ARCHIVE (B).
+- Data retrievals are displayed on graphs.
+- There is a delay of 2 to 4 hours for statistics here.
+
+## Transcoding
 
 ### General transcoding
-- You can view the general transcoding statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
-- The transcoding statistics display general transcoding duration (in minutes) and task count.
-- The statistics graph by general transcoding type displays the trend in duration of each transcoding type (in minutes), and you can also filter to view the statistics of the specific transcoding type.
-- The details graph by general transcoding type displays the details of transcoding tasks by type, including duration and task count.
-- The pie chart illustrates the percentage of tasks in each general transcoding type.
-- General transcoding statistics are displayed in real time.
+- You can view transcoding statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
+- The duration (in minutes) and number of tasks of general transcoding are displayed.
+- The graph displays the trend in the duration (in minutes) of each transcoding type, and you can also filter to view the statistics of the specific transcoding type.
+- Graphs display the details of transcoding tasks by type, with information of duration and number of tasks among others.
+- There is a pie chart showing the percentages of the different transcoding types.
+- General transcoding statistics are real-time data.
 
 ### TESHD
-- You can view the TESHD transcoding statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
-- The transcoding statistics display TESHD transcoding duration (in minutes) and task count.
-- The statistics graph by TESHD transcoding type displays the trend in duration of each transcoding type (in minutes), and you can also filter to view the statistics of the specific transcoding type.
-- The details graph by TESHD transcoding type displays the details of transcoding tasks by type, including duration and task count.
+- You can view TESHD statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
+- You can view the TESHD transcoding duration (in minutes) and number of tasks.
+- The graph displays the trend in the duration (in minutes) of each transcoding type, you can also filter to view the statistics of the specific transcoding type.
+- Graphs display the details of transcoding tasks, including duration and number of tasks.
 - The pie chart illustrates the percentage of tasks in each TESHD transcoding type.
-- TESHD transcoding statistics are displayed in real time.
+- TESHD transcoding statistics are real-time data.
 
-### Video editing
-- You can view the video editing statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
-- The transcoding statistics display video editing duration (in minutes) and task count.
-- The "Duration Details of Each Editing Type" chart displays the trend in duration of resolution corresponding to each editing type (in minutes), and you can also filter to view the statistics of the specific editing type.
-- The "Task Details of Each Video Editing Type" chart displays the details of each resolution by type, including duration and task count.
-- The "Ratio Details of Each Editing Type" chart illustrates the percentage of tasks in each video editing resolution.
-- Video editing statistics are displayed in real time.
+### Transcoding to Adaptive Bitrate Streaming
+- You can see the statistics of adaptive bitrate streaming for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
+- The duration (in minutes) and number of tasks of adaptive bitrate streaming are displayed.
+- The graph of each transcoding type displays the trend of transcoding duration (in minutes), you can also filter to view the statistics of the specific transcoding type.
+- Transcoding lists display transcoding type, duration, and number of transcoding tasks.
+- Transcoding graphs show the percentages of different types of transcoding.
+- Adaptive bitrate streaming statistics are real-time data.
 
+### Video Editing
+- You can see video editing statistics for today, yesterday, last 7 days, and last 30 days, and any custom time period in the last 30 days.
+- You can view the video editing duration (in minutes) and number of tasks.
+- The graphs display the trends in the durations (in minutes) of resolutions corresponding to each editing type, and you can also filter to view the statistics of the specific definition.
+- The task count graphs by video editing type display the details of each resolution by type, including duration and number of tasks.
+- The pie chart illustrates the percentage of tasks in each video editing resolution.
+- Video editing statistics are real-time data.
 
-## Intelligent Video Recognition Statistics
-
-- Details of intelligent video recognition statistics are graphically displayed, recording the trend in your intelligent video recognition duration. You can query the statistics for today, yesterday, last 7 days, last 30 days, and any time period within the last 30 days.
-- The data overview metrics are the **number of intelligent recognitions** and **intelligent recognition duration (in minutes)**.
-- The intelligent video recognition statistics displayed can be delayed by approximately 30 minutes.
-
+## Video Moderation
+- The video moderation graph shows you the trend in your video moderation times and duration. You can query the statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
+- The metrics are the **times of moderation** and **moderation duration (in minutes)**.
+- - There is a delay of about 30 minutes for statistics here.
