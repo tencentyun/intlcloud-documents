@@ -3,7 +3,7 @@ This document describes how to quickly create a container cluster using TKE.
 
 ## Step 1. Sign up for a Tencent Cloud Account
 If you already have a Tencent Cloud account, ignore this step.
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">Click here to sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/378/17985" target="_blank"  style="color: white; font-size:13px;">Click here to sign up for a Tencent Cloud account</a></div>
 
 ## Step 2: Topping Up Online
 The TKE service itself is currently free of charge, but you will be charged for cloud resources you actually use. What is to be created in this document is a “managed cluster”, and you need to pay for the worker nodes in the cluster, persistent storage, and load balancers bound to your services. For information on related operations, see [Payment Methods](https://intl.cloud.tencent.com/document/product/555/7425).

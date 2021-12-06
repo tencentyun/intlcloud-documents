@@ -3,7 +3,7 @@
 
 ## 步骤1：注册腾讯云账号
 如果您已在腾讯云注册，可忽略此步骤。
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/378/17985" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
 
 ## 步骤2：在线充值
 容器服务暂不收取服务本身费用，按用户实际使用的云资源收费。本文中我们创建的是“托管集群”，该模式下您依然要为集群的工作节点、持久化存储以及服务绑定的负载均衡等服务付费。购买前，需要在账号中进行充值。具体操作请参考 [在线充值](https://intl.cloud.tencent.com/document/product/555/7425) 文档。

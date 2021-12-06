@@ -77,7 +77,7 @@ model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMy
 2. サーバーからのビデオアップロード時、アップロード確認の通知に対応するFileIdが含まれています。
 
 ファイルがすでにTencent Cloudに存在する場合は、[メディア資産管理](https://console.cloud.tencent.com/vod/media)にアクセスし、該当するファイルをさがして、FileIdを確認できます。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/b07b18356d680f156b9ae5fdb1e19f85.png)
 
 
 ### キーモーメント機能
@@ -97,7 +97,7 @@ model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMy
 [[SuperPlayerWindow sharedInstance] show]; // フロートの表示
 ```
 
-
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c5882ec8b3258a06174a9a2dd06dcbf4.png" width="350">
 
 ### 再生の終了[](id:exitPlayer)
 
