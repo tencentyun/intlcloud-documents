@@ -4,7 +4,7 @@
 
 您可以免费申请国际版 License（免费测试有效期为14天，可续期1次，共28天）体验测试。
 
-> ！试用期内申请测试续期，则续期到期时间以申请测试时刻为准；若试用期结束后申请测试续期，则续期到期时间以申请测试续期时刻为准。
+>! 试用期内申请测试续期，则续期到期时间以申请测试时刻为准；若试用期结束后申请测试续期，则续期到期时间以申请测试续期时刻为准。
 > - 当申请测试开始时间为 `2021-08-12 10:28:41`，则14天后到期时间为 `2021-08-26 10:28:41`。
 > - 免费续期一次时，若在试用期14天内申请续期，则到期时间为 `2021-09-09 10:28:41`；若在试用期14天结束后申请续期，申请续期的时间为 `2021-08-30 22:26:20`，则续期的到期时间为 `2021-09-13 22:26:20`。
 
@@ -22,7 +22,7 @@
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/e22b61bc11e73c7ea57bdc58df527046.png)
 
-> ？
+>?
 >- 测试版 License 有效期内可单击右侧的 **Edit**，进入修改 Bundle ID 和 Package Name 信息，单击 **Confirm** 即可保存。
 >- 若无 Package Name 或 Bundle Id，可填写“-”。
 
@@ -36,7 +36,7 @@
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/cd5f234437e6facf4157401a0d98af98.png)
 
-> ? 测试版 License 有效期共28天，**只能续期一次**。若您需继续使用，请购买 [正式版 License](https://intl.cloud.tencent.com/document/product/1071/38546#purchasing-an-official-license)。
+>?  测试版 License 有效期共28天，**只能续期一次**。若您需继续使用，请购买 [正式版 License](https://intl.cloud.tencent.com/document/product/1071/38546#.E6.AD.A3.E5.BC.8F.E7.89.88-license)。
 
 ## 正式版 License
 
@@ -44,13 +44,13 @@
 
 1. [购买移动直播 SDK 国际版 License](https://buy.intl.cloud.tencent.com/mlvb)，获得正式的国际版 License 一年使用授权（有效期至到期次日的00:00:00止），计费价格请参见 [购买指南](https://intl.cloud.tencent.com/document/product/1071/38114)。
 
-> ? 例如，您在2021年12月01日 14:16:52 购买了正式的国际版 License 一年有效期，该 License 于2022年12月02日 00:00:00 到期。
+>?  例如，您在2021年12月01日 14:16:52 购买了正式的国际版 License 一年有效期，该 License 于2022年12月02日 00:00:00 到期。
 
 2. 进入 **直播 SDK** > **[License 管理](https://console.intl.cloud.tencent.com/live/license)** ，单击 **Create** 按钮。填写 `App Name`、`Package Name` 和 `Bundle ID` ，完成后单击 **Confirm**。
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/276281c94f5c6e53af157d480608bd12.png)
 
-   > ？
+   >? 
    >- 单击 **确定** 前需要再次确认 Bundle ID 和 Package Name，如与提交到商店的不一致请提前进行修改，**一旦提交成功将无法再修改 License 信息**。
    >- **正式的国际版 License 不支持信息修改**，若您需要修改 License 信息，购买资源包后请勿用于续期 License，请单击 **Create** 重新创建 License 绑定新的包名信息。
 
@@ -72,5 +72,5 @@
 
 3. 查看更新后的有效期情况。
 
-   > ！**正式的国际版 License 不支持信息修改**，若您需要修改 License 信息，购买资源包后请勿用于续期 License，请单击 **Create** 重新创建 License 绑定新的包名信息。
+   >! **正式的国际版 License 不支持信息修改**，若您需要修改 License 信息，购买资源包后请勿用于续期 License，请单击 **Create** 重新创建 License 绑定新的包名信息。
 
