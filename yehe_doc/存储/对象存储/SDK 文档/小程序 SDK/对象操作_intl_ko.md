@@ -1270,7 +1270,7 @@ cos.restoreObject({
 
 #### 매개변수 설명
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             | 매개변수 설명                                                     | 유형   | 필수 입력 여부 |
+| 매개변수 이름           | 매개변수 설명                                                     | 유형   | 필수 입력 여부 |
 | ------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket             | BucketName-APPID 형식의 버킷 이름 | String | Yes   |
 | Region             | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String | Yes   |
@@ -1488,7 +1488,7 @@ wx.chooseMessageFile({
 
 #### 매개변수 설명
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
+| 매개변수 이름 | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | BucketName-APPID 형식의 버킷 이름 | String    | Yes   |
 | Region                                                       | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String    | Yes   |
@@ -1643,7 +1643,7 @@ cos.sliceCopyFile({
 
 #### 매개변수 설명
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 | 매개변수 설명                                                     | 유형     | 필수 입력 여부 |
+| 매개변수 이름                | 매개변수 설명                                                     | 유형     | 필수 입력 여부 |
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
 | Bucket                 | BucketName-APPID 형식의 버킷 이름 | String   | Yes   |
 | Region                 | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String   | Yes   |
