@@ -1345,7 +1345,7 @@ cos.uploadFile({
 
 #### 매개변수 설명
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
+| 매개변수 이름 | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 이 형식을 따라야 합니다. | String    | Yes   |
 | Region                                                       | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String    | Yes   |
