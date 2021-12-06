@@ -77,7 +77,7 @@ A video `FileId` is usually returned by the server after the video is uploaded:
 2. When the video is uploaded to the server, the corresponding `FileId` will be included in the notification of upload confirmation.
 
 If the file already exists in Tencent Cloud, you can go to [Media Assets](https://console.cloud.tencent.com/vod/media), find it.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/b07b18356d680f156b9ae5fdb1e19f85.png)
 
 
 ### Timestamping
@@ -97,7 +97,7 @@ A small window is a player that floats over the main window within the applicati
 [[SuperPlayerWindow sharedInstance] show]; // Floating display
 ```
 
-
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c5882ec8b3258a06174a9a2dd06dcbf4.png" width="350">
 
 ### Exiting playback[](id:exitPlayer)
 
