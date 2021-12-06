@@ -29,7 +29,7 @@ Nginx-ingress 扩展组件安装后，在 `kube-system` 下会有 Nginx-ingress 
 - **Class**：选择上述步骤创建的 Nginx Ingress 实例。
 :::
 ::: 通过\sYAML\s创建\sIngress
-参考 YAML [创建 Ingress](https://intl.cloud.tencent.com/document/product/457/306732) 步骤创建 Ingress，并指定 ingressClass 的 annotation（`kubernetes.io/ingress.class`）。如下图所示：
+参考 YAML [创建 Ingress](https://intl.cloud.tencent.com/document/product/457/30673) 步骤创建 Ingress，并指定 ingressClass 的 annotation（`kubernetes.io/ingress.class`）。如下图所示：
 ![](https://main.qcloudimg.com/raw/e4ee61dd452ccc512ba8fc5b85ab5714.png)
 :::
 </dx-tabs>
