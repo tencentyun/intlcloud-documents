@@ -10,7 +10,7 @@ Starting from v4.9, the license usage was changed. You can select whether to pac
 
 ### Can I renew a trial license after it expires?
 
-You can apply for a free trial license which is valid for 14 days and can be renewed for once, making the total trial duration 28 days. You can purchase an [official version](https://intl.cloud.tencent.com/document/product/266/42077) after the trial license expires.
+You can apply for a free trial license which is valid for 14 days and can be renewed for once, making the total trial duration 28 days. You can purchase an official version after the trial license expires. If you have any questions, submit a ticket or [contact sales](https://intl.cloud.tencent.com/contact-us).
 
 >! If you renew a trial license within the first 14 days, the license will expire 28 days after the time of license application; if you renew a trial license that has expired once, the renewed license will expire 14 days after renewal.
 >- For example, if you apply for a trial license on `2021-08-12 10:28:41`, it will expire 14 days later, on `2021-08-26 10:28:41`.
@@ -21,12 +21,6 @@ You can apply for a free trial license which is valid for 14 days and can be ren
 ### Can I change the package name for an Android project or the bundle ID for an iOS project if I use a trial license?
 
 Yes. Log in to the [VOD console](https://console.cloud.tencent.com/vod/license/video), select the trial license, and click **Edit** in the top right to make changes.
-
-
-
-### Can I change the package name for an Android project or the bundle ID for an iOS project if I use an official license?
-
-On the current version, you **cannot** change the package name and bundle ID for an official license. This capability will be available in future versions.
 
 
 
@@ -42,22 +36,6 @@ When binding a license, you need to confirm the bundle ID of the application to 
 
 
 
-### What should I do if the “license not exist” error occurs when I renew my license?
-
-Log in to the VOD console, click [**UGSV SDK License**](https://console.cloud.tencent.com/vod/license/video), and follow the steps below to troubleshoot the error.
-
-1. Make sure that you are renewing your license as the **Admin**.
-   ![img](https://main.qcloudimg.com/raw/446b60171da15bee7b10537ea2f63f32.png)
-2. If you operate on a **non-admin** page, please contact the **Admin** to renew the license for you.
-
-
-
-### What should I do if I fail to add a license?
-
-Make sure that you are adding the license as the **Admin**.
-
-
-
 ### What should I do if license verification fails?
 
 Follow these steps to fix the problem:
@@ -69,36 +47,11 @@ Follow these steps to fix the problem:
 >? If the problem persists, **reinstall the application** or [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 
-
 ### Can I use the license for Android without entering `BundleID`?
 
 Yes. `BundleID` for iOS is like the `PackageName` for Android. You can enter a random value if you don’t integrate the iOS client.
 
 
-
-### 精简版的短视频 SDK，想升级成基础版 License，要怎么操作？
-
-购买点播流量资源包 50TB、200TB 或 1PB 获取基础版 License 使用权。
-
->? 目前只支持短视频 License 由精简版升级至基础版，升级的 License 为对应的资源包赠送的 License 规格。
-
-
-
 ### Can a UGSV SDK license purchased by an individual be used by an enterprise?
 
 The license can be used by the account that purchased it, with no requirement for individual or enterprise identity verification.
-
-
-
-### I have granted a sub-account full access to CSS and VOD, but why can’t it access the license page of the console?
-
-![img](https://main.qcloudimg.com/raw/7423d2e7912de344052c7891629d528b.png)
-
-We updated APIs along with the new-version SDK licenses. To access the license page of the console with a sub-account, you must use your root account to grant it separate access to licenses.
-
-- If you want to grant your sub-account query permission only, associate the `QcloudVCUBEReadOnlyAccess` policy with it.
-- If you want to grant your sub-account all operation permissions, associate the `QcloudVCUBEFullAccess` policy with it.
-
-For more information on how to associate permission policies with users/user groups, please see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
-
->? All license operations are now independent of CSS and VOD. That means the `QcloudVODFullAccess` and `QcloudLIVEFullAccess` policies no longer apply to license APIs. You must grant access to licenses separately as described above.
