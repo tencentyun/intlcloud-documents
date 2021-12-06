@@ -6,17 +6,17 @@
 
 | API                                                          | 작업명         | 작업 설명                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket(List Object)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회	|   버킷의 일부 또는 모든 객체 조회|
-| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | 객체 및 이전 버전 리스트 조회 |   버킷의 일부 또는 모든 객체와 이전 버전 정보 조회|
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 객체 간편 업로드       | 하나의 객체를 버킷에 업로드    |
-| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 	객체 메타데이터 조회  | 객체 메타데이터 정보 조회                |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 로컬에 객체 다운로드        |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사 설정   | 객체를 타깃 경로에 복사                        |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 단일 객체 삭제   | 버킷에서 지정 객체 삭제 |
-| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 다수의 객체 삭제   | 버킷에서 지정 객체를 일괄 삭제 |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구 | 아카이브 유형의 객체 검색 및 액세스                      |
-| [SELECT Object content](https://intl.cloud.tencent.com/document/product/436/32360) | 객체 콘텐츠 인덱스 | 지정된 객체에서 콘텐츠 인덱스                      |
-| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | 객체 추가 업로드 | 객체를 멀티파트로 추가하여 버킷에 업로드                      |
+| [GET Bucket(List Object)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 쿼리| 버킷의 일부 또는 모든 객체를 쿼리|
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) |객체 및 해당 버전 기록 쿼리 |   버킷의 일부 또는 모든 객체와 해당 버전 기록 쿼리|
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 객체 업로드       | 버킷에 객체를 업로드    |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 쿼리  | 객체의 메타데이터 쿼리                |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 로컬 파일 시스템에 객체 다운로드        |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사   | 대상 경로에 객체 복사                        |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) |  객체 삭제   | 버킷에서 객체 삭제 |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 여러 객체 삭제   | 버킷에서 여러 객체 삭제 |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 아카이브된 객체 복구 | 아카이브 유형의 객체 검색 및 액세스                      |
+| [SELECT Object content](https://intl.cloud.tencent.com/document/product/436/32360) | 객체 콘텐츠 인덱스 | 지정 객체에서 콘텐츠 인덱스                      |
+| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | 객체 추가 업로드 | 객체를 멀티파트 추가 방식으로 버킷에 업로드                      |
 
 
 **멀티파트 작업**
@@ -29,7 +29,7 @@
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 멀티파트 복사       | 다른 객체를 한 파트로 복사             |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 업로드된 파트 조회   | 특정 멀티파트 업로드 작업에서 업로드된 파트 조회   |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 멀티파트 업로드 완료   | 전체 파일의 멀티파트 업로드 완료               |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 하나의 멀티파트 업로드 작업 중지 및 이미 업로드한 파트 삭제 |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지 | 하나의 멀티파트 업로드 작업 중지 및 이미 업로드한 파트 삭제 |
 
 
 
@@ -47,14 +47,68 @@
 ```
 list_objects(Bucket, Delimiter="", Marker="", MaxKeys=1000, Prefix="", EncodingType="", **kwargs)
 ```
-#### 요청 예시
+#### 요청 예시1: 지정된 버킷의 모든 객체 나열
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # ".cssg-snippet-get-all-objects"
 ```python
+response = client.list_objects(Bucket='examplebucket-1250000000')
+if 'Contents' in response:
+    for content in response['Contents']:
+        print(content['Key'])
+# 참고: 버킷에 객체가 너무 많으면 한 번에 1000개의 객체만 반환되며, 여러 페이지로 나열됩니다(예시3 참고).
+```
+
+#### 요청 예시2: 특정 접두사 객체 나열
+
+[//]: # ".cssg-snippet-get-prefix-objects"
+```python
+# 접두사가 folder인 객체 나열
 response = client.list_objects(
     Bucket='examplebucket-1250000000',
-    Prefix='folder1'
+    Prefix='folder' 
 )
+
+# folder1 디렉터리의 파일을 나열합니다. COS의 디렉터리는 ‘/’ 끝의 접두사 이름입니다.
+response = client.list_objects(
+    Bucket='examplebucket-1250000000',
+    Prefix='folder1/' 
+)
+```
+
+#### 요청 예시3: 페이지별 객체 나열
+
+[//]: # ".cssg-snippet-get-objects-by-page"
+```python
+# 버킷의 객체를 페이지당 10개로 나눠 나열
+marker = ""
+while True:
+    response = client.list_objects(
+        Bucket='examplebucket-1250000000', Prefix='folder1/', Marker=marker, MaxKeys=10)
+    if 'Contents' in response:
+        for content in response['Contents']:
+            print(content['Key'])
+
+    if response['IsTruncated'] == 'false':
+        break
+
+    marker = response["NextMarker"]
+```
+
+#### 요청 예시4: 지정된 디렉터리의 객체 및 하위 디렉터리 나열
+
+[//]: # ".cssg-snippet-get-files-and-subfolder"
+```python
+# folder1 디렉터리의 파일과 하위 디렉터리 나열
+response = client.list_objects(
+    Bucket='examplebucket-1250000000', Prefix='folder1/', Delimiter='/')
+# 파일 목록 출력
+if 'Contents' in response:
+    for content in response['Contents']:
+        print(content['Key'])
+# 하위 디렉터리 출력
+if 'CommonPrefixes' in response:
+    for folder in response['CommonPrefixes']:
+        print(folder['Prefix'])
 ```
 
 #### 모든 매개변수 요청 예시
@@ -125,7 +179,7 @@ response = client.list_objects(
 | NextMarker| IsTruncated가 true면 다음에 반환된 객체 리스트의 시작 위치 표시  | String  |
 | Name   | 버킷 이름은 BucketName-APPID로 구성  | String  |
 | IsTruncated   |  반환된 객체의 잘림 여부 표시  | String|
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 
+| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | No|
 |Contents | 'ETag', 'StorageClass', 'Key', 'Owner', 'LastModified', 'Size' 등의 정보를 포함한 모든 객체 메타데이터가 담긴 리스트|List|
 |CommonPrefixes |Prefix로 시작하고 Delimiter로 끝나는 모든 객체를 동일한 클래스로 분류|List|
 
@@ -238,7 +292,7 @@ response = client.list_objects_versions(
 | NextVersionIdMarker| IsTruncated가 true면 다음에 반환된 객체 리스트의 VersionId 시작 위치 표시  | String  |
 | Name   | 버킷 이름은 BucketName-APPID로 구성  | String  |
 | IsTruncated   |  반환된 객체의 잘림 여부 표시  | String|
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | 
+| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  | No|
 |Version | 'ETag', 'StorageClass', 'Key', 'VersionId', 'IsLatest', 'Owner', 'LastModified', 'Size' 등의 정보를 포함한 여러 버전의 객체 메타데이터가 담긴 리스트|List|
 |DeleteMarker| 'Key', 'VersionId', 'IsLatest', 'Owner', 'LastModified' 등의 정보를 포함한 모든 delete marker 객체 메타데이터가 담긴 리스트|List|
 |CommonPrefixes |Prefix로 시작하고 Delimiter로 끝나는 모든 객체를 동일한 클래스로 분류|List|
@@ -361,7 +415,7 @@ with open('test.txt', 'rb') as fp:
     print(response['ETag'])
 ```
 #### 요청 예시4: 업로드 속도 제한
-TrafficLimit 매개변수 설정을 사용하여 업로드 속도를 제한합니다. 단위: bit/s, 속도 제한 설정 범위: 819200-838860800, 즉 100KB/s-100MB/s.
+TrafficLimit 매개변수 설정을 사용하여 업로드 속도를 제한합니다. 단위: bit/s, 속도 제한 설정 범위: 819200 - 838860800, 즉 100KB/s - 100MB/s.
 
 [//]: # ".cssg-snippet-put-object-by-limit"
 ```python
@@ -407,7 +461,7 @@ response = client.put_object(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |   Yes |
+|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |  Yes |
 |  Body  | 업로드하는 객체의 콘텐츠. 파일 스트림 또는 바이트 스트림이 될 수 있음 |  file/bytes |  Yes |
 |  Key  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String |  Yes |
 | EnableMD5 | SDK의 Content-MD5 계산 여부. 기본적으로 비활성화 상태이며, 활성화 시 업로드 시간 증가|Bool | No|
@@ -533,7 +587,7 @@ response = client.head_object(
 ```
 #### 요청 예시1: 객체 다운로드
 
-[//]: # ".cssg-snippet-get-object"
+[//]: #	".cssg-snippet-get-object"
 ```python
 response = client.get_object(
     Bucket='examplebucket-1250000000',
@@ -565,7 +619,7 @@ response['Body'].get_stream_to_file('exampleobject')
 ```
 #### 모든 매개변수 요청 예시
 
-[//]: # ".cssg-snippet-get-object"
+[//]: #	".cssg-snippet-get-object"
 ```python
 response = client.get_object(
     Bucket='examplebucket-1250000000',
@@ -595,7 +649,7 @@ response = client.get_object(
 |  IfMatch  |  ETag가 지정된 콘텐츠와 일치해야 반환 |String  | No |
 |  IfModifiedSince  |   지정 시간 이후 수정될 경우에만 반환. 시간 형식: GMT | String  | No |
 |  IfNoneMatch  |  ETag가 지정 콘텐츠와 불일치 시 반환 | String  | No |
-|  IfUnmodifiedSince  |  객체 수정 시간이 지정 시간보다 이르거나 같을 경우에만 반환. 시간 형식: GMT | String  | No|
+|  IfUnmodifiedSince  |  객체 수정 시간이 지정 시간보다 이르거나 같을 경우에만 반환. 시간 형식: GMT| String  | No|
 |  ResponseCacheControl  |  응답 헤더의 Cache-Control 설정 | String  | No |
 |  ResponseContentDisposition  |  응답 헤더의 Content-Disposition 설정 | String  | No |
 |  ResponseContentEncoding  |   응답 헤더의 Content-Encoding 설정 | String  | No |
@@ -753,7 +807,7 @@ response = client.copy_object(
     Metadata={'x-cos-meta-key1': 'value1', 'x-cos-meta-key2': 'value2'} # 사용자 정의 메타데이터 수정
 )
 ```
-#### 요청 예시3: COS 유형 수정
+#### 요청 예시3: 객체 스토리지 유형 수정
 소스와 타깃은 동일한 객체이며 CopyStatus는 Replaced로 설정합니다. StorageClass 매개변수를 통해 객체의 스토리지 유형을 수정할 수 있습니다.
 
 [//]: # ".cssg-snippet-copy-object-storage-class"
@@ -1019,7 +1073,7 @@ response = client.delete_objects(
 
 | 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket  | 버킷 이름. BucketName-APPID로 구성 |  String |  Yes |
+| Bucket  | 버킷 이름. BucketName-APPID로 구성 | String |  Yes |
 | Delete  | 이번에 삭제된 반환 결과 방식과 타깃 Object 설명 | Dict | Yes |
 | Object  | 삭제 예정인 타깃 Object 정보 설명 | List | Yes |
 | Key     | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임| String|No|
@@ -1682,7 +1736,7 @@ response = client.list_parts(
 | Bucket   | 버킷 이름. BucketName-APPID로 구성  | String  |
 |  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String |
 |  UploadId  |  멀티파트 업로드의 식별 ID | String |
-| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url   | String  |
+| EncodingType   |   기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url  | String  |
 | MaxParts   | 반환하는 멀티파트의 최대 수. 기본값: 최대 1000  | String  |
 | IsTruncated   |  반환된 파트의 잘림 여부 표시  | String|
 | PartNumberMarker   | 기본값: 0. 첫 파트부터 나열하며, PartNumberMarker의 다음 파트부터 나열  | String  |
@@ -1752,7 +1806,7 @@ response = client.complete_multipart_upload(
 
 | 매개변수 이름   | 매개변수 설명   |유형 |
 | -------------- | -------------- |---------- |
-|  ETag  |병합된 객체의 고유 태그값. 객체 콘텐츠의 MD5 검사값이 아니므로, 객체 고유성 검사에만 사용할 수 있으며 객체 콘텐츠 검사가 필요한 경우 업로드 과정에서 단일 파트의 ETag 값 검사가 가능. |  String |
+|  ETag  |병합된 객체의 고유 태그값. 객체 콘텐츠의 MD5 검사값이 아니므로, 객체 고유성 검사에만 사용할 수 있으며 객체 콘텐츠 검사가 필요한 경우 업로드 과정에서 단일 파트의 ETag 값 검사 가능. |  String |
 |  Bucket  |버킷 이름. BucketName-APPID로 구성 |  String |
 |  Location  | URL 주소 |  String |
 |  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | String |
@@ -1976,6 +2030,107 @@ response = client.download_file(
 #### 반환 결과 설명
 None
 
+
+
+### 객체 복사
+
+#### 기능 설명
+이 고급 인터페이스는 5GB 미만 파일은 copy_object를 호출하고, 5GB 이상 파일은 멀티파트 업로드의 upload_part_copy를 호출합니다.
+
+#### 메소드 프로토타입
+
+```
+copy(Bucket, Key, CopySource, CopyStatus='Copy', PartSize=10, MAXThread=5, **kwargs)
+```
+
+#### 요청 예시1: 객체 복사
+
+[//]: # ".cssg-snippet-transfer-copy"
+```python
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import os
+import logging
+
+# secret_id, secret_key, region 등을 포함한 사용자 속성을 설정합니다. Appid는 CosConfig에서 제거되었습니다. 매개변수 Bucket에 Appid를 포함시키십시오. Bucket은 BucketName-Appid로 구성됩니다.
+secret_id = 'SecretId'     # 사용자의 SecretId로 대체합니다. CAM 콘솔에 로그인하여 확인 및 관리하십시오. https://console.cloud.tencent.com/cam/capi
+secret_key ='SecretKey'   # 사용자의 SecretKey로 대체합니다. CAM 콘솔에 로그인하여 확인 및 관리하십시오. https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 사용자의 region으로 대체합니다. 생성된 버킷이 속한 region은 콘솔에서 확인 가능합니다. https://console.cloud.tencent.com/cos5/bucket
+                           # COS에서 지원되는 모든 region 목록은 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/6224
+token = None                 # 영구 키를 사용하는 경우 token을 입력할 필요가 없으나, 임시 키를 사용하는 경우 입력해야 합니다. 임시 키 생성 및 사용 가이드는 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/14048
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # 설정 객체 획득
+client = CosS3Client(config)
+
+response = client.copy(
+    Bucket='test',
+    Key='copy_10G.txt',
+    CopySource={
+        'Bucket': 'sourcebucket-1250000000', 
+        'Key': 'exampleobject', 
+        'Region': 'ap-guangzhou'
+    }
+)
+```
+
+#### 요청 예시2: 객체 이동
+
+[//]: # ".cssg-snippet-transfer-copy-move"
+```python
+bucket = 'examplebucket-1250000000'
+srcKey = 'src_object_key'  # 원본 객체 경로
+destKey = 'dest_object_key'   # 타깃 객체 경로
+
+# COS 자체에는 객체 이동 API가 없습니다. 이동이란 이전 객체를 새 객체에 먼저 복사한 다음 이전 객체를 삭제하는 것입니다.
+try:
+    response = client.copy(
+        Bucket=bucket,
+        Key=destKey,
+        CopySource={
+            'Bucket':bucket,
+            'Key':srcKey,
+            'Region':'ap-guangzhou',
+        })
+    client.delete_object(Bucket=bucket, Key=srcKey)
+except CosException as e:
+    print(e.get_error_msg())
+```
+
+#### 모든 매개변수 요청 예시
+
+```python
+response = client.copy(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    CopySource={
+        'Bucket': 'sourcebucket-1250000000', 
+        'Key': 'exampleobject', 
+        'Region': 'ap-guangzhou'
+    }
+    CopyStatus='Copy'|'Replaced',
+    PartSize=20,
+    MAXThread=10
+)
+```
+#### 매개변수 설명
+
+| 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
+| -------------- | -------------- |---------- | ----------- |
+|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String  |  Yes |
+|  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 에서 객체 키는 doc/pic.jpg | String  | Yes |
+|  CopySource  | Bucket, Key, Region, VersionId를 포함한 원본 객체의 경로 복사 |  Dict | Yes |
+ |  CopyStatus  |복사 상태. 선택값: Copy, Replaced | String | No |
+ |  PartSize  |멀티파트 다운로드의 멀티파트 크기. 기본값: 10MB |  Int |  No |
+ |  MAXThread  | 멀티파트 다운로드의 동시 다운로드 수량. 기본적으로 5개 스레드로 파트 다운로드 |  Int |  No |
+
+#### 반환 결과 설명
+5GB 미만 파일은 copy_object의 반환 결과이고, 5GB 이상 파일은 complete_multipart_upload의 반환 결과입니다(dict 유형).
+
+
 ### 일괄 업로드(로컬 폴더 업로드)
 
 #### 기능 설명
@@ -2069,7 +2224,7 @@ config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Toke
 client = CosS3Client(config)
 
 # 사용자의 bucket 정보
-test_bucket = 'chenxi-1253870963'
+test_bucket = 'examplebucket-1250000000'
 start_prefix = 'data/'
 # COS는 세퍼레이터 '/'로 가상 디렉터리 시맨틱 구현,
 # 기본 null 세퍼레이터를 사용해 디렉터리에 있는 모든 하위 노드를 나열할 수 있으며, 로컬 디렉터리 재귀와 유사한 효과 구현,
@@ -2180,115 +2335,77 @@ if __name__ == "__main__":
     downLoadDirFromCos(start_prefix)
 ```
 
-### 객체 복사
+
+### 객체 일괄 삭제(디렉터리 삭제)
 
 #### 기능 설명
-파일을 복사합니다. 5GB 미만 파일은 copy_object를 호출하고, 5GB 이상 파일은 멀티파트 업로드의 upload_part_copy를 호출합니다.
+COS 자체에는 디렉터리 개념이 없습니다. 사용자의 사용 습관에 따라 세퍼레이터 /로 ‘디렉터리’를 구현할 수 있습니다.
 
-#### 메소드 프로토타입
+디렉터리와 그 파일을 삭제하는 작업은 사실상 COS에서 동일한 접두사를 가진 객체를 일괄 삭제하는 것과 같습니다. 현재 COS Python SDK는 이러한 작업을 위한 인터페이스를 제공하지 않지만, 객체 목록 쿼리와 객체 일괄 삭제 작업을 결합하여 디렉터리 및 파일 삭제 효과를 얻을 수 있습니다.
 
-```
-copy(Bucket, Key, CopySource, CopyStatus='Copy', PartSize=10, MAXThread=5, **kwargs)
-```
-#### 요청 예시1: 객체 복사
-
-[//]: # ".cssg-snippet-transfer-copy"
+#### 요청 예시
 ```python
-response = client.copy(
-    Bucket='test',
-    Key='copy_10G.txt',
-    CopySource={
-        'Bucket': 'sourcebucket-1250000000', 
-        'Key': 'exampleobject', 
-        'Region': 'ap-guangzhou'
-    }
-)
-```
-
-#### 요청 예시2: 객체 이동
-```python
-# -*- coding=utf-8
-from qcloud_cos import CosConfig
-from qcloud_cos import CosS3Client
-from qcloud_cos import CosServiceError
-from qcloud_cos import CosClientError
-
+import logging
 import sys
 import os
-import logging
 
-# -*- coding=utf-8
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
-from qcloud_cos import CosServiceError
-from qcloud_cos import CosClientError
+from qcloud_cos.cos_threadpool import SimpleThreadPool
 
-import sys
-import os
-import logging
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # secret_id, secret_key, region 등을 포함한 사용자 속성을 설정합니다. Appid는 CosConfig에서 제거되었습니다. 매개변수 Bucket에 Appid를 포함시키십시오. Bucket은 BucketName-Appid로 구성됩니다.
 secret_id = 'SecretId'     # 사용자의 SecretId로 대체합니다. CAM 콘솔에 로그인하여 확인 및 관리하십시오. https://console.cloud.tencent.com/cam/capi
 secret_key ='SecretKey'   # 사용자의 SecretKey로 대체합니다. CAM 콘솔에 로그인하여 확인 및 관리하십시오. https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 사용자의 region으로 대체합니다. 생성된 버킷이 속한 region은 콘솔에서 확인 가능합니다. https://console.cloud.tencent.com/cos5/bucket
-                           # COS에서 지원되는 모든 region 목록은 다음을 참고하십시오. https://www.qcloud.com/document/product/436/6224
+                           # COS에서 지원되는 모든 region 목록은 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/6224
 token = None                 # 영구 키를 사용하는 경우 token을 입력할 필요가 없으나, 임시 키를 사용하는 경우 입력해야 합니다. 임시 키 생성 및 사용 가이드는 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/14048
+scheme = 'http'            # http/https 프로토콜 사용하여 COS 액세스. 기본값: https. 입력하지 않아도 됨
 
-config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # 설정 객체 획득
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)  # 설정 객체 획득
 client = CosS3Client(config)
 
-# 객체 이동
 bucket = 'examplebucket-1250000000'
-srcKey = 'src_object_key'  # 원본 객체 경로
-destKey = 'dest_object_key'   # 타깃 객체 경로
+folder = 'folder/' # 삭제할 디렉터리. '/'끝은 디렉터리를 나타냅니다.
 
-#본 예시는 SDK 기본 인터페이스를 사용해 파일 move 작업을 진행합니다.
-try:
-    response = client.copy_object(
-        Bucket=bucket,
-        Key=destKey,
-        CopySource={
-            'Bucket':bucket,
-            'Key':srcKey,
-            'Region':'ap-guangzhou',
-        })
-    client.delete_object(Bucket=bucket, Key=srcKey)
-except CosException as e:
-     print(e.get_error_msg())
+def delete_cos_dir():
+    pool = SimpleThreadPool()
+    marker = ""
+    while True:
+        file_infos = []
+
+        # 페이지당 100개의 객체 나열
+        response = client.list_objects(Bucket=bucket, Prefix=folder, Marker=marker, MaxKeys=100)
+
+        if "Contents" in response:
+            contents = response.get("Contents")
+            file_infos.extend(contents)
+            pool.add_task(delete_files, file_infos)
+
+        # 나열 완료, 종료
+        if response['IsTruncated'] == 'false':
+            break
+        
+        # 다음 페이지 나열
+        marker = response["NextMarker"]
+
+    pool.wait_completion()
+    return None   
+
+def delete_files(file_infos):
+
+    # 일괄 삭제 요청 구성
+    delete_list = []
+    for file in file_infos:
+        delete_list.append({"Key": file['Key']})
+
+    response = client.delete_objects(Bucket=bucket, Delete={"Object": delete_list})
+    print(response)
+
+if __name__ == "__main__":
+    delete_cos_dir()
 ```
-
-
-
-#### 모든 매개변수 요청 예시
-```python
-response = client.copy(
-    Bucket='examplebucket-1250000000',
-    Key='exampleobject',
-    CopySource={
-        'Bucket': 'sourcebucket-1250000000', 
-        'Key': 'exampleobject', 
-        'Region': 'ap-guangzhou'
-    }
-    CopyStatus='Copy',
-    PartSize=20,
-    MAXThread=10
-)
-```
-#### 매개변수 설명
-
-
-| 매개변수 이름   | 매개변수 설명   |유형 | 필수 입력 여부 |
-| -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 버킷 이름. BucketName-APPID로 구성 | String  |  Yes |
-|  Key  |  객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 에서 객체 키는 doc/pic.jpg | String  | Yes |
-|  CopySource  | Bucket, Key, Region, VersionId를 포함한 원본 객체의 경로 복사 |  Dict | Yes |
- |  CopyStatus  |복사 상태. 선택값: Copy, Replaced | String | No |
- |  PartSize  |멀티파트 다운로드의 멀티파트 크기. 기본값: 10MB |  Int |  No |
- |  MAXThread  | 멀티파트 다운로드의 동시 다운로드 수량. 기본적으로 5개 스레드로 파트 다운로드 |  Int |  No |
-
-#### 반환 결과 설명
-5GB 미만 파일은 copy_object의 반환 결과이고, 5GB 이상 파일은 complete_multipart_upload의 반환 결과입니다(dict 유형).
-
 
 
 ## 클라이언트 암호화

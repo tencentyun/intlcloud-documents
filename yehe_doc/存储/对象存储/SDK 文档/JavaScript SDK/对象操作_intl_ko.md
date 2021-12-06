@@ -6,16 +6,16 @@
 
 | API                                                          | 작업명         | 작업 설명                             |
 | ------------------------------------------------------------ | -------------- | ---------------------------------------- |
-| [GET Bucket(List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회   | 버킷의 일부 또는 모든 객체 조회           |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 간편 객체 업로드   | 버킷에 단일 객체 업로드                     |
+| [GET Bucket(List Object)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 쿼리| 버킷의 일부 또는 모든 객체 쿼리.           |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 객체 업로드       | 버킷에 객체 업로드    |
 | [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | 폼을 사용한 객체 업로드   | 폼을 사용한 객체 업로드 요청                     |
-| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 조회 | 객체의 메타데이터 정보 조회                  |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 로컬에 객체 다운로드                       |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 쿼리  | 객체의 메타데이터 쿼리                |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 로컬 파일 시스템에 객체 다운로드        |
 | [OPTIONS Object](https://intl.cloud.tencent.com/document/product/436/8288) | 크로스 도메인 설정 사전 요청 | 사전 요청을 통해 실제 크로스 도메인 요청의 발송 가능 여부 확인 |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사 설정   | 객체를 타깃 경로에 복사                        |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 단일 객체 삭제   | 버킷에서 지정 객체 삭제                   |
-| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 다수의 객체 삭제   | 버킷에서 객체 일괄 삭제                   |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구 | 아카이브 유형의 객체 검색 및 액세스           |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사   | 대상 경로에 객체 복사                        |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) |  객체 삭제   | 버킷에서 객체를 삭제 |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 여러 객체 삭제   | 버킷에서 여러 객체 삭제 |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 아카이브된 객체 복원 | 아카이브된 객체 검색 및 액세스                      |
 
 
 **멀티파트 작업**
@@ -28,7 +28,7 @@
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 멀티파트 복사       | 다른 객체를 한 파트로 복사             |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 업로드된 파트 조회   | 특정 멀티파트 업로드 작업에서 업로드된 파트 조회     |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 멀티파트 업로드 완료   | 전체 객체의 멀티파트 업로드 완료               |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 하나의 멀티파트 업로드 작업 중지 및 이미 업로드한 파트 삭제 |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지 | 하나의 멀티파트 업로드 작업 중지 및 이미 업로드한 파트 삭제 |
 
 
 
@@ -210,7 +210,7 @@ PUT Object 인터페이스로 단일 객체를 지정 버킷에 업로드할 수
 
 #### 사용 예시
 
-간편한 파일 업로드는 용량이 작은 파일을 업로드하는 데 적합합니다.
+간편 파일 업로드는 용량이 작은 파일을 업로드하는 데 적합합니다:
 
 [//]: # (.cssg-snippet-put-object)
 ```js
@@ -301,6 +301,29 @@ cos.putObject({
 });
 ```
 
+객체 업로드(단일 링크 속도 제한):
+
+>?객체 업로드 속도 제한에 대한 설명은 [단일 링크 속도 제한](https://intl.cloud.tencent.com/document/product/436/34072)을 참고하십시오.
+
+[//]: # (.cssg-snippet-put-object-traffic-limit)
+```js
+cos.putObject({
+    Bucket: ’examplebucket-1250000000’, /* 필수 */
+    Region: ’COS_REGION’,     /* 버킷이 위치한 리전. 필수 필드 */
+    Key: ’exampleobject’,              /* 필수 */
+    StorageClass: ’STANDARD’,
+    Body: fileObject, // 파일 객체 업로드
+    Headers: {
+      'x-cos-traffic-limit': 819200, // 속도 제한 설정 범위는 819200-838860800, 즉 100KB/s - 100MB/s이며, 이 범위를 초과하면 400 오류가 반환됩니다.
+    },
+    onProgress: function(progressData) {
+        console.log(JSON.stringify(progressData));
+    }
+}, function(err, data) {
+    console.log(err || data);
+});
+```
+
 #### 매개변수 설명
 
 
@@ -343,15 +366,15 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | data         | 요청 성공 시 반환되는 객체. 요청에 오류가 발생할 경우 빈칸으로 표시됩니다.               | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | - ETag       | 파일의 MD5 알고리즘 검증값 반환. ETag 값은 업로드 과정에서 객체 손상 여부를 검사하는 데 사용할 수 있습니다.<br>예: `"09cba091df696af91549de27b8e7d0f6"`. **주의: ETag 값 문자열의 앞뒤에 큰따옴표가 사용됩니다.** | String |
 | - Location   | 업로드된 파일 액세스 주소                                       | String |
 | - VersionId  | 버전 제어를 활성화한 버킷에 객체 업로드 시 반환되는 객체의 버전 ID. 버전 제어를 한 번도 활성화하지 않은 버킷은 해당 매개변수가 반환되지 않습니다. | String |
 
-### 입력 폼 객체 업로드
+### 폼을 사용한 객체 업로드
 
 JS SDK는 POST Object 인터페이스에 해당하는 메소드를 제공하지 않습니다. 해당 인터페이스가 필요한 경우 [Web 다이렉트 업로드 사례](https://intl.cloud.tencent.com/document/product/436/9067)의 ‘방법 B: 폼(Form)을 사용하여 업로드’를 참고하십시오.
 
@@ -406,7 +429,7 @@ function(err, data) { ... }
 
 ### 객체 다운로드
 
-> !이 인터페이스는 객체 콘텐츠를 가져오는 데 사용합니다. 브라우저에서 파일 다운로드 요청이 필요한 경우 cos.getObjectUrl을 통해 url을 획득하여 다시 브라우저 다운로드를 트리거할 수 있습니다. 자세한 내용은 [사전 서명 URL](https://intl.cloud.tencent.com/document/product/436/31540) 문서를 참고하시기 바랍니다.
+>! 이 인터페이스는 객체 콘텐츠를 가져오는 데 사용합니다. 브라우저에서 파일 다운로드 요청이 필요한 경우 cos.getObjectUrl을 통해 url을 획득하여 다시 브라우저 다운로드를 트리거할 수 있습니다. 자세한 내용은 [사전 서명 URL](https://intl.cloud.tencent.com/document/product/436/31540) 문서를 참고하시기 바랍니다.
 >
 
 #### 기능 설명
@@ -454,6 +477,24 @@ cos.getObject({
 });
 ```
 
+객체 다운로드(단일 링크 속도 제한):
+
+>?객체 다운로드 속도 제한에 대한 설명은 [단일 링크 속도 제한](https://intl.cloud.tencent.com/document/product/436/34072)을 참고하십시오.
+
+[//]: # (.cssg-snippet-get-object-traffic-limit)
+```js
+cos.getObject({
+    Bucket: ’examplebucket-1250000000’, /* 필수 */
+    Region: ’COS_REGION’,     /* 버킷이 위치한 리전. 필수 필드 */
+    Key: ’exampleobject’,              /* 필수 */
+    Headers: {
+      'x-cos-traffic-limit': 819200, // 속도 제한 설정 범위는 819200-838860800, 즉 100KB/s-100MB/s이며, 이 범위를 초과하면 400 오류가 반환됩니다.
+    },
+}, function(err, data) {
+    console.log(err || data.Body);
+});
+```
+
 #### 매개변수 설명
 
 | 매개변수 이름                     | 매개변수 설명                                                     | 유형     | 필수 입력 여부 |
@@ -487,7 +528,7 @@ function(err, data) { ... }
 
 ```
 
-| 매개변수 이름| 매개변수 설명                                                     | 유형    |
+| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object  |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number  |
@@ -545,7 +586,7 @@ cos.optionsObject({
 function(err, data) { ... }
 ```
 
-| 매개변수 이름 | 매개변수 설명                                                     | 유형    |
+| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object  |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number  |
@@ -572,6 +613,8 @@ PUT Object - Copy는 기존에 있는 COS 객체의 사본 생성을 요청합�
 
 #### 사용 예시
 
+객체 복사:
+
 [//]: # (.cssg-snippet-copy-object)
 ```js
 cos.putObjectCopy({
@@ -584,13 +627,29 @@ cos.putObjectCopy({
 });
 ```
 
+객체 스토리지 유형 수정
+
+[//]: # (.cssg-snippet-copy-object)
+```js
+cos.putObjectCopy({
+    Bucket: ’examplebucket-1250000000’,                               /* 필수 */
+    Region: ’COS_REGION’,     /* 버킷이 위치한 리전. 필수 필드 */
+    Key: 'sourceObject',                                            /* Key는 CopySource의 Key와 동일, 필수 */
+    CopySource: ’sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject’, /* 필수 */
+    StorageClass: 'ARCHIVE',  /* 아카이브로 설정 */
+}, function(err, data) {
+    console.log(err || data);
+});
+```
+
+
 #### 매개변수 설명
 
 | 매개변수 이름                      | 매개변수 설명                                                     | 유형   | 필수 입력 여부 |
 | --------------------------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket                      | 버킷의 이름. 이름 생성 형식은 BucketName-APPID이며, 여기에 입력하는 버킷 이름은 반드시 이 형식을 따라야 합니다. | String | Yes   |
 | Region                      | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String | Yes   |
-| Key                         | 객체 키(Object의 이름). 버킷에서의 객체 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String | Yes   |
+| Key                         | 객체 키(Object의 이름). 버킷에서의 객체 고유 식별자입니다. 자세한 내용은 [[객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String | Yes   |
 | CopySource                  | 원본 객체 URL 경로입니다. URL 매개변수 ?versionId=&lt;versionId>를 통해 과거의 버전을 지정할 수 있습니다. | String | Yes   |
 | ACL                         | 객체의 액세스 제어 리스트(ACL) 속성 정의. 열거 값은 [ACL 개요](https://intl.cloud.tencent.com/document/product/436/30583) 문서에서 default, private, public-read와 같은 객체의 사전 설정 ACL 부분을 참고하십시오. <br>**주의: 객체 ACL 제어가 필요하지 않을 경우, default로 설정하거나 이 항목을 설정하지 말고 기본 버킷 권한을 상속하십시오.** | String | No   |
 | GrantRead                   | 권한 피부여자에게 객체 읽기 권한을 부여합니다. 형식은 id="[OwnerUin]"이며, 쉼표(,)를 사용하여 다음과 같이 여러 그룹의 권한 피부여자를 구분합니다. <ul  style="margin: 0;"><li>서브 계정에 권한을 부여할 경우, <code>id="qcs::cam::uin/&lt;OwnerUin&gt;:uin/&lt;SubUin&gt;"</code></li><li>루트 계정에 권한을 부여할 경우, <code>id="qcs::cam::uin/&lt;OwnerUin&gt;:uin/&lt;OwnerUin&gt;"</code><br>예: <code>’id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"’</code></li></ul> | String | No   |
@@ -645,7 +704,7 @@ cos.deleteObject({
 
 | 매개변수 이름    | 매개변수 설명                                                     | 유형   | 필수 입력 여부 |
 | --------- | ------------------------------------------------------------ | ------ | ---- |
-| Bucket    | 버킷의 이름. 형식은 BucketName-APPID이며, 여기에 입력하는 버킷 이름은 반드시 이 형식을 따라야 합니다. | String | Yes   |
+| Bucket    | 버킷의 이름. 필수 형식: BucketName-APPID. | String | Yes   |
 | Region    | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String | Yes   |
 | Key       | 객체 키(Object의 이름). 버킷에 있는 객체의 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String | Yes   |
 | VersionId | 삭제할 객체 버전 ID 또는 DeleteMarker 버전 ID                  | String | No   |
@@ -660,10 +719,10 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | data         | 요청 성공 시 반환되는 객체. 요청에 오류가 발생할 경우 빈칸으로 표시됩니다.               | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 204, 403, 404 등). **삭제에 성공하거나 파일이 존재하지 않을 경우 204 또는 200이 반환되고, 지정 Bucket을 찾지 못할 경우 404가 반환됩니다.** | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 
 ### 다수의 객체 삭제
 
@@ -744,7 +803,7 @@ deleteFiles();
 function(err, data) { ... }
 ```
 
-| 매개변수 이름 | 매개변수 설명                                                     | 유형        |
+| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object      |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예: 200, 204, 403, 404 등)             | Number     |
@@ -797,7 +856,7 @@ cos.restoreObject({
 | Key                | 객체 키(Object의 이름). 버킷에 있는 객체의 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String | Yes   |
 | RestoreRequest     | 복구 데이터의 컨테이너에 사용                                           | Object | Yes   |
 | - Days             | 임시 사본의 만료 시간 설정                                       | Number | Yes   |
-| - CASJobParameters | CAS 작업 매개변수의 컨테이너                                       | Object | Yes   |
+| - CASJobParameters | 아카이브 작업 매개변수의 컨테이너                                       | Object | Yes   |
 | - - Tier           | 데이터를 복구할 때 Tier는 Standard(표준 모드, 3 - 5시간 내에 복구 작업 완료), Expedited(고속 모드, 15분 내에 복구 작업 완료), Bulk(일괄 모드, 5 - 12시간 내에 복구 작업 완료)와 같이 COS에서 제공하는 3가지 복구 모드를 지정할 수 있습니다. | String | Yes   |
 
 #### 콜백 함수 설명
@@ -810,10 +869,10 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | data         | 요청 성공 시 반환되는 객체. 요청에 오류가 발생할 경우 빈칸으로 표시됩니다.               | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 
 
 
@@ -860,7 +919,7 @@ cos.multipartList({
 function(err, data) { ... }
 ```
 
-| 매개변수 이름 | 매개변수 설명                                                     | 유형        |
+| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object      |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number      |
@@ -1001,10 +1060,10 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | data         | 요청 성공 시 반환되는 객체. 요청에 오류가 발생할 경우 빈칸으로 표시됩니다.               | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 
 ### 멀티파트 복사
 
@@ -1104,7 +1163,7 @@ cos.multipartListPart({
 function(err, data) { ... }
 ```
 
-| 매개변수 이름 | 매개변수 설명                                                     | 유형        |
+| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object      |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number      |
@@ -1118,7 +1177,7 @@ function(err, data) { ... }
 | - UploadId                                                   | 이번 멀티파트 업로드의 식별 ID                                        | String      |
 | - Initiator                                                  | 이번 업로드 담당자의 정보 표시                                 | Object      |
 | - - DisplayName                                              | 업로드 담당자의 이름                                             | String      |
-| - - - ID                                                       | 업로드 요청자의 ID. 형식: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`, <br>루트 계정인 경우, &lt;OwnerUin>과 &lt;SubUin>의 값이 동일합니다. | String      |
+| - - ID                                                       | 업로드 요청자의 ID. 형식: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`, <br>루트 계정인 경우, &lt;OwnerUin>과 &lt;SubUin>의 값이 동일합니다. | String      |
 | - Owner                                                      | 해당 멀티파트 소유자 정보 표시                                 | Object      |
 | - - DisplayName                                              | 버킷 소유자의 이름                                         | String      |
 | - - ID                                                       | 버킷 소유자의 ID. 일반적으로 사용자의 UIN입니다.                            | String      |
@@ -1173,7 +1232,7 @@ cos.multipartComplete({
 | Key          | 객체 키(Object의 이름). 버킷에 있는 객체의 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String      | Yes   |
 | UploadId     | 업로드 작업 번호                                                 | String      | Yes   |
 | Parts        | 이번 멀티파트 업로드의 파트 정보 리스트 설명                           | ObjectArray | Yes   |
-| PartNumber | 멀티파트의 번호                                                   | String      | Yes   |
+| - PartNumber | 멀티파트의 번호                                                   | String      | Yes   |
 | - ETag       | 모든 파트 파일의 MD5 알고리즘 검증값<br>(예: `"22ca88419e2ed4721c23807c678adbe4c08a7880"`) **주의: 앞뒤에 큰따옴표가 사용됩니다.** | String      | Yes   |
 
 #### 콜백 함수 설명
@@ -1184,15 +1243,15 @@ function(err, data) { ... }
 
 | 매개변수 이름       | 매개변수 설명                                                     | 유형   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object      |
+| err          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | data         | 요청 성공 시 반환되는 객체. 요청에 오류가 발생할 경우 빈칸으로 표시됩니다.               | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | - Location   | 업로드된 파일 액세스 주소                                       | String |
 | - Bucket     | 멀티파트 업로드의 타깃 버킷                                         | String |
-| - Key        | 객체 키(Object의 이름). 버킷에 있는 객체의 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
+| - Key                  | 객체 키(Object의 이름). 버킷에 있는 객체의 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
 | - ETag       | 병합 후 파일의 고유 ID. 형식: "uuid-<파트 수>"</br>예: `"22ca88419e2ed4721c23807c678adbe4c08a7880-3"`, **주의: 앞뒤에 큰따옴표가 사용됩니다.** | String |
 
 ### 멀티파트 업로드 중지
@@ -1222,10 +1281,10 @@ cos.multipartAbort({
 
 | 매개변수 이름   | 매개변수 설명                                                     | 유형   | 필수 입력 여부 |
 | -------- | ------------------------------------------------------------ | ------ | ---- |
-| Bucket   | 버킷의 이름. 형식은 BucketName-APPID이며, 여기에 입력하는 버킷 이름은 반드시 이 형식을 따라야 합니다. | String | Yes   |
+| Bucket   | 버킷의 이름. 필수 형식: BucketName-APPID. | String | Yes   |
 | Region   | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String | Yes   |
 | Key      | 객체 키(Object의 이름). 버킷에 있는 객체의 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String | Yes   |
-| UploadId | 이번 멀티파트 업로드 ID 표시. Initiate Multipart Upload 인터페이스를 사용해 멀티파트 업로드를 초기화했을 때 획득한 UploadId입니다. | String | Yes   |
+| UploadId         | 이번 멀티파트 업로드 ID 표시. Initiate Multipart Upload 인터페이스를 사용해 멀티파트 업로드를 초기화했을 때 획득한 UploadId입니다. | String | Yes   |
 
 #### 콜백 함수 설명
 
@@ -1237,10 +1296,10 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | data         | 요청 성공 시 반환되는 객체. 요청에 오류가 발생할 경우 빈칸으로 표시됩니다.               | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 
 
 
@@ -1278,7 +1337,7 @@ cos.uploadFile({
 
 #### 매개변수 설명
 
-| 매개변수 이름 | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
+| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 이 형식을 따라야 합니다. | String    | Yes   |
 | Region                                                       | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String    | Yes   |
@@ -1310,10 +1369,10 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | data         | 요청 성공 시 반환되는 객체. 요청에 오류가 발생할 경우 빈칸으로 표시됩니다.               | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | - Location   | 업로드된 파일 액세스 주소                                       | String |
 | - Bucket     | 멀티파트 업로드의 타깃 버킷, 멀티파트 업로드 트리거 시에만 반환                                        | String |
 | - Key        | 객체 키(Object의 이름). 버킷에서의 객체 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. 멀티파트 업로드 트리거 시에만 반환 | String |
@@ -1355,7 +1414,7 @@ cos.sliceUploadFile({
 
 #### 매개변수 설명
 
-| 매개변수 이름 | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
+| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 이 형식을 따라야 합니다. | String    | Yes   |
 | Region                                                       | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String    | Yes   |
@@ -1388,13 +1447,13 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | data         | 요청 성공 시 반환되는 객체. 요청에 오류가 발생할 경우 빈칸으로 표시됩니다.               | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | - Location   | 업로드된 파일 액세스 주소                                       | String |
 | - Bucket     | 멀티파트 업로드의 타깃 버킷                                         | String |
-| - Key        | 객체 키(Object의 이름). 버킷에 있는 객체의 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
+| - Key                  | 객체 키(Object의 이름). 버킷에 있는 객체의 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
 | - ETag       | 병합 후 파일의 고유 ID. 형식: "uuid-<파트 수>"<br>예: `"22ca88419e2ed4721c23807c678adbe4c08a7880-3"`, **주의: 앞뒤에 큰따옴표가 사용됩니다.** | String |
 | - VersionId  | 버전 제어를 활성화한 버킷에 객체 업로드 시 반환되는 객체의 버전 ID. 버전 제어를 한 번도 활성화하지 않은 버킷은 해당 매개변수가 반환되지 않습니다. | String |
 
@@ -1411,7 +1470,7 @@ Slice Copy File을 호출하여 작업합니다.
 [//]: # (.cssg-snippet-transfer-copy-object)
 ```js
 cos.sliceCopyFile({
-    Bucket: 'examplebucket-1250000000',                               /* 필수 */
+    Bucket: ’examplebucket-1250000000’,                               /* 필수 */
     Region: ’COS_REGION’,     /* 버킷이 위치한 리전. 필수 필드 */
     Key: ’exampleobject’,                                            /* 필수 */
     CopySource: ’sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject’, /* 필수 */
@@ -1449,10 +1508,10 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err          |요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 성공 시 빈칸으로 표시되며, 자세한 내용은 [오류 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참고하십시오. | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | data         | 요청 성공 시 반환되는 객체. 요청에 오류가 발생할 경우 빈칸으로 표시됩니다.               | Object |
 | - statusCode | 요청 시 반환되는 HTTP 상태 코드(예: 200, 403, 404 등)                  | Number |
-| - headers    | 요청 시 반환되는 헤더 정보                                           | Object |
+| - headers    | 요청 시 반환되는 헤더 정보                                           | Object      |
 | - Location   | 업로드된 파일 액세스 주소                                       | String |
 | - Bucket     | 멀티파트 업로드의 타깃 버킷                                         | String |
 | - Key                  | 객체 키(Object의 이름). 버킷에 있는 객체의 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
@@ -1491,7 +1550,7 @@ cos.uploadFiles({
         Key: ’exampleobject2’,
         Body: fileObject2,
         onTaskReady: function(taskId) {
-        /* taskId로 큐 작업을 통해 cos.cancelTask(taskId) 업로드 취소, cos.pauseTask(taskId) 업로드 중지, cos.restartTask(taskId), 업로드 재시작을 진행 할 수 있습니다. */
+        /* taskId로 큐 작업을 통해 cos.cancelTask(taskId) 업로드 취소, cos.pauseTask(taskId) 업로드 중지, cos.restartTask(taskId), 업로드 재시작을 진행할 수 있습니다. */
         console.log(taskId);
       }
     }],
@@ -1518,7 +1577,7 @@ cos.uploadFiles({
 | - Region               | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String    | Yes   |
 | - Key                  | 객체 키(Object의 이름). 버킷에서의 객체 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String    | Yes   |
 | - Body                 | 업로드 파일의 콘텐츠. File 객체 또는 Blob 객체가 될 수 있습니다.           | File\Blob | Yes   |
-| onTaskReady                                                  | 업로드 작업 생성 시의 콜백 함수. 1개의 taskId를 반환하며, 업로드 작업의 고유 식별자입니다. 업로드 작업 취소(cancelTask), 중지(pauseTask), 재시작(restartTask)에 사용할 수 있습니다. | Function  | No   |
+| - onTaskReady                                                  | 업로드 작업 생성 시의 콜백 함수. 1개의 taskId를 반환하며, 업로드 작업의 고유 식별자입니다. 업로드 작업 취소(cancelTask), 중지(pauseTask), 재시작(restartTask)에 사용할 수 있습니다. | Function  | No   |
 | -- taskId                                                     | 업로드 작업의 번호                                               | String    | No   |
 | SliceSize              | 파일 크기가 일정 크기 초과 시 멀티파트 업로드를 사용함을 나타냅니다. 단위: Byte, 기본값: 1048576(1MB). 해당 수치보다 작거나 같을 경우 putObject를 사용해 업로드하고, 초과하는 경우 sliceUploadFile을 사용해 업로드합니다. | Number    | Yes   |
 | AsyncLimit                                                   | 멀티파트 업로드의 동시 업로드 수량, 멀티파트 업로드 트리거 시에만 유효                                           | Number    | No   |
@@ -1526,7 +1585,7 @@ cos.uploadFiles({
 | - progressData.loaded  | 업로드한 파일의 일부 크기. 단위: 바이트(Bytes)                | Number    | No   |
 | - progressData.total   | 파일의 전체 크기. 단위: 바이트(Bytes)                        | Number    | No   |
 | - progressData.speed   | 파일의 업로드 속도. 단위: 바이트/초(Bytes/s)                   | Number    | No   |
-| - progressData.percent | 파일의 업로드 백분율. 소수점으로 표시합니다(예: 업로드 50%를 0.5로 표시).       | Number    | No   |
+| - progressData.percent                                       | 파일의 업로드 백분율. 소수점으로 표시합니다(예: 업로드 50%를 0.5로 표시).       | Number    | No   |
 | onFileFinish           | 모든 파일의 완료 또는 오류 콜백                                       | String    | Yes   |
 | - err                  | 업로드 오류 정보                                               | Object    | No   |
 | - data                 | 파일의 완료 정보                                               | Object    | No   |
