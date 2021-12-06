@@ -1,6 +1,5 @@
 ### TencentDB for MySQLインスタンスの設定パラメータをどのように変更しますか。
-- **MySQLコンソールによる方法**
-[MySQLコンソール](https://console.cloud.tencent.com/cdb)で、インスタンス名をクリックして管理ページに進み、【データベース管理】>【パラメータ設定】を選択します。通常、var_nameには次の変数が含まれています。
+[MySQLコンソール](https://console.cloud.tencent.com/cdb)で、インスタンスIDをクリックして管理ページに進み、**データベース管理**> **パラメータ設定**を選択します。そのうちのよく見られるvar\_nameには、次の変数が含まれます。
 <table>
 <tbody><tr>
 <th>変数</th><th>説明</th></tr>
@@ -22,26 +21,22 @@
 <td>wait_timeout</td><td>サーバーが非対話型接続でのアクティビティを待機してから閉じるまでの秒数</td></tr>
 </tbody></table>
 
-- **phpMyAdminコンソールによる方法**
-phpMyAdminによりTencentDB for MySQLインスタンスにログインした後、トップメニューの【変数】をクリックし、下の変数リストで変更する必要のある変数に対応する【編集】をクリックし、それを変更後、【保存】をクリックします。
-![](https://main.qcloudimg.com/raw/214fec618ff4e166c6e4d747be3fea0b.png)
-
-その他の設定パラメータはTencentDB for MySQLコンソールの【データベース管理】＞【パラメータ設定】ページで確認することができます。
+その他の設定パラメータは、コンソールの**データベース管理**> **パラメータ設定**ページで確認できます。
 
 ### MySQLで中国語クエリをどのように設定しますか。
 MySQLは現在、中国語をサポートしていません。
 
 ### MySQLでスケジューラー機能を有効にするにはどうすればよいですか。
-[MySQLコンソール](https://console.cloud.tencent.com/cdb)で、インスタンス名をクリックして管理ページに進み、【データベース管理】>【パラメータ設定】ページを選択し、パラメータ設定でevent_schedulerパラメータをONに設定します。
+[MySQLコンソール](https://console.cloud.tencent.com/cdb)で、インスタンスIDをクリックして管理ページに進み、**データベース管理**> **パラメータ設定**ページを選択します。パラメータ設定でevent_schedulerパラメータをONに設定します。
 
 ### MySQLのタイムアウト接続設定が短すぎますが、どのように時間を増やしますか。
-[MySQLコンソール](https://console.cloud.tencent.com/cdb)で、インスタンス名をクリックして管理ページに進み、【データベース管理】>【パラメータ設定】ページを選択し、パラメータ設定でwait_timeoutパラメータを変更します。
+[MySQLコンソール](https://console.cloud.tencent.com/cdb)で、インスタンスIDをクリックして管理ページに進み、**データベース管理**> **パラメータ設定**ページを選択します。パラメータ設定でwait_timeoutパラメータを変更します。
 
 ### MySQLのgroup_concat_max_lenパラメータをどのように変更しますか。
-[MySQLコンソール](https://console.cloud.tencent.com/cdb)で、インスタンス名をクリックして管理ページに進み、【データベース管理】>【パラメータ設定】ページを選択し、パラメータ設定でgroup_concat_max_lenパラメータを変更します。
+[MySQLコンソール](https://console.cloud.tencent.com/cdb)で、インスタンスIDをクリックして管理ページに進み、**データベース管理**> **パラメータ設定**ページを選択します。パラメータ設定でgroup_concat_max_lenパラメータを変更します。
 
 ###　MySQLでフルテーブルスキャンのSQLステートメントはどうやって見つけられますか。
-デフォルトはフルテーブルスキャンのステートメントを記録しません。MySQLコンソールの【パラメータ設定】でlog_queries_not_using_indexesパラメータをONに設定することができますが、ONにする時間を長すぎないようにしてください。
+デフォルトでは、全表スキャンのステートメントは記録されません。TencentDB for MySQLのMySQLコンソールの**パラメータ設定**でlog_queries_not_using_indexesパラメータをONに設定できますが、長時間開いたままにしないようご注意ください。
 
 ### MySQLのデフォルトの文字セットはどのように変更しますか。
 MySQLのデフォルトの文字セットはUTF8です。現在、LATIN1、GBK、UTF8、UTF8MB4の4種類の文字セットを設定することができます。
@@ -54,3 +49,11 @@ MySQLはデフォルトの文字セットの設定をサポートしますが、
 - インスタンスのデータベース、テーブルがすべて小文字であるかどうか確認する必要があります。大文字のデータベーステーブル名がある場合は、それらをすべて小文字に変更してからパラメータを変更する必要があります。変更しない場合、エラーが報告されます。- 
 - バージョン8.0ではこのパラメータを修正できません。バージョン8.0では、デフォルトで大文字と小文字が区別されます。
 
+大文字のテーブルがあるかどうか調べます。
+```
+select table_schema,table_name from information_schema.tables where   table_schema not in("mysql","information_schema") and (md5(table_name)<>md5(lower(table_name)) or md5(table_schema)<>md5(lower(table_schema)));
+```
+大文字のデータベースがあるかどうか調べます。
+```
+select SCHEMA_NAME from information_schema.SCHEMATA where md5(SCHEMA_NAME)<>md5(lower(SCHEMA_NAME));
+```

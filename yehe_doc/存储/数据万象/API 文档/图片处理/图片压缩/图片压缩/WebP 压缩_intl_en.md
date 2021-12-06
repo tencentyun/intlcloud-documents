@@ -10,7 +10,7 @@ Image compression refers to reducing an image’s size as much as possible witho
 - Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million pixels.
 - Number of frames (for animated images): For GIF, the number of frames cannot exceed 300.
 
-## How to Use
+## Use Directions
 
 CI uses the **imageMogr2** API to provide the WebP compression feature.
 
@@ -20,8 +20,10 @@ An image can be processed:
 - Upon upload
 - In cloud
 
->? WebP compression is billed at basic image processing rates.
->
+>? 
+>- WebP compression is billed at basic image processing rates.
+>- If an image is converted into WebP, some browsers may not be able to read its EXIF data. As a result, the image cannot be rotated. You can add the `auto-orient` parameter to rotate the input image first (see [Rotation](https://intl.cloud.tencent.com/document/product/1045/33715)) before compressing it.
+
 
 ## API Format
 
@@ -76,7 +78,7 @@ Pic-Operations:
 | download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
 | /format/&lt;Format> | Compression format, which is `webp`     |
 
-## Example
+## Examples
 
 Assume that the input image is a 1,335.2 KB image in PNG format, as shown below:
 ![img](https://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png)

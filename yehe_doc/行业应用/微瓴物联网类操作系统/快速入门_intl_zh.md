@@ -1,6 +1,6 @@
 如果您想使用腾讯云微瓴，请登录腾讯云官网填写 [申请单](https://cloud.tencent.com/apply/p/06f15o860q2u) 并提交，申请流程如下图所示：
 
-![](https://main.qcloudimg.com/raw/c06cd908f0c2f9843ffd4b97387704ad.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/cf95a9b146992e864b9b6ae3ba755cc2.svg)
 ### 第1步：登录注册
 登录腾讯云官网。如果没有账号，请参考 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985)。
 

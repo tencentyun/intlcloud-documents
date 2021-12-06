@@ -205,4 +205,4 @@ Deployment in TKE is almost the same as that in EKS. Taking deployment through k
 
 ## FAQs
 
-If you encounter any problems when performing this practice, please see [FAQs](https://cloud.tencent.com/document/product/457/60226) for troubleshooting.
+If you encounter any problems when performing this practice, please see [FAQs](https://intl.cloud.tencent.com/zh/document/product/457/42062) for troubleshooting.

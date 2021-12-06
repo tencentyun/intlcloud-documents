@@ -1,0 +1,8 @@
+## O que é um servidor de back-end?
+Um servidor de back-end é uma [instância do CVM](https://intl.cloud.tencent.com/doc/product/213) que está vinculada à instância do CLB criada para processar solicitações. Ao configurar um [listener do CLB](https://intl.cloud.tencent.com/document/product/214/6151), é preciso vincular uma instância do CVM como o servidor de back-end. Por meio de diferentes [métodos de sondagem](https://intl.cloud.tencent.com/document/product/214/6153), o CLB encaminha as solicitações ao servidor de back-end para processamento, a fim de garantir a estabilidade e a confiabilidade da aplicação. Você pode vincular instâncias do CVM em uma ou mais zonas de disponibilidade na região onde a instância do CLB está localizada, de modo a aumentar a robustez da aplicação e bloquear o ponto único de falha.
+
+## Precauções
+Ao adicionar um servidor de back-end, recomendamos que você:
+- Instale um servidor Web (por exemplo, Apache ou IIS) em todas as instâncias do CVM a serem vinculadas à instância do CLB, para garantir a consistência da aplicação.
+- É recomendável ativar a [persistência de sessão](https://intl.cloud.tencent.com/document/product/214/6154), para que o CLB possa manter uma conexão TCP mais longa para reutilização por várias solicitações, reduzindo a carga no servidor Web e melhorando a taxa de transferência do CLB.
+- Certifique-se de que o grupo de segurança da instância real tenha regras de entrada para portas do listener do CLB e portas de verificação de integridade. Para obter mais informações, consulte [Controle de acesso ao servidor de back-end](https://intl.cloud.tencent.com/document/product/214/6157).
