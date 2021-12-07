@@ -2,14 +2,12 @@
 
 调用 SDK 接口请求 COS 服务失败时，将在回调函数里返回错误信息。
 
-
 ## 错误处理示例
 
-[//]: # (.cssg-snippet-head-bucket)
 ```js
 cos.headBucket({
     Bucket: 'examplebucket-1250000000',
-    Region: 'COS_REGION',
+    Region: 'ap-beijing',
 }, function(err, data) {
     if (err) {
         console.log(err.error);
@@ -21,53 +19,21 @@ cos.headBucket({
 
 | 参数名  | 参数描述                                                     | 类型          |
 | ------- | ------------------------------------------------------------ | ------------- |
-| err     | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档| Object        |
+| err     | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object        |
 | - error | 请求报错信息                                                 | Object/String |
 
 ## 服务端异常
 
-<table>
-   <tr>
-      <th>参数名</th>
-      <th>参数描述</th>
-      <th>类型</th>
-   </tr>
-   <tr>
-      <td>err</td>
-      <td>请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/7730">错误码</a> 文档</td>
-      <td>Object</td>
-   </tr>
-   <tr>
-      <td nowrap="nowrap">- statusCode</td>
-      <td>请求返回的 HTTP 状态码，如200、403、404等</td>
-      <td>Number</td>
-   </tr>
-   <tr>
-      <td>- headers</td>
-      <td>请求返回的头部信息</td>
-      <td>Object</td>
-   </tr>
-   <tr>
-      <td>- error</td>
-      <td>请求报错信息</td>
-      <td>Object/String</td>
-   </tr>
-   <tr>
-      <td>- - Code</td>
-      <td>请求失败时 body 返回的 Error Code，更多详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/7730">错误码</a> 文档</td>
-      <td>String</td>
-   </tr>
-   <tr>
-      <td>- - Message</td>
-      <td>请求失败时 body 返回的 Error Message，更多详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/7730">错误码</a> 文档</td>
-      <td>String</td>
-   </tr>
-   <tr>
-      <td nowrap="nowrap">- - RequestId</td>
-      <td>服务器请求日志里的唯一 ID，可用于遇到问题 <a href="https://cloud.tencent.com/document/product/436/37708">联系我们</a> 排查错误原因</td>
-      <td>String</td>
-   </tr>
-</table>
+| 参数名        | 参数描述                                                     | 类型          |
+| ------------- | ------------------------------------------------------------ | ------------- |
+| err           | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object        |
+| - statusCode  | 请求返回的 HTTP 状态码，如200、403、404等                    | Number        |
+| - headers     | 请求返回的头部信息                                           | Object        |
+| - error       | 请求报错信息                                                 | Object/String |
+| - - Code      | 请求失败时 body 返回的 Error Code，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档| String        |
+| - - Message   | 请求失败时 body 返回的 Error Message，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档| String        |
+| - - RequestId | 服务器请求日志里的唯一 ID，可用于遇到问题提工单排查错误原因| String        |
+
 
 ## 使用自助诊断工具
 
@@ -93,4 +59,9 @@ cos.headBucket({
 </div>
 3. 在顶部的 RequestId 输入框中，输入待诊断的 RequestId，并单击**开始诊断**。
 4. 稍侯片刻，便能看到相应的智能诊断结果。
+
+
+## 常见问题
+
+若您在使用小程序 SDK 过程中，有相关的疑问，请参见 [常见问题](https://intl.cloud.tencent.com/document/product/436/38958) 文档小程序部分。
 

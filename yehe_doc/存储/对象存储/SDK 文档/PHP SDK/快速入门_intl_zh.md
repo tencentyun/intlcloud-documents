@@ -19,14 +19,18 @@
 >! 如果您的 PHP 版本`>=5.3` 且`<5.6`，请使用 [v1.3](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3) 版本。
 >
 - cURL 扩展
-您可以通过 `php -m` 命令查看 cURL 扩展是否已经安装好。
- - Ubuntu 系统中，您可以使用 apt-get 包管理器安装 PHP 的 cURL 扩展，安装命令如下：
+- xml 扩展
+- dom 扩展
+- mbstring 扩展
+- json 扩展
+您可以通过 `php -m` 命令查看以上扩展是否已经安装好。
+ - Ubuntu 系统中，您可以使用 apt-get 包管理器安装 PHP 的 相关 扩展，安装命令如下：
 ```shell
-sudo apt-get install php-curl
+sudo apt-get install php-curl php-xml php-dom php-mbstring php-json
 ```
  - CentOS 系统中，您可以使用 yum 包管理器安装 PHP 的 cURL 扩展。
 ```shell
-sudo yum install php-curl
+sudo yum install php-curl php-xml php-dom php-mbstring php-json
 ```
 
 #### 安装 SDK
@@ -63,7 +67,7 @@ php composer.phar install
 使用该命令后会在当前目录中创建一个 vendor 文件夹，里面包含 SDK 的依赖库和一个 autoload.php 脚本，方便在项目中调用。
 >! 目前已支持 Composer 根据当前 PHP 版本下载 guzzle6 或 guzzle7。guzzle7 版本支持 laravel8 框架。当 PHP 版本 `>= 7.2.5`时自动下载 guzzle7 版本，反之下载 guzzle6 版本。
 >
-5. 通过 autoloader 脚本调用 cos-php-sdk-v5。
+5. 通过 autoloader 脚本调用 cos-php-sdk-v5，在代码中引入 autoload.php 文件:
 ```php
 require '/path/to/sdk/vendor/autoload.php';
 ```
@@ -93,7 +97,7 @@ require  '/path/to/cos-sdk-v5-x.phar';
 > - 对于 PHP 版本 `>= 5.6` 且 `<7.2.5` ，请下载`cos-sdk-v5-6.tar.gz`，以使用 Guzzle6 版本。
 > - 对于 PHP 版本 `>=7.2.5` 的请下载 `cos-sdk-v5-7.tar.gz` ,以使用 Guzzle7 版本。
 > 
-2.  解压后通过 `autoload.php` 脚本加载 SDK：
+2.  解压后通过 `autoload.php` 脚本加载 SDK，在代码中引入 autoload.php 文件:
 ```php
 require '/path/to/sdk/vendor/autoload.php';
 ```
@@ -101,7 +105,7 @@ require '/path/to/sdk/vendor/autoload.php';
 >
 
 ## 开始使用
-下面为您介绍如何使用 COS PHP SDK 完成一个基础操作，如初始化客户端、创建存储桶、查询存储桶列表、上传对象、查询对象列表、下载对象和删除对象。关于示例中的参数说明，请参见 [存储桶操作](https://intl.cloud.tencent.com/document/product/436/31470) 和 [对象操作](https://intl.cloud.tencent.com/document/product/436/31542) 文档。
+下面为您介绍如何使用 COS PHP SDK 完成一个基础操作，如初始化客户端、创建存储桶、查询存储桶列表、上传对象、查询对象列表、下载对象和删除对象。关于示例中的参数说明，请参见存储桶操作 和 [对象操作](https://intl.cloud.tencent.com/document/product/436/31542) 文档。
 
 ### 初始化
 若您使用永久密钥初始化 COSClient，可以先在访问管理控制台中的 [ API 密钥管理页面](https://console.cloud.tencent.com/cam/capi) 获取 SecretId、SecretKey，使用永久密钥适用于大部分的应用场景。
@@ -109,9 +113,9 @@ require '/path/to/sdk/vendor/autoload.php';
 [//]: # ".cssg-snippet-global-init"
 ```php
 // SECRETID和SECRETKEY请登录访问管理控制台进行查看和管理
-$secretId = "SECRETID"; //"云 API 密钥 SecretId";
-$secretKey = "SECRETKEY"; //"云 API 密钥 SecretKey";
-$region = "COS_REGION"; //设置一个默认的存储桶地域
+$secretId = "SECRETID"; //替换为用户的 secretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //替换为用户的 secretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
@@ -128,10 +132,10 @@ $cosClient = new Qcloud\Cos\Client(
 
 [//]: # ".cssg-snippet-global-init-sts"
 ```php
-$tmpSecretId = "SECRETID"; //"临时密钥 SecretId";
-$tmpSecretKey = "SECRETKEY"; //"临时密钥 SecretKey";
-$tmpToken = "COS_TOKEN"; //"临时密钥 token";
-$region = "COS_REGION"; //设置一个默认的存储桶地域
+$tmpSecretId = "SECRETID"; //替换为用户的 secretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+$tmpSecretKey = "SECRETKEY"; //替换为用户的 secretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+$tmpToken = "COS_TOKEN"; //使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+$region = "COS_REGION"; //替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
@@ -176,7 +180,7 @@ try {
 >!
 > - 使用 putObject 接口上传文件（最大5G）。
 > - 使用 Upload 接口分块上传文件，Upload 接口为复合上传接口，对小文件进行简单上传，对大文件进行分块上传。
-> - 参数说明可参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 文档。
+> - 参数说明可参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31542) 文档。
 > 
 
 [//]: # ".cssg-snippet-put-object-comp"
