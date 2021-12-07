@@ -22,7 +22,7 @@ Each SES account has a set of sending limits, including:
 
 [](id:que4) 
 ### Are there any restrictions on the email subject format?
-The email subject should be in UTF-8 format and contain no more than 998 characters. Otherwise, the email won’t be sent. Tencent Cloud recommends keeping the subject within 78 characters.
+The email subject should be in UTF-8 format and contain no more than 998 characters. Otherwise, the email won’t be sent. Tencent Cloud recommends you keep the subject within 78 characters.
 
 [](id:que5) 
 ### Are there any restrictions on recipient email addresses when sending emails via API calls?
@@ -30,4 +30,4 @@ No. However, the recipient email addresses must be valid (not obtained by crawli
 
 [](id:que6) 
 ### What should I do to be able to send custom content?
-Customers who have enabled the feature to send custom content will need to undertake the risk that their accounts are placed under review due to sending illegal and harmful information. It will hurt your sender reputation if your email address is out of control or used to send spams. In serious cases, the ISP will block your sender domain. To enable this feature, you need to contact your sales reps to do it for you.
+Customers who have enabled the feature to send custom content will need to undertake the risk that their accounts are placed under review due to sending illegal or harmful information. It will hurt your sender reputation if your email address is out of control or used to send spams. In serious cases, the ISP will block your sender domain. To enable this feature, you need to contact your sales rep to do it for you.
