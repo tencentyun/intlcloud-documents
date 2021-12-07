@@ -1,5 +1,5 @@
 
-本文主要介绍如何快速地将腾讯云 LiteAVSDK（Android）集成到您的项目中，按照如下步骤进行配置，就可以完成 SDK 的集成工作。下面以全功能的 [全功能版 SDK](https://intl.cloud.tencent.com/document/product/1071/38150) 为例：
+本文主要介绍如何快速地将腾讯云 LiteAVSDK（Android）集成到您的项目中，按照如下步骤进行配置，就可以完成 SDK 的集成工作。
 
 ## 开发环境要求
 - Android Studio 2.0+。
@@ -11,14 +11,14 @@
 ### 方法一：自动加载（aar）
 因为 jcenter 已经下线，您可以通过在 gradle 配置 mavenCentral 库，自动下载更新 LiteAVSDK。
 只需要用 Android Studio 打开需要集成 SDK 的工程，然后通过简单的四个步骤修改 `build.gradle` 文件，就可以完成 SDK 集成：
-![](https://main.qcloudimg.com/raw/2ca6cc6e3f00dc9fdb2d89982861f3ea.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/288cbffd943bd8c03c3863980cf00455.png)
 
 1. 打开 app 下的 build.gradle。
 2. 在 dependencies 中添加 LiteAVSDK 的依赖。
 <dx-codeblock>
 :::  jar
 dependencies {
-	implementation 'com.tencent.liteav:LiteAVSDK_Professional:latest.release'
+	implementation 'com.tencent.liteav:LiteAVSDK_International:latest.release'
 }
 ::: 
 </dx-codeblock>
@@ -26,7 +26,7 @@ dependencies {
 <dx-codeblock>
 :::  jar
 dependencies {
-	implementation 'com.tencent.liteav:LiteAVSDK_Professional:latest.release@aar'
+	implementation 'com.tencent.liteav:LiteAVSDK_International:latest.release@aar'
 }
 ::: 
 </dx-codeblock>
@@ -45,15 +45,15 @@ defaultConfig {
 ### 方法二：手动下载（aar）
 如果您的网络连接 mavenCentral 有问题，也可以手动下载 SDK 集成到工程里：
 
-1. 下载 [LiveAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) ，下载完成后进行解压。
+1. 下载 [LiteAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) ，下载完成后进行解压。
 2. 将下载文件解压之后 SDK 目录下的 aar 文件拷贝到工程的 **app/libs** 目录下：
-    ![](https://main.qcloudimg.com/raw/09ee3b005ff8d4ef33bafb6ce3135239.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/32b42946b8240fa3c2b4066091a6bc1c.png)
 3. 在工程根目录下的 build.gradle 中，添加 **flatDir**，指定本地仓库路径。
     ![](https://main.qcloudimg.com/raw/726771558714a2b4fae8dc1a59c33ffc.png) 
 4. 添加 LiteAVSDK 依赖，在 app/build.gradle 中，添加引用 aar 包的代码。
-    ![](https://main.qcloudimg.com/raw/224f40522354b0fe8de1bd1680cb54e0.jpg)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/ad7f3e2ce465c7d47f7d71f020cb02a2.png)
 ```
-implementation(name:'LiteAVSDK_Professional_8.7.10102', ext:'aar')
+implementation(name:'LiteAVSDK_International_8.7.10102', ext:'aar')
 ```
 5. 在 `app/build.gradle` 的 defaultConfig 中，指定 App 使用的 CPU 架构（目前 LiteAVSDK 支持 armeabi 、armeabi-v7a 和 arm64-v8a）。
 ```
@@ -68,7 +68,7 @@ defaultConfig {
 ## 集成 SDK（jar）
 如果您不想集成 aar 库，也可以通过导入 jar 和 so 库的方式集成 LiteAVSDK：
 
-1. 下载 [LiveAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) ，下载完成后进行解压。在 SDK 目录下找到 `LiteAVSDK_Professional_xxx.zip`（其中 `xxx` 为 LiteAVSDK 的版本号）：
+1. 下载 [LiteAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) ，下载完成后进行解压。在 SDK 目录下找到 `LiteAVSDK_International_xxx.zip`（其中 `xxx` 为 LiteAVSDK 的版本号）：
     ![](https://main.qcloudimg.com/raw/aae5879bccd31e8c082eebc24aa4ff7c.png)
     解压后得到 libs 目录，里面主要包含 jar 文件和 so 文件夹，文件清单如下：
     ![](https://main.qcloudimg.com/raw/e916aaddf844785991dc25f78776d773.png)
@@ -134,10 +134,9 @@ defaultConfig {
 
 ## 配置 License 授权
 
-单击 [License 申请](https://console.cloud.tencent.com/live/license) 获取测试用 License，具体操作请参见 [测试版 License](https://intl.cloud.tencent.com/document/product/1071/38546)。您会获得两个字符串：一个字符串是 licenseURL，另一个字符串是解密 key。
+登录云直播控制台，在左侧菜单中选择 **直播 SDK** > **[License 管理](https://console.intl.cloud.tencent.com/live/license)**，单击 **Get License** 获取测试用 License（详细操作请参见 [申请测试版 License](https://intl.cloud.tencent.com/document/product/1071/38546）。您会获得两个字符串：一个字符串是 LicenseURL，另一个字符串是解密 Key。
 
 在您的 App 调用企业版 SDK 相关功能之前（建议在 Application类中）进行如下设置：
-
 
 <dx-codeblock>
 ::: java java
@@ -160,14 +159,3 @@ public class MApplication extends Application {
 ```
 -keep class com.tencent.** { *; }
 ```
-
-[](id:faq)
-## 常见问题
-### 1. Android 端使用 LiteAVSDK 录屏/屏幕共享功能必现 crash 问题怎么解决？
-请您先检查下项目里面 targetSdkVersion 设置，如果设置的29那么运行 Android 10 设备使用录屏共享会触发闪退问题。原因是安卓隐私策略有更改，解决办法需要启动前台 service，并指定 type 为 mediaProjection 即可，不需要在 Service 里面调用 startScreenCapture。
-
-### 2. 项目里面同时集成了移动直播/实时音视频/播放器等 LiteAVSDK 系列的多个 SDK 报符号冲突问题怎么解决？
-如果集成了2个或以上产品（直播、播放器、TRTC、短视频）的 LiteAVSDK 版本，编译时会出现库冲突问题，因为有些 SDK 底层库有相同符号文件，这里建议只集成一个专业版或企业版可以解决，直播、播放器、TRTC、短视频这些都包含在一个 SDK 里面。具体请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/1071/38150)。
-
-
-
