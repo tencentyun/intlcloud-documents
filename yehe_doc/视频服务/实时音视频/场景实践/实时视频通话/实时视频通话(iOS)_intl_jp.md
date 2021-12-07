@@ -75,7 +75,7 @@ Xcode（バージョン11.0以上）を使用してソースコードプロジ�
 ## 具体的な接続フロー
 
 [ソースコード](https://github.com/tencentyun/TUICalling/tree/master/Android/Source/src/main/java/com/tencent/liteav/trtccalling)の`Source`フォルダの中にはui、model、Serviceの3つのサブフォルダが含まれています。そのうち、Serviceフォルダには外部に公開しているオープンソースコンポーネントTUICallingManagerが含まれています。`TUICallingManager.h`ファイルの中でこのコンポーネントが提供するインターフェース関数を見つけることができます。
-![](https://main.qcloudimg.com/raw/9c9b6537318b1fa8cd9c6e4e717c361a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0de26d679e6e0dc1d9aeadb6dbf6f8aa.png)
 
 
 オープンソースコンポーネントTUICallingのTUICallingManagerをそのまま使用し、オーディオビデオ通話機能を手軽に実装することができます。もう複雑な通話UIやロジックの実装をご自身で行う必要はありません。
@@ -230,7 +230,7 @@ TUICallingManager.shareInstance().call(userIDs, .video)
 
 IM SDKはオフラインプッシュをサポートしていますが、使用可能な基準を満たすためには相応の設定を行う必要があります。
 
-1. Appleプッシュ証明書を申請する場合の具体的な操作については、[Appleプッシュ証明書の申請](https://intl.cloud.tencent.com/document/product/1047/34346)をご参照ください。
+1. Appleプッシュ証明書を申請する場合の具体的な操作については、[Appleプッシュ証明書の申請](https://intl.cloud.tencent.com/zh/document/product/1047/34346)をご参照ください。
 2. バックエンドおよびクライアントがオフラインプッシュを設定する場合の具体的な操作については、[オフラインプッシュ（iOS）](https://intl.cloud.tencent.com/document/product/1047/39157)をご参照ください。
 3. 現在、TRTCCallingImplのsendModelシグナリング送信関数にオフライン送信関数が統合されており、Appのオフラインプッシュを設定した後、メッセージのオフラインプッシュを実装することができます。
 
@@ -247,6 +247,5 @@ TUICallingコンポーネントのAPIインターフェースリストは次の�
 | setCallingListener          | リスナーを設定します                                     |
 | setCallingBell          | 着信音の設定(30s以内を推奨)                                                 |
 | enableMuteMode | ミュートモードをオンにします    |
-| enableFloatWindow  | フローティングウィンドウをオンにします                      |
 | enableCustomViewRoute      | カスタムビューをオンにします。オンにすると、呼び出し/被呼び出し開始コールバックの中で、CallingViewのインスタンスを受信します。開発者自身が表示方式を決定します。注意：フルスクリーンまたはスクリーンと同じ比率で表示する必要があります。そうしない場合、表示に異常が生じます            |
 

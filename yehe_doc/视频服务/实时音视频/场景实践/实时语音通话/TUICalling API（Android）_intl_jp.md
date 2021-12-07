@@ -17,7 +17,6 @@ TUICallingは、Tencent CloudのTRTCとIMを組み合わせたサービスであ
 | [setCallingListener](#setCallingListener)               | リスナーを設定します。                                   |
 | [setCallingBell](#setCallingBell)                             | 着信音の設定（30s以内を推奨）   |
 | [enableMuteMode](#enableMuteMode)                                 | ミュートモードをオンにします |
-| [enableFloatWindow](#enableFloatWindow)                               | フローティングウィンドウをオンにします      |
 | [enableCustomViewRoute](#enableCustomViewRoute)                               | カスタムビューの有効化       |
 
 
@@ -149,21 +148,6 @@ void enableMuteMode(boolean enable);
 | パラメータ      | タイプ    | 意味               |
 | --------- | ------- | ------------------ |
 | enable    | boolean  | ミュートモード有効化の有無   |
-
-### enableFloatWindow
-[](id:enableFloatWindow)
-
-フローティングウィンドウをオンにします。
-
-```java
-void enableFloatWindow(boolean enable);
-```
-
-パラメータは下表に示すとおりです。
-
-| パラメータ      | タイプ    | 意味               |
-| --------- | ------- | ------------------ |
-| enable    | boolean  | フローティングウィンドウ有効化の有無   |
 
 ### enableCustomViewRoute
 [](id:enableCustomViewRoute)

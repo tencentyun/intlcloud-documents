@@ -8,13 +8,22 @@ TRTC Web SDKの、ブラウザに対する詳細なサポートの程度につ�
 ### 通話前の音声ビデオデバイステストについて知りたいです。
 [通話前の環境およびデバイステスト](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-23-advanced-support-detection.html)で確認できます。
 
-[](id:que3)
+[](id:b3)
 ### 現在のネットワーク状況をリアルタイムに検出するにはどうすればよいですか。
 具体的には[通話前のネットワーク品質テスト](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-24-advanced-network-quality.html)をご参照ください。
 
-[](id:b3)
-### ミクスストリーミング、Relayed Push、大小のストリーム、美顔をサポートしていますか。
-[ミクスストリーミング](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)、[Relayed Push](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html)、[大小のストリーム](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html)、[美顔](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)をご参照ください。これらのドキュメントを参照して高度な機能を実現することができます。
+[](id:b4)
+### ローカルの開発テストではTRTC Web SDKを正常に使用できたのに、オンラインにデプロイすると使用できなくなりましたが、なぜですか。
+
+ユーザーに対するセキュリティ、プライバシーなどの観点から、ブラウザの制限ページは安全な環境下（例えば、`https`、`localhost`、`file://`などのプロトコル）でなければ、マイク、カメラのキャプチャが行えないようになっています。HTTPプロトコルは安全ではないため、ブラウザはHTTPプロトコルでのメディアデバイスのキャプチャを禁止する場合があります。
+
+ローカルの開発テストではすべて正常でも、ウェブページのデプロイ後にカメラ、マイクを正常にキャプチャできなくなった場合は、ウェブページがHTTPプロトコルにデプロイされているかどうかを確認してください。もしデプロイされていなければ、HTTPSを使用してウェブページのデプロイを行ってください。その場合は適切なHTTPSセキュリティ証明書があることを確認してください。
+
+より詳しい情報については、[URLドメイン名およびプロトコル制限の説明](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html#h2-2)をご参照ください。
+
+[](id:b5)
+### ミクスストリーミング、Relayed Push、大小のストリーム、美顔、ウォーターマークをサポートしていますか。
+[ミクスストリーミング](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)、[Relayed Push](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html)、[大小のストリーム](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html)、[美顔](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)、[ウォーターマーク](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-29-advance-water-mark.html)をご参照ください。これらのドキュメントを参照して高度な機能を実現することができます。
 
 ## 2、プッシュプルストリームについての質問
 [](id:p1)
@@ -79,13 +88,13 @@ Web画面上でデータを取得できているかどうかを確認します�
 ###  Web端末でSDKを実行すると、「RtcError: no valid ice candidate found」というエラーが表示されますが、どうすればいいですか。
 このエラーが発生した場合、TRTCデスクトップブラウザSDKがSTUNトンネリングに失敗したことを意味しますので、ファイアウォールのコンフィグレーションを確認してください。TRTCデスクトップ型ブラウザSDKは以下のポートに依存してデータ伝送を行います。それをファイアウォールのホワイトリストに追加して設定を完了してから、 [公式サイトDemo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
 
-具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
+具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/37340)をご参照ください。
 
 [](id:o2)
 ###  クライアントエラー："RtcError: ICE/DTLS Transport connection failed" または “RtcError: DTLS Transport connection timeout”が出現したときの対処方法は？
 このエラーの出現は TRTC デスクトップブラウザ SDKがメディア転送パスの構築時に失敗したことを意味しますので、ファイアウォールの設定をチェックしてください。TRTC デスクトップブラウザ SDKは、以下のポートに依存してデータ転送を行いますので、これらをファイアウォールのホワイトリストに追加してください。設定完了後、 [公式サイトのDemo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html) にアクセスして体験し、設定が有効かをチェックすることができます。
 
-具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
+具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/37340)をご参照ください。
 
 
 [](id:o3)
@@ -94,14 +103,19 @@ Web画面上でデータを取得できているかどうかを確認します�
 
 [](id:o4)
 ### Client.on(‘client-banned’)はどのような状況でトリガーされますか。
-バックエンドのREST APIで[ユーザーの削除](https://intl.cloud.tencent.com/document/product/647/34268)を行うと、このイベントがトリガーされます。同名のユーザーが同時にログインした場合、このイベントはトリガーされないことに注意する必要があります。このような行為はビジネスロジックエラーに該当し、ビジネスではロジック上避けなければなりません。お客様がルーム内メンバー同士の相互切断管理を必要とする場合は、WebIM SDKを使用して関連のロジックを実行することをお勧めします。
+
+ユーザーがキックされた場合にこのイベントがトリガーされます。例えば、同名のユーザーが同時にログインした場合、バックエンドのRESTAPI[ユーザーの削除](https://intl.cloud.tencent.com/document/product/647/34268)を呼び出して、ユーザーを強制退室させた場合などです。
+
+>! 同名ユーザーの同時ログインは許可されない行為であり、双方の通話異常を起こすおそれがあるため、ビジネス層では同名ユーザーの同時ログインを避けなければなりません。
+
+より具体的な詳細については、[CLIENT_BANNEDイベント](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.CLIENT_BANNED)をご参照ください。
 
 [](id:o5)
 ### Web版は、リモート端末の退室をモニタリングできますか？
 リモート端末の退室イベントのモニタリングをサポートしています。クライアントイベントの中の [client.on('peer-leave')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html) イベントを使用し、リモートユーザーの退室通知を実現することをお勧めします。
 
 [](id:o6)
-### TRTCのWeb端末、PC端末は同期していますか。
+### TRTCのWeb端末、PC端末は相互通信できますか。
 とれます。TRTCでは全プラットフォームの相互通信をサポートしています。
 
 [](id:o7)
@@ -117,8 +131,8 @@ Web画面上でデータを取得できているかどうかを確認します�
 これは、SDKにリカバリできないエラーが起こったことを表します。ビジネス層では、画面を更新してリトライするか、またはClient.leaveを呼び出して退室した後、再度Client.joinを呼び出してリトライします。
 
 [](id:o10)
-### ミニプログラムとWeb端末はカスタムストリームIDをサポートしていますか。
-Web端末4.3.8以降のバージョンではカスタムストリームIDがサポートされているので、SDKのバージョンを更新してください。ミニプログラムは現時点ではサポートしていません。
+### Web端末はカスタムストリームIDをサポートしていますか。
+Web端末4.3.8以降のバージョンではカスタムストリームIDがサポートされているので、SDKのバージョンを更新してください。
 
 [](id:011)
 ### Web端末で画面共有の際にシステム音声をキャプチャするにはどうすればよいですか。

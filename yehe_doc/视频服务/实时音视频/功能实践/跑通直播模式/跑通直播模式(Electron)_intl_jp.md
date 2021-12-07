@@ -1,4 +1,4 @@
-## 適用ケース
+## ユースケース
 
 TRTCは、4種類の異なる入室モードをサポートしています。このうち、ビデオ通話（VideoCall）および音声通話（VoiceCall）を総称して[通話モード](https://intl.cloud.tencent.com/document/product/647/36069)といい、ビデオ・インタラクティブストリーミング（Live）およびボイス・インタラクティブストリーミング（VoiceChatRoom）を総称してライブストリーミングモードといいます。
 ライブストリーミングモードでのTRTCは、1つのルームで最大10万人の同時接続をサポートし、300ms未満のマイク接続遅延、1000ms未満の視聴遅延およびマイクのオン・オフのスムーズな切り替え技術を備えています。低レイテンシーインタラクティブストリーム、10万人のインタラクティブ教室、ビデオ婚活、eラーニング、リモート研修、超大規模ミーティングなどのユースケースに適しています。
@@ -27,7 +27,7 @@ TRTCクラウドサービスは、「インターフェースモジュール」�
 
 初めにドキュメント[SimpleDemoクイックスタート(Electron)](https://intl.cloud.tencent.com/document/product/647/35089)を読み、ドキュメントのガイドに従って、提供されている公式SimpleDemoクイックスタートを実行してください。
 SimpleDemoが順調に動作する場合は、プロジェクトにおいてElectronのインストール方法をお客様が把握していることを意味します。
-- 反対に、SimpleDemoの動作に問題がある場合は、Electronのダウンロード、インストールに問題があったことが考えられます。この場合はElectronの公式サイトの[インストールガイド](https://www.electronjs.org/docs/tutorial/installation)をご参照ください。
+- 反対に、 SimpleDemo の動作に問題がある場合は、Electronのダウンロード、インストールに問題があったことが考えられます。この場合はElectron の公式サイトの [インストールガイド](https://www.electronjs.org/docs/tutorial/installation) をご参照ください。
 
 [](id:step2)
 ### 手順2：お客様のプロジェクトにtrtc-electron-sdkを統合する
@@ -67,10 +67,10 @@ trtcCloud.on('onError',onError);
 
 | パラメータ     | タイプ   | 説明                                                         | サンプル                   |
 | :------- | :----- | :----------------------------------------------------------- | :--------------------- |
-| sdkAppId | 数字   | アプリケーションID。[コンソール](https://console.cloud.tencent.com/trtc/app) >【アプリケーション管理】>【アプリケーション情報】から見つけることができます。 | 1400000123             |
+| sdkAppId | 数字  | アプリケーションID。 [コンソール](https://console.cloud.tencent.com/trtc/app) >【アプリケーション管理】>【アプリケーション情報】にあります。 | 1400000123  |
 | userId  | 文字列 | アルファベットの大文字、小文字（a-z、A-Z）、数字（0-9）、下線およびハイフンのみを許可。 | test_user_001 |
 | userSig | 文字列 |  userIdを基にuserSigを計算できます。計算方法は[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 | eJyrVareCeYrSy1SslI... |
-| roomId   | 数字   | デフォルトでは文字列タイプのルームナンバーをサポートしていません。文字列タイプのルームナンバーは入室速度に影響します。文字列タイプのルームナンバーをサポートする必要がある場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してご連絡ください。 | 29834  |
+| roomId   | 数字   | 数字タイプのルームナンバー。文字列形式のルームナンバーを使用したい場合は、TRTCParamsのstrRoomIdをご使用ください。 | 29834  |
 
 <dx-codeblock>
 ::: javascript javascript
@@ -128,9 +128,9 @@ trtcCloud.setVideoEncoderParam(encParam);
     -   style：美顔スタイルで、「スムース」または「ナチュラル」があります。スムースタイプは美肌補正がより強く、華やかなシーンに適しています。
         -   `TRTCBeautyStyle.TRTCBeautyStyleSmooth`: スムース。美女が登場するシーンに適しており、明らかな効果が感じられます。
         -   `TRTCBeautyStyle.TRTCBeautyStyleNature`: ナチュラル。美肌補正のアルゴリズムにより顔の細部の質感が保たれ、より自然な感じに仕上がります。
-    -   beauty：美顔レベル。数値の範囲は0～9です。0はオフを表し、1～9まで数値が大きくなるほど効果が高くなります。
-    -   white：美白レベル。数値の範囲は0～9です。0はオフを表し、1～9まで数値が大きくなるほど効果が高くなります。
-    -   ruddiness：肌色補正レベル。数値の範囲は0～9です。0はオフを表し、1～9までは数値が大きくなるほど効果がはっきりとします。このパラメータは、Windowsプラットフォームでは現在有効になっていません。
+    -   beauty：美顔レベル。数値の範囲は0～9です。0はオフを表し、1～9まで数値が大きくなるほど効果が高くなります
+    -   white：美白レベル。数値の範囲は0～9です。0はオフを表し、1～9まで数値が大きくなるほど効果が高くなります
+    -   ruddiness：肌色補正レベル。数値の範囲は0～9です。0はオフを表し、1～9まで数値が大きくなるほど効果が高くなります。このパラメータは、Windowsプラットフォームではまだ有効ではありません
 
 ```javascript
 // 美顔エフェクトをオン 
@@ -153,7 +153,7 @@ trtcCloud.setBeautyStyle(TRTCBeautyStyle.TRTCBeautyStyleNature, 5, 5, 5);
 let onEnterRoom = function (result) {
   if (result > 0) {
     console.log(`onEnterRoom、入室成功、${result}秒を使用`);
-  } else {
+  }else{
     console.warn(`onEnterRoom: 入室失敗 ${result}`);
   }
 };
@@ -191,7 +191,7 @@ trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
   let onEnterRoom = function(result) {
     if (result > 0) {
       console.log(`onEnterRoom、入室成功、${result}秒を使用`);
-    } else {
+    }else{
       console.warn(`onEnterRoom: 入室失敗 ${result}`);
     }
   };
@@ -207,7 +207,7 @@ trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
         }
         trtcCloud.startRemoteView(userId, view);
         trtcCloud.setRemoteViewFillMode(userId, TRTCVideoFillMode.TRTCVideoFillMode_Fill);
-    } else {
+    }else{
         let id = `${userId}-${roomId}-${TRTCVideoStreamType.TRTCVideoStreamTypeBig}`;
         let view = document.getElementById(id);
         if (view) {
@@ -260,7 +260,7 @@ TRTCでは、異なるオーディオ・ビデオルームにいる2人のキャ
 1.  キャスターAは[connectOtherRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#connectOtherRoom)インターフェースを呼び出します。インターフェースのパラメータは現在JSONフォーマットを採用し、キャスターBの`roomId`と`userId`の形式に組み立てた`{"roomId": 978,"userId": "userB"}`のパラメータをインターフェース関数に渡す必要があります。
 2.  ルームを跨ぐことに成功した後、キャスターAは[onConnectOtherRoom(userId, errCode, errMsg)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onConnectOtherRoom)イベントコールバックを受け取ります。同時に、2つのライブストリーミングルームのすべてのユーザーはいずれも[onUserVideoAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserVideoAvailable)および[onUserAudioAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserAudioAvailable)イベント通知を受け取ります。
     例えば、ルーム「001」のキャスターAがルーム「002」のキャスターBと`connectOtherRoom()`を介してルーム間通話をする場合、ルーム「001」のユーザーはキャスターBの`onUserVideoAvailable(B, true)`コールバックと`onUserAudioAvailable(B, true)`コールバックを受信します。ルーム「002」のユーザーはキャスターAの`onUserVideoAvailable(A, true)`コールバックと`onUserAudioAvailable(A, true)`コールバックを受信します。
-3. 2つのルームのユーザーは、[startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView)を呼び出すことで、もう一方のルームのキャスターの画面を表示することができ、音声が自動的に再生されます。
+3.  両方のルームのユーザーは[startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView)を呼び出すと、もう一方のルームのキャスター画面を表示することができ、音声は自動再生されます。
 
 ![キャスターマイク接続のシーケンス図](https://main.qcloudimg.com/raw/bffa420102bb31dee6f76d7f08a16e4f.png)
 
@@ -270,7 +270,7 @@ TRTCでは、異なるオーディオ・ビデオルームにいる2人のキャ
 let onConnectOtherRoom = function(userId, errCode, errMsg) {
   if(errCode === 0) {
     console.log(`キャスター${userId}のルームとの接続に成功しました`);
-  } else {
+  }else{
     console.warn(`他のキャスターのルームとの接続に失敗しました：${errMsg}`);
   }
 };

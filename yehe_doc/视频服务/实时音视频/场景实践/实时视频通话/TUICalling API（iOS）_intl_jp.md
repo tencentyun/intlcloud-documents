@@ -17,7 +17,6 @@ TUICallingは、Tencent CloudのTRTCとIMを組み合わせたサービスであ
 | [setCallingListener](#setCallingListener)               | リスナーを設定します。                                   |
 | [setCallingBell](#setCallingBell)                             | 着信音の設定（30s以内を推奨）   |
 | [enableMuteMode](#enableMuteMode)                                 | ミュートモードをオンにします |
-| [enableFloatWindow](#enableFloatWindow)                               | フローティングウィンドウをオンにします      |
 | [enableCustomViewRoute](#enableCustomViewRoute)                               | カスタムビューの有効化       |
 
 
@@ -150,21 +149,6 @@ C2C通話に招待します。
 | --------- | ------- | ------------------ |
 | enable    | BOOL  | ミュートモード有効化の有無   |
 
-### enableFloatWindow
-[](id:enableFloatWindow)
-
-フローティングウィンドウをオンにします。
-
-```objc
-- (void)enableFloatWindow:(BOOL)enable;
-```
-
-パラメータは下表に示すとおりです。
-
-| パラメータ      | タイプ    | 意味               |
-| --------- | ------- | ------------------ |
-| enable    | BOOL  | フローティングウィンドウ有効化の有無   |
-
 ### enableCustomViewRoute
 [](id:enableCustomViewRoute)
 
@@ -231,7 +215,7 @@ C2C通話に招待します。
 
 | パラメータ      | タイプ    | 意味               |
 | --------- | ------- | ------------------ |
-| userIDs    | NSArray | 通話ユーザーIDリスト      |
+| userIDs    | NSArray  | 通話ユーザーIDリスト      |
 | type | TUICallingType | 通話タイプ：オーディオ/ビデオ |
 | role | TUICallingRole | ユーザーロールタイプ：発呼側/着呼側 |
 | totalTime | CGFloat | 通話時間。単位：秒  |

@@ -12,7 +12,7 @@ TRTC 클라우드 서비스는 '인터페이스 노드'와 '프록시 노드'라
 -   **프록시 노드**
     일반 회로와 일반 성능 기기를 채택하여 동시 접속에 의한 풀 스트림 시청 수요 처리에 적합하며, 시간당 단가가 저렴한 편입니다.
 
-통화 모드에서는 TRTC 방에 있는 모든 사용자가 인터페이스 노드에 할당되므로, 모두가 '호스트'인 셈입니다. 모든 사용자가 언제든지 발언(최고 업스트림 동시 접속 제한은 50회선)할 수 있어 온라인 회의와 같은 시나리오에 적합합니다. 단, 한 개 방의 인원은 300명으로 제한됩니다.
+통화 모드에서는 TRTC 방에 있는 모든 사용자가 인터페이스 노드에 할당되므로, 모두가 '호스트'인 셈입니다. 모든 사용자가 언제든지 발언(업스트림 동시 접속 최대 50회선 가능)할 수 있어 온라인 회의와 같은 시나리오에 적합합니다. 단, 방 하나의 수용 인원은 300명으로 제한됩니다.
 
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
@@ -67,10 +67,10 @@ trtcCloud.on('onError',onError);
 
 | 매개변수     | 유형   | 설명                                                         | 예시                   |
 | :------- | :----- | :----------------------------------------------------------- | :--------------------- |
-| sdkAppId | 숫자 | 애플리케이션 ID. [콘솔](https://console.cloud.tencent.com/trtc/app)>[애플리케이션 관리]>[애플리케이션 정보]에서 확인할 수 있습니다. | 1400000123             |
-| userId | 문자열 | 영어 알파벳 대소문자(a-z, A-Z)와 숫자(0-9), 언더바(_), 대시 부호(-)만 허용됩니다. | test_user_001|
-| userSig | 문자열 | userId를 기반으로 userSig를 계산할 수 있습니다. 계산 방법은 [UserSig 계산 방법] (https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. | eJyrVareCeYrSy1SslI... |
-| roomId   | 숫자   | 기본적으로 입장 속도에 영향을 줄 수 있는 문자열 유형의 방 번호를 지원하지 않습니다. 문자열 유형의 방 번호 지원이 반드시 필요한 경우, [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 고객센터로 문의하십시오. | 29834  |
+| sdkAppId | 숫자   | 애플리케이션 ID. [콘솔](https://console.cloud.tencent.com/trtc/app) >[애플리케이션 관리]>[애플리케이션 정보]에서 확인할 수 있습니다. | 1400000123             |
+| userId   | 문자열 | 영어 알파벳 대소문자(a-z, A-Z)와 숫자(0-9), 언더바(_), 대시 부호(-)만 허용됩니다. | test_user_001|
+| userSig  | 문자열 | userId를 기반으로 userSig를 계산할 수 있습니다. 계산 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. | eJyrVareCeYrSy1SslI... |
+| roomId   | 숫자   | 숫자 유형의 방 번호입니다. 문자열 형식의 방 번호를 사용하려면 TRTCParams에서 strRoomId를 사용하십시오. | 29834  |
 
 <dx-codeblock>
 ::: javascript javascript
@@ -124,7 +124,7 @@ trtcCloud.setVideoEncoderParam(encParam);
 ### 6단계: 호스트의 뷰티 필터 효과 설정
 
 1. 호스트 측에서 [setBeautyStyle(style, beauty, white, ruddiness)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setBeautyStyle)를 호출하여 뷰티 필터 효과를 활성화할 수 있습니다.
-2. 매개변수 설명
+2. 매개변수 설명:
     -   style: 뷰티 필터 스타일로 매끄럽게 또는 내추럴 스타일이 있으며, 매끄럽게 스타일은 피부 보정 효과가 더 뚜렷해 엔터테인먼트 시나리오에 적합합니다.
         -   `TRTCBeautyStyle.TRTCBeautyStyleSmooth`: 매끄럽게 스타일로 뷰티쇼에 적합하며 효과가 비교적 뚜렷합니다.
         -   `TRTCBeautyStyle.TRTCBeautyStyleNature`: 내추럴 스타일로 피부 보정 알고리즘이 얼굴의 디테일을 더 많이 유지하여 자연스러운 느낌을 줍니다.
@@ -154,7 +154,7 @@ let onEnterRoom = function (result) {
   if (result > 0) {
     console.log(`onEnterRoom, 입장 성공, ${result}초 소요`);
   } else {
-    console.warn(`onEnterRoom: 방 입장 실패 ${result}`);
+    console.warn(`onEnterRoom: 입장 실패 ${result}`);
   }
 };
 
@@ -175,11 +175,11 @@ trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
 
 1. 시청자 측에서[TRTCParams](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html)의 `role` 필드를 **`TRTCRoleType.TRTCRoleAudience`**로 설정하여 현재 사용자의 역할이 시청자라는 것을 표시합니다.
 1. 시청자 측에서 `enterRoom()`을 호출하면 `TRTCParams` 매개변수 중 `roomId`가 가리키는 멀티미디어 방에 입장하며, `appScene` 매개변수를 지정할 수 있습니다.
-    -   `TRTCAppScene.TRTCAppSceneLIVE`: 비디오 ILVB
-    -   `TRTCAppScene.TRTCAppSceneVoiceChatRoom`: 음성 ILVB
-2. 호스트 화면 시청
-    -  시청자 측에서 사전에 호스트의 `userId`를 알고 있을 경우, 입장 성공 후 바로 호스트 `userId`를 사용해 [startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView)를 호출하여 호스트의 화면을 볼 수 있습니다.
-    - 시청자는 입장 성공 후 [onUserVideoAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserVideoAvailable) 이벤트 공지를 받게 됩니다. 시청자가 사전에 호스트의 userId를 모를 경우, 콜백에서 확인한 호스트 `userId`를 사용해 [startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView)를 호출하여 호스트의 화면을 볼 수 있습니다.
+    -   `TRTCAppScene.TRTCAppSceneLIVE`: 비디오 ILVB.
+    -   `TRTCAppScene.TRTCAppSceneVoiceChatRoom`: 음성 ILVB.
+2. 호스트 화면 시청:
+    - 시청자 측에서 사전에 호스트의 `userId`를 알고 있을 경우, 입장 성공 후 바로 호스트 `userId`를 사용해 [startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView)를 호출하여 호스트의 화면을 볼 수 있습니다.
+    - 시청자는 입장 성공 후 [onUserVideoAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserVideoAvailable) 이벤트 공지를 받게 됩니다. 시청자가 사전에 호스트의 `userId`를 모를 경우, 콜백에서 확인한 호스트 `userId`를 사용해 [startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView)를 호출하여 호스트의 화면을 볼 수 있습니다.
 
 <dx-codeblock>
 ::: html html
@@ -284,7 +284,7 @@ trtcCloud.on('onConnectOtherRoom', onConnectOtherRoom);
 [](id:step11)
 ### 11단계: 현재 방 퇴장  
 
-[exitRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#exitRoom) 방법을 호출하여 퇴장합니다. 퇴장 시 SDK에서 카메라, 마이크 등 하드웨어 기기를 비활성화 및 릴리스해야 합니다. 따라서 퇴장은 금방 완료되지 않으며, [onExitRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom) 콜백을 받아야만 완료됩니다.
+[exitRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#exitRoom)을 호출하여 퇴장합니다. 퇴장 시 SDK에서 카메라, 마이크 등 하드웨어 기기를 비활성화 및 릴리스해야 합니다. 따라서 퇴장은 금방 완료되지 않으며, [onExitRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom) 콜백을 수신해야 완료됩니다.
 
 <dx-codeblock>
 ::: javascript javascript

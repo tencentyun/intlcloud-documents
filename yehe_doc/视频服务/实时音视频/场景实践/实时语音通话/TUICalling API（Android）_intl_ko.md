@@ -17,7 +17,6 @@ TUICalling은 Tencent Cloud의 Tencent Real-Time Communication(TRTC)과 Instant 
 | [setCallingListener](#setCallingListener)               | 리스너 설정.                                   |
 | [setCallingBell](#setCallingBell)                             | 벨소리 설정(30초 이내 권장)   |
 | [enableMuteMode](#enableMuteMode)                                 | 음소거 모드 활성화 |
-| [enableFloatWindow](#enableFloatWindow)                               | 플로팅 창 활성화      |
 | [enableCustomViewRoute](#enableCustomViewRoute)                               | 사용자 정의 뷰 활성화       |
 
 
@@ -28,7 +27,7 @@ TUICalling은 Tencent Cloud의 Tencent Real-Time Communication(TRTC)과 Instant 
 
 | API                 | 설명       |
 | ------------------- | ---------- |
-| [shouldShowOnCallView](#shouldShowOnCallView) | 호출 수신 시 응답 페이지 열기 요청  |
+| [shouldShowOnCallView](#shouldShowOnCallView) | 호출 수신 시 응답 페이지 열기 요청 |
 | [onCallStart](#onCallStart) | 호출 시작 콜백. 발신자와 수신자 모두 트리거 |
 | [onCallEnd](#onCallEnd) | 통화 콜백. 발신자와 수신자 모두 트리거 |
 | [onCallEvent](#onCallEvent) | 통화 이벤트 콜백 |
@@ -84,7 +83,7 @@ void call(String[] userIDs, Type type);
 
 매개변수 리스트는 다음과 같습니다.
 
-| 매개변수       | 유형    | 의미               |
+| 매개변수      | 유형    | 의미               |
 | --------- | ------- | ------------------ |
 | userIDs    | String[]  | 통화 사용자 ID 리스트      |
 | type | TUICalling.Type | 통화 유형: 오디오/비디오 |
@@ -116,9 +115,9 @@ void setCallingListener(TUICallingListener listener);
 
 매개변수 리스트는 다음과 같습니다.
 
-|  매개변수      | 유형    | 의미               |
+| 매개변수      | 유형    | 의미               |
 | --------- | ------- | ------------------ |
-| listener    | TUICallingListener  | TUIcalling 컴포넌트 리스너   |
+| listener    | TUICallingListener  | TUIcalling 컴포넌트 리스너  |
 
 ### setCallingBell
 [](id:setCallingBell)
@@ -150,21 +149,6 @@ void enableMuteMode(boolean enable);
 | --------- | ------- | ------------------ |
 | enable    | boolean  | 음소거 모드 활성화 여부   |
 
-### enableFloatWindow
-[](id:enableFloatWindow)
-
-플로팅 창 활성화.
-
-```java
-void enableFloatWindow(boolean enable);
-```
-
-매개변수 리스트는 다음과 같습니다.
-
-| 매개변수     | 유형    | 의미               |
-| --------- | ------- | ------------------ |
-| enable    | boolean  | 플로팅 창 활성화 여부   |
-
 ### enableCustomViewRoute
 [](id:enableCustomViewRoute)
 
@@ -178,12 +162,12 @@ void enableCustomViewRoute(boolean enable);
 
 매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형    | 의미               |
+| 매개변수      | 유형    | 의미               |
 | --------- | ------- | ------------------ |
 | enable    | boolean  | 사용자 정의 뷰 활성화 여부   |
 
 
-## TUICallingListener 함수 콜백
+## TUICallingListener 콜백 함수
 
 ### shouldShowOnCallView
 [](id:shouldShowOnCallView)
@@ -211,7 +195,7 @@ boolean shouldShowOnCallView();
 
 매개변수 리스트는 다음과 같습니다.
 
-| 매개변수      | 유형    | 의미                |
+| 매개변수      | 유형    | 의미               |
 | --------- | ------- | ------------------ |
 | userIDs    | String[]  | 통화 사용자 ID 리스트.      |
 | type | TUICalling.Type | 통화 유형: 오디오/비디오 |
@@ -229,7 +213,7 @@ boolean shouldShowOnCallView();
 
 매개변수 리스트는 다음과 같습니다.
 
-|  매개변수      | 유형    | 의미                |
+| 매개변수      | 유형    | 의미               |
 | --------- | ------- | ------------------ |
 | userIDs    | String[]  | 통화 사용자 ID 리스트      |
 | type | TUICalling.Type | 통화 유형: 오디오/비디오 |

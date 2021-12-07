@@ -13,7 +13,7 @@
 
 
 
->! 음성 및 화상 통화 기능을 빠르게 구현할 수 있도록 TUICalling 컴포넌트를 최적화하였습니다. 통화 UI는 TUICalling 컴포넌트 내부에 구현되어 있으므로 UI에 신경을 쓸 필요가 없습니다.
+>! 음성 및 영상 통화 기능을 빠르게 구현할 수 있도록 TUICalling 컴포넌트를 최적화하였습니다. 통화 UI는 TUICalling 컴포넌트 내부에 구현되어 있으므로 UI에 신경을 쓸 필요가 없습니다.
 
 [](id:ui)
 
@@ -22,7 +22,7 @@
 [](id:ui.step1)
 
 ### 1단계: 신규 애플리케이션 생성
-1. TRTC 멀티미디어 콘솔에 로그인한 후, **개발 지원>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)**을 선택합니다.
+1. TRTC 콘솔에 로그인한 후, **개발 지원>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)**을 선택합니다.
 2. 애플리케이션 이름(예: `TestVideoCall`)을 입력한 후 **생성**을 클릭합니다.
 3. **다운로드 완료, 다음 단계**를 클릭하여 이 단계를 건너뜁니다.
 
@@ -63,7 +63,7 @@ Android Studio(버전 3.5 이상)를 사용하여 소스 프로젝트 `TUICallin
 ### 사용자 A
 1. 사용자 이름을 입력하고 로그인합니다. **사용자 이름은 유일해야 하며 다른 사용자 이름과 중복되어서는 안 됩니다.**
 2. 호출할 userId를 입력하고 검색을 클릭합니다.
-3. **호출**을 클릭하고 **영상 통화**를 선택합니다. **수신자가 애플리케이션 로그인 상태가 아니면 호출에 실패할 수 있으니 확인하시기 바랍니다**.<br>
+3. **호출**을 클릭하고 **영상 통화**를 선택합니다. **수신자가 애플리케이션 로그인 상태가 아니면 호출에 실패할 수 있으니 확인하시기 바랍니다.**<br>
 
 ### 사용자 B
 1. 사용자 이름을 입력하고 로그인합니다. **사용자 이름은 유일해야 하며 다른 사용자 이름과 중복되어서는 안 됩니다.**
@@ -75,7 +75,7 @@ Android Studio(버전 3.5 이상)를 사용하여 소스 프로젝트 `TUICallin
 ## 연결 프로세스
 
 [소스 코드](https://github.com/tencentyun/TUICalling/tree/master/Android/Source/src/main/java/com/tencent/liteav/trtccalling) 폴더 `Source`에는 두 개의 하위 폴더 ui와 model이 있으며, model 폴더에는 Tencent Cloud가 외부에 공개한 오픈 소스 컴포넌트 TUICallingManager가 포함되어 있습니다.  `TUICalling.java`  파일에서 이 컴포넌트가 제공하는 인터페이스 함수를 확인할 수 있습니다.
-![](https://main.qcloudimg.com/raw/9c9b6537318b1fa8cd9c6e4e717c361a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0de26d679e6e0dc1d9aeadb6dbf6f8aa.png)
 
 
 오픈 소스 컴포넌트 TUICalling의 TUICallingManager를 사용하면, 복잡한 호출 UI 인터페이스 및 로직을 직접 구현하지 않고도 음성 및 영상 통화 기능을 쉽게 구현할 수 있습니다.
@@ -126,7 +126,7 @@ defaultConfig {
 
 ### 2단계: 권한 및 난독화 규칙 설정
 
-AndroidManifest.xml에서 App 권한을 설정합니다. SDK에는 다음 권한(6.0 이상 Android 시스템의 경우 카메라 및 스토리지 읽기 동적 권한 신청 필요)이 필요합니다.
+AndroidManifest.xml에서 App 권한을 설정합니다. SDK에는 다음 권한(6.0 이후 버전 Android 시스템의 경우 카메라 및 스토리지 읽기 동적 권한 신청 필요)이 필요합니다.
 
 ```
 <uses-permission android:name="android.permission.INTERNET" />
@@ -163,7 +163,7 @@ include ':Source'
 
 ### 4단계: 컴포넌트 초기화 및 로그인
 
-1. `TUICallingManager.sharedInstance()` 를 호출하여 컴포넌트를 초기화합니다.
+1. `TUICallingManager.sharedInstance()`를 호출하여 컴포넌트를 초기화합니다.
 2. `TUILogin.init(context, SDKAppID, config, listener)`를 호출하여 로그인을 초기화합니다.
 3. `TUILogin.login(userId, userSig, callback)`을 호출하여 컴포넌트에 로그인합니다. 주요 매개변수는 다음 테이블을 참고하십시오.
  <table>
@@ -308,6 +308,5 @@ TUICalling 컴포넌트의 API 리스트는 다음과 같습니다.
 | setCallingListener          | 리스너 설정                                     |
 | setCallingBell          | 벨소리 설정(30초 이내 권장)                                                 |
 | enableMuteMode | 음소거 모드 활성화    |
-| enableFloatWindow  | 플로팅 창 활성화                      |
 | enableCustomViewRoute      | 사용자 정의 뷰 활성화. 활성화 후 발신/수신 시작 콜백 중 CallingView 인스턴스가 수신되며 개발자가 직접 표시 방법을 결정합니다. 주의: 전체 화면 또는 비례 화면으로 표시해야 합니다. 그렇지 않으면 이상 경고가 표시됩니다.            |
 

@@ -13,7 +13,7 @@
 
 
 
->! 음성 및 화상 통화 기능을 빠르게 구현할 수 있도록 TUICalling 컴포넌트를 최적화하였습니다. 통화 UI는 TUICalling 컴포넌트 내부에 구현되어 있으므로 UI에 신경을 쓸 필요가 없습니다.
+>! 음성 및 영상 통화 기능을 빠르게 구현할 수 있도록 TUICalling 컴포넌트를 최적화하였습니다. 통화 UI는 TUICalling 컴포넌트 내부에 구현되어 있으므로 UI에 신경을 쓸 필요가 없습니다.
 
 [](id:ui)
 
@@ -63,7 +63,7 @@ Xcode(11.0 및 이후 버전) 소스 코드 프로젝트 `TUICalling/Example/TUI
 ### 사용자 A
 1. 사용자 이름을 입력하고 로그인합니다. **사용자 이름은 유일해야 하며 다른 사용자 이름과 중복되어서는 안 됩니다.**
 2. 호출할 userId를 입력하고 검색을 클릭합니다.
-3. **호출**을 클릭하고 **영상 통화**를 선택합니다. **수신자가 애플리케이션 로그인 상태가 아니면 호출에 실패할 수 있으니 확인하시기 바랍니다**.<br>
+3. **호출**을 클릭하고 **영상 통화**를 선택합니다. **수신자가 애플리케이션 로그인 상태가 아니면 호출에 실패할 수 있으니 확인하시기 바랍니다.**<br>
 
 ### 사용자 B
 1. 사용자 이름을 입력하고 로그인합니다. **사용자 이름은 유일해야 하며 다른 사용자 이름과 중복되어서는 안 됩니다.**
@@ -75,7 +75,7 @@ Xcode(11.0 및 이후 버전) 소스 코드 프로젝트 `TUICalling/Example/TUI
 ## 연결 프로세스
 
 [소스 코드](https://github.com/tencentyun/TUICalling/tree/master/Android/Source/src/main/java/com/tencent/liteav/trtccalling) 폴더 `Source`에는 세 개의 하위 폴더 ui, model 및 Service가 있으며, Service 폴더에는 Tencent Cloud가 외부에 공개한 오픈 소스 컴포넌트 TUICallingManager가 포함되어 있습니다.  `TUICallingManager.h`  파일에서 이 컴포넌트가 제공하는 인터페이스 함수를 확인할 수 있습니다.
-![](https://main.qcloudimg.com/raw/9c9b6537318b1fa8cd9c6e4e717c361a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0de26d679e6e0dc1d9aeadb6dbf6f8aa.png)
 
 
 오픈 소스 컴포넌트 TUICalling의 TUICallingManager를 사용하면, 복잡한 호출 UI 인터페이스 및 로직을 직접 구현하지 않고도 음성 및 영상 통화 기능을 쉽게 구현할 수 있습니다.
@@ -83,13 +83,13 @@ Xcode(11.0 및 이후 버전) 소스 코드 프로젝트 `TUICalling/Example/TUI
 [](id:model.step1)
 ### 1단계: SDK 통합
 
-통화 컴포넌트 TRTCCalling은 TRTC SDK와 IM SDK에 종속되어 있습니다. 아래 단계에 따라 두 가지 SDK를 프로젝트에 통합할 수 있습니다.
+통화 컴포넌트 TRTCCalling은 TRTC SDK와 IM SDK에 종속되어 있습니다. 아래 절차에 따라 두 가지 SDK를 프로젝트에 통합할 수 있습니다.
 
 - **방법1: cocoapods 라이브러리를 통한 종속**
 <dx-codeblock>
 ::: swift
  pod 'TXIMSDK_iOS'
- pod 'TXLiteAVSDK_TRTC' 
+ pod ’TXLiteAVSDK_TRTC’ 
 :::
 </dx-codeblock>
 >?두 SDK 제품의 최신 버전 번호는 [TRTC](https://github.com/tencentyun/TRTCSDK) 및 [IM](https://github.com/tencentyun/TIMSDK)의 Github 첫 페이지에서 획득할 수 있습니다.
@@ -126,7 +126,7 @@ info.plist 파일에 `Privacy - Camera Usage Description`, `Privacy - Microphone
 <dx-codeblock>
 ::: swift
  pod 'TXAppBasic', :path => "../TXAppBasic/"
- pod 'TXLiteAVSDK_TRTC'
+ pod ’TXLiteAVSDK_TRTC’
  pod 'TUICalling', :path => "../", :subspecs => ["TRTC"] 
 :::
 </dx-codeblock>
@@ -177,7 +177,7 @@ info.plist 파일에 `Privacy - Camera Usage Description`, `Privacy - Microphone
 // 1. 리스너 등록
 TUICallingManager.shareInstance().setCallingListener(listener: TUICallingListerner())
 
-// 2. 페이지 사용자 정의 여부를 설정합니다(기본값: 비활성화)
+// 2. 페이지 사용자 정의 여부를 설정합니다(기본값: 비활성화).
 TUICallingManager.shareInstance().enableCustomViewRoute(enable: true)
 
 // 3. 리스너 콜백 메소드 구현
@@ -247,6 +247,5 @@ TUICalling 컴포넌트의 API 리스트는 다음과 같습니다.
 | setCallingListener          | 리스너 설정                                     |
 | setCallingBell          | 벨소리 설정(30초 이내 권장)                                                 |
 | enableMuteMode | 음소거 모드 활성화    |
-| enableFloatWindow  | 플로팅 창 활성화                      |
 | enableCustomViewRoute      | 사용자 정의 뷰 활성화. 활성화 후 발신/수신 시작 콜백 중 CallingView 인스턴스가 수신되며 개발자가 직접 표시 방법을 결정합니다. 주의: 전체 화면 또는 비례 화면으로 표시해야 합니다. 그렇지 않으면 이상 경고가 표시됩니다.            |
 

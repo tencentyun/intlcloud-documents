@@ -1,6 +1,6 @@
-## 適用ケース
+## ユースケース
 TRTCは、4種類の異なる入室モードをサポートしています。このうち、ビデオ通話（VideoCall）および音声通話（VoiceCall）を総称して[通話モード](https://intl.cloud.tencent.com/document/product/647/35102)といい、ビデオ・インタラクティブストリーミング（Live）およびボイス・インタラクティブストリーミング（VoiceChatRoom）を総称してライブストリーミングモードといいます。
-ライブストリーミングモードでのTRTCは、1つのルームで最大10万人の同時接続をサポートし、300ms未満のマイク接続遅延、1000ms未満の視聴遅延およびマイクのオン・オフのスムーズな切り替え技術を備えています。低レイテンシーインタラクティブライブストリーミング、10万人のインタラクティブ教室、ビデオ婚活、eラーニング、リモート研修、超大規模ミーティングなどのユースケースに適しています。
+ライブストリーミングモードでのTRTCは、1つのルームで最大10万人の同時接続をサポートし、300ms未満のマイク接続遅延、1000ms未満の視聴遅延およびマイクのオン・オフのスムーズな切り替え技術を備えています。低レイテンシーインタラクティブストリーム、10万人のインタラクティブ教室、ビデオ婚活、eラーニング、リモート研修、超大規模ミーティングなどのユースケースに適しています。
 
 ## 原理解析
 TRTCクラウドサービスは、「インターフェースモジュール」および「プロキシモジュール」という2種類の異なるタイプのサーバーノードから構成されています。
@@ -15,7 +15,7 @@ TRTCクラウドサービスは、「インターフェースモジュール」�
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## サンプルコード
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC)にログインし、本ドキュメントに関連するサンプルコードを取得することができます。
+[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC) にログインし、本ファイルに関連するサンプルコードを取得することができます。
 ![](https://main.qcloudimg.com/raw/91ba84ef5cee887717ba69e97d939fcd.png)
 
 >Githubへのアクセスが遅い場合は、[TXLiteAVSDK_TRTC_iOS_latest.zip](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip)を直接ダウンロードすることもできます。
@@ -23,7 +23,7 @@ TRTCクラウドサービスは、「インターフェースモジュール」�
 
 ## 操作手順
 [](id:step1)
-### 手順1：SDKへの統合
+### 手順1：SDKの統合 
 以下の方式を選択して **TRTC SDK** をプロジェクトに統合することができます。
 #### 方法1： CocoaPodsを使用して統合
 1. **CocoaPods**をインストールします。具体的な操作は [CocoaPods公式サイトインストールの説明](https://guides.cocoapods.org/using/getting-started.html)をご参照ください。
@@ -85,9 +85,9 @@ _trtcCloud.delegate = self;
 | パラメータ名 | フィールドタイプ | 補足説明 |記入例 |
 |---------|---------|---------|---------|
 | sdkAppId | 数字 | アプリケーションID。<a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a>でSDKAppIDを表示できます。|1400000123 |
-| userId | 文字列 | アルファベットの大文字、小文字（a-z、A-Z）、数字（0-9）、下線およびハイフンのみを許可。 | test_user_001 |
+| userId  | 文字列 | アルファベットの大文字、小文字（a-z、A-Z）、数字（0-9）、下線およびハイフンのみを許可。 | test_user_001 |
 | userSig | 文字列 | userIdを基にuserSigを計算します。計算方法は[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。| eJyrVareCeYrSy1SslI... |
-| roomId | 数字 | デフォルトでは文字列のタイプのルームナンバーをサポートしていません、文字列タイプのルームナンバーは入室速度に影響します。文字列タイプのルームナンバーをサポートする必要が確実にある場合は、 [チケットを提出](https://console.cloud.tencent.com/workorder/category) してご連絡ください。 | 29834 |
+| roomId | 数字 | 数字タイプのルームナンバー。文字列形式のルームナンバーを使用したい場合は、TRTCParamsのstrRoomIdをご使用ください。 | 29834 |
 
 >! 
 >- TRTCは、2つの同じuserIdによる同時入室をサポートしていません。同時に入室した場合、相互に干渉します。
@@ -105,7 +105,7 @@ _trtcCloud.delegate = self;
 
 <dx-codeblock>
 ::: iOS object-c
-//サンプルコード：ローカルのオーディオビデオストリーミングの公開
+//サンプルコード：ローカルのオーディオ・ビデオストリーミングの公開
 [self.trtcCloud startLocalPreview:_isFrontCamera view:self.view];
 
 //ローカルビデオコーデックパラメータの設定
@@ -155,7 +155,7 @@ encParams.videoFps = 15;
 - (void)onEnterRoom:(NSInteger)result {
     if (result > 0) {
         [self toastTip:@"入室成功"];
-    } else {
+    }else{
         [self toastTip:@"入室失敗"];
     }
 }

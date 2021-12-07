@@ -1,6 +1,6 @@
-## 適用ケース
+## ユースケース
 TRTCは、4種類の異なる入室モードをサポートしています。このうち、ビデオ通話（VideoCall）および音声通話（VoiceCall）を総称して[通話モード](https://intl.cloud.tencent.com/document/product/647/35103)といい、ビデオ・インタラクティブストリーミング（Live）およびボイス・インタラクティブストリーミング（VoiceChatRoom）を総称してライブストリーミングモードといいます。
-ライブストリーミングモードでのTRTCは、1つのルームで最大10万人の同時接続をサポートし、300ms未満のマイク接続遅延、1000ms未満の視聴遅延およびマイクのオン・オフのスムーズな切り替え技術を備えています。低レイテンシーインタラクティブライブストリーミング、10万人のインタラクティブ教室、ビデオ婚活、eラーニング、リモート研修、超大規模ミーティングなどのユースケースに適しています。
+ライブストリーミングモードでのTRTCは、1つのルームで最大10万人の同時接続をサポートし、300ms未満のマイク接続遅延、1000ms未満の視聴遅延およびマイクのオン・オフのスムーズな切り替え技術を備えています。低レイテンシーインタラクティブストリーム、10万人のインタラクティブ教室、ビデオ婚活、eラーニング、リモート研修、超大規模ミーティングなどのユースケースに適しています。
 
 ## 原理解析
 TRTCクラウドサービスは、「インターフェースモジュール」および「プロキシモジュール」という2種類の異なるタイプのサーバーノードから構成されています。
@@ -14,27 +14,27 @@ TRTCクラウドサービスは、「インターフェースモジュール」�
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## サンプルコード
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example)にログインし、本ドキュメントに関連するサンプルコードを取得することができます。
+[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example) にログインし、本ファイルに関連するサンプルコードを取得することができます。
 ![](https://main.qcloudimg.com/raw/959efe00790a0a2952f8837a48baec25.png)
 
 >?Githubへのアクセスが遅い場合は、 [TXLiteAVSDK_TRTC_Android_latest.zip](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip)を直接ダウンロードすることもできます。
 
 ## 操作手順
 [](id:step1)
-### 手順1：SDKへの統合
+### 手順1：SDKの統合 
 以下の方式を選択して **TRTC SDK** をプロジェクトに統合することができます。
 #### 方法1：自動ロード（aar）
 TRTC SDKは、jcenterライブラリにリリースされています。更新を自動的にダウンロードするようにgradleを構成することで自動でダウンロード、更新できます。
 Android Studioを使用して、SDKを統合予定のプロジェクト（TRTC-API-Exampleは統合が完了済み、サンプルコードは参照用として提供）を開き、その後簡単な手順で`app/build.gradle`ファイルを修正するだけで、SDKの統合を完了できます。
 
-1. dependenciesにTRTCSDKの依存を追加します。
+1. dependenciesの中にTRTCSDKの依存を追加します。
 ```
 dependencies {
       compile 'com.tencent.liteav:LiteAVSDK_TRTC:latest.release'
 }
 ```
 2. defaultConfigでAppが使用するCPUアーキテクチャを指定します。
->?現在、TRTC SDKは、armeabi、armeabi-v7a、arm64-v8aをサポートしています。
+>?現在 TRTC SDKは、armeabi、armeabi-v7a、arm64-v8aをサポートしています。
 >
 ```
  defaultConfig {
@@ -105,7 +105,7 @@ public void onError(int errCode, String errMsg, Bundle extraInfo) {
 | sdkAppId | 数字 | アプリケーションID。<a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a>でSDKAppIDを表示できます。|1400000123 |
 | userId | 文字列 | アルファベットの大文字、小文字（a-z、A-Z）、数字（0-9）、下線およびハイフンのみを許可。 |test_user_001 |
 | userSig | 文字列 | userIdを基にuserSigは計算されます。計算方法は[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166) をご参照ください。| eJyrVareCeYrSy1SslI... |
-| roomId | 数字 | デフォルトでは文字列のタイプのルームナンバーをサポートしていません、文字列タイプのルームナンバーは入室速度に影響します。文字列タイプのルームナンバーをサポートする必要が確実にある場合は、 [チケットを提出](https://console.cloud.tencent.com/workorder/category) してご連絡ください。 | 29834 |
+| roomId | 数字 | 数字タイプのルームナンバー。文字列形式のルームナンバーを使用したい場合は、TRTCParamsのstrRoomIdをご使用ください。 | 29834 |
 
 >!
 >- TRTCは、2つの同じuserIdによる同時入室をサポートしていません。同時に入室した場合、相互に干渉します。
@@ -121,7 +121,7 @@ public void onError(int errCode, String errMsg, Bundle extraInfo) {
 4. キャスター側は、[startLocalAudio()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e)を呼び出すと、マイクを起動でき、SDKがシステムにマイクの使用許可をリクエストします。
 
 ```java
-//サンプルコード：ローカルのオーディオビデオストリーミングの公開
+//サンプルコード：ローカルのオーディオ・ビデオストリーミングの公開
 mTRTCCloud.setLocalViewFillMode(TRTC_VIDEO_RENDER_MODE_FIT);
 mTRTCCloud.startLocalPreview(mIsFrontCamera, localView);
 //ローカルビデオコーデックパラメータの設定
@@ -168,7 +168,7 @@ public void enterRoom() {
 public void onEnterRoom(long result) {
     if (result > 0) {
         toastTip("入室成功，総消費時間[∖(result)]ms")
-    } else {
+    }else{
         toastTip("入室失敗，エラーコード[∖(result)]")
     }
 }
@@ -210,7 +210,7 @@ TRTCでは、異なるオーディオ・ビデオルームにいる2人のキャ
 
 1. キャスターAが、[connectOtherRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ac1ab7e4a017b99bb91d89ce1b0fac5fd)インターフェースを呼び出します。インターフェースパラメータは現在JSON形式を採用しており、キャスターBの`roomId`と`userId`を接合して`{"roomId": "978","userId": "userB"}`の形式にしたパラメータをインターフェース関数に渡す必要があります。
 2. クロスルームに成功すると、キャスターAは[onConnectOtherRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ac9fd524ab9de446f4aaf502f80859e95)のイベントコールバックを受け取ります。同時に、2つのライブストリーミングルームのすべてのユーザーが[onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05)と[onUserAudioAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ac474bbf919f96c0cfda87c93890d871f)のイベント通知を受け取ります。
- 例えば、ルーム「001」のキャスターAがルーム「002」のキャスターBと`connectOtherRoom()`を介してルーム間通話をする場合、ルーム「001」のユーザーはキャスターBの`onUserVideoAvailable(B, true)`コールバックと`onUserAudioAvailable(B, true)`コールバックを受信します。ルーム「002」のユーザーはキャスターAの`onUserVideoAvailable(A, true)`コールバックと`onUserAudioAvailable(A,true)`コールバックを受信します。
+ 例えば、ルーム「001」のキャスターAがルーム「002」のキャスターBと`connectOtherRoom()`を介してルーム間通話をする場合、ルーム「001」のユーザーはキャスターBの`onUserVideoAvailable(B, true)`コールバックと`onUserAudioAvailable(B, true)`コールバックを受信します。ルーム「002」のユーザーはキャスターAの`onUserVideoAvailable(A, true)`コールバックと`onUserAudioAvailable(A, true)`コールバックを受信します。
 3. 2つのルームにいるユーザーは、[startRemoteView(userId, view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c)を呼び出すことで、もう一方のルームのキャスターの画面を表示することができ、音声が自動的に再生されます。
 
 ```java

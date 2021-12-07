@@ -1,5 +1,5 @@
 ## 효과
-당사 App를 [다운로드](https://intl.cloud.tencent.com/document/product/647/35076) 및 설치하여 실시간 음성 및 영상 통화의 효과를 체험할 수 있습니다.
+당사 App을 [다운로드](https://intl.cloud.tencent.com/document/product/647/35076) 및 설치하여 실시간 음성 및 영상 통화의 효과를 체험할 수 있습니다.
 <table>
 <tr>
    <th>발신자</th>
@@ -13,7 +13,7 @@
 
 
 
->! 음성 및 화상 통화 기능을 빠르게 구현할 수 있도록 TUICalling 컴포넌트를 최적화하였습니다. 통화 UI는 TUICalling 컴포넌트 내부에 구현되어 있으므로 UI에 신경을 쓸 필요가 없습니다.
+>! 음성 및 영상 통화 기능을 빠르게 구현할 수 있도록 TUICalling 컴포넌트를 최적화하였습니다. 통화 UI는 TUICalling 컴포넌트 내부에 구현되어 있으므로 UI에 신경을 쓸 필요가 없습니다.
 
 [](id:ui)
 
@@ -22,7 +22,7 @@
 [](id:ui.step1)
 
 ### 1단계: 신규 애플리케이션 생성
-1. TRTC 콘솔에 로그인한 후, **개발 지원>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)**을 선택합니다.
+1. TRTC 멀티미디어 콘솔에 로그인한 후, **개발 지원>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)**을 선택합니다.
 2. 애플리케이션 이름(예: `TestVideoCall`)을 입력한 후 **생성**을 클릭합니다.
 3. **다운로드 완료, 다음 단계**를 클릭하여 이 단계를 건너뜁니다.
 
@@ -37,7 +37,7 @@
 [](id:ui.step3)
 ### 3단계: App 프로그램 파일 설정
 1. 설정 변경 페이지로 이동하여 다운로드한 소스 패키지에 따라 해당하는 개발 환경을 선택합니다.
-2. `iOS/Example/Debug/GenerateTestUserSig.swift` 파일을 찾아 엽니다.
+2 `iOS/Example/Debug/GenerateTestUserSig.swift` 파일을 찾아 엽니다.
 3. `GenerateTestUserSig.swift` 파일에서 관련 매개변수를 설정합니다.
 <ul style="margin:0"><li/>SDKAPPID: 0으로 기본 설정되어 있습니다. 실제 SDKAppID로 설정하십시오.
 <li/>SECRETKEY: 공백으로 기본 설정되어 있습니다. 실제 키 정보로 설정하십시오.</ul>
@@ -63,7 +63,7 @@ Xcode(11.0 및 이후 버전) 소스 코드 프로젝트 `TUICalling/Example/TUI
 ### 사용자 A
 1. 사용자 이름을 입력하고 로그인합니다. **사용자 이름은 유일해야 하며 다른 사용자 이름과 중복되어서는 안 됩니다.**
 2. 호출할 userId를 입력하고 검색을 클릭합니다.
-3. **호출**을 클릭하고 **영상 통화**를 선택합니다(**수신자가 애플리케이션 로그인 상태가 아니면 호출에 실패할 수 있으니 확인하시기 바랍니다**).<br>
+3. **호출**을 클릭하고 **영상 통화**를 선택합니다. **수신자가 애플리케이션 로그인 상태가 아니면 호출에 실패할 수 있으니 확인하시기 바랍니다.**<br>
 
 ### 사용자 B
 1. 사용자 이름을 입력하고 로그인합니다. **사용자 이름은 유일해야 하며 다른 사용자 이름과 중복되어서는 안 됩니다.**
@@ -74,8 +74,8 @@ Xcode(11.0 및 이후 버전) 소스 코드 프로젝트 `TUICalling/Example/TUI
 [](id:model)
 ## 연결 프로세스
 
-[소스 코드](https://github.com/tencentyun/TUICalling/tree/master/Android/Source/src/main/java/com/tencent/liteav/trtccalling) 폴더 `Source`에는 세 개의 하위 폴더 ui, model 및 Service가 있으며, Service 폴더에는 Tencent Cloud가 외부에 공개한 오픈 소스 컴포넌트 TUICallingManager가 포함되어 있습니다. `TUICallingManager.h` 파일에서 이 컴포넌트가 제공하는 인터페이스 함수를 확인할 수 있습니다.
-![](https://main.qcloudimg.com/raw/9c9b6537318b1fa8cd9c6e4e717c361a.png)
+[소스 코드](https://github.com/tencentyun/TUICalling/tree/master/Android/Source/src/main/java/com/tencent/liteav/trtccalling) 폴더 `Source`에는 세 개의 하위 폴더 ui, model 및 Service가 있으며, Service 폴더에는 Tencent Cloud가 외부에 공개한 오픈 소스 컴포넌트 TUICallingManager가 포함되어 있습니다.  `TUICallingManager.h`  파일에서 이 컴포넌트가 제공하는 인터페이스 함수를 확인할 수 있습니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/0de26d679e6e0dc1d9aeadb6dbf6f8aa.png)
 
 
 오픈 소스 컴포넌트 TUICalling의 TUICallingManager를 사용하면, 복잡한 호출 UI 인터페이스 및 로직을 직접 구현하지 않고도 음성 및 영상 통화 기능을 쉽게 구현할 수 있습니다.
@@ -89,7 +89,7 @@ Xcode(11.0 및 이후 버전) 소스 코드 프로젝트 `TUICalling/Example/TUI
 <dx-codeblock>
 ::: swift
  pod 'TXIMSDK_iOS'
- pod 'TXLiteAVSDK_TRTC' 
+ pod ’TXLiteAVSDK_TRTC’ 
 :::
 </dx-codeblock>
 >?두 SDK 제품의 최신 버전 번호는 [TRTC](https://github.com/tencentyun/TRTCSDK) 및 [IM](https://github.com/tencentyun/TIMSDK)의 Github 첫 페이지에서 획득할 수 있습니다.
@@ -126,7 +126,7 @@ info.plist 파일에 `Privacy - Camera Usage Description`, `Privacy - Microphone
 <dx-codeblock>
 ::: swift
  pod 'TXAppBasic', :path => "../TXAppBasic/"
- pod 'TXLiteAVSDK_TRTC'
+ pod ’TXLiteAVSDK_TRTC’
  pod 'TUICalling', :path => "../", :subspecs => ["TRTC"] 
 :::
 </dx-codeblock>
@@ -135,7 +135,7 @@ info.plist 파일에 `Privacy - Camera Usage Description`, `Privacy - Microphone
 
 ### 4단계: 컴포넌트 초기화 및 로그인
 
-1. `TUICallingManager.sharedInstance()`를 호출하여 컴포넌트를 초기화합니다.
+1. `TUICallingManager.sharedInstance()` 를 호출하여 컴포넌트를 초기화합니다.
 2. `TUILogin.`init`(sdkAppID)`를 호출하여 로그인을 초기화합니다.
 3. `TUILogin.login(userId, userSig)`을 호출해 컴포넌트에 로그인합니다. 주요 매개변수는 다음 테이블을 참고하십시오.
 <table>
@@ -169,7 +169,7 @@ info.plist 파일에 `Privacy - Camera Usage Description`, `Privacy - Microphone
 
 ### 5단계: 음성 및 영상 통화 구현
 
-1. 발신자: TUICallingManager의 `call();` 메소드를 호출하여 통화를 요청하고, 사용자 ID 배열(userids) 및 통화 유형(type)을 전송합니다. 통화 유형 매개변수 `.audio`(음성 통화) 또는 `.video`(영상 통화) 또한 전송합니다. 사용자 ID 배열(userids)에 userID가 하나만 있으면 1:1 통화이며, 사용자 ID 배열(userids)에 사용자 ID가 여러 개(>=2) 있으면 다중 사용자 통화입니다.
+1. 발신자: TUICallingManager의 `call();` 메소드를 호출하여 통화를 요청하고, 사용자 ID 배열(userids) 및 통화 유형(type)을 전송합니다. 통화 유형 매개변수 `.audio`(음성 통화) 또는 `.video`(영상 통화) 또한 전송합니다. 사용자 ID 배열(userids)에 userID가 하나만 있으면 1:1 통화이며, 사용자 ID 배열(userids)에 userID가 여러 개(>=2) 있으면 다중 사용자 통화입니다.
 2. 수신자: 수신자가 로그인 상태인 경우 해당 인터페이스가 자동으로 실행됩니다. 오프라인 통화 요청 수신 구현 방법은 [오프라인 수신](#model.offline)을 참고하십시오.
 
 <dx-codeblock>
@@ -177,7 +177,7 @@ info.plist 파일에 `Privacy - Camera Usage Description`, `Privacy - Microphone
 // 1. 리스너 등록
 TUICallingManager.shareInstance().setCallingListener(listener: TUICallingListerner())
 
-// 2. 페이지 사용자 정의 여부를 설정합니다(기본값: 비활성화)
+// 2. 페이지 사용자 정의 여부를 설정합니다(기본값: 비활성화).
 TUICallingManager.shareInstance().enableCustomViewRoute(enable: true)
 
 // 3. 리스너 콜백 메소드 구현
@@ -230,8 +230,8 @@ TUICallingManager.shareInstance().call(userIDs, .video)
 
 IM SDK는 오프라인 푸시를 지원합니다. 사용 가능 기준을 충족하려면 해당하는 설정을 완료해야 합니다.
 
-1. Apple 푸시 인증서를 신청합니다. 자세한 방법은 [Apple 푸시 인증서 신청](https://intl.cloud.tencent.com/document/product/1047/34346)을 참고하십시오.
-2. 백그라운드 및 클라이언트에 오프라인 푸시를 설정합니다. 상세 작업은 [오프라인 푸시(iOS)](https://intl.cloud.tencent.com/document/product/1047/39157)를 참고하십시오.
+1. Apple 푸시 인증서를 신청합니다. 자세한 방법은 [Apple 푸시 인증서 신청](https://intl.cloud.tencent.com/zh/document/product/1047/34346)을 참고하십시오.
+2. 백그라운드 및 클라이언트에 오프라인 푸시를 설정합니다. 자세한 방법은 [오프라인 푸시(iOS)](https://intl.cloud.tencent.com/document/product/1047/39157)를 참고하십시오.
 3. 현재 TRTCCallingImpl의 sendModel 신호 발송 함수 중 오프라인 발송 함수가 통합되어 있습니다. App의 오프라인 푸시를 설정하면 메시지 오프라인 푸시가 가능합니다.
 
 [](id:api)
@@ -247,6 +247,5 @@ TUICalling 컴포넌트의 API 리스트는 다음과 같습니다.
 | setCallingListener          | 리스너 설정                                     |
 | setCallingBell          | 벨소리 설정(30초 이내 권장)                                                 |
 | enableMuteMode | 음소거 모드 활성화    |
-| enableFloatWindow  | 플로팅 창 활성화                      |
 | enableCustomViewRoute      | 사용자 정의 뷰 활성화. 활성화 후 발신/수신 시작 콜백 중 CallingView 인스턴스가 수신되며 개발자가 직접 표시 방법을 결정합니다. 주의: 전체 화면 또는 비례 화면으로 표시해야 합니다. 그렇지 않으면 이상 경고가 표시됩니다.            |
 

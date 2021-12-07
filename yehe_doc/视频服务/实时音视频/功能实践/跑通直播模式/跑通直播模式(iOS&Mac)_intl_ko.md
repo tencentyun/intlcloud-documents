@@ -1,13 +1,13 @@
 ## 적용 시나리오
 TRTC는 4가지 입장 모드를 지원합니다. 영상 통화(VideoCall), 음성 통화(VoiceCall)는 [통화 모드](https://intl.cloud.tencent.com/document/product/647/35102)라고 부르고, 비디오 ILVB(Live)와 오디오 ILVB(VoiceChatRoom)는 라이브 방송 모드라고 부릅니다.
-라이브 방송 모드의 TRTC는 방 하나에 최대 10만 명이 동시 접속할 수 있으며 마이크 연결 딜레이 300ms 미만, 시청 딜레이 1000ms 미만, 매끄러운 마이크 켜짐/꺼짐 전환 기술을 갖추고 있습니다. 저 딜레이 ILVB, 10만 명이 참여하는 인터랙션 강의, 비디오 소개팅, 온라인 교육, 원격 교육, 초대형 회의 등의 응용 시나리오에 적합합니다.
+라이브 방송 모드의 TRTC는 단일 방에 최대 10만 명이 동시에 접속할 수 있으며 300ms 미만의 마이크 연결 딜레이 및 1000ms 미만의 시청 딜레이, 매끄러운 마이크 켜짐/꺼짐 등의 기능을 갖추고 있습니다. 저지연 ILVB, 10만 인터랙션 강의, 화상 소개팅, 온라인 교육, 원격 교육, 초대형 회의 등의 응용 시나리오에 적합합니다.
 
 ## 원리 분석
 TRTC 클라우드 서비스는 '인터페이스 노드'와 '프록시 노드'라는 두 가지 서버 노드로 구성되어 있습니다.
--   **인터페이스 노드**
+- **인터페이스 노드**
 최고 품질의 회로와 고성능 기기를 사용해 단말기 간의 저지연 마이크 연결 통화 처리에 적합하며, 시간당 단가가 비싼 편입니다.
--   **프록시 노드**
-이 노드는 일반 품질의 회로와 일반 성능의 기계를 사용해 동시 접속이 많은 풀 스트림 시청 수요 처리에 뛰어납니다. 단위 시간당 과금이 비교적 저렴합니다.
+- **프록시 노드**
+일반 회로와 일반 성능 기기를 채택하여 동시 접속에 의한 풀 스트림 시청 수요 처리에 적합하며, 시간당 단가가 저렴한 편입니다.
 
 라이브 방송 모드에서 TRTC는 역할의 개념을 도입했습니다. 사용자는 '호스트'와 '시청자' 역할로 나뉘고, '호스트'는 인터페이스 노드에, '시청자'는 프록시 노드에 할당됩니다. 하나의 방에 들어가는 시청자 수의 최댓값은 10만 명입니다.
 '시청자'가 마이크를 켜려면 먼저 역할 전환(switchRole)을 통해 '호스트'가 되어야만 발언할 수 있습니다. 역할 전환의 과정에서 사용자는 프록시 노드에서 인터페이스 노드로 마이그레이션되며, TRTC 고유의 저 딜레이 시청 기술과 매끄러운 마이크 켜짐/꺼짐 전환 기술 덕분에 전체 전환 시간이 대폭 단축되었습니다.
@@ -32,7 +32,7 @@ TRTC 클라우드 서비스는 '인터페이스 노드'와 '프록시 노드'라
 >
 ```
 target 'Your Project' do
-        pod 'TXLiteAVSDK_TRTC'
+        pod ’TXLiteAVSDK_TRTC’
 end
 ```
 3. 다음 명령어를 실행하여 **TRTC SDK**를 설치합니다.
@@ -51,7 +51,7 @@ pod install
 
 | Key | Value |
 |---------|---------|
-| Privacy - Camera Usage Description | 카메라 권한을 사용하는 이유를 설명합니다. 예를 들어, 카메라 액세스 권한이 필요한 경우 카메라 활성화 후 비디오 채팅을 해야만 화면이 나타나게 됩니다.|
+| Privacy - Camera Usage Description | 카메라 권한을 사용하는 이유를 설명합니다. 예를 들어, 카메라 액세스 권한이 필요한 경우 카메라 활성화 후 비디오 채팅을 해야만 화면이 나타나게 됩니다. |
 | Privacy - Microphone Usage Description | 마이크 권한을 사용하는 이유를 설명합니다. 예를 들어, 마이크 액세스 권한이 필요한 경우 마이크 활성화 후 채팅을 해야만 소리가 나게 됩니다. |
 
 [](id:step3)
@@ -86,8 +86,8 @@ _trtcCloud.delegate = self;
 |---------|---------|---------|---------|
 | sdkAppId | 숫자 | 애플리케이션 ID, <a href="https://console.cloud.tencent.com/trtc/app">TRTC 콘솔</a>에서 SDKAppID를 확인할 수 있습니다.|1400000123 |
 | userId | 문자열 | 영어 알파벳(a-z, A-Z), 숫자(0-9), 대시부호(-), 언더바(_)만 허용됩니다. | test_user_001 |
-| userSig | 문자열 | userId를 기반으로 userSig를 계산할 수 있습니다. 계산 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. | eJyrVareCeYrSy1SslI... |
-| roomId | 숫자 | 기본값은 문자열 유형의 방 번호를 지원하지 않습니다. 문자열 유형의 방 번호는 입장 속도에 영향을 줄 수 있습니다. 반드시 문자열 유형의 방 번호를 사용해야 할 경우, [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 문의해 주십시오. | 29834 |
+| userSig | 문자열 | userId를 기반으로 userSig를 계산할 수 있습니다. 계산 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오.| eJyrVareCeYrSy1SslI... |
+| roomId | 숫자 | 숫자 유형의 방 번호입니다. 문자열 형식의 방 번호를 사용하려면 TRTCParams에서 strRoomId를 사용하십시오. | 29834 |
 
 >! 
 >- TRTC에서는 같은 userId 2개로 방에 동시 입장하면 서로 영향을 미칠 수 있으므로 이를 지원하지 않습니다.
@@ -97,7 +97,7 @@ _trtcCloud.delegate = self;
 [](id:step5)
 ### 5단계: 호스트의 카메라 미리보기 및 마이크 음성 수집 활성화
 1. 호스트는 [startLocalPreview()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e)를 호출하여 로컬 카메라 미리보기를 활성화할 수 있습니다. SDK가 시스템에 카메라 사용 권한을 요청하게 됩니다.
-2. 호스트는 [setLocalViewFillMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a961596f832657bfca81fd675878a2d15)를 호출하여 로컬 비디오 화면의 표시 모드를 설정할 수 있습니다. 
+2. 호스트는 [setLocalViewFillMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a961596f832657bfca81fd675878a2d15)를 호출하여 로컬 비디오 화면의 표시 모드를 설정할 수 있습니다.
  - Fill 모드는 '채우기'를 의미합니다. 화면은 같은 비율로 확대되거나 잘릴 수 있지만, 검은 부분은 없습니다.
  - Fit 모드는 '맞추기'를 의미합니다. 화면은 해당 콘텐츠가 다 표시되도록 같은 비율로 축소될 수 있고, 검은 부분이 있을 수 있습니다.
 3. 호스트는 [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) 인터페이스를 호출하여 로컬 비디오의 인코딩 매개변수를 설정할 수 있습니다. 해당 매개변수는 방에 있는 다른 사용자가 사용자의 화면을 시청할 때 느끼는 [화질](https://intl.cloud.tencent.com/document/product/647/35153)을 결정합니다.
@@ -136,8 +136,8 @@ encParams.videoFps = 15;
 ### 7단계: 호스트의 방 생성 및 푸시 스트리밍 시작
 1. 호스트는 [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams)에서 필드 `role`을 **`TRTCRoleType.anchor`**로 설정하여 현재 사용자의 역할이 호스트라는 것을 표시합니다.
 2. 호스트는 [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)을 호출하여 TRTCParams 매개변수 필드 `roomId`의 값이 방 번호인 멀티미디어 방을 생성하고 **`appScene`** 매개변수를 지정할 수 있습니다.
- - TRTCAppScene.LIVE: 비디오 ILVB 모드(이 문서에서 예시에 사용된 모드)
- - TRTCAppScene.voiceChatRoom: 오디오 ILVB 모드
+ - TRTCAppScene.LIVE: 비디오 ILVB 모드(이 문서에서 예시에 사용된 모드).
+ - TRTCAppScene.voiceChatRoom: 오디오 ILVB 모드.
 3. 방 생성에 성공하면 호스트는 멀티미디어 데이터의 인코딩과 전송 프로세스를 시작합니다. 이와 동시에, SDK는 [onEnterRoom(result)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a6960aca54e2eda0f424f4f915908a3c5) 이벤트를 콜백합니다. 매개변수 `result`가 0보다 크면 입장 성공이며, 해당 값은 입장에 걸리는 시간을 밀리초(ms) 단위로 나타냅니다. `result`가 0보다 작으면 입장 실패이며, 해당 값은 입장 실패의 에러 코드입니다.
 
 <dx-codeblock>
@@ -166,16 +166,16 @@ encParams.videoFps = 15;
 ### 8단계: 시청자의 방 입장 후 라이브 방송 시청
 1. 시청자는 [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams)의 필드 `role`을 **`TRTCRoleType.audience`**로 설정하여 현재 사용자의 역할이 시청자라는 것을 표시합니다.
 2. 시청자는 [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)을 호출하여 TRTCParams 매개변수 중 `roomId`가 가리키는 멀티미디어 룸에 입장하고 **`appScene`** 매개변수를 지정할 수 있습니다.
- - TRTCAppScene.LIVE: 비디오 ILVB 모드(이 문서에서 예시에 사용된 모드)
- - TRTCAppScene.voiceChatRoom: 오디오 ILVB 모드
-3. 호스트 화면 시청
+ - TRTCAppScene.LIVE: 비디오 ILVB 모드(이 문서에서 예시에 사용된 모드).
+ - TRTCAppScene.voiceChatRoom: 오디오 ILVB 모드.
+3. 호스트 화면 시청:
  - 시청자가 사전에 호스트의 userId를 알고 있을 경우, 입장 성공 후 곧바로 호스트 `userId`를 사용해 [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)를 호출하여 호스트의 화면을 볼 수 있습니다.
  - 시청자는 입장 성공 후 [onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) 이벤트 공지를 받게 됩니다. 시청자가 사전에 호스트의 userId를 모를 경우, 콜백에서 확인한 호스트 `userId`를 사용해 [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)를 호출하여 호스트의 화면을 볼 수 있습니다.
 
 
 [](id:step9)
 ### 9단계: 시청자와 호스트의 마이크 연결
-1. 시청자는 [switch(TRTCRoleType.TRTCRoleAnchor)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5f4598c59a9c1e66938be9bfbb51589c)를 호출하여 역할을 호스트（TRTCRoleType.TRTCRoleAnchor）로 전환합니다.
+1. 시청자는 [switch(TRTCRoleType.TRTCRoleAnchor)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5f4598c59a9c1e66938be9bfbb51589c)를 호출하여 역할을 호스트(TRTCRoleType.TRTCRoleAnchor)로 전환합니다.
 2. 시청자는 [startLocalPreview()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e)를 호출하여 로컬 화면을 활성화할 수 있습니다.
 3. 시청자는 [startLocalAudio()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb)를 호출하여 마이크 음성 수집을 활성화합니다.
 
