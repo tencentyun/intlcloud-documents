@@ -1,6 +1,7 @@
 > !
-> 1. 此文档仅适用于 COS XML 版本。
-> 2. 此文档不适用于 POST Object 的 HTTP 请求。
+> - 此文档仅适用于 COS XML 版本。
+> - 此文档不适用于 POST Object 的 HTTP 请求。
+> 
 
 
 ## 简介
@@ -28,7 +29,7 @@ COS SDK 已经实现签名，在使用 SDK 发起请求或通过 SDK 获取签�
 | Java SDK | [COSSigner.java](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/auth/COSSigner.java) |
 | JavaScript SDK | [util.js](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/src/util.js) (getAuth) |
 | Node.js SDK | [util.js](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/sdk/util.js) (getAuth) |
-| PHP SDK | [Signature.php](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/src/Qcloud/Cos/Signature.php) |
+| PHP SDK | [Signature.php](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/src/Signature.php) |
 | Python SDK | [cos_auth.py](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/cos_auth.py) |
 | 小程序 SDK | [util.js](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/src/util.js) (getAuth) |
 
@@ -36,12 +37,18 @@ COS SDK 已经实现签名，在使用 SDK 发起请求或通过 SDK 获取签�
 
 ## 生成签名链接
 
+
+
 COS 目前支持的各语言 [SDK](https://intl.cloud.tencent.com/document/product/436/6474) 都提供了生成签名链接的功能，生成的链接 URL 中附带有一定有效期的签名，且该签名支持 PUT 请求或 GET 请求，因此您可以直接使用该链接上传或下载对象而不需要额外生成签名。
 
 - 在生成用于上传的签名链接时，还可以指定 Content-Type 或 Content-MD5 等头部，以便限制上传的媒体类型或限制上传的内容必须为指定内容。有关上传时的请求头部设置，请参阅 [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) 文档。
-- 在生成用于下载的签名链接时，还可以指定 respones-xxx 请求参数，以便在下载时临时修改响应中的相关头部。有关下载时的请求参数设置，请参阅 [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) 文档。
+- 在生成用于下载的签名链接时，还可以指定 response-xxx 请求参数，以便在下载时临时修改响应中的相关头部。有关下载时的请求参数设置，请参阅 [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) 文档。
 
 各语言 SDK 生成签名链接的详细介绍，请参见下列各语言 SDK 文档：
+
+>?
+>- 建议用户使用临时密钥生成预签名，通过临时授权的方式进一步提高预签名上传、下载等请求的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+>- 如果您一定要使用永久密钥来生成预签名，建议永久密钥的权限范围仅限于上传或下载操作，以规避风险。
 
 | SDK            | 预签名文档                                              |
 | -------------- | ------------------------------------------------------------ |
@@ -54,7 +61,7 @@ COS 目前支持的各语言 [SDK](https://intl.cloud.tencent.com/document/produ
 | Java SDK       | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31536) |
 | JavaScript SDK | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31540) |
 | Node.js SDK    | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/32455) |
-| PHP SDK        | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31544) |
+| PHP SDK        | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/43312) |
 | Python SDK     | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31548) |
 | 小程序 SDK     | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31711) |
 

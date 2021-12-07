@@ -2,6 +2,7 @@
 
 调用 SDK 接口请求 COS 服务失败时，将在回调函数里返回错误信息。
 
+
 ## 错误处理示例
 
 [//]: # (.cssg-snippet-head-bucket)
@@ -20,7 +21,7 @@ cos.headBucket({
 
 | 参数名  | 参数描述                                                     | 类型          |
 | ------- | ------------------------------------------------------------ | ------------- |
-| err     | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档| Object        |
+| err     | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档| Object        |
 | - error | 请求报错信息                                                 | Object/String |
 
 ## 服务端异常
@@ -33,7 +34,7 @@ cos.headBucket({
    </tr>
    <tr>
       <td>err</td>
-      <td>请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 <a href="https://cloud.tencent.com/document/product/436/7730">错误码</a> 文档</td>
+      <td>请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/7730">错误码</a> 文档</td>
       <td>Object</td>
    </tr>
    <tr>
@@ -53,17 +54,43 @@ cos.headBucket({
    </tr>
    <tr>
       <td>- - Code</td>
-      <td>请求失败时 body 返回的 Error Code，更多详情请参见 <a href="https://cloud.tencent.com/document/product/436/7730">错误码</a> 文档</td>
+      <td>请求失败时 body 返回的 Error Code，更多详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/7730">错误码</a> 文档</td>
       <td>String</td>
    </tr>
    <tr>
       <td>- - Message</td>
-      <td>请求失败时 body 返回的 Error Message，更多详情请参见 <a href="https://cloud.tencent.com/document/product/436/7730">错误码</a> 文档</td>
+      <td>请求失败时 body 返回的 Error Message，更多详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/7730">错误码</a> 文档</td>
       <td>String</td>
    </tr>
    <tr>
       <td nowrap="nowrap">- - RequestId</td>
-      <td>服务器请求日志里的唯一 ID，可用于遇到问题 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 排查错误原因</td>
+      <td>服务器请求日志里的唯一 ID，可用于遇到问题 <a href="https://cloud.tencent.com/document/product/436/37708">联系我们</a> 排查错误原因</td>
       <td>String</td>
    </tr>
 </table>
+
+## 使用自助诊断工具
+
+针对请求可能遇到不同的报错情况，我们为您提供了 [COS 自助诊断工具](https://console.cloud.tencent.com/cos5/diagnose)，帮助您快速定位问题，调试报错代码。
+
+#### 使用步骤
+1. 复制异常处理返回的 RequestId（请求 ID）。
+2. 单击 [COS 自助诊断工具](https://console.cloud.tencent.com/cos5/diagnose)，进入自助诊断页面。
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                COS 自助诊断工具
+            </div>
+            <a href="https://console.cloud.tencent.com/cos5/diagnose" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击自助诊断</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                输入 RequestId 进行智能诊断，获取请求基本信息、帮助指引和诊断提示，快速定位请求错误。
+            </div>
+        </div>
+    </div>
+</div>
+3. 在顶部的 RequestId 输入框中，输入待诊断的 RequestId，并单击**开始诊断**。
+4. 稍侯片刻，便能看到相应的智能诊断结果。
+
