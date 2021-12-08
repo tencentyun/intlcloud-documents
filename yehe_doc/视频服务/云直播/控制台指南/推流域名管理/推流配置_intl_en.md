@@ -1,38 +1,35 @@
 To protect the information security of live streaming, push authentication is enabled for CSS push domain names by default. You can use the push address generator on the push address details page to generate a push URL. Then, you can use the URL to push the stream (upload the live streaming video) to the CSS platform.
 
-## Notes
+## Note
 
-- CSS provides a test domain name `xxxx.livepush.myqcloud.com`. You can use it for push testing, but we do not recommend using it as the push domain name for your real business. 
+- CSS provides a test domain name `xxxx.tlivepush.com`. You can use it to test live push, but you’re not advised to use it as the push domain name for business purposes. 
 - CSS can only generate push URLs in RTMP format.
 - The generated push URL is valid before the set expiration time. You can generate a new URL after the old one expires.
 
 ## Prerequisites
 
-You have signed up for a Tencent Cloud account and completed identity verification. Unverified users cannot purchase CSS instances in the Chinese mainland.
+You have activated the CSS service and completed identity verification.
 
 ## Authentication Configuration
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target **push domain name** or click **Manage** to enter the domain details page. 
-2. Click **Push Configuration**, view the **Authentication Configuration** section, and click **Edit** on the right.
+2. Click **Push Configuration**, and click **Edit** in the **Authentication Configuration** section.
 	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 3. On the **Authentication Configuration** page, toggle ![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png) to enable or disable push configuration.
 4. Enter the primary key and backup key, and click **Save**.
 ![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
 >? Primary key is required and backup key is optional. Entering both allows you to switch keys when one key is disclosed.
 
-
-
 ## Push Address Generator
 
 ### Directions
-
-1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target domain name or click **Manage** on its right to enter its details page.
+1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, and click the target domain name or click **Manage** on its right to enter its details page.
 2. Select **Push Configuration** > **Push Address Generator** and configure as follows:
-   1. Select an expiration time, such as `2019-10-31 23:59:59`.
+   1. Select an expiration time, such as `2021-06-30 19:26:02`.
    2. Enter a custom `StreamName`, such as `liveteststream`.
    3. Click **Generate Push Address** to generate an RTMP push URL containing the `StreamName`.
- ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
-4. You can test, disable, or delete a stream in [Stream Management](https://intl.cloud.tencent.com/document/product/267/31068) after [live push](https://intl.cloud.tencent.com/document/product/267/31558).
-5. After the push URL is generated, you can use it to initiate live push. To view live streaming, you should use a playback URL. For more information, please see [Playback Configuration](https://intl.cloud.tencent.com/document/product/267/31058).
+![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
+3. If playback authentication is not enabled for your push domain name, you can view two types (RTMP and UDP) of playback URLs under the domain name in **Push Configuration** > **Push URL**. Splice the `StreamName` in the playback URL to the desired push URL, and then you can use the playback URL to play back the stream corresponding to the push URL. 
+![](https://main.qcloudimg.com/raw/aa129bd839cb307993bfed247e636a41.png)
 
 
 
@@ -49,18 +46,17 @@ Where:
 - `txSecret`: authentication string generated after push authentication is enabled
 - `txTime`: expiration timestamp set for a push URL configured in the console
 
->- If you have enabled authentication for the domain name, the actual URL expiration time will be `txTime` plus the `key` validity period.
+>! If you have enabled authentication for the domain name, the actual URL expiration time will be `txTime` plus the `key` validity period.
 
 
 ## Sample Code of Push URL
 
 Sample code for generating a push URL in PHP and Java is provided for your reference, which can be viewed by performing the following steps:
 
-1. Log in to the CSS console and click **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**.
+1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**.
 2. Select a push domain name or click **Manage** on the right to enter its details page.
 3. Select **Push Configuration** and scroll down to find **Push Address Sample Code**.
-4. Click the tab to view the PHP/Java sample code accordingly.
-
+4. Click the tab to view the PHP/Java sample code accordingly as shown below:
 <dx-codeblock>
 ::: PHP php
 ```
@@ -70,7 +66,7 @@ Sample code for generating a push URL in PHP and Java is provided for your refer
     * @param domain   Your push domain name
     *        streamName   Unique stream name to identify its push URLs
     *        key   Authentication key
-    *        time   URL expiration time (example: 2016-11-12 12:00:00)
+    *        time   URL expiration time in seconds (example: 2016-11-12 12:00:00)
     * @return String url
 */
 function getPushUrl($domain, $streamName, $key = null, $time = null){
@@ -87,7 +83,7 @@ function getPushUrl($domain, $streamName, $key = null, $time = null){
 }
 echo getPushUrl("123.test.com","123456","69e0daf7234b01f257a7adb9f807ae9f","2016-09-11 20:08:07");
 ```
-
+:::
 ::: Java java
 ```
 package com.test;
@@ -137,5 +133,11 @@ public class Test {
     }
 }
 ```
+:::
+</dx-codeblock>
+
+
+
 ## Operations
-After the push URL is generated, you can use it based on business scenarios. For specific operations, please see [Live Push](https://intl.cloud.tencent.com/document/product/267/31558).
+After the push URL is generated, you can use it based on business scenarios. For specific operations, see [Live Push](https://intl.cloud.tencent.com/document/product/267/31558).
+
