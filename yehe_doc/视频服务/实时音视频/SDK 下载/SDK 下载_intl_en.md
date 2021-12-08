@@ -404,16 +404,4 @@ In addition to the features of the Professional edition, the Enterprise edition 
 </table>
 
 
-<script>
-  var _mtac = {"senseHash":0};
-  (function() {
-    var mta = document.createElement("script");
-    mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
-    mta.setAttribute("name", "MTAH5");
-    mta.setAttribute("sid", "500695331");
-    mta.setAttribute("cid", "500695332");
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(mta, s);
-  })();
-</script>
 

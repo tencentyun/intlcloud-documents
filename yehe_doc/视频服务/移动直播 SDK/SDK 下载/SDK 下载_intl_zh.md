@@ -32,18 +32,3 @@
 >- 使用其中的移动直播请购买  [移动直播 SDK 国际版 License](https://intl.cloud.tencent.com/document/product/1071/38114)。
 >- 使用其中的实时音视频请购买 [实时音视频套餐包](https://intl.cloud.tencent.com/document/product/647/34610)。
 
-
-<script>
-  var _mtac = {"senseHash":0};
-  (function() {
-    var mta = document.createElement("script");
-    mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
-    mta.setAttribute("name", "MTAH5");
-    mta.setAttribute("sid", "500695331");
-    mta.setAttribute("cid", "500695332");
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(mta, s);
-  })();
-</script>
-   
-
