@@ -12,7 +12,7 @@ gRPC 对 Unity 的支持仍处于实验阶段，更多信息可参见 [README](h
 
 ### 步骤1：创建 Unity 项目 
 
-需要创建一个针对 `.NET 4.x` 等效版本的 Unity 项目，由于 gRPC 使用的 API 仅在 `.NET 4.5+`可用，所以这一步是必需的，通过【Edit】>【Project Setting】>【Player】>【Configuration】>【Scripting Runtime Version】进行设置。
+需要创建一个针对 `.NET 4.x` 等效版本的 Unity 项目，由于 gRPC 使用的 API 仅在 `.NET 4.5+`可用，所以这一步是必需的，通过**Edit**>**Project Setting**>**Player**>**Configuration**>**Scripting Runtime Version**进行设置。
 ![](https://main.qcloudimg.com/raw/c28d0dc10bded3be2e98358a95a374fa.jpg)
 
 <span id="test"></span>
@@ -25,7 +25,7 @@ gRPC 对 Unity 的支持仍处于实验阶段，更多信息可参见 [README](h
 
 ### 步骤3： 解压
 
-将下载的**.zip**文件解压到 Unity 项目的**Assets** 目录中，如下图所示
+将下载的`.zip`文件解压到 Unity 项目的`Assets` 目录中，如下图所示
 ![](https://main.qcloudimg.com/raw/3d319f3b4acbf2dea17f09e704e083fe.png)
 
 ### 步骤4：测试 
