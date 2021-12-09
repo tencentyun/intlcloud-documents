@@ -1,3 +1,6 @@
+>!The new command line tool [COSCLI](https://intl.cloud.tencent.com/document/product/436/43249) has been released and will gradually replace COSCMD. COSCMD will have bug fixes only, but not new features.
+
+
 ## Feature Description
 
 COSCMD enables you to use simple command lines to batch-operate objects, such as upload, download, and delete.
@@ -202,7 +205,7 @@ The parameters are described as follows:
 | -t | Temporary key token, which needs to be specified in the `x-cos-security-token` header when a temporary key is used. | String | No |
 | -b | Name of the specified bucket, formatted as `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). If this is your first time using COSCMD, you need to create a bucket in the COS console to configure COSCMD. | String | Yes |
 | -r | Region of the bucket. For more information, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| -e   | ENDPOINT of the request. Once configured, the `REGION` parameter will be invalidated. If you use the default endpoint, this parameter is formatted as `cos.<region>.myqcloud.com`; if you use a global acceleration endpoint, the format is `cos.accelerate.myqcloud.com`. | String | No  |
+| -e   | Endpoint of the request. Once you configure this parameter, the region parameter will be invalidated. If you use the default endpoint, this parameter is formatted as `cos.<region>.myqcloud.com`; if you use a global acceleration endpoint, the format is `cos.accelerate.myqcloud.com`. | String | No  |
 | -m | Maximum number of threads in a multi-thread operation (default: 5; value range: 1-30) | Number | No |
 | -p | Size of the multipart upload part, in MB (default: 1; value range: 1-1000) | Number | No |
 | --do-not-use-ssl | Uses the HTTP protocol instead of HTTPS | String | No |
@@ -233,7 +236,7 @@ coscmd -b <BucketName-APPID> -r <region> <action> ...
 ```plaintext
 coscmd -b examplebucket-1250000000 -r ap-beijing createbucket
 ```
-- Sample: uploading “picture.jpg” from D drive to the `examplebucket` bucket
+- Sample: uploading "picture.jpg" from D drive to the `examplebucket` bucket
 ```plaintext
 coscmd -b examplebucket-1250000000 -r ap-beijing upload D:/picture.jpg /
 ```
@@ -333,11 +336,11 @@ coscmd upload <localpath> <cospath>
 ```
 >! Replace "localpath" and "cospath" enclosed in "<>" with the path of the local file to upload and the COS storage path, respectively.
 >
-- Sample: uploading “picture.jpg” in D drive to the "doc" folder of COS
+- Sample: uploading "picture.jpg" in D drive to the "doc" folder of COS
 ```plaintext
 coscmd upload D:/picture.jpg doc/
 ```
-- Sample: uploading “picture.jpg” in the "doc" folder in D drive to the "doc" folder of COS
+- Sample: uploading "picture.jpg" in the "doc" folder in D drive to the "doc" folder of COS
 ```plaintext
 coscmd upload D:/doc/picture.jpg doc/
 ```
@@ -347,7 +350,7 @@ coscmd upload D:/picture.jpg doc/ -H "{'x-cos-storage-class':'Archive'}"
 ```
 >! When you set the HTTP header with the `-H` parameter, please use the JSON format, for example, `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
 >
-- Sample: setting meta attributes and uploading a file to the “doc” folder of COS
+- Sample: setting meta attributes and uploading a file to the "doc" folder of COS
 ```plaintext
 coscmd upload D:/picture.jpg doc/ -H "{'x-cos-meta-example':'example'}"
 ```
@@ -359,7 +362,7 @@ coscmd upload D:/picture.jpg doc/ -H "{'x-cos-meta-example':'example'}"
 ```plaintext
 coscmd upload -r <localpath> <cospath>
 ```
->! Windows users are recommended to use the `upload` command in cmd or PowerShell that comes with the system. Other tools, such as Git Bash, have a different command path resolution strategy than PowerShell and can cause users' files to be uploaded to a wrong path.
+>! Windows users are advised to use the `upload` command in cmd or PowerShell that comes with the system. Other tools, such as Git Bash, have a different command path resolution strategy than PowerShell and can cause users' files to be uploaded to an incorrect path.
 >
 - Sample: uploading the "doc" folder in D drive to the root directory of COS
 ```plaintext
@@ -379,7 +382,7 @@ coscmd upload -rs D:/doc doc
 ```plaintext
 coscmd upload -rs --skipmd5 D:/doc doc
 ```
->!The `-s` parameter allows synchronous upload, and the `--skipmd5` parameters can be used to skip files with the same name and same file size.
+>!The `-s` parameter allows synchronous upload, and the `--skipmd5` parameter can be used to skip files with the same name and same file size.
 >
 - Sample: uploading the folder synchronously and deleting files that are deleted in the "doc" folder in D drive
 ```plaintext
@@ -517,7 +520,7 @@ coscmd download -rs / D:/examplefolder --ignore *.txt,*.doc
 ```plaintext
 coscmd download -rs / D:/examplefolder --include *.txt,*.doc
 ```
->! Since the old `mget` API is no longer in use, please use the `download` API for multipart downloads.
+>! Since the old `mget` API is disused, please use the `download` API for multipart downloads.
 >
 
 
