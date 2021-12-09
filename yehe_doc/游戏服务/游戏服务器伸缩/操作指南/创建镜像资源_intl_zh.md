@@ -10,6 +10,6 @@
 ## 操作步骤
 
 1. 将游戏可执行程序上传至腾讯云服务器，放在 `/local/game/` 路径下，以便 GSE 能启动。
-2. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/instance/index?rid=1) ，单击左侧导航菜单 【实例】进入实例管理页面。
+2. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/instance/index?rid=1) ，单击左侧导航菜单 **实例**进入实例管理页面。
 3. 在实例的管理页面，选择上传了游戏可执行程序的实例，进行镜像资源创建。详情可参见 [创建自定义镜像](https://intl.cloud.tencent.com/document/product/213/4942)。
 
