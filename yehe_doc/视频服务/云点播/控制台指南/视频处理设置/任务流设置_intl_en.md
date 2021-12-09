@@ -50,7 +50,8 @@ VOD provides 2 preset task flows which include adaptive bitrate streaming, scree
 ## Custom Task Flow
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/video-process/taskflow), click **Create Task Flow** above the list to enter the "Create Task Flow" page, and set the following **task flow template** configuration items:
 	- Task Flow Name: it is customizable and can contain up to 20 letters, digits, hyphens (-), and underscores (\_).
-	- Task Type: its options include general transcoding, TESHD transcoding, adaptive bitrate streaming, screencapturing, cover generating, animated image generating, and intelligent video recognition. You must select at least one type before you can configure the task flow template. For more information, please see [Task configuration](#p1).
+	- Task Type: options include general transcoding, TESHD transcoding, adaptive bitrate streaming, screencapture, thumbnail generating, animated image generating, and video moderation. You must select at least one type before you can configure the task flow template. For more information, please see [Task Flow Settings
+](https://intl.cloud.tencent.com/document/product/266/14058#custom-task-flow).
 2. After the configuration items are set, click **Submit** to create the task flow.
 
 <span id = "p1"></span>**Task configuration**
