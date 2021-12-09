@@ -16,8 +16,8 @@ Log in to the [IM console](https://console.cloud.tencent.com/im), click the targ
 3. Click **OK** to save the configuration.
 
 ## Configuring Event Callbacks
-1. On the **Callback Configuration** page, click **Edit** in the event callback configuration area.
-2. In the event callback configuration dialog box that pops up, check the desired callbacks.
+1. On the **Callback Configuration** page, click **Edit** in the third-party callback configuration area.
+2. In the third-party callback configuration dialog box that pops up, check the desired callbacks.
 ![](https://main.qcloudimg.com/raw/67cb8c9fd2365e3e2014e6940c468aaf.png)
 3. Click **OK** to save the configuration.
 
