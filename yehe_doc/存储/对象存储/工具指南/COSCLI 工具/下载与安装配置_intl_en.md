@@ -17,7 +17,8 @@ COSCLI provides binary packages for Windows, macOS, and Linux, which can be used
 5. In the dialog box, enter `cmd` and press `Enter` to open the command line window.
 6. Enter `coscli --help` in the command line window. If the following information is printed out, the installation is successful:
 >? On Windows, the method to use COSCLI may vary slightly by command line client. If COSCLI does not work properly after `coscli [command]` is entered, try `./coscli [command]`.
->
+
+
 ```
 Welcome to use coscli!
    
@@ -48,6 +49,7 @@ Flags:
 Use "coscli [command] --help" for more information about a command.
 ```
 
+
 ### macOS
 
 1. Run the following command to download COSCLI:
@@ -59,6 +61,8 @@ wget https://github.com/tencentyun/coscli/releases/download/v0.91-beta/coscli-ma
 mv coscli-mac coscli
 ```
 3. Enter `./coscli --help` on the command line. If the following information is printed out, the installation is successful:
+
+
 ```
 Welcome to use coscli!
    
@@ -88,6 +92,8 @@ Flags:
    
 Use "coscli [command] --help" for more information about a command.
 ```
+
+
 >? When you use COSCLI on macOS, if the `Unable to open "coscli" because the developer cannot be verified` prompt is displayed, go to `Settings > Security & Privacy > General` and select `Open COSCLI anyway`, and then COSCLI can be used properly.
 >
 
@@ -107,6 +113,8 @@ mv coscli-linux coscli
 chmod 755 coscli
 ```
 3. Enter `./coscli --help` in the command line window. If the following information is printed out, the installation is successful:
+
+
 ```
 Welcome to use coscli!
    
