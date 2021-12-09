@@ -13,8 +13,8 @@
       
       - RR: multiple origin servers perform origin-pull according to the RR policy.
       - Weighted RR: multiple origin servers perform origin-pull according to the weight ratio (you can set the weight of each origin server when binding the listener).
-      - Least Connections: this means to schedule the origin server with the least number of connections first.
-      - Least Latency: this means to schedule the origin server with the least latency first.
+      - Least Connections: this means scheduling the origin server with the least number of connections first.
+      - Least Latency: this means scheduling the origin server with the least latency first.
       - Secondary Origin Server: you can choose whether to enable primary/secondary origin server switch (to enable this feature, you must enable origin server health check).
       <blockquote class="d-mod-notice">
       					<div class="d-mod-title d-notice-title">
@@ -22,7 +22,7 @@
       					</div>
              <p>Listeners with domain name-type origin servers only support **RR** and **Least Connections** as the scheduling policy and do not support secondary origin servers.</p>
       				</blockquote>
-3. If a TCP listener is used, you can choose to configure the health check mechanism to automatically detect and remove exceptional origin servers. If secondary origin server is enabled, you will be unable to disable health check.
+3. If a TCP listener is used, you can cofigure health check policies to automatically detect and remove exceptional origin servers. If the secondary origin server is enabled, you will be unable to disable the health check.
    ![](https://qcloudimg.tencent-cloud.cn/raw/b317846881f8cc41983077c44df92ff0.png)
    
       - Response Timeout: origin server response timeout period.
