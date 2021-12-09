@@ -1,8 +1,26 @@
-## 查询合作伙伴和子客账单
+## 登入合作伙伴控制台查看伙伴账单
+
+第一步：登入控制台，点击【Bill Management】菜单进入账单管理页面。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/9f37463648e4549e86dbf6816aa69a02.png)
+
+第二步：选择月份，查询出对应月份的账单结果，目前控制台账单页面仅支持伙伴A账单的展示，后续会增加更多账单展示，敬请期待。
+![](https://qcloudimg.tencent-cloud.cn/raw/046f8cb69a7bf738f1e5574d04879fb9.png)
+
+第三步：点击【CSV File】可以对伙伴A账单进行下载。
+
+第四步：如果确认伙伴A账单没有问题，可以对伙伴A账单进行确认，后续根据确认的账单进行回款。如果对账单有任何问题，请联系渠道经理确认或更改后重新在控制台查看结果。
+
+>? 
+> - 每月确认账单后，如有开通存储桶的经销商，仍会将合并客户的A账单存入经销商COS桶。
+> - 为保证COS桶可以及时获取到数据，请经销商及时在控制台确认账单。
+> - 点击确认账单按钮前，请刷新并确认线上最新的账单结果正确后再点击确认。
+
+## 存储桶查询合作伙伴和子客账单
 
 第一步：存储桶加白。该功能目前在白名单使用阶段，需要开启该功能请联系销售经理加白，加白后的UIN，在账单概览页会出现【账单存储】按钮。
 
-![img](https://docimg9.docs.qq.com/image/FYi6VKGmXyNz1ZKDk6fPbA?w=2712&h=1004)
+![](https://qcloudimg.tencent-cloud.cn/raw/d28bfd6ad6696d050b324c7a16436c79.png)
 
 第二步：角色服务授权。点击【账单存储】按钮后，将会有弹窗提示授权，点击后【前往授权】会在当前页跳转至【角色授权页面】，需要【同意授权】。
 
@@ -10,7 +28,7 @@
 
 第四步：支持存入经销商下客户的账单。勾选【Store Custom Bills】，授权通讯云商务将客户账号的合并账单存入父经销商COS桶。
 
-<img src="https://docimg10.docs.qq.com/image/nQ3lziYhPbxeqOwvVzUclw?w=855&h=964&_type=png" alt="img" style="zoom: 50%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/fef9c9ac8afe178c628387cdf38b9d76.png" alt="img" style="zoom: 50%;" />
 
 >? 
 > - 系统默认将经销商UIN的每日账单、月账单发送到COS桶。另外，腾讯云商务每月确认账单后，会手工触发将客户账号的合并账单存入经销商COS桶。
@@ -28,7 +46,7 @@
 
 *文件命名样例：**100010445724-2021-03--by_used_time-bill-details-consolidated_bill-61121cbd9017a16285769571173521960.zip*
 
-![img](https://docimg5.docs.qq.com/image/pc9K4lOvvMZBLjSwjgb78A?w=1704&h=396&_type=png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ab05a05cee3202c3a73f0be0de083171.png)
 
 ### 2、关闭账单存储
 
@@ -37,4 +55,3 @@
 ### 3、更换存储桶
 
 ​       合作伙伴需要更换桶，点击入口，用户重新选择桶之后，点击【保存设置】即可。历史数据保留在旧桶，新数据将在Day+1 之后写入新桶。
-
