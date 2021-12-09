@@ -55,7 +55,7 @@ System.out.println(">> pulsar client created.");
 
 - serviceUrl 即接入地址，可以在控制台 **[集群管理](https://console.cloud.tencent.com/tdmq/cluster)** 页面查看并复制。
 
-  ![](https://main.qcloudimg.com/raw/a1bbc4b3857903e04f16fc46d9194c57.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/48eade5d5d6bcb8a347e92891cc46d81.png)
 
 - token 即角色的密钥，角色密钥可以在**角色管理**中复制。
 
@@ -82,7 +82,6 @@ System.out.println(">> pulsar client created.");
 
 - serviceUrl 即接入地址，可以在控制台 **[集群管理](https://console.cloud.tencent.com/tdmq/cluster)** 接入点页面查看并复制。
 - listenerName即 “custom:” 拼接路由ID（NetModel），路由ID可以在控制台 **[集群管理](https://console.cloud.tencent.com/tdmq/cluster)** 接入点页面查看并复制。
-  ![](https://main.qcloudimg.com/raw/521d7585bb872e8150fc0277da1fe894.png)
 - token 即角色的密钥，角色密钥可以在**角色管理**中复制。
 
 
@@ -112,7 +111,7 @@ Consumer<byte[]> consumer = client.newConsumer()
  <dx-alert infotype="explain" title="">
 
 - Topic 名称需要填入完整路径，即“persistent://clusterid/namespace/Topic”，clusterid/namespace/topic 的部分可以从控制台上 **[Topic管理](https://console.cloud.tencent.com/tdmq/topic)** 页面直接复制。
-  ![](https://main.qcloudimg.com/raw/a2e32b311b825df9798b8c98df7c3416.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/72a2c6e8ddd6d7c91ed4ef2ac702f9dc.png)
 - subscriptionName需要写入订阅名，可在**消费管理**界面查看。
   </dx-alert>
 
@@ -173,9 +172,7 @@ for (int i = 0; i < 5; i++) {
 
 5. 登录 [TDMQ Pulsar 版控制台](https://console.cloud.tencent.com/tdmq)，依次点击 **Topic管理** > **Topic名称**进入消费管理页面，点开订阅名下方右三角号，可查看生产消费记录。
 
-   ![](https://main.qcloudimg.com/raw/da7ce2bc5ac606c91982efecdb3b53bb.png)
-
 6. 进入 **[消息查询](https://console.cloud.tencent.com/tdmq/message)** 页面，可查看 Demo 运行后的消息轨迹。
-   ![](https://main.qcloudimg.com/raw/d5e09b9c789749b28182b62a501797ca.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/ec34778b68aaffd9361e0c0e64ffb4b3.png)
    消息轨迹如下：
-   ![](https://main.qcloudimg.com/raw/eaa0125f6dcd7675e367c4e3e069c915.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/663b7d396dba4a9f04a9afca63156b26.png)
