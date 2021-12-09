@@ -40,19 +40,19 @@ du 명령어에는 다음과 같은 flag 옵션이 포함됩니다.
 ./coscli du cos://bucket1
 ```
 
-### bucket1의 pictrue 폴더에 있는 파일 통계 정보 나열
+### bucket1의 picture 폴더에 있는 파일 통계 정보 나열
 
 ```plaintext
-./coscli du cos://bucket1/pictrue/
+./coscli du cos://bucket1/picture/
 ```
 
-### bucket1 pictrue 폴더에 있는 모든 .mp4 형식 파일 통계 정보 나열
+### bucket1 picture 폴더에 있는 모든 .mp4 형식 파일 통계 정보 나열
 
 ```plaintext
 ./coscli du cos://bucket1/picture/ --include .*.mp4
 ```
 
-### bucket1의 pictrue 폴더에 있는 파일 중 .md 형식이 아닌 모든 파일 통계 정보 나열
+### bucket1의 picture 폴더에 있는 파일 중 .md 형식이 아닌 모든 파일 통계 정보 나열
 
 ```plaintext
 ./coscli du cos://bucket1/picture/ --exclude .*.md
