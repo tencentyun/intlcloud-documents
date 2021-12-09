@@ -1,28 +1,29 @@
 CSSの再生は、デフォルトではオリジナルのビットレートで出力されます。再生ビットレートを制限または設定したい場合は、再生ドメイン名に対してトランスコードテンプレートの関連付けを行うことができます。ここでは、再生ドメイン名におけるトランスコードテンプレートの関連付けとバインド解除の方法をご紹介します。
 
 ## 注意事項
-- テンプレート設定の完了後、約5分 ～10分経ってから有効になります。
+- テンプレート設定の完了後、約5分 - 10分経ってから有効になります。
 - トランスコードテンプレートを指定すると、バックエンドがビットレートに対応する各再生アドレスを生成し、ユーザーは選択して呼び出せるようになります。プッシュの初期解像度は、画面が引き伸ばされて変形するのを避けるため、できる限りオリジナルの比率に近づけます。
+- H.265はH.264ほどの互換性がないため、プレーヤーがH.265コードをサポートしておらず、再生に失敗した場合は、 [トランスコードテンプレート](https://intl.cloud.tencent.com/document/product/267/31071) を設定し、H.264コードにトランスコードして再生することができます。
 - 新しいビットレートのアドレスに初めてアクセスする時は、接続をトリガーした1人目のアクセスユーザーはローディング時間が幾分長いと感じてしまうかもしれませんが、正常な現象です。
-- 1つのドメイン名を複数のトランスコードテンプレートに関連付けでき、その後、再生ビットレートは、設定した該当のトランスコードテンプレートに基づきトランスコーディングを行います。
+- 1つのドメイン名を複数のトランスコードテンプレートに関連付けでき、その後、再生ビットレートは、設定した該当のトランスコードテンプレートにもとづきトランスコーディングを行います。
 - トランスコードテンプレートの設定数量の上限は**50個**です。
 
 
 
 ## 前提条件
-- [CSSコンソール](https://console.cloud.tencent.com/live)にログイン済みで、[再生ドメイン名](https://intl.cloud.tencent.com/document/product/267/35970)を追加しています。
-- [トランスコードテンプレートの作成]済み（https://intl.cloud.tencent.com/document/product/267/31071）です。
+-  [CSSコンソール](https://console.cloud.tencent.com/live)にログインし、 [再生ドメイン名](https://intl.cloud.tencent.com/document/product/267/35970)の追加が完了していること。
+- [トランスコードテンプレートの作成](https://intl.cloud.tencent.com/document/product/267/31071)が済んでいること。
 
-<span id="conect"></span>
+[](id:conect)
 ## トランスコードテンプレートの関連付け
-1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に進み、設定の必要がある**再生ドメイン名**または右側の【管理】をクリックしてドメイン名詳細ページに進みます。
+1. [【ドメイン名管理】](https://console.cloud.tencent.com/live/domainmanage)に入り、設定したい**再生ドメイン名**または右側の【管理】をクリックしてドメイン名詳細画面に入ります。
 2. 【テンプレート設定】のタブを選択し、【トランスコーディング設定】のタブ右上角の【編集】をクリックします。
 3. 個々のトランスコーディング設定テンプレートを選択し、当該ドメイン名での再生アドレスのために、テンプレート設定のエンコード方式とビットレートを指定します。
 4. 【保存】をクリックすれば完了です。
 
 ![](https://main.qcloudimg.com/raw/8ab50571f4260ba070cf3270f8487e30.png)
 
-<span id="descript"></span>
+[](id:descript)
 ## トランスコーディング再生アドレスの説明
 トランスコードテンプレート設定後、再生URLにトランスコードテンプレート名を追加する必要があり、接合方式は、**再生アドレス_トランスコードテンプレート名**です。トランスコードテンプレート名を接合しないと、再生されるのは初期のライブストリーミングのコンテンツになります。再生アドレス関連のより詳細な内容については、 [再生設定](https://intl.cloud.tencent.com/document/product/267/31058)をご参照ください。
 
@@ -35,12 +36,12 @@ http://domain/AppName/StreamName.flv?txSecret=Md5(key+<b style="color:yellow;">S
 http://domain/AppName/<b style="color:yellow;">StreamName_hd</b>.flv?txSecret=Md5(key+<b style="color:yellow;">StreamName_hd</b>+hex(time))&txTime=hex(time)
 </pre>
 
-<span id="Untie"></span>
+[](id:Untie)
 ## トランスコードテンプレートのバインド解除
-1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に進み、設定の必要がある再生ドメイン名または右側の【管理】をクリックしてドメイン名詳細ページに進みます。
+1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に入り、設定したい再生ドメイン名または右側の【管理】をクリックし、ドメイン名詳細画面に入ります。
 2. 【テンプレート設定】のタブを選択し、【トランスコーディング設定】を選択します。
 3. 右側の【編集】をクリックし、対応するテンプレートのチェックを外します。
 4. その後【保存】をクリックすれば、テンプレートとドメイン名の関連付けを取り消すことができます。
 ![](https://main.qcloudimg.com/raw/497478a836b8017c7e8be177b26af24d.png)
 
->? テンプレートを削除する必要がある場合は、テンプレートのバインドを解除してから【機能テンプレート】>[【トランスコーディング設定】](https://console.cloud.tencent.com/live/config/transcode)に入って削除操作を行います。詳細は[テンプレートの削除](https://intl.cloud.tencent.com/document/product/267/31071#delect)をご参照ください。
+>? テンプレートを削除したい場合は、テンプレートのバインド解除をした後、【機能テンプレート】>[【トランスコーディング設定】](https://console.cloud.tencent.com/live/config/transcode)に入り、削除操作を行うことができます。具体的な内容については、[テンプレートの削除](https://intl.cloud.tencent.com/document/product/267/31071#delect)をご参照ください。
