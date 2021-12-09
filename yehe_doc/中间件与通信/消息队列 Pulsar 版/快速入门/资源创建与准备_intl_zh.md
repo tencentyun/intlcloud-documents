@@ -9,16 +9,15 @@
 1. 登录 [TDMQ Pulsar 版控制台](https://console.cloud.tencent.com/tdmq)，进入**集群管理**页面，选择目标地域。
 2. 单击**新建集群**，创建一个集群。
 3. 在创建好的集群中，单击操作列的**接入地址**。
-   ![](https://main.qcloudimg.com/raw/74c431be14bdfbd512d6dbde8e982368.png) 
+   ![](https://qcloudimg.tencent-cloud.cn/raw/72d7e1f59410ced5ab00403406f29727.png) 
     接入地址获取方式如下：
    <dx-tabs>
    ::: 2.7.1及以上版本集群
    直接获取接入地址，如下图。
-      ![](https://main.qcloudimg.com/raw/323db7e343dfd820a80f8068985d9393.png)
+      ![](https://qcloudimg.tencent-cloud.cn/raw/cba9bfef826619335cf9ba9c4c8b0e5a.png)
    :::
    ::: 2.6.1版本集群
-   在接入点列表页，单击**新建**，新建一个 VPC 接入点（和运行客户端的资源所在 VPC 一致即可），创建后如下图。
-      ![](https://main.qcloudimg.com/raw/d6e44a3cc132a0a951e5935061b5354c.png)
+   在接入点列表页，单击**新建**，新建一个 VPC 接入点（和运行客户端的资源所在 VPC 一致即可）。
    :::
    </dx-tabs>
 
@@ -30,7 +29,7 @@
 
 在 TDMQ Pulsar 版控制台的 **[命名空间](https://console.cloud.tencent.com/tdmq/env)** 页面，选择地域和刚刚创建好的集群，单击**新建**，创建一个命名空间。
 
-![](https://main.qcloudimg.com/raw/e4edc6753135f858552e0020be0b58a8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9f9eefdc535750ff0bca2d7720fcb5b1.png)
 
 ### 步骤三：创建角色并授权
 
@@ -38,15 +37,13 @@
 2. 填写角色名称和说明，单击**提交**完成角色创建。
 3. 进入 **[命名空间](https://console.cloud.tencent.com/tdmq/env)** 页面，在刚刚创建的命名空间中，单击操作列的**配置权限**进入命名空间的权限列表。
 4. 在配置权限页面，单击**添加角色**，将刚刚创建的角色添加进来，分配生产和消费的权限。
-   ![](https://main.qcloudimg.com/raw/f74b130a8dbf7f356f6ce67d879535a5.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/2ff48a2715937e0436c101e4f631be95.png)
 5. 看到下图即代表配置成功。
-   ![](https://main.qcloudimg.com/raw/0ba59291ffbd7275f148bbaaa1e2b458.png)
-
-
+   ![](https://qcloudimg.tencent-cloud.cn/raw/4b756a7bf60bb50036805b9890fa4b1d.png)
 
 ### 步骤四：创建 Topic 和订阅关系
 
 1. 在 **[Topic管理](https://console.cloud.tencent.com/tdmq/topic)** 页面，选择目标地域、当前集群和命名空间，单击**新建**，创建一个Topic。
 2. 单击操作列的**新增订阅**，为刚刚新建好的 Topic 创建一个订阅关系。
 3. 单击操作列的**更多**>**查看订阅**，可看到刚刚创建好的订阅。
-   ![](https://main.qcloudimg.com/raw/25b5d9e9baf6ef2ffed462edd6f1c210.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/cbab46518844a44584530d2536d16ff6.png)
