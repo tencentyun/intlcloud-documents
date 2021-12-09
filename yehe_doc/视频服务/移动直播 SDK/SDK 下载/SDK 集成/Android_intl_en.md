@@ -1,5 +1,5 @@
 
-This document describes how to quickly integrate LiteAVSDK for Android into your project. The directions below use the full-featured [LiteAV_All](https://intl.cloud.tencent.com/document/product/1071/38150) as an example.
+This document describes how to quickly integrate Tencent Cloud LiteAVSDK for Android into your project.
 
 ## Environment Requirements
 - Android Studio 2.0 or above
@@ -11,14 +11,14 @@ You can use Gradle to automatically load the AAR file or manually download the A
 ### Method 1: automatic loading (AAR)
 Since JCenter has been deprecated, you can configure a Maven Central repository in Gradle to automatically download and update LiteAVSDK.
 Open your project with Android Studio and modify the `build.gradle` file as described below to complete the integration.
-![](https://main.qcloudimg.com/raw/2ca6cc6e3f00dc9fdb2d89982861f3ea.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/288cbffd943bd8c03c3863980cf00455.png)
 
 1. Open `build.gradle` under your application.
 2. Add the LiteAVSDK dependency to `dependencies`.
 <dx-codeblock>
 :::  jar
 dependencies {
-	implementation 'com.tencent.liteav:LiteAVSDK_Professional:latest.release'
+	implementation 'com.tencent.liteav:LiteAVSDK_International:latest.release'
 }
 ::: 
 </dx-codeblock>
@@ -26,7 +26,7 @@ Or
 <dx-codeblock>
 :::  jar
 dependencies {
-	implementation 'com.tencent.liteav:LiteAVSDK_Professional:latest.release@aar'
+	implementation 'com.tencent.liteav:LiteAVSDK_International:latest.release@aar'
 }
 ::: 
 </dx-codeblock>
@@ -45,15 +45,15 @@ defaultConfig {
 ### Method 2: manual download (AAR)
 If you have problem accessing Maven Central, you can manually download the SDK and integrate it into your project.
 
-1. Download [LiveAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) and decompress the file.
+1. Download [LiteAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) and decompress the file.
 2. Copy the AAR file in the SDK directory to the **app/libs** directory of your project.
-    ![](https://main.qcloudimg.com/raw/09ee3b005ff8d4ef33bafb6ce3135239.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/32b42946b8240fa3c2b4066091a6bc1c.png)
 3. Add **flatDir** to `build.gradle` under your project’s root directory to specify the local path for the repository.
     ![](https://main.qcloudimg.com/raw/726771558714a2b4fae8dc1a59c33ffc.png) 
 4. Add the LiteAVSDK dependency and, in `app/build.gradle`, add code that references the AAR file.
-    ![](https://main.qcloudimg.com/raw/224f40522354b0fe8de1bd1680cb54e0.jpg)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/ad7f3e2ce465c7d47f7d71f020cb02a2.png)
 ```
-implementation(name:'LiteAVSDK_Professional_8.7.10102', ext:'aar')
+implementation(name:'LiteAVSDK_International_8.7.10102', ext:'aar')
 ```
 5. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application. Currently, LiteAVSDK supports armeabi, armeabi-v7a, and arm64-v8a.
 ```
@@ -68,7 +68,7 @@ defaultConfig {
 ## Integrating the SDK (JAR)
 If you do not want to import the AAR library, you can also integrate LiteAVSDK by importing JAR and SO libraries.
 
-1. Download [LiveAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) and decompress the file. In the SDK directory, find `LiteAVSDK_Professional_xxx.zip` (`xxx` indicates the version number of LiteAVSDK).
+1. Download [LiteAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) and decompress the file. In the SDK directory, find `LiteAVSDK_International_xxx.zip` (`xxx` indicates the version number of LiteAVSDK).
     ![](https://main.qcloudimg.com/raw/aae5879bccd31e8c082eebc24aa4ff7c.png)
     Decompress the file, and you will find a `libs` directory that contains a JAR file and several SO folders, as shown below:
     ![](https://main.qcloudimg.com/raw/e916aaddf844785991dc25f78776d773.png)
@@ -134,10 +134,9 @@ Configure permissions for your application in `AndroidManifest.xml`. LiteAVSDK n
 
 ## Configuring License
 
-Click [Get License](https://console.cloud.tencent.com/live/license) to obtain a trial license. For more information, please see [Applying for a Trial License](https://intl.cloud.tencent.com/document/product/1071/38546). You will get two strings: a license URL and a decryption key.
+Log in to the CSS console, go to **MLVB SDK** > **[License Management](https://console.intl.cloud.tencent.com/live/license)**, and click **Get License** to obtain a trial license. For detailed directions, see [Applying for trial license](https://intl.cloud.tencent.com/document/product/1071/38546). You will get two strings: a license URL and a decryption key.
 
-Before you use the features of MLVB Enterprise Edition in your application, complete the following configurations (preferably in the application class).
-
+Before you use LiteAVSDK features in your application, complete the following configurations (preferably in the application class).
 
 <dx-codeblock>
 ::: java java
@@ -160,14 +159,3 @@ In the `proguard-rules.pro` file, add LiteAVSDK classes to the "do not obfuscate
 ```
 -keep class com.tencent.** { *;}
 ```
-
-[](id:faq)
-## FAQs
-### 1. What should I do if my application crashes when I use the screen recording/sharing feature of LiteAVSDK for Android?
-Check your project’s `targetSdkVersion`. If it is set to `29`, a crash will occur when the screen recording/sharing feature is used on devices with Android 10. This is because Android has changed its privacy policy. The solution to this issue is to start a foreground service and setting `type` to `mediaProjection`. You don’t need to call `startScreenCapture` in the service.
-
-### 2. What should I do if a duplicate symbol error occurs because my project integrates multiple editions of LiteAVSDK such as MLVB, TRTC, and Player?
-If you integrate two or more editions of LiteAVSDK (MLVB, Player, TRTC, UGC), a library conflict error will occur when you build your project. This is because some symbol files are shared among the underlying libraries of the SDKs. To solve the problem, we recommend you integrate LiteAV_All or LiteAV_Enterprise, which includes the features of MLVB, Player, TRTC, and UGC. For details, please see [SDK Download](https://intl.cloud.tencent.com/document/product/1071/38150).
-
-
-

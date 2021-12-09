@@ -1,46 +1,34 @@
-### SDK Download
-<h2 id="Smart">MLVB Basic Edition SDK</h2>
-The Mobile Live Video Broadcasting (MLVB) basic edition has two major features, live stream push (`V2TXLivePusher`) and live stream playback (`V2TXLivePlayer`). It has a small library size, enabling you to launch live streaming services on mobile clients efficiently. The following table describes the download addresses of the iOS and Android installation packages.
+We offer the MLVB International SDK for users outside the Chinese mainland. To learn about its features and the license required to use it, see [Features](https://intl.cloud.tencent.com/document/product/1071/38149).
+
+
+<h2 id="International">MLVB International</h2>
+MLVB International integrates multiple core audio/video features of Tencent Cloud, including MLVB, [TRTC](https://intl.cloud.tencent.com/product/trtc), live publishing/playback, and basic filters.
 
 <table>
    <tr>
       <th width="0px" style="text-align:center">Platform</td>
-      <th width="0px" style="text-align:center">ZIP Package</td>
-      <th width="0px" style="text-align:center">SDK Integration Guide</td>
+      <th width="0px" style="text-align:center">ZIP File</td>
       <th width="0px" style="text-align:center">64-bit Support</td>
-      <th width="0px" style="text-align:center">Installation Package Library Size</td>
+      <th width="0px" style="text-align:center">Increase Installation Package By</td>
+      <th width="0px" style="text-align:center">Downsizing Installation Package</td>
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_ios_smart") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_International_iOS_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38155">DOC</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_ios_international") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_International_iOS_latest.zip">Download</a></td>
       <td style="text-align:center">Yes</td>
-      <td style="text-align:center">1.27 MB (arm64)</td>
+      <td style="text-align:center">4.08 MB (arm64)</td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35165">Document</a></td>
    </tr>
-     <tr>
+   <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_android_smart") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_International_Android_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38156">DOC</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_android_international") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_International_Android_latest.zip">Download</a></td>
       <td style="text-align:center">Yes</td>
-      <td style="text-align:center">jar: 1.5 MB <br> so (armeabi): 4.4 MB <br>so (armeabi-v7a): 4.1 MB <br>so (arm64-v8a): 4.9 MB</td>
+      <td style="text-align:center">jar: 1.5 MB<br> so (armeabi): 6.5 MB<br> so (armv7): 6.1 MB<br>so (arm64): 7.3 MB</td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35165">Document</a></td>
    </tr>
 </table>
 
-
->!please purchase MLVB basic edition license to activate the service. For pricing information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1071/38114).
-
-
-
-<script>
-  var _mtac = {"senseHash":0};
-  (function() {
-    var mta = document.createElement("script");
-    mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
-    mta.setAttribute("name", "MTAH5");
-    mta.setAttribute("sid", "500695331");
-    mta.setAttribute("cid", "500695332");
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(mta, s);
-  })();
-</script>
+>? Different authorization is required to use different features of MLVB International:
+>- To use MLVB features, you must purchase an [MLVB International license](https://intl.cloud.tencent.com/document/product/1071/38114).
+>- To use TRTC features, you must purchase a [TRTC package](https://intl.cloud.tencent.com/document/product/647/34610).
 
