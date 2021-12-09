@@ -15,7 +15,7 @@ To support video playback permission control, Tencent Cloud VOD has launched a h
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod) and click **Distribution and Playback** > **Domain Name** on the left sidebar.
 2. Click **Settings** in the row of the target domain name to enter the configuration page.
 3. Click **Access Control**, and then toggle **Key Hotlink Protection** on or off.	If you enable it, configure as follows:
- Click **Generate Random Key** and the system will automatically generate a hotlink protection key.
+   Click **Generate Random Key** and the system will automatically generate a hotlink protection key.
 4. Click **OK** to save the configuration.
 
 >? For more information, please see [Key Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/33986).
