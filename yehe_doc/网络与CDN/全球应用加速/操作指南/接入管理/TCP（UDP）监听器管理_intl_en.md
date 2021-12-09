@@ -27,8 +27,8 @@
    
       - Response Timeout: origin server response timeout period.
       - Health Check Interval: the interval between two consecutive health checks.
-      - Unhealthy Threshold: it indicates the number of consecutive failed checks performed by the monitor before the origin server is deemed unhealthy. If an origin server is deemed unhealthy during a health check, no more data packets will be forwarded to it until it returns to normal status. 
-      - Healthy Threshold: it indicates the number of consecutive successful checks performed by the monitor before the origin server is deemed healthy. If an origin server is deemed healthy during a health check, data packets will be forwarded to it again.
+      - Unhealthy Threshold: it indicates the number of consecutive failed checks performed by the monitor before the origin server is considered unhealthy. If an origin server is considered unhealthy during a health check, no more data packets will be forwarded to it until it returns to normal status. 
+      - Healthy Threshold: it indicates the number of consecutive successful checks performed by the monitor before the origin server is considered healthy. If an origin server is considered healthy during a health check, data packets will be forwarded to it again.
 4. Choose whether to enable session persistence.
    ![](https://qcloudimg.tencent-cloud.cn/raw/e2ee5834fc04cb1ef2d5ebda205a4193.png)
    
@@ -46,11 +46,11 @@ Click the **TCP/UDP Listener Management** tab and click **Settings** in the **Op
 ![](https://qcloudimg.tencent-cloud.cn/raw/2db94f9d3b3aae697dcfbb719fc44f40.png)
 2. Select an origin server and configure an origin-pull port.
    - If primary/secondary RR is enabled for a listener, you need to set the **Primary Origin Server** and **Secondary Origin Server** on the **Bind Origin Server** page.
-   - If you want to set the ports of multiple origin servers, you can use the **Cover Port/Complement Port** features in the top-right corner. Regardless of the origin server ports you previously set, the **Cover Port** feature will set the destination origin servers you select to the port number you entered. If no port has been set for any of the selected destination origin servers, you can use the **Complement Port** feature for unified setting to reduce the repetitive workload.
+   - If you want to set the ports of multiple origin servers, you can use the **Cover Port/Complement Port** features in the top-right corner. Regardless of the origin server ports you previously set, the **Cover Port** feature will set the destination origin servers you select to the port number you entered. If no port has been set for any of the selected destination origin servers, you can use the **Complement Port** feature for a unified setting to reduce the repetitive workload.
    - If the listener policy is **Weighted RR**, you can set the weight (1–100) of an origin server when binding it. The origin server is scheduled based on the ratio of its weight to the total weight. For example, if the weight of origin server 1 is 60 and that of origin server 2 is 80, then the scheduling ratio will be 60/(60 + 80) = 42.8% for origin server 1 or 57.2% for origin server 2.
      ![](https://qcloudimg.tencent-cloud.cn/raw/d278faea3ac7a20e8a41b0a6f4dedbb0.png)
-   - If enabled, health check will start when the origin server is bound. You can determine whether the origin server is normal by checking the listener status. An acceleration connection will only forward packets to origin servers in normal status. Packets will not be forwarded to exceptional origin servers until they return to normal status during health check.
-   - If you don't enable health check, or if you use a UDP listener, the acceleration connection will always forward packets regardless of the status of the origin server.
+   - If enabled, a health check will start when the origin server is bound. You can determine whether the origin server is normal by checking the listener status. An acceleration connection will only forward packets to origin servers in normal status. Packets will not be forwarded to exceptional origin servers until they return to normal status during the health check.
+   - If you don't enable the health check, or if you use a UDP listener, the acceleration connection will always forward packets regardless of the status of the origin server.
      ![](https://qcloudimg.tencent-cloud.cn/raw/ed13a74bd6a1187caeb2969f4f471ade.png)
 3. Confirm the configuration.
    After completing the origin server configuration, click **Next** to enter the configuration confirmation page, where you can view the currently configured connection information and listener details.
