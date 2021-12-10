@@ -33,7 +33,7 @@ Consumer consumer = client.newConsumer()
 此时，`topic1` 对 `sub1` 的订阅就形成了带有重试机制的投递模式，`sub1` 会自动订阅之前在新建订阅时自动创建的重试 Topic 中（可以在控制台 Topic 列表中找到）。当 `topic1` 中的消息投递第一次未收到消费端 ACK 时，这条消息就会被自动投递到重试 Topic ，并且由于 consumer 自动订阅了这个主题，后续这条消息会在一定的 [重试规则](#重试规则)下重新被消费。当达到最大重试次数后仍失败，消息会被投递到对应的死信队列，等待人工处理。
 
 >?如果是 client 端自动创建的订阅，可以通过控制台上的 **[Topic管理](https://console.cloud.tencent.com/tdmq/topic)** > **更多** > **查看订阅**进入消费管理页面手动重建重试和死信队列。
->![](https://main.qcloudimg.com/raw/e3be15e635e7f59972c40333cf06d279.png)
+>![](https://qcloudimg.tencent-cloud.cn/raw/3392efec6a06176c639fa387a8fc5ba3.png)
 
 ### 自定义参数设置
 
@@ -85,7 +85,7 @@ Consumer<byte[]> consumer = pulsarClient.newConsumer()
 - **第一种：指定任意延迟时间**。第二个参数填写延迟时间，第三个参数指定时间单位。延迟时间和延时消息的取值范围一致，范围在1 - 864000（单位：秒）。
 
 - **第二种：指定任意延迟等级（仅限存量腾讯云版SDK的用户使用）**。实现效果和第一种基本一致，更方便统一管理分布式系统中的延时时长，延迟等级说明如下：
-  1. ```reconsumeLater(msg, 1)```中的第二个参数即为消息等级
+  1. `reconsumeLater(msg, 1)`中的第二个参数即为消息等级
   2. 默认`MESSAGE_DELAYLEVEL = "1s 5s 10s 30s 1m 2m 3m 4m 5m 6m 7m 8m 9m 10m 20m 30m 1h 2h"`，这个常数决定了每级对应的延时时间，例如1级对应1s，3级对应10s。如果默认值不符合实际业务需求，用户可以重新自定义。
 
 - **第三种：等级递增（仅限存量腾讯云版SDK的用户使用）**。实现的效果不同于以上两种，为退避式的重试，即第一次失败后重试间隔为1秒，第二次失败后重试间隔为5秒，以此类推，次数越多，间隔时间越长。具体时间间隔同样由第二种中介绍的 `MESSAGE_DELAYLEVEL` 决定。
