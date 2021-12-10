@@ -14,7 +14,7 @@
 > - 当前集群存在多个版本，详细说明请参考 [集群版本说明](https://intl.cloud.tencent.com/document/product/1110/42898)。
 
 **TDMQ Pulsar 版资源层次关系**
-![](https://main.qcloudimg.com/raw/2eda2b733b46ee82bba9a4a3a7a77e9e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/af334efc11f390763e0b979a7e90acd3.png)
 
 
 
@@ -28,7 +28,7 @@
    - 集群名称：设置环境的名称（创建后不可修改），不能超过64个字符，只能包含字母、数字、“-”及“_”。
    - 说明：环境设置的备注说明，不能超过200个字符。
 4. 单击**确定**完成所在地域环境的创建。
-   ![](https://main.qcloudimg.com/raw/cc03568a28f068bbf9fa2c10b4fe2c62.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/f689b91b002442c37cb6fa3e1f9cc5c1.png)
 
 > ?
 > - 每个用户最多可以创建5个虚拟集群。
@@ -61,7 +61,7 @@
 | 消息保留时间                  | 消息保留可配置的最长时间，在命名空间级别可以配置比这个更短的时间 |
 | 最大存储容量                  | 消息堆积消耗磁盘的最大容量，超过会禁止新消息的生产（正常情况下，消息堆积不应该太大，如发生此类情况请检查业务是否在正常消费消息） |
 
-![](https://main.qcloudimg.com/raw/5827b992b87fcd40a7fce94699b8815d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4c16ad325eb626387bf35e836af7fbe6.png)
 
 
 
@@ -72,7 +72,7 @@
 <dx-tabs>
 ::: 2.7.1及以上版本集群
 可直接获取接入地址，如下图。
-	![](https://main.qcloudimg.com/raw/055f727048341630b27b8382fca94cc1.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/611474fd348337c008d5b8ef6630d44b.png)
 :::
 ::: 2.6.1版本集群
 在接入点列表页，单击**新建**，填写接入点信息，完成接入点配置。
