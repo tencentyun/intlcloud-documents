@@ -9,7 +9,7 @@ Ledgers and entries correspond to different metadata respectively.
 - The metadata of ledgers is stored in ZooKeeper.
 - In addition to message data, entries also contain metadata. The data of entries is stored on the bookie nodes.
 
-![](https://main.qcloudimg.com/raw/fee2f4130655c879d9cf47d084e76d8e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/796ec12a3f05621df6da5af715a83877.svg)
 
 <table>
 <tr>
