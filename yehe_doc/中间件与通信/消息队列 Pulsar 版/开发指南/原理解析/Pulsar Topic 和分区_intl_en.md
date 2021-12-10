@@ -2,7 +2,7 @@
 
 Apache Pulsar is a messaging system built on the publish-subscribe pattern, which consists of broker, Apache BookKeeper, producer, consumer, and other components.
 
-![](https://main.qcloudimg.com/raw/f71d23920b92ca8b093cd22ae21913a4.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/b538fed55e55478345e6b7721d909e0c.svg)
 
 - Producer: message producer, which is responsible for publishing messages to topics.
 - Consumer: message consumer, which is responsible for subscribing to messages from topics.
@@ -28,7 +28,7 @@ As shown below, data in the `Topic1-Part2` partition consists of N segments, eac
 
 Logical partitions and physical partitions are compared as follows:
 
-![](https://main.qcloudimg.com/raw/8fa46c108d316e3cc3bf299b0be7e775.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/18fdf7369f8471797e3863bdd21e19d2.svg)
 
 **Physical partition:** computing and storage are coupled, fault tolerance requires copying physical partitions, and capacity expansion requires migrating physical partitions to implement load balancing.
 
