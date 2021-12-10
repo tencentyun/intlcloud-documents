@@ -2,7 +2,7 @@
 
 Apache Pulsar 是一个发布-订阅模型的消息系统，由 Broker、Apache BookKeeper、Producer、Consumer 等组件组成。
 
-![](https://main.qcloudimg.com/raw/f71d23920b92ca8b093cd22ae21913a4.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/b538fed55e55478345e6b7721d909e0c.svg)
 
 - Producer ： 消息的生产者，负责发布消息到 Topic。
 - Consumer：消息的消费者，负责从 Topic 订阅消息。
@@ -28,7 +28,7 @@ Pulsar 的 Topic 分为 Partitioned Topic 和 Non-Partitioned Topic 两类，Non
 
 逻辑分区和物理分区对比如下：
 
-![](https://main.qcloudimg.com/raw/8fa46c108d316e3cc3bf299b0be7e775.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/18fdf7369f8471797e3863bdd21e19d2.svg)
 
 **物理分区：**计算与存储耦合，容错需要拷贝物理分区，扩容需要迁移物理分区来达到负载均衡。
 
