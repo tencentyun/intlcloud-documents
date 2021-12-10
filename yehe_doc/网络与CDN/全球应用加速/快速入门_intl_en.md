@@ -10,7 +10,7 @@
 
 ## Step 2. Create an acceleration connection
 
-1. Click **Access Management** > **Create**.
+1. Click **Access Management** > **Add**.
 ![](https://main.qcloudimg.com/raw/5f424ce7a93036ad42f1adb174bdffbc.png)
 2. In the **Add a connection** window, enter the acceleration connection information.
 ![](https://main.qcloudimg.com/raw/e2c839706090fbce1d01d7ecae40310c.png)
@@ -24,7 +24,7 @@
 
 ## Step 3. Create a listener
 
-1. Select the **TCP/UDP Listener Management** tab, click **Create**, and add a forwarding policy in the pop-up window.
+1. Select the **TCP/UDP Listener Management** tab, click **Add**, and add a forwarding policy in the pop-up window.
 2. Configure the listener information (with TCP as an example) to set the mapping between the acceleration protocol and the listening port. You can map multiple listening ports at a time, but they must be unique.
 	- Listening Port: the access port of the accelerated connection VIP.
 <img src="https://main.qcloudimg.com/raw/e81e6cf664c72dfd4dea36714e0e5197.png" width="80%">
@@ -44,7 +44,7 @@
 ## Step 4. Bind the origin server
 
 1. Select a listener and click **Bind Origin Server** in the **Operation** column.
-2. Add all origin servers to be bound in the list on the left to the box on the right and then enter the origin server port number.
+2. Tick desired origins in the left list, and enter their port numbers.
 ![](https://main.qcloudimg.com/raw/7fd67c2a72a2c57d2c626596ce74cf4d.png)
 
 ## Step 5. Use the acceleration connection
