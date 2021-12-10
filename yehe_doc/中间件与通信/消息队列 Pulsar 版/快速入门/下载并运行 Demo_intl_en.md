@@ -32,7 +32,7 @@ This document describes how to download the demo, perform a simple test, and run
 
    **Create a client**	 
 <dx-tabs>
-::: Access sample for cluster on v2.7.1 or above
+::: Access\ssample\sfor\scluster\son\sv2.7.1\sor\sabove
 <dx-codeblock>
 
 :::  java
@@ -55,7 +55,7 @@ System.out.println(">> pulsar client created.");
 
 - `serviceUrl` is the access address, which can be viewed and copied on the **[Cluster Management](https://console.cloud.tencent.com/tdmq/cluster)** page in the console.
 
-  ![](https://main.qcloudimg.com/raw/a1bbc4b3857903e04f16fc46d9194c57.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/48eade5d5d6bcb8a347e92891cc46d81.png)
 
 - `token` is the role token, which can be copied on the **Role Management** page.
 
@@ -64,7 +64,7 @@ Token leakage may lead to data leakage; therefore, you should keep your token co
 </dx-alert>
 
 :::
-::: Access sample for cluster on v2.6.1
+::: Access\ssample\sfor\scluster\son\sv2.6.1
 
 <dx-codeblock>
 
@@ -82,7 +82,6 @@ System.out.println(">> pulsar client created.");
 
 - `serviceUrl` is the access address, which can be viewed and copied on the **[Cluster Management](https://console.cloud.tencent.com/tdmq/cluster)** page in the console.
 - `listenerName` is the `custom:` plus the route ID (NetModel), which can be viewed and copied on the **[Cluster Management](https://console.cloud.tencent.com/tdmq/cluster)** page in the console.
-  ![](https://main.qcloudimg.com/raw/521d7585bb872e8150fc0277da1fe894.png)
 - `token` is the role token, which can be copied on the **Role Management** page.
 
 
@@ -112,7 +111,7 @@ Consumer<byte[]> consumer = client.newConsumer()
  <dx-alert infotype="explain" title="">
 
 - You need to enter the complete path of the topic name, i.e., `persistent://clusterid/namespace/Topic`, where the `clusterid/namespace/topic` part can be copied directly from the **[Topic Management](https://console.cloud.tencent.com/tdmq/topic)** page in the console.
-  ![](https://main.qcloudimg.com/raw/a2e32b311b825df9798b8c98df7c3416.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/72a2c6e8ddd6d7c91ed4ef2ac702f9dc.png)
 - You need to enter the subscription name in the `subscriptionName` parameter, which can be viewed on the **Consumption Management** page.
   </dx-alert>
 
@@ -173,9 +172,7 @@ for (int i = 0; i < 5; i++) {
 
 5. Log in to the [TDMQ for Pulsar console](https://console.cloud.tencent.com/tdmq), click **Topic Management** > **Topic Name** to enter the **Consumption Management** page, and click the triangle below a subscription name to view the production and consumption records.
 
-   ![](https://main.qcloudimg.com/raw/da7ce2bc5ac606c91982efecdb3b53bb.png)
-
 6. Enter the **[Message Query](https://console.cloud.tencent.com/tdmq/message)** page to view the message trace after running the demo.
-   ![](https://main.qcloudimg.com/raw/d5e09b9c789749b28182b62a501797ca.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/ec34778b68aaffd9361e0c0e64ffb4b3.png)
    The message trace is as follows:
-   ![](https://main.qcloudimg.com/raw/eaa0125f6dcd7675e367c4e3e069c915.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/663b7d396dba4a9f04a9afca63156b26.png)
