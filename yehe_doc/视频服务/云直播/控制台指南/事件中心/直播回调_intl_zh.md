@@ -22,12 +22,10 @@
 
 
 
-<span id="Callback"></span>
-## 创建回调模板
-
+## 创建回调模板[](id:Callback)
 1. 登录 [云直播控制台](https://console.cloud.tencent.com/live)。
-2. 在左侧菜单栏选择【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)。
-3. 单击【创建回调模板】，在回调设置弹框中填写完成回调信息，单击【保存】即可。
+2. 在左侧菜单栏选择**事件中心**>[**直播回调**](https://console.cloud.tencent.com/live/config/callback)。
+3. 单击**创建回调模板**，在直播回调新建模板中填写回调信息，选择回调类型并填写回调地址，可多选。单击**保存**即可。
 ![](https://main.qcloudimg.com/raw/e79b06c3fecbfaa34d124f820e10ff2c.png)
 <table>
 <thead><tr><th width="17%">配置项</th><th>说明</th></tr></thead><tbody><tr>
@@ -41,40 +39,40 @@
 <td>自定义回调密钥。<br>字符由大小写字母及数字组成的，最多32个字符。相关使用请参见 <a href="https://intl.cloud.tencent.com/document/product/267/38081#.E5.9B.9E.E8.B0.83.E5.85.AC.E5.85.B1.E5.8F.82.E6.95.B0">事件消息通知公共参数</a>。</td>
 </tr><tr>
 <td>推流回调</td>
-<td>填写用来接收推流回调事件的路径，可支持协议头：http、https 等。</td>
+<td>填写用来接收推流回调事件的路径，可支持协议头：HTTP、HTTPS 等。</td>
 </tr><tr>
 <td>断流回调</td>
-<td>填写用来接收断流回调事件的路径，可支持协议头：http、https 等。</td>
+<td>填写用来接收断流回调事件的路径，可支持协议头：HTTP、HTTPS 等。</td>
 </tr><tr>
 <td>录制回调</td>
-<td>填写用来接收录制回调事件的路径，可支持协议头：http、https 等。</td>
+<td>填写用来接收录制回调事件的路径，可支持协议头：HTTP、HTTPS 等。</td>
 </tr><tr>
 <td>截图回调</td>
-<td>填写用来接收截图回调事件的路径，可支持协议头：http、https 等。</td>
+<td>填写用来接收截图回调事件的路径，可支持协议头：HTTP、HTTPS 等。</td>
 </tr><tr>
 <td>截图鉴黄回调</td>
-<td>填写用来接收截图鉴黄回调事件的路径，可支持协议头：http、https 等。</td>
+<td>填写用来接收截图鉴黄回调事件的路径，可支持协议头：HTTP、HTTPS 等。</td>
 </tr>
 </tbody></table>
 
 
-<span id="change"></span>
-## 修改模板
 
-1. 进入【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)。
-2. 选择您已创建成功的回调配置模板，并单击右侧的【编辑】，即可进入修改模板信息。
-3. 单击【保存】即可。
+## 修改模板[](id:change)
+
+1. 进入**事件中心**>[**直播回调**](https://console.cloud.tencent.com/live/config/callback)。
+2. 选择您已创建成功的回调配置模板，并单击右侧的**编辑**，即可进入修改模板信息。
+3. 单击**保存**即可。
 
 ![](https://main.qcloudimg.com/raw/885d9f6ec5ee5b921865cba965068de0.jpg)
 
-<span id="delete"></span>
-## 删除模板
+
+## 删除模板[](id:delete)
 
 若模板已被关联，需要先解绑模板，才可以进行删除操作，具体解绑操作请参见 [解绑回调配置](https://intl.cloud.tencent.com/document/product/267/31065#untie)。
 
-1. 进入【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)。
-2. 选择您已创建成功的回调配置模板，单击右侧的【删除】。
-3. 确认是否删除当前截图鉴黄配置模板，单击【确定】即可成功删除。
+1. 进入**事件中心**>[**直播回调**](https://console.cloud.tencent.com/live/config/callback)。
+2. 选择您已创建成功的回调配置模板，单击右侧的**删除**。
+3. 确认是否删除当前截图鉴黄配置模板，单击**确定**即可成功删除。
 
 ![](https://main.qcloudimg.com/raw/1bf90e6b3197dd2e18aff8c52cbe331c.jpg)
 

@@ -1,4 +1,5 @@
 TXLivePusher 推流 SDK 主要用于视频云的快直播（超低延迟直播）推流，负责将浏览器采集的音视频画面通过 WebRTC 推送到直播服务器。目前支持摄像头推流、屏幕录制推流和本地媒体文件推流。
+>! 使用 WebRTC 协议推流，每个推流域名默认限制**100路并发**推流数，如您需要超过此推流限制，可通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 的方式联系我们进行申请。
 
 ## 基础知识
 
@@ -85,7 +86,6 @@ livePusher.startMicrophone();
 livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx');
 ```
 >?推流之前要保证已经采集到了音视频流，否则推流接口会调用失败，如果要实现采集到音视频流之后自动推流，可以通过回调事件通知，当收到采集首帧成功的通知后，再进行推流。如果同时采集了视频流和音频流，需要在视频首帧和音频首帧的采集成功回调通知都收到后再发起推流。
-
 ```javascript
 var hasVideo = false;
 var hasAudio = false;
@@ -107,7 +107,6 @@ livePusher.setObserver({
 		}
 });
 ```
-
 </dx-codeblock>
 6. **停止快直播推流：**
 ```javascript
@@ -145,7 +144,7 @@ TXLivePusher.checkSupport().then(function(data) {
 </dx-codeblock>
 
 ### 回调事件通知
-SDK 目前提供了回调事件通知，可以通过设置 Observer 来了解 SDK 内部的状态信息和 WebRTC 相关的数据统计。具体内容请参见 [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/41272)。
+SDK 目前提供了回调事件通知，可以通过设置 Observer 来了解 SDK 内部的状态信息和 WebRTC 相关的数据统计。具体内容请参见 [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/42709)。
 <dx-codeblock>
 ::: javascript javascript
 livePusher.setObserver({
@@ -181,8 +180,6 @@ deviceManager.getDevicesList().then(function(data) {
 deviceManager.switchCamera('camera_device_id');
 :::
 </dx-codeblock>
-
-
 
 
 
