@@ -1,18 +1,18 @@
-CSS porn detection takes real-time screenshots of suspiciously pornographic video images in live streams and stores them in COS. The porn detection callback is used to push the information of detected pornographic images, including their type, score, and screenshot time. You need to configure the server address for receiving porn detection callback messages in the callback template and bind the template to the push domain name. When a porn detection event is triggered by a live stream, the Tencent Cloud CSS backend will call back the pornographic image information to the configured receiving server.
+Live porn detection takes real-time screenshots of suspiciously porn video images in live streams and stores them in COS. The porn detection callback is used to push the information of detected porn images, including their types, scores, and screenshot time points. You need to configure the server address for receiving porn detection callback messages in the callback template and bind the template to the push domain name. When a porn detection event is triggered by a live stream, the Tencent Cloud CSS backend will call back the porn image information to the configured receiving server.
 
-This document describes the fields in callback message notifications sent by Tencent Cloud CSS after a porn detection callback event is triggered.
+This document describes the parameters in callback message notifications sent by Tencent Cloud CSS after a porn detection callback event is triggered.
 
-## Note
+## Notes
 - You need to understand how to configure callbacks and how you will receive messages via Tencent Cloud CSS before reading this document. For more information, see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080).
 - By default, only questionable results of porn detection will be called back.
-- We recommend you use the `[type](#type)` of an image to determine whether it is pornographic. As the detection results are not 100% accurate and there may be false positives or false negatives, you can confirm them manually if necessary.
+- We recommend you use the `label` of an image to determine whether it is pornographic. As the detection results are not 100% accurate and there may be false positives or false negatives, you can confirm them manually if necessary.
 
 ## Screencapturing Event Parameters
 ### Event type parameters
 
 | Event Type | Parameter Value           |
 | :------- | :------------- |
-| CSS porn detection | event_type = 317 |
+| Live porn detection | event_type = 317 |
 
 
 ### Common callback parameters
@@ -30,155 +30,156 @@ This document describes the fields in callback message notifications sent by Ten
 </tr></table>
 
 >? [](id:key)`key` is the callback key in **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. We recommend filling in this field to ensure data security.
+
 ![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 
 
 
 ### Callback message parameters
-| Parameter | Required | Data Type | Description |
+| Parameter       | Required | Data Type | Description    |
 | ---------- | ---------- | ---------- | --------------------------- |
-| streamId       | No         | String       | Stream name                                       |
+| streamId       | No         | String       | Stream name    |
 | channelId | No | String | Channel ID |
-| img | Yes | String | Link to the alerted image |
-| type | Yes | Array | Returns the **maliciousness label with the highest priority** in the detection result (labelResults), which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: <ul style="margin:0"><li/>0: normal<li/>1: pornographic<li/>6: abusive<li/>8: advertising<li/>2–5 and 7: other offensive, unsafe, or inappropriate types of content</ul> |
-| score | Yes | Array | The score of `type` |
-| hotScore    | Yes         | Number       | The score for a sexy image                                       |
-| pornScore    | Yes         | Number       | The score for a porn image                                         |
-| illegalScore   | Yes | Number       | The score for an image with illegal content    |
-| polityScore    | Yes | Number       | The score for an image with politically sensitive content                                        |
-| terrorScore    | Yes | Number       | The score for an image with terrorism content|
-| abuseScore    | Yes         | Number       | The score for an abusive image                                       |
-| teenagerScore    | Yes         | Number       | The score for an image with content inappropriate for teenagers                                       |
-| adScore    | Yes         | Number       | The score for an advertising image                                       |
-| ocrMsg         | No         | String       | OCR text (if applicable)                              |
-| suggestion | Yes | string | Suggestion. Valid values: <ul style="margin:0"><li/>Block<li/>Review<li/>Pass</ul>     |
-| label | Yes | string | Returns the **maliciousness label with the highest priority** in the detection result (labelResults), which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned value: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
-| subLabel | Yes     | string | Sub-label name. If no sub-labels are hit, an empty string will be returned              |
-| labelResults | No     | Array of [LabelResult](#labelresult)  | Moderation result of the category detection model, including pornographic, sexy, terrorism, illegal, and other results |
-| objectResults | No     | Array of [ObjectResult](#objectresult) | Moderation result of the object detection model, including politically sensitive object, advertising logo, QR code, and other information |
-| ocrResults | No     | Array of [OcrResult](#ocrresult) | Moderation result of the OCR text, including OCR text and text moderation result details |
-| libResults | No    | Array of [LibResult](#libresult) | Moderation result of the risky image library |
-| screenshotTime | Yes | Number | Screenshot time |
-| sendTime       | Yes        | Number       | The time the request was sent in UNIX timestamp format |
+| img | Yes | String | URL to the alerted image |
+| type | Yes | Array | Returns the maliciousness label with the highest priority in the detection result (labelResults), which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. The returned values are numbers as follows: <ul style="margin:0"><li/>0: normal<li/>1–8: indicates different types in order from `hotScore` to `adScore`; for example, 1: pornographic, 6: abusive; 8: advertising, and so on</ul> |
+| score | required | Array | The score of `type` |
+| hotScore    | Yes         | Number       | The confidence score of the “sexy” label                                       |
+| pornScore    | Yes         | Number       | The confidence score of the “porn” label                                         |
+| illegalScore   |  Yes         | Number       | The confidence score of the “illegal” label    |
+| polityScore    |  Yes         | Number       | The confidence score of the “politically sensitive” label                                |
+| terrorScore    |  Yes        | Number       |  The confidence score of the “terrorism information” label |
+| abuseScore |  Yes     | Number | The confidence score of the “abusive” label |
+| teenagerScore | Yes     | Number | The confidence score of the “inappropriate for teenagers” label  |
+| adScore | Yes     | Number | The confidence score of the “advertisement” label |
+| ocrMsg         | No         | String       | OCR text (if applicable)                         |
+| suggestion | Yes     | string | Recommended result. Valid values: <ul style="margin:0"><li/>`Block`: to block<li/>`Review`: to review again<li/>`Pass`: to pass</ul>     |
+| label | Yes | String | Supplementary text description of the returned value of the parameter `type`, such as `Normal` for the returned value **0**, `Abuse` for **6**, and `Ad` for **8**. |
+| subLabel | Yes     | string | Sub-label name. An empty string will be returned when no sub-label is matched.       |
+| labelResults | No     | Array of [LabelResult](#labelresult)  | The results of recognition by the categorization model, such as porn, sexy, terrorism, rule violations, etc. |
+| objectResults | No     | Array of [ObjectResult](#objectresult) | The results of recognition by the object detection model, such as political entities, advertisements and logos, QR code, etc. |
+| ocrResults | No    | Array of [OcrResult](#ocrresult) | The OCR-based text moderation results, including the OCR text information and moderation details |
+| libResults | No     | Array of [LibResult](#libresult) | The results of recognition by the inappropriate image library |
+| screenshotTime | Yes         | Number       | Screenshot time              |
+| sendTime       | Yes         | Number       | The time the request was sent in Unix timestamp format  |
 | similarScore   | No   | Number  | Image similarity score   |
-| stream_param   | No         | String       | Push parameter                                                     |
+| stream_param   | No         | String       | Push parameter                              |
 | app   | No | String | Push domain name   |
-| appid  | No | Number |  APPID |
+| appid  | No | Number |  Application ID |
 | appname        | No        | String       | Push path  |
 
  
 
 #### LabelResult
-Hit result of the category model.
+The result of recognition by the classification model
 
 | Name | Type | Description |
 | ---------- | ------------------------ | ------------------------ |
-| Scene      | String                                       | Returns the scenario identified by the model, such as advertising, pornographic, and harmful.     |
+| Scene      | String            | The scenario recognized by the model, such as advertisement, porn, and harmful contents, etc.     |
 | Suggestion | String                                       | Returns the operation suggestion for the current maliciousness label. When you get the determination result, the returned value indicates the action suggested by the system. We recommend you handle different types of violations and suggestions according to your business needs. Returned values:<ul style="margin:0"><li/>Block<li/>Review<li/>Pass</ul> |
-| Label  | String | Returns the maliciousness label in the detection result. Returned values: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| label | String | Supplementary text description of the returned value of the callback message parameter `type`, such as `Normal` for the returned value **0**, `Abuse` for **6**, and `Ad` for **8**. |
 | SubLabel   | String | Sub-label name                                                   |
-| Score      | Integer | Hit score of the label model                                         |
-| Details    | Array of [LabelDetailItem](#labeldetailitem) | Sub-label hit result details of the category model                                   |
+| Score      | Integer | The confidence score of the label                                         |
+| Details    | Array of [LabelDetailItem](#labeldetailitem) | Details of the sub-labels determined by the categorization model                                 |
 
 #### LabelDetailItem
 
-Sub-label hit result details of the category model.
+The sub-label determined by the categorization model
 
 | Name | Type | Description |
 | -------- | -------- | --------------------------- |
-| Id       | Integer  | ID                        |
-| Name     | String   | Sub-label name                  |
-| Score    | Integer  | Sub-label score. Value range: 0–100 |
+| Id       | Integer  | Serial number  |
+| name | String | Sub-label name |
+| Score    | Integer  | Sub-label confidence score. Value range: 0-100 |
 
 
 #### ObjectResult
 
-Object detection result details.
+Detailed results of object detection
 
 | Name | Type | Description |
 | ---------- | --------------------- | --------------------- |
-| Scene      | String                                       | Returns the identified object scenario, such as QR code, logo, and image OCR.     |
+| Scene      | String                                 | The object detection result, such as QR code, logo, and image OCR, etc. |
 | Suggestion | String                                       | Returns the operation suggestion for the current maliciousness label. When you get the determination result, the returned value indicates the action suggested by the system. We recommend you handle different types of violations and suggestions according to your business needs. Returned values:<ul style="margin:0"><li/>Block<li/>Review<li/>Pass</ul> |
-| Label      | String                                 | Returns the maliciousness label in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned value: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| label | String | Supplementary text description of the returned value of the callback message parameter `type`, such as `Normal` for the returned value **0**, `Abuse` for **6**, and `Ad` for **8**. |
 | SubLabel   | String | Sub-label name |
-| Score    | Integer  | Sub-label hit score of the scenario model. Value range: 0–100 |
-| Names      | Array of String       | List of object names |
-| Details    | Array of [ObjectDetail](#objectdetail) | Object detection result details |
+| Score      | Integer | The confidence score of the sub-label for its scenario. Value range: 0-100 |
+| DealNames | Array of String | Object list |
+| Details    | Array of [ObjectDetail](#objectdetail) | Details of the object detection results |
 
 #### ObjectDetail
 
-Object detection result details. When the detection scenario is a politically sensitive object/figure, advertising logo, QR code, or face attribute, it represents the label name, label value, label score, and location information of the model detection frame.
+Details of the object detection result. If the objects to be detected are political figures, advertisements and logos, QR codes or human faces, the details will contain names, values, and confidence scores for the labels of the model’s detection box, as well as the location of the detection box.
 
 | Name | Type | Description |
 | -------- | -------- | -------- |
-| Id       | Integer  | ID  |
+| Id       | Integer  | Serial number  |
 | Name | String | Label name |
-| Value | String | Label value: <ul style="margin:0"><li/>When the scenario is `Ad`, it represents the URL. For example, when `Name` is `QrCode`, `Value` will be `http//abc.com/aaa`<br><li/>When the scenario is `FaceAttribute`, it represents the face attribute information; for example, when `Name` is `Age`, `Value` will be `18` </ul>|
-| Score    | Integer  | Score. Value range: 0–100 |
-| Location | [Location](#location) | Detection frame coordinates |
+| Value    | String   | Label value. <ul style="margin:0"><li/>When the scenario is `Ad`, `Value` will be a URL. For example, `Name` is `QrCode`, and `Value` is `http//abc.com/aaa`.<br><li/> When the scenario is `FaceAttribute`, `Value` will be a human face attribute value. For example, `Name` is `Age`, and `Value` is `18`. </ul>|
+| Score    | Integer  |Confidence score. Value range: 0-100 |
+| Location | [Location](#location) | Location of the detection box |
 
 #### Location
 
-Coordinates.
+Coordinates and other information of the detection box
 
 | Name | Type | Description |
 | -------- | -------- | ---------------- |
-| X        | Float    | Horizontal coordinate of the top-left corner     |
-| Y        | Float    | Vertical coordinate of the top-left corner     |
-| Width    | Float    | Width             |
-| Height   | Float    | Height             |
-| Rotate   | Float    | Rotation angle of the detection frame |
+| X        | Float    | X-coordinate of the detection box’s upper left corner  |
+| Y        | Float    | Y-coordinate of the detection box’s upper left corner     |
+| Width    | Float    | Width of the detection box            |
+| Height   | Float    | Height of the detection box            |
+| Rotate   | Float    | Rotation angle of the detection box |
 
 #### OcrResult
 
-Detailed OCR result.
+Details of the OCR detection result
 
 | Name | Type | Description |
 | ---------- | ---------------------- | ---------------------- |
-| Scene      | String                                   | Indicates  the recognition scenario. Default value: OCR (image OCR).              |
+| Scene      | String                                   | Recognition scenario. Default value: `OCR` (OCR-based image recognition)  |
 | Suggestion | String                                       | Returns the operation suggestion for the maliciousness label with the highest priority. When you get the determination result, the returned value indicates the action suggested by the system. We recommend you handle different types of violations and suggestions according to your business needs. Returned values:<ul style="margin:0"><li/>Block<li/>Review<li/>Pass</ul> |
-| Label      | String                                 | Returns the maliciousness label with the highest priority in the OCR detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned value: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| label | String | Supplementary text description of the returned value of the callback message parameter `type`, such as `Normal` for the returned value **0**, `Abuse` for **6**, and `Ad` for **8**. |
 | SubLabel   | String | Sub-label name |
-| Score    | Integer  | Sub-label hit score of the scenario model. Value range: 0–100 |
-| Text       | String | Text content |
-| Details    | Array of [OcrTextDetail](#ocrtextdetail) | OCR result details |
+| Score      | Integer | The confidence score of the sub-label for its scenario. Value range: 0-100 |
+| Text       | String | The text content |
+| Details    | Array of [OcrTextDetail](#ocrtextdetail) | Details of the OCR result |
 
 
 #### OcrTextDetail
-OCR text result details.
+OCR text details
 
 | Name | Type | Description |
 | -------- | --------------- | --------------- |
-| Text | String | Returns the text content recognized by OCR (up to **5,000 bytes**) |
-| Label  | String | Returns the maliciousness label in the detection result. Returned values: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
-| Keywords | Array of String | Keywords hit under the label |
-| Score    | Integer  | Hit score of the label model. Value range: 0–100 |
-| Location | [Location](#location) | OCR text coordinates |
+| Text     | String                | Recognized OCR text (containing up to **5000 bytes**) |
+| label | String | Supplementary text description of the returned value of the callback message parameter `type`, such as `Normal` for the returned value **0**, `Abuse` for **6**, and `Ad` for **8**. |
+| Keywords | Array of String | No | Matched keywords under this label |
+| Score      | Integer | The confidence score of the returned label. Value range: 0-100                                 |
+| Location | [Location](#location) | Coordinates of the OCR text |
 
 
 #### LibResult
-Blocklist/Allowlist result details.
+Detailed results of recognition by the inappropriate image library
 
 | Name | Type | Description |
 | ---------- | ------------------ | ------------------------------------------------------------ |
-| Scene      | String                           | Scenario recognition result of the model. Default value: Similar                 |
-| Suggestion | String                                       | Returns the operation suggestion. When you get the determination result, the returned value indicates the action suggested by the system. We recommend you handle different types of violations and suggestions according to your business needs. Returned values:<ul style="margin:0"><li/>Block<li/>Review<li/>Pass</ul> |
-| Label  | String | Returns the maliciousness label in the detection result. Returned values: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
+| Scene      | String                           | The result returned by the scenario recognition model. Default value: `Similar` (similar to the scenario in the library).            |
+| Suggestion | String                                       | Recommended operation. You’re advised to deal with the issues with reference to the values of `Label` and `Suggestion`. Returned values: <ul style="margin:0"><li/>`Block`: to block<li/>`Review`: to review again manually <li/>`Pass`: to pass</ul> |
+| label | String | Supplementary text description of the returned value of the callback message parameter `type`, such as `Normal` for the returned value **0**, `Abuse` for **6**, and `Ad` for **8**. |
 | SubLabel   | String | Sub-label name |
-| Score | Integer | Recognition score of the image search model. Value range: 0–100 |
-| Details    | Array of [LibDetail](#libdetail) | Blocklist/Allowlist result details |
+| Score      | Integer            | The confidence score returned by the image retrieval model. Value range: 0-100 |
+| Details    | Array of [LibDetail](#libdetail) |Detailed results of recognition by the inappropriate image library |
 
 #### LibDetail
-Custom list/blocklist/allowlist details.
+Details of recognition by the custom library/inappropriate image library
 
 | Name | Type | Description |
 | -------- | -------- | ------------------------------------------------------------ |
-| Id       | Integer  | ID                                                         |
+| Id       | Integer  | Serial number                          |
 | ImageId  | String   | Image ID                                                       |
-| Label  | String | Returns the maliciousness label in the detection result. Returned values: <ul style="margin:0"><li/>Normal: normal<li/>Porn: pornographic<li/>Abuse: abusive<li/>Ad: advertising<li/>Custom: other offensive, unsafe, or inappropriate types of content</ul> |
-| Tag | String | Custom label |
-| Score | Integer | Model recognition score. Value range: 0–100 |
+| label | String | Supplementary text description of the returned value of the callback message parameter `type`, such as `Normal` for the returned value **0**, `Abuse` for **6**, and `Ad` for **8**. |
+| Tag      | String   | Custom label                           |
+| Score    | Integer  | The confidence score of model recognition. Value range: 0-100    |
 
 
 
