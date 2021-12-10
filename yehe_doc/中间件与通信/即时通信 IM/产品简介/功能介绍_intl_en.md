@@ -296,7 +296,7 @@ You can log in to Tencent Cloud [IM console](https://console.cloud.tencent.com/i
 | Feature configuration | Add custom fields and online instances. |
 | Group management    | Add, modify, and delete groups; manage group members; send messages. |
 | Developer tool | Generate UserSig on the webpage. |
-| Content filtering    | Identify and screen out messages containing restricted words.  |
+
 
 
 

@@ -1,10 +1,10 @@
-Due to different territory sizes of countries around the world, and considering data display and coverage of acceleration nodes, we have merged adjacent countries/regions into larger geographical zones, and split those with larger territories. When using the "globally unified domain name" feature and selecting regions to be covered by global acceleration nodes, refer to the following mapping between countries and regions to configure zones to be covered by global acceleration nodes.
+Due to different territory sizes of countries around the world, and performance and coverage, we have merged adjacent countries/regions into larger geographical regions, and split those with larger territories. When using the "globally unified domain name" feature and selecting regions to be covered by global acceleration nodes, refer to the following mapping between countries and regions to configure zones to be covered by global acceleration nodes.
 
 
 <table>
    <tr>
       <th width="81" >Continent</th>
-      <th width="100">Geographical Zone</th>
+      <th width="100">Geographical Region</th>
       <th width="150">Country/Region</th>
       <th>Province/State</th>
    </tr>
