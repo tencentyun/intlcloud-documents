@@ -7,7 +7,7 @@ In Pulsar, each message has its own ID, namely `MessageID`, which consists of fo
 
 The `MessageID` generation rules are determined by Pulsar's message storage mechanism as shown below:
 
-![](https://main.qcloudimg.com/raw/d5114f49a97bc197073e82ff64bb9f25.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5e661d3c299eebb4e83aac90333afaf2.svg)
 
 As shown above, each topic partition in Pulsar corresponds to a series of ledgers, with only one ledger is in open (i.e., writable) status and each ledger storing only messages in its corresponding partition.
 
@@ -39,7 +39,7 @@ Pulsar stores message data in a ledger format on bookie nodes in a BookKeeper cl
   - When the index cache capacity reaches the upper limit, it will be flushed to the disk by the sync thread.
 
 The read and write interactions of the three types of data files are as shown below:
-![](https://main.qcloudimg.com/raw/56f41fb00bcda3cfd9ef88e6d7cc61f7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/99a271bcd895f6ba3526424f2dd710a4.svg)
 
 **Entry data write**
 1. Data will be first written to the journal (stored in the disk in real time) and memtable (read/write cache) at the same time.
