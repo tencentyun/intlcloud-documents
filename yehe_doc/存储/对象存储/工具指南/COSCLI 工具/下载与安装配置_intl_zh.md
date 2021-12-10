@@ -17,7 +17,8 @@ COSCLI 工具提供 Windows、Mac、Linux 操作系统的二进制包，通过�
 5. 在对话框中，输入`cmd`，按 `Enter` 打开命令行窗口。
 6. 在命令行窗口中，输入`coscli --help`，若打印出以下信息则代表安装成功：
 >? 在`Windows`系统下，在不同的命令行客户端中使用 COSCLI 的方式可能略有不同，若输入`coscli [command]`后 COSCLI 无法正常工作，请尝试`./coscli [command]`的格式。
->
+
+
 ```
 Welcome to use coscli!
    
@@ -48,6 +49,7 @@ Flags:
 Use "coscli [command] --help" for more information about a command.
 ```
 
+
 ### Mac
 
 1. 运行以下命令下载 COSCLI：
@@ -63,6 +65,7 @@ mv coscli-mac coscli
 chmod 755 coscli
 ```
 4. 在命令行中输入`./coscli --help`，若打印出以下信息则代表安装成功：
+
 ```
 Welcome to use coscli!
    
@@ -92,6 +95,8 @@ Flags:
    
 Use "coscli [command] --help" for more information about a command.
 ```
+
+
 >? 在 Mac 系统下使用 COSCLI 时，若弹出`无法打开“coscli”，因为无法验证开发者`的提示，可以前往`设置 > 安全性与隐私 > 通用`中选择`仍要打开 coscli`，之后即可正常使用 COSCLI。
 >
 
@@ -111,6 +116,7 @@ mv coscli-linux coscli
 chmod 755 coscli
 ```
 4. 在命令行窗口中输入`./coscli --help`，若打印出以下信息则代表安装成功：
+
 ```
 Welcome to use coscli!
    
@@ -140,6 +146,7 @@ Flags:
    
 Use "coscli [command] --help" for more information about a command.
 ```
+
 
 
 ## 配置参数

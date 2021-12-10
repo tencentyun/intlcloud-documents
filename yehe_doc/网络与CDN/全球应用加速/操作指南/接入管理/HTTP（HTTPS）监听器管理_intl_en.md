@@ -36,7 +36,7 @@ After adding a domain name, you can click **Add Rule** to add the corresponding 
     ![](https://main.qcloudimg.com/raw/bb6f7d4cf05d2fb6e623c5ed28904dbc.png)
    - RR: multiple origin servers perform origin-pull according to the RR policy.
    - Weighted RR: multiple origin servers perform origin-pull according to the weight ratio (this configuration is not supported if the origin server type is domain name).
-   - Least Connections: this means to schedule the origin server with the least number of connections first.
+   - Least Connections: this means scheduling the origin server with the least number of connections first.
 3. Origin server health check mechanism:
    You can choose to enable the health check mechanism for the current domain name and set an independent check URL. HEAD and GET request methods are supported. Check status codes include http_1xx, http_2xx, http_3xx, http_4xx, and http_5xx, and one or more of them can be selected. When a specified status code is detected, the listener considers that the backend origin server is normal. If no status code is detected, the listener considers that the backend origin server is exceptional.
 ![](https://main.qcloudimg.com/raw/20d08ec6efd43a94734b6a408afc2d10.png)
@@ -48,7 +48,7 @@ After adding a domain name, you can click **Modify Domain Name** to modify the d
 
 ### Deleting domain name
 
-After adding a domain name, you can click **Delete** to delete the domain name. If a rule under the domain name has been bound to an origin server, you need to select **Force deletion of listeners bound with origin server**.
+Click **Delete** to delete a domain name. If a rule under the domain name has been bound to an origin server, you need to select **Force deletion of listeners bound to the origin server**.
  ![](https://main.qcloudimg.com/raw/3a7a088320acb13f1c822b1ec34c9ba1.png)
 
 ### Modifying rule
@@ -63,7 +63,7 @@ For more information, see Binding Origin Server. You can bind different ports to
 
 ### Deleting rule
 
-After adding a rule, you can click **Delete** to delete the rule. If the rule has been bound to an origin server, you need to select **Force deletion of listeners bound with origin server** first.
+Click **Delete** to delete a rule. If the rule has been bound to an origin server, you need to select **Force deletion of listeners bound to the origin server** first.
  ![](https://main.qcloudimg.com/raw/2fd560217ca2f53847033d501eb90e1a.png)
 
 ### Configuring origin-pull request header
@@ -73,7 +73,7 @@ After adding a rule, you can click **Delete** to delete the rule. If the rule ha
 2. Click **Add Parameter** to add the name parameter and value of the request header. The variable value of the header that carries the user's real IP is `$remote_addr` (by default, the `X-Forwarded-For` header carries the client IP for origin-pull). Currently, except the `$remote_addr` variable, other variables with `$` are not supported.
 
 > !
-> 1. The `Key` value of the HTTP header name can contain 1–100 digits (0–9), letters (a–z, A–Z), and special symbols (-, _, :, and space). The `Value` can contain 1–100 characters. Except `$remote_addr`, other configuration items cannot contain the `$` character;
+> 1. The `Key` value of the HTTP header name can contain 1–100 digits (0–9), letters (a–z, A–Z), and special symbols (-, _, :, and space). The `Value` can contain 1–100 characters. Except for `$remote_addr`, other configuration items cannot contain the `$` character;
 > 2. Up to 10 origin-pull HTTP request headers can be configured for each rule;
 > 3. The standard headers listed below cannot be set/added/deleted in a self-service manner.
 
@@ -262,5 +262,5 @@ After adding a rule, you can click **Delete** to delete the rule. If the rule ha
 
 ## Deleting HTTP/HTTPS Listener
 
-Open the **HTTP/HTTPS Listener Management** tab and click **Delete** in the **Operation** column of the specified listener to be deleted. If the listener is bound to an origin server, you need to check **Allow force deletion of listeners with bound origin servers** first. After deletion, the acceleration service for the listener's port will stop.
+Open the **HTTP/HTTPS Listener Management** tab and click **Delete** in the **Operation** column of the specified listener to be deleted. If the listener is bound to an origin server, you need to check **Allow force deletion of listeners bound to the origin servers** first. After deletion, the acceleration service for the listener's port will stop.
  ![](https://main.qcloudimg.com/raw/5df2bff2fb4f07ce2631824792429147.png)

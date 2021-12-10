@@ -101,7 +101,7 @@ policy  = {
 **Syntax description:**
 
 - One policy may contain multiple `statement`.
-  The maximum length of a policy is 4,096 characters (without spaces). For more information, please see [Limits](/doc/product/598/10609).
+  The maximum length of a policy is 6144 characters (without spaces). For more information, please see [Limits](/doc/product/598/10609).
   The display order of blocks is unrestricted; for example, in a policy, `version_block` can follow `effect_block`.
 
 - Currently supported syntax version is 2.0.
@@ -148,7 +148,7 @@ qcs: project :serviceType:region:account:resource
 Below are examples:
 
 ```
-// COS object. Region: Shanghai. Resource owner uid: 10001234. Resource name: bucket1/object2. Resource prefix: prefix
+// COS object. Region: Shanghai. Resource owner uid: 10001234. Resource name: bucket1/object2.
 qcs::cos:sh:uid/10001234:prefix//10001234/bucket1/object2
 // CMQ queue. Region: Shanghai. Resource owner uin: 12345678. Resource name: 12345678/queueName1. Resource prefix: queueName
 qcs::cmqqueue:sh:uin/12345678:queueName/12345678/queueName1

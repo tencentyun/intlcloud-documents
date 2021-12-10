@@ -101,7 +101,7 @@ policy  = {
 **语法说明：**
 
 - 一个策略 policy 可以包含多条语句 statement。
-  策略的最大长度是 4096 个字符（不包含空格），具体信息请参阅 [限制](/doc/product/598/10609)。
+  策略的最大长度是 6144 个字符（不包含空格），具体信息请参阅 [限制](/doc/product/598/10609)。
   各个块 block 的显示顺序无限制。例如，在策略中， version_block 可以跟在 effect_block 后面等。
 
 - 当前支持的语法版本为 2.0。
@@ -148,7 +148,7 @@ qcs: project :serviceType:region:account:resource
 示例如下所示：
 
 ```
-// COS 产品的 object 资源，上海地域，资源拥有者的 uid 是10001234，资源名是 bucket1/object2 ，资源前缀是 prefix
+// COS 产品的 object 资源，上海地域，资源拥有者的 uid 是10001234，资源名是 bucket1/object2 
 qcs::cos:sh:uid/10001234:prefix//10001234/bucket1/object2
 // CMQ 产品的队列，上海地域，资源拥有者的 uin 是12345678，资源名是12345678/queueName1,资源前缀是 queueName
 qcs::cmqqueue:sh:uin/12345678:queueName/12345678/queueName1

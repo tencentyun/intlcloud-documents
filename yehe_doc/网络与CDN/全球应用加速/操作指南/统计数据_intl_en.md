@@ -4,8 +4,8 @@ Log in to the [GAAP console](https://console.cloud.tencent.com/gaap), and select
 
 You can view the connection statistics, as shown below:
 
-- **Connection Type**: defaults to single connection. You can also select a connection group that has been created before.
-- **Connection**: Select a connection of the **Access Management** or of the connection group.
+- **Connection Type**: defaults to Single Connection. You can also select a connection group that has been created before.
+- **Connection**: Select a connection of the **Access Management** or the connection group.
 - **Data Type**: Select one or all data types (bandwidth, traffic, packet volume, concurrent connections, HTTP QPS, HTTPS QPS, latency, and packet loss rate).
 - **Time Period**: Select a time period.
 - **Time Granularity**: Select a time granularity. The maximum query time is 15 days if you select a 1-minute granularity, 31 days for a 5-minute granularity, 93 days for a 1-hour granularity and 186 days for a 1-day granularity.

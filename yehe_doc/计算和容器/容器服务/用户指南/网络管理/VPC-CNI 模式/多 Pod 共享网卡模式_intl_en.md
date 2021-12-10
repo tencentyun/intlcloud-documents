@@ -1,7 +1,7 @@
 
 ## How It Works
 
-The following diagram illustrates how the multiple Pods with shared ENI in VPC-CNI mode work.
+The following diagram illustrates how the multiple Pods with a shared ENI in VPC-CNI mode work.
 ![](https://main.qcloudimg.com/raw/d8f0de10f2f6ac320d8afd2abe93b79e.png)
 
 - The cluster network is the user's VPC, and the nodes and container subnets belong to this VPC.
@@ -11,23 +11,52 @@ The following diagram illustrates how the multiple Pods with shared ENI in VPC-C
 ### IP Address Management Principle
 
 #### Non-static IP address mode
-- TKE will apply for an ENI for each new node in the cluster, and at the same time apply for the maximum number of IP addresses that can be bound to the ENI at a time. These IP addresses will be used as the available IP address pool of the node for the Pods on the node to use.
-- When the Pod is created, an available IP address is randomly assigned from the available IP address pool bound to the node.
-- When the Pod is terminated, the IP address is released and returned to the available IP address pool of the node. The unbinding of IP address from the ENI will not be triggered. Therefore, the IP address will not be returned to the VPC subnet.
-- When the node is deleted, the IP addresses occupied by the ENI will be released.
-- When there are multiple container subnets, the ENI is preferentially assigned to the subnet that has the largest number of available IP addresses and meets the quota requirement of the ENI's IP addresses. If there is no subnet that fully meets the quota requirement, the ENI is preferentially assigned to the subnet with the largest number of available IP addresses.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/ac68ff6ff975501ca91ebcb3d3cd5079.png)
+
+- TKE maintains an auto-scaling IP pool on each node. The number of bound IPs ranges from **the number of Pods + the minimum number of pre-bound IPs** to **the number of Pods + the maximum number of pre-bound IPs**.
+	- When **the number of bound IPs is less than the number of Pods + the minimum number of pre-bound IPs**, new IPs will be bound to make **the number of bound IPs = the number of Pods + the minimum number of pre-bound IPs**.
+	- When **the number of bound IPs is larger than the number of Pods + the maximum number of pre-bound IPs**, an IP will be released about every 2 minutes until **the number of bound IPs = the number of Pods + the maximum number of pre-bound IPs**.
+	- When **the maximum number of bindable IPs is less than the number of bound IPs**, the unnecessary idle IPs will be released directly to make **the number of bound IPs equal to the maximum number of bindable IPs**.
+- When a Pod with a shared ENI is created, an available IP is randomly allocated from the node’s available IP pool.
+- When a Pod with a shared ENI is terminated, its IP will be released and returned to the IP pool of the node instead of being released (deleted) in the VPC, so that another Pod can continue to use the IP.
+- IPs and ENIs are allocated and released based on the **principle of least ENIs** to ensure that the ENIs in use are as few as possible:
+	- **Allocate an IP to a Pod**: preferentially allocate IPs on the ENI with the most allocated IPs.
+	- **Release an IP**: preferentially release IPs on the ENI with the least allocated IPs.
+    - **Bind to a new ENI**: if the IP quota of the bound ENI is exhausted or the IPs of the subnet where the ENI is located is used up, you can apply for a new ENI.
+	- **Release an ENI**: if all secondary IPs on the bound ENI have been unbound and you do not want to add IPs, you can unbind and delete the ENI.
+- The expansion resource `tke.cloud.tencent.com/eni-ip` will be registered for the node. The allocatable number of the resource is the number of IPs that have been bound. The capacity is the maximum number of IPs that can be bound to the node. Therefore, if a Pod fails to be scheduled to a node, it indicates that the IPs of the node have been used up.
+- Select a subnet for a new ENI: preferentially select the subnet with the most available IPs.
+- The maximum number of bindable IPs of each node = the maximum number of bound ENIs * the number of bindable IPs of a single ENI
+- Currently, **the minimum number of pre-bound IPs** and **the maximum number of pre-bound IPs** are set to five respectively by default.
 
 #### Static IP address mode
-- TKE network add-on maintains a cluster-level available IP address pool.
-- TKE will apply for an ENI for each new node in the cluster. No secondary IP address will be bound in advance, but the number of IP addresses that meets the IP address quota requirements of the ENI is reserved for this node in the network add-on.
-- When a new Pod with VPC-CNI mode is created, the IPAMD add-on will assign an IP address based on the subnet where the ENI bound to the node is located, and then apply for binding the secondary IP to the ENI of the corresponding node immediately.
-- When the Pod is terminated, the IP address will be returned to the available IP address pool of the cluster, the unbinding of IP address from the ENI is triggered, and the IP address will be released and returned to the VPC subnet.
+- TKE network component maintains an IP pool available at the cluster level.
+- TKE will apply for an ENI for each new node in the cluster. No secondary IP will be bound in advance, but the number of IPs that meets the IP quota requirements of the ENI is reserved for this node in the network component.
+- When a new Pod with VPC-CNI mode is created, the IPAMD component will allocate an IP based on the subnet where the ENI bound to the node is located, and then apply for binding the secondary IP to the ENI of the corresponding node immediately.
+- When the Pod is terminated, the IP address will be returned to the available IP pool of the cluster, the unbinding of IP address from the ENI is triggered, and the IP address will be released and returned to the VPC subnet.
 - The static IP address of the terminated Pod will be retained in the TKE cluster, and this IP address will be used again when a Pod with the same name as the terminated Pod is created.
 - When the node is deleted, the IP addresses occupied by the ENI will be released.
-- When there are multiple container subnets, the ENI is preferentially assigned to the subnet that has the largest number of available IP addresses and meets the quota requirement of the ENI's IP addresses. If there is no subnet that fully meets the quota requirement, the node will fail to bind the ENI.
+- When there are multiple container subnets, the ENI is preferentially allocated to the subnet that has the largest number of available IP addresses and meets the quota requirement of the ENI's IP addresses. If there is no subnet that fully meets the quota requirement, the node will fail to bind the ENI.
+
+### Data Plane Principle for Multiple ENIs
+
+>! Currently, multiple ENIs are only supported in non-static IP address mode.
+
+When a node has bound multiple ENIs, the network packets sent from the Pod will be forwarded to the corresponding ENI according to the policy-based routing.
+- You can execute `ip link` on the node to view the information of all network devices on the node, and you can learn about the network devices corresponding to the ENI of the node through comparison of the mac address of the ENI. Generally, `eth0` represents primary ENI, `eth1` and `eth2` represent secondary ENIs:
+![](https://qcloudimg.tencent-cloud.cn/raw/b4b357d3b4991195c8a618e817bc8c81.jpg)
+
+- You can execute `ip rule` on the node to view the information of policy-based route table. TKE network component obtains the number of the route table through `<link index>+2000` of the ENI. Network packets sent from the Pod that is bound to the corresponding ENI IP will be forwarded to this route table. In this example, the route table corresponding to `eth1` is 2003, and the route table corresponding to `eth2` is 2010.
+![](https://qcloudimg.tencent-cloud.cn/raw/0c3a14cb4402a5c108ac6f9b1f72f5cf.png)
+
+- The default routing to the corresponding ENI is set for the corresponding route table. You can execute `ip route show table <id>` on the node to view it:
+![](https://qcloudimg.tencent-cloud.cn/raw/881653493b4188b34a78e3b3e769adc6.png)
+
+When the network packets that are sent to the Pod reach the node, they will be sent to the Veth ENI of the Pod via the primary route table by following the policy-based routing.
 
 
-## Usage
+## Directions
 
 
 To use VPC-CNI, ensure that `rp_filter` is disabled. You can refer to the following code sample:
@@ -45,7 +74,7 @@ sysctl -w net.ipv4.conf.eth0.rp_filter=0
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. On the "Cluster Management" page, click **Create** above the cluster list.
-3. On **Create Cluster** page, select **VPC-CNI** for **Container Network Add-on**, as shown below:
+3. On "Create Cluster" page, select **VPC-CNI** for **Container Network Add-on**, as shown below:
 ![](https://main.qcloudimg.com/raw/26af6272145e26b2b3f8c92d79318635.png)
 
 >? By default, the VPC-CNI mode **does not enable the static IP address**. You can enable the static IP address only when [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637). If you need to enable the static Pod IP address for the cluster, see [Static IP Address Usage](https://intl.cloud.tencent.com/document/product/457/38975).
@@ -55,8 +84,8 @@ sysctl -w net.ipv4.conf.eth0.rp_filter=0
 
 #### Enabling VPC-CNI for the existing clusters
 When creating a cluster, select the Global Router network add-on. Then, enable the VPC-CNI mode on the basic information page of the cluster (by default, both modes are enabled).
-1. Log in to the [TKE console](https://console.qcloud.com/tke2) and select **Cluster** in the left sidebar.
-2. On **Cluster Management** page, select a cluster ID that needs to enable VPC-CNI and go to its details page.
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and click **Cluster** in the left sidebar.
+2. On "Cluster Management" page, select the ID of the cluster for which VPC-CNI needs to be enabled and go to its details page.
 3. On the cluster details page, click **Basic Information** on the left.
 4. In the **Node and Network Information** section, enable **VPC-CNI mode**.
 5. Select the subnet and set the **IP Reclaiming Policy** in the pop-up window, as shown in the figure below:
@@ -64,11 +93,11 @@ When creating a cluster, select the Global Router network add-on. Then, enable t
 >! 
 >- For scenarios that use static IP addresses, when enabling VPC-CNI, you need to set the IP reclaiming policy to specify when to reclaim the IP addresses after Pods are terminated.
 >- Pods with non-static IP addresses are not affected by these settings because their IP addresses are immediately released upon Pod termination. These IP addresses are not returned to the VPC, but returned to the IP address pool managed by the container.
-6. Click **Submit**.
+6. Click **Submit** to enable VPC-CNI mode for the cluster.
 
 ### Disabling VPC-CNI
-1. Log in to the [TKE console](https://console.qcloud.com/tke2) and select **Cluster** in the left sidebar.
-2. On **Cluster Management** page, select a cluster ID that needs to enable VPC-CNI and go to its details page.
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and click **Cluster** in the left sidebar.
+2. On "Cluster Management" page, select the ID of the cluster for which VPC-CNI needs to be enabled and go to its details page.
 3. On the cluster details page, click **Basic Information** on the left.
 4. In the **Node and Network Information** section, disable the **VPC-CNI mode**.
 5. Click **Submit** in the pop-up window to disable the VPC-CNI mode.

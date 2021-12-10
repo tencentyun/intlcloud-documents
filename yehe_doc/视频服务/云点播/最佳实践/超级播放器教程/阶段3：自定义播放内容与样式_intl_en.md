@@ -15,6 +15,7 @@ Before reading this document, please make sure that you have read [Stage 1. Play
 2. Enter the **Template Settings** page, click **Add Substream** to create substreams 1, 2, and 3, and enter the parameters as follows:
 	- **Basic information module**
 	  - **Template Name**: enter `MyTestTemplate`.
+	  - **Muxing Format**: HLS
 	  - **Encryption Type**: select **Not encrypted**.
 	  - **Allow Transcoding from Low Resolution to High Resolution**: disable this option.
 	  
@@ -33,7 +34,7 @@ Before reading this document, please make sure that you have read [Stage 1. Play
 <tbody><tr>
 <td>Substream 1</td>
 <td>512 Kbps</td>
-<td>Video long side: 0 px; video short side: 480 px</td>
+<td>Image long side: empty; video short side: 480 px</td>
 <td>24 fps</td>
 <td>48 Kbps</td>
 <td>Dual</td>
@@ -41,7 +42,7 @@ Before reading this document, please make sure that you have read [Stage 1. Play
 <tr>
 <td>Substream 2</td>
 <td>512 Kbps</td>
-<td>Video long side: 0 px; video short side: 720 px</td>
+<td>Image long side: empty; video short side: 720 px</td>
 <td>24 fps</td>
 <td>48 Kbps</td>
 <td>Dual</td>
@@ -49,7 +50,7 @@ Before reading this document, please make sure that you have read [Stage 1. Play
 <tr>
 <td>Substream 3</td>
 <td>1,024 Kbps</td>
-<td>Video long side: 0 px; video short side: 1,080 px</td>
+<td>Image long side: empty; video short side: 1,080 px</td>
 <td>24 fps</td>
 <td>48 Kbps</td>
 <td>Dual</td>
