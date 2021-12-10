@@ -2,6 +2,7 @@
 录制回看是指您可以把用户整个直播过程录制下来，然后作为点播视频用于回看。
 
 在 App 上线的初期阶段，由于主播数量比较少，所以在直播列表中加入录制回看，能够在一定程度上丰富 App 在观众端的信息量。即使到 App 成长起来主播数量形成规模以后，好的直播内容的沉淀依然是必不可少的一个部分，每个主播的个人介绍里除了有名字、照片和个人信息，历史直播的视频回看更是不可或缺的一个重要组成部分。
+![](https://main.qcloudimg.com/raw/349d8e95955eb4ca7fe60508d11ef558.jpg)
 
 ## 开启录制
 录制回看功能依托于腾讯云的**云点播服务**支撑，如果您想要对接这个功能，首先需要在腾讯云的管理控制台 [开通云点播服务](https://console.cloud.tencent.com/vod)。服务开通之后，新录制的文件就可以在云点播控制台的 [视频管理](http://console.cloud.tencent.com/vod/media) 里找到它们。
@@ -12,37 +13,64 @@
 >- 录制转点播后，文件自动存放于点播平台，故用户需在使用录制功能前，提前开通点播服务并购买相关空间和流量用于存放和播放录制后的视频文件，详细请参见 [点播快速入门](https://intl.cloud.tencent.com/document/product/266/8757)。
 
 #### 基本步骤
-在云直播控制台菜单栏内选择【功能配置】>【[直播录制](https://console.cloud.tencent.com/live/config/record)】，单击【创建录制模板】进行设置。设置完基本信息后，单击【保存】。具体操作请参见 [录制模板配置](https://intl.cloud.tencent.com/document/product/267/34223)。
-**规格说明：**
+在云直播控制台菜单栏内选择 **功能配置 > [直播录制](https://console.cloud.tencent.com/live/config/record)**，单击 **创建录制模板** 进行设置。设置完基本信息后，单击 保存 。具体操作请参见 [录制模板配置](https://intl.cloud.tencent.com/document/product/267/34223)。
+![](https://qcloudimg.tencent-cloud.cn/raw/f1679425a0b9007dd5ec9ff317fcaa31.png)
 
-1. 录制视频针对直播原始码率录制，输出格式有 HLS、MP4、FLV 和 AAC 四种，其中 AAC 为纯音频录制。
-2. 录制 MP4、FLV 或 AAC 格式单个文件时长限制为1分钟 - 120分钟。
-3. 录制 HLS 格式最长单个文件时长无限制，如果超出续录超时时间则新建文件继续录制。
-4. 单个录制文件保存最大时长均为1500天。
-5. 仅 HLS 格式支持文件推流中断续录，续录超时时长可设置为0s - 1800s。
-6. 直播过程中预计在录制结束5分钟左右可获取对应文件。例如，某直播从12:00开始录制，12:30结束录制，则12:35左右可获取12:00 - 12:30的对应片段。
-7. 受限于音视频文件格式（FLV/MP4/HLS）对编码类型的支持，视频编码类型支持 H.264，音频编码类型支持 AAC。
+<table>
+<tr><th colspan=2 width=25%>配置项</th><th>配置描述</th></tr><tr>
+<td colspan=2>单个录制文件时长（分钟）</td>
+<td><ul style="margin:0"><li>录制 HLS 格式最长单个文件时长无限制，如果超出续录等待时长则新建文件继续录制。</li><li>录制 MP4、FLV 或 AAC 格式单个文件时长限制为1分钟 - 120分钟。 </li></ul></td>
+</tr><tr>
+<td colspan=2>续录等待时长（秒）</td>
+<td>仅 HLS 格式支持文件推流中断续录，续录等待时长可设置为0s - 1800s。</td>
+<td></td>
+</tr><tr>
+<td colspan=2>保存时长（天）</td>
+<td>单个录制文件保存最大时长均为1500天，文件保存时长0为永久。可选择<b>永久存储</b>或<b>指定时间</b>。</td>
+</tr><tr>
+<td colspan=2>指定点播应用/分类</td>
+<td>支持录制至云点播 VOD 指定 <a href="https://console.cloud.tencent.com/vod/enable-subapp">子应用</a> 的点播分类中，默认录制至账号主应用，仅支持写入状态为开启的子应用。</td>
+<td></td>
+</tr>
+<tr>
+<td rowspan=2>高级配置</td>
+<td>视频存储策略</td>
+<td>支持对录制至云点播上的媒资进行降冷操作，若录制文件不需要频繁访问，可以使用降冷功能来实现低频访问长期存储。若录制视频为正常业务回放需要，标准存储即可满足需求，默认为标准存储。
+<ul style="margin:0">
+<li>选择 <b>标准存储</b> 时，若目前选中的应用已开启降冷策略，录制文件会先生成标准存储文件后再根据降冷策略进行降冷，可 <a href="https://console.cloud.tencent.com/vod/inactivation">查看策略</a>。</li>
+<li>选择 <b>低频存储</b> 时，若目前选中的应用/分类已开启降冷策略，录制文件会先直接生成低频存储文件后再判断是否执行点播降冷策略。</li>
+</ul>
+</td>
+</tr><tr>
+<td>点播任务流处理</td>
+<td>单击 <b>选择绑定的任务流</b> 可选择绑定点播子应用下已建立的任务流，或从当前点播任务流选择界面点击任务流名称前往点播控制台新增/修改任务流配置。绑定成功后，在生成录制文件后执行点播任务流模板，产生对应的 <a href="https://intl.cloud.tencent.com/document/product/266/2838">云点播费用</a>。</td>
+</tr></table>
+
+
+
 
 #### 关联域名
-创建好录制模板后，需在【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】中，选择对应的推流域名，进入【模板配置】栏，单击【录制配置】>【编辑】为该域名指定录制模板后，单击【保存】即可。更多详情请参见 [关联录制模板](https://intl.cloud.tencent.com/document/product/267/34224)。
+创建好录制模板后，需在 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage) 中，选择对应的推流域名，进入 模板配置 栏，单击 **录制配置 > 编辑** 为该域名指定录制模板后，单击 **保存** 即可。更多详情请参见 [关联录制模板](https://intl.cloud.tencent.com/document/product/267/34224)。
+![](https://qcloudimg.tencent-cloud.cn/raw/1eff639c34a4628b11b21f34fb6e0f49.png)
 
 ## 获取文件
-一个新的录制视频文件生成后，会相应的生成一个观看地址，您可以按照自己的业务需求对其进行处理。
+一个新的录制视频文件生成后，会相应的生成一个观看地址，您可以按照自己的业务需求对其进行处理。在小直播中，我们直接将录制的文件 URL 和房间列表拼在了一起，以弥补在线主播不足的窘境。
 
-您可以结合自己的业务场景实现很多的扩展功能，例如：您可以将其追加到主播的资料信息里，作为该主播曾经直播的节目而存在；或者将其放入回放列表中，经过专门的人工筛选，将优质的视频推荐给您的 App 用户。
+但您可以结合自己的业务场景实现很多的扩展功能，例如：您可以将其追加到主播的资料信息里，作为该主播曾经直播的节目而存在；或者将其放入回放列表中，经过专门的人工筛选，将优质的视频推荐给您的 App 用户。
 
 如何才能拿到文件的地址，有如下两种解决方案：
 
 ### 方案1：被动监听通知
-您可以使用腾讯云的 **[回调配置](https://intl.cloud.tencent.com/document/product/267/31074)**：您的服务器注册一个自己的**回调 URL** 给腾讯云，腾讯云会在一个新的录制文件生成时通过这个 URL 通知给您。
 
-在云直播菜单栏内选择【事件中心】>【[直播回调](https://console.cloud.tencent.com/live/config/callback)】，单击【创建回调模板】。在回调设置弹框中填写完成回调信息，单击【保存】即可。更多详情请参见 [创建回调模板](https://intl.cloud.tencent.com/document/product/267/31074#Callback)。
+您可以使用腾讯云的 [回调配置](https://intl.cloud.tencent.com/document/product/267/31074)：您的服务器注册一个自己的回调 URL 给腾讯云，腾讯云会在一个新的录制文件生成时通过这个 URL 通知给您。
+
+在云直播菜单栏内选择 **事件中心 > [直播回调](https://console.cloud.tencent.com/live/config/callback)**，单击 **创建回调模板** 。在回调设置弹框中填写完成回调信息，单击 **保存** 即可。更多详情请参见 [创建回调模板](https://intl.cloud.tencent.com/document/product/267/31074#Callback)。
+![](https://qcloudimg.tencent-cloud.cn/raw/a9dadf1b65d587837fd6afd590236bc9.png)
 
 **关联域名**
-创建好回调模板后，需通在【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】中，选择对应的推流域名，进入【模板配置】栏，单击【回调配置】>【编辑】为该域名指定回调模板后，单击【保存】即可。
-
+创建好回调模板后，需通在 [域名管理](https://console.cloud.tencent.com/live/domainmanage) 中，选择对应的推流域名，进入 **模板配置** 栏，单击 **回调配置 > 编辑** 为该域名指定回调模板后，单击 **确定** 即可。
+![](https://main.qcloudimg.com/raw/0a815c3cfc8e833d7288121e2ef970f8.png)
 如下是一个典型的通知消息，它的含义是：一个 ID 为`9192487266581821586`的新的 FLV 录制文件已经生成，播放地址为：`http://200025724.vod.myqcloud.com/200025724_ac92b781a22c4a3e937c9e61c2624af7.f0.flv`。
-
 ```json
 {
     "channel_id": "2121_15919131751",
@@ -93,4 +121,4 @@
 
 [](id:que4)
 ### 4. 如何把碎片拼接起来？
-目前腾讯云支持使用云端 API 接口拼接视频分片。
+目前腾讯云支持使用云端 API 接口拼接视频分片 。
