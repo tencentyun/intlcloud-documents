@@ -36,7 +36,5 @@ For more information on alarms, see [Creating Alarm Policy](https://intl.cloud.t
    - **Policy Type**: select **TDMQ alarm**.
    - **Use preset trigger condition**: select this option and the system recommended alarm policy will be displayed.
 5. After confirming that everything is correct, click **Save**.
-   ![](https://main.qcloudimg.com/raw/a5ca4fc60cacc8f71b20d4fe534abddf.png)
 6. Return to the **Create Alarm Policy** page, click **Refresh**, and the alarm policy template just configured will be displayed.
-   ![](https://main.qcloudimg.com/raw/b923c5b201460f9a2569db2a6ad95088.png)
 
