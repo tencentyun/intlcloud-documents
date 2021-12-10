@@ -14,7 +14,7 @@ Clusters are divided into virtual clusters and dedicated clusters:
 > - Currently, clusters are available in multiple versions. For more information, see [Cluster Version Release Notes](https://intl.cloud.tencent.com/document/product/1110/42898).
 
 **TDMQ for Pulsar resource hierarchy**
-![](https://main.qcloudimg.com/raw/2eda2b733b46ee82bba9a4a3a7a77e9e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/af334efc11f390763e0b979a7e90acd3.png)
 
 
 
@@ -28,7 +28,7 @@ Clusters are divided into virtual clusters and dedicated clusters:
    - Cluster Name: enter the cluster name, which cannot be modified after creation and can contain up to 64 letters, digits, hyphens, and underscores.
    - Remarks: enter the cluster remarks of up to 200 characters.
 4. Click **OK**.
-   ![](https://main.qcloudimg.com/raw/cc03568a28f068bbf9fa2c10b4fe2c62.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/f689b91b002442c37cb6fa3e1f9cc5c1.png)
 
 > ?
 > - Each user can create up to 5 virtual clusters.
@@ -61,7 +61,7 @@ On the details page, you can query:
 | Message retention period                  | Maximum message retention period that can be configured. A shorter period can be configured at the namespace level |
 | Maximum storage capacity                  | Maximum disk capacity used by message retention. After this value is exceeded, new messages cannot be produced (under normal circumstances, there should not be too many retained messages; if this is not the case, check whether the business is consuming messages normally) |
 
-![](https://main.qcloudimg.com/raw/5827b992b87fcd40a7fce94699b8815d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4c16ad325eb626387bf35e836af7fbe6.png)
 
 
 
@@ -70,11 +70,11 @@ On the details page, you can query:
 On the **Cluster Management** list page, click **Access Address** in the **Operation** column of the target cluster. You can get the access address in the following ways:
 
 <dx-tabs>
-::: Clusters on v2.7.1 or above
+::: Clusters\son\sv2.7.1\sor\sabove
 You can directly get the access address as shown below:
-	![](https://main.qcloudimg.com/raw/055f727048341630b27b8382fca94cc1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/611474fd348337c008d5b8ef6630d44b.png)
 :::
-::: Clusters on v2.6.1
+::: Clusters\son\sv2.6.1
 On the access point list page, click **Create** and enter the access point information to configure the access point.
 
 - VPC: select the VPC in which you want to deploy your client.
