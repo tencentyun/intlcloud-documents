@@ -59,4 +59,4 @@ Click [here](https://main.qcloudimg.com/raw/037dee0e98e30eb15055645ff0a48694.zip
 2. Modifying program_auto_up.bat.
 Modify the path to the directory where the program is located. Add the script to the scheduled task, and execute on it periodically. The script is used to monitor the toa_win.exe program and automatically activate the program when it exits.
 ![](https://main.qcloudimg.com/raw/046bbd4282aa51f85baa6879de8586d4.png)
-3. Run the toa_win.exe program. The log is saved to toa_win.log in the same directory. Now, you can get the real IP address from TOA services through UDP communication. For details, see [How to Use](https://cloud.tencent.com/document/product/608/17670).
+3. Run the toa_win.exe program. The log is saved to toa_win.log in the same directory. Now, you can get the real IP address from TOA services through UDP protocol. For details, see [How to Use](https://cloud.tencent.com/document/product/608/17670).
