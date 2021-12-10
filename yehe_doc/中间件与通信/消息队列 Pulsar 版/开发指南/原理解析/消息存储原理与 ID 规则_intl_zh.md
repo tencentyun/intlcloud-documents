@@ -7,7 +7,7 @@
 
 消息 ID 的生成规则由 Pulsar 的消息存储机制决定，Pulsar 中消息存储原理图如下：
 
-![](https://main.qcloudimg.com/raw/d5114f49a97bc197073e82ff64bb9f25.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5e661d3c299eebb4e83aac90333afaf2.svg)
 
 如上图所示，在 Pulsar中，一个 Topic 的每一个分区会对应一系列的 ledger，其中只有一个 ledger 处于 open 状态即可写状态，而每个 ledger 只会存储与之对应的分区下的消息。
 
@@ -39,7 +39,7 @@ Pulsar 中的消息数据以 ledger 的形式存储在 BookKeeper 集群的 book
   - IndexCache 容量达到上限时，会被 sync 线程 flush 到磁盘中。
 
 三类数据文件的读写交互如下图：
-![](https://main.qcloudimg.com/raw/56f41fb00bcda3cfd9ef88e6d7cc61f7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/99a271bcd895f6ba3526424f2dd710a4.svg)
 
 **Entry 数据写入**
 1. 数据首先会同时写入 Journal（写入 Journal 的数据会实时落到磁盘）和 Memtable（读写缓存）。
