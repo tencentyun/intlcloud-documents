@@ -24,7 +24,7 @@
 	- 持久化保留：无论是否消费，按照最大保留时间和最大存储空间进行持久化存储，到达限制后从后向前删除
  - 说明：命名空间的备注说明
 4. 单击**保存**完成所在集群命名空间的创建。<br>
- <img src="https://main.qcloudimg.com/raw/1833e5b8b5f3328d778dce5723eb99c7.png" width="500">
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/e6822214905595dfcce275585e856d2d.png" width="500">
 
 
 后续步骤：接下来就可以在该命名空间中 [创建 Topic ](https://intl.cloud.tencent.com/document/product/1110/42930) 进行消息的生产和消费了。
