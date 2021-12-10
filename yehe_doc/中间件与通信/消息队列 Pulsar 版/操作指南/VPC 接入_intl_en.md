@@ -12,13 +12,12 @@ You have purchased CVM or TKE resources and configured a VPC.
 
 1. Log in to the [TDMQ for Pulsar console](https://console.cloud.tencent.com/tdmq), enter the **Cluster Management** page, and select the target cluster.
 2. Click **Access Address** in the **Operation** column to enter the access point configuration page of the cluster.
-   ![](https://main.qcloudimg.com/raw/8053b5772d1f4ccbcd89a3a77075c42b.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/17f1b8410d6c38d0c5dcc3d7a6ab4333.png)
 3. Click **Create**. Then, select the VPC and subnet and enter the remarks in the VPC access point creation window.
 	- VPC: select the VPC of the deployed producer or consumer.
 	- Subnet: select an appropriate subnet according to your IP allocation method.
 	- Remarks (optional): enter the remarks of up to 128 characters.
 4. Click **Submit**.
-   ![](https://main.qcloudimg.com/raw/afa7f4d50ab58b76b015735906e89640.png)
 5. Configure a security group policy.
    Make sure that the security group of the test program has opened TCP ports 6000–7000.
 

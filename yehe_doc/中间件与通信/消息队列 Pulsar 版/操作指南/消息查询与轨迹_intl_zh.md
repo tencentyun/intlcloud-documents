@@ -1,6 +1,6 @@
 当一条消息从生产者发送到 TDMQ Pulsar 版服务端，再由消费者进行消费，TDMQ Pulsar 版会完整记录这条消息中间的流转过程，并以消息轨迹的形式呈现在控制台。
 消息轨迹记录了消息从生产端到 TDMQ Pulsar 版 服务端，最后到消费端的整个过程，包括各阶段的时间（精确到微秒）、执行结果、生产者 IP、消费者 IP 等。
-![](https://main.qcloudimg.com/raw/4cf7d69f461171ddd90e7f7ede15c63a.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/71edb89393e8df75760d0d5fccbf0faa.svg)
 
 ## 操作场景
 
@@ -26,11 +26,11 @@
 1. 登录 [TDMQ Pulsar 版控制台](https://console.cloud.tencent.com/tdmq)，在左侧导航栏单击**消息查询**。
 2. 在消息查询页面，首先选择地域和环境，再选择需要查询的时间范围，如果您知道对应的消息 ID，也可以输入消息 ID 进行精准查询。
 3. 单击**查询**，下方列表会展示所有查询到的结果并分页展示。
-   ![](https://main.qcloudimg.com/raw/34f66f96516c28d74c267ec35cd91b17.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/397670a03ff60299223ce9d42b4cb722.png)
 4. 找到您希望查看内容或参数的消息，单击操作列的**查看详情**，即可查看消息的基本信息、内容（消息体）以及参数。
-   ![](https://main.qcloudimg.com/raw/445a68973f994c75853b3e5d0e541d96.png)
+   ![](	https://qcloudimg.tencent-cloud.cn/raw/60ac620c719676b6f5d3ed82b775860f.png)
 5. 单击操作列的**查看消息轨迹**，或者在详情页单击 Tab 栏的**消息轨迹**，即可查看该消息的消息轨迹（详细说明请参考 [消息轨迹查询结果说明](#1)）。
-   ![](https://main.qcloudimg.com/raw/4f413ec70b0e57b49e4f43ec50da485e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/ea6820ca51d43bd00b70f19adefaec54.png)
 
 <span id="1"></span>
 

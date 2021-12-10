@@ -15,12 +15,12 @@ This document describes how to manage the subscriptions to a topic in **Subscrip
 1. Log in to the [TDMQ for Pulsar console](https://console.cloud.tencent.com/tdmq) and click **Topic Management** on the left sidebar.
 2. On the **Topic Management** list page, click **View Subscription** in the **Operation** column of the target topic to enter the subscription list.
 3. In the subscription list, the first-level list displays all subscriptions to the current topic. After expanding the second-level list, you can see the consumer instances connected to each subscription and the consumption progress of each segment.
-![](https://main.qcloudimg.com/raw/9a52b3f6b34eb19905ca3cc8d2d0db4c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8038b749ae44d525c391423c1bfc02e2.png)
 
 ### Setting offset
 1. In the subscription list, click **Set Offset** in the **Operation** column to manually set the consumer offset for each subscription by time (that is, specify the time point from which the consumers under the subscription start to consume messages).
 2. Click **Submit**.
-![](https://main.qcloudimg.com/raw/abc24bdebba5c70cbaee0d14ea40ab20.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/948dd5e33d1bd8cd14527f57187eebe3.png)
 
 ### Recreating retry/dead letter queues
 
@@ -32,5 +32,5 @@ As you can manually delete a topic, if you want the deleted retry/dead letter qu
 1. In the subscription list, click **More** > **Delete** in the **Operation** column of the target subscription. You can also select multiple subscriptions and click **Delete** at the top of the subscription list.
 2. In the pop-up window, click **Submit**.
 Force deletion: after this option is enabled, a subscription will be forcibly deleted even if it has active consumer connections.
-<img src="https://main.qcloudimg.com/raw/ea9b6196088eee2182ef057d144d93c5.png" width="540px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/7022d7ea3fb28612b562ac6486e1cc06.png" width="540px">
 

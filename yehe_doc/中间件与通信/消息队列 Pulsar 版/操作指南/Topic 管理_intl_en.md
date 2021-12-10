@@ -21,7 +21,7 @@ You have created a namespace.
  - Number of Partitions: there are only one partition for globally sequential messages and 1–128 partitions for other message types.
  - Remarks: enter the topic remarks of up to 128 characters.
 4. Click **Save**, and you can see the created topic in the topic list.
-   ![](https://main.qcloudimg.com/raw/3a53fe8fa4ae2e0e1307b8fccf2afc8f.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/19676501be762d964a1e1ca0b8e4336e.png)
 
 ### Querying topic
 
@@ -39,7 +39,7 @@ You can manually send a message to the specified topic in the TDMQ for Pulsar co
 
 1. In [Topic Management](https://console.cloud.tencent.com/tdmq/topic), click **Send Message** in the **Operation** column of the target topic.
 2. Enter the message content of up to 64 KB in the pop-up window.
-   ![](https://main.qcloudimg.com/raw/2962bfe289ab88a167fb8d94feed37fe.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/2cc2682863b5aae3bc4526ca16e2c6bb.png)
 3. Click **Submit** to send the message. After the message is sent, it can be consumed by any subscribers to the topic.
 
 ### Creating subscription
@@ -50,7 +50,7 @@ You can manually create a subscription in the TDMQ for Pulsar console.
  - Subscription Name: it can contain only letters, digits, hyphens, and underscores.
  - Auto-Create Retry & Dead Letter Queue: you can choose whether to create a retry queue and a dead letter queue.
  - Remarks: enter remarks of up to 128 characters.
-   ![](https://main.qcloudimg.com/raw/bc07c3f60f26b9e5521ec127cb171bea.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/3cdeb905f1a10f7405631feffb91ef12.png)
 3. Click **Submit**.
    You can click **View Subscription** in the **Operation** column of a topic to view its subscriptions, and the subscription just created will be displayed in the list.
 
@@ -66,5 +66,5 @@ You can manually create a subscription in the TDMQ for Pulsar console.
 1. In **Topic Management**, click **More** > **Delete** in the **Operation** column of the target topic. You can also select multiple topics and click **Delete** at the top of the topic list.
 2. In the pop-up window, click **Submit**.
 Force deletion: after this option is enabled, a topic will be force deleted even if it has subscriptions.
-<img src="https://main.qcloudimg.com/raw/017f18e218e06cf617b17ecd4450f113.png" width="600">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/fbdc5c123f47250c1ffbbb036964b1ac.png" width="600">
 

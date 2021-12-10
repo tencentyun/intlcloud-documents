@@ -21,7 +21,7 @@ Topic 是 TDMQ Pulsar 版中的核心概念。Topic 通常用来对系统生产�
  - 分区数：全局顺序只有1个分区，其他为1-128个分区
  - 说明：填写 Topic 的说明信息，不超过128字符
 4. 单击**保存**，在 Topic 列表中即可看见创建好的 Topic。
-   ![](https://main.qcloudimg.com/raw/3a53fe8fa4ae2e0e1307b8fccf2afc8f.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/19676501be762d964a1e1ca0b8e4336e.png)
 
 ### 查询 Topic
 
@@ -39,7 +39,7 @@ TDMQ Pulsar 版控制台支持手动发送消息，在控制台进行相应的�
 
 1. 在 [Topic 管理](https://console.cloud.tencent.com/tdmq/topic) 中，找到需要编辑的 Topic ，单击操作列中的**发送消息**。
 2. 在弹出的对话框中输入消息内容。消息长度不超过64KB。
-   ![](https://main.qcloudimg.com/raw/2962bfe289ab88a167fb8d94feed37fe.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/2cc2682863b5aae3bc4526ca16e2c6bb.png)
 3. 单击**提交**，完成消息的发送。消息发送后即可被 Topic 下的任意订阅者消费。
 
 ### 新增订阅
@@ -50,7 +50,7 @@ TDMQ Pulsar 版控制台支持手动创建订阅，在控制台进行相应的�
  - 订阅名称：只能包含字母、数字、“-”及“_”
  - 自动创建重试&死信队列：可以选择是否创建重试和死信 Topic
  - 说明：不超过128字符
-   ![](https://main.qcloudimg.com/raw/bc07c3f60f26b9e5521ec127cb171bea.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/3cdeb905f1a10f7405631feffb91ef12.png)
 3. 单击**提交**完成创建。
    创建后可通过单击操作列的**查看订阅**，查看订阅了该 Topic 的订阅，即可在列表中看到刚刚创建的订阅。
 
@@ -66,5 +66,5 @@ TDMQ Pulsar 版控制台支持手动创建订阅，在控制台进行相应的�
 1. 在 **Topic 管理**中，找到需要删除的 Topic ，单击操作列中的**更多** > **删除**，或者勾选多个 Topic 之后单击 Topic 列表顶部的**删除**。
 2. 在弹出的提示框中，单击**提交**，完成删除。
 强制删除：开启后，Topic 有订阅也可连带删除。
-<img src="https://main.qcloudimg.com/raw/017f18e218e06cf617b17ecd4450f113.png" width="600">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/fbdc5c123f47250c1ffbbb036964b1ac.png" width="600">
 

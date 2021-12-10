@@ -12,13 +12,12 @@
 
 1. 登录 [TDMQ Pulsar 版控制台](https://console.cloud.tencent.com/tdmq)，进入**集群管理**页面，选择目标集群。
 2. 单击操作列的**接入地址**，进入集群的接入点配置页面。
-   ![](https://main.qcloudimg.com/raw/8053b5772d1f4ccbcd89a3a77075c42b.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/17f1b8410d6c38d0c5dcc3d7a6ab4333.png)
 3. 单击**新建**，在新建 VPC 接入点对话框中，选择 VPC、子网，填写备注。
 	- VPC：选择您部署生产者或消费者所在的 VPC 网络
 	- 子网：根据您的 IP 分配方式选择对应的子网
 	- 备注（选填）：填写备注信息，不超过128个字符
 4. 单击**提交**，即可完成 VPC 网络的接入。
-   ![](https://main.qcloudimg.com/raw/afa7f4d50ab58b76b015735906e89640.png)
 5. 配置安全组策略。
    确保测试程序所在的安全组放行 TCP:6000-7000。
 
