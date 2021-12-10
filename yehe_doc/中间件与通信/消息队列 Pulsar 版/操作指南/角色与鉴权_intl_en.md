@@ -20,28 +20,28 @@ For example, your company has departments A and B, and department A's system pro
    - Role Name: it can contain up to 32 digits, letters, and delimiters (underscore or hyphen).
    - Remarks (optional): enter remarks of up to 100 characters.
 4. Click **Submit**.
-   ![](https://main.qcloudimg.com/raw/030444db462129f54a35ce19f7a92e41.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/57082bf925e3b78732f71afdbe29ea76.png)
 
 ### Granting permission to role
 
 1. Find the newly created role in **[Role Management](https://console.cloud.tencent.com/tdmq/role)** in the TDMQ for Pulsar console and copy the role token in the following methods:
    <dx-tabs>
-   ::: Method 1. Copy in the <b>Token</b> column
+   ::: Method\s1.\sCopy\sin\sthe\s<b>Token</b>\scolumn
    Click **Copy** in the **Token** column.
-   ![](https://main.qcloudimg.com/raw/bbb512dd0255b2fca33706dafd4c8b9a.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/8c80626460740e87e734b27d783256a9.png)
    :::
-   ::: Method 2. View and copy in the <b>Operation</b> column
+   ::: Method\s2.\sView\sand\scopy\sin\sthe\s<b>Operation</b>\scolumn
    Click **View Token** in the **Operation** column and click **Copy** in the pop-up window.
-   ![](https://main.qcloudimg.com/raw/97acb6323c59344f7193c736786472e0.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/df39efabf4803bc97d2f5f07b7376f2a.png)
    :::
    </dx-tabs>
 2. Add the copied role token to the client parameters. For directions on how to add the token parameter to the client code, see [JWT Authentication Configuration](https://intl.cloud.tencent.com/document/product/1110/42933).
 > !Token leakage may lead to data leakage; therefore, you should keep your token confidential.
 
 3. In **[Namespace](https://console.cloud.tencent.com/tdmq/env)** in the TDMQ for Pulsar console, select the target namespace and click **Configure Permission** in the **Operation** column.
-   ![](https://main.qcloudimg.com/raw/73c7b2b841990cab44ddd4839092c960.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/4d230e64c7eec774668ec1aed09a9ee2.png)
 4. Click **Add Role**, find the role just created in the drop-down list, select the required permission, and click **Save**.
-   ![](https://main.qcloudimg.com/raw/7afe9cdf20fb2db9a06079b1f261493e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/8787a1fd4967a5230d61c272c46850d7.png)
 5. Check whether the permission has taken effect.
    You can run the configured client to access the topic resources in the namespace and produce/consume messages according to the configured permission. Check whether a no permission error is reported, and if not, the permission has been configured successfully.
 
