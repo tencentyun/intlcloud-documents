@@ -2,23 +2,23 @@
 ## Step 1. Add an origin server
 
 1. Log in to the [GAAP console](https://console.cloud.tencent.com/gaap).
-2. Click **Origin Server Management** > **Create**, set the name, enter the origin server IP or domain name, and add tags (optional) to add the information of all servers that need acceleration to **Origin Server Management**. You can enter the information of multiple origin servers at a time.
+2. Click **Origin Server Management** > **Add**, set the name, enter the origin server IP or domain name, and add tags (optional). You can add multiple origins at the same time.
 3. Click **OK**.
 ![](https://main.qcloudimg.com/raw/700758b2be655f701f88ddc2f72857fc.png)
-4. (Optional) Add an alias to the origin server for future use: click the **Edit** icon next to the origin server name, enter a name, and click **OK**.
+4. (Optional) Set a custom name for the origin.
 ![](https://main.qcloudimg.com/raw/c72f5506cc15b41a93fb8ce64767108f.png)
 
-## Step 2. Create an accelerated connection
+## Step 2. Create an acceleration connection
 
 1. Click **Access Management** > **Create**.
 ![](https://main.qcloudimg.com/raw/5f424ce7a93036ad42f1adb174bdffbc.png)
-2. In the **Add a connection** window, enter the accelerated connection information.
+2. In the **Add a connection** window, enter the acceleration connection information.
 ![](https://main.qcloudimg.com/raw/e2c839706090fbce1d01d7ecae40310c.png)
-	- Access Node: specifies the entry of the accelerated connection. Select a node in the client region or a nearby region.
-	- Origin-Pull Node: specifies the exit of the accelerated connection. Select a node in the destination server region or a nearby region.
+	- Access Node: specifies the entry of the acceleration connection. Select a node in the client region or a nearby region.
+	- Origin-Pull Node: specifies the exit of the acceleration connection. Select a node in the destination server region or a nearby region.
 	- Bandwidth Cap: the upper limit of the connection's bandwidth.
 	- Maximum Concurrent Connections: the maximum number of concurrent connections supported by a connection.
-3. Click **OK**. After successful creation, you can view the connection information, where **VIP** and **Domain Name** are the access addresses of the accelerated connection.
+3. Click **OK**. After successful creation, you can view the connection information, where **VIP** and **Domain Name** are the access addresses of the acceleration connection.
 ![](https://main.qcloudimg.com/raw/f398e22ba4e21ac9055b30141c049a7e.png)
 4. Click the **ID/Connection Name** of the connection to proceed to the next page.
 
