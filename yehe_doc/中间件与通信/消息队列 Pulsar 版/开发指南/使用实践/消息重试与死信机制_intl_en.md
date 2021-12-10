@@ -33,19 +33,19 @@ Consumer consumer = client.newConsumer()
 At this point, the `sub1` subscription to `topic1` forms a delivery model with the retry mechanism, and `sub1` will automatically subscribe to the retry letter topic created automatically during subscription creation (which can be found in the topic list in the console). If no ack is received from the consumer after a message in `topic1` is delivered for the first time, the message will be automatically delivered to the retry letter topic, and as the consumer has subscribed to this topic automatically, the message will subsequently be consumed again according to particular [retry rules](#Retry-rules). If it still fails to be consumed after the specified maximum number of retries, it will be delivered to the dead letter topic and wait for manual processing.
 
 >?If the subscription is automatically created by the client, you can click **[Topic Management](https://console.cloud.tencent.com/tdmq/topic)** > **More** > **View Subscription** in the console to enter the **Subscription Management** page and manually recreate the retry letter and dead letter topics.
->![](https://main.qcloudimg.com/raw/e3be15e635e7f59972c40333cf06d279.png)
+>![](https://qcloudimg.tencent-cloud.cn/raw/3392efec6a06176c639fa387a8fc5ba3.png)
 
 ### Custom parameter settings
 
 A set of retry and dead letter parameters are configured for TDMQ for Pulsar by default as follows:
 <dx-tabs>
-::: Clusters on v2.7.1 or above
+::: Clusters\son\sv2.7.1\sor\sabove
 
 - Specify the number of retries as 16 (after 16 failed retries, the message will be delivered to the dead letter topic at the 17th time)
 - Specify the retry letter topic as `[subscription name]-RETRY`
 - Specify the dead letter topic as `[subscription name]-DLQ`
   :::
-  ::: Clusters on v2.6.1
+  ::: Clusters\son\sv2.6.1
 - Specify the number of retries as 16 (after 16 failed retries, the message will be delivered to the dead letter topic at the 17th time)
 - Specify the retry letter topic as `[subscription name]-retry`
 - Specify the dead letter topic as `[subscription name]-dlq`
@@ -84,8 +84,8 @@ The retry rules are implemented through the `reconsumerLater` API in three modes
 
 - **Mode 1: specify any delay time**. Enter the delay time in the second parameter and specify the time unit in the third parameter. The delay time is in the same value range as delayed message, which is 1–864,000 seconds.
 
-- **Mode 2: specify any delay level (for existing users of the Tencent Cloud SDK only). Its implementation effect is basically the same as that of mode 1, but it allows you to manage the delay time in distributed systems more easily. The delay level is as described below:
-  1. The second parameter in ```reconsumeLater(msg, 1)``` is the message level.
+- **Mode 2: specify any delay level (for existing users of the Tencent Cloud SDK only)**. Its implementation effect is basically the same as that of mode 1, but it allows you to manage the delay time in distributed systems more easily. The delay level is as described below:
+  1. The second parameter in `reconsumeLater(msg, 1)` is the message level.
   2. By default, the `MESSAGE_DELAYLEVEL = "1s 5s 10s 30s 1m 2m 3m 4m 5m 6m 7m 8m 9m 10m 20m 30m 1h 2h"` constant determines the respective delay time of each level; for example, level 1 corresponds to 1s and level 3 to 10s. You can customize the default value if it cannot meet your actual business needs.
 
 - **Mode 3: increase with level (for existing users of the Tencent Cloud SDK only)**. Different from the implementation effect of the above two modes, this mode adopts backoff retry; that is, the retry interval is 1s after the first failure, 5s after the second failure, and so on. The more the failures, the longer the interval. The specific retry interval is also determined by the `MESSAGE_DELAYLEVEL` parameter as described in mode 2.
