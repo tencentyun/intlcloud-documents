@@ -10,7 +10,7 @@ This document describes how to configure JWT authentication in a TDMQ for Pulsar
 
 Configure JWT authentication in a Java client:
 <dx-tabs>
-::: Access sample for cluster on v2.7.1 or above
+::: Access\ssample\sfor\scluster\son\sv2.7.1\sor\sabove
 ```  java
 PulsarClient client = PulsarClient.builder()
      // Access address, which can be copied from **Access Address** in the **Operation** column on the **Cluster Management** page
@@ -20,7 +20,7 @@ PulsarClient client = PulsarClient.builder()
      .build();
 ```
 :::
-::: Access sample for cluster on v2.6.1
+::: Access\ssample\sfor\scluster\son\sv2.6.1
 ```  java
 PulsarClient client = PulsarClient.builder()
       // Access address, which can be copied from the access point list in **Cluster Management**
@@ -42,7 +42,7 @@ PulsarClient client = PulsarClient.builder()
 
 Configure JWT authentication in a Go client:
 <dx-tabs>
-::: Access sample for cluster on v2.7.1 or above
+::: Access\ssample\sfor\scluster\son\sv2.7.1\sor\sabove
 ```  go
 client, err := NewClient(ClientOptions{
       // Access address, which can be copied from the access point list in **Cluster Management**
@@ -52,7 +52,7 @@ client, err := NewClient(ClientOptions{
 })
 ```
 :::
-::: Access sample for cluster on v2.6.1
+::: Access\ssample\sfor\scluster\son\sv2.6.1
 ```  go
 client, err := NewClient(ClientOptions{
       // Access address, which can be copied from the access point list in **Cluster Management**
