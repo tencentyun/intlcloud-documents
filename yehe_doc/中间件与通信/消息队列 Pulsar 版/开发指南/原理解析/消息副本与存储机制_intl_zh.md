@@ -9,7 +9,7 @@ Ledger 和 entry 分别对应不同的元数据。
 - ledger 的元数据存储在 zk 上。
 - entry 除了消息数据部分之外，还包含元数据，entry 的数据存储在 bookie 存储节点上。
 
-![](https://main.qcloudimg.com/raw/fee2f4130655c879d9cf47d084e76d8e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/796ec12a3f05621df6da5af715a83877.svg)
 
 <table>
 <tr>
