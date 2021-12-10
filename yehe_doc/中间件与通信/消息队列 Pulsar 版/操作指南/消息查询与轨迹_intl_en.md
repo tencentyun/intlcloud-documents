@@ -1,6 +1,6 @@
 TDMQ for Pulsar records the complete flow in which a message is sent from the producer to the TDMQ for Pulsar server and then consumed by the consumer, and then displays the flow as a message trace in the console.
 A message trace records the entire process in which the message is sent from the producer to the TDMQ for Pulsar server and eventually to the consumer, including the duration of each stage (accurate down to the microsecond), execution result, producer IP, and consumer IP.
-![](https://main.qcloudimg.com/raw/4cf7d69f461171ddd90e7f7ede15c63a.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/71edb89393e8df75760d0d5fccbf0faa.svg)
 
 ## Overview
 
@@ -26,11 +26,11 @@ You have deployed the producer and consumer services as instructed in the [SDK d
 1. Log in to the [TDMQ for Pulsar console](https://console.cloud.tencent.com/tdmq) and click **Message Query** on the left sidebar.
 2. On the **Message Query** page, select the region and environment first and then the time range for query. If you know the message ID, you can also enter it for exact match query.
 3. Click **Query**, and the list below will display paginated results.
-   ![](https://main.qcloudimg.com/raw/34f66f96516c28d74c267ec35cd91b17.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/397670a03ff60299223ce9d42b4cb722.png)
 4. Click **View Details** in the **Operation** column of the target message to view its basic information, content (message body), and parameters.
-   ![](https://main.qcloudimg.com/raw/445a68973f994c75853b3e5d0e541d96.png)
+   ![](	https://qcloudimg.tencent-cloud.cn/raw/60ac620c719676b6f5d3ed82b775860f.png)
 5. Click **View Message Trace** in the **Operation** column or select the **Message Trace** tab on the details page to view the trace of the message. For more information, see [Message Trace Query Result Description](#1).
-   ![](https://main.qcloudimg.com/raw/4f413ec70b0e57b49e4f43ec50da485e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/ea6820ca51d43bd00b70f19adefaec54.png)
 
 <span id="1"></span>
 
