@@ -5,7 +5,7 @@ To meet the needs in different scenarios, TDMQ for Pulsar provides multiple subs
 - If you want to implement the traditional "message queue" pattern, you can make multiple consumers use the same subscription name (shared or failover mode).
 - If you want to implement both of the above at the same time, you can make some consumers use the exclusive mode and other consumers use other modes.
 
-![](https://main.qcloudimg.com/raw/ab3396672d1e49642485686f2df3f479.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/06bc3a9efefac224c71546bccb962534.png)
 
 ## Exclusive Mode
 In this mode, if two or more consumers attempt to subscribe to a topic in the same way, they will receive an error. This mode is suitable for globally sequential consumption scenarios.
