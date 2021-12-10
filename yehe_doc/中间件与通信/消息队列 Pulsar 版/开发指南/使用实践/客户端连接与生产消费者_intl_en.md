@@ -120,9 +120,9 @@ Like producers, consumers are recommended to be used in singleton mode, and a si
 
 
 >!
-- In shared or key-shared mode, the number of consumers is not necessarily less than or equal to the number of partitions. A module on the server responsible for delivering messages will deliver the messages to all consumers in a particular way (round robin by default in shared mode and round robin in the same key by default in key-shared mode).
-- In shared mode, if production is suspended on the producer, messages at the end may be distributed unevenly.
-- When multithreaded consumption is used, even if one consumer object is reused, the order of messages cannot be guaranteed.
+>- In shared or key-shared mode, the number of consumers is not necessarily less than or equal to the number of partitions. A module on the server responsible for delivering messages will deliver the messages to all consumers in a particular way (round robin by default in shared mode and round robin in the same key by default in key-shared mode).
+>- In shared mode, if production is suspended on the producer, messages at the end may be distributed unevenly.
+>- When multithreaded consumption is used, even if one consumer object is reused, the order of messages cannot be guaranteed.
 
 Below is the complete sample code in Java for multithreaded consumption by using a thread pool based on the Spring Boot framework.
 <dx-codeblock>
