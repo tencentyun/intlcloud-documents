@@ -59,11 +59,11 @@
 - 通过控制台创建固定 IP 类型 StatefulSet
  1. 登录 [容器服务控制台](https://console.qcloud.com/tke2)，单击左侧导航栏中**集群**。
  2. 选择需要使用固定 IP 模式的集群 ID 名称，进入该集群的管理页面。
- 3. 选择**工作负载**>**StatefulSet**，进入**StatefulSet**的集群管理页面。
+ 3. 选择**工作负载** > **StatefulSet**，进入**StatefulSet**的集群管理页面。
  4. 单击**新建**，查看**实例数量**。如下图所示：
       ![](https://main.qcloudimg.com/raw/0ce9969c685d732aed4103f91e8ffe41.png)
  5. 单击**显示高级设置**，根据您实际需求，设置**StatefulSet**参数。关键参数信息如下：
-      ![](https://main.qcloudimg.com/raw/ce1bb9d7f0df7b07db6a7d66da115eb8.png)
+      ![创建StatefulSet](https://main.qcloudimg.com/raw/ce1bb9d7f0df7b07db6a7d66da115eb8.png)
    - 网络模式：勾选**使用 VPC-CNI 模式**。
       - IP 地址范围：目前仅支持随机。
       - 固定 Pod IP：选择**开启**。
