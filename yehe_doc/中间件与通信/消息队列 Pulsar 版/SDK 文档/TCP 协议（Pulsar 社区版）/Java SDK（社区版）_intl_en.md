@@ -24,7 +24,7 @@ The steps to access the Pulsar SDK for Java are as follows:
 4. Add the copied token to the code that creates the client (and add the `listenerName` parameter if the cluster version is 2.6.1).
 >?You can click the following tabs to view the access samples for different cluster versions.
 <dx-tabs>
-::: Access sample for cluster on v2.7.1 or above
+::: Access\ssample\sfor\scluster\son\sv2.7.1\sor\sabove
 <dx-codeblock>
 :::  java
 PulsarClient client = PulsarClient.builder()
@@ -34,7 +34,7 @@ PulsarClient client = PulsarClient.builder()
 :::
 </dx-codeblock>
 :::
-::: Access sample for cluster on v2.6.1
+::: Access\ssample\sfor\scluster\son\sv2.6.1
 <dx-codeblock>
 :::  java
 PulsarClient client = PulsarClient.builder()
