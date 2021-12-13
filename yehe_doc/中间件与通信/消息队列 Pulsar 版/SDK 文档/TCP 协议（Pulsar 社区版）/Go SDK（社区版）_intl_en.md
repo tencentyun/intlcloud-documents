@@ -24,7 +24,7 @@ import "github.com/apache/pulsar-client-go/pulsar"
 3. In the code for creating the Go client, configure the prepared [route ID and token](#Prerequisites) (you don't need to copy the route ID for clusters on v2.7.1 or above).
 >?You can click the following tabs to view the access samples for different cluster versions.
 <dx-tabs>
-::: Access sample for cluster on v2.7.1 or above
+::: Access\ssample\sfor\scluster\son\sv2.7.1\sor\sabove
 <dx-codeblock>
 :::  go
 client, err := pulsar.NewClient(pulsar.ClientOptions{
@@ -40,7 +40,7 @@ if err != nil {
 </dx-codeblock>
 
 :::
-::: Access sample for cluster on v2.6.1
+::: Access\ssample\sfor\scluster\son\sv2.6.1
 <dx-codeblock>
 :::  go
 client, err := pulsar.NewClient(pulsar.ClientOptions{
