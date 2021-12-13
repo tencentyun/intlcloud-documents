@@ -1,0 +1,6 @@
+Tencent Cloud menyediakan metode penagihan berikut untuk instans Cloud Virtual Machine (CVM):
+- **Pay as you go** (Bayar sesuai pemakaian) adalah metode penagihan fleksibel untuk instans CVM. Anda dapat mengaktifkan atau menghentikan CVM kapan saja dan akan ditagih berdasarkan penggunaan CVM yang sebenarnya. Perincian penagihan akurat hingga detik, dan tidak diperlukan pembayaran di muka. Tagihan dibuat setiap jam. Metode tagihan ini cocok untuk kasus penggunaan seperti promo kilat e-commerce saat permintaan perangkat sangat berfluktuasi.
+- **Spot Instance** (Instans Spot) adalah cara baru untuk menggunakan dan membayar instans CVM. Mirip dengan metode bayar sesuai pemakaian, Anda membayar instans spot dalam mode pasca-bayar per detik, setiap jam. Harga instans spot berfluktuasi sesuai dengan permintaan pasar. Anda dapat menerima diskon yang cukup besar saat permintaannya rendah (biasanya 10% hingga 20%). Namun, instans spot mungkin diambil alih secara otomatis oleh sistem karena permintaannya tinggi.
+
+Baik metode penagihan bayar sesuai pemakaian dan instans spot dapat memenuhi kebutuhan pengguna dalam skenario yang berbeda. Untuk informasi selengkapnya, lihat [Mode Harga](https://intl.cloud.tencent.com/document/product/213/2180).
+
