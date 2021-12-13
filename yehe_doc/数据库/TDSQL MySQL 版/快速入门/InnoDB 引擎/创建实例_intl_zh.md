@@ -1,0 +1,23 @@
+本文为您介绍如何通过 TDSQL MySQL版 控制台创建实例。
+
+## 前提条件
+已注册腾讯云账号并完成实名认证。
+- 如需注册腾讯云账号：
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">点此注册腾讯云账号</a></div>
+- 如需完成实名认证：
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
+
+## 操作步骤
+1. 登录 [TDSQL MySQL版 购买页](https://console.cloud.tencent.com/tdsqld/tdmysql-buy  )，根据实际需求选择各项配置信息，确认无误后，单击**立即购买**。
+ - **计费模式**：支持包年包月和按量计费。
+    - 若业务量有较稳定的长期需求，建议选择包年包月。
+    - 若业务量有瞬间大幅波动场景，建议选择按量计费。
+ - **地域**：选择您业务需要部署 TDSQL MySQL版 的地域。建议您选择与云服务器同一个地域，不同地域的云产品内网不通，购买后不能更换。
+ - **网络**：TDSQL MySQL版 所属的网络，建议您选择与云服务器同一个地域下的同一私有网络，否则无法通过内网连接云服务器和数据库。
+ - **实例版本**：请参见 [实例架构](https://intl.cloud.tencent.com/document/product/1042/33319)，分片配置请参见 [分片配置](https://intl.cloud.tencent.com/document/product/1042/33354)，计费详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1042/35777)。
+2. 支付完成后，返回实例列表，待实例状态变为**未初始化**，即可进行实例初始化操作。
+
+
+## 后续操作
+通过控制台初始化 TDSQL MySQL版 实例，请参见 [初始化实例](https://intl.cloud.tencent.com/document/product/1042/33337)。
+
