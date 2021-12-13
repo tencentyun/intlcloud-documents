@@ -19,6 +19,7 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 ### Configuring TCP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **TCP** as the protocol.
+![](https://qcloudimg.tencent-cloud.cn/raw/45dba40d269d5692fe55e800537a5ff2.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -27,7 +28,7 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
 </tr>
 <tr>
-<td>Protocol</td><td>TCP health checks will be conducted if **TCP** is selected.</td>
+<td>Protocol</td><td>TCP health checks will be conducted if <b>TCP</b> is selected.</td>
 </tr>
 <tr>
 <td>Port</td><td>It is optional. We recommend not specifying the port unless you need to check specific ones. The real server port will be checked if the port is not specified here.</td>
@@ -40,6 +41,7 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 ### Configuring HTTP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **HTTP** as the protocol.
+![](https://qcloudimg.tencent-cloud.cn/raw/34162d1e3d350560ca4d0cbb5ccbce40.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -48,7 +50,7 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
 </tr>
 <tr>
-<td>Protocol</td><td>HTTP health checks will be conducted if **HTTP** is selected.</td>
+<td>Protocol</td><td>HTTP health checks will be conducted if <b>HTTP</b> is selected.</td>
 </tr>
 <tr>
 <td>Port</td><td>It is optional. We recommend not specifying the port unless you need to check specific ones. The real server port will be checked if the port is not specified here.</td>
@@ -96,6 +98,7 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 ### Configuring custom protocol health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **HTTP** as the protocol.
+![](https://qcloudimg.tencent-cloud.cn/raw/8d90b2ec22f711c3547467ae92d02e98.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -104,7 +107,7 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
 </tr>
 <tr>
-<td>Protocol</td><td>Custom protocol health checks will be conducted if **Custom Protocol** is selected.</td>
+<td>Protocol</td><td>Custom protocol health checks will be conducted if <b>Custom Protocol</b> is selected.</td>
 </tr>
 <tr>
 <td>Port</td><td>It is optional. We recommend not specifying the port unless you need to check specific ones. The real server port will be checked if the port is not specified here.</td>
@@ -134,6 +137,7 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 ### Configuring UDP health check - port check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **Port** as the protocol.
+![](https://qcloudimg.tencent-cloud.cn/raw/0437fe0ef1f0206bb8c5e125188ff4f3.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -169,6 +173,7 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 ### Configuring UDP health check - Ping command
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **PING** as the protocol.
+![](https://qcloudimg.tencent-cloud.cn/raw/b20a1cf59bcdb4d85c27d635eadf8fa9.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -190,6 +195,7 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 ### Configuring TCP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **TCP** as the protocol.
+![](https://qcloudimg.tencent-cloud.cn/raw/e0257dcb94a83d99b4cc82407724a2ae.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -198,7 +204,7 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
 </tr>
 <tr>
-<td>Protocol</td><td>TCP health checks will be conducted if **TCP** is selected.</td>
+<td>Protocol</td><td>TCP health checks will be conducted if <b>TCP</b> is selected.</td>
 </tr>
 <tr>
 <td>Port</td><td>The health check port and listening port of TCP SSL listeners are the same.</td>
@@ -211,6 +217,7 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 ### Configuring HTTP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **HTTP** as the protocol.
+![](https://qcloudimg.tencent-cloud.cn/raw/fe6bb16d3065b906f3df698717719b67.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -219,7 +226,7 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
 </tr>
 <tr>
-<td>Protocol</td><td>HTTP health checks will be conducted if **HTTP** is selected.</td>
+<td>Protocol</td><td>HTTP health checks will be conducted if <b>HTTP</b> is selected.</td>
 </tr>
 <tr>
 <td>Port</td><td>The health check port and listening port of TCP SSL listeners are the same.</td>
@@ -265,6 +272,7 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 ## HTTP Listener
 ### Configuring HTTP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
+![](https://qcloudimg.tencent-cloud.cn/raw/b274aded44b2d1de9d653737b2ad1822.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
