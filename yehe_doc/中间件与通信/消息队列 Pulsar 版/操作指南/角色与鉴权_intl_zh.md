@@ -20,7 +20,7 @@
    - 角色：最长为32个字符，支持数字、大小写字母和分隔符（"_","-"）。
    - 说明（选填）：不得超过100个字符。
 4. 单击**提交**，完成当前集群命名空间的创建。
-   ![](https://main.qcloudimg.com/raw/030444db462129f54a35ce19f7a92e41.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/57082bf925e3b78732f71afdbe29ea76.png)
 
 ### 角色授权
 
@@ -28,20 +28,20 @@
    <dx-tabs>
    ::: 方式一：<b>密钥</b>列复制
    单击密钥列的**复制**。
-   ![](https://main.qcloudimg.com/raw/bbb512dd0255b2fca33706dafd4c8b9a.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/8c80626460740e87e734b27d783256a9.png)
    :::
    ::: 方式二：<b>操作</b>列查看并复制
    单击操作列的**查看密钥**，在查看密钥弹框中单击复制图标。
-   ![](https://main.qcloudimg.com/raw/97acb6323c59344f7193c736786472e0.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/df39efabf4803bc97d2f5f07b7376f2a.png)
    :::
    </dx-tabs>
 2. 将复制的角色密钥添加到客户端的参数中。如何在客户端代码中添加密钥参数请参考 [JWT 鉴权配置](https://intl.cloud.tencent.com/document/product/1110/42933)。
 > !密钥泄露很可能导致您的数据泄露，请妥善保管您的密钥。
 
 3. 在 TDMQ Pulsar 版控制台的 **[命名空间](https://console.cloud.tencent.com/tdmq/env)** 中，选择需要配置生产消费权限的一个命名空间，单击操作列的**配置权限**。
-   ![](https://main.qcloudimg.com/raw/73c7b2b841990cab44ddd4839092c960.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/4d230e64c7eec774668ec1aed09a9ee2.png)
 4. 单击**添加角色**，在下拉列表中找到刚刚新创建的角色，勾选上需要的权限，单击**保存**。
-   ![](https://main.qcloudimg.com/raw/7afe9cdf20fb2db9a06079b1f261493e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/8787a1fd4967a5230d61c272c46850d7.png)
 5. 检查权限是否生效。
    您可以运行配置好的客户端访问对应命名空间中的 Topic 资源，按照刚刚配置的权限进行生产或消费，看是否会产生没有权限的报错信息，如果没有即代表配置成功。
 

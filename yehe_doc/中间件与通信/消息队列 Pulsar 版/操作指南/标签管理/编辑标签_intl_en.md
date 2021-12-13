@@ -14,7 +14,7 @@ You have logged in to the [TDMQ for Pulsar console](https://console.cloud.tencen
 ## Directions
 
 1. On the **Cluster Management** page, select the target region and cluster and click **Edit Resource Tag** at the top of the page.
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/b3d4b4e2e2742270530c66466fe66bf4.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/1aef5a49502c4546ea5396fbac3d7ef9.png)
 >?You can batch edit tags for up to 20 resources at a time.
 2. In the **Edit Tag** pop-up window, add, modify, or delete tags as needed.
 

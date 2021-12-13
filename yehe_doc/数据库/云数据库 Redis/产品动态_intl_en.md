@@ -1,3 +1,18 @@
+## November 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Default parameter templates are supported</td>
+<td>TencentDB for Redis now provides default parameter templates applicable to Redis 2.8 standard architecture, Redis 4.0 standard architecture, Redis 4.0 cluster architecture, Redis 5.0 standard architecture, and Redis 5.0 cluster architecture. You can view them on the parameter template page in the console.</td>
+<td>2021-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/41810" target="">Using Parameter Templates</td></tr>
+<tr>
+<td>Public network address can be enabled</td>
+<td>You can now enable the public network address for a TencentDB for Redis instance in the <a href="https://console.cloud.tencent.com/redis#/" target="_blank">console</a>, so that this instance can connect to a CVM in a different VPC over the public network.</td>
+<td>2021-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/43452" target="_blank">Configuring the Public Network Address</a></td></tr>
+</table>
+
 
 ## July 2021
 <table>

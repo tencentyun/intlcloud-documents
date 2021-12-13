@@ -34,7 +34,7 @@ Chat rooms are a crucial component of livestreaming. They allow users to send me
 2. In the **Create Application** dialog box, enter your app name and click **OK**.
     After the app is created, you can view the status, version, SDKAppID, creation time, and expiry time of the new app on the overview page in the console.
   >New apps are created as Trial Edition apps by default and can be upgraded to Pro Edition or Flagship Edition when needed.
-  >A Tencent Cloud account supports a maximum of 100 IM apps. If you have reached that limit, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) unwanted apps before creating a new one. **Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be restored, so please proceed with caution.**
+  >A Tencent Cloud account supports a maximum of 300 IM apps. If you have reached that limit, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) unwanted apps before creating a new one. **Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be restored, so please proceed with caution.**
 3. Click the target app card and select **Group Management** in the left sidebar.
 4. On the **Group Management** page, click **Add Group**.
 5. Configure the following parameters in the "Add Group" dialog box that appears.

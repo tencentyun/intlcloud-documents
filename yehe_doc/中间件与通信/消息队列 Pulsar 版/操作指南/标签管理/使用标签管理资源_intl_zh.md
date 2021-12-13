@@ -46,14 +46,14 @@
 
 1. 登录 [TDMQ Pulsar 版控制台](https://console.cloud.tencent.com/tdmq/cluster)。
 2. 在集群管理列表页面，选择好地域后，勾选需要编辑标签的集群，单击页面上方的**编辑资源标签**。
-   ![](https://main.qcloudimg.com/raw/be5261338d0b21c0e20a3bdb5bf80e31.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e158550c00806e96f8b52144c8f77a60.png)
 3. 在弹出的 “编辑标签” 窗口中设置标签。
    例如：为 pulsar-rgxj35jgo3d1 的集群添加三组标签。
-   ![](https://main.qcloudimg.com/raw/11381698a0bbbc24f9f3ec7e4e8701e5.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/1b9ac947781a319e16acd376f4dd19ab.png)
 >?如现有标签不符合您的要求，请前往 [标签管理](https://console.cloud.tencent.com/tag/taglist) 新建标签。
 >
 4. 单击**确定**，系统出现修改成功提示，在集群的资源标签栏可查看与之绑定的标签。
-   ![](https://main.qcloudimg.com/raw/b832eade18b1f1cefd62b434e4411630.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/f8bd04f17868421fea474437fcca7d65.png)
 
 
 ### 通过标签键筛选资源
@@ -63,4 +63,4 @@
 1. 在页面右上方搜索框中，选择**标签**。
 2. 在**标签：**后弹出的窗口中选择您要搜索的标签，单击**确定**进行搜索。
    例如：选择 `标签：owner:zhangsan` 可筛选出绑定了标签键 `owner:zhangsan` 的集群。
-   ![](https://main.qcloudimg.com/raw/9fe795ffd667918d721e0da75369d126.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/afdb39ed13df906cb035098b1da49ba4.png)

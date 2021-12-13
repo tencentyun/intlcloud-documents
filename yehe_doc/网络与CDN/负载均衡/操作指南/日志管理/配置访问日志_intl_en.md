@@ -52,7 +52,7 @@ The steps are as follows:
 ![](https://main.qcloudimg.com/raw/e15271ea2d1ffac0e735eb254224a5e5.png)
 
 ## Method 2: Batch configure access logging
->?This feature is now only available for beta users. To use it, you can submit an application.
+
 ### Step 1. Create logsets and log topics[](id:step2)
 To configure access logs in CLS, you need to first creat a logset and log topic.
 You can directly jump to [Step 2](#step3) if you have created a logset and log topic.
@@ -66,7 +66,6 @@ You can directly jump to [Step 2](#step3) if you have created a logset and log t
 >- When creating a log topic, you can add a CLB instance as needed. To add one, select a log topic in the list and click **Manage** in the operation column. Each CLB instance can only be added to one log topic.
 >- A logset can contain multiple log topics. You can categorize CLB logs into various log topics which will be marked with "CLB".
 >
-![](https://main.qcloudimg.com/raw/9f19f80439f0044768eac4cc235aae9d.png)
 6. (Optional) To disable logging, just click **Disable**.
 
 ### Step2. View access logs[](id:step3)

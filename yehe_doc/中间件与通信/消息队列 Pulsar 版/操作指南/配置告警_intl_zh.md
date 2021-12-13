@@ -36,7 +36,5 @@ TDMQ Pulsar 版支持监控您账户下创建的资源，帮助您实时掌握�
    - **策略类型**：选择**TDMQ 告警**。
    - **使用预置触发条件**：勾选此选项，会出现系统建议的告警策略。
 5. 确认无误后，单击**保存**。
-   ![](https://main.qcloudimg.com/raw/a5ca4fc60cacc8f71b20d4fe534abddf.png)
 6. 返回新建告警策略页，单击**刷新**，则会显示刚配置的告警策略模板。
-   ![](https://main.qcloudimg.com/raw/b923c5b201460f9a2569db2a6ad95088.png)
 

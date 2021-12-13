@@ -95,7 +95,7 @@ The following uses granting the read-only permission of a topic as an example.
 2. Click **[Policy](https://console.cloud.tencent.com/cam/policy)** on the left sidebar.
 3. In the policy list, click **Create Custom Policy**.
 4. In the **Select Policy Creation Method** pop-up window, select **Create by Policy Generator** and enter the policy information.
-   ![](https://main.qcloudimg.com/raw/ab7d5f98cb74fd2ff019d85642c5008b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f906af44d09f73bd30caf692a9e2f414.png)
 
 | Parameter              | Description                                                         |
 | ----------------- | ------------------------------------------------------------ |

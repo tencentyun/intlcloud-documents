@@ -32,7 +32,7 @@ These two types of groups are designed for different scenarios. Specifically, Me
 | Group Feature | Meeting | AVChatRoom |
 | ------------------------- | --------------------------------------- | --------------------- |
 | Maximum group members | 6,000 | Unlimited |
-| Group member information | All group member information is saved | Only the information of 300 group members is saved |
+| Group member information | All group member information is saved | No member information is saved |
 | Group owner can set group admins | Yes | No |
 | Delete group members | The group admin, group owner, and app admin can delete group members. | Not supported |
 | Message roaming | Supported | Not supported |

@@ -2,7 +2,7 @@
 
 IM terminal users need to obtain the latest messages at any time. However, due to the limited performance and battery power of mobile devices, when the app is running in the background, IM recommends that you use the system-grade push channels provided by vendors for message notifications to avoid excessive resource consumption caused by maintaining a persistent connection. Compared with third-party push, system-grade push channels provide more stable system-grade persistent connections, enabling users to receive push messages at any time and greatly reducing resource consumption.
 
-IM supports Mi Push, Huawei Push, Meizu Push, vivo Push, OPPO Push, and Google FCM Push. The vendor channels used by IM demos are provided and maintained by [TPNS](https://intl.cloud.tencent.com/product/tpns) in a unified manner. You can integrate the [TPNS](https://intl.cloud.tencent.com/product/tpns) service or the offline push service of the desired vendor for offline push feature.
+
 Supported vendor channels are as below:
 
 

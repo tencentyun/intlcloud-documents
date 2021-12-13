@@ -43,7 +43,8 @@ The `V2TIMSDKConfig` parameter is used for initialization configuration of the S
 
 - Logs of the IM SDK are stored in the `/Library/Caches/` directory by default.
 - Starting from V4.7.1, the xlog module of the WeChat team is used to output IM SDK logs. The xlogs are decompressed by default and must be decompressed using the Python script.
- - To obtain the script for decompression, click [Decode Log 27](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/tools/xlog_decoder_python27.py) if you are using Python 2.7, or click [Decode Log 30](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/tools/xlog_decoder_python30.py) if you are using Python 3.0.
+- Local IM logs are saved for 7 days by default. The SDK automatically clears logs generated seven days ago during initialization.
+- To obtain the script for decompression, click [Decode Log 27](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/tools/xlog_decoder_python27.py) if you are using Python 2.7, or click [Decode Log 30](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/tools/xlog_decoder_python30.py) if you are using Python 3.0.
  - In the Windows or Mac console, you can run the following command to decompress the log files. After decompression, the file names end with "xlog.log", and you can use the text editor to open these files.
 ```
 python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
