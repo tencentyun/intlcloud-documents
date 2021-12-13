@@ -46,6 +46,7 @@ The `V2TIMSDKConfig` parameter is used for SDK initialization configuration. It 
 | V2TIM_LOG_ERROR | Logs of the ERROR level are output. |
 
 - IM SDK logs are stored by default in the `/sdcard/tencenet/imsdklogs/<application package name>` directory for versions earlier than 4.8.50 and in the `/sdcard/Android/data/<package name>/files/log/tencent/imsdk` directory for version 4.8.50 or later.
+- Local IM logs are saved for 7 days by default. The SDK automatically clears logs generated seven days ago during initialization.
 - Starting from v4.7.1, the xlog module of the WeChat team is used to output IM SDK logs. The xlogs are decompressed by default and must be decompressed using the Python script.
  - To obtain the script for decompression, click [Decode Log 27](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/tools/xlog_decoder_python27.py) if you are using Python 2.7, or click [Decode Log 30](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/tools/xlog_decoder_python30.py) if you are using Python 3.0.
  - In the Windows or Mac console, you can run the following command to decompress the log files. After decompression, the file names end with "xlog.log", and you can use the text editor to open these files.
