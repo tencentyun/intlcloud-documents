@@ -46,13 +46,10 @@ When you use ECDN, the platform will offer you a certain free tier based on your
 <table>
 	<thead>
 		<tr>
-			<th scope="col" style="text-align: center;width: 145px;">Billing Mode</th>
-			<th scope="col" style="text-align: center;width: 200px;">Free Traffic Tier (GB/10,000 Requests)</th>
-			<th scope="col" style="text-align: center;width: 200px;">Unit Price of Excessive Traffic (USD/GB)</th>
-			</th>
+			<td scope="col" style="text-align: center;width: 145px;">Billing Mode</td>
+			<td scope="col" style="text-align: center;width: 200px;">Free Traffic Tier (GB/10,000 Requests)</td>
+			<td scope="col" style="text-align: center;width: 200px;">Unit Price of Excessive Traffic (USD/GB)</td>
 		</tr>
-	</thead>
-	<tbody>
 		<tr>
 			<td style="text-align: center; width: 145px;">Billing by excessive traffic</td>
 			<td style="text-align: center; width: 145px;">0.25</td>
