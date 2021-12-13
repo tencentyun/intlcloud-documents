@@ -56,7 +56,7 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>Launched the message query and message trace features</td>
-<td>On the **Message Query** page, you can query the details and trace of a message, including the message content, parameters, duration of each stage, execution result, producer IP, and consumer IP.</td>
+<td>On the <b>Message Query</b> page, you can query the details and trace of a message, including the message content, parameters, duration of each stage, execution result, producer IP, and consumer IP.</td>
 <td>2020-10-30</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1110/42934">Message Query and Trace</a></td>
 </tr><tr>
