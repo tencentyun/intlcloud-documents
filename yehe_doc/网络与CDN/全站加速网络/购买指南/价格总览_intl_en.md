@@ -64,7 +64,7 @@ When you use ECDN, the platform will offer you a certain free tier based on your
 
 
 For specific fee calculation methods, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/570/10979).
-
+>? 1GB = 1000MB、1 MB= 1000 KB; 1Gbps = 1000Mbps、1Mbps = 1000Kbps
 
 ## VIP Customer Billing
 If your Tencent Cloud service fees are greater than or expected to be greater than 100,000 CNY per month, you can contact us for business negotiation to get more favorable discounted prices and more flexible billing modes.
