@@ -13,7 +13,7 @@
 系统部署分布在不同的地区，需要进行**跨区域**的数据传输。
 
 ## 部署架构图
-![](https://main.qcloudimg.com/raw/2b9a77de79238d6c72ad4b217f13e42b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/49696a86e9b25392a8b559d7d4cc6cc1.png)
 
 
 ## 问题解决
