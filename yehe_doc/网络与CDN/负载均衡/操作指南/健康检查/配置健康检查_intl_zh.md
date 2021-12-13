@@ -20,7 +20,7 @@
 ### 配置 TCP 健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“TCP”检查协议。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/45dba40d269d5692fe55e800537a5ff2.png)
 <table>
 <tr>
 <th>参数</th><th>说明</th>
@@ -42,7 +42,7 @@
 ### 配置 HTTP 健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“HTTP”检查协议。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/34162d1e3d350560ca4d0cbb5ccbce40.png)
 <table>
 <tr>
 <th>参数</th><th>说明</th>
@@ -99,7 +99,7 @@
 ### 配置自定义协议健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“HTTP”检查协议。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/8d90b2ec22f711c3547467ae92d02e98.png)
 <table>
 <tr>
 <th>参数</th><th>说明</th>
@@ -138,7 +138,7 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 ### 配置 UDP 健康检查 - 检查端口
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“检查端口”检查协议。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/0437fe0ef1f0206bb8c5e125188ff4f3.png)
 <table>
 <tr>
 <th>参数</th><th>说明</th>
@@ -174,7 +174,7 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 ### 配置 UDP 健康检查 - PING
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“PING”检查协议。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/b20a1cf59bcdb4d85c27d635eadf8fa9.png)
 <table>
 <tr>
 <th>参数</th><th>说明</th>
@@ -196,7 +196,7 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 ### 配置 TCP 健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“TCP”检查协议。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/e0257dcb94a83d99b4cc82407724a2ae.png)
 <table>
 <tr>
 <th>参数</th><th>说明</th>
@@ -218,7 +218,7 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 ### 配置 HTTP 健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“HTTP”检查协议。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/fe6bb16d3065b906f3df698717719b67.png)
 <table>
 <tr>
 <th>参数</th><th>说明</th>
@@ -275,7 +275,7 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 
 ### 配置 HTTP 健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/b274aded44b2d1de9d653737b2ad1822.png)
 <table>
 <tr>
 <th>参数</th><th>说明</th>
