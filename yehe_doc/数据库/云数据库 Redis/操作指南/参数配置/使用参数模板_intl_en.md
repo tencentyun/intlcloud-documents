@@ -34,7 +34,7 @@ This page displays the default templates applicable to Redis 2.8 standard archit
 ### Applying to existing instances
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and select **Parameter Templates** on the left sidebar.
 2. In the parameter template list, locate the desired template, and click **Apply to Instance** in the **Operation** column. Or, click **View Details**, enter the template details page, and click **Apply to Instance**.
-![](https://qcloudimg.tencent-cloud.cn/raw/8f51c8291406bf557a469f254a595508.png)
+![](C:\Users\v_vwslwu\AppData\Roaming\Typora\typora-user-images\image-20211126165013163.png)
 3. On the displayed page, specify the execution mode and instances, make sure that all parameter values are correct, and click **Submit**.
  - **Redis Instance**: select one or more instances that need to apply the parameter template in the specified region.
  - **Parameter Comparison**: view the changed parameter values of the selected instance.
