@@ -13,7 +13,7 @@ In order to eliminate exceptional reconciliation results, it must be ensured tha
 Systems are deployed in different regions, so **cross-region** data transfer is involved.
 
 ## Deployment Architecture Diagram
-![](https://main.qcloudimg.com/raw/2b9a77de79238d6c72ad4b217f13e42b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/49696a86e9b25392a8b559d7d4cc6cc1.png)
 
 
 ## Problem Solving
