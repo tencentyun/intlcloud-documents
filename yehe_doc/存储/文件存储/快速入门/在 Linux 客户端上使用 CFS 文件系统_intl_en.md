@@ -58,8 +58,9 @@ mkdir <destination mount directory>
 ```
 Example:
 ```plaintext
-mkdir /local/
-mkdir /local/test
+mkdir /localfolder/
+mkdir /localfolder/test
+
 ```
 
 #### 3. Mount the file system

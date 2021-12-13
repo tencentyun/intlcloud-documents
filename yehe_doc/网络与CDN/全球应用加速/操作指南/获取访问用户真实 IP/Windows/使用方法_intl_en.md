@@ -16,7 +16,7 @@ bool InitUpToaFetcher(char *ncard_ip_str, char *svr_ip_str, u_short svr_port[], 
     - port_range_ptr: the array of server port range pointers, where the elements are pointers pointing to a string. A port range string is in the format of 10001-10005, and up to three ranges can be added. This parameter is used to filter TCP flows. Either `svr_port` or `port_range_ptr` must be configured.
     - port_range_num: the number of port ranges of the server.
     - cache_secs: the length of cache in seconds. The default value is 15 seconds. For more information, see `toa_fetcher.h: TIMER_CACHE_SECS`. The TOA will no longer be saved after the cache expires.
- 3. Returned Value
+ 3. Return Value
     - TRUE: additional thread successfully created to get TOA
     - FALSE: failed to create an additional thread to get TOA
 - **FetchToaValue**
@@ -30,7 +30,7 @@ bool FetchToaValue(u_long fake_client_ip_addr, u_short fake_client_port, u_long 
     - fake_client_port: the fake port number of the client stored in network byte order and can be obtained from the opposite address returned by the `accept` function of the server.
     - real_client_ip_addr: the real IP address of the client stored in network byte order and can be obtained from TOA.
     - real_client_port: the real port number of the client stored in network byte order and can be obtained from TOA.
- 3. Returned Value
+ 3. Return Value
     - TRUE: TOA obtained successfully.
     - FALSE: failed to obtain TOA. Normally, the reason is TOA has been cleared because the cache expires.
 - **StopToaFetcher**
@@ -41,7 +41,7 @@ void StopToaFetcher()
 ```
  2. Input parameter description
 None.
- 3. Returned Value
+ 3. Return Value
 None.
 - **GetFetcherStatus**
  1. Function description
@@ -51,7 +51,7 @@ int GetFetcherStatus()
 ```
  2. Input parameter description
 None.
- 3. Returned Value
+ 3. Return Value
     - 0: initial status. An instance will be in this status after it is created. During fetcher initialization, this status will remain unchanged. If an error occurs, -1 will be returned. If the execution succeeds, 1 will be returned.
     - -1: an exception occurs.
     - 1: normal operation.
@@ -63,7 +63,7 @@ HANDLE FetchThreadHandler()
 ```
  2. Input parameter description
 None.
- 3. Returned Value
+ 3. Return Value
 The TOA additional thread handler. When ToaFetcher instance is terminated, this handler will be closed.
 - **FetchErrorInfo**
  1. Function Description
@@ -74,7 +74,7 @@ bool FetchErrorInfo(int* err_code_ptr, char* err_msg_ptr)
  2. Input parameter description
     - err_code_ptr: an integer-type pointer to the error code, used to return the error code.
     - err_msg_ptr: a character-type pointer to a string buffer. It contains at least 50 bytes of data and is used to return the error message.
- 3. Returned Value
+ 3. Return Value
     - TRUE: obtained successfully.
     - FALSE: failed to obtain.
 
@@ -153,10 +153,10 @@ func queryToa(serverAddr string, fakeIp string, fakePort uint16)(int32, string, 
  - serverAddr: the string-type service communication address of toa_win.exe in the format of 127.0.0.1:9999.
  - fakeIp: the string-type fake IP address in the format of 1.2.3.4.
  - fakePort: the uint16-type fake port in the format of 8899.
-3. **Returned Value**
+3. **Return Value**
  - The first returned value: it is in int32 type and used to indicate the error code.
     - 0: obtained successfully
     - -1: failed to get TOA. This may happen if `fakeIP` or `fakePort` is incorrect or the cache has expired.
     - -2: failed due to a network communication exception.
- - The second returned value: it is in string type and will return the real IP if TOA is obtained successfully, otherwise an empty string is returned.
- - The third returned value: it is in uint16 type and will return the real port if TOA is obtained successfully, otherwise 0 is returned.
+ - The second return value: it is in string type and will return the real IP if TOA is obtained successfully, otherwise an empty string is returned.
+ - The third return value: it is in uint16 type and will return the real port if TOA is obtained successfully, otherwise 0 is returned.

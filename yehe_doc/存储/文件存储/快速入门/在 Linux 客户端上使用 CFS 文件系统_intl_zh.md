@@ -58,8 +58,9 @@ mkdir <待挂载目标目录>
 ```
 示例：
 ```plaintext
-mkdir /local/
-mkdir /local/test
+mkdir /localfolder/
+mkdir /localfolder/test
+
 ```
 
 #### 3. 挂载文件系统
@@ -201,5 +202,4 @@ umount /local/test
 >!文件系统删除后，资源不可恢复，建议您删除文件系统之前，先备份资源。
 
 您可以从腾讯云控制台终止文件系统。进入腾讯云 [文件存储控制台](https://console.cloud.tencent.com/cfs/fs)，选中需要终止的文件系统，单击【删除】并【确认】，即可删除文件系统。
-
 
