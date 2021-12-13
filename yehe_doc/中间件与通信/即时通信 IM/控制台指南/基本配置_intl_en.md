@@ -13,7 +13,7 @@ In the **Standard Billing Plan** section, you can see the standard billing plan 
 You can click **Upgrade Plan** in the **Standard Billing Plan** section to update the plan edition or configuration of your app. For more information, see [Upgrading an App](https://intl.cloud.tencent.com/document/product/1047/34577).
 
 ### Disabling/Deleting an app
->?You can create up to 100 IM apps under a Tencent Cloud account. If you have reached that limit, [disable and delete] an unwanted app before creating a new one.
+>?You can create up to 300 IM apps under a Tencent Cloud account. If you have reached that limit, [disable and delete] an unwanted app before creating a new one.
 >**Only apps in "Disabled" status can be deleted. Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be recovered, so proceed with caution.**
 
 
