@@ -5,7 +5,7 @@ There are two ways the user can authorize the collaborator account: by binding a
 ## Preparation
 1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/) with a root account or an account with AdministratorAccess permissions. 
 2. In the top navigation, select **Cloud Products** > **Manage and Audit** > **[Cloud Access Management](https://console.cloud.tencent.com/cam/policy)** to open the CAM console.
->You can also open CAM console by selecting **Your Account Name** > **Access Management** in the upper-right corner of the console.
+>You can also open the CAM console by selecting **Your Account Name** > **Access Management** in the upper-right corner of the console.
 
 ## Directions
 ### Bind a User with a Policy
