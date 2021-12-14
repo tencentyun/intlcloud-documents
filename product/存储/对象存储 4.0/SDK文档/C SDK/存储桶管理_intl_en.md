@@ -106,7 +106,7 @@ cos_cors_rule_content_t *rule_content = NULL;
 
 rule_content = cos_create_cors_rule_content(p);
 cos_str_set(&rule_content->id, "testrule1");
-cos_str_set(&rule_content->allowed_origin, "http://www.qq1.com");
+cos_str_set(&rule_content->allowed_origin, "http://www.qq.com");
 cos_str_set(&rule_content->allowed_method, "GET");
 cos_str_set(&rule_content->allowed_header, "*");
 cos_str_set(&rule_content->expose_header, "xxx");
@@ -115,7 +115,7 @@ cos_list_add_tail(&rule_content->node, &rule_list);
 
 rule_content = cos_create_cors_rule_content(p);
 cos_str_set(&rule_content->id, "testrule2");
-cos_str_set(&rule_content->allowed_origin, "http://www.qq2.com");
+cos_str_set(&rule_content->allowed_origin, "http://www.qq.com");
 cos_str_set(&rule_content->allowed_method, "GET");
 cos_str_set(&rule_content->allowed_header, "*");
 cos_str_set(&rule_content->expose_header, "yyy");
@@ -124,7 +124,7 @@ cos_list_add_tail(&rule_content->node, &rule_list);
 
 rule_content = cos_create_cors_rule_content(p);
 cos_str_set(&rule_content->id, "testrule3");
-cos_str_set(&rule_content->allowed_origin, "http://www.qq3.com");
+cos_str_set(&rule_content->allowed_origin, "http://www.qq.com");
 cos_str_set(&rule_content->allowed_method, "GET");
 cos_str_set(&rule_content->allowed_header, "*");
 cos_str_set(&rule_content->expose_header, "zzz");
