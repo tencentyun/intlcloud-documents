@@ -35,5 +35,4 @@ Tencent Cloud shared image is identified by the unique ID of the root account wi
 
 ### Sharing images via API
 
-You can use the `ShareImage` API to share images. For more information, see the [`ShareImage`](https://intl.cloud.tencent.com/document/api/213/2361) API.
-
+You can use the `ShareImage` API to share images. 
