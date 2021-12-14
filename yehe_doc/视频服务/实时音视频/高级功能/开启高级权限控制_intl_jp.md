@@ -17,8 +17,8 @@
 ## サポートするプラットフォーム
 
 |   iOS    | Android  |  Mac OS  | Windows  | Electron |  Web端末 |
-| :------: | :------: | :------: | :------: | :------: | :-----------: |
-| &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |     &#10003;    |
+| :------: | :------: | :------: | :------: | :------: |  :-----------: |
+| &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |  &#10003;    |
 
 ## 高度な権限制御の原理
 
@@ -44,21 +44,20 @@ PrivateMapKeyに含まれる「権限順位リスト」には、1byte中の8ビ�
 [](id:step1)
 ### 手順1：TRTCコンソールでの高度な権限制御の有効化
 
-1. Tencent CloudのTRTCコンソールで左側の[【アプリケーション管理】](https://console.cloud.tencent.com/trtc/app)をクリックします。
-2. 右側のアプリケーションリストから高度な権限制御を有効にしたいアプリケーションをクリックし、【機能設定】ボタンをクリックします。
-3. 「機能設定」画面の中で【【高度な権限制御のオン】のボタンを開き、【OK】をクリックすれば、高度な権限制御を有効化できます。
+1. Tencent CloudのTRTCコンソールで左側の[**アプリケーション管理**](https://console.cloud.tencent.com/trtc/app)をクリックします。
+2. 右側のアプリケーションリストから高度な権限制御を有効にしたいアプリケーションをクリックし、**機能設定**ボタンをクリックします。
+3. 「機能設定」画面の中で**高度な権限制御のオン**のボタンを押し、**OK**をクリックすれば、高度な権限制御を有効化できます。
 ![](https://main.qcloudimg.com/raw/26f146bfd8617c10a4b8ae9003c5673c.png)
 
 
 >!あるSDKAppidの高度な権限制御を有効にした後、そのSDKAppidを使用するすべてのユーザーが入室に成功（ [手順 2](#step2) で説明）するためには、 TRTCParamsに `privateMapKey` パラメータを渡す必要があります。オンラインでこのSDKAppidを使用するユーザーである場合は、この機能を不用意に有効にしないでください。
 
 [](id:step2)
-
 ### 手順2：お客様のサーバー上でPrivateMapKeyを計算します
 
-PrivateMapKeyの価値はクライアントが逆方向のクラッキングを受けることで「非会員が高レベルのルームに侵入できる」クラッキングバージョンが出現することを防止する点にあるため、自身のサーバーで計算して自身のAppに返されることにのみ適用し、自身のAppで直接計算することはありません。
+PrivateMapKeyの価値はクライアントが逆方向のクラッキングを受けることで「非会員が高レベルのルームに侵入できる」クラッキングバージョンが出現することを防止する点にあるため、自身のサーバーで計算して自身のAppに返されることにのみ適用し、自身のAppで直接計算することは絶対にありません。
 
-当社はJava、PHPおよびNode.jsの3つのバージョンの PrivateMapKey計算コードを提供しておりますので、お客様自身で直接ダウンロードし、サーバーに統合することができます。
+弊社は、Java、GO、PHP、Node.js、Python、C#およびC++バージョンのPrivateMapKey計算コードを提供しております。お客様ご自身で直接ダウンロードしていただき、サーバーに統合することができます。
 
 | 言語バージョン |                         主な関数                         |                           ダウンロードリンク                           |
 | :------: | :------------------------------------------------------: | :----------------------------------------------------------: |
@@ -68,9 +67,9 @@ PrivateMapKeyの価値はクライアントが逆方向のクラッキングを�
 |  Node.js  | `genPrivateMapKey`および`genPrivateMapKeyWithStringRoomID` | [Github](https://github.com/tencentyun/tls-sig-api-v2-node/blob/master/TLSSigAPIv2.js) |
 |  Python  | `genPrivateMapKey`および`genPrivateMapKeyWithStringRoomID`  | [Github](https://github.com/tencentyun/tls-sig-api-v2-python/blob/master/TLSSigAPIv2.py) |
 |    C#    | `genPrivateMapKey`および`genPrivateMapKeyWithStringRoomID`  | [Github](https://github.com/tencentyun/tls-sig-api-v2-cs/blob/master/tls-sig-api-v2-cs/TLSSigAPIv2.cs) |
+|   C++    | `genPrivateMapKey`と`genPrivateMapKeyWithStringRoomID`  | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-cpp/blob/master/src/tls_sig_api_v2.cpp) |
 
 [](id:step3)
-
 ### 手順3：お客様のサーバーからPrivateMapKeyをお客様のAppに転送します
 
 ![](https://main.qcloudimg.com/raw/93389bf9638bcfaf3d744467889dea84.jpg)
@@ -99,7 +98,7 @@ try {
     e.printStackTrace();
 }
 :::
-::: iOS OC
+::: iOS ObjectiveC
 NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
 [params setObject:@"xxxxx" forKey:@"privateMapKey"]; // 新しいprivateMapKeyを入力
 NSDictionary *dic = @{@"api": @"updatePrivateMapKey", @"params": params};
@@ -126,6 +125,5 @@ mTRTCCloud.callExperimentalAPI(api);
 [](id:q2)
 #### 2. PrivateMapKeyとUserSigには、どのような違いがあるのですか。
 
-UserSigはTRTCParamsの入力必須項目であり、攻撃者がお客様のSDKAppidアカウント内のトラフィックを盗用することを防止するため、現在のユーザーがTRTC クラウドサービスを使用する権限を持っているかどうかを検証するために使用されます。
-
-PrivateMapKeyはTRTCParamsの非必須項目であり、現在のユーザーが指定されたroomidのルームに入室する権限およびこのユーザーがこのルームで持つことができる権限を持っているかどうかを検証するために使用され、ビジネスでユーザーを識別する必要がある場合に限り、有効化する必要があります。
+- UserSigはTRTCParamsの入力必須項目であり、攻撃者がお客様のSDKAppidアカウント内のトラフィックを盗用することを防止するため、現在のユーザーがTRTC クラウドサービスを使用する権限を持っているかどうかを検証するために使用されます。
+- PrivateMapKeyはTRTCParamsの非必須項目であり、現在のユーザーが指定されたroomidのルームに入室する権限およびこのユーザーがこのルームで持つことができる権限を持っているかどうかを検証するために使用され、ビジネスでユーザーを識別する必要がある場合に限り、有効化する必要があります。

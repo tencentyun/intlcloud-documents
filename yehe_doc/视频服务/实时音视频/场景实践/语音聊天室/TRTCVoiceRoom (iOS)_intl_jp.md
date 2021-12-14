@@ -4,11 +4,11 @@ TRTCVoiceRoomは、Tencent CloudのTencent Real-Time Communication（TRTC）お�
 - 管理者は、リスナーを招待してマイク・オンにしたり、マイク・オンのキャスターをキックアウトしたりすることもできます。
 - 管理者はまた、座席をクローズすることができ、その他のリスナーはマイク・オンを申請することができなくなります。
 - リスナーはマイク・オンを申請して、マイク・オンのキャスターになり、他者と音声インタラクションを行うことができます。また、いつでもマイク・オフにして、通常のリスナーになることも可能です。
-- 各種のテキストメッセージやカスタムメッセージの送信をサポートします。カスタムメッセージは弾幕、「いいね」、ギフトなどを実装するために使用することができます。
+- 各種のテキストメッセージやカスタマイズメッセージの発信をサポートし、カスタムメッセージは弾幕、「いいね」、ギフトなどに使用することきます。
 
 TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つのクローズソースであるSDKに依存しています。具体的な実装プロセスは [ボイスチャットルーム（iOS）](https://intl.cloud.tencent.com/document/product/647/37287)をご参照ください。
 
-- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のボイスチャットコンポーネントとして使用します。
+- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のボイスチャットコンポーネントとして使用しています。
 - IM SDK：[IM SDK](https://intl.cloud.tencent.com/document/product/1047)のAVChatroomを使用してチャットルーム機能を実装します。同時にIMの属性インターフェースによって、マイクリストなどのルーム情報を保存し、招待シグナリングはマイク・オン/ピックのリクエストに用いることができます。
 
 
@@ -39,16 +39,17 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### マイク管理インターフェース
 
-| API                                             | 説明                                                         |
+| API                     | 説明                                |
 | ----------------------- | ----------------------------------- |
 | [enterSeat](#enterseat) | ユーザーが発言者になる（リスナー側/管理者ともに呼び出し可）。  |
+| [moveSeat](#moveseat)   | マイクの移動 (マイク・オンするキャスター側で呼び出せます) 。 |
 | [leaveSeat](#leaveseat) | 自主的にマイク・オフ（キャスターが呼び出し）。    |
 | [pickSeat](#pickseat)   | 視聴者が発言できるように招待（管理者が呼び出し）。              |
 | [kickSeat](#kickseat)   | キックアウトしてマイク・オフ（管理者が呼び出し）。              |
 | [muteSeat](#muteseat)   | 任意のマイクのミュート/ミュート解除（管理者が呼び出し）。 |
 | [closeSeat](#closeseat) | 任意のマイクのクローズ/解除（管理者が呼び出し）。     |
 
-### ローカルのオーディオ操作インターフェース
+### ローカルの音声操作インターフェース
 
 | API                                             | 説明                  |
 | ----------------------------------------------- | -------------------- |
@@ -57,12 +58,12 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 | [setAudioQuality](#setaudioquality)             | 音質の設定。           |
 | [muteLocalAudio](#mutelocalaudio)               | ローカルオーディオミュートの開始/停止。  |
 | [setSpeaker](#setspeaker)                       | スピーカーの起動設定。     |
-| [setAudioCaptureVolume](#setaudiocapturevolume) | マイクの集音音量設定。 |
+| [setAudioCaptureVolume](#setaudiocapturevolume) | マイクの集音音量設定。|
 | [setAudioPlayoutVolume](#setaudioplayoutvolume) | 再生音量の設定。       |
 | [setVoiceEarMonitorEnable](#setvoiceearmonitorenable) | インイヤーモニタリングのオン/オフ。       |
 
 
-### リモートユーザーオーディオ操作インターフェース
+### リモートユーザー音声操作インターフェース
 
 | API                                       | 説明                    |
 | ----------------------------------------- | ----------------------- |
@@ -71,7 +72,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### BGMサウンドエフェクト関連インターフェース
 
-| API                                             | 説明                                                          |
+| API                                             | 説明                                                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
 | [getAudioEffectManager](#getaudioeffectmanager) | BGMサウンドエフェクト管理オブジェクト[TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html#interfacecom_1_1tencent_1_1liteav_1_1audio_1_1TXAudioEffectManager)の取得。 |
 
@@ -84,7 +85,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### 招待シグナリング関連インターフェース
 
-| API                                  | 説明             |
+| API                                   | 説明             |
 | ------------------------------------- | ---------------- |
 | [sendInvitation](#sendinvitation)     | ユーザーに招待を送信。 |
 | [acceptInvitation](#acceptinvitation) | 招待の同意。       |
@@ -99,7 +100,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 | ------------------------- | ---------- |
 | [onError](#onerror) | エラーのコールバック。 |
 | [onWarning](#onwarning)   | 警告のコールバック。 |
-| [onDebugLog](#ondebuglog) | Logコールバック。 |
+| [onDebugLog](#ondebuglog) | Logコールバック。|
 
 ### ルームイベントのコールバック
 
@@ -111,14 +112,14 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ### マイク変更コールバック
 
-| API                                     | 説明                                  |
+| API                                     | 説明                                |
 | --------------------------------------- | ------------------------------------- |
-| [onSeatListChange](#onseatlistchange)   |全量のマイクリストの変更。                  |
+| [onSeatListChange](#onseatlistchange)   |全量のマイクリストの変更。                |
 | [onAnchorEnterSeat](#onanchorenterseat) | 発言者のメンバーがいます（ユーザーが発言者になる/管理者が視聴者を発言できるように招待）。 |
 | [onAnchorLeaveSeat](#onanchorleaveseat) | 視聴者のメンバーがいます（ユーザーが視聴者になる/管理者がキックアウトしてマイク・オフ）。 |
-| [onSeatMute](#onseatmute)               | 管理者のマイクミュート。                            |
+| [onSeatMute](#onseatmute)               | 管理者のマイクミュート。                          |
 | [onUserMicrophoneMute](#onusermicrophonemute)               | ユーザーのマイクがミュートされているかどうか。                          |
-| [onSeatClose](#onseatclose)             | 管理者のマイククローズ。                            |
+| [onSeatClose](#onseatclose)             | 管理者のマイククローズ。                          |
 
 ### リスナーの入退室イベントのコールバック
 
@@ -132,15 +133,15 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 | API                                         | 説明             |
 | ------------------------------------------- | ---------------- |
 | [onRecvRoomTextMsg](#onrecvroomtextmsg)     | テキストメッセージの受信。   |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | カスタムメッセージの受信。 |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | カスタムメッセージの受信。|
 
 ### シグナリングイベントのコールバック
 
-| API                                               | 説明               |
+| API                                               | 説明             |
 | ------------------------------------------------- | ------------------ |
-| [onReceiveNewInvitation](#onreceivenewinvitation) | 新規招待リクエストの受信。 |
-| [onInviteeAccepted](#oninviteeaccepted)           | 被招待者が招待に同意。 |
-| [onInviteeRejected](#oninviteerejected)           | 被招待者による招待の辞退。 |
+| [onReceiveNewInvitation](#onreceivenewinvitation) | 新規招待リクエストの受信。   |
+| [onInviteeAccepted](#oninviteeaccepted)           | 被招待者が招待に同意。   |
+| [onInviteeRejected](#oninviteerejected)           | 被招待者が招待を拒否。   |
 | [onInvitationCancelled](#oninvitationcancelled)   | 招待者が招待を取り消し。   |
 
 ## SDK基本関数
@@ -201,7 +202,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 ```Objective-C
 /**
-* イベントコールバックが設定されているキューの設定
+* イベントコールバックが配置されているキューの設定
 *
 * - parameter queueキュー，TRTCVoiceRoomの各種ステータス通知コールバックは、指定したqueueに発信されます。
 */
@@ -213,13 +214,14 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ  | タイプ             | 意味                                                       |
 | ----- | ---------------- | ------------------------------------------------------------ |
+| パラメータ  | タイプ             | 意味                                                       |
 | queue | dispatch_queue_t | TRTCVoiceRoomの各種ステータス通知は、指定したスレッドキューに発信されます。|
 
    
 
 ### login
 
-ログイン。
+ログイン
 
 ```Objective-C
 - (void)login:(int)sdkAppID
@@ -233,9 +235,9 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ     | タイプ           | 意味                                                         |
 | -------- | -------------- | ------------------------------------------------------------ |
-| sdkAppId | int         | TRTCコンソール> 【[アプリケーション管理]（https://console.cloud.tencent.com/trtc/app）】>アプリケーション情報の中でSDKAppIDを確認できます。 |
-| userId   | String                | 現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
-| userSig  | String         | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
+| sdkAppId | int            | **TRTCコンソール >[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)**> アプリケーション情報でSDKAppIDを確認できます。 |
+| userId   | NSString       | 現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（_）のみ使用できます。 |
+| userSig  | NSString       | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については、[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
 | callback | ActionCallback | ログインのコールバック。成功時にcodeは0になります。                                  |
 
    
@@ -268,8 +270,8 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ      | タイプ           | 意味                                |
 | --------- | -------------- | ----------------------------------- |
-| userName  | String         | ニックネーム。                              |
-| avatarURL | String         | プロフィール画像のアドレス。                          |
+| userName  | NSString       | ニックネーム。                              |
+| avatarURL | NSString       | プロフィール画像のアドレス。                          |
 | callback | ActionCallback | 個人情報設定のコールバック。成功時にcodeは0になります。                                  |
 
    
@@ -290,7 +292,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 | パラメータ      | タイプ                | 意味                                                         |
 | --------- | ------------------- | ------------------------------------------------------------ |
 | roomId | int | ルームIDは、ご自身でアサインし、一元管理する必要があります。複数のroomIDを、1つのボイスチャットルームリストにまとめることができます。Tencent Cloudでは現在、ボイスチャットルームリストの管理サービスを行っていませんので、ご自身でボイスチャットルームリストを管理してください。 |
-| roomParam | TRTCCreateRoomParam | ルーム情報は、ルーム名、マイク情報、カバー情報など、ルームを説明するために用いる情報に使用します。マイク管理が必要な場合は、ルームのマイク数を記入する必要があります。 |
+| roomParam | VoiceRoomParam | ルーム情報は、ルーム名、マイク情報、カバー情報など、ルームを説明するために用いる情報に使用します。マイク管理が必要な場合は、ルームのマイク数を入力する必要があります。 |
 | callback | ActionCallback | ルームの新規作成結果のコールバック。成功時にcodeは0になります。                                  |
 
 管理者が配信を開始する際の通常の呼び出しプロセスは次のとおりです。 
@@ -328,7 +330,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ     | タイプ           | 意味                                  |
 | -------- | -------------- | ------------------------------------- |
-| roomId   | int            | ルームID。                            |
+| roomId   | NSInteger            | ルームID。                            |
 | callback | ActionCallback | 入室結果のコールバック。成功時にcodeは0になります。 |
 
 
@@ -338,7 +340,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 2．リスナーが1つのボイスチャットルームを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
 3. 入室後、コンポーネントの`onRoomInfoChange` ルーム属性変更イベント通知を受信します。この時、ルーム属性を記録し、それに応じた修正を行うことができます。例：UIに表示するルーム名、発言者にする際の管理者への同意リクエストの要否の記録など。
 4. 入室後は、コンポーネントの`onSeatListChange`マイクリスト変更イベント通知を受信します。この時にマイクリストの変更をUI上に更新することができます。
-5. 入室後、マイクリストにキャスターが参加した `onAnchorEnterSeat` のイベント通知も受信します。
+5. 入室後にマイクリストにキャスターが参加した`onAnchorEnterSeat`のイベント通知も受信します。
 
 ### exitRoom
 
@@ -371,7 +373,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ       | タイプ                | 意味               |
 | ---------- | ------------------- | ------------------ |
-| roomIdList | List&lt;Integer&gt; | ルームナンバーリスト。       |
+| roomIdList | NSArray&lt;NSNumber&gt; | ルームナンバーリスト。       |
 | callback   | RoomInfoCallback    | ルーム詳細情報のコールバック。 |
 
 
@@ -387,7 +389,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ      | タイプ                      | 意味                                                       |
 | ---------------- | ------------------ | ------------------------------------------------------------ |
-| userIdList       | List&lt;String&gt; | 取得すべきユーザーIDリスト。nullの場合は、ルーム内全員の情報を取得します。 |
+| userIdList       | NSArray&lt;NSString&gt; | 取得すべきユーザーIDリスト。nullの場合は、ルーム内全員の情報を取得します。 |
 | userlistcallback | UserListCallback   | ユーザーの詳細情報のコールバック。                                          |
 
 
@@ -405,10 +407,33 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 パラメータは下表に示すとおりです。
 
-| パラメータ        | タイプ             | 意味                           |
+| パラメータ      | タイプ           | 意味                 |
 | --------- | -------------- | -------------------- |
-| seatIndex | int            | マイク・オンの必要があるマイク番号。 |
+| seatIndex | NSInteger      | マイク・オンの必要があるマイク番号。 |
 | callback  | ActionCallback | 操作コールバック。           |
+
+このインターフェースを呼び出すと、直ちにマイクリストが変更されます。リスナーによるマイク・オンの申請に管理者の同意が必要となるケースの場合は、まず`sendInvitation`を呼び出してから管理者に申請し、`onInvitationAccept`を受信するとこの関数を呼び出せるようになります。
+
+### moveSeat
+マイクの移動 (マイク・オンするキャスター側で呼び出せます)。
+>? マイクの移動に成功したら、ルーム内のすべてのメンバーが`onSeatListChange`、`onAnchorLeaveSeat`、`onAnchorEnterSeat`のイベント通知を受け取ります。(キャスターが呼び出した後に変更できるのは、マイクのシート番号情報のみで、ユーザーのキャスターロールを切り替えることはできません。)
+
+```Objective-C
+- (NSInteger)moveSeat:(NSInteger)seatIndex callback:(ActionCallback _Nullable)callback
+NS_SWIFT_NAME(moveSeat(seatIndex:callback:))
+```
+パラメータは下表に示すとおりです。
+
+| パラメータ      | タイプ           | 意味                 |
+| --------- | -------------- | -------------------- |
+| seatIndex | NSInteger      | 移動の必要があるマイク番号。 |
+| callback  | ActionCallback | 操作コールバック。           |
+
+戻り値：
+
+| 戻り値   | タイプ   | 意味                  |
+| -------- | --------- | --------------------- |
+| code     | NSInteger | マイク移動操作の結果（0は成功、その他は失敗、10001はインターフェース呼び出し頻度制限）。 |
 
 このインターフェースを呼び出すと、直ちにマイクリストが変更されます。リスナーによるマイク・オンの申請に管理者の同意が必要となるケースの場合は、まず`sendInvitation`を呼び出してから管理者に申請し、`onInvitationAccept`を受信するとこの関数を呼び出せるようになります。
 
@@ -426,7 +451,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ     | タイプ           | 意味       |
 | -------- | -------------- | ---------- |
-| callback | ActionCallback | 操作コールバック。 |
+| callback  | ActionCallback | 操作コールバック。|
 
 ### pickSeat
 
@@ -442,8 +467,8 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ      | タイプ           | 意味                   |
 | --------- | -------------- | ---------------------- |
-| seatIndex | int            | 視聴者が発言できるように招待する必要があるマイク番号。 |
-| userId | String           | ユーザーID。        |
+| seatIndex | NSInteger      |  マイク・オンの必要があるマイク番号。 |
+| userId    | NSString       | ユーザーID。              |
 | callback  | ActionCallback | 操作コールバック。             |
 
 このインターフェースを呼び出すと、すぐにマイクリストが修正されます。管理者がリスナーの同意がなければマイク・オンできないケースの場合は、まず`sendInvitation`を呼び出してからリスナーに申請し、`onInvitationAccept`を受信すると、この関数を呼び出せるようになります。
@@ -463,7 +488,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ      | タイプ           | 意味                   |
 | --------- | -------------- | ---------------------- |
-| seatIndex | int            | キックアウトしてマイク・オフの必要があるマイク番号。 |
+| seatIndex | NSInteger      | キックアウトしてマイク・オフの必要があるマイク番号。 |
 | callback  | ActionCallback | 操作コールバック。             |
 
 このインターフェースを呼び出すと、すぐにマイクリストが修正されます。
@@ -482,8 +507,8 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ      | タイプ           | 意味                                          |
 | --------- | -------------- | --------------------------------------------- |
-| seatIndex | int            | 操作の必要があるマイク番号。                          |
-| isMute    | boolean        | true：該当するマイクのミュート；false：該当するマイクのミュート解除。 |
+| seatIndex | NSInteger      | 操作が必要なマイク番号。                          |
+| isMute    | BOOL           | YES：該当するマイクのミュート；NO：該当するマイクのミュート解除。 |
 | callback  | ActionCallback | 操作コールバック。                                    |
 
 このインターフェースを呼び出すと、直ちにマイクリストが変更されます。seatIndexの座席に該当するキャスターは、muteAudioを自動的に呼び出してミュート/ミュートオフにします。
@@ -502,14 +527,14 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ      | タイプ           | 意味                                       |
 | --------- | -------------- | ------------------------------------------ |
-| seatIndex | int            | 操作の必要があるマイク番号。                       |
-| isClose   | boolean        | true：該当するマイクのクローズ； false：該当するマイクのクローズ解除。 |
+| seatIndex | NSInteger      | 操作が必要なマイク番号。                       |
+| isClose   | BOOL           | YES：該当するマイクのクローズ； NO：該当するマイクのクローズ解除。 |
 | callback  | ActionCallback | 操作コールバック。                                 |
 
 このインターフェースを呼び出すと、すぐにマイクリストが修正されます。該当するseatIndexの座席上のキャスターはクローズされ、自動的にマイク・オフになります。
 
 
-## ローカルのオーディオ操作インターフェース
+## ローカル音声操作のインターフェース
 
 ### startMicrophone
 
@@ -537,9 +562,9 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 パラメータは下表に示すとおりです。
 
-| パラメータ    | タイプ | 意味                                                         |
-| ------- | ---- | ------------------------------------------------------------ |
-| quality | int  | オーディオ品質。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
+| パラメータ    | タイプ             | 意味                                                         |
+| ------- | ---------- | ------------------------------------------------------------ |
+| quality | NSInteger  | オーディオ品質。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
 
 
 ### muteLocalAudio
@@ -552,9 +577,9 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ    | 意味                                                         |
+| パラメータ             | タイプ    | 意味                                                         |
 | ---- | ------- | ------------------------------------------------------------ |
-| mute | boolean | ミュート/ミュート取り消し。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
+| mute | BOOL    | ミュート/ミュートの取り消し。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
 
 
 
@@ -570,7 +595,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ       | タイプ    | 意味                        |
 | ---------- | ------- | --------------------------- |
-| useSpeaker | boolean | true：スピーカー；false：ヘッドホン。 |
+| useSpeaker | BOOL    | YES：スピーカー；NO：ヘッドホン。 |
 
 
 
@@ -586,7 +611,7 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ   | タイプ | 意味                          |
 | ------ | ---- | ----------------------------- |
-| volume | int  | 集音音量、0 - 100、 デフォルト100。 |
+| volume | NSInteger  | 集音音量、0 - 100、デフォルト100。 |
 
 
 ### setAudioPlayoutVolume
@@ -600,8 +625,8 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 パラメータは下表に示すとおりです。
 
 | パラメータ   | タイプ | 意味                          |
-| ------ | ---- | ----------------------------- |
-| volume | int  | 再生音量、0 - 100、 デフォルト100。 |
+| ------ | ---------- | ----------------------------- |
+| volume | NSInteger  | 再生音量、0 - 100、デフォルト100。 |
 
 ### muteRemoteAudio
 
@@ -615,8 +640,8 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ   | タイプ    | 意味                              |
 | ------ | ------- | --------------------------------- |
-| userId | String  | 指定ユーザーID。                   |
-| mute   | boolean | true：ミュート起動；false：ミュート停止。 |
+| userId | NSString  | 指定のユーザーID。                   |
+| mute   | BOOL      | YES：ミュート起動；NO：ミュート停止。 |
 
 ### muteAllRemoteAudio
 
@@ -628,9 +653,9 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ  | 意味                              |
+| パラメータ | タイプ    | 意味                              |
 | ---- | ------- | --------------------------------- |
-| mute | boolean | true：ミュート起動；false：ミュート停止。 |
+| mute | BOOL | YES：ミュート起動；NO：ミュート停止。 |
 
 ### setVoiceEarMonitorEnable
 
@@ -641,16 +666,16 @@ TRTCVoiceRoomは、オープンソースのClassであり、Tencent Cloudの2つ
 ```
 パラメータは下表に示すとおりです。
 
-| パラメータ | タイプ  | 意味                              |
+| パラメータ | タイプ    | 意味                              |
 | ---- | ------- | --------------------------------- |
-| enable | boolean | true：インイヤーモニタリングをオン。false：インイヤーモニタリングをオフ。 |
+| enable | BOOL | YES：インイヤーモニタリング起動；NO：インイヤーモニタリング停止。 |
 
 
 ## BGMサウンドエフェクト関連インターフェース関数
 
 ### getAudioEffectManager
 
-BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
+バックグラウンド・サウンドエフェクト管理オブジェクト [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
 
 ```Objective-C
 - (TXAudioEffectManager * _Nullable)getAudioEffectManager;
@@ -671,8 +696,8 @@ BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](ht
 
 | パラメータ     | タイプ           | 意味           |
 | -------- | -------------- | -------------- |
-| message  | String         | テキストメッセージ。     |
-| callback | ActionCallback | 送信結果のコールバック。 |
+| message  | NSString       | テキストメッセージ。     |
+| callback | ActionCallback | 送信結果のコールバック。|
 
    
 
@@ -688,8 +713,8 @@ BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](ht
 
 | パラメータ     | タイプ           | 意味                                                |
 | -------- | -------------- | -------------------------------------------------- |
-| cmd      | String         | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。 |
-| message  | String         | テキストメッセージ。                                         |
+| cmd      | NSString        | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。 |
+| message  | NSString        | テキストメッセージ。                                         |
 | callback  | ActionCallback | 送信結果のコールバック。                                    |
 
    
@@ -711,16 +736,16 @@ BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](ht
 
 | パラメータ     | タイプ           | 意味             |
 | -------- | -------------- | ---------------- |
-| cmd      | String         | 業務カスタマイズコマンド。 |
-| userId | String           | 招待ユーザーID。  |
-| content  | String         | 招待コンテンツ。     |
+| cmd      | NSString       | 業務カスタマイズコマンド。 |
+| userId   | NSString       | 招待するユーザーID。  |
+| content  | NSString       | 招待するコンテンツ。     |
 | callback  | ActionCallback | 送信結果のコールバック。   |
 
 戻り値：
 
 | 戻り値   | タイプ   | 意味                  |
 | -------- | ------ | --------------------- |
-| inviteId | String | 今回の招待IDの識別に使用。 |
+| inviteId | NSString | 今回の招待IDの識別に使用。 |
 
 ### acceptInvitation
 
@@ -734,8 +759,8 @@ BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](ht
 
 | パラメータ     | タイプ           | 意味           |
 | -------- | -------------- | -------------- |
-| id       | String         | 招待ID。      |
-| callback | ActionCallback | 送信結果のコールバック。 |
+| id       | NSString       |招待ID。      |
+| callback | ActionCallback | 送信結果のコールバック。|
 
 ### rejectInvitation
 
@@ -749,8 +774,8 @@ BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](ht
 
 | パラメータ     | タイプ           | 意味           |
 | -------- | -------------- | -------------- |
-| id       | String         | 招待ID。      |
-| callback | ActionCallback | 送信結果のコールバック。 |
+| id       | NSString       |招待ID。      |
+| callback | ActionCallback | 送信結果のコールバック。|
 
 
 ### cancelInvitation
@@ -765,8 +790,8 @@ BGMサウンドエフェクト管理オブジェクト [TXAudioEffectManager](ht
 
 | パラメータ     | タイプ           | 意味           |
 | -------- | -------------- | -------------- |
-| id       | String         | 招待ID。      |
-| callback | ActionCallback | 送信結果のコールバック。 |
+| id       | NSString       |招待ID。      |
+| callback | ActionCallback | 送信結果のコールバック。|
 
 [](id:TRTCVoiceRoomDelegate)
 ## TRTCVoiceRoomDelegateイベントのコールバック
@@ -790,7 +815,7 @@ NS_SWIFT_NAME(onError(code:message:));
 | パラメータ    | タイプ   | 意味       |
 | ------- | ------ | ---------- |
 | code   | int    | エラーコード。   |
-| message | String | エラー情報。 |
+| message | NSString  | エラー情報。 |
 
 
 ### onWarning
@@ -799,7 +824,7 @@ NS_SWIFT_NAME(onError(code:message:));
 
 ```Objective-C
 - (void)onWarning:(int)code
-                  message:(NSString *)message
+                  message:(NSString  *)message
 NS_SWIFT_NAME(onWarning(code:message:));
 ```
 
@@ -808,7 +833,7 @@ NS_SWIFT_NAME(onWarning(code:message:));
 | パラメータ    | タイプ   | 意味       |
 | ------- | ------ | ---------- |
 | code   | int    | エラーコード。   |
-| message | String | 警告メッセージ。 |
+| message | NSString | 警告メッセージ。 |
 
    
 
@@ -825,7 +850,7 @@ NS_SWIFT_NAME(onDebugLog(message:));
 
 | パラメータ    | タイプ   | 意味       |
 | ------- | ------ | ---------- |
-| message | String | ログ情報。 |
+| message | NSString | ログ情報。 |
 
    
 
@@ -843,9 +868,9 @@ NS_SWIFT_NAME(onRoomDestroy(roomId:));
 
 パラメータは下表に示すとおりです。
 
-|パラメータ   | タイプ   | 意味      |
+| パラメータ   | タイプ   | 意味      |
 | ------ | ------ | --------- |
-| roomId | String | ルームID。 |
+| roomId | NSString | ルーム ID。 |
 
 
 ### onRoomInfoChange
@@ -861,7 +886,7 @@ NS_SWIFT_NAME(onRoomInfoChange(roomInfo:));
 
 | パラメータ     | タイプ     | 意味       |
 | -------- | -------- | ---------- |
-| roomInfo | RoomInfo | ルーム情報。 |
+| roomInfo | VoiceRoomInfo | ルーム情報。 |
 
 
 ### onUserMicrophoneMute
@@ -876,10 +901,10 @@ NS_SWIFT_NAME(onUserMicrophoneMute(userId:mute:));
 
 パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ   | 意味                            |
+| パラメータ   | タイプ   | 意味                      |
 | ------ | ------ | ------------------------- |
-| userId | String|  ユーザーID。                 |
-| mute | boolean    | 音量の大きさ。値：0～100。 |
+| userId | NSString  | ユーザーID 。           |
+| mute | BOOL    | YES：マイクミュート； NO：ミュート解除。 |
 
 
 ### onUserVolumeUpdate
@@ -893,10 +918,10 @@ NS_SWIFT_NAME(onUserVolumeUpdate(userVolumes:totalVolume:));
 
 パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ   | 意味                            |
+| パラメータ   | タイプ   | 意味                      |
 | ------ | ------ | ------------------------- |
-| userVolumes | List | ユーザーリスト。                 |
-| totalVolume | int    | 音量の大きさ。値：0～100。 |
+| userVolumes | NSArray | ユーザーリスト。                 |
+| totalVolume | NSInteger    | 音量の大きさ。値：0 - 100。 |
 
 
 ## マイクコールバック
@@ -914,7 +939,7 @@ NS_SWIFT_NAME(onSeatListChange(seatInfoList:));
 
 | パラメータ         | タイプ                 | 意味             |
 | ------------ | -------------------- | ---------------- |
-| seatInfoList | List&lt;SeatInfo&gt; | 全量のマイクリスト。 |
+| seatInfoList | NSArray&lt;VoiceRoomSeatInfo&gt; | 全量のマイクリスト。 |
 
 ### onAnchorEnterSeat
 
@@ -930,8 +955,8 @@ NS_SWIFT_NAME(onAnchorEnterSeat(index:user:));
 
 | パラメータ  | タイプ     | 意味                 |
 | ----- | -------- | -------------------- |
-| index | int      | メンバーがマイク・オンのマイク。     |
-| user  | UserInfo | マイク・オンのユーザーの詳細情報。 |
+| index | NSInteger      | メンバーがマイク・オンするマイク。     |
+| user  | VoiceRoomUserInfo |  マイク・オンユーザーの詳細情報。 |
 
 ### onAnchorLeaveSeat
 
@@ -947,8 +972,8 @@ NS_SWIFT_NAME(onAnchorLeaveSeat(index:user:));
 
 | パラメータ  | タイプ     | 意味                 |
 | ----- | -------- | -------------------- |
-| index | int      | マイク・オフのマイク。         |
-| user  | UserInfo | マイク・オンのユーザーの詳細情報。 |
+| index | NSInteger      | マイク・オフのマイク。         |
+| user  | VoiceRoomUserInfo |  マイク・オンユーザーの詳細情報。 |
 
 ### onSeatMute
 
@@ -964,8 +989,8 @@ NS_SWIFT_NAME(onSeatMute(index:isMute:));
 
 | パラメータ   | タイプ    | 意味                               |
 | ------ | ------- | ---------------------------------- |
-| index  | int     | 操作するマイク。                       |
-| isMute | boolean | true：マイクミュート； false：ミュート解除。 |
+| index  | NSInteger     | 操作するマイク。                       |
+| isMute | BOOL | YES：マイクミュート； NO：ミュート解除。 |
 
 ### onSeatClose
 
@@ -981,8 +1006,8 @@ NS_SWIFT_NAME(onSeatClose(index:isClose:));
 
 | パラメータ    | タイプ    | 意味                                |
 | ------- | ------- | ----------------------------------- |
-| index   | int     | 操作するマイク。                        |
-| isClose | boolean | true：マイクのクローズ； false：マイクのクローズ解除。 |
+| index   | NSInteger     | 操作するマイク。                        |
+| isClose | BOOL | YES：マイクのクローズ； NO： マイクのクローズ解除。 |
 
 ## リスナーの入退室イベントのコールバック
 
@@ -999,7 +1024,7 @@ NS_SWIFT_NAME(onAudienceEnter(userInfo:));
 
 | パラメータ     | タイプ     | 意味           |
 | -------- | -------- | -------------- |
-| userInfo | UserInfo | 入室したリスナーの情報。 |
+| userInfo | VoiceRoomUserInfo | 入室したリスナーの情報。 |
 
 ### onAudienceExit
 
@@ -1014,7 +1039,7 @@ NS_SWIFT_NAME(onAudienceExit(userInfo:));
 
 | パラメータ     | タイプ     | 意味           |
 | -------- | -------- | -------------- |
-| userInfo | UserInfo | 退室したリスナーの情報。 |
+| userInfo | VoiceRoomUserInfo | 退室したリスナーの情報。 |
 
    
 
@@ -1034,8 +1059,8 @@ NS_SWIFT_NAME(onRecvRoomTextMsg(message:userInfo:));
 
 | パラメータ     | タイプ     | 意味             |
 | -------- | -------- | ---------------- |
-| message  | String  | テキストメッセージ。       |
-| userInfo | UserInfo | 送信者のユーザー情報。 |
+| message  | NSString   | テキストメッセージ。       |
+| userInfo | VoiceRoomUserInfo | 送信者のユーザー情報。 |
 
    
 
@@ -1045,7 +1070,7 @@ NS_SWIFT_NAME(onRecvRoomTextMsg(message:userInfo:));
 
 ```Objective-C
 - (void)onRecvRoomCustomMsg:(NSString *)command
-                    message:(NSString *)message
+                    message:(NSString  *)message
                    userInfo:(VoiceRoomUserInfo *)userInfo
 NS_SWIFT_NAME(onRecvRoomCustomMsg(command:message:userInfo:));
 ```
@@ -1054,9 +1079,9 @@ NS_SWIFT_NAME(onRecvRoomCustomMsg(command:message:userInfo:));
 
 | パラメータ     | タイプ     | 意味                                               |
 | -------- | -------- | -------------------------------------------------- |
-| command  | String   | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。 |
-| message  | String   | テキストメッセージ。                                         |
-| userInfo | UserInfo | 送信者のユーザー情報。                                   |
+| command  | NSString   | コマンドワードは、開発者がカスタマイズします。主にさまざまなメッセージタイプを区別するために使用されます。 |
+| message  | NSString   | テキストメッセージ。                                         |
+| userInfo | VoiceRoomUserInfo | 送信者のユーザー情報。                                   |
 
 ## 招待シグナリングイベントのコールバック
 
@@ -1076,10 +1101,10 @@ NS_SWIFT_NAME(onReceiveNewInvitation(id:inviter:cmd:content:));
 
 | パラメータ    | タイプ     | 意味                               |
 | ------- | -------- | ---------------------------------- |
-| id      | String   | 招待ID。                          |
-| inviter | String   | 招待者のユーザーID。                  |
-| cmd     | String   | 業務指定のコマンドワードは、開発者がカスタマイズします。 |
-| content | UserInfo | 業務指定のコンテンツ。                   |
+| id      | NSString   |招待ID。                          |
+| inviter | NSString   | 招待者のユーザーID。                  |
+| cmd     | NSString   | 業務指定のコマンドワードは、開発者がカスタマイズします。 |
+| content | NSString | 業務指定のコンテンツ。                   |
 
 ### onInviteeAccepted
 
@@ -1095,8 +1120,8 @@ NS_SWIFT_NAME(onInviteeAccepted(id:invitee:));
 
 | パラメータ    | タイプ   | 意味                |
 | ------- | ------ | ------------------- |
-| id      | String | 招待ID。           |
-| inviter | String | 被招待者のユーザーID。 |
+| id      | NSString | 招待ID。           |
+| invitee | NSString | 被招待者のユーザーID。 |
 
 ### onInviteeRejected
 
@@ -1112,8 +1137,8 @@ NS_SWIFT_NAME(onInviteeRejected(id:invitee:));
 
 | パラメータ    | タイプ   | 意味                |
 | ------- | ------ | ------------------- |
-| id      | String | 招待ID。           |
-| inviter | String | 被招待者のユーザーID。 |
+| id      | NSString | 招待ID。           |
+| invitee | NSString | 被招待者のユーザーID。 |
 
 ### onInvitationCancelled
 
@@ -1126,7 +1151,7 @@ NS_SWIFT_NAME(onInviteeRejected(id:invitee:));
 
 パラメータは下表に示すとおりです。
 
-| パラメータ    | タイプ   | 意味               |
+| パラメータ    | タイプ   | 意味              |
 | ------- | ------ | ----------------- |
-| id      | String | 招待ID。         |
-| inviter | String | 招待者のユーザーID。 |
+| id      | NSString |招待ID。         |
+| inviter | NSString | 招待者のユーザーID。 |

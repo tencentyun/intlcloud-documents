@@ -7,6 +7,13 @@
 > - 製品の安定性を高め、より良いオンラインサポートをご利用いただくため、速やかに最新バージョンに更新することをお勧めします。
 > - バージョンのアップグレードに関する注意事項については、[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
 
+## Version 4.11.8 @2021.11.05
+
+**Improvement**
+
+- iOS 15.0で、偶発的にビデオ再生がブラックスクリーンになる問題を回避しました。詳細については、[iOS Safari 既知の問題 case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
+- iOS 15.1で、必ずプッシュにcrashが起きるという問題を回避しました。詳細については、[iOS Safari 既知の問題 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
+
 ## Version 4.11.7 @2021.09.30
 
 **Improvement**

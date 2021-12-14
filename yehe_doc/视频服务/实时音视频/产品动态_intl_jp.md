@@ -1,3 +1,19 @@
+## 2021年11月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
+</tr><tr>
+<td>Version 9.3リリース</td>
+<td>すべてのプラットフォーム：<ul style="margin:0">
+<li>脆弱なネットワーク状況におけるビデオの秒速開始スピードを最適化しました。</li>
+<li>脆弱なネットワークの制御ポリシーを最適化しました。同じシナリオでもよりスムーズです。</li>
+<li>TCP伝送プロトコルに対するサポートを最適化しました。複雑なネットワーク環境により良く対応します。</li>
+<li>スピードテスト機能を最適化し、現在のネットワーク帯域幅に対する検査をサポートしました。</li>
+</ul></td>
+<td>2021-11-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
+</tr>
+</table>
+
 ## 2021年09月
 <table>
 <tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
@@ -299,7 +315,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 
 ## 2020年10月
 <table>
-<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th>  <th width="15%">関連ドキュメント</th></tr> 
+<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th>  <th width="15%">関連ドキュメント</th> 
 <tr>
 <td>Version 7.9リリース</td>
 <td>
@@ -333,7 +349,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 
 ## 2020年09月
 <table>
-<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th>  <th width="15%">関連ドキュメント</th></tr>  
+<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th>  <th width="15%">関連ドキュメント</th> 
 <td>Version 7.8リリース</td>
 <td>
 Android: <ul style="margin:0">
@@ -502,7 +518,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 <td>Version 7.3リリース</td>
 <td>
 すべてのプラットフォーム：<ul style="margin:0">
-  <li>全リンク128kbps高音質ステレオをサポートしています。 setAudioQuality(TRTCAudioQualityMusic)インターフェースを介して設定できます。 </li>
+  <li>全リンク128kbps高音質ステレオサウンドをサポートしています。setAudioQuality(TRTCAudioQualityMusic)インターフェースを介して設定できます。</li>
   <li>SPEECH音声モードをサポートしています。ミーティングシナリオでの音声通話に適しており、より強力なアクティブノイズキャンセリング（ANS）機能を有しています。setAudioQuality(TRTCAudioQualitySpeech) を介して設定できます。 </li>
   <li>原音と伴唱を分離したカラオケシナリオのサポートに使用する、複数チャンネルでのBGM並行再生をサポートしています。またBGMのリピート再生もサポートしています。 </li>
   <li>古いインターフェースと互換性のある状況で、全く新しい音響効果管理インターフェースTXAudioEffectManagerを追加しました。よりフレキシブルで多様性がある音響効果機能のサポートに使用します。 </li>

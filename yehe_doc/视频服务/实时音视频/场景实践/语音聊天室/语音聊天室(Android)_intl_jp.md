@@ -9,12 +9,12 @@
 
 [](id:ui.step1)
 ### 手順1：アプリケーションの新規作成
-1．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
-2. `TestLiveRoom`などのアプリケーション名を入力して、【作成】をクリックします。
-3. 【ダウンロードしました。次のステップ】をクリックすると、この手順をスキップします。
+1. TRTCコンソールにログインし、**開発支援**>**[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)**を選択します。
+2. `TestLiveRoom`などのアプリケーション名を入力して、 **作成 **をクリックします。
+3. **ダウンロードしました。次のステップ**をクリックすると、この手順をスキップします。
 
 ![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
->!本機能はTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
+>!本機能はTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://cloud.tencent.com/document/product/269)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
 
 
 
@@ -24,58 +24,59 @@
 
 [](id:ui.step3)
 ### 手順3：Appプロジェクトファイルの設定
-1. 設定変更ページに進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
+1. 設定変更画面に進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
 2. `Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java`のファイルを見つけて開きます。
 3. `GenerateTestUserSig.java`ファイル内の関連パラメータを設定します。
 <ul style="margin:0"><li/>SDKAPPID：デフォルトはプレースホルダー(PLACEHOLDER)。実際のSDKAppIDを設定してください。
 <li/>SECRETKEY：デフォルトはプレースホルダー(PLACEHOLDER)。実際のキー情報を設定してください。</ul>
+<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 
-4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
-5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
+4. 貼り付け完了後、**貼り付けました。次のステップ**をクリックすれば、作成が完了します。
+5. コンパイル完了後、 **コンソール概要に戻る** をクリックすれば終了です。
 
 
 >!
 >- ここで言及するUserSigの発行方法は、クライアントコードの中でのSECRETKEY設定となりますが、この手法のSECRETKEYは逆コンパイルによって逆クラッキングされやすく、キーがいったん漏洩すると、攻撃者がお客様のTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのAppクイックスタートおよび機能デバッグにのみ適しています**。
->- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+>- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[UserSigに関するご質問](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 [](id:ui.step4)
 ### 手順4：Appの実行
-Android Studio（バージョン3.5以上）を使用してソースコード`TUIVoiceRoom`プロジェクトを開き、【実行】をクリックすれば、このAppのデバッグが開始されます。
+Android Studio（バージョン3.5以上）を使用してソースコード`TUIVoiceRoom`プロジェクトを開き、 **実行 **をクリックすれば、このAppのデバッグが開始されます。
 
 [](id:ui.step5)
 ### 手順5：Appソースコードの修正
 ソースコードのSourceフォルダは、uiとmodelという2つのサブフォルダを含んでいます。uiフォルダにはインターフェースコードが含まれています。以下の表にファイルまたはフォルダおよび対応するUIをリストアップして、二次調整を行いやすくしています。
 
-| ファイルまたはフォルダ | 機能の説明 |
+| ファイルまたはフォルダ | 機能の説明                             |
 |-------|--------|
-| base | UIに使用される基礎となるクラス。 |
+| base         | UIに使用される基礎となるクラス。                    |
 | room | メインルームページは、管理者とリスナーという2種類のインターフェースがあります。 |
-| widget | 汎用ウィジェット。 |
+| widget       | 汎用ウィジェット。                           |
 
 ## 体験アプリケーション
 >! 体験アプリケーションには、少なくとも2台のデバイスが必要です。
 
 ### ユーザーA
-1. 図のように、ユーザー名を入力し（**ユーザー名は一意のものとし、他のユーザーと重複しないようにしてください**）、ログインします。
-2. 下図のように、【ルームの作成】をクリックします。
-3. ルームトピックを入力し、【チャット開始】をクリックします。
+1. ユーザー名を入力し（**ユーザー名は一意のものとし、他のユーザーと重複しないようにしてください**）、ログインします。
+2. **ルームの作成**をクリックします。
+3. ルームトピックを入力し、**チャット開始**をクリックします。
 
 ### ユーザーB
-1. 図のように、ユーザー名を入力し（**ユーザー名は一意のものとし、他のユーザーと重複しないようにしてください**）、ログインします。
-2. ユーザーAが作成したルーム番号を入力し、【入室する】をクリックします。<br>
+1. ユーザー名を入力し（**ユーザー名は一意のものとし、他のユーザーと重複しないようにしてください**）、ログインします。
+2. ユーザーAが作成したルームナンバーを入力し、**入室する**をクリックします。<br>
 
->!  ルーム番号はユーザーAのルーム上部に表示されます。
+>! ルームナンバーはユーザーAのルーム上部に表示されます。
 
 [](id:model)
 
-## カスタマイズUIの実装
+## UIカスタマイズの実装
 
 [ソースコード](https://github.com/tencentyun/TUIVoiceRoom/tree/main/Android/Source/src/main/java/com/tencent/liteav/trtcvoiceroom)のSourceフォルダには、uiとmodelという2つのサブフォルダがあり、modelフォルダには再利用できるオープンソースコンポーネントTRTCVoiceRoomがあります。`TRTCVoiceRoom.java`ファイルでこのコンポーネントが提供するインターフェース関数を確認し、対応するインターフェースを使用してカスタマイズしたUIを実装することができます。
 ![](https://main.qcloudimg.com/raw/319beb14d72a43120e102380278aa1da.png)
 
 [](id:model.step1)
-### 手順1：SDKへの統合
-ボイスチャットコンポーネントTRTCVoiceRoomは、TRTC SDKとIM SDKに依存し、次の手順で2つのSDKをプロジェクトに統合することができます。
+### 手順1：SDKの統合 
+ボイスチャットコンポーネントTRTCVoiceRoom は、TRTC SDKとIM SDKに依存し、次の手順で2つのSDKをプロジェクトに統合することができます。
 
 **方法1：Mavenリポジトリを介する依存**
 1. dependenciesにTRTCSDKとIMSDKの依存を追加します。
@@ -88,7 +89,9 @@ dependencies {
 }
 :::
 </dx-codeblock>
->?2つのSDKの最新バージョン番号は、[TRTC](https://github.com/tencentyun/TRTCSDK)および[IM](https://github.com/tencentyun/TIMSDK)のGitHubトップページで取得することができます。
+
+>? 2つのSDKの最新バージョン番号は、[TRTC](https://github.com/tencentyun/TRTCSDK)および[IM](https://github.com/tencentyun/TIMSDK)のGitHubトップページで取得することができます。
+
 2. defaultConfigでAppが使用するCPUアーキテクチャを指定します。
 <dx-codeblock>
 ::: java java
@@ -99,7 +102,8 @@ defaultConfig {
 }
 :::
 </dx-codeblock>
-3. 【Sync Now】をクリックし、自動でSDKをダウンロードし、プロジェクトに統合します。
+
+3. **Sync Now**をクリックし、自動でSDKをダウンロードし、プロジェクトに統合します。
 
 **方法2：ローカルAARを介する依存**
 開発環境でのMavenリポジトリへのアクセスが遅い場合は、ZIPパッケージを直接ダウンロードし、統合ドキュメントに従って手動でプロジェクトに統合することができます。
@@ -138,7 +142,7 @@ AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が�
 :::
 </dx-codeblock>
 
-proguard-rules.proファイルでは、SDK関連クラスを非難読化リストに追加します。
+proguard-rules.proファイルでは、SDK関連を非難読化リストに追加します。
 <dx-codeblock>
 ::: java java
 -keep class com.tencent.** { *; }
@@ -146,7 +150,7 @@ proguard-rules.proファイルでは、SDK関連クラスを非難読化リス�
 </dx-codeblock>
 
 [](id:model.step3)
-### 手順3：TRTCVoiceRoomコンポーネントをインポート
+### 手順3： TRTCVoiceRoom コンポーネントをインポート
 次のディレクトリ内のすべてのファイルをプロジェクトにコピーします。
 <dx-codeblock>
 ::: java java
@@ -162,15 +166,15 @@ Source/src/main/java/com/tencent/liteav/trtcvoiceroom/model
  <table>
 <tr>
 <th>パラメータ名</th>
-<th>作用</th>
+<th>機能</th>
 </tr>
 <tr>
 <td>sdkAppId</td>
-<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a> でSDKAppIDを表示できます。</td>
+<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a> で SDKAppIDを表示できます。</td>
 </tr>
 <tr>
 <td>userId</td>
-<td>現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（_）のみ使用できます。</td>
+<td>現在のユーザーID、文字列タイプでは、英語のアルファベット（a-z と A-Z）、数字（0-9）、ハイフン（-）とアンダーライン（_）のみ使用できます。</td>
 </tr>
 <tr>
 <td>userSig</td>
@@ -214,8 +218,8 @@ mTRTCVoiceRoom.setSelfProfile("my_name", "my_face_url", null);
 
 // 2.管理者は、createRoomを呼び出してルームを作成します
 final TRTCVoiceRoomDef.RoomParam roomParam = new TRTCVoiceRoomDef.RoomParam();
-roomParam.roomName = "ルーム名";
-roomParam.needRequest = false; // マイク・オンの管理者による確認の要否
+roomParam.roomName = 「ルーム名」;
+roomParam.needRequest = false; // マイク・オンに対する管理者の確認の要否
 roomParam.seatCount = 7; // ルームの座席数。ここでは計7席あり、管理者が1席を占め、残り6席がリスナーとなります
 roomParam.coverUrl = 「ルームカバー図のURL」;
 mTRTCVoiceRoom.createRoom(mRoomId, roomParam, new TRTCVoiceRoomCallback.ActionCallback() {
@@ -257,7 +261,7 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 4．リスナーは1つのボイスチャットルームを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
 5. 入室後、コンポーネントの`onRoomInfoChange` ルーム属性変更イベント通知を受信します。この時、ルーム属性を記録し、それに応じた修正を行うことができます。例：UIに表示するルーム名、発言者にする際の管理者への同意リクエストの要否の記録など。
 6. 入室後は、コンポーネントの`onSeatListChange`マイクリスト変更イベント通知を受信します。この時、マイクリストの変更をUI上に更新することができます。
-7. 入室後、マイクリストにキャスターが参加した `onAnchorEnterSeat` のイベント通知も受信します。
+7. 入室後に、マイクリストにキャスターが参加した`onAnchorEnterSeat`のイベント通知も受信します。
 
 ![](https://main.qcloudimg.com/raw/33432f97eb632fbb9710a59cba9e4469.png)
 <dx-codeblock>
@@ -283,7 +287,7 @@ mTRTCVoiceRoom.enterRoom(roomId, new TRTCVoiceRoomCallback.ActionCallback() {
         @Override
         public void onCallback(int code, String msg) {
             if (code == 0) {
-                //入室に成功
+                //入室に成功 
             }
         }
 });
@@ -314,9 +318,9 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 
 <dx-tabs>
 ::: 管理者側
-1. `pickSeat`は、対象となるマイクおよびリスナーのuserIdを渡し、発言できるように視聴者を招待できます。ルーム内の全メンバーは`onSeatListChange`および`onAnchorEnterSeat`というイベント通知を受信します。
+1. `pickSeat`は、対応するマイクおよびリスナーのuserIdを渡し、視聴者を発言できるように招待できます。ルーム内の全メンバーは`onSeatListChange`および`onAnchorEnterSeat`というイベント通知を受信します。
 2. `kickSeat`は、対象となるマイクを渡した後、キックアウトしてマイク・オフにすることができます。ルーム内の全メンバーは`onSeatListChange`および`onAnchorLeaveSeat`というイベント通知を受信します。
-3. `muteSeat`は、対象となるマイクを渡した後、ミュート/ミュート解除をすることができます。ルーム内の全メンバーは`onSeatListChange`および`onSeatMute`というイベント通知を受信します。
+3. `muteSeat`は、対応するマイクを渡した後、ミュート/ミュート解除をすることができます。ルーム内の全参加者は`onSeatListChange`および`onSeatMute`というイベント通知を受信します。
 4．`closeSeat`は、対応するマイクを送信後、任意のマイクのクローズ/解除をすることができます。クローズ後は、リスナー側はこれ以上マイクを使用することはできません。ルーム内の全参加者は`onSeatListChange`および`onSeatClose`というイベント通知を受信します。
 ![](https://main.qcloudimg.com/raw/367a0c670d2f9899d0b311ed1f322ea3.png)
 
@@ -327,7 +331,7 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 
 ![](https://main.qcloudimg.com/raw/8d385dd387b6255b8512dbff5829e88a.png)
 
-マイク操作後のイベント通知の順番は次のとおりです。callback > onSeatListChange > onAnchorEnterSeatなど独立したイベント。
+マイク操作後のイベント通知の順番は次のとおりです。callback > onSeatListChange > onAnchorEnterSeat など独立したイベント。
 
 <dx-codeblock>
 ::: java java
@@ -458,16 +462,16 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 [](id:model.step9)
 ### 手順9：文字チャットおよび弾幕コメントの実装
 - `sendRoomTextMsg`によって通常のテキストメッセージを送信できるようになり、このルーム内のすべてのキャスターおよびリスナーが`onRecvRoomTextMsg`のコールバックを受信することができます。
- IMバックエンドは、デフォルトのセンシティブワードフィルタルールを備えており、センシティブワードと認識されたテキストメッセージはクラウドに転送されることはありません。
+ IMバックエンドは、デフォルトでNGワードフィルター規則を有し、NGワードと認識されたテキストメッセージはクラウドに転送されることはありません。
   <dx-codeblock>
   ::: java java
   // 送信側：テキストメッセージの送信
   mTRTCVoiceRoom.sendRoomTextMsg("Hello Word!", null);
-  // 受信側：テキストメッセージの監視
+  // 受信側：テキストメッセージのモニタリング
   mTRTCVoiceRoom.setDelegate(new TRTCVoiceRoomDelegate() {
     @Override
     public void onRecvRoomTextMsg(String message, TRTCVoiceRoomDef.UserInfo userInfo) {
-        Log.d(TAG, userInfo.userName + "からのメッセージを受信:" + message);
+        Log.d(TAG、 + userInfo.userName + 「からのメッセージを受信:」 + message);
     }
   });
   :::
@@ -480,13 +484,13 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 // eg:「CMD_DANMU」は弾幕コメントを表し、「CMD_LIKE」は「いいね」情報を表します
 mTRTCVoiceRoom.sendRoomCustomMsg("CMD_DANMU", "Hello world", null);
 mTRTCVoiceRoom.sendRoomCustomMsg("CMD_LIKE", "", null);
-// 受信側：カスタムメッセージの監視
+// 受信側：カスタムメッセージのモニタリング
 mTRTCVoiceRoom.setDelegate(new TRTCVoiceRoomDelegate() {
     @Override
     public void onRecvRoomCustomMsg(String cmd, String message, TRTCVoiceRoomDef.UserInfo userInfo) {
         if ("CMD_DANMU".equals(cmd)) {
             // 弾幕コメントの受信
-            Log.d(TAG, "が" + userInfo.userName + "から受信した弾幕コメント:" + message);
+            Log.d(TAG、 + userInfo.userName + 「からの弾幕コメントを受信:」 + message);
         } else if ("CMD_LIKE".equals(cmd)) {
             // 「いいね」情報の受信
             Log.d(TAG、 userInfo.userName + 「いいねを付けました！」);
