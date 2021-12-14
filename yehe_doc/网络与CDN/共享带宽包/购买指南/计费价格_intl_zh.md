@@ -18,9 +18,15 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">所有地域
+<td align="left">除圣保罗外的所有地域
 </td>
 <td align="left">16.97</td>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">圣保罗
+</td>
+<td align="left">21.23</td>
 </tr>
 </tbody></table>
 
