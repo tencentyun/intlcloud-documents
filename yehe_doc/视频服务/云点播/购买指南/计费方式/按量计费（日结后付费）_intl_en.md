@@ -168,4 +168,4 @@ Video acceleration is billed daily based on a volume pricing model. The more tra
   VOD traffic fee on January 1 = 0.038 (USD/GB) × 550 (GB)= 20.9 (USD)
 
 ## Remarks
-If you have a large business volume (storage usage greater than 1 PB or daily traffic consumption over 10 TB), you can contact sales for more flexible and cost-effective billing options.
+If you have a large business volume (storage usage greater than 1 PB or daily traffic consumption over 10 TB), you can [contact sales](https://intl.cloud.tencent.com/contact-us) for more flexible and cost-effective billing options.
