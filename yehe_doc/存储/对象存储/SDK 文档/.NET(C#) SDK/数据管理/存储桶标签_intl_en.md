@@ -5,16 +5,16 @@ This document provides an overview of APIs and SDK code samples related to bucke
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
 | [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting bucket tags | Sets tags for an existing bucket |
-| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a specified bucket |
-| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes specified bucket tags |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a bucket |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes the tags of a bucket |
 
 ## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Setting Bucket Tags
 
-#### API description
+#### Description
 
 This API is used to set tags for an existing bucket.
 
@@ -24,7 +24,8 @@ This API is used to set tags for an existing bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   PutBucketTaggingRequest request = new PutBucketTaggingRequest(bucket);
   string akey = "aTagKey";
   string avalue = "aTagValue";
@@ -37,7 +38,7 @@ try
   // Execute the request
   PutBucketTaggingResult result = cosXml.PutBucketTagging(request);
   
-  // Request successful 
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -56,7 +57,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ## Querying Bucket Tags
 
-#### API description
+#### Description
 
 This API is used to query the existing tags of a specified bucket.
 
@@ -66,12 +67,13 @@ This API is used to query the existing tags of a specified bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   GetBucketTaggingRequest request = new GetBucketTaggingRequest(bucket);   
   // Execute the request
   GetBucketTaggingResult result = cosXml.GetBucketTagging(request);
   
-  // Request successful 
+  // Request succeeded
   Tagging tagging = result.tagging;
   Console.WriteLine(tagging);
 }
@@ -91,9 +93,9 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ## Deleting Bucket Tags
 
-#### API description
+#### Description
 
-This API is used to delete the existing tags of a specified bucket.
+This API is used to delete the existing tags from a bucket.
 
 #### Sample code
 
@@ -101,12 +103,13 @@ This API is used to delete the existing tags of a specified bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
   // Execute the request
   DeleteBucketTaggingResult result = cosXml.DeleteBucketTagging(request);
   
-  // Request successful 
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)

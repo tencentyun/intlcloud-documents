@@ -1,4 +1,4 @@
-## Overview
+## Feature Description
 
 This API is used to query the INTELLIGENT TIERING configuration of a bucket.
 
@@ -15,6 +15,7 @@ This API is used to query the INTELLIGENT TIERING configuration of a bucket.
        <Status>Enabled</Status>
        <Transition>
           <Days>30</Days>
+		  <RequestFrequent>1</RequestFrequent>
        </Transition>
 </IntelligentTieringConfiguration>
 ```
@@ -32,7 +33,7 @@ Authorization: Auth String
 
 >? 
 > - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 #### Request parameters
@@ -41,7 +42,7 @@ This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -51,7 +52,7 @@ The request body of this request is empty.
 
 #### Response headers
 
-This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -60,24 +61,27 @@ This API returns only common response headers. For more information, please see 
   <Status>Enabled</Status>
   <Transition>
     <Days>30|60|90</Days>
+    <RequestFrequent>1</RequestFrequent>
   </Transition>
 </IntelligentTieringConfiguration>
 ```
 
 The nodes are described as follows:
 
-| Node | Parent Node | Description | Type |
+| Node                            | Parent Node                                     | Description                                                         | Type      |
 | ------------------------------- | ------------------------------------------ | ------------------------------------------------------------ | --------- |
-| IntelligentTieringConfiguration | None | Configuration of INTELLIGENT TIERING | Container |
-| Status | IntelligentTieringConfiguration | Whether INTELLIGENT TIERING is enabled. Enumerated values: `Suspended`, `Enabled` | Enum |
-| Transition | IntelligentTieringConfiguration | Transition configuration for INTELLIGENT TIERING | Container |
-| Days | IntelligentTieringConfiguration.Transition | The number of consecutive days after which objects are moved from STANDARD to STANDARD_IA. Valid values: 30 (default), 60, 90 | Int  |
+| IntelligentTieringConfiguration | None                                         | Configuration of INTELLIGENT TIERING                                   | Container |
+| Status                          | IntelligentTieringConfiguration            | Whether INTELLIGENT TIERING is enabled. Enumerated values: `Suspended`, `Enabled` | Enum      |
+| Transition                      | IntelligentTieringConfiguration            | Transition configuration for INTELLIGENT TIERING                 | Container |
+| Days                            | IntelligentTieringConfiguration.Transition | The number of consecutive days used to determine whether to move objects from STANDARD to STANDARD_IA. Valid values: `30` (default), `60`, `90` | Int  |
+| RequestFrequent               |  IntelligentTieringConfiguration.Transition | The limit of access times used to determine whether to move objects from STANDARD to STANDARD_IA. The default value is `1`. It can achieve object transition when used with `Days`. For example, if this parameter is set to `1` and `Days` is set to `30`, objects accessed less than once in 30 consecutive days will be moved from STANDARD to STANDARD_IA.   |
+
 
 #### Error codes
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Sample
+## Examples
 
 #### Request
 
@@ -106,6 +110,7 @@ x-cos-request-id: NTk5ZDM5OTRfZDNhZDM1MGFfMjYyMTFfZmU3****
   <Status>Enabled</Status>
   <Transition>
     <Days>30</Days>
+    <RequestFrequent>1</RequestFrequent>
   </Transition>
 </IntelligentTieringConfiguration>
 ```

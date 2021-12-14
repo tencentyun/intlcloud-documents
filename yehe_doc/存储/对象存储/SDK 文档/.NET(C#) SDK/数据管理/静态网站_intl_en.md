@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to static websites.
+This document provides an overview of APIs and SDK code samples related to static website.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ---------------- | ------------------------ |
@@ -10,11 +10,11 @@ This document provides an overview of APIs and SDK code samples related to stati
 
 ## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting a Static Website Configuration
+## Setting Static Website Configuration
 
-#### API description 
+#### Description
 
 This API is used to configure a static website for a bucket.
 
@@ -24,14 +24,15 @@ This API is used to configure a static website for a bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   PutBucketWebsiteRequest putRequest = new PutBucketWebsiteRequest(bucket);
   putRequest.SetIndexDocument("index.html");
   putRequest.SetErrorDocument("eroror.html");
   putRequest.SetRedirectAllRequestTo("index.html");
   PutBucketWebsiteResult putResult = cosXml.PutBucketWebsite(putRequest);
   
-  // Request successful 
+  // Request succeeded
   Console.WriteLine(putResult.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -48,9 +49,9 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketWebsite.cs).
 
-## Querying a Static Website Configuration
+## Querying Static Website Configuration
 
-#### API description 
+#### Description
 
 This API is used to query the static website configuration associated with a bucket.
 
@@ -60,12 +61,13 @@ This API is used to query the static website configuration associated with a buc
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
   // Execute the request
   DeleteBucketTaggingResult result = cosXml.DeleteBucketTagging(request);
   
-  // Request successful 
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -82,9 +84,9 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketWebsite.cs).
 
-## Deleting a Static Website Configuration
+## Deleting Static Website Configuration
 
-#### API description 
+#### Description
 
 This API is used to delete the static website configuration of a bucket.
 
@@ -94,12 +96,13 @@ This API is used to delete the static website configuration of a bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
   // Execute the request
   DeleteBucketTaggingResult result = cosXml.DeleteBucketTagging(request);
   
-  // Request successful 
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)

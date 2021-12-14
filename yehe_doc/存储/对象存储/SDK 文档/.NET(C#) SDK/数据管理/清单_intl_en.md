@@ -4,19 +4,19 @@ This document provides an overview of APIs and SDK code samples related to COS i
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------- |
-| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job for a bucket |
+| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Creating an inventory job | Creates an inventory job for a bucket |
 | [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries the inventory jobs of a bucket |
 | [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job from a bucket |
 
 ## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting an Inventory Job
+## Creating an Inventory Job
 
-#### API description 
+#### Description
 
-This API is used to create an inventory job for a bucket.
+This API (PUT Bucket inventory) is used to create an inventory job for a bucket.
 
 #### Sample code
 
@@ -25,7 +25,8 @@ This API is used to create an inventory job for a bucket.
 try
 {
   string inventoryId = "aInventoryId";
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   PutBucketInventoryRequest putRequest = new PutBucketInventoryRequest(bucket, inventoryId);
   putRequest.SetDestination("CSV", "100000000001", "examplebucket-1250000000", "ap-guangzhou","list1");
   putRequest.IsEnable(true);
@@ -33,7 +34,7 @@ try
   // Execute the request
   PutBucketInventoryResult putResult = cosXml.PutBucketInventory(putRequest); 
   
-  // Request successful 
+  // Request succeeded
   Console.WriteLine(putResult.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -53,7 +54,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### Error codes
 
-The following describes some common errors that may occur when making requests using this API.
+The following describes some common errors that may occur when you call this API:
 
 | Error Code | Description | Status Code |
 | --------------------- | -------------------------------------------- | -------------------- |
@@ -63,7 +64,7 @@ The following describes some common errors that may occur when making requests u
 
 ## Querying Inventory Jobs
 
-#### API description 
+#### Description
 
 This API is used to query the inventory jobs of a bucket.
 
@@ -74,7 +75,8 @@ This API is used to query the inventory jobs of a bucket.
 try
 {
   string inventoryId = "aInventoryId";
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   GetBucketInventoryRequest getRequest = new GetBucketInventoryRequest(bucket);
   getRequest.SetInventoryId(inventoryId);
   
@@ -98,9 +100,9 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ## Deleting an Inventory Job
 
-#### API description 
+#### Description
 
-This API is used to delete an inventory job from a bucket.
+This API is used to delete a specified inventory job from a bucket.
 
 #### Sample code
 
@@ -109,12 +111,13 @@ This API is used to delete an inventory job from a bucket.
 try
 {
   string inventoryId = "aInventoryId";
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   DeleteBucketInventoryRequest deleteRequest = new DeleteBucketInventoryRequest(bucket);
   deleteRequest.SetInventoryId(inventoryId);
   DeleteBucketInventoryResult deleteResult = cosXml.DeleteBucketInventory(deleteRequest);
   
-  // Request successful 
+  // Request succeeded
   Console.WriteLine(deleteResult.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)

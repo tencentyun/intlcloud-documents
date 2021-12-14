@@ -15,7 +15,8 @@ TransferConfig transferConfig = new TransferConfig();
 // Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
-string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+// Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+string bucket = "examplebucket-1250000000";
 string cosPath = "dir/exampleObject"; // Object key
 string srcPath = @"temp-source-file";// Absolute path of the local file
 
@@ -40,7 +41,8 @@ TransferConfig transferConfig = new TransferConfig();
 // Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+// Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+string bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 string localDir = System.IO.Path.GetTempPath();// Local file directory
 string localFileName = "my-local-temp-file"; // Filename of the local file

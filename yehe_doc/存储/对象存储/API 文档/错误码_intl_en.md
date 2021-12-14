@@ -91,7 +91,7 @@ The nodes are described as follows:
 | 400 Bad Request | MalformedPolicy | The policy format is invalid |
 | 400 Bad Request | MalformedPOSTRequest | The request body content of the current POST request is invalid |
 | 400 Bad Request | MalformedXML | The XML syntax of the request body is incorrect |
-| 400 Bad Request | MAZOperationNotSupportOnOAZBucket | OAZ buckets do not support MAZ operations |
+| 400 Bad Request                     | MAZOperationNotSupportOnOAZBucket    | OAZ buckets do not support MAZ operations <br> The multiple availability zones operation is not supported by single availability zone bucket                            |
 | 400 Bad Request | MissingRequestBodyError  | The request body is missing |
 | 400 Bad Request | MultiAZFeatureNotSupport | The current region does not support the MAZ feature |
 | 400 Bad Request | MultiBucketNotSupport | Only one destination bucket can be set for cross-region replication |
@@ -99,7 +99,7 @@ The nodes are described as follows:
 | 400 Bad Request | NotifyRulePrefixConflict | Notification rule prefixes conflict |
 | 400 Bad Request  | NotifyRuleSuffixConflict | Notification rule suffixes conflict |
 | 400 Bad Request | NotSupportedStorageClass | The specified [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) is not supported |
-| 400 Bad Request | OAZOperationNotSupportOnMAZBucket | MAZ buckets do not support OAZ operations |
+| 400 Bad Request                     | OAZOperationNotSupportOnMAZBucket     | MAZ buckets do not support OAZ operations <br>The single availability zone operation is not supported by multiple availability zones bucket                             |
 | 400 Bad Request   | PolicyFull  | The number of ACLs and policies exceeds the upper threshold. For more information, please see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518) |
 | 400 Bad Request | PolicyVersionFull | The number of policy versions exceeds the limit |
 | 400 Bad Request | RequestTimeout  | The request timed out |
@@ -157,7 +157,7 @@ The nodes are described as follows:
 | 409 Conflict | InvalidObjectState  | The object state conflicts with the request |
 | 409 Conflict  | PathConflict | Millisecond-level concurrency conflict occurs for objects with the same name |
 | 409 Conflict | QuotaConflict | The quota conflicts |
-| 409 Conflict | QuotaOperationConfilct | The bucket state does not support this operation |
+| 409 Conflict | QuotaOperationConflict | The bucket state does not support this operation |
 | 409 Conflict | RecordAlreadyExist | The DNS record conflicts. Please delete the conflicting record, or add a CNAME/TXT record |
 | 409 Conflict | RestoreAlreadyInProgress | The object is being restored |
 | 409 Conflict | UploadConflict | Uploading the same object key too many times causes a conflict |

@@ -18,9 +18,15 @@ Tencent Cloud offers the following bandwidth packages according to the bandwidth
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">All regions
+<td align="left">All regions except São Paulo
 </td>
 <td align="left">16.97</td>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">São Paulo
+</td>
+<td align="left">21.23</td>
 </tr>
 </tbody></table>
 
