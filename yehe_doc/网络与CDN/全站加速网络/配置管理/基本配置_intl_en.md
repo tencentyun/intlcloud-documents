@@ -19,7 +19,7 @@ You can view basic information and origin server information of a domain name in
 2. Select a domain name acceleration region. Currently, Mainland China, outside Mainland China, or global can be selected.
 3. To avoid faulty operations, if you need to delete configuration of an acceleration region, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=532&source=0&data_title=%E5%8A%A8%E6%80%81%E5%8A%A0%E9%80%9F%E7%BD%91%E7%BB%9C%20DSA&step=1) to apply for modification.
 
->? The acceleration service outside Mainland China is currently in beta test. If your account cannot modify the acceleration region, it indicates that you have not been granted the acceleration permission outside Mainland China. You can submit an application on the [ECDN global acceleration eligibility application page](https://console.cloud.tencent.com/apply), and we will review it in 5 business days and inform you of the result through SMS or internal message.
+>? The acceleration service outside Mainland China is currently in beta test. If your account cannot modify the acceleration region, it indicates that you have not been granted the acceleration permission outside Mainland China. You can submit an application on the [ECDN global acceleration eligibility application page](https://intl.cloud.tencent.com/apply/p/1rks8dqy7lw), and we will review it in 5 business days and inform you of the result through SMS or internal message.
 
 ### Modifying origin server configuration
 1. Click "Modify" on the right of the origin server configuration to enter the origin server modification page.
