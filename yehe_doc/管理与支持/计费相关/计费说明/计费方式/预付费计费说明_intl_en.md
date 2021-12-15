@@ -1,3 +1,4 @@
+>! The monthly subscription mode is being tested. If you want to try it, please contact sales.
 
 Prepaid plans generally take the form of **monthly subscriptions**. Based on your needs, you can pay upfront for Tencent Cloud resources for a month, several months, or several years. After payment, you will be able to access the purchased resources until your subscription expires.
 
@@ -10,7 +11,7 @@ We recommend the prepaid billing mode if:
 - You need to use cloud resources in the long term and value cost efficiency.
 
 ## Billing Process
-![](https://main.qcloudimg.com/raw/e0ed0c89e5f86ffa16b2ddbdb09d2a91.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5c9bbfe4b9b14df2e18ebe3c849d348a.png)
 
 1. **Shop**
     Go to Tencent Cloud’s website, choose the service and resources you need, and view the price.
@@ -33,11 +34,11 @@ We recommend the prepaid billing mode if:
 | Resource release | After service suspension, if you still fail to renew your subscription, Tencent Cloud will release the resources and delete the data (which cannot be recovered). On the day of release, you will be notified via email, SMS, and Message Center. The actual notification methods depend on your message subscription configuration in [Message Center](https://console.cloud.tencent.com/message).|
 
 >!
-- After your subscription expires, some Tencent Cloud services allow you to continue using the services for several days, during which you will be notified to renew your subscription or top up your account.
-- Some Tencent Cloud services may retain your resources for longer than 8 days after your subscription expires.
+>- After your subscription expires, some Tencent Cloud services allow you to continue using the services for several days, during which you will be notified to renew your subscription or top up your account.
+>- Some Tencent Cloud services may retain your resources for longer than 8 days after your subscription expires.
 
  5. **Renew**
- You can renew your subscription in [Renewal Management](https://cloud.tencent.com/document/product/555/7454) to extend the validity period of your resources.
+ You can renew your subscription in Renewal Management to extend the validity period of your resources.
 
 ## Advantages
 - Has lower unit price than pay-as-you-go
