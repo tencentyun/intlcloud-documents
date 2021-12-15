@@ -20,9 +20,7 @@
    <tr>
       <td rowspan=10>중국대륙</td>
       <td rowspan=7 nowrap="nowrap">공유 클라우드 리전</td>
-      <td nowrap="nowrap">베이징 1존(품절)</td>
-      <td>ap-beijing-1</td>
-      <td>&lt;BucketName-APPID&gt;.cos.ap-beijing-1.myqcloud.com</td>
+
    </tr>
    <tr>
       <td>베이징</td>
@@ -70,7 +68,7 @@
    </tr>
    <tr>
       <td rowspan=7>아시아 태평양</td>
-      <td rowspan=12 nowrap="nowrap">퍼블릭 클라우드 리전</td>
+      <td rowspan=13 nowrap="nowrap">퍼블릭 클라우드 리전</td>
       <td>중국홍콩</td>
       <td>ap-hongkong</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-hongkong.myqcloud.com</td>
@@ -86,7 +84,7 @@
       <td>&lt;BucketName-APPID&gt;.cos.ap-mumbai.myqcloud.com</td>
    </tr>
    <tr>
-      <td  nowrap="nowrap">자카르타(카나리 배포 중)</td>
+      <td  nowrap="nowrap">자카르타</td>
       <td>ap-jakarta</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-jakarta.myqcloud.com</td>
    </tr>
@@ -107,12 +105,12 @@
    </tr>
    <tr>
       <td rowspan=3>북미</td>
-      <td  nowrap="nowrap">실리콘밸리(미국 서부)</td>
+      <td nowrap="nowrap">실리콘밸리(미국 서부)</td>
       <td>na-siliconvalley</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-siliconvalley.myqcloud.com</td>
    </tr>
    <tr>
-      <td  nowrap="nowrap">버지니아(미국 동부)</td>
+      <td nowrap="nowrap">버지니아(미국 동부)</td>
       <td>na-ashburn</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-ashburn.myqcloud.com</td>
    </tr>
@@ -120,6 +118,12 @@
       <td>토론토</td>
       <td>na-toronto</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-toronto.myqcloud.com</td>
+   </tr>
+   <tr>
+      <td rowspan=1>남아메리카</td>
+      <td>상파울루</td>
+      <td>sa-saopaulo</td>
+      <td>&lt;BucketName-APPID&gt;.cos.sa-saopaulo.myqcloud.com</td>
    </tr>
    <tr>
       <td rowspan=2>유럽</td>
@@ -134,7 +138,7 @@
    </tr>
 </table>
 
->?자카르타 리전은 현재 카나리 배포 중으로, 일부 고객의 콘솔은 현재 지원되지 않습니다.
+
 
 
 ### 글로벌 가속 도메인
