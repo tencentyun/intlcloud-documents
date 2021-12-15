@@ -20,9 +20,6 @@
    <tr>
       <td rowspan=10>中国大陆</td>
       <td rowspan=7 nowrap="nowrap">公有云地域</td>
-      <td nowrap="nowrap">北京一区（已售罄）</td>
-      <td>ap-beijing-1</td>
-      <td>&lt;BucketName-APPID&gt;.cos.ap-beijing-1.myqcloud.com</td>
    </tr>
    <tr>
       <td>北京</td>
@@ -70,7 +67,7 @@
    </tr>
    <tr>
       <td rowspan=7>亚太</td>
-      <td rowspan=12 nowrap="nowrap">公有云地域</td>
+      <td rowspan=13 nowrap="nowrap">公有云地域</td>
       <td>中国香港</td>
       <td>ap-hongkong</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-hongkong.myqcloud.com</td>
@@ -86,7 +83,7 @@
       <td>&lt;BucketName-APPID&gt;.cos.ap-mumbai.myqcloud.com</td>
    </tr>
    <tr>
-      <td  nowrap="nowrap">雅加达（灰度中）</td>
+      <td  nowrap="nowrap">雅加达</td>
       <td>ap-jakarta</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-jakarta.myqcloud.com</td>
    </tr>
@@ -107,12 +104,12 @@
    </tr>
    <tr>
       <td rowspan=3>北美</td>
-      <td  nowrap="nowrap">硅谷（美西）</td>
+      <td nowrap="nowrap">硅谷（美西）</td>
       <td>na-siliconvalley</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-siliconvalley.myqcloud.com</td>
    </tr>
    <tr>
-      <td  nowrap="nowrap">弗吉尼亚（美东）</td>
+      <td nowrap="nowrap">弗吉尼亚（美东）</td>
       <td>na-ashburn</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-ashburn.myqcloud.com</td>
    </tr>
@@ -120,6 +117,12 @@
       <td>多伦多</td>
       <td>na-toronto</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-toronto.myqcloud.com</td>
+   </tr>
+   <tr>
+      <td rowspan=1>南美</td>
+      <td>圣保罗</td>
+      <td>sa-saopaulo</td>
+      <td>&lt;BucketName-APPID&gt;.cos.sa-saopaulo.myqcloud.com</td>
    </tr>
    <tr>
       <td rowspan=2>欧洲</td>
@@ -133,8 +136,6 @@
       <td>&lt;BucketName-APPID&gt;.cos.eu-moscow.myqcloud.com</td>
    </tr>
 </table>
-
->?雅加达地域正在灰度中，部分客户控制台暂时不可见。
 
 
 ### 全球加速域名
