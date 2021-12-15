@@ -907,7 +907,6 @@ If the following errors occur, we recommend you contact the carrier for processi
 | MI:0012 | CMCC | The recipient's phone is invalid. |
 | MI:0013 | CMCC | The recipient's mobile number is out of service, or the recipient's phone is powered off. |
 | MI:0015 | CMCC | The recipient's mobile number is out of service, or the recipient's phone is powered off. |
-| MI:0016 | CMCC | The recipient's mobile number is invalid. |
 | MI:0017 | CMCC | The recipient's mobile number does not exist or is out of service, or the recipient's phone is powered off.  |
 | MI:0020 | CMCC | The recipient's mobile number does not exist or is out of service, or the recipient's phone is powered off.  |
 | MI:0022 | CMCC | An internal CMCC gateway error occurs. |
