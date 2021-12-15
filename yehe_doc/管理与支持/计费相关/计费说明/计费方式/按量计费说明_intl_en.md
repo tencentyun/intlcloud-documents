@@ -4,7 +4,7 @@ Tencent Cloud's post-paid billing account provides you with a better experience 
 
 ## Post-paid account information
 ### Initial Credit
-Initial credit is the credit offered by Tencent Cloud according to a customer's credit rating, which will remain unchanged unless manually adjusted.
+Initial credit is the credit offered by Tencent Cloud according to a customer's credit rating, which will increase with successful payments.
 
 ### Available Credit
 Available credit is the current available amount of credit within the billing cycle, and you can purchase any Tencent Cloud services if you have a surplus amount of available credit in your post-paid billing account. Available credit is a variable, which can run out if there is a large bill pending.
