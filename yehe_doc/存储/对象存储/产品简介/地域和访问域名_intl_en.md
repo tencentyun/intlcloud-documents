@@ -20,9 +20,7 @@ For example, if your business is distributed in South China, creating buckets in
    <tr>
       <td rowspan=10>Chinese mainland</td>
       <td rowspan=7 nowrap="nowrap">Public cloud regions</td>
-      <td nowrap="nowrap">Beijing Zone 1 (sold out)</td>
-      <td>ap-beijing-1</td>
-      <td>&lt;BucketName-APPID&gt;.cos.ap-beijing-1.myqcloud.com</td>
+
    </tr>
    <tr>
       <td>Beijing</td>
@@ -70,7 +68,7 @@ For example, if your business is distributed in South China, creating buckets in
    </tr>
    <tr>
       <td rowspan=7>Asia Pacific</td>
-      <td rowspan=12 nowrap="nowrap">Public cloud regions</td>
+      <td rowspan=13 nowrap="nowrap">Public cloud regions</td>
       <td>Hong Kong (China)</td>
       <td>ap-hongkong</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-hongkong.myqcloud.com</td>
@@ -86,7 +84,7 @@ For example, if your business is distributed in South China, creating buckets in
       <td>&lt;BucketName-APPID&gt;.cos.ap-mumbai.myqcloud.com</td>
    </tr>
    <tr>
-      <td  nowrap="nowrap">Jakarta (beta test)</td>
+      <td  nowrap="nowrap">Jakarta</td>
       <td>ap-jakarta</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-jakarta.myqcloud.com</td>
    </tr>
@@ -107,12 +105,12 @@ For example, if your business is distributed in South China, creating buckets in
    </tr>
    <tr>
       <td rowspan=3>North America</td>
-      <td  nowrap="nowrap">Silicon Valley (US Wes)</td>
+      <td nowrap="nowrap">Silicon Valley (US Wes)</td>
       <td>na-siliconvalley</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-siliconvalley.myqcloud.com</td>
    </tr>
    <tr>
-      <td  nowrap="nowrap">Virginia (US East)</td>
+      <td nowrap="nowrap">Virginia (US East)</td>
       <td>na-ashburn</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-ashburn.myqcloud.com</td>
    </tr>
@@ -120,6 +118,12 @@ For example, if your business is distributed in South China, creating buckets in
       <td>Toronto</td>
       <td>na-toronto</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-toronto.myqcloud.com</td>
+   </tr>
+   <tr>
+      <td rowspan=1>South America</td>
+      <td>Sao Paulo</td>
+      <td>sa-saopaulo</td>
+      <td>&lt;BucketName-APPID&gt;.cos.sa-saopaulo.myqcloud.com</td>
    </tr>
    <tr>
       <td rowspan=2>Europe</td>
@@ -134,7 +138,7 @@ For example, if your business is distributed in South China, creating buckets in
    </tr>
 </table>
 
->?The Jakarta region is in beta testing. Therefore, some users may not see it in the console.
+
 
 
 ### Global acceleration endpoint
