@@ -30,7 +30,7 @@ Overdue amount refers to the bill amount that should have been paid before the d
 For certain pay-as-you-go services such as CVM, the system estimates an amount based on the billing cycle and usage in previous periods and reserves the estimated amount in the available credit. Deposit is the amount reserved in the post-paid account by the system, and it cannot be spent until the resource is released. For deposit rules of each product, please refer to the description of each product.
 
 ### Billing Cycle
-Billing cycle is the bill period to pay for services you have purchased. Billing cycles can also be manually changed according to your credit rating, but the change will only take effect in the upcoming month. Your cloud services are billed based on your billing cycle, the system will automatically charge the bill amount using the default payment method bound with your post-paid account on the due date (10th of each month). 
+Billing cycle is the bill period to pay for services you have purchased. Billing cycles can also be changed according to your credit rating, but the change will only take effect in the upcoming month. Your cloud services are billed based on your billing cycle, the system will automatically charge the bill amount using the default payment method bound with your post-paid account on the due date (10th of each month). 
 
 For example, if your initial credit is 1000USD and the billing cycle is one month, the service fee generated in April will be billed in May, which should be paid on June 10th as the billing cycle is one month.
 
