@@ -19,7 +19,9 @@ We recommend the prepaid billing mode if:
     Click **Purchase**, check your order information, and make the payment.
 3. **Bill**
     In prepaid billing mode, a bill that includes the purchase/renewal information will be generated automatically after payment.
-4. **Action upon expiration**
+4. **Renew**
+    You can renew your subscription in Renewal Management to extend the validity period of your resources.
+5. **Action upon expiration**
     After your subscription expires, the service will be suspended for your account and the related resources will be terminated. If you enable auto-renewal for your resources, Tencent Cloud will renew your subscription and deduct the renewal fee from your balance automatically upon expiration.
 
  See below for what happens before and after your subscription expires:
@@ -37,12 +39,9 @@ We recommend the prepaid billing mode if:
 >- After your subscription expires, some Tencent Cloud services allow you to continue using the services for several days, during which you will be notified to renew your subscription or top up your account.
 >- Some Tencent Cloud services may retain your resources for longer than 8 days after your subscription expires.
 
- 5. **Renew**
- You can renew your subscription in Renewal Management to extend the validity period of your resources.
-
 ## Advantages
 - Has lower unit price than pay-as-you-go
-- Gives you access to Tencent Cloud resources in the long term
+- Allows you to pay for your resource usage in advance so that resources are always available
 
 ## Disadvantages
 - Does not support self-service resource returns
