@@ -76,8 +76,6 @@ Account admins can call RESTful APIs, disband groups, and perform operations on 
 ![](https://main.qcloudimg.com/raw/7821c57eef8b7a63019df23eb347720f.jpg)
  - Adding an iOS certificate
  ![](https://main.qcloudimg.com/raw/dc629d1f3ae746e699919930b1f99024.png)
- - Adding a TPNS certificate
- ![](https://main.qcloudimg.com/raw/454f5fbbcc9b4e5587c7ecbc3b587e6b.png)
 3. Click **Confirm** to save the configuration.
 
 ### Editing an offline push certificate
@@ -103,8 +101,3 @@ If you need features such as audio calling, video calling, and interactive live 
 1. Click **Activate** in the **Activate Tencent Real-Time Communication (TRTC)** area.
 2. Click **Confirm** in the pop-up dialog box.
 
-## Activating TPNS
-You can activate TPNS for the current IM app in the [TPNS console](https://console.cloud.tencent.com/tpns). TPNS is a paid service. For its pricing, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1024/36877).
-
-You can see [Creating Products and Applications](https://intl.cloud.tencent.com/document/product/1024/32603) to create a TPNS app and enter relevant information in TPNS Push in the IM console.
->?After enabled, TPNS Push cannot be used concurrently with Native Offline Push.
