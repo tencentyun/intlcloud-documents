@@ -1,9 +1,9 @@
 - Secrets Manager (SSM) charges credential storage fees and API call fees.
 - SSM is a **pay-as-you-go** service that billed on a monthly basis. Fees of a month are calculated, billed, and charged on the 3rd to 5th days of the following month.
 >!SSM uses the keys hosted in [KMS](https://intl.cloud.tencent.com/document/product/1030/31961) for encryption, which may incur additional fees:
-  - The default Tencent Cloud managed CMKs that SSM created in KMS are free of charge, and KMS allows you to call APIs for 20,000 times for free. Therefore, if you use the default Tencent Cloud managed CMKs and the number of API calls is within 20,000, no additional fees will be incurred.
-  - If you have created a custom encryption key, or the number of KMS API calls has exceeded 20,000, you will be charged for the KMS service. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/1030/31966). 
-  - SSM hosted SSH keys do not incur any charges.
+>- The default Tencent Cloud managed CMKs that SSM created in KMS are free of charge, and KMS allows you to call APIs for 20,000 times for free. Therefore, if you use the default Tencent Cloud managed CMKs and the number of API calls is within 20,000, no additional fees will be incurred.
+>- If you have created a custom encryption key, or the number of KMS API calls has exceeded 20,000, you will be charged for the KMS service. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/1030/31966). 
+>- SSM hosted SSH keys do not incur any charges.
 
 ## Credential Storage Fees
 - Storing credentials created in SSM generates credential storage fees. 
