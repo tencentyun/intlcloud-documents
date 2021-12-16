@@ -4,7 +4,7 @@ This document introduces how to quickly run through the IM demo.
 ## Step 1: Create an App
 1. Log in to the [IM console](https://console.cloud.tencent.com/im).
  >? If you already have an app, record its SDKAppID and [obtain key information](#step2).
- > A Tencent Cloud account can create a maximum of 100 IM apps. If you want to create more apps, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first and then create a new one. **Once an app (along with its SDKAppID) is deleted, the service it provides and all its data are lost**. **Proceed with caution**.
+ > A Tencent Cloud account can create a maximum of 300 IM apps. If you want to create more apps, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first and then create a new one. **Once an app (along with its SDKAppID) is deleted, the service it provides and all its data are lost**. **Proceed with caution**.
  >
 2. Select a region.
 3. Click **+Add App**.
