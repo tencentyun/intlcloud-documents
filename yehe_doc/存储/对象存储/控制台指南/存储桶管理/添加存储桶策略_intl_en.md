@@ -75,7 +75,7 @@ Templates are described in the following table.
       <td rowspan=11>Specified user</td>
       <td rowspan=7>The whole bucket</td>
       <td>Read-Only objects (listing objects is not included)</td>
-      <td rowspan=7>COS provides the most recommended templates for the combination of **Specified user** and **The whole bucket**. In addition to reading, writing, and listing files, COS provides the following sensitive permission templates for trusted users:<li>Read/Write buckets and object ACLs: get and modify buckets and object ACLs. Options include **GetObjectACL**, **PutObjectACL**, **GetBucketACL**, and **PutBucketACL**. <li>General bucket configuration items: non-sensitive permissions such as bucket tagging, CORS, and origin-pull. <li>Bucket sensitive configuration item: sensitive permissions such as bucket policies, bucket ACLs, and bucket deletion. Sensitive permissions should be used with caution.</td>
+      <td rowspan=7>COS provides the most recommended templates for the combination of <b>Specified user</b> and <b>The whole bucket</b>. In addition to reading, writing, and listing files, COS provides the following sensitive permission templates for trusted users:<li>Read/Write buckets and object ACLs: get and modify buckets and object ACLs. Options include <b>GetObjectACL</b>, <b>PutObjectACL</b>, <b>GetBucketACL</b>, and <b>PutBucketACL</b>. <li>General bucket configuration items: non-sensitive permissions such as bucket tagging, CORS, and origin-pull. <li>Bucket sensitive configuration item: sensitive permissions such as bucket policies, bucket ACLs, and bucket deletion. Sensitive permissions should be used with caution.</td>
    </tr>
    <tr>
       <td>Read-Only objects (listing objects is included)</td>
@@ -98,7 +98,7 @@ Templates are described in the following table.
    <tr>
       <td rowspan=4>Specified directory</td>
       <td>Read-Only objects (listing objects is not included)</td>
-      <td rowspan=4>For the combination of **Specified user** and **Specified directory**, COS provides you with recommended templates for reading files (such as downloading files) and writing files (such as uploading and modifying files), as well as recommended templates for listing objects.<br><br>If you need to grant read, write, and list permissions to a specified folder to a specified user, this combination is recommended.<br><br>You can add or delete operation permissions during policy configuration in step 2 as needed.</td>
+      <td rowspan=4>For the combination of <b>Specified user</b> and <b>Specified directory</b>, COS provides you with recommended templates for reading files (such as downloading files) and writing files (such as uploading and modifying files), as well as recommended templates for listing objects.<br><br>If you need to grant read, write, and list permissions to a specified folder to a specified user, this combination is recommended.<br><br>You can add or delete operation permissions during policy configuration in step 2 as needed.</td>
    </tr>
    <tr>
       <td>Read-Only objects (listing objects is included)</td>
