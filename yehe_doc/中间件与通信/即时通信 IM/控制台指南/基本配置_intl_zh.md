@@ -76,8 +76,7 @@
 ![](https://main.qcloudimg.com/raw/7821c57eef8b7a63019df23eb347720f.jpg)
  - 添加 iOS 证书
  ![](https://main.qcloudimg.com/raw/dc629d1f3ae746e699919930b1f99024.png)
- - 添加 TPNS 证书
- ![](https://main.qcloudimg.com/raw/454f5fbbcc9b4e5587c7ecbc3b587e6b.png)
+
 3. 单击**确认**保存配置。
 
 ### 编辑离线推送证书
@@ -103,8 +102,4 @@
 1. 单击**开通腾讯实时音视频服务**区域**立即开通**。
 2. 在弹出的开通实时音视频 TRTC 服务对话框中，单击**确认**。
 
-## 开通腾讯 TPNS 移动推送服务
-如果您需要在当前 IM 应用中实现 TPNS移动 推送服务，请前往 [TPNS 移动推送控制台 ](https://console.cloud.tencent.com/tpns)开通；TPNS 移动推送是付费功能详情请参见 [产品价格](https://intl.cloud.tencent.com/document/product/1024/36877)。
 
-您可参见 [移动推送](https://intl.cloud.tencent.com/document/product/1024/32603) 创建产品应用文档，创建移动推送应用，并将相关信息填入即时通信控制台 TPNS 推送设置中。
->?启用 TPNS 移动推送后，无法和厂商离线推送平台同时使用。
