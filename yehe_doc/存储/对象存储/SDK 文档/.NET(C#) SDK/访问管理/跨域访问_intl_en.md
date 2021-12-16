@@ -1,22 +1,22 @@
 ## Overview
 
-This document provides an overview of APIs and SDK sample codes related to cross-origin access.
+This document provides an overview of APIs and SDK sample codes related to cross-origin resource sharing (CORS).
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting a cross-origin access configuration | Sets cross-origin access permissions for a bucket |
-| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying a cross-origin access configuration | Queries the cross-origin access configuration of a bucket |
-| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting a cross-origin access configuration | Deletes the cross-origin access configuration from a bucket |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting CORS configuration | Sets the CORS permissions of bucket |
+| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying CORS configuration | Queries the CORS configuration of a bucket |
+| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting CORS configuration | Deletes the CORS configuration of a bucket |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting a Cross-Origin Access Configuration
+## Setting CORS Configuration
 
-#### API description 
+#### Description
 
-This API is used to set the cross-origin access configuration for a specified bucket.
+This API is used to set the CORS configuration of a specified bucket.
 
 #### Sample code
 
@@ -24,14 +24,15 @@ This API is used to set the cross-origin access configuration for a specified bu
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of `BucketName-APPID`. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   PutBucketCORSRequest request = new PutBucketCORSRequest(bucket);
-  // Make cross-origin access configuration
+  // Set CORS configuration
   COSXML.Model.Tag.CORSConfiguration.CORSRule corsRule = 
     new COSXML.Model.Tag.CORSConfiguration.CORSRule();
   corsRule.id = "corsconfigureId";
   corsRule.maxAgeSeconds = 6000;
-
+  
   corsRule.allowedOrigins = new List<string>();
   corsRule.allowedOrigins.Add("http://cloud.tencent.com");
 
@@ -65,11 +66,11 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketCORS.cs).
 
-## Querying a Cross-Origin Access Configuration
+## Querying CORS Configuration
 
-#### API description 
+#### Description
 
-This API is used to query the cross-origin access configuration of a bucket.
+This API is used to query the CORS configuration of a bucket.
 
 #### Sample code
 
@@ -77,11 +78,12 @@ This API is used to query the cross-origin access configuration of a bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of `BucketName-APPID`. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   GetBucketCORSRequest request = new GetBucketCORSRequest(bucket);
   // Execute the request
   GetBucketCORSResult result = cosXml.GetBucketCORS(request);
-  // Cross-access configuration of the bucket
+  // Bucket CORS configuration 
   CORSConfiguration conf = result.corsConfiguration;
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -98,11 +100,11 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketCORS.cs).
 
-## Deleting a Cross-Origin Access Configuration
+## Deleting CORS Configuration
 
-#### API description 
+#### Description
 
-This API is used to delete the cross-origin access configuration from a bucket.
+This API is used to delete the CORS configuration of a bucket.
 
 #### Sample code
 
@@ -110,7 +112,8 @@ This API is used to delete the cross-origin access configuration from a bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of `BucketName-APPID`. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   DeleteBucketCORSRequest request = new DeleteBucketCORSRequest(bucket);
   // Execute the request
   DeleteBucketCORSResult result = cosXml.DeleteBucketCORS(request);

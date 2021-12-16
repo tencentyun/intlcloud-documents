@@ -31,7 +31,7 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 ## Simple Operations
 
-### Querying objects
+### Query objects
 
 #### Description
 
@@ -58,33 +58,33 @@ if err != nil {
 ```
 
 #### Sample 2: listing all objects in a directory
-COS does not have folders, but users can use slashes (/) as the delimiter to stimulate folders.
+COS does not have the concept of folder, but you can use slashes (/) as the delimiter to stimulate folders.
 
 [//]: # (.cssg-snippet-get-bucket2)
 ```go
-    var marker string
-    opt := &cos.BucketGetOptions{
-        Prefix:  "folder/",  // "prefix" indicates the directory to query.
-        Delimiter: "/", // Set the delimiter to "/" to list objects in the current directory. To list all objects, leave it empty.
-        MaxKeys: 1000,       // Set the maximum number of traversed objects (up to 1,000 per `listobject` request).
+var marker string
+opt := &cos.BucketGetOptions{
+    Prefix:  "folder/",  // "prefix" indicates the directory to query.
+    Delimiter: "/", // Set the delimiter to "/" to list objects in the current directory. To list all objects, leave this parameter empty.
+    MaxKeys: 1000,       // Set the maximum number of traversed objects (up to 1,000 per `listobject` request).
+}
+isTruncated := true
+for isTruncated {
+    opt.Marker = marker
+    v, _, err := c.Bucket.Get(context.Background(), opt)
+    if err != nil {
+        fmt.Println(err)
+        break
     }
-    isTruncated := true
-    for isTruncated {
-        opt.Marker = marker
-        v, _, err := c.Bucket.Get(context.Background(), opt)
-        if err != nil {
-            fmt.Println(err)
-            break
-        }
-        for _, content := range v.Contents {
-            fmt.Printf("Object: %v\n", content.Key)
-        }
-        // A common prefix indicates paths that end with the delimiter. If the delimiter is set to "/", the common prefix indicates the paths of all subdirectories.
-        for _, commonPrefix := range v.CommonPrefixes {
-            fmt.Printf("CommonPrefixes: %v\n", commonPrefix)
-        }
-        isTruncated = v.IsTruncated
-        marker = v.NextMarker
+    for _, content := range v.Contents {
+        fmt.Printf("Object: %v\n", content.Key)
+    }
+    // A common prefix indicates paths that end with the delimiter. If the delimiter is set to "/", the common prefix indicates the paths of all subdirectories.
+    for _, commonPrefix := range v.CommonPrefixes {
+        fmt.Printf("CommonPrefixes: %v\n", commonPrefix)
+    }
+    isTruncated = v.IsTruncated    // Whether any data still exists
+    marker = v.NextMarker          // Set the start key for the next request
 }
 ```
 
@@ -94,7 +94,7 @@ COS does not have folders, but users can use slashes (/) as the delimiter to sti
 type BucketGetOptions struct {
     Prefix       string 
     Delimiter    string 
-    EncodingType string 
+    EncodingType   string 
     Marker       string 
     MaxKeys      int    
 }
@@ -138,7 +138,7 @@ type BucketGetResult struct {
 | CommonPrefixes | Groups all keys starting with `Prefix` and ending with `Delimiter` as a common prefix. | []string |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
 
-### Uploading an object using simple upload
+### Uploading an object in whole
 
 #### Description
 
@@ -441,14 +441,14 @@ if err != nil {
 
 ```go
 type ObjectHeadOptions struct {
-    IfModifiedSince string 
+    IfModifiedSince            string 
 }
 ```
 
 | Parameter | Description | Type | Required |
 | --------------- | ------------------------------------------------------------ | ------ | ---- |
 | key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| IfModifiedSince | Returns the object only if it has been modified after the specified time | String | No |
+| IfModifiedSince | Returns the object only if it is modified after the specified time | String | No |
 
 #### Response description
 
@@ -740,7 +740,7 @@ if err != nil {
     // Error
 }
 
-// Move the object.
+// Move the object
 dest := "test/newfile"
 soruceURL := fmt.Sprintf("%s/%s", u.Host, source)
 _, _, err := c.Object.Copy(context.Background(), dest, soruceURL, nil)
@@ -916,7 +916,7 @@ if err != nil {
 #### Sample 2: deleting a folder and the objects contained
 
 COS uses slashes (/) to separate object paths to simulate the effect of a file system. Therefore, deleting a folder in COS means deleting all objects that have a specified prefix. For example, the folder 'prefix/' contains all objects prefixed with 'prefix/'. In other words, you can delete all objects prefixed with 'prefix/' to delete the 'prefix/' folder.
-Currently, COS’s Go SDK did not provide an API to perform this operation. However, you can still use a combination of basic operations to do so.
+Currently, the COS Go SDK does not provide an API to perform this operation. However, you can still use a combination of basic operations to do so.
 
 ```go
 dir := "exampledir/"
@@ -1056,7 +1056,7 @@ type CASJobParameters struct {
 
 | Parameter | Description | Type | Required |
 | -------------------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | ObjectRestoreOptions | Describes rules for retrieved temporary files | Struct | Yes |
 | Days | Specifies the number of days before a temporary object expires | Int | Yes |
 | CASJobParameters | Specifies the restoration configuration | Struct | No |
@@ -1097,7 +1097,7 @@ type ListMultipartUploadsOptions struct {
     Prefix         string
     MaxUploads     int
     KeyMarker      string
-    UploadIDMarker string                                         
+    UploadIDMarker     string                                         
 }
 ```
 
@@ -1127,7 +1127,7 @@ type ListMultipartUploadsResult struct {
     Uploads            []struct {
         Key          string
         UploadID     string
-        StorageClass string
+        StorageClass         string
         Initiator    *Initiator
         Owner        *Owner
         Initiated    string
@@ -1157,7 +1157,7 @@ type Owner struct {
 | IsTruncated | Indicates whether the returned list is truncated | Bool |
 | Uploads | Information on each upload | Container |
 | Key | Object name | String |
-| UploadID | ID that identifies the multipart upload | String |
+| UploadID | ID that identifies the current multipart upload | String |
 | Key | Indicates whether the returned list is truncated | Bool |
 | StorageClass | Specifies the storage class for parts. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE` | String |
 | Initiator | Indicates information about the initiator of this upload | Container |
@@ -1254,7 +1254,7 @@ type ObjectPutHeaderOptions struct {
 type InitiateMultipartUploadResult struct {
     Bucket   string
     Key      string
-    UploadID string
+    UploadID     string
 } 
 ```
 
@@ -1359,7 +1359,7 @@ if err != nil {
 type ObjectListPartsOptions struct {
     EncodingType     string
     MaxParts         string
-    PartNumberMarker string                                      
+    PartNumberMarker     string                                      
 }
 ```
 
@@ -1404,7 +1404,7 @@ type Object struct {
     Size         int
     PartNumber   int
     LastModified string
-    StorageClass string 
+    StorageClass         string 
     Owner        *Owner
 }
 ```
@@ -1537,7 +1537,7 @@ if err != nil {
 
 #### Description
 
-The advanced upload API automatically divides your data into parts according to the file size. It’s easier to use, eliminating the need to follow each step of the multipart upload process. If the file is larger than 64 MB, multipart upload will be used. You can use the `PartSize` parameter to adjust the part size.
+The advanced upload API automatically divides your data into parts according to the file size. It’s easier to use, eliminating the need to follow each step of the multipart upload process. If the file is larger than 16 MB, multipart upload will be used. You can use the `PartSize` parameter to adjust the part size.
 
 #### Method prototype
 
@@ -1567,9 +1567,9 @@ type MultiUploadOptions struct {
     OptIni             *InitiateMultipartUploadOptions
     PartSize           int64
     ThreadPoolSize     int
+    CheckPoint         bool
 }
 ```
-
 
 | Parameter | Description | Type | Required |
 | -------------- | ------------------------------------------------------------ | ------ | ---- |
@@ -1577,8 +1577,9 @@ type MultiUploadOptions struct {
 | filepath | Name of the local file | String | Yes |
 | opt | Object attributes | Struct | No |
 | OptIni | Sets object attributes and ACL. For details, see [InitiateMultipartUploadOptions](#.E6.96.B9.E6.B3.95.E5.8E.9F.E5.9E.8B9) | Struct | No |
-| PartSize | Part size (in MB). If this parameter is not specified or is set to a value smaller than or equal to 0, its value will be automatically determined. In the new version, the default size is 64 (MB). | int | No |
+| PartSize | Part size (in MB). If this parameter is not specified or is set to a value smaller than or equal to 0, its value will be automatically determined. In the new version, the default size is 16 (MB). | int | No |
 | ThreadPoolSize | Size of the thread pool. Default: 1 | Int | No |
+| CheckPoint     | Whether to enable checkpoint restart. Default value: `false`  | Bool   | No   |
 
 #### Response description
 
@@ -1604,7 +1605,7 @@ type CompleteMultipartUploadResult struct {
 
 #### Description
 
-The multipart download API automatically downloads data concurrently with `Range` according to the object size. If you use `Range` to download an object larger than 64 MB, you can use the `PartSize` parameter to adjust the part size.
+The multipart download API automatically downloads data concurrently with `Range` according to the object size. If you use `Range` to download an object larger than 16 MB, you can use the `PartSize` parameter to adjust the part size.
 
 #### Method prototype
 
@@ -1636,7 +1637,7 @@ if err != nil {
 type MultiDownloadOptions struct {
     Opt            *ObjectGetOptions
     PartSize       int64
-    ThreadPoolSize int
+    ThreadPoolSize     int
     CheckPoint     bool
     CheckPointFile string
 }
@@ -1648,7 +1649,7 @@ type MultiDownloadOptions struct {
 | filepath | Name of the local file | String | Yes |
 | opt            | Object download parameter             | Struct | No |
 | Opt | Request parameter. For more information, please see [ObjectGetOptions](#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1). | Struct | No |
-| PartSize | Part size (in MB). If this parameter is not specified or is set to a value smaller than or equal to 0, its value will be automatically determined. In the new version, the default size is 64 (MB). | int64 | No |
+| PartSize | Part size (in MB). If this parameter is not specified or is set to a value smaller than or equal to 0, its value will be automatically determined. In the new version, the default size is 16 (MB). | int64 | No |
 | ThreadPoolSize | Size of the thread pool. Default: 1 | Int | No |
 | CheckPoint     | Whether to enable checkpoint restart. Default value: `false`  | Bool   | No   |
 | CheckPointFile | Path to save the download progress file when checkpoint restart is enabled. The default value is `&lt;filepath>.cosresumabletask`. When the download is completed, this progress file will be cleared. | String   | No |
@@ -1678,7 +1679,7 @@ _, err := c.Object.Put(context.Background(), source, f, nil)
 if err != nil {
    // Error
 }
-// Move the object.
+// Move the object
 dest := "test/newfile"
 soruceURL := fmt.Sprintf("%s/%s", u.Host, source)
 _, _, err := c.Object.Copy(context.Background(), dest, soruceURL, nil)

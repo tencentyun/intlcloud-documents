@@ -1,21 +1,21 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to custom endpoints.
+This document provides an overview of APIs and SDK code samples related to custom domains.
 
 | API | Operation | Description |
 | ----------------- | -------------- | -------------------------- |
-| PUT Bucket domain    | Setting a custom endpoint | Sets a custom endpoint for a bucket |
-| GET Bucket domain    | Querying a custom endpoint | Queries the custom endpoint of a bucket |
+| PUT Bucket domain    | Setting a custom domain | Sets a custom domain for a bucket |
+| GET Bucket domain    | Querying a custom domain | Queries the custom domain of a bucket |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting a Custom Endpoint
+## Setting Custom Domains
 
-#### API description 
+#### Description
 
-This API is used to configure a custom endpoint for a bucket.
+This API (PUT Bucket domain) is used to set a custom domain for a bucket.
 
 #### Sample code
 
@@ -23,7 +23,8 @@ This API is used to configure a custom endpoint for a bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of `BucketName-APPID`. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   
   DomainConfiguration domain = new DomainConfiguration();
   domain.rule = new DomainConfiguration.DomainRule();
@@ -35,7 +36,7 @@ try
   // Execute the request
   PutBucketDomainResult result = cosXml.PutBucketDomain(request);
   
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -50,22 +51,22 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketDomain.cs).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketDomain.cs).
 
 #### Error codes
 
-The following describes some common errors that may occur when making requests using this API.
+The following describes some common errors that may occur when you call this API:
 
 | Status Code | Description |
 | -------------------------------------- | ------------------------------------------------------------ |
-| HTTP 409 Conflict | The endpoint record already exists, and forced overwrite is not specified in the request; OR the endpoint record does not exist, and forced overwrite is specified in the request |
-| HTTP 451 Unavailable For Legal Reasons | The endpoint is a domain name without ICP filing in the Chinese mainland                          |
+| HTTP 409 Conflict | The domain record already exists, and forced overwrite is not specified in the request; OR the domain record does not exist, and forced overwrite is specified in the request |
+| HTTP 451 Unavailable For Legal Reasons | The domain does not have an ICP filing in the Chinese mainland                          |
 
-## Querying a Custom Endpoint
+## Querying a Custom Domain
 
-#### API description 
+#### Description
 
-This API is used to query the custom endpoint of a bucket.
+This API (GET Bucket domain) is used to query the custom domain set for a bucket.
 
 #### Sample code
 
@@ -73,12 +74,13 @@ This API is used to query the custom endpoint of a bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of `BucketName-APPID`. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   GetBucketDomainRequest request = new GetBucketDomainRequest(bucket);   
   // Execute the request
   GetBucketDomainResult result = cosXml.GetBucketDomain(request);
   
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.domainConfiguration);
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -93,7 +95,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketDomain.cs).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketDomain.cs).
 
 
 #### Response parameters
@@ -101,7 +103,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 <table>
 <thead>
 <tr>
-<th>Parameter Name</td>
+<th>Parameter Name</th>
 <th>Description</th>
 <th>Type</th>
 </tr>

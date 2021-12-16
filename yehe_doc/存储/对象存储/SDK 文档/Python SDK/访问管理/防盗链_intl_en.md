@@ -7,14 +7,14 @@ This document provides an overview of APIs and SDK code samples related to bucke
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------- |
-| [PUT Bucket referer](https://intl.cloud.tencent.com/document/product/436/31423) | Setting a bucket referer | Sets a bucket referer allowlist or blocklist |
-| [GET Bucket referer](https://intl.cloud.tencent.com/document/product/436/30615) | Querying a bucket referer | Queries a bucket referer allowlist or blocklist |
+| [PUT Bucket referer](https://intl.cloud.tencent.com/document/product/436/31423) | Setting bucket referer configuration | Sets a bucket referer allowlist or blocklist |
+| [GET Bucket referer](https://intl.cloud.tencent.com/document/product/436/30615) | Querying bucket referer configuration | Queries a bucket referer allowlist or blocklist |
 
-## Setting a Bucket Referer
+## Setting Bucket Referer Configuration
 
-#### API description
+#### Description
 
-This API (PUT Bucket referer) is used to set the referer allowlist/blocklist for a bucket.
+This API (PUT Bucket referer) is used to set a referer allowlist/blocklist for a bucket.
 
 #### Method prototype
 
@@ -25,12 +25,13 @@ put_bucket_referer(Bucket, RefererConfiguration, **kwargs)
 #### Sample request
 
 ```python
-# Set user attributes, such as secret_id, secret_key, and region. secret_id and secret_key can be queried and managed in the CAM console.
-# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
-secret_id = 'secret_id'     # Replace it with the actual secret_id.
-secret_key = 'secret_key'     # Replace it with the actual secret_key.
-region = 'ap-beijing'    # Replace it with the actual region.
-token = None               # If a temporary key is used, the token needs to be specified. This is optional and is left empty by default.
+# Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://www.qcloud.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  
 client = CosS3Client(config)
 referer_config = {
@@ -70,9 +71,9 @@ Description of `RefererConfiguration`:
 #### Response description
 This API returns None.
 
-## Querying a Bucket Referer
+## Querying Bucket Referer Configuration
 
-#### API description
+#### Description
 
 This API (GET Bucket referer) is used to query the referer allowlist/blocklist of a bucket.
 
@@ -101,7 +102,7 @@ The bucket referer configuration is returned. For more information, please see t
 
 ## Deleting a Bucket Referer
 
-#### API description
+#### Description
 
 This API (`DELETE Bucket referer`) is used to delete the referer allowlist/blocklist set for a bucket.
 

@@ -1,10 +1,10 @@
 ## Overview
 COS uses the **imageInfo** API provided by CI to query an image’s basic information such as its format, width, and height.
 
->! Image processing is charged by CI. For detailed pricing, please see the image processing prices of CI.
+>! Image Processing is charged by CI. For detailed pricing, please see **Basic image processing fee** in [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 >
 
-## Use Limits
+## Usage Limits
 
 - The input image cannot be larger than 32 MB.
 - The width and height of the input image cannot exceed 30,000 pixels and the total number of pixels cannot exceed 250 million. The width and height of the output image cannot exceed 9,999 pixels.
@@ -26,7 +26,7 @@ download_url?imageInfo
 | ------------ | ------------------------------------------------------------ |
 | download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
 
-#### Response parameters
+#### Response fields
 
 | Parameter | Description |
 | ----------- | ----------------------------------------- |
@@ -35,7 +35,6 @@ download_url?imageInfo
 | height      | Height of the image, in pixels   |
 | size        | Image size, in bytes |
 | md5         | MD5 checksum of the image                    |
-| photo_rgb   | Average hue of the image, such as `0x736246` |
 | frame_count | Number of frames. For static images, this value is `1`. |
 
 ## Examples
@@ -49,7 +48,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageInfo
 
 #### Response
 ```plaintext
-{"format": "jpeg", "width": "960", "height": "540", "size": "158421", "md5": "77a16fa70e2eba652fb42e8a639c52f2", "photo_rgb": "0x736246"}
+{"format": "jpeg", "width": "960", "height": "540", "size": "158421", "md5": "77a16fa70e2eba652fb42e8a639c52f2"}
 ```
 
 #### Example 2: private-read with a signature carried
