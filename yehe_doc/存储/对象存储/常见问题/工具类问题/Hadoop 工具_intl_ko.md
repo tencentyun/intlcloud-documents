@@ -65,7 +65,7 @@ COS의 멀티파트 업로드는 최대 10000개까지 가능합니다. 따라�
 
 ### 비교적 큰 파일 업로드 시 COS 상에서 파일을 표시할 때 딜레이가 발생합니다. 실시간으로 표시하지 않는 이유는 무엇입니까?
 
-Hadoop-COS는 대용량 파일, 즉 blockSize(fs.cosn.upload.part.size)를 초과하는 파일에 대해 모두 멀티파트 업로드 방식을 사용하며, 모든 블록이 COS에 업로드된 후에야 볼 수 있습니다. COS는 현재 Append 작업을 지원하지 않습니다.
+Hadoop-COS는 대용량 파일, 즉 blockSize(fs.cosn.upload.part.size)를 초과하는 파일에 대해 모두 멀티파트 업로드 방식을 사용하며, 모든 블록이 COS에 업로드된 후에야 볼 수 있습니다. Hadoop-COS 는 현재 Append 작업을 지원하지 않습니다.
 
 ## Buffer 문제
 
