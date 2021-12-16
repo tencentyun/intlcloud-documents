@@ -32,8 +32,7 @@ nginx -V 2>&1 | grep -o with-http_stub_status_module
 	- If no result is output, you can use the `--with-http_stub_status_module` parameter to configure and compile NGINX again from the source code. Below is the sample code:
 ```
 ./configure \
-… \
---with-http_stub_status_module
+… \--with-http_stub_status_module
 make
 sudo make install
 ```
