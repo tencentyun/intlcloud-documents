@@ -26,8 +26,8 @@ goosefs:v1.0.0 master
 ```
 
  <dx-alert infotype="explain" title="Note">
-- goosefs.master.hostname: sets the master address.
-- goosefs.master.mount.table.root.ufs: sets the mount point in the root directory of GooseFS.
+- -Dgoosefs.master.hostname: sets the master address.
+- -Dgoosefs.master.mount.table.root.ufs: sets the mount point in the root directory of GooseFS.
 - -v /tmp/goosefs_ufs:/opt/data: maps the local directory to the docker container.
 - --net=host: Docker uses the host’s network.
 </dx-alert>
