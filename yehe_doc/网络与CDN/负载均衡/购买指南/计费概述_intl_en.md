@@ -1,55 +1,59 @@
+This document explains how CLB instances are billed.
+
+
 ## Billable Items
-CLB fees consist of instance fees and public network fees.
+The CLB cost involves the following four parts: instance fee, public network fee, cross-region binding fee and LCU (Loadbalancer Capacity Unit) fee.
+<dx-alert infotype="explain" title="">
+- Only LCU-supported CLB instances will incur LCU usage fees. LCU-supported CLB instances are only available to beta users. To use it, please [submit an application](https://intl.cloud.tencent.com/apply/p/fj5bwo9e6rj).
+- Tencent Cloud provides two types of accounts: bill-by-IP and bill-by-CVM. All Tencent Cloud accounts registered after 00:00:00, June 17, 2020 (UTC +8) are bill-by-IP accounts. If you have created an account before that time, you can check your account type at the top of the instance list on the <a href="https://console.cloud.tencent.com/cvm/eip">EIP console</a>.
+- To use a dedicated CLB instance, please contact your sales rep. 
+</dx-alert>
+<table>
+<tr>
+<th>Instance Type</th>
+<th>Account Type</th>
+<th>Instance Fee</th>
+<th>Public Network<br/>Fee </th>
+<th>Cross-region<br/>Binding Fee </th>
+<th>LCU Fee</th>
+</tr>
+<tr>
+<td rowspan="2">Public network </td>
+<td >Bill-by-IP account</td>
+<td >&#10003; </td>
+<td >&#10003; </td>
+<td >&#10003; </td>
+<td >&#10003;</td>
+</tr>
+<tr>
+<td >Bill-by-CVM account </td>
+<td >&#10003; </td>
+<td >× </td>
+<td >-</td>
+<td >&#10003;</td>
+</tr>
+<tr>
+<td >Private network</td>
+<td >All accounts</td>
+<td >&#10003;</td>
+<td >-</td>
+<td >-</td>
+<td >&#10003;</td>
+</tr>
+</table>
 
- <table>
- <tr>
- <th>Instance Type</th>
- <th>Account Type</th>
- <th>Instance Fees</th>
- <th>Public Network Fees</th>
- <th>Description</th>
- </tr>
- <tr>
- <td rowspan="2">Public network</td>
- <td >Non-bill-by-IP account</td>
- <td >&#10003; </td>
- <td >× </td>
- <td ><li>The instance fees will be charged by CLB.</li><li>
-The public network fees will be charged by CVM instead of CLB.</li><li>For more information, please see <a href="https://intl.cloud.tencent.com/document/product/214/8848">Non-bill-by-IP Account Billing Description</a>.</li></td>
- </tr>
- <tr>
- <td >Bill-by-IP account</td>
- <td >&#10003; </td>
- <td >&#10003; </td>
- <td ><li>The instance fees and public network fees will be charged by CLB.</li><li>For more information, please see <a href="https://intl.cloud.tencent.com/document/product/214/36998">Bill-by-IP Account Billing Description</a>.</li></td>
- </tr>
- <tr>
- <td >Private network</td>
- <td >All accounts</td>
- <td >—</td>
- <td >— </td>
- <td >Private network is free of charge.</td>
- </tr>
- </table>
+## Bill-by-IP Account Billing Description
++ Private network CLB is free of public network fee but generates instance fee. For more details, see [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/zh/document/product/214/41565).
++ Public network CLB generates instance fee and public network fee.
++ If <a href="https://intl.cloud.tencent.com/zh/document/product/214/38441"> cross-region binding 2.0</a> is configured and enabled for public network CLB instances, the cross-region binding fee is included in the CNN bill.
++ LCU-supported CLB instances incur LCU charges, while shared CLB instances do not.
 
-## Account Type
->? 
-> - Tencent Cloud accounts registered on and after June 17, 2020 are bill-by-IP. For Tencent Cloud accounts registered before June 17, 2020, please check the account types in the console. For more information, please see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
-> - Bill-by-IP is an attribute at the account level. An account can only be bill-by-IP or non-bill-by-IP.
+## Bill-by-CVM Account Billing Description
++ Private network CLB is free of public network fee but generates instance fee. For more details, see [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/zh/document/product/214/41565).
++ Public network CLB only generates instance fee. You can purchase public network on CVM. For more details, see [Public Network Fee](https://intl.cloud.tencent.com/zh/document/product/213/39743).
++ Bill-by-CVM accounts do not support cross-region binding and thus no binding fee generated.
++ LCU-supported CLB instances incur LCU charges, while shared CLB instances do not.
 
-### Non-bill-by-IP Account
-- For a non-bill-by-IP account, public network fees are charged by CVM, and CLB is only used as the public network egress. The public network billing mode and bandwidth upper limit are specified when the CVM instance is created, and no network billing configuration is available when the public network CLB instance is created.
-- Under a non-bill-by-IP account, neither the purchase page nor the list page of the public network CLB instance contains the bandwidth information.
- - **Purchase page**
-![](https://main.qcloudimg.com/raw/002bfe22170790f2bebaa2840f274e3d.png)
- - **List page**
-![](https://main.qcloudimg.com/raw/14521f3afe27876f866419c29168915d.png)
-
-### Bill-by-IP Account
-- For a bill-by-IP account, the public network fees are charged by the public IP or CLB instead of CVM. You can specify the public network billing mode and bandwidth upper limit in the public IP or CLB instance configuration.
-- Under a bill-by-IP account, both the purchase page and the list page of the public network CLB instance contain the bandwidth information.
- - **Purchase page**
-![](https://main.qcloudimg.com/raw/48da1dad2b1cc02a0c0165f0155d28a3.png)
- - **List page**
-![](https://main.qcloudimg.com/raw/ae9f890d5c71a28920deed8cb0dfd536.png)
-
+## References
+- [Bill-by-IP Account Billing Description](https://intl.cloud.tencent.com/zh/document/product/214/36998)
+- [Bill-by-CVM Account Billing Description](https://intl.cloud.tencent.com/zh/document/product/214/8848)
