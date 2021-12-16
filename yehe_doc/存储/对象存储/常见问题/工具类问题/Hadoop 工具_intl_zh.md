@@ -65,7 +65,7 @@ Hadoop-COS 内部通过分块并发上传来处理大文件，通过配置 fs.co
 
 ### 为什么在上传较大文件时查看 COS 上的文件可能会有延迟，不会实时地显示出来？
 
-Hadoop-COS 对于大文件，即超过一个 blockSize（fs.cosn.upload.part.size) 的文件都采用分块上传，只有所有分块上传到 COS 完成后文件才可见。COS 暂时不支持 Append 操作。
+Hadoop-COS 对于大文件，即超过一个 blockSize（fs.cosn.upload.part.size) 的文件都采用分块上传，只有所有分块上传到 COS 完成后文件才可见。Hadoop-COS 暂时不支持 Append 操作。
 
 ## Buffer 问题
 
