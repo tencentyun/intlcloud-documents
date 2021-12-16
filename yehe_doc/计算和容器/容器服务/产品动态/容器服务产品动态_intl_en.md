@@ -1,22 +1,5 @@
 
 
-## October 2021
-<table>
-<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
-<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
-<tr>
-    <td>Launches Request Recommendation</td>
-		<td>
-		Request Recommendation is a resource recommendation feature launched by TKE. It recommends Request and Limit values for resources at the container level in TKE and EKS clusters.
-		</td>
-		<td>2021-10-27</td>
-		<td>Request Recommendation</a></td>
-</tr>
-</table>
-
-
-
-
 
 ## September 2021
 <table>
