@@ -65,7 +65,7 @@ Because a COS multipart upload allows at most 10,000 parts for a single file, yo
 
 ### Why can't I see a large file immediately after it was uploaded to COS?
 
-Hadoop-COS uploads all large files, i.e. those larger than the part size (fs.cosn.upload.part.size), through multipart upload. You can see the file on COS only after all of its parts have been uploaded. Currently, COS does not support Append operations.
+Hadoop-COS uploads all large files, i.e. those larger than the part size (fs.cosn.upload.part.size), through multipart upload. You can see the file on COS only after all of its parts have been uploaded. Currently, Hadoop-COS does not support Append operations.
 
 ## Buffers
 
