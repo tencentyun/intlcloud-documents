@@ -18,7 +18,7 @@ This document provides scaling examples in the common use cases, and introduces 
 
 ## Examples
 
-K8s 1.18 adds a new `behavior` field under HPA Spec, which provides two fields `scaleUp` and `scaleDown` to control the scale up and scale down behaviors respectively. For more information, see [K8S API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#horizontalpodautoscalerbehavior-v2beta2-autoscaling).
+K8s 1.18 adds a new `behavior` field under HPA Spec, which provides two fields `scaleUp` and `scaleDown` to control the scale up and scale down behaviors respectively. 
 
 
 
