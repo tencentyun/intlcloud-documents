@@ -1,6 +1,6 @@
 ## 操作场景
 
-您可以在挂载文件系统的 Linux 客户端或者 Windows 客户端进行配置，以便客户端重启后仍然自动挂载 CFS 文件系统。
+您可以在挂载文件系统的 Linux 客户端或者 Windows 客户端进行配置，以便客户端重启后仍然自动挂载文件存储（Cloud File Storage，CFS）文件系统。
 
 ## 操作步骤
 ### Linux 下自动挂载 NFS 文件系统
@@ -34,4 +34,3 @@ vi /etc/fstab
 
 ### Windows 下自动挂载文件系统
 挂载时，勾选 "登录时重新连接" 选项，如下图示。更多挂载帮助请参见 [在 Windows 客户端上使用 CFS 文件系统](https://intl.cloud.tencent.com/document/product/582/11524)。
-
