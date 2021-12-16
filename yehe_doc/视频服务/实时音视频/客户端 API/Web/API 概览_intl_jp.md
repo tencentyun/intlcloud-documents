@@ -385,7 +385,7 @@ LocalStreamローカルオーディオビデオストリーミングは、[creat
 
 ## RemoteStream
 
-リモートオーディオビデオストリーミングは、[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-Event.html#.STREAM_ADDED)イベントの監視によって取得します。これは[Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html)のサブカテゴリーになります。
+リモートオーディオビデオストリーミングは、[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html#.STREAM_ADDED)イベントの監視によって取得します。これは[Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html)のサブカテゴリーになります。
 
 | API    | 説明         |
 | ------------------------------ | --------------------------- |
