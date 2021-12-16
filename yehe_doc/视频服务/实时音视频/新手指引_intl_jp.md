@@ -58,7 +58,7 @@ Tencent Real-Time Communicationは、以下に示すように、**簡易版**、
 
 ### APIの統合
 
-- **クライアントAPI：** [iOS](https://intl.cloud.tencent.com/document/product/647/35119)、[Mac](https://intl.cloud.tencent.com/document/product/647/35119)、[Android](https://intl.cloud.tencent.com/document/product/647/35125)、[Windows（C++）](https://intl.cloud.tencent.com/document/product/647/35131)、[Windows（C#）](https://intl.cloud.tencent.com/document/product/647/35136)、[デスクトップブラウザ](https://intl.cloud.tencent.com/document/product/647/35143)、[Electron](https://intl.cloud.tencent.com/document/product/647/35141)、Flutterを含むプラットフォームでの機能の統合のためにSDKインターフェースの呼び出しをサポートします。
+- **クライアントAPI：** [iOS](https://intl.cloud.tencent.com/document/product/647/35119)、[Mac](https://intl.cloud.tencent.com/document/product/647/35119)、[Android](https://intl.cloud.tencent.com/document/product/647/35125)、[Windows（C++）](https://intl.cloud.tencent.com/document/product/647/35131)、[Unity](https://intl.cloud.tencent.com/document/product/647/40139)、[デスクトップブラウザ](https://intl.cloud.tencent.com/document/product/647/35143)、[Electron](https://intl.cloud.tencent.com/document/product/647/35141)、Flutterを含むプラットフォームでの機能の統合のためにSDKインターフェースの呼び出しをサポートします。
 - **サーバーAPI：** [通話品質の監視](https://intl.cloud.tencent.com/zh/document/product/647/36754)、[MixTranscoding](https://intl.cloud.tencent.com/document/product/647/37760)、[ルーム管理](https://intl.cloud.tencent.com/document/product/647/34268)といった機能の統合のためのAPI 3.0インターフェースの呼び出しをサポートします。
 
 
