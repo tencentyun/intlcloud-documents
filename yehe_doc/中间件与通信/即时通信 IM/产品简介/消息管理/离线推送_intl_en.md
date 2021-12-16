@@ -1,7 +1,5 @@
 ## Application Scenarios
 You can use the offline push feature to notify users upon the arrival of new messages even when the app is running in the background or the process has been killed. iOS devices use APNs for offline push, while Android users need to register for offline message callbacks.
-## Recommended Solution for App Mobile Push Service: TPNS
-Instant Messaging (IM) supports Apple APNS push, Xiaomi push, Huawei push, Meizu push, Vivo push, OPPO push, and Google FCM push. The vendor channels used in the IM Demo are provided and maintained by [TPNS](https://intl.cloud.tencent.com/product/tpns) in a unified manner. If you need to integrate the offline push feature, you can integrate the [TPNS](https://intl.cloud.tencent.com/product/tpns) service or integrate the offline push service of the desired vendor:
 
 ## iOS APNs Push Notifications
 ### Push notification formats
