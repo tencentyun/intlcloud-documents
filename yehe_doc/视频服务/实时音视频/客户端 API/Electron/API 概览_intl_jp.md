@@ -345,39 +345,39 @@ Tzh-cnczh-cnt Cloudビデオ通話機能のコールバックインターフェ�
 
 | API      | 説明 |
 |-----|-----|
-| [onStartPublishing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onStartPublishing) | Tzh-cnczh-cnt CloudのライブCDNへのプッシュ開始のコールバックです。TRTCCloudのstartPublishing()インターフェースに対応します。 |
-| [onStopPublishing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onStopPublishing) | Tzh-cnczh-cnt CloudのライブCDNへのプッシュ停止のコールバックです。TRTCCloudのstopPublishing()インターフェースに対応します。 |
-| [onStartPublishCDNStream](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onStartPublishCDNStream) | CDNへのRelayed Push起動完了のコールバックです。 |
-| [onStopPublishCDNStream](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onStopPublishCDNStream) | CDNへのRelayed Push停止完了のコールバック。 |
-| [onSetMixTranscodingConfig](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onSetMixTranscodingConfig) | クラウドのミクスストリーミングトランスコードパラメータ設定のコールバックです。TRTCCloudのsetMixTranscodingConfig()インターフェースに対応します。 |
+| [onStartPublishing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onStartPublishing) | Tzh-cnczh-cnt CloudのライブCDNへのプッシュ開始のコールバックです。TRTCCloudのstartPublishing()インターフェースに対応します。 |
+| [onStopPublishing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onStopPublishing) | Tzh-cnczh-cnt CloudのライブCDNへのプッシュ停止のコールバックです。TRTCCloudのstopPublishing()インターフェースに対応します。 |
+| [onStartPublishCDNStream](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onStartPublishCDNStream) | CDNへのRelayed Push起動完了のコールバックです。 |
+| [onStopPublishCDNStream](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onStopPublishCDNStream) | CDNへのRelayed Push停止完了のコールバック。 |
+| [onSetMixTranscodingConfig](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSetMixTranscodingConfig) | クラウドのミクスストリーミングトランスコードパラメータ設定のコールバックです。TRTCCloudのsetMixTranscodingConfig()インターフェースに対応します。 |
 
 ### システム音量キャプチャコールバック
 | API      | 説明 |
 |-----|-----|
-| [onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onSystemAudioLoopbackError) | システム音量キャプチャステータスのコールバック（Macのみで有効）。 |
+| [onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSystemAudioLoopbackError) | システム音量キャプチャステータスのコールバック（Macのみで有効）。 |
 
 ### オーディオエフェクトコールバック
 
 | API      | 説明 |
 |-----|-----|
-| [onAudioEffectFinished](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onAudioEffectFinished) | 破棄されたインターフェース：オーディオエフェクト再生終了のコールバック。 |
+| [onAudioEffectFinished](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onAudioEffectFinished)  | 破棄されたインターフェース：オーディオエフェクト再生終了のコールバック。 |
 
 ### 画面共有コールバック
 
 | API      | 説明 |
 |-----|-----|
-| [onScrezh-cnCaptureCovered](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onScrezh-cnCaptureCovered) | SDKは画面共有ウィンドウがブロックされ、正常にキャプチャできないことをこのコールバックを介して通知します。このコールバックでユーザーにウィンドウのブロックを解除するよう通知できます。|
-| [onScrezh-cnCaptureStarted](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onScrezh-cnCaptureStarted) | SDKは画面共有の開始をこのコールバックを介して通知します。 |
-| [onScrezh-cnCapturePaused](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onScrezh-cnCapturePaused) | SDKは画面共有の一時停止をこのコールバックを介して通知します。 |
-| [onScrezh-cnCaptureResumed](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onScrezh-cnCaptureResumed) | SDKは画面共有の再開をこのコールバックを介して通知します。 |
-| [onScrezh-cnCaptureStopped](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onScrezh-cnCaptureStopped) | SDKは画面共有の停止をこのコールバックを介して通知します。 |
+| [onScreenCaptureCovered](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onScreenCaptureCovered) | SDKは画面共有ウィンドウがブロックされ、正常にキャプチャできないことをこのコールバックを介して通知します。このコールバックでユーザーにウィンドウのブロックを解除するよう通知できます。|
+| [onScreenCaptureStarted](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onScreenCaptureStarted) | SDKは画面共有の開始をこのコールバックを介して通知します。 |
+| [onScreenCapturePaused](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onScreenCapturePaused) | SDKは画面共有の一時停止をこのコールバックを介して通知します。 |
+| [onScreenCaptureResumed](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onScreenCaptureResumed) | SDKは画面共有の再開をこのコールバックを介して通知します。 |
+| [onScreenCaptureStopped](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onScreenCaptureStopped) | SDKは画面共有の停止をこのコールバックを介して通知します。 |
 
 
 ### スクリーンキャプチャコールバック
 
 | API      | 説明 |
 |-----|-----|
-| [onSnapshotComplete](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#evzh-cnt:onSnapshotComplete) | SDKはスクリーンキャプチャの完了をこのコールバックを介して通知します。 |
+| [onSnapshotComplete](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSnapshotComplete) | SDKはスクリーンキャプチャの完了をこのコールバックを介して通知します。 |
 
 
 ### BGMミキシングイベントコールバック
@@ -396,7 +396,7 @@ Tzh-cnczh-cnt Cloudビデオ通話機能のコールバックインターフェ�
 | タイプ名 | 説明 |
 |-----|-----|
 | [TRTCParams](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html)| 入室関連パラメータ。 |
-| [TRTCVideozh-cncParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCVideozh-cncParam.html) | ビデオコーデックパラメータ。 |
+| [TRTCVideoEncParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCVideoEncParam.html) | ビデオコーデックパラメータ。 |
 | [TRTCNetworkQosParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCNetworkQosParam.html) | ネットワークトラフィックコントロール関連パラメータ。 |
 | [TRTCQualityInfo](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCQualityInfo.html)| ビデオ品質です。 |
 | [TRTCVolumeInfo](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCVolumeInfo.html) | 音量レベルです。 |
@@ -419,10 +419,10 @@ Tzh-cnczh-cnt Cloudビデオ通話機能のコールバックインターフェ�
 | [TRTCQuality](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCQuality)| 画質レベルです。 |
 | [TRTCVideoFillMode](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoFillMode)| ビデオ画面塗りつぶしモードです。 |
 | [TRTCBeautyStyle](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCBeautyStyle) | 美顔（美肌）アルゴリズムです。 |
-| [TRTCAppSczh-cne](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCAppSczh-cne)| ユースケースです。 |
+| [TRTCAppScene](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCAppScene)| ユースケースです。 |
 | [TRTCRoleType](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCRoleType)| ロールです。ライブストリーミングシナリオ（TRTCAppSczh-cneLIVE）のみに適用します。 |
 | [TRTCQosControlMode](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCQosControlMode)| トラフィックコントロールモードです。 |
-| [TRTCVideoQosPreferzh-cnce](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoQosPreferzh-cnce)| 画質の好みです。 |
+| [TRTCVideoQosPreference](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoQosPreference)| 画質の好みです。 |
 | [TRTCDeviceState](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCDeviceState)| デバイスの操作です。 |
 | [TRTCDeviceType](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCDeviceType)| デバイスのタイプです。 |
 | [TRTCWaterMarkSrcType](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCWaterMarkSrcType)| ウォーターマーク画像のオリジナルタイプです。 |
