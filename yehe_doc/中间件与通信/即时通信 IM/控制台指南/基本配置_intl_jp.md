@@ -76,8 +76,7 @@ TRTC側でアプリケーションを使用停止した後、[お問い合わせ
 ![](https://main.qcloudimg.com/raw/7821c57eef8b7a63019df23eb347720f.jpg)
  - iOS証明書の追加
  ![](https://main.qcloudimg.com/raw/dc629d1f3ae746e699919930b1f99024.png)
- - TPNS証明書の追加
- ![](https://main.qcloudimg.com/raw/454f5fbbcc9b4e5587c7ecbc3b587e6b.png)
+
 3. **確定**をクリックして設定を保存します。
 
 ### オフラインプッシュ証明書の編集
@@ -103,8 +102,4 @@ TRTC側でアプリケーションを使用停止した後、[お問い合わせ
 1. **TRTCサービスのアクティブ化**エリアで**今すぐアクティブにする**をクリックします。
 2. ポップアップ表示されたTRTCサービスのアクティブ化のダイアログボックスで、**確定**をクリックします。
 
-## Tencent Push Notification Serviceをアクティブ化する
-現在のIMアプリケーションにTPNSを実装する必要がある場合は、[TPNSコンソール](https://console.cloud.tencent.com/tpns)に移動してアクティブ化してください。TPNSは有料機能です。詳細については、[製品価格](https://intl.cloud.tencent.com/document/product/1024/36877)をご参照ください。
 
-[TPNS](https://intl.cloud.tencent.com/document/product/1024/32603)を参照して、製品アプリケーションドキュメントを作成してからTPNSを作成し、関連情報をIMコンソールのTPNS設定に入力します。
->?TPNSを起動すると、ベンダーのオフラインプッシュプラットフォームと同時に使用することができなくなります。
