@@ -76,8 +76,7 @@ TRTC에서 애플리케이션을 사용 중지한 후, [문의하기](https://co
 ![](https://main.qcloudimg.com/raw/7821c57eef8b7a63019df23eb347720f.jpg)
  - iOS 인증서 추가
  ![](https://main.qcloudimg.com/raw/dc629d1f3ae746e699919930b1f99024.png)
- - TPNS 인증서 추가
- ![](https://main.qcloudimg.com/raw/454f5fbbcc9b4e5587c7ecbc3b587e6b.png)
+
 3. [확인]을 클릭하여 설정을 저장합니다.
 
 ### 오프라인 푸시 인증서 편집
@@ -103,8 +102,4 @@ TRTC에서 애플리케이션을 사용 중지한 후, [문의하기](https://co
 1. [Tencent Real-Time Communication (TRTC) 활성화] 섹션의 [활성화하기]를 클릭합니다.
 2. TRTC 서비스 활성화 팝업창의 [확인]을 클릭합니다.
 
-## Tencent TPNS 모바일 푸시 서비스 활성화
-현재 IM 애플리케이션에서 TPNS를 구현하려면 [TPNS 콘솔](https://console.cloud.tencent.com/tpns)로 이동하여 활성화하십시오. TPNS은 유료 기능이며, 자세한 내용은 [제품 가격](https://intl.cloud.tencent.com/document/product/1024/36877)을 참고하십시오.
 
-[제품 및 애플리케이션 생성](https://intl.cloud.tencent.com/document/product/1024/32603)를 참고하여 애플리케이션을 생성하고 관련 정보를 IM 콘솔의 TPNS 푸시 설정에 입력합니다.
->?TPNS 푸시 활성화 후, 기본 오프라인 푸시 플랫폼과 동시에 사용할 수 없습니다.
