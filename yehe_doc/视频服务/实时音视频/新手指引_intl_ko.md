@@ -61,7 +61,7 @@ TRTC는 Tencent Cloud의 LiteAV 시리즈 제품 중 하나입니다. LiteAV 시
 [](id:api)
 ### API 통합
 
-- **클라이언트 API:** SDK 인터페이스 호출을 통한 기능 통합을 지원합니다. 지원 가능한 플랫폼으로는 [iOS](https://intl.cloud.tencent.com/document/product/647/35119), [Mac](https://intl.cloud.tencent.com/document/product/647/35119), [Android](https://intl.cloud.tencent.com/document/product/647/35125), [Windows(C++)](https://intl.cloud.tencent.com/document/product/647/35131), [Windows(C#)](https://intl.cloud.tencent.com/document/product/647), [데스크톱 브라우저](https://intl.cloud.tencent.com/document/product/647/35143), [Electron](https://intl.cloud.tencent.com/document/product/647/35141), [Flutter](https://intl.cloud.tencent.com/document/product/647/39169)가 있습니다.
+- **클라이언트 API:** SDK 인터페이스 호출을 통한 기능 통합을 지원합니다. 지원 가능한 플랫폼으로는 [iOS](https://intl.cloud.tencent.com/document/product/647/35119), [Mac](https://intl.cloud.tencent.com/document/product/647/35119), [Android](https://intl.cloud.tencent.com/document/product/647/35125), [Windows(C++)](https://intl.cloud.tencent.com/document/product/647/35131), [Unity](https://intl.cloud.tencent.com/document/product/647/40139), [데스크톱 브라우저](https://intl.cloud.tencent.com/document/product/647/35143), [Electron](https://intl.cloud.tencent.com/document/product/647/35141), [Flutter](https://intl.cloud.tencent.com/document/product/647/39169)가 있습니다.
 - **서버 API:** API 3.0 인터페이스 호출을 통해 [통화 품질 모니터링](https://intl.cloud.tencent.com/document/product/647/36754), [혼합 스트림 트랜스 코딩](https://intl.cloud.tencent.com/document/product/647/37760), [방 관리](https://intl.cloud.tencent.com/document/product/647/34268) 기능을 통합할 수 있습니다.
 
 
