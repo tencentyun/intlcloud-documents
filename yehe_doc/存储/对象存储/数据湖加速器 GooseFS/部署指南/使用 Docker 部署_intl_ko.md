@@ -26,8 +26,8 @@ goosefs:v1.0.0 master
 ```
 
  <dx-alert infotype="explain" title="설명">
-- goosefs.master.hostname: master 주소를 설정 합니다. 
-- goosefs.master.mount.table.root.ufs: GooseFS 루트 디렉터리 마운트 포인트를 설정합니다. 
+- -Dgoosefs.master.hostname: master 주소를 설정 합니다. 
+- -Dgoosefs.master.mount.table.root.ufs: GooseFS 루트 디렉터리 마운트 포인트를 설정합니다. 
 - -v /tmp/goosefs_ufs:/opt/data: 로컬 디렉터리를 docker 컨테이너 안에 매핑합니다. 
 - --net=host: docker가 host 네트워크를 사용합니다. 
 </dx-alert>
