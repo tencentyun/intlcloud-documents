@@ -32,8 +32,7 @@ nginx -V 2>&1 | grep -o with-http_stub_status_module
 	- 如果未输出任何结果，则可以使用 `--with-http_stub_status_module` 参数从源码重新配置编译一个 Nginx。示例如下：
 ```
 ./configure \
-… \
---with-http_stub_status_module
+… \--with-http_stub_status_module
 make
 sudo make install
 ```
