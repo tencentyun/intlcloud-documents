@@ -61,4 +61,4 @@
 4. 支付完成后，可进入实例列表，将看到实例显示“创建中”（大概需要3 - 5min中，请耐心等待），待实例状态变为“运行中”，即可正常使用。
 
 ## 后续操作
- [快速使用云监控 Prometheus监控服务](https://cloud.tencent.com/document/product/1416/55778)。
+ [快速使用云监控 Prometheus监控服务](https://intl.cloud.tencent.com/document/product/1116/43159)。
