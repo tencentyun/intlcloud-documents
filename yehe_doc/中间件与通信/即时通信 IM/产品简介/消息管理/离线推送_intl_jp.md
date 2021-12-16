@@ -1,7 +1,5 @@
 ## ユースケース
 Appでバックグラウンドを停止するか、プロセスが強制終了になった場合において、ユーザーに通知すべき新しいメッセージがあるときは、オフラインプッシュ機能を使用することができます。iOSでAPNsプッシュがある場合、Androidでは、ユーザーがオフラインメッセージのコールバックを登録する必要があります。
-## APPモバイルプッシュサービスの推奨ソリューション：Tencent Push Notification Service
-IMは、Apple APNSプッシュ、Xiaomiプッシュ、Huaweiプッシュ、Meizuプッシュ、vivoプッシュ、OPPOプッシュおよびGoogle FCMプッシュをサポートしています。IM Demoで使用されるメーカーチャネルは、[TPNS](https://intl.cloud.tencent.com/product/tpns)によって一元的に提供され、メンテナンスが行われます。オフラインプッシュ機能を統合する必要がある場合は、[TPNS](https://intl.cloud.tencent.com/product/tpns)サービスを統合するか、必要なメーカーのオフラインプッシュサービスを統合して、次の事項を実現することができます。
 
 ## iOS APNsプッシュ
 ### プッシュ形式の説明
