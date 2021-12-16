@@ -92,7 +92,6 @@ In L3 bills, you will see tag key columns on the right and tag values in the cel
 You can also use APIs to query tag information starting from the month of setting cost allocation tags.
 
 Call the `DescribeBillDetail`, `DescribeBillResourceSummary`, `DescribeBillSummaryByProject`, or `DescribeBillSummaryByTag` API and you will get bill data and the corresponding tag information.
-与按**项目汇总 API** 类似，您可调用按标签汇总账单 API。
 
 ## FAQs
 
