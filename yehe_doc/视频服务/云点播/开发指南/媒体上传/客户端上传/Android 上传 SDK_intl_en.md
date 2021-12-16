@@ -2,7 +2,7 @@ VOD provides an SDK for uploading videos on Android client. For more information
 
 ## Downloading Source Code
 
-1. Click [here](https://ugcupload-1252463788.file.myqcloud.com/LiteAVSDK_UGC_Upload_Android.zip) to download the Android Upload Demo and source code.
+1. Click [here](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_Android.zip) to download the Android Upload Demo and source code.
 2. After decompressing the downloaded zip file, you can see the demo directory and find the upload source code in `Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload`.
 
 ## Integrating Upload Library and Source Code
