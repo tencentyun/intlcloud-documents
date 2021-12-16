@@ -24,7 +24,7 @@ download_url?imageInfo
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| download_url | URL of the input image, formatted as &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name><br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
 
 #### Response fields
 
