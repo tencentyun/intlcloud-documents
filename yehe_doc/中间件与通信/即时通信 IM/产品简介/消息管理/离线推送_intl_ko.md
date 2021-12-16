@@ -1,7 +1,6 @@
 ## 응용 시나리오
 App이 백그라운드에서 종료되거나 프로세스가 중단된 경우에도 오프라인 푸시 기능을 사용하여 사용자에게 새 메시지를 알릴 수 있으며, iOS 디바이스는 APNs를 사용하여 오프라인 푸시하며, Android 디바이스는 사용자가 오프라인 메시지 콜백을 등록해야 합니다.
-## APP 모바일 푸시 서비스 권장 솔루션: TPNS
-Instant Messaging (IM)은 Apple APNS 푸시, Xiaomi 푸시, Huawei 푸시, Meizu 푸시, Vivo 푸시, OPPO 푸시 및 Goolge FCM 푸시를 지원합니다. IM Demo에서 사용되는 벤더 채널은 [TPNS](https://intl.cloud.tencent.com/product/tpns)를 통해 통합 제공 및 유지 관리됩니다. 오프라인 푸시 기능을 통합하려면 [TPNS](https://intl.cloud.tencent.com/product/tpns) 서비스를 통합하거나 원하는 벤더의 오프라인 푸시 서비스를 통합하여 구현할 수 있습니다.
+
 
 ## iOS APNs 푸시
 ### 푸시 형식
