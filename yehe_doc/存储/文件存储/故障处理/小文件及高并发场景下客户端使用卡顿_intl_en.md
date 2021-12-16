@@ -4,7 +4,7 @@ CFS supports both NFS v3.0 and NFS v4.0 (later version). NFS v3.0 is compatible 
 
 ## Client Problem
 
-In cases that involve a large number of small files or mixed use of large and small files, problems may occur when you mount a CFS file system onto a Tencent Cloud TKE or CVM client using NFS v4.0. After an application runs on the client for a period of time, you may find the client load remains high and keeps accumulating. Besides, the service data may be read slow or no response is returned, but the CPU utilization of the service process is not very high.
+In cases that involve a large number of small files or mixed use of large and small files, problems may occur when you mount a CFS file system onto a Tencent Kubernetes Engine（TKE） or Cloud Virtual Machine（CVM）client using NFS v4.0. After an application runs on the client for a period of time, you may find the client load remains high and keeps accumulating. Besides, the service data may be read slow or no response is returned, but the CPU utilization of the service process is not very high.
 
 ## Cause
 
@@ -19,7 +19,7 @@ In cases where your service application involves a massive number of small files
 
 #### Mount method for CVM client
 
-Open the [CFS](https://console.cloud.tencent.com/cfs/fs?rid=4) console, and click on the name of the file system to mount. Select the **mount Target Info** tab, and find the NFS v3.0 mount command as shown below. Then, use this command to mount the file system.
+Open the [Cloud File Storage](https://console.cloud.tencent.com/cfs/fs?rid=4) console, and click on the name of the file system to mount. Select the **mount Target Info** tab, and find the NFS v3.0 mount command as shown below. Then, use this command to mount the file system.
 
 #### Mount method for TKE client
 
