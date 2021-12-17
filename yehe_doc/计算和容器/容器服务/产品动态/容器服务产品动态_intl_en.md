@@ -1,4 +1,17 @@
-
+## November 2021
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tr>
+	<tr>
+    <td>Feature updates of CFS-CSI add-on</td>
+		<td>
+		The CFS-CSI add-on in clusters of v1.20 supports reading the fsgroup configuration of security context in workloads.
+		</td>
+		<td>2021-11-02</td>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/38707">CFS-CSI</a></td>
+</tr>	
+</table>
 
 
 ## September 2021
@@ -147,7 +160,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>Releases beta for ARM clusters</td><td>Beta for ARM clusters is released. Users can <a href="https://cloud.tencent.com/online-service?from=doc_457">contact customer service</a> to apply.</td><td>2021-03-31</td><td>-</td>
+    <td>Releases beta for ARM clusters</td><td>Beta for ARM clusters is released. Users can <a href="https://console.intl.cloud.tencent.com/workorder">Submit a Ticket</a> to apply.</td><td>2021-03-31</td><td>-</td>
 </tr>
 <tr>
     <td>Enhances TKE console</td><td>
@@ -240,10 +253,10 @@
     <td>Launches beta for productized Nginx-Ingress</td><td>TKE extends and maintains native Nginx-ingress to help you quickly deploy and build a traffic access gateway in the production environment, and provide complete Nginx-ingress lifecycle management, automated cloud native monitoring, CLS and supporting OPS capabilities.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39143">Nginx-ingress</a></td>
 </tr>
 <tr>
-    <td>Launches event dashboard</td><td>This feature implements the aggregation search and trend observation of top events and exception events.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">Event Dashboard</a></td>
+    <td>Launches event dashboard</td><td>This feature implements the aggregation search and trend observation of top events and exception events.</td><td>2020-11-26</td><td>Event Dashboard</a></td>
 </tr>
 <tr>
-    <td>Launches audit dashboard</td><td>This feature implements the aggregation search and direct observation of cluster global, nodes, K8s objects and other important operations.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38890">Audit Dashboard</a></td>
+    <td>Launches audit dashboard</td><td>This feature implements the aggregation search and direct observation of cluster global, nodes, K8s objects and other important operations.</td><td>2020-11-26</td><td>Audit Dashboard</a></td>
 </tr>
 <tr>
     <td>The node pool and cluster operating system can be modified</td><td>Users can create node pools of different operating systems as needed to facilitate the standardized management of nodes.</td><td>2020-11-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35901">Creating a Node Pool</a></td>
@@ -421,7 +434,7 @@
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
-    <td>TKE cluster scaling groups support node shutdown when scaling in</td> <td>When scaling in, cluster scaling groups now support <b>shutting nodes down instead of terminating or draining them</b>. To enable this feature, you need to <a href="https://cloud.tencent.com/online-service?from=doc_457">submit a ticket</a>.</td> <td>2020-02-17</td>
+    <td>TKE cluster scaling groups support node shutdown when scaling in</td> <td>When scaling in, cluster scaling groups now support <b>shutting nodes down instead of terminating or draining them</b>. To enable this feature, you need to <a href="https://console.intl.cloud.tencent.com/workorder">submit a ticket</a>.</td> <td>2020-02-17</td>
 	<td><a href="https://intl.cloud.tencent.com/document/product/457/30638">Cluster Scaling</a></td>
 </tr>
 <tr>
@@ -790,7 +803,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 <td>Fixes the runC vulnerability CVE-2019-5736</td>
 <td>The lightweight container runtime environment runc was found to have a container escape vulnerability, which allowed attackers to overwrite the host runc file (and consequently obtain host root access). This vulnerability has been fixed.</td>
 <td>2019-02-13</td>
-    <td><a href="https://cloud.tencent.com/announce/detail/457">**Security Alert** Notification on runc Container Escape Vulnerability</a></td>
+    <td>**Security Alert** Notification on runc Container Escape Vulnerability</a></td>
 </tr>
 </table>
 
@@ -806,7 +819,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 </tr>
 <tr>
 <td>Custom images can be used to create clusters</td>
-<td>TKE allows users to create custom images based on the basic image provided by TKE and use these custom images to create clusters. To enable this feature, <a href="https://cloud.tencent.com/online-service?from=doc_457">submit a ticket </a>to apply.</td>
+<td>TKE allows users to create custom images based on the basic image provided by TKE and use these custom images to create clusters. To enable this feature, <a href="https://console.intl.cloud.tencent.com/workorder">submit a ticket </a>to apply.</td>
 <td>2019-01-24</td>
     <td>Custom Images</a></td>
 </tr>
@@ -844,11 +857,11 @@ When a “self-deployed cluster” is created, a security group is automatically
 	<td>Fixes the privilege escalation vulnerability in Kubernetes</td>
 	<td>Tencent Cloud Security Center detected that a severe privilege escalation vulnerability existed in Kubernetes (vulnerability ID: CVE-2018-1002105). This vulnerability has been fixed. Now, TKE can effectively prevent attackers from using the vulnerability to illegally access Kubernetes cluster resources, inducing privilege escalation and initiating malicious requests that ultimately jeopardize the security of the business system.</td>
 	<td>2018-12-04</td>
-        <td><a href="https://cloud.tencent.com/announce/detail/362">**Security Alert** Notification on Privilege Escalation Vulnerability in Kubernetes</a></td>
+        <td>**Security Alert** Notification on Privilege Escalation Vulnerability in Kubernetes</a></td>
 	</tr>
 	<tr>
 	<td>Removes Kubernetes 1.7.8 as an option for creating clusters</td>
-	<td>Users can disable the entry for creating clusters of Kubernetes 1.7.8 in the console. To enable this feature, <a href="https://cloud.tencent.com/online-service?from=doc_457">submit a ticket</a> to apply.</td>
+	<td>Users can disable the entry for creating clusters of Kubernetes 1.7.8 in the console. To enable this feature, <a href="https://console.intl.cloud.tencent.com/workorder">submit a ticket</a> to apply.</td>
 	<td>2018-12-04</td>
         <td>-</td>
 	</tr>
