@@ -11,8 +11,8 @@ The binding key and routing key are used together and function in a way similar 
 
 ## Wildcard Description
 
-- * (asterisk) represents a word (a letter string) and cannot be empty.
-- # (hashtag) matches zero or multiple characters.
+- `*` (asterisk) represents a word (a letter string) and cannot be empty.
+- `#` (hashtag) matches zero or multiple characters.
 
 
 **Example:**
@@ -22,5 +22,5 @@ The binding key and routing key are used together and function in a way similar 
 - If the subscriber is **#**, then the subscriber can receive all messages.
 
 
-![](https://mc.qcloudimg.com/static/img/d12ffc8e91322fead97b7633cea47f9a/image.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d12227992d5aaedae4612e0833e70c35.png)
 
