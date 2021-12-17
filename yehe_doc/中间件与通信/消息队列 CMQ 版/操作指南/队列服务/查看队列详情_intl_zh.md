@@ -28,4 +28,4 @@
 
 - 消息回溯：使用消息回溯功能您可在业务成功消费并删除消息后重新消费已删除的消息，详情参考 [消息回溯](https://intl.cloud.tencent.com/document/product/1111/42997)。
 
-![](https://main.qcloudimg.com/raw/5d6a37e0b2c5097f413783eb0de1db6e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/92454ee824d8bb465b00713436fb6def.png)
