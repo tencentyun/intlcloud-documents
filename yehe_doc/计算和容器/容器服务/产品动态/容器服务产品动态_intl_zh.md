@@ -1,3 +1,82 @@
+## 2021年11月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+	<tr>
+    <td>cfs-csi 存储插件功能更新</td>
+		<td>
+		1.20版本集群 cfs-csi 支持读取 workload 中 security context 的 fsgroup 配置。
+		</td>
+		<td>2021-11-02</td>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/38707">CFS-CSI 说明</a></td>
+</tr>	
+</table>
+
+
+## 2021年09月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>上线 qGPU 扩展组件</td>
+		<td>
+		qGPU 是腾讯云推出的 GPU 共享技术，支持在多个容器间共享 GPU 卡并提供容器间显存、算力强隔离的能力。
+		</td>
+		<td>2021-09-16</td>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/42973"> qGPU 说明</a></td>
+</tr>	
+</table>
+
+
+## 2021年08月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>TKE 添加已有节点时支持前置脚本</td>
+		<td>
+		TKE 添加已有节点时支持前置脚本（目前仅支持API能力），该脚本在 K8S 节点初始化流程之前执行，用户可以进行数据盘挂载等定制化操作。
+		</td>
+		<td>2021-08-01</td>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/32022"> 数据结构</a></td>
+</tr>	
+</table>
+
+
+## 2021年07月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>新建 GPU 云服务器支持控制台选择机型</td>
+		<td>
+		支持控制台选择 GPU 驱动版本、CUDA 版本、cuDNN 版本。
+		</td>
+		<td>2021-07-13</td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/30656">使用 GPU 节点</a></td>
+</tr>	
+<tr>
+    <td>支持使用 MIG 功能</td>
+		<td>
+		开启 MIG 特性后，在多个作业并行的场景下可以提高 GPU 利用率。
+		</td>
+		<td>2021-07-13</td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/30656">使用 GPU 节点</a></td>
+</tr>	
+<tr>
+    <td>TKE 控制台功能增强</td>
+		<td>
+		支持在添加已有节点时对多个数据盘进行格式化挂载操作。
+		</td>
+		<td>2021-07-05</td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/30652">添加已有节点</a></td>
+</tr>	
+</table>
+
+
+
+
 ## 2021年05月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -10,7 +89,7 @@
 		<li>优化交互流程。</li>
 		<li>支持探测采集目标。</li></td>
 		<td>2021-05-28</td>
-		<td>数据采集配置</td>
+		<td>数据采集配置</a>
 </tr>
 <tr>
     <td>上线 OLM 扩展组件</td>
@@ -18,15 +97,15 @@
 	OLM 扩展组件支持帮助用户进行 Operator 的自动安装，升级及生命周期的管理。
 	  </td>
 		<td>2021-05-28</td>
-		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/40955">OLM 说明</a>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/40955">OLM 说明</a>
 </tr>
 <tr>
     <td>上线 HPC 扩展组件</td>
 		<td>
-	HPC 扩展组件是一种可以对 K8s workload 副本数进行定时修改的自研组件，配合 HPC CRD 使用，最小支持秒级的定时任务。
+	HPC 扩展组件是一种可以对 K8S workload 副本数进行定时修改的自研组件，配合 HPC CRD 使用，最小支持秒级的定时任务。
 	  </td>
 		<td>2021-05-28</td>
-		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/40956">HPC 说明</a>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/40956">HPC 说明</a>
 </tr>
 <tr>
     <td>TKE 控制台功能增强</td>
@@ -41,6 +120,12 @@
 		</td>
 </tr>
 </table>
+
+
+
+
+
+
 
 ## 2021年04月
 <table>
@@ -59,12 +144,13 @@
 		<li><a href="https://intl.cloud.tencent.com/document/product/457/30676"> Secret 管理</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/457/30669"> 设置工作负载的健康检查</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/457/30660"> Namespaces</a></li></td>
-</tr>
+</tr>	
 <tr>
     <td>日志采集能力增强</td>
 		<td><li>支持多行 - 完全正则提取模式，适用于 java 程序等多行日志以键值对检索日志的需求。</li>
 		<li>支持根据用户日志样例自动生成正则表达式，并自动提取相应的键值对。</li></td>
-		<td>2021-04-15</td>
+
+<td>2021-04-15</td>
 		<td><a href="https://intl.cloud.tencent.com/document/product/457/32419"> 日志采集</a></td>
 </tr>
 </table>
@@ -75,7 +161,7 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>ARM 集群发布内测</td><td>ARM 集群发布内测，可 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请使用。</td><td>2021-03-31</td><td>-</td>
+    <td>ARM 集群发布内测</td><td>ARM 集群发布内测，可 <a href="https://console.intl.cloud.tencent.com/workorder">提交工单</a> 申请使用。</td><td>2021-03-31</td><td>-</td>
 </tr>
 <tr>
     <td>TKE 控制台功能增强</td><td>
@@ -99,12 +185,8 @@
     <td>节点搜索能力增强</td><td>支持按 Label/ip 批量搜索节点。</td><td>2021-03-19</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30650">节点概述</a></td>
 </tr>
 <tr>
-    <td>节点池支持移出伸缩组内节点</td><td>节点池支持移出伸缩组内节点，包年包月节点仅支持移出不支持销毁。</td><td>2021-03-15</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35900">节点池概述</a></td>
-</tr>
-<tr>
-    <td>包年包月节点池支持弹性扩容</td><td>包年包月节点池支持弹性扩容，暂不支持弹性缩容。</td><td>2021-03-02</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35901">创建节点池</a></td>
-</tr>
 </table>
+
 
 
 
@@ -117,9 +199,11 @@
     <td>节点池节点操作增强</td><td>支持在节点池内对节点进行封锁、驱逐操作，完善了节点池的节点管理能力。</td><td>2021-02-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35900">节点池概述</a></td>
 </tr>
 <tr>
-    <td>支持添加已有节点时挂载数据盘分区</td><td>将已有节点添加至集群或节点池时，数据盘挂载选项支持选择挂载分区及 lvm 名，提供更灵活的挂载设置。</td><td>2021-02-20</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30652">添加已有节点</a></td>
+    <td>支持添加已有节点时挂载数据盘分区</td><td>将已有节点添加至集群或节点池时，数据盘挂载选项支持选择挂载分区及 lvm 名，提供更灵活的挂载设置。</td><td>2021-02-20</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30652#.E6.B7.BB.E5.8A.A0.E5.B7.B2.E6.9C.89.E8.8A.82.E7.82.B9">添加已有节点</a></td>
 </tr>
 </table>
+
+
 
 ## 2021年01月
 <table>
@@ -130,29 +214,34 @@
 </tr>
 </table>
 
-## 2020年12月
 
+## 2020年12月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
+    <td>节点池支持设置缩容保护</td><td>缩容保护功能可以保护重要业务节点不被弹性缩容，或者手动调整数量时不被移出节点池。</td><td>2020-12-30</td><td>-</td>
+</tr>
+<tr>
+    <td>节点池支持设置多个备选机型（规格相同）</td><td>该功能可降低单机型资源售罄导致扩容失败的风险。</td><td>2020-12-29</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35903">调整节点池</a></td>
+</tr>
+<tr>
     <td>上线 Descheduler 扩展组件</td><td>该组件支持基于节点真实负载，自动对高负载节点上标记业务进行重调度，保持集群负载均衡。</td><td>2020-12-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39146">DeScheduler 说明</a></td>
 </tr>
 <tr>
-    <td>Nginx-ingress 组件全量上线</td><td><ul class="params"><li>nginx-ingress-controller 容忍调度问题修复。</li><li>完善 Nginx-ingress ui 体验，包括转发规则正则匹配、配置后端 ClusterIP 模式 Service、证书支持 kubernetes.io/tls 类型 Sercret。</li></ul></td><td>2020-12-24</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39143">Nginx-ingress 说明</a></td>
+    <td>Nginx-ingress 组件全量上线</td><td><ul class="params"><li>nginx-ingress-controller 容忍调度问题修复。</li><li>完善 Nginx-ingress ui 体验，包括转发规则正则匹配、配置后端 ClusterIP 模式 Service、证书支持 kubernetes.io/tls 类型 Secret。</li></ul></td><td>2020-12-24</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39143">Nginx-ingress 说明</a></td>
 </tr>
 <tr>
-    <td>扩展组件上线 CBS-CSI 组件</td><td>CBS-CSI 组件支持以下能力：<ul class="params"><li>新建静态数据卷/动态数据卷。</li><li>存储拓扑感知。</li><li>调度器感知节点 maxAttachLimit。</li><li>数据卷在线扩容。</li><li>数据卷快照和恢复。</li></ul></td><td>2020-12-22</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39136">CBS-CSI 说明</a></td>
-</tr>
-<tr>
-    <td>TKE 节点池全量上线</td><td>借助节点池基本功能，您可以方便快捷地创建、管理和销毁节点，以及实现节点的动态扩缩容。</td><td>2020-12-21</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35900">节点池概述</a></td>
+    <td>上线 CBS-CSI 扩展组件</td><td>CBS-CSI 组件支持以下能力：<ul class="params"><li>新建静态数据卷/动态数据卷。</li><li>存储拓扑感知。</li><li>调度器感知节点 maxAttachLimit。</li><li>数据卷在线扩容。</li><li>数据卷快照和恢复。</li></ul></td><td>2020-12-22</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39136">CBS-CSI 说明</a></td>
 </tr>
 <tr>
     <td>TKE 控制台功能增强</td><td><ul class="params"><li>控制台支持 Resource Quota，支持为命名空间配置资源限额以及默认资源请求值。</li><li>文件导入 ConfigMap，支持基于文件内容生成 ConfigMap。</li></td><td>2020-12-09</td><td>-</td>
 <tr>
-   <td>扩展组件上线 NetworkPolicy 组件</td><td>该组件支持自动同步 NetworkPolicy，使网络隔离策略生效。</td><td>2020-12-03</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39120">Network Policy 说明</a></td>
+   <td>上线 NetworkPolicy 扩展组件</td><td>该组件支持自动同步 NetworkPolicy，使网络隔离策略生效。</td><td>2020-12-03</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39120">Network Policy 说明</a></td>
 </tr>
 </table>
+
+
 
 ## 2020年11月
 <table>
@@ -162,19 +251,19 @@
     <td>新一代容器网络方案内测上线</td><td>容器服务 TKE 借助智能网卡推出新一代容器网络方案，该方案实现了一个 Pod 独占一张弹性网卡，不再经过节点网络协议栈（default namespace），极大缩短了容器访问链路，缩短了访问时延。</td><td>2020-11-27</td><td>-</td>
 </tr>
 <tr>
-    <td>产品化 Nginx-Ingress 内测上线</td><td>TKE 扩展并维护原生 Nginx-ingress，帮助用户快速部署搭建生产级流量接入网关，提供完善的 Nginx-ingress 全生命周期管理，自动云原生监控、日志服务 CLS，提供配套的运维能力。</td><td>2020-11-26</td><td>-</td>
+    <td>产品化 Nginx-Ingress 内测上线</td><td>TKE 扩展并维护原生 Nginx-ingress，帮助用户快速部署搭建生产级流量接入网关，提供完善的 Nginx-ingress 全生命周期管理，自动云原生监控、日志服务 CLS，提供配套的运维能力。</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39143">Nginx-ingress 说明</a></td>
 </tr>
 <tr>
-    <td>上线事件仪表盘</td><td>该功能实现 top 事件和异常事件的聚合检索和趋势观测。</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">事件仪表盘</a></td>
+    <td>上线事件仪表盘</td><td>该功能实现 top 事件和异常事件的聚合检索和趋势观测。</td><td>2020-11-26</td><td>事件仪表盘</a></td>
 </tr>
 <tr>
-    <td>上线审计仪表盘</td><td>支持对集群全局、节点、K8s 对象等的重要操作实现聚合检索和直接观测。</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38890">审计仪表盘</a></td>
+    <td>上线审计仪表盘</td><td>支持对集群全局、节点、K8S 对象等的重要操作实现聚合检索和直接观测。</td><td>2020-11-26</td><td>审计仪表盘</a></td>
 </tr>
 <tr>
     <td>节点池维度操作系统、集群操作系统放开修改限制</td><td>用户可根据需要创建不同操作系统的节点池，方便节点规范管理。</td><td>2020-11-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35901">创建节点池</a></td>
 </tr>
 <tr>
-    <td>新增动态调度器 Add On</td><td>该插件基于节点真实负载进行调度，避免调度热点问题。</td><td>2020-11-21</td><td>-</td>
+    <td>新增动态调度器 Add On</td><td>该插件基于节点真实负载进行调度，避免调度热点问题。</td><td>2020-11-21</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39119">DynamicScheduler 说明</a></td>
 </tr>
 </table>
 
@@ -184,13 +273,13 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>云原生监控 TPS 支持边缘集群作为监控对象接入监控实例</td><td>云原生监控 TPS 支持监控边缘集群，提供跨 VPC 的多集群管理功能。</td><td>2020-10-30</td><td>监控实例管理</td>
+    <td>云原生监控 TPS 支持边缘集群作为监控对象接入监控实例</td><td>云原生监控 TPS 支持监控边缘集群，提供跨 VPC 的多集群管理功能。</td><td>2020-10-30</td><td>监控实例管理</a></td>
 </tr>
 <tr>
-    <td>云原生监控 TPS 告警策略支持配置 webhook</td><td>告警策略支持配置 webhook 功能，可以更好地帮助用户及时发现并解决服务异常，更有利于服务稳定运行。</td><td>2020-10-30</td><td>告警配置</td>
+    <td>云原生监控 TPS 告警策略支持配置 webhook</td><td>告警策略支持配置 webhook 功能，可以更好地帮助用户及时发现并解决服务异常，更有利于服务稳定运行。</td><td>2020-10-30</td><td>告警配置</a></td>
 </tr>
 <tr>
-    <td>TKE 节点池新增查看伸缩记录能力</td><td>该功能可帮助用户更易观察节点池节点数量变化情况以及扩缩容活动触发原因及结果，增强节点池可观测性。</td><td>2020-10-13</td><td>查看节点池伸缩记录</td>
+    <td>TKE 节点池新增查看伸缩记录能力</td><td>该功能可帮助用户更易观察节点池节点数量变化情况以及扩缩容活动触发原因及结果，增强节点池可观测性。</td><td>2020-10-13</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38370">查看节点池伸缩记录</a></td>
 </tr>
 </table>
 
@@ -200,7 +289,7 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>TKE ServiceConfig 优化</td><td>新增支持配置 service/ingress 自动创建 tkeserviceconfig。</td><td>2020-09-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37015">Ingress 使用 TKEServiceConfig 配置 CLB</a></td>
+    <td>TKE ServiceConfig 优化</td><td>新增支持配置 service/ingress 自动创建 tkeserviceconfig。</td><td>2020-09-23</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/457/37015">Ingress 使用 TkeServiceConfig 配置 CLB</a></td>
 </tr>
 <tr>
     <td>上线 DNSAutoscaler 组件</td><td>通过 Deployment 获取集群的节点数和核数，并可以根据预设的伸缩策略，自动水平伸缩 DNS 的副本数，提高 DNS 组件的可用性。</td><td>2020-09-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39122">DNSAutoscaler 说明</a></td>
@@ -219,10 +308,10 @@
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> 
 </tr>
 <tr>
-    <td>云原生监控服务优化监控能力</td><td><ul class="params"><li>预置集群监控采集项，同步配备丰富的 Grafana 大盘。</li><li>新增 Targets 列表页，实时观测监控任务状态。</li></ul></td><td>2020-08-31</td><td>-</td>
+    <td>云原生监控服务优化监控能力</td><td><ul class="params"><li>预置集群监控采集项，同步配备丰富的 Grafana 大盘。</li><li>新增 Targets 列表页，实时观测监控任务状态。</li></ul></td><td>2020-08-31</td><td><ul class="params"><li>数据采集配置</a></li><li>告警配置</a></li></ul></td>
 </tr>
 <tr>
-    <td>云原生监控服务告警模块升级</td><td><ul class="params"><li>可关联本地 Alertmanager 组件。</li><li>支持 CRD 管理 Prometheus rules。</li></ul></td><td>2020-08-31</td><td>告警配置</td>
+    <td>云原生监控服务告警模块升级</td><td><ul class="params"><li>可关联本地 Alertmanager 组件。</li><li>支持 CRD 管理 Prometheus rules。</li></ul></td><td>2020-08-31</td><td>告警配置</a></td>
 </tr>
 <tr>
     <td>TKE 发布 NodeProblemDetectorPlus 扩展组件</td><td>支持在原有的检测基础上，进行节点配置自愈策略。</td><td>2020-08-25</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/38784">Node-Problem-Detector-Plus 说明</a></td>
@@ -250,7 +339,7 @@
     <td>创建集群支持设置节点配置置放群组</td>	<td>该功能使得节点在启动时就具备容灾性和高可用性。</td><td>2020-07-15</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
 </tr>
 <tr>
-    <td>云原生监控内测版本上线</td>	<td>支持一键部署高可用监控架构，快速关联 TKE 集群和 EKS 集群。</td><td>2020-07-15</td>	<td>云原生监控</td>
+    <td>云原生监控内测版本上线</td>	<td>支持一键部署高可用监控架构，快速关联 TKE 集群和 EKS 集群。</td><td>2020-07-15</td>	<td>云原生监控</a></td>
 </tr>
 <tr>
     <td>云原生监控采集配置和告警配置产品化</td>	<td><ul class="params"><li>支持 service monitor，pod monitor 和 raw job 三种配置方式。</li><li>支持告警历史回溯。</li></ul></td><td>2020-07-15</td>	<td>-</td>
@@ -266,7 +355,7 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>IPVS-bpf 模式内测上线</td>	<td>容器服务使用 eBPF 绕过 conntrack，优化 K8s Service，短连接性能提升40%以上，p99 时延降低31%以上。</td><td>2020-06-19</td>	<td>-</td>
+    <td>IPVS-bpf 模式内测上线</td>	<td>容器服务使用 eBPF 绕过 conntrack，优化 K8S Service，短连接性能提升40%以上，p99 时延降低31%以上。</td><td>2020-06-19</td>	<td>-</td>
 </tr>
 <tr>
     <td>容器服务支持创建直连 Pod 模式 Service</td>	<td>负载均衡直通弹性网卡模式的 Pod， 转发性能提高10%以上。</td><td>2020-06-18</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/36837">使用 LoadBalancer 直连 Pod 模式 Service</a></td>
@@ -311,7 +400,7 @@
 <tr>
     <td>容器服务内测上线节点池功能</td>	<td>可在以下场景中使用节点池功能：
 		<ul class="params">
-		<li>集群存在较多异构节点（机型配置不同），可通过节点池规范节点分组管理。</li><li>集群需要频繁扩缩容节点，可通过节点池降低操作成本。</li><li>集群内应用程序调度规则复杂，可通过节点池标签快速指定业务调度规则。</li><li>集群内节点日常维护，可通过节点池便捷管理 Kubernetes 版本升级、Docker 版本升级。</li></ul></td>	<td>2020-04-10</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/35899">节点池管理</a></td>
+		<li>集群存在较多异构节点（机型配置不同），可通过节点池规范节点分组管理。</li><li>集群需要频繁扩缩容节点，可通过节点池降低操作成本。</li><li>集群内应用程序调度规则复杂，可通过节点池标签快速指定业务调度规则。</li><li>集群内节点日常维护，可通过节点池便捷管理 Kubernetes 版本升级、Docker 版本升级。</li></ul></td>	<td>2020-04-10</td>	<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/35900">节点池管理</a></td>
 </tr>
 <tr>
 	<td>容器服务关闭 Kubernetes 1.8 版本创建入口</td>	<td>腾讯云容器服务（TKE）控制台不再支持创建 Kubernetes 版本为 1.8 的集群。</td>	<td>2020-04-03</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
@@ -341,12 +430,13 @@
 </tr>
 </table>
 
+
 ## 2020年02月
 
 <table>
 <tr>	<th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
-    <td>容器服务集群伸缩组支持设置缩容为关机模式</td> <td>集群伸缩组进行缩容时，支持<b>将缩容节点关机而非驱逐、销毁</b>。开通此功能需通过 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1">工单</a> 申请。</td> <td>2020-02-17</td>
+    <td>容器服务集群伸缩组支持设置缩容为关机模式</td> <td>集群伸缩组进行缩容时，支持<b>将缩容节点关机而非驱逐、销毁</b>。开通此功能需通过 <a href="https://console.intl.cloud.tencent.com/workorder">工单</a> 申请。</td> <td>2020-02-17</td>
 	<td><a href="https://intl.cloud.tencent.com/document/product/457/30638">集群扩缩容</a></td>
 </tr>
 <tr>
@@ -424,7 +514,7 @@
 <td>集群/节点创建时支持批量添加节点 Label</td>
     <td>容器服务支持在集群创建或存量集群添加新节点时，<b>对运行同一业务或具有相同配置的节点统一添加 Label</b>，为用户提供资源划分、资源属性标记、海量资源筛选及批量处理功能。</td>
 <td>2019-10-21</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/30634">集群管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/30635">集群管理</a></td>
 </tr>
 <tr>
 <td>运行时组件 Containerd 支持 GPU 机型</td>
@@ -453,7 +543,7 @@
 <td>容器服务集群伸缩组相关 API 接入 API 3.0</td>
     <td>容器服务 API 升级到 3.0 版本，已支持全地域接入。<b>全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码、SDK/CLI 版本与 API 文档严格一致</b>，给用户带来简单快捷的使用体验。</td>
 <td>2019-09-12</td>
-<td>伸缩组相关接口</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/33852">伸缩组相关接口</a></td>
 <tr>
 <td>容器服务 Kubernetes 1.14 版本全量上线，已通过一致性认证</td>
     <td>容器服务<b> Kubernetes 1.14 版本全量上线</b>，并且已经通过一致性认证，以保证及时提供最新版本的 Kubernetes。</td>
@@ -476,7 +566,7 @@
 <td>容器服务独立集群支持单独查看 Maste&Etcd 节点</td>
     <td>该功能支持用户<b>直观查看独立集群下所有的 Master&Etcd 节点列表及此类节点更多详情信息</b>，解决用户查看独立集群节点时无法区分 Node 和 Master 节点的问题。</td>
 <td>2019-09-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/30649">节点管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/30650">节点管理</a></td>
 </tr>
 </table>
 
@@ -520,7 +610,7 @@
 </td>
 <td>容器服务 API 升级到 3.0 版本，已全地域接入全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码，SDK/CLI 版本与 API 文档严格一致，给用户带来简单快捷的使用体验。</td>
 <td>2019-08-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/6787">API 3.0</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/32036">API 3.0</a></td>
 </tr>
 <tr>
 <td>容器服务支持采集容器内文件日志</td>
@@ -617,7 +707,7 @@
 <td>容器服务的容器网络支持注册到云联网</td>
     <td>容器服务支持<b>将已有集群注册到云联网，云联网可将容器网络归纳至管理范围中</b>。当容器网络完成注册后，您可以在云联网侧启用或关闭容器网络的网段路由，实现容器集群与云联网内的资源互通。</td>
 <td>2019-05-17</td>
-<td>注册容器集群到云联网</td>
+<td>注册容器集群到云联网</a></td>
 </tr>
 <tr>
 <td>容器服务支持 GPU 虚拟化能力</td>
@@ -648,7 +738,7 @@
 <td>新版告警上线并支持全地域</td>
     <td>告警可以方便用户及时发现容器服务的异常状况，以保证业务的稳定性和可靠性。<b>新版告警提供更多告警指标覆盖</b>，建议您为所有生产集群配置必要告警。</td>
 <td>2019-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/30690">设置告警</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/30688">设置告警</a></td>
 </tr>
 <tr>
 <td>集群管理 - Kubernetes 线上升级 - 托管 Master</td>
@@ -658,7 +748,7 @@
 </tr>
 <tr>
 <td>独立集群支持 Master&Etcd 监控</td>
-<td>支持在独立集群【节点管理】页面查看 Master&Etcd 节点的监控信息。</td>
+<td>支持在独立集群**节点管理**页面查看 Master&Etcd 节点的监控信息。</td>
 <td>2019-04-11</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/457/30689">查看监控数据</a></td>
 </tr>
@@ -679,7 +769,7 @@
 <td>支持使用已购买云服务器创建集群</td>
     <td>使用已有云服务器创建集群，有助于用户<b>复用已有资源，降低成本</b>。</td>
 <td>2019-03-28</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/30637#UseExistingCVMCreateCluster">使用已有云服务器创建集群</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/30637#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.96.B0.E5.BB.BA.E9.9B.86.E7.BE.A4.3Ca-id.3D.22customclustercreation.22.3E.3C.2Fa.3E">使用已有云服务器创建集群</a></td>
 </tr>
 <tr>
 <td>集群自动扩缩容（CA）支持关闭驱逐 Pod</td>
@@ -715,7 +805,7 @@
 <td>修复 runc 漏洞 CVE-2019-5736</td>
 <td>轻量级容器运行环境 runc 被证实存在容器逃逸漏洞，本次修复可以有效避免攻击者利用该漏洞覆盖 Host 上的 runc 文件，从而在 Host 上以 root 权限执行代码。</td>
 <td>2019-02-13</td>
-    <td>【安全预警】关于runc容器逃逸漏洞通知</td>
+    <td>**安全预警**关于runc容器逃逸漏洞通知</a></td>
 </tr>
 </table>
 
@@ -731,9 +821,9 @@
 </tr>
 <tr>
 <td>创建集群支持使用自定义镜像</td>
-<td>容器服务支持使用其提供的基础镜像进行自定义镜像制作，同时支持使用此类自定义镜像创建集群。开通此功能需提交 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1">工单</a> 申请。</td>
+<td>容器服务支持使用其提供的基础镜像进行自定义镜像制作，同时支持使用此类自定义镜像创建集群。开通此功能需提交 <a href="https://console.intl.cloud.tencent.com/workorder">工单</a> 申请。</td>
 <td>2019-01-24</td>
-    <td>自定义镜像说明</td>
+    <td>自定义镜像说明</a></td>
 </tr>
 <tr>
 <td>创建工作负载支持设置亲和性调度</td>
@@ -757,7 +847,7 @@
 	<td>TencentHub 支持 Helm Chart 管理</td>
 	<td>Helm 是 Kubernetes 的一种包管理工具，Chart 是描述 Kubernetes 资源的文件的集合。Tencent Hub 为用户提供了一个 Helm Chart 的存储地址。</td>
 	<td>2018-12-26</td>
-	<td>Helm Chart 简介</td>
+	<td>Helm Chart 简介</a></td>
 	</tr>
 	<tr>
 	<td>容器服务支持 Helm 应用安装</td>
@@ -769,11 +859,11 @@
 	<td>修复 Kubernetes 权限提示漏洞</td>
 	<td>腾讯云安全中心监测到 Kubernetes 存在严重的权限提升漏洞（漏洞编号：CVE-2018-1002105），本次修复可以有效避免攻击者利用该漏洞访问未被授权访问的 Kubernetes  集群资源甚至导致权限提升，发起恶意请求最终危害业务系统安全。</td>
 	<td>2018-12-04</td>
-        <td>【安全预警】关于 Kubernetes 权限提升漏洞的通知</td>
+        <td>**安全预警**关于 Kubernetes 权限提升漏洞的通知</a></td>
 	</tr>
 	<tr>
 	<td>关闭 Kubenretes 1.7.8 版本创建入口</td>
-	<td>支持控制台关闭创建 Kubenretes 1.7.8 版本集群的入口，需提交 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1">工单</a> 申请。</td>
+	<td>支持控制台关闭创建 Kubenretes 1.7.8 版本集群的入口，需提交 <a href="https://console.intl.cloud.tencent.com/workorder">工单</a> 申请。</td>
 	<td>2018-12-04</td>
         <td>-</td>
 	</tr>
@@ -811,7 +901,7 @@
 	<td>容器服务新版控制台内测上线</td>
         <td>容器服务新版控制台进行了一系列功能模块的调整，<b>为您提供一个原生、更易用的平台</b>。<b>新旧控制台功能兼容</b>，控制台切换使用不会对您的业务产生影响，您可使用新版控制台继续操作原有集群。</td>
 	<td>2018-10-31</td>
-        <td>新版控制台说明</td>
+        <td>新版控制台说明</a></td>
 	</tr>
 	<tr>
 	<td>Service 指定负载均衡只绑定部分节点</td>
@@ -1010,7 +1100,7 @@
 		<td>添加已有节点支持设置容器目录和资源所属项目</td>
 		<td><li>容器目录：可设置容器和镜像存储目录，建议存储到数据盘。</li><li>资源所属项目：新增的资源将会自动分配到该项目下。</li></td>
 		<td>2017-12-20</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30652#addExistingNode">添加已有节点</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/457/30652">添加已有节点</a></td>
 	</tr>
 </table>
 
@@ -1059,7 +1149,7 @@
 		<td>镜像仓库多地域部署，支持新地域中国香港</td>
         <td>镜像仓库用于存放 Docker 镜像，Docker 镜像用于部署容器服务，每个镜像有特定的唯一标识（镜像的 Registry 地址+镜像名称+镜像 Tag）。<b>镜像仓库部署已支持多个地域，现新增中国香港地域</b>。</td>
 		<td>2017-10-31</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/9118">镜像仓库概述</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1051/38866">镜像仓库概述</a></td>
 	</tr>
 	<tr>
 		<td>容器服务支持国际版</td>
@@ -1089,7 +1179,7 @@
 		<td>配置项支持导入环境变量</td>
 		<td>部署实例内容器时，可在环境变量中引入配置项 ConfigMap/Secret。</td>
 		<td>2017-09-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30674">配置项</a></td>
+        <td><a href="https://intl.cloud.tencent.com/zh/document/product/457/30675">配置项</a></td>
 	</tr>
 	<tr>
 		<td>集群新增资源所属项目属性</td>
@@ -1113,7 +1203,7 @@
 		<td>容器服务接入告警平台</td>
         <td>容器服务支持为集群设置多个维度的告警。为您的集群设置合理的告警，<b>有助于快速发现集群异常，降低业务风险</b>。</td>
 		<td>2017-08-23</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/30690">设置告警</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/30688">设置告警</a></td>
 	</tr>
 	<tr>
 		<td>容器集群支持 Kubernetes 1.7</td>
@@ -1125,13 +1215,13 @@
 		<td>基于 TencentHub 持续集成和持续部署</td>
 		<td>TencentHub 是腾讯云为存储研发流程中文件以及创建 DevOps 工作流而打造的管理平台。用户使用 Tencent Hub 时可以方便快捷地对项目全周期中产生的文件进行存储、查看及调用等操作。</td>
 		<td>2017-08-23</td>
-        <td>TencentHub 产品概述</td>
+        <td>TencentHub 产品概述</a></td>
 	</tr>
 	<tr>
 		<td>镜像仓库新增触发器功能</td>
         <td>镜像仓库触发器帮助用户在镜像构建完毕后，自动执行服务更新、webhook 及消息推送等触发动作。<b>通过触发器可以和持续集成结合实现持续部署</b>。</td>
 		<td>2017-08-23</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/10155">触发器概述</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/1051/38875">触发器概述</a></td>
 	</tr>
 	<tr>
 		<td>镜像仓库接入操作日志</td>
@@ -1168,25 +1258,25 @@
 		<td>容器服务支持 CI 源码构建</td>
         <td>容器持续集成提供在腾讯云容器平台上，<b>自动、手动构建容器镜像的功能。</b></td>
 		<td>2017-07-18</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/1051/38869">镜像构建概述</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/1051/39846">镜像构建概述</a></td>
 	</tr>
 	<tr>
 		<td>镜像仓库新增 TencentHub 镜像</td>
 		<td>镜像仓库支持查看、使用 TencentHub 镜像。</td>
 		<td>2017-07-18</td>
-		<td>TencentHub产品概述</td>
+		<td>TencentHub产品概述</a></td>
 	</tr>
 	<tr>
 		<td>镜像仓库新增“我的收藏”</td>
 		<td>“我的收藏”将展示用户所收藏的镜像，方便用户对特定镜像进行查看、使用。</td>
 		<td>2017-07-18</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/9118">镜像仓库概述</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1051/38866">镜像仓库概述</a></td>
 	</tr>
 	<tr>
 		<td>镜像仓库支持多 Namespace</td>
         <td><b>镜像仓库支持创建多个命名空间，命名空间名称全局唯一</b>，若您希望使用的命名空间名称已被其他用户使用，请尝试其他适用的命名空间名称。</td>
 		<td>2017-07-18</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/1051/38866#.E5.88.9B.E5.BB.BA.E5.91.BD.E5.90.8D.E7.A9.BA.E9.97.B4">创建命名空间</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/1051/38866">创建命名空间</a></td>
 	</tr>
 </table>
 
@@ -1255,18 +1345,13 @@
 		<td><a href="https://intl.cloud.tencent.com/document/product/457/9120">远程终端基本操作</a></td>
 	</tr>
 	<tr>
-		<td>容器服务支持创建包年包月云服务器到集群</td>
-        <td><b>包年包月是云服务器实例一种预付费模式，提前一次性支付一个月或多个月甚至多年的费用</b>。这种付费模式适用于提前预估设备需求量的场景，价格相较于按量计费模式更低廉。</td>
-        <td>2017-04-19</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30652">新增节点</a></td>
-	</tr>
-	<tr>
 		<td>容器服务创建集群支持自定义安全组</td>
-        <td>若当前默认安全组不能满足业务需求，您可参照 <a href="https://intl.cloud.tencent.com/document/product/213/34275">管理安全组规则</a> 进行集群安全组自定义设置。</td>
+        <td>若当前默认安全组不能满足业务需求，您可参照 <a href="https://intl.cloud.tencent.com/zh/document/product/213/34826">管理安全组规则</a> 进行集群安全组自定义设置。</td>
         <td>2017-04-19</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
 	</tr>
 </table>
+
 
 ## 2017年03月
 <table>
@@ -1312,19 +1397,19 @@
 		<td>集群管理</td>
 		<td>集群的增删改查、VPC 容器集群、跨可用区集群及支持开源 Kubernetes 原生 API 功能。</td>
         <td>2016-12-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30634">集群管理</a></td>
+        <td><a href="https://intl.cloud.tencent.com/zh/document/product/457/30635">集群管理</a></td>
 	</tr>
 	<tr>
 		<td>服务管理</td>
 		<td>服务的增删改查、私有镜像创建服务、Docker 官方镜像创建服务、服务跨可用区调度等功能。</td>
         <td>2016-12-26</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/30634">服务管理</a></td>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/30635">服务管理</a></td>
 	</tr>
 	<tr>
 		<td>镜像管理</td>
 		<td>Docker 官方镜像、我的镜像、上传下载私有镜像、Docker 官方镜像加速功能。</td>
         <td>2016-12-26</td>
-        <td> - </td>
+        <td>-</td>
 	</tr>
 	<tr>
 		<td>集群监控及容器监控</td>
@@ -1340,6 +1425,4 @@
 	</tr>
 </table> 
 
-<style>
-	.params{ margin-bottom:0px!important; } 
-</style>
+
