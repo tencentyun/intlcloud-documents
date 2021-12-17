@@ -1,3 +1,18 @@
+## 2021年11月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+	<tr>
+    <td>cfs-csi 存储插件功能更新</td>
+		<td>
+		1.20版本集群 cfs-csi 支持读取 workload 中 security context 的 fsgroup 配置。
+		</td>
+		<td>2021-11-02</td>
+		<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/38707">CFS-CSI 说明</a></td>
+</tr>	
+</table>
+
 
 ## 2021年09月
 <table>
@@ -134,7 +149,8 @@
     <td>日志采集能力增强</td>
 		<td><li>支持多行 - 完全正则提取模式，适用于 java 程序等多行日志以键值对检索日志的需求。</li>
 		<li>支持根据用户日志样例自动生成正则表达式，并自动提取相应的键值对。</li></td>
-		<td>2021-04-15</td>
+
+<td>2021-04-15</td>
 		<td><a href="https://intl.cloud.tencent.com/document/product/457/32419"> 日志采集</a></td>
 </tr>
 </table>
@@ -145,7 +161,7 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>ARM 集群发布内测</td><td>ARM 集群发布内测，可 <a href="https://cloud.tencent.com/online-service?from=doc_457">在线咨询</a> 申请使用。</td><td>2021-03-31</td><td>-</td>
+    <td>ARM 集群发布内测</td><td>ARM 集群发布内测，可 <a href="https://console.intl.cloud.tencent.com/workorder">提交工单</a> 申请使用。</td><td>2021-03-31</td><td>-</td>
 </tr>
 <tr>
     <td>TKE 控制台功能增强</td><td>
@@ -238,10 +254,10 @@
     <td>产品化 Nginx-Ingress 内测上线</td><td>TKE 扩展并维护原生 Nginx-ingress，帮助用户快速部署搭建生产级流量接入网关，提供完善的 Nginx-ingress 全生命周期管理，自动云原生监控、日志服务 CLS，提供配套的运维能力。</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39143">Nginx-ingress 说明</a></td>
 </tr>
 <tr>
-    <td>上线事件仪表盘</td><td>该功能实现 top 事件和异常事件的聚合检索和趋势观测。</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">事件仪表盘</a></td>
+    <td>上线事件仪表盘</td><td>该功能实现 top 事件和异常事件的聚合检索和趋势观测。</td><td>2020-11-26</td><td>事件仪表盘</a></td>
 </tr>
 <tr>
-    <td>上线审计仪表盘</td><td>支持对集群全局、节点、K8S 对象等的重要操作实现聚合检索和直接观测。</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38890">审计仪表盘</a></td>
+    <td>上线审计仪表盘</td><td>支持对集群全局、节点、K8S 对象等的重要操作实现聚合检索和直接观测。</td><td>2020-11-26</td><td>审计仪表盘</a></td>
 </tr>
 <tr>
     <td>节点池维度操作系统、集群操作系统放开修改限制</td><td>用户可根据需要创建不同操作系统的节点池，方便节点规范管理。</td><td>2020-11-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35901">创建节点池</a></td>
@@ -414,12 +430,13 @@
 </tr>
 </table>
 
+
 ## 2020年02月
 
 <table>
 <tr>	<th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
-    <td>容器服务集群伸缩组支持设置缩容为关机模式</td> <td>集群伸缩组进行缩容时，支持<b>将缩容节点关机而非驱逐、销毁</b>。开通此功能需通过 <a href="https://cloud.tencent.com/online-service?from=doc_457">工单</a> 申请。</td> <td>2020-02-17</td>
+    <td>容器服务集群伸缩组支持设置缩容为关机模式</td> <td>集群伸缩组进行缩容时，支持<b>将缩容节点关机而非驱逐、销毁</b>。开通此功能需通过 <a href="https://console.intl.cloud.tencent.com/workorder">工单</a> 申请。</td> <td>2020-02-17</td>
 	<td><a href="https://intl.cloud.tencent.com/document/product/457/30638">集群扩缩容</a></td>
 </tr>
 <tr>
@@ -788,7 +805,7 @@
 <td>修复 runc 漏洞 CVE-2019-5736</td>
 <td>轻量级容器运行环境 runc 被证实存在容器逃逸漏洞，本次修复可以有效避免攻击者利用该漏洞覆盖 Host 上的 runc 文件，从而在 Host 上以 root 权限执行代码。</td>
 <td>2019-02-13</td>
-    <td><a href="https://cloud.tencent.com/announce/detail/457">**安全预警**关于runc容器逃逸漏洞通知</a></td>
+    <td>**安全预警**关于runc容器逃逸漏洞通知</a></td>
 </tr>
 </table>
 
@@ -804,7 +821,7 @@
 </tr>
 <tr>
 <td>创建集群支持使用自定义镜像</td>
-<td>容器服务支持使用其提供的基础镜像进行自定义镜像制作，同时支持使用此类自定义镜像创建集群。开通此功能需提交 <a href="https://cloud.tencent.com/online-service?from=doc_457">工单</a> 申请。</td>
+<td>容器服务支持使用其提供的基础镜像进行自定义镜像制作，同时支持使用此类自定义镜像创建集群。开通此功能需提交 <a href="https://console.intl.cloud.tencent.com/workorder">工单</a> 申请。</td>
 <td>2019-01-24</td>
     <td>自定义镜像说明</a></td>
 </tr>
@@ -842,11 +859,11 @@
 	<td>修复 Kubernetes 权限提示漏洞</td>
 	<td>腾讯云安全中心监测到 Kubernetes 存在严重的权限提升漏洞（漏洞编号：CVE-2018-1002105），本次修复可以有效避免攻击者利用该漏洞访问未被授权访问的 Kubernetes  集群资源甚至导致权限提升，发起恶意请求最终危害业务系统安全。</td>
 	<td>2018-12-04</td>
-        <td><a href="https://cloud.tencent.com/announce/detail/362">**安全预警**关于 Kubernetes 权限提升漏洞的通知</a></td>
+        <td>**安全预警**关于 Kubernetes 权限提升漏洞的通知</a></td>
 	</tr>
 	<tr>
 	<td>关闭 Kubenretes 1.7.8 版本创建入口</td>
-	<td>支持控制台关闭创建 Kubenretes 1.7.8 版本集群的入口，需提交 <a href="https://cloud.tencent.com/online-service?from=doc_457">工单</a> 申请。</td>
+	<td>支持控制台关闭创建 Kubenretes 1.7.8 版本集群的入口，需提交 <a href="https://console.intl.cloud.tencent.com/workorder">工单</a> 申请。</td>
 	<td>2018-12-04</td>
         <td>-</td>
 	</tr>
