@@ -31,7 +31,7 @@ The following tables list the details of the autoscaling metrics:
 	<tr>
 	<td>CPU Utilization <br>(% of Request)</td>
 	<td>% </td>
-	<td>Percentage of the total number of CPU cores specified by Request that is used by the Pod</td>
+	<td>Ratio of the total number of CPU cores used by the Pod and the value of Request specified by the container in the Pod</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_cpu_core_used_request</td>
 	<td>%</td>
@@ -39,7 +39,7 @@ The following tables list the details of the autoscaling metrics:
 	<tr>
 	<td>CPU Utilization <br>(% of Limit)</td>
 	<td>%</td>
-	<td>Percentage of the total number of CPU cores specified by Limit that is used by the Pod</td>
+	<td>Ratio of the total number of CPU cores used by the Pod and the sum of Limit specified by the container in the Pod</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_cpu_core_used_limit</td>
 	<td>%</td>
@@ -206,7 +206,7 @@ The following tables list the details of the autoscaling metrics:
 	<tr>
 	<td>MEM Utilization <br>(% of Limit)</td>
 	<td>%</td>
-	<td>Percentage of the total amount of memory specified by Limit that is used by the Pod</td>
+	<td>Percentage of Pod memory usage to the Limit value</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_mem_usage_limit</td>
 	<td>%</td>
@@ -214,7 +214,7 @@ The following tables list the details of the autoscaling metrics:
 	<tr>
 	<td>MEM Utilization<br>(% of limit, excluding cache)</td>
 	<td>%</td>
-	<td>Percentage of Pod memory usage to the limit value, excluding cache</td>
+	<td>Percentage of Pod memory usage to the Limit value, excluding cache</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_mem_no_cache_limit</td>
 	<td>%</td>

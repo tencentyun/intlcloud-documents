@@ -12,7 +12,7 @@
 
 1. 登录 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq/cmq-queue)。
 2. 在左侧导航栏选择**队列服务**，选择地域后，单击**新建**，配置队列服务相关属性值。
-<img src="https://main.qcloudimg.com/raw/d7998a58a3e670943331bbd82f06794d.png" width="550px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/bca2e55dcc0172d192894f345fcfc291.png" width="550px">
  
  
    | 属性                   | 说明                                                         | 取值                                                         |
@@ -54,8 +54,8 @@
 	 
    | 参数                | 说明                                                         |
    | ------------------- | ------------------------------------------------------------ |
-   | NameServerAddress   | API 调用地址，在 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq) 的**队列服务** > **API请求地址**处复制。<img src="https://main.qcloudimg.com/raw/397c634ac38494666e878caf69cf55e7.png" width="400px"> |
-   | SecretId、SecretKey | 云 API 密钥，登录 [访问管理控制台](https://console.cloud.tencent.com/cam/overview)，在**访问密钥** > **API密钥管理**页面复制。![](https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png) |
+   | NameServerAddress   | API 调用地址，在 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq) 的**队列服务** > **API请求地址**处复制。<img src="https://qcloudimg.tencent-cloud.cn/raw/fc16b1951c00d63b0f86cf8f4c25691c.png" width="400px"> |
+   | SecretId、SecretKey | 云 API 密钥，登录 [访问管理控制台](https://console.cloud.tencent.com/cam/overview)，在**访问密钥** > **API密钥管理**页面复制。![](https://qcloudimg.tencent-cloud.cn/raw/0def1c292b3dc79a320e3fc9921a979e.png) |
    | queue               | 队列名称，在 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq) 的**队列服务**列表页面获取。 |
    
 3. 配置消费消息程序 SubscribeDemo.java 参数。
