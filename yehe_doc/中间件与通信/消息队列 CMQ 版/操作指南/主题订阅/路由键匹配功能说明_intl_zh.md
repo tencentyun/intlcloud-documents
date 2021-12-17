@@ -22,5 +22,5 @@ Binding key、Routing key 是组合使用的，提供类似于 RabbitMQ 的消�
 - 订阅者是『#』，则所有消息订阅者都能收到。
 
 
-![](https://mc.qcloudimg.com/static/img/d12ffc8e91322fead97b7633cea47f9a/image.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d12227992d5aaedae4612e0833e70c35.png)
 
