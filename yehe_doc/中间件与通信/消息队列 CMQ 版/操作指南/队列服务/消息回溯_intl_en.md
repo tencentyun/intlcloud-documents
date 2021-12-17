@@ -4,7 +4,7 @@ This document describes the concepts, use cases, and use methods of message rewi
 
 ## Feature
 
-![](https://mc.qcloudimg.com/static/img/5c1699ab442ad36b7e34a091bbcf089d/image.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/683c8ba135048e68c88d93eb3a2ebb0f.png)
 As shown above, the message lifecycle is circled in the blue box. After message rewind is enabled, messages consumed and deleted by consumers will be moved to the **rewindable message** section and retained on the TDMQ for CMQ backend. However, if the message existence exceeds the message lifecycle of the queue (assumed as 1 day), the message will be automatically deleted and cannot be rewound.
 
 ### Product logic
@@ -53,13 +53,13 @@ In this case, you can use the **message rewind** feature. After business B is re
 
 You can directly enable the message rewind feature when creating a queue in the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq/cmq-queue).
 
-![](https://main.qcloudimg.com/raw/ec85b1ce8cadb8c096acbbc3972ff887.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/69ecb7ca62406731c997e8da0b99d5e3.png)
 
 
 
 You can also enable message rewind on the queue details page.
 
-![](https://main.qcloudimg.com/raw/59cb3e0938e18a91f7de4cdfe01c3e6d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b080265f5e8da66d67f0dc18e9d511e2.png)
 
 Set the message rewind parameters on the client.
 
