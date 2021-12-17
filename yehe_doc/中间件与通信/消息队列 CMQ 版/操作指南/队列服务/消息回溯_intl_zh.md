@@ -4,7 +4,7 @@
 
 ## 功能说明
 
-![](https://mc.qcloudimg.com/static/img/5c1699ab442ad36b7e34a091bbcf089d/image.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/683c8ba135048e68c88d93eb3a2ebb0f.png)
 如上图，消息的生命周期为蓝色框内的片段。开启消息回溯能力后，已被消费者消费且确认删除的消息会进入**消息可回溯**区域，TDMQ CMQ 版后端还会保存该信息。但消息超过 Queue 的消息生命周期时（假设为1天），达到生命周期后，该消息会自动删除，不可回溯。
 
 ### 产品逻辑
@@ -53,13 +53,13 @@
 
 在 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq/cmq-queue) 新建队列的时候，您可以开启消息回溯功能。
 
-![](https://main.qcloudimg.com/raw/ec85b1ce8cadb8c096acbbc3972ff887.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/69ecb7ca62406731c997e8da0b99d5e3.png)
 
 
 
 您也可以在队列详情页面开启消息回溯功能。
 
-![](https://main.qcloudimg.com/raw/59cb3e0938e18a91f7de4cdfe01c3e6d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b080265f5e8da66d67f0dc18e9d511e2.png)
 
 在客户端设置消息回溯相关参数。
 
