@@ -15,7 +15,7 @@
 
 在 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq/cmq-queue) 新建队列的时候，您可以开启死信队列功能。
 
-<img src="https://main.qcloudimg.com/raw/000a384dda9a8870902562ce567a360b.png" width="500px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/50d82689a33899d3a5d7a2b7ca782956.png" width="500px">
 
 - 死信队列名称：指定某队列为该队列的死信队列。
 
