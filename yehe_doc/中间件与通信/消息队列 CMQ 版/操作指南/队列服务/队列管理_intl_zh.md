@@ -8,7 +8,7 @@
 
 1. 登录 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq/cmq-queue)。
 2. 在左侧导航栏选择**队列服务**，选择地域后，单击**新建**，配置队列服务相关属性值。
-<img src="https://main.qcloudimg.com/raw/d7998a58a3e670943331bbd82f06794d.png" width="550px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/cfaf3be14bef7b8768c1940daf7b7cb5.png" width="550px">
 
 
    | 属性                   | 说明                                                         | 取值                                                         |
@@ -29,6 +29,6 @@
 1. 登录 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq/cmq-queue) 。
 2. 在左侧导航栏选择**队列服务**，选择好**地域**后，单击目标队列操作列的**发送消息**。
 3. 填写消息内容，单击**发送**，向消息接收侧发送测试消息。
-<img src="https://main.qcloudimg.com/raw/eca781dd9477419c66f8374488532a85.png" width="500px"><br> 消息内容：填写发送的内容，至少1Byte，最大长度受限于设置的队列消息最大长度属性。
+<img src="https://qcloudimg.tencent-cloud.cn/raw/cda9f906a152a8fb6e98a3c47d3f9d8b.png" width="500px"><br> 消息内容：填写发送的内容，至少1Byte，最大长度受限于设置的队列消息最大长度属性。
 
   
