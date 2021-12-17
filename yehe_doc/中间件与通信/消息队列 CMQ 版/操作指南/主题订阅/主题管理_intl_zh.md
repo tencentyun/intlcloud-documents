@@ -10,7 +10,7 @@
 
 1. 登录 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq/cmq-queue)。
 2. 在左侧导航栏选择**主题订阅**，选择好地域，单击**新建**，根据页面提示填写信息。
-![](https://main.qcloudimg.com/raw/5c1e8aea4487e1664f97fdf15f151273.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/cbe59deb464e839551fe01cad174d18b.png)
 
 
    | 属性 | 说明 |

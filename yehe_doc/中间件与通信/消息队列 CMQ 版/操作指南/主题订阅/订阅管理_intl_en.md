@@ -3,7 +3,7 @@
 A topic can publish messages only if it is subscribed to by at least one subscriber. If there are no subscribers, messages in the topic will not be delivered, and message publishing will be meaningless.
 
 The model where a topic delivers a message to a subscriber is as shown below:
-![](https://main.qcloudimg.com/raw/1dc8d4460c623d81bb86bcbc7cdeb546.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/709dc6aaa4fa8c7f3b309dde5fd5f6d7.png)
 
 The topic follows the rules below when delivering the message to the subscriber:
 
@@ -23,7 +23,7 @@ You have created a topic.
 1. Log in to the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq/cmq-queue).
 2. Select **Topic Subscription** on the left sidebar, select the region, and click the ID of the target topic to enter the topic details page.
 3. Select the **Subscriber** tab at the top, click **Create**, and enter the subscriber information.
-<img src="https://main.qcloudimg.com/raw/ae9095b2ef8d56cf563dc272b40a5e29.png" width="550px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b24ff40bedc30e634108d149c08fc4f3.png" width="550px">
 	
 	- Subscriber Type
 		- Queue Service: you can select a queue for the subscriber to use it to receive published messages.

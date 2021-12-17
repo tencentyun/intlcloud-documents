@@ -10,7 +10,7 @@ This document describes how to create or delete a topic in TDMQ for CMQ.
 
 1. Log in to the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq/cmq-queue).
 2. Select **Topic Subscription** on the left sidebar, select the region, click **Create**, and enter the information as prompted.
-![](https://main.qcloudimg.com/raw/5c1e8aea4487e1664f97fdf15f151273.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/cbe59deb464e839551fe01cad174d18b.png)
 
 
    | Attribute | Description |

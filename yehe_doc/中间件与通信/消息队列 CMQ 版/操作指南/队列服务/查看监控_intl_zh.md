@@ -22,4 +22,4 @@
 | 生产者数量（个）	   |  队列连接的生产者数量   |
 | 订阅者数量（个）     |	队列连接的消费者数量   |
 
-![](https://main.qcloudimg.com/raw/aafd54c1328c3ad12f51b91504907af5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d0926e1e95751885d8a0d475ec6b06e1.png)
