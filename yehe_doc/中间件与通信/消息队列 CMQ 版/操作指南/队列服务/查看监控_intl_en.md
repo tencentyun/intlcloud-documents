@@ -22,4 +22,4 @@ Description of monitoring metrics:
 | Number of producers	 | Number of producers connected to the queue |
 | Number of subscribers	 | Number of consumers connected to the queue |
 
-![](https://main.qcloudimg.com/raw/aafd54c1328c3ad12f51b91504907af5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d0926e1e95751885d8a0d475ec6b06e1.png)
