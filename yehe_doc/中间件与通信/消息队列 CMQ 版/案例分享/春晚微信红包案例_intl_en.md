@@ -7,7 +7,7 @@ The Spring Festival Gala red packet campaign involves interactions between four 
 - WeChat Pay: it is the entry to online transactions.
   
 
-![](https://mc.qcloudimg.com/static/img/4e497929b188b4ddc76fe43934d9c126/image.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cfb8cb67d502360bb4ee2ecd5ed2ec60.png)
 
 Distributed transaction processing similar to the red packet system is the key focus. For example, **user A sends a red packet of 10 USD to user B** with the following steps involved:
 1. Read the balance of user A's account
