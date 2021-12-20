@@ -1,4 +1,4 @@
-## GooseFSRuntime 사용하기
+## GooseFSRuntime 빠르게 사용하기
 
 GooseFSRuntime 사용 과정은 간단합니다. 기본 k8s 및 오브젝트 스토리지(Cloud Object Storage, COS) 환경을 준비한 후, GooseFSRuntime 환경을 배포하는 데 약 10분 정도 투자하면 됩니다. 다음 순서에 따라 배포할 수 있습니다.
 
@@ -8,7 +8,7 @@ GooseFSRuntime 사용 과정은 간단합니다. 기본 k8s 및 오브젝트 스
 - Kubernetes 클러스터(version >= 1.14) 설치 완료 및 CSI 기능 지원. 최선의 적용 효과를 위해서는, [Tencent Kubernetes Engine(TKE)](https://intl.cloud.tencent.com/document/product/457/30635)에서 직접 배포할 수 있습니다.
 - kubectl 설치 완료(버전 >= 1.14). `kubectl` 설치 및 설정에 대한 자세한 내용은 [Kubernetes 문서](https://kubernetes.io/docs/tasks/tools/install-kubectl/)를 참고하십시오.
 - Helm 설치 완료(버전 >= 3.0). Helm 3 설치 및 구성에 대한 자세한 내용은 [HELM 문서](https://v3.helm.sh/docs/intro/install/)를 참고하십시오.
--로컬 설치 패키지 `fluid.tgz`는 다음과 같이 제공되며, 직접 설치하여 사용할 수 있습니다.
+- 로컬 설치 패키지 `fluid.tgz`는 다음과 같이 제공되며, 직접 설치하여 사용할 수 있습니다.
 ```shell
 $ helm install fluid fluid.tgz
 NAME: fluid
@@ -22,7 +22,7 @@ TEST SUITE: None
 >? `helm install` 명령어의 일반적인 형식은 `helm install <RELEASE_NAME> <SOURCE>`입니다. 상기 명령어에서 첫 번째 `fluid`는 설치된 release 이름(직접 변경 가능)을 지정하고, 두 번째는 'fluid.tgz'는 helm chart가 있는 경로를 지정합니다.
 >
 
-## 작업 순서
+## 작업 단계
 
 ### 1. 네임스페이스 생성
 ```shell
@@ -61,9 +61,9 @@ COS 버킷을 활성화하여 버킷 생성을 완료합니다. [버킷 생성](
 
 ####(2) 테스트 샘플 데이터 준비
 
-Apache 미러 이미지 사이트의 Spark 관련 리소스를 데모에 사용할 원격 파일로 사용할 수 있습니다. 실제 사용 시, 이 원격 파일을 임의의 원격 파일로 변경할 수도 있습니다.
+Apache 미러 이미지 사이트의 Spark 관련 리소스 파일을 데모에 사용할 원격 파일로 사용할 수 있습니다. 실제 사용 시, 이 원격 파일을 임의의 원격 파일로 변경할 수도 있습니다.
 
-- 이제 원격 리소스 파일이 로컬에 있습니다.
+- 원격 리소스 파일을 로컬로 다운로드합니다.
 ```shell
 mkdir tmp
 cd tmp
@@ -90,12 +90,12 @@ spec:
   mounts:
     - mountPoint: cosn://test-bucket/
       options:
-        fs.cos.accessKeyId: <COS_ACCESS_KEY_ID>
-        fs.cos.accessKeySecret: <COS_ACCESS_KEY_SECRET>
+        fs.cosn.userinfo.secretId: <COS_SECRET_ID>
+        fs.cosn.userinfo.secretKey: <COS_SECRET_KEY>
         fs.cosn.bucket.region: <COS_REGION>
         fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
         fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-        fs.cos.app.id: <COS_APP_ID> 
+        fs.cosn.userinfo.appid: <COS_APP_ID> 
       name: hadoop
 
 ---
@@ -118,7 +118,7 @@ spec:
 - Dataset：
  - mountPoint: UFS 마운트 경로를 나타내며, endpoint 정보를 포함할 필요가 없습니다.
  - options: options에서 버킷에 필요한 정보를 지정해야 하며, 자세한 내용은 [API 용어 정보](https://intl.cloud.tencent.com/document/product/436/7751)를 참고하십시오.
- - fs.cos.accessKeyId/fs.cos.accessKeySecret: COS 버킷에 대한 액세스 권한이 있는 키 정보입니다.
+ - fs.cosn.userinfo.secretId/fs.cosn.userinfo.secretKey: COS 버킷의 키 정보에 접근할 수 있는 권한이 있습니다.
 - GooseFSRuntime: 더 많은 API는 [api_doc.md](https://github.com/fluid-cloudnative/fluid/blob/master/docs/en/dev/api_doc.md)를 참고하십시오.
  - replicas: 생성된 GooseFS 클러스터 노드 수량을 나타냅니다.
  - mediumtype: GooseFS는 HDD/SSD/MEM 세 가지 유형의 캐시 매체를 지원하여 다단계 캐시 구성을 제공합니다.
@@ -137,14 +137,12 @@ kubectl get goosefsruntime hadoop
 NAME     MASTER PHASE   WORKER PHASE   FUSE PHASE   AGE
 hadoop    Ready           Ready           Ready     62m
 ```
-
- iv. dataset의 상태를 확인합니다. Bound가 표시되면 dataset가 성공적으로 바인딩되었음을 나타냅니다.
+iv. dataset의 상태를 확인합니다. Bound가 표시되면 dataset가 성공적으로 바인딩되었음을 나타냅니다.
 ```shell
 $ kubectl get dataset hadoop
 NAME     UFS TOTAL SIZE   CACHED   CACHE CAPACITY   CACHED PERCENTAGE   PHASE   AGE
 hadoop        511MiB       0.00B    180.00GiB              0.0%          Bound   1h
 ```
-
 v. PV 및 PVC 생성 상태를 확인합니다. GooseFSRuntime 배포 과정 중 PV 및 PVC가 자동으로 생성됩니다.
 ```shell
 kubectl get pv,pvc
@@ -183,35 +181,30 @@ i. kubectl을 사용하여 애플리케이션 생성을 완료합니다.
 ```shell
 kubectl create -f app.yaml
 ```
-
 ii. 파일 크기를 확인합니다.
 ```shell
 $ kubectl exec -it demo-app -- bash
 $ du -sh /data/hadoop/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2 
 210M    /data/hadoop/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2 
 ```
-
 iii. 관찰 결과, 파일의 cp 소요 시간은 18s입니다.
 ```shell
-$ time cp /data/hadoop/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2 /dev/null
+$ time cp /data/hadoop/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2  /dev/null
 
 real    0m18.386s
 user    0m0.002s
 sys      0m0.105s
 ```
-
 iv. 4. 이 때 dataset 의 캐시 상황을 확인한 결과, 로컬에 210MB의 데이터가 캐시되어 있습니다.
 ```shell
 $ kubectl get dataset hadoop
 NAME     UFS TOTAL SIZE   CACHED   CACHE CAPACITY   CACHED PERCENTAGE   PHASE   AGE
 hadoop   210.00MiB       210.00MiB    180.00GiB        100.0%           Bound   1h
 ```
-
 v. 다른 요소(예: page cache)가 결과에 영향을 미치지 않도록 하기 위해, 이전 컨테이너를 삭제하고 동일한 애플리케이션을 생성하여 동일 파일에 대한 액세스를 시도합니다. 이때 파일은 이미 GooseFS에 의해 캐싱되었기 때문에, 두 번째 액세스 소요 시간이 첫 번째보다 훨씬 짧은 것을 확인할 수 있습니다.
 ```shell
 kubectl delete -f app.yaml && kubectl create -f app.yaml
 ```
-
 vi. 관찰 결과, 파일 복사 소요 시간은 48ms이며, 전체 복사 시간은 300배 단축되었습니다.
 ```shell
 $ time cp /data/hadoop/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2  /dev/null
@@ -233,4 +226,4 @@ kubectl delete goosefsruntime hadoop
 kubectl delete dataset hadoop
 ```
 
-상기와 같이 간단한 예시를 통해 GooseFS on Fluid 기본 체험 및 학습을 완료하였습니다. 마지막으로 환경 정리를 진행합니다. Fluid GooseFSRuntime의 기능에 대한 자세한 내용은 [기능 리스트](https://cloud.tencent.com/document/product/436/59495)를 참고하십시오.
+상기와 같이 간단한 예시를 통해 GooseFS on Fluid 기본 체험 및 학습을 완료하였습니다. 마지막으로 환경 정리를 진행합니다. Fluid GooseFSRuntime의 기능에 대한 자세한 내용은 [기능 리스트](https://intl.cloud.tencent.com/document/product/436/42233)를 참고하십시오.

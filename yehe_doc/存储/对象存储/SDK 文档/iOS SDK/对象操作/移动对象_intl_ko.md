@@ -30,13 +30,13 @@ COS는 버킷 이름(Bucket)과 객체 키(ObjectKey)로 객체를 식별하므�
 ```objective-c
 QCloudCOSXMLCopyObjectRequest* request = [[QCloudCOSXMLCopyObjectRequest alloc] init];
     
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-Appid로 구성된 버킷 이름. COS 콘솔에서 조회할 수 있습니다. https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
     
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 "dir1/object1"입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "dir1/object1"입니다.
 request.object = @"exampleobject";
     
-// 파일 원본 버킷은 공개 읽기 혹은 현재 계정에 권한이 있어야 합니다.
+// 파일 원본 버킷. 공개 읽기이거나 현재 계정에 권한이 있어야 합니다.
 request.sourceBucket = @"sourcebucket-1250000000";
     
 // 원본 파일 이름
@@ -53,7 +53,7 @@ request.sourceRegion= @"COS_REGION";
     if(! error){
         QCloudDeleteObjectRequest* deleteObjectRequest = [QCloudDeleteObjectRequest new];
             
-        // 파일 원본 버킷은 공개 읽기 혹은 현재 계정에 권한이 있어야 합니다.
+        // 파일 원본 버킷. 공개 읽기이거나 현재 계정에 권한이 있어야 합니다.
         deleteObjectRequest.bucket = @"sourcebucket-1250000000";
             
         // 원본 파일 이름은 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 "dir1/object1"입니다.
@@ -80,17 +80,17 @@ request.sourceRegion= @"COS_REGION";
 ```swift
 let copyRequest = QCloudCOSXMLCopyObjectRequest.init();
         
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-Appid로 구성된 버킷 이름. COS 콘솔에서 조회할 수 있습니다. https://console.cloud.tencent.com/cos5/bucket
 copyRequest.bucket = "examplebucket-1250000000";
                 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 "dir1/object1"입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "dir1/object1"입니다.
 copyRequest.object = "exampleobject";
         
-// 파일 원본 버킷은 공개 읽기 혹은 현재 계정에 권한이 있어야 합니다.
-// BucketName-APPID 포맷의 버킷 이름
+// 파일 원본 버킷. 공개 읽기이거나 현재 계정에 권한이 있어야 합니다.
+// BucketName-Appid로 구성된 버킷 이름. COS 콘솔에서 조회할 수 있습니다. https://console.cloud.tencent.com/cos5/bucket
 copyRequest.sourceBucket = "sourcebucket-1250000000";
         
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 "dir1/object1"입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "dir1/object1"입니다.
 copyRequest.sourceObject = "sourceObject";
         
 // 원본 파일의 APPID
@@ -104,10 +104,10 @@ copyRequest.setFinish { (copyResult, error) in
         // 파일의 etag
         let deleteObject = QCloudDeleteObjectRequest.init();
                 
-        // BucketName-APPID 포맷의 버킷 이름
+        // BucketName-Appid로 구성된 버킷 이름. COS 콘솔에서 조회할 수 있습니다. https://console.cloud.tencent.com/cos5/bucket
         deleteObject.bucket = "sourcebucket-1250000000";
                 
-        // 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 "dir1/object1"입니다.
+        // 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "dir1/object1"입니다.
         deleteObject.object = "sourceObject";
                 
         deleteObject.finishBlock = {(result, error)in
@@ -127,4 +127,4 @@ copyRequest.setFinish { (copyResult, error) in
 QCloudCOSTransferMangerService.defaultCOSTransferManager().copyObject(copyRequest);
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferCopyObject.swift)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferCopyObject.swift)를 참고하십시오.

@@ -13,8 +13,8 @@ kind: Secret
 metadata:
   name: mysecret
 stringData:
-  fs.cosn.userinfo.secretId: <COS_ACCESS_KEY_ID>
-  fs.cosn.userinfo.secretKey: <COS_ACCESS_KEY_SECRET>
+  fs.cosn.userinfo.secretId: <COS_SECRET_ID>
+  fs.cosn.userinfo.secretKey: <COS_SECRET_KEY>
 ```
 
 보시다시피 `fs.cosn.userinfo.secretKey`와 `fs.cosn.userinfo.secretId`의 구체적인 내용은 Secret에 작성되어 있으며, Dataset은 직접 작성하는 대신, 동일 이름의 Secret과 key를 찾아 해당 값을 읽어옵니다. 이를 통해 일부 데이터의 보안성을 보장합니다.
@@ -43,7 +43,7 @@ spec:
         fs.cosn.bucket.region: <COS_REGION>
         fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
         fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-        fs.cos.app.id: <COS_APP_ID>
+        fs.cosn.userinfo.appid: <COS_APP_ID>
       encryptOptions:
         - name: fs.cosn.userinfo.secretId
           valueFrom:
@@ -92,7 +92,7 @@ NAME     MASTER PHASE   WORKER PHASE   FUSE PHASE   AGE
 mydata    Ready           Ready           Ready     62m
 ```
 
-dataset 상태를 확인합니다. Bound 상태로 표시되면 dataset 바인딩 성공을 나타냅니다.
+dataset의 상태를 확인합니다. Bound가 표시되면 dataset가 성공적으로 바인딩되었음을 나타냅니다.
 
 ```shell
 $ kubectl get dataset mydata
