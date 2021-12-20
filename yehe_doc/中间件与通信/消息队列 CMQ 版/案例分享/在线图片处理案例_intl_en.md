@@ -1,7 +1,7 @@
 
 An image processing company builds an online image processing service in Tencent Cloud which enables users to upload their images and specify operations to be performed on them, such as cropping, red eye removal, teeth whitening, colorization, contrast adjustment, and thumbnail generation. A user can upload an image, submit a task, wait for the image to be processed, and download the output image. The time taken for processing varies by operation, from several seconds to several minutes, and the user may upload several, dozens of, or hundreds of images at a time. Therefore, the total processing time is subject to the number of uploaded images, image size, and selected operations.
 
-![](https://main.qcloudimg.com/raw/fcd51be0a6dd925f89014b0c2fedfdc2.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/33c8fe37dcb185226967f988b54e18a6.png)
 
 After TDMQ for CMQ is integrated to implement the above-mentioned needs, user images will be stored in Tencent Cloud storage (such as CBS and COS), and each user operation request will be stored in the request queue as a message. The message content is an image index composed of elements such as the image name, operation type in user request, and image storage location index key.
 
