@@ -1,3 +1,13 @@
+## July 2021
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tr>
+    <td>Supports creation of container instance</td><td>Container instance is a service model launched by Elastic Kubernetes Service that allows users to deploy container applications without the need to purchase servers or deploy K8s clusters.</td><td>2021-07-14</td><td>Container instance</td>
+</tr>
+</table>
+
+
 ## May 2021
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -9,7 +19,7 @@
     <td>Supports modifying the custom DNS of the virtual node.</td><td>Users can modify the custom DNS of the virtual node. After modification, the Pods scheduled to this virtual node will adopts this DNS configuration by default.</td><td>2021-05-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39759">Virtual Node Overview</a></td>
 </tr>
 <tr> 
-    <td>Elastic cluster supports log collection via CRD configuration.</td><td>Users can use the Custom Resource Definitions (CRD) to configure log collection for the Elastic cluster. CRD is non-intrusive to Pod and supports a variety of log parsing methods. It sends standard output and file logs in the container to Tencent Cloud CLS, which provides search and analysis, visual application, log download and consumption, and other services. It is recommended to use CRD to configure log collection.</td><td>2021-05-25</td><td>Using a CRD to Configure Log Collection</td>
+    <td>Elastic cluster supports log collection via CRD configuration.</td><td>Users can use the Custom Resource Definitions (CRD) to configure log collection for the Elastic cluster. CRD is non-intrusive to Pod and supports a variety of log parsing methods. It sends standard output and file logs in the container to Tencent Cloud CLS, which provides search and analysis, visual application, log download and consumption, and other services. It is recommended to use CRD to configure log collection.</td><td>2021-05-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/40585">Using a CRD to Configure Log Collection</a></td>
 </tr>
 </table>
 
@@ -31,7 +41,7 @@
     <td>Supports spot instance.</td><td>The spot instance costs are 20% of the original cost, which is expected to reduce business costs by 65%.</td><td>2020-12-25</td><td>-</td>
 </tr>
 <tr>
-    <td>Event dashboard was launched.</td><td>This feature supports the multi-dimensional statistics of top events, exception events, etc. and supports aggregation search and trend observation.</td><td>2020-12-08</td><td>Event Dashboard</td>
+    <td>Event dashboard was launched.</td><td>This feature supports the multi-dimensional statistics of top events, exception events, etc. and supports aggregation search and trend observation.</td><td>2020-12-08</td><td>Event Dashboard</a></td>
 </tr>
 </table>
 
