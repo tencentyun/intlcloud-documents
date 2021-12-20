@@ -7,7 +7,7 @@
 - 微信支付：在线交易的入口。
   
 
-![](https://mc.qcloudimg.com/static/img/4e497929b188b4ddc76fe43934d9c126/image.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cfb8cb67d502360bb4ee2ecd5ed2ec60.png)
 
 类似红包系统的分布式事务是关注的热点。举一个典型的例子，『用户 A 给用户 B 发了10美元的红包』，有以下步骤：
 1. 从 A 帐号中把余额读出来
