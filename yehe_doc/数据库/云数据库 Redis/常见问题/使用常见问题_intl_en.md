@@ -1,5 +1,5 @@
 ### How do I use the hash algorithm of TencentDB for Redis Cluster Edition?
-The hash algorithm of the Redis Cluster Edition is the same as that in the a Redis Community Edition cluster, i.e., `HASH_SLOT = CRC16(key) mod 16384`. For more information, please see [Redis Cluster Specification](https://redis.io/topics/cluster-spec).
+The hash algorithm of the Redis Cluster Edition is the same as that in the a Redis Community Edition cluster, i.e., `HASH_SLOT = CRC16(key) mod 16384`. For more information, see [Redis Cluster Specification](https://redis.io/topics/cluster-spec).
 
 ### What is the maximum capacity of a single instance?
 
@@ -22,13 +22,15 @@ That is used by the TencentDB for Redis instance in maintaining its data structu
 ### Can TencentDB for Redis be managed with visual tools such as Redis Desktop Manager?
 You can perform OPS and management operations in the TencentDB for Redis console. If you need to use a visual tool, use a CVM instance as a jump server to provide an access address for Redis Desktop Manager.
 
-### Will my business be interrupted during capacity expansion and reduction?
-- Redis 2.8 Standard Architecture: there will be a momentary disconnection during capacity expansion and reduction.
-- Editions other than Redis 2.8 Standard Architecture: there will be a momentary disconnection during capacity reduction.
-- Editions other than Redis 2.8 Standard Architecture: there will not be disconnections during capacity expansion (except for blocking commands such as BLPOP).
+### Will my business be interrupted during scaling?
+Momentary disconnections during scaling of different editions of TencentDB for Redis are as describe below:
+- During scale-up, if the expanded capacity exceeds the remaining capacity of a single server, the cluster will perform sharding or migrate nodes, and a momentary business disconnection will occur; otherwise, no disconnections will occur.
+- During scale-out, the number of nodes in the cluster will be increased, and a momentary business disconnection will occur.
+- During scale-in, node repossession will cause node migration in the cluster, and a momentary business disconnection will occur.
+- During scale-down, no momentary business disconnections will occur.
 
 ### How do I add a monitoring alarm?
-This can be implemented through custom monitoring and alarming. For more information, please see [Monitoring and Alarming](https://intl.cloud.tencent.com/document/product/239/34589).
+This can be implemented through custom monitoring and alarming. For more information, see [Monitoring and Alarming](https://intl.cloud.tencent.com/document/product/239/34589).
 
 ### Do I need to purchase different instances for selecting 0-15 databases?
 No. Multiple databases can be set on one Standard Architecture or Cluster Architecture instance.
@@ -57,10 +59,10 @@ You can use the `telnet` command to check the port connectivity.
 Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list to enter the parameter configuration page, and configure a caching policy through the `maxmemory-policy` parameter, whose default value is `noeviction`.
 
 ### How do I download a client for TencentDB for Redis?
-Clients compatible with the Redis protocol can access TencentDB for Redis. You can choose an appropriate client as needed. For the download addresses, please see [Clients](http://redis.io/clients?spm=a2c4g.11186623.2.5.c3a25c83nYgvqS).
+Clients compatible with the Redis protocol can access TencentDB for Redis. You can choose an appropriate client as needed. For the download addresses, see [Clients](http://redis.io/clients?spm=a2c4g.11186623.2.5.c3a25c83nYgvqS).
 
 ### How do I upgrade the version of TencentDB for Redis?
-Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the **Instance Details** page, where you can upgrade the instance version. For more information, please see [Upgrading Instance Version](https://intl.cloud.tencent.com/document/product/239/37710).
+Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the **Instance Details** page, where you can upgrade the instance version. For more information, see [Upgrading Instance Version](https://intl.cloud.tencent.com/document/product/239/37710).
 
 ### How do I upgrade the architecture of TencentDB for Redis?
-Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the **Instance Details** page, where you can upgrade the instance architecture. For more information, please see [Upgrading Instance Architecture](https://intl.cloud.tencent.com/document/product/239/37860).
+Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the **Instance Details** page, where you can upgrade the instance architecture. For more information, see [Upgrading Instance Architecture](https://intl.cloud.tencent.com/document/product/239/37860).
