@@ -11,4 +11,4 @@ The overall business of Qidian.com presents high pressure on TDMQ for CMQ, as th
  The TDMQ for CMQ backend cluster is imperceptible to users, and the TDMQ for CMQ controller server can schedule and relocate queues in real time based on the load of the cluster. If the request volume of a queue exceeds the service threshold of the current cluster, the controller server can distribute the queue routes to multiple clusters to increase the number of processable concurrent requests. In theory, TDMQ for CMQ can achieve unlimited message retention and extremely high QPS.
 
 See the following figure:
-![](https://mc.qcloudimg.com/static/img/af7190c78d702f61b900b194e9034546/image.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ef5293f5dd18eb5eb5ea7a18127b1036.png)
