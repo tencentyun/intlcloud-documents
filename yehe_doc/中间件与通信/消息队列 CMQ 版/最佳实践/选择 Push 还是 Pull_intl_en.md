@@ -2,7 +2,7 @@ TDMQ for CMQ supports two models: **push (topic)** and **pull (queue)**.
 - Push model: when a message sent by the producer arrives at the server, the server will immediately deliver it to the consumer.
 - Pull model: the server does not process the received messages; instead, it only waits for the consumer to actively read them from it, that is, the consumer needs to "pull" messages.
 
-![](https://main.qcloudimg.com/raw/adc8d5e8276fffcecfaad30f2473e90a.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/cb368c2e94658953d68b24626cf8565a.png)
 This document analyzes the pros and cons of the push and pull models in different scenarios.
 
 
