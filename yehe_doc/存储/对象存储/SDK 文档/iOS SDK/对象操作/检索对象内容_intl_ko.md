@@ -20,15 +20,15 @@ COS Select는 다음과 같은 객체 데이터 형식의 인덱스를 지원합
 * JSON 형식: JSON 형식의 객체 스토리지, JSON 파일 또는 JSON 리스트.
 
 > !
-- COS Select 사용의 경우, `cos:GetObject` 라이선스가 필수임.
-- CSV, JSON 객체는 UTF-8 형식으로 인코딩 해야 함.
-- COS Select는 GZIP 또는 BZIP2 압축한 CSV, JSON 객체 인덱스를 지원함.
-- COS Select는 SSE-COS 암호화 CSV, JSON 객체 인덱스를 지원함.
+>- COS Select 사용의 경우, `cos:GetObject` 라이선스가 필수임.
+>- CSV, JSON 객체는 UTF-8 형식으로 인코딩 해야 함.
+>- COS Select는 GZIP 또는 BZIP2 압축한 CSV, JSON 객체 인덱스를 지원함.
+>- COS Select는 SSE-COS 암호화 CSV, JSON 객체 인덱스를 지원함.
 
 #### 예시 코드
 
 [//]: # (.cssg-snippet-select-object)
-'''objective-c
+```objective-c
 QCloudSelectObjectContentRequest *request = [QCloudSelectObjectContentRequest new];
 // BucketName-Appid로 구성된 버킷 이름. COS 콘솔에서 조회할 수 있습니다. https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
