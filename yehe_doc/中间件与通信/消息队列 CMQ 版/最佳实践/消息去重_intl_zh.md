@@ -28,7 +28,7 @@ min_msg_time + max_retry_time + max_network_time
 
  TDMQ CMQ 版可配置消息最大有效时间为15天，业务可根据实际情况调整。
  TDMQ CMQ 版队列当前最小未消费消息时间，即下图中最远时间点。该时间之前的消息都已经被删除，之后的消息可能未被删除。
-![](https://mc.qcloudimg.com/static/img/dbff4055c9fa8a10160ff59a830c016c/image.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/2ceb6921e3a0076f42147a1eb9909784.png)
 
 
 
