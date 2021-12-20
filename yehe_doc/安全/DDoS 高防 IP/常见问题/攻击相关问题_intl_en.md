@@ -21,12 +21,13 @@ On the [Overview](https://console.cloud.tencent.com/ddos/antiddos-advanced/overv
 
 ### Where to view details of the attack source IP?
 On the [Overview](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview/ddos) page, select an attack event you want to view, and then click **Attack Details** to check the attack source information, source region, attack traffic and attack packet size.
+![](https://qcloudimg.tencent-cloud.cn/raw/c969588e5aab0e2a213737de4179bf1d.png)
 
 ### What to do when the lightweight server is under DDoS attacks?
 We recommend getting an [Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/297/37241) instance to defeat DDoS attacks and guarantee the availability of your server and business.
 
 ### What is the protection bandwidth threshold for the server? What will happen if the threshold reaches?
-General users can enjoy free basic protection at a bandwidth of 2 Gbps while 10 Gbps for VIP users. Once the threshold reaches, blocking will be triggered, causing potential business interruptions.
+Each public IP of all Tencent Cloud users in the Chinese mainland can enjoy free basic protection, with a maximum bandwidth of 2 Gbps for general users and 10 Gbps for VIP users. Users outside the Chinese mainland can enjoy up to 2 Gbps bandwidth. Blocking will be triggered after the threshold reaches, causing potential business interruptions.
 
 ### How to identify an attack by the amount of attack traffic?
 An attack is identified as long as attack traffic is detected. You can set an alarm threshold upon the amount of attack traffic.

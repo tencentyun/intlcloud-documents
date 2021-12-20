@@ -21,7 +21,7 @@
 
 ### 攻击源 IP，哪里可以查看？
 在 [防护概览](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview/ddos) 页面，选择想查看的攻击事件，单击**攻击详情**，支持查看攻击源信息、攻击源地区、产生的攻击流量及攻击包量大小。
-![](https://main.qcloudimg.com/raw/c4d2f863175410d86d7625ed51a3c774.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c969588e5aab0e2a213737de4179bf1d.png)
 
 ### 轻量服务器被 DDoS 攻击，怎么办？
 腾讯云内用户，购买[ DDoS 高防 IP ](https://intl.cloud.tencent.com/document/product/297/37241) 能有效抵御 DDoS 攻击，保证您的服务器与业务正常运作。
