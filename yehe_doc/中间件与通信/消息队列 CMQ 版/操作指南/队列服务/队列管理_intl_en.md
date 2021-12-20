@@ -8,7 +8,7 @@ This document describes how to create a queue service and send a message in the 
 
 1. Log in to the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq/cmq-queue).
 2. Select **Queue Service** on the left sidebar, select the region, click **Create**, and configure the queue service attributes.
-<img src="https://main.qcloudimg.com/raw/d7998a58a3e670943331bbd82f06794d.png" width="550px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/cfaf3be14bef7b8768c1940daf7b7cb5.png" width="550px">
 
 
    | Attribute | Description | Value |
@@ -29,6 +29,6 @@ This document describes how to create a queue service and send a message in the 
 1. Log in to the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq/cmq-queue).
 2. Select **Queue Service** on the left sidebar, select the **region**, and click **Send Message** in the **Operation** column of the target queue.
 3. Enter the message content and click **Send** to send a testing message to the recipient.
-<img src="https://main.qcloudimg.com/raw/eca781dd9477419c66f8374488532a85.png" width="500px"><br> Message Content: enter the content to be sent of at least 1 byte. The maximum length is subject to the set `MaxMsgSize` attribute.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/cda9f906a152a8fb6e98a3c47d3f9d8b.png" width="500px"><br> Message Content: enter the content to be sent of at least 1 byte. The maximum length is subject to the set `MaxMsgSize` attribute.
 
   

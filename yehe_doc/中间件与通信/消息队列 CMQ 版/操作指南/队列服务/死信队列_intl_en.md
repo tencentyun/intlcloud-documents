@@ -15,7 +15,7 @@ As users may have been lost while old messages are waiting (such as bike unlocki
 
 When creating a queue in the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq/cmq-queue), you can enable the DLQ feature.
 
-<img src="https://main.qcloudimg.com/raw/000a384dda9a8870902562ce567a360b.png" width="500px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/50d82689a33899d3a5d7a2b7ca782956.png" width="500px">
 
 - DLQ Queue Name: specify a queue as the DLQ of the queue.
 

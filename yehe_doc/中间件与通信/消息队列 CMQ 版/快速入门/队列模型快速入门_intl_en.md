@@ -12,7 +12,7 @@ This document describes how to create a queue service from scratch and use the S
 
 1. Log in to the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq/cmq-queue).
 2. Select **Queue Service** on the left sidebar, select the region, click **Create**, and configure the queue service attributes.
-<img src="https://main.qcloudimg.com/raw/d7998a58a3e670943331bbd82f06794d.png" width="550px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/bca2e55dcc0172d192894f345fcfc291.png" width="550px">
  
  
    | Attribute | Description | Value |
@@ -54,8 +54,8 @@ This document describes how to create a queue service from scratch and use the S
 	 
    | Parameter | Description |
    | ------------------- | ------------------------------------------------------------ |
-   | NameServerAddress | API call address, which can be copied from **Queue Service** > **API Request Address** in the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq). <img src="https://main.qcloudimg.com/raw/397c634ac38494666e878caf69cf55e7.png" width="400px"> |
-   | SecretId, SecretKey | TencentCloud API key, which can be copied from **Access Key** > **API Key Management** in the [CAM console](https://console.cloud.tencent.com/cam/overview). ![](https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png) |
+   | NameServerAddress | API call address, which can be copied from **Queue Service** > **API Request Address** in the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq). <img src="https://qcloudimg.tencent-cloud.cn/raw/fc16b1951c00d63b0f86cf8f4c25691c.png" width="400px"> |
+   | SecretId, SecretKey | TencentCloud API key, which can be copied from **Access Key** > **API Key Management** in the [CAM console](https://console.cloud.tencent.com/cam/overview). ![](https://qcloudimg.tencent-cloud.cn/raw/0def1c292b3dc79a320e3fc9921a979e.png) |
    | queue | Queue name, which can be obtained on the **Queue Service** list page in the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq). |
    
 3. Configure the parameters of the message consuming program `SubscribeDemo.java`.

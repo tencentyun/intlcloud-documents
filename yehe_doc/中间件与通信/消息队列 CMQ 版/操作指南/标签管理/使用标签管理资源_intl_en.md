@@ -46,13 +46,10 @@ After designing the tag keys and values as detailed above, you can log in to the
 
 1. Log in to the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq/cmq-queue).
 2. On the **Queue Service** page, select the target region and queue and click **Edit Resource Tag** at the top of the page.
-   ![](https://main.qcloudimg.com/raw/98091abb3b806a2fc0a3656b949c1470.png)
 3. Set tags in the **Edit Tag** pop-up window.
    For example, add three tags for the `cmqq-372ovdpw8ob1` queue.
-   ![](https://main.qcloudimg.com/raw/11381698a0bbbc24f9f3ec7e4e8701e5.png)
 >?If existing tags cannot meet your needs, go to [Tag Management](https://console.cloud.tencent.com/tag/taglist) to create more.
 4. Click **OK**, and you will be prompted that the tags have been modified successfully. You can view the tags bound to a queue in its **Resource Tag** column.
- ![](https://main.qcloudimg.com/raw/cd1a0daca2d94503ec9062030e1075e5.png)
 
 
 ### Filtering resource by tag key
@@ -62,4 +59,3 @@ You can filter out queues bound to a specific tag in the following steps:
 1. Select **Tag** in the search box at the top-right corner of the [Queue Service](https://console.cloud.tencent.com/tdmq/cmq-queue?rid=1) page.
 2. In the window that pops up, select the tag you want to search for and click **OK**.
    For example, if you select `Tag: owner:zhangsan`, you can filter out queues bound to the tag key `owner:zhangsan`.
-   ![](https://main.qcloudimg.com/raw/75fa474269963006d44710f07e3b8ecf.png)

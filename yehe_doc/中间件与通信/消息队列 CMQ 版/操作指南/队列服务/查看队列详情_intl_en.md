@@ -28,4 +28,4 @@ On the details page, you can query:
 
 - Message Rewind: after your business successfully consumes and deletes a message, you can use this feature to consume the message again. For more information, see [Message Rewind](https://intl.cloud.tencent.com/document/product/1111/42997).
 
-![](https://main.qcloudimg.com/raw/5d6a37e0b2c5097f413783eb0de1db6e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/92454ee824d8bb465b00713436fb6def.png)

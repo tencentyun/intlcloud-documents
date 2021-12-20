@@ -3,7 +3,7 @@
 主题发布消息有一个前提，即需要有订阅者订阅主题，如果没有订阅者存在，那么主题中的消息不会被投递，此时发布消息这一操作就失去了意义。
 
 主题（Topic）向订阅者投递消息的模型如下：
-![](https://main.qcloudimg.com/raw/1dc8d4460c623d81bb86bcbc7cdeb546.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/709dc6aaa4fa8c7f3b309dde5fd5f6d7.png)
 
 Topic 向订阅者投递消息时，遵循以下原则：
 
@@ -23,7 +23,7 @@ Topic 向订阅者投递消息时，遵循以下原则：
 1. 登录 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq/cmq-queue)。
 2. 在左侧导航栏选择**主题订阅**，选择好地域，单击目标主题的“ID”，进入主题详情页面。
 3. 在页面上方选择**订阅者**页签，单击**新建**，填写订阅者相关信息
-<img src="https://main.qcloudimg.com/raw/ae9095b2ef8d56cf563dc272b40a5e29.png" width="550px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b24ff40bedc30e634108d149c08fc4f3.png" width="550px">
 	
 	- 订阅者类型
 		- Queue 队列服务：订阅者可以选择一个 Queue，使用队列来接收发布的消息。

@@ -15,7 +15,7 @@ You have logged in to the [TDMQ for CMQ console](https://console.cloud.tencent.c
 Take modifying a tag bound to a queue as an example:
 
 1. On the **Queue Service** list page, select the target region and queue and click **Edit Resource Tag** at the top of the page.
-	 ![](https://main.qcloudimg.com/raw/9d854b35c9ffb9726b263333dce18c32.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/7b772e09840b135149f2fe71baac6776.png)
 >?You can batch edit tags for up to 20 resources at a time.
 2. In the **Edit Tag** pop-up window, add, modify, or delete tags as needed.
 
