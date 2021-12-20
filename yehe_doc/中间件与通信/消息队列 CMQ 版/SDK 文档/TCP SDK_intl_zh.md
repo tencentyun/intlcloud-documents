@@ -41,7 +41,7 @@ producer.setSecretKey(“获取的SecretKey”)
 String queue = “创建的队列名”
 ```
 具体图示如下：
-![](https://main.qcloudimg.com/raw/f4a7604ccb2319befdcbe338f40be939.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/44c8f0c0128611aeaeaf43cf19b9c724.png)
 
 ### 运行 Demo
 #### 使用队列模型收发消息
