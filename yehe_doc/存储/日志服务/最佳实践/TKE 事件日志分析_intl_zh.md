@@ -9,7 +9,7 @@ Event 是 Kubernetes 中众多资源对象中的一员，通常用来记录集�
 
 ## 事件日志字段说明
 
-![img](https://main.qcloudimg.com/raw/6d6dabec677912952415964e6d525966.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/cfd3f25b635123d9ea29abe6bbf323fe.png)
 
 - 级别（Type）： 目前仅有 “Normal” 和 “Warning”，但是如果需要，可以使用自定义类型。
 - 资源类型/对象（Involved Object）：事件所涉及的对象，例如 Pod，Deployment，Node 等。
