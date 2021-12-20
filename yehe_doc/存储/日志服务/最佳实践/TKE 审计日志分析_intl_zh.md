@@ -13,7 +13,7 @@
 ## 审计日志字段说明
 
 每一条审计日志都是一个 JSON 格式的结构化记录，包括元数据（metadata）、请求内容（requestObject）和响应内容（responseObject）3个部分。其中元数据一定会存在，请求和响应内容是否存在取决于审计级别。元数据包含了请求的上下文信息，例如谁发起的请求，从哪里发起的，访问的 URI 等等。
-![img](https://main.qcloudimg.com/raw/38ba2499da67d3bfd5219e395083f073.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/deb6778abd84883a42c62b1939376f92.png)
 
 ## 如何使用审计日志去排查问题
 
