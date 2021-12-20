@@ -28,7 +28,7 @@ min_msg_time + max_retry_time + max_network_time
 
  TDMQ for CMQ supports a maximum message validity period of 15 days. You can adjust the validity period within the value range as needed.
  The earliest time of a consumed and acknowledged message in the current TDMQ for CMQ queue, which is the earliest time point as shown in the figure below. All the messages before this time point have already been deleted, while those after it may have not.
-![](https://mc.qcloudimg.com/static/img/dbff4055c9fa8a10160ff59a830c016c/image.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/2ceb6921e3a0076f42147a1eb9909784.png)
 
 
 
