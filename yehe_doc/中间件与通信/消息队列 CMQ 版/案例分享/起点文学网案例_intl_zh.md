@@ -11,4 +11,4 @@
  TDMQ CMQ 版后端的集群对用户来说是透明无感知的， TDMQ CMQ 版 controller server 可根据集群的负载情况实时对queue进行调度搬迁。如果某个queue的请求量超过当前集群的服务阈值，controller server 可以将 queue 路由分布到多个集群上来提高并发量，理论上可以达到无限的消息堆积以及超高的QPS。
 
 参考图示如下：
-![](https://mc.qcloudimg.com/static/img/af7190c78d702f61b900b194e9034546/image.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ef5293f5dd18eb5eb5ea7a18127b1036.png)
