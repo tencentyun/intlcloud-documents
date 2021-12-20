@@ -29,7 +29,7 @@ telnet <region 简称>.cls.tencentyun.com 80
 #### 2.2 查看（或创建）密钥对
 
 登录腾讯云账号 [访问管理](https://console.cloud.tencent.com/cam/capi)，查看（或创建）密钥对，并确认密钥状态为启用。
-![](https://main.qcloudimg.com/raw/5da40a4e08e052ea6935038960ee563e.png)
+
 
 #### 2.3 安装 LogListener
 
@@ -39,16 +39,10 @@ telnet <region 简称>.cls.tencentyun.com 80
 
 日志服务区分地域，为了降低网络延迟，尽可能选择与服务邻近的服务地域创建日志资源（支持地域详见 [地域列表](https://intl.cloud.tencent.com/document/product/614/18940)）。日志资源管理主要分为日志集和日志主题，一个日志集表示一个项目，一个日志主题表示一类服务，单个日志集可以包含多个日志主题。
 
-#### 3.1 创建日志集
+1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
+2. 在左侧导航栏单击【日志主题】，单击【创建日志主题】，开始创建日志主题。
+3. 选择现有的日志集合，并输入想要创建的日志主题名字，例如创建一个名为 nginx_access 的日志主题，创建好的日志主题将会出现在日志主题列表中。</br>
 
-登录 [日志服务控制台](https://console.cloud.tencent.com/cls) ，在左侧导航栏单击【日志集管理】，进入日志集管理页面。在页面顶部选择合适的地域，单击【创建日志集】，开始创建日志集。
-例如创建一个名为`cls_project`的日志集，创建好的日志集将会出现在日志集列表中。
-![](https://main.qcloudimg.com/raw/f1a918059ef2da5868fabbaa4e199a26.png)
-
-#### 3.2 创建日志主题
-
-单击“日志集名称”，进入到日志主题管理页面。单击【新增日志主题】，开始创建日志主题，例如创建一个名为 nginx_access 的日志主题，创建好的日志主题将会出现在日志主题列表中。
-![](https://main.qcloudimg.com/raw/012e53bd7b979c7e250c067cc175e04c.png)
 
 ### 4. 创建机器组 
 
@@ -56,7 +50,6 @@ telnet <region 简称>.cls.tencentyun.com 80
 登录 [日志服务控制台](https://console.cloud.tencent.com/cls) 后，在左侧导航栏单击【机器组管理】，进入到机器组管理页面。在页面顶部选择合适的地域，单击【创建机器组】开始创建，一个机器组可以填入多个机器 IP 地址（每行一个 IP 地址），若是腾讯云服务器 CVM，直接填写内网 IP 地址即可，更多信息请参考 [机器组管理](https://intl.cloud.tencent.com/document/product/614/17412)。
 
 创建好机器组后，单击机器组列表中的【查看】，检查 LogListener 与服务端的连接状态，若状态正常，则表示客户端 LogListener 已成功连接到日志服务。若显示异常，请参考 [机器组异常](https://intl.cloud.tencent.com/document/product/614/17424) 文档进行排查。
-![image](https://main.qcloudimg.com/raw/3a3e3eca80cfb7e86b787e4800db3708.png)
 
 ### 5. 配置 LogListener 
 
@@ -75,6 +68,7 @@ telnet <region 简称>.cls.tencentyun.com 80
 
 例如待采集文件的绝对路径是`/cls/logs/access.log`，则采集路径填写的目录前缀是`/cls/logs`，日志文件名填写access.log，如下图所示：
 
+
 #### 5.2 绑定机器组
 
 选择预先创建好的机器组，将当前日志主题与机器组关联起来后，LogListener 将按照所配置的规则监听采集机器组上的日志文件（一个日志主题可以绑定多个机器组，但一个日志文件只能上报到一个日志主题）。
@@ -90,7 +84,7 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 - 输入日志样例并抽取键值对
   在日志样例框中输入一条完整的日志，确认后将自动抽取键值对（key-value），然后为每组键值对定义唯一的键名称（key）。
 	在本示例中，日志被解析成`Tue Jan 22 14:49:45 2019`，`download`，`success`，`194` 和`a31f28ad59434528660c9076517dc23b` 五个字段，依次为每个字段定义键名称（key）：`time`，`action`，`status`，`size`，`hashcode`，这样 LogListener 将按照所定义的结构化格式进行数据采集。
-![](https://main.qcloudimg.com/raw/9d498fdbb6d3e9773cac3bd8e6a3c273.png)
+
 
 ### 6. 检索日志
 
@@ -104,7 +98,7 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 | 键值索引 | 将整条日志按格式拆分成多个键值对（key-value），然后基于键值对进行字段查询 |
 
 本章节以键值索引为例说明配置方法，在日志集管理页面，单击【索引配置】进入到索引管理页面，选择编辑键值索引，然后将需要进行检索分析的字段（键名key）配置到键值索引中，并每个字段的键值索引指定数据类型，目前支持`long`、`double`、`text`等数据类型，其中`text`类型可以指定分词符（分词符将字符串切分成多个分词）。在上述例子中，为`time`，`action`，`status`，`size`，`hashcode`设置键值索引，其中`size`设置为`long`类型。
-![](https://main.qcloudimg.com/raw/17412e632d973788dc12a482a51c61fc.png)
+
 
 
 开启索引后，新写入的数据将会按照所配置规则建立索引，索引会持久化存储一段时间（根据您所配置的存储周期而定），只有建立索引的部分才能进行日志查询分析。**所以，修改索引规则或关闭索引仅对新写入的数据生效，未过期的历史数据仍可被检索**。
@@ -112,14 +106,14 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 #### 6.2 检索日志
 
 登录 [日志服务控制台](https://console.cloud.tencent.com/cls) 后，在左侧导航栏单击【日志检索】，进入到日志检索页。
-选择检索的时间范围和日志主题，然后在输入框填写检索语法（语法支持关键词检索、模糊检索、范围检索等方式，详情参考 [语法规则](https://intl.cloud.tencent.com/document/product/614/39594)），最后单击【搜索】，即可检索日志。
+选择检索的时间范围和日志主题，然后在输入框填写检索语法（语法支持关键词检索、模糊检索、范围检索等方式，详情参考 [语法规则](https://intl.cloud.tencent.com/document/product/614/16981)），最后单击【搜索】，即可检索日志。
 
 - 示例一：查询失败的日志
   检索语句：`status:fail`
-![](https://main.qcloudimg.com/raw/2030b7b0b6cdd506a45ae3c16cc582c7.png)
+
 - 示例二：查询下载文件大小超过300K的日志
   检索语句：`action:download and size>300`
-![](https://main.qcloudimg.com/raw/dca434bd2571fc77aa1f3ecff610e05d.png)
+
 
 ### 7. 投递日志到 COS
 
@@ -127,4 +121,4 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 
 若要开启日志投递，需要在创建 [COS 存储桶](https://intl.cloud.tencent.com/document/product/436/13309) 后，登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，在日志集管理页面，单击【投递配置】进入到投递配置页面，接着单击【添加投递配置】创建投递任务。
 日志服务目前支持 [CSV 格式](https://intl.cloud.tencent.com/document/product/614/31582)、[JSON 格式](https://intl.cloud.tencent.com/document/product/614/31583) 投递方式，创建好投递任务后，日志服务异步地将数据投递到目标存储桶中，您可以在控制台右侧导航栏的“投递任务管理”中查看数据投递情况。
-![](https://main.qcloudimg.com/raw/c9e92b7a0a5f2e0423c60c285ea16d93.png)
+
