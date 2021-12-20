@@ -36,7 +36,7 @@ MirrorMaker can use a consumer to consume messages in the self-built Kafka clust
    | ----------------------------- | ------------------------------------------------------------ |
    | bootstrap.servers             | List of broker access points of the self-built cluster.                                 |
    | group.id                      | ID of the consumer group used during data migration. It must be different from the names of existing consumer groups in the self-built cluster. |
-   | partition.assignment.strategy | Partition assignment policy, such as `partition.assignment.strategy=org.apache.kafka.clients.consumer.RoundRobinAssignorjj` |
+   | partition.assignment.strategy | Partition assignment policy, such as `partition.assignment.strategy=org.apache.kafka.clients.consumer.RoundRobinAssignor` |
 
 3. Configure the `producer.properties` file.
 
