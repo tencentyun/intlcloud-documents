@@ -14,5 +14,5 @@
 6. 最后，每笔『订单支付消息』，由另一个 Topic 不断向风控管理、活动管理、促销活动等系统投递。例如风控管理会持续分析 Topic投递的每一笔订单支付情况，当商家 A 在短时间内交易额大幅上涨时（刷单嫌疑），会用回调接口，禁止商家 A 的后续交易。
 
 参考图示如下：
-![](https://mc.qcloudimg.com/static/img/7f42706e0f87a942e0c0122167797fa5/image.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/abfecc015e1af2bae81501c491442425.png)
 
