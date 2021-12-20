@@ -41,7 +41,7 @@ producer.setSecretKey("Obtained SecretKey")
 String queue = "Name of the created queue"
 ```
 The details are as follows:
-![](https://main.qcloudimg.com/raw/f4a7604ccb2319befdcbe338f40be939.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/44c8f0c0128611aeaeaf43cf19b9c724.png)
 
 ### Running demo
 #### Sending and receiving message with queue model
