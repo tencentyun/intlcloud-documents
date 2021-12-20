@@ -9,7 +9,7 @@ An event log is one of many resource objects in Kubernetes and is usually used t
 
 ## Event Log Fields
 
-![img](https://main.qcloudimg.com/raw/6d6dabec677912952415964e6d525966.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/cfd3f25b635123d9ea29abe6bbf323fe.png)
 
 - Level (`type`): currently only the Normal and Warning levels are supported. If necessary, you can customize a level.
 - Resource type/object (`involvedobject`): objects involved in the event, such as Pod, Deployment, and Node.
