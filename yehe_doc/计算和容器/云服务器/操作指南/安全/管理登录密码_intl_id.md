@@ -11,8 +11,8 @@ Kata sandi harus memenuhi persyaratan ini:
 
 ### Mengatur kata sandi awal
 Ada dua cara untuk mengatur kata sandi awal, bergantung pada cara Anda mengonfigurasi instans CVM saat membelinya:
- - Jika Anda menggunakan opsi [**Quick Configuration**] ([Konfigurasi Cepat])(https://buy.cloud.tencent.com/cvm?tab=custom&step=1&devPayMode=hourly&regionId=33&zoneId=330001&instanceType=SA2.SMALL1&platform=CentOS&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR), kata sandi awal dikirimkan kepada Anda melalui email dan pesan ke konsol [Pusat Pesan](https://console.cloud.tencent.com/message).
- - Jika Anda menggunakan opsi [**Custom Configuration**] ([Konfigurasi Kustom])(https://buy.cloud.tencent.com/cvm?tab=custom&step=1&devPayMode=hourly&regionId=33&zoneId=330001&instanceType=SA2.SMALL1&platform=CentOS&systemDiskType=CLOUD_PREMIUM&systemDiskSize=50&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR&bandwidth=1), kata sandi awal diatur dengan cara berikut tergantung pada cara Anda memilih untuk login:
+ - Jika Anda menggunakan opsi [**Konfigurasi Cepat**](https://buy.cloud.tencent.com/cvm?tab=custom&step=1&devPayMode=hourly&regionId=33&zoneId=330001&instanceType=SA2.SMALL1&platform=CentOS&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR), kata sandi awal dikirimkan kepada Anda melalui email dan pesan ke konsol [Pusat Pesan](https://console.cloud.tencent.com/message).
+ - Jika Anda menggunakan opsi [**Konfigurasi Kustom**](https://buy.cloud.tencent.com/cvm?tab=custom&step=1&devPayMode=hourly&regionId=33&zoneId=330001&instanceType=SA2.SMALL1&platform=CentOS&systemDiskType=CLOUD_PREMIUM&systemDiskSize=50&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR&bandwidth=1), kata sandi awal diatur dengan cara berikut tergantung pada cara Anda memilih untuk login:
 <table>
 	<tr><th>Metode Login</th><th>Deskripsi</th></tr>
 	<tr><td>Pembuatan kata sandi otomatis</td><td>Kata sandi awal dikirimkan kepada Anda melalui email dan konsol <a href="https://console.cloud.tencent.com/message">Pusat Pesan</a>.</td></tr>
