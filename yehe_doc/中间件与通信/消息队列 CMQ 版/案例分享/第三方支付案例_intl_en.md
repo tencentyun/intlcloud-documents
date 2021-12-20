@@ -14,5 +14,5 @@ The close collaboration between leading third-party mobile finance payment solut
 6. Finally, all **order payment messages** will be continuously delivered by another topic to the risk management, campaign management, and promotion campaign systems. For example, the risk management system will continuously analyze the order payment conditions in each message delivered by the topic. If the transaction amount of merchant A soars in a short period of time (suspiciously fake orders), the callback API will be used to prohibit subsequent transactions for merchant A.
 
 See the following figure:
-![](https://mc.qcloudimg.com/static/img/7f42706e0f87a942e0c0122167797fa5/image.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/abfecc015e1af2bae81501c491442425.png)
 
