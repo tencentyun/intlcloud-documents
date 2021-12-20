@@ -12,6 +12,7 @@ You have set a protected IP and purchased an [Anti-DDoS Pro](https://intl.cloud.
   - Select resource: to add one or more resource instances to the protected IP, tick the checkbox for the resource ID. The number of selected resource instances cannot exceed the number of protected IPs that can be bound.
   - Selected: to delete the selected resource instance, click **Delete** on the right of it.
 	![](https://main.qcloudimg.com/raw/cec2b2d9446ecd8bfeea22656b8311d4.png)
+
 >?
 >- Unbinding a blocked IP from Anti-DDoS Pro instances is not allowed.
 >- Searching and selecting more than one associated cloud resource at once is supported.
