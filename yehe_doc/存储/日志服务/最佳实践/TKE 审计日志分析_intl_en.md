@@ -13,7 +13,7 @@ In Kubernetes, all cluster status queries and changes are implemented by sending
 ## Audit Log Fields
 
 Each audit log is a structured record in JSON format, and includes three parts: metadata, requestObject, and responseObject. The metadata is a required part (it contains the request context information, such as who initiated the request, where it was initiated, and the accessed URI). requestObject and responseObject are optional, depending on the audit level.
-![img](https://main.qcloudimg.com/raw/38ba2499da67d3bfd5219e395083f073.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/deb6778abd84883a42c62b1939376f92.png)
 
 ## Using Audit Logs for Troubleshooting
 
