@@ -24,10 +24,10 @@ To migrate from the Personal Edition service to the Enterprise Edition, you need
 ### Preparing migration configuration
 
 1. Obtain the access credential of the image repository.
-   - Access credential of Personal Edition image repository: the username is the Tencent Cloud account UIN to which the image to migrate belongs, and the password is the password set when you initialize the Personal Edition service. If you forget the password, you can click **Reset Password** in **[TCR console](https://console.cloud.tencent.com/tke2/registry/user/self?rid=1)** > **Image Repository** > **Personal Edition**, and reset the password in the pop-up window.
-   - Access credential of Enterprise Edition image repository: you can go to **[TCR console](https://console.cloud.tencent.com/tcr/instance?rid=1)** and select **Instance** on the left sidebar. In the **Instance** page, click an existing Enterprise Edition instance, select **Access Credential** tab, and click **Create** to generate a long-term access credential dedicated for migration, including the username and password. Note that the user who generates this access credential needs to have full read and write permissions for the instance.
+   - Access credential of Personal Edition image repository: the username is the UIN of the Tencent Cloud account to which the image to be migrated belongs, and the password is the one set during Personal Edition initialization. If you forgot the password, go to the **[TCR console](https://console.cloud.tencent.com/tcr/instance?rid=1)** > **Instance List**, select your Personal Edition instance, and click **More** > **Reset Login Password** to reset the password.
+   - Access credential of Enterprise Edition image repository: you can go to the **[TCR console](https://console.cloud.tencent.com/tcr/instance?rid=1)** and select **Access Credential** on the left sidebar. Then, select an existing Enterprise Edition instance and click **Create** to generate a long-term access credential dedicated for migration, including the username and password. Note that the user who generates this access credential needs to have full read and write permissions for the instance.
 2. Obtain the API calling credential.
-   You need to call Tencent Cloud API to automatically create the namespace and image repository in the Enterprise Edition instance during the image migration. You can go to the **[CAM console](https://console.cloud.tencent.com/cam/capi)**, select **Access Key** > **API Keys** to create a key or view the existing keys. Please keep the key information carefully.
+   You need to call TencentCloud API to automatically create the namespace and image repository in the Enterprise Edition instance during the image migration. You can go to the **[CAM console](https://console.cloud.tencent.com/cam/capi)**, select **Access Key** > **Manage API Key** to create a key or view the existing keys. Please keep the key information carefully.
 
 ### Downloading and running the migration tool
 
@@ -61,7 +61,7 @@ docker run --network=host --rm ccr.ccs.tencentyun.com/tcrimages/image-transfer:c
 ### Viewing and confirming the running result
 
 Because the Personal Edition is fully migrated to the Enterprise Edition by default, the migration time is directly related to the number and size of the image repositories in the current Personal Edition. Please wait patiently for the migration.
-If the following code is displayed, it means that the full migration is successful. Otherwise, please re-run the migration tool to try again or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+If the following code is displayed, it means that the full migration is successful. Otherwise, re-run the migration tool to try again or [submit a ticket](https://console.intl.cloud.tencent.com/workorder) for assistance.
 
 ```bash
 ################# Finished, 0 transfer jobs failed, 0 normal urlPair generate failed, 0 jobs generate failed #################
@@ -75,14 +75,12 @@ If the following code is displayed, it means that the full migration is successf
 
 Enter the details page of a cluster or EKS cluster, select **Workload** in the left sidebar, and select to create or update a workload. In **Containers in the Pod**, enter or select an image address, or directly modify the **image** parameter in YAML, as shown below:
 ![](https://main.qcloudimg.com/raw/fd8819e71f12df475c33b7e8c4e27f17.png)
-
 - Image address of Personal Edition instance: defaults to `ccr.ccs.tencentyun.com/namespace/repo:tag`. The default regions cover the AZs in Chinese mainland except Hong Kong, such as Beijing, Shanghai, and Guangzhou. The prefix domain name of Hong Kong is hkccr. Multi-level paths are not supported.
 - Image address of Enterprise Edition instance: you can customize the instance name `user-define`, such as `user-define.tencentcloudcr.com/namespace/repo:tag`. You can also customize the domain name, such as `xxx-company.com/namespace/repo:tag`. Multi-level path is supported, and the image address can be `xxx-company.com/ns/sub01/sub02/repo:tag`.
 
 #### Switching the access credential
 Enter the details page of a cluster or EKS cluster, select **Workload** in the left sidebar, and select to create or update a workload. Switch the access credential in **Image Access Credential**, or directly modify the **imagePullSecret** parameter in YAML, as shown below:
 ![](https://main.qcloudimg.com/raw/db218539e9674c9090d548abc6f1986a.png)
-
 - Access credential of the Personal Edition instance: when you create a namespace, a Personal Edition access credential **qCloudregistryKey** will be delivered by default.
 - Access credential of Enterprise Edition instance:
   - Recommended scheme: use the special plug-in for TCR Enterprise Edition to automatically deliver and configure access credential to achieve secret-free pulling. You do not need to configure the image access credential. Please leave this parameter empty. (This is only available for TKE)
@@ -128,3 +126,14 @@ Based on the actual business needs, you can create one or more instances in mult
    - Please do not use latest to update the image tag in a production environment, which may affect service updates and rollbacks.
    - We recommend that you use the CI tool for the automatic naming of images to facilitate subsequent tag management and image synchronization.
    - **Note**: if you delete an image of a specified tag, the same digest image will be deleted as well.
+
+#### CI/CD
+
+- The CI/CD service comes with the Enterprise Edition.
+   - CI/CD capabilities of the Enterprise Edition are completely based on CODING DevOps, so you need to activate it and complete basic configuration first.
+   - Image building is supported. The optional code sources include GitHub, GitLab, TGit, Gitee, and CODING.
+   - Delivery pipeline is supported, which enables you to automatically deploy images in clusters, elastic clusters, and edge clusters.
+
+- External services can be connected.
+   - You can use the webhook feature to connect to an existing CI/CD system, so image push will automatically trigger a webhook notification whose message body contains the basic image information. For more information, see [Managing Triggers](https://intl.cloud.tencent.com/document/product/1051/37254).
+   - You can directly use the complete service of CODING DevOps, which has built-in TCR templates.

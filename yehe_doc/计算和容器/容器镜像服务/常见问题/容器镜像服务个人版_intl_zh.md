@@ -11,12 +11,19 @@
 | 单地域下镜像仓库     | 500    |
 | 单镜像下镜像版本     | 100    |
 
-您可以前往 [容器服务控制台](https://console.cloud.tencent.com/tke2/overview) 查看当前账户配额详情。如果您需要更多的配额项数量，可通过 [配额申请工单](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=350&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1CCS) 提出配额申请。
+您可以前往**实例管理**页选择个人版实例查看当前账户配额使用详情，个人版实例不支持调整配额，如需要更大配额，请切换至企业版服务。
+
+
+
+
+
+### 为什么容器镜像服务个人版不能用镜像构建和触发器？
+为了向您提供更加稳定强大的代码编译、镜像构建及部署等服务，容器镜像服务企业版现已与 CODING DevOps 实现容器 DevOps 相关功能互通，请前往 [容器镜像服务 TCR](https://intl.cloud.tencent.com/zh/product/tcr) 了解使用。
 
 
 
 ### 使用个人版时找不到已推送的镜像？
-由于容器镜像服务个人版镜像仓库是和其他所有公有云账号资源共享的，已拉取/推送的镜像阻塞在队列中因而没有显示。您可以尝试重新 push，同时建议您将业务迁移至 [容器镜像服务企业版](https://intl.cloud.tencent.com/document/product/1051)，独享整个实例的服务资源和存储资源。
+由于容器镜像服务个人版镜像仓库是和其他所有公有云账号资源共享的，已拉取/推送的镜像阻塞在队列中因而没有显示。您可以尝试重新 push，同时建议您将业务迁移至 [容器镜像服务企业版](https://intl.cloud.tencent.com/zh/document/product/1051)，独享整个实例的服务资源和存储资源。
 
 
 
