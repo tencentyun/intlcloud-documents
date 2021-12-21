@@ -18,7 +18,7 @@ The `GROUP BY` syntax supports grouping by column name, alias, or serial number,
 | Column name     | Group data by log field name (`KEY`) or aggregate function calculation result column. The `GROUP BY` syntax supports grouping data by one or multiple columns. |
 | Alias     | Group data by alias of the log field name (`KEY`) or aggregate function calculation result<br/>You can configure the alias of the log field in the field index. |
 | Serial number     | Serial number (starting from 1) of a column in the `SELECT` statement.<br>For example, the serial number of the `status` column is 1, and therefore the following statements are equivalent:<ul  style="margin: 0;"><li>`* \|SELECT status, count(*) AS PV GROUP BY status`</li><li>`* \|SELECT status, count(*) AS PV GROUP BY 1` </li></ul>|
-| Aggregate function | The `GROUP BY` syntax is usually used together with aggregate functions such as `MIN`, `MAX`, `AVG`, `SUM`, and `COUNT`. For more information, please see [Aggregate Function](https://intl.cloud.tencent.com/document/product/614/41995). |
+| Aggregate function | The `GROUP BY` syntax is usually used together with aggregate functions such as `MIN`, `MAX`, `AVG`, `SUM`, and `COUNT`. For more information, please see Aggregate Function. |
 
 
 ## Examples
