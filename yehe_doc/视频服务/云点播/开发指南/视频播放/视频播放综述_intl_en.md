@@ -16,7 +16,7 @@ Short videos generally refer to videos of less than 5 minutes in length, mainly 
 * Product promotion videos shared on ecommerce platforms (such as JD.com and Pinduoduo).
 * Videos shared on WeChat Official Account and we media.
 
-
+<img src="https://qcloudimg.tencent-cloud.cn/raw/3a8215d3897533ec756bdd4b04e6b811.png" width="900" />
 
 ### Playback architecture
 For short video playback scenarios, VOD provides the **basic player SDK**, which uses the URL as a parameter to play back the selected video on demand.
@@ -31,7 +31,7 @@ The overall architecture of playback with the basic player SDK is as follows:
 5. **Play back the video**: the basic player plays back the video.
 
 ### Integration with basic player
-For the features supported by the basic player SDK, please see [Feature list](#p1). For the integration method, please see [Download and use](#p2).
+For the features supported by the basic player SDK, see [Feature list](#p1). For the integration method, see [Download and use](#p2).
 
 ## Long Video Playback
 
@@ -69,89 +69,65 @@ If [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/
 
 ### Integration with superplayer
 
-For the features supported by the superplayer SDK, please see [Feature list](#p1). For the integration method, please see [Download and use](#p2).
+For the features supported by the superplayer SDK, see [Feature list](#p1). For the integration method, see [Download and use](#p2).
 To help you quickly integrate the superplayer of VOD, we provide a superplayer [integration guide](https://intl.cloud.tencent.com/document/product/266/38098) to describe the integration steps by way of demos.
 
 ## Encrypted Video Playback
 Video encryption is a specific scenario of long video playback scenarios, where copyrighted videos such as exclusive TV series and online courses are encrypted to avoid unauthorized download and distribution.
-For more information on how video encryption works and the integration methods, please see [Video Encryption Overview](https://intl.cloud.tencent.com/document/product/266/38131) and [Video Encryption Integration Guide](https://intl.cloud.tencent.com/document/product/266/38294).
+For more information on how video encryption works and the integration methods, see [Video Encryption Overview](https://intl.cloud.tencent.com/document/product/266/38131) and [Video Encryption Integration Guide](https://intl.cloud.tencent.com/document/product/266/38294).
 
 ## Player SDK
 ### Download and use[](id:p2)
 
 | Player Type | SDK Download Address | User Guide |
 | -- | -- | -- |
-| Superplayer | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li><li>[Flutter](https://intl.cloud.tencent.com/document/product/266/42099)</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li><li>[Flutter](https://intl.cloud.tencent.com/document/product/266/42099)</li> |
+| Superplayer | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li> <li>[Flutter](https://intl.cloud.tencent.com/document/product/266/42099)</li>| <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li><li>[Flutter](https://intl.cloud.tencent.com/document/product/266/42099)</li> |
 
 
 ### Feature list[](id:p1)
-#### Basic player
-| Feature | Description | Mobile (Android and iOS) | Web |
-| -- | -- | -- | -- |
-| Wide variety of formats | A wide variety of formats such as RTMP, FLV, HLS, and MP4 are supported | &#10003;  | &#10003; |
-| Instant streaming of the first frame | The first frame of videos can be streamed instantly | &#10003; | &#10003; |
-| Seamless switch of resolution | Different resolutions can be switched between with no lags | &#10003; | × |
-| Quick seeking | The specified position can be quickly located to play back the video image there | &#10003; | &#10003; |
-| H.265 hardware decoding | Playback based on hardware decoding is supported for H.265 videos | &#10003; | × |
-| Automatic switch between software and hardware decoding | If the device does not support hardware decoding, software decoding will be automatically used | &#10003; | × |
-| Custom HTTP header | The HTTP headers in video resource requests are customizable | &#10003; | × |
-| Adaptive bitrate | If an HLS adaptive bitstream is played back, the bitrate is adaptive to the network bandwidth | &#10003; | &#10003; |
-| Small window playback | Videos can be played back in a small window | &#10003; | × |
-| Adjustable-speed playback | Videos can be played back at different speeds, without changing the audio tone | &#10003; | × |
-| Playing video while downloading | When a video is played back, its remaining content is downloaded and buffered at the same time | &#10003; | &#10003; |
-| On-screen commenting | Comments can be displayed above video | &#10003; | × |
-| Mute | Audio can be muted during video playback | &#10003; | &#10003; |
-| Video screencapturing | The video image can be captured as screenshots | &#10003; | × |
-| Video rotation | The video image can be rotated by a specified angle | &#10003; | × |
-| Video mirroring | The video image can be mirrored horizontally or vertically | &#10003; | × |
-| Screen filling/fitting | Different display modes can be selected for the video image to match the screen size | &#10003; | × |
-| Custom streaming start time | The time when streaming starts is customizable | &#10003; | &#10003; |
-| Cover configuration | The cover of the video to be played back can be set | &#10003; | &#10003; |
-| Player dimensions configuration | The player's width and height can be set | &#10003; | &#10003; |
-| Support for HTTPS | HTTPS video resources can be played back | &#10003; | &#10003; |
-| Playback through URL | Online videos can be played back at URLs | &#10003; | &#10003; |
-| Live streaming recording | Recorded live streaming videos can be played back | &#10003; | &#10003; |
-| Custom video rendering | After being decoded, videos can be rendered onto the screen | &#10003; | × |
-| Seamless loop playback | A single video can be looped | &#10003; | &#10003; |
-| Interactive floating window | Videos can be played back in a floating window | &#10003; | × |
-| Automatic video rotation | Videos can be rotated according to the internal `rotate` parameter | &#10003; | × |
-| Custom progress callback interval | The progress callback interval is customizable | &#10003; | × |
 
-#### Superplayer
-| Feature | Description | Mobile (Android and iOS) | Web |
-| -- | -- | -- | -- |
-| Instant streaming of the first frame | The first frame of videos can be streamed instantly | &#10003; | &#10003; |
-| Seamless switch of resolution | Different resolutions can be switched between with no lags | &#10003; | &#10003; |
-| Quick seeking | The specified position can be quickly located to play back the video image there | &#10003; | &#10003; |
-| H.265 hardware decoding | Playback based on hardware decoding is supported for H.265 videos | &#10003; | × |
-| Automatic switch between software and hardware decoding | If the device does not support hardware decoding, software decoding will be automatically used | &#10003; | × |
-| Hotlink protection | Videos with hotlink protection enabled are supported | &#10003; | &#10003;  |
-| Preview | Videos with preview enabled are supported | &#10003; | &#10003;  |
-| Playback of encrypted video | Encrypted videos can be played back on demand | &#10003; | &#10003;  |
-| Custom HTTP header | The HTTP headers in video resource requests are customizable | &#10003; | × |
-| Adaptive bitrate | If an HLS adaptive bitstream is played back, the bitrate is adaptive to the network bandwidth | &#10003; | &#10003; |
-| Custom substream specification name | During the playback of a custom bitstream, the specification name of each substream is customizable | &#10003; | &#10003; |
-| Small window playback | Videos can be played back in a small window | &#10003; | × |
-| Adjustable-speed playback | Videos can be played back at different speeds, without changing the audio tone | &#10003; | × |
-| Playing video while downloading | When a video is played back, its remaining content is downloaded and buffered at the same time | &#10003; | &#10003; |
-| On-screen commenting | Comments can be displayed above video | &#10003; | × |
-| Mute | Audio can be muted during video playback | &#10003; | &#10003; |
-| Video screencapturing | The video image can be captured as screenshots | &#10003; | × |
-| Video rotation | The video image can be rotated by a specified angle | &#10003; | × |
-| Video mirroring | The video image can be mirrored horizontally or vertically | &#10003; | &#10003; |
-| Screen filling/fitting | Different display modes can be selected for the video image to match the screen size | &#10003; | × |
-| Custom streaming start time | The time when streaming starts is customizable | &#10003; | &#10003; |
-| Gesture | The brightness, volume, and progress can be adjusted through gestures | &#10003; | × |
-| Cover configuration | The cover of the video to be played back can be set | &#10003; | &#10003; |
-| Thumbnail preview | Thumbnails can be displayed on the progress bar for preview | &#10003; | &#10003; |
-| Progress bar timestamp | Timestamp information can be added to the progress bar | &#10003; | &#10003; |
-| Playback list | Videos in the playback list can be played back in sequence | &#10003; | × |
-| Player dimensions configuration | The player's width and height can be set | &#10003; | &#10003; |
-| File download | Online videos can be downloaded | &#10003; | × |
-| Support for HTTPS | HTTPS video resources can be played back | &#10003; | &#10003; |
-| Playback through `FileId` | Videos can be played back through their `FileId` values in VOD | &#10003; | &#10003; |
-| Custom video rendering | After being decoded, videos can be rendered onto the screen | &#10003; | × |
-| Seamless loop playback | A single video can be looped | &#10003; | &#10003; |
-| Interactive floating window | Videos can be played back in a floating window | &#10003; | × |
-| Automatic video rotation | Videos can be rotated according to the internal `rotate` parameter | &#10003; | × |
-| Custom progress callback interval | The progress callback interval is customizable | &#10003; | × |
+| Feature         | Description                                               | iOS and Android | Web  | Flutter |
+| ---------------------- | ------------------------------------------------------------ | ------------- | ---- | ------- |
+| Multiple formats        | A rich set of audio/video formats such as RTMP, FLV, HLS, MP4, and WebRTC are supported               | ✓             | ✓    | ✓       |
+| Playback through URL | Online videos can be played back at URLs | ✓             | ✓    | ✓       |
+| DASH protocol     | Videos in standard DASH format are supported                                  | ×             | ✓    | ✓       |
+| Playback through `FileId`   | Videos can be played back through their `FileId` in VOD                               | ✓             | ✓    | ✓       |
+| Instant broadcasting and preloading of the first frame     | Videos can be preloaded with the first frame broadcast instantly                                | ✓             | ✓    | ×       |
+| Quick seeking     | The specified position can be quickly and accurately located to play back the video image there                               | ✓             | ✓    | ✓       |
+| H.265 hardware decoding | Playback based on hardware decoding is supported for H.265 videos | ✓             | ✓    | ✓       |
+| Automatic switch between software and hardware decoding | If the device does not support hardware decoding, software decoding will be automatically used | ✓             | -    | ✓       |
+| Adaptive bitrate streaming       | If an HLS adaptive bitstream is played back, the bitrate can be manually specified or automatically selected according to the network bandwidth for playback            | ✓             | ✓    | ×       |
+| Definition switch       | Multiple definitions can be smoothly switched between with no lags                                 | ✓             | ✓    | ✓       |
+| Definition naming       | Names can be customized for different definitions                                   | ✓             | ✓    | ×       |
+| Playback control        | Playback control features such as start, end, pause, automatic playback, looped playback, checkpoint restart, and replay are supported                | ✓             | ✓    | ✓       |
+| Adjustable-Speed playback        | Videos can be played back at any speed between 0.5 time and 2 times, and the audio tone will stay the same even if the speed changes                      | ✓             | ✓    | ✓       |
+| Custom playback start time     | The time when to start the playback of a video is customizable                                     | ✓             | ✓    | ✓       |
+| Preview        | Videos with preview enabled can be played back                                      | ✓             | ✓    | ✓       |
+| Progress bar operation       | The indicator on the progress bar can be dragged to seek the video                                          | ✓             | ✓    | ✓       |
+| Progress bar marking and thumbnail preview | Markers can be added to the progress bar, and thumbnail (sprite) preview is supported                        | ✓             | ✓    | ✓       |
+| Player size       | The player size can be customized                                       | ✓             | ✓    | ✓       |
+| Screen filling/fitting      | Different display modes can be selected for the video image to match the screen size                             | ✓             | ✓    | ✓       |
+| Small window playback        | Videos can be played back in a small window                                          | ✓             | ✓    | ✓       |
+| Video mirroring | The video image can be mirrored horizontally or vertically | ✓             | ✓    | ✓       |
+| Video rotation        | The video image can be rotated at the specified angle or automatically according to the `rotate` parameter in the video file          | ✓             | -    | ×       |
+| Brightness adjustment        | The system brightness can be adjusted during video playback                                      | ✓             | -    | ✓       |
+| Volume adjustment        | The system volume can be adjusted or muted during video playback                                 | ✓             | ✓    | ✓       |
+| Dual-Channel audio       | Dual-Channel audios can be played back                                          | ✓             | ✓    | ✓       |
+| Screen lock        | Screen lock features are supported, including rotation lock and UI element hiding                               | ✓             | -    | ✓       |
+| On-screen commenting          | Comments can be displayed above the video                                        | ✓             | ✓    | ✓       |
+| Roll image        | A roll image can be added for ad display when the video is paused                                 | ✓             | ✓    | ✓       |
+| Video screencapturing        | Any frame of the video can be captured                                      | ✓             | -    | ✓       |
+| Subtitles import        | Custom subtitles files can be imported                                        | ✓             | ✓    | ✓       |
+| Thumbnail configuration        | The thumbnail of the video to be played back can be set                                        | ✓             | ✓    | ✓       |
+| Multi-Instance         | Multiple players can be added on the same page for concurrent playback                                 | ✓             | ✓    | ✓       |
+| Buffering | When a video is played back, its rest content can be downloaded and buffered at the same time | ✓             | ✓    | ✓       |
+| Referer hotlink protection | The source of a playback request can be identified through the `Referer` field in the request, so as to control the request sources through a blocklist or allowlist | ✓             | ✓    | ✓       |
+| Key hotlink protection     | Control parameters can be added in the playback URL, so as to control the URL validity period, preview duration, number of IPs allowed for playback, etc.          | ✓             | ✓    | ✓       |
+| HLS encryption      | Video data can be encrypted with a key and HLS-based AES encryption scheme       | ✓             | ✓    | ✓       |
+| Proprietary protocol encryption      | Videos can be encrypted over proprietary protocols in the cloud, and the encrypted videos can be decrypted only through the player SDK for playback     | ✓             | ✓    | ×       |
+| Offline download        | Encrypted videos downloaded offline can be decrypted only through the player SDK for playback                 | ✓             | -    | ×       |
+| Playback callback        | The playback status, first frame, and playback completion or failure can be called back                           | ✓             | ✓    | ✓       |
+| Support for HTTPS | HTTPS video resources can be played back | ✓             | ✓    | ✓       |
+| Custom HTTP header | HTTP headers in video resource requests are customizable | ✓             | -    | ×       |
+
+  >? "-" in the table indicates that the terminal doesn't need to have the corresponding feature or doesn't have the related concept.
