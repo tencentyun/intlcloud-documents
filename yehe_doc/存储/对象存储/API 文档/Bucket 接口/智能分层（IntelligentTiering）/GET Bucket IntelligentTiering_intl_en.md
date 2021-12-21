@@ -3,14 +3,15 @@
 This API is used to query the INTELLIGENT TIERING configuration of a bucket.
 
 > ?
+>
 > - Only the root account and authorized sub-accounts can call this API.
 > - The status of INTELLIGENT TIERING can only be enabled or suspended.
 > - If you have never enabled INTELLIGENT TIERING for your bucket, the response will be:
-```shell
+   ```shell
 	<IntelligentTieringConfiguration/>
-```
+   ```
 > - If you have enabled INTELLIGENT TIERING for your bucket, the response will be:
-```shell
+>```shell
 <IntelligentTieringConfiguration xmlns="cos xmlns/"> 
        <Status>Enabled</Status>
        <Transition>
@@ -74,7 +75,7 @@ The nodes are described as follows:
 | Status                          | IntelligentTieringConfiguration            | Whether INTELLIGENT TIERING is enabled. Enumerated values: `Suspended`, `Enabled` | Enum      |
 | Transition                      | IntelligentTieringConfiguration            | Transition configuration for INTELLIGENT TIERING                 | Container |
 | Days                            | IntelligentTieringConfiguration.Transition | The number of consecutive days used to determine whether to move objects from STANDARD to STANDARD_IA. Valid values: `30` (default), `60`, `90` | Int  |
-| RequestFrequent               |  IntelligentTieringConfiguration.Transition | The limit of access times used to determine whether to move objects from STANDARD to STANDARD_IA. The default value is `1`. It can achieve object transition when used with `Days`. For example, if this parameter is set to `1` and `Days` is set to `30`, objects accessed less than once in 30 consecutive days will be moved from STANDARD to STANDARD_IA.   |
+| RequestFrequent               |  IntelligentTieringConfiguration.Transition | The limit of access times used to determine whether to move objects from STANDARD to STANDARD_IA. The default value is `1`. It can achieve object transition when used with `Days`. For example, if this parameter is set to `1` and `Days` is set to `30`, objects accessed less than once in 30 consecutive days will be moved from STANDARD to STANDARD_IA.   |         |
 
 
 #### Error codes
