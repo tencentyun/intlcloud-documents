@@ -28,7 +28,7 @@ In this solution, the customer creates two independent instances at the same tim
 ### Scenario 2: image transfer between multiple subsidiaries and businesses in a large enterprise
 A large enterprise has many subsidiaries and business groups, among which a subsidiary has multiple businesses and independent IT teams for them. To separately manage the permissions and costs of cloud resources, many subsidiaries and businesses use different Tencent Cloud root accounts. The enterprise uses the following solution to share the basic images within it and share images between multiple businesses:
 
-![](https://main.qcloudimg.com/raw/4e6637d5e99112ce69e236ab79bfc131.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/9ba42f29cd0dc8c7d5ae9e916c0718b6.png)
 
 In this solution, cross-tenant instance synchronization is configured between instances under multiple subsidiary accounts to share public images. The basic platform admin configures the basic image synchronization between business instances in each subsidiary in a unified manner. Some businesses plan to use multiple instances to separately manage images during business development, testing, and production and automatically transfer business images between each production stages based on image tag.
 
