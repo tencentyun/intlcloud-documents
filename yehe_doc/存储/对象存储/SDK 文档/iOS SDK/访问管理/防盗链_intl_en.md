@@ -58,7 +58,7 @@ request.bucket = @"examplebucket-1250000000";
 
 **Swift**
 
-[//]: # ".cssg-snippet-put-bucket-referer"
+[//]: # (.cssg-snippet-put-bucket-referer)
 ```swift
 let request = QCloudPutBucketRefererRequest.init();
 
@@ -102,7 +102,7 @@ This API (GET Bucket referer) is used to query the referer allowlist/blocklist o
 #### Sample request
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-bucket-referer"
+[//]: # (.cssg-snippet-get-bucket-referer)
 ```objective-c
 QCloudGetBucketRefererRequest* request = [QCloudGetBucketRefererRequest new];
 
@@ -119,7 +119,7 @@ request.bucket = @"examplebucket-1250000000";
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-bucket-referer"
+[//]: # (.cssg-snippet-get-bucket-referer)
 ```swift
 let request = QCloudGetBucketRefererRequest.init();
 

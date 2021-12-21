@@ -70,7 +70,7 @@ dependencies {
 
 #### 关闭 beacon 上报功能（适用于5.5.8以及以上版本）
 
-为了持续跟踪和优化 SDK 的质量，给您带来更好的使用体验，我们在 SDK 中引入了 [腾讯灯塔](https://beacon.qq.com/) SDK。
+为了持续跟踪和优化 SDK 的质量，给您带来更好的使用体验，我们在 SDK 中引入了 [腾讯灯塔](https://beacon.tencent.com/) SDK。
 >? 腾讯灯塔只对COS侧的请求性能进行监控，不会上报业务侧数据。
 >
 
@@ -252,7 +252,7 @@ val cos = cosService(context = application.applicationContext) {
 
 SDK 支持上传本地文件、二进制数据、Uri 以及输入流。下面以上传本地文件为例：
 
-[//]: # ".cssg-snippet-transfer-upload-file"
+[//]: # (.cssg-snippet-transfer-upload-file)
 ```java
 // 初始化 TransferConfig，这里使用默认配置，如果需要定制，请参考 SDK 接口文档
 TransferConfig transferConfig = new TransferConfig.Builder().build();
@@ -352,7 +352,7 @@ viewModelScope.launch {
 
 ### 下载对象
 
-[//]: # ".cssg-snippet-transfer-download-object"
+[//]: # (.cssg-snippet-transfer-download-object)
 ```java
 // 高级下载接口支持断点续传，所以会在下载前先发起 HEAD 请求获取文件信息。
 // 如果您使用的是临时密钥或者使用子账号访问，请确保权限列表中包含 HeadObject 的权限。

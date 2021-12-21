@@ -1,4 +1,4 @@
->!The new command line tool [COSCLI](https://intl.cloud.tencent.com/document/product/436/43249) has been released and will gradually replace COSCMD. COSCMD will have bug fixes only, but not new features.
+
 
 
 ## Feature Description
