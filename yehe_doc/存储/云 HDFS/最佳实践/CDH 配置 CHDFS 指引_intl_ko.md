@@ -33,7 +33,7 @@ CHDFS 빅 데이터 모듈은 다음과 같은 상황을 지원합니다.
 
 1. CDH 관리 페이지에 로그인합니다.
 2. 시스템 메인 페이지에서 **설정**>**서비스 범위**>**고급**을 선택하여 코드 스니펫 고급 설정 페이지로 이동하면 다음 그림과 같이 표시됩니다.
-   ![](https://main.qcloudimg.com/raw/95a05ec2090a84861c99222c9d26d4df.png)
+   ![](https://main.qcloudimg.com/raw/09f053f2c0feaf4451d9bc4c70cb501d.png)
 3. Cluster-wide Advanced Configuration Snippet(Safety Valve) for core-site.xml 코드 창에 CHDFS 설정을 입력합니다.
 
 ```
