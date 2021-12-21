@@ -9,9 +9,9 @@
 ### 为子用户/协作者分配预设策略
 
 1. 在 [CAM 用户列表](https://console.cloud.tencent.com/cam) 页面，找到需要授权的子用户/协作者，单击操作列的**授权**。
-![](https://main.qcloudimg.com/raw/4ebbec079bc19c25e5e2f1008e5e77ca.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/0a430953b8fd9a16ca6bc720a17257f0.png)
 2. 在关联策略页面，勾选 [账单相关的预设策略](#1)（如 “QcloudFinanceBillReadOnlyAccess”），并单击**确定**。
-![](https://main.qcloudimg.com/raw/b7b4565679689521ca987000409b95c5.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/4e90c1587d995393f7c0a4ca7621b19c.png)
 
 更多详细操作指引，请参见 CAM 文档中的 [CAM 授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
 
