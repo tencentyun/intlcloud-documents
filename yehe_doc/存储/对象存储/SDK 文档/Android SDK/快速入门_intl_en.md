@@ -70,7 +70,7 @@ dependencies {
 
 #### Disabling the beacon report feature (applicable to 5.5.8 or later)
 
-We have introduced the [Tencent Beacon](https://beacon.qq.com/) into the SDK to track down and optimize the SDK quality for a better user experience.
+We have introduced the [Tencent Beacon](https://beacon.tencent.com/) into the SDK to track down and optimize the SDK quality for a better user experience.
 >? Tencent Beacon monitors only the COS-side request performance, and will not report the business-side data.
 >
 
@@ -252,7 +252,7 @@ val cos = cosService(context = application.applicationContext) {
 
 The SDK supports uploading local files, binary data, URIs, and input streams. The following uses uploading a local file as an example:
 
-[//]: # ".cssg-snippet-transfer-upload-file"
+[//]: # (.cssg-snippet-transfer-upload-file)
 ```java
 // Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
@@ -352,7 +352,7 @@ viewModelScope.launch {
 
 ### Download an object
 
-[//]: # ".cssg-snippet-transfer-download-object"
+[//]: # (.cssg-snippet-transfer-download-object)
 ```java
 // The advanced download API supports checkpoint restart. Therefore, a HEAD request will be sent before the download to obtain the file information.
 // If you are using a temporary key or accessing with a sub-account, ensure that your permission list includes HeadObject.
