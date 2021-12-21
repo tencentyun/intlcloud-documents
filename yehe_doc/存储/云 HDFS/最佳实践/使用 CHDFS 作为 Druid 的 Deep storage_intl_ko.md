@@ -19,13 +19,16 @@ CHDFS JAR을 다운로드한 후, `chdfs_hadoop_plugin_network-1.7.jar`을 Druid
 #### 설정 수정
 
 1. Druid 설치 경로인 `conf/druid/_common/common.runtime.properties` 파일을 수정하고 hdfs의 extension을 `druid.extensions.loadList`에 추가합니다. hdfs를 Druid의 deep storage로 지정하고 경로는 CHDFS 경로로 작성합니다.
+
 ```plaintext
 properties
 druid.extensions.loadList=["druid-hdfs-storage"]
 druid.storage.type=hdfs
 druid.storage.storageDirectory=ofs://<mountpoint>/<druid-path>
 ```
+
 2. `conf/druid/_common/` 디렉터리에 hdfs의 구성 파일 hdfs-site.xml을 새로 만들고 CHDFS의 설정 정보 등을 작성합니다.
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
@@ -62,6 +65,7 @@ druid.storage.storageDirectory=ofs://<mountpoint>/<druid-path>
  </property>
 </configuration>
 ```
+
 위에서 설정한 지원 항목은 CHDFS 공식 홈페이지의 문서 설명과 동일하며 자세한 내용은 [CHDFS 마운트](https://intl.cloud.tencent.com/document/product/1106/41965)문서를 참고하십시오.
 
 #### 사용하기
