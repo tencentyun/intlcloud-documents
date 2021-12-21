@@ -29,7 +29,7 @@ Hadoop 권한 시스템에서 인증은 Kerberos에서, 권한 인증은 Ranger�
 ## 설치 모듈
 
 <dx-tabs>
-::: CHDFS-Ranger-Plugin 배포
+::: CHDFS-Ranger-Plugin\s배포
 CHDFS-Ranger-Plugin이 Ranger Admin 콘솔의 서비스 종류를 확장함에 따라, 사용자는 Ranger 콘솔에서 CHDFS와 관련된 작업 권한을 설정할 수 있습니다.
 
 #### 코드 주소
@@ -83,7 +83,7 @@ policy.grantrevoke.auth.users는 COSRangerService 서비스를 실행할 수 있
     - List: 탐색 권한입니다. COS의 List Object에 대응됩니다.
 
 :::
-::: COS-Ranger-Service 배포
+::: COS-Ranger-Service\s배포
 COS-Ranger-Service는 전체 권한 시스템의 핵심으로, ranger 클라이언트를 통합하여 ranger client의 인증 요청, token 생성 및 지속 대여 요청, 임시 키 생성 요청을 접수합니다. 또한, 중요한 정보(Tencent Cloud 키 정보)가 있는 구역이기도 합니다. 보통 점프 서버에 설치되어 클러스터 관리자만 조회 및 설정 등의 작업을 할 수 있습니다.
 
 COS-Ranger-Service는 하나의 메인 서버와 다수의 데이터 노드로 구성된 HA를 지원하여 HDFS에서 DelegationToken Status가 지속될 수 있도록 합니다. ZK 잠금 장치로 Leader의 신분을 결정합니다. Leader의 신분을 획득한 서비스는 주소를 ZK에 입력하여 COS Ranger Client가 라우팅 어드레스 지정을 할 수 있도록 합니다.
@@ -123,7 +123,7 @@ curl -v http://10.xx.xx.xxx:9998/status
 ```
 
 :::
-::: COS-Ranger-Client 설치
+::: COS-Ranger-Client\s설치
 COS-Ranger-Client는 hadoop chdfs 플러그 인의 동적 로딩으로 token 획득, 인증 작업 등 COS-Ranger-Service 관련 요청을 대신 액세스해 줍니다.
 
 #### 코드 주소
@@ -166,7 +166,7 @@ V1.0 이상 버전
 :::
 </dx-codeblock>
 :::
-::: CHDFS 설치
+::: CHDFS\s설치
 
 #### 버전
 
