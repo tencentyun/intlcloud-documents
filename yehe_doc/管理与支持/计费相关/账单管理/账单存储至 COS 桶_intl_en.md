@@ -9,13 +9,13 @@ Tencent Cloud allows you to save bill data as files to COS buckets on a regular 
 ## Enabling Bill Storage to COS
 
 1. On the [Bill Overview](https://console.cloud.tencent.com/expense/bill/overview) page, set **Bill Storage** to ![](https://main.qcloudimg.com/raw/48d005ca49e683a3370212a71599ddd4.png).
-![](https://main.qcloudimg.com/raw/867d2593c09f06dc3fd80b525d0c1f5e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/27973b846bf725c29d3c26b77f12152e.png)
 2. Grant access to the service role.
 In the pop-up window, click **Authorize** and, on the authorization page, click **Grant**.
-<img src="https://main.qcloudimg.com/raw/30d935403805ae73cdb1763300666cef.png" style="width: 70%"/></br>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/26cd4ac42dde9c645840b60ab9aa8ca4.png" style="width: 70%"/></br>
 3. Set storage information.
 Select a bill type and a COS bucket to save bill files. You can also save the bill files of your member accounts to a COS bucket.
-<img src="https://main.qcloudimg.com/raw/f1f27951392a135d9304cf9186d54066.png" style="width: 70%"/></br>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/751027242162d3f8c869b485156ec6dc.png" style="width: 70%"/></br>
 Bill Type
  - Daily bills: If you select daily bills, at 3:00 AM each day, new bill details for the period between the first day of the month and the previous day will be saved to the specified COS bucket. However, on the first day (billing day) of a month, bill data is saved to COS at 8:00 PM.
  For example, on April 6, a bill summary for the period from April 1 to April 5 will be added, and on April 8, a bill summary for the period from April 1 to April 7 will be added.
