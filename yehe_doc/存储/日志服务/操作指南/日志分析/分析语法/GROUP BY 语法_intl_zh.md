@@ -18,7 +18,7 @@ GROUP BY语法支持按照列名、别名或序号进行分组，详细说明如
 | 列名     | 列名即为日志字段名称或聚合函数计算结果列，即支持按照日志字段名称（KEY）或聚合函数计算结果列进行分组。GROUP BY 语法支持单列或多列。 |
 | 别名     | 按照日志字段或聚合函数计算结果的别名进行分组。<br/>您可以在字段索引中配置日志字段的别名。 |
 | 序号     | 某列在 SELECT 语句中的序号（从1开始）。<br>例如 status 列的序号为1，所以下面两个语句为等同关系。<ul  style="margin: 0;"><li>`* \|SELECT status, count(*) AS PV GROUP BY status`</li><li>`* \|SELECT status, count(*) AS PV GROUP BY 1` </li></ul>|
-| 聚合函数 | GROUP BY 语法常与 MIN、MAX、AVG、SUM、COUNT 等聚合函数搭配使用。更多信息请参见 [聚合函数](https://intl.cloud.tencent.com/document/product/614/41995)。 |
+| 聚合函数 | GROUP BY 语法常与 MIN、MAX、AVG、SUM、COUNT 等聚合函数搭配使用。更多信息请参见 聚合函数。 |
 
 
 ## 示例
