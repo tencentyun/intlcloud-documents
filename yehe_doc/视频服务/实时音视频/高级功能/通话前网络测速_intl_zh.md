@@ -7,9 +7,9 @@
 
 ## 支持的平台
 
-| iOS | Android | Mac OS | Windows | Electron| Web 端|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| &#10003; |  &#10003; | &#10003; | &#10003; | &#10003; | &#10003; 参考：[Web 端教程](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-24-advanced-network-quality.html)  |
+| iOS | Android | Mac OS | Windows | Electron | Web 端|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| &#10003; |  &#10003; | &#10003; | &#10003; | &#10003;    | &#10003;（参考：[Web 端教程](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-24-advanced-network-quality.html)）  |
 
 ## 测速的原理
 
@@ -49,7 +49,7 @@
 
 
 <dx-codeblock>
-::: Objective-C Objective-C
+::: Objective-C ObjectiveC
 // 启动网络测速的示例代码, 需要 sdkAppId 和 UserSig，(获取方式参考基本功能)
 // 这里以登录后开始测试为例
 - (void)onLogin:(NSString *)userId userSig:(NSString *)userSid 
@@ -110,6 +110,5 @@ public void onSpeedTest(TRTCSpeedTestResult currentResult, uint finishedCount, u
 }
 :::
 </dx-codeblock>
-
 
 

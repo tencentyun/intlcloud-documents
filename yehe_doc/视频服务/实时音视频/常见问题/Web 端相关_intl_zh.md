@@ -25,6 +25,10 @@ TRTC Web SDK 对浏览器的详细支持度，请参见 [TRTC Web SDK 对浏览�
 ### 是否支持混流、旁路推流、大小流、美颜、水印？
 您可请参见 [混流](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)、[旁路推流](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html)、[大小流](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html)、[美颜](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html) 、[水印](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-29-advance-water-mark.html)文档实现高级功能。
 
+[](id:b6)
+### WebRTC 有哪些已知问题？
+具体请参见 [WebRTC 已知问题及规避方案](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html)。
+
 ## 二、推拉流问题
 [](id:p1)
 ### Web 端 SDK 日志中报错 NotFoundError、NotAllowedError、NotReadableError、OverConstrainedError 以及 AbortError 分别是什么意思？
@@ -84,17 +88,21 @@ Web 端支持发起混流，具体请参见 [如何调用混流转码接口](htt
 若您使用 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream) 接口进行采集，则无需手动设置 3A 参数，SDK 默认开启 3A。
 
 ## 四、其他
+[](id:o0)
+### 2.x、3.x 版本的 SDK，在 Chrome 96+ 版本无法正常通话该如何处理？
+最新版本的 [Chrome 96 废弃了 Plan-B](https://www.chromestatus.com/feature/5823036655665152)，将会导致 TRTC 实时音视频老版本的(2.x, 3.x) Web SDK 会出现无法通话的情况，请您尽快将 Web SDK 升级至我们的最新版本(4.x)。4.x 版本 SDK 的接口与老版本(2.x, 3.x)不兼容，请参考 [快速集成(Web)](https://intl.cloud.tencent.com/document/product/647/35096) 升级接入 4.x 版本 SDK。
+
 [](id:o1)
 ###  运行 Web 端 SDK 时，出现错误：“RtcError: no valid ice candidate found”该如何处理？
 出现该错误说明 TRTC 桌面浏览器 SDK 在 STUN 打洞失败，请检查防火墙配置。TRTC 桌面浏览器 SDK 依赖以下端口进行数据传输，请将其加入防火墙白名单，配置完成后，您可以通过访问并体验 [官网 Demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html) 检查配置是否生效。
 
-具体请参见 [应对防火墙限制相关](https://intl.cloud.tencent.com/document/product/647/37340)。
+具体请参见 [应对防火墙限制相关](https://intl.cloud.tencent.com/document/product/647/35164)。
 
 [](id:o2)
 ###  出现客户端错误："RtcError: ICE/DTLS Transport connection failed" 或 “RtcError: DTLS Transport connection timeout”该如何处理？
 出现该错误说明 TRTC 桌面浏览器 SDK 在建立媒体传输通道时失败，请检查防火墙配置。TRTC 桌面浏览器 SDK 依赖以下端口进行数据传输，请将其加入防火墙白名单，配置完成后，您可以通过访问并体验 [官网 Demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html) 检查配置是否生效。
 
-具体请参见 [应对防火墙限制相关](https://intl.cloud.tencent.com/document/product/647/37340)。
+具体请参见 [应对防火墙限制相关](https://intl.cloud.tencent.com/document/product/647/35164)。
 
 
 [](id:o3)
@@ -105,7 +113,6 @@ Web 端支持发起混流，具体请参见 [如何调用混流转码接口](htt
 ### 什么情况会触发 Client.on(‘client-banned’)？
 
 当用户被踢时会触发该事件，例如：使用同名用户同时登录、调用后台 RESTAPI [移除用户](https://intl.cloud.tencent.com/document/product/647/34268) 将用户踢出房间。
-
 >! 同名用户同时登录是不允许的行为，可能会导致双方通话异常，业务层应避免出现同名用户同时登录。
 
 更多具体详情，请参见 [CLIENT_BANNED 事件](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.CLIENT_BANNED)。
@@ -120,19 +127,19 @@ Web 端支持发起混流，具体请参见 [如何调用混流转码接口](htt
 
 [](id:o7)
 ### TRTC Web 端的截图功能如何实现？
-具体请参见 [Stream.getVideoFrame()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#getVideoFrame) 接口。
+具体请参见 [Stream.getVideoFrame()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#getVideoFrame) 接口。
 
 [](id:o8)
 ### Web 端 SDK 怎么录制纯音频推流？为什么在控制台开启自动旁路和自动录制录制不成功呢？
-需要设置 [createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient) 的 pureAudioPushMode 参数。
+需要设置 [createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient) 的 pureAudioPushMode 参数。
 
 [](id:o9)
 ### 出现 Client.on(‘error’) 问题该如何处理？
 这个表示 SDK 遇到不可恢复错误，业务层要么刷新页面重试要么调用 Client.leave 退房后再调用 Client.join 重试。
 
 [](id:o10)
-### Web 端支持自定义流 ID 吗？
-Web 端4.3.8以上版本已支持自定义流 ID，可以更新 SDK 版本。
+### 小程序和 Web 端支持自定义流 ID 吗？
+Web 端4.3.8以上版本已支持自定义流 ID，可以更新 SDK 版本。小程序当前暂不支持。
 
 [](id:011)
 ### Web 端如何在屏幕分享的时候采集系统声音？
@@ -141,4 +148,4 @@ Web 端4.3.8以上版本已支持自定义流 ID，可以更新 SDK 版本。
 
 [](id:012)
 ### Web 端如何切换摄像头和麦克风？
-您可以先获取到系统的摄像头和麦克风设备后，调用 [switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#switchDevice) 来进行切换，具体操作请参见 [切换摄像头和麦克风](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-13-basic-switch-camera-mic.html)。
+您可以先获取到系统的摄像头和麦克风设备后，调用 [switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice) 来进行切换，具体操作请参见 [切换摄像头和麦克风](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-13-basic-switch-camera-mic.html)。

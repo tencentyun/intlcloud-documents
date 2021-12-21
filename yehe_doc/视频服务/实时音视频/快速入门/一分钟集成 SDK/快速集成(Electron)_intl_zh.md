@@ -7,16 +7,19 @@
 ## 集成 TRTC Electron SDK
 
 ### 步骤1：安装 Node.js
-**Windows 平台安装指引：**
+<dx-tabs>
+::: Windows平台安装指引
 1. 根据 Windows 操作系统选择下载最新版本的 [Node.js](https://nodejs.org/en/download/)  安装包 `Windows Installer (.msi) 64-bit`。
 2. 打开应用程序列表中的 Node.js command prompt，启动命令行窗口，用于输入后续步骤中的各项命令。
 ![](https://main.qcloudimg.com/raw/a29b4681c1ed6ce57d66b5a79bda5e94.png)
-
-**Mac OS 平台安装指引：**
+:::
+::: MacOS平台安装指引
 1. 打开终端（Terminal）窗口，执行以下命令安装 Homebrew，如果已经安装请跳过此步骤。
-```shell
+<dx-codeblock>
+::: shell shell
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+:::
+</dx-codeblock>
 2. 执行以下命令，安装 Node.js，必须大于 10.0 版本。
 ```shell
 $ brew install node
@@ -27,6 +30,8 @@ $ cd `brew --repo`
 $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
 $ brew update
 ```
+:::
+</dx-tabs>
 
 ### 步骤2：安装 Electron
 在命令行窗口中执行如下命令，安装 Electron，建议版本号 >= 4.0.0。
@@ -34,13 +39,13 @@ $ brew update
 $ npm install electron@latest --save-dev
 ```
 
+
 ### 步骤3：安装 Electron 版的 TRTC SDK
 1. 在您的 Electron 项目中使用 npm 命令安装 SDK 包：
 ```shell
 $ npm install trtc-electron-sdk@latest --save
 ```
-
-	>?TRTC Electron SDK 最新版可在 [trtc-electron-sdk](https://www.npmjs.com/package/trtc-electron-sdk) 中查看。
+>?TRTC Electron SDK 最新版可在 [trtc-electron-sdk](https://www.npmjs.com/package/trtc-electron-sdk) 中查看。
 2. 在项目脚本里引入模块并使用：
 ```javascript
 const TRTCCloud = require('trtc-electron-sdk').default;
@@ -49,7 +54,7 @@ this.rtcCloud = new TRTCCloud();
 // 获取 SDK 版本号
 this.rtcCloud.getSDKVersion();
 ```
-	从v7.9.348起，TRTC Electron SDK 增加了 trtc.d.ts 文件，方便使用 TypeScript 的开发者：
+从v7.9.348起，TRTC Electron SDK 增加了 trtc.d.ts 文件，方便使用 TypeScript 的开发者：
 ```
 import TRTCCloud from 'trtc-electron-sdk';
 const rtcCloud: TRTCCloud = new TRTCCloud();
@@ -92,7 +97,7 @@ const targetPlatform = (function(){
 		return target;
 })();
 ```
-	>! `os.platform()` 返回的结果中，"darwin" 表示 Mac 平台。"win32" 表示 Windows 平台，不论 64 位还是 32 位。
+>! `os.platform()` 返回的结果中，"darwin" 表示 Mac 平台。"win32" 表示 Windows 平台，不论 64 位还是 32 位。
 2. 然后在 `rules` 选项中添加以下配置，`targetPlatform` 变量可以使 `rewritePath` 可以根据不同的目标平台切换不同的配置：
 ```js
 rules: [
@@ -115,23 +120,24 @@ rules: [
 `package.json` 位于项目的根目录，其中包含了项目打包所必须的信息。但默认情况下，`package.json`  中的路径是需要修改才能顺利实现打包的，我们可以按如下步骤修改此文件： 
 
 1. 修改 `main` 配置。
-
-```javascript
+<dx-codeblock>
+::: javascript javascript
 // 多数情况下，main 文件名称可以任意配置，例如 TRTCSimpleDemo 中的可以配置为：
 "main": "main.electron.js",
-  
+
 // 但是，使用 create-react-app 脚手架创建的项目，main 文件必须配置为：
 "main": "public/electron.js",
-```
+:::
+</dx-codeblock>
 2. 复制以下 `build` 配置，添加到您的 `package.json` 文件中，这是 `electron-builder` 需要读取到的配置信息。
-
-```json
+<dx-codeblock>
+::: json json
 "build": {
-  "appId": "[appId 请自行定义]",
-  "directories": {
+    "appId": "[appId 请自行定义]",
+    "directories": {
     "output": "./bin"
-  },
-  "win": {
+    },
+    "win": {
     "extraFiles": [
       {
         "from": "node_modules/trtc-electron-sdk/build/Release/",
@@ -139,30 +145,30 @@ rules: [
         "filter": ["**/*"]
       }
     ]
-  },
-  "mac": {
+    },
+    "mac": {
     "extraFiles": [
       { 
         "from": "node_modules/trtc-electron-sdk/build/Release/trtc_electron_sdk.node", 
         "to": "./Resources" 
       }
     ]
-  }
+    }
 },
-```
-
+:::
+</dx-codeblock>
 3. 在 `scripts` 节点下添加以下构建和打包的命令脚本：
  本文以 `create-react-app` 和 `vue-cli` 项目为例，其它工具创建的项目也可以参考此配置：
-
-```json
+<dx-codeblock>
+::: json json
 // create-react-app 项目请使用此配置
 "scripts": {
-  "build:mac": "react-scripts build --target_platform=darwin",
-  "build:win": "react-scripts build --target_platform=win32",
-  "compile:mac": "node_modules/.bin/electron-builder --mac",
-  "compile:win64": "node_modules/.bin/electron-builder --win --x64",
-  "pack:mac": "npm run build:mac && npm run compile:mac",
-  "pack:win64": "npm run build:win && npm run compile:win64"
+    "build:mac": "react-scripts build --target_platform=darwin",
+    "build:win": "react-scripts build --target_platform=win32",
+    "compile:mac": "node_modules/.bin/electron-builder --mac",
+    "compile:win64": "node_modules/.bin/electron-builder --win --x64",
+    "pack:mac": "npm run build:mac && npm run compile:mac",
+    "pack:win64": "npm run build:win && npm run compile:win64"
 }
 
 // vue-cli 项目请使用此配置
@@ -174,19 +180,44 @@ rules: [
   "pack:mac": "npm run build:mac && npm run compile:mac",
   "pack:win64": "npm run build:win && npm run compile:win64"
 }
-```
+:::
+</dx-codeblock>
+<table>
+<tr><th>参数</th><th>说明</th></tr>
+<tr>
+<td>main</td>
+<td>Electron 的入口文件，一般情况下可以自由配置。但如果项目使用 <code>create-react-app</code> 脚手架创建，则入口文件必须配置为 <code>public/electron.js</code></td>
+</tr><tr>
+<td>build.win.extraFiles</td>
+<td>打包 Windows 程序时，<code>electron-builder</code> 会把 <code>from</code> 所指目录下的所有文件复制到 bin/win-unpacked/resources（全小写）</td>
+</tr><tr>
+<td>build.mac.extraFiles</td>
+<td>打包 Mac 程序时，<code>electron-builder</code> 会把 <code>from</code> 指向的 <code>trtc_electron_sdk.node</code> 文件复制到 bin/mac/your-app-name.app/Contents/Resources（首字母大写）</td>
+</tr><tr>
+<td>build.directories.output</td>
+<td>打包文件的输出路径。例如这个配置会输出到 <code>bin</code> 目录下，可根据实际需要修改</td>
+</tr><tr>
+<td>build.scripts.build:mac</td>
+<td>以 Mac 平台为目标构建脚本</td>
+</tr><tr>
+<td>build.scripts.build:win</td>
+<td>以 Windows 平台为目标构建脚本</td>
+</tr><tr>
+<td>build.scripts.compile:mac</td>
+<td>编译为 Mac 下的 .dmg 安装文件</td>
+</tr><tr>
+<td>build.scripts.compile:win64</td>
+<td>编译为 Windows 下的 .exe 安装文件</td>
+</tr><tr>
+<td>build.scripts.pack:mac</td>
+<td>先调用 build:mac 构建代码，再调用 compile:mac 打包成 .dmg 安装文件</td>
+</tr><tr>
+<td>build.scripts.pack:win64</td>
+<td>先调用 build:win 构建代码，再调用 compile:win64 打包成 .exe 安装文件</td>
+</tr></table>
 
->? 
-> -   `main` ：Electron 的入口文件，一般情况下可以自由配置。但如果项目使用 `create-react-app` 脚手架创建，则入口文件必须配置为 `public/electron.js` 。
-> -   `build.win.extraFiles` ：打包 Windows 程序时，`electron-builder` 会把 `from` 所指目录下的所有文件复制到 bin/win-unpacked/resources（全小写）。
-> -   `build.mac.extraFiles` ：打包 Mac 程序时，`electron-builder` 会把 `from` 指向的 `trtc_electron_sdk.node` 文件复制到 bin/mac/your-app-name.app/Contents/Resources（首字母大写）。
-> -   `build.directories.output` ：打包文件的输出路径。例如这个配置会输出到 `bin` 目录下，可根据实际需要修改。
-> -   `build.scripts.build:mac` ：以 Mac 平台为目标构建脚本。
-> -   `build.scripts.build:win` ：以 Windows 平台为目标构建脚本。
-> -   `build.scripts.compile:mac` ：编译为 Mac 下的 .dmg 安装文件。
-> -   `build.scripts.compile:win64` ：编译为 Windows 下的 .exe 安装文件。
-> -   `build.scripts.pack:mac` ：先调用 build:mac 构建代码，再调用 compile:mac 打包成 .dmg 安装文件。
-> -   `build.scripts.pack:win64` ：先调用 build:win 构建代码，再调用 compile:win64 打包成 .exe 安装文件。
+
+
 
 ###  步骤4：执行打包命令
 - 打包 Mac.dmg 安装文件：
@@ -210,3 +241,17 @@ $ npm run pack:win64
 ### 1. 防火墙有什么限制？
 
 由于 SDK 使用 UDP 协议进行音视频传输，所以对 UDP 有拦截的办公网络下无法使用，如遇到类似问题，请参见 [应对公司防火墙限制](https://intl.cloud.tencent.com/document/product/647/35164)。
+
+### 2. Electron 安装或打包异常
+- 如果您在集成 Electron 过程中遇到异常：例如安装超时或失败，打包后出现 trtc_electron_sdk.node 文件加载失败等情况，相关问题解答请[联系我们](https://intl.cloud.tencent.com/contact-us)。
+[](id:QQ)
+## 技术咨询
+了解更多详情您可 QQ 咨询：<dx-tag-link link="#QQ" tag="技术交流群">695855795</dx-tag-link>
+
+## 参考文档
+
+- [SDK API 手册](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/index.html)
+- [SDK 更新日志](https://intl.cloud.tencent.com/document/product/647/38702)
+- [Simple Demo 源码](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTCSimpleDemo)
+- [API Example 源码](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTC-API-Example)
+- [Electron 常见问题](https://intl.cloud.tencent.com/document/product/647/43093)

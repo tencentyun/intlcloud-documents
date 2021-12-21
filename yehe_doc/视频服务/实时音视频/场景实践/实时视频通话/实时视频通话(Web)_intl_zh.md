@@ -22,21 +22,24 @@ TRTCCalling 依赖以下端口进行数据传输，请将其加入防火墙白�
 | Windows  | 桌面版 QQ 浏览器（极速内核） |       10.4+        |
 | Windows  |    桌面版 Firefox 浏览器     |        56+         |
 | Windows  |      桌面版 Edge 浏览器      |        80+         |
+...
+
+详细兼容性查询，具体请参见 [浏览器支持情况](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)。同时，您可通过 [TRTC 检测页面](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 在线检测。
 
 ## 跑通测试 Demo
 
 
 [](id:step1)
 ### 步骤1：创建新的应用
-1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 实名认证。
-2. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
-3. 输入应用名称，例如 TestTRTC ，单击【创建】。
+1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成实名认证。
+2. 登录实时音视频控制台，选择 **开发辅助>[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)**。
+3. 输入应用名称，例如 TestTRTC ，单击 **创建**。
 
 
 [](id:step2)
 ### 步骤2：下载 SDK 和 Demo 源码
 1. 根据实际业务需求下载 SDK 及配套的 Demo 源码。
-2. 下载完成后，单击【已下载，下一步】。
+2. 下载完成后，单击 **已下载，下一步**。
 ![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 
 [](id:step3)
@@ -44,13 +47,11 @@ TRTCCalling 依赖以下端口进行数据传输，请将其加入防火墙白�
 1. 进入修改配置页，根据您下载的源码包，选择相应的开发环境。
 2. 找到并打开 `Web/js/debug/GenerateTestUserSig.js` 文件。
 3. 设置 `GenerateTestUserSig.js` 文件中的相关参数：
-
-<ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
-<li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
-
-![](https://main.qcloudimg.com/raw/99c0bf40a7b6267c5c398336a97f3335.png)
-4. 粘贴完成后，单击【已复制粘贴，下一步】即创建成功。
-5. 编译完成后，单击【回到控制台概览】即可。
+  <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
+  <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
+  <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+4. 粘贴完成后，单击 **已复制粘贴，下一步** 即创建成功。
+5. 编译完成后，单击 **回到控制台概览** 即可。
 
 >!
 >- 本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
@@ -65,9 +66,9 @@ npm run serve
 ```
 2. 启动 Chrome 浏览器中打开链接 `http://localhost:8080/` ，如果一切正常，Demo 运行界面如图所示：
 ![](https://main.qcloudimg.com/raw/cd5b42448924101dd2f753fc45ce2fac.png)
-3. 输入用户 userid，单击【登录】，并选择【视频通话】：
+3. 输入用户 userid，单击 **登录**，并选择 **视频通话**：
 ![](https://main.qcloudimg.com/raw/d760af14a509b7373b4d85c341729012.png)
-4. 输入呼叫用户 userid，单击【呼叫】：
+4. 输入呼叫用户 userid，单击 **呼叫**：
 ![](https://main.qcloudimg.com/raw/b0b98e7af68643630992aa2d5114f9cf.png)
 5. 即可进行视频通话：
 ![](https://main.qcloudimg.com/raw/592189d0f18c91c51cdf7184853c6437.png)
@@ -143,16 +144,9 @@ trtcCalling.call({
 - **被叫方：接听新的呼叫**
 ```javascript
 // 接听
-trtcCalling.accept({
-  inviteID, //邀请 ID, 标识一次邀请
-  roomID,   //通话房间号 ID
-  callType  //0-未知， 1-语音通话，2-视频通话
-});
+trtcCalling.accept();
 //拒绝
-trtcCalling.reject({ 
-  inviteID, //邀请 ID, 标识一次邀请
-  isBusy //是否是忙线中， 0-未知， 1-语音通话，2-视频通话
-  })
+trtcCalling.reject()
 ```
 - **打开本地摄像头**
 ```javascript
@@ -176,3 +170,15 @@ trtcCalling.startLocalView({
 ```javascript
 trtcCalling.hangup()
 ```
+
+## 技术咨询
+了解更多详情您可以[联系我们](https://intl.cloud.tencent.com/contact-us)。
+
+
+
+## 参考文档
+- [TRTCCalling web 官网体验](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
+- [TRTCCalling npm](https://www.npmjs.com/package/trtc-calling-js)
+- [TRTCCalling web demo 源码](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)
+- [TRTCCalling web API](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
+- [TRTCCalling web 相关问题](https://intl.cloud.tencent.com/document/product/647/43096)
