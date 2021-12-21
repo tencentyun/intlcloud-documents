@@ -33,7 +33,7 @@ CHDFSビッグデータコンポーネントのサポートは次のとおりで
 
 1. CDH管理ページにログインします。
 2. 下図に示すとおり、**設定** > *サービス範囲** > **高度**を選択して、コードセグメントの高度な設定ページに進みます。
-   ![](https://main.qcloudimg.com/raw/95a05ec2090a84861c99222c9d26d4df.png)
+   ![](https://main.qcloudimg.com/raw/09f053f2c0feaf4451d9bc4c70cb501d.png)
 3. Cluster-wide Advanced Configuration Snippet(Safety Valve)for core-site.xmlのコードボックスに、CHDFS設定を入力します。
 
 ```
