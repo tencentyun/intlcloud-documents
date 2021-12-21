@@ -35,7 +35,7 @@ Before configuring and using a custom domain name, you need to complete the foll
  - **Domain Name**: enter the custom domain name to be used. We recommend you use a common domain suffix.
  - **Certificate**: select a certificate bound to the custom domain name. Only a certificate managed in SSL Certificates can be selected.
 <dx-alert infotype="explain" title="">
-If your custom domain name has been filed with MIIT, and a DNS record has been added in the [Domains console](https://console.cloud.tencent.com/cns/domains), you can enter it in the **Domain Name** input box and select a certificate.
+If your custom domain name has been filed with MIIT, and a DNS record has been added in the Domains console, you can enter it in the **Domain Name** input box and select a certificate.
 </dx-alert>
 4. Click **OK**.
 After adding a custom domain name successfully, you can view it on the **Domain Name Management** page. Then, you can perform the following operations to manage the custom domain name as shown below:
@@ -44,17 +44,17 @@ After adding a custom domain name successfully, you can view it on the **Domain 
 ### Setting access control and DNS
 You can use the custom domain name in the public network or VPC. We recommend you use a VPC to access the instance preferably.
 <dx-tabs>
-::: Private network access
+::: Private\snetwork\saccess
 #### Configuring private network access control
    Connect a VPC to the instance and confirm that the private network access IP is generated normally as instructed in [Private Network Access Control](https://intl.cloud.tencent.com/document/product/1051/35492).
 #### Configuring Private DNS
    Go to the [Private DNS](https://console.cloud.tencent.com/privatedns) console, [create a private domain](https://intl.cloud.tencent.com/document/product/1097/40558) with the added custom domain name, and associate it with the connected VPC. Use an A record to configure DNS in the private domain, and use the private network access IP of the created private network access linkage as the record value. For more information, see [Private DNS](https://intl.cloud.tencent.com/zh/document/product/1097).
 :::
-::: Public network access
+::: Public\snetwork\saccess
 #### Configuring public network access control
    Enable the public network access entry and open the public network access address as instructed in [Public Network Access Control](https://intl.cloud.tencent.com/document/product/1051/35491).
 #### Configuring public network DNS
-   Go to the [DNSPod](https://console.cloud.tencent.com/cns) console, configure a DNS record for the added custom domain name, select **CNAME** as the record type, and enter the default domain name of the instance as the record value.
+   Go to the DNSPod console, configure a DNS record for the added custom domain name, select **CNAME** as the record type, and enter the default domain name of the instance as the record value.
 :::
 </dx-tabs>
 
