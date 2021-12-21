@@ -58,7 +58,7 @@ request.bucket = @"examplebucket-1250000000";
 
 **Swift**
 
-[//]: # ".cssg-snippet-put-bucket-referer"
+[//]: # (.cssg-snippet-put-bucket-referer)
 ```swift
 let request = QCloudPutBucketRefererRequest.init();
 
@@ -102,7 +102,7 @@ QCloudCOSXMLService.defaultCOSXML().putBucketReferer(request);
 #### 请求示例
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-bucket-referer"
+[//]: # (.cssg-snippet-get-bucket-referer)
 ```objective-c
 QCloudGetBucketRefererRequest* request = [QCloudGetBucketRefererRequest new];
 
@@ -119,7 +119,7 @@ request.bucket = @"examplebucket-1250000000";
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-bucket-referer"
+[//]: # (.cssg-snippet-get-bucket-referer)
 ```swift
 let request = QCloudGetBucketRefererRequest.init();
 
@@ -135,6 +135,5 @@ QCloudCOSXMLService.defaultCOSXML().getBucketReferer(request);
 
 >? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketReferer.swift) 查看。
 >
-
 
 
