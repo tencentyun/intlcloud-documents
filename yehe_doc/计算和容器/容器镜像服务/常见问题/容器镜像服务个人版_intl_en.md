@@ -11,12 +11,19 @@ The resource quota refers to the maximum number of resources that a user can use
 | Image repositories in a single region | 500 |
 | Image tags for a single image | 100 |
 
-You can go to [TKE console](https://console.cloud.tencent.com/tke2/overview) to view the quota details of the current account. If you need a higher quota, please [submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=350&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1CCS) for application.
+You can also go to the **Instance Management** page to select a Personal Edition instance and view the current usage details of the account quota. Personal Edition instances don't support quota adjustment. If you need a higher quota, switch to Enterprise Edition.
+
+
+
+
+
+### Why can't I use image building and trigger in TCR Personal Edition?
+To provide more stable and powerful services such as code compilation and image building and deployment, TCR Enterprise Edition now shares the container DevOps features of CODING DevOps. For more information, see [Tencent Container Registry](https://intl.cloud.tencent.com/zh/product/tcr).
 
 
 
 ### What should I do if I cannot find the pushed image when using the Personal Edition?
-Since the image repository of TCR Personal Edition is shared with all other public cloud account resources, the images that have been pulled/pushed are blocked in the queue and are not displayed. You can try to push again, and we recommend that you migrate your services to [TCR Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051) to enjoy the service resources and storage resources of the entire instance.
+Since the image repository of TCR Personal Edition is shared with all other public cloud account resources, the images that have been pulled/pushed are blocked in the queue and are not displayed. You can try to push again, and we recommend that you migrate your services to [TCR Enterprise Edition](https://intl.cloud.tencent.com/zh/document/product/1051) to enjoy the service resources and storage resources of the entire instance.
 
 
 
