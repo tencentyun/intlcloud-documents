@@ -1,3 +1,59 @@
+## 2021年09月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+  <td>边缘集群添加腾讯云带 GPU 的边缘节点</td><td>边缘集群添加腾讯云带 GPU 的边缘节点，添加 GPU 版本和操作系统版本的说明。</td><td>2021-09-06</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35386">节点管理 </a></td>
+</tr>  
+</table>
+
+## 2021年06月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+  <td>TKE Edge 增强边缘集群安全特性</td><td>优化边缘节点权限，添加节点脚本支持配置 ttl 过期时间。</td><td>2021-06-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35386">节点管理 </a></td>
+</tr>  
+</table>
+
+## 2021年04月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+  <td>支持 statefulsetGrid 应用和灰度升级功能</td><td>后端升级支持 YAML 命令行方式管理 statefulsetGrid 和灰度升级。</td><td>2021-04-27</td><td> </a></td>
+</tr>  
+</table>
+
+
+## 2021年03月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+  <td>TKE Edge 支持自定义参数创建集群</td><td>TKE Edge 支持自定义参数创建集群，支持指定自定义 K8S 集群相关参数，支持指定单节点 Pod 数量上限。</td><td>2021-03-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35385">创建集群 </a></td>
+</tr>  
+</table>
+
+## 2021年01月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>支持边缘集群运维管理功能</td><td>支持边缘集群运维管理功能，支持配置、概览和检索日志，审计，事件信息。</td><td>2021-01-30</td><td><a href="https://cloud.tencent.com/document/product/457/32090">集群运维</a></td>
+</tr>
+<tr>
+    <td>支持使用 TCR 镜像仓库</td><td>创建边缘应用及工作负载，支持选择使用 TCR 镜像仓库。</td><td>2021-01-19</td><td><a href="https://intl.cloud.tencent.com/document/product/457/36838">使用 TCR 企业版实例内容器镜像创建工作负载</a></td>
+</tr>
+<tr>
+    <td>支持云监控告警配置功能</td><td>边缘集群支持对接云监控，支持告警配置等。</td><td>2021-01-18</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30688">监控告警概述</a></td>
+</tr>
+<tr>
+<td>支持创建 CVM 节点</td><td>边缘集群支持购买 CVM 节点。</td><td>2021-01-13</td><td>-</a></td>
+</tr>
+</table>
+
+
 ## 2020年12月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -7,12 +63,13 @@
 </tr>  
 </table>
 
+
 ## 2020年11月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>ServiceGroup 功能产品化</td><td>用户可通过控制台使用 ServiceGroup 功能，功能入口与集群“节点管理”入口平级。</td><td>2020-11-27</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37772">ServiceGroup 功能概述</a></td>
+    <td>ServiceGroup 功能产品化</td><td>用户可通过控制台使用 ServiceGroup 功能，功能入口与集群“节点管理”入口平级。</td><td>2020-11-27</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/37772">ServiceGroup 功能概述</a></li><li></a></li><li></a></li></td>
 </tr>
 <tr>
     <td>节点安装脚本新增支持 check、clear 两个功能参数</td><td><li>check 参数，方便用户使用脚本手动检查节点环境中不满足安装要求的地方。</li><li>clear 参数，方便一键清理节点中的脏数据、关闭防火墙等。</li></td><td>2020-11-13</td><td>-</td>
@@ -30,7 +87,7 @@
     <td>支持多体系架构混合管理</td><td>该功能支持在一个集群内同时管理 ARM、X86 CPU 架构的节点。</td><td>2020-10-28</td><td>-</td>
 </tr>
 <tr>
-    <td>支持边缘 Pod HPA</td><td>上线边缘 Pod HPA 功能，同时原生 Kubernetes HPA 功能在边缘也可以生效。</td><td>2020-10-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38858">在 TKE 上利用 HPA 实现业务的弹性伸缩</a></td>
+    <td>支持边缘 Pod HPA</td><td>上线边缘 Pod HPA 功能，同时原生 Kubernetes HPA 功能在边缘也可以生效。</td><td>2020-10-23</td><td><a href="https://cloud.tencent.com/document/product/457/50084">在 TKE 上利用 HPA 实现业务的弹性伸缩</a></td>
 </tr>
 <tr>
     <td>升级 “脚本添加节点” 功能</td><td>支持用户使用同一个脚本多次向集群添加自有节点（脚本时效为1小时），方便批量添加自有节点操作。</td><td>2020-10-22</td><td>-</a></td>
@@ -96,7 +153,7 @@
     <td>边缘容器服务支持自定义参数</td><td><ul class="params"><li>支持自定义节点初始化脚本。</li><li>支持自定义容器目录。</li><li>支持自定义节点 max-pod。</li></ul></td><td>2020-06-30</td><td>-</td>
 </tr>
 <tr>
-    <td>边缘容器服务支持 K8s v1.18.2</td>	<td>支持创建 Kubernetes v1.18.2 版本集群。</td><td>2020-06-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35385">创建边缘集群</a></td>
+    <td>边缘容器服务支持 K8S v1.18.2</td>	<td>支持创建 Kubernetes v1.18.2 版本集群。</td><td>2020-06-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35385">创建边缘集群</a></td>
 </tr>
 </table>
 
@@ -106,7 +163,7 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>边缘容器服务上线</td><td>边缘容器服务 ECK 是用于从中心云管理边缘云资源的容器系统。可在一个集群内管理多地域的节点，完全兼容原生 Kubernetes，同时具备应用一键下发及边缘自治和分布式健康检查能力。</td><td>2020-03-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35390">边缘容器服务</a></td>
+    <td>边缘容器服务上线</td><td>边缘容器服务 TKE Edge 是用于从中心云管理边缘云资源的容器系统。可在一个集群内管理多地域的节点，完全兼容原生 Kubernetes，同时具备应用一键下发及边缘自治和分布式健康检查能力。</td><td>2020-03-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35390">边缘容器服务</a></td>
 </tr>
 </table>
 
