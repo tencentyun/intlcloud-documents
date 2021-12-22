@@ -4,43 +4,42 @@
 
 ## 全体フロー
 
-<img src="https://main.qcloudimg.com/raw/ea1b7cd9ac91b2d561ef045c2f6f2159.svg" data-nonescope="true">
+<img src="https://main.qcloudimg.com/raw/252b7e06b322350c8520283e7826d5a3.png" data-nonescope="true">
 
 **フロー説明：**
-1. キャスターが、コンソールまたはTencent Cloud APIを直接呼び出して、イベントメッセージ通知のURLおよびレコーディング、スクリーンキャプチャなどの関連機能を設定します。
+1. キャスターが、コンソールまたはTencentCloud APIを直接呼び出して、イベントメッセージ通知のURLおよびレコーディング、スクリーンキャプチャなどの関連機能を設定します。
 2. キャスターがCSSプッシュを切断します。
 3. CSSサービス内部にイベントが発生すると、メッセージがイベントメッセージ通知サービス経由でお客様のバックグラウンドに一括でコールバックされます。
 
 
-<span id="protocol"></span>
+[](id:protocol)
 ## イベントメッセージ通知のプロトコル
 
 ### ネットワークプロトコル
 - リクエスト：HTTP POSTリクエスト。パケットの中身はJSON。各メッセージの具体的なパケットの内容は後述をご参照ください。
-- 応答：HTTP STATUS CODE = 200、サーバーは応答パケットの具体的な内容を無視します。プロトコルとの親和性のため、クライアントの応答内容にJSON： `{"code":0}`を付けることをお勧めします
+- 応答：HTTP STATUS CODE = 200、サーバーは応答パケットの具体的な内容を無視します。プロトコルとの親和性のため、クライアントの応答内容に JSON： `{"code":0}`を付けることをお勧めします
 
 ### 通知の信頼性
-
-イベント通知サービスにはリトライ機能が含まれ、リトライの間隔は60秒、合計リトライ数は3回です。リトライとお客様のサーバーやネットワーク帯域幅との衝突が起きるのを避けるため、正常なリターンパケットを維持することを推奨します。リトライがトリガーされる条件は以下となります。
-
+イベント通知サービスはリトライ機能を備えています。スクリーンキャプチャイベント通知は2分間隔で5回までリトライします。その他、CSSプッシュ、CSSストリーム切断、CSSレコーディング、ライブストリーミングポルノ検出イベント通知は1分間隔で12回までリトライします。
+リトライとお客様のサーバーやネットワーク帯域幅との衝突が起きるのを避けるため、正常なリターンパケットを維持してください。リトライがトリガーされる条件は以下となります。
 - 長時間（20 秒）リターンパケットの応答がない場合。
 - HTTP STATUSの応答が200でない場合。
 
-<span id="configuration"></span>
+[](id:configuration)
 ## コールバックイベントの設定方式
-コールバック設定は、主に2種類の方式で実現します。1つは、[CSSコンソール](#c_callback)を利用し、もう1つは[[サーバーAPI]の呼び出し](#api_callback)によるものです。
+コールバック設定は、主に2種類の方式で実現します。1つは、 [CSSコンソール](#c_callback)を利用し、もう1つは [サーバーAPI]の呼び出し(#api_callback)によるものです。
 >?CSSのイベントメッセージ通知のコールバックURLでは、プッシュイベント、ストリーム切断イベント、レコーディングイベント、スクリーンキャプチャイベント、ポルノ検出イベントの設定に対して単独のコールバックURLをサポートしています。
 
 
 
-<span id="c_callback"></span>
+[](id:c_callback)
 ### CSSコンソール
-1. CSSコンソールの【イベントセンター】>【[CSSコールバック](https://console.cloud.tencent.com/live/config/callback)】に進んでコールバックテンプレートを作成します。操作の詳細は[コールバックテンプレートの作成](https://intl.cloud.tencent.com/document/product/267/31074)をご参照ください。
-2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で操作したいプッシュドメイン名を探して、【管理】>【テンプレート設定】をクリックし、このドメイン名とコールバックテンプレートをバインドします。操作の詳細は[コールバック設定](https://intl.cloud.tencent.com/document/product/267/31065)をご参照ください。
+1. CSSコンソールの**イベントセンター>[CSSコールバック](https://console.cloud.tencent.com/live/config/callback)**に進み、コールバックテンプレートを作成します。具体的な操作については、[コールバックテンプレートの作成](https://intl.cloud.tencent.com/document/product/267/31074)をご参照ください。
+2. [ **ドメイン名管理** ](https://console.cloud.tencent.com/live/domainmanage)で操作が必要なプッシュドメイン名を探し、**管理>テンプレート設定**をクリックして、このドメイン名とコールバックテンプレートを関連付けます。具体的な操作については、[コールバック設定](https://intl.cloud.tencent.com/document/product/267/31065)をご参照ください。
 
-<span id="api_callback"></span>
+[](id:api_callback)
 ### サーバーAPI
-1. [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815)を呼び出してコールバックテンプレートインターフェースを作成します。必要なコールバックパラメータメッセージを設定します。
+1.  [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) を呼び出して、コールバックテンプレートのインターフェースを作成し、必要なコールバックパラメータ情報を設定します。
 2. [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) を呼び出して、コールバックルールを作成し、パラメータのプッシュドメイン名DomainName 、TemplateIdを設定します（ステップ1を繰り返す）。プッシュおよび再生アドレスのものと一致するAppNameを入力すると、一部のライブストリーミングでコールバック起動の効果が実現されます。
 
 ## コールバック情報パラメータの説明
