@@ -32,7 +32,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>미지원</td>
 </tr>
 <tr>
-<td>데스크톱 Firefox 브라우저</td>
+<td>Firefox 브라우저(데스크톱)</td>
 <td>56+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -40,7 +40,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>지원(Firefox66 이후 버전)</td>
 </tr>
 <tr>
-<td>데스크톱 Edge 브라우저</td>
+<td>Edge 브라우저(데스크톱)</td>
 <td>80+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -72,7 +72,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>지원(Opera60 이후 버전)</td>
 </tr>
 <tr>
-<td>360 Total Security 브라우저(데스크톱, 고속 모드)</td>
+<td>360 Total Security 브라우저(데스크톱, 초고속 모드)</td>
 <td>13+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -96,7 +96,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>미지원</td>
 </tr>
 <tr>
-<td>WeChat 내장 브라우저(데스크톱)</td>
+<td>WeCom 내장 브라우저(데스크톱)</td>
 <td>-</td>
 <td>-</td>
 <td>지원</td>
@@ -121,7 +121,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>지원(Chrome72 이후 버전)</td>
 </tr>
 <tr>
-<td>데스크톱 Firefox 브라우저</td>
+<td>Firefox 브라우저(데스크톱)</td>
 <td>56+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -129,7 +129,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>지원(Firefox66 이후 버전)</td>
 </tr>
 <tr>
-<td>데스크톱 Edge 브라우저</td>
+<td>Edge 브라우저(데스크톱)</td>
 <td>80+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -153,7 +153,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>미지원</td>
 </tr>
 <tr>
-<td>WeChat 내장 브라우저(데스크톱)</td>
+<td>WeCom 내장 브라우저(데스크톱)</td>
 <td>-</td>
 <td>-</td>
 <td>지원</td>
@@ -238,7 +238,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 </tr>
 <tr>
 <td>iOS 11.1.2+</td>
-<td>모바일 Safari 브라우저</td>
+<td>Safari 브라우저(모바일)</td>
 <td>11+</td>
 <td>-</td>
 <td>지원</td>
@@ -266,8 +266,18 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 </table>
 
 >! 
->- 브라우저에서 [WebRTC 기능 테스트](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 페이지를 열어 WebRTC가 완벽하게 지원되는지 테스트할 수 있습니다(예: 공식 계정 등 브라우저 환경).
->- H.264 버전 권한 제한으로 인해 Huawei 시스템의 Chrome 브라우저와 Chrome WebView 코어 브라우저에서는 TRTC 데스크톱 브라우저 SDK가 정상적으로 실행되지 않습니다.
+>- 브라우저에서 [TRTC Web SDK 기능 테스트 페이지](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)를 열어 현재 브라우저에서 WebRTC의 모든 기능이 지원되는지 테스트할 수 있습니다(예: WebView 등 브라우저 환경).
+>- H.264 버전 권한 제한으로 인해 Huawei 시스템의 Chrome 브라우저와 Chrome WebView 코어 브라우저에서는 TRTC Web SDK가 정상적으로 실행되지 않습니다.
+
+## URL 도메인 프로토콜 제한
+| 응용 시나리오     | 프로토콜             | 수신(재생) | 발송(마이크 켜짐) | 화면 공유 | 비고 |
+| ------------ | :--------------- | :----------- | ------------ | -------- | ---- |
+| 프로덕션 환경     | https 프로토콜        | 지원         | 지원         | 지원     | 권장 |
+| 프로덕션 환경     | http 프로토콜         | 지원         | 미지원       | 미지원   |      |
+| 로컬 개발 환경 | http://localhost | 지원         | 지원         | 지원     | 권장 |
+| 로컬 개발 환경 | http://127.0.0.1 | 지원         | 지원         | 지원     |      |
+| 로컬 개발 환경 | http://[로컬 컴퓨터 IP]  | 지원         | 미지원       | 미지원   |      |
+| 로컬 개발 환경 | file:///         | 지원         | 지원         | 지원     |      |
 
 ## API 사용 튜토리얼
 자세한 API 사용법은 다음 튜토리얼을 참고하십시오.
@@ -281,7 +291,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 | 로컬 오디오/비디오 동적 활성화/비활성화 | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-15-basic-dynamic-add-video.html)    |
 | 화면 공유           | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-16-basic-screencast.html)           |
 | 볼륨 감지       | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-17-basic-detect-volume.html)        |
-| 사용자 정의 수집 및 사용자 정의 재생 렌더링 | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-20-advanced-customized-capture-rendering.html) |
+| 사용자 정의 수집 및 사용자 정의 재생 렌더링 | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-20-advanced-customized-capture-rendering.html) |
 | 방의 업스트림 사용 인원 제한     | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-04-info-uplink-limits.html)        |
 | 배경 음악/음향 효과 구현     | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-22-advanced-audio-mixer.html)          |
 
@@ -294,7 +304,7 @@ TRTC는 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/index.ht
 
 | API               | 설명               |
 | ----------------------------------------- | ---------------------------------------- |
-| [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.VERSION)         | TRTC Web SDK 버전 번호           |
+| [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.VERSION)         | TRTC Web SDK 버전 번호.           |
 | [checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.checkSystemRequirements) | 브라우저의 TRTC Web SDK 호환 여부 확인. 호환되지 않는 경우 사용자에게 최신 버전의 Chrome 브라우저 다운로드를 권고하시기 바랍니다.          |
 | [isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.isScreenShareSupported)   | 브라우저의 화면 공유 지원 여부 확인. 화면 공유 스트림을 생성하기 전에 이 메소드를 호출해 현재 브라우저의 화면 공유 지원 여부를 확인하십시오.               |
 | [getDevices](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.getDevices)           | 미디어 입/출력 장치 목록 반환.             |
@@ -302,7 +312,7 @@ TRTC는 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/index.ht
 | [getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.getMicrophones)           | 마이크 장치 목록 반환.          |
 | [getSpeakers](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.getSpeakers)         | 스피커 장치 목록 반환.          |
 | [createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient)    | 실시간 음성/영상 통화를 위한 클라이언트 객체 생성. 각 세션당 한 번만 호출합니다.          |
-| [createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createStream)    | 로컬 스트림 Stream 객체 생성. 로컬 스트림 Stream 객체는 [publish()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#publish) 메소드를 사용하여 로컬 오디오/비디오 스트림을 게시합니다.|
+| [createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createStream)    | 로컬 스트림 Stream 객체 생성. 로컬 스트림 Stream 객체는 [publish()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#publish) 메소드를 사용하여 로컬 오디오/비디오 스트림을 게시합니다. |
 
 ## TRTC.Logger
 
@@ -310,7 +320,7 @@ TRTC는 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/index.ht
 
 | API        | 설명       |
 | ---------------------------------- | ------------------ |
-| [setLogLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.Logger.html#.setLogLevel)           | 로그 출력 레벨 설정 |
+| [setLogLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.Logger.html#.setLogLevel)           | 로그 출력 레벨 설정. |
 | [enableUploadLog](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.Logger.html#.enableUploadLog)   | 로그 업로드 활성화.     |
 | [disableUploadLog](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.Logger.html#.disableUploadLog) | 로그 업로드 비활성화.     |
 
@@ -324,7 +334,7 @@ TRTC는 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/index.ht
 | [setTurnServer](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setTurnServer)     | TURN 서버 설정. 이 메소드는 [setProxyServer()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setProxyServer)와 함께 사용되며, 기업이 프록시 및 TURN 서버를 직접 배포하는 경우에 적합합니다. |
 | [join](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join)       | 음성/영상 통화를 시작하는 방에 입장. 방이 없으면 시스템에서 방을 자동 생성합니다.            |
 | [leave](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#leave)     | 음성/영상 통화 방 퇴장. 음성/영상 통화를 종료합니다.         |
-| [publish](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#publish)         | 로컬 오디오/비디오 스트림 게시. 이 메소드는 [join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join) 메소드를 사용하여 방에 입장한 후에만 호출할 수 있으며, 하나의 음성/영상 통화는 하나의 로컬 스트림만 게시할 수 있습니다.|
+| [publish](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#publish)         | 로컬 오디오/비디오 스트림 게시. 이 메소드는 [join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join) 메소드를 사용하여 방에 입장한 후에만 호출할 수 있으며, 하나의 음성/영상 통화는 하나의 로컬 스트림만 게시할 수 있습니다.           |
 | [unpublish](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#unpublish)          | 로컬 스트림 게시 취소.     |
 | [subscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#subscribe)          | 원격 스트림 구독.         |
 | [unsubscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#unsubscribe)         | 원격 스트림 구독 취소.     |
@@ -338,7 +348,7 @@ TRTC는 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/index.ht
 
 ## LocalStream
 
-LocalStream 로컬 오디오/비디오 스트림은, [createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createStream)을 통해 생성되며, [Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html)의 하위 클래스입니다.
+LocalStream 로컬 오디오/비디오 스트림은 [createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createStream)을 통해 생성되며, [Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html)의 하위 클래스입니다.
 
 | API             | 설명               |
 | --------------------------------------- | ------------------------------------------ |
@@ -368,7 +378,7 @@ LocalStream 로컬 오디오/비디오 스트림은, [createStream](https://web.
 | [getAudioTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioTrack)     | 오디오 트랙 가져오기.        |
 | [getVideoTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getVideoTrack)     | 비디오 트랙 가져오기.        |
 | [getVideoFrame](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getVideoFrame)     | 현재 비디오 프레임 가져오기.              |
-| [on](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#on)           |  Stream 이벤트 수신            |
+| [on](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#on)           |  Stream 이벤트 수신.            |
 
 
 
@@ -379,14 +389,14 @@ LocalStream 로컬 오디오/비디오 스트림은, [createStream](https://web.
 | API    | 설명           |
 | ------------------------------ | --------------------------- |
 | [getType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#getType)       | 원격 스트림 유형 가져오기. 주로 원격 스트림이 메인 오디오/비디오 스트림인지 또는 보조 비디오 스트림(일반적으로 화면 공유 스트림)인지 판단하는데 사용됩니다. |
-| [play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#play)          | 오디오/비디오 스트림 재생    |
-| [stop](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#stop)          | 오디오/비디오 스트림 중지          |
-| [resume](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#resume)         | 오디오/비디오 스트림 재개    |
-| [close](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#close)           | 오디오/비디오 스트림 비활성화      |
-| [muteAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#muteAudio)           | 오디오 트랙 비활성화      |
-| [muteVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#muteVideo)           | 비디오 트랙 비활성화      |
-| [unmuteAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#unmuteAudio)       | 오디오 트랙 활성화      |
-| [unmuteVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#unmuteVideo)       | 비디오 트랙 활성화      |
+| [play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#play)          | 오디오/비디오 스트림 재생.    |
+| [stop](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#stop)          | 오디오/비디오 스트림 중지.          |
+| [resume](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#resume)         | 오디오/비디오 스트림 재개.    |
+| [close](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#close)           | 오디오/비디오 스트림 비활성화.      |
+| [muteAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#muteAudio)           | 오디오 트랙 비활성화.      |
+| [muteVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#muteVideo)           | 비디오 트랙 비활성화.      |
+| [unmuteAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#unmuteAudio)       | 오디오 트랙 활성화.      |
+| [unmuteVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#unmuteVideo)       | 비디오 트랙 활성화.      |
 | [getId](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#getId)           | 스트림의 고유 ID 가져오기.      |
 | [getUserId](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#getUserId)           | 스트림이 소속된 사용자 ID 가져오기.        |
 | [setAudioOutput](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#setAudioOutput) | 오디오 출력 장치 설정.          |
@@ -397,12 +407,12 @@ LocalStream 로컬 오디오/비디오 스트림은, [createStream](https://web.
 | [getAudioTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#getAudioTrack)   | 오디오 트랙 가져오기.      |
 | [getVideoTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#getVideoTrack)   | 비디오 트랙 가져오기.      |
 | [getVideoFrame](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#getVideoFrame)   | 현재 비디오 프레임 가져오기.    |
-| [on](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#on)         | Stream 이벤트 수신          |
+| [on](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#on)         | Stream 이벤트 수신.          |
 
 
 ## RtcError
 
-RtcError 객체
+RtcError 객체.
 
 | API          | 설명         |
 | ------------------------------------- | ------------ |

@@ -8,27 +8,28 @@ TRTC의 클라우드 녹화는 방 안 모든 사용자의 멀티미디어 스�
 ![](https://main.qcloudimg.com/raw/2f92f978c2ca76d001891e645905e8f9.png)
 
 ## 콘솔 가이드
-[](id:open)
-
+[ ](id:open)
 ### 녹화 서비스 활성화
 1. TRTC 콘솔에 로그인한 후 왼쪽 메뉴에서 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)를 선택합니다.
 2. 타깃 애플리케이션 라인에서 [기능 설정]을 클릭하여 기능 설정 페이지로 이동합니다. 애플리케이션을 생성하지 않은 경우 [애플리케이션 생성]을 클릭하여 애플리케이션 이름을 입력하고 [확인]을 클릭하면 새로운 애플리케이션이 생성됩니다.
 3. [클라우드 녹화 활성화] 오른쪽에 있는 <img src="https://main.qcloudimg.com/raw/3fc81b259baa4edf112af2f570e6d97f.png">를 클릭하면 클라우드 녹화 설정 페이지가 팝업됩니다.
 
-[](id:recordType)
+
+[ ](id:recordType)
 
 ### 녹화 방식 선택
 
 TRTC의 클라우드 녹화 서비스는 '전역 자동 녹화'와 '특정 사용자 녹화' 방식을 제공합니다.
 ![](https://main.qcloudimg.com/raw/d8084b7aa472b95ec21448703e4b6a49.png)
 
-- **전체 자동 녹화**
+- **전역 자동 녹화**
   TRTC 방별로 각 사용자의 멀티미디어 업스트림을 모두 자동 녹화합니다. 녹화 작업의 실행 및 중지 또한 자동으로 진행되므로 별도로 신경 쓸 필요가 없어 조작이 간단하고 사용이 편리합니다. 자세한 사용 방법은 [방법1: 전역 자동 녹화](#autoRecord)를 참고하십시오.
 
 - **특정 사용자 녹화**
-  일부 사용자의 멀티미디어 스트림을 지정하여 녹화할 수 있습니다. 클라이언트의 SDK API 또는 서버의 REST API를 이용해 제어할 수 있으며, 추가적인 개발 작업이 필요합니다. 자세한 사용 방법은 [방법2: 특정 사용자 녹화(SDK API)](#recordSDKAPI) 또는 [방법3: 특정 사용자 녹화(REST API)](#recordRESTAPI)를 참고하십시오.
+  일부 사용자의 멀티미디어 스트림을 지정하여 녹화할 수 있습니다. 클라이언트의 SDK API 또는 서버의 REST API를 통해 제어해야 하며, 별도의 개발 작업이 필요합니다. 자세한 사용 방법은 [방법2: 특정 사용자 녹화(SDK API)](#recordSDKAPI) 또는 [방법3: 특정 사용자 녹화(REST API)](#recordRESTAPI)를 참고하십시오.
 
-[](id:fileFormat)
+
+[ ](id:fileFormat)
 
 ### 파일 포맷 선택
 
@@ -42,22 +43,22 @@ TRTC의 클라우드 녹화 서비스는 '전역 자동 녹화'와 '특정 사�
 </tr>
 <tr>
 <td nowrap="nowrap">단일 파일 최장 시간(분)</td>
-<td><ul style="margin:0"><li/>실제 비즈니스 수요에 따라 단일 비디오 파일의 최장 시간 제한을 설정할 수 있습니다. 최장 시간 제한을 초과하면 시스템에서 자동으로 비디오 파일을 분할하며, 단위는 분, 설정 가능 범위는 1~120입니다. <li/>[파일 유형]을 [HLS]로 설정한 경우, 단일 파일의 최장 시간 제한이 없으며, 해당 매개변수는 적용되지 않습니다.</td>
+<td><ul style="margin:0"><li/>실제 비즈니스 수요에 따라 단일 비디오 파일의 최장 시간 제한을 설정할 수 있습니다. 최장 시간 제한을 초과하면 시스템에서 자동으로 비디오 파일을 분할하며, 단위는 분, 설정 가능 범위는 1 - 120입니다. <li/>[파일 유형]을 [HLS]로 설정한 경우, 단일 파일의 최장 시간 제한이 없으며, 해당 매개변수는 적용되지 않습니다.</td>
 </tr>
 <tr>
 <td>파일 저장 기간(일)</td>
-<td>실제 비즈니스 수요에 따라 비디오 파일을 VOD 플랫폼에 저장하는 기간을 설정할 수 있습니다. 단위는 일이며 설정 가능한 범위는 0~1500입니다. 기간이 만료되면 파일은 VOD 플랫폼에서 자동으로 삭제되고 복구할 수 없습니다. 0으로 설정하면 영구 저장됩니다.</td>
+<td>실제 비즈니스 수요에 따라 비디오 파일을 VOD 플랫폼에 저장하는 기간을 설정할 수 있습니다. 단위는 일이며 설정 가능한 범위는 0 - 1500입니다. 기간이 만료되면 파일은 VOD 플랫폼에서 자동으로 삭제되고 복구할 수 없습니다. 0으로 설정하면 영구 저장됩니다.</td>
 </tr>
 <tr>
 <td>지속 녹화 만료 시간(초)</td>
-<td><li/>[파일 유형]을 [HLS]로 설정한 경우에만 해당 매개변수가 적용됩니다. <li/>일반적인 상황에서 네트워크 불안정 또는 기타 원인으로 통화(또는 라이브 방송)가 끊기는 경우 녹화 파일이 여러 개 파일로 분할됩니다. '통화(또는 라이브 방송)별로 1개의 재생 링크만 생성'하고 싶은 경우 실제 상황에 따라 지속 녹화 만료 시간을 설정할 수 있습니다. 통화가 끊긴 시간 간격이 설정한 지속 녹화 만료 시간보다 짧은 경우 통화(또는 라이브 방송)별로 파일이 1개만 생성됩니다. 단위는 초이며 설정 가능한 범위는 1~1800이고, 0으로 설정하면 끊긴 후 지속 녹화되지 않습니다.</td>
+<td><ul style="margin:0"><li/>일반적인 상황에서 네트워크 불안정 또는 기타 원인으로 통화(또는 라이브 방송)가 끊기는 경우 녹화 파일이 여러 개 파일로 분할됩니다. <li/>'통화(또는 라이브 방송)별로 1개의 재생 링크만 생성'하려면 실제 상황에 따라 지속 녹화 만료 시간을 설정할 수 있습니다. 통화가 끊긴 시간 간격이 설정한 지속 녹화 만료 시간보다 짧은 경우 통화(또는 라이브 방송)별로 파일이 1개만 생성되고 녹화 파일을 가져오려면 녹화 시간이 지날 때까지 기다려야 합니다. <li/>단위는 초이며 설정 가능한 범위는 1 - 1800입니다. 0으로 설정하면 끊긴 후 녹화가 재개되지 않습니다.</ul></td>
 </tr>
 </table>
 
 
 >? HLS는 최대 30분까지 지속 녹화를 지원하여 '1교시당 1개의 재생 링크 생성'을 할 수 있습니다. 또한 대다수의 브라우저에서 온라인으로 시청할 수 있어 온라인 교육 시나리오의 비디오 재생 시나리오에 매우 적합합니다.
 
-[](id:storageLocation)
+[ ](id:storageLocation)
 
 ### 저장 위치 선택
 
@@ -67,30 +68,30 @@ TRTC 클라우드 녹화 파일은 Tencent Cloud의 VOD 플랫폼에 저장되�
   메인 애플리케이션과 서브 애플리케이션은 일종의 VOD에서의 리소스 구분 방식입니다. 메인 애플리케이션은 VOD에서의 루트 계정이라고 볼 수 있으며, 서브 애플리케이션은 여러 개를 생성할 수 있고 루트 계정 하위에 있는 서브 계정이라고 볼 수 있습니다. 서브 애플리케이션은 독립적인 리소스 관리 권한을 가지며 스토리지 영역에서 다른 서브 애플리케이션과 상호 분리되어 있습니다.
 
 - **VOD 서비스의 서브 애플리케이션은 어떻게 활성화하나요?**
-  ['VOD 서브 애플리케이션 실행 방법'](https://intl.cloud.tencent.com/document/product/266/33987)에 따라 새로운 서브 계정을 추가할 수 있으며, 해당 방법은 VOD [콘솔](https://console.cloud.tencent.com/vod)로 이동하여 작업해야 합니다.
+  ['VOD 서브 애플리케이션 활성화 방법'](https://intl.cloud.tencent.com/document/product/266/33987) 문서에 따라 새로운 서브 애플리케이션을 추가할 수 있으며, 이 방법은 VOD [콘솔](https://console.cloud.tencent.com/vod)로 이동하여 작업해야 합니다.
 
-[](id:recordCallback)
+[ ](id:recordCallback)
 
-###  녹화 콜백 설정
+### 녹화 콜백 설정
 - **녹화 콜백 주소: **
   신규 파일 [생성 공지](#callback)를 실시간으로 받고 싶은 경우, 서버에서 녹화 파일 수신 콜백에 사용할 주소를 여기에 입력하십시오. 해당 주소는 HTTP(또는 HTTPS) 프로토콜에 부합해야 합니다. 신규 녹화 파일 생성 시 Tencent Cloud에서 해당 주소를 통해 귀하의 서버로 공지를 전송합니다.
 ![](https://main.qcloudimg.com/raw/9b9beab813d929a7a364eb2d8ab045ba.png)
 	
 - **녹화 콜백 키**
 콜백 키는 콜백 이벤트 수신 시 서명 인증 생성에 사용됩니다. 해당 키는 알파벳 대소문자 및 숫자로 구성되며 최대 32자까지 입력할 수 있습니다. 사용 관련 자세한 내용은 [녹화 이벤트 매개변수 설명](https://intl.cloud.tencent.com/document/product/267/38082)을 참고하십시오.
-
+![](https://main.qcloudimg.com/raw/9fa611019c25e3c073683bc4e3ec38ae.png)
 
 >? 자세한 녹화 콜백 수신 및 해석 방법은 문서 후반부에 있는 [녹화 파일 수신](https://intl.cloud.tencent.com/document/product/647/35426)을 참고하십시오.
 
 
 
-[](id:startAndStop)
+[ ](id:startAndStop)
 
 ## 녹화 제어 방법
 
 TRTC는 [전역 자동 녹화](#autoRecord), [특정 사용자 녹화(SDK API 제어)](#recordSDKAPI), [특정 사용자 녹화(REST API 제어)](#recordRESTAPI)의 세 가지 클라우드 녹화 제어 방법을 제공합니다. 자세한 내용은 다음 설명을 참고하십시오.
 
-- 해당 솔루션은 콘솔에서 어떻게 설정하나요?
+- 해당 방법은 콘솔에서 어떻게 설정하나요?
 - 녹화 작업은 어떻게 시작하나요?
 - 녹화 작업은 어떻게 종료하나요?
 - 방 안 여러 채널의 화면을 어떻게 한 채널로 혼합하나요?
@@ -100,7 +101,7 @@ TRTC는 [전역 자동 녹화](#autoRecord), [특정 사용자 녹화(SDK API �
 
 [](id:autoRecord)
 
-## 방법1: 전역 자동 녹화
+### 방법1: 전역 자동 녹화
 
 - **콘솔 설정**
   본 녹화 방법을 사용하려면 콘솔의 [녹화 방식 선택](#recordType)에서 '전역 자동 녹화'로 설정하십시오.
@@ -114,23 +115,23 @@ TRTC는 [전역 자동 녹화](#autoRecord), [특정 사용자 녹화(SDK API �
 - **다중 화면 혼합**
   전역 자동 녹화 모드에서의 클라우드 혼합 스트림 방법은 '서버 REST API 방법'과 '클라이언트 SDK API 방법'이 있습니다. 두 방법은 동시에 사용할 수 없습니다.
   - [서버 REST API 혼합 스트림 방법](#recordRESTAPI): 사용자의 서버에서 API를 호출하며 클라이언트 플랫폼 버전에 제한을 받지 않습니다.
-  - [클라이언트 SDK API 혼합 스트림 솔루션](#recordSDKAPI): 클라이언트에서 직접 혼합 스트림을 요청할 수 있습니다. iOS, Android, Windows, Mac, Electron 등 플랫폼을 지원하며, 현재 WeChat 미니프로그램 및 Web 브라우저는 지원되지 않습니다.
+  - [클라이언트 SDK API 혼합 스트림 방법](#recordSDKAPI): 클라이언트에서 직접 혼합 스트림을 요청할 수 있습니다. iOS, Android, Windows, Mac, Electron 등 플랫폼을 지원하며, 현재 WeChat 미니프로그램과 Web 브라우저는 지원하지 않습니다.
 
 - **녹화 파일 이름 생성**
   - 호스트가 방 입장 시 [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 매개변수를 지정한 경우, 녹화 파일 이름이 `userDefineRecordId_streamType_시작 시간_종료 시간` 형식으로(streamType에는 main, aux의 두 값이 있으며, main은 메인 채널, aux는 보조 채널을 의미하고 보조 채널은 일반적으로 화면 공유에 사용) 생성됩니다.
   - 호스트가 방 입장 시 [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 매개 변수를 지정하지 않았으나 [streamId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) 매개변수를 지정한 경우 녹화 파일 이름이 `streamId_시작 시간_종료 시간` 형식으로 생성됩니다.
   - 호스트가 방 입장 시 [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 매개변수와 [streamId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) 매개변수를 모두 지정하지 않은 경우, 녹화 파일 이름은`sdkappid_roomid_userid_streamType_시작 시간_종료 시간` 형식으로(streamType에는 main, aux의 두 가지 값이 있으며, main은 메인 채널, aux는 보조 채널을 의미하고 보조 채널은 일반적으로 화면 공유에 사용) 생성됩니다.
 
-- **지원되는 플랫폼**
-  사용자의 서버로 제어할 경우, 클라이언트 플랫폼의 제약을 받지 않습니다.
+- **현재 지원 플랫폼**
+  사용자의 서버에서 제어되며 클라이언트 플랫폼의 제한을 받지 않습니다.
 
 [](id:recordSDKAPI)
 
-### 방법 2: 특정 사용자 녹화(SDK API)
+### 방법2: 특정 사용자 녹화(SDK API)
 
 TRTC SDK에서 제공하는 일부 API 인터페이스 및 매개변수를 호출하여 클라우드 혼합 스트림, 클라우드 녹화, 릴레이 라이브 방송의 세 가지 기능을 실행할 수 있습니다.
 
-| 클라우드 기능 | 시작 방법? | 종료 방법? |
+| 클라우드 기능 | 시작 방법  | 종료 방법 |
 | :------- | :------- | :------- |
 | 클라우드 녹화 | 방 입장 시 매개변수 `TRTCParams`의 `userDefineRecordId` 필드 지정   | 호스트 퇴장 시 자동 종료 |
 | 클라우드 혼합 스트림 | SDK API [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93)를 호출해 클라우드 혼합 스트림 실행 | 혼합 스트림을 요청한 호스트가 퇴장하면 자동 종료되거나 도중에 [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93)를 호출한 후 매개변수를 `null/nil`로 설정해 수동 종료 |
@@ -138,7 +139,7 @@ TRTC SDK에서 제공하는 일부 API 인터페이스 및 매개변수를 호�
 
 ![](https://main.qcloudimg.com/raw/7daf8430ca74adeec019c10fc384a48e.gif)
 
-- **콘솔에서 설정**
+- **콘솔 설정**
   본 녹화 방법을 사용하려면 콘솔의 [녹화 방식 선택](#recordType)에서 '특정 사용자 녹화'로 설정하십시오.
 
 - **녹화 작업 시작**
@@ -169,11 +170,11 @@ param.userDefineRecordId = @"1001_rexchang";  // 녹화 ID, 해당 사용자의 
   녹화 파일 이름은 `userDefineRecordId_시작 시간_종료 시간` 포맷으로 생성됩니다.
 
 - **현재 지원 플랫폼**
-  [iOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), [Android](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520), [Windows](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc), [Mac](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), [Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html) 등의 단말에서 요청하는 녹화 제어를 지원하며, 현재 Web 브라우저 및 WeChat 미니프로그램을 통한 제어는 지원되지 않습니다.
+  [iOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html) 등의 단말에서 요청하는 녹화 제어를 지원하며, 현재 Web 브라우저와 WeChat 미니프로그램에서 요청하는 제어는 지원하지 않습니다.
 
 [](id:recordRESTAPI)
 
-### 방법 3: 특정 사용자 녹화(REST API)
+### 방법3: 특정 사용자 녹화(REST API)
 
 TRTC의 서버는 한 세트의 REST API([StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761)와 [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760))를 제공하여 클라우드 혼합 스트림, 클라우드 녹화, 릴레이 라이브 방송 세 가지 기능을 실행할 수 있습니다.
 
@@ -187,7 +188,7 @@ TRTC의 서버는 한 세트의 REST API([StartMCUMixTranscode](https://intl.clo
 
 ![](https://main.qcloudimg.com/raw/65ef546c0e424af77f7d20f23aa1d363.gif)
 
-- **콘솔에서 설정**
+- **콘솔 설정**
   본 녹화 방법을 사용하려면 콘솔의 [녹화 방식 선택](#recordType)에서 '특정 사용자 녹화'로 설정하십시오.
 
 - **녹화 작업 시작**
@@ -228,7 +229,7 @@ https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode
   녹화 파일 이름은 [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 호출 시 지정한 `OutputParams.RecordId` 매개변수에 따라 생성되며, `OutputParams.RecordId_시작 시간_종료 시간` 포맷으로 생성됩니다.
 
 - **현재 지원 플랫폼**
-  사용자의 서버로 제어하며, 클라이언트 플랫폼의 제약을 받지 않습니다.
+  사용자의 서버에서 제어되며 클라이언트 플랫폼의 제한을 받지 않습니다.
 
 [](id:search)
 ## 녹화 파일 검색
@@ -256,7 +257,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 ## 녹화 파일 수신
 
 [녹화 파일 검색](#search) 외에도 콜백 주소 설정을 통해 Tencent Cloud에서 신규 녹화 파일 정보를 사용자 서버로 전송하도록 설정할 수 있습니다.
-방 안의 마지막 멀티미디어 스트림 사용자가 퇴장하면 Tencent Cloud에서 녹화를 종료하고 파일을 VOD 플랫폼에 저장하며, 이 과정은 약 30초~2분 정도 소요됩니다. 지속 녹화 시간을 300초로 설정한 경우 기본 시간에 300초를 더한 시간이 소요됩니다. 저장 완료 후 Tencent Cloud는 [녹화 콜백 설정](#recordCallback)에서 설정한 콜백 주소(HTTP/HTTPS)를 통해 사용자 서버로 공지를 발송합니다.
+방 안의 마지막 멀티미디어 스트림 사용자가 퇴장하면 Tencent Cloud에서 녹화를 종료하고 파일을 VOD 플랫폼에 저장하며, 이 과정은 약 30초 - 2분 정도 소요됩니다. 지속 녹화 시간을 300초로 설정한 경우 기본 시간에 300초를 더한 시간이 소요됩니다. 저장 완료 후 Tencent Cloud는 [녹화 콜백 설정](#recordCallback)에서 설정한 콜백 주소(HTTP/HTTPS)를 통해 사용자 서버로 공지를 발송합니다.
 
 녹화 및 녹화 관련 이벤트는 설정한 콜백 주소를 통해 Tencent Cloud에서 사용자의 서버로 전송됩니다. 다음은 콜백 정보 예시입니다.
 ![](https://main.qcloudimg.com/raw/483dba536acd022f93af3ca5ff6cd74a.png)
@@ -288,6 +289,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 <td>녹화 파일의 시청 주소이며, <a href="#play">VOD 재생</a>에 사용할 수 있습니다.</td>
 </tr></table>
 
+>? 콜백 필드에 대한 설명은 [Cloud Streaming Services - 녹화 이벤트 알림](https://intl.cloud.tencent.com/document/product/267/38082)을 참고하십시오.
 
 
 [](id:delete)
@@ -319,14 +321,14 @@ HLS는 최대 30분의 중단 시간 지속 녹화를 지원하여 '라이브 �
 - [Android 플랫폼](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html)
 - [Web 브라우저](https://intl.cloud.tencent.com/document/product/266/33977)
 
->! [프로 버전](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK의 사용을 권장합니다. 프로 버전은 [Player+](https://intl.cloud.tencent.com/document/product/266/7836)와 [Mobile Live Video Broadcasting](https://intl.cloud.tencent.com/product/mlvb) 등의 기능이 통합되어 있어 하위 레이어 모듈을 효율적으로 재사용해 증분 용량이 독립적인 SDK 2개를 통합한 용량보다 작고, 부호 충돌(symbol duplicate) 문제를 방지할 수 있습니다.
+>! [프로 버전](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK의 사용을 권장합니다. 프로 버전은 [Player+](https://intl.cloud.tencent.com/document/product/266/7836)와 [MLVB](https://intl.cloud.tencent.com/product/mlvb) 등의 기능이 통합되어 있어 하위 레이어 모듈을 효율적으로 재사용해 증분 용량이 독립적인 SDK 2개를 통합한 용량보다 작고, 부호 충돌(symbol duplicate) 문제를 방지할 수 있습니다.
 
 
 ## 관련 요금
 
 클라우드 녹화 및 재생과 관련한 요금 항목은 다음과 같습니다. 녹화 요금은 기본료이며, 기타 요금은 실제 사용 현황에 따라 과금합니다.
 
->?본 문서의 가격은 예시이며 참고용으로만 제공됩니다. 실제와 금액이 상이한 경우 [클라우드 녹화 과금 설명](https://intl.cloud.tencent.com/document/product/647/38385), [Cloud Streaming Services](https://buy.intl.cloud.tencent.com/pricing/css), [Video on Demand](https://buy.intl.cloud.tencent.com/pricing/vod)의 가격을 기준으로 합니다.
+>?본 문서의 금액은 예시이며 참고용으로만 제공됩니다. 실제와 금액이 상이한 경우 [클라우드 녹화 과금 설명](https://intl.cloud.tencent.com/document/product/647/38385), [Cloud Streaming Services](https://buy.intl.cloud.tencent.com/pricing/css), [Video on Demand](https://buy.intl.cloud.tencent.com/pricing/vod)의 가격을 기준으로 합니다.
 
 #### 녹화 요금: 트랜스 코딩 또는 캡슐화로 발생하는 요금 계산
 
@@ -336,7 +338,7 @@ HLS는 최대 30분의 중단 시간 지속 녹화를 지원하여 '라이브 �
 >- 2020년 7월 1일 이후 처음으로 TRTC 콘솔에서 애플리케이션을 생성한 Tencent Cloud 계정의 경우, 클라우드 녹화 기능 사용으로 발생하는 녹화 요금은 [클라우드 녹화 과금 설명](https://intl.cloud.tencent.com/document/product/647/38385)을 기준으로 합니다.
 >- 2020년 7월 1일 이전에 TRTC 콘솔에서 애플리케이션을 생성한 Tencent Cloud 계정의 경우, 2020년 7월 1일 이전과 이후에 생성한 모든 애플리케이션에서 클라우드 녹화 기능 사용으로 발생하는 녹화 요금은 기본적으로 **라이브 방송 녹화** 계속 사용 과금 규정을 적용합니다.
 
-**라이브 방송 녹화**는 동시 녹화 채널 수에 따라 요금이 계산되며, 동시 접속 수가 많을수록 요금도 증가합니다. 자세한 과금 설명은 [CSS>라이브 방송 녹화](https://intl.cloud.tencent.com/document/product/267/39605)를 참고하십시오.
+**라이브 방송 녹화**는 동시 녹화 채널 수에 따라 요금이 계산되며, 동시 접속 수가 많을수록 요금도 증가합니다. 자세한 과금 설명은 [Cloud Streaming Services>라이브 방송 녹화](https://intl.cloud.tencent.com/document/product/267/39605)를 참고하십시오.
 
 >예를 들어 현재 1000명의 호스트를 보유하고 있고 저녁 피크 시간에 최대 500개 채널의 호스트 멀티미디어 스트림을 동시 녹화해야 하는 경우, 녹화 단가가 5.2941USD/채널/월이라고 가정한다면 총 녹화 요금은 `500개 채널×5.2941USD/채널/월=2647.05USD/월`입니다.
 >[녹화 포맷 설정](#fileFormat)에서 녹화 파일 포맷 2개를 선택한 경우 녹화 요금과 스토리지 요금은 두 배(×2)가 되며, 파일 포맷 3개를 선택한 경우 녹화 요금 및 스토리지 요금은 세 배(×3)가 됩니다. 반드시 필요한 경우가 아니라면 비용을 대폭 절약할 수 있도록 한 가지 파일 포맷만 선택할 것을 권장합니다.
@@ -350,11 +352,16 @@ HLS는 최대 30분의 중단 시간 지속 녹화를 지원하여 '라이브 �
 
 녹화한 파일을 VOD 시청에 사용하는 경우, VOD 시청으로 인해 CDN 트래픽 소모가 발생합니다. 따라서 VOD 가격에 따라 요금이 발생하며 기본적으로 트래픽에 따라 과금됩니다. 시청하는 사람이 많을수록 요금이 증가하며, 시청 요금은 [비디오 가속(일 결산) 가격](https://intl.cloud.tencent.com/document/product/266/14666)에서 일 단위로 결산할 수 있습니다.
 
->예를 들어, 클라우드 녹화를 통해 1GB 크기의 파일을 생성하고 1000명의 시청자가 동영상을 처음부터 끝까지 모두 시청하였을 경우 약 1TB의 VOD 시청 트래픽이 발생합니다. 차등 가격표에 따라 계산하면 1000명의 시청자에게 `1000×1GB×0.0794USD/GB=79.4USD`의 요금이 발생합니다.
+>예를 들어, 클라우드 녹화를 통해 1GB의 파일이 생성되었고 1000명의 시청자가 처음부터 끝까지 모두 시청하였을 경우 약 1TB의 VOD 시청 트래픽이 발생합니다. 차등 가격표에 따라 계산하면 1000명의 시청자에게 `1000×1GB×0.0794USD/GB=79.4USD`의 요금이 발생합니다.
 >Tencent Cloud에서 귀하의 서버로 파일을 다운로드할 때도 소량의 VOD 트래픽이 발생하며, 월 청구서에 기재됩니다.
 
 #### 트랜스 코딩 요금: 혼합 스트림 녹화를 활성화하는 경우 해당 요금 발생
 
 혼합 스트림 녹화를 활성화하면 스트림 혼합을 위해 디코딩과 인코딩이 진행되고, 이에 따른 별도의 혼합 스트림 트랜스 코딩 요금이 발생합니다. 혼합 스트림 트랜스 코딩은 해상도 크기와 트랜스 코딩 시간에 따라 과금되며, 호스트가 채택한 해상도가 높고, 마이크 연결 시간(보통 마이크 연결 시 혼합 스트림 트랜스 코딩 필요)이 길수록 요금이 증가합니다. 자세한 요금 계산법은 [라이브 방송 트랜스 코딩](https://intl.cloud.tencent.com/document/product/267/39604)을 참고하십시오.
 
->예를 들어, [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e)을 통해 호스트의 비트 레이트(videoBitrate)를 1500kbps로, 해상도를 720P로 각각 설정한 상태에서 호스트가 시청자와 1시간 동안 마이크를 연결해 인터랙션했다면 마이크 연결 시간 동안 [클라우드 혼합 스트림](https://intl.cloud.tencent.com/document/product/647/34618)이 활성화되고, 이에 따라 `0.0057 USD/분×60분=0.342USD` 의 트랜스 코딩 요금이 발생합니다.
+>예를 들어, [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e)에서 호스트의 비트 레이트(videoBitrate)를 1500kbps로, 해상도를 720P로 각각 설정한 상태에서 호스트가 시청자와 1시간 동안 마이크를 연결해 인터랙션했다면 마이크 연결 시간 동안 [클라우드 혼합 스트림](https://intl.cloud.tencent.com/document/product/647/34618)이 활성화되고, 이에 따라 `0.0057USD/분×60분=0.342USD`의 트랜스 코딩 요금이 발생합니다.
+
+
+## 관련 문제
+#### TRTC는 어떻게 서버 녹화를 구현하나요?
+서버 녹화는 Linux SDK를 사용해야 합니다. Linux SDK는 현재 지원하지 않으며 서비스 사용 관련 문의사항은 colleenyu@tencent.com으로 연락주시기 바랍니다. 
