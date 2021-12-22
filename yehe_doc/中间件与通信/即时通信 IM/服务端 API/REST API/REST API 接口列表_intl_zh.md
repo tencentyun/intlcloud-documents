@@ -1,3 +1,5 @@
+
+
 ## 帐号管理
 
 | 功能说明  | 接口 |
@@ -7,7 +9,7 @@
 | 删除帐号  | [v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955) |
 | 查询帐号  | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)  |
 | 失效帐号登录态  | [v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957) |
-| 查询帐号在线状态 | [v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477) |
+| 查询帐号在线状态 | [ v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477) |
 
 ## 单聊消息
 
@@ -19,6 +21,7 @@
 | 查询单聊消息 | [v4/openim/admin_getroammsg](https://intl.cloud.tencent.com/document/product/1047/35478) |
 | 撤回单聊消息 | [v4/openim/admin_msgwithdraw](https://intl.cloud.tencent.com/document/product/1047/35015) |
 |设置单聊消息已读|[v4/openim/admin_set_msg_read](https://intl.cloud.tencent.com/document/product/1047/38996)|
+|查询单聊未读消息计数|[v4/openim/get_c2c_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/41046)|
 
 ## 全员推送
 
@@ -62,6 +65,11 @@
 | 删除分组 | [v4/sns/group_delete](https://intl.cloud.tencent.com/document/product/1047/34926) |
 |拉取分组|[v4/sns/group_get](https://intl.cloud.tencent.com/document/product/1047/40123)|
 
+## 最近联系人
+| 功能说明 | 接口                                                         |
+| -------- | ------------------------------------------------------------ |
+| 拉取会话列表 |[v4/recentcontact/get_list](https://intl.cloud.tencent.com/document/product/1047/43087)|
+| 删除单个会话 |[v4/recentcontact/delete](https://intl.cloud.tencent.com/document/product/1047/43088)|
 
 ## 群组管理
 

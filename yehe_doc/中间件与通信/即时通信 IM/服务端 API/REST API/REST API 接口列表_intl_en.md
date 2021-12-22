@@ -1,3 +1,5 @@
+
+
 ## Account Management
 
 | Feature | API |
@@ -7,7 +9,7 @@
 | Deletes accounts. | [v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955) |
 | Queries accounts. | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956) |
 | Invalidates the login state of an account.  | [v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957) |
-| Queries the login status of an account. | [v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477) |
+| Queries the login status of an account. | [ v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477) |
 
 ## One-to-One Message
 
@@ -19,6 +21,7 @@
 | Queries one-to-one messages. | [v4/openim/admin_getroammsg](https://intl.cloud.tencent.com/document/product/1047/35478) |
 | Recalls one-to-one messages. | [v4/openim/admin_msgwithdraw](https://intl.cloud.tencent.com/document/product/1047/35015) |
 | Marks one-to-one messages as read. |[v4/openim/admin_set_msg_read](https://intl.cloud.tencent.com/document/product/1047/38996)|
+| Queries the unread one-to-one message counts. | [v4/openim/get_c2c_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/41046)|
 
 ## Pushing to All Users
 
@@ -62,6 +65,11 @@
 | Deletes lists. | [v4/sns/group_delete](https://intl.cloud.tencent.com/document/product/1047/34926) |
 |Pulls lists.|[v4/sns/group_get](https://intl.cloud.tencent.com/document/product/1047/40123)|
 
+## Recent Contacts
+| Feature | API |
+| -------- | ------------------------------------------------------------ |
+| Pulls a conversation list. |[v4/recentcontact/get_list](https://intl.cloud.tencent.com/document/product/1047/43087)|
+| Deletes a conversation. |[v4/recentcontact/delete](https://intl.cloud.tencent.com/document/product/1047/43088)|
 
 ## Group Management
 
