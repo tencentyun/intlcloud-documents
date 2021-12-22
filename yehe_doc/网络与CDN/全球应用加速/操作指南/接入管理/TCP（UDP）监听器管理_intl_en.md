@@ -1,3 +1,5 @@
+
+[](id:add)
 ## Creating TCP/UDP Listener
 
 1. Log in to the [GAAP console](https://console.cloud.tencent.com/gaap), enter the **Access Management** page, and click the **ID/Connection Name** of the specified connection.
@@ -22,20 +24,21 @@
       					</div>
              <p>Listeners with domain name-type origin servers only support **RR** and **Least Connections** as the scheduling policy and do not support secondary origin servers.</p>
       				</blockquote>
-3. If a TCP listener is used, you can cofigure health check policies to automatically detect and remove exceptional origin servers. If the secondary origin server is enabled, you will be unable to disable the health check.
+   3. If a TCP listener is used, you can cofigure health check policies to automatically detect and remove exceptional origin servers. If the secondary origin server is enabled, you will be unable to disable the health check.
    ![](https://qcloudimg.tencent-cloud.cn/raw/b317846881f8cc41983077c44df92ff0.png)
    
       - Response Timeout: origin server response timeout period.
       - Health Check Interval: the interval between two consecutive health checks.
       - Unhealthy Threshold: it indicates the number of consecutive failed checks performed by the monitor before the origin server is considered unhealthy. If an origin server is considered unhealthy during a health check, no more data packets will be forwarded to it until it returns to normal status. 
       - Healthy Threshold: it indicates the number of consecutive successful checks performed by the monitor before the origin server is considered healthy. If an origin server is considered healthy during a health check, data packets will be forwarded to it again.
-4. Choose whether to enable session persistence.
+   4. Choose whether to enable session persistence.
    ![](https://qcloudimg.tencent-cloud.cn/raw/e2ee5834fc04cb1ef2d5ebda205a4193.png)
    
       - Session Persistence: user requests from the same IP will access the same origin server.
       - Hold Time: session persistence duration. When the listener has no requests for a period longer than the hold time, session persistence will be automatically disconnected.
 3. Click **Complete**.
 
+[](id:set)
 ## Configuring TCP/UDP Listener
 
 Click the **TCP/UDP Listener Management** tab and click **Settings** in the **Operation** column of a listener to rename it or modify its scheduling policy and health check parameters.
@@ -57,6 +60,7 @@ Click the **TCP/UDP Listener Management** tab and click **Settings** in the **Op
 ![](https://qcloudimg.tencent-cloud.cn/raw/04e81f74564fc1604ef7f154afb1b383.png)
 4. Click **Complete**.
 
+[](id:del)
 ## Deleting TCP/UDP Listener
 
 Open the **TCP/UDP Listener Management** tab and click **Delete** in the **Operation** column of the specified listener to be deleted. If the listener is bound to an origin server, you need to select **Allow force deletion of listeners with bound origin servers** first. After deletion, the acceleration service for the listener's port will stop.
