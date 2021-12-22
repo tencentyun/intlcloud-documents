@@ -17,6 +17,6 @@ Generally, a cloud service platform contains hundreds of millions to trillions o
 As the service platform sustains access requests from customers, extremely high service quality and performance are required. Traditional databases cannot support such access and use. TDSQL for MySQL boasts ultra-high performance, scalability, and strong sync capabilities, effectively ensuring the service quality and data consistency on the platform.
   
 ## Cost-effective Commercial Database Solution
-In order to support massive data storage and high-concurrence database access, government agencies, large enterprises, and banks are extremely dependent on minicomputers and high-end storage. Internet companies can achieve the same or even higher capabilities of commercial databases with low-cost x86 servers and open-source software.
+In order to support massive data storage and high-concurrence database access, large enterprises, and banks are extremely dependent on minicomputers and high-end storage. Internet companies can achieve the same or even higher capabilities of commercial databases with low-cost x86 servers and open-source software.
 
 TDSQL for MySQL is suitable for various scenarios such as national or provincial business system aggregation, large ecommerce and channel platforms, internet banking services, and trading systems.
