@@ -4,7 +4,7 @@
 ### Use cases
 The CLB parameters and features that cannot be defined by the semantics of `Ingress YAML` can be configured through `TkeServiceConfig`.
 
-### Configuration description
+### Configuration instructions
 `TkeServiceConfig` helps you quickly configure CLB. You can specify a target configuration for application to an Ingress through the Ingress annotation `**ingress.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**`.
 >! The `TkeServiceConfig` resource needs to be in the same namespace as the Ingress.
 
@@ -19,6 +19,8 @@ There can be multiple domain names under each layer-7 listener and multiple forw
  - `spec.loadBalancer.l7Listeners.port`: listening port
  - `spec.loadBalancer.l7Listeners.domains[].domain`: domain name
  - `spec.loadBalancer.l7Listeners.domains[].rules[].url`: forwarding path
+ - `spec.loadBalancer.l7listeners.protocol.domain.rules.url.forwardType`: backend protocol
+    - A backend protocol is the protocol between a CLB instance and the real server. If you select HTTP as the backend protocol, you need to deploy HTTP service for the real server. If you select HTTPS as the backend protocol, you need to deploy HTTPS service for the real server. Encryption and decryption of HTTPS service will consume more resources. For more information, see [Configuring a HTTPS Listener for a CLB Instance](https://intl.cloud.tencent.com/document/product/214/32516).
 
 >?When your domain name is configured as the default value, i.e., public or private VIP, you can configure by entering a null value in the `domain` field.
 
@@ -39,7 +41,7 @@ There can be multiple domain names under each layer-7 listener and multiple forw
   - If the Ingress listener cannot find the corresponding configuration, the listener will not be modified.
   - If the Ingress listener finds the corresponding configuration, but the configuration doesn't contain declared attributes, the listener will not be modified.
 
-## Samples
+## Example
 
 ### Sample deployment: jetty-deployment.yaml
 ```yaml
@@ -108,7 +110,7 @@ spec:
     app: jetty
   type: NodePort
 ```
-This sample contains the following configuration:
+This example contains the following configuration:
 Service `NodePort` type, with two TCP services declared, one on port 80 and the other on port 443.
 
 ### Sample Ingress: jetty-ingress.yaml
@@ -144,7 +146,7 @@ spec:
   tls:
   - secretName: jetty-cert-secret
 ```
-This sample contains the following configuration:
+This example contains the following configuration:
 - Two different protocols are used together. The default domain name (public IP) is used to expose an HTTP service, and the `sample.tencent.com` domain name is used to expose an HTTPS service. <!-- For more information, please see [Using HTTP and HTTPS protocols together with Ingress](). -->
 - The forwarding path of the HTTP service is `/health`, and that of the HTTPS service is `/`.
 - The `jetty-ingress-config` CLB configuration is used.
@@ -165,6 +167,7 @@ spec:
       - domain: ""     # When `domain` is null, the VIP is used as the domain name
         rules:
         - url: "/health"
+          forwardType: HTTP # Specifies HTTP as the backend protocol
           healthCheck:
             enable: false
     - protocol: HTTPS
@@ -173,6 +176,7 @@ spec:
       - domain: "sample.tencent.com"
         rules:
         - url: "/"
+          forwardType: HTTPS # Specifies HTTPS as the backend protocol
           session:
             enable: true
             sessionExpireTime: 3600
@@ -186,7 +190,7 @@ spec:
             httpCheckMethod: HEAD
           scheduler: WRR
 ```
-This sample contains the following configuration:
+This example contains the following configuration:
 The name of the `TkeServiceConfig` is `jetty-ingress-config`, and in the layer-7 listener configuration, two configuration segments are declared:
 1. The HTTP listener of port 80 will be configured, including the configuration of domain name, which is the default domain name and corresponds to the VIP of CLB.
  The health check feature under the `/health` path is disabled.

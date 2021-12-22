@@ -16,15 +16,15 @@ For the parameters and method descriptions of all the APIs in the SDK, please se
 
 This API is used by the COS Select feature to extract objects in the following formats:
 
-* CSV: an object is stored in CSV format with its data records separated with a specific delimiter.
-* JSON: an object is stored in JSON format, which can be either a JSON file or a JSON list.
+- CSV: an object is stored in CSV format with its data records separated with a specific delimiter.
+- JSON: an object is stored in JSON format, which can be either a JSON file or a JSON list.
 
-Note that to use COS Select, you must have the permission to `cos:GetObject`.
 
-> !
-> CSV- or JSON-formatted objects need to be encoded in UTF-8.
-> COS Select can extract CSV- or JSON-formatted objects compressed by gzip or bzip2.
-> COS Select can extract CSV- or JSON-formatted objects encrypted with SSE-COS.
+>!
+> - To use COS Select, you must have the permission to `cos:GetObject`.
+> - CSV- or JSON-formatted objects need to be encoded in UTF-8.
+> - COS Select can extract CSV- or JSON-formatted objects compressed by gzip or bzip2.
+> - COS Select can extract CSV- or JSON-formatted objects encrypted with SSE-COS.
 
 #### Sample code
 
@@ -69,5 +69,5 @@ cosXmlService.selectObjectContentAsync(selectObjectContentRequest,
 });
 ```
 
->?For the complete sample, please go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/SelectObject.java).
+>? For the complete sample, please go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/SelectObject.java).
 
