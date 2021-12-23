@@ -86,7 +86,7 @@ TDMQ RabbitMQ版支持资源级授权，您可以指定子账号拥有特定资�
 2. 在左侧菜单栏中，单击**策略**。
 3. 在策略列表中，单击**新建自定义策略**。
 4. 在选择创建策略方式的弹窗中，选择**按策略生成器创建**，填写策略信息。
-   ![](https://main.qcloudimg.com/raw/a7aeab929146566a758eb85374758db8.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/76353da61a92b7ea464a95aba46cec38.png)
 
 
    | 参数              | 说明                                                         |
