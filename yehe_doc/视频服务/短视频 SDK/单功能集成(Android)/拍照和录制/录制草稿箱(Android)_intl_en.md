@@ -11,7 +11,8 @@ You can implement the drafts logic as follows:
 3. End shooting.
 
 
-```
+<dx-codeblock>
+::: android 
 // Get the first video shooting object
 mTXCameraRecord = TXUGCRecord.getInstance(this.getApplicationContext());
 
@@ -35,7 +36,8 @@ mTXCameraRecord2.startRecord();
 
 // End shooting, and the SDK will compose the cached video segment with the currently shot one
 mTXCameraRecord2.stopRecord();
+:::
+</dx-codeblock>
 
-```
 
->?For the specific implementation method, please see the usage of the `RecordDraftMgr` class in the shooting module in the [UGSV application demo source code](https://intl.cloud.tencent.com/document/product/1069/37914).
+>?For the specific implementation method, please see the usage of the `RecordDraftManager` class in the shooting module in the [UGSV application demo source code](https://intl.cloud.tencent.com/document/product/1069/37914).
