@@ -14,7 +14,7 @@
 ## 操作步骤
 
 1. 在集群管理列表页面，选择好地域后，勾选需要编辑标签的集群，单击页面上方的**编辑资源标签**。
-![](https://qcloudimg.tencent-cloud.cn/raw/bc51f002c31e76fa479de0cf8c3a4fdc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/241af65b06ca892b093613d61e0681df.png)
 >?最多支持对20个资源进行标签的批量编辑操作。
 2. 在弹出的 “编辑标签” 窗口中，根据实际需求进行添加、修改或者删除标签。
 
