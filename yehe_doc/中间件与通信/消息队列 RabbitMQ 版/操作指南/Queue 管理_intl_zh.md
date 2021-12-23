@@ -17,7 +17,7 @@
 1. 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，选择地域后，单击目标集群的 ID 进入集群基本信息页面。
 2. 单击顶部 **Queue** 页签，选择Vhost后，单击**新建**进入创建 Queue 页面。
 3. 填写 Queue 相关信息。
-   ![](https://main.qcloudimg.com/raw/dfabbd7014042b368168621ff6ebd10e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/79a277e65f947a9b2e8c29702bd66a15.png)
    - Queue 名称：填写 Queue 名称（创建后不可修改），3-64个字符，只能包含字母、数字、“-”及“_”
    - 自动清除：开启后，最后一个消费者取消订阅后立即删除该 Queue。
    - Queue 说明：填写 Queue 说明，最多128个字符。
@@ -32,7 +32,7 @@
 - 基本信息（消息堆积、自动删除、创建时间和在线消费者）
 - 消费者列表：展示订阅该 Queue 的消费者信息
 
-![](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/21c4b69fddfe139c03f86f00c5daf38a.png)
 
 ### 查看绑定关系
 
