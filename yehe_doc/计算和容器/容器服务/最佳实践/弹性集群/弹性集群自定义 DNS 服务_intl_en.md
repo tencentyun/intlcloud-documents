@@ -43,8 +43,8 @@ data:
 
 Each configuration item adopts the configuration of native Kubernetes. For details, see [CoreDNS](https://kubernetes.io/zh/docs/tasks/administer-cluster/dns-custom-nameservers/#coredns). Please note:
 
-- `forward`：83.60.83.19, 183.60.82.98 is the default DNS address of Tencent Cloud.
+- `forward`：183.60.83.19, 183.60.82.98 is the default DNS address of Tencent Cloud.
 
 
 ### Customize configuration of Corefile
-You can modify ConfigMap of CoreDNS (i.e. Corefile) to modify relevant configuration of service discovery. The use method is consistent with that of the native kubernates. For details, see [Customizing DNS Service](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/).
+You can modify ConfigMap of CoreDNS (i.e. Corefile) to modify relevant configuration of service discovery. The use method is consistent with that of the native kubernetes. For details, see [Customizing DNS Service](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/).
