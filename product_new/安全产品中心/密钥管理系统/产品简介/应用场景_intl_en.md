@@ -1,7 +1,7 @@
 KMS can be used by Tencent Cloud and non-Tencent Cloud resources for sensitive data encryption to meet security and compliance requirements and help resolve data encryption challenges in various industries.
 
-## Protection of Sensitive Financial/Governmental Data
-Challenge: Communications and data of financial institutions and government agencies are highly confidential. The security and compliance of encryption must be well executed.
+## Protection of sensitive industry data
+Challenge: Communications and data of any industry such as financial institutions are highly confidential. The security and compliance of encryption must be well executed.
 
 Solution: KMS provides encryption, key protection, and permission management services through envelope encryption for important data such as various agreements, documents, and materials to meet security and compliance requirements.
 
