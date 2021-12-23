@@ -5,7 +5,7 @@ Integrating the MLVB SDK and room management feature of IM, CSS provides instant
 ![img](https://camo.githubusercontent.com/e2fe37b249c38dfe72690cbbd4257e50fe998935256f3a1dc05b6e0021198ed2/68747470733a2f2f6d61696e2e71636c6f7564696d672e636f6d2f7261772f61393733646639653465346538366631626630313663656361643463303762372e6a7067)
 
 ## Video Surveillance
-CSS supports a large amount of upstream video traffic and provides live recording, transcoding, time shifting among other features, which well meet requirements in scenarios such as transportation surveillance, campus security system, and shop surveillance.
+CSS supports a large amount of upstream video traffic and provides live recording, transcoding, time shifting among other features, which well meet requirements in scenarios such as transportation, campus, and shop surveillance.
 ![img](https://main.qcloudimg.com/raw/4601f06e371ce9195a3bd73a24836852.png)
 
 
