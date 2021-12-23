@@ -1,12 +1,12 @@
 
-__功能__
+**功能**
 
 腾讯云直播的播放器回调通知。
 
 
-__介绍__
+**介绍**
 
-可以接收 [V2TXLivePlayer](https://intl.cloud.tencent.com/zh/document/product/454/56044) 播放器的一些回调通知，包括播放器状态、播放音量回调、音视频首帧回调、统计数据、警告和错误信息等。
+可以接收 [V2TXLivePlayer](https://intl.cloud.tencent.com/document/product/1071/41273) 播放器的一些回调通知，包括播放器状态、播放音量回调、音视频首帧回调、统计数据、警告和错误信息等。
 
 
 ## SDK 基础回调
@@ -20,7 +20,7 @@ __介绍__
        extraInfo:(NSDictionary *)extraInfo
 ```
 
-__参数__
+**参数**
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
@@ -41,7 +41,7 @@ __参数__
          extraInfo:(NSDictionary *)extraInfo
 ```
 
-__参数__
+**参数**
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
@@ -50,39 +50,77 @@ __参数__
 | msg | NSString * |  警告码信息。 |
 | extraInfo | NSDictionary * |  扩展信息。 |
 
-***
 
-## 视频相关回调
-### onVideoPlayStatusUpdate
+### onConnected
 
-直播播放器视频状态变化通知。
+已经成功连接到服务器通知。
 ```
-- (void)onVideoPlayStatusUpdate:(id<V2TXLivePlayer>)player
-                          status:(V2TXLivePlayStatus)status
-                          reason:(V2TXLiveStatusChangeReason)reason
-                       extraInfo:(NSDictionary *)extraInfo
+- (void)onConnected:(id<V2TXLivePlayer>)player 
+          extraInfo:(NSDictionary *)extraInfo
 ```
 
-__参数__
+**参数**
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  回调该通知的播放器对象。 |
-| status | [V2TXLivePlayStatus](#V2TXLivePlayStatus) | 状态码。 |
-| reason | V2TXLiveStatusChangeReason |  状态对应的原因。 |
 | extraInfo | NSDictionary * |  扩展信息。 |
 
-[](id:V2TXLivePlayStatus)
 
-#### V2TXLivePlayStatus 枚举类
 
-| 取值                      | 含义                                        |
-| ------------------------- | ------------------------------------------- |
-| V2TXLivePlayStatusStopped | 播放停止。                                  |
-| V2TXLivePlayStatusPlaying | 正在播放。                                  |
-| V2TXLivePlayStatusLoading | 正在缓冲（首次加载不会抛出 Loading 事件）。 |
+## 视频相关回调
+### onVideoPlaying
 
-***
+视频播放事件通知。
+```
+- (void)onVideoPlaying:(id<V2TXLivePlayer>)player
+             firstPlay:(BOOL)firstPlay 
+             extraInfo:(NSDictionary *)extraInfo
+```
+
+**参数**
+
+| 参数 | 类型 | 含义 |
+|-----|-----|-----|
+| player | V2TXLivePlayer |  回调该通知的播放器对象。 |
+| firstPlay | BOOL |  第一次播放标志。 |
+| extraInfo | NSDictionary * |  扩展信息。 |
+
+
+
+### onVideoLoading
+
+视频加载事件通知。
+```
+- (void)onVideoLoading:(id<V2TXLivePlayer>)player
+             extraInfo:(NSDictionary *)extraInfo;
+```
+
+**参数**
+
+| 参数 | 类型 | 含义 |
+|-----|-----|-----|
+| player | V2TXLivePlayer |  回调该通知的播放器对象。 |
+| extraInfo | NSDictionary * |  扩展信息。 |
+
+
+### onVideoResolutionChanged
+
+直播播放器分辨率变化通知。
+```
+- (void)onVideoResolutionChanged:(id<V2TXLivePlayer>)player 
+                           width:(NSInteger)width 
+                          height:(NSInteger)height;
+```
+
+**参数**
+
+| 参数 | 类型 | 含义 |
+|-----|-----|-----|
+| player | V2TXLivePlayer |  回调该通知的播放器对象。 |
+| width | NSInteger | 视频宽 |
+| height | NSInteger | 视频高 |
+
 
 ### onSnapshotComplete
 
@@ -91,55 +129,69 @@ __参数__
 - (void)onSnapshotComplete:(id<V2TXLivePlayer>)player image:(TXImage *)image
 ```
 
-__参数__
+**参数**
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  回调该通知的播放器对象。 |
 | image | TXImage * | 已截取的视频画面。 |
 
-***
 
 ### onRenderVideoFrame
 
 自定义视频渲染回调。
 > ? 调用 `[V2TXLivePlayer enableCustomRendering:pixelFormat:bufferType:]` 开启自定义渲染之后，会收到这个回调通知。
+
 ```
 - (void)onRenderVideoFrame:(id<V2TXLivePlayer>)player
-                      frame:(V2TXLiveVideoFrame *)videoFrame
+                     frame:(V2TXLiveVideoFrame *)videoFrame
 ```
 
-__参数__
+**参数**
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  回调该通知的播放器对象。 |
 | videoFrame | V2TXLiveVideoFrame * | 视频帧数据。 |
 
-***
 
 
 ## 音频相关回调
-### onAudioPlayStatusUpdate
 
-直播播放器音频状态变化通知。
+### onAudioPlaying
+
+音频播放事件通知。
 ```
-- (void)onAudioPlayStatusUpdate:(id<V2TXLivePlayer>)player
-                          status:(V2TXLivePlayStatus)status
-                          reason:(V2TXLiveStatusChangeReason)reason
-                       extraInfo:(NSDictionary *)extraInfo
+- (void)onAudioPlaying:(id<V2TXLivePlayer>)player 
+             firstPlay:(BOOL)firstPlay 
+             extraInfo:(NSDictionary *)extraInfo;
 ```
 
-__参数__
+**参数**
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  回调该通知的播放器对象。 |
-| status | [V2TXLivePlayStatus](#V2TXLivePlayStatus) | 状态码。 |
-| reason | V2TXLiveStatusChangeReason |  状态对应的原因。 |
+| firstPlay | BOOL |  第一次播放标志。 |
 | extraInfo | NSDictionary * |  扩展信息。 |
 
-***
+
+### onAudioLoading
+
+音频加载事件通知。
+```
+- (void)onAudioLoading:(id<V2TXLivePlayer>)player 
+             extraInfo:(NSDictionary *)extraInfo;
+```
+
+**参数**
+
+| 参数 | 类型 | 含义 |
+|-----|-----|-----|
+| player | V2TXLivePlayer |  回调该通知的播放器对象。 |
+| extraInfo | NSDictionary * |  扩展信息。 |
+
+
 
 ### onPlayoutVolumeUpdate
 
@@ -148,14 +200,13 @@ __参数__
 - (void)onPlayoutVolumeUpdate:(id<V2TXLivePlayer>)player volume:(NSInteger)volume
 ```
 
-__参数__
+**参数**
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  回调该通知的播放器对象。 |
 | volume | NSInteger | 音量大小，取值范围：0 - 100。 |
 
-***
 
 ## 统计回调
 
@@ -164,10 +215,10 @@ __参数__
 直播播放器统计数据回调。
 ```
 - (void)onStatisticsUpdate:(id<V2TXLivePlayer>)player
-                 statistics:(V2TXLivePlayerStatistics *)statistics
+                statistics:(V2TXLivePlayerStatistics *)statistics
 ```
 
-__参数__
+**参数**
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
