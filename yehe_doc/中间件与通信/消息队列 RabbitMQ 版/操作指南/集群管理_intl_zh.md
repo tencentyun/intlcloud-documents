@@ -4,7 +4,7 @@
 
 **TDMQ RabbitMQ 版资源层次关系**
 
-![](https://main.qcloudimg.com/raw/ab2a9f171e67d6b7f090554f34b9ee09.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/2ce6bd44187b5e06d67b4d74264bb832.svg)
 
 ## 操作步骤
 
@@ -13,7 +13,7 @@
 1. 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，进入**集群管理**页面。
 2. 在**集群管理**页面，选择地域后，单击**新建集群**进入新建集群对话框。
 3. 在新建集群对话框，设置集群的相关属性。
-   ![](https://main.qcloudimg.com/raw/f57c3cb1baf598ca8a7de47def4d0981.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/733658dcc12580739963b8bccb0aafd1.png)
    - 集群名称：设置环境的名称，3-64个字符，只能包含字母、数字、“-”及“_”
    - 集群说明：环境设置的备注说明
 4. 单击**确定**完成所在地域环境的创建。
@@ -48,13 +48,13 @@
 | Queue 数量上限              | 单集群下 Queue 可创建的最大数量                              |
 | 消息保留时间                | 消息保留可配置的最长时间，在 Vhost 级别可以配置比这个更短的时间 |
 
-![](https://main.qcloudimg.com/raw/55873d8a2749a2649d943d209d73a1fb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ff55127e7f34efa5591a2e10ccc40f85.png)
 
 ### 获取接入地址
 
 在**集群管理**列表页，单击操作列的**接入地址**，可获取集群的接入地址。
 
-![](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/75e6f78d3b841c02432bec9d9e8cb7c5.png)
 
 ### 编辑集群
 
