@@ -1,7 +1,7 @@
 VOD provides an SDK for uploading videos on iOS client. For more information on the upload process, please see [Guide - Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921).
 
 ## Downloading Source Code
-1. Click [here](https://ugcupload-1252463788.file.myqcloud.com/TXUGCUploadDemo_iOS.zip) to download the iOS Upload Demo and source code.
+1. Click [here](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_iOS.zip) to download the iOS Upload Demo and source code.
 2. You can see the `TXUGCUploadDemo` directory after decompressing the downloaded zip package. The upload source code is in the `TXUGCUploadDemo/upload` directory.
 
 ## Integrating Upload Library and Source Code

@@ -1,7 +1,7 @@
 VODは、iOSプラットフォームでビデオをアップロードするシナリオ向けに、iOSアップロードSDKを提供しています。アップロードのフローについては、[クライアントからのアップロードガイド](https://intl.cloud.tencent.com/document/product/266/33921) をご参照ください。
 
 ## ソースコードのダウンロード
-1. [クリックしてダウンロード](https://ugcupload-1252463788.file.myqcloud.com/TXUGCUploadDemo_iOS.zip) して、iOSアップロードDemoとソースコードをダウンロードします。
+1. [クリックしてダウンロード](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_iOS.zip) して、iOSアップロードDemoとソースコードをダウンロードします。
 2. ダウンロードした圧縮パッケージを解凍すると、TXUGCUploadDemoディレクトリが表示されます。アップロードソースコードは、`TXUGCUploadDemo/upload`ディレクトリにあります。
 
 ## アップロードライブラリとソースコードの統合
