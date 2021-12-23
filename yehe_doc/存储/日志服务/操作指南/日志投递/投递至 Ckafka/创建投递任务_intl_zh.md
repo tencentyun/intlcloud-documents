@@ -18,6 +18,7 @@
 <img src="https://main.qcloudimg.com/raw/43a9878b5bf8f0500c1ba19b668b7766.png" width="700px">
 6. 单击**保存**，启动 Ckafka 消费，Ckafka 消费状态显示为“已开启”则表示开启成功。
 <img src="https://main.qcloudimg.com/raw/f964f0a141123a7926b8fd1a1eb1b5ba.png" width="700px">
+
 > ! 
 > - 投递的 Ckafka Topic 的 CleanUp.policy 属性需设为 delete，否则会投递失败。
 > - 若需要在投递至 Ckafka 前对日志进行清洗加工过滤，可参考使用 [通过云函数投递至 Ckafka](https://intl.cloud.tencent.com/document/product/614/38885) 操作。
