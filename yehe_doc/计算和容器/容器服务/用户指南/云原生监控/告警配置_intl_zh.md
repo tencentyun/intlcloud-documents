@@ -5,20 +5,20 @@
 ## 前提条件
 
 在配置告警前，您需要完成以下准备工作：
-- 已成功 [创建 Prometheus 监控实例](https://intl.cloud.tencent.com/document/product/457/38824#.E5.88.9B.E5.BB.BA.E7.9B.91.E6.8E.A7.E5.AE.9E.E4.BE.8B)。
-- 已将需要监控的集群关联到相应实例中，详情请参见 [关联集群](https://intl.cloud.tencent.com/document/product/457/38825#.E5.85.B3.E8.81.94.E9.9B.86.E7.BE.A4)。
+- 已成功 [创建 Prometheus 监控实例](https://intl.cloud.tencent.com/document/product/457/38824)。
+- 已将需要监控的集群关联到相应实例中，详情请参见 [关联集群](https://intl.cloud.tencent.com/document/product/457/38825)。
 - 已将需要采集的信息添加到集群 [数据采集配置](https://intl.cloud.tencent.com/document/product/457/38826)。
 
 ## 操作步骤
 
 ### 配置告警规则
 
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【云原生监控】。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**云原生监控**。
 2. 在监控实例列表页，选择需要配置告警规则的实例名称，进入该实例详情页。
-3. 在“告警配置”页面，单击【新建告警策略】。如下图所示：
-![](https://main.qcloudimg.com/raw/678f3fb363151ed11f3843a181aaf04a.png)
+3. 在“告警配置”页面，单击**新建告警策略**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/55759e722ebf326889966a12f70a3e45.png)
 4. 在“新建告警策略”页面，添加策略详细信息。如下图所示：
-![](https://main.qcloudimg.com/raw/e7bd037601d12d618613e50c88f94c50.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5f053d31a0b7b60cd1154cac4297ba77.png)
  - **规则名称**：告警规则的名称，不超过40个字符。
  - **PromQL**：告警规则语句。
  - **持续时间**：满足上述语句所描述的条件的时间，达到该持续时间则会触发告警。
@@ -28,13 +28,13 @@
  - **生效时间**：一天之中可以发送告警通知的时间段。
  - **接收组**：接收告警信息的联系人组。
  - **告警渠道**：告警后发送告警内容的渠道。
-6. 单击【完成】，即可完成新建告警策略。
+6. 单击**完成**，即可完成新建告警策略。
 >! 新建告警策略后，默认告警策略生效。
 
 ### 暂停告警
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【云原生监控】。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**云原生监控**。
 2. 在监控实例列表页，选择需要暂停告警的实例名称，进入该实例详情页。
-3. 在“告警配置”页面，单击实例右侧的【更多】>【暂停告警】。如下图所示：
-![](https://main.qcloudimg.com/raw/e7666dcaf99cc1a15bb9c3894747903a.png)
-4. 在弹出的“关闭告警设置”窗口单击【确定】，即可暂停告警策略。
+3. 在“告警配置”页面，单击实例右侧的**更多** > **暂停告警**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/dd258e9e0694384fd12d01dda89b1fb2.png)
+4. 在弹出的“关闭告警设置”窗口单击**确定**，即可暂停告警策略。
 

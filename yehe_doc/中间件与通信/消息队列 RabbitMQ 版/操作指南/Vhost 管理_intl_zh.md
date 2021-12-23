@@ -19,7 +19,7 @@
 1. 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，选择地域后，单击目标集群的 ID 进入集群基本信息页面。
 2. 选择顶部 **Vhost** 页签，单击**新建**进入创建 Vhost 页面。
 3. 在新建 Vhost 对话框，设置 Vhost 的相关属性配置。
-   ![](https://main.qcloudimg.com/raw/c87ba46c5d7e458f392c41579964be9a.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/986a1baec62d27ec17801c3a3c7e78ab.png)
    - Vhost 名称：设置 Vhost 的名称（创建后不可修改），3-64个字符，只能包含字母、数字、“-”及“_”
    - 消息TTL：设置未消费消息的保留时间，过期未 ACK（确认消息） 则自动删除，范围：60秒-15天
    - 说明：Vhost 的备注说明
@@ -33,11 +33,7 @@
 
 1. 在 Vhost 列表页面，单击目标 Vhost 操作栏的**配置权限**。
 2. 在**配置权限**页面，单击**新建**，为刚刚创建的角色添加生产消费权限。
-<img src="https://main.qcloudimg.com/raw/515644356c3ec5d005f61ea19fa6e807.png" width="536">
-
- 
-
-
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9598d4db65e6048968ce43393c0477fe.png" width="536">
 
 ### 修改 Vhost
 

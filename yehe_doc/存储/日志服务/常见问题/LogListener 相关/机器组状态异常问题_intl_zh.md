@@ -29,9 +29,9 @@ LogListener 快速诊断工具可以快速诊断 LogListener 是否启动、心�
 
 ####  LogListener 心跳异常
 
-  如果出现如下图所示 “[ERROR] check loglistener heareat fail” 字样，表示 LogListener 心跳异常。
+  如果出现 “[ERROR] check loglistener heareat fail” 字样，表示 LogListener 心跳异常。
 
-  ![img](https://main.qcloudimg.com/raw/e4fa9973d7e5d110f9cda17966eebd96.jpg)
+
 
 引起 LogListener 心跳异常的原因有很多，最常见的情况有：
 

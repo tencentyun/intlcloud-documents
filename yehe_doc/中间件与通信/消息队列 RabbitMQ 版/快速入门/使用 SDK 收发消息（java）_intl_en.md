@@ -127,17 +127,17 @@ This document describes how to download the demo, perform a simple test, and run
    | Parameter | Description |
    | ---------- | ------------------------------------------------------------ |
    | username | Role name, which can be copied on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. |
-   | password | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. ![](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+   | password | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. ![](https://qcloudimg.tencent-cloud.cn/raw/cd543d9ef835a557c280cf592ca49ab2.png) |
    | exchange | Exchange name, which can be obtained from the exchange list in the console. |
    | qu1 | Queue name, which can be obtained from the queue list in the console. |
-   | uri | Cluster access address, which can be obtained from **Get Access Address** in the **Operation** column on the **Cluster Management** page. ![](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
-   | vhostname | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
-   | routingKey | Message routing rule, which can be obtained in the **Binding Key** column in the binding list in the console. ![](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+   | uri | Cluster access address, which can be obtained from **Get Access Address** in the **Operation** column on the **Cluster Management** page. ![](https://qcloudimg.tencent-cloud.cn/raw/5bddcbb6361dad5825aee9015a9049a6.png) |
+   | vhostname | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![](https://qcloudimg.tencent-cloud.cn/raw/eb75eb3519cf399d95e7423d1c26c567.png) |
+   | routingKey | Message routing rule, which can be obtained in the **Binding Key** column in the binding list in the console. ![](https://qcloudimg.tencent-cloud.cn/raw/e3211fba735af2989578e066dd2e4b18.png) |
    
 3. Compile and run the AoPTest.java program. The result of successful execution is as follows.
 
    ![](https://main.qcloudimg.com/raw/c7f33820fecd715a977276bbcdfc2aba.png)
 
 4. On the **[Cluster Management](https://console.cloud.tencent.com/tdmq/rocket-cluster)**> **Queue** page in the console, you can view the status of connected consumers.
-   ![](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/4a629126c8cf4adad225289cf981a4a7.png)
 

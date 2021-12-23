@@ -17,7 +17,7 @@ You have created a vhost.
 1. Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), select the region, and click the ID of the target cluster to enter the cluster's basic information page.
 2. Click the **Queue** tab at the top, select a vhost, and click **Create** to enter the **Create Queue** page.
 3. Enter the queue information.
-   ![](https://main.qcloudimg.com/raw/dfabbd7014042b368168621ff6ebd10e.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/79a277e65f947a9b2e8c29702bd66a15.png)
    - Queue Name: enter the queue name, which cannot be modified after creation and can contain 3–64 letters, digits, hyphens, and underscores.
    - Auto-Clear: after this feature is enabled, the queue will be deleted immediately after its last consumer unsubscribes from it.
    - Queue Remarks: enter the queue remarks of up to 128 characters.
@@ -32,7 +32,7 @@ You can view:
 - Basic information (message retention, automatic deletion, creation time, and online consumers)
 - Consumer list: information of consumers subscribed to this queue
 
-![](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/21c4b69fddfe139c03f86f00c5daf38a.png)
 
 ### Viewing binding
 

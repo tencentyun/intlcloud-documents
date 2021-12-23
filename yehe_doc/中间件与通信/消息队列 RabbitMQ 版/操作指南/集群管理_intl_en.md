@@ -4,7 +4,7 @@ Cluster is a resource dimension in TDMQ for RabbitMQ, and vhosts, exchanges, and
 
 **TDMQ for RabbitMQ resource hierarchy**
 
-![](https://main.qcloudimg.com/raw/ab2a9f171e67d6b7f090554f34b9ee09.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/2ce6bd44187b5e06d67b4d74264bb832.svg)
 
 ## Directions
 
@@ -13,7 +13,7 @@ Cluster is a resource dimension in TDMQ for RabbitMQ, and vhosts, exchanges, and
 1. Log in to the [TDMQ for RabbitMQ console](https://console.cloud.tencent.com/tdmq) and enter the **Cluster Management** page.
 2. On the **Cluster Management** page, select the region and click **Create Cluster** to enter the **Create Cluster** window.
 3. In the **Create Cluster** window, set the cluster attributes:
-   ![](https://main.qcloudimg.com/raw/f57c3cb1baf598ca8a7de47def4d0981.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/733658dcc12580739963b8bccb0aafd1.png)
    - Cluster Name: enter the cluster name, which can contain 3–64 letters, digits, hyphens, and underscores.
    - Cluster Remarks: enter the cluster remarks.
 4. Click **OK**.
@@ -48,13 +48,13 @@ On the details page, you can query:
 | Maximum number of queues | Maximum number of queues that can be created in one cluster |
 | Message retention period | Maximum message retention period that can be configured. A shorter period can be configured at the vhost level |
 
-![](https://main.qcloudimg.com/raw/55873d8a2749a2649d943d209d73a1fb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ff55127e7f34efa5591a2e10ccc40f85.png)
 
 ### Getting access address
 
 On the **Cluster Management** list page, click **Access Address** in the **Operation** column to get the access address of the cluster.
 
-![](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/75e6f78d3b841c02432bec9d9e8cb7c5.png)
 
 ### Editing cluster
 

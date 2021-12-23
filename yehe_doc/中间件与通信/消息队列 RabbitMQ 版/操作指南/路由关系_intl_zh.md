@@ -14,7 +14,7 @@
 1. 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，选择地域后，单击目标集群的ID进入集群基本信息页面。
 2. 单击顶部**绑定关系**页签，选择 Vhost 后，单击**新建**进入创建路由关系页面。
 3. 在新增绑定关系页面，选择源 Exchange、绑定目标类型和绑定目标。
-   ![](https://main.qcloudimg.com/raw/27dca8450a4f059179488062738be0ed.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/7673803b1483f7fddc9ce60a4f378e9b.png)
 4. 单击**提交**，完成绑定关系创建。
 
 ### 解除绑定关系

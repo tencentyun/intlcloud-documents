@@ -13,9 +13,9 @@ This document describes how to create resources such as cluster, vhost, exchange
 1. Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), enter the **Cluster Management** page, and select the target region.
 2. Click **Create Cluster** and enter the cluster name and remarks.
 3. Click **Submit**.
-   ![](https://main.qcloudimg.com/raw/f57c3cb1baf598ca8a7de47def4d0981.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/6f32ba4d48604459759c3e234cafb7e0.png)
 4. On the **Cluster** list page, click **Access Address** in the **Operation** column of the cluster you just created to get the connection information of the server.
-![](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/27d49fe8aef1e4f9401ff17e35d6a56f.png)
 
 ### Step 2. Create a vhost
 
@@ -25,7 +25,7 @@ This document describes how to create resources such as cluster, vhost, exchange
    - Message TTL: set the retention time of unconsumed messages. Messages will be automatically deleted if not acknowledged after expiration. Value range: 60 seconds–15 days.
    - Remarks: enter the vhost remarks.
 3. Click **Submit**.
-   ![](https://main.qcloudimg.com/raw/c87ba46c5d7e458f392c41579964be9a.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/e6dd389c40c696a4e81f571d38b41655.png)
 
 ### Step 3. Create a role and configure permissions
 
@@ -33,7 +33,7 @@ This document describes how to create resources such as cluster, vhost, exchange
 2. On the **Cluster Management** page, click the ID of the cluster you just created to enter the cluster details page.
 3. Select the **Vhost** tab at the top and click **Configure Permissions** in the **Operation** column of the vhost you just created.
 4. On the **Configure Permissions** page, click **Create** to add production and consumption permissions to the role you just created.
-<img src="https://main.qcloudimg.com/raw/515644356c3ec5d005f61ea19fa6e807.png" width="535">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/27f5ba2394ed0306e82310fb344321a7.png" width="535">
 
 
 ### Step 4. Create an exchange
@@ -44,14 +44,14 @@ This document describes how to create resources such as cluster, vhost, exchange
    - Fanout: a fanout exchange will route messages to all queues bound to it.
    - Topic: a topic exchange supports multi-condition match and fuzzy match; that is, it will route messages to the queues bound to it by using routing key pattern match and string comparison.
 3. Click **Submit**.
-   ![](https://main.qcloudimg.com/raw/a05cf17275616133497dd8334e39fd05.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/f1c98dd23bceef637c707c846f359d14.png)
 
 ### Step 5. Create a queue
 
 1. On the **Exchange** list page, select the **Queue** tab at the top to enter the **Queue** list page.
 2. Select the Vhost you just created, click **Create**, and enter the queue name and remarks.
 3. Click **Submit**.
-   ![](https://main.qcloudimg.com/raw/dfabbd7014042b368168621ff6ebd10e.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/fb820128e02ce7f7a79fb0ab2285fee8.png)
 
 ### Step 6. Create a binding
 
@@ -59,4 +59,4 @@ This document describes how to create resources such as cluster, vhost, exchange
 2. Select the Vhost you just created and click **Create**.
    Select the exchange you just created as the source exchange, **Queue** as the binding type, and the queue you just created as the binding target.
 3. Click **Submit**.
-   ![](https://main.qcloudimg.com/raw/27dca8450a4f059179488062738be0ed.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/e5614e3c31c35f170e3f59f36c3c6a86.png)

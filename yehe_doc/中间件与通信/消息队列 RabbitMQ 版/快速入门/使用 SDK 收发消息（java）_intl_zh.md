@@ -127,17 +127,17 @@
    | 参数       | 说明                                                         |
    | ---------- | ------------------------------------------------------------ |
    | username   | 角色名称，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制。 |
-   | password   | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+   | password   | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![](https://qcloudimg.tencent-cloud.cn/raw/cd543d9ef835a557c280cf592ca49ab2.png) |
    | exchange   | Exchange 名称，在控制台 Exchange 列表获取。                  |
    | qu1        | Queue名称，在控制台 Queue 列表获取。                         |
-   | uri        | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
-   | vhostname  | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
-   | routingKey | 消息的路由规则，在控制台 绑定关系列表的**绑定 Key**列获取。![](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+   | uri        | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![](https://qcloudimg.tencent-cloud.cn/raw/5bddcbb6361dad5825aee9015a9049a6.png) |
+   | vhostname  | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![](https://qcloudimg.tencent-cloud.cn/raw/eb75eb3519cf399d95e7423d1c26c567.png) |
+   | routingKey | 消息的路由规则，在控制台 绑定关系列表的**绑定 Key**列获取。![](https://qcloudimg.tencent-cloud.cn/raw/e3211fba735af2989578e066dd2e4b18.png) |
    
 3. 编译并运行 AoPTest.java 程序，运行成功结果如下。
 
    ![](https://main.qcloudimg.com/raw/c7f33820fecd715a977276bbcdfc2aba.png)
 
 4. 在控制台上 **[集群管理](https://console.cloud.tencent.com/tdmq/rocket-cluster)** > **Queue** 页面可查看接入的消费者情况。
-   ![](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/4a629126c8cf4adad225289cf981a4a7.png)
 

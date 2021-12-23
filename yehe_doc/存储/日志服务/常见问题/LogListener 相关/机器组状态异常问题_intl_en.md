@@ -1,10 +1,10 @@
 ## Error Description
 
-When the server group is configured, LogListener may have an exception, such as disconnection from the CLS server and log upload failure. In this case, the server group is exceptional, as shown below:
+When the machine group is configured, LogListener may have an exception, such as disconnection from the CLS server and log upload failure. In this case, the machine group is exceptional, as shown below:
 
 ![](https://main.qcloudimg.com/raw/cffaee990badc81785d85714169d848b.png)
 
-## Troubleshooting
+## Troubleshooting Directions
 
 >?These troubleshooting steps only apply to LogListener 2.2.4 or later. If you’re using an earlier version, see [Troubleshooting Earlier LogListener Versions](https://intl.cloud.tencent.com/document/product/614/35675).
 
@@ -29,11 +29,11 @@ The following output indicates that LogListener is running properly.
 
 #### LogListener heartbeat exception
 
-  If the result returns “[ERROR] check loglistener heareat fail” as shown in the following figure, it indicates that LogListener has a heartbeat exception.
+  If the result returns “[ERROR] check loglistener heartbeat fail”, it indicates that LogListener has a heartbeat exception.
 
-  ![img](https://main.qcloudimg.com/raw/e4fa9973d7e5d110f9cda17966eebd96.jpg)
 
-Many causes can lead to LogListener heartbeat exception. Possible causes include:
+
+Many causes can lead to a LogListener heartbeat exception. Possible causes include:
 
 - Network error
 
@@ -54,9 +54,9 @@ Many causes can lead to LogListener heartbeat exception. Possible causes include
   ![](https://main.qcloudimg.com/raw/6e0d20896aa1e8293ae74084ed5752d2.jpg)
 
 
-#### 2. Check for IP address of the server group
+#### 2. Check for the IP address of the machine group
 
-Check that the IP address added to the server group is the one configured on LogListener during installation. Run the following command to check the IP address configured on LogListener.
+Check that the IP address added to the machine group is the one configured on LogListener during installation. Run the following command to check the IP address configured on LogListener.
 
 ```shell
 grep group_ip etc/loglistener.conf
@@ -64,5 +64,5 @@ grep group_ip etc/loglistener.conf
 
 ![](https://main.qcloudimg.com/raw/4afe8d3a3b7c4f16e6795e35544a38e7.png)
 
-Log in to the [CLS Console](https://console.cloud.tencent.com/cls), and select **Server Group** on the left sidebar. On the **Server Group Management** page, view and verify that the IP address of the server group is the same as that configured on LogListener.
-![](https://main.qcloudimg.com/raw/888959e938a1dd3ec8a3f6c5b4818a56.png)
+Log in to the [CLS console](https://console.cloud.tencent.com/cls), and select **Server Group** in the left sidebar. On the **Server Group Management** page, view and verify that the IP address of the machine group is the same as that configured on LogListener.
+![](https://main.qcloudimg.com/raw/ea8e833b596e1cf000f4f58f8f99dd29.png)
