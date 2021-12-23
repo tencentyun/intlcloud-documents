@@ -15,7 +15,7 @@
 1. 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，选择地域后，单击目标集群的 ID 进入集群基本信息页面。
 2. 单击顶部 **Exchange** 页签，选择 Vhost 后，单击**新建**进入创建 Exchange 页面。
 3. 在新建 Exchange 对话框中，填写以下信息。
-   ![](https://main.qcloudimg.com/raw/a05cf17275616133497dd8334e39fd05.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/771b885353cf15b4d135f0359cf54305.png)
    - Exchange 名称：填写 Exchange 名称（创建后不可修改），3-64个字符，只能包含字母、数字、“-”及“_”
    - 路由类型：选择路由类型，包括：Direct、Fanout、Topic，路由类型选择后不可修改（关于路由类型的详细说明，请参考 [Exchange](https://intl.cloud.tencent.com/document/product/1112/43074)）
      - Direct：该类型 Exchange 会把消息路由到 RoutingKey 和 BindingKey 完全匹配的 Queue 中
