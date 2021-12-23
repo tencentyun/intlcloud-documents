@@ -57,7 +57,7 @@ Use the `count` function to calculate the PV value and use the `approx_distinct`
 * | SELECT count(*) AS PV, approx_distinct(ip) AS UV
 ```
 
-![image-20210817004306514](https://main.qcloudimg.com/raw/ad47ca879e1149a3a4fb5aa378154f41.png)
+
 
 ## approx_percentile
 
