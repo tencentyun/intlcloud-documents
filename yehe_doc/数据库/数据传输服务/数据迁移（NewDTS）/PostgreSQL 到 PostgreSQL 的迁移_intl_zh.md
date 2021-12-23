@@ -7,8 +7,8 @@
 
 ## 前提条件
 - 已 [创建云数据库 PostgreSQL](https://intl.cloud.tencent.com/document/product/409/40724)。
-- 源数据库和目标数据库符合迁移功能和版本要求，请参见 [数据迁移支持的数据库](https://cloud.tencent.com/document/product/571/58686) 进行核对。
-- 已完成 [准备工作](https://cloud.tencent.com/document/product/571/59968)。
+- 源数据库和目标数据库符合迁移功能和版本要求，请参见 [数据迁移支持的数据库](https://intl.cloud.tencent.com/document/product/571/42647) 进行核对。
+- 已完成 [准备工作](https://intl.cloud.tencent.com/document/product/571/42652)。
 - 源数据库需要具备的权限如下：
   - 源库为腾讯云数据库 PostgreSQL 之外的其他 PostgreSQL 时，要求源端库必须具有 replication 权限。  
   - 源库腾讯云数据库 PostgreSQL，要求源数据库必须为创建云数据库实例时的初始化用户。  
@@ -41,7 +41,7 @@ grant pg_tencentdb_superuser to 迁移用户;
 - 如果仅执行全量数据迁移，仅会迁移在发起迁移这一刻之前的数据，如果在迁移过程中向源实例中写入新的数据，源库和目标库的数据会出现不一致。针对有数据写入的场景，为实时保持数据一致性，建议选择全量 + 增量数据迁移。
 
 ## 环境要求
->?如下环境要求，系统会在启动迁移任务前自动进行校验，不符合要求的系统会报错。如果用户能够识别出来，可以 参考 [校验项检查要求](https://cloud.tencent.com/document/product/571/58685) 自行修改，如果不能则等系统校验完成，按照报错提示修改。
+>?如下环境要求，系统会在启动迁移任务前自动进行校验，不符合要求的系统会报错。如果用户能够识别出来，可以 参考 [校验项检查要求](https://intl.cloud.tencent.com/document/product/571/42552) 自行修改，如果不能则等系统校验完成，按照报错提示修改。
 
 <table>
 <tr><th width="20%">类型</th><th width="80%">环境要求</th></tr>
