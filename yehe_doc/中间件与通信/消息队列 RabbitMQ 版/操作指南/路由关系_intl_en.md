@@ -14,7 +14,7 @@ This document describes how to establish or cancel a binding between an exchange
 1. Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), select the region, and click the ID of the target cluster to enter the cluster's basic information page.
 2. Click the **Binding** tab at the top, select a vhost, and click **Create** to enter the **Create Binding** page.
 3. On the **Create Binding** page, select the source exchange, binding target type, and binding target.
-   ![](https://main.qcloudimg.com/raw/27dca8450a4f059179488062738be0ed.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/7673803b1483f7fddc9ce60a4f378e9b.png)
 4. Click **Submit**.
 
 ### Unbinding
