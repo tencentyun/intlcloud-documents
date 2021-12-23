@@ -19,7 +19,7 @@ You have [created a cluster](https://intl.cloud.tencent.com/document/product/111
 1. Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), select the region, and click the ID of the target cluster to enter the cluster's basic information page.
 2. Select the **Vhost** tab at the top and click **Create** to enter the **Create Vhost** page.
 3. In the **Create Vhost** window, configure the vhost attributes:
-   ![](https://main.qcloudimg.com/raw/c87ba46c5d7e458f392c41579964be9a.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/986a1baec62d27ec17801c3a3c7e78ab.png)
    - Vhost Name: enter the vhost name, which cannot be modified after creation and can contain 3–64 letters, digits, hyphens, and underscores.
    - Message TTL: set the retention time of unconsumed messages. Messages will be automatically deleted if not acknowledged after expiration. Value range: 60 seconds–15 days.
    - Remarks: enter the vhost remarks.
@@ -32,12 +32,8 @@ Next steps: you can [create an exchange](https://intl.cloud.tencent.com/document
 **Prerequisite**: you have [created a role](https://console.cloud.tencent.com/tdmq/role).
 
 1. On the **Vhost** list page, click **Configure Permissions** in the **Operation** column of the target vhost.
-2. On the **Configure Permissions** page, click **Create** to add production and consumption permissions to the vhost you just created.
-<img src="https://main.qcloudimg.com/raw/515644356c3ec5d005f61ea19fa6e807.png" width="536">
-
- 
-
-
+2. On the **Configure Permissions** page, click **Create** to add production and consumption permissions to the vhost you just created.</br>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9598d4db65e6048968ce43393c0477fe.png" width="536">
 
 ### Modifying vhost
 
