@@ -15,7 +15,7 @@ You have created a vhost as instructed in [Creating Vhost](https://intl.cloud.te
 1. Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), select the region, and click the ID of the target cluster to enter the cluster's basic information page.
 2. Click the **Exchange** tab at the top, select a vhost, and click **Create** to enter the **Create Exchange** page.
 3. In the **Create Exchange** window, enter the following information:
-   ![](https://main.qcloudimg.com/raw/a05cf17275616133497dd8334e39fd05.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/771b885353cf15b4d135f0359cf54305.png)
    - Exchange Name: enter the exchange name, which cannot be modified after creation and can contain 3–64 letters, digits, hyphens, and underscores.
    - Route Type: select a route type (direct, fanout, or topic), which cannot be changed after creation. For more information on route types, see [Exchange](https://intl.cloud.tencent.com/document/product/1112/43074).
      - Direct: a direct exchange will route messages to the queue whose binding key exactly matches the routing key.
