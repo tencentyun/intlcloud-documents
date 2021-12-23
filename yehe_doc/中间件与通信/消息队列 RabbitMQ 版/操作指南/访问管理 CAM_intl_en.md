@@ -86,7 +86,7 @@ The following uses granting the read-only permission of a cluster as an example.
 2. Click **Policy** on the left sidebar.
 3. In the policy list, click **Create Custom Policy**.
 4. In the **Select Policy Creation Method** pop-up window, select **Create by Policy Generator** and enter the policy information.
-   ![](https://main.qcloudimg.com/raw/a7aeab929146566a758eb85374758db8.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/76353da61a92b7ea464a95aba46cec38.png)
 
 
    | Parameter              | Description                                                         |
