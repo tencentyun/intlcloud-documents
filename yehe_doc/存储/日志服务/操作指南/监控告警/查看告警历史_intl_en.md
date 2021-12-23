@@ -8,7 +8,9 @@ This document shows how to view alarm records in the CLS console.
 
 
 ## Notes
+
 CLS allows you to view the alarm records in the last 30 days.
+
 ### Alarm statistics
 
 **Alarm Statistics** displays important information on alarms in the current region, such as alarm policy statistics and monitoring task execution. The metrics are as detailed below:
@@ -22,16 +24,17 @@ CLS allows you to view the alarm records in the last 30 days.
 | Notifications Triggered by the Alarm Policy | Number of times notifications are triggered by the execution of the alarm policy over the statistical time range             |
 | Top 10 Alarm Policies by Number of Notifications | Top 10 alarm policies in terms of the number of times notifications are triggered over the statistical time range            |
 
+
 ### Historical records
 
 Once an alarm policy takes effect, it will periodically perform monitoring tasks, and the details of executions of each monitoring task will be recorded in **Historical Records**, including the result of each execution. By viewing the records of alarm policy execution, you can easily trace back historical alarming tasks.
 
->?
-CLS allows you to view the records in the last 30 days.
+>? CLS allows you to view the records in the last 30 days.
+>
+
 
 <span id="result"></span>
-
-Policy execution results:
+Policy execution results are described as follows.
 
 | Execution Result                | Description                                                         |
 | ----------------------- | ------------------------------------------------------------ |
@@ -40,29 +43,19 @@ Policy execution results:
 | QueryError              | The analysis statement is not executed properly. Please check the analysis statement and the index configuration of the log topic.         |
 | QueryResultParseError   | Failed to parse the analysis result format.                                         |
 | ConditionSyntaxError    | The trigger condition expression has a syntax error. Please check the syntax format of the expression. |
-| ConditionEvaluateError  | An error occurred while computing the trigger condition. Please check whether the imported variable exists in the analysis result.     |
+| ConditionEvaluateError  | An error occurred while computing the trigger condition. Please check whether the imported variable exists in the analysis result     |
 | ConditionValueTypeError | The evaluation result of the trigger condition is not a Boolean value. Please check whether the trigger condition expression is correct.       |
 | EvalTimesLimited        | The trigger condition hasn't been met even after it has been computed more than 1,000 times.                 |
 | QueryResultUnmatch      | The analysis result for the current monitoring period doesn't meet the alarm trigger condition.                   |
-| UnreachedThreshold      | The alarm trigger condition is met, but the alarm convergence threshold has not been reached, so no alarm notification is sent.<br><li>HappenThreshold Unreached: the period convergence condition is not met; for example, an alarm is triggered only if the trigger condition is met in 5 consecutive monitoring periods.<br><li>AlertThreshold Unreached: the alarm interval condition is not met; for example, an alarm will be triggered once every 15 minutes. |
-| TemplateUnmatched       | The alarm configuration information doesn't match the notification template. Specific causes include:<br><li>TypeUnmatched: the alarm notification type (alarm triggered or alarm cleared) doesn't match the notification template, so no alarm notification is sent.<br><li>TimeUnmatched: the alarm notification time period doesn't match the notification template, so no alarm notification is sent.<br><li>SendFail: the notification failed to be sent. |
+| UnreachedThreshold      | The alarm trigger condition is met, but the alarm convergence threshold has not been reached, so no alarm notification is sent.<li>HappenThreshold Unreached: the period convergence condition is not met; for example, an alarm is triggered only if the trigger condition is met in 5 consecutive monitoring periods.</li><li>AlertThreshold Unreached: the alarm interval condition is not met; for example, an alarm will be triggered once every 15 minutes.</li> |
+| TemplateUnmatched       | The alarm configuration information doesn't match the notification template. Specific causes include:<li>TypeUnmatched: the alarm notification type (alarm triggered or alarm cleared) doesn't match the notification template, so no alarm notification is sent.</li><li>TimeUnmatched: the alarm notification time period doesn't match the notification template, so no alarm notification is sent.</li><li>SendFail: the notification failed to be sent.</li> |
 | Matched                 | The alarm condition is met, and the alarm notification is sent successfully.                                 |
 
-Notification status:
+Policy alarm states are described as follows.
 
-| Notifications Sent | Description                                                         |
-| ------------ | ------------------------------------------------------------ |
-| No notifications sent       | No notification is triggered because the query and analysis failed, the trigger condition is not met, or the alarm is converged when the policy executes a task. |
-| All sent successfully | An alarm notification is triggered and is sent successfully to all recipients in the notification template.                 |
-| Some sent successfully | An alarm notification is triggered and is sent successfully to some recipients in the notification template (possibly because the notification receipt channel has changed or hasn't been verified). |
-
-
-
-
-​	
-
-
-
-
-
+| Alarm State | Description   |
+|-----------|---|
+| Uncleared | The system continuously meets the trigger condition and triggers an alarm. |
+| Cleared | The current monitoring period does not meet the trigger condition. |
+| Invalid | The alarm policy is deleted or modified. |
 

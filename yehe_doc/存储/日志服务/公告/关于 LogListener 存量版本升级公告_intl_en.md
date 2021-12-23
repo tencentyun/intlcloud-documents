@@ -7,8 +7,10 @@ Log in to the [CLS console](https://console.cloud.tencent.com/cls/hosts) to try 
 
 New features supported on different LogListener versions are detailed as flows:
 
-| LogListener Version | Supported Feature  | Feature Description | Documentation |
-| --------------- | --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| LogListener Version | Supported Feature | Feature Description | Documentation |
+| --------------- | ----------------------- | ------------------------------- | -------------------------------------- |
+| v2.6.2         | Incremental collection | When performing collection configuration, users can choose the full or incremental collection policy. | -     |
+| v2.6.0         | CVM batch deployment | Users can deploy LogListener on CVM instances in batches for CVM log collection without manually installing LogListener related configuration. | -     |
 | v2.5.4 | LogListener service logs | LogListener service logs are used to record the operation, collection, and monitoring activities of LogListener, and you can configure visualized graphs to display such log data. | [LogListener Service Logs](https://intl.cloud.tencent.com/document/product/614/40232) |
 | v2.5.2 | Uploading parsing-failure logs | Added the support for uploading parsing-failure logs, using `LogParseFailure` as the key name (`Key`) and the raw log content as the key value (`Value`). |  -                                                            |
 | v2.5.0 | Support LogListener auto-upgrade function |  Users can set a time period for Agent auto upgrade or select specific machines to upgrade manually. | [LogListener Upgrade Guide](https://intl.cloud.tencent.com/document/product/614/40233) |

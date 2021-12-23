@@ -1,3 +1,41 @@
+## July 2021
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%">Update</th>
+			<th width="50%">Description</th>
+			<th width="15%">Release Date</th>
+			<th width="15%">Documentation</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>Full/Incremental collection policies</td><td>Added the feature to allow users to configure whether to use full or incremental log collection via LogListener, meeting users' requirement for shipping only new log data and significantly reducing users' write traffic costs.</td><td>2021-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/32287">Full/Incremental Collection Policy</a></td></tr>
+		<tr><td>Optimized search error messages</td><td>Standardized error messages for higher readability of the search error information.</td><td>2021-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39593">Search Analysis Error</a></td></tr>
+		<tr><td>Chinese text segmentation</td><td>Added the Chinese text segmentation feature to segment logs containing Chinese characters based on the Chinese syntax to facilitate log search.</td><td>2021-07-08</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">Chinese Text Segmentation</a></td></tr>
+	</tbody>
+</table>
+
+
+## June 2021
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%">Update</th>
+			<th width="50%">Description</th>
+			<th width="15%">Release Date</th>
+			<th width="15%">Documentation</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>Deploying LogListener instances on CVM instances in batches</td><td>Added the feature to allow users to deploy LogListener instances on CVM instances in batches for CVM log collection. With the feature, users do not need to manually install LogListener configuration anymore.</td><td>2021-06-24</td><td>-</td></tr>
+		<tr><td>Map, Sankey, and other chart features released</td><td>Added the support for more data visualization charts, including bar charts, column charts, maps, and Sankey diagrams.</td><td>2021-06-18</td><td>-</td></tr>
+		<tr><td>Search statement syntax error correction prompts</td><td>Added search syntax error prompts for the correction of Lucene syntax errors and spelling errors in index statistics fields, effectively improving the accuracy and efficiency of users' search analysis statements.</td><td>2021-06-15</td><td>-</td></tr>
+	</tbody>
+</table>
+
+
 ## May 2021
 
 <table>
@@ -13,7 +51,7 @@
 		<tr><td>Dashboard 2.0 release</td><td>Released dashboard 2.0 UI: enhanced visualization and optimized the dashboard style.</td><td>2021-05-31</td><td>-</td></tr>
 		<tr><td>LogListener download over a private network</td><td>Added the support for users to download the LogListener installation package via a private network address in different regions, avoiding security risks caused by connecting to a public network.</td><td>2021-05-27</td><td><a href="https://intl.cloud.tencent.com/document/product/614/17414">LogListener Installation Guide</a></td></tr>
 		<tr><td>Log topic traffic statistics</td><td>Added the feature of monitoring the traffic statistics of a single log topic, allowing users to view the traffic dynamics of a log topic.</td><td>2021-05-20</td><td>-</td></tr>
-		<tr><td>Collection configuration import</td><td>Added the feature for users to quickly import the configuration rules of an existing log topic, improving log data access efficiency.</td><td>2021-05-17</td><td>LogListener Collection Configuration Import</a></td></tr>
+		<tr><td>Collection configuration import</td><td>Added the feature of importing existing log topic rules with a few clicks, improving log data access efficiency.</td><td>2021-05-17</td><td><a href="https://intl.cloud.tencent.com/document/product/614/40863">Importing LogListener Collection Configuration</a></td></tr>
 	</tbody>
 </table>
 
@@ -81,7 +119,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Monitoring and Alarms 2.0 release</td><td>CLS allows users to set alarm policies for log topics. When query and analysis results meet the trigger conditions specified, the users can receive alarm notifications and they can monitor the log data in real time. </td><td>2020-12-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39573">Monitoring Alarm Overview</a></td></tr>
+		<tr><td>Monitoring Alarm 2.0 release</td><td>CLS allows users to set alarm policies for log topics. When query and analysis results meet the trigger conditions specified, the users can receive alarm notifications and they can monitor the log data in real time. </td><td>2020-12-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39573">Monitoring Alarm Overview</a></td></tr>
 		<tr><td>CLS connection to Grafana</td><td>CLS can be connected to Grafana to export CLS's raw log data and SQL aggregate analysis results for display in Grafana. Users can experience the feature at <a href="http://106.53.153.13:3000/d/r6mrhEbGz/cls-demo.com">Grafana_demo</a>.</td><td>2020-12-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39592">CLS Connection to Grafana</a></td></tr>
 		<tr><td>Extracting multi-line logs with regex</td><td>Added the extraction mode of **Multiple lines - full regex** to LogListener collection configuration rules for log collection.</td><td>2020-12-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39590">Full Regular Format (Multi-Line)</a></td></tr>
 		<tr><td>Search Page 2.0 release</td><td><ul  style="margin: 0;"><li>The time component supports millisecond precision and users can input a custom time quickly, improving query efficiency.</li><li>Added the "original layout and table layout" and "whether to turn on line break" features to log data display, enabling flexible switching.</li><li>Added preference settings to allow users to customize the number of logs for loading and the number of historical records, meeting diversified data browsing needs.</li></ul></td><td>2020-12-15</td><td>-</td></tr>
