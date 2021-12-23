@@ -7,8 +7,8 @@ This document describes how to use the data migration feature of DTS to migrate 
 
 ## Prerequisites
 - You have created a [TencentDB for PostgreSQL](https://intl.cloud.tencent.com/document/product/409/40724) instance.
-- The source and target databases must meet the requirements for the migration feature and version as instructed in [Databases Supported by Data Migration](https://cloud.tencent.com/document/product/571/58686).
-- You have completed all [preparations](https://cloud.tencent.com/document/product/571/59968).
+- The source and target databases must meet the requirements for the migration feature and version as instructed in [Databases Supported by Data Migration](https://intl.cloud.tencent.com/document/product/571/42647).
+- You have completed all [preparations](https://intl.cloud.tencent.com/document/product/571/42652).
 - The source database must have the following permissions:
   - If the source PostgreSQL database is not TencentDB for PostgreSQL, it must have the replication permission.  
   - If the source database is TencentDB for PostgreSQL, the source database user must be the initial user selected when the TencentDB instance is created.  
@@ -41,7 +41,7 @@ grant pg_tencentdb_superuser to migration user;
 - If you only perform full data migration, only data before the migration start time will be migrated. If you write new data into the source database during migration, there will be data inconsistency between the source and target databases. In scenarios with data writes, to ensure the data consistency in real time, we recommend you select full + incremental data migration.
 
 ## Environment Requirements
->?The system will automatically check the following environment requirements before starting a migration task and report an error if a requirement is not met. If you can identify the failed check item, fix it as instructed in [Requirements for Check Items](https://cloud.tencent.com/document/product/571/58685); otherwise, wait for the system verification to complete and fix the problem according to the error message.
+>?The system will automatically check the following environment requirements before starting a migration task and report an error if a requirement is not met. If you can identify the failed check item, fix it as instructed in [Requirements for Check Items](https://intl.cloud.tencent.com/document/product/571/42552); otherwise, wait for the system verification to complete and fix the problem according to the error message.
 
 <table>
 <tr><th width="20%">Type</th><th width="80%">Environment Requirement</th></tr>
