@@ -31,7 +31,7 @@ The following output indicates that LogListener is running properly.
 
   If the result returns “[ERROR] check loglistener heartbeat fail”, it indicates that LogListener has a heartbeat exception.
 
-  ![img](https://main.qcloudimg.com/raw/e4fa9973d7e5d110f9cda17966eebd96.jpg)
+
 
 Many causes can lead to a LogListener heartbeat exception. Possible causes include:
 
