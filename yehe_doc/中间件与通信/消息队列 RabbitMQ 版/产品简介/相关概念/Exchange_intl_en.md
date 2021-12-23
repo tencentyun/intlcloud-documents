@@ -20,7 +20,7 @@ TDMQ for RabbitMQ currently supports three types of exchange: direct, fanout, an
 
 **Sample**:
 
-![](https://main.qcloudimg.com/raw/a192868e09939b2319263e40ff14b0eb.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/6a6778594b75bb6df62859c89becb745.svg)
 
 | Message   | Routing Key | Binding Key | Queue   |
 | :-------- | :---------- | :---------- | :------ |
@@ -35,7 +35,7 @@ TDMQ for RabbitMQ currently supports three types of exchange: direct, fanout, an
 
 **Sample**:
 
-![](https://main.qcloudimg.com/raw/71beb7fdab5148b691f335b13990fd7c.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/30e985b41f7d9406879f7d4ac6e8aa3a.svg)
 
 | Message   | Routing Key       | Binding Key                 | Queue            |
 | :-------- | :---------------- | :-------------------------- | :--------------- |
@@ -59,7 +59,7 @@ This type of exchange is often used for multicast routing. For example, you can 
 
 **Sample**:
 
-![](https://main.qcloudimg.com/raw/79c7abdb6ae8797037893920149b9f5d.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/8463036d7d681fbe184abe4a310e1162.svg)
 
 | Message   | Routing Key   | Binding Key             | Queue            |
 | :-------- | :------------ | :---------------------- | :--------------- |
