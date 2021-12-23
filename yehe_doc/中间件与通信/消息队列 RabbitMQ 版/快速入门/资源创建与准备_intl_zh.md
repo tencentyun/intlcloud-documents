@@ -13,9 +13,9 @@
 1. 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，进入**集群管理**页面，选择目标地域。
 2. 单击**新建集群**，填写集群名称和说明。
 3. 单击**提交**，完成集群创建。
-   ![](https://main.qcloudimg.com/raw/f57c3cb1baf598ca8a7de47def4d0981.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/6f32ba4d48604459759c3e234cafb7e0.png)
 4. 在集群列表页面，单击刚刚创建好的集群作栏的**接入地址**，得到服务端的连接信息。
-![](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/27d49fe8aef1e4f9401ff17e35d6a56f.png)
 
 ### 步骤2：创建 Vhost
 
@@ -25,7 +25,7 @@
    - 消息 TTL：设置未消费消息的保留时间，过期未 ACK（确认消息） 则自动删除，范围：60秒-15天
    - 说明：Vhost 的备注说明
 3. 单击**提交**，完成 Vhost 创建。
-   ![](https://main.qcloudimg.com/raw/c87ba46c5d7e458f392c41579964be9a.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e6dd389c40c696a4e81f571d38b41655.png)
 
 ### 步骤3：创建角色并授权
 
@@ -33,7 +33,7 @@
 2. 在**集群管理**页面，单击刚刚创建好的集群的“ID”，进入**集群**详情页面。
 3.在页面上方选择 **Vhost** 页签，找到刚刚创建的 Vhost，单击操作栏的**配置权限**。
 4. 在**配置权限**页面，单击**新建**，为刚刚创建的角色添加生产消费权限。
-<img src="https://main.qcloudimg.com/raw/515644356c3ec5d005f61ea19fa6e807.png" width="535">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/27f5ba2394ed0306e82310fb344321a7.png" width="535">
 
 
 ### 步骤4：创建 Exchange
@@ -44,14 +44,14 @@
    - Fanout：该类型 Exchange 会将消息路由到所有与其绑定的 Queue 中。
    - Topic：该类型 Exchange 支持多条件匹配和模糊匹配，即使用 Routing Key 模式匹配和字符串比较的方式将消息路由至与其绑定的 Queue 中。
 3. 单击**提交**，完成 Exchage 创建。
-   ![](https://main.qcloudimg.com/raw/a05cf17275616133497dd8334e39fd05.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/f1c98dd23bceef637c707c846f359d14.png)
 
 ### 步骤5：创建 Queue
 
 1. 在 Exchange 列表页，选择顶部的 **Queue** 页签，进入 Queue 列表页。
 2. 选择刚刚创建好的 Vhost，单击**新建**，填写 Queue 名称和说明。
 3. 单击**提交**，完成 Queue 创建。
-   ![](https://main.qcloudimg.com/raw/dfabbd7014042b368168621ff6ebd10e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/fb820128e02ce7f7a79fb0ab2285fee8.png)
 
 ### 步骤6：创建路由关系
 
@@ -59,4 +59,4 @@
 2. 选择刚刚创建好的 Vhost，单击**新建**。
    源 Exchange 选择刚刚创建的 Exchange，绑定类型选择 Queue，绑定目标选择刚刚创建好的 Queue。
 3. 单击**提交**，完成路由关系绑定。
-   ![](https://main.qcloudimg.com/raw/27dca8450a4f059179488062738be0ed.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e5614e3c31c35f170e3f59f36c3c6a86.png)
