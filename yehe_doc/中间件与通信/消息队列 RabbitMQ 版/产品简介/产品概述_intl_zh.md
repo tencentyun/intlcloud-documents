@@ -12,7 +12,7 @@ TDMQ RabbitMQ 版拥有极为灵活的路由来适应各类业务的消息投递
 - Queue：存储消息的缓冲区，供消费者消费消息。
 - 消费者：从 Queue 拉取消息进行消费。
 
-![](https://main.qcloudimg.com/raw/471790c3d912cc882db5d6c10f3ddb5a.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/52a2af2c7b2f6fe1d514c6c9caa347d4.svg)
 
 更多关于 TDMQ RabbitMQ 版的概念，请参考 [相关概念](https://intl.cloud.tencent.com/document/product/1112/43065)。 
 
