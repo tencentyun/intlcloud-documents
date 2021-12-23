@@ -12,7 +12,7 @@ TDMQ for RabbitMQ has extremely flexible routing to adapt to the message deliver
 - Queue: caches messages for consumers to consume them.
 - Consumer: pulls messages from queues for consumption.
 
-![](https://main.qcloudimg.com/raw/471790c3d912cc882db5d6c10f3ddb5a.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/52a2af2c7b2f6fe1d514c6c9caa347d4.svg)
 
 For more concepts of TDMQ for RabbitMQ, see [Relevant Concepts](https://intl.cloud.tencent.com/document/product/1112/43065). 
 
