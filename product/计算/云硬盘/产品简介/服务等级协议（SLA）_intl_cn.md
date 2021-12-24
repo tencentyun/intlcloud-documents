@@ -1,43 +1,81 @@
-## 1 腾讯云服务
-腾讯云服务：指为满足各类网站、应用等各种产品的不同需求，由腾讯云提供的云服务器、云带宽、云存储空间、云数据库、云安全、云监控、云拨测等各种不同要素组合成的云系统服务。具体服务类别以腾讯云公开发布的相关服务信息为准。
+**In order to use the Tencent Cloud Block Storage ("CBS") service (the "Service"), you should read and observe this Cloud Block Storage Service Level Agreement (this "Agreement", or this "SLA") and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, *among others*, the terms and definitions of the Service, Service availability and Service uptime metrics, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, may be in bold font or underlined or otherwise brought to your special attention.**
 
-## 2 服务保证指标
-腾讯云为您所购买的云服务制定服务等级指标，并向您承诺提供数据管理和业务质量方面最大程度的保障。同时，腾讯云有权根据变化适时对部分指标作出调整。若无特殊约定，本条款中的“月”均指30个自然日，按自然月计算。
+**Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking "Agree"/ "Next", or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
-### 2.1 CBS云硬盘服务
+## 1.  Terms and Definitions
 
-#### 2.1.1 数据存储的持久性
-CBS云硬盘的数据采用三副本实时落盘，数据持久性为`99.9999999%`。以自然月为统计周期，不满一个月按一个月计。数据统计以容量（GB）为单位。
+1.1  **Cloud** **Block Storage (CBS)**: means a persistent block storage service provided by Tencent Cloud for cloud servers. You may access reading and writing operations by mounting CBS to CVM cloud servers. For details, please refer to the Service you purchase, and the contents of the Service provided by Tencent Cloud.
 
-#### 2.1.2 数据可销毁性
-在您要求删除数据或设备在弃置、转售前，腾讯云将采取磁盘低级格式化操作彻底删除您所有数据，并无法复原，硬盘到期报废时将进行消磁。
+1.2  **Service Month(s)**: means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
 
-#### 2.1.3 数据知情权
+1.3  **Total Time of a Single CBS Instance within a Service Month**: the total number of days of the Service Month for a Single CBS Instance × 24 (hours) × 60 (minutes).
 
-目前用户云硬盘服务部署在腾讯云遍布全球的基础设施中，由用户自行选择数据所在的地域及可用区。
+1.4  **Single CBS Instance Service Downtime within a Service Month**: If (and only if) the access to a single CBS instance continuously fails within one (1) minute, it shall be deemed that the Service with respect to such instance is unavailable within such one (1) minute. If the duration of inaccessibility is less than one (1) minute, such period will not be counted into the Service downtime. The accumulated Service downtime so calculated in minutes of a single CBS instance within a Service Month is the Single CBS Instance Service Downtime within a Service Month.
 
-数据中心均遵守的当地的法律和中华人民共和国相关法律。
+1.5  **CBS Monthly Service Fee**: means the aggregate service fees paid by a user for a single CBS instance under a Tencent Cloud account within one (1) Service Month, excluding the portion paid yet to be consumed, and the portion deducted by a voucher or promotional voucher, due to discounted service fee or otherwise deducted.
 
-用户所有数据不会提供给任意第三方，除政府监管部门监管审计需要。用户所有数据不会存在国外数据中心或用于国外业务或数据分析。
+## 2.  Service Availability / Service Uptime Metrics
 
-为保证用户数据安全性，腾讯云采用同时存储三份数据副本的存储方式。
+2.1  **Calculation of Service Availability**
 
-#### 2.1.4 数据可审查性
+Service Availability of CBS service is calculated on a single CBS instance basis as follows:
 
-腾讯云在依据现有法律法规体系下，出于配合政府监管部门的监管或安全取证调查等原因的需要，在符合流程和手续完备的情况下，可以提供云服务器相关信息，包括关键组件的运行日志、运维人员的操作记录、用户操作记录等信息。
+**Service Availability = (Total Time of a Single CBS Instance within a Service Month - Single CBS Instance Service Downtime within a Service Month) / Total Time of a Single CBS Instance within a Service Month × 100%**
 
-#### 2.1.5 业务可用性
-云硬盘 CBS 承诺`99.95%`的业务可用性，即用户每月可用时间应为`30 x 24 x 60 x 99.95% = 43178.4 分钟`，即存在`43200-43178.4=21.6分钟`的不可用时间，其中业务不可用的统计单元为用户单业务实例。
-业务故障的恢复正常时间`5分钟`以下，不计入业务不可用性计算中，不可用时间指业务发生故障开始到恢复正常使用的时间，包括维护时间。超过`5分钟`的，纳入不可用时间。
+2.2  **Standard of Service Availability/ Service Metrics**
 
-#### 2.1.6 故障恢复能力
-云硬盘 CBS 具备故障迁移能力，可在物理服务器故障发生时，无需用户参与，自动将数据迁移至新的机器，保证数据的可用性。同时，腾讯云提供专业团队`7x24小时`帮助维护。
+**The Service Availability of the Service will be** **no less than 99.95%**. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below.
 
-#### 2.1.7 数据私密性
-腾讯云通过配置防火墙策略，采用白名单过滤机制进行网络隔离，归属同一用户的云服务器才能内网互通，归属不同用户的云服务器不能互访。
+*If a Service Month has thirty (30) days, the total available time of a single CBS instance in such month will be 43,178.4 minutes (= 30 (days) × 24 (hours) × 60 (minutes) × 99.95%); that is, there may be 21.6 minutes (= 43,200 minutes -- 43,178.4 minutes) Service downtime of the instance in such month.*
 
-除用户的账户信息、云服务器内外网 IP、云服务器 MAC 地址等信息外，腾讯云无权无途径查看用户的其他数据。用户账户信息、云服务器内外网 IP、云服务器 MAC 地址等信息的内部查看系统有严格权限控制和操作记录。
+## 3.  Service Compensation
 
-## 3 服务计量准确性
-腾讯云服务的费用在用户的选购页面和订单页面均有明确展示，用户可自行选择具体服务类型并按列明的价格进行购买。具体价格以腾讯云官网公布的价格为准，腾讯云按照用户选购的云服务规格和使用时长进行收费。
+In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
 
+3.1  **Standards of Compensation**
+
+(1) Compensations will be made **in the form of voucher** by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud's official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
+
+(2) If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month** (the Monthly Service Fee referred to herein shall exclude the portion deducted by a voucher or promotional credit, due to discounted service fee or otherwise deducted).
+
+|**Service Availability (Av) for a Service Month**|   **Value of Compensation Voucher**|
+|-|-|
+|99.95% \> Av ≥ 99%|                                  10% of the Monthly Service Fee|
+|99% \> Av ≥ 95%|                                     25% of the Monthly Service Fee|
+|95% \> Av|                                           100% of the Monthly Service Fee|
+
+3.2  **Time Limit for Compensation Application**
+
+(1) If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation **through (and only through) the support ticket system under your relevant account** after the fifth (5^th^) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, **both parties agree that the back-end record of Tencent Cloud will prevail**.
+
+(2) **You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard**. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
+
+## 4.  Release of Liabilities
+
+**If the Service is unavailable due to any of the following reasons, the corresponding Service downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
+
+4.1 any system maintenance with prior notice by Tencent Cloud to you, including system cutover, maintenance, upgrade and malfunction simulation test.
+
+4.2 any malfunction or configuration adjustment of any network or equipment that is not Tencent Cloud facility.
+
+4.3 any attack on any of your application endpoints or data, or any other mal-operation.
+
+4.4 any loss or leak of data, passcode or password due to your improper maintenance or improper confidentiality measures.
+
+4.5 any negligence in authorization or mal-operation by you, or any of your equipment, or third-party software or device.
+
+4.6 any failure of you to abide by documentation or suggestions for using Tencent Cloud products.
+
+4.7 any malfunction resulting from an event of force majeure or accident.
+
+4.8 any Service unavailability or failure of the Service to meet the availability standard due to any reason not attributable to Tencent Cloud.
+
+4.9 any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
+
+## 5.  Miscellaneous
+
+5.1 **The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.**
+
+5.2 Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agreement terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
+
+5.3 As an ancillary agreement to the Tencent Cloud Service Agreement, this Agreement is of the same legal effect as the Tencent Cloud Service Agreement. In respect of any matter not agreed herein, you shall comply with relevant terms under the Tencent Cloud Service Agreement. In case of any conflict or discrepancy between this Agreement and the Tencent Cloud Service Agreement, this Agreement prevails to the extent of such conflict or discrepancy. (End of Document)
