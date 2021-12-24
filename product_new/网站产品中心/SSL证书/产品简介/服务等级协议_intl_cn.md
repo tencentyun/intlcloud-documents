@@ -1,61 +1,82 @@
-### 1 业务功能
-腾讯云提供 SSL 证书服务，具体包括企业型、增强型、通配符型 SSL 证书的购买管理等功能。具体服务类别以腾讯云公开发布的相关服务信息为准。
+**In order to use the Tencent Cloud SSL Certificate service (the "Service"), you should read and observe this SSL Certificate Service Level Agreement (this "Agreement", or this "SLA") and the [Tencent Cloud Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, *among others*, the terms and definitions of the Service, Service availability and Service uptime level metrics, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, may be in bold font or underlined or otherwise brought to your special attention.**
 
-### 2 业务可用性
-腾讯云提供 SSL 证书服务承诺数字证书 CRL/OCSP 服务可用性99.99%。
+**Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking "Agree"/ "Next", or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
-例如，6月用户数字证书 CRL/OCSP 服务可用时间应为30 × 24小时 × 60分钟 × 99.99% = 43195.68分钟，即存在43200 - 43195.68 = 4.32分钟的不可用时间。
->? 可用性 =（1 - 数字证书 CRL/OCSP 服务周期内业务不可用时间 / 数字证书 CRL/OCSP 服务周期内服务总时间）\* 100% 
+## 1.  Terms and Definitions
 
-相关说明：
-（1）	以一个自然月作为一个服务周期，不满一个月不计算为一个服务周期，也不计算业务可用性。
-（2）	不可用时间：数字证书 CRL/OCSP 服务在连续的5分钟或更长时间不可使用方计为不可用时间，低于5分钟不计入不可用时间。
-（3）	不可用定义：因亚洲诚信系统（证书供应商）或人为原因导致服务不可用，计入服务不可用时间。
-（4）	以下情况不纳入不可用时间计算：
-- 亚洲诚信提前通知过客户进行系统维护升级引起的服务中断。
-- 用户未按规定调用服务引起的服务不可用。
-- 因用户原因导致 API 授权数据（AK/SK）丢失或泄露引起的。
-- 不可抵抗事件引起的，可参考主合同中的不可抗力章节原因。
+1.1	The SSL Certificate service provided by Tencent Cloud means an SSL certificate with a fixed valid term issued by a digital certificate authority provided to you by Tencent Cloud. 
 
-### 3 故障恢复能力
-腾讯云提供至少两路的网络冗余和设备冗余，可对突发的网络线路故障进行容错服务，以保障用户服务的连续性。同时，腾讯云提供专业团队7 x 24小时全面维护，并以工单和电话报障等方式提供技术支持，具备完善的故障监控、自动告警、快速定位、快速恢复等一系列的故障应急响应机制。
+1.2	Service Month(s): Service Month(s) means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month. 
 
-### 4 业务资源调配能力
-已颁发的 SSL 证书无法再进行绑定域名、证书品牌/型号的更改。如需要进行扩展需要重新购买、申请。
+1.3	Service Downtime: If the digital certificate CRL/OCSP service remains unavailable for 5 minutes or more, such duration will be counted into Service Downtime. Any period less than 5 minutes during which such Service is unavailable does not count towards the Service Downtime. 
 
-### 5 服务和数据可销毁性
-用户使用 SSL 证书服务时，可以对自行上传的、已过期的 SSL 证书进行删除、销毁操作，腾讯云不会对销毁的 SSL 证书做保存，清除后不可恢复。
-用户可以自行导出 SSL 证书，根据实际需要恢复和迁移数据。
+1.4	Definition of “Unavailable”: The duration of unavailability of the Service due to TrustAsia (certificates provider), server room issue, product functionality issue or improper operation should be counted toward the Service Downtime. 
 
-### 6 服务私密性
-客户可根据实际需要对证书进行按项目管理，可控制和隔离外部访问，保障数据的私密性。
 
-### 7 服务知情权
-（1）	用户使用的 SSL 证书服务所在的数据中心位置可以通过提交工单咨询。
-（2）	腾讯云数据中心将遵守当地相关的法律法规，用户对此具有知情权（可通过提交工单进行咨询）。
-（3）	用户向腾讯云提供的 SSL 证书数据等全部数据、资料，未经用户书面许可，腾讯不会擅自保存、公开、转授权或泄露给任何第三方，也不会用于本协议合作以外用途，除政府监管部门监管审计需要。
-（4）	除用于对腾讯云 SSL 证书服务运行状态的统计分析，用户的行为日志不会对外呈现用户个人信息数据。
+## 2.  Service Availability
 
-### 8 服务可审查性
-腾讯云在依据现有法律法规体系下，出于配合政府监管部门的监管或安全取证调查等原因的需要，在符合流程和手续完备的情况下，可以提供相关信息，包括 SSL 证书服务关键组件的运行日志、运维人员的操作记录、用户操作记录等信息。
+2.1	**Calculation of Service Availability/ Service Uptime Level **
 
-### 9 服务计量准确性
-腾讯云 SSL 证书服务的费用根据不同品牌、型号和支持域名个数定价不同。具体计费标准以腾讯云官网公布的计费模式和价格为准。
+Service Availability = (1 - Service Downtime within the Service period of SSL certificate CRL/OCSP service / total time within the Service period of SSL certificate CRL/OCSP service) × 100%
+If we guarantee a Service Availability of 99.99%. Then, for example, for June, the Service available period of SSL CRL/OCSP service is 43,195.68 minutes (= 30 (day) × 24 (hour) × 60 (minute) × 99.99%). That is, the Service Downtime is 4.32 minutes (= 43,200 minutes – 43,195.68 minutes).
 
-### 10 服务补偿
+Explanations:
+(1)	Duration of Malfunction = the time when the malfunction is resolved – the time when the malfunction starts. The duration of malfunction will be calculated in minutes. Where the duration of malfunction, or an unrounded portion thereof, is less than 1 minute, it will be rounded up to 1 minute. For example, if the duration of malfunction is 11 minutes and 1 second, it will be calculated as 12 minutes.
+(2)	Only the users who have purchased an SSL paid certificate and have incurred fees are eligible to compensations.
 
-#### 10.1 适用范围
-因腾讯云设备故障、设计缺陷或操作不当导致用户所购买的腾讯云 SSL 证书无法正常提供 CRL/OCSP 服务；腾讯云将对不可用时间进行赔偿，但不包括主合同中的不可抗力章节原因所导致的不可用时长。
+2.2	**Service Availability/ Service Metrics Standard**
 
-#### 10.2 补偿标准原则
-由于证书本身被破解导致信息泄露，对用户造成损失的，腾讯云和证书供应商将配合用户向相应的数字证书颁发（CA）机构申请对应的赔付保障。
-赔付金额如下：
+The Service Availability of the Service provided by Tencent Cloud will be no less than 99.99%. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
 
-|证书型号|赔付金额|
-|---|---|
-|Symantec 增强型 EV SSL 证书 专业版| 175万美元|
-|Symantec 增强型 EV SSL 证书| 175万美元|
-|Symantec 企业型 OV SSL 证书 专业版| 175万美元|
-|Symantec 企业型 OV SSL 证书| 150万美元|
-|GeoTrust 增强型 EV SSL 证书| 150万美元|
-|GeoTrust 企业型 OV SSL 证书| 125万美元|
+## 3.  Service Compensation
+
+In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
+
+3.1  **Standards of Compensation**
+
+(1) Compensations will be made in the form of voucher by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud's official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
+
+(2) If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable monthly Service fee paid by you for such month** (the monthly Service fee referred to herein shall exclude the portion deducted by a voucher or promotional coupon, due to discounted service fee or otherwise deducted).
+
+|**Service Availability (Av) for a Service Month** |  **Value of Compensation Voucher**|
+|-|-|
+|99.99% > Av ≥ 99.00%	|10% of the monthly Service fee|
+|99% > Av ≥ 95%	|25% of the monthly Service fee|
+|95% > Av	|100% of the monthly Service fee|
+
+
+3.2 **Time Limit for Compensation Application**
+
+(1) If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation **through (and only through) the support ticket system under your relevant account** after the fifth (5^th^) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, **both parties agree that the back-end record of Tencent Cloud will prevail**.
+
+(2) **You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard**. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
+
+3.3  **Application Materials for Compensation**
+
+If you believe that the Service fails to meet the Service Availability standard specified above, you may apply for compensation within the period of time as stipulated under this SLA, and you should at least provide the following information together with your compensation application:
+
+1)  a statement of malfunction of the CRL/OCSP service issued by an SSL certificate provider
+
+2)  order information of the SSL certificate
+
+
+## 4.  Release of Liabilities
+
+**If the Service is unavailable due to any of the following reasons, the corresponding Service Downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
+
+4.1	any system maintenance or update with prior notice by Tencent Cloud to users.
+4.2	any failure of a user to follow the relevant guidelines in using the Service.
+4.3	any malfunction of a user’s network or application.
+4.4	any event of force majeure (please refer to the relevant provision in the master contract).
+4.5	any Service unavailability or failure of the Service to meet the availability standard due to any reason not attributable to Tencent Cloud.
+4.6	any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
+
+
+## 5.  Miscellaneous
+
+5.1	**The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.**
+
+5.2	Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agreement terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
+
+5.3	As an ancillary agreement to the Tencent Cloud Service Agreement, this Agreement is of the same legal effect as the Tencent Cloud Service Agreement. In respect of any matter not agreed herein, you shall comply with relevant terms under the Tencent Cloud Service Agreement. In case of any conflict or discrepancy between this Agreement and the Tencent Cloud Service Agreement, this Agreement prevails to the extent of such conflict or discrepancy. (End of Document)
+
