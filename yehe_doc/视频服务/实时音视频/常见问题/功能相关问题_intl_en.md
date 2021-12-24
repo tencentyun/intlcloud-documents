@@ -83,9 +83,6 @@ There isn’t a limit.
 ### Can TRTC be deployed on-premises?
 Private deployment of TRTC is not commercially available yet. If you have questions about it or want to use it, please contact us at colleenyu@tencent.com.
 
-[](id:que16)
-### 实时音视频开通旁路直播，域名是否需要进行备案使用？
-如需开通旁路直播，依据国家相关部门要求，播放域名需要备案才能使用，更多详情请参见 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)。
 
 [](id:que17)
 ### How long is the average delay in TRTC?
