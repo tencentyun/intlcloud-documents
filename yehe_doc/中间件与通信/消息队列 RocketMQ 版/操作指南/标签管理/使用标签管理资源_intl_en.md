@@ -46,13 +46,13 @@ After designing the tag keys and values as detailed above, you can log in to the
 
 1. Log in to the [TDMQ for RocketMQ console](https://console.cloud.tencent.com/tdmq/rocket-cluster).
 2. On the **Cluster Management** page, select the target region and cluster and click **Edit Resource Tag** at the top of the page.
-   ![](https://main.qcloudimg.com/raw/052b297532e9d64061c796da56a1d623.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/752eca0981fe01172db8f97374172b42.png)
 3. Set tags in the **Edit Tag** pop-up window.
    For example, add three tags for the `rocketmq-qzga74ov5gw1` cluster.
-   ![](https://main.qcloudimg.com/raw/11381698a0bbbc24f9f3ec7e4e8701e5.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/9aa18ee4ec258056a563aebd0f4d9367.png)
 >?If existing tags cannot meet your needs, go to [Tag Management](https://console.cloud.tencent.com/tag/taglist) to create more.
 4. Click **OK**, and you will be prompted that the tags have been modified successfully. You can view the tags bound to a cluster in its **Resource Tag** column.
-   ![](https://main.qcloudimg.com/raw/56809fe9278513651606a79ca71a011f.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/afc83c6da7bf9faa3582f4b123036a78.png)
 
 
 ### Filtering resource by tag key
@@ -62,4 +62,4 @@ You can filter out clusters bound to a specific tag in the following steps:
 1. Select **Tag** in the search box at the top-right corner of the page.
 2. In the window that pops up, select the tag you want to search for and click **OK**.
    For example, if you select `Tag: owner:zhangsan`, you can filter out clusters bound to the tag key `owner:zhangsan`.
-   ![](https://main.qcloudimg.com/raw/f2a24563cf02e3bfb655a5645b042fb6.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/4aa467342e78f88ffa6674b54be591fb.png)
