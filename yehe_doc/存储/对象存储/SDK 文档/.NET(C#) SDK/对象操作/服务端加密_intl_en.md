@@ -24,7 +24,13 @@ PutObjectRequest request = new PutObjectRequest(bucket, key, srcPath);
 request.SetCosServerSideEncryption();
 ```
 
->- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PutObjectSSE.cs).
+
+
+
+>?
+> - For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PutObjectSSE.cs).
+
+
 
 ### Using server-side encryption with KMS-managed encryption keys (SSE-KMS) to protect data
 
@@ -45,7 +51,10 @@ PutObjectRequest request = new PutObjectRequest(bucket, key, srcPath);
 request.SetCosServerSideEncryptionWithKMS("KMS Custem Key ID", "Context Json");
 ```
 
->- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PutObjectSSE.cs).
+
+
+>?
+> - For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PutObjectSSE.cs).
 
 ### Using server-side encryption with customer-provided encryption keys (SSE-C) to protect data
 
@@ -66,4 +75,7 @@ PutObjectRequest request = new PutObjectRequest(bucket, key, srcPath);
 request.SetCosServerSideEncryptionWithCustomerKey("Your Secret Key");
 ```
 
+
+
+>? 
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PutObjectSSE.cs).
