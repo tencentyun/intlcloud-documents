@@ -16,7 +16,7 @@ You have created a namespace.
 1. Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), select the region, and click the ID of the target cluster to enter the cluster's basic information page.
 2. Click the **Topic** tab at the top, select a namespace, and click **Create** to enter the **Create Topic** page.
 3. In the **Create Topic** window, enter the following information:
-   ![](https://main.qcloudimg.com/raw/51c79615c68090464f867fe76abebe68.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/2e02cef152b8dc3ecf16d32614c8b1ad.png)
    - Topic Name: enter the topic name, which cannot be modified after creation and can contain 3–64 letters, digits, hyphens, and underscores.
    - Type: select the message type, including general, globally sequential, and partitionally sequential. For more information on message types, see [Message Type](https://intl.cloud.tencent.com/document/product/1110/42957).
    - Remarks: enter the topic remarks.
