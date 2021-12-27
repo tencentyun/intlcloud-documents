@@ -13,7 +13,7 @@
 1. 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，选择地域后，单击目标集群操作列的“查看命名空间”，进入命名空间页面。
 2. 在命名空间页面，单击**新建**进入创建命名空间页面。
 3. 在新建命名空间对话框，设置命名空间的相关属性配置。
-	 ![](https://main.qcloudimg.com/raw/4ce5a5ec219aa6f832324b2a7c21ea14.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/d39f18ded7ffbc7d0a42195d1a13d007.png)
    - 命名空间名称：设置命名空间的名称（创建后不可修改），3-64个字符，只能包含字母、数字、“-”及“_”
    - 消息TTL：设置未消费消息的保留时间，过期未 ACK（确认消息） 则自动删除，范围：60秒-15天
    - 消息保留策略：
