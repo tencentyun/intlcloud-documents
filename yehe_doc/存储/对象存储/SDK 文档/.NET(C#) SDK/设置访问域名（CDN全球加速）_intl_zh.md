@@ -17,7 +17,6 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 [//]: # (.cssg-snippet-set-custom-domain)
 ```cs
 CosXmlConfig config = new CosXmlConfig.Builder()
-
   .SetRegion("COS_REGION") //设置一个默认的存储桶地域
   //请求域名为 your.domain.com
   .SetHost("your.domain.com") //自定义域名
@@ -37,8 +36,39 @@ CosXmlConfig config = new CosXmlConfig.Builder()
 [//]: # (.cssg-snippet-set-accelerate-domain)
 ```cs
 CosXmlConfig config = new CosXmlConfig.Builder()
-
   .SetEndpointSuffix("cos.accelerate.myqcloud.com")
+  .Build();
+```
+
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/SetCustomDomain.cs) 查看。
+
+### 自定义 CDN 域名
+
+关于如何开启 CDN 自定义加速域名请参考 [开启自定义 CDN 加速域名](https://intl.cloud.tencent.com/document/product/436/31506)。
+
+以下代码展示了如何使用自定义加速域名访问 COS 服务。
+
+#### 示例代码
+
+```cs
+CosXmlConfig config = new CosXmlConfig.Builder()
+  .SetHost("exampledomain.com")
+  .Build();
+```
+
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/SetCustomDomain.cs) 查看。
+
+### 默认 CDN 域名
+
+关于如何开启默认加速域名请参考 [开启默认 CDN 加速域名](https://intl.cloud.tencent.com/document/product/436/31505)。
+
+以下代码展示了如何使用默认加速域名访问 COS 服务。
+
+#### 示例代码
+
+```cs
+CosXmlConfig config = new CosXmlConfig.Builder()
+  .SetEndpointSuffix("file.myqcloud.com")
   .Build();
 ```
 
