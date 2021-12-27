@@ -3,7 +3,7 @@
 Cluster is a resource dimension in TDMQ for RocketMQ, and namespaces, topics, and groups of different clusters are completely isolated from each other. Each cluster has its own resource limits, such as the total number of topics and message retention period. It is common for the development, test, and production environments to use their respective dedicated clusters.
 
 **TDMQ for RocketMQ resource hierarchy**
-![](https://main.qcloudimg.com/raw/a98447d277622f79a33a9e5376d4ea95.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c613209d6cb2f4e924dfe15df85513c5.png)
 
 ## Directions
 
@@ -12,7 +12,7 @@ Cluster is a resource dimension in TDMQ for RocketMQ, and namespaces, topics, an
 1. Log in to the [TDMQ for RabbitMQ console](https://console.cloud.tencent.com/tdmq) and enter the **Cluster Management** page.
 2. On the **Cluster Management** page, select the region and click **Create** to enter the **Create Cluster** window.
 3. In the **Create Cluster** window, set the cluster attributes:
-   ![](https://main.qcloudimg.com/raw/499c8c39bf37f1b39985e09d6ac6ee21.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/525df131a53c43eaeeccdad150224cdd.png)
    - Cluster Name: enter the cluster name, which can contain 3–64 letters, digits, hyphens, and underscores.
    - Remarks: enter the cluster remarks of up to 128 characters.
 4. Click **OK**.
@@ -47,13 +47,13 @@ On the details page, you can query:
 | Message retention period                  | Maximum message retention period that can be configured. A shorter period can be configured at the namespace level |
 | Maximum message delay | Maximum time of delayed message consumption |
 
-![](https://main.qcloudimg.com/raw/35d27c2873af355df373c6d389bf9888.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/950f9b3f350dcac7e99ca09af85f295d.png)
 
 ### Getting access address
 
 On the **Cluster Management** list page, click **Access Address** in the **Operation** column to get the access address of the cluster.
 
-![](https://main.qcloudimg.com/raw/4fed5e6a2497995613b645f6a9a7e206.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/73da10eea086f8d28c77409e2b323407.png)
 
 ### Editing cluster
 
