@@ -83,7 +83,7 @@ Add the following Java dependency library information to the `pom.xml` file:
 </tr>
 <tr>
 <td>ACL_ACCESS_KEY</td>
-<td>Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" alt=""></td>
+<td>Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/3151b0fe8307ce8b22891f394a99e630.png" alt=""></td>
 </tr>
 <tr>
 <td>rocketmq-xxxx|namespace</td>
@@ -95,7 +95,7 @@ Add the following Java dependency library information to the `pom.xml` file:
 </tr>
 <tr>
 <td>setNamesrvAddr</td>
-<td>Cluster access address, which can be obtained from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster Management</strong> page in the console.</td>
+<td>Cluster access address, which can be obtained from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster Management</strong> page in the console.</td>
 </tr>
 <tr>
 <td>topic</td>
@@ -106,7 +106,9 @@ Add the following Java dependency library information to the `pom.xml` file:
 <td>Tags for message filtering.</td>
 </tr>
 </tbody></table>
+
 2. Compile and run the ProducerWithNamespace.java program.
+
 3. View the execution result. The result of successful execution is as follows.
 ```
 Topic:topic1 send success, queueId is: 0
@@ -183,7 +185,7 @@ Topic:topic1 send success, queueId is: 1
 </tr>
 <tr>
 <td>ACL_ACCESS_KEY</td>
-<td>Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" alt=""></td>
+<td>Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/79bc94125f0411443ce1df99c7ad3e04.png" alt=""></td>
 </tr>
 <tr>
 <td>rocketmq-xxxx|namespace</td>
@@ -195,14 +197,16 @@ Topic:topic1 send success, queueId is: 1
 </tr>
 <tr>
 <td>setNamesrvAddr</td>
-<td>Cluster access address, which can be obtained from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster Management</strong> page in the console.</td>
+<td>Cluster access address, which can be obtained from <strong>Access Address</strong> in the<strong>Operation</strong> column on the <strong>Cluster Management</strong> page in the console.</td>
 </tr>
 <tr>
 <td>topic</td>
 <td>Topic name, which can be copied on the <strong>Topic</strong> page in the console.</td>
 </tr>
 </tbody></table>
+
 2. Compile and run the PushConsumerWithNamespace.java program.
+
 3. View the execution result. The result of successful execution is as follows.
    ```bash
     body=Hello world——4
@@ -213,5 +217,5 @@ Topic:topic1 send success, queueId is: 1
     body=Hello world——11
     body=Hello world——8
    ```
+
 4. Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the **Cluster Management** > **Group** page, and view the list of clients connected to the group. Click **View Details** in the **Operation** column to view consumer details.
-	 ![](https://main.qcloudimg.com/raw/7187da67219534d767206553e2a383ab.png)
