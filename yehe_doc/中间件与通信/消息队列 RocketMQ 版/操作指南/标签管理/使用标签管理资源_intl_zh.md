@@ -23,7 +23,7 @@
 | --------------------- | -------- | -------- | ------ |
 | rocketmq-qzga74ov5gw1 | 电商     | 营销活动 | 张三   |
 | rocketmq-qzga74ov5gw2 | 电商     | 营销活动 | 王五   |
-| rocketmq-qzga74ov5gw3 | 游戏     | 游戏 A   | 李四   |
+| rocketmq-qzga74ov5gw3 | 游戏     | 游戏 A   | 黎四   |
 | rocketmq-qzga74ov5gw4 | 游戏     | 游戏 B   | 王五   |
 | rocketmq-qzga74ov5gw5 | 文娱     | 后期制作 | 王五   |
 | rocketmq-qzga74ov5gw6 | 文娱     | 后期制作 | 张三   |
@@ -46,13 +46,13 @@
 
 1. 登录 [TDMQ RocketMQ 版控制台](https://console.cloud.tencent.com/tdmq/rocket-cluster)。
 2. 在集群管理列表页面，选择好地域后，勾选需要编辑标签的集群，单击页面上方的**编辑资源标签**。
-   ![](https://main.qcloudimg.com/raw/052b297532e9d64061c796da56a1d623.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/752eca0981fe01172db8f97374172b42.png)
 3. 在弹出的 “编辑标签” 窗口中设置标签。
    例如：为 rocketmq-qzga74ov5gw1 的集群添加三组标签。
-   ![](https://main.qcloudimg.com/raw/11381698a0bbbc24f9f3ec7e4e8701e5.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/9aa18ee4ec258056a563aebd0f4d9367.png)
 >?如现有标签不符合您的要求，请前往 [标签管理](https://console.cloud.tencent.com/tag/taglist) 新建标签。
 4. 单击**确定**，系统出现修改成功提示，在集群的资源标签栏可查看与之绑定的标签。
-   ![](https://main.qcloudimg.com/raw/56809fe9278513651606a79ca71a011f.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/afc83c6da7bf9faa3582f4b123036a78.png)
 
 
 ### 通过标签键筛选资源
@@ -62,4 +62,4 @@
 1. 在页面右上方搜索框中，选择**标签**。
 2. 在**标签：**后弹出的窗口中选择您要搜索的标签，单击**确定**进行搜索。
    例如：选择 `标签：owner:zhangsan` 可筛选出绑定了标签键 `owner:zhangsan` 的集群。
-   ![](https://main.qcloudimg.com/raw/f2a24563cf02e3bfb655a5645b042fb6.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/4aa467342e78f88ffa6674b54be591fb.png)
