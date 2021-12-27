@@ -13,7 +13,7 @@ This document describes how to create multiple namespaces in TDMQ for RocketMQ s
 1. Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), select the region, and click **View Namespace** in the **Operation** column of the target cluster to enter the namespace page.
 2. On the **Namespace** page, click **Create** to enter the **Create Namespace** page.
 3. In the **Create Namespace** window, configure the namespace attributes:
-	 ![](https://main.qcloudimg.com/raw/4ce5a5ec219aa6f832324b2a7c21ea14.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/d39f18ded7ffbc7d0a42195d1a13d007.png)
    - Namespace Name: enter the namespace name, which cannot be modified after creation and can contain 3–64 letters, digits, hyphens, and underscores.
    - Message TTL: set the retention time of unconsumed messages. Messages will be automatically deleted if not acknowledged after expiration. Value range: 60 seconds–15 days.
    - Message Retention Policy:
