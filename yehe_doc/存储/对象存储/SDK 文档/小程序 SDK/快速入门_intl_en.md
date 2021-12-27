@@ -18,8 +18,11 @@
 2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region information](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get your project's `SecretId` and `SecretKey`.
 
->? For the definition of terms such as SecretId, SecretKey, and Bucket, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
->
+>? 
+> - For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+> - Use instructions for cross-device frameworks (such as uni-app): for mobile apps that cannot be packaged for normal use after being developed using the Mini Program SDK, such as Android and iOS apps, you need to use the corresponding Android SDK and iOS SDK.
+> 
+
 
 #### Installing SDK
 
@@ -66,7 +69,7 @@ var COS = require('./lib/cos-wx-sdk-v5.js')
 
 ```js
 var cos = new COS({
-    // ForcePathStyle: true, // If multiple buckets are used, you can use suffixed requests to reduce the number of whitelisted domain names to be configured; the region domain name will be used for requests
+    // ForcePathStyle: true, // If multiple buckets are used, you can use suffixed requests to reduce the number of whitelisted domain names to be configured; the region domain name will be used for requests.
     getAuthorization: function (options, callback) {
         // Get a temporary key asynchronously.
         wx.request({
@@ -97,9 +100,9 @@ var cos = new COS({
 // TODO
 ```
 
-### Configuration items
+### Configuration Item
 
-#### Example
+#### Sample code
 
 Create a COS SDK instance in the following methods:
 
@@ -107,7 +110,7 @@ Create a COS SDK instance in the following methods:
 
 ```js
 var cos = new COS({
-    // Required parameters
+    // Required parameter
     getAuthorization: function (options, callback) {
         // Server examples for JS and PHP: https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/
         // For server-side examples for other programming languages, see the COS SDK for STS: https://github.com/tencentyun/qcloud-cos-sts-sdk
@@ -141,7 +144,7 @@ var cos = new COS({
 
 ```js
 var cos = new COS({
-    // Required parameters
+    // Required parameter
     getAuthorization: function (options, callback) {
         // Server example: https://github.com/tencentyun/qcloud-cos-sts-sdk/edit/master/scope.md
         wx.request({
@@ -173,7 +176,7 @@ var cos = new COS({
 
 ```js
 var cos = new COS({
-    // Required parameters
+    // Required parameter
     getAuthorization: function (options, callback) {
         // The server obtains a signature. For more information, please see the COS SDK for the corresponding programming language: https://cloud.tencent.com/document/product/436/6474
         // Note: there may be a security risk associated with this method. The backend needs to strictly control permissions through method and pathname, such as prohibiting put /
@@ -238,12 +241,12 @@ getAuthorization callback parameter descriptions:
 | -------- | ------------------------------------------------------------ | -------- |
 | options | Required for getting the signature | Object |
 | - Bucket  | Bucket name in the format of `BucketName-APPID`. The bucket name entered here must be in this format | String |
-| - Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). | String |
+| - Region | Bucket region. For the enumerated values, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). | String |
 | callback | Callback method after the temporary key is obtained | Function |
 
 After the temporary key is obtained, the callback returns an object. The attributes of the returned object are as listed below:
 
-| Attribute | Description | Type  |Required |
+| Attribute | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | TmpSecretId | `tmpSecretId` of the obtained temporary key | String | Yes |
 | TmpSecretKey | `tmpSecretKey` of the obtained temporary key | String | No |
@@ -273,7 +276,7 @@ Once the getAuthorization callback function is finished, it returns one of the f
 An Authorization string.
 An object whose attributes are listed as follows:
 
-| Attribute | Description | Type  |Required |
+| Attribute | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | Authorization | Calculated signature string | String | Yes |
 | XCosSecurityToken | `sessionToken` of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header | String | No |
