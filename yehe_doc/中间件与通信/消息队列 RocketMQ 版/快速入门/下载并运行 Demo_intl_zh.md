@@ -83,7 +83,7 @@
 </tr>
 <tr>
 <td>ACL_ACCESS_KEY</td>
-<td>角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" alt=""></td>
+<td>角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://qcloudimg.tencent-cloud.cn/raw/3151b0fe8307ce8b22891f394a99e630.png" alt=""></td>
 </tr>
 <tr>
 <td>rocketmq-xxxx|namespace</td>
@@ -106,7 +106,9 @@
 <td>消息过滤的标签。</td>
 </tr>
 </tbody></table>
+
 2. 编译并运行 ProducerWithNamespace.java 程序。
+
 3. 查看运行结果，运行成功结果如下。
 ```
 Topic:topic1 send success, queueId is: 0
@@ -183,7 +185,7 @@ Topic:topic1 send success, queueId is: 1
 </tr>
 <tr>
 <td>ACL_ACCESS_KEY</td>
-<td>角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" alt=""></td>
+<td>角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://qcloudimg.tencent-cloud.cn/raw/79bc94125f0411443ce1df99c7ad3e04.png" alt=""></td>
 </tr>
 <tr>
 <td>rocketmq-xxxx|namespace</td>
@@ -202,7 +204,9 @@ Topic:topic1 send success, queueId is: 1
 <td>Topic 的名称，在控制台 <strong>topic</strong> 页面复制。</td>
 </tr>
 </tbody></table>
-2. 编译并运行 PushConsumerWithNamespace.java。程序。
+
+2. 编译并运行 PushConsumerWithNamespace.java 程序。
+
 3. 查看运行结果，运行成功结果如下。
    ```bash
     body=Hello world——4
@@ -213,5 +217,5 @@ Topic:topic1 send success, queueId is: 1
     body=Hello world——11
     body=Hello world——8
    ```
+
 4. 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，在**集群管理** > **Group** 页面，可查看与 Group 连接的客户端列表，单击操作列的**查看详情**，可查看消费者详情。
-	 ![](https://main.qcloudimg.com/raw/7187da67219534d767206553e2a383ab.png)
