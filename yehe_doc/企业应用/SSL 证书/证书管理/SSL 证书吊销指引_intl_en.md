@@ -21,7 +21,7 @@ Generally, you may revoke SSL certificates in the following scenarios:
 <tr><td>Tencent Cloud SSL certificate revocation supports only certificates issued on Tencent Cloud, and third-party certificates uploaded to the Tencent Cloud do not support revocation.</td></tr>
 <tr><td rowspan="3">Non-Wotrus international standard certificates and DNSPod GM (SM2) certificates</td><td>A certificate that is valid within 30 days and is to be renewed cannot be revoked.</td></tr>
 <tr><td>A reissued certificate cannot be revoked. If revocation is required, you need to revoke the original certificate, and the reissued certificate will be automatically revoked together with the original certificate.</td></tr>
-<tr><td>The self-service revocation feature is temporarily unavailable for certificates issued before March 25, 2020. To revoke such certificates, please contact <a href="https://cloud.tencent.com/online-service?from=connect-us">online technical support</a>.</td></tr>
+<tr><td>The self-service revocation feature is temporarily unavailable for certificates issued before March 25, 2020. To revoke such certificates, please contact <a href="https://intl.cloud.tencent.com/contact-sales">online technical support</a>.</td></tr>
 </table>
 
 ## Prerequisite
