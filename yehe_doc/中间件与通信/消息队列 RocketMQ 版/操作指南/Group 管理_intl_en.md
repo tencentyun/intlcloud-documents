@@ -16,7 +16,7 @@ This document describes how to create, delete, and query a queue in the TDMQ for
 1. Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), select the region, and click the ID of the target cluster to enter the cluster's basic information page.
 2. Click the **Group** tab at the top, select a namespace, and click **Create** to enter the **Create Group** page.
 3. Enter the group information.
-   ![](https://main.qcloudimg.com/raw/534f1e4d860ea033a0654ea01ae5e436.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/dc78e98d36b3abb703ac4181c3036d28.png)
    - Group Name: enter the group name, which cannot be modified after creation and can contain 3–64 letters, digits, hyphens, and underscores.
    - Group Remarks: enter the group remarks.
    - Advanced Settings:
@@ -34,16 +34,15 @@ This document describes how to create, delete, and query a queue in the TDMQ for
    - Client Protocol: currently, only TCP is supported.
    - Message Retention: total number of retained messages.
    - Consumer Type: ACTIVELY or PASSIVELY.  
-		![](https://main.qcloudimg.com/raw/00892bd0cb97c04e58d3a2ece8250c98.png)
+		![](https://qcloudimg.tencent-cloud.cn/raw/3e5c4720e67673ac1eee8249b7cfe2ea.png)
 3. Click **View Details** in the **Operation** column of the client to view consumer details.
-	 ![](https://main.qcloudimg.com/raw/df9cd4095541cde9a10f5bc8642ded5f.png)
 
 ### Setting offset
 
 1. In the group list, click **Reset offset** in the **Operation** column of the target group.
 2. In the pop-up window, you can choose **the latest offset** or **the specified time point** to set the topic's **consumption offset** (that is, specify from where the consumers under the subscription start to consume messages).
 3. Click **Submit**.
-   ![](https://main.qcloudimg.com/raw/925796ef91aff53610512b7ee082ed0b.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/dafe15859968f9b7c0dbbe4adfb2dda8.png)
 
 ### Editing group
 
