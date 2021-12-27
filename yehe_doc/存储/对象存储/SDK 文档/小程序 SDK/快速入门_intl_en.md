@@ -1,6 +1,6 @@
 ## Download and Installation
 
-#### Related resources
+#### Relevant resources
 
 - Download COS XML SDK source code for WeChat Mini Programs source code here [XML SDK for WeChat Mini Program](https://github.com/tencentyun/cos-wx-sdk-v5).
 - Download the XML mini program SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-wx-sdk-v5/latest/cos-wx-sdk-v5.zip).
@@ -12,16 +12,16 @@
 >? If you encounter errors such as non-existent functions or methods when using the SDK, please update the SDK to the latest version and try again.
 >
 
-#### Environment dependencies
+#### Environmental dependencies
 
 1. This SDK is only applicable to WeChat Mini Programs.
 2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region information](https://intl.cloud.tencent.com/document/product/436/6224).
-3. Log in to the [CAM Console](https://console.cloud.tencent.com/capi) and get your project's SecretId and SecretKey.
+3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get your project's `SecretId` and `SecretKey`.
 
 >? For the definition of terms such as SecretId, SecretKey, and Bucket, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 >
 
-#### Installing SDKs
+#### Installing SDK
 
 There are two ways to install the SDK for WeChat Mini Programs: manual installation and installation through npm as detailed below.
 
@@ -68,7 +68,7 @@ var COS = require('./lib/cos-wx-sdk-v5.js')
 var cos = new COS({
     // ForcePathStyle: true, // If multiple buckets are used, you can use suffixed requests to reduce the number of whitelisted domain names to be configured; the region domain name will be used for requests
     getAuthorization: function (options, callback) {
-        // Get a temporary key asynchronously
+        // Get a temporary key asynchronously.
         wx.request({
             url: 'https://example.com/server/sts.php',
             data: {
@@ -99,7 +99,7 @@ var cos = new COS({
 
 ### Configuration items
 
-#### Use case 
+#### Example
 
 Create a COS SDK instance in the following methods:
 
@@ -115,7 +115,7 @@ var cos = new COS({
         wx.request({
             url: 'https://example.com/server/sts.php',
             data: {
-                // You can obtain the required parameters from options
+                // The required parameters can be obtained from options.
             },
             success: function (result) {
                 var data = result.data;
@@ -176,7 +176,7 @@ var cos = new COS({
     // Required parameters
     getAuthorization: function (options, callback) {
         // The server obtains a signature. For more information, please see the COS SDK for the corresponding programming language: https://cloud.tencent.com/document/product/436/6474
-        // Note: there may be a security risk associated with this method. The backend needs to strictly control the permission through method and pathname, such as prohibiting put /
+        // Note: there may be a security risk associated with this method. The backend needs to strictly control permissions through method and pathname, such as prohibiting put /
         wx.request({
             url: 'https://example.com/server/auth.php',
             data: JSON.stringify(options.Scope),
@@ -193,10 +193,10 @@ var cos = new COS({
 });
 ```
 
-- Method 4 (not recommended): The frontend uses a fixed key to calculate the signature. This method can be used for frontend debugging. If you use this method, be sure to avoid key disclosure.
+- Method 4 (not recommended): the frontend uses a permanent key to calculate the signature. This method can be used for frontend debugging. If you use this method, be sure to avoid key disclosure.
 
 ```js
-// You can obtain/manage SECRETID and SECRETKEY at https://console.cloud.tencent.com/cam/capi
+// Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to check and manage the `SecretId` and `SecretKey` of your project.
 var cos = new COS({
     SecretId: 'SECRETID',
     SecretKey: 'SECRETKEY',
@@ -237,19 +237,19 @@ getAuthorization callback parameter descriptions:
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | -------- |
 | options | Required for getting the signature | Object |
-| - Bucket  | Bucket name in the format: `BucketName-APPID` | String|
+| - Bucket  | Bucket name in the format of `BucketName-APPID`. The bucket name entered here must be in this format | String |
 | - Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). | String |
 | callback | Callback method after the temporary key is obtained | Function |
 
-`Callback` passes back an object after the temporary key is acquired. Here is a list of the  object attributes:
+After the temporary key is obtained, the callback returns an object. The attributes of the returned object are as listed below:
 
-| Attribute | Description | Type | Required |
+| Attribute | Description | Type  |Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
-| TmpSecretId | tmpSecretId of the obtained temporary key | String | Yes |
-| TmpSecretKey | tmpSecretKey of the obtained temporary key | String | No |
-| XCosSecurityToken | sessionToken of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header | String | No |
+| TmpSecretId | `tmpSecretId` of the obtained temporary key | String | Yes |
+| TmpSecretKey | `tmpSecretKey` of the obtained temporary key | String | No |
+| XCosSecurityToken | sessionToken of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header | String | Yes |
 | StartTime | The timestamp in seconds of when you obtained the key, such as `1580000000`. Passing in this parameter as the signature start time can avoid signature expiration issues due to time deviation on the frontend. | String | No   |
-| ExpiredTime | `expiredTime` of the obtained temporary key measured in seconds, i.e., the timeout timestamp, such as 1580000900 | String | No |
+| ExpiredTime | `expiredTime` of the obtained temporary key measured in seconds, i.e., the timeout timestamp, such as 1580000900 | String | Yes |
 
 #### getAuthorization Callback function description (Format 2)
 
@@ -263,7 +263,7 @@ getAuthorization function callback parameter descriptions:
 | ---------- | ------------------------------------------------------------ | -------- |
 | options | Parameter object necessary for getting the signature | Object |
 | - Method | Method of the current request | Object | 
-| - Pathname | Request path used for signature calculation | String | 
+| - Pathname | Request path used for signature calculation | String |
 | - Key | An object key (object name), the unique identifier of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). <br> **Note: This parameter is empty if the API that uses the instance is not an object-operation API.** | String |
 | - Query | Query parameter in the current request. Format: {key: 'val'} | Object |
 | - Headers | Headers in the current request. Format: {key: 'val'} | Object |
@@ -273,7 +273,7 @@ Once the getAuthorization callback function is finished, it returns one of the f
 An Authorization string.
 An object whose attributes are listed as follows:
 
-| Attribute | Description | Type | Required |
+| Attribute | Description | Type  |Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | Authorization | Calculated signature string | String | Yes |
 | XCosSecurityToken | `sessionToken` of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header | String | No |
@@ -302,7 +302,7 @@ cos.putBucket({
 >! If you need to create a bucket via the WeChat Mini Program, but the bucket name is unknown, you cannot configure the bucket name as a allowlisted domain name. Instead, you can use suffixed calls. For more information, please see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687).
 >
 
-### Querying a bucket list
+### Querying the bucket list
 
 ```js
 cos.getService(function (err, data) {
@@ -319,7 +319,7 @@ The WeChat Mini Program upload API "wx.uploadFile" only supports POST requests. 
 wx.chooseImage({
     count: 1, // Default value: 9
     sizeType: ['original'], // You can specify whether to use the original or compressed image. The original is used by default value.
-    sourceType: ['album', 'camera'], // You can specify whether the source is an album or a camera. Both are included by default.
+    sourceType: ['album', 'camera'], // You can specify whether the source is an album or camera. Both are included by default. 
     success: function (res) {
         var filePath = res.tempFiles[0].path;
         var filename = filePath.substr(filePath.lastIndexOf('/') + 1);
@@ -338,7 +338,7 @@ wx.chooseImage({
 });
 ```
 
-### Querying an object list
+### Query objects
 
 ```js
 cos.getBucket({
@@ -350,7 +350,7 @@ cos.getBucket({
 });
 ```
 
-### Downloading an object
+### Download an object
 
 >! This API is used to read object content. To download a file using your browser, you should first get a download URL through the `cos.getObjectUrl` method. For more information, please see [Pre-signed URLs](https://intl.cloud.tencent.com/document/product/436/31711).
 >
@@ -365,7 +365,7 @@ cos.getObject({
 });
 ```
 
-### Deleting an object
+### Delete an object
 
 ```js
 cos.deleteObject({

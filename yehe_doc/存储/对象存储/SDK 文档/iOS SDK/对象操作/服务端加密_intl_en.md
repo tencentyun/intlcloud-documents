@@ -3,12 +3,13 @@
 This document describes how to enable server-side encryption when uploading objects. There are three types of keys that can be used for server-side encryption:
 
 * COS-managed key
-* KMS-managed key
 * Customer-provided key
+* KMS-managed key
 
-## SDK API Reference
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+## SDK API References
+
+For parameters and method description of all APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
 ### Using server-side encryption with COS-managed encryption keys (SSE-COS) to protect data
 
@@ -25,7 +26,7 @@ QCloudCOSXMLUploadObjectRequest *request = [QCloudCOSXMLUploadObjectRequest new]
 [request setCOSServerSideEncyption];
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObjectSSE.m).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObjectSSE.m).
 
 **Swift**
 
@@ -34,7 +35,7 @@ QCloudCOSXMLUploadObjectRequest *request = [QCloudCOSXMLUploadObjectRequest new]
 request.setCOSServerSideEncyption();
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObjectSSE.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObjectSSE.swift).
 
 ### Using server-side encryption with customer-provided encryption keys (SSE-C) to protect data
 
@@ -57,7 +58,10 @@ NSString *customKey = @"123456qwertyuioplkjhgfdsazxcvbnm";
 [request setCOSServerSideEncyptionWithCustomerKey:customKey];
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObjectSSE.m). **Swift**
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObjectSSE.m).
+>
+
+**Swift**
 
 [//]: # (.cssg-snippet-put-object-sse-c)
 ```swift
@@ -65,4 +69,37 @@ let customKey = "123456qwertyuioplkjhgfdsazxcvbnm";
 request.setCOSServerSideEncyptionWithCustomerKey(customKey);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObjectSSE.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObjectSSE.swift).
+>
+
+### Using server-side encryption with KMS-managed encryption keys (SSE-KMS) to protect data
+
+#### Description
+
+SSE-KMS encryption is server-side encryption using keys managed by KMS, a Tencent Cloud security management service. KMS is designed to generate and protect your keys using third party–certified hardware security modules (HSM). It allows you to easily create and manage keys for use in multiple applications and services, while meeting regulatory and compliance requirements. For information on how to activate KMS service, see [Server-side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145).
+
+#### Sample code
+**Objective-C**
+
+[//]: # (.cssg-snippet-put-object-sse-kms)
+```objective-c
+QCloudCOSXMLUploadObjectRequest *request = [QCloudCOSXMLUploadObjectRequest new];
+NSString *customKey = @"123456qwertyuioplkjhgfdsazxcvbnm";
+NSString *arrJsonStr = @"{\"key\":\"value\"}";
+[request setCOSServerSideEncyptionWithKMSCustomKey:customKey jsonStr:arrJsonStr];
+```
+
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObjectSSE.m).
+>
+
+**Swift**
+
+[//]: # (.cssg-snippet-put-object-sse-kms)
+```swift
+let customKey = "123456qwertyuioplkjhgfdsazxcvbnm";
+let arrJsonStr = "{\"key\":\"value\"}";
+self.advancedRequest?.setCOSServerSideEncyptionWithKMSCustomKey(customKey, jsonStr: arrJsonStr);
+```
+
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObjectSSE.swift).
+>
