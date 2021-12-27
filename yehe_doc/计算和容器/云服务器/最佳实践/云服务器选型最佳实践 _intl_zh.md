@@ -1,7 +1,7 @@
 
 
 本文将从云服务器实例功能特性、常见业务场景、注意事项及最佳实践等方面介绍如何进行实例选型，旨在帮助您了解应如何结合实际业务场景选购云服务器。实例选型分析过程如下图所示：
-<img src="https://main.qcloudimg.com/raw/95b8731741d19f09f7ecc82f0b297aca.png" style="width:60%"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/658160d46d903c9ee1ab6e12949d8726.png" style="width:100%"/>
 
 ## 地域及可用区
 #### 地域
@@ -125,7 +125,7 @@ NVIDIA GPU 系列实例 采用 NVIDIA Tesla 系列 GPU，包括主流的 T4/V100
 ## 相关产品
 ### 常用云产品搭配推荐
 您可结合实际业务场景，搭配使用其他腾讯云产品。本文以典型的 Web 建站架构为例，推荐搭配云产品如下图所示：
-<img src="https://main.qcloudimg.com/raw/f9dbd04108bb3ffff1d12944b77d51ed.png" style="width:70%"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/8cb80fbc1dc476bc6e22eb3bf3c32c24.png" style="width:100%"/>
 
 ### 其他云产品
 您还可结合实际需求，选择使用其他云产品。例如，当您的基本业务已部署完毕后，可采取一定的容灾措施，以确保系统架构的健壮性，同时也可保障数据安全。可结合以下腾讯云产品实现容灾：
