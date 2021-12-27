@@ -22,21 +22,22 @@ For example, your company has departments A and B, and department A's system pro
    - Role Name: it can contain up to 32 digits, letters, and delimiters (underscore or hyphen).
    - Remarks (optional): enter remarks of up to 100 characters.
 4. Click **Submit**.
-   ![](https://main.qcloudimg.com/raw/030444db462129f54a35ce19f7a92e41.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/c3a86cd8ab8e808166e880a423178f10.png)
 
 ### Granting permission to role
 
 1. Find the newly created role in **[Role Management](https://console.cloud.tencent.com/tdmq/role?rid=4&protocol=RocketMQ&clusterId=)** in the TDMQ console and copy the role token in the following methods:
    <dx-tabs>
-     ::: Method 1. Copy in the <b>Token</b> column
+     ::: Method\s1.\sCopy\sin\sthe\s<b>Token</b>\scolumn
      Click **Copy** in the **Token** column.
-     ![](https://main.qcloudimg.com/raw/bbb512dd0255b2fca33706dafd4c8b9a.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/10afef255c4577473b0426af8cc9e7cf.png)
      :::
-     ::: Method 2. View and copy in the <b>Operation</b> column
+     ::: Method\s2.\sView\sand\scopy\sin\sthe\s<b>Operation</b>\scolumn
      Click **View Token** in the **Operation** column and click **Copy** in the pop-up window.
-     ![](https://main.qcloudimg.com/raw/97acb6323c59344f7193c736786472e0.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/5778445dc839d99bff8755d5813a1201.png)
      :::
      </dx-tabs>
+
 > !Token leakage may lead to data leakage; therefore, you should keep your token confidential.
 
 2. Add the copied role token to the client parameters. For directions on how to add the token parameter to the client code, see the [sample code](https://github.com/streamnative/rop/blob/master/examples/src/main/java/org/streamnative/rocketmq/example/simple/AclClient.java) of RocketMQ.
@@ -61,9 +62,9 @@ For example, your company has departments A and B, and department A's system pro
       DefaultMQProducer producer = new DefaultMQProducer("rocketmq-mw***|namespace", "ProducerGroupName", getAclRPCHook());
       ```
 3. After selecting the cluster with the previously set role in the TDMQ for RocketMQ console, switch to the **Namespace** page, select a namespace for which to configure production and consumption permissions, and click **Configure Permissions** in the **Operation** column.
-	 ![](https://main.qcloudimg.com/raw/6072870c3f8271f132cc3bb06256c071.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/5cd676d675dd1442f89b1f616c5fdd80.png)
 4. Click **Add Role**, find the role just created in the drop-down list, select the required permission, and click **Save**.
-   ![](https://main.qcloudimg.com/raw/7afe9cdf20fb2db9a06079b1f261493e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/05914b652c631220caf865e008823b9b.png)
 5. Check whether the permission has taken effect.
    You can run the configured client to access the topic resources in the namespace and produce/consume messages according to the configured permission. Check whether a no permission error is reported, and if not, the permission has been configured successfully.
 
