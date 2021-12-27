@@ -12,7 +12,7 @@
 
 针对上述场景，TDMQ 提供 Broker 端过滤的方式，用户可在生产消息时设置一个或者多个 Tag 标签，消费时指定 Tag 订阅。
 
-![](https://main.qcloudimg.com/raw/32953b29d96dce605fa4a1598b3f5146.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/eb9fd7d09ed4656c47b936263cfa62eb.png)
 
 ## 使用方式
 
