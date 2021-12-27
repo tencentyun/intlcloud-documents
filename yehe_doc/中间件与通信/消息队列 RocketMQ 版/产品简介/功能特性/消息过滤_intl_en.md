@@ -12,7 +12,7 @@ Generally, messages with the same business attributes are stored in the same top
 
 To solve this problem, TDMQ supports filtering on the broker. You can set one or more tags during message production and subscribe to specified tags during consumption.
 
-![](https://main.qcloudimg.com/raw/32953b29d96dce605fa4a1598b3f5146.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/eb9fd7d09ed4656c47b936263cfa62eb.png)
 
 ## Usage
 
