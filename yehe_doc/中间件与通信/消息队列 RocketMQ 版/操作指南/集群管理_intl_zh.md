@@ -3,7 +3,7 @@
 集群是 TDMQ RocketMQ 版中的一个资源维度，不同集群的命名空间、Topic、Group 等完全隔离。每个集群会有集群的资源限制例如 Topic 总数、消息保留时长等。常见的使用方式如：开发测试环境使用一个专门集群，生产环境使用一个专门的集群。
 
 **TDMQ 资源层次关系**
-![](https://main.qcloudimg.com/raw/a98447d277622f79a33a9e5376d4ea95.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c613209d6cb2f4e924dfe15df85513c5.png)
 
 ## 操作步骤
 
@@ -12,7 +12,7 @@
 1. 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，进入**集群管理**页面。
 2. 在**集群管理**页面，选择地域后，单击**新建**进入新建集群对话框。
 3. 在新建集群对话框，设置集群的相关属性。
-   ![](https://main.qcloudimg.com/raw/499c8c39bf37f1b39985e09d6ac6ee21.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/525df131a53c43eaeeccdad150224cdd.png)
    - 集群名称：设置环境的名称，3-64个字符，只能包含字母、数字、“-”及“_”
    - 说明：环境设置的备注说明，不能超过128个字符
 4. 单击**确定**完成所在地域环境的创建。
@@ -47,13 +47,13 @@
 | 消息保留时间      | 消息保留可配置的最长时间，在命名空间级别可以配置比这个更短的时间 |
 | 消息最大延时      | 消息延迟消费的最长时间                                       |
 
-![](https://main.qcloudimg.com/raw/35d27c2873af355df373c6d389bf9888.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/950f9b3f350dcac7e99ca09af85f295d.png)
 
 ### 获取接入地址
 
 在**集群管理**列表页，单击操作列的**接入地址**，可获取集群的接入地址。
 
-![](https://main.qcloudimg.com/raw/4fed5e6a2497995613b645f6a9a7e206.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/73da10eea086f8d28c77409e2b323407.png)
 
 ### 编辑集群
 
