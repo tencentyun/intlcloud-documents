@@ -1,7 +1,7 @@
 ## Overview
 Many-to-One sync is to sync the content in multiple source databases to one target database. If you use a single database, you may often need to shard the data due to high load or region issues, but storing the databases/tables of the same type in many databases makes data query inconvenient. The many-to-one sync feature can easily solve this problem.
 
-As a many-to-one sync task consists of multiple one-way sync tasks to establish a many-to-one topology, restrictions on one-way sync and relevant operations must be followed. For more information, see the appropriate sync scenario in [Data Sync](https://cloud.tencent.com/document/product/571/58672).
+As a many-to-one sync task consists of multiple one-way sync tasks to establish a many-to-one topology, restrictions on one-way sync and relevant operations must be followed. For more information, see the appropriate sync scenario in [Data Sync](https://intl.cloud.tencent.com/document/product/571/42579).
 
 ## Notes
 - During full data sync, DTS consumes certain source database resources, which may increase the load and pressure of the source database. If your database configuration is low, we recommend you sync the data during off-peak hours.
@@ -126,7 +126,7 @@ The following uses MySQL two-to-one sync (databases A and B have database/table 
 </tbody></table>
 6. On the task verification page, the system will check the DDL configuration first and then check the source and target database parameters. After all check items are passed, click **Start Task**.
 >?
->- If the verification failed, fix the problem as instructed in [Fix for Verification Failure](https://cloud.tencent.com/document/product/571/58685) and initiate the verification task again.
+>- If the verification failed, fix the problem as instructed in [Fix for Verification Failure](https://intl.cloud.tencent.com/document/product/571/42552) and initiate the verification task again.
 >- If an alarm is displayed in the verification result, it will not affect the task start, but we recommend you click **View Details** to get the suggestions for adjustment. 
 >
  - DDL check
