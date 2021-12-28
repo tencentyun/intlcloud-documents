@@ -218,7 +218,5 @@ spec:
       claimName: cos-pvc
 ```
 
-## 相关信息
-更多关于如何使用对象存储的信息请参见 [README_COSFS.md](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_COSFS.md)。
 
 
