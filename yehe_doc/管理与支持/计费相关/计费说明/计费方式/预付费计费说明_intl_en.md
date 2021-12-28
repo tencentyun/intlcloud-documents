@@ -20,7 +20,7 @@ We recommend the prepaid billing mode if:
 3. **Bill**
     In prepaid billing mode, a bill that includes the purchase/renewal information will be generated automatically after payment.
 4. **Renew**
-    You can renew your subscription in Renewal Management to extend the validity period of your resources.
+    You can renew your subscription in [Renewal Management](https://intl.cloud.tencent.com/document/product/555/7454) to extend the validity period of your resources.
 5. **Action upon expiration**
     After your subscription expires, the service will be suspended for your account and the related resources will be terminated. If you enable auto-renewal for your resources, Tencent Cloud will renew your subscription and deduct the renewal fee from your balance automatically upon expiration.
 
