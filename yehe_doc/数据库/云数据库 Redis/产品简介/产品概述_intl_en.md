@@ -1,4 +1,4 @@
-TencentDB for Redis is a cache database provided by Tencent Cloud based on the Redis protocol that features high availability, reliability, and flexibility. Compatible with Redis 2.8, 4.0, and 5.0 protocols and available in both standard and cluster architectures, it supports up to 4 TB of storage capacity and tens of millions of concurrent requests, meeting the needs of different scenarios such as caching, storage, and computing.
+TencentDB for Redis is a cache database provided by Tencent Cloud based on the Redis protocol that features high availability, reliability, and flexibility. Compatible with Redis 2.8, 4.0, and 5.0 protocols and available in both standard and cluster architectures, it supports up to 8 TB of storage capacity and tens of millions of concurrent requests, meeting the needs of different scenarios such as caching, storage, and computing.
 
 
 ## Product Features
@@ -15,5 +15,5 @@ TencentDB for Redis is available in both standard and cluster architectures for 
 <tr>  
 <td>Memory Edition (standard architecture)</td><td >0 to 5</td><td >Supported</td><td >This edition is compatible with Redis 2.8, 4.0, and 5.0 protocols. The v2.8 supports 0 replicas and is cost-effective when it's only used as cache. The v4.0 or v5.0 supports 1 to 5 replicas, and the instance capacity and replicas can be scaled with no service interruption.<br>This edition supports master/replica hot backup, real-time data synchronization, and failover within seconds.</td></tr>  
 <tr>  
-<td>Memory Edition (cluster architecture)</td><td >1 to 5</td><td >Supported</td><td >This edition is compatible with Redis 4.0 and 5.0 protocols. The cluster architecture supports 3 to 128 shards with a maximum of 4 TB storage capacity and tens of millions of QPS. <br>This edition supports master/replica hot backup, real-time data synchronization, and failover within seconds.</td></tr>  
+<td>Memory Edition (cluster architecture)</td><td >1 to 5</td><td >Supported</td><td >This edition is compatible with Redis 4.0 and 5.0 protocols. The cluster architecture supports 1 to 128 shards with a maximum of 8 TB storage capacity and tens of millions of QPS. <br>This edition supports master/replica hot backup, real-time data synchronization, and failover within seconds.</td></tr>  
 </table>  

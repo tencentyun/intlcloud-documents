@@ -41,5 +41,5 @@ The `c_10` table is in the `ycsb` directory in the database and contains data fi
 
 Run the `mongorestore` command to restore the data, where the `-h` parameter specifies the self-built database address, `--dir` specifies the directory of the data file, and `--gzip` must be specified to decompress the backup file. The command is as follows:
 ```
-./mongorestore  --gzip --drop -h127.0.0.1:27017 --dir ./1544517027220146694
+./mongorestore  --gzip --drop -h127.0.0.1:27017 --dir ./1544517027220146694 --oplogReplay ./oplog.bson
 ```

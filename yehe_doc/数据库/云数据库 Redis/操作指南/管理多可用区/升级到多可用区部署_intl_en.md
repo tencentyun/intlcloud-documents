@@ -10,6 +10,5 @@ This document describes how to upgrade instance deployment from single-AZ to mul
 ## Step 2. Add replicas to replica AZs
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), locate the desired instance in the instance list, and select **Configuration Modification** > **Add Replica** in the **Operation** column.
 2. In the pop-up window, specify replica AZs, and deploy the master node and replica nodes to different AZs.
->?Currently, the replicas of a multi-AZ deployed instance cannot be deleted.
->
+
 ![](https://main.qcloudimg.com/raw/d568fb5da499a4825a1e8fb516ea48db.png)

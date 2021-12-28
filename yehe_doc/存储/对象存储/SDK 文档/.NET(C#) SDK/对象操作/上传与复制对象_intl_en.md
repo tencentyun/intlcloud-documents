@@ -9,16 +9,16 @@ This document provides an overview of APIs and SDK sample codes related to uploa
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object | Uploads an object to a bucket. |
 | [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using an HTML form | Uploads an object using an HTML form. |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object (modifying object attributes) | Copies a file to a destination path |
-| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | Appending parts  | Uploads an object by appending parts   |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object (modifying object attributes) | Copies a file to a destination path. |
+| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | Appending parts  | Uploads an object by appending the object by parts.   |
 
 **Multipart operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads an object in multiple parts |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation. |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads an object in multiple parts. |
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying an object part | Copies a part of an object. |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of a file. |
@@ -26,7 +26,7 @@ This document provides an overview of APIs and SDK sample codes related to uploa
 
 ## SDK API References
 
-For the parameters and method description of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Advanced APIs (Recommended)
 
@@ -40,64 +40,107 @@ The advanced APIs encapsulate the simple upload and multipart upload APIs and ca
 >?
 > - If the file size is less than the multipart upload threshold, simple upload is used. Otherwise, multiple upload is used. The multipart upload threshold is configurable and is 5 MB by default.
 > - The part size is configurable and is 1 MB by default.
-> - If your .NET Framework version is 4.0 or earlier, advanced APIs are not available. For more information, please see Backward Compatibility.
+> - If your .NET Framework version is 4.0 or earlier, advanced APIs are not available. For more information, please see [Backward Compatibility](https://intl.cloud.tencent.com/document/product/436/42378).
 > 
 
-#### Sample code 1. Uploading a local file
+#### Sample code 1. Uploading a local object via advanced API
 
-[//]: # ".cssg-snippet-transfer-upload-file"
+[//]: # (.cssg-snippet-transfer-upload-file)
 ```cs
-// Initialize TransferConfig.
-TransferConfig transferConfig = new TransferConfig();
+using COSXML.Model.Object;
+using COSXML.Auth;
+using COSXML.Transfer;
+using System;
+using COSXML;
 
-// Manually set the multipart upload threshold. If the object size is less than the threshold, simple upload is used. Otherwise, multipart upload is used. If no value is specified, the default value 5 MB is used.
-transferConfig.DivisionForUpload = 5242880;
-// Manually set the automatic part size for the advanced API. If no value is specified, the default value 1 MB is used.
-transferConfig.SliceSizeForUpload = 2097152;
-
-// Initialize TransferManager.
-TransferManager transferManager = new TransferManager(cosXml, transferConfig);
-
-String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
-String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
-String srcPath = @"temp-source-file";// Absolute path to the local file
-
-// Upload an object.
-COSXMLUploadTask uploadTask = new COSXMLUploadTask(bucket, cosPath);
-uploadTask.SetSrcPath(srcPath);
-
-uploadTask.progressCallback = delegate (long completed, long total)
+namespace COSSnippet
 {
-    Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
-};
+    public class TransferUploadObjectModel {
 
-try {
-  COSXML.Transfer.COSXMLUploadTask.UploadTaskResult result = await 
-    transferManager.UploadAsync(uploadTask);
-  Console.WriteLine(result.GetResultInfo());
-  string eTag = result.eTag;
-} catch (Exception e) {
-    Console.WriteLine("CosException: " + e);
+      private CosXml cosXml;
+
+      TransferUploadObjectModel() {
+        CosXmlConfig config = new CosXmlConfig.Builder()
+          .SetRegion("COS_REGION") // Set the default region. For abbreviations of COS regions, visit https://cloud.tencent.com/document/product/436/6224.
+          .Build();
+        
+        string secretId = "SECRET_ID";   // SecretId of the TencentCloud API. For more information about how to obtain the API key, see https://console.cloud.tencent.com/cam/capi.
+        string secretKey = "SECRET_KEY"; // SecretKey of the TencentCloud API. For more information about how to obtain the API key, see https://console.cloud.tencent.com/cam/capi.
+        long durationSecond = 600;          // Validity period of the request signature in seconds
+        QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
+          secretKey, durationSecond);
+        
+        this.cosXml = new CosXmlServer(config, qCloudCredentialProvider);
+      }
+
+      /// Upload an object via advanced API
+      public async void TransferUploadFile()
+      {
+        // Initialize TransferConfig
+        TransferConfig transferConfig = new TransferConfig();
+        
+        // Initialize TransferManager
+        TransferManager transferManager = new TransferManager(cosXml, transferConfig);
+        // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+        String bucket = "examplebucket-1250000000"; 
+        String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
+        String srcPath = @"temp-source-file";// Absolute path to the local file
+        
+        // Upload an object
+        COSXMLUploadTask uploadTask = new COSXMLUploadTask(bucket, cosPath);
+        uploadTask.SetSrcPath(srcPath);
+        
+        uploadTask.progressCallback = delegate (long completed, long total)
+        {
+            Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
+        };
+
+        try {
+          COSXML.Transfer.COSXMLUploadTask.UploadTaskResult result = await 
+            transferManager.UploadAsync(uploadTask);
+          Console.WriteLine(result.GetResultInfo());
+          string eTag = result.eTag;
+        } catch (Exception e) {
+            Console.WriteLine("CosException: " + e);
+        }
+
+      }
+
+      static void Main(string[] args)
+      {
+        TransferUploadObjectModel m = new TransferUploadObjectModel();
+        /// Upload an object via advanced API
+        m.TransferUploadFile();
+        // .cssg-methods-pragma
+      }
+    }
 }
 ```
 
 >?
-> - For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
-> - You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
+>- After the upload, you can generate a download URL for the uploaded file with the same key. For detailed directions, please see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/38068). Please note that for private-read files, the download URL is only valid for a limited period of time.
 >
 
 #### Sample code 2. Uploading binary data
 
-[//]: # ".cssg-snippet-transfer-upload-bytes"
+[//]: # (.cssg-snippet-transfer-upload-bytes)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string cosPath = "exampleObject"; // Object key
   byte[] data = new byte[1024]; // Binary data
   PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, data);
-  
+  // Initiate a request
   cosXml.PutObject(putObjectRequest);
+  // Object ETag
+  string eTag = result.eTag;
+  // crc64ecma value of the object
+  string crc64ecma = result.crc64ecma;
+  // Print the request result
+  Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
 {
@@ -112,29 +155,79 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```
 
 >?
-> - For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
-> - You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
+>- After the upload, you can generate a download URL for the uploaded file with the same key. For detailed directions, please see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/38068). Please note that for private-read files, the download URL is only valid for a limited period of time.
 >
 
-#### Sample code 3. Suspending, resuming, and canceling an upload
+#### Sample code 3. Uploading with a file stream
+
+[//]: # (.cssg-snippet-transfer-upload-bytes)
+```cs
+try
+{
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
+  string key = "exampleobject"; // Object key
+  string srcPath = @"temp-source-file";// Absolute path of the local file
+  // Open the read-only file stream object
+  FileStream fileStream = new FileStream(srcPath, FileMode.Open, FileAccess.Read);
+  // Assemble the upload request, where offset sendLength is optional
+  long offset = 0L;
+  long sendLength = fileStream.Length;
+  PutObjectRequest request = new PutObjectRequest(bucket, key, fileStream, offset, sendLength);
+  // Set the progress callback
+  request.SetCosProgressCallback(delegate (long completed, long total)
+  {
+    Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
+  });
+  // Execute the request
+  PutObjectResult result = cosXml.PutObject(request);
+  // Close the file stream
+  fileStream.Close();
+  // Object ETag
+  string eTag = result.eTag;
+  // crc64ecma value of the object
+  string crc64ecma = result.crc64ecma;
+  // Print the request result.
+  Console.WriteLine(result.GetResultInfo());
+}
+catch (COSXML.CosException.CosClientException clientEx)
+{
+  // Request failed
+  Console.WriteLine("CosClientException: " + clientEx);
+}
+catch (COSXML.CosException.CosServerException serverEx)
+{
+  // Request failed
+  Console.WriteLine("CosServerException: " + serverEx.GetInfo());
+}
+```
+>?
+> - Uploading with a file stream is supported from v5.4.24. To download the latest version of SDK, go to [Releases](https://github.com/tencentyun/qcloud-sdk-dotnet/releases) or refer to [Getting Started](https://intl.cloud.tencent.com/document/product/436/30594).
+- For the version changelog, see [GitHub](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/CHANGELOG.md).
+>- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/blob/master/dotnet/dist/PutObject.cs).
+>- After the upload, you can generate a download URL for the uploaded file with the same key. For detailed directions, please see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/38068). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>
+
+#### Sample code 4. Suspending, resuming, and canceling an upload
 
 To suspend an upload, use the code below:
 
-[//]: # ".cssg-snippet-transfer-upload-pause"
+[//]: # (.cssg-snippet-transfer-upload-pause)
 ```cs
 uploadTask.Pause();
 ```
 
 To resume a suspended download, use the code below:
 
-[//]: # ".cssg-snippet-transfer-upload-resume"
+[//]: # (.cssg-snippet-transfer-upload-resume)
 ```cs
 uploadTask.Resume();
 ```
 
 To cancel an upload, use the code below:
 
-[//]: # ".cssg-snippet-transfer-upload-cancel"
+[//]: # (.cssg-snippet-transfer-upload-cancel)
 ```cs
 uploadTask.Cancel();
 ```
@@ -142,34 +235,35 @@ uploadTask.Cancel();
 >? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
 >
 
-#### Sample code 4. Uploading multiple objects
+#### Sample code 5. Uploading multiple objects
 
-[//]: # ".cssg-snippet-transfer-batch-upload-objects"
+[//]: # (.cssg-snippet-transfer-batch-upload-objects)
 ```cs
 TransferConfig transferConfig = new TransferConfig();
 
 // Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
-
-string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+// Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+string bucket = "examplebucket-1250000000";
 
 for (int i = 0; i < 5; i++) {
   // Upload an object.
-  string cosPath = "exampleobject" + i; // Location identifier of the object in the bucket, i.e., the object key
-  string srcPath = @"temp-source-file";// Absolute path to the local file
+  string cosPath = "exampleobject" + i; // Location identifier of an object in the bucket, i.e. the object key
+  string srcPath = @"temp-source-file";// Absolute path of the local file
   COSXMLUploadTask uploadTask = new COSXMLUploadTask(bucket, cosPath); 
   uploadTask.SetSrcPath(srcPath);
   await transferManager.UploadAsync(uploadTask);
 }
 ```
 
-#### Sample code 5. Creating a directory
+#### Sample 6. Creating a directory
 
-[//]: # ".cssg-snippet-create-directory"
+[//]: # (.cssg-snippet-create-directory)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string cosPath = "dir/"; // Object key
   PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, new byte[0]);
   
@@ -188,8 +282,8 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```
 
 >?
-> - For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
-> - You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
+>- After the upload, you can generate a download URL for the uploaded file with the same key. For detailed directions, please see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/38068). Please note that for private-read files, the download URL is only valid for a limited period of time.
 > 
 
 ### Copying objects
@@ -205,7 +299,7 @@ The advanced APIs encapsulate async requests for the simple copy and multipart c
 
 #### Sample code
 
-[//]: # ".cssg-snippet-transfer-copy-object"
+[//]: # (.cssg-snippet-transfer-copy-object)
 ```cs
 // Initialize TransferConfig.
 TransferConfig transferConfig = new TransferConfig();
@@ -222,7 +316,7 @@ string sourceAppid = "1250000000"; // Account appid
 string sourceBucket = "sourcebucket-1250000000"; //" Source object bucket
 string sourceRegion = "COS_REGION"; // Source object bucket region
 string sourceKey = "sourceObject"; // Source object key
-// Construct the source object attributes
+// Construct source object attributes
 CopySourceStruct copySource = new CopySourceStruct(sourceAppid, sourceBucket, 
     sourceRegion, sourceKey);
 
@@ -250,22 +344,23 @@ try {
 
 #### Description
 
-This API (PUT Object) is used to upload an object smaller than 5 GB to a specified bucket. To call this API, you need to have permission to write the bucket. If the object size is larger than 5 GB, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) for the upload.
+This API (PUT Object) is used to upload an object smaller than 5 GB to a specified bucket. To call this API, you need to have permission to write to the bucket. If the object size is larger than 5 GB, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) for the upload.
 
 >!
 > - The key (filename) cannot end with `/`; otherwise, it will be identified as a folder.
-> - Each root account (`AAPID`) can have up to 1,000 bucket ACLs and an unlimited number of object ACLs. Do not configure ACLs for an object during upload if you don’t need to control access to it. The object will inherit the permissions of its bucket by default.
+> - Each root account (`APPID`) can have up to 1,000 bucket ACLs and an unlimited number of object ACLs. Do not configure ACLs for an object during upload if you don’t need to control access to it. The object will inherit the permissions of its bucket by default.
 > 
 
 #### Sample code
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
-  string srcPath = @"temp-source-file";// Absolute path to the local file
+  string srcPath = @"temp-source-file";// Absolute path of the local file
 
   PutObjectRequest request = new PutObjectRequest(bucket, key, srcPath);
   // Set the progress callback
@@ -273,9 +368,9 @@ try
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
   });
-  // Execute the request.
+  // Execute the request
   PutObjectResult result = cosXml.PutObject(request);
-  // Object Etag
+  // Object ETag
   string eTag = result.eTag;
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -291,8 +386,8 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```
 
 >?
-> - For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PutObject.cs).
-> - You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PutObject.cs).
+>- After the upload, you can generate a download URL for the uploaded file with the same key. For detailed directions, please see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/38068). Please note that for private-read files, the download URL is only valid for a limited period of time.
 > 
 
 ### Uploading an object using an HTML form
@@ -303,22 +398,23 @@ This API is used to upload an object using an HTML form.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-post-object"
+[//]: # (.cssg-snippet-post-object)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
-  string srcPath = @"temp-source-file";// Absolute path to the local file
+  string srcPath = @"temp-source-file";// Absolute path of the local file
   PostObjectRequest request = new PostObjectRequest(bucket, key, srcPath);
   // Set the progress callback
   request.SetCosProgressCallback(delegate (long completed, long total)
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
   });
-  // Execute the request.
+  // Execute the request
   PostObjectResult result = cosXml.PostObject(request);
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -341,10 +437,12 @@ catch (COSXML.CosException.CosServerException serverEx)
 #### Description
 
 This API (PUT Object-Copy) is used to copy an object to a destination path.
+It can modify object attributes and metadata during request copying.
 
-#### Sample code 1: Copying an object with its attributes preserved
 
-[//]: # ".cssg-snippet-copy-object"
+#### Sample code 1. Copying an object with its attributes preserved
+
+[//]: # (.cssg-snippet-copy-object)
 ```cs
 try
 {
@@ -352,20 +450,21 @@ try
   string sourceBucket = "sourcebucket-1250000000"; //" Source object bucket
   string sourceRegion = "COS_REGION"; // Source object bucket region
   string sourceKey = "sourceObject"; // Source object key
-  // Construct the source object attributes
+  // Construct source object attributes
   CopySourceStruct copySource = new CopySourceStruct(sourceAppid, sourceBucket, 
     sourceRegion, sourceKey);
 
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   CopyObjectRequest request = new CopyObjectRequest(bucket, key);
   // Set the copy source
   request.SetCopySource(copySource);
-  // Set whether to copy or update. Copy is used here.
+  // Set whether to copy or update. Copy is used here
   request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.Copy);
-  // Execute the request.
+  // Execute the request
   CopyObjectResult result = cosXml.CopyObject(request);
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -380,59 +479,23 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/CopyObject.cs).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PostObject.cs).
 >
 
-#### Sample code 2: Copying an object while replacing its attributes
+#### Sample code 2. Modifying the storage class of an object
 
-[//]: # ".cssg-snippet-copy-object-replaced"
+>?
+> - You can change the storage class of an object from STANDARD to STANDARD_IA, INTELLIGENT TIERING, ARCHIVE, or DEEP ARCHIVE. 
+> - To change ARCHIVE or DEEP ARCHIVE to other storage classes, you need to call [PostRestore](https://intl.cloud.tencent.com/document/product/436/38066) to restore objects in ARCHIVE or DEEP ARCHIVE first before calling this API. 
+> - For more details about storage classes, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
+> 
+
+[//]: # (.cssg-snippet-modify-object-storage-class)
 ```cs
 try
 {
-  string sourceAppid = "1250000000"; // Account appid
-  string sourceBucket = "sourcebucket-1250000000"; //" Source object bucket
-  string sourceRegion = "COS_REGION"; // Source object bucket region
-  string sourceKey = "sourceObject"; // Source object key
-  // Construct the source object attributes
-  CopySourceStruct copySource = new CopySourceStruct(sourceAppid, sourceBucket, 
-    sourceRegion, sourceKey);
-
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-  string key = "exampleobject"; // Object key
-  CopyObjectRequest request = new CopyObjectRequest(bucket, key);
-  // Set the copy source
-  request.SetCopySource(copySource);
-  // Set whether to copy or update. Copy is used here.
-  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.Replaced);
-  // Replace metadata
-  request.SetRequestHeader("Content-Disposition", "attachment; filename=example.jpg");
-  // Execute the request.
-  CopyObjectResult result = cosXml.CopyObject(request);
-  // Request successful
-  Console.WriteLine(result.GetResultInfo());
-}
-catch (COSXML.CosException.CosClientException clientEx)
-{
-  // Request failed
-  Console.WriteLine("CosClientException: " + clientEx);
-}
-catch (COSXML.CosException.CosServerException serverEx)
-{
-  // Request failed
-  Console.WriteLine("CosServerException: " + serverEx.GetInfo());
-}
-```
-
->? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/CopyObject.cs).
->
-
-#### Sample code 3: Modifying object metadata
-
-[//]: # ".cssg-snippet-modify-object-metadata"
-```cs
-try
-{
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   string appId = "1250000000"; // Account APPID
   string region = "COS_REGION"; // Region where the bucket of the source object resides
@@ -443,14 +506,99 @@ try
   CopyObjectRequest request = new CopyObjectRequest(bucket, key);
   // Set the copy source
   request.SetCopySource(copySource);
-  // Set whether to copy or update. Copy is used here.
+  // Set whether to copy or update. Copy is used here
+  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.Replaced);
+  // Change the storage class to ARCHIVE
+  request.SetCosStorageClass("ARCHIVE");
+  // Execute the request
+  CopyObjectResult result = cosXml.CopyObject(request);
+  // Request succeeded
+  Console.WriteLine(result.GetResultInfo());
+}
+catch (COSXML.CosException.CosClientException clientEx)
+{
+  // Request failed
+  Console.WriteLine("CosClientException: " + clientEx);
+}
+catch (COSXML.CosException.CosServerException serverEx)
+{
+  // Request failed
+  Console.WriteLine("CosServerException: " + serverEx.GetInfo());
+}
+```
+
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ModifyObjectProperty.cs).
+
+#### Sample code 3. Copying an object while replacing its attributes
+
+[//]: # (.cssg-snippet-copy-object-replaced)
+```cs
+try
+{
+  string sourceAppid = "1250000000"; // Account appid
+  string sourceBucket = "sourcebucket-1250000000"; //" Source object bucket
+  string sourceRegion = "COS_REGION"; // Source object bucket region
+  string sourceKey = "sourceObject"; // Source object key
+  // Construct source object attributes
+  CopySourceStruct copySource = new CopySourceStruct(sourceAppid, sourceBucket, 
+    sourceRegion, sourceKey);
+
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
+  string key = "exampleobject"; // Object key
+  CopyObjectRequest request = new CopyObjectRequest(bucket, key);
+  // Set the copy source
+  request.SetCopySource(copySource);
+  // Set whether to copy or update. Copy is used here
+  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.Replaced);
+  // Replace metadata
+  request.SetRequestHeader("Content-Disposition", "attachment; filename=example.jpg");
+  // Execute the request
+  CopyObjectResult result = cosXml.CopyObject(request);
+  // Request succeeded
+  Console.WriteLine(result.GetResultInfo());
+}
+catch (COSXML.CosException.CosClientException clientEx)
+{
+  // Request failed
+  Console.WriteLine("CosClientException: " + clientEx);
+}
+catch (COSXML.CosException.CosServerException serverEx)
+{
+  // Request failed
+  Console.WriteLine("CosServerException: " + serverEx.GetInfo());
+}
+```
+
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PostObject.cs).
+>
+
+#### Sample code 4. Modifying object metadata
+
+[//]: # (.cssg-snippet-modify-object-metadata)
+```cs
+try
+{
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
+  string key = "exampleobject"; // Object key
+  string appId = "1250000000"; // Account APPID
+  string region = "COS_REGION"; // Region where the bucket of the source object resides
+  // Construct object attributes
+  CopySourceStruct copySource = new CopySourceStruct(appId, bucket, 
+    region, key);
+
+  CopyObjectRequest request = new CopyObjectRequest(bucket, key);
+  // Set the copy source
+  request.SetCopySource(copySource);
+  // Set whether to copy or update. Copy is used here
   request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.Replaced);
   // Replace metadata
   request.SetRequestHeader("Content-Disposition", "attachment; filename=example.jpg");
   request.SetRequestHeader("Content-Type", "image/png");
-  // Execute the request.
+  // Execute the request
   CopyObjectResult result = cosXml.CopyObject(request);
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -467,46 +615,6 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 >? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ModifyObjectProperty.cs).
 >
-
-#### Sample code 4: Modifying the storage class of an object
-
-[//]: # ".cssg-snippet-modify-object-storage-class"
-```cs
-try
-{
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-  string key = "exampleobject"; // Object key
-  string appId = "1250000000"; // Account APPID
-  string region = "COS_REGION"; // Region where the bucket of the source object resides
-  // Construct object attributes
-  CopySourceStruct copySource = new CopySourceStruct(appId, bucket, 
-    region, key);
-
-  CopyObjectRequest request = new CopyObjectRequest(bucket, key);
-  // Set the copy source
-  request.SetCopySource(copySource);
-  // Set whether to copy or update. Copy is used here.
-  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.Replaced);
-  // Change the storage class to ARCHIVE
-  request.SetCosStorageClass("ARCHIVE");
-  // Execute the request.
-  CopyObjectResult result = cosXml.CopyObject(request);
-  // Request successful
-  Console.WriteLine(result.GetResultInfo());
-}
-catch (COSXML.CosException.CosClientException clientEx)
-{
-  // Request failed
-  Console.WriteLine("CosClientException: " + clientEx);
-}
-catch (COSXML.CosException.CosServerException serverEx)
-{
-  // Request failed
-  Console.WriteLine("CosServerException: " + serverEx.GetInfo());
-}
-```
-
->? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ModifyObjectProperty.cs).
 
 
 ### Appending parts
@@ -515,15 +623,19 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 This API is used to upload an object by appending parts of the object.
 
+>? This feature is supported starting from v5.4.22. For the version changelog, see [GitHub](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/CHANGELOG.md).
+>
+
 #### Sample code
 
-[//]: # ".cssg-snippet-append-object"
+[//]: # (.cssg-snippet-append-object)
 ```cs
 try
 {
-    string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+    // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+    string bucket = "examplebucket-1250000000";
     string key = "exampleobject"; // Object key
-    string srcPath = @"temp-source-file";// Absolute path to the local file
+    string srcPath = @"temp-source-file";// Absolute path of the local file
 
     // Append the first part. 0 is passed in for the appending position, and an appendable object is created
     long next_append_position = 0;
@@ -591,15 +703,16 @@ This API (`List Multipart Uploads`) is used to query in-progress multipart uploa
 
 #### Sample code
 
-[//]: # ".cssg-snippet-list-multi-upload"
+[//]: # (.cssg-snippet-list-multi-upload)
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   ListMultiUploadsRequest request = new ListMultiUploadsRequest(bucket);
-  // Execute the request.
+  // Execute the request
   ListMultiUploadsResult result = cosXml.ListMultiUploads(request);
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -625,16 +738,17 @@ This API is used to initialize a multipart upload operation and get its `uploadI
 
 #### Sample code
 
-[//]: # ".cssg-snippet-init-multi-upload"
+[//]: # (.cssg-snippet-init-multi-upload)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   InitMultipartUploadRequest request = new InitMultipartUploadRequest(bucket, key);
-  // Execute the request.
+  // Execute the request
   InitMultipartUploadResult result = cosXml.InitMultipartUpload(request);
-  // Request successful
+  // Request succeeded
   this.uploadId = result.initMultipartUpload.uploadId; // The uploadId to use for subsequent multipart uploads
   Console.WriteLine(result.GetResultInfo());
 }
@@ -661,15 +775,16 @@ This API (`Upload Part`) is used to upload an object in parts.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-upload-part"
+[//]: # (.cssg-snippet-upload-part)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload is initialized
   int partNumber = 1; // Part number, increases incrementally starting from 1
-  string srcPath = @"temp-source-file";// Absolute path to the local file
+  string srcPath = @"temp-source-file";// Absolute path of the local file
   UploadPartRequest request = new UploadPartRequest(bucket, key, partNumber, 
     uploadId, srcPath, 0, -1);
   // Set the progress callback
@@ -677,10 +792,10 @@ try
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
   });
-  // Execute the request.
+  // Execute the request
   UploadPartResult result = cosXml.UploadPart(request);
-  // Request successful
-  // Get the eTag of the returned part for subsequent CompleteMultiUploads.
+  // Request succeeded
+  // Get the ETag of the returned part for subsequent CompleteMultiUploads.
   this.eTag = result.eTag;
   Console.WriteLine(result.GetResultInfo());
 }
@@ -707,7 +822,7 @@ This API is used to copy an object as a part.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-upload-part-copy"
+[//]: # (.cssg-snippet-upload-part-copy)
 ```cs
 try
 {
@@ -715,11 +830,12 @@ try
   string sourceBucket = "sourcebucket-1250000000"; //" Source object bucket
   string sourceRegion = "COS_REGION"; // Source object bucket region
   string sourceKey = "sourceObject"; // Source object key
-  // Construct the source object attributes
+  // Construct source object attributes
   COSXML.Model.Tag.CopySourceStruct copySource = new CopySourceStruct(sourceAppid, 
     sourceBucket, sourceRegion, sourceKey);
 
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   string uploadId = this.uploadId; // uploadId returned when the multipart upload is initialized
   int partNumber = 1; // Part number, increases incrementally starting from 1
@@ -729,10 +845,10 @@ try
   request.SetCopySource(copySource);
   // Set the range of parts to be copied, e.g., 0 to 1M
   request.SetCopyRange(0, 1024 * 1024);
-  // Execute the request.
+  // Execute the request
   UploadPartCopyResult result = cosXml.PartCopy(request);
-  // Request successful
-  // Get the eTag of the returned part for subsequent CompleteMultiUploads.
+  // Request succeeded
+  // Get the ETag of the returned part for subsequent CompleteMultiUploads.
   this.eTag = result.copyPart.eTag;
   Console.WriteLine(result.GetResultInfo());
 }
@@ -759,17 +875,18 @@ This API (`List Parts`) is used to query the uploaded parts of a multipart uploa
 
 #### Sample code
 
-[//]: # ".cssg-snippet-list-parts"
+[//]: # (.cssg-snippet-list-parts)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload is initialized
   ListPartsRequest request = new ListPartsRequest(bucket, key, uploadId);
-  // Execute the request.
+  // Execute the request
   ListPartsResult result = cosXml.ListParts(request);
-  // Request successful
+  // Request succeeded
   // List the parts that have been uploaded
   List<COSXML.Model.Tag.ListParts.Part> alreadyUploadParts = result.listParts.parts;
   Console.WriteLine(result.GetResultInfo());
@@ -796,20 +913,21 @@ catch (COSXML.CosException.CosServerException serverEx)
 This API (`Complete Multipart Upload`) is used to complete the multipart upload of a file.
 
 #### Sample code
-[//]: # ".cssg-snippet-complete-multi-upload"
+[//]: # (.cssg-snippet-complete-multi-upload)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload is initialized
   CompleteMultipartUploadRequest request = new CompleteMultipartUploadRequest(bucket, 
     key, uploadId);
   // Concatenate uploaded parts in ascending order by partNumber.
   request.SetPartNumberAndETag(1, this.eTag);
-  // Execute the request.
+  // Execute the request
   CompleteMultipartUploadResult result = cosXml.CompleteMultiUpload(request);
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -835,17 +953,18 @@ This API (`Abort Multipart Upload`) is used to abort a multipart upload and dele
 
 #### Sample code
 
-[//]: # ".cssg-snippet-abort-multi-upload"
+[//]: # (.cssg-snippet-abort-multi-upload)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload is initialized
   AbortMultipartUploadRequest request = new AbortMultipartUploadRequest(bucket, key, uploadId);
-  // Execute the request.
+  // Execute the request
   AbortMultipartUploadResult result = cosXml.AbortMultiUpload(request);
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)

@@ -11,3 +11,6 @@ The following terms may be involved when you use the SDK:
 | ObjectKey | A unique identifier of an object stored in COS. For more information about objects and object keys, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).|
 | Region | Region information. For more information about the enumerated values (such as ap-beijing, ap-hongkong, and eu-frankfurtplease), please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). |
 | ACL | Access Control List, a list of access control information for a specified bucket or object. For more information, please see [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). |
+
+>? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
+>

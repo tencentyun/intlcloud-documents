@@ -68,7 +68,7 @@ The following DDL syntaxes are supported:
  
 ### New variable description
 
-| Parameter                                  | Dynamic | Type    | Default Value | Valid Values/Value Range      | Description                                                         |
+| Parameter                                  | Effective Immediately | Type    | Default Value | Valid Values/Value Range      | Description                                                         |
 | --------------------------------------- | ---- | ------- | ---- | --------------- | ------------------------------------------------------------ |
 | innodb_column_compression_zlib_wrap     | Yes  | bool    | TRUE | TRUE/FALSE   | If it is set to `TRUE`, the data zlib header and tail will be generated, and Adler-32 check will be performed.    |
 | innodb_column_compression_zlib_strategy | Yes  | Integer | 0    | [0, 4]           | Column compression policy. Valid values: 0: Z_DEFAULT_STRATEGY; 1: Z_FILTERED; 2: Z_HUFFMAN_ONLY; 3: Z_RLE; 4: Z_FIXED. <br>Generally, `Z_DEFAULT_STRATEGY` is the best choice for text data, while `Z_RLE` for image data. |

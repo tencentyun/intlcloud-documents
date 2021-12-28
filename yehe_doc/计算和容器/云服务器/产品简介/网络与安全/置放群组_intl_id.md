@@ -10,14 +10,12 @@ Grup penempatan yang tersebar bersifat spesifik wilayah dan dapat disebarkan di 
 ## Aturan dan batasan grup penempatan yang tersebar
 
 Sebelum menggunakan grup penempatan yang tersebar, perhatikan aturan berikut:
-1. Grup penempatan tidak dapat digabungkan.
-2. Satu instans dapat diluncurkan dalam grup penempatan sekaligus.
-3. Instans tidak dapat ditempatkan di beberapa grup penempatan.
-4. Instans yang sudah ada tidak dapat ditambahkan secara otomatis ke grup penempatan.
-5. Grup penempatan yang tersebar dapat ditempatkan pada mesin fisik, switch, atau rak.
-6. Jumlah maksimum instans yang didukung oleh grup penempatan yang tersebar pada mesin fisik, switch, atau rak adalah berbeda. Untuk mengetahui informasi selengkapnya, lihat situs web resmi.
-7. Anda akan mengikuti kebijakan grup pemulihan bencana dengan ketat jika Anda menentukan dan menggunakannya. Harap perhatikan bahwa jika perangkat keras tidak memadai untuk mendistribusikan instans, pembuatan beberapa instans akan gagal.
-8. Instans pada CDH tidak mendukung grup penempatan yang tersebar.
+-  Grup penempatan tidak dapat digabungkan.
+-  Instans tidak dapat ditempatkan di beberapa grup penempatan.
+-  Grup penempatan yang tersebar dapat ditempatkan pada mesin fisik, switch, atau rak.
+-  Jumlah maksimum instans yang didukung oleh grup penempatan yang tersebar pada mesin fisik, switch, atau rak adalah berbeda. Untuk mengetahui informasi selengkapnya, lihat situs web resmi.
+-  Anda akan mengikuti kebijakan grup pemulihan bencana dengan ketat jika Anda menentukan dan menggunakannya. Harap perhatikan bahwa jika perangkat keras tidak memadai untuk mendistribusikan instans, pembuatan beberapa instans akan gagal.
+-  Instans pada CDH tidak mendukung grup penempatan yang tersebar.
 
 ## Panduan Operasi
 Untuk mengetahui informasi selengkapnya tentang operasi, lihat [Grup Penempatan Tersebar](https://intl.cloud.tencent.com/document/product/213/17020).

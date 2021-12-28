@@ -25,7 +25,7 @@ create table t2(a int, b int, c int, unique key idx2(a));
 create table t3(a int, b int, c int, unique key idx3(a));
 ```
 
-| Parameter                  | Dynamic | Type | Default Value  | Valid Values | Description                |
+| Parameter                  | Effective Immediately | Type | Default Value  | Valid Values | Description                |
 | ----------------------- | ---- | ---- | ----- | ---------- | ------------------- |
 | cdb_opt_outline_enabled | Yes  | bool | false | true/false | Whether to enable the outline feature. |
 

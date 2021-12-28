@@ -10,14 +10,12 @@ Um grupo de posicionamento disperso é específico da região e pode ser implant
 ## Regras e limites de grupos de posicionamento disperso
 
 Antes de usar um grupo de posicionamento disperso, confira as seguintes regras:
-1. Os grupos de posicionamento não podem ser mesclados.
-2. Uma instância pode ser iniciada em um grupo de posicionamento por vez.
-3. Uma instância não pode ser colocada em vários grupos de posicionamento.
-4. As instâncias atuais não podem ser adicionadas automaticamente a um grupo de posicionamento.
-5. O grupo de posicionamento disperso pode ser colocado em computadores, interruptores ou racks físicos.
-6. A quantidade máxima de instâncias que o grupo de posicionamento disperso suporta em computadores, interruptores ou racks físicos é diferente. Para obter mais informações, consulte o site oficial.
-7. Se você especificar e usar a política do grupo de recuperação de desastres, ela será seguida à risca. Lembre-se de que, se não houver hardware suficiente para distribuir as instâncias, ocorrerá falha na criação de algumas instâncias.
-8. As instâncias no CDH não são compatíveis com grupos de posicionamento disperso.
+-  Os grupos de posicionamento não podem ser mesclados.
+-  Uma instância não pode ser colocada em vários grupos de posicionamento.
+-  O grupo de posicionamento disperso pode ser colocado em computadores, interruptores ou racks físicos.
+-  A quantidade máxima de instâncias que o grupo de posicionamento disperso suporta em computadores, interruptores ou racks físicos é diferente. Para obter mais informações, consulte o site oficial.
+-  Se você especificar e usar a política do grupo de recuperação de desastres, ela será seguida à risca. Lembre-se de que, se não houver hardware suficiente para distribuir as instâncias, ocorrerá falha na criação de algumas instâncias.
+-  As instâncias no CDH não são compatíveis com grupos de posicionamento disperso.
 
 ## Guia de operação
 Para obter mais informações sobre as operações, consulte [Grupo de posicionamento disperso](https://intl.cloud.tencent.com/document/product/213/17020).

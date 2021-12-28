@@ -8,9 +8,9 @@
 >!
 >
 >- 因 SSL 证书域名验证策略变更，腾讯云将于**2021年11月21日**停止泛域名证书的文件验证方式，详情参见：[SSL 证书域名验证策略变更通知](https://intl.cloud.tencent.com/document/product/1007/40857)。
-- 申请域名为主域时需要额外验证 www。例如，申请域名为 `tencent.com`，则还需验证 `www.tencent.com`。
-- 申请 www 的域名需要额外验证 www 后面的域名，无论是几级域名。例如，申请域名为 `www.a.tencent.com`，则还需验证 `a.tencent.com`。
-- 申请不带 www 的非主域只需要验证当前域名。例如，申请域名为 `cloud.tencent.com`，则只需验证 `cloud.tencent.com`。
+>- 申请域名为主域时需要额外验证 www。例如，申请域名为 `tencent.com`，则还需验证 `www.tencent.com`。
+>- 申请 www 的域名需要额外验证 www 后面的域名，无论是几级域名。例如，申请域名为 `www.a.tencent.com`，则还需验证 `a.tencent.com`。
+>- 申请不带 www 的非主域只需要验证当前域名。例如，申请域名为 `cloud.tencent.com`，则只需验证 `cloud.tencent.com`。
 
 ### CA 验证规则
 - DNS 查询时必须从权威根服务器递归查询每级域名的权威 NS 服务器，再从 NS 服务器查询对应的 A、AAAA 或 CNAME。
@@ -55,6 +55,5 @@
 > 
 4. 请耐心等待 CA 机构扫描审核。证书颁发完成或域名信息审核通过后，文件和目录即可清除。
 
->!请确保域名未做国外限制，国外 IP 可以解析至域名的 A 记录并进行访问，否则将导致 CA 机构无法进行扫描审核。
 
 

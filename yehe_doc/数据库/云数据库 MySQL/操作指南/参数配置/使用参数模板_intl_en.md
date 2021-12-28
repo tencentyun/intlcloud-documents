@@ -7,8 +7,8 @@ You can log in to the [TencentDB for MySQL console](https://console.cloud.tencen
 - Import the MySQL configuration file `my.conf` to generate templates.
 - Save parameter configurations as templates.
 - Import parameters from templates to apply to one or more instances.
->!Instances that already use a parameter template won’t update their parameters when the parameter template updates, so you need to manually update the instance parameters in batches.
->To apply new parameters to a batch of instances, you can import a template that includes these parameters and apply the template to multiple instances.
+>!If the parameters in the template are updated, the instance parameters are not updated unless they are manually re-applied to the instances. 
+>You can apply the parameter changes to single or multiple instances by importing a template.
 
 
 ## Creating a Parameter Template
