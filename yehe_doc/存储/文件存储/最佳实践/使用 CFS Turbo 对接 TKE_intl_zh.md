@@ -39,7 +39,7 @@ kubectl get node
 
 ### 通过脚本创建挂载 Turbo 的 POD
 
-1. 阅读 [TKE Turbo 插件的说明文档](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_CFSTURBO.md)，并 [下载](https://github.com/TencentCloud/kubernetes-csi-tencentcloud) 脚本文件。
+1. 阅读 TKE Turbo 插件的说明文档，并下载脚本文件。
 2. 进入 `kubernetes-csi-tencentcloud/deploy/cfsturbo/kubernetes/` 目录，分别将 csi-node-rbac.yaml、csi-node.yaml 和 csidriver.yaml 文件上传至可访问 TKE 集群的 CVM 管理节点中。
 3. 进入 `kubernetes-csi-tencentcloud/deploy/cfsturbo/examples/` 目录，下载 static-allinone.yaml 样本文件。
 4. 根据实际 PV、PVC、POD 的相关属性（如名称、镜像地址等），修改 static-allinone.yaml 文件。本文以 NGIX 为例。
