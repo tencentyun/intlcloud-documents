@@ -1,7 +1,11 @@
+123
+? 12367
+
 ## Overview
 Tencent Kubernetes Engine (TKE) allows you to use Cloud Object Storage (COS) by creating PersistentVolumes (PVs) or PersistentVolumeClaims (PVCs) and mounting volumes to workloads. This document describes how to mount COS to a workload.
 
 ## Preparations
+444
 ### Installing the COS add-on
 >? If your cluster has been installed with the COS-CSI add-on, skip this step.
 
@@ -218,7 +222,6 @@ spec:
       claimName: cos-pvc
 ```
 
-## Related Information
-For more information on how to use COS, see [README_COSFS.md](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_COSFS.md).
+
 
 
