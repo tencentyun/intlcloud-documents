@@ -25,8 +25,8 @@ TIM_DECL int TIMGroupCreate(const char* json_group_create_param, TIMCommCallback
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- You can specify a group ID when creating a group. If no group ID is specified, the IM server will generate a unique ID to facilitate subsequent operations. The callback set by this API returns the group ID.
-- For more information about JSON keys for creating group parameters, see [CreateGroupParam](https://intl.cloud.tencent.com/document/product/1047/34551).
+>- You can specify a group ID when creating a group. If no group ID is specified, the IM server will generate a unique ID to facilitate subsequent operations. The callback set by this API returns the group ID.
+>- For more information about JSON keys for creating group parameters, see [CreateGroupParam](https://intl.cloud.tencent.com/document/product/1047/34551).
 
 
 **Example**
@@ -99,10 +99,10 @@ TIM_DECL int TIMGroupDelete(const char* group_id, TIMCommCallback cb, const void
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- Permission description:
- - No one has the permission to delete a private group.
- - The group owner can delete a public group, chat room, or audio-video group.
-- When this API is called to delete a group with the specified `group_id`, parameters of the callback function `cb` can be used to determine whether the group was deleted.
+>- Permission description:
+>- No one has the permission to delete a private group.
+>- The group owner can delete a public group, chat room, or audio-video group.
+>- When this API is called to delete a group with the specified `group_id`, parameters of the callback function `cb` can be used to determine whether the group was deleted.
 
 
 ## TIMGroupJoin
@@ -131,11 +131,11 @@ TIM_DECL int TIMGroupJoin(const char* group_id, const char* hello_msg, TIMCommCa
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- Permission description:
- - Users cannot request to join a private group.
- - Users can request to join a public group or chat room.
+>- Permission description:
+>- Users cannot request to join a private group.
+>- Users can request to join a public group or chat room.
  If approval is needed for a group, the group admin and owner will receive a system message for requesting to join the group. A user can join the group only after the group admin or owner approves the request. If any user is allowed to join the group according to the group configuration, the user can join the group directly. Any user can join an audio-video group.
-- When this API is called to request to join a group with the specified `group_id`, parameters of the callback function `cb` can be used to determine whether the join was successful.
+>- When this API is called to request to join a group with the specified `group_id`, parameters of the callback function `cb` can be used to determine whether the join was successful.
 
 
 ## TIMGroupQuit
@@ -163,10 +163,10 @@ TIM_DECL int TIMGroupQuit(const char* group_id, TIMCommCallback cb, const void* 
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- Permission description:
- - All members in a private group can leave the group.
- - The group owner cannot leave a public group, chat room, or audio-video group.
-- When this API is called to leave a group with the specified `group_id`, parameters of the callback function `cb` can be used to determine whether the group leaving was successful.
+>- Permission description:
+>- All members in a private group can leave the group.
+>- The group owner cannot leave a public group, chat room, or audio-video group.
+>- When this API is called to leave a group with the specified `group_id`, parameters of the callback function `cb` can be used to determine whether the group leaving was successful.
 
 
 ## TIMGroupInviteMember
@@ -194,11 +194,11 @@ TIM_DECL int TIMGroupInviteMember(const char* json_group_invite_param, TIMCommCa
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- Permission description:
- - Users can be added only to a private group.
- - Users can be invited to join a public group or chat room.
- - A user cannot be invited to join an audio-video group unless the user agrees.
-- You can call this API to invite multiple users to join a group. For more information about JSON keys, see [GroupInviteMemberParam](https://intl.cloud.tencent.com/document/product/1047/34551).
+>- Permission description:
+>- Users can be added only to a private group.
+>- Users can be invited to join a public group or chat room.
+>- A user cannot be invited to join an audio-video group unless the user agrees.
+>- You can call this API to invite multiple users to join a group. For more information about JSON keys, see [GroupInviteMemberParam](https://intl.cloud.tencent.com/document/product/1047/34551).
 
 
 **Example**
@@ -256,11 +256,11 @@ TIM_DECL int TIMGroupDeleteMember(const char* json_group_delete_param, TIMCommCa
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- Permission description:
- - Only the creator of a private group can delete group members.
- - Only the admins and owner of a public group or chat room can delete group members.
- - No group members can be deleted from an audio-video group.
-- You can call this API to delete multiple group members. For more information about JSON keys, see [GroupDeleteMemberParam](https://intl.cloud.tencent.com/document/product/1047/34551).
+>- Permission description:
+>- Only the creator of a private group can delete group members.
+>- Only the admins and owner of a public group or chat room can delete group members.
+>- No group members can be deleted from an audio-video group.
+>- You can call this API to delete multiple group members. For more information about JSON keys, see [GroupDeleteMemberParam](https://intl.cloud.tencent.com/document/product/1047/34551).
 
 
 **Example**
@@ -309,10 +309,10 @@ TIM_DECL int TIMGroupGetJoinedGroupList(TIMCommCallback cb, const void* user_dat
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- Permission description:
- - You can call this API to obtain the list of groups that you have joined.
- - This API can only obtain the list of some audio-video groups that a user has joined.
-- This API is used to obtain the list of groups that the current user has joined. The basic group information will be returned. For more information about fields in the returned basic group information, see [GroupBaseInfo](https://intl.cloud.tencent.com/document/product/1047/34551).
+>- Permission description:
+>- You can call this API to obtain the list of groups that you have joined.
+>- This API can only obtain the list of some audio-video groups that a user has joined.
+>- This API is used to obtain the list of groups that the current user has joined. The basic group information will be returned. For more information about fields in the returned basic group information, see [GroupBaseInfo](https://intl.cloud.tencent.com/document/product/1047/34551).
 
 
 ## TIMGroupGetGroupInfoList
@@ -383,13 +383,13 @@ TIM_DECL int TIMGroupModifyGroupInfo(const char* json_group_modifyinfo_param, TI
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- Description of the permissions for modifying the group owner (group ownership transfer):
- - Only the group owner has the permission to transfer the group ownership.
- - The ownership of an audio-video group cannot be transferred.
-- Description of the permissions for modifying other group information:
- - Only the group owner or admin of a public group, chat room, or audio-video group can modify the group introduction.
- - Any members in a private group can modify the group introduction.
-- `kTIMGroupModifyInfoParamModifyFlag` can be set by bit or set to multiple values. Different flags are used to set different keys. For more information, see [GroupModifyInfoParam](https://intl.cloud.tencent.com/document/product/1047/34551).
+>- Description of the permissions for modifying the group owner (group ownership transfer):
+>- Only the group owner has the permission to transfer the group ownership.
+>- The ownership of an audio-video group cannot be transferred.
+>- Description of the permissions for modifying other group information:
+>- Only the group owner or admin of a public group, chat room, or audio-video group can modify the group introduction.
+>- Any members in a private group can modify the group introduction.
+>- `kTIMGroupModifyInfoParamModifyFlag` can be set by bit or set to multiple values. Different flags are used to set different keys. For more information, see [GroupModifyInfoParam](https://intl.cloud.tencent.com/document/product/1047/34551).
 
 
 **Example 1: Setting the group owner**
@@ -461,10 +461,10 @@ TIM_DECL int TIMGroupGetMemberInfoList(const char* json_group_getmeminfos_param,
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- Permission description:
- - The member list of a group of any type can be obtained.
- - The member list of an audio-video group contains only the group owner, admins, and some members.
-- This API is used to obtain the group member information list based on different options specified. For more information about each field in the information list, see [GroupMemberInfo](https://intl.cloud.tencent.com/document/product/1047/34551).
+>- Permission description:
+>- The member list of a group of any type can be obtained.
+>- The member list of an audio-video group contains only the group owner, admins, and some members.
+>- This API is used to obtain the group member information list based on different options specified. For more information about each field in the information list, see [GroupMemberInfo](https://intl.cloud.tencent.com/document/product/1047/34551).
 
 
 **Example**
@@ -527,11 +527,11 @@ TIM_DECL int TIMGroupModifyMemberInfo(const char* json_group_modifymeminfo_param
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- Permission description:
- - Only the group owner or admin can modify group member roles.
- - The roles of members in an audio-video group cannot be modified.
- - Only the group owner or admin can mute group members.
-- `kTIMGroupModifyMemberInfoParamModifyFlag` can be set by bit or set to multiple values. Different flags are used to set different keys. For more information, see [GroupModifyMemberInfoParam](https://intl.cloud.tencent.com/document/product/1047/34551).
+>- Permission description:
+>- Only the group owner or admin can modify group member roles.
+>- The roles of members in an audio-video group cannot be modified.
+>- Only the group owner or admin can mute group members.
+>- `kTIMGroupModifyMemberInfoParamModifyFlag` can be set by bit or set to multiple values. Different flags are used to set different keys. For more information, see [GroupModifyMemberInfoParam](https://intl.cloud.tencent.com/document/product/1047/34551).
 
 
 **Example**
@@ -584,13 +584,13 @@ TIM_DECL int TIMGroupGetPendencyList(const char* json_group_getpendence_list_par
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- Here, group pending requests refer to all group-related operations that need to be approved, for example, a request for joining a group or adding users to a group. You can call this API to obtain a pending request regardless of whether it is approved or rejected, and the returned pending request is marked handled.
-- If user A applies to join group A, the group admin can obtain information related to this pending request. As user A does not have the approval permission, user A does not need to obtain this pending request.
-- If admin A adds user A to group A, user A can obtain information related to this pending request because user A needs to approve this pending request.
-- Permission description:
- - Only the approver has the permission to obtain related pending requests.
-- `kTIMGroupPendencyOptionStartTime` specifies the timestamp for obtaining pending requests. It is set to `0` for the first request and later set based on the timestamp specified by `kTIMGroupPendencyResultNextStartTime` contained in [GroupPendencyResult](https://intl.cloud.tencent.com/document/product/1047/34551).
-- `kTIMGroupPendencyOptionMaxLimited` specifies the recommended number of pending requests to be obtained. The server can return pending requests as required. However, this key does not indicate whether a pending request is handled.
+>- Here, group pending requests refer to all group-related operations that need to be approved, for example, a request for joining a group or adding users to a group. You can call this API to obtain a pending request regardless of whether it is approved or rejected, and the returned pending request is marked handled.
+>- If user A applies to join group A, the group admin can obtain information related to this pending request. As user A does not have the approval permission, user A does not need to obtain this pending request.
+>- If admin A adds user A to group A, user A can obtain information related to this pending request because user A needs to approve this pending request.
+>- Permission description:
+>- Only the approver has the permission to obtain related pending requests.
+>- `kTIMGroupPendencyOptionStartTime` specifies the timestamp for obtaining pending requests. It is set to `0` for the first request and later set based on the timestamp specified by `kTIMGroupPendencyResultNextStartTime` contained in [GroupPendencyResult](https://intl.cloud.tencent.com/document/product/1047/34551).
+>- `kTIMGroupPendencyOptionMaxLimited` specifies the recommended number of pending requests to be obtained. The server can return pending requests as required. However, this key does not indicate whether a pending request is handled.
 
 
 **Example**
@@ -666,8 +666,8 @@ TIM_DECL int TIMGroupHandlePendency(const char* json_group_handle_pendency_param
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- The IM SDK provides this API for handling pending requests of a group. An approver can select a single pending request to accept or reject. Pending requests that have been handled cannot be handled again.
-- To handle a pending request, [GroupPendency](https://intl.cloud.tencent.com/document/product/1047/34551) must be carried. The pending request can be saved in the pending request list returned by the [TIMGroupGetPendencyList](#timgroupgetpendencylist) API. When a pending request is handled, [GroupPendency](https://intl.cloud.tencent.com/document/product/1047/34551) is passed into the `kTIMGroupHandlePendencyParamPendency` key.
+>- The IM SDK provides this API for handling pending requests of a group. An approver can select a single pending request to accept or reject. Pending requests that have been handled cannot be handled again.
+>- To handle a pending request, [GroupPendency](https://intl.cloud.tencent.com/document/product/1047/34551) must be carried. The pending request can be saved in the pending request list returned by the [TIMGroupGetPendencyList](#timgroupgetpendencylist) API. When a pending request is handled, [GroupPendency](https://intl.cloud.tencent.com/document/product/1047/34551) is passed into the `kTIMGroupHandlePendencyParamPendency` key.
 
 
 **Example**
@@ -732,8 +732,8 @@ TIM_DECL int TIMGroupGetOnlineMemberCount(const char* groupid, TIMCommCallback c
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >? Notes:
-- Currently, this API is supported only by audio-video groups (AVChatRoom).
-- This API implements frequency limit checks. It can be called by the SDK for up to once per 60 seconds.
+>- Currently, this API is supported only by audio-video groups (AVChatRoom).
+>- This API implements frequency limit checks. It can be called by the SDK for up to once per 60 seconds.
 
 **Example**
 
