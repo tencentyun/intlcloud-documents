@@ -7,7 +7,7 @@ VOD provides an SDK for uploading videos on iOS client. For more information on 
 ## Integrating Upload Library and Source Code
 
 1. Copy the upload source code directory `TXUGCUploadDemo/upload` to your project directory.
-2. Import the dynamic libraries `QCloudCore.framework` and `QCloudCOSXML.framework` and the static library `libmtasdk.a` (in the `TXUGCUploadDemo/upload/COSSDK/` directory) into your project and add the following dependency libraries:
+2. Import the dynamic libraries `QCloudCore.framework` and `QCloudCOSXML.framework`  (in the `TXUGCUploadDemo/upload/COSSDK/` directory) into your project and add the following dependency libraries:
     ```
     1. CoreTelephony.framework
     2. Foundation.framework
