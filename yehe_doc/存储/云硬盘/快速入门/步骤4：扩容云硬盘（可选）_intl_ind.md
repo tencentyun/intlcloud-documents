@@ -22,7 +22,7 @@ Anda telah [menginisialisasi disk cloud `cbs-test`](https://intl.cloud.tencent.c
 ### Memindai ulang disk
 >?Dokumen ini menggunakan CVM dengan Windows Server 2012 R2 DataCenter 64-bit Tiongkok yang diinstal sebagai contoh.Perhatikan bahwa langkah-langkahnya dapat berbeda sesuai dengan versi sistem operasi.
 >
-1.Masuk ke CVM sebagai admin.Lihat [Masuk ke Instance Windows Menggunakan RDP] (https://intl.cloud.tencent.com/document/product/213/5435).
+1.Masuk ke CVM sebagai admin.Lihat [Masuk ke Instance Windows Menggunakan RDP](https://intl.cloud.tencent.com/document/product/213/5435).
 2.Di desktop, klik kanan <img src="https://main.qcloudimg.com/raw/3d815ac1c196b47b2eea7c3a516c3d88.png" style="margin:-6px 0px"> di sudut kiri bawah, kemudian pilih **Computer Management** (Manajemen Komputer).
 3.Klik kanan **Disk Management** (Manajemen Disk), dan pilih **Rescan Disk** (Pindai Ulang Disk).
 4.Setelah pemindaian, periksa apakah ukuran disk data telah berhasil diperluas.
@@ -44,7 +44,7 @@ Kapasitas disk data baru akan ditambahkan ke volume asli.
 ### Memperluas sistem file
 >?
 >- Dokumen ini menggunakan CVM dengan CentOS 7.8 yang diinstal sebagai contoh.Perhatikan bahwa langkah-langkahnya dapat berbeda sesuai dengan versi sistem operasi.
->?Dalam contoh ini, kami akan menetapkan kapasitas yang telah diperluas ke `/dev/vdb`.Untuk informasi selengkapnya, lihat [Memperluas Partisi dan Sistem File Secara Online](https://intl.cloud.tencent.com/document/product/362/39999).
+>- Dalam contoh ini, kami akan menetapkan kapasitas yang telah diperluas ke `/dev/vdb`.Untuk informasi selengkapnya, lihat [Memperluas Partisi dan Sistem File Secara Online](https://intl.cloud.tencent.com/document/product/362/39999).
 >
 1.Jalankan perintah berikut untuk memperluas sistem file EXT.
 ```
