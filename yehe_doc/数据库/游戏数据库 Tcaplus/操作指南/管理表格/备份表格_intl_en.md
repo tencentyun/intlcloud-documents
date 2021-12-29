@@ -6,7 +6,7 @@ You have created a table. For more information, please see [Creating Table](http
 
 ## Directions
 ### Automatic backup
-TcaplusDB automatically backs up tables at 01:00 AM every day, and the backup data will be retained for 7 days, after which it will be automatically deleted.
+TcaplusDB automatically backs up tables at 01:00 AM (Beijing time) every day, and the backup data will be retained for 7 days, after which it will be automatically deleted.
 
 ### Manual backup
 If you want to back up a table manually, you can do so in the console.
