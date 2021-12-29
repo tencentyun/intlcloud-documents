@@ -29,8 +29,8 @@ TIM_DECL int TIMConvCreate(const char* conv_id, enum TIMConvType conv_type, TIMC
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551) |
 
 >?
-- 会话是指面向一个人或者一个群组的对话，通过与单个人或群组之间会话收发消息。
-- 此接口创建或者获取会话信息，需要指定会话类型（群组或者单聊），以及会话对方标志（对方帐号或者群号）。会话信息通过 cb 回传。
+>- 会话是指面向一个人或者一个群组的对话，通过与单个人或群组之间会话收发消息。
+>- 此接口创建或者获取会话信息，需要指定会话类型（群组或者单聊），以及会话对方标志（对方帐号或者群号）。会话信息通过 cb 回传。
 
 
 **示例一、获取对方 UserID 为 Windows-02 的单聊会话示例**
