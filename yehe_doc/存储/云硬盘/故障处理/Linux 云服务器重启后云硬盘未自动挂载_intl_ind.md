@@ -1,33 +1,33 @@
-## Error Description (Pesan Kesalahan)
+## Deskripsi Kesalahan
 Sistem file dibuat dan dikonfigurasikan untuk dipasang secara otomatis ke disk cloud di CVM Linux, tetapi pemasangan otomatis gagal saat memulai ulang CVM.
 
-## Possible Reasons (Kemungkinan Penyebab)
+## Kemungkinan Penyebab
 - **Reason 1** (Sebab 1): pemasangan otomatis disk cloud tidak dikonfigurasi di file konfigurasi `fstab` CVM.
 - **Reason 2** (Sebab 2): kesalahan konfigurasi pada file konfigurasi `fstab`.
 Misalnya, apabila nama perangkat digunakan untuk pemasangan otomatis dan nama tersebut berubah pada saat CVM dimulai ulang, startup akan gagal.
 
-## Solutions (Solusi)
+## Solusi
 - **Solution to reason 1** (Solusi untuk sebab 1):
 Gunakan cara berikut untuk mengonfigurasi ulang file `/etc/fstab` untuk memasang disk cloud secara otomatis setelah memulai ulang CVM:
-	- Menggunakan tautan lunak disk (direkomendasikan)
-	- Menggunakan Pengidentifikasi Unik Universal (Universally Unique Identifier/UUID) sistem file
-	- Menggunakan nama perangkat (tidak direkomendasikan)
-	Untuk petunjuk lengkapnya, baca [Configuring the `/etc/fstab` file] (Mengonfigurasi file `/etc/fstab`) (#ConfigurationFile).
+- Menggunakan tautan lunak disk (direkomendasikan)
+- Menggunakan Pengidentifikasi Unik Universal (Universally Unique Identifier/UUID) sistem file
+- Menggunakan nama perangkat (tidak direkomendasikan)
+Untuk petunjuk lengkapnya, baca [Mengonfigurasi file `/etc/fstab`](#ConfigurationFile).
 - **Solution to reason 2** (Solusi untuk sebab 2):
-Login ke CVM Linux menggunakan VNC dan pilih mode pengguna tunggal. Dalam mode ini, perbaiki dan konfigurasi ulang file konfigurasi `/etc/fstab`. Untuk petunjuk lengkapnya, baca [Fixing the `/etc/fstab` fie] (Memperbaiki file `/etc/fstab`) (#RepairConfiguration).
+Masuk ke CVM Linux menggunakan VNC dan pilih mode pengguna tunggal.Dalam mode ini, perbaiki dan konfigurasi ulang file konfigurasi `/etc/fstab`.Untuk petunjuk lengkapnya, baca [Memperbaiki file `/etc/fstab`] (#RepairConfiguration).
 
 
-## Troubleshooting Procedure (Prosedur Penanggulangan Masalah)
+## Prosedur Penanggulangan Masalah
 
 
 ### Mengonfigurasi file `/etc/fstab` [](id:ConfigurationFile)
-1. [Log in to a Linux instance using standard login method] (Login Ke Instans Linux Menggunakan Metode Login Standar) (https://intl.cloud.tencent.com/document/product/213/5436).
-2. Pilih metode konfigurasi untuk mendapatkan informasi.[](id:Step2)
+1.[Masuk Ke Instance Linux Menggunakan Metode Masuk Standar](https://intl.cloud.tencent.com/document/product/213/5436).
+2.Pilih metode konfigurasi untuk mendapatkan informasi.[](id:Step2)
 
 <dx-tabs>
 ::: Menggunakan\stautan\slunak\sdisk\scloud\selastis\s(direkomendasikan)
 #### Menganalisis metode konfigurasi
-- **Pros** (Kelebihan): tautan lunak disk cloud elastis bersifat tetap dan unik. Tautan ini tidak berubah dengan operasi seperti pemasangan, pelepasan, dan pemformatan partisi.
+- **Pros** (Kelebihan): tautan lunak disk cloud elastis bersifat tetap dan unik.Tautan ini tidak berubah dengan operasi seperti pemasangan, pelepasan, dan pemformatan partisi.
 - **Cons** (Kekurangan): hanya disk cloud elastis yang bisa menggunakan tautan lunak, yang hampir tidak tampak ketika beroperasi untuk pemformatan partisi.
 
 #### Mendapatkan informasi
@@ -36,7 +36,7 @@ Jalankan perintah berikut untuk melihat tautan lunak disk cloud elastis.
 plaintext
 ls -l /dev/disk/by-id
 ```
-Maka akan muncul informasi berikut:
+Informasi berikut akan muncul:
 ![](https://main.qcloudimg.com/raw/99c7d8362b4313a0366adace46563bb7.png)
 :::
 ::: Menggunakan\sUUID\ssistem\sfile
@@ -50,7 +50,7 @@ Jalankan perintah berikut untuk melihat UUID dari sistem file.
 ```
 blkid /dev/vdb1
 ```
-Maka akan muncul informasi berikut:
+Informasi berikut akan muncul:
 ![](https://main.qcloudimg.com/raw/a1f6204b8f95f71609571612ff45aa42.png)
 :::
 ::: Menggunakan\snama\sperangkat\s(tidak\sdirekomendasikan)
@@ -64,60 +64,60 @@ Jalankan perintah berikut untuk melihat nama perangkat.
 ```
 fdisk -l
 ```
-Maka akan muncul informasi berikut:
+Informasi berikut akan muncul:
 ![](https://main.qcloudimg.com/raw/1d09eba0c658fed0e9f5303e273b5539.png)
 :::
 </dx-tabs>
-3. Jalankan perintah berikut untuk mencadangkan file `/etc/fstab` ke direktori `/home`, misalnya:
+3.Jalankan perintah berikut untuk mencadangkan file `/etc/fstab` ke direktori `/home`, misalnya:
 ```
 cp /etc/fstab /home
 ```
-4. Jalankan perintah berikut untuk menggunakan editor VI untuk membuka file `/etc/fstab`.
+4.Jalankan perintah berikut untuk menggunakan editor VI untuk membuka file `/etc/fstab`.
 ```
 vi /etc/fstab
 ```
-5. Tekan **i** untuk masuk ke mode edit, dan tambahkan konten berikut ke baris berikutnya dari baris terakhir file.
+5.Tekan **i** untuk masuk ke mode edit, dan tambahkan konten berikut ke baris berikutnya dari baris terakhir file.
 ```
-<Informasi perangkat> <Titik pemasangan> <Format sistem file> <Opsi instalasi sistem file> <Frekuensi pembuangan sistem file> <Urutan pemeriksaan sistem file saat peluncuran>
+<Device information> <Mount point> <File system format> <File system installation option> <File system dump frequency> <Urutan pemeriksaan sistem file saat peluncuran>
 ```
-Lihat contoh berikut sesuai dengan metode konfigurasi yang dipilih di [step 2] (langkah 2) (#Step2).
- - (Direkomendasikan) Gunakan tautan lunak disk cloud elastis sebagai contoh. Tambahkan konten berikut:
+Lihat contoh berikut sesuai dengan metode konfigurasi yang dipilih di [langkah 2](#Step2).
+- (Direkomendasikan) Gunakan tautan lunak disk cloud elastis sebagai contoh.Tambahkan konten berikut:
 ```
 /dev/disk/by-id/virtio-disk-drkhklpe-part1 /data/newpart   ext4 defaults     0   2
 ```
- Gunakan UUID sistem file sebagai contoh. Tambahkan konten berikut:
+Gunakan UUID sistem file sebagai contoh.Tambahkan konten berikut:
 ```
 UUID=d489ca1c-5057-4536-81cb-ceb2847f9954 /data/newpart   ext4 defaults     0   2
 ```
- - (Tidak direkomendasikan) Gunakan nama perangkat sebagai contoh. Tambahkan konten berikut:
+- (Tidak direkomendasikan) Gunakan nama perangkat sebagai contoh.Tambahkan konten berikut:
 ```
 /dev/vdb1 /data/newpart   ext4 defaults     0   2
 ```
-6. Tekan **ESC**, masukkan **:wq**, dan tekan **Enter** untuk menyimpan konfigurasi dan keluar dari editor.
-7. Jalankan perintah berikut untuk memeriksa apakah file `/etc/fstab` telah berhasil ditulis.
+6.Tekan **ESC**, masukkan **:wq**, dan tekan **Enter** untuk menyimpan konfigurasi dan keluar dari editor.
+7.Jalankan perintah berikut untuk memeriksa apakah file `/etc/fstab` telah berhasil ditulis.
 ```
-mount -a 
+mount -a
 ```
-Jika muncul informasi seperti yang ditampilkan di bawah ini, file telah berhasil ditulis. Sistem file akan terpasang secara otomatis saat sistem operasi dijalankan. Anda dapat memulai ulang CVM untuk memverifikasi hasilnya.
+Jika muncul informasi seperti yang ditampilkan di bawah ini, file telah berhasil ditulis.Sistem file akan terpasang secara otomatis saat sistem operasi dijalankan.Anda dapat memulai ulang CVM untuk memverifikasi hasilnya.
 ![](https://main.qcloudimg.com/raw/4289f335d3373074d7fc799863fba498.png)
 
 [](id:RepairConfiguration)
-### Memperbaiki file `/etc/fstab` 
-1. [Log in to a Linux instance using VNC] (Login Ke Instans Linux Menggunakan VNC) (https://intl.cloud.tencent.com/document/product/213/32494).
-2. Pilih mode pengguna tunggal. Untuk petunjuk lengkapnya, lihat [Configuring Linux CVM to Boot into Single User Mode] (Mengonfigurasi CVM Linux untuk Boot ke Mode Pengguna Tunggal) (https://intl.cloud.tencent.com/document/product/213/34819).
-3. Jalankan perintah berikut untuk mencadangkan file `/etc/fstab` ke direktori `/home`, misalnya:
+### Memperbaiki file `/etc/fstab`
+1.[Masuk Ke Instance Linux Menggunakan VNC](https://intl.cloud.tencent.com/document/product/213/32494).
+2.Pilih mode pengguna tunggal.Untuk petunjuk lengkapnya, lihat [Mengonfigurasi CVM Linux untuk Boot ke Mode Pengguna Tunggal](https://intl.cloud.tencent.com/document/product/213/34819).
+3.Jalankan perintah berikut untuk mencadangkan file `/etc/fstab` ke direktori `/home`, misalnya:
 ```
 cp /etc/fstab /home
 ```
-4. Jalankan perintah berikut untuk menggunakan editor VI untuk membuka file `/etc/fstab`.
+4.Jalankan perintah berikut untuk menggunakan editor VI untuk membuka file `/etc/fstab`.
 ```
 vi /etc/fstab
 ```
-5. Tekan **i** untuk masuk ke mode edit. Pindahkan kursor ke awal baris eror dan masukkan `#` mengomentari konfigurasi ini, seperti yang ditunjukkan di bawah ini.
->?Baris ini mengonfigurasi pemasangan otomatis disk data. Namun, akibat kesalahan konfigurasi, disk cloud tidak dapat dipasang ketika CVM dimulai ulang.
+5.Tekan **i** untuk masuk ke mode edit.Pindahkan kursor ke awal baris eror dan masukkan `#` mengomentari konfigurasi ini, seperti yang ditunjukkan di bawah ini.
+>?Baris ini mengonfigurasi pemasangan otomatis disk data.Namun, akibat kesalahan konfigurasi, disk cloud tidak dapat dipasang ketika CVM dimulai ulang.
 >
- ![](https://main.qcloudimg.com/raw/2e6106588877801aa38fbe4af3dc52a6.png)
-6. Tekan **ESC**, masukkan **:wq**, dan tekan **Enter** untuk menyimpan konfigurasi dan keluar dari editor.
-7. Masukkan `exit` untuk keluar dari mode pengguna tunggal.
-8. Tunggu hingga selesai dimulai ulang. Login ke CVM.
-9. Konfigurasi ulang file seperti yang dijelaskan di [Configuring the `/etc/fstab` file] (Mengonfigurasi file `/etc/fstab`) (#ConfigurationFile).
+![](https://main.qcloudimg.com/raw/2e6106588877801aa38fbe4af3dc52a6.png)
+6.Tekan **ESC**, masukkan **:wq**, dan tekan **Enter** untuk menyimpan konfigurasi dan keluar dari editor.
+7.Masukkan `exit` untuk keluar dari mode pengguna tunggal.
+8.Tunggu hingga selesai dimulai ulang.Masuk ke CVM.
+9.Konfigurasi ulang file seperti yang dijelaskan di [Mengonfigurasi file `/etc/fstab`](#ConfigurationFile).
