@@ -116,7 +116,7 @@ Modul berikut akan berlaku dan dimasukkan dengan referensi ke dalam DPSA ini jik
 13.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41706).
 14.[Private DNS](https://intl.cloud.tencent.com/document/product/1097/42073).
 15.[Database Audit](https://intl.cloud.tencent.com/document/product/1102/43295).
-
+16.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44014).
 ## Persyaratan khusus yurisdiksi
 
 **Eropa**
