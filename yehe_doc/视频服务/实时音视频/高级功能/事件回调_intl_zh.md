@@ -2,10 +2,10 @@
 
 [](id:deploy)
 ## 配置信息
-实时音视频 TRTC 控制台支持自助配置回调信息，配置完成后即可接收事件回调通知。详细操作指引请参见 [回调配置](https://cloud.tencent.com/document/product/647/52428)。
+实时音视频 TRTC 控制台支持自助配置回调信息，配置完成后即可接收事件回调通知。详细操作指引请参见 [回调配置](https://intl.cloud.tencent.com/document/product/647/39559)。
 
 
->!您需要提前准备以下信息：
+>! 您需要提前准备以下信息：
 >- **必要项**：接收回调通知的 HTTP/HTTPS 服务器地址。
 >- **可选项**：计算签名的密钥 key，由您自定义一个最大32个字符的 key，以大小写字母及数字组成。
 
@@ -163,7 +163,7 @@
 
 
 ### 计算签名
-签名由 HMAC SHA256 加密算法计算得出，您的事件回调接收服务器收到回调消息后，通过同样的方式计算出签名，相同则说明是腾讯云的实时音视频的事件回调，没有被伪造。签名的计算如下所示：
+签名由 HMAC SHA256 加密算法计算得出，您的事件回调接收服务器收到回调消息后，通过同样的方式计算出签名，相同则说明是腾讯云的实时音视频的事件回调，没有被伪造。回调事件签名计算代码原理及示例请参见 [签名方法v3](https://intl.cloud.tencent.com/document/product/647/34264) ，签名的计算如下所示：
 ```
 //签名 Sign 计算公式中 key 为计算签名 Sign 用的加密密钥。
 Sign = base64（hmacsha256(key, body)）
@@ -171,5 +171,8 @@ Sign = base64（hmacsha256(key, body)）
 
 >! body 为您收到回调请求的原始包体，不要做任何转化，示例如下：
 >```
-body="{\n\t\"EventGroupId\":\t1,\n\t\"EventType\":\t103,\n\t\"CallbackTs\":\t1615554923704,\n\t\"EventInfo\":\t{\n\t\t\"RoomId\":\t12345,\n\t\t\"EventTs\":\t1608441737,\n\t\t\"UserId\":\t\"test\",\n\t\t\"UniqueId\":\t1615554922656,\n\t\t\"Role\":\t20,\n\t\t\"Reason\":\t1\n\t}\n}"
+>body="{\n\t\"EventGroupId\":\t1,\n\t\"EventType\":\t103,\n\t\"CallbackTs\":\t1615554923704,\n\t\"EventInfo\":\t{\n\t\t\"RoomId\":\t12345,\n\t\t\"EventTs\":\t1608441737,\n\t\t\"UserId\":\t\"test\",\n\t\t\"UniqueId\":\t1615554922656,\n\t\t\"Role\":\t20,\n\t\t\"Reason\":\t1\n\t}\n}"
+>```
+```
+
 ```

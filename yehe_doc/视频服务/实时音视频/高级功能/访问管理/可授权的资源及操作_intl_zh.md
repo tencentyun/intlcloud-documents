@@ -4,11 +4,12 @@
 
 如有 TRTC 访问管理需求，请登录腾讯云 [主账号](https://intl.cloud.tencent.com/document/product/598/34899) 使用 [预设策略](https://intl.cloud.tencent.com/document/product/647/39550) 或 [自定义策略](https://intl.cloud.tencent.com/document/product/647/39551) 完成具体授权操作。
 
+
 ## 可授权的资源类型
 TRTC 访问管理可授权的资源类型为 [应用](https://intl.cloud.tencent.com/document/product/647/37714)。
 
-<span id="Support"></span> 
-## 支持资源级授权的 API
+
+## 支持资源级授权的 API[](id:Support)
 除了部分 [不支持资源级授权的 API ](#n_Support)，本小节列出的所有 API 操作均支持资源级授权。 [授权策略语法](https://intl.cloud.tencent.com/document/product/647/39551#grammar) 中对这些 API 操作的**资源语法描述**均相同，具体为：
 - 授权所有应用访问权限：`qcs::trtc::uin/${uin}:sdkappid/*`。
 - 授权单个应用访问权限：`qcs::trtc::uin/${uin}:sdkappid/${SdkAppId}`。
@@ -16,18 +17,24 @@ TRTC 访问管理可授权的资源类型为 [应用](https://intl.cloud.tencent
 ### 服务端 API 操作
 | 接口名称                                                     | 接口分类     | 功能描述               |
 | ------------------------------------------------------------ | ------------ | ---------------------- |
-| [DismissRoom](https://intl.cloud.tencent.com/document/product/647/34269) | 房间管理     | 解散房间               |
+| [DismissRoom](https://intl.cloud.tencent.com/document/product/647/39631) | 房间管理     | 解散房间               |
 | [RemoveUser](https://intl.cloud.tencent.com/document/product/647/34268) | 房间管理     | 移出用户               |
+|[RemoveUserByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39630)	| 房间管理	| 移出用户（字符串房间号） |
+|[DismissRoomByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39631)	| 房间管理	| 解散房间（字符串房间号） |
 | [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) | 混流转码     | 启动云端混流           |
 | [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) | 混流转码     | 结束云端混流转码       |
+| [StartMCUMixTranscodeByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39637) | 混流转码 |启动云端混流（字符串房间号） |
+| [StopMCUMixTranscodeByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39636) | 混流转码  |结束云端混流（字符串房间号） |
 | [CreateTroubleInfo](https://intl.cloud.tencent.com/document/product/647/37764) | 通话质量监控 | 创建异常信息           |
 | [DescribeAbnormalEvent](https://intl.cloud.tencent.com/document/product/647/37763) | 通话质量监控 | 查询异常体验事件       |
 | [DescribeCallDetail](https://intl.cloud.tencent.com/document/product/647/36759) | 通话质量监控 | 查询用户列表与通话指标 |
 | [DescribeHistoryScale](https://intl.cloud.tencent.com/document/product/647/36758) | 通话质量监控 | 查询历史房间和用户数   |
-| [DescribeRealtimeNetwork](https://intl.cloud.tencent.com/document/product/647) | 通话质量监控 | 查询实时网络状态       |
-| [DescribeRealtimeQuality](https://intl.cloud.tencent.com/document/product/647) | 通话质量监控 | 查询实时质量数据       |
-| [DescribeRealtimeScale](https://intl.cloud.tencent.com/document/product/647) | 通话质量监控 | 查询实时规模           |
+| DescribeRealtimeNetwork | 通话质量监控 | 查询实时网络状态       |
+| DescribeRealtimeQuality | 通话质量监控 | 查询实时质量数据       |
+| DescribeRealtimeScale | 通话质量监控 | 查询实时规模           |
 | [DescribeRoomInformation](https://intl.cloud.tencent.com/document/product/647/36754) | 通话质量监控 | 查询房间列表           |
+| [DescribeUserInformation](https://intl.cloud.tencent.com/document/product/647/39096) | 通话质量监控 | 查询历史用户列表 |
+
 
 
 
@@ -115,38 +122,41 @@ TRTC 访问管理可授权的资源类型为 [应用](https://intl.cloud.tencent
 <tr>
 <td>CreateSpearConf</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/app">应用管理  &gt;  画面设定</a></td>
-<td>新增画面设定配置。此功能设置卡片仅对 iLiveSDK 1.9.6 及之前的版本可见，TRTC SDK 6.0及以后版本请参见 <a href="https://intl.cloud.tencent.com/document/product/647/35153">设定画面质量</a> 。</td>
+<td>新增画面设定配置。此功能设置卡片仅对 iLiveSDK 1.9.6 及之前的版本可见，TRTC SDK 6.0及以后版本请参见 <a href="https://intl.cloud.tencent.com/document/product/647/35153">设定画面质量</a></td>
 </tr>
 <tr>
 <td>DeleteSpearConf</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/app">应用管理  &gt; 画面设定</a></td>
-<td>删除画面设定配置。此功能设置卡片仅对 iLiveSDK 1.9.6 及之前的版本可见，TRTC SDK 6.0及以后版本请参见 <a href="https://intl.cloud.tencent.com/document/product/647/35153">设定画面质量</a> 。</td>
+<td>删除画面设定配置。此功能设置卡片仅对 iLiveSDK 1.9.6 及之前的版本可见，TRTC SDK 6.0及以后版本请参见 <a href="https://intl.cloud.tencent.com/document/product/647/35153">设定画面质量</a></td>
 </tr>
 <tr>
 <td>ModifySpearConf</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/app">应用管理  &gt;  画面设定</a></td>
-<td>修改画面设定配置。此功能设置卡片仅对 iLiveSDK 1.9.6 及之前的版本可见，TRTC SDK 6.0及以后版本请参见 <a href="https://intl.cloud.tencent.com/document/product/647/35153">设定画面质量</a> 。</td>
+<td>修改画面设定配置。此功能设置卡片仅对 iLiveSDK 1.9.6 及之前的版本可见，TRTC SDK 6.0及以后版本请参见 <a href="https://intl.cloud.tencent.com/document/product/647/35153">设定画面质量</a></td>
 </tr>
 <tr>
 <td>DescribeSpearConf</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/app">应用管理  &gt;  画面设定</a></td>
-<td>获取画面设定配置。此功能设置卡片仅对 iLiveSDK 1.9.6 及之前的版本可见，TRTC SDK 6.0及以后版本请参见 <a href="https://intl.cloud.tencent.com/document/product/647/35153">设定画面质量</a> 。</td>
+<td>获取画面设定配置。此功能设置卡片仅对 iLiveSDK 1.9.6 及之前的版本可见，TRTC SDK 6.0及以后版本请参见 <a href="https://intl.cloud.tencent.com/document/product/647/35153">设定画面质量</a></td>
 </tr>
 <tr>
 <td>ToggleSpearScheme</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/app">应用管理  &gt;  画面设定</a></td>
-<td>切换画面设定场景。此功能设置卡片仅对 iLiveSDK 1.9.6 及之前的版本可见，TRTC SDK 6.0及以后版本请参见 <a href="https://intl.cloud.tencent.com/document/product/647/35153">设定画面质量</a> 。</td>
+<td>切换画面设定场景。此功能设置卡片仅对 iLiveSDK 1.9.6 及之前的版本可见，TRTC SDK 6.0及以后版本请参见 <a href="https://intl.cloud.tencent.com/document/product/647/35153">设定画面质量</a></td>
 </tr>
 </tbody></table>
 
-<span id="n_Support"></span> 
-## 不支持资源级授权的 API
+
+## 不支持资源级授权的 API[](id:n_Support)
 由于特殊限制，下述 API 不支持资源级授权：
 
 ### 服务端 API 操作
 |接口名称|接口分类|功能描述|特殊限制说明|
 |---|---|---|---|
 |[DescribeDetailEvent](https://intl.cloud.tencent.com/document/product/647/37762)|通话质量监控|获取详细事件|输入参数无 SDKAppID ，无法进行资源级授权。|
+| [DescribeRecordStatistic](https://intl.cloud.tencent.com/document/product/647/42972) | 其他接口 |查询云端录制计费时长  |业务原因，暂不支持资源级授权 |
+| [DescribeTrtcInteractiveTime](https://intl.cloud.tencent.com/document/product/647/42971) | 其他接口 |查询音视频互动计费时长 |业务原因，暂不支持资源级授权 |
+| [DescribeTrtcMcuTranscodeTime](https://intl.cloud.tencent.com/document/product/647/42970) |  其他接口 |查询旁路转码计费时长   |业务原因，暂不支持资源级授权 |
 
 ### 控制台 API 操作
 <table>
@@ -158,31 +168,40 @@ TRTC 访问管理可授权的资源类型为 [应用](https://intl.cloud.tencent
 <li><a href="https://console.cloud.tencent.com/trtc/statistics">用量统计</a>
 </ul></td>
 <td>获取计费时长用量统计数据</td>
-<td>该接口包含返回全量 SDKAppID 的统计数据，限制非全量 SDKAppID 将返回错误。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表。</td>
+<td>该接口包含返回全量 SDKAppID 的统计数据，限制非全量 SDKAppID 将返回错误。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表</td>
+</tr>
+<tr>
+<td>DescribeDurationPackages</td>
+<td>TRTC 控制台<ul style="margin:0">
+<li> <a href="https://console.cloud.tencent.com/trtc">概览</a>
+<li><a href="https://console.cloud.tencent.com/trtc/package">套餐包管理</a>
+</ul></td>
+<td>获取预付费套餐包列表</td>
+<td>预付费套餐包为单个腾讯云账号下的所有 TRTC 应用共享，套餐包信息中无 SDKAppID 参数，无法进行资源级授权</td>
 </tr>
 <tr>
 <td>GetUserList</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/monitor">监控仪表盘</a></td>
 <td>获取用户列表</td>
-<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表。</td>
+<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表</td>
 </tr>
 <tr>
 <td>GetUserInfo</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/monitor">监控仪表盘</a></td>
 <td>获取用户信息</td>
-<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表。</td>
+<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表</td>
 </tr>
 <tr>
 <td>GetCommState</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/monitor">监控仪表盘</a></td>
 <td>获取通话状态</td>
-<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表。</td>
+<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表</td>
 </tr>
 <tr>
 <td>GetElasticSearchData</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/monitor">监控仪表盘</a></td>
 <td>查询 ES 数据</td>
-<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表。</td>
+<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表</td>
 </tr>
 <tr>
 <td>CreateTrtcApp</td>
@@ -191,19 +210,25 @@ TRTC 访问管理可授权的资源类型为 [应用](https://intl.cloud.tencent
 <li><a href="https://console.cloud.tencent.com/trtc/app">应用管理</a>
 </ul></td>
 <td>创建 TRTC 应用</td>
-<td>输入参数无 SDKAppID，无法进行资源级授权。SDKAppID 是 TRTC 应用的唯一标识，创建应用之后才有 SDKAppID 信息。</td>
+<td>输入参数无 SDKAppID，无法进行资源级授权。SDKAppID 是 TRTC 应用的唯一标识，创建应用之后才有 SDKAppID 信息</td>
 </tr>
 <tr>
 <td>HardDescribeMixConf</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/app">应用管理 &gt; 功能配置</a></td>
 <td>查询自动旁路推流状态</td>
-<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表。</td>
+<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表</td>
 </tr>
 <tr>
 <td>ModifyMixConf</td>
 <td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/app">应用管理 &gt; 功能配置</a></td>
 <td>开启/关闭自动旁路推流</td>
-<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表。</td>
+<td>输入参数无 SDKAppID，无法进行资源级授权。如有需要，可通过 DescribeAppStatList 接口来限制可查询的应用列表</td>
+</tr>
+<tr>
+<td>RemindBalance</td>
+<td>TRTC 控制台 <a href="https://console.cloud.tencent.com/trtc/package">套餐包管理</a></td>
+<td>获取预付费套餐包余额告警信息</td>
+<td>预付费套餐包为单个腾讯云账号下的所有 TRTC 应用共享，套餐包信息中无 SDKAppID 参数，无法进行资源级授权</td>
 </tr>
 </tbody></table>
 
