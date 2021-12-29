@@ -27,18 +27,18 @@ TIM_DECL int TIMMsgSendMessage(const char* conv_id, enum TIMConvType conv_type, 
 | int | If `TIM_SUCC` is returned, the API was called successfully. If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
- - This API is used to send a new one-to-one or group chat message.
- - When this API is used to send a one-to-one message, `conv_id` is set to UserID of the peer party, and `conv_type` is set to `kTIMConv_C2C`.
- - When this API is used to send a group message, `conv_id` is set to the group ID, and `conv_type` is set to `kTIMConv_Group`.
- - When a message is sent, `kTIMElem_GroupTips` and `kTIMElem_GroupReport` cannot be sent. They are delivered by the backend to update or notify the group information. The following elements in the message can be sent:
- - Text message element ([TextElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Emoji message element ([FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Location message element ([LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Image message element ([ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Voice message element ([SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Custom message element ([CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - File message element ([FileElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Video message element ([VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- This API is used to send a new one-to-one or group chat message.
+>- When this API is used to send a one-to-one message, `conv_id` is set to UserID of the peer party, and `conv_type` is set to `kTIMConv_C2C`.
+>- When this API is used to send a group message, `conv_id` is set to the group ID, and `conv_type` is set to `kTIMConv_Group`.
+>- When a message is sent, `kTIMElem_GroupTips` and `kTIMElem_GroupReport` cannot be sent. They are delivered by the backend to update or notify the group information. The following elements in the message can be sent:
+>- Text message element ([TextElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Emoji message element ([FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Location message element ([LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Image message element ([ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Voice message element ([SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Custom message element ([CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- File message element ([FileElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Video message element ([VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551))
 
 **Example**
 
@@ -106,18 +106,18 @@ TIM_DECL int TIMMsgSendNewMsg(const char* conv_id, enum TIMConvType conv_type, c
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- This API is used to send a new one-to-one or group chat message.
- - When this API is used to send a one-to-one message, `conv_id` is set to UserID of the peer party, and `conv_type` is set to `kTIMConv_C2C`.
- - When this API is used to send a group message, `conv_id` is set to the group ID, and `conv_type` is set to `kTIMConv_Group`.
-- When a message is sent, `kTIMElem_GroupTips` and `kTIMElem_GroupReport` cannot be sent. They are delivered by the backend to update or notify the group information. The following elements in the message can be sent:
- - Text message element ([TextElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Emoji message element ([FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Location message element ([LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Image message element ([ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Voice message element ([SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Custom message element ([CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - File message element ([FileElem](https://intl.cloud.tencent.com/document/product/1047/34551))
- - Video message element ([VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- This API is used to send a new one-to-one or group chat message.
+>- When this API is used to send a one-to-one message, `conv_id` is set to UserID of the peer party, and `conv_type` is set to `kTIMConv_C2C`.
+>- When this API is used to send a group message, `conv_id` is set to the group ID, and `conv_type` is set to `kTIMConv_Group`.
+>- When a message is sent, `kTIMElem_GroupTips` and `kTIMElem_GroupReport` cannot be sent. They are delivered by the backend to update or notify the group information. The following elements in the message can be sent:
+>- Text message element ([TextElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Emoji message element ([FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Location message element ([LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Image message element ([ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Voice message element ([SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Custom message element ([CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- File message element ([FileElem](https://intl.cloud.tencent.com/document/product/1047/34551))
+>- Video message element ([VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551))
 
 
 **Example**
@@ -371,8 +371,8 @@ TIM_DECL int TIMMsgFindByMsgLocatorList(const char* conv_id, enum TIMConvType co
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- This API is used to accurately locate a message of the specified conversation by using the message locator. It is often used to search for a specified message upon message recall.
-- One message locator corresponds to one message.
+>- This API is used to accurately locate a message of the specified conversation by using the message locator. It is often used to search for a specified message upon message recall.
+>- One message locator corresponds to one message.
 
 
 **Example**
@@ -527,8 +527,8 @@ TIM_DECL int TIMMsgGetMsgList(const char* conv_id, enum TIMConvType conv_type, c
 
 >?
 - The `kTIMMsgGetMsgListParamLastMsg` parameter specifies the message as the start point for local message pulling. The `kTIMMsgGetMsgListParamCount` parameter specifies the number of messages to be pulled. `kTIMMsgGetMsgListParamLastMsg` is optional. If you do not specify `kTIMMsgGetMsgListParamLastMsg`, the newest message of the conversation will be used as the start point for local message pulling.
-- If you set `kTIMMsgGetMsgListParamIsRamble` to `true`, the roaming messages in the cloud will be pulled if the local messages are not enough.
-- If you set `kTIMMsgGetMsgListParamIsForward` to `true`, messages later than the message specified by `kTIMMsgGetMsgListParamLastMsg` will be pulled. If you set it to `false`, messages earlier than the message specified by `kTIMMsgGetMsgListParamLastMsg` will be pulled.
+>- If you set `kTIMMsgGetMsgListParamIsRamble` to `true`, the roaming messages in the cloud will be pulled if the local messages are not enough.
+>- If you set `kTIMMsgGetMsgListParamIsForward` to `true`, messages later than the message specified by `kTIMMsgGetMsgListParamLastMsg` will be pulled. If you set it to `false`, messages earlier than the message specified by `kTIMMsgGetMsgListParamLastMsg` will be pulled.
 
 - When kTIMConv_C2C messages are pulled, only `kTIMMsgGetMsgListParamLastMsg` can be used to specify the start point for message pulling. If `kTIMMsgGetMsgListParamLastMsg` is not specified, the IM SDK uses the newest message of the conversation as the start point for message pulling.
 - When kTIMConv_Group messages are pulled, `kTIMMsgGetMsgListParamLastMsg` or `kTIMMsgGetMsgListParamLastMsgSeq` can be used to specify the start point for message pulling:
@@ -636,11 +636,11 @@ TIM_DECL int TIMMsgListDelete(const char* conv_id, enum TIMConvType conv_type, c
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- This API deletes both local and roaming messages. Pay attention to the following:
-- > We recommend that you store the JSON string of the message array and then call this API to delete the messages, avoiding repeated construction of the message array.
-- > Up to 30 messages can be deleted at a time.
-- > This API can be called only once per second.
-- > If the account has pulled these messages from other devices, the messages will still be stored on those devices after this API is called to delete them. That is, the operation of message deletion cannot be synchronized across multiple devices.
+>- This API deletes both local and roaming messages. Pay attention to the following:
+>- > We recommend that you store the JSON string of the message array and then call this API to delete the messages, avoiding repeated construction of the message array.
+>- > Up to 30 messages can be deleted at a time.
+>- > This API can be called only once per second.
+>- > If the account has pulled these messages from other devices, the messages will still be stored on those devices after this API is called to delete them. That is, the operation of message deletion cannot be synchronized across multiple devices.
 
 **Example**
 
@@ -740,8 +740,8 @@ TIM_DECL int TIMMsgSetC2CReceiveMessageOpt(const char* json_identifier_array, TI
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- This API supports batch setting. You can use the `userIDList` field to specify up to 30 users for batch setting.
-- This API can be called for up to 5 times per second.
+>- This API supports batch setting. You can use the `userIDList` field to specify up to 30 users for batch setting.
+>- This API can be called for up to 5 times per second.
 
 **Example**
 
@@ -833,7 +833,7 @@ TIM_DECL int TIMMsgSetGroupReceiveMessageOpt(const char* group_id, TIMReceiveMes
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- You can obtain the group message receiving option from the group profile `GroupBaseInfo`.
+>- You can obtain the group message receiving option from the group profile `GroupBaseInfo`.
 
 **Example**
 
