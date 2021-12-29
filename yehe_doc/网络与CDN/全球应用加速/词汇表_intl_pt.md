@@ -28,7 +28,7 @@ Um listener é usado para fornecer funcionalidades de configuração para a pol�
 Refere-se à região onde os usuários estão localizados. Os usuários em regiões de aceleração podem acessar os servidores empresariais na região do servidor de origem por meio de conexões de aceleração.
 
 
-<span ="GAAP1"></span>
+
 ### Global Application Acceleration Platform
 
 O Global Application Acceleration Platform (GAAP) do Tencent Cloud é um produto PaaS que atinge a latência de acesso global ideal. Ele usa conexões de alta velocidade, encaminhamento de cluster e roteamento inteligente entre nós globais para permitir que usuários em regiões diferentes acessem os nós mais próximos, para que o tráfego de solicitações possa ser encaminhado para os servidores de origem, reduzindo o atraso no acesso e a latência.
