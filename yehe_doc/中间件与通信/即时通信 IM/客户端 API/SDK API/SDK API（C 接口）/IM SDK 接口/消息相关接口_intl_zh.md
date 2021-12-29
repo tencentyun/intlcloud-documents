@@ -530,16 +530,16 @@ TIM_DECL int TIMMsgGetMsgList(const char* conv_id, enum TIMConvType conv_type, c
 >- 若指定 kTIMMsgGetMsgListParamIsRamble 为true则本地消息获取不够指定数目时，会去获取云端漫游消息。
 >- kTIMMsgGetMsgListParamIsForward 为true时表示获取比 kTIMMsgGetMsgListParamLastMsg 新的消息，为false时表示获取比 kTIMMsgGetMsgListParamLastMsg 旧的消息
 
->- 拉取 kTIMConv_C2C 消息时，只能使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点；如果没有指定 kTIMMsgGetMsgListParamLastMsg，默认使用会话的最新消息作为拉取起点
->- 拉取 kTIMConv_Group 消息时，除了可以使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点外，也可以使用 kTIMMsgGetMsgListParamLastMsgSeq 来指定消息的拉取起点，二者的区别在于：
->- 使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点时，返回的消息列表里不包含 kTIMMsgGetMsgListParamLastMsg；
->- 使用 kTIMMsgGetMsgListParamLastMsgSeq 作为消息拉取起点时，返回的消息列表里包含 kTIMMsgGetMsgListParamLastMsgSeq 所表示的消息；
+- 拉取 kTIMConv_C2C 消息时，只能使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点；如果没有指定 kTIMMsgGetMsgListParamLastMsg，默认使用会话的最新消息作为拉取起点
+- 拉取 kTIMConv_Group 消息时，除了可以使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点外，也可以使用 kTIMMsgGetMsgListParamLastMsgSeq 来指定消息的拉取起点，二者的区别在于：
+- 使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点时，返回的消息列表里不包含 kTIMMsgGetMsgListParamLastMsg；
+- 使用 kTIMMsgGetMsgListParamLastMsgSeq 作为消息拉取起点时，返回的消息列表里包含 kTIMMsgGetMsgListParamLastMsgSeq 所表示的消息；
 
->- 在拉取 kTIMConv_Group 消息时
->- 如果同时指定了 kTIMMsgGetMsgListParamLastMsg 和 kTIMMsgGetMsgListParamLastMsgSeq，SDK 优先使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点
->- 如果 kTIMMsgGetMsgListParamLastMsg 和 kTIMMsgGetMsgListParamLastMsgSeq，SDK 都未指定，消息的拉取起点分为如下两种情况：
->- 如果设置了拉取的时间范围，SDK 会根据 kTIMMsgGetMsgListParamTimeBegin 所描述的时间点作为拉取起点
->- 如果未设置拉取的时间范围，SDK 默认使用会话的最新消息作为拉取起点
+- 在拉取 kTIMConv_Group 消息时
+- 如果同时指定了 kTIMMsgGetMsgListParamLastMsg 和 kTIMMsgGetMsgListParamLastMsgSeq，SDK 优先使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点
+- 如果 kTIMMsgGetMsgListParamLastMsg 和 kTIMMsgGetMsgListParamLastMsgSeq，SDK 都未指定，消息的拉取起点分为如下两种情况：
+- 如果设置了拉取的时间范围，SDK 会根据 kTIMMsgGetMsgListParamTimeBegin 所描述的时间点作为拉取起点
+- 如果未设置拉取的时间范围，SDK 默认使用会话的最新消息作为拉取起点
 
 **示例：获取 C2C 会话`Windows-02`消息列表**
 
@@ -636,11 +636,11 @@ TIM_DECL int TIMMsgListDelete(const char* conv_id, enum TIMConvType conv_type, c
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551) |
 
 >?
-- 本接口会在删除本地消息的同时也会删除漫游消息。需要注意以下几点：
-- > 建议将之前的消息数组Json保存，然后删除的时候直接调用接口，避免构造消息数组。
-- > 一次最多只能删除 30 条消息。
-- > 一秒钟最多只能调用一次该接口。
-- > 如果该账号在其他设备上拉取过这些消息，那么调用该接口删除后，这些消息仍然会保存在那些设备上，即删除消息不支持多端同步。
+>- 本接口会在删除本地消息的同时也会删除漫游消息。需要注意以下几点：
+>- > 建议将之前的消息数组Json保存，然后删除的时候直接调用接口，避免构造消息数组。
+>- > 一次最多只能删除 30 条消息。
+>- > 一秒钟最多只能调用一次该接口。
+>- > 如果该账号在其他设备上拉取过这些消息，那么调用该接口删除后，这些消息仍然会保存在那些设备上，即删除消息不支持多端同步。
 
 **示例**
 
