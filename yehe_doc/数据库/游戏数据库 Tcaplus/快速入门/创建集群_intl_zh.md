@@ -19,7 +19,7 @@
 	  - 数字0 - 9
 	  - 特殊符号`\~!@#$%^&*_-+=\|(){}[]:;'<>,.?/ `
  - **表格组名称、表格组ID**：为此集群默认创建一个表格组，并制定其名称，表格组ID可以自动生成或自定义设置。
-![](https://main.qcloudimg.com/raw/85e5ddaa59d4e25462d3fe6148cdab14.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/eebfcf5a907d248b8352b54865ccf235.png)
 3. 购买完成后，返回集群列表可查看创建完的集群和表格组，系统会为每个集群分配一个唯一的集群 ID。
-![](https://main.qcloudimg.com/raw/7612056a6d9420ffb5697c0243c0e7d4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0706ef01fd5983fdcfb7dcb67ab9e018.png)
 
