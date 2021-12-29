@@ -5,7 +5,7 @@ Pengguna memiliki dua cara agar dapat mengotorisasi akun kolaborator: dengan men
 ## Persiapan
 1. Login ke akun root atau akun lain dengan izin AdministratorAccess di [Konsol Tencent Cloud](https://console.cloud.tencent.com/).
 2. Pada navigasi atas, pilih **Cloud Products** (Produk Cloud) > **Manage and Audit** (Kelola dan Audit) > **[Cloud Access Management](https://console.cloud.tencent.com/cam/policy)** (Manajemen Akses Cloud) untuk masuk ke konsol CAM.
->Anda juga dapat masuk ke konsol pengelolaan akses dengan memilih **Your Account Name** (Nama Akun Anda) > **Access Management** (Pengelolaan Akses) di sudut kanan atas konsol.
+>?Anda juga dapat masuk ke konsol pengelolaan akses dengan memilih **Your Account Name** (Nama Akun Anda) > **Access Management** (Pengelolaan Akses) di sudut kanan atas konsol.
 
 ## Petunjuk
 ### Menghubungkan Pengguna dengan Kebijakan

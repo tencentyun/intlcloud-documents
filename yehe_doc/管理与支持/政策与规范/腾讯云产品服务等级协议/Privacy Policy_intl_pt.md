@@ -554,3 +554,4 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 11.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41578).
 12.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41705).
 13.[Private DNS](https://intl.cloud.tencent.com/document/product/1097/42072).
+14.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44012).

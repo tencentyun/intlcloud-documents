@@ -1,13 +1,13 @@
 ## Overview (Ikhtisar)
 Anda dapat memperluas disk cloud untuk menambah ruang penyimpanannya. Dokumen ini menjelaskan cara memperluas disk cloud melalui konsol dan menetapkan kapasitas tambahannya tersebut untuk sistem file yang sudah ada.
->?Untuk informasi selengkapnya tentang perluasan disk cloud, lihat [Expanding Cloud Disk Capacity] (Memperluas Kapasitas Disk Cloud)(https://intl.cloud.tencent.com/document/product/362/5747).
+>?Untuk informasi selengkapnya tentang perluasan disk cloud, lihat [Memperluas Kapasitas Disk Cloud](https://intl.cloud.tencent.com/document/product/362/5747).
 >
 
 ## Notes (Catatan)
-Untuk melindungi data penting, Anda dapat [create a snapshot] (membuat snapshot) (https://intl.cloud.tencent.com/document/product/362/5755) guna mencadangkan data disk cloud sebelum memperluasnya.
+Untuk melindungi data penting, Anda dapat [membuat snapshot](https://intl.cloud.tencent.com/document/product/362/5755) guna mencadangkan data disk cloud sebelum memperluasnya.
 
 ## Prasyarat
-Anda telah [initialized the `cbs-test` cloud disk] (menginisialisasi disk cloud `cbs-test`) (https://intl.cloud.tencent.com/document/product/362/31646).
+Anda telah [menginisialisasi disk cloud `cbs-test`](https://intl.cloud.tencent.com/document/product/362/31646).
 
 ## Directions (Petunjuk)
 
@@ -22,13 +22,13 @@ Anda telah [initialized the `cbs-test` cloud disk] (menginisialisasi disk cloud 
 ### Memindai ulang disk
 >?Dokumen ini menggunakan CVM dengan Windows Server 2012 R2 DataCenter 64-bit Tiongkok yang diinstal sebagai contoh. Perhatikan bahwa langkah-langkahnya dapat berbeda sesuai dengan versi sistem operasi. 
 >
-1. Login ke CVM sebagai admin. Lihat [Logging in to Windows Instance Using RDP] (Login ke Instans Windows Menggunakan RDP) (https://intl.cloud.tencent.com/document/product/213/5435). 
+1. Login ke CVM sebagai admin. Lihat [Login ke Instans Windows Menggunakan RDP](https://intl.cloud.tencent.com/document/product/213/5435). 
 2. Di desktop, klik kanan <img src="https://main.qcloudimg.com/raw/3d815ac1c196b47b2eea7c3a516c3d88.png" style="margin:-6px 0px"> di sudut kiri bawah, kemudian pilih **Computer Management** (Pengelolaan Komputer).
 3. Klik kanan **Disk Management** (Pengelolaan Disk), dan pilih **Rescan Disk** (Pindai Ulang Disk).
 4. Setelah pemindaian, periksa apakah ukuran disk data telah berhasil diperluas.
 
 ### Memperluas sistem file dari partisi yang ada
->?Dalam contoh ini, kami akan menetapkan kapasitas yang telah diperluas ke drive E yang sudah ada. Untuk informasi selengkapnya, lihat [Extending Partitions and File Systems (Windows)] (Memperluas Partisi dan Sistem File (Windows)) (https://intl.cloud.tencent.com/document/product/362/31601).
+>?Dalam contoh ini, kami akan menetapkan kapasitas yang telah diperluas ke drive E yang sudah ada. Untuk informasi selengkapnya, lihat [Memperluas Partisi dan Sistem File (Windows)](https://intl.cloud.tencent.com/document/product/362/31601).
 >
 1. Klik kanan di mana saja pada ruang kosong disk, dan pilih **Extend Volume** (Perluas Volume).
 2. Ikuti Extend Volume Wizard (Wizard Perluas Volume) untuk memperluas volume.
@@ -44,7 +44,7 @@ Kapasitas disk data baru akan ditambahkan ke volume asli.
 ### Memperluas sistem file
 >?
 >- Dokumen ini menggunakan CVM dengan CentOS 7.8 yang diinstal sebagai contoh. Perhatikan bahwa langkah-langkahnya dapat berbeda sesuai dengan versi sistem operasi. 
->?Dalam contoh ini, kami akan menetapkan kapasitas yang telah diperluas ke `/dev/vdb`. Untuk informasi selengkapnya, lihat [Online Extending Partitions and File Systems] (Memperluas Partisi dan Sistem File Secara Online) (https://intl.cloud.tencent.com/document/product/362/39999).
+>?Dalam contoh ini, kami akan menetapkan kapasitas yang telah diperluas ke `/dev/vdb`. Untuk informasi selengkapnya, lihat [Memperluas Partisi dan Sistem File Secara Online](https://intl.cloud.tencent.com/document/product/362/39999).
 >
 1. Jalankan perintah berikut untuk memperluas sistem file EXT.
 ```
@@ -64,5 +64,5 @@ Jika informasi yang mirip dengan apa yang ditampilkan di bawah ini dikembalikan,
 
 
 ## Documentation (Dokumentasi)
-- [Cloud Disk Expansion Scenarios] (Skenario Perluasan Disk Cloud)(https://intl.cloud.tencent.com/document/product/362/31600)
-- [Snapshot Overview] (Ikhtisar Snapshot) (https://intl.cloud.tencent.com/document/product/362/31638)
+- [Skenario Perluasan Disk Cloud](https://intl.cloud.tencent.com/document/product/362/31600)
+- [Ikhtisar Snapshot](https://intl.cloud.tencent.com/document/product/362/31638)

@@ -28,7 +28,7 @@ Pendengar digunakan untuk menyediakan fitur konfigurasi untuk kebijakan penerusa
 Ini mengacu pada wilayah tempat pengguna berada. Pengguna di wilayah akselerasi dapat mengakses server bisnis di wilayah server asal melalui koneksi akselerasi.
 
 
-<span ="GAAP1"></span>
+
 ### Global Application Acceleration Platform
 
 Global Application Acceleration Platform (GAAP) Tencent adalah produk PaaS yang mencapai latensi akses global yang optimal. Ini menggunakan koneksi berkecepatan tinggi, penerusan kluster, dan perutean cerdas di antara node global untuk memungkinkan pengguna di berbagai wilayah mengakses node terdekat, sehingga lalu lintas permintaan mereka dapat diteruskan ke server asal, mengurangi keterlambatan akses dan latensi.

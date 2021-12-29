@@ -566,6 +566,6 @@ The following Modules shall apply and form part of this privacy policy if you us
 12.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41705).
 13.[Private DNS](https://intl.cloud.tencent.com/document/product/1097/42072).
 14.[TencentDB for Tendis](https://intl.cloud.tencent.com/document/product/1083/43456).
-
+15.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44012).
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)

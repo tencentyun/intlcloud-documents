@@ -361,7 +361,7 @@ You can create an intelligent video recognition template and customize it accord
 </tr>
 <tr>
 <td align="center">Politically sensitive information</td>
-<td align="center">Includes intelligent recognition subitems of politically sensitive figures, violation icons, pop stars, and sports celebrities</td>
+<td align="center">Includes intelligent recognition subitems of particular people, icons, and celebrities in sports and the entertainment industry</td>
 </tr>
 <tr>
 <td rowspan = 3>Speech recognition</td>
