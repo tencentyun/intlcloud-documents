@@ -55,19 +55,19 @@ Tabel berikut menjelaskan cara penyimpanan snapshot ditagihkan dalam berbagai je
 <tr>
 <td nowrap="nowrap">Tiongkok Utara (Beijing)</td>
 <td>100GB</td>
-<td nowrap="nowrap">1 disk cloud<br/>**To be repossessed** (Akan diambil alih)</td>
+<td nowrap="nowrap">1 disk cloud<br/><b>To be repossessed</b> (Akan diambil alih)</td>
 <td><li>Saat ini tidak memenuhi syarat untuk tingkat gratis.Total kapasitas snapshot adalah 100 GB yang ditagihkan sesuai pemakaian setiap jam.</li><li>Tingkat gratis akan berlaku setelah disk cloud diperpanjang atau setelah disk cloud yang baru dibeli.Total kapasitas snapshot adalah 100GB - 50GB = 50GB yang ditagihkan sesuai pemakaian setiap jam.</li></td>
 </tr>
 <tr>
 <td nowrap="nowrap">Hong Kong, Makau dan Taiwan, Tiongkok (Hong Kong)</td>
 <td>60GB</td>
-<td>1 disk cloud<br/>**Mounted** (Terpasang)</td>
+<td>1 disk cloud<br/><b>Mounted</b> (Terpasang)</td>
 <td>Memenuhi syarat untuk tingkat gratis.Total kapasitas snapshot adalah 60GB - 50GB = 10GB yang ditagihkan sesuai pemakaian setiap jam.</td>
 </tr>
 <tr>
 <td nowrap="nowrap">Pasifik Asia Tenggara (Singapura)</td>
 <td>40GB</td>
-<td>1 disk cloud<br/>**Mounted** (Terpasang)</td>
+<td>1 disk cloud<br/><b>Mounted</b> (Terpasang)</td>
 <td>Tidak memenuhi syarat untuk tingkat gratis.Total kapasitas snapshot adalah 40GB yang ditagihkan sesuai pemakaian setiap jam.</td>
 </tr>
 </table>
