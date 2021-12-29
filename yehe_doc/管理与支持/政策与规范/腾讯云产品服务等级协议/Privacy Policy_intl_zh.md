@@ -558,3 +558,4 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 11.[弹性微服务](https://intl.cloud.tencent.com/document/product/1094/41578)。
 12.[时序数据库 CTSDB](https://intl.cloud.tencent.com/document/product/1100/41705)。
 13.[私有域解析 Private DNS](https://intl.cloud.tencent.com/document/product/1097/42072)。
+14.[数据库管理中心](https://intl.cloud.tencent.com/document/product/1125/44012)。
