@@ -27,18 +27,18 @@ TIM_DECL int TIMMsgSendMessage(const char* conv_id, enum TIMConvType conv_type, 
 | int | 返回 TIM_SUCC 表示接口调用成功，其他值表示接口调用失败。每个返回值的定义请参见 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551) |
 
 >?
- - 发送新消息，单聊消息和群消息的发送均采用此接口。
- - 发送单聊消息时`conv_id`为对方的 UserID，`conv_type`为`kTIMConv_C2C`。
- - 发送群聊消息时`conv_id`为群 ID，`conv_type`为`kTIMConv_Group`。
- - 发送消息时不能发送`kTIMElem_GroupTips`、`kTIMElem_GroupReport`，他们由为后台下发，用于更新（通知）群的信息。可以的发送消息内元素。
- - 文本消息元素，请参考 [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 表情消息元素，请参考 [FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 位置消息元素，请参考 [LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 图片消息元素，请参考 [ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 声音消息元素，请参考 [SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 自定义消息元素，请参考 [CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 文件消息元素，请参考 [FileElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 视频消息元素，请参考 [VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 发送新消息，单聊消息和群消息的发送均采用此接口。
+>- 发送单聊消息时`conv_id`为对方的 UserID，`conv_type`为`kTIMConv_C2C`。
+>- 发送群聊消息时`conv_id`为群 ID，`conv_type`为`kTIMConv_Group`。
+>- 发送消息时不能发送`kTIMElem_GroupTips`、`kTIMElem_GroupReport`，他们由为后台下发，用于更新（通知）群的信息。可以的发送消息内元素。
+>- 文本消息元素，请参考 [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 表情消息元素，请参考 [FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 位置消息元素，请参考 [LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 图片消息元素，请参考 [ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 声音消息元素，请参考 [SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 自定义消息元素，请参考 [CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 文件消息元素，请参考 [FileElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 视频消息元素，请参考 [VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
 
 **示例**
 
@@ -106,18 +106,18 @@ TIM_DECL int TIMMsgSendNewMsg(const char* conv_id, enum TIMConvType conv_type, c
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551) |
 
 >?
-- 发送新消息，单聊消息和群消息的发送均采用此接口。
- - 发送单聊消息时`conv_id`为对方的 UserID，`conv_type`为`kTIMConv_C2C`。
- - 发送群聊消息时`conv_id`为群 ID，`conv_type`为`kTIMConv_Group`。
-- 发送消息时不能发送`kTIMElem_GroupTips`、`kTIMElem_GroupReport`，他们由为后台下发，用于更新（通知）群的信息。可以的发送消息内元素。
- - 文本消息元素，请参考 [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 表情消息元素，请参考 [FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 位置消息元素，请参考 [LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 图片消息元素，请参考 [ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 声音消息元素，请参考 [SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 自定义消息元素，请参考 [CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 文件消息元素，请参考 [FileElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
- - 视频消息元素，请参考 [VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 发送新消息，单聊消息和群消息的发送均采用此接口。
+>- 发送单聊消息时`conv_id`为对方的 UserID，`conv_type`为`kTIMConv_C2C`。
+>- 发送群聊消息时`conv_id`为群 ID，`conv_type`为`kTIMConv_Group`。
+>- 发送消息时不能发送`kTIMElem_GroupTips`、`kTIMElem_GroupReport`，他们由为后台下发，用于更新（通知）群的信息。可以的发送消息内元素。
+>- 文本消息元素，请参考 [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 表情消息元素，请参考 [FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 位置消息元素，请参考 [LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 图片消息元素，请参考 [ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 声音消息元素，请参考 [SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 自定义消息元素，请参考 [CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 文件消息元素，请参考 [FileElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
+>- 视频消息元素，请参考 [VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551)。
 
 
 **示例**
@@ -371,8 +371,8 @@ TIM_DECL int TIMMsgFindByMsgLocatorList(const char* conv_id, enum TIMConvType co
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551) |
 
 >?
-- 此接口根据消息定位符精准查找指定会话的消息，该功能一般用于消息撤回时查找指定消息等。
-- 一个消息定位符对应一条消息。
+>- 此接口根据消息定位符精准查找指定会话的消息，该功能一般用于消息撤回时查找指定消息等。
+>- 一个消息定位符对应一条消息。
 
 
 **示例**
@@ -526,20 +526,20 @@ TIM_DECL int TIMMsgGetMsgList(const char* conv_id, enum TIMConvType conv_type, c
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551) |
 
 >?
-- 从 kTIMMsgGetMsgListParamLastMsg 指定的消息开始获取本地消息列表，kTIMMsgGetMsgListParamCount 为要获取的消息数目。kTIMMsgGetMsgListParamLastMsg 可以不指定，不指定时表示以会话最新的消息为 LastMsg 。
-- 若指定 kTIMMsgGetMsgListParamIsRamble 为true则本地消息获取不够指定数目时，会去获取云端漫游消息。
-- kTIMMsgGetMsgListParamIsForward 为true时表示获取比 kTIMMsgGetMsgListParamLastMsg 新的消息，为false时表示获取比 kTIMMsgGetMsgListParamLastMsg 旧的消息
+>- 从 kTIMMsgGetMsgListParamLastMsg 指定的消息开始获取本地消息列表，kTIMMsgGetMsgListParamCount 为要获取的消息数目。kTIMMsgGetMsgListParamLastMsg 可以不指定，不指定时表示以会话最新的消息为 LastMsg 。
+>- 若指定 kTIMMsgGetMsgListParamIsRamble 为true则本地消息获取不够指定数目时，会去获取云端漫游消息。
+>- kTIMMsgGetMsgListParamIsForward 为true时表示获取比 kTIMMsgGetMsgListParamLastMsg 新的消息，为false时表示获取比 kTIMMsgGetMsgListParamLastMsg 旧的消息
 
-- 拉取 kTIMConv_C2C 消息时，只能使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点；如果没有指定 kTIMMsgGetMsgListParamLastMsg，默认使用会话的最新消息作为拉取起点
-- 拉取 kTIMConv_Group 消息时，除了可以使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点外，也可以使用 kTIMMsgGetMsgListParamLastMsgSeq 来指定消息的拉取起点，二者的区别在于：
-- 使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点时，返回的消息列表里不包含 kTIMMsgGetMsgListParamLastMsg；
-- 使用 kTIMMsgGetMsgListParamLastMsgSeq 作为消息拉取起点时，返回的消息列表里包含 kTIMMsgGetMsgListParamLastMsgSeq 所表示的消息；
+>- 拉取 kTIMConv_C2C 消息时，只能使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点；如果没有指定 kTIMMsgGetMsgListParamLastMsg，默认使用会话的最新消息作为拉取起点
+>- 拉取 kTIMConv_Group 消息时，除了可以使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点外，也可以使用 kTIMMsgGetMsgListParamLastMsgSeq 来指定消息的拉取起点，二者的区别在于：
+>- 使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点时，返回的消息列表里不包含 kTIMMsgGetMsgListParamLastMsg；
+>- 使用 kTIMMsgGetMsgListParamLastMsgSeq 作为消息拉取起点时，返回的消息列表里包含 kTIMMsgGetMsgListParamLastMsgSeq 所表示的消息；
 
-- 在拉取 kTIMConv_Group 消息时
-- 如果同时指定了 kTIMMsgGetMsgListParamLastMsg 和 kTIMMsgGetMsgListParamLastMsgSeq，SDK 优先使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点
-- 如果 kTIMMsgGetMsgListParamLastMsg 和 kTIMMsgGetMsgListParamLastMsgSeq，SDK 都未指定，消息的拉取起点分为如下两种情况：
-- 如果设置了拉取的时间范围，SDK 会根据 kTIMMsgGetMsgListParamTimeBegin 所描述的时间点作为拉取起点
-- 如果未设置拉取的时间范围，SDK 默认使用会话的最新消息作为拉取起点
+>- 在拉取 kTIMConv_Group 消息时
+>- 如果同时指定了 kTIMMsgGetMsgListParamLastMsg 和 kTIMMsgGetMsgListParamLastMsgSeq，SDK 优先使用 kTIMMsgGetMsgListParamLastMsg 作为消息的拉取起点
+>- 如果 kTIMMsgGetMsgListParamLastMsg 和 kTIMMsgGetMsgListParamLastMsgSeq，SDK 都未指定，消息的拉取起点分为如下两种情况：
+>- 如果设置了拉取的时间范围，SDK 会根据 kTIMMsgGetMsgListParamTimeBegin 所描述的时间点作为拉取起点
+>- 如果未设置拉取的时间范围，SDK 默认使用会话的最新消息作为拉取起点
 
 **示例：获取 C2C 会话`Windows-02`消息列表**
 
@@ -740,8 +740,8 @@ TIM_DECL int TIMMsgSetC2CReceiveMessageOpt(const char* json_identifier_array, TI
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551) |
 
 >?
-- 该接口支持批量设置，您可以通过参数 userIDList 设置一批用户，但一次最大允许设置 30 个用户。
-- 该接口调用频率被限制为1秒内最多调用5次。
+>- 该接口支持批量设置，您可以通过参数 userIDList 设置一批用户，但一次最大允许设置 30 个用户。
+>- 该接口调用频率被限制为1秒内最多调用5次。
 
 **示例**
 
@@ -833,7 +833,7 @@ TIM_DECL int TIMMsgSetGroupReceiveMessageOpt(const char* group_id, TIMReceiveMes
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551) |
 
 >?
-- 查询群消息的接收选项：您可以在群资料（GroupBaseInfo）中获得这个信息
+>- 查询群消息的接收选项：您可以在群资料（GroupBaseInfo）中获得这个信息
 
 **示例**
 
