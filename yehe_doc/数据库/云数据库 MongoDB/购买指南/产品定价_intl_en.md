@@ -1,10 +1,10 @@
 
-A TencentDB for MongoDB cluster typically consists of 3 or more nodes. Each node contains computing resources (specified CVM models) and storage resources (cloud disks).
+A TencentDB for MongoDB cluster typically consists of three or more nodes. Each node contains computing resources (specified CVM models) and storage resources (cloud disks).
 
-Replica set instance price formula: **Price of a replica set instance = Single-node price (computing resource fees + storage resource fees) x Number of nodes**  
+Replica set instance price formula: **Price of a replica set instance = Single-Node price (computing resource fees + storage resource fees) x Number of nodes **
 
 ## Monthly Subscription Pricing
->? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>? The monthly subscription mode is currently in beta testing. Prices published here are for reference only. Refer to your bills for final prices. To use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
 >
 ### Computing resource rates
 <table>
@@ -100,7 +100,7 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 <td>3.80952381</td>
 </tr>
 <tr>
-<td rowspan=4>Virginia, Frankfurt</td>
+<td rowspan=4>Frankfurt</td>
 <td>Smaller than 128 GB</td>
 <td>5.714285714</td>
 </tr>
@@ -111,6 +111,23 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 <tr>
 <td>Equal to 240 GB</td>
 <td>4.9523809522</td>
+</tr>
+<tr>
+<td>Equal to 512 GB</td>
+<td>3.42857143</td>
+</tr>
+<tr>
+<td rowspan=4>Virginia</td>
+<td>Smaller than 128 GB</td>
+<td>5.714285714</td>
+</tr>
+<tr>
+<td>Equal to 128 GB</td>
+<td>5.142857143</td>
+</tr>
+<tr>
+<td>Equal to 240 GB</td>
+<td>4.85714286</td>
 </tr>
 <tr>
 <td>Equal to 512 GB</td>
@@ -137,7 +154,7 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 
 
 ### Storage resource rates
-     
+
 | Region                                  | Disk Price (USD/GB/Month) |
 | ---------------------------------- | ----------------------- |
 | Beijing, Shanghai, Guangzhou, Qingyuan, Chengdu, Chongqing, Tokyo | 0.1                    |
@@ -148,7 +165,7 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 | Virginia                           | 0.104761906                    |
 | Frankfurt                           | 0.085714286                     |
 
-## Pay-As-You-Go Pricing
+## Pay-as-You-Go Pricing
 ### Computing resource rates
 <table>
 <thead>
@@ -188,15 +205,15 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 <tr>
 <td  rowspan = "4">Hong Kong (China), Singapore</td>
 <td>Smaller than 128 GB</td>
-<td>0.017857143</td>
-<td>0.281</td>
-<td>0.188</td>
+<td>0.01785714</td>
+<td>0.01339286</td>
+<td>0.00892857</td>
 </tr>
 <tr>
 <td>Equal to 128 GB</td>
 <td>0.015873016</td>
-<td>0.013392857</td>
-<td>0.007936508</td>
+<td>0.01339286</td>
+<td>0.01190476</td>
 </tr>
 <tr>
 <td>Equal to 240 GB</td>
@@ -210,7 +227,6 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 <td>0.008928572</td>
 <td>0.005952381</td>
 </tr>
-<tr>
 <tr>
 <td  rowspan = "4">Bangkok, Mumbai</td>
 <td>Smaller than 128 GB</td>
@@ -287,7 +303,7 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 <td>0.005291006</td>
 </tr>
 <tr>
-<td  rowspan = "4">Virginia, Frankfurt</td>
+<td  rowspan = "4">Frankfurt</td>
 <td>Smaller than 128 GB</td>
 <td>0.015873016</td>
 <td>0.011904762</td>
@@ -310,6 +326,31 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 <td>0.00952381</td>
 <td>0.00714286</td>
 <td>0.00476191</td>
+</tr>
+<tr>
+<td  rowspan = "4">Virginia</td>
+<td>Smaller than 128 GB</td>
+<td>0.015873016</td>
+<td>0.011904762</td>
+<td>0.007936508</td>
+</tr>
+<tr>
+<td>Equal to 128 GB</td>
+<td>0.014285714</td>
+<td>0.010714286</td>
+<td>0.007142857</td>
+</tr>
+<tr>
+<td>Equal to 240 GB</td>
+<td>0.01349206</td>
+<td>0.01011905</td>
+<td>0.00674603</td>
+</tr>
+<tr>
+<td>Equal to 512 GB</td>
+<td>0.01058201</td>
+<td>0.00793651</td>
+<td>0.00529101</td>
 </tr>
 <tr>
 <td  rowspan = "4">Moscow</td>
