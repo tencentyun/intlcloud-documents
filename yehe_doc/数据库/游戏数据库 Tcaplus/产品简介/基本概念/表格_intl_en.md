@@ -81,5 +81,5 @@ TcaplusDB supports multiple data types as detailed below:
 | message | Nested type. It supports up to 128 consecutive nesting levels. A high number of nesting levels will affect the performance. |
 
 ### Table definition format
-TcaplusDB supports Protocol Buffers, which is a lightweight and efficient structured data storage format and mainly used to sequentially store structured data.
+TcaplusDB supports Protocol Buffers, which is a lightweight and efficient structured data storage format and mainly used to store structured data sequentially.
 For more information on the table formats, please see [Table Description Language](https://intl.cloud.tencent.com/document/product/1016/36559).
