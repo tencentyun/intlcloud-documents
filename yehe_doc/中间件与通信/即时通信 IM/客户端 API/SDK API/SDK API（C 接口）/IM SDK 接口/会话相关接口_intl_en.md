@@ -29,8 +29,8 @@ TIM_DECL int TIMConvCreate(const char* conv_id, enum TIMConvType conv_type, TIMC
 | int | If `TIM_SUCC` is returned, the API was successfully called. (The callback `cb` is called only when the API returns `TIM_SUCC`.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >?
-- A conversation is a one-to-one or group chat, through which messages are sent and received between you and another user or in a group.
-- This API creates a conversation or obtains conversation information. The conversation type (group or one-to-one chat) and the conversation party identifier (the conversation party's account or group ID) need to be specified. Conversation information is returned through the callback function `cb`.
+>- A conversation is a one-to-one or group chat, through which messages are sent and received between you and another user or in a group.
+>- This API creates a conversation or obtains conversation information. The conversation type (group or one-to-one chat) and the conversation party identifier (the conversation party's account or group ID) need to be specified. Conversation information is returned through the callback function `cb`.
 
 
 **Example 1: obtaining a one-to-one chat with a party whose UserID is Windows-02**
