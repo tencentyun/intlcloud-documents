@@ -1,10 +1,10 @@
-﻿TcaplusDB can be accessed and read through multiple means such as client tool, SDK toolkits for various programming languages, and RESTful API.
+TcaplusDB can be accessed and read through multiple ways such as client tool, SDK toolkits in various programming languages, and RESTful API.
 
 ## Accessing TcaplusDB Data Through Client Tool
-You can use the [tcaplus_client](https://intl.cloud.tencent.com/document/product/1016/37719) for Linux tool to access TcaplusDB data.
+You can use the [tcaplus_client](https://intl.cloud.tencent.com/document/product/1016/37719) for Linux to access TcaplusDB.
 
 ## Accessing TcaplusDB Data Through SDK for C++ API
-You can use the SDK for [C++](https://intl.cloud.tencent.com/document/product/1016/30289) tool to access TcaplusDB data.
+You can use the SDK for [C++](https://intl.cloud.tencent.com/document/product/1016/30289) to access TcaplusDB.
 
 ## Accessing TcaplusDB Data Through RESTful API
 You can access TcaplusDB data through RESTful API. For more information, please see [Description](https://intl.cloud.tencent.com/document/product/1016/37721).
