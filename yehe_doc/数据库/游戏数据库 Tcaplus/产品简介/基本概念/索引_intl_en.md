@@ -44,7 +44,7 @@ For example, the `HeroInfo` table below has 4 primary key fields: `heroId`, `her
 	heroMagicdefense:41
 }
 ```
-For the table above, you can freely combine the 4 primary key fields to create indexes, but the intersection of all created indexes cannot be empty. For example, if `heroId` is used as the intersection field for index designing, the following indexes can be created:
+For the table above, you can use any combination of the 4 primary key fields to create indexes, but the intersection of all created indexes cannot be empty. For example, if `heroId` is used as the intersection field for index designing, the following indexes can be created:
 - heroId,heroName
 - heroId,heroFightingType
 - heroId,heroQuality
