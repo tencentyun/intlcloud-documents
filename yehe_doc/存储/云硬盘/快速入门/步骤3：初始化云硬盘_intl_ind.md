@@ -1,0 +1,102 @@
+## Overview (Ikhtisar)
+Dokumen ini menjelaskan cara menginisialisasi disk cloud yang baru saja dipasang ke CVM, membuat sistem file, dan menulis file dengan nama `qcloud.txt`.
+>?Untuk informasi selengkapnya tentang menginisialisasi disk cloud, silakan lihat [Initialization Scenarios] (Skenario Inisialisasi) (https://intl.cloud.tencent.com/document/product/362/31596).
+>
+
+## Notes (Catatan)
+Untuk mencegah kehilangan data, silakan lihat [Usage FAQs] (Pertanyaan Umum Penggunaan) (https://intl.cloud.tencent.com/document/product/362/32409#.E4.BA.91.E7.A1.AC.E7.9B.98.E4.BD.BF.E7.94.A8.E4.B8.8A.E6.9C.89.E4.BB.80.E4.B9.88.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9.EF.BC.9F) sebelum mengoperasikan disk cloud CBS Anda.
+
+## Prerequisites (Prasyarat)
+- Anda telah memasangkan disk cloud **cbs-test** ke CVM. Untuk petunjuk lengkapnya, lihat [Step 2. Attaching Cloud Disks] (Langkah 2. Memasang Disk Cloud) (https://intl.cloud.tencent.com/document/product/362/39991).
+
+## Directions (Petunjuk)
+<dx-tabs>
+::: Memformat, membuat sistem file, dan menulis file (Windows)
+>?Dokumen ini menggunakan CVM dengan Windows Server 2012 R2 DataCenter 64-bit Tiongkok yang diinstal sebagai contoh. Perhatikan bahwa langkah-langkahnya dapat berbeda sesuai dengan versi sistem operasi.
+>
+1. Login ke instans CVM Windows sebagai pengguna admin. Lihat [Logging in to Windows Instance Using RDP (Recommended)] (Login ke Instans Windows Menggunakan RDP (Direkomendasikan))(https://intl.cloud.tencent.com/document/product/213/5435). 
+2. Di desktop, klik kanan <img src="https://main.qcloudimg.com/raw/3d815ac1c196b47b2eea7c3a516c3d88.png" style="margin:-6px 0px"> di sudut kiri bawah.
+3. Pilih **Disk Management** (Pengelolaan Disk) di menu pop-up untuk membuka jendela **Disk Management** (Pengelolaan Disk).
+4. (Opsional) Klik kanan pada disk kosong yang Anda butuhkan, lalu pilih **Online**.
+Ketika status disk berubah menjadi **Not Initialized** (Tidak Diinisialisasi), itu berarti disk kini tersedia secara online.
+5. (Opsional) Klik kanan pada disk cloud yang baru saja tersedia secara online. Pilih **Initialize Disk** (Inisialisasi Disk) kemudian **Master Boot Record** di jendela pop-up **Initialize Disk** (Inisialisasi Disk), dan klik **OK**.
+>?
+>- Format partisi Master Boot Record (MBR) mendukung disk dengan kapasitas maksimum sebesar 2 TB, dan and GUID Partition Table (GPT) mendukung disk dengan kapasitas maksimum sebesar 18 EB. Jika Anda membutuhkan kapasitas disk yang lebih besar dari 2 TB, silakan pilih format partisi GPT.
+>- Jika format partisi disk diubah setelah disk digunakan, data asli pada disk akan dihapus. Harap berhati-hati dalam memilih format partisi ketika menginisialisasi disk.
+>
+6. Klik kanan pada disk yang Anda butuhkan, pilih **New Simple Volume** (Volume Sederhana Baru), kemudian klik **Next** (Selanjutnya) di jendela pop-up.
+7. Masukkan ukuran volume sederhana kemudian klik **Next** (Selanjutnya).
+8. Pilih huruf drive atau path drive kemudian klik **Next** (Selanjutnya). Contoh ini menggunakan driver dengan huruf E.
+![](https://main.qcloudimg.com/raw/1f61b5dcd5c965fa3e3bc11983475d38.png)
+9. Pilih sistem file, lakukan format cepat, kemudian klik **Next** (Selanjutnya).
+![](https://main.qcloudimg.com/raw/608ffc67e52b53691bf64f2b2411b948.png)
+10. Klik **Finish** (Selesai).
+ Status disk akan berubah menjadi **Formatting** (Memformat). Tunggu hingga inisialisasi selesai. Saat status volume menjadi **Healthy** (Sehat), inisialisasi disk berhasil. Anda dapat melihat disk data yang baru saja diformat di antarmuka **PC**.
+11. Masukkan disk data yang baru saja diformat, buat file dengan nama `qcloud.txt`, masukkan konten yang Anda perlukan, kemudian pilih **File** > **Save** (File > Simpan).
+:::
+::: Memformat, membuat sistem file, dan menulis file (Linux)
+>!
+>- Dokumen ini menggunakan CVM dengan CentOS 7.8 yang diinstal sebagai contoh. Perhatikan bahwa langkah-langkahnya dapat berbeda sesuai dengan versi sistem operasi.
+>- Contoh ini menggunakan sistem file EXT4.
+>- Ketika CVM Linux dimulai ulang atau dijalankan, disk data tidak akan terpasang secara otomatis. Anda dapat melihat [Step 9] (Langkah 9) (#Step09) - [Step 14] (Langkah 14) (#Step14) untuk mengonfigurasi pemasangan otomatis disk saat startup.
+>
+1. Login ke instans CVM Linux sebagai pengguna root. Lihat [Logging in to Linux Instance Using Standard Login Method] (Login ke Instans Linux Menggunakan Metode Login Standar) (https://intl.cloud.tencent.com/document/product/213/5436).
+2. Jalankan perintah berikut untuk melihat nama disk data yang terpasang pada instans.
+ ```
+fdisk -l
+​``` Jika hasil yang dikembalikan seperti yang ditunjukkan pada gambar berikut, CVM saat ini memiliki dua disk, di antaranya `/dev/vda`, yaitu disk sistem dan `/dev/vdb`, yaitu disk data yang baru ditambahkan.
+Dalam contoh ini, disk yang terpasang pada instans bernama `/dev/vdb`:
+![](https://main.qcloudimg.com/raw/969d3ca3d95b16d47103886e11714868.png)
+3. Jalankan perintah berikut untuk memformat disk.
+ ```
+mkfs.ext4 /dev/vdb
+```
+4. Jalankan perintah berikut untuk memasang disk ke titik pemasangan `/data`.
+```
+mount /dev/vdb /data
+```
+5. Jalankan perintah berikut untuk memasukkan disk dan membuat file baru `qcloud.txt`.
+```
+cd /data
+``` ```
+vi qcloud.txt
+```
+6. Tekan **i** untuk masuk ke mode edit dan tuliskan **This is my first test.** (Ini adalah pengujian pertama saya.)
+7. Tekan **Esc** untuk keluar dari mode edit, masukkan **:wq**, dan tekan **Enter** untuk menyimpan keluar dari file.
+8. Jalankan perintah `ls`, dan Anda dapat melihat bahwa file `qcloud.txt` telah dituliskan dalam disk.
+>? Lihat [Step 9] (Langkah 9) (#Step09) - [Step 14] (Langkah 14) (#Step14) untuk mengonfigurasi pemasangan otomatis disk saat startup. Jika Anda tidak memerlukan pemasangan otomatis disk saat startup, lewati langkah-langkah berikut.
+>
+9. [](id:Step09)Jalankan perintah berikut untuk mencadangkan file `/etc/fstab` ke direktori `/home`, misalnya:
+```
+cp -r /etc/fstab /home
+```
+10. Jalankan perintah berikut untuk menggunakan editor VI untuk membuka file `/etc/fstab`.
+```
+vi /etc/fstab
+```
+11. Tekan **i** untuk masuk ke mode edit.
+12. Pindahkan kursor ke akhir file, tekan **Enter**, dan tambahkan konten berikut.
+​```plaintext
+<Informasi perangkat> <Titik pemasangan> <Format sistem file> <Opsi instalasi sistem file> <Frekuensi pembuangan sistem file> 
+<Urutan pemeriksaan sistem file saat startup>
+​``` Gunakan pemasangan otomatis menggunakan tautan lunak disk cloud elastis sebagai contoh. Tambahkan konten berikut:
+```
+/dev/disk/by-id/virtio-disk-drkhklpe /data ext4 defaults 0 0
+```
+>?Anda dapat menjalankan perintah `ls -l /dev/disk/by-id` untuk mendapatkan tautan lunak disk cloud elastis.
+>
+13. Tekan **Esc**, masukkan `:wq`, dan tekan **Enter**.
+Simpan konfigurasi dan keluar dari editor.
+14. [](id:Step14)Jalankan perintah berikut untuk memeriksa apakah file `/etc/fstab` telah berhasil ditulis.
+```
+mount -a 
+``` Jika perintah berhasil dijalankan, file telah ditulis. Sistem file yang baru dibuat akan dipasang secara otomatis saat sistem operasi dijalankan.
+:::
+
+</dx-tabs>
+
+## Subsequent Operations (Operasi Berikutnya)
+Disk cloud adalah perangkat penyimpanan yang dapat diperluas di cloud. Anda dapat memperluas kapasitas disk cloud kapan saja tanpa kehilangan data apa pun di dalamnya agar sesuai dengan bisnis Anda. Untuk petunjuk lengkapnya, lihat [Step 4. Expanding Cloud Disk Capacity] (Langkah 4. Memperluas Kapasitas Disk Cloud) (https://intl.cloud.tencent.com/document/product/362/31646).
+
+
+```
