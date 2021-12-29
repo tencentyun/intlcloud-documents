@@ -7,7 +7,7 @@ VODは、iOSプラットフォームでビデオをアップロードするシ�
 ## アップロードライブラリとソースコードの統合
 
 1. ソースコードディレクトリ`TXUGCUploadDemo/upload`をプロジェクトディレクトリにコピーします。
-2. 動的ライブラリ`QCloudCore.framework`、`QCloudCOSXML.framework`、静的ライブラリ`libmtasdk.a`（`TXUGCUploadDemo/upload/COSSDK/`ディレクトリにあります）をプロジェクトにインポートし、次の依存ライブラリを追加します。
+2. 動的ライブラリ`QCloudCore.framework`、`QCloudCOSXML.framework`（`TXUGCUploadDemo/upload/COSSDK/`ディレクトリにあります）をプロジェクトにインポートし、次の依存ライブラリを追加します。
     ```
     1. CoreTelephony.framework
     2. Foundation.framework
