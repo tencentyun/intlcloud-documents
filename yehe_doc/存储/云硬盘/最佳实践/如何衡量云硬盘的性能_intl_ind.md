@@ -12,7 +12,7 @@ Sebaiknya Anda menggunakan FIO dengan mesin I/O libaio untuk melakukan pengujian
 
 >
 >- **Untuk menghindari kerusakan file penting dalam sistem, jangan lakukan uji FIO pada disk sistem**.
->- **Untuk menghindari kerusakan data yang disebabkan oleh kerusakan metadata sistem file yang mendasari, jangan lakukan pengujian pada disk data bisnis. **
+>- **Untuk menghindari kerusakan data yang disebabkan oleh kerusakan metadata sistem file yang mendasari, jangan lakukan pengujian pada disk data bisnis.**
 >- Pastikan file `/etc/fstab` **TIDAK berisi** konfigurasi pemasangan disk yang akan diuji. Jike berisi konfigurasi tersebut, CVM mungkin gagal diluncurkan.
 
 ## Recommended Test Objects (Objek Pengujian yang Direkomendasikan)
