@@ -19,7 +19,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 	  - Digits (0-9)
 	  - Special symbols `\~!@#$%^&*_-+=\|(){}[]:;'<>,.?/`.
  - **Table Group Name** and **Table Group ID**: create a default table group for the cluster and name it. The table group ID can be automatically generated or customized.
-![](https://main.qcloudimg.com/raw/85e5ddaa59d4e25462d3fe6148cdab14.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/eebfcf5a907d248b8352b54865ccf235.png)
 3. Go back to the cluster list to view the created cluster and table group. Each cluster will be assigned a unique cluster ID.
-![](https://main.qcloudimg.com/raw/7612056a6d9420ffb5697c0243c0e7d4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0706ef01fd5983fdcfb7dcb67ab9e018.png)
 
