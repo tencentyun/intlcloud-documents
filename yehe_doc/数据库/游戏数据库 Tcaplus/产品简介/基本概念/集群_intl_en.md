@@ -1,5 +1,5 @@
 ## Cluster Overview
-A cluster is the basic TcaplusDB management unit, which provides independent TcaplusDB service for the business.
+A cluster is the basic TcaplusDB management unit, which provides independent TcaplusDB service for business.
 From the perspective of gaming business, a cluster can provide service for either a game's independent submodules or the entire game.
 
 ## Creating Cluster
@@ -7,9 +7,8 @@ For detailed directions, please see [Creating Cluster](https://intl.cloud.tencen
 
 
 ## Cluster Details
-You can view the cluster configuration and attributes in cluster details to understand the overall cluster usage.
-You can log in to the [TcaplusDB Console](https://console.cloud.tencent.com/tcaplusdb/app) and click the ID of the target cluster to enter its details page and view its details.
-Details consist of three parts:
+You can view the cluster configuration and attributes details by logging in to the [TcaplusDB Console](https://console.cloud.tencent.com/tcaplusdb/app) and then clicking the ID of the target cluster.
+Cluster details consist of three parts:
 
 ##### Basic information
 - Cluster ID: unique cluster ID, which can be used to locate the cluster and control access to the cluster but cannot be used for database connection.
