@@ -57,7 +57,7 @@ CSSサービスを使用するには、少なくとも**2つ**のドメイン名
 ## 手順3：CSSプッシュ
 
 業務シナリオに応じて、生成したプッシュアドレスを対応するプッシュソフトウェアに入力することができます。
-- PC端末プッシュには、OBSプッシュを使用することをお勧めします。まず、[OBSプラグインの設定](https://intl.cloud.tencent.com/document/product/267/42131)を行い、プラグインの設定完了後の操作は、[OBSプッシュ](https://intl.cloud.tencent.com/document/product/267/31569)をご参照ください。
+- PC端末プッシュには、OBSプッシュを使用することをお勧めします。[OBSプッシュ](https://intl.cloud.tencent.com/document/product/267/31569)をご参照ください。
 - Web端末プッシュには、**支援ツール**>[**Webプッシュ**](https://console.cloud.tencent.com/live/tools/webpush)を使用することをお勧めします。プッシュしたいドメイン名を選択して、カスタマイズしたストリーム名StreamNameを入力し、アドレスの有効期限を選択してから、カメラをオンにして、**プッシュ開始**をクリックすればOKです。    
 - モバイルプッシュには、[Tencent CloudツールキットApp]](https://intl.cloud.tencent.com/document/product/1071/38147)をダウンロードしてインストールし、開いたら、**MLVB**>**プッシュデモ（カメラプッシュ）**を選択します。2次元コードを手入力、またはスキャンしてプッシュアドレスをアドレス編集枠内に取り込み、**プッシュ開始**をクリックします。
 

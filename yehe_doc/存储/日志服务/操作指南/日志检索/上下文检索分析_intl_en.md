@@ -16,9 +16,9 @@ Log context search refers to searching for the log’s context, that is, several
 
 - Log context search and analysis are available only for version 2.3.5 and above. You are advised to [install or upgrade to the latest version](https://intl.cloud.tencent.com/document/product/614/17414).
 - Context search is supported for only logs collected by LogListener.
-- You have enabled and configured index. For more information, please see [Configuring Index](https://intl.cloud.tencent.com/document/product/614/39594).
+- You have enabled and configured index. For more information, please see [Configuring Index](https://intl.cloud.tencent.com/document/product/614/16981).
 
-## Scenarios
+## Example
 
 The common process of an order is as follows: log in > browse merchandise > select merchandise> add merchandise to the shopping cart > place an order > pay for the order > make a deduction > generate the order.
 Use case: if one of the orders of a user fails, you can query the error log using the order number. Then, locate the log’s context to find out the cause (for example, order deduction failed).
@@ -32,7 +32,7 @@ You can troubleshoot in CLS as follows:
 ## Directions
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-2. In the left sidebar, click **Log Search** to go to the **Search and Analysis** page.
+2. On the left sidebar, click **Log Search** to go to the **Search and Analysis** page.
 3. Select the **Region**, **Logset**, and **Log Topic** as needed.
 4. Enter the search syntax, select a time range, and click **Search and Analysis**.
 5. On the **Raw Data** tab, find the time of the error log and click <img src="https://main.qcloudimg.com/raw/1327fb192ece11abdf3a130feaa4e78a.png"></img> to go to the context search and analysis page.
@@ -41,7 +41,7 @@ You can troubleshoot in CLS as follows:
 On this page, you can:
  - Scroll up/down to view the context.
     - Click **Show Earlier** to page up. Up to 20 previous logs can be displayed at a time.
-    - Click **Show Later** to page down. Up to 20 later logs can be displayed at a time.
+    - Click **Show More** to page down. Up to 20 later logs can be displayed at a time.
  - Enter the keyword in the **Highlight** text box to fill the keyword in yellow.
  - Enter a string in the **Filter Logs** text box to highlight the string.
 

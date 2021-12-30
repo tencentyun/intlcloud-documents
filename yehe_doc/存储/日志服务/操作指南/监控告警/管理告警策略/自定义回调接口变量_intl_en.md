@@ -1,30 +1,28 @@
 When you configure a custom callback API, you can insert system variables to the API. The system automatically parses the variables when alarms are sent. The following is a list of variables that are applicable to custom callback APIs. For more information, please see [Receiving Alarm Notifications via Custom Callback APIs](https://intl.cloud.tencent.com/document/product/614/41986) and [Configuring Alarm Policy](https://intl.cloud.tencent.com/document/product/614/39574).
 
+>! The following variables are applicable only to custom callback APIs. For more information about the custom notification content of alarm policies, please see [Notification Content Variables](https://intl.cloud.tencent.com/document/product/614/41984).
+>
+
 ## Variable List
 
-<table>
-	<thead>
-		<tr><th>Variable</th><th>Description</th></tr>
-	</thead>
-	<tbody>
-		<tr><td>{{.UIN}}</td><td>User account</td></tr>
-		<tr><td>{{.User}}</td><td>Username</td></tr>
-		<tr><td>{{.Region}}</td><td>Region</td></tr>
-		<tr><td>{{.AlarmID}}</td><td>Alarm policy ID</td>
-		</tr><tr><td>{{.AlarmName}}</td><td>Alarm policy name</td></tr>
-		<tr><td>{{.Condition}}</td><td>Trigger condition and parameter</td></tr>
-		<tr><td>{{.TriggerTime}}</td><td>Trigger time</td></tr>
-		<tr><td>{{.ConsecutiveAlertNums}}</td><td>Number of consecutive alarms</td></tr>
-		<tr><td>{{.TopicName}}</td><td>Log topic name</td></tr>
-		<tr><td>{{.TopicID}}</td><td>Log topic ID</td></tr>
-		<tr><td>{{.LogsetName}}</td><td>Logset name</td></tr>
-		<tr><td>{{.LogsetID}}</td><td>Logset ID</td></tr>
-		<tr><td>{{.FireTime}}</td><td>Time when the alarm is triggered for the first time</td></tr>
-		<tr><td>{{.Duration}}</td><td>Alarm duration</td></tr>
-		<tr><td>{{.Query}}</td><td>Monitoring statement</td></tr>
-		<tr><td>{{.CustomizeMessage}}</td><td>Custom alarm notification content</td></tr>
-	</tbody>
-</table>
+| Variable                      | Description                             | Variable Value Example                                              |
+| :------------------------ | :------------------------------- | :--------------------------------------------- |
+| {{.UIN}}                  | User account                         | 10000753XX27                                            |
+| {{.User}}                 | Username                         | XX enterprise                                        |
+| {{.Region}}               | Region                             | Guangzhou                                                    |
+| {{.AlarmName}}            | Alarm policy name                     | XX policy                                                  |
+| {{.AlarmID}}              | Alarm policy ID                      | alarm-74495f68-24ba-4b42-a8c1-61460721xxxx              |
+| {{.LogsetName}}           | Logset name                       | XX logset                                                |
+| {{.LogsetID}}             | Logset ID                        | 1c012db7-2cfd-4418-bb7b-7342c7a4xxxx                    |
+| {{.TopicID}}              | Log topic ID                      | 380fe1f1-0c7b-4b0d-9d70-d514959dxxxx                    |
+| {{.Condition}}            | Trigger condition                         | $1.success_counts < 100                       |
+| {{.Query}}                | Monitoring statement                     | code:200 \| select count(\*) as success_counts           |
+| {{.FireTime}}             | Time when the alarm is triggered for the first time (UNIX timestamp) | 1632281991143                                           |
+| {{.TriggerTime}}          | Trigger time                         | 2021-09-22 11:31:51                           |
+| {{.ConsecutiveAlertNums}} | Number of consecutive alarms                     | 2                                                       |
+| {{.Duration}}             | Alarm duration (minutes)             | 0                                                       |
+| {{.TriggerParams}}            | Alarm trigger parameters             |  $1.success_counts=15;                                            |
+| {{.CustomizeMessage}}     | Custom alarm notification content               |  -                                             |
 
 
 ## Example
@@ -44,7 +42,6 @@ Request content:
 	"Condition":"{{.Condition}}",
 	"TriggerTime":"{{.TriggerTime}}",
 	"ConsecutiveAlertNums":"{{.ConsecutiveAlertNums}}",
-	"TopicName":"{{.TopicName}}",
 	"TopicID":"{{.TopicID}}",
 	"LogsetName":"{{.LogsetName}}",
 	"LogsetID":"{{.LogsetID}}",

@@ -1,7 +1,5 @@
 This document introduces the basic syntax and examples of type conversion functions.
 
->? Currently, CLS functions can be used in most regions. If they are required in Beijing, Shanghai, Guangzhou, and Nanjing, please contact [smart customer service](https://intl.cloud.tencent.com/contact-sales).
->
 
 If you need to distinguish more detailed data types when querying and analyzing data, you can use type conversion functions for data type conversion in query and analysis statements.
 
@@ -23,9 +21,9 @@ The `cast` function is used to parse the data type of `x`. During `cast` executi
 cast(x as type)
 ```
 
-### Parameters
+### Parameter description
 
-| Parameter           | Description                                                         |
+| Parameter | Description |
 | ---- | ------------------------------------------------------------ |
 | x    | The parameter value can be of any type.                                       |
 | type | SQL data type. Valid values: `bigint`, `varchar`, `double`, `boolean`, `timestamp`, `decimal`, `array`, or `map`.</br>For the mappings between index and SQL data types, please see [Appendix: Data Type Mappings](#DataTypeMapping). |
@@ -54,9 +52,9 @@ The `try_cast` function is used to parse the data type of `x`. During `try_cast`
 try_cast(x as type)
 ```
 
-### Parameters
+### Parameter description
 
-| Parameter           | Description                                                         |
+| Parameter | Description |
 | ---- | ------------------------------------------------------------ |
 | x    | The parameter value can be of any type.                                       |
 | type | SQL data type. Valid values: `bigint`, `varchar`, `double`, `boolean`, `timestamp`, `decimal`, `array`, or `map`.</br>For the mappings between index and SQL data types, please see [Appendix: Data Type Mappings](#DataTypeMapping). |

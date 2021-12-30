@@ -25,7 +25,7 @@ select count(1) as pv from log group by status
 ```
 > 
 
-## Examples
+## Example
 
 - Get the first 10 rows of results:
 ```
@@ -33,6 +33,13 @@ select count(1) as pv from log group by status
 ```
 - Get the results for rows 2 to 42 (41 rows in total):
 ```
-* | select * from log order by ip offset 2 limit 40
+* | select status, count(*) as pv group by status offset 2 limit 40
 ```
+
+## Restrictions
+
+<table>
+	<tr><th>Metric</th><th>Restriction</th><th>Remarks</th></tr>
+	<tr><td>Number of analysis results</td><td>Each analysis returns up to 10,000 results.</td><td>Default: 100; Maximum: 10,000</td></tr>
+</table>
 

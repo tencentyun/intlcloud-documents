@@ -1,6 +1,4 @@
 This document introduces the basic syntax and examples of logic functions.
->? Currently, CLS functions can be used in most regions. If they are required in Beijing, Shanghai, Guangzhou, and Nanjing, please contact [smart customer service](https://intl.cloud.tencent.com/contact-sales).
->
 
 ### Logical operators
 
@@ -10,10 +8,7 @@ This document introduces the basic syntax and examples of logic functions.
 | OR     | The result is TRUE if either of the left and right operands is TRUE.   | a OR b  |
 | NOT    | The result is FALSE only if the right operand is FALSE.     | NOT a   |
 
-
-
 ### NULL-related logical operations
-
 The following truth tables demonstrate the processing of cases where `a` and `b` are TRUE, FALSE, and NULL:
 
 #### AND and OR truth table

@@ -1,8 +1,5 @@
 This document introduces the basic syntax and examples of estimation functions.
 
->? Currently, CLS functions can be used in most regions. If they are required in Beijing, Shanghai, Guangzhou, and Nanjing, please contact [smart customer service](https://intl.cloud.tencent.com/contact-sales).
->
-
 <table>
 	<thead>
 		<tr>
@@ -100,6 +97,5 @@ Example 2: sort the values of the **resTotalTime** column and return the values 
 ```
 * | select approx_percentile(resTotalTime, array[0.2,0.4,0.6])
 ```
-
 
 

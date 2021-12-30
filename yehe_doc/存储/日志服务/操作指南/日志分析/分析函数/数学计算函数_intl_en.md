@@ -5,7 +5,6 @@ CLS's log analysis feature allows you to analyze logs by analyzing fields of int
 >?
 > - Mathematical calculation functions support operators +—\*/%.
 > - `x` and `y` in the following functions can be numbers, log fields, or expressions whose calculation results are numbers.
-> - Currently, CLS functions can be used in most regions. If they are required in Beijing, Shanghai, Guangzhou, and Nanjing, please contact [smart customer service](https://intl.cloud.tencent.com/contact-sales).
 > 
 
 ## Basic Syntax

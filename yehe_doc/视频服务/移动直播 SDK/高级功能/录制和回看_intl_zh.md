@@ -2,7 +2,6 @@
 录制回看是指您可以把用户整个直播过程录制下来，然后作为点播视频用于回看。
 
 在 App 上线的初期阶段，由于主播数量比较少，所以在直播列表中加入录制回看，能够在一定程度上丰富 App 在观众端的信息量。即使到 App 成长起来主播数量形成规模以后，好的直播内容的沉淀依然是必不可少的一个部分，每个主播的个人介绍里除了有名字、照片和个人信息，历史直播的视频回看更是不可或缺的一个重要组成部分。
-![](https://main.qcloudimg.com/raw/349d8e95955eb4ca7fe60508d11ef558.jpg)
 
 ## 开启录制
 录制回看功能依托于腾讯云的**云点播服务**支撑，如果您想要对接这个功能，首先需要在腾讯云的管理控制台 [开通云点播服务](https://console.cloud.tencent.com/vod)。服务开通之后，新录制的文件就可以在云点播控制台的 [视频管理](http://console.cloud.tencent.com/vod/media) 里找到它们。
@@ -14,7 +13,7 @@
 
 #### 基本步骤
 在云直播控制台菜单栏内选择 **功能配置 > [直播录制](https://console.cloud.tencent.com/live/config/record)**，单击 **创建录制模板** 进行设置。设置完基本信息后，单击 保存 。具体操作请参见 [录制模板配置](https://intl.cloud.tencent.com/document/product/267/34223)。
-![](https://qcloudimg.tencent-cloud.cn/raw/f1679425a0b9007dd5ec9ff317fcaa31.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/87d63f524398a0af69f520002412a2ef.png)
 
 <table>
 <tr><th colspan=2 width=25%>配置项</th><th>配置描述</th></tr><tr>
@@ -51,7 +50,7 @@
 
 #### 关联域名
 创建好录制模板后，需在 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage) 中，选择对应的推流域名，进入 模板配置 栏，单击 **录制配置 > 编辑** 为该域名指定录制模板后，单击 **保存** 即可。更多详情请参见 [关联录制模板](https://intl.cloud.tencent.com/document/product/267/34224)。
-![](https://qcloudimg.tencent-cloud.cn/raw/1eff639c34a4628b11b21f34fb6e0f49.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/46e8692bfae204432c56a5d6f72522c5.png)
 
 ## 获取文件
 一个新的录制视频文件生成后，会相应的生成一个观看地址，您可以按照自己的业务需求对其进行处理。在小直播中，我们直接将录制的文件 URL 和房间列表拼在了一起，以弥补在线主播不足的窘境。
@@ -65,11 +64,11 @@
 您可以使用腾讯云的 [回调配置](https://intl.cloud.tencent.com/document/product/267/31074)：您的服务器注册一个自己的回调 URL 给腾讯云，腾讯云会在一个新的录制文件生成时通过这个 URL 通知给您。
 
 在云直播菜单栏内选择 **事件中心 > [直播回调](https://console.cloud.tencent.com/live/config/callback)**，单击 **创建回调模板** 。在回调设置弹框中填写完成回调信息，单击 **保存** 即可。更多详情请参见 [创建回调模板](https://intl.cloud.tencent.com/document/product/267/31074#Callback)。
-![](https://qcloudimg.tencent-cloud.cn/raw/a9dadf1b65d587837fd6afd590236bc9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/db3107a8981479b82f2f1d611e21e770.png)
 
 **关联域名**
 创建好回调模板后，需通在 [域名管理](https://console.cloud.tencent.com/live/domainmanage) 中，选择对应的推流域名，进入 **模板配置** 栏，单击 **回调配置 > 编辑** 为该域名指定回调模板后，单击 **确定** 即可。
-![](https://main.qcloudimg.com/raw/0a815c3cfc8e833d7288121e2ef970f8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1e15650eb0d482e255b1bc554c9ae307.png)
 如下是一个典型的通知消息，它的含义是：一个 ID 为`9192487266581821586`的新的 FLV 录制文件已经生成，播放地址为：`http://200025724.vod.myqcloud.com/200025724_ac92b781a22c4a3e937c9e61c2624af7.f0.flv`。
 ```json
 {

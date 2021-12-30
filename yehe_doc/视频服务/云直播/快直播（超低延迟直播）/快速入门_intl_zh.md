@@ -57,7 +57,7 @@
 ## 步骤3：直播推流
 
 您可根据业务场景将生成好的推流地址输入到对应的推流软件中。
-- PC 端推流，建议使用 OBS 推流，需要先 [配置 OBS 插件](https://intl.cloud.tencent.com/document/product/267/42131)，配置完插件后续操作请参见 [OBS 推流](https://intl.cloud.tencent.com/document/product/267/31569)。
+- PC 端推流，建议使用 OBS 推流，具体操作请参见 [OBS 推流](https://intl.cloud.tencent.com/document/product/267/31569)。
 - Web 端推流，建议使用 **辅助工具**>[**Web 推流**](https://console.cloud.tencent.com/live/tools/webpush)，选择您需推流的域名，填写自定义的流名称 StreamName，选择地址过期时间，打开摄像头，单击 **开始推流** 即可。    
 - 移动端推流，下载安装 [腾讯云工具包 App](https://intl.cloud.tencent.com/document/product/1071/38147)，打开选择 **移动直播 MLVB**>**推流演示（摄像头推流）**，手动输入或扫描二维码录入推流地址到地址编辑框内，单击 **开始推流** 即可。
 

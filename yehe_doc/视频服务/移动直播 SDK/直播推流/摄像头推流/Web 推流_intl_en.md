@@ -1,4 +1,5 @@
-The TXLivePusher SDK is mainly used to publish streams for LEB (ultra-low latency streaming). It can publish audio and video captured by the browser from the camera, screen, or a local media file to live streaming servers via WebRTC.
+The TXLivePusher SDK is mainly used to publish streams for LEB (ultra-low latency streaming). It can publish audio and video the browser captures from the camera, screen, or a local media file to live streaming servers via WebRTC.
+>! With WebRTC, each domain name can be used for the publishing of up to **concurrent 100 streams** by default. If you want to publish more streams, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Basics
 
@@ -29,7 +30,7 @@ Add an initialization script to the (desktop) page from which streams are to be 
 ```html
 <script src="https://imgcache.qq.com/open/qcloud/live/webrtc/js/TXLivePusher-1.0.2.min.js" charset="utf-8"></script>
 ```
->? You must add the script to the body section of the HTML page. Adding it to the head section will cause an error.
+>? The script needs to be imported into the `body` part of the HTML code. If it is imported into the `head` part, an error will be reported.
 
 If your business is in a domain-limited region, you can import the following link:
 
@@ -46,7 +47,6 @@ Add a player container to the section of the page where local video is to be pla
 ```
 
 ### Step 3. Publish streams
-
 1. **Generate an instance of the publishing SDK:**
 Generate an instance of the global object `TXLivePusher`. All subsequent operations will be performed via the instance.
 ```javascript
@@ -73,7 +73,6 @@ livePusher.setAudioQuality('standard');
 // Set the frame rate
 livePusher.setProperty('setVideoFPS', 25);
 ```
-
 4. **Capture streams:**
 You can capture streams from the camera, mic, screen and local media files. If capturing is successful, the player container will start playing the audio/video captured.
 ```javascript
@@ -82,15 +81,12 @@ livePusher.startCamera();
 // Turn the mic on
 livePusher.startMicrophone();
 ```
-
 5. **Publish streams:**
 Pass in the LEB publishing URL to start publishing streams. For the format of publishing URLs, please see [Splicing CSS URLs](https://intl.cloud.tencent.com/document/product/267/38393). You need to replace the prefix `rtmp://` with `webrtc://`.
 ```javascript
 livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx');
 ```
-
 >?Before publishing, make sure that audio/video streams are captured successfully, or you will fail to call the publishing API. You can use the code below to publish streams automatically after audio/video is captured, that is, after the callback for capturing the first audio or video frame is received. If both audio and video are captured, publishing starts only after both the callback for capturing the first audio frame and that for the first video frame are received.
-
 >```javascript
 >var hasVideo = false;
 >var hasAudio = false;
@@ -113,13 +109,11 @@ livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx
 >});
 >```
 ```
-
 </dx-codeblock>
 6. **Stop publishing:**
-```javascript
+​```javascript
 livePusher.stopPush();
 ```
-
 7. **Stop capturing audio and video:**
 ```javascript
 // Turn the camera off
@@ -152,7 +146,7 @@ TXLivePusher.checkSupport().then(function(data) {
 </dx-codeblock>
 
 ### Event callbacks
-You can set an observer to receive callbacks of the SDK status and WebRTC statistics.
+The SDK supports callback event notifications. You can set an observer to receive callbacks of the SDK’s status and WebRTC-related statistics. For details, see [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/42709).
 <dx-codeblock>
 ::: javascript javascript
 livePusher.setObserver({
@@ -188,9 +182,3 @@ deviceManager.getDevicesList().then(function(data) {
 deviceManager.switchCamera('camera_device_id');
 :::
 </dx-codeblock>
-
-
-
-
-
-

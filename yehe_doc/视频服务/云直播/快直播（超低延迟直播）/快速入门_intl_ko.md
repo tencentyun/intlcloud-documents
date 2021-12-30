@@ -57,7 +57,7 @@ CSS 서비스 이용 시 **푸시 스트림 도메인**과 **재생 도메인**�
 ## 3단계: 라이브 방송 푸시 스트림
 
 서비스 시나리오에 따라 생성한 푸시 스트림 주소를 해당 푸시 스트림 소프트웨어에 입력하십시오.
-- PC용 푸시 스트림은 OBS 사용을 권장하며, 먼저 [OBS 플러그 인 설정](https://intl.cloud.tencent.com/document/product/267/42131)이 필요합니다. 플러그 인 설정 후 후속 작업은 [OBS 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31569)을 참고하십시오.
+- PC용 푸시 스트림은 OBS 사용을 권장하며, 작업은 [OBS 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31569)을 참고하십시오.
 - Web에서의 푸시 스트림은 **보조 툴**>[**Web 푸시**](https://console.cloud.tencent.com/live/tools/webpush) 사용을 권장합니다. 푸시 스트림이 필요한 도메인을 선택하고 사용자 정의 스트림 이름 StreamName을 입력합니다. 주소 만료 시간을 선택하고 카메라를 켠 후 **푸시 스트림 시작**을 클릭합니다.    
 - 모바일 푸시 스트림은 [Tencent Cloud 툴킷 App](https://intl.cloud.tencent.com/document/product/1071/38147)를 다운로드하여 설치하고, **MLVB**>**푸시 스트림 데모(카메라 푸시 스트림)** 열기 및 선택 후, 수동 입력 또는 QR 코드 스캔을 통해 주소 입력란에 푸시 스트림 주소를 입력하고, **푸시 스트림 시작**을 클릭합니다.
 

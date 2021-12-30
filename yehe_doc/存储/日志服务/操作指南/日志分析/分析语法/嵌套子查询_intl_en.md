@@ -1,6 +1,6 @@
 This document introduces the basic syntax and examples of nested subqueries.
 
-
+>? CLS functions are available in most regions but are currently unavailable for some users in Shanghai and Guangzhou. If CLS functions are unavailable to you and you need to use them, please contact [smart customer service](https://intl.cloud.tencent.com/contact-sales).
 
 ## Overview
 
