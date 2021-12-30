@@ -3,10 +3,10 @@
 Log-based monitoring alarm use cases can be implemented by configuring alarm policies. This document describes how to configure an alarm policy in the CLS console.
 
 
-## Prerequisites
+## Prerequisite
 
 - You have uploaded logs to a log topic.
-- You have [configured an index](https://intl.cloud.tencent.com/document/product/614/39594) for the log topic.
+- The log topic has [configured an index](https://intl.cloud.tencent.com/document/product/614/16981).
 
 ## Directions
 
@@ -61,7 +61,7 @@ The monitoring period indicates the frequency at which monitoring tasks are perf
 ### Step 3. Configure the alarm policy
 
  - Trigger condition: a trigger condition expression is used to determine whether to trigger an alarm, and an alarm will be triggered when it is met.
- CLS allows you to import analysis results by using `$N.keyname`. `$N` indicates the Nth monitoring object in the current alarm policy (for more information, please see [How do I view the number?](#number)). `keyname` indicates the name of the corresponding field. For example, `$1.status>500` indicates triggering the alarm for the 1st monitoring object if the `status` field carries a value greater than 500. For more expression syntax, please see Trigger Condition Expression Syntax.
+ CLS allows you to import analysis results by using `$N.keyname`. `$N` indicates the Nth monitoring object in the current alarm policy (for more information, please see [How do I view the number of a monitoring object?](#number)). `keyname` indicates the name of the corresponding field. For example, `$1.status>500` indicates triggering the alarm for the 1st monitoring object if the `status` field carries a value greater than 500. For more expression syntax, please see [Trigger Condition Expression Syntax](https://intl.cloud.tencent.com/document/product/614/39576).
  - Alarm frequency: after the trigger condition is continuously met for a certain number of times (default value: 1; value range: 1–10), CLS will trigger a notification according to the alarm frequency. Unimportant occurrences can be avoided by configuring a threshold for the number of consecutive periods. For example, configuring meeting the trigger condition for 5 consecutive periods indicates that a notification will be triggered after the trigger condition is met 5 consecutive times. If the trigger condition expression is modified, or if the expression condition is not met during computation, the number of triggered times will be zeroed.
  - Notification convergence: you can set the interval between two notifications to avoid frequently sending alarm notifications. When the execution result of a certain monitoring task meets the trigger condition, the cumulative number of triggered periods reaches the threshold, and the requirement for the notification interval is met, a notification will be sent. For example, sending an alarm notification once every 15 minutes indicates that only one alarm notification will be received within 15 minutes.
 
@@ -77,9 +77,9 @@ If the syntax is correct, results similar to the following are displayed:
 ### Step 5. Configure alarm notifications
 
 - Notification channel group
-The notification channels and objects can be set by associating a notification channel group. Notifications can be sent by SMS, email, phone call, WeChat, WeCom, and custom callback API (webhook). For more information, please see Manging Notification Channel Groups.
+The notification channels and objects can be set by associating a notification channel group. Notifications can be sent by SMS, email, phone call, WeChat, WeCom, and custom callback API (webhook). For more information, please see [Managing Notification Groups](https://intl.cloud.tencent.com/document/product/614/41987).
 - Notification content
-By adding preset variables to notification content, you can easily understand alarm content. For the variable list and descriptions, see Notification Content Variables.
+By adding preset variables to notification content, you can easily understand alarm content. For the variable list and descriptions, see [Notification Content Variables](https://intl.cloud.tencent.com/document/product/614/41984).
 
 - Custom API callback configuration
 If the selected notification channel group contains a custom callback API, an input box for the custom API callback configuration is displayed. For the variable list and descriptions, see [Custom API Callback Variables](https://intl.cloud.tencent.com/document/product/614/41985). There are some duplicate parts between these custom API callback variables and notification content variables, but they are not exactly the same. The variables listed in the document shall prevail when used.
@@ -103,6 +103,7 @@ After the configuration is completed, click **Preview** to preview the display e
 ## FAQs
 
 <span id="number"></span>
-### How do I view the number?
+### How do I view the number of a monitoring object?
 
 The number of a monitoring object is displayed on its left. The query number for the 1st object is 1, the query number for the 2nd object is 2, and so on.
+
