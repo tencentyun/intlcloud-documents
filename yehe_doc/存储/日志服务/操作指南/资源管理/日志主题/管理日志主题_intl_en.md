@@ -14,7 +14,7 @@ You have logged in to the [CLS console](https://console.cloud.tencent.com/cls).
 3. In the pop-up window, enter the following information:
 <img src="https://main.qcloudimg.com/raw/79b2a94628f6f42e68104ccefc09a052.png" style="width: 50%" /></br>
  - Log Topic Name: for example, enter `nginx`.
- > - Storage Class: `Real-time` by default. For more information about storage classes, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/614/42003).
+ - Storage Class: `Real-time` by default. For more information about storage classes, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/614/42003).
  - Log Retention Period: 30 days by default. You can specify a log storage period, after which logs are automatically cleared. If LogListener is used, and a time field in the log content instead of the collection time is used as the logging time, the time specified by the time field will be used to determine whether a log expires.
  - Logset Operation:
     - Select an existing logset: select a target logset from the **Logset** drop-down list.
