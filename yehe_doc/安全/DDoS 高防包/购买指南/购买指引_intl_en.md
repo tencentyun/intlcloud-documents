@@ -7,7 +7,7 @@ Before purchasing an Anti-DDoS Pro instance, you need to [sign up for a Tencent 
  - Specification description
     - Access Mode: transparent access
     - Bandwidth Type: Tencent Cloud native network or multi-line BGP
-    - Protection Capability: max protection (no less than 30 Gbps guaranteed)
+    - Protection Capability: max protection 
     - Protected Object: public IPs of Tencent Cloud resources, such as CVM, CLB, GAAP, and WAF.
  - Region: select the region of the public IP of the Tencent Cloud resource. Currently, an Anti-DDoS Pro instance can only provide DDoS protection for Tencent Cloud public IPs in the same region.
  - Number of Protected IPs: select the total number of public IPs of the Tencent Cloud resource that need to be protected by the Anti-DDoS Pro instance. Default value: 1. Value range: 1–100.
