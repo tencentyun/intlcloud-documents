@@ -21,6 +21,7 @@ The following table lists and describes only the parameters to be modified when 
 | identifier | The value must be the administrator account of the app. For more information, see [App Administrator](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98). |
 | usersig | The signature generated for the administrator account of the app. For more information about the operation, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | The value can be a random 32-bit unsigned integer. Value range: 0 to 4294967295. |
+| contenttype | Request format. The value is always `json`. |
 
 ### Maximum call frequency
 
