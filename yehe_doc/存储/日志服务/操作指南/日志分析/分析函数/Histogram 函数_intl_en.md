@@ -42,14 +42,15 @@ histogram(__TIMESTAMP__, interval)
 >- The value of `interval` supports the following time units: SECOND, MINUTE, HOUR, DAY, MONTH, and YEAR. For example, `INTERVAL 5 MINUTE` indicates an interval of 5 minutes.
 >- The histogram function also supports the following syntax, where `long` is a timestamp in milliseconds, equivalent to the `\_\_TIMESTAMP\_\_`.
 >```
->histogram(long, interval)
+histogram(long, interval)
 >```
-```
+
 
 
 ### Example
 
 Count the PV value every 5 minutes:
+
 ```
 * | select histogram(cast(__TIMESTAMP__ as timestamp),INTERVAL 5 MINUTE) AS dt, count(*) as PV group by dt order by dt limit 1000
 ```
@@ -58,19 +59,3 @@ Count the PV value every 5 minutes:
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
