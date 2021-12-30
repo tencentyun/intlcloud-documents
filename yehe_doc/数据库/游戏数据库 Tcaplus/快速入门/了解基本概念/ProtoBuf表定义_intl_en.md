@@ -1,8 +1,4 @@
-TencentDB for TcaplusDB supports two table definition languages: Protocol Buffers (Protobuf) and Tencent Data Representation (TDR).
-Protobuf is a method of serializing structured data developed by Google, which emphasizes simplicity and performance.
-TDR is a platform-neutral data description language developed by Tencent, which combines the advantages of XML, binary language, and object-relational mapping (ORM) and is widely used in data serialization scenarios of Tencent's games.
-Both languages are equally useful. Use either of them based on your usage habits.
-This document describes how to define tables in Protobuf.
+TencentDB for TcaplusDB supports two table definition languages:  Protocol Buffers (Protobuf) and Tencent Data Representation (TDR). Protobuf is a method of serializing structured data developed by Google, which emphasizes simplicity and performance.TDR is a platform-neutral data description language developed by Tencent, which combines the advantages of XML, binary language, and object-relational mapping (ORM) and is widely used in data serialization scenarios of Tencent's games.Both languages are equally useful. Use either of them based on your usage habits.This document describes how to define tables in Protobuf.
 
 ## Table Definition in Protobuf
 To create a table in TcaplusDB, you first need to use a table description language to define the table format and write the table definition content into a table IDL description file.
@@ -42,20 +38,20 @@ The detailed definition format is `option(tcaplusservice.option) = "value";`.
 TcaplusDB field definition format is `field modifier field type field name = identifier[special definition];`.
 ##### Field modifier
 proto2 supports three limiting modifiers, while proto3 no longer supports the `REQUIRED` modifier and uses `OPTIONAL` as the default modifier.
-- REQUIRED: it indicates that the field is required. In proto2, primary key fields must be declared with `REQUIRED`.
-- OPTIONAL: it indicates that the field is optional. You can set a default value for an optional field.
-- REPEATED: it indicates that the field can contain 0–N elements. Its features are the same as those of `OPTIONAL`, but it can contain multiple values at a time, which can be considered as an array. The special definition of `[packed = true]` must be specified.
+- REQUIRED: it indicates that this field is required. In proto2, primary key fields must be declared with `REQUIRED`.
+- OPTIONAL: it indicates that this field is optional. You can set a default value for an optional field.
+- REPEATED: it indicates that this field can contain 0–N elements. Its features are the same as those of `OPTIONAL`, but it can contain multiple values at a time, which can be considered as an array. The special definition of `[packed = true]` must be specified.
 
 ##### Field type
 TcaplusDB supports general fields and nested fields. For more information, please see [Data Types](https://intl.cloud.tencent.com/document/product/1016/38659).
 ##### Field name
 You can name a field based on its current attribute. The name can contain letters, digits, and underscores and cannot start with a digit. You are recommended to use camelCase for the name.
 ##### Identifier
-Identifier value range: [1,2^29 - 1]
-Identifiers within [19000,19999] cannot be used, as they are reserved in Protocol Buffers. If you use any of them, an error will be reported.
+Identifier value range: [1, 2^29 - 1]
+Identifiers within [19000, 19999] cannot be used, as they are reserved in Protocol Buffers. If you use any of them, an error will be reported.
 Each field will occupy memory when being encoded, and the occupied memory size is subject to the identifier:
-- A field with an identifier within [1,15] occupies 1 byte during encoding.
-- A field with an identifier within [16,2047] occupies 2 bytes during encoding.
+- A field with an identifier within [1, 15] occupies 1 byte during encoding.
+- A field with an identifier within [16, 2047] occupies 2 bytes during encoding.
 ##### Special definition
 - You can use `packed=true` to specify a field declared with the `REPEATED` modifier. The syntax is as follows:
 ```
