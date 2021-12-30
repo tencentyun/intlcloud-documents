@@ -8,7 +8,7 @@ A CC attack is a malicious attempt to make a targeted server unavailable by occu
 Common attacks include HTTP/HTTPS-based GET/POST Flood, layer-4 CC, and Connection Flood attacks, etc.
 
 ## Protection Capability
-Protection capability refers to the ability to defend against DDoS attacks. The Anti-DDoS Pro service promises to provide max protection of no less than 30 Gbps subject to the maximum DDoS protection capability of Tencent Cloud in the current region.
+Protection capability refers to the ability to defend against DDoS attacks. The Anti-DDoS Pro service promises an all-out protection with Tencent Cloud's maximum DDoS protection capability in the current region.
 
 ## Cleansing
 When the public network traffic of the target IP exceeds the threshold, Anti-DDoS will automatically cleanse the inbound traffic to the IP. The DDoS routing protocol will be used to redirect the traffic from the original network route to the DDoS cleansing devices of Anti-DDoS, which will identify the traffic, discard attack traffic, and forward normal traffic to the target IP. 
