@@ -11,7 +11,7 @@ Based on the 3rd generation Tencent YouTu Grandmother Model, Face Recognition ha
 
 
 ### Diverse use cases 
-Face Recognition provides simple APIs and has diverse use cases such as access control, security surveillance, VIP identification, sign-in, payment and login. 
+Face Recognition provides simple APIs and has diverse use cases such as access control, VIP identification, sign-in, payment and login. 
 
 ### Real-time response
 Face Recognition features high concurrence, high throughput, and low latency. It can search and process millions of faces in hundreds of milliseconds, meeting you needs in real time.
