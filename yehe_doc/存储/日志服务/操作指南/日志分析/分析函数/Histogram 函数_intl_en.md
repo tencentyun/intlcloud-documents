@@ -1,4 +1,4 @@
->? Currently, CLS functions can be used in most regions. If they are required in Beijing, Shanghai, Guangzhou, and Nanjing, please contact [smart customer service](https://intl.cloud.tencent.com/contact-sales).
+>? The histogram function cannot be used together with other analytic functions such as IP geographic functions and estimation functions. If the "Unknown function[Function name]" error is reported, use [Time Completion Function](https://intl.cloud.tencent.com/document/product/614/41989) to replace the function that causes the error.
 >
 
 CLS provides time functions to help convert time formats and group and aggregate the date and time values in logs for statistical analysis.
@@ -14,7 +14,7 @@ CLS provides time functions to help convert time formats and group and aggregate
 1. Only the long-type timestamp in milliseconds (such as 1597807109000) can be converted. The timestamp in seconds or microseconds needs to first have a base conversion.
 2. Only the text timestamp in the ISO 8601 time format (such as 2019-12-25T16:17:01+08:00) can be converted.
 
-### Scenarios
+### Examples
 
 1. Convert the CLS log collection time `__TIMESTAMP__` to `TIMESTAMP`.
 ```plaintext
@@ -54,4 +54,8 @@ Count the PV value every 5 minutes:
 ```
 * | select histogram(cast(__TIMESTAMP__ as timestamp),INTERVAL 5 MINUTE) AS dt, count(*) as PV group by dt order by dt limit 1000
 ```
+
+
+
+  
 

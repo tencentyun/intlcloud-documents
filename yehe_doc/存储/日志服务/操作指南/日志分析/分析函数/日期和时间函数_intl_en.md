@@ -1,7 +1,5 @@
 CLS provides time, date, time phase, time interval, and time sequence completion functions, and supports format conversion, grouping and aggregation, and other processing of date and time values in logs.
 
->? Currently, CLS functions can be used in most regions. If they are required in Beijing, Shanghai, Guangzhou, and Nanjing, please contact [smart customer service](https://intl.cloud.tencent.com/contact-sales).
->
 
 ## Date and Time Functions
 
@@ -18,7 +16,7 @@ CLS provides time, date, time phase, time interval, and time sequence completion
 | from_iso8601_date(string)      | Parses an ISO 8601 formatted string into a date.<ul  style="margin: 0;"><li>Return value format: YYYY-MM-DD, such as `2021-05-31`</li><li>Return value type: DATE</li></ul> | `* | select from_iso8601_date('2021-03-21')`          |
 | from_iso8601_timestamp(string) | Parses an ISO 8601 formatted string into a timestamp with a time zone.<ul  style="margin: 0;"><li>Return value format: HH:MM:SS.Ms Time zone, such as `17:07:52.143+08:00`</li><li>Return value type: TIMESTAMP</li></ul> | `* | select from_iso8601_timestamp('2020-05-13')`       |
 | from_unixtime(unixtime)        | Parses a UNIX formatted string into a timestamp.<ul  style="margin: 0;"><li>Return value format: YYYY-MM-DD HH:MM:SS.Ms, such as `2017-05-17 01:41:15.000`</li><li>Return value type: TIMESTAMP </li></ul>| `* | select from_unixtime(1494985275) `            |
-| from_unixtime(unixtime, zone)  | Parses a UNIX formatted string into a timestamp with a time zone.<ul  style="margin: 0;"><li>Return value format: YYYY-MM-DD HH:MM:SS.Ms Time zone, such as `2017-05-17T09:41:15+08:00[Asia/Shanghai]`</li><li>Return value type: TIMESTAMP | `* | select from_unixtime(1494985275, 'Asia/Shanghai')` </li></ul>|
+| from_unixtime(unixtime, zone)  | Parses a UNIX formatted string into a timestamp with a time zone.<ul  style="margin: 0;"><li>Return value format: YYYY-MM-DD HH:MM:SS.Ms Time zone, such as `2017-05-17T09:41:15+08:00[Asia/Shanghai]`</li><li>Return value type: TIMESTAMP</li></ul> | `* | select from_unixtime(1494985275, 'Asia/Shanghai')` |
 | to_unixtime(timestamp)         | Parses a timestamp formatted string into a UNIX timestamp.</br>Return value type: LONG, such as `1626347592.037` | `* | select to_unixtime(cast(__TIMESTAMP__ as timestamp)) ` |
 | to_milliseconds(interval)      | Returns a time interval in milliseconds.<br/>Return value type: BIGINT, such as `300000` | `* | select to_milliseconds(INTERVAL 5 MINUTE)`        |
 
@@ -69,7 +67,7 @@ The following units (`unit`) are supported:
 | year        | Year   |
 
 
-**Example**
+**Sample**
 
 Return the interval value in seconds between '2020-03-01 00:00:00' and '2020-03-02 00:00:00':
 ```
@@ -98,7 +96,7 @@ The following units are supported:
 | h    | Hour |
 | d    | Day   |
 
-**Example**
+**Sample**
 
 Parse the unit value string '3.81 d' into a duration string:
 ```
@@ -148,7 +146,7 @@ The following formats (`format`) are supported:
 | %%     | Escape character of %                                         |
 | %x     | Arbitrary value                                                |
 
-**Example**
+**Sample**
 
 Parse the time string '2017-05-17 09:45:00' in `format` into a date and time expression of the TIMESTAMP type, that is, '2017-05-17 09:45:00.0':
 ```
@@ -179,34 +177,12 @@ time_series(time_column, interval, format, padding)
 | format      | Time format of the return result.                                   |
 | padding     | Value used to complete missing data. Valid values include:<ul  style="margin: 0;"><li>0: complete a missing value with `0`</li><li>null: complete a missing value with `null`</li><li>last: complete a missing value with the value of the previous point in time</li><li>next: complete a missing value with the value of the next point in time</li><li>avg: complete a missing value with the average value of the previous and next points in time</li></ul> |
 
-**Example**
+**Sample**
 
-Complete data with a time unit of 2 hours:
+Complete data with a time unit of 2 minutes:
 ```
-* | select time_series(__TIMESTAMP__, '2h', '%Y-%m-%d %H:%i:%s', '0')  as time, count(*) as count group by time order by time limit 1000
+* | select time_series(__TIMESTAMP__, '2m', '%Y-%m-%dT%H:%i:%s+08:00', '0')  as time, count(*) as count group by time order by time limit 1000
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

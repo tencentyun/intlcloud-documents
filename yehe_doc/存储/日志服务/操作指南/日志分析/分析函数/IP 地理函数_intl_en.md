@@ -1,7 +1,5 @@
 IP geographic functions can be used to determine whether an IP address belongs to a private or public network or analyze the country, province, or city to which an IP address belongs. This document introduces the basic syntax and examples of IP geographic functions.
 
->? Currently, CLS supports the use of CLS functions in most regions. If necessary in Beijing, Shanghai, Guangzhou, and Nanjing, please contact [smart customer service](https://intl.cloud.tencent.com/contact-sales).
->
 
 
 ## IP Address Function
@@ -22,7 +20,7 @@ IP geographic functions can be used to determine whether an IP address belongs t
 | ip_to_province_code(KEY) | Analyzes the code of the province to which an IP address belongs. The province's administrative zone code is returned. | `* | SELECT ip_to_province_code(ip)` |
 | ip_to_province_geo(KEY)  | Analyzes the latitude and longitude of the province to which an IP address belongs. The province's latitude and longitude are returned.   | `* | SELECT ip_to_province_geo(ip)`  |
 | ip_to_city               | Analyzes the city to which an IP address belongs. The city's name is returned. | `* | SELECT ip_to_city(ip)`          |
-| ip_to_city_code          | Analyzes the code of the city to which an IP address belongs. The city's administrative zone code is returned. Currently, cities in Taiwan are not supported. | `* | SELECT ip_to_city_code(ip)`     |
+| ip_to_city_code          | Analyzes the code of the city to which an IP address belongs. The city's administrative zone code is returned. Currently, cities in Taiwan, China are not supported. | `* | SELECT ip_to_city_code(ip)`     |
 | ip_to_city_geo           | Analyzes the latitude and longitude of the city to which an IP address belongs. The city's latitude and longitude are returned. | `* | SELECT ip_to_city_geo(ip)`      |
 | ip_to_provider(KEY)      | Analyzes the ISP to which an IP address belongs. The ISP's name is returned. | `* | SELECT ip_to_provider(ip)`      |
 
@@ -44,7 +42,7 @@ IP geographic functions can be used to determine whether an IP address belongs t
 
 
 
-## Examples
+## Example
 
 The following are query and analysis statement examples of IP geographic functions. After performing such query and analysis operations, you can select appropriate statistics charts to display the query and analysis results.
 
@@ -69,7 +67,6 @@ If the result includes requests from the private network and you want to exclude
 ```
 * | SELECT ip_to_geo(ip) AS geo, count(*) AS pv GROUP BY geo ORDER BY pv DESC
 ```
-
 
 
 
