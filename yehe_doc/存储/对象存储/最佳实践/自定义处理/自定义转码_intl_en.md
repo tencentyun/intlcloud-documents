@@ -7,7 +7,7 @@ As the largest part of traffic in information dissemination, audio and video are
 ## Use Cases
 
 - Fast access to users' self-built transcoding clusters, compatible with their existing businesses
-- Supports industry-specific formats and processing logic, suitable for film, security, and other special industries
+- Supports industry-specific formats and processing logic, suitable for film, Media, and other special industries
 - Supports custom processing logic, meeting process customization requirements of various scenarios
 - Workflow for template-based batch processing, meeting common audio and video processing requirements of video websites, education, and social networking industries
 
