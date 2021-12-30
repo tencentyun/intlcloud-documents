@@ -163,7 +163,7 @@ kubeadm 对 HA 的支持进入 beta 阶段，用户可以使用 `kubeadm init` �
 - Kubelet 增加 Topology Manager 组件，旨在协调资源分配决策，优化资源分配。
 - 支持 IPv4/IPv6双栈，可同时给 Pod 与服务分配 v4和 v6的地址。
 - alpha 特性 API Server 网络代理。
-- 面向云控制器管理器迁移提供更多 [扩展选项](https://github.com/kubernetes/enhancements/blob/master/keps/sig-cloud-provider/20190422-cloud-controller-manager-migration.md)。
+- 面向云控制器管理器迁移提供更多 扩展选项。
 - 弃用 extensions/v1beta1、apps/v1beta1以及 apps/v1beta2 API。
 
 #### 已知问题
@@ -298,7 +298,7 @@ k8s.io/kubernetes 和其他发布的组件，包括 k8s.io/client-go 和 k8s.io/
 - 审计事件增加了如下注解，用户可以更清晰的了解审计决策的过程：
   * Authorization 组件会设置 `authorization.k8s.io/decision`（authorization 决定 allow 或 forbid），及 `authorization.k8s.io/reason`（做出这个决定的原因）。
   * PodSecurityPolicy 准入控制器会设置 `podsecuritypolicy.admission.k8s.io/admit-policy` 和 `podsecuritypolicy.admission.k8s.io/validate-policy`，包含允许 Pod 准入相关的策略名称（PodSecurityPolicy 同时可以限制 hostPath 类型的挂载点为只读模式）。
-- NodeRestriction 准入控制器会禁止节点修改其对应的 Node 对象的污点信息，让用户更容易控制和追踪节点的污点设置情况。
+- NodeRestriction 准入控制器会禁止节点修改其对应的 Node 对象的污点信息，让用户更容易控制节点的污点设置情况。
 
 #### CLI 命令行
 CLI 实现了新的插件机制，并提供了包含通用 CLI 工具的开发库方便插件开发者进行插件开发。

@@ -57,7 +57,7 @@ You can add **[your own domain names](https://intl.cloud.tencent.com/document/pr
 ## Step 3. Push live stream
 
 You can enter the generated push URL into the push software as appropriate for your use cases.
-- For push on PCs, you're advised to use OBS. You need to [configure the OBS plugin](https://intl.cloud.tencent.com/document/product/267/42131) first. For subsequent steps, see [Push via OBS](https://intl.cloud.tencent.com/document/product/267/31569).
+- For push on PCs, you're advised to use OBS. For subsequent steps, see [Push via OBS](https://intl.cloud.tencent.com/document/product/267/31569).
 - For push on web, you're advised to use **CSS Toolkit** > **[Web Push](https://console.cloud.tencent.com/live/tools/webpush)**: select a push domain name, enter a custom `StreamName`, select a URL expiration time, turn the camera on, and click **Start Push**.    
 - For push on mobile devices, download and install [Tencent Video Cloud Demo](https://intl.cloud.tencent.com/document/product/1071/38147), open it, select **Mobile Live Video Broadcasting** > **Push (Camera)**, enter the push URL into the address box manually or by scanning the QR code, and then tap the start icon in the bottom-left corner.
 

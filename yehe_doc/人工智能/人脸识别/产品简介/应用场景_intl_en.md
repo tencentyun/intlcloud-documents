@@ -10,12 +10,6 @@ Face detection technology can be used to count the number of people on screen. I
 #### Precise ad placement
 Face analysis technology can be used to quickly and accurately analyze people attributes in images, such as age and gender, and facilitate targeted advertising.
 
-## Security
-#### Access control system
-Face Recognition can identify entrants in residential neighborhoods, schools, workplaces, etc. It can also be used for access control in areas that require higher levels of security, where alarms will be triggered for unauthorized personnel.
-
-#### Camera surveillance system
-Face Recognition can monitor crowds in public places such as banks, airports, stadiums, shopping malls, supermarkets, etc. for identification purposes. It is also suitable for surveilling and tracking suspects.
 
 ## Entertainment
 #### Photo classification
