@@ -1,4 +1,5 @@
-The TXLivePusher SDK is mainly used to publish streams for LEB (ultra-low latency streaming). It can publish audio and video captured by the browser from the camera, screen, or a local media file to live streaming servers via WebRTC.
+The TXLivePusher SDK is mainly used to publish streams for LEB (ultra-low latency streaming). It can publish audio and video the browser captures from the camera, screen, or a local media file to live streaming servers via WebRTC.
+>! With WebRTC, each push domain name can be used for up to **concurrent 100 streams** by default. If you want to push more streams, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Basics
 
@@ -84,8 +85,7 @@ Pass in the LEB publishing URL to start publishing streams. For the format of pu
 ```javascript
 livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx');
 ```
->?Before publishing streams, make sure that audio/video streams are captured successfully, or you will fail to call the publishing API. You can use the code below to publish streams automatically after audio/video is captured, that is, after the callback for capturing the first audio or video frame is received. If both audio and video are captured, publishing starts only after both the callback for capturing the first audio frame and that for the first video frame are received.
-
+>?Before publishing, make sure that audio/video streams are captured successfully, or you will fail to call the publishing API. You can use the code below to publish streams automatically after audio/video is captured, that is, after the callback for capturing the first audio or video frame is received. If both audio and video are captured, publishing starts only after both the callback for capturing the first audio frame and that for the first video frame are received.
 ```javascript
 var hasVideo = false;
 var hasAudio = false;
@@ -107,9 +107,8 @@ livePusher.setObserver({
 		}
 });
 ```
-
 </dx-codeblock>
-6. **Stop publishing streams:**
+6. **Stop publishing:**
 ```javascript
 livePusher.stopPush();
 ```
@@ -145,7 +144,7 @@ TXLivePusher.checkSupport().then(function(data) {
 </dx-codeblock>
 
 ### Event callbacks
-The SDK supports callback event notifications. You can configure the `Observer` parameters to set the callbacks to observe the SDK internal status and WebRTC statistics. For more information, please see [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/41272).
+The SDK supports callback event notifications. You can set an observer to receive callbacks of the SDK’s status and WebRTC-related statistics. For details, see [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/42709).
 <dx-codeblock>
 ::: javascript javascript
 livePusher.setObserver({
@@ -181,8 +180,6 @@ deviceManager.getDevicesList().then(function(data) {
 deviceManager.switchCamera('camera_device_id');
 :::
 </dx-codeblock>
-
-
 
 
 

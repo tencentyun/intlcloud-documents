@@ -1,17 +1,17 @@
 As a lower-latency version of LVB, LEB provides superb **live streaming** experience with millisecond playback latency, far lower than that of live stream playback using traditional protocols.
-Before trying out LEB, you're advised to read the [LEB Billing Overview](https://intl.cloud.tencent.com/document/product/267/39969) to get familiar with its billable items and prices.
+Before you use LEB, please read [LEB Billing Overview](https://intl.cloud.tencent.com/document/product/267/39969) to learn about its billable items and pricing.
 
-> ! LEB uses the WebRTC protocol to ensure low latency. It adopts the Opus codec and does not support B-frames. If the original stream contains B-frames or the codec is not Opus, CSS backend will remove the B-frames and transcode the stream to Opus format, which will incur [standard transcoding fees](https://intl.cloud.tencent.com/document/product/267/39604).
+> ! LEB uses the WebRTC protocol to ensure low latency. It adopts the Opus codec and does not support B-frames. If the original stream contains B-frames or the codec is not Opus, the CSS backend will remove the B-frames and transcode the stream to Opus format, which will incur [standard transcoding fees](https://intl.cloud.tencent.com/document/product/267/39604).
 
 [](id:app)
 ## App Access
 ### Access instructions
-You can integrate the MLVB SDK with apps on iOS and Android clients for live push and playback.
+You can integrate the MLVB SDK into your iOS or Android app to implement the live push and playback features.
 
 - **Live push on apps**: supports capturing camera or mobile phone screens and then pushing the content to the CSS platform using the RTMP protocol. For details, please see [Publishing (Camera)](https://intl.cloud.tencent.com/document/product/1071/38157) and [Publishing (Screen Recording)](https://intl.cloud.tencent.com/document/product/1071/41878).
 - **Live playback on apps**: supports the WebRTC playback protocol. You can integrate the MLVB SDK with LEB to quickly achieve live streaming with low latency. For details, see [Playback](https://intl.cloud.tencent.com/document/product/1071/41875).
 
->? The MLVB SDK uses CSS, IM, TRTC, and other services for low-latency audiovisual communication for multiple parties. It offers co-anchoring for interaction between viewers, and other viewers who don’t join co-anchoring can also watch the live streaming. For details, please see [Co-anchoring](https://intl.cloud.tencent.com/document/product/1071/42210).
+>? The MLVB SDK uses CSS, IM, TRTC, and other services for low-latency audiovisual communication for multiple parties. Participants can interact with each other through mic-connect while others watch. For details, please see [Mic Connect](https://intl.cloud.tencent.com/document/product/1071/42210).
 
 ### Free Demos
 Video Cloud Toolkit is an open-source and comprehensive audio/video solution developed by Tencent Cloud. You can use it to try out LEB’s capability to play live streams with millisecond latency.
@@ -23,7 +23,7 @@ Video Cloud Toolkit is an open-source and comprehensive audio/video solution dev
     <th><div align="center">Playback Demonstration (Android)</div></th>
   </tr>
   <tr>
-    <td >Android</td>
+    <td>Android</td>
     <td style="text-align:center"><img width="150" src="https://main.qcloudimg.com/raw/6790ddaf4ffe4afd0ceb96b309a16496.png"> </td>
     <td rowspan="2">
       <div align="center">
@@ -37,11 +37,10 @@ Video Cloud Toolkit is an open-source and comprehensive audio/video solution dev
     </td>
   </tr>
   <tr>
-      <td >iOS</td>
+      <td>iOS</td>
     <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/12c7da97cc910eda673cb19b66fc7cb3.png" width="150"></td>
   </tr>
 </table>
-
 
 
 
@@ -51,19 +50,22 @@ Video Cloud Toolkit is an open-source and comprehensive audio/video solution dev
 ### Access instructions
 You can use the following ways to achieve live push and playback on your websites:
 
-- **Live push on web**: you can use the standard WebRTC protocol to design and mux streams, and insert code snippets to websites to enable live push. For details, see [WebRTC Push](https://intl.cloud.tencent.com/document/product/267/41620).
-> ! WebRTC push uses the Opus audio codec. If you use a standard live streaming protocol (RTMP, HTTP-FLV, or HLS) for playback, the CSS backend will automatically convert the audio streams to AAC format to ensure normal playback, which will incur audio transcoding fees. For details, please see [Live Transcoding > Audio Transcoding](https://intl.cloud.tencent.com/document/product/267/39604). Audio transcoding will not be initiated when only the LEB service is used.
-- **Live playback on web**: we recommend you use the player SDK "TCPlayerLite" which supports playing back **LEB streams using the WebRTC protocol** on mobile and desktop browsers. Such playback delivers a superb streaming experience with millisecond latency, far lower than that of playback using traditional live streaming protocols.
+- **Live push on web**: the push component is designed and packaged according to the WebRTC standard, which is supported by most browsers. You can enable the live push feature simply by importing the code we provide. For details, see [WebRTC Push](https://intl.cloud.tencent.com/document/product/267/41620).
+> ! 
+> - WebRTC push uses the Opus audio codec. If you use a standard live streaming protocol (RTMP, HTTP-FLV, or HLS) for playback, the CSS backend will automatically convert the audio streams to AAC format to ensure normal playback, which will incur audio transcoding fees. For details, please see [Live Transcoding > Audio Transcoding](https://intl.cloud.tencent.com/document/product/267/39604). Audio transcoding will not be initiated when only the LEB service is used.
+> - With WebRTC, each push domain name can be used for up to **concurrent 100 streams** by default. If you want to push more streams, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- **Live playback on web**: we recommend you use TCPlayerLite, which supports playing back **LEB streams using the WebRTC protocol** on mobile and desktop browsers. It delivers a superb streaming experience with millisecond latency, far lower than that of playback using traditional live streaming protocols.
 > ! On a browser which does not support WebRTC, a WebRTC URL passed into the player will be converted to ensure normal playback. By default, WebRTC URLs are converted to HLS URLs on mobile browsers and HTTP-FLV URLs on desktop browsers.
 
-### Free Demos
+### Free demo
 
 - **Live push on web**: you can test the web push feature in **CSS console** > [Web Push Tool](https://console.cloud.tencent.com/live/tools/webpush).
 - **Live playback on web**: you can use [WebRTC Live Demo](https://tcplayer.vcube.tencent.com/webrtc-demo/index.html) to test playback.
+
 >?
 >- Both live push and live playback on web use the standard WebRTC protocol. Push on web does not include B-frames, and the audio is encoded in Opus format, so there will be no costs of audio transcoding and B-frame removal transcoding.
->- WebRTC Live Demo supports the multi-definition feature. You can configure transcoding templates for HD and SD in **Feature Configuration** > [**Live Transcoding**](https://console.cloud.tencent.com/live/config/transcode) in the CSS console, enter a WebRTC stream address containing a transcoding template, test it, and then play it back. (If you don't need to test this feature, simply enter a WebRTC original stream in the demo.)
->- For more information on live transcoding operations and billing, see [CSS Transcoding](https://intl.cloud.tencent.com/document/product/267/31071).
+>- WebRTC Live Demo supports multi-definition playback. You can configure a transcoding template for HD and SD output in **Feature Configuration** > [**Live Transcoding**](https://console.cloud.tencent.com/live/config/transcode) in the CSS console, enter in the demo a WebRTC stream URL containing the transcoding template, and test its playback. If you don't need to test this feature, enter the original URL of a WebRTC stream.
+>- For more information on live transcoding and its billing, see [CSS Transcoding](https://intl.cloud.tencent.com/document/product/267/31071).
 
 
 [](id:obs)
@@ -83,10 +85,11 @@ Move the dll and pdb files in `obs-plugins\64bit` to the corresponding **obs-stu
 ![](https://main.qcloudimg.com/raw/ca9cc7d84071526009624978dc38e2c8.png)   
 
 [](id:push)
+
 ### Configuring push link
 [](id:push)
 1. **Generate a WebRTC push address**.
-	1. Log in to the CSS console and generate a push address in **CSS Toolkit** > [**Address Generator**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) as instructed in [Live Remuxing and Transcoding](https://intl.cloud.tencent.com/document/product/267/31084).
+	1. Log in to the CSS console and go to **CSS Toolkit** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to generate a push URL. For detailed directions, see [Address Generator](https://intl.cloud.tencent.com/document/product/267/31084).
 	2. Change the generated `rtmp` prefix to `webrtc` as instructed in [Splicing Live Streaming URLs](https://intl.cloud.tencent.com/document/product/267/38393).
 	![](https://qcloudimg.tencent-cloud.cn/raw/e4e8118922b8f4be309e33f740152006.png)    
 2. **Configure the OBS push service**.[](id:set_obs)
@@ -100,5 +103,5 @@ See the following figure:
 ![](https://qcloudimg.tencent-cloud.cn/raw/8035e95d3f62e62dcb3c33db2e5560d6.png)     
 
 [](id:play)
-### LEB pull and playback
-For how to integrate the LEB SDK for pull and playback, see [iOS & Android](https://intl.cloud.tencent.com/document/product/1071/41875).
+### LEB playback
+For how to integrate the LEB SDK for playback, see [Playback > LEB](https://intl.cloud.tencent.com/document/product/1071/41875).
