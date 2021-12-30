@@ -28,6 +28,7 @@ The list below contains only the parameters commonly used when calling this API 
 | identifier | The administrator account of the app. For more information, refer to [App Administrator](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98). |
 | usersig | The signature generated in the app administrator account. For details on how to generate the signature, refer to [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295. |
+| contenttype | Request format. The value is always `json`. |
 
 ### Maximum call frequency
 
