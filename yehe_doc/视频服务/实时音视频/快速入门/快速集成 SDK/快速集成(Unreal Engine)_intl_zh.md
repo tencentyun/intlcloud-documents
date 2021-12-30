@@ -16,7 +16,7 @@
     - 安装 [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/)。
 
 ## 集成 SDK
-1. 下载 SDK 及配套的 [SDK 源码](https://comm.qq.com/sdk/trtc/UE4/TRTCSDK.zip)（有疑问可[在此处](https://github.com/tencentyun/TRTCUnrealEngine/issues)提issue单）。
+1. 下载 SDK 及配套的 [SDK 源码](https://github.com/tencentyun/TRTCUnrealEngine)（有疑问可[在此处](https://github.com/tencentyun/TRTCUnrealEngine/issues)提issue单）。
 2. 解压后，把项目中的 `TRTCSDK` 文件夹拷贝到您项目中的 **Source/[project_name]** 目录下，其中 **[project_name]** 表示你项目的名称。
 3. 编辑你项目中的 **[project_name].Build.cs**文件。添加下面函数
 ```
