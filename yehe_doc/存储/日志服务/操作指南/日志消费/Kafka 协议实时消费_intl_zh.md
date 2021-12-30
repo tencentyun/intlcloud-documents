@@ -41,5 +41,5 @@ for message in consumer:
 ```
 
 
->? 如果数据无法消费，可能是您的服务器配置了访问限制。请在服务器上放通9092 - 9192端口（因 broker 可能会自动扩容，导致扩容后需要放通的端口增加，故需要预留充足的数量），更多详情请参考 [查看实例]https://intl.cloud.tencent.com/document/product/597/38570)。
+>? 如果数据无法消费，可能是您的服务器配置了访问限制。请在服务器上放通9092 - 9192端口（因 broker 可能会自动扩容，导致扩容后需要放通的端口增加，故需要预留充足的数量），更多详情请参考 [查看实例](https://intl.cloud.tencent.com/document/product/597/38570)。
 >
