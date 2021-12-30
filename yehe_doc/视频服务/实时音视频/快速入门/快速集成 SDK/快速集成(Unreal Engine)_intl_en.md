@@ -1,36 +1,36 @@
-本文主要介绍如何快速地将腾讯云 TRTC SDK（Unreal Engine）集成到您的项目中，只要按照如下步骤进行配置，就可以完成 SDK 的集成工作。
+This document describes how to quickly integrate the TRTC SDK for Unreal Engine into your project.
 
-## 环境要求
-- 建议Unreal Engine 4.27.1 及以上版本。
-- **Android 端开发：**
-  - Android Studio版本4.0及以上版本。
-  - Visual Studio 2017 15.6版或更高。
-  - 只支持真机调试
-- **iOS & macOS 端开发：**
-  - Xcode 11.0及以上版本。
-  - osx 系统版本要求 10.11 及以上版本
-  - 请确保您的项目已设置有效的开发者签名。
-- **Windows 开发：**
-    - 操作系统：Windows 7 SP1 或更高的版本（基于 x86-64 的 64 位操作系统）。
-    - 磁盘空间：除安装 IDE 和一些工具之外还应有至少 1.64 GB 的空间。
-    - 安装 [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/)。
+## Environment Requirements
+- Unreal Engine 4.27.1 or above
+- **Developing for Android:**
+  - Android Studio 4.0 or above
+  - Visual Studio 2017 15.6 or above
+  - A real device for testing
+- **Developing for iOS and macOS:**
+  - Xcode 11.0 or above
+  - OS X 10.11 or above
+  - A valid developer signature for your project
+- **Developing for Windows:**
+    - OS: Windows 7 SP1 or above (64-bit based on x86-64)
+    - Disk space: at least 1.64 GB of space after the IDE and relevant tools are installed
+    - [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
-## 集成 SDK
-1. 下载 SDK 及配套的 [SDK 源码](https://comm.qq.com/sdk/trtc/UE4/TRTCSDK.zip)（有疑问可[在此处](https://github.com/tencentyun/TRTCUnrealEngine/issues)提issue单）。
-2. 解压后，把项目中的 `TRTCSDK` 文件夹拷贝到您项目中的 **Source/[project_name]** 目录下，其中 **[project_name]** 表示你项目的名称。
-3. 编辑你项目中的 **[project_name].Build.cs**文件。添加下面函数
+## Integrating the SDK
+1. Download the SDK and its [source code](https://comm.qq.com/sdk/trtc/UE4/TRTCSDK.zip). If you have any questions, create an issue [here](https://github.com/tencentyun/TRTCUnrealEngine/issues).
+2. Decompress the ZIP file and copy the `TRTCSDK` folder to the **Source/[project_name]** directory of your project (**[project_name]** is the name of your project).
+3. Add the following function to the **[project_name].Build.cs** file in your project.
 ```
-// 加载各个平台TRTC底层库
+// Load the TRTC library for different platforms
 private void loadTRTCSDK(ReadOnlyTargetRules Target)
 {
     string _TRTCSDKPath = Path.GetFullPath(Path.Combine(ModuleDirectory, "TRTCSDK"));
     bEnableUndefinedIdentifierWarnings = false;
     if (Target.Platform == UnrealTargetPlatform.Android)
     {
-        // 加载Android头文件
+        // Load the Android header file
         PublicIncludePaths.Add(Path.Combine(_TRTCSDKPath, "include/Android"));
         PrivateDependencyModuleNames.AddRange(new string[] { "Launch" });
-        // 加载Android APL文件
+        // Load the Android APL file
         AdditionalPropertiesForReceipt.Add(new ReceiptProperty("AndroidPlugin", Path.Combine(ModuleDirectory, "TRTCSDK", "Android", "APL_armv7.xml")));
         
         string Architecture = "armeabi-v7a";
@@ -40,7 +40,7 @@ private void loadTRTCSDK(ReadOnlyTargetRules Target)
         PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory,"TRTCSDK", "Android", Architecture, "libliteavsdk.so"));
     }else if (Target.Platform == UnrealTargetPlatform.IOS)
     {
-        // 加载iOS头文件
+        // Load the iOS header file
         PublicIncludePaths.Add(Path.Combine(_TRTCSDKPath, "include/iOS"));
         PublicAdditionalLibraries.AddRange(new string[] {
             "resolv",
@@ -61,7 +61,7 @@ private void loadTRTCSDK(ReadOnlyTargetRules Target)
         PublicAdditionalFrameworks.Add(new UEBuildFramework( "TXLiteAVSDK_TRTC",_TRTCSDKPath+"/ios/TXLiteAVSDK_TRTC.framework.zip", ""));
     }else if(Target.Platform == UnrealTargetPlatform.Mac)
     {
-        // 加载MacOs头文件
+        // Load the macOS header file
         PublicIncludePaths.Add(Path.Combine(_TRTCSDKPath, "include/Mac"));
         PublicAdditionalLibraries.AddRange(new string[] {
             "resolv",
@@ -93,7 +93,7 @@ private void loadTRTCSDK(ReadOnlyTargetRules Target)
         PublicFrameworks.Add(Path.Combine(_TRTCSDKPath, "Mac", "Release","TXLiteAVSDK_TRTC_Mac.framework"));
     }else if (Target.Platform == UnrealTargetPlatform.Win64)
     {
-        // 加载Win64头文件
+        // Load the 64-bit Windows header file
         PublicIncludePaths.Add(Path.Combine(_TRTCSDKPath, "include/win64"));
         PublicAdditionalLibraries.Add(Path.Combine(_TRTCSDKPath, "win64", "Release","liteav.lib"));
         PublicDelayLoadDLLs.Add(Path.Combine(_TRTCSDKPath, "win64", "Release", "liteav.dll"));
@@ -110,25 +110,25 @@ private void loadTRTCSDK(ReadOnlyTargetRules Target)
     }
 }
 ```
-4. 在**[project_name].Build.cs**文件调用该函数
+4. Call the function in the **[project_name].Build.cs** file.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a9b135ffd9e41d9d87fab383ac2d472a.png)
-5. 到目前为止你已经集成了TRTC SDK。可在你的cpp 文件中使用TRTC了。`#include "ITRTCCloud.h"`
+5. You have integrated the TRTC SDK into your project and can now use it in the CPP file.`#include "ITRTCCloud.h"`
 ```
-// 获取TRTC单例对象
+// Get a TRTC singleton
 #if PLATFORM_ANDROID
     if (JNIEnv* Env = FAndroidApplication::GetJavaEnv()) {
         void* activity = (void*) FAndroidApplication::GetGameActivityThis();
-        // 安卓这里需要传入当前上下文对象
+        // For Android, pass in the context object
         pTRTCCloud = getTRTCShareInstance(activity);
     }
 #else
     pTRTCCloud = getTRTCShareInstance();
 #endif
-// 注册事件回调
+// Register event callbacks
 pTRTCCloud->addCallback(this);
-// 获取版本号
+// Get the version number
 std::string version = pTRTCCloud->getSDKVersion();
-// 进入房间
+// Enter a room
 trtc::TRTCParams params;
 params.userId = "123";
 params.roomId = 110;
@@ -136,49 +136,49 @@ params.sdkAppId = SDKAppID;
 params.userSig = GenerateTestUserSig().genTestUserSig(params.userId, SDKAppID, SECRETKEY);
 pTRTCCloud->enterRoom(params, trtc::TRTCAppSceneVideoCall);
 ```
-## 打包
+## Packaging
 <dx-tabs>
-::: macOS\s端
-1. File -> Package Project -> Mac
-2. 配置权限。右击上一步编译出的 xxx.app 文件 - 选择 "显示包内容" 
+::: macOS\s
+1. Go to **File > Package Project > Mac**.
+2. Configure permissions. Right-click the `xxx.app` file compiled in the previous step and select **Show Package Contents**. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/3eb106ee3307c206dff5314a43920132.png)
-3. 进入 "Contents->Info.plist"
-4. 选择 "Information Property List" 然后添加以下两个权限:
+3. Go to **Contents > Info.plist**.
+4. Select **Information Property List** and add the following two permissions:
 ```
 <key>NSCameraUsageDescription</key>
-<string>授权摄像头权限才能正常视频通话</string>
+<string>Video calls are possible only with camera permission.</string>
 <key>NSMicrophoneUsageDescription</key>
-<string>授权麦克风权限才能正常语音通话</string>
+<string>Audio calls are possible only with mic access.</string>
 ```
-5. 如果你现在在UE4的editor运行的话，需要找到 **UE4Editor.app** 文件并且按照上面步骤添加权限。
+5. If you use UE4 Editor, add the above permissions to the **UE4Editor.app** file.
 :::
-::: Windows\s端
-1. File->Package Project->Windows->Windows(64-bit)
+::: Windows\s
+1. Go to **File > Package Project > Windows > Windows(64-bit)**.
 ![](https://imgcache.qq.com/operation/dianshi/other/win.ba79ccce59ae58718e6c35c16cdef55531456a70.png)
 :::
-::: iOS\s端
-1. 在 iOS 上也需要以下权限：
+::: iOS\s
+1. The following permissions are required on iOS.
 ```
 Privacy - Camera Usage Description
 Privacy - Microphone Usage Description
 ```
-为了将上述权限添加到 info.plist 里，你可以在 **Edit->Project Settings->Platforms: iOS** 中，将 
+To add the permissions to `info.plist`, go to **Edit > Project Settings > Platforms: iOS** and add  
 ```
 <key>NSCameraUsageDescription</key>
-<string>授权摄像头权限才能正常视频通话</string>
+<string>Video calls are possible only with camera permission.</string>
 <key>NSMicrophoneUsageDescription</key>
-<string>授权麦克风权限才能正常语音通话</string>
+<string>Audio calls are possible only with mic access.</string>
 ```
-添加到 Additional Plist Data 里。
-2. 最后打包项目。File -> Package Project -> iOS
+to `Additional Plist Data`.
+2. Go to **File > Package Project > iOS** to package your project.
 :::
-::: Android\s端
-1.开发调试：详见 [Android快速入门](https://docs.unrealengine.com/4.27/zh-CN/SharingAndReleasing/Mobile/Android/GettingStarted/)
-2.打包项目：详见 [打包Android项目](https://docs.unrealengine.com/4.27/zh-CN/SharingAndReleasing/Mobile/Android/PackagingAndroidProject/)
+:::  Android\s
+1. For development and testing, see [Android Quick Start](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/Android/GettingStarted/).
+2. For packaging, see [Packaging Android Projects](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/Android/PackagingAndroidProject/).
 :::
 </dx-tabs>
 
-## TRTC全平台 C++ API文档
-[中文文档](https://liteav.sdk.qcloud.com/doc/api/zh-cn/md_introduction_trtc_zh_Cplusplus_Brief.html)
+## TRTC Cross-Platform (C++) APIs
+[API Documentation (Chinese)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/md_introduction_trtc_zh_Cplusplus_Brief.html)
 
-[英文文档](https://liteav.sdk.qcloud.com/doc/api/en/md_introduction_trtc_en_Cplusplus_Brief.html)
+[API Documentation (English)](https://liteav.sdk.qcloud.com/doc/api/en/md_introduction_trtc_en_Cplusplus_Brief.html)
