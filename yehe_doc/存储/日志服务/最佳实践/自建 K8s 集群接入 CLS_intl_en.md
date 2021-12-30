@@ -57,7 +57,7 @@ The `LogConfig.yaml` declaration file consists of the following two parts:
 #### Log parsing format
 
 <dx-tabs>
-::: Full text in a single line [](id:single_line)
+::: Full\stext\sin\sa\ssingle\sline[](id:single_line)
 In "full text in a single line" mode, a line is a full log. When CLS collects logs, it uses the line break `\n` to mark the end of a log. For easier structural management, a default key value `\_\_CONTENT\_\_` is given to each log, but the log data itself will no longer be structured, nor will the log field be extracted. The time attribute of a log is determined by the collection time.
 
 Assume that the raw data of a log is as follows:
@@ -81,7 +81,7 @@ The data collected to CLS is as follows:
 __CONTENT__:Tue Jan 22 12:08:15 CST 2019 Installed: libjpeg-turbo-static-1.2.90-6.el7.x86_64
 ```
 :::
-::: Full text in multi lines [](id:multi_line)
+::: Full\stext\sin\smulti\slines\s[](id:multi_line)
 In "full text in multi lines" mode, a log may span multiple lines (such as Java stacktrace), and the line break `\n` cannot be used to mark the end of a log. To help CLS distinguish between logs, a first-line regular expression is used for matching. When a line of a log matches the preset regular expression, it is considered as the beginning of the log, and the log ends before the next matching line.
 
 In the "full text in multi lines" mode, a default key `\_\_CONTENT\_\_` is also set, but the log data itself is not structured, and no log fields are extracted. The time attribute of a log is determined by the collection time.
@@ -113,7 +113,7 @@ The data collected to CLS is as follows:
 __CONTENT__:2019-12-15 17:13:06,043 [main] ERROR com.test.logging.FooFactory:\njava.lang.NullPointerException\n    at com.test.logging.FooFactory.createFoo(FooFactory.java:15)\n    at com.test.logging.FooFactoryTest.test(FooFactoryTest.java:11)
 ```
 :::
-::: Single line - full regex [](id:single_full_regex)
+::: Single\sline\s-\sfull\sregex\s[](id:single_full_regex)
 The "single line - full regex" mode is often used to process structured logs. It parses a full log by extracting multiple key-value pairs based on a regex. 
 
 Assume that the raw data of a log is as follows:
@@ -155,7 +155,7 @@ time_local: [22/Jan/2019:19:19:30 +0800]
 upstream_response_time: 0.354
 ```
 :::
-::: Multiple lines - full regex [](id:multi_full_regex)
+::: Multiple\slines\s-\sfull\sregex\s[](id:multi_full_regex)
 In "multiple lines - full regex" mode, multiple key-value pairs can be extracted from a complete piece of log data that spans multiple lines in a log text file (such as Java program logs) based on a regular expression. If you don't need to extract key-value pairs, please configure it by referring to the "full text in multi lines" mode.
 
 Assume that the raw data of a log is as follows:
@@ -194,7 +194,7 @@ msg: java.lang.Exception: exception happened
    at TestPrintStackTrace.main(TestPrintStackTrace.java:16)
 ```
 :::
-::: JSON format [](id:json)
+::: JSON\sformat\s[](id:json)
 A JSON log automatically extracts the key at the first layer as the field name and the value at the first layer as the field value to implement structured processing of the entire log. Each complete log ends with a line break `\n`.
 
 Assume the raw data of a JSON log is as follows:
@@ -231,7 +231,7 @@ url: /event/dispatch
 xff: -
 ```
 :::
-::: Separator format [](id:delimiter)
+::: Separator\sformat\s[](id:delimiter)
 For a log in separator format (separator log), the entire log data can be structured according to the specified separator, and each complete log ends with a line break `\n`. When CLS processes separator logs, you need to define a unique key for each separate field.
 
 Assume the raw data of a log is as follows:
@@ -275,7 +275,7 @@ time: [Tue Jan 22 14:49:45 CST 2019 +0800]
 CLS supports the following cluster log sources:
 
 <dx-tabs>
-::: Standard container output [](id:pod_stdout)
+::: Standard\scontainer\soutput\s[](id:pod_stdout)
 Sample 1: collecting the standard output of all containers in the default namespace
 ```yaml
 apiVersion: cls.cloud.tencent.com/v1
@@ -320,7 +320,7 @@ spec:
   ...
 ```
 :::
-::: Container file [](id:pod_file)
+::: Container\sfile\s[](id:pod_file)
 Sample 1: collecting the `access.log` file in the `/data/nginx/log/` path in the NGINX container in the Pod that belongs to ingress-gateway deployment in the production namespace
 ```yaml
 apiVersion: cls.cloud.tencent.com/v1
@@ -356,7 +356,7 @@ spec:
   ...
 ```
 :::
-::: Host file [](id:node_file)
+::: Host\sfile\s[](id:node_file)
 Sample: collecting all `.log` files in the host path `/data/`
 ```yaml
 apiVersion: cls.cloud.tencent.com/v1
