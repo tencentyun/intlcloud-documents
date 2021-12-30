@@ -16,8 +16,8 @@ This document describes how to quickly integrate the TRTC SDK for Unreal Engine 
     - [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## Integrating the SDK
-1. Download the SDK and its [source code](https://comm.qq.com/sdk/trtc/UE4/TRTCSDK.zip). If you have any questions, create an issue [here](https://github.com/tencentyun/TRTCUnrealEngine/issues).
-2. Decompress the ZIP file and copy the `TRTCSDK` folder to the **Source/[project_name]** directory of your project (**[project_name]** is the name of your project).
+1. Download the SDK and its [source code](https://github.com/tencentyun/TRTCUnrealEngine). If you have any questions, create an issue [here](https://github.com/tencentyun/TRTCUnrealEngine/issues).
+2. Copy the `TRTCSDK` folder to the **Source/[project_name]** directory of your project (**[project_name]** is the name of your project).
 3. Add the following function to the **[project_name].Build.cs** file in your project.
 ```
 // Load the TRTC library for different platforms
