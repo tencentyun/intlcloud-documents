@@ -21,12 +21,13 @@ https://xxxxxx/v4/im_open_login_svc/account_delete?sdkappid=88888888&identifier=
 | 参数                                | 说明                                                         |
 | ----------------------------------- | ------------------------------------------------------------ |
 | https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` <li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`|
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com` |
 | v4/im_open_login_svc/account_delete | 请求接口                                                     |
 | sdkappid                            | 创建应用时控制台分配的 SDKAppID                    |
 | identifier                          | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517) |
 | usersig                             | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385) |
 | random                              | 请输入随机的32位无符号整数，取值范围0 - 4294967295                                   |
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
