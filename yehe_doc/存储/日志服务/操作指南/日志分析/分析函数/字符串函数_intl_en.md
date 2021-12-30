@@ -1,28 +1,27 @@
 This document introduces the basic syntax and examples of string functions.
 
 >!
-> - Currently, CLS functions can be used in most regions. If they are required in Beijing, Shanghai, Guangzhou, and Nanjing, please contact [smart customer service](https://intl.cloud.tencent.com/contact-sales).
 > - In CLS analysis statements, strings must be included in single quotes (''), and field names and column names are unsigned or included in double quotes (""). For example, 'status' indicates the string `status`, and status or "status" indicates the log field `status`.
 > - In the following functions, all the `key` parameters indicate log field names.
 > 
 
 | Function                             | Description                                                         | Example                                                         |
-| ------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ------------------------------------ | ------------------------------------------- | ------------------------------------------ |
 | chr(number)                          | Returns characters that match the ASCII code point (bit) specified by the input parameter. The return value is of the VARCHAR type. | Return characters that match ASCII code bit 77:</br> `* | SELECT chr(77)`   |
 | codepoint(string)                    | Converts ASCII field values to BIGINT values. The return value is of the integer type. | Convert character values in ASCII code to their corresponding positions:</br> `* | SELECT codepoint('M')` |
 | concat(key1, ..., keyN)              | Concatenates strings key1, key2, ...keyN. The concatenation effect is consistent with that of the \|\| connectors. The return value is of the VARCHAR type. | Concatenate multiple strings into one:</br> `* | SELECT concat(remote_addr, host, time_local)` |
-| concat_ws(split_string, key0, ..., keyN)           | Concatenates the `key1`, `key2`, ...`keyN` strings with `split_string` as the delimiter. If `split_string` is `null`, the result is `null`, and the `null` values in `key1`, `key2`, ...`keyN` are skipped. The return value is of the VARCHAR type. | Concatenate strings with `/` as the delimiter:</br> `* | SELECT concat_ws(`/`, remote_addr, host, time_local) ` |
-| concat_ws(\*split_string\*, array(varchar)) | Concatenates elements in the array into a string with `split_string` as the delimiter. If `split_string` is `null`, the result is `null`, and the `null` values in the array are skipped. The return value is of the VARCHAR type.</br> Note: the `array (varchar)` parameter in this function is an array, not a string. In this example, the output of the `split` function is an array. | Concatenate strings with `#` as the delimiter:</br> `* | SELECT concat_ws('#', split(`cloud.tencent.com/product/cls`, '/')) ` |
+| concat_ws(split_string,key0, ..., keyN)        | Concatenates strings key1, key2, ...keyN using `split_string` as the separator. `split_string` can be a string or variable. If `split_string` is null, null values in key1, key2, ...keyN are skipped. The return result is of the VARCHAR type. | Concatenate multiple strings using / as the separator:</br>`* | SELECT concat_ws('/', remote_addr,host,time_local)` |
+| concat_ws(split_string, array(varchar)) | Concatenates elements in an array into a string using `split_string` as the separator. If `split_string` is `null`, the result is null and null values in the array are skipped. The return result is of the VARCHAR type.</br> Note: in this function, the `array(varchar)` parameter is an array, not a string. | Concatenate elements in an array into a string using # as the separator: (in this example, the output of the `split` function is an array)</br>`* | select concat_ws('#',split('cloud.tencent.com/product/cls', '/'))` |
 | format(format, args...)              | Formats the output of the `args` parameter using the `format` format. The return value is of the VARCHAR type. | Format the output of the `remote_addr` and `host` parameters using the format of `IP address: %s, Domain name: %s`:</br> `* | SELECT format('IP address: %s, Domain name: %s', remote_addr, host)  ` |
 | hamming_distance(key1, key2)         | Returns the Hamming distance between the `key1` and `key2` strings. Note that the two strings must have the same length. The return value is of the BIGINT type. | Return the Hamming distance between the `remote_addr` and `remote_addr` strings:</br> `* | SELECT hamming_distance(remote_addr, remote_addr)     ` |
 | length(key)                          | Returns the length of a string. The return value is of the BIGINT type. | Return the length of the `http_user_agent` string:</br> `* | SELECT length(http_user_agent)      ` |
 | levenshtein_distance(key1, key2)     | Returns the Levenshtein distance between the `key1` and `key2` strings. The return value is of the BIGINT type.       | Return the Levenshtein distance between the `remote_addr` and `http_protocol` strings:</br> `* | SELECT levenshtein_distance(remote_addr, http_protocol)            ` |
 | lower(key)                           | Converts a string to lowercase. The return value is of the VARCHAR type in lowercase.   | Convert the `http_protocol` string to lowercase:</br> `* | SELECT lower(http_protocol)            ` |
-| lpad(key, size, padstring)           | **Left** pads `padString` to a string to `size` characters. If `size` is less than the length of `key`, the result is truncated to `size` characters. `size` must be non-negative, and `padstring` must be non-empty. The return value is of the VARCHAR type. | Left pad the '0' to the `remote_addr` string to 32 characters:</br> `* | SELECT lpad(remote_addr, 32, '0')            ` |
+| lpad(key, size, padstring)           | Left pads `padString` to a string to `size` characters. If `size` is less than the length of `key`, the result is truncated to `size` characters. `size` must be non-negative, and `padstring` must be non-empty. The return value is of the VARCHAR type. | Left pad the '0' to the `remote_addr` string to 32 characters:</br> `* | SELECT lpad(remote_addr, 32, '0')            ` |
 | ltrim(key)                           | Removes all leading whitespace characters from a string. The return value is of the VARCHAR type.            |  Remove all leading whitespace characters from the `http_user_agent` string:</br> `* | SELECT ltrim(http_user_agent)            ` |
 | position(substring IN key)           | Returns the position of `substring` in a string. Positions start with 1. If the position is not found, `0` is returned. This function takes the special syntax `IN` as a parameter. For other information, see strpos(). The return value is of the BIGINT type. | Return the position of the 'G' characters in `http_method`:</br> `* | select position('G' IN http_method)      ` |
-| replace(key, substring)              | Removes all `substring` strings from a string. The return value is of the VARCHAR type.     | Remove all 'Oct' strings from the `time_local` string:</br> `* | select replace(time_local, 'Oct')            ` |
-| replace(key, substring, replace)     | Replaces all `substring` strings in a string with the `replace` string. The return value is of the VARCHAR type. | Replace all 'Oct' strings in the `time_local` string with the '10' string:</br> `* | select replace(time_local,'Oct','10')            ` |
+| replace(key, substring)              | Removes all `substring` from the `key` string. The return value is of the VARCHAR type.     | Remove all 'Oct' from the `time_local` string:</br> `* | select replace(time_local, 'Oct')            ` |
+| replace(key, substring, replace)     | Replaces all `substring` in a string with the `replace` string. The return value is of the VARCHAR type. | Replace all 'Oct' in the `time_local` string with '10':</br> `* | select replace(time_local,'Oct','10')            ` |
 | reverse(key)                         | Reverses the `key` string. The return value is of the VARCHAR type.                       | Reverse the `host` string: </br> `* | select reverse(host)            ` |
 | rpad(key, size, padstring)           | **Right** pads `padstring` to a string to `size` characters. If `size` is less than the length of `key`, the result is truncated to `size` characters. `size` must be non-negative, and `padstring` must be non-empty. The return value is of the VARCHAR type. | Right pad '0' to the `remote_addr` string to 32 characters:</br> `* | select rpad(remote_addr, 32, '0')            ` |
 | rtrim(key)                           | Removes all trailing whitespace characters from a string. The return value is of the VARCHAR type.          | Remove all trailing whitespace characters from the `http_user_agent` string:</br> `* | select rtrim(http_user_agent)            ` |
@@ -109,19 +108,6 @@ Analysis statement sample:
 ```
 * | select replace(time_local, 'Oct', '10')
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

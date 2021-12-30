@@ -1,53 +1,51 @@
->? 当前日志服务已支持大部分地域使用 CLS 函数。北京、上海、广州、南京地域如有需要，请联系 [在线客服](https://intl.cloud.tencent.com/contact-sales)。
->
 
-运算符是一个保留字或字符，主要用于指定 SQL语句中的条件，并在语句中连接多个条件。
+An operator is a reserved word or a character used primarily to specify conditions in an SQL statement and to serve as conjunctions for multiple conditions in an SQL statement.
 
-- [算术运算符](#.E7.AE.97.E6.9C.AF.E8.BF.90.E7.AE.97.E7.AC.A6)
-- [比较运算符](#.E6.AF.94.E8.BE.83.E8.BF.90.E7.AE.97.E7.AC.A6)
-- [逻辑运算符](#.E9.80.BB.E8.BE.91.E8.BF.90.E7.AE.97.E7.AC.A6)
+- [Mathematical operator](#.E7.AE.97.E6.9C.AF.E8.BF.90.E7.AE.97.E7.AC.A6)
+- [Comparison operators](#.E6.AF.94.E8.BE.83.E8.BF.90.E7.AE.97.E7.AC.A6)
+- [Logical operators](#.E9.80.BB.E8.BE.91.E8.BF.90.E7.AE.97.E7.AC.A6)
 
-## 算术运算符
+## Mathematical Operators
 
-算术运算符是用来处理四则运算的符号，是最简单最常用的符号，尤其是数字的处理，几乎都会使用到算术运算符号。
+Mathematical operators are symbols used to process four arithmetic operations. They are the simplest and most commonly used operators, especially for number processing. Almost all number processing involves mathematical operators.
 
-假设变量 a=1，变量 b=2，则：
+Assume variable `a` holds 1 and variable `b` holds 2, then:
 
-| 运算符 | 描述                                          | 实例  |
+| Operator | Description                                          | Instance  |
 | ------ | --------------------------------------------- | ----- |
-| +      | 加法：运算符两边的值相加                      | a + b |
-| -      | 减法：运算符左边减去运算符右边                | a - b |
-| *      | 乘法 - 把运算符两边的值相乘                   | a * b |
-| /      | 除法 -   运算符左边除以运算符右边             | b / a |
-| %      | 取模 -   运算符左边除以运算符右边后得到的余数 | b % a |
+| + (Addition)      | Adds values on either side of the operator.                      | a + b |
+| - (Subtraction)     | Subtracts the right hand operand from the left hand operand.                | a - b |
+| * (Multiplication)     | Multiplies values on either side of the operator.                   | a * b |
+| / (Division)     | Divides the left hand operand by the right hand operand.             | b / a |
+| % (Modulus)     | Divides the left hand operand by the right hand operand and returns the remainder. | b % a |
 
-## 比较运算符
+## Comparison Operators
 
-比较运算符用于判断值的大小关系，支持任何可比较的类型，例如 int、long、double 和 text 等。
+Comparison operators are used to determine the size relationships of values and support any value type that can be compared, such as int, long, double, and text.
 
-假设变量 a=1，变量 b=2，则：
+Assume variable `a` holds 1 and variable `b` holds 2, then:
 
-| 运算符 | 描述                                                         | 实例              |
+| Operator | Description                                                         | Instance              |
 | :----- | :----------------------------------------------------------- | :---------------- |
-| =      | 判断运算符两边的值是否相等，如果相等则条件为真。             | a = b             |
-| !=     | 判断运算符两边的值是否相等，如果不相等则条件为真。           | a != b            |
-| <>     | 判断运算符两边的值是否相等，如果不相等则条件为真。           | a <> b            |
-| >      | 判断运算符左边的值是否大于运算符右边的值，如果是则条件为真。 | a > b |
-| <      | 判断运算符左边的值是否小于运算符右边的值，如果是则条件为真。 | a < b   |
-| >=     | 判断运算符左边的值是否大于等于运算符右边的值，如果是则条件为真。 | a >= b |
-| <=     | 判断运算符左边的值是否小于等于运算符右边的值，如果是则条件为真。 | a <= b   |
-| IN      | IN 运算符用于把某个值与一系列指定列表的值进行比较。          |  status IN (200,206,404) |
-| NOT IN  | IN 运算符的对立面，用于把某个值与不在一系列指定列表的值进行比较。 | status NOT IN (200,206,404)  |
-| BETWEEN AND | BETWEEN 运算符用于在给定最小值和最大值范围内的一系列值中搜索值。 | status between 200 AND 400 |
-| LIKE    | LIKE 运算符用于把某个值与使用通配符运算符的相似值进行比较。%代表零个、一个或者多个字；_代表单个数字或者字符。  | url LIKE '%.mp4' |
-| IS NULL | NULL 运算符用于把某个值与 NULL 值进行比较，为空为真。 | status IS NULL |
-| IS NOT NULL | NULL 运算符用于把某个值与 NULL 值进行比较，不为空为真。 | status IS NOT NULL |
+| =      | Checks if the values of two operands are equal or not. If yes, the condition is true.             | a = b             |
+| !=      | Checks if the values of two operands are equal or not. If no, the condition is true.             | a != b             |
+| <>      | Checks if the values of two operands are equal or not. If no, the condition is true.             | a <> b             |
+| >      | Checks if the value of the left operand is greater than the value of the right operand. If yes, the condition is true. | a > b |
+| <      | Checks if the value of the left operand is less than the value of the right operand. If yes, the condition is true. | a < b |
+| >=      | Checks if the value of the left operand is greater than or equal to the value of the right operand. If yes, the condition is true. | a >= b |
+| <=      | Checks if the value of the left operand is less than or equal to the value of the right operand. If yes, the condition is true. | a <= b |
+| IN      | The IN operator is used to compare a value with a specified list of values.          |  status IN (200,206,404) |
+| NOT IN  | The NOT IN operator is used to compare a value with values that are not in a specified list. It is the opposite of the IN operator. | status NOT IN (200,206,404)  |
+| BETWEEN AND | The BETWEEN operator tests if a value is within a specified range (BETWEEN min AND max). | status between 200 AND 400 |
+| LIKE    | The LIKE operator is used to compare a value with a similar value using the wildcard operator. The percent sign (%) represents zero, one, or multiple characters. The underscore (_) represents a single digit or character.  | url LIKE '%.mp4' |
+| IS NULL | The NULL operator compares a value with NULL. If the value is null, the condition is true. | status IS NULL |
+| IS NOT NULL | The NULL operator compares a value with NULL. If the value is not null, the condition is true. | status IS NOT NULL |
 
 
-## 逻辑运算符
+## Logical Operators
 
-| 运算符  | 描述                                                         |
+| Operator  | Description                                                         |
 | :------ | :----------------------------------------------------------- |
-| AND     | AND 运算符要求运算符两边条件同时存在为真。                   |
-| OR      | OR 运算符要求运算符两边任一条件存在即为真。                  |
-| NOT     | NOT 运算符是所用的逻辑运算符的对立面。例如 NOT EXISTS、NOT BETWEEN、NOT IN 等。 |
+| AND     | The AND operator determines that the result is true if the conditions on both sides of the operator exist at the same time.                   |
+| OR      | The OR operator determines that the result is true if either of the conditions on both sides of the operator exists.                  |
+| NOT     | The NOT operator is the opposite of the logical operator used. Examples: NOT EXISTS, NOT BETWEEN, NOT IN |

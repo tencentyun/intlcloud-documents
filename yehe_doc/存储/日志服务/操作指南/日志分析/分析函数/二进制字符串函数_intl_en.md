@@ -1,7 +1,5 @@
 This document introduces the basic syntax and examples of binary string functions.
 
->? Currently, CLS functions can be used in most regions. If they are required in Beijing, Shanghai, Guangzhou, and Nanjing, please contact [smart customer service](https://intl.cloud.tencent.com/contact-sales).
->
 
 The binary string type varbinary is different from the string type varchar.
 
