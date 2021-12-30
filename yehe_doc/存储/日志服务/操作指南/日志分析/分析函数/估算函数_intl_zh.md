@@ -92,7 +92,7 @@ double 类型或 array 类型。
 
 
 
-示例2：对 **resTotalTime** 列进行排列后，返回处于10%、20%及70%位置的 **resTotalTime** 字段的值。
+示例2：对 **resTotalTime** 列进行排列后，返回处于10%、20%及60%位置的 **resTotalTime** 字段的值。
 
 ```
 * | select approx_percentile(resTotalTime, array[0.2,0.4,0.6])
