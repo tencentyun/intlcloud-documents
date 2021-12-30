@@ -57,7 +57,7 @@ sudo apt-get install mtr
 - **-h/--help**：显示帮助菜单
 - **-v/--version**：显示 MTR 版本信息
 - **-r/--report**：结果以报告形式输出
-- **-p/--split**：与 **--report** 相对，分别列出每次追踪的结果
+- **-p/--split**：与 **--report** 相对，分别列出每次跟踪的结果
 - **-c/--report-cycles**：设置每秒发送的数据包数量，默认是10
 - **-s/--psize**：设置数据包的大小
 - **-n/--no-dns**：不对 IP 地址做域名解析
