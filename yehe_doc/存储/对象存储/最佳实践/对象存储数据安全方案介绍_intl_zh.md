@@ -47,5 +47,5 @@
 
 ## 事后追溯手段
 
-腾讯云对象存储为用户提供了多渠道低门槛的日志监控和审计功能。对于存储桶的用户访问日志，如删除文件（DeleteObject）、覆盖写文件（PutObjectCopy）、修改文件权限（PutObjectACL）等操作，均可通过存储桶访问日志功能进行追踪，删除操作等高危行为可追溯可查证；对于存储桶配置管理行为，如删除存储桶（DeleteBucket）、修改存储桶访问控制列表（PutBucketACL）、修改存储桶策略（PutBucketPolicy）等操作，可通过云审计日志进行追踪，权限配置修改等行为也可追溯查证。
+腾讯云对象存储为用户提供了多渠道低门槛的日志监控和审计功能。对于存储桶的用户访问日志，如删除文件（DeleteObject）、覆盖写文件（PutObjectCopy）、修改文件权限（PutObjectACL）等操作，均可通过存储桶访问日志功能进行排查，删除操作等高危行为可追溯可查证；对于存储桶配置管理行为，如删除存储桶（DeleteBucket）、修改存储桶访问控制列表（PutBucketACL）、修改存储桶策略（PutBucketPolicy）等操作，可通过云审计日志进行排查，权限配置修改等行为也可追溯查证。
 ![](https://main.qcloudimg.com/raw/a328c9a3c9df1b1c48214352fbe2f980.png)
