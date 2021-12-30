@@ -1,5 +1,5 @@
 ## Operation Scenarios 
-This document describes how to roll back some records in the TcaplusDB Console.
+This document describes how to roll back specified records in the TcaplusDB Console.
 
 ## Prerequisites
 You have created a table. For more information, please see [Creating Table](https://intl.cloud.tencent.com/document/product/1016/32715).
@@ -28,7 +28,7 @@ message tb_online {
 	}
 }
 ```
-To roll back a record with keys of `openid` = 100, `tconndid`= 1, and `timekey` = '123456', you need to prepare a file containing the keys as follows. The first row contains the names of primary key fields separated by space, and the second and subsequent rows contain the primary key values to be rolled back to.
+To roll back a record with keys of `openid` = 100, `tconndid`= 1, and `timekey` = '123456', you need to prepare a file containing the keys as follows. The first row contains the names of primary keys separated by space, and the second and subsequent rows contain the primary key values of the records to be rolled back.
 ```
 openid tconndid timekey 
 100 1 123456

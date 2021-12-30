@@ -158,11 +158,11 @@ TIM_DECL void TIMSetConvEventCallback(TIMConvEventCallback cb, const void* user_
 | user_data | const void\* | User-defined data. The IM SDK only transfers the user data to the callback function `cb` without processing the data. |
 
 >?
-- Conversation events include:
- - Conversation creation
- - Conversation deletion
- - Conversation update
-- Any operation that generates a new conversation will trigger the conversation creation event, such as calling the [TIMConvCreate](https://intl.cloud.tencent.com/document/product/1047/34557) API to create a conversation or receiving the first message in an unknown conversation. Any operation that changes an existing conversation will trigger the conversation update event, such as receiving a new conversation message, recalling a message, and reporting that a message has been read. When the [TIMConvDelete](https://intl.cloud.tencent.com/document/product/1047/34557) API is called to delete a conversation, the conversation deletion event will be triggered.
+>- Conversation events include:
+>- Conversation creation
+>- Conversation deletion
+>- Conversation update
+>- Any operation that generates a new conversation will trigger the conversation creation event, such as calling the [TIMConvCreate](https://intl.cloud.tencent.com/document/product/1047/34557) API to create a conversation or receiving the first message in an unknown conversation. Any operation that changes an existing conversation will trigger the conversation update event, such as receiving a new conversation message, recalling a message, and reporting that a message has been read. When the [TIMConvDelete](https://intl.cloud.tencent.com/document/product/1047/34557) API is called to delete a conversation, the conversation deletion event will be triggered.
 
 
 ## TIMConvTotalUnreadMessageCountChangedCallback
@@ -201,10 +201,10 @@ TIM_DECL void TIMSetNetworkStatusListenerCallback(TIMNetworkStatusListenerCallba
 | user_data | const void\* | User-defined data. The IM SDK only transfers the user data to the callback function `cb` without processing the data. |
 
 >?
-- When the [TIMInit](https://intl.cloud.tencent.com/document/product/1047/34388) API is called, the IM SDK will connect to the Tencent Cloud backend. The callback function set by this API monitors the network connection status.
-- Network connection states include connecting, connection failed, connection successful, and connected. The network event does not indicate the user's local network status but only indicates whether the IM SDK is connected to the IM cloud server.
-- This callback function is optional. To allow users to detect whether the IM SDK is connected to the server, set this callback function. It notifies the caller whether the IM SDK is connected to or disconnected from the communication backend. If the network connection is interrupted, the IM SDK will reconnect to the network after the network recovers and automatically fetch messages to notify the caller. The caller does not need to be concerned about the network status. This callback function is for notification purposes only.
-- If a user has logged in, the IM SDK will reconnect to the network after the network recovers. The user does not need to be concerned about the network status.
+>- When the [TIMInit](https://intl.cloud.tencent.com/document/product/1047/34388) API is called, the IM SDK will connect to the Tencent Cloud backend. The callback function set by this API monitors the network connection status.
+>- Network connection states include connecting, connection failed, connection successful, and connected. The network event does not indicate the user's local network status but only indicates whether the IM SDK is connected to the IM cloud server.
+>- This callback function is optional. To allow users to detect whether the IM SDK is connected to the server, set this callback function. It notifies the caller whether the IM SDK is connected to or disconnected from the communication backend. If the network connection is interrupted, the IM SDK will reconnect to the network after the network recovers and automatically fetch messages to notify the caller. The caller does not need to be concerned about the network status. This callback function is for notification purposes only.
+>- If a user has logged in, the IM SDK will reconnect to the network after the network recovers. The user does not need to be concerned about the network status.
 
 
 ## TIMSetKickedOfflineCallback
@@ -225,11 +225,11 @@ TIM_DECL void TIMSetKickedOfflineCallback(TIMKickedOfflineCallback cb, const voi
 | user_data | const void\* | User-defined data. The IM SDK only transfers the user data to the callback function `cb` without processing the data. |
 
 >?
-- If a user has logged in on another terminal, the user will be kicked offline and receive a kicked offline notification. The common way to handle this is to inform the user to log out or kick the account on the other terminal offline.
-- If a user in the offline state is kicked offline, the user's next login will fail. A strong alert (login error code ERR_IMSDK_KICKED_BY_OTHERS: 6208) can be sent to the user. The user can also ignore this error and log in again.
-- Being kicked offline in online state:
+>- If a user has logged in on another terminal, the user will be kicked offline and receive a kicked offline notification. The common way to handle this is to inform the user to log out or kick the account on the other terminal offline.
+>- If a user in the offline state is kicked offline, the user's next login will fail. A strong alert (login error code ERR_IMSDK_KICKED_BY_OTHERS: 6208) can be sent to the user. The user can also ignore this error and log in again.
+>- Being kicked offline in online state:
 A user logs in on device 1, stays online, and then logs in on device 2. At this time, the user will be kicked offline on device 1 and receive `TIMKickedOfflineCallback`. After the user receives the callback on device 1, the system prompts that the user can call login to log in on device 1 and kick device 2 offline.
-- Being kicked offline in offline state:
+>- Being kicked offline in offline state:
 A user logs in on device 1 and exits the process without logging out on device 1. The user then logs in on device 2. As the user is offline on device 1, the user cannot detect this event. To explicitly notify the user of the event, the system will return the error code `ERR_IMSDK_KICKED_BY_OTHERS: 6208` when the user logs in on device 1 again. This error code indicates that the user was kicked offline the last time and allows the user to determine whether to go offline on the other device. If yes, the user can call login again to log in forcibly, and the instance online on device 2 will receive `TIMKickedOfflineCallback`.
 
 
@@ -443,9 +443,9 @@ TIM_DECL void TIMSetMsgUpdateCallback(TIMMsgUpdateCallback cb, const void* user_
 | user_data | const void\* | User-defined data. The IM SDK only transfers the user data to the callback function `cb` without processing the data. |
 
 >?
-- If a message that you send is modified on the server end, the IM SDK will notify you using this callback function.
-- You can intercept all IM messages on your server. For more information, see [Invoke a Callback Before Sending One-to-One Messages](https://intl.cloud.tencent.com/document/product/1047/34364).
-- After this callback function is set, the IM server will notify your business server of each message sent by your users.
-- Your business server can modify the messages (for example, filter sensitive words). If your server modifies a message, the IM SDK will notify you using this callback function.
+>- If a message that you send is modified on the server end, the IM SDK will notify you using this callback function.
+>- You can intercept all IM messages on your server. For more information, see [Invoke a Callback Before Sending One-to-One Messages](https://intl.cloud.tencent.com/document/product/1047/34364).
+>- After this callback function is set, the IM server will notify your business server of each message sent by your users.
+>- Your business server can modify the messages (for example, filter sensitive words). If your server modifies a message, the IM SDK will notify you using this callback function.
 
 

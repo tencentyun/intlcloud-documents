@@ -14,7 +14,7 @@ Notes on private network communication:
 
 
 ## Region List
-TcaplusDB divides instances only by region and has the following regions:
+TcaplusDB divides instances only by region and is available in the following regions:
 
 ### China
 | Region | Identifier | 

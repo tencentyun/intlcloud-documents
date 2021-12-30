@@ -158,11 +158,11 @@ TIM_DECL void TIMSetConvEventCallback(TIMConvEventCallback cb, const void* user_
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 >?
-- 会话事件包括：
- - 会话新增。
- - 会话删除。
- - 会话更新。
-- 任何产生一个新会话的操作都会触发会话新增事件，例如调用接口 [TIMConvCreate](https://intl.cloud.tencent.com/document/product/1047/34557) 创建会话，接收到未知会话的第一条消息等。任何已有会话变化的操作都会触发会话更新事件，例如收到会话新消息，消息撤回，已读上报等。调用接口 [TIMConvDelete](https://intl.cloud.tencent.com/document/product/1047/34557) 删除会话成功时会触发会话删除事件。
+>- 会话事件包括：
+>- 会话新增。
+>- 会话删除。
+>- 会话更新。
+>- 任何产生一个新会话的操作都会触发会话新增事件，例如调用接口 [TIMConvCreate](https://intl.cloud.tencent.com/document/product/1047/34557) 创建会话，接收到未知会话的第一条消息等。任何已有会话变化的操作都会触发会话更新事件，例如收到会话新消息，消息撤回，已读上报等。调用接口 [TIMConvDelete](https://intl.cloud.tencent.com/document/product/1047/34557) 删除会话成功时会触发会话删除事件。
 
 
 ## TIMConvTotalUnreadMessageCountChangedCallback
@@ -201,10 +201,10 @@ TIM_DECL void TIMSetNetworkStatusListenerCallback(TIMNetworkStatusListenerCallba
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 >?
-- 当调用接口 [TIMInit](https://intl.cloud.tencent.com/document/product/1047/34388) 时，IM SDK 会去连接云后台。此接口设置的回调用于监听网络连接的状态。
-- 网络连接状态包含四个：正在连接、连接失败、连接成功、已连接。这里的网络事件不表示用户本地网络状态，仅指明 IM SDK 是否与即时通信 IM 云 Server 连接状态。
-- 可选设置，如果要用户感知是否已经连接服务器，需要设置此回调，用于通知调用者跟通讯后台链接的连接和断开事件，另外，如果断开网络，等网络恢复后会自动重连，自动拉取消息通知用户，用户无需关心网络状态，仅作通知之用。
-- 只要用户处于登录状态，IM SDK 内部会进行断网重连，用户无需关心。
+>- 当调用接口 [TIMInit](https://intl.cloud.tencent.com/document/product/1047/34388) 时，IM SDK 会去连接云后台。此接口设置的回调用于监听网络连接的状态。
+>- 网络连接状态包含四个：正在连接、连接失败、连接成功、已连接。这里的网络事件不表示用户本地网络状态，仅指明 IM SDK 是否与即时通信 IM 云 Server 连接状态。
+>- 可选设置，如果要用户感知是否已经连接服务器，需要设置此回调，用于通知调用者跟通讯后台链接的连接和断开事件，另外，如果断开网络，等网络恢复后会自动重连，自动拉取消息通知用户，用户无需关心网络状态，仅作通知之用。
+>- 只要用户处于登录状态，IM SDK 内部会进行断网重连，用户无需关心。
 
 
 ## TIMSetKickedOfflineCallback
@@ -225,11 +225,11 @@ TIM_DECL void TIMSetKickedOfflineCallback(TIMKickedOfflineCallback cb, const voi
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 >?
-- 用户如果在其他终端登录，会被踢下线，这时会收到用户被踢下线的通知，出现这种情况常规的做法是提示用户进行操作（退出，或者再次把对方踢下线）。
-- 用户如果在离线状态下被踢，下次登录将会失败，可以给用户一个非常强的提醒（登录错误码 ERR_IMSDK_KICKED_BY_OTHERS：6208），开发者也可以选择忽略这次错误，再次登录即可。
-- 用户在线情况下的互踢情况：
+>- 用户如果在其他终端登录，会被踢下线，这时会收到用户被踢下线的通知，出现这种情况常规的做法是提示用户进行操作（退出，或者再次把对方踢下线）。
+>- 用户如果在离线状态下被踢，下次登录将会失败，可以给用户一个非常强的提醒（登录错误码 ERR_IMSDK_KICKED_BY_OTHERS：6208），开发者也可以选择忽略这次错误，再次登录即可。
+>- 用户在线情况下的互踢情况：
 用户在设备1登录，保持在线状态下，该用户又在设备2登录，这时用户会在设备1上强制下线，收到`TIMKickedOfflineCallback`回调。用户在设备1上收到回调后，提示用户，可继续调用 login 上线，强制设备2下线。这里是在线情况下互踢过程。
-- 用户离线状态互踢：
+>- 用户离线状态互踢：
 用户在设备1登录，没有进行 logout 情况下进程退出。该用户在设备2登录，此时由于用户不在线，无法感知此事件，为了显式提醒用户，避免无感知的互踢，用户在设备1重新登录时，会返回（ERR_IMSDK_KICKED_BY_OTHERS：6208）错误码，表明之前被踢，是否需要把对方踢下线。如果需要，则再次调用 login 强制上线，设备2的登录的实例将会收到`TIMKickedOfflineCallback`回调。
 
 
@@ -443,9 +443,9 @@ TIM_DECL void TIMSetMsgUpdateCallback(TIMMsgUpdateCallback cb, const void* user_
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 >?
-- 当您发送的消息在服务端被修改后，IM SDK 会通过该回调通知给您。
-- 您可以在您自己的服务器上拦截所有即时通信 IM 消息 [发单聊消息之前回调](https://intl.cloud.tencent.com/document/product/1047/34364)。
-- 设置成功之后，即时通信 IM 服务器会将您的用户发送的每条消息都同步地通知给您的业务服务器。
-- 您的业务服务器可以对该条消息进行修改（例如过滤敏感词），如果您的服务器对消息进行了修改，IM SDK 就会通过此回调通知您。
+>- 当您发送的消息在服务端被修改后，IM SDK 会通过该回调通知给您。
+>- 您可以在您自己的服务器上拦截所有即时通信 IM 消息 [发单聊消息之前回调](https://intl.cloud.tencent.com/document/product/1047/34364)。
+>- 设置成功之后，即时通信 IM 服务器会将您的用户发送的每条消息都同步地通知给您的业务服务器。
+>- 您的业务服务器可以对该条消息进行修改（例如过滤敏感词），如果您的服务器对消息进行了修改，IM SDK 就会通过此回调通知您。
 
 

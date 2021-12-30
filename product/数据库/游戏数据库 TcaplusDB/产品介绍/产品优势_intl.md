@@ -20,4 +20,4 @@ The service inherits the development technologies of the PC platform and benefit
 With a convenient resource application mode, there will no longer be any need to manually deploy the storage service environment.
 
 ### Optimization of resource utilization to improve operational efficiency
-Alarm and other basic systems are integrated to provide process-level monitoring capabilities. Service APIs provide easy access to server capacity expansion, load balancer, and disaster recovery.
+Alarm and other basic systems are integrated to provide process-level monitoring capabilities. Service APIs provide easy access to server capacity expansion, load balancing, and disaster recovery.
