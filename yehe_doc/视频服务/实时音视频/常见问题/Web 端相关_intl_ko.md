@@ -79,7 +79,7 @@ Web 페이지에서 데이터 획득 여부를 확인합니다. 데이터 송수
 사용자 정의 수집에 브라우저의 기본 [getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia) API를 사용하는 경우 3A 매개변수를 수동으로 설정해야 합니다.
 - echoCancellation: 에코 제거 스위치
 - noiseSuppression: 소음 억제 스위치
-- autoGainControl: 자동 게인 제어. 자세한 내용은 [미디어 추적 제한](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaTrackConstraints)을 참고하십시오.
+- autoGainControl: 자동 게인 제어. 
 
 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream) 인터페이스로 수집하는 경우 3A 매개변수를 수동으로 설정할 필요 없이 SDK가 기본적으로 3A를 활성화합니다.
 
