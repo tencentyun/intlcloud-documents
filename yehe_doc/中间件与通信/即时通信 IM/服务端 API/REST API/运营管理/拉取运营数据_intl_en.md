@@ -149,12 +149,15 @@ The following table describes the error codes specific to this API.
 | SendMsgUserNum | Number of sending users |
 | APNSMsgNum | Number of pushed APN messages |
 | C2CUpMsgNum | Number of upstream messages (C2C) |
+| C2CDownMsgNum|Number of downstream messages (C2C)|
 | C2CSendMsgUserNum | Number of sending users (C2C) |
 | C2CAPNSMsgNum | Number of pushed APN messages (C2C) |
 | MaxOnlineNum | Maximum number of online users |
+| DownMsgNum| Total number of downstream messages (C2C and group)|
 | ChainIncrease | Increase in relationship chain pairs |
 | ChainDecrease | Decrease in relationship chain pairs |
 | GroupUpMsgNum | Number of upstream messages (group) |
+| GroupDownMsgNum| Number of downstream messages (group) |
 | GroupSendMsgUserNum | Number of sending users (group) |
 | GroupAPNSMsgNum | Number of pushed APN messages (group) |
 | GroupSendMsgGroupNum | Number of sending groups |
