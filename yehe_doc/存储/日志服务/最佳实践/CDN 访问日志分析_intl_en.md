@@ -218,7 +218,7 @@ http_code < 400 | select url ,count(*) as  "Access count", round(sum(rsp_size)/1
 
 - Analyzing access PVs and UVs (access count within a certain period of time and independent client IP change trend)
 ```sql
-* | select date_trunc('minute', __TIMESTAMP__) as time, count(*) as pv,count( distinct client_ip) as uv group by time order by time limit 1000 
+* | select time_series(__TIMESTAMP__, '1m', '%Y-%m-%dT%H:%i:%s+08:00', '0') as time, count(*) as pv,approx_distinct(client_ip) as uv group by time order by time limit 1000
 ```
 
 
