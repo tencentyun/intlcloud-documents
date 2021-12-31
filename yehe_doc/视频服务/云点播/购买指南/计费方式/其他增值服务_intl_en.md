@@ -53,7 +53,6 @@ Service fee = 100 x 0.0572 + 100 x 0.0572 = 11.4 USD**
 The billing mode for AI-based video auditing is postpaid. The billing unit is USD/min and this service is billed based on service types and corresponding video durations.
 Billing rules:
 
-Payment method: postpaid.
 - Payment method: Pay-as-you-go
 - A duration of less than 1 minute in the source video is counted as 1 minute.
 
