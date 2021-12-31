@@ -24,7 +24,7 @@
 ```objective-c
 + (void)startGetAuthConfigData:(HuiYanOsConfig *)huiYanOsConfig
               withSuccCallback:(HuiYanConfigSuccCallback)huiYanConfigSuccCallback
-              withFialCallback:(HuiYanConfigFailCallback)huiYanConfigFailCallback;
+              withFailCallback:(HuiYanConfigFailCallback)huiYanConfigFailCallback;
 ```
 
 功能介绍：
@@ -44,7 +44,7 @@
 ```objective-c
 + (void)startAuthByLightData:(NSString *)reflectSequence
          withSuccCallback:(HuiYanResultSuccCallback)huiYanResultSuccCallback
-         withFialCallback:(HuiYanResultFailCallback)huiYanResultFailCallback;
+         withFailCallback:(HuiYanResultFailCallback)huiYanResultFailCallback;
 ```
 
 功能介绍：
