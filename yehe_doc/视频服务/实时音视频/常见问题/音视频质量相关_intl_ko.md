@@ -108,7 +108,7 @@ setSystemVolumeType 인터페이스를 통해 통화 음량 및 미디어 음량
 통화 수/발신자의 디바이스가 너무 가까이 있는 경우는 정상적인 현상이므로 더 멀리 떨어져서 테스트하시기 바랍니다. 다른 단말에서 Web 오디오에 에코, 소음, 잡음 등이 들리는 경우 Web의 3A 처리가 적용되지 않은 것을 의미합니다. 사용자 정의 수집에 브라우저의 기본 [getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia) API를 사용하는 경우 3A 매개변수를 수동으로 설정해야 합니다.
 - echoCancellation: 에코 제거 스위치.
 - noiseSuppression: 소음 억제 스위치.
-- autoGainControl: 자동 게인 제어. 자세한 내용은 [미디어 추적 제한](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaTrackConstraints)을 참고하십시오.
+- autoGainControl: 자동 게인 제어. 
 
 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream) 인터페이스로 수집하는 경우 3A 매개변수를 수동으로 설정할 필요 없이 SDK가 기본적으로 3A를 활성화합니다.
 
