@@ -17,7 +17,7 @@
 
 Integration sequence diagram
 
-![img](https://faceid-h5-1254418846.cos.ap-guangzhou.myqcloud.com/images/reflect-seq-chart.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/a554aedf1bf02f57165a24eae09acf1b.png)
 
 ##### Compatibility description
 
