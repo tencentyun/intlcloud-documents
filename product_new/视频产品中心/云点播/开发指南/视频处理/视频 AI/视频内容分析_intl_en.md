@@ -4,7 +4,7 @@ Video content analysis includes the following features:
 
 | Feature Name | Description |
 | -- | -- |
-| Intelligent categorization | Gives suggestions on the category to which a video belongs. There are currently over ten categories, such as: <br/>news, entertainment, games, military, technology, food, sports, travel, animation, dance, music, television, and automobile. |
+| Intelligent categorization | Gives suggestions on the category to which a video belongs. There are currently over ten categories, such as: <br/>news, entertainment, games, technology, food, sports, travel, animation, dance, music, television, and automobile. |
 | Intelligent tagging | Gives suggestions on the tags that can be added to a video. There are currently over 3,000 tags, such as: <br/>game, vehicle, musician, racing car, pet, drum, bike, World of Warcraft, computer, school, and jacket. <br/> |
 | Intelligent cover generating | Captures one or more screenshots of a video as the recommended cover. |
 | Intelligent frame-specific tagging | Gives suggestions on frame-specific tags that can be added to a video. There are currently over 1,000 tags, such as: <br/>contemporary dance, water sports, steak, baby, kitten, annual plant, destroyer, comics, lawn, wedding dress, function room, and passport. |
