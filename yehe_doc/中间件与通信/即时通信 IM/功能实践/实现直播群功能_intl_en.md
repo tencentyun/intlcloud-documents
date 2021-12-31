@@ -1,6 +1,5 @@
 IM livestreaming groups (AVChatRooms) have the following features:
 - **Support interactive livestreaming scenarios with unlimited group members.**
-- **Support content filtering to identify harmful content related to pornography, politics, and sensitive words to meet regulatory requirements.**
 - Support pushing messages (group system notifications) to all online members.
 - Allow users to receive messages as guests without logging in using the web client or WeChat Mini Program.
 - Allow users to join a group without admin approval.
