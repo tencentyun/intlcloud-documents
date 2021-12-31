@@ -108,7 +108,7 @@ setSystemVolumeTypeインターフェースで、通話ボリュームとメデ�
 通話双方のデバイス間の距離が近すぎる場合に発生する正常な現象です。テストの際に距離を少し離してみてください。他の端末でWeb端末の音声のエコー、ノイズ、雑音などが聞こえる場合、Web端末の3A処理が有効になっていないことを意味します。ブラウザネイティブの[getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia)APIを使用してユーザー定義キャプチャを行っている場合は、3Aパラメータを手動で設定する必要があります。
 - echoCancellation：エコー除去スイッチ
 - noiseSuppression：ノイズ抑制スイッチ
-- autoGainControl：自動ゲインスイッチ。詳細な設定については、[メディアトラック制約](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaTrackConstraints)をご参照ください。
+- autoGainControl：自動ゲインスイッチ
 
 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream)インターフェースを使用してキャプチャを行う場合は、3Aパラメータを手動で設定する必要はありません。SDKでは3Aがデフォルトでオンになっています。
 
