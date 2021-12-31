@@ -57,8 +57,7 @@ Payment method: postpaid.
 - A duration of less than 1 minute in the source video is counted as 1 minute.
 
 #### Pricing
-AI-based video auditing feature intelligently reviews images, audios, and texts in videos to detect pornography, terrorism, and politically sensitive information and outputs auditing results according to user requirements.
-
+AI-based video auditing feature intelligently reviews images, audios, and texts in videos to detect inappropirate content and outputs audit results as requested.
 The billing details are as follows:
 
 |Billable Items|Billing Mode|Unit Price (USD/min)|
