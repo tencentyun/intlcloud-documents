@@ -6,12 +6,11 @@ Tencent Cloud Face Recognition API calls are billed by the number of calls. Call
 | Monthly API Calls	|0 < Calls ≤ 3 million 	|3 million < Calls ≤ 15 million	| Calls > 15 million |
 |------|------|-------|-------|
 | Face detection and analysis 	|0.0005 USD/call	|0.0004 USD/call	|0.0003 USD/call|
-| Facial feature localization	|0.0005 USD/call	|0.0004 USD/call |	0.0003 USD/call |
+| Facial feature localization	|0.0008 USD/call	|0.0006 USD/call |	0.0004 USD/call |
 | Face comparison |	0.0008 USD/call	|0.0006 USD/call |	0.0004 USD/call |
 | Face verification 	|0.0008 USD/call 	|0.0006 USD/call |	0.0004 USD/call |
 | Face search |	0.0008 USD/call 	|0.0006 USD/call |	0.0004 USD/call |
 | Group management 	|0.0008 USD/call |	0.0006 USD/call |	0.0004 USD/call |
-| Image-based liveness detection	|0.0008 USD/call	|0.0006 USD/call	|0.0004 USD/call|
 
 
 >!

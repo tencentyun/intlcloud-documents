@@ -91,7 +91,7 @@ Use the IP function provided by CLS to convert client IPs to the corresponding p
 
 The `http_host` field records request domain names. By calculating the PV and UV of request domain names, you can sort out top hosts.
 ```
-* | select http_host, count(*) as pv, count(distinct(remote_addr)) as uv group by http_host order by pv desc limit 100
+* | select http_host, count(*) as pv, approx_distinct(remote_addr) as uv group by http_host order by pv desc limit 100
 ```
 
 

@@ -79,7 +79,7 @@ Web画面上でデータを取得できているかどうかを確認します�
 ブラウザネイティブの[getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia)APIを使用してユーザー定義キャプチャを行っている場合は、3Aパラメータを手動で設定する必要があります。
 - echoCancellation：エコー除去スイッチ
 - noiseSuppression：ノイズ抑制スイッチ
-- autoGainControl：自動ゲインスイッチ。詳細な設定については、[メディアトラック制約](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaTrackConstraints)をご参照ください。
+- autoGainControl：自動ゲインスイッチ。
 
 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream)インターフェースを使用してキャプチャを行う場合は、3Aパラメータを手動で設定する必要はありません。SDKでは3Aがデフォルトでオンになっています。
 

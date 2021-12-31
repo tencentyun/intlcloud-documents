@@ -20,11 +20,11 @@ When configuring custom alarm content, you can insert system variables. The syst
 | {{.Query}}                | Alarm execution statement                     | code:200 \| select count(\*) as success_counts           |
 | {{.HappenThreshold}}      | Number of times the alarm trigger condition is continuously met    | 1                                                       |
 | {{.AlertThreshold}}       | Alarm interval (minutes)             | 15                                                      |
-| {{.FireTime}}             | Time when the alarm is triggered for the first time (UNIX timestamp) | 1632281991143                                           |
+| {{.StartTime}}           | Time when the alarm is triggered for the first time      | 2021-09-22 11:40:51                                                    |
 | {{.NotifyTime}}           | Notification time                         | 2021-09-22 11:40:51                                     |
 | {{.ConsecutiveAlertNums}} | Number of consecutive alarms                     | 2                                                       |
 | {{.Duration}}             | Alarm duration (minutes)             | 0                                                       |
-| {{.TriggerParams}}        | Alarm trigger parameters                   | [{"\_\_obj_no":1,"success_counts":5}]                     |
+| {{.TriggerParams}}        | Alarm trigger parameters                   | $1.success_counts=5;                    |
 | {{.DetailUrl}}            | Alarm details page link (login-free)       | https://alarm.cls.tencentcs.com/CJNmxxxx                |
 | {{.QueryUrl}}             | Search and analysis link for the first execution statement     | https://alarm.cls.tencentcs.com/Olw8xxxx                |
 | {{.AlertHistoryUrl}}      | Link for alarm history query             | https://console.cloud.tencent.com/cls/alarm/history?xxx |
