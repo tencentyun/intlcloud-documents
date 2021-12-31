@@ -54,6 +54,7 @@ The billing mode for AI-based video auditing is postpaid. The billing unit is US
 Billing rules:
 
 Payment method: postpaid.
+- Payment method: Pay-as-you-go
 - A duration of less than 1 minute in the source video is counted as 1 minute.
 
 #### Pricing
