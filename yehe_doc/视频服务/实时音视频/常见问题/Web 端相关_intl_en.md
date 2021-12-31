@@ -70,7 +70,7 @@ These issues are common if the call participants are close to each other. Please
 If you use the browser’s built-in API [getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia) for custom capturing, you need to enable 3A manually using the parameters below:
 - `echoCancellation`: echo cancellation
 - `noiseSuppression`: noise suppression
-- `autoGainControl`: automatic gain control. For detailed directions, please see [MediaTrackConstraints](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaTrackConstraints).
+- `autoGainControl`: automatic gain control. 
 
 If you use the [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream) API for capturing, you don’t need to set the 3A parameters manually. The TRTC SDK enables 3A by default.
 
