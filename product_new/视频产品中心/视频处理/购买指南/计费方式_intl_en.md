@@ -78,7 +78,7 @@ __Billing formula__: Intelligent content recognition fees = source video length 
 
 
 #### Video audit
-The audiovisual AI-based video audit feature of MPS intelligently audits images, speeches, and texts in videos to detect pornography, terrorism, and politically sensitive information and outputs audit results as requested. This feature is billed based on the used service and source video length in USD/minute.
+The audiovisual AI-based video audit feature of MPS intelligently audits images, speeches, and texts in videos to detect inappropirate content and outputs audit results as requested. This feature is billed based on the used service and source video length in USD/minute.
 
 The billing description is as shown below:
 - Billing mode: Pay-as-you-go.

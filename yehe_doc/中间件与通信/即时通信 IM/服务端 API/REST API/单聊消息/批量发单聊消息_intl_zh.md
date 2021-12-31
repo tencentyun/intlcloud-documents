@@ -5,6 +5,7 @@
 - 管理员指定某一帐号向目标帐号批量发消息，接收方看到发送者不是管理员，而是管理员指定的帐号。
 - 该接口不触发回调请求。
 - 该接口不会检查发送者和接收者的好友关系（包括黑名单），同时不会检查接收者是否被禁言。
+- 该接口默认不会检查接收者对发送者是否设置了免打扰，如需检查，请在"SendMsgControl"字段填上"WithMuteNotifications"。
 - 单聊消息 MsgSeq 字段的作用及说明：该字段在发送消息时由用户自行指定，该值可以重复，非后台生成，非全局唯一。与群聊消息的 MsgSeq 字段不同，群聊消息的 MsgSeq 由后台生成，每个群都维护一个 MsgSeq，从1开始严格递增。单聊消息历史记录对同一个会话的消息先以时间戳排序，同秒内的消息再以 MsgSeq 排序。
 
 >!当使用服务端集成 REST API 发送批量消息时，存在是否将消息同步至发送方（管理员帐号或者由管理员指定的某帐号）问题，同步方式包括在线终端和漫游，REST API 提供 SyncOtherMachine 参数用于说明是否进行同步，详细使用方式参见下文请求包示例。
@@ -29,6 +30,7 @@ https://xxxxxx/v4/openim/batchsendmsg?sdkappid=88888888&identifier=admin&usersig
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
+| contenttype | 请求格式固定值为`json` |
 
 ### 最高调用频率
 

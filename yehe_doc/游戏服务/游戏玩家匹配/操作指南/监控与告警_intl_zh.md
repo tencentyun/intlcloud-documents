@@ -35,7 +35,7 @@ GPM 的指标数据将被上报到您的**云监控（Cloud Monitor，CM）**服
 
 通过**[Dashboard列表](https://console.cloud.tencent.com/monitor/dashboard2/dashboards)**菜单，进入您创建完成的**Dashboard**所在的目录。
 - 您可通过单击“Dashboard 名称”右侧的**设置**更改 Dashboard 名称。
-  ![](https://main.qcloudimg.com/raw/1f8a06e485817aad0e27e49a70511ed4.png)您可通过单击“Dashboard 名称”，即可看到当前 Dashboard 下已配置的所有图表。当您追踪的 MatchCode 有请求记录后，图表即可呈现相应数据。
+  ![](https://main.qcloudimg.com/raw/1f8a06e485817aad0e27e49a70511ed4.png)您可通过单击“Dashboard 名称”，即可看到当前 Dashboard 下已配置的所有图表。当您跟进的 MatchCode 有请求记录后，图表即可呈现相应数据。
   ![](https://main.qcloudimg.com/raw/0cdc66c6f5e22468d91ed6477226e0f8.png)
 
 
