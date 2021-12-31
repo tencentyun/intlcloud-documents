@@ -48,30 +48,115 @@
 
 
 ## Advanced Features
-
-| Feature           | Description                                                     | Common Use Cases                                                 | Billing                                                     |
-| -------------- | ------------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------ |
-| Co-anchoring |Audience-anchor interaction via co-anchoring; smooth mic on/off without waiting | Interactive live streaming, online classrooms, chat rooms, etc.| You will be charged [basic service fees](https://intl.cloud.tencent.com/document/product/647/34610) for using this feature.|
-| Cross-room competition |Anchors from different rooms compete with each other while audience watch.| Live show streaming, anchor competition, cross-room teaching, etc.| You will be charged [basic service fees](https://intl.cloud.tencent.com/document/product/647/34610) for using this feature. |
-|Screen sharing|Sharing the desktop, a window (e.g., a PowerPoint playback window), or a desktop section of the local user to others| Online classrooms, slide sharing, remote assistance, etc.| You will be charged [basic service fees](https://intl.cloud.tencent.com/document/product/647/34610) for using this feature. |
-| Sever-side local recording | Server-side recording relies on the SDK for Linux, which is not commercially available yet. If you have questions about the SDK or want to use it, please contact us at colleenyu@tencent.com.             | You will be charged [basic service fees](https://intl.cloud.tencent.com/document/product/647/34610) for using this feature. |
-| On-cloud recording       | TRTC leverages the capabilities of [CSS](https://intl.cloud.tencent.com/document/product/267) and the relayed push technology to offer on-cloud (audio/video) recording throughout a call. Recording files are saved reliably and in real time in [VOD](https://intl.cloud.tencent.com/document/product/266).  | Audiovisual recording, archiving, compliance, etc.                                         | On-cloud recording is a value-added service, for which you will be charged an additional [on-cloud recording](https://intl.cloud.tencent.com/document/product/647/38385) fee. |
-| On-Cloud MixTranscoding    |The MCU cluster is used to mix and transcode the upstream audio and video in a room into a single stream as needed. The mixed stream can be relayed to CSS for on-cloud recording or CDN playback.   | Stream mixing, recording format conversion, etc.  |On-Cloud MixTranscoding is a value-added service, for which you will be charged an [On-Cloud MixTranscoding fee](https://intl.cloud.tencent.com/document/product/647/38929). |
-| High audio quality |<li>High audio quality at 48 kHz sample rate</li><li>Stereo with left and right sound channels, comparable in audio quality to CDs</li>| Audio calls, video calls, interactive live streaming, audio chat rooms, high-quality FM radio, music classes, karaoke rooms, online classrooms, etc. | Free |
-| High image quality | 720p and 1080p HD videos | Video calls, interactive live streaming, online classrooms, etc. | Free |
-| 3A processing | TRTC uses the industry-leading Tencent Real-time Audio Engine (TRAE) for acoustic echo cancellation (AEC), active noise suppression (ANS), and automatic gain control (AGC) to deliver better audio quality when multiple people speak at the same time or in the presence of background noises. | All audio scenarios | Free |
-| Basic beauty filters | Basic beauty filters such as skin brightening, skin smoothing, and rosy skin | Video calls, interactive live streaming, online classrooms, etc. | Free |
-| Background music | Using local music files in the formats of MP3, AAC, WAV, and others as background music | Audio calls, video calls, interactive live streaming, online classrooms, audio chat rooms, karaoke rooms, FM radio, etc. | Free |
-| Audio effects | Adding audio effects such as applauding, cheering, whistling, and booing during a call | Audio calls, video calls, interactive live streaming, audio chat rooms, karaoke rooms, FM radio, etc. | Free |
-| Local background audio| Sending audio played locally, for example, the music played via QQ Music on the local user’s computer, to others | Interactive live streaming, online classrooms, audio chat rooms, FM radio, etc. | Free |
-| Voice changing | Voice effects such as little girl, middle-aged man, and heavy metal | Audio calls, video calls, interactive live streaming, audio chat rooms, karaoke rooms, FM radio, etc. | Free |
-| Reverb | Reverb effects such as karaoke room, small room, concert hall, and bathroom | Audio calls, video calls, interactive live streaming, audio chat rooms, karaoke rooms, FM radio, etc. | Free |
-| Volume callback | Showing volume in waveform animations or via prompts | Audio calls, video calls, audio chat rooms, FM radio, karaoke rooms, voice activity detection, etc. | Free |
-| In-ear monitoring | Recording local audio and playing it back in the local user’s earphone, usually for detection of speech errors or pitch control during singing | Interactive live streaming, live show streaming, karaoke rooms, etc. | Free |
-| Custom audio data | Calling back raw audio for custom processing. You can connect the SDK to non-standard external devices or use audio files, etc. | Non-standard device connection, custom audio effect, speech processing, speech recognition, etc. | Free |
-| Custom video data | Custom video sources and renderers. Non-camera video sources such as video files, external devices, and third-party custom data sources can be used. | Custom beauty filters, custom data sources, multi-device management, video recognition, image processing, etc. | Free |
-| SEI | Embedding custom information such as lyrics and quizzes as SEI frames into video streams | Karaoke rooms, live quizzes, interactive live streaming, etc. | Free |
-
+<table>
+<tr><th width=15%>Feature</th><th width=40%>Description</th><th width=25%>Common Use Cases</th><th width=25%>Billing</th></tr>
+<tr>
+<td>Co-anchoring</td>
+<td>Audience can mic on and off smoothly as needed without waiting.</td>
+<td>Interactive live streaming, online class, chat room, etc.</td>
+<td>You will be charged <a href="https://intl.cloud.tencent.com/document/product/647/34610">basic service fees</a> for using the co-anchoring feature.</td>
+</tr><tr>
+<td>Cross-room competition</td>
+<td>Anchors from different rooms can compete with each other while audience watch.</td>
+<td>Showroom, competition, cross-room class, etc.</td>
+<td>You will be charged <a href="https://intl.cloud.tencent.com/document/product/647/34610">basic service fees</a> for using the cross-room competition feature.</td>
+</tr><tr>
+<td>Screen sharing</td>
+<td>Sharing your desktop, a window (e.g., a Microsoft PowerPoint window), or a portion of your desktop</td>
+<td>Online class, slideshow sharing, remote assistance, etc.</td>
+<td>You will be charged <a href="https://intl.cloud.tencent.com/document/product/647/34610">basic service fees</a> for using the screen sharing feature.</td>
+</tr><tr>
+<td>Server-side local recording</td>
+<td>Server-side recording relies on the SDK for Linux, which is not commercially available yet. If you have questions about the SDK or want to use it, please contact us at colleenyu@tencent.com.</td>
+<td>Audiovisual recording, archiving, compliance, etc.</td>
+<td>You will be charged <a href="https://intl.cloud.tencent.com/document/product/647/34610">basic service fees</a> for using the server-side local recording feature.</td>
+</tr><tr>
+<td>On-cloud recording</td>
+<td> TRTC leverages the capabilities of <a href="https://intl.cloud.tencent.com/document/product/267">CSS</a> to allow you to record entire live streaming sessions (audio/video) through relayed push and save the recording files securely and in real time in <a href="https://intl.cloud.tencent.com/document/product/266">VOD</a>.</td>
+<td> Audiovisual recording, archiving, compliance, etc.</td>
+<td>On-cloud recording is a value-added service, for which you will be charged additional <a href="https://intl.cloud.tencent.com/document/product/647/38385">on-cloud recording fees</a>.</td>
+</tr><tr>
+<td>On-Cloud MixTranscoding</td>
+<td>TRTC uses an MCU cluster to mix and transcode the audio and video streams in a room and publishes the mixtranscoded stream to CSS for on-cloud recording or CDN playback.</td>
+<td>Stream mixing, recording format conversion, etc.</td>
+<td>On-Cloud MixTranscoding is a value-added service, for which you will be charged additional <a href="https://intl.cloud.tencent.com/document/product/647/38929">On-Cloud MixTranscoding fees</a>.</td>
+</tr><tr>
+<td>High audio quality</td>
+<td><li>48 kHz sample rate</li><li>Stereo audio with quality comparable to that of CDs</li></td>
+<td>Audio call, video call, interactive live streaming, audio chat room, high-audio-quality FM radio, music class, karaoke, online class, etc.</td>
+<td>Free</td>
+</tr><tr>
+<td>High video quality</td>
+<td>720p/1080p HD video</td>
+<td>Video call, interactive live streaming, online class, etc.</td>
+<td>Free</td>
+</tr><tr>
+<td>3A processing</td>
+<td>Leveraging the industry-leading 3A (acoustic echo cancellation, active noise suppression, automatic gain control) technologies of Tencent Ethereal Audio Lab, TRTC can ensure audio quality even when multiple people speak at the same time or in the presence of background noises.</td>
+<td>All audio scenarios</td>
+<td>Free</td>
+</tr><tr>
+<td>AI-based noise suppression</td>
+<td>Removing inconstant noises that traditional noise suppression technologies cannot handle, such as cough, sneeze, and car horn</td>
+<td>Audio call, video call, interactive live streaming, audio chat room, online class, etc.</td>
+<td><a href="https://intl.cloud.tencent.com/apply/p/9q0qt0bg5l4">Apply for beta testing</a></td>
+</tr><tr>
+<td>Basic beauty filters</td>
+<td>Basic beautification features, including skin brightening, skin smoothing, rosy skin, and basic filters</td>
+<td>Video call, interactive live streaming, online class, etc.</td>
+<td>Free</td>
+</tr><tr>
+<td>Background music</td>
+<td>Using local music files in formats such as MP3, AAC, and WAV as background music</td>
+<td>Audio call, video call, interactive live streaming, online class, audio chat room, karaoke, FM radio, etc.</td>
+<td>Free</td>
+</tr><tr>
+<td>Audio effects</td>
+<td>Audio effects such as applauding, cheering, whistling, and booing</td>
+<td>Audio call, video call, interactive live streaming, audio chat room, karaoke, FM radio</td>
+<td>Free</td>
+</tr><tr>
+<td>Publishing system audio</td>
+<td>Publishing the audio you play locally, for example, the music played by QQ Music on your computer, to remote users</td>
+<td>Interactive live streaming, online class, audio chat room, FM radio, etc.</td>
+<td>Free</td>
+</tr><tr>
+<td>Voice changing</td>
+<td>Voice changing effects such as little girl, middle-aged man, and metal</td>
+<td>Audio call, video call, interactive live streaming, audio chat room, karaoke, FM radio, etc.</td>
+<td>Free</td>
+</tr><tr>
+<td>Reverb</td>
+<td>Reverb effects such as karaoke, small room, hall, and bathroom</td>
+<td>Audio call, video call, interactive live streaming, audio chat room, karaoke, FM radio</td>
+<td>Free</td>
+</tr><tr>
+<td>Volume callback</td>
+<td>Callback of volume, which you can use to generate audio waveforms or volume reminders</td>
+<td>Audio call, video call, audio chat room, FM radio, karaoke, and speech detection, etc.</td>
+<td>Free</td>
+</tr><tr>
+<td>In-ear monitoring</td>
+<td>Recording local audio and playing it back in the local user’s earphones, usually for detection of speech errors or pitch control during singing</td>
+<td>Interactive live streaming, showroom, karaoke, etc.</td>
+<td>Free</td>
+</tr><tr>
+<td>Custom audio data</td>
+<td>Callback of raw audio for custom processing. You can connect the SDK to non-standard external devices or use audio files, etc.</td>
+<td>Non-standard device connection, custom audio effect, speech processing, speech recognition, etc.</td>
+<td>Free</td>
+</tr><tr>
+<td>Custom video data</td>
+<td>Custom video sources and renderers. You can use non-camera video sources such as video files, external devices, and third-party sources.</td>
+<td>Custom beauty filters, custom data sources, multi-device management, video recognition, image processing, etc.</td>
+<td>Free</td>
+</tr><tr>
+<td>SEI message</td>
+<td>Embedding custom information such as lyrics and questions as SEI frames into published video streams</td>
+<td>Karaoke, live quiz, interactive live streaming, etc.</td>
+<td>Free</td>
+</tr>
+</table>
 
 ## Extended Features
 
@@ -80,8 +165,8 @@
 
 | Feature | Description | Common Use Cases | Billing |
 | ------------ | ------------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------------------ |
-| CDN live streaming | TRTC uses relaying and transcoding clusters to convert its UDP audio/video streams into RTMP streams in the cloud, which are then pushed to the standard live streaming system and distributed through CDNs to audience. | Interactive live streaming, live sharing, large-scale conferencing, live stream watching by remote audience, etc. | Relayed live streaming is a value-added service and is charged by **[CSS](https://intl.cloud.tencent.com/document/product/267)**. For more information, please see [CDN Relayed Live Streaming > Billing](https://intl.cloud.tencent.com/document/product/647/35242). |
+| CDN live streaming | TRTC uses relaying and transcoding clusters to convert its UDP audio/video streams into RTMP streams in the cloud, which are then pushed to the standard live streaming system and distributed through CDNs to audience. | Interactive live streaming, live sharing, large-scale conferencing, live stream watching by remote audience, etc. | Relayed live streaming is a value-added service and is charged by [CSS](https://intl.cloud.tencent.com/document/product/267). For more information, please see [CDN Relayed Live Streaming > Billing](https://intl.cloud.tencent.com/document/product/647/35242). |
 | Instant messaging (IM) | <ul style="margin:0"><li>TRTC leverages the capabilities of IM, including one-to-one chat, group chat, and chat rooms with no upper limit on user number, to enable features such as chatting, commenting, and sending on-screen comments, gifts, and likes.</li><li>IM can also be used for signaling-based interaction, call making, and user number counting.</li></ul> | Online customer service, interactive live streaming, interactive classrooms, remote training, etc. | IM is a value-added service and is charged by [IM](https://intl.cloud.tencent.com/document/product/1047). For more information, please see [IM > Purchase Guide > Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).|
 | AI beauty filter| Multiple effects based on face recognition such as AI beauty filters, makeup effects, facial feature adjustment, and green screen keying| Video call, interactive live streaming, live show streaming, etc.| AI beauty filters are a value-added service and are charged by the beauty filter SDK. |
-|Speech content moderation|Detecting pornographic, politically sensitive content, etc. for content-related risk management |Business security protection, compliance, etc.|Speech content moderation is a value-added service and is charged by **Business Security Protection (BSP)**. To try it out, [contact us](https://intl.cloud.tencent.com/contact-us) to activate the service.|
-| Video content moderation| Detecting pornographic, politically sensitive content, etc. for content-related risk management| Business security protection, compliance, etc.| Video content moderation is a value-added service and is charged by [CSS](https://intl.cloud.tencent.com/document/product/267). For more information, please see [Intelligent Porn Detection](https://intl.cloud.tencent.com/document/product/267/39607). |
+|Speech content moderation|Detecting pornographic and other problematic audio content for content-related risk management |Business security protection, compliance, etc.|Speech content moderation is a value-added service and is charged by **Business Security Protection (BSP)**. To try it out, [contact us](https://intl.cloud.tencent.com/contact-us) to activate the service.|
+| Video content moderation| Detecting pornographic and other problematic video content for content-related risk management | Business security protection, compliance, etc.| Video content moderation is a value-added service and is charged by [CSS](https://intl.cloud.tencent.com/document/product/267). For more information, please see [Intelligent Porn Detection](https://intl.cloud.tencent.com/document/product/267/39607). |

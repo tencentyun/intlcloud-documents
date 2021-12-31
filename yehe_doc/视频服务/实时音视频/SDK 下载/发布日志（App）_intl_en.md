@@ -1,3 +1,19 @@
+## Version 9.3 Released on November 3, 2021
+
+**Bug fixing**
+- All platforms: fixed failure to obtain `point2PointDelay` (value is 0).
+- All platforms: fixed occasional parsing failure, which causes SEI messages to be lost.
+- macOS: fixed the issue where the camera does not output frames on macOS 12 beta.
+- iOS & macOS: fixed the issue where no images are displayed when `startRemoteView` is called earlier.
+- Windows: fixed the issue of aliasing when video is encoded in portrait mode and beauty filters are enabled.
+- Windows: fixed the issue where, when third-party beauty filters are used, no callback for custom rendering is returned after resolution change.
+
+**Improvement**
+- All platforms: improved instant streaming performance under poor network conditions.
+- All platforms: optimized the QoS control policy under poor network conditions, ensuring smoother communication.
+- All platforms: improved the speed test to support testing the current bandwidth.
+- All platforms: improved support for TCP for better adaptability to different network environments.
+
 ## Version 9.2 Released on September 23, 2021
 
 **New features**

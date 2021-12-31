@@ -7,6 +7,13 @@ A version number is in the format of `major.minor.patch`, where:
 > - You are advised to update to the latest version in a timely manner for service stability and better online support.
 > - For notes on version updates, please see [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html).
 
+## Version 4.11.8 Released on November 5, 2021
+
+**Improvements**
+
+- Circumvented the black screen issue during video playback on iOS 15.0. For details, see [WebRTC Known Issues and Solutions > Safari for iOS > Case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
+- Circumvented the issue where the SDK crashes whenever streams are published on iOS 15.1. For details, see [WebRTC Known Issues and Solutions > Safari for iOS > Case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4).
+
 ## Version 4.11.7 Released on September 30, 2021
 
 **Improvements**
@@ -343,7 +350,7 @@ Allowed stopping the collection of network quality statistics after room exit.
 - Optimized error messages.
 - Supported automatically resuming push when change of the stream capturing device is detected.
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed failure to publish again immediately after `unpublish` succeeds.
 
@@ -355,7 +362,7 @@ Fixed failure to publish again immediately after `unpublish` succeeds.
 - Optimized the parameter verification logic for the `subscribe` and `unsubscribe` APIs.
 - Added network quality logs.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the “OverconstrainedError” error when access to media devices is not granted and an empty device ID is passed in the `TRTC.createStream` API.
 - Fixed the issue where no log is printed when upstream peer connection is lost.
@@ -372,7 +379,7 @@ Added the `NETWORK_QUALITY` event.
 
 Added the `screenAudio` parameter to the `createStream` API.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the issue where echo cancellation does not work in browsers for Android.
 - Fixed the issue where the RTT value returned by the `getTransportStats` API is `NAN`.
@@ -385,7 +392,7 @@ Supported capturing system audio (on Windows) or audio of the current tab (on ma
   
 ## Version 4.3.14 Released on April 29, 2020
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed the `muted` and `unmute` events for Mini Program.
   
@@ -397,7 +404,7 @@ Optimized the availability check logic.
 
 ## Version 4.3.12 Released on April 13, 2020
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed a potential `RTCPeerConnection` status change exception.
   
@@ -407,7 +414,7 @@ Fixed a potential `RTCPeerConnection` status change exception.
 
 Supported detection of mobile QQ Browser, which does not support TRTC SDK for desktop browsers at the moment.
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed Boolean return types.
 
@@ -437,14 +444,14 @@ Added the `streamId` and `userdefinerecordid` parameters to `createClient`.
 
 Fixed the issue where an exception is throw upon device switch during screen sharing.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the device occupation issue by releasing MediaStream after device switch.
 - Fixed the potential error of the subscription API.
 
 ## Version 4.3.6 Released on February 25, 2020
 
-**Bugs fixed**
+**Bug fixing**
 
 Adjusted the audio/video playback sequence of `Stream.resume()`, and fixed autoplay exceptions in WeChat’s built-in browser on iOS.
 
@@ -460,7 +467,7 @@ Added timeout check for the `publish` API, improving the success rate of signali
  
 Updated `core-js` to version 3.6.1.
   
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the issue where an exception is thrown after `unpublish` times out.
 - Fixed the issue where third-party libraries cause decline in the performance of V8.
@@ -473,7 +480,7 @@ Updated `core-js` to version 3.6.1.
 - Optimized the SDP response mechanism.
 - Optimized the reporting logic.
 
-**Bugs fixed**
+**Bug fixing**
 
 Optimized the TURN URL protocol format.
 
@@ -487,7 +494,7 @@ Optimized the TURN URL protocol format.
 - Optimized ICE error reporting.
 - Added more key events to `avmonitor`.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the 1005 reconnection error of WebSocket signaling channels.
 - Fixed the issue with the reporting of downstream packet loss rate.
@@ -498,7 +505,7 @@ Optimized the TURN URL protocol format.
 
 Supported automatic reconnection when upstream ICE disconnects during calls.
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed the issue where the host ICE candidate of public IP type does not take effect after STUN hole punching fails.
 
@@ -515,7 +522,7 @@ Added the `client.getTransportStats()` API.
 - Extended the connection timeout threshold to 5 seconds.
 - Extended the publishing timeout threshold to 5 seconds.
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed the issue of abnormal SDK judgment due to modification of the prototype chain of `zone.js`.
 
@@ -531,13 +538,13 @@ Added the `client.off()` API, which can be used to unbind client events.
 - Added permission check for `client.publish()`.
 - Added an auto playback error prompt for `stream.play()` and `stream.resume()`.
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed black screen when the camera is switched via `localStream.switchDevice()`.
 
 ## Version 4.1.1 Released on October 24, 2019
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed log loss.
 - Fixed the loss of remote users who reconnect after disconnection.
@@ -549,7 +556,7 @@ Fixed black screen when the camera is switched via `localStream.switchDevice()`.
 - Supported passing object `HTMLDivElement` in the `stream.play()` API.
 - Supported setting audio attributes via `localStream.setAudioProfile()`. Currently, two profiles are supported: standard and high.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the restriction on the number of WebAudio Context on Chrome.
 - Fixed the issue where the local audio/video player is not restarted after `replaceTrack()`.
