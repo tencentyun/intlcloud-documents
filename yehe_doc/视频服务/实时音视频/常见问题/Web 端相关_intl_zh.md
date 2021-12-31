@@ -83,7 +83,7 @@ Web 端支持发起混流，具体请参见 [如何调用混流转码接口](htt
 若您使用了浏览器原生 [getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia) API 进行自定义采集，则需要手动设置 3A 参数：
 - echoCancellation：回声消除开关
 - noiseSuppression：噪声抑制开关
-- autoGainControl：自动增益开关，详细设置请参见 [媒体追踪约束](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaTrackConstraints)。
+- autoGainControl：自动增益开关。
 
 若您使用 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream) 接口进行采集，则无需手动设置 3A 参数，SDK 默认开启 3A。
 
