@@ -31,7 +31,7 @@ select count(1) as pv from log group by status
 ```
 * | select status, count(*) as pv group by status limit 10
 ```
-- Get the results for rows 2 to 42 (41 rows in total):
+- Get the results for rows 3 to 42 (40 rows in total):
 ```
 * | select status, count(*) as pv group by status offset 2 limit 40
 ```
