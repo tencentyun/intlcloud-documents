@@ -133,7 +133,7 @@ config.authTimeOutMs = 20000;
 [HuiYanOsApi startGetAuthConfigData:config withSuccCallback:^(NSString * _Nonnull result) {
   	// 获取配置信息成功, 将配置信息发送给服务器，兑换启动核身配置，服务器下发的光线序列（客户自己实现）
   	NSString *reflectSequence = [self getLiveDataWith:result];
-} withFialCallback:^(int errCode, NSString * _Nonnull errMsg) {
+} withFailCallback:^(int errCode, NSString * _Nonnull errMsg) {
   	// 获取配置参数失败（客户自己实现）
     NSLog(@"errCode:%d, errMsg:%@", errCode, errMsg);
 }];
@@ -143,7 +143,7 @@ config.authTimeOutMs = 20000;
 
 ##### 6.2 完成剩余步骤活体核身
 
-​	当您已经将配置信息从服务器端兑换完成之后，将服务器下发的**reflectSequence**也就是核身的光线序列，通过此接口传入继续完成剩余本地核身功能，大致流程如下：
+	当您已经将配置信息从服务器端兑换完成之后，将服务器下发的**reflectSequence**也就是核身的光线序列，通过此接口传入继续完成剩余本地核身功能，大致流程如下：
 
 1. 调用**startAuthByLightData:**传入**reflectSequence**进入SDK活体检测页面
 
@@ -158,19 +158,19 @@ config.authTimeOutMs = 20000;
 		 	[self checkAuthResultByData:data];
 			// 2. 处理本地核身视频videoPath。（客户自己实现）
 			[self dealWithAuthVideo:videoPath];
-} withFialCallback:^(int errCode, NSString * _Nonnull errMsg) {
+} withFailCallback:^(int errCode, NSString * _Nonnull errMsg) {
   		// 本地核身失败获取，发生错误
       NSLog(@"errCode:%d, errMsg:%@", errCode, errMsg);
 }];
 ```
 
->**tips** ：当getLightData出现异常时，需要退出SDK，则可以调用 [HuiYanOsApi startAuthByLightData:nil withSuccCallback:nil withFialCallback:nil] 方法结束当前SDK会话。在startGetAuthConfigData中FialCallback返回错误回调。
+>**tips** ：当getLightData出现异常时，需要退出SDK，则可以调用 [HuiYanOsApi startAuthByLightData:nil withSuccCallback:nil withFailCallback:nil] 方法结束当前SDK会话。在startGetAuthConfigData中FailCallback返回错误回调。
 
 
 
 ##### 6.3 SDK资源释放
 
-​	在您APP退出使用的时候，可以调用SDK资源释放接口
+	在您APP退出使用的时候，可以调用SDK资源释放接口
 
 ```objective-c
 // 退出时做资源释放
@@ -185,8 +185,7 @@ config.authTimeOutMs = 20000;
 
 1. **errCode:210, errMsg:HuiYanOsConfig param error** ：检查license文件路径是否设置和设置是否正确，是否填加至 **Copy Bundle Resource**
 
-2. **[HuiYanOsApi startAuthByLightData:@"" withSuccCallback:nil withFialCallback:nil];** 返回**errCode:215, errMsg:User voluntarily Stop** 主动停止SDK验证
+2. **[HuiYanOsApi startAuthByLightData:@"" withSuccCallback:nil withFailCallback:nil];** 返回**errCode:215, errMsg:User voluntarily Stop** 主动停止SDK验证
 
 3. **errCode:210, errMsg:lightData is err** lightData光线数据格式错误
 4. Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '\**\* -[__NSDictionaryM setObject:forKey:]: key cannot be nil'  处理方法 **Other Linker Flags 新增 -ObjC**
-
