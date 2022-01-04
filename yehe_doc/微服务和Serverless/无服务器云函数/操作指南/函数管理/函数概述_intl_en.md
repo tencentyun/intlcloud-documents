@@ -22,7 +22,7 @@ A function is the basic unit of management and operation in SCF, which usually c
 ## Relevant Configurations of Function
 
 
-In addition to the above configuration items, you can also modify the following configuration items for function execution by editing the function configuration in the console or [updating function configuration](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806):
+In addition to the above configuration items, you can also modify the following configuration items for function execution by editing the function configuration in the console or [updating function configuration](https://intl.cloud.tencent.com/document/product/583/19806):
 - Memory size: amount of memory available for the function during execution, which ranges from 64 MB to 120 GB in increments of 128 MB and is 128 MB by default. When the memory is greater than or equal to 6 GB, you should submit an application for large resources.
 - CPU computing power: CPU processing power of the function, which is directly proportional to the function memory. You can increase the memory to get more CPU computing power. 1,280 MB memory and 3,072 MB memory correspond to 1 and 2 cores of computing power, respectively. When the memory is greater than or equal to 6 GB, the computing power will be further released as shown below:
 <table>
