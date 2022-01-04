@@ -18,13 +18,13 @@ SCF users are entitled to a certain free tier of resource usage and invocations 
 
 Log in to the [Tencent Cloud console](https://console.cloud.tencent.com/), select **Products** > **Serverless Cloud Function** to enter the SCF console, and follow the prompts to authorize SCF. (If you have already authorized SCF, skip this step.)
 
-<div style="background-color:#00A4FF; width: 150px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/scf/index?rid=1" target="_blank"  style="color: white; font-size:13px;">Click here to authorize TKE</a></div>
+<div style="background-color:#00A4FF; width: 150px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.intl.cloud.tencent.com/scf/index?rid=1" target="_blank"  style="color: white; font-size:13px;">Click here to authorize TKE</a></div>
 
 
 
 ## Step 4. Create a function
 
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/scf/list-create?rid=1&ns=default" target="_blank"  style="color: white; font-size:13px;">Click here to enter the function creation page</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.intl.cloud.tencent.com/scf/list-create?rid=1&ns=default" target="_blank"  style="color: white; font-size:13px;">Click here to enter the function creation page</a></div>
 
 <br>
 
