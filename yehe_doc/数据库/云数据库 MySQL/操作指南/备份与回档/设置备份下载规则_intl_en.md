@@ -86,7 +86,7 @@ The example is as follows:
 Here, `cdb-kfxxh3` is the ID of the TencentDB for MySQL instance resource, i.e., the `resource` in the CAM policy statement.
 
 ### Example
-The following example only shows the usage of CAM. For the complete list of APIs used to set MySQL backup download rules, see the [API documentation](https://cloud.tencent.com/document/api/236/63890).
+The following example only shows the usage of CAM. For the complete list of APIs used to set MySQL backup download rules, see the [API documentation](https://intl.cloud.tencent.com/document/product/236/43327).
 ```
 {
        "version":"2.0",
@@ -107,7 +107,7 @@ The following example only shows the usage of CAM. For the complete list of APIs
 2. In the pop-up dialog box, select **Create by Policy Generator**.
 3. On the **Select Service and Action** page, select configuration items, click **Add Statement**, and click **Next**.
    - Service: select **TencentDB for MySQL**.
-   - Action: select all APIs of setting MySQL backup download rules. For more information, see the [API documentation](https://cloud.tencent.com/document/api/236/63890).
+   - Action: select all APIs of setting MySQL backup download rules. For more information, see the [API documentation](https://intl.cloud.tencent.com/document/product/236/43327).
    - Resource: for more information, see [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606). You can enter `*` to indicate that the backup download rules of TencentDB for MySQL instances in the specified region can be set.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5372ae1d2ac16ff63b63fbf175f3fccf.png)
 4. On the **Edit Policy** page, enter the **Policy Name** (such as `BackupDownloadRestriction`) as required and **Description** and click **Done**.
