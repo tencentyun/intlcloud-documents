@@ -36,7 +36,7 @@ The protection status section displays a wide range of information including the
 <img src="https://main.qcloudimg.com/raw/581cfc4d2b6adf535e8a57fd092d1e22.png" style="zoom:85%;" />
 
 - In the detection module of CWP Basic, click **[Upgrade to Pro](https://buy.cloud.tencent.com/yunjing)** to enter the CWP upgrade page. You can make a payment to upgrade from CWP Basic to CWP Pro for those servers for more powerful risk and threat defense capabilities.
-- Security engine protection will display 6 engine icons, which represent engines of cloud-based antivirus, AI, virtual machine detection, exception analysis, threat intelligence, and attack protection, respectively. If you have not activated CWP Pro, these icons are grayed out until you activate it.
+- Security engine protection will display 6 engine icons, which represent engines of cloud-based antivirus, AI, virtual machine detection, exception analysis, threat association, and attack protection, respectively. If you have not activated CWP Pro, these icons are grayed out until you activate it.
 
 ### Pending risks
 The pending risks section displays the number of server risks to be processed and the number of affected servers. You can click a risk event or its occurrence quantity to enter the corresponding risk processing page.
