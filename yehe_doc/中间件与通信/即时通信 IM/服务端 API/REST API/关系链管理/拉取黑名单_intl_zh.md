@@ -82,10 +82,11 @@ https://xxxxxx/v4/sns/black_list_get?sdkappid=88888888&identifier=admin&usersig=
 | StartIndex        | Integer | 下页拉取的起始位置，0表示已拉完                             |
 | CurruentSequence  | Integer | 黑名单最新的 Seq                                             |
 | ActionStatus      | String  | 请求处理的结果，OK 表示处理成功，FAIL 表示失败           |
-| ErrorCode         | Integer | 错误码，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode) 
+| ErrorCode         | Integer | 错误码，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode)    |
 | ErrorInfo         | String  | 详细错误信息                                                 |
 | ErrorDisplay      | String  | 详细的客户端展示信息                                         |
 <span id="ErrorCode"></span>
+
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。实际的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。

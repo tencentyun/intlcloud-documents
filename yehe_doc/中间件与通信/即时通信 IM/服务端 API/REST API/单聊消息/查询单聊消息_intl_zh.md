@@ -233,7 +233,7 @@ https://xxxxxx/v4/openim/admin_getroammsg?sdkappid=88888888&identifier=admin&use
 | LastMsgKey | String | 本次拉取到的消息里的最后一条消息的标识  |
 | MsgList | Array | 返回的消息列表  |
 | MsgFlagBits | Integer | 该条消息的属性，0表示正常消息，8表示被撤回的消息  |
-| MsgBody | Object | 消息内容，具体格式请参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)（一条消息可包括多种消息元素，MsgBody 为 Array 类型）  |
+| MsgBody | Array | 消息内容，具体格式请参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)（一条消息可包括多种消息元素，MsgBody 为 Array 类型）  |
 | CloudCustomData | String | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）|
 | MsgKey | String | 标识该条消息，可用于 [REST API 撤回单聊消息](https://intl.cloud.tencent.com/document/product/1047/35015)  |
 

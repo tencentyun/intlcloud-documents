@@ -17,7 +17,7 @@
 
 接入时序图
 
-![img](https://iwiki.woa.com/download/attachments/1284272034/image2021-12-3_16-7-30.png?version=1&modificationDate=1638863509411&api=v2)
+![img](https://qcloudimg.tencent-cloud.cn/raw/a554aedf1bf02f57165a24eae09acf1b.png)
 
 ##### 兼容性说明
 
@@ -44,11 +44,11 @@
 
 光线活体检测模式用户做Web人脸核验流程:
 
-![img](https://iwiki.woa.com/download/attachments/1284272034/%E5%85%89%E7%BA%BFblack.png?version=1&modificationDate=1638863509672&api=v2)
+![img](https://faceid-h5-1254418846.cos.ap-guangzhou.myqcloud.com/images/reflect-flow.png)
 
 静默模式用户做Web人脸核验流程:
 
-![img](https://iwiki.woa.com/download/attachments/1284272034/%E9%9D%99%E9%BB%98black.png?version=1&modificationDate=1638863509756&api=v2)
+![img](https://faceid-h5-1254418846.cos.ap-guangzhou.myqcloud.com/images/silence-flow.png)
 
 ##### 光线活体摄像机授权说明
 

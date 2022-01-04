@@ -6,7 +6,33 @@ This document describes several authorization methods of Serverless Framework an
 Serverless Framework helps you quickly deploy your project to **SAC**. Before deploying, please make sure that you have [registered a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/10495).
 
 ## Authorization Method
+### Authorizing by scanning code
 
+When deploying by running `sls deploy`, you can scan the QR code for quick authorization and deployment. After you authorize by scanning the code, temporary key information will be generated (which will expire in 60 minutes) and written into the .env file in the current directory.
+```
+TENCENT_APP_ID=xxxxxx     # `AppId` of authorizing account
+TENCENT_SECRET_ID=xxxxxx  # `SecretId` of authorizing account
+TENCENT_SECRET_KEY=xxxxxx # `SecretKey` of authorizing account
+TENCENT_TOKEN=xxxxx       # Temporary token
+```
+For more information on the permissions obtained during quick authorization, please see [SLS_QcsRole role permission list](#list).
+
+>?If your account is a **Tencent Cloud sub-account**, policy authorization needs to be configured by the root account first. For more information on the configuration, please see [Sub-account Permission Configuration](#rightsprofile).
+
+
+
+
+### Authorizing with local key
+
+To eliminate the need for repeated authorization due to information expiration in case of authorization by scanning the code, you can authorize with a key. Create an `.env` file in the root directory of the project to be deployed and configure the Tencent Cloud `SecretId` and `SecretKey` information:
+
+```
+# .env
+TENCENT_SECRET_ID=xxxxxxxxxx # `SecretId` of your account
+TENCENT_SECRET_KEY=xxxxxxxx # `SecretKey` of your account
+```
+
+ You can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi). 
 ### Configuring with permanent key
 
 You can run the `sls credentials` command to quickly set the persistent storage of the global key information. This command must be configured under the created SLS project. Please make sure that you have created a project with `serverless.yml` through `sls init` or manually.
@@ -59,33 +85,7 @@ $ sls deploy --login
 
 
 
-### Authorizing by scanning code
 
-When deploying by running `sls deploy`, you can scan the QR code for quick authorization and deployment. After you authorize by scanning the code, temporary key information will be generated (which will expire in 60 minutes) and written into the .env file in the current directory.
-```
-TENCENT_APP_ID=xxxxxx     # `AppId` of authorizing account
-TENCENT_SECRET_ID=xxxxxx  # `SecretId` of authorizing account
-TENCENT_SECRET_KEY=xxxxxx # `SecretKey` of authorizing account
-TENCENT_TOKEN=xxxxx       # Temporary token
-```
-For more information on the permissions obtained during quick authorization, please see [SLS_QcsRole role permission list](#list).
-
->?If your account is a **Tencent Cloud sub-account**, policy authorization needs to be configured by the root account first. For more information on the configuration, please see [Sub-account Permission Configuration](#rightsprofile).
-
-
-
-
-### Authorizing with local key
-
-To eliminate the need for repeated authorization due to information expiration in case of authorization by scanning the code, you can authorize with a key. Create an `.env` file in the root directory of the project to be deployed and configure the Tencent Cloud `SecretId` and `SecretKey` information:
-
-```
-# .env
-TENCENT_SECRET_ID=xxxxxxxxxx # `SecretId` of your account
-TENCENT_SECRET_KEY=xxxxxxxx # `SecretKey` of your account
-```
-
- You can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi). 
 
 >?To ensure the account security, we recommend you use a **sub-account** key for authorization. The sub-account can deploy the project only after being granted the relevant permission. For more information on the configuration, please see [Sub-account Permission Configuration](#rightsprofile).
 

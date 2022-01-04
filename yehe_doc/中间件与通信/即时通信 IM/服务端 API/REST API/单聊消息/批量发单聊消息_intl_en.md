@@ -116,7 +116,7 @@ Here, we use sending a text message as an example. To send messages of other typ
 | To_Account | Array | Yes | `UserID` of the message recipient |
 | MsgSeq | Integer | No | Sequence number of the message. The backend will use this field to deduplicate messages and sort messages in the same second. For details, see **Feature Description**. If this field is left empty, the backend will enter a random number. |
 | MsgRandom | Integer | Yes | Random number of the message. It is used by the backend for message deduplication within a second. Make sure the random number is entered. |
-| MsgBody | Object | Yes | TIM message. For more information, please see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| MsgBody |Array | Yes | TIM message. For more information, please see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | MsgLifeTime | Integer | No | The offline retention period of the message (unit: second); max period: 7 days (604800 seconds). If you set this field to `0`, the message will only be sent to the recipient online and not retained offline.  |
 | MsgType | String | Yes | TIM message object type. Valid values: <ul style="margin:0;"><li >`TIMTextElem` (text message) <li >`TIMLocationElem` (location message) <li >`TIMFaceElem` (emoji message) <li >`TIMCustomElem` (custom message) <li >`TIMSoundElem` (voice message) <li >`TIMImageElem` (image message) <li >`TIMFileElem` (file message) <li >`TIMVideoFileElem` (video message) |
 | MsgContent | Object | Yes | TIM message object. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
