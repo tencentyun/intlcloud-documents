@@ -86,8 +86,7 @@ Metrics that reflect the performance of a database instance, including but not l
 ### Relational Database
 This is a database that is connected and organized based on relational data structure. For a relational database model, the complex data structure is simplified into a binary relation (a two-dimensional table). In a relational database, almost all data operations are performed on one or more relational tables. You can manage the database by sorting, joining, connecting, or selecting those related tables. Common relational databases include Oracle, MySQL, MariaDB, Microsoft SQL Server, Access, DB2, PostgreSQL, Informix, and Sybase.
 
-### SSD
-Solid State Drive (SSD) disk is a disk made of an array of solid-state electronic memory chips and comprised of a control unit and a memory unit (FLASH chip and DRAM chip). The specification, definition, feature, and usage of the SSD disk interface are exactly the same as those of HDD disk interface. The shape and size of SSD disk are also identical to those of HDD disk. SSD disk is widely used in many fields, including military, vehicle, industrial control, video monitoring, network monitoring, network terminal, electric power, healthcare, aviation, and navigation equipment.
+
 
 ### Transaction Rate/Database Throughput
 The number of transactions completed in a specified time period is usually expressed in TPM (transactions per minute) or TPS (transactions per second). Another common term for transaction rate is database throughput. A database has a high transaction rate; therefore, it has a very low or zero disk throughput.
