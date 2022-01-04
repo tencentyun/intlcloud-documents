@@ -2,8 +2,8 @@
 
 A possible reason is that the third-party dependencies have not been packaged and uploaded to the online environment. You need to put the dependent libraries of the function into the function directory, and package and upload them along with the function code.
 
-- For more information about function deployment, see [Deploying Functions](https://intl.cloud.tencent.com/document/product/583/32741).
-- For more information about dependency installation, see [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879).
+- For more information about function deployment, please see [Deploying Functions](https://intl.cloud.tencent.com/document/product/583/32741).
+- For more information about dependency installation, please see [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879).
 
 
 ### What is the time zone in the SCF environment? How do I eliminate the impact of time zone differences?
@@ -11,7 +11,7 @@ A possible reason is that the third-party dependencies have not been packaged an
 UTC (GMT+0) is used in the SCF operating environment, which is 8 hours behind Beijing time.
 You can use a time processing library or code package in your programming language to identify the UTC time zone and convert it to Beijing time (GMT+8). You can also set the `TZ=Asia/Shanghai` environment variable to specify the time zone.
 
-### Why am I prompted the ‘no permission’ while writing a file? Is there any space in the environment for write operations?
+### Why am I prompted the "no permission" error while writing a file? Is there any space in the environment for write operations?
 
 SCF function has a temporary disk space of 500 MB (`/tmp`) during execution. You can perform read and write operations in this space or create subdirectories while executing the code, but data written in this space will not be retained after the function is executed.
 
@@ -35,7 +35,7 @@ Yes. For more information, please see [Sub-user and Authorization](https://intl.
 
 ### How can SCF logs be delivered to COS?
 
-Upload logs to CLS as instructed in [Log Delivery Configuration](https://intl.cloud.tencent.com/document/product/583/34876) and configure CLS to [ship logs to COS](https://intl.cloud.tencent.com/document/product/614/32940).
+Upload logs to CLS as instructed in [Log Delivery Configuration](https://intl.cloud.tencent.com/document/product/583/34876) and configure CLS to [ship logs to COS](https://intl.cloud.tencent.com/zh/document/product/614/32940).
 
 ### How does an application trigger a function directly?
 
@@ -47,12 +47,12 @@ Yes. There is a short window period of less than 1 minute in general when the fu
 
 ### Is there a limit to the number of concurrency instances for a single function?
 
-SCF supports large numbers of concurrent function instances. For the total function concurrency quota per region, see [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637). For the function concurrency management, see [Function Concurrency](https://intl.cloud.tencent.com/document/product/583/37040).
+SCF supports large numbers of concurrent function instances. For the total function concurrency quota per region, please see [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637). For the function concurrency management, please see [Function Concurrency](https://intl.cloud.tencent.com/document/product/583/37040).
 
 
 ### What if a failure occurs when a function handles an event?
 
-In case of failure, a function that makes sync invocations will return the exception information, while a function that makes async invocations will automatically retry. For more information, please see [Error Types and Retry Policies](https://intl.cloud.tencent.com/document/product/583/34383).
+In case of failure, a function that makes sync invocations will return the exception information, while a function that makes async invocations will automatically retry. For more information, please see [Error Types and Retry Policies](https://intl.cloud.tencent.com/document/product/583/39851).
 
 
 
@@ -110,7 +110,7 @@ SCF provides a logging feature. Each invocation will output its log to the logs 
 
 
 
-### I uploaded a zip file to create function, and I was prompted that "Unable to create the function. Please try again" or “Function execution entry point file not found. Please confirm that the filename matches with the handler setting or the code package is correct”. What should I do?
+### I uploaded a zip file to create function, and I was prompted that "Unable to create the function. Please try again" or "Function execution entry point file not found. Please confirm that the filename matches with the handler setting or the code package is correct". What should I do?
 
 A possible reason is that the function's execution method cannot find the corresponding executable file or function entry in the zip package, because an outer folder is compressed together.
 The execution method format is `a.b`, where `a` is the name of the `.py` file, and `b` is the method name in the code.
@@ -162,4 +162,9 @@ The `SCF_QcsRole` role is required for creating a function. Please log in to the
 ### What should I do if the error "xxx you are not authorized to perform operation xxx" is reported during function creation?
 
 Please click `SCF_QcsRole` on the [Role](https://console.cloud.tencent.com/cam/role) page in the CAM console and confirm whether it has been associated with the preset policy `QcloudAccessForScfRole`, and if not, click **Add Policy** to associate `QcloudAccessForScfRole` and try again.
+
+### How do I get the `DemoId` when creating a function with a template?
+
+Select **Template** as the creation method when creating a function in the SCF console, select the template you want to use, click **View Details** in the top-right corner of the template, and click **Click to download template function** on the template details page. The template code will be downloaded to the local system with the name `DemoId`.
+> ! The `DemoId` of the same function template varies by region. Pay attention to the region when getting the `DemoId`.
 
