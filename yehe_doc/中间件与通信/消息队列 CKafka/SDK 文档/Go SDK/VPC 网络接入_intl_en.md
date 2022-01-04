@@ -5,7 +5,7 @@ This document describes how to access CKafka to send/receive messages with the S
 ## Prerequisites
 
 - [Install Go](https://golang.org/dl/)
-- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/gokafkademo/VPC)
+- [Download demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/gokafkademo/VPC)
 
 ## Directions
 
@@ -29,28 +29,28 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
       "xxx-.ap-changsha-ec.ckafka.tencentcloudmq.com:6000"
   ],
   "consumerGroupId": "yourConsumerId"
- }  
+}  
 
 ```
 
-| Parameters | Description |
+| Parameter              | Description                                                         |
 | ---------------- | :----------------------------------------------------------- |
-| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
-| bootstrapServers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png) |
-| consumerGroupId  | You can customize it. After the demo runs successfully, you can see the consumer on the **Consumer Group** page. |
+| topic             | Topic name, which can be copied in **Topic Management** on the instance details page in the console. <br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
+| bootstrapServers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section in **Basic Info** on the instance details page in the console. <br/>![img](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png)  |
+| consumerGroupId  | You can customize it. After the demo runs successfully, you can see the consumer in **Consumer Group** on the instance details page. |
 
-### Step 2. Send a message
+### Step 2. Send messages
 
 1. Write the message production program.
 <dx-codeblock>
 :::  go
    package main
    import (
-     		"fmt"
-   		"gokafkademo/config"
-   		"log"
-   		"strings"
-       "github.com/confluentinc/confluent-kafka-go/kafka"
+					"fmt"
+					"gokafkademo/config"
+					"log"
+					"strings"	
+					"github.com/confluentinc/confluent-kafka-go/kafka"
    )
    func main() {
        cfg, err := config.ParseConfig("../config/kafka.json")
@@ -60,22 +60,22 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
        p, err := kafka.NewProducer(&kafka.ConfigMap{
        // Set the access point of the corresponding topic, which can be obtained in the console
        "bootstrap.servers": strings.Join(cfg.Servers, ","),
-       // If you do not explicitly configure this, the value of 1 will be used by default. You can customize this according to your business conditions
+       // If you do not configure this parameter, the default value will be 1. You can customize this according to your business requirements.
        "acks": 1,
-       // Number of retries upon request error. We recommend you set the value to be greater than 0. Retries can ensure as much as possible that the message will not be lost
+       // Number of retries upon request error. It is recommended that you set the parameter to a value greater than 0 to enable retries and guarantee that messages are not lost to the greatest extent possible.
        "retries": 0,
-       // The time between when a request fails and the next time the request is retried
+       // Retry interval upon request failure
        "retry.backoff.ms": 100,
-       // Timeout period of the producer network request
+       // Timeout duration of a producer network request
        "socket.timeout.ms": 6000,
-       // Set the internal retry interval of the client
+       // Set the interval between retries for the client
        "reconnect.backoff.max.ms": 3000,
    		})
    		if err != nil {
        		log.Fatal(err)
    		}
        defer p.Close()
-       // Pass the produced message to the report handler
+       // Deliver the produced messages to the report processor
    		go func() {
        		for e := range p.Events() {
            		switch ev := e.(type) {
@@ -88,7 +88,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
            		}
        		}
    		}()
-       // Send the message asynchronously
+       // Send messages in async mode
    		topic := cfg.Topic[0]
    		for _, word := range []string{"Confluent-Kafka", "Golang Client Message"} {
        		_ = p.Produce(&kafka.Message{
@@ -102,7 +102,8 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 :::
 </dx-codeblock>
 
-2. Compile and run the program to send the message.
+
+2. Compile and run the program to send messages.
    ```go
    go run main.go
    ```
@@ -113,69 +114,69 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
    Delivered message to test[0]@629
    ```
 
-4. On the **Topic Management** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding topic and click **More** > **Message Query** to view the just sent message.
+4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding topic, and click **More** > **Message Query** to view the messages just sent.
    ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
-### Step 3. Consume the message
+### Step 3. Consume messages
 
 1. Write the message consumption program.
-<dx-codeblock>
-:::  go
-  package main
-  
+    <dx-codeblock>
+    :::  go
+    package main
+
   import (
       "fmt"
       "gokafkademo/config"
       "log"
       "strings"
-  
+
       "github.com/confluentinc/confluent-kafka-go/kafka"
   )
-  
+
   func main() {
-  
+
       cfg, err := config.ParseConfig("../config/kafka.json")
       if err != nil {
           log.Fatal(err)
       }
-  
+      
       c, err := kafka.NewConsumer(&kafka.ConfigMap{
           // Set the access point of the corresponding topic, which can be obtained in the console
           "bootstrap.servers": strings.Join(cfg.Servers, ","),
           // The set message consumer group
           "group.id":          cfg.ConsumerGroupId,
           "auto.offset.reset": "earliest",
-  
+      
           // Consumer timeout period when the Kafka consumer grouping mechanism is used. If the broker does not receive the heartbeat of the consumer within this period, the consumer will be considered to have failed and the broker will initiate rebalance.
-          // Currently, this value must be configured between `group.min.session.timeout.ms=6000` and `group.max.session.timeout.ms=300000` on the broker
+          // Currently, this value must be configured in the broker between 6000 (value of group.min.session.timeout.ms) and 300000 (value of group.max.session.timeout.ms).
           "session.timeout.ms": 10000,
       })
-  
+      
       if err != nil {
           log.Fatal(err)
       }
-      // List of the subscribed message topics
+      // List of subscribed message topics
       err = c.SubscribeTopics(cfg.Topic, nil)
       if err != nil {
           log.Fatal(err)
       }
-  
-      for {
+      
+      for  {
           msg, err := c.ReadMessage(-1)
           if err == nil {
               fmt.Printf("Message on %s: %s\n", msg.TopicPartition, string(msg.Value))
           } else {
-              // The client will automatically try to resolve all errors
+              // The client will automatically try to recover all errors
               fmt.Printf("Consumer error: %v (%v)\n", err, msg)
           }
       }
-  
+      
       c.Close()
   }
 :::
 </dx-codeblock>
 
-2. Compile and run the program to consume the message.
+2. Compile and run the program to consume messages.
 	```bash
 		go run main.go
 	```
@@ -186,6 +187,6 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 	Message on test[0]@629: Golang Client Message
 	```
 
-4. On the **Consumer Group** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name in **Topic Name**, and click **Query Details** to view the consumption details.
-   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
+4. On the **Consumer Group** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name, and click **View Details** to view the consumption details.
+     ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
 

@@ -1,4 +1,4 @@
-## 操作背景
+## 操作场景
 
 该任务以 Go 客户端为例指导您使用 VPC 网络接入消息队列 CKafka 并收发消息。
 
@@ -29,15 +29,15 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
       "xxx-.ap-changsha-ec.ckafka.tencentcloudmq.com:6000"
   ],
   "consumerGroupId": "yourConsumerId"
- }  
+}  
 
 ```
 
 | 参数             | 描述                                                         |
 | ---------------- | :----------------------------------------------------------- |
-| topic            | Topic名称，您可以在控制台上【topic管理】页面复制。<br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
-| bootstrapServers | 接入网络，在控制台的实例详情页面【接入方式】模块的网络列复制。<br/>![img](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png) |
-| consumerGroupId  | 您可以自定义设置，Demo 运行成功后可以在【Consumer Group】页面看到该消费者。 |
+| topic            | Topic名称，您可以在控制台上**topic管理**页面复制。<br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
+| bootstrapServers | 接入网络，在控制台的实例详情页面**接入方式**模块的网络列复制。<br/>![img](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png)  |
+| consumerGroupId  | 您可以自定义设置，Demo 运行成功后可以在**Consumer Group**页面看到该消费者。 |
 
 ### 步骤二：发送消息
 
@@ -46,11 +46,11 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 :::  go
    package main
    import (
-   		"fmt"
-   		"gokafkademo/config"
-   		"log"
-   		"strings"
-       "github.com/confluentinc/confluent-kafka-go/kafka"
+					"fmt"
+					"gokafkademo/config"
+					"log"
+					"strings"	
+					"github.com/confluentinc/confluent-kafka-go/kafka"
    )
    func main() {
        cfg, err := config.ParseConfig("../config/kafka.json")
@@ -102,6 +102,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 :::
 </dx-codeblock>
 
+
 2. 编译并运行程序发送消息。
    ```go
    go run main.go
@@ -113,44 +114,44 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
    Delivered message to test[0]@629
    ```
 
-4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【topic管理】页面，选择对应的 Topic，单击【更多】>【消息查询】，查看刚刚发送的消息。
+4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的**topic管理**页面，选择对应的 Topic，单击**更多**>**消息查询**，查看刚刚发送的消息。
    ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 ### 步骤三：消费消息
 
 1. 编写消费消息程序。。
-<dx-codeblock>
-:::  go
-  package main
-  
+    <dx-codeblock>
+    :::  go
+    package main
+
   import (
       "fmt"
       "gokafkademo/config"
       "log"
       "strings"
-  
+
       "github.com/confluentinc/confluent-kafka-go/kafka"
   )
-  
+
   func main() {
-  
+
       cfg, err := config.ParseConfig("../config/kafka.json")
       if err != nil {
           log.Fatal(err)
       }
-  
+      
       c, err := kafka.NewConsumer(&kafka.ConfigMap{
           // 设置接入点，请通过控制台获取对应Topic的接入点。
           "bootstrap.servers": strings.Join(cfg.Servers, ","),
           // 设置的消息消费组
           "group.id":          cfg.ConsumerGroupId,
           "auto.offset.reset": "earliest",
-  
+      
           // 使用 Kafka 消费分组机制时，消费者超时时间。当 Broker 在该时间内没有收到消费者的心跳时，认为该消费者故障失败，Broker
           // 发起重新 Rebalance 过程。目前该值的配置必须在 Broker 配置group.min.session.timeout.ms=6000和group.max.session.timeout.ms=300000 之间
           "session.timeout.ms": 10000,
       })
-  
+      
       if err != nil {
           log.Fatal(err)
       }
@@ -159,7 +160,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
       if err != nil {
           log.Fatal(err)
       }
-  
+      
       for {
           msg, err := c.ReadMessage(-1)
           if err == nil {
@@ -169,7 +170,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
               fmt.Printf("Consumer error: %v (%v)\n", err, msg)
           }
       }
-  
+      
       c.Close()
   }
 :::
@@ -186,6 +187,6 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 	Message on test[0]@629: Golang Client Message
 	```
 
-4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【Consumer Group】页面，选择对应的消费组名称，在主题名称输入 Topic 名称，单击【查询详情】，查看消费详情。
-   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
+4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的**Consumer Group**页面，选择对应的消费组名称，在主题名称输入 Topic 名称，单击**查询详情**，查看消费详情。
+     ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
 
