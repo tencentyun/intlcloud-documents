@@ -11,6 +11,7 @@ SDK 支持 在 Android 4.0.3（API 15）及以上系统上运行，但只有（A
 - targetSdkVersion：26
 - Android Studio（推荐您也使用 Android Studio，当然您也可以使用 Eclipse + ADT）
 
+
 [](id:step1)
 ### 步骤1：集成 SDK
 <dx-tabs>
@@ -88,6 +89,31 @@ dependencies {
   4. **加载 so 文件**
 等待所有 so 文件就位以后，调用 TXLiveBase 的 setLibraryPath 将下载的目标 path 设置给 SDK， 然后再调用 SDK 的相关功能。之后，SDK 会到这些路径下加载需要的 so 文件并启动相关功能。
 :::
+::: gradle 集成方式
+1. 在 dependencies 中添加 LiteAVSDK_UGC 的依赖。
+	- 若使用3.x版本的 com.android.tools.build:gradle 工具，请执行以下命令：
+```
+dependencies {
+   implementation 'com.tencent.liteav:LiteAVSDK_UGC:latest.release'
+}
+```
+	- 若使用2.x版本的 `com.android.tools.build:gradle` 工具，请执行以下命令：
+```
+dependencies {
+   compile 'com.tencent.liteav:LiteAVSDK_UGC:latest.release'
+}
+```
+2. 在 defaultConfig 中，指定 App 使用的 CPU 架构。
+```
+defaultConfig {
+   ndk {
+       abiFilters "armeabi", "armeabi-v7a"
+   }
+}
+```
+>?目前 SDK 支持 armeabi、armeabi-v7a 和 arm64-v8a。
+3. 单击 **Sync Now**，自动下载 SDK 并集成到工程里。
+:::
 </dx-tabs>
 
 [](id:step2)
@@ -129,7 +155,7 @@ public class DemoApplication extends Application {
 ```
 
 > ?对于使用4.7版本 License 的用户，如果您升级了 SDK 到4.9版本，您可以登录控制台，单击下图的**切换到新版 License** 按钮生成对应的 License Key 和 License URL，切换后的 License 必须使用4.9及更高的版本，切换后按照上述操作集成即可。
-<img src="https://main.qcloudimg.com/raw/570c3a7bb4b6c8b2cf7fe162572b1c48.png" width=600px>
+> <img src="https://qcloudimg.tencent-cloud.cn/raw/67f7df5cca54164c10dbf78c5b84ccdf.png" width=600px>
 
 [](id:step4)
 ### 步骤4：打印 log
@@ -191,7 +217,7 @@ defaultConfig {
 -keep class com.tencent.** { *; }
 ```
 4. [配置](https://intl.cloud.tencent.com/document/product/1069/37914) App 打包参数。
-![](https://main.qcloudimg.com/raw/94320d4327cf90f19f98b8715e6b466a.png)
+![](https://main.qcloudimg.com/raw/b2dd9bde1cdf13ad5c77c1e00c4092aa.png)
 
 [](id:module)
 ## 快速接入短视频功能模块
@@ -347,7 +373,7 @@ compile project(':ugckit')
 
 [](id:UGCKit_step3)
 #### 步骤3：申请 Licence
-在使用 UGCKit 之前要先设置 License，License 的获取方法请参见 [License申请](https://intl.cloud.tencent.com/document/product/1069/38041)。
+在使用 UGCKit 之前要先设置 License，License 的获取方法请参见 [License申请](https://cloud.tencent.com/document/product/584/20333)。
 
 
 [](id:fun)
@@ -421,7 +447,7 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
 ```
 
 **效果如下**：
-![图片描述](https://main.qcloudimg.com/raw/077aa281195ba33fcaa67da2a13b1b60.png)
+![](https://main.qcloudimg.com/raw/077aa281195ba33fcaa67da2a13b1b60.png)
 
 [](id:v_import)
 ####  3. 视频导入
@@ -457,7 +483,7 @@ public void onCreate(Bundle icicle) {
 ```
 
 **效果如下**：
-![图片描述](https://main.qcloudimg.com/raw/cf043d198ce9bdbe32c3035b83afc18e.png)
+![](https://main.qcloudimg.com/raw/cf043d198ce9bdbe32c3035b83afc18e.png)
 
 [](id:v_cut)
 #### 4. 视频裁剪
@@ -509,7 +535,7 @@ protected void onResume() {
 ```
 
 **效果如下**：
-![图片描述](https://main.qcloudimg.com/raw/5ffcdda31393c6994a93297bd6f9b25c.png)
+![](https://main.qcloudimg.com/raw/5ffcdda31393c6994a93297bd6f9b25c.png)
 
 [](id:v_effect_edit)
 #### 5. 视频特效编辑
@@ -558,7 +584,7 @@ protected void onResume() {
 ```
 
 **效果如下**：
-![图片描述](https://main.qcloudimg.com/raw/fe56207213a5838189bf6583e10677bc.png)
+![](https://main.qcloudimg.com/raw/fe56207213a5838189bf6583e10677bc.png)
 
 ### 详细介绍
 
@@ -606,7 +632,6 @@ Possible causes for this unexpected error include:
 - **解决方法**：请检查 ` Android Studio Gradle` 插件版本和 Gradle 版本是否匹配，具体请参见 [查看 Gradle 插件对应Gradle版本](https://developer.android.google.cn/studio/releases/gradle-plugin.html#updating-plugin)。
 
 [](id:que2_3)
-
 ### UGCKit 包编译时出现报错？
 - **报错信息**：
 ![](https://main.qcloudimg.com/raw/e153fe9637d18f9d4df4c1a9fde51ee2.png)
