@@ -14,7 +14,7 @@ Game-specific needs such as a multi-server/multi-region model, quick start-up of
 The storage space is uncapped, and the capacity can be dynamically expanded or reduced according to the actual needs of a game without affecting game operation. This feature makes it easier to address sudden changes in business scale.
 
 ### Ease of learning
-The service inherits the development technologies of the PC platform and benefits from the development experience of the PC game team. The service API provides easy synchronous and asynchronous operation APIs.
+The service inherits the development technologies of the PC platform and benefits from the development experience of the PC game team. The service API provides easy synchronous and asynchronous operations.
 
 ### Service-based operation
 With a convenient resource application mode, there will no longer be any need to manually deploy the storage service environment.
