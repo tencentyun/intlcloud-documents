@@ -2,7 +2,7 @@
 
 Java 语言由于需要编译后才可以在 JVM 虚拟机中运行。因此在 SCF 中的使用方式，和 Python、Node.js 这类脚本型语言不同，有如下限制：
 * 不支持上传代码：使用 Java 语言，仅支持上传已经开发完成，编译打包后的 zip/jar 包。SCF 环境不提供 Java 的编译能力。
-* 不支持在线编辑：不能上传代码，所以不支持在线编辑代码。Java 运行时的函数，在代码页面仅能看到再次通过页面上传或 COS 提交代码的方法。
+* 不支持在线编辑：不能上传代码，所以不支持在线编辑代码。Java 运行时的函数，在代码页面仅能看到通过页面上传或 COS 提交代码的方法。
 
 ## 代码形态
 Java 开发的 SCF 云函数的代码形态一般如下所示：
@@ -59,7 +59,7 @@ public class KeyValueClass {
 	* 使用 Context 需要在代码中使用 `com.qcloud.scf.runtime.Context;` 引入包，并在打包时带入 jar 包。
 	* 如不使用此对象，可在函数入参中忽略，可写为`public String mainHandler(String name)`。
 
-> 部分触发器传递的入参事件结构目前已有一部分已定义，可直接使用。您可通过 [cloud event 定义](https://github.com/tencentyun/scf-java-libs) 获取 Java 的库并使用。如果使用过程中发现问题，可以通过 [提交 issue ](https://github.com/tencentyun/scf-java-libs/issues/new) 或提交工单说明。
+>! 部分触发器传递的入参事件结构目前已有一部分已定义，可直接使用。您可通过 [cloud event 定义](https://github.com/tencentyun/scf-java-libs) 获取 Java 的库并使用。如果使用过程中发现问题，可以通过 [提交 issue ](https://github.com/tencentyun/scf-java-libs/issues/new) 或提交工单说明。
 
 ## 日志
 您可以在程序中使用如下语句来完成日志输出：
@@ -80,6 +80,6 @@ logger.info("logging message here!");
 
 ## 更多指引
 您可参考以下文档，使用相关功能：
-- [角色与授权](<https://intl.cloud.tencent.com/document/product/583/31444>)
-
+- [网络配置管理](https://intl.cloud.tencent.com/document/product/583/38377)
+- [角色与授权](https://intl.cloud.tencent.com/document/product/583/38176)
 

@@ -38,33 +38,32 @@ Starting from November 1, 2021, all SCF users will be entitled to a certain free
 </table>
 
 
-For more information, please see [Free Tier](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12282).
+For more information, please see [Free Tier](https://intl.cloud.tencent.com/document/product/583/12282).
 
-## Billing Modes and Billable Items
-SCF is pay-as-you-go (postpaid).
-
+## Billable Items and Billing Modes
+### Billable items
 SCF is billed by the following four parts. Each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in **USD**:
 
 - **Resource usage fees**: resource usage is calculated in GBs by multiplying the configured function memory size by the function execution duration.
 - **Invocation fees**: each function triggering and execution is calculated as an invocation.
 - **Public network outbound fees**: the outbound traffic consumed when the function code accesses the public network is counted as the public network outbound traffic in GB.
 - **Idle provisioned concurrency fees**: the number of idle instances is calculated by subtracting the number of actually running concurrent instances from the number of started provisioned instances, and the idle resource usage is calculated in GBs by multiplying the number of idle instances by the configured memory size.
-<<<<<<< HEAD
 
-HTTP-Triggered functions and event-triggered functions are billed in the same way. For more information, please see [Billing Mode](https://cloud.tencent.com/document/product/583/61678).
-=======
->>>>>>> ddc813913d543596bac38096f9829a3a4e8bf914
+>? HTTP-Triggered functions and event-triggered functions are billed in the same way.
+
+### Billing mode
+For more information on SCF billing mode, please see [Billing Mode](https://intl.cloud.tencent.com/zh/document/product/583/12284).
 
 ## Pricing
 
 The four billable items of SCF are priced as follows:
 
-- Resource usage fees: 0.0000167 USD/GBs
+- Resource usage fees: 0.0000167 USD/GBs (0.167 USD/10000 GBs)
 - Invocation fees: 0.002 USD/10000 invocations
 - Public network outbound traffic fees: 0.12 USD/GB for the Chinese mainland; variable by region
-- Idle provisioned concurrency fees: 0.00000847 USD/GBs
+- Idle provisioned concurrency fees: 0.00000847 USD/GBs (0.0847 USD/10000 GBs). For more information, please see [Billing Example](https://intl.cloud.tencent.com/document/product/583/12285).
 
-HTTP-Triggered functions and event-triggered functions have the same prices. For more information, please see [Pricing](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12281).
+HTTP-Triggered functions and event-triggered functions have the same prices. For more information, please see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281).
 
 ## Supported Regions
 SCF is currently supported in the following regions:
@@ -125,8 +124,12 @@ For billing details, please see the following documents:
 <td><a href="https://intl.cloud.tencent.com/document/product/583/12282" target="_blank">View document</a></td>
 </tr>
 <tr>
+<td>Billing Mode</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/583/12284" target="_blank">View document</a></td>
+</tr>
+<tr>
 <td>Pricing</td>
-<td><a href="https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12281" target="_blank">View document</a></td>
+<td><a href="https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12281" target="_blank">View document</a></td>
 </tr>
 <tr>
 <td>Notes on Arrears</td>

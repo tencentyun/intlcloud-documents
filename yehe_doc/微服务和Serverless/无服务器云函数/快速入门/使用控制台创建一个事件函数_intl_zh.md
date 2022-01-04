@@ -18,13 +18,13 @@
 
 在 [腾讯云控制台](https://console.cloud.tencent.com/) 中，选择**云产品** > **云函数**，进入 Serverless 控制台，按照界面提示为云函数授权。（如果您已为云函数授权，请跳过该步骤。）
 
-<div style="background-color:#00A4FF; width: 150px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/scf/index?rid=1" target="_blank"  style="color: white; font-size:13px;">点此进行服务授权</a></div>
+<div style="background-color:#00A4FF; width: 150px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.intl.cloud.tencent.com/scf/index?rid=1" target="_blank"  style="color: white; font-size:13px;">点此进行服务授权</a></div>
 
 
 
 ## 步骤4：创建函数
 
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/scf/list-create?rid=1&ns=default" target="_blank"  style="color: white; font-size:13px;">点此进入创建函数页面</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.intl.cloud.tencent.com/scf/list-create?rid=1&ns=default" target="_blank"  style="color: white; font-size:13px;">点此进入创建函数页面</a></div>
 
 <br>
 

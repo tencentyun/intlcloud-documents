@@ -39,11 +39,11 @@ The request timed out in 30000ms.Please confirm your http server have enabled li
 - **context**：请求头（HTTP Header）
 	- 公共参数，用于标识用户和接口签名的参数，每次请求中均需携带。
 	- 通过 X-Scf-Request-Id 获取当前请求 ID。
-<dx-alert infotype="explain" title="">
-<li>事件函数和 Web 函数均包含 Common Headers。</li>
-<li>公共请求头由云函数生成，主要包含权限、函数基本信息等。</li>
-</dx-alert>
-详细列表如下表所示：
+	<dx-alert infotype="explain" title="">
+	<li>事件函数和 Web 函数均包含 Common Headers。</li>
+	<li>公共请求头由云函数生成，主要包含权限、函数基本信息等。</li>
+	</dx-alert>
+	详细列表如下表所示：
 <table>
 <thead>
 <tr>
@@ -141,7 +141,7 @@ The request timed out in 30000ms.Please confirm your http server have enabled li
 
 ## 计费说明
 
-使用镜像部署函数的计费项与使用代码包部署的计费项完全一致。计费详情请参见 [计费方式](https://intl.cloud.tencent.com/document/product/583/12284)。
+使用镜像部署函数的计费项与使用代码包部署的计费项完全一致。计费详情请参见 [计费方式](https://intl.cloud.tencent.com/zh/document/product/583/12284)。
 
 
 ## 使用限制
@@ -156,7 +156,7 @@ The request timed out in 30000ms.Please confirm your http server have enabled li
 | 512MB < X < 1Gi | Y>1Gi |
 
 #### 镜像仓库访问
-- 仅支持腾讯云容器镜像服务企业版和个人版，详情可参见 [容器镜像服务](https://intl.cloud.tencent.com/document/product/1051)。
+- 仅支持腾讯云容器镜像服务企业版和个人版，详情可参见 [容器镜像服务](https://intl.cloud.tencent.com/zh/document/product/1051)。
 	- 容器镜像服务企业版镜像仓库详情可参见 [镜像仓库基本操作](https://intl.cloud.tencent.com/document/product/1051/35488)。
 	- 容器镜像服务个人版镜像仓库详情可参见 [开通镜像仓库](https://intl.cloud.tencent.com/document/product/1051/38866)。
 - 仅支持同地域（Region）下私有镜像仓库的镜像读取。
@@ -166,11 +166,14 @@ The request timed out in 30000ms.Please confirm your http server have enabled li
 - 避免使用其他用户的存在限制访问或执行的文件。
 - 容器内文件可写层存储空间限制为512M。
 
+
+#### 构建镜像的客户端 CPU 架构限制
+云函数当前是基于 X86 架构运行的，所以暂不支持运行在 ARM 平台上构建的镜像。ARM 的平台典型如 Apple Mac 搭载 M1 芯片的 PC 端。
+
 #### 构建镜像的客户端限制
 满足其中之一即可：
 - Docker image manifest V2，schema 2 (使用 Docker version 1.10或者更新版本)
 - Open Container Initiative (OCI) Specifications (v1.0.0及以上)
-
 
 
 

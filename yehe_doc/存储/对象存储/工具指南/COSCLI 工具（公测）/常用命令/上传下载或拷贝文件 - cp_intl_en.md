@@ -7,7 +7,7 @@ The `cp` command is used to upload, download, or copy objects.
 ./coscli cp <source_path> <destination_path> [flags]
 ```
 
->? For more information about `bucketAlias`, please see [Configuration Parameters](https://intl.cloud.tencent.com/document/product/436/43265).
+>? For more information on `bucketAlias`, please see [Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
 >
 
 `cp` includes the following optional flags:
@@ -20,14 +20,18 @@ The `cp` command is used to upload, download, or copy objects.
 |  None  | --exclude   | Excludes specific objects.    |
 | -r        | --recursive | Whether to traverse all objects in the directory recursively  |
 |   None  | --storage-class | Specifies the storage class for the object to upload. Default value: `STANDARD` |
+|   None       | --part-size     | Part size. Default value: `32 MB`      |
+|   None       | --thread-num    | Number of concurrent threads. Default value: `5`      |
+|   None       | --rate-limiting | Speed limit for a single URL. Value range: 0.1-100 MB/s       |
 
 
 >?
 > - `cp` automatically uses concurrent upload/download for large objects.
-> - If an object is larger than 32 MB, COSCLI will splice the object by 32 MB and uses 5 threads to concurrently upload/download the object.
+> - If an object is larger than `--part-size`, COSCLI will split the object into multiple parts according to `--part-size` and use `--thread-num` threads to concurrently upload/download the object.
+> - Each thread maintains a URL. For each URL, you can use the `--rate-limiting` parameter to limit its speed. When concurrent upload/download is enabled, the total rate is `--thread-num * --rate-limiting`.
 > - If an object is uploaded/downloaded in parts, checkpoint restart will be enabled by default.
-> - `--include` and `--exclude` support standard regular expressions. You can use regular expressions to filter objects that meet your requirements.
-> - When using `zsh`, you may need to enclose the pattern string with double quotation marks.
+> - `--include` and `--exclude` support standard regular expression syntax, so you can use them to filter files that meet specific criteria.
+> - When using `zsh`, you may need to add double quotes at both ends of the `pattern` string.
 ```
 ./coscli cp ~/test/ cos://bucket1/example/ -r --include ".*.mp4"
 ```
