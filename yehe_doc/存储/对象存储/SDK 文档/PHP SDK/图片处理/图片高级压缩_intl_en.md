@@ -11,7 +11,7 @@ This document provides an overview of APIs and SDK code samples related to advan
 
 ## Advanced Image Compression
 
-#### Feature description
+#### Description
 
 COS uses the `imageMogr2` API of Cloud Infinite (CI) to provide advanced image compression.
 
@@ -19,16 +19,31 @@ COS uses the `imageMogr2` API of Cloud Infinite (CI) to provide advanced image c
 #### Sample code
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+            
 try {
         $imageMogrTemplate = new Qcloud\Cos\ImageParamTemplate\ImageMogrTemplate(); //Create an instance of the basic image processing parameter template
         $imageMogrTemplate->format('tpg'); //Convert the original image into the TPG format
         $imageMogrTemplate->format('heif'); //Convert the original image into the HEIF format
         $result = $cosClient->getObject(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
         'ImageHandleParam' => $imageMogrTemplate->queryString(), //Generate basic image processing parameters
     ));
-    // Request succeeded
+    // Request successful
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -44,7 +59,7 @@ try {
 | Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`.  | Yes |
 | ImageHandleParam  | String      | CI image processing parameter, for example, imageMogr2/format/tpg          | Yes          |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
