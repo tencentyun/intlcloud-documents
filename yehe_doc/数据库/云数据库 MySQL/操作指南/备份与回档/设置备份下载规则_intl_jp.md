@@ -86,7 +86,7 @@ qcs::service_type::account:resource
 このうち、cdb-kfxxh3はMySQLインスタンスリソースのIDで、ここではCAMポリシーステートメント中のリソースresourceです。
 
 ### 事例
-以下の例はCAMの使用方法のみを示したものです。MySQLデータベースのバックアップダウンロードルール設定の完全なAPIについては、[APIドキュメント](https://cloud.tencent.com/document/api/236/63890)をご参照ください。
+以下の例はCAMの使用方法のみを示したものです。MySQLデータベースのバックアップダウンロードルール設定の完全なAPIについては、[APIドキュメント](https://intl.cloud.tencent.com/document/product/236/43327)をご参照ください。
 ```
 {
        "version":"2.0",
@@ -107,7 +107,7 @@ qcs::service_type::account:resource
 2. ポップアップしたダイアログボックスで、**ポリシージェネレーターで作成**を選択します。
 3. サービスおよび操作の選択画面で、各項目の設定を選択し、ステートメントの追加をクリックした後、次のステップをクリックします。
    - サービス(Service)：**TencentDB for MySQL**を選択します。
-   - アクション(Action)：MySQLデータベースのバックアップダウンロードルール設定のAPIを選択します。[APIドキュメント](https://cloud.tencent.com/document/api/236/63890)をご参照ください。
+   - アクション(Action)：MySQLデータベースのバックアップダウンロードルール設定のAPIを選択します。[APIドキュメント](https://intl.cloud.tencent.com/document/product/236/43327)をご参照ください。
    - リソース(Resource)：[リソース記述法](https://intl.cloud.tencent.com/document/product/598/10606)をご参照ください。`*`を入力し、所在リージョンのMySQLインスタンスのバックアップダウンロードルールが設定可能であることを示します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5372ae1d2ac16ff63b63fbf175f3fccf.png)
 4. ポリシー編集画面で、命名仕様に従い、「ポリシー名」（例えばBackupDownloadRestriction）と「説明」を入力後、**完了**をクリックします。
