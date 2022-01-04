@@ -76,7 +76,7 @@ In addition to the above configuration items, you can also modify the following 
 
 ## Executable Operations for Function
 - [Creating function](https://intl.cloud.tencent.com/document/product/583/19806): creates a function.
-- [Updating function](https://intl.cloud.tencent.com/zh/document/product/583/19806):
+- [Updating function](https://intl.cloud.tencent.com/document/product/583/19806):
    - Updating function configuration: updates the configuration items of the function.
    - Updating function code: updates the execution code of the function.
 - [Getting details](https://intl.cloud.tencent.com/document/product/583/19809): gets function configuration, trigger, and code details.
