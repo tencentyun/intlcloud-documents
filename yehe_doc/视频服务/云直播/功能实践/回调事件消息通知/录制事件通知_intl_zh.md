@@ -17,7 +17,7 @@
 | :------- | :------------- |
 | 直播录制 | event_type = 100 |
 
-<span id="public"></span> 
+[](id:public)
 ### 回调公共参数
 <table>
 <tr><th>字段名称</th><th>类型</th><th>说明</th></tr>
@@ -31,35 +31,36 @@
 <td>事件通知安全签名 sign = MD5（key + t）。<br>说明：腾讯云把加密 <a href="#key">key</a> 和 t 进行字符串拼接后通过 MD5 计算得出 sign 值，并将其放在通知消息里，您的后台服务器在收到通知消息后可以根据同样的算法确认 sign 是否正确，进而确认消息是否确实来自腾讯云后台。</td>
 </tr></table>
 
->? <span id="key"></span>key 为【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
->![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
+>? [](id:key)key 为 **事件中心>[直播回调](https://console.cloud.tencent.com/live/config/callback)** 中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
+![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
+[](id:message)
 
-<span id="message"></span> 
 ### 回调消息参数
 
-| 字段名称     | 类型   | 说明                                                 |
-| :----------- | :----- | :--------------------------------------------------- |
-| appid        | int    | 用户 [APPID](https://console.cloud.tencent.com/developer)                                           |
-|app       | string       | 推流域名            |
-|appname       | string | 推流路径               |
-| stream_id    | string | 直播流名称                                           |
-| channel_id   | string | 同直播流名称                                         |
+| 字段名称     | 类型   | 说明   |
+| ----------- | ----------- | ----------- |
+| appid        | int    | 用户 [APPID](https://console.cloud.tencent.com/developer) |
+| app          | string | 推流域名 |
+| appname      | string | 推流路径 |
+| stream_id    | string | 直播流名称 |
+| channel_id   | string | 同直播流名称 |
 | file_id      | string | 点播 file ID，在 [云点播平台](https://intl.cloud.tencent.com/document/product/266/33895) 可以唯一定位一个点播视频文件 |
-| file_format  | string | flv，hls，mp4，aac                                   |
-| task_id	| string| 录制任务 ID，仅 API 创建的录制任务有意义，即 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309) 返回的任务 ID| 
-| start_time   | int64  | 录制文件起始时间戳                                   |
-| end_time     | int64  | 录制文件结束时间戳                                   |
-| duration     | int64  | 录制文件时长，单位秒                                 |
-| file_size    | uint64 | 录制文件大小，单位字节                               |
-| stream_param | string | 用户推流 URL 所带参数（自定义）                                |
-| video_url    | string | 录制文件下载 URL                                 |
+| file_format  | string | FLV，HLS，MP4，AAC |
+| task_id      | string | 录制任务 ID，仅 API 创建的录制任务有意义，即 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309) 返回的任务 ID |
+| start_time   | int64  | 录制任务开始写文件的时间；不能以该值作为录制内容的开始时间，录制内容的开始时间 = end_time – duration |
+| end_time     | int64  | 录制任务结束写文件的时间 |
+| duration     | int64  | 录制文件时长，单位秒 |
+| file_size    | uint64 | 录制文件大小，单位字节 |
+| stream_param | string | 用户推流 URL 所带参数（自定义） |
+| video_url    | string | 录制文件下载 URL |
 
 
-<span id="example"></span> 
+
+[](id:example)
 ### 回调消息示例
-
-```
+<dx-codeblock>
+::: JSON JSON
 {
 "event_type":100,
 
@@ -76,6 +77,7 @@
 "file_id":"1234567890",
 
 "file_format":"hls",
+
 "task_id":"UpTbk5RSVhRQ********************0xTSlNTQltlRVRLU1JAWW9EUb",
 
 "start_time":1545047010,
@@ -94,8 +96,10 @@
 
 "t":1545030873
 }
-```
+:::
+</dx-codeblock>
 
 
 
+ 
 
