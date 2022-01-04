@@ -333,7 +333,7 @@ function(err, data) { ... }
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
 | - headers | Headers | Object |
-| - ETag | Returns the MD5 checksum of the object. The value of `ETag` can be used to check whether the object was corrupted during upload. <br>For example, `"09cba091df696af91549de27b8e7d0f6"`. **Note: double quotation marks are required at the beginning and the end of the `ETag` value string** |
+| - ETag | Returns the MD5 checksum of the object. The value of `ETag` can be used to check whether the object was corrupted during upload. <br>For example, `"09cba091df696af91549de27b8e7d0f6"`. **Note: double quotation marks are required at the beginning and the end of the `ETag` value ** |string|
 | - Location | Creates an object's access domain name for external networks | String |
 | - VersionId | The version ID of the returned object in a versioning-enabled bucket | String |
 
@@ -394,7 +394,7 @@ function(err, data) { ... }
 | - UploadIdMarker | `UploadId` after which the returned list begins | String |
 | - NextKeyMarker | Key after which the next returned list begins if the list is truncated | String |
 | - NextUploadIdMarker | `UploadId` after which the next returned list begins if the list is truncated | String |
-| - MaxUploads | Maximum number of returned entries. Valid value range: 1-1000 | String | No |
+| - MaxUploads | Maximum number of returned entries. Valid value range: 1-1000 | String | 
 | - IsTruncated | Whether the returned list is truncated. Valid value: `true`; `false` | String|
 | - Prefix | Object key prefix by which uploads are queried | String |
 | - Delimiter | Separating symbol used to group object keys, which is usually `/`. Objects with identical paths between `Prefix` or, if no `Prefix` is specified, the beginning of their keys, and the first delimiter are grouped together and defined as common prefixes. All common prefixes are listed. | String |
@@ -584,7 +584,7 @@ function(err, data) { ... }
 | NextPartNumberMarker  | The part after which the next returned list begins if the list is truncated.    | String    |
 | - MaxParts | Maximum number of entries returned at a time | String |
 | - IsTruncated | Whether the returned list is truncated. Valid values: `true`; `false` | String |
-| - Part | Array | Part information list | ObjectArray |
+| - Part | Part information list | ObjectArray |
 | - - PartNumber | Part number | String |
 | - - LastModified | Last modified time of a part | String |
 | - - ETag | MD5 checksum of a part | String |
