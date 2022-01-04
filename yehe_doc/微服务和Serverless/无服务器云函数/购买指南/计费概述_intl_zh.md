@@ -129,7 +129,7 @@ Web 函数与事件型函数计费价格相同，详情请参阅 [产品定价�
 </tr>
 <tr>
 <td>产品定价</td>
-<td><a href="https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12281" target="_blank">查看文档</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/12281" target="_blank">查看文档</a></td>
 </tr>
 <tr>
 <td>欠费说明</td>

@@ -129,7 +129,7 @@ For billing details, please see the following documents:
 </tr>
 <tr>
 <td>Pricing</td>
-<td><a href="https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12281" target="_blank">View document</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/12281" target="_blank">View document</a></td>
 </tr>
 <tr>
 <td>Notes on Arrears</td>
