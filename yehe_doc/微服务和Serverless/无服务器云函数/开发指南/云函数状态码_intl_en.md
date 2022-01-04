@@ -154,7 +154,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>445<br>ContainerInitError</td>
 <td>Container start fails.</td>
-<td>Container start fails. Please check whether your bootstrap file has been uploaded successfully and ensure that the invocation path is correct.<ul class="params"><li>For an image deployment-based function, please check whether the `Command` or `Args` parameter passed in the console is in the correct format. For more information, please see <a href="https://cloud.tencent.com/document/product/583/56052">Usage</a>.</li><li>For a code deployment-based function, please check whether your bootstrap file has been uploaded successfully and ensure that the invocation path is correct.</li></ul></td>
+<td>Container start fails. Please check whether your bootstrap file has been uploaded successfully and ensure that the invocation path is correct.<ul class="params"><li>For an image deployment-based function, please check whether the `Command` or `Args` parameter passed in the console is in the correct format. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/583/41077">Usage</a>.</li><li>For a code deployment-based function, please check whether your bootstrap file has been uploaded successfully and ensure that the invocation path is correct.</li></ul></td>
 </tr>
 	
 <tr>
