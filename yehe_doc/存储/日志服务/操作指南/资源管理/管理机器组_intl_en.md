@@ -33,7 +33,7 @@ To avoid the trouble, you can use CLS to configure machine groups dynamically by
 2. Click **Machine Group** in the left sidebar.
 3. Select the region of your CLS, such as Guangzhou, and then click **Create Machine Group**.
 4. In the pop-up, configure the following items:
-alt="image-20210512172151574" style="zoom:50%;" />
+
  - Logset Name: enter `cls_test` for example
  - Configuration Mode: select **Configure machine ID**
  - Machine ID: enter machine IDs.
