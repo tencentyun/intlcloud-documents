@@ -75,7 +75,7 @@ func main() {
    c := cos.NewClient(b, &http.Client{
        Transport: &cos.AuthorizationTransport{
            SecretID:  "SECRETID",
-           SecretKey: "SECRETKEY",
+           SecretKey:    "SECRETKEY",
        },
    })
    // An object key is the unique identifier of an object in a bucket
@@ -109,7 +109,7 @@ ClientConfig clientConfig = new ClientConfig(region);
 clientConfig.setHttpProtocol(HttpProtocol.https);
 // 3. Generate a COS client.
 COSClient cosClient = new COSClient(cred, clientConfig);
-// Enter the bucket name in the format of BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
  
 String content = "Hello COS";
@@ -125,11 +125,11 @@ System.out.println(requestId);
 
 ```
 cos.putObject({
-    Bucket: 'examplebucket-1250000000', /*Required*/
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',    /* Required */
     Key: 'test.js',              /* Required */
     StorageClass: 'STANDARD',
-    Body: Buffer.from('Hello COS'),
+    Body: 'Hello COS',
     onProgress: function(progressData) {
         console.log(JSON.stringify(progressData));
     }
@@ -151,11 +151,35 @@ var cos = new COS({
 });
  
 cos.putObject({
-    Bucket: 'examplebucket-1250000000', /*Required*/
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',    /* Required */
     Key: 'test.nodejs',              /* Required */
     StorageClass: 'STANDARD',
     Body: Buffer.from('Hello COS'),
+    onProgress: function(progressData) {
+        console.log(JSON.stringify(progressData));
+    }
+}, function(err, data) {
+    var requestId = (err || data).headers['x-cos-request-id'];
+    console.log(requestId );
+});
+```
+
+### Using the WeChat Mini Program SDK
+
+```
+var COS = require('cos-wx-sdk-v5');
+var cos = new COS({
+    SecretId: 'SECRETID',
+    SecretKey: 'SECRETKEY'
+});
+ 
+cos.putObject({
+    Bucket: 'examplebucket-1250000000', /* Required */
+    Region: 'COS_REGION',    /* Required */
+    Key: 'test.js',              /* Required */
+    StorageClass: 'STANDARD',
+    Body: 'Hello COS',
     onProgress: function(progressData) {
         console.log(JSON.stringify(progressData));
     }
@@ -176,9 +200,9 @@ $region = "COS_REGION"; // Set the default bucket region
 $cosClient = new Qcloud\Cos\Client(
    array(
        'region' => $region,
-       'schema' => 'https', // Protocol header; http by default
+       'schema' => 'https', // Protocol header, which is http by default
        'credentials'=> array(
-           'secretId'  => $secretId ,
+           'secretId'  => $secretId,
            'secretKey' => $secretKey)));
 # Upload a file
 ## putObject (an API that can upload files of up to 5 GB)
@@ -198,32 +222,40 @@ try {
 ```
 
 
-### Using the Python SDK
+### Using iOS SDK
 
 ```
-# -*- coding=utf-8
-# APPID has been removed from the configuration. Please add the APPID to the Bucket parameter in the format of BucketName-APPID.
-# 1. Set user configuration, including secretId, secretKey, and region.
-from qcloud_cos import CosConfig
-from qcloud_cos import CosS3Client
-import sys
-import logging
-logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-secret_id = 'SECRETID'      # Replace it with your secretId.
-secret_key = 'SECRETKEY'      # Replace it with your secretKey.
-region = 'COS_REGION'     # Replace it with your region.
-token = None                # If a temporary key is used, token needs to be passed in. This is optional and is left empty by default.
-scheme = 'https'            # Specify whether to use HTTP or HTTPS protocol to access COS. This is optional and is https by default.
-config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
-# 2. Get the client object.
-client = CosS3Client(config)
-# Upload a byte stream with simple upload.
-response = client.put_object(
-   Bucket='examplebucket-1250000000',     # Replace it with your bucket name.
-   Body=b'Hello COS',
-   Key='test.py',
-   EnableMD5=False
-)
-request_id = response['X-Cos-Request-Id']
-print(request_id)
+QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
+/** Path of the local file. Ensure that the URL starts with "file://" in the following format:
+1. [NSURL URLWithString:@"file:////var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
+2. [NSURL fileURLWithPath:@"/var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
+*/
+NSURL* url = [NSURL fileURLWithPath:@"file URL"];
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+put.bucket = @"examplebucket-1250000000";
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+put.object = @"exampleobject";
+// Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type
+put.body =  url;
+// Monitor the upload progress
+[put setSendProcessBlock:^(int64_t bytesSent,
+                           int64_t totalBytesSent,
+                           int64_t totalBytesExpectedToSend) {
+    //      bytesSent                 Number of bytes to send in this request (a large file may require multiple requests)
+    //      totalBytesSent            Total number of bytes sent so far
+    //      totalBytesExpectedToSend  Total number of bytes expected to send, i.e. the size of the file
+}];
+// Monitor the upload result
+[put setFinishBlock:^(QCloudUploadObjectResult *result, NSError *error) {
+    // Obtain requestId
+   [result.__originHTTPURLResponse__.allHeaderFields objectForKey:@"x-cos-request-id"]
+}];
+[put setInitMultipleUploadFinishBlock:^(QCloudInitiateMultipartUploadResult *
+                                        multipleUploadInitResult,
+                                        QCloudCOSXMLUploadObjectResumeData resumeData) {
+    // This block will be called back after the Initiate Multipart Upload operation is complete so you can get resumeData and the uploadId.
+    NSString* uploadId = multipleUploadInitResult.uploadId;
+}];
+[[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 ```
+

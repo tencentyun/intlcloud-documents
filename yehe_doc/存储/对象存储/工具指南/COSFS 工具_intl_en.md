@@ -1,4 +1,4 @@
-## Overview 
+## Feature Description 
 
 COSFS allows you to mount COS buckets to local and work with the COS objects as you do with a local file system. COSFS supports the following features:
 - Most features of the POSIX file system, such as reading/writing files, operations on directories/links, permission management, and uid/gid management.
@@ -129,9 +129,9 @@ cd fuse-2.9.4
 make
 make install
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig/:/usr/local/lib/pkgconfig
-modprobe fuse   #Mount the fuse's kernel module
+modprobe fuse   # Mount FUSE's kernel module.
 echo "/usr/local/lib" >> /etc/ld.so.conf
-ldconfig   #Update the dynamic link library
+ldconfig   # Update the dynamic-link library.
 pkg-config --modversion fuse  #View the fuse version number. If "2.9.4" is displayed, fuse 2.9.4 is installed successfully. 
 ```
 - Install FUSE 2.8.4 or later on the SUSE system manually, as shown below:
@@ -209,11 +209,13 @@ mkdir -p /mnt/cosfs
 cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -onoxattr -oallow_other
 ```
 
->! If your COSFS is v1.0.5 or earlier, use the following command for the mount: `cosfs &lt;APPID>:&lt;BucketName> &lt;MountPoint> -ourl=&lt;CosDomainName> -oallow_other`.
+>!
+>- To improve performance, COSFS uses the system disk by default for the temporary cache of uploaded and downloaded files and releases space after files are closed. When a large number of concurrent files are opened or large files are read or written, COSFS uses hard disk space as much as possible to improve performance. By default, only 100 MB of free hard disk space is reserved for other applications. You can use the `oensure_diskfree=[size]` option to set the size of available hard disk space in MB reserved by COSFS. For example, `-oensure_diskfree=1024` indicates that COSFS will reserve 1024 MB of free space.
+>- If your COSFS is v1.0.5 or earlier, use the following mount command: `cosfs &lt;APPID>:&lt;BucketName> &lt;MountPoint> -ourl=&lt;CosDomainName> -oallow_other`.
 >
 
 
-#### 3. Unmount a bucket
+### 3. Unmount a bucket
 
 Unmount a bucket using the following commands:
 
@@ -251,6 +253,10 @@ Removes the permission of a specified type of users to operate files in the moun
 #### -ouid=[uid]
 Allows the user whose id is [uid] to access all the files in the mounting destination directory without being restricted by the file permission bits.
 You can obtain the uid of a user using the id command `id -u username`. For example, you can execute `id -u user_00` to obtain the uid of user_00.
+
+#### -oensure_diskfree=[size]
+
+To improve performance, COSFS uses the system disk by default for the temporary cache of uploaded and downloaded files and releases space after files are closed. When a large number of concurrent files are opened or large files are read or written, COSFS uses hard disk space as much as possible to improve performance. By default, only 100 MB of free hard disk space is reserved for other applications. You can use the `oensure_diskfree=[size]` option to set the size of available hard disk space in MB reserved by COSFS. For example, `-oensure_diskfree=1024` indicates that COSFS will reserve 1024 MB of free space.
 
 
 ## FAQs

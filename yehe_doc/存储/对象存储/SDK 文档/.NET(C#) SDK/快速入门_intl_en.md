@@ -14,7 +14,7 @@
 
 ## Step 1. Integrate the SDK
 
-#### Environment requirements
+#### Environmental dependencies
 
 The .NET SDK is developed based on .NET Standard 2.0.
 
@@ -39,7 +39,7 @@ If you develop for the target framework .Net Framework 4.0 or below, please down
 
 In your Visual Studio project, click **Project** > **Add Reference** > **Browse** > **COSXML-Compatible.dll** to add the .NET(C#) SDK.
 
->? About the backward compatibility of the .NET SDK, please see [Backward Compatibility](https://cloud.tencent.com/document/product/436/61569).
+>? The compatible package does not support features such as advanced upload and download. For details, see [Backward Compatibility](https://intl.cloud.tencent.com/document/product/436/42378).
 >
 
 
@@ -157,9 +157,9 @@ try
 {
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   PutBucketRequest request = new PutBucketRequest(bucket);
-  // Execute the request.
+  // Execute the request
   PutBucketResult result = cosXml.PutBucket(request);
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -179,7 +179,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 try
 {
   GetServiceRequest request = new GetServiceRequest();
-  // Execute the request.
+  // Execute the request
   GetServiceResult result = cosXml.GetService(request);
   // Get the list of all buckets.
   List<ListAllMyBuckets.Bucket> allBuckets = result.listAllMyBuckets.buckets;
@@ -204,7 +204,7 @@ TransferConfig transferConfig = new TransferConfig();
 // Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 String srcPath = @"temp-source-file";// Absolute path to the local file
 
@@ -227,14 +227,14 @@ try{
 }
 ```
 
-### Querying objects
+### Query objects
 
 ```cs
 try
 {
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   GetBucketRequest request = new GetBucketRequest(bucket);
-  // Execute the request.
+  // Execute the request
   GetBucketResult result = cosXml.GetBucket(request);
   // Bucket information
   ListBucket info = result.listBucket;
@@ -255,7 +255,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-### Downloading an object
+### Download an object
 
 ```cs
 // Initialize TransferConfig.
@@ -264,10 +264,10 @@ TransferConfig transferConfig = new TransferConfig();
 // Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket, formatted as `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 string localDir = System.IO.Path.GetTempPath();// Local file directory
-string localFileName = "my-local-temp-file"; // Specify the name of the file to be saved locally
+string localFileName = "my-local-temp-file"; // Filename of the local file
 
 // Download an object.
 COSXMLDownloadTask downloadTask = new COSXMLDownloadTask(bucket, cosPath, 
@@ -288,7 +288,7 @@ try{
 }
 ```
 
-### Deleting an object
+### Delete an object
 
 ```cs
 try
@@ -296,9 +296,9 @@ try
   string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
   string key = "exampleobject"; // Object key
   DeleteObjectRequest request = new DeleteObjectRequest(bucket, key);
-  // Execute the request.
+  // Execute the request
   DeleteObjectResult result = cosXml.DeleteObject(request);
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)

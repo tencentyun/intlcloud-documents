@@ -66,7 +66,7 @@ According to the time column chart, 14 logs are recorded on the last day. For th
 
 According to the quick analysis, there are 6 request log records whose **resHttpCode** is not 200: **resHttpCode** is 403 for 5 log records and 204 for 1 log record. Click to search for these logs quickly.
 
-According to the logs, the 5 log records whose error code is **Access Deny** are object access failure logs. According to the logs whose **resHttpCode** is 204, object access failed because user `1000******` performed object deletion at around 19:38 on August 24 in the COS console.
+According to the logs, the 5 log records whose error code is **Access Deny** are object access failure logs. According to the logs whose **resHttpCode** is 204, object access failed because user `1000******` performed object deletion at around 20:16 on August 24 in the COS console.
 
 ### Example 2: operations statistics
 
@@ -87,7 +87,7 @@ According to the logs, the 5 log records whose error code is **Access Deny** are
 
 - Collect statistics on the access trend of a certain bucket
 ```sql
-* | select date_trunc('minute', __TIMESTAMP__) AS time, count(*) as pv, reqMethod group by time, reqMethod order by time limit 200
+* | select time_series(__TIMESTAMP__, '1m', '%Y-%m-%dT%H:%i:%s+08:00', '0') AS time, count(*) as pv, reqMethod group by time, reqMethod order by time limit 200
 ```
 
 - Collect statistics on the top 10 visitors of the error requests

@@ -13,7 +13,7 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
       <th>Download Address</td>
    </tr>
    <tr>
-      <td rowspan="3">Desktop Version</td>
+      <td rowspan=3>Desktop Version</td>
       <td>Windows</td>
       <td>Windows 7 32/64-bit or above, Windows Server 2008 R2 64-bit or above</td>
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-setup-latest.exe">Windows</a></td>
@@ -26,11 +26,11 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
    <tr>
       <td>Linux</td>
       <td>Includes a GUI that supports the <a href="https://appimage.org">AppImage</a> format<br>
-          Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox in the terminal.</code></td> 
+          Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox in the terminal .</code></td>
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
    <tr>
-      <td rowspan="2">Mobile Version</td>
+      <td rowspan=2>Mobile Version</td>
       <td>Android</td>
       <td>Android 4.4 or later</td>
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.apk">Android</a></td>
@@ -83,6 +83,8 @@ COSBrowser for desktop has the following features:
 | [Creating a folder](https://intl.cloud.tencent.com/document/product/436/32565#newfolder) | Creates a folder in a bucket |
 | [Viewing file details](https://intl.cloud.tencent.com/document/product/436/32565#view) | Views the basic information of the files in a bucket |
 | [Generating a file link](https://intl.cloud.tencent.com/document/product/436/32565#generatelinks) | Generates a file access link with a certain validity period by requesting a temporary signature |
+| [Sharing a file/folder](https://intl.cloud.tencent.com/document/product/436/32565#share) | Shares a file/folder and sets a validity period for the sharing         |
+| [Exporting file URLs](https://intl.cloud.tencent.com/document/product/436/32565#export) | Exports file URLs in batches         |
 | [Previewing a file](https://intl.cloud.tencent.com/document/product/436/32565#preview) | Previews media files (images, video, and audio) in your bucket |
 | [Searching a file](https://intl.cloud.tencent.com/document/product/436/32565#searchfile) | Searches files in a bucket through prefix search |
 | [Searching buckets](https://intl.cloud.tencent.com/document/product/436/32565#searchbuckete) | Searches existing buckets |
@@ -92,12 +94,12 @@ COSBrowser for desktop has the following features:
 | [Setting the number of parts to be transferred](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of parts for multipart upload or download |
 | [Setting the number of retries upon transfer failure](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of retries upon upload or download failure |
 | [Setting upload check](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Double-checks files uploaded to a bucket |
-| [Setting MD5 checksum calculation during upload](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Calculates the MD5 checksums of files uploaded to a bucket and adds them to custom headers |
+| [Limiting single-thread speed](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Limits the upload and download speeds for a single thread |
 | [Viewing a local log](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Saves the record of operations on COSBrowser in the form of a local log |
 
 ## COSBrowser Mobile Version
 
-The COSBrowser mobile version is mainly used to monitor COS resources (such as storage usage and traffic) at any time you want. For more supported features, please see [Mobile Version Features](https://intl.cloud.tencent.com/document/product/436/32566).
+The COSBrowser mobile version is mainly used to monitor COS resources (such as storage usage and traffic) at any time you want. For more supported features, please see [Mobile Version Features](https://intl.cloud.tencent.com/document/product/436/41616).
 
 ## Changelog
 

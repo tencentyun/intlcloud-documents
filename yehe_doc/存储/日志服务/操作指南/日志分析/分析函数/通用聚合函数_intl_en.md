@@ -18,7 +18,7 @@ An aggregate function calculates a set of values and returns the calculation res
 | count_if(boolean)        | Returns the number of logs that meet specified conditions.                      | `* | select count_if(returnCode>=400) as errorCounts`                    |
 | geometric_mean(KEY)  | Returns the geometric mean of the `KEY` column.                          | `* | SELECT geometric_mean(request_time) AS request_time`     |
 | max(KEY)             | Returns the maximum value of `KEY`.                                 | `* | SELECT MAX(request_time) AS max_request_time`           |
-| max_by(x,y)          | Returns the value of `x` associated with the maximum value of `y `over all input values.                        | `* | SELECT MAX(request_method, request_time) AS method`     |
+| max_by(x,y)          | Returns the value of `x` associated with the maximum value of `y `over all input values.                        | `* | SELECT MAX_BY(request_method, request_time) AS method`     |
 | max_by(x,y,n)        | Returns `n` values of `x` associated with the `n` largest of all input values of `y` in descending order of `y`.   | `* | SELECT max_by(request_method, request_time, 3) AS method` |
 | min(KEY)             | Returns the minimum value of `KEY`.                                   | `* | SELECT MIN(request_time) AS min_request_time`           |
 | min_by(x,y)          | Returns the value of `x` associated with the minimum value of `y `over all input values.                        | `* | SELECT min_by(request_method, request_time) AS method`   |

@@ -1,12 +1,18 @@
 ## Calculation Method
-Currently, SCF resource usage is calculated by multiplying the configured function memory size by the **actually triggered execution duration** of the function. Compared with the original billing mode of rounding up to the nearest 100-ms, this billing mode calculates less overall resource usage and fees, helping you reduce your costs.
+Currently, SCF resource usage is calculated by multiplying the memory configured for function by the **actually triggered execution duration** of function. Compared with the original billing mode of rounding up to the nearest 100-ms, this billing mode calculates less overall resource usage and fees, helping save your budget.
 
-The provisioned concurrency fees of SCF are charged only for unused instances after configuration, i.e., idle provisioned concurrent instances. For instances in use, SCF only charges elastic concurrency fees.
+
 
 ### Web and API services
 For web services or API requests, the actual execution duration of the code is usually only 30–50 ms. Billing by actual execution duration can lower fees by up to 70%.
 
 **Example**: user A uses an API service composed of SCF and API Gateway by configuring a function with 128 MB memory and an average execution duration of 37 ms. In the original billing mode, the billable duration of the function is 100 ms, and if the function is invoked 1 million times per day, a resource usage of 12,500 GBs would be generated. In contrast, in the billing mode based on the actual execution duration, only 4,625 GBs will be generated, which is a 63% reduction.
+
+
+
+
+
+
 
 ### Message processing
 
@@ -69,26 +75,60 @@ Suppose a function with 256 MB memory is invoked 50 times per minute through the
 
 In this case, the total fees are the resource usage fees of 0.35 USD + invocation fees of 0.23 USD + public network outbound traffic fees of 0.25 USD = 0.83 USD.
 
+
 ### Idle provisioned concurrency fees
 
 The idle provisioned concurrency fees are independent of the other three billable items. After provisioned concurrency is configured, small idle fees will be charged only for the instances that have been configured and started but are not in use. This section describes how such fees are calculated with an example where the concurrency fluctuates sharply and the provisioned concurrency quota is adjusted.
 
-**Example**: suppose function D is configured with 256 MB memory, there is no change in the number of concurrent instances per minute, the function is configured with 100 provisioned instances at 18:01, and the number of provisioned instances is increased to 120 at 18:07 due to business surge and then is lowered to 80 at 18:10. **Taking the minute of 18:01 as an example**, this minute has 100 provisioned instances, and the number of actually running concurrent instances is 30, then:
+
+**Example 1:** if a function version with 128 MB memory has a provisioned concurrency quota of 12,800 MB (10 instances), is invoked 50 times per second on average, generates a 1 KB file during each invocation, uploads the file to a self-built external site, and has 8 concurrent instances in 10 seconds, then:
+
+- Number of idle instances = max(10 - 8, 0) = 2
+- Configured memory size = 128MB
+- Idle duration = 10s
+- Idle provisioned concurrency price = 0.00000847 USD/GBs
+
+**Idle provisioned concurrency fees** = 2 * 128 / 1024 GB * 10s * 0.00000847 USD/GBs = 0.000021175 USD
+
+**Prices of resource usage and invocations:**
+
+- Resource usage = 0.00011108 USD/GBs
+- Invocations = 0.0133 USD/10000 invocations
+- Public network outbound traffic = 0.12 USD/GB
+
+**Pay-as-You-Go fees:**
+
+- Resource usage: (128 * 8 / 1024) * 10 * 50 = 500 GBs, which is less than 20,000 GBs and does not incur fees
+- Invocations: 50 * 10  = 500 invocations, which is less than 100,000 invocations (50,000 for event-triggered functions and 50,000 for HTTP-triggered functions) and does not incur fees
+- Traffic: 1 * 50 * 10= 500 KB, which is less than 0.5 GB and does not incur fees
+
+In this case, the **pay-as-you-go fees** are 0.
+
+**Total fees** = pay-as-you-go fees + idle provisioned concurrency fees = 0 + 0.000021175 USD = 0.000021175 USD
+
+**Example 2:** suppose function A is configured with 256 MB memory, is invoked 50 times per minute on average, generates a 1 KB file during each invocation, uploads the file to a self-built external site, and is configured with 100 provisioned instances at 18:01, and the number of provisioned instances is increased to 120 at 18:07 due to business surge and then is lowered to 80 at 18:10. **Taking the minute of 18:01 as an example**, this minute has 100 provisioned instances, and the number of actually running concurrent instances is 30, then:
 
 - **Number of idle instances** = 100 - 30 = 70
 - **Idle resources** = number of idle instances * configured memory size * idle duration = 70 * 256 MB * 60s = 70 * (256 / 1024) GB * 60s = 1,050 GBs
-- Incurred **idle provisioned concurrency fees** = idle resources * idle provisioned concurrency price = 1050 GBs * 0.00000847 USD/GBs = 0.009 USD
+**Idle provisioned concurrency fees** = idle resources * idle provisioned concurrency price = 11050 GBs * 0.00000847 USD/GBs = 0.009 USD
 
-In the same calculation method as shown in the above example, the detailed billing for the 10 minutes of function A can be calculated, and the accumulated idle fees for the 10 minutes are 0.009 USD as shown below:
+**Pay-as-You-Go fees:**
 
-The billing details for these ten minutes are as follows:
+- Resource usage: (256 * 8 / 1024) * 60 * 50 = 3000 GBs, which is less than 20,000 GBs and does not incur fees
+- Invocations: 50 * 60  = 3000 invocations, which is less than 100,000 invocations (50,000 for event-triggered functions and 50,000 for HTTP-triggered functions) and does not incur fees
+- Traffic: 1 * 50 * 60= 3000 KB, which is less than 0.5 GB and does not incur fees
 
-|                | 18:01 | 18:02 | 18:03 | 18:04 | 18:05 | 18:06 | 18:07 | 18:08 | 18:09 | 18:10 |   Total    |
-| -------------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+In this case, the **pay-as-you-go fees** are 0.
+
+**Total fees** = pay-as-you-go fees + idle provisioned concurrency fees = 0 + 0.009 USD = 0.009 USD
+
+In the same calculation method as shown in the above example, the detailed billing for the 10 minutes of function A can be calculated, the accumulated idle fees for the 10 minutes are 0.009 USD, and the total fees are 0.009 USD as shown below:
+
+| Billable Item         | 18:01 | 18:02 | 18:03 | 18:04 | 18:05 | 18:06 | 18:07 | 18:08 | 18:09 | 18:10 | Total  |
+| :------------- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
 | Configured provisioned concurrency | 100   | 100   | 100   | 100   | 100   | 100   | 120   | 120   | 120   | 80    |    -  |
 | Number of concurrent instances for this version   | 30    | 66    | 88    | 100   | 120   | 150   | 180   | 160   | 100   | 30    |   -   |
 | Number of idle instances     | 70    | 34    | 12    | 0     | 0     | 0     | 0     | 0     | 20    | 50    |   -   |
 | Idle instance fees       | 0.009 | 0.004 | 0.002 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.003 | 0.006 | 0.024 |
-
-
+| Pay-as-You-Go fees   | 0     | 0     | 0     | 0     | 0     | 0     | 0     | 0     | 0     | 0     | 0     |
 

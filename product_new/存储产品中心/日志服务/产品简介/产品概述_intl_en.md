@@ -18,7 +18,7 @@ CLS supports collecting logs by using LogListener and API, enabling you to easil
 #### Log index and query
 - Real-time index: index collected log data in real time to enable data search.
 - Excellent query performance: query results are returned within seconds. 100-million-level log data search and quick data locating are supported.
-- Flexible query: features such as full-text search, multi-keyword search, range query, and fuzzy query are supported.
+- Flexible query: features such as full-text search, multi-keyword search, range query,  fuzzy query,  and Chinese search are supported.
 
 #### Log shipping
 - Shipping logs to COS: ship log data to COS buckets under your account to store and manage the log data.

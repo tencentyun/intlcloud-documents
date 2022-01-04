@@ -24,9 +24,9 @@ The COALESCE function determines the input parameters in sequence and returns th
 COALESCE ( expression, expression, ... )
 ```
 
-> Values, arrays, or nested functions of INT, String, and Float types can be passed in for the `expression` parameter.
+> ?Values, arrays, or nested functions of INT, String, and Float types can be passed in for the `expression` parameter.
 
-#### Samples
+#### Sample
 
 ```shell
 COALESCE(1)                -- 1
@@ -50,9 +50,9 @@ The NULLIF function determines the difference between two parameters passed in. 
 NULLIF ( expression1, expression2 )
 ```
 
->  Values, arrays, or nested functions of INT, String, and Float types can be passed in for the `expression` parameter.
+> ? Values, arrays, or nested functions of INT, String, and Float types can be passed in for the `expression` parameter.
 
-#### Samples
+#### Sample
 
 ```shell
 NULLIF(1, 2)             -- 1
@@ -81,12 +81,12 @@ The CAST function converts one instance to another instance. The instance can be
 CAST ( expression AS data_type )
 ```
 
-> 
+> ?
 >
 > - The `expression` parameter can be a value, an array, an operator, or an SQL function that can be calculated to a certain value.
 > - The `data_type` parameter is the data type after conversion, such as INT. For the data types currently supported by COS Select, see [Data Types](https://intl.cloud.tencent.com/document/product/436/32476).
 
-#### Samples
+#### Sample
 
 ```shell
 CAST('2007-04-05T14:30Z' AS TIMESTAMP)
@@ -107,18 +107,17 @@ The DATE_ADD function adds a specified time interval to a part (year, month, day
 DATE_ADD( date_part, quantity, timestamp )
 ```
 
-> 
+> ?
 > - The `date_part` parameter specifies the part of the timestamp to be modified, which can be year, month, day, hour, minute, or second.
 > - The `quantity` parameter represents the value to be added, which must be a positive integer.
 > - The `timestamp` parameter represents the timestamp to be modified.
 
-#### Samples
+#### Sample
 
 ```shell
 DATE_ADD(year, 5, `2010-01-01T`)                -- 2015-01-01
 DATE_ADD(month, 1, `2010T`)                     -- 2010-02T 
 DATE_ADD(month, 13, `2010T`)                    -- 2011-02T
-DATE_ADD(day, -1, `2017-01-10T`)                -- 2017-01-09 
 DATE_ADD(hour, 1, `2017T`)                      -- 2017-01-01T01:00-00:00
 DATE_ADD(hour, 1, `2017-01-02T03:04Z`)          -- 2017-01-02T04:04Z
 DATE_ADD(minute, 1, `2017-01-02T03:04:05.006Z`) -- 2017-01-02T03:05:05.006Z
@@ -135,12 +134,12 @@ The DATE_DIFF function compares two valid timestamps and returns the difference 
 DATE_DIFF( date_part, timestamp1, timestamp2 )
 ```
 
-> 
+> ?
 > - The `date_part` parameter specifies the unit of time which the two timestamps are compared in and can be year, month, day, hour, minute, or second.
 > - The `timestamp1` parameter is the first input timestamp.
 > - The `timestamp2` parameter is the second input timestamp.
 
-#### Samples
+#### Sample
 
 ```shell
 DATE_DIFF(year, `2010-01-01T`, `2011-01-01T`)            -- 1
@@ -160,11 +159,11 @@ DATE_DIFF(day, `2010-01-01T23:00T`, `2010-01-02T01:00T`) -- 0
 EXTRACT( date_part FROM timestamp )
 ```
 
-> 
+> ?
 > - The parameter `date_part` specifies the unit of time to be extracted, which can be year, month, day, hour, minute, or second.
 > - The `timestamp` parameter represents the input timestamp.
 
-#### Samples
+#### Sample
 
 ```shell
 EXTRACT(YEAR FROM `2010-01-01T`)                           -- 2010
@@ -186,7 +185,7 @@ The TO_STRING function converts a timestamp to a string of time in the specified
 TO_STRING ( timestamp time_format_pattern )
 ```
 
-> 
+> ?
 > - The `timestamp` parameter specifies the timestamp to be converted.
 > - The `time_format_pattern` parameter specifies the time format.
 
@@ -224,7 +223,7 @@ TO_STRING ( timestamp time_format_pattern )
 | xx or xxxx | Hour- or minute-level offset | 0100 |
 | xxx or xxxxx | Hour- or minute-level offset | 01:00 |
 
-#### Samples
+#### Sample
 
 ```shell
 TO_STRING(`1998-07-20T20:18Z`,  'MMMM d, y')                    -- "July 20, 1998"
@@ -248,9 +247,9 @@ TO_STRING(`1998-07-20T20:18+08:00`, 'y-MM-dd''T''H:m:ssXXXXX')  -- "1998-07-20T2
 TO_TIMESTAMP ( string )
 ```
 
->  The `string` parameter represents the input time string.
+> ? The `string` parameter represents the input time string.
 
-#### Samples
+#### Sample
 
 ```shell
 TO_TIMESTAMP('2007T')                         -- `2007T`
@@ -267,7 +266,7 @@ TO_TIMESTAMP('2007-02-23T12:14:33.079-08:00') -- `2007-02-23T12:14:33.079-08:00`
 UTCNOW()
 ```
 
-#### Samples
+#### Sample
 
 ```shell
 UTCNOW() -- 2019-01-01T14:23:12.123Z
@@ -287,9 +286,9 @@ Both CHAR_LENGTH and CHARACTER_LENGTH can compute the number of characters in a 
 CHAR_LENGTH ( string )
 ```
 
->  The `string` parameter specifies the string for character counting
+> ? The `string` parameter specifies the string for character counting
 
-#### Samples
+#### Sample
 
 ```shell
 CHAR_LENGTH('null')      -- 4
@@ -306,9 +305,9 @@ CHAR_LENGTH('tencent')   -- 7
 LOWER ( string )
 ```
 
->  The `string` parameter specifies the string for which to convert uppercase letters to lowercase letters.
+> ? The `string` parameter specifies the string for which to convert uppercase letters to lowercase letters.
 
-#### Samples
+#### Sample
 
 ```shell
 LOWER('TENcent') -- 'tencent'
@@ -318,7 +317,8 @@ LOWER('TENcent') -- 'tencent'
 
  The SUBSTRING function returns a substring of a string. You can specify an index from which the SUBSTRING function will extract the remainder of the original string based on the length of the specified substring and return the result.
 
-> If the input string contains only 1 character, and the index is set to greater than 1, the SUBSTRING function will automatically switch it to 1.
+>? If the input string contains only 1 character, and the index is set to be greater than 1, the SUBSTRING function will automatically switch it to 1.
+>
 
 #### Syntax
 
@@ -326,12 +326,12 @@ LOWER('TENcent') -- 'tencent'
 SUBSTRING( string FROM start [ FOR length ] )
 ```
 
-> 
+> ?
 > - The `string` parameter specifies the string from which to extract a substring.
 > - The `start` parameter represents an index value of the string as the starting position for extraction.
 > - The `length` parameter specifies the length of the substring. If the length of the substring is not specified, the remainder of the string will be extracted.
 
-#### Samples
+#### Sample
 
 ```shell
 SUBSTRING("123456789", 0)      -- "123456789"
@@ -352,12 +352,12 @@ SUBSTRING("123456789", 1, 5)   -- "12345"
 TRIM ( [[LEADING | TRAILING | BOTH remove_chars] FROM] string )
 ```
 
-> 
+> ?
 > -  The `string` parameter specifies the string to be manipulated.
 > - The `LEADING | TRAILING | BOTH` parameter specifies the extra characters to be deleted, which can be before the string (LEADING), after the string (TRAILING), or both (BOTH).
 > - The `remove_chars` parameter specifies the type of extra characters to be deleted. It can be a string containing more than one characters. The TRIM function will delete all extra characters of the corresponding type that are identified by the TRIM function before or after the `string` parameter.
 
-#### Samples
+#### Sample
 
 ```shell
 TRIM('       foobar         ')               -- 'foobar'
@@ -378,10 +378,11 @@ TRIM(BOTH '12' FROM '1112211foobar22211122') -- 'foobar'
 UPPER ( string )
 ```
 
->  The `string` parameter specifies the string to be converted to uppercase letters.
+> ? The `string` parameter specifies the string to be converted to uppercase letters.
 
-#### Samples
+#### Sample
 
 ```shell
 UPPER('tenCENT') -- 'TENCENT'
 ```
+

@@ -27,7 +27,7 @@ You have purchased TKE and enabled the cluster audit log feature. For more infor
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=1).
 2. On the left sidebar, choose **Cluster OPS** > **Auditing Search**.
-3. On the **Auditing Search** page, click the **K8s Object Operation Overview** tab and specify the operation type as **delete** and specify the resource object.
+3. On the **Auditing Search** page, click the **K8s Object Operation Overview** tab and specify the operation type as **delete** and specify the resource object nginx.
 
 The following figure shows an example of the query result.
 

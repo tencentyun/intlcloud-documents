@@ -4,7 +4,7 @@ This document provides an overview of APIs and SDK code samples related to persi
 
 | API | Description |
 | :----------------------------------------------------------- | :----------------------------------- |
-| [Persistent Image Processing](https://cloud.tencent.com/document/product/436/54050) | COS supports processing images upon upload. You can also process images that are already stored in COS and save the processed images to COS. |
+| [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) | COS supports processing images upon upload. You can also process images that are already stored in COS and save the processed images to COS. |
 
 
 ## Processing upon Upload
@@ -12,14 +12,29 @@ This document provides an overview of APIs and SDK code samples related to persi
 #### Sample code
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
         $imageMogrTemplate = new Qcloud\Cos\ImageParamTemplate\ImageMogrTemplate(); //Create a parameter template instance for basic image processing
         $imageMogrTemplate->thumbnailByScale(50); //Scale an image to 50% of its original width and height
-        $picOperationsTemplate = new \Qcloud\Cos\ImageParamTemplate\PicOperationsTemplate(); //Create a parameter template instance for persistent image processing
-        $picOperationsTemplate->setIsPicInfo(1); //Set whether to return the input image information. `0`: no (default); `1`: yes
+        $picOperationsTemplate = new \Qcloud\Cos\ImageParamTemplate\PicOperationsTransformation(); //Create a parameter template instance for persistent image processing
+        $picOperationsTemplate->setIsPicInfo(1); //Set whether to return the input image information. `0` (default): no; `1`: yes
         $picOperationsTemplate->addRule($imageMogrTemplate, "resultobject"); //Set the image processing rule
         $result = $cosClient->putObject(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
         'Body' => fopen('path/to/localFile', 'rb'), 
         'PicOperations' => $picOperationsTemplate->queryString(), //Generate parameters for presistent image processing
@@ -42,7 +57,7 @@ try {
 | PicOperations    | Json/String      | Persistent image processing information                                  | Yes       |
 
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -115,14 +130,29 @@ Guzzle\Service\Resource\Model Object
 #### Sample code
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+            
 try {
         $imageMogrTemplate = new Qcloud\Cos\ImageParamTemplate\ImageMogrTemplate(); //Create an instance of the basic image processing parameter template
         $imageMogrTemplate->thumbnailByScale(50); //Scale an image to 50% of its original width and height
-        $picOperationsTemplate = new \Qcloud\Cos\ImageParamTemplate\PicOperationsTemplate(); //Create a parameter template instance for persistent image processing
-        $picOperationsTemplate->setIsPicInfo(1); //Set whether to return the input image information. `0`: no (default); `1`: yes
+        $picOperationsTemplate = new \Qcloud\Cos\ImageParamTemplate\PicOperationsTransformation(); //Create a parameter template instance for persistent image processing
+        $picOperationsTemplate->setIsPicInfo(1); //Set whether to return the input image information. `0` (default): no; `1`: yes
         $picOperationsTemplate->addRule($imageMogrTemplate, "resultobject"); //Set the image processing rule
         $result = $cosClient->ImageProcess(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
         'PicOperations' => $picOperationsTemplate->queryString(), //Generate parameters for presistent image processing
     ));
@@ -143,7 +173,7 @@ try {
 | PicOperations    | Json/String      | Persistent image processing information                                  | Yes       |
 
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object

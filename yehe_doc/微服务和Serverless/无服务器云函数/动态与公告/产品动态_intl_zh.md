@@ -1,3 +1,23 @@
+## 2021年11月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="20%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>云函数支持预置并发</td>
+<td>云函数支持预置并发功能，通过配置预置并发，可预先进行计算资源的准备，降低冷启动、运行环境初始化及业务代码初始化引起的耗时。</td><td>2021-11-01</td><td>
+<a href="https://intl.cloud.tencent.com/document/product/583/37704">预置并发</a>
+</td>
+</tr>
+</tbody></table>
+
 ## 2021年07月
 
 <table>
@@ -20,7 +40,9 @@
 </tr>
 </tbody></table>
 
+
 ## 2021年06月
+
 <table>
 <thead>
 <tr>
@@ -68,17 +90,16 @@
 <tbody>
 <tr>
 <td>SCF 异步调用重试能力</td>
-<td><ul>
+<td>
 <li>
 SCF 支持修改异步调用的重试与最长保留配置，通过相关配置用户可以控制函数资源的重试能力。</li>
 <li>更新函数超限重试策略，无需关心超限导致的数据重试失败，函数默认会对超限错误进行特殊重试。</li>
-<ul></td>
+</td>
 <td>2021-01-18</td>
 <td>
-<li>死信队列</li>
-<li><a href="https://intl.cloud.tencent.com/document/product/583/34383">错误类型与重试策略</a></li>
-<li>并发超限</li>
-</ul></td>
+<li><a href="https://intl.cloud.tencent.com/document/product/583/39704">死信队列</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/583/39851">错误类型与重试策略</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/583/39848">并发超限</a></li></td>
 </tr>
 </tbody></table>
 
@@ -96,11 +117,11 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 <tbody>
 <tr>
 <td>云函数创建流程全面升级</td>
-<td><ul><li>简化函数创建流程，快速完成函数创建。</li>
+<td><li>简化函数创建流程，快速完成函数创建。</li>
 <li>模版创建函数支持配置化。</li>
 <li>函数创建流程支持触发器配置。</li>
 <li>和 Serverless Framework 打通，支持在云函数控制台创建应用。</li>
-<li>和 CODING 打通，支持通过 CI 部署函数和应用。</li></ul></td>
+<li>和 CODING 打通，支持通过 CI 部署函数和应用。</li></td>
 <td>2020-12-30</td>
 <td>-</td>
 </tr>
@@ -114,19 +135,19 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 <tr>
 <td>云函数 Serverless Web IDE 正式发布</td>
 <td>云函数 SCF 和 CODING 深度合作推出 Serverless Web IDE，提供更接近本地 IDE 的开发体验。支持：
-<ul><li>完整的函数开发、部署、测试能力。</li>
+<li>完整的函数开发、部署、测试能力。</li>
 <li>终端能力，预置了常用的 pip、npm 等开发工具和云函数 SCF 已经支持的编程语言开发环境。</li>
 <li>完整的 IDE 所含的基础能力，包括智能提示、代码自动补全等。</li>
-<li>用户自定义 IDE 配置，在不同函数的在线开发中提供一致的 IDE 使用体验。</li></ul></td>
+<li>用户自定义 IDE 配置，在不同函数的在线开发中提供一致的 IDE 使用体验。</li></td>
 <td>2020-12-29</td>
-<td>Serverless Web IDE
+<td><a href="https://intl.cloud.tencent.com/document/product/583/39962">Serverless Web IDE</a>
 </td>
 </tr>
 <tr>
 <td>云函数支持 MPS 触发器正式发布</td>
 <td>通过云函数 SCF + MPS 结合的方式，可帮助用户快速完成对视频处理 MPS 产生的回调事件进行处理及操作。</td>
 <td>2020-12-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/583/39339">MPS 函数处理概述</a>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/583/39339">MPS 函数处理概述</a>
 </td>
 </tr>
 <tr>
@@ -137,7 +158,6 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 </td>
 </tr>
 </tbody></table>
-
 
 
 
@@ -165,19 +185,20 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 <td>云函数支持 CLS 触发器正式发布</td>
 <td>使用云函数 SCF 来处理 CLS 日志服务中采集到的日志，通过将采集到的日志作为参数传递来调用 SCF 云函数，函数代码可以对其进行数据加工处理、分析或将其转储到其他云产品。</td>
 <td>2020-11-17</td>
-<td><ul>
+<td>
 <li><a href="https://intl.cloud.tencent.com/document/product/583/38845">CLS 触发器</a></li>
-<li><a href="https://intl.cloud.tencent.com/document/product/583/38847">CLS 函数处理概述</a></li>
-</ul></td>
+<li><a href="https://intl.cloud.tencent.com/zh/document/product/583/38847">CLS 函数处理概述</a></li>
+</td>
 </tr>
 <tr>
 <td>云函数支持 Ckafka 消息转储至 Elasticsearch 正式发布</td>
 <td>消息队列 Ckafka 合作能力拓展，支持用户转储消息的能力，用户可以使用云函数将 Ckafka 消息转储至 ES 进行消费和管理，便于海量数据存储搜索、实时日志分析等。</td>
 <td>2020-11-17</td>
-<td>消息转储至 Elasticsearch
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/583/37896">消息转储至 Elasticsearch</a>
 </td>
 </tr>
 </tbody></table>
+
 
 
 
@@ -193,6 +214,13 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 </thead>
 <tbody>
 <tr>
+<td>基于云函数 SCF 的 Ckafka to Ckafka 转储功能正式发布</td>
+<td>使用 SCF 实现 Ckafka TOPIC 到另一个 Ckafka TOPIC 集群的转储能力。</td>
+<td>2020-08-06</td>
+<td>消息转储至消息队列 CKafka</a>
+</td>
+</tr>
+<tr>
 <td>云函数 SCF 定制化运行环境 Custom Runtime 功能正式发布</td>
 <td>云函数 SCF 提供 Custom Runtime 即可定制化运行环境，通过将函数的运行时开放自定义实现，开发者可以根据需求使用任意开发语言的任意版本来编写函数。</td>
 <td>2020-08-05</td>
@@ -200,6 +228,7 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 </td>
 </tr>
 </tbody></table>
+
 
 
 
@@ -214,6 +243,13 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>云函数 SCF 预置并发功能内测发布</td>
+<td>预置并发支持并发实例按配置预先启动。</td>
+<td>2020-07-27</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/37704 ">预置并发</a>
+</td>
+</tr>
 <tr>
 <td> 云函数 SCF 支持 CFS 文件系统正式发布</td>
 <td>云函数支持挂载 CFS 文件系统使云函数拥有更大硬盘空间，并提供不同函数写入同个文件系统的能力。</td>
@@ -236,6 +272,7 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 <table>
 <thead>
 <tr>
+
 <th width="20%">动态名称</th>
 <th width="40%">动态描述</th>
 <th width="20%">发布时间</th>
@@ -244,6 +281,14 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 </thead>
 <tbody>
 <tr>
+<td>云函数 SCF ICP 备案功能正式发布</td>
+<td>如果您的网站托管在腾讯云中国内地（大陆）的 Serverless 服务中，且网站的主办者和域名从未办理过备案，则在开通 Serverless 服务并且使用云函数 SCF 进行自定义域名的 HTTP 访问服务前，需在腾讯云备案系统进行首次备案的操作。</td>
+<td>2020-06-12</td>
+<td>ICP备案</a>
+</td>
+</tr>
+
+<tr>
 <td>云函数 SCF VS Code 插件正式发布</td>
 <td>云函数 VS Code 插件升级 2.0 版本：
 调整插件使用的规范为 Serverless Framework 中 Tencent-SCF Component 规范。
@@ -251,9 +296,10 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 增加支持 Node.js 10.15 及 Node.js 12.16 运行环境。
 支持 Node.js 10 及以上运行环境进行云端调试。</td>
 <td>2020-06-12</td>
-<td>-
+<td>SCF VS Code 插件使用文档</a>
 </td>
 </tr>
+
 <tr>
 <td>云函数新增 Node.js 12.16 运行环境</td>
 <td>云函数新增 Node.js 12.16 运行环境，用户可以在创建函数时，选择使用 Node.js 12.16 Runtime。Node.js 版本的升级带来了新的特性以及性能方面的提升，最重要的是启动速度的提升。</td>
@@ -280,14 +326,14 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 <td>云函数支持提供固定公网出口 IP</td>
 <td><ul><li> 在函数启用公网的情况下，可以启动公网固定出口 IP，从而获得一个随机分配的弹性公网 IP。该云函数访问公网的流量，将会基于该弹性公网 IP 统一进行转发。</li> <li> 当在云函数同时开启公网访问、内网访问时，访问公网的流量会基于弹性公网 IP 进行转发，访问内网的流量会基于私有网络进行转发。</li> </ul></td>
 <td>2020-05-26</td>
-<td>-
+<td><a href="https://intl.cloud.tencent.com/document/product/583/38106">固定公网出口 IP</a>
 </td>
 </tr>
 <tr>
 <td>云函数 Node.js 运行时在线安装依赖功能正式发布</td>
 <td>如果在函数配置中启用了“在线安装依赖”，在每次上传代码后，云函数后台将检查代码包根目录的 package.json 文件，并根据 package.json 中的依赖，尝试使用 npm 工具安装依赖包。目前支持在线对 node.js 运行时安装依赖，每次更新代码后，云函数后台会自动安装依赖。</td>
 <td>2020-05-09</td>
-<td>-
+<td><a href="https://intl.cloud.tencent.com/document/product/583/38105">Node.js 在线安装依赖</a>
 </td>
 </tr>
 </tbody></table>
@@ -310,12 +356,12 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 <td>云函数 SCF 支持公网、VPC 网络同时配置功能正式发布</td>
 <td>云函数支持公网和私有网络 VPC 同时开启，代码同时可以访问 VPC 内资源和外网资源，降低配置复杂程度。VPC 网络配置、公网配置，可以同时启用，或启用其中一个。</td>
 <td>2020-04-28</td>
-<td>-
+<td><a href="https://intl.cloud.tencent.com/document/product/583/38377">网络配置管理</a>
 </td>
 </tr>
 <tr>
 <td>云函数 SCF 支持灰度发布功能上线</td>
-<td>云函数通过支持别名、版本，及别名在版本间进行路由配置，实现流量在多个版本间的灰度切换。<ul><li> 别名支持配置两个版本及在两个版本间切换流量的规则。</li> <li> 流量路由规则支持按权重和按请求特征。</li> <li> 支持触发器配置到别名上。</li> <li> 支持按别名或按版本过滤查看日志、监控。</ul></td>
+<td>云函数通过支持别名、版本，及别名在版本间进行路由配置，实现流量在多个版本间的灰度切换。<ul><li> 别名支持配置两个版本及在两个版本间切换流量的规则。</li> <li> 流量路由规则支持按权重和按请求特征。</li> <li> 支持触发器配置到别名上。</li> <li> 支持按别名或按版本过滤查看日志、监控。</li></ul></td>
 <td>2020-04-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/583/35952">流量路由配置</a>
 </td>
@@ -327,7 +373,8 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 <td><a href="https://intl.cloud.tencent.com/document/product/583/37039">层管理</a>
 </td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
 
 

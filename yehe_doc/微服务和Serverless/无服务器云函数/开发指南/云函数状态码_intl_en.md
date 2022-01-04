@@ -5,11 +5,12 @@ If an error code is returned after the function is executed, you can find the ca
 <thead>
 <tr>
 <th>Status Code and Status Message</th>
-<th>Description</th>
+<th>Notes</th>
 <th>Solution</th>
 </tr>
 </thead>
 <tbody>
+
 
 
 <tr>
@@ -65,7 +66,7 @@ If an error code is returned after the function is executed, you can find the ca
 <td>429<br>ResourceLimit</td>
 <td>The container request rate is too high and exceeds the limit due to concurrency surges.</td>
 <td>The default speed of elastic concurrency expansion for each account is 500 concurrent instances per region per minute. During a sudden concurrency surge, if there are not enough containers to carry the requests, a large number of container request actions will be triggered, and this message will be returned when the account limit is exceeded.<ul class="params"><li>After assessing the function concurrency, please configure <a href="https://intl.cloud.tencent.com/document/product/583/37040">provisioned concurrency</a> for the function and prepare containers in advance to avoid sudden concurrency surges from causing the container request speed to exceed the limit.</li>
-<li>If assessment shows that the provisioned concurrency cannot meet the needs of your business scenario, you can <a href="https://console.intl.cloud.tencent.com/workorder">smart customer service</a> to increase the container request speed quota in the corresponding region.</td>
+<li>If assessment shows that the provisioned concurrency cannot meet the needs of your business scenario, you can <a href="https://cloud.tencent.com/online-service?from=connect-us">contact us</a> to increase the container request speed quota in the corresponding region.</td>
 </tr>
 
 <tr>
@@ -77,27 +78,22 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>432<br>ResourceLimitReached</td>
 <td>The account-level or region-level concurrency limit is reached.</td>
-<<<<<<< HEAD
 <td><ul class="params"><li>For a function with a reserved quota configured, if the function concurrency exceeds the quota, this message will be returned. You can assess your business needs and increase the quota or refer to <a href="https://intl.cloud.tencent.com/document/product/583/39848">Concurrency Overrun Troubleshooting</a>.</li>
 <li>For a function with no reserved quota configured, if the concurrency quota actually used by the function exceeds the region-level unused concurrency quota, this message will be returned. You can assess your business needs and configure a reserved quota for the function. If the remaining available quota in the corresponding region cannot meet your business needs, you can <a href="https://cloud.tencent.com/online-service?from=connect-us">contact us</a> to increase the total concurrency quota in the region.</td>
-=======
-<td><ul class="params"><li>For a function with a maximum dedicated quota configured, if the function concurrency exceeds the quota, this message will be returned. You can assess your business needs and increase the quota or refer to <a href="https://cloud.tencent.com/document/product/583/51585#.E8.A7.A3.E5.86.B3.E5.B9.B6.E5.8F.91.E8.B6.85.E9.99.90.E7.9B.B8.E5.85.B3.E6.8C.87.E5.BC.95">Concurrency Overrun Troubleshooting</a>.</li>
-<li>For a function with no maximum dedicated quota configured, if the concurrency quota actually used by the function exceeds the region-level unused concurrency quota, this message will be returned. You can assess your business needs and configure a maximum dedicated quota for the function. If the remaining available quota in the corresponding region cannot meet your business needs, you can <a href="https://console.intl.cloud.tencent.com/workorder">smart customer service</a> to increase the total concurrency quota in the region.</td>
->>>>>>> 73d567d552bc9c5309ef6644008c9fa3dfa83c58
 </tr>
 
 <tr>
 <td>433<br>TimeLimitReached</td>
 <td>Function execution is not completed after the <a href="https://intl.cloud.tencent.com/document/product/583/19805">execution timeout period</a> elapses.</td>
-<td><ul class="params"><li>Please check whether a large number of time-consuming operations exists in the service code.</li>
-<li>Please set a longer timeout period on the **Function Configuration** page. If the current timeout period has been set to the maximum value, you can create an async function as instructed in <a href="https://intl.cloud.tencent.com/document/product/583/39466">Async Execution</a> to get a function execution duration of up to 24 hours.</li></ul></td>
+<td><ul class="params"><li>Check whether a large number of time-consuming operations exist in the service code.</li>
+<li>Please set a longer timeout period on the **Function Configuration** page. If the current timeout period has been set to the maximum value, you can create an async function as instructed in <a href="https://intl.cloud.tencent.com/document/product/583/39466">Async Execution</a> to get a function execution duration of up to 24 hours.</li><li>This status code will trigger <a href="https://intl.cloud.tencent.com/document/product/583/37040#.E5.B9.B6.E5.8F.91.E5.AE.9E.E4.BE.8B.E5.A4.8D.E7.94.A8.E4.B8.8E.E5.9B.9E.E6.94.B6">instance repossession</a>.</li></ul></td>
 </tr>
 
 <tr>
 <td>434<br>MemoryLimitReached </td>
 <td>The memory limit is reached.</td>
-<td><ul class="params"><li>Please check the code logic to see whether there is a memory leak.</li>
-<li>Please increase the memory configuration on the **Function Configuration** page, or apply for a large memory on the **Function Memory Configuration** page to get up to 120 GB of function execution memory.</li></ul></td>
+<td><ul class="params"><li>Check the code logic to see whether there is a memory leak.</li>
+<li>Please increase the memory configuration on the **Function Configuration** page, or apply for a large memory on the **Function Memory Configuration** page to get up to 120 GB of function execution memory.</li><li>This status code will trigger <a href="https://intl.cloud.tencent.com/document/product/583/37040#.E5.B9.B6.E5.8F.91.E5.AE.9E.E4.BE.8B.E5.A4.8D.E7.94.A8.E4.B8.8E.E5.9B.9E.E6.94.B6">instance repossession</a>.</ul></td>
 </tr>
 
 <tr>
@@ -127,14 +123,14 @@ If an error code is returned after the function is executed, you can find the ca
 
 <tr>
 <td>439<br>User preocess exit when running</td>
-<td>The user process exits accidentally.</td>
-<td>Based on the error message, please find out the cause, fix the function code, and try again.</td>
+<td>The user process exists accidentally.</td>
+<td><ul class="params"><li>Based on the error message, please find out the cause, fix the function code, and try again.</li><li>This status code will trigger <a href="https://intl.cloud.tencent.com/document/product/583/37040#.E5.B9.B6.E5.8F.91.E5.AE.9E.E4.BE.8B.E5.A4.8D.E7.94.A8.E4.B8.8E.E5.9B.9E.E6.94.B6">instance repossession</a>.</td>
 </tr>
 
 <tr>
 <td>441<br>UnauthorizedOperation</td>
 <td>CAM authentication fails.</td>
-<td>Please check whether the CAM authentication parameters for the function invoker are passed correctly. For more information, please see the authorization description in <a href="https://intl.cloud.tencent.com/document/product/583/18014" >Permission Management Overview</a>.</td>
+<td>Check whether the CAM authentication parameters for the function invoker are passed correctly. For more information, please see the authorization description in <a href="https://intl.cloud.tencent.com/document/product/583/18014" >Permission Management Overview</a>.</td>
 </tr>
 
 <tr>
@@ -146,13 +142,13 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>443<br>UserCodeError</td>
 <td>A user code execution error occurs.</td>
-<td>Based on the error log on the console, please check the error stack of the code and see whether the code can be executed properly.</td>
+<td>Based on the error log on the console, check the error stack of the code and see whether the code can be executed properly.</td>
 </tr>
 	
 <tr>
 <td>444<br>PullImageFailed</td>
 <td>Image pull fails.</td>
-<td>Please check the integrity and validity of the selected image and try again; for example, check whether it can be downloaded locally. If the problem persists, please contact the <a href="https://console.intl.cloud.tencent.com/workorder">smart customer service</a> or <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket.</td>
+<td>Please check the integrity and validity of the selected image and try again; for example, check whether it can be downloaded locally. If the problem persists, please contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket.</td>
 </tr>
 
 <tr>
@@ -170,7 +166,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>447<br>PullImageTimeOut</td>
 <td>Image pull times out.</td>
-<td>It may be a timeout caused by a large image or network jitters. Please minimize the image or increase the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a> and try again. If the problem persists, please contact the <a href="https://console.intl.cloud.tencent.com/workorder">smart customer service</a> or <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket.</td>
+<td>It may be a timeout caused by a large image or network jitters. Please minimize the image or increase the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a> and try again. If the problem persists, please contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket.</td>
 </tr>
 
 <tr>
@@ -191,13 +187,8 @@ If an error code is returned after the function is executed, you can find the ca
 
 <tr>
 <td>500<br>InternalError</td>
-<<<<<<< HEAD
 <td>An internal error occurs.</td>
 <td>An internal error occurs. Please try again later. If the problem persists, please contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
-=======
-<td>Internal error.</td>
-<td>Internal error. Please try again. If the problem persists, please contact the <a href="https://console.intl.cloud.tencent.com/workorder">smart customer service</a> or <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
->>>>>>> 73d567d552bc9c5309ef6644008c9fa3dfa83c58
 </tr>
 
 </tbody>
@@ -208,11 +199,12 @@ If an error code is returned after the function is executed, you can find the ca
 </style>
 
 
-## Concepts
+
+## Relevant Concepts
 
 #### Execution method<div id="handler"></div>
 
-The execution method specifies the starting file and function while invoking the cloud function as shown below:
+The execution method specifies which function in which file is executed first when the cloud function is invoked, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/81835da7292ef575fde6d634a99bb1e5.png)
 
 - For Go programming, use the **FileName** format, such as `main`.

@@ -1,17 +1,18 @@
-## PHP Versions
+## PHP Version Selection
 
 Currently, the following versions of PHP programming language are supported:
 
 - PHP 7.2
 - PHP 5.6
 
-When creating a function, you can select a desired runtime environment from `PHP 7` or `PHP 5`.
+You can choose PHP 5 or PHP 7 as the runtime environment when creating a function.
 
-## Built-in Extensions
+## List of Built-in Extensions
 
 The currently installed PHP extensions are listed below:
 
-> ?You can also print and view the installed extensions using the `print_r(get_loaded_extensions());` code.
+>? If the built-in extensions cannot meet your business requirements, you can install custom extensions as instructed in [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879).
+> You can print and view the installed extensions at any time by using the `print_r(get_loaded_extensions());` code.
 
 
 

@@ -33,38 +33,37 @@
   </tr>
   <tr>
     <td>外网出流量</td>
-    <td>0.5 GB</td>
+    <td>0.5GB</td>
   </tr>
 </table>
 
 
-详情请参阅 [免费额度说明](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12282)。
+详情请参阅 [免费额度说明](https://intl.cloud.tencent.com/document/product/583/12282)。
 
-## 计费方式及计费项
-云函数计费方式主要为按量计费（后付费）一种方式。
-
+## 计费项与计费方式
+### 计费项
 云函数的费用由四部分组成，每部分根据自身统计结果和计算方式进行费用计算，结果以**美元**为单位，并保留小数点后两位：
 
 - **资源使用费用**：由函数配置内存，乘以函数运行时长得出资源使用量，单位为 GBs。
 - **调用次数费用**：函数的每次触发执行均记为一次调用，单位为次。
 - **外网出流量费用**：在函数代码中访问外网时产生的出流量记录为外网出流量，单位为 GB。
 - **预置并发闲置费用**：由已启动的预置实例数，减去实际运行的并发数得到闲置实例数，闲置实例数乘以配置内存，再乘以闲置时长得出闲置资源量，单位为 GBs。
-<<<<<<< HEAD
 
-Web 函数与事件型函数计费方式相同，详情请参阅 [计费方式说明](https://cloud.tencent.com/document/product/583/61678)。
-=======
->>>>>>> ddc813913d543596bac38096f9829a3a4e8bf914
+>? Web 函数与事件型函数计费方式相同。
+
+### 计费方式
+云函数计费方式详情请参见 [计费方式说明](https://intl.cloud.tencent.com/zh/document/product/583/12284)。
 
 ## 产品定价
 
 针对组成云函数费用的四部分，定价如下：
 
-- 资源使用费用：0.0000167美元/GBs
+- 资源使用费用：0.0000167美元/GBs（0.167美元/万GBs）
 - 调用次数费用：0.002美元/万次
 - 外网出流量费用：各地域均有不同定价，中国大陆为0.12美元/GB
-- 预置并发闲置费用：0.00000847美元/GBs
+- 预置并发闲置费用：0.00000847美元/GBs（0.0847美元/万GBs）。请参阅 [计费示例](https://intl.cloud.tencent.com/document/product/583/12285)。
 
-Web 函数与事件型函数计费价格相同，详情请参阅 [产品定价说明](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12281)。
+Web 函数与事件型函数计费价格相同，详情请参阅 [产品定价说明](https://intl.cloud.tencent.com/document/product/583/12281)。
 
 ## 支持地域
 下表为云函数目前所支持的地域信息：
@@ -125,8 +124,12 @@ Web 函数与事件型函数计费价格相同，详情请参阅 [产品定价�
 <td><a href="https://intl.cloud.tencent.com/document/product/583/12282" target="_blank">查看文档</a></td>
 </tr>
 <tr>
+<td>计费方式</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/583/12284" target="_blank">查看文档</a></td>
+</tr>
+<tr>
 <td>产品定价</td>
-<td><a href="https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12281" target="_blank">查看文档</a></td>
+<td><a href="https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12281" target="_blank">查看文档</a></td>
 </tr>
 <tr>
 <td>欠费说明</td>
