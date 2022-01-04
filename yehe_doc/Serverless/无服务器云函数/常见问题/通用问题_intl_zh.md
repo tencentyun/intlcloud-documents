@@ -35,7 +35,7 @@ API 网关会默认将 SCF 返回结果当做 JSON 格式，详情请参见 [集
 
 ### 函数日志如何投递到 COS？
 
-请参见 [SCF 日志与 CLS 打通教程](https://intl.cloud.tencent.com/document/product/583/34876)  将日志转到日志服务 CLS ，并在日志服务 CLS 配置日志 [投递到 COS](https://intl.cloud.tencent.com/document/product/614/32940)。
+请参见 [SCF 日志与 CLS 打通教程](https://intl.cloud.tencent.com/document/product/583/34876)  将日志转到日志服务 CLS ，并在日志服务 CLS 配置日志 [投递到 COS](https://intl.cloud.tencent.com/zh/document/product/614/32940)。
 
 ### 应用程序如何直接触发函数？
 
@@ -52,7 +52,7 @@ SCF 可以支持大量函数实例并行。每个地域下函数总并发配额�
 
 ### 函数在处理事件时发生故障会怎样？
 
-如遇故障，进行同步调用的函数会返回异常信息，异步调用的函数将自动重试，重试策略可参考 [错误类型与重试策略](https://intl.cloud.tencent.com/document/product/583/34383)。
+如遇故障，进行同步调用的函数会返回异常信息，异步调用的函数将自动重试，重试策略可参考 [错误类型与重试策略](https://intl.cloud.tencent.com/document/product/583/39851)。
 
 
 
@@ -161,5 +161,10 @@ SCF 集成了日志功能，每次调用都会将该次调用的日志输出到�
 
 ### 如何处理创建函数失败 “xxx you are not authorized to perform operation xxx”？
 
-请在访问管理 [角色](https://console.cloud.tencent.com/cam/role) 页面中单击 `SCF_QcsRole` 并确认该角色的权限策略中是否已经关联预设策略 `QcloudAccessForScfRole`，如未关联，请单击【添加策略】并关联 `QcloudAccessForScfRole` 后重试。
+请在访问管理 [角色](https://console.cloud.tencent.com/cam/role) 页面中单击 `SCF_QcsRole` 并确认该角色的权限策略中是否已经关联预设策略 `QcloudAccessForScfRole`，如未关联，请单击**添加策略**并关联 `QcloudAccessForScfRole` 后重试。
+
+### 使用模板创建函数时，`DemoId` 如何获取？
+
+请在云函数控制台创建函数流程中选择**模板创建**，选择需要使用的模板，单击模板右上角的**查看详情**，在模板详情页单击**点击下载模板函数**。模板代码会以 `DemoId` 命名下载到本地。
+> ! 同一个函数模板不同地域下的 `DemoId` 不同，在获取 `DemoId` 时，请关注地域选择。
 

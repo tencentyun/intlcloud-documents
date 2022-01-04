@@ -12,6 +12,7 @@
 <tbody>
 
 
+
 <tr>
 <td>200<br>Success</td>
 <td>成功。</td>
@@ -46,12 +47,12 @@
 <tr>
 <td>406<br>RequestTooLarge</td>
 <td>调用函数的入参 event ，即函数的请求事件大小超出 <a href="https://intl.cloud.tencent.com/document/product/583/11637">配额限制</a>。</td>
-<td>请求事件大小配额限制：同步请求事件最大为 6MB，异步请求事件最大为 128KB。请对照配额调整请求事件大小后重试。</td>
+<td>请求事件大小配额限制：同步请求事件最大为6MB，异步请求事件最大为128KB。请对照配额调整请求事件大小后重试。</td>
 </tr>
 
 <tr>
 <td>407<br>The size of response exceeds the upper limit (6MB)</td>
-<td>函数返回值超出 6MB 限制。</td>
+<td>函数返回值超出6MB限制。</td>
 <td>请调整函数返回值大小后重试。</td>
 </tr>
 	
@@ -64,8 +65,8 @@
 <tr>
 <td>429<br>ResourceLimit</td>
 <td>并发突增导致容器资源请求速度过高超出限制时，会有该返回信息。</td>
-<td>每个账号弹性并发的扩容速度默认为每个地域下 500 个/min，在并发突增时，如果没有足够的容器承载将会触发大量的容器请求动作，超出账号限制后会有该返回信息。<ul class="params"><li>评估函数并发后为函数配置 <a href="https://intl.cloud.tencent.com/document/product/583/37040">预置并发</a> 提前准备好容器，避免并发突增导致容器请求速度超限制。</li>
-<li>如果经过评估后预置并发无法满足业务场景需要，可 <a href="https://console.intl.cloud.tencent.com/workorder">提交工单</a> 提升地域下容器请求速度配额。</td>
+<td>每个账号弹性并发的扩容速度默认为每个地域下500个/min，在并发突增时，如果没有足够的容器承载将会触发大量的容器请求动作，超出账号限制后会有该返回信息。<ul class="params"><li>评估函数并发后为函数配置 <a href="https://intl.cloud.tencent.com/document/product/583/37040">预置并发</a> 提前准备好容器，避免并发突增导致容器请求速度超限制。</li>
+<li>如果经过评估后预置并发无法满足业务场景需要，可 <a href="https://cloud.tencent.com/online-service?from=connect-us">联系我们</a> 提升地域下容器请求速度配额。</td>
 </tr>
 
 <tr>
@@ -77,27 +78,22 @@
 <tr>
 <td>432<br>ResourceLimitReached</td>
 <td>当并发超出限制时，会有该返回信息。超出了账号地域下的配额 超出了保留</td>
-<<<<<<< HEAD
 <td><ul class="params"><li>对于配置了最大独占配额的函数，当函数的并发超出最大独占配额会有该返回，可评估业务需要后调整函数最大独占配额或查看 <a href="https://intl.cloud.tencent.com/document/product/583/39848">解决并发超限相关指引</a> 文档。</li>
 <li>对于未配置最大独占配额的函数，在函数实际使用的并发额度超出地域下剩余未占用并发额度后会有该返回，可评估业务需要后为函数配置最大独占配额，如地域剩余可用配额不足以满足业务需要，可 <a href="https://cloud.tencent.com/online-service?from=connect-us">联系我们</a> 提升地域下总并发额度。</td>
-=======
-<td><ul class="params"><li>对于配置了最大独占配额的函数，当函数的并发超出最大独占配额会有该返回，可评估业务需要后调整函数最大独占配额或查看 <a href="https://cloud.tencent.com/document/product/583/51585#.E8.A7.A3.E5.86.B3.E5.B9.B6.E5.8F.91.E8.B6.85.E9.99.90.E7.9B.B8.E5.85.B3.E6.8C.87.E5.BC.95">解决并发超限相关指引</a> 文档。</li>
-<li>对于未配置最大独占配额的函数，在函数实际使用的并发额度超出地域下剩余未占用并发额度后会有该返回，可评估业务需要后为函数配置最大独占配额，如地域剩余可用配额不足以满足业务需要，可 <a href="https://console.intl.cloud.tencent.com/workorder">提交工单</a> 提升地域下总并发额度。</td>
->>>>>>> 73d567d552bc9c5309ef6644008c9fa3dfa83c58
 </tr>
 
 <tr>
 <td>433<br>TimeLimitReached</td>
 <td>当函数在配置的 <a href="https://intl.cloud.tencent.com/document/product/583/19805">执行超时时间</a> 范围内没有执行完成时，会有该返回信息。</td>
 <td><ul class="params"><li>检查业务代码是否有大量耗时处理操作。</li>
-<li>在函数配置页调整执行超时时间，如果当前已是最大时间设置，可参考 <a href="https://intl.cloud.tencent.com/document/product/583/39466">异步执行</a> 文档创建异步执行函数，可获得最长 24 小时函数执行时间。</li></ul></td>
+<li>在函数配置页调整执行超时时间，如果当前已是最大时间设置，可参考 <a href="https://intl.cloud.tencent.com/document/product/583/39466">异步执行</a> 文档创建异步执行函数，可获得最长 24 小时函数执行时间。</li><li>该状态码会触发 <a href="https://intl.cloud.tencent.com/document/product/583/37040#.E5.B9.B6.E5.8F.91.E5.AE.9E.E4.BE.8B.E5.A4.8D.E7.94.A8.E4.B8.8E.E5.9B.9E.E6.94.B6">实例回收</a>。</li></ul></td>
 </tr>
 
 <tr>
 <td>434<br>MemoryLimitReached </td>
 <td>当函数运行中实际使用内存超过配置内存时，会有该返回信息。</td>
 <td><ul class="params"><li>检查代码逻辑，是否存在内存泄露。</li>
-<li>在函数配置页面将内存配置调大，也可在函数内存配置页面申请大规格内存，可获得最大 120GB 函数执行内存。</li></ul></td>
+<li>在函数配置页面将内存配置调大，也可在函数内存配置页面申请大规格内存，可获得最大 120GB 函数执行内存。</li><li>该状态码会触发 <a href="https://intl.cloud.tencent.com/document/product/583/37040#.E5.B9.B6.E5.8F.91.E5.AE.9E.E4.BE.8B.E5.A4.8D.E7.94.A8.E4.B8.8E.E5.9B.9E.E6.94.B6">实例回收</a>。</ul></td>
 </tr>
 
 <tr>
@@ -128,7 +124,7 @@
 <tr>
 <td>439<br>User preocess exit when running</td>
 <td>当函数执行时用户进程意外退出时，会有该返回信息。</td>
-<td>可根据返回错误信息查询进程退出原因修复函数代码后重试。</td>
+<td><ul class="params"><li>可根据返回错误信息查询进程退出原因修复函数代码后重试。</li><li>该状态码会触发 <a href="https://intl.cloud.tencent.com/document/product/583/37040#.E5.B9.B6.E5.8F.91.E5.AE.9E.E4.BE.8B.E5.A4.8D.E7.94.A8.E4.B8.8E.E5.9B.9E.E6.94.B6">实例回收</a>。</td>
 </tr>
 
 <tr>
@@ -152,7 +148,7 @@
 <tr>
 <td>444<br>PullImageFailed</td>
 <td>拉取镜像失败。</td>
-<td>请您确认所选择镜像的完整性和有效性后重试，如本地可正常下载。若仍无法解决，请联系 <a href="https://console.intl.cloud.tencent.com/workorder/category">智能客服</a> 或 <a href="https://console.intl.cloud.tencent.com/workorder">提交工单。</td>
+<td>请您确认所选择镜像的完整性和有效性后重试，如本地可正常下载。若仍无法解决，请联系 <a href="https://cloud.tencent.com/online-service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</td>
 </tr>
 
 <tr>
@@ -170,7 +166,7 @@
 <tr>
 <td>447<br>PullImageTimeOut</td>
 <td>拉取镜像超时</td>
-<td>可能是由于镜像较大或网络抖动原因引起的超时，建议在最小化镜像或者调大 <a href="https://intl.cloud.tencent.com/document/product/583/19805">初始化超时时间</a> 后重试。若仍无法解决，请联系 <a href="https://console.intl.cloud.tencent.com/workorder/category">智能客服</a> 或 <a href="https://console.intl.cloud.tencent.com/workorder">提交工单。</td>
+<td>可能是由于镜像较大或网络抖动原因引起的超时，建议在最小化镜像或者调大 <a href="https://intl.cloud.tencent.com/document/product/583/19805">初始化超时时间</a> 后重试。若仍无法解决，请联系 <a href="https://cloud.tencent.com/online-service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</td>
 </tr>
 
 <tr>
@@ -192,7 +188,7 @@
 <tr>
 <td>500<br>InternalError</td>
 <td>内部错误。</td>
-<td>内部错误，请稍后重试。若仍无法解决，请联系 <a href="https://console.intl.cloud.tencent.com/workorder/category">智能客服</a> 或 <a href="https://console.intl.cloud.tencent.com/workorder">提交工单。</a></td>
+<td>内部错误，请稍后重试。若仍无法解决，请联系 <a href="https://cloud.tencent.com/online-service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</a></td>
 </tr>
 
 </tbody>
@@ -201,6 +197,7 @@
 <style>
 .params{margin:0px !important}
 </style>
+
 
 
 ## 相关概念

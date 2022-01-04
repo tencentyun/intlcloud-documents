@@ -1,12 +1,12 @@
 本文向您介绍如何通过腾讯云控制台快速创建一个事件函数。
-
+相较于事件函数，SCF 提供 Web 函数专注优化 Web 服务场景，[点此了解](https://intl.cloud.tencent.com/document/product/583/40689) 快速创建一个 Web 函数。
 
 
 ## 步骤1：注册腾讯云账号
 
 如果您已在腾讯云注册，可忽略此步骤。
 
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
 
 ## 步骤2：在线充值
 
@@ -78,7 +78,6 @@
 :::
 ::: 触发器配置测试
 在“触发管理”页中，查看触发器详情。
-
 1. 触发器创建成功后，会在该函数的“触发管理”页面生成访问路径。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/1f97c60e8cffc2b089d41c187d7b4609.png)
 2. 在浏览器里打开该访问路径，显示 “hello from scf”，则说明函数部署成功。
