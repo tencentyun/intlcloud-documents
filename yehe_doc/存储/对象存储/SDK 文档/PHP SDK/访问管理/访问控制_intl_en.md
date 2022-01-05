@@ -1,28 +1,28 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to bucket and object access control lists (ACLs).
+This document provides an overview of APIs and SDK code samples related to the access control lists (ACLs) for buckets and objects.
 
 **Bucket ACL**
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | --------------------------------------- |
-| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting bucket ACL | Sets the ACL for a specified bucket |
-| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying bucket ACL | Gets the ACL of a specified bucket |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets an ACL for a bucket |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Gets the ACL of a specified bucket |
 
 **Object ACL**
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for a specified object (file/object) in a bucket |
-| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying object ACL | Queries the ACL of an object (file/object) |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting an object ACL | Sets an ACL for an object (file) in a bucket |
+| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying an object ACL | Queries the ACL of an object (file) |
 
 ## Bucket ACL
 
-### Setting bucket ACL
+### Setting a bucket ACL
 
-#### Feature description
+#### Description
 
-This API is used to set the access control list (ACL) for a specified bucket.
+This API is used to set an access control list (ACL) for a specified bucket.
 
 #### Method prototype
 
@@ -35,9 +35,24 @@ public Guzzle\Service\Resource\Model putBucketAcl(array $args = array());
 [//]: # (.cssg-snippet-put-bucket-acl)
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->putBucketAcl(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'ACL' => 'private',
         'Grants' => array(
             array(
@@ -64,26 +79,26 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Type | Description | Parent Node |
+| Parameter | Type | Description | Parent Node |
 | ----------- | ------ | ------------------------------------------------------------ | ------------- |
-| Bucket | String | Bucket name in the format of `BucketName-APPID`                         | None |
-| Grants | Array | ACL permissions list | None |
-| Grant | Array | ACL permission information | Grants |
-| Grantee | Array | ACL permission information | Grant |
-| Type | String | Owner permission type        | Grantee  |
-| Permission | String | Permission type. Valid values: FULL_CONTROL, WRITE, READ | Grant  |
-| ACL | String | Overall permission type. Valid values: private, public-read, public-read-write | None |
-| Owner | String | Bucket owner information        | None |
-| DisplayName | String | Permission owner name      | Grantee/Owner |
-| ID | String | Permission owner ID              | Grantee/Owner |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | None |
+| Grants    | Array  | ACL permission list                                                  | None          |
+| Grant       | Array  | ACL permission information                               | Grants          |
+| Grantee    | Array  | ACL permission information                                                  | Grant          |
+| Type        | String | Permission type of the authorized user                               | Grantee         |
+| Permission  | String | Permission type. Valid values: `FULL_CONTROL`, `WRITE`, `READ` | Grant           |
+| ACL         | String | Global permission type. Valid values: `private`, `public-read`, `public-read-write` | None              |
+| Owner       | String | Information about the bucket owner                               | None              |
+| DisplayName | String | Name of the bucket owner                         | Grantee/Owner |
+| ID          | String | ID of the bucket owner           | Grantee/Owner |
 
 
 
-### Querying bucket ACL
+### Querying a bucket ACL
 
-#### Feature description
+#### Description
 
-This API is used to get the access control list (ACL) for a specified bucket.
+This API is used to query the access control list (ACL) of a specified bucket.
 
 #### Method prototype
 
@@ -96,9 +111,24 @@ public Guzzle\Service\Resource\Model getBucketAcl(array $args = array());
 [//]: # (.cssg-snippet-get-bucket-acl)
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->getBucketAcl(array(
-        'Bucket' => 'examplebucket-1250000000' // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000' // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     )); 
     // Request succeeded
     print_r($result);
@@ -108,7 +138,7 @@ try {
 }
 ```
 
-#### Sample return result
+#### Sample response
 
 ```php
 Array
@@ -141,25 +171,25 @@ Array
 )
 ```
 
-#### Returned result description
+#### Response description
 
-| Parameter Name | Type | Description | Parent Node |
+| Parameter | Type | Description | Parent Node |
 | ----------- | ------ | ----------------------------------------------- | ------------- |
-| Grants | Array | ACL permissions list | None |
-| Grant | Array | ACL permission information | Grants |
-| Grantee | Array | ACL permission information | Grant |
-| Permission | String | Permission type. Valid values: FULL_CONTROL, WRITE, READ | Grant  |
-| Owner | String | Bucket owner information        | None |
-| DisplayName | String | Permission owner name      | Grantee/Owner |
-| ID | String | Permission owner ID              | Grantee/Owner |
+| Grants    | Array  | ACL permission list                                                  | None          |
+| Grant       | Array  | ACL permission information                               | Grants          |
+| Grantee    | Array  | ACL permission information                                                  | Grant          |
+| Permission  | String | Permission type. Valid values: `FULL_CONTROL`, `WRITE`, `READ` | Grant           |
+| Owner       | String | Information about the bucket owner                               | None              |
+| DisplayName | String | Name of the bucket owner                         | Grantee/Owner |
+| ID          | String | ID of the bucket owner           | Grantee/Owner |
 
 ## Object ACL
 
-### Setting object ACL
+### Setting an object ACL
 
-#### Feature description
+#### Description
 
-This API (PUT Object acl) is used to set the access control list (ACL) for a specified object.
+This API is used to set the ACL of an object.
 
 #### Method prototype
 
@@ -172,9 +202,24 @@ public Guzzle\Service\Resource\Model putObjectAcl(array $args = array());
 [//]: # (.cssg-snippet-put-object-acl)
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->putObjectAcl(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
         'ACL' => 'private',
         'Grants' => array(
@@ -202,25 +247,25 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Type | Description | Required |
+| Parameter | Type | Description | Required |
 | ----------- | ------ | --------------------------------------------- | -------- |
 | Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
 | Key | String | Object key | Yes |
-| Grants | Array | ACL permission list | No |
-| Grant | Array | ACL permission information | No |
-| Grantee | Array | ACL permission information | No |
-| Type | String | Owner permission type        | No  |
-| Permission | String | Permission type. Valid values: FULL_CONTROL, WRITE, READ | No |
-| ACL | String | Overall permission type. Valid values: private, public-read | No |
-| Owner | String | Bucket owner information        | No |
-| DisplayName | String | Permission owner name      | No |
-| ID | String | Permission owner ID | No |
+| Grants    | Array  | ACL permission list                                                  | No          |
+| Grant       | Array  | ACL permission information                                                  | No          |
+| Grantee    | Array  | ACL permission information                                                  | No          |
+| Type        | String | Permission type of the authorized user                                | No         |
+| Permission  | String | Permission type. Valid values: `FULL_CONTROL`, `WRITE`, `READ` | No         |
+| ACL         | String | Global permission type. Valid values: `private`, `public-read` | No              |
+| Owner       | String | Information about the bucket owner                               | No              |
+| DisplayName | String | Name of the bucket owner | No |
+| ID          | String | ID of the bucket owner                                            | No |
 
-### Querying object ACL
+### Querying an object ACL
 
-#### Feature description
+#### Description
 
-This API (GET Object acl) is used to query the access control list (ACL) of a specified object.
+The API is used to query the ACL of an object.
 
 #### Method prototype
 
@@ -233,9 +278,24 @@ public Guzzle\Service\Resource\Model getObjectAcl(array $args = array());
 [//]: # (.cssg-snippet-get-object-acl)
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+            
 try {
     $result = $cosClient->getObjectAcl(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
     )); 
     // Request succeeded
@@ -246,7 +306,7 @@ try {
 }
 ```
 
-#### Sample return result
+#### Sample response
 
 ```php
 Array
@@ -279,15 +339,15 @@ Array
 )
 ```
 
-#### Returned result description
+#### Response description
 
-| Parameter Name | Type | Description | Parent Node |
+| Parameter | Type | Description | Parent Node |
 | ----------- | ------ | ---------------------------------------------- | --------------- |
-| Grants | Array | ACL permissions list | None |
-| Grant | Array | ACL permission information | Grants |
-| Grantee | Array | ACL permission information | Grant |
-| Permission | String | Permission type. Valid values: FULL_CONTROL, WRITE, READ | Grant  |
-| Owner | String | Bucket owner information        | None |
-| DisplayName | String | Permission owner name      | Grantee / Owner |
-| ID | String | Permission owner ID | Grantee / Owner |
+| Grants    | Array  | ACL permission list                                                  | None          |
+| Grant       | Array  | ACL permission information                               | Grants          |
+| Grantee    | Array  | ACL permission information                                                  | Grant          |
+| Permission  | String | Permission type. Valid values: `FULL_CONTROL`, `WRITE`, `READ` | Grant         |
+| Owner       | String | Information about the bucket owner                               | None              |
+| DisplayName | String | Name of the bucket owner                         | Grantee/Owner |
+| ID          | String | ID of the bucket owner           | Grantee/Owner |
 
