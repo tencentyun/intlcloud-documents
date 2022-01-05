@@ -119,4 +119,4 @@ Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-
 - Importing Multiple Accounts ([v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954))
 - Querying Accounts ([v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956))
 - Invalidating Account Login States ([v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957))
-- Querying Account Online Status ([v4/openim/querystate](https://intl.cloud.tencent.com/document/product/1047/35477))
+- Querying Account Online Status ([v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477))
