@@ -49,9 +49,4 @@ To make it easier for you to view and stay up to date with how instances work, T
 | Deadlocks                     | deadlocks         | -    | Total number of deadlocks in a collection period                                 |
 
 
-## pg_stat_statements Module
-You can also use the [pg_stat_statements](https://www.postgresql.org/docs/9.4/pgstatstatements.html) view to query the detailed PostgreSQL performance metrics. This module provides a method for tracking execution statistics of all SQL statements executed by a server, which can be used to count the resource overheads of the database and analyze top SQL statements.
 
-```
-select * from pg_stat_statements;
-```

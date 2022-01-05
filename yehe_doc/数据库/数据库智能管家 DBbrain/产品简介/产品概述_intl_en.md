@@ -4,7 +4,7 @@ It leverages machine learning and big data technologies to replicate the best in
 
 ### Key Features
 - **Intelligent optimization**: By leveraging machine learning and big data, DBbrain can quickly replicate the best industry practices and automate a large number of database diagnosis and optimization tasks, which facilitates the operations of your database services both on and off the cloud.
-- **Security protection**: DBbrain provides multiple data security services for user behavior, SQL statements, and data storage encryption. DBbrain is compliant with the cybersecurity classified protection requirements and certified by China’s Ministry of Public Security.
+- **Security protection**: DBbrain provides multiple data security services for user behavior, SQL statements, and data storage encryption. DBbrain is also compliant with cybersecurity classified protection requirements.
 - **Database management**: DBbrain provides an installation-free, OPS-free, and out-of-the-box web database management platform that supports multiple database types and environments.
 
 ### Benefits of DBbrain

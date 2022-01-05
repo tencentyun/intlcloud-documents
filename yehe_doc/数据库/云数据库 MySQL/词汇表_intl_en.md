@@ -19,9 +19,7 @@ High reliability is often used to describe a system that is specifically designe
 A relational database is a database that is connected and organized based on relational data structure. In a relational database model, the complex data structure is simplified into a binary relation (a two-dimensional table).
 In a relational database, almost all data operations are performed on one or more relational tables. You can manage the database by sorting, joining, connecting, or selecting those related tables. Common relational databases include Oracle, MySQL, MariaDB, Microsoft SQL Server, Access, DB2, PostgreSQL, Informix, and Sybase.
 
-### SSD
 
-Solid State Drive (SSD) disk is a disk made of an array of solid-state electronic memory chips. It is comprised of a control unit and a memory unit (FLASH chip and DRAM chip). The specification, definition, feature, and usage of the SSD disk interface are exactly the same as those of HDD disk interface. The shape and size of SSD disk are also identical to those of HDD disk. SSD disk is widely used in many fields, including military, vehicle, industrial control, video monitoring, network monitoring, network terminal, electric power, healthcare, aviation, and navigation equipment.
 
 ### Cold backup
 
