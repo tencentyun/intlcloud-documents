@@ -16,11 +16,11 @@
 1. 创建接入点。
 	1. 在 **[实例列表](https://console.cloud.tencent.com/ckafka/index)** 页面，单击目标实例 ID，进入实例详情页。
 	2. 在 **基本信息** > **接入方式** 中，单击**添加路由策略**，在打开窗口中选择：`路由类型：公网域名接入`, `接入方式：SASL_PLAINTEXT`。
-![](https://qcloudimg.tencent-cloud.cn/raw/4ac0033364e13d3f2c81d464c878d7f4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5418b1b7e6011f0ccb37e7fb122d1b9f.png)
 
 2. 创建角色。
 在**用户管理**页面新建角色，设置密码。
-![](https://qcloudimg.tencent-cloud.cn/raw/b4fd547ddb7d4fdac1c24d59bb4806bc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3d83c7d7392032738b231dbc1a07f4fb.png)
 
 3. 创建 Topic。
 在控制台 **topic 管理**页面新建 Topic（参考 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/32554)）。
@@ -76,8 +76,8 @@ java.security.auth.login.config.plain=/xxxx/ckafka_client_jaas.conf
 
 | 参数                                  | 说明                                                         |
 | ------------------------------------- | ------------------------------------------------------------ |
-| `bootstrap.servers`                      | 接入网络，在控制台的实例详情页面**接入方式**模块的网络列复制。<br/>![](https://main.qcloudimg.com/raw/c5cf200a66f6dcf627d2ca6f1c747ecf.png) |
-| `topic`                                  | Topic 名称，您可以在控制台上 **topic管理**页面复制。<br/>![](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| `bootstrap.servers`                      | 接入网络，在控制台的实例详情页面**接入方式**模块的网络列复制。<br/>![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png) |
+| `topic`                                  | Topic 名称，您可以在控制台上 **topic管理**页面复制。<br/>![](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | `group.id`                               | 您可以自定义设置，Demo 运行成功后可以在 **Consumer Group** 页面看到该消费者。 |
 | `java.security.auth.login.config.plain` | 填写 JAAS 配置文件 `ckafka_client_jaas.conf` 的路径。          |
 
@@ -189,7 +189,7 @@ Produce ok:ckafka-topic-demo-0@198
 Produce ok:ckafka-topic-demo-0@199
 ```
 4. 在 CKafka 控制台 **topic管理**页面，选择对应的 Topic，单击**更多** > **消息查询**，查看刚刚发送的消息。
-![](https://qcloudimg.tencent-cloud.cn/raw/236b886212bd8dc2e53242bbaab6cb2c.png)
+![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 ### 步骤四：消费消息
@@ -270,4 +270,4 @@ public class KafkaSaslConsumerDemo {
    Consume partition:0 offset:299   
 ```
 4. 在 CKafka 控制台 **Consumer Group** 页面，选择对应的消费组名称，在主题名称输入 Topic 名称，单击**查询详情**，查看消费详情。
-![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
