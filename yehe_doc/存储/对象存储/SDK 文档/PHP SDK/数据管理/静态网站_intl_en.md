@@ -2,17 +2,17 @@
 
 This document provides an overview of APIs and SDK code samples related to static website.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ---------------- | ------------------------ |
-| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website | Sets static website configuration for a bucket |
-| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying static website configuration | Queries the static website configuration information of a bucket |
-| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting static website configuration | Deletes the static website configuration of a bucket |
+| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website configuration | Configures a static website for a bucket |
+| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying a static website configuration | Queries the static website configuration of a bucket |
+| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting a static website configuration | Deletes the static website configuration of a bucket |
 
-## Setting Static Website
+## Setting Static Website Configuration
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket website) is used to configure a static website for a bucket.
+This API is used to configure a static website for a bucket.
 
 #### Method prototype
 
@@ -24,9 +24,24 @@ public Guzzle\Service\Resource\Model PutBucketWebsite(array $args = array());
 
 [//]: # (.cssg-snippet-put-bucket-website)
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->putBucketWebsite(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'IndexDocument' => array(
             'Suffix' => 'index.html',
         ),
@@ -59,29 +74,29 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Parent Node | Description | Type | Required |
+| Parameter | Parent Node | Description | Type | Required |
 | --------------------------- | --------------------- | ------------------------------------------------------------ | -------- | -------- |
-| Bucket | None | Bucket for which to set a static website in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | None | Bucket for which a static website is configured, in the format of `BucketName-APPID`. For more information, please see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
 | IndexDocument               | None                    | Index document                                                     | Array    | Yes       |
-| Suffix                      | IndexDocument         | Specifies the index document                                                 | String   | Yes       |
-| ErrorDocument               | None                    | Error document                                                     | Array    | No       |
-| Key                         | ErrorDocument         | Specifies the common return for errors                                             | String   | No       |
-| RedirectAllRequestsTo       | None                    | Redirects all requests                                               | Array    | No       |
-| Protocol                    | RedirectAllRequestsTo | Specifies the protocol for global redirect, which can only be `https`                       | String   | No       |
-| RoutingRules                | None                    | Sets redirect rules. Up to 100 `RoutingRule` can be set                    | Array    | No       |
-| RoutingRule                 | RoutingRules          | Sets a single redirect rule, including prefix match-triggered and error code-triggered redirect | Array | No |
-| Condition                   | RoutingRule           | Specifies the condition for redirect. Either prefix match-triggered redirect or error code-triggered redirect can be specified at a time | Array    | No       |
-| HttpErrorCodeReturnedEquals | Condition             | Specifies the error code triggering redirect, which can only be 4XX and has a higher priority than `ErrorDocument` | Integer |  No      |
-| KeyPrefixEquals             | Condition             | Specifies the path for prefix-triggered redirect, which replaces the specified `folder/`                     | String   | No       |
-| Redirect                    | RoutingRule           | Specifies the redirect replacing rule when the redirect condition is met              | Array    | No       |
-| ReplaceKeyWith              | Redirect              | Replaces the entire `Key` with the specified content                                    | String   | No       |
-| ReplaceKeyPrefixWith        | Redirect              | Replaces the matched prefix with the specified content, which can be set only if `Condition` is `KeyPrefixEquals` | String   | No       |
+| Suffix | IndexDocument | Index document suffix | String | Yes |
+| ErrorDocument               | None                    | Error document                                                     | Array    | Yes       |
+| Key | ErrorDocument | Common error response | String | No |
+| RedirectAllRequestsTo       | None                    | Redirect all requests                                               | Array    | No       |
+| Protocol | RedirectAllRequestsTo | Site-wide redirect protocol. Only HTTPS is supported. | String | No |
+| RoutingRules                | None                    | Multiple redirect rules. Up to 100 redirect rules can be set.                    | Array    | No       |
+| RoutingRule | RoutingRules | A single redirect rule. Redirects can be applied based on both prefix match and error codes. | Array | No |
+| Condition | RoutingRule | Condition that must be met for a redirect to apply. Redirects can be applied based on either prefix match or error codes. | Array | No |
+| HttpErrorCodeReturnedEquals | Condition | Redirect error code. Only 4xx status codes are supported. This has a higher priority than `ErrorDocument`. | Integer | No |
+| KeyPrefixEquals | Condition | Object key prefix to replace with the specified "folder/" for the redirect. | String | No |
+| Redirect | RoutingRule | Replacement rule for redirects that meet the condition. | Array | No |
+| ReplaceKeyWith | Redirect | Content that is used to replace the entire key. | String | No |
+| ReplaceKeyPrefixWith | Redirect | Content that is used to replace the key prefix. The replacement is allowed only when `Condition` is `KeyPrefixEquals`. | String | No |
 
 ## Querying Static Website Configuration
 
-#### Feature description
+#### Description
 
-This API (GET Bucket website) is used to query the configuration information of a static website associated with a bucket.
+This API is used to query the static website configuration associated with a bucket.
 
 #### Method prototype
 
@@ -93,9 +108,24 @@ public Guzzle\Service\Resource\Model GetBucketWebsite(array $args = array());
 
 [//]: # (.cssg-snippet-get-bucket-website)
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->getBucketWebsite(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     )); 
     // Request succeeded
     print_r($result);
@@ -107,11 +137,11 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| bucket | Bucket for which to query static website configuration in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucket | Bucket for which static website configuration is queried, in the format of `BucketName-APPID`. For more information, please see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 
-#### Sample return result
+#### Sample response
 
 ```php
 GuzzleHttp\Command\Result Object
@@ -153,33 +183,33 @@ GuzzleHttp\Command\Result Object
 )
 ```
 
-#### Returned result description
+#### Response description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | --------------------------- | ------------------------------------------------------------ | -------- |
-| Bucket            | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                                      |
+| Bucket | Bucket name in the format of `BucketName-APPID`. For more information, please see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 | IndexDocument               | Index document                                                     | Array    |
-| Suffix                      | Specifies index document                                                 | String   |
-| ErrorDocument               | Error document                                                    | Array    |
-| Key                         | Specifies the common return for errors                                             | String   |
-| RedirectAllRequestsTo       | Redirects all requests                                               | Array    |
-| Protocol                    | Specifies the protocol for global redirect, which can only be `https`                       | String   |
-| RoutingRules                | Sets redirect rules. Up to 100 `RoutingRule` can be set                    | Array    |
-| RoutingRule                 | Sets a single redirect rule, including prefix match-triggered and error code-triggered redirect         | Array    |
-| Condition                   | Specifies the condition for redirect. Either prefix match-triggered redirect or error code-triggered redirect can be specified at a time | Array    |
-| HttpErrorCodeReturnedEquals | Specifies the error code triggering redirect, which can only be 4XX and has a higher priority than `ErrorDocument` | Interger |
-| KeyPrefixEquals             | Specifies the path for prefix-triggered redirect, which replaces the specified `folder/`                     | String   |
-| Redirect                    | Specifies the redirect replacing rule when the redirect condition is met               | Array    |
-| ReplaceKeyWith              | Replaces the entire `Key` with the specified content                                    | String   |
-| ReplaceKeyPrefixWith        | Replaces the matched prefix with the specified content, which can be set only if `Condition` is `KeyPrefixEquals` | String   |
+| Suffix                      | Index document suffix                                                 | String   |
+| ErrorDocument               | Error document                                                     | Array    |
+| Key                         | Common error response                                             | String   |
+| RedirectAllRequestsTo       | Redirect all requests                                               | Array    |
+| Protocol                    | Site-wide redirect protocol. Only HTTPS is supported.                       | String   |
+| RoutingRules                | Multiple redirect rules. Up to 100 redirect rules can be set.                    | Array    |
+| RoutingRule                 | A single redirect rule. Redirects can be applied based on both prefix match and error codes.         | Array    |
+| Condition                   | Condition that must be met for a redirect to apply. Redirects can be applied based on either prefix match or error codes. | Array    |
+| HttpErrorCodeReturnedEquals | Redirect error code. Only 4xx status codes are supported. This has a higher priority than `ErrorDocument`. ErrorDocument | Integer |
+| KeyPrefixEquals             | Object key prefix to replace with the specified "folder/" for the redirect.                     | String   |
+| Redirect                    | Replacement rule for redirects that meet the condition.               | Array    |
+| ReplaceKeyWith              | Content that is used to replace the entire key.                                    | String   |
+| ReplaceKeyPrefixWith        | Content that is used to replace the key prefix. The replacement is allowed only when `Condition` is `KeyPrefixEquals`. | String   |
 
 
 
 ## Deleting Static Website Configuration
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket website) is used to delete the static website configuration of a bucket.
+This API is used to delete the static website configuration of a bucket.
 
 #### Method prototype
 
@@ -191,9 +221,24 @@ public Guzzle\Service\Resource\Model DeleteBucketWebsite(array $args = array());
 
 [//]: # (.cssg-snippet-delete-bucket-website)
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+            
 try {
     $result = $cosClient->deleteBucketWebsite(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     )); 
     // Request succeeded
     print_r($result);
@@ -205,6 +250,6 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| bucket | Bucket for which to delete static website configuration in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucket | Bucket from which static website configuration is deleted, in the format of `BucketName-APPID`. For more information, please see [Bucket Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |

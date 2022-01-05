@@ -26,9 +26,24 @@ public Guzzle\Service\Resource\Model PutObjectTagging(array $args = array());
 
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->putObjectTagging(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key'    => 'exampleobject',
         'TagSet' => array(
             array('Key'=>'key1',
@@ -39,7 +54,7 @@ try {
             ),  
         ),  
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -55,7 +70,7 @@ try {
 | Key | Key of the object to tag. An object key uniquely identifies an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | TagSet    | Tags to add to the object                                                     | Array |
 
-`TagSet` member description:
+Description of the `TagSet` member:
 
 | Parameter | Description | Type |
 | ----- | ---- | ---- |
@@ -77,12 +92,27 @@ public Guzzle\Service\Resource\Model GetObjectTagging(array $args = array());
 #### Sample request
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->getObjectTagging(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key'    => 'exampleobject',
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -125,7 +155,7 @@ GuzzleHttp\Command\Result Object
 
 #### Response description
 
-| Member | Description | Type |
+| Member Variable | Description | Type |
 | -------- | -------- | ------ |
 | Key      | Tag key | String |
 | Value    | Tag value | String |
@@ -145,12 +175,27 @@ public Guzzle\Service\Resource\Model DeleteObjectTagging(array $args = array());
 #### Sample request
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+            
 try {
     $result = $cosClient->deleteObjectTagging(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key'    => 'exampleobject',
     );
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed

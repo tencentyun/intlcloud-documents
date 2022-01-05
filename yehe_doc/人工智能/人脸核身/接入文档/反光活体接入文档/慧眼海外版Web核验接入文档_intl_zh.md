@@ -44,11 +44,11 @@
 
 光线活体检测模式用户做Web人脸核验流程:
 
-![img](https://faceid-h5-1254418846.cos.ap-guangzhou.myqcloud.com/images/reflect-flow.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/5bc060671b612d043a5dbb354f2f513a.png)
 
 静默模式用户做Web人脸核验流程:
 
-![img](https://faceid-h5-1254418846.cos.ap-guangzhou.myqcloud.com/images/silence-flow.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/f15bd944c395b48bdbf3e0f9df3c873c.png)
 
 ##### 光线活体摄像机授权说明
 

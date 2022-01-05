@@ -2,17 +2,17 @@
 
 This document provides an overview of APIs and SDK code samples related to bucket tagging.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting a bucket tag | Sets a tag for an existing bucket |
-| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a specified bucket |
-| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting a bucket tag | Deletes a specified bucket tag |
+| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting bucket tags | Sets tags for an existing bucket |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a bucket |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes the tags of a bucket |
 
-## Setting Bucket Tag
+## Setting Bucket Tags
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket tagging) is used to set a tag for an existing bucket.
+This API is used to set tags for an existing bucket.
 
 #### Method prototype
 
@@ -24,9 +24,24 @@ public Guzzle\Service\Resource\Model PutBucketTagging(array $args = array());
 
 [//]: # (.cssg-snippet-put-bucket-tagging)
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->putBucketTagging(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'TagSet' => array(
             array('Key'=>'key1',
                   'Value'=>'value1',
@@ -46,17 +61,17 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Bucket | Bucket for which to set a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| Key      | Tag key                                                     | String |
-| Value    | Tag value                                                     | String |
+| Bucket | Bucket for tag setting, in the format of `BucketName-APPID`. For more information, please see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| Key      | Key of the tag                                                     | String |
+| Value    | Value of the tag                                                     | String |
 
-## Querying Bucket Tag
+## Querying Bucket Tags
 
-#### Feature description
+#### Description
 
-This API (GET Bucket tagging) is used to query the existing tags of a specified bucket.
+This API is used to query the existing tags of a specified bucket.
 
 #### Method prototype
 
@@ -68,9 +83,24 @@ public Guzzle\Service\Resource\Model GetBucketTagging(array $args = array());
 
 [//]: # (.cssg-snippet-get-bucket-tagging)
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->getBucketTagging(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     ));
     // Request succeeded
     print_r($result);
@@ -82,11 +112,11 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Bucket | Bucket for which to query a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| Bucket | Bucket for tag query, in the format of `BucketName-APPID`. For more information, please see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 
-#### Sample return result
+#### Sample response
 
 ```php
 GuzzleHttp\Command\Result Object
@@ -110,18 +140,18 @@ GuzzleHttp\Command\Result Object
 )
 ```
 
-#### Returned result description
+#### Response description
 
 | Member Variable | Description | Type |
 | -------- | -------- | ------ |
 | Key      | Tag key | String |
-| Value    | Tag value                                                     | String |
+| Value    | Tag value | String |
 
-## Deleting Bucket Tag
+## Deleting Bucket Tags
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket tagging) is used to delete an existing tag of a specified bucket.
+This API is used to delete the existing tags from a bucket.
 
 #### Method prototype
 
@@ -133,9 +163,24 @@ public Guzzle\Service\Resource\Model DeleteBucketTagging(array $args = array());
 
 [//]: # (.cssg-snippet-delete-bucket-tagging)
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+            
 try {
     $result = $cosClient->deleteBucketTagging(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     );
     // Request succeeded
     print_r($result);
@@ -147,7 +192,7 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Bucket | Bucket for which to delete a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| Bucket | Bucket for tag deletion, in the format of `BucketName-APPID`. For more information, please see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 
