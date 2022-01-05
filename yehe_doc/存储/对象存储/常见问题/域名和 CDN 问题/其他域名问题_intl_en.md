@@ -4,7 +4,7 @@ Yes. COS allows SSL transport for all access nodes in the [available regions](ht
 
 ### Does COS support wildcard domains?
 
-Currently, COS does not support wildcard domains.
+Yes.
 
 ### When I manage domain names on the console, I am always prompted to "Enable at least one available key". What should I do?
 
@@ -31,4 +31,8 @@ For more information about domain names, please see [Domain Name Management Over
 ### Do I need to bind a domain name to use COS?
 
 No. You can access COS with COS’s default domain in the format of `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com` without binding a custom domain name. For more information about COS domain names, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). If you need to bind a custom domain, please see [Enabling Custom Endpoints](https://intl.cloud.tencent.com/document/product/436/31507).
+
+### Why can I access COS via a private IP range 169.254.0.x in a VPC in the same region?
+
+If the client and COS are in the same region, the COS domain name is forcibly resolved to the IP range 169.254.0.x in the private DNS service of Tencent Cloud through hijacking. By default, the IP range 169.254.0.x communicates with your VPC IP range, and the traffic is diverted to the gateway through internal routes to access COS. Therefore, if you access COS via a private network, do not modify the DNS service configuration. Otherwise, private DNS will fail.
 
