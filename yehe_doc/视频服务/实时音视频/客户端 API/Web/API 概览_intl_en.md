@@ -1,32 +1,31 @@
 ## Supported Platforms
 
 Proposed by Google, the WebRTC technology is well supported by Chrome (desktop), Edge (desktop), Firefox (desktop), and Safari (desktop and mobile), but poorly or not supported by other platforms such as browsers on Android.
-
-If your application scenario is mainly in the education sector, consider using the [TRTC SDK for Electron](https://intl.cloud.tencent.com/document/product/647/35097), which supports big and small (dual-channel) images, with more flexible screen sharing schemes and better recovery capabilities on poor network connections.
+- If your application scenario is mainly in the education sector, consider using [TRTC SDK for Electron](https://intl.cloud.tencent.com/document/product/647/35097), which supports big and small (dual-channel) images, with more flexible screen sharing schemes and better recovery capabilities on poor network connections.
 
 <table>
 <tr>
-<th>OS</th>
+<th>Operating System</th>
 <th>Browser</th>
 <th>Minimum Browser<br>Version Requirements</th>
 <th>SDK Version Requirements</th>
 <th>Receive (Playback)</th>
 <th>Send (Publish)</th>
-<th>Share Screen</th>
+<th width=19%>Share Screen</th>
 </tr>
 <tr>
 <td rowspan="11">Windows</td>
 <td>Chrome (desktop)</td>
 <td>56+</td>
-<td>-</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
-<td>Supported (on Chrome 72+)</td>
+<td>Supported on Chrome 72+</td>
 </tr>
 <tr>
 <td>QQ Browser (desktop, WebKit core)</td>
 <td>10.4+</td>
-<td>-</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Not supported</td>
@@ -37,7 +36,7 @@ If your application scenario is mainly in the education sector, consider using t
 <td>4.7.0+</td>
 <td>Supported</td>
 <td>Supported</td>
-<td>Supported (on Firefox 66+）</td>
+<td>Supported on Firefox 66+</td>
 </tr>
 <tr>
 <td>Edge (desktop)</td>
@@ -57,8 +56,8 @@ If your application scenario is mainly in the education sector, consider using t
 </tr>
 <tr>
 <td>Sogou Browser (Trident core) </td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Not supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
@@ -69,7 +68,7 @@ If your application scenario is mainly in the education sector, consider using t
 <td>4.7.0+</td>
 <td>Supported</td>
 <td>Supported</td>
-<td>Supported (on Opera 60+)</td>
+<td>Supported on Opera 60+</td>
 </tr>
 <tr>
 <td>360 Secure Browser (Blink core)</td>
@@ -81,24 +80,24 @@ If your application scenario is mainly in the education sector, consider using t
 </tr>
 <tr>
 <td>360 Secure Browser (Trident core)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Not supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
 </tr>
 <tr>
 <td>WeChat built-in browser (desktop)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
 </tr>
 <tr>
 <td>WeCom built-in browser (desktop)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
@@ -107,18 +106,18 @@ If your application scenario is mainly in the education sector, consider using t
 <td rowspan="7">macOS</td>
 <td>Safari (desktop)</td>
 <td>11+</td>
-<td>-</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
-<td>Supported (on Safari 13+)</td>
+<td>Supported on Safari 13+</td>
 </tr>
 <tr>
 <td>Chrome (desktop)</td>
 <td>56+</td>
-<td>-</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
-<td>Supported (on Chrome 72+)</td>
+<td>Supported on Chrome 72+</td>
 </tr>
 <tr>
 <td>Firefox (desktop)</td>
@@ -126,7 +125,7 @@ If your application scenario is mainly in the education sector, consider using t
 <td>4.7.0+</td>
 <td>Supported</td>
 <td>Supported</td>
-<td>Supported (on Firefox 66+）</td>
+<td>Supported on Firefox 66+. <a href="#attention3">(Note[3])</a></td>
 </tr>
 <tr>
 <td>Edge (desktop)</td>
@@ -142,20 +141,20 @@ If your application scenario is mainly in the education sector, consider using t
 <td>4.7.0+</td>
 <td>Supported</td>
 <td>Supported</td>
-<td>Supported (on Opera 60+)</td>
+<td>Supported on Opera 60+</td>
 </tr>
 <tr>
 <td>WeChat built-in browser (desktop)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
 </tr>
 <tr>
 <td>WeCom built-in browser (desktop)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
@@ -163,48 +162,48 @@ If your application scenario is mainly in the education sector, consider using t
 <tr>
 <td rowspan="6">Android</td>
 <td>WeChat built-in browser (TBS core)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Not supported</td>
 </tr>
 <tr>
 <td>WeChat built-in browser (XWEB core)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Not supported</td>
 </tr>
 <tr>
 <td>WeCom built-in browser</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Not supported</td>
 </tr>
 <tr>
 <td>Chrome (mobile)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Not supported</td>
 </tr>
 <tr>
 <td>QQ Browser (mobile)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Not supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
 </tr>
 <tr>
 <td>UC Browser (mobile)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Not supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
@@ -212,8 +211,8 @@ If your application scenario is mainly in the education sector, consider using t
 <tr>
 <td>iOS 12.1.4+</td>
 <td>WeChat built-in browser</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
@@ -230,8 +229,8 @@ If your application scenario is mainly in the education sector, consider using t
 <tr>
 <td>iOS</td>
 <td>WeCom built-in browser</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
@@ -240,7 +239,7 @@ If your application scenario is mainly in the education sector, consider using t
 <td>iOS 11.1.2+</td>
 <td>Safari (mobile)</td>
 <td>11+</td>
-<td>-</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Not supported</td>
@@ -248,8 +247,8 @@ If your application scenario is mainly in the education sector, consider using t
 <tr>
 <td>iOS 12.1.4+</td>
 <td>Chrome (mobile)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
@@ -257,8 +256,8 @@ If your application scenario is mainly in the education sector, consider using t
 <tr>
 <td>iOS 14.3+</td>
 <td>Chrome (mobile)</td>
-<td>-</td>
-<td>-</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Not supported</td>
@@ -266,18 +265,19 @@ If your application scenario is mainly in the education sector, consider using t
 </table>
 
 >! 
->- You can run the [TRTC Web SDK Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in a browser, for example, WebView, to test whether the environment fully supports WebRTC.
->- Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support the TRTC SDK for web.
+> 1. You can run the [TRTC Web SDK Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in a browser, for example, WebView, to test whether the environment fully supports WebRTC.
+> 2. Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support the TRTC SDK for web.
+> 3. [](id:attention3)Firefox for macOS is weak in terms of screen sharing and no solution has been found yet. We recommend that you use Chrome or Safari instead.
 
 ## URL Protocol Support
 | Scenario     | Protocol             | Receive (Playback) | Send (Publish) | Share Screen | Remarks |
 | ------------ | :--------------- | :----------- | ------------ | -------- | ---- |
 | Commercial     | HTTPS        | Supported         | Supported         | Supported     | Recommended |
-| Commercial     | HTTP         | Supported         | Not supported       | Not supported   |      |
-| Local development | http://localhost | Supported         | Supported         | Supported     | Recommended |
-| Local development | http://127.0.0.1 | Supported         | Supported         | Supported     |      |
-| Local development | http://[local IP address]  | Supported         | Not supported       | Not supported   |      |
-| Local development | file:///         | Supported         | Supported         | Supported     |      |
+| Commercial     | HTTP         | Supported         | Not supported       | Not supported   |   -   |
+| Local development | `http://localhost` | Supported         | Supported         | Supported     | Recommended |
+| Local development | `http://127.0.0.1` | Supported         | Supported         | Supported     |   -   |
+| Local development | `http://[local IP address]`  | Supported         | Not supported       | Not supported   |   -   |
+| Local development | `file:///`         | Supported         | Supported         | Supported     |   -   |
 
 ## API Guide
 The tutorials below offer detailed instructions on how to use different APIs.

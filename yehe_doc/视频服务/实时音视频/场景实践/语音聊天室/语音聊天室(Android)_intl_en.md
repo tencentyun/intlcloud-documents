@@ -1,20 +1,20 @@
-## Demonstration
-You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the app we provide to try out TRTC's audio chat room features, including seat management, low-latency audio interaction, text chat, etc.
+## Demo UI
+You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the app we provide to try out TRTC’s audio chat room features, including seat management, low-latency audio interaction, text chat, etc.
 
 
 To quickly implement the audio chat room feature, you can modify the app we provide and adapt it to your needs. You can also use the `TRTCVoiceRoom` component and customize your own UI.
 
 [](id:DemoUI)
-## Using the Demo App's UI
+## Using the App’s UI
 
 [](id:ui.step1)
 ### Step 1. Create an application
-1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+1. In the TRTC console, select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name such as `TestVoiceRoom` and click **Create**.
-3. Click **Next** to skip this step.
+3. Click **Next**.
 
 ![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
->!This feature uses two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When you activate TRTC, IM will be activated automatically. IM is a value-added service. See [Value-added Service Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) for its billing details.
+>!This feature uses two basic PaaS services of Tencent Cloud: [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When you activate TRTC, IM will be activated automatically. IM is a value-added service. See [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) for its billing details.
 
 
 
@@ -26,9 +26,9 @@ Clone or download the [TUIVoiceRoom](https://github.com/tencentyun/TUIVoiceRoom)
 ### Step 3. Configure app project files
 1. In the **Modify Configuration** step, select the development platform in line with the source package downloaded.
 2. Find and open `Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java`.
-3. Set parameters in `GenerateTestUserSig.java` as follows:
+3. Set parameters in `GenerateTestUserSig.java`:
 <ul style="margin:0"><li/>SDKAPPID: a placeholder by default. Set it to the actual `SDKAppID`.
-<li/>SECRETKEY: a placeholder by default. Set it to the actual key.</ul>
+<li>SECRETKEY: a placeholder by default. Set it to the actual key.</ul>
 <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 
 4. Click **Next** to complete the creation.
@@ -36,42 +36,42 @@ Clone or download the [TUIVoiceRoom](https://github.com/tencentyun/TUIVoiceRoom)
 
 
 >!
->- The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is suitable only for the local execution and debugging of the demo app**.
->- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, please see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
+>- The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is suitable only for the local execution and debugging of the app**.
+>- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
 
 [](id:ui.step4)
-### Step 4. Run the demo app
+### Step 4. Run the application
 Open the source code project `TUIVoiceRoom` with Android Studio (version 3.5 or above) and click **Run**.
 
 [](id:ui.step5)
-### Step 5. Modify the demo app's source code
+### Step 5. Modify the app’s source code
 The `Source` folder in the source code contains two subfolders: `ui` and `model`. The `ui` subfolder contains UI code. The table below lists the files (folders) and the UI views they represent. You can refer to it when making UI changes.
 
 | File or Folder | Description |
 |-------|--------|
-| base | Base class used by the UI |
+| base | Basic classes used by the UI |
 | room | Main room views for room owner and listener |
 | widget | Common controls |
 
 ## Tryout
->! You need at least two devices to try out the demo app.
+>! You need at least two devices to try out the application.
 
 ### User A
 1. Enter a username (**which must be unique**) and log in.
-2. Tap **Create Room**.
-3. Enter a room topic and tap **Chat**.
+2. Click **Create Room**.
+3. Type a subject for the conference and tap **Let’s go**.
 
 ### User B
 1. Enter a username (**which must be unique**) and log in.
-2. Enter the ID of the room created by user A, and tap **Join**.<br>
+2. Enter the ID of the room created by user A and tap **Join**.<br>
 
->! You can find the room ID at the top of user A's room view.
+>! You can find the room ID at the top of user A’s room view.
 
 [](id:model)
 
-## Customizing Your Own UI
+## Customizing UI
 
-The `Source` folder in the [source code](https://github.com/tencentyun/TUIVoiceRoom/tree/main/Android/Source/src/main/java/com/tencent/liteav/trtcvoiceroom) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCVoiceRoom`. You can find the component's APIs in `TRTCVoiceRoom.java` and use them to customize your own UI.
+The `Source` folder in the [source code](https://github.com/tencentyun/TUIVoiceRoom/tree/main/Android/Source/src/main/java/com/tencent/liteav/trtcvoiceroom) contains two subfolders: `ui` and `model`. The `model` subfolder contains the reusable open-source component `TRTCVoiceRoom`. You can find the component’s APIs in `TRTCVoiceRoom.java` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/319beb14d72a43120e102380278aa1da.png)
 
 [](id:model.step1)
@@ -142,7 +142,7 @@ Configure permission requests for your app in `AndroidManifest.xml`. The SDKs ne
 In the `proguard-rules.pro` file, add the SDK classes to the "do not obfuscate" list.
 <dx-codeblock>
 ::: java java
--keep class com.tencent.** { *; }
+-keep class com.tencent.** { *;}
 :::
 </dx-codeblock>
 
@@ -158,28 +158,28 @@ Source/src/main/java/com/tencent/liteav/trtcvoiceroom/model
 [](id:model.step4)
 ### Step 4. Create an instance and log in
 1. Call the `sharedInstance` API to create an instance of the `TRTCVoiceRoom` component.
-2. Call the `setDelegate` function to register event callbacks of the component.
-3. Call the `login` function to log in to the component, and set the key parameters as described below.
+2. Call the `setDelegate` API to register event callbacks of the component.
+3. Call the `login` API to log in to the component, and set the key parameters as described below.
  <table>
 <tr>
-<th>Parameter</th>
+<th>Parameter Name</th>
 <th>Description</th>
 </tr>
 <tr>
 <td>SDKAppID</td>
-<td>You can view the `SDKAppID` of your application in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC console</a>.</td>
+<td>You can view `SDKAppID` in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC console</a>.</td>
 </tr>
 <tr>
 <td>userId</td>
-<td>ID of the current user, which is a string that can contain letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_).</td>
+<td>ID of the current user, which is a string that can contain letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_)</td>
 </tr>
 <tr>
 <td>userSig</td>
-<td>Tencent Cloud's proprietary security signature. To obtain one, please see <a href="https://intl.cloud.tencent.com/document/product/647/35166">UserSig</a>.</td>
+<td>Tencent Cloud's proprietary security signature. To obtain one, see <a href="https://intl.cloud.tencent.com/document/product/647/35166">UserSig</a>.</td>
 </tr>
 <tr>
 <td>callback</td>
-<td>Login callback. The code is 0 if login is successful.</td>
+<td>Login callback. The code is `0` if login is successful.</td>
 </tr>
 </table>
 <dx-codeblock>
@@ -200,22 +200,22 @@ mTRTCVoiceRoom.login(SDKAPPID, userId, userSig, new TRTCVoiceRoomCallback.Action
 [](id:model.step5)
 ### Step 5. Create a room and become a speaker
 1. After performing [step 4](#model.step4) to log in, call `setSelfProfile` to set your nickname and profile photo.
-2. A user calls `createRoom` to create an audio chat room, passing in room attributes (e.g. room ID, whether listeners require room owner's consent to speak, number of seats).
+2. A user calls `createRoom` to create an audio chat room, passing in room attributes (e.g. room ID, whether listeners require room owner’s consent to speak, number of seats).
 3. After creating the room, the user calls `enterSeat` to become a speaker.
-4. The user will receive an `onSeatListChanget` notification about the change of the seat list, and can update the change to the UI.
-5. The user will also receive an `onAnchorEnterSeat` notification that someone became a speaker, and mic capturing will be enabled automatically.
+4. You will receive an `onSeatListChanget` notification about the change of the seat list, and can update the change to the UI.
+5. You will also receive an `onAnchorEnterSeat` notification about the occupation of a seat, and mic capturing will be enabled automatically.
 
 ![](https://main.qcloudimg.com/raw/256ebe5ce1426b3f175c8c8b68095d5b.png)
 
 
 <dx-codeblock>
 ::: java java
-// 1. Set your nickname and profile photo
+// 1. Set your nickname and profile photo.
 mTRTCVoiceRoom.setSelfProfile("my_name", "my_face_url", null);
 
 // 2. Call `createRoom` to create a room
 final TRTCVoiceRoomDef.RoomParam roomParam = new TRTCVoiceRoomDef.RoomParam();
-roomParam.roomName = "Room ID";
+roomParam.roomName = "Room name";
 roomParam.needRequest = false; // Whether your consent is required for listeners to speak
 roomParam.seatCount = 7; // Number of room seats. In this example, the number is 7. 6 seats are available after you take one.
 roomParam.coverUrl = "URL of room cover image";
@@ -250,26 +250,26 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 
 [](id:model.step6)
 ### Step 6. Enter a room as a listener
-1. After performing [step 4](#model.step4) to log in, you can call `setSelfProfile` to set your nickname and profile photo.
+1. After performing [step 4](#model.step4) to log in, call `setSelfProfile` to set your nickname and profile photo.
 2. Get the latest audio chat room list from the backend.
 >?The audio chat room list in the app is for demonstration only. The logic of audio chat room lists varies significantly. Tencent Cloud does not provide list management services for the time being. Please manage the list by yourself.
 3. Call `getRoomInfoList` to get short descriptions of the rooms, which are provided by the room owner during room creation via the calling of `createRoom`.
 >!If your audio chat room list already displays enough room information, you can skip the step of calling `getRoomInfoList`.
 4. The user selects a room, and calls `enterRoom` with the room ID passed in to enter the room.
-5. After entering the room, the user receives an `onRoomInfoChange` notification about room attribute change from the component. The attributes can be recorded, and corresponding changes can be made to the UI, including room name, whether room owner's consent is required for listeners to speak, etc.
-6. The user will receive an `onSeatListChange` notification about the change of the seat list and can update the change to the UI.
-7. The user will also receive an `onAnchorEnterSeat` notification that someone became a speaker.
+5. After entering the room, you will receive an `onRoomInfoChange` notification about room change from the component. Record the room information, including room name, whether the room owner’s consent is required for listeners to speak, etc., and update it to the UI.
+6. You will receive an `onSeatListChange` notification about seat change from the component. Update the change to the UI.
+7. You will also receive an `onAnchorEnterSeat` notification that someone becomes a speaker.
 
 ![](https://main.qcloudimg.com/raw/33432f97eb632fbb9710a59cba9e4469.png)
 <dx-codeblock>
 ::: java java
-// 1. Set your nickname and profile photo
+// 1. Set your nickname and profile photo.
 mTRTCVoiceRoom.setSelfProfile("my_name", "my_face_url", null);
 
 // 2. Get the room list from the backend. Suppose it is `roomList`.
 List<Integer> roomList = GetRoomList();
 
-// 3. Call `getRoomInfoList` to get details of the rooms
+// 3. Call `getRoomInfoList` to get details of the rooms.
 mTRTCVoiceRoom.getRoomInfoList(roomList, new TRTCVoiceRoomCallback.RoomInfoCallback() {
     @Override
     public void onCallback(int code, String msg, List<TRTCVoiceRoomDef.RoomInfo> list) {
@@ -289,7 +289,7 @@ mTRTCVoiceRoom.enterRoom(roomId, new TRTCVoiceRoomCallback.ActionCallback() {
         }
 });
 
-// 5. After entering the room, you receive an `onRoomInfoChange` notification.
+// 5. After successful room entry, you receive an `onRoomInfoChange` notification.
 @Override
 public void onRoomInfoChange(TRTCVoiceRoomDef.RoomInfo roomInfo) {
     mNeedRequest = roomInfo.needRequest;
@@ -297,7 +297,7 @@ public void onRoomInfoChange(TRTCVoiceRoomDef.RoomInfo roomInfo) {
     // The UI can display the title and other information
 }
 
-// 6. After entering the room, you receive an `onSeatListChange` notification
+// 6. You receive an `onSeatListChange` notification
 @Override
 public void onSeatListChange(final List<TRTCVoiceRoomDef.SeatInfo> seatInfoList) {
     // Display the seat list
@@ -315,16 +315,16 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 
 <dx-tabs>
 ::: Room owner
-1. A room owner can put a listener in a seat by passing the `userId` of the listener and the seat number in `pickSeat`. All members in the room will receive an `onSeatListChange` notification and an `onAnchorEnterSeat` notification.
-2. A room owner can remove a user from a seat by passing the seat number in `kickSeat`. All members in the room will receive an `onSeatListChange` notification and an `onAnchorLeaveSeat` notification.
-3. A room owner can mute or unmute a seat by passing the seat number in `muteSeat`. All members in the room will receive an `onSeatListChange` notification and an `onSeatMute` notification.
-4. A room owner can block or unblock a seat by passing the seat number in `closeSeat`. Listeners cannot take a blocked seat, and all members in the room will receive an `onSeatListChange` notification and an `onSeatClose` notification.
+1. Call `pickSeat`, passing in a seat number and the `userId` of a listener to place the listener in the seat. All users in the room will receive an `onSeatListChange` notification and an `onAnchorEnterSeat` notification.
+2. Call `kickSeat`, passing in a seat number to remove the speaker from the seat. All users in the room will receive an `onSeatListChange` notification and an `onAnchorLeaveSeat` notification.
+3. Call `muteSeat`, passing in a seat number to mute/unmute the seat. All members in the room will receive an `onSeatListChange` notification and an `onSeatMute` notification.
+4. Call `closeSeat`, passing in a seat number to block/unblock the seat. Listeners cannot take a blocked seat, and all users in the room will receive an `onSeatListChange` notification and an `onSeatClose` notification.
 ![](https://main.qcloudimg.com/raw/367a0c670d2f9899d0b311ed1f322ea3.png)
 
 :::
 ::: Listener
-1. A listener can take a seat by passing the seat number in `enterSeat`. All members in the room will receive an `onSeatListChange` notification and an `onAnchorEnterSeat` notification.
-2. A listener can leave a seat by calling `leaveSeat`. All members in the room will receive an `onSeatListChange` notification and an `onAnchorLeaveSeat` notification.
+1. Call `enterSeat`, passing in a seat number to take the seat. All users in the room will receive an `onSeatListChange` notification and an `onAnchorEnterSeat` notification.
+2. Call `leaveSeat` to leave your seat. All users in the room will receive an `onSeatListChange` notification and an `onAnchorLeaveSeat` notification.
 
 ![](https://main.qcloudimg.com/raw/8d385dd387b6255b8512dbff5829e88a.png)
 
@@ -332,22 +332,22 @@ After a seat operation, the order in which different notifications are sent is: 
 
 <dx-codeblock>
 ::: java java
-// 1. The room owner puts a user in seat 1
+// 1. The room owner places a user in seat No. 1
 mTRTCVoiceRoom.pickSeat(1, "123", new TRTCVoiceRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
-        // 2. A callback is returned
+        // 2. A callback is returned.
         if (code == 0) {
         }
     }
 });
 
-// 3. The listener receives the `onSeatListChange` callback and refreshes the seat list
+// 3. The listener receives the `onSeatListChange` callback, and refreshes the seat list
 @Override
 public void onSeatListChange(final List<TRTCVoiceRoomDef.SeatInfo> seatInfoList) {
 }
 
-// 4. The anchor receives a notification about the change of a specific seat, which can be used to determine whether the listener has taken the seat
+// 4. The room owner receives a notification about the change of a specific seat, which can be used to determine whether the user has taken the seat
 public void onAnchorEnterSeat(int index, TRTCVoiceRoomDef.UserInfo user) {
 }
 :::
@@ -359,13 +359,13 @@ public void onAnchorEnterSeat(int index, TRTCVoiceRoomDef.UserInfo user) {
 mTRTCVoiceRoom.enterSeat(2, new TRTCVoiceRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
-        // 2. A callback is returned
+        // 2. A callback is returned.
         if (code == 0) {
         }
     }
 });
 
-// 3. The listener receives the `onSeatListChange` callback and refreshes the seat list
+// 3. The listener receives the `onSeatListChange` callback, and refreshes the seat list
 @Override
 public void onSeatListChange(final List<TRTCVoiceRoomDef.SeatInfo> seatInfoList) {
 }
@@ -381,12 +381,12 @@ public void onAnchorEnterSeat(int index, TRTCVoiceRoomDef.UserInfo user) {
 
 [](id:model.step8)
 ### Step 8. Use signaling for invitations
-In [seat management](#model.step7), listeners can take and leave seats without the room owner's consent, and the room owner can put listeners in seats without the listeners' consent.
-If you want listeners and room owners to obtain each other's consent before performing the above actions in your app, you can use signaling for invitation sending.
+In [seat management](#model.step7), listeners can take and leave seats without the room owner’s consent, and the room owner can put listeners in seats without the listeners’ consent.
+If you want listeners and room owners to obtain each other’s consent before performing the above actions in your application, you can use signaling for invitation sending.
 
 <dx-tabs>
-::: Listener requesting to speak
-1. A listener calls `sendInvitation`, passing in information including the room owner's `userId` and custom command words. The API will return an `inviteId`, which should be recorded.
+::: Listener requesting to take seat
+1. A listener calls `sendInvitation`, passing in information including the room owner’s `userId` and custom command words. The API will return an `inviteId`, which should be recorded.
 2. The room owner receives an `onReceiveNewInvitation` notification, and a window pops up on the UI asking the room owner whether to accept the request.
 3. The room owner calls `acceptInvitation` with the `inviteId` passed in to accept the request.
 4. The listener receives an `onInviteeAccepted` notification and calls `enterSeat` to become a speaker.
@@ -399,7 +399,7 @@ If you want listeners and room owners to obtain each other's consent before perf
 // 1. Call `sendInvitation` to request to take seat 1
 String inviteId = mTRTCVoiceRoom.sendInvitation("ENTER_SEAT", ownerUserId, "1", null);
 
-// 2. Put the user in the seat when the invitation is accepted by the user
+// 2. Place the user in the seat after the invitation is accepted
 @Override
 public void onInviteeAccepted(String id, String invitee) {
     if(id.equals(inviteId)) {
@@ -408,11 +408,11 @@ public void onInviteeAccepted(String id, String invitee) {
 }
 
 // Room owner
-// 1. Receive the request
+// 1. The room owner receives the request.
  @Override
 public void onReceiveNewInvitation(final String id, String inviter, String cmd, final String content) {
     if (cmd.equals("ENTER_SEAT")) {
-        // 2. Accept the request
+        // 2. The room owner accepts the request.
          mTRTCVoiceRoom.acceptInvitation(id, null);
     }
 }
@@ -421,7 +421,7 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 :::
 ::: Room owner inviting listener to take seat
 1. The room owner calls `sendInvitation`, passing in information including the listener's `userId` and custom command words. The API will return an `inviteId`, which should be recorded.
-2. The listener receives an `onReceiveNewInvitation` notification, and a window pops up asking the listener whether to accept the invitation.
+2. The listener receives an `onReceiveNewInvitation` notification, and a window pops up asking the listener whether to agree to speak.
 3. The listener calls `acceptInvitation` with the `inviteId` passed in to accept the invitation.
 4. The room owner receives an `onInviteeAccepted` notification and calls `pickSeat` to make the listener a speaker.
 
@@ -433,7 +433,7 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 // 1. Call `sendInvitation` to invite user `123` to take seat 2
 String inviteId = mTRTCVoiceRoom.sendInvitation("PICK_SEAT", "123", "2", null);
 
-// 2. Put the user in the seat when the invitation is accepted by the user
+// 2. Place the user in the seat after the invitation is accepted
 @Override
 public void onInviteeAccepted(String id, String invitee) {
     if(id.equals(inviteId)) {
@@ -442,11 +442,11 @@ public void onInviteeAccepted(String id, String invitee) {
 }
 
 // Listener
-// 1. Receive the request
+// 1. The listener receives the invitation.
  @Override
 public void onReceiveNewInvitation(final String id, String inviter, String cmd, final String content) {
     if (cmd.equals("PICK_SEAT")) {
-        // 2. Accept the request
+        // 2. The listener accepts the invitation.
          mTRTCVoiceRoom.acceptInvitation(id, null);
     }
 }
@@ -477,19 +477,19 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 Custom messages are often used to transfer custom signals, e.g., to give and broadcast likes.
 <dx-codeblock>
 ::: java java
-// Sender: customize CMD to distinguish between on-screen comments and likes
-// For example, use "CMD_DANMU" to indicate on-screen comments and "CMD_LIKE" to indicate likes
+// A sender can customize CMD to distinguish on-screen comments and likes.
+// For example, use "CMD_DANMU" to indicate on-screen comments and "CMD_LIKE" to indicate likes.
 mTRTCVoiceRoom.sendRoomCustomMsg("CMD_DANMU", "Hello world", null);
 mTRTCVoiceRoom.sendRoomCustomMsg("CMD_LIKE", "", null);
-// Recipient: listen for custom messages
+// Receiver: listen for custom messages
 mTRTCVoiceRoom.setDelegate(new TRTCVoiceRoomDelegate() {
     @Override
     public void onRecvRoomCustomMsg(String cmd, String message, TRTCVoiceRoomDef.UserInfo userInfo) {
         if ("CMD_DANMU".equals(cmd)) {
-            // Received an on-screen comment
+            // An on-screen comment is received.
             Log.d(TAG, "Received an on-screen comment from" + userInfo.userName + ": " + message);
         } else if ("CMD_LIKE".equals(cmd)) {
-            // Received a like
+            // A like is received.
             Log.d(TAG, userInfo.userName + "liked you.");
         }
     }

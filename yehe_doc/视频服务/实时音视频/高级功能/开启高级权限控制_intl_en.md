@@ -1,132 +1,129 @@
-## Introduction
+## Overview
 
-You can consider **enabling Advanced Permission Control** if you are worried that the room entry or mic-on permissions given to specific users will be easily cracked and suffer attacks.
+You may consider **enabling Advanced Permission Control** if you want to allow only specific users to enter a room or use their mics, but are worried that giving permissions on the client side makes the service vulnerable to attacks and cracking.
 
-You can skip advanced permission control for the scenarios below:
+You do not need to enable advanced permission control in the following scenarios:
 
-- Scenario 1: You want as many viewers as possible and do not intend to set any restrictions for room entry.
-- Scenario 2: Preventing attackers from cracking the client is not a priority at the moment.
+- Scenario 1: You want an audience as large as possible and do not want to control access to rooms.
+- Scenario 2: Preventing client-side attacks is not your priority at the moment.
 
-We recommend enabling advanced permission control for better security in the scenarios below:
+We recommend that you enable advanced permission control for enhanced security in the following scenarios:
 
-- Scenario 1: There are video or audio calls with high security requirements.
-- Scenario 2: Different access permissions are needed for different rooms.
-- Scenario 3: Mic-on permission controls are needed.
+- Scenario 1: Your video or audio calls have high security requirements.
+- Scenario 2: You want to implement different access controls for different rooms.
+- Scenario 3: You want to control the use of mics by audience.
 
 
 ## Supported Platforms
 
-|   iOS    | Android  | Mac OS  | Windows  | Electron |  web |
+|   iOS    | Android  |  macOS  | Windows  | Electron |  Web |
 | :------: | :------: | :------: | :------: | :------: |  :-----------: |
-| &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |     &#10003;    |
+| &#10003; | &#10003; | &#10003; | &#10003; |  &#10003;  |   &#10003;   |
 
 ## Understanding Advanced Permission Control
 
-Once advanced permission control is enabled, the backend service system of TRTC will verify the UserSig (a room entry ticket), as well as the **PrivateMapKey** permission ticket, which contains an encrypted room ID and an encrypted permission bit list.
+After you enable advanced permission control, TRTC will verify not only `UserSig` (the room entry ticket), but also **PrivateMapKey** (the permission ticket). The latter contains an encrypted `roomid` and permission bit list.
 
-Since PrivateMapKey contains the room ID, users cannot enter the specified room with the UserSig only.
+A user providing only `UserSig` but not `PrivateMapKey` will be unable to enter the specified room.
 
-The bit list in PrivateMapKey uses eight bits in the same byte to generate eight different permissions for users when they enter the room with the permission ticket.
+The permission bit list in `PrivateMapKey` uses the eight bits of a byte to represent different permissions for users holding `PrivateMapKey`.
 
-| Bits    | Binary | Decimal | Permissions                             |
+| Bit Sequence    | Binary | Decimal | Permission                             |
 | ------- | ---------- | :--------: | ------------------------------------ |
-| The first bit | 0000 0001  |     1      | Permission for room creation                       |
-| The second bit | 0000 0010  |     2      | Permission for room entry                       |
-| The third bit | 0000 0100  |     4      | Permission for sending audio                       |
-| The fourth bit | 0000 1000  |     8      | Permission for receiving audio                       |
-| The fifth bit | 0001 0000  |     16     | Permission for sending video                       |
-| The sixth bit | 0000 1000  |     32      | Permission for receiving video                       |
-| The seventh bit | 0100 0000  |     64     | Permission for sending substream video (namely screen sharing) |
-| The eighth bit | 1000 0000  |    128     | Permission for receiving substream video (namely screen sharing) |
+| First | 0000 0001  |     1      | Room creation                       |
+| Second | 0000 0010  |     2      | Room entry                       |
+| Third | 0000 0100  |     4      | Sending audio                       |
+| Fourth | 0000 1000  |     8      | Receiving audio                       |
+| Fifth | 0001 0000  |     16     | Sending video                       |
+| Sixth | 0010 0000  |     32      | Receiving video                       |
+| Seventh | 0100 0000  |     64     | Sending substream (screen sharing) video |
+| Eighth | 1000 0000  |    128     | Receiving substream (screen sharing) video |
 
 
 ## Enabling Advanced Permission Control
-<span id="step1"></span>
-### Step 1: Log in to TRTC console and enable permission key.
+[](id:step1)
+### Step 1. Log in to the TRTC console and enable advanced permission control
 
-1. On TRTC console, click **Application Management**(https://console.cloud.tencent.com/trtc/app) in the left sidebar.
-2. Select an application you want to enable advanced permission control for from the application list, and click **Application Info**.
-3. Enable **Start permission key** in the “Application Info” tab, and click **Confirm** in the pop-up window.
+1. In the TRTC console, click [**Application Management**](https://console.cloud.tencent.com/trtc/app) on the left sidebar.
+2. In the application list, find the application for which you want to enable advanced permission control, and click **Function Configuration**.
+3. In the **Advanced Permission Control** section, click the toggle next to **Enable** and then click **Confirm** to enable advanced permission control.
 ![](https://main.qcloudimg.com/raw/26f146bfd8617c10a4b8ae9003c5673c.png)
 
->!When a SDKAppid is used to enable advanced permission control, all users with this SDKAppid need to pass the `privateMapKey` parameter in `TRTCParams` to successfully enter the rooms (as described in [Step 2](#step2)). Therefore, please enable advance permission control with caution when you have active users using this SDKAppid.
 
-<span id="step2"></span>
-### Step 2: Calculate `privateMapKey` on your server.
+>!After you enable advanced permission control for an application (`SDKAppid`), all users using the application must pass `privateMapKey` in `TRTCParams` to enter a room (as described in [Step 2](#step2) below). Therefore, you are not advised to enable the feature if you have active users using the application.
 
-`PrivateMapKey` aims to prevent the client from being reversely cracked (i.e., non-members entering high-level rooms). Therefore, please do not calculate PrivateMapKey directly on your application. The permission ticket should be calculated on your server and returned to the application.
+[](id:step2)
+### Step 2. Calculate `PrivateMapKey` on your server
 
-We provided the following samples of `PrivateMapKey` for Java, PHP, Node.js. and other languages. You can download the samples to integrate into your server.
+`PrivateMapKey` protects the client from being reverse engineered and cracked and consequently prevents non-members from entering high-level rooms. Therefore, instead of calculating `PrivateMapKey` directly on your application, you should do so on your server and then return the result to your application.
 
-| Programming Language |                         Key Function                         |                           Download Link                           |
+We provide `PrivateMapKey` calculation codes for Java, GO, PHP, Node.js. Python, C#, and C++. You can download and integrate them into your server.
+
+| Programming Language |                         Key Functions                         |                           Download Link                           |
 | :------: | :------------------------------------------------------: | :----------------------------------------------------------: |
-|   Java   | `genPrivateMapKey` and `genPrivateMapKeyWithStringRoomID` | [Github](https://github.com/tencentyun/tls-sig-api-v2-java/blob/master/src/main/java/com/tencentyun/TLSSigAPIv2.java) |
-|    GO    | `GenPrivateMapKey` and `GenPrivateMapKeyWithStringRoomID` | [Github](https://github.com/tencentyun/tls-sig-api-v2-golang/blob/master/tencentyun/TLSSigAPI.go) |
-|   PHP    | `genPrivateMapKey` and `genPrivateMapKeyWithStringRoomID` | [Github](https://github.com/tencentyun/tls-sig-api-v2-php/blob/master/src/TLSSigAPIv2.php) |
-|  Node.j  | `genPrivateMapKey` and `genPrivateMapKeyWithStringRoomID` | [Github](https://github.com/tencentyun/tls-sig-api-v2-node/blob/master/TLSSigAPIv2.js) |
-|  Python  | `genPrivateMapKey`and `genPrivateMapKeyWithStringRoomID`  | [Github](https://github.com/tencentyun/tls-sig-api-v2-python/blob/master/TLSSigAPIv2.py) |
-|    C#    | `genPrivateMapKey` and `genPrivateMapKeyWithStringRoomID`  | [Github](https://github.com/tencentyun/tls-sig-api-v2-cs/blob/master/tls-sig-api-v2-cs/TLSSigAPIv2.cs) |
+|   Java   | `genPrivateMapKey` and `genPrivateMapKeyWithStringRoomID` | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-java/blob/master/src/main/java/com/tencentyun/TLSSigAPIv2.java) |
+|    GO    | `GenPrivateMapKey` and `GenPrivateMapKeyWithStringRoomID` | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-golang/blob/master/tencentyun/TLSSigAPI.go) |
+|   PHP    | `genPrivateMapKey` and `genPrivateMapKeyWithStringRoomID` | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-php/blob/master/src/TLSSigAPIv2.php) |
+|  Node.js  | `genPrivateMapKey` and `genPrivateMapKeyWithStringRoomID` | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-node/blob/master/TLSSigAPIv2.js) |
+|  Python  | `genPrivateMapKey`and `genPrivateMapKeyWithStringRoomID`  | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-python/blob/master/TLSSigAPIv2.py) |
+|    C#    | `genPrivateMapKey` and `genPrivateMapKeyWithStringRoomID`  | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-cs/blob/master/tls-sig-api-v2-cs/TLSSigAPIv2.cs) |
+|   C++    | `genPrivateMapKey` and `genPrivateMapKeyWithStringRoomID`  | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-cpp/blob/master/src/tls_sig_api_v2.cpp) |
 
-<span id="step3"></span>
-### Step 3: Distributing `PrivateMapKey` from your server to your application.
+[](id:step3)
+### Step 3. Distribute `PrivateMapKey` from your server to your application
 
 ![](https://main.qcloudimg.com/raw/93389bf9638bcfaf3d744467889dea84.jpg)
-As shown in the figure above, the PrivateMapKey will be distributed to your application after being calculated on your server, and then the application will deliver it to SDK in two ways below:
+As shown in the figure above, `PrivateMapKey` is calculated on your server and distributed to your application, which can then pass the `PrivateMapKey` to the SDK via two methods.
 
-#### Solution 1: Deliver to SDK when calling `enterRoom`.
-You can set **privateMapKey** in [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) when calling the `enterRoom` API of `TRTCCloud` to control the permission of room entry.
+#### Method 1: passing `PrivateMapKey` to the SDK when calling `enterRoom`
+You can set **privateMapKey** in [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) when calling the `enterRoom` API of `TRTCCloud`.
 
-This solution verifies PrivateMapKey when users enter the room. It is simple and can control a user's permissions before the user enters.
+This method verifies `PrivateMapKey` when users enter a room. It is simple and is used to assign permissions to users before room entry.
 
+#### Method 2: updating `PrivateMapKey` to the SDK through an experimental API
+During live streaming, when audience turn their mics on to co-anchor, TRTC will re-verify the `PrivateMapKey` carried in `TRTCParams` at the time of room entry. That means if you set a short validity period for `PrivateMapKey`, such as 5 minutes, the re-verification may fail and cause the audience to be removed from the room when they switch to the role of “anchor”.
 
-#### Solution 2: Update to SDK through experimental APIs.
-There are often co-anchoring scenarios during live streaming where viewers can turn their mic on and become an anchor. In this case, TRTC will verify the `PrivateMapKey` carried in the entry parameter `TRTCParams` when the user first enters the room. Setting a short validity period for `PrivateMapKey`, such as 5 minutes, might easily trigger verification failure and result in the viewers being kicked out of the room when they switch to co-anchors.
-
-To solve this issue, you can extend the validity period, for example changing "5 minutes" to "6 hours", or reapply for a `PrivateMapKey` from your server and update it to SDK by calling the SDK’s experimental API `updatePrivateMapKey` before viewers switch their identities to anchors through `switchRole`. Sample code is as follows:
-
-#### Android
-```java
+To solve this issue, you can extend the validity period, for example, from 5 minutes to 6 hours or, before the audience call `switchRole` to switch to the role of “anchor”, apply for a new `PrivateMapKey` from your server and update it to the SDK by calling the experimental API `updatePrivateMapKey`. Below is the sample code:
+[](id:example_code)
+<dx-codeblock>
+::: Android java
 JSONObject jsonObject = new JSONObject();
 try {
     jsonObject.put("api", "updatePrivateMapKey");
     JSONObject params = new JSONObject();
-    params.put("privateMapKey", "xxxxx"); // Fill in a new privateMapKey
+    params.put("privateMapKey", "xxxxx"); // Enter the new `privateMapKey`.
     jsonObject.put("params", params);
     mTRTCCloud.callExperimentalAPI(jsonObject.toString());
 } catch (JSONException e) {
     e.printStackTrace();
 }
-```
-
-#### iOS OC
-```
+:::
+::: iOS ObjectiveC
 NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-[params setObject:@"xxxxx" forKey:@"privateMapKey"]; // Fill in a new privateMapKey
+[params setObject:@"xxxxx" forKey:@"privateMapKey"]; // Enter the new `privateMapKey`.
 NSDictionary *dic = @{@"api": @"updatePrivateMapKey", @"params": params};
 NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:NULL];
 NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 [WXTRTCCloud sharedInstance] callExperimentalAPI:jsonStr];
-```
-#### C++
-```
+:::
+::: C++ C++
 std::string api = "{\"api\":\"updatePrivateMapKey\",\"params\":{\"privateMapKey\":"xxxxx"}}";
 TRTCCloudCore::GetInstance()->getTRTCCloud()->callExperimentalAPI(api.c_str());
-```
-#### C#
-```
+:::
+::: C# C#
 std::string api = "{\"api\":\"updatePrivateMapKey\",\"params\":{\"privateMapKey\":"xxxxx"}}";       
 mTRTCCloud.callExperimentalAPI(api);
-```
+:::
+</dx-codeblock>
 
 ## FAQs
-<span id="q1"></span>
+[](id:q1)
 #### 1. Why can't I enter any online room?
 
-Once room permission control is enabled, all rooms under the current `SDKAppid` can be entered only after `privateMapKey` is set in `TRTCParams`. Therefore, if your online business is in operation without the relevant logic of `privateMapKey` added to it, please do not enable room permission control.
+After you enable room permission control for an application (`SDKAppid`), users must pass `PrivateMapKey` in `TRTCParams` to enter any room under the application. Therefore, if your online business is running, and you haven’t integrated into it the `privateMapKey` logic, please do not enable room permission control.
 
-<span id="q2"></span>
-#### 2. What is the difference between PrivateMapyKey and UserSig?
+[](id:q2)
+#### 2. What is the difference between `PrivateMapKey` and `UserSig`?
 
-`UserSig` is a required field of `TRTCParams`, which is used to check whether the current user is authorized to use the TRTC cloud service so as to prevent attackers from stealing the traffic in your `SDKAppid` account.
-
-`PrivateMapKey` is an optional field of `TRTCParams`, which is used to check whether the current user is authorized to enter the room with the specified `roomid` and confirm the user’s permissions in the room. Only enable `PrivateMapKey` if your business needs to separate different users.
+- `UserSig` is a required parameter of `TRTCParams`, which is used to check whether the current user is authorized to use TRTC services and prevent attackers from stealing the traffic in your application (`SDKAppid`).
+- `PrivateMapKey` is an optional parameter of `TRTCParams`, which is used to check whether the current user is authorized to enter the specified room (`roomid`) and confirm the user’s permissions in the room. Use `PrivateMapKey` only if you need to distinguish users from one another.

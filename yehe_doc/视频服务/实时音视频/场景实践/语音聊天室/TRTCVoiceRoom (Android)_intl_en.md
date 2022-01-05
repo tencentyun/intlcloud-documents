@@ -1,12 +1,12 @@
 `TRTCVoiceRoom` is based on Tencent Real-Time Communication (TRTC) and Instant Messaging (IM). Its features include:
 
-- A user can create a chat salon and become a speaker, or enter a salon as a listener.
+- A user can create an audio chat room and become a speaker, or enter an audio chat room as a listener.
 - The room owner can invite a listener to speak as well as remove a speaker.
 - The room owner can also block a seat. Listeners cannot request to take a blocked seat.
 - A listener can request to speak and become a speaker. A speaker can also become a listener.
 - All users can send text and custom messages. Custom messages can be used to send on-screen comments, give likes, and send gifts.
 
-`TRTCVoiceRoom` is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, please see [Voice Chat Room (Android)](https://intl.cloud.tencent.com/document/product/647/37286)
+`TRTCVoiceRoom` is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, please see [Audio Chat Room (Android)](https://intl.cloud.tencent.com/document/product/647/37286).
 
 - TRTC SDK: the [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as a low-latency audio chat component.
 - IM SDK: the `AVChatRoom` feature of the [IM SDK](https://intl.cloud.tencent.com/document/product/1047) is used to implement chat rooms. The attribute APIs of IM are used to store room information such as the seat list, and invitation signaling is used to send requests to speak or invite others to speak.
@@ -16,12 +16,12 @@
 
 ### Basic SDK APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ----------------------------------------------- | ------------------------ |
 | [sharedInstance](#sharedinstance) | Gets a singleton object.           |
 | [destroySharedInstance](#destroysharedinstance) | Terminates a singleton object. |
-| [setDelegate](#setdelegate) | Sets event callback. |
-| [setDelegateHandler](#setdelegatehandler) | Sets the thread where the event callback is. |
+| [setDelegate](#setdelegate) | Sets event callbacks. |
+| [setDelegateHandler](#setdelegatehandler) | Sets the thread where event callbacks are. |
 | [login](#login)                   | Logs in.                   |
 | [logout](#logout)                 | Logs out.                   |
 | [setSelfProfile](#setselfprofile) | Sets profile. |
@@ -35,15 +35,16 @@
 | [enterRoom](#enterroom) | Enters a room (called by listener). |
 | [exitRoom](#exitroom) | Exits a room (called by listener). |
 | [getRoomInfoList](#getroominfolist) | Gets room list details.                                     |
-| [getUserInfoList](#getuserinfolist) | Gets the user information of the specified `userId`. If the value is `null`, the information of all users in the room will be obtained. |
+| [getUserInfoList](#getuserinfolist) | Gets the user information of the specified `userId`. If the value is `null`, the information of all users in the room is obtained. |
 
 ### Seat management APIs
 
 | API                                             | Description                                                         |
 | ----------------------- | ------------------------------------- |
 | [enterSeat](#enterseat) | Becomes a speaker (called by room owner or listener). |
+| [moveSeat](#moveseat) | Changes the seat (called by speaker).    |
 | [leaveSeat](#leaveseat) | Becomes a listener (called by speaker).    |
-| [pickSeat](#pickseat)   | Invites a listener to speak (called by room owner).                  |
+| [pickSeat](#pickseat)   | Places a user in a seat (called by room owner).                  |
 | [kickSeat](#kickseat)   | Removes a speaker (called by room owner).                  |
 | [muteSeat](#muteseat)   | Mutes/Unmutes a seat (called by room owner). |
 | [closeSeat](#closeseat) | Blocks/Unblocks a seat (called by room owner).          |
@@ -52,11 +53,11 @@
 
 | API                                             | Description                                                         |
 | ----------------------------------------------- | -------------------- |
-| [startMicrophone](#startmicrophone)             | Enables mic capturing.     |
+| [startMicrophone](#startmicrophone)             | Starts mic capturing.     |
 | [stopMicrophone](#stopmicrophone)               | Stops mic capturing.     |
 | [setAudioQuality](#setaudioquality)             | Sets audio quality.           |
 | [muteLocalAudio](#mutelocalaudio)               | Mutes/Unmutes local audio.       |
-| [setSpeaker](#setspeaker)                       | Turns the speaker on.     |
+| [setSpeaker](#setspeaker)                       | Sets whether to use the speaker or receiver.     |
 | [setAudioCaptureVolume](#setaudiocapturevolume) | Sets mic capturing volume. |
 | [setAudioPlayoutVolume](#setaudioplayoutvolume) | Sets playback volume.       |
 | [setVoiceEarMonitorEnable](#setvoiceearmonitorenable) | Enables/Disables in-ear monitoring.       |
@@ -99,28 +100,28 @@
 | ------------------------- | ---------- |
 | [onError](#onerror) | Error |
 | [onWarning](#onwarning) | Warning |
-| [onDebugLog](#ondebuglog) | Log |
+| [onDebugLog](#ondebuglog) | Log|
 
 ### Room event callback APIs
 
 | API                                             | Description                                                         |
 | ----------------------------------------- | ---------------------- |
-| [onRoomDestroy](#onroomdestroy) | Room termination |
-| [onRoomInfoChange](#onroominfochange)     | Room information change |
+| [onRoomDestroy](#onroomdestroy)     | The room was terminated.       |
+| [onRoomInfoChange](#onroominfochange)     | The room information changed. |
 | [onUserVolumeUpdate](#onuservolumeupdate) | User volume     |
 
 ### Seat list change callback APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | --------------------------------------- | ----------------------------------- |
 | [onSeatListChange](#onseatlistchange)   | All seat changes                |
-| [onAnchorEnterSeat](#onanchorenterseat) | Someone became a speaker after requesting or being invited by the room owner. |
+| [onAnchorEnterSeat](#onanchorenterseat) | Someone became a speaker or was made a speaker by the room owner. |
 | [onAnchorLeaveSeat](#onanchorleaveseat) | Someone became a listener or was moved to listeners by the room owner. |
-| [onSeatMute](#onseatmute) | The room owner muted a speaker. |
-| [onUserMicrophoneMute](#onusermicrophonemute)               | Whether a user's mic is muted                          |
+| [onSeatMute](#onseatmute) | The room owner muted a seat. |
+| [onUserMicrophoneMute](#onusermicrophonemute)               | Whether a user’s mic is muted                          |
 | [onSeatClose](#onseatclose)             | The room owner blocked a seat.                          |
 
-### Callback APIs for room entry/exit by listeners
+### Callback APIs for room entry/exit by listener
 
 | API                                             | Description                                                         |
 | ----------------------------------- | ------------------ |
@@ -132,7 +133,7 @@
 | API                                             | Description                                                         |
 | ------------------------------------------- | ---------------- |
 | [onRecvRoomTextMsg](#onrecvroomtextmsg)     | Receipt of a text message  |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | Receipt of a custom message |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | A custom message was received.|
 
 ## Signaling Event Callback APIs
 
@@ -141,7 +142,7 @@
 | [onReceiveNewInvitation](#onreceivenewinvitation) | Receipt of an invitation |
 | [onInviteeAccepted](#oninviteeaccepted)           | Invitation accepted by invitee   |
 | [onInviteeRejected](#oninviteerejected)           |  Invitation declined by invitee   |
-| [onInvitationCancelled](#oninvitationcancelled)   | Invitation canceled by inviter |
+| [onInvitationCancelled](#oninvitationcancelled)   | The inviter canceled the invitation. |
 
 ## Basic SDK APIs
 
@@ -185,7 +186,7 @@ public abstract void setDelegate(TRTCVoiceRoomDelegate delegate);
 
 ### setDelegateHandler
 
-This API is used to set the thread where the event callback is.
+This API is used to set the thread where event callbacks are.
 
 ```java
 public abstract void setDelegateHandler(Handler handler);
@@ -201,7 +202,7 @@ The parameters are as detailed below:
 
 ### login
 
-This API is used to log in.
+This API is used to log in to the Tencent backend server.
 
 ```java
 public abstract void login(int sdkAppId,
@@ -211,18 +212,16 @@ TRTCVoiceRoomCallback.ActionCallback callback);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------------- | ------------------------------------------------------------ |
-| sdkAppId | int | You can view the `SDKAppID` via **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info** in the TRTC console. |
-| userId | String | ID of current user, which is a string that can contain only letters (a-z and A-Z), digits (0–9), hyphens (-), and underscores (\_). |
+| sdkAppId | int | You can view `SDKAppID` in **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info** of the TRTC console. |
+| userId | String | ID of current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (\_). |
 | userSig | String | Tencent Cloud's proprietary security protection signature. For more information on how to get it, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
-| callback | ActionCallback | Callback for login. The `code` will be 0 if login succeeds. |
-
-   
+| callback | ActionCallback | Callback for login. The code is 0 if login succeeds. |
 
 ### logout
 
-This API is used to log out.
+This API is used to log out of the Tencent backend server.
 
 ```java
 public abstract void logout(TRTCVoiceRoomCallback.ActionCallback callback);
@@ -232,13 +231,13 @@ The parameters are as detailed below:
 
 | Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------------- | --------------------------- |
-| callback | ActionCallback | Callback for logout. The code is 0 if logout succeeds. |
+| callback | ActionCallback | Callback for logout. The code is `0` if logout succeeds. |
 
    
 
 ### setSelfProfile
 
-This API is used to set profile.
+This API is used to set the profile.
 
 ```java
 public abstract void setSelfProfile(String userName, String avatarURL, TRTCVoiceRoomCallback.ActionCallback callback);
@@ -248,9 +247,9 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | --------- | -------------- | ----------------------------------- |
-| userName | String | Nickname |
+| userName | String | Username|
 | avatar | String | Profile photo address |
-| callback | ActionCallback | Callback for profile setting. The code is 0 if the operation succeeds. |
+| callback | ActionCallback | Callback for profile setting. The code is `0` if the operation succeeds. |
 
    
 
@@ -269,12 +268,12 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | --------- | ------------------- | ------------------------------------------------------------ |
-| roomId | int | Room ID. You need to assign and manage the IDs in a centralized manner. Multiple `roomID` values can be aggregated into an audio chat room list. Currently, Tencent Cloud does not provide management services for room lists. Please manage the list on your own. |
+| roomId | int | Room ID. You need to assign and manage the IDs in a centralized manner. Multiple `roomID` values can be aggregated into a karaoke room list. Currently, Tencent Cloud does not provide management services for room lists. Please manage the list on your own. |
 | roomParam | TRTCCreateRoomParam | Room information, such as room name, seat list information, and cover information. To manage seats, you must enter the number of seats in the room. |
-| callback | ActionCallback | Callback for room creation result. The code is 0 if the operation succeeds.  |
+| callback | ActionCallback | Callback for room creation. The code is 0 if the operation succeeds.  |
 
-The process of creating an audio chat room and becoming a speaker is as follows: 
-1. A user calls `createRoom` to create an audio chat room, passing in room attributes (e.g. room ID, whether listeners require room owner's consent to speak, number of seats).
+The process of creating a karaoke room and becoming a speaker is as follows: 
+1. A user calls `createRoom` to create an audio chat room, passing in room attributes (e.g. room ID, whether listeners require room owner’s consent to speak, number of seats).
 2. After creating the room, the user calls `enterSeat` to become a speaker.
 3. The user will receive an `onSeatListChanget` notification about the change of the seat list, and can update the change to the UI.
 4. The user will also receive an `onAnchorEnterSeat` notification that someone became a speaker, and mic capturing will be enabled automatically.
@@ -293,7 +292,7 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | -------- | -------------- | ------------------------------------- |
-| callback | ActionCallback | Callback for room termination result. The code is 0 if the operation succeeds. |
+| callback | ActionCallback | Callback for room termination. The code is `0` if the operation succeeds. |
 
 
 ### enterRoom
@@ -309,14 +308,14 @@ The parameters are as detailed below:
 | Parameter        | Type    | Description                                                                                                      |
 | -------- | -------------- | ------------------------------------- |
 | roomId | int | Room ID |
-| callback | ActionCallback | Callback for room entry result. The `code` is 0 if the operation succeeds. |
+| callback | ActionCallback | Callback for room entry. The code is `0` if the operation succeeds. |
 
 
 The process of entering a room as a listener is as follows: 
 
 1. A user gets the latest audio chat room list from your server. The list may contain the `roomId` and room information of multiple audio chat rooms.
 2. The user selects a room, and calls `enterRoom` with the room ID passed in to enter the room.
-3. After entering the room, the user receives an `onRoomInfoChange` notification about room attribute change from the component. The attributes can be recorded, and corresponding changes can be made to the UI, including room name, whether room owner's consent is required for listeners to speak, etc.
+3. After entering the room, the user receives an `onRoomInfoChange` notification about room attribute change from the component. The attributes can be recorded, and corresponding changes can be made to the UI, including room name, whether room owner’s consent is required for listeners to speak, etc.
 4. The user will receive an `onSeatListChange` notification about the change of the seat list and can update the change to the UI.
 5. The user will also receive an `onAnchorEnterSeat` notification that someone became a speaker.
 
@@ -332,7 +331,7 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | -------- | -------------- | ------------------------------------- |
-| callback | ActionCallback | Callback for room exit result. The code is 0 if the operation succeeds. |
+| callback | ActionCallback | Callback for room exit. The code is `0` if the operation succeeds. |
 
    
 
@@ -340,7 +339,7 @@ The parameters are as detailed below:
 
 This API is used to get room list details. The room name and cover are set by the room owner via `roomInfo` when calling `createRoom()`.
 
->?You don't need this API if both the room list and room information are managed on your server.
+>?You don’t need this API if both the room list and room information are managed on your server.
 
 
 ```java
@@ -352,7 +351,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | ---------- | ------------------- | ------------------ |
 | roomIdList | List&lt;Integer&gt; | Room ID list |
-| callback | RoomInfoCallback | Callback for room details |
+| callback | RoomInfoCallback | Callback of room details |
 
 
 ### getUserInfoList
@@ -367,8 +366,8 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ---------------- | ------------------ | ------------------------------------------------------------ |
-| userIdList       | List&lt;String&gt; | List of user IDs to obtain. If this parameter is `null`, the information of all users in the room is obtained. |
-| userlistcallback | UserListCallback   | Callback for user details                                           |
+| userIdList       | List&lt;String&gt; | IDs of the users to query. If this parameter is `null`, the information of all users in the room is queried. |
+| userlistcallback | UserListCallback   | Callback of user details                                           |
 
 
 ## Seat Management APIs
@@ -385,18 +384,41 @@ public abstract void enterSeat(int seatIndex, TRTCVoiceRoomCallback.ActionCallba
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | --------- | -------------- | -------------------- |
 | seatIndex | int            | The number of the seat to take |
-| callback | ActionCallback | Callback for operation |
+| callback | ActionCallback | Callback for the operation |
 
-Calling this API will immediately modify the seat list. In cases where listeners need the room owner's consent to speak, you can call `sendInvitation` first to send a request and, after receiving `onInvitationAccept`, call `enterSeat`.
+Calling this API will immediately modify the seat list. In cases where listeners need the room owner’s consent to take a seat, you can call `sendInvitation` first to send a request and, after receiving `onInvitationAccept`, call this API.
+
+### moveSeat
+This API is used to change one’s seat (called by speaker).
+>? After the seat change, all users in the room will receive the `onSeatListChange`, `onAnchorLeaveSeat`, and `onAnchorEnterSeat` notifications. This API will only change the user’s seat number, not the user role.
+
+```java
+public abstract int moveSeat(int seatIndex, TRTCVoiceRoomCallback.ActionCallback callback);
+```
+
+The parameters are as detailed below:
+
+| Parameter    | Type   | Description                                                                                                                    |
+| --------- | -------------- | -------------------- |
+| seatIndex | int            | The number of the seat to change to|
+| callback | ActionCallback | Callback for the operation |
+
+Response parameters:
+
+| Parameter | Type | Description |
+| -------- | ------ | --------------------- |
+| code | int | Result of seat change. `0`: operation successful; `10001`: API rate limit exceeded; other values: operation failed |
+
+Calling this API will immediately modify the seat list. In cases where listeners need the room owner’s consent to take a seat, you can call `sendInvitation` first to send a request and, after receiving `onInvitationAccept`, call this API.
 
 ### leaveSeat
 
-This API is used to remove a speaker (called by room owner).
+This API is used to become a listener (called by speaker).
 
->? After a speaker is removed, all members in the room will receive an `onSeatListChange` notification and an `onAnchorLeaveSeat` notification.
+>? After a speaker becomes a listener, all members in the room will receive an `onSeatListChange` notification and an `onAnchorLeaveSeat` notification.
 
 ```java
 public abstract void leaveSeat(TRTCVoiceRoomCallback.ActionCallback callback);
@@ -404,15 +426,15 @@ public abstract void leaveSeat(TRTCVoiceRoomCallback.ActionCallback callback);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------------- | ---------- |
-| callback | ActionCallback | Callback for operation |
+| callback | ActionCallback | Callback for the operation |
 
 ### pickSeat
 
-This API is used to invite a listener to speak (called by room owner).
+This API is used to place a user in a seat (called by room owner).
 
->? After a listener becomes a speaker following the room owner's invitation, all members in the room will receive an `onSeatListChange` notification and an `onAnchorEnterSeat` notification.
+>? After the room owner places a user in a seat, all members in the room will receive an `onSeatListChange` notification and an `onAnchorEnterSeat` notification.
 
 ```java
 public abstract void pickSeat(int seatIndex, String userId, TRTCVoiceRoomCallback.ActionCallback callback);
@@ -420,13 +442,13 @@ public abstract void pickSeat(int seatIndex, String userId, TRTCVoiceRoomCallbac
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | --------- | -------------- | ---------------------- |
-| seatIndex | int            | The number of the seat that the listener is invited to take |
+| seatIndex | int            | The number of the seat to place the listener in |
 | userId | String | User ID |
-| callback | ActionCallback | Callback for operation |
+| callback | ActionCallback | Callback for the operation |
 
-Calling this API will immediately modify the seat list. In cases where the room owner needs listeners' consent to make them speakers, you can call `sendInvitation` first to send a request and, after receiving `onInvitationAccept`, call `pickSeat`.
+Calling this API will immediately modify the seat list. In cases where the room owner needs listeners’ consent to make them speakers, you can call `sendInvitation` first to send a request and, after receiving `onInvitationAccept`, call `pickSeat`.
 
 
 ### kickSeat
@@ -441,12 +463,12 @@ public abstract void kickSeat(int seatIndex, TRTCVoiceRoomCallback.ActionCallbac
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | --------- | -------------- | ---------------------- |
-| seatIndex | int            | The number of the seat from which the speaker is to be removed |
-| callback | ActionCallback | Callback for operation |
+| seatIndex | int            | The number of the seat to remove the speaker from |
+| callback | ActionCallback | Callback for the operation |
 
-Calling this API will immediately modify the speaker list.
+Calling this API will immediately modify the seat list.
 
 ### muteSeat
 
@@ -462,9 +484,9 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | --------- | -------------- | --------------------------------------------- |
-| seatIndex | int            | The number of the seat to mute/unmute                          |
+| seatIndex | int            | The number of the seat to block/unblock                          |
 | isMute    | boolean        | `true`: mute; `false`: unmute |
-| callback | ActionCallback | Callback for operation |
+| callback | ActionCallback | Callback for the operation |
 
 Calling this API will immediately modify the seat list. The speaker on the seat specified by `seatIndex` will call `muteAudio` to mute/unmute his or her audio.
 
@@ -484,7 +506,7 @@ The parameters are as detailed below:
 | --------- | -------------- | ------------------------------------------ |
 | seatIndex | int            | The number of the seat to block/unblock                          |
 | isClose   | boolean        | `true`: block; `false`: unblock |
-| callback | ActionCallback | Callback for operation |
+| callback | ActionCallback | Callback for the operation |
 
 Calling this API will immediately modify the seat list. The speaker on the seat specified by `seatIndex` will leave the seat.
 
@@ -493,7 +515,7 @@ Calling this API will immediately modify the seat list. The speaker on the seat 
 
 ### startMicrophone
 
-This API is used to enable mic capturing.
+This API is used to start mic capturing.
 
 ```java
 public abstract void startMicrophone();
@@ -519,7 +541,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------- | ---- | ------------------------------------------------------------ |
-| quality | int | Audio quality. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55). |
+| quality | int | Audio quality. For more information, please see [setAudioQuality()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55). |
 
 
 ### muteLocalAudio
@@ -534,13 +556,13 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ---- | ------- | ------------------------------------------------------------ |
-| mute | boolean | Mutes/Unmutes. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86). |
+| mute | boolean | Whether to mute or unmute audio. For more information, please see [muteLocalAudio()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86). |
 
 
 
 ### setSpeaker
 
-This API is used to turn the speaker on.
+This API is used to set whether to use the speaker or receiver.
 
 ```java
 public abstract void setSpeaker(boolean useSpeaker);
@@ -548,7 +570,7 @@ public abstract void setSpeaker(boolean useSpeaker);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ---------- | ------- | --------------------------- |
 | useSpeaker | boolean | `true`: speaker; `false`: receiver |
 
@@ -579,7 +601,7 @@ public abstract void setAudioPlayoutVolume(int volume);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | ---- | --------------------------- |
 | volume | int | Playback volume. Value range: 0-100 (default: 100) |
 
@@ -593,9 +615,9 @@ public abstract void muteRemoteAudio(String userId, boolean mute);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ---- | ------- | --------------------------------- |
-| userId | String | ID of the user to mute/unmute |
+| userId | String | User ID |
 | mute | boolean | `true`: mute; `false`: unmute |
 
 ### muteAllRemoteAudio
@@ -608,7 +630,7 @@ public abstract void muteAllRemoteAudio(boolean mute);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ---- | ------- | --------------------------------- |
 | mute | boolean | `true`: mute; `false`: unmute |
 
@@ -621,7 +643,7 @@ public abstract void setVoiceEarMonitorEnable(boolean enable);
 ```
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ---- | ------- | --------------------------------- |
 | enable | boolean | `true`: enable; `false`: disable |
 
@@ -652,7 +674,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------------- | -------------- |
 | message | String | Text message |
-| callback | ActionCallback | Callback for operation |
+| callback | ActionCallback | Callback for the operation |
 
    
 
@@ -670,7 +692,7 @@ The parameters are as detailed below:
 | -------- | -------------- | -------------------------------------------------- |
 | cmd | String | Custom command word used to distinguish between different message types |
 | message | String | Text message |
-| callback | ActionCallback | Callback for operation |
+| callback | ActionCallback | Callback for the operation |
 
    
 
@@ -689,11 +711,11 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------------- | ---------------- |
 | cmd      | String         | Custom command of business |
-| userId   | String         | Invitee's user ID  |
+| userId   | String         | Invitee’s user ID  |
 | content  | String         | Invitation content     |
-| callback | ActionCallback | Callback for operation |
+| callback | ActionCallback | Callback for the operation |
 
-Returned value:
+Response parameters:
 
 | Returned Value | Type | Description |
 | -------- | ------ | --------------------- |
@@ -712,7 +734,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------------- | -------------- |
 | id       | String         | Invitation ID      |
-| callback | ActionCallback | Callback for operation |
+| callback | ActionCallback | Callback for the operation |
 
 ### rejectInvitation
 
@@ -726,8 +748,8 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ---- | ------ | -------- |
-| id   | String | Invitation ID. |
-| callback | ActionCallback | Callback for operation |
+| id   | String | Invitation ID |
+| callback | ActionCallback | Callback for the operation |
 
 
 ### cancelInvitation
@@ -743,7 +765,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------------- | -------------- |
 | id       | String         | Invitation ID      |
-| callback | ActionCallback | Callback for operation |
+| callback | ActionCallback | Callback for the operation |
 
 [](id:TRTCVoiceRoomDelegate)
 ## TRTCVoiceRoomDelegate Event Callback APIs
@@ -754,7 +776,7 @@ The parameters are as detailed below:
 
 Callback for error.
 
->? This callback indicates that the SDK encountered an unrecoverable error. Such errors must be listened for, and UI reminders should be sent to users if necessary.
+This callback indicates that the SDK encountered an unrecoverable error. Such errors must be listened for, and UI reminders should be sent to users depending if necessary.
 
 ```java
 void onError(int code, String message);
@@ -762,7 +784,7 @@ void onError(int code, String message);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------- | ------ | ---------- |
 | code    | int    | Error code   |
 | message | String | Error message |
@@ -778,7 +800,7 @@ void onWarning(int code, String message);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------- | ------ | ---------- |
 | code    | int    | Error code   |
 | message | String | Warning message |
@@ -795,7 +817,7 @@ void onDebugLog(String message);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------- | ------ | ---------- |
 | message | String | Log information |
 
@@ -821,7 +843,7 @@ The parameters are as detailed below:
 
 ### onRoomInfoChange
 
-Callback for successful room entry. The information in `roomInfo` is passed in by the room owner during room creation.
+Callback for change of room information. This callback is sent after successful room entry. The information in `roomInfo` is passed in by the room owner during room creation.
 
 ```java
 void onRoomInfoChange(TRTCVoiceRoomDef.RoomInfo roomInfo);
@@ -829,7 +851,7 @@ void onRoomInfoChange(TRTCVoiceRoomDef.RoomInfo roomInfo);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | -------- | -------- | ---------- |
 | roomInfo | RoomInfo | Room information |
 
@@ -837,7 +859,7 @@ The parameters are as detailed below:
 
 ### onUserMicrophoneMute
 
-Callback of whether a user's mic is muted. When a user calls `muteLocalAudio`, all members in the room will receive this callback.
+Callback of whether a user’s mic is muted. When a user calls `muteLocalAudio`, all members in the room will receive this callback.
 
 ```java
 void onUserMicrophoneMute(String userId, boolean mute);
@@ -846,14 +868,14 @@ void onUserMicrophoneMute(String userId, boolean mute);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | ------ | ------------------------- |
 | userId | String | User ID |
-| mute | boolean    | Volume. Value range: 0-100 |
+| mute | boolean | `true`: muted; `false`: unmuted |
 
 ### onUserVolumeUpdate
 
-Callback of the volume of each member in the room after the volume reminder is enabled.
+Notification to all members of the volume after the volume reminder is enabled.
 
 ```java
 void onUserVolumeUpdate(List<TRTCCloudDef.TRTCVolumeInfo> userVolumes, int totalVolume);
@@ -862,10 +884,10 @@ void onUserVolumeUpdate(List<TRTCCloudDef.TRTCVolumeInfo> userVolumes, int total
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | ------ | ------------------------- |
 | userVolumes | ListList<TRTCCloudDef.TRTCVolumeInfo> | List of user IDs                 |
-| totalVolume | int    | Volume. Value range: 0-100 |
+| totalVolume | int    | Total volume. Value range: 0-100 |
 
 
 ## Seat Callback APIs
@@ -880,12 +902,12 @@ void onSeatListChange(List<SeatInfo> seatInfoList);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------------ | -------------- | ---------------- |
 | seatInfoList | List&lt;SeatInfo&gt; | Full seat list |
 
 ### onAnchorEnterSeat
-Someone became a speaker after requesting or being invited by the room owner.
+Someone became a speaker or was made a speaker by the room owner.
 
 ```java
 void onAnchorEnterSeat(int index, TRTCVoiceRoomDef.UserInfo user);
@@ -895,7 +917,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | ----- | -------- | -------------------- |
 | index | int      | The seat taken     |
-| user  | UserInfo | Details of the user who took the seat |
+| user | UserInfo | Details of the user who took the seat |
 
 ### onAnchorLeaveSeat
 
@@ -910,11 +932,11 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | ----- | -------- | -------------------- |
 | index | int      | The seat previously occupied by the speaker         |
-| user  | UserInfo | Details of the user who took the seat |
+| user | UserInfo | Details of the user who took the seat |
 
 ### onSeatMute
 
-The room owner muted a seat.
+The room owner muted/unmuted a seat.
 
 ```java
 void onSeatMute(int index, boolean isMute);
@@ -922,14 +944,14 @@ void onSeatMute(int index, boolean isMute);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | ------- | ---------------------------------- |
-| index  | int     | The seat muted                       |
+| index  | int     | The seat muted/unmuted                       |
 | isMute | boolean | `true`: muted; `false`: unmuted |
 
 ### onSeatClose
 
-The room owner blocked a seat.
+The room owner blocked/unblocked a seat.
 
 ```java
 void onSeatClose(int index, boolean isClose);
@@ -939,7 +961,7 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ------- | ------- | ----------------------------------- |
-| index   | int     | The seat blocked                        |
+| index   | int     | The seat blocked/unblocked                        |
 | isClose | boolean | `true`: blocked; `false`: unblocked |
 
 ## Callback APIs for Room Entry/Exit by Listener
@@ -954,9 +976,9 @@ void onAudienceEnter(TRTCVoiceRoomDef.UserInfo userInfo);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------- | -------------- |
-| userInfo | UserInfo | Information of the user who entered the room |
+| userInfo | UserInfo | Information of the listener who entered the room |
 
 ### onAudienceExit
 
@@ -968,7 +990,7 @@ void onAudienceExit(TRTCVoiceRoomDef.UserInfo userInfo);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------- | -------------- |
 | userInfo | UserInfo | Information of the listener who exited the room |
 
@@ -978,7 +1000,7 @@ The parameters are as detailed below:
 
 ### onRecvRoomTextMsg
 
-A text message was received.
+Callback for receiving a text message.
 
 ```java
 void onRecvRoomTextMsg(String message, TRTCVoiceRoomDef.UserInfo userInfo);
@@ -986,16 +1008,16 @@ void onRecvRoomTextMsg(String message, TRTCVoiceRoomDef.UserInfo userInfo);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------- | ---------------- |
 | message | String | Text message |
-| userInfo | UserInfo | Information of sender |
+| userInfo | UserInfo | Information of the sender |
 
    
 
 ### onRecvRoomCustomMsg
 
-A custom message was received.
+Callback for receiving a custom message.
 
 ```java
 void onRecvRoomCustomMsg(String cmd, String message, TRTCVoiceRoomDef.UserInfo userInfo);
@@ -1007,9 +1029,9 @@ The parameters are as detailed below:
 | -------- | -------- | -------------------------------------------------- |
 | cmd | String | Custom command word used to distinguish between different message types |
 | message | String | Text message |
-| userInfo | UserInfo | Information of sender                                   |
+| userInfo | UserInfo | Information of the sender                                   |
 
-## Invitation Signaling Event Callbacks
+## Invitation Signaling Callback APIs
 
 ### onReceiveNewInvitation
 
@@ -1024,13 +1046,13 @@ The parameters are as detailed below:
 | Parameter        | Type    | Description                                                                                                      |
 | ------- | -------- | ---------------------------------- |
 | id      | String   | Invitation ID                          |
-| inviter | String   | Inviter's user ID                  |
+| inviter | String   | Inviter’s user ID                  |
 | cmd     | String   | Custom command word specified by business |
 | content | String | Content specified by business |
 
 ### onInviteeAccepted
 
-The invitee accepted the invitation.
+The invitee accepted the invitation
 
 ```java
 void onInviteeAccepted(String id, String invitee);
@@ -1038,14 +1060,14 @@ void onInviteeAccepted(String id, String invitee);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------- | ------ | ------------------- |
 | id      | String | Invitation ID           |
-| invitee | String | Invitee's user ID |
+| invitee | String | Invitee’s user ID |
 
 ### onInviteeRejected
 
-The invitee declined the invitation.
+The invitee declined the invitation
 
 ```java
 void onInviteeRejected(String id, String invitee);
@@ -1053,10 +1075,10 @@ void onInviteeRejected(String id, String invitee);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------- | ------ | ------------------- |
 | id      | String | Invitation ID           |
-| invitee | String | Invitee's user ID |
+| invitee | String | Invitee’s user ID |
 
 ### onInvitationCancelled
 
@@ -1068,7 +1090,7 @@ void onInvitationCancelled(String id, String inviter);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------- | ------ | ----------------- |
 | id      | String | Invitation ID         |
-| inviter | String | Inviter's user ID |
+| inviter | String   | Inviter’s user ID                  |

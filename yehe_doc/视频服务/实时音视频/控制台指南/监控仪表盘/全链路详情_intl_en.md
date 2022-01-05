@@ -14,7 +14,6 @@ End-to-end call details are the details of data transferred across the sender-re
 ## Information Displayed
 
 The end-to-end details page shows the data of **Video**, **Audio**, and **Screen Sharing**, which can be viewed from the perspective of the receiver or sender.
-
 You can analyze end-to-end data from [network conditions](#internet) and [device status](#equipment).
 
 [](id:internet)
@@ -60,6 +59,11 @@ Stable device performance is necessary for a successful audio/video call. Prefer
 Both system CPU usage and application CPU usage are displayed. Normally, system CPU usage should be lower than 50%. The lower, the better. If **system CPU usage exceeds 85%, the application may stop responding or respond slowly. This is marked by red lines in the graph.**
 
 
+[](id:SDK)
+#### Time consumption of SDK task
+Some Android devices and system versions are unable to calculate CPU usage, in which case you can use **Time Consumption of SDK Task** to assess device performance. If a task takes longer than 60 ms to complete, it indicates high system CPU usage, and the application may not respond or be slow to respond. Consider closing other processes in the background or update your hardware.
+
+
 [](id:voice)
 #### Volume
 - **Capturing volume** is the volume of audio captured from the sender's mic. **If it changes, it indicates that the SDK is capturing audio, i.e., the device functions properly.**
@@ -67,10 +71,9 @@ Both system CPU usage and application CPU usage are displayed. Normally, system 
 
 The normal volume range is 40-80 dB. If the volume is lower than 40 dB, and the user cannot hear any audio, check for hardware failure or whether the user’s phone is muted.
 
-
 [](id:resolution)
 #### Resolution
-The resolutions of video and screen sharing are additional information used mainly to analyze relayed live streaming and the replay of recorded streams. Fluctuations in resolutions indicate that audience watching relayed live streams via [CDN](https://intl.cloud.tencent.com/product/cdn) or replaying recorded videos, especially web users, may be experiencing player compatibility issues such as stuttering or pixelated video.
+The resolutions of video and screen sharing are additional information used mainly to analyze relayed live streaming and the replay of recorded streams. Fluctuations in resolutions indicate that audience watching relayed live streams via [CDN](https://cloud.tencent.com/product/cdn?from=10680) or replaying recorded videos, especially web users, may be experiencing player compatibility issues such as stuttering or pixelated video.
 
 
 
@@ -86,4 +89,4 @@ Client events correspond to the calling of SDK APIs by the application and are u
 - Disabling/Enabling audio or video
 - Switching networks, for example, from 4G to Wi-Fi
 
-Click **View Detailed Event** to open the event list and view the operations of key client events.
+Click **View Detailed Event** to open the event list and view the operations of key client events.                     
