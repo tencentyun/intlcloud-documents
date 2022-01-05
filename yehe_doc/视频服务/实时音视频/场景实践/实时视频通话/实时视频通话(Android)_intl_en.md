@@ -1,119 +1,132 @@
-## Effect Demo
+## Demo UI
+You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the app we provide to try out the real-time audio/video call feature.
+<table>
+<tr>
+   <th>Call</th>
+   <th>Answer</th>
+ </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/ef83db73d0a8c487e72986dd1f92e361.jpeg"/></td>
+<td><img src="https://main.qcloudimg.com/raw/f57ed3a55112233b05260f5dc37342ca.jpeg"/></td>
+</tr>
+</table>
 
-To quickly implement the video call feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCCalling` component and implement custom UI.
 
->! Previously we offered `TRTCVideoCall` component, which was moved to the [Component Repository](https://github.com/tencentyun/LiteAVClassic). We now provide `TRTCCalling` component which uses IM signaling API and is not compatible with the previous version.
 
-<span id="ui"> </span>
+>! To make it easier for you to implement the real-time audio/video call feature, we have refactored the `TUICalling` component. You no longer need to pay attention to UI as it is now implemented within the `TUICalling` component.
 
-## Reusing Demo UI
+[](id:ui)
 
-<span id="ui.step1"></span>
+## Running the Demo
+
+[](id:ui.step1)
 
 ### Step 1. Create an application
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+2. Enter an application name such as `TestVideoCall` and click **Create**.
+3. Click **Next** to skip the source code download step.
 
-1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Click **Start Now**, enter the application name such as `TestVideoCall`, and click **Create Application**.
+![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
+>!This feature uses two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When you activate TRTC, IM will be activated automatically. IM is a value-added service. See [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) for its billing details.
 
->! This feature uses two basic PaaS services of Tencent Cloud, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically.IM is a value-added service at the prices as detailed in [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
-<span id="ui.step2"></span>
+[](id:ui.step2)
+### Step 2. Download the application source code
+Clone or download the [TUICalling](https://github.com/tencentyun/TUICalling) source code.
 
-### Step 2. Download the SDK and demo source code
+[](id:ui.step3)
+### Step 3. Configure application project files
+1. In the **Modify Configuration** step, select the development platform in line with the source package downloaded.
+2. Find and open `Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java`.
+3. Set parameters in `GenerateTestUserSig.java`:
+<ul style="margin:0"><li/>SDKAPPID: a placeholder by default. Set it to the actual `SDKAppID`.
+<li>SECRETKEY: a placeholder by default. Set it to the actual key.</ul>
+<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 
-1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android)** to enter GitHub (or click **[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)**), and download the relevant SDK and supporting demo source code.
-   ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
-2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
-
-<span id="ui.step3"></span>
-
-### Step 3. Configure demo project files
-
-1. Decompress the source package downloaded in [step 2](#ui.step2).
-2. Find and open the `Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java` file.
-3. Set the relevant parameters in the `GenerateTestUserSig.java` file:
-	- SDKAPPID: it is 0 by default. Please replace it with the real `SDKAppID`.
-	- SECRETKEY: it is an empty string by default. Please replace it with the real key information.
-![](https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png)
-4. Return to the TRTC Console and click **Pasted and Next**.
-5. Click **Close Guide and Log in to the Console to Manage the Application**.
+4. Click **Next** to complete the creation.
+5. After compilation, click **Return to Overview Page**.
 
 >!
->- In this document, the `SECRETKEY` is configured in the client code to obtain `UserSig`. The `SECRETKEY` is easily decompiled and reverse cracked. If the `SECRETKEY` is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method only applies to locally running a demo project and commissioning features**.
->- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166#Server).
+>- The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is suitable only for the local execution and debugging of the demo app**.
+>- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
 
-<span id="ui.step4"></span>
+[](id:ui.step4)
+### Step 4. Run the application
 
-### Step 4. Run the demo
+Open the source code project `TUICalling` with Android Studio (version 3.5 or above) and click **Run**.
 
-Use Android Studio (v3.5 or above) to open the `TRTCDemo` project and click **Run** to debug the demo.
 
-<span id="ui.step5"></span>
 
-### Step 5. Modify the demo source code
+## Tryout
+>! You need at least two devices to try out the application.
 
-The source code folder `trtccallingdemo` contains two subfolders: `ui` and `model`. The `ui` folder contains the UI code:
+### User A
+1. Enter a username (**which must be unique**) and log in.
+2. Enter the `userId` of the person you want to call and tap **Search**.
+3. Tap **Call** and select **Video Call** (**Make sure that the callee is active in the application, or the call may fail**).<br>
 
-| File or Folder                     | Description                                                     |
-| -------------------------------- | ------------------------------------------------------------ |
-| TRTCVideoCallActivity.java | Video call homepage where calls can be answered or rejected. |
-| TRTCCallingEntranceActivity.java | It is used to show the interface for selecting contacts. You can search for registered users to initiate calls on this UI. |
-| videolayout                      | Video image rendering and layout logic                       |
+### User B
+1. Enter a username (**which must be unique**) and log in.
+2. Go to the homepage and wait for the incoming call.
 
-<span id="model"> </span>
 
-## Implementing Custom UI
 
-The [source code] folder `trtccallingdemo` contains two subfolders: `ui` and `model`. The `model` folder contains the implemented reusable open-source component `TRTCCalling`. You can find the API functions provided by this component in the `TRTCCalling.java` file.
-![](https://main.qcloudimg.com/raw/9b4087b68541912ce9e7a48955cd48e8.png)
+[](id:model)
+## Integration Directions
 
-You can use the open-source component `TRTCCalling` to implement your own UI, i.e., only reusing the `model` to implement your custom UI.
+In the [source code](https://github.com/tencentyun/TUICalling/tree/master/Android/Source/src/main/java/com/tencent/liteav/trtccalling), the `Source` folder contains two subfolders: `ui` and `model`. The `model` subfolder includes the open-source `TUICallingManager` component, which we share with the public. You can find the component’s APIs in the `TUICalling.java` file.
+![](https://main.qcloudimg.com/raw/18e2e6fd62ade4a8bac560d45f4fbab4.png)
 
-<span id="model.step1"> </span>
 
-### Step 1. Integrate the SDK
+You can enable the real-time audio/video call feature for your project with ease using the open-source `TUICalling` and `TUICallingManager` components, with no need to implement complicated call UI or logic by yourself.
 
-The audio/video call component `TRTCCalling` depends on the TRTC SDK and IM SDK. You can integrate the two SDKs into your project in the following steps:
+[](id:model.step1)
+### Step 1. Integrate the SDKs
 
-**Method 1. Implement dependency through Maven repository**
+The audio/video call component `TUICalling` depends on the TRTC SDK and IM SDK. Follow the steps below to integrate the two SDKs into your project:
+
+#### Method 1: adding dependencies via Maven
 
 1. Add the TRTC SDK and IM SDK dependencies to `dependencies`.
-```
+<dx-codeblock>
+::: java java
 dependencies {
-  complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
-    complie 'com.tencent.imsdk:imsdk:latest.release'
+    compile "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
+    compile 'com.tencent.imsdk:imsdk:latest.release'
 
-  // As Gson parsing is used, Google's Gson needs to be depended on
-    complie 'com.google.code.gson:gson:latest.release'
+    // As we use Gson for parsing, you also need to add the Google Gson dependency.
+    compile 'com.google.code.gson:gson:latest.release'
 }
-```
->?You can get the latest version numbers of the two SDKs on the [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK) homepages on GitHub.
-
-2. In `defaultConfig`, specify the CPU architecture to be used by the application.
-```
+:::
+</dx-codeblock>
+>?You can view the latest version numbers of the two SDKs by visiting their GitHub pages at [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK).
+2. In `defaultConfig`, specify the CPU architecture to be used by your application.
+<dx-codeblock>
+::: java java
 defaultConfig {
-    ndk {
-        abiFilters "armeabi-v7a"
-    }
+      ndk {
+            abiFilters "armeabi-v7a"
+      }
 }
-```
-3. Click **Sync Now** to sync the SDK.
->?If JCenter can be connected to, the SDK will be automatically downloaded and integrated into the project.
+:::
+</dx-codeblock>
+3. Click **Sync Now** to sync the SDKs.
+>?If you have no problem connecting to JCenter, the SDKs will be downloaded and integrated into your project automatically.
 
 
-**Method 2. Implement dependency through local AAR files**
-If the access to the Maven repository is slow in your development environment, you can download the ZIP packages and manually integrate the SDKs into your project as instructed in the integration document.
+#### Method 2: adding dependencies through local AAR files
+If your access to the Maven repository is slow, you can download the ZIP files of the SDKs and manually integrate them into your project as instructed in the documents below.
 
-| SDK      | Download Page                                                     | Integration Guide                                                     |
+| SDK | Download Page | Integration Guide |
 | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| TRTC SDK | [Download](https://intl.cloud.tencent.com/document/product/647/34615) | [Integration Documentation](https://intl.cloud.tencent.com/document/product/647/35093) |
-| IM SDK | [Download](https://intl.cloud.tencent.com/document/product/1047/33996) | [Integration Documentation](https://intl.cloud.tencent.com/document/product/1047/34306) |
+| TRTC SDK | [Download](https://intl.cloud.tencent.com/document/product/647/34615) | [Integration document](https://intl.cloud.tencent.com/document/product/647/35093) |
+| IM SDK | [Download](https://intl.cloud.tencent.com/document/product/1047/33996) | [Integration documentation](https://intl.cloud.tencent.com/document/product/1047/34306) |
 
-<span id="model.step2"> </span>
+[](id:model.step2)
 
-### Step 2. Configure permissions and obfuscation rules
+### Step 2. Configure permission requests and obfuscation rules
 
-Configure application permissions in `AndroidManifest.xml`. The SDK requires the following permissions (on Android 6.0 and above, the camera and storage read permissions need to be requested at runtime):
+Configure permission requests for your application in `AndroidManifest.xml`. The SDKs need the following permissions (on Android 6.0 and above, the camera and read storage permissions must be requested at runtime.)
 
 ```
 <uses-permission android:name="android.permission.INTERNET" />
@@ -130,156 +143,170 @@ Configure application permissions in `AndroidManifest.xml`. The SDK requires the
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 
-In the `proguard-rules.pro` file, add the classes related to the SDK to the "do not obfuscate" list:
+In the `proguard-rules.pro` file, add the SDK classes to the "do not obfuscate" list.
 
 ```
--keep class com.tencent.** { *; }
+-keep class com.tencent.** { *;}
 ```
 
-<span id="model.step3"> </span>
+[](id:model.step3)
 
-### Step 3. Import the TRTCCalling component
+### Step 3. Import the `TUICalling` component
 
-Copy all files in the following directory to your project:
+Include `Source` in `App` into your project.
 
 ```
-trtccallingdemo/src/main/java/com/tencent/liteav/trtccalling/model 
+include ':Source'
 ```
 
-<span id="model.step4"> </span>
+[](id:model.step4)
 
-### Step 4. Initialize and log in to the component
+### Step 4. Initialize the component and log in
 
-1. Call `TRTCCallingImpl.sharedInstance(context)` to get the component instance.
-2. Call `login(SDKAppID, userId, userSig, callback)` to log in to the component. Enter key parameters as shown below:
+1. Call `TUICallingManager.sharedInstance()` to initialize the component.
+2. Call `TUILogin.init(context, SDKAppID, config, listener)` to initialize login.
+3. Call `TUILogin.login(userId, userSig, callback)` to log in to the component. Specify the key parameters as described below:
  <table>
-<tr><th>Parameter Name</th><th>Content</th></tr>
+<tr><th>Parameter</th><th>Description</th></tr><tr>
 <tr>
 <td>SDKAppID</td>
-<td>You can view the `SDKAPPID` in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC Console</a>.</td>
+<td>You can view `SDKAppID` in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC console</a>.</td>
 </tr><tr>
 <td>userId</td>
-<td>ID of current user, which is a string that can contain only letters (a–z and A–Z), digits (0–9), hyphens (-), and underscores (_).</td>
+<td>ID of the current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_).</td>
 </tr><tr>
 <td>userSig</td>
-<td>Tencent Cloud's proprietary security protection signature. For the calculation method, please see <a href="https://intl.cloud.tencent.com/document/product/647/35166">How to Calculate UserSig</a>.</td>
-</tr></table>
-<pre>
-// Initialize
-sCall = TRTCCallingImpl.sharedInstance(context);
-sCall.login(1400000123, "userA", "xxxx", new ActionCallback());
-</pre>
-
-<span id="model.step5"> </span>
-
-### Step 5. Make an one-to-one video call
-
-1. Caller: Call `call()` method of `TRTCCalling` to initiate a call, and then pass in the `userId` (user ID) and call type parameter `TYPE_VIDEO_CALL` to initiate a video call request.
-2. Callee: if already logged in, the callee will receive the `onInvited()` callback. The the caller can use the parameter `callType` to set the call type and and the callee can use this parameter to initiate the call interface. If you want the callee to receive call requests even when logged out, please see [Offline Answering](#model.offline).
-3. Callee: to answer the call, the callee can call the `accept()` function and the `openCamera()` function to enable the local camera. The callee can also call `reject()` to reject the call.
-4. After the audio/video channel between the caller and callee is established, they will both receive the `onUserVideoAvailable()` event notification, which indicates that they have received each other's image. At this point, they can call `startRemoteView()` to display the remote video image, and the remote audio will be played back by default.
-
-```
-// 1. Initialize the component
-TRTCCalling sCall = TRTCCallingImpl.sharedInstance(context);
-// 2. Register the listener
-sCall.addDelegate(new TRTCCallingDelegate() {
-    // ... Some listening code snippets are omitted
-    public void onInvited(String sponsor, final List<String> userIdList, boolean isFromGroup, int callType) {
-        // The sample code here is to answer the call after receiving the call request from `sponsor`. `reject()` can also be called to reject the call
-        sCall.accept();
-        // Enable local camera after accepting the call request
-        TXCloudVideoView localView = new TXCloudVideoView(mContext);
-        mParentView.add(remoteView);
-        sCall.openCamera(true, localView);
-    }
-		
-    public void onUserVideoAvailable(final String userId, boolean available){
-        if (isVideoAvailable) {
-            // This indicates that the other party's video image has been obtained, which can be viewed at this point
-            TXCloudVideoView remoteView = new TXCloudVideoView(mContext);
-            mParentView.add(remoteView);
-            trtcCloud.startRemoteView(userId, remoteView);
-        } else {
-            sCall.stopRemoteView(userId);
+<td>Tencent Cloud's proprietary security signature. For the calculation method, please see <a href="https://intl.cloud.tencent.com/document/product/647/35166">UserSig</a>.</td>
+</tr>
+</tr><tr>
+<td>config</td>
+<td>SDK configuration, which is used to set the log output level and log callback. You can pass `null` for this parameter. For details, see the sample code below.</td>
+</tr><tr>
+</tr><tr>
+<td>listener</td>
+<td>IM listener, which is used to listen for some crucial callbacks, such as forced logout and `userSig` expiration. For details, see the sample code below.</td>
+</tr><tr>
+</tr><tr>
+<td>callback</td>
+<td>Callback for login, which indicates whether login is successful. For details, see the sample code below.</td>
+</tr><tr>
+</table>
+<dx-codeblock>
+::: java java
+     // Initialize the component
+     TUICallingManager manager = TUICallingManager.sharedInstance();
+  // Log in to the component
+  V2TIMSDKConfig config = new V2TIMSDKConfig();
+  config.setLogLevel(V2TIMSDKConfig.V2TIM_LOG_DEBUG);
+  config.setLogListener(new V2TIMLogListener() {
+        @Override
+        public void onLog(int logLevel, String logContent) {
+                
         }
-    }
+  });
+  TUILogin.init(this, ${Your `SDKAPPID`}, config, new V2TIMSDKListener() {
+
+            @Override
+            public void onKickedOffline() {  // Callback for forced logout
+                mIsKickedOffline = true;
+                checkUserStatus();
+            }
+    
+            @Override
+            public void onUserSigExpired() { // Callback for `userSig` expiration
+                mIsUserSigExpired = true;
+                checkUserStatus();
+            }
+  });
+  TUILogin.login("${Your `userId`}", "${Your `userSig`}", new V2TIMCallback() {
+            @Override
+            public void onError(int code, String msg) {
+                Log.d(TAG, "code: " + code + " msg:" + msg);
+            }
+
+            @Override
+            public void onSuccess() {
+                Log.d(TAG, "onSuccess");
+            }
+  });
+
+:::
+</dx-codeblock>
+
+[](id:model.step5)
+
+### Step 5. Make an audio/video call
+
+1. Caller: Call `call();` of `TUICallingManager` to initiate a call, passing in the user IDs (`userids`) and call type (`type`). For the call type, you can pass in `TUICalling.Type.AUDIO` (audio call) or `TUICalling.Type.VIDEO` (video call). If only one user ID is passed in for `userids`, the call is a one-to-one call; if two or more user IDs are passed in, the call is a group call.
+2. Callee: If a callee is logged in, the answering view will be displayed. If you want offline users to receive call invitations, please see [Enable offline call answering](#model.offline).
+
+
+<dx-codeblock>
+::: java java
+// 1. Initialize the component
+TUICallingManager manager = TUICallingManager.sharedInstance();
+// 2. Register the listener
+manager.setCallingListener(new TUICalling.TUICallingListener() {
+            @Override
+            public boolean shouldShowOnCallView() {
+                return true;
+            }
+
+            @Override
+            public void onCallStart(String[] userIDs, TUICalling.Type type, TUICalling.Role role, final View tuiCallingView) {
+                if (!shouldShowOnCallView() || null == tuiCallingView) {
+                    return;
+                }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
+                        mCallingView = tuiCallingView;
+                        addContentView(tuiCallingView, params);
+                    }
+                });
+            }
+    
+            @Override
+            public void onCallEnd(String[] userIDs, TUICalling.Type type, TUICalling.Role role, long totalTime) {
+                removeView();
+            }
+    
+            @Override
+            public void onCallEvent(TUICalling.Event event, TUICalling.Type type, TUICalling.Role role, String message) {
+                if (TUICalling.Event.CALL_FAILED == event) {
+                    removeView();
+                }
+            }
 });
+// 3. Make a call
+manager.call(userIDs, TUICalling.Type.VIDEO);
+:::
+</dx-codeblock>
 
-// 3. Log in to the component. Only after successful login can functions of other features of the component be called
-sCall.login(sdkappid, "aaa", usersig, new ActionCallback() {
-    public void onSuccess() {
-        // 4. The sample code here is for reference only, which enables the camera and calls the user "aaa" after successful login.
-        TXCloudVideoView localView = new TXCloudVideoView(mContext);
-        mParentView.add(remoteView);
-        sCall.openCamera(true, localView);
-        sCall.call("aaa", TRTCCalling.TYPE_VIDEO_CALL);
-    }
-});
-```
+[](id:model.offline)
 
-<span id="model.step6"> </span>
+### Step 6. Enable offline call answering
 
-### Step 6. Make a group video call
+>?If your project does not require the offline answering feature, for example, if it offers online customer service, your integration can end at [step 5](#model.step5). If your project is a social networking service, we recommend you enable offline answering.
 
-1. Caller: to initiate a group video call, the caller needs to call the `groupCall()` function in `TRTCCalling` and pass in the required user list (`userIdList`) and optional IM group ID (`groupId`).
-2. Callee: a callee can receive the call request through the `onInvited()` event notification.
-3. Callee: a callee can call the `accept()` method to answer the call or call the `reject()` method to reject the call after receiving the event notification.
-4. If a callee does not respond to the call for a certain period of time (30 seconds by default), this callee will receive the `onCallingTimeOut()` event notification, and the caller will receive the `onNoResp(String userId)` event notification. If multiple callees do not answer the call, the caller can call `hangup()`, and each callee will receive the `onCallingCancel()` event notification.
-5. A user can call the `hangup()` method to leave the current group call.
-6. If there is a user joining or leaving the call, other users will receive the `onUserEnter()` or `onUserLeave()` event notification.
+The IM SDK supports offline push. However, since the offline push service of Android phones varies from vendor to vendor, the configuration required to enable offline push for Android is more complicated than that for iOS.
 
->?The `groupID` parameter in the `groupCall()` API is the group ID in the IM SDK. If this parameter is set, the call request will be broadcast through the group message system, which is simple and reliable. If this parameter is left empty, the `TRTCCalling` component will send the message to users one by one.
+1. Apply for a certificate required by the vendor's push channel, configure it in the IM console, and add the certificate and ID as required. For detailed directions, please see [IM > Offline Push (Android)](https://intl.cloud.tencent.com/document/product/1047/39156).
+2. The offline push API has been integrated into the signaling API (`sendModel`) of `TRTCCallingImpl`. After completing the offline push configuration for your application, you will be able to send notifications to offline users.
 
-```
-// Omitted content...
-// Splice the list of users to be called
-List<String> callList = new ArrayList();
-callList.add("bbb");
-callList.add("ccc");
-callList.add("ddd");
-// If the call is not initiated in an IM group, an empty string can be passed in for `groupId`
-sCall.groupCall(callList, TRTCCalling.TYPE_VIDEO_CALL, "");
-// Enable local camera
-TXCloudVideoView localView = new TXCloudVideoView(mContext);
-mParentView.add(remoteView);
-sCall.openCamera(true, txCloudVideoView);
-```
-
-<span id="model.offline"> </span>
-
-### Step 7. Answer a call offline
-
->?If your business is online customer service or any other service that does not require the offline answering feature, you only need to complete [step 1](#model.step1) to [step 6](#model.step6) for integration. If your business is used for social networking, you are recommended to implement offline answering.
-
-The IM SDK supports offline push; however, different Android phone vendors have different offline push services, so the access complexity is higher than that on iOS. You need to complete the corresponding settings to meet its availability standard.
-
-1. Apply for the certificate required by the corresponding vendor's push channel, configure it in the IM Console, and add the certificate and ID according to the push requirements. For detailed directions, please see [IM > Offline Push (Android)](https://intl.cloud.tencent.com/document/product/1047/34336).
-2. Offline sending function is integrated in `sendModel` IM signaling function of `TRTCCallingImpl`. After the offline push feature is configured, messages can be pushed offline.
-
-<span id="api"> </span>
+[](id:api)
 
 ## Component APIs
 
-Below is the list of `TRTCCalling` component APIs:
+The table below lists the APIs of the `TUICalling` component.
 
-| API Fuction        | Description                                                  |
+| API        | Description                                                  |
 | --------------- | --------------------------------------------------------- |
-| addDelegate     | Adds TRTCCalling listener for users to obtain status notifications |
-| removeDelegate  | Removes the listener                                                |
-| destroy         | Terminates the instance                                                  |
-| login           | Logs in to IM. All other features can be used only after login                 |
-| logout          | Logs out of IM. Calls cannot be made after logout                         |
-| call            | Invites users to C2C call. The invited users will receive the `onInvited` callback         |
-| groupCall       | Invites users to IM group call. The invited users will receive the `onInvited` event notification |
-| accept          | Answers the call as a callee                                      |
-| reject          | Rejects the call as a callee                                      |
-| hangup          | Hangs up the call                                                  |
-| startRemoteView | Renders the camera data of remote user in the specified `TXCloudVideoView`    |
-| stopRemoteView  | Stops rendering the camera data for a remote user                          |
-| openCamera      | Enables camera and renders data in the specified `TXCloudVideoView`            |
-| closeCamera     | Disables the camera                                                |
-| switchCamera    | Switches between front and rear cameras                                            |
-| setMicMute      | Specifies whether to mute the mic                                              |
-| setHandsFree    | Specifies whether to enable the hands-free mode                                              |
+| call            | Sends call invitations by user ID.         |
+| receiveAPNSCalled          | Answers a call.                                      |
+| setCallingListener          | Sets the listener.                                     |
+| setCallingBell          | Sets the ringtone (preferably shorter than 30s).                                                 |
+| enableMuteMode | Enables/Disables the mute mode.    |
+| enableCustomViewRoute      | Enables/Disables custom views. After enabling custom views, you will receive a `CallingView` instance in the callback for calling/being called, and can decide how to display the view by yourself. The view must be displayed full screen or in proportion to the screen size; otherwise, an error may occur.           |
 

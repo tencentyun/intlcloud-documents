@@ -25,7 +25,7 @@ The first step is to get a singleton object of `TRTCCloud` and subscribe to the 
 ::: C++
 // TRTCMainViewController.h
 
-// Inherit the ITRTCCloudCallback callback API class
+// Inherit the `ITRTCCloudCallback` callback API class
 class TRTCMainViewController : public ITRTCCloudCallback
 {
 public:
@@ -50,10 +50,10 @@ private:
 
 TRTCMainViewController::TRTCMainViewController()
 {
-    // Create a TRTCCloud instance
+    // Create a `TRTCCloud` instance
     m_pTRTCSDK = getTRTCShareInstance();
     
-    // Subscribe to the SDK’s callback events
+    // Subscribe to the SDK’s events
     m_pTRTCSDK->addCallback(this);
 }
 
@@ -64,14 +64,14 @@ TRTCMainViewController::~TRTCMainViewController()
         m_pTRTCSDK->removeCallback(this);
     }
     
-    // Release the TRTCCloud instance
+    // Release the `TRTCCloud` instance
       if(m_pTRTCSDK != NULL) {
        destroyTRTCShareInstance();
         m_pTRTCSDK = null;
     }
 }
 
-// Error notifications indicate that the SDK has stopped working and therefore must be listen for
+// Error notifications indicate that the SDK has stopped working and therefore must be listened for.
 virtual void TRTCMainViewController::onError(TXLiteAVError errCode, const char* errMsg, void* arg)
 {
     if (errCode == ERR_ROOM_ENTER_FAIL) {
@@ -83,7 +83,7 @@ virtual void TRTCMainViewController::onError(TXLiteAVError errCode, const char* 
 ::: C#
 // TRTCMainForm.cs
 
-// Inherit the ITRTCCloudCallback callback API class
+// Inherit the `ITRTCCloudCallback` callback API class
 public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 {
 	...
@@ -94,9 +94,9 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 	{
 		InitializeComponent();
 		this.Disposed += new EventHandler(OnDisposed);
-		// Create a TRTCCloud instance
+		// Create a `TRTCCloud` instance
 		mTRTCCloud = ITRTCCloud.getTRTCShareInstance();
-		// Subscribe to the SDK’s callback events
+		// Subscribe to the SDK’s events
 		mTRTCCloud.addCallback(this);
 		...
 	}
@@ -107,14 +107,14 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 		{
 			// Unsubscribe from the SDK’s events
 			mTRTCCloud.removeCallback(this);
-			// Release the TRTCCloud instance
+			// Release the `TRTCCloud` instance
 			ITRTCCloud.destroyTRTCShareInstance();
 			mTRTCCloud = null;
 		}
 		...
 	}
 	...
-	// Error notifications indicate that the SDK has stopped working and therefore must be listen for
+	// Error notifications indicate that the SDK has stopped working and therefore must be listened for.
 	public void onError(TXLiteAVError errCode, string errMsg, IntPtr arg)
 	{
 	     if (errCode == TXLiteAVError.ERR_ROOM_ENTER_FAIL) {
@@ -134,18 +134,17 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 - **SDKAppID**
 Log in to the [TRTC console](https://console.cloud.tencent.com/rav). If you don't have an application yet, create one, and you will see its `SDKAppID`.
 
-
 - **userId**
-  A random string, which you can keep in line with the naming of your account. Please note that **there cannot be users with identical `userId` in a room**.
+  A custom string, which you can keep in line with the naming of your account. Please note that **there cannot be users with identical `userId` in a room**.
 
 - **userSig**
   Calculated based on `SDKAppID` and `userID`. For details, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 - **roomId**
-  A random number. Please note that **rooms under the same application cannot have identical `roomId`**.
+  A custom number. Note that **you cannot assign the same `roomId` to two rooms under the same application**. For string-type room ID, use `strRoomId` in `TRTCParams`.
 
 ### 3. Enable preview of the local camera
-Camera capturing is disabled by default. You can call `startLocalPreview` to turn on the local camera and enable preview, and `stopLocalPreview` to disable preview.
+Camera capturing is disabled by default. You can call `startLocalPreview` to turn the local camera on and enable preview, and `stopLocalPreview` to disable camera capturing and preview.
 
 Before enabling preview of the local camera, you can call `setLocalViewFillMode` to set the video display mode to `Fill` or `Fit`. Video may be resized proportionally in both modes, but they differ in that:
 - In the `Fill` mode, the image fills the entire screen. If the dimensions of the image do not match those of the screen after scaling, the parts that do not fit are cropped.
@@ -207,7 +206,7 @@ Specify `appScene`, which indicates the application scenario. `TRTCAppSceneLIVE`
 
 void TRTCMainViewController::startBroadCasting()
 {
-    // For the definition of `TRTCParams`, please see the `TRTCCloudDef.h` header file
+    // For the definition of `TRTCParams`, please see the header file `TRTCCloudDef.h`.
     TRTCParams params;
     params.sdkAppId = sdkappid;
     params.userId   = userid;
@@ -225,7 +224,7 @@ void TRTCMainViewController::onError(TXLiteAVError errCode, const char* errMsg, 
     if(errCode == ERR_ROOM_ENTER_FAIL)
     {
         LOGE(L"onError errorCode[%d], errorInfo[%s]", errCode, UTF82Wide(errMsg).c_str());
-        // Check whether `userSig` is valid, network normal, etc.
+        // Check whether `userSig` is valid, network is normal, etc.
     }
 }
 
@@ -263,7 +262,7 @@ public void onError(TXLiteAVError errCode, string errMsg, IntPtr arg)
     if(errCode == TXLiteAVError.ERR_ROOM_ENTER_FAIL)
     {
         Log.E(String.Format("errCode : {0}, errMsg : {1}, arg = {2}", errCode, errMsg, arg));
-        // Check whether `userSig` is valid, network normal, etc.
+        // Check whether `userSig` is valid, network is normal, etc.
     }
 }
 
@@ -289,7 +288,7 @@ Set `appScene` to `TRTCAppSceneLIVE` (online live streaming), and `role` to `TRT
 ::: C++
 void TRTCMainViewController::startPlaying()
 {
-    // For the definition of `TRTCParams`, please see the `TRTCCloudDef.h` header file
+    // For the definition of `TRTCParams`, please see the header file `TRTCCloudDef.h`.
     TRTCParams params;
     params.sdkAppId = sdkappid;
     params.userId   = userid;
@@ -389,7 +388,7 @@ void TRTCMainViewController::exitRoom()
 ....
 void TRTCMainViewController::onExitRoom(int reason)
 {
-	// Room exit successful. `reason` is a reserved parameter and is not used for the time being
+	// Exited room successfully. `reason` is a reserved parameter and is not used for the time being.
 
 }
 :::
@@ -406,7 +405,7 @@ public void OnExit()
 ...
 public void onExitRoom(int reason)
 {
-    // Exited room
+    // Exited room successfully
     ...
 }
 :::

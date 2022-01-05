@@ -7,7 +7,7 @@ TRTC services use two types of server nodes: access servers and proxy servers.
 - **Access server**
 This type of nodes use high-quality lines and high-performance servers and are better suited to drive low-latency end-to-end calls, but the unit cost is relatively high.
 - **Proxy server**
-This type of servers use mediocre lines and average-performance servers and better suited to power high-concurrency stream pulling and playback. The unit cost is relatively low.
+This type of servers use mediocre lines and average-performance servers and are better suited to power high-concurrency stream pulling and playback. The unit cost is relatively low.
 
 In the live streaming modes, TRTC has introduced the concept of "role". Users are either in the role of "anchor" or "audience". Anchors are assigned to access servers, and audience to proxy servers. Each room allows up to 100,000 users in the role of audience.
 For audience to speak, they must switch the role (`switchRole`) to “anchor”. The switching process involves users being migrated from proxy servers to access servers. TRTC’s low-latency streaming and smooth mic on/off technologies help keep this process short.
@@ -23,11 +23,11 @@ You can visit [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRT
 
 ## Directions
 [](id:step1)
-### Step 1. Integrate the SDK
+### Step 1. Integrate the SDKs
 You can integrate the **TRTC SDK** into your project in the following ways:
 #### Method 1: integrating through CocoaPods
 1. Install **CocoaPods**. For detailed directions, please see [Getting Started](https://guides.cocoapods.org/using/getting-started.html).
-2. Open the `Podfile` file in the root directory of your project and add the following code:
+2. Open the `Podfile` file in the root directory of your project and add the code below.
 >? If you cannot find a `Podfile` file in the directory, run the `pod init` command to create one and add the code below.
 >
 ```
@@ -87,10 +87,10 @@ When calling the [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group
 | sdkAppId | Number | Application ID, which you can view in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC console</a>. |1400000123 |
 | userId | String | Only letters (a-z and A-Z), digits (0-9), underscores, and hyphens are allowed. | test_user_001 |
 | userSig | String | `userSig` is calculated based on `userId`. For the calculation method, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
-| roomId | Number | String-type room IDs tend to slow down the room entry process and are therefore not supported by the SDK by default. If you need to use string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). | 29834 |
+| roomId | Number | Numeric room ID. For string-type room ID, use `strRoomId` in `TRTCParams`. | 29834 |
 
 >! 
->- In TRTC, users with the same `userId` cannot be in the same room at the same time as it will cause a conflict.
+>-In TRTC, users with the same `userId` cannot be in the same room at the same time as it will cause a conflict.
 >- The value of `appScene` must be the same on each client. Inconsistent `appScene` may cause unexpected problems.
 
 
@@ -130,6 +130,8 @@ encParams.videoFps = 15;
 4. Call [setWhitenessLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) to set the skin brightening strength (`5` is recommended).
 5. Given the yellow tint of the iPhone camera, we recommended that you call [setFilter()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0) to apply the skin brightening filter to your video. You can download the file for the filter [here](https://liteav.sdk.qcloud.com/doc/res/trtc/filter/filterPNG.zip).
 
+
+
 [](id:step7)
 ### Step 7. Create a room and push streams
 1. Set the `role` field in [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) to **`TRTCRoleType.anchor`** to take the role of “anchor”.
@@ -165,7 +167,7 @@ encParams.videoFps = 15;
 1. Set the `role` field in [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) to **`TRTCRoleType.audience`** to take the role of “audience”.
 2. Call [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) to enter the room whose ID is the value of the `roomId` field in `TRTCParams`, specifying **`appScene`**.
  - `TRTCAppScene.LIVE`: the interactive video streaming mode, which is used in the example of this document
- - TRTCAppScene.voiceChatRoom: interactive live audio streaming mode.
+ - `TRTCAppScene.voiceChatRoom`: the interactive audio streaming mode
 3. Watch the anchor’s video:
  - If you know the anchor’s `userId`, call [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) with the anchor’s `userId` passed in to play the anchor's video.
  - If you do not know the anchor’s `userId`, find the anchor’s `userId` in the [onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) callback, which you will receive after room entry, and call [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) with the anchor’s `userId` passed in to play the anchor’s video.

@@ -1,7 +1,7 @@
 ## Use Cases
 
 TRTC supports four room entry modes. Video call (`VideoCall`) and audio call (`VoiceCall`) are the [call modes](https://intl.cloud.tencent.com/document/product/647/36069), and interactive video streaming (`Live`) and interactive audio streaming (`VoiceChatRoom`) are the live streaming modes.
-The live streaming modes allow a maximum of 100,000 concurrent users each room, with smooth mic on/off. Co-anchoring latency is kept below 300 ms and watch latency below 1,000 ms. The live streaming modes are suitable for use cases such as low-latency interactive live streaming, interactive classrooms for up to 100,000 participants, video dating, online education, remote training, and mega-scale conferencing.
+The live streaming modes allow a maximum of 100,000 concurrent users in each room with smooth mic on/off. Co-anchoring latency is kept below 300 ms and watch latency below 1,000 ms. The live streaming modes are suitable for use cases such as low-latency interactive live streaming, interactive classrooms for up to 100,000 participants, video dating, online education, remote training, and mega-scale conferencing.
 
 ## How It Works
 
@@ -65,12 +65,12 @@ trtcCloud.on('onError',onError);
 
 When calling the [enterRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom) API, you need to pass in a key parameter [TRTCParams](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html), which includes the following required fields:
 
-| Parameter     | Type   | Description                                                         | Example                   |
+| Parameter     | Field Type   | Description                                                         | Example                   |
 | :------- | :----- | :----------------------------------------------------------- | :--------------------- |
 | sdkAppId | Number | Application ID, which can be found in **Application Management** > **Application Info** in the [console](https://console.cloud.tencent.com/trtc/app) | 1400000123             |
 | userId | String | Only letters (a-z and A-Z), digits (0-9), underscores, and hyphens are allowed. | test_user_001 |
 | userSig | String | `userSig` is calculated based on `userId`. For the calculation method, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
-| roomId | Number | String-type room IDs tend to slow down the room entry process and are therefore not supported by the SDK by default. If you need to use string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). | 29834 |
+| roomId | Number | Numeric room ID. For string-type room ID, use `strRoomId` in `TRTCParams`. | 29834 |
 
 <dx-codeblock>
 ::: javascript javascript
@@ -93,7 +93,7 @@ param.role = TRTCRoleType.TRTCRoleAnchor; // Set the role to "anchor"
 >- The value of `appScene` must be the same on each client. Inconsistent `appScene` may cause unexpected problems.
 
 [](id:step5)
-### Step 5. Enables camera preview and mic capturing
+### Step 5. Enable camera preview and mic capturing
 1.  Call [startLocalPreview()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startLocalPreview) to enable preview of the local camera. The SDK will ask for camera permission.
 2. Call `setLocalViewFillMode()` to set the display mode of the local video image.
     -   `TRTCVideoFillMode.TRTCVideoFillMode_Fill`: aspect fill. The image may be scaled up and cropped, but there are no black bars.
@@ -130,7 +130,7 @@ trtcCloud.setVideoEncoderParam(encParam);
         -   `TRTCBeautyStyle.TRTCBeautyStyleNature`: natural, which retains more facial details and is more natural
     -   `beauty`: strength of the beauty filter. Value range: 0-9. `0` indicates that the filter is disabled. The larger the value, the more obvious the effect.
     -   `white`: strength of the skin brightening filter. Value range: 0-9. `0` indicates that the filter is disabled. The larger the value, the more obvious the effect.
-    -   ruddiness: strength of the rosy skin filter. Value range: 0-9. `0` indicates that the filter is disabled. The larger the value, the more obvious the effect. This parameter is unavailable on Windows currently.
+    -   `ruddiness`: strength of the rosy skin filter. Value range: 0-9. `0` indicates that the filter is disabled. The larger the value, the more obvious the effect. This parameter is unavailable on Windows currently.
 
 ```javascript
 // Enable beauty filters 
@@ -266,7 +266,7 @@ Anchors from two rooms can compete with each other without exiting their current
 
 <dx-codeblock>
 ::: javascript javascript
-// Sample code: cross-room anchor competition
+// Sample code: cross-room competition
 let onConnectOtherRoom = function(userId, errCode, errMsg) {
   if(errCode === 0) {
     console.log(`Connected to the room of anchor ${userId}`);

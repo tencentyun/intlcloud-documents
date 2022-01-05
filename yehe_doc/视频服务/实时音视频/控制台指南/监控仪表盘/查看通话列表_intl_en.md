@@ -3,7 +3,6 @@ TRTC offers a monitoring dashboard for developers to monitor call quality. You c
 ## Viewing Call List
 
 Log in to the TRTC console, and click **[Monitoring Dashboard](https://console.cloud.tencent.com/trtc/monitor)** to view the call details of all rooms under the logged-in account. By default, the call list displays the calls made under the last created application during the day of query. The most recent calls appear at the top of the list.
-![](https://main.qcloudimg.com/raw/d1a2f570ccea4a0fb1541b221150c439.png)
 
 The information displayed in the call list includes:
 
@@ -18,7 +17,6 @@ The information displayed in the call list includes:
 ## Searching for Calls
 
 In the monitoring dashboard, you can filter the call list using a number of search methods.
-![](https://main.qcloudimg.com/raw/d8dd0b8353d88a778af70adb5e66ed85.png)
 
 - To view the information of call rooms of a particular application, click **Select application**, select the application from the drop-down list, and click **Search**.
 - To view the information of calls during a specific time period, select **Today**, **Yesterday**, **Last 6 hours**, or **Last 14 days**, or enter a time range, and click **Search**.
@@ -26,4 +24,4 @@ In the monitoring dashboard, you can filter the call list using a number of sear
 
 ## More Operations
 
-If you want to view the call details of a particular room, see [Call Details](https://intl.cloud.tencent.com/zh/document/product/647/39070).
+- If you want to view the call details of a particular room, see [Call Details](https://intl.cloud.tencent.com/document/product/647/39070).
