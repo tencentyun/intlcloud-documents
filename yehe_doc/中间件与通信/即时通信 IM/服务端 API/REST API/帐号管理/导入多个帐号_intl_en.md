@@ -88,4 +88,4 @@ Use the [RESTful API online commissioning tool](https://29294-22989-29805-29810.
 - Deleting an Account ([v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955))
 - Querying an Account ([v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956))
 - Invalidating the Login Status of an Account ([v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957))
-- Querying the Login Status of an Account ([query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477))
+- Querying the Login Status of an Account ([v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477))
