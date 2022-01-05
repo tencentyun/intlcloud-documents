@@ -42,11 +42,11 @@ Create a configuration file named `kafka.json`.
 
 | Parameter              | Description                                                         |
 | :--------------- | :----------------------------------------------------------- |
-| topic             | Topic name, which can be copied in **Topic Management** on the instance details page in the console. <br/>![img](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| topic             | Topic name, which can be copied in **Topic Management** on the instance details page in the console. <br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | sasl.username    | Username, which is set when the user is created in **User Management** on the instance details page in the console.                     |
 | sasl.password    | Password, which is set when the user is created in **User Management** on the instance details page in the console.             |
-| sasl.instanceId  | Instance ID, which can be obtained in **Basic Info** on the instance details page in the console.<br/>![](https://main.qcloudimg.com/raw/9c417da4953669372fa4c13973096d3b.png) |
-| bootstrapServers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section in **Basic Info** on the instance details page in the console. <br/>![img](https://main.qcloudimg.com/raw/c5cf200a66f6dcf627d2ca6f1c747ecf.png) |
+| sasl.instanceId  | Instance ID, which can be obtained in **Basic Info** on the instance details page in the console.<br/>![](https://main.qcloudimg.com/raw/8bbcbd1ff38405a32caf953dd2809512.png) |
+| bootstrapServers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section in **Basic Info** on the instance details page in the console. <br/>![img](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png) |
 | consumerGroupId  | You can customize it. After the demo runs successfully, you can see the consumer on the **Consumer Group** page. |
 
 ### Step 3. Send messages
@@ -147,7 +147,7 @@ Delivered message to test[0]@629
 ```
 
 4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding topic, and click **More** > **Message Query** to view the messages just sent.
-   ![](https://main.qcloudimg.com/raw/ec5fbf218cf50ff3d760be15f6331867.png)
+   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 ### Step 4. Consume messages
 
@@ -228,4 +228,4 @@ Message on test[0]@629: Golang Client Message
 ```
 
 4. On the **Consumer Group** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name, and click **View Details** to view the consumption details.
-   ![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
