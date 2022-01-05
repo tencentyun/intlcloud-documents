@@ -70,7 +70,7 @@ try {
 | CORSRules      | Array  | CORS configuration list                                                 | Yes |
 | CORSRule     | Array  | CORS configuration                                                | Yes |
 | AllowedMethods | String | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE       | Yes  |
-| AllowedOrigins | String | | Allowed source origins. The wildcard `*` is supported. Format: `Protocol://domain name[:port]`, e.g. `http://www.qq.com` | Yes |
+| AllowedOrigins | String |  Allowed source origins. The wildcard `*` is supported. Format: `Protocol://domain name[:port]`, e.g. `http://www.qq.com` | Yes |
 | AllowedHeaders | String | Custom HTTP request headers that can be included in subsequent `OPTIONS` requests sent. The wildcard `*` is supported. | No |
 | ExposeHeaders  | String | Custom header information that can be received by the browser from the server | No |
 | MaxAgeSeconds  | Int    | Validity period of the `OPTIONS` request result                      | No |
@@ -164,7 +164,7 @@ Guzzle\Service\Resource\Model Object
 | CORSRules      | Array  | CORS configuration list                                                 |None |
 | CORSRule     | Array  | CORS configuration                                                | CORSRules |
 | AllowedMethods | String | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE       | CORSRule |
-| AllowedOrigins | String | | Allowed source origins. The wildcard `*` is supported. Format: `Protocol://domain name[:port]`, e.g. `http://www.qq.com` | CORSRule |
+| AllowedOrigins | String  | Allowed source origins. The wildcard `*` is supported. Format: `Protocol://domain name[:port]`, e.g. `http://www.qq.com` | CORSRule |
 | AllowedHeaders | String | Custom HTTP request headers that can be included in subsequent `OPTIONS` requests sent. The wildcard `*` is supported. | CORSRule |
 | ExposeHeaders  | String | Custom header information that can be received by the browser from the server | CORSRule |
 | MaxAgeSeconds  | Int    | Validity period of the `OPTIONS` request result                      | CORSRule  |
