@@ -2,14 +2,12 @@
 
 If an SDK API call to request the COS service fails, the system will return the error information in the callback.
 
-
 ## Sample error
 
-[//]: # (.cssg-snippet-head-bucket)
 ```js
 cos.headBucket({
     Bucket: 'examplebucket-1250000000',
-    Region: 'COS_REGION',
+    Region: 'ap-beijing',
 }, function(err, data) {
     if (err) {
         console.log(err.error);
@@ -26,48 +24,16 @@ cos.headBucket({
 
 ## Server Exceptions
 
-<table>
-   <tr>
-      <th>Parameter</th>
-      <th>Description</th>
-      <th>Type</th>
-   </tr>
-   <tr>
-      <td>err</td>
-      <td>Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/7730">Error Codes</a>.</td>
-      <td>Object</td>
-   </tr>
-   <tr>
-      <td nowrap="nowrap">- statusCode</td>
-      <td>HTTP status code, such as `200`, `403`, and `404`</td>
-      <td>Number</td>
-   </tr>
-   <tr>
-      <td>- headers</td>
-      <td>Headers</td>
-      <td>Object</td>
-   </tr>
-   <tr>
-      <td>- error</td>
-      <td>Error information</td>
-      <td>Object/String</td>
-   </tr>
-   <tr>
-      <td>- - Code</td>
-      <td>Error code returned by the body when the request fails. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/7730">Error Codes</a>.</td>
-      <td>String</td>
-   </tr>
-   <tr>
-      <td>- - Message</td>
-      <td>Error message returned by the body when the request fails. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/7730">Error Codes</a>.</td>
-      <td>String</td>
-   </tr>
-   <tr>
-      <td nowrap="nowrap">- - RequestId</td>
-      <td>Unique ID of the request in the server request log that can be submitted when you <a href="https://cloud.tencent.com/document/product/436/37708">contact us</a> for troubleshooting</td>
-      <td>String</td>
-   </tr>
-</table>
+| Parameter | Description | Type |
+| ------------- | ------------------------------------------------------------ | ------------- |
+| err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| - headers | Headers | Object |
+| - error | Error information | Object/String |
+| - - Code | Error code returned by the body when the request fails. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | String |
+| - - Message | Error message returned by the body when the request fails. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | String |
+| - - RequestId | Unique ID of the request in the server request log that can be submitted in a ticket for troubleshooting | String |
+
 
 ## Using the Diagnosis Tool
 
@@ -93,4 +59,9 @@ COS provides a self-help [diagnosis tool](https://console.cloud.tencent.com/cos5
 </div>
 3. Enter `RequestId` and click **Diagnose**.
 4. Wait and view the diagnostic result.
+
+
+## FAQs
+
+If you have any questions about the SDK for WeChat Mini Program, see the SDK for WeChat Mini Program section in [FAQs](https://intl.cloud.tencent.com/document/product/436/38958).
 

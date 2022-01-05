@@ -1,18 +1,18 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to cross-origin access.
+This document provides an overview of APIs and SDK sample codes related to cross-origin resource sharing (CORS).
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting cross-origin access configuration | Sets the cross-origin access permission of a bucket |
-| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying cross-origin access configuration | Queries the cross-origin access configuration information of a bucket |
-| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting cross-origin access configuration | Deletes the cross-origin access configuration information of a bucket |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting CORS configuration | Sets the CORS permissions of bucket |
+| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying CORS configuration | Queries the CORS configuration of a bucket |
+| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting CORS configuration | Deletes the CORS configuration of a bucket |
 
-## Setting Cross-Origin Access Configuration
+## Setting CORS Configuration
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket cors) is used to set the cross-origin access configuration information of a specified bucket.
+This API is used to set the CORS configuration of a specified bucket.
 
 #### Method prototype
 
@@ -25,9 +25,24 @@ public Guzzle\Service\Resource\Model putBucketCors(array $args = array());
 [//]: # (.cssg-snippet-put-bucket-cors)
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->putBucketCors(array(
-        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'CORSRules' => array(
             array(
                 'AllowedHeaders' => array('*',),
@@ -51,21 +66,21 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | -------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket for which to set cross-origin configuration in the format of `BucketName-APPID` | Yes |
-| CORSRules | Array | Cross-origin access information list | Yes |
-| CORSRule | Array | Cross-origin access information | Yes |
-| AllowedMethods | String | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE | Yes |
-| AllowedOrigins | String | Allowed origin in the format of `protocol://domain name[:port]`, such as `http://www.qq.com`. Wildcard * is supported | Yes |
-| AllowedHeaders | String | Tells the server what custom HTTP request headers can be used for subsequent requests when the OPTIONS request is sent. Wildcard `*` is supported | No |
-| ExposeHeaders  | String | Sets custom header information from the server that the browser can receive | No |
-| MaxAgeSeconds | Int | Sets the validity period of the result of the OPTIONS request | No |
-| ID             | String | Configures the rule ID                                                | Yes  |
+| Bucket | Bucket for which CORS configuration is set, in the format of `BucketName-APPID`  | String      | Yes   |
+| CORSRules      | Array  | CORS configuration list                                                 | Yes |
+| CORSRule     | Array  | CORS configuration                                                | Yes |
+| AllowedMethods | String | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE       | Yes  |
+| AllowedOrigins | String | | Allowed source origins. The wildcard `*` is supported. Format: `Protocol://domain name[:port]`, e.g. `http://www.qq.com` | Yes |
+| AllowedHeaders | String | Custom HTTP request headers that can be included in subsequent `OPTIONS` requests sent. The wildcard `*` is supported. | No |
+| ExposeHeaders  | String | Custom header information that can be received by the browser from the server | No |
+| MaxAgeSeconds  | Int    | Validity period of the `OPTIONS` request result                      | No |
+| ID             | String |  Rule ID | Yes |
 
-## Querying Cross-Origin Access Configuration
+## Querying CORS Configuration
 
-#### Feature description
+#### Description
 
-This API (GET Bucket cors) is used to query the cross-origin access configuration information of a specified bucket.
+This API is used to query the CORS configuration of a bucket.
 
 #### Method prototype
 
@@ -78,9 +93,24 @@ public Guzzle\Service\Resource\Model getBucketCors(array $args = array());
 [//]: # (.cssg-snippet-get-bucket-cors)
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
     $result = $cosClient->getBucketCors(array(
-        'Bucket' => 'examplebucket-1250000000' // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000' // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     )); 
     // Request succeeded
     print_r($result);
@@ -92,11 +122,11 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Type | Description | Required |
+| Parameter | Type | Description | Required |
 | -------- | ------ | -------------------------------------------- | -------- |
-| Bucket | String | Bucket for which to query cross-origin configuration in the format of `BucketName-APPID` | Yes |
+| Bucket | String | Bucket for which CORS configuration is queried, in the format of `BucketName-APPID` | Yes |
 
-#### Sample return result
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -127,24 +157,24 @@ Guzzle\Service\Resource\Model Object
 )
 ```
 
-#### Returned result description
+#### Response description
 
-| Parameter name | Type | Description | Parent Node |
+| Parameter Name | Type | Description | Parent Node | 
 | -------------- | ------ | ------------------------------------------------------------ | --------- |
-| CORSRules | Array | Cross-origin access information list | None |
-| CORSRule | Array | Cross-origin access information | CORSRules |
-| AllowedMethods | String | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE | CORSRule |
-| AllowedOrigins | String | Allowed origin in the format of `protocol://domain name[:port]`, such as `http://www.qq.com`. Wildcard * is supported | CORSRule  |
-| AllowedHeaders | String | Tells the server what custom HTTP request headers can be used for subsequent requests when the OPTIONS request is sent. Wildcard `*` is supported | CORSRule |
-| ExposeHeaders  | String | Sets custom header information from the server that the browser can receive | CORSRule |
-| MaxAgeSeconds | Int | Sets the validity period of the result of the OPTIONS request | CORSRule |
-| ID             | String | Configures the rule ID                                                | CORSRule |
+| CORSRules      | Array  | CORS configuration list                                                 |None |
+| CORSRule     | Array  | CORS configuration                                                | CORSRules |
+| AllowedMethods | String | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE       | CORSRule |
+| AllowedOrigins | String | | Allowed source origins. The wildcard `*` is supported. Format: `Protocol://domain name[:port]`, e.g. `http://www.qq.com` | CORSRule |
+| AllowedHeaders | String | Custom HTTP request headers that can be included in subsequent `OPTIONS` requests sent. The wildcard `*` is supported. | CORSRule |
+| ExposeHeaders  | String | Custom header information that can be received by the browser from the server | CORSRule |
+| MaxAgeSeconds  | Int    | Validity period of the `OPTIONS` request result                      | CORSRule  |
+| ID             | String |  Rule ID | CORSRule |
 
-## Deleting Cross-Origin Access Configuration
+## Deleting CORS Configuration
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket cors) is used to delete the cross-origin access configuration of a specified bucket.
+This API is used to delete the CORS configuration of a bucket.
 
 #### Method prototype
 
@@ -157,9 +187,24 @@ public Guzzle\Service\Resource\Model deleteBucketCors(array $args = array());
 [//]: # (.cssg-snippet-delete-bucket-cors)
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+            
 try {
     $result = $cosClient->deleteBucketCors(array(
-        'Bucket' => 'examplebucket-1250000000' // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000' // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     )); 
     // Request succeeded
     print_r($result);
@@ -171,6 +216,6 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Type | Description | Required |
+| Parameter | Type | Description | Required |
 | -------- | ------ | ---------------------------------------------- | -------- |
-| Bucket | String | Bucket for which to delete cross-origin configuration in the format of `BucketName-APPID` | Yes |
+| Bucket | String | Bucket for which CORS configuration is deleted, in the format of `BucketName-APPID` | Yes |
