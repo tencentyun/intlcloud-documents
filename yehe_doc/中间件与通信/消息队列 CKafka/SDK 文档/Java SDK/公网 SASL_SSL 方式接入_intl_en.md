@@ -18,11 +18,11 @@ An SSL certificate is mainly used to protect server-client communication. Once d
 1. Create an access point.
 	1. On the **[Instance List](https://console.cloud.tencent.com/ckafka/index)** page in the CKafka console, click the target instance ID to enter the instance details page.
 	2. In **Basic Info** > **Access Mode**, click **Add a routing policy**. In the pop-up window, select `Route Type: Public domain name access`, `Access Mode: SASL_SSL`.
-![](https://qcloudimg.tencent-cloud.cn/raw/46e6b0bb08a7b73084cb51fabe9d03f2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fb9e6cb8740ecff2f2c13c88a128c270.png)
 
 2. Create a role.
 On the **User Management** tab page, create a role and set the password.
-![](https://qcloudimg.tencent-cloud.cn/raw/fb78b8290232e6342397a30a4c554ef9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c9e06ace7d959ae91331a241c2126cc5.png)
 
 3. Create a topic.
 Create a topic on the **Topic Management** tab page as instructed in [Creating a topic](https://intl.cloud.tencent.com/document/product/597/32554).
@@ -80,8 +80,8 @@ ssl.endpoint.identification.algorithm=
 
 | Parameter | Description |
 | ------------------------------------- | ------------------------------------------------------------ |
-| `bootstrap.servers`                      | Accessed network, which can be copied from the **Network** column in the **Access Mode** section in **Basic Info** on the instance details page in the console.<br/>![](https://qcloudimg.tencent-cloud.cn/raw/6117de422e8b46cf75b7b249bb88c817.png) |
-| `topic`                                  | Topic name, which can be copied from the **Topic Management** page in the console.<br/>![](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| `bootstrap.servers`                      | Accessed network, which can be copied from the **Network** column in the **Access Mode** section in **Basic Info** on the instance details page in the console.<br/>![](https://qcloudimg.tencent-cloud.cn/raw/d1ce0a815917ed6375dde270d916bd9c.png) |
+| `topic`                                  | Topic name, which can be copied from the **Topic Management** page in the console.<br/>![](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | `group.id`                               | You can customize it. After the demo runs successfully, you can see the consumer on the **Consumer Group** page. |
 | `java.security.auth.login.config.plain` | Enter the path of the JAAS configuration file `ckafka_client_jaas.conf`.              |
 | `client.truststore.jks`                  | Certificate path that is required when the access mode is `SASL_SSL`.          |
@@ -199,7 +199,7 @@ Produce ok:ckafka-topic-demo-0@198
 Produce ok:ckafka-topic-demo-0@199
 ```
 4. On the **Topic Management** tab page on the instance details page in the CKafka console, select the target topic, and click **More** > **Message Query** to view the message just sent.
-![](https://main.qcloudimg.com/raw/ec5fbf218cf50ff3d760be15f6331867.png)
+![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 
@@ -286,4 +286,4 @@ public class KafkaSaslConsumerDemo {
    Consume partition:0 offset:299   
 ```
 4. On the **Consumer Group** page in the Ckafka console, select the corresponding consumer group name, enter the topic name, and click **Query Details** to view the consumption details.
-![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
