@@ -13,11 +13,11 @@ This document describes how to install and configure Grafana on CentOS.
 ### Installing Grafana
 
 For more information on how to install Grafana, please see [Install Grafana](https://grafana.com/docs/grafana/latest/installation/).
-The following uses installing Grafana 7.3.6 on CentOS as an example:
+The following uses installing Grafana grafana 8.3.3 on CentOS as an example ([click](https://grafana.com/grafana/download?pg=get&plcmt=selfmanaged-box1-cta1&edition=oss) to download the latest version):
 ```
 sudo yum install initscripts urw-fonts wget
-wget https://dl.grafana.com/oss/release/grafana-7.3.6-1.x86_64.rpm
-sudo yum install grafana-7.3.6-1.x86_64.rpm
+wget https://dl.grafana.com/oss/release/grafana-8.3.3-1.x86_64.rpm 
+sudo yum install grafana-8.3.3-1.x86_64.rpm
 sudo systemctl daemon-reload
 sudo systemctl start grafana-server
 sudo systemctl status grafana-server 
