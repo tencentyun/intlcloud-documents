@@ -1,4 +1,4 @@
-## Webpage Tracking Behavior Analysis
+## Webpage Behavior Analysis
 Kafka clusters process website activities (PV, search, etc.) in real time and publish them to topics by type. These information flows can be used for real-time monitoring or offline statistical analysis.
 
 A large amount of activity information is generated in each user's PV, therefore, website activity tracking requires high throughput. Kafka clusters perfectly meet the requirements of high throughput and offline processing.
