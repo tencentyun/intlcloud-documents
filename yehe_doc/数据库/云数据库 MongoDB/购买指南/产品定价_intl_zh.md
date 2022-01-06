@@ -51,19 +51,19 @@
 </tr>
 <td rowspan=4>曼谷、孟买</td>
 <td>小于128GB</td>
-<td>6.428571429</td>
+<td>6.57142857</td>
 </tr>
 <tr>
 <td>等于128GB</td>
-<td>5.714285714</td>
+<td>5.71428571</td>
 </tr>
 <tr>
 <td>等于240GB</td>
-<td>5</td>
+<td>4.85714286</td>
 </tr>
 <tr>
 <td>等于512GB</td>
-<td>4.285714286</td>
+<td>4.28571429</td>
 </tr>
 <tr>
 <td rowspan=4>首尔</td>
