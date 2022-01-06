@@ -4,17 +4,17 @@
 私有网络和子网的常用操作请参见 [管理私有网络和子网](https://intl.cloud.tencent.com/document/product/215/31805)。
 
 ## 配置 Redis 网络
-1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击【新建实例】。
-2. 在购买页的“网络类型”中，可选择基础网络和私有网络，推荐您选择【私有网络】。
+1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击**新建实例**。
+2. 在购买页的“网络类型”中，可选择基础网络和私有网络，推荐您选择**私有网络**。
 ![](https://main.qcloudimg.com/raw/8be0e67db61e588d2b8ec4bc43ef2c1f.png)
 
 ## 更换 Redis 网络
 >!为保证服务可用性和业务不中断，请根据业务需要及时更新 IP 地址，谨慎释放旧 IP 地址。
 >
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例详情页。
-2. 在“网络信息”模块中，可看到当前 Redis 实例所属网络和内网地址等，单击【更换网络】，可从基础网络转换为 VPC 或从当前 VPC 更换到另一个 VPC。
+2. 在“网络信息”模块中，可看到当前 Redis 实例所属网络和内网地址等，单击**更换网络**，可从基础网络转换为 VPC 或从当前 VPC 更换到另一个 VPC。
 ![](https://main.qcloudimg.com/raw/882d495354b725a4fa0b4d9b6b513d29.png)
-3. 在弹出的对话框，配置新网络信息，单击【确定】。
+3. 在弹出的对话框，配置新网络信息，单击**确定**。
   - 新IP地址：可选择自动分配或指定地址。
   - 旧IP地址：可选择立即释放或数日后释放，以保证业务在更换网络时不中断。
 ![](https://main.qcloudimg.com/raw/1befc1f612813a27792cd811b7c2f8c1.png)
