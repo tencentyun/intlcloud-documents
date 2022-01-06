@@ -1,3 +1,8 @@
+### Version 9.4 Released on December 9, 2021
+- iOS: fixed the issue where, when animated effects are enabled, the effects are not applied to the videos shot.
+- Android: fixed the issue where video editing does not support outputting 1080p videos.
+- Android & iOS: added HTTPDNS request URLs for video upload.
+
 ### Version 9.3 Released on November 4, 2021
 - iOS: fixed the issue of playback speed change when special effects are previewed during post-shooting editing.
 - iOS: fixed crash of `TXCRenderView`.

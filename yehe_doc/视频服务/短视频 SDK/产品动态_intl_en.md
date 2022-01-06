@@ -1,3 +1,18 @@
+## December 2021
+<table>
+<tr><th width="20%">Update</th><th width="50%">Description</th> <th width="15%">Release Date</th> <th width="15%">Document</th>
+</tr><tr>
+<td>Version 9.4</td>
+<td ><ul style="margin:0;">
+<li>iOS: fixed the issue where, when animated effects are enabled, the effects are not applied to the videos shot.</li>
+<li>Android: fixed the issue where video editing does not support outputting 1080p videos.</li>
+<li>Android & iOS: added HTTPDNS request URLs for video upload.</li>
+</ul>
+</td>
+ <td>2021-12-09</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
+</tr></table>
+
 ## November 2021
 <table>
 <tr><th width="20%">Update</th><th width="50%">Description</th> <th width="15%">Release Date</th> <th width="15%">Document</th>
@@ -181,7 +196,7 @@
   <li/>Android: fixed the problem of a value indicating failure being returned after shooting pauses.
   <li/>Android: fixed some crash and compatibility issues. 
 </td>
- <td>December 3, 2020</td> 
+ <td>2020-12-03</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr></table>
 
@@ -516,7 +531,7 @@ iOS & Android: optimized visual effect APIs such as filters and green screen key
 <td ><ul style="margin:0;">
 Fixed a number of bugs reported recently and enhanced the stability of the SDK.
 </td>
- <td>2019-05-15</td> 
+ <td>May 15, 2019</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
