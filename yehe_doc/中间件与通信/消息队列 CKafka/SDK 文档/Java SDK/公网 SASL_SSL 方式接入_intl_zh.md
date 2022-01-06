@@ -18,11 +18,11 @@ SSL 证书的核心功能是保护服务器-客户端通信。数据通过 SSL �
 1. 创建接入点。
 	1. 在 **[实例列表](https://console.cloud.tencent.com/ckafka/index)** 页面，单击目标实例 ID，进入实例详情页。
 	2. 在 **基本信息** > **接入方式** 中，单击**添加路由策略**，在打开窗口中选择：`路由类型：公网域名接入`,`接入方式：SASL_SSL`。
-![](https://qcloudimg.tencent-cloud.cn/raw/46e6b0bb08a7b73084cb51fabe9d03f2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fb9e6cb8740ecff2f2c13c88a128c270.png)
 
 2. 创建角色。
 在**用户管理**页面新建角色，设置密码。
-![](https://qcloudimg.tencent-cloud.cn/raw/fb78b8290232e6342397a30a4c554ef9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c9e06ace7d959ae91331a241c2126cc5.png)
 
 3. 创建 Topic。
 在控制台 **topic 管理**页面新建 Topic（参考 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/32554)）。
@@ -80,8 +80,8 @@ ssl.endpoint.identification.algorithm=
 
 | 参数                                  | 说明                                                         |
 | ------------------------------------- | ------------------------------------------------------------ |
-| `bootstrap.servers`                      | 接入网络，在控制台的实例详情页面**接入方式**模块的网络列复制。<br/>![](https://qcloudimg.tencent-cloud.cn/raw/6117de422e8b46cf75b7b249bb88c817.png) |
-| `topic`                                  | Topic 名称，您可以在控制台上 **topic管理**页面复制。<br/>![](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| `bootstrap.servers`                      | 接入网络，在控制台的实例详情页面**接入方式**模块的网络列复制。<br/>![](https://qcloudimg.tencent-cloud.cn/raw/d1ce0a815917ed6375dde270d916bd9c.png) |
+| `topic`                                  | Topic 名称，您可以在控制台上 **topic管理**页面复制。<br/>![](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | `group.id`                               | 您可以自定义设置，Demo 运行成功后可以在 **Consumer Group** 页面看到该消费者。 |
 | `java.security.auth.login.config.plain` | 填写 JAAS 配置文件 `ckafka_client_jaas.conf` 的路径。          |
 | `client.truststore.jks`                  | 采用 `SASL_SSL` 方式接入时，所需的证书路径。          |
@@ -199,7 +199,7 @@ Produce ok:ckafka-topic-demo-0@198
 Produce ok:ckafka-topic-demo-0@199
 ```
 4. 在 CKafka 控制台 **topic管理**页面，选择对应的 Topic，单击**更多** > **消息查询**，查看刚刚发送的消息。
-![](https://main.qcloudimg.com/raw/ec5fbf218cf50ff3d760be15f6331867.png)
+![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 
@@ -286,4 +286,4 @@ public class KafkaSaslConsumerDemo {
    Consume partition:0 offset:299   
 ```
 4. 在 CKafka 控制台 **Consumer Group** 页面，选择对应的消费组名称，在主题名称输入 Topic 名称，单击**查询详情**，查看消费详情。
-![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)

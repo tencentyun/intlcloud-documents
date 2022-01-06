@@ -81,8 +81,8 @@ module.exports = {
 | ------------------- | ------------------------------------------------------------ |
 | sasl_plain_username | Username in the format of `instance ID` + `#` + `username`. The instance ID can be obtained in **Basic Info** on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), and the username is set when the user is created in **User Management** |
 | sasl_plain_password | User password, which is set when the user is created in **User Management** on the instance details page in the CKafka console. |
-| bootstrap_servers | SASL access point, which can be obtained in **Basic Info** > **Access Mode** on the instance details page in the CKafka console. ![img](https://main.qcloudimg.com/raw/c5cf200a66f6dcf627d2ca6f1c747ecf.png) |
-| topic_name | Topic name, which can be created and obtained in **Topic Management** on the instance details page in the CKafka console. <br/>![img](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png)  |
+| bootstrap_servers | SASL access point, which can be obtained in **Basic Info** > **Access Mode** on the instance details page in the CKafka console.![img](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png) |
+| topic_name | Topic name, which can be created and obtained in **Topic Management** on the instance details page in the CKafka console. <br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | group_id          | Consumer group ID, which can be customized based on business requirements.                            |
 
 ### Step 4. Send messages
@@ -168,7 +168,7 @@ module.exports = {
    ![](https://main.qcloudimg.com/raw/195f4aee06ba86755407b4a75812c256.png)
 
 4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the target topic, and click **More** > **Message Query** to view the message just sent.
-   ![](https://main.qcloudimg.com/raw/e20a0809942f90e0efd5fd1f217574b0.png)
+   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 ### Step 5. Subscribe to messages
 
@@ -241,4 +241,4 @@ module.exports = {
    ![](https://main.qcloudimg.com/raw/deecbf58c00e07531b4ea703c4046b46.png)
 
 4. On the **Consumer Group** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group name, enter the topic name, and click **Query Details** to view the consumption details.
-   ![](https://main.qcloudimg.com/raw/3020dcb5f8fd73e02949b20fef4f956f.png)
+  ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)

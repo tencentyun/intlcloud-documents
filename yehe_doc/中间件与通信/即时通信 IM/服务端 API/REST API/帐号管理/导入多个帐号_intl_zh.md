@@ -88,4 +88,4 @@ https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=
 - 删除帐号（[v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955)）
 - 查询帐号（[v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)）
 - 失效帐号登录态（[v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957)）
-- 查询帐号在线状态（[ v4/openim/querystate](https://intl.cloud.tencent.com/document/product/1047/35477)）
+- 查询帐号在线状态（[v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477)）
