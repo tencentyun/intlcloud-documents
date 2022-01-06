@@ -6,7 +6,7 @@ The hash algorithm of the Redis Cluster Edition is the same as that in the a Red
 | Edition | Specification Range |
 |--|--|
 | Memory Edition (Standard Architecture) | 0.25–64 GB  |
-| Memory Edition (Cluster Architecture) | 12 GB–20 TB  |
+| Memory Edition (Cluster Architecture) | 2 GB–8 TB  |
 | CKV Edition (Standard Architecture) | 4–384 GB  |
 | CKV Edition (Cluster Architecture) | 12 GB–48 TB  |
 
