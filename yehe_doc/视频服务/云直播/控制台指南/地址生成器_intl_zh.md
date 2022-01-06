@@ -43,12 +43,12 @@
 5. 选择地址过期时间，例如：`2021-12-15 10:06:22`。
 6. 单击**生成地址**即可。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/fc64b7f46c7735fc508f89022a04679b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/68d6cc91bb1092b418f5863f7d91e832.png)
 
 [](id:pushurl)
 ### 推流地址说明
 推流支持 RTMP 、WebRTC、SRT协议，可通过地址生成器功能生成前缀为 `rtmp://`、`webrtc://` 和 `srt://` 的推流地址。
-![](https://qcloudimg.tencent-cloud.cn/raw/e51fd72bbe03774c095917bc0e89ea16.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a892b0dd29e3f7f2877b2d76d21d6de1.png)
 
 
 [](id:play)
@@ -62,11 +62,11 @@
 6. 选择是否引用已创建的转码模板。
 6. 单击**生成地址**即可。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/6eee9689a2e230ca988668cac23c517b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/838b4bc6cf9df0c308f9636b1d7c06af.png)
 
 [](id:playurl)
 ### 播放地址说明
 若使用转码模板，生成的播放地址为转码后的直播播放地址。其中播放支持 RTMP、FLV、HLS 和 WebRTC 协议。可通过地址生成器生成前缀为 `rtmp://`、`http://` 和 `webrtc://` 的播放地址。
 >! UDP 协议的播放地址为快直播地址，可通过 [快直播快速入门](https://intl.cloud.tencent.com/document/product/267/41030) 了解使用，快直播费用详细参见 [价格总览](https://intl.cloud.tencent.com/document/product/267/2819)。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/afc4c3d224b0d4dbabe36097c090dd82.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/49cab3aee340f8e58a4d7a198cc51463.png)

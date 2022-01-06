@@ -13,7 +13,7 @@ You can integrate the MLVB SDK into your iOS or Android app to implement the liv
 
 >? The MLVB SDK uses CSS, IM, TRTC, and other services for low-latency audiovisual communication for multiple parties. Participants can interact with each other through mic-connect while others watch. For details, please see [Mic Connect](https://intl.cloud.tencent.com/document/product/1071/42210).
 
-### Free Demos
+### Free demo
 Video Cloud Toolkit is an open-source and comprehensive audio/video solution developed by Tencent Cloud. You can use it to try out LEB’s capability to play live streams with millisecond latency.
 <table>
   <tr>
@@ -61,11 +61,11 @@ You can use the following ways to achieve live push and playback on your website
 
 - **Live push on web**: you can test the web push feature in **CSS console** > [Web Push Tool](https://console.cloud.tencent.com/live/tools/webpush).
 - **Live playback on web**: you can use [WebRTC Live Demo](https://tcplayer.vcube.tencent.com/webrtc-demo/index.html) to test playback.
-
 >?
 >- Both live push and live playback on web use the standard WebRTC protocol. Push on web does not include B-frames, and the audio is encoded in Opus format, so there will be no costs of audio transcoding and B-frame removal transcoding.
 >- WebRTC Live Demo supports multi-definition playback. You can configure a transcoding template for HD and SD output in **Feature Configuration** > [**Live Transcoding**](https://console.cloud.tencent.com/live/config/transcode) in the CSS console, enter in the demo a WebRTC stream URL containing the transcoding template, and test its playback. If you don't need to test this feature, enter the original URL of a WebRTC stream.
 >- For more information on live transcoding and its billing, see [CSS Transcoding](https://intl.cloud.tencent.com/document/product/267/31071).
+
 
 
 [](id:obs)
@@ -73,7 +73,8 @@ You can use the following ways to achieve live push and playback on your website
 Push over the WebRTC protocol is mainly used for LEB (ultra low-latency live streaming). It is responsible for pushing the collected audio/video or video file to the CSS server through the WebRTC protocol. The following describes how to use the OBS tool to implement push over WebRTC.
 
 ### Notes
-Currently, OBS must be on v26 or above.
+- Currently, OBS must be on v26 or above.
+- We only offer an OBS plugin for Windows currently. If you want to use OBS to implement the WebRTC push feature on macOS, see [Web Access](https://intl.cloud.tencent.com/document/product/267/42131).
 
 [](id:set)
 ### Configuring OBS plugin

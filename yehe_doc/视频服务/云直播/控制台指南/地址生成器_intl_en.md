@@ -1,34 +1,72 @@
-This document describes how to store screenshots or porn detection data in a COS bucket. You need to create a COS bucket, authorize CSS to store data in it, and then configure live screencapture and porn detection settings in the CSS console. After that, screenshots and porn detection data can be stored in the bucket. This feature is available in the new console.
+The CSS console provides an address generator. You can enter URL information in the generator to quickly generate push/playback URLs. The live streaming URL is mainly composed of a domain name (`domain`), an application name (`AppName`), a stream name (`StreamName`) and an authentication key (`Key`).
+![](https://main.qcloudimg.com/raw/55879651fe2ca61a3699ab4ed9de41d4.jpg)
+After an URL is generated, you can **select the URL and copy it**, **click the button next to it to copy it**, or **scan the QR code next to it to get it**.
 
-### Creating a COS Bucket
-1. Log in to the COS console, and then click [Bucket List](https://console.cloud.tencent.com/cos5/bucket).
-2. Click **Create Bucket**, configure settings in the pop-up, and then click **OK**.
-![](https://main.qcloudimg.com/raw/422f9ca892a0a9a46cc411712fbb1c06.png)
->!
->- The bucket name above is `test` (excluding `-125****577`).  
->- You can configure above settings based on your needs.
-3. You can enable CDN acceleration for the COS bucket. Click a bucket name in the list or click **Configure**, select **Domains and Transfer** > **Default CDN Acceleration Domain** on the left sidebar, click **Edit**, then toggle **Status** on and configure settings below. After the configuration, click **Save** to enable CDN acceleration. For detailed directions, see [Enabling Default CDN Acceleration Domain Names](https://intl.cloud.tencent.com/document/product/436/31505).
-![](https://main.qcloudimg.com/raw/96538f69d6de9e987f206aa8b26bfa5d.png)
 
- 
+## Notes
+- CSS does not record previously generated URLs. Please copy a URL once it is generated.
+- If you need to generate multiple live streaming URLs, we recommend that you splice them as instructed in [Splicing Live Streaming URLs](https://intl.cloud.tencent.com/document/product/267/38393).
+- CSS provides a test domain name `xxxx.livepush.myqcloud.com`. You can use it for push testing, but we do not recommend using it as the push domain name for your real business.
+- You can get a URL by scanning the QR code with [Tencent Cloud Toolkit](https://intl.cloud.tencent.com/document/product/1071/38147).
+- If the stream name suffix is the same as the transcoding template ID, the stream cannot be played back. Under this situation, please change the stream name.
 
-### Authorizing CSS to Store Screenshots
 
-1. Grant write permission for storing screenshots to the root account (ID: `-125****577`).
-   1. Select an authorized bucket in the **[Bucket List](https://console.cloud.tencent.com/cos5/bucket)**, and click **Configure** to go to the bucket configuration page. Click **Permission Management** > **[Bucket ACL(Access Control List)](https://console.cloud.tencent.com/cos5/bucket/setting?type=aclconfig&anchorType=accessPermission&bucketName=text-1258968577&projectId=&path=%252F®ion=ap-guangzhou)**. Click **Add User**, select **Root account** as the user type, <b>enter the root account ID `-125****577`</b>, and then click **Save**.
-![](https://main.qcloudimg.com/raw/76b93786e2d54c9166fcf0ed63b12d97.png)
-![](https://main.qcloudimg.com/raw/b00fcba492552d1a7105132d1f69e714.png)
-Alternatively, you can click **Manage Permissions** on the **Bucket List** page, and select the buckets to authorize. Toggle **Public Permissions** and **User ACL** on, and then add a user. Select **Root account** as the user type, <b>enter the root account ID `-125****577`</b>, and then click **Save**.
-![](https://main.qcloudimg.com/raw/b00fcba492552d1a7105132d1f69e714.png)
-![](https://main.qcloudimg.com/raw/75667a8ec647a60700ce6ff5557c0f46.png)
->! <b>Enter the root account ID `125****577` to authorize. This ID is also the `APPID` of CSS.</b>
 
-   1. For more information on the API to set the bucket access permission, please see [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737).
-2. Get the information of the authorized COS bucket.
-   3. You can go to the **[Overview](https://console.cloud.tencent.com/cos5/bucket/setting?type=bucketoverview&bucketName=text-1258968577&projectId=&path=%252F&region=ap-guangzhou)** page of a COS bucket to view its information. **Endpoint** on this page contains bucket name, COS `APPID`, and bucket region.
-![](https://main.qcloudimg.com/raw/d533e4b8c386454085d1e8604503d892.png)
-    - Bucket name：`test`
-    - COS APPID：`125****577`
-    - Bucket region：`ap-nanjing`
+## Prerequisites
+You have logged in to the [CSS console](https://console.cloud.tencent.com/live/livestat), and have added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 
-   4. After you configure the above 3 fields, the system will store CSS screenshots in the authorized COS bucket.
+## Parameter Description
+
+<table>
+<thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+<tbody><tr>
+<td>Domain Type</td>
+<td>Select <strong>push domain</strong> or <strong>playback domain</strong>.</td>
+</tr><tr><td>AppName</td>
+<td>Live streaming application name, used to identify the live stream file storage path. Default value: `live`.<br>Only letters, digits, and symbols are allowed.</td>
+</tr><tr><td>StreamName</td>
+<td>Custom stream name. It is a unique identifier of a live stream.<br>Only letters, digits, and symbols are allowed.</td>
+</tr><tr><td>Expiration Time</td>
+<td><li>The expiration time of a playback URL is the configured time plus the playback authentication valid period.<li>The push URL expiration time is the same as the configured expiration time.</td>
+</tr><tr><td>Transcoding Template</td>
+<td><li>Applicable only when you select a <strong>playback domain</strong>.<li>If you select a <a href="https://intl.cloud.tencent.com/document/product/267/31071">transcoding template</a>, the generated URL will be the one for the transcoded stream. To play back the original live stream, you don't need to select a transcoding template.</td>
+</tr>
+</tbody></table>
+
+[](id:push)
+## Generating Push URL
+### Directions
+1. Log in to the CSS console and click **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)**.
+2. Select **Push Domain** as the domain type, and select a push domain name that you have added on the domain management page.
+3. Enter an **AppName**. It is `live` by default.
+4. Enter a **StreamName**, such as `liveteststream`.
+5. Select the expiration time of the URL, such as `2021-12-15 10:06:22`.
+6. Click **Generate Address**.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/68d6cc91bb1092b418f5863f7d91e832.png)
+
+[](id:pushurl)
+### Notes
+As the protocols RTMP, WebRTC, and SRT are supported for push, the push URLs generated start with `rtmp://`, `webrtc://`, or `srt://`.
+![](https://qcloudimg.tencent-cloud.cn/raw/a892b0dd29e3f7f2877b2d76d21d6de1.png)
+
+
+[](id:play)
+## Generating Playback URL
+### Directions
+1. Log in to the CSS console and click **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)**.
+2. Select **Playback Domain** as the domain type, and select a playback domain name that you have added on the domain management page.
+3. Enter an **AppName**. It is `live` by default.
+4. Enter a **StreamName**, such as `liveteststream`.
+5. Select the URL expiration time, such as `2021-12-15 10:20:26`.
+6. Select whether to use a created transcoding template.
+6. Click **Generate Address**.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/838b4bc6cf9df0c308f9636b1d7c06af.png)
+
+[](id:playurl)
+### Notes
+If you select a transcoding template, the address generator will generate a URL for the transcoded stream. As the protocols RTMP, HTTP-FLV, HLS, and WebRTC are supported for playback, the playback URLs generated start with `rtmp://` `http://`, or `webrtc://`.
+>! UDP playback URLs are for [LEB](https://intl.cloud.tencent.com/document/product/267/41030). To learn about the billing of LEB, see [Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2819).
+
+![](https://qcloudimg.tencent-cloud.cn/raw/49cab3aee340f8e58a4d7a198cc51463.png)
