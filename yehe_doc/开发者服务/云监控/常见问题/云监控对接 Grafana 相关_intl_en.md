@@ -1,4 +1,8 @@
 
+### What CAM permission rules are needed to use the plugin?
+
+You can set `ReadOnlyAccess` (global read permission) for the account or grant the account `QcloudMonitorReadOnlyAccess` (CM's read-only permission) and "read-only permissions of each Tencent Cloud service" according to the principle of least permission.
+
 ### Does the plugin support multi-region query in the same panel?
 
 If the `region` template variable is used in the dashboard, only single-region query is supported. To compare instances in multiple regions, you can create multiple query targets in the same panel.
@@ -13,7 +17,7 @@ You can set `Multi-value` under `Selection Options` in the template variable to 
 ### When I compare multiple instances, why is the error `Only queries that return single series/table is supported` reported in the panel?
 ![](https://main.qcloudimg.com/raw/35b75a1b7840e96df8b64940664233c7.png)
 
-Some panel types such as `dashboard` chart only support single-instance query. If you need to compare multiple instances, please use a line chart.
+Some panel types such as `dashboard` chart only support single-instance query. If you need to compare multiple instances, use a line chart.
 
 ### The instance drop-down list in the template variable shows `InstanceId`. How do I make it show `InstanceName`?
 
