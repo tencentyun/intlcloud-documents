@@ -5,11 +5,11 @@
 ### 监控粒度变化
 #### 1分钟监控粒度
 - 2020年10月20日之前创建的实例，仅支持 [1分钟监控粒度](https://intl.cloud.tencent.com/document/product/239/34589)，目前我们正在进行逐步升级至支持5秒监控。
-- 云监控控制台查看监控数据入口：【[云监控](https://console.cloud.tencent.com/monitor/product/redis)】>【云数据库】>【Redis(1分钟粒度)】。
+- 云监控控制台查看监控数据入口：**[云监控](https://console.cloud.tencent.com/monitor/product/redis)**>**云数据库**>**Redis(1分钟粒度)**。
 
 #### 5秒监控粒度
 - 2020年10月20日之后创建的实例，同时支持1分钟和 [5秒监控粒度](https://intl.cloud.tencent.com/document/product/239/38743)。
-- 云监控控制台查看监控数据入口：【[云监控](https://console.cloud.tencent.com/monitor/product/redis_mem_edition)】>【云数据库】>【Redis(5秒粒度)】。
+- 云监控控制台查看监控数据入口：**[云监控](https://console.cloud.tencent.com/monitor/product/redis_mem_edition)**>**云数据库**>**Redis(5秒粒度)**。
 
 
 ### 监控粒度升级说明
@@ -61,7 +61,7 @@
 
 ### 如何区分实例的监控粒度
 - 通过 API 接口 [DescribeInstances](https://intl.cloud.tencent.com/document/product/239/32065) 返回的字段 InstanceSet.MonitorVersion 判断：MonitorVersion = 5s，表示为5秒粒度；MonitorVersion = 1m，表示为1分钟粒度。
-- 通过 [Redis 控制台](https://console.cloud.tencent.com/redis) 查看：单击实例名进入实例管理页面，选择【系统监控】>【监控指标】页面，如果实例监控的时间粒度支持5秒，说明该实例支持5秒监控粒度，否则该实例是1分钟监控粒度。
+- 通过 [Redis 控制台](https://console.cloud.tencent.com/redis) 查看：单击实例名进入实例管理页面，选择**系统监控**>**监控指标**页面，如果实例监控的时间粒度支持5秒，说明该实例支持5秒监控粒度，否则该实例是1分钟监控粒度。
 
 
 ## 告警迁移
