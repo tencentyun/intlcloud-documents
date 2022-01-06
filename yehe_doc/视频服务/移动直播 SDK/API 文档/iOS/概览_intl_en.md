@@ -61,18 +61,22 @@ Player callbacks
 | --------- | --------------- |
 | [onError](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#aeba95a71e4698ea19780de253d3a0099)   | Callback for error. This callback is returned when the player encounters an error. |
 | [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a6e977d51482a006ad0ce2adc507510a2) | Callback for warning                                 |
+| [onConnected](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a7d20c09365257a766dbac760d7eadd93) | Callback for successfully connecting to the server    |
 
 ### Video callback APIs
 | API                                             | Description                                                         |
 | --------- | --------------- |
-| [onVideoPlayStatusUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a3b0ae3081c30cb1a920d09333813df89)   | Callback for the change of video status |
+| [onVideoPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#afa3fa431170e8d6b59705b314b2be9f1)   | Callback for video playback|
+| [onVideoLoading](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#ab24d93b6b4b93387233f89e55bca3859)   | Callback for loading video|
+| [onVideoResolutionChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a58aaf1391b0bfcc5b2ea259797c72ba8)   | Callback for change of player resolution|
 | [onSnapshotComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a5754eb816b91fd0d0ac1559dd7884dad) | Callback for a screenshot taken                                 |
 | [onRenderVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a1ee10f163275f3b9316ce387573fcbe1) | Callback for custom video rendering|
 
 ### Audio callback APIs
 | API                                             | Description                                                         |
 | --------- | --------------- |
-| [onAudioPlayStatusUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a7a467cced525d22cf1c0e7aeeee90acb)   | Callback for the change of audio status|
+| [onAudioPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a8484c4ac2de6f071a7c1e392cdf33571)   | Callback for audio playback|
+| [onAudioLoading](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a47e361f02bdc83fdab4e050d42d0af77)   | Callback for loading audio|
 | [onPlayoutVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a5439ba0397be3943c6ebfb6083c27664) | Callback of the player’s volume                       |
 
 ### Statistics callback APIs

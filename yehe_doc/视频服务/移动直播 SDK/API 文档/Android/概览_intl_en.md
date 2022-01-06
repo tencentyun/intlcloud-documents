@@ -65,14 +65,17 @@ Player callbacks
 ### Video callback APIs
 | API                                             | Description                                                         |
 | --------- | --------------- |
-| [onVideoPlayStatusUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#ab5d1818293008fc16bed308d8b2b71a3)   | Callback for the change of video status |
+| [onVideoResolutionChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a3c69dfdfb02e1a3f3520b1a5a7a6c8e6)   | Callback for change of player resolution|
+| [onVideoLoading](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a8a1796d37d96e925a4f2809f73ce8326) | Callback for loading video|
+| [onVideoPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a5aaa9225a1d37b8f48ec825af0049945) | Callback for video playback|
 | [onSnapshotComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a2ae183e19890e89e216051653ccdfb89) | Callback for a screenshot taken                                 |
 | [onRenderVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a346a3206ad4d0f38385844c1456a012f) | Callback for custom video rendering|
 
 ### Audio callback APIs
 | API                                             | Description                                                         |
 | --------- | --------------- |
-| [onAudioPlayStatusUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a316fd3f01f22b0be2ad0c406b5786170)   | Callback for the change of audio status|
+| [onAudioLoading](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a9ecbc1b3ff1a907c8110a2b3d00a703a)   | Callback for loading audio|
+| [onAudioPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a00baf0a363714f7eca4baf94400d8a97)   | Callback for audio playback|
 | [onPlayoutVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a57fc000bf5e935f7253fa94e1750359e) | Callback of the player’s volume                       |
 
 ### Statistics callback APIs

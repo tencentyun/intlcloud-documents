@@ -1,175 +1,226 @@
 
-__Feature__
+**Overview**
+
+Callbacks of Tencent Cloud’s live stream player.
 
 
+**Features**
 
-
-__Overview__
-
-
+You can use `V2TXLivePlayerObserver` to receive callbacks of [V2TXLivePlayer](https://intl.cloud.tencent.com/document/product/1071/41273), including player status, playback volume, first audio/video frame, statistics, warning and error messages, etc.
 
 
 ## Basic Callback APIs
 ### onError
 
-* @brief live player error notification, which is called back when the player encounters an error
+Callback for error
 ```
-- (void)onError:(id<TXLivePlayerV2>)player
-            
+- (void)onError:(id<V2TXLivePlayer>)player
+            code:(V2TXLiveCode)code
          message:(NSString *)msg
-       extraInfo:(NSDictionary *)extraInfo {
+       extraInfo:(NSDictionary *)extraInfo
 ```
 
-__Parameters__
+**Parameters**
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-
-
-| msg | NSString * | Error information |
-
+| player | V2TXLivePlayer |  The player object sending the callback |
+| code | V2TXLiveCode |  Error code |
+| msg | NSString * | Error message |
+| extraInfo | NSDictionary * |  Extra information |
 
 ***
 
 ### onWarning
 
-Warning.
+Callback for warning
 ```
-- (void)onWarning:(id<TXLivePlayerV2>)player
-              
+- (void)onWarning:(id<V2TXLivePlayer>)player
+              code:(V2TXLiveCode)code
            message:(NSString *)msg
-         extraInfo:(NSDictionary *)extraInfo {
+         extraInfo:(NSDictionary *)extraInfo
 ```
 
-__Parameters__
+**Parameters**
 
 | Parameter | Type | Description |
 |-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| code | V2TXLiveCode |  Warning code |
+| msg | NSString * |  Warning message |
+| extraInfo | NSDictionary * |  Extra information |
 
 
-| msg       | String | Warning message |
+### onConnected
+
+Callback for successfully connecting to the server
+```
+- (void)onConnected:(id<V2TXLivePlayer>)player 
+          extraInfo:(NSDictionary *)extraInfo
+```
+
+**Parameters**
+
+| Parameter | Type | Description |
+|-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| extraInfo | NSDictionary * |  Extra information |
 
 
-***
 
 ## Video Callback APIs
+### onVideoPlaying
 
-
-
+Callback for video playback
+```
+- (void)onVideoPlaying:(id<V2TXLivePlayer>)player
+             firstPlay:(BOOL)firstPlay 
+             extraInfo:(NSDictionary *)extraInfo
 ```
 
-                          
-                          
-                       extraInfo:(NSDictionary *)extraInfo {
-```
-
-__Parameters__
+**Parameters**
 
 | Parameter | Type | Description |
 |-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| firstPlay | BOOL |  Whether it is the first playback |
+| extraInfo | NSDictionary * |  Extra information |
 
 
 
+### onVideoLoading
+
+Callback for loading video
+```
+- (void)onVideoLoading:(id<V2TXLivePlayer>)player
+             extraInfo:(NSDictionary *)extraInfo;
+```
+
+**Parameters**
+
+| Parameter | Type | Description |
+|-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| extraInfo | NSDictionary * |  Extra information |
 
 
+### onVideoResolutionChanged
 
+Callback for change of player resolution
+```
+- (void)onVideoResolutionChanged:(id<V2TXLivePlayer>)player 
+                           width:(NSInteger)width 
+                          height:(NSInteger)height;
+```
 
+**Parameters**
 
+| Parameter | Type | Description |
+|-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| width | NSInteger | Video width |
+| height | NSInteger | Video height |
 
-
-| ------------------------- | ------------------------------------------- |
-
-
-
-
-***
 
 ### onSnapshotComplete
 
-A screenshot was taken.
+Callback for a screenshot taken
 ```
-- (void)onSnapshotComplete:(id<V2TXLivePlayer>)player image:(TXImage *)image {
+- (void)onSnapshotComplete:(id<V2TXLivePlayer>)player image:(TXImage *)image
 ```
 
-__Parameters__
+**Parameters**
 
 | Parameter | Type | Description |
 |-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| image | TXImage * | The video image captured |
 
-
-
-***
 
 ### onRenderVideoFrame
 
-Callback of custom video rendering.
+Callback for custom video rendering
+> ? You will receive this callback after calling `[V2TXLivePlayer enableCustomRendering:pixelFormat:bufferType:]` to enable custom video rendering.
 
 ```
-- (void)onRecvFirstVideoFrame:(id<TXLivePlayerV2>)player;
-                      
+- (void)onRenderVideoFrame:(id<V2TXLivePlayer>)player
+                     frame:(V2TXLiveVideoFrame *)videoFrame
 ```
 
-__Parameters__
+**Parameters**
 
 | Parameter | Type | Description |
 |-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| videoFrame | V2TXLiveVideoFrame * | Video frame |
 
-| videoFrame | V2TXLiveVideoFrame | Video frame sent to the SDK |
-
-***
 
 
 ## Audio Callback APIs
 
+### onAudioPlaying
 
-
+Callback for audio playback
 ```
-- (void)onConnectionStateUpdate:(id<TXLivePlayerV2>)player
-                          
-                          
-                       extraInfo:(NSDictionary *)extraInfo {
+- (void)onAudioPlaying:(id<V2TXLivePlayer>)player 
+             firstPlay:(BOOL)firstPlay 
+             extraInfo:(NSDictionary *)extraInfo;
 ```
 
-__Parameters__
+**Parameters**
 
 | Parameter | Type | Description |
 |-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| firstPlay | BOOL |  Whether it is the first playback |
+| extraInfo | NSDictionary * |  Extra information |
 
 
+### onAudioLoading
 
-
-
-***
-
-
-
-Player volume callback.
+Callback for loading audio
 ```
-- (void)onPlayoutVolumeUpdate:(id<TXLivePlayerV2>)player
+- (void)onAudioLoading:(id<V2TXLivePlayer>)player 
+             extraInfo:(NSDictionary *)extraInfo;
 ```
 
-__Parameters__
+**Parameters**
 
 | Parameter | Type | Description |
 |-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| extraInfo | NSDictionary * |  Extra information |
 
-| volume | NSInteger | Volume level. 100 indicates normal volume level. Value range: 0–100. |
 
-***
+
+### onPlayoutVolumeUpdate
+
+Callback of the player’s volume
+```
+- (void)onPlayoutVolumeUpdate:(id<V2TXLivePlayer>)player volume:(NSInteger)volume
+```
+
+**Parameters**
+
+| Parameter | Type | Description |
+|-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| volume | NSInteger | Volume. Value range: 0-100 |
+
 
 ## Statistics Callback API
 
 ### onStatisticsUpdate
 
-Publisher statistics.
+Callback of the player’s statistics
 ```
-- (void)onStatisticsUpdate:(id<TXLivePlayerV2>)player
-                 statistics:(TXLivePlayerStatistics *)statistics;
+- (void)onStatisticsUpdate:(id<V2TXLivePlayer>)player
+                statistics:(V2TXLivePlayerStatistics *)statistics
 ```
 
-__Parameters__
+**Parameters**
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-
-| statistics | V2TXLivePusherStatistics | Publisher statistics |
+| player | V2TXLivePlayer |  The player object sending the callback |
+| statistics | V2TXLivePlayerStatistics | Player statistics |
