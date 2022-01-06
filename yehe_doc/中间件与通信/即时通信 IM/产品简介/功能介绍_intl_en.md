@@ -245,7 +245,7 @@ The following table compares the default features of each group type:
      <td>Unread message count</td>
      <td>Supported</td>
     <td>Supported</td>
-    <td>Supported</td>
+    <td>Not supported</td>
     <td>Not supported</td>
    </tr>
 		 	   <tr>

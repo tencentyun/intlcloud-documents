@@ -26,7 +26,7 @@
 
 ## 后付费产品
 
-您可前往【费用中心】 > [【账户充值】](https://console.cloud.tencent.com/account/recharge) 页面进行充值，账户余额大于0美元后，后付费资源会自动恢复使用。
+您可前往【费用中心】 > [【付款】](https://console.cloud.tencent.com/account/recharge) 页面进行充值，账户余额大于0美元后，后付费资源会自动恢复使用。
 充值方式可参考 [充值流程说明](https://intl.cloud.tencent.com/document/product/555/11319) 。
 
 若未自动恢复使用，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系专员处理。
