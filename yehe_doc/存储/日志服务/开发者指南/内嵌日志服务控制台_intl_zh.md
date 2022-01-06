@@ -8,41 +8,36 @@
 
 **内嵌页面示例代码：[cls-iframe-demo](https://github.com/TencentCloud/cls-iframe-demo)。**
 
+>! 该示例中不包含鉴权外部系统鉴权逻辑，部署后所有访问者（即使未登录腾讯云）均可以在示例中配置的角色权限查看账户中的数据。为保障数据隐私及安全，请自行添加外部系统鉴权逻辑或限制其仅在内网中可访问，以确保有权限的用户才能够查看该页面。
+>
+
 以下为内嵌日志服务控制台流程图：
 ![img](https://main.qcloudimg.com/raw/c04840e707a3e9aca812d58d9414faea.png)
 
-
-
 ## 前提条件
 
-1. 用户根据业务情况，登录 [访问管理 CAM](https://console.cloud.tencent.com/cam/overview)  控制台，创建 [CAM](https://intl.cloud.tencent.com/document/product/598/19381) 角色**且允许登录控制台**（角色载体为用户主账号，例如 CompanyOpsRole），并为 CAM 角色配置相应的访问权限，例如只读策略权限 QcloudCLSReadOnlyAccess。您可以 [通过控制台](#step1) 或 [通过 API](#step2) 创建 CAM 角色：
+1. 用户根据业务情况，登录 [访问管理 CAM](https://console.cloud.tencent.com/cam/overview)  控制台，创建 [CAM](https://intl.cloud.tencent.com/document/product/598/19381) 角色**且允许登录控制台**（角色载体为用户主账号，例如 CompanyOpsRole），并为 CAM 角色配置相应的访问权限，例如只读策略权限 QcloudCLSReadOnlyAccess。
 <span id="step1"></span>
- - **通过控制台创建 CAM 角色**：
-	1. 登录 [访问管理 CAM](https://console.cloud.tencent.com/cam/overview) 控制台。
-	2. 单击左侧菜单栏中的【角色】，进入角色页面。
-	3. 选择【新建角色】>【腾讯云账户】，开始新建自定义角色。
-	4. 选择【当前主账号】并勾选【允许当前角色服务控制台】，单击【下一步】。
+ 1. 登录 [访问管理 CAM](https://console.cloud.tencent.com/cam/overview) 控制台。
+ 2. 单击左侧菜单栏中的【角色】，进入角色页面。
+ 3. 选择【新建角色】>【腾讯云账户】，开始新建自定义角色。
+ 4. 选择【当前主账号】并勾选【允许当前角色服务控制台】，单击【下一步】。
 
-	>!若无 “允许角色登录控制台” 选项，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们开通白名单。
-	5. 为角色设置访问策略，例如只读策略权限 QcloudCLSReadOnlyAccess，单击【下一步】。
+>! 若无 “允许角色登录控制台” 选项，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们开通白名单。
+>
+ 5. 为角色设置访问策略，例如只读策略权限 QcloudCLSReadOnlyAccess，单击【下一步】。
 
-	6. 输入角色名，完成创建。
+ 6. 输入角色名，完成创建。
 
 <span id="step2"></span>
- - **通过 API 创建 CAM 角色**：
- 创建角色请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/33561) API 文档，其中，ConsoleLogin 需要填入1，允许角色登录控制台。
- 例如请求示例：
-```plaintext
-https://cam.tencentcloudapi.com/?Action=CreateRole&RoleName=CompanyOpsRole&ConsoleLogin=1&PolicyDocument={"version":"2.0","statement":[{"action":["cls:get*","cls:list*","cls:GetHistogram","cls:GetFastAnalysis","cls:GetChart","cls:ListChart","cls:ListDashboard","cls:GetDashboard","cls:searchLog","cls:downloadLog","cls:pullLogs"],"effect":"allow","principal":{"qcs":["qcs::cam::uin/100001234567:root"]}}]}
-```
 2. 获取当前用户的访问密钥。如何获取持久密钥，可参见 [主账号访问密钥管理](https://intl.cloud.tencent.com/document/product/598/34228) 文档。
 
 ## 操作步骤
 
 1. 用户登录访问腾讯云外部的 Web 服务。
 2. Web 服务端根据登录用户身份分配对应的角色名，例如 CompanyOpsRole（需预先创建好，此为前提条件1）。
-3. Web 服务端系统根据角色名访问腾讯云 STS 服务，使用前提条件2中获取到的访问密钥调用 [AssumeRole](https://intl.cloud.tencent.com/document/product/598/35840) 接口，申请角色 CompanyOpsRole 的临时密钥。
-4. 用户调用 [AssumeRole](https://intl.cloud.tencent.com/document/product/598/35840) 接口成功后，获取到角色 CompanyOpsRole 的临时密钥。
+3. Web 服务端系统根据角色名访问腾讯云 STS 服务，使用前提条件2中获取到的访问密钥调用 AssumeRole 接口，申请角色 CompanyOpsRole 的临时密钥。
+4. 用户调用 AssumeRole 接口成功后，获取到角色 CompanyOpsRole 的临时密钥。
 5. 用户通过该角色的临时密钥生成登录签名信息。详细可参考以下步骤：
  1. **参数排序**
      对要求签名的参数按照字母表或数字表递增顺序的排序，先考虑第一个字母，在相同的情况下考虑第二个字母，依此类推。您可以借助编程语言中的相关排序函数来实现这一功能，例如 PHP中 的 ksort 函数。其中签名参数包含以下内容：	 
@@ -175,11 +170,7 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 <td align="left">time </td>
 <td align="left">否</td>
 <td align="left">String</td>
-<td align="left">要检索日志的起始时间至结束时间，格式样例： 
-```
-2021-07-15T10:00:00.000,2021-07-15T12:30:00.000
-```
-</td>
+<td align="left">要检索日志的起始时间至结束时间，格式样例： ```2021-07-15T10:00:00.000,2021-07-15T12:30:00.000```</td>
 </tr>
 <tr>
 <td align="left">query</td>

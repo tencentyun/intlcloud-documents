@@ -4,9 +4,9 @@
 
 | 采集方式               | 描述                                                         |
 | :--------------------- | ------------------------------------------------------------ |
-| API 方式采集           | 通过调用 [日志服务 API](https://intl.cloud.tencent.com/document/product/614/12445) 上传结构化日志至日志服务，日志上传参考 [上传日志接口](https://intl.cloud.tencent.com/document/product/614/16873) 文档 |
-| SDK 方式采集           | 暂无 SDK 提供                                                |
-| LogListener 客户端采集 | LogListener 是日志服务提供的日志采集客户端，通过控制台简单配置可快速接入日志服务，使用方式参考 [LogListener 使用流程](https://intl.cloud.tencent.com/document/product/614/31578) |
+| API 方式采集           | 通过调用 [日志服务 API](https://intl.cloud.tencent.com/document/product/614/12445) 上传结构化日志至日志服务，详情请参考 [上传日志接口](https://intl.cloud.tencent.com/document/product/614/16873) 文档 |
+| SDK 方式采集           | 通过使用 SDK 上传结构化日志至日志服务，详情请参考 SDK 采集文档                                              |
+| LogListener 客户端采集 | LogListener 是日志服务提供的日志采集客户端，通过控制台简单配置可快速接入日志服务，详情请参考 [LogListener 使用流程](https://intl.cloud.tencent.com/document/product/614/31578) |
 
 采集方式对比：
 
@@ -35,7 +35,7 @@
 | ----------- | ----------------------------------- |
 | Linux/Unix  | LogListener                         |
 | Windows     | API（LogListener 暂不支持 Windows） |
-| iOS/Android | API（暂无 iOS/Android SDK）         |
+| iOS/Android | 提供 SDK 采集         |
 
 **云产品日志**
 
@@ -43,11 +43,11 @@
 | ------------------------ | ------------------------------------------------------------ |
 | 云服务器 CVM             | 安装配置 LogListener，[采集指引](https://intl.cloud.tencent.com/document/product/614/17414) |
 | 容器服务 TKE             | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/457/32419) |
-| 内容分发网络CDN          | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/228/35380) |
-| 负载均衡CLB              | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/214/35063) |
-| 云函数 SCF               | 控制台配置。 |
-| 标准直播 LVB             | 控制台配置。|
+| 内容分发网络 CDN          | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/228/35380) |
+| 负载均衡 CLB              | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/214/35063) |
+| 云函数 SCF               | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/583/34876) |
+| 标准直播 LVB             | 控制台配置，[接入指引](https://cloud.tencent.com/document/product/267/33996) |
 | 网络流日志 FL            | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/682/18966) |
-| 智能钛机器学习平台TI-ONE | 控制台配置。 |
-| 游戏联机对战引擎MGOBE    | 控制台配置。 |                                              |
+| 腾讯云 TI 平台 TI-ONE | 控制台配置，接入指引 |
+| 游戏联机对战引擎 MGOBE    | 控制台配置，接入指引 |
 

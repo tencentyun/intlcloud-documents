@@ -12,5 +12,5 @@
 | 云函数 SCF                | SCF 控制台配置，[配置指引](https://intl.cloud.tencent.com/document/product/583/34876) |
 | 对象存储 COS                | COS 控制台配置，[配置指引](https://intl.cloud.tencent.com/document/product/614/42885) |
 | 网络流日志 Flow logs      | Flow logs 控制台配置，[配置指引](https://intl.cloud.tencent.com/document/product/682/18966) |
-| 智能钛机器学习平台 TI-ONE | TI-ONE 控制台配置，配置指引 |
+| 腾讯云 TI 平台 TI-ONE | TI-ONE 控制台配置，配置指引|
 | 游戏联机对战引擎 MGOBE    | MGOBE 控制台配置，配置指引|
