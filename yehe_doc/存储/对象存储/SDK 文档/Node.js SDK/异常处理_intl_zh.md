@@ -64,7 +64,7 @@ cos.headBucket({
    </tr>
    <tr>
       <td nowrap="nowrap">- - RequestId</td>
-      <td>服务器请求日志里的唯一 ID，可用于遇到问题 <a href="https://cloud.tencent.com/document/product/436/37708">联系我们</a> 排查错误原因</td>
+      <td>服务器请求日志里的唯一 ID，可用于遇到问题 <a href="https://intl.cloud.tencent.com/contact-sales">联系我们</a> 排查错误原因</td>
       <td>String</td>
    </tr>
 </table>
