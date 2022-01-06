@@ -1,8 +1,8 @@
 [](id:UserSig)
 ### What is UserSig?
-UserSig is a security signature designed by Tencent Cloud to prevent attackers from accessing your Tencent Cloud account.
+`UserSig` is a security signature designed by Tencent Cloud to prevent attackers from accessing your Tencent Cloud account.
 
-Currently, Tencent Cloud services including MLVB, TRTC, and IM all use this security mechanism. Whenever you want to use these services, you must provide three key pieces of information, i.e. `SDKAppID`, `UserID`, and `UserSig` in the initialization or login function of the corresponding SDK.
+Currently, Tencent Cloud services including MLVB, TRTC, and IM all use this security mechanism. Whenever you want to use these services, you must provide three key pieces of information, i.e., `SDKAppID`, `UserID`, and `UserSig` in the initialization or login function of the corresponding SDK.
 
 `SDKAppID` is used to identify your application, and `UserID` your user. `UserSig` is a security signature calculated based on the two parameters using the **HMAC SHA256** encryption algorithm. Attackers cannot use your Tencent Cloud traffic without authorization as long as they cannot forge a `UserSig`.
 
@@ -14,12 +14,16 @@ See below for how `UserSig` is calculated. Basically, it involves hashing crucia
 usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire + 
                                  base64(userid + sdkappid + currtime + expire)))
 ```
+>?
+>- `currtime` is the current system time and `expire` the expiration time of the signature.
+>- For more information, see [How do I calculate UserSig on the client?](#Client) and [How do I calculate UserSig on the server?](#Server).
 
 [](id:Key)
 ### How do I obtain a key?
 Log in to the CSS console and go to [Application Management](https://console.cloud.tencent.com/live/license/appmanage) to view the key required to calculate `UserSig`.
 1. Click your application to enter the details page. If there isn’t an application yet, create one.
 2. Select the **Application Management** tab and click **View Key**.
+
 
 [](id:Client)
 ### How do I calculate UserSig on the client?
@@ -29,12 +33,10 @@ We provide an open-source module called `GenerateTestUserSig` in the MLVB SDK sa
 |:---------:|:---------:|:---------:|
 | Objective-C | iOS  | [GitHub](https://github.com/tencentyun/MLVBSDK/blob/master/iOS/MLVB-API-Example/Debug/GenerateTestUserSig.h)|
 | Java | Android  | [GitHub](https://github.com/tencentyun/MLVBSDK/blob/master/Android/Demo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) |
-| Javascript | Mini Program | [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/WXMini/pages/mlvb-live-room-demo/debug/GenerateTestUserSig.js)|
-
-
 
 
 >! This method is only applicable for debugging. It’s **not recommended** for official launch because `SECRETKEY` of the client code (especially on the web) may be easily decompiled and reversed. If your key is leaked, attackers can steal your Tencent Cloud traffic.
+>
 >The correct method is to deploy the `UserSig` calculation code on your project server so that your application can request from your server a `UserSig` that is calculated whenever one is needed.
 
 [](id:Server)
