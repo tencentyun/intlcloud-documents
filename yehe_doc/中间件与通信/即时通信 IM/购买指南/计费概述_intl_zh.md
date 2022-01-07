@@ -56,9 +56,10 @@
      </tr> 
 	 <tr>   
 	     <td>直播群（AvChatRoom）弹幕带宽</td>   
-	     <td>对单个 SDKAppID 内所有的音视频聊天室生效。</td>   
+	     <td>对单个 SDKAppID 内所有的直播群（AvChatRoom）生效。</td>   
      </tr> 
 </table>
+
 
 ## 相关文档
 - [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)
