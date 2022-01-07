@@ -4,8 +4,6 @@
 |CreateBackup	| Creates a TencentDB instance backup |
 |DeleteBackup	| Deletes a TencentDB instance backup |
 |DescribeBackupConfig	| Queries the configuration information of a TencentDB instance backup |
-|DescribeBackupDatabases	| Queries the list of backed up databases |
-|DescribeBackupTables	| Queries backup data tables of the specified database |
 |DescribeBackups	| Queries backup logs |
 |DescribeBinlogs	| Queries binary logs |
 |DescribeSlowLogs	| Queries slow logs |
@@ -117,80 +115,6 @@ try:
 except TencentCloudSDKException as err:
     print(err)
 ```
-
-
-### DescribeBackupDatabases for Querying the List of Backed up Databases	
-
-```python
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-# Import the TencentCloud API entry module
-import logging
-import traceback
-from tencentcloud.common import credential
-from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
-from tencentcloud.cdb.v20170320 import cdb_client, models
-
-try:
-    # Instantiate an authentication object. The Tencent Cloud account secretId and secretKey need to be passed in as the input parameters
-    cred = credential.Credential("secretId", "secretKey")
-
-    # Instantiate the client object to request the product (with TencentDB as an example)
-    client = cdb_client.CdbClient(cred, "ap-shanghai")
-
-    # Instantiate a request object: req = models.ModifyInstanceParamRequest()
-    req = models.DescribeBackupDatabasesRequest()
-    req.InstanceId = "cdb-7ghaiocc"
-    req.StartTime = "2018-08-02 15:19:19"
-
-    print req
-    # Call the API you want to access through the client object. You need to pass in the request object
-    resp = client.DescribeBackupDatabases(req)
-
-    # A string return packet in JSON format is outputted
-    print(resp.to_json_string())
-except TencentCloudSDKException as err:
-    msg = traceback.format_exc() # Method 1  
-    print (msg) 
-```
-
-
-### DescribeBackupTables for Querying Backup Data Tables of the Specified Database	
-
-```python
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-# Import the TencentCloud API entry module
-
-from tencentcloud.common import credential
-from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
-from tencentcloud.cdb.v20170320 import cdb_client, models
-
-try:
-    # Instantiate an authentication object. The Tencent Cloud account secretId and secretKey need to be passed in as the input parameters
-    cred = credential.Credential("secretId", "secretKey")
-
-    # Instantiate the client object to request the product (with TencentDB as an example)
-    client = cdb_client.CdbClient(cred, "ap-shanghai")
-
-    # Instantiate a request object: req = models.ModifyInstanceParamRequest()
-    req = models.DescribeBackupTablesRequest()
-    req.InstanceId = "cdb-7ghaiocc"
-    req.StartTime = "2018-08-02 15:19:19"
-    req.DatabaseName ="sissi"
-
-
-    # Call the API you want to access through the client object. You need to pass in the request object
-    resp = client.DescribeBackupTables(req)
-
-    # A string return packet in JSON format is outputted
-    print(resp.to_json_string())
-except TencentCloudSDKException as err:
-    print(err)
-```
-
 
 ### DescribeBackups for Querying Backup Logs	
 
