@@ -1,7 +1,8 @@
-ビデオコンテンツ認識は、AIの力を借りてビデオコンテンツに対してインテリジェントな認識を行う機能であり、オフラインタスクです。ビデオコンテンツ認識を使用することで、ビデオ画面の中の文字、オープニング・エンディング、音声の中の文字を認識することができ、このビデオコンテンツ認識の結果に基づき、ビデオを的確かつ効果的に管理することができます。ビデオコンテンツ認識には以下の機能が含まれます。
+ビデオコンテンツ認識は、AIの力を借りてビデオコンテンツに対してインテリジェントな認識を行う機能であり、オフラインタスクです。ビデオコンテンツ認識を使用することで、ビデオ画面の中の人の顔、文字、オープニング・エンディング、音声の中の文字を認識することができ、このビデオコンテンツ認識の結果にもとづき、ビデオを的確かつ効果的に管理することができます。ビデオコンテンツ認識には以下の機能が含まれます。
 
 | 機能名 | 機能説明 | 活用例 |
 | -- | -- | -- |
+| Face Recognition | 画面の中に登場する人の顔を認識します | <li>スターが画面の中に登場する位置のタグ付け</li><li>画面の中に登場する話題の人物の調査</li>  |
 | 音声全文認識 | 音声の中に登場するすべての文字を認識します | <li>スピーチのコンテンツのための字幕生成</li><li>ビデオの音声コンテンツに対するデータ分析</li>  |
 | テキスト全文認識 | 画面の中に登場するすべての文字を認識します | 画面の中の文字に対するデータ分析  |
 | 音声キーワード認識 | 音声の中に存在するキーワードを認識します | <li>音声の中のセンシティブワードの調査</li><li>音声の中に登場する特定のキーワードのサーチ</li>  |
@@ -16,33 +17,34 @@
 
 | 認識タイプ | パブリックコーパス | カスタマイズコーパス |
 | -- | -- | -- |
+| Face Recognition | サポートしています。素材の人物は主にエンターテインメントのスター、スポーツのスター、話題の人物に関係します | サポートしています。 [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/37584)を呼び出して、人の顔のカスタマイズコーパスを管理します |
 | 音声単語認識 | 現時点ではサポートしていません| サポートしています。[サーバーAPI](https://intl.cloud.tencent.com/document/product/266/37583) を呼び出してキーワードのコーパスを管理します|
 | 文字単語認識 | 現時点ではサポートしていません| サポートしています。[サーバーAPI](https://intl.cloud.tencent.com/document/product/266/37583) を呼び出してキーワードのコーパスを管理します
 
-
-## [](id:sh)ビデオコンテンツ認識テンプレート
+[](id:sh)
+## ビデオコンテンツ認識テンプレート
 
 ビデオコンテンツ認識は複数の認識機能を統合しており、パラメータによって細かく制御する必要があります。制御のターゲットは次となります。
 
 * 有効にする認識タイプ：コンテンツ認識の中のどの機能を有効にするか。
-* 使用する素材コーパス：インテリジェント認識に対して使用するのはパブリックコーパスかカスタマイズコーパスか。
-* フィルタリング点数の指定：インテリジェント認識の信頼度が何点に達したら結果を戻すか。
-* フィルタリングタグの指定：インテリジェント認識のタグがどの範囲にある結果を戻すかを指定。
+* 使用する素材コーパス：Face Recognitionに対して使用するのはパブリックコーパスかカスタマイズコーパスか。
+* フィルタリング点数の指定：Face Recognitionの信頼度が何点に達したら結果を戻すか。
+* フィルタリングタグの指定：人の顔のタグがどの範囲にある結果を戻すかを指定。
 
-一般的な操作の組み合わせを対象に、VODでは、[プリセットのビデオコンテンツ認識テンプレート](https://intl.cloud.tencent.com/document/product/266/33932)を提供しています。その他、 [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/37568) を呼び出してカスタマイズしたビデオコンテンツ認識テンプレートを作成し、管理することができます。-->
+一般的な操作の組み合わせを対象に、VODでは、[プリセットのビデオコンテンツ認識テンプレート](https://intl.cloud.tencent.com/document/product/266/33932)を提供しています。その他、 [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/37568) を呼び出してカスタマイズしたビデオコンテンツ認識テンプレートを作成し、管理することができます。
 
 ## タスクの開始
 
-ビデオコンテンツ認識タスクの開始には、「サーバーAPIから直接開始」、「コンソールから直接開始」、「アップロード時に実行したいタスクを指定」の3種類の方法があります。詳細内容は、ビデオ処理の[タスクの開始](https://intl.cloud.tencent.com/document/product/266/33931)をご参照ください。
+ビデオコンテンツ認識タスクの開始には、「サーバーAPIから直接開始する」、「コンソールから直接開始する」、「アップロード時に実行したいタスクを指定する」の3種類の方法があります。詳細内容は、ビデオ処理の[タスクの開始](https://intl.cloud.tencent.com/document/product/266/33931)をご参照ください。
 
 以下は、各方法のビデオコンテンツ認識タスク開始についての説明です。
 
 * サーバーAPI[ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) の呼び出しによるタスク開始：リクエストの中の`AiRecognitionTask`パラメータで [ビデオコンテンツ認識テンプレート](#sh) のテンプレートIDを指定します。
 * サーバーAPI[ProcessMediaByUrl](https://intl.cloud.tencent.com/document/product/266/34123) の呼び出しによるタスク開始：リクエストの中の`AiRecognitionTask`パラメータで [ビデオコンテンツ認識テンプレート](#sh) のテンプレートIDを指定します。
-* コンソールでのビデオに対するタスク開始： [サーバーAPI](https://intl.cloud.tencent.com/zh/document/product/266/37583) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。コンソールでこのタスクフローを使用して [ビデオ処理を開始](https://intl.cloud.tencent.com/document/product/266/33892)します。
-* サーバーからのアップロード時にタスクを指定： [サーバーAPI](https://intl.cloud.tencent.com/zh/document/product/266/37583) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。[アップロードの申請](https://intl.cloud.tencent.com/zh/document/product/266/34120) の中の`procedure`パラメータでこのタスクフローを指定します。
-* クライアントからのアップロード時にタスクを指定： [サーバーAPI](https://intl.cloud.tencent.com/zh/document/product/266/37583) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。[クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922) の中の`procedure`でこのタスクフローを指定します。
-* コンソールからのアップロード： [サーバーAPI](https://intl.cloud.tencent.com/zh/document/product/266/37583) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。コンソールを介してビデオをアップロードし、 [アップロードと同時にビデオに対する処理操作を実行](https://intl.cloud.tencent.com/document/product/266/33890) を選択して、ビデオアップロード後にこのタスクフローの実行を指定します。
+* コンソールでのビデオに対するタスク開始： [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34167) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。コンソールでこのタスクフローを使用して [ビデオ処理を開始](https://intl.cloud.tencent.com/document/product/266/33892)します。
+* サーバーからのアップロード時にタスクを指定： [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34167) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。[アップロードの申請](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) の中の`procedure`パラメータでこのタスクフローを指定します。
+* クライアントからのアップロード時にタスクを指定： [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34167) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。[クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922) の中の`procedure`でこのタスクフローを指定します。
+* コンソールからのアップロード： [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34167) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。コンソールを介してビデオをアップロードし、 [アップロードと同時にビデオに対する処理操作を実行](https://intl.cloud.tencent.com/document/product/266/33890) を選択して、ビデオアップロード後にこのタスクフローの実行を指定します。
 
 ## 結果の取得
 
@@ -128,7 +130,7 @@
                             {
                                 "Id":236099,
                                 "Type":"Default",
-                                "Name":"lisi",
+                                "Name":"李四",
                                 "SegmentSet":[
                                     {
                                         "StartTimeOffset":120,
@@ -155,8 +157,8 @@
 
 ```
 
-コールバックの結果の中で、`ProcedureStateChangeEvent.AiRecognitionResultSet`に`Type`が`FaceRecognition`となる認識結果があります。
+コールバックの結果の中で、`ProcedureStateChangeEvent.AiRecognitionResultSet`に`Type`が`FaceRecognition`となる認識結果があり、顔認識を表します。
 
-`Type`が`FaceRecognition`の結果では、`Output.ResultSet`の中に認識した人物が2人含まれており、それぞれ`張三`と`lisi`となっています。`SegmentSet`にはインテリジェント認識がビデオに登場した時間帯（`StartTimeOffset`と`EndTimeOffset`により確定）および画面の中の座標（`AreaCoordSet`により確定）が示されています。
+`Type`が`FaceRecognition`の結果では、`Output.ResultSet`の中に認識した人物が2人含まれており、それぞれ`張三`と`李四`となっています。`SegmentSet`には人の顔がビデオに登場した時間帯（`StartTimeOffset`と`EndTimeOffset`により確定）および画面の中の座標（`AreaCoordSet`により確定）が示されています。
 
 
