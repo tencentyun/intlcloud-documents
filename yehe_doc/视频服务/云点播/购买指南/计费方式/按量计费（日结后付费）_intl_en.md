@@ -150,11 +150,11 @@ Video acceleration is billed daily based on a volume pricing model. The more tra
 
 | Traffic Tier (USD/GB) | Chinese Mainland |Asia Pacific Zone 1|Asia Pacific Zone 2|Asia Pacific Zone 3|Middle East|Europe|North America|South America|Africa|
 | ----------|--------|---------|----------|----------|----------|----------|----------|----------|----------|
-|  0 GB - 500 GB (inclusive)   | 0.039             |0.113|0.125|0.125|0.163|0.071|0.071|0.169|0.169|
-| 500 GB - 2 TB (inclusive)   | 0.038             |0.105|0.105|0.105|0.159|0.064|0.064|0.161|0.161|
-| 2 TB - 50 TB (inclusive)   | 0.036            |0.097|0.099|0.099|0.154|0.051|0.051|0.156|0.156|
-| 50 TB - 100 TB (inclusive)     | 0.033             |0.084|0.092|0.092|0.145|0.033|0.033|0.15|0.15|
-| 100 TB  | 0.025             |0.071|0.085|0.085|0.135|0.026|0.026|0.14|0.14|
+| 0 GB - 500 GB (inclusive)    | 0.038 |0.072|0.119|0.110|0.188|0.069|0.069|0.161|0.188|
+| 500 GB - 2 TB (inclusive)    | 0.036 |0.067|0.110|0.100|0.172|0.061|0.061|0.154|0.172|
+| 2 TB - 50 TB (inclusive)     | 0.034 |0.056|0.102|0.088|0.161|0.049|0.049|0.141|0.161|
+|50 TB - 100 TB (inclusive)    | 0.031 |0.049|0.088|0.078|0.149|0.031|0.031|0.133|0.149|
+| > 100 TB                     | 0.024 |0.044|0.081|0.069|0.133|0.025|0.025|0.125|0.133|
 
 
 > ! For more information, see [Billing Examples](https://intl.cloud.tencent.com/document/product/266/38163#.E7.82.B9.E6.92.AD.E6.B5.81.E9.87.8F.E4.BD.BF.E7.94.A8.E9.A2.84.E4.BC.B0.E5.88.86.E6.9E.90).
