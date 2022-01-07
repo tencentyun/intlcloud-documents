@@ -25,6 +25,7 @@ public void onError(V2TXLivePlayer player, int code, String msg, Bundle extraInf
 | msg |  String |  错误信息。 |
 | extraInfo | Bundle|  扩展信息。 |
 
+***
 
 ### onWarning
 
@@ -42,6 +43,22 @@ public void onWarning(V2TXLivePlayer player, int code, String msg, Bundle extraI
 | msg | String |  警告码信息。 |
 | extraInfo | Bundle |  扩展信息。 |
 
+***
+
+### onConnected
+
+已经成功连接到服务器通知。
+
+```
+public void onConnected(V2TXLivePlayer player, Bundle extraInfo) 
+```
+
+#### 参数
+
+| 参数 | 类型 | 含义 |
+|-----|-----|-----|
+| player | V2TXLivePlayer |  回调该通知的播放器对象。 |
+| extraInfo | Bundle |  扩展信息。 |
 
 ## 视频相关回调
 ### onVideoResolutionChanged
@@ -56,7 +73,7 @@ public void onVideoResolutionChanged(V2TXLivePlayer player, int width, int heigh
 |-----|-----|-----|
 | player | V2TXLivePlayer |  回调该通知的播放器对象。 |
 | width | int |  视频宽。 |
-| width | int |  视频高。 |
+| height | int |  视频高。 |
 
 ### onVideoLoading
 
@@ -99,6 +116,7 @@ public void onSnapshotComplete(V2TXLivePlayer player, Bitmap image)
 | player | V2TXLivePlayer |  回调该通知的播放器对象。 |
 | image | Bitmap * | 已截取的视频画面。 |
 
+***
 
 ### onRenderVideoFrame
 
@@ -115,6 +133,8 @@ public void onRenderVideoFrame(V2TXLivePlayer player, V2TXLiveVideoFrame videoFr
 |-----|-----|-----|
 | player | V2TXLivePlayer |  回调该通知的播放器对象。 |
 | videoFrame | V2TXLiveVideoFrame | 视频帧数据。 |
+
+***
 
 
 ## 音频相关回调
@@ -159,6 +179,7 @@ public void onPlayoutVolumeUpdate(V2TXLivePlayer player, int volume)
 | player | V2TXLivePlayer |  回调该通知的播放器对象。 |
 | volume | int | 音量大小，取值范围：0 - 100。 |
 
+***
 
 ## 统计回调
 ### onStatisticsUpdate
