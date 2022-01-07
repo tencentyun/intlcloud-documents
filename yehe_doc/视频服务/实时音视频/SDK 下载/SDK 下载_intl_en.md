@@ -17,83 +17,83 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_trtc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip">Download</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
-      <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">Document</a></td>
-      <td style="text-align:center">3 MB (arm64)</td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'zip'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'doc_demo'})" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'doc_sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
+      <td style="text-align:center">3M（arm64）</td>
    </tr>
      <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_trtc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip">Download</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
-      <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35084">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35093">Document</a></td>
-      <td style="text-align:center">jar: 546 KB<br> so (armeabi): 4.5 MB <br> so (armv7): 4.5 MB<br>so (arm64): 5.3 MB</td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'zip'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'doc_demo'})" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'doc_sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
+      <td style="text-align:center">jar：546K<br> so（armeabi）：4.5M<br> so（armv7）：4.5M<br>so（arm64）：5.3M</td>
    </tr>
      <tr>
-      <td style="text-align:center">Windows (C++)</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_cplusplus_trtc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">Download</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
-      <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35085">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35095">Document</a></td>
-      <td style="text-align:center">12.7 MB (C++ x86)<br>15.6 MB (C++ x64)</td>
+      <td style="text-align:center">Windows(C++)  </td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_cpp', ext1: 'zip'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_cpp', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_cpp', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_cpp', ext1: 'doc_demo'})" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_cpp', ext1: 'doc_sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
+      <td style="text-align:center">12.7M（C++ x86）<br>15.6M（C++ x64）</td>
    </tr>
      <tr>
-      <td style="text-align:center">Windows (C#)</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_csharp_trtc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">Download</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
-      <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35085">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35095">Document</a></td>
-      <td style="text-align:center">13.8 MB (C# x64)<br>13.3 MB (C# x86)</td>
+      <td style="text-align:center">Windows(C#) </td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_csharp', ext1: 'zip'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_csharp', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_csharp', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_csharp', ext1: 'doc_demo'})" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_csharp', ext1: 'doc_sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
+      <td style="text-align:center">13.8M（C# x64）<br>13.3M（C# x86）</td>
    </tr>
      <tr>
-      <td style="text-align:center">macOS</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_mac_trtc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2">Download</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
-      <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35094">Document</a></td>
-      <td style="text-align:center">2.05 MB (arm64)</td>
+      <td style="text-align:center">Mac</td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_mac', ext1: 'zip'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_mac', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_mac', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_mac', ext1: 'doc_demo'})" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_mac', ext1: 'doc_sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35094">DOC</a></td>
+      <td style="text-align:center">2.05M（arm64）</td>
    </tr>
      <tr>
       <td style="text-align:center">Web</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_web_trtc") href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">Download</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
-      <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35607">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35096">Document</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_web', ext1: 'zip'})" href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_web', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_web', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_web', ext1: 'doc_demo'})" href="https://intl.cloud.tencent.com/document/product/647/35607">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_web', ext1: 'doc_sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35096">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
    <tr>
       <td style="text-align:center">Electron  </td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_electron_trtc") href="https://web.sdk.qcloud.com/trtc/electron/download/TXLiteAVSDK_TRTC_Electron_latest.zip">Download</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
-      <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35089">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35097">Document</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_electron', ext1: 'zip'})" href="https://web.sdk.qcloud.com/trtc/electron/download/TXLiteAVSDK_TRTC_Electron_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_electron', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_electron', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_electron', ext1: 'doc_demo'})" href="https://intl.cloud.tencent.com/document/product/647/35089">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_electron', ext1: 'doc_sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35097">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
 	    <tr>
       <td style="text-align:center">Flutter</td>
-      <td style="text-align:center"><a href="https://pub.dev/packages/tencent_trtc_cloud/versions">DOWNLOAD</a></td>
-      <td style="text-align:center"><a href="https://github.com/c1avie/trtc_demo">GitHub</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_flutter', ext1: 'zip'})" href="https://pub.dev/packages/tencent_trtc_cloud/versions">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_flutter', ext1: 'github'})" href="https://github.com/c1avie/trtc_demo">Github</a></td>
       <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/39243">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35098">Document</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_flutter', ext1: 'doc_demo'})" href="https://intl.cloud.tencent.com/document/product/647/39243">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_flutter', ext1: 'doc_sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35098">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
       <tr>
       <td style="text-align:center">React Native</td>
       <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCReactNative">Github</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_rn', ext1: 'github'})" href="https://github.com/tencentyun/TRTCReactNative">Github</a></td>
       <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/43297">DOC</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/43298">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_rn', ext1: 'doc_demo'})" href="https://intl.cloud.tencent.com/document/product/647/43297">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_rn', ext1: 'doc_sdk'})" href="https://intl.cloud.tencent.com/document/product/647/43298">DOC</a></td>
       <td style="text-align:center">N/A</td>
 </tr>
 </table>
@@ -120,21 +120,21 @@ The Professional edition integrates multiple key audio/video features of Tencent
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_professional") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">Download</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/LiteAVProfessional_iOS">GitHub</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'zip', ext2:'professional'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'github', ext2:'professional'})" href="https://github.com/tencentyun/LiteAVProfessional_iOS">Github</a></td>
       <td style="text-align:center">Yes</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">Document</a></td>
-      <td style="text-align:center">3.2 MB (arm64)</td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'doc_demo', ext2:'professional'})" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'doc_sdk', ext2:'professional'})" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
+      <td style="text-align:center">3.2M（arm64）</td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_professional") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">Download</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/LiteAVProfessional_Android">GitHub</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'zip', ext2:'professional'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'github', ext2:'professional'})" href="https://github.com/tencentyun/LiteAVProfessional_Android">Github</a></td>
       <td style="text-align:center">Yes</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35084">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35093">Document</a></td>
-      <td style="text-align:center">jar: 1 MB<br> so (armeabi): 5.7 MB<br> so (armv7): 5.7 MB<br>so (arm64): 6.8 MB</td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'doc_demo', ext2:'professional'})" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'doc_sdk', ext2:'professional'})" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
+      <td style="text-align:center">jar：1M<br> so（armeabi）：5.7M<br> so（armv7）：5.7M<br>so（arm64）：6.8M</td>
    </tr>
 </table>
 
@@ -159,19 +159,19 @@ In addition to the features of the Professional edition, the Enterprise edition 
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_enterprise") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_iOS_latest.zip">Download</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'zip', ext2:'enterprise'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_iOS_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center">Yes</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">Document</a></td>
-      <td style="text-align:center"> 5.5 MB (arm64)</td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'doc_demo', ext2:'enterprise'})" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_ios', ext1: 'doc_sdk', ext2:'enterprise'})" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
+      <td style="text-align:center"> 5.5M（arm64）</td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_enterprise") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_Android_latest.zip">Download</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'zip', ext2:'enterprise'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_Android_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center">Yes</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35084">Document</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35093">Document</a></td>
-      <td style="text-align:center"> jar: 2.2 MB<br>so (armeabi): 9.3 MB</td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'doc_demo', ext2:'enterprise'})" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
+      <td style="text-align:center"><a onclick="aegis.reportEvent({name: 'download_click_android', ext1: 'doc_sdk', ext2:'enterprise'})" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
+      <td style="text-align:center"> jar：2.2M<br>so(armeabi)：9.3M</td>
    </tr>
 </table>
 
@@ -191,7 +191,7 @@ In addition to the features of the Professional edition, the Enterprise edition 
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">LiteAV_Smart</a></th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/37914">LiteAV_UGC</a></th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">LiteAV_TRTC</a></th>
-    <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/881/20205">LiteAV_Player</a></th>
+    <th width="100px" style="text-align:center">LiteAV_Player</th>
     <th width="100px" style="text-align:center"><a href="#Professional">Professional</a></th>
     <th width="100px" style="text-align:center"><a href="#Enterprise">Enterprise</a></th>
   </tr>
