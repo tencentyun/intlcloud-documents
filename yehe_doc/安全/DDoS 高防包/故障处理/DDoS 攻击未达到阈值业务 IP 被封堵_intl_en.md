@@ -3,7 +3,7 @@
 The attack traffic did not reach the purchased blocking threshold, but the IP was blocked.
 
 ## Possible Causes
-You have purchased Anti-DDoS Pro, and the total attack traffic at all network egresses has reached the purchased threshold, so the IP was blocked. The calculation method is to compare the attack traffic at all network egresses with the purchase threshold.
+You have purchased Anti-DDoS Pro, and the total attack traffic at all network egresses has not reached the purchased threshold, so the IP was blocked. The calculation method is to compare the attack traffic at all network egresses with the purchase threshold.
 1. There are two types of blocking based on the location of the blocked node.
  - TIX blocking: Tencent's egress gateway is blocked. The blocking threshold is adjustable.
  - ISP blocking: the ISP is blocked. The blocking threshold is basically fixed.
