@@ -23,9 +23,9 @@ This document describes and compares the features supported by different types o
 <td align="left">1</td></tr>
 <tr>
 <td align="left">Memory/Disk</td>
-<td align="left">Up to 488 GB/6 TB</td>
-<td align="left">Up to 488 GB/6 TB</td>
-<td align="left">Up to 488 GB/6 TB</td>
+<td align="left">Up to 690 GB/6 TB</td>
+<td align="left">Up to 690 GB/6 TB</td>
+<td align="left">Up to 690 GB/6 TB</td>
 <td align="left">Up to 8 GB/1 TB</td></tr>
 <tr>
 <td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/8126" target="_blank">Upgrading database engine version</a></td>
