@@ -41,12 +41,12 @@
 | 音频输出捕获   | 用于音频直播活动（音频输出设备）                           |
 
 
-![](https://main.qcloudimg.com/raw/c59eff44ffd2ac4c785fe4e4e3bd79b8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cd227431216391302e50a3ed4e794de2.png)
 
 
 ### 设置推流参数[](id:step2)
 1. 通过底部工具栏的 **控件>设置** 按钮进入设置界面。
-![img](https://main.qcloudimg.com/raw/56e4c19f24d08df7b8f8815f1ffb6857.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/26404eda70b80a654f3119683ae3ca46.png)
 2. 单击 **推流** 进入推流设置页签，选择服务类型为**自定义**。
 3. 服务器填写：`rtmp://rtmp.rtc.qq.com/push/`。
 4. 填写串流密钥格式如下：
@@ -60,36 +60,36 @@
 	- 为简化参数，只支持字符串房间号，不超过64个字符，字符只能是数字、字母、下划线。TRTC 其他端如果要观看 RTMP 流，需要使用**字符串房间号进房**。
 	- usersig 的生成规则，请参见 [UserSig 相关](https://intl.cloud.tencent.com/document/product/647/35166) （**请注意签名要在有效期内**）。
 	- 以上服务器地址 + 串流密钥组成 RTMP 推流地址，也可以供 FFmpeg 或其他 RTMP 库推流。
-![](https://qcloudimg.tencent-cloud.cn/raw/bc4be526005a7ac4f81ec6badd507271.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c3b309db1312f19abb3ca147c1ecea32.png)
 
 ### 设置输出[](id:step3)
 RTMP 后台不支持传输 B 帧，用户可以通过如下设置调整推流端软件的视频编码参数来去除 B 帧。
 1. 在**设置**中单击**输出**页签进行配置。
 2. 在**输出模式**中选择**高级**，**关键帧间隔建议填写1或2**，单击**确定**保存设置。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/6f331bf0f0299060470008acab20954a.png)  
+![](https://qcloudimg.tencent-cloud.cn/raw/072b2fbaf9a3bf6674a48943223de22c.png)  
 
 
 ### 设置视频选项[](id:step4)
 在**设置**中单击**视频**页签，设置分辨率和帧率。分辨率决定了观众看到的画面清晰程度，分辨率越高画面越清晰。FPS 是视频帧率，它控制观看视频的流畅，普通视频帧率有24帧 - 30帧，低于16帧画面看起来有卡顿感，而游戏对帧率要求比较高，一般小于30帧游戏会显得不连贯。
-![](https://qcloudimg.tencent-cloud.cn/raw/a67ecbbdf5e44c9316604bef3a20ca05.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/81e9e716bf76a8a1a20a1badcf7dfcd9.png)
 
 
 ### 高级选项[](id:step5)
 - 建议不启用**串流延迟**以减少端到端延迟。
 - 启动**自动重连**，建议设置**重试延迟**时长尽量短，网络抖动时如果连接断开可尽快重连上。
-![](https://qcloudimg.tencent-cloud.cn/raw/f500c91d29963f7f772a084ccea2d930.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7a25a1cb3e2a6daf07508bcb2fdabeb6.png)
 
 
 ### 单击推流[](id:step6)
 1. 查看 OBS 底部工具栏的 **控件**，单击 **开始推流**。
-![](https://qcloudimg.tencent-cloud.cn/raw/22953d87c6a7cbfa34b9e7639507be37.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8709c618536109bfb02e860b47581e45.png)
 2. 推流成功后，正常情况在界面底部会展示推流状态，TRTC 控制台仪表盘上有该用户进房记录。
-![](https://qcloudimg.tencent-cloud.cn/raw/a4b27551f991d73539bb5d2f834a4d38.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/15c0d1b5df33c4a738050f1f532a990c.png)
 
 ### 其他端观看[](id:step7)
 如前面 [设置推流参数](#step2) 所说，TRTC 其他端进房需要使用字符串房间号，Web 端观看 RTMP 流的效果如下所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/ae71beea5458b056697433acdbf6844e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/787178aa5dc550a592f5455d9f2ffb8e.png)
 
 ## FFmpeg 设置[](id:FFmpeg)
 如果需要用命令行或其他 RTMP 库推流，请参见 [设置推流参数](#step2) 中服务器地址 + 串流密钥组成标准 RTMP 推流地址，可供 FFmpeg 或其他 RTMP 库推流，视频编码使用 H.264，音频编码使用 AAC，容器格式使用 FLV，建议 GOP 设置为2s或1s。
@@ -137,6 +137,6 @@ ffmpeg -loglevel info -re -i sample.flv -c:v libx264 -preset fast -profile:v bas
 ```
 
 ### Web 端观看效果[](id:view)
-![](https://qcloudimg.tencent-cloud.cn/raw/323175a92a936e5c7dcfdef5a2575e60.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3ba672af6154d1998b4e5ede78296d9d.png)
 
 
