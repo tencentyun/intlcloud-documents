@@ -14,15 +14,15 @@ This document describes how to enable database proxy in the TencentDB for MySQL 
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, select the source instance for which to enable database proxy and click its ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the instance management page, select the **Database Proxy** tab and click **Enable Now**.
 ![](https://main.qcloudimg.com/raw/46d9e9b30975b51bee00a16c64f31c8b.png)
-3. In the pop-up window, select the specification and node quantity and click **OK**.
+3. In the pop-up window, select the specification and node quantity, click **OK**, and refresh.
  - Network: currently, only VPC is supported. The VPC of the source instance is selected by default.
  - Proxy Specification: currently, only one specification is supported.
  - Node Quantity: number of proxy nodes. We recommend you set the quantity to 1/8 (rounded up) of the total number of CPU cores on the source and read-only instances; for example, if the source instance has 4 CPU cores, and the read-only instance has 8 CPU cores, then the recommended node quantity will be (4 + 8) / 8 ≈ 2.
-![](https://main.qcloudimg.com/raw/a3d8fafb1930d0298deb9cf2f08e706c.png)
-4. After successfully enabling the service, you can manage proxy nodes and view their basic information on the database proxy page.
+ - Security Group: it is an important means of network security isolation. You can choose an existing security group or create a new one as needed.
+<img src="https://main.qcloudimg.com/raw/a3d8fafb1930d0298deb9cf2f08e706c.png"  style="zoom:80%;"> 
+4. After successfully enabling the service, you can manage proxy nodes and view their basic information on the database proxy page. You can also modify the database proxy address and network type and add remarks in the **Connection Address** section.
 >?
 >- You can view **Connections** in the proxy node list or view the performance monitoring data of each proxy node to check whether the numbers of connections on the nodes are unbalanced, and if so, you can distribute the connections by clicking **Rebalance**.
 >- Rebalance will cause proxy nodes to restart, and the service will become unavailable momentarily during the restart. We recommend you restart the service during off-peak hours. Make sure that your business has a reconnection mechanism.
 >
 ![](https://main.qcloudimg.com/raw/083d38858367fd7fe65e90fb92210178.png)
-

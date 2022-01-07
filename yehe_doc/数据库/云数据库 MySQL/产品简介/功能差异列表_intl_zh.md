@@ -23,9 +23,9 @@
 <td align="left">1</td></tr>
 <tr>
 <td align="left">内存/硬盘</td>
-<td align="left">最高488GB/6TB</td>
-<td align="left">最高488GB/6TB</td>
-<td align="left">最高488GB/6TB</td>
+<td align="left">最高690GB/6TB</td>
+<td align="left">最高690GB/6TB</td>
+<td align="left">最高690GB/6TB</td>
 <td align="left">最高8GB/1T</td></tr>
 <tr>
 <td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/8126" target="_blank">升级引擎版本</a></td>

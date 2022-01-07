@@ -105,7 +105,7 @@
 <tr><th width="17%">성능 데이터</th><th width="50%">설명</th>
 </tr><tr>
 <td>MOS 값</td>
-<td>통신 시스템 음성 품질 측정에 자주 사용되는 중요 지표로, 객관적인 MOS 값은 Spirent Nomad 디바이스를 도입하여 POLQA 점수를 매기며 점수가 높을수록 음질이 좋습니다.</td>
+<td>통신 시스템 음성 품질 측정에 자주 사용되는 중요 지표로, 객관적인 MOS 값은 Spirent Nomad 디바이스를 도입하여 <a href="#POLQA">POLQA</a> 점수를 매기며 점수가 높을수록 음질이 좋습니다.</td>
 </tr><tr>
 <td>end to end 딜레이</td>
 <td>end to end 딜레이는 발신측 음성 수집부터 수신측에 재생될 때까지의 시간을 의미</td>
