@@ -2,14 +2,15 @@
 
 
 ## 注册与登录
-- 如果您还没完成腾讯云账户的注册，请先 [注册](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F%3FfromSource%3Dgwzcw.184926.184926.184926%26gclid%3DEAIaIQobChMIoaGVwcT21gIVFSNoCh3VxAi-EAAYASAAEgId7PD_BwE)，注册完成后您需要进行实名认证，具体操作可参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
+- 如果您还没完成腾讯云账户的注册，请先 [注册](https://intl.cloud.tencent.com/register)，注册完成后您需要进行实名认证，具体操作可参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
 - 如果您已注册腾讯云账户，并进行了实名认证，可直接登录 [腾讯云](https://console.cloud.tencent.com/)， 选择**云产品** > **管理与审计** > **云审计**，进入云审计页面。
 
 ##  查看操作记录
 ### 列表
 1. 登录 [云审计控制台](https://console.cloud.tencent.com/cloudaudit)。
 2. 在左侧导航中，单击**操作记录**，进入操作记录页面。
-3. 在操作记录页面中，您可以根据用户名称、操作类型、资源事件名称、资源名称、请求 ID 、API 错误码、密钥 IP 及对应操作事件时间，获取相关的操作记录信息，您需要查询的操作记录将会以列表的形式展示出来，默认情况下只展示部分数据。
+3. 在操作记录页面中，您可以根据用户名称、操作类型、资源事件名称、资源名称、请求 ID 、API 错误码、密钥 IP 及对应操作事件时间，获取相关的操作记录信息，您需要查询的操作记录将会以列表的形式展示出来，默认情况下只展示部分数据。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/d02623d12e729feefda54aa4320bdb30.png)
 
 ### 详情
 您在获取到相关的操作记录列表后，如果想更进一步了解单个操作记录，可以单击该操作记录左侧的 <img src="https://main.qcloudimg.com/raw/be1649be0251749641c35e81db22535e.png" style="margin:-3px 0px;">，您就会得到此操作记录的详情，包括事件时间、用户名、事件名称、访问密钥、事件 ID、源 IP 地址、资源区域、CAM 错误码、事件区域、 事件源、请求 ID。同时，可以单击**查看事件**，进行了解事件的相关信息。如下图所示：
@@ -34,6 +35,13 @@
 3. **投递存储位置**
 单击跟踪集详情页面“投递位置”中的**编辑**，可以选择投递存储桶（COS）或者投递到日志服务（CLS），编辑完成后单击**保存**即可。如下图所示：
 ![](https://main.qcloudimg.com/raw/1f720f70cccb6daf0e7bcea5affc8aba.jpg)
-4. **删除跟踪集**
+4. **集团账号跨账号投递**
+<dx-alert infotype="explain" title="">
+当前账号为企业实名认证账号，且已创建集团账号组织时，可使用此功能。
+</dx-alert>
+单击跟踪集详情页面“投递位置”中的<b>编辑</b>，可以选择当前账号投递（默认）或者跨账号投递日志。
+<br>勾选“集团账号下所有成员”并保存后，即已开启跨账号投递功能，跟踪集会将集团账号下各成员的日志投递到您设置的投递位置中。如下图所示：
+<img src="https://qcloudimg.tencent-cloud.cn/raw/3076ac00d1fbb7e9e9beab29ae7f0f31.png"/>
+5. **删除跟踪集**
 在“跟踪集”页面中，单击跟踪集所在行右侧的**删除**，或在跟踪集详情页面单击**删除跟踪集**即可。
 
