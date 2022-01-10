@@ -1,13 +1,13 @@
 
-云数据库 MySQL 将于2021年12月7日起，进行参数相关能力和发货流程的优化。本次优化涉及参数模版创建、参数对比、参数模版应用、参数修改等能力、可修改参数以及新购实例优化的更新。
+云数据库 MySQL 将于2021年12月8日起，进行参数相关能力和发货流程的优化。本次优化涉及参数模板创建、参数对比、参数模板应用、参数修改等能力、可修改参数以及新购实例优化的更新。
 
 >?如需提前体验该参数相关能力和发货流程的优化，可在2021年09月27日后，[提交工单](https://console.cloud.tencent.com/workorder/category) 进行内测申请。
-参数相关能力仅适用于双节点和三节点的 MySQL 5.6、MySQL 5.7、MySQL 8.0 版本。
+参数相关能力仅适用于双节点和三节点的 MySQL 5.6、MySQL 5.7、MySQL 8.0 板本。
 
 ## 新购实例优化
 相较于原有新购实例流程，取消了初始化过程，在新购页面支持选择字符集、表名大小写敏感、填写数据库访问端口、root 密码。
 
-详细请参见 [创建 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/43472)。
+详细请参见 [创建 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37785)。
 
 ## 参数相关优化
 ### 参数应用
@@ -22,13 +22,13 @@
 
 参数详细设置请参见 [设置实例参数](https://intl.cloud.tencent.com/document/product/236/35793)。
 
-### 参数模版创建
-创建参数模版时，由原有的一种模版变为两种模版（高性能参数模版/高稳定性参数模版），新增原始模版类型选项。
+### 参数模板创建
+创建参数模板时，由原有的一种模板变为两种模板（高性能参数模板/高稳定性参数模板），新增原始模板类型选项。
 <img src="https://main.qcloudimg.com/raw/a93abb9d05b05c0018c46d5efa027221.png"  style="zoom:90%;">
 
-各模版参数对比：
+各模板参数对比：
 
-|   差异参数名           | 默认模版                  | 高性能参数模版       | 高稳定性模版              |
+|   差异参数名           | 默认模板                  | 高性能参数模板       | 高稳定性模板              |
 | -------------------- | ------------------------- | ------------------------ | -------------------------- |
 | innodb_read_io_threads          | 12            | {MAX(DBInitCpu/2,4)}              | {MAX(DBInitCpu/2,4)}             |
 | innodb_write_io_threads         | 12            | {MAX(DBInitCpu/2,4)}              | {MAX(DBInitCpu/2,4)}                |
@@ -78,20 +78,20 @@
 | thread_pool_size                                |        -          | &#10003;    | &#10003;   |
 | tx_isolation                                        |          -        | &#10003;    | &#10003;    |
 
-### 各模版性能测试
+### 各模板性能测试
 测试结果如下：
 ![](https://qcloudimg.tencent-cloud.cn/raw/0f1aadfa080a43281fd98bea342812e6.png)
 ![](https://qcloudimg.tencent-cloud.cn/raw/29c6c04452626abe48e32c8370fe3aef.png)
 ![](https://qcloudimg.tencent-cloud.cn/raw/3ed85cff088505c9f6979c42d5aadf20.png)
 。
 
-### 如何保留默认参数模版
-在新参数系统上线后，默认参数模版将会被高性能参数模版以及高稳定性模版替代，在新参数系统上线前依然可以通过创建参数模版的方式保留默认参数模版的设置。请参见  [使用参数模板](https://intl.cloud.tencent.com/document/product/236/31906)。
+### 如何保留默认参数模板
+在新参数系统上线后，默认参数模板将会被高性能参数模板以及高稳定性模板替代，在新参数系统上线前依然可以通过创建参数模板的方式保留默认参数模板的设置。请参见  [使用参数模板](https://intl.cloud.tencent.com/document/product/236/31906)。
 
 ### 参数对比
-提供不同模版之间的参数对比能力，查看不同模版之间的参数差异。
+提供不同模板之间的参数对比能力，查看不同模板之间的参数差异。
 ![](https://qcloudimg.tencent-cloud.cn/raw/8529618ea8427864dea55f10b675ecb4.png)
-在参数模版页面单击**对比**，在弹窗中选择想要对比的模版即可，仅支持对比相同版本的数据库模版。结果参考如下：
+在参数模板页面单击**对比**，在弹窗中选择想要对比的模板即可，仅支持对比相同板本的数据库模板。结果参考如下：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/aad046642c7bec92ccacfda616887781.png"  style="zoom:80%;">
 
 ## 联系我们
