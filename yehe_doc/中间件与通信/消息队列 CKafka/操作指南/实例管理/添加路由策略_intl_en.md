@@ -28,7 +28,7 @@ The VPC access address provided in the console (such as `172.16.0.12:9092`) repr
 
 ::: 
 
-::: Public domain name access
+::: Public\sdomain\sname\saccess
 **Operation scenario**: if your consumer or producer is located in a self-built data center or another cloud, you can produce and consume data in CKafka through public network access.<br>
 
 **Suggestion**: to ensure security, Kafka offers various security authentication mechanisms, which mainly fall into the SSL and SASL2 categories. Among them, SASL/PLAIN is an authentication method based on account and password and more commonly used. CKafka supports SASL_PLAINTEXT and SASL_SSL authentication. You are recommended to configure the authentication method as appropriate when selecting public domain name access.<br>
