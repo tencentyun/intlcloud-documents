@@ -2,7 +2,7 @@
 TencentDB for SQL Server supports migrating data from a CVM-based self-created SQL Server database to a TencentDB for SQL Server instance. This document describes how to configure and run such a migration task.
 >!
 >- Before migration, please make sure that the SQL Server version of the target instance is not below that of the source instance.
->- For the .bak files used for migration, please make sure that each .bak file contains only one database.
+>- Support the upload of single bak file and tar compressed file for recovery.
 >- The name of the migrated database cannot be the same as that of the TencentDB for SQL Server instance.
 
 ## Directions
