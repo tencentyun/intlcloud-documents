@@ -9,9 +9,8 @@
 2. 在实例列表中，选择好地域，单击需要查看的“实例 ID/名称”，进入实例详情页。
 3. 在实例详情页顶部，单击 **Dashboard**，设置好时间范围，查看相关排行信息。
    - Topic：展示 Topic 生产消费流量 Top10 和 占用磁盘容量 Top10。
-     ![](https://qcloudimg.tencent-cloud.cn/raw/637c7f6ae9dc96b73a1e37c9ee77f29f.png)
    - Consumer Group：展示 Consumer Group 消费速度 Top10。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/5ae57a92f2a2a49a85fe98d8a11c790a.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/03f6ec784d56e2893851dc6afbb8711f.png)
 
 
 
