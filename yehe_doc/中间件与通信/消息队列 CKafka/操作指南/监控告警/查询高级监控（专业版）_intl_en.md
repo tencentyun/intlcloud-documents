@@ -10,13 +10,49 @@ This document describes how to view advanced monitoring metrics in the console a
 2. In the instance list, click the **ID/Name** of the target instance to enter the instance details page.
 3. At the top of the instance details page, click **Monitoring** > **Advanced Monitoring**, select the metric to be viewed, and set the time range to view the monitoring data.
 
+### Monitoring information display
+
+>?You can click the following tabs to view the monitoring information of the core service, production, consumption, instance resource, and broker GC.
+
+<dx-tabs>
+::: Core service
+
+![](https://main.qcloudimg.com/raw/2f05337f970cfc740b593a1b54e4ac60.png)
+
+::: 
+
+::: Production
+
+![](https://main.qcloudimg.com/raw/ee20847967ac67549aed0f93e56347ed.png)
+
+:::
+
+::: Consumption
+
+![](https://main.qcloudimg.com/raw/324c8c155cc9e648157a88d98747e1e4.png)
+
+:::
+
+::: Instance resource
+
+![](https://main.qcloudimg.com/raw/fa36fb68ce17cb1dd135221b94ceb64f.png)
+
+:::
+
+::: Broker GC
+
+![](https://main.qcloudimg.com/raw/7e7f4b274d8b3291d141c33dd5314c51.png)
+
+:::
+
+</dx-tabs>
 
 ### Monitoring metric description
 
 >?You can click the following tabs to view the detailed descriptions of monitoring metrics of the core service, production, consumption, instance resource, and broker GC.
 
 <dx-tabs>
-::: Core\sservice\smonitoring
+::: Core service monitoring
 
 <style>
 table th:nth-of-type(1){
@@ -48,7 +84,7 @@ width:42%
 | Total production duration  | This value indicates the total duration of a production request, which is based on metrics such as the request queue duration, local processing duration, and delayed response duration. <br/>At each point in time, the total duration is not equal to the sum of the following five metrics, because each metric is averaged. | <li>This value generally ranges between 0 and 100 ms. A value of 0–1000 ms is normal when the data volume is high. </li><li>No action is required unless this value stays above 1000 ms.</li> |
 | Request queue duration | This value indicates the amount of time a production request waits in the queue of requests to be received. It means that the request packet waits for subsequent processing. | <li>This value generally ranges between 0 and 50 ms. A value of 0–200 ms is normal when the data volume is high. </li><li>No action is required unless this value stays above 200 ms.</li> |
 | Local processing duration | This value indicates the amount of time a production request is processed by the leader broker, i.e., the duration between the request packet is obtained from the request queue and it is written to the local page cache. | <li>This value generally ranges between 0 and 50 ms. A value of 0–200 ms is normal when the data volume is high. </li><li>No action is required unless this value stays above 200 ms.</li> |
-| ack wait duration | This value indicates the amount of time a production request waits for data to be synced. It is greater than 0 only when the client ack is -1; in other words, it is 0 as long as ack is 1 or 0. | <li>This value generally ranges between 0 and 200 ms. A value of 0–500 ms is normal when the data volume is high. </li><li>No action is required unless this value stays above 500 ms. </li><li>This value for a multi-AZ instance is greater than that for a single-AZ instance when ack is -1. For more information, please see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243). </li> |
+| ack wait duration | This value indicates the amount of time a production request waits for data to be synced. It is greater than 0 only when the client ack is -1; in other words, it is 0 as long as ack is 1 or 0. | <li>This value generally ranges between 0 and 200 ms. A value of 0–500 ms is normal when the data volume is high. </li><li>No action is required unless this value stays above 500 ms. </li><li>This value for a multi-AZ instance is greater than that for a single-AZ instance when ack is -1. For more information, see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243). </li> |
 | Delayed response duration | This value indicates the amount of time it takes the system to delay returning a packet to a production request. This value will always be 0 as long as the traffic of the instance does not exceed the purchased traffic, and it will be greater than 0 if the traffic is throttled. | <li>This value will be 0 as long as the instance does not exceed the limit. </li><li>If the limit is exceeded, there will be a delay of 0–5 minutes proportional to the excess; in other words, the maximum value is 5 minutes.</li> |
 | Response queue duration | This value indicates the amount of time a production request waits in the response queue. It means that the request packet waits to be sent to the client. | <li>This value generally ranges between 0 and 50 ms. A value of 0–200 ms is normal when the data volume is high. </li><li>No action is required unless this value stays above 200 ms.</li> |
 
@@ -67,19 +103,19 @@ width:42%
 
 :::
 
-::: Instance\sresource
+::: Instance resource
 
 | Monitoring Metric     | Description                                                     | Normal Range                                                   |
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | CPU utilization (%) | This is the percentage of CPU time used by a process in a period of time to the total CPU time. | <li>This value is generally between 1 and 100. </li><li>If it is above 90 in more than 5 statistical periods, the system load is very high and needs to be handled. </li> |
 | Disk utilization (%) | This is the usage of a disk mounted to a CVM instance. | <li>This value is generally between 0 and 100. </li><li>If it exceeds 80, capacity expansion is required. </li> |
-| Private network inbound bandwidth (MBytes) | This is the bandwidth that a CVM instance can reach for communication in the cluster and limits the private network bandwidth and packet receiving capabilities according to different specifications. | <li>This value is generally greater than 0 (CVM monitoring in the cluster will generate data). </li><li>If there is no inbound bandwidth, the CVM service is exceptional or the network is unreachable. </li> |
-| Private network outbound bandwidth (MBytes) | This is the bandwidth that a CVM instance can reach for communication in the cluster and limits the private network bandwidth and packet sending capabilities according to different specifications. | <li>This value is generally greater than 0 (CVM monitoring in the cluster will generate data). </li><li>If there is no outbound bandwidth, the CVM service is exceptional or the network is unreachable. </li> |
+| Private network inbound bandwidth (MB) | This is the bandwidth that a CVM instance can reach for communication in the cluster and limits the private network bandwidth and packet receiving capabilities according to different specifications. | <li>This value is generally greater than 0 (CVM monitoring in the cluster will generate data). </li><li>If there is no inbound bandwidth, the CVM service is exceptional or the network is unreachable. </li> |
+| Private network outbound bandwidth (MB) | This is the bandwidth that a CVM instance can reach for communication in the cluster and limits the private network bandwidth and packet sending capabilities according to different specifications. | <li>This value is generally greater than 0 (CVM monitoring in the cluster will generate data). </li><li>If there is no outbound bandwidth, the CVM service is exceptional or the network is unreachable. </li> |
 | Memory utilization (%) | This is the percentage of the total memory space minus the used memory space to the total memory space. | <li>This value is generally between 1 and 100. </li><li>If it is above 90, the program uses too much memory and some processes need to be handled. </li> |
 
 :::
 
-::: Broker\sGC
+::: Broker GC
 
 | Monitoring Metric     | Description                                                     | Normal Range                                                   |
 | -------------- | --------------------- | ------------------------------------------------------------ |
@@ -98,6 +134,6 @@ The following describes causes of certain monitoring metric exceptions.
 | --------------------- | ------------------------------------------------------------ |
 | CPU utilization (%) | When you find that it is above 90% in more than 5 consecutive statistical periods, you can first check whether there are message compression and message format conversion. If the client machine has sufficient CPU resources, we recommend you enable Snappy compression. You can observe the request queue depth at the same time. If this value is too large, it may be because that the request volume is too high, which may also cause a high CPU load. |
 | Unsynced replicas (count) | When this value is above 0, there are unsynced replicas in the cluster. This is usually due to broker node exceptions or network issues. You can troubleshoot through the broker logs. |
-| Full GC count (count) | If this problem occurs occasionally, it may be caused by disk I/O related to CVM instances. You can check whether it often occurs on the instance with the same IP subsequently, and if so, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. |
-| Request queue depth (count) | If the client's production and consumption time out, but the CVM load is normal, the request queue depth of the CVM instance has reached the upper limit, which is 500 by default. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to adjust it appropriately according to the purchased resource configuration. |
+| Full GC count (count) | If this problem occurs occasionally, it may be caused by disk I/O related to CVM instances. You can check whether it often occurs on the instance with the same IP subsequently, and if so, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance. |
+| Request queue depth (count) | If the client's production and consumption time out, but the CVM load is normal, the request queue depth of the CVM instance has reached the upper limit, which is 500 by default. You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to adjust it appropriately according to the purchased resource configuration. |
 

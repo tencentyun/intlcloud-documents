@@ -1,50 +1,97 @@
 ## 操作场景
-CKafka 数据同步（下文也叫 CKafka Connector）是基于开源 Kafka Connector 实现的高效数据传递服务。
-现在数据的 ETL 过程经常会选择 Kafka 作为消息中间件应用在离线和实时的使用场景中，而 Kafka 的数据上游和下游没有一个无缝衔接的 pipeline 来实现统一，例如会选择 Flume 或者 Logstash 采集数据到 Kafka，然后 Kafka 又通过其他方式 pull 或者 push 数据到目标存储。
 
-Kafka Connector 旨在围绕 Kafka 构建一个可伸缩的、可靠的数据流通道，通过 Kafka Connector 可以快速实现大量数据进出 Kafka 从而和其他源数据源或者目标数据源进行交互构造一个低延迟的数据 pipeline，实现了不同实例之间的数据传输。
-您可以通过控制台操作同地域的不同 CKafka 实例的任意 Topic 之间互相传递数据，自动同步。通过 CKafka 的云 API 接口可以操作同地域或者不同地域的不同 CKafka 实例任意 Topic 之间的数据传递。不需要额外安装配置硬件设备，只需要填写对应 CKafka 实例 ID 和 Topic ID 就可以实现数据同步。
-![](https://main.qcloudimg.com/raw/063a0b40fcd48f7883ee80a47343d1ac.png)
+针对业务连续服务、数据可靠性有强需求或是监管需要的场景，**CKafka 专业版**提供数据同步功能，帮助用户提升业务连续服务的能力，同时提升数据的可靠性。数据同步功能支持数据同步和跨地域容灾两种任务类型，区别如下：
 
->?
-- 控制台暂时只支持同地域内的 CKafka 实例内 Topic 或者实例间的 Topic 数据同步，跨地区会存在3ms以上的延迟（根据地区远近不同）。
-- 云 API 接口支持跨地域的同步，跨地域会存在10ms以上的延迟（根据地域远近不同）。
-	
-## 前提条件
-- 该功能目前处于灰度测试阶段，如需试用请通过 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=335&source=0&data_title=%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97CMQ/CKAFKA/IoT%20MQ&step=1) 的方式开通白名单使用。
-- 当前处于灰度测试阶段，Connector 作为数据传递的管道，本身的数据可靠性依赖上下游的数据可靠性，请参考 [CKafka 数据可靠性说明](https://intl.cloud.tencent.com/document/product/597/31586)，如对数据可靠性有更高的要求，请通过其他方式进行数据的多次备份。
-- 请配置 [监控告警](https://console.cloud.tencent.com/monitor/policylist) 对数据同步情况实时掌握。CKafka Connector 的数据同步流量会占用一定比例的实例峰值吞吐流量的配额。
+- **数据同步**：Topic 级别同步数据，支持不同 CKafka 实例的任意 Topic 之间互相传递数据、自动同步。
+
+- **跨地域容灾**：实例级别同步数据，支持不同地域实例间的复制迁移功能，实例的所有数据和元数据都会同步。
+
+>?当前仅 CKafka 专业版实例支持数据同步能力，标准版不支持。
 
 ## 操作步骤
-### 新建数据同步
-控制台仅可以创建相同地域的 Connector 实例（如需不同地域同步，可 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=335&source=0&data_title=%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97CMQ/CKAFKA/IoT%20MQ&step=1) 申请），以实例的 Topic 维度进行数据同步，可选择多个 Topic。同步时将复制 Topic 的属性，例如分区数、副本数。
->?为了数据同步的灵活性， CKafka 不会校验源实例与目标实例的循环性，例如选择了相同实例，不断同步 Topic，会导致无限循环将耗费您 CKafka 实例的流量，所以创建数据同步实例时请避免源实例和目标实例的循环同步。
 
-### 查看任务配置
-您可以通过列表操作列，查看数据同步实例配置。
+### 创建数据同步任务
 
-- **未分配**：当 Connector 未分配给任何 Worker 时，会处于该状态；该状态出现于新创建 Connector 不久或者 Connect 集群处于 rebalance 过程中。
-- **暂停**：任务暂停，Connector 此时不会进行数据拷贝任务。
-- **运行**：任务正在运行并且 Connector 成功生成任务配置，并且所有任务都正常运行。
-- **失败**：Connector 无法生成新的任务配置或者有任务处于 failed 状态；在 Connector 无法生成新的任务配置，并且同时存在旧的合法的任务配置的情况下，任务仍然会继续用老的配置运行。
-- **销毁**：数据同步实例正在销毁中。
+<dx-tabs>
 
-### 操作数据同步实例
-当前操作都是异步任务，有延迟，任务状态可能不会立刻改变。
-- **启动**：处于暂停同步状态的实例可以重新启动，将继续同步数据，且数据将从暂停位置继续同步。
-- **暂停**：处于启动状态的实例可以暂停，当您发现数据同步服务影响了 CKafka 正常服务时，可以暂停数据同步。
- - 若暂停后24小时内重新启动，可以恢复暂停时的消息同步进度。
- - 若暂停后超过24小时后启动，则从客户指定位置的数据开始同步，或未指定则从最新的数据开始同步。
-- **删除**：表示停止数据同步，不会影响到已经同步的数据和相关的 Ckafka 实例。
+:::数据同步
 
-## 使用案例
-- 电商用户的使用场景：一份全量数据生产者，多处不同速率的消费者。解决了数据量大 Kafka 机制的不断刷盘，低频数据读取数据时读取 IO 造成的 IO 性能瓶颈问题。能提升性价比，不需要部署两套生产者，用 Connector 一个生产者可以完美解决问题。
-- 两个不同的 CKafka 实例互相同步数据：一份数据生产者，多地域或多地区消费者，解决数据不同地区的数据同步问题。
-![](https://main.qcloudimg.com/raw/8e4055e82c85f8ffe326cf1d3aa78ebf.png)
- 
+**前提条件**：在创建数据同步任务之前，您需要提前创建好目标实例与 Topic。<br>
 
-## 对比自建 CKafka Connector
-例如 CVM 8核16G 服务器2台主备容灾。产生的 CVM 基础费用如下：
-![](https://main.qcloudimg.com/raw/9c16ff14d26ddef26553bbb5d66f6779.png)
-Kafka 与其他服务资源传输数据若通过公网，需要按照 0.12USD/GB按量付费。
-CKafka Connector 目前提供免费服务，客户只需要购买互相同步数据的2个或以上的 CKafka 实例即可（后续若实施收费会提前3个月告知客户，并通过官方文档说明具体收费标准）。
+**操作步骤**：
+
+1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka/index?rid=1)。
+
+2. 在左侧导航栏选择**数据同步**，选择好**地域**后单击**新建**。
+
+3. 在新建任务弹窗中填写任务名称，任务类型选择**数据同步**。
+
+   ![](https://qcloudimg.tencent-cloud.cn/raw/cacc6ebc0a8b25628a487baa7cd3407f.png)
+
+4. 单击**下一步**，选择源实例地域、源实例和源 Topic，勾选**需同步的数据类型**。
+> ?
+> - 当需要同步元数据的时候，有两个参数不符合条件则会无法同步。
+> - 目标 Topic 分区数大于源 Topic 分区数，分区数不能同步。
+> - 目标 Topic 与源 Topic 副本数不一致，副本数不能同步。
+>
+![](https://qcloudimg.tencent-cloud.cn/raw/c2032b7f9aa8a323164ec5b2652a13c9.png)
+
+5. 单击**下一步**，选择目标实例地域、目标实例和目标 Topic。
+
+   ![](https://qcloudimg.tencent-cloud.cn/raw/5da39dcc94d8ceabd4c4b94bf365929a.png)
+
+6. 单击**提交**，完成任务创建，在**数据同步**页面可以看到创建的数据同步任务。
+> ?任务创建成功后，会自动开始数据同步，并且数据是实时复制的。您可参考 [查看同步进度](https://intl.cloud.tencent.com/document/product/597/32556) 查看数据同步进度。
+>
+![](https://qcloudimg.tencent-cloud.cn/raw/25a04cb7d37e54000702b4d0df93f7c6.png)
+
+
+
+:::
+
+:::跨地域容灾
+
+**前提条件**：在实现跨地域容灾之前，您需要选择一个不同于生产环境的地域作为容灾目标地域，在该地域上创建一个和源实例相同规格的 CKafka 实例。具体操作参考 [创建实例](https://intl.cloud.tencent.com/document/product/597/39718)。<br>
+**操作步骤**：
+
+1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
+2. 在左侧导航栏选择**跨地域容灾**，单击**新建任务**，进入任务创建页面。
+3. 填写任务名称，选择好源实例和目标实例。
+   ![img](https://main.qcloudimg.com/raw/3ca26629164ab4cdbef1d38a500f6123.png)
+4. 单击**提交**，在**数据同步**页面可看到创建的跨地域容灾任务。
+>?任务创建成功后，会自动开始数据同步，并且数据是实时复制的。您可参考 [查看任务进度](https://intl.cloud.tencent.com/document/product/597/32556) 查看数据同步进度。
+
+:::
+</dx-tabs>
+
+### 查看同步进度
+
+前提条件：已创建数据同步任务。
+
+1. 在 **[数据同步](https://console.cloud.tencent.com/ckafka/backup)** 页面，单击目标任务的“ID”，进入任务基本信息页面。
+2. 选择**同步进度**页签，可查看数据同步的进度。
+   - **数据同步**：展示各 Topic 的同步进度。
+     ![img](https://main.qcloudimg.com/raw/702b0d604083215382582cb780f0a967.png)
+   - **元数据同步**：展示 Topic、ACL 策略、用户和 Consumer Group 的同步进度。
+     ![img](https://main.qcloudimg.com/raw/0a9689adf89ce1373c4183fd006c5631.png)
+
+### 暂停任务
+
+>?处于运行状态的任务可以暂停，当您发现数据同步服务影响了 CKafka 正常服务时，可以暂停数据同步。
+
+在 **[数据同步](https://console.cloud.tencent.com/ckafka/backup)** 页面，单击目标任务的操作栏的**暂停**，可暂停任务。
+
+### 恢复任务
+
+>?处于暂停同步状态的任务可以重新启动，将继续同步数据，且数据将从暂停位置继续同步。
+
+在 **[数据同步](https://console.cloud.tencent.com/ckafka/backup)** 页面，单击目标任务的操作栏的**恢复**，可将暂停任务恢复。
+
+### 删除任务
+
+>!
+> - 删除任务表示停止数据同步，不会影响到已经同步的数据和相关的 CKafka 实例。
+> - 任务一旦删除不可恢复，请您谨慎操作。
+
+在 **[数据同步](https://console.cloud.tencent.com/ckafka/backup)** 页面，单击目标任务的操作栏的**删除**，可删除任务。
+
