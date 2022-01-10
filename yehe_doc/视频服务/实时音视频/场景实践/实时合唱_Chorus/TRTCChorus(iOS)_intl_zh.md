@@ -244,7 +244,7 @@ TRTCChorusRoom 是一个开源的 Class，依赖腾讯云的两个闭源 SDK，�
 | -------- | -------------- | ----------- |
 | sdkAppId | int    | 您可以在实时音视频控制台 >【[应用管理](https://console.cloud.tencent.com/trtc/app)】> 应用信息中查看 SDKAppID。 |
 | userId   | String | 当前用户的 ID，字符串类型，只允许包含英文字母（a-z 和 A-Z）、数字（0-9）、连词符（-）和下划线（\_）。 |
-| userSig  | String | 腾讯云设计的一种安全保护签名，获取方式请参见 [如何计算 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。 |
+| userSig  | String | 腾讯云设计的一种安全保护签名，获取方式请参见 [如何计算及使用 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。 |
 | callback | ActionCallback | 登录回调，成功时 code 为0。 |
 
    
@@ -991,7 +991,7 @@ NS_SWIFT_NAME(onAnchorLeaveSeat(index:user:));
 | 参数  | 类型     | 含义   |
 | ----- | -------- | -------------------- |
 | index | int      | 下麦的麦位。 |
-| user  | UserInfo | 下麦用户的详细信息。 |
+| user  | UserInfo | 上麦用户的详细信息。 |
 
 ### onSeatMute
 
