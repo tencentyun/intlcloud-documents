@@ -10,49 +10,12 @@ This document describes how to view advanced monitoring metrics in the console a
 2. In the instance list, click the **ID/Name** of the target instance to enter the instance details page.
 3. At the top of the instance details page, click **Monitoring** > **Advanced Monitoring**, select the metric to be viewed, and set the time range to view the monitoring data.
 
-### Monitoring information display
-
->?You can click the following tabs to view the monitoring information of the core service, production, consumption, instance resource, and broker GC.
-
-<dx-tabs>
-::: Core service
-
-![](https://main.qcloudimg.com/raw/2f05337f970cfc740b593a1b54e4ac60.png)
-
-::: 
-
-::: Production
-
-![](https://main.qcloudimg.com/raw/ee20847967ac67549aed0f93e56347ed.png)
-
-:::
-
-::: Consumption
-
-![](https://main.qcloudimg.com/raw/324c8c155cc9e648157a88d98747e1e4.png)
-
-:::
-
-::: Instance resource
-
-![](https://main.qcloudimg.com/raw/fa36fb68ce17cb1dd135221b94ceb64f.png)
-
-:::
-
-::: Broker GC
-
-![](https://main.qcloudimg.com/raw/7e7f4b274d8b3291d141c33dd5314c51.png)
-
-:::
-
-</dx-tabs>
-
 ### Monitoring metric description
 
 >?You can click the following tabs to view the detailed descriptions of monitoring metrics of the core service, production, consumption, instance resource, and broker GC.
 
 <dx-tabs>
-::: Core service monitoring
+::: Core\sservice\smonitoring
 
 <style>
 table th:nth-of-type(1){
@@ -103,7 +66,7 @@ width:42%
 
 :::
 
-::: Instance resource
+::: Instance\sresource
 
 | Monitoring Metric     | Description                                                     | Normal Range                                                   |
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -115,7 +78,7 @@ width:42%
 
 :::
 
-::: Broker GC
+::: Broker\sGC
 
 | Monitoring Metric     | Description                                                     | Normal Range                                                   |
 | -------------- | --------------------- | ------------------------------------------------------------ |
