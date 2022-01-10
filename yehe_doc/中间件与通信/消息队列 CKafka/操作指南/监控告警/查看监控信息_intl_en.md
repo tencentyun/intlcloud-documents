@@ -9,10 +9,6 @@ This document describes how to view monitoring metrics and their descriptions in
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. In the instance list, click the **ID/Name** of the target instance to enter the instance details page.
 3. At the top of the instance details page, Click **Monitor**, select resource tags, and set the time range to view the monitoring data about the instance.
-   - You can click ![](https://main.qcloudimg.com/raw/9ba57bbd3b8ef3efc4f687d63d27a46d.png) to view the historical monitoring data.
-   - You can click ![](https://main.qcloudimg.com/raw/34bdbdbdabb7b5720bf17d78c636a4ad.png) to refresh and get the latest monitoring data.
-   - You can click ![](https://main.qcloudimg.com/raw/8f2bf7f4df9ddd959f0ecb69fdda8e4c.png) to copy the chart to a dashboard. For more information on dashboard, see [What Is a Dashboard?](https://intl.cloud.tencent.com/document/product/248/38461).
-   - You can select ![](https://main.qcloudimg.com/raw/af20129df7be46f33ab7d3598f6e9213.png) to display the legend information on the chart.
 
 ### Monitoring information display
 
@@ -34,8 +30,6 @@ If you don't select a partition, the current monitoring data at the topic level 
 ::: Consumer\sGroup
 **Consumer group - topic monitoring**
 ![](https://main.qcloudimg.com/raw/377865e2102df5de14adcfcec0b3c5c0.png)
-**Consumer group - partition monitoring:**
-![](https://qcloudimg.tencent-cloud.cn/raw/897c79a8d131281907708eca721f99a7.png)
 :::
 </dx-tabs>
 
