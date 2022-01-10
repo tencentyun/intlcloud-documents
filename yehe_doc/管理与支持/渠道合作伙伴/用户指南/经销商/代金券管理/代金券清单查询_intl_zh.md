@@ -10,20 +10,20 @@
 >
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/5b1f58e5792455722d94ab8a2ef4733f.png)
-- Template Name：代金券名称，代金券名称仅可使用英文字母和空格，长度不可超过20字符，并且代金券名称全局唯一不可重复。
 
-- Vouncher ID：代金券编码
-- Customer UIN：代金券发放的客户UIN
-- Customer Name：代金券发放的客户邮箱
-- Estimated Revenue：预估转换腾讯收入
-- Estimated Time：预估转换腾讯收入时间
-- Amount：发放代金券金额
-- Remaining Amount：代金券使用剩余金额
-- Issuance Time：代金券发放时间
-- Expire Time：代金券到期时间
-- Approval Status：代金券审批状态
-- Voucher Status：代金券使用状态
-- Application Reason：代金券申请原因
-- Audit Reason：代金券审批拒绝原因
-- Operation：点击【Related Template】，跳转到代金券发放页面，可以查询出具体的代金券模板
+Template Name：代金券名称。
+Vouncher ID：代金券发放唯一编码。
+Customer UIN：代金券发放的客户UIN。
+Customer Name：代金券发放的客户邮箱。
+Estimated Revenue：预估转换腾讯收入。
+Estimated Time：预估转换腾讯收入时间。
+Amount：发放代金券金额。
+Remaining Amount：代金券使用剩余金额。
+Issuance Time：代金券发放时间。
+Expire Time：代金券到期时间。
+Approval Status：代金券审批状态。
+Voucher Status：代金券使用状态。
+Application Reason：代金券申请原因。
+Audit Reason：代金券审批拒绝原因。
+Operation：点击【Related Template】，跳转到代金券发放页面，可以查询出具体的代金券模板。
 
