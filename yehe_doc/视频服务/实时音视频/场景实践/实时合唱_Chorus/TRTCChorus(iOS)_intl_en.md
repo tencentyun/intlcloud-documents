@@ -991,7 +991,7 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | ----- | -------- | -------------------- |
 | index | int      | The seat previously occupied by the speaker         |
-| user | UserInfo | Details of the user who became a listener |
+| user | UserInfo | Details of the user who took the seat |
 
 ### onSeatMute
 
