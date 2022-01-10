@@ -5,7 +5,7 @@
 <td rowspan="6">华南地区（广州）<br> ap-guangzhou</td>
 <td>广州一区（已售罄）<br> ap-guangzhou-1</td></tr>	
 <tr>
-<td>广州二区<br> ap-guangzhou-2</td></tr>
+<td>广州二区（已售罄）<br> ap-guangzhou-2</td></tr>
 <tr>
 <td>广州三区<br> ap-guangzhou-3</td></tr>
 <tr>
@@ -16,7 +16,7 @@
 <td>广州七区<br> ap-guangzhou-7</td></tr>
 <tr>
 <td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
-<td>上海一区<br>ap-shanghai-1</td></tr>
+<td>上海一区（已售罄）<br>ap-shanghai-1</td></tr>
 <tr>
 <td>上海二区<br>ap-shanghai-2</td></tr>
 <tr>
