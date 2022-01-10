@@ -318,7 +318,7 @@ for i in 1...10 {
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferDownloadObject.swift) 查看。
 
-#### 示例代码四：下载文件夹及其文件
+#### 示例代码五：下载文件夹及其文件
 **Objective-C**
 
 [//]: # (.cssg-snippet-transfer-download-folder)
@@ -442,7 +442,7 @@ for i in 1...10 {
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferDownloadObject.swift) 查看。
 
 
-#### 示例代码五：下载时限速
+#### 示例代码六：下载时限速
 
 >! 需要 COS iOS SDK v5.9.5 及以上版本。
 
