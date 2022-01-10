@@ -2,7 +2,7 @@
 The Go SDK provides pre-signed request URLs. For detailed operations, please see the following examples.
 
 >?
-> - You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - You are advised to use a temporary key to generate a pre-signed URL for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
 > - If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
 > 
 
@@ -28,7 +28,7 @@ type PresignedURLOptions struct {
 | ak             | string                       | SecretId                    |
 | sk               | string                       | SecretKey         |
 | expired | time.Duration | Validity period of the signature |
-| opt    | interface{} | Extension. We recommend you enter parameters of the \*PresignedURLOptions type or `nil`. |
+| opt    | interface{} | Extension. You are recommended to enter parameters of the \*PresignedURLOptions type or `nil`. |
 | PresignedURLOptions | struct | Request parameters and headers to include in the signature |
 | Query | struct | Request parameters to include in the signature |
 | Header | struct | Request headers to include in the signature |
@@ -40,35 +40,63 @@ type PresignedURLOptions struct {
 
 [//]: # (.cssg-snippet-get-presign-upload-url)
 ```go
-ak := "SECRETID"
-sk := "SECRETKEY"
+package main
 
-name := "exampleobject"
-ctx := context.Background()
-f := strings.NewReader("test")
+import (
+        "context"
+        "github.com/tencentyun/cos-go-sdk-v5"
+        "net/http"
+        "net/url"
+        "os"
+        "strings"
+        "time"
+)
 
-// 1. Upload the object using the standard method.
-_, err := client.Object.Put(ctx, name, f, nil)
-if err != nil {
-    panic(err)
-}
-// Obtain the pre-signed URL.
-presignedURL, err := client.Object.GetPresignedURL(ctx, http.MethodPut, name, ak, sk, time.Hour, nil)
-if err != nil {
-    panic(err)
-}
-// 2. Upload the object using a pre-signed URL.
-data := "test upload with presignedURL"
-f = strings.NewReader(data)
-req, err := http.NewRequest(http.MethodPut, presignedURL.String(), f)
-if err != nil {
-    panic(err)
-}
-// You can configure request headers by yourself.
-req.Header.Set("Content-Type", "text/html")
-_, err = http.DefaultClient.Do(req)
-if err != nil {
-    panic(err)
+func main() {
+        // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+        u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+        b := &cos.BaseURL{BucketURL: u}
+        client := cos.NewClient(b, &http.Client{
+                Transport: &cos.AuthorizationTransport{
+                        // Get the key from environment variables
+                        // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+                        SecretID:  os.Getenv("SECRETID"),
+                        // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+                        SecretKey: os.Getenv("SECRETKEY"),
+                },
+        })
+
+        ak := "SECRETID"
+        sk := "SECRETKEY"
+
+        name := "exampleobject"
+        ctx := context.Background()
+        f := strings.NewReader("test")
+
+        // 1. Upload the object using the standard method.
+        _, err := client.Object.Put(ctx, name, f, nil)
+        if err != nil {
+                panic(err)
+        }
+        // Obtain the pre-signed URL.
+        presignedURL, err := client.Object.GetPresignedURL(ctx, http.MethodPut, name, ak, sk, time.Hour, nil)
+        if err != nil {
+                panic(err)
+        }
+        // 2. Upload the object using a pre-signed URL.
+        data := "test upload with presignedURL"
+        f = strings.NewReader(data)
+        req, err := http.NewRequest(http.MethodPut, presignedURL.String(), f)
+        if err != nil {
+                panic(err)
+        }
+        // You can configure request headers by yourself.
+        req.Header.Set("Content-Type", "text/html")
+        _, err = http.DefaultClient.Do(req)
+        if err != nil {
+                panic(err)
+        }
 }
 ```
 
@@ -76,37 +104,78 @@ if err != nil {
 
 [//]: # (.cssg-snippet-get-presign-download-url)
 ```go
-ak := "SECRETID"
-sk := "SECRETKEY"
-name := "exampleobject"
-ctx := context.Background()
-// 1. Download the object using the standard method.
-resp, err := client.Object.Get(ctx, name, nil)
-if err != nil {
-    panic(err)
-}
-bs, _ := ioutil.ReadAll(resp.Body)
-resp.Body.Close()
-// Obtain the pre-signed URL.
-presignedURL, err := client.Object.GetPresignedURL(ctx, http.MethodGet, name, ak, sk, time.Hour, nil)
-if err != nil {
-    panic(err)
-}
-// 2. Download the object using a pre-signed URL.
-resp2, err := http.Get(presignedURL.String())
-if err != nil {
-    panic(err)
-}
-bs2, _ := ioutil.ReadAll(resp2.Body)
-resp2.Body.Close()
-if bytes.Compare(bs2, bs) != 0 {
-    panic(errors.New("content is not consistent"))
+package main
+
+import (
+        "bytes"
+        "context"
+        "errors"
+        "github.com/tencentyun/cos-go-sdk-v5"
+        "io/ioutil"
+        "net/http"
+        "net/url"
+        "os"
+        "time"
+)
+
+func main() {
+        // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+        u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+        b := &cos.BaseURL{BucketURL: u}
+        client := cos.NewClient(b, &http.Client{
+                Transport: &cos.AuthorizationTransport{
+                        // Get the key from environment variables
+                        // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+                        SecretID:  os.Getenv("SECRETID"),
+                        // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+                        SecretKey: os.Getenv("SECRETKEY"),
+                },
+        })
+
+        ak := "SECRETID"
+        sk := "SECRETKEY"
+        name := "exampleobject"
+        ctx := context.Background()
+        // 1. Download the object using the standard method.
+        resp, err := client.Object.Get(ctx, name, nil)
+        if err != nil {
+                panic(err)
+        }
+        bs, _ := ioutil.ReadAll(resp.Body)
+        resp.Body.Close()
+        // Obtain the pre-signed URL.
+        presignedURL, err := client.Object.GetPresignedURL(ctx, http.MethodGet, name, ak, sk, time.Hour, nil)
+        if err != nil {
+                panic(err)
+        }
+        // 2. Download the object using a pre-signed URL.
+        resp2, err := http.Get(presignedURL.String())
+        if err != nil {
+                panic(err)
+        }
+        bs2, _ := ioutil.ReadAll(resp2.Body)
+        resp2.Body.Close()
+        if bytes.Compare(bs2, bs) != 0 {
+                panic(errors.New("content is not consistent"))
+        }
 }
 ```
 
 ## Generating Pre-signed URL with Temporary Key
 
 ```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+    "time"
+)
 // You can use tags to put the request parameters or request headers in the signature.
 type URLToken struct {
 	SessionToken string `url:"x-cos-security-token,omitempty" header:"-"`
@@ -168,8 +237,19 @@ func main() {
 
 ## Sample of Generating a Pre-Signed URL for a Custom Domain
 ```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+    "time"
+)
 func main() {
-    // Replace it with your temporary key.
+    // Replace it with your key
     tak := os.Getenv("SECRETID")
     tsk := os.Getenv("SECRETKEY")
     // Change it to the custom domain.
@@ -199,6 +279,17 @@ func main() {
 
 ## Adding Request Parameters or Headers
 ```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+    "time"
+)
 func main() {
 	// Replace it with your temporary key.
 	tak := os.Getenv("SECRETID")
@@ -224,7 +315,7 @@ func main() {
 
 	// The SDK includes the `host` header in the signature by default. If the `signHost` parameter is not passed in or `SignHost` is `true`, the `host` header is included in the signature.
 	// If `signHost` is `false`, the `host` header is not included in the signature, which may lead to request failure or security vulnerabilities.
-	bool signHost = true
+	var signHost bool = true
 	// Get the pre-signed URL with the signature containing `host`
 	presignedURL, err := c.Object.GetPresignedURL(ctx, http.MethodPut, name, tak, tsk, time.Hour, opt, signHost)
 	if err != nil {

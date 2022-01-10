@@ -12,7 +12,7 @@ This document provides an overview of APIs and SDK code samples related to custo
 
 ## Setting Custom Domains
 
-#### API description 
+#### Description
 
 This API (PUT Bucket domain) is used to set a custom domain for a bucket.
 
@@ -26,17 +26,46 @@ func (s *BucketService) PutDomain(ctx context.Context, opt *BucketPutDomainOptio
 
 [//]: # (.cssg-snippet-put-bucket-domain)
 ```go
-opt := &cos.BucketPutDomainOptions{
-    Rules: []cos.BucketDomainRule{
-    {
-        Status:            "ENABLED",
-        Name:              "www.example.com",
-        Type:              "REST",
-        ForcedReplacement: "CNAME",
-    },
-    },
-}   
-resp, err := c.Bucket.PutDomain(context.Background(), opt)
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID:  os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    opt := &cos.BucketPutDomainOptions{
+        Rules: []cos.BucketDomainRule{
+            {
+                Status:            "ENABLED",
+                Name:              "www.example.com",
+                Type:              "REST",
+                ForcedReplacement: "CNAME",
+            },
+        },
+    }
+    _, err := client.Bucket.PutDomain(context.Background(), opt)
+    if err != nil {
+        fmt.Println(err)
+    }
+}
 ```
 
 #### Parameter description
@@ -75,7 +104,7 @@ The following describes some common errors that may occur when you call this API
 
 ## Querying a Custom Domain
 
-#### API description 
+#### Description
 
 This API (GET Bucket domain) is used to query the custom domain set for a bucket.
 
@@ -89,7 +118,37 @@ func (s *BucketService) GetDomain(ctx context.Context) (*BucketGetDomainResult, 
 
 [//]: # (.cssg-snippet-get-bucket-domain)
 ```go
-v, resp, err := c.Bucket.GetDomain(context.Background())
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID:  os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    v, _, err := client.Bucket.GetDomain(context.Background())
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println(v)
+}
 ```
 
 #### Response description
@@ -121,5 +180,34 @@ func (s *BucketService) DeleteDomain(ctx context.Context) (*Response, error)
 
 [//]: # (.cssg-snippet-delete-bucket-domain)
 ```go
-_, err := c.Bucket.DeleteDomain(context.Background())
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID:  os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    _, err := client.Bucket.DeleteDomain(context.Background())
+    if err != nil {
+        fmt.Println(err)
+    }
+}
 ```

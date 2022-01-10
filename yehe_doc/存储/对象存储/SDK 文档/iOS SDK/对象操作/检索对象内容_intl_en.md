@@ -6,33 +6,33 @@ This document provides an overview of APIs and SDK code samples related to objec
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [SELECT Object Content](https://intl.cloud.tencent.com/document/product/436/32360) | Extracting object content | Extracts the content of a specified object (in CSV or JSON format) |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method description of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see [API Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Extracting Object Content
 
-#### Feature description
+#### Description
 
-COS Select supports extracting object data in the following formats:
+COS Select supports extracting content from objects in the following formats:
 
 * CSV: an object is stored in CSV format with its data records separated with a specific delimiter.
 * JSON: an object is stored in JSON format, which can be either a JSON file or a JSON list.
 
 > !
->- To use COS Select, you must have the permission on `cos:GetObject`.
->- CSV and JSON objects need to be encoded in UTF-8.
->- COS Select can extract CSV and JSON objects compressed by gzip or bzip2.
->- COS Select can extract CSV and JSON objects encrypted with SSE-COS.
+- To use COS Select, you must have the permission on `cos:GetObject`.
+- CSV and JSON objects need to be encoded in UTF-8.
+- COS Select can extract CSV and JSON objects compressed by gzip or bzip2.
+- COS Select can extract CSV and JSON objects encrypted with SSE-COS.
 
 #### Sample code
 
 [//]: # (.cssg-snippet-select-object)
 ```objective-c
 QCloudSelectObjectContentRequest *request = [QCloudSelectObjectContentRequest new];
-// Bucket name in the format of `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = @"exampleobject";
 request.selectType = @"2";
 // Select file configuration
@@ -109,9 +109,9 @@ request.downloadingURL = [NSURL fileURLWithPath:QCloudFileInSubPath(@"test", @"2
 [//]: # (.cssg-snippet-select-object)
 ```swift
 let request = QCloudSelectObjectContentRequest.init();
-// Bucket name in the format of `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = "examplebucket-1250000000";
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = "exampleobject";
 // Version information of the API
 request.selectType = "2";

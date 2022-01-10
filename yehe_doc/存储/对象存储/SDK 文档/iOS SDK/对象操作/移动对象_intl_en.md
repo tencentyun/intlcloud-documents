@@ -6,7 +6,7 @@ This document provides an overview of APIs and SDK code samples related to objec
 | API | Operation | Description |
 | :----------------------------------------------------------- | :--------------------------- | :--------------------- |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object (modifying object attributes) | Copies a file to a destination path |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting an object | Deletes a specified object from a bucket. |
 
 
 
@@ -30,10 +30,10 @@ Likewise, if you need to move `picture.jpg` in the `mybucket-1250000000` bucket 
 ```objective-c
 QCloudCOSXMLCopyObjectRequest* request = [[QCloudCOSXMLCopyObjectRequest alloc] init];
     
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
     
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = @"exampleobject";
     
 // Source bucket containing the file; the current account needs to have access permission for the bucket, or the bucket should have public-read permission enabled.
@@ -80,14 +80,14 @@ request.sourceRegion= @"COS_REGION";
 ```swift
 let copyRequest =  QCloudCOSXMLCopyObjectRequest.init();
         
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 copyRequest.bucket = "examplebucket-1250000000";
                 
 // Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 copyRequest.object = "exampleobject";
         
 // Source bucket containing the file; the current account needs to have access permission for the bucket, or the bucket should have public-read permission enabled.
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 copyRequest.sourceBucket = "sourcebucket-1250000000";
         
 // Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
@@ -104,7 +104,7 @@ copyRequest.setFinish { (copyResult, error) in
         // ETag of the file
         let deleteObject = QCloudDeleteObjectRequest.init();
                 
-        // Bucket name in the format: `BucketName-APPID`
+        // Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         deleteObject.bucket = "sourcebucket-1250000000";
                 
         // Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
