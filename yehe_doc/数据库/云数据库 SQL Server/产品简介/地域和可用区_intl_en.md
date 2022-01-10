@@ -5,7 +5,7 @@
 <td rowspan="6">South China (Guangzhou)<br>ap-guangzhou</td>
 <td>Guangzhou Zone 1 (sold out)<br> ap-guangzhou-1</td></tr>	
 <tr>
-<td>Guangzhou Zone 2<br> ap-guangzhou-2</td></tr>
+<td>Guangzhou Zone 2 (sold out)<br> ap-guangzhou-2</td></tr>
 <tr>
 <td>Guangzhou Zone 3<br> ap-guangzhou-3</td></tr>
 <tr>
@@ -16,7 +16,7 @@
 <td>Guangzhou Zone 7<br> ap-guangzhou-7</td></tr>
 <tr>
 <td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
-<td>Shanghai Zone 1<br>ap-shanghai-1</td></tr>
+<td>Shanghai Zone 1 (sold out)<br>ap-shanghai-1</td></tr>
 <tr>
 <td>Shanghai Zone 2<br>ap-shanghai-2</td></tr>
 <tr>
