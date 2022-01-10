@@ -130,7 +130,7 @@ const trtcCalling = new TRTCCalling(options);
 </dx-codeblock>
 
 ### 步骤3：完成登录
-调用 login 函数完成登录操作，参数中的 userID 为用户名，userSig 为用户签名，userSig 的计算方式请参见 [如何计算 userSig](https://intl.cloud.tencent.com/document/product/647/35166)。
+调用 login 函数完成登录操作，参数中的 userID 为用户名，userSig 为用户签名，userSig 的计算方式请参见 [如何计算及使用UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
 ```javascript
 trtcCalling.login({
