@@ -55,6 +55,8 @@ Armazenaremos dados pessoais processados em conexão com o Recurso da seguinte f
 <tr>
 <td>Informação de estrutura espacial; informação de gerenciamento de aplicação; informação de gerenciamento de equipamento; informação de serviço de dados; informação de alarme de monitor; configuração de ligação; informação de projeto.</td>
 <td>Os dados serão armazenados por 1 ano. Caso o usuário solicite a exclusão dos dados, os dados serão excluídos em 3 dias.</td>
+</tr>
+</tbody></table>
 
 Você pode solicitar a exclusão desses dados pessoais de acordo com o DPSA.
 
