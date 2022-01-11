@@ -25,11 +25,11 @@ Este Recurso está disponível globalmente para usuários, mas destina-se princi
 <td rowspan="3">Processamos essas informações conforme é necessário para a execução de nosso contrato com você para fornecimento do Recurso.</td>
 </tr>
 <tr>
-<td><b>Informação de gerenciamento de permissão</b>: informação de gerenciamento de usuário, informação de gerenciamento de função, informação de gerenciamento de estrutura organizacional</td>
+<td><b>Informação de gerenciamento de permissão</b>: informação de gerenciamento de usuário, informação de gerenciamento de função, informação de gerenciamento de estrutura organizacional.</td>
 <td>Usamos essas informações para estabelecer e gerenciar as permissões apropriadas do Recurso.</td>
 </tr>
 <tr>
-<td><b>Gerenciamento de registro</b>: registro de operação, gerenciamento de configuração de tingimento</td>
+<td><b>Gerenciamento de registro</b>: registro de operação, gerenciamento de configuração de tingimento.</td>
 <td>Usamos essas informações para garantir a efetividade da operação do Recurso de acordo com as instruções do cliente.</td>
 </tr>
 </tbody></table>

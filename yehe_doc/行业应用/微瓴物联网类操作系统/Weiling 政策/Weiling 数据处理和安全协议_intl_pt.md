@@ -17,22 +17,22 @@ Processaremos os seguintes dados em conexão com o Recurso:
 <td rowspan="7">Apenas processamos esses dados com a finalidade de lhe fornecer o Recurso.</td>
 </tr>
 <tr>
-<td><b>Informação de gerenciamento de aplicação</b>: nome, tipo, hora de lançamento e status da aplicação; permissão de dados e transmissão, gerenciamento de campo; nome, tipo e local do dispositivo</td>
+<td><b>Informação de gerenciamento de aplicação</b>: nome, tipo, hora de lançamento e status da aplicação; permissão de dados e transmissão, gerenciamento de campo; nome, tipo e local do dispositivo.</td>
 </tr>
 <tr>
-<td><b>Informação de gerenciamento de equipamento</b>: identificador, nome, tipo, sombra e aplicação associada ao dispositivo, registro de operações</td>
+<td><b>Informação de gerenciamento de equipamento</b>: identificador, nome, tipo, sombra e aplicação associada ao dispositivo, registro de operações.</td>
 </tr>
 <tr>
-<td><b>Informação de serviço de dados</b>:  indicadores de dados, modelo de objeto padrão do projeto</td>
+<td><b>Informação de serviço de dados</b>:  indicadores de dados, modelo de objeto padrão do projeto.</td>
 </tr>
 <tr>
-<td><b>Informação de alarme de monitor</b>:  lista de alarme, regras de alocação do alarme, e regras de convergência de mensagem</td>
+<td><b>Informação de alarme de monitor</b>:  lista de alarme, regras de alocação do alarme, e regras de convergência de mensagem.</td>
 </tr>
 <tr>
-<td><b>Configuração de ligação</b>:  informação de gerenciamento de ligação, informação de gerenciamento de evento e informação de gerenciamento de ação</td>
+<td><b>Configuração de ligação</b>:  informação de gerenciamento de ligação, informação de gerenciamento de evento e informação de gerenciamento de ação.</td>
 </tr>
 <tr>
-<td><b>Informação do projeto</b>:  informação básica e informação de configuração</td>
+<td><b>Informação do projeto</b>:  informação básica e informação de configuração.</td>
 </tr>
 </tbody></table>
 
@@ -44,7 +44,7 @@ Como especificado no DPSA, incluindo Aceville Pte. Ltd.
 Armazenaremos dados pessoais processados em conexão com o Recurso da seguinte forma:
 | <b>Informações pessoais</b>                                                   | <b>Política de retenção</b>                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-|   Informação de estrutura espacial; informação de gerenciamento de aplicação; informação de gerenciamento de equipamento; informação de serviço de dados; informação de alarme de monitor; configuração de ligação; informação de projeto        | Os dados serão armazenados por 1 ano. Caso o usuário solicite a exclusão dos dados, os dados serão excluídos em 3 dias. |
+|   Informação de estrutura espacial; informação de gerenciamento de aplicação; informação de gerenciamento de equipamento; informação de serviço de dados; informação de alarme de monitor; configuração de ligação; informação de projeto.        | Os dados serão armazenados por 1 ano. Caso o usuário solicite a exclusão dos dados, os dados serão excluídos em 3 dias. |
 
 Você pode solicitar a exclusão desses dados pessoais de acordo com o DPSA.
 ## 6\. CONDIÇÕES ESPECIAIS

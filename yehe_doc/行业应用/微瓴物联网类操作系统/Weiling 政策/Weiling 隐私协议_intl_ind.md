@@ -25,11 +25,11 @@ Fitur ini tersedia untuk pengguna secara global, tetapi terutama ditujukan untuk
 <td rowspan="3">Kami memproses informasi ini karena kami perlu melaksanakan kontrak kami dengan Anda untuk menyediakan Fitur.</td>
 </tr>
 <tr>
-<td><b>Informasi manajemen izin</b>: informasi manajemen pengguna, informasi manajemen peran, informasi manajemen struktur organisasi</td>
+<td><b>Informasi manajemen izin</b>: informasi manajemen pengguna, informasi manajemen peran, informasi manajemen struktur organisasi.</td>
 <td>Kami menggunakan informasi ini untuk menetapkan izin yang sesuai dan manajemen Fitur.</td>
 </tr>
 <tr>
-<td><b>Manajemen log</b>: log operasi, manajemen konfigurasi pencelupan</td>
+<td><b>Manajemen log</b>: log operasi, manajemen konfigurasi pencelupan.</td>
 <td>Kami menggunakan informasi ini untuk memastikan pengoperasian Fitur yang efektif sesuai dengan instruksi pelanggan.</td>
 </tr>
 </tbody></table>

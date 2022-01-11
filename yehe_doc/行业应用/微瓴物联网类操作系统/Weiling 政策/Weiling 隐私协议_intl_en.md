@@ -25,11 +25,11 @@ This Feature is available to users globally but primarily intended for users loc
 <td rowspan="3">We process this information as it is necessary for us to perform our contract with you to provide the Feature.</td>
 </tr>
 <tr>
-<td><b>Permission management information</b>: user management information, role management information, organizational structure management information</td>
+<td><b>Permission management information</b>: user management information, role management information, organizational structure management information.</td>
 <td>We use this information to establish appropriate permissions and management of the Feature.</td>
 </tr>
 <tr>
-<td><b>Log management</b>: operation log, dyeing configuration management</td>
+<td><b>Log management</b>: operation log, dyeing configuration management.</td>
 <td>We use this information to ensure effective operation of the Feature in accordance with customer instructions.</td>
 </tr>
 </tbody></table>
