@@ -4,8 +4,8 @@ You can log in to the Cloud Object Storage (COS) console to enable the real-time
 
 
 <dx-alert infotype="notice" title="Prerequisites">
-<li>Currently, you need to enable an allowlist when enabling the COS real-time log feature. <a href="https://cloud.tencent.com/online-service?from=connect-us">Contact us</a> to apply for the real-time log feature.</li>
-<li>Before enabling the real-time log feature for a COS bucket, you need to <a href="https://cloud.tencent.com/product/cls">activate CLS</a> first.</li>
+<li>Currently, you need to enable an allowlist when enabling the COS real-time log feature. <a href="https://intl.cloud.tencent.com/contact-sales">Contact us</a> to apply for the real-time log feature.</li>
+<li>Before enabling the real-time log feature for a COS bucket, you need to <a href="https://intl.cloud.tencent.com/product/cls">activate CLS</a> first.</li>
 </dx-alert>
 
 
