@@ -10,7 +10,6 @@
  1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/)에 로그인합니다.
  2. 왼쪽 메뉴에서 [[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)]를 클릭하십시오.
  3. SSH 키 관리 페이지에서 [보안키 생성]을 클릭하십시오.
- 4. SSH 키 생성 팝업창에서 실제 필요에 따라 키 생성 방식을 선택하고 관련 정보를 입력한 후 [확인]을 클릭하십시오.
 >! [확인]을 클릭하면 자동으로 개인키를 다운로드합니다. Tencent Cloud는 사용자의 개인키 정보를 보관하지 않으므로 개인키를 안전한 곳에 잘 보관하십시오.
  > 
 ![](https://main.qcloudimg.com/raw/a6675ade459e6bf236ff7301995a35f2.png)
