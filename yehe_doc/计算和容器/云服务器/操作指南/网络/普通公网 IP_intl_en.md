@@ -1,7 +1,7 @@
 ## Overview
-This document describes how to use the common public IP address. The common public IP can only be assigned when it is purchased in the CVM and cannot be unbound from the CVM. The unassigned public IPs are unavailable.
+This document describes how to use the common public IP address. The common public IP can only be assigned when you purchase a CVM and cannot be unbound from the CVM. 
 <dx-alert infotype="explain" title="">
-- When the bill-by-CVM accounts unbind IPs, each account can re-assign the public IP 10 times per day for free.
+- Each bill-by-CVM account has a free quota of 10 times to get new public IPs per day.
 - Only BGP IPs are applicable for the current common public IP addresses.
 </dx-alert>
 

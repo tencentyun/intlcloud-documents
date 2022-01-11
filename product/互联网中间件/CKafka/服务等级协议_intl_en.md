@@ -1,4 +1,4 @@
-> **The Cloud KAFKA Service Level Agreement (New Version) will be available on the official website of Tencent Cloud for the public to comment for thirty (30) days, and will take effect as of August 23, 2019 (Please note that the Cloud Kafka Service Level Agreement (Old Version) is also available on the official website of Tencent Cloud until August 23, 2019). Any service availability issue in relation to the CKafka service on or before August 23, 2019 is governed by the Cloud KAFKA Service Level Agreement (Old Version), while the service availability issue as from August 24, 2019 shall be subject to the Cloud KAFKA Service Level Agreement (New Version).**
+**The Cloud KAFKA Service Level Agreement (New Version) will be available on the official website of Tencent Cloud for the public to comment for thirty (30) days, and will take effect as of August 23, 2019 (Please note that the Cloud Kafka Service Level Agreement (Old Version) is also available on the official website of Tencent Cloud until August 23, 2019). Any service availability issue in relation to the CKafka service on or before August 23, 2019 is governed by the Cloud KAFKA Service Level Agreement (Old Version), while the service availability issue as from August 24, 2019 shall be subject to the Cloud KAFKA Service Level Agreement (New Version).**
 
 **In order to use the Tencent Cloud Kafka ("CKafka") service (the "Service"), you should read and observe this Cloud Kafka Service Level Agreement (this "Agreement") and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, *among others*, the terms and definitions of the Service, Service availability and Service uptime metrics, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, may be in bold font or underlined or otherwise brought to your special attention.**
 
@@ -26,16 +26,16 @@
 
 Service Availability = (total time of a Single Instance within a Service Month calculated in minutes - Single Instance Service Downtime Calculated in Minutes) / total time of a Single Instance within a Service Month calculated in minutes × 100%
 
-### 2.2 Service Availability Standard**
+### 2.2 Service Availability Standard
 
 **The Service Availability of the Service provided by Tencent Cloud will be** **no less than 99.95%**. You are entitled to the compensation as set forth in Section 3 (*Service Compensation*) below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below.
 
 Assuming that the Total Time of a Single Instance within a Service Month is 30 × 24 × 60 × 99.95% = 43178.4 minutes, the Service downtime of the instance in such month will be 43200 -- 43178.4 = 21.6 minutes.
 
->**Note:**
->The standard above applies only to the availability of the components of the Service per se; for the service availability of the other relevant Tencent Cloud services, such as COS, EMR and Oceanus, please refer to their respective service level agreement.
->None of the additional functionality provided by the Service, including without limitation storing messages via COS, is covered by Service Availability guarantee herein.
->The data in the Service is delivered asynchronously, which means, *among others*, that the Service cannot guarantee 100% storage of the data under the circumstance of multiple server malfunction, and therefore, in order to ensure the security of the data, you should make replicas of your instances and be responsible for backing up your data.
+>?
+> - The standard above applies only to the availability of the components of the Service per se; for the service availability of the other relevant Tencent Cloud services, such as COS, EMR and Oceanus, please refer to their respective service level agreement.
+> - None of the additional functionality provided by the Service, including without limitation storing messages via COS, is covered by Service Availability guarantee herein.
+> - The data in the Service is delivered asynchronously, which means, *among others*, that the Service cannot guarantee 100% storage of the data under the circumstance of multiple server malfunction, and therefore, in order to ensure the security of the data, you should make replicas of your instances and be responsible for backing up your data.
 
 ## 3. Service Compensation
 

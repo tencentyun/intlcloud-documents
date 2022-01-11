@@ -1,73 +1,79 @@
+**The Cloud KAFKA Service Level Agreement (New Version) will be available on the official website of Tencent Cloud for the public to comment for thirty (30) days, and will take effect as of August 23, 2019 (Please note that the Cloud Kafka Service Level Agreement (Old Version) is also available on the official website of Tencent Cloud until August 23, 2019). Any service availability issue in relation to the CKafka service on or before August 23, 2019 is governed by the Cloud KAFKA Service Level Agreement(Old Version), while the service availability issue as from August 24, 2019 shall be subject to the Cloud KAFKA Service Level Agreement (New Version).**
 
-**为使用腾讯云消息队列 CKafka 服务（以下简称“本服务”），您应当阅读并遵守《消息队列 CKafka 服务等级协议》（以下简称“本协议”），以及《[腾讯云服务协议](https://intl.cloud.tencent.com/document/product/301/9248)》。本协议包含本服务的术语和定义、服务可用性/服务成功率等级指标、赔偿方案、免责条款等相关内容。请您务必审慎阅读、充分理解各条款内容，限制、免责条款或者其他涉及您重大权益的条款可能会以加粗、加下划线等形式提示您重点注意。**
+**In order to use the Tencent Cloud Kafka ("CKafka") service (the "Service"), you should read and observe this Cloud Kafka Service Level Agreement (this "Agreement") and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, *among others*, the terms and definitions of the Service, Service availability and Service uptime metrics, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, may be in bold font or underlined or otherwise brought to your special attention.**
 
-**除非您已充分阅读、完全理解并接受本协议所有条款，否则，请您不要购买或使用本服务。您单击“同意”、“下一步”或您的购买、使用等行为或者您以其他任何明示或者默示方式表示接受本协议的，即视为您已阅读并同意本协议的约束。本协议即在您与腾讯云之间产生法律效力，成为对双方均具有约束力的法律文件**。
-## 1. 术语和定义
-#### 1.1 消息队列 CKafka（Cloud Kafka，CKafka）
-是指腾讯云为您提供的一个分布式的、高吞吐量、高可扩展性的消息系统，兼容开源 Kafka API（0.9和0.10版本）。本服务基于发布/订阅模式，通过消息解耦，使生产者和消费者异步交互，无需彼此等待。本服务具有数据压缩、同时支持离线和实时数据处理等优点，适用于日志压缩收集、监控数据聚合等场景。
-#### 1.2 单实例
-单位数量为1的消息队列 CKafka 实例。服务可用性按单实例进行计算。
-#### 1.3 单实例服务月度总分钟数
-按照单实例服务月度内的总天数 × 24（小时）× 60（分钟）计算。
-#### 1.4 实例不可用
-当一个设置了出入允许规则的 CKafka 实例与任一 IP 地址的双向（出/入）都无法联通，且该状态持续5分钟以上，视为该分钟内 CKafka 实例不可用。
-#### 1.5 单实例服务不可用分钟数
-单实例不可用分钟数 = 实例不可用解决时间 - 实例不可用开始时间。不可用时间指业务发生故障开始到恢复正常使用的时间，包括维护时间。若业务故障时间超过5分钟的，方纳入不可用时间。若业务故障恢复正常的时间在5分钟以下（即实例不可用持续时间不超过5分钟的），不计入不可用分钟数。
-#### 1.6 服务月度
-指您购买本服务的服务期限所包含的各个自然月度。如您购买三个月本服务，服务开通之日为3月17日，则包含4个服务月度，其中第1个服务月度是指3月17日到3月31日，第2个服务月度是指4月1日到4月30日，第3个服务月度是指5月1日到5月31日，第4个服务月度是指6月1日到6月16日。服务可用性按服务月度单独核算。
-#### 1.7 月度服务费
-您在一个服务月度中就单 CKafka 实例所支付的现金服务费用总额，不包含已经购买尚未消费的部分。月度服务费不含用代金券、优惠券、服务费减免等抵扣的费用。
+**Please do not purchase or use the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking "Agree"/ "Next", or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
-## 2. 服务可用性
-#### 2.1 服务可用性计算方式
-服务可用性 =（单实例服务月度总分钟数 - 单实例服务不可用分钟数）/ 单实例服务月度总分钟数 × 100%
+## 1.  Terms and Definitions
 
-#### 2.2 服务可用性标准
-**本服务的服务可用性不低于99.95%**，如未达到上述可用性标准（属于免责条款情形的除外），您可以根据本协议第3条（赔偿方案）约定获得赔偿。
-假设某服务月度单实例服务月度总分钟数为30 × 24 × 60 × 99.95% = 43178.4分钟，即存在43200 - 43178.4 = 21.6分钟的不可用时间。
->
-- 本服务仅负责本身组件的可用性，涉及周边腾讯云产品 COS、EMR、流计算等可查阅对应产品的服务等级协议。
-- 本服务提供的附加能力，包括但不限于存储消息到 COS 功能，不包括在服务可用性承诺范围内。
-- 本服务的数据采用异步落盘方式，当包括但不限于多个服务器出现故障时，本服务将无法保证其所提供的数据100%存储，为了数据的安全，您应保障实例配置为多副本并负责您的数据的备份工作。
+1.1  **Cloud** **Kafka (CKafka)**: means a distributed, high-throughput, highly scalable messaging system that is compatible with open-source Apache Kafka API (version 0.9 and version 0.10). Based on the publish/subscribe model, CKafka enables async interaction between the message producer and consumer by decoupling the messages and thereby eliminating wait time. CKafka supports data compression and offline and real-time data processing, making it ideal for collection of compressed logs and aggregation of monitoring data.
 
-　
+1.2  **Single Instance**: means one (1) CKafka instance. The Service Availability will be calculated on a Single Instance basis.
 
-## 3. 赔偿方案
-对于本服务，如服务可用性低于标准，您有权按照如下条款约定获得赔偿：
-#### 3.1 赔偿标准
-（1）赔偿以腾讯云**发放代金券**的形式实现，您应当遵守代金券的使用规则（包括使用期限等，具体以腾讯云官网发布的代金券相关规则为准）。发放的代金券不能折现、不开具发票，仅限您通过您的腾讯云账户购买本服务，不能购买其他的腾讯云服务，您也不可以将代金券进行转让、赠予等。
-（2）如果某服务月度没有达到服务可用性标准，赔偿额按照相应未达标服务月度单独计算，**赔偿总额不超过相应未达标服务月度内您就本服务支付的相应月度服务费**（此处的月度服务费不含用代金券、优惠券、服务费减免等抵扣的费用）。
+1.3 **Total Time of a Single Instance within a Service Month**: equals to the total number of days of the Service Month × 24 (hours) × 60 (minutes).
 
-|服务月度的服务可用性 | 赔偿代金券金额 | 
-|---------|---------|
-| 低于99.95%但等于或高于99% | 月度服务费的10% | 
-| 低于99%但等于或高于95% | 月度服务费的25% | 
-| 低于95% | 月度服务费的100% | 
+1.4 **Instance Unavailability**: When a CKafka instance with incoming and outgoing permission rules properly configured fails to communicate with an IP address, neither incoming nor outgoing, and such failure lasts for more than five (5) minutes, it will be deemed that the CKafka instance is unavailable within such five (5) minutes.
 
-#### 3.2 赔偿申请时限
-（1）如某服务月度没有达到服务可用性标准，您可以在没有达标的相应服务月度结束后的次月的第五（5）个工作日后，**仅通过您相应账户的工单系统提出赔偿申请**。您提出赔偿申请后腾讯云会进行相应核实，对于服务月度的服务可用性的计算，若双方出现争议的，**双方均同意最终以腾讯云的后台记录为准**。
-（2）**您最晚提出赔偿申请的时间不应超过未达标的相应服务月度结束后六十（60）个自然日**。如果您在未达标的相应服务月度结束后的六十（60）日内未提出赔偿申请，或者在未达标的相应服务月度结束后的六十（60）日之后才提出赔偿申请，或者您通过非本协议约定的方式提出申请的，均视为您自动放弃要求赔偿的权利及向腾讯云主张其他权利的权利，腾讯云有权不受理您的赔偿申请，不对您进行任何赔偿或补偿。
+1.5 **Single Instance Service Downtime Calculated in Minutes**: Single Instance Service Downtime Calculated in Minutes = the time when the Instance Unavailability is fixed -- the time when the Instance Unavailability starts. Service downtime means the time period starting from the malfunction to the recovery to normal use, including the time period for maintenance. It will not be counted in the Service downtime unless and until the malfunction of the Service lasts for at least five (5) minutes; when the Instance Unavailability is fixed within five (5) minutes, which means that the actual downtime of the Service is less than five (5) minutes, such downtime will not be counted in the Service downtime defined herein.
 
-## 4. 免责条款
-**由以下原因导致的服务不可用，相应服务不可用时间不属于服务不可用的计算范畴和腾讯云的赔偿范畴，腾讯云无须向您承担责任：**
-4.1 由于触达或超过购买的单业务实例规模的限制所产生的服务不可达的情况。
-4.2 非腾讯云原因造成的服务不可用或服务不达标的情况。
-4.3 属于相关法律法规、相关协议、相关规则或腾讯云单独发布的相关服务条款、规则、说明等中所述的腾讯云可以免责、免除赔偿责任等的情况。
-4.4 腾讯云预先通知您后进行系统维护所引起的，包括割接、维修、升级和模拟故障演练。
-4.5 由开源社区引起的数据流或者管理流层面的缺陷造成的服务不可用。
-4.6 您的应用接口或数据受到攻击或其他不当行为引起的。
-4.7 您未遵循腾讯云产品使用文档或使用建议引起的。
+1.6 **Service Month(s)**: means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
 
-## 5. 其他
-5.1 **您了解腾讯云无法保证本服务毫无瑕疵，但腾讯云将尽力不断提升服务质量及服务水平，所以您同意：即使本服务存在瑕疵，但若上述瑕疵是当时行业技术水平所无法避免的，其将不被视为腾讯云违约。您同意和腾讯云共同合作解决上述瑕疵问题**。
-5.2 **双方确认并在此认可：在任何情况下，若您在使用本服务过程中因腾讯云违约原因造成您损失的，腾讯云的违约赔偿总额不超过您已经支付的相应违约服务对应的服务费总额**。
-5.3 腾讯云有权根据变化适时或必要时对本协议条款做出修改，您可以在腾讯云官网的最新版本中查阅相关协议条款。如您不同意腾讯云对协议所做的修改，您有权停止使用本服务，如您继续使用本服务，则视为您接受修改后的协议。
-5.4 本协议作为《腾讯云服务协议》的附属协议，具有与《腾讯云服务协议》同等效力，本协议未约定事项，您需遵守《腾讯云服务协议》的相关约定。若本协议与《腾讯云服务协议》中的条款相冲突或不一致，则以本协议为准，但仅在该冲突或不一致范围内适用。（完）
+1.7 **Monthly Service Fee**: means the aggregate service fees paid by you in cash for a Single CKafka Instance within one (1) Service Month, excluding the portion paid yet to be consumed, and the portion deducted by a voucher or promotional credits, due to discounted service fee or otherwise deducted.
+
+## 2.  Service Availability
+
+### 2.1 Calculation of Service Availability
+
+Service Availability = (total time of a Single Instance within a Service Month calculated in minutes - Single Instance Service Downtime Calculated in Minutes) / total time of a Single Instance within a Service Month calculated in minutes × 100%
+
+### 2.2 Service Availability Standard
+
+**The Service Availability of the Service provided by Tencent Cloud will be** **no less than 99.95%**. You are entitled to the compensation as set forth in Section 3 (*Service Compensation*) below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below.
+
+Assuming that the Total Time of a Single Instance within a Service Month is 30 × 24 × 60 × 99.95% = 43178.4 minutes, the Service downtime of the instance in such month will be 43200 -- 43178.4 = 21.6 minutes.
+
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p><ul><li>The standard above applies only to the availability of the components of the Service per se; for the service availability of the other relevant Tencent Cloud services, such as COS, EMR and Oceanus, please refer to their respective service level agreement.</li><li>None of the additional functionality provided by the Service, including without limitation storing messages via COS, is covered by Service Availability guarantee herein.</li><li>The data in the Service is delivered asynchronously, which means, <i>among others</i>, that the Service cannot guarantee 100% storage of the data under the circumstance of multiple server malfunction, and therefore, in order to ensure the security of the data, you should make replicas of your instances and be responsible for backing up your data.</li></ul></a></p>
+</blockquote>
+
+## 3. Service Compensation
+
+In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
+
+### 3.1 Standards of Compensation
+
+(1) Compensations will be made **in the form of voucher** by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud's official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
+
+(2) If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month** (the Monthly Service Fee referred to herein shall exclude the portion deducted by a voucher or promotional credits, due to discounted service fee or otherwise deducted).
+
+|**Service Availability (Av) for a Service Month**  | **Value of Compensation Voucher**|
+|--------------------------------------------------- |-----------------------------------|
+|99.95% > Av ≥ 99%	|10% of the Monthly Service Fee|
+|99% > Av ≥ 95%|	25% of the Monthly Service Fee|
+|95% > Av	|100% of the Monthly Service Fee|
 
 
+### 3.2 Time Limit for Compensation Application
+
+(1) If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation **through (and only through) the support ticket system under your relevant account** after the fifth (5^th^) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, **both parties agree that the back-end record of Tencent Cloud will prevail**.
+
+(2) **You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard**. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
+
+## 4. Release of Liabilities
+
+**If the Service is unavailable due to any of the following reasons, the corresponding Service downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
+4.1	any failure of the Service to meet the availability standard due to reaching or exceeding the limit of the scale of the single business instance purchased by you.
+4.2	any Service unavailability or failure of the Service to meet the availability standard due to any reason not attributable to Tencent Cloud.
+4.3	any circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any terms of service, rules or guidelines published by Tencent Cloud separately.
+4.4	any system maintenance with prior notice by Tencent Cloud to you, including system cutover, maintenance, upgrade and malfunction simulation test.
+4.5	any defects of data flow or management flow resulting from open source community.
+4.6	any attack on your application endpoint or data, or any other mal-operation.
+4.7	any failure of you to abide by user guide or suggestions for using Tencent Cloud products.
 
 
+## 5. Miscellaneous
 
-
-
+5.1	**You understand that Tencent Cloud cannot warrant that the Service is error free; however Tencent Cloud will endeavor to continuously improve the quality and level of its services. As such, you hereby agree that Tencent will not be deemed to have breached this Agreement in case of any error of the Service, as long as such error is unavoidable in the context of the then existing technologies in the industry. You agree to cooperate with Tencent to resolve aforementioned error.**
+5.2	**The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.**
+5.3	Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agreement terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
+5.4	As an ancillary agreement to the Tencent Cloud Service Agreement, this Agreement is of the same legal effect as the Tencent Cloud Service Agreement. In respect of any matter not agreed herein, you shall comply with relevant terms under the Tencent Cloud Service Agreement. In case of any conflict or discrepancy between this Agreement and the Tencent Cloud Service Agreement, this Agreement prevails to the extent of such conflict or discrepancy. (End of Document)
 
