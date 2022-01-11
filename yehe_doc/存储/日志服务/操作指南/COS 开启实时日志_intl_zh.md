@@ -4,8 +4,8 @@
 
 
 <dx-alert infotype="notice" title="前提条件">
-<li>目前 COS 的实时日志功能开启需要开启白名单， 请前往 <a href="https://cloud.tencent.com/online-service?from=connect-us">联系我们</a> 申请开启实时日志功能。</li>
-<li>为 COS 存储桶开启实时日志功能，需先 <a href="https://cloud.tencent.com/product/cls">开通 CLS 日志服务</a>。</li>
+<li>目前 COS 的实时日志功能开启需要开启白名单， 请前往 <a href="https://intl.cloud.tencent.com/contact-sales">联系我们</a> 申请开启实时日志功能。</li>
+<li>为 COS 存储桶开启实时日志功能，需先 <a href="https://intl.cloud.tencent.com/product/cls">开通 CLS 日志服务</a>。</li>
 </dx-alert>
 
 
