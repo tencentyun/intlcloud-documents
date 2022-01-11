@@ -63,9 +63,9 @@ try
 {
   // 存储桶名称，此处填入格式必须为 bucketname-APPID, 其中 APPID 获取参考 https://console.cloud.tencent.com/developer
   string bucket = "examplebucket-1250000000";
-  DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
+  GetBucketWebsiteRequest request = new GetBucketWebsiteRequest(bucket);   
   //执行请求
-  DeleteBucketTaggingResult result = cosXml.DeleteBucketTagging(request);
+  GetBucketWebsiteResult result = cosXml.GetBucketWebsite(request);
   
   //请求成功
   Console.WriteLine(result.GetResultInfo());
@@ -98,9 +98,9 @@ try
 {
   // 存储桶名称，此处填入格式必须为 bucketname-APPID, 其中 APPID 获取参考 https://console.cloud.tencent.com/developer
   string bucket = "examplebucket-1250000000";
-  DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
+  DeleteBucketWebsiteRequest request = new DeleteBucketWebsiteRequest(bucket);   
   //执行请求
-  DeleteBucketTaggingResult result = cosXml.DeleteBucketTagging(request);
+  DeleteBucketWebsiteResult result = cosXml.DeleteBucketWebsite(request);
   
   //请求成功
   Console.WriteLine(result.GetResultInfo());
@@ -118,4 +118,3 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketWebsite.cs) 查看。
-
