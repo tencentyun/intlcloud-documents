@@ -63,9 +63,9 @@ try
 {
   // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
   string bucket = "examplebucket-1250000000";
-  DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
+  GetBucketWebsiteRequest request = new GetBucketWebsiteRequest(bucket);   
   // Execute the request
-  DeleteBucketTaggingResult result = cosXml.DeleteBucketTagging(request);
+  GetBucketWebsiteResult result = cosXml.GetBucketWebsite(request);
   
   // Request succeeded
   Console.WriteLine(result.GetResultInfo());
@@ -98,9 +98,9 @@ try
 {
   // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
   string bucket = "examplebucket-1250000000";
-  DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
+  DeleteBucketWebsiteRequest request = new DeleteBucketWebsiteRequest(bucket);  
   // Execute the request
-  DeleteBucketTaggingResult result = cosXml.DeleteBucketTagging(request);
+  DeleteBucketWebsiteResult result = cosXml.DeleteBucketWebsite(request);
   
   // Request succeeded
   Console.WriteLine(result.GetResultInfo());
