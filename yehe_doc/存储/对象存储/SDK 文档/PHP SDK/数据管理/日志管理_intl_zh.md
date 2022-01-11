@@ -59,7 +59,7 @@ try {
 | ------------ | ------------------------------------------------------------ | ------ |
 | Bucket       | 开启日志功能的源存储桶，格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | TargetBucket | 存放日志的目标存储桶，格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| TargetPrefix | 日志存放在目标存储桶的指定路径  | String
+| TargetPrefix | 日志存放在目标存储桶的指定路径  | String |
 
 ## 查询日志管理
 
@@ -129,5 +129,5 @@ GuzzleHttp\Command\Result Object
 
 | 成员变量     | 描述                     | 类型   |
 | ------------ | ------------------------ | ------ |
-| TargetBucket | 日志存放的目标存储桶     | String |
-| TargetPrefix | 日志存放的目标存储桶路径 | String |
+| TargetBucket | 日志存放的目标存储桶     | String  |
+| TargetPrefix | 日志存放的目标存储桶路径  |  String   |
