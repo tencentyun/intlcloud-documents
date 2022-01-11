@@ -1,5 +1,5 @@
 ## 1.LATAR BELAKANG
-Modul ini berlaku jika Anda menggunakan LinkBase (“**Fitur**”). Modul ini tergabung dalam Perjanjian Privasi dan Keamanan Data yang terdapat di**[DPSA](https://intl.cloud.tencent.com/document/product/301/17347)**. Istilah-istilah yang digunakan namun tidak didefinisikan dalam Modul ini memiliki arti yang sama dengan yang ditentukan dalam DPSA. Jika terdapat perbedaan antara DPSA dan Modul ini, Modul inilah yang akan berlaku bahkan jika terjadi inkonsistensi.
+Modul ini berlaku jika Anda menggunakan LinkBase (“**Fitur**”). Modul ini tergabung dalam Perjanjian Privasi dan Keamanan Data yang terdapat di **[DPSA](https://intl.cloud.tencent.com/document/product/301/17347)**. Istilah-istilah yang digunakan namun tidak didefinisikan dalam Modul ini memiliki arti yang sama dengan yang ditentukan dalam DPSA. Jika terdapat perbedaan antara DPSA dan Modul ini, Modul inilah yang akan berlaku bahkan jika terjadi inkonsistensi.
 
 ## 2.PEMROSESAN
 Kami akan memproses data berikut sehubungan dengan Fitur:

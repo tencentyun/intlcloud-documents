@@ -38,14 +38,25 @@ Processaremos os seguintes dados em conexão com o Recurso:
 
 ## 3.REGIÃO DO SERVIÇO
 Conforme especificado no DPSA.
+
 ## 4.SUBPROCESSADORES
 Como especificado no DPSA, incluindo Aceville Pte. Ltd.
+
 ## 5\. RETENÇÃO DE DADOS
 Armazenaremos dados pessoais processados em conexão com o Recurso da seguinte forma:
-| <b>Informações pessoais</b>                                                   | <b>Política de retenção</b>                                   |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-|   Informação de estrutura espacial; informação de gerenciamento de aplicação; informação de gerenciamento de equipamento; informação de serviço de dados; informação de alarme de monitor; configuração de ligação; informação de projeto.        | Os dados serão armazenados por 1 ano. Caso o usuário solicite a exclusão dos dados, os dados serão excluídos em 3 dias. |
+<table>
+<thead>
+<tr>
+<th><b>Informações pessoais</b></th>
+<th><b>Política de retenção</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Informação de estrutura espacial; informação de gerenciamento de aplicação; informação de gerenciamento de equipamento; informação de serviço de dados; informação de alarme de monitor; configuração de ligação; informação de projeto.</td>
+<td>Os dados serão armazenados por 1 ano. Caso o usuário solicite a exclusão dos dados, os dados serão excluídos em 3 dias.</td>
 
 Você pode solicitar a exclusão desses dados pessoais de acordo com o DPSA.
+
 ## 6\. CONDIÇÕES ESPECIAIS
 Você deve garantir que este recurso seja usado somente por usuários finais com a idade exigida para que possam consentir com o processamento de seus dados pessoais. Pode haver diferenças dependendo da jurisdição em que o usuário final está localizado.
