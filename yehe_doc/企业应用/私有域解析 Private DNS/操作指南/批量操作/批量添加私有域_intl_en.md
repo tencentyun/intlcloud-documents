@@ -11,6 +11,8 @@ This document describes how to bulk add private domains.
 >?
 >- You can add up to 500 second-level private domains at a time.
 >- You can only create standard TLD domains that comply with the IANA specifications.
+
+
 4. Click **Bulk Add**.
 >? After bulk adding private domains, you can add corresponding DNS records if needed as instructed in [Bulk Adding DNS Records](https://intl.cloud.tencent.com/document/product/1097/43802).
 
