@@ -130,4 +130,4 @@ GuzzleHttp\Command\Result Object
 | Member Variable | Description | Type |
 | ------------ | ------------------------ | ------ |
 | TargetBucket | Destination bucket that stores logs     | String |
-| TargetPrefix | LoggingEnabled | Path to the directory that stores logs in the destination bucket |  String |
+| TargetPrefix |  Path to the directory that stores logs in the destination bucket |  String |
