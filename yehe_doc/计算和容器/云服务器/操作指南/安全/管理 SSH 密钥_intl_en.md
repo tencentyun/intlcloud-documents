@@ -10,8 +10,7 @@ This document describes common operations related to using SSH key pair to log i
  1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
  2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar.
  3. Click **New** on the **SSH Key**page.
- 4. In the pop-up window, select a creation method as needed, enter the related information, and click **OK**.
->! After clicking **OK**, the private key will be automatically downloaded. Tencent Cloud will not retain your private key. Be sure to keep it safe.
+ >! After clicking **OK**, the private key will be automatically downloaded. Tencent Cloud will not retain your private key. Be sure to keep it safe.
  > 
 ![](https://main.qcloudimg.com/raw/a6675ade459e6bf236ff7301995a35f2.png)
   - If you select **Create a new key pair**, enter the key name.
