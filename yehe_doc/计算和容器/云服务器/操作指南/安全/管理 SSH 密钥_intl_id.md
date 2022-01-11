@@ -10,7 +10,6 @@ Dokumen ini menjelaskan operasi umum yang terkait dengan penggunaan pasangan kun
  1. Login ke [konsol CVM](https://console.cloud.tencent.com/cvm/).
  2. Klik **[SSh Key](https://console.cloud.tencent.com/cvm/sshkey)** (Kunci SSH) di bilah sisi kiri.
  3. Klik **New** (Baru) di halaman **SSH key** (Kunci SSH).
- 4. Di jendela pop-up, pilih metode pembuatan sesuai kebutuhan, masukkan informasi terkait, dan klik **OK** (OKE).
 >! Setelah mengklik **OK** (OKE), kunci pribadi akan diunduh secara otomatis. Tencent Cloud tidak akan menyimpan kunci pribadi Anda. Pastikan untuk menyimpannya dengan aman.
  > 
 ![](https://main.qcloudimg.com/raw/a6675ade459e6bf236ff7301995a35f2.png)
