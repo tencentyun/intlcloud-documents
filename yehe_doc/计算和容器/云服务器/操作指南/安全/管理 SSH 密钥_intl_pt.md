@@ -10,7 +10,6 @@ Este documento descreve as operações comuns relacionadas ao uso do par de chav
  1. Faça login no [Console do CVM](https://console.cloud.tencent.com/cvm/).
  2. Clique em **[SSH Key (Chave SSH)](https://console.cloud.tencent.com/cvm/sshkey)** na barra lateral esquerda.
  3. Clique em **New (Nova)** na página **SSH Key (Chave SSH)**.
- 4. Na janela pop-up, selecione um método de criação conforme necessário, insira as informações relacionadas e clique em **OK**.
 >! Depois de clicar em **OK**, a chave privada será baixada automaticamente. O Tencent Cloud não reterá a sua chave privada. Certifique-se de mantê-la segura.
  > 
 ![](https://main.qcloudimg.com/raw/a6675ade459e6bf236ff7301995a35f2.png)
