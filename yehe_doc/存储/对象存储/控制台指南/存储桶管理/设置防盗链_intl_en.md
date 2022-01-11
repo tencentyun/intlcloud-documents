@@ -14,14 +14,16 @@ Tencent Cloud COS provides hotlink protection to help users avoid unnecessary lo
 3. Choose **Security Management** > **Hotlink Protection** and click **Edit**.
    ![](https://main.qcloudimg.com/raw/235d3158684e32b4b92daf0e81bd6db6.png)
 4. Switch the status to Enabled, select a list type (blocklist or allowlist), enter the applicable domain names, and then click **Save**. The configuration items are described as follows:
- > **Blocklist**: domain names on this list are **not allowed** to access the default access address of the bucket. 403 is returned if any domain name on the list accesses such address.
+   ![](https://main.qcloudimg.com/raw/6a02d7abf3ec8630ca9a89959554e2cd.png)
+
+ - **Blocklist**: domain names on this list are **not allowed** to access the default access address of the bucket. 403 is returned if any domain name on the list accesses such address.
  - **Allowlist**: domain names on this list **are allowed** to access the default access address of the bucket. 403 is returned if any domain name not on the list accesses such address.
  - **Empty referer**: For an HTTP request, the header referer can be left empty (i.e., the HTTP request header has no referer field or the referer field is empty).
  - **Referer**: You can enter up to 10 domain names (which can be used to represent all domain names with a particular prefix), with one domain name per line. Supported address formats include domain name, IP address, and the wildcard `*`; Examples are outlined below:
     - If `www.example.com` is specified, `www.example.com/123`, `www.example.com.cn`, and other addresses with the prefix of `www.example.com` will also be included in the list.
     - Domain names and IPs with ports are supported, such as `www.example.com:8080` and `10.10.10.10:8080`.
     - If `*.example.com` is specified, addresses such as `a.b.example.com/123` and `a.example.com` are also included.
-     ![](https://main.qcloudimg.com/raw/6a02d7abf3ec8630ca9a89959554e2cd.png)
+
 		
 >? If accelerated access is implemented via a CDN endpoint domain name, CDN hotlink protection rules will be executed before COS hotlink protection rules.
 >
