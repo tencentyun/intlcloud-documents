@@ -161,3 +161,12 @@ Chorus 시나리오에서는 방 주인 메인 보컬과 시청자가 마이크�
 </tr>
 </table>
 
+<script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
+<script>
+const aegis = new Aegis({
+  id: 'iHWefAYqlXjjlfAkpx',
+  uin: document.cookie.replace(/(?:(?:^|.*;\s*)uin\s*\=\s*([^;]*).*$)|^.*$/, "$1")|| '',
+  reportApiSpeed: false,
+  reportAssetSpeed: false
+})
+</script>
