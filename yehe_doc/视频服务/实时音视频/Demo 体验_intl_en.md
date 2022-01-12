@@ -162,3 +162,12 @@ In the duet mode, the room owner can sing together with a user from the audience
 </tr>
 </table>
 
+<script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
+<script>
+const aegis = new Aegis({
+  id: 'iHWefAYqlXjjlfAkpx',
+  uin: document.cookie.replace(/(?:(?:^|.*;\s*)uin\s*\=\s*([^;]*).*$)|^.*$/, "$1")|| '',
+  reportApiSpeed: false,
+  reportAssetSpeed: false
+})
+</script>
