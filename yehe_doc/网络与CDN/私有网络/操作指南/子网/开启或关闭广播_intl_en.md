@@ -1,12 +1,12 @@
 ## Background
 Multicast and broadcast are modes of one-to-many communication, which can help enterprises reduce network bandwidth consumption and network load through point-to-multipoint efficient data transmission.
-If unicast is used, the sending server needs to separately send to N servers for total N times. If multicast is used, the server sends the same data to N servers only once, which reduces server resource consumption and also bandwidth resources of the backbone network.
+In the unicast mode, the initiating server sends data to N servers separately. If the multicast mode, the server sends the same data to N servers in once, which reduces the server resource consumption and also the bandwidth resource of the backbone network.
 - Multicast: Tencent Cloud supports multicast on the VPC dimension.
 - Broadcast: Tencent Cloud supports broadcast on the subnet dimension.
 
 >?
->- The broadcast and multicast features are currently in beta phase. To become a beta user, please submit an application for broadcast or multicast.
->- Currently, the broadcast and multicast features are available in Beijing, Shanghai, Guangzhou, Nanjing, Chengdu, Chongqing, and Hong Kong, China.
+>- The broadcast and multicast features are currently in beta test. If you do need to use them, please [submit an application](https://console.cloud.tencent.com/workorder/category).
+>- At present, the regions supporting multicast and broadcast are: Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Nanjing, Hong Kong of China, Singapore, Seoul, Tokyo, Mumbai, Bangkok, Toronto, Silicon Valley, Virginia, Frankfurt and Moscow.
 >
 
 ## Overview
@@ -19,14 +19,16 @@ This document describes how to enable or disable broadcast for subnets.
 ## Directions
 ### Enabling broadcast
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
-2. Click **Subnet** on the left sidebar to access the management page.
-3. In the VPC list, locate the VPC for which you want to enable broadcast, and slide to **Enable** under the **Subnet broadcast** column.
+2. Click **Subnet** on the left sidebar to access the admin page.
+3. In the VPC list, locate the target VPC, and toggle on **Enable** under the **Subnet broadcast** column.
+![]()
 
 ### Disabling broadcast
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
-2. Click **Subnet** on the left sidebar to access the management page.
-3. In the VPC list, locate the VPC for which you want to disable broadcast, and slide to **Disable** under the **Subnet broadcast** column.
+2. Click **Subnet** on the left sidebar to access the admin page.
+3. In the VPC list, locate the target VPC, and toggle on **Disable** under the **Subnet broadcast** column.
+![]()
 
-## Relevant Operations
-For detailed directions regarding VPC multicast, see [Enabling or Disabling Multicast](https://intl.cloud.tencent.com/document/product/215/40072).
+## References
+For more information about the VPC-level multicast, see [Enabling or Disabling Multicast](https://intl.cloud.tencent.com/document/product/215/40072).
 

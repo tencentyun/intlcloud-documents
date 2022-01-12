@@ -7,7 +7,7 @@
 子网的 CIDR 必须在私有网络的 CIDR 内或相同。
 
 ### VPC 和子网的网段可以修改吗？
-- 您在创建私有网络和子网时时，需要指定其 CIDR，一旦创建即不可更改。
+- 您在创建私有网络和子网时，需要指定其 CIDR，一旦创建即不可更改。
 - 如果您因为私有网络网段重叠而无法建立对等连接，推荐您使用限制粒度更小的 [云联网](https://intl.cloud.tencent.com/product/ccn)（子网网段不重叠即可），或对私有网络下实例进行迁移。VPC 间迁移请参考 [切换私有网络服务](https://intl.cloud.tencent.com/document/product/213/20278)。
 
 ### 如何处理因 VPC 网段冲突而无法建立对等连接的问题？
@@ -20,11 +20,13 @@
 
 ### VPC 内资源（CVM、数据库等）是否支持修改内网 IP？
 - 云服务器主网卡的主内网 IP 支持修改，辅助网卡的主内网 IP 不支持修改，详情请参见 [修改内网 IP 地址](https://intl.cloud.tencent.com/document/product/213/16561)。
-- 内网负载均衡（CLB） / 云数据库（TencentDB）不支持修改内网 IP。
+- 云数据库（TencentDB）支持修改内网 IP，例如修改 MySQL 的内网 IP，可参考 [自定义 IP 端口](https://intl.cloud.tencent.com/document/product/236/31915)。
+- 负载均衡（CLB）不支持修改内网IP地址。
 
 ### VPC 内的云服务器或数据库能否切换到其它 VPC？
-- 目前支持云服务器的迁移，但暂不支持数据库及其他资源的迁移。
+- 目前支持云服务器、云数据库 MySQL的迁移，暂不支持其他数据库的迁移。
 - 云服务器可从当前 VPC 迁移至同账户下的其他 VPC 内，详细操作步骤和注意事项，请参见 [切换私有网络服务](https://intl.cloud.tencent.com/document/product/213/20278)。
+- 云数据库 MySQL 可从当前 VPC 迁移至同账户下的其他 VPC 内，详细操作步骤和注意事项，请参见 [切换网络](https://intl.cloud.tencent.com/document/product/236/31915)。
 
 ### 弹性公网 IP 有什么作用？
 弹性公网 IP 适用于以下场景：
@@ -37,9 +39,10 @@
 
 ### 如何保持公网 IP 地址不变？
 当您需要保留账户中的某个特定公网 IP 时，可将其转换为弹性公网 IP，绑定设备后，即可使用该 IP 进行公网访问。只要您不进行“释放”操作，该弹性公网 IP 便一直保留在您的账户中。
-
-相关操作指引，请参见 [公网 IP 转弹性 IP](https://intl.cloud.tencent.com/document/product/213/16586)。
+相关操作指引，请参见 [普通公网 IP 转 EIP](https://intl.cloud.tencent.com/document/product/213/16586#convert-a-public-ip-to-an-eip)。
 
 ### 弹性公网 IP 能否再转换为普通公网 IP？
 弹性公网 IP 无法再次转换为普通公网 IP。
+
+
 
