@@ -1,7 +1,7 @@
 ## TRTCCloud @ TXLiteAVSDK
 
 ### インスタンスの作成およびイベントコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [sharedInstance](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ab6884975e069628328d05cf0e2c3dc67) | TRTCCloudインスタンスの作成（シングルトンモード） |
 | [destroySharedIntance](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ad8961d03736d8a52df5a3a991d0a77c4)  | TRTCCloudインスタンスの破棄（シングルトンモード） |
@@ -9,7 +9,7 @@
 | [delegateQueue](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a97158c52f2a4011454b4eb3ee369a8a1) | TRTCCloudDelegate イベントコールバックを起動するキューの設定 |
 
 ### ルーム関連インターフェース関数
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [enterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) | ルームに入室 |
 | [exitRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a715f5b669ad1d7587ae19733d66954f3) | ルームを退室 |
@@ -22,7 +22,7 @@
 | [destroySubCloud](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a19e0d7921ac494fb588a4654d97abe86) | サブルーム事例の破棄 |
 
 ### CDN関連インターフェース関数
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [startPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a6d2f4d81f0944072053d7dc9e9265f22) | Tencent Cloud CSS CDNへのオーディオビデオストリーミングの公開を開始 |
 | [stopPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#afc00ba747be5299cd7235928a628339e) | Tencent Cloud CSS CDNへのオーディオビデオストリーミングの公開を停止 |
@@ -31,7 +31,7 @@
 | [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) | クラウドミクスストリーミングのレイアウトおよびトランスコードパラメータを設定 |
 
 ### ビデオ関連インターフェース関数
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [startLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#aa94bd93a491a7302cc85245c4810a68c) | ローカルカメラのプレビュー画面を有効化（モバイル端末） |
 | [startLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#aa94bd93a491a7302cc85245c4810a68c) | ローカルカメラのプレビュー画面を有効化（デスクトップ） |
@@ -57,7 +57,7 @@
 | [snapshotVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ac0db9a4bcb61e3b369740a1986683cdf) | ビデオ画面のスクリーンキャプチャ |
 
 ### オーディオ関連インターフェース関数
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [startLocalAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#acd85c726c425eda7cac82cba0f83a465) | ローカルオーディオのキャプチャおよび公開を有効化 |
 | [stopLocalAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ab78601c38f1b872b03b662e6856be84c) | ローカルオーディオのキャプチャおよび公開を停止 |
@@ -75,20 +75,21 @@
 | [stopAudioRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ac8c12476bbcf3d691060954fcdb6ebe6) | 録音を停止 |
 | [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b) | ローカルメディアのレコーディングを有効化 |
 | [stopLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#affae72630393980fee79c21f2d20f602) | ローカルメディアのレコーディングを停止 |
+| [setRemoteAudioParallelParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a02ad0bcebe3962fefee9af07039f0657) | リモートオーディオストリームのインテリジェント同時再生ポリシーを設定 |
 
 ### デバイス管理関連インターフェース
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [getDeviceManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a950f3f1c949def9e1e470f467db7b27a) | デバイス管理タイプ（TXDeviceManager）を取得 |
 
-### 美顔特殊効果および画像のウォーターマーク
-| API | 説明 |
+### 美顔・特殊効果および画像ウォーターマーク
+| API             | 説明               |
 |-----|-----|
 | [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a4fb05ae6b5face276ace62558731280a) | 美顔管理タイプ（TXBeautyManager）を取得 |
 | [setWatermark](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ad0bedbddf415d26cff8242d5842a0908) | ウォーターマークの追加 |
 
 ### BGMおよび音声の特殊効果
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [getAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#af962213fefe6988a08820ac9af00df66) | オーディオエフェクトマネージャー（TXAudioEffectManager）を取得 |
 | [startSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a2979e32c019708dcc9209bb6d2db9486) | システム音声キャプチャ を有効化（Macシステムのみに適用）|
@@ -96,17 +97,17 @@
 | [setSystemAudioLoopbackVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#afc45226807d84673bab78b21d1be54ae) | システム音声のキャプチャ音量を設定|
 
 ### 画面共有関連インターフェース
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#abf51acf26b2212192f7145468886b791) | アプリケーション内の画面共有を開始（ iOS 13.0以上のシステムのみをサポート） |
 | [startScreenCaptureByReplaykit](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#abebcd402e310d5d7dcbef9f6b601cfc4) | 全システムの画面共有 を開始（ iOS 11.0以上のシステムのみをサポート） |
 | [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97) | デスクトップ画面共有を開始（このインターフェースはデスクトップシステムのみをサポート） |
 | [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) | 画面共有を停止 |
 | [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a6f536bcc3df21b38885809d840698280) | 画面共有を一時停止 |
-| [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a6f536bcc3df21b38885809d840698280) | 画面共有を再開 |
+| [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#af257a8fb6969fe908ca68a039e6dba15) | 画面共有を再開 |
 | [getScreenCaptureSourcesWithThumbnailSize](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a37df498cbc8d9b1135e3caafdcee906f) | 共有可能な画面およびウィンドウを列挙（このインターフェースはMac OSシステムのみをサポート ） |
 | [selectScreenCaptureTarget](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a01ead6fb3106ea266caa922f5901bf18) | 共有したい画面またはウィンドウを選択（このインターフェースはMac OSシステムのみをサポート） |
-| [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#abc0f3cd5c320d0e65163bd07c3c0a735) | 画面共有（サブストリーム）のビデオコーデックパラメータを設定（このインターフェースはデスクトップシステムのみをサポート） |
+| [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#abc0f3cd5c320d0e65163bd07c3c0a735) | 画面共有（サブストリーム）のビデオコーデックパラメータを設定（デスクトップシステムとモバイルシステムの両方をサポート） |
 | [setSubStreamMixVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a18d3fb6535c9884784c5ad5f8dfd0b12) | 画面共有時の音声ミキシングの音量レベルを設定（このインターフェースはデスクトップシステムのみをサポート） |
 | [addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#aa567171999b17a7f5655213b193415a7) | 指定のウィンドウを画面共有のexcludeリストに追加（このインターフェースはデスクトップシステムのみをサポート） |
 | [removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a95b1f3fbc6ff755f67f7e9b86240ea5f) | 指定のウィンドウを画面共有のexcludeリストから削除（このインターフェースはデスクトップシステムのみをサポート） |
@@ -116,7 +117,7 @@
 | [removeAllIncludedShareWindows](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a18a20767a0e1076ba16cd473a2512156) | すべてのウィンドウを画面共有のincludeリストから削除（このインターフェースはデスクトップシステムのみをサポート） |
 
 ### ユーザー定義キャプチャおよびカスタムレンダリング
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#af53f530fe2025d72e2479928dd6db52f) | ビデオユーザー定義キャプチャモード の起動/終了|
 | [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a5a68c4f0cd3a79100b331fc17d4b2858) | 自身がキャプチャしたビデオフレームをSDKに送信 |
@@ -137,19 +138,19 @@
 | [getCustomAudioRenderingFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#aeebe3811918c8250d32d872fee83a2c2) | 再生可能なオーディオデータを取得 |
 
 ### カスタムメッセージ送信インターフェース
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [sendCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#acbc86da0cb558c549f42e7e987c7beaf) |  UDPチャネルを利用してカスタムメッセージをルーム内のすべてのユーザーに送信  |
 | [sendSEIMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a6de26e5efddf899d31158e4d48f17c02) | SEIチャネルを利用して送信カスタムメッセージをルーム内のすべてのユーザーに送信  |
 
 ### ネットワークテストインターフェース
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
-| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a058556b224315dcde3601ab621a09dee) | ネットワークスピードテストを開始（ルーム入室前に使用） |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a058556b224315dcde3601ab621a09dee) | ネットワークスピードテストを開始（入室前に使用） |
 | [stopSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a58d732ba648d1f9a3a460c02de79bb9b) | ネットワークスピードテストを停止 |
 
 ### デバック関連インターフェース
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [getSDKVersion](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ace5acd2fe597b6656b45aaa93e3e45a1) | SDKのバージョン情報を取得 |
 | [setLogLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a9d2b6a99e137a9667743edc8ac909493) | Log出力レベルを設定 |
@@ -162,7 +163,7 @@
 | [callExperimentalAPI](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a16c53e91f9b32aaf4bf3d409a3790ef6) | 試験的インターフェースの呼び出し |
 
 ### 破棄されたインターフェース
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [setMicVolumeOnMixing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#abb57991f5e4f4ca1b95c2181a7e538c8) | マイクの音量レベルを設定 |
 | [setBeautyStyle](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a1336146862fb742de6cbe5718f9b7008) | 美顔、美白および肌の色調補正エフェクトレベルを設定 |
@@ -251,15 +252,16 @@
 | [startScreenCaptureByReplaykit](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#abebcd402e310d5d7dcbef9f6b601cfc4) | 全システムの画面共有を開始（iOS） |
 | [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ac3a158f935a99abd4965d308c0f88977) | ローカルのビデオストリームの公開を一時停止/再開 |
 | [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ae5b271bc92a7a4d8ffbcbd4c2e509305) | リモートユーザーのビデオストリームのサブスクライブを一時停止/再開 |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a914bc4bdd1f0f0e02f27f873acb7e576) |  ネットワークスピードテストを開始（入室前に使用） |
 
 ### エラーおよび警告イベント
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onError](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a10a711eb68abcacc1ca690501fc7c9fb) | エラーイベントコールバック |
 | [onWarning](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a25ac0da9ad798a2313bdf8f296828541) | 警告イベントコールバック |
 
 ### ルーム関連イベントコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onEnterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a6960aca54e2eda0f424f4f915908a3c5) | 入室成功または失敗のイベントコールバック |
 | [onExitRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a6a98fcaac43fa754cf9dd80454897bea) | 退室のイベントコールバック |
@@ -269,7 +271,7 @@
 | [onDisconnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a26b34d83afac68928a156096862c9c06) | ルーム間通話終了結果のコールバック |
 
 ### ユーザー関連イベントコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onRemoteUserEnterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a390831928a4d2a7977c4c1572da8be58) | ユーザーが現在のルームに入室 |
 | [onRemoteUserLeaveRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#afa7d16e1e4c66d938fc2bc69f3e34c28) | ユーザーが現在のルームを退室 |
@@ -283,20 +285,21 @@
 | [onRemoteVideoStatusUpdated](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#af7fef48407b65423871ed6f7652e4176) | リモートビデオステータス変更のイベントコールバック |
 
 ### ネットワークおよび技術指標統計のコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onNetworkQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28) | ネットワーク品質のリアルタイム統計のコールバック |
 | [onStatistics](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#afb0811035e97c8544dbc9ecbef461dd9) | オーディオビデオ技術指標のリアルタイム統計のコールバック |
+| [onSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a6ca73040b7226a8297814694e95478fc) | ネットワークスピードテストの結果のコールバック |
 
 ### クラウドとの接続状況のイベントコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onConnectionLost](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#aed43a70b4a95eb95181e2b410013bf54) | SDKがクラウドとの接続を切断済み |
 | [onTryToReconnect](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a1c8654b64e4bde42a8a24954ecf2cb2d) | SDKがクラウドとの再接続を試行中 |
 | [onConnectionRecovery](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a36d96a42ec4b00a0e3808f7f8460cd7f) | SDKがクラウドとの接続を再開済み |
 
 ### ハードウェアデバイス関連イベントコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onCameraDidReady](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#aaa74021e5fd2564afb2df50e25eedeff) | カメラの準備完了 |
 | [onMicDidReady](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#afdac7dee94451913a4dc9982badc8035) | マイクの準備完了 |
@@ -308,14 +311,14 @@
 | [onSystemAudioLoopbackError](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a8644f5136138d13ffa8e0ea68f5c3676) | システム音声キャプチャが正常に開始されたかどうかのイベントコールバック（Macシステムのみに適用） |
 
 ### カスタムメッセージ受信イベントコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onRecvCustomCmdMsgUserId](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a324311b3d4f3930d9a50b8449b155dd3) | カスタムメッセージ受信のイベントコールバック |
 | [onMissCustomCmdMsgUserId](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#af1b8e7d0f73773eca509afc1cf4c9ece) | カスタムメッセージ消失のイベントコールバック |
 | [onRecvSEIMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a6e4365456cb4df6e1bdf870511b72042) | SEIメッセージ受信のコールバック |
 
 ### CDN関連イベントコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onStartPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a75c6bf4a7c7ec60a24aabfe8e47ea1f4) | Tencent Cloud CSS CDN上へのオーディオビデオストリーミングのイベントコールバックの公開を開始 |
 | [onStopPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a379dcf84e15f93b64efe2cb9f362877c) | Tencent Cloud CSS CDNへのオーディオビデオストリーミングのイベントコールバックの公開を停止 |
@@ -324,7 +327,7 @@
 | [onSetMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#ab5c98341b7536b5b65c04b835c4d28fb) | クラウドミクスストリーミングのレイアウトおよびトランスコードパラメータ設定のイベントコールバック |
 
 ### 画面共有関連イベントコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onScreenCaptureStarted](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a7d15537d26fb001045ff95157d59ed3f) | 画面共有開始のイベントコールバック |
 | [onScreenCapturePaused](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a9cc6106085b2049838e21bb50e192786) | 画面共有一時停止のイベントコールバック |
@@ -332,28 +335,28 @@
 | [onScreenCaptureStoped](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a323d2b3e5b8b364722e0b161ab11c816) | 画面共有停止のイベントコールバック |
 
 ### ローカルレコーディングおよびローカルスクリーンキャプチャのイベントコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onLocalRecordBegin](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a044ce179ac4bc0bc987a3b74ecd911e7) | ローカルレコーディングタスク開始済みのイベントコールバック |
 | [onLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#ab4250c05ea4b843c27385f77d5004fc3) | ローカルレコーディングタスク実行中の進捗のイベントコールバック |
 | [onLocalRecordComplete](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#ae78ca25acea4152bfd9d0ccf71bd4108) | ローカルレコーディングタスク完了済みのイベントコールバック |
 
 ### 破棄されたイベントコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onUserEnter](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#af26948706dc0dff24946470066e9c4e0) | キャスターが現在のルームに入室（破棄済み） |
 | [onUserExit](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a72f0a872a13500cb5394f77c586ab3f5) | キャスターが現在のルームを退室（破棄済み） |
 | [onAudioEffectFinished](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#accb36b0eb1d1b72f32cf72617bb1c730) | オーディオエフェクト再生が完了済み（破棄済み） |
 
 ### ビデオデータカスタムコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onRenderVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a7b43888945a9d12f088ed99a5854e3c1) | カスタムビデオレンダリングのコールバック |
 | [onProcessVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a8d4f000b4169a64a8a8af15e51e5dd95) | サードパーティによる美顔コンポーネントを結合するためのビデオ処理のコールバック |
 | [onGLContextDestory](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a5f6d5ef01d3cd610959433107f78aa60) | SDK内部 OpenGL環境破棄の通知 |
 
 ### オーディオデータカスタムコールバック
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#aeaeaf9e7091c75e1a072d576a57d7f5c) | ローカルマイクがキャプチャしたオリジナルオーディオデータのコールバック |
 | [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a73a3e7de3c5c340957f119bb0f8744b0) | ローカルがキャプチャし、オーディオモジュールで前処理したオーディオデータのコールバック |
@@ -362,12 +365,12 @@
 | [onMixedAllAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a905748efe966e94ec1212fda14161aee) | SDKのすべてのオーディオミキシング後のオーディオデータ（キャプチャしたデータおよび再生待ちのデータを含む） |
 
 ### その他イベントコールバックインターフェース
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onLog](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#ab1364c78a6f31a8c08d0138c4f6e9647) | ローカルLOG のプリントコールバック |
 
 ### ビデオ関連列挙値の定義
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [TRTCVideoResolution](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5) | ビデオ解像度 |
 | [TRTCVideoResolutionMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#gafdfe57c064658b38b78b0fd11e2706c0) | ビデオアスペクト比モード |
@@ -381,7 +384,7 @@
 | [TRTCSnapshotSourceType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#ga50f989651c9f893de7716ffbc2d2a5fc) | ローカルビデオスクリーンキャプチャのデータソース |
 
 ### ネットワーク関連列挙値の定義
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [TRTCAppScene](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#ga6ab617b26cf503a8c1bfec34a9918dbe) | ユースケース |
 | [TRTCRoleType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#gad147b9b0249d0c2759cf1514c8978881) | ロール |
@@ -392,7 +395,7 @@
 | [TRTCAVStatusChangeReason](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#ga349e42c3f8a2de5a031e90a1240d7f54) | ビデオステータス変更理由のタイプ |
 
 ### オーディオ関連列挙値の定義
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [TRTCAudioSampleRate](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#ga346b09a7691ce8c9813bac0feb057d08) | オーディオサンプルレート |
 | [TRTCAudioQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#ga865e618ff3a81236f9978723c00e86fb) | 音声音質 |
@@ -402,7 +405,7 @@
 | [TRTCSystemVolumeType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#gaac0cd0da9dd789dcec4ba16471006f23) | システム音量タイプ（モバイルデバイスのみに適用） |
 
 ### その他列挙値の定義
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [TRTCLogLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#gacefec5143acae6d0524b5500f0155908) | Logレベル |
 | [TRTCGSensorMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#ga894251078222f9ac4ba5815aac4b493c) | 重力センサースイッチ（モバイル端末のみに適用） |
@@ -414,7 +417,7 @@
 | [TRTCAudioRecordingContent](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#gade0f3fa25d9d1c876660e230152567b0) | オーディオレコーディングコンテンツタイプ |
 
 ### TRTCコアタイプの定義
-| API | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCParams) | 入室パラメータ |
 | [TRTCVideoEncParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) | ビデオコーデックパラメータ |
@@ -422,6 +425,7 @@
 | [TRTCRenderParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCRenderParams) | ビデオ画面のレンダリングパラメータ |
 | [TRTCQualityInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCQualityInfo) | ネットワーク品質 |
 | [TRTCVolumeInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCVolumeInfo) | 音量レベル |
+| [TRTCSpeedTestParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCSpeedTestParams) | スピードテストのパラメータ |
 | [TRTCSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCSpeedTestResult) | ネットワークスピードテスト結果 |
 | [TRTCVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCVideoFrame) | ビデオフレーム情報 |
 | [TRTCAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCAudioFrame) | オーディオフレームデータ |
@@ -432,5 +436,6 @@
 | [TRTCLocalRecordingParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCLocalRecordingParams) | ローカルメディアファイルのレコーディングパラメータ |
 | [TRTCAudioEffectParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCAudioEffectParam) | オーディオエフェクトパラメータ（破棄済み） |
 | [TRTCSwitchRoomConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCSwitchRoomConfig) | ルーム切り替えパラメータ |
-
+| [TRTCAudioFrameDelegateFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCAudioFrameDelegateFormat) | オーディオカスタムコールバックの形式パラメータ |
+| [TRTCScreenCaptureSourceInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#interfaceTRTCScreenCaptureSourceInfo) | 画面共有のターゲット情報（デスクトップのみに適用） |
 
