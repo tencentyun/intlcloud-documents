@@ -20,28 +20,53 @@ func (s *BucketService) PutCORS(ctx context.Context, opt *BucketPutCORSOptions) 
 ```
 
 #### 请求示例
-[//]: # ".cssg-snippet-put-bucket-cors"
+[//]: # (.cssg-snippet-put-bucket-cors)
 ```go
-opt := &cos.BucketPutCORSOptions{
-    Rules: []cos.BucketCORSRule{
-        {
-            AllowedOrigins: []string{"http://www.qq.com"},
-            AllowedMethods: []string{"PUT", "GET"},
-            AllowedHeaders: []string{"x-cos-meta-test", "x-cos-xx"},
-            MaxAgeSeconds:  500,
-            ExposeHeaders:  []string{"x-cos-meta-test1"},
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // 通过环境变量获取密钥
+            // 环境变量 SECRETID 表示用户的 SecretId，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // 环境变量 SECRETKEY 表示用户的 SecretKey，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
         },
-        {
-            ID:             "1234",
-            AllowedOrigins: []string{"http://www.baidu.com", "twitter.com"},
-            AllowedMethods: []string{"PUT", "GET"},
-            MaxAgeSeconds:  500,
+    })
+    opt := &cos.BucketPutCORSOptions{
+        Rules: []cos.BucketCORSRule{
+            {
+                AllowedOrigins: []string{"http://www.qq.com"},
+                AllowedMethods: []string{"PUT", "GET"},
+                AllowedHeaders: []string{"x-cos-meta-test", "x-cos-xx"},
+                MaxAgeSeconds:  500,
+                ExposeHeaders:  []string{"x-cos-meta-test1"},
+            },
+            {
+                ID:             "1234",
+                AllowedOrigins: []string{"http://www.baidu.com", "twitter.com"},
+                AllowedMethods: []string{"PUT", "GET"},
+                MaxAgeSeconds:  500,
+            },
         },
-    },
-}
-_, err := client.Bucket.PutCORS(context.Background(), opt)
-if err != nil {
-    panic(err)
+    }
+    _, err := client.Bucket.PutCORS(context.Background(), opt)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
@@ -81,11 +106,36 @@ func (s *BucketService) GetCORS(ctx context.Context) (*BucketGetCORSResult, *Res
 ```
 
 #### 请求示例
-[//]: # ".cssg-snippet-get-bucket-cors"
+[//]: # (.cssg-snippet-get-bucket-cors)
 ```go
-_, _, err := client.Bucket.GetCORS(context.Background())
-if err != nil {
-    panic(err)
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // 通过环境变量获取密钥
+            // 环境变量 SECRETID 表示用户的 SecretId，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // 环境变量 SECRETKEY 表示用户的 SecretKey，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    _, _, err := client.Bucket.GetCORS(context.Background())
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
@@ -111,7 +161,7 @@ type BucketCORSRule struct {
 | AllowedOrigins | 设置允许的访问来源，如 `"http://cloud.tencent.com"`，支持通配符 * | []string | 是   |
 | AllowedHeaders | 设置请求可以使用哪些自定义的 HTTP 请求头部，支持通配符 *     | []string | 否   |
 | MaxAgeSeconds  | 设置 OPTIONS 请求得到结果的有效期                            | int      | 否   |
-| ExposeHeaders  | 设置浏览器可以接收到的来自服务器端的自定义头部信息           | []string | 否   |                 
+| ExposeHeaders  | 设置浏览器可以接收到的来自服务器端的自定义头部信息           | []string | 否   |                 |
 
 ## 删除跨域配置
 
@@ -126,10 +176,35 @@ func (s *BucketService) DeleteCORS(ctx context.Context) (*Response, error)
 ```
 
 #### 请求示例
-[//]: # ".cssg-snippet-delete-bucket-cors"
+[//]: # (.cssg-snippet-delete-bucket-cors)
 ```go
-_, err := client.Bucket.DeleteCORS(context.Background())
-if err != nil {
-    panic(err)
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // 通过环境变量获取密钥
+            // 环境变量 SECRETID 表示用户的 SecretId，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // 环境变量 SECRETKEY 表示用户的 SecretKey，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    _, err := client.Bucket.DeleteCORS(context.Background())
+    if err != nil {
+        panic(err)
+    }
 }
 ```

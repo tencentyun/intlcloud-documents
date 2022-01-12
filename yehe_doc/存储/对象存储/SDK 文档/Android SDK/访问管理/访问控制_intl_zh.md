@@ -33,7 +33,8 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](http
 
 [//]: # (.cssg-snippet-put-bucket-acl)
 ```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 PutBucketACLRequest putBucketACLRequest = new PutBucketACLRequest(bucket);
 
 // 设置 bucket 访问权限
@@ -61,10 +62,12 @@ cosXmlService.putBucketACLAsync(putBucketACLRequest,
         PutBucketACLResult putBucketACLResult = (PutBucketACLResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -74,7 +77,7 @@ cosXmlService.putBucketACLAsync(putBucketACLRequest,
 });
 ```
 
->?更多完整示例，请前往[GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketACL.java) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketACL.java) 查看。
 
 ### 查询存储桶 ACL
 
@@ -86,7 +89,8 @@ cosXmlService.putBucketACLAsync(putBucketACLRequest,
 
 [//]: # (.cssg-snippet-get-bucket-acl)
 ```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 GetBucketACLRequest getBucketACLRequest = new GetBucketACLRequest(bucket);
 cosXmlService.getBucketACLAsync(getBucketACLRequest,
         new CosXmlResultListener() {
@@ -95,10 +99,12 @@ cosXmlService.getBucketACLAsync(getBucketACLRequest,
         GetBucketACLResult getBucketACLResult = (GetBucketACLResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -108,7 +114,7 @@ cosXmlService.getBucketACLAsync(getBucketACLRequest,
 });
 ```
 
->?更多完整示例，请前往[GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketACL.java)查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketACL.java) 查看。
 
 ## 对象 ACL
 
@@ -122,7 +128,8 @@ cosXmlService.getBucketACLAsync(getBucketACLRequest,
 
 [//]: # (.cssg-snippet-put-object-acl)
 ```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即对象键。
 PutObjectACLRequest putObjectACLRequest = new PutObjectACLRequest(bucket,
         cosPath);
@@ -147,10 +154,12 @@ cosXmlService.putObjectACLAsync(putObjectACLRequest,
         PutObjectACLResult putObjectACLResult = (PutObjectACLResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -160,7 +169,7 @@ cosXmlService.putObjectACLAsync(putObjectACLRequest,
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketACL.java)查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ObjectACL.java) 查看。
 
 ### 查询对象 ACL
 
@@ -172,7 +181,8 @@ cosXmlService.putObjectACLAsync(putObjectACLRequest,
 
 [//]: # (.cssg-snippet-get-object-acl)
 ```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即对象键。
 GetObjectACLRequest getBucketACLRequest = new GetObjectACLRequest(bucket,
         cosPath);
@@ -183,10 +193,12 @@ cosXmlService.getObjectACLAsync(getBucketACLRequest,
         GetObjectACLResult getObjectACLResult = (GetObjectACLResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -195,7 +207,7 @@ cosXmlService.getObjectACLAsync(getBucketACLRequest,
     }
 });
 ```
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketACL.java) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ObjectACL.java) 查看。
 
 
 

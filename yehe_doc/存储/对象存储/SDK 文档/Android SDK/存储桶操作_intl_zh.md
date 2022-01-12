@@ -31,10 +31,12 @@ cosXmlService.getServiceAsync(getServiceRequest, new CosXmlResultListener() {
         GetServiceResult getServiceResult = (GetServiceResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -44,7 +46,7 @@ cosXmlService.getServiceAsync(getServiceRequest, new CosXmlResultListener() {
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/blob/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/GetService.java) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/GetService.java) 查看。
 
 ## 创建存储桶
 
@@ -56,6 +58,7 @@ cosXmlService.getServiceAsync(getServiceRequest, new CosXmlResultListener() {
 
 [//]: # (.cssg-snippet-put-bucket)
 ```java
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
 String bucket = "examplebucket-1250000000";
 PutBucketRequest putBucketRequest = new PutBucketRequest(bucket);
 cosXmlService.putBucketAsync(putBucketRequest, new CosXmlResultListener() {
@@ -64,10 +67,12 @@ cosXmlService.putBucketAsync(putBucketRequest, new CosXmlResultListener() {
         PutBucketResult putBucketResult = (PutBucketResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -77,7 +82,7 @@ cosXmlService.putBucketAsync(putBucketRequest, new CosXmlResultListener() {
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/blob/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/GetService.java) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PutBucket.java) 查看。
 
 ## 检索存储桶及其权限
 
@@ -93,7 +98,8 @@ HEAD Bucket 请求可以确认该存储桶是否存在，是否有权限访问�
 
 [//]: # (.cssg-snippet-head-bucket)
 ```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 HeadBucketRequest headBucketRequest = new HeadBucketRequest(bucket);
 cosXmlService.headBucketAsync(headBucketRequest, new CosXmlResultListener() {
     @Override
@@ -101,10 +107,12 @@ cosXmlService.headBucketAsync(headBucketRequest, new CosXmlResultListener() {
         HeadBucketResult headBucketResult = (HeadBucketResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -114,7 +122,7 @@ cosXmlService.headBucketAsync(headBucketRequest, new CosXmlResultListener() {
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/blob/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/GetService.java) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/HeadBucket.java) 查看。
 
 
 ## 删除存储桶
@@ -129,7 +137,8 @@ cosXmlService.headBucketAsync(headBucketRequest, new CosXmlResultListener() {
 
 [//]: # (.cssg-snippet-delete-bucket)
 ```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 DeleteBucketRequest deleteBucketRequest = new DeleteBucketRequest(bucket);
 cosXmlService.deleteBucketAsync(deleteBucketRequest,
         new CosXmlResultListener() {
@@ -140,8 +149,8 @@ cosXmlService.deleteBucketAsync(deleteBucketRequest,
 
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -151,5 +160,5 @@ cosXmlService.deleteBucketAsync(deleteBucketRequest,
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/blob/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/GetService.java) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/DeleteBucket.java) 查看。
 

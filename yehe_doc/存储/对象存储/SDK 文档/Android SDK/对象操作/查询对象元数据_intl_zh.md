@@ -29,10 +29,12 @@ cosXmlService.headObjectAsync(headObjectRequest, new CosXmlResultListener() {
         HeadObjectResult headObjectResult = (HeadObjectResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -42,5 +44,5 @@ cosXmlService.headObjectAsync(headObjectRequest, new CosXmlResultListener() {
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/blob/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/HeadObject.java) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/HeadObject.java) 查看。
 
