@@ -28,7 +28,9 @@
 <tr>
 </div></a></td>
 <td>
-<input type="button" value="Web 코드 예시" class="inbuttom" onclick="aegis.reportEvent({name: 'intl_demo_click_web', ext1: 'api-sample'});window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" />
+<input type="button" value="Web 코드 예시" class="inbuttom" onclick="aegis.reportEvent({name: 'intl_demo_click_web', ext1: 'api-sample'});window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" /><br><br>
+<input type="button" value="인터랙티브 라이브 스트리밍 - 푸시 스트림" class="inbuttom" onclick="aegis.reportEvent({name: 'intl_demo_click_web', ext1: 'pusher'});window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html?lang=en')" /><br><br>
+<input type="button" value="인터랙티브 라이브 스트리밍 - 풀 스트림" class="inbuttom" onclick="aegis.reportEvent({name: 'intl_demo_click_web', ext1: 'player'});window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html?lang=en')" />
 </td>
 <td>
 <img style="width:150px" src="https://main.qcloudimg.com/raw/844e3de73cf2537e8a58e2263de5900e.png" data-nonescope="true">
