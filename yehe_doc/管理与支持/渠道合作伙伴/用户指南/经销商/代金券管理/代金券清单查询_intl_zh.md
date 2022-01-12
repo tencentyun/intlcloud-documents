@@ -1,5 +1,3 @@
-## 代金券清单查询
-
 ### 登入合作伙伴控制台代金券管理
 
 登入控制台，点击 **[Voucher Management > Voucher List](https://console.intl.cloud.tencent.com/partners/voucherlist)** 菜单进入代金券清单页面。支持全量查询或输入具体信息查询代金券。

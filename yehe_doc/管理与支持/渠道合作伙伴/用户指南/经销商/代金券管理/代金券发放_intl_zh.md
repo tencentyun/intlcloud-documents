@@ -1,5 +1,3 @@
-## 代金券发放
-
 ###  登入合作伙伴控制台代金券管理
 
 第一步：登入控制台，点击 **[Voucher Management > Voucher Issuance](https://console.intl.cloud.tencent.com/partners/issuance)**  菜单进入代金券发放页面。
