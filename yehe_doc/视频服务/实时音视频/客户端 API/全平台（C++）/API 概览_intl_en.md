@@ -70,6 +70,7 @@
 | [stopAudioRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a052a606496ce98cdc5a7e93098598a32) | Stop audio recording |
 | [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a55c3e8982056532a6cce56e3f7f29241) | Start local media recording |
 | [stopLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a8b9b6f0608e48c27fc7c646718cb41ba) | Stop local media recording |
+| [setRemoteAudioParallelParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0e6e6434aaa03ce878280125a9c0fa4b) | Set the parallel strategy of remote audio streams |
 
 ### Device management APIs
 | API | DESC |
@@ -99,7 +100,7 @@
 | [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a9dc10db068b9d8c6a0fcb8b085359f33) | Resume screen sharing |
 | [getScreenCaptureSources](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ad23c03ad142e8a42c49967ff9ccf9592) | Enumerate shareable screens and windows (for desktop systems only) |
 | [selectScreenCaptureTarget](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a9d16af81b2ea2db7b91a8346add13393) | Select the screen or window to share (for desktop systems only) |
-| [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a542913f5081fb2479137a7416c970e2d) | Set the video encoding parameters of screen sharing (i.e., substream) (for desktop systems only) |
+| [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a542913f5081fb2479137a7416c970e2d) | Set the video encoding parameters of screen sharing (i.e., substream) (for desktop and mobile systems) |
 | [setSubStreamMixVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#aff8dd1456e5bebff5495d84683c7f83e) | Set the audio mixing volume of screen sharing (for desktop systems only) |
 | [addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ac2a8a65dc2c1d0e4ffbd89eeae768fff) | Add specified windows to the exclusion list of screen sharing (for desktop systems only) |
 | [removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0bbbff5ea3cd764dbaaad0db887760bf) | Remove specified windows from the exclusion list of screen sharing (for desktop systems only) |
@@ -136,7 +137,7 @@
 ### Network test APIs
 | API | DESC |
 |-----|-----|
-| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#af86b2903b95b6e74f02d701701ce3380) | Start network speed test (used before room entry) |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ab9052b69fd4e12b5860da03a868e87d7) | Start network speed test (used before room entry) |
 | [stopSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ad6ba6ea2c5beace98b99ce98d326be4c) | Stop network speed test |
 
 ### Debugging APIs
@@ -158,6 +159,7 @@
 | [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6) | Deliver captured video data to SDK |
 | [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a22804c4112dee8c76475619f891e2eb5) | Pause/Resume publishing local video stream |
 | [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a74d8d9922a771114804517db66657f65) | Pause/Resume subscribing to remote user's video stream |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ab9052b69fd4e12b5860da03a868e87d7) | Start network speed test (used before room entry) |
 
 ### Error and warning events
 | API | DESC |
@@ -194,6 +196,7 @@
 |-----|-----|
 | [onNetworkQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a377441bace65d98a1218817914a12ecb) | Real-time network quality statistics |
 | [onStatistics](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ae7e4117f9c8004c9bcc5a29d64e840c9) | Real-time statistics on technical metrics |
+| [onSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a7bbfbd86185f20935f8a23d7dad94d9a) | Callback of network speed test |
 
 ### Callback of connection to the cloud
 | API | DESC |
@@ -201,7 +204,6 @@
 | [onConnectionLost](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a34c34705bb67127ff6d28700cf2ab591) | The SDK was disconnected from the cloud |
 | [onTryToReconnect](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#afe74dff22fde93fe0f07fcf18153d334) | The SDK is reconnecting to the cloud |
 | [onConnectionRecovery](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ae90cd149a676418016cb8736b217f1a8) | The SDK is reconnected to the cloud |
-| [onSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a455264cfcf2a7a3f022f3bce0659f9f7) | Result of server speed testing |
 
 ### Callback of hardware events
 | API | DESC |
@@ -258,6 +260,7 @@
 | [onPlayBGMBegin](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ad93b8204416558e63c18349bf29ff592) | Started playing background music (disused) |
 | [onPlayBGMProgress](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a1879cc4e50492431a3346828e9130f21) | Playback progress of background music (disused) |
 | [onPlayBGMComplete](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#abaf89c758a4dd21e21db488e997bef2a) | Background music stopped (disused) |
+| [onSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a455264cfcf2a7a3f022f3bce0659f9f7) | Result of server speed testing (disused) |
 
 ### Callback of custom video processing
 | API | DESC |
@@ -268,8 +271,8 @@
 ### Callback of custom audio processing
 | API | DESC |
 |-----|-----|
-| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a1488e35460441c351cab75d9702498f6) | Raw audio data captured locally |
-| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#affb432a77f938d1e8dfb6c0d5488dbcf) | Audio data captured by the local mic and pre-processed by the audio module |
+| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a1488e35460441c351cab75d9702498f6) | Audio data captured by the local mic and pre-processed by the audio module |
+| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#affb432a77f938d1e8dfb6c0d5488dbcf) | Audio data captured by the local mic, pre-processed by the audio module, effect-processed and BGM-mixed |
 | [onPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ab841da62beb88a9fa9bce58d25df6f23) | Audio data of each remote user before audio mixing |
 | [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a6649f62d4138d9bc73ae484e63dec081) | Data mixed from each channel before being submitted to the system for playback |
 
@@ -326,6 +329,7 @@
 | [TRTCRenderParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCRenderParams) | Rendering parameters of video image |
 | [TRTCQualityInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCQualityInfo) | Network quality |
 | [TRTCVolumeInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCVolumeInfo) | Volume |
+| [TRTCSpeedTestParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCSpeedTestParams) | Network speed testing parameters |
 | [TRTCSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCSpeedTestResult) | Network speed test result |
 | [TRTCVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCVideoFrame) | Video frame information |
 | [TRTCAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCAudioFrame) | Audio frame data |
@@ -339,4 +343,5 @@
 | [TRTCAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCAudioFrameCallbackFormat) | Format parameter of custom audio callback |
 | [TRTCScreenCaptureSourceInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCScreenCaptureSourceInfo) | Screen sharing target information (for desktop systems only) |
 | [ITRTCScreenCaptureSourceList](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#classliteav_1_1ITRTCScreenCaptureSourceList) | List of sharable screens and windows |
+| [TRTCScreenCaptureProperty](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCScreenCaptureProperty) | Advanced control parameter of screen sharing |
 
