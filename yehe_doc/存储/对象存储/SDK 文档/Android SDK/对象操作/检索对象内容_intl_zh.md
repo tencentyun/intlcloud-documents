@@ -19,13 +19,12 @@ COS Select 支持检索以下格式的对象数据：
 - CSV 格式：对象以 CSV 格式存储，并以固定的分隔符划分。
 - JSON 格式：对象以 JSON 格式存储，可以是 JSON 文件或者 JSON 列表。
 
-
-
 >!
 > - 使用 COS Select，您必须具有 `cos:GetObject` 的授权。
 > - CSV、JSON 对象需要以 UTF-8 格式编码。
 > - COS Select 支持检索 GZIP 或者 BZIP2 压缩的 CSV、JSON 对象。
 > - COS Select 支持检索 SSE-COS 加密的 CSV、JSON 对象。
+> 
 
 #### 示例代码
 
@@ -57,10 +56,12 @@ cosXmlService.selectObjectContentAsync(selectObjectContentRequest,
                 (SelectObjectContentResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -71,4 +72,5 @@ cosXmlService.selectObjectContentAsync(selectObjectContentRequest,
 ```
 
 >? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/SelectObject.java) 查看。
+>
 

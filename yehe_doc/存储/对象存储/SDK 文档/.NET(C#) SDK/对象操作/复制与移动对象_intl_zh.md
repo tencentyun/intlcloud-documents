@@ -41,7 +41,7 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-transfer-copy-object)
+[//]: # ".cssg-snippet-transfer-copy-object"
 ```cs
 using COSXML.Model.Tag;
 using COSXML.Auth;
@@ -58,7 +58,7 @@ namespace COSSnippet
 
       TransferCopyObjectModel() {
         CosXmlConfig config = new CosXmlConfig.Builder()
-          .SetRegion("COS_REGION") // 设置默认的地域, COS 地域的简称请参照 https://cloud.tencent.com/document/product/436/6224
+          .SetRegion("COS_REGION") // 设置默认的地域, COS 地域的简称请参照 https://intl.cloud.tencent.com/document/product/436/6224
           .Build();
         
         string secretId = "SECRET_ID";   // 云 API 密钥 SecretId, 获取 API 密钥请参照 https://console.cloud.tencent.com/cam/capi
@@ -139,7 +139,7 @@ namespace COSSnippet
 
 #### 示例代码一: 复制对象时保留对象属性
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```cs
 try
 {
@@ -187,7 +187,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 > - 关于存储类型的详细说明请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)。
 > 
 
-[//]: # (.cssg-snippet-modify-object-storage-class)
+[//]: # ".cssg-snippet-modify-object-storage-class"
 ```cs
 try
 {
@@ -228,7 +228,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码三: 复制对象时替换对象属性
 
-[//]: # (.cssg-snippet-copy-object-replaced)
+[//]: # ".cssg-snippet-copy-object-replaced"
 ```cs
 try
 {
@@ -272,7 +272,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码四: 修改对象元数据
 
-[//]: # (.cssg-snippet-modify-object-metadata)
+[//]: # ".cssg-snippet-modify-object-metadata"
 ```cs
 try
 {
@@ -375,7 +375,7 @@ try {
 2. 使用 UploadId 复制分块（Upload Part - Copy）。
 3. 完成分块复制（Complete Multipart Upload）。
 
-#### 分块复制的流程
+#### 剩余分块复制的流程
 
 1. 如果没有记录 UploadId，查询分块任务（List Multipart Uploads），得到对应文件的 UploadId。
 2. 使用 UploadId 列出已复制的分块（List Parts）。
@@ -395,7 +395,7 @@ try {
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```cs
 try
 {
@@ -430,7 +430,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```cs
 try
 {
@@ -467,7 +467,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-upload-part-copy)
+[//]: # ".cssg-snippet-upload-part-copy"
 ```cs
 try
 {
@@ -520,7 +520,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```cs
 try
 {
@@ -558,7 +558,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 完成整个文件的分块复制（Complete Multipart Upload）。
 
 #### 示例代码
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```cs
 try
 {
@@ -598,7 +598,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```cs
 try
 {

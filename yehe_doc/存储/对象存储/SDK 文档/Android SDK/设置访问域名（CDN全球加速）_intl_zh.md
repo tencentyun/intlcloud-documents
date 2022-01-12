@@ -14,8 +14,9 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](http
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-set-cdn-domain)
+[//]: # ".cssg-snippet-set-cdn-domain"
 ```java
+// 存储桶region可以在COS控制台指定存储桶的概览页查看 https://console.cloud.tencent.com/cos5/bucket/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
 String region = "ap-beijing"; // 您的存储桶地域
 // 存储桶的默认加速域名
 String cdnDomain = "examplebucket-1250000000.file.myqcloud.com";
@@ -43,8 +44,9 @@ CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig);
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-set-cdn-custom-domain)
+[//]: # ".cssg-snippet-set-cdn-custom-domain"
 ```java
+// 存储桶region可以在COS控制台指定存储桶的概览页查看 https://console.cloud.tencent.com/cos5/bucket/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
 String region = "ap-beijing"; // 您的存储桶地域
 String cdnCustomDomain = "exampledomain.com"; // 自定义加速域名
 
@@ -70,8 +72,9 @@ CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig);
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-set-custom-domain)
+[//]: # ".cssg-snippet-set-custom-domain"
 ```java
+// 存储桶region可以在COS控制台指定存储桶的概览页查看 https://console.cloud.tencent.com/cos5/bucket/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
 String region = "ap-beijing"; // 您的存储桶地域
 String customDomain = "exampledomain.com"; // 自定义域名
 
@@ -96,8 +99,9 @@ CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig,
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-set-accelerate-domain)
+[//]: # ".cssg-snippet-set-accelerate-domain"
 ```java
+// 存储桶region可以在COS控制台指定存储桶的概览页查看 https://console.cloud.tencent.com/cos5/bucket/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
 String region = "ap-beijing"; // 您的存储桶地域
 
 CosXmlServiceConfig cosXmlServiceConfig = new CosXmlServiceConfig.Builder()

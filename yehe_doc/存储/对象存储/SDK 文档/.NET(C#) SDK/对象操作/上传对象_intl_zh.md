@@ -43,7 +43,7 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 
 #### 示例代码一: 高级接口上传本地文件
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```cs
 using COSXML.Model.Object;
 using COSXML.Auth;
@@ -60,7 +60,7 @@ namespace COSSnippet
 
       TransferUploadObjectModel() {
         CosXmlConfig config = new CosXmlConfig.Builder()
-          .SetRegion("COS_REGION") // 设置默认的地域, COS 地域的简称请参照 https://cloud.tencent.com/document/product/436/6224
+          .SetRegion("COS_REGION") // 设置默认的地域, COS 地域的简称请参照 https://intl.cloud.tencent.com/document/product/436/6224
           .Build();
         
         string secretId = "SECRET_ID";   // 云 API 密钥 SecretId, 获取 API 密钥请参照 https://console.cloud.tencent.com/cam/capi
@@ -77,6 +77,10 @@ namespace COSSnippet
       {
         // 初始化 TransferConfig
         TransferConfig transferConfig = new TransferConfig();
+        // 手动设置开始分块上传的大小阈值为10MB，默认值为5MB
+        transferConfig.DivisionForUpload = 10 * 1024 * 1024;
+        // 手动设置分块上传中每个分块的大小为2MB，默认值为1MB
+        transferConfig.SliceSizeForUpload = 2 * 1024 * 1024;
         
         // 初始化 TransferManager
         TransferManager transferManager = new TransferManager(cosXml, transferConfig);
@@ -123,7 +127,7 @@ namespace COSSnippet
 
 #### 示例代码二: 上传二进制数据
 
-[//]: # (.cssg-snippet-transfer-upload-bytes)
+[//]: # ".cssg-snippet-transfer-upload-bytes"
 ```cs
 using COSXML.Model.Object;
 using COSXML.Auth;
@@ -139,7 +143,7 @@ namespace COSSnippet
 
       TransferUploadObjectModel() {
         CosXmlConfig config = new CosXmlConfig.Builder()
-          .SetRegion("COS_REGION") // 设置默认的地域, COS 地域的简称请参照 https://cloud.tencent.com/document/product/436/6224
+          .SetRegion("COS_REGION") // 设置默认的地域, COS 地域的简称请参照 https://intl.cloud.tencent.com/document/product/436/6224
           .Build();
         
         string secretId = "SECRET_ID";   // 云 API 密钥 SecretId, 获取 API 密钥请参照 https://console.cloud.tencent.com/cam/capi
@@ -195,7 +199,7 @@ namespace COSSnippet
 
 #### 示例代码三: 从文件流上传
 
-[//]: # (.cssg-snippet-transfer-upload-bytes)
+[//]: # ".cssg-snippet-transfer-upload-bytes"
 ```cs
 using COSXML.Model.Object;
 using COSXML.Utils;
@@ -212,7 +216,7 @@ namespace COSSnippet
 
       PutObjectModel() {
         CosXmlConfig config = new CosXmlConfig.Builder()
-          .SetRegion("COS_REGION") // 设置默认的地域, COS 地域的简称请参照 https://cloud.tencent.com/document/product/436/6224 
+          .SetRegion("COS_REGION") // 设置默认的地域, COS 地域的简称请参照 https://intl.cloud.tencent.com/document/product/436/6224 
           .Build();
         
         string secretId = "SECRET_ID";   // 云 API 密钥 SecretId, 获取 API 密钥请参照 https://console.cloud.tencent.com/cam/capi
@@ -287,21 +291,21 @@ namespace COSSnippet
 
 对于上传任务，可以通过以下方式暂停：
 
-[//]: # (.cssg-snippet-transfer-upload-pause)
+[//]: # ".cssg-snippet-transfer-upload-pause"
 ```cs
 uploadTask.Pause();
 ```
 
 暂停之后，可以通过以下方式续传：
 
-[//]: # (.cssg-snippet-transfer-upload-resume)
+[//]: # ".cssg-snippet-transfer-upload-resume"
 ```cs
 uploadTask.Resume();
 ```
 
 也通过以下方式取消上传：
 
-[//]: # (.cssg-snippet-transfer-upload-cancel)
+[//]: # ".cssg-snippet-transfer-upload-cancel"
 ```cs
 uploadTask.Cancel();
 ```
@@ -311,7 +315,7 @@ uploadTask.Cancel();
 
 #### 示例代码五: 批量上传
 
-[//]: # (.cssg-snippet-transfer-batch-upload-objects)
+[//]: # ".cssg-snippet-transfer-batch-upload-objects"
 ```cs
 TransferConfig transferConfig = new TransferConfig();
 
@@ -332,7 +336,7 @@ for (int i = 0; i < 5; i++) {
 
 #### 示例代码六：创建目录
 
-[//]: # (.cssg-snippet-create-directory)
+[//]: # ".cssg-snippet-create-directory"
 ```cs
 try
 {
@@ -372,11 +376,12 @@ PUT Object 接口可以上传一个对象至指定存储桶中，该操作需要
 >!
 > - Key（文件名）不能以`/`结尾，否则会被识别为文件夹。
 > - 每个主账号（即同一个 APPID），存储桶的 ACL 规则数量最多为1000条，对象 ACL 规则数量不限制。如果您不需要进行对象 ACL 控制，请在上传时不要设置，默认继承存储桶权限。
+> - 由于 SDK 底层依赖语言组件的限制，普通上传接口在某些环境下，单次上传超过2GB的文件可能遇到预期外的异常，建议使用 [高级接口](https://intl.cloud.tencent.com/document/product/436/38062) 或 [分块上传](https://intl.cloud.tencent.com/document/product/436/38062) 以规避潜在问题。
 > 
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```cs
 try
 {
@@ -421,7 +426,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-post-object)
+[//]: # ".cssg-snippet-post-object"
 ```cs
 try
 {
@@ -467,7 +472,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-append-object)
+[//]: # ".cssg-snippet-append-object"
 ```cs
 try
 {
@@ -542,7 +547,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```cs
 try
 {
@@ -577,7 +582,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```cs
 try
 {
@@ -614,7 +619,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```cs
 try
 {
@@ -661,7 +666,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```cs
 try
 {
@@ -699,7 +704,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 完成整个文件的分块上传（Complete Multipart Upload）。
 
 #### 示例代码
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```cs
 try
 {
@@ -739,7 +744,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```cs
 try
 {

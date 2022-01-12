@@ -31,7 +31,7 @@
 repositories {
     google()
     // 增加这行
-    mavenCentral() 
+    mavenCentral()
 }
 ```
 
@@ -46,14 +46,6 @@ dependencies {
 }
 ```
 
-如果您的项目中使用 kotlin 开发，可以添加我们的 ktx 扩展包，提供了更加友好的 API：
-```
-dependencies {
-	...
-    // 增加这行
-    implementation 'com.qcloud.cos:cos-ktx:5.6.+'
-}
-```
 
 #### 精简版 SDK
 
@@ -154,7 +146,7 @@ public static class MySessionCredentialProvider
         extends BasicLifecycleCredentialProvider {
 
     @Override
-    protected QCloudLifecycleCredentials fetchNewCredentials() 
+    protected QCloudLifecycleCredentials fetchNewCredentials()
             throws QCloudClientException {
 
         // 首先从您的临时密钥服务器获取包含了密钥信息的响应
@@ -191,7 +183,7 @@ String secretId = "SECRETID"; //永久密钥 secretId
 String secretKey = "SECRETKEY"; //永久密钥 secretKey
 
 // keyDuration 为请求中的密钥有效期，单位为秒
-QCloudCredentialProvider myCredentialProvider = 
+QCloudCredentialProvider myCredentialProvider =
     new ShortTimeCredentialProvider(secretId, secretKey, 300);
 ```
 
@@ -212,39 +204,12 @@ CosXmlServiceConfig serviceConfig = new CosXmlServiceConfig.Builder()
         .builder();
 
 // 初始化 COS Service，获取实例
-CosXmlService cosXmlService = new CosXmlService(context, 
+CosXmlService cosXmlService = new CosXmlService(context,
     serviceConfig, myCredentialProvider);
 ```
 
 >? 关于存储桶不同地域的简称请参考 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
 >
-
-#### 使用 ktx 包初始化 COS Service
-
-如果您使用 ktx，初始化代码简化为：
-
-```kotlin
-val cos = cosService(context = application.applicationContext) {
-
-    configuration {
-        setRegion("ap-guangzhou")
-        isHttps(true)
-    }
-
-    credentialProvider {
-        lifecycleCredentialProvider {
-            // fetch credential from backend
-            // ...
-            return@lifecycleCredentialProvider SessionQCloudCredentials(
-                    "temp_secret_id",
-                    "temp_secret_key",
-                    "session_token",
-                    1556183496
-            )
-        }
-    }
-}
-```
 
 ## 第四步：访问 COS 服务
 
@@ -252,7 +217,7 @@ val cos = cosService(context = application.applicationContext) {
 
 SDK 支持上传本地文件、二进制数据、Uri 以及输入流。下面以上传本地文件为例：
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```java
 // 初始化 TransferConfig，这里使用默认配置，如果需要定制，请参考 SDK 接口文档
 TransferConfig transferConfig = new TransferConfig.Builder().build();
@@ -260,38 +225,39 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; //存储桶，格式：BucketName-APPID
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即称对象键
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString(); //本地文件的绝对路径
-// 若存在初始化分块上传的 UploadId，则赋值对应的 uploadId 值用于续传；否则，赋值 null。
-// 当次上传任务的 uploadid 可以在 TransferStateListener 的回调中拿到
-String uploadId = null; 
+//若存在初始化分块上传的 UploadId，则赋值对应的 uploadId 值用于续传；否则，赋值 null
+String uploadId = null;
 
 // 上传文件
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 
-//设置上传进度回调，这里可以拿到 uploadId 用于续传
+//设置上传进度回调
 cosxmlUploadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
     @Override
     public void onProgress(long complete, long target) {
         // todo Do something to update progress...
-        uploadId = cosxmlUploadTask.getUploadId();  
     }
 });
 //设置返回结果回调
 cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        COSXMLUploadTask.COSXMLUploadTaskResult cOSXMLUploadTaskResult =
+        COSXMLUploadTask.COSXMLUploadTaskResult uploadResult =
                 (COSXMLUploadTask.COSXMLUploadTaskResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest request,
-                        CosXmlClientException clientException,
-                        CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -308,51 +274,13 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
-#### 使用 ktx 包上传对象
-
-如果您使用 ktx，请参考下面的上传示例代码：
-
-```kotlin
-// 这里使用了 viewModel 的 ktx 扩展
-// viewModelScope 是 viewmodel 自带的 coroutine scope
-viewModelScope.launch {
-    val `object` = cosObject {
-        bucket = cosBucket {
-            service = cosXmlService
-            name = "examplebucket-1250000000"
-        }
-        key = "exampleObject"
-    }
-    // 本地示例文件
-    val sourceFile = File(appContext.externalCacheDir, "sourceFile")
-
-    try {
-        // upload 方法是 suspend function
-        val result = `object`.upload(
-            localFile = sourceFile,
-            progressListener = { complete, target ->
-                Log.d("cosxmlktx", "upload onProgress:" +
-                                " $complete / $target")
-            },
-            transferStateListener = { state ->
-                Log.d("cosxmlktx", "upload state is : $state")
-            }
-        )
-
-    } catch (e : Exception ) {
-        e.printStackTrace()
-    }
-
-}
-```
-
 >?
 >- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java) 查看。
 >- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://intl.cloud.tencent.com/document/product/436/37680) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 ### 下载对象
 
-[//]: # (.cssg-snippet-transfer-download-object)
+[//]: # ".cssg-snippet-transfer-download-object"
 ```java
 // 高级下载接口支持断点续传，所以会在下载前先发起 HEAD 请求获取文件信息。
 // 如果您使用的是临时密钥或者使用子账号访问，请确保权限列表中包含 HeadObject 的权限。
@@ -363,7 +291,8 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; //存储桶，格式：BucketName-APPID
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即称对象键
 //本地目录路径
 String savePathDir = context.getExternalCacheDir().toString();
@@ -374,7 +303,7 @@ Context applicationContext = context.getApplicationContext(); // application
 // context
 COSXMLDownloadTask cosxmlDownloadTask =
         transferManager.download(applicationContext,
-        bucket, cosPath, savePathDir, savedFileName);
+                bucket, cosPath, savePathDir, savedFileName);
 
 //设置下载进度回调
 cosxmlDownloadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
@@ -387,14 +316,16 @@ cosxmlDownloadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
 cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        COSXMLDownloadTask.COSXMLDownloadTaskResult cOSXMLDownloadTaskResult =
+        COSXMLDownloadTask.COSXMLDownloadTaskResult downloadTaskResult =
                 (COSXMLDownloadTask.COSXMLDownloadTaskResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest request,
-                        CosXmlClientException clientException,
-                        CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -411,42 +342,6 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
-#### 使用 ktx 包下载对象
-
-如果您使用 ktx，请参考下面的下载示例代码：
-
-```kotlin
-// 这里使用了 viewModel 的 ktx 扩展
-// viewModelScope 是 viewmodel 自带的 coroutine scope
-viewModelScope.launch {
-    val `object` = cosObject {
-        bucket = cosBucket {
-            service = cos
-            name = "examplebucket-1250000000"
-        }
-        key = "exampleObject"
-    }
-
-    try {
-        // download 方法是 suspend function
-        val result = `object`.download(
-            context = appContext,
-            destDirectory = appContext.externalCacheDir!!,
-            progressListener = { complete, target ->
-                Log.d("cosxmlktx", "download onProgress: " +
-                        "$complete / $target")
-            },
-            transferStateListener = { state ->
-                Log.d("cosxmlktx", "download state is : $state")
-            }
-        )
-
-    } catch (e : Exception ) {
-        e.printStackTrace()
-    }
-
-}
-```
 
 >?
 >- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java) 查看。

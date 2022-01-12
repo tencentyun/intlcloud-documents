@@ -4,7 +4,7 @@
 
 | API                                                          | 操作描述 |
 | ------------------------------------------------------------ | -------- |
-| [图片高级压缩](https://intl.cloud.tencent.com/document/product/436/42395) |   对指定存储桶下的图片进行压缩  |
+| [图片高级压缩](https://cloud.tencent.com/document/product/436/48987) |   对指定存储桶下的图片进行压缩  |
 
 
 ## SDK API 参考
@@ -19,7 +19,7 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](http
 
 ### 示例代码：下载时进行高级压缩
 
-[//]: # ".cssg-snippet-get-object-with-advanced-compress"
+[//]: # (.cssg-snippet-get-object-with-advanced-compress)
 ```java
 String bucket = "examplebucket-1250000000"; //存储桶名称，格式：BucketName-APPID
 String cosPath = "exampleobject"; //对象位于存储桶中的位置标识符，即对象键
@@ -36,10 +36,12 @@ cosXmlService.getObjectAsync(getObjectRequest, new CosXmlResultListener() {
         GetObjectResult getObjectResult = (GetObjectResult) cosXmlResult;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {

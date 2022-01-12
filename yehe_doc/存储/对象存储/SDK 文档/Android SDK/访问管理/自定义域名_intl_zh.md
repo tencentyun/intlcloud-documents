@@ -21,7 +21,8 @@ PUT Bucket domain 用于为存储桶配置自定义域名。
 
 [//]: # (.cssg-snippet-put-bucket-domain)
 ```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 PutBucketDomainRequest putBucketDomainRequest =
         new PutBucketDomainRequest(bucket);
 DomainConfiguration.DomainRule domainRule = new DomainConfiguration.DomainRule(
@@ -40,10 +41,12 @@ cosXmlService.putBucketDomainAsync(putBucketDomainRequest,
                 (PutBucketDomainResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -53,7 +56,7 @@ cosXmlService.putBucketDomainAsync(putBucketDomainRequest,
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketDomain.java)  查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketDomain.java) 查看。
 
 #### 返回错误码说明
 
@@ -74,7 +77,8 @@ GET Bucket domain 用于查询存储桶的自定义域名信息。
 
 [//]: # (.cssg-snippet-get-bucket-domain)
 ```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
+// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 GetBucketDomainRequest getBucketDomainRequest =
         new GetBucketDomainRequest(bucket);
 cosXmlService.getBucketDomainAsync(getBucketDomainRequest,
@@ -85,10 +89,12 @@ cosXmlService.getBucketDomainAsync(getBucketDomainRequest,
                 (GetBucketDomainResult) result;
     }
 
+    // 如果您使用 kotlin 语言来调用，请注意回调方法中的异常是可空的，否则不会回调 onFail 方法，即：
+    // clientException 的类型为 CosXmlClientException?，serviceException 的类型为 CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
