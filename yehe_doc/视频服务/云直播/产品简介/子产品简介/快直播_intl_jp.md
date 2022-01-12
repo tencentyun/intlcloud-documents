@@ -3,7 +3,7 @@
 
 ## 製品アーキテクチャ
 
-<img src="https://main.qcloudimg.com/raw/ffa5b6f494290599cde0578279de8fe5.svg" width="750px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/89955303a40baec947ea981238baef9e.png" width="750px">
 
 
 ## 製品の特徴
