@@ -130,7 +130,7 @@ The video conferencing mode offers smooth and HD conference experience. It suppo
 The interactive classroom mode allows teacher-student interaction and smooth mic on/off without waiting. Up to 50 participants can keep their mics on at the same time, with latency shorter than 300 ms. In the low-latency mode, up to 100,000 students can play the teacher’s video at the same time, with latency as low as 1,000 ms. In the CDN live streaming mode, there is no limit on audience size. The screen sharing, whiteboard, recording, and replay features help enrich online education experience. Common interactive classroom scenarios include large class, small class, mini class, AI class, open class for enrollment purposes, corporate training, one-to-one tutoring, etc.
 
 | <img src="https://main.qcloudimg.com/raw/76cb1831b3f4b5340243a6b7406d8d73.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
-
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 
 
 ## Online Karaoke
@@ -172,5 +172,5 @@ if(Aegis) {
         reportAssetSpeed: false
     });
 }
-function reportEvent(options){ aegis && reportEvent(options); }
+function reportEvent(options){ aegis && aegis.reportEvent(options); }
 </script>

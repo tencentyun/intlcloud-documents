@@ -129,8 +129,8 @@
 ## インタラクティブ授業シーン
 インタラクティブ授業シーンとは、教師と学生のマイク接続インタラクション、最大50人の同時マイク接続をサポートしています。マイクのオン・オフはスムーズで、切り替え時に待つ必要がなく、教師と学生間の遅延は低く、300ms未満です。低遅延ライブストリーミングモードでは、学生10万人の同時視聴をサポートし、視聴遅延は低く、1000msです。CDN Relayed live streamingの場合、視聴者数は無制限です。画面共有、インタラクティブホワイトボード、録音・再生などさまざまな授業アプリケーション機能をサポートして、より豊かなオンライン教育を構築します。よくあるユースケースとしては、大規模クラス、小規模クラス、超小規模クラス、AI授業、体験授業、社内トレーニングライブストリーミングクラス、1V1eラーニングなどがあります。
 
- <img src="https://main.qcloudimg.com/raw/76cb1831b3f4b5340243a6b7406d8d73.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
-
+| <img src="https://main.qcloudimg.com/raw/76cb1831b3f4b5340243a6b7406d8d73.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 
 
 ## オンラインカラオケ（KTVシーン）
@@ -172,5 +172,5 @@ if(Aegis) {
         reportAssetSpeed: false
     });
 }
-function reportEvent(options){ aegis && reportEvent(options); }
+function reportEvent(options){ aegis && aegis.reportEvent(options); }
 </script>
