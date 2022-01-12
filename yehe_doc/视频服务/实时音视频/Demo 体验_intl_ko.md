@@ -28,9 +28,9 @@
 <tr>
 </div></a></td>
 <td>
-<input type="button" value="Web 코드 예시" class="inbuttom" onclick="aegis.reportEvent({name: 'intl_demo_click_web', ext1: 'api-sample'});window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" /><br><br>
-<input type="button" value="인터랙티브 라이브 스트리밍 - 푸시 스트림" class="inbuttom" onclick="aegis.reportEvent({name: 'intl_demo_click_web', ext1: 'pusher'});window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html?lang=en')" /><br><br>
-<input type="button" value="인터랙티브 라이브 스트리밍 - 풀 스트림" class="inbuttom" onclick="aegis.reportEvent({name: 'intl_demo_click_web', ext1: 'player'});window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html?lang=en')" />
+<input type="button" value="Web 코드 예시" style="height: 30px;width: 230px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;class="inbuttom" onclick="aegis.reportEvent({name: 'intl_demo_click_web', ext1: 'api-sample'});window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" /><br><br>
+<input type="button" value="인터랙티브 라이브 스트리밍 - 푸시 스트림" style="height: 30px;width: 300px;min-width: 50px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;class="inbuttom" onclick="aegis.reportEvent({name: 'intl_demo_click_web', ext1: 'pusher'});window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html?lang=en')" /><br><br>
+<input type="button" value="인터랙티브 라이브 스트리밍 - 풀 스트림" style="height: 30px;width: 300px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;class="inbuttom" onclick="aegis.reportEvent({name: 'intl_demo_click_web', ext1: 'player'});window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html?lang=en')" />
 </td>
 <td>
 <img style="width:150px" src="https://main.qcloudimg.com/raw/844e3de73cf2537e8a58e2263de5900e.png" data-nonescope="true">
@@ -161,3 +161,12 @@ Chorus 시나리오에서는 방 주인 메인 보컬과 시청자가 마이크�
 </tr>
 </table>
 
+<script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
+<script>
+const aegis = new Aegis({
+  id: 'iHWefAYqlXjjlfAkpx',
+  uin: document.cookie.replace(/(?:(?:^|.*;\s*)uin\s*\=\s*([^;]*).*$)|^.*$/, "$1")|| '',
+  reportApiSpeed: false,
+  reportAssetSpeed: false
+})
+</script>
