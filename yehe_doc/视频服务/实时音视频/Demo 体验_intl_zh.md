@@ -161,3 +161,12 @@ Chorus 场景支持房主主唱与一名观众上麦唱歌；支持平滑上下�
 </tr>
 </table>
 
+<script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
+<script>
+const aegis = new Aegis({
+  id: 'iHWefAYqlXjjlfAkpx',
+  uin: document.cookie.replace(/(?:(?:^|.*;\s*)uin\s*\=\s*([^;]*).*$)|^.*$/, "$1")|| '',
+  reportApiSpeed: false,
+  reportAssetSpeed: false
+})
+</script>
