@@ -33,7 +33,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // 设置 bucket 的地域
-    // COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
+    // COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // 设置请求协议, http 或者 https
@@ -78,7 +78,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // 设置 bucket 的地域
-    // COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
+    // COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // 设置请求协议, http 或者 https
@@ -146,7 +146,7 @@ cosClient.shutdown();
 
 #### 参数说明
 
-| 参数名称 | 描述         | 类型                        |     是否必填 |        
+| 参数名称 | 描述         | 类型                        |     是否必填 |
 | -------- | ------------ | --------------------------- | --------- |
 | method          | HTTP 方法，可选：GET、POST、PUT、DELETE、HEAD                | HttpMethodName          | 是 |
 | bucketName      | 存储桶名称，存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String | 是 |

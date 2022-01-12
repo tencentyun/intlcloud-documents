@@ -581,7 +581,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // 设置 bucket 的地域
-    // COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
+    // COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // 设置请求协议, http 或者 https
@@ -626,7 +626,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // 设置 bucket 的地域
-    // COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
+    // COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // 设置请求协议, http 或者 https
@@ -1005,7 +1005,7 @@ String buildPostObjectBody(String boundary, Map<String, String> formFields, Stri
 ```java
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
-// COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
+// COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
 String endpoint = "cos.{COS_REGION}.myqcloud.com";
 // 对象键(Key)是对象在存储桶中的唯一标识。
 String key = "exampleobject";

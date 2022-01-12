@@ -25,7 +25,7 @@ func (s *BucketService) PutInventory(ctx context.Context, id string, opt *Bucket
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-put-bucket-inventory)
+[//]: # ".cssg-snippet-put-bucket-inventory"
 ```go
 package main
 
@@ -39,7 +39,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -159,7 +159,7 @@ func (s *BucketService) GetInventory(ctx context.Context, id string) (*BucketGet
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket-inventory)
+[//]: # ".cssg-snippet-get-bucket-inventory"
 ```go
 package main
 
@@ -174,7 +174,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -234,7 +234,7 @@ func (s *BucketService) ListInventoryConfigurations(ctx context.Context, token s
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-bucket-inventory)
+[//]: # ".cssg-snippet-list-bucket-inventory"
 ```go
 package main
 
@@ -249,7 +249,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -306,7 +306,7 @@ func (s *BucketService) DeleteInventory(ctx context.Context, id string) (*Respon
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-bucket-inventory)
+[//]: # ".cssg-snippet-delete-bucket-inventory"
 ```go
 package main
 
@@ -320,7 +320,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -344,4 +344,4 @@ func main() {
 | 参数名称 | 描述       | 类型   |
 | -------- | ---------- | ------ |
 | id       | 清单的名称 | String |
-    
+

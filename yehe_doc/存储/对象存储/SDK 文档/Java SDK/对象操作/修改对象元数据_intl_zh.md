@@ -31,7 +31,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // 设置 bucket 的地域
-    // COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
+    // COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // 设置请求协议, http 或者 https
@@ -76,7 +76,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // 设置 bucket 的地域
-    // COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
+    // COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // 设置请求协议, http 或者 https
@@ -119,7 +119,7 @@ public CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
 COSClient cosClient = createCOSClient();
 
 // 桶所在的地域
-// COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
+// COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
 Region region = new Region("ap-beijing");
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
