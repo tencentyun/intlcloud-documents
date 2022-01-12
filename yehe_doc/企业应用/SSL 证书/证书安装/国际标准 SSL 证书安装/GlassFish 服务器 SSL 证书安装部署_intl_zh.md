@@ -72,7 +72,7 @@ keytool -importcert -trustcacerts -destkeystore cacerts.jks -file cloud.tencent.
 ```
 执行命令后若提示是否信任此证书，请按图示进行操作。
 ![](https://main.qcloudimg.com/raw/aee68705e1e8b135d47bda9af499e15f.png)
-10. 将步骤8和步骤9生成的文件替换 `domain1/config` 目录下的 `keystore.jks` 和 `cacert.jks` 文件。
+10. 将步骤9和步骤10生成的文件替换 `domain1/config` 目录下的 `keystore.jks` 和 `cacert.jks` 文件。
 11. 编辑 `/usr/share/glassfish4/glassfish/domains/domain1/config` 目录下的 `domain.xml` 文件，修改端口号。如下所示：
 ```
 <network-listeners>

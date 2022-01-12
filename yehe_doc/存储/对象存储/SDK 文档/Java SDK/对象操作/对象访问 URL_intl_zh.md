@@ -24,7 +24,7 @@ COSCredentials cred = new AnonymousCOSCredentials();
 ClientConfig clientConfig = new ClientConfig();
 
 // 设置 bucket 的地域
-// COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
+// COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
 clientConfig.setRegion(new Region("COS_REGION"));
 
 // 设置生成的 url 的请求协议, http 或者 https
@@ -45,7 +45,7 @@ System.out.println(cosclient.getObjectUrl(bucketName, key));
 
 #### 参数说明
 
-| 参数名称   | 参数描述         |类型       | 是否必填         | 
+| 参数名称   | 参数描述         |类型       | 是否必填         |
 | --------- | -------------- |---------- | ----------- |
-| Bucket    | 存储桶名称，由 BucketName-APPID 构成 |  String |  是 | 
-| Key       | 对象键（Key）是对象在存储桶中的唯一标识，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324#.E5.AF.B9.E8.B1.A1.E9.94.AE) | String | 是 | 
+| Bucket    | 存储桶名称，由 BucketName-APPID 构成 |  String |  是 |
+| Key       | 对象键（Key）是对象在存储桶中的唯一标识，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324#.E5.AF.B9.E8.B1.A1.E9.94.AE) | String | 是 |

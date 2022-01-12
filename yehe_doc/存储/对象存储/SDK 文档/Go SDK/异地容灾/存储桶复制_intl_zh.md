@@ -20,7 +20,7 @@ func (s *BucketService) PutBucketReplication(ctx context.Context, opt *PutBucket
 ```
 
 #### 请求示例
-[//]: # (.cssg-snippet-put-bucket-replication)
+[//]: # ".cssg-snippet-put-bucket-replication"
 ```go
 package main
 
@@ -34,7 +34,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-12500000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -110,7 +110,7 @@ func (s *BucketService) GetBucketReplication(ctx context.Context) (*GetBucketRep
 ```
 
 #### 请求示例
-[//]: # (.cssg-snippet-get-bucket-replication)
+[//]: # ".cssg-snippet-get-bucket-replication"
 ```go
 package main
 
@@ -124,7 +124,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-12500000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -186,7 +186,7 @@ func (s *BucketService) DeleteBucketReplication(ctx context.Context) (*Response,
 ```
 
 #### 请求示例
-[//]: # (.cssg-snippet-delete-bucket-replication)
+[//]: # ".cssg-snippet-delete-bucket-replication"
 ```go
 package main
 
@@ -200,7 +200,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-12500000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
