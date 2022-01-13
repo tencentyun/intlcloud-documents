@@ -1,4 +1,4 @@
-### Overview
+## Overview
 
 Bill Download Center is a new console feature we rolled out in January 2022. It is currently in beta testing and is expected to be available to all users in mid-February. You can download your bill data since Bills 3.0 (released in July 2021). Specifically, you can:
 
@@ -10,7 +10,7 @@ Bill Download Center is a new console feature we rolled out in January 2022. It 
 
 4. Download aggregated bill data (the data of hourly/daily billed products can be aggregated by month before download to reduce the number of bill entries)
 
-### Directions
+## Directions
 
 ### PDF bills (L0)
 
@@ -18,53 +18,53 @@ Use case: L0 bills are in PDF format and can be used for payment requesting or a
 
 1. Download the L0 bills of the current account:
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/71452889cf76603d785ed3a7f6c5002a.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/456df0a32dfd695c80dce416df97b36b.png)
 
 2. Download the L0 bills of the current account and selected sub-accounts:
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/3e52fe437197825906de706353e48dd7.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/4d92d9d07c09c028861b7d950364e29a.png)
 
-#### Bill summary (L1)
+### Bill summary (L1)
 
 Use case: L1 bills offer bill data by product, project, region, tag, etc., allowing you to view bill information by different metrics. You can download the bill summary of multiple months in one file and can specify whether to aggregate the data of different accounts. For example, you can download the bill summary of an account in the past 6 months by product.
 
 1. Download the L1 bills of the current account:
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/3894fe076950876c3e65a41c449f8dd5.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/b32bca3a44e022d29dac80cde456bafd.png)
 
 2. Download the L1 bills of the current account and selected sub-accounts:
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/4d46e3de292620cc06c11dbb53bccdd4.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/6896cdb672d6d9b1ea57b95fe2c70999.png)
 
-#### Bills by instance (L2)
+### Bills by instance (L2)
 
 Use case: L2 bills offer bill data by instance (resource) ID. You can download the L2 bills of multiple months in one file and can specify whether to aggregate the data of different accounts.
 
 1. Download the L2 bills of the current account:
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/1f71da394bfc46ca94e2716a769a55c2.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/0296b5734363f02bca554e382b089745.png)
 
 2. Download the L2 bills of the current account and selected sub-accounts:
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/f6ba98ec51478747cc7d6388cb1824b5.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/e4a895c497204096fe54e889627df1d3.png)
 
-#### Bill details (L3)
+### Bill details (L3)
 
 Use case: L3 bills offer bill data at the component level. You can download the L3 bills of multiple months at a time and can specify whether to aggregate the data by month.
 
 1. Download the L3 bills of the current account and specify whether to aggregate the data by month:
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/005e511aa7bddbc5aede2864c36243fc.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/77478baccf07af13d3bc153c3953deca.png)
 
 2. Download the L3 bills of the current account and selected sub-accounts and specify whether to aggregate the data by month:
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/4733193e1f557d26a5dd2044e210588b.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/c572cdd87c750b113dc25540958197c6.png)
 
-### References
+## References
 
-#### How aggregation by month works for L3 bills
+### How aggregation by month works for L3 bills
 
-##### Products billed by resource used
+#### Products billed by resource used
 
 For components (e.g., those with “bandwidth” in their names) billed by the amount of resources used during a fixed billing period, aggregation by month aggregates the usages and costs of the same instance ID in a month into one bill entry.
 
@@ -84,7 +84,7 @@ Billing month, billing mode, transaction type, product, subproduct, component ty
 - `Order ID`, `Transaction ID`, `Transaction Time`: display `-`
 - Other fields: display the same as in bill details
 
-##### Products billed by time used
+#### Products billed by time used
 
 For components (e.g., those with “CVM” in their names) billed by the period of time a fixed amount of resources is used, aggregation by month aggregates the usage durations and costs of the same instance ID in a month into one bill entry.
 
@@ -104,6 +104,6 @@ Billing month, billing mode, transaction type, product, subproduct, component ty
 - `Order ID`, `Transaction ID`, `Transaction Time`: display `-`
 - Other fields: display the same as in bill details
 
-##### Data not aggregated
+#### Data not aggregated
 
 Data is not aggregated for transactions whose type is not `Hourly settlement`, `Daily settlement`, `Spot`, `Hourly RI fee`, or `Hourly Savings Plan fee` and such data is displayed the same as in bill details.
