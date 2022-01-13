@@ -129,8 +129,8 @@ function(err, data) { ... }
 
 ### Downloading multiple objects
 
-This is not recommended as you cannot use code to control the start or stop after triggering a download with browser. When too many objects need to be downloaded, it may cause a poor experience.
->
+>! This is not recommended as you cannot use code to control the start or stop after triggering a download with browser. When too many objects need to be downloaded, it may cause a poor experience.
+
 
 #### Sample code
 
