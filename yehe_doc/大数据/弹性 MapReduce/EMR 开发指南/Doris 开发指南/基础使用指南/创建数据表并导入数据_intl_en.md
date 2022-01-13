@@ -145,7 +145,7 @@ MySQL> DESC table2;
 ```
 
 ### Notes
->?For more syntax description regarding the use of Doris, see [Data Table Creation and Data Import](http://doris.apache.org/master/en/getting-started/basic-usage.html#_2-data-table-creation-and-data-import).
+>?For more syntax description regarding the use of Doris, see [Data Table Creation and Data Import](https://doris.incubator.apache.org/getting-started/basic-usage.html#_2-data-table-creation-and-data-import).
 
 1. The above tables created by setting `replication_num` are all single-replica tables. Doris recommends that users adopt the default three-replica settings to ensure high availability.
 2. Partitions in composite partitioning tables can be added or deleted dynamically.
