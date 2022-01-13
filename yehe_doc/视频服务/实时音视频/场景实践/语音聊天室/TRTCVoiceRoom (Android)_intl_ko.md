@@ -1,15 +1,15 @@
 TRTCVoiceRoom은 Tencent Cloud의 Real-Time Communication(TRTC)과 Instant Messaging(IM) 서비스를 기반으로 구성되며, 다음 기능을 지원합니다.
 
-- 방 주인이 신규 음성 채팅방을 생성하면 청취자가 음성 채팅방에 입장해 청취 및 인터랙션할 수 있습니다.
-- 방 주인이 청취자에게 마이크 켜기를 요청하거나 마이크가 켜진 사용자의 마이크를 강제로 끌 수 있습니다.
+- 방 주인이 신규 음성 채팅방을 생성하면 청취자가 음성 채팅방에 입장하여 청취 및 인터랙션.
+- 방 주인이 청취자에게 마이크 켜기 요청 또는 마이크가 켜진 사용자의 마이크 강제 끄기.
 - 방 주인의 자리 차단 및 청취자 마이크 연결 신청 차단.
 - 청취자가 마이크 켜기를 신청하여 마이크가 켜진 호스트가 될 수 있고, 다른 사람들과 음성으로 인터랙션할 수 있으며, 언제든지 마이크를 끄고 일반 청취자가 될 수 있습니다.
 - 다양한 텍스트 메시지 및 사용자 정의 메시지를 지원합니다. 사용자 정의 메시지를 이용해 댓글 자막, 좋아요, 선물 기능 등을 구현할 수 있습니다.
 
 TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [음성 채팅방(Android)](https://intl.cloud.tencent.com/document/product/647/36060)을 참고하십시오.
 
-- TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 저딜레이 음성 채팅 모듈로 사용합니다.
-- IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)의 AVChatroom을 사용해 채팅방 기능을 구현하며, IM 속성 인터페이스를 통해 마이크 위치 리스트 등 방 정보를 저장하고 초대 신호를 마이크 켜기/끄기 신청에 사용할 수 있습니다.
+- TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 저지연 음성 채팅 컴포넌트로 사용합니다.
+- IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)의 AVChatroom을 사용해 채팅방 기능을 구현하며, IM 속성 인터페이스를 통해 마이크 위치 리스트 등 방 정보를 저장하고 초대 신호를 마이크 켜기 신청/마이크 넘기기에 사용할 수 있습니다.
 
 [](id:TRTCVoiceRoom)
 ## TRTCVoiceRoom API 개요
@@ -24,67 +24,68 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 | [setDelegateHandler](#setdelegatehandler)       | 이벤트 콜백이 있는 스레드 설정. |
 | [login](#login)                                 | 로그인.                   |
 | [logout](#logout)                               | 로그아웃.                   |
-| [setSelfProfile](#setselfprofile)               | 개인 프로필 정보 수정.           |
+| [setSelfProfile](#setselfprofile)               | 개인 정보 수정.           |
 
-### 방 관련 인터페이스 함수
+### 방 관련 API
 
 | API                                 | 설명                                                         |
 | ----------------------------------- | ------------------------------------------------------------ |
-| [createRoom](#createroom)           | 방 생성(방 주인 호출). 방이 없는 경우 시스템에서 자동으로 새로운 방 생성. |
+| [createRoom](#createroom)           | 방 생성(방 주인 호출), 방이 없는 경우 시스템에서 자동으로 새로운 방 생성. |
 | [destroyRoom](#destroyroom)         | 방 폐기(방 주인 호출).                                       |
 | [enterRoom](#enterroom)             | 방 입장(청취자 호출).                                       |
 | [exitRoom](#exitroom)               | 방 퇴장(청취자 호출).                                       |
 | [getRoomInfoList](#getroominfolist) | 방 리스트의 세부 정보 획득.                                     |
 | [getUserInfoList](#getuserinfolist) | 지정 userId의 사용자 정보 획득. null인 경우 방 안에 있는 모든 사용자 정보 획득. |
 
-### 마이크 위치 관리 인터페이스
+### 마이크 위치 관리 API
 
-| API                     | 설명                                  |
+| API                        | 설명                                  |
 | ----------------------- | ------------------------------------- |
-| [enterSeat](#enterseat) | 마이크 연결(청취자와 방 주인 모두 호출 가능).  |
-| [leaveSeat](#leaveseat) | 마이크 연결 해제(호스트 호출).  |
-| [pickSeat](#pickseat)   | 마이크 넘기기(방 주인 호출).             |
+| [enterSeat](#enterseat) | 마이크 연결(청취자와 방 주인 모두 호출 가능).    |
+| [moveSeat](#moveseat) | 마이크 위치 이동(마이크 연결된 호스트 호출 가능).    |
+| [leaveSeat](#leaveseat) | 마이크 연결 해제(호스트 호출).    |
+| [pickSeat](#pickseat)   | 마이크 넘기기(방 주인 호출).                  |
 | [kickSeat](#kickseat)   | 마이크 강제 끄기(방 주인 호출).             |
 | [muteSeat](#muteseat)   | 특정 마이크 위치 음소거/음소거 해제(방 주인 호출). |
-| [closeSeat](#closeseat) | 특정 마이크 위치 차단/차단 해제(방 주인 호출).     |
+| [closeSeat](#closeseat) | 특정 마이크 위치 차단/차단 해제(방 주인 호출).         |
 
-### 로컬 오디오 작업 인터페이스
+### 로컬 오디오 작업 API
 
 | API                                             | 설명                 |
 | ----------------------------------------------- | -------------------- |
 | [startMicrophone](#startmicrophone)             | 마이크 수집 시작.     |
 | [stopMicrophone](#stopmicrophone)               | 마이크 수집 중지.     |
 | [setAudioQuality](#setaudioquality)             | 오디오 품질 설정.           |
-| [muteLocalAudio](#mutelocalaudio)               | 로컬 음소거 활성화/비활성화.  |
+| [muteLocalAudio](#mutelocalaudio)               | 로컬 음소거 활성화/비활성화.       |
 | [setSpeaker](#setspeaker)                       | 스피커 활성화 설정.     |
-| [setAudioCaptureVolume](#setaudiocapturevolume) | 마이크 수집 음량 설정. |
+| [setAudioCaptureVolume](#setaudiocapturevolume) | 마이크 수집 음량 설정.|
 | [setAudioPlayoutVolume](#setaudioplayoutvolume) | 재생 볼륨 설정.       |
 | [setVoiceEarMonitorEnable](#setvoiceearmonitorenable) | 인이어 모니터링 활성화/비활성화.       |
 
 
-### 원격 사용자 오디오 작업 인터페이스
+### 원격 사용자 오디오 작업 API
 
-| API                                       | 설명                 |
+| API                                           | 설명                  |
 | ----------------------------------------- | -------------------- |
 | [muteRemoteAudio](#muteremoteaudio)       | 특정 사용자 음소거/음소거 해제. |
 | [muteAllRemoteAudio](#muteallremoteaudio) | 모든 사용자 음소거/음소거 해제. |
 
-### 배경 음악 음향 효과 관련 인터페이스
+### 배경 음악 음향 효과 관련 API
 
 | API                                             | 설명                                                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html#interfacecom_1_1tencent_1_1liteav_1_1audio_1_1TXAudioEffectManager) 가져오기.|
+| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html#interfacecom_1_1tencent_1_1liteav_1_1audio_1_1TXAudioEffectManager) 가져오기. |
 
-### 메시지 발송 관련 인터페이스
+### 메시지 발송 관련 API
 
 | API                                     | 설명                                     |
 | --------------------------------------- | ---------------------------------------- |
 | [sendRoomTextMsg](#sendroomtextmsg)     | 방 안에서 텍스트 메시지 발송, 일반적으로 댓글 자막 채팅에 사용. |
 | [sendRoomCustomMsg](#sendroomcustommsg) | 사용자 정의 텍스트 메시지 발송.                     |
 
-### 초대 신호 관련 인터페이스
+### 초대 신호 관련 API
 
-| API                                   | 설명             |
+| API                                     | 설명              |
 | ------------------------------------- | ---------------- |
 | [sendInvitation](#sendinvitation)     | 사용자에게 초대 발송. |
 | [acceptInvitation](#acceptinvitation) | 초대 수락.       |
@@ -93,9 +94,9 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 <h2 id="TRTCVoiceRoomDelegate">TRTCVoiceRoomDelegate API 개요</h2>
 
-### 범용 이벤트 콜백
+### 일반적인 이벤트 콜백
 
-| API                       | 설명       |
+| API                             | 설명        |
 | ------------------------- | ---------- |
 | [onError](#onerror)       | 오류 콜백. |
 | [onWarning](#onwarning)   | 경고 콜백. |
@@ -103,11 +104,11 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### 방 이벤트 콜백
 
-| API                                       | 설명                   |
+| API                                           | 설명                  |
 | ----------------------------------------- | ---------------------- |
 | [onRoomDestroy](#onroomdestroy)           | 방 폐기 콜백.     |
 | [onRoomInfoChange](#onroominfochange)     | 음성 채팅방 정보 변경 콜백. |
-| [onUserVolumeUpdate](#onuservolumeupdate) | 사용자 통화 음량 콜백.     |
+| [onUserVolumeUpdate](#onuservolumeupdate) | 사용자 통화 볼륨 콜백.     |
 
 ### 마이크 위치 변경 콜백
 
@@ -122,17 +123,17 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### 청취자 입장/퇴장 이벤트 콜백
 
-| API                                 | 설명               |
+| API                                   | 설명                |
 | ----------------------------------- | ------------------ |
 | [onAudienceEnter](#onaudienceenter) | 청취자 입장 알림 수신. |
 | [onAudienceExit](#onaudienceexit)   | 청취자 퇴장 알림 수신. |
 
 ### 메시지 이벤트 콜백
 
-| API                                         | 설명             |
+| API                                           | 설명              |
 | ------------------------------------------- | ---------------- |
 | [onRecvRoomTextMsg](#onrecvroomtextmsg)     | 텍스트 메시지 수신.   |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | 사용자 정의 메시지 수신. |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | 사용자 정의 메시지 수신.|
 
 ## 신호 이벤트 콜백
 
@@ -141,7 +142,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 | [onReceiveNewInvitation](#onreceivenewinvitation) | 새로운 초대 요청 수신.   |
 | [onInviteeAccepted](#oninviteeaccepted)           | 초대된 사용자가 초대 수락.   |
 | [onInviteeRejected](#oninviteerejected)           | 초대된 사용자가 초대 거절.   |
-| [onInvitationCancelled](#oninvitationcancelled)   | 초대한 사용자가 초대 취소.   |
+| [onInvitationCancelled](#oninvitationcancelled)   | 초대한 사용자가 초대 취소.|
 
 ## SDK 기본 함수
 
@@ -155,9 +156,9 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
  public static synchronized TRTCVoiceRoom sharedInstance(Context context);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형    | 의미                                                         |
+| 매개변수    | 유형    | 의미                                                   |
 | ------- | ------- | ------------------------------------------------------------ |
 | context | Context | Android 컨텍스트로, 내부가 ApplicationContext로 전환되어 시스템 API 호출에 사용됩니다. |
 
@@ -185,15 +186,15 @@ public abstract void setDelegate(TRTCVoiceRoomDelegate delegate);
 
 ### setDelegateHandler
 
-이벤트 콜백이 속한 스레드를 설정합니다.
+이벤트 콜백이 존재하는 스레드를 설정합니다.
 
 ```java
 public abstract void setDelegateHandler(Handler handler);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형    | 의미                                                         |
+| 매개변수    | 유형    | 의미                                                   |
 | ------- | ------- | ------------------------------------------------------------ |
 | handler | Handler | TRTCVoiceRoom의 각종 상태를 통지하며, 지정한 handler 스레드로 배포합니다. |
 
@@ -201,7 +202,7 @@ public abstract void setDelegateHandler(Handler handler);
 
 ### login
 
-로그인.
+로그인합니다.
 
 ```java
 public abstract void login(int sdkAppId,
@@ -209,28 +210,26 @@ public abstract void login(int sdkAppId,
 TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수     | 유형           | 의미                                                         |
 | -------- | -------------- | ------------------------------------------------------------ |
-| sdkAppId | int            | TRTC 콘솔>[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)>애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다. |
+| sdkAppId | int            | **TRTC 콘솔 >[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)**> 애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다. |
 | userId   | String         | 현재 사용자 ID입니다. 문자열 유형은 영어 알파벳(a-z, A-Z), 숫자(0-9), 대시 부호(-), 언더바(\_)만 허용됩니다. |
 | userSig | String | Tencent Cloud가 설계한 일종의 보안 서명입니다. 획득 방식은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
-| callback | ActionCallback | 로그인 콜백이며, 성공 시 code는 0입니다.                                  |
-
-   
+| callback | ActionCallback | 로그인 콜백이며, 성공 시 code는 0입니다. |
 
 ### logout
 
-로그아웃.
+로그아웃합니다.
 
 ```java
 public abstract void logout(TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미                        |
+| 매개변수     | 유형             | 의미                       |
 | -------- | -------------- | --------------------------- |
 | callback | ActionCallback | 로그아웃 콜백이며, 성공 시 code는 0입니다. |
 
@@ -238,24 +237,24 @@ public abstract void logout(TRTCVoiceRoomCallback.ActionCallback callback);
 
 ### setSelfProfile
 
-개인 정보 수정.
+개인 정보를 수정합니다.
 
 ```java
 public abstract void setSelfProfile(String userName, String avatarURL, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수      | 유형           | 의미                                |
+| 매개변수     | 유형            | 의미                                |
 | --------- | -------------- | ----------------------------------- |
 | userName  | String         | 닉네임.                              |
 | avatarURL | String         | 프로필 사진 주소.                          |
-| callback  | ActionCallback | 개인 정보 설정 콜백이며, 성공 시 code는 0입니다. |
+| callback  | ActionCallback | 개인 프로필 정보 설정 콜백이며, 성공 시 code는 0입니다. |
 
    
 
 
-## 방 관련 인터페이스 함수
+## 방 관련 API
 
 ### createRoom
 
@@ -265,7 +264,7 @@ public abstract void setSelfProfile(String userName, String avatarURL, TRTCVoice
 public abstract void createRoom(int roomId, TRTCVoiceRoomDef.RoomParam roomParam, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수      | 유형                | 의미                                                         |
 | --------- | ------------------- | ------------------------------------------------------------ |
@@ -289,9 +288,9 @@ public abstract void createRoom(int roomId, TRTCVoiceRoomDef.RoomParam roomParam
 public abstract void destroyRoom(TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미                                  |
+| 매개변수     | 유형            | 의미                            |
 | -------- | -------------- | ------------------------------------- |
 | callback | ActionCallback | 방 폐기 결과 콜백이며, 성공 시 code는 0입니다. |
 
@@ -304,9 +303,9 @@ public abstract void destroyRoom(TRTCVoiceRoomCallback.ActionCallback callback);
 public abstract void enterRoom(int roomId, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미                                  |
+| 매개변수     | 유형            | 의미                             |
 | -------- | -------------- | ------------------------------------- |
 | roomId   | int            | 방 식별 번호.                            |
 | callback | ActionCallback | 방 입장 결과 콜백이며, 성공 시 code는 0입니다. |
@@ -317,8 +316,8 @@ public abstract void enterRoom(int roomId, TRTCVoiceRoomCallback.ActionCallback 
 1. 청취자가 귀하의 서버에서 최신 음성 채팅방 리스트를 획득하며, 여기에는 여러 음성 채팅방의 roomId 및 방 정보가 포함될 수 있습니다.
 2. 청취자가 음성 채팅방 1개를 선택하고 `enterRoom`을 호출하여 해당 방으로 입장합니다.
 3. 방 입장 후 컴포넌트의 `onRoomInfoChange` 방 속성 변경 이벤트 알림을 수신합니다. 이때 UI에 방 이름 표시, 마이크를 켤 때 방 주인에게 동의 요청 필요 여부 기록 등 방의 속성을 기록할 수 있으며 그에 해당하는 변경이 가능합니다.
-4. 방 입장 후 모듈의 `onSeatListChange` 마이크 위치 리스트 변경 이벤트 알림을 수신합니다. 이때 마이크 위치 리스트의 변경 내용을 UI 인터페이스에 새로고침할 수 있습니다.
-5. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 알림 또한 수신합니다.
+4. 방 입장 후 컴포넌트의 `onSeatListChange` 마이크 위치 리스트 변경 이벤트 알림을 수신합니다. 이때 마이크 위치 리스트의 변경 내용을 UI 인터페이스에 새로고침할 수 있습니다.
+5. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 알림도 수신합니다.
 
 ### exitRoom
 
@@ -328,9 +327,9 @@ public abstract void enterRoom(int roomId, TRTCVoiceRoomCallback.ActionCallback 
 public abstract void exitRoom(TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미                                  |
+| 매개변수     | 유형            | 의미                                 |
 | -------- | -------------- | ------------------------------------- |
 | callback | ActionCallback | 방 퇴장 결과 콜백이며, 성공 시 code는 0입니다. |
 
@@ -347,9 +346,9 @@ public abstract void exitRoom(TRTCVoiceRoomCallback.ActionCallback callback);
 public abstract void getRoomInfoList(List<Integer> roomIdList, TRTCVoiceRoomCallback.RoomInfoCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수       | 유형                | 의미               |
+| 매개변수       | 유형                | 의미                |
 | ---------- | ------------------- | ------------------ |
 | roomIdList | List&lt;Integer&gt; | 방 번호 리스트.       |
 | callback   | RoomInfoCallback    | 방 세부 정보 콜백. |
@@ -363,15 +362,15 @@ public abstract void getRoomInfoList(List<Integer> roomIdList, TRTCVoiceRoomCall
 public abstract void getUserInfoList(List<String> userIdList, TRTCVoiceRoomCallback.UserListCallback userlistcallback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수             | 유형               | 의미                                                         |
+| 매개변수             | 유형               | 의미                               |
 | ---------------- | ------------------ | ------------------------------------------------------------ |
-| userIdList       | List&lt;String&gt; | 획득해야 할 사용자 ID 리스트입니다. null인 경우 방 안에 있는 모든 사용자 정보를 획득합니다. |
+| userIdList       | List&lt;String&gt;        | 획득해야 할 사용자 ID 리스트입니다. null인 경우 방 안에 있는 모든 사용자 정보를 획득합니다. |
 | userlistcallback | UserListCallback   | 사용자 세부 정보 콜백.                                           |
 
 
-## 마이크 위치 관리 인터페이스
+## 마이크 위치 관리 API
 
 ### enterSeat
 
@@ -383,12 +382,35 @@ public abstract void getUserInfoList(List<String> userIdList, TRTCVoiceRoomCallb
 public abstract void enterSeat(int seatIndex, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수      | 유형           | 의미                 |
 | --------- | -------------- | -------------------- |
 | seatIndex | int            | 마이크를 연결할 마이크 위치 번호. |
 | callback  | ActionCallback | 작업 콜백.           |
+
+해당 인터페이스를 호출하면 마이크 위치 리스트가 즉시 수정됩니다. 청취자의 마이크 연결에 방 주인의 동의가 필요한 시나리오의 경우, 먼저 `sendInvitation`을 호출하여 방 주인에게 신청하고 `onInvitationAccept` 수신 후 다시 해당 함수를 호출합니다.
+
+### moveSeat
+마이크 위치 이동(마이크 연결된 호스트 호출 가능).
+>? 마이크 위치 이동 완료 후 방 안의 모든 구성원은 'onSeatListChange', 'onAnchorLeaveSeat' 및 'onAnchorEnterSeat'의 이벤트 알림을 받게 됩니다. (호스트 호출 후 마이크 좌석 번호 정보만 수정되며, 사용자의 호스트 신분은 변경되지 않습니다.)
+
+```java
+public abstract int moveSeat(int seatIndex, TRTCVoiceRoomCallback.ActionCallback callback);
+```
+
+매개변수 리스트는 다음과 같습니다.
+
+| 매개변수      | 유형           | 의미               |
+| --------- | -------------- | -------------------- |
+| seatIndex | int    | 마이크를 이동할 마이크 위치 번호. |
+| callback  | ActionCallback | 작업 콜백.           |
+
+반환값:
+
+| 반환값   | 유형   | 의미                  |
+| -------- | ------ | --------------------- |
+| code | int | 마이크 이동 작동 결과(0은 성공, 그 외는 실패, 10001은 인터페이스 호출 빈도 제한). |
 
 해당 인터페이스를 호출하면 마이크 위치 리스트가 즉시 수정됩니다. 청취자의 마이크 연결에 방 주인의 동의가 필요한 시나리오의 경우, 먼저 `sendInvitation`을 호출하여 방 주인에게 신청하고 `onInvitationAccept` 수신 후 다시 해당 함수를 호출합니다.
 
@@ -402,11 +424,11 @@ public abstract void enterSeat(int seatIndex, TRTCVoiceRoomCallback.ActionCallba
 public abstract void leaveSeat(TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수     | 유형           | 의미       |
 | -------- | -------------- | ---------- |
-| callback  | ActionCallback | 작업 콜백.           |
+| callback  | ActionCallback | 작업 콜백.|
 
 ### pickSeat
 
@@ -418,7 +440,7 @@ public abstract void leaveSeat(TRTCVoiceRoomCallback.ActionCallback callback);
 public abstract void pickSeat(int seatIndex, String userId, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수      | 유형           | 의미                   |
 | --------- | -------------- | ---------------------- |
@@ -439,9 +461,9 @@ public abstract void pickSeat(int seatIndex, String userId, TRTCVoiceRoomCallbac
 public abstract void kickSeat(int seatIndex, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수      | 유형           | 의미                   |
+| 매개변수      | 유형           | 의미                  |
 | --------- | -------------- | ---------------------- |
 | seatIndex | int            | 마이크 연결을 해제할 마이크 위치 번호. |
 | callback  | ActionCallback | 작업 콜백.             |
@@ -458,11 +480,11 @@ public abstract void kickSeat(int seatIndex, TRTCVoiceRoomCallback.ActionCallbac
 public abstract void muteSeat(int seatIndex, boolean isMute, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수      | 유형           | 의미                                          |
+| 매개변수     | 유형             | 의미                                     |
 | --------- | -------------- | --------------------------------------------- |
-| seatIndex | int            | 작업을 진행할 마이크 위치 번호.                       |
+| seatIndex | int            | 작업을 진행할 마이크 위치 번호.                          |
 | isMute    | boolean        | true: 음소거, false: 음소거 해제. |
 | callback  | ActionCallback | 작업 콜백.                                    |
 
@@ -478,9 +500,9 @@ public abstract void muteSeat(int seatIndex, boolean isMute, TRTCVoiceRoomCallba
 public abstract void closeSeat(int seatIndex, boolean isClose, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수      | 유형           | 의미                                       |
+| 매개변수     | 유형            | 의미                                    |
 | --------- | -------------- | ------------------------------------------ |
 | seatIndex | int            | 작업을 진행할 마이크 위치 번호.                       |
 | isClose   | boolean        | true: 차단, false: 차단 해제. |
@@ -489,7 +511,7 @@ public abstract void closeSeat(int seatIndex, boolean isClose, TRTCVoiceRoomCall
 해당 인터페이스를 호출하면 마이크 위치 리스트가 즉시 수정됩니다. 해당 seatIndex 자리가 차단되고 자동으로 마이크 연결이 해제됩니다.
 
 
-## 로컬 오디오 작업 인터페이스
+## 로컬 오디오 작업 API
 
 ### startMicrophone
 
@@ -501,7 +523,7 @@ public abstract void startMicrophone();
 
 ### stopMicrophone
 
-마이크 수집을 종료합니다.
+마이크 수집을 중지합니다.
 
 ```java
 public abstract void stopMicrophone();
@@ -515,9 +537,9 @@ public abstract void stopMicrophone();
 public abstract void setAudioQuality(int quality);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형    | 의미                                                         |
+| 매개변수    | 유형             | 의미                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
 | quality | int  | 오디오의 품질입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)를 참고하십시오. |
 
@@ -530,9 +552,9 @@ public abstract void setAudioQuality(int quality);
 public abstract void muteLocalAudio(boolean mute);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형    | 의미                                                         |
+| 매개변수          | 유형    | 의미                                                    |
 | ---- | ------- | ------------------------------------------------------------ |
 | mute | boolean | 오디오를 음소거/음소거 취소합니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)를 참고하십시오. |
 
@@ -546,57 +568,57 @@ public abstract void muteLocalAudio(boolean mute);
 public abstract void setSpeaker(boolean useSpeaker);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수       | 유형    | 의미                        |
+| 매개변수     | 유형    | 의미                        |
 | ---------- | ------- | --------------------------- |
-| useSpeaker | boolean | true: 스피커, false: 헤드셋. |
+| useSpeaker | boolean | true: 스피커, false: 핸드셋.|
 
 
 
 ### setAudioCaptureVolume
 
-마이크의 수집 음량을 설정합니다.
+마이크 수집 볼륨을 설정합니다.
 
 ```java
 public abstract void setAudioCaptureVolume(int volume);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형 | 의미                          |
+| 매개변수    | 유형 | 의미                            |
 | ------ | ---- | ----------------------------- |
-| volume | int  | 수집 볼륨으로, 0 - 100으로 설정할 수 있으며 기본값은 100입니다. |
+| volume | int  | 수집 볼륨, 범위: 0 - 100, 기본값: 100. |
 
 
 ### setAudioPlayoutVolume
 
-재생 음량을 설정합니다.
+재생 볼륨을 설정합니다.
 
 ```java
 public abstract void setAudioPlayoutVolume(int volume);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형 | 의미                        |
+| 매개변수    | 유형 | 의미                         |
 | ------ | ---- | --------------------------- |
-| volume | int  | 재생 볼륨으로, 0 - 100으로 설정할 수 있으며 기본값은 100입니다. |
+| volume | int  | 재생 볼륨, 범위: 0 - 100, 기본값: 100. |
 
 ### muteRemoteAudio
 
-특정 사용자 음소거/음소거 해제.
+지정 사용자 음소거/음소거 해제.
 
 ```java
 public abstract void muteRemoteAudio(String userId, boolean mute);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수 | 유형    | 의미                              |
 | ---- | ------- | --------------------------------- |
-| userId | String  | 지정 사용자 ID.                   |
-| mute | boolean | true: 음소거, false: 음소거 해제. |
+| userId | String  | 지정 사용자 ID.|
+| mute | boolean | true: 음소거 켜기, false: 음소거 끄기.|
 
 ### muteAllRemoteAudio
 
@@ -606,11 +628,11 @@ public abstract void muteRemoteAudio(String userId, boolean mute);
 public abstract void muteAllRemoteAudio(boolean mute);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수 | 유형    | 의미                              |
+| 매개변수 | 유형    | 의미                                |
 | ---- | ------- | --------------------------------- |
-| mute | boolean | true: 음소거, false: 음소거 해제. |
+| mute | boolean | true: 음소거 켜기, false: 음소거 끄기.|
 
 ### setVoiceEarMonitorEnable
 
@@ -619,40 +641,40 @@ public abstract void muteAllRemoteAudio(boolean mute);
 ```java
 public abstract void setVoiceEarMonitorEnable(boolean enable);
 ```
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수 | 유형    | 의미                               |
+| 매개변수 | 유형    | 의미                            |
 | ---- | ------- | --------------------------------- |
-| enable | boolean | true: 인이어 모니터링 활성화, false: 인이어 모니터링 비활성화. |
+| enable | boolean | true: 인이어 모니터링 활성화; false: 인이어 모니터링 비활성화. |
 
 
-## 배경 음악 음향 효과 관련 인터페이스 함수
+## 배경 음악 음향 효과 관련 API
 
 ### getAudioEffectManager
 
-배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 가져오기.
+배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 획득.
 
 ```java
 public abstract TXAudioEffectManager getAudioEffectManager();
 ```
 
 
-## 메시지 발송 관련 인터페이스 함수
+## 메시지 발송 관련 API
 
 ### sendRoomTextMsg
 
-방 안에서 텍스트 메시지를 발송합니다. 일반적으로 댓글 자막 채팅에 사용합니다.
+방 안에서 텍스트 메시지 발송, 일반적으로 댓글 자막 채팅에 사용.
 
 ```java
 public abstract void sendRoomTextMsg(String message, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미           |
+| 매개변수     | 유형             | 의미            |
 | -------- | -------------- | -------------- |
 | message  | String         | 텍스트 메시지.     |
-| callback | ActionCallback | 발송 결과 콜백.   |
+| callback | ActionCallback | 발송 결과 콜백.|
 
    
 
@@ -664,17 +686,17 @@ public abstract void sendRoomTextMsg(String message, TRTCVoiceRoomCallback.Actio
 public abstract void sendRoomCustomMsg(String cmd, String message, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미                                               |
+| 매개변수     | 유형               | 의미                                       |
 | -------- | -------------- | -------------------------------------------------- |
-| cmd      | String         | 명령어. 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
+| cmd      | String         | 명령어, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
 | message  | String         | 텍스트 메시지.                                         |
 | callback | ActionCallback | 발송 결과 콜백.                                     |
 
    
 
-## 초대 신호 관련 인터페이스
+## 초대 신호 관련 API
 
 ### sendInvitation
 
@@ -684,9 +706,9 @@ public abstract void sendRoomCustomMsg(String cmd, String message, TRTCVoiceRoom
 public abstract String sendInvitation(String cmd, String userId, String content, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미             |
+| 매개변수     | 유형             | 의미              |
 | -------- | -------------- | ---------------- |
 | cmd      | String         | 서비스의 사용자 정의 명령. |
 | userId   | String         | 초대한 사용자 ID.  |
@@ -707,27 +729,27 @@ public abstract String sendInvitation(String cmd, String userId, String content,
 public abstract void acceptInvitation(String id, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미           |
+| 매개변수     | 유형            | 의미           |
 | -------- | -------------- | -------------- |
 | id       | String         | 초대 ID.      |
-| callback | ActionCallback | 발송 결과 콜백.   |
+| callback | ActionCallback | 발송 결과 콜백.|
 
 ### rejectInvitation
 
-초대 거절.
+초대 거부.
 
 ```java
 public abstract void rejectInvitation(String id, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수 | 유형   | 의미     |
+| 매개변수 | 유형   | 의미      |
 | ---- | ------ | -------- |
 | id   | String | 초대 ID. |
-| callback | ActionCallback | 발송 결과 콜백. |
+| callback | ActionCallback | 발송 결과 콜백.|
 
 
 ### cancelInvitation
@@ -738,12 +760,12 @@ public abstract void rejectInvitation(String id, TRTCVoiceRoomCallback.ActionCal
 public abstract void cancelInvitation(String id, TRTCVoiceRoomCallback.ActionCallback callback);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미           |
+| 매개변수     | 유형             | 의미           |
 | -------- | -------------- | -------------- |
 | id       | String         | 초대 ID.      |
-| callback | ActionCallback | 발송 결과 콜백.   |
+| callback | ActionCallback | 발송 결과 콜백.|
 
 [](id:TRTCVoiceRoomDelegate)
 ## TRTCVoiceRoomDelegate 이벤트 콜백
@@ -754,48 +776,48 @@ public abstract void cancelInvitation(String id, TRTCVoiceRoomCallback.ActionCal
 
 오류 콜백.
 
->? SDK가 복구할 수 없는 오류는 반드시 모니터링하고 상황에 따라 적절한 인터페이스를 사용자에게 제시해야 합니다.
+>? SDK가 복구할 수 없는 오류는 반드시 수신하고 상황에 따라 적절한 인터페이스로 사용자에게 안내해야 합니다.
 
 ```java
 void onError(int code, String message);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수    | 유형   | 의미       |
 | ------- | ------ | ---------- |
-| code    | int    | 에러 코드.   |
+| code    | int    | 오류 코드.   |
 | message | String | 오류 정보. |
 
 
 ### onWarning
 
-경고 콜백입니다.
+경고 콜백.
 
 ```java
 void onWarning(int code, String message);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형   | 의미       |
+| 매개변수    | 유형   | 의미         |
 | ------- | ------ | ---------- |
-| code    | int    | 에러 코드.   |
+| code    | int    | 오류 코드.   |
 | message | String | 경고 정보. |
 
    
 
 ### onDebugLog
 
-Log 콜백입니다.
+Log 콜백.
 
 ```java
 void onDebugLog(String message);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형   | 의미       |
+| 매개변수    | 유형   | 의미        |
 | ------- | ------ | ---------- |
 | message | String | 로그 정보. |
 
@@ -812,7 +834,7 @@ void onDebugLog(String message);
 void onRoomDestroy(String roomId);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수   | 유형   | 의미      |
 | ------ | ------ | --------- |
@@ -827,9 +849,9 @@ void onRoomDestroy(String roomId);
 void onRoomInfoChange(TRTCVoiceRoomDef.RoomInfo roomInfo);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형     | 의미       |
+| 매개변수     | 유형     | 의미        |
 | -------- | -------- | ---------- |
 | roomInfo | RoomInfo | 방 정보. |
 
@@ -837,50 +859,50 @@ void onRoomInfoChange(TRTCVoiceRoomDef.RoomInfo roomInfo);
 
 ### onUserMicrophoneMute
 
-사용자 마이크의 음소거 여부 콜백으로 사용자가 muteLocalAudio 호출하면 방의 모든 사용자는 해당 알림을 받게 됩니다. 
+사용자 마이크의 음소거 여부 콜백으로 사용자가 muteLocalAudio 호출하면 방의 모든 사용자는 해당 알림을 받게 됩니다.
 
 ```java
 void onUserMicrophoneMute(String userId, boolean mute);
 
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형   | 의미                      |
+| 매개변수   | 유형   | 의미                       |
 | ------ | ------ | ------------------------- |
 | userId    | String         | 사용자 ID.              |
-| mute | boolean    | 볼륨 크기, 값: 0 - 100. |
+| mute | boolean    | true: 음소거, false: 음소거 해제. |
 
 ### onUserVolumeUpdate
 
-음량 크기 알림을 활성화하여 모든 참여자의 음량 크기를 통지합니다.
+음량 크기 알림을 활성화하여 모든 참석자의 음량 크기를 통지합니다.
 
 ```java
 void onUserVolumeUpdate(List<TRTCCloudDef.TRTCVolumeInfo> userVolumes, int totalVolume);
 
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형   | 의미                       |
+| 매개변수   | 유형   | 의미                    |
 | ------ | ------ | ------------------------- |
 | userVolumes | ListList<TRTCCloudDef.TRTCVolumeInfo> | 사용자 리스트.                 |
-| totalVolume | int    | 볼륨 크기이며, 0 - 100으로 설정할 수 있습니다. |
+| totalVolume | int    | 볼륨 크기, 값: 0 - 100. |
 
 
 ## 마이크 위치 콜백
 
 ### onSeatListChange
 
-모든 마이크 위치 리스트를 포함한 전체 마이크 위치 리스트의 변경.
+모든 마이크 위치 리스트를 포함한 전체 마이크 위치 리스트를 변경합니다.
 
 ```java
 void onSeatListChange(List<SeatInfo> seatInfoList);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수         | 유형           | 의미             |
+| 매개변수           | 유형           | 의미              |
 | ------------ | -------------- | ---------------- |
 | seatInfoList | List&lt;SeatInfo&gt; | 전체 마이크 위치 리스트. |
 
@@ -890,9 +912,9 @@ void onSeatListChange(List<SeatInfo> seatInfoList);
 ```java
 void onAnchorEnterSeat(int index, TRTCVoiceRoomDef.UserInfo user);
 ```
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수  | 유형     | 의미                 |
+| 매개변수  | 유형     | 의미                   |
 | ----- | -------- | -------------------- |
 | index | int      | 마이크가 연결된 마이크 위치.     |
 | user  | UserInfo | 마이크가 연결된 사용자의 세부 정보. |
@@ -905,9 +927,9 @@ void onAnchorEnterSeat(int index, TRTCVoiceRoomDef.UserInfo user);
 void onAnchorLeaveSeat(int index, TRTCVoiceRoomDef.UserInfo user);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수  | 유형     | 의미                 |
+| 매개변수  | 유형     | 의미                    |
 | ----- | -------- | -------------------- |
 | index | int      | 연결을 해제할 마이크 위치.         |
 | user  | UserInfo | 마이크가 연결된 사용자의 세부 정보. |
@@ -920,9 +942,9 @@ void onAnchorLeaveSeat(int index, TRTCVoiceRoomDef.UserInfo user);
 void onSeatMute(int index, boolean isMute);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미                               |
+| 매개변수   | 유형    | 의미                             |
 | ------ | ------- | ---------------------------------- |
 | index  | int     | 작업 진행할 마이크 위치.                       |
 | isMute | boolean | true: 음소거, false: 음소거 해제. |
@@ -935,11 +957,11 @@ void onSeatMute(int index, boolean isMute);
 void onSeatClose(int index, boolean isClose);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형    | 의미                                |
+| 매개변수     | 유형    | 의미                                |
 | ------- | ------- | ----------------------------------- |
-| index   | int     | 작업 진행할 마이크 위치.                        |
+| index   | int     | 작업 마이크 위치.                        |
 | isClose | boolean | true: 차단, false: 차단 해제. |
 
 ## 청취자 입장/퇴장 이벤트 콜백
@@ -952,9 +974,9 @@ void onSeatClose(int index, boolean isClose);
 void onAudienceEnter(TRTCVoiceRoomDef.UserInfo userInfo);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형     | 의미           |
+| 매개변수     | 유형     | 의미            |
 | -------- | -------- | -------------- |
 | userInfo | UserInfo | 입장한 청취자 정보. |
 
@@ -966,9 +988,9 @@ void onAudienceEnter(TRTCVoiceRoomDef.UserInfo userInfo);
 void onAudienceExit(TRTCVoiceRoomDef.UserInfo userInfo);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형     | 의미            |
+| 매개변수     | 유형     | 의미              |
 | -------- | -------- | -------------- |
 | userInfo | UserInfo | 퇴장한 청취자 정보. |
 
@@ -984,12 +1006,12 @@ void onAudienceExit(TRTCVoiceRoomDef.UserInfo userInfo);
 void onRecvRoomTextMsg(String message, TRTCVoiceRoomDef.UserInfo userInfo);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수     | 유형     | 의미             |
 | -------- | -------- | ---------------- |
 | message  | String   | 텍스트 메시지.       |
-| userInfo | UserInfo | 발신자 정보. |
+| userInfo | UserInfo | 발신자 정보.|
 
    
 
@@ -1001,9 +1023,9 @@ void onRecvRoomTextMsg(String message, TRTCVoiceRoomDef.UserInfo userInfo);
 void onRecvRoomCustomMsg(String cmd, String message, TRTCVoiceRoomDef.UserInfo userInfo);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형     | 의미                                       |
+| 매개변수     | 유형     | 의미                                         |
 | -------- | -------- | -------------------------------------------------- |
 | cmd      | String   | 명령어. 개발자가 사용자 정의할 수 있으며, 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
 | message  | String   | 텍스트 메시지.                                         |
@@ -1019,13 +1041,13 @@ void onRecvRoomCustomMsg(String cmd, String message, TRTCVoiceRoomDef.UserInfo u
 void onReceiveNewInvitation(String id, String inviter, String cmd, String content);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형     | 의미                               |
+| 매개변수    | 유형    | 의미                               |
 | ------- | -------- | ---------------------------------- |
 | id      | String   | 초대 ID.                          |
 | inviter | String   | 초대한 사용자 ID.                  |
-| cmd     | String   | 서비스에서 지정한 명령어. 개발자가 사용자 정의. |
+| cmd     | String   | 서비스 지정 명령어. 개발자가 사용자 정의함. |
 | content | String   | 서비스에서 지정한 내용.                   |
 
 ### onInviteeAccepted
@@ -1036,27 +1058,27 @@ void onReceiveNewInvitation(String id, String inviter, String cmd, String conten
 void onInviteeAccepted(String id, String invitee);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형   | 의미                |
+| 매개변수    | 유형   | 의미                   |
 | ------- | ------ | ------------------- |
 | id      | String | 초대 ID.           |
-| invitee    | String | 초대된 사용자 ID. |
+| invitee | String | 초대된 사용자 ID. |
 
 ### onInviteeRejected
 
-초대된 사용자가 초대 거절.
+초대된 사용자가 초대 거부.
 
 ```java
 void onInviteeRejected(String id, String invitee);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수    | 유형   | 의미                |
 | ------- | ------ | ------------------- |
 | id      | String | 초대 ID.           |
-| invitee    | String | 초대된 사용자 ID. |
+| invitee | String | 초대된 사용자 ID. |
 
 ### onInvitationCancelled
 
@@ -1066,9 +1088,9 @@ void onInviteeRejected(String id, String invitee);
 void onInvitationCancelled(String id, String inviter);
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형   | 의미              |
+| 매개변수    | 유형   | 의미                 |
 | ------- | ------ | ----------------- |
 | id      | String | 초대 ID.         |
-| inviter | String   | 초대한 사용자 ID.                  |
+| inviter | String   | 초대한 사용자 ID.|

@@ -4,21 +4,21 @@
 
 다음과 같은 시나리오에서는 고급 권한 제어 활성화가 필요하지 않습니다.
 
-- 시나리오 1: 많은 사람이 들어올수록 좋기 때문에 방 입장 제한이 필요 없는 경우
-- 시나리오 2: 해커의 크래킹에 대한 클라이언트 방어가 급하게 필요하지 않은 경우
+- 시나리오 1: 많은 사람이 들어올수록 좋기 때문에 방 입장 제한이 필요 없는 경우.
+- 시나리오 2: 해커의 크래킹에 대한 클라이언트 방어가 급하게 필요하지 않은 경우.
 
 다음과 같은 시나리오에서는 더 최적화된 보안을 위해 고급 권한 제어 활성화를 권장합니다.
 
-- 시나리오 1: 보안성 요구가 비교적 높은 비디오 통화 또는 음성 통화가 필요한 경우
-- 시나리오 2: 방별로 각각의 입장 권한을 설정해야 하는 경우
-- 시나리오 3: 관중의 마이크 켜기 권한을 제어해야 하는 경우
+- 시나리오 1: 보안성 요구가 비교적 높은 비디오 통화 또는 음성 통화가 필요한 경우.
+- 시나리오 2: 방별로 각각의 입장 권한을 설정해야 하는 경우.
+- 시나리오 3: 관중의 마이크 켜기 권한을 제어해야 하는 경우.
 
 
 ## 지원 플랫폼
 
 |   iOS    | Android  |  Mac OS  | Windows  | Electron |  Web |
-| :------: | :------: | :------: | :------: | :------: | :-----------: |
-| &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |     &#10003;    |
+| :------: | :------: | :------: | :------: | :------: |  :-----------: |
+| &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |  &#10003;    |
 
 ## 고급 권한 제어의 원리
 
@@ -44,21 +44,20 @@ PrivateMapKey 상의 ‘비트 권한 리스트’는 byte의 8개 비트를 사
 [](id:step1)
 ### 1단계: TRTC 콘솔에서 고급 권한 제어를 활성화합니다.
 
-1. Tencent Cloud TRTC 콘솔에서 왼쪽에 있는 [Application Management](https://console.cloud.tencent.com/trtc/app)를 클릭합니다.
-2. 오른쪽 애플리케이션 리스트에서 고급 권한 제어를 활성화할 애플리케이션을 선택하고 [기능 설정]을 클릭합니다.
-3. ‘기능 설정’ 페이지에서 [고급 권한 제어 활성화] 버튼을 활성화하고 [확인]을 누르면 고급 권한 제어가 활성화됩니다.
+1. Tencent Cloud TRTC 콘솔에서 왼쪽에 있는 [**애플리케이션 관리**](https://console.cloud.tencent.com/trtc/app)를 클릭합니다.
+2. 오른쪽 애플리케이션 리스트에서 고급 권한 제어를 활성화할 애플리케이션을 선택하고 **기능 설정**을 클릭합니다.
+3. ‘기능 설정’ 페이지에서 **고급 권한 제어 활성화** 버튼을 활성화하고 **확인**을 누르면 고급 권한 제어가 활성화됩니다.
 ![](https://main.qcloudimg.com/raw/26f146bfd8617c10a4b8ae9003c5673c.png)
 
 
 >!SDKAppid의 고급 권한 제어를 활성화한 후에는 해당 SDKAppid를 사용하는 모든 사용자는 TRTCParams에 `privateMapKey` 매개변수를 전달해야만 방에 입장([2단계](#step2)와 같이)할 수 있습니다. 만약 온라인으로 해당 SDKAppid를 사용하는 사용자가 있는 경우 해당 기능을 활성화하지 마십시오.
 
 [](id:step2)
-
 ### 2단계: 귀하의 서버에서 PrivateMapKey를 계산합니다.
 
 PrivateMapKey는 클라이언트에서의 리버스 크래킹을 방지하기 위한 것으로 ‘비회원도 고급 레벨 방 입장 가능’한 크래킹 버전이 나타날 수 있어, 서버에서 계산 후 다시 App에 반환하는 방식만 가능하며 App에서 직접 계산할 수 없습니다.
 
-Tencent Cloud는 Java, PHP, Node.js 세가지 버전의 PrivateMapKey 계산 코드를 제공하며, 직접 다운로드하여 서버에 통합할 수 있습니다.
+Tencent Cloud는 Java, GO, PHP, Node.js, Python, C# 및 C++ 버전의 PrivateMapKey 계산 코드를 제공하며, 직접 다운로드하여 서버에 통합할 수 있습니다.
 
 | 언어 버전 |                         주요 함수                         |                           다운로드 링크                           |
 | :------: | :------------------------------------------------------: | :----------------------------------------------------------: |
@@ -68,9 +67,9 @@ Tencent Cloud는 Java, PHP, Node.js 세가지 버전의 PrivateMapKey 계산 코
 |  Node.js  | `genPrivateMapKey` 및 `genPrivateMapKeyWithStringRoomID` | [Github](https://github.com/tencentyun/tls-sig-api-v2-node/blob/master/TLSSigAPIv2.js) |
 |  Python  | `genPrivateMapKey` 및 `genPrivateMapKeyWithStringRoomID`  | [Github](https://github.com/tencentyun/tls-sig-api-v2-python/blob/master/TLSSigAPIv2.py) |
 |    C#    | `genPrivateMapKey` 및 `genPrivateMapKeyWithStringRoomID`  | [Github](https://github.com/tencentyun/tls-sig-api-v2-cs/blob/master/tls-sig-api-v2-cs/TLSSigAPIv2.cs) |
+|   C++    | `genPrivateMapKey` 및 `genPrivateMapKeyWithStringRoomID`  | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-cpp/blob/master/src/tls_sig_api_v2.cpp) |
 
 [](id:step3)
-
 ### 3단계: 귀하의 서버에서 PrivateMapKey를 App으로 전달합니다.
 
 ![](https://main.qcloudimg.com/raw/93389bf9638bcfaf3d744467889dea84.jpg)
@@ -99,7 +98,7 @@ try {
     e.printStackTrace();
 }
 :::
-::: iOS OC
+::: iOS ObjectiveC
 NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
 [params setObject:@"xxxxx" forKey:@"privateMapKey"]; // 신규 privateMapKey 입력
 NSDictionary *dic = @{@"api": @"updatePrivateMapKey", @"params": params};
@@ -119,13 +118,12 @@ mTRTCCloud.callExperimentalAPI(api);
 
 ## FAQ
 [](id:q1)
-#### 1. 온라인 상의 모든 방에 들어갈 수 없습니다.
+#### 1. 온라인 상의 방에 들어갈 수 없는 이유는 무엇입니까?
 
 방 권한 제어가 활성화되면 현재 SDKAppid의 모든 방은 `TRTCParams`에 privateMapKey가 설정되어 있어야만 입장할 수 있습니다. 따라서 현재 온라인 서비스를 운영 중인 상태에서 온라인 버전에 privateMapKey 관련 로직이 없다면 해당 기능을 활성화하지 마십시오.
 
 [](id:q2)
 #### 2. PrivateMapKey와 UserSig의 차이점은 무엇입니까?
 
-UserSig은 TRTCParams의 필수 항목으로, 현재 사용자에게 TRTC 클라우드 서비스를 사용 권한이 있는지 여부를 검사하여 해커가 귀하의 SDKAppid 계정 내 트래픽을 도용하지 못하도록 방지합니다.
-
-PrivateMapKey는 TRTCParams의 필수 항목이 아니며, 현재 사용자가 지정된 roomid 방에 입장할 수 있는 권한이 있는지 여부와 해당 방에서 가지는 권한을 검사합니다. 귀하의 비즈니스에 사용자의 신분 구분이 필요한 경우에만 활성화해야 합니다.
+- UserSig은 TRTCParams의 필수 항목으로, 현재 사용자에게 TRTC 클라우드 서비스를 사용 권한이 있는지 여부를 검사하여 해커가 귀하의 SDKAppid 계정 내 트래픽을 도용하지 못하도록 방지합니다.
+- PrivateMapKey는 TRTCParams의 필수 항목이 아니며, 현재 사용자가 지정된 roomid 방에 입장할 수 있는 권한이 있는지 여부와 해당 방에서 가지는 권한을 검사합니다. 귀하의 비즈니스에 사용자의 신분 구분이 필요한 경우에만 활성화해야 합니다.

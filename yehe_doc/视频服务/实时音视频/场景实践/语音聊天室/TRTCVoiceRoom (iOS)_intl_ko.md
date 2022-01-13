@@ -24,24 +24,25 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 | [setDelegateHandler](#setdelegatehandler)       | 이벤트 콜백이 있는 스레드 설정. |
 | [login](#login)                                 | 로그인.                   |
 | [logout](#logout)                               | 로그아웃.                   |
-| [setSelfProfile](#setselfprofile)               | 개인 프로필 정보 수정.           |
+| [setSelfProfile](#setselfprofile)               | 개인 정보 수정.           |
 
 ### 방 관련 API
 
 | API                                 | 설명                                                         |
 | ----------------------------------- | ------------------------------------------------------------ |
-| [createRoom](#createroom)           | 방 생성(방 주인 호출). 방이 없는 경우 시스템에서 자동으로 새로운 방 생성. |
+| [createRoom](#createroom)           | 방 생성(방 주인 호출), 방이 없는 경우 시스템에서 자동으로 새로운 방 생성. |
 | [destroyRoom](#destroyroom)         | 방 폐기(방 주인 호출).                                       |
 | [enterRoom](#enterroom)             | 방 입장(청취자 호출).                                       |
 | [exitRoom](#exitroom)               | 방 퇴장(청취자 호출).                                       |
 | [getRoomInfoList](#getroominfolist) | 방 리스트의 세부 정보 획득.                                     |
-| [getUserInfoList](#getuserinfolist) | 지정 userId의 사용자 정보 획득. nil인 경우 방 안에 있는 모든 사용자 정보 획득. |
+| [getUserInfoList](#getuserinfolist) | 지정 userId의 사용자 정보 획득, nil인 경우 방 안에 있는 모든 사용자 정보 획득. |
 
 ### 마이크 위치 관리 API
 
-| API                     | 설명                                |
+| API                     | 설명                                  |
 | ----------------------- | ----------------------------------- |
 | [enterSeat](#enterseat) | 마이크 연결(청취자와 방 주인 모두 호출 가능).  |
+| [moveSeat](#moveseat)   | 마이크 위치 이동 (마이크 연결된 호스트 호출 가능). |
 | [leaveSeat](#leaveseat) | 마이크 연결 해제(호스트 호출).  |
 | [pickSeat](#pickseat)   | 마이크 넘기기(방 주인 호출).             |
 | [kickSeat](#kickseat)   | 마이크 강제 끄기(방 주인 호출).             |
@@ -57,14 +58,14 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 | [setAudioQuality](#setaudioquality)             | 오디오 품질 설정.           |
 | [muteLocalAudio](#mutelocalaudio)               | 로컬 음소거 활성화/비활성화.  |
 | [setSpeaker](#setspeaker)                       | 스피커 활성화 설정.     |
-| [setAudioCaptureVolume](#setaudiocapturevolume) | 마이크 수집 볼륨 설정. |
+| [setAudioCaptureVolume](#setaudiocapturevolume) | 마이크 수집 음량 설정.|
 | [setAudioPlayoutVolume](#setaudioplayoutvolume) | 재생 볼륨 설정.       |
 | [setVoiceEarMonitorEnable](#setvoiceearmonitorenable) | 인이어 모니터링 활성화/비활성화.       |
 
 
 ### 원격 사용자 오디오 작업 API
 
-| API                                       | 설명                    |
+| API                                           | 설명                   |
 | ----------------------------------------- | ----------------------- |
 | [muteRemoteAudio](#muteremoteaudio)       | 특정 사용자 음소거/음소거 해제. |
 | [muteAllRemoteAudio](#muteallremoteaudio) | 모든 사용자 음소거/음소거 해제. |
@@ -73,7 +74,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | API                                             | 설명                                                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html#interfacecom_1_1tencent_1_1liteav_1_1audio_1_1TXAudioEffectManager) 가져오기.|
+| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html#interfacecom_1_1tencent_1_1liteav_1_1audio_1_1TXAudioEffectManager) 가져오기. |
 
 ### 메시지 발송 관련 API
 
@@ -84,7 +85,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### 초대 신호 관련 API
 
-| API                                   | 설명             |
+| API                                           | 설명             |
 | ------------------------------------- | ---------------- |
 | [sendInvitation](#sendinvitation)     | 사용자에게 초대 발송. |
 | [acceptInvitation](#acceptinvitation) | 초대 수락.       |
@@ -93,9 +94,9 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 <h2 id="TRTCVoiceRoomDelegate">TRTCVoiceRoomDelegate API 개요</h2>
 
-### 범용 이벤트 콜백
+### 일반적인 이벤트 콜백
 
-| API                       | 설명       |
+| API                        | 설명        |
 | ------------------------- | ---------- |
 | [onError](#onerror)       | 오류 콜백. |
 | [onWarning](#onwarning)   | 경고 콜백. |
@@ -103,7 +104,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### 방 이벤트 콜백
 
-| API                                       | 설명                   |
+| API                                   | 설명                     |
 | ----------------------------------------- | ---------------------- |
 | [onRoomDestroy](#onroomdestroy)           | 방 폐기 콜백.     |
 | [onRoomInfoChange](#onroominfochange)     | 음성 채팅방 정보 변경 콜백. |
@@ -113,7 +114,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | API                                     | 설명                                  |
 | --------------------------------------- | ------------------------------------- |
-| [onSeatListChange](#onseatlistchange)   | 전체 마이크 위치 리스트 변경.                  |
+| [onSeatListChange](#onseatlistchange)   | 전체 마이크 위치 리스트 변경.                |
 | [onAnchorEnterSeat](#onanchorenterseat) | 사용자 마이크 켜짐(직접 마이크 켬/방 주인 특정 사용자 마이크 켬). |
 | [onAnchorLeaveSeat](#onanchorleaveseat) | 사용자 마이크 꺼짐(직접 마이크 끔/방 주인이 특정 사용자 마이크 끔). |
 | [onSeatMute](#onseatmute)               | 방 주인 마이크 음소거.                            |
@@ -122,25 +123,25 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### 청취자 입장/퇴장 이벤트 콜백
 
-| API                                 | 설명               |
+| API                                | 설명                 |
 | ----------------------------------- | ------------------ |
 | [onAudienceEnter](#onaudienceenter) | 청취자 입장 알림 수신. |
 | [onAudienceExit](#onaudienceexit)   | 청취자 퇴장 알림 수신. |
 
 ### 메시지 이벤트 콜백
 
-| API                                         | 설명             |
+| API                                 | 설명                |
 | ------------------------------------------- | ---------------- |
 | [onRecvRoomTextMsg](#onrecvroomtextmsg)     | 텍스트 메시지 수신.   |
-| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | 사용자 정의 메시지 수신. |
+| [onRecvRoomCustomMsg](#onrecvroomcustommsg) | 사용자 정의 메시지 수신.|
 
 ### 신호 이벤트 콜백
 
 | API                                               | 설명               |
 | ------------------------------------------------- | ------------------ |
-| [onReceiveNewInvitation](#onreceivenewinvitation) | 새로운 초대 요청 수신. |
-| [onInviteeAccepted](#oninviteeaccepted)           | 초대된 사용자가 초대 수락. |
-| [onInviteeRejected](#oninviteerejected)           | 초대된 사용자가 초대 거부. |
+| [onReceiveNewInvitation](#onreceivenewinvitation) | 새로운 초대 요청 수신.   |
+| [onInviteeAccepted](#oninviteeaccepted)           | 초대된 사용자가 초대 수락.   |
+| [onInviteeRejected](#oninviteerejected)           | 초대된 사용자가 초대 거절.   |
 | [onInvitationCancelled](#oninvitationcancelled)   | 초대한 사용자가 초대 취소.   |
 
 ## SDK 기본 함수
@@ -156,7 +157,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 * TRTCVoiceRoom 싱글톤 객체 획득
 *
 * - returns: TRTCVoiceRoom 인스턴스
-* - note: {@link TRTCVoiceRoom#destroySharedInstance()}를 호출하여 싱글톤 객체를 폐기할 수 있습니다.
+* - note: {@link TRTCVoiceRoom#destroySharedInstance()}를 호출하여 싱글톤 객체 폐기
 */
 + (instancetype)sharedInstance NS_SWIFT_NAME(shared());
 ```
@@ -172,7 +173,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 /**
 * TRTCVoiceRoom 싱글톤 객체 폐기
 *
-* - note: 인스턴스 폐기 후에는 외부에 캐시된 TRTCVoiceRoom 인스턴스를 다시 사용할 수 없으며, 다시 {@link TRTCVoiceRoom#sharedInstance()}를 호출해 새로운 인스턴스를 획득해야 합니다.
+* - note: 인스턴스 폐기 후에는 외부에 캐시된 TRTCVoiceRoom 인스턴스를 다시 사용할 수 없으며, 다시 {@link TRTCVoiceRoom#sharedInstance()}를 호출해 새로운 인스턴스 획득
 */
 + (void)destroySharedInstance NS_SWIFT_NAME(destroyShared());
 ```
@@ -185,10 +186,10 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 /**
 * 컴포넌트 콜백 인터페이스 설정
 * 
-* TRTCVoiceRoomDelegate를 통해 TRTCVoiceRoom의 다양한 상태 알림을 받아볼 수 있습니다.
+* TRTCVoiceRoomDelegate를 통해 TRTCVoiceRoom의 다양한 상태 알림 가져오기
 *
 * - parameter delegate 콜백 인터페이스
-* - note: TRTCVoiceRoom의 이벤트 콜백은 기본적으로 Main Queue에서 귀하에게 콜백합니다. 이벤트 콜백이 존재하는 큐를 지정할 경우 {@link TRTCVoiceRoom#setDelegateQueue(queue)}를 이용할 수 있습니다.
+* - note: TRTCVoiceRoom의 이벤트 콜백은 기본적으로 Main Queue에서 귀하에게 콜백합니다. 이벤트 콜백이 존재하는 큐를 지정할 경우 {@link TRTCVoiceRoom#setDelegateQueue(queue)} 이용 가능
 */
 - (void)setDelegate:(id<TRTCVoiceRoomDelegate>)delegate NS_SWIFT_NAME(setDelegate(delegate:));
 ```
@@ -201,7 +202,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ```Objective-C
 /**
-* 이벤트 콜백이 존재하는 큐 설정
+* 이벤트 콜백이 있는 큐 설정
 *
 * - parameter queue 큐입니다. TRTCVoiceRoom의 각종 상태 알림을 콜백하며 지정한 queue로 배포합니다.
 */
@@ -209,7 +210,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수  | 유형             | 의미                                                         |
 | ----- | ---------------- | ------------------------------------------------------------ |
@@ -219,7 +220,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### login
 
-로그인.
+로그인합니다.
 
 ```Objective-C
 - (void)login:(int)sdkAppID
@@ -229,28 +230,28 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수     | 유형           | 의미                                                         |
 | -------- | -------------- | ------------------------------------------------------------ |
-| sdkAppId | int            | TRTC 콘솔>[[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)]>애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다. |
-| userId   | String         | 현재 사용자 ID입니다. 문자열 유형은 영어 알파벳(a-z, A-Z), 숫자(0-9), 대시 부호(-), 언더바(\_)만 허용됩니다. |
-| userSig  | String         | Tencent Cloud가 설계한 일종의 보안 서명입니다. 획득 방식은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
-| callback | ActionCallback | 로그인 콜백이며, 성공 시 code는 0입니다.                                  |
+| sdkAppId | int            | **TRTC 콘솔 >[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)**> 애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다. |
+| userId   | NSString            | 현재 사용자 ID, 문자열 유형은 영어 알파벳(a-z, A-Z), 숫자(0-9), 대시부호(-), 언더바(\_)만 허용됩니다. |
+| userSig  | NSString         | Tencent Cloud가 설계한 일종의 보안 서명입니다. 획득 방식은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
+| callback | ActionCallback | 로그인 콜백이며, 성공 시 code는 0입니다. |
 
    
 
 ### logout
 
-로그아웃.
+로그아웃합니다.
 
 ```Objective-C
 - (void)logout:(ActionCallback _Nullable)callback NS_SWIFT_NAME(logout(callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미                        |
+| 매개변수     | 유형             | 의미                       |
 | -------- | -------------- | --------------------------- |
 | callback | ActionCallback | 로그아웃 콜백이며, 성공 시 code는 0입니다. |
 
@@ -258,19 +259,19 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### setSelfProfile
 
-개인 프로필 정보 수정.
+개인 정보를 수정합니다.
 
 ```Objective-C
 - (void)setSelfProfile:(NSString *)userName avatarURL:(NSString *)avatarURL callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(setSelfProfile(userName:avatarURL:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수      | 유형           | 의미                                |
+| 매개변수     | 유형              | 의미                                |
 | --------- | -------------- | ----------------------------------- |
-| userName  | String         | 닉네임.                              |
-| avatarURL | String         | 프로필 사진 주소.                          |
-| callback  | ActionCallback | 개인 정보 설정 콜백이며, 성공 시 code는 0입니다. |
+| userName  | NSString            | 대화명.                                |
+| avatarURL | NSString         | 프로필 사진 주소.                          |
+| callback  | ActionCallback | 개인 프로필 정보 설정 콜백이며, 성공 시 code는 0입니다. |
 
    
 
@@ -285,12 +286,12 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)createRoom:(int)roomID roomParam:(VoiceRoomParam *)roomParam callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(createRoom(roomID:roomParam:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수      | 유형                | 의미                                                         |
 | --------- | ------------------- | ------------------------------------------------------------ |
 | roomId    | int                 | 방 식별 번호이며, 귀하가 할당하고 통합 관리합니다. 여러 개의 roomID를 1개의 음성 채팅방 리스트로 통합할 수 있으며, Tencent Cloud는 현재 음성 채팅방 리스트 관리 서비스를 제공하지 않으므로 직접 관리하시기 바랍니다. |
-| roomParam | TRTCCreateRoomParam | 방 정보입니다. 방 이름, 마이크 위치 정보, 썸네일 정보 등과 같이 방을 설명하는 데 사용됩니다. 마이크 위치 관리가 필요한 경우 방의 마이크 위치 개수를 설정해야 합니다. |
+| roomParam | VoiceRoomParam | 방 정보입니다. 방 이름, 마이크 위치 정보, 썸네일 정보 등과 같이 방을 설명하는 데 사용됩니다. 마이크 위치 관리가 필요한 경우 방의 마이크 위치 개수를 설정해야 합니다. |
 | callback  | ActionCallback      | 방 생성 결과 콜백이며, 성공 시 code는 0입니다.                        |
 
 방 주인의 정상적인 방송 시작 호출 프로세스는 다음과 같습니다. 
@@ -309,9 +310,9 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)destroyRoom:(ActionCallback _Nullable)callback NS_SWIFT_NAME(destroyRoom(callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미                                  |
+| 매개변수     | 유형          | 의미                               |
 | -------- | -------------- | ------------------------------------- |
 | callback | ActionCallback | 방 폐기 결과 콜백이며, 성공 시 code는 0입니다. |
 
@@ -324,11 +325,11 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)enterRoom:(NSInteger)roomID callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(enterRoom(roomID:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미                                  |
+| 매개변수     | 유형            | 의미                               |
 | -------- | -------------- | ------------------------------------- |
-| roomId   | int            | 방 식별 번호.                            |
+| roomId   | NSInteger            | 방 식별 번호.                            |
 | callback | ActionCallback | 방 입장 결과 콜백이며, 성공 시 code는 0입니다. |
 
 
@@ -338,7 +339,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 2. 청취자가 음성 채팅방 1개를 선택하고 `enterRoom`을 호출하여 해당 방으로 입장합니다.
 3. 방 입장 후 컴포넌트의 `onRoomInfoChange` 방 속성 변경 이벤트 공지를 수신합니다. 이 때 UI에 방 이름 표시, 마이크를 켤 때 방 주인에게 동의 요청 필요 여부 기록 등 방의 속성을 기록할 수 있으며 그에 해당하는 변경이 가능합니다.
 4. 방 입장 후 컴포넌트의 `onSeatListChange` 마이크 위치 리스트 변경 이벤트 알림을 수신합니다. 이 때 마이크 위치 리스트의 변경 내용을 UI 인터페이스에 새로고침할 수 있습니다.
-5. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 알림 또한 수신합니다.
+5. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 공지도 수신합니다.
 
 ### exitRoom
 
@@ -348,9 +349,9 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)exitRoom:(ActionCallback _Nullable)callback NS_SWIFT_NAME(exitRoom(callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미                                  |
+| 매개변수     | 유형             | 의미                            |
 | -------- | -------------- | ------------------------------------- |
 | callback | ActionCallback | 방 퇴장 결과 콜백이며, 성공 시 code는 0입니다. |
 
@@ -367,11 +368,11 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)getRoomInfoList:(NSArray<NSNumber *> *)roomIdList callback:(VoiceRoomInfoCallback _Nullable)callback NS_SWIFT_NAME(getRoomInfoList(roomIdList:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수       | 유형                | 의미               |
+| 매개변수       | 유형                  | 의미                 |
 | ---------- | ------------------- | ------------------ |
-| roomIdList | List&lt;Integer&gt; | 방 번호 리스트.       |
+| roomIdList | NSArray&lt;NSNumber&gt; | 방 번호 리스트.       |
 | callback   | RoomInfoCallback    | 방 세부 정보 콜백. |
 
 
@@ -383,11 +384,11 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)getUserInfoList:(NSArray<NSString *> * _Nullable)userIDList callback:(VoiceRoomUserListCallback _Nullable)callback NS_SWIFT_NAME(getUserInfoList(userIDList:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수             | 유형               | 의미                                                         |
 | ---------------- | ------------------ | ------------------------------------------------------------ |
-| userIdList       | List&lt;String&gt; | 획득해야 할 사용자 ID 리스트입니다. null인 경우 방 안에 있는 모든 사용자 정보를 획득합니다. |
+| userIdList | NSArray&lt;NSString&gt; | 획득할 사용자 ID 리스트입니다. null인 경우 방 안에 있는 모든 사용자 정보를 획득합니다. |
 | userlistcallback | UserListCallback   | 사용자 세부 정보 콜백.                                           |
 
 
@@ -403,12 +404,35 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)enterSeat:(NSInteger)seatIndex callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(enterSeat(seatIndex:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수      | 유형           | 의미                 |
 | --------- | -------------- | -------------------- |
-| seatIndex | int            | 마이크를 연결할 마이크 위치 번호. |
+| seatIndex | NSInteger    | 마이크를 연결할 마이크 위치 번호. |
 | callback  | ActionCallback | 작업 콜백.           |
+
+해당 인터페이스를 호출하면 마이크 위치 리스트가 즉시 수정됩니다. 청취자의 마이크 연결에 방 주인의 동의가 필요한 시나리오의 경우, 먼저 `sendInvitation`을 호출하여 방 주인에게 신청하고 `onInvitationAccept` 수신 후 다시 해당 함수를 호출합니다.
+
+### moveSeat
+마이크 위치 이동 (마이크 연결된 호스트 호출 가능).
+>? 마이크 위치 이동 완료 후 방 안의 모든 구성원은 'onSeatListChange', 'onAnchorLeaveSeat' 및 'onAnchorEnterSeat'의 이벤트 알림을 받게 됩니다.(호스트 호출 후 마이크 좌석 번호 정보만 수정되며, 사용자의 호스트 신분은 변경되지 않습니다.)
+
+```Objective-C
+- (NSInteger)moveSeat:(NSInteger)seatIndex callback:(ActionCallback _Nullable)callback
+NS_SWIFT_NAME(moveSeat(seatIndex:callback:))
+```
+매개변수 리스트는 다음과 같습니다.
+
+| 매개변수      | 유형           | 의미                   |
+| --------- | -------------- | -------------------- |
+| seatIndex | NSInteger      | 이동할 마이크 위치 번호. |
+| callback  | ActionCallback | 작업 콜백.           |
+
+반환값:
+
+| 반환값   | 유형   | 의미                  |
+| -------- | --------- | --------------------- |
+| code     | NSInteger | 마이크 위치 이동 결과(0은 성공, 그 외는 실패, 10001은 인터페이스 호출 빈도 제한). |
 
 해당 인터페이스를 호출하면 마이크 위치 리스트가 즉시 수정됩니다. 청취자의 마이크 연결에 방 주인의 동의가 필요한 시나리오의 경우, 먼저 `sendInvitation`을 호출하여 방 주인에게 신청하고 `onInvitationAccept` 수신 후 다시 해당 함수를 호출합니다.
 
@@ -422,11 +446,11 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)leaveSeat:(ActionCallback _Nullable)callback NS_SWIFT_NAME(leaveSeat(callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미       |
+| 매개변수     | 유형           | 의미        |
 | -------- | -------------- | ---------- |
-| callback  | ActionCallback | 작업 콜백.           |
+| callback  | ActionCallback | 작업 콜백.|
 
 ### pickSeat
 
@@ -438,12 +462,12 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)pickSeat:(NSInteger)seatIndex userId:(NSString *)userId callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(pickSeat(seatIndex:userId:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수      | 유형           | 의미                   |
+| 매개변수      | 유형           | 의미                     |
 | --------- | -------------- | ---------------------- |
-| seatIndex | int            | 마이크를 연결할 마이크 위치 번호. |
-| userId    | String         | 사용자 ID.              |
+| seatIndex | NSInteger    | 마이크를 연결할 마이크 위치 번호. |
+| userId    | NSString      | 사용자 ID.              |
 | callback  | ActionCallback | 작업 콜백.             |
 
 해당 인터페이스를 호출하면 마이크 위치 리스트가 즉시 수정됩니다. 방 주인이 청취자의 동의를 얻어야만 청취자가 마이크를 연결할 수 있는 시나리오의 경우 먼저 `sendInvitation`을 호출하여 청취자에게 신청하고 `onInvitationAccept` 수신 후 다시 해당 함수를 호출합니다.
@@ -459,11 +483,11 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)kickSeat:(NSInteger)seatIndex callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(kickSeat(seatIndex:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수      | 유형           | 의미                   |
+| 매개변수      | 유형           | 의미                     |
 | --------- | -------------- | ---------------------- |
-| seatIndex | int            | 마이크 연결을 해제할 마이크 위치 번호. |
+| seatIndex | NSInteger       | 마이크 연결을 해제할 마이크 위치 번호. |
 | callback  | ActionCallback | 작업 콜백.             |
 
 해당 인터페이스를 호출하면 마이크 위치 리스트가 즉시 수정됩니다.
@@ -478,12 +502,12 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)muteSeat:(NSInteger)seatIndex isMute:(BOOL)isMute callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(muteSeat(seatIndex:isMute:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수      | 유형           | 의미                                          |
+| 매개변수     | 유형             | 의미                                    |
 | --------- | -------------- | --------------------------------------------- |
-| seatIndex | int            | 작업을 진행할 마이크 위치 번호.                       |
-| isMute    | boolean        | true: 음소거, false: 음소거 해제. |
+| seatIndex | NSInteger            | 작업 진행할 마이크 위치 번호.                          |
+| isMute    | BOOL           | YES: 음소거, NO: 음소거 해제. |
 | callback  | ActionCallback | 작업 콜백.                                    |
 
 해당 인터페이스를 호출하면 마이크 위치 리스트가 즉시 수정됩니다. 해당 seatIndex 자리에 있는 호스트는 자동으로 muteAudio가 호출되어 음소거/음소거 해제됩니다.
@@ -498,12 +522,12 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)closeSeat:(NSInteger)seatIndex isClose:(BOOL)isClose callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(closeSeat(seatIndex:isClose:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수      | 유형           | 의미                                       |
+| 매개변수     | 유형            | 의미                                   |
 | --------- | -------------- | ------------------------------------------ |
-| seatIndex | int            | 작업을 진행할 마이크 위치 번호.                       |
-| isClose   | boolean        | true: 차단, false: 차단 해제. |
+| seatIndex | NSInteger            | 작업 진행할 마이크 위치 번호.                          |
+| isClose   | BOOL           | YES: 차단, NO: 해제. |
 | callback  | ActionCallback | 작업 콜백.                                 |
 
 해당 인터페이스를 호출하면 마이크 위치 리스트가 즉시 수정됩니다. 해당 seatIndex 자리가 차단되고 자동으로 마이크 연결이 해제됩니다.
@@ -513,7 +537,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### startMicrophone
 
-마이크 수집 시작.
+마이크 수집을 시작합니다.
 
 ```Objective-C
 - (void)startMicrophone;
@@ -521,7 +545,7 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### stopMicrophone
 
-마이크 수집 중지.
+마이크 수집을 중지합니다.
 
 ```Objective-C
 - (void)stopMicrophone;
@@ -529,79 +553,79 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### setAudioQuality
 
-오디오 품질 설정.
+오디오 품질을 설정합니다.
 
 ```Objective-C
 - (void)setAuidoQuality:(NSInteger)quality NS_SWIFT_NAME(setAuidoQuality(quality:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형    | 의미                                                         |
-| ------- | ---- | ------------------------------------------------------------ |
-| quality | int  | 오디오의 품질입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)를 참고하십시오. |
+| 매개변수    | 유형             | 의미                                                         |
+| ------- | ---------- | ------------------------------------------------------------ |
+| quality | NSInteger  | 오디오의 품질입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)를 참고하십시오. |
 
 
 ### muteLocalAudio
 
-로컬 오디오 음소거/음소거 취소
+로컬 오디오를 음소거/음소거 취소합니다.
 
 ```Objective-C
 - (void)muteLocalAudio:(BOOL)mute NS_SWIFT_NAME(muteLocalAudio(mute:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형    | 의미                                                         |
+| 매개변수          | 유형    | 의미                                                    |
 | ---- | ------- | ------------------------------------------------------------ |
-| mute | boolean | 오디오를 음소거/음소거 취소합니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)를 참고하십시오. |
+| mute | BOOL    | 오디오를 음소거/음소거 취소합니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)를 참고하십시오. |
 
 
 
 ### setSpeaker
 
-스피커 활성화 설정.
+스피커를 활성화합니다.
 
 ```Objective-C
 - (void)setSpeaker:(BOOL)userSpeaker NS_SWIFT_NAME(setSpeaker(userSpeaker:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수       | 유형    | 의미                        |
+| 매개변수     | 유형    | 의미                           |
 | ---------- | ------- | --------------------------- |
-| useSpeaker | boolean | true: 스피커, false: 헤드셋. |
+| useSpeaker | BOOL    | YES: 스피커, NO: 헤드셋. |
 
 
 
 ### setAudioCaptureVolume
 
-마이크 수집 볼륨 설정.
+마이크 수집 볼륨을 설정합니다.
 
 ```Objective-C
 - (void)setAudioCaptureVolume:(NSInteger)voluem NS_SWIFT_NAME(setAudioCaptureVolume(volume:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형 | 의미                          |
+| 매개변수    | 유형 | 의미                          |
 | ------ | ---- | ----------------------------- |
-| volume | int  | 수집 볼륨으로, 0 - 100으로 설정할 수 있으며 기본값은 100입니다. |
+| volume | NSInteger | 수집 볼륨, 0 - 100으로 설정할 수 있으며 기본 값은 100입니다. |
 
 
 ### setAudioPlayoutVolume
 
-재생 볼륨 설정.
+재생 볼륨을 설정합니다.
 
 ```Objective-C
 - (void)setAudioPlayoutVolume:(NSInteger)volume NS_SWIFT_NAME(setAudioPlayoutVolume(volume:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형 | 의미                          |
-| ------ | ---- | ----------------------------- |
-| volume | int  | 재생 볼륨으로, 0 - 100으로 설정할 수 있으며 기본값은 100입니다. |
+| 매개변수    | 유형 | 의미                          |
+| ------ | ---------- | ----------------------------- |
+| volume | NSInteger | 재생 볼륨, 0 - 100으로 설정할 수 있으며 기본 값은 100입니다. |
 
 ### muteRemoteAudio
 
@@ -611,12 +635,12 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)muteRemoteAudio:(NSString *)userId mute:(BOOL)mute NS_SWIFT_NAME(muteRemoteAudio(userId:mute:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미                              |
+| 매개변수     | 유형    | 의미                                |
 | ------ | ------- | --------------------------------- |
-| userId | String  | 지정 사용자 ID.                   |
-| mute   | boolean | true: 음소거, false: 음소거 해제. |
+| userId   | NSString  | 지정된 사용자 ID.                       |
+| mute   | BOOL      | YES: 음소거, NO: 음소거 해제. |
 
 ### muteAllRemoteAudio
 
@@ -626,11 +650,11 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)muteAllRemoteAudio:(BOOL)isMute NS_SWIFT_NAME(muteAllRemoteAudio(isMute:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수 | 유형    | 의미                              |
+| 매개변수 | 유형    | 의미                               |
 | ---- | ------- | --------------------------------- |
-| mute | boolean | true: 음소거, false: 음소거 해제. |
+| mute | BOOL | YES: 음소거, NO: 음소거 해제. |
 
 ### setVoiceEarMonitorEnable
 
@@ -639,18 +663,18 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 ```Objective-C
 - (void)setVoiceEarMonitorEnable:(BOOL)enable NS_SWIFT_NAME(setVoiceEarMonitor(enable:));
 ```
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수 | 유형   | 의미                            |
+| 매개변수 | 유형    | 의미                                |
 | ---- | ------- | --------------------------------- |
-| enable | boolean | true: 인이어 모니터링 활성화; false: 인이어 모니터링 비활성화. |
+| enable | BOOL | YES: 인이어 모니터링 활성화, NO: 인이어 모니터링 비활성화. |
 
 
 ## 배경 음악 음향 효과 관련 API
 
 ### getAudioEffectManager
 
-배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 가져오기.
+배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 획득.
 
 ```Objective-C
 - (TXAudioEffectManager * _Nullable)getAudioEffectManager;
@@ -667,29 +691,29 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)sendRoomTextMsg:(NSString *)message callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(sendRoomTextMsg(message:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미           |
+| 매개변수     | 유형             | 의미            |
 | -------- | -------------- | -------------- |
-| message  | String         | 텍스트 메시지.     |
-| callback | ActionCallback | 발송 결과 콜백.   |
+| message  | NSString            | 텍스트 메시지.     |
+| callback | ActionCallback | 발송 결과 콜백.|
 
    
 
 ### sendRoomCustomMsg
 
-사용자 정의 텍스트 메시지 발송.
+사용자 정의 텍스트 메시지를 발송합니다.
 
 ```Objective-C
 - (void)sendRoomCustomMsg:(NSString *)cmd message:(NSString *)message callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(sendRoomCustomMsg(cmd:message:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미                                               |
+| 매개변수     | 유형           | 의미                                           |
 | -------- | -------------- | -------------------------------------------------- |
-| cmd      | String         | 명령어. 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
-| message  | String         | 텍스트 메시지.                                         |
+| cmd      | NSString            | 명령어, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는데 사용합니다. |
+| message  | NSString            | 텍스트 메시지.                                         |
 | callback | ActionCallback | 발송 결과 콜백.                                     |
 
    
@@ -707,20 +731,20 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
                     callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(sendInvitation(cmd:userId:content:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미             |
+| 매개변수     | 유형             | 의미             |
 | -------- | -------------- | ---------------- |
-| cmd      | String         | 서비스의 사용자 정의 명령. |
-| userId   | String         | 초대한 사용자 ID.  |
-| content  | String         | 초대 내용.     |
+| cmd      | NSString         | 서비스의 사용자 정의 명령. |
+| userId   | NSString         | 초대한 사용자 ID.   |
+| content  | NSString         | 초대 내용.     |
 | callback | ActionCallback | 발송 결과 콜백.   |
 
 반환값:
 
 | 반환값   | 유형   | 의미                  |
 | -------- | ------ | --------------------- |
-| inviteId | String | 해당 초대 ID를 식별하는 데 사용 |
+| inviteId | NSString | 해당 초대 ID를 식별하는 데 사용. |
 
 ### acceptInvitation
 
@@ -730,12 +754,12 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)acceptInvitation:(NSString *)identifier callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(acceptInvitation(id:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미           |
+| 매개변수     | 유형             | 의미           |
 | -------- | -------------- | -------------- |
-| id       | String         | 초대 ID.      |
-| callback | ActionCallback | 발송 결과 콜백.   |
+| id       | NSString       | 초대 ID.      |
+| callback | ActionCallback | 발송 결과 콜백.|
 
 ### rejectInvitation
 
@@ -745,28 +769,28 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 - (void)rejectInvitation:(NSString *)identifier callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(rejectInvitation(id:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미           |
+| 매개변수     | 유형             | 의미             |
 | -------- | -------------- | -------------- |
-| id       | String         | 초대 ID.      |
-| callback | ActionCallback | 발송 결과 콜백.   |
+| id       | NSString       | 초대 ID.      |
+| callback | ActionCallback | 발송 결과 콜백.|
 
 
 ### cancelInvitation
 
-초대 취소
+초대 취소.
 
 ```Objective-C
 - (void)cancelInvitation:(NSString *)identifier callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(cancelInvitation(id:callback:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형           | 의미           |
+| 매개변수     | 유형             | 의미             |
 | -------- | -------------- | -------------- |
-| id       | String         | 초대 ID.      |
-| callback | ActionCallback | 발송 결과 콜백.   |
+| id       | NSString       | 초대 ID.      |
+| callback | ActionCallback | 발송 결과 콜백.|
 
 [](id:TRTCVoiceRoomDelegate)
 ## TRTCVoiceRoomDelegate 이벤트 콜백
@@ -785,12 +809,12 @@ TRTCVoiceRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 NS_SWIFT_NAME(onError(code:message:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형   | 의미       |
+| 매개변수       | 유형   | 의미       |
 | ------- | ------ | ---------- |
-| code    | int    | 에러 코드.   |
-| message | String | 오류 정보. |
+| code    | int    | 오류 코드.   |
+| message | NSString  | 오류 정보. |
 
 
 ### onWarning
@@ -803,12 +827,12 @@ NS_SWIFT_NAME(onError(code:message:));
 NS_SWIFT_NAME(onWarning(code:message:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형   | 의미       |
+| 매개변수    | 유형   | 의미        |
 | ------- | ------ | ---------- |
-| code    | int    | 에러 코드.   |
-| message | String | 경고 정보. |
+| code    | int    | 오류 코드.   |
+| message | NSString | 경고 정보. |
 
    
 
@@ -821,11 +845,11 @@ Log 콜백.
 NS_SWIFT_NAME(onDebugLog(message:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형   | 의미       |
+| 매개변수    | 유형   | 의미        |
 | ------- | ------ | ---------- |
-| message | String | 로그 정보. |
+| message | NSString | 로그 정보. |
 
    
 
@@ -841,11 +865,11 @@ NS_SWIFT_NAME(onDebugLog(message:));
 NS_SWIFT_NAME(onRoomDestroy(roomId:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수   | 유형   | 의미      |
 | ------ | ------ | --------- |
-| roomId | String | 방 ID. |
+| roomId | NSString | 방 ID. |
 
 
 ### onRoomInfoChange
@@ -857,16 +881,16 @@ NS_SWIFT_NAME(onRoomDestroy(roomId:));
 NS_SWIFT_NAME(onRoomInfoChange(roomInfo:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수     | 유형     | 의미       |
 | -------- | -------- | ---------- |
-| roomInfo | RoomInfo | 방 정보. |
+| roomInfo | VoiceRoomInfo | 방 정보. |
 
 
 ### onUserMicrophoneMute
 
-사용자 마이크의 음소거 여부 콜백으로 사용자가 muteLocalAudio 호출하면 방의 모든 사용자는 해당 알림을 받게 됩니다. 
+사용자 마이크의 음소거 여부 콜백으로 사용자가 muteLocalAudio 호출하면 방의 모든 사용자는 해당 알림을 받게 됩니다.
 
 ```Objective-C
 - (void)onUserMicrophoneMute:(NSString *)userId mute:(BOOL)mute
@@ -874,29 +898,29 @@ NS_SWIFT_NAME(onUserMicrophoneMute(userId:mute:));
 
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형   | 의미                      |
+| 매개변수   | 유형   | 의미                        |
 | ------ | ------ | ------------------------- |
-| userId    | String         | 사용자 ID.              |
-| mute | boolean    | 볼륨 크기, 값: 0 - 100. |
+| userId | NSString  | 사용자 ID.            |
+| mute | BOOL    | YES: 음소거, NO: 음소거 해제. |
 
 
 ### onUserVolumeUpdate
 
-볼륨 크기 알림을 활성화하여 모든 참여자의 볼륨 크기를 알림합니다.
+음량 크기 알림을 활성화하여 모든 참석자의 음량 크기를 통지합니다.
 
 ```Objective-C
 - (void)onUserVolumeUpdate:(NSArray<TRTCVolumeInfo *> *)userVolumes totalVolume:(NSInteger)totalVolume
 NS_SWIFT_NAME(onUserVolumeUpdate(userVolumes:totalVolume:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형   | 의미                     |
+| 매개변수   | 유형   | 의미                        |
 | ------ | ------ | ------------------------- |
-| userVolumes | List | 사용자 리스트.                 |
-| totalVolume | int    | 볼륨 크기, 값: 0 - 100. |
+| userVolumes | NSArray | 사용자 리스트.                 |
+| totalVolume | NSInteger | 볼륨 크기, 값: 0 - 100. |
 
 
 ## 마이크 위치 콜백
@@ -910,11 +934,11 @@ NS_SWIFT_NAME(onUserVolumeUpdate(userVolumes:totalVolume:));
 NS_SWIFT_NAME(onSeatListChange(seatInfoList:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수         | 유형                 | 의미             |
+| 매개변수         | 유형             | 의미            |
 | ------------ | -------------------- | ---------------- |
-| seatInfoList | List&lt;SeatInfo&gt; | 전체 마이크 위치 리스트. |
+| seatInfoList | NSArray&lt;VoiceRoomSeatInfo&gt; | 전체 마이크 위치 리스트. |
 
 ### onAnchorEnterSeat
 
@@ -926,12 +950,12 @@ NS_SWIFT_NAME(onSeatListChange(seatInfoList:));
 NS_SWIFT_NAME(onAnchorEnterSeat(index:user:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수  | 유형     | 의미                 |
+| 매개변수  | 유형     | 의미                  |
 | ----- | -------- | -------------------- |
-| index | int      | 마이크가 연결된 마이크 위치.     |
-| user  | UserInfo | 마이크가 연결된 사용자의 세부 정보. |
+| index | NSInteger      | 마이크가 연결된 마이크 위치.     |
+| user  | VoiceRoomUserInfo | 마이크가 연결된 사용자의 세부 정보. |
 
 ### onAnchorLeaveSeat
 
@@ -943,12 +967,12 @@ NS_SWIFT_NAME(onAnchorEnterSeat(index:user:));
 NS_SWIFT_NAME(onAnchorLeaveSeat(index:user:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수  | 유형     | 의미                 |
 | ----- | -------- | -------------------- |
-| index | int      | 연결을 해제할 마이크 위치.         |
-| user  | UserInfo | 마이크가 연결된 사용자의 세부 정보. |
+| index | NSInteger      | 연결을 해제할 마이크 위치.         |
+| user  | VoiceRoomUserInfo |  마이크가 연결된 사용자의 세부 정보. |
 
 ### onSeatMute
 
@@ -960,12 +984,12 @@ NS_SWIFT_NAME(onAnchorLeaveSeat(index:user:));
 NS_SWIFT_NAME(onSeatMute(index:isMute:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미                               |
+| 매개변수     | 유형    | 의미                              |
 | ------ | ------- | ---------------------------------- |
-| index  | int     | 작업 진행할 마이크 위치.                       |
-| isMute | boolean | true: 음소거, false: 음소거 해제. |
+| index  | NSInteger     | 작업 진행할 마이크 위치.                       |
+| isMute | BOOL | YES: 음소거, NO: 음소거 해제. |
 
 ### onSeatClose
 
@@ -977,12 +1001,12 @@ NS_SWIFT_NAME(onSeatMute(index:isMute:));
 NS_SWIFT_NAME(onSeatClose(index:isClose:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
 | 매개변수    | 유형    | 의미                                |
 | ------- | ------- | ----------------------------------- |
-| index   | int     | 작업 마이크 위치.                        |
-| isClose | boolean | true: 차단, false: 차단 해제. |
+| index   | NSInteger     | 작업 진행할 마이크 위치.                        |
+| isClose | BOOL | YES: 차단, NO: 차단 해제. |
 
 ## 청취자 입장/퇴장 이벤트 콜백
 
@@ -995,11 +1019,11 @@ NS_SWIFT_NAME(onSeatClose(index:isClose:));
 NS_SWIFT_NAME(onAudienceEnter(userInfo:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형     | 의미           |
+| 매개변수     | 유형     | 의미            |
 | -------- | -------- | -------------- |
-| userInfo | UserInfo | 입장한 청취자 정보. |
+| userInfo | VoiceRoomUserInfo | 입장한 청취자 정보. |
 
 ### onAudienceExit
 
@@ -1010,11 +1034,11 @@ NS_SWIFT_NAME(onAudienceEnter(userInfo:));
 NS_SWIFT_NAME(onAudienceExit(userInfo:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형     | 의미           |
+| 매개변수     | 유형     | 의미             |
 | -------- | -------- | -------------- |
-| userInfo | UserInfo | 퇴장한 청취자 정보. |
+| userInfo | VoiceRoomUserInfo | 퇴장한 청취자 정보. |
 
    
 
@@ -1022,7 +1046,7 @@ NS_SWIFT_NAME(onAudienceExit(userInfo:));
 
 ### onRecvRoomTextMsg
 
-텍스트 메시지 수신.
+텍스트 메시지를 수신합니다.
 
 ```Objective-C
 - (void)onRecvRoomTextMsg:(NSString *)message
@@ -1030,18 +1054,18 @@ NS_SWIFT_NAME(onAudienceExit(userInfo:));
 NS_SWIFT_NAME(onRecvRoomTextMsg(message:userInfo:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형     | 의미             |
+| 매개변수     | 유형     | 의미               |
 | -------- | -------- | ---------------- |
-| message  | String   | 텍스트 메시지.       |
-| userInfo | UserInfo | 발신자 정보. |
+| message  | NSString    | 텍스트 메시지.       |
+| userInfo | VoiceRoomUserInfo | 발신자 정보. |
 
    
 
 ### onRecvRoomCustomMsg
 
-사용자 정의 메시지 수신.
+사용자 정의 메시지를 수신합니다.
 
 ```Objective-C
 - (void)onRecvRoomCustomMsg:(NSString *)command
@@ -1050,13 +1074,13 @@ NS_SWIFT_NAME(onRecvRoomTextMsg(message:userInfo:));
 NS_SWIFT_NAME(onRecvRoomCustomMsg(command:message:userInfo:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형     | 의미                                               |
+| 매개변수     | 유형     | 의미                                          |
 | -------- | -------- | -------------------------------------------------- |
-| command  | String   | 명령어. 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
-| message  | String   | 텍스트 메시지.                                         |
-| userInfo | UserInfo | 발신자 정보.                                   |
+| command  | NSString   | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는데 사용합니다. |
+| message  | NSString   | 텍스트 메시지.                                     |
+| userInfo | VoiceRoomUserInfo | 발신자 정보.                                   |
 
 ## 초대 신호 이벤트 콜백
 
@@ -1072,14 +1096,14 @@ NS_SWIFT_NAME(onRecvRoomCustomMsg(command:message:userInfo:));
 NS_SWIFT_NAME(onReceiveNewInvitation(id:inviter:cmd:content:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형     | 의미                               |
+| 매개변수    | 유형    | 의미                                |
 | ------- | -------- | ---------------------------------- |
-| id      | String   | 초대 ID.                          |
-| inviter | String   | 초대한 사용자 ID.                  |
-| cmd     | String   | 서비스 지정 명령어. 개발자가 사용자 정의함. |
-| content | UserInfo | 서비스 지정 내용.                   |
+| id      | NSString   | 초대 ID.                          |
+| inviter | NSString   | 초대한 사용자 ID.                  |
+| cmd     | NSString   | 서비스 지정 명령어. 개발자가 사용자 정의함. |
+| content | NSString | 서비스에서 지정한 내용.                   |
 
 ### onInviteeAccepted
 
@@ -1091,12 +1115,12 @@ NS_SWIFT_NAME(onReceiveNewInvitation(id:inviter:cmd:content:));
 NS_SWIFT_NAME(onInviteeAccepted(id:invitee:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형   | 의미                |
+| 매개변수    | 유형   | 의미                 |
 | ------- | ------ | ------------------- |
-| id      | String | 초대 ID.           |
-| invitee    | String | 초대된 사용자 ID. |
+| id      | NSString | 초대 ID.           |
+| invitee | NSString | 초대된 사용자 ID. |
 
 ### onInviteeRejected
 
@@ -1108,12 +1132,12 @@ NS_SWIFT_NAME(onInviteeAccepted(id:invitee:));
 NS_SWIFT_NAME(onInviteeRejected(id:invitee:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형   | 의미                |
+| 매개변수    | 유형   | 의미                 |
 | ------- | ------ | ------------------- |
-| id      | String | 초대 ID.           |
-| invitee    | String | 초대된 사용자 ID. |
+| id      | NSString | 초대 ID.           |
+| invitee | NSString | 초대된 사용자 ID. |
 
 ### onInvitationCancelled
 
@@ -1124,9 +1148,9 @@ NS_SWIFT_NAME(onInviteeRejected(id:invitee:));
                       invitee:(NSString *)invitee NS_SWIFT_NAME(onInvitationCancelled(id:invitee:));
 ```
 
-매개변수는 다음과 같습니다.
+매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형   | 의미              |
+| 매개변수    | 유형   | 의미                |
 | ------- | ------ | ----------------- |
-| id      | String | 초대 ID.         |
-| inviter | String   | 초대한 사용자 ID.                  |
+| id      | NSString | 초대 ID.         |
+| inviter | NSString | 초대한 사용자 ID.|

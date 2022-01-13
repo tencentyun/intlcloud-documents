@@ -7,6 +7,13 @@
 > - 제품의 안정성 및 온라인 지원을 위해 항상 최신 버전을 유지하시기 바랍니다.
 > - 버전 업데이트에 대한 주의 사항은 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
 
+## Version 4.11.8 @2021.11.05
+
+**Improvement**
+
+- iOS 15.0에서 동영상 재생 시 간헐적으로 검은 화면이 나오는 문제가 해결되었습니다. 자세한 내용은 [iOS Safari 기존 문제 case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)을 참고하십시오.
+- iOS 15.1 푸시 스트리밍의 크래시 문제가 해결되었습니다. 자세한 내용은 [iOS Safari 기존 문제 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)을 참고하십시오.
+
 ## Version 4.11.7 @2021.09.30
 
 **Improvement**
