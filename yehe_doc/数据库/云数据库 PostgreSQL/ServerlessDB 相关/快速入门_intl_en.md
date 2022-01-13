@@ -124,5 +124,6 @@ To access an instance over a public network, you can use the [OpenServerlessDBEx
 - You can use the [CloseServerlessDBExtranetAccess](https://intl.cloud.tencent.com/document/product/409/39713) API to disable public network access for an instance.
 - You can use the [DeleteServerlessDBInstance](https://intl.cloud.tencent.com/document/product/409/38879) API to terminate an instance.
 >!Please note that once an instance is terminated, its data cannot be restored.
+- If you want to import data to a PostgreSQL for Serverless instance, please see [Importing Data](https://intl.cloud.tencent.com/document/product/409/41580).
 - You can use [Serverless Framwork](https://intl.cloud.tencent.com/document/product/1040/36989) to quickly create PostgreSQL for Serverless-based web applications.
 
