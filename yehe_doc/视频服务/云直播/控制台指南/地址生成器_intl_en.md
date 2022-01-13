@@ -47,7 +47,7 @@ You have logged in to the [CSS console](https://console.cloud.tencent.com/live/l
 
 [](id:pushurl)
 ### Notes
-As the protocols RTMP, WebRTC, and SRT are supported for push, the push URLs generated start with `rtmp://`, `webrtc://`, or `srt://`.
+As the protocols RTMP, and SRT are supported for push, the push URLs generated start with `rtmp://`, or `srt://`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a892b0dd29e3f7f2877b2d76d21d6de1.png)
 
 
