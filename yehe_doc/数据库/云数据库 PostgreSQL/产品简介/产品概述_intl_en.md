@@ -5,5 +5,5 @@ PostgreSQL is one of the world's most powerful open source databases, supporting
 ## 2. Introduction to TencentDB for PostgreSQL
 TencentDB for PostgreSQL allows you to easily configure, work with and expand the PostgreSQL, one of the most powerful open-source databases, on the cloud. Tencent Cloud handles most complicated and time-consuming management works for you, such as installation of PostgreSQL software, storage management, high-availability replication, and data backup for disaster recovery. Therefore, you can focus on the development of business applications.
 
-Currently, TencentDB for PostgreSQL 10.4, 11.8 and 12.4 are available.
+Currently, TencentDB for PostgreSQL 10, 11, 12 and 13 are available.
 
