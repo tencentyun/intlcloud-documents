@@ -1,6 +1,5 @@
-## Scenarios
+## Overview
 This document describes how to use CFS Turbo on Linux clients. The standard login method, i.e., login via WebShell, is used in the example below.
-For other login methods, please see [Logging into Linux Instance](https://intl.cloud.tencent.com/zh/document/product/213/32493).
 
 ## Prerequisites
 
@@ -18,7 +17,7 @@ For other login methods, please see [Logging into Linux Instance](https://intl.c
 4. On the WebShell login page, enter the username and password and click **OK**.
 5. Run the following command to load the automation tool:
 ```
-wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/cfs_turbo_client_setup
+wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/tools/cfs_turbo_client_setup
 ```
 6. Run the following command to set permissions for the automation tool:
 ```
@@ -52,72 +51,55 @@ uname -a
 <span id="CVMKernelVersion"></span>
 <table>
 	<tr><th>OS Version</th><th>Kernel Version</th><th>Command</th></tr>
-	<tr><td rowspan="9">Ubuntu16.04</td><td>4.10.0-42-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-143-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-143-generic/cfsturbo-utils.deb<code></pre></td></tr>
-	<tr><td>4.11.0-14-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.11.0-14-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.11.0-14-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.13.0-45-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.13.0-45-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.13.0-45-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.15.0-99-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.15.0-99-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.15.0-99-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.4.0-112-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-112-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-112-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.4.0-116-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-116-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-116-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.4.0-133-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-133-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-133-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.4.0-143-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-143-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-143-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.4.0-157-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-157-generic/cfsturbo-kernel-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.4.0-157-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td rowspan="6">Ubuntu18.04</td><td>4.15.0-30-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-30-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-30-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.15.0-45-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-45-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-45-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.15.0-62-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-62-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-62-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.15.0-76-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-76-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-76-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.15.0-118-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-118-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-118-generic/cfsturbo-utils.deb</code></pre></td></tr>
-	<tr><td>4.15.0-142-generic</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-142-generic/cfsturbo-client-modules.deb</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu18.04/4.15.0-142-generic/cfsturbo-client-utils.deb</code></pre></td></tr>
-	<tr><td>CentOS 7.9</td><td>3.10.0-1160</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.9/3.10.0-1160/kmod-lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.9/3.10.0-1160/lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre></td></tr>
-	<tr><td>CentOS 7.8</td><td>3.10.0-1127</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.8/3.10.0-1127/kmod-lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.8/3.10.0-1127/lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre></td></tr>
-	<tr><td>CentOS 7.7</td><td>3.10.0-1062</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.7/3.10.0-1062/kmod-lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.7/3.10.0-1062/lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre></td></tr>
-	<tr><td>CentOS 7.6</td><td>3.10.0-957</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.6/3.10.0-957/kmod-lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.6/3.10.0-957/lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre></td></tr>
-	<tr><td>CentOS 7.5</td><td>3.10.0-862</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.5/3.10.0-862/kmod-lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.5/3.10.0-862/lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre></td></tr>
-	<tr><td>CentOS 7.4</td><td>3.10.0-693</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.4/3.10.0-693/kmod-lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre>
-	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.4/3.10.0-693/lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre></td></tr>
-	<tr><td>CentOS 7.3</td><td>3.10.0-514</td>
-	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.3/3.10.0-514/kmod-lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre>
-	<pre>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos7.3/3.10.0-514/lustre-client-2.12.4-1.el7.x86_64.rpm</code></pre></td></tr>
+	<tr><td rowspan="10">Ubuntu</td><td>4.15.0-142 18.04.4 LTS (Bionic Beaver)</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-142/cfsturbo-client-modules.x86_64.deb</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-142/cfsturbo-client-utils.x86_64.deb<code></pre></td></tr>
+	<tr><td>4.15.0-142
+16.04.7 LTS (Xenial Xerus)</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.15.0-142/cfsturbo-client-modules.x86_64.deb</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu16.04/4.15.0-142/cfsturbo-client-utils.x86_64.deb</code></pre></td></tr>
+	<tr><td>4.15.0-118</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-118/cfsturbo-client-modules.x86_64.deb</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-118/cfsturbo-client-utils.x86_64.deb</code></pre></td></tr>
+	<tr><td>4.15.0-76</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-76/cfsturbo-client-modules.x86_64.deb</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-76/cfsturbo-client-utils.x86_64.deb</code></pre></td></tr>
+	<tr><td>4.15.0-62</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-62/cfsturbo-client-modules.x86_64.deb</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-62/cfsturbo-client-utils.x86_64.deb</code></pre></td></tr>
+	<tr><td>4.15.0-45</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-45/cfsturbo-client-modules.x86_64.deb</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-45/cfsturbo-client-utils.x86_64.deb</code></pre></td></tr>
+	<tr><td>4.15.0-30</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-30/cfsturbo-client-modules.x86_64.deb</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/4.15.0-30/cfsturbo-client-utils.x86_64.deb</code></pre></td></tr>
+	<tr><td>5.4.0-42</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/5.4.0-42/cfsturbo-client-modules.x86_64.deb</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/5.4.0-42/cfsturbo-client-utils.x86_64.deb</code></pre></td></tr>
+	<tr><td>5.4.0-48</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/5.4.0-48/cfsturbo-client-modules.x86_64.deb</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/5.4.0-48/cfsturbo-client-utils.x86_64.deb</code></pre></td></tr>
+	<tr><td>5.4.0-62</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/5.4.0-62/cfsturbo-client-modules.x86_64.deb</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/ubuntu/5.4.0-62/cfsturbo-client-utils.x86_64.deb</code></pre></td></tr>
+	<tr><td rowspan="6">CentOS</td><td>3.10.0-1160</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-1160/kmod-cfsturbo-client.x86_64.rpm</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-1160/cfsturbo-client.x86_64.rpm</code></pre></td></tr>
+	<tr><td>3.10.0-1127</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-1127/kmod-cfsturbo-client.x86_64.rpm</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-1127/cfsturbo-client.x86_64.rpm</code></pre></td></tr>
+	<tr><td>3.10.0-1062</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-1062/kmod-cfsturbo-client.x86_64.rpm</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-1062/cfsturbo-client.x86_64.rpm</code></pre></td></tr>
+	<tr><td>3.10.0-957</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-957/kmod-cfsturbo-client.x86_64.rpm</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-957/cfsturbo-client.x86_64.rpm</code></pre></td></tr>
+	<tr><td>3.10.0-862</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-862/kmod-cfsturbo-client.x86_64.rpm</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-862/cfsturbo-client.x86_64.rpm</code></pre></td></tr>
+	<tr><td>3.10.0-693</td>
+	<td><pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-693/kmod-cfsturbo-client.x86_64.rpm</code></pre>
+	<pre><code>wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/2.12.4/centos/3.10.0-693/cfsturbo-client.x86_64.rpm</code></pre></td></tr>
 </table>
 7. Run the command corresponding to your OS to install the client.
  - Ubuntu:
@@ -135,17 +117,17 @@ yum install
 11. Switch to the CVM instance to run the mount command copied.
 The mount commands are described as follows. You can select one to fit your business needs.
  -If you want extended attributes supported and all operations to be executed synchronously by default (data will not be lost due to instance reboots, but the performance will be affected), copy and run the following command:
- Example:
+ For example:
 ```shell
 sudo mount.lustre -o sync,user_xattrXXXXXXXXXXXXXXXXXXX
 ```
- - If you want extended attributes supported but don’t need operations to be executed synchronously (some data cached in memory might be lost due to instance reboots, but the performance is good), copy and run the following command:
- Example:
+ - If you want extended attributes supported but don't need operations to be executed synchronously (some data cached in memory might be lost due to instance reboots, but the performance is good), copy and run the following command:
+ For example:
 ```shell
 sudo mount.lustre -o user_xattrXXXXXXXXXXXXXXXXXXX
 ```
  - If you do not need the extended attributes supported or the operations to be executed synchronously (some data cached in memory might be lost due to instance reboots, but the performance is good): copy and run the following command:
- Example:
+ For example:
 ```shell
 sudo mount.lustre XXXXXXXXXXXXXXXXXXX
 ```

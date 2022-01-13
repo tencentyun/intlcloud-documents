@@ -8,18 +8,18 @@ COS’s [SCF](https://intl.cloud.tencent.com/document/product/583)-based multi-f
 - The generated package cannot be larger than 50 GB.
 - If you have added a multi-file zipping function rule to your bucket via the COS console, the function will appear in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **DO NOT** delete the function. Otherwise, your rule may not take effect.
 - Regions where SCF is available support multi-file zipping, including Guangzhou, Shanghai, Beijing, Chengdu, Hong Kong (China), Singapore, Mumbai, Toronto, and Silicon Valley, and more. For more supported regions, please see [SCF Documentation](https://intl.cloud.tencent.com/document/product/583).
-- If an error is reported when you zip the files, click **View Log** on the right of the function to quickly redirect to the SCF console to view the error logs.
+- If an error is reported when you perform multi-file zipping, click **View Log** on the right of the function to quickly redirect to the SCF console to view the error logs.
 - Multi-file zipping is not supported for files stored in the ARCHIVE or DEEP ARCHIVE storage classes. To zip these files, you need to restore them first. For detailed directions, please see [Restoring Archived Objects](https://intl.cloud.tencent.com/document/product/436/30961).
 - Multi-file zipping depends on the SCF service, which provides users with a [free tier](https://intl.cloud.tencent.com/document/product/583/12282). You will be billed for the part exceeding the free tier limit according to [SCF Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Note that the more and larger the files you zip, the more resources will be used; the more often you zip your files, the more calling times will be incurred.
 
 ## Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
-2. Click **Application Integration** in the left sidebar and then select the **Data Processing** tab.
-3. In the **Multi-File Zipping** area, click **Config function**.
+2. Click **Application Integration** on the left sidebar and then select the **Data Processing** tab.
+3. Click **Configure Function** for **Multi-File Zipping** to enter the **Multi-File Zipping** configuration page.
 >! If you haven’t activated SCF, please go to the [SCF console](https://console.cloud.tencent.com/scf) to activate it and authorize the service as instructed.
 >
-4. Click **Add Function** and perform configuration in the pop-up window, as shown below:
+4. Click **Add Function** and configure the following parameters:
  - **Function Name**: uniquely identifies a function and cannot be modified after it is created. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
  - **Execution Method**: execution method for the function. If you set this field to **Sync**, the execution results will be returned after the zipping task is complete. If you set this field to **Async**, the function will respond directly and execute the zipping task in the background.
 
@@ -38,6 +38,6 @@ COS’s [SCF](https://intl.cloud.tencent.com/document/product/583)-based multi-f
 8. Click **Start**, and the function will be called as configured. You can view the response of the function in **Response**.
 
 9. You can perform the following operations on the created function:
- - Click **View Log** to view the historical running status of multi-file zipping. If an error is reported, you can click **View Log** to quickly redirect to the SCF console to view the error log details.
+ - Click **View Log** to view the historical running status of multi-file zipping functions. If an error is reported, you can click **View Log** to quickly redirect to the SCF console to view the error log details.
  - Click **Edit** to modify the multi-file zipping rule.
  - Click **Delete** to delete an unwanted multi-file zipping function.

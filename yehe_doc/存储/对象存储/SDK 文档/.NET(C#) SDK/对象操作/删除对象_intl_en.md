@@ -24,7 +24,7 @@ This API (`DELETE Object`) is used to delete a specified object.
 ```cs
 try
 {
-  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  // Bucket name in the format of `BucketName-APPID`. You can get APPID by referring to https://console.cloud.tencent.com/developer.
   string bucket = "examplebucket-1250000000";
   string key = "exampleobject"; // Object key
   DeleteObjectRequest request = new DeleteObjectRequest(bucket, key);
@@ -60,7 +60,7 @@ The API (DELETE Multiple Objects) is used to delete multiple objects.
 ```cs
 try
 {
-  // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+  // Bucket name in the format of `BucketName-APPID`. You can get APPID by referring to https://console.cloud.tencent.com/developer.
   string bucket = "examplebucket-1250000000";
   DeleteMultiObjectRequest request = new DeleteMultiObjectRequest(bucket);
   // Set the return result format
@@ -89,11 +89,13 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 > ?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/DeleteObject.cs).
 
-## Deleting Objects With a Specified Prefix
+## Deleting Objects with a Specified Prefix (Deleting a Folder)
 
 #### Description
 
 If you delete objects with a specified prefix, it will be like you delete a directory.
+COS does not have the concept of directories, but you can use slashes (/) as the delimiter to simulate directories.
+In COS, deleting a directory and the objects contained actually means deleting objects that have the same specified prefix. Currently, COS’s .NET SDK does not provide a standalone API to perform this operation. However, you can still do so with a combination of basic operations (query object list + batch delete objects).
 
 #### Sample code
 
@@ -104,10 +106,10 @@ try
 {
   String nextMarker = null;
 
-  // Request repeatedly until there is no data on the next page.
+  // Request until there is no next page of data
   do
   {
-    // Bucket name in the format of bucketname-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+    // Bucket name in the format of `BucketName-APPID`. You can get APPID by referring to https://console.cloud.tencent.com/developer.
     string bucket = "examplebucket-1250000000";
     string prefix = "folder1/"; // Specify a prefix.
     GetBucketRequest listRequest = new GetBucketRequest(bucket);
