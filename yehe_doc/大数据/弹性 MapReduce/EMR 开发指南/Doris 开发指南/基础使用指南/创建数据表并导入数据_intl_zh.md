@@ -145,7 +145,7 @@ MySQL> DESC table2;
 ```
 
 ### 注意事项
->?Doris 使用中更多语法说明，可参考 [数据表的创建与数据导入](http://doris.apache.org/master/en/getting-started/basic-usage.html#_2-data-table-creation-and-data-import)。
+>?Doris 使用中更多语法说明，可参考 [数据表的创建与数据导入](https://doris.incubator.apache.org/getting-started/basic-usage.html#_2-data-table-creation-and-data-import)。
 
 1. 上述表通过设置 replication_num 建的都是单副本的表，Doris 建议用户采用默认的3副本设置，以保证高可用。
 2. 可以对复合分区表动态的增删分区。
