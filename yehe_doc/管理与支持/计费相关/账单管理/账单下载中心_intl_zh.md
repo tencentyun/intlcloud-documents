@@ -18,11 +18,11 @@
 
 1、系统支持下载当前账号的L0-PDF账单：
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/71452889cf76603d785ed3a7f6c5002a.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/456df0a32dfd695c80dce416df97b36b.png)
 
 2、系统也支持下载包含子账号的L0-PDF账单：
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/238afd5cfb445008cf1d632a63b80ff7.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/4d92d9d07c09c028861b7d950364e29a.png)
 
 #### 下载L1-汇总账单
 
@@ -30,11 +30,11 @@
 
 1、系统支持下载当前账号的L1-汇总账单：
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/3894fe076950876c3e65a41c449f8dd5.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/b32bca3a44e022d29dac80cde456bafd.png)
 
 2、系统也支持下载包含子账号的L1-汇总账单：
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/3f2623a341ba77dbd75caf3beb3a57bf.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/6896cdb672d6d9b1ea57b95fe2c70999.png)
 
 #### 下载L2-资源账单
 
@@ -42,11 +42,11 @@
 
 1、系统支持下载当前账号的L2-资源账单：
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/1f71da394bfc46ca94e2716a769a55c2.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/0296b5734363f02bca554e382b089745.png)
 
 2、系统也支持下载包含子账号的L2-资源账单：
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/0059c8b1009adc6e3a8066c6dedc5933.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/e4a895c497204096fe54e889627df1d3.png)
 
 #### 下载L3-明细账单
 
@@ -54,11 +54,11 @@
 
 1、系统支持下载当前账号的L3-明细账单，支持选择是否按月份聚合：
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/005e511aa7bddbc5aede2864c36243fc.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/77478baccf07af13d3bc153c3953deca.png)
 
 2、系统也支持下载包含子账号的L3-明细账单，支持选择是否按月份聚合：
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/b50bf5855dd65be144e836ea311e9c69.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/c572cdd87c750b113dc25540958197c6.png)
 
 ### 参考资料：
 
@@ -66,7 +66,7 @@
 
 ##### 累计用量的产品
 
-部分云产品（如带宽）是时长固定、用量敏感的，按月份聚合时会把同一资源id的账单明细累计用量和金额，按月份聚合成一条。具体逻辑如下：
+部分云产品组件（如名称包含“带宽”的组件）是时长固定、用量敏感的，按月份聚合时会把同一资源id的账单明细累计用量和金额，按月份聚合成一条。具体逻辑如下：
 
 1、交易类型为“Hourly settlement、Daily settlement、Spot、Hourly RI fee、Hourly Savings Plan fee”才进行聚合。
 
@@ -86,9 +86,9 @@
 
 ##### 累计时长的产品
 
-部分云产品（如CVM）是用量固定、时长敏感的，按月份聚合时会把同一资源id的账单明细累计时长和金额，按月份聚合成一条。具体逻辑如下：
+部分云产品组件（如名称包含“CVM”的组件）是用量固定、时长敏感的，按月份聚合时会把同一资源id的账单明细累计时长和金额，按月份聚合成一条。具体逻辑如下：
 
-1、交易类型为“按量计费小时结、按量计费日结、竞价实例小时结”才进行聚合。
+1、交易类型为“Hourly settlement、Daily settlement、Spot、Hourly RI fee、Hourly Savings Plan fee”才进行聚合。
 
 2、累计时长的组件范围为：不在累计用量的组件范围的组件，即为累计时长。
 
@@ -106,4 +106,4 @@
 
 ##### 不聚合的数据
 
-如果交易类型<>“Hourly settlement、Daily settlement、Spot、Hourly RI fee、Hourly Savings Plan fee”，则不聚合。所有字段与L3明细保持一致。
+如果交易类型不等于“Hourly settlement、Daily settlement、Spot、Hourly RI fee、Hourly Savings Plan fee”，则不聚合。所有字段与L3明细保持一致。
