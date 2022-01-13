@@ -26,7 +26,7 @@ This document describes how to create, modify and delete a callback template in 
 1. Log in to the [CSS console](https://console.cloud.tencent.com/live).
 2. Select **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)** in the left sidebar.
 3. Click **Create Callback Template**, fill in the information, select the types of callbacks you want to receive, enter the callback URLs, and click **Save**.
-![](https://main.qcloudimg.com/raw/e79b06c3fecbfaa34d124f820e10ff2c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f8418ac2c646c3461d95d7fab157f2f3.png)
 <table>
 <thead><tr><th width="17%">Configuration Item</th><th>Description</th></tr></thead><tbody><tr>
 <td>Template Name</td>
@@ -63,7 +63,7 @@ This document describes how to create, modify and delete a callback template in 
 2. Select the target callback template and click **Edit** to modify its information.
 3. After modification, click **Save**.
 
-![](https://main.qcloudimg.com/raw/885d9f6ec5ee5b921865cba965068de0.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/6350e65d695ece9c075dd3e053c1aeca.png)
 
 
 ## Deleting Callback Template[](id:delete)
