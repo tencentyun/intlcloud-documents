@@ -26,7 +26,7 @@
 1. 登录 [云直播控制台](https://console.cloud.tencent.com/live)。
 2. 在左侧菜单栏选择**事件中心**>[**直播回调**](https://console.cloud.tencent.com/live/config/callback)。
 3. 单击**创建回调模板**，在直播回调新建模板中填写回调信息，选择回调类型并填写回调地址，可多选。单击**保存**即可。
-![](https://main.qcloudimg.com/raw/e79b06c3fecbfaa34d124f820e10ff2c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f8418ac2c646c3461d95d7fab157f2f3.png)
 <table>
 <thead><tr><th width="17%">配置项</th><th>说明</th></tr></thead><tbody><tr>
 <td>模板名称</td>
@@ -63,7 +63,7 @@
 2. 选择您已创建成功的回调配置模板，并单击右侧的**编辑**，即可进入修改模板信息。
 3. 单击**保存**即可。
 
-![](https://main.qcloudimg.com/raw/885d9f6ec5ee5b921865cba965068de0.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/6350e65d695ece9c075dd3e053c1aeca.png)
 
 
 ## 删除模板[](id:delete)
