@@ -49,9 +49,9 @@ Base protection is billed based on your monthly subscription plan. See the follo
 | 800Gbps| - | -  | 67,800 USD/year| - |
 | 1000Gbps| - |-  | 81,800 USD/year| - |
 
->
-- “Non-BGP” refers to China Mobile/China Union/China Telecom network services. If purchased, you will be provided with three Anti-DDoS Advanced instances, one for each of them.
-- “Outside Chinese mainland” refers to Tencent Cloud regions outside the Chinese mainland, namely, Hong Kong (China), Taiwan (China), Singapore, Seoul, Tokyo, and Virginia.
+>?
+>- “Non-BGP” refers to China Mobile/China Union/China Telecom network services. If purchased, you will be provided with three Anti-DDoS Advanced instances, one for each of them.
+>- “Outside Chinese mainland” refers to Tencent Cloud regions outside the Chinese mainland, namely, Hong Kong (China), Taiwan (China), Singapore, Seoul, Tokyo, and Virginia.
 
 
 <span id="txfh"></span>
@@ -90,7 +90,7 @@ See the following table for detailed prices.
 | Number of ports (or protected domains) ≤ 60  | Free               |
 | Number of ports (or protected domains)  > 60 | 100                |
 
->The number of forwarding rules is the total number of TCP/UDP ports (for non-website connections) and HTTP/HTTPS domain names (for website connections) that you configure for an Anti-DDoS Advanced instance.
+>? The number of forwarding rules is the total number of TCP/UDP ports (for non-website connections) and HTTP/HTTPS domain names (for website connections) that you configure for an Anti-DDoS Advanced instance.
 
 ### Application Bandwidth
 Application bandwidth is the bandwidth used for forwarding the application traffic that has been cleansed by the Tencent Cloud Anti-DDoS data center back to the data center on the real server.
@@ -118,7 +118,7 @@ The relationship between the application bandwidth and the number of Layer-7 req
 | 1Gbps    | 100,000QPS |
 | 2Gbps    | 200,000QPS |
 
->
+>?
 >- The application traffic limit applies to both the inbound anti-DDoS forwarding traffic and the outbound Anti-DDoS traffic. The application bandwidth needs to be higher than the peak bandwidth of the two, whichever is greater. If the actual application bandwidth is continuously higher than the **Application Bandwidth** selected when you purchased your Anti-DDoS Advanced instance, packet loss may occur. This might affect your service. We recommend adjusting your application bandwidth to avoid such occurrences.
 >- QPS measures the number of normal application requests per second when there are no attacks. If this number is larger than the application bandwidth you selected when you purchased your Anti-DDoS Advanced instance, we recommend that you increase the HTTP/HTTPS QPS limit promptly to avoid affecting your business due to packet loss. To adjust the application bandwidth, refer to the table above.
 
@@ -155,7 +155,7 @@ See the following table for descriptions of other metrics.
 </tr>
 </table>
 
-The metrics above are only applicable to instances purchased on Tencent Cloud official website. If you find these limits restrictive, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>? The metrics above are only applicable to instances purchased on Tencent Cloud official website. If you find these limits restrictive, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 
 ## Billing Examples
