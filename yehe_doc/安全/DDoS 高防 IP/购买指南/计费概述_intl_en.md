@@ -45,9 +45,9 @@ Base protection is billed based on your monthly subscription plan. See the follo
 | 50 Gbps | 150,000qps | 4,000 USD/month</br>25,000 USD/year  | 4,500 USD/month</br>35,000 USD/year | 10,500 USD/month  |
 | 100 Gbps | 300,000qps | 40,000 USD/year  | 50,000 USD/year | 198,000 USD/year |
 | 300 Gbps| 700,000qps | 60,000 USD/year  | 65,000 USD/year | - |
-| 500Gbps| - | -  | 40,088 USD/year| - |
-| 800Gbps| - | -  | 67,800 USD/year| - |
-| 1000Gbps| - |-  | 81,800 USD/year| - |
+| 500Gbps| - | -  | 40,088 USD/month| - |
+| 800Gbps| - | -  | 67,800 USD/month| - |
+| 1000Gbps| - |-  | 81,800 USD/month| - |
 
 >?
 >- “Non-BGP” refers to China Mobile/China Union/China Telecom network services. If purchased, you will be provided with three Anti-DDoS Advanced instances, one for each of them.
