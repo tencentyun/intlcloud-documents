@@ -21,7 +21,7 @@
 | Zone          | 是     | string | 可用区 ID，当前支持 ap-shanghai-2、ap-beijing-3、ap-guangzhou-2。 |
 | DBInstanceName | 是     | string | 数据库实例名，同一个帐号下该值必须唯一。                    |
 | DBVersion      | 是     | string | 数据库版本，目前仅支持10.4。                                |
-| DBCharset      | 是     | string | PostgreSQL 数据库字符集，目前支持 UTF8、LATIN1 两种。       | 
+| DBCharset      | 是     | string | PostgreSQL 数据库字符集，目前支持 UTF8、LATIN1 两种。        |
 | VpcId          | 否     | string | 私有网络 ID，若不指定此项，则为实例分配基础网络 IP 地址。     |
 | SubnetId       | 否     | string | 私有网络子网 ID，与私有网络 ID 同时搭配使用。                  |
 
@@ -124,5 +124,6 @@ psql -U 数据库用户 -h IP地址 -p 端口
 - 如您需要关闭实例的外网功能，可通过 [CloseServerlessDBExtranetAccess](https://intl.cloud.tencent.com/document/product/409/39713) 接口关闭外网。
 - 如您需要销毁实例，可通过 [DeleteServerlessDBInstance](https://intl.cloud.tencent.com/document/product/409/38879) 接口销毁实例。
 >!实例销毁后，数据无法恢复，请谨慎操作。
+- 如您需要导入数据至 PostgreSQL for Serverless 实例，请参见[导入数据](https://intl.cloud.tencent.com/document/product/409/41580)。
 - 可通过 [Serverless Framwork](https://intl.cloud.tencent.com/document/product/1040/36989) 一键创建含 PostgreSQL for Serverless 的网站应用。
 
