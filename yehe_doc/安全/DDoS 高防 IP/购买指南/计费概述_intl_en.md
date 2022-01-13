@@ -45,6 +45,9 @@ Base protection is billed based on your monthly subscription plan. See the follo
 | 50 Gbps | 150,000qps | 4,000 USD/month</br>25,000 USD/year  | 4,500 USD/month</br>35,000 USD/year | 10,500 USD/month  |
 | 100 Gbps | 300,000qps | 40,000 USD/year  | 50,000 USD/year | 198,000 USD/year |
 | 300 Gbps| 700,000qps | 60,000 USD/year  | 65,000 USD/year | - |
+| 500Gbps| - | -  | 40,088 USD/year| - |
+| 800Gbps| - | -  | 67,800 USD/year| - |
+| 1000Gbps| - |-  | 81,800 USD/year| - |
 
 >
 - “Non-BGP” refers to China Mobile/China Union/China Telecom network services. If purchased, you will be provided with three Anti-DDoS Advanced instances, one for each of them.
@@ -76,10 +79,10 @@ See the following table for detailed prices.
 | 150 Gbps ≤ Peak attack bandwidth < 200 Gbps | 2,700               | 2,700              | 4,000              |
 | 200 Gbps ≤ Peak attack bandwidth < 250 Gbps | 4,800              | 4,800              | 4,800              |
 | 250 Gbps ≤ Peak attack bandwidth < 300 Gbps | 5,600              | 5,600              | 5,600              |
-| 300 Gbps ≤ Peak attack bandwidth < 400 Gbps | -             | -                   | 6,600              |
-| 400 Gbps ≤ Peak attack bandwidth < 600 Gbps | -           | -                   | -            |
-| 600 Gbps ≤ Peak attack bandwidth < 900 Gbps |  -              | -                   | -            |
-| 900 Gbps ≤ Peak attack bandwidth < 1.2 Tbps | -                 | -                   | -            |
+| 300 Gbps ≤ Peak attack bandwidth < 400 Gbps | -             | 6,400                    | 6,600              |
+| 400 Gbps ≤ Peak attack bandwidth < 600 Gbps | -           | 8,800                  | -            |
+| 600 Gbps ≤ Peak attack bandwidth < 900 Gbps |  -              | 14,666                   | -            |
+| 900 Gbps ≤ Peak attack bandwidth < 1.2 Tbps | -                 |  20,000                  | -            |
 
 ### Forwarding Rules
 | Number of Rules                      |  Price (USD/month per 10 rules) |
