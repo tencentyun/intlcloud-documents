@@ -1,5 +1,5 @@
 ## Limits on Data Volume
-Due to limited resources, TencentDB for MySQL imposes restrictions on data volume of all types of MySQL instances to isolate users from getting affected by others. The following discusses the technical impacts caused by large data volume when using single instance or single table in TencentDB for MySQL.
+Due to limited resources, TencentDB for MySQL imposes restrictions on data volume of all types of MySQL instances to prevent users from getting affected by others. The following discusses the technical impacts caused by large data volume when using single instance or single table in TencentDB for MySQL.
 
 **Instance with large data volume**: the default storage engine for TencentDB for MySQL is InnoDB. When the cache/buffer of InnoDB is able to cache all the data and index pages in the MySQL instance, the instance supports a large number of concurrent access requests. If the instance contains too much data, the cache/buffer will swap data in/out frequently. In this case, the bottleneck of MySQL shifts to IO soon, leading to the decline of access throughput. For example, for a TencentDB instance supporting 8,000 access requests per second, when data volume is twice larger than the cache/buffer, the instance can only process 700 access requests per second.
 
@@ -68,7 +68,7 @@ jdbc:mysql://localhost:3306/dbname?useUnicode=true&characterEncoding=UTF-8
 3. Do not modify or stop source-replica relationship to avoid any hot backup failures.
 
 ### Limits on table name
-Please note that Chinese table names are not supported when creating tables. A Chinese table name may result in a failure of rollback, upgrade, etc.
+Only English table names are upported currently when creating tables.
 
 ## Database Account Permission
 TencentDB for MySQL no longer provides the super user permission. To modify parameters that require this permission, you can use the parameter configuration feature in the [console](https://console.cloud.tencent.com/cdb) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
