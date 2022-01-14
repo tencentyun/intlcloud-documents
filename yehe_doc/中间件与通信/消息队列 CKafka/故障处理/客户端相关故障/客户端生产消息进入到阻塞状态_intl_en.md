@@ -12,7 +12,7 @@ Messages produced by the client are blocked mainly because they cannot be sent, 
 ## Possible Causes
 
 1. For Pro Edition instances, you can view advanced monitoring metrics such as the request queue depth and server production and consumption time in the console to check the overall load of the server and whether the server has performance problems. For Standard Edition instances, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to view such metrics.
-   ![](https://main.qcloudimg.com/raw/af8dcc058b765c4f116cba7a89850904.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/8a2bf181f50ae2bafa8b87e0f6797024.png)
 2. Check the client load such as local server CPU and memory utilization (if the client is in Java, you should pay attention to GC).
 3. If blocking occurs occasionally, check whether the local network is stable, especially in a container network environment.
 4. Check whether producers are not enough based on the traffic of a single server. If the throughput traffic of a server is high while producers send messages in a single thread, you should pay attention to the number of producers.
