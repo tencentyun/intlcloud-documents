@@ -3,14 +3,14 @@
 ## 사용 수칙
 
 ### Demo 기능 소개
-본 Demo에서는 개발자에게 콘솔에서의 Key 링크 도용 방지 활성화, 링크 도용 방지 서명 배포 서비스 구축 및 링크 도용 방지 서명을 사용한 비디오 재생을 포함한 VOD[Key 링크 도용 방지](https://intl.cloud.tencent.com/document/product/266/33986) 메커니즘의 사용 방법을 제시합니다.
+본 Demo에서는 개발자에게 콘솔에서의 Key 링크 도용 방지 활성화, 링크 도용 방지 서명 배포 서비스 구축 및 링크 도용 방지 서명을 사용한 비디오 재생을 포함한 VOD [Key 링크 도용 방지](https://intl.cloud.tencent.com/document/product/266/33986) 메커니즘의 사용 방법을 제시합니다.
 
-### 아케텍처와 프로세스
+### 아키텍처와 프로세스
 
 Demo는 클라이언트에서 전송한 링크 도용 방지 서명 획득 요청을 수신하기 위해 SCF를 기반으로 HTTP 서비스를 구축합니다. 서비스는 요청 Body에서 VOD의 비디오 원본 URL을 가져와 링크 도용 방지 서명을 계산하고 링크 도용 방지 서명이 있는 URL을 클라이언트에게 반환합니다.
 
 시스템은 크게 개발자, API 게이트웨이, SCF 및 VOD의 네 가지 요소로 구성되어 있으며, 그중 API 게이트웨이와 SCF는 다음 이미지와 같이 본 Demo에서 배포하는 객체입니다.
-<img src="https://main.qcloudimg.com/raw/e2397093b8cd9d0aabf228ef41ecac45.png" width="600">
+<img src="https://main.qcloudimg.com/raw/f30d9b832b388c9ffe35551ef26743b4.png" width="600">
 
 자세한 서비스 프로세스는 다음과 같습니다.
 
@@ -18,20 +18,20 @@ Demo는 클라이언트에서 전송한 링크 도용 방지 서명 획득 요�
 2. 개발자가 비디오의 원본 URL을 사용해 SCF에 링크 도용 방지 서명을 요청합니다.
 3. 개발자가 링크 도용 방지 서명이 있는 비디오 URL을 사용해 VOD CDN을 요청하고 비디오를 재생합니다.
 
-> ?Demo의 SCF 코드는 Python3.6을 기반으로 개발되었습니다. 또한 SCF는 Python2.7, Node.js, Golang, PHP, Java 등 여러 프로그래밍 언어를 지원하며, 개발자가 상황에 따라 자유롭게 선택할 수 있습니다. 자세한 내용은 [SCF 개발 가이드](https://intl.cloud.tencent.com/document/product/583/11061)를 참조하십시오.
+>? Demo의 SCF 코드는 Python3.6을 기반으로 개발되었습니다. 또한 SCF는 Python2.7, Node.js, Golang, PHP, Java 등 여러 프로그래밍 언어를 지원하며, 개발자가 상황에 따라 자유롭게 선택할 수 있습니다. 자세한 내용은 [SCF 개발 가이드](https://intl.cloud.tencent.com/document/product/583/11061)를 참고하십시오.
 
 ### 요금
 본 문서에서 제공되는 VOD Key 링크 도용 방지 서명 배포 서비스 Demo는 무료 오픈 소스이나, 구축 및 사용 과정에서 다음과 같은 비용이 발생할 수 있습니다.
 
-- 서비스 배포 스크립트 실행을 위해 Tencent Cloud CVM 구매 시 비용이 발생합니다. 자세한 내용은 [CVM 과금](https://intl.cloud.tencent.com/zh/document/product/213/2180)을 참조하십시오.
-- Tencent Cloud SCF를 사용하여 서명 배포 서비스 제공 시 비용이 발생합니다. 자세한 내용은 [SCF 과금](https://intl.cloud.tencent.com/document/product/583/12284) 과 [SCF 무료 한도](https://intl.cloud.tencent.com/document/product/583/12282)를 참조하십시오.
-- Tencent Cloud API 게이트웨이를 사용하여 SCF에 공인 네트워크 인터페이스를 제공 시 비용이 발생합니다. 자세한 내용은 [API 게이트웨이 과금](https://intl.cloud.tencent.com/document/product/628/11771)을 참조하십시오.
-- 업로드한 비디오를 저장하기 위한 VOD 스토리지 사용 시 비용이 발생합니다. 자세한 내용은 [스토리지 과금](https://intl.cloud.tencent.com/document/product/266/14666)과 [스토리지 리소스 팩](https://intl.cloud.tencent.com/zh/document/product/266/14666)을 참조하십시오.
-- 비디오 재생을 위해 VOD 트래픽 사용 시 비용이 발생합니다. 자세한 내용은 [트래픽 과금](https://intl.cloud.tencent.com/document/product/266/14666)과 [트래픽 리소스 팩](https://cloud.tencent.com/document/product/266/14667)을 참조하십시오.
+- 서비스 배포 스크립트 실행을 위해 Tencent Cloud CVM 구매 시 비용이 발생합니다. 자세한 내용은 [CVM 과금](https://intl.cloud.tencent.com/document/product/213/2180)을 참고하십시오.
+- Tencent Cloud SCF를 사용하여 서명 배포 서비스 제공 시 비용이 발생합니다. 자세한 내용은 [SCF 과금](https://intl.cloud.tencent.com/document/product/583/12284) 과 [SCF 무료 한도](https://intl.cloud.tencent.com/document/product/583/12282)를 참고하십시오.
+- Tencent Cloud API 게이트웨이를 사용하여 SCF에 공인 네트워크 인터페이스를 제공 시 비용이 발생합니다. 자세한 내용은 [API 게이트웨이 과금](https://intl.cloud.tencent.com/document/product/628/11771)을 참고하십시오.
+- 업로드된 동영상이 차지하는 VOD 저장 공간입니다.
 
 ## Key 링크 도용 방지 서명 배포 서비스의 빠른 배포
 
-### 1단계: Tencent Cloud CVM 준비[](id:p1)
+<span id="p1"></span>
+### 1단계: CVM 인스턴스 준비
 
 배포 스크립트는 다음 요건에 부합하는 Tencent Cloud CVM에서 실행되어 야 합니다.
 
@@ -40,30 +40,33 @@ Demo는 클라이언트에서 전송한 링크 도용 방지 서명 획득 요�
 - 공용 네트워크: 공용 IP를 보유해야 하며 대역폭은 1Mbps 이상.
 - 운영 체제: 공식 웹 사이트의 공용 이미지 `Ubuntu Server 16.04.1 LTS 64비트` 또는 `Ubuntu Server 18.04.1 LTS 64비트`.
 
-CVM 구매 방법은 [운영 가이드 - 인스턴스 생성](https://intl.cloud.tencent.com/document/product/213/4855)을 참조하십시오. 시스템 재설치 방법은 [운영 가이드 - 시스템 재설치](https://intl.cloud.tencent.com/document/product/213/4933)를 참조하십시오.
+CVM 구매 방법은 [운영 가이드 - 인스턴스 생성](https://intl.cloud.tencent.com/document/product/213/4855)을 참고하십시오. 시스템 재설치 방법은 [운영 가이드 - 시스템 재설치](https://intl.cloud.tencent.com/document/product/213/4933)를 참고하십시오.
 
 >!
 >- Key 링크 도용 방지 서명 배포 서비스 Demo 자체는 CVM에 의존하지 않고, 배포 스크립트 실행에만 CVM을 사용합니다.
 >- 위 조건에 부합하는 Tencent Cloud CVM이 없을 경우, 다른 공인 네트워크의 Linux(예: CentOS, Debian 등) 또는 Mac 디바이스에서도 배포 스크립트를 실행할 수 있으나 운영 체제에 따라 스크립트의 개별 명령을 수정해야 합니다. 자세한 수정 방법은 개발자가 직접 검색하시기 바랍니다.
 
-### 2단계: VOD 활성화 및 Key 링크 도용 방지 구성[](id:p2)
+<span id="p2"></span>
+### 2단계: VOD 활성화 및 주요 링크 도용 방지 구성
 
-1. [시작하기 - 1단계](https://intl.cloud.tencent.com/document/product/266/8757)를 참조하여 VOD 서비스를 활성화합니다.
+1. [시작하기 - 1단계](https://intl.cloud.tencent.com/document/product/266/8757)를 참고하여 VOD 서비스를 활성화합니다.
 2. 활성화 후 [링크 도용 방지 설정](https://intl.cloud.tencent.com/document/product/266/14060) 문서를 참고하여 Key 링크 도용 방지를 활성하고 링크 도용 방지 Key를 기록합니다.
-![](https://main.qcloudimg.com/raw/04d1a39b76fdb3bef5acebe57f3edb16.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c43642ea12afda47aff5ca5205f63f4f.png)
 >!여기에서는 Referer 링크 도용 방지가 아닌 Key 링크 도용 방지를 활성화합니다. Referer 링크 도용 방지를 동시에 활성화했을 경우, 다음 테스트 방법이 Referer 링크 도용 방지의 요건에 부합하지 않아 요청이 실패할 수 있습니다.
 
-### 3단계: API 키 및 APPID 가져오기[](id:p3)
+<span id="p3"></span>
+
+### 3단계: API 키 및 APPID 가져오기
 
 Key 링크 도용 방지 서명 배포 서비스 Demo의 배포 및 실행을 위해 개발자의 API 키(SecretId와 SecretKey)와 APPID를 사용해야 합니다.
 
 - 아직 API 키를 생성하지 않았다면 [보안키 생성 파일](https://intl.cloud.tencent.com/document/product/598/34228)을 참고하여 새로운 API 키를 생성하십시오. 이미 키를 생성했다면 [보안키 조회 파일](https://intl.cloud.tencent.com/document/product/598/34228)을 참고하여 API 키를 가져옵니다.
 - 다음 이미지와 같이 콘솔의 [계정 정보](https://console.cloud.tencent.com/developer) 페이지에서 APPID를 조회할 수 있습니다.
-  ![](https://main.qcloudimg.com/raw/0e7dda93add5f53b2da07d16cf6f4406.png)
+  ![](https://main.qcloudimg.com/raw/6c9fe4238232392c8d914f9ebf0f53aa.png)
 
 ### 4단계: 링크 도용 방지 서명 배포 서비스 배포
 
-[1단계에서 준비된 CVM](#p1)(로그인 방식은 [운영 가이드 - Linux 로그인](https://intl.cloud.tencent.com/document/product/213/5436)참조)에 로그인하여, 원격 터미널에 다음 명령어를 입력하고 실행합니다.
+[1단계에서 준비된 CVM](#p1)(로그인 방식은 [운영 가이드 - Linux 로그인](https://intl.cloud.tencent.com/document/product/213/5436)참고)에 로그인하여, 원격 터미널에 다음 명령어를 입력하고 실행합니다.
 
 ```
 ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;export APPID=125xxxxxxx;export ANTI_LEECH_KEY=xxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/anti_leech_sign_scf.sh
@@ -95,7 +98,7 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 ### 5단계: Key 링크 도용 방지 테스트
 
 [비디오 업로드 - 로컬 업로드 단계](https://intl.cloud.tencent.com/document/product/266/33890)의 설명에 따라 테스트 비디오 하나를 VOD에 업로드합니다. 업로드가 완료되면 [빠른 조회]를 클릭하고 오른쪽의 [주소 복사]를 클릭하여 해당 비디오의 URL을 복사합니다.
-![](https://main.qcloudimg.com/raw/b93899bb2d2335ce3212ca9c024df10a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ac27b65a2bb0cc91ac9f71b141a31cb2.png)
 CVM 명령 줄에서 `curl` 명령을 실행하여 해당 URL에 직접 액세스를 시도해 보십시오. Key 링크 도용 방지 규칙에 부합하지 않을 경우, 서버가 액세스를 거부하며 HTTP 반환 코드는 403입니다(다음과 같이 테스트 시 명령의 URL을 실제 URL로 바꿉니다).
 
 ```
@@ -148,7 +151,7 @@ Key 링크 도용 방지 서명 배포 SCF는 API 게이트웨이를 통해 인�
 ### 서명 배포 서비스 코드 해석
 
 1. `Main_handler()`는 엔트리 함수입니다.
-2. `parse_conf_file ()`을 호출하고, `config.json` 파일에서 설정 정보를 읽어옵니다. 설정 항목에 대한 설명은 다음과 같습니다(자세한 매개변수는 [Key 링크 도용 방지 서명 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)를 참조하십시오).
+2. `parse_conf_file ()`을 호출하고, `config.json` 파일에서 설정 정보를 읽어옵니다. 설정 항목에 대한 설명은 다음과 같습니다(자세한 매개변수는 [Key 링크 도용 방지 서명 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)를 참고하십시오).
 <table>
 <thead>
 <tr>
@@ -194,7 +197,7 @@ Key 링크 도용 방지 서명 배포 SCF는 API 게이트웨이를 통해 인�
            "us": rand
        }	
 ```
-4. `Generate_sign()`를 호출하여 링크 도용 방지 서명을 계산합니다. 자세한 알고리즘은 [Key 링크 도용 방지 서명](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)을 참조하십시오.
+4. `Generate_sign()`를 호출하여 링크 도용 방지 서명을 계산합니다. 자세한 알고리즘은 [Key 링크 도용 방지 서명](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)을 참고하십시오.
 5. QueryString을 생성하고, 원본 URL 뒤에 연결하여 링크 도용 방지 서명이 있는 URL을 구성합니다.
 ```
        sign_para["sign"] = signature
@@ -202,7 +205,7 @@ Key 링크 도용 방지 서명 배포 SCF는 API 게이트웨이를 통해 인�
        new_parse_result = parse_result._replace(query=query_string)
        signed_url = urlunparse(new_parse_result)
 ```
-6. 서명을 반환합니다. 반환된 데이터 포맷 및 의미는 [SCF 통합 응답](https://intl.cloud.tencent.com/document/product/583/12513)을 참조하십시오.
+6. 서명을 반환합니다. 반환된 데이터 포맷 및 의미는 [SCF 통합 응답](https://intl.cloud.tencent.com/document/product/583/12513)을 참고하십시오.
 ```
        return {
            "isBase64Encoded": False,
@@ -215,4 +218,3 @@ Key 링크 도용 방지 서명 배포 SCF는 API 게이트웨이를 통해 인�
 ```
 
    
-
