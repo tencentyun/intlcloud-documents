@@ -8,7 +8,7 @@ Check whether the consumer group has a heap. If there is no heap, an empty messa
 fetch.max.wait.ms=500
 ```
 
-![](https://main.qcloudimg.com/raw/05c88d97f36784e5f83c08b24e229265.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/eb6f5565a35eff67ee44e7b64104be98.png)
 
 ## Solutions
 - If messages heap up, but no messages are pulled, we recommend you check the client SDK version. If the SDK version is low, upgrade it as instructed in [SDK Overview](https://intl.cloud.tencent.com/document/product/597/41028).
