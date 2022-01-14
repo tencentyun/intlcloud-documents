@@ -1,9 +1,9 @@
-快直播（Live Event Broadcasting，LEB）（超低延迟直播）是标准直播在超低延迟播放场景下的延伸，比传统直播协议延迟更低，为观众提供毫秒级的直播观看体验。 能够满足一些对延迟性能要求更高的特定场景需求，例如在线教育、体育赛事直播、在线答题等。
+快直播（Live Event Broadcasting，LEB）（超低延迟直播）是云直播在超低延迟播放场景下的延伸，比标准直播协议延迟更低，为观众提供毫秒级的直播观看体验。 能够满足一些对延迟性能要求更高的特定场景需求，例如在线教育、体育赛事直播、在线答题等。
 
 
 ## 产品架构
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/89955303a40baec947ea981238baef9e.png" width="750px">
+![](https://qcloudimg.tencent-cloud.cn/raw/89955303a40baec947ea981238baef9e.png)
 
 
 ## 产品特性
