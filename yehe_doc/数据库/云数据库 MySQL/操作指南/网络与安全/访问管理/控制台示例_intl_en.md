@@ -2,7 +2,7 @@
 This document provides examples about how to grant a user permissions to view and use specific resources in the TencentDB console by using a CAM policy.
 
 ## Full Access Policy for TencentDB
-To grant a user permissions to create and manage TencentDB instances, implement the QcloudCDBFullAccess policy for the user.
+To grant a user permissions to create and manage TencentDB instances, you can implement the QcloudCDBFullAccess policy for the user.
 
 Log in to the [CAM console](https://console.cloud.tencent.com/cam/policy), select **Policies** on the left sidebar, and search QcloudCDBFullAccess in the upper right corner.
 ![](https://main.qcloudimg.com/raw/5ec89e71595a5edd3e7f723a19c01a6a.png)
@@ -57,10 +57,10 @@ The policy syntax is as follows:
     ]
 }
 ```
-The above CAM policy syntax grants the user permissions to use all the resources of TencentDB, VPC, security groups, COS, KMS, and Cloud Monitor.
+The above CAM policy grants the user permissions to use all the resources of TencentDB, VPC, security groups, COS, KMS, and Cloud Monitor.
 
 ## Read-only Permission Policy for TencentDB
-To grant a user permissions to view TencentDB instances but not create, delete, or modify them, implement the QcloudCDBInnerReadOnlyAccess policy for the user.
+To grant a user permissions to view TencentDB instances but not create, delete, or modify them, you can implement the QcloudCDBInnerReadOnlyAccess policy for the user.
 
 >?You are recommended to configure the read-only policy for TencentDB.
 
@@ -83,7 +83,7 @@ The policy syntax is as follows:
 ```
 
 ## Read-only Permission Policy for TencentDB-related Resources
-To grant a user permissions to view TencentDB instances and related resources (VPC, security groups, COS, and Cloud Monitor) but not create, delete, or modify them, implement the QcloudCDBReadOnlyAccess policy for the user.
+To grant a user permissions to view TencentDB instances and related resources (VPC, security groups, COS, and Cloud Monitor) but not create, delete, or modify them, you can implement the QcloudCDBReadOnlyAccess policy for the user.
 
 Log in to the [CAM console](https://console.cloud.tencent.com/cam/policy), select **Policies** on the left sidebar, click **Service Type** in the policy list and select **TencentDB for MySQL** in the drop-down list, and then you can see this policy in the results.
 
@@ -141,7 +141,7 @@ The above CAM policy syntax grants the user permissions of the following operati
 - All operations in the Cloud Monitor.
 
 ## Policy for Granting a User Permissions to Use APIs not at the Resource Level
-To grant a user permissions to use only APIs not at the resource level, implement the QcloudCDBProjectToUser policy for the user.
+To grant a user permissions to use only APIs not at the resource level, you can implement the QcloudCDBProjectToUser policy for the user.
 Log in to the [CAM console](https://console.cloud.tencent.com/cam/policy), select **Policies** on the left sidebar, click **Service Type** in the policy list and select **TencentDB for MySQL** in the drop-down list, and then you can see this policy in the results.
 The policy syntax is as follows:
 ```
@@ -188,7 +188,7 @@ The policy syntax is as follows:
 ```
 
 ## Policy for Granting a User Permissions to Manipulate a Specific TencentDB Instance
-To grant a user permissions to manipulate a specific database, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instance "cdb-xxx" in Guangzhou.
+To grant a user permissions to manipulate a specific database, you can associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instance "cdb-xxx" in Guangzhou.
 ```
 {
     "version": "2.0",
@@ -203,7 +203,7 @@ To grant a user permissions to manipulate a specific database, associate the fol
 ```
 
 ## Policy for Granting a User Permissions to Manipulate TencentDB Instances in Batches
-To grant a user permissions to manipulate TencentDB instances in batches, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances "cdb-xxx" and "cdb-yyy" in Guangzhou and "cdb-zzz" in Beijing.
+To grant a user permissions to manipulate TencentDB instances in batches, you can associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances "cdb-xxx" and "cdb-yyy" in Guangzhou and "cdb-zzz" in Beijing.
 ```
 {
     "version": "2.0",
@@ -218,7 +218,7 @@ To grant a user permissions to manipulate TencentDB instances in batches, associ
 ```
 
 ## Policy for Granting a User Permissions to Manipulate TencentDB Instances in a Specific Region
-To grant a user permissions to manipulate TencentDB instances in a specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou.
+To grant a user permissions to manipulate TencentDB instances in a specific region, you can associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou.
 ```
 {
     "version": "2.0",
