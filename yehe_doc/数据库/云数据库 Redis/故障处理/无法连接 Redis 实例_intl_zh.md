@@ -2,6 +2,7 @@
 ## 现象描述
 - [现象1](id:xz1)：从 CVM 连接登录云数据库 Redis，连接失败。
 - [现象2](id:xz2)：从数据库管理 DMC 平台连接登录云数据库 Redis，连接失败。
+![](https://qcloudimg.tencent-cloud.cn/raw/8917bd64abc5a131884fa3b0c9df190d.png)
 
 ## 可能原因
 - 网络问题。
@@ -9,15 +10,15 @@
 - 密码问题。
 - 连接数已满。
 - 内存写满或者分片写满。
-- 需求访问外网但是无法访问。
-- 发生HA切换、服务不可用、只读副本切换、只读副本服务不可用等。
+- 需外网访问实例但无法访问。
+- 发生 HA 切换、服务不可用、只读副本切换、只读副本服务不可用等。
 
 ## 解决思路
 1. [使用 telnet 确认是 Redis 问题还是业务侧问题](#sytqr)。
 2. [确认是否为密码问题](#qrsfwmmwt)。
 3. [调整最大连接数](#tzzdljs)。
 4. [确认是否内存写满或分片写满导致写入失败](#qrsfncxm)。
-5. [通过 iptable 实现外网访问](#sxwwfw)。
+5. [通过开启外网地址实现外网访问](#sxwwfw)。
 6. [确认是否发生 HA 切换、服务不可用、只读副本切换、只读副本服务不可用等](#qrsffsh)。
 
 ## 处理步骤
@@ -101,13 +102,11 @@ Redis 监控：
 
 >?驱逐策略调整为`allkeys-lru`，会对业务数据有损，请根据实际需求评估。
 
-### [通过 iptable 实现外网访问](id:sxwwfw)
-云数据库 Redis 暂时不支持外网访问，您可以通过具备外网 IP 的云服务器 CVM 进行端口转发，来实现外网访问 Redis 实例，请参见 [iptable 转发](https://intl.cloud.tencent.com/document/product/239/35905) 。
->?iptable 转发的方式存在稳定性风险，不建议在生产环境使用外网接入。
-
+### [通过开启外网地址实现外网访问](id:sxwwfw)
+云数据库 Redis 现已支持在控制台手动开启外网地址，实现外网访问 Redis 实例，具体操作步骤请参见 [配置外网地址](https://intl.cloud.tencent.com/document/product/239/43452) 。
 
 ### [确认是否发生 HA 切换、服务不可用、只读副本切换、只读副本服务不可用等](id:qrsffsh)
-如果在某个确定的时间点发现连接异常或者有大量的访问报错，慢查询，同时接受到云监控事件告警，代表发生了异常事件。
+如果在某个确定的时间点发现连接异常或者有大量的访问报错，慢查询，同时接受到云监控事件告警，代表发生了异常事件，请 [联系我们](https://intl.cloud.tencent.com/contact-us) 获取帮助。
 
 **[云监控](https://console.cloud.tencent.com/monitor/alarm2/policy) 事件告警配置方法**：
 ![](https://qcloudimg.tencent-cloud.cn/raw/f7de41a133dd54b2c82574f2bbbc1dde.png)

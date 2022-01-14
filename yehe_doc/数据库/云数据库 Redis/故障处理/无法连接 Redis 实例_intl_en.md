@@ -2,22 +2,23 @@
 ## Error Description
 - [Symptom 1](id:xz1): failed to connect to or log in to a TencentDB for Redis instance from a CVM instance.
 - [Symptom 2](id:xz2): failed to connect to or log in to a TencentDB for Redis instance from the database management center (DMC).
+![](https://qcloudimg.tencent-cloud.cn/raw/8917bd64abc5a131884fa3b0c9df190d.png)
 
-## Possible Reasons
-- Network issues.
+## Common Causes
+- Network issue
 - Security group issues.
 - Password issues.
 - The maximum number of connections has been reached.
 - Memory or shards have been used up.
-- Public network access (if needed) failed.
+- The instance cannot be accessed over public network.
 - A high-availability (HA) switch occurred, the database service became unavailable, a read-only replica switch occurred, or the read-only replica service became unavailable, etc.
 
-## Solutions
+## Solution
 1. [Run `telnet` to locate where the error occurred (in TencentDB for Redis or your business)](#sytqr).
 2. [Check whether the error was caused by password issues](#qrsfwmmwt).
 3. [Modify the allowed maximum number of connections](#tzzdljs).
 4. [Check whether the error was caused by write failure due to used-up memory or shards](#qrsfncxm).
-5. [Connect to the TencentDB for Redis instance over the public network by iptable-based forwarding](#sxwwfw).
+5. [Enable public network access](#sxwwfw).
 6. [Check whether any of the following occurred: HA switch, unavailable database service, read-only replica switch, or unavailable read-only replica service](#qrsffsh).
 
 ## Troubleshooting Procedure
@@ -32,9 +33,9 @@ Escape character is '^]'.
 As shown above, if the result indicates that the connection is successful, the TencentDB for Redis instance runs normally. Please troubleshoot your business:
 
 #### 1. Troubleshoot the network
-To connect over the private network, the CVM and TencentDB instances must be under the same account and in the same VPC in the same region, or both in the classic network.
+To connect over private network, the CVM and TencentDB instances must be under the same account and in the same VPC in the same region, or both in the classic network.
 - If the CVM instance is in a VPC, while the Redis instance in the classic network, we recommend that you switch the network type of the Redis instance from classic network to VPC. For more information, see [Configuring Network](https://intl.cloud.tencent.com/document/product/239/31944).
-- If the Redis instance is in a VPC, while the CVM instance in the classic network, we recommend that you switch the network type of the CVM instance from classic network to VPC. For more information, see [Switch to VPC](https://intl.cloud.tencent.com/document/product/213/20278).
+- If the Redis instance is in a VPC, while the CVM instance in the classic network, we recommend that you switch the network type of the CVM instance from classic network to VPC. For more information, see [Switching to VPC](https://intl.cloud.tencent.com/document/product/213/20278).
 - If the CVM and TencentDB for Redis instances are in different VPCs in the same region, we recommend that you migrate the Redis instance to the VPC of the CVM instance. For more information, see [Configuring Network](https://intl.cloud.tencent.com/document/product/239/31944).
 - If the CVM and TencentDB for Redis instances are in different VPCs in different regions, we recommend that you create a [CCN](https://intl.cloud.tencent.com/zh/document/product/1003) between the two VPCs.
 - If the CVM and TencentDB for Redis instances are in different VPCs under different accounts, we recommend that you create a [CCN](https://intl.cloud.tencent.com/zh/document/product/1003) between the two VPCs.
@@ -74,7 +75,7 @@ If `NOAUTH Authentication required.` is displayed, the password is incorrect.
 NOAUTH Authentication required.
 10.0.4.31:6379> 
 ```
-#### Solutions
+#### Solution
 Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the instance details page, where you can reset the password. For more information, see [Managing Accounts](https://intl.cloud.tencent.com/document/product/239/34590).
 ![](https://qcloudimg.tencent-cloud.cn/raw/fe7308090ce478150a0b1c5706bc1aef.png)
 
@@ -101,20 +102,18 @@ If memory is used up, writes will fail. Please [expand capacity](https://intl.cl
 
 >?Instance data may be lost if the `allkeys-lru` eviction policy is adopted. Please assess the impact before doing so.
 
-### [Connecting over the public network by iptable-based forwarding](id:sxwwfw)
-TencentDB for Redis does not support public network access for the time being. You can use a CVM instance with a public IP for port forwarding so as to access TencentDB for Redis over the public network. For more information, see [Connecting to TencentDB for Redis Instances (over Public Network)](https://intl.cloud.tencent.com/document/product/239/35905).
->?iptable-based forwarding may be unstable; therefore, you are not recommended to access instances over the public network in the production environment.
-
+### [Enabling public network access](id:sxwwfw)
+TencentDB for Redis now allows you to manually enable public network access in the console, so that instances can be accessed over public network. For detailed directions, see [Configuring the Public Network Address](https://intl.cloud.tencent.com/document/product/239/43452).
 
 ### [Checking whether any of the following occurred: HA switch, unavailable database service, read-only replica switch, or unavailable read-only replica service](id:qrsffsh)
-If the connection becomes abnormal or a large number of access errors or slow queries are reported at a certain point in time, and you receive an event alarm from Cloud Monitor, an abnormal event occurs.
+If you find that the connections are exceptional, there are a large number of access errors and slow queries, and you receive event alarms from CM at a certain time point, an exceptional event has occurred. In this case, [contact us](https://intl.cloud.tencent.com/contact-us) for assistance.
 
 **Configure event alarms in the [Cloud Monitor](https://console.cloud.tencent.com/monitor/alarm2/policy) console**:
 ![](https://qcloudimg.tencent-cloud.cn/raw/f7de41a133dd54b2c82574f2bbbc1dde.png)
 
 ## Appendix
 ### [Viewing network type and VPC information](id:wllxvpdff)
-To enable connection between CVM and TencentDB for Redis instances over the private network, they must be under the same account and in the same VPC in the same region, or both in the classic network.
+To enable connection between CVM and TencentDB for Redis instances over private network, they must be under the same account and in the same VPC in the same region, or both in the classic network.
 >?
 >- If the instance lists both show **Classic Network** or **VPC**, it means that the networks of the CVM and TencentDB for Redis instances are of the same type.
 >- If the instance lists both show the same **VPC** (in the same region), it means that the CVM and TencentDB for Redis instances are in the same VPC.
