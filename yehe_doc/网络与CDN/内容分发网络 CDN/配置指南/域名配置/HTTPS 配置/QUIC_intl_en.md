@@ -1,10 +1,8 @@
-Announcement:
+公告：
 
-Tencent Cloud CDN will officially support QUIC on January 5, 2022.
-We will charge you for the number of QUIC requests you used. For more details, see [Billing Overview](https://intl.cloud.tencent.com/zh/document/product/228/2949).
-You will be notified in advance when we start billing. Please pay attention to our announcements in the console and documentation.
-
-
+Tencent Cloud CDN will officially launch QUIC support on January 5, 2022.
+QUIC support is billed based on the number of QUIC requests. For more details, see [Billing Overview](https://intl.cloud.tencent.com/zh/document/product/228/2949).
+We will notify you in advance of your subscription being billed. Please pay attention to our announcements in the console and documentation.
 
 ## Feature Overview
 
@@ -16,17 +14,15 @@ For now, the supported QUIC versions include draft h3-28, h3-Q050, h3-Q046, h3-Q
 
 1. Enable QUIC:
 
-- Log in to the [CDN console](https://console.cloud.tencent.com/cdn) and tick the box to enable QUIC when connecting a new domain name:
-  ![img](https://tva1.sinaimg.cn/large/008i3skNgy1gy2n247nq5j306y014741.jpg)
-
-- After adding a domain name, you can click **Domain Management** on the left sidebar, in the domain name details page, select **HTTPS Configuration** -> **QUIC configuration**. QUIC is disabled by default, and you can enable it manually.
-  **Note:** An HTTPS certificate is required to enable QUIC.
-  ![img](https://tva1.sinaimg.cn/large/008i3skNgy1gy2n1viwjjj30pf034t8t.jpg)
+After adding a domain name, you can click **Domain Management** on the left sidebar, in the domain name details page, select **HTTPS Configuration** -> **QUIC configuration**. QUIC is disabled by default, and you can enable it manually.
+**Note:** An HTTPS certificate is required to enable QUIC.
+![img](https://tva1.sinaimg.cn/large/008i3skNgy1gy2n1viwjjj30pf034t8t.jpg)
 
 > Note:
 >
 >- Switching service types concerns resource scheduling between platforms. We recommend not switching service types for domain names after enabling QUIC.
->- QUIC is not available for origin pull.
+>- QUIC requests cannot be forwarded to the origin.
+> - QUIC is only partially supported for now.
 
 **Use Limits:**
 
@@ -39,5 +35,4 @@ You can go to **Domain Management** > **HTTPS Configuration** > **QUIC**, and di
 
 ## Billing
 
-QUIC is a value-added service, which is billed based on the number of QUIC requests and supports pay-as-you-go. For details, see [Billing Overview](https://intl.cloud.tencent.com/zh/document/product/228/2949).
-
+QUIC support is a value-added service, which is billed based on the number of QUIC requests and supports pay-as-you-go. For details, see [Billing Overview](https://intl.cloud.tencent.com/zh/document/product/228/2949).
