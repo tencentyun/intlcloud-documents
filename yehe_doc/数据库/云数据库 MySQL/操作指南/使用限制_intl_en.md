@@ -19,16 +19,16 @@ We recommend using the MySQL client and library supplied with the CVM instance t
 
 ### Notes on slow logs
 - For Linux-based CVM instances, you can use TencentDB's export tool to obtain slow query logs. For more information, see [Step 1. Download the backup file](https://intl.cloud.tencent.com/document/product/236/31910).
-- For Windows-based CVM instances, slow query logs cannot be obtained directly at present. If you need them, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+- For Windows-based CVM instances, slow query logs cannot be obtained directly at present. If you need them, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 ### Notes on binlog retention duration in TencentDB
 TencentDB for MySQL binlogs can be retained for 7 (default value) to 732 days (customizable in automatic backup settings). The number of days set for log backup retention must be smaller than or equal to that for data backup retention. 
-If binlogs are retained for a prolonged period of time or increase too fast, more space will be needed for backup. If the space exceeds the free tier of backup capacity, fees will be incurred.
+If binlogs are retained for a prolonged period of time or increase too fast, more space will be needed for backup. If the space exceeds the free tier of backup capacity, fees will be incurred. For details about the free tier of backup capacity, see "Backup Space Billing".
 
 ### Notes on character set
 The default character set of TencentDB for MySQL is UTF8.
 Although TencentDB supports changing the default character set, we recommend that you explicitly specify the table encoding when creating a table and specify the connection encoding when establishing a connection for more portable application experience.
-For more information on MySQL character set, please see [MySQL's official documentation](https://dev.mysql.com/doc/).
+For more information on MySQL character set, see [MySQL's official documentation](https://dev.mysql.com/doc/).
 
 You can change the character set in the [MySQL Console](https://console.cloud.tencent.com/cdb) or by following the steps below:
 1. Execute the following statements to change the default character set encoding for a TencentDB for MySQL instance:
@@ -74,5 +74,5 @@ Only English table names are supported currently when creating tables.
 TencentDB for MySQL no longer provides the super user permission. To modify parameters that require this permission, you can use the parameter configuration feature in the [console](https://console.cloud.tencent.com/cdb) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 ## Selecting Network
-We recommend using a VPC. In the VPC, you can define IP range segmentation, IP addresses, and routing policies as needed. Compared with the classic network, VPC is more suitable for scenarios where custom network configurations are required. For the comparison of VPC and classic network, please see [Managing Classic Networks](https://intl.cloud.tencent.com/document/product/215/31807).
+We recommend using a VPC. In the VPC, you can define IP range segmentation, IP addresses, and routing policies as needed. Compared with the classic network, VPC is more suitable for scenarios where custom network configurations are required. For the comparison of VPC and classic network, see [Managing Classic Networks](https://intl.cloud.tencent.com/document/product/215/31807).
 
