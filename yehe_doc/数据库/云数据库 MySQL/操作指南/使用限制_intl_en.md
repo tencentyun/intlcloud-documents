@@ -68,7 +68,7 @@ jdbc:mysql://localhost:3306/dbname?useUnicode=true&characterEncoding=UTF-8
 3. Do not modify or stop source-replica relationship to avoid any hot backup failures.
 
 ### Limits on table name
-Only English table names are upported currently when creating tables.
+Only English table names are supported currently when creating tables.
 
 ## Database Account Permission
 TencentDB for MySQL no longer provides the super user permission. To modify parameters that require this permission, you can use the parameter configuration feature in the [console](https://console.cloud.tencent.com/cdb) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
