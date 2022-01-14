@@ -14,7 +14,7 @@ TencentDB for MySQL supports database engine upgrade:
 - The `create table …  as select …` syntax is not supported.
 - Source-replica sync in TencentDB for MySQL 5.6 and 5.7 is implemented based on GTID. Only InnoDB is supported by default.
 - MyISAM tables will be converted to InnoDB tables during the process of upgrading from MySQL 5.5 to 5.6. **We recommend that you complete the conversion first before upgrading.**
-- During upgrade, TencentDB for MySQL will clear the `slow\_log` table. Please save the logs before upgrading if necessary.
+- During upgrade, TencentDB for MySQL will clear the `slow_log` table. Please save the logs before upgrading if necessary.
 - **If an instance to be upgraded is associated with other instances (e.g., the source instance and read-only replicas), these instances will be upgraded together to ensure data consistency.**
 - TencentDB for MySQL upgrade involves data migration and generally takes a relatively long time. Please wait patiently. During the upgrade process, your business will not be affected and the instance can be accessed as usual.
 - Instance switchover may be needed after version upgrade is completed (i.e., the MySQL instance may be disconnected for a few seconds). We recommend that applications be configured with auto reconnection feature and that instance switchover be conducted during the instance maintenance window. For more information, see [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
