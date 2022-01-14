@@ -1,7 +1,8 @@
 云直播提供将直播画面进行录制并将文件存储到云点播中，可通过云点播对录制视频进行下载、预览等处理。本文将为您介绍如何创建、绑定、解绑、修改以及删除录制模板。
 创建录制模板有以下两种方式：
+
 - 通过云直播控制台创建录制模板，具体操作步骤请参见 [创建录制模板](#C_record)。
-- 通过 API 创建录制模板，具体参数及示例说明请参见  [创建录制模板](https://intl.cloud.tencent.com/document/product/267/30845)。
+- 通过 API 创建录制模板，具体参数及示例说明请参见 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/30845)。
 
 ## 注意事项
 - 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台，建议提前开通点播服务，详细请参见 [点播快速入门](https://intl.cloud.tencent.com/document/product/266/8757)。
@@ -26,24 +27,34 @@
 ![](https://main.qcloudimg.com/raw/ccf133a64c38ce579a9fd91e37514193.png)
 
 <table>
-   <thead><tr><th width="20%">配置项</th><th>配置描述</th></tr></thead>
+   <thead><tr><th width="20%" colspan=2>配置项</th><th>配置描述</th></tr></thead>
    <tbody><tr>
    <tr>
-   <td>模板名称</td>
+   <td colspan=2>模板名称</td>
    <td>直播录制模板名称，可自定义（仅支持中文、英文、数字、_、-）。</td>
    </tr><tr>
-   <td>模板描述</td>
+   <td colspan=2>模板描述</td>
    <td>直播录制模板介绍描述，可自定义（仅支持中文、英文、数字、_、-）。</td>
+   </tr><tr>   
+   <td rowspan=2 width="10%">录制内容</td>
+   <td width="20%">录制原始流</td> 
+   <td><ul style=margin:0>录制视频针对直播原始码率录制，默认录制原始流。</ul></td>
    </tr><tr>
-   <td>录制格式</td>
-   <td>录制视频针对直播原始码率录制，输出格式有  HLS、MP4、FLV 和 AAC 四种，其中 AAC 为纯音频录制。</td>
+   <td>指定转码流录制</td>
+   <td> 单击指定转码流录制，可选择已配置的转码模板，或点击模板名称前往修改转码模板配置。选择该配置会在推流后自动根据转码模板id发起转码进行录制，若转码模板被误删，则按原始流录制。</td>
+   </tr><tr>
+   <td colspan=2>录制格式</td>
+   <td>录制视频输出格式有  HLS、MP4、FLV 和 AAC 四种，其中 AAC 为纯音频录制。</td>
    </tr>
    </tbody></table>
-3. 勾选需要录制格式后，弹出相关格式的设置界面，可选择一个或多个录制格式同时进行设置。请进行如下设置：
+>! 
+>- 若指定转码流录制中选择纯音频转码模板时，录制格式中只可选择音频格式。
+>- 录制转码流需要先发起转码任务，会额外产生转码费用，若使用相同转码模板进行播放，不会重复计费。
+3. 选择录制内容，勾选需要录制格式后，弹出相关格式的设置界面，可选择一个或多个录制格式同时进行设置。请进行如下设置：
 ![](https://main.qcloudimg.com/raw/74a4ac0636c59ff69c23437e72189567.png)
 
 <table>
-   <thead><tr width="24%"><th colspan=2>配置项</th><th>配置描述</th></tr></thead>
+   <thead><tr><th width="27%" colspan=2>配置项</th><th>配置描述</th></tr></thead>
    <tbody><tr>
       <tr>
       <td colspan=2>单个录制文件时长（分钟）</td>
@@ -53,7 +64,7 @@
           </ul></td>
       </tr><tr>
       <td colspan=2>续录等待时长（秒）</td>
-      <td>仅  HLS 格式支持文件推流中断续录，续录等待时长可设置为0s - 1800s。</td>
+      <td>仅  HLS 格式支持文件推流中断续录，续录等待时长可设置为1s - 1800s。</td>
       </tr><tr>
       <td colspan=2>保存时长（天）</td>
       <td>单个录制文件保存最大时长均为1500天，文件保存时长0为永久。可选择 <b>永久存储</b> 或 <b>指定时间</b>。</td>
@@ -69,11 +80,10 @@
       <td> 单击 <b>选择绑定的任务流</b> 可选择绑定点播子应用下已建立的任务流，或从当前点播任务流选择界面点击任务流名称前往点播控制台新增/修改任务流配置。绑定成功后，在生成录制文件后执行点播任务流模板，产生对应的 <a href="https://tcloud-doc.isd.com/document/product/266/2838">云点播费用</a>。</td>
       </tr>
       </tbody></table>
-      
+
 >! 视频存储策略中：
 >- 选择 **标准存储** 时，若目前选中的应用已开启降冷策略，录制文件会先生成标准存储文件后再根据降冷策略进行降冷，可点击此处[查看策略](https://console.cloud.tencent.com/vod/inactivation)。
 >- 选择 **低频存储** 时，若目前选中的应用/分类已开启降冷策略，录制文件会先直接生成低频存储文件后再判断是否执行点播降冷策略。
-
 4. 单击 **保存** 即可。
 
 [](id:conect)
@@ -104,9 +114,7 @@
 [](id:change)
 ## 修改模板
 1. 进入 **功能配置** > [**直播录制**](https://console.cloud.tencent.com/live/config/record)。
-2. 选择您已创建成功的录制模板，并单击右侧的 **编辑**，即可进入修改模板信息。
-3. 单击 **保存** 即可。
-
+2. 选择您已创建成功的录制模板，并单击右侧的 **编辑**，即可进入修改模板信息，单击 **保存** 即可。
 ![](![img](https://main.qcloudimg.com/raw/68f4dd1a6452a3e97e7ff4dea6493d7b.png)
 
 [](id:delete)
