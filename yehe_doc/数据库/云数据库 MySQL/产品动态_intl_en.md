@@ -18,7 +18,7 @@
 <td>Database proxy is supported</td>
 <td>The database proxy provides a network proxy service between TencentDB and the application. It proxies all requests from the application to TencentDB.<br>The database proxy uses an access address independent from the original access address of a TencentDB instance. Requests using the proxy access address are relayed to source and replica database nodes by the proxy cluster. If read/write separation is enabled, read requests are relayed to read-only instances to reduce the load pressure of the source instance.</td>
 <td>2021-04</td>
-<td><a href="https://cloud.tencent.com/document/product/236/54652" target="_blank">Database Proxy</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/42048" target="_blank">Database Proxy</a></td></tr>
 <tr>
 <td>Binlogs take up the disk space</td>
 <td>As the speed of writing to binlog affects database performance, TencentDB for MySQL now migrates the binlog files to high-performance SSDs (i.e., instance disk space) in order to improve database performance and stability.</td>

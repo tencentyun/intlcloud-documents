@@ -31,17 +31,17 @@ Batch renewal, auto-renewal, collective expiry date, do-not-renew flag can be fo
 
 Suppose an instance expires in T days, and the monthly prepaid fee difference between the target configuration and the current configuration is C, then the total upgrade cost will be: T/30 x C.
 
-Assume that you have an instance with 1 core, 1000 MB memory, and 100 GB disk (prepaid fee: 24.511 USD/month) and it will expire in 15 days. If you need to upgrade it to 1 core, 1000 MB memory, and 200 GB disk (prepaid fee: 34.653 USD/month), then the total upgrade cost will be: 15/30 x (34.653 - 24.511)=5.071 USD.
+Assume that you have an instance with 1 core, 1000 MB memory, and 100 GB disk (prepaid fee: 24.511 USD/month) and it will expire in 15 days. If you upgrade it to 1 core, 1000 MB memory, and 200 GB disk (prepaid fee: 34.653 USD/month), then the total upgrade cost will be: 15/30 x (34.653 - 24.511)=5.071 USD.
 
 
 
 **Exceeding instance disk capacity limit**
 
-To ensure business continuity, upgrade your instance specifications or purchase additional disk capacity in time before disk capacity is used up.
+To ensure business continuity, you need to upgrade your instance specifications or purchase additional disk capacity in time before disk capacity is used up.
 
 When the size of the data stored on an instance exceeds its capacity limit, the instance will be locked and become read-only. You will not be able to write data to it. You will need to expand its capacity or delete some database tables in the console to unlock it.
 
-To avoid a database from triggering the lock status repeatedly, a locked instance will be unlocked and allowed for reads and writes only when its remaining available capacity accounts for more than 20% of its total capacity or is over 50 GB.
+To avoid a database from triggering the lock status repeatedly, a locked instance will be unlocked and allowed for reads and writes only when its remaining available capacity is more than 20% of its total capacity or is over 50 GB.
 
 
 

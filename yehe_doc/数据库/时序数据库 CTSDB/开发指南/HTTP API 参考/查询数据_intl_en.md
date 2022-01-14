@@ -12,7 +12,7 @@ You can set the `_routing` parameter during data write to improve the query effi
 
 ## Request Content
 
-Queries mainly include regular queries and aggregate queries. Query requests are fully compatible with [Elasticsearch APIs](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/getting-started.html). For the specific request content, please see the samples.
+Queries mainly include regular queries and aggregate queries. Query requests are fully compatible with [Elasticsearch APIs](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/getting-started.html). For the specific request content, please see the samples.
 
 ## Response Content 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, please see the `error` field description.
