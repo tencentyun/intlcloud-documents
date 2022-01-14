@@ -31,14 +31,14 @@ https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=
 ### 请求包示例
 ```
 {
-   "Identifier":"test"
+   "UserID":"test"
 }
 ```
 ### 请求包字段说明
 
 | 字段 | 类型 | 属性 |说明 |
 |---------|---------|---------|-----|
-| Identifier | String|必填 |用户名 |
+| UserID | String|必填 |用户名 |
 
 ### 应答包体示例
 
