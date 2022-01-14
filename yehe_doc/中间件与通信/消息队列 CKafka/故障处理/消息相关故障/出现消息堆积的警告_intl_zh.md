@@ -13,7 +13,6 @@
 
 - **客户端没有消费**
   可以通过查看分区的消费速度来确认，是否有进行消费，如下图：
-  ![](https://main.qcloudimg.com/raw/e48ab4cc7aa70d8e205f5cc220580341.jpg)
 
 - **客户端消费速度较慢**
   请参考 [消费端消费消息速度缓慢](https://intl.cloud.tencent.com/document/product/597/42147)。
