@@ -19,7 +19,7 @@ https://xxxxxx/v4/all_member_push/im_add_tag?usersig=xxx&identifier=admin&sdkapp
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com` |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` |
 | v4/all_member_push/im_add_tag  | 请求接口                  |
 | usersig            | App 管理员帐号生成的签名，参见 [UserSig 后台 API](https://intl.cloud.tencent.com/document/product/1047/34385)                            |
 | identifier         | 必须为 App 管理员帐号                |
