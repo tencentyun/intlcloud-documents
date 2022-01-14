@@ -1,5 +1,5 @@
 ## Prerequisites
-To purchase instances, you need to verify your identity first. For more information, see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
+Your identity needs to be verified first. For more information, see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Purchasing Instances in the Console
 1. Log in to the [TencentDB for MySQL purchase page](https://buy.Intl.cloud.tencent.com/cdb), configure the following instance information, and click **Buy Now**.
@@ -16,7 +16,7 @@ To purchase instances, you need to verify your identity first. For more informat
  - **Instance Type**: general or dedicated. For more information, see [Resource Isolation Policy](https://intl.cloud.tencent.com/document/product/236/39794).
  - **Instance Specs**: select specifications as needed.
  - **Hard Disk**: the disk space is used to store the files required by MySQL execution.
- - **Network**: select the network where the TencentDB for MySQL instance resides, which is "Default-VPC (default)" by default. We recommend that you select the same VPC in the same region as the CVM instance to be connected to. Otherwise, the MySQL instance cannot connect to the CVM instance over the private network.
+ - **Network**: select the network where the TencentDB for MySQL instance resides, which is "Default-VPC (default)" by default. We recommend that you select the same VPC in the same region as the CVM instance to be connected to. Otherwise, the MySQL instance cannot be connected from the CVM instance over the private network.
  - **Security Group**: for more information on security group creation and management, see [TencentDB Security Group Management](https://intl.cloud.tencent.com/document/product/236/14470).
 >?Port 3306 must be opened for the MySQL instance through the inbound rule of the security group. The MySQL instance uses private network port 3306 by default and supports custom port. If the default port is changed, the new port should be opened in the security group.
  - **Parameter Template**: besides the system parameter template provided by TencentDB, you can create a custom parameter template. For more information, see [Managing Parameter Templates](https://intl.cloud.tencent.com/document/product/236/31906).
