@@ -13,7 +13,6 @@ A warning is displayed for message heap.
 
 - **The client has not consumed messages**
   You can check the consumption speed of partitions to confirm whether there is consumption as shown below:
-  ![](https://main.qcloudimg.com/raw/e48ab4cc7aa70d8e205f5cc220580341.jpg)
 
 - **The client’s consumption speed is slow**
   For more information, see [Slow Message Consumption](https://intl.cloud.tencent.com/document/product/597/42147).
