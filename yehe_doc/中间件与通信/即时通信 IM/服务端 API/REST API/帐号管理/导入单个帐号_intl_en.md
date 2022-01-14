@@ -30,7 +30,7 @@ https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=
 ### Example request packet
 ```
 {
-   "Identifier":"test",
+   "UserID":"test",
    "Nick":"test",
    "FaceUrl":"http://www.qq.com"
 }
@@ -40,7 +40,7 @@ https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=
 
 | Field | Type | Property | Description |
 |---------|---------|---------|---------|
-| Identifier | String | Required | The user name, which is a string of up to 32 bytes in length. |
+| UserID | String | Required | The user name, which is a string of up to 32 bytes in length. |
 | Nick | String | Optional | The user nickname. |
 | FaceUrl | String | Optional | The URL of a user's profile photo. |
 
