@@ -2,7 +2,7 @@
 ## Issue Description
 
 The consumer group list in the CKafka Console contains consumer group name, but no consumption details are displayed on the details page; for example, the consumer group CR has no details displayed in the figure below:
-![](https://main.qcloudimg.com/raw/c1cdbfb124ec0dfd2829a6c011c4c9b3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/30ca45b4a1b9850bc86c89ccda38c60a.png)
 
 ## Possible Causes
 

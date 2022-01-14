@@ -10,7 +10,7 @@ For detailed directions, see [Creating File Systems and Mount Targets](https://i
 
 ## Step 2. Connect to an Instance
 
-1. [Log in to a Windows instance using the standard method](https://intl.cloud.tencent.com/document/product/213/41018).
+1. Log in to a Windows instance using the standard method.
 For other login methods, see [Logging in to Windows instance](https://intl.cloud.tencent.com/document/product/213/32495).
 2. Verify the network communication.
 Before mounting, you need to check the network connectivity between the client and the file system (the Telnet service needs to be enabled on Windows clients). You can use the `telnet` command for verification, such as `telnet 192.168.1.1 445`. The specific protocols and ports as follows:

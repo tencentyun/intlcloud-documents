@@ -15,5 +15,6 @@ DDoS 高防包为腾讯云公网 IP 提供更高的 DDoS 防护能力，可支�
 
 ![](https://main.qcloudimg.com/raw/934ccebda9aebc6647cd4a98a07348f1.png)
 4. 选择完成后，单击**确定**即可。
->?接入完成后，如需个性化防护可在 [防护配置页面](https://console.cloud.tencent.com/ddos/antiddos-native/config/port) 进行个性化配置，详情请参见 [防护配置](https://intl.cloud.tencent.com/document/product/1029/36132) 文档。
+
+>? 接入完成后，如需个性化防护可在 [防护配置页面](https://console.cloud.tencent.com/ddos/antiddos-native/config/port) 进行个性化配置，详情请参见 [防护配置](https://intl.cloud.tencent.com/document/product/1029/36132) 文档。
 

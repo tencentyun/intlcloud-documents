@@ -2,7 +2,7 @@
 ## 现象概述
 
 CKafka 的消费组列表有消费组名称，点开详情，却没有消费详情。例如：下图的消费组 CR 没有展示详情。
-![](https://main.qcloudimg.com/raw/c1cdbfb124ec0dfd2829a6c011c4c9b3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/30ca45b4a1b9850bc86c89ccda38c60a.png)
 
 ## 可能原因
 

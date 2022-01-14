@@ -5,7 +5,6 @@ There are always heaped messages in some partitions as displayed on the monitori
 ## Possible Causes
 
 - The producer keeps producing messages to the partition while the consumer never consumes these messages.
-   ![](https://main.qcloudimg.com/raw/a24f311ae94f205df0a034e0fd95191b.jpg)
 - There are insufficient consumers in the consumer group or the consumption speed is too slow.
 - The consumer does not consume messages in certain partitions due to bugs.
 

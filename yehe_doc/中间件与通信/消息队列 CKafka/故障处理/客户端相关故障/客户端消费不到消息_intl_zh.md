@@ -8,7 +8,7 @@
 fetch.max.wait.ms=500
 ```
 
-![](https://main.qcloudimg.com/raw/05c88d97f36784e5f83c08b24e229265.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/eb6f5565a35eff67ee44e7b64104be98.png)
 
 ## 解决方法
 - 如果消息有堆积，拉取到的消息却为空，建议检查客户端 SDK 的版本，如果 SDK 版本较老，建议升级 SDK 版本，参考 [SDK 文档](https://intl.cloud.tencent.com/document/product/597/41028)。

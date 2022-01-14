@@ -15,7 +15,7 @@ Topic 创建失败。
 
 - **已创建的所有 Topic 的分区数之和达到实例规格的分区数上限**
 建议对 Kafka 实例扩容，或者删除不需要的 Topic。
-![](https://qcloudimg.tencent-cloud.cn/raw/02420c74f53287536ba470820ca40f35.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/f7b95bf9b39066c07dc86633b8a4dc82.png)
 
 - **在删除 Topic 期间创建同名 Topic**
 Topic 删除是异步操作，下发删除指令后，系统会异步的删除该 Topic 的元数据。若在此期间创建同名 Topic，系统会提示 Topic 已经存在，届时请您稍后重试。这里需要等待1分钟左右，再进行重建操作。
