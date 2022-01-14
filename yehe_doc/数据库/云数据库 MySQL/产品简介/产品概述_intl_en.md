@@ -3,7 +3,7 @@ TencentDB for MySQL is a high-performance distributed data storage service devel
 TencentDB for MySQL has the following features:
 - It provides cloud-based data storage service for internet applications.
 - It is fully compatible with MySQL protocols and suitable for table-oriented application scenarios. TencentDB for MySQL can be used wherever MySQL is used.
-- It offers MySQL cluster service that features high performance, data reliability up to 99.9996%, ease of use, and convenience.
+- It offers MySQL cluster service that features high performance, data reliability up to 99.9996%.
 - It integrates various database features such as backup, scaling, and migration. In addition, it is equipped with the new-generation database tool DMC for even more convenient management of databases.
 
 
