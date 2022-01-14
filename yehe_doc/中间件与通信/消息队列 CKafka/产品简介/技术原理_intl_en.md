@@ -8,7 +8,7 @@ For the advantages of CKafka over self-built open-source Apache Kafka, see [Stre
 
 ## High Throughput
 In CKafka, a huge amount of network data is permanently stored in disks and high numbers of disk files are sent over the network. The performance of this process directly affects Kafka's overall throughput, especially in the following aspects:
-- **Improved disk utilization*: data is read and written sequentially in the disk, which helps increase the disk utilization.
+- **Improved disk utilization**: data is read and written sequentially in the disk, which helps increase the disk utilization.
  - Message write: messages are written to the page cache and flushed by the async thread.
  - Message read: messages are transferred directly from the page cache into the socket and then sent out.
  - If the corresponding data is not found in the page cache, disk IO will be caused, and the messages will be loaded from the disk to the page cache and then sent out directly from the socket.
