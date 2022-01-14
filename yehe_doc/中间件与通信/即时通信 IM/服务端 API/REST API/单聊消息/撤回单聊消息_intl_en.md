@@ -21,7 +21,7 @@ The following table only describes the modified parameters when this API is call
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
 | https       | The request protocol is HTTPS, and the request method is POST.       |
-| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com `<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com` |
+| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com `<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
 | v4/openim/admin_msgwithdraw | Request API. |
 | sdkappid | The SDKAppID assigned by the IM console when an application is created. |
 | identifier | The app administrator account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
