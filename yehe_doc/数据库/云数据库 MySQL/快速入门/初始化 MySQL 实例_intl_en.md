@@ -15,5 +15,5 @@ After creating a TencentDB for MySQL instance, you need to initialize it before 
 
 
 ## Next Steps
-You can access TencentDB for MySQL over both the private and public networks from a Windows or Linux CVM instance. For more information, please see [Connecting to MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37788).
+For public network you don't have to access from CVM. For more information, please see [Connecting to MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37788).
 
