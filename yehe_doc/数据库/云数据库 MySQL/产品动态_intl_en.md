@@ -28,7 +28,7 @@
 <td>Local binlog retention period can be customized</td>
 <td>You can now customize the retention period of local binlog files in the TencentDB for MySQL console.</td>
 <td>2021-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/40186" target="_blank">Configuring Local Binlog Retention Policy</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/42048" target="_blank">Configuring Local Binlog Retention Policy</a></td></tr>
 </tbody></table>
 
 ## March 2021
