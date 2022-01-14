@@ -10,7 +10,7 @@
 
 ## 步骤2：连接实例
 
-1. [使用标准方式登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/41018)。
+1. 使用标准方式登录 Windows 实例。
 如需使用其他登录方式，请参见 [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/32495) 文档。
 2. 验证网络通信。
 挂载前，需要确认客户端与文件系统的网络可达性（需要在 Windows 客户端启用 Telnet 服务）。可以通过 telnet 命令验证（例如 telnet 192.168.1.1 445），具体各个协议及客户端要求开放端口信息如下：
