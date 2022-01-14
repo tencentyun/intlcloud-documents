@@ -1,4 +1,4 @@
-公告：
+Announcement:
 
 Tencent Cloud CDN will officially launch QUIC support on January 5, 2022.
 QUIC support is billed based on the number of QUIC requests. For more details, see [Billing Overview](https://intl.cloud.tencent.com/zh/document/product/228/2949).
