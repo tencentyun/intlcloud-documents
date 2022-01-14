@@ -1,6 +1,7 @@
 ## Feature Description 
 
 - Only accounts of apps using the IM Trial plan can be deleted. Apps using other trial types such as TRTC, Whiteboard,Pro Edition and Flagship Edition do not support deleting accounts.
+  
   >?You can log to the [console](https://console.cloud.tencent.com/im) and click an app to view its standard billing plan in **Basic Configuration** > **Standard Billing Plan** > **Plan**.
 - When an account is deleted, the account’s data such as relationship chain and profile will also be deleted.
 - After an account is deleted, **the account’s data cannot be recovered**. Therefore, exercise caution when using this API.
@@ -20,12 +21,13 @@ https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=
 | Parameter | Description |
 | ----------------------------------- | ------------------------------------------------------------ |
 | https       | The request protocol is HTTPS, and the request method is POST.       |
-| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.time.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com ` |
+| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com ` <li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com`|
 | v4/im_open_login_svc/account_delete | Request API |
 | sdkappid | `SDKAppID` assigned by the console when the app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
+| contenttype | Request format. The value is always `json`. |
 
 ### Maximum calling frequency
 
@@ -118,4 +120,4 @@ Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-
 - Importing Multiple Accounts ([v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954))
 - Querying Accounts ([v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956))
 - Invalidating Account Login States ([v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957))
-- Querying Account Online Status ([v4/openim/querystate](https://intl.cloud.tencent.com/document/product/1047/35477))
+- Querying Account Online Status ([v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477))
