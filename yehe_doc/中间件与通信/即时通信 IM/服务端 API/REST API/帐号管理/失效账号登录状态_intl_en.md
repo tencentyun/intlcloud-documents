@@ -31,14 +31,14 @@ The following table only describes the parameters that are modified when this AP
 ### Example request packet
 ```
 {
-   "Identifier":"test"
+   "UserID":"test"
 }
 ```
 ### Request packet fields
 
 | Field | Type | Attribute | Description |
 |---------|---------|---------|-----|
-| Identifier | String | Required | Username |
+| UserID | String | Required | Username |
 
 ### Example response packet
 
