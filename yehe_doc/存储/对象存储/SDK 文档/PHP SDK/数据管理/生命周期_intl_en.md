@@ -121,7 +121,7 @@ try {
 | Expiration   | Array        | Object expiration rule. You can specify an expiration date (`Date`) or the number of days before the object expires (`Days`). | No |
 | Transition   | Array        | Object storage class transitioning rule                               | No |
 | NoncurrentVersionExpiration   | Array        | Expiration rule for historical objects   | No                    |
-NoncurrentVersionTransition | Array | Storage class transitioning rule for historical No |
+NoncurrentVersionTransition | Array | Storage class transitioning rule for historica    | No |
 | Filter       | Array        | Objects to which the rule applies                               | Yes |
 | Prefix | String | Prefix used to filter objects | Yes |
 | Status | String | Whether to enable `Rule`. Valid values: `Enabled`, `Disabled` | Yes |
