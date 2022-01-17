@@ -1,0 +1,18 @@
+## 防护说明
+CC 防护根据访问特征和连接状态判定恶意行为来阻断黑客的攻击。可根据不同的攻击场景配置相应的防护策略，保证业务稳定。清洗阈值是高防产品启动清洗动作的阈值。
+
+
+## 前提条件
+您需要已成功 [购买 DDoS 高防 IP](https://intl.cloud.tencent.com/document/product/297/37241) ，并设置防护对象。
+
+## 操作步骤
+1. 登录 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) ，在左侧导航中，单击**防护配置** > **CC 防护**。
+2. 在 CC 防护页面的左侧列表中，选中高防 IP 的 ID 下面的域名。
+ ![](https://qcloudimg.tencent-cloud.cn/raw/d2699b5321965d929c07908171c5b7c5.png)
+3. 在右侧 CC 防护开关及清洗阈值卡片中，单击![](https://qcloudimg.tencent-cloud.cn/raw/b56da8e70914bb5f6fce1900bcf81ef5.png)开启 CC 防护，当防护开启后必须进行清洗阈值设置否则无法开启 CC 防护。
+![](https://qcloudimg.tencent-cloud.cn/raw/1586e1763e894c57a4eb6c730c81a21a.png)
+>?
+>- CC 防护开关是控制是否启用 CC 防护的总开关，开启后下方的防护策略才能生效。
+>- 清洗阈值是高防产品启动清洗动作的阈值。当指定域名收到的 HTTP 请求超过阈值时，触发 CC 防护。
+>- 默认在开启“防护状态”的情况下，业务刚接入的 DDoS 高防 IP 实例的清洗阈值采用默认值，并随着接入业务流量的变化规律，系统自动学习形成一个基线值。您可以根据实际业务情况自由设置清洗阈值。
+>- 若明确该清洗阈值，可进行自定义设置（现已支持清洗阈值自定义）。若无法明确该清洗阈值，DDoS 防护系统将根据 AI 算法自动学习并生成一套专属的默认阈值。
