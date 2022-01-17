@@ -82,7 +82,7 @@ function(err, data) { ... }
 | - headers | Headers returned by the request | Object |
 | - ETag | MD5 checksum of the object, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end.** | String |
 | - LastModified | Last modified time of the object, for example, `2017-06-23T12:33:27.000Z` | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | | String  |
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  |
 
 
 ### Moving an object
