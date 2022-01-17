@@ -1,6 +1,13 @@
+
 为方便 Windows 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 Windows 开发的接入技术文档。
 
-> ?此文档对应 GME sdk version：v2.8。
+
+
+<dx-alert infotype="explain" title="">
+此文档对应 GME sdk version：v2.8。
+</dx-alert>
+
+
 
 
 
@@ -27,7 +34,7 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 - GME 的接口调用成功后返回值为 AV_OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
 - GME 需要周期性的调用 Poll 接口触发事件回调。
-- 错误码详情可参考 [错误码](https://intl.cloud.tencent.com/document/product/607/33223)。
+- 错误码详情可参考 [错误码](https://intl.cloud.tencent.com/zh/document/product/607/33223)。
 
 ### C++类
 
@@ -44,7 +51,7 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 
 未初始化前，SDK 处于未初始化阶段，需要通过接口 Init 初始化 SDK，才可以使用实时语音服务、语音消息及转文字服务。**如果切换账号，请调用 UnInit 反初始化 SDK。**
 
-使用问题可参考 [一般性问题](https://intl.cloud.tencent.com/document/product/607/30254)。
+使用问题可参考 [一般性问题](https://intl.cloud.tencent.com/zh/document/product/607/30254)。
 
 | 接口   |   接口含义   |
 | ------ | :----------: |
@@ -116,10 +123,15 @@ m_pTmgContext->Init(AppID, OpenID);
 
 ### 初始化 SDK
 - 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用。
-- <b>参数 sdkAppId 获取请查看 [接入指引](https://intl.cloud.tencent.com/document/product/607/39698)</b>。
 - **OpenId 用于唯一标识一个用户，数值需大于 10000（目前只支持 INT64），规则由 App 开发者自行制定，App 内不重复即可**。
 
-> !初始化 SDK 之后才可以进入实时语音房间。
+
+
+<dx-alert infotype="notice" title="">
+初始化 SDK 之后才可以进入实时语音房间。
+</dx-alert>
+
+
 
 #### 函数原型
 
@@ -232,7 +244,7 @@ ITMGContext int Uninit()
 ## 实时语音房间相关接口
 
 初始化之后，SDK 调用进房后进去了房间，才可以进行实时语音通话。
-使用问题可参考 [实时语音相关问题](https://intl.cloud.tencent.com/document/product/607/30257)。
+使用问题可参考 [实时语音相关问题](https://intl.cloud.tencent.com/zh/document/product/607/39524)。
 
 
 | 接口           |       接口含义       |
@@ -246,7 +258,7 @@ ITMGContext int Uninit()
 
 ### 鉴权信息
 
-生成 AuthBuffer，用于相关功能的加密和鉴权，如正式发布请使用后台部署密钥，后台部署请参考 [鉴权密钥](https://intl.cloud.tencent.com/document/product/607/12218)。    
+生成 AuthBuffer，用于相关功能的加密和鉴权，如正式发布请使用后台部署密钥，后台部署请参考 [鉴权密钥](https://intl.cloud.tencent.com/zh/document/product/607/12218)。    
 使用语音消息及转文字服务获取鉴权时，房间号参数必须填 null。
 
 #### 函数原型
@@ -260,7 +272,7 @@ int  QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int dwSdkAppID, const char* strRoo
 | ------ | :----: | ------------------------------------------------------------ |
 | dwSdkAppID    			|int   		|来自腾讯云控制台的 AppId 号码。		|
 | strRoomID    		|char*     |房间号，最大支持127字符（使用语音消息及转文字服务，房间号参数必须填 null）。|
-| strOpenID  		|char*     	|用户标识。与 Init 时候的 openID相同。|
+| strOpenID  		|char*     	|用户标识。与 Init 时候的 openID 相同。|
 | strKey    			|char*	    	|来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的权限密钥。					|
 |strAuthBuffer		|char*	    	|返回的 authbuff							|
 | bufferLength   		|int    		|传入的 authbuff 长度，建议为 500						|
@@ -286,6 +298,7 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retA
 ```
 ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)
 ```
+
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|
 | roomID			| char*    		|房间号，最大支持127字符	|
@@ -293,7 +306,7 @@ ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, 
 | authBuffer    		|char*     	|鉴权码			|
 | buffLen   			|int   		|鉴权码长度		|
 
-房间音频类型请参考 [音质选择](https://intl.cloud.tencent.com/document/product/607/18522)。
+房间音频类型请参考 [音质选择](https://intl.cloud.tencent.com/zh/document/product/607/18522)。
 
 #### 示例代码  
 
@@ -362,7 +375,13 @@ context->IsRoomEntered();
 
 通过调用此接口可以退出所在房间。这是一个异步接口，返回值为 AV_OK 的时候代表异步投递成功。
 
-> !如果应用中有退房后立即进房的场景，在接口调用流程上，开发者无需要等待 ExitRoom 的回调 RoomExitComplete 通知，只需直接调用接口。
+
+
+<dx-alert infotype="notice" title="">
+如果应用中有退房后立即进房的场景，在接口调用流程上，开发者无需要等待 ExitRoom 的回调 RoomExitComplete 通知，只需直接调用接口。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -625,7 +644,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetMicList(ppDeviceInfoList,nCount);
 
 
 ### 选中麦克风设备
-此接口用来选中麦克风设备。如果不调用或者传入"DEVICEID_DEFAULT"，则选中系统默认设备。设备 ID 来自于 GetMicList 返回列表。
+此接口用来选中麦克风设备。如果不调用或者传入 "DEVICEID_DEFAULT"，则选中系统默认设备。设备 ID 来自于 GetMicList 返回列表。
 
 #### 函数原型  
 
@@ -647,7 +666,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->SelectMic(pMicID);
 ### 开启或关闭麦克风
 
 此接口用来开启关闭麦克风。加入房间默认不打开麦克风及扬声器。
-**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://intl.cloud.tencent.com/document/product/607/31504) 进行调用。**
+
 
 EnableMic = EnableAudioCaptureDevice + EnableAudioSend
 
@@ -766,7 +785,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->IsAudioSendEnabled();
 
 此接口用于获取麦克风实时音量，返回值为 int 类型。建议 20ms 获取一次。值域为 0 到 100，通过此接口可以获取到麦克风采集到的实时音量情况。
 
->?此接口不适用于语音消息服务。
+
+
+<dx-alert infotype="explain" title="">
+此接口不适用于语音消息服务。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -783,7 +808,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetMicLevel();
 ### 获取音频上行实时音量
 
 此接口用于获取自己音频上行实时音量，返回值为 int 类型，取值范围为 0 到 100。
->?此接口不适用于语音消息服务。
+
+
+<dx-alert infotype="explain" title="">
+此接口不适用于语音消息服务。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -800,8 +831,14 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetSendStreamLevel();
 ### 设置麦克风软件音量
 
 此接口用于设置麦克风的音量。参数 volume 用于设置麦克风的音量，相当于对采集的声音做衰减或增益，当数值为 0 的时候表示静音，当数值为 100 的时候表示音量不增不减，默认数值为 100。
->?此接口不适用于语音消息服务。
->
+
+
+<dx-alert infotype="explain" title="">
+此接口不适用于语音消息服务。
+</dx-alert>
+
+
+
 #### 函数原型  
 
 ```
@@ -820,8 +857,14 @@ ITMGContextGetInstance()->GetAudioCtrl()->SetMicVolume(vol);
 ### 获取麦克风软件音量
 
 此接口用于获取麦克风的音量。返回值为一个int类型数值，返回值为 101代表没调用过接口 SetMicVolume。
->?此接口不适用于语音消息服务。
->
+
+
+<dx-alert infotype="explain" title="">
+此接口不适用于语音消息服务。
+</dx-alert>
+
+
+
 #### 函数原型  
 ```
 ITMGAudioCtrl virtual int GetMicVolume()
@@ -893,8 +936,6 @@ ITMGContextGetInstance()->GetAudioCtrl()->SelectSpeaker(pSpeakerID);
 ### 开启或关闭扬声器
 
 此接口用于开启关闭扬声器。
-**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://intl.cloud.tencent.com/document/product/607/31504) 进行调用。**
-
 EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv
 
 #### 函数原型  
@@ -1106,11 +1147,17 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableLoopBack(true);
 
 语音消息，录制并发送一段语音消息，同时可以将语音消息转成文字，也可以同时将文字进行翻译。
 
->?建议使用流式语音转文字服务
+
+
+<dx-alert infotype="explain" title="">
+建议使用流式语音转文字服务。
+</dx-alert>
+
+
 
 ### 语音消息及语音转文字流程图
 
-<img src="https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png" width="70%">
+![](https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png)
 
 
 
@@ -1147,7 +1194,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableLoopBack(true);
 
 未初始化前，SDK 处于未初始化阶段，需要通过接口 Init 初始化 SDK，才可以使用实时语音及语音消息服务。
 
-使用问题可参考 [离线语音相关问题](https://intl.cloud.tencent.com/document/product/607/30258)。
+使用问题可参考 [离线语音相关问题](https://intl.cloud.tencent.com/zh/document/product/607/39716)。
 
 ### 初始化相关接口
 
@@ -1187,7 +1234,7 @@ ITMGContextGetInstance()->GetPTT()->ApplyPTTAuthbuffer(authBuffer,authBufferLen)
 
 ### 启动流式语音识别
 
-此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回，可以指定语言进行识别，也可以将语音中识别到的信息翻译成指定的语言返回。**停止录音调用StopRecording**。
+此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回，可以指定语言进行识别，也可以将语音中识别到的信息翻译成指定的语言返回。**停止录音调用 StopRecording**。
 
 #### 函数原型  
 
@@ -1195,11 +1242,12 @@ ITMGContextGetInstance()->GetPTT()->ApplyPTTAuthbuffer(authBuffer,authBufferLen)
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath) 
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* translateLanguage,const char* translateLanguage) 
 ```
+
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|
 | filePath    	|char*	|存放的语音路径	|
-| speechLanguage    |char*                     |识别成指定文字的语言参数，语音转文字的参数请参见 [语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)|
-| translateLanguage    |char*                     |翻译成指定文字的语言参数，语音转文字的参数请参见 [语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)（此参数暂不可用,请填写与 speechLanguage 相同的参数)|
+| speechLanguage    |char*                     |识别成指定文字的语言参数，语音转文字的参数请参见 [语言参数参考列表](https://intl.cloud.tencent.com/zh/document/product/607/30260)|
+| translateLanguage    |char*                     |翻译成指定文字的语言参数，语音转文字的参数请参见 [语言参数参考列表](https://intl.cloud.tencent.com/zh/document/product/607/30260)（此参数暂不可用,请填写与 speechLanguage 相同的参数)|
 
 #### 示例代码  
 ```
@@ -1212,6 +1260,7 @@ ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(fileP
 - ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING 是在录音过程中就会实时返回识别到的文字，相当于边说话边返回识别到的文字。
 根据需求在 OnEvent 函数中对相应事件消息进行判断。传递的参数包含以下四个信息。
 
+
 |消息名称     | 含义         |
 | ------------- |:-------------:|
 | result    	|用于判断流式语音识别是否成功的返回码		|
@@ -1219,7 +1268,13 @@ ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(fileP
 | file_path 	|录音存放的本地地址		|
 | file_id 		|录音在后台的 url 地址，录音在服务器存放90天|
 
->!监听 ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING 消息时，file_id 为空。
+
+
+<dx-alert infotype="notice" title="">
+监听 ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING 消息时，file_id 为空。
+</dx-alert>
+
+
 
 #### 错误码
 
@@ -1425,7 +1480,13 @@ ITMGContextGetInstance()->GetPTT()->CancelRecording();
 ### 获取语音消息麦克风实时音量
 
 此接口用于获取麦克风实时音量，返回值为 int 类型，值域为0到200。
->?此接口不同于实时语音接口，此接口在 ITMGPTT.java 中。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT.java 中。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -1443,7 +1504,13 @@ ITMGContext.GetInstance(this).GetPTT().GetMicLevel();
 ### 设置语音消息录制音量
 
 此接口用于设置离线语音录制音量，值域为0到200。
->?此接口不同于实时语音接口，此接口在 ITMGPTT.java 中。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT.java 中。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -1460,7 +1527,12 @@ ITMGContextGetInstance()->GetPTT()->SetMicVolume(100);
 ### 获取语音消息录制音量
 
 此接口用于获取离线语音录制音量。返回值为 int 类型，值域为0到200。
->?此接口不同于实时语音接口，此接口在 ITMGPTT 中。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT 中。
+</dx-alert>
+
 
 #### 函数原型  
 
@@ -1477,7 +1549,13 @@ ITMGContextGetInstance()->GetPTT()->GetMicVolume();
 ### 获取语音消息扬声器实时音量
 
 此接口用于获取扬声器实时音量。返回值为 int 类型，值域为0到200。
->?此接口不同于实时语音接口，此接口在 ITMGPTT 中。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT 中。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -1494,7 +1572,12 @@ ITMGContextGetInstance()->GetPTT()->GetSpeakerLevel();
 ### 设置语音消息播放音量
 
 此接口用于设置离线语音播放音量，值域为0到200。
->?此接口不同于实时语音接口，此接口在 ITMGPTT 中。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT 中。
+</dx-alert>
+
 
 #### 函数原型  
 
@@ -1511,7 +1594,13 @@ ITMGContextGetInstance()->GetPTT()->SetSpeakerVolume(100);
 ### 获取语音消息播放音量
 
 此接口用于获取离线语音播放音量。返回值为 int 类型，值域为0到200。
->?此接口不同于实时语音接口，此接口在 ITMGPTT 中。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT 中。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -1535,6 +1624,7 @@ ITMGContextGetInstance()->GetPTT()->GetSpeakerVolume();
 ```
 ITMGPTT virtual int PlayRecordedFile(const char* filePath)
 ```
+
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|
 | filePath    |char*                       |本地语音文件的路径|
@@ -1803,11 +1893,12 @@ ITMGContextGetInstance()->GetPTT()->SpeechToText(fileID);
 ```
 ITMGPTT virtual int SpeechToText(const char* fileID,const char* speechLanguage,const char* translateLanguage)
 ```
+
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|
 | fileID    |char*                     |语音文件 url，录音在服务器存放 90 天|
-| speechLanguage    |char*                     |识别出指定文字的语言参数，语音转文字的参数参见 [语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)|
-| translatelanguage    |char*                  |翻译成指定文字的语言参数，语音转文字的参数参见 [语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)（此参数暂时无效，填入参数应与 speechLanguage 一致）|
+| speechLanguage    |char*                     |识别出指定文字的语言参数，语音转文字的参数参见 [语言参数参考列表](https://intl.cloud.tencent.com/zh/document/product/607/30260)|
+| translatelanguage    |char*                  |翻译成指定文字的语言参数，语音转文字的参数参见 [语言参数参考列表](https://intl.cloud.tencent.com/zh/document/product/607/30260)（此参数暂时无效，填入参数应与 speechLanguage 一致）|
 
 #### 示例代码  
 
@@ -2039,3 +2130,4 @@ ITMGContextGetInstance()->GetAudioCtrl()->RemoveAudioBlackList(openId);
 | ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE 	|result; file_path  			|{"file_path":"","result":0}|
 | ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	|result; text;file_id		|{"file_id":"","text":"","result":0}|
 | ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE	|result; file_path; text;file_id		|{"file_id":"","file_path":","text":"","result":0}|
+
