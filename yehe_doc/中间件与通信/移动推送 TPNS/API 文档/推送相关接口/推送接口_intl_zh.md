@@ -21,7 +21,7 @@
 | message       | Object  | 是                                       | 消息体，请参见 [消息体类型](#消息体类型)                     |
 | message_type  | String  | 是                                       | 消息类型：<li>notify：通知</li><li>message：透传消息/静默消息</li> |
 | environment   | String  | 是（仅 iOS 平台使用）                    | 用户指定推送环境，仅限 iOS 平台推送使用：<li>product： 推送生产环境</li><li>dev： 推送开发环境</li> |
-| upload_id     | Integer | 是（仅号码包推送\token文件包推送时使用） | 号码包或 token 包的上传 ID                                   |
+| upload_id     | Integer | 是（仅号码包推送\ token 文件包推送时使用） | 号码包或 token 包的上传 ID                                   |
 
 <span id="audience_type"></span>
 ### audience_type：推送目标
@@ -47,7 +47,7 @@ Push API 提供了多种推送目标的，例如全量、标签、单设备、�
     "audience_type": "all"
   }
 ```
-- 标签推送（tag_rules方式）：广东和湖南，并且是20200408当天活跃过的男性用户。
+- 标签推送（tag_rules 方式）：广东和湖南，并且是20200408当天活跃过的男性用户。
 ```json
  {
   "audience_type": "tag",
@@ -179,7 +179,7 @@ Android 平台具体字段如下表：
 | builder_id     | Integer | android | 0      | 否   | 本地通知样式标识                                             |
 | badge_type     | Integer | android | -1     | 否   | 通知角标：<li>-2：自动增加1，支持华为设备</li><li>-1：不变，支持华为、vivo 设备</li><li>[0, 100)：直接设置，支持华为、vivo 设备</li>**注意**：不同厂商设备的角标适配能力不同，各参数值实现效果请参见 <a href="https://intl.cloud.tencent.com/document/product/1024/35828">角标适配指南<a> |
 | ring           | Integer | android | 1      | 否   | 是否有铃声：<li>0：没有铃声</li><li>1：有铃声  </li>           |
-| ring_raw       | String  | android | 无     | 否   | 指定 Android 工程里 raw 目录中的铃声文件名，不需要后缀名。<br>**说明：**自定义铃声仅华为、小米、FCM 和 TPNS 通道支持。    |
+| ring_raw       | String  | android | 无     | 否   | 指定 Android 工程里 raw 目录中的铃声文件名，不需要后缀名。<br>**说明：**自定义铃声仅华为、小米、FCM 和 TPNS 通道支持，需配合`n_ch_id`字段使用，配置步骤可参考 [如何设置自定义铃声](https://intl.cloud.tencent.com/document/product/1024/32624)。    |
 | vibrate        | Integer | android | 1      | 否   | 是否使用震动：<li>0：没有震动</li><li>1：有震动</li>           |
 | lights         | Integer | android | 1      | 否   | 是否使用呼吸灯：<li>0：不使用呼吸灯</li><li>1：使用呼吸灯</li> |
 | clearable      | Integer | android | 1      | 否   | 通知栏是否可清除                                             |
@@ -189,7 +189,7 @@ Android 平台具体字段如下表：
 | small_icon     | String  | android | 无     | 否   | 消息在状态栏显示的图标，若不设置，则显示应用图标             |
 | icon_color     | Integer | android | 0      | 否   | 通知栏小图标染色 <li>仅 TPNS 通道有效</li> <li>需要使用 RGB 颜色的十进制值，例如 RGB 颜色 #01e240，请填入123456 </li> |
 | action         | Object  | android | 有     | 否   | 设置点击通知栏之后的行为，默认为打开 App，详情参考  [action 参数说明](#action) |
-| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）<br><b> 温馨提示</b>：华为官方通知：「2021年9月30日起停用 V2 协议」。TPNS 已将华为推送协议升级到 V5，V5 协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://cloud.tencent.com/document/product/548/48572#android-.E4.BD.BF.E7.94.A8">Intent</a> 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发 |
+| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）<br><b> 温馨提示</b>：华为官方通知：「2021年9月30日起停用 V2 协议」。TPNS 已将华为推送协议升级到 V5，V5 协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://intl.cloud.tencent.com/document/product/1024/38354">Intent</a> 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发 |
 | show_type      | Integer | android | 2      | 否   | 应用前台时，是否展示通知 。 默认展示，仅对 TPNS 通道、FCM 通道有效 <li>1：不展示</li><li>2：展示</br>说明：若取值为1且应用在前台，终端用户对该条推送无感知，但有抵达数据上报</li> |
 
 
@@ -483,6 +483,7 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 
 <span id="channel_rules参数说明1"></span>
 
+
 ### channel_rules 参数说明
 
 | 字段名  | 类型    | 父项目        | 是否必填 | 参数说明                                                     |
@@ -510,7 +511,7 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | ----------- | -------| ------------------------------------------------------------ |
 | seq         | Integer | 与请求包一致（如果请求包无该字段，则该字段返回为0）              |
 | push_id     | String | 推送 ID                                                      |
-| invalid_targe_list | Array      |  仅推送目标为 token_list 时返回。该字段会存储被过滤的无效 token ，有效 token 会正常下发。  |
+| invalid_targe_list | Array      |  仅推送目标为 token_list 且 ignore_invalid_token 值为1时返回，该字段会存储被过滤的无效 token ，有效 token 会正常下发。  |
 | ret_code    | Integer | 错误码，详细参照错误码对照表                                 |
 | environment | String  | 用户指定推送环境，仅支持 iOS<li>product： 生产环境</li><li>dev： 开发环境 </li> |
 | err_msg     | String  | 请求出错时的错误信息                                         |
