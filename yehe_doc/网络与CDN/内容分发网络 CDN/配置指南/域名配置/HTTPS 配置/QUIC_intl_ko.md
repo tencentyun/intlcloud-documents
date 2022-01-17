@@ -4,8 +4,6 @@ Tencent Cloud CDN은 2022년 01월 05일 QUIC 액세스 기능을 정식 배포�
 QUIC 액세스 기능 활성화 후, QUIC 요청 발생 건수는 종량제 후불제로 과금됩니다. 자세한 내용은 [과금 설명- QUIC 액세스 요청 건수 과금](https://intl.cloud.tencent.com/zh/document/product/228/2949)을 참고하십시오.
 온라인 과금 시 사전에 메시지를 푸시하고 콘솔 및 문서에 공지를 게시할 예정이오니 확인 부탁드립니다.
 
-
-
 ## 기능 소개
 
 QUIC(Quick UDP Internet Connections)는 범용 네트워크 프로토콜로서 네트워크 보안을 보장함과 동시에 전송 및 연결 시 지연을 줄여 네트워크 혼잡을 방지합니다. QUIC 프로토콜을 활성화하여 클라이언트가 CDN 노드에 액세스할 때 데이터 전송 보안을 보장하고 액세스 효율을 높일 수 있습니다.
@@ -16,17 +14,15 @@ QUIC(Quick UDP Internet Connections)는 범용 네트워크 프로토콜로서 �
 
 1. QUIC 활성화:
 
-- [CDN 콘솔](https://console.intl.cloud.tencent.com/cdn)에 로그인하여 신규 도메인 추가 시, QUIC 플랫폼 항목을 선택하여 도메인에 QUIC 플랫폼을 연결할 수 있습니다.
-  ![img](https://tva1.sinaimg.cn/large/008i3skNgy1gy2n247nq5j306y014741.jpg)
-
-- 도메인 추가 후, 도메인 관리로 이동하여 [HTTPS 설정] Tab으로 전환하면 [QUIC] 설정을 확인할 수 있습니다. 기본적으로 비활성화 상태이며 직접 활성화할 수 있습니다.
-  **참고:** 활성화하기 전에 HTTPS 인증서를 설정하십시오.
-  ![img](https://tva1.sinaimg.cn/large/008i3skNgy1gy2n1viwjjj30pf034t8t.jpg)
+도메인을 추가한 뒤 도메인 관리로 이동하여 [HTTPS 설정] Tab으로 전환하면 [QUIC] 설정을 확인할 수 있습니다. 기본적으로 비활성화로 설정되어 있으며 사용자가 활성화할 수 있습니다.
+**참고:** 활성화하기 전에 HTTPS 인증서를 설정하십시오.
+![img](https://tva1.sinaimg.cn/large/008i3skNgy1gy2n1viwjjj30pf034t8t.jpg)
 
 > 참고:
 >
 > - 서비스 유형 전환에는 리소스 플랫폼 스케줄링이 포함됩니다. QUIC 플랫폼 연결 후에는 도메인의 서비스 유형을 전환하지 않는 것이 좋습니다.
 > - 현재 QUIC 원본 가져오기는 지원되지 않습니다.
+> - 일부 플랫폼은 현재 QUIC를 지원하지 않습니다. 플랫폼 업그레이드 중이니 많은 관심 부탁드립니다.
 
 **설정 제한:**
 
@@ -40,4 +36,3 @@ QUIC(Quick UDP Internet Connections)는 범용 네트워크 프로토콜로서 �
 ## 과금 규정
 
 QUIC 액세스는 부가 가치 서비스로, QUIC 요청 건수는 종량제 후불제로 과금됩니다. 자세한 내용은 [과금 설명](https://intl.cloud.tencent.com/zh/document/product/228/2949)을 참고하십시오.
-
