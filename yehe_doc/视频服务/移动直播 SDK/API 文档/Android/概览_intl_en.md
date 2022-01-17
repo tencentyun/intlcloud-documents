@@ -12,12 +12,12 @@ The player has the following capabilities:
 
 ### Basic SDK APIs
 
-| API                                             | Description                                                         |
+| API                          | Description   |
 | --------------- | ---------------- |
 | [setObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#aa851c4bf90929cddfd7067cfdd6049b4) | Sets player callbacks. |
 
 ### Basic playback APIs  
-| API                                             | Description                                                         |
+| API                          | Description  |
 | --------------- | --------------------------- |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#afc848d88fe99790b8c0988b8525dd4d9) | Sets the player’s rendering view `TXCloudVideoView`. |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#af2ac91d628fe510008b3c169896a7e81) | Sets the player’s rendering view `TextureView`. |
@@ -39,7 +39,7 @@ The player has the following capabilities:
 
 ### Audio APIs
 
-| API                                             | Description                                                         |
+| API          | Description         |
 | ---------------------- | ---------------------- |
 | [pauseAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#aa4a006f050968e6d5e9405b40b8e299b)             | Pauses the player’s audio.   |
 | [resumeAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#a4ca6a40a3adba3699caaf1843a81b701)            | Resumes the player’s audio.   |
@@ -48,7 +48,7 @@ The player has the following capabilities:
 
 ### Other APIs
 
-| API                                             | Description                                                         |
+| API          | Description         |
 | ---------------------- | ---------------------- |
 | [setCacheParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#a8a4f8f8e220a6e4aa2a04ca3e866efcb)             | Sets the minimum and maximum cache time (s) for auto adjustment by the player.   |
 | [showDebugView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#ad3e02a7295f3ba2221fea015f352616b)            | Sets whether to show the debug view of player status information.   |
@@ -57,13 +57,14 @@ The player has the following capabilities:
 Player callbacks
 ### Basic SDK callback APIs
 
-| API                                             | Description                                                         |
+| API       | Description                 |
 | --------- | --------------- |
 | [onError](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#af2195d3dbecb37826a101dfe525202c0)   | Callback for error. This callback is returned when the player encounters an error. |
 | [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a88c8cba39a928dd7964f8f1753bd5bfe) | Callback for warning                                 |
+| [onConnected](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#aa511a51b9f4dad03d35cbe08ad616d45) | Callback for successfully connecting to the server    |
 
 ### Video callback APIs
-| API                                             | Description                                                         |
+| API       | Description                 |
 | --------- | --------------- |
 | [onVideoResolutionChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a3c69dfdfb02e1a3f3520b1a5a7a6c8e6)   | Callback for change of player resolution|
 | [onVideoLoading](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a8a1796d37d96e925a4f2809f73ce8326) | Callback for loading video|
@@ -72,14 +73,14 @@ Player callbacks
 | [onRenderVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a346a3206ad4d0f38385844c1456a012f) | Callback for custom video rendering|
 
 ### Audio callback APIs
-| API                                             | Description                                                         |
+| API       | Description                 |
 | --------- | --------------- |
 | [onAudioLoading](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a9ecbc1b3ff1a907c8110a2b3d00a703a)   | Callback for loading audio|
 | [onAudioPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a00baf0a363714f7eca4baf94400d8a97)   | Callback for audio playback|
 | [onPlayoutVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a57fc000bf5e935f7253fa94e1750359e) | Callback of the player’s volume                       |
 
 ### Statistics callback APIs
-| API                                             | Description                                                         |
+| API       | Description                 |
 | --------- | --------------- |
 | [onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#ab10e1f4e22e9bb73e3cea4ae15c36465)   | Callback of player statistics |
 
@@ -104,7 +105,7 @@ It has the following capabilities:
 
 ### Basic publishing APIs
 
-| API                                             | Description                                                         |
+| API      | Description                         |
 | ------------------ | --------------- |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#afc848d88fe99790b8c0988b8525dd4d9)      | Sets the rendering view for local camera preview. |
 | [setRenderView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#af2ac91d628fe510008b3c169896a7e81)      | Sets the rendering view for local camera preview. |
@@ -115,7 +116,7 @@ It has the following capabilities:
 
 ### Video APIs
 
-| API                                             | Description                                                         |
+| API                          | Description                |
 | --------------- | --------------------------------------------------- |
 | [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ae678ad67285baf08852712abee2e3cc5) | Sets video encoding parameters for publishing. |
 | [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aa08046b0f429f318f36249fa9d0276f2) | Sets video rotation for local camera preview.                  |
@@ -137,14 +138,14 @@ It has the following capabilities:
 
 ### Beauty filter APIs
 
-| API                                             | Description                                                         |
+| API                          | Description                         |
 | --------------- | --------------- |
 | [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html) | Gets the beauty filter management object [TXBeautyManager](https://intl.cloud.tencent.com/document/product/1071/41677), which is used to set beauty filters. |
 
 
 ### Audio APIs
 
-| API                                             | Description                                                         |
+| API                          | Description         |
 | --------------- | ---------------------- |
 | [startMicrophone](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a26deb222d84392f554a698ef49bc45db) | Turns the mic on.           |
 | [stopMicrophone](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a7dbdb37c3f274ce540d6c9b31e2db57f) | Turns the mic off.           |
@@ -152,18 +153,18 @@ It has the following capabilities:
 | [enableVolumeEvaluation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aaa893a96eff34a7ba660441f7597d6d8)                                       | Enables the volume reminder for capturing. |
 
 ### Audio effect APIs
-| API                                             | Description                                                         |
+| API                          | Description     |
 | --------------- | ------------------ |
 | [getAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html) | Gets the audio effect management object. |
 
 ### Device management APIs
-| API                                             | Description                                                         |
+| API                          | Description     |
 | --------------- | ------------------ |
 | [getDeviceManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__android.html) | Gets the device management object. |
 
 ### Other APIs
 
-| API                                             | Description                                                         |
+| API                          | Description  |
 | --------------- | ------------------------------------- |
 | [setProperty](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#aa3c76edc981e68a754d5a450cb85eb43) | Calls an advanced API of `V2TXLivePusher`. |
 | [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ade16e8f15b9f64e0339012554c1a8f67) | Sets On-Cloud MixTranscoding parameters.              |
@@ -174,13 +175,13 @@ It has the following capabilities:
 
 ### Basic SDK callback APIs
 
-| API                                             | Description                                                         |
+| API                          | Description                 |
 | --------------- | --------------- |
 | [onError](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a1c111d2497b029114f3d3ea755fbf9ae) | Callback for error. This callback is returned when the publisher encounters an error. |
 | [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#abd54414cbd5d52c096f9cc090cfe1fec) | Callback for warning                                 |
 
 ### Video callback APIs
-| API                                             | Description                                                         |
+| API                          | Description         |
 | --------------- | ---------------------------------- |
 | [onPushStatusUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a430ba5120ee20b0120a952535aa3cdbc) | Callback of the publisher’s connection status           |
 | [onSnapshotComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#aa01faf2222f9c945025c4826a26e3a40) | Callback for a screenshot taken                         |
@@ -190,17 +191,17 @@ It has the following capabilities:
 | [onCaptureFirstVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#af6c3d8ad3f460670aee56187a001f587) | Callback for capturing the first video frame       |
 
 ### Audio callback APIs
-| API                                             | Description                                                         |
+| API                          | Description   |
 | --------------- | ---------------------------- |
 | [onCaptureFirstAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#ad10ac31050e915d349a2a953915cbefe) | Callback for capturing the first audio frame |
 | [onMicrophoneVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a8a9798da9f593fb00878a823bc3fdbc7) | Callback of mic capturing volume       |
 
 ### Mixtranscoding callback APIs
-| API                                             | Description                                                         |
+| API                          | Description     |
 | --------------- | ------------------------------ |
 | [onSetMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a0f11cee9e2659f7ea8484fdffd6b8583) | Callback for setting On-Cloud MixTranscoding parameters |
 
 ### Statistics callback APIs
-| API                                             | Description                                                         |
+| API                          | Description           |
 | --------------- | ------------------------ |
 | [onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#ab10e1f4e22e9bb73e3cea4ae15c36465) | Callback of publisher statistics |

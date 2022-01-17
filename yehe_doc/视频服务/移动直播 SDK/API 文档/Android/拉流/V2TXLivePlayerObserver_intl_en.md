@@ -18,13 +18,14 @@ public void onError(V2TXLivePlayer player, int code, String msg, Bundle extraInf
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | code    | int    | Error code   |
 | msg  | String | Error message |
 | extraInfo | Bundle|  Extra information |
 
+***
 
 ### onWarning
 
@@ -35,13 +36,29 @@ public void onWarning(V2TXLivePlayer player, int code, String msg, Bundle extraI
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | code      | int    | Warning code     |
 | msg       | String | Warning message |
 | extraInfo | Bundle |  Extra information |
 
+***
+
+### onConnected
+
+Callback for successfully connecting to the server
+
+```
+public void onConnected(V2TXLivePlayer player, Bundle extraInfo) 
+```
+
+#### Parameters
+
+| Parameter        | Type    | Description                                                                                                      |
+|-----|-----|-----|
+| player | V2TXLivePlayer |  The player object sending the callback |
+| extraInfo | Bundle |  Extra information |
 
 ## Video Callback APIs
 ### onVideoResolutionChanged
@@ -52,7 +69,7 @@ Callback for change of player resolution
 public void onVideoResolutionChanged(V2TXLivePlayer player, int width, int height) 
 ```
 #### Parameters
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | width | int |  Video width |
@@ -66,7 +83,7 @@ Callback for loading video
 public void onVideoLoading(V2TXLivePlayer player, Bundle extraInfo)
 ```
 #### Parameters
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | extraInfo | Bundle |  Extra information |
@@ -79,7 +96,7 @@ Callback for video playback
 public void onVideoPlaying(V2TXLivePlayer player, boolean firstPlay, Bundle extraInfo)
 ```
 #### Parameters
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | firstPlay | boolean | Whether it is the first playback |
@@ -94,11 +111,12 @@ public void onSnapshotComplete(V2TXLivePlayer player, Bitmap image)
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | image | Bitmap * | The video image captured |
 
+***
 
 ### onRenderVideoFrame
 
@@ -111,10 +129,12 @@ public void onRenderVideoFrame(V2TXLivePlayer player, V2TXLiveVideoFrame videoFr
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | videoFrame | V2TXLiveVideoFrame | Video frame |
+
+***
 
 
 ## Audio Callback APIs
@@ -126,7 +146,7 @@ Callback for loading audio
 public void onAudioLoading(V2TXLivePlayer player, Bundle extraInfo)
 ```
 #### Parameters
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | extraInfo | Bundle |  Extra information |
@@ -139,7 +159,7 @@ Callback for audio playback
 public void onAudioPlaying(V2TXLivePlayer player, boolean firstPlay, Bundle extraInfo)
 ```
 #### Parameters
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | firstPlay | boolean | Whether it is the first playback |
@@ -147,29 +167,30 @@ public void onAudioPlaying(V2TXLivePlayer player, boolean firstPlay, Bundle extr
 
 ### onPlayoutVolumeUpdate
 
-Callback of the player’s volume.
+Callback of the player’s volume
 ```
 public void onPlayoutVolumeUpdate(V2TXLivePlayer player, int volume)
 ```
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | volume | int | Volume. Value range: 0-100 |
 
+***
 
 ## Statistics Callback API
 ### onStatisticsUpdate
-Callback of the player’s statistics.
+Callback of the player’s statistics
 ```
 public void onStatisticsUpdate(V2TXLivePlayer player, V2TXLivePlayerStatistics statistics)
 ```
 
 #### Parameters
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 |-----|-----|-----|
 | player | V2TXLivePlayer |  The player object sending the callback |
 | statistics | V2TXLivePlayerStatistics | Player statistics |
