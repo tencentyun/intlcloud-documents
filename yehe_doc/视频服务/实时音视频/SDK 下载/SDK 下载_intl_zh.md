@@ -15,83 +15,83 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo'})" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
       <td style="text-align:center">3M（arm64）</td>
    </tr>
      <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo'})" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
       <td style="text-align:center">jar：546K<br> so（armeabi）：4.5M<br> so（armv7）：4.5M<br>so（arm64）：5.3M</td>
    </tr>
      <tr>
       <td style="text-align:center">Windows(C++)  </td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'zip'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'doc-demo'})" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'doc-sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
       <td style="text-align:center">12.7M（C++ x86）<br>15.6M（C++ x64）</td>
    </tr>
      <tr>
       <td style="text-align:center">Windows(C#) </td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'zip'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'doc-demo'})" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'doc-sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
       <td style="text-align:center">13.8M（C# x64）<br>13.3M（C# x86）</td>
    </tr>
      <tr>
       <td style="text-align:center">Mac</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'zip'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'doc-demo'})" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'doc-sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35094">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35094">DOC</a></td>
       <td style="text-align:center">2.05M（arm64）</td>
    </tr>
      <tr>
       <td style="text-align:center">Web</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'zip'})" href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'doc-demo'})" href="https://intl.cloud.tencent.com/document/product/647/35607">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'doc-sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35096">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'zip'})" target="_blank" href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35607">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35096">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
    <tr>
       <td style="text-align:center">Electron  </td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'zip'})" href="https://web.sdk.qcloud.com/trtc/electron/download/TXLiteAVSDK_TRTC_Electron_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'github'})" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'gitee'})" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'doc-demo'})" href="https://intl.cloud.tencent.com/document/product/647/35089">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'doc-sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35097">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'zip'})" target="_blank" href="https://web.sdk.qcloud.com/trtc/electron/download/TXLiteAVSDK_TRTC_Electron_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35089">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35097">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
 <tr>
       <td style="text-align:center">Flutter</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'zip'})" href="https://pub.dev/packages/tencent_trtc_cloud/versions">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'github'})" href="https://github.com/c1avie/trtc_demo">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'zip'})" target="_blank" href="https://pub.dev/packages/tencent_trtc_cloud/versions">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'github'})" target="_blank" href="https://github.com/c1avie/trtc_demo">Github</a></td>
       <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'doc-demo'})" href="https://intl.cloud.tencent.com/document/product/647/39243">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'doc-sdk'})" href="https://intl.cloud.tencent.com/document/product/647/35098">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/39243">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35098">DOC</a></td>
       <td style="text-align:center">N/A</td>
 </tr>
 <tr>
       <td style="text-align:center">React Native</td>
       <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'github'})" href="https://github.com/tencentyun/TRTCReactNative">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCReactNative">Github</a></td>
       <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-demo'})" href="https://intl.cloud.tencent.com/document/product/647/43297">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-sdk'})" href="https://intl.cloud.tencent.com/document/product/647/43298">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/43297">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/43298">DOC</a></td>
       <td style="text-align:center">N/A</td>
 </tr>
 </table>
@@ -118,20 +118,20 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip', ext2:'professional'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'github', ext2:'professional'})" href="https://github.com/tencentyun/LiteAVProfessional_iOS">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip', ext2:'professional'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'github', ext2:'professional'})" target="_blank" href="https://github.com/tencentyun/LiteAVProfessional_iOS">Github</a></td>
       <td style="text-align:center">支持</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo', ext2:'professional'})" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk', ext2:'professional'})" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
       <td style="text-align:center">3.2M（arm64）</td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip', ext2:'professional'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'github', ext2:'professional'})" href="https://github.com/tencentyun/LiteAVProfessional_Android">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip', ext2:'professional'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'github', ext2:'professional'})" target="_blank" href="https://github.com/tencentyun/LiteAVProfessional_Android">Github</a></td>
       <td style="text-align:center">支持</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo', ext2:'professional'})" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk', ext2:'professional'})" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
       <td style="text-align:center">jar：1M<br> so（armeabi）：5.7M<br> so（armv7）：5.7M<br>so（arm64）：6.8M</td>
    </tr>
 </table>
@@ -157,18 +157,18 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip', ext2:'enterprise'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_iOS_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip', ext2:'enterprise'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_iOS_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center">支持</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo', ext2:'enterprise'})" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk', ext2:'enterprise'})" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
       <td style="text-align:center"> 5.5M（arm64）</td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip', ext2:'enterprise'})" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_Android_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip', ext2:'enterprise'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_Android_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center">支持</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo', ext2:'enterprise'})" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk', ext2:'enterprise'})" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
       <td style="text-align:center"> jar：2.2M<br>so(armeabi)：9.3M</td>
    </tr>
 </table>
