@@ -1,9 +1,9 @@
 
 ## Overview
->?To save storage capacity, physical and logical backups in TencentDB for MySQL will be compressed with qpress and then packed with xbstream offered by Percona.
+>?In order to save the storage capacity, physical and logical backups in TencentDB for MySQL are to be compressed with qpress and then packed with xbstream offered by Percona.
 >
 The open-source Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a physical backup file of TencentDB for MySQL instance to a self-built database on CVM.
-- XtraBackup only supports Linux but not Windows.
+- XtraBackup only supports the Linux operating system.
 - For more information about how to restore data in Windows, see [Offline Migration of Data > Data Migration with Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464).
 
 ## Prerequisites
