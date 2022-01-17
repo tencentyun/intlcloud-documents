@@ -1,5 +1,5 @@
 ## Overview
-You can manage the permissions of existing database accounts in the TencentDB for MySQL console. Specifically, you can grant database accounts global or object-level permissions and cancel such permissions.
+You can manage the permissions of existing database accounts in the TencentDB for MySQL console. Specifically, you can grant or remove database accounts global as well as object-level permissions.
 
 ## Directions
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID or **Manage** in the **Operation** column to access the instance management page.
