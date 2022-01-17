@@ -384,7 +384,7 @@ function(err, data) { ... }
 | - UploadIdMarker | `UploadId` after which the returned list begins | String |
 | - NextKeyMarker | Key after which the next returned list begins if the list is truncated | String |
 | - NextUploadIdMarker | `UploadId` after which the next returned list begins if the list is truncated | String |
-| - MaxUploads | Maximum number of returned entries. Valid value range: 1-1000 | String | No |
+| - MaxUploads | Maximum number of returned entries. Valid value range: 1-1000 | String |
 | - IsTruncated | Whether the returned list is truncated. Valid value: `true`; `false` | String|
 | - Prefix | Object key prefix by which uploads are queried | String |
 | - Delimiter | Separating symbol used to group object keys, which is usually `/`. Objects with identical paths between `Prefix` or, if no `Prefix` is specified, the beginning of their keys, and the first delimiter are grouped together and defined as common prefixes. All common prefixes are listed. | String |
@@ -576,7 +576,7 @@ function(err, data) { ... }
 | NextPartNumberMarker  | The part after which the next returned list begins if the list is truncated.    | String    |
 | - MaxParts | Maximum number of entries returned at a time | String |
 | - IsTruncated | Whether the returned list is truncated. Valid values: `true`; `false` | String |
-| - Part | Array | Part information list | ObjectArray |
+| - Part | Part information list | ObjectArray |
 | - - PartNumber | Part number | String |
 | - - LastModified | Last modified time of a part | String |
 | - - ETag | MD5 checksum of a part | String |
