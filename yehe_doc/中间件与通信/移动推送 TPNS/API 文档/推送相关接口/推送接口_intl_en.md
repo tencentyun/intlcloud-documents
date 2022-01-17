@@ -1,4 +1,4 @@
-## API Description
+## API Calling Description
 
 **Request method**: POST.
 
@@ -179,7 +179,7 @@ The table below specifies parameters for the Android platform:
 | builder_id     | Integer | android | 0      | No   | Local notification style identifier                                             |
 | badge_type     | Integer | android | -1     | No   | Notification badge: <li>-2: automatically increased by 1, valid only for Huawei devices</li><li>-1: unchanged, valid only for Huawei and vivo devices</li><li>[0, 100): direct configuration, valid only for Huawei and vivo devices</li>**Note**: the badge adaptation capabilities vary depending on the vendor device. For details about the implementation effect of each parameter value, see <a href="https://intl.cloud.tencent.com/document/product/1024/35828">Badge Adaptation Guide<a>. |
 | ring           | Integer | android | 1      | No   | Whether there is a ringtone. Valid values:<li>`0`: no</li><li>`1`: yes</li>           |
-| ring_raw       | String  | android | Empty     | No   | Name of the ringtone file in the `raw` directory of the Android project; no extension is needed.<br>**Note:** custom ringtones are supported only for the Huawei, Mi, FCM, and TPNS channels.    |
+| ring_raw       | String  | android | Empty     | No   | Name of the ringtone file in the `raw` directory of the Android project; no extension is needed. <br>**Note**: custom ringtones are supported only for the Huawei, Mi, FCM, and TPNS channels and must be used with the field `n_ch_id`. For the configuration process, see [How do I set a custom ringtone?](https://intl.cloud.tencent.com/document/product/1024/32624).    |
 | vibrate        | Integer | android | 1      | No   | Whether to enable vibration. Valid values:<li>`0`: no</li><li>`1`: yes</li>           |
 | lights         | Integer | android | 1      | No    | Whether to use the breathing light. Valid values:<li>`0`: no</li><li>`1`: yes</li> |
 | clearable      | Integer | android | 1      | No   | Whether messages can be cleared from the notification bar. Valid values:<li>`0`: no</li><li>`1`: yes</li> |
@@ -189,7 +189,7 @@ The table below specifies parameters for the Android platform:
 | small_icon     | String  | android | Empty | No | The icon that the message displays in the status bar. If this parameter is not set, the application icon will be displayed. |
 | icon_color      | Integer | android | 0      | No | Color of the icon in the notification bar <li>This parameter takes effect only for the TPNS channel.</li> <li>To use an RGB color such as #01e240, enter `123456`. </li> |
 | action         | Object  | android | Yes | No | The action after the notification bar is clicked; the default action is to open the app. For more information, see [action parameter description](#action). |
-| custom_content | String  | android | Empty     | No   | User-defined field (which should be serialized into a JSON string)<br><b> Note:</b>Huawei has officially notified that the "V2 protocol will be suspended from September 30, 2021." TPNS has upgraded the Huawei push protocol to V5. The V5 protocol does not support carrying custom parameters through the "Extra Parameters" parameter. If you have integrated the Huawei vendor channel, we recommend you use the <a href="https://cloud.tencent.com/document/product/548/48572#android-.E4.BD.BF.E7.94.A8">Intent</a> method to carry custom parameters, otherwise the custom parameters will not be successfully delivered through the Huawei push channel. |
+| custom_content | String  | android | Empty     | No   | User-defined parameter (which should be serialized into a JSON string)<br><b> Note:</b>Huawei officially announced that "the v2 protocol will be disused starting September 30, 2021". TPNS has upgraded the Huawei push protocol to v5, which does not support carrying custom parameters through the **extra parameter(s)** field. If you have integrated the Huawei vendor channel, we recommend you use <a href="https://intl.cloud.tencent.com/document/product/1024/38354">Intent</a> to carry custom parameters; otherwise, custom parameters cannot be delivered through the Huawei channel. |
 | show_type      | Integer | android | 2      | No  | Whether to display the notification when the application is running in the foreground, which is displayed by default. This parameter takes effect only for the TPNS and FCM channels. Valid values:<li>`1`: no</li><li>`2`: yes</br>Note: if the value is `1` and the application is running in the foreground, this push is imperceptible to end users, but arrival data will be reported.</li> |
 
 
@@ -510,7 +510,7 @@ Optional push API parameters refer to advanced parameters that can be carried in
 | ----------- | -------| ------------------------------------------------------------ |
 | seq         | Integer | Same as the request (if the request does not contain this parameter, this parameter returns `0`).              |
 | push_id     | String | Push ID                                                      |
-| invalid_targe_list | Array      |  A value is returned only when the push target is `token_list`. This parameter stores filtered invalid tokens, and valid tokens will be delivered normally. |
+| invalid_targe_list | Array      |  This parameter is returned only when the push target is `token_list` and the value of `ignore_invalid_token` is `1`. This parameter stores filtered invalid tokens, and delivers to devices with valid tokens properly. |
 | ret_code    | Integer | Error code. For more information, please see the error codes table.                                 |
 | environment | String  | Push environment specified by the user (only for iOS). Valid values: <li>`product`: production environment</li><li>`dev`: development environment</li> |
 | err_msg     | String  | Error message when a request error occurs                                         |
@@ -540,7 +540,7 @@ Optional push API parameters refer to advanced parameters that can be carried in
         }
     ],
     "message_type": "notify",
-    "message": {
+    "message":{
     "title": "Test title",
     "content": "Test content",
     "xg_media_resources": "xxx1" , // Enter the URL of rich media elements, such as `https://www.xx.com/img/bd_logo1.png?qua=high`
@@ -586,7 +586,7 @@ Optional push API parameters refer to advanced parameters that can be carried in
 				"action": {
 						"action_type": 1,// Action type; 1. Open activity or application; 2. Open browser; 3. Open Intent
 						"activity": "xxx",
-						"aty_attr": {// activity attribute, only for action_type=1
+						"aty_attr": {// Activity attribute, only for action_type=1
 								"if": 0, // Intent's Flag attribute
 							    "pf": 0  // PendingIntent's Flag attribute
 						},

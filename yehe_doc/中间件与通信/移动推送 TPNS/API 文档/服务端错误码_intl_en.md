@@ -1,7 +1,7 @@
  The common errors of TPNS RESTful APIs mainly include the following:
 
 | Error Code | Description | Feedback API |
-| -------- | ---------------- | ---------------- | 
+| -------- | ---------------- | ---------------- | ----------- |
 | 1008001 | Parameter parsing error | General API |
 | 1008002 | Parameter missing | General API |
 | 1008003 | Authentication failed | General API |
@@ -24,7 +24,8 @@
 | 1008029 | Invalid token | Single push API, account binding API, and tag binding API |
 | 1008030 | The app is not paid | General error |
 | 1008031  | Application resources are terminated | General error |
-| 10110008 | The queried token and account do not exist | Account binding and query API |
+| 10110008 | The queried token or account does not exist | Account binding and query API |
 | 10010005 | The push target does not exist | Push API |
 | 10010012 | Invalid push time | Push API |
-| 10010018 | Repeated push | APIs for push to all devices and push to devices with specified tags |
+| 10010018 | Repeated push | Push APIs for full push and tag push |
+| 1008035  | The application AccessID is incorrect, or the service access point of your application does not match the domain address entered. Refer to [Service URL](https://intl.cloud.tencent.com/document/product/1024/38517) | General error |
