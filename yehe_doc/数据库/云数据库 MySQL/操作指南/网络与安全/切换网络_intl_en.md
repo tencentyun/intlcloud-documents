@@ -21,7 +21,7 @@ The default repossession time for the original IP is 24 hours and the longest re
 >?
 >- If there is no IP address specified, one will be automatically assigned by the system.
 >- You can only select a VPC in the region of the instance.
->- We recommend you select the VPC where the CVM instance resides; otherwise, the CVM instance will not be able to access TencentDB for MySQL over the private network, unless a [peering connection](https://intl.cloud.tencent.com/document/product/553/18827) or a [CCN](https://intl.cloud.tencent.com/document/product/1003/30049) instance is created between the two VPCs.
+>- We recommend that the VPC where the CVM instance resides shoud be selected; otherwise, the CVM instance will not be able to access TencentDB for MySQL over the private network, unless a [peering connection](https://intl.cloud.tencent.com/document/product/553/18827) or a [CCN](https://intl.cloud.tencent.com/document/product/1003/30049) instance is created between the two VPCs.
 >
    - **Switch from classic network to VPC**
 ![](https://main.qcloudimg.com/raw/ba78ed608b83c2f553cb72350b726491.png)
