@@ -123,7 +123,7 @@ function(err, data) { ... }
 | - x-cos-meta-\*                                               | User defined metadata                                           | String  |
 | - NotModified      | This field is returned if the request has `IfModifiedSince`. If the file hasn’t been modified after the specified time, `true` is returned. If not, `false` is returned. | Boolean |
 | - ETag | MD5 checksum of the object. The value of this parameter can be used to check whether the object was corrupted during the upload. </br>Example: `"09cba091df696af91549de27b8e7d0f6"`. **Note that double quotation marks are required at the beginning and the end.** | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | | String  |
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  |
 | - Body                | Returned file content, in string format by default        | String  |
 
 
