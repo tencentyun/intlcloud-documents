@@ -4,8 +4,6 @@ Tencent Cloud Content Delivery Network(CDN)は、2022年1月5日にQUICアクセ
 QUICアクセス機能を有効にすると、生成されたQUICリクエスト数には後払いの従量課金が適用されます。詳細については、[課金説明- QUICアクセスリクエスト数の課金](https://intl.cloud.tencent.com/zh/document/product/228/2949)をご参照ください。
 オンライン課金を行う場合は、あらかじめメッセージをプッシュし、コンソールやドキュメントでお知らせいたしますので、ご確認のほどよろしくお願いいたします。
 
-
-
 ## 機能の説明
 
 QUIC（Quick UDP Internet Connectionsは、汎用的なネットワークプロトコルであり、ネットワークセキュリティを保障するとともに、伝送と接続時のレイテンシーも低減し、ネットワークの輻輳を回避することができます。QUICプロトコルを有効にすることで、クライアントがCDNノードにアクセスする際のデータ転送の安全性を確保し、アクセス効率を向上させることができます。
@@ -16,17 +14,15 @@ QUIC（Quick UDP Internet Connectionsは、汎用的なネットワークプロ�
 
 1、QUICの有効化
 
-- [CDNコンソール](https://console.intl.cloud.tencent.com/cdn)にログインし、ドメイン名を追加する時に、QUICプラットフォームの項目を選択すると、ドメイン名でQUICプラットフォームに接続することができます。
-  ![img](https://tva1.sinaimg.cn/large/008i3skNgy1gy2n247nq5j306y014741.jpg)
-
-- ドメイン名の追加が完了した後、ドメイン名管理に入り、Tabを【HTTPS設定】に切り替えると、【QUIC】設定が見つかります。デフォルトはオフの状態ですが、ご自分で有効化することができます。
-  **注：**有効化する前に、HTTPS証明書を設定してください。
-  ![img](https://tva1.sinaimg.cn/large/008i3skNgy1gy2n1viwjjj30pf034t8t.jpg)
+ドメイン名の追加が完了した後、ドメイン名管理に入り、Tabを【HTTPS設定】に切り替えると、【QUIC】設定が見つかります。デフォルトはオフ状態で、ユーザーにより有効化することができます。
+**注：**有効化する前に、HTTPS証明書を設定してください。
+![img](https://tva1.sinaimg.cn/large/008i3skNgy1gy2n1viwjjj30pf034t8t.jpg)
 
 > 注意：
 >
 > - 業務タイプの切り替えはリソースプラットフォームのスケジューリングに影響します。QUICプラットフォームに接続した後は、ドメイン名のサービスタイプを再度切り替えないようにすることをお勧めします。
 > - QUIC back-to-originは現在サポートしておりません。
+> - 一部のプラットフォームは現在QUICをサポートしていません。プラットフォームのアップグレード中ですのでご期待ください。
 
 **設定の制約：**
 
@@ -40,4 +36,3 @@ QUIC（Quick UDP Internet Connectionsは、汎用的なネットワークプロ�
 ## 課金ルール
 
 QUICアクセスは付加価値サービスであり、QUICリクエスト数の回数に応じて課金され、後払いの従量課金が適用されます。詳細については、[課金説明](https://intl.cloud.tencent.com/zh/document/product/228/2949)をご参照ください。
-

@@ -1,9 +1,9 @@
 ## Overview
-Backup capacity is used to store backup files of all TencentDB for MySQL instances in a region, including automatic data backups, manual data backups, and log backups.
+The backup space is used to store the backups of all TencentDB for MySQL instances in a region. These backups can be automatic, manual, and log backups.
 
 TencentDB for MySQL offers a certain amount of backup capacity for free based on the region. The capacity is equivalent to the sum of the storage capacity of all two-node and three-node instances (including source and disaster recovery instances) in the region. For calculation examples, see [Calculation Formula](#jfgs).
 >?
->- Free backup capacity will be provided when you purchase a source or disaster recovery instance but not a read-only instance.
+>- Free backup space is provided when purchasing a source or disaster recovery instance but will not be available in case of a read-only instance.
 >- The backup capacity can be viewed on the database backup page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/mysql/backup/index).
 
 ## Backup Pricing
@@ -54,7 +54,7 @@ After the account falls into arrears, the backup will change with the lifecycle 
 | binlog centralization | Local storage | Centralized storage |
 
 ## Suggestions for Reducing Backup Costs
-- Delete manual backups that are no longer used. You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID or **Manage** in the **Operation** column to access the instance management page, and delete manual backups on the **Backup and Restore** tab. Automatic backups cannot be manually deleted in the console. Instead, they are automatically deleted after they expire.
+- Delete the manual backups which are no longer needed You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID or **Manage** in the **Operation** column to access the instance management page, and delete manual backups on the **Backup and Restore** tab. Automatic backups cannot be manually deleted in the console. Instead, they are automatically deleted after they expire.
 - Reduce the frequency of automatic data backup for non-core businesses (you can adjust the backup cycle and retention period in the console, and the frequency should be at least twice a week).
 >?The [rollback feature](https://intl.cloud.tencent.com/document/product/236/7276) relies on the backup cycle and retention days of data backups and log backups (binlog). Rollback will be affected if you reduce the automatic backup frequency and retention period. Please select the parameters as needed.
 >

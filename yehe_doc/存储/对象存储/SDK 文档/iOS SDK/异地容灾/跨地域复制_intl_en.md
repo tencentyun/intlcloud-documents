@@ -4,19 +4,19 @@ This document provides an overview of APIs and SDK code samples related to cross
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------- |
-| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-region replication rule | Sets a cross-region replication rule for a bucket |
-| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying cross-region replication rule | Queries the cross-region replication rule of a bucket |
-| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication rule | Deletes the cross-region replication rule from a bucket |
+| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting a cross-region replication rule | Sets a cross-region replication rule for a bucket |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying a cross-region replication rule | Queries the cross-region replication rule of a bucket |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting a cross-region replication rule | Deletes the cross-region replication rule from a bucket |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+For parameters and method description of all APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting Cross-Region Replication Rule
+## Setting Cross-region Replication Rules
 
-#### API description 
+#### Description
 
-This API is used to set a cross-region replication rule for a specified bucket.
+This API is used to set the cross-region replication rules of a specified bucket.
 
 #### Sample code
 **Objective-C**
@@ -25,10 +25,10 @@ This API is used to set a cross-region replication rule for a specified bucket.
 ```objective-c
 QCloudPutBucketReplicationRequest* request = [[QCloudPutBucketReplicationRequest alloc] init];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
-// Specify all information on the cross-region replication configuration
+// All cross-region replication configuration information
 QCloudBucketReplicationConfiguation* replConfiguration =
                             [[QCloudBucketReplicationConfiguation alloc] init];
 
@@ -38,7 +38,7 @@ replConfiguration.role = @"qcs::cam::uin/100000000001:uin/100000000001";
 // Specific configuration information
 QCloudBucketReplicationRule* rule = [[QCloudBucketReplicationRule alloc] init];
 
-// Identifier of a specific rule
+// Identify the name of a specific rule
 rule.identifier = @"identifier";
 rule.status = QCloudCOSXMLStatusEnabled;
 
@@ -46,14 +46,14 @@ rule.status = QCloudCOSXMLStatusEnabled;
 QCloudBucketReplicationDestination* destination = [[QCloudBucketReplicationDestination alloc] init];
 NSString* destinationBucket = @"destinationbucket-1250000000";
 
-// Region of the destination bucket
+// Destination bucket region
 NSString* region = @"ap-beijing";
 destination.bucket = [NSString stringWithFormat:@"qcs::cos:%@::%@",region,destinationBucket];
 
 // Destination bucket information
 rule.destination = destination;
 
-// Prefix matching policy. Prefixes cannot overlap; otherwise, an error will be returned. The root directory for prefix matching should be empty
+// Prefix matching policy. Policies cannot overlap; otherwise, an error will be returned. The prefix matching root directory is empty
 rule.prefix = @"prefix1";
 replConfiguration.rule = @[rule];
 request.configuation = replConfiguration;
@@ -74,19 +74,19 @@ request.configuation = replConfiguration;
 ```swift
 let putBucketReplication = QCloudPutBucketReplicationRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 putBucketReplication.bucket = "examplebucket-1250000000";
 
-// Specify all information on the cross-region replication configuration
+// All cross-region replication configuration information
 let config = QCloudBucketReplicationConfiguation.init();
 config.role = "qcs::cam::uin/100000000001:uin/100000000001";
 
 // Initiator ID
 let rule = QCloudBucketReplicationRule.init();
  
-// Identifier of a specific rule
+// Identify the name of a specific rule
 rule.identifier = "rule1";
-// Indicate whether the configuration is enabled. Valid values: .enabled, .disabled
+// Indicate whether the rule is enabled. Valid values: .enabled, .disabled
 rule.status = .enabled;
 
 // Destination bucket information
@@ -96,7 +96,7 @@ let region = "ap-beijing";
 destination.bucket = "qcs::cos:\(region)::\(destinationBucket)";
 rule.destination = destination;
 
-// Prefix matching policy. Prefixes cannot overlap; otherwise, an error will be returned. The root directory for prefix matching should be empty
+// Prefix matching policy. Policies cannot overlap; otherwise, an error will be returned. The prefix matching root directory is empty
 rule.prefix = "dir/";
 
 config.rule = [rule];
@@ -105,7 +105,7 @@ putBucketReplication.configuation = config;
 
 putBucketReplication.finishBlock = {(result,error) in
     if let result = result {
-        // “result” contains response headers
+        // "result" contains response headers.
     } else {
         print(error!);
     }
@@ -113,13 +113,13 @@ putBucketReplication.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketRelication(putBucketReplication);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketReplication.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketReplication.swift).
 
-## Querying Cross-Region Replication Rule
+## Querying Cross-region Replication Rules
 
-#### API description 
+#### Description
 
-This API is used to query the cross-region replication rule of a specified bucket.
+This API is used to query the cross-region replication rules of a specified bucket.
 
 #### Sample code
 **Objective-C**
@@ -128,12 +128,12 @@ This API is used to query the cross-region replication rule of a specified bucke
 ```objective-c
 QCloudGetBucketReplicationRequest* request = [[QCloudGetBucketReplicationRequest alloc] init];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
 [request setFinishBlock:^(QCloudBucketReplicationConfiguation* result,
                           NSError* error) {
-    // Specific configuration information. You can set up to 1,000 rules, all of which must point to the same single destination bucket
+    // Specific configuration information. A maximum of 1,000 rules are supported. All rules must be directed to one destination bucket.
     NSArray *rules = result.rule;
 }];
 [[QCloudCOSXMLService defaultCOSXML] GetBucketReplication:request];
@@ -158,13 +158,13 @@ getBucketReplication.setFinish { (config, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketReplication(getBucketReplication);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketReplication.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketReplication.swift).
 
-## Deleting Cross-Region Replication Rule
+## Deleting Cross-region Replication Rules
 
-#### API description 
+#### Description
 
-This API is used to delete the cross-region replication rule from a specified bucket.
+This API is used to delete the cross-region replication rules of a specified bucket.
 
 #### Sample code
 **Objective-C**
@@ -174,7 +174,7 @@ This API is used to delete the cross-region replication rule from a specified bu
 QCloudDeleteBucketReplicationRequest* request =
                         [[QCloudDeleteBucketReplicationRequest alloc] init];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
 [request setFinishBlock:^(id outputObject, NSError* error) {
@@ -195,7 +195,7 @@ let deleteBucketReplication = QCloudDeleteBucketReplicationRequest.init();
 deleteBucketReplication.bucket = "examplebucket-1250000000";
 deleteBucketReplication.finishBlock = {(result,error) in
     if let result = result {
-        // “result” contains response headers
+        // "result" contains response headers.
     } else {
         print(error!);
     }
@@ -203,5 +203,5 @@ deleteBucketReplication.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucketReplication(deleteBucketReplication);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketReplication.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketReplication.swift).
 

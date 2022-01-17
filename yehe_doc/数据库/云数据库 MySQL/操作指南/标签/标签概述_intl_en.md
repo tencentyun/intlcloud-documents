@@ -1,7 +1,7 @@
 ### Overview
 
 A **tag** is a key-value pair provided by Tencent Cloud to identify a resource in the cloud. For more information, see [Tag Overview](http://intl.cloud.tencent.com/document/product/651/13334).
-You can manage TencentDB for MySQL resources in a categorized manner by using tags in various dimensions such as business, purpose, and person-in-charge, making it easier to find the right resources. Tags have no semantic meaning for Tencent Cloud and are parsed and matches strictly based on strings. During the course of use, you only need to pay attention to applicable [use limits](http://intl.cloud.tencent.com/document/product/651/13354).
+You can manage TencentDB for MySQL resources in a categorized manner by using various tag types, such as business, purpose, and person-in-charge, making it easier to find the right resources. Tags have no semantic meaning for Tencent Cloud and are parsed and matches strictly based on strings. During us, you only need to pay attention to applicable [use limits](http://intl.cloud.tencent.com/document/product/651/13354).
 Below is a specific use case to show how a tag is used.
 
 ### Case Background

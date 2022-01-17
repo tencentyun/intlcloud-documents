@@ -1,7 +1,6 @@
 ## Overview
 
-The SDK for Android is a set of APIs provided by TPNS Service for clients to implement message push. This document provides two integration methods, Android Studio Gradle, which is automatic, and Android Studio, which is manual.
-
+This document describes how to integrate the online channel push capabilities of the TPNS SDK using two methods: Android Studio Gradle automatic integration and Android Studio manual integration. If you want your push to be received even when the application process is killed, complete the integration operations provided in this document and integrate with vendor channels by referring to [Vendor Channel Integration Guide](https://intl.cloud.tencent.com/document/product/1024/37176).
 
 ## SDK Integration (Two Methods)
 
@@ -14,7 +13,7 @@ The SDK for Android is a set of APIs provided by TPNS Service for clients to imp
 
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns) and get the application's `AccessID` and `AccessKey` in **Product Management** > **Configuration Management**.
 2. Get the latest SDK version number on the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page.
-![](https://main.qcloudimg.com/raw/37b19f4e6c8dba5084c052f7e442be7f.png)
+![]()
 3. In the `build.gradle` file of the application, configure the following content:
 ```
 android {
@@ -131,21 +130,20 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 
 | Permission                                      | Required | Description                                                  |
 | ----------------------------------------- | -------- | ----------------------------------------------------- |
-| android.permission.INTERNET              | Yes   | Allows the program to access the internet, which may incur GPRS traffic        |
-| android.permission.ACCESS_WIFI_STATE     | Yes   | Allows the program to get the current Wi-Fi access status and WLAN hotspot information |
-| android.permission.ACCESS_NETWORK_STATE  | Yes   | Allows the program to get the network information status                 |
-| android.permission.WAKE_LOCK             | No  | Allows the program to run in the background after the screen is off       |
-| android.permission.VIBRATE                | No     | Allows the application to vibrate                                          |
+| android.permission.INTERNET              | Yes   | Allows the application to access the internet, which may incur GPRS traffic        |
+| android.permission.ACCESS_WIFI_STATE     | Yes   | Allows the application to get the current Wi-Fi access status and WLAN hotspot information |
+| android.permission.ACCESS_NETWORK_STATE  | Yes   | Allows the application to get the network information status                 |
+| android.permission.WAKE_LOCK             | No  | Allows the application to run in the background after the screen is off       |
+| android.permission.VIBRATE                | No     | Allows the application to access the vibrator |
 | android.permission.READ_PHONE_STATE      | No   | Allows the application to access the phone status                   |
 | android.permission.RECEIVE_USER_PRESENT  | No   | Allows the application to receive screen-on or unlock broadcast          |
-| android.permission.WRITE_EXTERNAL_STORAGE | No   | Allows the program to write to external storage                   |
-| android.permission.RESTART_PACKAGES      | No   | Allows the program to end a task                     |
-| android.permission.GET_TASKS             | No    | Allows the program to get task information                   |
+| android.permission.WRITE_EXTERNAL_STORAGE | No   | Allows the application to write to external storage                   |
+| android.permission.RESTART_PACKAGES      | No   | Allows the application to end a task                     |
+| android.permission.GET_TASKS             | No    | Allows the application to get task information                   |
 
 
 
 #### Component and application information configuration
-
 
 ```xml
 <application>
@@ -410,7 +408,7 @@ The sample code is as follows:
 XGPushConfig.getToken(getApplicationContext());
 ```
 
-![](https://main.qcloudimg.com/raw/854020af14428df9972629e7dbbee55f.png)
+![]()
 
 ### Suggestions on getting TPNS running logs
 
@@ -429,3 +427,4 @@ XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
     }
 });
 ```
+

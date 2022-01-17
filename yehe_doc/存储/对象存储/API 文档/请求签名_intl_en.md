@@ -1,13 +1,14 @@
 > !
-> 1. This document is only for the COS XML version.
-> 2. It does not apply to POST Object requests over HTTP.
+> - This document is only for the COS XML version.
+> - It does not apply to POST Object requests over HTTP.
+> 
 
 
 ## Overview
 
 You can use COS with RESTful APIs, which support anonymous and signed HTTP requests. The COS server will authenticate the requester of signed requests.
 
-- Anonymous request: an HTTP request that does not carry any authentication information, and is sent using RESTful APIs.
+- Anonymous request: an HTTP request that does not contain any authentication information, and is sent using RESTful API.
 - Signed request: an HTTP request that carries a signature. The COS server will authenticate requesters and only execute requests initiated by authenticated ones. If the authentication fails, COS will return an error message and deny the request.
 
 COS authenticates requesters using a custom solution based on Hash Message Authentication Code (HMAC).
@@ -28,7 +29,7 @@ Signatures are already implemented in COS SDKs, which means when you initiate re
 | Java SDK | [COSSigner.java](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/auth/COSSigner.java) |
 | JavaScript SDK | [util.js](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/src/util.js) (getAuth) |
 | Node.js SDK | [util.js](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/sdk/util.js) (getAuth) |
-| PHP SDK | Signature.php |
+| PHP SDK | [Signature.php](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/src/Signature.php) |
 | Python SDK | [cos_auth.py](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/cos_auth.py) |
 | Mini Program SDK | [util.js](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/src/util.js) (getAuth) |
 
@@ -36,12 +37,18 @@ Signatures are already implemented in COS SDKs, which means when you initiate re
 
 ## Generating a Signed URL
 
+
+
 Currently, all COS [SDKs](https://intl.cloud.tencent.com/document/product/436/6474) can generate URLs that carry a signature valid for a period of time. The signature supports PUT and GET requests. Therefore, you can use the generated signed URL to upload/download objects directly without having to generate a signature separately.
 
 - When generating a signed URL for uploads, you can also specify headers such as `Content-Type` and `Content-MD5` to limit the media type/content to upload. For the configurations of request headers related to uploads, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
 - When generating a signed URL for downloads, you can also specify `response-xxx` so that you can temporarily modify response headers upon download. For the configurations of request parameters related to downloads, please see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753).
 
 Find the pre-signed URL document corresponding to your SDK language from the table below:
+
+>?
+>- You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+>- If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
 
 | SDK | Pre-Signed URL Document  |
 | -------------- | ------------------------------------------------------------ |
@@ -54,7 +61,7 @@ Find the pre-signed URL document corresponding to your SDK language from the tab
 | Java SDK       | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31536) |
 | JavaScript SDK | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31540) |
 | Node.js SDK    | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/32455) |
-| PHP SDK        | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31544) |
+| PHP SDK        | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/43312) |
 | Python SDK     | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31548) |
 | Mini Program SDK     | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31711) |
 
@@ -153,7 +160,7 @@ Calculations:
 ### Step 5. Generate HttpString
 Generate `HttpString` based on `HttpMethod`, `UriPathname`, [HttpParameters](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters), and [HttpHeaders](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders) in the format of `HttpMethod\nUriPathname\nHttpParameters\nHttpHeaders\n`.
 
-Where,
+Where:
 - `HttpMethod` is converted to lowercase, such as `get` or `put`.
 - `UriPathname` is the request path, such as `/` or `/exampleobject`.
 - `\n` is a line break. If there is an empty string, the line breaks before and after it should be retained, for example, `get\n/exampleobject\n\n\n`.
@@ -161,7 +168,7 @@ Where,
 
 ### Step 6. Generate StringToSign
 Generate `StringToSign` based on [KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime) and [HttpString](#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E7.94.9F.E6.88.90-httpstring) in the format of `sha1\nKeyTime\nSHA1(HttpString)\n`.
-Where,
+Where:
 - `sha1` is a fixed string.
 - `\n` is a line break.
 - SHA1(HttpString) is the message digest (in lowercase hexadecimal format, such as `54ecfe22f59d3514fdc764b87a32d8133ea611e6`) calculated with [SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) and [HttpString](#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E7.94.9F.E6.88.90-httpstring).
@@ -169,7 +176,7 @@ Where,
 ### Step 7. Generate Signature
 Use [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) with [SignKey](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E7.94.9F.E6.88.90-signkey) (a string rather than the original binary) as the key and [StringToSign](#.E6.AD.A5.E9.AA.A46.EF.BC.9A.E7.94.9F.E6.88.90-stringtosign) as the message to calculate the message digest, which is `Signature`, for example, `01681b8c9d798a678e43b685a9f1bba0f6c0e012`.
 
-### Step 8: generate a signature
+### Step 8. Generate an actual signature
 Generate the actual signature based on [SecretId](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C), [KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime), [HeaderList](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders), [UrlParamList](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters), and [Signature](#.E6.AD.A5.E9.AA.A47.EF.BC.9A.E7.94.9F.E6.88.90-signature) in the following format:
 ```plaintext
 q-sign-algorithm=sha1
@@ -207,7 +214,7 @@ x-cos-security-token: ...
 >? In the samples above, `...` is the signature and access token.
 >
 
-## Sample Codes
+## Sample Code
 
 ### Pseudocode
 ```plaintext
@@ -336,7 +343,7 @@ Authorization: q-sign-algorithm=sha1&q-ak=AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q&q
 ObjectContent
 ```
 
-### Downloading an object
+### Download an object
 
 #### Original request
 

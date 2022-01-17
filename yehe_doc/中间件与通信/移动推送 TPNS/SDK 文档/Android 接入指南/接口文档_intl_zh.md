@@ -224,7 +224,7 @@ public void onUnregisterResult(Context context, int errorCode) {
 
 TPNS SDK 提供回调接口供开发者获取抵达的通知内容，可以通过重载 XGPushBaseReceiver 的  `onNotificationShowedResult(Context, XGPushShowedResult)` 方法实现。其中，XGPushShowedResult 对象提供读取通知内容的接口。
 
->! 因厂商通道 SDK 提供的回调能力限制，通知抵达的回调接口 `onNotificationShowedResult` 暂不支持各厂商通道下发通知抵达的监听，仅支持 TPNS 通道下发通知抵达的监听。
+>! 因部分厂商通道 SDK 未提供通知抵达回调方法，且当 App 进程未运行时，厂商通道的抵达回调方法无法触发。因此 SDK 内提供的回调接口 `onNotificationShowedResult` 仅支持 TPNS 通道下发通知抵达的监听，不支持厂商通道消息抵达的监听。
 >
 
 ```java
@@ -406,18 +406,18 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 SDK 1.2.7.0 新增，设置是否允许应用内消息窗口的展示，例如在允许展示应用内消息窗口的 Activity 页面设置开启，在不允许展示的 Activity 页面设置关闭。
 
 >! 应用内消息基于 Android WebView 框架进行展示，默认情况下，TPNS SDK 提供的应用内消息展示 WebView 运行在 App 主进程中。**自 Android 9 起，应用无法再让多个进程共享一个 WebView 数据目录，如果您的 App 必须在多个进程中使用 WebView 实例，则您必须先使用 `WebView.setDataDirectorySuffix()` 方法为每个进程指定唯一的数据目录后缀，否则可能引起程序崩溃**。配置示例代码如下：
-> ```
- if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
- // 自 Android 9 起，未非 app 主进程的 WebView 实例设置不同的 WebView 数据目录
- String processName = getProcessName()
- if (processName != null 
-      && !processName.equals(context.getPackageName())) {
-  WebView.setDataDirectorySuffix(processName)
-        }
- }
+>```java
+>if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
+>// 自 Android 9 起，未非 app 主进程的 WebView 实例设置不同的 WebView 数据目录
+>String processName = getProcessName()
+>if (processName != null 
+>      && !processName.equals(context.getPackageName())) {
+>  WebView.setDataDirectorySuffix(processName)
+>}
+>}
+>```
 ```
 > 参考文档：谷歌开发者 [按进程分设基于网络的数据目录](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs)。
-
 
 ### 设置是否允许展示应用内消息窗口
 ​```java
@@ -701,7 +701,7 @@ XGPushManager.clearAccounts(getApplicationContext());
 #### 接口说明
 
 一次设置多个标签，会覆盖这个设备之前设置的标签。
-开发者可以针对不同的用户设置标签，然后根据标签名群发通知。 一个应用最多有10000个 tag， 每个 Token 在一个应用下最多100个 tag，如需提高该限制，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 与我们联系。每个自定义 tag 可绑定的设备 Token 数量无限制，tag  中不准包含空格。
+开发者可以针对不同的用户设置标签，然后根据标签名群发通知。 一个应用最多有10000个 tag， 每个 Token 在一个应用下最多100个 tag，如需提高该限制，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 。每个自定义 tag 可绑定的设备 Token 数量无限制，tag  中不准包含空格。
 
 ```java
 public static void clearAndAppendTags(Context context, String operateName, Set<String> tags) 
@@ -1278,7 +1278,7 @@ XGPushConfig.setAccessKey(context, accessKey);
 
 #### 接口说明
 
-开发者如果发现 TPush 相关功能异常，可以调用该接口，触发本地 Push 日志的上报，反馈问题时， [提交工单](https://console.cloud.tencent.com/workorder/category) 将文件地址给到我们，便于我们排查问题。
+开发者如果发现 TPush 相关功能异常，可以调用该接口，触发本地 Push 日志的上报，反馈问题时，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 将文件地址给到我们，便于我们排查问题。
 
 ```
 public static void uploadLogFile(Context context, HttpRequestCallback httpRequestCallback)

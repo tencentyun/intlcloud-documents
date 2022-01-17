@@ -1,116 +1,116 @@
-## 说明
-本文档中账号功能、删除标签功能适用于 SDK 1.2.3.0 或更高版本，1.2.3.0 及之前版本请参见 [接口文档](https://intl.cloud.tencent.com/document/product/1024/40596)。
+## Description
+The account feature and tag deletion feature in this document are available for SDK v1.2.3.0 and later. For versions earlier than v1.2.3.0, see [Accounts and Tags](https://intl.cloud.tencent.com/document/product/1024/40596).
 
-所有 API 接口的包名路径前缀都是：`com.tencent.android.tpush`，其中有以下几个重要的对外提供接口的类名，如下表所示：
+The package name path prefix of all APIs is `com.tencent.android.tpush`. The following table lists important classes that provide APIs for external use.
 
-| 类名               | 说明                                                         |
+| Class | Description |
 | ------------------ | ------------------------------------------------------------ |
-| XGPushManager      | Push 服务推送                                                |
-| XGPushConfig       | Push 服务配置项接口                                          |
-| XGPushBaseReceiver | 接收消息和结果反馈的 Receiver，需要开发者在 AndroidManifest.xml 自主完成静态注册 |
+| XGPushManager     | Push service                                            |
+| XGPushConfig      | Push service configuration item API |
+| XGPushBaseReceiver | Receiver to receive messages and result feedback, which needs to be statically registered by yourself in `AndroidManifest.xml` |
 
-## 启动与注册
+## Launch and Registration
 
-- App 只有在完成移动推送 TPNS 的启动与注册后才可以移动推送 TPNS  SDK 提供 Push  服务，在这之前请确保配置 AccessId 和 AccessKey。
-- 新版的 SDK 已经将启动移动推送 TPNS 和 App 注册统一集成在注册接口中，即只需调用注册接口便默认完成启动和注册操作。
-- 注册成功后，会返回设备 Token，Token 用于标识设备唯一性，同时也是移动推送 TPNS 维持与后台连接的唯一身份标识。关于如何获取 Token 请参考 [获取 Token](#.E8.8E.B7.E5.8F.96.E8.AE.BE.E5.A4.87-token)。
+- The application can only use the SDK push service after successfully registering for and launching the TPNS. Please ensure that `AccessId` and `AccessKey` have already been configured.
+- The new version of SDK has integrated TPNS launch and application registration into the registration API, which means you can simply call the registration API to complete the launch and registration by default.
+- After a successful registration, the device token will be returned. The token uniquely identifies the device and is also the unique ID for TPNS to stay connected with the backend. For more information on how to get tokens, please see [Getting a device token](#.E8.8E.B7.E5.8F.96.E8.AE.BE.E5.A4.87-token).
 
-注册接口通常提供简版和带 callback 版本的接口，请根据业务需要决定选择接口。
+The registration API usually provides a compact version and a version with callback. Please choose an appropriate version according to your business needs.
 
-### 设备注册
+### Registering a device
 
-以下为设备注册相关接口方法，若需了解调用时机及调用原理，可查看 [设备注册流程](https://intl.cloud.tencent.com/document/product/1024/32609)。
+The following are device registration API methods. For more information on the timing and principle of calls, see [Device registration flow](https://intl.cloud.tencent.com/document/product/1024/32609#device-registration-flow).
 
-#### 接口说明
+#### API description
 
-普通注册只注册当前设备，后台能够针对不同的设备 Token 发送推送消息，以下有2个版本的 API 接口方法：
+Standard registration only registers the current device, and the backend can send different push messages based on device tokens. There are two versions of the API method:
 
 ```java
 public static void registerPush(Context context)
 ```
 
-#### 参数说明
+#### Parameter description
 
-context：当前应用上下文对象，不能为 null。
+`context`: context object of the current application, which cannot be `null`
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGPushManager.registerPush(getApplicationContext());
 ```
 
-#### 接口说明
+#### API description
 
-为方便用户获取注册是否成功的状态，提供带 callback 的版本。
+To allow you to know if the registration is successful, a version with callback is provided.
 
 ```java
 public static void registerPush(Context context,final XGIOperateCallback callback)
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：当前应用上下文对象，不能为 null。
-- callback：callback 调用，主要包括操作成功和失败的回调，不能为 null。
+- `context`: context object of the current application, which cannot be `null`
+- `callback`: callback functions, including success and failure callbacks and cannot be `null`
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGPushManager.registerPush(this, new XGIOperateCallback() {
 	@Override
 	public void onSuccess(Object data, int flag) {
-		Log.d("TPush", "注册成功，设备token为：" + data);
+		Log.d("TPush", "Registration succeeded. Device token: " + data);
 	}
 	@Override
 	public void onFail(Object data, int errCode, String msg) {
-		Log.d("TPush", "注册失败，错误码：" + errCode + ",错误信息：" + msg);
+		Log.d("TPush", "Registration failed. Error code: " + errCode + ", error message: " + msg);
 	}
 })
 ```
 
-### 获取注册结果
+### Getting the registration result
 
-有2种途径可以获取注册是否成功。
+There are two ways to check if the registration is successful.
 
-**使用 Callback 版本的注册接口**。
-XGIOperateCallback 类提供注册成功或失败的处理接口，请参考注册接口里面的示例。
+**Using the Callback version of the registration API**
+The `XGIOperateCallback` class provides an API to process registration success or failure. Please see the sample in the registration API.
 
-#### 示例代码
+#### Sample code
 
 ```java
 /**
-* 操作回调接口
+* Operation callback API
 */
 public interface XGIOperateCallback {
 	/**
-	* 操作成功时的回调。
-	* @param data 操作成功的业务数据，如注册成功时的token信息等。
-	* @param flag 标记码
+	* Callback when the operation is successful
+	* @param data //Business data of a successful operation, such as the token information when registration is successful
+	* @param flag //Flag tag
 	*/
 	public void onSuccess(Object data, int flag);
 	/**
-	* 操作失败时的回调
-	* @param data 操作失败的业务数据
-	* @param errCode 错误码
-	* @param msg 错误信息
+	* Callback when the operation fails
+	* @param data //Business data of a failed operation
+	* @param errCode //Error code
+	* @param msg //Error message
 	*/
 	public void onFail(Object data, int errCode, String msg);
 }
 ```
 
-**重载 XGPushBaseReceiver**
-可通过重载 XGPushBaseReceiver 的 onRegisterResult 方法获取。
+**Reloading XGPushBaseReceiver**
+The registration result can be obtained by reloading the `onRegisterResult` method of `XGPushBaseReceiver`.
 
->? 重载的 XGPushBaseReceiver 需要配置在 AndroidManifest.xml，请参考下文 [消息配置](#.E6.B6.88.E6.81.AF.E9.85.8D.E7.BD.AE)。
+>? The reloaded `XGPushBaseReceiver` needs to be configured in `AndroidManifest.xml`. For more information, please see [Message configuration](#.E6.B6.88.E6.81.AF.E9.85.8D.E7.BD.AE) below.
 >
 
-#### 示例代码
+#### Sample code
 
 ```java
 /**
 *
-* @param context 当前上下文
-* @param errorCode 0 为成功，其它为错误码
-* @param message 注册结果返回
+* @param context //Current context
+* @param errorCode //0 indicates success, while other values are error codes
+* @param message //Returned registration result
 */
 @Override
 public void onRegisterResult(Context context, int errorCode, XGPushRegisterResult message) {
@@ -118,80 +118,80 @@ public void onRegisterResult(Context context, int errorCode, XGPushRegisterResul
 				return;
 			}
 			String text = "";
-			if (errorCode == XGPushBaseReceiver.SUCCESS) {       // 注册成功
-				// 在这里拿token
+			if (errorCode == XGPushBaseReceiver.SUCCESS) {       // Registration succeeded
+				// Get the token here
 				String token = message.getToken();
-				text = "注册成功，token：" + token;
+				text = "Registration succeeded. Token:" + token;
 			} else {
-				text = message + "注册失败，错误码：" + errorCode;
+				text = message + "Registration failed. Error code:" + errorCode;
 			}
 			Log.d(LogTag, text);
 }
 ```
 
-#### 类方法列表
+#### Class method list
 
-| 方法名          | 返回值 | 默认值 | 描述                            |
+| Method | Returned Value | Default Value | Description |
 | --------------- | ------ | ------ | ------------------------------- |
-| getToken()      | String | 无     | 设备的 Token，即设备唯一识别 ID |
-| getAccessId()   | long   | 0      | 获取注册的 AccessId             |
-| getAccount      | String | 无     | 获取注册绑定的账号              |
-| getTicket()     | String | 无     | 登录态票据                      |
-| getTicketType() | short  | 0      | 票据类型                        |
+| getToken()      | String | None     | Device token, i.e., unique device ID |
+| getAccessId()   | long   | 0      | Gets `AccessId` for registration            |
+| getAccount      | String | None     | Gets the account bound for registration |
+| getTicket()     | String | None     | Login state ticket                      |
+| getTicketType() | short  | 0      | Ticket type                        |
 
-### 反注册
+### Unregistration
 
-以下为反注册接口方法，若需了解调用时机及调用原理，可查看 [设备反注册流程](https://intl.cloud.tencent.com/document/product/1024/32609)。
+The following are unregistration API methods. For more information on the timing and principle of calls, please see [Device unregistration flow](https://intl.cloud.tencent.com/document/product/1024/32609#device-unregistration-flow).
 
->! 调用反注册接口后，需要重新调用注册接口才可接收到推送。
+>! After calling the unregistration API, you need to call the registration API again before you can receive pushed messages.
 >
 
-#### 接口说明
+#### API description
 
-当用户已退出或 App 被关闭，不再需要接收推送时，可以取消注册 App，即反注册（一旦设备反注册，直到这个设备重新注册成功期间内，下发的消息该设备都无法收到）。
+When a user has logged out or the application is closed and it is no longer necessary to receive push messages, the device can be unregistered from the application. (Once the device is unregistered, push messages will no longer be received unless the device is successfully registered again).
 
 ```java
 public static void unregisterPush(Context context)
 ```
 
-#### 参数说明
+#### Parameter description
 
-context： App 的上下文对象。
+`context`: context object of the application
 
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGPushManager.unregisterPush(getApplicationContext(), new XGIOperateCallback() {
     @Override
     public void onSuccess(Object data, int i) {
-        Log.d("TPush", "反注册成功");
+        Log.d("TPush", "Unregistration succeeded");
     }
 
     @Override
     public void onFail(Object data, int errCode, String msg) {
-        Log.d("TPush", "反注册失败，错误码：" + errCode + ",错误信息：" + msg);
+        Log.d("TPush", "Unregistration failed. Error code: " + errCode + ", error message: " + msg);
     }
 });
 ```
 
 
-### 获取反注册结果
+### Getting the unregistration result
 
-可通过重载 XGPushBaseReceiver的onUnregisterResult 方法获取。
+The unregistration result can be obtained by reloading the `onUnregisterResult` method of `XGPushBaseReceiver`.
 
 >?
-> - 反注册操作切勿过于频繁，可能会造成后台同步延时。
-> - 切换账号无需反注册，多次注册自动会以最后一次为准。
+> - Frequent unregistration is not recommended because it may cause delay in backend sync.
+> - Switching accounts does not require unregistration. With multiple registrations, the last registration will automatically take effect.
 > 
 
-#### 示例代码
+#### Sample code
 
 ```java
 /**
-* 反注册结果
-* @param context 当前上下文
-* @param errorCode  为成功，其它为错误码
+* Unregistration result
+* @param context //Current context
+* @param errorCode //0 indicates success, while other values are error codes
 */
 @Override
 public void onUnregisterResult(Context context, int errorCode) {
@@ -200,31 +200,31 @@ public void onUnregisterResult(Context context, int errorCode) {
 	 }
 	String text = "";
 	if (errorCode == XGPushBaseReceiver.SUCCESS) {
-		 text = "反注册成功";
+		 text = "Unregistration succeeded";
 	} else {
-		 text = "反注册失败" + errorCode;
+		 text = "Unregistration failed" + errorCode;
 	}
 	Log.d(LogTag, text);
 }
 
 ```
 
-## 推送通知（展现在通知栏）
+## Push Notification (Displayed on the Notification Bar)
 
-指的是在设备的通知栏展示的内容，由移动推送 TPNS  SDK 完成所有的操作，App 可以监听通知被打开的行为，即在前台下发的通知，无需 App 做任何处理，默认会展示在通知栏。
+Push notifications are content displayed on the notification bar of devices. All operations are performed by the TPNS SDK. Applications can listen for clicks on notifications. In other words, push notifications delivered on the frontend do not need to be processed by applications and will be displayed on the notification bar by default.
 
 >?
-> - 成功注册移动推送 TPNS 服务后，通常不需要任何设置便可下发通知。
-> - 通常来说，结合自定义通知样式，常规的通知，能够满足大部分业务需求，如果需要更灵活的方式，请考虑使用消息。
+> - After the TPNS service is successfully registered, notifications can be delivered without any configuration.
+> - In general, combined with custom notification styles, standard notifications can meet most business needs. If you need more flexible pushes, consider using messages.
 > 
 
-### 获取通知
+### Getting notifications
 
-#### 接口说明
+#### API description
 
-TPNS SDK 提供回调接口供开发者获取抵达的通知内容，可以通过重载 XGPushBaseReceiver 的  `onNotificationShowedResult(Context, XGPushShowedResult)` 方法实现。其中，XGPushShowedResult 对象提供读取通知内容的接口。
+The TPNS SDK provides a callback API for developers to get the content of arrived notifications. Notifications can be obtained by reloading the `onNotificationShowedResult(Context, XGPushShowedResult)` method of `XGPushBaseReceiver`. Here, the `XGPushShowedResult` object provides an API for reading notification content.
 
->! 因厂商通道 SDK 提供的回调能力限制，通知抵达的回调接口 `onNotificationShowedResult` 暂不支持各厂商通道下发通知抵达的监听，仅支持 TPNS 通道下发通知抵达的监听。
+>! Some vendor channel SDKs do not provide a callback method for notification arrival, and vendor channels' arrival callback methods cannot be triggered unless the app process is running. Therefore, the callback API `onNotificationShowedResult` provided in the TPNS SDK supports listening for the arrival of notifications delivered only through the TPNS channel, but not through vendor channels.
 >
 
 ```java
@@ -232,33 +232,33 @@ public abstract void onNotificationShowedResult(Context context,XGPushShowedResu
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：当前应用上下文。
-- notifiShowedRlt： 抵达的通知对象。
+- `context`: context of current application
+- `notifiShowedRlt`: arrived notification object
 
-### 获取通知点击结果
+### Getting notification click results
 
-#### 通知回调监听和自定义参数解析
+#### Notification callback listening and custom parameter interpretation
 
-使用移动推送 TPNS  SDK 默认已经统计通知/消息的抵达量、通知的点击和清除动作。SDK 提供回调接口供开发者监听通知点击事件，通过重载 XGPushBaseReceiver 的  `onNotificationClickedResult(Context, XGPushClickedResult)` 方法实现。
+The TPNS SDK collects statistics on notification/message arrivals and notification clicks and clearances by default. The SDK provides a callback API for developers to listen for notification click events. Notification click events can be obtained by reloading the `onNotificationClickedResult(Context, XGPushClickedResult)` method of XGPushBaseReceiver.
 
 >?
-> - 自 SDK 版本 v1.2.0.1 起，支持各厂商通道、TPNS 通道下发的通知点击事件的监听。
-> - 如需下发并获取推送自定义参数，推荐使用 Intent 方式，请参考文档 [通知点击跳转](https://intl.cloud.tencent.com/document/product/1024/38354)。
+> - Starting from v1.2.0.1, the TPNS SDK supports listening for the click events of notifications delivered through the TPNS channel and various vendor channels.
+> - If you want to deliver and get custom push parameters, the Intent mode is recommended. For more information, see [Notification-Click Redirection](https://intl.cloud.tencent.com/document/product/1024/38354).
 > 
 
-#### 接口说明
+#### API description
 
 ```java
 public abstract void onNotificationClickedResult(Context context, XGPushClickedResult notifiClickedRlt); 
 
 ```
 
-#### 示例代码
+#### Sample code
 
 ```java
-// 通知点击回调，actionType=0 为该消息被点击，actionType=2 为该消息被清除
+// If `actionType` of the notification click callback is `0`, the message was clicked; if it is `2`, the message was cleared
 @Override
 public void onNotificationClickedResult(Context context, XGPushClickedResult message) {
     if (context == null || message == null) {
@@ -266,121 +266,121 @@ public void onNotificationClickedResult(Context context, XGPushClickedResult mes
     }
     String text = "";
     if (message.getActionType() == NotificationAction.clicked.getType()) {
-        // 通知在通知栏被点击
-        // APP自己处理点击的相关动作
-        text = "通知被打开 :" + message;
+        // The notification is clicked on the notification bar
+        // The application handles actions related to the click
+        text = "notification opened:" + message;
     } else if (message.getActionType() == NotificationAction.delete.getType()) {
-        // 通知被清除
-        // APP自己处理通知被清除后的相关动作
-        text = "通知被清除 :" + message;
+        // Notification is cleared
+        // The application handles related actions after the notification is cleared
+        text = "notification cleared:" + message;
     }
   
-    // APP自主处理的过程。
+    // Handling process of the application
   
-    Log.d(LogTag, "广播接收到通知:" + text);
+    Log.d(LogTag, "broadcast that the notification is received:" + text);
 }
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：当前应用上下文。
-- XGPushClickedResult：被打开的通知对象。
+- `context`: context of current application
+- `XGPushClickedResult`: opened object of the notification
 
-`XGPushClickedResult` 类成员方法列表：
+Methods of `XGPushClickedResult` class are as follows:
 
-| 方法名           | 返回值 | 默认值 | 描述                                                         |
+| Method | Returned Value | Default Value | Description |
 | ---------------- | ------ | ------ | ------------------------------------------------------------ |
-| getMsgId()       | long   | 0      | 消息 ID                                                      |
-| getTitle()       | String | 无     | 通知标题                                                     |
-| getContent()     | String | 无     | 通知正文内容                                                 |
-| getActionType()  | String | 无     | 0 表示该通知被点击，2 表示该通知被清除                       |
-| getPushChannel() | String | 100    | 被点击通知的所下发通道标识。<li>100：TPNS 通道。</li><li>101：FCM 通道。</li><li>102：华为通道。</li><li>103：小米通道。</li><li>104：vivo 通道。</li><li>105：OPPO 通道。</li><li>106：魅族通道。</li> |
+| getMsgId()         | long   | 0      | Message ID                                                      |
+| getTitle()         | String | None     | Notification title                                                    |
+| getContent()       | String | None     | Notification body content                                                 |
+| getActionType()  | String | None     | 0: the notification is clicked; 2: the notification is cleared                       |
+| getPushChannel() | String | 100    | ID of the channel through which the clicked notification is delivered <li>100: TPNS channel </li><li>101: FCM channel </li><li>102: Huawei channel </li><li>103: Mi channel </li><li>104: vivo channel </li><li>105: OPPO channel </li><li>106: Meizu channel </li> |
 
 
-### 清除所有通知
+### Clearing all notifications
 
-#### 接口说明
+#### API description
 
-清除本 App 在通知栏上的所有通知。
+This API is used to clear all notifications of the current application on the notification bar.
 
 ```java
 public static void cancelAllNotifaction(Context context) 
 ```
 
-#### 参数说明
+#### Parameter description
 
-context：Context 对象。
+- `context`: `Context` object
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGPushManager.cancelAllNotifaction(context);
 ```
 
-### 创建通知渠道
+### Creating a notification channel
 
-#### 接口说明
+#### API description
 
-开发者可以创建通知 channel。
+This API is used to create a notification channel.
 
 ```java
 public static void createNotificationChannel(Context context, String channelId, String channelName, boolean enableVibration, boolean enableLights, boolean enableSound, Uri soundUri)
 
 ```
 
->? 此接口仅适用于1.1.5.4及以上版本。
+>? This API is applicable to v1.1.5.4 and above.
 >
 
-#### 参数说明
+#### Parameter description
 
-- context：当前应用上下文。
-- channelId：通知渠道 Id。
-- channelName：通知渠道名称。
-- enableVibration：是否震动。
-- enableLights：是否有呼吸。
-- enableSound：是否有铃声。
-- soundUri ：铃声资源 Uri，enableSound 为 true 才有效，若使用系统默认铃声，则设置为 null。
+- `context`: context of current application
+- `channelId`: notification channel ID
+- `channelName`: notification channel name
+- `enableVibration`: whether to enable vibration
+- `enableLights`: whether to enable LED indicator
+- `enableSound`: whether to enable sound
+- `soundUri`: ringtone resource URI, which is valid if `enableSound` is `true`. To use the system-default ringtone, set this parameter to `null`.
 
-#### 示例代码
+#### Sample code
 
 ```java
-XGPushManager.createNotificationChannel(this.getApplicationContext(),"default_message", "默认通知",true, true, true, null);
+XGPushManager.createNotificationChannel(this.getApplicationContext(),"default_message", "Default notification",true, true, true, null);
 
 ```
 
-## 推送消息（消息不展示到通知栏）
+## Push Message (Not Displayed on the Notification Bar)
 
-指的是由移动推送 TPNS 下发给 App 的内容，需要 App 继承 XGPushBaseReceiver 接口实现并自主处理所有操作过程，也就是说，下发的消息默认是不会展示在通知栏的，移动推送 TPNS 只负责将消息从移动推送 TPNS 服务器下发到 App 这个过程，不负责消息的处理逻辑，需要 App 自己实现。
+Push messages are content delivered to an application by TPNS. The application needs to inherit the `XGPushBaseReceiver` API to implement and handle all the operations on its own. In other words, delivered messages are not displayed on the notification bar by default, and TPNS is responsible only for delivering messages from the TPNS server to the application, but not processing the messages. The messages need to be processed by the application.
 
-- 消息指的是由开发者通过前台或后台脚本下发的文本消息，移动推送 TPNS 只负责将消息传递给 App，App 完全自主负责消息体的处理。
-- 消息具有灵活性强和高度定制性的特点，更适合 App 自主处理个性化业务需求，例如下发 App 配置信息、自定义处理消息的存储和展示等。
+- Message refers to the text message delivered by you through frontend or backend scripts. TPNS is only responsible for delivering the message to the application, while the application is fully responsible for handling the message body on its own.
+- Because the message is flexible and highly customizable, it is suitable for applications to handle custom business needs on their own, such as delivering application configuration information and customizing message retention and display.
 
-<span id="消息配置"></span>
+<span id="Message configuration"></span>
 
-### 消息配置
+### Message configuration
 
-请自行继承 XGPushBaseReceiver ，并且在配置文件中配置如下内容：
+Inherit `XGPushBaseReceiver` and configure the following in the configuration file:
 
-#### 示例代码
+#### Sample code
 
 ```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
 	<intent-filter>
-		<!-- 接收消息透传 -->
+		<!-- Receive in-app messages -->
 		<action android:name="com.tencent.android.xg.vip.action.PUSH_MESSAGE" />
-		<!-- 监听注册、反注册、设置/删除标签、通知被点击等处理结果 -->
+		<!-- Listen for results of registration, unregistration, tag setting/deletion, and notification clicks -->
 		<action android:name="com.tencent.android.xg.vip.action.FEEDBACK" />
 	</intent-filter>
 </receiver>
 
 ```
 
-### 获取应用内消息
+### Getting in-app messages
 
-开发者在前台下发消息，需要 App 继承 XGPushBaseReceiver 重载 onTextMessage 方法接收，成功接收后，再根据特有业务场景进行处理。
+A message delivered by you in the console can be received by the application if it inherits `XGPushBaseReceiver` and reloads the `onTextMessage` method. After successfully receiving the message, the application can handle it based on specific business scenarios.
 
->? 请确保在 AndroidManifest.xml 已经注册过该 receiver，即设 YOUR_PACKAGE.XGPushBaseReceiver。
+>? Please make sure that the receiver has been registered in `AndroidManifest.xml`, i.e., `YOUR_PACKAGE.XGPushBaseReceiver` is set.
 >
 
 ```java
@@ -388,144 +388,144 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：应用当前上下文。
-- message：接收到消息结构体。
+- `context`: current context of the application
+- `message`: received message structure
 
-#### 类方法列表
+#### Class method list
 
-| 方法名             | 返回值 | 默认值 | 描述                                                 |
+| Method | Returned Value | Default Value | Description |
 | ------------------ | ------ | ------ | ---------------------------------------------------- |
-| getContent()       | String | 无     | 消息正文内容，通常只需要下发本字段即可               |
-| getCustomContent() | String | 无     | 消息自定义 key-value                                 |
-| getTitle()         | String | 无     | 消息标题（从前台下发应用内消息字中的描述不属于标题） |
+| getContent()       | String | None     | Message body content, and generally it is sufficient to deliver only this field |
+| getCustomContent() | String | None     | Customer `key-value` of message                                 |
+| getTitle()         | String | None | Message title (the description of the in-app message delivered from the console is not a title) |
 
 
-## 应用内消息展示
-SDK 1.2.7.0 新增，设置是否允许应用内消息窗口的展示，例如在允许展示应用内消息窗口的 Activity 页面设置开启，在不允许展示的 Activity 页面设置关闭。
+## In-App Message Display
+Starting with SDK v1.2.7.0, you can set whether to allow the display of in-app message windows. For example, you can enable the display of in-app message windows in one Activity page, while disable it in another Activity page.
 
->! 应用内消息基于 Android WebView 框架进行展示，默认情况下，TPNS SDK 提供的应用内消息展示 WebView 运行在 App 主进程中。**自 Android 9 起，应用无法再让多个进程共享一个 WebView 数据目录，如果您的 App 必须在多个进程中使用 WebView 实例，则您必须先使用 `WebView.setDataDirectorySuffix()` 方法为每个进程指定唯一的数据目录后缀，否则可能引起程序崩溃**。配置示例代码如下：
-> ```
- if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
- // 自 Android 9 起，未非 app 主进程的 WebView 实例设置不同的 WebView 数据目录
- String processName = getProcessName()
- if (processName != null 
-      && !processName.equals(context.getPackageName())) {
-  WebView.setDataDirectorySuffix(processName)
-        }
- }
+>! In-app messages are displayed based on the Android WebView framework. By default, the in-app message display WebView provided by the TPNS SDK runs in the main process of an app. **Since Android 9, apps can no longer share a single WebView data directory among multiple processes. If your app must use WebView instances in multiple processes, you must first use the `WebView.setDataDirectorySuffix()` method to specify a unique data directory suffix for each process; otherwise, app crash may occur**. The sample configuration code is as follows:
+>```java
+>if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
+>// Starting with Android 9, you need to set different WebView data directories for the WebView instances of apps’ non-main processes.
+>String processName = getProcessName()
+>if (processName != null 
+>      && !processName.equals(context.getPackageName())) {
+>  WebView.setDataDirectorySuffix(processName)
+>}
+>}
+>```
 ```
-> 参考文档：谷歌开发者 [按进程分设基于网络的数据目录](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs)。
+> Reference document: [Behavior changes: apps targeting API level 28+](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs) (Google Developers).
 
-
-### 设置是否允许展示应用内消息窗口
+### Setting whether to allow the display of in-app message windows
 ​```java
 XGPushConfig.enableShowInMsg(Context context, boolean flag);
 ```
 
-#### 参数说明
+#### Parameter description
 
-context：Context 对象。
-flag：是否允许应用内消息展示，true：允许，false：不允许；默认值 false。
+- `context`: `Context` object
+`flag`: whether to allow in-app message display. `true`: allow; `false`: not allow; default: `false`.
 
-#### 示例代码
+#### Sample code
 ```java
 XGPushConfig.enableShowInMsg(context, true);
 ```
 
 
-## 本地通知
+## Local Notification
 
-### 增加本地通知
+### Adding local notifications
 
-本地通知由用户自定义设置，保存在本地。当应用打开，移动推送 TPNS  Service 会根据网络心跳，判断当前是否有通知（5分钟一次）， 本地通知需要 Service 开启才能弹出，可能存在5分钟左右延时。（当设置的时间小于当前设备时间通知弹出）
+Local notifications are customized by users and saved locally. When an application is open, the TPNS service will determine whether there is a notification once every five minutes based on the network heartbeat. Local notifications will pop up only if the service is enabled, and there may be a delay of about five minutes. A notification will pop up when the time set is earlier than the current device time.
 
-#### 示例代码
+#### Sample code
 
 ```java	
-//新建本地通知
+// Create a local notification
 XGLocalMessage local_msg = new XGLocalMessage();
-//设置本地消息类型，1:通知，2:消息
+// Set the local message type; 1: notification, 2: message
 local_msg.setType(1);
-// 设置消息标题
+// Set the message title
 local_msg.setTitle("qq");
-//设置消息内容
+// Set the message content
 local_msg.setContent("ww");
-//设置消息日期，格式为：20140502
+// Set the message date in the format of 20140502
 local_msg.setDate("20140930");
-//设置消息触发的小时(24小时制)，例如：22代表晚上10点
+// Set the hour when the message is triggered (in 24-hour clock system); for example: 22 indicates 10 p.m.
 local_msg.setHour("19");
-//获取消息触发的分钟，例如：05代表05分
+// Set the minute when the message is triggered, for example: 05 indicates the 5th minute in the hour
 local_msg.setMin("31");
-//设置消息样式，默认为0或不设置
+// Set the message style. The default value is 0 or not set
 local_msg.setBuilderId(0);
-//设置动作类型：1打开activity或App本身，2打开浏览器，3打开Intent ，4通过包名打开应用
+// Set the action type: 1 - open the activity or the app itself; 2 - open the browser; 3 - open the Intent; 4 - open the application by the package name
 local_msg.setAction_type(1);
-//设置拉起应用页面
+// Set the app-pulling page
 local_msg.setActivity("com.qq.xgdemo.SettingActivity");
-// 设置URL
+// Set the URL
 local_msg.setUrl("http://www.baidu.com");
-// 设置Intent
+// Set the Intent
 local_msg.setIntent("intent:10086#Intent;scheme=tel;action=android.intent.action.DIAL;S.key=value;end");
-// 是否覆盖原先build_id的保存设置。1覆盖，0不覆盖
+//Whether to overwrite the save settings of the original build_id. 1: Yes; 0: No.
 local_msg.setStyle_id(1);
-// 设置音频资源
+// Set the audio resource
 local_msg.setRing_raw("mm");
-// 设置key,value
+// Set the key and value
 HashMap<String, Object> map = new HashMap<String, Object>();
 map.put("key", "v1");
 map.put("key2", "v2");
 local_msg.setCustomContent(map);
-//添加通知到本地     
+// Add the notification to the local system     
 XGPushManager.addLocalNotification(context,local_msg);
 
 ```
 
 
 
-### 清除本地通知
+### Clearing local notifications
 
-#### 接口说明
+#### API description
 
-清除本 App 已经创建但未弹出的本地通知。
+This API is used to clear local notifications that are created by the application but have not popped up.
 
 ```java
 public static void clearLocalNotifications(Context context) 
 ```
 
-#### 参数说明
+#### Parameter description
 
-context：Context 对象。
+- `context`: `Context` object
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGPushManager.clearLocalNotifications(context);
 ```
 
-## 账号管理
+## Account Management
 
-以下为账号管理相关接口方法，若需了解调用时机及调用原理，可查看 [账号相关流程](https://intl.cloud.tencent.com/document/product/1024/32609)。
+The following are account management API methods. For more information on the timing and principle of calls, please see [Account flow](https://intl.cloud.tencent.com/document/product/1024/32609#account-flow).
 
 
-### 添加账号
+### Adding an account
 
-#### 接口说明
+#### API description
 
-添加或更新账号。若原来没有该类型账号，则添加；若原来有，则覆盖。可以同时添加多个账号，一个账号对应一个账号类型。
+This API is used to add or update an account. If there is no account of this type, it will add a new one; otherwise, it will overwrite the existing one.
 
 ```java
 public static void upsertAccounts(Context context, List<AccountInfo> accountInfoList, XGIOperateCallback callback)
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context： Context 对象。
-- accountInfoList： 账号列表：账号信息包含一个账号类型和账号名称。
-- callback： 绑定账号操作的回调。
+- `context`: `Context` object
+- `accountInfoList`: account list, containing account types and account names
+- `callback`: callback of account binding operation
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
@@ -547,31 +547,31 @@ XGPushManager.upsertAccounts(context, accountInfoList, xgiOperateCallback);
 ```
 
 >?
-> - 每个账号最多支持绑定100个 token。
-> - 账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号，账号类型取值可参考 [账号类型取值表](https://intl.cloud.tencent.com/document/product/1024/40598)。
-> - 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
+> - Each account can be bound to up to 100 tokens.
+> - The account can be email, QQ account number, mobile number, username, etc. For valid values, please see [Account Type Value Table](https://intl.cloud.tencent.com/document/product/1024/40598).
+> - If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 > 
 
-### 添加手机号
+### Adding a mobile number
 
-#### 接口说明
+#### API description
 
-添加或更新手机号码。若原来没有绑定手机号码，则绑定；若原来有，则覆盖（SDK 1.2.5.0+）
+This API is used to add or update a mobile number. If you have bound any mobile number before, it will overwrite the original number; if you haven’t, it will be bound (SDK 1.2.5.0+).
 
->? 手机号格式为 `+[国家或地区码][手机号]`，例如+8613711112222（其中前面有一个+号 ，86为国家或地区码，13711112222为手机号）。若绑定的手机号不带**国家或地区码**，则 TPNS 下发短信时自动增加+86的前缀；若带上**国家或地区码**，则按照指定的号码绑定。如需删除绑定的手机号，则需调用 `delAccountsByKeys`接口并设置 `accountTypeSet 为 1002`。
+>? The mobile number format is `+[country or area code][subscriber number]`, for example, +8613711112222 (where there is a `+` sign in the front, `86` is the country code, and `13711112222` is the subscriber number). If the entered mobile number does not contain a **country or area code**, TPNS will automatically add `+86` as the prefix when sending SMS messages. If the mobile number contains a **country or area code**, it will be bound as is. To delete the bound mobile number, call the `delAccountsByKeys` API and set `accountTypeSet` to `1002`.
 >
 
 ```java
 public static void upsertPhoneNumber(Context context, String phoneNumber, XGIOperateCallback callback) 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context： Context 对象。
-- phoneNumber：phoneNumber E.164标准，格式为+[国家或地区码][手机号]，例如+8613711112222。SDK 内部加密传输。
-- callback： 绑定手机号操作的回调。
+- `context`: `Context` object
+- `phoneNumber`: an E.164 mobile number in the format of `[+][country code or area code][mobile number]`, for example, +8613711112222
+- `callback`: callback of mobile number binding operation
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
@@ -588,54 +588,54 @@ XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
 XGPushManager.upsertPhoneNumber(context, phoneNumber, xgiOperateCallback);
 ```
 
-### 账号解绑
+### Unbinding an account
 
 
-#### 接口说明
+#### API description
 
-对已绑定的账号进行解绑。
+This API is used to unbind a bound account.
 
 ```java
-//解绑指定账号（有注册回调）
+// Unbind the specified account (with registration callback)
 void delAccount(Context context, final String account, XGIOperateCallback callback)	
-//解绑指定账号（无注册回调）
-void delAccount(Context context, final String account ）
+// Unbind the specified account (without registration callback)
+void delAccount(Context context, final String account )
 
 ```
 
->? 账号解绑只是解除 Token 与 App 账号的关联，若使用全量/标签/Token 推送，仍然能收到通知/消息。
+>? Account unbinding just removes the association between the token and the application account. If full/tag/token push is used, notifications/messages can still be received.
 >
 
-#### 参数说明
+#### Parameter description
 
-- context：当前应用上下文对象，不能为 null。
-- account：账号。
+- `context`: context object of the current application, which cannot be `null`
+- `account`: account
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGPushManager.delAccount(getApplicationContext(),"test");
 
 ```
 
-### 账号类型解绑
+### Unbinding by account type
 
-#### 接口说明
+#### API description
 
-对一个或多个账号类型的账号进行解绑。（SDK 1.2.3.0+）
+This API is used to unbind accounts of one or multiple types. (SDK v1.2.3.0+)
 
 ```java
 public static void delAccounts(Context context, final Set<Integer> accountTypeSet, XGIOperateCallback callback)
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context： Context 对象。
-- accountTypeSet： 需解绑账号的账号类型。
-- callback： 账号解绑操作的回调。
+- `context`: `Context` object
+- `accountTypeSet`: type of the account to be unbound
+- `callback`: callback of account unbinding operation
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
@@ -658,69 +658,69 @@ XGPushManager.delAccounts(context, accountTypeSet, xgiOperateCallback);
 
 ```
 
-### 清空所有账号
+### Clearing all accounts
 
->? SDK 1.2.2.0 版本废弃 delAllAccount 接口，推荐使用 clearAccounts 接口。
+>? The `delAllAccount` API is disused in SDK v1.2.2.0. The `clearAccounts` API is recommended.
 >
 
-#### 接口说明
+#### API description
 
-对的所有已绑定账号进行解绑。
+This API is used to unbind all bound accounts.
 
 ```java
-//解绑所有的账号信息（有注册回调）
+// Unbind all accounts (with registration callback)
 void clearAccounts(Context context, XGIOperateCallback callback)
-//解绑所有的账号信息（无注册回调）
+// Unbind all accounts (without registration callback)
 void clearAccounts(Context context)
 
 ```
 
-> ? 账号解绑只是解除 Token 与 App 账号的关联，若使用全量/标签/Token 推送，仍然能收到通知/消息。
+> ? Account unbinding just removes the association between the token and the application account. If full/tag/token push is used, notifications/messages can still be received.
 
-#### 参数说明
+#### Parameter description
 
-context：当前应用上下文对象，不能为 null。
+`context`: context object of the current application, which cannot be `null`
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGPushManager.clearAccounts(getApplicationContext());
 
 ```
 
-## 标签管理
+## Bucket Tag
 
-以下为标签管理相关接口方法，若需了解调用时机及调用原理，可查看 [标签相关流程](https://intl.cloud.tencent.com/document/product/1024/32609)。
+The following are tag management API methods. For more information on the timing and principle of calls, please see [Tag flow](https://intl.cloud.tencent.com/document/product/1024/32609#tag-flow).
 
-### 预设标签
+### Preset tags
 
-目前 TPNS 平台提供的预设标签包括：App 版本，系统版本，省份，活跃信息，系统语言，SDK 版本，国家&地区，手机品牌，手机机型。预设标签会在 SDK 内部自动上报。
+Currently, TPNS preset tags include application version, system version, province, active information, system language, SDK version, country/region, phone brand, and phone model tags. Preset tags are automatically reported in the SDK.
 
-### 覆盖多个标签
+### Overwriting multiple tags
 
-#### 接口说明
+#### API description
 
-一次设置多个标签，会覆盖这个设备之前设置的标签。
-开发者可以针对不同的用户设置标签，然后根据标签名群发通知。 一个应用最多有10000个 tag， 每个 Token 在一个应用下最多100个 tag，如需提高该限制，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 与我们联系。每个自定义 tag 可绑定的设备 Token 数量无限制，tag  中不准包含空格。
+Setting multiple tags at a time will overwrite tags previously set for this device.
+You can set tags for different users and then send mass notifications based on tag names. An application can have up to 10,000 tags, and each token can have up to 100 tags in one application. If you want to increase the limits, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). Each custom tag can be bound to an unlimited number of device tokens, and no spaces are allowed in the tag.
 
 ```java
 public static void clearAndAppendTags(Context context, String operateName, Set<String> tags) 
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：Context  对象。
-- operateName：用户定义的操作名称，回调结果会原样返回，用于标识回调属于哪次操作。
-- tags：标签名集合，每个标签是一个 String。限制：每个 tag 不能超过50字节（超过会抛弃），不能包含空格（含有空格会删除空格）。最多设置100个 tag，超过部分会抛弃。
+- `context`: `Context` object
+- `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
+- tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
 
 
 
-#### 处理结果
+#### Processing result
 
-可通过重载 XGPushBaseReceiver的onSetTagResult 方法获取。
+The result can be obtained by reloading the `onSetTagResult` method of `XGPushBaseReceiver`.
 
-#### 示例代码
+#### Sample code
 
 ```java
 String[] tags = "tag1 tag2".split(" ");
@@ -729,34 +729,34 @@ XGPushManager.clearAndAppendTags(getApplicationContext(), "clearAndAppendTags :"
 
 ```
 
-### 新增多个标签
+### Adding multiple tags
 
->? SDK 1.2.2.0 版本废弃 addTags 接口，推荐使用 appendTags 接口。
+>? The `addTags` API is disused in SDK v1.2.2.0. The `appendTags` API is recommended.
 >
 
-#### 接口说明
+#### API description
 
-- 如果新覆盖的标签都带有 `:` 号，例如 `test:2, level:2`，则会删除这个设备已绑定的所有 `test:*` 和 `level:*` 标签，再新增 `test:2` 和 `level:2`。
-- 如果新增的标签有部分不带 `:` 号，例如 `test:2  level`，则会删除这个设备的全部历史标签，再新增 `test:2` 和 `level` 标签。
->? 新增的 tags 中，`:` 号为后台关键字，请根据具体的业务场景使用。
+- If all tags to be added contain a colon (:), for example, `test:2, level:2`, all `test:*` and `level:*` tags bound with the device will be deleted before the `test:2` and `level:2` tags are added.
+- If certain tags to be added do not contain a colon (:), for example, `test:2  level`, all historical tags of the device will be deleted before the `test:2` and `level` tags are added.
+>? In newly added tags, a colon (:) is the backend keyword. Use it according to your business scenarios.
 >
-- 此接口调用的时候需要间隔一段时间（建议大于5s），否则可能造成更新失败。
+- This API should be called at a certain interval (an interval longer than 5 seconds is recommended); otherwise, update may fail.
 ```java
 public static void appendTags(Context context, String operateName, Set<String> tags) 
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：Context  对象。
-- operateName：用户定义的操作名称，回调结果会原样返回，用于标识回调属于哪次操作。
-- tags：标签名集合，每个标签是一个 String。限制：每个 tag 不能超过50字节（超过会抛弃），不能包含空格（含有空格会删除空格）。最多设置100个 tag，超过部分会抛弃。
+- `context`: `Context` object
+- `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
+- tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
 
-#### 处理结果
+#### Processing result
 
-可通过重载 XGPushBaseReceiver的onSetTagResult 方法获取。
+The result can be obtained by reloading the `onSetTagResult` method of `XGPushBaseReceiver`.
 
-#### 示例代码
+#### Sample code
 
 ```java
 String[] tags = "tag1 tag2".split(" ");
@@ -766,32 +766,32 @@ XGPushManager.appendTags(getApplicationContext(), "appendTags:" + System.current
 ```
 
 
-### 删除多个标签
+### Deleting multiple tags
 
->? SDK 1.2.2.0 版本废弃 deleteTags 接口，推荐使用 delTags 接口。
+>? The `deleteTags` API is disused in SDK v1.2.2.0. The `delTags` API is recommended.
 >
 
-#### 接口说明
+#### API description
 
-一次删除多个标签。
+This API is used to delete multiple tags at a time.
 
 ```java
 public static void delTags(Context context, String operateName, Set<String> tags, XGIOperateCallback callback) 
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：Context 对象。
-- operateName：用户定义的操作名称，回调结果会原样返回，用于标识回调属于哪次操作。
-- tags：标签名集合，每个标签是一个 String。限制：每个 tag 不能超过50字节（超过会抛弃），不能包含空格（含有空格会删除空格）。最多设置100个tag，超过部分会抛弃。
-- callback： 删除标签操作的回调
+- `context`: `Context` object
+- `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
+- tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
+- `callback`: callback of tag deletion operation
 
-#### 处理结果
+#### Processing result
 
-可通过重载 XGPushBaseReceiver 的 onSetTagResult 方法获取。
+The result can be obtained by reloading the `onSetTagResult` method of `XGPushBaseReceiver`.
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
@@ -813,31 +813,31 @@ XGPushManager.delTags(context, "delTags", tagSet, xgiOperateCallback);
 
 ```
 
-### 清除所有标签
+### Clearing all tags
 
->? SDK 1.2.2.0 版本开始废弃 cleanTags 接口，推荐使用 clearTags 接口。
+>? The `cleanTags` API is disused in SDK v1.2.2.0 and later versions. You are advised to use the `clearTags` API.
 >
 
-#### 接口说明
+#### API description
 
-清除这个设备的所有标签。
+This API is used to clear all tags of a device.
 
 ```java
 public static void clearTags(Context context, String operateName, XGIOperateCallback callback)
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：Context 对象。
-- operateName：用户定义的操作名称，回调结果会原样返回，用于标识回调属于哪次操作。
-- callback： 清理所有标签操作的回调。
+- `context`: `Context` object
+- `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
+- `callback`: callback of tag clearing operation
 
-#### 处理结果
+#### Processing result
 
-可通过重载 XGPushBaseReceiver 的 onSetTagResult 方法获取。
+The result can be obtained by reloading the `onSetTagResult` method of `XGPushBaseReceiver`.
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
@@ -855,33 +855,33 @@ XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
 XGPushManager.clearTags(context, "clearTags", xgiOperateCallback);
 
 ```
-### 查询标签
+### Querying tags
 
->? 查询设备关联的标签（此接口仅适用于1.2.5.0及以上版本）。
+>? This API is used to get the tags bound to a device and available only for v1.2.5.0 and later.
 >
 
-#### 接口说明
+#### API description
 
-获取这个设备的标签。
+This API is used to get the tags bound to the device.
 
 ```java
     public static void queryTags(final Context context, final String operateName, final int offset, final int limit, final XGIOperateCallback callback)
 ```
 
 
-#### 参数说明
+#### Parameter description
 
-- context：Context 对象
-- operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作
-- offset：开始的位置
-- limit：获取标签的数量，最多为100个
-- callback：获取标签操作的回调
+- `context`: `Context` object
+- `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
+- `offset`: the starting point
+- `limit`: number of tags to get;  maximum value: `100`
+- `callback`: callback of tag getting operation
 
-#### 处理结果
+#### Processing result
 
-可通过重载 XGPushBaseReceiver 的 onQueryTagsResult 方法获取。
+The result can be obtained by reloading the `onQueryTagsResult` method of `XGPushBaseReceiver`.
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
@@ -899,35 +899,35 @@ XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
 XGPushManager.queryTags(context, 0, 100, xgiOperateCallback);
 ```
 
-## 用户属性管理
+## User Attribute Management
 
-开发者可以针对不同的用户设置属性，然后在管理平台推送的时候进行个性化推送。以下为用户属性相关接口方法，若需了解调用时机及调用原理，可查看  [用户属性相关流程](https://intl.cloud.tencent.com/document/product/1024/32609)。
+You can set attributes for different users and then perform personalized push in TPNS. The following are user attribute API methods. For more information on the timing and principle of calls, please see [User attribute flow](https://intl.cloud.tencent.com/document/product/1024/32609#user-attribute-flow).
 
-### 新增用户属性
+### Adding user attributes
 
-#### 接口说明
+#### API description
 
-添加属性（带回调）：有则覆盖，无则添加。
+This API is used to add an attribute (with callback). If there is no attribute, it will add one; otherwise, it will overwrite the existing one.
 
 ```java
 public static void upsertAttributes(Context context, String operateName, Map<String, String> attributes, XGIOperateCallback callback)
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：Context 对象。
-- operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作。
-- attributes：属性集合，每个属性通过 key-value 标识。
-- callback：添加属性操作的回调。
+- `context`: `Context` object
+- `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
+- `attributes`: attribute set, where each attribute is identified by `key-value`
+- `callback`: callback of attribute adding operation
 
 > !	
 >
-> 1. 属性使用键值对传输，都只接受 string 字符串类型，非空串。
-> 2. 属性个数限制50个。
-> 3. 属性 key，value 长度都限制50个字符以内。
+> 1. Attributes are transferred through key-value pairs, and only non-empty strings can be accepted.
+> 2. There can be up to 50 attributes.
+> 3. Both the `key` and `value` of an attribute can contain up to 50 characters.
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
@@ -952,31 +952,31 @@ XGPushManager.upsertAttributes(context, "addAttributes-test", attr, xgiOperateCa
 
 
 
-### 删除用户属性
+### Deleting a user attribute
 
-#### 接口说明
+#### API description
 
-删除指定的属性。
+This API is used to delete a specified attribute.
 
 ```java
 public static void delAttributes(Context context, String operateName, Set<String> attributes, XGIOperateCallback callback)
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：Context 对象。
-- operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作。
-- attributes：属性集合，每个属性通过 key-value 标识。
-- callback：删除属性操作的回调。
+- `context`: `Context` object
+- `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
+- `attributes`: attribute set, where each attribute is identified by `key-value`
+- `callback`: callback of attribute deleting operation
 
 > !	
 >
-> 1. 属性使用键值对传输，都只接受 string 字符串类型，非空串。
-> 2. 属性个数限制50个。
-> 3. 属性 key，value 长度都限制50个字符以内。
+> 1. Attributes are transferred through key-value pairs, and only non-empty strings can be accepted.
+> 2. There can be up to 50 attributes.
+> 3. Both the `key` and `value` of an attribute can contain up to 50 characters.
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
@@ -999,24 +999,24 @@ XGPushManager.delAttributes(context, "delAttributes-test", stringSet, xgiOperate
 
 ```
 
-### 清空已有用户属性
+### Clearing all user attributes
 
-#### 接口说明
+#### API description
 
-删除已设置的所有属性。
+This API is used to delete all configured attributes.
 
 ```java
 public static void clearAttributes(Context context, String operateName, XGIOperateCallback callback)
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：Context 对象。
-- operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作。
-- callback：清理所有属性操作的回调。
+- `context`: `Context` object
+- `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
+- `callback`: callback of attribute clearing operation
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
@@ -1035,31 +1035,31 @@ XGPushManager.clearAttributes(context, "cleanAttributes-test", xgiOperateCallbac
 
 ```
 
-### 更新用户属性
+### Updating user attributes
 
-#### 接口说明
+#### API description
 
-设置属性（带回调），会覆盖这个设备之前设置的所有属性（即清理并设置）。
+This API is used to set an attribute (with callback). It will overwrite all the attributes previously set for this device (i.e., clearing and setting).
 
 > !	
 >
-> 1. 属性使用键值对传输，都只接受 string 字符串类型，非空串。
-> 2. 属性个数限制50个。
-> 3. 属性 key，value 长度都限制50个字符以内。
+> 1. Attributes are transferred through key-value pairs, and only non-empty strings can be accepted.
+> 2. There can be up to 50 attributes.
+> 3. Both the `key` and `value` of an attribute can contain up to 50 characters.
 
 ```java
 public static void clearAndAppendAttributes(Context context, String operateName, Map<String, String> attributes, XGIOperateCallback callback)
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：Context 对象。
-- operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作。
-- attributes：属性集合，每个属性通过 key-value 标识。
-- callback：设置属性操作的回调。
+- `context`: `Context` object
+- `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
+- `attributes`: attribute set, where each attribute is identified by `key-value`
+- `callback`: callback of attribute setting operation
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
@@ -1083,226 +1083,226 @@ XGPushManager.clearAndAppendAttributes(context, "setAttributes-test", attr, xgiO
 
 ```
 
-## 配置接口
+## Configuration APIs
 
-所有的配置相关接口在 XGPushConfig 类中，为了使配置及时生效，开发者需要保证配置接口在启动或注册移动推送 TPNS 之前被调用。
+All configuration APIs are in the `XGPushConfig` class. For configurations to take effect in time, you need to ensure that configuration APIs are called before launching or registering TPNS.
 
-### 关闭联合保活能力(1.1.6.1+)
+### Disabling session keep-alive (1.1.6.1+)
 
-TPNS默认开启联合保活能力，若需要关闭联合保活能力，请在应用初始化的时候，例如 Application 或 LauncherActivity 的 onCreate 中调用如下接口，并传递 false。
+TPNS enables the session keep-alive feature by default. To disable it, please call the following API in `onCreate` of `Application` or `LauncherActivity` during application initialization and pass in `false`:
 
 ```java
 XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：应用上下文
-- pullUp：true（开启联合保活）；false（关闭联合保活）
+- `context`: application context
+- `pullUp`: `true` (enable session keep-alive); `false` (disable session keep-alive)
 
->? 若有以下日志打印，则表明联合保活功能已经关闭：I/TPNS: [ServiceUtil] disable pull up other app。
+>? If the following log is printed, the session keep-alive feature has been disabled: `I/TPNS: [ServiceUtil] disable pull up other app`.
 >
 
-#### 示例代码
+#### Sample code
 
 ```java
-XGPushConfig.enablePullUpOtherApp(context, false); // 默认为 true: 开启保活
+XGPushConfig.enablePullUpOtherApp(context, false); // Default value: true (enable keep-alive)
 
 ```
 
-### Debug 模式
+### Debug mode
 
-#### 接口说明
+#### API description
 
-为保证数据的安全性，请在发布时确保已关闭 Debug 模式。
+To ensure data security, make sure the debug mode is turned off when publishing.
 
 ```java
 public static void enableDebug(Context context, boolean debugMode)
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：App 上下文对象。
-- debugMode：默认为 false。如果要开启 Debug 日志，设为 true。
+- `context`: context object of the application
+- `debugMode`: the default value is `false`. To enable debug logging, set it to `true`.
 
-#### 示例代码
+#### Sample code
 
 ```java
-XGPushConfig.enableDebug(context, true); // 默认为 false: 不打开
+XGPushConfig.enableDebug(context, true); // Default value: false (do not enable)
 
 ```
 
-<span id="获取Token"></span>
+<span id="Getting token"></span>
 
-### 获取设备 Token
+### Getting a device token
 
-#### 接口说明
+#### API description
 
-Token 是移动推送 TPNS 保持与后台长连接的唯一身份标识，是 App 接收消息的唯一 ID，只有设备注册成功后才能获取 Token，获取方法如下。（移动推送 TPNS 的 Token 在应用卸载重新安装的时候有可能会变。）
+A token is the unique ID for TPNS to stay connected with the backend and the unique ID for an application to receive messages. A device token can be obtained only after the device is successfully registered. The obtaining methods are described as follows. (The TPNS token may change if the application is uninstalled and reinstalled.)
 
-#### 1. 通过带 callback 的注册接口获取
+**Through the registration API with callback**
 
-带 XGIOperateCallback 的注册接口的 onSuccess(Object data, int flag) 方法中，参数 data 便是 Token，具体可参考注册接口的相关示例。
+In the `onSuccess(Object data, int flag)` method of the registration API with `XGIOperateCallback`, the `data` parameter is the token. For more information, please see the relevant sample of the registration API.
 
-#### 2. 重载 XGPushBaseReceiver
+**By reloading XGPushBaseReceiver**
 
-重载 XGPushBaseReceiver 的 onRegisterResult (Context context, int errorCode,XGPushRegisterResult registerMessage) 方法，通过参数 registerMessage 提供的 getToken 接口获取，具体请参见 [获取注册结果](#.E8.8E.B7.E5.8F.96.E6.B3.A8.E5.86.8C.E7.BB.93.E6.9E.9C) 章节。
+Reload the `onRegisterResult (Context context, int errorCode,XGPushRegisterResult registerMessage)` method of `XGPushBaseReceiver` and get the token through the `getToken` API provided by the `registerMessage` parameter. For more information, please see [Getting registration results](#.E8.8E.B7.E5.8F.96.E6.B3.A8.E5.86.8C.E7.BB.93.E6.9E.9C).
 
-#### 3. XGPushConfig.getToken(context)
+**Through the XGPushConfig.getToken(context) API**
 
-当设备一旦注册成功后，便会将 Token 存储在本地，之后可通过 XGPushConfig.getToken(context) 接口获取。
+Once the device is successfully registered, the token will be stored locally and then can be obtained through the `XGPushConfig.getToken(context)` API.
 
-Token 是一个设备的身份识别 ID，由服务器根据设备属性随机产生并下发到本地，同一 App 在不同设备上的 Token 不同。
+Token is the identity ID of a device. It is randomly generated by the server based on the device attributes and delivered to the local system. The token of the same application varies by device.
 
 ```java
 public static String getToken(Context context)
 
 ```
 
->? App 第一次注册会产生 Token，之后一直存储在手机上，不论之后是否进行注销注册操作，该 Token 一直存在。当 App 完全卸载重装后，Token 会发生变化。不同 App 之间的 Token 不同。
+>? A token is generated during the first application registration and will be stored in the mobile phone. The token always exists regardless of whether unregistration is performed subsequently. After the application is uninstalled and reinstalled, the token will change. The token varies by application.
 >
 
-#### 参数说明
+#### Parameter description
 
-context：App 上下文对象。
+`context`: context object of the application
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGPushConfig.getToken(context);
 
 ```
 
-#### 返回值
+#### Returned values
 
-成功时返回正常的 Token；失败时返回 null 或0。
+A standard token will be returned upon success, and `null` or `0` upon failure.
 
-### 获取第三方厂商 Token
+### Getting a third-party vendor token
 
-#### 接口说明
+#### API description
 
-第三方厂商 Token 是厂商设备的身份识别 ID，由厂商下发到本地，同一 App 在不同设备上的 Token 不同。
+A third-party token is the identity ID of a vendor device. It is delivered to the local system by the vendor. The token of the same application varies by device.
 
 ```java 
 public static String getOtherPushToken(Context context) 
 
 ```
 
-> ? 需要注册成功之后才能调用，不然返回为 NULL。
+> ? This API can be called only after successful registration; otherwise, `null` will be returned.
 
-#### 参数说明
+#### Parameter description
 
-context：App 上下文对象。
+`context`: context object of the application
 
-#### 示例代码
+#### Sample code
 
 ```java
 XGPushConfig.getOtherPushToken(context);
 
 ```
 
-#### 返回值
+#### Returned values
 
-成功时返回正常的 Token；失败时返回 null 或0。  
+A standard token will be returned upon success, and `null` or `0` upon failure.  
 
 
 
-### 设置 AccessID
+### Setting the `accessId`
 
-#### 接口说明
+#### API description
 
-如果已在 AndroidManifest.xml 配置过，无需再次调用；如果二者都存在，则以本接口为准。
+If the `accessKey` is already set in `AndroidManifest.xml`, you do not need to call this API again; if you still call this API, the `accessKey` set through this API will prevail.
 
 ```java
 public static boolean setAccessId(Context context, long accessId)
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- Context：对象。
-- accessId：前台注册得到的 accessId。
+- `Context`: object
+- `accessId`: `accessId` obtained through registration in the console
 
-#### 示例代码
+#### Sample code
 
 ```java
-long accessId = 0L; // 当前应用的 accessId
+long accessId = 0L; // `accessId` of the current application
 XGPushConfig.setAccessId(context, accessId);
 
 ```
 
-#### 返回值
+#### Returned values
 
-- true：成功。
-- false：失败。
+- true: success.
+- false: failure.
 
->? 通过本接口设置的 accessId 会同时存储在文件中。
+>? The `accessId` set through this API will also be stored in the `AndroidManifest.xml` file.
 >
 
-### 设置 AccessKey
+### Setting the `accessKey`
 
-#### 接口说明
+#### API description
 
-如果已在 AndroidManifest.xml 配置过，无需再次调用；如果二者都存在，则以本接口为准。
+If the `accessKey` is already set in `AndroidManifest.xml`, you do not need to call this API again; if you still call this API, the `accessKey` set through this API will prevail.
 
 ```java
 public static boolean setAccessKey(Context context, String accessKey) 
 
 ```
 
-#### 参数说明
+#### Parameter description
 
-- Context：对象。
-- accessKey：前台注册得到的 accesskey。
+- `Context`: object
+- `accessKey`: `accessKey` obtained through registration in the console
 
-#### 示例代码
+#### Sample code
 
 ```java
-String accessKey = ""; // 您应用的 accessKey
+String accessKey = ""; // `accessKey` of your application
 XGPushConfig.setAccessKey(context, accessKey);
 
 ```
 
-#### 返回值
+#### Returned values
 
-- true：成功。
-- false：失败。
+- true: success.
+- false: failure.
 
->? 通过本接口设置的 accessKey 会同时存储在文件中。
+>? The access key set through this API will also be stored in the `AndroidManifest.xml` file.
 >
 
 
-### 新增日志上报接口
+### Reporting logs
 
-#### 接口说明
+#### API description
 
-开发者如果发现 TPush 相关功能异常，可以调用该接口，触发本地 Push 日志的上报，反馈问题时， [提交工单](https://console.cloud.tencent.com/workorder/category) 将文件地址给到我们，便于我们排查问题。
+If you find exceptions with TPush, you can call this API to trigger reporting of local push logs. To report the problem, [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the file address provided to facilitate troubleshooting.
 
 ```
 public static void uploadLogFile(Context context, HttpRequestCallback httpRequestCallback)
 ```
 
-#### 参数说明
+#### Parameter description
 
-- context：Context 对象， 不能为 null。
-- httpRequestCallback： 上传日志结果回调，主要包括操作成功和失败，不能为 null。
+- `context`: `Context` object, which cannot be `null`
+- `httpRequestCallback`: log reporting result callback, which include callbacks for success and failure and cannot be `null`
 
-#### 示例代码
+#### Sample code
 
 ```
 XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
 	@Override
 	public void onSuccess(String result) {
-			 Log.d("TPush", "上传成功，文件地址：" + result);
+			 Log.d("TPush", "Upload succeeded. File address:" + result);
 	}
 
 	@Override
 	public void onFailure(int errCode, String errMsg) {
-			 Log.d("TPush", "上传失败，错误码：" + errCode + ",错误信息：" + errMsg);
+			 Log.d("TPush", "Upload failed. Error code:" + errCode + ", error message:" + errMsg);
 	}
 });
 ```
 
->?首先需要开启 `XGPushConfig.enableDebug(this, true);`。
+>?You need to enable `XGPushConfig.enableDebug(this, true);` first.

@@ -1,22 +1,22 @@
 ## Use Cases
 
-You can redirect subscribers who tap your notification to the specified in-app page, HTML5 page and Deeplink to meet your needs in different use cases.
+You can redirect subscribers who tap your notification to the specified in-app page, HTML5 page, or deep link to meet your needs in different use cases.
 
 ## Application Scope
 
 | Platform   | Type                                                    |
 | ------- | ------------------------------------------------------------ |
-| Android | <li>Intent redirect: jumps to the specified in-app page. You can also pass in custom parameters.<li>Open application: directly goes to the application’s homepage<li>URL: opens the browser and accesses the specified webpage<li>In-app Activity: jumps to the specified in-app page |
-| iOS     | <li>Opens the app by default<li>The business logic is based on the delivered custom key and value.</li> |
+| Android | <li>Intent redirect: jumps to the specified in-app page. You can also pass in custom parameters.<li>Open application: directly goes to the application’s homepage<li>URL: opens the browser and accesses the specified webpage<li>In-app activity: jumps to the specified in-app page |
+| iOS     | <li>Opens the app by default<li>Implements the business logic based on the delivered custom key and value</li> |
 
 ## Android Applications
 
-> ! In the SDK, a tap on a message can trigger a click event by default, which opens the target page. If a redirect action is configured in `onNotifactionClickedResult`, it will conflict with the custom redirect rule specified in the console/API, and the custom redirect rule will fail.
+>! In the SDK, a tap on a message can trigger a click event by default, which opens the target page. If a redirect action is configured in `onNotifactionClickedResult`, it will conflict with the custom redirect rule specified in the console or API, and the custom redirect rule will fail.
 >
 
 ### Configuring SDK
 
-To use Intent redirect, first configure the page to be redirected to in the client application’s AndroidManifest file.
+To use Intent redirect, first configure the page to be redirected to in the client application’s `AndroidManifest` file.
 
 If you want to redirect to the page specified by `AboutActivity`, use the following sample code:
 ```xml
@@ -32,7 +32,7 @@ If you want to redirect to the page specified by `AboutActivity`, use the follow
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT"/>
         <!-- Customize the content of the data block to specify your complete scheme. -->
-        <!-- According to your configuration, a URL identifier in the `scheme name://host name/path name` format will be formed. -->
+        <!-- According to your configuration, a URL in the `scheme name://host name/path name` format will be formed. -->
         <!-- To avoid conflicts with the redirection destination pages of other apps, you are advised to use fields that can uniquely identify the app for configuration, such as those with the app name or app package name. -->
         <data
               android:scheme="Scheme name"
@@ -56,13 +56,13 @@ Tapping on the notification that is pushed via the console will open the applica
 
 #### URL redirect
 
-To set the URL redirect in the [TPNS console](https://console.cloud.tencent.com/tpns), go to **Advanced Settings** -> **Open Location** and enter the following information.
+To set the URL redirect in the [TPNS console](https://console.cloud.tencent.com/tpns), go to **Advanced Settings** > **Open Location** and enter the following information:
 
 ![](https://main.qcloudimg.com/raw/0977d856b016ffbc7799644dc5f9af53.png)
 
-#### In-app Activity redirect
+#### In-app activity redirect
 
-This method will be deactivated, so we don’t recommend using it. Go to **Advanced Settings** -> **Open Location** in the console and enter the following information.
+This method will be disused, so we don’t recommend using it. Go to **Advanced Settings** > **Open Location** in the console and enter the following information:
 
 ![](https://main.qcloudimg.com/raw/0d72df984a153f05a31c246e5dd6c8d9.png)
 
@@ -72,15 +72,14 @@ This method will be deactivated, so we don’t recommend using it. Go to **Advan
 
 Add the `action` and `action_type` fields under `body.message.android` of the push message body.
 
-| Field Name | Type | Parent Project | Default Value | Required | Description |
+| Field | Type | Parent Project | Default Value | Required | Description |
 | ----------- | ------- | ------- | ------ | ---- | ------------------------------------------------------------ |
 | action         | Object  | Android | 1    | No | This sets the action after the notification bar is tapped; the default action is to open an application. |
-| action_type | Integer | Action  | 1     | No   | One-tap action. Valid values: <li>1: opens Activity or application</li><li>2: opens the browser</li><li>3: Opens Intent (recommended; for more information, see [Configuring SDK](#sdk-.E9.85.8D.E7.BD.AE))</li> |
+| action_type | Integer | Action  | 1     | No   | One-tap action. Valid values: <li>`1`: opens activity or app</li><li>`2`: opens browser</li><li>3: opens Intent (recommended; for more information, see [Configuring SDK](#sdk-.E9.85.8D.E7.BD.AE))</li> |
 
 #### Intent redirect (recommended)
 
 Below is a sample of a complete message:
-
 ```json
 {
   "audience_type": "token",
@@ -93,7 +92,7 @@ Below is a sample of a complete message:
     "content": "xxx",
     "android": {
       "action": {
-            "action_type": 3, // Action type; 1. Open Activity or application; 2. Open browser; 3. Open Intent          
+            "action_type": 3, // Action type. `1`: opens activity or app; `2`: opens browser; `3`: opens Intent          
             "intent": "xgscheme://com.tpns.push/notify_detail" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's Intent and set the scheme attribute
         }
       }
@@ -114,8 +113,8 @@ If you want to pass in custom parameters such as `param1` and `param2`, use the 
     "content": "xxx",
     "android": {
       "action": {
-            "action_type": 3, // Action type. `1`: open activity or app; `2`: open browser; `3`: open intent          
-            "intent": "xgscheme://com.tpns.push/notify_detail?param1=aa&param2=bb" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's intent and set the scheme attribute
+            "action_type": 3, // Action type. `1`: opens activity or app; `2`: opens browser; `3`: opens Intent          
+            "intent": "xgscheme://com.tpns.push/notify_detail?param1=aa&param2=bb" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's Intent and set the scheme attribute
         }
       }
    }
@@ -123,6 +122,7 @@ If you want to pass in custom parameters such as `param1` and `param2`, use the 
 ```
 
 >? If the client requires more parameters for other responses, refer to [Getting parameters on the client](#zhongduan).
+>
 
 #### Open app
 
@@ -140,7 +140,7 @@ Below is a sample of a complete message:
     "content": "xxx",
     "android": {
       "action": {
-           "action_type": 1 // Action type. `1`: open activity or app; `2`: open browser; `3`: open intent  
+           "action_type": 1 // Action type. `1`: opens activity or app; `2`: opens browser; `3`: opens Intent  
         }
       }
    }	
@@ -150,7 +150,6 @@ Below is a sample of a complete message:
 #### URL redirect
 
 Below is a sample of a complete message:
-
 ```json
 {
   "audience_type": "token",
@@ -163,9 +162,9 @@ Below is a sample of a complete message:
     "content": "xxx",
     "android": {
       "action": {
-           "action_type": 2, // Action type. `1`: open activity or app; `2`: open browser; `3`: open intent          
+           "action_type": 2, // Action type. `1`: opens activity or app; `2`: opens browser; `3`: opens Intent          
            "browser": {
-                "url": "http://tpns.qq.com", // Only http and https are supported
+                "url": "http://tpns.qq.com", // Only HTTP and HTTPS URLs are supported
                 "confirm": 1 // Whether user's confirmation is required
             }
         }
@@ -174,7 +173,7 @@ Below is a sample of a complete message:
 }
 ```
 
-#### Opening the in-app Activity
+#### Opening the in-app activity
 
 Below is a sample of a complete message:
 
@@ -190,7 +189,7 @@ Below is a sample of a complete message:
     "content": "xxx",
     "android": {
       "action": {
-           "action_type": 1, // Action type. `1`: open activity or app; `2`: open browser; `3`: open intent        
+           "action_type": 1, // Action type. `1`: opens activity or app; `2`: opens browser; `3`: opens Intent        
            "activity": "com.x.y.MainActivity",
            "aty_attr": {// Activity attribute, only for action_type=1
                "if": 0, // Intent's Flag attribute
@@ -206,9 +205,8 @@ Below is a sample of a complete message:
 
 
 ### Getting parameters on the client
-1. In the `onCreate `method of the page you specify for redirect to, add the following intent URI code:
-<dx-codeblock>
-:::  Java 
+1. In the `onCreate` method of the page you specify for redirect, add the following intent URI code:
+```
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -227,12 +225,9 @@ protected void onCreate(Bundle savedInstanceState) {
 
     // ...
 }
-:::
-</dx-codeblock>
-2. If your Activity page is the application's resident page (for example, `launchMode` is set to `singleTop` or `singleTask`), the intent content for tap-to-redirect will be triggered by the `onNewIntent` method of the Activity page. Please add the following to the `onNewIntent` method to get the intent URI code:
-<dx-codeblock>
-:::  Java 
-java
+```
+2. If your activity page is the application's resident page (for example, `launchMode` is set to `singleTop` or `singleTask`), the intent content for tap-to-redirect will be triggered by the `onNewIntent` method of the activity page. Please add the following to the `onNewIntent` method to get the intent URI code:
+``` java
 @Override
 protected void onNewIntent(Intent intent) {
     super.onNewIntent(intent);
@@ -250,8 +245,25 @@ protected void onNewIntent(Intent intent) {
 
     // ...
 }
-:::
-</dx-codeblock>
+```
+3. If the parameters passed in contain special characters, you can use URLEncode to encode the parameter values when creating the push and use URLDecode to decode them at the terminal. The following is a sample:
+```java
+Uri uri = getIntent().getData();
+if (uri != null) {
+    String p1 = uri.getQueryParameter("param1");
+    String value1 = "";
+    try {
+        // The value of the custom parameter `param1` contains special characters. You can use URLEncode to encode it when creating the push and use URLDecode to decode it when obtaining it.
+        value1 = URLDecoder.decode(p1, "UTF-8");
+    } catch (UnsupportedEncodingException e) {
+        Log.w("TPNS", "URLDecode param failed: " + e.toString());
+    }
+    // The custom parameter `param2` is not encoded with URLEncode and can be obtained directly.
+    String value2 = uri.getQueryParameter("param2");
+    Log.i("TPNS" , "value1 = " + value1);
+}
+```
+
 
 ## iOS Applications
 
@@ -259,14 +271,14 @@ You can pass in custom parameters in the notification for delivery, and implemen
 
 ### Using the console
 
-To set parameters in the [TPNS console](https://console.cloud.tencent.com/tpns), go to **Advanced Settings** -> **Extra Parameter(s)** and enter the following information.
+To set parameters in the [TPNS console](https://console.cloud.tencent.com/tpns), go to **Advanced Settings** > **Extra Parameter(s)** and enter the following information:
 ![](https://main.qcloudimg.com/raw/a77ffabd8cb2d4907bd7b597a11cfc97.png)
 
 ### Using RESTful APIs
 
 Add the following `custom_content` field under `body.message.ios` of the push message body.
 
-| Field Name | Type | Parent Project | Default Value | Required | Description |
+| Field | Type | Parent Project | Default Value | Required | Description |
 | -------------- | ------ | ------ | ------ | ---- | ------------------------------------------ |
 | custom_content  | String  | ios    | Empty    | No    | Custom parameter for delivery, which must be serialized to a JSON string.                                |
 
@@ -297,7 +309,7 @@ Below is a sample of a complete message:
 
 ### Getting parameters on the client
 
-If you use iOS SDK integration, you can obtain custom parameters using click callback. This callback applies to the notification messages of the app in foreground, background and shutdown status.
+If you use iOS SDK integration, you can obtain custom parameters using click callback. This callback applies to the notification messages of the app in foreground, background, and shutdown status.
 
 ```objective-c
 /// Unified message click callback

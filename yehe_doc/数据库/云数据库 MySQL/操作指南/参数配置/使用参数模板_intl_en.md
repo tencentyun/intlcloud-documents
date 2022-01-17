@@ -1,6 +1,6 @@
-Besides the system parameter templates provided by TencentDB for MySQL, you can create custom parameter templates to configure parameters in batches as needed.
+Besides the system parameter templates provided by TencentDB for MySQL, you can create custom parameter templates in order to configure parameters in batches.
 
-You can use a parameter template to configure and manage the parameters of a database engine. A template is like a container of the values of database engine parameters, which can be applied to one or more TencentDB instances.
+You can use the parameter template to configure and manage the parameters of a database engine. A template is like a container of the values of database engine parameters, which can be applied to one or more TencentDB instances.
 You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click **Parameter Templates** on the left sidebar to create, view, and manage parameter templates which support the following features:
 - Support default parameter templates.
 - Create templates by modifying the default parameters to generate custom parameter optimization schemes.
@@ -88,4 +88,4 @@ If a parameter template is created redundantly or no longer needed, it can be ea
 
 
 ## See Also
-For suggestions for configuration of key parameters, please see [Suggestions on Parameter Settings](https://intl.cloud.tencent.com/document/product/236/38056).
+For suggestions for configuration of key parameters, see [Suggestions on Parameter Settings](https://intl.cloud.tencent.com/document/product/236/38056).
