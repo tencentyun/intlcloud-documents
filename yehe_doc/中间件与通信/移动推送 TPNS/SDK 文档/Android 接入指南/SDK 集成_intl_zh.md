@@ -1,7 +1,6 @@
 ## 简介
 
-Android SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供给开发者的接口，本文将提供 AndroidStudio Gradle 自动集成和 Android Studio 手动集成两种方式。
-
+本文内容引导集成 TPNS SDK 在线通道推送能力，提供 AndroidStudio Gradle 自动集成和 Android Studio 手动集成两种方式指引。如需在应用进程被杀时也能收到推送，请在完成本文的集成操作后，参考 [厂商通道接入指南](https://intl.cloud.tencent.com/document/product/1024/37176) 文档，完成各厂商通道的接入。
 
 ## SDK 集成（二选一）
 
@@ -14,7 +13,7 @@ Android SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供�
 
 1. 登录 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)，在【产品管理】>【配置管理】页面获取应用的 AccessID、AccessKey。
 2. 在 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面，获取当前最新版本号。
-![](https://main.qcloudimg.com/raw/37b19f4e6c8dba5084c052f7e442be7f.png)
+![]()
 3. 在 app build.gradle 文件下，配置以下内容：
 ```
 android {
@@ -145,7 +144,6 @@ dependencies {
 
 
 #### 组件和应用信息配置
-
 
 ```xml
 <application>
@@ -410,7 +408,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 XGPushConfig.getToken(getApplicationContext());
 ```
 
-![](https://main.qcloudimg.com/raw/854020af14428df9972629e7dbbee55f.png)
+![]()
 
 ### 获取 TPNS 运行日志交互建议
 
@@ -429,3 +427,4 @@ XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
     }
 });
 ```
+
