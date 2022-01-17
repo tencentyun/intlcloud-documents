@@ -13,8 +13,8 @@ kind: Secret
 metadata:
   name: mysecret
 stringData:
-  fs.cosn.userinfo.secretId: <COS_ACCESS_KEY_ID>
-  fs.cosn.userinfo.secretKey: <COS_ACCESS_KEY_SECRET>
+  fs.cosn.userinfo.secretId: <COS_SECRET_ID>
+  fs.cosn.userinfo.secretKey: <COS_SECRET_KEY>
 ```
 
 As shown above, the specific contents of `fs.cosn.userinfo.secretKey` and `fs.cosn.userinfo.secretId` are written in the Secret, and the dataset needs to read the corresponding values by looking for the same Secret and key. Key information is no longer directly written in the dataset, and thus the security of some data is guaranteed.
@@ -43,7 +43,7 @@ spec:
         fs.cosn.bucket.region: <COS_REGION>
         fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
         fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-        fs.cos.app.id: <COS_APP_ID>
+        fs.cosn.userinfo.appid: <COS_APP_ID>
       encryptOptions:
         - name: fs.cosn.userinfo.secretId
           valueFrom:

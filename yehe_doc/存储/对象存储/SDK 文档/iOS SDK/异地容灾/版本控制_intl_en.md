@@ -4,18 +4,18 @@ This document provides an overview of APIs and SDK code samples related to versi
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
-| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets a versioning configuration for a bucket |
-| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning configuration of a bucket |
+| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning for a bucket |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+For parameters and method description of all APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting Versioning
+## Setting versioning
 
-#### API description 
+#### Description
 
-This API is used to set a versioning configuration for a specified bucket. Once enabled, versioning can only be suspended but not disabled.
+This API is used to set the versioning configuration of a specified bucket. Once enabled, versioning can only be suspended but not disabled.
 
 #### Sample code
 **Objective-C**
@@ -25,10 +25,10 @@ This API is used to set a versioning configuration for a specified bucket. Once 
 // Enable versioning
 QCloudPutBucketVersioningRequest* request = [[QCloudPutBucketVersioningRequest alloc] init];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket =@"examplebucket-1250000000";
 
-// Specify the versioning configuration
+// Specific versioning configuration
 QCloudBucketVersioningConfiguration* versioningConfiguration =
     [[QCloudBucketVersioningConfiguration alloc] init];
 
@@ -54,20 +54,20 @@ versioningConfiguration.status = QCloudCOSBucketVersioningStatusEnabled;
 // Enable versioning
 let putBucketVersioning = QCloudPutBucketVersioningRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 putBucketVersioning.bucket = "examplebucket-1250000000";
 
-// Specify the versioning configuration
+// Specific versioning configuration
 let config = QCloudBucketVersioningConfiguration.init();
 
-// Indicate whether versioning is enabled. Enumerated values: Suspended, Enabled
+// Indicates whether versioning is enabled. Enumerated values: Suspended, Enabled
 config.status = .enabled;
 
 putBucketVersioning.configuration = config;
 
 putBucketVersioning.finishBlock = {(result,error) in
     if let result = result {
-        // “result” contains response headers
+        // "result" contains response headers.
     } else {
         print(error!);
     }
@@ -75,11 +75,11 @@ putBucketVersioning.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketVersioning(putBucketVersioning);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketVersioning.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketVersioning.swift).
 
-## Querying Versioning
+## Querying versioning
 
-#### API description 
+#### Description
 
 This API is used to query the versioning configuration of a specified bucket.
 
@@ -94,12 +94,12 @@ This API is used to query the versioning configuration of a specified bucket.
 QCloudGetBucketVersioningRequest* request =
                             [[QCloudGetBucketVersioningRequest alloc] init];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
 [request setFinishBlock:^(QCloudBucketVersioningConfiguration* result,
                           NSError* error) {
-    // Get the status of multiple versions
+    // Get the versioning status
     QCloudCOSBucketVersioningStatus * status = result.status;
 }];
 
@@ -114,12 +114,12 @@ request.bucket = @"examplebucket-1250000000";
 ```swift
 let getBucketVersioning = QCloudGetBucketVersioningRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getBucketVersioning.bucket = "examplebucket-1250000000";
 
 getBucketVersioning.setFinish { (config, error) in
     if let config = config {
-        // Get the status of multiple versions
+        // Versioning status
         let status = config.status
     } else {
         print(error!);
@@ -129,5 +129,5 @@ getBucketVersioning.setFinish { (config, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketVersioning(getBucketVersioning);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketVersioning.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketVersioning.swift).
 

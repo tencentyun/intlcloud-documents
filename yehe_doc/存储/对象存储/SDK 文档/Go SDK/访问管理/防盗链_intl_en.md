@@ -4,14 +4,14 @@ This document provides an overview of APIs and SDK code samples related to bucke
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------- |
-| [PUT Bucket referer](https://intl.cloud.tencent.com/document/product/436/31423) | Setting a bucket referer | Sets a bucket referer allowlist or blocklist |
-| [GET Bucket referer](https://intl.cloud.tencent.com/document/product/436/30615) | Querying a bucket referer | Queries a bucket referer allowlist or blocklist |
+| [PUT Bucket referer](https://intl.cloud.tencent.com/document/product/436/31423) | Setting bucket referer configuration | Sets a bucket referer allowlist or blocklist |
+| [GET Bucket referer](https://intl.cloud.tencent.com/document/product/436/30615) | Querying bucket referer configuration | Queries a bucket referer allowlist or blocklist |
 
-## Setting a Bucket Referer
+## Setting Bucket Referer Configuration
 
-#### API description
+#### Description
 
-This API (PUT Bucket referer) is used to set the referer allowlist/blocklist for a bucket.
+This API (PUT Bucket referer) is used to set a referer allowlist/blocklist for a bucket.
 
 #### Method prototype
 
@@ -22,17 +22,42 @@ func (s *BucketService) PutReferer(ctx context.Context, opt *BucketPutRefererOpt
 #### Sample request
 
 ```go
-opt := &cos.BucketPutRefererOptions{
-	Status:      "Enabled",
-	RefererType: "White-List",
-	DomainList: []string{
-		"*.qq.com",
-		"*.qcloud.com",
-	},
-	EmptyReferConfiguration: "Allow",
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    opt := &cos.BucketPutRefererOptions{
+        Status:      "Enabled",
+        RefererType: "White-List",
+        DomainList: []string{
+            "*.qq.com",
+            "*.qcloud.com",
+        },
+        EmptyReferConfiguration: "Allow",
+    }
+
+    _, err := client.Bucket.PutReferer(context.Background(), opt)
 }
-  
-_, err := c.Bucket.PutReferer(context.Background(), opt)
 ```
 
 #### Parameter description
@@ -48,14 +73,14 @@ type BucketPutRefererOptions struct {
 
 | Parameter  | Description | Type |
 | ---------------------------------------- | ------------------------------------------------------------ | ---------------------------------------- |
-| Status   | Whether to enable hotlink protection. Enumerated values: `Enabled, `Disabled` | String |
+| Status   | Whether hotlink protection is enabled. Enumerated values: `Enabled, `Disabled` | String                                   |
 | RefererType    | Hotlink protection type. Enumerated values: `Black-List`, `White-List`          | String |
 | DomainList | A list of domains, which can include ports, IPs, or asterisks (\*). You can set multiple domains. | Array |
-| EmptyReferConfiguration |  Whether to allow access with an empty referer. Enumerated values: `Allow`, `Deny` | String |
+| EmptyReferConfiguration | Whether to allow access with an empty referer. Enumerated values: `Allow`, `Deny` | String |
 
-## Querying a Bucket Referer
+## Querying Bucket Referer Configuration
 
-#### API description
+#### Description
 
 This API (GET Bucket referer) is used to query the referer allowlist/blocklist of a bucket.
 
@@ -68,7 +93,37 @@ func (s *BucketService) GetReferer(ctx context.Context) (*BucketGetRefererResult
 #### Sample request
 
 ```go
-res, _, err := c.Bucket.GetReferer(context.Background())
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    res, _, err := client.Bucket.GetReferer(context.Background())
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println(res)
+}
 ```
 
 #### Response description
@@ -87,4 +142,4 @@ type BucketGetRefererResult struct {
 | Status   | Whether hotlink protection is enabled. Enumerated values: `Enabled, `Disabled` | String                                   |
 | RefererType    | Hotlink protection type. Enumerated values: `Black-List`, `White-List`          | String |
 | DomainList | A list of domains, which can include ports, IPs, or asterisks (\*). You can set multiple domains. | Array |
-| EmptyReferConfiguration |  Whether to allow access with an empty referer. Enumerated values: `Allow`, `Deny` | String |
+| EmptyReferConfiguration | Whether to allow access with an empty referer. Enumerated values: `Allow`, `Deny` | String |

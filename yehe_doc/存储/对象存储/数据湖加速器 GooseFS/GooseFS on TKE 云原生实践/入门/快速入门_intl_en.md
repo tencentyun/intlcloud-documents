@@ -2,7 +2,7 @@
 
 The process of using GooseFSRuntime is simple. It takes only about 10 minutes to deploy the required GooseFSRuntime environment after you prepare the basic Kubernetes and Cloud Object Storage (COS) environment. The following describes the process.
 
-## Prerequisites
+## Prerequisite
 
 - You have installed Git.
 - You have installed the Kubernetes cluster (version 1.14 or later) and it supports the Container Storage Interface (CSI). To get the best practice, you can deploy it by referring to [Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/document/product/457/30635).
@@ -90,12 +90,12 @@ spec:
   mounts:
     - mountPoint: cosn://test-bucket/
       options:
-        fs.cos.accessKeyId: <COS_ACCESS_KEY_ID>
-        fs.cos.accessKeySecret: <COS_ACCESS_KEY_SECRET>
+        fs.cosn.userinfo.secretId: <COS_SECRET_ID>
+        fs.cosn.userinfo.secretKey: <COS_SECRET_KEY>
         fs.cosn.bucket.region: <COS_REGION>
         fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
         fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-        fs.cos.app.id: <COS_APP_ID> 
+        fs.cosn.userinfo.appid: <COS_APP_ID> 
       name: hadoop
 
 ---
@@ -118,7 +118,7 @@ spec:
 - Dataset:
  - mountPoint: indicates the UFS mount path. This path does not need to contain endpoint information.
  - options: specifies necessary bucket information. For details, see [API glossary](https://intl.cloud.tencent.com/document/product/436/7751).
- - fs.cos.accessKeyId/fs.cos.accessKeySecret: information of the key with the permission to access the COS bucket.
+ - fs.cosn.userinfo.secretId/fs.cosn.userinfo.secretKey: information of the key with the permission to access the COS bucket.
 - GooseFSRuntime: for more APIs, see [api_doc.md](https://github.com/fluid-cloudnative/fluid/blob/master/docs/en/dev/api_doc.md).
  - replicas: indicates the number of nodes of the created GooseFS cluster.
  - mediumtype: GooseFS supports three types of cache media: HDD, SSD, and MEM, and provides multi-level cache configuration.
@@ -137,14 +137,12 @@ kubectl get goosefsruntime hadoop
 NAME     MASTER PHASE   WORKER PHASE   FUSE PHASE   AGE
 hadoop    Ready           Ready           Ready     62m
 ```
-
- iv. Check the dataset status. If the state is `Bound`, the dataset is bound successfully.
+iv. Check the dataset status. If the state is `Bound`, the dataset is bound successfully.
 ```shell
 $ kubectl get dataset hadoop
 NAME     UFS TOTAL SIZE   CACHED   CACHE CAPACITY   CACHED PERCENTAGE   PHASE   AGE
 hadoop        511MiB       0.00B    180.00GiB              0.0%          Bound   1h
 ```
-
 v. Check the PV and PVC creation results. PV and PVC are automatically created during GooseFSRuntime deployment.
 ```shell
 kubectl get pv,pvc
@@ -183,35 +181,30 @@ i. Use kubectl to create an application.
 ```shell
 kubectl create -f app.yaml
 ```
-
 ii. Check the file size.
 ```shell
 $ kubectl exec -it demo-app -- bash
 $ du -sh /data/hadoop/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2 
 210M/data/hadoop/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2 
 ```
-
 iii. Check the file copy time (18 seconds in this example).
 ```shell
-$ time cp /data/hadoop/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2 /dev/null
+$ time cp /data/hadoop/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2  /dev/null
 
 real    0m18.386s
 user    0m0.002s
 sys      0m0.105s
 ```
-
 iv. Now check the dataset cache status. You can find that 210 MB data is all cached locally.
 ```shell
 $ kubectl get dataset hadoop
 NAME     UFS TOTAL SIZE   CACHED   CACHE CAPACITY   CACHED PERCENTAGE   PHASE   AGE
 hadoop   210.00MiB       210.00MiB    180.00GiB        100.0%           Bound   1h
 ```
-
 v. To prevent other factors (such as page cache) affecting the results, we delete the previous container, create the same application, and try to access the same file. Since the file is already cached by GooseFS at this point, you can see that the second access takes much less time than the first.
 ```shell
 kubectl delete -f app.yaml && kubectl create -f app.yaml
 ```
-
 vi. Check the file copy time (48 ms in this example). The entire copy duration is reduced by 300 times.
 ```shell
 $ time cp /data/hadoop/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2  /dev/null

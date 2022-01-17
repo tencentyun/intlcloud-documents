@@ -4,25 +4,25 @@ This document provides an overview of APIs and SDK code samples related to objec
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting an object | Deletes an object from a bucket. |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket in a single request |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Deleting a Single Object
 
-#### API description
+#### Description
 
-This API is used to delete a specified object from a bucket.
+This API (`DELETE Object`) is used to delete a specified object.
 
 #### Sample code
 
 [//]: # (.cssg-snippet-delete-object)
 ```java
-String bucket = "examplebucket-1250000000"; // Bucket name in the format: `BucketName-APPID`
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e. the object key. 
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as BucketName-APPID
+String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 
 DeleteObjectRequest deleteObjectRequest = new DeleteObjectRequest(bucket,
         cosPath);
@@ -50,7 +50,7 @@ cosXmlService.deleteObjectAsync(deleteObjectRequest,
 
 ## Deleting Multiple Objects
 
-#### API description
+#### Description
 
 This API is used to delete multiple objects in a single request.
 
@@ -58,14 +58,14 @@ This API is used to delete multiple objects in a single request.
 
 [//]: # (.cssg-snippet-delete-multi-object)
 ```java
-String bucket = "examplebucket-1250000000"; // Bucket name in the format: `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
 List<String> objectList = new ArrayList<String>();
 objectList.add("exampleobject1"); // The location identifier of the object in the bucket, i.e., the object key
 objectList.add("exampleobject2"); // The location identifier of the object in the bucket, i.e., the object key
 
 DeleteMultiObjectRequest deleteMultiObjectRequest =
         new DeleteMultiObjectRequest(bucket, objectList);
-// In quiet mode, only information on objects that failed to be deleted will be returned; otherwise, the deletion result of each object will be returned.
+// In quiet mode, only information on objects that fail to be deleted will be returned; otherwise, the deletion result of each object will be returned.
 deleteMultiObjectRequest.setQuiet(true);
 cosXmlService.deleteMultiObjectAsync(deleteMultiObjectRequest,
         new CosXmlResultListener() {
@@ -88,9 +88,11 @@ cosXmlService.deleteMultiObjectAsync(deleteMultiObjectRequest,
 });
 ```
 
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/DeleteObject.java).
+
 ## Deleting a Directory
 
-#### API description
+#### Description
 
 COS uses slashes (/) as the delimiter to show directories in order to achieve the effect of a file system. Therefore, if you want to delete a directory in COS, you need to delete objects that are prefixed with a specified value. For example, the directory `prefix/` is actually all objects prefixed with `prefix/`. Therefore, you can delete all objects prefixed with `prefix/` to delete the `prefix/` directory.
 
@@ -98,16 +100,17 @@ Currently, COS’s Android SDK did not provide an API to perform this operation.
 
 #### Sample code
 
-```
-// Delete the parent/directory/ directory.
-String directory = "parent/directory/";
+[//]: # (.cssg-snippet-delete-prefix)
+```java
+String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+String prefix = "folder1/"; // Specify a prefix
 
 GetBucketRequest getBucketRequest = new GetBucketRequest(bucket);
-getBucketRequest.setPrefix(directory);
+getBucketRequest.setPrefix(prefix);
 
-// “prefix” indicates the directory to delete.
-getBucketRequest.setPrefix(directory);
-// Set the maximum number of traversed objects (up to 1,000 per listobject request).
+// "prefix" indicates the directory to delete.
+getBucketRequest.setPrefix(prefix);
+// Set the maximum number of traversed objects (up to 1,000 per listobject request)
 getBucketRequest.setMaxKeys(1000);
 GetBucketResult getBucketResult = null;
 
@@ -130,7 +133,6 @@ do {
     }
 } while (getBucketResult.listBucket.isTruncated);
 ```
-
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/DeleteObject.java).
 

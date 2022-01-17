@@ -1,39 +1,39 @@
 ## Overview
 
-This document provides an overview of APIs and SDK sample codes related to object download.
+This document provides an overview of APIs and SDK code samples related to object downloads.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system. |
 
-## SDK API Reference
+## SDK API References
 
 For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Advanced APIs (recommended)
+## Advanced APIs (Recommended)
 
 ### Downloading an object
 
 The advanced version of the GET Object API uses more encapsulated logic to allow you to suspend, resume (via checkpoint restart), or cancel download requests.
 
-#### Sample code:
+#### Sample code 1. Downloading an object
 
 [//]: # (.cssg-snippet-transfer-download-object)
 ```java
-// The advanced download API supports checkpoint restart. To do so, a `HEAD` request will be sent first to get file information before download.
-// If you are using a temporary key or accessing with a sub-account, please make sure that your access permission list includes HeadObject.
+// The advanced download API supports checkpoint restart. Therefore, a HEAD request will be sent before the download to obtain the file information.
+// If you are using a temporary key or accessing with a sub-account, ensure that your permission list includes HeadObject.
 
-// Initialize `TransferConfig`. The default configuration is used here. If you need to customize the configuration, please see the SDK API documentation.
+// Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
 // Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket in the format: `BucketName-APPID`
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e. the object key
-// Local directory path
+String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
+// Path of the local directory
 String savePathDir = context.getExternalCacheDir().toString();
-// The file name saved locally. If not specified (null), it will be the same as the COS file name
+// File name saved locally. If not specified (null), it will be the same as the COS file name
 String savedFileName = "exampleobject";
 
 Context applicationContext = context.getApplicationContext(); // application
@@ -68,7 +68,7 @@ cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
         }
     }
 });
-// Set the job status callback where you can view the job progress
+// Set the job status callback to view the job progress
 cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
     @Override
     public void onStateChanged(TransferState state) {
@@ -79,13 +79,13 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
 
-#### Sample code 2: Suspending, resuming, or cancelling a download
+#### Sample code 2. Suspending, resuming, or canceling a download
 
 To suspend a download, use the code below:
 
 [//]: # (.cssg-snippet-transfer-download-object-pause)
 ```java
-cosxmlDownloadTask.pause();;
+cosxmlDownloadTask.pause();
 ```
 
 To resume a suspended download, use the code below:
@@ -104,7 +104,35 @@ cosxmlDownloadTask.cancel();
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
 
-#### Sample code 3: Downloading multiple objects
+#### Sample code 3. Setting checkpoint restart for download
+
+[//]: # (.cssg-snippet-transfer-download-resumable)
+```java
+// Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
+// TransferManager supports checkpoint restart for download. You only need to ensure the consistency of parameters `bucket`, `cosPath`, `savePathDir`, and `savedFileName`.
+// Then the SDK will resume the download from where interrupted.
+TransferConfig transferConfig = new TransferConfig.Builder().build();
+// Initialize TransferManager
+TransferManager transferManager = new TransferManager(cosXmlService,
+        transferConfig);
+String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
+// Path of the local directory
+String savePathDir = context.getExternalCacheDir().toString();
+// File name saved locally. If not specified (null), it will be the same as the COS file name
+String savedFileName = "exampleobject";
+
+GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, cosPath, savePathDir, savedFileName);
+
+Context applicationContext = context.getApplicationContext(); // application
+// context
+COSXMLDownloadTask cosxmlDownloadTask =
+        transferManager.download(applicationContext, getObjectRequest);
+```
+
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
+
+#### Sample code 4. Batch download
 
 [//]: # (.cssg-snippet-transfer-batch-download-objects)
 ```java
@@ -144,6 +172,37 @@ for (String cosPath : cosPaths) {
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
 
+#### Sample code 5. Downloading a directory
+
+[//]: # (.cssg-snippet-transfer-download-directory)
+```java
+boolean isTruncated = true;
+String marker = null;
+try {
+    while (isTruncated) {
+        GetBucketRequest getBucketRequest = new GetBucketRequest(region, bucket, directoryPath);
+        // Configure pagination
+        getBucketRequest.setMarker(marker);
+        // Configure not to query subdirectories
+        getBucketRequest.setDelimiter("/");
+        GetBucketResult getBucketResult = cosXmlService.getBucket(getBucketRequest);
+        // Batch download
+        for (ListBucket.Contents content : getBucketResult.listBucket.contentsList) {
+            GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, content.key, savePathDir);
+            transferManager.download(context,getObjectRequest);
+        }
+        isTruncated = getBucketResult.listBucket.isTruncated;
+        marker = getBucketResult.listBucket.nextMarker;
+    }
+} catch (CosXmlServiceException serviceException) {
+    serviceException.printStackTrace();
+} catch (CosXmlClientException clientException) {
+    clientException.printStackTrace();
+}
+```
+
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
+
 ## Simple Operations
 
 ### Downloading an object
@@ -156,8 +215,8 @@ This API is used to download an object to the local file system.
 
 [//]: # (.cssg-snippet-get-object)
 ```java
-String bucket = "examplebucket-1250000000"; // Bucket name in the format: `BucketName-APPID`
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e. the object key
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as BucketName-APPID
+String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 String savePath = context.getExternalCacheDir().toString(); // Local path
 
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, cosPath,

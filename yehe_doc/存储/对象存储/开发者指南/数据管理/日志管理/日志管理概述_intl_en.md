@@ -32,7 +32,7 @@ Logs are generated every 5 minutes (one record per line). Each record contains m
 | 19 | resTotalTime | Total time used by the request (in milliseconds, i.e., the time between the last byte of the response and the first byte of the request) | 4295 |
 | 20       | logSourceType   | Source type of the log    | `USER` (user access requests), `CDN` (CDN origin pull requests)  |
 | 21 | storageClass | Storage class | STANDARD, STANDARD_IA, ARCHIVE |
-| 22 | accountId | Bucket owner ID | 100000000001 |
+| 22       | accountId          | Bucket owner ID                                               | 100000000001                                                 |
 | 23 | resTurnAroundTime | Time used by the request server (in milliseconds, i.e., the time between the first byte of the response and the last byte of the request) | 4295 |
 | 24       | requester    | Requester    | Root account ID, sub-account ID, or `-` (anonymous access)  |
 | 25       | requestId    | Request ID             | NWQ1ZjY4MTBfMjZiMjU4NjRfOWI1N180NDBiYTY=      |
@@ -40,7 +40,8 @@ Logs are generated every 5 minutes (one record per line). Each record contains m
 | 27 | versionId | Object version ID | Random string |
 | 28  | targetStorageClass | Destination storage class, recorded for replication requests | STANDARD, STANDARD_IA, ARCHIVE |
 | 29     | referer    | HTTP referer of the request            | `*.example.com` or 111.111.111.1       |
-| 30       | requestUri    | Reques URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
+| 30       | requestUri    | Request URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
+| 31       | vpcId    | Whether the request is a VPC request            | 0/1       |
 
 >!
 > - Currently, COS offers the logging feature only in the Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, Chengdu, Hong Kong (China), Singapore, Toronto, Silicon Valley, and Mumbai regions.
@@ -48,6 +49,7 @@ Logs are generated every 5 minutes (one record per line). Each record contains m
 > - The destination bucket that stores logs can be the source bucket itself (not recommended).
 > - Currently, logs will be generated only when the bucket is accessed through XML APIs and XML API-based SDKs or tools, not via JSON APIs or JSON API-based SDKs or tools.
 > - Depending on customer needs and business development, COS may add new fields to the access logs. Please be sure to prepare for this when parsing the logs.
+> 
 
 ## Enabling Log Management
 ### Using the Console
