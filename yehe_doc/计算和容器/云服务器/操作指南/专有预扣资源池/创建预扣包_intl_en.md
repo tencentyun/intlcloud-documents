@@ -10,7 +10,7 @@ Upon the creation of a dedicated reservation, the requested instances are reserv
 ## Directions
 1. Log in to the CVM console, and click **[Dedicated Reservation](https://console.cloud.tencent.com/cvm/preparedinstances)** in the left sidebar.
 2. Click **Create Dedicated Reservation** on the **Dedicated Reservation** list page.
-3. Complete the configuration 
+3. Complete the configuration as shown below:![](https://qcloudimg.tencent-cloud.cn/raw/6298a6e5100aaebcfb27502e29a0c544.png)
 <table>
 <tr>
 <th>Item</th><th>Required</th><th>Notes</th>
