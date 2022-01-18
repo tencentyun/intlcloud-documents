@@ -15,7 +15,7 @@ Streams of original definition, HD, and SD streams are commonly used in business
 
 [](id:que3)
 ### How can I use time shifting for playback?
-You can use the time shifting feature to replay highlights. The feature supports only the HLS protocol for the time being. For more information on time shifting and how to activate it, see [CSS Time Shifting](https://intl.cloud.tencent.com/document/product/267/31565).
+You can use the time shifting feature to play back highlights. The feature only supports the HLS protocol for the time being. For more information on time shifting and how to activate it, see [CSS Time Shifting](https://intl.cloud.tencent.com/document/product/267/31565).
 
 [](id:que4)
 ### How can I use HTTPS for playback?
@@ -23,7 +23,7 @@ To make your playback domain support HTTPS, you should prepare a valid certifica
 
 [](id:que5)
 ### How can I use an acceleration node outside the Chinese mainland for playback?
-CSS provides stable CDN cache nodes across Chinese mainland and around the world. If your end users are located outside the Chinese mainland, you can select **Global** or **Outside Chinese mainland** as the acceleration region when configuring a domain name in [Domain Management](https://console.cloud.tencent.com/live/domainmanage).
+CSS provides stable CDN nodes across the Chinese mainland and around the world. If your end users are located outside the Chinese mainland, you can select **Global** or **Outside Chinese mainland** for **Acceleration Region** when configuring domains in [Domain Management](https://console.cloud.tencent.com/live/domainmanage).
 
 
 [](id:que6)
@@ -68,7 +68,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 
 [](id:que7)
 ### What format requirements must a primary key for playback authentication meet? Is there any limit on its validity period?
-The primary key can contain only letters and digits, with up to 256 characters. For details, see [Playback Authentication Configuration](https://intl.cloud.tencent.com/document/product/267/31060).
+The primary key can contain only letters and digits, with up to 256 characters. For details, please see [Playback Authentication Configuration](https://intl.cloud.tencent.com/document/product/267/31060).
 We recommend that you set its validity period to the duration of a live streaming session.
 
 
@@ -93,7 +93,7 @@ Under normal circumstances, playback of an FLV stream pushed over the RTMP proto
 
 [](id:que12)
 ### How do I delete a live streaming room which is no longer used? 
-Live push and playback are bound with stream IDs, so you do not need to delete rooms. If you are using the IM service and want to delete IM rooms to avoid reaching the upper limit of room number, see [Disbanding a Group](https://intl.cloud.tencent.com/document/product/1047/34896).
+Live push and playback are bound with stream IDs, so you do not need to delete rooms. If you are using the IM service and want to delete IM rooms to avoid reaching the upper limit of room number, please see [Disbanding a Group](https://intl.cloud.tencent.com/document/product/1047/34896).
 If you are using the channel mode, you can call the `DeleteLVBChannel` API and pass in IDs of live streaming channels to delete them in batches.
 
 > ! Channel mode is a legacy mode which is no longer updated or maintained.
@@ -141,4 +141,12 @@ The API key is used for authentication of legacy APIs, which have been upgraded 
 [](id:que21)
 ### Why can't an H.265 video be played back?
 As H.265 is not as compatible as H.264, if a player doesn't support H.265 and the playback fails, you can configure a [transcoding template](https://intl.cloud.tencent.com/document/product/267/31071) to transcode the video to H.264 for playback.
+
+[](id:que22)
+### Can the names of M3U8 files contain Chinese characters?
+M3U8 files are named automatically based on stream names. Stream names **do not support** Chinese characters.
+
+[](id:que23)
+### How do I view the number of online viewers?
+You can get the number of online viewers by calling the [DescribeStreamPlayInfoList](https://intl.cloud.tencent.com/document/product/267/37297) API, but the result may not be 100% accurate. For example, if 3 users use the same IP address for playback at the same time, they will be counted as 1 viewer. Note that the data returned by this API is relevant only if your playback protocol is RTMP or FLV, not if it is HLS.
 
