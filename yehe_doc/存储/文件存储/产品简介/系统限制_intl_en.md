@@ -32,7 +32,7 @@
     <tr align="center" >
         <td>Minimum system capacity</td>
         <td colspan="2">Unrestricted</td>
-        <td colspan="2">100 GiB</td>
+        <td colspan="2">Unrestricted</td>
         <td colspan="2">40 TiB</td>
         <td colspan="2">20 TiB</td>
    </tr>
@@ -40,8 +40,8 @@
         <td>Maximum system bandwidth</td>
         <td>300 MiB/s</td>
         <td>240 MiB/s</td>
-        <td>2 GiB/s</td>
-        <td>1.6 GiB/s</td>
+        <td>1GiB/s</td>
+        <td>800MiB/s</td>
         <td>100 GiB/s</td>
         <td>10 GiB/S</td>
         <td>100 GiB/s</td>
@@ -51,8 +51,8 @@
         <td>Maximum number of system files</td>
         <td>Min[15000 * used capacity (GiB), 1 billion]</td>
         <td>Min[10000 * used capacity (GiB), 0.8 billion]</td>
-        <td>Min[20000 * deployed capacity (GiB), 1.5 billion]</td>
-        <td>Min[15000 * deployed capacity (GiB), 1 billion]</td>
+        <td>Min[20000 * used capacity (GiB), 1.5 billion]</td>
+        <td>Min[15000 * used capacity (GiB), 1 billion]</td>
         <td>Min[15000 * deployed capacity (GiB), 1 billion]</td>
         <td>Min[10000 * deployed capacity (GiB), 0.8 billion]</td>
         <td>Min[30000 * deployed capacity (GiB), 1.5 billion]</td>
