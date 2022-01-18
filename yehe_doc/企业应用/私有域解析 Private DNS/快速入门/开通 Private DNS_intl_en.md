@@ -5,7 +5,7 @@ This document describes how to activate and try out the Private DNS service.
 
 ## Activating Private DNS
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns).
-2. On the Private DNS overview page, read the Private DNS Risk Disclosure and select **I have read the Private DNS Risk Disclosure** as shown below:
+2. On the Private DNS overview page, read the Private DNS Service Level Agreement and select **I have read the Tencent Cloud Private DNS Service Level Agreement** as shown below:
 ![](https://main.qcloudimg.com/raw/8ff8a37b1402e608cfd51dc34de44d89.png)
 3. Click **Activate Now**.
 >!Key account customers can enjoy exclusive services. Please contact your sales rep or architect to activate the service.
