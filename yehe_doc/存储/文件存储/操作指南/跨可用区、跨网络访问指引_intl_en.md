@@ -26,6 +26,6 @@ If you need to have a CFS instance shared by multiple CVM instances distributed 
 - From CVM instances in the basic network to CFS in a VPC: mutual access to resources between a CVM instance in the basic network and resources in a VPC can be achieved by configuring a "Classiclink". For more information, please see [Enabling Cross-region Connectivity for Basic Networks](https://intl.cloud.tencent.com/document/product/553/18850).
 - From CVM instances in VPC-A to CFS in VPC-B: please refer to the setting method above.
 
->
+>!
 >- Currently, CFS instances in the basic network cannot be connected to CVM instances in VPCs.
 >- The client and CFS instance are in the basic network and a VPC, respectively, but they cannot be connected if they are in different regions.
