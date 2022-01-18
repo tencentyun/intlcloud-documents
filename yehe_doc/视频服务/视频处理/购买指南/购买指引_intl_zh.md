@@ -10,7 +10,7 @@
 由于视频处理服务需要对您上传到对象存储 COS 存储桶中的文件进行下载、转码和上传等读写操作，所以您需要创建服务角色，给视频处理授予 COS 的相关操作权限。
 
 进入 [视频处理控制台](https://console.cloud.tencent.com/mps)，如果您还未授权，则需要单击**前往访问管理**，跳转到控制台统一的权限管理页面进行授权操作。
-![](https://main.qcloudimg.com/raw/9e23f6dc5332257d713af0b4836665e1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e001187c224f239c596ccc4343e03be7.png)
 >!如果您未完成授权，则无法在视频处理控制台进行其他操作。
 
 

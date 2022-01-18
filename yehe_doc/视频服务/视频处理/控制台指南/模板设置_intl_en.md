@@ -1,6 +1,5 @@
 Log in to the [MPS console](https://console.cloud.tencent.com/mps) and click **Template Settings** on the left sidebar. Preset templates in the console include video transcoding, audio transcoding, TESHD, watermark, screenshot, animated image, moderation, content analysis, and content recognition. They can be added to a workflow for on-cloud transcoding and audio/video processing.
 ![](https://main.qcloudimg.com/raw/a6e034f67575726dbdbcfdb462f7de1d.png)
-
 >?
 >- If a template added to a workflow is edited after the workflow is enabled, the template parameters after editing will be used.
 >- If a template added to a workflow is deleted after the workflow is enabled, the task of the template will fail.
@@ -28,19 +27,19 @@ Templates created are displayed in the template list. You can view, edit, or del
 
 #### List of preset templates
 
-<table class="table auto-table"><tbody><tr><th colspan="1" rowspan="2">Clarity</th><th colspan="1" rowspan="2">Template ID</th><th colspan="1" rowspan="2">Container Format</th><th colspan="4">Video Parameters</th><th colspan="4">Audio Parameters</th></tr>
+<table class="table auto-table"><tbody><tr><th colspan="1" rowspan="2">Clarity</th><th colspan="1" rowspan="2">Template ID</th><th colspan="1" rowspan="2">Format</th><th colspan="4">Video Parameters</th><th colspan="4">Audio Parameters</th></tr>
 <tr><th colspan="1">Resolution</th><th colspan="1">Bitrate (Kbps)</th><th colspan="1">Frame Rate (fps)</th><th colspan="1">Codec</th><th colspan="1">Bitrate (Kbps)</th><th colspan="1">Sample Rate (Hz)</th><th colspan="1">Sound Channels</th><th colspan="1">Codec</th></tr>
-<tr><td colspan="1" rowspan="2">Smooth</td><td colspan="1">100010</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 360</td><td colspan="1" rowspan="2">400</td><td colspan="1" rowspan="12">25</td><td colspan="1" rowspan="12">H.264</td><td colspan="1" rowspan="4">64</td><td colspan="1" rowspan="12">44100</td><td colspan="1" rowspan="12">Stereo</td><td colspan="1" rowspan="12">AAC</td></tr>
+<tr><td colspan="1" rowspan="2">Smooth</td><td colspan="1">100010</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled × 360</td><td colspan="1" rowspan="2">400</td><td colspan="1" rowspan="12">25</td><td colspan="1" rowspan="12">H.264</td><td colspan="1" rowspan="4">64</td><td colspan="1" rowspan="12">44100</td><td colspan="1" rowspan="12">Stereo</td><td colspan="1" rowspan="12">AAC</td></tr>
 <tr><td colspan="1">100210</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">SD</td><td colspan="1">100020</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 540</td><td colspan="1" rowspan="2">1000</td></tr>
+<tr><td colspan="1" rowspan="2">SD</td><td colspan="1">100020</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled × 540</td><td colspan="1" rowspan="2">1000</td></tr>
 <tr><td colspan="1">100220</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">HD</td><td colspan="1">100030</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 720</td><td colspan="1" rowspan="2">1800</td><td colspan="1" rowspan="4">128</td></tr>
+<tr><td colspan="1" rowspan="2">HD</td><td colspan="1">100030</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled × 720</td><td colspan="1" rowspan="2">1800</td><td colspan="1" rowspan="4">128</td></tr>
 <tr><td colspan="1">100230</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">FHD</td><td colspan="1">100040</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 1080</td><td colspan="1" rowspan="2">2500</td></tr>
+<tr><td colspan="1" rowspan="2">FHD</td><td colspan="1">100040</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled × 1080</td><td colspan="1" rowspan="2">2500</td></tr>
 <tr><td colspan="1">100240</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">2K</td><td colspan="1">100070</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 1440</td><td colspan="1" rowspan="2">3000</td><td colspan="1" rowspan="4">160</td></tr>
+<tr><td colspan="1" rowspan="2">2K</td><td colspan="1">100070</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled × 1440</td><td colspan="1" rowspan="2">3000</td><td colspan="1" rowspan="4">160</td></tr>
 <tr><td colspan="1">100270</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">4K</td><td colspan="1">100080</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">x 2160</td><td colspan="1" rowspan="2">6000</td></tr>
+<tr><td colspan="1" rowspan="2">4K</td><td colspan="1">100080</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled × 2160</td><td colspan="1" rowspan="2">6000</td></tr>
 <tr><td colspan="1">100280</td><td colspan="1">HLS</td></tr></tbody></table>
 
 ## TESHD Template
@@ -105,14 +104,14 @@ MPS does not provide preset watermark templates. You can click **Create Template
 <table>
 <tr><th width=13%>Item</th><th>Description</th></tr>
 <tr>
-<td>Template name</td>
+<td>Template Name</td>
 <td>Max 64 characters; supports Chinese characters, letters, digits, underscores (\_), hyphens (-), and periods</td>
 </tr><tr>
 <td>Watermark type</td>
 <td>Image watermark</td>
 </tr><tr>
 <td>Image</td>
-<td>PNG or JPG images. For better visual experience, transparent images in PNG format are recommended. The image cannot exceed 200 KB in size or 200 x 200 px in dimensions.</td>
+<td>PNG or JPG images. For better visual experience, transparent images in PNG format are recommended. The image cannot exceed 200 KB in size or 200 × 200 px in dimensions.</td>
 </tr><tr>
 <td>Reference position</td>
 <td>Upper left (default), upper right, lower left, or lower right, based on which you can change the position of the watermark image by adjusting the vertical and horizontal offset</td>
@@ -149,7 +148,7 @@ To create a time point screenshot, select time point screenshot for screenshot t
 | ------- | ------------------ | ------------- | -------------- | -------------------- |
 | 10      | JPG                | Same as source          | Same as source           | Scale to fill                 |
 
-### Sampled Screenshot
+### Sampled screenshot
 Select sampled screenshot for screenshot type.
 
 | Item | Description |
@@ -207,7 +206,7 @@ The templates created can be found in the template list, which displays informat
 | Template ID | Format | Resolution | Frame Rate (fps) |
 | ------- | ------------------ | -------------------- | ----------- |
 | 20000   | GIF                | Same as source                 | 2           |
-| 20001   | WebP               | x 320                 | 2           |
+| 20001   | WebP               | 320 × Proportionally scaled                 | 2           |
 
 ## Moderation Template
 
@@ -231,11 +230,11 @@ MPS provides preset moderation templates, which can be used in workflows. You ca
 </tr>
 <tr>
 <td align="center">Terrorism</td>
-<td align="center">Militants, weapons, bloodiness, explosions & fires, terrorist flags, terrorists, police, and crowds</td>
+<td align="center">Bloodiness, explosion, fire, etc.</td>
 </tr>
 <tr>
 <td align="center">Politically sensitive</td>
-<td align="center">Politically sensitive figures, banned icons, and celebrities (sports and entertainment)</td>
+<td align="center">Banned icons, celebrities in sports and the entertainment industry, etc.</td>
 </tr>
 <tr>
 <td rowspan = 2>Speech recognition</td>
@@ -253,7 +252,7 @@ MPS provides preset moderation templates, which can be used in workflows. You ca
 </tr>
 <tr>
 <td align="center">Politically sensitive</td>
-<td align="center">Politically sensitive figures, banned icons and celebrities</td>
+<td align="center">Politically sensitive figures, banned icons, and celebrities (sports and entertainment)</td>
 </tr>
 </tbody></table>
 
@@ -262,7 +261,7 @@ For each subitem, you can set a **Confirm Threshold** and a **Suspicion Threshol
  - Suspicion threshold: MPS analyzes the videos uploaded and gives them scores. If the score of a video exceeds the suspicion threshold, the video will be marked suspicious. You can initiate human moderation tasks for suspicious videos on the video moderation page. The value range of the threshold is 0-100. The default value is recommended.
 
 
- >? You can view the **preset** moderation templates in [MPS console > Template Settings](https://console.cloud.tencent.com/mps/templates?tab=audit).
+>? You can view the **preset** moderation templates in [MPS console > Template Settings](https://console.cloud.tencent.com/mps/templates?tab=audit).
 
 
 The templates created are displayed in the template list, where you can view, edit, or delete a template.
@@ -273,7 +272,7 @@ MPS provides preset content analysis templates, which can be used in workflows. 
 | Item | Description |
 | --- | ----|
 |    Template name    |    Max 64 characters; supports Chinese characters, letters, digits, spaces, underscores (\_), hyphens (-), and periods    |
-| Content analysis items  | **Smart tag**, **Intelligent classification**, **Intelligent cover**, and **Tag by frame** |
+| Content Analysis Items  | **Smart Tag**, **Intelligent Classification**, **Intelligent Thumbnail**, **Tag by Frame**  |
 
 >? You can view the **preset** content analysis templates in [MPS > Template Settings](https://console.cloud.tencent.com/mps/templates?tab=analysis).
 
@@ -287,7 +286,7 @@ MPS provides preset content recognition templates, which can be used in workflow
 | Item | Description |
 | --- | ----|
 |    Template name    |    Max 64 characters; supports Chinese characters, letters, digits, spaces, underscores (\_), hyphens (-), and periods    |
-| Content recognition items  | **Face recognition**, **Text recognition**, and **Speech recognition**  |
+| Content Recognition Items  | **Face Recognition**, **Text Recognition**, **Speech Recognition**  |
 
 >?You can view the **preset** content recognition templates in [MPS console > Template Settings](https://console.cloud.tencent.com/mps/templates?tab=recognization).
 
