@@ -2,7 +2,7 @@
 This document describes how to install an SSL certificate on an Apache server.
 >?
 >- The certificate name `cloud.tencent.com` is used as an example.
->- The `Apache/2.4.6` version is used as an example. The default port is `80`. You can download it from the [Apache official website](https://www.apache.org/). If you need to use another version, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+>- The `Apache/2.4.6` version is used as an example. The default port is `80`. You can download it from the [Apache official website](https://httpd.apache.org/download.cgi). If you need to use another version, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 >- The current server OS is CentOS 7. Detailed steps vary slightly with the OS.
 >- Before you install an SSL certificate, enable port 443 on the Apache server so that HTTPS can be enabled after the certificate is installed. For more information, see [How Do I Enable Port 443 for a VM?](https://intl.cloud.tencent.com/document/product/1007/36738)
 >- For more information about how to upload SSL certificate files to a server, please see [Copying Local Files to CVMs](https://intl.cloud.tencent.com/document/product/213/34821).
