@@ -6,7 +6,7 @@ To prevent unauthorized access, Tencent Cloud supports remote authentication in 
 
 The following describes how remote authentication works:
 
-![](https://qcloudimg.tencent-cloud.cn/raw/415756d400277c6eaf43eb6ea08055c1.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/8f8d75de26e96ebaf58676eee0ca084a.png)
 
 1. The end user initiates a request.
 2. CDN forwards the request to the remote authentication server.
