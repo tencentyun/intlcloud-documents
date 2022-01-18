@@ -178,7 +178,7 @@
 - To ensure the cloud load balance of the file system after scaling up, we recommend that you scale up when around 80% of the capacity has been used. Online scale-up is supported and will be imperceptible during the whole process.
 - The Turbo series cannot be scaled down. Alternatively, you can create a Turbo instance, migrate your data, and then delete the old instance.
 - Because the self-deployed cluster needs to be set up again, the initial creation of the Turbo series will take about 20 minutes.
-- The Turbo series can be mounted and used only by root accounts by default. If you need to use them with a general account, you can submit a ticket to contact us.
+- The Turbo series can be mounted and used only by root accounts by default. If you need to use them with a general account, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category)  to contact us.
 - If you need the Turbo series with higher specifications (supporting more files, directories, etc.), you can submit a ticket to contact us.
 
 
