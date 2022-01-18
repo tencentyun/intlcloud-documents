@@ -39,7 +39,7 @@ If the following message is displayed, the installation is completed:
 
 ### Mounting the Turbo pod with a script
 
-1. See TKE Turbo Plugin Guide and download the script.
+1. See [TKE Turbo Plugin Guide](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_CFSTURBO.md) and [download](https://github.com/TencentCloud/kubernetes-csi-tencentcloud)  the script.
 2. Go to the `kubernetes-csi-tencentcloud/deploy/cfsturbo/kubernetes/` directory and upload `csi-node-rbac.yaml`, `csi-node.yaml`, and `csidriver.yaml` to the CVM management node that can access the TKE cluster.
 3. Go to the `kubernetes-csi-tencentcloud/deploy/cfsturbo/examples/` directory to download the `static-allinone.yaml` sample file.
 4. Modify the `static-allinone.yaml` file according to the actual PV, PVC, and pod attributes (e.g., name, image address). NGINX is used as an example here.
