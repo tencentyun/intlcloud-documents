@@ -169,5 +169,5 @@ After the file system is mounted, open the command-line tool and enter "mount". 
 ![](https://main.qcloudimg.com/raw/a5fb998be190e55009ff82a22b520195.png)
 
 #### Directions
-1. Find the following registry path: **HKEY_LOCAL_MACHINE** > **SOFTWARE** > **Microsoft** > **ClientForNFS** > **CurrentVersion** > **User** > **Default** > **Mount**.
+1. Find the following registry path: **HKEY_LOCAL_MACHINE > SOFTWARE > Microsoft > ClientForNFS > CurrentVersion > User > Default > Mount**.
 2. Move the mouse to the right pane and right-click there. Click **New** and choose **DWORD (64-bit) Value** from the drop-down menu. Then, change the name to **Locking** and set the value to `0`.
