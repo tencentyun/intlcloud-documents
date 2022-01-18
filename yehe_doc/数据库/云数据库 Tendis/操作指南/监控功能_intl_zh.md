@@ -11,7 +11,7 @@ Tendis 目前支持5秒、1分钟、5分钟、1小时、1天的粒度的指标�
 您可以通过 Tendis 实例列表、Tendis 实例监控页面、云监控控制台3个地方查看云数据库 Tendis 的监控信息：
 - 实例列表：登录 [Tendis 控制台](https://console.cloud.tencent.com/tendis)，在实例列表，单击如下监控图标，可快速浏览监控指标。
 ![](https://main.qcloudimg.com/raw/1bf892252c14a40f0162228ac28cc801.png)
-- 实例监控页面：登录 [Tendis 控制台](https://console.cloud.tencent.com/tendis)，单击实例 ID 进入实例管理页面，选择【系统监控】>【监控指标】，可查看实例监控信息详情。
+- 实例监控页面：登录 [Tendis 控制台](https://console.cloud.tencent.com/tendis)，单击实例 ID 进入实例管理页面，选择**系统监控**>**监控指标**，可查看实例监控信息详情。
 ![](https://main.qcloudimg.com/raw/6d293d768113036c6cacd4a46172a2c6.png)
 
 ## 监控指标说明
