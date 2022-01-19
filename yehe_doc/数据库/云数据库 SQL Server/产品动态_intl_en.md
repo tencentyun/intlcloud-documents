@@ -1,3 +1,27 @@
+## December 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr></thead>
+<tbody><tr>
+<td>Supported self-service configuration adjustment</td>
+<td>TencentDB for SQL Server supports self-service instance configuration adjustment in the console, including architecture/version upgrade and CPU/memory/disk scaling. It offers multiple adjustment modes, such as concurrent scaling and differentiated scaling, and displays reminders for the adjustment impact in different scenarios.</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/44352" target="_blank">Overview</a></td></tr>
+</tbody></table>
+
+## November 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr></thead>
+<tbody><tr>
+<td>Launched the updated data migration feature (new)	</td>
+<td>The updated data migration feature (new) is launched, and the old data migration feature has been disused and will be deactivated on March 1, 2022. The new feature has more data migration capabilities.</td>
+<td>2021-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/571/42638" target="_blank">Migration from SQL Server to TencentDB for SQL Server</a></td></tr>
+<tr>
+<td>Launched the service in the Chongqing region</td>
+<td>TencentDB for SQL Server is now available in Chongqing Zone 1.</td>
+<td>2021-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520" target="_blank">Regions and AZs</a></td></tr>
+</tbody></table>
 
 ## October 2021
 <table>
