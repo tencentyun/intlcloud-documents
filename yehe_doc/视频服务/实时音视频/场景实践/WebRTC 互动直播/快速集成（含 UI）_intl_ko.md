@@ -36,14 +36,14 @@
 
 1. [Tencent Cloud 계정 생성](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) 및 [TRTC](https://console.cloud.tencent.com/trtc), [IM](https://console.cloud.tencent.com/im) 서비스 활성화를 완료합니다.
 2. [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에서 **애플리케이션 관리 > 애플리케이션 생성**을 클릭하여 새로운 애플리케이션을 생성합니다.
-![애플리케이션 생성](https://main.qcloudimg.com/raw/34f87b8c0a817d8d3e49baac5b82a1fa.png)
+![Create Application](https://qcloudimg.tencent-cloud.cn/raw/9a50fca02d951862a3d0d38251835f76.png)
 
 #### 2단계: TRTC 키 정보 가져오기
 
 1. **애플리케이션 관리 > 애플리케이션 정보**에서 SDKAppID 정보를 가져옵니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/f7915fbbeb48518c2b25a413960f3432.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6c39a936934a944cd1b13e2ced0869d2.png)
 2. **애플리케이션 관리 > 퀵 스타트**에서 애플리케이션의 secretKey 정보를 가져옵니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/06d38bbdbaf43e1f2b444edae00019fa.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
 
 >?
 >- TRTC 애플리케이션을 처음 생성하는 Tencent Cloud 계정은 오디오/비디오 리소스 10,000분 무료 베타 패키지가 제공됩니다.
@@ -53,17 +53,18 @@
 ::: 방식2: \sIM 기반
 #### 1단계: IM 애플리케이션 생성
 1. [IM 콘솔](https://console.cloud.tencent.com/im)에 로그인하고 **애플리케이션 생성**을 클릭하면 팝업 창이 나타납니다.
-   ![](https://main.qcloudimg.com/raw/c8d1dc415801404e30e49ddd4e0c0c13.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/7382cbcd81df7afbad1e9af641697c87.png)
 2. 애플리케이션 이름을 입력한 후 **확인**을 클릭하면 애플리케이션이 생성됩니다.
-   ![](https://main.qcloudimg.com/raw/496cdc614f7a9d904cb462bd4d1e7120.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/b3a630da00564cf7ef4a91b8492b646e.png)
 3. [IM 콘솔](https://console.cloud.tencent.com/im)의 전체보기 페이지에서 새로 생성된 애플리케이션의 상태, 서비스 버전, SDKAppID, 생성 시간 및 만료 시간을 확인할 수 있습니다. SDKAppID 정보를 기록해 두십시오.
 
 #### 2단계: IM 키 획득 및 TRTC 서비스 활성화
 1. [IM 콘솔](https://console.cloud.tencent.com/im)의 전체보기 페이지에서 새로 생성한 IM 애플리케이션을 클릭하여 해당 애플리케이션의 기본 설정 페이지로 이동합니다. **기본 정보**에서 **키 표시**를 클릭하여 키 정보를 복사 및 저장합니다.
-![](https://main.qcloudimg.com/raw/030440f94a14cd031476ce815ed8e2bc.png)
->!키 정보가 유출되지 않도록 잘 보관하십시오.
+![](https://qcloudimg.tencent-cloud.cn/raw/6f284cf687e9648d209567ed32983c84.png)
+
+>! 키 정보가 유출되지 않도록 잘 보관하십시오.
 2. 해당 애플리케이션의 기본 설정 페이지에서 TRTC 서비스를 활성화합니다.
-![](https://main.qcloudimg.com/raw/1c2ce5008dad434d9206aabf0c07fd04.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8a9d1ca2c395fc6ebd26298a0f5226c4.png)
 :::
 </dx-tabs>
 
@@ -102,7 +103,7 @@ npm run serve
 TUIPusher & TUIPlayer로 구현된 LEB 및 LVB는 Tencent Cloud의 클라우드 LVB 서비스에 의존하므로 LEB 및 LVB 회선을 지원하려면 릴레이 푸시 스트림 기능을 활성화해야 합니다.
 
 1. [**TRTC 콘솔**](https://console.cloud.tencent.com/trtc)에서 사용 중인 애플리케이션에 대한 릴레이 푸시 스트림 설정을 활성화하고 필요에 따라 특정 스트림 릴레이 또는 전역 자동 릴레이를 활성화할 수 있습니다.
-![](https://main.qcloudimg.com/raw/b9846f4a7f5ce1e39b3450963e872c90.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b65584a5b096481ade6e302dabedcd5f.png)
 2. [**도메인 관리**](https://console.cloud.tencent.com/live/domainmanage) 페이지에 재생 도메인을 추가하십시오. 자세한 내용은 [자체 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)를 참고하십시오.
 3. `TUIPlayer/src/config/basic-info-config.js` 구성 파일에서 재생 도메인을 구성합니다.
 
@@ -119,7 +120,7 @@ TUIPusher & TUIPlayer로 구현된 LEB 및 LVB는 Tencent Cloud의 클라우드 
 > - 본문의 UserSig 생성 방법은 귀하가 입력한 sdkAppId 및 secretKey에 따라 클라이언트 측에서 userSig를 생성하는 것입니다. 이 secretKey 방식은 역컴파일로 역크래킹 되기 쉽기 때문에 키가 유출되면 공격자가 Tencent Cloud 트래픽을 도용할 수 있습니다. **이 방법은 TUIPusher & TUIPlayer 로컬 실행을 통한 기능 디버깅에만 적합합니다**.
 >- 올바른 UserSig 배포 방식은 UserSig 컴퓨팅 코드를 귀하의 서버에 통합하고, App 지향 인터페이스를 제공하는 것입니다. UserSig가 필요할 때, 애플리케이션은 비즈니스 서버에 동적 UserSig 가져오기 요청을 발송합니다. 자세한 내용은 [서버에서 UserSig 생성](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오.
 - `TUIPusher/src/pusher.vue` 및 `TUIPlayer/src/player.vue` 파일을 참고하여 전역 스토리지를 위한 vuex store에 사용자 정보, 라이브 룸 정보, SDKAppId 및 UserSig 계정 정보를 제출 및 실행할 수 있으며, 두 클라이언트의 푸시/풀 스트림의 모든 기능을 실행할 수 있습니다. 자세한 비즈니스 프로세스는 아래 이미지와 같습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/d2cafd2e0f029908859f7498e9d92297.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/30e959d1b4605532f6d4cac190cdd1df.png)
 
 ## 주의 사항
 ###  지원 플랫폼

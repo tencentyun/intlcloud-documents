@@ -36,14 +36,14 @@
 
 1. [Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327)を行い、[Tencent Real-Time Communication（TRTC）](https://console.cloud.tencent.com/trtc)と[Instant Messaging](https://console.cloud.tencent.com/im)サービスをアクティブ化します。
 2. [TRTCコンソール](https://console.cloud.tencent.com/trtc) で、**アプリケーション管理>アプリケーションの作成** をクリックし、新たなアプリケーションを作成します。
-![アプリケーションの作成](https://main.qcloudimg.com/raw/34f87b8c0a817d8d3e49baac5b82a1fa.png)
+![Create Application](https://qcloudimg.tencent-cloud.cn/raw/9a50fca02d951862a3d0d38251835f76.png)
 
 #### 手順2： TRTCキー情報の取得
 
 1. **アプリケーション管理>アプリケーション情報**でSDKAppID情報を取得します。
-![](https://qcloudimg.tencent-cloud.cn/raw/f7915fbbeb48518c2b25a413960f3432.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6c39a936934a944cd1b13e2ced0869d2.png)
 2. **アプリケーション管理>クイックマスター**でアプリケーションのsecretKey情報を取得します。
-![](https://qcloudimg.tencent-cloud.cn/raw/06d38bbdbaf43e1f2b444edae00019fa.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
 
 >?
 >- TRTCアプリケーションを初めて作成するTencent Cloudアカウントは、10000分間のオーディオビデオリソース無料トライアルパッケージを受け取ることができます。
@@ -53,17 +53,18 @@
 ::: 方法2：インスタントメッセージ\sIMの場合
 #### 手順1：IMアプリケーションの作成
 1. [IMコンソール](https://console.cloud.tencent.com/im)にログインし、**新しいアプリケーションの作成**をクリックするとダイアログボックスがポップアップします。
-   ![](https://main.qcloudimg.com/raw/c8d1dc415801404e30e49ddd4e0c0c13.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/7382cbcd81df7afbad1e9af641697c87.png)
 2. 自分のアプリケーション名を入力して、**確定**をクリックすると作成が完了します。
-   ![](https://main.qcloudimg.com/raw/496cdc614f7a9d904cb462bd4d1e7120.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/b3a630da00564cf7ef4a91b8492b646e.png)
 3. [IMコンソール](https://console.cloud.tencent.com/im)の概要画面で、新規作成したアプリケーションのステータス、サービスバージョン、SDKAppID、作成時間、有効期限を確認することができます。SDKAppID情報を記録してください。
 
 #### 手順2：IMキーを取得してTRTC Video Serviceをアクティブにする
 1. [IMコンソール](https://console.cloud.tencent.com/im)の概要ページで、自分で作成を完了したIMアプリケーションをクリックして、直ちにそのアプリケーションの基本設定ページにリダイレクトします。**基本情報**領域で、**キーの表示**をクリックして、キー情報をコピーし保存します。
-![](https://main.qcloudimg.com/raw/030440f94a14cd031476ce815ed8e2bc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6f284cf687e9648d209567ed32983c84.png)
+
 >!キー情報を適切に保管して、漏えいしないようにしてください。
 2. そのアプリケーションの基本構成ページで、TRTCサービスをアクティブ化します。
-![](https://main.qcloudimg.com/raw/1c2ce5008dad434d9206aabf0c07fd04.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8a9d1ca2c395fc6ebd26298a0f5226c4.png)
 :::
 </dx-tabs>
 
@@ -102,7 +103,7 @@ npm run serve
 TUIPusher & TUIPlayerが実装するライブイベントストリーミングと標準ライブストリーミングは、Tencent CloudのCloud Streaming Services（CSS）サービスに依存するため、ライブイベントストリーミングと標準ライブストリーミング回線をサポートするには、Relayed Push機能を有効にする必要があります。
 
 1. [**TRTCコンソール**](https://console.cloud.tencent.com/trtc) で現在使用中のアプリケーションのRelayed Push設定を有効にします。必要に応じてRelayed Push用指定ストリームまたはGlobal Auto-relayを起動することができます。
-![](https://main.qcloudimg.com/raw/b9846f4a7f5ce1e39b3450963e872c90.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b65584a5b096481ade6e302dabedcd5f.png)
 2. [**ドメイン名管理**](https://console.cloud.tencent.com/live/domainmanage)ページで独自の再生ドメイン名を追加します。具体的な内容は[独自のドメイン名の追加](https://intl.cloud.tencent.com/document/product/267/35970)をご参照ください。
 3. `TUIPlayer/src/config/basic-info-config.js`設定ファイルで再生ドメイン名を設定します。
 
@@ -119,7 +120,7 @@ TUIPusher & TUIPlayerを本番環境アプリケーションに使用する場�
 > - ここでのUserSigの発行方法は、クライアントが入力したsdkAppIdとsecretKeyに基づきuserSigを発行する方法です。この方法で発行されるsecretKeyは逆コンパイルによって逆クラッキングされやすく、キーがいったん漏洩すると、攻撃者がお客様のTencent Cloudトラフィックを盗用できるようになります。そのため**この方法はローカルのTUIPusher & TUIPlayerクイックスタート機能デバッグの実行のみに適しています**。
 >- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、アプリケーションから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 - `TUIPusher/src/pusher.vue`、`TUIPlayer/src/player.vue`ファイルを参照し、ユーザー情報、ライブストリーミングルーム情報、SDKAppId、UserSigなどのアカウント情報をvuexのstoreに送信し、グローバルストレージを実行すると、プッシュプルストリーミングする2つのクライアントの全機能をクイックスタートすることができます。詳細な業務フローについては下図をご参照ください。
-![](https://qcloudimg.tencent-cloud.cn/raw/d2cafd2e0f029908859f7498e9d92297.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/30e959d1b4605532f6d4cac190cdd1df.png)
 
 ## 注意事項
 ###  プラットフォームのサポート

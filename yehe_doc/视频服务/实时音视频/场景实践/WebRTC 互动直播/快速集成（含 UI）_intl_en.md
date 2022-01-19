@@ -36,14 +36,14 @@ Borrowing from common publishing and playback solutions on the market, we have l
 
 1. Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) and activate [TRTC](https://console.cloud.tencent.com/trtc) and [IM](https://console.cloud.tencent.com/im).
 2. In the [TRTC console](https://console.cloud.tencent.com/trtc), click **Application Management > Create Application**.
-![Create Application](https://main.qcloudimg.com/raw/34f87b8c0a817d8d3e49baac5b82a1fa.png)
+![Create Application](https://qcloudimg.tencent-cloud.cn/raw/9a50fca02d951862a3d0d38251835f76.png)
 
 #### Step 2. Get the key
 
 1. In the application list, find the application created and click **Application Info** to view the `SDKAppID`.
-![](https://qcloudimg.tencent-cloud.cn/raw/f7915fbbeb48518c2b25a413960f3432.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6c39a936934a944cd1b13e2ced0869d2.png)
 2. Select the **Quick Start** tab to view the application’s secret key.
-![](https://qcloudimg.tencent-cloud.cn/raw/06d38bbdbaf43e1f2b444edae00019fa.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
 
 >?
 >- Accounts creating their first application in the TRTC console will get a 10,000-minute free trial package.
@@ -53,17 +53,19 @@ Borrowing from common publishing and playback solutions on the market, we have l
 ::: Method 2: via IM\sIM
 #### Step 1. Create an IM application
 1. Log in to the [IM console](https://console.cloud.tencent.com/im), and click **Create Application**.
-   ![](https://main.qcloudimg.com/raw/c8d1dc415801404e30e49ddd4e0c0c13.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/7382cbcd81df7afbad1e9af641697c87.png)
 2. In the pop-up window, enter an application name and click **Confirm**.
-   ![](https://main.qcloudimg.com/raw/496cdc614f7a9d904cb462bd4d1e7120.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/b3a630da00564cf7ef4a91b8492b646e.png)
 3. Go to the [overview page](https://console.cloud.tencent.com/im) to view the status, edition, `SDKAppID`, creation time, and expiration time of the application created. Note the `SDKAppID`.
 
 #### Step 2. Get the key and activate TRTC
 1. On the [overview page](https://console.cloud.tencent.com/im), click the application created to go to the **Basic Configuration** page. In the **Basic Information** section, click **Display key**, and copy and save the key.
-![](https://main.qcloudimg.com/raw/030440f94a14cd031476ce815ed8e2bc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6f284cf687e9648d209567ed32983c84.png)
+
 >! Please store the key information properly to prevent leakage.
+
 2. On the **Basic Configuration** page, activate TRTC.
-![](https://main.qcloudimg.com/raw/1c2ce5008dad434d9206aabf0c07fd04.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8a9d1ca2c395fc6ebd26298a0f5226c4.png)
 :::
 </dx-tabs>
 
@@ -102,7 +104,7 @@ npm run serve
 As the high-speed and standard live streaming features of `TUIPusher` and `TUIPlayer` are powered by CSS, you need to enable relayed push to use the features.
 
 1. In the [TRTC console](https://console.cloud.tencent.com/trtc), enable relayed push for your application. You can choose **Specified stream for relayed push** or **Global auto-relayed push** based on your needs.
-![](https://main.qcloudimg.com/raw/b9846f4a7f5ce1e39b3450963e872c90.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b65584a5b096481ade6e302dabedcd5f.png)
 2. On the **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** page, add your playback domain name. For detailed directions, please see [Adding Your Own Domain Names](https://intl.cloud.tencent.com/document/product/267/35970).
 3. Configure the playback domain name in `TUIPlayer/src/config/basic-info-config.js`.
 
@@ -119,7 +121,7 @@ To apply `TUIPusher` and `TUIPlayer` to a production environment, in addition to
 >- In this document, `UserSig` is generated on the client based on the `SDKAppID` and secret key you provide. The secret key may be easily decompiled and reversed, and if your key is leaked, attackers will be able to steal your traffic. Therefore, **this method is for local debugging only**.
 >- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
 - Submit account information such as user information, room information, `SDKAppID`, and `UserSig` to `store` of `vuex` for global storage, as in `TUIPusher/src/pusher.vue` and `TUIPlayer/src/player.vue`, and you will be able to use all features of the two components on publishing and playback clients. The diagram below describes the process in details:
-![](https://qcloudimg.tencent-cloud.cn/raw/d2cafd2e0f029908859f7498e9d92297.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/30e959d1b4605532f6d4cac190cdd1df.png)
 
 ## Notes
 ### Supported platforms
