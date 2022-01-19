@@ -7,6 +7,7 @@
 - 已授予 KMS 密钥权限。如未授予，可在开通数据加密过程中根据引导进行授权。
 - 操作账号需具有 QcloudAccessForMySQLRole 的权限，如无权限，可在开通数据加密过程中根据引导进行授权。
 >?加密使用的密钥由 [密钥管理服务 KMS](https://intl.cloud.tencent.com/document/product/1030/32774) 产生和管理，云数据库 MySQL 不提供加密所需的密钥和证书。
+- 当账号处于欠费状态时，无法从 KMS 获取密钥，可能导致迁移、升级等任务无法正常进行，请参见 [欠费说明](https://intl.cloud.tencent.com/document/product/1030/31968)。
 
 ## 注意事项
 - 撤销授权关系后，重启会造成 MySQL 数据库不可用。
@@ -17,10 +18,11 @@
 - 开启 TDE 加密功能后，账户余额需大于等于0，否则会因为无法访问密钥管理系统而导致实例迁移失败。
 - 开启 TDE 加密功能后，会增加 CPU 资源的消耗。
 
+
 ## 操作步骤
 ### 开启 TDE 加密功能
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入管理页面。
-2. 选择**数据加密**页面，单击**加密状态**后的开关。
+2. 选择**数据加密**页，单击**加密状态**后的开关。
 >!
 >- 启用数据加密功能的实例，不支持使用物理备份恢复至其他主机上的自建数据库。
 >- 数据加密开通后不可关闭。
@@ -30,9 +32,9 @@
   - 选择**使用腾讯云自动生成的密钥**时，由腾讯云自动生成密钥。
     ![](https://main.qcloudimg.com/raw/d54abe36c8e392c09b39045f0b7a5b95.png)
   - 选择**使用已有自定义密钥**时，可选择自己创建的密钥。
-  >?如无自定义密钥，需单击**前往创建**，在密钥管理系统控制台创建密钥，详情请参见 [创建密钥](https://intl.cloud.tencent.com/document/product/1030/31971)。
-  >
-  ![](https://main.qcloudimg.com/raw/39d442d9620f36c1d57b55a409e6f9e2.png)
+>?如无自定义密钥，需单击**前往创建**，在密钥管理系统控制台创建密钥，详情请参见 [创建密钥](https://intl.cloud.tencent.com/document/product/1030/31971)。
+>
+![](https://main.qcloudimg.com/raw/39d442d9620f36c1d57b55a409e6f9e2.png)
 
 
 ### 加密数据表
