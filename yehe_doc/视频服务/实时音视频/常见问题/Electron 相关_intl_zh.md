@@ -6,37 +6,6 @@
 兼容的，trtc-electron-sdk 没有特别依赖 elecron 自身的 SDK，所以没有相关的版本依赖。
 
 
-[](id:install_q2)
-### Electron 下载慢甚至卡住不动？
-当开始下载 `tmp-3320-1-SHASUMS256.txt-6.1.9` 文件或其它文件时，可能会特别慢，甚至在辛苦等待了很长时间后，等到的却是 npm 的 Timeout 错误：
-```
-Downloading tmp-3320-1-SHASUMS256.txt-6.1.9
-[=>                                    ] 1.0% of 5.56 kB (0 B/s)
-```
-
-- **解决方案 A：**如果您是在家中办公，可以切换到国内的 npm 镜像。
-```
-# 指定 npm 国内镜像
-$ npm config set registry=https://registry.npm.taobao.org/
-# 指定 Electron 的国内镜像地址
-$ npm config set ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ 
-$ npm install
-```
-- **解决方案 B：**如果您是在公司办公，那么您公司的网络管理员可能已经设置了代理，需要确认 npm 的 proxy 配置是否指向了公司的代理服务器，以及是否配置了环境变量 `ELECTRON_GET_USE_PROXY`，如均无配置，请按以下步骤执行。
-	1. 设置 npm 代理 ： `npm config set all_proxy=[您的代理地址]`。
-	2. 配置 `ELECTRON_GET_USE_PROXY` 环境变量，这样 Electron 的安装脚本就会通过 npm 的代理下载。
-	
-- **解决方案 C：**如果您是 Mac 环境。
-```
-    $ export ELECTRON_GET_USE_PROXY=true
-```
-
-- **解决方案 D：**如果您是 Windows 环境。
-	1. 右键单击 **计算机 > 属性 > 高级系统设置 > 环境变量**。
-	2. 按下图操作设置环境变量 ELECTRON_GET_USE_PROXY ，然后执行 `npm install` 或 `npm install --proxy=[您的代理地址]`：
-	![](https://qcloudimg.tencent-cloud.cn/raw/2788a541f1f409a1e68bc25ade65ca27.png)
-
-
 [](id:install_q3)
 ### 下载 Electron 时出现 404 错误？
 ![](https://qcloudimg.tencent-cloud.cn/raw/a1855dc24d83db2f0fabe03fcdbce916.png)
