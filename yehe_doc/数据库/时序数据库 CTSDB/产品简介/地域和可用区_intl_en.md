@@ -10,9 +10,9 @@ Tencent Cloud regions are isolated. This guarantees the maximum cross-region sta
 Private network communication:
 - Tencent Cloud resources in the same VPC within the same region under the same account can communicate with each other over private network. They can also be accessed via [private IPs](https://intl.cloud.tencent.com/document/product/213/5225).
 - The networks of different regions are isolated. Tencent Cloud services in different regions cannot communicate via a private network by default.
-- Tencent Cloud services in different VPCs can communicate each other over [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003) which is fast and stable.
+- Tencent Cloud services in different VPCs can communicate each other over [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) which is fast and stable.
 
-## Availability Zone
+## Availability Zones
 An availability zone (AZ) is a physical IDC of Tencent Cloud with independent power supply and network in the same region. It can ensure business stability, as failures (except for major disasters or power failures) in one AZ are isolated without affecting other AZs in the same region. By starting an instance in an independent availability zone, users can protect their applications from being affected by a single point of failure.
 
 ## Supported Regions and AZs
@@ -31,7 +31,7 @@ An availability zone (AZ) is a physical IDC of Tencent Cloud with independent po
 <td rowspan="1">North China (Beijing)<br>ap-beijing</td>
 <td>Beijing Zone 1<br>ap-beijing-1</td></tr>
 <tr>
-<td>Southwest China (Chongqing)<br>ap-chongqing</td>
+<td >Southwest China (Chongqing)<br>ap-chongqing</td>
 <td>Chongqing Zone 1<br>ap-chongqing-1</td></tr>
 <tr>
 <td rowspan="1">Hong Kong/Macao/Taiwan (Hong Kong, China)<br>ap-hongkong</td>
@@ -49,7 +49,10 @@ An availability zone (AZ) is a physical IDC of Tencent Cloud with independent po
 <td>Bangkok Zone 2 (Bangkok nodes cover services in Southeast Asia)<br>ap-bangkok-2</td>
 <tr>
 <td>South Asia (Mumbai)<br>ap-mumbai</td>
-<td>Mumbai Zone 2 (sold out) (Mumbai nodes cover services in South Asia)<br>ap-mumbai-2</td></tr>	
+<td>Mumbai Zone 2 (sold out) (Mumbai nodes cover services in South Asia)<br>ap-mumbai-2</td></tr>
+<tr>
+<td rowspan="1">Northeast Asia (Seoul)<br>ap-seoul</td>
+<td>Seoul Zone 2 (Seoul nodes cover services in Northeast Asia)<br>ap-seoul-2</td></tr>
 <tr>
 <td>US (Silicon Valley)<br>na-siliconvalley</td>
 <td>Silicon Valley Zone 2 (sold out) (Silicon Valley nodes cover services in US)<br>na-siliconvalley-2</td></tr>	
@@ -61,6 +64,6 @@ An availability zone (AZ) is a physical IDC of Tencent Cloud with independent po
 <td>Frankfurt Zone 2 (Frankfurt nodes cover services in Europe)<br>eu-frankfurt-2</td></tr>
 </tbody></table>
 
-## Region and AZ Selection
+## Selection of Regions and AZs
 When you purchase Tencent Cloud services, we recommend you select the region closest to your end users to minimize access latency and improve download speed.
 
