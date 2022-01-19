@@ -18,14 +18,13 @@ The source log data can be submitted to SCF through a CLS function trigger, and 
 
 ## Function Processing Practices
 
-CLS can send data in a log topic to SCF for processing through a CLS trigger to satisfy the needs of various use cases, such as log processing and log cleansing as detailed below:
+CLS can send data in a log topic to SCF for processing through a [CLS trigger](https://intl.cloud.tencent.com/document/product/583/38845)  to satisfy the needs of various use cases, such as log processing and log cleansing as detailed below:
 
 
 | Function Processing Scenario | Description |
 | ------------------------------------------------------------ | --------------------------------------- |
 | [Log ETL](https://intl.cloud.tencent.com/document/product/614/38884) | Log data is cleansed, processed, or transformed through SCF |
-| [CLS data dump to CKafka](https://intl.cloud.tencent.com/document/product/614/38885) | Log data is cleansed and delivered to CKafka through SCF |
-| [CLS data dump to COS](https://intl.cloud.tencent.com/document/product/614/38886) | Log data is cleansed and delivered to COS through SCF |
+
 
 
 >! Data is delivered to SCF, which incurs corresponding computation fees. For billing details, please see SCF [Billing Overview](https://intl.cloud.tencent.com/document/product/583/17299).
