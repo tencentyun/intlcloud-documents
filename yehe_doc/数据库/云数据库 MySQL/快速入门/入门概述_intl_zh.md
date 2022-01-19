@@ -1,14 +1,11 @@
+
 本文旨在介绍如何快速使用云数据库 MySQL，帮助用户快速了解云数据库 MySQL 使用的全流程，从实例的创建到基本使用，您需要完成如下操作。
-![](https://main.qcloudimg.com/raw/397dbb3f8755e4a280aa9ede45ba2725.png)
 
 ### 1. 创建 MySQL 实例
 通过云数据库 MySQL 控制台，您可以灵活创建不同计费模式、配置的 MySQL 实例，请参见 [创建 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37785)。
 
-### 2. 初始化 MySQL 实例
-创建 MySQL 实例后，您还需要进行 MySQL 实例的初始化，以轻松启用实例，请参见 [初始化 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/3128)。
+### 2. 连接 MySQL 实例
+创建 MySQL 实例后，您可以通过多种方式连接 MySQL 实例，连接后可进行各种数据库的管理操作，请参见 [连接 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37788)。
 
-### 3. 连接 MySQL 实例
-初始化 MySQL 实例后，您可以通过多种方式连接 MySQL 实例，连接后可进行各种数据库的管理操作，请参见 [连接 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37788)。
-
-当您在连接 MySQL 实例过程中，出现无法连接实例相关问题时，可以参考 [解决无法连接实例问题](https://intl.cloud.tencent.com/document/product/236/37864) 进行处理。
+当您在连接 MySQL 实例过程中，出现无法连接实例相关问题时，可以参考 [解决无法连接实例问题](https://intl.cloud.tencent.com/document/product/236/40333) 进行处理。
 
