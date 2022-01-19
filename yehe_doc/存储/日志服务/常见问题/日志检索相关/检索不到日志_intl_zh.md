@@ -60,30 +60,37 @@ tail -f log/loglistener.log | grep "ClsFileProc::readFile" | grep send
 ![](https://main.qcloudimg.com/raw/109530d249ed468b5ae2c43b3b1e2341.png)
 >!如果日志通过 HTTP 方式上报，可以通过抓包查看80端口，判断日志是否上报成功。
 >
+
 日志未上报，请按以下步骤排查：
 
-    1. 在安装目录下执行以下命令，检查 LogListener 采集配置是否正确。
+ a. 在安装目录下执行以下命令，检查 LogListener 采集配置是否正确。
+
 ```shell
 tail -f log/loglistener.log | grep "ClsServerConf::load"
 ```
+
 如果已配置下发，日志则如下所示：    
 ![](https://main.qcloudimg.com/raw/d8b24591c6f601af31e57cab8995fd52.png)
+
 下发配置需要检查 log_type、path 信息是否正确：        
-       - log_type 表示配置的日志解析类型（单行全文：minimalist_log，分隔符：delimiter_log，json日志：json_log，多行全文：regex_log）。   
-       - path 表示日志采集目录。
-       
-    2. 在安装目录下执行以下命令，检查文件是否被正常监听。
+ - log_type 表示配置的日志解析类型（单行全文：minimalist_log，分隔符：delimiter_log，json日志：json_log，多行全文：regex_log）。   
+ - path 表示日志采集目录。
+
+ b. 在安装目录下执行以下命令，检查文件是否被正常监听。
+
 ```shell
 grep [上报日志文件的文件名] log/loglistener.log
 ```
+
 如果 grep 失败，使用 `grep regex_match log/loglistener.log` 搜索，检查控制台的正则表达式是否配置合理。如果出现下图所示的内容，表示文件名匹配正则失败，请登录控制台更改表达式。
 ![](https://main.qcloudimg.com/raw/8b9756fc97dc9fe38e49ddde4fb20335.png)
-    3. 检查日志正则解析是否正确。
+
+ c. 检查日志正则解析是否正确。
 对于完全正则和多行全文提取模式，需要指定正则表达式。多行全文中，首行正则表达式匹配的是整个首行的内容，而非首行开头的部分内容。
 例如，下图所示的日志样例。 INFO、ERROR、WARN 为日志首行，除了匹配（INFO|ERROR|WARN）外，还需将 INFO、ERROR、WARN 后面的字符匹配上。
 ![](https://main.qcloudimg.com/raw/c43a440e46ca0ff82d21275d90557e44.png)
-       -  错误配置方法：`^(INFO|ERROR|WARN)`
-       -  正确配置方法：`^(INFO|ERROR|WARN).*`
+- 错误配置方法：`^(INFO|ERROR|WARN)`
+- 正确配置方法：`^(INFO|ERROR|WARN).*`
 
 5. 确认一个文件被一个日志主题采集、单行日志最大不超过1M。
    未按上述要求可能导致采集缺失。
