@@ -218,7 +218,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [onConnectionLost](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a34c34705bb67127ff6d28700cf2ab591) | SDK와 클라우드 연결이 끊김 |
 | [onTryToReconnect](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#afe74dff22fde93fe0f07fcf18153d334) | SDK와 클라우드 다시 연결 중 |
 | [onConnectionRecovery](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ae90cd149a676418016cb8736b217f1a8) | SDK와 클라우드가 다시 연결됨 |
-| [onSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a455264cfcf2a7a3f022f3bce0659f9f7) | 서버 속도 테스트 결과 콜백 |
+
 
 ### 하드웨어 관련 이벤트 콜백
 | API                 | 설명       |
