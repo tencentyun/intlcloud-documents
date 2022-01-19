@@ -2,7 +2,7 @@
 
 - LogListener provides one-stop log service, including log collection, storage, search, transfer, and shipping features.
 - LogListener parses log structures in many ways, including full text in a single line, full text in multi lines, separator, JSON, and regular expressions.
-- LogListener allows you to select from multiple data access methods based on your business needs. For more information, see [Collection Methods](https://intl.cloud.tencent.com/document/product/614/12502).
+- LogListener allows you to select from multiple data access methods based on your business needs. For more information, see [Collection Overview](https://intl.cloud.tencent.com/document/product/614/31652).
 - LogListener provides multiple search syntaxes and allows you to search logs by keyword, fuzzy match, or range.
 
 ## Stable and Reliable
