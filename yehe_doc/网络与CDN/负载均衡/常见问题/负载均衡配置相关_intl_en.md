@@ -3,6 +3,7 @@
 - [What is the difference between UDP and TCP?](#2)
 - [How does CLB achieve session persistence based on cookies?](#3)
 - [What is the real server weight?](#4)
+- [What is the difference between resetting the weight to 0 and unbinding the real server?](#24)
 
 **Health Check**
 - [What can I do if a CVM instance exception occurs during health check?](#5)
@@ -30,7 +31,7 @@
 
 [](id:1)
 ### What is the difference between layer-4 and layer-7 load balancing?
-- Layer-4 CLB is based on IPs and ports.
+- Layer-4 load balancing is based on IPs and ports.
 - Layer-7 load balancing is based on application layer information such as HTTP headers and URLs.
 
 The difference between layer-4 and layer-7 instances is whether layer-4 or layer-7 information is used as the basis for determining how to forward traffic for load balancing on real servers.
@@ -73,9 +74,17 @@ If you have also enabled session persistence, the same access request may be for
 [[Back to Top]](#23)
 
 
+[](id:24)
+### What is the difference between resetting the weight to 0 and unbinding the real server?
+- Resetting the weight to 0: TCP listeners keep forwarding existing connections, UDP listeners keep forwarding connections with the same quintuple, and HTTP/HTTPS listeners keep forwarding existing connections.
+- Unbinding the real server: TCP/UDP listeners stop forwarding existing connections, and HTTP/HTTPS listeners keep forwarding existing connections.
+
+[[Back to Top]](#23)
+
+
 [](id:5)
 ### What can I do if a CVM instance exception occurs during health check?
-Please troubleshoot by following the steps below:
+Troubleshoot by following the steps:
 - Make sure that you access your application service directly via the CVM instance.
 - Make sure that the relevant port is open on the real server.
 - Check whether there is any security software like a firewall in the real server. This may cause the CLB instance to be unable to communicate with the real server.
@@ -137,7 +146,7 @@ The normal result returned by port 843 is as shown below:
 [](id:10)
 ### Can CLB instances directly obtain client IPs?
 - IPv6 NAT64 CLB instances do not support obtaining client IPs.
-- Public network layer-7 CLB instances use the `X-Forwarded-For` method to get real client IPs. Acquisition of client IPs is enabled on CLB instances by default but needs to be configured on real servers. For more information, please see [Getting Real Client IPs](https://intl.cloud.tencent.com/document/product/214/3728).
+- Public network layer-7 CLB instances use the `X-Forwarded-For` method to get real client IPs. Acquisition of client IPs is enabled on CLB instances by default but needs to be configured on real servers. For more information, see [Getting Real Client IPs](https://intl.cloud.tencent.com/document/product/214/3728).
 - Public network layer-4 CLB instances (over TCP) can directly get real client IPs on backend CVM instances, and no additional configuration is required. For the private network layer-4 CLB instances purchased after October 24, 2016, the Source Network Address Translation (SNAT) is not conducted. They can directly get real client IPs from servers with no additional configuration.
 
 [[Back to Top]](#23)
@@ -179,7 +188,7 @@ No. To access port a on server A (10.66.\*.101), the request can be forwarded to
 [](id:14)
 ### How to configure the security group of a CLB real server? How to configure the access blocklist?[](id:14)
 #### Configuring the CLB security group
-If security group rules have been configured for a real server, the CLB instance may not be able to communicate with the server. Therefore, in layer-4 and layer-7 forwarding, we recommend configuring the security group of a real server as allowing all access requests. If the security group is enabled and accesses from any protocols or IP segments are denied by default, IPs of all clients need to be configured to the security group rules of the server IP.
+If security group rules have been configured for a real server, the CLB instance may not be able to communicate with the server. Therefore, in layer-4 and layer-7 forwarding, we recommend configuring the security group of a real server as allowing all access requests. If the security group is enabled and accesses from any protocols or IP segments are allowed by default, IPs of all clients need to be configured to the security group rules of the server IP.
 For some malicious IPs, you can add them to the top rules of the security group to prevent them from accessing the real server. You can then allow access requests from all IPs (0.0.0.0) to the local service port, so normal clients can access the server. Security group rules are arranged in priority order and matched from top to bottom.
 
 If health check has been configured for layer-7 CLB forwarding in VPC, in the real server security rules, the CLB VIP must be allowed. Otherwise, the health check may fail.
@@ -199,7 +208,7 @@ clientB ip+port drop
 0.0.0.0/0+port accept
 ```
 
-For more information on the security group, please see [Security Group Configuration of the Real Server](https://intl.cloud.tencent.com/document/product/214/6157).
+For more information on the security group, see [Security Group Configuration of the Real Server](https://intl.cloud.tencent.com/document/product/214/6157).
 
 [[Back to Top]](#23)
 
@@ -228,7 +237,7 @@ The requests of pinging the CLB VIP are responded to by the CLB cluster and will
 [](id:18)
 ### Private network loopback
 For private network CLB instances, a CVM cannot be both the client and server. When the CLB instances read the same client and server IPs, access will fail.
-If your client needs to be used as a server, please bind at least 2 real servers. CLB has related policies to prevent automatic loopback. When client A accesses the CLB instance, the CLB instance will automatically schedule the request to a real server other than client A.
+If your client needs to be used as a server, bind at least 2 real servers. CLB has related policies to prevent automatic loopback. When client A accesses the CLB instance, the CLB instance will automatically schedule the request to a real server other than client A.
 
 [[Back to Top]](#23)
 
@@ -244,10 +253,10 @@ When a client accesses the same port of a real server via different intermediate
 The CLB instances passe the client IP to the real server, and `client_ip:client_port -> vip:vport -> rs_ip:rs_port` will change to `client_ip:client_port --> rs_ip:rs_port`.
 
 **Solutions**
-- Distributed clients: Multiple clients are used to initiate access.
-- Fewer CLB instances: The number of CLB instances and listeners are cut down on the premise of meeting business functions and disaster recovery requirements.
-- Distributed real server ports: Multiple ports for a real server are used to provide services to avoid congestion.
-- Distributed deployment: Different CLB instances are bound to different ports on real servers. For example, CLB instance 1 bound to one set of CVM instances and CLB instance 2 bound to another set can be accessed at the same time.
+- Distributed clients: multiple clients are used to initiate access.
+- Fewer CLB instances: the number of CLB instances and listeners are cut down on the premise of meeting business functions and disaster recovery requirements.
+- Distributed real server ports: multiple ports for a real server are used to provide services to avoid congestion.
+- Distributed deployment: different CLB instances are bound to different ports on real servers. For example, CLB instance 1 bound to one set of CVM instances and CLB instance 2 bound to another set can be accessed at the same time.
 
 [[Back to Top]](#23)
 

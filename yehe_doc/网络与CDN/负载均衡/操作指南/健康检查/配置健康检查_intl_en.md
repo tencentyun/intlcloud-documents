@@ -1,16 +1,16 @@
-When configuring listeners, you can enable health check to obtain the availability information of real servers. For more information on health check, please see [Health Check Overview](https://intl.cloud.tencent.com/document/product/214/6097).
+When configuring listeners, you can enable health check to obtain the availability information of real servers. For more information on health check, see [Health Check Overview](https://intl.cloud.tencent.com/document/product/214/6097).
 
-<span id="postreq"></span>
+[](id:postreq)
 ## Prerequisites
-1. Create a CLB instance. For more information, please see [Creating CLB Instances](https://intl.cloud.tencent.com/document/product/214/6149).
+1. Create a CLB instance. For more information, see [Creating CLB Instances](https://intl.cloud.tencent.com/document/product/214/6149).
 2. Create a CLB listener.
- - To create a TCP listener, please see more information in [Configuring a TCP Listener](https://intl.cloud.tencent.com/document/product/214/32517).
- - To create a UDP listener, please see more information in [Configuring a UDP Listener](https://intl.cloud.tencent.com/document/product/214/32518).
- - To create a TCP SSL listener, please see more information in [Configuring a TCP SSL Listener](https://intl.cloud.tencent.com/document/product/214/32519).
- - To create an HTTP listener, please see more information in [Configuring an HTTP Listener](https://intl.cloud.tencent.com/document/product/214/32515).
- - To create an HTTPS listener, please see more information in [Configuring an HTTPS Listener](https://intl.cloud.tencent.com/document/product/214/32516).
+ - To create a TCP listener, see more information in [Configuring a TCP Listener](https://intl.cloud.tencent.com/document/product/214/32517).
+ - To create a UDP listener, see more information in [Configuring a UDP Listener](https://intl.cloud.tencent.com/document/product/214/32518).
+ - To create a TCP SSL listener, see more information in [Configuring a TCP SSL Listener](https://intl.cloud.tencent.com/document/product/214/32519).
+ - To create an HTTP listener, see more information in [Configuring an HTTP Listener](https://intl.cloud.tencent.com/document/product/214/32515).
+ - To create an HTTPS listener, see more information in [Configuring an HTTPS Listener](https://intl.cloud.tencent.com/document/product/214/32516).
 
-## TCP Listener
+## TCP Listener[](id:tcp)
 Layer-4 TCP listeners support three types of health checks, namely the layer-4 TCP health check, layer-7 HTTP health check, and custom protocol health check.
 - TCP health checks are conducted with SYN packets, that is, TCP three-way handshakes are initiated to obtain the status information of backend CVM instances.
 - HTTP health checks are conducted by sending HTTP requests to obtain the status information of backend CVM instances.
@@ -19,13 +19,16 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 ### Configuring TCP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **TCP** as the protocol.
-![](https://qcloudimg.tencent-cloud.cn/raw/45dba40d269d5692fe55e800537a5ff2.png)
+![]()
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
 </tr>
 <tr>
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
+</tr>
+<tr>
+<td>Health check source IP</td><td>This is the source IP of health check packets, which is the CLB VIP by default. It can also be the 100.64 IP range, which can solve the container loopback problem in the TKE scenario. This feature is currently in beta stage. To try it out, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 <tr>
 <td>Protocol</td><td>TCP health checks will be conducted if <b>TCP</b> is selected.</td>
@@ -34,20 +37,23 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 <td>Port</td><td>It is optional. We recommend not specifying the port unless you need to check specific ones. The real server port will be checked if the port is not specified here.</td>
 </tr>
 <tr>
-<td>Show advanced options</td><td>For more information, please see <a href="#advance">Advanced Options</a>.</td>
+<td>Show advanced options</td><td>For more information, see <a href="#advance">Advanced Options</a>.</td>
 </tr>
 </table>
 
 ### Configuring HTTP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **HTTP** as the protocol.
-![](https://qcloudimg.tencent-cloud.cn/raw/34162d1e3d350560ca4d0cbb5ccbce40.png)
+![]()
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
 </tr>
 <tr>
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
+</tr>
+<tr>
+<td>Health check source IP</td><td>This is the source IP of health check packets, which is the CLB VIP by default. It can also be the 100.64 IP range, which can solve the container loopback problem in the TKE scenario. This feature is currently in beta stage. To try it out, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 <tr>
 <td>Protocol</td><td>HTTP health checks will be conducted if <b>HTTP</b> is selected.</td>
@@ -91,23 +97,26 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 <td>Normal status code</td><td>If the status code is of the selected ones, the real server is considered as alive (healthy). Options: http_1xx, http_2xx, http_3xx, http_4xx, and http_5xx. You can select multiple ones.</td>
 </tr>
 <tr>
-<td>Show advanced options</td><td>For more information, please see <a href="#advance">Advanced Options</a>.</td>
+<td>Show advanced options</td><td>For more information, see <a href="#advance">Advanced Options</a>.</td>
 </tr>
 </table>
 
 ### Configuring custom protocol health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
-2. In the step of **Health Check**, select **HTTP** as the protocol.
-![](https://qcloudimg.tencent-cloud.cn/raw/8d90b2ec22f711c3547467ae92d02e98.png)
+2. In the step of **Health Check**, select **Custom Protocol** as the protocol.
+![]()
 <table>
 <tr>
-<th>Parameter</th><th>Description</th>
+<th width="25%">Parameter</th><th>Description</th>
 </tr>
 <tr>
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
 </tr>
 <tr>
-<td>Protocol</td><td>Custom protocol health checks will be conducted if <b>Custom Protocol</b> is selected.</td>
+<td>Health check source IP</td><td>This is the source IP of health check packets, which is the CLB VIP by default. It can also be the 100.64 IP range, which can solve the container loopback problem in the TKE scenario. This feature is currently in beta stage. To try it out, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+</tr>
+<tr>
+<td>Protocol</td><td>Custom protocol health checks will be conducted if <b>Custom Protocol</b> is selected. This is applicable to non-HTTP protocols in TCP.</td>
 </tr>
 <tr>
 <td>Port</td><td>It is optional. We recommend not specifying the port unless you need to check specific ones. The real server port will be checked if the port is not specified here.</td>
@@ -120,30 +129,33 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 </ul></td>
 </tr>
 <tr>
-<td>Request</td><td>Custom health check request content.</td>
+<td>Check request</td><td>This is the custom health check request content, which is required, such as `F13E0100000100000000000003777777047465737403636F6D0774656E63656E7403636F6D0000010001` for DNS service health check.</td>
 </tr>
 <tr>
-<td>Return result</td><td>When customizing a health check request, you need to enter the health check return result.</td>
+<td>Returned check result</td><td>When customizing the health check request, you must enter the returned health check result, such as F13E for DNS service health check.</td>
 </tr>
 <tr>
-<td>Show advanced options</td><td>For more information, please see <a href="#advance">Advanced Options</a>.</td>
+<td>Show advanced options</td><td>For more information, see <a href="#advance">Advanced Options</a>.</td>
 </tr>
 </table>
 
 
-## UDP Listener
+## UDP Listener[](id:udp)
 UDP listeners support UDP health checks, which can be conducted by checking ports and running the Ping command.
 
 ### Configuring UDP health check - port check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **Port** as the protocol.
-![](https://qcloudimg.tencent-cloud.cn/raw/0437fe0ef1f0206bb8c5e125188ff4f3.png)
+![]()
 <table>
 <tr>
-<th>Parameter</th><th>Description</th>
+<th width="25%">Parameter</th><th>Description</th>
 </tr>
 <tr>
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
+</tr>
+<tr>
+<td>Health check source IP</td><td>This is the source IP of health check packets, which is the CLB VIP by default. It can also be the 100.64 IP range, which can solve the container loopback problem in the TKE scenario. This feature is currently in beta stage. To try it out, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 <tr>
 <td>Protocol</td><td>If Port is selected, UDP detection packets will be sent to the backend CVM instance via the VIP (i.e., the IP address used by a CLB instance to provide service to clients), and the IP of the backend CVM instance will be pinged to obtain the backend CVM instance status.</td>
@@ -159,13 +171,13 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 </ul></td>
 </tr>
 <tr>
-<td>Request</td><td>It is optional. Custom health check request content.</td>
+<td>Check request</td><td>This is the custom health check request content, such as `F13E0100000100000000000003777777047465737403636F6D0774656E63656E7403636F6D0000010001` for DNS service health check.</td>
 </tr>
 <tr>
-<td>Return result</td><td>It is optional. When customizing a health check request, you need to enter the health check return result.</td>
+<td>Returned check result</td><td>When customizing the health check request, you must configure the returned health check result, such as F13E for DNS service health check.</td>
 </tr>
 <tr>
-<td>Show advanced options</td><td>For more information, please see <a href="#advance">Advanced Options</a>.</td>
+<td>Show advanced options</td><td>For more information, see <a href="#advance">Advanced Options</a>.</td>
 </tr>
 </table>
 
@@ -173,35 +185,41 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 ### Configuring UDP health check - Ping command
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **PING** as the protocol.
-![](https://qcloudimg.tencent-cloud.cn/raw/b20a1cf59bcdb4d85c27d635eadf8fa9.png)
+![]()
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
 </tr>
 <tr>
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
+</tr>
+<tr>
+<td>Health check source IP</td><td>This is the source IP of health check packets, which is the CLB VIP by default. It can also be the 100.64 IP range, which can solve the container loopback problem in the TKE scenario. This feature is currently in beta stage. To try it out, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 <tr>
 <td>Protocol</td><td>If PING is selected, the IP of the backend CVM instance will be pinged to obtain the backend CVM instance status.</td>
 </tr>
 <tr>
-<td>Show advanced options</td><td>For more information, please see <a href="#advance">Advanced Options</a>.</td>
+<td>Show advanced options</td><td>For more information, see <a href="#advance">Advanced Options</a>.</td>
 </tr>
 </table>
 
 
-## TCP SSL Listener
+## TCP SSL Listener[](id:tcp-ssl)
 
 ### Configuring TCP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **TCP** as the protocol.
-![](https://qcloudimg.tencent-cloud.cn/raw/e0257dcb94a83d99b4cc82407724a2ae.png)
+![]()
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
 </tr>
 <tr>
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
+</tr>
+<tr>
+<td>Health check source IP</td><td>This is the source IP of health check packets, which is the CLB VIP by default. It can also be the 100.64 IP range, which can solve the container loopback problem in the TKE scenario. This feature is currently in beta stage. To try it out, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 <tr>
 <td>Protocol</td><td>TCP health checks will be conducted if <b>TCP</b> is selected.</td>
@@ -210,20 +228,23 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 <td>Port</td><td>The health check port and listening port of TCP SSL listeners are the same.</td>
 </tr>
 <tr>
-<td>Show advanced options</td><td>For more information, please see <a href="#advance">Advanced Options</a>.</td>
+<td>Show advanced options</td><td>For more information, see <a href="#advance">Advanced Options</a>.</td>
 </tr>
 </table>
 
 ### Configuring HTTP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **HTTP** as the protocol.
-![](https://qcloudimg.tencent-cloud.cn/raw/fe6bb16d3065b906f3df698717719b67.png)
+![]()
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
 </tr>
 <tr>
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
+</tr>
+<tr>
+<td>Health check source IP</td><td>This is the source IP of health check packets, which is the CLB VIP by default. It can also be the 100.64 IP range, which can solve the container loopback problem in the TKE scenario. This feature is currently in beta stage. To try it out, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 <tr>
 <td>Protocol</td><td>HTTP health checks will be conducted if <b>HTTP</b> is selected.</td>
@@ -264,21 +285,24 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 <td>Normal status code</td><td>If the status code is of the selected ones, the real server is considered as alive (healthy). Options: http_1xx, http_2xx, http_3xx, http_4xx, and http_5xx. You can select multiple ones.</td>
 </tr>
 <tr>
-<td>Show advanced options</td><td>For more information, please see <a href="#advance">Advanced Options</a>.</td>
+<td>Show advanced options</td><td>For more information, see <a href="#advance">Advanced Options</a>.</td>
 </tr>
 </table>
 
-<span id="http"></span>
-## HTTP Listener
+[](id:http)
+## HTTP Listener[](id:http)
 ### Configuring HTTP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
-![](https://qcloudimg.tencent-cloud.cn/raw/b274aded44b2d1de9d653737b2ad1822.png)
+![]()
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
 </tr>
 <tr>
 <td>Health check</td><td>It can be enabled or disabled. We recommend enabling it for automatic checks on backend CVM instances and removal of abnormal ports.</td>
+</tr>
+<tr>
+<td>Health check source IP</td><td>This is the source IP of health check packets, which is the CLB VIP by default. It can also be the 100.64 IP range, which can solve the container loopback problem in the TKE scenario. This feature is currently in beta stage. To try it out, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 <tr>
 <td>Check domain</td><td>Requirements on health check domain names:
@@ -306,10 +330,10 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 <td>Check interval</td><td><ul><li>Interval between two health checks.</li><li>Value range: 5-300 seconds.</li></ul></td>
 </tr>
 <tr>
-<td>Unhealthy threshold</td><td><ul><li>If the health check result is failed for n (a customizable value) times, it is considered that the backend CVM instance is unhealthy, and the status displayed in the console is **Abnormal**.</li><li>Value range: 2-10 times.</li></ul></td>
+<td>Unhealthy threshold</td><td><ul><li>If the health check result is failed for n (a customizable value) times, it is considered that the backend CVM instance is unhealthy, and the status displayed in the console is <b>Abnormal</b>.</li><li>Value range: 2-10 times.</li></ul></td>
 </tr>
 <tr>
-<td>Healthy threshold</td><td><ul><li>If the health check result is successful for n (a customizable value) times, it is considered that the backend CVM instance is healthy, and the status displayed in the console is **Healthy**.</li><li>Value range: 2-10 times. </li></ul></td>
+<td>Healthy threshold</td><td><ul><li>If the health check result is successful for n (a customizable value) times, it is considered that the backend CVM instance is healthy, and the status displayed in the console is <b>Healthy</b>.</li><li>Value range: 2-10 times. </li></ul></td>
 </tr>
 <tr>
 <td>HTTP request method</td><td>HTTP request method of health checks. Options: GET (default method) and HEAD.
@@ -323,12 +347,12 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 </tr>
 </table>
 
-## HTTPS Listener
+## HTTPS Listener[](id:https)
 >?If HTTP is selected as the backend protocol of the HTTPS listener's forwarding rules, HTTP health checks will be conducted; if HTTPS is selected, HTTPS health checks will be conducted.
 >
-For the health check configuration of HTTPS listeners, please see <a href="#http">HTTP Listener</a>.
+For the health check configuration of HTTPS listeners, see <a href="#http">HTTP Listener</a>.
 
-<span id="advance"></span>
+[](id:advance)
 ## Advanced Options
 | Health Check Configuration    | Description                    | Default Value                              |
 | ------- | ------------------------ | ---------------------------------------- |
@@ -336,3 +360,9 @@ For the health check configuration of HTTPS listeners, please see <a href="#http
 | Check interval | <li>Interval between two health checks.</li><li>Value range: 5-300 seconds.</li> | 5 seconds |
 | Unhealthy threshold | <li>If the health check result is failed for n (a customizable value) times, it is considered that the backend CVM instance is unhealthy, and the status displayed in the console is **Abnormal**.</li><li>Value range: 2-10 times.</li> | 3 times |
 | Healthy threshold |<li>If the health check result is successful for n (a customizable value) times, it is considered that the backend CVM instance is healthy, and the status displayed in the console is **Healthy**.</li><li>Value range: 2-10 times. </li> | 3 times |
+
+
+
+## Relevant Documentation
+- [Health Check Overview](https://intl.cloud.tencent.com/document/product/214/6097)
+- [Configuring Alarms](https://intl.cloud.tencent.com/document/product/214/8886)

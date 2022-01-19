@@ -31,7 +31,7 @@ Private network CLB is used to distribute requests from Tencent Cloud's private 
 <tr>
 <td><span style="font-weight:bold">Billing Mode</span></td>
 <td>
-Select the **Pay-as-You-Go** mode.
+Select the <b>Pay-as-You-Go</b> mode.
 </td>
 </tr>
 <tr>
@@ -48,12 +48,12 @@ Only CLB instance type is supported.
 </tr>
 <tr>
 <td><span style="font-weight:bold">Network Type</span></td>
-<td>Select the **Public Network** type.
+<td>Select the <b>Public Network</b> type.
 </td>
 </tr>
 <tr>
 <td><span style="font-weight:bold">EIP</span></td>
-<td>Select **EIP**. Tencent Cloud will assign you an EIP and a private network CLB instance. Supported EIP types include general IP, accelerated IP, and static single-line IP.
+<td>Select <b>EIP</b>. Tencent Cloud will assign you an EIP and a private network CLB instance. Supported EIP types include general IP, accelerated IP, and static single-line IP.
 </td>
 </tr>
 </tbody></table>

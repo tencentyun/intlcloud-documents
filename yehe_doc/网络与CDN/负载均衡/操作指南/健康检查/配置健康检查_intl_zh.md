@@ -1,8 +1,7 @@
 您可以在配置监听器时开启健康检查功能来判断后端服务的可用性。健康检查详情请参见 [健康检查概述](https://intl.cloud.tencent.com/document/product/214/6097)。
 
-<span id="postreq"></span>
+[](id:postreq)
 ## 前提条件
-
 1. 您已创建负载均衡实例，详情请参见 [创建负载均衡实例](https://intl.cloud.tencent.com/document/product/214/6149)。
 2. 您已创建负载均衡监听器。
  - 创建 TCP 监听器，详情请参见 [配置 TCP 监听器](https://intl.cloud.tencent.com/document/product/214/32517)。
@@ -11,7 +10,7 @@
  - 创建 HTTP 监听器，详情请参见 [配置 HTTP 监听器](https://intl.cloud.tencent.com/document/product/214/32515)。
  - 创建 HTTPS 监听器，详情请参见 [配置 HTTPS 监听器](https://intl.cloud.tencent.com/document/product/214/32516)。
 
-## TCP 监听器
+## TCP 监听器[](id:tcp)
 四层 TCP 监听器支持四层 TCP、七层 HTTP 和自定义协议三种类型的健康检查。
 - TCP 健康检查通过 SYN 包即发起 TCP 三次握手来获取后端 CVM 的状态信息。
 - HTTP 健康检查通过发送 HTTP 请求来获取后端 CVM 的状态信息。
@@ -20,13 +19,16 @@
 ### 配置 TCP 健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“TCP”检查协议。
-![](https://qcloudimg.tencent-cloud.cn/raw/45dba40d269d5692fe55e800537a5ff2.png)
+![]()
 <table>
 <tr>
 <th>参数</th><th>说明</th>
 </tr>
 <tr>
 <td>健康检查</td><td>可开启或关闭健康检查功能。建议您开启健康检查，帮助您自动检查并移除异常的后端 CVM 端口。</td>
+</tr>
+<tr>
+<td>健康源 IP</td><td>健康检查探测包的源 IP，默认为负载均衡的 VIP。健康检查源 IP 还支持100.64网段，可以解决容器服务 TKE 场景中出现的容器回环问题。此功能处于内测阶段，如需使用，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr>
 <tr>
 <td>检查协议</td><td>选择“TCP”表示配置 TCP 健康检查。</td>
@@ -42,13 +44,16 @@
 ### 配置 HTTP 健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“HTTP”检查协议。
-![](https://qcloudimg.tencent-cloud.cn/raw/34162d1e3d350560ca4d0cbb5ccbce40.png)
+![]()
 <table>
 <tr>
 <th>参数</th><th>说明</th>
 </tr>
 <tr>
 <td>健康检查</td><td>可开启或关闭健康检查功能。建议您开启健康检查，帮助您自动检查并移除异常的后端 CVM 端口。</td>
+</tr>
+<tr>
+<td>健康源 IP</td><td>健康检查探测包的源 IP，默认为负载均衡的 VIP。健康检查源 IP 还支持100.64网段，可以解决容器服务 TKE 场景中出现的容器回环问题。此功能处于内测阶段，如需使用，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr>
 <tr>
 <td>检查协议</td><td>选择“HTTP”表示配置 HTTP 健康检查。</td>
@@ -98,17 +103,20 @@
 
 ### 配置自定义协议健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
-2. 在“健康检查”页签，选择“HTTP”检查协议。
-![](https://qcloudimg.tencent-cloud.cn/raw/8d90b2ec22f711c3547467ae92d02e98.png)
+2. 在“健康检查”页签，选择“自定义协议”检查协议。
+![]()
 <table>
 <tr>
-<th>参数</th><th>说明</th>
+<th width="25%">参数</th><th>说明</th>
 </tr>
 <tr>
 <td>健康检查</td><td>可开启或关闭健康检查功能。建议您开启健康检查，帮助您自动检查并移除异常的后端 CVM 端口。</td>
 </tr>
 <tr>
-<td>检查协议</td><td>选择“自定义协议”表示配置自定义协议健康检查。</td>
+<td>健康源 IP</td><td>健康检查探测包的源 IP，默认为负载均衡的 VIP。健康检查源 IP 还支持100.64网段，可以解决容器服务 TKE 场景中出现的容器回环问题。此功能处于内测阶段，如需使用，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
+</tr>
+<tr>
+<td>检查协议</td><td>选择“自定义协议”表示配置自定义协议健康检查。适用于 TCP 中非 HTTP 的协议。</td>
 </tr>
 <tr>
 <td>检查端口</td><td>非必填，不填写端口时默认为后端服务器端口。除需要指定特定端口以外，其余情况建议不填写。</td>
@@ -121,10 +129,10 @@
 </ul></td>
 </tr>
 <tr>
-<td>检查请求</td><td>自定义健康检查请求内容。</td>
+<td>检查请求</td><td>自定义健康检查请求内容，必填。例如探测 DNS 服务的检查请求示例为：F13E0100000100000000000003777777047465737403636F6D0774656E63656E7403636F6D0000010001。</td>
 </tr>
 <tr>
-<td>检查返回结果</td><td>自定义健康检查请求时，必须填写健康检查返回结果。</td>
+<td>检查返回结果</td><td>自定义健康检查请求时，必须填写健康检查返回结果。例如探测 DNS 服务的检查返回结果示例为：F13E。</td>
 </tr>
 <tr>
 <td>显示高级选项</td><td>详情请参见 <a href="#advance">高级选项</a>。</td>
@@ -132,19 +140,22 @@
 </table>
 
 
-## UDP 监听器
+## UDP 监听器[](id:udp)
 UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查类型。
 
 ### 配置 UDP 健康检查 - 检查端口
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“检查端口”检查协议。
-![](https://qcloudimg.tencent-cloud.cn/raw/0437fe0ef1f0206bb8c5e125188ff4f3.png)
+![]()
 <table>
 <tr>
-<th>参数</th><th>说明</th>
+<th width="25%">参数</th><th>说明</th>
 </tr>
 <tr>
 <td>健康检查</td><td>可开启或关闭健康检查功能。建议您开启健康检查，帮助您自动检查并移除异常的后端 CVM 端口。</td>
+</tr>
+<tr>
+<td>健康源 IP</td><td>健康检查探测包的源 IP，默认为负载均衡的 VIP。健康检查源 IP 还支持100.64网段，可以解决容器服务 TKE 场景中出现的容器回环问题。此功能处于内测阶段，如需使用，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr>
 <tr>
 <td>检查协议</td><td>选择“检查端口”表示 VIP（即负载均衡向客户端提供服务的 IP 地址）向后端 CVM 发送 UDP 探测报文，通过 Ping 后端 CVM 的 IP 地址来获取后端 CVM 的状态信息。</td>
@@ -160,10 +171,10 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 </ul></td>
 </tr>
 <tr>
-<td>检查请求</td><td>自定义健康检查请求内容，非必填。</td>
+<td>检查请求</td><td>自定义健康检查请求内容。例如探测 DNS 服务的检查请求示例为：F13E0100000100000000000003777777047465737403636F6D0774656E63656E7403636F6D0000010001。</td>
 </tr>
 <tr>
-<td>检查返回结果</td><td>自定义健康检查请求时，需填写健康检查返回结果，非必填。</td>
+<td>检查返回结果</td><td>自定义健康检查请求时，必须配置健康检查返回结果。例如探测 DNS 服务的检查返回结果示例为：F13E。</td>
 </tr>
 <tr>
 <td>显示高级选项</td><td>详情请参见 <a href="#advance">高级选项</a>。</td>
@@ -174,13 +185,16 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 ### 配置 UDP 健康检查 - PING
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“PING”检查协议。
-![](https://qcloudimg.tencent-cloud.cn/raw/b20a1cf59bcdb4d85c27d635eadf8fa9.png)
+![]()
 <table>
 <tr>
 <th>参数</th><th>说明</th>
 </tr>
 <tr>
 <td>健康检查</td><td>可开启或关闭健康检查功能。建议您开启健康检查，帮助您自动检查并移除异常的后端 CVM 端口。</td>
+</tr>
+<tr>
+<td>健康源 IP</td><td>健康检查探测包的源 IP，默认为负载均衡的 VIP。健康检查源 IP 还支持100.64网段，可以解决容器服务 TKE 场景中出现的容器回环问题。此功能处于内测阶段，如需使用，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr>
 <tr>
 <td>检查协议</td><td>选择“PING”表示通过 Ping 后端 CVM 的 IP 地址来获取后端 CVM 的状态信息。</td>
@@ -191,18 +205,21 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 </table>
 
 
-## TCP SSL 监听器
+## TCP SSL 监听器[](id:tcp-ssl)
 
 ### 配置 TCP 健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“TCP”检查协议。
-![](https://qcloudimg.tencent-cloud.cn/raw/e0257dcb94a83d99b4cc82407724a2ae.png)
+![]()
 <table>
 <tr>
 <th>参数</th><th>说明</th>
 </tr>
 <tr>
 <td>健康检查</td><td>可开启或关闭健康检查功能。建议您开启健康检查，帮助您自动检查并移除异常的后端 CVM 端口。</td>
+</tr>
+<tr>
+<td>健康源 IP</td><td>健康检查探测包的源 IP，默认为负载均衡的 VIP。健康检查源 IP 还支持100.64网段，可以解决容器服务 TKE 场景中出现的容器回环问题。此功能处于内测阶段，如需使用，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr>
 <tr>
 <td>检查协议</td><td>选择“TCP”表示配置 TCP 健康检查。</td>
@@ -218,13 +235,16 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 ### 配置 HTTP 健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
 2. 在“健康检查”页签，选择“HTTP”检查协议。
-![](https://qcloudimg.tencent-cloud.cn/raw/fe6bb16d3065b906f3df698717719b67.png)
+![]()
 <table>
 <tr>
 <th>参数</th><th>说明</th>
 </tr>
 <tr>
 <td>健康检查</td><td>可开启或关闭健康检查功能。建议您开启健康检查，帮助您自动检查并移除异常的后端 CVM 端口。</td>
+</tr>
+<tr>
+<td>健康源 IP</td><td>健康检查探测包的源 IP，默认为负载均衡的 VIP。健康检查源 IP 还支持100.64网段，可以解决容器服务 TKE 场景中出现的容器回环问题。此功能处于内测阶段，如需使用，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr>
 <tr>
 <td>检查协议</td><td>选择“HTTP”表示配置 HTTP 健康检查。</td>
@@ -269,19 +289,20 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 </tr>
 </table>
 
-
-<span id="http"></span>
-## HTTP 监听器
-
+[](id:http)
+## HTTP 监听器[](id:http)
 ### 配置 HTTP 健康检查
 1. 参考 [前提条件](#postreq) ，操作至“健康检查”页签。
-![](https://qcloudimg.tencent-cloud.cn/raw/b274aded44b2d1de9d653737b2ad1822.png)
+![]()
 <table>
 <tr>
 <th>参数</th><th>说明</th>
 </tr>
 <tr>
 <td>健康检查</td><td>可开启或关闭健康检查功能。建议您开启健康检查，帮助您自动检查并移除异常的后端 CVM 端口。</td>
+</tr>
+<tr>
+<td>健康源 IP</td><td>健康检查探测包的源 IP，默认为负载均衡的 VIP。健康检查源 IP 还支持100.64网段，可以解决容器服务 TKE 场景中出现的容器回环问题。此功能处于内测阶段，如需使用，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr>
 <tr>
 <td>检查域名</td><td>健康检查域名：
@@ -326,18 +347,22 @@ UDP 监听器支持 UDP 健康检查，包括检查端口和 PING 两种检查�
 </tr>
 </table>
 
-## HTTPS 监听器
+## HTTPS 监听器[](id:https)
 >?当 HTTPS 监听器转发规则中的后端协议选择 HTTP 协议时，健康检查使用 HTTP 健康检查；当选择 HTTPS 协议时，健康检查使用 HTTPS 健康检查。
 >
 HTTPS 监听器的健康检查配置参考以上的 <a href="#http">HTTP 监听器</a> 的健康检查即可。
 
-
-<span id="advance"></span>
+[](id:advance)
 ## 高级选项
-
 | 健康检查配置    | 说明                    | 默认值                               |
 | ------- | ------------------------ | ---------------------------------------- |
 | 响应超时 | <li> 健康检查响应的最大超时时间。</li><li>如果后端云服务器在超时时间内没有正确响应，则判定为健康检查异常。</li><li>可配置范围：2 - 60秒。</li> | 2秒 |
 | 检测间隔 | <li>负载均衡进行健康检查的时间间隔。</li><li>可配置范围：5 - 300秒。</li> | 5秒 |
 | 不健康阈值 | <li>如果连续 n 次（n 为填写的数值）收到的健康检查结果失败，则识别为不健康，控制台显示为**异常**。</li><li>可配置范围：2 - 10次。</li> | 3次 |
 | 健康阈值 |<li>如果连续 n 次（n 为填写的数值）收到的健康检查结果为成功，则识别为健康，控制台显示为**健康**。</li><li>可配置范围：2 - 10次。 </li> | 3次 |
+
+
+
+## 相关文档
+- [健康检查概述](https://intl.cloud.tencent.com/document/product/214/6097)
+- [配置告警策略](https://intl.cloud.tencent.com/document/product/214/8886)
