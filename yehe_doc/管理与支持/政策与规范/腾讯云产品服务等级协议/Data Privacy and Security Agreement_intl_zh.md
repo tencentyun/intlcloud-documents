@@ -116,7 +116,9 @@
 13.[时序数据库 CTSDB](https://intl.cloud.tencent.com/document/product/1100/41706)。
 14.[私有域解析 Private DNS](https://intl.cloud.tencent.com/document/product/1097/42073)。
 15.[数据库审计](https://intl.cloud.tencent.com/document/product/1102/43295)。
-16.[数据库管理中心](https://intl.cloud.tencent.com/document/product/1125/44014)。
+16.[云数据库 Tendis](https://intl.cloud.tencent.com/document/product/1083/43457)。
+17.[数据库管理中心](https://intl.cloud.tencent.com/document/product/1125/44014)。
+18.[微瓴物联网类操作系统](https://intl.cloud.tencent.com/document/product/1115/44314)。
 ## 特定司法管辖区要求
 
 **欧洲**
