@@ -1,4 +1,4 @@
-> For details about how to install and use LogListener, see [LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/17414) <!-- and [LogListener mechanism]()-->
+For details about how to install and use LogListener, see [LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/17414). <!-- and [LogListener mechanism]()-->
 
 ## Possible causes
 
