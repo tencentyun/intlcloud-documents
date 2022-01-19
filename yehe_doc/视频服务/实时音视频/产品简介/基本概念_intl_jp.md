@@ -26,7 +26,7 @@ UserID（ユーザーID）は、1つのTRTCアプリケーションでユーザ�
 >- ルームに最初に参加したユーザーがそのルームのオーナーとなりますが、このユーザーが自主的にルームを解散することはできません。
 >- 通話モードの場合：すべてのユーザーが自主的に退室したときは、バックエンドでルームが速やかに解散されます。
 >- ライブストリーミングモードの場合：最後に退室したユーザーがキャスターロールの場合、バックエンドでルームが速やかに解散されます。最後に退室したユーザーが視聴者ロールの場合、バックエンドで10分間待ってからルームが解散されます。
->- ルーム内の1人のユーザーの接続が異常により切断された場合、90秒後にサーバーがこのユーザーを現在のルームから消去します。ルーム内のすべてのユーザーの接続が異常に切断された場合、90秒後にサーバーが現在のルームを自動的に解散します。
+>- ルーム内の1人のユーザーの接続が異常により切断された場合、90秒後にサーバーがこのユーザーを現在のルームから消去します。ルーム内のすべてのユーザーの接続が異常に切断された場合、90秒後にサーバーが現在のルームを自動的に解散します。**ユーザーの接続が異常により切断された場合の待機時間は課金時間の集計に含まれます。**
 >- ユーザーが参加したいルームが存在しない場合、TRTCのバックエンドで自動的にルームが作成されます。
 
 ### RoomID
@@ -54,12 +54,16 @@ TRTCは、**キャスター**(TRTCRoleAnchor)と**視聴者**(TRTCRoleAudience)�
 
 ### CDN relayed live streaming
 
-CDNライブストリーミング、別名「CDN relayed live streaming」といいます。TRTCはクラウド上でバイパストランスコードクラスターを使用して、TRTCが使用したUDPプロトコルを標準のライブストリーミングRTMPプロトコルに変換し、TRTCのオーディオ・ビデオデータを標準のLive Video Broadcasting(LVB)システムにプッシュしてから、CDN経由で配信します。これによって、CDN relayed live streamingを実装します。詳細については、[CDN relayed live streamingの実装](https://intl.cloud.tencent.com/document/product/647/35242)をご参照ください。
+CDNライブストリーミング、別名「CDN relayed live streaming」といいます。TRTCはクラウド上でバイパストランスコードクラスターを使用して、TRTCが使用したUDPプロトコルを標準のライブストリーミングRTMPプロトコルに変換し、TRTCのオーディオ・ビデオデータを標準のLive Video Broadcasting(CSS)システムにプッシュしてから、CDN経由で配信します。これによって、CDN relayed live streamingを実装します。詳細については、[CDN relayed live streamingの実装](https://intl.cloud.tencent.com/document/product/647/35242)をご参照ください。
 
 ### クラウドレコーディング
 
-TRTCではRelayed Pushの方式を採用し[LVB](https://intl.cloud.tencent.com/document/product/267)の機能を利用して、トータルなクラウドレコーディング機能（録音/録画）を提供します。さらにレコーディングしたファイルを[VOD](https://intl.cloud.tencent.com/document/product/266)のプラットフォームに保存して、レコーディングプロセスの信頼性と即時性を確保します。詳細については、[クラウドレコーディングと再生](https://intl.cloud.tencent.com/document/product/647/35426)をご参照ください。
+TRTCではRelayed Pushの方式を採用し[CSS](https://intl.cloud.tencent.com/document/product/267)の機能を利用して、トータルなクラウドレコーディング機能（録音/録画）を提供します。さらにレコーディングしたファイルを[VOD](https://intl.cloud.tencent.com/document/product/266)のプラットフォームに保存して、レコーディングプロセスの信頼性と即時性を確保します。詳細については、[クラウドレコーディングと再生](https://intl.cloud.tencent.com/document/product/647/35426)をご参照ください。
 
 ### Cloud MixTranscoding
 
 **CDN relayed live streaming**や**クラウドレコーディング**などのユースケースでは、TRTCルームにおける複数のオーディオ・ビデオストリーミングを1つのチャネルにミックスする必要がある場合があります。TRTCクラウドサービスのバックグラウンドにあるMCUミクスストリーミングトランスコードクラスターによって、この作業を完了することができます。MCUクラスターは、複数のオーディオ・ビデオストリーミングを必要に応じてミックスし、最終的に生成されたビデオストリームをライブCDNとクラウドレコーディングシステムに配信することができます。詳細については、[Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618)をご参照ください。
+
+
+### ダム端末
+ダム端末で視聴者が入室しストリームをプルした場合、他のSDKからは認識されません（ダム端末の入退室イベント通知はリモートで受信できません）。

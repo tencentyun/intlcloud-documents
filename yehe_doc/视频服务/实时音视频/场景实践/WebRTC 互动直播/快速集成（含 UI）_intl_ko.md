@@ -2,7 +2,7 @@
 라이브 이벤트용 푸시/풀 스트림 애플리케이션을 찾고 있거나, 강의를 진행하면서 PPT를 공유해야 하거나, 다양한 딜레이 요구 사항을 충족하는 라이브 방송 시나리오가 필요하거나, 라이브 방송 중 온라인 시청자와 소통하려는 경우, Tencent Cloud의 빠른 푸시/풀 스트림 시나리오 기반 솔루션이 준비되었습니다.
 
 시중의 푸시/풀 스트림 시나리오에 대한 일반적인 솔루션을 기반으로 UI [TUIPusher](https://github.com/tencentyun/TUILiveRoom/tree/main/Web/TUIPusher) 및 [TUIPlayer](https://github.com/tencentyun/TUILiveRoom/tree/main/Web/TUIPlayer)를 포함한 푸시/풀 스트림 솔루션을 사용 및 참고용으로 제공합니다. TUIPusher 및 TUIPlayer 기능 데모는 아래 이미지를 참고하십시오. 동시에 TUIPusher & TUIPlayer의 기능을 보다 빠르게 체험할 수 있도록 사용자 관리 시스템과 방 관리 시스템을 결합하여 [TUIPusher 체험 링크](https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/pusher.html)와 [TUIPlayer 체험 링크](https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/player.html)를 제공합니다.
-![TUIPusher 데모](https://qcloudimg.tencent-cloud.cn/raw/eb315dd6d5c2dd2dfb1e1984b7bab656.png)
+![TUIPusher 데모](https://qcloudimg.tencent-cloud.cn/raw/8d33df705c07c80d75ad19096e681903.png)
 ![TUIPlayer 데모](https://qcloudimg.tencent-cloud.cn/raw/6490fdf7db4980db3a98b4b103fb52f1.png)
 
 
@@ -13,7 +13,7 @@
   - 뷰티필터 활성화 및 비디오 뷰티필터 매개변수 설정 지원
 - 캡처 화면 스트림 공유 및 푸시 스트림 지원
 - Tencent Cloud TRTC 백그라운드 및 Tencent Cloud CDN 스트리밍 지원
-- 온라인 채팅방, 온라인 청중과 채팅 및 인터랙션 지원
+- 온라인 채팅방, 온라인 시청자와 채팅 및 인터랙션 지원
 - 시청자 리스트 가져오기 및 온라인 시청자 음소거 작업 지원
 
 ### TUIPlayer 풀 스트림 컴포넌트
@@ -23,22 +23,54 @@
 
 
 ## 액세스 방식
-[](id:step1)
-### 1단계: 계정 준비
-TUIPusher & TUIPlayer는 Tencent Cloud의 TRTC 및 인스턴트 메시징 서비스를 기반으로 개발되었습니다.
-1. [Tencent Cloud 계정 생성](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) 및 [TRTC](https://console.cloud.tencent.com/trtc), [IM](https://console.cloud.tencent.com/im) 서비스 활성화를 완료합니다.
-2. [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에서 **애플리케이션 관리 > 애플리케이션 생성**을 클릭하여 새로운 애플리케이션을 생성합니다.
-3. **애플리케이션 관리 > 애플리케이션 정보**에서 SDKAppID 정보를 가져옵니다.
-4. **애플리케이션 관리 > 퀵 스타트**에서 애플리케이션의 secretKey 정보를 가져옵니다.
+### 주의 사항
+- TUIPusher & TUIPlayer는 Tencent Cloud TRTC 및 IM 서비스를 기반으로 개발되었습니다. TRTC 애플리케이션과 IM 애플리케이션의 SDKAppID가 동일한 경우에만 계정 및 인증을 재사용할 수 있습니다.
+- IM 애플리케이션은 텍스트 메시지에 대해 기본 버전의 **콘텐츠 필터링** 기능을 제공합니다. **업그레이드**하면 사용자 정의 불건전 언어 차단 기능을 사용할 수 있습니다.
+- UserSig 로컬 계산 방식은 로컬 개발 디버깅에만 사용하고 온라인에 배포하지 마십시오. SECRETKEY가 유출되면 해커가 귀하의 Tencent Cloud 트래픽을 도용할 수 있습니다. 올바른 UserSig 배포 방식은 UserSig 컴퓨팅 코드를 귀하의 서버에 통합하고, App 지향 인터페이스를 제공하는 것입니다. UserSig가 필요할 때, App은 비즈니스 서버에 동적 UserSig 가져오기 요청을 발송합니다. 자세한 내용은 [서버에서 UserSig 생성](https://intl.cloud.tencent.com/document/product/1047/34385)을 참고하십시오.
 
->!
+### 1단계: Tencent Cloud 서비스 활성화
+<dx-tabs>
+::: 방식1: TRTC 기반
+[](id:step1)
+#### 1단계: Tencent Real-Time Communication(TRTC) 애플리케이션 생성
+
+1. [Tencent Cloud 계정 생성](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) 및 [TRTC](https://console.cloud.tencent.com/trtc), [IM](https://console.cloud.tencent.com/im) 서비스 활성화를 완료합니다.
+2. [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에서 **애플리케이션 관리 > 애플리케이션 생성**을 클릭하여 새로운 애플리케이션을 생성합니다.
+![애플리케이션 생성](https://main.qcloudimg.com/raw/34f87b8c0a817d8d3e49baac5b82a1fa.png)
+
+#### 2단계: TRTC 키 정보 가져오기
+
+1. **애플리케이션 관리 > 애플리케이션 정보**에서 SDKAppID 정보를 가져옵니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/f7915fbbeb48518c2b25a413960f3432.png)
+2. **애플리케이션 관리 > 퀵 스타트**에서 애플리케이션의 secretKey 정보를 가져옵니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/06d38bbdbaf43e1f2b444edae00019fa.png)
+
+>?
 >- TRTC 애플리케이션을 처음 생성하는 Tencent Cloud 계정은 오디오/비디오 리소스 10,000분 무료 베타 패키지가 제공됩니다.
 >- TRTC 애플리케이션 생성 후 동일한 SDKAppID를 가진 IM 애플리케이션이 자동으로 생성되며, 이 애플리케이션의 패키지 정보는 [IM 콘솔](https://console.cloud.tencent.com/im)에서 구성할 수 있습니다.
+
+:::
+::: 방식2: \sIM 기반
+#### 1단계: IM 애플리케이션 생성
+1. [IM 콘솔](https://console.cloud.tencent.com/im)에 로그인하고 **애플리케이션 생성**을 클릭하면 팝업 창이 나타납니다.
+   ![](https://main.qcloudimg.com/raw/c8d1dc415801404e30e49ddd4e0c0c13.png)
+2. 애플리케이션 이름을 입력한 후 **확인**을 클릭하면 애플리케이션이 생성됩니다.
+   ![](https://main.qcloudimg.com/raw/496cdc614f7a9d904cb462bd4d1e7120.png)
+3. [IM 콘솔](https://console.cloud.tencent.com/im)의 전체보기 페이지에서 새로 생성된 애플리케이션의 상태, 서비스 버전, SDKAppID, 생성 시간 및 만료 시간을 확인할 수 있습니다. SDKAppID 정보를 기록해 두십시오.
+
+#### 2단계: IM 키 획득 및 TRTC 서비스 활성화
+1. [IM 콘솔](https://console.cloud.tencent.com/im)의 전체보기 페이지에서 새로 생성한 IM 애플리케이션을 클릭하여 해당 애플리케이션의 기본 설정 페이지로 이동합니다. **기본 정보**에서 **키 표시**를 클릭하여 키 정보를 복사 및 저장합니다.
+![](https://main.qcloudimg.com/raw/030440f94a14cd031476ce815ed8e2bc.png)
+>!키 정보가 유출되지 않도록 잘 보관하십시오.
+2. 해당 애플리케이션의 기본 설정 페이지에서 TRTC 서비스를 활성화합니다.
+![](https://main.qcloudimg.com/raw/1c2ce5008dad434d9206aabf0c07fd04.png)
+:::
+</dx-tabs>
 
 [](id:step2)
 ### 2단계: 프로젝트 준비
 1. [GitHub](https://github.com/tencentyun/TUILiveRoom/tree/main/Web)에서 TUIPusher & TUIPlayer 코드를 다운로드합니다.
-2. TUIPusher & TUIPlayer 종속을 설치합니다.
+2. TUIPusher & TUIPlayer 종속 항목을 설치합니다.
 ```bash
 cd Web/TUIPusher
 npm install
@@ -56,19 +88,21 @@ npm run serve
 cd Web/TUIPlayer
 npm run serve
 ```
-5. `http://localhost:8080` 및 `http://localhost:8081`을 열어 TUIPusher 및 TUIPlayer의 기능을 체험합니다.
+5. `http://localhost:8080` 및 `http://localhost:8081`을 열어 TUIPusher 및 TUIPlayer의 기능을 체험할 수 있습니다.
 6. `TUIPusher/src/config/basic-info-config.js` 및 `TUIPlayer/src/config/basic-info-config.js` 구성 파일에서 방, 호스트 및 시청자 정보를 변경할 수 있습니다. **TUIPusher 및 TUIPlayer의 방 정보와 호스트 정보는 일치해야 합니다**.
 
->! 상기 설정을 완료한 후, TUIPusher & TUIPlayer를 사용하여 초저지연 라이브 방송을 진행할 수 있으며, LEB와 LVB 지원이 필요한 경우, [3단계: 릴레이 라이브 방송](#step3)을 계속 읽어주십시오.
->
+>! 
+>- 상기 설정을 완료한 후, TUIPusher & TUIPlayer를 사용하여 초저지연 라이브 방송을 진행할 수 있으며, LEB와 LVB 지원이 필요한 경우, [3단계: 릴레이 라이브 방송](#step3)을 계속 읽어주십시오.
+>- UserSig 로컬 계산 방식은 로컬 개발 디버깅에만 사용됩니다. 직접 온라인에 배포하지 마십시오. 일단 `SECRETKEY`가 노출되면 해커가 귀하의 Tencent Cloud 트래픽을 남용할 수 있습니다.
+>- 올바른 UserSig 배포 방식은 UserSig 컴퓨팅 코드를 귀하의 서버에 통합하고, App 지향 인터페이스를 제공하는 것입니다. UserSig가 필요할 때, App은 비즈니스 서버에 동적 UserSig 가져오기 요청을 발송합니다. 자세한 내용은 [서버에서 UserSig 생성](https://intl.cloud.tencent.com/document/product/1047/34385)을 참고하십시오.
 
 [](id:step3)
-
 ### 3단계: 릴레이 라이브 방송
 
 TUIPusher & TUIPlayer로 구현된 LEB 및 LVB는 Tencent Cloud의 클라우드 LVB 서비스에 의존하므로 LEB 및 LVB 회선을 지원하려면 릴레이 푸시 스트림 기능을 활성화해야 합니다.
 
 1. [**TRTC 콘솔**](https://console.cloud.tencent.com/trtc)에서 사용 중인 애플리케이션에 대한 릴레이 푸시 스트림 설정을 활성화하고 필요에 따라 특정 스트림 릴레이 또는 전역 자동 릴레이를 활성화할 수 있습니다.
+![](https://main.qcloudimg.com/raw/b9846f4a7f5ce1e39b3450963e872c90.png)
 2. [**도메인 관리**](https://console.cloud.tencent.com/live/domainmanage) 페이지에 재생 도메인을 추가하십시오. 자세한 내용은 [자체 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)를 참고하십시오.
 3. `TUIPlayer/src/config/basic-info-config.js` 구성 파일에서 재생 도메인을 구성합니다.
 
@@ -82,10 +116,10 @@ TUIPusher & TUIPlayer로 구현된 LEB 및 LVB는 Tencent Cloud의 클라우드 
 - 라이브 룸 ID, 라이브 룸 이름, 라이브 룸 호스트 정보를 포함하되 이에 국한되지 않는 제품 라이브 룸 정보를 관리하는 SSM을 생성합니다.
 - 서버의 UserSig를 생성합니다.
 > !
-> - 본문에서는 사용자가 입력한 sdkAppId 및 secretKey에 따라 클라이언트에서 userSig를 생성하는 UserSig 생성 방법을 사용합니다. 이 방법의 secretKey는 역컴파일로 역크래킹되기 쉽기 때문에 비밀 키가 유출되면 공격자가 Tencent Cloud 트래픽을 도용할 수 있습니다. 따라서 **이 방법은 TUIPusher & TUIPlayer 로컬 실행을 통한 기능 디버깅에만 적합합니다**.
+> - 본문의 UserSig 생성 방법은 귀하가 입력한 sdkAppId 및 secretKey에 따라 클라이언트 측에서 userSig를 생성하는 것입니다. 이 secretKey 방식은 역컴파일로 역크래킹 되기 쉽기 때문에 키가 유출되면 공격자가 Tencent Cloud 트래픽을 도용할 수 있습니다. **이 방법은 TUIPusher & TUIPlayer 로컬 실행을 통한 기능 디버깅에만 적합합니다**.
 >- 올바른 UserSig 배포 방식은 UserSig 컴퓨팅 코드를 귀하의 서버에 통합하고, App 지향 인터페이스를 제공하는 것입니다. UserSig가 필요할 때, 애플리케이션은 비즈니스 서버에 동적 UserSig 가져오기 요청을 발송합니다. 자세한 내용은 [서버에서 UserSig 생성](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오.
 - `TUIPusher/src/pusher.vue` 및 `TUIPlayer/src/player.vue` 파일을 참고하여 전역 스토리지를 위한 vuex store에 사용자 정보, 라이브 룸 정보, SDKAppId 및 UserSig 계정 정보를 제출 및 실행할 수 있으며, 두 클라이언트의 푸시/풀 스트림의 모든 기능을 실행할 수 있습니다. 자세한 비즈니스 프로세스는 아래 이미지와 같습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/30e959d1b4605532f6d4cac190cdd1df.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d2cafd2e0f029908859f7498e9d92297.png)
 
 ## 주의 사항
 ###  지원 플랫폼
@@ -126,4 +160,7 @@ TUIPusher & TUIPlayer는 아래 포트에 종속되어 데이터를 전송하므
 - 도메인: qcloud.rtc.qq.com
 
 ## 결론
-TUIPusher 및 TUIPlayer 컴포넌트는 지속적으로 최적화되며, 향후 마이크 연결 인터랙션, 댓글 자막 및 기타 기능이 출시될 예정입니다. 귀하의 지원과 피드백은 지속적인 개선의 원동력입니다. 기타 필요 또는 문의 사항은 연락 주시기 바랍니다.
+추후 업데이트에서 TRTC Web 푸시/풀 스트림 컴포넌트는 점차적으로 iOS, Andriod 등과 연결되고 Web 에서 시청자 마이크 연결, 고급 뷰티필터, 맞춤형 레이아웃, 멀티 플랫폼 스트림 전송 외에 이미지, 텍스트 및 음악 업로드가 구현됩니다. 많이 이용해주시고 소중한 의견 부탁드립니다.
+
+요구 사항이나 피드백은 colleenyu@tencent.com으로 보내주시기 바랍니다.
+

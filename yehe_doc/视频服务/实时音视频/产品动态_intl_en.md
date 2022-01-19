@@ -1,3 +1,37 @@
+## December 2021
+<table>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
+</tr><tr>
+<td>Released v9.4</td>
+<td>All platforms:<ul style="margin:0">
+<li>Sped up room entry, reducing the fluctuation in room entry speed.</li>
+<li>Supported highlighting the speaking user, which is useful in large-scale audio co-anchoring scenarios. It enables users to focus on the audio of whoever is speaking when there are multiple speakers in the room. You can call the <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0e6e6434aaa03ce878280125a9c0fa4b" target="_blank">setRemoteAudioParallelParams</a> API to set this feature.</li>
+</ul>
+<br>Windows:<ul style="margin:0">
+Optimized the audio gain control algorithm, fixing the issue of marked noise due to high audio gain on some devices.
+</ul>
+<br>iOS:<ul style="margin:0">
+Supported background music files in 24-bit WAV format.
+</ul>
+<br>Android: <ul style="margin:0">
+<li>Made the capturing resolution in line with the resolution of the screen during screen sharing to avoid black bars.</li>
+<li>Improved the compatibility of the hardware video decoder, fixing the issue of black bars due to change of playback resolution on some devices.</li>
+</ul>
+<br>Android & iOS:<ul style="margin:0">
+This version complies with China’s privacy and security regulations and has been tested by multiple Tencent products.
+</ul>
+<br>macOS: <ul style="margin:0">
+<li>Supported dual channels for the system audio capturing API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2979e32c019708dcc9209bb6d2db9486" target="_blank">startSystemAudioLoopback</a>.</li>
+<li>Fixed the issue of high CPU and memory usage when mouse cursor is captured during screen sharing.</li>
+</ul>
+</td>
+<td>2021-12-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr>
+</table>
+
+
+
 ## November 2021
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>

@@ -26,7 +26,7 @@ A room is a space where users can receive each other’s audio and video data in
 >- The first user who enters a room is the owner of the room. Room owners cannot close rooms manually.
 >- In the call modes, TRTC closes a room when all users in the room exit.
 >- In the live streaming modes, if the last user who exits a room is an anchor, TRTC will close the room immediately; if the user is audience, TRTC will close the room in 10 minutes.
->- A user will be removed from a room 90 seconds after unexpected disconnection. If all users are unexpectedly disconnected, the room will be closed after 90 seconds.
+>- A user will be removed from a room 90 seconds after unexpected disconnection. If all users are unexpectedly disconnected, the room will be closed after 90 seconds. **The waiting time after disconnection is also billed**.
 >- If a user attempts to enter a room that does not exist, TRTC will create a room automatically.
 
 ### Room ID
@@ -58,7 +58,7 @@ CDN live watching is also known as CDN relayed live streaming. TRTC uses relayed
 
 ### On-cloud recording
 
-TRTC leverages the capabilities of [CSS](https://intl.cloud.tencent.com/document/product/267) to record entire calls (video/audio) in the cloud and saves the recording files securely in real time in [VOD](https://intl.cloud.tencent.com/document/product/266). For details, see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
+TRTC leverages the capabilities of [VOD](https://intl.cloud.tencent.com/document/product/267) to record entire calls (video/audio) in the cloud and save the recording files securely and in real time in [VOD](https://intl.cloud.tencent.com/document/product/266). For details, see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
 
 ### On-Cloud MixTranscoding
 

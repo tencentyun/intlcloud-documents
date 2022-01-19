@@ -65,10 +65,13 @@ npm install
 npm run serve
 ```
 2. Chromeブラウザを起動し、リンク`http://localhost:8080/`を開きます。すべてが正常であれば、Demo実行インターフェースは次の図のようになります。
+![](https://main.qcloudimg.com/raw/cd5b42448924101dd2f753fc45ce2fac.png)
 3. useridを入力し、**ログイン**をクリックして、**ビデオ通話**を選択します。
+![](https://main.qcloudimg.com/raw/d760af14a509b7373b4d85c341729012.png)
 4. 呼び出し先のuseridを入力し、**呼出**をクリックします。
+![](https://main.qcloudimg.com/raw/b0b98e7af68643630992aa2d5114f9cf.png)
 5. ビデオ通話を開始できます。
-
+![](https://main.qcloudimg.com/raw/592189d0f18c91c51cdf7184853c6437.png)
 
 
 ## 独自のビデオ通話の作成
@@ -141,16 +144,9 @@ trtcCalling.call({
 - **着呼者：新しい呼び出しに応答**
 ```javascript
 // 応答
-trtcCalling.accept({
-  inviteID, //招待ID。1回の招待を表示
-  roomID,   //通話ルーム番号ID
-  callType  //0-不明、1-音声通話、2-ビデオ通話
-});
+trtcCalling.accept();
 //拒否します
-trtcCalling.reject({ 
-  inviteID, //招待ID。1回の招待を表示
-  isBusy //通話中の有無。0-不明、1-音声通話、2-ビデオ通話
-  })
+trtcCalling.reject()
 ```
 - **ローカルカメラのオン**
 ```javascript
@@ -174,3 +170,15 @@ trtcCalling.startLocalView({
 ```javascript
 trtcCalling.hangup()
 ```
+
+## 技術的なお問い合わせ
+詳細な情報については[お問い合わせ](https://intl.cloud.tencent.com/contact-us)までご連絡ください。
+
+
+
+## 参考ドキュメント
+- [TRTCCalling web 公式サイトで体験](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
+- [TRTCCalling npm](https://www.npmjs.com/package/trtc-calling-js)
+- [TRTCCalling web demoソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)
+- [TRTCCalling web API](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
+- [TRTCCalling web に関するご質問](https://intl.cloud.tencent.com/document/product/647/43096)

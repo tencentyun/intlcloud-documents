@@ -90,3 +90,17 @@ TRTC Web SDKの、ブラウザに対する詳細なサポートの程度につ�
 
 - **原因**：TRTCCalling <= 0.6.0およびTsignaling <= 0.3.0の場合はバージョンが古すぎます。
 - **対処方法**：TRTCCallingとTsignalingを最新バージョンにアップデートします。
+
+[](id:i10)
+### TRTCCallingがCALL後に自主的にrejectした後、呼び出しができません。
+
+- **原因**：call後に自主的にrejectした後、callingステータスが再設定されていないためです。
+- **対処方法**：TRTCCallingのバージョンを>=1.0.3にアップデートします。
+
+[](id:i11)
+### Error: TRTCCalling.call - ユーザーデバイス権限の取得に失敗しました。
+
+- **原因**：TRTCCallingにデバイス権限がない、またはデバイスに対応していないためです。
+- **対処方法**：
+	- [TRTCデバイス検査](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を使用してチェックを行います。
+	- **Chromeのウェブサイト設定**（chrome://settings/content）にアクセスし、TRTCCallingを使用しているウェブサイトがカメラ/マイクの権限をオンにしているかどうかを確認します。

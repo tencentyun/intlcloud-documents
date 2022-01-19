@@ -25,6 +25,10 @@ TRTC Web SDKの、ブラウザに対する詳細なサポートの程度につ�
 ### ミクスストリーミング、Relayed Push、大小のストリーム、美顔、ウォーターマークをサポートしていますか。
 [ミクスストリーミング](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)、[Relayed Push](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html)、[大小のストリーム](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html)、[美顔](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)、[ウォーターマーク](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-29-advance-water-mark.html)をご参照ください。これらのドキュメントを参照して高度な機能を実現することができます。
 
+[](id:b6)
+### WebRTCの既知の問題にはどのようなものがありますか。
+具体的には、[WebRTCの既知の問題と回避方法](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html)をご参照ください。
+
 ## 2、プッシュプルストリームについての質問
 [](id:p1)
 ### Web端末SDKログのエラーメッセージのうち、NotFoundError、NotAllowedError、NotReadableError、OverConstrainedErrorおよびAbortErrorは、それぞれどういう意味ですか。
@@ -79,22 +83,26 @@ Web画面上でデータを取得できているかどうかを確認します�
 ブラウザネイティブの[getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia)APIを使用してユーザー定義キャプチャを行っている場合は、3Aパラメータを手動で設定する必要があります。
 - echoCancellation：エコー除去スイッチ
 - noiseSuppression：ノイズ抑制スイッチ
-- autoGainControl：自動ゲインスイッチ。
+- autoGainControl：自動ゲインスイッチ
 
 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream)インターフェースを使用してキャプチャを行う場合は、3Aパラメータを手動で設定する必要はありません。SDKでは3Aがデフォルトでオンになっています。
 
 ## 4、その他
+[](id:o0)
+### 2.x、3.xバージョンのSDKでは、Chrome 96+バージョンで正常に通話できないのですが、どうすればよいですか。
+最新バージョンの[Chrome 96のPlan-B廃止](https://www.chromestatus.com/feature/5823036655665152)により、TRTCの旧バージョン(2.x, 3.x)のWeb SDKにおいて、通話ができない状況が発生しています。お早めにWeb SDKを最新バージョン(4.x)にアップグレードしてください。バージョン4.xのSDKのインターフェースは旧バージョン(2.x, 3.x)と互換性を有しないため、[クイックインテグレーション(Web)](https://intl.cloud.tencent.com/document/product/647/35096)を参照し、バージョン4.xのSDKへのアップグレードを行ってください。
+
 [](id:o1)
 ###  Web端末でSDKを実行すると、「RtcError: no valid ice candidate found」というエラーが表示されますが、どうすればいいですか。
 このエラーが発生した場合、TRTCデスクトップブラウザSDKがSTUNトンネリングに失敗したことを意味しますので、ファイアウォールのコンフィグレーションを確認してください。TRTCデスクトップ型ブラウザSDKは以下のポートに依存してデータ伝送を行います。それをファイアウォールのホワイトリストに追加して設定を完了してから、 [公式サイトDemo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
 
-具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/37340)をご参照ください。
+具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
 
 [](id:o2)
 ###  クライアントエラー："RtcError: ICE/DTLS Transport connection failed" または “RtcError: DTLS Transport connection timeout”が出現したときの対処方法は？
 このエラーの出現は TRTC デスクトップブラウザ SDKがメディア転送パスの構築時に失敗したことを意味しますので、ファイアウォールの設定をチェックしてください。TRTC デスクトップブラウザ SDKは、以下のポートに依存してデータ転送を行いますので、これらをファイアウォールのホワイトリストに追加してください。設定完了後、 [公式サイトのDemo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html) にアクセスして体験し、設定が有効かをチェックすることができます。
 
-具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/37340)をご参照ください。
+具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
 
 
 [](id:o3)
@@ -105,7 +113,6 @@ Web画面上でデータを取得できているかどうかを確認します�
 ### Client.on(‘client-banned’)はどのような状況でトリガーされますか。
 
 ユーザーがキックされた場合にこのイベントがトリガーされます。例えば、同名のユーザーが同時にログインした場合、バックエンドのRESTAPI[ユーザーの削除](https://intl.cloud.tencent.com/document/product/647/34268)を呼び出して、ユーザーを強制退室させた場合などです。
-
 >! 同名ユーザーの同時ログインは許可されない行為であり、双方の通話異常を起こすおそれがあるため、ビジネス層では同名ユーザーの同時ログインを避けなければなりません。
 
 より具体的な詳細については、[CLIENT_BANNEDイベント](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.CLIENT_BANNED)をご参照ください。
@@ -120,19 +127,19 @@ Web画面上でデータを取得できているかどうかを確認します�
 
 [](id:o7)
 ### TRTC Web端末のスクリーンキャプチャ機能は、どうすれば実装できますか。
-具体的には、[Stream.getVideoFrame()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#getVideoFrame)のインターフェースをご参照ください。
+具体的には、[Stream.getVideoFrame()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#getVideoFrame)のインターフェースをご参照ください。
 
 [](id:o8)
 ###  Web端末SDKは、ピュアオーディオのプッシュをどのようにレコーディングするのでしょうか。コンソールでAuto-relayと自動レコーディングを起動すると失敗するのはなぜですか。
-[createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient) の pureAudioPushMode パラメータを設定する必要があります。
+[createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient) の pureAudioPushMode パラメータを設定する必要があります。
 
 [](id:o9)
 ### Client.on(‘error’)が発生したときはどう対処すればよいでしょうか。
 これは、SDKにリカバリできないエラーが起こったことを表します。ビジネス層では、画面を更新してリトライするか、またはClient.leaveを呼び出して退室した後、再度Client.joinを呼び出してリトライします。
 
 [](id:o10)
-### Web端末はカスタムストリームIDをサポートしていますか。
-Web端末4.3.8以降のバージョンではカスタムストリームIDがサポートされているので、SDKのバージョンを更新してください。
+### ミニプログラムとWeb端末はカスタムストリームIDをサポートしていますか。
+Web端末4.3.8以降のバージョンではカスタムストリームIDがサポートされているので、SDKのバージョンを更新してください。ミニプログラムは現時点ではサポートしていません。
 
 [](id:011)
 ### Web端末で画面共有の際にシステム音声をキャプチャするにはどうすればよいですか。
@@ -141,4 +148,4 @@ Web端末4.3.8以降のバージョンではカスタムストリームIDがサ�
 
 [](id:012)
 ### Web端末でカメラおよびマイクを切り替えるにはどうすればよいですか。
-先にシステムのカメラおよびマイクデバイスを取得してから、[switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#switchDevice)を呼び出せば切り替えることができます。具体的には、[カメラとマイクの切り替え](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-13-basic-switch-camera-mic.html)をご参照ください。
+先にシステムのカメラおよびマイクデバイスを取得してから、[switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice)を呼び出せば切り替えることができます。具体的な操作については、[カメラとマイクの切り替え](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-13-basic-switch-camera-mic.html)をご参照ください。

@@ -1,3 +1,37 @@
+## 2021年12月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
+</tr><tr>
+<td>Version 9.4リリース</td>
+<td>すべてのプラットフォーム：<ul style="margin:0">
+<li>入室速度を向上させ、入室にかかる時間の変動を少なくしました。</li>
+<li>音声スポットライト機能を追加しました。大規模音声マイク接続のシーンに適しており、大人数で同時にマイクをオンにするようなノイズのある環境下でも、主要なユーザーの音声にスポットを当てることができます。<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0e6e6434aaa03ce878280125a9c0fa4b" target="_blank">setRemoteAudioParallelParams</a>インターフェースから設定が可能です。</li>
+</ul>
+<br>Windows: <ul style="margin:0">
+オーディオゲインアルゴリズムを最適化し、一部のデバイスで発生する、ゲインが大きすぎるために雑音が目立つ問題を解決しました。
+</ul>
+<br>iOS: <ul style="margin:0">
+24ビットwav形式のBGMファイルのサポートを追加しました。
+</ul>
+<br>Android: <ul style="margin:0">
+<li>画面共有時のスクリーンキャプチャの解像度を調整し、常に画面の解像度に合わせることで、共有された画面に黒枠が出るなどの問題を回避しました。</li>
+<li>ビデオハードウェアデコードの互換性を向上させ、一部の携帯電話で再生時のビデオ解像度が変化した際にブラックスクリーンが発生する可能性がある問題を解決しました。</li>
+</ul>
+<br>Android&iOS: <ul style="margin:0">
+このバージョンは国家プライバシーセキュリティ基準の規定に適合し、Tencent社内での複数製品に対する検証を経ています。
+</ul>
+<br>Mac: <ul style="margin:0">
+<li>システム音声キャプチャ<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2979e32c019708dcc9209bb6d2db9486" target="_blank">startSystemAudioLoopback</a>のダブルサウンドチャンネルのサポートを追加しました。</li>
+<li>スクリーンキャプチャ中にマウスキャプチャを有効にすると、CPUとメモリの使用率が高くなる問題を解決しました。</li>
+</ul>
+</td>
+<td>2021-12-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
+</tr>
+</table>
+
+
+
 ## 2021年11月
 <table>
 <tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
@@ -555,7 +589,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
      <li>ビデオ時間の計算ルールは変更されません。ビデオストリームにサブスクライブしたすべてのユーザーの合計継続時間となります。</li>
 </ul></td>   
        <td>2020-05-01</td>   
-       <td><a href="https://intl.cloud.tencent.com/document/product/647/34610">计费概述</a></td>   
+       <td><a href="https://intl.cloud.tencent.com/document/product/647/34610">課金概要</a></td>   
      </tr> 
 </table>
 
@@ -742,7 +776,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
            <li>初めてTRTCコンソールでアプリケーションを作成する時間が2019年10月11日よりも前のお客様、または音声およびビデオが区分されていない旧パッケージを購入済みのお客様には引き続き「音声およびビデオ同一課金」の課金方式を適用します。旧パッケージ（1000分お試しパック、6.6元300分体験パック、5万分入門パック、25万分標準パック、100万分企業パックおよび300万分プレミアパックを含む）を使い切った翌月または期限切れの翌月に新パッケージ（音声、SD、HDの固定パッケージとカスタムパッケージを含む）を購入でき、新パッケージ購入後に、「音声およびビデオ個別課金」の課金方式に切り替えることができます。課金方式の変更操作はキャンセルできません。</li>
 </ul></td>   
        <td>2019-10-11</td>   
-       <td><a href="https://intl.cloud.tencent.com/document/product/647/34610">计费概述</a></td>   
+       <td><a href="https://intl.cloud.tencent.com/document/product/647/34610">課金概要</a></td>   
      </tr> 
 </table>
 

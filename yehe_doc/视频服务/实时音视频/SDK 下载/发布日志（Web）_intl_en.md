@@ -7,6 +7,39 @@ A version number is in the format of `major.minor.patch`, where:
 > - You are advised to update to the latest version in a timely manner for service stability and better online support.
 > - For notes on version updates, please see [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html).
 
+## Version 4.11.11 Released on December 17, 2021
+
+**Improvements**
+
+- Optimized the auto capturing resumption logic, circumventing the issue of failure to resume capturing on some low-end Android devices.
+- Optimized the autoplay pop-up style.
+
+## Version 4.11.10 Released on December 03, 2021
+
+**Bug fixing**
+
+- Fixed failure to disable the autoplay pop-up via `enableAutoPlayDialog: false`.
+- Fixed failure of the SDK to intercept repeated `stream.play` calls.
+
+## Version 4.11.9 Released on November 26, 2021
+
+**Notes**
+
+See [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html).
+
+**Improvements**
+
+- Supported displaying a pop-up when autoplay fails. For details, see [Use the autoplay dialog provided by SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html#h2-3).
+- Optimized the logic of circumventing the SDK crash issue when streams are published on iOS 15.1. For details, see [WebRTC Known Issues and Solutions > Safari for iOS > Case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4).
+- To avoid the potential no audio issue, [TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones) no longer returns mics whose `deviceId` is `default` or `communications`. For details, see [WebRTC Known Issues and Solutions > Chrome > Case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2).
+- Optimized the `switchDevice` policy.
+- Improved the accuracy of the encoding/decoding support test in the context of WebView.
+- Improved parameter verification for [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream), [client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream), [client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode), and [client.stopMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopMixTranscode).
+
+**Bug fixing**
+
+- Fixed the occasional “TRTC not supported” error when `client.publish` is called.
+
 ## Version 4.11.8 Released on November 5, 2021
 
 **Improvements**
@@ -28,7 +61,7 @@ A version number is in the format of `major.minor.patch`, where:
 
 **Improvements**
 
-Optimized the signaling scheduling logic, improving the success rate of room entry under poor network conditions. If you are using SDK v4.11.5, we recommend that you update to this version.
+- Optimized the signaling scheduling logic, improving the success rate of room entry under poor network conditions. If you are using SDK v4.11.5, we recommend that you update to this version.
 
 ## Version 4.11.5 Released on September 4, 2021
 
@@ -350,7 +383,7 @@ Allowed stopping the collection of network quality statistics after room exit.
 - Optimized error messages.
 - Supported automatically resuming push when change of the stream capturing device is detected.
 
-**Bug fixing**
+**Bugs fixed**
 
 Fixed failure to publish again immediately after `unpublish` succeeds.
 
@@ -362,7 +395,7 @@ Fixed failure to publish again immediately after `unpublish` succeeds.
 - Optimized the parameter verification logic for the `subscribe` and `unsubscribe` APIs.
 - Added network quality logs.
 
-**Bug fixing**
+**Bugs fixed**
 
 - Fixed the “OverconstrainedError” error when access to media devices is not granted and an empty device ID is passed in the `TRTC.createStream` API.
 - Fixed the issue where no log is printed when upstream peer connection is lost.
@@ -379,7 +412,7 @@ Added the `NETWORK_QUALITY` event.
 
 Added the `screenAudio` parameter to the `createStream` API.
 
-**Bug fixing**
+**Bugs fixed**
 
 - Fixed the issue where echo cancellation does not work in browsers for Android.
 - Fixed the issue where the RTT value returned by the `getTransportStats` API is `NAN`.
@@ -389,13 +422,13 @@ Added the `screenAudio` parameter to the `createStream` API.
 **New features**
 
 Supported capturing system audio (on Windows) or audio of the current tab (on macOS) during screen sharing on Chrome 74 or above.
-  
+
 ## Version 4.3.14 Released on April 29, 2020
 
-**Bug fixing**
+**Bugs fixed**
 
 Fixed the `muted` and `unmute` events for Mini Program.
-  
+
 ## Version 4.3.13 Released on April 16, 2020
 
 **Improvements**
@@ -404,17 +437,17 @@ Optimized the availability check logic.
 
 ## Version 4.3.12 Released on April 13, 2020
 
-**Bug fixing**
+**Bugs fixed**
 
 Fixed a potential `RTCPeerConnection` status change exception.
-  
+
 ## Version 4.3.11 Released on March 28, 2020
 
 **Improvements**
 
 Supported detection of mobile QQ Browser, which does not support TRTC SDK for desktop browsers at the moment.
 
-**Bug fixing**
+**Bugs fixed**
 
 Fixed Boolean return types.
 
@@ -444,14 +477,14 @@ Added the `streamId` and `userdefinerecordid` parameters to `createClient`.
 
 Fixed the issue where an exception is throw upon device switch during screen sharing.
 
-**Bug fixing**
+**Bugs fixed**
 
 - Fixed the device occupation issue by releasing MediaStream after device switch.
 - Fixed the potential error of the subscription API.
 
 ## Version 4.3.6 Released on February 25, 2020
 
-**Bug fixing**
+**Bugs fixed**
 
 Adjusted the audio/video playback sequence of `Stream.resume()`, and fixed autoplay exceptions in WeChat’s built-in browser on iOS.
 
@@ -464,10 +497,10 @@ Added timeout check for the `publish` API, improving the success rate of signali
 ## Version 4.3.4 Released on January 6, 2020
 
 **Improvements**
- 
+
 Updated `core-js` to version 3.6.1.
-  
-**Bug fixing**
+
+**Bugs fixed**
 
 - Fixed the issue where an exception is thrown after `unpublish` times out.
 - Fixed the issue where third-party libraries cause decline in the performance of V8.
@@ -480,7 +513,7 @@ Updated `core-js` to version 3.6.1.
 - Optimized the SDP response mechanism.
 - Optimized the reporting logic.
 
-**Bug fixing**
+**Bugs fixed**
 
 Optimized the TURN URL protocol format.
 
@@ -494,7 +527,7 @@ Optimized the TURN URL protocol format.
 - Optimized ICE error reporting.
 - Added more key events to `avmonitor`.
 
-**Bug fixing**
+**Bugs fixed**
 
 - Fixed the 1005 reconnection error of WebSocket signaling channels.
 - Fixed the issue with the reporting of downstream packet loss rate.
@@ -505,7 +538,7 @@ Optimized the TURN URL protocol format.
 
 Supported automatic reconnection when upstream ICE disconnects during calls.
 
-**Bug fixing**
+**Bugs fixed**
 
 Fixed the issue where the host ICE candidate of public IP type does not take effect after STUN hole punching fails.
 
@@ -522,7 +555,7 @@ Added the `client.getTransportStats()` API.
 - Extended the connection timeout threshold to 5 seconds.
 - Extended the publishing timeout threshold to 5 seconds.
 
-**Bug fixing**
+**Bugs fixed**
 
 Fixed the issue of abnormal SDK judgment due to modification of the prototype chain of `zone.js`.
 
@@ -538,13 +571,13 @@ Added the `client.off()` API, which can be used to unbind client events.
 - Added permission check for `client.publish()`.
 - Added an auto playback error prompt for `stream.play()` and `stream.resume()`.
 
-**Bug fixing**
+**Bugs fixed**
 
 Fixed black screen when the camera is switched via `localStream.switchDevice()`.
 
 ## Version 4.1.1 Released on October 24, 2019
 
-**Bug fixing**
+**Bugs fixed**
 
 - Fixed log loss.
 - Fixed the loss of remote users who reconnect after disconnection.
@@ -556,7 +589,7 @@ Fixed black screen when the camera is switched via `localStream.switchDevice()`.
 - Supported passing object `HTMLDivElement` in the `stream.play()` API.
 - Supported setting audio attributes via `localStream.setAudioProfile()`. Currently, two profiles are supported: standard and high.
 
-**Bug fixing**
+**Bugs fixed**
 
 - Fixed the restriction on the number of WebAudio Context on Chrome.
 - Fixed the issue where the local audio/video player is not restarted after `replaceTrack()`.

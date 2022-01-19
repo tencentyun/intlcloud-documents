@@ -9,16 +9,15 @@ If your browser is not listed in the above document, you can open [the TRTC comp
 Please see [Environment and Device Check Before Calls](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-23-advanced-support-detection.html) for directions.
 
 [](id:b3)
-
 ### How do I test my current network quality?
 Please see [Network Quality Check Before Calls](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-24-advanced-network-quality.html) for detailed directions.
 
 [](id:b4)
 ### I can use the TRTC SDK for web in a local development environment but not after it is deployed online. What should I do?
 
-To ensure data security and protect users’ privacy, browsers allow access to the mic and camera only in secure environments, for example, when `https`, `localhost`, or `file://` is used for access. As HTTP is not secure, browsers block access to media devices when HTTP is used.
+To ensure data security and protect users’ privacy, browsers allow access to the mic and camera only in secure environments, for example, when `https`, `localhost`, or `file://` is used for access. As HTTP is not a secure policy, browsers block access to media devices when HTTP is used.
 
-If you can use the SDK in a local development environment but cannot capture data from the camera or mic after deploying it to the web, check whether your webpage is deployed using HTTP. If so, use HTTPS instead and make sure you have a valid HTTPS certificate.
+If you can use the SDK in a local development environment but cannot capture data from the camera or mic after deploying it to the web, check if your webpage is deployed using HTTP. If it is, use HTTPS instead and make sure you have a valid HTTPS certificate.
 
 For more information, see [Domain Name and Protocol Support](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html#h2-2).
 
@@ -26,10 +25,14 @@ For more information, see [Domain Name and Protocol Support](https://web.sdk.qcl
 ### Does the SDK for web support stream mixing, relayed push, dual-channel encoding, beauty filters, or watermarks?
 You can refer to [startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode), [Publishing to CDN](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html), [Enabling Dual-Channel Mode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html), [Enabling Beauty Filters](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html), and [Enabling Watermarking](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-29-advance-water-mark.html) to enable the advanced features.
 
+[](id:b6)
+### What are the known issues of WebRTC?
+See [WebRTC Known Issues and Solutions](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html).
+
 ## 2. Publishing and Playback
 [](id:p1)
 ### What do the errors `NotFoundError`, `NotAllowedError`, `NotReadableError`, `OverConstrainedError`, and `AbortError` found in the log of TRTC SDK for web mean?
-| Error               | Description | Suggested Solution |
+| Error | Description | Suggested Solution |
 | -------------------- | -------------------- | -------------------- |
 | NotFoundError | The media (audio, video, or screen sharing) specified by the request parameter are not found. This error occurs if, for example, the PC has no cameras but the browser is asked to obtain a video stream. | Remind users to check devices such as cameras and mics before making a call. If a user does not have a camera and wants to make an audio call, use [TRTC.createStream({ audio: true, video: false})](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createStream) to make the SDK capture audio only. |
 | NotAllowedError| The user has rejected the request of the current browser instance to access the camera/mic or share screens.| Remind the user that audio/video calls are not possible without camera/mic access. |
@@ -50,7 +53,7 @@ The resolution set may be unattainable due to device and browser restrictions, i
 
 [](id:p4)
 ### Can I modify the style of screen sharing in the TRTC SDK for web?
-The style of screen sharing is controlled by browsers and cannot be modified.
+No. The style of screen sharing is controlled by browsers and cannot be modified.
 
 [](id:p5)
 ### Does the TRTC SDK for web support stream mixing?
@@ -62,21 +65,21 @@ You can call [TRTC.getCameras](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/
 
 [](id:p7)
 ### Why am I unable to publish streams from WeChat’s built-in browser on iOS?
-About whether the built-in browser of WeChat for iOS supports publishing or playback, please see [Browsers Supported](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html).
+To learn whether the built-in browser of WeChat for iOS supports publishing or playback, please see [Browsers Supported](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html).
 
 ## 3. Playback
 [](id:v1)
 ### Why is there video but no audio during a call?
 - It may be because of the browser’s autoplay policy, which causes the “PLAY_NOT_ALLOWED” error. To solve the problem, display a window on the UI and, in the callback for the window’s clicking event, call `Stream.resume()` to resume audio playback. For details, please see [Suggested Solutions for Autoplay Restrictions](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html).
-- The problem may also be caused by an unknown error. Check the `audioLevel` and `audioEnergy` of the sender and recipient in the dashboard.
+- This problem may also be caused by an unknown error. Check the `audioLevel` and `audioEnergy` of the sender and recipient in the dashboard.
 
 [](id:v2)
 ### What should I do if video is not displayed during a call?
-Check whether the webpage has obtained any data. If data can be sent and received successfully, check if the correct `mediaStream` object is assigned to the `srcObject` property of `<video>`. Video will not show if `srcObject` is incorrect.
+Check whether the webpage has obtained any data. If data can be sent and received successfully, check whether the correct `mediaStream` object is assigned to the `srcObject` property of `<video>`. Video will not be displayed if `srcObject` is incorrect.
 
 [](id:v3)
 ### What should I do if there is echo or noise during a call or the volume of a call is small?
-The issues are common if the call participants are close to each other. Please ensure a certain distance between call participants when testing. If a non-web client hears echo or noise from a web client, it indicates that 3A is not working on the web end.
+These issues are common if the call participants are close to each other. Please ensure a certain distance between call participants when testing. If a non-web client hears echo or noise from a web client, it indicates that 3A is not working on the web end.
 If you use the browser’s built-in API [getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia) for custom capturing, you need to enable 3A manually using the parameters below:
 - `echoCancellation`: echo cancellation
 - `noiseSuppression`: noise suppression
@@ -85,17 +88,21 @@ If you use the browser’s built-in API [getUserMedia](https://developer.mozilla
 If you use the [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream) API for capturing, you don’t need to set the 3A parameters manually. The TRTC SDK enables 3A by default.
 
 ## 4. Others
+[](id:o0)
+### The 2.x and 3.x versions of the SDK cannot make calls on Chrome 96+. What should I do?
+Because Chrome has [deprecated Plan B since v96](https://www.chromestatus.com/feature/5823036655665152), the earlier versions (2.x and 3.x) of the TRTC SDK for web can no longer make calls on Chrome 96+. Please update your SDK to the latest version (4.x). The APIs of v4.x are not compatible with those of v2.x or v3.x. For how to integrate v4.x, see [SDK Quick Integration](https://intl.cloud.tencent.com/document/product/647/35096).
+
 [](id:o1)
 ### What should I do if the error "RtcError: no valid ice candidate found" occurs when I run the TRTC SDK for web?
 It indicates that the TRTC SDK for web failed to punch a hole via Session Traversal Utilities for NAT (STUN). Please check your firewall configuration. The ports and domain name listed in the document below must be added to the allowlist of your firewall as the SDK uses them for data transfer. After configuration, use the [official demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html) to check whether the configuration has taken effect.
 
-For details, please see [Dealing with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/37340).
+For details, please see [Dealing with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
 
 [](id:o2)
 ### What should I do if the client error "RtcError: ICE/DTLS Transport connection failed" or "RtcError: DTLS Transport connection timeout" occurs?
 It indicates that TRTC SDK for web failed to establish a media transport connection. Please check your firewall configuration. The ports and domain name listed in the document below must be added to the allowlist of your firewall as the SDK uses them for data transfer. After configuration, use the [official demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html) to check whether the configuration has taken effect.
 
-For details, please see [Dealing with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/37340).
+For details, please see [Dealing with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
 
 
 [](id:o3)
@@ -105,8 +112,7 @@ You can use [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Loc
 [](id:o4)
 ### What triggers the `Client.on(‘client-banned’)` event?
 
-The event is triggered when a user is removed from a room, for example, when the same user ID is used to log in from different devices or when the RESTful API [RemoveUser](https://intl.cloud.tencent.com/document/product/647/34268) is called to remove a user.
-
+The event is triggered when a user is removed from a room, for example, when the same user ID is used to log in on different devices or when the RESTful API [RemoveUser](https://intl.cloud.tencent.com/document/product/647/34268) is called to remove a user.
 >! Multi-device login is not allowed by the SDK (it may cause call exceptions) and should be avoided at the business layer.
 
 For more information, see [CLIENT_BANNED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.CLIENT_BANNED).
@@ -121,19 +127,19 @@ Yes. TRTC supports communication across all platforms.
 
 [](id:o7)
 ### How do I take a screenshot in the TRTC SDK for web?
-You can use the [Stream.getVideoFrame()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#getVideoFrame) API to take a screenshot.
+You can use the [Stream.getVideoFrame()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#getVideoFrame) API to take a screenshot.
 
 [](id:o8)
 ### How do I record audio-only streams in the TRTC SDK for web? Why does the recording fail after I enable auto relayed push and auto recording in the console?
-You need to set the `pureAudioPushMode` parameter of [createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient).
+Set the `pureAudioPushMode` parameter of [createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient).
 
 [](id:o9)
 ### What should I do with `Client.on(‘error’)`?
 It indicates that the SDK encountered an unrecoverable error. You can refresh the page or call `Client.leave` to leave the room and then call `Client.join` to try again.
 
 [](id:o10)
-### Does the SDK for web support custom stream ID?
-The TRTC SDK for web has supported custom stream ID since v4.3.8. You can update your SDK to use the feature.
+### Does the TRTC SDK for web or WeChat Mini Program support custom stream ID?
+The TRTC SDK for web has supported custom stream ID since v4.3.8. You can update your SDK to use the feature. The TRTC SDK for Mini Program does not support custom stream ID currently.
 
 [](id:011)
 ### How do I capture system audio during screen sharing in the TRTC SDK for web?
@@ -142,4 +148,4 @@ Currently, system audio capturing is supported on Chrome M74+ only. On Chrome fo
 
 [](id:012)
 ### How do I switch the camera/mic in the TRTC SDK for web?
-You can first get the system’s cameras and mics and call [switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#switchDevice) to switch the camera/mic. For detailed directions, please see [Switching Cameras/Mics](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-13-basic-switch-camera-mic.html).
+You can first get the system’s cameras and mics and call [switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice) to switch the camera/mic. For detailed directions, please see [Switching Cameras/Mics](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-13-basic-switch-camera-mic.html).

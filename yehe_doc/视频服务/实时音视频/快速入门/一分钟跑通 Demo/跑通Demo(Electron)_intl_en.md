@@ -1,6 +1,5 @@
 This document describes how to quickly run the TRTC demo for Electron.
 
-
 ## Prerequisites
 
 You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
@@ -10,10 +9,11 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 [](id:step1)
 
 ### Step 1. Create an application
-1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Click **Create Application** and enter the application name such as `TestTRTC`. If you have already created an application, click **Select Existing Application**.
-3. Add or edit tags according to your actual business needs and click **Create**.
+1. In the TRTC console, select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+2. Enter an application name such as `TestTRTC` and click **Create**. If you have already created an application, click **Existing** to select it.
+3. Add or edit tags for your application if necessary, and click **Create**.
 ![](https://main.qcloudimg.com/raw/8dc52b5fa66ec4a5a4317719f9d442b9.png)
+
 >?
 >- An application name can contain up to 15 characters. Only digits, letters, Chinese characters, and underscores are allowed.
 >- Tags are used to identify and organize your Tencent Cloud resources. For example, an enterprise may have multiple business units, each of which has one or more TRTC applications. In this case, the enterprise can tag TRTC applications to mark out the unit information. Tags are optional and can be added or edited according to your actual business needs.
@@ -38,7 +38,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 >!
 >- The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for the local execution and debugging of the demo**.
->- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, please see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
+>- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
 
 **File paths and description:**
 ```bash
@@ -87,32 +87,37 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 2. Press Windows+R and type `cmd` to open the Command Prompt as an administrator, locate the [project directory](#projectFolder), and run the following command.
 ```shell
 $ npm install
-​```![](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
+​```![Installing](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
 
 4. After the npm dependencies are installed, run the following command in the Command Prompt to run the demo.
 ​```shell
 $ npm run start  # On first run, it may take a while to show the UI.
 ​```![Running the demo](https://main.qcloudimg.com/raw/47f6e01acb2d927f6d9e24a7c9f78af1.png)
+
 :::
 ::: macOS
 1. Open a terminal window or Command Prompt and run the following command to install Homebrew. If you have already installed it, skip this step.
 ​```shell
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
+
 2. Run the following command to install Node.js.
 ```shell
 $ brew install node
 ```
+
 3. If it is too slow for you to install Node.js via Homebrew, consider using a mirror address in your country or region.
  ```shell
 $ cd `brew --repo`
 $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
 $ brew update
  ```
+
 4. Run the `cd` command to go to the project directory and run the following command.
 ```shell
 $ npm install 
 ​```![](https://main.qcloudimg.com/raw/8bcc95adad07ff37e7f0a27893b8b7cf.png)
+
 5. After the npm dependencies are installed, run the following command in the Command Prompt to run the demo.
 ​```shell
 $ npm run start # On first run, it may take a while to show the UI.
@@ -137,7 +142,7 @@ TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HM
 **Upgrade:**
 1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
 2. Click **Application Management** on the left sidebar, find your application, and click **Application Info**.
-3. Select the **Quick Start** tab and click **Upgrade** in **Step 2: obtain the secret key to issue UserSig**.
+3. Select the **Quick Start** tab and click **upgrade** in **Step 2: obtain the secret key to issue UserSig**.
 
 ### 2. The demo is running on two devices, but why can't they display the images of each other?
 
@@ -145,10 +150,22 @@ Make sure that the two devices use different `UserIDs`. With TRTC, you cannot us
 
 ![](https://main.qcloudimg.com/raw/9a03335e435de0f12e2a26882f53db02.png)
 
-### 3. What are firewall restrictions does the SDK face?
+### 3. What firewall restrictions does the SDK face?
 
-The SDK uses the UDP protocol for audio/video transmission and therefore cannot be used in office networks that block UDP. If you encounter such a problem, please see [How to Deal with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
+The SDK uses the UDP protocol for audio/video transmission and therefore cannot be used in office networks that block UDP. If you encounter such a problem, see [How to Deal with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
+
+>? For more FAQs, see [Electron](https://intl.cloud.tencent.com/document/product/647/43093).
+
+## Technical Support
+[Contact us](https://intl.cloud.tencent.com/contact-us) if you have any questions.
 
 
+## References
+
+- [SDK API Guide](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/index.html)
+- [SDK Update Log](https://intl.cloud.tencent.com/document/product/647/38702)
+- [Simple Demo Source Code](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTCSimpleDemo)
+- [API Example Source Code](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTC-API-Example)
+- [FAQs](https://intl.cloud.tencent.com/document/product/647/43093)
 
 ```

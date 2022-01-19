@@ -1,9 +1,29 @@
+## Version 9.4 @ 2021.12.08
+
+**機能追加：**
+- すべてのプラットフォーム：音声スポットライト機能を追加しました。大規模音声マイク接続のシーンに適しており、大人数で同時にマイクをオンにするようなノイズのある環境下でも、主要なユーザーの音声にスポットを当てることができます。[setRemoteAudioParallelParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0e6e6434aaa03ce878280125a9c0fa4b)インターフェースから設定が可能です。
+- Mac：システム音声キャプチャ[startSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2979e32c019708dcc9209bb6d2db9486)のダブルサウンドチャンネルのサポートを追加しました。
+- iOS：24ビットwav形式のBGMファイルのサポートを追加しました。
+- Android&iOS：このバージョンは国家プライバシーセキュリティ基準の規定に適合し、Tencent社内での複数製品に対する検証を経ています。
+
+**問題の修正：**
+- すべてのプラットフォーム：[switchRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a1f3bed34f92b3ff908beb2d0ed2866c9)をクイックコールするとルームの切り替えに失敗する場合があるという問題を修正しました。
+- iOS：アプリケーション内でのスクリーンキャプチャ[startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf51acf26b2212192f7145468886b791)中に[setVideoEncoderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a200c174b27bbe7397b0639e707ee6547)の設定が無効となる問題を修正しました。
+- iOS：システムスクリーンキャプチャ[startScreenCaptureByReplaykit](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abebcd402e310d5d7dcbef9f6b601cfc4)中に、メモリが増大することがある問題を修正しました。
+
+**機能の最適化：**
+- すべてのプラットフォーム：入室速度を向上させ、入室にかかる時間の変動を少なくしました。
+- Mac：スクリーンキャプチャ中にマウスキャプチャを有効にすると、CPUとメモリの使用率が高くなる問題を解決しました。
+- Android：画面共有時のスクリーンキャプチャの解像度を調整し、常に画面の解像度に合わせることで、共有された画面に黒枠が出るなどの問題を回避しました。
+- Android：ビデオハードウェアデコードの互換性を向上させ、一部の携帯電話で再生時のビデオ解像度が変化した際にブラックスクリーンが発生する可能性がある問題を解決しました。
+- Windows：オーディオゲインアルゴリズムを最適化し、一部のデバイスで発生する、ゲインが大きすぎるために雑音が目立つ問題を解決しました。
+
 ## Version 9.3 @ 2021.11.03
 
 **故障の修復**
 - すべてのプラットフォーム：point2PointDelayが取得できなくなり、数値が0になることがある問題を修正しました。
 - すべてのプラットフォーム：偶発的に解析エラーが生じ、SEIメッセージが損失する問題を修正しました。
-- Mac：MacOS 12 betaでカメラがフレームを検出できない問題を修正しました。
+- Mac：MacOS 12 beta でカメラがフレームを検出できない問題を修正しました。
 - iOS&Mac：特定の順序でstartRemoteViewを事前に呼び出すと画面が表示されない問題を修正しました。
 - Windows：縦画面を使用してエンコードし、美顔を起動した場合に、画面にギザギザが現れる問題を修正しました。
 - Windows：サードパーティの美顔を起動した場合に、解像度を切り替えるとカスタムレンダリングがコールバックされない問題を修正しました。

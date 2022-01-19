@@ -31,7 +31,7 @@ Please see [Network Quality Check Before Calls](https://web.sdk.qcloud.com/trtc/
 -**Solution**: Make sure the TRTCCalling SDK is accessed via HTTPS or localhost.
 
 
-[](id:Integrated)
+[](id:integrated)
 ## Integration
 
 [](id:i1)
@@ -90,3 +90,17 @@ Please see [Network Quality Check Before Calls](https://web.sdk.qcloud.com/trtc/
 
 -**Cause**: The TRTCCalling version is v0.6.0 or earlier, or the TSignaling version is v0.3.0 or earlier.
 -**Solution**: Update TRTCCalling and TSignaling to the latest version.
+
+[](id:i10)
+### What should I do if I fail to make another call after a call is rejected?
+
+-**Cause**: The calling status is not reset after the call is rejected.
+-**Solution**: Update TRTCCalling to v1.0.3 or a later version.
+
+[](id:i11)
+### What should I do if the error “Error: TRTCCalling.call - failed to access the user’s device” occurs?
+
+-**Cause**: TRTCCalling has no access to the camera/mic or the camera/mic does not exist.
+- **Solution**:
+	- Run the [TRTC support level test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html).
+	- Check in [Chrome Settings](chrome://settings/content) whether your Chrome has granted the website using TRTCCalling access to the camera/mic.

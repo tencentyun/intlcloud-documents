@@ -113,9 +113,9 @@ Create a `TRTCCalling` object, setting `SDKAppID` to the `SDKAppID` of your appl
 import TRTCCalling from 'trtc-calling-js';
 
 let options = {
-  SDKAppID: 0, // Replace 0 with your `SDKAppID` when connecting.
-  // The `tim` parameter was introduced in v0.10.2.
-  // The parameter guarantees the uniqueness of an existing TIM instance.
+  SDKAppID: 0, // Replace 0 with your `SDKAppID` when connecting
+  // The `tim` parameter is added starting from v0.10.2
+  // The `tim` parameter is applicable to existing TIM instances in the business to ensure the uniqueness of TIM instances
   tim: tim
 };
 const trtcCalling = new TRTCCalling(options);
@@ -144,17 +144,8 @@ trtcCalling.call({
 - **Callee: process a call invitation**
 ```javascript
 // Answer
-trtcCalling.accept({
-  inviteID, // Invitation ID, which identifies an invitation
-  roomID,   // Room ID
-  callType  // `0`: unknown; `1`: audio call; `2`: video call
-});
 trtcCalling.accept();
 // Reject
-trtcCalling.reject({ 
-  inviteID, // Invitation ID, which identifies an invitation
-  isBusy // Whether the line is busy. `0`: unknown; `1`: audio call; `2`: video call
-  })
 trtcCalling.reject()
 ```
 - **Turn the local camera on**
@@ -179,3 +170,15 @@ trtcCalling.startLocalView({
 ```javascript
 trtcCalling.hangup()
 ```
+
+## Technical Support
+[Contact us](https://intl.cloud.tencent.com/contact-us) if you have any questions.
+
+
+
+## References
+- [TRTCCalling Web Demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
+- [TRTCCalling npm](https://www.npmjs.com/package/trtc-calling-js)
+- [Source Code of TRTCCalling Web Demo](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)
+- [TRTCCalling Web APIs](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
+- [FAQs about TRTCCalling Web](https://intl.cloud.tencent.com/document/product/647/43096)

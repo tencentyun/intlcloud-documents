@@ -1,3 +1,23 @@
+## Version 9.4 Released on December 8, 2021
+
+**New features:**
+- All platforms: supported highlighting the speaking user, which is useful in large-scale audio co-anchoring scenarios. It enables users to focus on the audio of whoever is speaking when there are multiple speakers in the room. You can call the [setRemoteAudioParallelParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0e6e6434aaa03ce878280125a9c0fa4b) API to set this feature.
+- macOS: supported dual channels for the system audio capturing API [startSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2979e32c019708dcc9209bb6d2db9486).
+- iOS: supported background music files in 24-bit WAV format.
+- Android & iOS: This version complies with China’s privacy and security regulations and has been tested by multiple Tencent products.
+
+**Bug fixing:**
+- All platforms: fixed the issue where room switching fails if [switchRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a1f3bed34f92b3ff908beb2d0ed2866c9) is called frequently.
+– iOS: fixed the issue where [setVideoEncoderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a200c174b27bbe7397b0639e707ee6547) does not work during in-app screen sharing ([startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf51acf26b2212192f7145468886b791)).
+- iOS: fixed the occasional issue of rising memory usage during screen sharing ([startScreenCaptureByReplaykit](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abebcd402e310d5d7dcbef9f6b601cfc4)).
+
+**Improvement:**
+- All platforms: sped up room entry, reducing the fluctuation in room entry speed.
+- macOS: fixed the issue of high CPU and memory usage when mouse cursor is captured during screen sharing.
+- Android: made the capturing resolution in line with the resolution of the screen during screen sharing to avoid black bars.
+- Android: improved the compatibility of the hardware video decoder, fixing the issue of black bars due to change of playback resolution on some devices.
+- Windows: optimized the audio gain control algorithm, fixing the issue of marked noise due to high audio gain on some devices.
+
 ## Version 9.3 Released on November 3, 2021
 
 **Bug fixing**

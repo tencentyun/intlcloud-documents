@@ -7,12 +7,45 @@
 > - 製品の安定性を高め、より良いオンラインサポートをご利用いただくため、速やかに最新バージョンに更新することをお勧めします。
 > - バージョンのアップグレードに関する注意事項については、[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
 
+## Version 4.11.11 @2021.12.17
+
+**Improvement**
+
+- キャプチャ自動回復ロジックを最適化し、一部のローエンドAndroid端末でキャプチャ異常が回復できない問題を回避しました。
+- 自動再生ポップアップウィンドウの形式を最適化しました。
+
+## Version 4.11.10 @2021.12.03
+
+**Bug Fixed**
+
+- `enableAutoPlayDialog: false`の設定で、SDKの自動再生ポップアップウィンドウを無効化できない問題を修正しました。
+- stream.playを繰り返し呼び出してもSDKによってブロックされない問題を修正しました。
+
+## Version 4.11.9 @2021.11.26
+
+**Note**
+
+このバージョンへのアップグレードの際は注意が必要です。[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
+
+**Improvement**
+
+- SDKが自動再生に失敗した際に、自動再生失敗の問題を解決するためのインタラクティブポップアップの表示をサポートしました。詳細については、[制限された自動再生の処理に関するアドバイス](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html#h2-3)をご参照ください。
+- 【iOS 15.1でプッシュにcrashが起きる問題】の回避ロジックを最適化しました。詳細については、[iOS Safari 既知の問題 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
+- 無音になることがある問題を回避するため、[TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones)は、deviceIdが'default'および'communications'であるマイクを返さないようにしました。詳細については、[Chromeの既知の問題 case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2)をご参照ください。
+- switchDeviceポリシーを最適化しました。
+- webview環境におけるコーデックサポート検出の正確性を向上させました。
+- [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream)、[client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream)、[client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)および[client.stopMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopMixTranscode)インターフェースのパラメータ検証を改善しました。
+
+**Bug Fixed**
+
+- client.publishでTRTCをサポートしていないというエラーが表示されることがある問題を修正しました。
+
 ## Version 4.11.8 @2021.11.05
 
 **Improvement**
 
-- iOS 15.0で、偶発的にビデオ再生がブラックスクリーンになる問題を回避しました。詳細については、[iOS Safari 既知の問題 case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
-- iOS 15.1で、必ずプッシュにcrashが起きるという問題を回避しました。詳細については、[iOS Safari 既知の問題 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
+- iOS 15.0 で、偶発的にビデオ再生がブラックスクリーンになる問題を回避しました。詳細については、[iOS Safari 既知の問題 case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
+- iOS 15.1 で、必ずプッシュにcrashが起きるという問題を回避しました。詳細については、[iOS Safari 既知の問題 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
 
 ## Version 4.11.7 @2021.09.30
 
@@ -28,7 +61,7 @@
 
 **Improvement**
 
-シグナリングスケジューリングロジックを最適化し、弱いネットワーク環境での入室成功率を向上させました。v4.11.5はこのバージョンにアップグレードすることをお勧めします。
+- シグナリングスケジューリングロジックを最適化し、弱いネットワーク環境での入室成功率を向上させました。v4.11.5はこのバージョンにアップグレードすることをお勧めします。
 
 ## Version 4.11.5 @2021.09.04
 
@@ -389,13 +422,13 @@ createStreamインターフェースにscreenAudioパラメータを追加しま
 **Feature**
 
 Chrome >= 74の画面共有およびキャプチャシステム(Windows)または現在のTabページ(Mac)の音声をサポートします。
-  
+
 ## Version 4.3.14 @ 2020.04.29
 
 **Bug Fixes**
 
 ミニプログラムのオーディオmuted unmuteイベントを修正しました。
-  
+
 ## Version 4.3.13 @ 2020.04.16
 
 **Improvement**
@@ -407,7 +440,7 @@ Chrome >= 74の画面共有およびキャプチャシステム(Windows)また�
 **Bug Fixes**
 
 潜在的なRTCPeerConnectionのステータス変更異常を修正しました。
-  
+
 ## Version 4.3.11 @ 2020.03.28
 
 **Improvement**
@@ -464,9 +497,9 @@ publishタイムアウトチェックを追加して、シグナリング送信�
 ## Version 4.3.4 @ 2020.01-06
 
 **Improvement**
- 
+
 core-jsをv3.6.1にアップグレードしました。
-  
+
 **Bug Fixes**
 
 - unpublishは、タイムアウト後に外部に異常イベントをスローします。

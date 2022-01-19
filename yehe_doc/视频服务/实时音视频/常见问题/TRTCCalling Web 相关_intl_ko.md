@@ -90,3 +90,17 @@ TRTC Web SDK의 브라우저 지원에 대한 자세한 내용은 [TRTC Web SDK 
 
 - **원인**: TRTCCalling <= 0.6.0 및 Tsignaling <= 0.3.0 버전이 너무 낮습니다.
 - **솔루션**: TRTCCalling 및 Tsignaling을 최신 버전으로 업그레이드합니다.
+
+[](id:i10)
+### CALL 직후 TRTCCalling 자동 reject 후 재호출할 수 없습니다.
+
+- **원인**: call 직후 자동 reject 후에는 calling 상태가 재설정되지 않음.
+- **솔루션**: TRTCCalling 버전을 1.0.3 이상으로 업그레이드합니다.
+
+[](id:i11)
+### Error: TRTCCalling.call - 사용자 디바이스스 권한 가져오기에 실패했습니다.
+
+- **원인**: TRTCCalling에 디바이스 권한 또는 액세스 권한이 없습니다.
+- **솔루션**:
+	- [TRTC 디바이스 점검](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)으로 확인하십시오.
+	- **Chrome 웹사이트 설정**(chrome://settings/content)에 액세스하여 TRTCCalling을 사용하는 웹 사이트에 카메라/마이크 권한이 활성화되어 있는지 확인합니다.

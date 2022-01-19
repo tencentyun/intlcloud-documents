@@ -5,7 +5,7 @@
 ## 환경 요건
 최신 버전의 Chrome 브라우저를 사용하십시오. 현재 데스크톱 Chrome 브라우저가 TRTC Web SDK를 비교적 완벽하게 지원하므로, Chrome 브라우저를 사용한 체험을 권장합니다.
 
-TRTCCalling은 다음 포트에 종속되어 데이터를 전송합니다. 해당 포트를 방화벽 화이트리스트에 추가하고 설정을 완료하십시오. [공식 홈페이지 Demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html)에 액세스하여 설정이 적용되었는지 확인할 수 있습니다.
+TRTCCalling은 다음 포트에 종속되어 데이터를 전송합니다. 해당 포트를 방화벽 얼로우리스트에 추가하고 설정을 완료하십시오. [공식 홈페이지 Demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html)에 액세스하여 설정이 적용되었는지 확인할 수 있습니다.
   - TCP 포트: 8687
   - UDP 포트: 8000, 8080, 8800, 843, 443, 16285
   - 도메인: qcloud.rtc.qq.com
@@ -26,7 +26,7 @@ TRTCCalling은 다음 포트에 종속되어 데이터를 전송합니다. 해�
 
 호환성 관련 조회는 [브라우저 지원 현황](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)을 참고하십시오. 동시에 [TRTC 점검 페이지](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)를 통해 온라인으로 점검하실 수 있습니다.
 
-## 테스트 Demo 실행
+## Demo 실행
 
 
 [](id:step1)
@@ -50,11 +50,11 @@ TRTCCalling은 다음 포트에 종속되어 데이터를 전송합니다. 해�
   <ul><li>SDKAPPID: 0으로 기본 설정되어 있으며 실제 SDKAppID로 설정하십시오.</li>
   <li>SECRETKEY: 공백으로 기본 설정되어 있으며 실제 키 정보로 설정하십시오.</li></ul> 
   <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
-4. 붙여넣기 완료 후 **붙여넣기 완료, 다음 단계**를 클릭하면 생성이 완료됩니다.
+4. 붙여넣기 완료 후 **붙여넣기 완료, 다음 단계** 를 클릭하면 생성이 완료됩니다.
 5. 컴파일 완료 후 **콘솔 개요로 돌아가기**를 클릭합니다.
 
 >!
->- 본 문서의 UserSig는 클라이언트 코드에서 SECRETKEY를 설정하여 생성합니다. 이 방법에서 SECRETKEY는 디컴파일로 크래킹되기 쉬우므로, 키가 유출되면 해커가 귀하의 Tencent Cloud 트래픽을 도용할 수 있습니다. 따라서 **해당 방법은 로컬 Demo 실행 및 기능 디버깅용으로 적합합니다**.
+>- 본 문서의 UserSig 생성 방법은 클라이언트 코드에서 SECRETKEY를 설정하는 것입니다. 이 방법에서 SECRETKEY는 디컴파일로 크래킹되기 쉬우므로, 키가 유출되면 해커가 귀하의 Tencent Cloud 트래픽을 도용할 수 있습니다. 따라서 **해당 방법은 로컬 Demo 실행 및 기능 디버깅용으로만 적합합니다**.
 >- 올바른 UserSig 배포 방식은 UserSig 컴퓨팅 코드를 귀하의 서버에 통합하고, App 지향 인터페이스를 제공하는 것입니다. UserSig가 필요할 때, App은 비즈니스 서버에 동적 UserSig 가져오기 요청을 발송합니다. 자세한 내용은 [서버에서 UserSig 생성](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오.
 
 [](id:step4)
@@ -65,16 +65,20 @@ npm install
 npm run serve
 ```
 2. Chrome 브라우저에서 `http://localhost:8080/` 링크를 실행합니다. 모두 정상일 경우 Demo 실행 인터페이스는 다음과 같습니다.
+![](https://main.qcloudimg.com/raw/cd5b42448924101dd2f753fc45ce2fac.png)
 3. 사용자 userid를 입력하고, **로그인**을 클릭한 후, **영상 통화**를 선택합니다.
+![](https://main.qcloudimg.com/raw/d760af14a509b7373b4d85c341729012.png)
 4. 통화할 사용자의 userid를 입력하고 **통화**를 클릭합니다.
-5. 영상 통화가 가능합니다.
+![](https://main.qcloudimg.com/raw/b0b98e7af68643630992aa2d5114f9cf.png)
+5. 영상 통화를 시작할 수 있습니다.
+![](https://main.qcloudimg.com/raw/592189d0f18c91c51cdf7184853c6437.png)
 
 
 ## 영상 통화 구축
 ### 1단계: TRTCCalling 컴포넌트 통합
 
 >?
->- v0.6.0부터 종속 [trtc-js-sdk](https://www.npmjs.com/package/trtc-js-sdk), [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk), [tsignaling](https://www.npmjs.com/package/tsignaling)을 수동으로 설치해야 합니다.
+>- v0.6.0부터 종속 [trtc-js-sdk](https://www.npmjs.com/package/trtc-js-sdk), [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk), [tsignaling](https://www.npmjs.com/package/tsignaling)를 수동으로 설치해야 합니다.
 >- 액세스 측에서 사용하고 있는 trtc-js-sdk, tim-js-sdk 및 tsignaling 버전과의 충돌 방지를 위한 trtc-calling-js.js 용량 축소를 위해, trtc-calling-js.js에 trtc-js-sdk, tim-js-sdk, tsignaling이 외부 종속으로 패키징되어 있습니다. 사용 전 수동으로 설치해야 합니다.
 
 <dx-codeblock>
@@ -93,7 +97,7 @@ npm run serve
 
 <dx-codeblock>
 ::: html html
-// script 방식으로 trtc-calling-js를 사용해야 하는 경우 순서에 따라 다음 리소스를 수동으로 가져와야 합니다.
+// script로 trtc-calling-js를 사용해야 하는 경우 순서에 따라 다음 리소스를 수동으로 가져와야 합니다.
 
   <script src="./trtc.js"></script>
   <script src="./tim-js.js"></script>
@@ -140,16 +144,9 @@ trtcCalling.call({
 - **수신자: 신규 호출 수신**
 ```javascript
 // 수신
-trtcCalling.accept({
-  inviteID, //초대 ID, 초대 1회 식별
-  roomID,   //통화방 번호 ID
-  callType  //0-알 수 없음, 1-음성 통화, 2-영상 통화
-});
+trtcCalling.accept();
 // 거부
-trtcCalling.reject({ 
-  inviteID, //초대 ID, 초대 1회 식별
-  isBusy //통화 중 여부, 0-알 수 없음, 1-음성 통화, 2-영상 통화
-  })
+trtcCalling.reject()
 ```
 - **로컬 카메라 켜기**
 ```javascript
@@ -173,3 +170,15 @@ trtcCalling.startLocalView({
 ```javascript
 trtcCalling.hangup()
 ```
+
+## 기술 컨설팅
+더 자세한 내용은 [고객센터](https://intl.cloud.tencent.com/contact-us)를 통해 문의하시기 바랍니다.
+
+
+
+## 참고 문서
+- [TRTCCalling web 공식 웹사이트 체험](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
+- [TRTCCalling npm](https://www.npmjs.com/package/trtc-calling-js)
+- [TRTCCalling web demo 소스 코드](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)
+- [TRTCCalling web API](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
+- [TRTCCalling web 관련 질문](https://intl.cloud.tencent.com/document/product/647/43096)
