@@ -20,8 +20,8 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [addCallback](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a6a8317825ffe59ddcf1159a778dd7577) |  TRTC 이벤트 콜백 설정 |
 | [removeCallback](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ad088226e8af2d6764851efe7bd94652d) | TRTC 이벤트 콜백 제거 |
 
-### 방 관련 인터페이스 함수
-| API                 | 설명       |
+### 방 관련 API
+| API  | 설명         |
 |-----|-----|
 | [enterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b) | 방 입장 |
 | [exitRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ab3881c8829e7b8a3132e7b551e62fbf1) | 방 퇴장 |
@@ -46,10 +46,10 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | API                 | 설명       |
 |-----|-----|
 | [startLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a8ac23e725c7ed75488df1be2ee514884) | 로컬 카메라 미리보기 이미지 활성화(모바일) |
-| [startLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#aef6d61f571304066aaf839f7db00a17b) | 로컬 카메라의 미리보기 이미지 활성화(데스크톱) |
+| [startLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a8ac23e725c7ed75488df1be2ee514884) | 로컬 카메라의 미리보기 이미지 활성화(데스크톱) |
 | [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0af978a75d5ba671b7ce5f0b81b003c8) | 로컬 카메라의 미리보기 이미지 업데이트 |
 | [stopLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#af7003d2c12f5f783115ada43a715abe7) | 카메라 미리보기 중지 |
-| [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a22804c4112dee8c76475619f891e2eb5) | 로컬 비디오 스트림 배포 일시 중지/재개 |
+| [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a22804c4112dee8c76475619f891e2eb5) |로컬 비디오 스트림 게시 일시 중지/재개 |
 | [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a5c5ea936418b106c2e801db57938dde9) | 원격 사용자의 비디오 스트림 구독 및 비디오 렌더링 컨트롤러 바인딩 |
 | [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a027a8b23a363dc91e6ce1c9773ee8664) | 원격 사용자의 비디오 렌더링 컨트롤러 업데이트 |
 | [stopRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#abd186570272cd61b4a6e4aea870437e1) | 원격 사용자의 비디오 스트림 구독 중지 및 렌더링 컨트롤러 해제 |
@@ -84,6 +84,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [stopAudioRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a052a606496ce98cdc5a7e93098598a32) | 오디오 녹음 중지 |
 | [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a55c3e8982056532a6cce56e3f7f29241) | 로컬 미디어 녹화 시작 |
 | [stopLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a8b9b6f0608e48c27fc7c646718cb41ba) | 로컬 미디어 녹화 중지 |
+| [setRemoteAudioParallelParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0e6e6434aaa03ce878280125a9c0fa4b) | 원격 오디오 스트림의 스마트 동시 재생 정책 설정 |
 
 ### 디바이스 관리 관련 인터페이스
 | API                 | 설명       |
@@ -110,10 +111,10 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ab1fc5a303726a666d30051c836e33fdd) | 데스크톱 화면 공유 시작(데스크톱 시스템만 해당) |
 | [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0e09090fe4281c0e78d8eb38496a8ed0) | 화면 공유 중지 |
 | [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0dcd89ed2e23706239db98b55dd806d4) | 화면 공유 일시 중지 |
-| [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0dcd89ed2e23706239db98b55dd806d4) | 화면 공유 재개 |
+| [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a9dc10db068b9d8c6a0fcb8b085359f33) | 화면 공유 재개 |
 | [getScreenCaptureSources](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ad23c03ad142e8a42c49967ff9ccf9592) | 공유 가능한 화면 및 창 열거(데스크톱 시스템만 지원) |
 | [selectScreenCaptureTarget](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a9d16af81b2ea2db7b91a8346add13393) | 공유할 화면 및 창 선택(데스크톱 시스템만 지원) |
-| [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a542913f5081fb2479137a7416c970e2d) |화면 공유(서브스트림)의 비디오 인코딩 매개변수 설정(데스크톱 시스템만 지원) |
+| [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a542913f5081fb2479137a7416c970e2d) | 화면 공유(서브스트림)의 비디오 인코딩 매개변수 설정(데스크탑 및 모바일 시스템 모두 지원) |
 | [setSubStreamMixVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#aff8dd1456e5bebff5495d84683c7f83e) | 화면 공유의 오디오 믹싱 볼륨 설정(데스크톱 시스템만 지원) |
 | [addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ac2a8a65dc2c1d0e4ffbd89eeae768fff) | 화면 공유 제외 목록에 지정된 창 추가(데스크톱 시스템만 지원) |
 | [removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0bbbff5ea3cd764dbaaad0db887760bf) | 화면 공유 제외 목록에 지정된 창 제거(데스크톱 시스템만 지원) |
@@ -137,6 +138,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [setLocalVideoRenderCallback](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ad64031e060146f7985263aad994fc733) | 로컬 비디오에 대한 사용자 정의 렌더링 콜백 설정 |
 | [setRemoteVideoRenderCallback](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a1efc475e32f06c768330ff80ebffbc8a) | 원격 비디오에 대한 사용자 정의 렌더링 콜백 설정 |
 | [setAudioFrameCallback](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a607dc63d8d944869537457c5b92b56e9) | 오디오 데이터 사용자 정의 콜백 설정 |
+| [setMixedPlayAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a1c4e3c6d0c2653609e748ceeda8bb46e) | 시스템에서 재생할 오디오 프레임의 콜백 형식 설정 |
 | [enableCustomAudioRendering](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a7047f52811cefa10cf020ee20db1b087) | 사용자 정의 오디오 재생 활성화 |
 | [getCustomAudioRenderingFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ac986d3ec66ab6681d94c8eb933b519de) | 재생 가능한 오디오 데이터 가져오기 |
 
@@ -149,7 +151,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 ### 네트워크 테스트 인터페이스
 | API                 | 설명       |
 |-----|-----|
-| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#af86b2903b95b6e74f02d701701ce3380) | 네트워크 속도 테스트 시작(방 입장 전 사용) |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ab9052b69fd4e12b5860da03a868e87d7) | 네트워크 속도 테스트 시작(방 입장 전 사용) |
 | [stopSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ad6ba6ea2c5beace98b99ce98d326be4c) | 네트워크 속도 테스트 중지 |
 
 ### 디버깅 관련 인터페이스
@@ -162,7 +164,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [setLogDirPath](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#afbacbfc33a72f8fdd6995cf1ec3d04a6) | 로컬 로그 저장 경로 설정 |
 | [setLogCallback](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a239c5b9962a95a1eb4662440fab682fd) | 로그 콜백 설정 |
 | [showDebugView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a7df528c2024556a073b4668879dff91f) | 대시보드 표시 |
-| [callExperimentalAPI](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ab15fc0877664a8ac257ca4d6e7afc7b0) | 실험용 API 호출 |
+| [callExperimentalAPI](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a187cb56ce8bbdf9a74e347954d2c7c6a) | 실험용 API 호출 |
 
 ### 사용하지 않는 인터페이스
 | API                 | 설명       |
@@ -171,6 +173,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6) | 수집한 비디오 데이터 전송 |
 | [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a22804c4112dee8c76475619f891e2eb5) |로컬 비디오 스트림 게시 일시 중지/재개 |
 | [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a74d8d9922a771114804517db66657f65) | 원격 사용자 비디오 스트림 구독 일시 중지/재개 |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ab9052b69fd4e12b5860da03a868e87d7) |  네트워크 속도 테스트 시작(방 입장 전 사용) |
 
 ### 오류 및 경고 이벤트
 | API                 | 설명       |
@@ -207,6 +210,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 |-----|-----|
 | [onNetworkQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a377441bace65d98a1218817914a12ecb) | 네트워크 품질 실시간 통계 콜백 |
 | [onStatistics](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ae7e4117f9c8004c9bcc5a29d64e840c9) | 멀티미디어 기술 메트릭에 대한 실시간 통계 콜백 |
+| [onSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a7bbfbd86185f20935f8a23d7dad94d9a) | 네트워크 속도 테스트 결과 콜백 |
 
 ### 클라우드 연결 상태 이벤트 콜백
 | API                 | 설명       |
@@ -271,6 +275,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [onPlayBGMBegin](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ad93b8204416558e63c18349bf29ff592) | 배경 음악 재생 시작(폐기됨) |
 | [onPlayBGMProgress](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a1879cc4e50492431a3346828e9130f21) | 배경 음악 재생 진행률 콜백(폐기됨) |
 | [onPlayBGMComplete](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#abaf89c758a4dd21e21db488e997bef2a) | 배경 음악 재생 종료(폐기됨) |
+| [onSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a455264cfcf2a7a3f022f3bce0659f9f7) | 서버 속도 테스트 결과 콜백(폐기됨) |
 
 ### 비디오 데이터 사용자 정의 콜백
 | API                 | 설명       |
@@ -341,6 +346,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [TRTCRenderParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCRenderParams) | 영상 화면 렌더링 매개변수 |
 | [TRTCQualityInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCQualityInfo) | 네트워크 품질 |
 | [TRTCVolumeInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCVolumeInfo) | 볼륨 크기 |
+| [TRTCSpeedTestParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCSpeedTestParams) | 속도 테스트 매개변수 |
 | [TRTCSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCSpeedTestResult) | 네트워크 속도 테스트 결과 |
 | [TRTCVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCVideoFrame) | 비디오 프레임 정보 |
 | [TRTCAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCAudioFrame) | 오디오 프레임 데이터 |
@@ -351,7 +357,8 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [TRTCLocalRecordingParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCLocalRecordingParams) | 로컬 미디어 파일 녹화 매개변수 |
 | [TRTCAudioEffectParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCAudioEffectParam) | 음향 효과 매개변수(폐기됨) |
 | [TRTCSwitchRoomConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCSwitchRoomConfig) | 방 전환 매개변수 |
+| [TRTCAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCAudioFrameCallbackFormat) | 오디오 사용자 정의 콜백 형식 매개변수 |
 | [TRTCScreenCaptureSourceInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCScreenCaptureSourceInfo) | 화면 공유 타깃 정보(데스크톱 시스템만 해당) |
-
+| [ITRTCScreenCaptureSourceList](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#classliteav_1_1ITRTCScreenCaptureSourceList) | 공유할 수 있는 화면 및 창 리스트 |
 
 

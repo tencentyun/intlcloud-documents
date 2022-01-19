@@ -1,4 +1,16 @@
-### Create Instance And Event Callback
+## Introduction
+Since version 8.0, TRTC has provided new APIs for C++ in addition to the original ones. They can be used on Windows, iOS, macOS, and Android.
+See the following documents for how to integrate the C++ APIs.  
+- [iOS](https://intl.cloud.tencent.com/document/product/647/35092)  
+- [Android](https://intl.cloud.tencent.com/document/product/647/35093)  
+- [macOS](https://intl.cloud.tencent.com/document/product/647/35094)  
+- [Windows](https://intl.cloud.tencent.com/document/product/647/35095)  
+
+>?
+>- The C++ APIs are currently available in LiteAV_TRTC only.  
+>- On Windows, the TRTC header file automatically adopts the "trtc" namespace. You do not need to specify the namespace.
+## ITRTCCloud @ TXLiteAVSDK
+### Instance creation and event callback APIs
 | API | DESC |
 |-----|-----|
 | [getTRTCShareInstance](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ga0ef57994050abf58a18a3defd4cc5fd0) | Create `TRTCCloud` instance (singleton mode) |
@@ -289,6 +301,7 @@
 | [TRTCVideoStreamType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga461563be214e8f0579a79741f37d18e3) | Video stream type |
 | [TRTCVideoFillMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga496a32286104187149b4e40284cbfb36) | Video image fill mode |
 | [TRTCVideoRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga4f8ab82260baa03f83f123ebeaa82b2e) | Video image rotation direction |
+| [TRTCBeautyStyle](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga46f49720df57d17b267054cb9ee4d079) | Beauty (skin smoothing) algorithm |
 | [TRTCVideoPixelFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga98b07c6c79303f486682b3b92fa88c7e) | Video pixel format |
 | [TRTCVideoBufferType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga3a075ea5603cdd730550b37fc0032c68) | Video data transfer method |
 | [TRTCVideoMirrorType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga778fcc2797d6076745997327c8b20009) | Video mirror type |
@@ -314,6 +327,7 @@
 | API | DESC |
 |-----|-----|
 | [TRTCLogLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#gafa83683b4840bcb3200d1da63c10276d) | Log level |
+| [TRTCScreenCaptureSourceType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#gad96fcfd4a65c0f99579b0c35ef86645d) | Type of the content to share (for desktop systems only) |
 | [TRTCTranscodingConfigMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#gaec50c849a17b7706f6989d718fc6b7df) | Layout mode of On-Cloud MixTranscoding |
 | [TRTCLocalRecordType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga92580ecee493fb524b84234305316238) | Media recording type |
 | [TRTCMixInputType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga323584f89d0479be0a1b554ec05672f7) | Stream mix input type |
