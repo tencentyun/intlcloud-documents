@@ -90,7 +90,7 @@ When the client app is killed by the system or user without IM logout, the IM se
 ### Integrating the push SDK
 1. Add the Mi dependency: implementation 'com.tencent.tpns:xiaomi:1.2.1.2-release'.
 2. Refer to the [Integration Guide for Mi Push](https://dev.mi.com/console/doc/detail?pId=41), and use the Mi console to test notification messages to ensure that the SDK was integrated properly.
-3. Call `MiPushClient.registerPush` to initialize the Mi Push service. After successful registration, you will receive the registration result in `onReceiveRegisterResult` of the custom `BroadcastReceiver`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
+3. Call `MiPushClient.registerPush` to initialize the Mi Push service. After successful registration, you will receive the registration result in `onReceiveRegisterResult` of the custom `BroadcastReceiver`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
 
 After the certificate ID and regId are successfully reported, the IM server sends messages via Mi Push notifications to the user when the app has been killed but the user has not logged out of IM.
 
@@ -192,7 +192,7 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
 
 **Step 2. Set custom content (receiver)**
 
-- If you selected **Open app** in **Response after Click** when [adding a certificate](#xiaomiStep1_2), clicking the notification bar message triggers the `onNotificationMessageClicked(Context context, MiPushMessage miPushMessage)` callback. The custom content can be obtained from `miPushMessage`. You can refer to the parsing implementation in [XiaomiMsgReceiver.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/XiaomiMsgReceiver.java).
+- If you selected **Open app** in **Response after Click** when [adding a certificate](#xiaomiStep1_2), clicking the notification bar message triggers the `onNotificationMessageClicked(Context context, MiPushMessage miPushMessage)` callback. The custom content can be obtained from `miPushMessage`. You can refer to the parsing implementation in [XiaomiMsgReceiver.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OEMPush/XiaomiMsgReceiver.java).
 <dx-codeblock>
 ::: java
   Map extra = miPushMessage.getExtra();
@@ -234,7 +234,7 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
 ### Integrating the push SDK
 1. Add the Huawei dependencies: implementation 'com.tencent.tpns:huawei:1.2.1.2-release' and implementation 'com.huawei.hms:push:5.0.2.300'.
 2. Refer to the [Integration Guide for Huawei Push](https://developer.huawei.com/consumer/cn/doc/development/HMS-3-Guides/push-Preparations) and use the Huawei console to test notification messages to ensure that the SDK was integrated properly.
-3. Call the Huawei `HmsInstanceId.getToken` API to request the unique app identifier Push Token from the server. `Push Token` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **Push Token** to the IM server.
+3. Call the Huawei `HmsInstanceId.getToken` API to request the unique app identifier Push Token from the server. `Push Token` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **Push Token** to the IM server.
 
 After the certificate ID and regId are successfully reported, the IM server sends messages via Huawei Push notifications to the user when the app has been killed but the user has not logged out of IM.
 
@@ -393,7 +393,7 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
 1. Add the OPPO dependency: implementation 'com.tencent.tpns:oppo:1.2.1.2-release'.
 2. Refer to the [OPPO PUSH SDK API Documentation](https://open.oppomobile.com/wiki/doc#id=10704) and use the OPPO console to test notification messages to ensure that the SDK was integrated properly.
 3. Call `HeytapPushManager.register(…)` in the OPPO SDK to initialize the Opush service.
-   After successful registration, you can obtain `regId` in the `onRegister` callback method of `ICallBackResultService`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
+   After successful registration, you can obtain `regId` in the `onRegister` callback method of `ICallBackResultService`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
 
 After the certificate ID and regId are successfully sent, the IM server will push the notification to the client through OPPO PUSH when the app is killed by the system before the user logs out.
 
@@ -509,7 +509,7 @@ if (set != null) {
 ### Integrating the push SDK
 1. Add vivo dependency: implementation 'com.tencent.tpns:vivo:1.2.1.2-release'.
 2. Refer to the [Integration Guide for vivo Push](https://dev.vivo.com.cn/documentCenter/doc/233#w2-08354405), and use the vivo console to test notification messages to ensure that the SDK was integrated properly.
-3. Call `PushClient.getInstance(getApplicationContext()).initialize()` to initialize the vivo Push service and call `PushClient.getInstance(getApplicationContext()).turnOnPush()` to launch push. If this succeeds, you will receive the `regId` in the `onReceiveRegId` of the custom `BroadcastReceiver`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
+3. Call `PushClient.getInstance(getApplicationContext()).initialize()` to initialize the vivo Push service and call `PushClient.getInstance(getApplicationContext()).turnOnPush()` to launch push. If this succeeds, you will receive the `regId` in the `onReceiveRegId` of the custom `BroadcastReceiver`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
 
 After the certificate ID and regId are successfully reported, the IM server sends messages via vivo Push notifications to the user when the app has been killed but the user has not logged out of IM.
 
@@ -608,7 +608,7 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
 - For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
 
 **Step 2. Set custom content (receiver)**
-When the notification bar message is clicked, the `onNotificationMessageClicked(Context context, UPSNotificationMessage upsNotificationMessage)` callback of the vivo Push SDK is triggered. The custom content can be obtained from `upsNotificationMessage`. You can refer to the parsing implementation in [VIVOPushMessageReceiverImpl.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/VIVOPushMessageReceiverImpl.java).
+When the notification bar message is clicked, the `onNotificationMessageClicked(Context context, UPSNotificationMessage upsNotificationMessage)` callback of the vivo Push SDK is triggered. The custom content can be obtained from `upsNotificationMessage`. You can refer to the parsing implementation in [VIVOPushMessageReceiverImpl.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OEMPush/VIVOPushMessageReceiverImpl.java).
 
 <dx-codeblock>
 :::  java
@@ -641,7 +641,7 @@ String extContent = paramMap.get("ext");
 
 1. Add Meizu dependency: implementation 'com.tencent.tpns:meizu:1.2.1.2-release'.
 2. Refer to [Meizu Push Integration](http://open-wiki.flyme.cn/doc-wiki/index#id?129), and use the Meizu console to test notification messages to ensure that the SDK was integrated properly.
-3. Call `PushManager.register` to initialize the Meizu Push service. After successful registration, you will receive the registration result in `onRegisterStatus` of the custom `BroadcastReceiver`. `registerStatus.getPushId()`is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **PushId** to the IM server.
+3. Call `PushManager.register` to initialize the Meizu Push service. After successful registration, you will receive the registration result in `onRegisterStatus` of the custom `BroadcastReceiver`. `registerStatus.getPushId()`is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **PushId** to the IM server.
 
 After the certificate ID and regId are successfully reported, the IM server sends messages via Meizu Push notifications to the user when the app has been killed but the user has not logged out of IM.
 
@@ -741,7 +741,7 @@ String extContent = bundle.getString("ext");
 
 1. Add the FCM dependency: implementation 'com.google.firebase:firebase-messaging:20.2.3'.
 1. Refer to [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/android/client) to set up Firebase. Refer to the [FCM Testing Guide](https://firebase.google.com/docs/cloud-messaging/android/first-message?authuser=0) to test notification messages to ensure that FCM was integrated properly.
-2. After calling `FirebaseInstanceId.getInstance().getInstanceId()`, you can obtain the token in the callback. The token is the unique identifier of the current app. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **token** to the IM server.
+2. After calling `FirebaseInstanceId.getInstance().getInstanceId()`, you can obtain the token in the callback. The token is the unique identifier of the current app. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **token** to the IM server.
 
 After the certificate ID and regId are successfully reported, the IM server sends messages via FCM Push notifications to the user when the app has been killed but the user has not logged out of IM.
 
@@ -794,11 +794,11 @@ String value = bundle.getString("ext");
 
 ## Setting Custom iOS Push Alert Sound
 
-When calling [sendMessage](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) to send messages, use the [setIOSSound](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#acffd09150398b06c3d7eb42baee5aee1) API in `V2TIMOfflinePushInfo` to set the sound for push notifications on iOS devices.
+When calling [sendMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) to send messages, use the [setIOSSound](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#acffd09150398b06c3d7eb42baee5aee1) API in `V2TIMOfflinePushInfo` to set the sound for push notifications on iOS devices.
 
 ## Setting Custom Display for Offline Push
 
-When calling [sendMessage](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) to send messages, use [setTitle](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a7d4a73d6a1db487dd96f658bdbc98ae9) and [setDesc](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) in `V2TIMOfflinePushInfo` to set the title and content of notification bar messages respectively.
+When calling [sendMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) to send messages, use [setTitle](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a7d4a73d6a1db487dd96f658bdbc98ae9) and [setDesc](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) in `V2TIMOfflinePushInfo` to set the title and content of notification bar messages respectively.
 
 ## FAQs
 
@@ -815,8 +815,8 @@ This generally occurs for the following reasons:
 
 ### Why doesn't offline push work for custom messages?
 
-The offline push for custom messages is different from that for ordinary messages. As we cannot parse the content of custom messages, the push content cannot be determined. Therefore, by default, custom messages are not pushed offline. If you need offline push for custom messages, you need to set the [desc](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) field in [offlinePushInfo](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html) during [sendMessage](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe), and the `desc` information will be displayed by default during push.
+The offline push for custom messages is different from that for ordinary messages. As we cannot parse the content of custom messages, the push content cannot be determined. Therefore, by default, custom messages are not pushed offline. If you need offline push for custom messages, you need to set the [desc](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) field in [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html) during [sendMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe), and the `desc` information will be displayed by default during push.
 
 ### How do I disable the receiving of offline push messages?
 
-To disable the receiving of offline push messages, set the `config` parameter of the [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/enclasscom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) API to `null`. This feature is supported from v5.6.1200.
+To disable the receiving of offline push messages, set the `config` parameter of the [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) API to `null`. This feature is supported from v5.6.1200.
