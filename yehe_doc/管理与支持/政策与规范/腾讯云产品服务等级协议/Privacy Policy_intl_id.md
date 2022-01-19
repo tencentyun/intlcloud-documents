@@ -558,3 +558,6 @@ Modul berikut akan berlaku dan merupakan bagian dari kebijakan privasi ini jika 
 11.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41578).
 12.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41705).
 13.[Private DNS](https://intl.cloud.tencent.com/document/product/1097/42072).
+14.[TencentDB for Tendis](https://intl.cloud.tencent.com/document/product/1083/43456).
+15.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44012).
+16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
