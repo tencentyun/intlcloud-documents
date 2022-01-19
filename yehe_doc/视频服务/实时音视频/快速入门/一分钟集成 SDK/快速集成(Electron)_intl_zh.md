@@ -24,12 +24,6 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 ```shell
 $ brew install node
 ```
-3. 如果使用 Homebrew 的默认地址安装 Node.js 较慢，您可以考虑替换为国内镜像地址。
-```shell
-$ cd `brew --repo`
-$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-$ brew update
-```
 :::
 </dx-tabs>
 
