@@ -1,15 +1,15 @@
 ## TRTCCloud @ TXLiteAVSDK
 
 ### 인스턴스 생성 및 이벤트 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [sharedInstance](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ac5da416bb06d461c7e1e555e3fd143ee) | TRTCCloud 인스턴스 생성(싱글톤 모드) |
 | [destroySharedInstance](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a69e76ca12b727c7cbcbdda274fc007a2) | TRTCCloud 인스턴스 폐기(싱글톤 모드)  |
 | [setListener](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a22fe2f31f2ef62fb3c6cba083dc6c016) | TRTC 이벤트 콜백 설정 |
 | [setListenerHandler](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a48c867145dcc09289f7af41871b4fdd9) | TRTCCloudDelegate 이벤트 콜백을 구동하는 큐 설정 |
 
-### 방 관련 인터페이스 함수
-| API | 설명 |
+### 방 관련 API
+| API  | 설명         |
 |-----|-----|
 | [enterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) | 방 입장 |
 | [exitRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a41d16a97a9cb8f16ef92f5ef5bfebee1) | 방 퇴장 |
@@ -22,7 +22,7 @@
 | [destroySubCloud](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a6dc091ead812c50497c4b4e87e5c2fcf) | 방 서브 인스턴스 폐기 |
 
 ### CDN 관련 인터페이스 함수
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [startPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a1c168a9aa35ccd0b24981526425e4730) | Tencent Cloud CSS CDN에 멀티미디어 스트림 게시 시작 |
 | [stopPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3067efa528fb9ffb8cf7685ce29925d4) | Tencent Cloud CSS CDN에 멀티미디어 스트림 게시 중지 |
@@ -31,12 +31,12 @@
 | [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#af7cf5544f9b8027e9526c32319a13838) | 클라우드 혼합 스트림 레이아웃 및 트랜스 코딩 매개변수 설정  |
 
 ### 비디오 관련 인터페이스 함수
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [startLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) | 로컬 카메라 미리보기 이미지 활성화(모바일) |
 | [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae91432ada1767f793c460c7b897b6809) | 로컬 카메라의 미리보기 이미지 업데이트 |
 | [stopLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#af6ee50bf2c4c592294061077fc727505) | 카메라 미리보기 중지 |
-| [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ac334d2c625c487d38eb3311de6831643) | 로컬 비디오 스트림 배포 일시 중지/재개 |
+| [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ac334d2c625c487d38eb3311de6831643) | 로컬 비디오 스트림 게시 일시 중지/재개 |
 | [setVideoMuteImage](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d) | 로컬 비디오 일시 중지 교체 이미지 설정 |
 | [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a360eac7e67afcfab4390e7f37fa29a69) | 원격 사용자의 비디오 스트림 구독 및 비디오 렌더링 컨트롤러 바인딩 |
 | [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a9be8a4c5ea4da16fb1ca42e8e258effd) | 원격 사용자의 비디오 렌더링 컨트롤러 업데이트 |
@@ -56,7 +56,7 @@
 | [snapshotVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae75285c95fc53651e24fa23c4141093b) | 영상 화면 캡처 |
 
 ### 오디오 관련 인터페이스 함수
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [startLocalAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a1dadf09b10a2d128e4cef11707934329) | 로컬 오디오 수집 및 게시 활성화 |
 | [stopLocalAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a272bba21d046347ac42d76069ba5972c) | 로컬 오디오 수집 및 게시 중지 |
@@ -74,34 +74,36 @@
 | [stopAudioRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a7d55e5f15d1291afc89f7e1dfe0a25d8) | 오디오 녹음 중지 |
 | [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a5d6bf60e9d3051f601988e55106b296c) | 로컬 미디어 녹화 시작 |
 | [stopLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae982c3c04c0195711ee4e56132522c4b) | 로컬 미디어 녹화 중지 |
+| [checkAudioCapabilitySupport](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a225161d0c1028708b4c043653ea0ee4b) | 특정 오디오 기능 지원 여부 쿼리(Android만 해당) |
+| [setRemoteAudioParallelParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a6d7f5080d804137be1bd3541f533b275) | 원격 오디오 스트림의 스마트 동시 재생 정책 설정 |
 
 ### 디바이스 관리 관련 인터페이스
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [getDeviceManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae66395bc404d205fcd7fe9082ca85ce9) | 디바이스 관리 클래스 가져오기(TXDeviceManager) |
 
 ### 뷰티 필터 특수 효과 및 이미지 워터마크
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) | 뷰티 필터 관리 클래스 가져오기(TXBeautyManager) |
 | [setWatermark](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a1083aaf0441e3d90ce6641d278a97a63) | 워터마크 추가 |
 
 ### 배경 음악 및 음향 효과
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [getAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | 음향 효과 관리 클래스 가져오기(TXAudioEffectManager) |
 
 ### 화면 공유 관련 인터페이스
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aacbe76e164030701d261a2edbc43668f) | 화면 공유 시작 |
 | [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ab6c3014f6f88c775aa91fccea19ce8a4) | 화면 공유 중지 |
 | [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) | 화면 공유 일시 중지 |
-| [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) | 화면 공유 재개 |
-| [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a34d994fbba559994aaf3a1f20420a885) | 화면 공유(서브스트림)의 비디오 인코딩 매개변수 설정(데스크톱 시스템만 지원) |
+| [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a155ed7b6bcf2edf3259d26b8f8fdfe7e) | 화면 공유 재개 |
+| [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a34d994fbba559994aaf3a1f20420a885) | 화면 공유(서브 스트림)의 비디오 인코딩 매개변수 설정(데스크톱 및 모바일 시스템 모두 지원) |
 
 ### 사용자 정의 수집 및 렌더링
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa29d36eaa707f6acf622e2f87f14b26a) | 사용자 정의 비디오 수집 모드 활성화/비활성화 |
 | [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ad898c0d44a55b86af57de9854638193e) | 수집한 비디오 프레임을 SDK에 전송 |
@@ -122,19 +124,19 @@
 | [getCustomAudioRenderingFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a1c1c268173ab9b1bc24d34766e433931) | 재생 가능한 오디오 데이터 가져오기 |
 
 ### 사용자 정의 메시지 전송 인터페이스
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [sendCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa4847ad53acc9ab5990194b21ff5b070) | UDP 채널을 사용하여 방의 모든 사용자에게 사용자 정의 메시지 보내기  |
 | [sendSEIMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a034f9e1effbdadf8b9bfb7f3f06486c4) | SEI 채널을 사용하여 방의 모든 사용자에게 사용자 정의 메시지 보내기  |
 
 ### 네트워크 테스트 인터페이스
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
-| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a0dbceb18d61d99ca33e967427dd0a344) | 네트워크 속도 테스트 시작(방 입장 전 사용) |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a6db053500be88a8735bfc69730447912) | 네트워크 속도 테스트 시작(방 입장 전 사용) |
 | [stopSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3e862cef0e818ddecdc3dc4d66a6f8f9) | 네트워크 속도 테스트 중지 |
 
 ### 디버깅 관련 인터페이스
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [getSDKVersion](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aeb5168abbd62c631b65247e6289d1e2d) | SDK 버전 정보 가져오기 |
 | [setLogLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a0ec9520dda7e2062f7455956d093113b) | Log 출력 레벨 설정 |
@@ -148,7 +150,7 @@
 | [setNetEnv](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a28ae49c86c5e5ba7e5ad2eae171bde76) | TRTC 백그라운드 클러스터 설정(Tencent Cloud R&D 팀만 해당) |
 
 ### 사용하지 않는 인터페이스
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [setMicVolumeOnMixing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ab356494d1b7dd924be69b23aa631a85a) | 마이크 볼륨 설정 |
 | [setBeautyStyle](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) | 뷰티 필터, 미백 효과, 안색 보정 효과 단계 설정 |
@@ -210,15 +212,16 @@
 | [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aacbe76e164030701d261a2edbc43668f) | 화면 공유 시작(Android) |
 | [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ac334d2c625c487d38eb3311de6831643) | 로컬 비디오 스트림 게시 일시 중지/재개 |
 | [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a4048ba6edaa0a959d0918a72cf98b576) | 원격 사용자 비디오 스트림 구독 일시 중지/재개 |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a6db053500be88a8735bfc69730447912) |  네트워크 속도 테스트 시작(방 입장 전 사용) |
 
 ### 오류 및 경고 이벤트
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onError](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a511d0007e1990e63e853e46ce3f02670) | 오류 이벤트 콜백 |
 | [onWarning](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a9871472ee8195dfc5d0c34fae3294465) | 경고 이벤트 콜백 |
 
 ### 방 관련 이벤트 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onEnterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abf0525c3433cbd923fd1f13b42c416a2) | 방 입장 성공 여부 이벤트 콜백 |
 | [onExitRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ad5ac26478033ea9c0339462c69f9c89e) | 방 퇴장 이벤트 콜백 |
@@ -228,7 +231,7 @@
 | [onDisConnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a6f7db4f0aaadad2cdfa822ba0060414c) | 크로스 룸 통화 종료 결과 콜백 |
 
 ### 사용자 관련 이벤트 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onRemoteUserEnterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a891f38e4cdeaf3ff18937726f0269c2c) | 사용자 방 입장 |
 | [onRemoteUserLeaveRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abfec3607f97823956fad77a7a63dc441) | 사용자 방 퇴장 |
@@ -242,21 +245,21 @@
 | [onRemoteVideoStatusUpdated](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aa75cd2a93cfb096357e2de226ff2ea47) | 원격 비디오 상태 변경 이벤트 콜백 |
 
 ### 네트워크 및 기술 메트릭에 대한 통계 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onNetworkQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b) | 네트워크 품질에 대한 실시간 통계 콜백 |
 | [onStatistics](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a24a6ee3b3709a42af226be7258521612) | 멀티미디어 기술 메트릭에 대한 실시간 통계 콜백 |
+| [onSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a0dc9967589d6d3277f0e429e520f2c51) | 네트워크 속도 테스트 결과 콜백 |
 
 ### 클라우드 연결 상태 이벤트 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onConnectionLost](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aed43a70b4a95eb95181e2b410013bf54) | SDK와 클라우드 연결이 끊김 |
 | [onTryToReconnect](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a1c8654b64e4bde42a8a24954ecf2cb2d) | SDK와 클라우드 다시 연결 중 |
 | [onConnectionRecovery](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a36d96a42ec4b00a0e3808f7f8460cd7f) | SDK와 클라우드가 다시 연결됨 |
-| [onSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ab77a0dff287e1642527cd414fc5fe5f5) | 서버 속도 테스트 결과 콜백 |
 
 ### 하드웨어 관련 이벤트 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onCameraDidReady](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aaa74021e5fd2564afb2df50e25eedeff) | 카메라 준비 완료 |
 | [onMicDidReady](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#afdac7dee94451913a4dc9982badc8035) | 마이크 준비 완료 |
@@ -264,14 +267,14 @@
 | [onUserVoiceVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a4e3b79968ccbb86de5b79e326a2daafa) | 볼륨 |
 
 ### 사용자 정의 메시지 수신 이벤트 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onRecvCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a51fd654c5ec030ff84f208f2ba50298d) | 사용자 정의 메시지 수신 이벤트 콜백 |
 | [onMissCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a98af11ba5b25d3124bd9533dc5197127) | 사용자 정의 메시지 손실 이벤트 콜백 |
 | [onRecvSEIMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ad3640e6bf80a1f93991644701e9b0d96) | SEI 메시지 수신 콜백 |
 
 ### CDN 관련 이벤트 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onStartPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a03d0ef687b2973b9b13cb041bd35bb85) | Tencent Cloud CSS CDN에 멀티미디어 스트림 게시 시작 이벤트 콜백 |
 | [onStopPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ad3cb7e5ceb69954d762eafca5a0e3a62) | Tencent Cloud CSS CDN에 멀티미디어 스트림 게시 중지 이벤트 콜백 |
@@ -280,7 +283,7 @@
 | [onSetMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#af1c79a5ec3e0c106939e7f0d7849d694) | 클라우드 혼합 스트림 레이아웃 및 트랜스 코딩 매개변수 설정 이벤트 콜백 |
 
 ### 화면 공유 관련 이벤트 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onScreenCaptureStarted](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a7d15537d26fb001045ff95157d59ed3f) | 화면 공유 활성화 이벤트 콜백 |
 | [onScreenCapturePaused](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a12c57991389e32f04a56774df5d1ce76) | 화면 공유 일시중지 이벤트 콜백 |
@@ -288,21 +291,22 @@
 | [onScreenCaptureStopped](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a6c09b21b733da7d314d1db2cb03c8bcb) | 화면 공유 중지 이벤트 콜백 |
 
 ### 로컬 녹화 및 화면 캡처 이벤트 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onLocalRecordBegin](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a6d252931944577cc08d40db1f5ecd7bb) | 로컬 녹화 작업 시작 이벤트 콜백 |
 | [onLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a22f09234dc198d33fa38bbb595fb5764) | 로컬 녹화 작업 진행 중 이벤트 콜백 |
 | [onLocalRecordComplete](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a0a3eef0daeb5107290cb5190ceb9467b) | 로컬 녹화 작업 종료 이벤트 콜백 |
 
 ### 사용하지 않는 이벤트 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onUserEnter](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aff18b3bc5b1e448b21b7614e5716e73e) | 호스트가 현재 방에 입장함(폐기됨) |
 | [onUserExit](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a0d1361e52e96b4c7c1a5f1b89f4ef0fb) | 호스트가 현재 방에서 퇴장함(폐기됨) |
 | [onAudioEffectFinished](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abe967d855abae66836877fe0dacf8b5f) | 음향 효과 종료(폐기됨) |
+| [onSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ab77a0dff287e1642527cd414fc5fe5f5) | 서버 속도 테스트 결과 콜백(폐기됨) |
 
 ### 비디오 데이터 사용자 정의 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onRenderVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a41b44f9b0583bbf56ad9e96065ea825c) | 사용자 정의 비디오 렌더링 콜백 |
 | [onGLContextCreated](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#af4a7a3a4e4945bf216d87f81b6926dab) | SDK의 OpenGL 컨텍스트 생성 알림 |
@@ -310,7 +314,7 @@
 | [onGLContextDestory](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a5f6d5ef01d3cd610959433107f78aa60) | SDK의 OpenGL 컨텍스트 폐기에 대한 알림 |
 
 ### 오디오 데이터 사용자 정의 콜백
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | 로컬 마이크에서 수집된 원본 오디오 데이터 콜백 |
 | [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | 로컬에서 수집하고 오디오 모듈에서 전처리된 오디오 데이터 콜백 |
@@ -319,12 +323,12 @@
 | [onMixedAllAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a96923a9286a88b83d6890f607884ceb3) | SDK의 모든 믹싱된 오디오 데이터(수집 및 재생 대기 중 포함) |
 
 ### 기타 이벤트 콜백 인터페이스
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [onLog](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a77d78090666e330606b670bf8ce2d854) | 로컬 LOG 출력 콜백 |
 
 ### 비디오 관련 열거 값 정의
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [TRTCVideoResolution](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp01d5e1111c2ba49a53879c343fd484f2) | 비디오 해상도 |
 | [TRTCVideoResolutionMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp509a1d5f7a44e1d60cf25e4afb640347) | 비디오 종횡비 모드 |
@@ -338,7 +342,7 @@
 | [TRTCSnapshotSourceType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCSnapshotSourceType) | 로컬 영상 화면 캡처 데이터 소스 |
 
 ### 네트워크 관련 열거 값 정의
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [TRTCAppScene](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrpa53ec28e9d73b79c701a709f44efbebe) | 응용 시나리오 |
 | [TRTCRoleType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp32cd3ba884366b8a2d45cad705f28b18) | 역할 |
@@ -349,7 +353,7 @@
 | [TRTCAVStatusChangeReason](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp66f48a69ecc92051ca32055008a19c3e) | 비디오 상태 변동 원인 |
 
 ### 오디오 관련 열거 값 정의
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [TRTCAudioSampleRate](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp2b7efdf7211746ab55166bb4d55ed619) | 오디오 샘플링 레이트 |
 | [TRTCAudioQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp96d66d1098694549803eaba6baedb9c0) | 오디오 품질 |
@@ -357,9 +361,10 @@
 | [TRTCReverbType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp30e899d6cb29154e1d73867d199b7191) | 오디오 리버브 모드 |
 | [TRTCVoiceChangerType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrpac19166c196a2905657f2a3b52a68ce0) | 음성 변조 유형 |
 | [TRTCSystemVolumeType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp70bfa071c4ebab5e7ed1811a780a53d9) | 시스템 볼륨 유형(모바일만 해당) |
+| [TRTCAudioCapabilityType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp29e12a3869cc165605dc0121e56888a3) | 시스템에서 지원하는 오디오 기능 유형(Android 장치만 해당) |
 
 ### 기타 열거 값 정의
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [TRTCLogLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp2f4911d8563ae1db783b963d626681d8) | Log 레벨 |
 | [TRTCGSensorMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp7821baad731a6db4d8977d304fafce63) | G-센서 스위치(모바일만 해당) |
@@ -369,7 +374,7 @@
 | [TRTCAudioRecordingContent](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp25c9df32061d8ad991f04b21fc6acacb) | 오디오 녹음 콘텐츠 유형 |
 
 ### TRTC 핵심 유형 정의
-| API | 설명 |
+| API  | 설명         |
 |-----|-----|
 | [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#a7ff9e03272f5c8e7b585e8c4eea784e1) | 방 입장 매개변수 |
 | [TRTCVideoEncParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoEncParam) | 비디오 인코딩 매개변수 |
@@ -377,6 +382,7 @@
 | [TRTCRenderParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCRenderParams) | 영상 화면 렌더링 매개변수 |
 | [TRTCQualityInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCQualityInfo) | 네트워크 품질 |
 | [TRTCVolumeInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVolumeInfo) | 볼륨 크기 |
+| [TRTCSpeedTestParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCSpeedTestParams) | 속도 테스트 매개변수 |
 | [TRTCSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCSpeedTestResult) | 네트워크 속도 테스트 결과 |
 | [TRTCTexture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCTexture) | 비디오 텍스쳐 데이터(Android만 해당, 텍스처 ID 및 EGL 환경 포함) |
 | [TRTCVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoFrame) | 비디오 프레임 정보 |
@@ -388,8 +394,6 @@
 | [TRTCLocalRecordingParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCLocalRecordingParams) | 로컬 미디어 파일 녹화 매개변수 |
 | [TRTCAudioEffectParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#ad82a59c2209c0596dabaee1152820494) | 음향 효과 매개변수(폐기됨) |
 | [TRTCSwitchRoomConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#a1b79e0e45a5f137df2e1995af7c0885c) | 방 전환 매개변수 |
-| [TRTCAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioFrameCallbackFormat) | 오디오 사용자 정의 콜백 형식 매개변수 |
-
-
-
+| [TRTCAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#a9b833660fc60bd0b4e0c0625d2ad84f6) | 오디오 사용자 정의 콜백 형식 매개변수 |
+| [TRTCScreenShareParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCScreenShareParams) | 화면 공유 매개변수(Android 플랫폼만 적용) |
 
