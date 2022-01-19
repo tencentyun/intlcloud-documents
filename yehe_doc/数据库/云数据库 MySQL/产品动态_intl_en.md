@@ -1,3 +1,24 @@
+## December 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Optimized RO group delay settings</td>
+<td>RO delay configuration in TencentDB for MySQL is moved from instance configuration to RO group configuration, so that delay and removal policies configured in the same RO group will not conflict with each other. Moreover, read-only instance delay management is simplified. When an RO group is used to unify IP access, no inconsistency between the accessed and expected data will occur due to a delayed read-only instance.</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/41085" target="_blank">Managing the Delayed Replication of Read-Only Instance</a></td></tr>
+<tr>
+<td>Supported AZ migration</td>
+<td>The AZ migration feature is launched for TencentDB for MySQL. It can implement nearby access and resource expansion for your business and better utilize resources in different AZs in the same region.</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/44337" target="_blank">AZ Migration</a></td></tr>
+<tr>
+<td>Optimized parameter template and instance purchase process</td>
+<td>TencentDB for MySQL optimizes parameter-related features and instance delivery process, including creating and applying parameter templates, comparing parameters, modifying modifiable parameters, and purchasing instances.</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/43459" target="_blank">Parameter Template and Instance Purchase Process Optimization</a></td></tr>
+</tbody></table>
+
 ## July 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
