@@ -3,7 +3,7 @@
 - If your domain is hosted on Tencent Cloud, please log in to the [DNSPod console](https://console.cloud.tencent.com/cns) to configure the domain. If your domain is hosted on another domain service provider, please configure it according to the checklist.
 - After the domain is configured, synchronization may take five minutes to two hours. Please wait patiently for the verification to finish.
 - After the domain verification is completed, do not delete or modify the configured SPF and MX records, otherwise errors may occur when sending emails.
-- To avoid conflicts between SPF and MX records, do not use corporate email domains.
+- Do not use a corporate email domain so as to avoid conflicts between SPF and MX records. You can create and use a second-level domain under your existing corporate email domain instead.
 - Each Tencent Cloud account can be configured with up to 10 domains.
 
 <span id ="Step1"></span>
@@ -21,11 +21,12 @@ After the free tier is used up, your plans will be used automatically. If no pla
 
 <span id ="Step4"></span>
 ## Step 4. Configure a Sender Domain
+>!If a domain has been registered for Tencent Exmail, it cannot be used as the sender domain.
 1. Log in to the [SES console](https://console.cloud.tencent.com/ses) and click **Sender Domain**.
 2. On the **Sender Domain** page, click **Create**.
 3. Enter a sender domain in the **Domain** field, for example, `mail.qcloud.com`, and click **Submit**.
     
->!If a domain has been registered for Tencent Exmail, it cannot be used as the sender domain.
+>!A sender domain is the basis of an email address and represents the identity of the sender's corporate. To verify a sender domain, you need to configure the DNS information for it. Therefore, you must have the admin permissions on the domain.
    
 4. After finishing DNS configuration, click **Verify**.
 5. In the **Sender Domain Configuration** dialog box, click **Submit** to verify the sender domain.
