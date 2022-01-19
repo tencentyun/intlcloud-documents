@@ -1,4 +1,4 @@
-> 如何安装使用日志服务 Loglistener，详情请参见 [ LogListener 安装指南](https://intl.cloud.tencent.com/document/product/614/17414) 文档。
+如何安装及使用日志服务 Loglistener，请参见 [ LogListener 安装指南](https://intl.cloud.tencent.com/document/product/614/17414) 文档。
 
 ## 可能原因
 
