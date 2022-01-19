@@ -1,3 +1,33 @@
+## October 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Supported remote storage of Prometheus data </td>
+<td>Local storage in Prometheus cannot persist data or be expanded flexibly. CTSDB allows hosting Prometheus monitoring data using Prometheus' standard `remote write/remote read` APIs, which ensures Prometheus data security while removing the limitations of local storage. Plus, you can use this feature without modifying your current Prometheus monitoring and alarming system.</td>
+<td>2021-10</td>
+<td>-</td></tr>
+</table>
+
+## August 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Supported account and permission management</td>
+<td>CTSDB supports account and permission management. You can create multiple database accounts according to your business needs and grant them global or object-level privileges for more refined permission management.</td>
+<td>2021-08</td>
+<td>-</td></tr>
+</table>
+
+## July 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Launched the service in Chongqing, Bangkok, and Hong Kong (China) regions</td>
+<td>CTSDB is available in Chongqing, Bangkok, and Hong Kong (China) regions to serve users in Southwest China, Southeast Asia, and Hong Kong (China) respectively. You can select a region close to your business to reduce the database access delay.</td>
+<td>2021-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1100/40937" target="_blank">Regions and AZs</a></td></tr>
+</table>
+
 ## June 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
