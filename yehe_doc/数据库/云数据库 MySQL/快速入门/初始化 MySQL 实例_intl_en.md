@@ -1,19 +1,16 @@
-After creating a TencentDB for MySQL instance, you need to initialize it before you can enable it.
+After a TencentDB for MySQL instance is created, it is in the **Uninitialized** status and needs to be initialized before it can be used.
 
 ## Directions
-1. Log in to [MySQL Console](https://console.cloud.tencent.com/cdb) and select a region. In the instance list, locate the desired "Uninitialized" instance, and click **Initialize** in "Operation" column.
-![](https://main.qcloudimg.com/raw/945a4e69bef68eb706a520d4cbac13cf.png)
-2. In the initialization dialog box that pops up, configure the parameters, and click **OK**.
- - **Supported character set**: LATIN1, GBK, UTF8, and UTF8MB4 character sets are supported. The default value is UTF8. After initializing the instance, you can also change the character set on the instance details page in the console. For more information, please see [Notes on character set](https://intl.cloud.tencent.com/document/product/236/7259).
- - **Case-sensitivity of the table name**: whether the table name is case sensitive. It is case sensitive by default.
- - **Custom port**: the database access port, which is 3306 by default.
- - **Root account password**: the default user name for the new MySQL database is "root". You can set the password of the root account.
- - **Confirm password**: enter the password again.
-3. In the initialization dialog box that pops up, click **OK**.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), select the target region, select an instance in **Uninitialized** status in the instance list, and click **Initialize** in the **Operation** column.
+2. In the initialization pop-up window, configure the initialization parameters and click **OK**.
+ - **Character Set**: LATIN1, GBK, UTF8, and UTF8MB4 character sets are supported. The default value is UTF8. After initializing the instance, you can change the character set on the instance details page in the console. For more information, see [Use Limits > Notes on character set](https://intl.cloud.tencent.com/document/product/236/7259).
+ - **Table Name Case Sensitivity**: whether the table name is case sensitive. The default value is yes.
+ - **Custom Port**: the database access port, which is 3306 by default.
+ - **Set Password of Root Account**: set the password of the root account (the default user name for a new MySQL database is "root").
+ - **Confirm Password**: enter the password again.
+3. In the initialization pop-up window, click **OK**.
+![](https://qcloudimg.tencent-cloud.cn/raw/cd8d4f83c43cc23b23c50c2e85773473.png)
+4. Return to the instance list. After the status of the instance changes to **Running**, the instance can be used normally.
 
-4. Return to the instance list. After the status of the instance changes to "Running", the instance can be used normally.
-
-
-## Next Steps
-For public network you don't have to access from CVM. For more information, please see [Connecting to MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37788).
-
+## Subsequent Operations
+You can access the TencentDB for MySQL instance over both private and public networks from a Windows or Linux CVM instance. For more information, see [Connecting to MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37788).
