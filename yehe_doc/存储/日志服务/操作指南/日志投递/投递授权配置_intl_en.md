@@ -1,4 +1,4 @@
-To ship CLS logs to COS or Ckafka, you need to grant CLS the write permission to COS or Ckafka. In other words, you need to grant the unique CLS service role `CLS_QcsRole` the policy permission `QcloudCOSAccessForCLSRole` or `QcloudCKAFKAAccessForCLSRole`. This document describes how to configure the authorization under different use cases.
+To ship CLS(Cloud Log Service) logs to COS(Cloud Object Storage) or Ckafka, you need to grant CLS the write permission to COS or Ckafka. In other words, you need to grant the unique CLS service role `CLS_QcsRole` the policy permission `QcloudCOSAccessForCLSRole` or `QcloudCKAFKAAccessForCLSRole`. This document describes how to configure the authorization under different use cases.
 
 ## Console: Configuring Shipping Task by Collaborator or Sub-account
 
@@ -19,9 +19,9 @@ If you want to use collaborator or sub-account to successfully configure a shipp
 
 #### Configuring shipping task by collaborator or sub-account
 
-> Note:
->
-> Collaborator or sub-account must be authorized by root account to configure shipping task.
+
+>! 
+Collaborator or sub-account must be authorized by root account to configure shipping task.
 
 1. Log in to the [CLS](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou) console with collaborator or sub-account and select **Logset** in the left sidebar. Select a target logset to see the log topic list.
 2. Click **Go to CAM Console** when prompted for service role authorization for shipping configuration on the **Ship to COS** or **Ship to Ckafka** page.
@@ -39,8 +39,8 @@ If you want to configure a shipping task via API, grant the CLS service role `CL
 
 #### Configuring shipping task via API
 
-> Note:
->
-> The service role must be authorized for CLS log shipping.
+
+
+>! The service role must be authorized for CLS log shipping.
 
 Configure the shipping task parameters as instructed in the [Creating Shipping Task](https://intl.cloud.tencent.com/document/product/614/16890) or shipping to Kafka documentation.
