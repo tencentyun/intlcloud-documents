@@ -7,7 +7,7 @@ You need to configure a CLB listener with the following items:
 4. Real server. Bind a real server by selecting its IP and port. A service port, or backend port, is used by the real server to receive requests.
 
 ## Supported Protocol Types
-A CLB listener can listen to layer-4 and layer-7 requests on a CLB instance and route them to real servers for processing. The main difference between layer-4 CLB and layer-7 CLB is whether layer-4 or layer-7 protocol is used to forward traffic for load balancing of user requests.
+A CLB listener can listen to layer-4 and layer-7 requests on a CLB instance and route them to real servers for processing. The main difference between layer-4 CLB and layer-7 CLB is whether layer-4 or layer-7 protocol is used to forward traffic for load balancing of user requests. For example, layer-4 load balancing is performed for requests over TCP, UDP, and other layer-4 protocols, while layer-7 load balancing is performed for requests over HTTP, HTTPS, and other layer-7 protocols.
 - Layer-4 protocols: transport layer protocols that receive requests and forward traffic to the real server mainly via VIP and port.
 - Layer-7 protocols: application layer protocols that distribute traffic based on application layer information such as URL and HTTP header.
 
@@ -19,8 +19,8 @@ Tencent Cloud CLB supports request forwarding over the following protocols:
 - TCP SSL (transport layer)
 - HTTP (application layer)
 - HTTPS (application layer)
-
 >? TCP SSL listeners currently support public network CLB instances but not private network or classic CLB instances.
+
 
 <table>
 <thead>
@@ -28,34 +28,34 @@ Tencent Cloud CLB supports request forwarding over the following protocols:
 <th width="12%">Protocol Type</th>
 <th width="12%">Protocol</th>
 <th width="40%">Description</th>
-<th width="36%">Use Cases</th>
+<th width="36%">Use Case</th>
 </tr>
 <tr>
 <td rowspan="3">Layer-4 protocol</td>
 <td>TCP</td>
 <td>Connection-oriented and reliable transport layer protocol:<li>The source and destination ends must perform a three-way handshake to establish a connection before data transfer.</li><li>Client IP (source IP)-based session persistence is supported.</li><li>The client IP can be found at the network layer.</li><li>The server can directly obtain the client IP.</li></td>
-<td>It is suitable for scenarios that have high requirements for reliability and data accuracy but relatively low requirements for transfer speed, such as file transfer, receiving and sending emails, and remote login. <br>For more information, please see <a href="https://intl.cloud.tencent.com/document/product/214/32517">Configuring a TCP Listener</a>.</td>
+<td>It is suitable for scenarios that have high requirements for reliability and data accuracy but relatively low requirements for transfer speed, such as file transfer, receiving and sending emails, and remote login. <br>For more information, see <a href="https://intl.cloud.tencent.com/document/product/214/32517">Configuring a TCP Listener</a>.</td>
 </tr>
 <tr>
 <td>UDP</td>
 <td>Connection-less transport layer protocol:<li>The source and destination ends do not establish a connection, nor maintain the connection status. </li><li>Each UDP connection is point-to-point. </li><li>One-to-one, one-to-many, many-to-one, and many-to-many communications are supported.</li><li>Client IP (source IP)-based session persistence is supported.</li><li>The server can directly obtain the client IP.</li></td>
-<td>It is suitable for scenarios that have high requirements for transfer efficiency but relatively low requirements for accuracy, such as instant messaging and online videos. <br>For more information, please see <a href="https://intl.cloud.tencent.com/document/product/214/32518">Configuring a UDP Listener</a>.</td>
+<td>It is suitable for scenarios that have high requirements for transfer efficiency but relatively low requirements for accuracy, such as instant messaging and online videos. <br>For more information, see <a href="https://intl.cloud.tencent.com/document/product/214/32518">Configuring a UDP Listener</a>.</td>
 </tr>
 <tr>
 <td>TCP SSL</td>
 <td>Secure TCP: <li>TCP SSL listeners support configuring certificates to prevent unauthorized access requests.</li><li>Unified certificate management is provided for CLB to implement decryption.</li><li>One-way and mutual authentications are supported.</li><li>The server can directly obtain the client IP.</li></td>
-<td>It is suitable for scenarios that have high requirements for security when TCP is used and supports TCP-based custom protocols. <br>For more information, please see <a href="https://intl.cloud.tencent.com/document/product/214/32519">Configuring a TCP SSL Listener</a>.</td>
+<td>It is suitable for scenarios that have high requirements for security when TCP is used and supports TCP-based custom protocols. <br>For more information, see <a href="https://intl.cloud.tencent.com/document/product/214/32519">Configuring a TCP SSL Listener</a>.</td>
 </tr>
 <tr>
 <td rowspan="2">Layer-7 protocol</td>
 <td>HTTP</td>
 <td>Application layer protocol: <li>Forwarding based on requested domain name and URL is supported. </li><li>Cookie-based session persistence is supported.</li></td>
-<td>It is suitable for applications where request contents need to be identified, such as web applications, mobile apps, and so on. <br>For more information, please see <a href="https://intl.cloud.tencent.com/document/product/214/32515">Configuring an HTTP Listener</a>.</td>
+<td>It is suitable for applications where request contents need to be identified, such as web applications, mobile apps, and so on. <br>For more information, see <a href="https://intl.cloud.tencent.com/document/product/214/32515">Configuring an HTTP Listener</a>.</td>
 </tr>
 <tr>
 <td>HTTPS</td>
 <td>Encrypted application layer protocol:<li>Forwarding based on requested domain name and URL is supported.</li><li>Cookie-based session persistence is supported.</li><li>Unified certificate management is provided for CLB to implement decryption.</li><li>One-way and mutual authentications are supported.</li></td>
-<td>It is suitable for HTTP applications requiring encrypted transmission.<br>For more information, please see <a href="https://intl.cloud.tencent.com/document/product/214/32516">Configuring an HTTPS Listener</a>.</td>
+<td>It is suitable for HTTP applications requiring encrypted transmission.<br>For more information, see <a href="https://intl.cloud.tencent.com/document/product/214/32516">Configuring an HTTPS Listener</a>.</td>
 </tr>
 </tbody></table>
 
@@ -64,7 +64,7 @@ Tencent Cloud CLB supports request forwarding over the following protocols:
 <thead>
 <tr>
 <th width="16%">Port Type</th>
-<th>Notes</th>
+<th>Description</th>
 <th width="50%">Restrictions</th>
 </tr>
 </thead>
