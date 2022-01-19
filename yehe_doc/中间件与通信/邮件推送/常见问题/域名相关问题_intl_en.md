@@ -17,7 +17,7 @@
 [](id:que4) 
 ### Can I use an enterprise email domain as the SES email domain?
 To avoid conflicts between SPF and MX records, do not use your enterprise email domain as the SES email domain.
- If necessary, you need to merge their SPF record.
+If you have to use them together, you need to merge the SPF record. You can also create and use a second-level domain under your existing sender domain.
 
 [](id:que5) 
 ### Can the subdomains under the same primary domain be used in SES?
