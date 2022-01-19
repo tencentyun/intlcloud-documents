@@ -1,7 +1,9 @@
 ## Supported Platforms
 
 Proposed by Google, the WebRTC technology is well supported by Chrome (desktop), Edge (desktop), Firefox (desktop), and Safari (desktop and mobile), but poorly or not supported by other platforms such as browsers on Android.
-- If your application scenario is mainly in the education sector, consider using [TRTC SDK for Electron](https://intl.cloud.tencent.com/document/product/647/35097), which supports big and small (dual-channel) images, with more flexible screen sharing schemes and better recovery capabilities on poor network connections.
+
+
+
 
 <table>
 <tr>
@@ -265,15 +267,16 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 </table>
 
 >! 
-> 1. You can run the [TRTC Web SDK Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in a browser, for example, WebView, to test whether the environment fully supports WebRTC.
-> 2. Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support the TRTC SDK for web.
-> 3. [](id:attention3)Firefox for macOS is weak in terms of screen sharing and no solution has been found yet. We recommend that you use Chrome or Safari instead.
+>- You can run the [TRTC Web SDK Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in a browser, for example, WebView, to test whether the environment fully supports WebRTC.
+>- Due to H.264 copyright restrictions, if you want to run the TRTC SDK for web on Chrome or Chrome WebView-based browsers on Huawei devices, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable VP8 encoding/decoding.
+>- Firefox for macOS is weak in terms of screen sharing and no solution has been found yet. We recommend that you use Chrome or Safari instead.[](id:attention3)
+>- If you want to support dual-channel encoding for publishing from web, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## URL Protocol Support
 | Scenario     | Protocol             | Receive (Playback) | Send (Publish) | Share Screen | Remarks |
 | ------------ | :--------------- | :----------- | ------------ | -------- | ---- |
-| Commercial     | HTTPS        | Supported         | Supported         | Supported     | Recommended |
-| Commercial     | HTTP         | Supported         | Not supported       | Not supported   |   -   |
+| Production     | HTTPS        | Supported         | Supported         | Supported     | Recommended |
+| Production     | HTTP         | Supported         | Not supported       | Not supported   |   -   |
 | Local development | `http://localhost` | Supported         | Supported         | Supported     | Recommended |
 | Local development | `http://127.0.0.1` | Supported         | Supported         | Supported     |   -   |
 | Local development | `http://[local IP address]`  | Supported         | Not supported       | Not supported   |   -   |

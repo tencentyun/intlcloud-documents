@@ -1,7 +1,9 @@
 ## サポートするプラットフォーム
 
 WebRTCのテクノロジーはGoogleが初めて提唱し、現在、デスクトップ版Chromeブラウザ、デスクトップ版Edgeブラウザ、デスクトップ版Firefoxブラウザ、デスクトップ版Safariブラウザおよびモバイル版Safariブラウザでは比較的万全なサポートが提供されています。その他のプラットフォーム（Androidプラットフォームブラウザなど）のサポート状況は未だ不十分です。
-- ユーザーのユースケースが主に教育シーンである場合は、教師用端末では安定性がより優れた[Electron](https:/intl.cloud.tencent.com/document/product/647/35097) ソリューションの使用をお勧めし、大小2チャネル画面、よりフレキシブルなスクリーンシェアリング方法およびより強力な弱ネットワークリカバリー能力をサポートしています。
+
+
+
 
 <table>
 <tr>
@@ -265,9 +267,11 @@ WebRTCのテクノロジーはGoogleが初めて提唱し、現在、デスク�
 </table>
 
 >! 
-> 1. ブラウザで[TRTC Web SDK機能テスト画面](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を開けば、現在のブラウザがWebRTCのすべての機能をサポートしているかどうかチェックすることができます。例:WebViewなどのブラウザ環境。
-> 2. H.264の著作権の制限により、HuaweiシステムのChromeブラウザおよびChrome WebViewをコアとするブラウザでは、TRTC Web端末のSDKは正常な動作をサポートしていません。
-> 3. [](id:attention3)Mac OSでのFirefoxの画面共有機能はあまり効果的ではなく、現時点ではソリューションもありません。そのため、画面共有にはChromeまたはSafariの使用をお勧めします。
+>- ブラウザで[TRTC Web SDK機能テスト画面](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を開けば、現在のブラウザがWebRTCのすべての機能をサポートしているかどうかチェックすることができます。例:WebViewなどのブラウザ環境。
+>- H.264の著作権上の制限により、HuaweiシステムのChromeブラウザおよびChrome WebViewをカーネルとするブラウザでTRTC Web端末を正常に実行したい場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)し、VP8コーデックの有効化を申請してください。
+>- Mac OSでのFirefoxの画面共有機能はあまり効果的ではなく、現時点では対処方法もありません。そのため、画面共有にはChromeまたはSafariの使用をお勧めします。[](id:attention3)
+>- Web 端末でのプッシュ時のダブルサウンドチャンネルコーデックのサポートを希望される場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)し、WebRTCダブルサウンドチャンネルコーデックを申請してください。
+
 
 ## URLドメイン名プロトコルの制限
 | ユースケース     | プロトコル             | 受信（再生） | 送信（マイク・オン） | 画面共有 | 備考 |

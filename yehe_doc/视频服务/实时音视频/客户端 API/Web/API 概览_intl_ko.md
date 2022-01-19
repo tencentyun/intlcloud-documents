@@ -2,7 +2,8 @@
 
 WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저(데스크톱), Edge 브라우저(데스크톱), Firefox 브라우저(데스크톱), Safari 브라우저(데스크톱), Safari 브라우저(모바일)에서 비교적 완벽하게 지원되며, 기타 플랫폼(예: Android 브라우저)에 대한 지원은 완전하지 못할 수 있습니다.
 
-교육 시나리오의 경우, 교사는 안정성이 더 높은 [Electron](https://intl.cloud.tencent.com/document/product/647/35097) 솔루션 사용을 권장합니다. 크고 작은 듀얼 채널 화면이 지원되어 더 효율적으로 화면을 공유할 수 있으며 네트워크 신호가 약한 경우 복구 능력이 더욱 뛰어납니다.
+
+
 
 <table>
 <tr>
@@ -12,7 +13,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <th>SDK 버전 요구사항</th>
 <th>수신(재생)</th>
 <th>발송(마이크)</th>
-<th>화면 공유</th>
+<th width=19%>화면 공유</th>
 </tr>
 <tr>
 <td rowspan="11">Windows</td>
@@ -21,7 +22,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>-</td>
 <td>지원</td>
 <td>지원</td>
-<td>지원(Chrome72 이후 버전)</td>
+<td>Chrome72+ 버전 지원</td>
 </tr>
 <tr>
 <td>QQ 브라우저(데스크톱, WebKit 코어)</td>
@@ -32,15 +33,15 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>미지원</td>
 </tr>
 <tr>
-<td>Firefox 브라우저(데스크톱)</td>
+<td>데스크톱 Firefox 브라우저</td>
 <td>56+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
 <td>지원</td>
-<td>지원(Firefox66 이후 버전)</td>
+<td>Firefox66+ 버전 지원</td>
 </tr>
 <tr>
-<td>Edge 브라우저(데스크톱)</td>
+<td>데스크톱 Edge 브라우저</td>
 <td>80+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -69,10 +70,10 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>v4.7.0+</td>
 <td>지원</td>
 <td>지원</td>
-<td>지원(Opera60 이후 버전)</td>
+<td>Opera60+ 버전 지원</td>
 </tr>
 <tr>
-<td>360 Total Security 브라우저(데스크톱, 초고속 모드)</td>
+<td>360 Total Security 브라우저(데스크톱, 고속 모드)</td>
 <td>13+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -96,7 +97,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>미지원</td>
 </tr>
 <tr>
-<td>WeCom 내장 브라우저(데스크톱)</td>
+<td>WeChat 내장 브라우저(데스크톱)</td>
 <td>-</td>
 <td>-</td>
 <td>지원</td>
@@ -110,7 +111,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>-</td>
 <td>지원</td>
 <td>지원</td>
-<td>지원(Safari13 이후 버전)</td>
+<td>Safari13+ 버전 지원</td>
 </tr>
 <tr>
 <td>Chrome 브라우저(데스크톱)</td>
@@ -118,18 +119,18 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>-</td>
 <td>지원</td>
 <td>지원</td>
-<td>지원(Chrome72 이후 버전)</td>
+<td>Chrome72+ 버전 지원</td>
 </tr>
 <tr>
-<td>Firefox 브라우저(데스크톱)</td>
+<td>데스크톱 Firefox 브라우저</td>
 <td>56+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
 <td>지원</td>
-<td>지원(Firefox66 이후 버전)</td>
+<td>Firefox66+ 버전 지원<a href="#attention3">(주의[3])</a></td>
 </tr>
 <tr>
-<td>Edge 브라우저(데스크톱)</td>
+<td>데스크톱 Edge 브라우저</td>
 <td>80+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -142,7 +143,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>v4.7.0+</td>
 <td>지원</td>
 <td>지원</td>
-<td>지원(Opera60 이후 버전)</td>
+<td>Opera60+ 버전 지원</td>
 </tr>
 <tr>
 <td>WeChat 내장 브라우저(데스크톱)</td>
@@ -153,7 +154,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <td>미지원</td>
 </tr>
 <tr>
-<td>WeCom 내장 브라우저(데스크톱)</td>
+<td>WeChat 내장 브라우저(데스크톱)</td>
 <td>-</td>
 <td>-</td>
 <td>지원</td>
@@ -238,7 +239,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 </tr>
 <tr>
 <td>iOS 11.1.2+</td>
-<td>Safari 브라우저(모바일)</td>
+<td>모바일 Safari 브라우저</td>
 <td>11+</td>
 <td>-</td>
 <td>지원</td>
@@ -266,18 +267,20 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 </table>
 
 >! 
->- 브라우저에서 [TRTC Web SDK 기능 테스트 페이지](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)를 열어 현재 브라우저에서 WebRTC의 모든 기능이 지원되는지 테스트할 수 있습니다(예: WebView 등 브라우저 환경).
->- H.264 버전 권한 제한으로 인해 Huawei 시스템의 Chrome 브라우저와 Chrome WebView 코어 브라우저에서는 TRTC Web SDK가 정상적으로 실행되지 않습니다.
+>- 브라우저에서 [TRTC Web SDK 기능 테스트 페이지](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)를 열어 WebRTC의 모든 기능이 지원되는지 테스트할 수 있습니다(예: WebView 등 브라우저 환경).
+>- H.264 버전 권한 제한으로 인해, Huawei 시스템의 Chrome 브라우저와 Chrome WebView 커널의 브라우저에서 TRTC Web을 정상 실행하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 VP8 코딩/디코딩 활성화를 신청하십시오.
+>- Mac OS에서 Firefox의 화면 공유 효과가 상대적으로 낮고 아직 해결책이 없는 상황이므로 Chrome 또는 Safari를 통한 화면 공유를 권장합니다.[](id:attention3)
+>- Web 스트리밍 시 듀얼 사운드 채널 인코딩 지원을 원하시면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 WebRTC 듀얼 사운드 채널 인코딩을 신청하십시오.
 
 ## URL 도메인 프로토콜 제한
 | 응용 시나리오     | 프로토콜             | 수신(재생) | 발송(마이크 켜짐) | 화면 공유 | 비고 |
 | ------------ | :--------------- | :----------- | ------------ | -------- | ---- |
-| 프로덕션 환경     | https 프로토콜        | 지원         | 지원         | 지원     | 권장 |
-| 프로덕션 환경     | http 프로토콜         | 지원         | 미지원       | 미지원   |      |
-| 로컬 개발 환경 | http://localhost | 지원         | 지원         | 지원     | 권장 |
-| 로컬 개발 환경 | http://127.0.0.1 | 지원         | 지원         | 지원     |      |
-| 로컬 개발 환경 | http://[로컬 컴퓨터 IP]  | 지원         | 미지원       | 미지원   |      |
-| 로컬 개발 환경 | file:///         | 지원         | 지원         | 지원     |      |
+| 프로덕션 환경     | HTTPS 프로토콜        | 지원         | 지원         | 지원     | 권장 |
+| 프로덕션 환경     | HTTP 프로토콜         | 지원         | 미지원       | 미지원   | -     |
+| 로컬 개발 환경 | `http://localhost` | 지원         | 지원         | 지원     | 권장 |
+| 로컬 개발 환경 | `http://127.0.0.1` | 지원         | 지원         | 지원     |  -    |
+| 로컬 개발 환경 | `http://[로컬 컴퓨터IP]`  | 지원         | 미지원       | 미지원   |  -    |
+| 로컬 개발 환경 | `file:///`         | 지원         | 지원         | 지원     |   -   |
 
 ## API 사용 튜토리얼
 자세한 API 사용법은 다음 튜토리얼을 참고하십시오.
@@ -291,7 +294,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 | 로컬 오디오/비디오 동적 활성화/비활성화 | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-15-basic-dynamic-add-video.html)    |
 | 화면 공유           | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-basic-screencast.html)           |
 | 볼륨 감지       | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html)        |
-| 사용자 정의 수집 및 사용자 정의 재생 렌더링 | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-20-advanced-customized-capture-rendering.html) |
+| 사용자 정의 수집 및 사용자 정의 재생 렌더링 | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-20-advanced-customized-capture-rendering.html) |
 | 방의 업스트림 사용 인원 제한     | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-04-info-uplink-limits.html)        |
 | 배경 음악/음향 효과 구현     | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-22-advanced-audio-mixer.html)          |
 
@@ -304,7 +307,7 @@ TRTC는 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html)
 
 | API               | 설명               |
 | ----------------------------------------- | ---------------------------------------- |
-| [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.VERSION)         | TRTC Web SDK 버전 번호.           |
+| [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.VERSION)         | TRTC Web SDK 버전 넘버.           |
 | [checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) | 브라우저의 TRTC Web SDK 호환 여부 확인. 호환되지 않는 경우 사용자에게 최신 버전의 Chrome 브라우저 다운로드를 권고하시기 바랍니다.          |
 | [isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.isScreenShareSupported)   | 브라우저의 화면 공유 지원 여부 확인. 화면 공유 스트림을 생성하기 전에 이 메소드를 호출해 현재 브라우저의 화면 공유 지원 여부를 확인하십시오.               |
 | [getDevices](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getDevices)           | 미디어 입/출력 장치 목록 반환.             |
@@ -412,7 +415,7 @@ LocalStream 로컬 오디오/비디오 스트림은 [createStream](https://web.s
 
 ## RtcError
 
-RtcError 객체.
+RtcError 객체
 
 | API          | 설명         |
 | ------------------------------------- | ------------ |
