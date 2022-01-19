@@ -29,7 +29,7 @@ LogListener 快速诊断工具可以快速诊断 LogListener 是否启动、心�
 
 ####  LogListener 心跳异常
 
-  如果出现 “[ERROR] check loglistener heareat fail” 字样，表示 LogListener 心跳异常。
+如果出现 “[ERROR] check loglistener heareat fail” 字样，表示 LogListener 心跳异常。
 
 
 
@@ -37,21 +37,21 @@ LogListener 快速诊断工具可以快速诊断 LogListener 是否启动、心�
 
 - 网络异常
 
-  ```shell
-  telnet <cls domain name> 80
-  ```
+```shell
+telnet <cls domain name> 80
+```
 
-  检查网络环境是否连通，CLS 服务域名请参见 [可用地域](https://intl.cloud.tencent.com/document/product/614/18940) 文档。 
+检查网络环境是否连通，CLS 服务域名请参见 [可用地域](https://intl.cloud.tencent.com/document/product/614/18940) 文档。 
 
 - 密钥信息错误
 
-  检查 LogListener 密钥信息是否正确，进入到 LogListener 安装目录执行如下命令。
+检查 LogListener 密钥信息是否正确，进入到 LogListener 安装目录执行如下命令。
 
-     ```shell
-  grep secret etc/loglistener.conf
-     ```
+```shell
+grep secret etc/loglistener.conf
+```
 
-  ![](https://main.qcloudimg.com/raw/6e0d20896aa1e8293ae74084ed5752d2.jpg)
+![](https://main.qcloudimg.com/raw/6e0d20896aa1e8293ae74084ed5752d2.jpg)
 
 
 #### 2. 检查机器组 IP 配置
@@ -64,5 +64,5 @@ grep group_ip etc/loglistener.conf
 
 ![](https://main.qcloudimg.com/raw/4afe8d3a3b7c4f16e6795e35544a38e7.png)
 
-登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，单击【机器组管理】，查看机器组配置的 IP 地址，机器组所配置的 IP 地址必须与 LogListener 获取的 IP 地址完全一致。
+登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，单击**机器组管理**，查看机器组配置的 IP 地址，机器组所配置的 IP 地址必须与 LogListener 获取的 IP 地址完全一致。
 ![](https://main.qcloudimg.com/raw/888959e938a1dd3ec8a3f6c5b4818a56.png)
