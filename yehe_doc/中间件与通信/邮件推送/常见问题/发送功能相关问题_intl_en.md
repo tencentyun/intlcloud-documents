@@ -1,6 +1,7 @@
 [](id:que1) 
+
 ### Does SES provide SMTP endpoints?
-Currently, SES does not support SMTP nor provide SMTP APIs. SES supports TencentCloud API. We will try to support SMTP in the future.
+Yes. For more information, see the [SMTP documentation](https://intl.cloud.tencent.com/document/product/1084/44458)
 
 [](id:que2) 
 ### Can I use SES to send emails from my existing application?
