@@ -37,21 +37,20 @@ Many causes can lead to a LogListener heartbeat exception. Possible causes inclu
 
 - Network error
 
-  ```shell
-  telnet <cls domain name> 80
-  ```
+```shell
+telnet <cls domain name> 80
+```
 
   Check the network connectivity. For more information about the CLS domain name, see [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940). 
 
 - Incorrect key
 
-  To check the LogListener key, access the LogListener installation directory and run the following command.
+To check the LogListener key, access the LogListener installation directory and run the following command.
 
-     ```shell
-  grep secret etc/loglistener.conf
-     ```
-
-  ![](https://main.qcloudimg.com/raw/6e0d20896aa1e8293ae74084ed5752d2.jpg)
+ ```shell
+grep secret etc/loglistener.conf
+```
+![](https://main.qcloudimg.com/raw/6e0d20896aa1e8293ae74084ed5752d2.jpg)
 
 
 #### 2. Check for the IP address of the machine group
