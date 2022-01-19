@@ -16,10 +16,12 @@
 ### 步骤1：选择企业认证
 1. 登录腾讯云控制台，进入 [账号信息](https://console.cloud.tencent.com/developer) 页面，选择【基本信息】>【认证状态】，单击【提交认证】。
     ![image-20200701205840709](https://main.qcloudimg.com/raw/13e63c6eb445cdb3ca6b144bae3237dd.png)
+    
+2. 在实名认证前请先阅读以下条款，如果同意请点击【接受】。
 
-  
+    ![img](https://qcloudimg.tencent-cloud.cn/raw/6d13131ec31ea69ea9ffbd23bdae446a.png)
 
-2. 选择【企业认证】
+3. 选择【企业认证】
 
 ![image-20200701174758776](https://main.qcloudimg.com/raw/cf47265fb6a0837b41bdeef45a8b615e.png)
 

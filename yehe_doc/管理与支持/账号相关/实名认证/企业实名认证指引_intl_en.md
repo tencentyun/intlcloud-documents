@@ -17,9 +17,11 @@ You need to have a Tencent Cloud account. If you don't have an account, you can 
 1. Log in to the Tencent Cloud Console and go to [Account Information](https://console.cloud.tencent.com/developer), navigate to **Basic Information** > **Verification Status**, and click **Submit for Verification**.
     ![image-20200701205840709](https://main.qcloudimg.com/raw/13e63c6eb445cdb3ca6b144bae3237dd.png)
 
-  
+2. Read and agree to the Terms of Service.
 
-2. Select **Enterprise Verification**.
+    ![img](https://qcloudimg.tencent-cloud.cn/raw/6d13131ec31ea69ea9ffbd23bdae446a.png)
+
+3. Select **Enterprise Verification**.
 
 ![image-20200701174758776](https://main.qcloudimg.com/raw/cf47265fb6a0837b41bdeef45a8b615e.png)
 
