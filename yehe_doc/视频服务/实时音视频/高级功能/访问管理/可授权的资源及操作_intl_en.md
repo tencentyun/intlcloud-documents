@@ -4,11 +4,12 @@ In essence, CAM enables you to **allow or forbid specified accounts to access ce
 
 If you need to manage access to TRTC, please log in to the console with a Tencent Cloud [root account](https://intl.cloud.tencent.com/document/product/598/34899) and use a [preset policy](https://intl.cloud.tencent.com/document/product/647/39550) or a [custom policy](https://intl.cloud.tencent.com/document/product/647/39551) to grant permissions.
 
+
 ## Type of Manageable Resources
 - TRTC access management allows you to control access to [applications](https://intl.cloud.tencent.com/document/product/647/37714).
 
-<span id="Support"></span> 
-## APIs Supporting Resource-Level Authorization
+
+## APIs Supporting Resource-Level Authorization[](id:Support)
 Barring a [few exceptions](#n_Support), all API actions listed in this section support resource-level authorization. Authorization policies related to these API actions use the same [**syntax conventions**](https://intl.cloud.tencent.com/document/product/647/39551#grammar). See below for details.
 - Authorizing access to all applications: `qcs::trtc::uin/${uin}:sdkappid/*`
 - Authorizing access to single applications: `qcs::trtc::uin/${uin}:sdkappid/${SdkAppId}`.
@@ -16,18 +17,24 @@ Barring a [few exceptions](#n_Support), all API actions listed in this section s
 #### Server API actions
 | API                                                     | Category     | Description               |
 | ------------------------------------------------------------ | ------------ | ---------------------- |
-| [DismissRoom](https://intl.cloud.tencent.com/document/product/647/34269) | Room management     | Closes a room.               |
+| [DismissRoom](https://intl.cloud.tencent.com/document/product/647/39631) | Room management     | Closes a room.               |
 | [RemoveUser](https://intl.cloud.tencent.com/document/product/647/34268) | Room management     | Removes a user.               |
+|[RemoveUserByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39630)	| Room management	| Removes a user (string room ID). |
+|[DismissRoomByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39631)	| Room management	| Closes a room (string room ID). |
 | [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) | Stream mixing and transcoding     | Starts On-Cloud MixTranscoding.           |
 | [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) | Stream mixing and transcoding     | Stops On-Cloud MixTranscoding.       |
+| [StartMCUMixTranscodeByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39637) | Stream mixing and transcoding | Starts On-Cloud MixTranscoding (string room ID). |
+| [StopMCUMixTranscodeByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39636) | Stream mixing and transcoding | Stops On-Cloud MixTranscoding (string room ID). |
 | [CreateTroubleInfo](https://intl.cloud.tencent.com/document/product/647/37764) | Call quality monitoring | Generates information about exceptional conditions.           |
 | [DescribeAbnormalEvent](https://intl.cloud.tencent.com/document/product/647/37763) | Call quality monitoring | Queries abnormal events.       |
 | [DescribeCallDetail](https://intl.cloud.tencent.com/document/product/647/36759) | Call quality monitoring | Queries user list and call metrics. |
 | [DescribeHistoryScale](https://intl.cloud.tencent.com/document/product/647/36758) | Call quality monitoring | Queries room and user numbers in the past.   |
-| [DescribeRealtimeNetwork](https://intl.cloud.tencent.com/document/product/647) | Call quality monitoring | Queries network conditions in real time.       |
-| [DescribeRealtimeQuality](https://intl.cloud.tencent.com/document/product/647) | Call quality monitoring | Queries quality data in real time.       |
-| [DescribeRealtimeScale](https://intl.cloud.tencent.com/document/product/647) | Call quality monitoring | Queries room and user numbers in real time.           |
+| DescribeRealtimeNetwork | Call quality monitoring | Queries network conditions in real time.       |
+| DescribeRealtimeQuality | Call quality monitoring | Queries quality data in real time.       |
+| DescribeRealtimeScale | Call quality monitoring | Queries room and user numbers in real time.           |
 | [DescribeRoomInformation](https://intl.cloud.tencent.com/document/product/647/36754) | Call quality monitoring | Queries room list.           |
+| [DescribeUserInformation](https://intl.cloud.tencent.com/document/product/647/39096) | Call quality monitoring | Queries the list of historical users. |
+
 
 
 
@@ -115,38 +122,41 @@ Barring a [few exceptions](#n_Support), all API actions listed in this section s
 <tr>
 <td>CreateSpearConf</td>
 <td>TRTC console: <a href="https://console.cloud.tencent.com/trtc/app">Application Management &gt; Image Settings</a></td>
-<td>Adds an image setting. This module is available only in iLiveSDK 1.9.6 and earlier versions. For TRTC SDK 6.0 and later versions, see <a href="https://intl.cloud.tencent.com/document/product/647/35153">Setting Image Quality</a>.</td>
+<td>Adds an image setting. This module is available only in iLiveSDK 1.9.6 and earlier versions. For TRTC SDK 6.0 and later versions, see <a href="https://intl.cloud.tencent.com/document/product/647/35153">Setting Image Quality</a></td>
 </tr>
 <tr>
 <td>DeleteSpearConf</td>
 <td>TRTC console: <a href="https://console.cloud.tencent.com/trtc/app">Application Management &gt; Image Settings</a></td>
-<td>Deletes an image setting. This module is available only in iLiveSDK 1.9.6 and earlier versions. For TRTC SDK 6.0 and later versions, see <a href="https://intl.cloud.tencent.com/document/product/647/35153">Setting Image Quality</a>.</td>
+<td>Deletes an image setting. This module is available only in iLiveSDK 1.9.6 and earlier versions. For TRTC SDK 6.0 and later versions, see <a href="https://intl.cloud.tencent.com/document/product/647/35153">Setting Image Quality</a></td>
 </tr>
 <tr>
 <td>ModifySpearConf</td>
 <td>TRTC console: <a href="https://console.cloud.tencent.com/trtc/app">Application Management &gt; Image Settings</a></td>
-<td>Modifies image settings. This module is available only in iLiveSDK 1.9.6 and earlier versions. For TRTC SDK 6.0 and later versions, see <a href="https://intl.cloud.tencent.com/document/product/647/35153">Setting Image Quality</a>.</td>
+<td>Modifies image settings. This module is available only in iLiveSDK 1.9.6 and earlier versions. For TRTC SDK 6.0 and later versions, see <a href="https://intl.cloud.tencent.com/document/product/647/35153">Setting Image Quality</a></td>
 </tr>
 <tr>
 <td>DescribeSpearConf</td>
 <td>TRTC console: <a href="https://console.cloud.tencent.com/trtc/app">Application Management &gt; Image Settings</a></td>
-<td>Gets image settings. This module is available only in iLiveSDK 1.9.6 and earlier versions. For TRTC SDK 6.0 and later versions, see <a href="https://intl.cloud.tencent.com/document/product/647/35153">Setting Image Quality</a>.</td>
+<td>Gets image settings. This module is available only in iLiveSDK 1.9.6 and earlier versions. For TRTC SDK 6.0 and later versions, see <a href="https://intl.cloud.tencent.com/document/product/647/35153">Setting Image Quality</a></td>
 </tr>
 <tr>
 <td>ToggleSpearScheme</td>
 <td>TRTC console: <a href="https://console.cloud.tencent.com/trtc/app">Application Management &gt; Image Settings</a></td>
-<td>Switches image setting scenarios. This module is available only in iLiveSDK 1.9.6 and earlier versions. For TRTC SDK 6.0 and later versions, see <a href="https://intl.cloud.tencent.com/document/product/647/35153">Setting Image Quality</a>.</td>
+<td>Switches image setting scenarios. This module is available only in iLiveSDK 1.9.6 and earlier versions. For TRTC SDK 6.0 and later versions, see <a href="https://intl.cloud.tencent.com/document/product/647/35153">Setting Image Quality</a></td>
 </tr>
 </tbody></table>
 
-<span id="n_Support"></span> 
-## APIs Not Supporting Resource-Level Authorization
+
+## APIs Not Supporting Resource-Level Authorization[](id:n_Support)
 Due to special restrictions, the following APIs do not support resource-level authorization.
 
-### Server API actions
+#### Server API actions
 |API|Category|Description|Restriction|
 |---|---|---|---|
 |[DescribeDetailEvent](https://intl.cloud.tencent.com/document/product/647/37762)|Call quality monitoring|Queries specific events.|The parameters entered do not include `SDKAppID`, making resource-level authorization impossible.|
+| [DescribeRecordStatistic](https://intl.cloud.tencent.com/document/product/647/42972) | Other APIs | Queries the billing period of on-cloud recording. | For business reasons, resource-level authorization is not supported currently. |
+| [DescribeTrtcInteractiveTime](https://intl.cloud.tencent.com/document/product/647/42971) | Other APIs | Queries the billing period for audio/video interactive features. | For business reasons, resource-level authorization is not supported currently. |
+| [DescribeTrtcMcuTranscodeTime](https://intl.cloud.tencent.com/document/product/647/42970) | Other APIs | Queries the billing period of relayed transcoding. | For business reasons, resource-level authorization is not supported currently. |
 
 ### Console API actions
 <table>
@@ -159,6 +169,15 @@ Due to special restrictions, the following APIs do not support resource-level au
 </ul></td>
 <td>Gets usage statistics.</td>
 <td>This API returns the statistics of all `SDKAppIDs`. Limiting a query to specific `SDKAppIDs` will lead to an error. You can use `DescribeAppStatList` to specify a list of applications to query.</td>
+</tr>
+<tr>
+<td>DescribeDurationPackages</td>
+<td>TRTC console:<ul style="margin:0">
+<li> <a href="https://console.cloud.tencent.com/trtc">Overview</a>
+<li><a href="https://console.cloud.tencent.com/trtc/package">Package Management</a>
+</ul></td>
+<td>Gets the list of prepaid packages.</td>
+<td>A prepaid package is shared by all TRTC applications under the same Tencent Cloud account. There is no `SDKAppID` parameter in the package information, so resource-level authorization cannot be performed.</td>
 </tr>
 <tr>
 <td>GetUserList</td>
@@ -204,6 +223,12 @@ Due to special restrictions, the following APIs do not support resource-level au
 <td>TRTC console: <a href="https://console.cloud.tencent.com/trtc/app">Application Management &gt; Function Configuration</a></td>
 <td>Enables/Disables relayed push.</td>
 <td>The parameters entered do not include `SDKAppID`, making resource-level authorization impossible. You can use `DescribeAppStatList` to specify a list of applications to query.</td>
+</tr>
+<tr>
+<td>RemindBalance</td>
+<td>TRTC console: <a href="https://console.cloud.tencent.com/trtc/package">Package Management</a></td>
+<td>Gets the balance alarm information of a prepaid package.</td>
+<td>A prepaid package is shared by all TRTC applications under the same Tencent Cloud account. There is no `SDKAppID` parameter in the package information, so resource-level authorization cannot be performed.</td>
 </tr>
 </tbody></table>
 
