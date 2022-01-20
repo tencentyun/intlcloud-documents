@@ -2,13 +2,13 @@
 
 The `AS` clause is used to specify an alias for a column (KEY).
 
-## AS Syntax Format
+## Syntax Format
 
 ```plaintext
 * | SELECT column name (KEY) AS  alias
 ```
 
-## AS Syntax Sample
+## Syntax Sample
 
 
 #### Counting access requests
