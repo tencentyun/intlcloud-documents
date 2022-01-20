@@ -2,7 +2,7 @@ The [LEB SDK](https://intl.cloud.tencent.com/document/product/1071/41875) is a m
 
 ## SDK and Source Code Download
 
-The LEB SDK has been integrated into the MLVB SDK. You can use the [Live](https://intl.cloud.tencent.com/document/product/1071/38150), [ALL](https://intl.cloud.tencent.com/document/product/1071/38150), or [Enterprise](https://intl.cloud.tencent.com/document/product/1071/38150) edition of the MLVB SDK to quickly enable playback on mobile devices with millisecond latency. For details, see [SDK Download](https://intl.cloud.tencent.com/document/product/1071/38150).
+The LEB SDK has been integrated into the MLVB SDK. You can use the [MLVB International](https://intl.cloud.tencent.com/document/product/1071/38150) edition of the MLVB SDK to quickly enable playback on mobile devices with millisecond latency. For details, see [SDK Download](https://intl.cloud.tencent.com/document/product/1071/38150).
 
 
 ## Free Demo
