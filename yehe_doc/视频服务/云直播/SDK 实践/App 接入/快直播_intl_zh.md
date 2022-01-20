@@ -2,7 +2,7 @@
 
 ## SDK 与源码下载
 
-快直播 SDK 已集成至移动直播 SDK，可通过 [互动直播版（Live）](https://intl.cloud.tencent.com/document/product/1071/38150)、[全功能版（ALL）](https://intl.cloud.tencent.com/document/product/1071/38150) 、 [企业版（Enterprise）](https://intl.cloud.tencent.com/document/product/1071/38150) 实现毫秒级超低延迟拉流能力， 助您快速上线手机超低延迟直播功能 ，具体请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/1071/38150)。
+快直播 SDK 已集成至移动直播 SDK，可通过国际版（International） 实现毫秒级超低延迟拉流能力， 助您快速上线手机超低延迟直播功能 ，具体请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/1071/38150)。
 
 
 ## Demo 体验
