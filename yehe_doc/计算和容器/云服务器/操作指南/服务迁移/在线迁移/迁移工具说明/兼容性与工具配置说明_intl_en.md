@@ -192,19 +192,12 @@ For migration via tool, the `client.json` configuration file is as described bel
 	<td>Integer</td>
 	<td>Yes</td>
 	<td>Migration mode parameter, which is public network migration mode by default with the value of <code>0</code>. Valid values: <code>0</code> (<a href="#publicMigration">public network migration mode</a>), <code>1</code> (<a href="#Scenario1">private network migration mode: scenario 1</a>), <code>2</code> (<a href="#Scenario2">private network migration mode: scenario 2</a>), <code>3</code> (<a href="#Scenario3">private network migration mode: scenario 3</a>). For more information on private network migration, see <a href="https://intl.cloud.tencent.com/document/product/213/44341">Private Network Migration</a>.</td>
-	<code>0</code>，取值范围：<code>0</code>（
-	<a href="#publicMigration">公网迁移模式</a>）、<code>1</code>（
-	<a href="#Scenario1">内网迁移模式：场景1</a>）、<code>2</code>（
-	<a href="#Scenario2">内网迁移模式：场景2</a>）、<code>3</code>（
-	<a href="#Scenario3">内网迁移模式：场景3</a>），内网迁移详见 <a href="https://intl.cloud.tencent.com/document/product/213/44341">内网迁移教程</a>。</td>
   </tr>
   <tr>
 	<td>Client.Extra.IgnoreCheck</td>
 	<td>Bool</td>
 	<td>No</td>
 	<td>The default value is <code>false</code>, that is, the migration tool automatically checks the source server environment upon startup by default. To skip the check, set this parameter to <code>true</code>.</td> 
-	<code>false</code>，迁移工具默认在工具开始运行时自动检查源端主机环境，如果需要略过检查，请设置为 
-	<code>true</code>。</td>
   </tr>
   <tr>
 	<td>Client.Rsync.BandwidthLimit</td>
@@ -217,9 +210,6 @@ For migration via tool, the `client.json` configuration file is as described bel
 	<td>Bool</td>
 	<td>No</td>
 	<td>Transfer check. Setting it to <code>true</code> can enhance the transfer consistency check, but will increase the CPU load of the source server and slow down the transfer. The default value is <code>false</code>, which indicates no check.</td> 
-	<code>true</code> 后可加强传输一致性校验，但会提高源端主机 CPU
-	负载和减慢传输速度。默认值为 
-	<code>false</code>，即默认不校验。</td>
   </tr>
 </table>
 
