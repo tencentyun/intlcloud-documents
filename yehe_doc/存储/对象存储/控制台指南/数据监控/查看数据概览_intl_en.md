@@ -13,7 +13,7 @@ You can go to the **Statistic** page in the COS console to view the number of bu
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5), click **Statistic** > **Basic Statistic** on the left sidebar.
 2. On the **Basic Statistic** page, you can view the following information:
-   ![](https://main.qcloudimg.com/raw/036d7c5f1e31fa9f69507733c2a4d8d9.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/7cdb582b1cbb4859ffce7cf69d23b212.png)
    - **Number of Buckets**: number of buckets that have been created                                     
     - **Total Objects**: number of objects that have been created in all buckets. You can view the number of objects by storage class.                      
     - **Average Daily Usage for This Month**: the calculation formula is as follows: Current storage usage/Number of days in the month. You can view the average daily usage for this month by storage class (e.g., STANDARD, STANDARD_IA, and ARCHIVE).
@@ -31,3 +31,4 @@ You can go to the **Statistic** page in the COS console to view the number of bu
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5), click **Bucket List** on the left sidebar, and click **Statistical Data**.
 2. On the **Statistical Data** page,  you can view the bucket data such as storage usage, data retrievals, traffic, and request count within a specified period of time.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/c7fde647e85988a422b71fdd958f8d1b.png)
