@@ -32,9 +32,9 @@
 3. 找到对象所在的存储桶，单击其存储桶名称，进入存储桶管理页面。
 4. 在左侧导航栏中，选择【文件列表】，进入文件列表页面。
 5. 开启【列出历史版本】开关，找到您需要还原的对象。在其右侧操作栏下，单击【还原】。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/01cf0bbcee0fd999f6ef482516e3625a.png)
 6. 在还原文件弹框中，检查还原对象的版本信息。确认无误后，单击【确定】即可。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/9a2bdf5f5c15f0b6e1edb15dbd427c5b.png)
 7. 至此，还原对象操作完成。在文件列表中可以看到，历史版本已被成功还原。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/11393ba7760f0ad8deffbc61acf7cd36.png)
 
