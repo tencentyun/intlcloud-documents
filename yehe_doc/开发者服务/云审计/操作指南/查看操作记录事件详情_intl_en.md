@@ -7,15 +7,20 @@ This document describes how to view the event details in operation records and t
 2. On the operation record list page, you can view the operation records of an event in the operation record list as shown below:
 ![](https://main.qcloudimg.com/raw/05997e3350e76763e3efe70e6610307f.png)
 The username indicates the event operator. It is divided into three types according to the following operation types:
- - **Operation by a root account**: "root" is displayed as the username.
+ - **Operation by a root account**: “root” is displayed as the username.
  - **Operation by a sub-user**: the sub-user name is displayed as the username. If the sub-user has been deleted, the sub-user ID will be displayed as the username.
  - **Operation by a role**: the role name is displayed as the username. If the role has been deleted, the role ID will be displayed as the username.
-To view more information of a user, you can click the username to go to the user details page.
+You can go to the user details page by clicking the username to view more user information.
 
 ### Viewing event details
 1. If you need to view the details of an event, you can click the information in the list. You can also click `+` before the information and click **View Event** in the expanded module as shown below:
 ![](https://main.qcloudimg.com/raw/2e0478f26d9f947cb6929467bc20a4d9.png)
-2. Then, you can view the event details in the module on the right. For more information on field descriptions, please see [Appendix](#appendix).
+<dx-alert infotype="explain" title="">
+You can check whether the event was successfully executed through the “CAM Error Code” field. If this field is empty, the event was successfully executed; otherwise, it means the execution failed. For failure details, check the `errorCode` and `errorMessage` fields in the event details.
+</dx-alert>
+2. Then you can view the event details in the module on the right. For more information on field descriptions, see [Appendix](#appendix).
+
+
 
 
 
@@ -62,7 +67,7 @@ The table below displays the field descriptions of the event details in an opera
 <td>eventType</td><td>String</td>
 <td>ConsoleCall</td>
 <td>
-<ul class="params">
+<ul  class="params">
 <li>ConsoleCall means the request is initiated by the Tencent Cloud console.</li>
 <li>ApiCall means the request is initiated by the direct call of cloud APIs.</li>
 </ul>
@@ -70,7 +75,7 @@ The table below displays the field descriptions of the event details in an opera
 </tr>
 <tr>
 <td>eventTime</td><td>int</td>
-<td>1621411761</td><td>The time when an event occurs (timestamp)</td>
+<td>1621411761</td><td>Event occurrence time (timestamp)</td>
 </tr>
 <tr>
 <td>sourceIPAddress</td><td>String</td>
@@ -78,11 +83,11 @@ The table below displays the field descriptions of the event details in an opera
 </tr>
 <tr>
 <td>resourceType</td><td>String</td>
-<td>cam</td><td>Tencent Cloud service name in the request</td>
+<td>cam</td><td>The requested Tencent Cloud service name</td>
 </tr>
 <tr>
 <td>eventName</td><td>String</td>
-<td>GetPolicy</td><td>Event name in the request</td>
+<td>GetPolicy</td><td>The requested event name</td>
 </tr>
 <tr>
 <td>eventSource</td><td>String</td>
@@ -90,15 +95,15 @@ The table below displays the field descriptions of the event details in an opera
 </tr>
 <tr>
 <td>requestParameters</td><td>-</td>
-<td>N/A</td><td>Parameter information of the request</td>
+<td>N/A</td><td>The requested parameter information</td>
 </tr>
 <tr>
 <td>resourceName</td><td>String</td>
-<td>policy/7934***</td><td>Resource in the request</td>
+<td>policy/7934***</td><td>The requested resource</td>
 </tr>
 </table>
 
-The table below displays the requester's identity descriptions.
+The table below displays the requester’s identity descriptions.
 <table>
 <tr>
 <th width="20%">Name</th><th width="9%">Type</th>
@@ -108,7 +113,7 @@ The table below displays the requester's identity descriptions.
 <td>principalId</td><td>String</td>
 <td>100015591***</td>
 <td>
-<ul class="params">
+<ul  class="params">
 Operator information:
 <li>Operation by a root account: the root account ID</li>
 <li>Operation by a sub-user: the sub-user ID</li>
