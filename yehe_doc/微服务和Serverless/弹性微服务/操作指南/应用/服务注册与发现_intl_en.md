@@ -6,19 +6,19 @@ This document describes how to register and discover a Spring Cloud application 
 ### Operations in console
 
 1. Log in to the [TEM console](https://console.cloud.tencent.com/tem).
-2. On the left sidebar, click **Application List** to enter the application list page and select your application deployment region.
-3. Click **Create** to access the application creation page, enter the application information, and deploy the application as instructed in [Creating and Deploying Application](https://cloud.tencent.com/document/product/1371/53294).
+2. On the left sidebar, click **Application Management** to enter the application management page and select a deployment region for your application.
+3. Click **Create** to go to the application creation page and enter the application information for deployment. For more information, see [Creating and Deploying Application](https://intl.cloud.tencent.com/document/product/1094/40362).
 4. For a Spring Cloud application, if a registry is associated with the selected **release environment**, you can select **Auto Inject Registry Info**.
 
 ### Specific configuration
 
-If you selected **Auto Inject Registry Info**, when you submit the application for deployment, TEM will automatically save the default parameters of the registry as a `.properties` file to the `ConfigMap` named `tse-config` in the environment and mount it to the `/config/tse-default-spring-cloud-config.properties` directory of the application in the form of [VolumeMounts](https://kubernetes.io/docs/concepts/storage/volumes/#configmap).
+If you selected **Auto Inject Registry Info**, when you submit the service for deployment, TEM will automatically save the default parameters of the registry as a `.properties` file to the `ConfigMap` named `tse-config` in the environment and mount it to the `/config/tse-default-spring-cloud-config.properties` directory of the application in the form of [VolumeMounts](https://kubernetes.io/docs/concepts/storage/volumes/#configmap).
 
 At the same time, TEM will add the directory to the [SPRING_CONFIG_ADDITIONAL-LOCATION](https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/boot-features-external-config.html#boot-features-external-config-application-property-files) environment variable of the application. If the variable does not exist in the application, it will be created.
 
 The basic configuration is as follows:
-
-```bash
+<dx-codeblock>
+:::  bash
 apiVersion: v1
 kind: Deployment
 metadata:
@@ -41,11 +41,13 @@ spec:
         items:
           - key: tse-default-spring-cloud-config.properties
             path: tse-default-spring-cloud-config.properties
-```
+:::
+</dx-codeblock>
+
 
 TEM will inject different parameters for different registries:
 <dx-tabs>
-::: zookeeper
+::: ZooKeeper
 Suppose the requested ZooKeeper address is `10.0.1.30:2181`:
 <dx-codeblock>
 :::  bash
@@ -61,7 +63,7 @@ metadata:
 </dx-codeblock>
 :::
 
-::: eureka
+::: Eureka
 Suppose the requested Eureka address is `10.0.1.31:8083`:
 <dx-codeblock>
 :::  bash
@@ -77,21 +79,6 @@ metadata:
 </dx-codeblock>
 :::
 
-:::consul
-Suppose the requested Consul address is `10.0.1.32:8500`:
-<dx-codeblock>
-:::  bash
-apiVersion: v1
-data:
-  tse-default-spring-cloud-config.properties: |
-    spring.cloud.consul.host=10.0.1.32
-    spring.cloud.consul.port=8500
-    spring.cloud.consul.discovery.preferIpAddress=true
-kind: ConfigMap
-metadata:
-  name: tse-config
-:::
-</dx-codeblock>
 :::
 </dx-tabs>
 
@@ -113,28 +100,19 @@ If you use Spring Boot v1.x, please add the mounted directory `/config/tse-defau
 
 You can also set this by directly adding the JVM launch parameters as follows:
 <dx-tabs>
-::: zookeeper
+::: ZooKeeper
 ```bash
 # Suppose the requested ZooKeeper address is `10.0.1.30:2181`
 -Dspring.cloud.zookeeper.connectString=10.0.1.30:2181 
 -Dspring.cloud.zookeeper.discovery.preferIpAddress=true
 ```
 :::
-::: eureka
+::: Eureka
 ```bash
 # Suppose the requested Eureka address is `10.0.1.31:8083`
 -Deureka.client.serviceUrl.defaultZone=http://10.0.1.31:8083/eureka/ 
 -Deureka.instance.preferIpAddress=true
 ```
 :::
-::: consul
-```bash
-# Suppose the requested Consul address is `10.0.1.32:8500`
--Dspring.cloud.consul.host=10.0.1.32 
--Dspring.cloud.consul.port=8500 
--Dspring.cloud.consul.discovery.preferIpAddress=true
-```
-:::
 </dx-tabs>
-
 
