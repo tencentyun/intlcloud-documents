@@ -32,9 +32,9 @@ Before you restore an object, ensure that you have enabled versioning for the bu
 3. Locate the bucket where the object resides and click the bucket name.
 4. Click **File List** on the left sidebar.
 5. Click **List Historical Versions**, find the object to restore, and click **Restore** in the **Operation** column.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/01cf0bbcee0fd999f6ef482516e3625a.png)
 6. In the pop-up window, check the version information of the object to restore, and click **OK**.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/9a2bdf5f5c15f0b6e1edb15dbd427c5b.png)
 7. After these, you can view the restored version of the object in the file list.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/11393ba7760f0ad8deffbc61acf7cd36.png)
 

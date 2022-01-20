@@ -17,7 +17,7 @@ Private network CLB is used to distribute requests from Tencent Cloud's private 
 ## Directions
 
 <dx-accordion>
-::: Method 1: choose EIP when purchasing CLB
+::: Method\s\s:\schoose\sEIP\swhen\spurchasing\sCLB
 1. Log in to the [CLB purchase page](https://buy.intl.cloud.tencent.com/lb).
 2. Select the following CLB configuration items as needed. For other configuration details, see [Purchase Methods](https://intl.cloud.tencent.com/document/product/214/8849).
 <table>
@@ -31,7 +31,7 @@ Private network CLB is used to distribute requests from Tencent Cloud's private 
 <tr>
 <td><span style="font-weight:bold">Billing Mode</span></td>
 <td>
-Select the **Pay-as-You-Go** mode.
+Select the <b>Pay-as-You-Go</b> mode.
 </td>
 </tr>
 <tr>
@@ -48,21 +48,21 @@ Only CLB instance type is supported.
 </tr>
 <tr>
 <td><span style="font-weight:bold">Network Type</span></td>
-<td>Select the **Public Network** type.
+<td>Select the <b>Public Network</b> type.
 </td>
 </tr>
 <tr>
 <td><span style="font-weight:bold">EIP</span></td>
-<td>Select **EIP**. Tencent Cloud will assign you an EIP and a private network CLB instance. Supported EIP types include general IP, accelerated IP, and static single-line IP.
+<td>Select <b>EIP</b>. Tencent Cloud will assign you an EIP and a private network CLB instance. Supported EIP types include general IP, accelerated IP, and static single-line IP.
 </td>
 </tr>
 </tbody></table>
 :::
-::: Method 2: bind private network CLB to EIP
+::: Method\s2:\sbind\sprivate\snetwork\sCLB\sto\sEIP
 1. Log in to the [CLB console](https://console.cloud.tencent.com/clb) and click **Instance Management** on the left sidebar.
 2. Select a region in the top-left corner of the **Instance Management** page, select the target private network CLB instance in the instance list, and click **More** > **Bind EIP** in the **Operation** column on the right.
 3. In the **Bind EIP** pop-up window, select the EIP to be bound and click **Submit** to bind the EIP to the instance.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/201e56b830bc8e165070b8963fe72cb3.png" width="60%">
+<img src="" width="60%">
 4. (Optional) Select the target private network CLB instance in the instance list and click **More** > **Unbind EIP** in the **Operation** column on the right to unbind the instance from the EIP.
 :::
 </dx-accordion>

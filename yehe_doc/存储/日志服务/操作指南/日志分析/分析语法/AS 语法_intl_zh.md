@@ -2,13 +2,13 @@
 
 AS 子句用于为列名称（KEY）指定别名。
 
-## AS 语法格式
+## 语法格式
 
 ```plaintext
 * | SELECT 列名（KEY） AS  别名
 ```
 
-## AS 语法样例
+## 语法样例
 
 #### 创建中文别名：
 ```plaintext

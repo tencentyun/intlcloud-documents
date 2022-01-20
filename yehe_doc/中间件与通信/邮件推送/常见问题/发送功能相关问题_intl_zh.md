@@ -1,6 +1,7 @@
 [](id:que1) 
+
 ### 邮件推送是否提供 SMTP 终端节点？
-邮件推送目前暂不提供 SMTP 接口，只支持云 API，不支持 SMTP，后期有 SMTP 支持计划。
+邮件推送提供 SMTP 终端节点，请参见 [SMTP 文档](https://intl.cloud.tencent.com/document/product/1084/44458)。
 
 [](id:que2) 
 ### 可以使用邮件推送从我的现有应用程序发送电子邮件吗？

@@ -9,22 +9,31 @@
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
 2. 在左侧导航中，单击【存储桶列表】，进入存储桶列表后，单击【创建存储桶】。
 3. 在弹出的创建存储桶对话框中，配置如下信息：
- 1. 基本信息
 
-	 - **所属地域**：请选择与您业务（或用户数量）相对集中的物理区域所对应的 COS 地域，设置后不可修改。地域的更多信息请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
-	 - **名称**：请输入自定义的存储桶名称。设置后不可修改。命名说明请参见存储桶的 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83)。
-	 - **访问权限**：存储桶默认提供三种访问权限：私有读写、公有读私有写和公有读写，设置后仍可修改。详细信息请参见 [存储桶访问权限](https://intl.cloud.tencent.com/document/product/436/13315)。
-	 - **请求域名**：自动生成。创建完存储桶后，您可以使用该域名对存储桶进行访问。
+ 1. 基本信息
+![](https://qcloudimg.tencent-cloud.cn/raw/3cd1360bc4c2fe796ee2f2d97975727d.png)
+
+ - **所属地域**：请选择与您业务（或用户数量）相对集中的物理区域所对应的 COS 地域，设置后不可修改。地域的更多信息请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
+ - **名称**：请输入自定义的存储桶名称。设置后不可修改。命名说明请参见存储桶的 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83)。
+ - **访问权限**：存储桶默认提供三种访问权限：私有读写、公有读私有写和公有读写，设置后仍可修改。详细信息请参见 [存储桶访问权限](https://intl.cloud.tencent.com/document/product/436/13315)。
+ - **请求域名**：自动生成。创建完存储桶后，您可以使用该域名对存储桶进行访问。
+
  2. 高级可选配置
+
 >? 该设置项为可选，您可按需进行设置。
 
-	- **版本控制**：开启后，上传的同名对象将保存历史版本。
-	- **日志存储**：为您记录跟存储桶操作相关的各种请求日志。
-	- **存储桶标签**：存储桶标签作为管理存储桶的一个标识，您可以为存储桶设置标签，便于分组管理存储桶，详情请参见 [设置存储桶标签](https://intl.cloud.tencent.com/document/product/436/30928)。
-	- **服务端加密**：目前存储桶的加密方式支持 SSE-COS 加密（即由 COS 托管密钥的服务端加密）。关于服务端加密的介绍，请参见 [服务端加密概述](https://intl.cloud.tencent.com/document/product/436/18145)。
+![](https://qcloudimg.tencent-cloud.cn/raw/f8acbd14ecadbbdf0445f567f5853898.png)
+
+- **版本控制**：开启后，上传的同名对象将保存历史版本。
+- **日志存储**：为您记录跟存储桶操作相关的各种请求日志。
+- **存储桶标签**：存储桶标签作为管理存储桶的一个标识，您可以为存储桶设置标签，便于分组管理存储桶，详情请参见 [设置存储桶标签](https://intl.cloud.tencent.com/document/product/436/30928)。
+- **服务端加密**：目前存储桶的加密方式支持 SSE-COS 加密（即由 COS 托管密钥的服务端加密）。关于服务端加密的介绍，请参见 [服务端加密概述](https://intl.cloud.tencent.com/document/product/436/18145)。
+
  3. 确认配置
+![](https://qcloudimg.tencent-cloud.cn/raw/20e65888c7a948dfe5ce67402df5167b.png)
 
 对存储桶的配置信息进行确认。如需修改，单击【上一步】即可。
-4. 确认信息无误后，单击【确定】，即可创建存储桶。在存储桶列表界面中，您可以看到刚才已创建的存储桶。
 
+4. 确认信息无误后，单击【确定】，即可创建存储桶。在存储桶列表界面中，您可以看到刚才已创建的存储桶。
+![](https://qcloudimg.tencent-cloud.cn/raw/7d7f83ffab77e7892d7d2dd8f5ca633d.png)
 
