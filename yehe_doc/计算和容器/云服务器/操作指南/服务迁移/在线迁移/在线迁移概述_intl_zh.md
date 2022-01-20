@@ -1,11 +1,16 @@
-在线迁移是服务迁移的方式之一，可将源服务器上的系统、应用程序等从自建机房（IDC）或云平台等源环境迁移至腾讯云，方便实现企业上云、跨云平台迁移、跨账号/区域迁移或部署混合云等业务需求。
->? 文中提到的源服务器形式可以是物理服务器、虚拟机或其他云平台云服务器。其他云平台包括但不限于 AWS、Google Cloud Platform、阿里云和华为云等。
->
+在线迁移是指在系统不停机的情况下，将服务器或虚拟机上的系统、服务程序等从自建机房（IDC）或云平台等源环境迁移同步至腾讯云。
+腾讯云提供 go2tencentcloud 迁移工具，在待迁移的源端主机上执行迁移工具后，源端主机即可整机迁移至腾讯云的目标云服务器。该迁移工具可免除制作镜像、上传并导入镜像等繁琐的准备工作，支持从源端直接迁移上云，方便实现企业上云、跨云平台迁移、跨账号/区域迁移或部署混合云等业务需求。
+
+<dx-alert infotype="explain" title="">
+文中提到的源服务器形式可以是物理服务器、虚拟机或其他云平台云服务器。其他云平台包括但不限于 AWS、Google Cloud Platform、VMware、阿里云和华为云等虚拟机平台。
+</dx-alert>
+
+
 
 ## 适用场景
 
 在线迁移适用于以下场景（包括但不限于）：
--	IT架构上云
+-	IT 架构上云
 -	混合云架构部署
 -	跨云迁移
 -	跨账号或跨地域迁移
@@ -18,19 +23,17 @@
 
 目前在线迁移支持服务器迁移功能。
 
-## 准备事项
-
-- 已在腾讯云上准备好账号和目的服务器。
-- 建议暂停源端服务器上的应用程序，以避免迁移时对现有应用程序可能产生的影响。
-- [下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) 迁移工具压缩包。
-- 检查源端主机和目标云服务器是否满足迁移条件。例如，目标云服务器的云硬盘必须具备足够的存储空间用来装载源端的数据。
-
 ## 开始迁移
-可使用腾讯云提供的 go2tencentcloud 工具进行迁移，详情请参见 [在线迁移工具使用指引](https://intl.cloud.tencent.com/document/product/213/35640)。
+
+<dx-alert infotype="explain" title="">
+目前控制台在线迁移服务处于公测期间，如需使用，请通过 [联系我们](https://intl.cloud.tencent.com/document/product/213/34837) 申请开通服务。
+</dx-alert>
+
+
+在线迁移提供**控制台迁移**和**工具迁移**2种迁移方式：
+- 控制台迁移：可以方便快捷的通过在线迁移控制台查看和管理迁移源、迁移任务，详情请参见 [使用控制台迁移操作指引](https://intl.cloud.tencent.com/document/product/213/44338)。
+- 工具迁移：使用腾讯云提供的 go2tencentcloud 工具进行迁移，详情请参见 [使用工具迁移操作指引](https://intl.cloud.tencent.com/document/product/213/35640)。
 
 ## 常见问题
 
-详情请参见 [服务迁移类](https://intl.cloud.tencent.com/document/product/213/32395)。
-
-
-
+详情请参见 [服务迁移相关](https://intl.cloud.tencent.com/document/product/213/32395)。
