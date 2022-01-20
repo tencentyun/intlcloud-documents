@@ -10,7 +10,7 @@
 ## 버킷 신규 생성 시 태그 추가하기
 
 [버킷 생성](https://intl.cloud.tencent.com/document/product/436/13309)에서 다음 이미지와 같이 버킷 태그를 추가할 수 있습니다.
-![](https://main.qcloudimg.com/raw/3529ae1c392f524209cf899931aa1fef.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/02d9832d2244e4010d67dc49dee490bf.png)
 
 ## 이미 생성된 버킷에 태그 추가하기
 
@@ -18,6 +18,6 @@
 
 1. [버킷 리스트](https://console.cloud.tencent.com/cos5/bucket) 페이지에서 태그 추가가 필요한 버킷을 찾고 해당 버킷 이름을 클릭하여 버킷 설정 페이지로 이동합니다.
 2. 왼쪽의 [기본 설정]을 클릭하고 페이지를 내려 [태그 관리] 설정 항목을 찾은 후, [태그 추가]를 클릭하여 버킷 태그를 추가합니다.
-   ![](https://main.qcloudimg.com/raw/300e5b4439c701a5e11ab75e2d85e1bb.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/ad3d20fe1e2738de4bb326a8b51b8b36.png)
 3. 태그 키와 태그 값을 입력한 후, [저장]을 클릭하면 태그가 추가됩니다.
 
