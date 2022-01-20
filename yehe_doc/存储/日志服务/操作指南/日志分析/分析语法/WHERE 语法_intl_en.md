@@ -2,7 +2,7 @@
 
 The `WHERE` statement is used to extract the logs that meet the specified conditions.
 
-## WHERE Syntax Format
+## Syntax Format
 
 ```plaintext
 * | SELECT column (KEY) WHERE column (KEY) operator value
@@ -10,7 +10,7 @@ The `WHERE` statement is used to extract the logs that meet the specified condit
 
 The operator can be `=`, `<>`, `>`, `<`, `>=`, `<=`, `BETWEEN`, `IN`, or `LIKE`.
 
-## WHERE Syntax Sample
+## Syntax Sample
 
 Query logs with status code greater than 400 in the log data:
 
