@@ -17,9 +17,9 @@ Currently, COS to which CLS ships log files supports two basic formats: CSV and 
 ## Directions
 ### Source format shipping with full text in a single line (or in multi lines)
 
-For full text in a single line or in multi lines, you can set special parameters in advanced configuration to ship log data in its source format based on CSV Shipping.
+For full text in a single line or in multi lines, you can set special parameters in advanced configuration to ship log data in its source format based on [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582).
 
-1. On the **Basic Configuration** tab page, set parameters according to the instructions in CSV Shipping.
+1. On the **Basic Configuration** tab page, set parameters according to the instructions in [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582).
 2. On the **Advanced Configuration** tab page, set **Shipping Format** to **csv**, **Key** to `__CONTENT__`, **Separator** to **Space**, **Escape character** to **None**, **Invalid Field Filling** to **None**, and disable **Key in First Line**. See the figure below.
 ![image](https://main.qcloudimg.com/raw/67572d3e6658b5ca3c5dd155a17831d8.png)
 The parameters are described as follows:
@@ -41,9 +41,9 @@ The parameters are described as follows:
 
 ### Source format shipping with CSV
 
-> CSV Shipping supports limited types of separators, including spaces, tabs, commas (,), semicolons (;), and vertical bars (|). Therefore, you can ship log data in its source format only when the separator in the log source content is supported by CSV shipping. Otherwise, source format shipping is not supported.
+>! [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582) supports limited types of separators, including spaces, tabs, commas (,), semicolons (;), and vertical bars (|). Therefore, you can ship log data in its source format only when the separator in the log source content is supported by CSV shipping. Otherwise, source format shipping is not supported.
 
-1. On the **Basic Configuration** tab page, set parameters according to the instructions in CSV Shipping.
+1. On the **Basic Configuration** tab page, set parameters according to the instructions in [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582).
 2. On the **Advanced Configuration** tab page, set **Shipping Format** to **csv** and set other parameters according to the following table.
 
 <table>
