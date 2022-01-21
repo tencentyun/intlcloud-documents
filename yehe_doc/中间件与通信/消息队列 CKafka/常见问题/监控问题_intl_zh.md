@@ -43,4 +43,4 @@ log.info("offset: {}", recordMetadata.offset());
 如果能够打印出 partition 和 offset，则表示当前发送的消息在服务端已经被正确保存。此时可以通过消息查询的工具去查询相关位点的消息即可。
 如果打印不出 partition 和 offset，则表示消息没有被服务端保存，客户端需要重试。
 
-![](https://main.qcloudimg.com/raw/cca4f62e86898eec49d8a9cde7ae9fa8.png)
+   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
