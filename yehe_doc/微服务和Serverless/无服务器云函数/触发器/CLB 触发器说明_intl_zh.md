@@ -7,13 +7,13 @@ CLB 触发器具有以下特点：
 CLB 触发器通过同步调用的方式来调用函数。有关调用类型的更多信息，请参阅 [调用类型](https://intl.cloud.tencent.com/document/product/583/9694)。
 
 >?
->- CLB 触发器目前处于灰度测试阶段，您可点击 [申请链接](https://intl.cloud.tencent.com/apply/p/z4oxc9h8ult) 进行申请。
->- CLB 账户分为标准账户类型和传统账户类型。传统账户类型不支持绑定 SCF，建议升级为标准账户类型。
-
+- CLB 触发器目前处于灰度测试阶段，您可点击 [申请链接](https://intl.cloud.tencent.com/apply/p/z4oxc9h8ult) 进行申请。
+- CLB 账户分为标准账户类型和传统账户类型。传统账户类型不支持绑定 SCF，建议升级为标准账户类型。 
+>
 
 ## CLB 触发器配置
 
-CLB 触发器支持在 **[云函数控制台](https://console.cloud.tencent.com/scf/index)** 或在 **[负载均衡控制台](https://console.cloud.tencent.com/clb/index)** 中进行配置。
+CLB 触发器支持在  **[云函数控制台](https://console.cloud.tencent.com/scf/index)** 或在  **[负载均衡控制台](https://console.cloud.tencent.com/clb/index)** 中进行配置。
 <dx-tabs>
 ::: 云函数控制台
 在**云函数控制台**中，支持 [在触发方式中添加 CLB 负载均衡触发器](https://intl.cloud.tencent.com/document/product/583/31441)、支持选取已有 CLB 负载均衡或新建主机路由规则、支持配置 URL 请求路径。
@@ -33,10 +33,17 @@ CLB 触发器支持在 **[云函数控制台](https://console.cloud.tencent.com/
 
 ## 请求与响应
 CLB 负载均衡发送到云函数的请求处理方式，和云函数响应给 CLB 负载均衡的返回值处理方式，称为请求方法和响应方法。请求方法和响应方法都为 CLB 触发器自动处理。CLB 触发器触发云函数时，必须按照响应方法返回数据结构。
+>! `X-Vip`、`X-Vport`、`X-Uri`、`X-Method`、`X-Real-Port` 字段必须先在 CLB 控制台进行自定义配置后才可以进行传递，自定义配置可参考 [CLB 产品文档](https://intl.cloud.tencent.com/document/product/214/32427)。
 
 
 #### CLB 触发器的集成请求事件消息结构[](id:datastructures)
 在  CLB 负载均衡触发器接收到请求时，会将类似以下 JSON 格式的事件数据发送给绑定的云函数。
+
+>! 在 CLB 触发场景下，所有的请求和响应由于需要以 JSON 方式传递，对于一些图片、文件等数据，直接放入 JSON 会导致不可见字符丢失，需要进行 Base64 编码，此处规定如下：
+> - 如果 Content-type 为 text/*、application/json、application/javascript、application/xml，CLB 不会对 body 内容进行转码。
+> - 其他类型一律进行 Base64 转码再转发。
+
+
 ```
 {  
   "headers": { 
@@ -61,7 +68,6 @@ CLB 负载均衡发送到云函数的请求处理方式，和云函数响应给 
     "key1": "123",  
     "key2": "abc"  
   },
-  “isBase64Encoded”: “false”
 }  
 ```
 
@@ -72,7 +78,7 @@ CLB 负载均衡发送到云函数的请求处理方式，和云函数响应给 
 | X-Stgw-Time |  请求发起的时间戳 |
 | X-Forwarded-Proto | 请求的 scheme 结构体|
 | X-Client-Proto-Ver | 协议类型 |
-| X-Real-IP | 客户端IP地址 |
+| X-Real-IP | 客户端IP地址 |   
 | X-Forward-For | 经过的代理IP地址 |
 | X-Real-Port | 记录在 API 网关中配置过的 Path 参数以及实际取值。（可选，CLB 个性化配置） |
 | X-Vip | CLB 负载均衡的 VIP 地址（可选，CLB 个性化配置） |
@@ -90,6 +96,7 @@ CLB 负载均衡发送到云函数的请求处理方式，和云函数响应给 
 
 #### CLB 触发器的集成响应返回数据结构[](id:clbStructure)
 在 CLB 负载均衡设置为集成响应时，需要返回类似如下内容的数据结构。
+
 ```
 {
     "isBase64Encoded": false,
@@ -117,5 +124,3 @@ CLB 负载均衡发送到云函数的请求处理方式，和云函数响应给 
 }
 ```
 
-在 CLB 触发场景下，所有的请求和响应由于需要以 JSON 方式传递，对于一些图片、文件等数据，直接放入 JSON 会导致不可见字符丢失，需要进行 Base64 编码，此处规定如下：
-如果 Content-type 为 text/*、application/json、application/javascript、application/xml，CLB 不会对 body 内容进行转码，其他类型一律进行转码再转发。

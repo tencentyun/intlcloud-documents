@@ -7,9 +7,9 @@ After a CLB trigger receives a request from CLB, if CLB is configured to connect
 A CLB trigger invokes functions synchronously. For more information on invocation types, please see [Invocation Types](https://intl.cloud.tencent.com/document/product/583/9694).
 
 >?
->- The CLB trigger feature is currently in beta test. You can click [here](https://intl.cloud.tencent.com/apply/p/z4oxc9h8ult) for trial application.
->- CLB accounts are divided into standard accounts and traditional accounts. Traditional accounts cannot be bound to SCF. We recommend you upgrade them to standard accounts.
-
+- The CLB trigger feature is currently in beta test. You can click [here](https://intl.cloud.tencent.com/apply/p/z4oxc9h8ult) for trial application.
+- CLB accounts are divided into standard accounts and traditional accounts. Traditional accounts cannot be bound to SCF. We recommend you upgrade them to standard accounts. 
+>
 
 ## CLB Trigger Configuration
 
@@ -33,10 +33,17 @@ When configuring routing rules in the **CLB console**, you can choose **Cloud Fu
 
 ## Request and Response
 Request method refers to the method to process request sent from CLB to SCF, and response method refers to the method to process the returned value sent from SCF to CLB. Both request and response methods are automatically processed by the CLB trigger. When it triggers the function, data structures must be returned in the request method.
+>! `X-Vip`, `X-Vport`, `X-Uri`, `X-Method`, and `X-Real-Port` fields must be customized in the CLB console before they can be transferred. For custom configurations, see [Layer-7 Custom Configuration](https://intl.cloud.tencent.com/document/product/214/32427).
 
 
 #### Event message structure of integration request for CLB trigger[](id:datastructures)
 When a CLB trigger receives a request, event data will be sent to the bound function in JSON format as shown below.
+
+>! In the CLB trigger scenario, all requests and responses need to be transferred in JSON. For images, files, and other data, as directly passing in JSON content will cause invisible characters to be lost, Base64 encoding is required as detailed below:
+> - If the `Content-type` is `text/*`, `application/json`, `application/javascript`, or `application/xml`, CLB will not transcode the body content.
+> - For all other types, CLB will Base64-encode them first and then forward them.
+
+
 ```
 {  
   "headers": { 
@@ -61,7 +68,6 @@ When a CLB trigger receives a request, event data will be sent to the bound func
     "key1": "123",  
     "key2": "abc"  
   },
-  "isBase64Encoded": "false"
 }  
 ```
 
@@ -72,7 +78,7 @@ The data structures are as detailed below:
 | X-Stgw-Time | Request start timestamp |
 | X-Forwarded-Proto | `scheme` structure of the request |
 | X-Client-Proto-Ver | Protocol type |
-| X-Real-IP | Client IP address |
+| X-Real-IP | Client IP address |   
 | X-Forward-For | Passed proxy IP address |
 | X-Real-Port | Records the `Path` parameters configured in API Gateway and their actual values (optional custom configuration of CLB) |
 | X-Vip | CLB VIP address (optional custom configuration of CLB) |
@@ -90,6 +96,7 @@ Integration response means that CLB parses the returned content of the function 
 
 #### Returned data structures of integration response for CLB trigger[](id:clbStructure)
 If integration response is set for CLB, data needs to be returned in the following structures:
+
 ```
 {
     "isBase64Encoded": false,
@@ -117,5 +124,3 @@ If you need to return multiple headers with the same key, you can use a string a
 }
 ```
 
-In the CLB trigger scenario, all requests and responses need to be transferred in JSON. For images, files, and other data, as directly passing in JSON content will cause invisible characters to be lost, Base64 encoding is required as detailed below:
-If the `Content-type` is `text/*`, `application/json`, `application/javascript`, or `application/xml`, CLB will not transcode the body content; for all other types, CLB will transcode and then forward them.
