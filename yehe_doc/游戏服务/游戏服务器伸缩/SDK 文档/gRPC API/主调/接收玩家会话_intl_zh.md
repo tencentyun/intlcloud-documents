@@ -1,49 +1,36 @@
-## 接口名称
-AcceptPlayerSession 
 
-<span id="AcceptPlayerSession"></span>
 
-## 接口说明
+### 接口描述
+该接口（AcceptPlayerSession）用于验证 PlayerSession 的合法性。如果 GameServerSession 状态为 Active，并且玩家调用过 JoinGameServerSession 或者 JoinGameServerSessionBatch，即可接受成功，PlayerSession 状态设置为 “ACTIVE”。
 
-当玩家加入游戏后，游戏进程需要调用该接口并通知 GSE 玩家已经加入。GSE 通过该接口传入的 gameServerSessionId 和 playerSessionId 参数校验该玩家的合法性。
+如果调用 JoinGameServerSession 或者 JoinGameServerSessionBatch，60秒钟内未收到响应， 请将 PlayerSession 状态更改为 “TIMEOUT”，然后重新预留游戏会话中的玩家位置。
 
-## 请求结构体
+### 参数描述
 
+|参数名|类型/值|描述|
+|:---|---|---|
+|playerSessionId|String|玩家会话 ID|
+
+
+### 返回值说明
+
+- True：成功。
+- False：失败。
+
+包含错误消息的一般结果，具体类型为 GenericOutcome。
+
+
+### 使用示例
 ```
-message AcceptPlayerSessionRequest {
-    string gameServerSessionId = 1;
-    string playerSessionId = 2;
+TencentCloud::Gse::GenericOutcome outcome = 
+   	TencentCloud::Gse::Server::AcceptPlayerSession(playerSessionId);
+if(outcome .IsSuccess())
+{
+        //接受连接
 }
+else 
+{
+        //拒绝连接
+} 
 ```
 
-## 返回结构体
-
-```
-message GseResponse
-```
-
-## 字段说明
-
-**AcceptPlayerSessionRequest**
-
-| 字段名              | 类型   | 说明                                                         |
-| ------------------- | ------ | ------------------------------------------------------------ |
-| gameServerSessionId | string | 对应 GameServerSession 结构的 GameServerSessionId，唯一标记一次 GameServerSession |
-| playerSessionId     | string | 游戏开发者通过调用 JoinGameServerSession 返回的玩家在对应 GameServerSession 中的唯一 ID |
-
-## 使用示例
-
-```
-func (r *rpcClient) AcceptPlayerSession(gameServerSessionId, playerSessionId string) (*grpcsdk.GseResponse, error) {
-   conn, _ := grpc.DialContext(context.Background(), LOCAL_ADDRESS, grpc.WithInsecure())
-   defer conn.Close()
-
-   req := &grpcsdk.AcceptPlayerSessionRequest{
-      GameServerSessionId:  gameServerSessionId,
-      PlayerSessionId:      playerSessionId,
-   }
-
-   client := grpcsdk.NewGseGrpcSdkServiceClient(conn)
-   return client.AcceptPlayerSession(getContext(), req)
-}
-```

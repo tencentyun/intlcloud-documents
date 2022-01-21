@@ -1,45 +1,22 @@
-## API Name
-TerminateGameServerSession 
-<span id="TerminateGameServerSession"></span>
+### API Description
+This API is used to terminate a game session, change the status of `GameServerSession` to `TERMINATED`, and save the relevant log.
 
+### Parameter Description
+No parameters.
 
-## API Description	
+### Returned Value Description
+- True: success.
+- False: failure.
 
-This API is used for the game process to notify GSE that a `GameServerSession` sustained by it has ended, and GSE can subsequently reassign another `GameServerSession` to the process.
+A generic result in [GenericOutcome](https://intl.cloud.tencent.com/document/product/1055/36700#jtlx) type containing an error message will be returned.
 
-## Request Message
-
+### Use Cases
 ```
-message TerminateGameServerSessionRequest {
-    string gameServerSessionId = 1;
-}
-```
+TencentCloud::Gse::GenericOutcome outcome = 
+	TencentCloud::Gse::Server::TerminateGameSession();
 
-## Response Message
-
-```
-message GseResponse 
-```
-
-## Field Description
-
-**TerminateGameServerSessionRequest**
-
-| Field Name | Type | Description |
-| ------------------- | ------ | ------------------------------------------------------------ |
-| gameServerSessionId | string | `GameServerSessionId` which uniquely identifies a `GameServerSession` |
-
-## Sample
-
-```
-func (r *rpcClient) TerminateGameServerSession(gameServerSessionId string) (*grpcsdk.GseResponse, error) {
-   conn, _ := grpc.DialContext(context.Background(), LOCAL_ADDRESS, grpc.WithInsecure())
-   defer conn.Close()
-   req := &grpcsdk.TerminateGameServerSessionRequest{
-      GameServerSessionId: gameServerSessionId,
-   }
-
-   client := grpcsdk.NewGseGrpcSdkServiceClient(conn)
-   return client.TerminateGameServerSession(g.getContext(), req)
+if (outcome.IsSuccess())
+{
+       // Subsequent processing
 }
 ```
