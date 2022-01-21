@@ -19,6 +19,6 @@ while (true) {
 }
 ```
 初始的消费者数量可以根据客户端的资源情况进行初始的部署，然后配置消费者组的堆积告警，如果出现堆积的时候再扩容消费者。配置告警方式参见 [配置告警](https://intl.cloud.tencent.com/document/product/597/40976)，配置页面如下图所示。
-![](https://main.qcloudimg.com/raw/d84892ff3a2cf3f37340e213454e3308.png)
+![](https://main.qcloudimg.com/raw/8c10d954b79dc191a9ce173e3063f605.png)
 
 
