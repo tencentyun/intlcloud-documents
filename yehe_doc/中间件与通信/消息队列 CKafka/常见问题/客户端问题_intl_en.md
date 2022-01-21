@@ -55,4 +55,4 @@ log.info("offset: {}", recordMetadata.offset());
 If the partition and offset information can be printed out, the currently sent message has been correctly saved on the server. At this time, you can use the message query tool to query the information of the relevant offset.
 If the partition and offset information cannot be printed out, the message has not been saved on the server, and the client needs to retry.
 
-![](https://main.qcloudimg.com/raw/cca4f62e86898eec49d8a9cde7ae9fa8.png)
+ ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
