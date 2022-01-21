@@ -2,7 +2,7 @@
 This document describes how to submit a job with the BatchCompute Console. The steps are detailed below.
 
 ### Preparations
-Prepare a bucket for [COS](https://cloud.tencent.com/document/product/436). If you haven't created a bucket, create one as instructed in [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
+Prepare a bucket for [COS](https://intl.cloud.tencent.com/zh/document/product/436). If you haven't created a bucket, create one as instructed in [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
 
 ### Logging in to the Console
 Log in to the [BatchCompute Console](https://console.cloud.tencent.com/batch/task). If you have not activated the BatchCompute service, activate it according to the prompts on the BatchCompute Console page.
