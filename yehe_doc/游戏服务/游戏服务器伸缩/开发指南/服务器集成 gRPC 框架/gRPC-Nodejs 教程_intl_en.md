@@ -1,15 +1,20 @@
 
-
 ## Installing gRPC
 1. Prerequisites: install Node.js v12.16.0 or above.
 2. Install gRPC.
+<dx-alert infotype="explain" title="">
+For more information, please see [Installing gRPC Node.js](https://github.com/grpc/grpc/tree/master/examples/node).
+</dx-alert>
 
->?For more information on the installation process, please see [Installing gRPC Node.js](https://github.com/grpc/grpc/tree/master/examples/node).
 
 ## Defining Service
- gRPC uses Protocol Buffers to define a service: an RPC service specifies methods that can be called remotely by using parameters and return types.
 
- >?We provide the .proto files for service definition. You can [click here](https://intl.cloud.tencent.com/document/product/1055/37419) to directly download them with no need to generate them by yourself.
+gRPC uses Protocol Buffers to define a service: an RPC service specifies methods that can be called remotely by using parameters and return types.
+<dx-alert infotype="explain" title="">
+We provide the .proto files for service definition. You can [click here](https://intl.cloud.tencent.com/document/product/1055/37419) to directly download them with no need to generate them by yourself.
+</dx-alert>
+
+
 
 ## Generating gRPC Code
 1. After defining the service, you can use protoc (protocol buffer compiler) to generate the client and server code (in any language supported by gRPC). 
@@ -20,17 +25,17 @@
 ## Game Process Integration Process
 ![](https://main.qcloudimg.com/raw/96018551bc88c71a02333b1f197b3111.png)
 
-#### Server API list
+#### Game server callback API list
 
-| API Name | Description |
+| API Name | API Description |
 |-----|----|
-|[OnHealthCheck](https://intl.cloud.tencent.com/document/product/1055/37422)| Performs health check |
+|[OnHealthCheck](https://intl.cloud.tencent.com/document/product/1055/37422)| Runs health check |
 |[OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423)| Receives game server session |
 |[OnProcessTerminate](https://intl.cloud.tencent.com/document/product/1055/37424)| Ends game process |
 
-#### Client API list
+#### Game server active API list
 
-| API Name | Description |
+| API Name | API Description |
 |-----|----|
 |[ProcessReady](https://intl.cloud.tencent.com/document/product/1055/37426)| Gets process ready |
 |[ActivateGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37427)| Activates game server session |
@@ -44,7 +49,7 @@
 
 #### Others
 
- When the game process uses gRPC to call a client API, you need to add two fields to `meta` of the gRPC request.
+ When the game process uses gRPC to call a game server active API, you need to add two fields to `meta` of the gRPC request.
 
 | Field      | Description                                      | Type   |
 | --------- | ----------------------------------------- | ------ |
@@ -98,7 +103,7 @@ function ActivateGameServerSession(param, w, callback) {
 		});
 }
 ```
- 5. After the client calls the [JoinGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37132) API for the player to join, the game server will call the `AcceptPlayerSession` API to verify the validity of the player. If the connection is accepted, the status of `PlayerSession` will be set to "Active". If the client receives no response within 60 seconds after calling the `JoinGameServerSession` API, it will change the status of `PlayerSession` to "Timeout" and then call `JoinGameServerSession` again.
+ 5. After the client calls the [JoinGameServerSession](https://intl.cloud.tencent.com/document/product/1055/39130) API for the player to join, the game server will call the `AcceptPlayerSession` API to verify the validity of the player. If the connection is accepted, the status of `PlayerSession` will be set to "Active". If the client receives no response within 60 seconds after calling the `JoinGameServerSession` API, it will change the status of `PlayerSession` to "Timeout" and then call `JoinGameServerSession` again.
 ```
 function AcceptPlayerSession(param, w, callback) {
 		console.log("AcceptPlayerSession.request", param);
@@ -142,7 +147,7 @@ function TerminateGameServerSession(param, w, callback) {
 		});
 }
 ```
- 8. In case of health check failure or reduction, GSE will call the `OnProcessTerminate` API to end the game process. The reduction will be triggered according to the [protection policy](https://intl.cloud.tencent.com/document/product/1055/36675#test12) configured in the GSE Console.
+ 8. In case of health check failure or reduction, GSE will call the `OnProcessTerminate` API to end the game process. The reduction will be triggered according to the [protection policy](https://intl.cloud.tencent.com/document/product/1055/36675) configured in the GSE console.
 ```
 function OnProcessTerminate(call, callback) {
 		console.log("OnProcessTerminate.request", call.request);
@@ -248,7 +253,7 @@ function getGseGrpcSdkServiceClient() {
 }
 ```
 
-## Demo for Node.js
+## Nodejs DEMO
  1. [Click here](https://gsegrpcdemo-1301007756.cos.ap-guangzhou.myqcloud.com/nodejs-demo.zip) to download the code of the Demo for Node.js.
  2. Generate the gRPC code.
 Node.js uses `grpc/proto-loader` to load `pb` files directly, so there is no need to generate `gRPC-nodejs` code.
@@ -262,7 +267,7 @@ Node.js uses `grpc/proto-loader` to load `pb` files directly, so there is no nee
 `gsesdk_client.js` in the `nodejs-demo/dynamic_code` directory implements nine client APIs.
   - Connect to the server.
 Create a gRPC channel, specify the host name and server port to connect to, and use this channel to create a stub instance.
- 5. Compile and run.
+ 5. Compile and run the project.
   1. Install Node.js v12.16.0 or above.
   - Install the gRPC package.
  ```
@@ -277,7 +282,6 @@ cnpm install --save @grpc/grpc-js
 	```
 	cd dynamic_code
 	node game_server.js  
-	```
-
+ ```
   - Package the executable file `game_server.js` as an [asset package](https://intl.cloud.tencent.com/document/product/1055/36674) and configure the launch path as `node` and the launch parameter as `game_server.js`.
   - [Create a server fleet](https://intl.cloud.tencent.com/document/product/1055/36675) and deploy the asset package on it. After that, you can perform various operations such as [scaling](https://intl.cloud.tencent.com/document/product/1055/37445).

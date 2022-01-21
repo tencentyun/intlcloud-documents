@@ -1,35 +1,36 @@
 
 
 ### API Description
-This API is used to verify the validity of `PlayerSession`. If the `GameServerSession` status is `Active` and the player has called `JoinGameServerSession` or `JoinGameServerSessionBatch`, a success will be returned, and the `PlayerSession` status will be set to "ACTIVE".
+This API is used to verify whether the PlayerSession is acceptable. If the status of `GameServerSession` is `Active`, and the player has invoked `JoinGameServerSession` or `JoinGameServerSessionBatch`, the session is acceptable. and the `PlayerSession` status is set to `ACTIVE`.
 
-If no response is received in 60 seconds after `JoinGameServerSession` or `JoinGameServerSessionBatch` is called, please change the `PlayerSession` status to "TIMEOUT" and reserve a place for the player in the game session again.
+If the request to invoke `JoinGameServerSession` or `JoinGameServerSessionBatch` is not responsed in 60 seconds, the `PlayerSession` status will be `TIMEOUT` and the player place in the game session is reserved again.
 
-### Parameter Description
+### Parameters
 
-| Parameter Name | Type/Value | Description |
+|Parameter|Type/value|Description|
 |:---|---|---|
-|playerSessionId|String| Player session ID |
+|playerSessionId|String|PlayerSession ID|
 
 
-### Returned Value Description
+### Returned value description
 
-- True: success.
-- False: failure.
+- `True`: success.
+- `False`: failure.
 
-A generic result in [GenericOutcome](https://intl.cloud.tencent.com/document/product/1055/36700#jtlx) type containing an error message will be returned.
+A result containing the error message. Type: GenericOutcome
 
 
-### Use Cases
+### Examples
 ```
 TencentCloud::Gse::GenericOutcome outcome = 
    	TencentCloud::Gse::Server::AcceptPlayerSession(playerSessionId);
 if(outcome .IsSuccess())
 {
-        // Accept connection
+        // Accept the connection
 }
 else 
 {
-        // Reject connection
+        // Reject the connection
 } 
 ```
+

@@ -1,53 +1,53 @@
 
 
-#### 接口描述
-本接口（ProcessReady）用于告知服务准备就绪，同步方法。它可注册回调函数、端口、和日志目录。 
-GSE 服务器接收后，将服务器实例状态改为 ACTIVE， 如果已注册回调函数，每1分钟调用1次 onHealthCheck，onHealthCheck 在1分钟内返回有效。
+#### インターフェースの説明
+このインターフェース（ProcessReady）は、サービスの準備完了を通知し、同期メソッドとして使用します。これによりコールバック関数、ポート、ログディレクトリを登録することができます。 
+GSEサーバーが受信すると、サーバーインスタンスのステータスがACTIVEに変わり、コールバック関数を登録済みの場合は、1分間に1回onHealthCheckを呼び出します。onHealthCheckが1分以内に戻ってくれば有効です。
 
-#### 参数描述
+#### パラメータの説明
 
 <table>
 <thead>
 <tr>
-<th align="left">参数名</th>
-<th>类型/值</th>
-<th>描述</th>
+<th align="left">パラメータ名</th>
+<th>タイプ/値</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">onStartGameServerSession</td>
 <td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function &lt;void(tencentcloud::gse::model::gameserversession)&gt; onStartGameServerSession</a></td>
-<td>创建游戏会话后的回调函数</td>
+<td>ゲームセッション作成後のコールバック関数</td>
 </tr>
 <tr>
 <td align="left">onProcessTerminate</td>
 <td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function&lt;void()&gt;onProcessTerminate</a></td>
-<td>通知请结束进程</td>
+<td>プロセス終了リクエストの通知</td>
 </tr>
 <tr>
 <td align="left">onHealthCheck</td>
 <td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function&lt;bool()&gt; onHealthCheck</a></td>
-<td>定时健康检查函数</td>
+<td>定時ヘルスチェック関数</td>
 </tr>
 <tr>
 <td align="left">port</td>
-<td>int 类型</td>
-<td>游戏进程监听的端口号</td>
+<td>intタイプ</td>
+<td>ゲームプロセスモニターのポート番号</td>
 </tr>
 <tr>
 <td align="left">logParameters</td>
 <td>TencentCloud::Gse::Server::LogParameters</a></td>
-<td>要上传的日志路径</td>
+<td>アップロードが必要なログパス</td>
 </tr>
 </tbody></table>
 
-#### 返回值说明  
+#### 戻り値の説明  
 - True：成功。
-- False：失败。
+- False：失敗。
 
-包含错误消息的一般结果，具体类型为 GenericOutcome。
+エラーメッセージを含む一般的な結果。具体的なタイプはGenericOutcomeです。
 
-#### 使用示例
+#### ユースケース
 ```
     std::string serverOut("./logs/serverLog.txt");
     std::string serverErr("./logs/serverErr.txt");
@@ -75,20 +75,20 @@ GSE 服务器接收后，将服务器实例状态改为 ACTIVE， 如果已注�
 
 
 ### onStartGameServerSession
-#### 接口描述
-回调函数：通知分配了一个游戏会话。 	
+#### インターフェースの説明
+コールバック関数：1つのゲームセッションをアサインしたことを通知します。 	
 
-#### 参数描述
+#### パラメータの説明
 
-|参数名|类型/值|描述|
+|パラメータ名|タイプ/値|説明|
 |:---|---|---|
-|自定义|TencentCloud::Gse::Model::GameServerSession|游戏会话信息|
+|ユーザー定義|TencentCloud::Gse::Model::GameServerSession|ゲームセッション情報|
 
-#### 返回值说明
-无参数。
+#### 戻り値の説明
+パラメータなし。
 
 
-#### 使用示例
+#### ユースケース
 ```
 void GseManager::OnStartGameServerSession(TencentCloud::Gse::Server::Model::GameServerSession myGameServerSession)
 {
@@ -98,45 +98,45 @@ void GseManager::OnStartGameServerSession(TencentCloud::Gse::Server::Model::Game
 ```
 
 ### onHealthcheck
-#### 接口描述
-回调函数：健康检查，1分钟检查1次，1分钟内需要答复健康状态。 
+#### インターフェースの説明
+コールバック関数：ヘルスチェック。1分間に1回チェックし、1分以内に健康状態が回答される必要があります。 
 
-#### 参数描述
+#### パラメータの説明
 
-无参数。
+パラメータなし。
 
 
-#### 返回值说明
+#### 戻り値の説明
 - True：成功。
-- False：失败。
+- False：失敗。
 
 
 
 
-#### 使用示例
+#### ユースケース
 ```
 void GseManager::OnHealthCheck()
 {
-    //根据进程实际健康情况，返回true or false
+    //プロセスの実際の健康状態に基づき、true or falseを返します
     return true;
 }
 ```
 
 ### onProcessTerminate
 
-#### 接口描述
-回调函数：结束进程。
+#### インターフェースの説明
+コールバック関数：終了プロセス。
 
-#### 参数描述
-无参数。
+#### パラメータの説明
+パラメータなし。
 
-#### 返回值说明
+#### 戻り値の説明
 - True：成功。
-- False：失败。
+- False：失敗。
 
 
 
-#### 使用示例
+#### ユースケース
 ```
 void GseManager::onProcessTerminate()
 {

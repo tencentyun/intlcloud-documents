@@ -1,15 +1,20 @@
 
-
 ## gRPCのインストール
 1. 前提条件： インストールするNodejsのバージョンがv12.16.0以上であること。
 2. gRPCをインストールします。
+<dx-alert infotype="explain" title="">
+具体的な手順については、[gRPC Nodejsインストールの説明](https://github.com/grpc/grpc/tree/master/examples/node)をご参照ください。
+</dx-alert>
 
->?具体的な手順については、[gRPC Nodejsインストールの説明](https://github.com/grpc/grpc/tree/master/examples/node)をご参照ください。
 
 ## サービスの定義
- gRPCは、protocol buffersを利用してサービスの定義を実現します。1つのRPCのサービスに､パラメータとリターンタイプによってリモートの呼び出しが可能なメソッドが指定されます。
 
- >?サービスを定義したprotoファイルを提供していますので、[protoファイル](https://intl.cloud.tencent.com/document/product/1055/37419) からダウンロードしてご利用ください。ご自身で生成する必要はありません。
+gRPCは、protocol buffersを利用してサービスの定義を実現します。1つのRPCのサービスに､パラメータとリターンタイプによってリモートの呼び出しが可能なメソッドが指定されます。
+<dx-alert infotype="explain" title="">
+サービスを定義したprotoファイルを提供していますので、[protoファイル](https://intl.cloud.tencent.com/document/product/1055/37419)からダウンロードしてご利用ください。ご自身で生成する必要はありません。
+</dx-alert>
+
+
 
 ## gRPCコードの生成 
 1. サービスを定義した後、 protocol bufferコンパイラprotocを利用して、クライアントとサーバーのコードを生成します（gRPCがサポートする任意の言語）。 
@@ -20,7 +25,7 @@
 ## ゲームプロセス統合の流れ
 ![](https://main.qcloudimg.com/raw/96018551bc88c71a02333b1f197b3111.png)
 
-#### サーバーインターフェースリスト
+#### Game Serverコールバックインターフェースのリスト
 
 | インターフェース名 | インターフェース機能|
 |-----|----|
@@ -28,7 +33,7 @@
 |[OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423)|ゲームサーバーセッションの受け入れ|
 |[OnProcessTerminate](https://intl.cloud.tencent.com/document/product/1055/37424)|ゲームプロセスの終了|
 
-#### クライアントインターフェースリスト
+####  Game Serverアクティブコールインターフェースのリスト
 
 | インターフェース名 | インターフェース機能 |
 |-----|----|
@@ -44,7 +49,7 @@
 
 #### その他
 
- metaのリクエスト：ゲームプロセスがgRPCを介してクライアントインターフェースを呼び出す時に、gRPCがリクエストするmetaの中に2つのフィールドを追加する必要があります。
+ リクエストmeta。ゲームプロセスがgRPCを利用して、Game Serverアクティブコールインターフェースを呼び出すときは、gRPCリクエストのmetaに2つのフィールドを追加する必要があります。
 
 | フィールド      | 意味                                      | タイプ   |
 | --------- | ----------------------------------------- | ------ |
@@ -98,7 +103,7 @@ function ActivateGameServerSession(param, w, callback) {
 		});
 }
 ```
- 5. Clientが [JoinGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37132)インターフェースを呼び出してプレイヤーが参加すると、Game ServerがAcceptPlayerSessionインターフェースを呼び出してプレイヤーの合法性を検証します。接続が受け入れられた場合は、PlayerSessionのステータスを「アクティブ」に変更します。ClientがJoinGameServerSessionインターフェースを呼び出して60秒以内に応答がない場合は、PlayerSessionのステータスを「タイムアウト」に変更し、その後再び JoinGameServerSessionを呼び出します。
+ 5. Clientが[JoinGameServerSession](https://intl.cloud.tencent.com/document/product/1055/39130)インターフェースを呼び出してプレイヤーが参加すると、Game ServerがAcceptPlayerSessionインターフェースを呼び出してプレイヤーの合法性を検証します。接続が受け入れられた場合は、PlayerSessionのステータスを「アクティブ」に変更します。ClientがJoinGameServerSessionインターフェースを呼び出して60秒以内に応答がない場合は、PlayerSessionのステータスを「タイムアウト」に変更し、その後再び JoinGameServerSessionを呼び出します。
 ```
 function AcceptPlayerSession(param, w, callback) {
 		console.log("AcceptPlayerSession.request", param);
@@ -142,7 +147,7 @@ function TerminateGameServerSession(param, w, callback) {
 		});
 }
 ```
- 8. ヘルスチェックに失敗したかまたは容量縮小の時は、GSEがOnProcessTerminateインターフェースを呼び出してゲームプロセスを終了します。容量縮小時の根拠は、GSEコンソールで設定した[保護ポリシー](https://intl.cloud.tencent.com/document/product/1055/36675#test12)です。
+ 8. ヘルスチェックに失敗したかまたは容量縮小の時は、GSEがOnProcessTerminateインターフェースを呼び出してゲームプロセスを終了します。容量縮小時は、GSEコンソールで設定した[保護ポリシー]((https://intl.cloud.tencent.com/document/product/1055/36675)を根拠とします。
 ```
 function OnProcessTerminate(call, callback) {
 		console.log("OnProcessTerminate.request", call.request);
@@ -251,7 +256,7 @@ function getGseGrpcSdkServiceClient() {
 ## Nodejs DEMO
  1. [ここをクリック](https://gsegrpcdemo-1301007756.cos.ap-guangzhou.myqcloud.com/nodejs-demo.zip)して、Nodejs DEMO コードをダウンロードします。
  2. gRPCコードを生成します。
-Nodejsバージョンはgrpc/proto-loaderを使用して直接pbファイルをローディングします。gRPC-nodejsコードを生成する必要はありません。
+Nodejsバージョンは、grpc/proto-loaderを使用して直接pbファイルをローディングします。gRPC-nodejsコードを生成する必要はありません。
  3. GSEをコールするためにサーバーを起動します。
   - サーバーの実装。
 nodejs-demo/dynamic_code ディレクトリの下の game_server.jsに、サーバーの3つのインターフェースを実装しています。
@@ -277,8 +282,6 @@ cnpm install --save @grpc/grpc-js
 	```
 	cd dynamic_code
 	node game_server.js  
-	```
-
+ ```
   - 実行可能ファイルgame_server.jsをパッケージングして [アセット](https://intl.cloud.tencent.com/document/product/1055/36674)を作成します。起動パスの設定はnode、起動パラメータの設定はgame_server.jsです。
   - その後、[サーバーフリートの作成](https://intl.cloud.tencent.com/document/product/1055/36675)でサーバーフリートを作成し、アセットをサーバーフリートにデプロイします。この後引き続き、[スケーリング](https://intl.cloud.tencent.com/document/product/1055/37445) などの一連の操作を行うことができます。
-

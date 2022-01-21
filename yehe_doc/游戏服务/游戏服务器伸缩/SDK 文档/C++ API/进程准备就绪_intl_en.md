@@ -1,26 +1,53 @@
 
 
-#### API Description
-This API is used to synchronously notify the server that the service is ready. It can register the callback function, port, and log directory. 
-After the GSE server receives the request, it will change the instance status to `ACTIVE`. If a callback function has been registered, `onHealthCheck` will be called once per minute, and its result will be valid if returned in 1 minute.
+## API Description
+This API is used to notify the server that that service is ready. It can register the callback function, port and log directory.  
+When the GSE service receive the notification, it changes the server status to ACTIVE, and, if the callback function is registered, it calls onHealthCheck once per minute. It’s considered valid if the result is returned in one minute.
 
-#### Parameter Description
+### Parameters
 
-| Parameter Name | Type/Value | Description |
-|:---|---|---|
-|onStartGameServerSession|[std::function <void(TencentCloud::Gse::Model::GameServerSession) > onStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/36689#onstartgameserversession)| Callback function for game session creation |
-|onProcessTerminate|[std::function<void()>onProcessTerminate](https://intl.cloud.tencent.com/document/product/1055/36689#onhealthcheck)| Notification of process end |
-|onHealthCheck |[std::function<bool()> onHealthCheck](https://intl.cloud.tencent.com/document/product/1055/36689#onprocessterminate)| Regular health check function |
-|port|int| Port number listened on by game process |
-|logParameters|[TencentCloud::Gse::Server::LogParameters](https://intl.cloud.tencent.com/document/product/1055/36700#jtlx)| Path of logs to be uploaded |
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th>Type/value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onStartGameServerSession</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function &lt;void(tencentcloud::gse::model::gameserversession)&gt; onStartGameServerSession</a></td>
+<td>The callback function after creation of the game session</td>
+</tr>
+<tr>
+<td align="left">onProcessTerminate</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function&lt;void()&gt;onProcessTerminate</a></td>
+<td>Notify the server to end the process</td>
+</tr>
+<tr>
+<td align="left">onHealthCheck</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function&lt;bool()&gt; onHealthCheck</a></td>
+<td>Scheduled health check function</td>
+</tr>
+<tr>
+<td align="left">port</td>
+<td>int type</td>
+<td>The port listened by the game process</td>
+</tr>
+<tr>
+<td align="left">logParameters</td>
+<td>TencentCloud::Gse::Server::LogParameters</a></td>
+<td>The log directory to upload</td>
+</tr>
+</tbody></table>
 
-#### Returned Value Description  
-- True: success.
-- False: failure.
+#### Return value description  
+- true: success.
+- `False`: failure.
 
-A generic result in [GenericOutcome](https://intl.cloud.tencent.com/document/product/1055/36700#jtlx) type containing an error message will be returned.
+A result containing the error message. Type: GenericOutcome
 
-#### Use Cases
+#### Example
 ```
     std::string serverOut("./logs/serverLog.txt");
     std::string serverErr("./logs/serverErr.txt");
@@ -48,20 +75,20 @@ A generic result in [GenericOutcome](https://intl.cloud.tencent.com/document/pro
 
 
 ### onStartGameServerSession
-#### API Description
-Callback function: this API is used to notify the server that a game session is assigned. 	
+## API Description
+Callback function: notify that a game session is assigned 	
 
-#### Parameter Description
+### Parameters
 
-| Parameter Name | Type/Value | Description |
+|Parameter|Type/value|Description|
 |:---|---|---|
-|Custom|TencentCloud::Gse::Model::GameServerSession| Game session information|
+|Custom|TencentCloud::Gse::Model::GameServerSession|Game session information|
 
-#### Returned Value Description
-No parameters.
+#### Returned value description
+No parameters
 
 
-#### Use Cases
+#### Example
 ```
 void GseManager::OnStartGameServerSession(TencentCloud::Gse::Server::Model::GameServerSession myGameServerSession)
 {
@@ -71,46 +98,45 @@ void GseManager::OnStartGameServerSession(TencentCloud::Gse::Server::Model::Game
 ```
 
 ### onHealthcheck
-#### API Description
-Callback function: this API is used to perform health check once per minute, and the health status needs to be returned within 1 minute. 
+## API Description
+Callback function: health check, once per minute. It’s considered healthy if the response is returned in one minute. 
 
-#### Parameter Description
+### Parameters
 
-No parameters.
-
-
-#### Returned Value Description
-- True: success.
-- False: failure.
+No parameters
 
 
+#### Returned value description
+- `True`: success.
+- `False`: failure.
 
 
-#### Use Cases
+
+
+#### Example
 ```
 void GseManager::OnHealthCheck()
 {
-    // `true` or `false` will be returned based on the actual process health status
+    // Return `true` or `false` according to the health status of the process
     return true;
 }
 ```
 
 ### onProcessTerminate
 
-#### API Description
-Callback function: this API is used to end a process.
+## API Description
+Callback function: end the process
 
-#### Parameter Description
-No parameters.
+### Parameters
+No parameters
 
-#### Returned Value Description
-- True: success.
-- False: failure.
-
-
+#### Returned value description
+- `True`: success.
+- `False`: failure.
 
 
-#### Use Cases
+
+#### Example
 ```
 void GseManager::onProcessTerminate()
 {
