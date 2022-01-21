@@ -1,49 +1,146 @@
-## API Name
-ProcessReady
-<span id="ProcessReady"></span>
+
+
 ## API Description
+This API is used to notify the server that that service is ready. It can register the callback function, port and log directory.  
+When the GSE service receive the notification, it changes the server status to ACTIVE, and, if the callback function is registered, it calls onHealthCheck once per minute. It’s considered valid if the result is returned in one minute.
 
-This API is used to notify GSE that a game process is started and ready to sustain a `GameServerSession`. Then, you can call the corresponding Tencent Cloud APIs such as `CreateGameServerSession` to generate a `GameServerSession`. Finally, GSE can call the [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423) API to assign the `GameServerSession` to the process.
+### Parameters
 
-## Request Message
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th>Type/value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onStartGameServerSession</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function &lt;void(tencentcloud::gse::model::gameserversession)&gt; onStartGameServerSession</a></td>
+<td>The callback function after creation of the game session</td>
+</tr>
+<tr>
+<td align="left">onProcessTerminate</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function&lt;void()&gt;onProcessTerminate</a></td>
+<td>Notify the server to end the process</td>
+</tr>
+<tr>
+<td align="left">onHealthCheck</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function&lt;bool()&gt; onHealthCheck</a></td>
+<td>Scheduled health check function</td>
+</tr>
+<tr>
+<td align="left">port</td>
+<td>int type</td>
+<td>The port listened by the game process</td>
+</tr>
+<tr>
+<td align="left">logParameters</td>
+<td>TencentCloud::Gse::Server::LogParameters</a></td>
+<td>The log directory to upload</td>
+</tr>
+</tbody></table>
 
+#### Return value description  
+- true: success.
+- `False`: failure.
+
+A result containing the error message. Type: GenericOutcome
+
+#### Example
 ```
-message ProcessReadyRequest {
-    repeated string logPathsToUpload = 1;
-    int32 clientPort = 2;
-    int32 grpcPort = 3;
+    std::string serverOut("./logs/serverLog.txt");
+    std::string serverErr("./logs/serverErr.txt");
+    std::vector<std::string> logPaths;
+    logPaths.push_back(serverOut);
+    logPaths.push_back(serverErr);
+    int listenPort = 9090;
+
+    TencentCloud::Gse::Server::ProcessParameters processReadyParameter = TencentCloud::Gse::Server::ProcessParameters(
+        std::bind(&GseManager::OnStartGameSession, this, std::placeholders::_1),
+        std::bind(&GseManager::OnProcessTerminate, this),
+        std::bind(&GseManager::OnHealthCheck, this),
+        listenPort, TencentCloud::Gse::Server::LogParameters(logPaths)
+        );
+
+    TencentCloud::Gse::GenericOutcome readyOutcome = TencentCloud::Gse::Server::ProcessReady(processReadyParameter);
+
+    if (!readyOutcome.IsSuccess())
+    {
+        return false;
+    }
+```
+
+
+
+
+### onStartGameServerSession
+## API Description
+Callback function: notify that a game session is assigned 	
+
+### Parameters
+
+|Parameter|Type/value|Description|
+|:---|---|---|
+|Custom|TencentCloud::Gse::Model::GameServerSession|Game session information|
+
+#### Returned value description
+No parameters
+
+
+#### Example
+```
+void GseManager::OnStartGameServerSession(TencentCloud::Gse::Server::Model::GameServerSession myGameServerSession)
+{
+    TencentCloud::Gse::GenericOutcome outcome = 
+    	TencentCloud::Gse::Server::ActivateGameServerSession();
 }
 ```
 
-## Response Message
+### onHealthcheck
+## API Description
+Callback function: health check, once per minute. It’s considered healthy if the response is returned in one minute. 
 
+### Parameters
+
+No parameters
+
+
+#### Returned value description
+- `True`: success.
+- `False`: failure.
+
+
+
+
+#### Example
 ```
-message GseResponse 
-```
-
-## Field Description
-
-**ProcessReadyRequest**
-
-| Field Name | Type | Description |
-| ---------------- | ----------- | ------------------------------------------------------------ |
-| logPathsToUpload | String array | Path of the game process logs to be uploaded to Tencent Cloud. Directory paths and file paths are supported. GSE will upload logs in the specified paths to Tencent Cloud for you to download. |
-| clientPort       | Int32       | Port to be connected to by the game client                           |
-| grpcPort         | Int32       | Port used by GSE to call the service APIs defined by `GameServerGrpcSdkService.proto` in the game process. |
-
-## Sample
-
-```
-func (r *rpcClient) ProcessReady(logPath []string, clientPort int32, grpcPort int32) (*grpcsdk.GseResponse, error) {
-			conn, _ := grpc.DialContext(context.Background(), LOCAL_ADDRESS, grpc.WithInsecure())
-			defer conn.Close()
-			req := &grpcsdk.ProcessReadyRequest{
-				LogPathsToUpload: logPath, // E.g., Absolute path to logs: `/local/game/logs`; relative path to logs: `./logs`.
-				ClientPort:       clientPort,
-				GrpcPort:         grpcPort,
-			}
-
-			client := grpcsdk.NewGseGrpcSdkServiceClient(conn)
-			return client.ProcessReady(getContext(), req)
+void GseManager::OnHealthCheck()
+{
+    // Return `true` or `false` according to the health status of the process
+    return true;
 }
+```
+
+### onProcessTerminate
+
+## API Description
+Callback function: end the process
+
+### Parameters
+No parameters
+
+#### Returned value description
+- `True`: success.
+- `False`: failure.
+
+
+
+#### Example
+```
+void GseManager::onProcessTerminate()
+{
+	TencentCloud::Gse::GenericOutcome outcome = 
+		TencentCloud::Gse::Server::TerminateGameServerSession();
+}   
 ```

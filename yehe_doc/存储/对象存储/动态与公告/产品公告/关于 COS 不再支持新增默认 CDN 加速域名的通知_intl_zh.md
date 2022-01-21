@@ -1,5 +1,5 @@
 
-自2022年3月1日起，对象存储（Cloud Object Storage，COS）服务将不再支持新增默认 CDN 加速域名。您已开启、或曾经开启的默认 CDN 加速域名不会受到影响，可以继续使用，但建议您使用自定义 CDN 加速域名代替默认 CDN 加速域名。关于默认 CDN 加速域名的说明，请参见 [对默认加速域名配置 CDN 加速](https://intl.cloud.tencent.com/document/product/436/18670)。
+自2022年3月15日起，对象存储（Cloud Object Storage，COS）服务将不再支持新增默认 CDN 加速域名。您已开启、或曾经开启的默认 CDN 加速域名不会受到影响，可以继续使用，但建议您使用自定义 CDN 加速域名代替默认 CDN 加速域名。关于默认 CDN 加速域名的说明，请参见 [对默认加速域名配置 CDN 加速](https://intl.cloud.tencent.com/document/product/436/18670)。
 
 针对不同的用户，默认 CDN 加速域名的支持情况如下：
 

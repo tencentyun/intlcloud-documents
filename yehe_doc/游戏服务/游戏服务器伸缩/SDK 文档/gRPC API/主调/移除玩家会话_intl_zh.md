@@ -1,42 +1,33 @@
-## 接口名称
-RemovePlayerSession 
-<span id="RemovePlayerSession"></span>
 
 
-## 接口说明
-当玩家退出游戏后，游戏进程需要调用该接口通知 GSE 某个玩家已经退出。GSE 收到该请求后，将更新对应的游戏服务器会话的当前玩家数，以允许其他玩家加入进来。
 
-## 请求消息体
+### 接口描述
+本接口（RemovePlayerSession）用于移除玩家，修改 playersession 状态为 COMPLETED ，并预留游戏会话中的位置。
 
+### 参数描述
+
+|参数名|类型/值|描述|
+|:---|---|---|
+|playerSessionId|string|玩家 ID|
+
+
+### 返回值说明
+
+- True：成功。
+- False：失败。
+
+包含错误消息的一般结果，具体类型为 [GenericOutcome](https://intl.cloud.tencent.com/document/product/1055/36700#jtlx)。
+
+
+
+### 使用示例
 ```
-message RemovePlayerSessionRequest {
-    string gameServerSessionId = 1;
-    string playerSessionId = 2;
+TencentCloud::Gse::GenericOutcome outcome = 	
+	TencentCloud::Gse::Server::RemovePlayerSession(playerSessionId);
+
+if (outcome.IsSuccess())
+{
+       // 后续处理
 }
 ```
 
-## 返回消息体
-
-```
-message GseResponse 
-```
-
-## 字段说明
-
-相关字段含义参加 [AcceptPlayerSession](https://intl.cloud.tencent.com/document/product/1055/37428)。
-
-## 使用示例
-
-```
-func (r *rpcClient) RemovePlayerSession(gameServerSessionId, playerSessionId string) (*grpcsdk.GseResponse, error) {
-   conn, _ := grpc.DialContext(context.Background(), LOCAL_ADDRESS, grpc.WithInsecure())
-   defer conn.Close()
-   req := &grpcsdk.RemovePlayerSessionRequest{
-      GameServerSessionId:  gameServerSessionId,
-      PlayerSessionId:      playerSessionId,
-   }
-
-   client := grpcsdk.NewGseGrpcSdkServiceClient(conn)
-   return client.RemovePlayerSession(getContext(), req)
-}
-```

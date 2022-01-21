@@ -1,45 +1,22 @@
-## 接口名称
-TerminateGameServerSession 
-<span id="TerminateGameServerSession"></span>
+### 接口描述
+本接口（TerminateGameServerSession）用于解散游戏会话。修改 GameServerSession 的状态为 TERMINATED，同时保存日志。
 
+### 参数描述
+无参数。
 
-## 接口说明	
+### 返回值说明
+- True：成功。
+- False：失败。
 
-游戏进程需要调用该接口通知 GSE 其上承载的 GameServerSession 已结束，GSE 后续可以将其他 GameServerSession 重新分配到该进程。
+包含错误消息的一般结果，具体类型为 [GenericOutcome](https://intl.cloud.tencent.com/document/product/1055/36700#jtlx)。
 
-## 请求消息体
-
+### 使用示例
 ```
-message TerminateGameServerSessionRequest {
-    string gameServerSessionId = 1;
-}
-```
+TencentCloud::Gse::GenericOutcome outcome = 
+	TencentCloud::Gse::Server::TerminateGameSession();
 
-## 返回消息体
-
-```
-message GseResponse 
-```
-
-## 字段说明
-
-**TerminateGameServerSessionRequest**
-
-| 字段名              | 类型   | 说明                                                         |
-| ------------------- | ------ | ------------------------------------------------------------ |
-| gameServerSessionId | string | 对应 GameServerSession 结构的 GameServerSessionId，唯一标记一次 GameServerSession |
-
-## 使用示例
-
-```
-func (r *rpcClient) TerminateGameServerSession(gameServerSessionId string) (*grpcsdk.GseResponse, error) {
-   conn, _ := grpc.DialContext(context.Background(), LOCAL_ADDRESS, grpc.WithInsecure())
-   defer conn.Close()
-   req := &grpcsdk.TerminateGameServerSessionRequest{
-      GameServerSessionId: gameServerSessionId,
-   }
-
-   client := grpcsdk.NewGseGrpcSdkServiceClient(conn)
-   return client.TerminateGameServerSession(g.getContext(), req)
+if (outcome.IsSuccess())
+{
+       // 后续处理
 }
 ```

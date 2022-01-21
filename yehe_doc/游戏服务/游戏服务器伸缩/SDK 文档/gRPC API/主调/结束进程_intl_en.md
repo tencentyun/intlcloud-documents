@@ -1,38 +1,17 @@
-## API Name
-ProcessEnding 
-<span id="ProcessEnding"></span>
+### API Description
+This API is used to end a server process, change the process status to `TERMINATED`, and repossess resources related to the process.
 
+### Parameter Description
 
-## API Description
+No parameters.
 
-This API is used to notify GSE that the game process is ending.
+### Returned Value Description
+- True: success.
+- False: failure.
 
-## Request Structure
+A generic result in [GenericOutcome](https://intl.cloud.tencent.com/document/product/1055/36700#jtlx) type containing an error message will be returned.
 
+### Use Cases
 ```
-message ProcessEndingRequest {
-}
-```
-
-## Response Message
-
-```
-message GseResponse
-```
-
-## Field Description
-
-N/A
-
-## Sample
-
-```
-func (r *rpcClient) ProcessEnding() (*grpcsdk.GseResponse, error) {
-   conn, _ := grpc.DialContext(context.Background(), LOCAL_ADDRESS, grpc.WithInsecure())
-   defer conn.Close()
-   req := &grpcsdk.ProcessEndingRequest{
-   }
-   client := grpcsdk.NewGseGrpcSdkServiceClient(conn)
-   return client.ProcessEnding(g.getContext(), req)
-}
+ TencentCloud::Gse::GenericOutcome outcome = TencentCloud::Gse::Server::ProcessEnding();   
 ```

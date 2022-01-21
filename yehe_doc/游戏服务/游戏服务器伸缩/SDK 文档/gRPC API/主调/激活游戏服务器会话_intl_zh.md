@@ -1,35 +1,28 @@
-## 接口名称
-ActivateGameServerSession
-<span id="ActivateGameServerSession"></span>
 
-## 接口描述
 
-游戏进程通过 [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423)接口收到 GSE 的回调后，需要调用该接口告诉 GSE 来激活对应的 GameServerSession。
 
-## 请求消息体
 
+### 接口描述
+本接口（ActivateGameServerSession）用于已准备接受游戏服务器会话。
+- 调用 CreateGameServerSession，或者 startGameServerSessionPlacement 会触发 onStartGameServerSession 回调，并且将 session 状态设置为：ACTIVATING。
+- 当进程收到 onStartGameServerSession 回调时，即可调用该接口，表示可接受玩家访问，服务器将状态改为 ACTIVE。
+
+### 参数描述
+无参数。
+
+### 返回值说明
+- True：成功。
+- False：失败。
+
+包含错误消息的一般结果，具体类型为 [GenericOutcome](https://intl.cloud.tencent.com/document/product/1055/36700#jtlx)。
+
+### 使用示例
 ```
-message ActivateGameServerSessionRequest{
-    string gameServerSessionId = 1;
-    int32 maxPlayers = 2;
-}
+ //这个函数一般作为onStartGameServerSession回调函数的一部分，在准备好接收玩家的时候调用，见ProcessReady函数的说明  
+ TencentCloud::Gse::GenericOutcome outcome = 
+ 	TencentCloud::Gse::Server::ActivateGameSession();
+ if (!outcome .IsSuccess())
+ {
+	return false;
+ }
 ```
-
-## 返回消息体
-
-```
-message GseResponse 
-```
-
-## 字段说明
-
-##### ActivateGameServerSessionRequest
-
-| 字段名              | 类型   | 说明                                                         |
-| ------------------- | ------ | ------------------------------------------------------------ |
-| gameServerSessionId | string | 对应 GameServerSession 结构的 GameServerSessionId，唯一标记一次 GameServerSession |
-| maxPlayers          | int32  | 该 GameServerSession 最大允许加入的玩家数                               |
-
-## 使用示例
-
-使用示例请参见 [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423) 接口。

@@ -1,49 +1,146 @@
-## 接口名称
-ProcessReady
-<span id="ProcessReady"></span>
-## 接口说明
 
-在游戏进程启动后，如果准备就绪可以承载 GameServerSession，则需要调用该接口通知 GSE 进程已就绪，随后当游戏开发者通过调用CreateGameServerSession 等相关云 API 接口生成 GameServerSession 后，GSE 即可调用 [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423) 接口将 GameServerSession 分配给该进程。
 
-## 请求消息体
+#### 接口描述
+本接口（ProcessReady）用于告知服务准备就绪，同步方法。它可注册回调函数、端口、和日志目录。 
+GSE 服务器接收后，将服务器实例状态改为 ACTIVE， 如果已注册回调函数，每1分钟调用1次 onHealthCheck，onHealthCheck 在1分钟内返回有效。
 
+#### 参数描述
+
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th>类型/值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onStartGameServerSession</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function &lt;void(tencentcloud::gse::model::gameserversession)&gt; onStartGameServerSession</a></td>
+<td>创建游戏会话后的回调函数</td>
+</tr>
+<tr>
+<td align="left">onProcessTerminate</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function&lt;void()&gt;onProcessTerminate</a></td>
+<td>通知请结束进程</td>
+</tr>
+<tr>
+<td align="left">onHealthCheck</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1055/37426">std::function&lt;bool()&gt; onHealthCheck</a></td>
+<td>定时健康检查函数</td>
+</tr>
+<tr>
+<td align="left">port</td>
+<td>int 类型</td>
+<td>游戏进程监听的端口号</td>
+</tr>
+<tr>
+<td align="left">logParameters</td>
+<td>TencentCloud::Gse::Server::LogParameters</a></td>
+<td>要上传的日志路径</td>
+</tr>
+</tbody></table>
+
+#### 返回值说明  
+- True：成功。
+- False：失败。
+
+包含错误消息的一般结果，具体类型为 GenericOutcome。
+
+#### 使用示例
 ```
-message ProcessReadyRequest {
-    repeated string logPathsToUpload = 1;
-    int32 clientPort = 2;
-    int32 grpcPort = 3;
+    std::string serverOut("./logs/serverLog.txt");
+    std::string serverErr("./logs/serverErr.txt");
+    std::vector<std::string> logPaths;
+    logPaths.push_back(serverOut);
+    logPaths.push_back(serverErr);
+    int listenPort = 9090;
+
+    TencentCloud::Gse::Server::ProcessParameters processReadyParameter = TencentCloud::Gse::Server::ProcessParameters(
+        std::bind(&GseManager::OnStartGameSession, this, std::placeholders::_1),
+        std::bind(&GseManager::OnProcessTerminate, this),
+        std::bind(&GseManager::OnHealthCheck, this),
+        listenPort, TencentCloud::Gse::Server::LogParameters(logPaths)
+        );
+
+    TencentCloud::Gse::GenericOutcome readyOutcome = TencentCloud::Gse::Server::ProcessReady(processReadyParameter);
+
+    if (!readyOutcome.IsSuccess())
+    {
+        return false;
+    }
+```
+
+
+
+
+### onStartGameServerSession
+#### 接口描述
+回调函数：通知分配了一个游戏会话。 	
+
+#### 参数描述
+
+|参数名|类型/值|描述|
+|:---|---|---|
+|自定义|TencentCloud::Gse::Model::GameServerSession|游戏会话信息|
+
+#### 返回值说明
+无参数。
+
+
+#### 使用示例
+```
+void GseManager::OnStartGameServerSession(TencentCloud::Gse::Server::Model::GameServerSession myGameServerSession)
+{
+    TencentCloud::Gse::GenericOutcome outcome = 
+    	TencentCloud::Gse::Server::ActivateGameServerSession();
 }
 ```
 
-## 返回消息体
+### onHealthcheck
+#### 接口描述
+回调函数：健康检查，1分钟检查1次，1分钟内需要答复健康状态。 
 
+#### 参数描述
+
+无参数。
+
+
+#### 返回值说明
+- True：成功。
+- False：失败。
+
+
+
+
+#### 使用示例
 ```
-message GseResponse 
-```
-
-## 字段说明
-
-**ProcessReadyRequest**
-
-| 字段名           | 类型        | 说明                                                         |
-| ---------------- | ----------- | ------------------------------------------------------------ |
-| logPathsToUpload | string 数组 | 游戏进程需要上传的日志路径，日志可输入目录或者文件，GSE 会将其指定的日志路径文件上传到腾讯云，供游戏开发者下载 |
-| clientPort       | int32       | 游戏客户端要链接的端口                           |
-| grpcPort         | int32       | 游戏进程实现 GameServerGrpcSdkService.proto 定义的服务指定的端口，该端口供 GSE 链接 |
-
-## 使用示例
-
-```
-func (r *rpcClient) ProcessReady(logPath []string, clientPort int32, grpcPort int32) (*grpcsdk.GseResponse, error) {
-			conn, _ := grpc.DialContext(context.Background(), LOCAL_ADDRESS, grpc.WithInsecure())
-			defer conn.Close()
-			req := &grpcsdk.ProcessReadyRequest{
-				LogPathsToUpload: logPath, // 例如：日志绝对路径: /local/game/logs；日志相对路径:./logs
-				ClientPort:       clientPort,
-				GrpcPort:         grpcPort,
-			}
-
-			client := grpcsdk.NewGseGrpcSdkServiceClient(conn)
-			return client.ProcessReady(getContext(), req)
+void GseManager::OnHealthCheck()
+{
+    //根据进程实际健康情况，返回true or false
+    return true;
 }
+```
+
+### onProcessTerminate
+
+#### 接口描述
+回调函数：结束进程。
+
+#### 参数描述
+无参数。
+
+#### 返回值说明
+- True：成功。
+- False：失败。
+
+
+
+#### 使用示例
+```
+void GseManager::onProcessTerminate()
+{
+	TencentCloud::Gse::GenericOutcome outcome = 
+		TencentCloud::Gse::Server::TerminateGameServerSession();
+}   
 ```

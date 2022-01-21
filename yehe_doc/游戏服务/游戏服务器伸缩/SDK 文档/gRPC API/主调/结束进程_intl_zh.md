@@ -1,38 +1,17 @@
-## 接口名称
-ProcessEnding 
-<span id="ProcessEnding"></span>
+### 接口描述
+本接口（ProcessEnding）用于结束进程，服务器进程状态更改为 TERMINATED，并回收进程相关资源。
 
+### 参数描述
 
-## 接口说明
+无参数。
 
-游戏进程需要调用该接口通知 GSE 该游戏进程正在关闭。
+### 返回值说明
+- True：成功。
+- False：失败。
 
-## 请求结构体
+包含错误消息的一般结果，具体类型为 [GenericOutcome](https://intl.cloud.tencent.com/document/product/1055/36700#jtlx)。
 
+### 使用示例
 ```
-message ProcessEndingRequest {
-}
-```
-
-## 返回消息体
-
-```
-message GseResponse
-```
-
-## 字段说明
-
-无
-
-## 使用示例
-
-```
-func (r *rpcClient) ProcessEnding() (*grpcsdk.GseResponse, error) {
-   conn, _ := grpc.DialContext(context.Background(), LOCAL_ADDRESS, grpc.WithInsecure())
-   defer conn.Close()
-   req := &grpcsdk.ProcessEndingRequest{
-   }
-   client := grpcsdk.NewGseGrpcSdkServiceClient(conn)
-   return client.ProcessEnding(g.getContext(), req)
-}
+ TencentCloud::Gse::GenericOutcome outcome = TencentCloud::Gse::Server::ProcessEnding();   
 ```
