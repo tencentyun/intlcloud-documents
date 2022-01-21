@@ -8,13 +8,13 @@ SCF follows the execution logic that one concurrent instance processes only one 
 
 ### Concurrent processing for async invocations
 
-Async events will first enter a queue on the SCF platform, where they will be processed in a FIFO manner. The system will select an appropriate concurrency processing method based on the conditions such as queue length and current number of concurrent instances of the function to pull sufficient concurrent instances and process the events in sequence.
+Async events will first enter a queue in SCF, where they will be processed in a FIFO manner. The system will select an appropriate concurrency processing method based on the conditions such as queue length and current number of concurrent instances of the function to pull sufficient concurrent instances and process the events in sequence.
 
-If an async invocation fails, SCF will retry according to certain rules. For more information, please see [Error Types and Retry Policies](https://intl.cloud.tencent.com/document/product/583/34383).
+If an async invocation fails, SCF will retry according to certain rules. For more information, please see [Error Types and Retry Policies](https://intl.cloud.tencent.com/document/product/583/39851).
 
 ### Concurrent processing for sync invocations
 
-After sync events arrive at the SCF platform, the platform will check whether there are any idle concurrent instances, and if so, the events will be immediately sent to instances for processing; otherwise, the platform will start new concurrent instances to process them.
+After sync events arrive at SCF, it will check whether there are any idle concurrent instances, and if so, the events will be immediately sent to instances for processing; otherwise, it will start new concurrent instances to process them.
 
 If a sync invocation fails, you need to retry by yourself.
 
@@ -36,14 +36,14 @@ For example, if the QPS of a business is 2,000, and the average time per request
 
 After a concurrent instance processes a request event, it will not be repossessed immediately; instead, it will be retained for a certain period of time for reuse. During the retention duration, if there are new request events that need to be processed, the retained concurrent instance will be used first, so the events can be processed quickly with no need to start new concurrent instances.
 
-After the retention duration elapses, if there are no requests that need to be processed by the instance, the SCF platform will repossess it. For low concurrency scenarios, no retention duration is set, and the platform will enable the smart repossession mechanism for resource repossession.
+After the retention duration elapses, if there are no requests that need to be processed by the instance, SCF will repossess it. For low concurrency scenarios, no retention duration is set, and SCF will enable the smart repossession mechanism for resource repossession.
 
-The concurrent instance retention duration is dynamically adjusted by the SCF platform as needed; therefore, you cannot assume a certain retention duration when writing the function business code.
+The concurrent instance retention duration is dynamically adjusted by SCF as needed; therefore, you cannot assume a certain retention duration when writing the function business code.
 
 
 ## Concurrency Expansion
 
-If a request arrives, but no concurrent instances for that version can process it, the SCF platform will start a new concurrent instance for processing. After initialization, the new instance can process events, which is called expansion by elastic concurrency.
+If a request arrives, but no concurrent instances for that version can process it, SCF will start a new concurrent instance for processing. After initialization, the new instance can process events, which is called expansion by elastic concurrency.
 
 The **maximum expansion speed of new concurrent instances in a region under one account is 500 instances/minute by default**, that is, up to 500 new concurrent instances can be started in one minute. If the limit is reached in one minute, no more new instances will be started until the minute elapses, during which a limited expansion error (429 ResourceLimit) will occur if new instance expansion requests are initiated. For more information, please see [Function Status Code](https://intl.cloud.tencent.com/document/product/583/35311).
 
@@ -53,29 +53,33 @@ The elastic concurrency expansion speed of 500 instances per minute can meet the
 
 ### Provisioned concurrency
 
-Concurrent instances in elastic concurrency expansion in the SCF platform need to be initialized, which includes initialization of the runtime environment and the business code.
-You can use the **provisioned concurrency** feature to configure concurrent instances in advance. **The SCF platform will start the concurrent instances after you configure them and will not actively repossess the provisioned instances, so as to guarantee a certain number of concurrent instances as much as possible.** If errors such as code memory leak occur on a concurrent instance, the SCF platform will replace it with a new instance. For more information, please see [Provisioned Concurrency](https://intl.cloud.tencent.com/document/product/583/37704).
+Concurrent instances in elastic concurrency expansion in SCF need to be initialized, which includes initialization of the runtime environment and the business code.
+You can use the **provisioned concurrency** feature to configure concurrent instances in advance. **SCF will start the concurrent instances after you configure them and will not actively repossess the provisioned instances, so as to guarantee a certain number of concurrent instances as much as possible.** If errors such as code memory leak occur on a concurrent instance, SCF will replace it with a new instance. For more information, please see [Provisioned Concurrency](https://intl.cloud.tencent.com/document/product/583/37704).
 
 ### Concurrency service level
 
-#### Elastic concurrency expansion limit
-| Individual User | Organizational User | Additional Quota Available for Application |
-|---------|---------|---------|
+#### Concurrency expansion limit
+|| Individual User | Organizational User | Additional Quota Available for Application |
+|-|---------|---------|---------|
 | Elastic concurrency expansion limit | 500 concurrent instances/minute | 1,000 concurrent instances/minute | Concurrency expansion speed at the 10,000 concurrent instances/minute level is supported, which you can apply for by submitting a ticket. |
+| Provisioned concurrency expansion limit | 100 concurrent instances/minute | 100 concurrent instances/minute | The speed of starting provisioned concurrency can be automatically adjusted according to business conditions. |
 
-At the region level, the elastic concurrency expansion speed is limited to 500 concurrent instances/minute for individual users and 1,000 concurrent instances/minute for organizational users by default. For example, if you need 100,000 concurrent instances, it will take 100000/1000 = 100 minutes to complete the expansion at the maximum elastic concurrency expansion speed. If you need to increase the quotas, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+
+At the region level, the elastic concurrency expansion speed is limited to 500 concurrent instances/minute for individual users and 1,000 concurrent instances/minute for organizational users by default. For example, if you need 100,000 concurrent instances, it will take 100000/1000 = 100 minutes to complete the expansion at the maximum elastic concurrency expansion speed. If you need to increase the quotas, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. SCF will adjust the speed of starting provisioned concurrency based on your business, which is 100 concurrent instances per minute by default.
 
 #### Concurrency quota
 <table>
+<th> </th>
 <th>Region</th>
 <th>Individual User</th>
 <th>Organizational User</th>
-<th>Additional Quota Available for Application</th>
+<th >Additional Quota Available for Application</th>
 <tr>
 <td rowspan=2>Concurrency quota</td>
 <td>Guangzhou, Shanghai, Beijing, Chengdu, and Hong Kong (China)</td>
 <td>128,000 MB</td>
 <td>256,000 MB</td>
+<td rowspan=2>At the 1 million MB level, which can be increased by submitting a ticket</td>
 </tr>
 <tr>
 <td>Mumbai, Singapore, Tokyo, Toronto, Silicon Valley, Frankfurt, Shenzhen Finance, and Shanghai Finance</td>
@@ -86,7 +90,7 @@ At the region level, the elastic concurrency expansion speed is limited to 500 c
 </table>      
 
 
-Each account has concurrency restrictions at the region level, and you cannot modify the regional quotas. The SCF platform configures different concurrency quotas in different regions for individual and organizational users as detailed in the table. If you need to increase the quotas, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+Each account has concurrency restrictions at the region level, and you cannot modify the regional quotas. SCF configures different concurrency quotas in different regions for individual and organizational users as detailed in the table. If you need to increase the quotas, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 
 
@@ -94,7 +98,7 @@ Each account has concurrency restrictions at the region level, and you cannot mo
 
 ## Concurrency Management
 
-The SCF platform provides concurrency management capabilities at the function granularity for you to flexibly control the concurrency of different functions. For more information, please see [Concurrency Management System](https://intl.cloud.tencent.com/zh/document/product/583/39464).
+SCF provides concurrency management capabilities at the function granularity for you to flexibly control the concurrency of different functions. For more information, please see [Reserved Concurrency](https://intl.cloud.tencent.com/document/product/583/39464).
 
 
 Each account has a total concurrency quota limit at the region level. The default value is 128,000 MB or 64,000 MB. For more information, please see [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637). The concurrency quotas between regions are independent of each other.
