@@ -4,7 +4,7 @@ This document provides an overview of APIs and SDK code samples related to advan
 
 | API | Operation    |
 | ------------------------------------------------------------ | -------- |
-| [Advanced image compression](https://cloud.tencent.com/document/product/436/48987) |   Compresses images in a specified bucket   |
+| [Advanced image compression](https://intl.cloud.tencent.com/document/product/436/44004) |   Compresses images in a specified bucket   |
 
 
 ## SDK API References
