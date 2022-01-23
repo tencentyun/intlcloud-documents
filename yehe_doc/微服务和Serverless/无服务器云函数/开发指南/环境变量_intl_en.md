@@ -9,22 +9,29 @@ The configured environment variables will be configured into the OS environment 
 Environment variables usually appear as `key-value` pairs. Enter the required environment variable key in the first input box and the required value in the second one.
 
 ### Adding environment variable locally
-For local development, you can configure the `Environment` environment variable directly under the function in `template.yaml` and run the `scf deploy` command to deploy it to the cloud as shown below:
+For local development, you can configure the `Environment` environment variable directly under the function in `serverless.yml` and run the `sls deploy` command to deploy it to the cloud as shown below:
 ```yaml
-	test:
-      Type: TencentCloud::Serverless::Function
-      Properties:
-        CodeUri: ./
-        Type: Event
-        Description: This is a template function
-        Environment:
-          Variables:
-            ENV_FIRST: env1
-            ENV_SECOND: env2
-        Handler: index.main_handler
-        MemorySize: 128
-        Runtime: Nodejs6.10
-        Timeout: 3
+component: scf # Component name, which is required. It is `scf` in this example
+name: scfdemo # Component instance name, which is required
+
+# Component parameter configuration
+inputs:
+  name: scfdemo # Function name, which is `${name}-${stage}-${app}` by default
+  namespace: default
+  # 1. Default format. Create a specifically named COS bucket and upload it
+  src: ./src
+  type: event # Function. Valid values: event - event-triggered (default), web - HTTP-triggered
+  handler: index.main_handler # Entry (valid if the function is event-triggered)
+  runtime: Nodejs10.15 # Runtime environment, which is Nodejs10.15 by default
+  region: ap-guangzhou # Function region
+  description: This is a function in ${app} application.
+  memorySize: 128 # Memory size in MB
+  timeout: 20 # Function execution timeout period in seconds
+  initTimeout: 3 # Initialization timeout period in seconds
+  environment: # Environment variable
+    variables: # Environment variable object
+      TEST1: value1
+      TEST2: value2
 ```
 
 ## Viewing Environment Variable
@@ -94,36 +101,132 @@ The following use limits apply to the environment variables of functions:
 
 The `Key` and `Value` of built-in environment variables in the current runtime environment are as shown in the table below:
 
-| Environment Variable Key | Specific Value or Value Source |
-| --------------------------- | ------------------------------------------------------------ |
-| `TENCENTCLOUD_SESSIONTOKEN` | {Temporary SESSION TOKEN}                                         |
-| `TENCENTCLOUD_SECRETID`     | {Temporary SECRET ID}                                             |
-| `TENCENTCLOUD_SECRETKEY`    | {Temporary SECRET KEY}                                            |
-| `_SCF_SERVER_PORT`          | 28902                                                        |
-| `TENCENTCLOUD_RUNENV`       | SCF                                                          |
-| `USER_CODE_ROOT`            | /var/user/                                                   |
-| `TRIGGER_SRC`               | timer (to use a timer trigger)                                    |
-| `PYTHONDONTWRITEBYTECODE`   | x                                                            |
-| `PYTHONPATH`                | /var/user:/opt                                               |
-| `CLASSPATH`                 | /var/runtime/java8:/var/runtime/java8/lib/*:/opt             |
-| `NODE_PATH`                 | /var/user:/var/user/node_modules:/var/lang/node6/lib/node_modules:/opt:/opt/node_modules |
-| `_`                         | /var/lang/python3/bin/python3                                |
-| `PWD`                       | /var/user                                                    |
-| `LOGNAME`                   | qcloud                                                       |
-| `LANG`                      | en_US.UTF8                                                   |
-| `LC_ALL`                    | en_US.UTF8                                                   |
-| `USER`                      | qcloud                                                       |
-| `HOME`                      | /home/qcloud                                                 |
-| `PATH`                      | /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin |
-| `SHELL`                     | /bin/bash                                                    |
-| `SHLVL`                     | 3                                                            |
-| `LD_LIBRARY_PATH`           | /var/runtime/java8:/var/user:/opt                            |
-| `HOSTNAME`                  | {host id}                                                    |
-| `SCF_RUNTIME`               | Function runtime                                                   |
-| `SCF_FUNCTIONNAME`          | Function name                                                       |
-| `SCF_FUNCTIONVERSION`       | Function version                                                     |
-| `TENCENTCLOUD_REGION`       | Region                                                         |
-| `TENCENTCLOUD_APPID`        | Account `APPID`                                                    |
-| `TENCENTCLOUD_UIN`          | Account `UIN`                                                      |
-| `TENCENTCLOUD_TZ`           | Time zone, which is UTC currently                                              |
 
+<table>
+<thead>
+<tr>
+<th nowrap="nowrap">Environment Variable Key</th>
+<th>Specific Value or Value Source</th>
+</tr>
+</thead>
+<tbody><tr>
+<td nowrap="nowrap"><code>TENCENTCLOUD_SESSIONTOKEN</code></td>
+<td>{Temporary SESSION TOKEN}</td>
+</tr>
+<tr>
+<td><code>TENCENTCLOUD_SECRETID</code></td>
+<td>{Temporary SECRET ID}</td>
+</tr>
+<tr>
+<td><code>TENCENTCLOUD_SECRETKEY</code></td>
+<td>{Temporary SECRET KEY}</td>
+</tr>
+<tr>
+<td><code>_SCF_SERVER_PORT</code></td>
+<td>28902</td>
+</tr>
+<tr>
+<td><code>TENCENTCLOUD_RUNENV</code></td>
+<td>SCF</td>
+</tr>
+<tr>
+<td><code>USER_CODE_ROOT</code></td>
+<td>/var/user/</td>
+</tr>
+<tr>
+<td><code>TRIGGER_SRC</code></td>
+<td>Timer (if a timer trigger is used)</td>
+</tr>
+<tr>
+<td><code>PYTHONDONTWRITEBYTECODE</code></td>
+<td>x</td>
+</tr>
+<tr>
+<td><code>PYTHONPATH</code></td>
+<td>/var/user:/opt</td>
+</tr>
+<tr>
+<td><code>CLASSPATH</code></td>
+<td>/var/runtime/java8:/var/runtime/java8/lib/*:/opt</td>
+</tr>
+<tr>
+<td><code>NODE_PATH</code></td>
+<td>/var/user:/var/user/node_modules:/var/lang/node6/lib/node_modules:/opt:/opt/node_modules</td>
+</tr>
+<tr>
+<td><code>_</code></td>
+<td>/var/lang/python3/bin/python3</td>
+</tr>
+<tr>
+<td><code>PWD</code></td>
+<td>/var/user</td>
+</tr>
+<tr>
+<td><code>LOGNAME</code></td>
+<td>qcloud</td>
+</tr>
+<tr>
+<td><code>LANG</code></td>
+<td>en_US.UTF8</td>
+</tr>
+<tr>
+<td><code>LC_ALL</code></td>
+<td>en_US.UTF8</td>
+</tr>
+<tr>
+<td><code>USER</code></td>
+<td>qcloud</td>
+</tr>
+<tr>
+<td><code>HOME</code></td>
+<td>/home/qcloud</td>
+</tr>
+<tr>
+<td><code>PATH</code></td>
+<td>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</td>
+</tr>
+<tr>
+<td><code>SHELL</code></td>
+<td>/bin/bash</td>
+</tr>
+<tr>
+<td><code>SHLVL</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>LD_LIBRARY_PATH</code></td>
+<td>/var/runtime/java8:/var/user:/opt</td>
+</tr>
+<tr>
+<td><code>HOSTNAME</code></td>
+<td>{host id}</td>
+</tr>
+<tr>
+<td><code>SCF_RUNTIME</code></td>
+<td>Function runtime</td>
+</tr>
+<tr>
+<td><code>SCF_FUNCTIONNAME</code></td>
+<td>Function name</td>
+</tr>
+<tr>
+<td><code>SCF_FUNCTIONVERSION</code></td>
+<td>Function version</td>
+</tr>
+<tr>
+<td><code>TENCENTCLOUD_REGION</code></td>
+<td>Region</td>
+</tr>
+<tr>
+<td><code>TENCENTCLOUD_APPID</code></td>
+<td>Account APPID</td>
+</tr>
+<tr>
+<td><code>TENCENTCLOUD_UIN</code></td>
+<td>Account UIN</td>
+</tr>
+<tr>
+<td><code>TENCENTCLOUD_TZ</code></td>
+<td>Time zone, which is UTC currently</td>
+</tr>
+</tbody></table>

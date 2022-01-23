@@ -3,8 +3,8 @@ This document describes how to use an image to deploy a function in the console.
 ## Prerequisites
 
 SCF supports image repositories on TCR Personal Edition and Enterprise Edition. You can select an image repository as needed.
-- Purchase a TCR Enterprise Edition instance. For more information, please see [Quick Start](https://intl.cloud.tencent.com/document/product/1051/35484).
-- Use a TCR Personal Edition image repository. For more information, please see [Getting Started](https://intl.cloud.tencent.com/document/product/1051/38866).
+- Purchase a TCR Enterprise Edition instance. For more information, see [Quick Start](https://intl.cloud.tencent.com/document/product/1051/35484).
+- Use a TCR Personal Edition image repository. For more information, see [Getting Started](https://intl.cloud.tencent.com/document/product/1051/38866).
 
 
 ## Creating Function in Console
@@ -43,7 +43,7 @@ docker push  $YOUR_IMAGE_NAME
 </thead>
 <tbody><tr>
 <td>Function type</td>
-<td>Select event function or web function</td>
+<td>Select event-triggered function or HTTP-triggered function</td>
 </tr>
 <tr>
 <td>Function name</td>
@@ -67,11 +67,11 @@ docker push  $YOUR_IMAGE_NAME
 </tr>
 <tr>
 <td>Command</td>
-<td>Enter the bootstrap command of the container<br>Parameter input specification: we recommend you use "double quotation mark + comma" as the parameter separator, such as <code>"nginx"</code>. <br>This parameter is optional. If it is left empty, the Entrypoint / CMD in the image will be used by default</td>
+<td>Enter the bootstrap command of the container.<br>Parameter input specification: enter an executable command, such as <code>python</code>. <br>This parameter is optional. If it is left empty, the `Entrypoint` in the Dockerfile will be used by default</td>
 </tr>
 <tr>
 <td>Args</td>
-<td>Enter the bootstrap parameter of the container<br>Parameter input specification: we recommend you use "double quotation mark + comma" as the parameter separator, such as <code>"-args","value"</code>. This parameter is optional. If it is left empty, the CMD in the image will be used by default</td>
+<td>Enter the bootstrap parameter of the container.<br>Parameter input specification: use "space" as the parameter separator, such as <code>-u app.py</code>. <br>This parameter is optional. If it is left empty, the CMD in the Dockerfile will be used by default</td>
 </tr>
 </tbody></table>
 4. Click **Complete**.
