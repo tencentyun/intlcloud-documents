@@ -5,7 +5,7 @@ A 502 Bad Gateway error occurs when you are using Anti-DDoS Advanced, as shown b
 
 ## Common Causes
 The following figure shows how the application traffic flows.
-![](https://main.qcloudimg.com/raw/43a308a282a5d3a9d3d85c735333e91e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/76be6e8cd868f9735e5fce09ddda3479.png)
 
 ### [Cause 1: The forwarding IP is blocked by the real server or limited to a specific rate](id:yy1)
 After you connect to Anti-DDoS Advanced, the instance IP sends received access requests to the real server using the forwarding IP instead of client IP and thus the real server IP becomes invisible to the client. However, the number of forwarding IPs is insufficient to handle volumes of access requests.
