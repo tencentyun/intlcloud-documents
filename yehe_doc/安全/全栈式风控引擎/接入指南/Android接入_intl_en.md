@@ -5,7 +5,7 @@ An SDK for Android is provided for your mobile application. You can integrate it
 Currently, the SDK is compatible with applications with Android API level 15 and above and supports manual integration on simulators.
 
 
-### Manual integration
+**Manual integration**
 
 - Click here to download the SDK.
 
