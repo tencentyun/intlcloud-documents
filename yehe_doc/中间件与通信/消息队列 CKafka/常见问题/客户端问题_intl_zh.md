@@ -1,3 +1,15 @@
+### Kafka Console 客户端测试时看不到数据如何处理？
+
+- 消费者采用 latest 时候只会获取最后的数据，需要同时保持生产才可以看到相应数据。
+- 改为 earliest 方式消费数据。
+
+### 新接入客户端时生产或消费错误?
+
+- 检查 telnet 是否通（网络问题，是否 Kafka 和生产者在相同网络环境下）。
+- 访问的 vip - port 是否配置正确。
+- topic 白名单是否开启，如果开启需要配置正确的 IP 才能访问。
+
+
 
 
 ### 客户端生产消息如何保证在同一分区是有序的？
@@ -43,4 +55,4 @@ log.info("offset: {}", recordMetadata.offset());
 如果能够打印出 partition 和 offset，则表示当前发送的消息在服务端已经被正确保存。此时可以通过消息查询的工具去查询相关位点的消息即可。
 如果打印不出 partition 和 offset，则表示消息没有被服务端保存，客户端需要重试。
 
-   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
+ ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)

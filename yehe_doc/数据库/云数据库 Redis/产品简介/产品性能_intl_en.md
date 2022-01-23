@@ -1,15 +1,19 @@
 
 ## Specifications
 ### Memory edition
+>?
+>- As a trial version, the 256 MB specification on v4.0 or v5.0 is only suitable for product verification in testing environments but not recommended for use in production environments. It is available only in Shanghai Zone 5, Beijing Zone 6, and Guangzhou Zone 6. Other 1 GB and above specifications cannot be downgraded to the 256 MB specification.
+>- v2.8 is unavailable currently, and v4.0 or later is recommended. To purchase v2.8, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 <table>
 <thead><tr>
-<th>Feature</th><th colspan="2" >Standard Architecture</th><th>Cluster Architecture</th></tr></thead>
+<th width=15%>Feature</th><th colspan="2" width=60%>Standard Architecture</th><th width=25%>Cluster Architecture</th></tr></thead>
 <tbody><tr>
-<td>Compatible Redis version</td><td>2.8</td><td>4.0 and 5.0</td><td>4.0 and 5.0</td></tr>
+<td>Compatible Redis version</td><td width=30%>2.8</td><td width=30%>4.0 and 5.0</td><td>4.0 and 5.0</td></tr>
 <tr>
-<td>Memory</td><td>256 MB to 64 GB</td><td>1 GB to 64 GB</td><td>4 GB to 20 TB</td></tr>
+<td>Memory</td><td>256 MB to 64 GB</td><td>256 MB to 64 GB
+</td><td>2 GB to 8 TB</td></tr>
 <tr>
-<td>Shard quantity</td><td>N/A</td><td>N/A</td><td>1 to 320</td></tr>
+<td>Shard quantity</td><td>N/A</td><td>N/A</td><td>1 to 128</td></tr>
 <tr>
 <td>QPS</td><td>80,000 to 100,000</td><td>80,000 to 100,000</td><td>80,000 to 100,000 per shard</td></tr>
 <tr>
@@ -17,7 +21,7 @@
 <tr>
 <td>Traffic limit</td><td>10 MB/s to 64 MB/s</td><td>10 MB/s to 64 MB/s</td><td>144 MB/s to 6 GB/s</td></tr>
 <tr>
-<td>Multi-database</td><td>Supported</td><td>Supported</td><td>Supported</td></tr>
+<td>Multi-Database</td><td>Supported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
 <td>Mget, Mset</td><td>Supported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
@@ -27,14 +31,13 @@
 <tr>
 <td>Replica scaling</td><td>Unsupported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
-<td>Read/write separation</td><td>Unsupported</td><td>Supported</td><td>Supported</td></tr>
+<td>Read/Write separation</td><td>Unsupported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
 <td>GEO</td><td>Unsupported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
 <td>Replica quantity</td><td>0 to 1</td><td>1 to 5</td><td>1 to 5</td></tr>
 </tbody></table>
 
->?The 256 MB specification is a limited introductory version. It is only suitable for functionality verification in test environments but not recommended for production environments. Other specifications currently cannot be scaled down to the 256 MB specification.
 
 ### CKV edition
 <table>
@@ -53,25 +56,25 @@
 <tr>
 <td>Traffic limit</td><td>16 MB/s to 256 MB/s</td><td>72 MB/s to 32 GB/s</td></tr>
 <tr>
-<td>Multi-database</td><td>Supported</td><td>Supported</td></tr>
+<td>Multi-Database</td><td>Supported</td><td>Supported</td></tr>
 <tr>
 <td>Mget, Mset</td><td>Supported</td><td>Supported</td></tr>
 <tr>
 <td>lua</td>
-<td>Supported</td><td>Limited support (to use Lua in the cluster edition, you need to make sure that the keys accessed in the Lua script are in the same slot, and the `key` field must be included in the command parameters)</td>
+<td>Supported</td><td>Limited support (to use Lua in the cluster edition, you need to make sure that the keys accessed in the Lua script are in the same slot, and the `key` field must be included in the command parameters)</td></tr>
 <tr>
 <td>Horizontal scaling</td><td>Unsupported</td><td>Supported</td></tr>
 <tr>
 <td>Replica scaling</td><td>Unsupported</td><td>Unsupported</td></tr>
 <tr>
-<td>Read/write separation</td><td>Unsupported</td><td>Unsupported</td></tr>
+<td>Read/Write separation</td><td>Unsupported</td><td>Unsupported</td></tr>
 <tr>
 <td>GEO</td><td>Supported</td><td>Supported</td></tr>
 </tbody></table>
 
 ### Traffic and connections
 #### Memory edition
-| Specification (GB) | Max. Connections | Max. Throughput (MB/s) |
+| Specification (GB) | Max Connections | Max Throughput (MB/s) |
 |  :----------: |  :----------: |  :-------------------: |
 | 0.25          | 3,000       | 10                  |
 | 1          | 40,000       | 16                  |
@@ -88,7 +91,7 @@
 | 60         | 40,000       | 64                  | 
 
 #### CKV edition
-| Specification (GB) | Max. Connections | Max. Throughput (MB/s) | 
+| Specification (GB) | Max Connections | Max Throughput (MB/s) | 
 |  :----------: |  :----------: |  :-------------------: |
 | 4          | 10,000       | 24                  |
 | 8          | 10,000       | 24                  |
@@ -107,7 +110,7 @@
 | 384        | 24,000      | 256                 | 
 
 Cluster edition connections = number of connections per shard * number of shards;
-Cluster Edition throughput = Shard throughput * number of shards
+Cluster edition throughput = shard throughput * number of shards
 >!After scaling, legacy instances capable of up to 9,000 connections will be capable of 10,000 connections.
 
 ## Performance Data
@@ -117,20 +120,20 @@ The time needed to execute Redis commands varies. Businesses use different datab
 #### Single-node test performance
 |  Redis Instance Specification | Connections | QPS |
 |:---------:|:---------:|:--------:|
-| Memory edition (standard architecture), 8 GB | 10,000 | 80,000-100,000 |
-| Memory edition (cluster architecture), 8 GB (per shard) | 10,000 | 80,000-100,000 |
-| CKV edition (standard architecture), 8 GB|  12,000    |   80,000-120,000  |
+| Memory Edition (Standard Architecture), 8 GB | 10,000 | 80,000-100,000 |
+| Memory Edition (Cluster Architecture), 8 GB (per shard) | 10,000 | 80,000-100,000 |
+| CKV Edition (Standard Architecture), 8 GB|  12,000    |   80,000-120,000  |
 
 #### Cluster architecture test performance
-Memory edition (cluster architecture) performance = memory edition (standard architecture) performance * number of shards
-CKV edition (cluster architecture) performance = CKV edition (standard architecture) performance * number of shards
+Memory Edition (Cluster Architecture) performance = Memory Edition (Standard Architecture) performance * number of shards
+CKV Edition (Cluster Architecture) performance = CKV Edition (Standard Architecture) performance * number of shards
 
 ### Test method
 #### Testing environment
 | Number of CVMs where Pressure Test Clients Are Installed | CVM Cores | CVM MEM | Region | Redis Instance Specification |
 |:---------:|:---------:|:---------:|:---------:|:---------:|
-| 3 | 2 |8 GB | Guangzhou Zone 2 | Memory edition (standard architecture), 8 GB | 
-| 3 | 2 |8 GB | Guangzhou Zone 2 | CKV edition (standard architecture), 8 GB |
+| 3 | 2 |8 GB | Guangzhou Zone 2 | Memory Edition (Standard Architecture), 8 GB | 
+| 3 | 2 |8 GB | Guangzhou Zone 2 | CKV Edition (Standard Architecture), 8 GB |
 
 #### Test parameters
  ```

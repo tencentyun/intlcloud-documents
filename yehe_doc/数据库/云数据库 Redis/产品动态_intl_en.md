@@ -1,3 +1,12 @@
+## December 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Supported the 256 MB memory specification for TencentDB for Redis 4.0 and 5.0 Memory Edition (Standard Architecture)</td>
+<td>The minimum memory specification of TencentDB for Redis 4.0 and 5.0 Memory Edition (Standard Architecture) instances can be 256 MB. Currently, this is supported only in Shanghai Zone 5, Beijing Zone 6, and Guangzhou Zone 6.</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/17952" target="">Performance</td></tr>
+</table>
 ## November 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>

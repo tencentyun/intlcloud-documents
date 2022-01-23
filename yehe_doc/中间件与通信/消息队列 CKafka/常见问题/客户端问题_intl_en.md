@@ -1,3 +1,15 @@
+### What should I do if no messages can be seen when testing the client in the Kafka console?
+
+- If the "latest" option is used, the consumer can only get the last messages, and production needs to be ongoing so that see the corresponding messages can be seen.
+- Change to the "earliest" option for data consumption.
+
+## What should I do if a production/consumption error occurs after a new client is connected to the service?
+
+- Check whether telnet works. It might be a network issue. Check if Kafka and the producer are in the same network.
+- Check whether the accessed vip - port is correctly configured.
+- Check whether the topic allowlist is enabled. If yes, you need to configure the correct IP for access.
+
+
 
 
 ### How can I ensure that messages produced by the client are sequential in the same partition?
@@ -43,4 +55,4 @@ log.info("offset: {}", recordMetadata.offset());
 If the partition and offset information can be printed out, the currently sent message has been correctly saved on the server. At this time, you can use the message query tool to query the information of the relevant offset.
 If the partition and offset information cannot be printed out, the message has not been saved on the server, and the client needs to retry.
 
-   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
+ ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
