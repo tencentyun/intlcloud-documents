@@ -97,7 +97,7 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
 <tr>
       <td style="text-align:center">Unity</td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'zip'})" target="_blank" href="https://comm.qq.com/sdk/trtc/unity/TRTCUnitySDK.unitypackage">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCUnitySDK">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCUnitySDK/blob/main/README.en.md">Github</a></td>
       <td style="text-align:center">N/A</td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/40779">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/40780">DOC</a></td>
@@ -106,7 +106,7 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
 <tr>
       <td style="text-align:center">Unreal Engine</td>
       <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'github'})" target="_blank" href="https:https://github.com/tencentyun/TRTCUnrealEngine">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCUnrealEngine">Github</a></td>
       <td style="text-align:center">N/A</td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/44077">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/44078">DOC</a></td>
