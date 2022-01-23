@@ -231,11 +231,7 @@ CLB 的 IP 版本可以选择 IPv4、IPv6 或者 IPv6 NAT64。使用限制详情
 ### [性能容量型实例购买方式](id:LCU-CLB-Instance)
 1. 登录腾讯云 [负载均衡购买页](https://buy.cloud.tencent.com/lb)。
 2. 参考以上 [官网购买](#Official-Purchase) 的操作步骤，按需选择性能容量型负载均衡实例相关配置，并且“实例规格”选择**性能容量型**。
-<dx-tabs>
-::: 按量计费的性能容量型实例
-![]()
-:::
-</dx-tabs>
+
 3. 继续参考以上 [官网购买](#Official-Purchase) 的操作步骤完成后续操作。
 
 

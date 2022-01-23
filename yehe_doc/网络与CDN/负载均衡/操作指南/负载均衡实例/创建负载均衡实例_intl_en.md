@@ -231,11 +231,7 @@ Currently, the static single-line IP is supported only in Guangzhou, Shanghai, N
 ### [LCU-Supported instance purchase method](id:LCU-CLB-Instance)
 1. Log in to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
 2. Set the LCU-supported instance configuration items by referring to the steps in [Purchasing at Official Website](#Official-Purchase) and select **LCU-supported** for **Instance Specification**.
-<dx-tabs>
-::: Pay-as-You-Go LCU-supported instance
-![]()
-:::
-</dx-tabs>
+
 3. Complete the subsequent operations by referring to the steps in [Purchasing at Official Website](#Official-Purchase).
 
 

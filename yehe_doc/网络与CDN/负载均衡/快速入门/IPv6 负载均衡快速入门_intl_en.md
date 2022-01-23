@@ -69,9 +69,9 @@ vim  /etc/nginx/nginx.conf
 
 For more information on CLB listeners, see [CLB Listener Introduction](https://intl.cloud.tencent.com/document/product/214/6151).
 >?
->
 >- A listener (i.e., listening protocol:port) can be configured with multiple domain names, and a domain name can be configured with multiple URL paths. Select a listener or domain name and click **+** to create a new rule.
-- Session persistence: if session persistence is disabled and a round-robin method is used for scheduling, requests will be assigned to different real servers in sequence; if session persistence is enabled, or it is disabled but ip_hash scheduling is used, requests will always be assigned to the same real server.
+>- Session persistence: if session persistence is disabled and a round-robin method is used for scheduling, requests will be assigned to different real servers in sequence; if session persistence is enabled, or it is disabled but ip_hash scheduling is used, requests will always be assigned to the same real server.
+>
 
 ### Binding CVM instance
 >?Before binding the listener to a CVM instance, check whether the instance has obtained an IPv6 address.
