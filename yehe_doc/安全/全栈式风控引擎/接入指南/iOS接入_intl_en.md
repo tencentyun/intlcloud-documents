@@ -55,7 +55,7 @@ There is 1 dependency from the Podfile and 1 total pod installed.
 If your project uses Objective-C, set `Always Embed Swift Standard Libraries` to `YES` in build settings.
 
 
-### Manual import
+**Manual import**
 
 - Click here to download the SDK.
 
