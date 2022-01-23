@@ -216,14 +216,14 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
 
 [](id:huaweiStep1_1)
 
-1. Access the [official website of the Huawei Developers Alliance](https://developer.huawei.com/consumer/cn/), register an account, and pass the developer verification. Log in to the console of the Huawei Developers Alliance, choose **App Service** > **Development Service** > **PUSH**, and create a Huawei push service app. Take note of the **`Package name`**, **`APP ID`**, and **`APP SECRET`**.
+1. Access the [official website of the Huawei Developers Alliance](https://developer.huawei.com/consumer/cn/), register an account, and pass the developer verification. Log in to the console of the Huawei Developers Alliance, choose **App Service** > **Development Service** > **PUSH**, and create a Huawei push service app. Take note of the **`Package name`**, **`APP ID`**, and **`Client SECRET`**.
    [](id:huaweiStep1_2)
 2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#huaweiStep1_1) to configure the following parameters:
 
  - **Push Platform**: select **Huawei**.
  - **SDKAppID**: the **package name** of the Huawei Push service app.
  - **AppID**: enter the **App ID** you got from Huawei Push.
- - **AppSecret**: enter the **APP SECRET** you got from Huawei Push.
+ - **AppSecret**: enter the **Client Secret** you got from Huawei Push.
  -**Badge Parameters**: enter the full `Activity` class name of the app entry, which will be used as the Huawei desktop app badge for display. For more information, see the description of desktop app badge in the Huawei Push service development document.
  - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, refer to [Configuring Click Event](#huawei_click).
    **Open app** or **Open specified in-app page** allows [custom content pass through(#huawei_custom).
