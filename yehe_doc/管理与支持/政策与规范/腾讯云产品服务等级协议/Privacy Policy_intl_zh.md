@@ -568,6 +568,3 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 14.[云数据库 Tendis](https://intl.cloud.tencent.com/document/product/1083/43456)。
 15.[数据库管理中心](https://intl.cloud.tencent.com/document/product/1125/44012)。
 16.[微瓴物联网类操作系统](https://intl.cloud.tencent.com/document/product/1115/44315)。
-
-### 修订历史记录
-[隐私政策](https://intl.cloud.tencent.com/document/product/301/43505)（版本 1.0）
