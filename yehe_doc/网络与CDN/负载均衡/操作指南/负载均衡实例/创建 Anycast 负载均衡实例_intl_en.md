@@ -8,7 +8,7 @@ Advantages of Anycast CLB:
 - **Low latency**
 Anycast CLB publishes the VIP to multiple regions simultaneously via Anycast. Based on the transfer protocol, the request package arrives at the optimal VIP publishing region to gain privileged access to Tencent Cloud. It then accesses CVM through Tencent Cloud private network, avoiding public network traffic and reducing latency.
 - **Reduced jitter and packet loss**
-The transmission instability of cross-border or cross-carrier public networks can result in network jitter and packet loss, undermining the service experience. By contrast, Anycast CLB boasts high transmission stability. It gives client requests nearby access to Tencent Cloud and enables cross-region transmission via Tencent Cloud dedicated private network connection, helping eliminate jitter and packet loss.
+The transmission instability of cross-border public networks can result in network jitter and packet loss, undermining the service experience. By contrast, Anycast CLB boasts high transmission stability. It gives client requests nearby access to Tencent Cloud and enables cross-region transmission via Tencent Cloud dedicated private network connection, helping eliminate jitter and packet loss.
 - **High reliability**
 Transfer over the public network can be unreliable. When ISP linkage issues result in inaccessible services, users generally can only wait for services to resume. With Anycast CLB, Tencent Cloud private network, ISP networks, and Tencent Cloud POPs can achieve multi-entry and multi-path network to eliminate failures caused by a single region or connection, improving network stability.
 - **Simplified deployment**
