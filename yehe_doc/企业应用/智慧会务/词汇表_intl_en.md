@@ -1,4 +1,3 @@
-# Glossary
 
 #### Live Steaming
 
