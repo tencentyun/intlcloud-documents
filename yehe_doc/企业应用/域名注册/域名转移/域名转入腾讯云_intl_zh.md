@@ -48,20 +48,20 @@
 
 ### 域名转入步骤
 1. 请根据页面提示，填写信息并勾选相关协议，单击**提交**。如下图所示：
-![域名转入](https://main.qcloudimg.com/raw/cb9f3256128436efcef92f3372bf88cb.png)
+![域名转入](https://qcloudimg.tencent-cloud.cn/raw/06d640efe3d1e745a2f136df606e333b.png)
   - **域名和转移密码**：根据实际需求，进行填写。
   - **自动续费**：系统将会在域名到期前为您自动续费，请确保账户余额充足。
 <dx-alert infotype="explain" title="">
 开启自动续费后，若您需要关闭自动续费，可在 [域名列表](链接) 中进行关闭操作。
 </dx-alert>
 2. 转入需要您将域名续费一年，生成转入订单，单击**去支付**后按流程完成付款。如下图所示：
-![](https://main.qcloudimg.com/raw/906e5d6be733ab41a4f7bc7e434b974d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dc0ee2c791036235a7edc37509195273.png)
 3. 支付成功后，您可以返回控制台，选择**我的域名 > 待转入**，可查看您待转入的域名状态。如下图所示：
 >!
 >- 域名转入时间一般需要**5 - 7**个工作日，转入时间取决于相关注册局的处理时间，请您耐心等待。
 >- 域名转入成功后，为方便您及时了解，腾讯云将发送短信至您账号绑定的手机号或发送邮件至您绑定的邮箱。
 >- 若您需要取消转入，请单击**取消转入**。相关说明可参考 [如何取消域名转入](链接)。
 >
-![](https://main.qcloudimg.com/raw/848795cb2742e4c493bb53a7a0fffcef.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b85b74ec01b53c670c76fa49b2df556b.png)
 
 

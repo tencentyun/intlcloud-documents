@@ -20,12 +20,12 @@
 
 #### “我的域名” 页面方式
 在需要续费域名行中，单击**续费**，即可提交续费申请。如下图所示：
-![续费](https://main.qcloudimg.com/raw/27560686562729544f5611a2a57dafbe.png)
+![续费](https://qcloudimg.tencent-cloud.cn/raw/8b363947fbabeb312865d541fb9edd74.png)
 
 ####  “基本信息” 页面方式
 1. 单击需要续费的域名，进入 “域名信息” 页面。
 2. 在 “基本信息” 中，单击**续费**，即可提交续费申请。如下图所示：
-![续费2](https://main.qcloudimg.com/raw/5c1d241258a004948294c5411e82da3a.png)
+![续费2](https://qcloudimg.tencent-cloud.cn/raw/d156cc73220abd39fb6e30bf5d9203b6.png)
 
 ### 提交续费申请
 
@@ -34,7 +34,7 @@
 >- 根据注册局的规定，域名有效期年限不可超过10年（.co 域名有效期年限不可超过5年）。
 >- 域名赎回操作时，只能选择续费一年，如需续费多年，请在赎回后进行续费操作。
 >
-![](https://main.qcloudimg.com/raw/1a6b75239b73af48c622a9e13860c6ee.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c9d0e15beb372ac12929aa3c7de68330.png)
 2. 核对您的域名续费信息及费用，单击**提交订单**。
 3. 选择支付方式，单击**确认支付**。
 >?您可以选择腾讯云账户余额、微信、QQ 钱包或网银支付进行支付。

@@ -19,15 +19,15 @@ Domain transfer out is to transfer your domain from DNSPod to another domain reg
 
 1. Log in to the [Domains console](link). 
 2. In the row of the domain to be transferred out, click **Manage** as shown below:
-![](https://main.qcloudimg.com/raw/bf19182453b26b9068c3aed51fc507e6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/94367b164256c72c8942b93b15c282f4.png)
 3. Enter the **Domain Name Info** page, select the **Domain Transfer Out** tab, and click **Transfer Out** after **Cross-Account Transfer** as shown below:
 >?Before transferring out a domain, check whether **Transfer Prohibition Lock** is enabled, and if so, the domain cannot be transferred out. You need to disable this option before you can transfer the domain out. For detailed directions, see [Enabling Domain Security Protection](link).
 >
-![](https://main.qcloudimg.com/raw/9764bb101e352409eeab07fc93217351.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/59f537cc0f19e5be52bd5ce7115c4d2a.png)
 4. On the **Domain Transfer Out** page, check the email address, read and agree to the **Notes for Domain Transfer Out**, and click **Get Auth-Code** as shown below:
 >? Before getting the auth-code, check whether your email address can receive emails normally.
 >
- ![](https://main.qcloudimg.com/raw/62fe0a664644e87772b47c672e099ea5.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/a0bda8e4e304147d60a3a2f1c66e5d30.png)
 5. If the page that you are redirected to displays "Sent the auth-code successfully", the auth-code has been sent to your email address as shown below:
 >? 
 >- If you haven't received the email, click **Resend**.

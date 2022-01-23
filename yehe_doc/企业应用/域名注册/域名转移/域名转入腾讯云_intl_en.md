@@ -48,20 +48,20 @@ Submit a domain transfer out application to the original registrar to get the do
 
 ### Steps for domain transfer in
 1. Enter the information, indicate your consent to the applicable agreements, and click **Submit** as shown below:
-![](https://main.qcloudimg.com/raw/cb9f3256128436efcef92f3372bf88cb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/06d640efe3d1e745a2f136df606e333b.png)
   - **Domain and auth-code**: enter them as required.
   - **Auto-Renewal**: the system will automatically renew your domain before it expires. Make sure that your account balance is sufficient.
 <dx-alert infotype="explain" title="">
 After auto-renewal is enabled, you can disable it in the [domain name list](link).
 </dx-alert>
 2. Domain transfer in requires to you renew the domain for one year. After the transfer order is generated, click **Pay** to make the payment as prompted as shown below:
-![](https://main.qcloudimg.com/raw/906e5d6be733ab41a4f7bc7e434b974d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dc0ee2c791036235a7edc37509195273.png)
 3. After successful payment, you can return to the console, select **My Domains** > **Pending Transfer In** to view the status of your domain to be transferred in as shown below:
 >!
 > - Domain transfer in generally takes **5–7** business days, subject to the handling time of the registry. Please wait patiently.
 >- After the domain is successfully transferred in, Tencent Cloud will send an SMS message to the mobile number bound to your account or an email to your bound email address.
 >- To cancel transfer in, click **Cancel Transfer In**. For more information, see [How to Cancel Domain Transfer In](link).
 >
-![](https://main.qcloudimg.com/raw/848795cb2742e4c493bb53a7a0fffcef.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b85b74ec01b53c670c76fa49b2df556b.png)
 
 

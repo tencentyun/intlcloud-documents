@@ -13,13 +13,13 @@ A custom DNS host is a DNS server created with the current domain to provide the
 1. Log in to the [Domains console](https://console.cloud.tencent.com/domain) and click the domain for which you want to set a custom DNS host to enter the **Domain Info** page.
 2. On the **Domain Info** page, select the **Custom DNS Host** tab.
 3. In **Custom DNS Host**, you can add a custom DNS host in the following two ways:
-![](https://main.qcloudimg.com/raw/c6ac5a3090919bd81c9d0dfef4719cf9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c616deed65bad1927f8c8266666065e5.png)
  - **Add DNS Host**: you can add a DNS host by manually entering it.
  - **Sync DNS Host**: an existing DNS host at the registry (entered at another registrar) can be synced to the Tencent Cloud console.
 
 ### Adding DNS host
 1. Click **Add DNS Host**. In the **Add DNS Host** pop-up window, enter the relevant information.
-![](https://main.qcloudimg.com/raw/7e73f40ef884485831b46a0a7cfdaaa2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/15dad3824d4b22402196fb91e3b853f8.png)
  - **DNS Host**: enter the subdomain of the DNS host.
  - **IP Address**: enter the IP address of your server.
 2. After completing the configuration, click **Submit**.
@@ -27,4 +27,4 @@ A custom DNS host is a DNS server created with the current domain to provide the
 
 ### Syncing DNS host
 If you have entered a DNS host address at another registrar, click **Sync DNS Host** to sync it to the Tencent Cloud console.
-![](https://main.qcloudimg.com/raw/a0fea451386a96eaf5916cc445b935c7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e8d70517638a384c2a6a6189bb20e8c4.png)

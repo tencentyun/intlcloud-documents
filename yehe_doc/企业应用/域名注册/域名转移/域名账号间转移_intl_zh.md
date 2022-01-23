@@ -13,13 +13,13 @@
 
 1. 登录腾讯云 [域名注册控制台](链接)，进入 “我的域名” 页面，查看已购买的所有域名信息。
 2. 在待转移的域名行中，单击**管理**。如下图所示：
-![](https://main.qcloudimg.com/raw/8ffd31bf9e778f7b03055f506acea7f4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b34df866d595d8b6cdea2966dd7c12d4.png)
 3. 进入 “域名信息” 页面，选择**域名转移**页签，在 “账号间转移” 处单击**转移**。如下图所示：
-![](https://main.qcloudimg.com/raw/17dc7b6566f85a46d944577859502b08.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7818c6d4c83a31d0c4cd0553a15a334e.png)
 4. 在弹出的 “身份验证” 窗口中，获取并填写短信验证码，单击**确定**。如下图所示：
 ![](https://main.qcloudimg.com/raw/e5d712ca5d1d9807d43f0e3a00e8c8c9.png)
 5. 在 “账号间转移” 页面，确认相关信息，并输入待转移的账号 ID，单击**确认 > 下一步**。如下图所示：
-![](https://main.qcloudimg.com/raw/e5ed11438fe64fdc5e29d62396eb8590.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/05231418aa924327a9b2a72f8d54f01a.png)
  - **转移域名**：请确认您需要转移的域名是否正确。
  - **指定账号**：
     - 转移后账号：请输入转移接受方的账号 ID。账号 ID 获取可参考账号基本信息。
@@ -29,7 +29,7 @@
 <li>如当前账号下无该 DNS 解析域名，则不进行转移。</li></ul>
 </dx-alert>
 6. 在弹出的 “转移信息确认” 窗口中，确认您需要转移的账号 ID 以及账号昵称，并单击**确定**，即可转移成功。如下图所示：
-![](https://main.qcloudimg.com/raw/f0d436bc8324a0f09df766f13e223174.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/20a6f5da1ee31774dadbcbf7db699ad5.png)
 7. 请登录新账号，即可查看该域名。
 
 

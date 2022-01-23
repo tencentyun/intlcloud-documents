@@ -11,10 +11,10 @@ You have logged in to the [Domains console](https://console.cloud.tencent.com/do
 ## Directions
 ### Enabling update prohibition lock
 1. On the **Domain Management** page, select the row of the domain for which you want to enable **update prohibition lock** and click **Manage** to enter the **Domain Info** page as shown below:
-![](https://main.qcloudimg.com/raw/324ae676ed170889486f481c8d9bafdc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5f575f9c44c724d53067d1a810c7f0d6.png)
 2. On the **Domain Info** page, select the **Domain Security** tab.
 3. Click <span ><img src="https://main.qcloudimg.com/raw/ce844f426842c9ae41963f5d3bc4f4c0.png" style="margin-bottom:-5px;"/></span> to enable **update prohibition lock** as shown below:
-![](https://main.qcloudimg.com/raw/9305ea4a7ce91a3b37f2ff76e5384e7e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a73b96a5a1a43b7887aca5500b85b515.png)
 
 ### Enabling transfer prohibition lock
 1. On the **Domain Management** page, select the row of the domain for which you want to enable **transfer prohibition lock** and click **Manage** to enter the **Domain Info** page.
@@ -24,4 +24,4 @@ You have logged in to the [Domains console](https://console.cloud.tencent.com/do
 >- If **update prohibition lock** has been enabled, you cannot enable or disable **transfer prohibition lock**.
 >- After this feature is enabled, the domain cannot be transferred out from Tencent Cloud.
 >
-![](https://main.qcloudimg.com/raw/4c31b1d54486de2ee698be77194f0ace.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ca0b5cc2553ff0071a0406bc4543245c.png)

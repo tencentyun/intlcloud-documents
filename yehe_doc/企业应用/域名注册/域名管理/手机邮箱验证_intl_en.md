@@ -9,14 +9,14 @@ This document describes how to create, verify, and use a new mobile number and e
 1. Log in to the [Domains console](link).
 2. On the **Domain Templates** page, select the **[Phone and Email Verification](link)** tab and click **Create Mobile Number**.
 3. In the **Create Mobile Number** pop-up window, enter the mobile number that you want to add and the received verification code as shown below:
-![](https://main.qcloudimg.com/raw/361ee42abf65f54bb36485f7428e6793.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c6720e4d60a19f8e843499ac3662dda7.png)
 4. Click **Confirm**.
 
 ### Creating email address
 1. Log in to the [Domains console](link).
 2. On the **Domain Templates** page, select the **[Phone and Email Verification](link)** tab and click **Create Email Address**.
 3. In the **Create Email Address** pop-up window, enter the email address that you want to add and the received verification code as shown below:
-![](https://main.qcloudimg.com/raw/e121836eb07fc2897935b36e8f824861.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ec1d3215fdbcc8c0fb5cbe548c53dd5f.png)
 4. Click **Confirm**.
 
 ## Subsequent Operations

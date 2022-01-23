@@ -13,7 +13,7 @@ Log in to the [Domains console](link) and enter the **My Domains** page.
 
 1. On the **All Domains** tab, select the domains to be renewed.
 2. Click **More** and select **Renew** to submit a batch renewal application as shown below:
-![](https://main.qcloudimg.com/raw/51a87ec69c05a0f6d9b1bb86b06b1ffd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d880707e27c02c5eca887f44a7aa9560.png)
 
 ### Submitting batch renewal application
 
@@ -22,7 +22,7 @@ Log in to the [Domains console](link) and enter the **My Domains** page.
 >- As stipulated by the registry, the validity period of a domain cannot exceed 10 years (or 5 years for .co domains).
 >- During domain redemption, you can renew the domain for only one year. If you want to renew it for multiple years, renew it after redeeming it.
 >
-![](https://main.qcloudimg.com/raw/6dc60b57ea012df1731c0162038b6888.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/359dae4c3f7b7d52b3593f1e9c7667d6.png)
 2. Check your domain renewal information and fees and click **Submit Order**.
 3. Select a payment method and click **Confirm**.
 >?You can pay with your Tencent Cloud account balance, WeChat Pay, QQ Wallet, or online banking.

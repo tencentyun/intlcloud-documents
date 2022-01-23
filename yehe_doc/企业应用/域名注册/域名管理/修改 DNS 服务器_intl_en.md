@@ -9,11 +9,11 @@ If you want to add a DNS record to a registered domain, you need to manage the d
 If your domain is registered in Tencent Cloud or has been transferred to Tencent Cloud, you can change the DNS server in the following steps:
 1. Log in to the [Domains console](link) and enter the **My Domains** page.
 2. Select the domain whose DNS is to be modified and click **Manage** as shown below:
-![](https://main.qcloudimg.com/raw/4d4176b985b22d48860279a72ef53222.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8bd6a6c32828f4cfc0f647d9cb728d28.png)
 3. In the **Basic Info** section, click **Modify** next to **DNS Server** as shown below:
-![](https://main.qcloudimg.com/raw/f21df33c228720705e1a0cfb0cae9fc6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e54332d4d0cbb5a45e79f3921eb1af55.png)
 4. In the **Modify DNS Server** pop-up window, select the DNS server as shown below:
-![](https://main.qcloudimg.com/raw/3395c68a22bb248fd5275bb96ad0f299.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/85d545523f617ae84411c366d324db1e.png)
  - **Use DNSPod**: the DNS address of the DNSPod server will be automatically matched for the domain.
  - **Custom DNS**: enter the desired DNS server address.
 >? 

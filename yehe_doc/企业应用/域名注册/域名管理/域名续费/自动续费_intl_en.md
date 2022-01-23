@@ -17,9 +17,9 @@ If you don't want to manually renew a domain, Tencent Cloud provides the auto re
 
 1. Log in to the [Domains console](link) and enter the **My Domains** page.
 2. In the row of the domain for which you want to set auto renewal, click **Enable** or **More** and select **Enable Auto-Renewal** as shown below:
-![](https://main.qcloudimg.com/raw/6f52b5397c21cc49cef36972c229436d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2a7a4e062d6cec8fdb59d1315022d1a9.png)
 3. Check your domain renewal information and fees and click **Confirm**. Then, the auto renewal feature will be enabled as shown below:
-![](https://main.qcloudimg.com/raw/3fc919fe2f7aa9b92f36fb901b67b1d3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0650a225b7fcfc455e99f48bc3ee9405.png)
 
 
 

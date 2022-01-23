@@ -15,7 +15,7 @@ After your domain expires, there will be a domain renewal grace period of **abou
 
 1. Log in to the [Domains console](link) and enter the **My Domains** page.
 2. Select the domain to be redeemed and click **Redeem** and redeem it in the **Redeem** pop-up window as shown below:
- ![](https://main.qcloudimg.com/raw/0842a8fd643a0736d3ca5d922de8a291.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/9daf0c16da8a5745f987cfe261c39366.png)
 3. Confirm the domain information and redemption amount, click **Confirm**, and pay the redemption fees to redeem the domain.
 
 

@@ -20,12 +20,12 @@ Two renewal application methods are available for your choice.
 
 #### "My Domains" page
 Click **Renew** in the row of the domain to be renewed to submit the renewal application.
-![](https://main.qcloudimg.com/raw/27560686562729544f5611a2a57dafbe.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8b363947fbabeb312865d541fb9edd74.png)
 
 #### "Basic Info" page
 1. Click the domain to be renewed to enter the **Domain Name Info** page.
 2. In the **Basic Info** section, click **Renew** to submit the renewal application as shown below:
-![2](https://main.qcloudimg.com/raw/5c1d241258a004948294c5411e82da3a.png)
+![2](https://qcloudimg.tencent-cloud.cn/raw/d156cc73220abd39fb6e30bf5d9203b6.png)
 
 ### Submitting renewal application
 
@@ -34,7 +34,7 @@ Click **Renew** in the row of the domain to be renewed to submit the renewal app
 >- As stipulated by the registry, the validity period of a domain cannot exceed 10 years (or 5 years for .co domains).
 >- During domain redemption, you can renew the domain for only one year. If you want to renew it for multiple years, renew it after redeeming it.
 >
-![](https://main.qcloudimg.com/raw/1a6b75239b73af48c622a9e13860c6ee.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c9d0e15beb372ac12929aa3c7de68330.png)
 2. Check your domain renewal information and fees and click **Submit Order**.
 3. Select a payment method and click **Confirm**.
 >?You can pay with your Tencent Cloud account balance, WeChat Pay, QQ Wallet, or online banking.
