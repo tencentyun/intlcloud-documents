@@ -93,8 +93,7 @@ service iptables restart
 ### [原因二：处理步骤](id:yy2clbz)
 将本地主机的解析结果修改为源站，来验证源站本身是否正常，首先修改本地 hosts 文件，具体操作如下：
 1. 修改本地hosts文件，使本地对业务高防域名的请求到达源站 IP，下面以 Windows 操作系统为例，配置本地 hosts 文件：
-打开本地计算机`C:\Windows\System32\drivers\etc`路径下的 hosts 文件，在文末添加如下内容：
-![](https://main.qcloudimg.com/raw/8f3d1d4ab7445cf32f1086bdc8cb79f0.png)
+打开本地计算机`C:\Windows\System32\drivers\etc`路径下的 hosts 文件
 例如源站 IP 为10.1.1.1，域名为`www.qqq.com`，则添加：
  ![](https://main.qcloudimg.com/raw/0cef578cfd4d738f448768bad9007cf2.png)
 保存 hosts 文件，在本地计算机对被防护的域名运行 ping 命令。

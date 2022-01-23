@@ -93,8 +93,8 @@ service iptables restart
 ### [Instructions for cause 2](id:yy2clbz)
 Modify the local host resolution result to the real server to check whether the real server is normal. Firstly, modify the local hosts file. The specific operations are as follows:
 1. Edit the local hosts file to allow the local request to access the real server. The following uses the Windows OS as an example to configure the local hosts file:
-Open the `hosts` file in `C:\Windows\System32\drivers\etc`, and add the following content at the end of the text:
-![](https://main.qcloudimg.com/raw/8f3d1d4ab7445cf32f1086bdc8cb79f0.png)
+Open the `hosts` file in `C:\Windows\System32\drivers\etc`
+
 For example, if the real server IP is `10.1.1.1` and the domain name is `www.qqq.com`, add:
  ![](https://main.qcloudimg.com/raw/0cef578cfd4d738f448768bad9007cf2.png)
 Save the hosts file. Run the ping command on the protected domain name in the local computer.
