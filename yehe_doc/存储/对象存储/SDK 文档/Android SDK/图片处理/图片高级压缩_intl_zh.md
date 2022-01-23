@@ -4,7 +4,7 @@
 
 | API                                                          | 操作描述 |
 | ------------------------------------------------------------ | -------- |
-| [图片高级压缩](https://cloud.tencent.com/document/product/436/48987) |   对指定存储桶下的图片进行压缩  |
+| [图片高级压缩](https://intl.cloud.tencent.com/document/product/436/44004) |   对指定存储桶下的图片进行压缩  |
 
 
 ## SDK API 参考
