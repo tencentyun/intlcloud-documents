@@ -1,5 +1,3 @@
-# Tencent Cloud Conference Q&A
-
 #### What scenarios can Tencent Cloud Conference be applied?
 
 Tencent Cloud Conference  can be used in various types of virtual event scenarios, such as online summit forums, virtual exhibitions, online business matching, product launches, live events, etc. Covering exhibitions, education, tourism, finance, e-commerce and other industries, it can serve international customers in more than 100 countries.
