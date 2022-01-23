@@ -2,32 +2,32 @@
 
 This document provides an overview of APIs and SDK code samples related to listing objects.
 
-| API | Operation Name | Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying an object list | Queries some or all objects in a bucket |
-| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying a list of objects and their version history | Queries some or all objects in bucket and their version history |
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying objects and their version history | Queries some or all the objects in a bucket and their version history. |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Querying an Object List
 
-#### Feature description
+#### Description
 
-This API is used to query some or all objects in a bucket.
+This API is used to query some or all the objects in a bucket.
 
 #### Sample 1. Getting the first page of data
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```java
-String bucketName = "examplebucket-1250000000"; // Format: BucketName-APPID
+String bucketName = "examplebucket-1250000000";  // Format: BucketName-APPID;
 final GetBucketRequest getBucketRequest = new GetBucketRequest(bucketName);
 
 // Prefix match, which is used to specify the address prefix of the returned objects
 getBucketRequest.setPrefix("dir/");
 
-// Maximum number of entries returned at a time. Default value: 1,000
+// The maximum number of entries returned at a time; the default value is 1,000
 getBucketRequest.setMaxKeys(100);
 
 cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
@@ -40,10 +40,12 @@ cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
         }
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -57,9 +59,9 @@ cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
 
 #### Sample 2. Requesting the next page of data
 
-[//]: # ".cssg-snippet-get-bucket-next-page"
+[//]: # (.cssg-snippet-get-bucket-next-page)
 ```java
-String bucketName = "examplebucket-1250000000"; // Format: BucketName-APPID
+String bucketName = "examplebucket-1250000000";  // Format: BucketName-APPID;
 
 
 GetBucketRequest getBucketRequest = new GetBucketRequest(bucketName);
@@ -71,7 +73,7 @@ getBucketRequest.setPrefix("dir/");
 String nextMarker = prevPageResult.listBucket.nextMarker;
 getBucketRequest.setMarker(nextMarker);
 
-// Maximum number of entries returned at a time. Default value: 1,000
+// The maximum number of entries returned at a time; the default value is 1,000
 getBucketRequest.setMaxKeys(100);
 
 cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
@@ -83,10 +85,12 @@ cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
         }
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -100,20 +104,20 @@ cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
 
 #### Sample 3. Getting an object list and subdirectories
 
-[//]: # ".cssg-snippet-get-bucket-with-delimiter"
+[//]: # (.cssg-snippet-get-bucket-with-delimiter)
 ```java
-String bucketName = "examplebucket-1250000000"; // Format: BucketName-APPID
+String bucketName = "examplebucket-1250000000";  // Format: BucketName-APPID;
 GetBucketRequest getBucketRequest = new GetBucketRequest(bucketName);
 
 // Prefix match, which is used to specify the address prefix of the returned objects
 getBucketRequest.setPrefix("dir/");
 
-// Maximum number of entries returned at a time. Default value: 1,000
+// The maximum number of entries returned at a time; the default value is 1,000
 getBucketRequest.setMaxKeys(100);
 
 // The delimiter is a symbol. If the prefix exists,
 // identical paths between the prefix and delimiter will be grouped as together and defined as a common prefix,
-// and then all common prefixes will be listed; otherwise, the listing will start from the beginning of the path
+// and then all common prefixes are listed. If there is no prefix, the listing starts from the beginning of the path
 getBucketRequest.setDelimiter("/");
 
 cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
@@ -122,10 +126,12 @@ cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
         GetBucketResult getBucketResult = (GetBucketResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -139,22 +145,22 @@ cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
 
 ## Querying an Object Version List
 
-#### Feature description
+#### Description
 
 This API is used to query some or all objects in a versioning-enabled bucket.
 
 #### Sample 1. Getting the object version list’s first page of data
 
-[//]: # ".cssg-snippet-list-objects-versioning"
+[//]: # (.cssg-snippet-list-objects-versioning)
 ```java
-String bucketName = "examplebucket-1250000000"; // Format: BucketName-APPID
+String bucketName = "examplebucket-1250000000";  // Format: BucketName-APPID;
 final GetBucketObjectVersionsRequest getBucketRequest =
         new GetBucketObjectVersionsRequest(bucketName);
 
 // Prefix match, which is used to specify the address prefix of the returned objects
 getBucketRequest.setPrefix("dir/");
 
-// Maximum number of entries returned at a time. Default value: 1,000
+// The maximum number of entries returned at a time; the default value is 1,000
 getBucketRequest.setMaxKeys(100);
 
 cosXmlService.getBucketObjectVersionsAsync(getBucketRequest,
@@ -169,10 +175,12 @@ cosXmlService.getBucketObjectVersionsAsync(getBucketRequest,
         }
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -182,20 +190,20 @@ cosXmlService.getBucketObjectVersionsAsync(getBucketRequest,
 });
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ListObjectsVersioning.java) .
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ListObjectsVersioning.java).
 
 #### Sample 2. Getting the object version list’s next page of data
 
-[//]: # ".cssg-snippet-list-objects-versioning-next-page"
+[//]: # (.cssg-snippet-list-objects-versioning-next-page)
 ```java
-String bucketName = "examplebucket-1250000000"; // Format: BucketName-APPID
+String bucketName = "examplebucket-1250000000";  // Format: BucketName-APPID;
 final GetBucketObjectVersionsRequest getBucketRequest =
         new GetBucketObjectVersionsRequest(bucketName);
 
 // Prefix match, which is used to specify the address prefix of the returned objects
 getBucketRequest.setPrefix("dir/");
 
-// Maximum number of entries returned at a time. Default value: 1,000
+// The maximum number of entries returned at a time; the default value is 1,000
 getBucketRequest.setMaxKeys(100);
 
 // `prevPageResult` is the result returned on the previous page, where `nextMarker` and `nextVersionIdMarker`
@@ -217,10 +225,12 @@ cosXmlService.getBucketObjectVersionsAsync(getBucketRequest,
         }
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {

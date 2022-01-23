@@ -1,12 +1,16 @@
 ## Overview
 
-This document describes the bandwidth limit on single connection when you call the COS APIs for upload or download.
+This document describes how to limit the speed on a single URL when calling the upload or download API.
 
-## Description
+## SDK API References
 
-This limit should have a value in bit/s ranging from **819200 - 838860800**, i.e. 100 KB/s - 100 MB/s. If this range is exceeded, a 400 error will be returned.
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
-#### Sample 1. Single-connection bandwidth limit when uploading
+## Directions
+
+The speed range is **819200 to 838860800** (in bit/s), that is, 100 KB/s to 100 MB/s. If a value is not within this range, 400 will be returned.
+
+#### Sample 1. Limiting single-URL speed on uploads
 
 [//]: # (.cssg-snippet-upload-object-traffic-limit)
 ```java
@@ -15,18 +19,19 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket in the format: `BucketName-APPID`
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e. the object key
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
-        .toString(); // The absolute path of the local file
-String uploadId = null; // If there is an uploadId for the initialized multipart upload, assign the value of the uploadId here to resume the upload; otherwise, assign null
+        .toString(); // Absolute path of the local file
+// If there is an uploadId for the initialized multipart upload, assign the value of uploadId here to resume the upload. Otherwise, assign null
 String uploadId = null;
 
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, srcPath);
-// Set the single-connection bandwidth limit in bit/s, e.g. 1 M/s
+// Set the bandwidth limit for a single request in bit/s. In the example, the limit is set to 1 Mbit/s
 putObjectRequest.setTrafficLimit(1024 * 1024 * 8);
 
-// Upload the files
+// Upload the object
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(putObjectRequest, uploadId);
 
 // Set the upload progress callback
@@ -36,18 +41,20 @@ cosxmlUploadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
         // todo Do something to update progress...
     }
 });
-// Set the result callback
+// Set the response callback
 cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        COSXMLUploadTask.COSXMLUploadTaskResult cOSXMLUploadTaskResult =
+        COSXMLUploadTask.COSXMLUploadTaskResult uploadResult =
                 (COSXMLUploadTask.COSXMLUploadTaskResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest request,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -55,7 +62,7 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
         }
     }
 });
-// Set the status callback where you can view the upload progress
+// Set the job status callback to view the job progress
 cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
     @Override
     public void onStateChanged(TransferState state) {
@@ -64,31 +71,32 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
->?For the complete sample, please go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
+>? For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
 
-#### Sample 2. Single-connection bandwidth limit when downloading
+#### Sample 2. Limiting single-URL speed on downloads
 
 [//]: # (.cssg-snippet-download-object-traffic-limit)
 ```java
 //.cssg-snippet-body-start:[transfer-download-object]
-// The advanced download API supports checkpoint restart. To do so, a `HEAD` request will be sent first to get file information before download.
-// If you are accessing COS using a temporary key or sub-account, please make sure that your access permission list includes HeadObject.
+// The advanced download API supports checkpoint restart. Therefore, a HEAD request will be sent before the download to obtain the file information.
+// If you are using a temporary key or accessing with a sub-account, ensure that your permission list includes HeadObject.
 
-// Initialize `TransferConfig`. The default configuration is used here. To customize it, please see the SDK API documentation.
+// Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
 // Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket in the format: `BucketName-APPID`
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e. the object key
-// Local directory path
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
+// Path of the local directory
 String savePathDir = context.getExternalCacheDir().toString();
-// The file name saved locally. If not specified (null), it will be the same as the COS file name
+// File name saved locally. If not specified (null), it will be the same as the COS file name
 String savedFileName = "exampleobject";
 
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, cosPath, savePathDir, savedFileName);
-// Set the single-connection bandwidth limit in bit/s, e.g. 1 M/s
+// Set the bandwidth limit for a single URL in bit/s. In the example, the limit is set to 1 Mbit/s
 getObjectRequest.setTrafficLimit(1024 * 1024 * 8);
 
 Context applicationContext = context.getApplicationContext(); // application
@@ -103,7 +111,7 @@ cosxmlDownloadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
         // todo Do something to update progress...
     }
 });
-// Set the result callback
+// Set the response callback
 cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
@@ -111,10 +119,12 @@ cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
                 (COSXMLDownloadTask.COSXMLDownloadTaskResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest request,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -122,7 +132,7 @@ cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
         }
     }
 });
-// Set the status callback where you can view the download progress
+// Set the job status callback to view the job progress
 cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
     @Override
     public void onStateChanged(TransferState state) {
@@ -131,5 +141,5 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
->?For the complete sample, please go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
 

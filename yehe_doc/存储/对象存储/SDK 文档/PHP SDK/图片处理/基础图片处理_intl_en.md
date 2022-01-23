@@ -10,7 +10,7 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
       <th>Description</td>
    </tr>
    <tr>
-      <td rowspan=14>Basic image processing service</td>
+      <td rowspan=14>Image Processing-Basic Services</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36366">Scaling</a></td>
       <td>Proportional scaling, scaling image to target width and height, and more</td>
    </tr>
@@ -78,11 +78,26 @@ Before using a basic image processing feature, you need to instantiate the templ
 #### Sample code
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
         $imageMogrTemplate = new Qcloud\Cos\ImageParamTemplate\ImageMogrTemplate(); //Create an instance of the basic image processing parameter template
         $imageMogrTemplate->thumbnailByScale(50); //Scale an image to 50% of its original width and height
         $result = $cosClient->getObject(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
         'ImageHandleParam' => $imageMogrTemplate->queryString(), //Generate basic image processing parameters
     ));
@@ -102,7 +117,7 @@ try {
 | Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`.  | Yes |
 | ImageHandleParam      | String      | CI image processing parameters, such as `imageMogr2/thumbnail/!50p`      | Yes        |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -187,7 +202,7 @@ $imageMogrTemplate->cropByWH(100, 100, 'center'); //Perform scaling and cropping
 
 ### Inscribed circle cropping
 
-`radius` specifies the radius of the inscribed circle. The value of `radius` is an integer that is greater than 0 and less than half the length of the shorter side of the original image. The center of the inscribed circle is the center of the original image. This parameter is not supported if the image format is GIF.
+`radius` specifies the radius of the inscribed circle. The value of `radius` should be an integer greater than 0 but smaller than half the length of the input image’s shorter side. The center of the inscribed circle is the center of the input image. This operation is not available for GIF images.
 
 ```php
 $imageMogrTemplate->iradius(100); //Specify radius as 100 in this example
@@ -195,7 +210,7 @@ $imageMogrTemplate->iradius(100); //Specify radius as 100 in this example
 
 ### Rounded corner cropping
 
-`radius` specifies the radius of the rounded corner of the image. The value of `radius` is an integer that is greater than 0 and less than half the length of the shorter side of the original image. The rounded corner is tangent to the edge of the original image. This parameter is not supported if the image format is GIF. 
+`radius` specifies the radius of the rounded corners of an image. The value of `radius` should be an integer greater than 0 but smaller than half the length of the input image’s shorter side. The two sides of the input image are the tangent lines of the rounded corner. This operation is not available for GIF images.
 
 ```php
 $imageMogrTemplate->rradius(1000); // Specify radius as 100 in this example
@@ -209,7 +224,7 @@ Scale and crop an image based on the face position in the image. The width and h
 $imageMogrTemplate->scrop(100, 100); //Scale and crop an image to 100x100 based on the face position in the image in this example
 ```
 
-## Rotation
+## Rotating
 
 
 ### Common rotation
@@ -222,7 +237,7 @@ $imageMogrTemplate->rotate(45); //This example rotates an image by 45 degrees cl
 
 ### Adaptive rotation
 
-Adaptively rotate an image based on the EXIF data of the original image.
+Rotate an image automatically according to the EXIF data of the input image.
 
 ```php
 $imageMogrTemplate->autoOrient();
@@ -257,7 +272,7 @@ The `Mode` parameter is used to specify whether to enable or disable the progres
 $imageMogrTemplate->jpegInterlaceMode(1); //Enable the progressive mode
 ```
 
-## Quality Conversion
+## Quality Change
 
 The quality conversion feature supports conversion to three types of quality: absolute, relative, and lowest image quality. The feature applies only to JPG and WEBP images.
 
@@ -338,6 +353,21 @@ An image watermark must:
 3. Have a URL starting with `http://`. Note that "http://" cannot be omitted or changed to "https://". For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png` and `https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png` are invalid watermark URLs.
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
         $imageWatermarkTemplate = new Qcloud\Cos\ImageParamTemplate\ImageWatermarkTemplate(); //Create an image watermark parameter template instance
         $imageWatermarkTemplate->setImage("imageurl"); //Set the watermark image address
@@ -348,7 +378,7 @@ try {
         $imageWatermarkTemplate->setScatype(1); //Set the scaling mode for the image watermark (relative to the input image). Valid values: 1 (scale by width), 2 (scale by height), 3 (scale by area)
         $imageWatermarkTemplate->setSpcent(100); //Set the scale ratio of the image watermark (relative to the input image), in permillage, to 100/1000. Value range: [1,1000]. By default, the image watermark is not scaled.
         $result = $cosClient->getObject(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
         'ImageHandleParam' => $imageWatermarkTemplate->queryString(), //Generate image watermark parameters
     ));
@@ -366,6 +396,21 @@ try {
 COS provides real-time text watermarking. For the list of watermark fonts supported, see [Supported Fonts](https://intl.cloud.tencent.com/document/product/1045/40681). For the list of font colors supported, see [RGB Color Codes Chart](https://www.rapidtables.com/web/color/RGB_Color.html).
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
         $textWatermarkTemplate = new Qcloud\Cos\ImageParamTemplate\TextWatermarkTemplate(); //Create a text watermark parameter template instance
         $textWatermarkTemplate->setText("test"); //Set the watermark text
@@ -376,10 +421,10 @@ try {
         $textWatermarkTemplate->setGravity('center'); //Set the position of the text watermark in the 3x3 grid position diagram. Default value: `southeast`
         $textWatermarkTemplate->setDx(10); //Set the horizontal offset in pixels. Default value: `0`
         $textWatermarkTemplate->setDy(10); //Set the vertical offset in pixels. Default value: `0`
-        $textWatermarkTemplate->setDegree(1); //Set whether to tile the text watermark. If this parameter is set to `1`, the text watermark will be tiled across the input image.
-        $textWatermarkTemplate->setBatch(45); //Set the angle to rotate the text watermark. Value range: 0−360. Default value: `0`
+        $textWatermarkTemplate->setBatch(1); //Set whether to tile the text watermark. If this parameter is set to `1`, the text watermark will be tiled across the input image.
+        $textWatermarkTemplate->setDegree(45); //Set the angle to rotate the text watermark. Value range: 0−360. Default value: `0`
         $result = $cosClient->getObject(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
         'ImageHandleParam' => $textWatermarkTemplate->queryString(), //Generate text watermark parameters
     ));
@@ -401,9 +446,24 @@ Query basic image information.
 #### Sample code
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
         $result = $cosClient->ImageInfo(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
     ));
     // Request succeeded
@@ -421,7 +481,7 @@ try {
 | Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
 | Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`.  | Yes |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -462,9 +522,24 @@ Obtain image EXIF data. If an image does not have EXIF data, `{"error" : "no exi
 #### Sample code
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
         $result = $cosClient->ImageExif(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
     ));
     // Request succeeded
@@ -482,7 +557,7 @@ try {
 | Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
 | Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`.  | Yes |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -523,9 +598,24 @@ Obtain the average hue of an image.
 #### Sample code
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
         $result = $cosClient->ImageAve(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
     ));
     // Request succeeded
@@ -543,7 +633,7 @@ try {
 | Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
 | Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`.  | Yes |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -592,6 +682,21 @@ $imageMogrTemplate->strip(); //Remove image metadata
 Provide common image processing templates to help you generate desired thumbnails.
 
 ```php
+<?php
+
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+
 try {
         $imageViewTemplate = new Qcloud\Cos\ImageParamTemplate\ImageViewTemplate(); //Create a parameter template instance for the quick thumbnail template
         $imageViewTemplate->setMode(1); //Set the thumbnail mode. Value range: [1,5]. Mode 1: specify the minimum width and height of the thumbnail. In this mode, the image is first scaled down until one of the minimum values set is reached. Then, the image will be centered and evenly cropped on both sides to meet the specified values. If only one value is set, a square thumbnail will be generated. Mode 2: specify the maximum width and height of the thumbnail. In this mode, the image is scaled down until both the width and length are not greater than the maximum values set. Mode 3: specify the minimum width and height of the thumbnail. In this mode, the image is scaled down until both the width and height are not smaller than the minimum values set. Mode 4: specify the minimum values of the long edge and short edge of the thumbnail to scale down the image. If only one value is set, a square thumbnail will be generated. Mode 5: specify the maximum values of the long edge and short edge of the thumbnail to scale down the image. Then the image will be centered and cropped. If only one value is set, a square thumbnail will be generated. After the scaling, the excess will be cropped.
@@ -601,7 +706,7 @@ try {
         $imageViewTemplate->setQuality(1, 85); //Set the image quality type, which can be `1` (absolute quality), `2` (relative quality), or `3` (lowest quality)
         $imageViewTemplate->setQuality(1, 85, 1); //If the image quality type is set to absolute quality, the specified quality will be used by force
         $result = $cosClient->getObject(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
         'ImageHandleParam' => $imageViewTemplate->queryString(), //Generate quick thumbnail template parameters
     ));
@@ -619,7 +724,21 @@ try {
 CIParamTransformation supports multiple operation groups.
 
 ```php
+<?php
 
+require dirname(__FILE__) . '/../vendor/autoload.php';
+
+$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey)));
+            
 try {
     $ciParamTransformation = new Qcloud\Cos\ImageParamTemplate\CIParamTransformation(); //Create a pipeline parameter template instance
     $ciParamTransformation = new Qcloud\Cos\ImageParamTemplate\CIParamTransformation("#"); //If the pipeline operator is not `|`, it must be specified during instance creation
@@ -628,7 +747,7 @@ try {
     $ciParamTransformation->addRule($textWatermarkTemplate); //Set text watermark processing parameters
     $ciParamTransformation->addRule($imageViewTemplate); //Set quick thumbnail template parameters
 $result = $cosClient->getObject(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Key' => 'exampleobject',
         'ImageHandleParam' => $ciParamTransformation->queryString(), //Generate pipeline splicing parameters
     ));

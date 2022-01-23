@@ -31,7 +31,7 @@ Add the following code to the project-level `build.gradle` file (usually in the 
 repositories {
     google()
     // Add the following line
-    mavenCentral() 
+    mavenCentral()
 }
 ```
 
@@ -46,14 +46,6 @@ dependencies {
 }
 ```
 
-If you are using Kotlin for development in your project, you can add our KTX extension package, which provides more user-friendly APIs.
-```
-dependencies {
-	...
-    // Add the following line
-    implementation 'com.qcloud.cos:cos-ktx:5.6.+'
-}
-```
 
 #### Simplified SDK
 
@@ -154,7 +146,7 @@ public static class MySessionCredentialProvider
         extends BasicLifecycleCredentialProvider {
 
     @Override
-    protected QCloudLifecycleCredentials fetchNewCredentials() 
+    protected QCloudLifecycleCredentials fetchNewCredentials()
             throws QCloudClientException {
 
         // First, obtain the response containing the key from your temporary key server
@@ -191,7 +183,7 @@ String secretId = "SECRETID"; // SecretId of the permanent key
 String secretKey = "SECRETKEY"; // SecretKey of the permanent key
 
 // keyDuration is the effective duration (in seconds) of the key in your request
-QCloudCredentialProvider myCredentialProvider = 
+QCloudCredentialProvider myCredentialProvider =
     new ShortTimeCredentialProvider(secretId, secretKey, 300);
 ```
 
@@ -212,39 +204,12 @@ CosXmlServiceConfig serviceConfig = new CosXmlServiceConfig.Builder()
         .builder();
 
 // Initialize the COS service to obtain the instance
-CosXmlService cosXmlService = new CosXmlService(context, 
+CosXmlService cosXmlService = new CosXmlService(context,
     serviceConfig, myCredentialProvider);
 ```
 
 >? For more information on the abbreviations of the COS bucket regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 >
-
-#### Using the KTX package to initialize the COS service
-
-If you use KTX, the simplified initialization code is as follows:
-
-```kotlin
-val cos = cosService(context = application.applicationContext) {
-
-    configuration {
-        setRegion("ap-guangzhou")
-        isHttps(true)
-    }
-
-    credentialProvider {
-        lifecycleCredentialProvider {
-            // fetch credential from backend
-            // ...
-            return@lifecycleCredentialProvider SessionQCloudCredentials(
-                    "temp_secret_id",
-                    "temp_secret_key",
-                    "session_token",
-                    1556183496
-            )
-        }
-    }
-}
-```
 
 ## Step 4. Access COS
 
@@ -252,46 +217,47 @@ val cos = cosService(context = application.applicationContext) {
 
 The SDK supports uploading local files, binary data, URIs, and input streams. The following uses uploading a local file as an example:
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```java
 // Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
-// Initialize TransferManager.
+// Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString(); // Absolute path of the local file
-// If there is an `uploadId` for an initialized multipart upload, assign the value of the `uploadId` here to resume the upload; otherwise, assign `null`
-// uploadId for the current upload task can be obtained from the callback of TransferStateListener.
-String uploadId = null; 
+// If there is an uploadId for the initialized multipart upload, assign the value of uploadId here to resume the upload. Otherwise, assign null
+String uploadId = null;
 
 // Upload the object
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 
-// Set the upload progress callback. After this, you can obtain “uploadId” for checkpoint restart.
+// Set the upload progress callback
 cosxmlUploadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
     @Override
     public void onProgress(long complete, long target) {
         // todo Do something to update progress...
-        uploadId = cosxmlUploadTask.getUploadId();  
     }
 });
 // Set the response callback
 cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        COSXMLUploadTask.COSXMLUploadTaskResult cOSXMLUploadTaskResult =
+        COSXMLUploadTask.COSXMLUploadTaskResult uploadResult =
                 (COSXMLUploadTask.COSXMLUploadTaskResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest request,
-                        CosXmlClientException clientException,
-                        CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -308,51 +274,13 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
-#### Using the KTX package to upload an object
-
-If you use KTX, please refer to the following sample code for the upload:
-
-```kotlin
-// Use the KTX extension of ViewModel
-// viewModelScope is the built-in coroutine scope of ViewModel
-viewModelScope.launch {
-    val `object` = cosObject {
-        bucket = cosBucket {
-            service = cosXmlService
-            name = "examplebucket-1250000000"
-        }
-        key = "exampleObject"
-    }
-    // Local file example
-    val sourceFile = File(appContext.externalCacheDir, "sourceFile")
-
-    try {
-        // Call the "suspend" function for upload
-        val result = `object`.upload(
-            localFile = sourceFile,
-            progressListener = { complete, target ->
-                Log.d("cosxmlktx", "upload onProgress:" +
-                                " $complete / $target")
-            },
-            transferStateListener = { state ->
-                Log.d("cosxmlktx", "upload state is : $state")
-            }
-        )
-
-    } catch (e : Exception ) {
-        e.printStackTrace()
-    }
-
-}
-```
-
 >?
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
 >- After the upload, you can generate a download URL for the uploaded file with the same key. For detailed directions, please see [Generating Pre-signed Links](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
-### Download an object
+### Downloading an object
 
-[//]: # (.cssg-snippet-transfer-download-object)
+[//]: # ".cssg-snippet-transfer-download-object"
 ```java
 // The advanced download API supports checkpoint restart. Therefore, a HEAD request will be sent before the download to obtain the file information.
 // If you are using a temporary key or accessing with a sub-account, ensure that your permission list includes HeadObject.
@@ -363,7 +291,8 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 // Path of the local directory
 String savePathDir = context.getExternalCacheDir().toString();
@@ -374,7 +303,7 @@ Context applicationContext = context.getApplicationContext(); // application
 // context
 COSXMLDownloadTask cosxmlDownloadTask =
         transferManager.download(applicationContext,
-        bucket, cosPath, savePathDir, savedFileName);
+                bucket, cosPath, savePathDir, savedFileName);
 
 // Set the download progress callback
 cosxmlDownloadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
@@ -387,14 +316,16 @@ cosxmlDownloadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
 cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        COSXMLDownloadTask.COSXMLDownloadTaskResult cOSXMLDownloadTaskResult =
+        COSXMLDownloadTask.COSXMLDownloadTaskResult downloadTaskResult =
                 (COSXMLDownloadTask.COSXMLDownloadTaskResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest request,
-                        CosXmlClientException clientException,
-                        CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -411,42 +342,6 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
-#### Using the KTX package to download an object
-
-If you use KTX, please refer to the following sample code for the download:
-
-```kotlin
-// Use the KTX extension of ViewModel
-// viewModelScope is the built-in coroutine scope of ViewModel
-viewModelScope.launch {
-    val `object` = cosObject {
-        bucket = cosBucket {
-            service = cos
-            name = "examplebucket-1250000000"
-        }
-        key = "exampleObject"
-    }
-
-    try {
-        // Call the "suspend" function for download
-        val result = `object`.download(
-            context = appContext,
-            destDirectory = appContext.externalCacheDir!!,
-            progressListener = { complete, target ->
-                Log.d("cosxmlktx", "download onProgress: " +
-                        "$complete / $target")
-            },
-            transferStateListener = { state ->
-                Log.d("cosxmlktx", "download state is : $state")
-            }
-        )
-
-    } catch (e : Exception ) {
-        e.printStackTrace()
-    }
-
-}
-```
 
 >?
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).

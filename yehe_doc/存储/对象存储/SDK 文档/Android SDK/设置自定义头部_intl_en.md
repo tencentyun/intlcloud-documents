@@ -2,7 +2,7 @@
 
 This document describes how to include custom headers in a request using the SDK.
 
-## SDK API Reference
+## SDK API References
 
 For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
@@ -14,8 +14,9 @@ If you have activated the Tencent Cloud CI service, you can specify the `Pic-Ope
 
 #### Sample code
 
-[//]: # (.cssg-snippet-set-custom-headers)
+[//]: # ".cssg-snippet-set-custom-headers"
 ```java
+// The bucket region can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
 String region = "ap-beijing"; // Bucket region
 String commonHeaderKey = "commonexamplekey"; // Key of the custom common header
 String commonHeaderValue = "commonexamplevalue"; // Value of the custom common header

@@ -16,7 +16,7 @@ For the parameters and method descriptions of all the APIs in the SDK, see [SDK 
 
 The advanced version of the GET Object API uses more encapsulated logic to allow you to suspend, resume (via checkpoint restart), or cancel download requests.
 
-#### Sample code 1. Downloading an object
+#### Sample 1. Downloading an object
 
 [//]: # (.cssg-snippet-transfer-download-object)
 ```java
@@ -29,7 +29,8 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 // Path of the local directory
 String savePathDir = context.getExternalCacheDir().toString();
@@ -57,10 +58,12 @@ cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
                 (COSXMLDownloadTask.COSXMLDownloadTaskResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest request,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -79,7 +82,7 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
 
-#### Sample code 2. Suspending, resuming, or canceling a download
+#### Sample 2. Suspending, resuming, or cancelling a download
 
 To suspend a download, use the code below:
 
@@ -104,7 +107,7 @@ cosxmlDownloadTask.cancel();
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
 
-#### Sample code 3. Setting checkpoint restart for download
+#### Sample 3. Setting checkpoint restart for download
 
 [//]: # (.cssg-snippet-transfer-download-resumable)
 ```java
@@ -115,7 +118,8 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 // Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 // Path of the local directory
 String savePathDir = context.getExternalCacheDir().toString();
@@ -132,7 +136,7 @@ COSXMLDownloadTask cosxmlDownloadTask =
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
 
-#### Sample code 4. Batch download
+#### Sample 4. Batch download
 
 [//]: # (.cssg-snippet-transfer-batch-download-objects)
 ```java
@@ -152,14 +156,16 @@ for (String cosPath : cosPaths) {
     cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
         @Override
         public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-            COSXMLDownloadTask.COSXMLDownloadTaskResult cOSXMLDownloadTaskResult =
+            COSXMLDownloadTask.COSXMLDownloadTaskResult downloadResult =
                     (COSXMLDownloadTask.COSXMLDownloadTaskResult) result;
         }
 
-        @Override
-        public void onFail(CosXmlRequest request,
-                           CosXmlClientException clientException,
-                           CosXmlServiceException serviceException) {
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
+    @Override
+    public void onFail(CosXmlRequest request,
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
             if (clientException != null) {
                 clientException.printStackTrace();
             } else {
@@ -172,7 +178,7 @@ for (String cosPath : cosPaths) {
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
 
-#### Sample code 5. Downloading a directory
+#### Sample 5. Creating a directory
 
 [//]: # (.cssg-snippet-transfer-download-directory)
 ```java
@@ -235,10 +241,12 @@ cosXmlService.getObjectAsync(getObjectRequest, new CosXmlResultListener() {
         GetObjectResult getObjectResult = (GetObjectResult) cosXmlResult;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {

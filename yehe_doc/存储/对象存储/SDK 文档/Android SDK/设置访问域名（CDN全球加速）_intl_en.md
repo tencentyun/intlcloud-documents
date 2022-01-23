@@ -1,8 +1,8 @@
 ## Overview
 
-This document describes how to request a COS service using a non-default COS endpoint.
+This document describes how to request the COS service using a non-default endpoint.
 
-## SDK API Reference
+## SDK API References
 
 For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
@@ -12,8 +12,11 @@ For more information, see [Enabling Default CDN Acceleration Domain Names](https
 
 The sample code below shows how to access a COS service using a default CDN acceleration domain name.
 
-[//]: # (.cssg-snippet-set-cdn-domain)
+#### Sample code
+
+[//]: # ".cssg-snippet-set-cdn-domain"
 ```java
+// The bucket region can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
 String region = "ap-beijing"; // Bucket region
 // Default CDN acceleration domain name of the bucket
 String cdnDomain = "examplebucket-1250000000.file.myqcloud.com";
@@ -39,8 +42,11 @@ For more information, see [Enabling Custom CDN Acceleration Domain Names](https:
 
 The sample code below shows how to access a COS service using a custom CDN acceleration domain name.
 
-[//]: # (.cssg-snippet-set-cdn-custom-domain)
+#### Sample code
+
+[//]: # ".cssg-snippet-set-cdn-custom-domain"
 ```java
+// The bucket region can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
 String region = "ap-beijing"; // Bucket region
 String cdnCustomDomain = "exampledomain.com"; // Custom CDN acceleration domain name
 
@@ -64,8 +70,11 @@ For more information, see [Enabling Custom Origin Domain](https://intl.cloud.ten
 
 The sample code below shows how to access a COS service using a custom origin server domain name.
 
-[//]: # (.cssg-snippet-set-custom-domain)
+#### Sample code
+
+[//]: # ".cssg-snippet-set-custom-domain"
 ```java
+// The bucket region can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
 String region = "ap-beijing"; // Bucket region
 String customDomain = "exampledomain.com"; // Custom origin server domain name
 
@@ -88,8 +97,11 @@ For more information on global acceleration, see [Overview](https://intl.cloud.t
 
 The sample code below shows how to access a COS service using a global acceleration endpoint.
 
-[//]: # (.cssg-snippet-set-accelerate-domain)
+#### Sample code
+
+[//]: # ".cssg-snippet-set-accelerate-domain"
 ```java
+// The bucket region can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
 String region = "ap-beijing"; // Bucket region
 
 CosXmlServiceConfig cosXmlServiceConfig = new CosXmlServiceConfig.Builder()

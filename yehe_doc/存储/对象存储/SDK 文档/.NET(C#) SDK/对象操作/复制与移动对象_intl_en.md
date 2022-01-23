@@ -41,7 +41,7 @@ The advanced APIs encapsulate async requests for the simple copy and multipart c
 
 #### Sample code
 
-[//]: # (.cssg-snippet-transfer-copy-object)
+[//]: # ".cssg-snippet-transfer-copy-object"
 ```cs
 using COSXML.Model.Tag;
 using COSXML.Auth;
@@ -58,7 +58,7 @@ namespace COSSnippet
 
       TransferCopyObjectModel() {
         CosXmlConfig config = new CosXmlConfig.Builder()
-          .SetRegion("COS_REGION") // Set the default region. For abbreviations of COS regions, visit https://cloud.tencent.com/document/product/436/6224.
+          .SetRegion("COS_REGION") // Set the default region. For abbreviations of COS regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
           .Build();
         
         string secretId = "SECRET_ID";   // SecretId of the TencentCloud API. For more information about how to obtain the API key, see https://console.cloud.tencent.com/cam/capi.
@@ -139,7 +139,7 @@ This API (`PUT Object - Copy`) is used to copy a file to a destination path. You
 
 #### Sample code 1. Copying an object with its attributes preserved
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```cs
 try
 {
@@ -182,12 +182,12 @@ catch (COSXML.CosException.CosServerException serverEx)
 #### Sample code 2. Modifying the storage class of an object
 
 >?
-> - You can change STANDARD to STANDARD_IA, INTELLIGENT TIERING, ARCHIVE, or DEEP ARCHIVE. 
-> - To modify ARCHIVE or DEEP ARCHIVE to other storage classes, you need to call [PostRestore](https://intl.cloud.tencent.com/document/product/436/38066) to restore objects in ARCHIVE or DEEP ARCHIVE first before calling this API. 
+> - You can change the storage class of an object from STANDARD to STANDARD_IA, INTELLIGENT TIERING, ARCHIVE, or DEEP ARCHIVE. 
+> - To change ARCHIVE or DEEP ARCHIVE to other storage classes, you need to call [PostRestore](https://intl.cloud.tencent.com/document/product/436/38066) to restore objects in ARCHIVE or DEEP ARCHIVE first before calling this API. 
 > - For more details about storage classes, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 > 
 
-[//]: # (.cssg-snippet-modify-object-storage-class)
+[//]: # ".cssg-snippet-modify-object-storage-class"
 ```cs
 try
 {
@@ -228,7 +228,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### Sample code 3. Copying an object while replacing its attributes
 
-[//]: # (.cssg-snippet-copy-object-replaced)
+[//]: # ".cssg-snippet-copy-object-replaced"
 ```cs
 try
 {
@@ -272,7 +272,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### Sample code 4. Modifying object metadata
 
-[//]: # (.cssg-snippet-modify-object-metadata)
+[//]: # ".cssg-snippet-modify-object-metadata"
 ```cs
 try
 {
@@ -367,7 +367,7 @@ try {
 
 ## Multipart Operations
 
-This section describes the process of multipart copy. COS APIs `InitiateMultipartUpload`, `UploadPart/UploadPartCopy`, and `CompleteMultipartUpload` APIs can be used for both multipart upload and multipart copy. Therefore, there is a certain degree of overlap between the APIs and usages between multipart copy and multipart upload.
+This section describes the process of multipart copy. COS APIs `InitiateMultipartUpload`, `UploadPart/UploadPartCopy`, and `CompleteMultipartUpload APIs can be used for both multipart upload and multipart copy. Therefore, there is a certain degree of overlap between the APIs and usages between multipart copy and multipart upload.
 
 #### Performing a multipart copy
 
@@ -375,14 +375,14 @@ This section describes the process of multipart copy. COS APIs `InitiateMultipar
 2. Use the `UploadId` to copy the parts with `Upload Part - Copy`.
 3. Complete the multipart copy with `Complete Multipart Upload`.
 
-#### Resuming a multipart copy
+#### Continuing the multipart copy
 
 1. If you did not record the `UploadId` of the multipart copy, you can query the multipart copy job with `List Multipart Uploads` to get the `UploadId` of the corresponding file.
 2. Use the `UploadId` to list the copied parts with `List Parts`.
 3. Use the `UploadId` to copy the remaining parts with `Upload Part - Copy`.
 4. Complete the multipart copy with `Complete Multipart Upload`.
 
-#### Multipart copy abortion process
+#### Aborting a multipart copy
 
 1. If you did not record the `UploadId` of the multipart upload, you can query the multipart copy job with `List Multipart Uploads` to get the `UploadId` of the corresponding file.
 2. Abort the multipart copy and delete the copied parts with `Abort Multipart Upload`.
@@ -395,7 +395,7 @@ This API (`List Multipart Uploads`) is used to query in-progress multipart copie
 
 #### Sample code
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```cs
 try
 {
@@ -430,7 +430,7 @@ This API (`Initiate Multipart Upload`) is used to initialize a multipart copy op
 
 #### Sample code
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```cs
 try
 {
@@ -467,7 +467,7 @@ This API (`Upload Part - Copy`) is used to copy an object as a part.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-upload-part-copy)
+[//]: # ".cssg-snippet-upload-part-copy"
 ```cs
 try
 {
@@ -520,7 +520,7 @@ This API (`List Parts`) is used to query the copied parts of a multipart copy.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```cs
 try
 {
@@ -558,7 +558,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 This API (`Complete Multipart Upload`) is used to complete the multipart copy of a file.
 
 #### Sample code
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```cs
 try
 {
@@ -598,7 +598,7 @@ This API (`Abort Multipart Upload`) is used to abort a multipart copy and delete
 
 #### Sample code
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```cs
 try
 {
