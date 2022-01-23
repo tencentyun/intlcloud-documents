@@ -9,7 +9,6 @@ This document describes how to quickly integrate the Tencent Cloud IM SDK into y
 
 
 ## Relevant Documents
-- [Demo Quick Start](https://intl.cloud.tencent.com/document/product/1047/34553)
 - [Running the IM SDK (Mini Program) TUIKit](https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/TUIKit)
 - [Running the IM SDK (Web) Demo](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
 - [SDK Upload Plugin Integration (Web & Mini Program)](https://intl.cloud.tencent.com/document/product/1047/39858)
@@ -46,7 +45,7 @@ let options = {
 // Create an SDK instance. The `TIM.create()` method returns the same instance for the same `SDKAppID`.
 let tim = TIM.create(options); // The SDK instance is usually represented by `tim`.
 
-// Set the SDK log level for output. For more information on each level, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn//SDK.html#setLogLevel">setLogLevel API Description</a>.
+// Set the SDK log level for output. For more information on each level, see <a href="https://web.sdk.qcloud.com/im/doc/en//SDK.html#setLogLevel">setLogLevel API Description</a>.
 tim.setLogLevel(0); // Common level. You are advised to use this level during connection as it covers more logs.
 // tim.setLogLevel(1); // Release level, at which the SDK outputs important information. You are advised to use this log level in a production environment.
 
@@ -80,7 +79,7 @@ let options = {
 // Create an SDK instance. The `TIM.create()` method returns the same instance for the same `SDKAppID`.
 let tim = TIM.create(options); // The SDK instance is usually represented by `tim`.
 
-// Set the SDK log level for output. For more information on each level, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn//SDK.html#setLogLevel">setLogLevel API Description</a>.
+// Set the SDK log level for output. For more information on each level, see <a href="https://web.sdk.qcloud.com/im/doc/en//SDK.html#setLogLevel">setLogLevel API Description</a>.
 tim.setLogLevel(0); // Common level. You are advised to use this level during connection as it covers more logs.
 // tim.setLogLevel(1); // Release level, at which the SDK outputs important information. You are advised to use this log level in a production environment.
 
@@ -88,7 +87,7 @@ tim.setLogLevel(0); // Common level. You are advised to use this level during co
 tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
 ```
 
-For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://web.sdk.qcloud.com/im/doc/zh-cn//SDK.html).
+For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://web.sdk.qcloud.com/im/doc/en//SDK.html).
 
 ### Integrating via script
 Import the SDK to your project by using the script tag and initialize the SDK.
@@ -114,14 +113,14 @@ tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
 </script>
 ```
 
->?Set the SDK log output level. For more information on each level, see [setLogLevel API Description](https://web.sdk.qcloud.com/im/doc/zh-cn//SDK.html#setLogLevel).
+>?Set the SDK log output level. For more information on each level, see [setLogLevel API Description](https://web.sdk.qcloud.com/im/doc/en//SDK.html#setLogLevel).
 
-For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://web.sdk.qcloud.com/im/doc/zh-cn//SDK.html).
+For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://web.sdk.qcloud.com/im/doc/en//SDK.html).
 
 ### Relevant resources
 - [SDK Update Log](https://intl.cloud.tencent.com/document/product/1047/34281)
-- [SDK API Documentation](https://web.sdk.qcloud.com/im/doc/zh-cn//SDK.html)
-- [FAQs](https://web.sdk.qcloud.com/im/doc/zh-cn//tutorial-01-faq.html)
+- [SDK API Documentation](https://web.sdk.qcloud.com/im/doc/en//SDK.html)
+- [FAQs](https://web.sdk.qcloud.com/im/doc/en//tutorial-01-faq.html)
 - [IM Web Demo](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
 - [Download URL of Tencent Cloud IM Upload Plugin](https://www.npmjs.com/package/tim-upload-plugin)
 
