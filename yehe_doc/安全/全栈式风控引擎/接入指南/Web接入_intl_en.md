@@ -3,10 +3,8 @@
 A JavaScript package is provided for your web application. You can integrate it in the following two steps:
 
 ## 1. Integrate JavaScript
-<aside>
-💡 Integrate the JavaScript package into your project by using npm, a package manager and dependency management system.
+Integrate the JavaScript package into your project by using npm, a package manager and dependency management system.
 
-</aside>
 
 ```jsx
 npm i @tencent/risk-assessment
@@ -14,9 +12,8 @@ npm i @tencent/risk-assessment
 
 ## 2. Get the device result
 
-<aside>
-💡 Your Tencent Cloud account's `APP_ID`, `SECRET_ID`, and `SECRET_KEY` are required to retrieve the device result.
-</aside>
+Your Tencent Cloud account's `APP_ID`, `SECRET_ID`, and `SECRET_KEY` are required to retrieve the device result.
+
 
 First, copy the JavaScript code into your project.
 
@@ -31,10 +28,7 @@ RiskAssessment(APP_ID, SECRET_ID, SECRET_KEY)
   })
 ```
 
-<aside>
-💡 There will be a cross-origin problem on the browser, which needs to be solved by installing the `Allow CORS` extension. After downloading it, configure it as shown below:
-
-</aside>
+There will be a cross-origin problem on the browser, which needs to be solved by installing the `Allow CORS` extension. After downloading it, configure it as shown below:
 
 ![Untitled](https://user-images.githubusercontent.com/56524120/148018289-07013d7e-8426-494f-8f1a-fb3c91acfd44.png)
 

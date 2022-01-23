@@ -3,10 +3,8 @@ An SDK for iOS is provided for your mobile application. You can integrate it in 
 
 ## 1. **Integrate the SDK**
 
-<aside>
-💡 Currently, the SDK is compatible with applications on iOS 9 and above and supports manual integration on both simulators and real devices.
+Currently, the SDK is compatible with applications on iOS 9 and above and supports manual integration on both simulators and real devices.
 
-</aside>
 
 **Use CocoaPods** 
 
@@ -54,10 +52,8 @@ There is 1 dependency from the Podfile and 1 total pod installed.
 
 - **Step 5**. Open your project in Xcode with the `MyApp.xcworkspace` file instead of the `MyApp.xcodeproj` file.
 
-<aside>
-💡  If your project uses Objective-C, set `Always Embed Swift Standard Libraries` to `YES` in build settings.
+If your project uses Objective-C, set `Always Embed Swift Standard Libraries` to `YES` in build settings.
 
-</aside>
 
 ### Manual import
 
@@ -69,19 +65,14 @@ There is 1 dependency from the Podfile and 1 total pod installed.
 - Right-Click the directory you want to add to and click **Add Files to the current filename** to add the decompressed file.
 - Check whether the file is added successfully. To do so, select the target of the project, click **Build Phases**, and check whether the SDK file exists in the **Link Binary With Libraries** directory. If not, click the **+** icon in this directory to add the decompressed SDK file with the .a extension.
 
-<aside>
-💡 If your project uses Swift, you need to create a bridging header file for bridging, as this SDK is built by Object-C. Pay attention to the naming convention, which is `TargetName-Bridging-Header`.
+If your project uses Swift, you need to create a bridging header file for bridging, as this SDK is built by Object-C. Pay attention to the naming convention, which is `TargetName-Bridging-Header`.
 
-</aside>
 
 - After creating the bridging header file, add the decompressed .h header file to it.
 - Select **Targets** > **Build Settings**, select all, and search for the header. Enter the relative path of the bridging header file `TargetName-Bridging-Header` in **Objective-C Bridging Header** in the **Swift Compiler** > **General** directory.
 - If command + right click cannot locate the .h header file, select the target of the project, click **Build Phases**, click **+** in the **Compile Sources** directory to add the .h header file
 
-<aside>
-💡 Solution to the `building for iOS Simulator, but linking in object file built for iOS, file` error reported by Xcode12 in a simulator
-
-</aside>
+Solution to the `building for iOS Simulator, but linking in object file built for iOS, file` error reported by Xcode12 in a simulator
 
 This problem is a compatibility issue and currently should only appear on Macs with the M1 chip. As the M1 chip itself is on the ARM architecture, the simulator naturally supports the ARM architecture.
 
@@ -89,10 +80,8 @@ This problem is a compatibility issue and currently should only appear on Macs w
 
 ## 2. Initialize the SDK
 
-<aside>
-💡  You need to get the `APP_ID`, `SECRET_ID`, and `SECRET_KEY` of your Tencent Cloud account to initialize the SDK. It should be initialized only once, and an exception will be reported if it is initialized multiple times.
+You need to get the `APP_ID`, `SECRET_ID`, and `SECRET_KEY` of your Tencent Cloud account to initialize the SDK. It should be initialized only once, and an exception will be reported if it is initialized multiple times.
 
-</aside>
 
 - **Objective-C**
 
@@ -169,10 +158,8 @@ If the above data is displayed, the call is successful.
 
 ## 4. **Submit to App Store**
 
-<aside>
-💡 As the framework is added manually (without CocoaPods), the `x86_64` and `i386` architectures must be pruned before submission to App Store.
+As the framework is added manually (without CocoaPods), the `x86_64` and `i386` architectures must be pruned before submission to App Store.
 
-</aside>
 
 - Locate the current .a file, click **Show in Finder** to display it in Finder, drag it to the terminal to display the path of the static library, and enter the folder where the static library is located in the terminal.
 - View the architectures supported by the static library.

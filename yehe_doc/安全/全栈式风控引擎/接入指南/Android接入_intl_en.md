@@ -2,10 +2,8 @@
 An SDK for Android is provided for your mobile application. You can integrate it in the following steps:
 ## 1. Integrate the SDK
 
-<aside>
 Currently, the SDK is compatible with applications with Android API level 15 and above and supports manual integration on simulators.
 
-</aside>
 
 ### Manual integration
 
@@ -35,10 +33,8 @@ dependencies {
 
 ## 2. Initialize the SDK
 
-<aside>
 SDK initialization should be configured in `onCreate()` in your `Application` subclass to ensure successful generation and processing of the device fingerprint. You need to get the `APP_ID`, `SECRET_ID`, and `SECRET_KEY` of your Tencent Cloud account to initialize the SDK. It should be initialized only once, and an exception will be reported if it is initialized multiple times.
 
-</aside>
 
 ```java
 RiskAssessment.initRiskAssessment(this,APP_ID,SECRET_ID,SECRET_KEY);
@@ -46,11 +42,9 @@ RiskAssessment.initRiskAssessment(this,APP_ID,SECRET_ID,SECRET_KEY);
 
 ## 3. Get the device result
 
-<aside>
 You can retrieve the device result as needed at specific user checkpoints or activities, such as account registration, login, or checkout. This is to ensure that there is enough time to generate the device fingerprint.
   To retrieve the device result as needed, call:
 
-</aside>
 
 ```java
 RiskAssessment.getInstance().setRiskAssessmentStateListener(new RiskAssessment.RiskAssessmentStateListener() {
