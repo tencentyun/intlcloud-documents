@@ -5,7 +5,7 @@
 
 ## 可能原因
 使用高防 IP 后的业务流量走向图：
-![](https://main.qcloudimg.com/raw/43a308a282a5d3a9d3d85c735333e91e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/76be6e8cd868f9735e5fce09ddda3479.png)
 
 ### [原因一：回源 IP 被源站拦截或限速](id:yy1)
 在配置高防 IP 后，源站服务器的 IP 被高防 IP 在中间代理而被隐藏。所有经过高防 IP 服务访问的客户端源 IP 都会变成高防 IP 的回源 IP。源站服务器接收到的访问请求都是来自高防 IP 回源段，而高防 IP 回源段的 IP 数量有限，分摊过后每个回源 IP 访问源站服务器的请求量较大。
