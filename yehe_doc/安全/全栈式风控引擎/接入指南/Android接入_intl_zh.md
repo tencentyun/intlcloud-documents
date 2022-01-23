@@ -3,7 +3,7 @@
 ## 1.集成SDK
 
 <aside>
-💡 目前支持Android API 级别 15 及更高级别的应用程序 、模拟器，手动集成
+目前支持Android API 级别 15 及更高级别的应用程序 、模拟器，手动集成
 
 </aside>
 
@@ -36,8 +36,7 @@ dependencies {
 ## 2.初始化SDK
 
 <aside>
-💡 SDK 初始化应`onCreate()`在您的`Application`子类中配置，以确保成功生成和处理设备指纹, 您需要获取到您腾讯云账号的 APP_ID, SECRET_ID，SECRET_KEY来初始化SDK, SDK只被初始化一次，如果多次初始化会抛出异常。
-
+SDK 初始化应`onCreate()`在您的`Application`子类中配置，以确保成功生成和处理设备指纹, 您需要获取到您腾讯云账号的 APP_ID, SECRET_ID，SECRET_KEY来初始化SDK, SDK只被初始化一次，如果多次初始化会抛出异常。
 </aside>
 
 ```java
@@ -47,7 +46,7 @@ RiskAssessment.initRiskAssessment(this,APP_ID,SECRET_ID,SECRET_KEY);
 ## 3.获取设备结果
 
 <aside>
-💡 您可以在特定用户检查点或活动（例如帐户注册、登录或结帐）中按需检索设备结果。这是为了确保有足够的时间来生成设备指纹。
+您可以在特定用户检查点或活动（例如帐户注册、登录或结帐）中按需检索设备结果。这是为了确保有足够的时间来生成设备指纹。
   要按需检索设备结果，请调用：
 
 </aside>
