@@ -225,7 +225,7 @@ CLB 的 IP 版本可以选择 IPv4、IPv6 或者 IPv6 NAT64。使用限制详情
 ### [共享型实例购买方式](id:Shared-CLB-Instance)
 1. 登录腾讯云 [负载均衡购买页](https://buy.cloud.tencent.com/lb)。
 2. 参考以上 [官网购买](#Official-Purchase) 的操作步骤，按需选择共享型负载均衡实例相关配置，并且“实例规格”选择**共享型**。
-![](https://qcloudimg.tencent-cloud.cn/raw/3da263a719e9dffd9d412906225c4af4.png)
+![]()
 3. 继续参考以上 [官网购买](#Official-Purchase) 的操作步骤完成后续操作。
 
 ### [性能容量型实例购买方式](id:LCU-CLB-Instance)
@@ -233,7 +233,7 @@ CLB 的 IP 版本可以选择 IPv4、IPv6 或者 IPv6 NAT64。使用限制详情
 2. 参考以上 [官网购买](#Official-Purchase) 的操作步骤，按需选择性能容量型负载均衡实例相关配置，并且“实例规格”选择**性能容量型**。
 <dx-tabs>
 ::: 按量计费的性能容量型实例
-![](https://qcloudimg.tencent-cloud.cn/raw/154e51f0d7400e5d994c75828585735b.png)
+![]()
 :::
 </dx-tabs>
 3. 继续参考以上 [官网购买](#Official-Purchase) 的操作步骤完成后续操作。

@@ -19,7 +19,7 @@ K8s 服务需要同时对集群内和集群外暴露。其中集群内通过集�
 3. 在“监听器管理”页签，找到目标监听器，单击监听器右侧的![](https://qcloudimg.tencent-cloud.cn/raw/11430ef75d92ba13520f8e05ed6d429b.svg)图标编辑监听器。
 4. 在弹出的“编辑监听器”对话框中，单击**下一步**至“健康检查”页签。
 5. 在“健康检查”页签中，健康检查源 IP 选择**100.64网段**，单击**下一步**后再单击**提交**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/13b4fe7b91e8a3e775098a5935a35afc.png" width="70%" />
+<img src="" width="70%" />
 
 ## 相关文档
 - [配置健康检查](https://intl.cloud.tencent.com/document/product/214/39251)

@@ -96,7 +96,7 @@ vim  /etc/nginx/nginx.conf
    - 线路类型：默认。
    - 记录值：填写负载均衡的 IPv6 地址。
    - TTL：设置为默认值“600s”。
-3. 添加域名解析后，通过 Ping 域名进行验证，如下图：
-![](https://main.qcloudimg.com/raw/9b0fdfd7b14fa59b8bd6447a9a953d0f.png)
+3. 添加域名解析后，通过 Ping 域名进行验证。
+![]()
 4. 再通过浏览器访问域名来验证，如下图：
 ![](https://main.qcloudimg.com/raw/77a28d46b830e44db2856b029f5f8697.png)

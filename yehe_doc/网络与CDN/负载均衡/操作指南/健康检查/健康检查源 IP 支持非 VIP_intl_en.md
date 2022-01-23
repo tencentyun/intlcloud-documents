@@ -18,7 +18,7 @@ This document takes a TCP listener as an example to describe how to change the s
 3. On the **Listener Management** tab, find the target listener, and click the ![](https://qcloudimg.tencent-cloud.cn/raw/11430ef75d92ba13520f8e05ed6d429b.svg) icon on its right to edit it.
 4. In the **Edit Listener** pop-up window, click **Next** to enter the **Health Check** tab.
 5. On the **Health Check** tab, select **100.64 IP range** as the health check source IP, click **Next**, and click **Submit**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/13b4fe7b91e8a3e775098a5935a35afc.png" width="70%" />
+<img src="" width="70%" />
 
 ## Relevant Documentation
 - [Configuring Health Check](https://intl.cloud.tencent.com/document/product/214/39251)

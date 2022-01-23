@@ -225,7 +225,7 @@ Currently, the static single-line IP is supported only in Guangzhou, Shanghai, N
 ### [Shared instance purchase method](id:Shared-CLB-Instance)
 1. Log in to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
 2. Set the shared instance configuration items by referring to the steps in [Purchasing at Official Website](#Official-Purchase) and select **Shared** for **Instance Specification**.
-![](https://qcloudimg.tencent-cloud.cn/raw/3da263a719e9dffd9d412906225c4af4.png)
+![]()
 3. Complete the subsequent operations by referring to the steps in [Purchasing at Official Website](#Official-Purchase).
 
 ### [LCU-Supported instance purchase method](id:LCU-CLB-Instance)
@@ -233,7 +233,7 @@ Currently, the static single-line IP is supported only in Guangzhou, Shanghai, N
 2. Set the LCU-supported instance configuration items by referring to the steps in [Purchasing at Official Website](#Official-Purchase) and select **LCU-supported** for **Instance Specification**.
 <dx-tabs>
 ::: Pay-as-You-Go LCU-supported instance
-![](https://qcloudimg.tencent-cloud.cn/raw/154e51f0d7400e5d994c75828585735b.png)
+![]()
 :::
 </dx-tabs>
 3. Complete the subsequent operations by referring to the steps in [Purchasing at Official Website](#Official-Purchase).

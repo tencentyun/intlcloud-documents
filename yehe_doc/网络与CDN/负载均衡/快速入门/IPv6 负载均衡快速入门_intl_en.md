@@ -96,7 +96,7 @@ Use a client with IPv6 public network access capabilities to access the domain n
    - Split Zone: Default
    - Record Value: enter the IPv6 address of the CLB instance.
    - TTL: Leave it as the default value **600** s.
-3. After adding the domain name resolution, ping the domain name to verify it, as shown below:
-![](https://main.qcloudimg.com/raw/9b0fdfd7b14fa59b8bd6447a9a953d0f.png)
+3. After adding the domain name resolution, ping the domain name to verify it.
+![]()
 4. You can use a browser to access the domain name to verify it, as shown below:
 ![](https://main.qcloudimg.com/raw/77a28d46b830e44db2856b029f5f8697.png)
