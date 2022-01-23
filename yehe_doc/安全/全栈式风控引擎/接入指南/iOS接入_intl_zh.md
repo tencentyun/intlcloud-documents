@@ -54,7 +54,7 @@ There is 1 dependency from the Podfile and 1 total pod installed.
 
 如果您的项目使用的是 Objective-C，请在构建设置中将`Always Embed Swift Standard Libraries` 设置成 YES。
 
-### 手动导入
+**手动导入**
 
 - 点击此下方下载sdk：
 
