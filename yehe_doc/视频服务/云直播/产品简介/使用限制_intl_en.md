@@ -37,13 +37,6 @@ Before using CSS, you need to know the following use limits:
 	<li>CSS supports the RTMP, FLV, and HLS playback protocols. For more information, see <a href="https://intl.cloud.tencent.com/document/product/267/7968">Live Streaming Basics</a>.</li>
 	<li>LEB supports the WebRTC playback protocol.</li>
 </ul></td>
-</tr><tr>
-<td>Live director</td>
-<td><ul style="margin:0">
-	<li>You can create up to <b>three</b> live director instances under one account. If there are already three instances, you must delete an existing instance before you can add a new one. To add more instances, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> for application.</li>
-	<li>You can add up to five VOD files to the VOD input playback list.</li>
-	<li>Third-party relayed push supports up to three streams, one of which is relayed to the current CSS account by default, and the other two can be relayed to third-party vendors.</li>
-</ul></td>
 </tr></table>
 
 
