@@ -7,7 +7,7 @@
 
 ### 数据统计
 
-1. 登录 [游戏服务器伸缩控制台](https://console.cloud.tencent.com/gse/asset)，单击左侧菜单**数据统计**。
+1. 登录 [游戏服务器伸缩控制台](https://console.cloud.tencent.com/gse/asset)，单击左侧菜单【数据统计】。
 2. 页面左上侧选择需要查询服务器舰队的**地域**，进入该地域的数据统计页面，可查看**用量统计**、**历史列表**信息。
 ![](https://main.qcloudimg.com/raw/45861b47b04d408e8ba18c27cbce9488.png)
  - **用量统计**：选择**查询时间**、**舰队名称**后可获取特定时间范围内，服务器舰队所使用 CVM 时长和网络流量。
