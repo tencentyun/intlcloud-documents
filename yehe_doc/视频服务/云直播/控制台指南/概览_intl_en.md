@@ -8,7 +8,7 @@ In the CSS console, you can quickly configure basic features such as domain name
 ## Overview
 
 Click **Overview** on the left sidebar, and you can view various data, from yesterday’s traffic fees, real-time live streaming data, the current number of push channels, the number of concurrent connections, to recent trends in billable bandwidth and traffic, as well as the number of push channels. You can also switch the billing mode or change the time granularity. You can click **Beginner's Guide** in the top-right corner to view the directions for getting started with CSS.
-![](https://main.qcloudimg.com/raw/e898cd3b3df8bc651d5c3a0d21cef738.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e8946c20fd1a4cad644cfbd4f637bb14.png)
 
 
 ### Today's Data
