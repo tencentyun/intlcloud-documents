@@ -54,8 +54,6 @@ You can use the following ways to achieve live push and playback on your website
 > ! 
 > - WebRTC push uses the Opus audio codec. If you use a standard live streaming protocol (RTMP, HTTP-FLV, or HLS) for playback, the CSS backend will automatically convert the audio streams to AAC format to ensure normal playback, which will incur audio transcoding fees. For details, please see [Live Transcoding > Audio Transcoding](https://intl.cloud.tencent.com/document/product/267/39604). Audio transcoding will not be initiated when only the LEB service is used.
 > - With WebRTC, each push domain name can be used for up to **concurrent 100 streams** by default. If you want to push more streams, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-- **Live playback on web**: we recommend you use TCPlayerLite, which supports playing back **LEB streams using the WebRTC protocol** on mobile and desktop browsers. It delivers a superb streaming experience with millisecond latency, far lower than that of playback using traditional live streaming protocols.
-> ! On a browser which does not support WebRTC, a WebRTC URL passed into the player will be converted to ensure normal playback. By default, WebRTC URLs are converted to HLS URLs on mobile browsers and HTTP-FLV URLs on desktop browsers.
 
 ### Free demo
 
