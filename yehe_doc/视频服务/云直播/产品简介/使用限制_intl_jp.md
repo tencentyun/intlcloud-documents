@@ -37,13 +37,6 @@ CSSサービスをご利用される前に、サービスの使用制限事項�
 	<li>標準ライブストリーミングRTMP、FLVおよびHLS再生プロトコルをサポートしています。 詳細な説明は<a href="https://intl.cloud.tencent.com/document/product/267/7968">よくあるご質問</a>をご参照ください。</li>
 	<li>ライブイベントストリーミングはWebRTC再生プロトコルをサポートしています。</li>
 </ul></td>
-</tr><tr>
-<td>Live Video Caster</td>
-<td><ul style="margin:0">
-	<li>各アカウントにつき<b>3</b>個のLive Video Casterインスタンスを作成することができ、Live Video Casterインスタンスを削除すると新たに追加することができます。複数のLive Video Casterが必要な場合は、<a href="https://console.cloud.tencent.com/workorder/category">チケットを提出</a> して申請してください。</li>
-	<li>VODの再生リスト入力は、最大で5個のVODファイルをサポートしています。</li>
-	<li>サードパーティへのプッシュ転送は、最大3チャネルまでサポートしています。そのうち1チャネルはデフォルトでは現在のTencent Cloud CSSアカウントへの転送となり、他の2チャネルはサードパーティへの転送となります。</li>
-</ul></td>
 </tr></table>
 
 
