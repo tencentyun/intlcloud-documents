@@ -24,7 +24,7 @@
 ## 创建录制模板
 1. 登录云直播控制台，进入 **功能配置** > [**直播录制**](https://console.cloud.tencent.com/live/config/record)。
 2. 单击 **创建录制模板** 设置模板信息，进行如下配置：
-![](https://main.qcloudimg.com/raw/ccf133a64c38ce579a9fd91e37514193.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a142c4c29169faa53164e7e264f4aa82.png)
 
 <table>
    <thead><tr><th width="20%" colspan=2>配置项</th><th>配置描述</th></tr></thead>
@@ -47,11 +47,13 @@
    <td>录制视频输出格式有  HLS、MP4、FLV 和 AAC 四种，其中 AAC 为纯音频录制。</td>
    </tr>
    </tbody></table>
+
 >! 
 >- 若指定转码流录制中选择纯音频转码模板时，录制格式中只可选择音频格式。
 >- 录制转码流需要先发起转码任务，会额外产生转码费用，若使用相同转码模板进行播放，不会重复计费。
+
 3. 选择录制内容，勾选需要录制格式后，弹出相关格式的设置界面，可选择一个或多个录制格式同时进行设置。请进行如下设置：
-![](https://main.qcloudimg.com/raw/74a4ac0636c59ff69c23437e72189567.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0a835b00a6864bc29411da9d8088a626.png)
 
 <table>
    <thead><tr><th width="27%" colspan=2>配置项</th><th>配置描述</th></tr></thead>
@@ -84,6 +86,7 @@
 >! 视频存储策略中：
 >- 选择 **标准存储** 时，若目前选中的应用已开启降冷策略，录制文件会先生成标准存储文件后再根据降冷策略进行降冷，可点击此处[查看策略](https://console.cloud.tencent.com/vod/inactivation)。
 >- 选择 **低频存储** 时，若目前选中的应用/分类已开启降冷策略，录制文件会先直接生成低频存储文件后再判断是否执行点播降冷策略。
+
 4. 单击 **保存** 即可。
 
 [](id:conect)
