@@ -4,17 +4,17 @@
 
 This document provides an overview of APIs and SDK code samples related to bucket tagging.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting a bucket tag | Sets a tag for an existing bucket |
-| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a specified bucket |
-| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting a bucket tag | Deletes a specified bucket tag |
+| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting bucket tags | Sets tags for an existing bucket |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a bucket |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes the tags of a bucket |
 
-## Setting Bucket Tag
+## Setting Bucket Tags
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket tagging) is used to set a tag for an existing bucket.
+This API is used to set tags for an existing bucket.
 
 #### Method prototype
 
@@ -24,20 +24,49 @@ func (s *BucketService) PutTagging(ctx context.Context, opt *BucketPutTaggingOpt
 
 #### Sample request
 
+[//]: # ".cssg-snippet-put-bucket-tagging"
 ```go
-opt := &cos.BucketPutTaggingOptions{
-	TagSet: []cos.BucketTaggingTag{
-	{   
-		Key:   "testk1",
-		Value: "testv1",
-    },  
-    {   
-    	Key:   "testk2",
-        Value: "testv2",
-    },  
-    },  
-}   
-resp, err := client.Bucket.PutTagging(context.Background(), opt)
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    opt := &cos.BucketPutTaggingOptions{
+        TagSet: []cos.BucketTaggingTag{
+            {
+                Key:   "testk1",
+                Value: "testv1",
+            },
+            {
+                Key:   "testk2",
+                Value: "testv2",
+            },
+        },
+    }
+    _, err := client.Bucket.PutTagging(context.Background(), opt)
+    if err != nil {
+        // ERROR
+    }
+}
 ```
 
 #### Parameter description
@@ -53,18 +82,18 @@ type BucketPutTaggingOptions struct {
 }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ----------------------- | ------------------------------------------------------------ | ------ |
-| BucketPutTaggingOptions | Bucket tag configuration parameter                                           | Struct |
-| TagSet                  | Bucket tag configuration information                                           | Struct |
-| key | Tag key, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 128 bytes | String |
-| value | Tag value, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 256 bytes | String |
+| BucketPutTaggingOptions | Bucket tag configuration parameters                                           | Struct |
+| TagSet                  | Bucket tag configuration                                           | Struct |
+| key | Tag key. A tag key must not exceed 128 characters and can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes. | String |
+| value | Tag value. A tag value must not exceed 256 characters and can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes. | String |
 
-## Querying Bucket Tag
+## Querying Bucket Tags
 
-#### Feature description
+#### Description
 
-This API (GET Bucket tagging) is used to query the existing tags of a specified bucket.
+This API is used to query the existing tags of a specified bucket.
 
 #### Method prototype
 
@@ -74,11 +103,42 @@ func (s *BucketService) GetTagging(ctx context.Context) (*BucketGetTaggingResult
 
 #### Sample request
 
+[//]: # ".cssg-snippet-get-bucket-tagging"
 ```go
-v, resp, err := client.Bucket.GetTagging(context.Background())
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    v, _, err := client.Bucket.GetTagging(context.Background())
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println(v)
+}
 ```
 
-#### Returned result description
+#### Response description
 
 ```go
 type BucketTaggingTag struct {
@@ -92,21 +152,22 @@ type BucketGetTaggingResult struct {
 
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ---------------------- | ------------------------------------------------------------ | ------ |
-| BucketGetTaggingResult | Bucket tag configuration parameter                                           | Struct |
-| TagSet                  | Bucket tag configuration information                                           | Struct |
-| key | Tag key, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 128 bytes | String |
-| value | Tag value, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 256 bytes | String |
+| BucketGetTaggingResult | Bucket tag configuration parameters                                           | Struct |
+| TagSet                  | Bucket tag configuration                                           | Struct |
+| key | Tag key. A tag key must not exceed 128 characters and can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes. | String |
+| value | Tag value. A tag value must not exceed 256 characters and can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes. | String |
 
-## Deleting Bucket Tag
+## Deleting Bucket Tags
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket tagging) is used to delete an existing tag of a specified bucket.
+This API is used to delete the existing tags from a bucket.
 
 #### Method prototype
 
+[//]: # ".cssg-snippet-delete-bucket-tagging"
 ```go
 func (s *BucketService) DeleteTagging(ctx context.Context) (*Response, error)
 ```
@@ -114,5 +175,35 @@ func (s *BucketService) DeleteTagging(ctx context.Context) (*Response, error)
 #### Sample request
 
 ```go
-resp, err := client.Bucket.DeleteTagging(context.Background())
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    resp, err := client.Bucket.DeleteTagging(context.Background())
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println(resp.Header)
+}
 ```

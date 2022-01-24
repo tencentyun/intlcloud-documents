@@ -1,50 +1,51 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to bucket and object access control lists (ACLs).
+This document provides an overview of APIs and SDK code samples related to the access control lists (ACLs) for buckets and objects.
 
 **Bucket ACL**
 
-| API | Operation Name | Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | --------------------------------------- |
-| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets the ACL of a specified bucket |
-| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Queries the ACL of specified bucket |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets an ACL for a bucket |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Queries the ACL of a bucket |
 
 **Object ACL**
 
-| API | Operation Name | Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting an object ACL | Sets an ACL for a specified object in a bucket |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting an object ACL | Sets an ACL for an object in a bucket |
 | [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying an object ACL | Queries the ACL of an object |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
 
-## Bucket ACLs
+## Bucket ACL
 
 ### Setting a bucket ACL
 
-#### Feature description
+#### Description
 
-This API is used to set the access control list (ACL) of a specified bucket.
+This API is used to set an access control list (ACL) for a specified bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-put-bucket-acl"
+[//]: # (.cssg-snippet-put-bucket-acl)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 PutBucketACLRequest putBucketACLRequest = new PutBucketACLRequest(bucket);
 
 // Set the bucket's access permissions
 putBucketACLRequest.setXCOSACL("public-read");
 
-// Grant read permission
+// Grant read permission.
 ACLAccount readACLS = new ACLAccount();
 readACLS.addAccount("100000000001", "100000000001");
 putBucketACLRequest.setXCOSGrantRead(readACLS);
 
-// Grant write permission 
+// Grant write permission.
 ACLAccount writeACLS = new ACLAccount();
 writeACLS.addAccount("100000000001", "100000000001");
 putBucketACLRequest.setXCOSGrantWrite(writeACLS);
@@ -61,10 +62,12 @@ cosXmlService.putBucketACLAsync(putBucketACLRequest,
         PutBucketACLResult putBucketACLResult = (PutBucketACLResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -78,15 +81,16 @@ cosXmlService.putBucketACLAsync(putBucketACLRequest,
 
 ### Querying a bucket ACL
 
-#### Feature description
+#### Description
 
 This API is used to query the access control list (ACL) of a specified bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-get-bucket-acl"
+[//]: # (.cssg-snippet-get-bucket-acl)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 GetBucketACLRequest getBucketACLRequest = new GetBucketACLRequest(bucket);
 cosXmlService.getBucketACLAsync(getBucketACLRequest,
         new CosXmlResultListener() {
@@ -95,10 +99,12 @@ cosXmlService.getBucketACLAsync(getBucketACLRequest,
         GetBucketACLResult getBucketACLResult = (GetBucketACLResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -110,27 +116,28 @@ cosXmlService.getBucketACLAsync(getBucketACLRequest,
 
 >?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketACL.java).
 
-## Object ACLs
+## Object ACL
 
 ### Setting an object ACL
 
-#### Feature description
+#### Description
 
-This API is used to set an access control list (ACL) for a specified object in a bucket.
+This API is used to set the access control list (ACL) for an object in a bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-put-object-acl"
+[//]: # (.cssg-snippet-put-object-acl)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
+String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 PutObjectACLRequest putObjectACLRequest = new PutObjectACLRequest(bucket,
         cosPath);
 
 // Set the object's access permissions
 putObjectACLRequest.setXCOSACL("public-read");
 
-// Grant read permission
+// Grant read permission.
 ACLAccount readACLS = new ACLAccount();
 readACLS.addAccount("100000000001", "100000000001");
 putObjectACLRequest.setXCOSGrantRead(readACLS);
@@ -147,10 +154,12 @@ cosXmlService.putObjectACLAsync(putObjectACLRequest,
         PutObjectACLResult putObjectACLResult = (PutObjectACLResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -160,20 +169,21 @@ cosXmlService.putObjectACLAsync(putObjectACLRequest,
 });
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ObjectACL.java).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ObjectACL.java).
 
 ### Querying an object ACL
 
-#### Feature description
+#### Description
 
 This API is used to query the ACL of an object.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-get-object-acl"
+[//]: # (.cssg-snippet-get-object-acl)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
+String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 GetObjectACLRequest getBucketACLRequest = new GetObjectACLRequest(bucket,
         cosPath);
 cosXmlService.getObjectACLAsync(getBucketACLRequest,
@@ -183,10 +193,12 @@ cosXmlService.getObjectACLAsync(getBucketACLRequest,
         GetObjectACLResult getObjectACLResult = (GetObjectACLResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -195,7 +207,7 @@ cosXmlService.getObjectACLAsync(getBucketACLRequest,
     }
 });
 ```
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ObjectACL.java).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ObjectACL.java).
 
 
 

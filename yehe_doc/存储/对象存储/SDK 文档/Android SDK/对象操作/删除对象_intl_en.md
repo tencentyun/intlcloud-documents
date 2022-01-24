@@ -33,10 +33,12 @@ cosXmlService.deleteObjectAsync(deleteObjectRequest,
         DeleteObjectResult deleteObjectResult = (DeleteObjectResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -58,14 +60,15 @@ This API is used to delete multiple objects in a single request.
 
 [//]: # (.cssg-snippet-delete-multi-object)
 ```java
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 List<String> objectList = new ArrayList<String>();
 objectList.add("exampleobject1"); // The location identifier of the object in the bucket, i.e., the object key
 objectList.add("exampleobject2"); // The location identifier of the object in the bucket, i.e., the object key
 
 DeleteMultiObjectRequest deleteMultiObjectRequest =
         new DeleteMultiObjectRequest(bucket, objectList);
-// In quiet mode, only information on objects that fail to be deleted will be returned; otherwise, the deletion result of each object will be returned.
+// In quiet mode, only information on objects that failed to be deleted will be returned; otherwise, the deletion result of each object will be returned.
 deleteMultiObjectRequest.setQuiet(true);
 cosXmlService.deleteMultiObjectAsync(deleteMultiObjectRequest,
         new CosXmlResultListener() {
@@ -75,10 +78,12 @@ cosXmlService.deleteMultiObjectAsync(deleteMultiObjectRequest,
                 (DeleteMultiObjectResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -102,8 +107,9 @@ Currently, COS’s Android SDK did not provide an API to perform this operation.
 
 [//]: # (.cssg-snippet-delete-prefix)
 ```java
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-String prefix = "folder1/"; // Specify a prefix
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
+String prefix = "folder1/"; // Specify a prefix.
 
 GetBucketRequest getBucketRequest = new GetBucketRequest(bucket);
 getBucketRequest.setPrefix(prefix);
@@ -115,7 +121,7 @@ getBucketRequest.setMaxKeys(1000);
 GetBucketResult getBucketResult = null;
 
 do {
-    try {
+    try{
         getBucketResult = cosXmlService.getBucket(getBucketRequest);
         List<ListBucket.Contents> contents = getBucketResult.listBucket.contentsList;
         DeleteMultiObjectRequest deleteMultiObjectRequest = new DeleteMultiObjectRequest(bucket);

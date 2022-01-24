@@ -3,25 +3,26 @@ This document provides an overview of APIs and SDK code samples related to lifec
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting lifecycle | Sets the lifecycle management configuration of a bucket |
-| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying lifecycle | Queries the lifecycle management configuration of a bucket |
-| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting lifecycle | Deletes the lifecycle management configuration of a bucket |
+| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting lifecycle configuration | Sets lifecycle for a bucket |
+| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying a lifecycle configuration | Queries the lifecycle configuration of a bucket |
+| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting a lifecycle configuration | Deletes the lifecycle configuration of a bucket |
 
 ## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting Lifecycle
+## Setting a Lifecycle Configuration
 
-#### API description
+#### Description
 
-This API is used to set the lifecycle configuration of a bucket.
+This API is used to set the lifecycle configuration of a specified bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-put-bucket-lifecycle"
+[//]: # (.cssg-snippet-put-bucket-lifecycle)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 PutBucketLifecycleRequest putBucketLifecycleRequest =
         new PutBucketLifecycleRequest(bucket);
 
@@ -51,10 +52,12 @@ cosXmlService.putBucketLifecycleAsync(putBucketLifecycleRequest,
                 (PutBucketLifecycleResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -64,19 +67,21 @@ cosXmlService.putBucketLifecycleAsync(putBucketLifecycleRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketLifecycle.java).
+>? For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketLifecycle.java).
 
 
-## Querying Lifecycle
+## Querying a Lifecycle Configuration
 
-#### API description
+#### Description
 
 This API is used to query the lifecycle management configuration of a bucket.
 
 #### Sample code
-[//]: # ".cssg-snippet-get-bucket-lifecycle"
+
+[//]: # (.cssg-snippet-get-bucket-lifecycle)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 GetBucketLifecycleRequest getBucketLifecycleRequest =
         new GetBucketLifecycleRequest(bucket);
 
@@ -88,10 +93,12 @@ cosXmlService.getBucketLifecycleAsync(getBucketLifecycleRequest,
                 (GetBucketLifecycleResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -101,19 +108,20 @@ cosXmlService.getBucketLifecycleAsync(getBucketLifecycleRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketLifecycle.java).
+>? For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketLifecycle.java).
 
-## Deleting Lifecycle
+## Deleting a Lifecycle Configuration
 
-#### API description
+#### Description
 
 This API is used to delete the lifecycle management configuration of a bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-delete-bucket-lifecycle"
+[//]: # (.cssg-snippet-delete-bucket-lifecycle)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 DeleteBucketLifecycleRequest deleteBucketLifecycleRequest =
         new DeleteBucketLifecycleRequest(bucket);
 
@@ -125,10 +133,12 @@ cosXmlService.deleteBucketLifecycleAsync(deleteBucketLifecycleRequest,
                 (DeleteBucketLifecycleResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -138,5 +148,5 @@ cosXmlService.deleteBucketLifecycleAsync(deleteBucketLifecycleRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketLifecycle.java).
+>? For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketLifecycle.java).
 

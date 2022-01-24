@@ -5,24 +5,25 @@ This document provides an overview of APIs and SDK code samples related to bucke
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
 | [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting bucket tags | Sets tags for an existing bucket |
-| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a specified bucket |
-| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes specified bucket tags |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a bucket |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes the tags of a bucket |
 
 ## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Setting Bucket Tags
 
-#### API description
+#### Description
 
 This API is used to set tags for an existing bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-put-bucket-tagging"
+[//]: # (.cssg-snippet-put-bucket-tagging)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 PutBucketTaggingRequest putBucketTaggingRequest =
         new PutBucketTaggingRequest(bucket);
 // Set a tag
@@ -37,10 +38,12 @@ cosXmlService.putBucketTaggingAsync(putBucketTaggingRequest,
                 (PutBucketTaggingResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -50,19 +53,20 @@ cosXmlService.putBucketTaggingAsync(putBucketTaggingRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
+>? For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
 
 ## Querying Bucket Tags
 
-#### API description
+#### Description
 
 This API is used to query the existing tags of a specified bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-get-bucket-tagging"
+[//]: # (.cssg-snippet-get-bucket-tagging)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 GetBucketTaggingRequest getBucketTaggingRequest =
         new GetBucketTaggingRequest(bucket);
 
@@ -74,10 +78,12 @@ cosXmlService.getBucketTaggingAsync(getBucketTaggingRequest,
                 (GetBucketTaggingResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -87,19 +93,20 @@ cosXmlService.getBucketTaggingAsync(getBucketTaggingRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
+>? For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
 
 ## Deleting Bucket Tags
 
-#### API description
+#### Description
 
-This API is used to delete the existing tags of a specified bucket.
+This API is used to delete the existing tags from a bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-delete-bucket-tagging"
+[//]: # (.cssg-snippet-delete-bucket-tagging)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 DeleteBucketTaggingRequest deleteBucketTaggingRequest =
         new DeleteBucketTaggingRequest(bucket);
 
@@ -111,10 +118,12 @@ cosXmlService.deleteBucketTaggingAsync(deleteBucketTaggingRequest,
                 (DeleteBucketTaggingResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -125,5 +134,5 @@ cosXmlService.deleteBucketTaggingAsync(deleteBucketTaggingRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
+>? For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
 

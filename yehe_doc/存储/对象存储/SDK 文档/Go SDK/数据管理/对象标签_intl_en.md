@@ -13,7 +13,7 @@ This document provides an overview of APIs and SDK code samples related to objec
 
 #### Description
 
-This API (PUT Object tagging) is used to tag an existing object by adding tag key-value pairs. This can help you group and manage your existing objects. For more information, please see [Object Tagging Overview](https://intl.cloud.tencent.com/document/product/436/35665).
+This API is used to set tags for an existing object. It can help you group and manage existing object resources by adding key-value pairs as object tags. For more information, please see [Object Tagging Overview](https://intl.cloud.tencent.com/document/product/436/35665).
 
 #### Method prototype
 
@@ -23,37 +23,62 @@ func (s *ObjectService) PutTagging(ctx context.Context, name string, opt *Object
 
 #### Sample request
 
-[//]: # (.cssg-snippet-put-object-tagging)
+[//]: # ".cssg-snippet-put-object-tagging"
 ```go
-// Sample 1. Use PutTagging to tag in-cloud objects
-opt := &cos.ObjectPutTaggingOptions{
-    TagSet: []cos.ObjectTaggingTag{
-        {
-            Key:   "test_k2",
-            Value: "test_v2",
-        },
-        {
-            Key:   "test_k3",
-            Value: "test_v3",
-        },
-    },
-}
-name := "example"
-_, err := c.Object.PutTagging(context.Background(), name, opt)
-if err != nil {
-    //ERROR
-}
+package main
 
-// Sample 2. Tag an object when it is uploaded
-name = "test/example"
-f := strings.NewReader("test")
-popt := &cos.ObjectPutOptions{
-    ObjectPutHeaderOptions: &cos.ObjectPutHeaderOptions{
-        XOptionHeader: &http.Header{},
-    },
-}
-popt.XOptionHeader.Add("x-cos-tagging", "Key1=Value1&Key2=Value2")
-_, err = c.Object.Put(context.Background(), name, f, popt)
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+    "strings"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    // Sample 1. Use PutTagging to tag in-cloud objects
+    opt := &cos.ObjectPutTaggingOptions{
+        TagSet: []cos.ObjectTaggingTag{
+            {
+                Key:   "test_k2",
+                Value: "test_v2",
+            },
+            {
+                Key:   "test_k3",
+                Value: "test_v3",
+            },
+        },
+    }
+    name := "example"
+    _, err := client.Object.PutTagging(context.Background(), name, opt)
+    if err != nil {
+        //ERROR
+    }    
+    // Sample 2. Tag an object when it is uploaded
+    name = "test/example"
+    f := strings.NewReader("test")
+    popt := &cos.ObjectPutOptions{
+        ObjectPutHeaderOptions: &cos.ObjectPutHeaderOptions{
+            XOptionHeader: &http.Header{},
+        },
+    }
+    popt.XOptionHeader.Add("x-cos-tagging", "Key1=Value1&Key2=Value2")
+    _, err = client.Object.Put(context.Background(), name, f, popt)
+} 
 ```
 
 #### Parameter description
@@ -67,6 +92,7 @@ type BucketTaggingTag struct {
     Value string
 }
 ```
+
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | ---- |
 | name  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
@@ -78,7 +104,7 @@ type BucketTaggingTag struct {
 
 #### Description
 
-This API (GET Object tagging) is used to query the existing tags of an object.
+This API is used to query the existing tags of an object.
 
 #### Method prototype
 
@@ -88,12 +114,39 @@ func (s *ObjectService) GetTagging(ctx context.Context, name string, id ...strin
 
 #### Sample request
 
-[//]: # (.cssg-snippet-get-object-tagging)
+[//]: # ".cssg-snippet-get-object-tagging"
 ```go
-name := "example"
-res, _, err := c.Object.GetTagging(context.Background(), name)
-if err != nil {
-    //ERROR
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    name := "example"
+    res, _, err := client.Object.GetTagging(context.Background(), name)
+    if err != nil {
+        //ERROR
+    }
+    fmt.Println(res)
 }
 ```
 
@@ -118,7 +171,7 @@ type BucketTaggingTag struct {
 
 #### Description
 
-This API (DELETE Object tagging) is used to delete the existing tags of an object.
+This API is used to delete existing tags of an object.
 
 #### Method prototype
 
@@ -128,11 +181,36 @@ func (s *ObjectService) DeleteTagging(ctx context.Context, name string, id ...st
 
 #### Sample request
 
-[//]: # (.cssg-snippet-delete-object-tagging)
+[//]: # ".cssg-snippet-delete-object-tagging"
 ```go
-name := "example"
-_, err = c.Object.DeleteTagging(context.Background(), name)
-if err != nil {
-    //ERROR
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    name := "example"
+    _, err := client.Object.DeleteTagging(context.Background(), name)
+    if err != nil {
+        //ERROR
+    }
 }
 ```

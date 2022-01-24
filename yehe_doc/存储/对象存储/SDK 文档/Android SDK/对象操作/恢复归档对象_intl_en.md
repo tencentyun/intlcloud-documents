@@ -2,26 +2,27 @@
 
 This document provides an overview of APIs and SDK code samples related to restoring an archived object.
 
-| API | Operation Name | Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores archived object for access |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access. |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Restoring an Archived Object 
 
-#### Feature description
+#### Description
 
-This API is used to restore an archived object for access.
+This API (`POST Object restore`) is used to restore an archived object for access.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-restore-object"
+[//]: # (.cssg-snippet-restore-object)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
+String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 RestoreRequest restoreRequest = new RestoreRequest(bucket, cosPath);
 restoreRequest.setExpireDays(5); // Retain for 5 days
 restoreRequest.setTier(RestoreConfigure.Tier.Standard); // Standard restoration mode
@@ -32,10 +33,12 @@ cosXmlService.restoreObjectAsync(restoreRequest, new CosXmlResultListener() {
         RestoreResult restoreResult = (RestoreResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {

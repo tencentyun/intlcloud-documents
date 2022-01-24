@@ -2,20 +2,20 @@
 
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to inventory.
+This document provides an overview of APIs and SDK code samples related to COS inventory.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
-| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job in a bucket |
-| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries inventory jobs for a bucket |
-| [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30672) | Querying all inventories | Queries all inventory jobs of a bucket |
-| [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job of a bucket |
+| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Creating an inventory job | Creates an inventory job for a bucket |
+| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries the inventory jobs of a bucket |
+|  [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627) | Querying the list of inventory configurations | Queries the list of inventory configurations for a bucket |
+| [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job from a bucket |
 
-## Setting Inventory Job
+## Creating an Inventory Job
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket inventory) is used to create an inventory job in a bucket.
+This API (PUT Bucket inventory) is used to create an inventory job for a bucket.
 
 #### Method prototype
 
@@ -25,30 +25,59 @@ func (s *BucketService) PutInventory(ctx context.Context, id string, opt *Bucket
 
 #### Sample request
 
+[//]: # ".cssg-snippet-put-bucket-inventory"
 ```go
-opt := &cos.BucketPutInventoryOptions{
-    ID: "test_id",
-	// True or False
-	IsEnabled:              "True",
-	IncludedObjectVersions: "All",
-	Filter: &cos.BucketInventoryFilter{
-		Prefix: "test",
-    },
-	OptionalFields: &cos.BucketInventoryOptionalFields{
-		BucketInventoryFields: []string{
-			"Size", "LastModifiedDate",
-		},
-	},
-	Schedule: &cos.BucketInventorySchedule{
-		// Weekly or Daily
-		Frequency: "Daily",
-	},
-	Destination: &cos.BucketInventoryDestination{
-		Bucket: dBucket,
-		Format: "CSV",
-	},
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    opt := &cos.BucketPutInventoryOptions{
+        ID: "test_id",
+        // True or False
+        IsEnabled:              "True",
+        IncludedObjectVersions: "All",
+        Filter: &cos.BucketInventoryFilter{
+            Prefix: "test",
+        },
+        OptionalFields: &cos.BucketInventoryOptionalFields{
+            BucketInventoryFields: []string{
+                "Size", "LastModifiedDate",
+            },
+        },
+        Schedule: &cos.BucketInventorySchedule{
+            // Weekly or Daily
+            Frequency: "Daily",
+        },
+        Destination: &cos.BucketInventoryDestination{
+            Bucket: "dest_bucket-1250000000",
+            Format: "CSV",
+        },
+    }
+    _, err := client.Bucket.PutInventory(context.Background(), "test_id", opt)
+    if err != nil {
+        // ERROR
+    }
 }
-resp, err := client.Bucket.PutInventory(context.Background(), id, opt)
 ```
 
 #### Parameter description
@@ -86,41 +115,41 @@ type BucketPutInventoryOptions struct {
 }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ------------------------- | ------------------------------------------------------------ | -------- |
-| BucketPutInventoryOptions | Inventory configuration information of bucket                                           | Struct   |
-| ID                        | Inventory name, corresponding to the ID in the request parameter                           | String   |
-| IsEnabled              | Inventory status flag: <br><li>If this is set to `true`, the inventory is enabled; <br><li>if `false`, no inventories will be generated | String        |
-| IncludedObjectVersions | Whether to include object versions in the inventory <br><li>If this is set to `All`, the inventory will include all object versions and add `VersionId`, `IsLatest`, and `DeleteMarker` fields <br><li>If `Current`, no object version information will be included in the inventory | String |
+| BucketPutInventoryOptions | Inventory configuration information of the bucket                                           | Struct   |
+| ID                       | Inventory name, corresponding to the ID in the request parameter                           | String |
+| IsEnabled             | Indicates whether inventory is enabled.<br><li>`true` indicates it is enabled<br><li>`false` indicates no inventory list will be generated.                                           | String      |
+| IncludedObjectVersions | Indicates whether to include object versions in the inventory<br><li>If this is set to `All`, the inventory will include all object versions and the additional fields `VersionId`, `IsLatest`, and `DeleteMarker`.<br><li>If this is set to `Current`, no object versions will be included in the inventory.</li> | String |
 | Filter                    | Filter                                                       | Struct   |
-| Prefix | Prefix of the objects to be analyzed | String |
-| OptionalFields            | Sets the analysis items that should be included in the inventory result                               | Struct   |
-| BucketInventoryFields     | Name of the analysis items that can be optionally included in the inventory result. Valid values: Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, ReplicationStatus | []String |
-| Schedule                  | Inventory job frequency                                                 | Struct   |
-| Frequency | Inventory job frequency. Enumerated values: Daily, Weekly | String |
-| Destination            | Describes the information of the inventory result storage                                       | Struct   |
-| Bucket | Name of the bucket where the inventory result is stored | String |
-| AccountId                 | Bucket owner ID, such as 100000000001                          | String   |
+| Prefix | Prefix of the objects to be inventoried | String |
+| OptionalFields                   | Sets the analysis items that should be included in the inventory result                               | Struct |
+| BucketInventoryFields     | Optional analysis dimensions, including `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, and `ReplicationStatus` | []String |
+| Schedule                  | Schedule for the inventory job                                                 | Struct   |
+| Frequency             | Frequency of the inventory job. Enumerated values: `Daily`, `Weekly`                                           | String      |
+| Destination              | Destination to store the inventory result                                       | Struct |
+| Bucket             | Name of the bucket that stores the inventory results                                           | String      |
+| AccountId             | ID of the bucket owner, e.g. 100000000001                                           | String      |
 | Prefix | Prefix of the inventory result | String |
-| Format | File format of the inventory result. CSV is available | String |
-| Encryption             | Option to provide server-side encryption for the inventory result                               | Struct         |
-| SSECOS                    | Uses SSE-COS encryption                                            | String   |
+| Format             | Format of the inventory results. Option: `CSV`                                           | String      |
+| Encryption                | Option of enabling server-side encryption for inventory results                               | Struct   |
+| SSECOS                    | Encryption with SSE-COS                                            | String   |
 
-#### Error code description
+#### Error codes
 
-Some frequent special errors that may occur with this request are listed below:
+The following describes some common errors that may occur when you call this API:
 
-| Error code | Description | Status code |
+| Error Code | Description | Status Code |
 | --------------------- | -------------------------------------------- | -------------------- |
 | InvalidArgument | Invalid parameter value | HTTP 400 Bad Request |
 | TooManyConfigurations | The number of inventories has reached the upper limit of 1,000 | HTTP 400 Bad Request |
-| AccessDenied          | Unauthorized access. You probably do not have access to the bucket. | HTTP 403 Forbidden |
+| AccessDenied          | Unauthorized access. You most likely do not have access permission for the bucket | HTTP 403 Forbidden   |
 
-## Querying Inventory Job
+## Querying Inventory Jobs
 
-#### Feature description
+#### Description
 
-This API (GET Bucket inventory) is used to query the inventory job information in a bucket.
+This API is used to query the inventory jobs of a bucket.
 
 #### Method prototype
 
@@ -130,41 +159,72 @@ func (s *BucketService) GetInventory(ctx context.Context, id string) (*BucketGet
 
 #### Sample request
 
+[//]: # ".cssg-snippet-get-bucket-inventory"
 ```go
-v, response, err := client.Bucket.GetInventory(context.Background(), id)
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    v, _, err := client.Bucket.GetInventory(context.Background(), "test_id")
+    if err != nil {
+        // ERROR
+    }
+    fmt.Println(v)
+}
 ```
 
-#### Returned result description
+#### Response description
 
 ```go
 type BucketGetInventoryResult BucketPutInventoryOptions
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ------------------------- | ------------------------------------------------------------ | -------- |
-| BucketPutInventoryOptions | Inventory configuration information of bucket                                           | Struct   |
-| ID                        | Inventory name, corresponding to the ID in the request parameter                           | String   |
-| IsEnabled              | Inventory status flag: <br><li>If this is set to `true`, the inventory is enabled; <br><li>if `false`, no inventories will be generated | String        |
-| IncludedObjectVersions | Whether to include object versions in the inventory <br><li>If this is set to `All`, the inventory will include all object versions and add `VersionId`, `IsLatest`, and `DeleteMarker` fields <br><li>If `Current`, no object version information will be included in the inventory | String |
+| BucketPutInventoryOptions | Inventory configuration information of the bucket                                           | Struct   |
+| ID                       | Inventory name, corresponding to the ID in the request parameter                           | String |
+| IsEnabled             | Indicates whether inventory is enabled.<br><li>`true` indicates it is enabled<br><li>`false` indicates no inventory list will be generated.                                           | String      |
+| IncludedObjectVersions | Indicates whether to include object versions in the inventory<br><li>If this is set to `All`, the inventory will include all object versions and the additional fields `VersionId`, `IsLatest`, and `DeleteMarker`.<br><li>If this is set to `Current`, no object versions will be included in the inventory.</li> | String |
 | Filter                    | Filter                                                       | Struct   |
-| Prefix | Prefix of the objects to be analyzed | String |
-| OptionalFields            | Sets the analysis items that should be included in the inventory result                               | Struct   |
-| BucketInventoryFields     | Name of the analysis items that can be optionally included in the inventory result. Valid values: Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, ReplicationStatus | []String |
-| Schedule                  | Inventory job frequency                                                 | Struct   |
-| Frequency | Inventory job frequency. Enumerated values: Daily, Weekly | String |
-| Destination            | Describes the information of the inventory result storage                                       | Struct   |
-| Bucket | Name of the bucket where the inventory result is stored | String |
-| AccountId                 | Bucket owner ID, such as 100000000001                          | String   |
+| Prefix | Prefix of the objects to be inventoried | String |
+| OptionalFields                   | Sets the analysis items that should be included in the inventory result                               | Struct |
+| BucketInventoryFields     | Optional analysis dimensions, including `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, and `ReplicationStatus` | []String |
+| Schedule                  | Schedule for the inventory job                                                 | Struct   |
+| Frequency             | Frequency of the inventory job. Enumerated values: `Daily`, `Weekly`                                           | String      |
+| Destination              | Destination to store the inventory result                                       | Struct |
+| Bucket             | Name of the bucket that stores the inventory results                                           | String      |
+| AccountId             | ID of the bucket owner, e.g. 100000000001                                           | String      |
 | Prefix | Prefix of the inventory result | String |
-| Format | File format of the inventory result. CSV is available | String |
-| Encryption             | Option to provide server-side encryption for the inventory result                               | Struct         |
-| SSECOS                    | Uses SSE-COS encryption                                            | String   |
+| Format             | Format of the inventory results. Option: `CSV`                                           | String      |
+| Encryption                | Option of enabling server-side encryption for inventory results                               | Struct   |
+| SSECOS                    | Encryption with SSE-COS                                            | String   |
 
 ## Querying All Inventories
 
-#### Feature description
+#### Description
 
-This API (List Bucket Inventory Configurations) is used to request that all inventory jobs in a bucket be returned. Up to 1,000 inventory jobs can be configured in one bucket.
+This API is used to query all inventory jobs set for a bucket. You can configure up to 1,000 inventory jobs for a bucket.
 
 #### Method prototype
 
@@ -174,11 +234,42 @@ func (s *BucketService) ListInventoryConfigurations(ctx context.Context, token s
 
 #### Sample request
 
+[//]: # ".cssg-snippet-list-bucket-inventory"
 ```go
-v, resp, err := client.Bucket.ListInventoryConfigurations(context.Background(), "")
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    v, _, err := client.Bucket.ListInventoryConfigurations(context.Background(), "")
+    if err != nil {
+        // ERROR
+    }
+    fmt.Println(v)
+}
 ```
 
-#### Returned result description
+#### Response description
 
 ```go
 type BucketListInventoryConfiguartion BucketPutInventoryOptions
@@ -192,19 +283,19 @@ type ListBucketInventoryConfigResult struct {
 }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ------------------------------- | ------------------------------------------------------------ | ------ |
-| ListBucketInventoryConfigResult | All inventory configuration information of bucket                                       | Struct |
+| ListBucketInventoryConfigResult | All inventory configuration information of the bucket                                       | Struct |
 | InventoryConfigurations         | Inventory configuration information                                                 | Struct |
-| IsTruncated            | Flag about whether all inventory jobs have been listed. If yes, it is `false`; otherwise, it is `true` | Bool   |
-| ContinuationToken               | Flag of the inventory list on the current page, which can be understood as the page number. It corresponds to the `continuation-token` parameter in the request | String |
-| NextContinuationToken | Flag of the next page of inventory list. If there is a value in this parameter, the value can be used as the `continuation-token` parameter to initiate a GET request to get the inventory job information of the next page | String |
+| IsTruncated            | Flag about whether all inventory jobs have been listed. If yes, it is `false`; otherwise, it is `true` | Bool |
+| ContinuationToken      | Flag of the inventory list on the current page, which can be understood as the page number. It corresponds to the `continuation-token` parameter in the request | String |
+| NextContinuationToken           | ListInventoryConfigurationResult | Identifier of the next response. You can pass the value of this parameter to `continuation-token` and initiate a GET request to obtain the inventory jobs from the next response | String |
 
-## Deleting Inventory Job
+## Deleting an Inventory Job
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket inventory) is used to delete a specified inventory job of a bucket.
+This API is used to delete a specified inventory job from a bucket.
 
 #### Method prototype
 
@@ -215,13 +306,42 @@ func (s *BucketService) DeleteInventory(ctx context.Context, id string) (*Respon
 
 #### Sample request
 
+[//]: # ".cssg-snippet-delete-bucket-inventory"
 ```go
-resp, err = client.Bucket.DeleteInventory(context.Background(), "test_id")
+package main
 
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    _, err := client.Bucket.DeleteInventory(context.Background(), "test_id")
+    if err != nil {
+        // ERROR
+    }
+}
 ```
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | -------- | ---------- | ------ |
-| id       | Inventory name | String |
+| id           | Inventory name                                                   | String |
+

@@ -4,17 +4,17 @@
 
 This document provides an overview of APIs and SDK code samples related to static website.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ---------------- | ------------------------ |
-| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website | Sets static website configuration for a bucket |
-| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying static website configuration | Queries the static website configuration information of a bucket |
-| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting static website configuration | Deletes the static website configuration of a bucket |
+| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website configuration | Configures a static website for a bucket |
+| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying a static website configuration | Queries the static website configuration of a bucket |
+| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting a static website configuration | Deletes the static website configuration of a bucket |
 
-## Setting Static Website
+## Setting Static Website Configuration
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket website) is used to configure a static website for a bucket.
+This API is used to configure a static website for a bucket.
 
 #### Method prototype
 
@@ -24,26 +24,55 @@ func (s *BucketService) PutWebsite(ctx context.Context, opt *BucketPutWebsiteOpt
 
 #### Sample request
 
+[//]: # ".cssg-snippet-put-bucket-website"
 ```go
-opt := &cos.BucketPutWebsiteOptions{
-	Index: "index.html",
-	Error: &cos.ErrorDocument{"index_backup.html"},
-	RoutingRules: &cos.WebsiteRoutingRules{
-        []cos.WebsiteRoutingRule{
-        {   
-            ConditionErrorCode: "404",
-            RedirectProtocol:   "https",
-            RedirectReplaceKey: "404.html",
-        },  
-        {   
-            ConditionPrefix:          "docs/",
-            RedirectProtocol:         "https",
-            RedirectReplaceKeyPrefix: "documents/",
-        },  
-        },  
-	},  
-}   
-resp, err := client.Bucket.PutWebsite(context.Background(), opt)
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    opt := &cos.BucketPutWebsiteOptions{
+        Index: "index.html",
+        Error: &cos.ErrorDocument{"index_backup.html"},
+        RoutingRules: &cos.WebsiteRoutingRules{
+            []cos.WebsiteRoutingRule{
+                {
+                    ConditionErrorCode: "404",
+                    RedirectProtocol:   "https",
+                    RedirectReplaceKey: "404.html",
+                },
+                {
+                    ConditionPrefix:          "docs/",
+                    RedirectProtocol:         "https",
+                    RedirectReplaceKeyPrefix: "documents/",
+                },
+            },
+        },
+    }
+    _, err := client.Bucket.PutWebsite(context.Background(), opt)
+    if err != nil {
+        // ERROR
+    }
+}
 ```
 
 #### Parameter description
@@ -79,26 +108,26 @@ type BucketPutWebsiteOptions struct {
 }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ------------------------ | ------------------------------------------------------------ | ------ |
-| BucketPutWebsiteOptions  | Static website configuration parameter                                             | Struct |
-| Index                       | Specifies index document                                                 | String |
-| RedirectProtocol         | Protocol for global redirect                                             | Struct |
-| Protocol                    | Specifies the protocol for global redirect, which can only be `https`                       | String   |
+| BucketPutWebsiteOptions  | Static website configuration parameters                                             | Struct |
+| Index                    | Index document                                                 | String |
+| RedirectProtocol         | Site-wide redirect protocol                                             | Struct |
+| Protocol                    | Site-wide redirect protocol. Only HTTPS is supported.                       | String   |
 | Error                    | Error document                                                     | Struct |
-| Key                         | Specifies the common return for errors                                             | String   |
-| RoutingRules                | Sets redirect rules. Up to 100 `RoutingRule` can be set                    | Struct |
-| ConditionErrorCode       | Specifies the error code triggering redirect, which can only be 4XX and has a higher priority than `Error.Key`   | String |
-| ConditionPrefix          | Specifies the path for prefix-triggered redirect, which replaces the specified `folder/`                     | String |
-| RedirectProtocol         | Specifies the protocol for redirect, which can only be `https`                       | String |
-| RedirectReplaceKey       | Replaces the entire `Key` with the specified content                                    | String |
-| RedirectReplaceKeyPrefix | Replaces the matched prefix with the specified content, which can be set only if `Condition` is `KeyPrefixEquals` | String |
+| Key                         | Common error response                                             | String   |
+| RoutingRules                | Multiple redirect rules. Up to 100 redirect rules can be set.                    | Struct    |
+| ConditionErrorCode       | Redirect error code. Only 4xx status codes are supported. This has a higher priority than `Error.Key`.   | String |
+| ConditionPrefix          | Redirect path prefix to replace with the specified "folder/" for the redirect.                     | String |
+| RedirectProtocol         | Redirect protocol. Only HTTPS is supported.                       | String |
+| RedirectReplaceKey       | Content that is used to replace the entire key.                                    | String |
+| RedirectReplaceKeyPrefix | Content that is used to replace the key prefix. The replacement is allowed only when `Condition` is `KeyPrefixEquals`. | String |
 
 ## Querying Static Website Configuration
 
-#### Feature description
+#### Description
 
-This API (GET Bucket website) is used to query the configuration information of a static website associated with a bucket.
+This API is used to query the static website configuration associated with a bucket.
 
 #### Method prototype
 
@@ -108,36 +137,67 @@ func (s *BucketService) GetWebsite(ctx context.Context) (*BucketGetWebsiteResult
 
 #### Sample request
 
+[//]: # ".cssg-snippet-get-bucket-website"
 ```go
-res, rsp, err := client.Bucket.GetWebsite(context.Background())
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    res, _, err := client.Bucket.GetWebsite(context.Background())
+    if err != nil {
+        // ERROR
+    }
+    fmt.Println(res)
+}
 ```
 
-#### Returned result description
+#### Response description
 
 ```go
 type BucketGetWebsiteResult BucketPutWebsiteOptions
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ------------------------ | ------------------------------------------------------------ | ------ |
-| BucketGetWebsiteResult   | Static website configuration parameter                                             | Struct |
-| Index                       | Specifies index document                                                 | String |
-| RedirectProtocol         | Protocol for global redirect                                             | Struct |
-| Protocol                    | Specifies the protocol for global redirect, which can only be `https`                       | String   |
-| Error                    | Common return for errors                                                 | Struct |
-| Key                         | Specifies the common return for errors                                             | String   |
-| RoutingRules                | Sets redirect rules. Up to 100 `RoutingRule` can be set                    | Struct |
-| ConditionErrorCode       | Specifies the error code triggering redirect, which can only be 4XX and has a higher priority than `Error.Key`   | String |
-| ConditionPrefix          | Specifies the path for prefix-triggered redirect, which replaces the specified `folder/`                     | String |
-| RedirectProtocol         | Specifies the protocol for redirect, which can only be `https`                       | String |
-| RedirectReplaceKey       | Replaces the entire `Key` with the specified content                                    | String |
-| RedirectReplaceKeyPrefix | Replaces the matched prefix with the specified content, which can be set only if `Condition` is `KeyPrefixEquals` | String |
+| BucketGetWebsiteResult   | Static website configuration parameters                                             | Struct |
+| Index                    | Index document                                                 | String |
+| RedirectProtocol         | Site-wide redirect protocol                                             | Struct |
+| Protocol                    | Site-wide redirect protocol. Only HTTPS is supported.                       | String   |
+| Error                    | Common error response                                                 | Struct |
+| Key                         | Common error response                                             | String   |
+| RoutingRules                | Multiple redirect rules. Up to 100 redirect rules can be set.                    | Struct    |
+| ConditionErrorCode       | Redirect error code. Only 4xx status codes are supported. This has a higher priority than `Error.Key`.   | String |
+| ConditionPrefix          | Redirect path prefix to replace with the specified "folder/" for the redirect.                     | String |
+| RedirectProtocol         | Redirect protocol. Only HTTPS is supported.                       | String |
+| RedirectReplaceKey       | Content that is used to replace the entire key.                                    | String |
+| RedirectReplaceKeyPrefix | Content that is used to replace the key prefix. The replacement is allowed only when `Condition` is `KeyPrefixEquals`. | String |
 
 ## Deleting Static Website Configuration
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket website) is used to delete the static website configuration of a bucket.
+This API is used to delete the static website configuration of a bucket.
 
 #### Method prototype
 
@@ -147,6 +207,35 @@ func (s *BucketService) DeleteWebsite(ctx context.Context) (*Response, error)
 
 #### Sample request
 
+[//]: # ".cssg-snippet-delete-bucket-website"
 ```go
-resp, err = s.Client.Bucket.DeleteWebsite(context.Background())
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    _, err := client.Bucket.DeleteWebsite(context.Background())
+    if err != nil {
+        // ERROR
+    }
+}
 ```

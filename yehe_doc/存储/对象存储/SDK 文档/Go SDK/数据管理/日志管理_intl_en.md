@@ -2,18 +2,18 @@
 
 ## Overview
 
-This document provides an overview of APIs and SDK code samples for Go related to log management.
+This document provides an overview of APIs and Go SDK code samples related to logging.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------------- |
-| [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054) | Setting log management | Enables logging for the source bucket |
-| [GET Bucket logging](https://intl.cloud.tencent.com/document/product/436/17053) | Querying log management | Queries the logging configuration information of the source bucket |
+| [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054) | Setting logging | Enables logging for a source bucket |
+| [GET Bucket logging](https://intl.cloud.tencent.com/document/product/436/17053) | Querying logging configuration | Queries the logging configuration of a source bucket |
 
-## Setting Log Management
+## Setting Logging Configuration
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket logging) is used to enable logging for the source bucket and store its access logs in a specified destination bucket.
+This API is used to enable logging for a source bucket and store the access logs in a specified destination bucket.
 
 #### Method prototype
 
@@ -23,13 +23,42 @@ func (s *BucketService) PutLogging(ctx context.Context, opt *BucketPutLoggingOpt
 
 #### Sample request
 
+[//]: # ".cssg-snippet-put-bucket-logging"
 ```go
-opt := &cos.BucketPutLoggingOptions{
-	LoggingEnabled: &cos.BucketLoggingEnabled{
-    	TargetBucket: TargetBucket,
-    },  
-}   
-resp, err := client.Bucket.PutLogging(context.Background(), opt)
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    opt := &cos.BucketPutLoggingOptions{
+        LoggingEnabled: &cos.BucketLoggingEnabled{
+            TargetBucket: "TargetBucket-1250000000",
+        },
+    }
+    _, err := client.Bucket.PutLogging(context.Background(), opt)
+    if err != nil {
+        // ERROR
+    }
+}
 ```
 
 #### Parameter description
@@ -47,18 +76,18 @@ type BucketPutLoggingOptions struct {
 }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ----------------------- | ------------------------------------------------------------ | ------ |
-| BucketPutLoggingOptions | Log management configuration parameter                                             | Struct |
+| BucketPutLoggingOptions | Log management configuration parameters                                             | Struct |
 | LoggingEnabled          | Log management configuration                                                 | Struct |
-| TargetBucket | The destination bucket for storing logs, which can be the source bucket (not recommended) or a bucket in the same region under the same account | String |
-| TargetPrefix | Specified path in the destination bucket for storing logs | String |
+| TargetBucket             | Destination bucket that stores logs. It can be the source bucket itself (although this is not recommended), or a bucket in the same account or region as the source bucket.                                           | String      |
+| TargetPrefix             | The specified path prefix used to store logs in the destination bucket                                           | String      |
 
-## Querying Log Management
+## Querying Logging Configuration
 
-#### Feature description
+#### Description
 
-This API (GET Bucket logging) is used to query the log configuration information of a specified bucket.
+This API is used to query the logging configuration of a specified bucket.
 
 #### Method prototype
 
@@ -68,19 +97,50 @@ func (s *BucketService) GetLogging(ctx context.Context) (*BucketGetLoggingResult
 
 #### Sample request
 
+[//]: # ".cssg-snippet-get-bucket-logging"
 ```go
-v, resp, err := client.Bucket.GetLogging(context.Background())
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    v, _, err := client.Bucket.GetLogging(context.Background())
+    if err != nil {
+        // ERROR
+    }
+    fmt.Println(v)
+}
 ```
 
-#### Returned result description
+#### Response description
 
 ```go
 type BucketGetLoggingResult BucketPutLoggingOptions
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ---------------------- | ------------------------------------------------------------ | ------ |
-| BucketGetLoggingResult | Log management configuration parameter                                             | Struct |
+| BucketGetLoggingResult | Log management configuration parameters                                             | Struct |
 | LoggingEnabled          | Log management configuration                                                 | Struct |
-| TargetBucket | The destination bucket for storing logs, which can be the source bucket (not recommended) or a bucket in the same region under the same account | String |
-| TargetPrefix | Specified path in the destination bucket for storing logs | String |
+| TargetBucket             | Destination bucket that stores logs. It can be the source bucket itself (although this is not recommended), or a bucket in the same account or region as the source bucket.                                           | String      |
+| TargetPrefix             | The specified path prefix used to store logs in the destination bucket                                           | String      |

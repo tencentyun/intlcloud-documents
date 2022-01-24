@@ -1,18 +1,18 @@
 ## Overview
 
-This document provides an overview of APIs and SDK sample codes related to cross-origin access.
+This document provides an overview of APIs and SDK sample codes related to cross-origin resource sharing (CORS).
 
-| API | Operation Name | Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting CORS configuration | Sets CORS permissions for a bucket |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting CORS configuration | Sets the CORS permissions of bucket |
 | [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying CORS configuration | Queries the CORS configuration of a bucket |
 | [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting CORS configuration | Deletes the CORS configuration of a bucket |
 
-## Setting CORS
+## Setting CORS Configuration
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket cors) is used to set CORS for a bucket.
+This API is used to set the CORS configuration of a specified bucket.
 
 #### Method prototype
 ```go
@@ -22,26 +22,51 @@ func (s *BucketService) PutCORS(ctx context.Context, opt *BucketPutCORSOptions) 
 #### Sample request
 [//]: # ".cssg-snippet-put-bucket-cors"
 ```go
-opt := &cos.BucketPutCORSOptions{
-    Rules: []cos.BucketCORSRule{
-        {
-            AllowedOrigins: []string{"http://www.qq.com"},
-            AllowedMethods: []string{"PUT", "GET"},
-            AllowedHeaders: []string{"x-cos-meta-test", "x-cos-xx"},
-            MaxAgeSeconds:  500,
-            ExposeHeaders:  []string{"x-cos-meta-test1"},
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
         },
-        {
-            ID:             "1234",
-            AllowedOrigins: []string{"http://www.baidu.com", "twitter.com"},
-            AllowedMethods: []string{"PUT", "GET"},
-            MaxAgeSeconds:  500,
+    })
+    opt := &cos.BucketPutCORSOptions{
+        Rules: []cos.BucketCORSRule{
+            {
+                AllowedOrigins: []string{"http://www.qq.com"},
+                AllowedMethods: []string{"PUT", "GET"},
+                AllowedHeaders: []string{"x-cos-meta-test", "x-cos-xx"},
+                MaxAgeSeconds:  500,
+                ExposeHeaders:  []string{"x-cos-meta-test1"},
+            },
+            {
+                ID:             "1234",
+                AllowedOrigins: []string{"http://www.baidu.com", "twitter.com"},
+                AllowedMethods: []string{"PUT", "GET"},
+                MaxAgeSeconds:  500,
+            },
         },
-    },
-}
-_, err := client.Bucket.PutCORS(context.Background(), opt)
-if err != nil {
-    panic(err)
+    }
+    _, err := client.Bucket.PutCORS(context.Background(), opt)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
@@ -69,11 +94,11 @@ type BucketCORSRule struct {
 | ExposeHeaders | Custom header information that can be received by the browser from the server | []string | No |
 
 
-## Querying a CORS Configuration
+## Querying CORS Configuration
 
-#### Feature description
+#### Description
 
-This API (GET Bucket cors) is used to query the CORS configuration of a bucket.
+This API is used to query the CORS configuration of a bucket.
 
 #### Method prototype
 ```go
@@ -83,9 +108,34 @@ func (s *BucketService) GetCORS(ctx context.Context) (*BucketGetCORSResult, *Res
 #### Sample request
 [//]: # ".cssg-snippet-get-bucket-cors"
 ```go
-_, _, err := client.Bucket.GetCORS(context.Background())
-if err != nil {
-    panic(err)
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    _, _, err := client.Bucket.GetCORS(context.Background())
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
@@ -115,9 +165,9 @@ type BucketCORSRule struct {
 
 ## Deleting CORS Configuration
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket cors) is used to delete the CORS configuration of a bucket.
+This API is used to delete the CORS configuration of a bucket.
 
 #### Method prototype
 
@@ -128,8 +178,33 @@ func (s *BucketService) DeleteCORS(ctx context.Context) (*Response, error)
 #### Sample request
 [//]: # ".cssg-snippet-delete-bucket-cors"
 ```go
-_, err := client.Bucket.DeleteCORS(context.Background())
-if err != nil {
-    panic(err)
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    _, err := client.Bucket.DeleteCORS(context.Background())
+    if err != nil {
+        panic(err)
+    }
 }
 ```

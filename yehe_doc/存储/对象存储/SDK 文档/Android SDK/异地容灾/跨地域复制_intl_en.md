@@ -4,25 +4,26 @@ This document provides an overview of APIs and SDK code samples related to cross
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------- |
-| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-region replication | Sets cross-region replication rules for a bucket |
-| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying cross-region replication | Queries the cross-region replication rules of a bucket |
-| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rules of a bucket |
+| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting a cross-region replication rule | Sets a cross-region replication rule for a bucket |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying a cross-region replication rule | Queries the cross-region replication rule of a bucket |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting a cross-region replication rule | Deletes the cross-region replication rule from a bucket |
 
 ## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting Cross-Region Replication
+## Setting Cross-region Replication Rules
 
-#### API description
+#### Description
 
-This API is used to set cross-region replication rules for a bucket.
+This API is used to set the cross-region replication rules of a specified bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-put-bucket-replication"
+[//]: # (.cssg-snippet-put-bucket-replication)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 PutBucketReplicationRequest putBucketReplicationRequest =
         new PutBucketReplicationRequest(bucket);
 
@@ -53,10 +54,12 @@ cosXmlService.putBucketReplicationAsync(putBucketReplicationRequest,
                 (PutBucketReplicationResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -66,19 +69,20 @@ cosXmlService.putBucketReplicationAsync(putBucketReplicationRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
 
-## Querying Cross-Region Replication
+## Querying Cross-region Replication Rules
 
-#### API description
+#### Description
 
 This API is used to query the cross-region replication rules of a specified bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-get-bucket-replication"
+[//]: # (.cssg-snippet-get-bucket-replication)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 GetBucketReplicationRequest getBucketReplicationRequest =
         new GetBucketReplicationRequest(bucket);
 
@@ -90,10 +94,12 @@ cosXmlService.getBucketReplicationAsync(getBucketReplicationRequest,
                 (GetBucketReplicationResult) result;
     }
 
+    // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
     @Override
     public void onFail(CosXmlRequest cosXmlRequest,
-                       CosXmlClientException clientException,
-                       CosXmlServiceException serviceException) {
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
         } else {
@@ -103,19 +109,20 @@ cosXmlService.getBucketReplicationAsync(getBucketReplicationRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
 
-## Deleting Cross-Region Replication
+## Deleting Cross-region Replication Rules
 
-#### API description
+#### Description
 
-This API is used to delete the cross-region replication rules from a bucket.
+This API is used to delete the cross-region replication rules of a specified bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-delete-bucket-replication"
+[//]: # (.cssg-snippet-delete-bucket-replication)
 ```java
-String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+String bucket = "examplebucket-1250000000";
 DeleteBucketReplicationRequest deleteBucketReplicationRequest =
         new DeleteBucketReplicationRequest(bucket);
 
@@ -127,10 +134,12 @@ cosXmlService.deleteBucketReplicationAsync(deleteBucketReplicationRequest,
                         (DeleteBucketReplicationResult) result;
             }
 
-            @Override
-            public void onFail(CosXmlRequest cosXmlRequest,
-                               CosXmlClientException clientException,
-                               CosXmlServiceException serviceException) {
+            // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+    // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
+    @Override
+    public void onFail(CosXmlRequest cosXmlRequest,
+                       @Nullable CosXmlClientException clientException,
+                       @Nullable CosXmlServiceException serviceException) {
                 if (clientException != null) {
                     clientException.printStackTrace();
                 } else {
@@ -140,5 +149,5 @@ cosXmlService.deleteBucketReplicationAsync(deleteBucketReplicationRequest,
         });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
 
