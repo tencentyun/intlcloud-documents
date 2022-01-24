@@ -59,7 +59,7 @@ CSS 서비스 이용 시 **푸시 스트림 도메인**과 **재생 도메인**�
 서비스 시나리오에 따라 생성한 푸시 스트림 주소를 해당 푸시 스트림 소프트웨어에 입력하십시오.
 - PC용 푸시 스트림은 OBS 사용을 권장하며, 작업은 [OBS 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31569)을 참고하십시오.
 - Web에서의 푸시 스트림은 **보조 툴**>[**Web 푸시**](https://console.cloud.tencent.com/live/tools/webpush) 사용을 권장합니다. 푸시 스트림이 필요한 도메인을 선택하고 사용자 정의 스트림 이름 StreamName을 입력합니다. 주소 만료 시간을 선택하고 카메라를 켠 후 **푸시 스트림 시작**을 클릭합니다.    
-- 모바일 푸시 스트림은 [Tencent Cloud 툴킷 App](https://intl.cloud.tencent.com/document/product/1071/38147)를 다운로드하여 설치하고, **MLVB**>**푸시 스트림 데모(카메라 푸시 스트림)** 열기 및 선택 후, 수동 입력 또는 QR 코드 스캔을 통해 주소 입력란에 푸시 스트림 주소를 입력하고, **푸시 스트림 시작**을 클릭합니다.
+- 모바일 푸시 스트림은 [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)를 다운로드하여 설치하고, **MLVB**>**푸시 스트림 데모(카메라 푸시 스트림)** 열기 및 선택 후, 수동 입력 또는 QR 코드 스캔을 통해 주소 입력란에 푸시 스트림 주소를 입력하고, **푸시 스트림 시작**을 클릭합니다.
 
 >? 
 >- 맞춤화된 App에서 Tencent Cloud가 제공하는 [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071)를 통합해 푸시 스트림 기능을 구현할 수 있습니다.
@@ -82,12 +82,11 @@ CSS 서비스 이용 시 **푸시 스트림 도메인**과 **재생 도메인**�
 >?
 >- WebRTC Live Demo는 다중 해상도 기능을 지원합니다. CSS 콘솔의**기능 설정**>[**라이브 방송 트랜스 코딩**](https://console.cloud.tencent.com/live/ config/transcode)에서 HD, SD 트랜스 코딩 템플릿을 설정할 수 있습니다. 트랜스 코딩 템플릿이 있는 WebRTC 스트림 주소를 Demo의 해당 열에 입력한 다음 재생을 테스트합니다(이 기능을 테스트할 필요가 없는 경우, Demo에 WebRTC 원본 스트림 하나만 입력하면 됩니다).
 >- 라이브 방송 트랜스 코딩 운영 가이드 및 트랜스 코딩 과금 관련 내용은 [라이브 방송 트랜스 코딩](https://intl.cloud.tencent.com/document/product/267/31071) 문서를 참고하시기 바랍니다.
-   - **모바일 라이브 방송 스트림 테스트**: [비디오 클라우드 툴킷](https://intl.cloud.tencent.com/document/product/1071/38147)을 다운로드하고, **LEB 재생** 열기 및 선택 후, 수동 입력 또는 QR 코드 스캔을 통해 **푸시 스트림 체험**에서 획득한 LEB 재생 주소 입력하고, 재생 버튼을 클릭하여 재생 및 시청합니다.
+   - **모바일 라이브 방송 스트림 테스트**: [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)을 다운로드하고, **LEB 재생** 열기 및 선택 후, 수동 입력 또는 QR 코드 스캔을 통해 **푸시 스트림 체험**에서 획득한 LEB 재생 주소 입력하고, 재생 버튼을 클릭하여 재생 및 시청합니다.
 >? App에서 푸시 스트림을 진행해야 하는 경우 [MLVB SDK](https://intl.cloud.tencent.com/product/mlvb)를 통합하여 LEB 서비스와 함께 사용할 수 있습니다. 사용 중 문제가 발생하면 [FAQ](#que)을 참고하시기 바랍니다.
 
 ## 5단계: LEB 제품 액세스
--**모바일 솔루션**: B-프레임 디코딩 및 AAC 오디오 형식을 지원합니다. 현재 MLVB SDK에 통합되었으며, 연결 방법은 [LEB 풀 스트림](https://intl.cloud.tencent.com/document/product/1071/41875)을 참고하십시오.
--**Web 솔루션**: TCPlayerLite 플레이어에 통합되었습니다.
+**모바일 솔루션**: B-프레임 디코딩 및 AAC 오디오 형식을 지원합니다. 현재 MLVB SDK에 통합되었으며, 연결 방법은 [LEB 풀 스트림](https://intl.cloud.tencent.com/document/product/1071/41875)을 참고하십시오.
 
 [](id:que)
 ## FAQ
