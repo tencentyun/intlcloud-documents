@@ -29,9 +29,10 @@ txSecret와 txTime 두 부분 포함: `txSecret=Md5(key+StreamName+hex(time))&tx
 재생 주소는 주요하게 재생 접두사, 재생 도메인(domain), 애플리케이션 이름(AppName), 스트림 이름(StreamName), 재생 프로토콜 확장자명, 인증 매개변수, 기타 사용자 정의 매개변수로 구성됩니다. 예시는 다음과 같습니다.	
 
 ```	
-http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time) 	
-rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)	
-http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)	
+webrtc://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
 
 - **재생 접두사**	
