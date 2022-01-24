@@ -47,8 +47,7 @@ https://xxxxxx/v4/sns/group_get?sdkappid=88888888&identifier=admin&usersig=xxx&r
 ```
 
 {
-  "From_Account":"id", 
-  "LastSequence":1
+  "From_Account":"id"
 }
 
 
@@ -63,8 +62,6 @@ https://xxxxxx/v4/sns/group_get?sdkappid=88888888&identifier=admin&usersig=xxx&r
      "From_Account":"id", 
 
      "NeedFriend":"Need_Friend_Type_Yes", 
-
-     "LastSequence":1, 
 
      "GroupName":["group1"]
 
@@ -81,7 +78,6 @@ https://xxxxxx/v4/sns/group_get?sdkappid=88888888&identifier=admin&usersig=xxx&r
 |字段|       类型|       属性|       说明|
 |----|-----|------|-----|
 |From_Account|       String|       必填|  指定要拉取分组的用户的 UserID |
-|LastSequence|Integer  |       必填| 上一次拉取分组时后台返回给客户端的 Seq，初次拉取时为0，只有 GroupName 为空时有效 |
 |NeedFriend       |String       |选填| 是否需要拉取分组下的 User 列表, Need_Friend_Type_Yes: 需要拉取, 不填时默认不拉取, 只有 GroupName 为空时有效 |
 |GroupName|Array|选填|要拉取的分组名称|
 
