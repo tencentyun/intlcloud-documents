@@ -59,7 +59,7 @@ You can add **[your own domain names](https://intl.cloud.tencent.com/document/pr
 You can enter the generated push URL into the push software as appropriate for your use cases.
 - For push on PCs, you're advised to use OBS. For subsequent steps, see [Push via OBS](https://intl.cloud.tencent.com/document/product/267/31569).
 - For push on web, you're advised to use **CSS Toolkit** > **[Web Push](https://console.cloud.tencent.com/live/tools/webpush)**: select a push domain name, enter a custom `StreamName`, select a URL expiration time, turn the camera on, and click **Start Push**.    
-- For push on mobile devices, download and install [Tencent Video Cloud Demo](https://intl.cloud.tencent.com/document/product/1071/38147), open it, select **Mobile Live Video Broadcasting** > **Push (Camera)**, enter the push URL into the address box manually or by scanning the QR code, and then tap the start icon in the bottom-left corner.
+- For push on mobile devices, download and install [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147), open it, select **Mobile Live Video Broadcasting** > **Push (Camera)**, enter the push URL into the address box manually or by scanning the QR code, and then tap the start icon in the bottom-left corner.
 
 >? 
 >- You can integrate Tencent Cloud [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071) into customized apps for live push.
@@ -82,12 +82,11 @@ You can enter the generated push URL into the push software as appropriate for y
 >?
 >- WebRTC Live Demo supports the multi-definition feature. You can configure transcoding templates for HD and SD in **Feature Configuration** > [**Live Transcoding**](https://console.cloud.tencent.com/live/config/transcode) in the CSS console, enter a WebRTC stream address containing a transcoding template, test it, and then play it back. (If you don't need to test this feature, simply enter a WebRTC original stream in the demo.)
 >- For more information on live transcoding operations and billing, see [CSS Transcoding](https://intl.cloud.tencent.com/document/product/267/31071).
-   - **Playback test on mobile devices**: you're advised to download and install [Tencent Video Cloud Toolkit](https://intl.cloud.tencent.com/document/product/1071/38147) app, select **Mobile Live Video Broadcasting** > **LEB Playback**, enter the playback URL you get from push trial into the address box manually or by scanning the QR code, and tap the play icon in the bottom-left corner.
+   - **Playback test on mobile devices**: you're advised to download and install [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147) app, select **Mobile Live Video Broadcasting** > **LEB Playback**, enter the playback URL you get from push trial into the address box manually or by scanning the QR code, and tap the play icon in the bottom-left corner.
 >? To push/play back a stream on an app, you can integrate the [MLVB SDK](https://intl.cloud.tencent.com/product/mlvb) into the app to supplement the LEB service. If you encounter any problems, see [FAQs](#que).
 
 ## Step 5. Start to use LEB
-- **LEB solution for mobile devices**: supports B-frame decoding and AAC audio codec. This solution is integrated into the MLVB SDK. For how to use it, see [LEB Playback](https://intl.cloud.tencent.com/document/product/1071/41875).
--**LEB solution for web**: has been integrated into the TCPlayerLite player.
+**LEB solution for mobile devices**: supports B-frame decoding and AAC audio codec. This solution is integrated into the MLVB SDK. For how to use it, see [LEB Playback](https://intl.cloud.tencent.com/document/product/1071/41875).
 
 [](id:que)
 ## FAQs
