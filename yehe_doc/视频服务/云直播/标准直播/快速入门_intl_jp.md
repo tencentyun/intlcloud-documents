@@ -80,9 +80,8 @@ CSSサービスを使用するには、少なくとも**2つ**のドメイン名
 [](id:step4_1)
 3. 業務シナリオに応じて、次の方式を用いてCSSストリームが正常に再生できるかどうかテストすることができます。
    1. PC端末のCSSストリームテストには、[VLC](https://intl.cloud.tencent.com/document/product/267/32483)などのツールを使用して再生体験を行うことをお勧めします。具体的な内容は、[CSS再生](https://intl.cloud.tencent.com/document/product/267/31559)をご参照ください。
-   2. Web端末の再生テストには、Player+の[TCPlayerLiteプレーヤー](https://intl.cloud.tencent.com/document/product/267/31559)を選択して再生することをお勧めします。具体的な内容は、[CSS再生](https://intl.cloud.tencent.com/document/product/267/31559)をご参照ください。
 
-   3. モバイル端末のCSSストリームテストには、[Tencent CloudツールキットApp](https://intl.cloud.tencent.com/document/product/1071/38147)をダウンロードしてインストールすることをお勧めします。開いたら、**MLVB**>**標準ライブストリーミング再生**を選択し、レコーディング再生アドレスを手入力、または2次元コードをスキャンしてアドレス編集枠内に取り込み、左下角の再生ボタンをクリックすれば、再生して視聴できます。
+   2. モバイル端末のCSSストリームテストには、[Tencent CloudツールキットApp](https://intl.cloud.tencent.com/document/product/1071/38147)をダウンロードしてインストールすることをお勧めします。開いたら、**MLVB**>**標準ライブストリーミング再生**を選択し、レコーディング再生アドレスを手入力、または2次元コードをスキャンしてアドレス編集枠内に取り込み、左下角の再生ボタンをクリックすれば、再生して視聴できます。
 
 >? Appの中でプッシュ/再生を行う必要がある場合は、[モバイルライブストリーミングSDK](https://intl.cloud.tencent.com/product/mlvb)を統合すれば、CSSサービスと結合させて使用することができます。テスト運用プロセスにおいて問題に遭遇したときは、CSSの[よくあるご質問](https://intl.cloud.tencent.com/document/product/267/7968)のQAをご覧いただくことをお勧めします。
 
