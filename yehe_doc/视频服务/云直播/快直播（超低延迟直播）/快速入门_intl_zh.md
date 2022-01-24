@@ -59,7 +59,7 @@
 您可根据业务场景将生成好的推流地址输入到对应的推流软件中。
 - PC 端推流，建议使用 OBS 推流，具体操作请参见 [OBS 推流](https://intl.cloud.tencent.com/document/product/267/31569)。
 - Web 端推流，建议使用 **辅助工具**>[**Web 推流**](https://console.cloud.tencent.com/live/tools/webpush)，选择您需推流的域名，填写自定义的流名称 StreamName，选择地址过期时间，打开摄像头，单击 **开始推流** 即可。    
-- 移动端推流，下载安装 [腾讯云工具包 App](https://intl.cloud.tencent.com/document/product/1071/38147)，打开选择 **移动直播 MLVB**>**推流演示（摄像头推流）**，手动输入或扫描二维码录入推流地址到地址编辑框内，单击 **开始推流** 即可。
+- 移动端推流，下载安装 [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)，打开选择 **移动直播 MLVB**>**推流演示（摄像头推流）**，手动输入或扫描二维码录入推流地址到地址编辑框内，单击 **开始推流** 即可。
 
 >? 
 >- 定制化的 App 可以集成腾讯云提供的 [移动直播 SDK](https://intl.cloud.tencent.com/document/product/1071) 来实现您的推流功能。
@@ -82,12 +82,11 @@
 >?
 >- WebRTC Live Demo 支持多清晰度功能，可在云直播控制台 **功能配置**>[**直播转码** ](https://console.cloud.tencent.com/live/config/transcode)配置高清-HD、标清-SD 的转码模板，将带有转码模板的 WebRTC 流地址填入 Demo 中对应的栏目后测试播放（如不需要测试此功能则只需要在 Demo 中填入一条 WebRTC 原始流即可）。
 >- 直播转码操作指引及转码计费内容，请参见文档 [直播转码](https://intl.cloud.tencent.com/document/product/267/31071)。
-   - **移动端直播流测试**：建议您下载安装 [视频云工具包](https://intl.cloud.tencent.com/document/product/1071/38147) 打开选择 **快直播播放**，手动输入或扫描 **推流体验** 中得到的快直播播放地址，单击播放按钮播放观看。
+   - **移动端直播流测试**：建议您下载安装 [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147) 打开选择 **快直播播放**，手动输入或扫描 **推流体验** 中得到的快直播播放地址，单击播放按钮播放观看。
 >? 如需在 App 中进行推流，可以集成 [移动直播 SDK](https://intl.cloud.tencent.com/product/mlvb) 配合快直播服务使用。使用过程中如果您遇到问题，请参见 [常见问题](#que)。
 
 ## 步骤5：快直播产品接入
-- **移动端方案**：支持 B 帧解码、AAC 音频格式，目前已集成至移动直播 SDK，接入方法请参见 [快直播拉流](https://intl.cloud.tencent.com/document/product/1071/41875)。
-- **Web 端方案**：已集成至 TCPlayerLite 播放器。
+**移动端方案**：支持 B 帧解码、AAC 音频格式，目前已集成至移动直播 SDK，接入方法请参见 [快直播拉流](https://intl.cloud.tencent.com/document/product/1071/41875)。
 
 [](id:que)
 ## 常见问题
