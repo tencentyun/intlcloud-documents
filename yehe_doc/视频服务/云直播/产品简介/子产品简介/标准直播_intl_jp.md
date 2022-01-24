@@ -3,7 +3,7 @@
 > ?  CSSコンソールをアクティブ化して、標準ライブストリーミングサービスをアクティブ化します。アクティブ化の手引きについては、[クイックスタート](https://intl.cloud.tencent.com/document/product/267/13551)をご参照ください。
 
 ## 製品アーキテクチャ
-<img src="https://main.qcloudimg.com/raw/c3e0cf113a5c5346b776ecbcfbdcfc72.svg" width="750px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/386f1d9812d79b84f00a329fd57edeea.png" width="750px">
 
 ## 製品の特徴
 
