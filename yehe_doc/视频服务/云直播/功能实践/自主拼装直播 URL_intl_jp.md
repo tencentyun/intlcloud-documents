@@ -31,9 +31,10 @@ txSecretとtxTimeの両部分を含みます：`txSecret=Md5(key+StreamName+hex(
 次に例示するとおり、再生アドレスは、主に再生プレフィックス、再生ドメイン名（domain）、アプリケーション名（AppName）、ストリーム名（StreamName）、再生プロトコルサフィックス、認証パラメータ、およびその他のカスタムパラメータで構成されます。 
 
 ``` 
-http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)  
-rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)  
-http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time) 
+webrtc://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
 
 - **再生プレフィックス**  
