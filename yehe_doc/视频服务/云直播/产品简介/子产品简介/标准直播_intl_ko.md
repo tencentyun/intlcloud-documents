@@ -3,7 +3,7 @@ LVB(Live Video Broadcasting, LVB)는 Tencent의 오랜 경험이 집적된 멀�
 > ?  CSS 콘솔을 활성화하면 LVB 서비스가 활성화됩니다. 활성화 가이드는 [시작하기](https://intl.cloud.tencent.com/document/product/267/13551)를 참고하십시오.
 
 ## 제품 구성
-<img src="https://main.qcloudimg.com/raw/c3e0cf113a5c5346b776ecbcfbdcfc72.svg" width="750px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/386f1d9812d79b84f00a329fd57edeea.png" width="750px">
 
 ## 제품 특성
 
