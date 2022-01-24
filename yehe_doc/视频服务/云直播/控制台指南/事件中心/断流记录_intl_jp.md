@@ -8,7 +8,7 @@ Tencent Cloud CSSは、ストリーム切断診断により、CSSのプッシュ
 
 CSSプッシュの中断後、左側のメニューバーの【イベントセンター】>【[ストリーム切断記録](https://console.cloud.tencent.com/live/tools/streamevent
 )】を選択して、ストリーム切断診断に進みます。
-![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7109f254ed3f4c892bd93632d9f04629.png)
 
 そのうち：
 - **パス**：プッシュアドレスの中のAppName。
