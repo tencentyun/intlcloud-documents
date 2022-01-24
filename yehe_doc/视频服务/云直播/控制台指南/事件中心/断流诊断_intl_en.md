@@ -9,7 +9,7 @@ Push interruption diagnosis helps you quickly check the records of push interrup
 ## Directions
 
 After the live push is interrupted, select **Event Center** > **[Stream Interruption Records](https://console.cloud.tencent.com/live/tools/streamevent)** on the left sidebar to enter the push interruption diagnosis page.
-![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7109f254ed3f4c892bd93632d9f04629.png)
 
 Here:
 - **Path**: `AppName` in the push address.
