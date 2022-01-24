@@ -47,8 +47,7 @@ The following table only describes the modified parameters when this API is call
 ```
 
 {
-  "From_Account":"id", 
-  "LastSequence":1
+  "From_Account":"id"
 }
 
 
@@ -64,7 +63,6 @@ The following table only describes the modified parameters when this API is call
 
      "NeedFriend":"Need_Friend_Type_Yes", 
 
-     "LastSequence":1, 
 
      "GroupName":["group1"]
 
@@ -81,7 +79,6 @@ The following table only describes the modified parameters when this API is call
 | Field | Type | Required | Description |
 |----|-----|------|-----|
 | From_Account | String | Yes | `UserID` of the account for which to pull friend lists |
-| LastSequence | Integer | Yes | Sequence of the last list pull returned by the backend to the client. The value is `0` for the first pull. This field is valid only when `GroupName` is left empty. |
 | NeedFriend | String | No | Whether to pull the users in the list. `Need_Friend_Type_Yes`: pulls users. If this field is left empty, users will not be pulled. It is valid only when `GroupName` is left empty. |
 | GroupName | Array | No | Name of the list to pull |
 
