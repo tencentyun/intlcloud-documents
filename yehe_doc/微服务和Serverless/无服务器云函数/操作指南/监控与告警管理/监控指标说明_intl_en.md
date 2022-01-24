@@ -1,3 +1,4 @@
+
 Tencent Cloud Monitor provides the following monitoring metrics for SCF:
 
 Currently, two levels of monitoring metrics are supported. Monitoring metrics at the function level can be viewed in specific functions, while those at the region level can be viewed by selecting a specific region on the overview page to display the statistics of all function monitoring metrics.
@@ -18,3 +19,6 @@ Currently, two levels of monitoring metrics are supported. Monitoring metrics at
 | Resource limit exceeded (HTTP 432) | http_432 | The number of 432 status codes returned after function execution, summed by granularity (1 minute or 5 minutes). | - | Function |
 | Function execution timed out (HTTP 433) | http_433 | The number of 433 status codes returned after function execution, summed by granularity (1 minute or 5 minutes). | - | Function |
 | Memory limit exceeded (HTTP 434) | http_434 | The number of 434 status codes returned after function execution, summed by granularity (1 minute or 5 minutes). | - | Function |
+
+
+>? For more information on **how to get the required monitoring data**, please see [SCF Monitoring Metrics](https://intl.cloud.tencent.com/zh/document/product/248/34638).
