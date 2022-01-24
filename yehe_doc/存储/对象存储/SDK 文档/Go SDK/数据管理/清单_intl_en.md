@@ -289,7 +289,7 @@ type ListBucketInventoryConfigResult struct {
 | InventoryConfigurations         | Inventory configuration information                                                 | Struct |
 | IsTruncated            | Flag about whether all inventory jobs have been listed. If yes, it is `false`; otherwise, it is `true` | Bool |
 | ContinuationToken      | Flag of the inventory list on the current page, which can be understood as the page number. It corresponds to the `continuation-token` parameter in the request | String |
-| NextContinuationToken           | ListInventoryConfigurationResult | Identifier of the next response. You can pass the value of this parameter to `continuation-token` and initiate a GET request to obtain the inventory jobs from the next response | String |
+| NextContinuationToken           | Identifier of the next response. You can pass the value of this parameter to `continuation-token` and initiate a GET request to obtain the inventory jobs from the next response | String |
 
 ## Deleting an Inventory Job
 
