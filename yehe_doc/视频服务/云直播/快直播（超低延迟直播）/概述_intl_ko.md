@@ -3,7 +3,7 @@ Live Event Broadcasting(LEB)(초저지연 라이브 방송)은 CSS의 초저지�
 
 ## 제품 구성
 
-<img src="https://main.qcloudimg.com/raw/48cbd188bd76af310b6cae91726f1097.png" width="750px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/33003e986f9f27a19dbeaad7108d63d0.png" width="750px">
 
 
 ## 제품 특징

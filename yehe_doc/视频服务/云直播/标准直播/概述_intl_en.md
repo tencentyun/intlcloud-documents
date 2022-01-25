@@ -3,7 +3,7 @@ Leveraging Tencent's well-established audiovisual media platforms, globally-depl
 > ?  You can use LVB after you activate the CSS service. For more information, see [Getting Started with Live Video Broadcasting (LVB)](https://intl.cloud.tencent.com/document/product/267/13551).
 
 ## Product Architecture
-<img src="https://main.qcloudimg.com/raw/48cbd188bd76af310b6cae91726f1097.png" width="750px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/599fe854f8e8a52ea998f5dab43f38af.png" width="750px">
 
 ## Features
 

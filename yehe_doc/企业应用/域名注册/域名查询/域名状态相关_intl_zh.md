@@ -1,8 +1,8 @@
-### WHOIS 中域名状态的解释说明
-查看域名 [WHOIS 信息](https://whois.cloud.tencent.com/) 时，都有一项**域名状态**栏，每一个域名都有当前的状态，可能只有一个状态，也可能有多个状态。了解各种域名状态的含义，有助于您了解域名处于不同状态下的原因，可及时采取相应解决措施。
 
-以下视频将为您介绍 WHOIS 中的域名状态：
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/2534-43061?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
+
+### WHOIS 中域名状态的解释说明
+
+查看域名WHOIS 信息时，都有一项**域名状态**栏，每一个域名都有当前的状态，可能只有一个状态，也可能有多个状态。了解各种域名状态的含义，有助于您了解域名处于不同状态下的原因，可及时采取相应解决措施。
 
 分别有以下几种情况：
 <table>
@@ -92,7 +92,7 @@
 </tr>
 <tr>
 <td>serverHold</td>
-<td>注册局设置暂停解析（大多原因是.com、.cn、.net 等域名未进行实名认证，完成实名审核后自动解除该状态，更多原因可参考 <a href='https://cloud.tencent.com/document/product/242/54080'>域名注册局设置停止解析（serverHold）状态</a>）。</td>
+<td>注册局设置暂停解析（大多原因是.com、.cn、.net 等域名未进行实名认证，完成实名审核后自动解除该状态。</td>
 </tr>
 <tr>
 <td>pendingTransfer</td>
@@ -134,9 +134,6 @@
 </tr>
 </table>
 
->?
->- 具体可前往 [腾讯云 DNS 解析 DNSPod](https://cloud.tencent.com/document/product/302) 和 [域名实名认证](https://cloud.tencent.com/document/product/242/6707) 了解。
-- 如果问题还未解决，请加入 [DNSPod 官方用户群](https://cloud.tencent.com/document/product/242/57608#DNSPod) 并联系技术客服协助您解决。
 
 
 

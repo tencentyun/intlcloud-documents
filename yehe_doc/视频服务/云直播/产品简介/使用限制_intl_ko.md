@@ -37,13 +37,6 @@ CSS 서비스 이용 전 본 서비스의 사용 제한 정보를 확인하십�
 	<li>LVB는 RTMP, FLV, HLS 재생 프로토콜을 지원합니다. 자세한 설명은 <a href="https://intl.cloud.tencent.com/document/product/267/7968">FAQ</a>를 참고하십시오.</li>
 	<li>LEB는 WebRTC 재생 프로토콜을 지원합니다.</li>
 </ul></td>
-</tr><tr>
-<td>스튜디오</td>
-<td><ul style="margin:0">
-	<li>계정별로 스튜디오 인스턴스를 <b>3</b>개 생성할 수 있으며, 스튜디오 인스턴스를 삭제한 후 다시 추가할 수 있습니다. 여러 개의 스튜디오가 필요한 경우 <a href="https://console.cloud.tencent.com/workorder/category">티켓 제출</a>을 신청하십시오.</li>
-	<li>VOD 입력 재생 목록은 VOD 파일을 최대 5개까지 지원합니다.</li>
-	<li>3rd party 푸시는 최대 3개까지 지원합니다. 이 중 1개는 기본적으로 Tencent Cloud CSS 계정을 푸시하고, 나머지 2개는 3rd party를 푸시합니다.</li>
-</ul></td>
 </tr></table>
 
 

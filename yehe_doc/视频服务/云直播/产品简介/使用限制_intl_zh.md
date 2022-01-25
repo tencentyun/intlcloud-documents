@@ -37,13 +37,6 @@
 	<li>标准直播支持 RTMP、 FLV 和 HLS 播放协议，详细说明请参见 <a href="https://intl.cloud.tencent.com/document/product/267/7968">常见问题</a>。</li>
 	<li>快直播支持 WebRTC 播放协议。</li>
 </ul></td>
-</tr><tr>
-<td>导播台</td>
-<td><ul style="margin:0">
-	<li>每个账号可创建<b>3</b>个导播台实例，删除导播台实例后即可重新添加。若您需要多个导播台，请 <a href="https://console.cloud.tencent.com/workorder/category">提工单</a> 申请。</li>
-	<li>点播输入播放列表，最多支持5个点播文件。</li>
-	<li>转推第三方，最多支持转推三路。其中一路默认转推当前腾讯云直播账号，其他两路可转推第三方。</li>
-</ul></td>
 </tr></table>
 
 

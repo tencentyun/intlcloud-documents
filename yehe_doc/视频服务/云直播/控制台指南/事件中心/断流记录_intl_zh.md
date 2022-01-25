@@ -8,7 +8,7 @@
 
 在直播推流中断后，选择左侧菜单栏中的【事件中心】>【[断流记录](https://console.cloud.tencent.com/live/tools/streamevent
 )】，进入断流诊断。
-![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7109f254ed3f4c892bd93632d9f04629.png)
 
 其中：
 - **路径**：推流地址中的 AppName。

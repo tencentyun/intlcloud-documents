@@ -3,7 +3,7 @@
 > ?  开通云直播控制台即开通标准直播服务，开通指南请参见 [快速入门](https://intl.cloud.tencent.com/document/product/267/13551)。
 
 ## 产品架构
-<img src="https://main.qcloudimg.com/raw/c3e0cf113a5c5346b776ecbcfbdcfc72.svg" width="750px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/386f1d9812d79b84f00a329fd57edeea.png" width="750px">
 
 ## 产品特性
 
