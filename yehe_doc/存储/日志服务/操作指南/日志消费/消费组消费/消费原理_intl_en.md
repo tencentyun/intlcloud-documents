@@ -7,7 +7,7 @@ When you use consumer groups to consume data, the server manages the consumption
 3. The consumer group automatically assigns topic partitions to consumers according to the load of the topic partitions.
 4. Consumers obtain partition cursors and consume data according to their assigned partition lists.
 5. Consumers update partition consumption progress periodically to the consumption group for it to assign tasks the next time.
-6. Repeat steps 2 - 6 until consumption ends.
+6. Repeat steps 2 - steps 6 until consumption ends.
 
 
 
