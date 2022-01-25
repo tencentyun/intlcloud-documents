@@ -95,7 +95,7 @@ INTELLIGENT TIERING fees include **INTELLIGENT TIERING storage usage fees** and 
 
 Assume that an organization has 1 TB objects, 100,000 objects in total (10 MB per object), and the data is stored in the INTELLIGENT TIERING storage class in the Beijing region. If 20% of the objects (i.e., 20,000 objects) transition to the infrequent access tier every month, the object monitoring fees and storage usage fees for each month will be as follows:
 
-| Month | Object Monitoring Fees (USD) | INTELLIGENT TIERING Storage Usage Fees (USD) | STANDARD Storage Usage Fees (USD)
+| Month | Object Monitoring Fees (USD) | INTELLIGENT TIERING Storage Usage Fees (USD) | STANDARD Storage Usage Fees (USD)|
 |----|----|----|----|
 |1| 0.25|1024 x 0.024 = 24.58  |   1024 x 0.024 = 24.58  |
 |2|0.25|819.2 x 0.024 + 204.8 x 0.018 = 23.35| 1024 x 0.024 = 24.58  |
