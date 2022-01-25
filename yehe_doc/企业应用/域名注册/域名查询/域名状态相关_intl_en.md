@@ -1,6 +1,6 @@
-# Domain Status
 
-﻿### Domain status in WHOIS
+
+### Domain status in WHOIS
 
 When viewing a domain's WHOIS information, you will see the **Status** column. Each domain may have one or multiple current status. Understanding the meaning of each domain status helps you identify the cause of a specific status and take actions promptly.
 
