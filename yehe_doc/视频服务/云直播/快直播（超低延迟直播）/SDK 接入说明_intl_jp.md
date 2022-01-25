@@ -32,16 +32,15 @@ iOS、Androidのアプリの場合、MLVB SDKを統合することで、App端�
     </td>
     <td rowspan="2">
       <div align="center">
-        <img  width="200"  src="https://qcloudimg.tencent-cloud.cn/raw/92aea396542264a39f7439323f65cfdc.png"/>
+        <img  width="200"  src="https://main.qcloudimg.com/raw/6dd7c02dc2381d84225c2f2f286e7358.png"/>
       </div>
     </td>
   </tr>
   <tr>
       <td >iOS</td>
-    <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/6dd7c02dc2381d84225c2f2f286e7358.png" width="150"></td>
+    <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/12c7da97cc910eda673cb19b66fc7cb3.png" width="150"></td>
   </tr>
 </table>
-
 
 
 
@@ -52,11 +51,14 @@ iOS、Androidのアプリの場合、MLVB SDKを統合することで、App端�
 ウェブサイトでCSSプッシュと再生を行う必要がある場合は、次の方式によるアクセスを推奨します。
 
 - **Web端末CSSプッシュ**：ブラウザの一般的なWebRTCの規格をベースに設計とカプセル化を行い、コードスニペットを導入することで、ブラウザの中でCSSプッシュを実現させます。詳細については、[WebRTCプッシュ]](https://intl.cloud.tencent.com/document/product/267/41620)をご参照ください。
-> ! WebRTCプッシュの時は、オーディオコーデック方式はopusによるコーデックとなります。標準ライブストリーミングの再生プロトコル（RTMP、FLV、HLS）を使用して再生を行う場合は、正常な視聴を保証するため、CSSバックエンドはオーディオコーデックを自動的に開始してaacに変換し、これによりオーディオトランスコード料金が発生します。詳細については、[オーディオトランスコード料金の説明](https://intl.cloud.tencent.com/document/product/267/39604#a_trans)をご参照ください。（ライブイベントストリーミングのみをご使用の場合はオーディオトランスコードは発生しません）
+> ! 
+> - WebRTCプッシュの時は、オーディオコーデック方式はopusによるコーデックとなります。標準ライブストリーミングの再生プロトコル(RTMP、FLV、HLS)を使用して再生を行う場合は、正常な視聴を確保するため、CSSバックエンドはオーディオコーデックを自動的に開始してaacに変換し、これによりオーディオトランスコード料金が発生します。詳細については、[オーディオトランスコード料金の説明](https://intl.cloud.tencent.com/document/product/267/39604#a_trans)をご参照ください。（ライブイベントストリーミングのみをご使用の場合、オーディオトランスコードは開始されません）
+> - WebRTCプロトコルを使用してスプッシュを行います。各プッシュドメイン名は、デフォルトで**100パス同時**プッシュ数に制限されています。このプッシュ制限を超える必要がある場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してお申し出ください。
+
 
 ### Demo体験
 
-- **Web端末CSSプッシュ**：**CSSコンソール**>[Webプッシュツール](https://console.cloud.tencent.com/live/tools/webpush) により、Web端末プッシュ機能をテストします。
+- **Web端末CSSプッシュ**：**CSSコンソール**>[Webプッシュツール](https://console.cloud.tencent.com/live/tools/webpush)により、Web端末プッシュ機能をテストします。
 - **Web端末CSSプル**：[WebRTC Live Demo](https://tcplayer.vcube.tencent.com/webrtc-demo/index.html)ツールにより、再生体験を行います。
 >?
 >- Web端末CSSプッシュとプルはいずれも標準WebRTCプロトコルを使用します。Web端末プッシュ時はBフレームを含まず、またオーディオコーデックはOPUSオーディオ形式のため、オーディオトランスコードおよびBフレームトランスコード料金は発生しません。
@@ -64,12 +66,14 @@ iOS、Androidのアプリの場合、MLVB SDKを統合することで、App端�
 >- CSSトランスコードの操作ガイドとトランスコード料金の内容については、ドキュメント[CSSトランスコード](https://intl.cloud.tencent.com/document/product/267/31071)をご参照ください。
 
 
+
 [](id:obs)
 ## OBS WebRTCプロトコルプッシュへのアクセス
 WebRTCプロトコルプッシュは、主にビデオクラウドのライブイベントストリーミング（超低遅延ライブストリーミング）のプッシュに使用され、収集されたオーディオビデオ画面またはビデオファイルを、WebRTCプロトコルを介してライブストリーミングサーバーにプッシュする役割を担います。下記の内容では主に、どのようにOBSツールを使用してWebRTCプロトコルプッシュ機能を実現するかについて紹介しています。
 
 ### 注意事項
-現在、OBSのバージョンは26以上が必要です。
+- 現在、OBS用のバージョンは、26以降のバージョンが必要です。
+- WebRTCプロトコルプッシュは現在、OBS用のWindowsプラグインのみです。MacにWebRTCストリーミングを実装する場合は、[Webアクセス](https://intl.cloud.tencent.com/document/product/267/42131)を使用できます。
 
 [](id:set)
 ### OBSプラグインの設定
@@ -81,6 +85,7 @@ WebRTCプロトコルプッシュは、主にビデオクラウドのライブ�
 ![](https://main.qcloudimg.com/raw/ca9cc7d84071526009624978dc38e2c8.png)   
 
 [](id:push)
+
 ## プッシュリンクの設定
 [](id:push)
 1. **WebRTCプッシュアドレスを発行します**。
