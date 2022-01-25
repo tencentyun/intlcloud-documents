@@ -1,6 +1,6 @@
 ## When I try to start screen sharing on macOS 10.15, the system prompts an error of no permission to record. What should I do?
 Starting from macOS 10.15, some users may experience an issue with the sharing permission compatibility. It can be fixed in the following steps:
-1. Go to **System Preferences > Security & Privacy > **Privacy**.
+1. Go to **System Preferences > Security & Privacy > Privacy**.
 2. Deselect the option. If you are using VooV Meeting, you will be asked whether to exit. Click **Later**, and then select the option again. If you are using VooV Meeting, you will be asked whether to exit again. Then, click **Later** and check whether the screen can be shared.
 3. If the problem persists, try restarting the computer.
 4. If the problem still persists, right-click and select **Show in Finder**, delete the VooV Meeting app, and check whether the app is still displayed in the list.
