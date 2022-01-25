@@ -20,7 +20,7 @@ cos.putObject({
     Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
     Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     Body: 'hello!',
-    ServerSideEncryption: 'AES-256',
+    ServerSideEncryption: 'AES256',
 }, function(err, data) {
     console.log(err || data);
 });
@@ -42,11 +42,14 @@ cos.putObject({
     Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
     Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     Body: 'hello!',
+    SSECustomerAlgorithm: 'AES256',
     SSECustomerKey: 'MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY',
+    SSECustomerKeyMD5: 'U5L61r7jcwdNvT7frmUG8g==',
 }, function(err, data) {
     console.log(err || data);
 });
 ```
+
 
 ### Using server-side encryption with KMS-managed encryption keys (SSE-KMS) to protect data
 
