@@ -47,8 +47,8 @@
 
 [](id:pushurl)
 ### 推流地址说明
-推流支持 RTMP 、SRT协议，可通过地址生成器功能生成前缀为 `rtmp://` 、`srt://` 的推流地址。
-![](https://qcloudimg.tencent-cloud.cn/raw/a892b0dd29e3f7f2877b2d76d21d6de1.png)
+推流支持 RTMP 、WebRTC和SRT协议，可通过地址生成器功能生成前缀为 `rtmp://` 、webrtc://和`srt://` 的推流地址。
+![](https://qcloudimg.tencent-cloud.cn/raw/d866991901d2c780112da709d4e0ba3c.png)
 
 
 [](id:play)
@@ -66,7 +66,7 @@
 
 [](id:playurl)
 ### 播放地址说明
-若使用转码模板，生成的播放地址为转码后的直播播放地址。其中播放支持 RTMP、FLV和HLS协议。可通过地址生成器生成前缀为 `rtmp://`和`http://` 的播放地址。
+若使用转码模板，生成的播放地址为转码后的直播播放地址。其中播放支持 RTMP、FLV、HLS协议和Webrtc协议。可通过地址生成器生成前缀为 `rtmp://`、`http://` 和webrtc://的播放地址。
 >! UDP 协议的播放地址为快直播地址，可通过 [快直播快速入门](https://intl.cloud.tencent.com/document/product/267/41030) 了解使用，快直播费用详细参见 [价格总览](https://intl.cloud.tencent.com/document/product/267/2819)。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/49cab3aee340f8e58a4d7a198cc51463.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/345cc01a3d77d6816d1789fe60b7184e.png)
