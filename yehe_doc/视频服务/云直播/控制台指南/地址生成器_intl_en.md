@@ -47,8 +47,8 @@ You have logged in to the [CSS console](https://console.cloud.tencent.com/live/l
 
 [](id:pushurl)
 ### Notes
-As the protocols RTMP, and SRT are supported for push, the push URLs generated start with `rtmp://`, or `srt://`.
-![](https://qcloudimg.tencent-cloud.cn/raw/a892b0dd29e3f7f2877b2d76d21d6de1.png)
+As the protocols RTMP, WebRTC, and SRT are supported for push, the push URLs generated start with `rtmp://`, webrtc://, or `srt://`.
+![](https://qcloudimg.tencent-cloud.cn/raw/d866991901d2c780112da709d4e0ba3c.png)
 
 
 [](id:play)
@@ -69,4 +69,4 @@ As the protocols RTMP, and SRT are supported for push, the push URLs generated s
 If you select a transcoding template, the address generator will generate a URL for the transcoded stream. As the protocols RTMP, HTTP-FLV, HLS, and WebRTC are supported for playback, the playback URLs generated start with `rtmp://` `http://`, or `webrtc://`.
 >! UDP playback URLs are for [LEB](https://intl.cloud.tencent.com/document/product/267/41030). To learn about the billing of LEB, see [Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2819).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/49cab3aee340f8e58a4d7a198cc51463.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/345cc01a3d77d6816d1789fe60b7184e.png)
