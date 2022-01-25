@@ -26,7 +26,7 @@ Assigning and reassigning TencentDB instances among projects will not affect the
 5. Click the target instance ID to enter the **Instance Details** page.
 6. In the **Basic Info** section, click **Switch to Another Project** on the right of **Project**.
 7. On the **Assign to Project** page, select the target project.
-8. Click **OK**. In the **Basic Info** section, <img src="https://qcloudimg.tencent-cloud.cn/raw/8fd2d51d00d7041d8a9248ca3075fb5e.png" style="zoom:65%;" /> will be displayed on the right of **Instance Status**.
+8. Click **OK**. In the **Basic Info** section, <img src="https://qcloudimg.tencent-cloud.cn/raw/a157fe7de2ca05dd886951ce68d993ea.png" style="zoom:65%;" /> will be displayed on the right of **Instance Status**.
 9. Wait for the task to be completed. On the right of **Project**, you can see the project to which the instance is reassigned.
 You can filter instances by **Project** in the instance list to view the running status of each instance in the entire project.
 
