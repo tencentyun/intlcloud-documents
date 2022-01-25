@@ -36,7 +36,7 @@ int cos_gen_presigned_url(const cos_request_options_t *options,
 | object | Object name | String |
 | expire        | Validity time of the signature, in seconds                      | Int    |
 | method        | HTTP request method. Enumerated values: `HTTP_GET`, `HTTP_HEAD`, `HTTP_PUT`, `HTTP_POST`, `HTTP_DELETE` | Enum   |
-| presigned_url | The generated pre-signed URL                  | String                      | String |
+| presigned_url | The generated pre-signed URL                  | String                      | 
 
 #### Response description
 
@@ -161,7 +161,7 @@ int cos_gen_presigned_url_safe(const cos_request_options_t *options,
 | headers      | Additional headers of a COS request | Struct |
 | params | Parameters for the COS request                                           | Struct |
 | sign_host     | Whether to sign the signature to the host header. You are strongly advised to enable it for security’s sake.      | Int    |
-| presigned_url | The generated pre-signed URL                  | String                      | String |
+| presigned_url | The generated pre-signed URL                  | String                      | 
 
 #### Response description
 
