@@ -80,7 +80,7 @@ Remarks: Cloud service fee + developer account (unique ID)
 Beneficiary name: ACEVILLE PTE.LTD.	
 Beneficiary account: 260-737366-178 (USD account)
 Beneficiary bank: HSBC, Singapore
-Address: 1 Fullerton Road, #02-095, One Fullerton, Singapore 049213
+Address: 30 Raffles Place, #12-01, Oxley @ Raffles, Singapore 048622
 SWIFT Code: HSBCSGSG
 Remarks: Cloud service fee + developer account (unique ID)
 
