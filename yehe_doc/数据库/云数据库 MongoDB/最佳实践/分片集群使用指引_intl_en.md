@@ -1,3 +1,4 @@
+
 A sharded cluster is distributed MongoDB database architecture. Compared with replica sets, sharded clusters evenly distribute data across shards, which not only greatly increases the capacity, but also distributes the read/write workload across shards, effectively solving the performance bottleneck of replica sets. The trade off is increased complexity in architecture. This document lists some issues you should take note of when using TencentDB for MongoDB sharded clusters.
 
 ## Sharded Cluster Components
@@ -18,9 +19,8 @@ Disadvantages: low range-based query efficiency
 Data which has a natural distinction, such as geographical or time distinction, can be distinguished by tags.
 Advantages: good data distribution
 
-
-## Choosing a Shard Key
-The shard key is an indexed field that exists in every document. MongoDB uses it to route and query data across shards. The choice of shard key cannot be changed after sharding.
+## Choosing Shard Key
+The shard key is a field in a document used for routing queries.
 The choice of shard key can have a great impact on sharding efficiency due to the following factors:
 
 - **Cardinality**
@@ -36,7 +36,24 @@ Use the shard key as the query condition. Mongos can locate the specific shard a
 - **Monotonically changing shard keys (not recommended)**
 A monotonically increasing shard key leads to fewer migrations of data, but all new inserts are routed to the last chunk which has to keep migrating as it grows. The same problem will occur when a monotonically decreasing shard key is used.
 
-Consider all of the above factors when choosing a shard key to reduce the negative effects of chunk migration and optimize overall performance. 
+Consider all of the above factors when choosing a shard key to reduce the negative effects of chunk migration and optimize overall performance.
+
+
+#### Modifying shard key value
+Prior to MongoDB 4.2, the shard key field value of a document cannot be changed.
+
+Starting from MongoDB 4.2, unless the shard key field is an immutable `_id` field, you can update its value in the following methods:
+
+| Command                                                         | Method                                                         |
+| --------------------------------------------------- | --------------------------------------------------- |
+| [update](https://docs.mongodb.com/manual/reference/command/update/#dbcmd.update) with multi: false | <li>[db.collection.replaceOne()](https://docs.mongodb.com/manual/reference/method/db.collection.replaceOne/#db.collection.replaceOne)  <li>[db.collection.updateOne()](https://docs.mongodb.com/manual/reference/method/db.collection.updateOne/#db.collection.updateOne)  <li>[db.collection.update()](https://docs.mongodb.com/manual/reference/method/db.collection.update/#db.collection.update) with multi: false |
+| [findAndModify](https://docs.mongodb.com/manual/reference/command/findAndModify/#dbcmd.findAndModify) | <li>[db.collection.findOneAndReplace()](https://docs.mongodb.com/manual/reference/method/db.collection.findOneAndReplace/#db.collection.findOneAndReplace)<li>[db.collection.findOneAndUpdate()](https://docs.mongodb.com/manual/reference/method/db.collection.findOneAndUpdate/#db.collection.findOneAndUpdate) <li> [db.collection.findAndModify()](https://docs.mongodb.com/manual/reference/method/db.collection.findAndModify/#db.collection.findAndModify) |
+|     -                                                         |<li> [db.collection.bulkWrite()](https://docs.mongodb.com/manual/reference/method/db.collection.bulkWrite/#db.collection.bulkWrite)  <li>[Bulk.find.updateOne()](https://docs.mongodb.com/manual/reference/method/Bulk.find.updateOne/#Bulk.find.updateOne)  <br>If the shard key modification causes the document to be moved to another shard, you cannot specify multiple shard keys for batch modification; that is, the batch size must be `1`. <br>Otherwise, you can specify multiple shard keys for batch modification. </br> |
+
+Notes on shard key modification:
+- You must perform it in a transaction or on mongos in a retryable write mode. Do not perform it directly on shards.
+- You must include an equality condition in the complete shard key of the query filter. For example, if you use `{country:1, userid:1}` as the shard key in a shard collection, to update the document shard key, you must include `country:, userid:` in the query filter. You can also include other fields in the query as needed.
+
 
 ## Balancing and Related Parameters
 MongoDB sharded cluster partitions data into chunks. The background process `balancer` monitors the number of chunks on each shard and migrates the chunks between shards to balance the load on each shard server.
@@ -44,7 +61,7 @@ MongoDB sharded cluster partitions data into chunks. The background process `bal
 
 Because chunk migrations have an impact on cluster read/write performance, you can set the balancing window to avoid the impact during business peak, or run commands to disable balancing.
 
-Commands to manage balancing are described as follows. If you do not have the permission to run the commands, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for further assistance.
+Commands to manage balancing are described as follows. If you do not have the permission to run the commands, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for further assistance.
 
 - **Checking whether balancing is enabled for MongoDB sharded cluster**
 ```

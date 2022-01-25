@@ -9,15 +9,15 @@
 - 可以使用腾讯云 MongoDB 分片功能便捷高效的搭建海量分布式存储系统。
 
 ### 如何创建 MongoDB 分片集群？
-登录 [MongoDB 购买页](https://buy.cloud.tencent.com/mongodb?clusterType=1) ，在“实例类型”选择【分片集群】，按需选择分片的片数，片内节点数，以及节点规格。
+登录 [MongoDB 购买页](https://buy.intl.cloud.tencent.com/mongodb?clusterType=1) ，在实例类型选择**分片集群**，按需选择分片的片数，片内节点数，以及节点规格。
 每个分片都是多节点的副本集，片内多节点自动容灾，保证服务高可用。
 
 ### 如何查询 MongoDB 分片集群的信息？
-在 [控制台](https://console.cloud.tencent.com/mongodb/sharding) 中可以查看分片集群实例的详细信息，如分片的构成，片节点的规格和已使用容量，同时也可以在控制台上进行实例的[扩容](https://intl.cloud.tencent.com/document/product/240/31192) 等操作。
+在 [控制台](https://console.cloud.tencent.com/mongodb/sharding) 中可以查看分片集群实例的详细信息，如分片的构成，片节点的规格和已使用容量，同时也可以在控制台上进行实例的管理以及 [扩容](https://intl.cloud.tencent.com/document/product/240/31192) 等操作。
 
 ### MongoDB 分片集群扩容方式有哪些？
 目前只支持将所有节点进行统一扩容，暂不支持通过添加节点的方式进行扩容。
-在 [控制台](https://console.cloud.tencent.com/mongodb/sharding) 实例列表页单击【配置调整】，选择需要扩到的容量规格。
+在 [控制台](https://console.cloud.tencent.com/mongodb/sharding) 实例列表页单击**配置调整**，选择需要扩到的容量规格。
 
 ### MongoDB 如何实现分片集群实例监控？
 云数据库 MongoDB 分片集群实例提供三个维度的监控指标，来进行整个集群的数据监控。
@@ -25,7 +25,7 @@
  - 片维度
  - 节点维度
 
-提供操作请求，容量使用，负载等多项指标的监控数据，可在实例的【系统监控】页查看。
+提供操作请求，容量使用，负载等多项指标的监控数据，可在实例的**系统监控**页查看。
 
 ### MongoDB 的分片策略是什么？
 - 支持 hash key 的分片机制。
@@ -37,5 +37,5 @@ MongoDB 完全兼容支持 SCRAM-SHA-1 和 MONGODB-CR 两种机制。
 
 ### MongoDB 分片集群命令支持情况？
  详细请参见 [分片集群命令支持情况](https://intl.cloud.tencent.com/document/product/240/8334)。
- 
+
 
