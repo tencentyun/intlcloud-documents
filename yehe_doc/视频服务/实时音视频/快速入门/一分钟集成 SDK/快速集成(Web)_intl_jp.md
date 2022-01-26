@@ -57,12 +57,12 @@ SDK ダウンロードアドレス：[ここをクリックします](http://trt
 
 | 機能                      | Sample Code ガイド                                                                                           |
 | -------------------------- | --------------------------- |
-| 基礎オーディオ/ビデオ通話 | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-01-basic-video-call.html)            |
-| ILVB      | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-02-live-video.html)                |
-| カメラおよびマイクの切り替え   | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-03-advanced-switch-camera-mic.html) |
-| ローカルビデオのプロパティの設定  | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-04-advanced-set-video-profile.html)|
-| ローカルオーディオ/ビデオを動的に有効/無効にする  | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-05-advanced-dynamic-add-video.html)|　　
-| 画面共有  | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-06-advanced-screencast.html)        |
-| 音量計測  | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-07-advanced-detect-volume.html)     |
+| 基礎オーディオ/ビデオ通話 | [ガイド](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-11-basic-video-call.html)            |
+| ILVB      | [ガイド](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-12-basic-live-video.html)                |
+| カメラおよびマイクの切り替え   | [ガイド](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-13-basic-switch-camera-mic.html) |
+| ローカルビデオのプロパティの設定  | [ガイド](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-14-basic-set-video-profile.html)|
+| ローカルオーディオ/ビデオを動的に有効/無効にする  | [ガイド](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-15-basic-dynamic-add-video.html)|　　
+| 画面共有  | [ガイド](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-basic-screencast.html)        |
+| 音量計測  | [ガイド](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html)     |
 
 
