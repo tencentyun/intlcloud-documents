@@ -16,9 +16,9 @@ Yes. But LogListener earlier than version 2.3.0 does not collect those log files
 - Yes, provided that these log topics are in the same region.
 - A log file will only be collected into one log topic.
 
-### Are servers automatically added to a server group when LogListener is initialized?
+### Are servers automatically added to a machine group when LogListener is initialized?
 
-Yes, provided that you [Server Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
+Yes, provided that you configure the machine group by machine ID. For more information, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 ### In what situations will LogListener upload logs?
 
@@ -37,8 +37,8 @@ Yes, provided that you [Server Group Management](https://intl.cloud.tencent.com/
 
 ### How do I modify the LogListener configuration after the server IP address is changed?
 
-- If you configure the server group by server ID, you don’t need to modify the LogListener configuration. This method is recommended when the server IP frequently changes. For more information, see [Configuring the server group by server ID](https://intl.cloud.tencent.com/document/product/614/17412#configuring-the-server-group-by-server-id).
-- If you configure the server group by server IP address, modify the configuration as follows:
+- If you configure the machine group by machine ID, you don’t need to modify the LogListener configuration. This method is recommended when the server IP frequently changes. For more information, see [Configuring the machine group by machine ID](https://intl.cloud.tencent.com/document/product/614/17412#configuring-the-server-group-by-server-id).
+- If you configure the machine group by IP address, modify the configuration as follows:
   a. Add the new IP address to the `group_ip` field in the configuration file.
 ```shell
 sed -i '' "s/group_ip *=.*/group_ip = ${group_ip}/" etc/loglistener.conf
@@ -47,4 +47,4 @@ sed -i '' "s/group_ip *=.*/group_ip = ${group_ip}/" etc/loglistener.conf
 ```shell
  /etc/init.d/loglistenerd restart
 ```
- c. Log in to the [CLS Console](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou) and select **Server Group** on the left sidebar. Locate the server group on which you want to change the server IP, and click **Modify**. In the pop-up window, enter the new IP address, and click **OK**.
+ c. Log in to the [CLS console](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou) and select **Machine Group Management** on the left sidebar. Locate the machine group to which the server binds and click **Edit**. In the pop-up window, replace the old IP address with the new one, and click **OK**.
