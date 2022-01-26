@@ -5,7 +5,7 @@ Broadcast and multicast are modes of one-to-many communication, which can save b
 In the unicast mode, the initiating server sends data to N servers separately. If the multicast mode, the server sends the same data to N servers in once, which reduces the server resource consumption and also the bandwidth resource of the backbone network.
 >?
 >- The broadcast and multicast features are currently in beta test. If you do need to use them, please [submit an application](https://console.cloud.tencent.com/workorder/category).
->- At present, the regions supporting multicast and broadcast are: Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Nanjing, Hong Kong of China, Singapore, Seoul, Tokyo, Mumbai, Bangkok, Toronto, Silicon Valley, Virginia, Frankfurt and Moscow.
+>- At present, the regions supporting multicast and broadcast are: Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Nanjing, Hong Kong of China, Singapore, Seoul, Tokyo,  Bangkok, Toronto, Silicon Valley, Virginia, Frankfurt and Moscow.
 >
 
 - Multicast: Tencent Cloud supports multicast on the VPC dimension.
