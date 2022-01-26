@@ -63,7 +63,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
      <tr>
       <td style="text-align:center">Web</td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'zip'})" target="_blank" href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'github'})" target="_blank" href=" https://github.com/tencentyun/TRTCSDK/tree/master/Web">Github</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35607">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35096">DOC</a></td>
