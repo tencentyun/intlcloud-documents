@@ -16,9 +16,9 @@ Yes. But LogListener earlier than version 2.3.0 does not collect those log files
 - Yes, provided that these log topics are in the same region.
 - A log file will only be collected into one log topic.
 
-### Are servers automatically added to a server group when LogListener is initialized?
+### Are servers automatically added to a machine group when LogListener is initialized?
 
-Yes, provided that you [Server Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
+Yes, provided that you configure the machine group by machine ID. For more information, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 ### In what situations will LogListener upload logs?
 
