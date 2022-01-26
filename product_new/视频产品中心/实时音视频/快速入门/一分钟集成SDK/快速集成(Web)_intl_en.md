@@ -57,10 +57,10 @@ For more information on the initialization process and how to use APIs, please s
 
 | Feature                       | Sample Code Guide   |
 | -------------------------- | --------------------------- |
-| Basic audio/video call  | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-01-basic-video-call.html)               |
-| ILVB | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-02-live-video.html)                           |
-| Switch cameras/mics | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-03-advanced-switch-camera-mic.html)      |
-| Setting local video attributes  | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-04-advanced-set-video-profile.html)      |
-| Dynamically enabling/disabling local audio/video | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-05-advanced-dynamic-add-video.html) |
-| Sharing screen | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-06-advanced-screencast.html)   |
-| Detecting volume level | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-07-advanced-detect-volume.html) |
+| Basic audio/video call  | [Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-11-basic-video-call.html)               |
+| ILVB | [Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-12-basic-live-video.html)                           |
+| Switch cameras/mics | [Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-13-basic-switch-camera-mic.html)      |
+| Setting local video attributes  | [Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-14-basic-set-video-profile.html)      |
+| Dynamically enabling/disabling local audio/video | [Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-15-basic-dynamic-add-video.html) |
+| Sharing screen | [Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-basic-screencast.html)   |
+| Detecting volume level | [Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html) |
