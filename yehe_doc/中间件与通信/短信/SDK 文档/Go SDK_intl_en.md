@@ -84,8 +84,8 @@ func main() {
     cpf.SignMethod = "HmacSHA1"
 
     /* Instantiate the client object of the requested product (with SMS as an example)
-     * The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-    client, _ := sms.NewClient(credential, "ap-guangzhou", cpf)
+     * The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+    client, _ := sms.NewClient(credential, "ap-singapore", cpf)
 
     /* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
      * You can directly check the SDK source code to determine which attributes of the API can be set
@@ -184,8 +184,8 @@ func main() {
     cpf.SignMethod = "HmacSHA1"
 
     /* Instantiate the client object of the requested product (with SMS as an example)
-     * The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-    client, _ := sms.NewClient(credential, "ap-guangzhou", cpf)
+     * The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+    client, _ := sms.NewClient(credential, "ap-singapore", cpf)
 
     /* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
      * You can directly check the SDK source code to determine which attributes of the API can be set
@@ -271,8 +271,8 @@ func main() {
     cpf.SignMethod = "HmacSHA1"
 
     /* Instantiate the client object of the requested product (with SMS as an example)
-     * The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-    client, _ := sms.NewClient(credential, "ap-guangzhou", cpf)
+     * The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+    client, _ := sms.NewClient(credential, "ap-singapore", cpf)
 
     /* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
      * You can directly check the SDK source code to determine which attributes of the API can be set
@@ -364,8 +364,8 @@ func main() {
     cpf.SignMethod = "HmacSHA1"
 
     /* Instantiate an SMS client object
-     * The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-    client, _ := sms.NewClient(credential, "ap-guangzhou", cpf)
+     * The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+    client, _ := sms.NewClient(credential, "ap-singapore", cpf)
 
     /* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
     * You can directly check the SDK source code to determine which attributes of the API can be set
