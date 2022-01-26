@@ -9,9 +9,9 @@ The message deletion mechanism of Kafka may cause a problem where expired messag
 Here, the message timestamps in partition 0 and partition 7 are obviously different, and expired messages in partition 0 are not deleted promptly as shown below:
 
 - Partition 0:
-  ![](https://main.qcloudimg.com/raw/15259a044edd174cbe609a9a95e43ea2.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/59e9fde4aa856843b6cd6fba8af95c54.png)
 - Partition 7:
-  ![](https://main.qcloudimg.com/raw/bda384e0ed20e043f9416481e6d6d2a5.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/3b15267560e955a28743d94d6d007245.png)
 
 ## Kafka Message Deletion Mechanism
 
