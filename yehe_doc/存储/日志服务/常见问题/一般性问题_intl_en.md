@@ -38,14 +38,14 @@ CLS provides two levels of conceptual logic: logset and log topic. A logset cont
 Yes. CLS does not restrict log sources. Logs are collected to CLS provided that the log source is reachable to our server over the network.
 
 
-### How do I modify the Loglistener configuration after the server IP address is changed?
- - If the server is bound to the server group by server ID, there is no need to modify the Loglistener configuration. This method is recommended when the server IP frequently changes. For more information, see [Machine Group Management]( https://intl.cloud.tencent.com/document/product/614/17412).
- - If the server is bound to the server group by server IP, modify the configuration as follows:
-i. Modify the /etc/loglistener.conf file in the Loglistener installation directory (/user/local in this example).
+### How do I modify the LogListener configuration after the server IP address is changed?
+ - If the server is bound to the machine group by machine ID, there is no need to modify the LogListener configuration. This method is recommended when the server IP frequently changes. For more information, see [Machine Group Management]( https://intl.cloud.tencent.com/document/product/614/17412).
+ - If the server is bound to the machine group by IP address, modify the configuration as follows:
+i. Modify the /etc/loglistener.conf file in the LogListener installation directory (/user/local in this example).
 vi /usr/local/loglistener-2.3.0/etc/loglistener.conf
 ii. Press **i** to enter the edit mode.
 iii. Enter the new IP address in the group_ip section of the configuration file.
 iv. Press **Esc**, enter **:wq**, and press **Enter** to save and exit the editor.
-v. Run the following command to restart Loglistener.
+v. Run the following command to restart LogListener.
 /etc/init.d/loglistenerd restart
-vi. Log in to the [CLS Console](https://console.cloud.tencent.com/cls) and click **Server Group Management** on the left sidebar. Locate the server group to which the server binds and click **Modify** to enter the **Modify Server Group** page. Replace the old IP address with the new one, and click **OK**.
+vi. Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Machine Group Management** on the left sidebar. Locate the machine group to which the server binds and click **Modify** to enter the **Modify Machine Group** page. Replace the old IP address with the new one, and click **OK**.
