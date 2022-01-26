@@ -11,10 +11,11 @@ Below are the environment requirements for SDK development. You don’t need to 
 - targetSdkVersion: 26
 - Android Studio (Android Studio is recommended. You can also use Eclipse + ADT.)
 
+
 [](id:step1)
 ### Step 1. Integrate the SDK
 <dx-tabs>
-::: AAR Integration
+::: AAR
 1. **Create a project**
 ![](https://main.qcloudimg.com/raw/ca473c3bf484da3d7d959dbb83b192b1.png)
 2. **Configure the project**
@@ -49,7 +50,7 @@ defaultConfig {
 ```
   4. Click **Sync Now** to build the project.
 :::
-::: JAR + SO Integration
+::: JAR + SO
 1. **Library description**
 Decompress the ZIP file, and you will find a `libs` directory that contains a JAR file and several SO files, as shown below:
 <table>
@@ -83,15 +84,40 @@ The SO files, which provide the audio/video codec library, image processing libr
 Upload the SO files in the SDK package to COS and note the download address, e.g., `http://xxx-appid.cossh.myqcloud.com/so_files.zip`.
   2. **Show loading animation**
 When users start the SDK, for example, to play a video, show on the UI a loading animation and a message that relevant modules are being loaded.
-    3 **Download SO files**
+  3 **Download SO files**
 While users wait, your application can download the SO files from `http://xxx-appid.cossh.myqcloud.com/so_files.zip` and save them in your project directory, for example, in the `files` folder of your application’s root directory. Given the possibility of DNS hijacking by ISPs, please check the integrity of the SO files after download.
-    4 **Load SO files**
+  4 **Load SO files**
 After all the SO files are in place, call `setLibraryPath` of `TXLiveBase` to set the SDK’s library path to the directory of the downloaded SO files. The SDK will load from the directory the SO files needed to enable the requested UGSV feature.
+:::
+::: Gradle
+1. Add the LiteAVSDK_UGC dependency to `dependencies`.
+	- Run the following command if you use the 3.x version of com.android.tools.build:gradle.
+```
+dependencies {
+   implementation 'com.tencent.liteav:LiteAVSDK_UGC:latest.release'
+}
+```
+	- Run the following command if you use a 2.x version of `com.android.tools.build:gradle`.
+```
+dependencies {
+   compile 'com.tencent.liteav:LiteAVSDK_UGC:latest.release'
+}
+```
+2. In `defaultConfig`, specify the CPU architecture to be used by your application.
+```
+defaultConfig {
+   ndk {
+       abiFilters "armeabi", "armeabi-v7a"
+   }
+}
+```
+>?Currently, the SDK supports armeabi, armeabi-v7a, and arm64-v8a.
+3. Click **Sync Now** to automatically download the SDKs and integrate them into your project.
 :::
 </dx-tabs>
 
 [](id:step2)
-### Step 2. Configure application permissions
+### Step 2. Configure app permissions
 
 Configure application permissions in `AndroidManifest.xml`. Audio/Video applications generally need the following permissions:
 
@@ -129,6 +155,7 @@ public class DemoApplication extends Application {
 ```
 
 > ?If you use a v4.7 license and have updated the SDK to v4.9, you can click **Switch to New License** in the console to generate a new license key and URL. A new license can be used only on v4.9 or above and should be configured as described above.
+> <img src="https://qcloudimg.tencent-cloud.cn/raw/67f7df5cca54164c10dbf78c5b84ccdf.png" width=600px>
 
 [](id:step4)
 ### Step 4. Print logs
@@ -145,7 +172,7 @@ TXLiveBase.setLogLevel(TXLiveConstants.LOG_LEVEL_DEBUG);
 ```
 
 [](id:step5)
-### Step 5. Build and run your project
+### Step 5. Build and run the project
 
 Call an SDK API in your project to get the SDK version number and verify whether your project is correctly configured.
 
@@ -190,13 +217,13 @@ defaultConfig {
 -keep class com.tencent.** { *;}
 ```
 4. [Configure](https://intl.cloud.tencent.com/document/product/1069/37914) packaging options for your application.
-![](https://main.qcloudimg.com/raw/94320d4327cf90f19f98b8715e6b466a.png)
+![](https://main.qcloudimg.com/raw/b2dd9bde1cdf13ad5c77c1e00c4092aa.png)
 
 [](id:module)
 ## Integrating UGSV Modules
 This section describes how to quickly integrate the UGSV SDK into your existing project to enable a complete range of UGSV features including shooting, editing, and composition. The code and resources mentioned in this section can be found in the [SDK ZIP file](https://intl.cloud.tencent.com/document/product/1069/37914) and the [UGSV demo](https://github.com/tencentyun/UGSVSDK).
 
-[](id:integrated)
+[](id:Integrated)
 ### Integrating `UGCKit`
 
 [](id:UGCKit_step1)
@@ -346,7 +373,7 @@ compile project(':ugckit')
 
 [](id:UGCKit_step3)
 #### Step 3. Apply for a license
-Before using `UGCKit`, you must configure the license. For how to obtain a license, please see [License Application](https://intl.cloud.tencent.com/document/product/1069/38041).
+Before using `UGCKit`, you must configure the license. For how to obtain a license, please see [License Application](https://cloud.tencent.com/document/product/584/20333).
 
 
 [](id:fun)
@@ -420,7 +447,7 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
 ```
 
 **The UI view looks like this:**
-![Image description](https://main.qcloudimg.com/raw/077aa281195ba33fcaa67da2a13b1b60.png)
+![](https://main.qcloudimg.com/raw/077aa281195ba33fcaa67da2a13b1b60.png)
 
 [](id:v_import)
 #### 3. Implement video importing
@@ -456,7 +483,7 @@ public void onCreate(Bundle icicle) {
 ```
 
 **The UI view looks like this:**
-![Image description](https://main.qcloudimg.com/raw/cf043d198ce9bdbe32c3035b83afc18e.png)
+![](https://main.qcloudimg.com/raw/cf043d198ce9bdbe32c3035b83afc18e.png)
 
 [](id:v_cut)
 #### 4. Implement video clipping
@@ -508,7 +535,7 @@ protected void onResume() {
 ```
 
 **The UI view looks like this:**
-![Image description](https://main.qcloudimg.com/raw/5ffcdda31393c6994a93297bd6f9b25c.png)
+![](https://main.qcloudimg.com/raw/5ffcdda31393c6994a93297bd6f9b25c.png)
 
 [](id:v_effect_edit)
 #### 5. Implement special effects
@@ -557,7 +584,7 @@ protected void onResume() {
 ```
 
 **The UI view looks like this:**
-![Image description](https://main.qcloudimg.com/raw/fe56207213a5838189bf6583e10677bc.png)
+![](https://main.qcloudimg.com/raw/fe56207213a5838189bf6583e10677bc.png)
 
 ## Module Description
 
@@ -596,7 +623,7 @@ The directions below use the UGSV SDK as an example, and the `UGCKit` module is 
 [](id:que2_2)
 ### What should I do if a `UGCKit` build version error occurs?
 
--**Error message**:
+- **Error message**:
 ```
 ERROR: Unable to find method 'org.gradle.api.tasks.compile.CompileOptions.setBootClasspath(Ljava/lang/String;)V'.
 Possible causes for this unexpected error include:
@@ -605,7 +632,6 @@ Possible causes for this unexpected error include:
 - **Solution**: Check whether the versions of `Android Studio Gradle` and Gradle match. For details, please see [Update the Android Gradle plugin](https://developer.android.google.cn/studio/releases/gradle-plugin.html#updating-plugin).
 
 [](id:que2_3)
-
 ### What should I do if the following error occurs when I build `UGCKit`?
 - **Error message**:
 ![](https://main.qcloudimg.com/raw/e153fe9637d18f9d4df4c1a9fde51ee2.png)

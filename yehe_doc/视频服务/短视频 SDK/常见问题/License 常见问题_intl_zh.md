@@ -37,7 +37,6 @@
 ### 续期 License 时出现“license not exist”问题，如何解决？
 您可登录**云点播控制台**>**License 管理** >**[SDK License](https://console.cloud.tencent.com/vod/license/video)**根据以下方式排查：
 1. 请确认是否在**管理员**页面进行 License 绑定续期。
-![](https://main.qcloudimg.com/raw/446b60171da15bee7b10537ea2f63f32.png)
 2. 如果您是在**非管理员**页面下进行操作，请联系**管理员**协助您进行 License 变更操作。
 
 [](id:que7)
@@ -67,10 +66,7 @@ bundleid 类似于 Android 端的 package name，若您不集成 iOS 端，可�
 ### 个人购买的短视频 SDK License 可以用于企业吗？
 短视频 SDK 暂仅支持购买所在账号进行使用，暂无个人实名认证以及企业实名认证的限制。
 
-[](id:que12)
-### 为什么我的子账户已经授权了直播和点播所有权限，但是还是无法访问 License 控制台相关界面？
-#### 问题截图：
-<img src="https://main.qcloudimg.com/raw/7423d2e7912de344052c7891629d528b.png" width=400px>
+
 
 #### 问题解析：
 新版 SDK License 本次升级更新了接口，需要主账号为子账号独立进行重新授权策略后方可访问 License 控制台页面。
@@ -83,4 +79,4 @@ bundleid 类似于 Android 端的 package name，若您不集成 iOS 端，可�
 
 [](id:que13)
 ### 为什么接收不到 License 到期等相关消息通知？
-短视频 License 用于腾讯云视立方·音视频终端引擎管理功能模块的授权解锁，您可以通过在 [消息订阅](https://console.cloud.tencent.com/message/subscription) 中订阅音视频终端引擎，配置**站内信**/**邮件**/**短信**/**企微**等消息接收渠道，接收正式版 License 到期提醒。短视频正式版 License 将在到期时间距离当前时间为30天、15天、7天、1天时各向您发送一次到期提醒，提示您及时续费以免影响正常业务运行。
+您可以通过在 [消息订阅](https://console.cloud.tencent.com/message/subscription) 中订阅音视频终端引擎，配置**站内信**/**邮件**/**短信**/**企微**等消息接收渠道，接收正式版 License 到期提醒。短视频正式版 License 将在到期时间距离当前时间为30天、15天、7天、1天时各向您发送一次到期提醒，提示您及时续费以免影响正常业务运行。
