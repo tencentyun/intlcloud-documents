@@ -88,8 +88,8 @@ try {
     $clientProfile->setHttpProfile($httpProfile);
 
     // Instantiate the client object of the requested product (with SMS as an example). `clientProfile` is optional
-    // The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant
-    $client = new SmsClient($cred, "ap-guangzhou", $clientProfile);
+    // The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list.
+    $client = new SmsClient($cred, "ap-singapore", $clientProfile);
 
     // Instantiate an SMS message sending request object. Each API corresponds to a request object
     $req = new SendSmsRequest();
@@ -177,8 +177,8 @@ try {
     $clientProfile->setHttpProfile($httpProfile);
 
     // Instantiate the client object of the requested product (with SMS as an example). `clientProfile` is optional
-    // The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant
-    $client = new SmsClient($cred, "ap-guangzhou", $clientProfile);
+    // The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list.
+    $client = new SmsClient($cred, "ap-singapore", $clientProfile);
 
     // Instantiate an SMS message sending request object. Each API corresponds to a request object
     $req = new PullSmsSendStatusRequest();
@@ -253,8 +253,8 @@ try {
     $clientProfile->setHttpProfile($httpProfile);
 
     // Instantiate the client object of the requested product (with SMS as an example). `clientProfile` is optional
-    // The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant
-    $client = new SmsClient($cred, "ap-guangzhou", $clientProfile);
+    // The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list.
+    $client = new SmsClient($cred, "ap-singapore", $clientProfile);
 
     // Instantiate an SMS message sending request object. Each API corresponds to a request object
     $req = new SendStatusStatisticsRequest();
@@ -332,8 +332,8 @@ try {
     $clientProfile->setHttpProfile($httpProfile);
     
     // Instantiate an SMS client object. `clientProfile` is optional
-    // The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant
-    $client = new SmsClient($cred, "ap-guangzhou", $clientProfile);
+    // The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list.
+    $client = new SmsClient($cred, "ap-singapore", $clientProfile);
     
     // Instantiate an `AddSmsTemplateRequest` request object. Each API corresponds to a request object
     $req = new AddSmsTemplateRequest();
