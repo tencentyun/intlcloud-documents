@@ -9,9 +9,9 @@ Kafka 的消息删除机制会导致某些业务场景出现过期消息没有�
 这里分区0和分区7的消息时间戳存在明显差距，分区0的过期消息没有被及时删除，如下图所示：
 
 - 分区为0：
-  ![](https://main.qcloudimg.com/raw/15259a044edd174cbe609a9a95e43ea2.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/59e9fde4aa856843b6cd6fba8af95c54.png)
 - 分区为7：
-  ![](https://main.qcloudimg.com/raw/bda384e0ed20e043f9416481e6d6d2a5.png)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/3b15267560e955a28743d94d6d007245.png)
 
 ## Kafka 消息删除机制
 
