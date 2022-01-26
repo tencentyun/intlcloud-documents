@@ -1,8 +1,176 @@
 ## 概述
 
-用户在使用日志服务过程中可选择在不同地域创建日志集与日志主题。地域是指物理的数据中心的地理区域，不同地域之间网络完全隔离。用户可以根据自己的业务场景以及目标用户所在的地理位置，选择就近的地域存储，以降低日志数据的访问时延、提高访问速度。
+用户在使用日志服务（Cloud Log Service，CLS）过程中可选择在不同地域创建日志集与日志主题。地域（Region）是指物理的数据中心的地理区域，不同地域之间网络完全隔离。用户可以根据自己的业务场景以及目标用户所在的地理位置选择就近的地域，以降低日志数据的访问时延、提高访问速度。
 
-#### 可用地域及域名
+## 可用地域
+
+| 地域     | 简称             |
+| :------- | :--------------- |
+| 北京     | ap-beijing       |
+| 广州     | ap-guangzhou     |
+| 上海     | ap-shanghai      |
+| 成都     | ap-chengdu       |
+| 南京     | ap-nanjing       |
+| 重庆     | ap-chongqing     |
+| 中国香港 | ap-hongkong      |
+| 中国台北 | ap-taipei        |
+| 硅谷     | na-siliconvalley |
+| 弗吉尼亚 | na-ashburn       |
+| 新加坡   | ap-singapore     |
+| 曼谷     | ap-bangkok       |
+| 孟买     | ap-mumbai        |
+| 法兰克福 | eu-frankfurt     |
+| 东京     | ap-tokyo         |
+| 首尔     | ap-seoul         |
+| 莫斯科   | eu-moscow        |
+| 雅加达   | ap-jakarta       |
+| 多伦多   | na-toronto       |
+
+
+>? 
+> - 如果日志服务中接入了其他云产品，请您尽量选择与其他云产品相同的地域。相同地域的云产品之间通过内网读写数据，能有效降低延迟、提高访问速度。
+> 
+
+## 域名
+
+日志服务在不同模块使用的域名有所区别，具体如下：
+
+<dx-tabs>
+::: LogListener [](id:LogListener)
+
+ LogListener是 CLS 所提供的日志采集客户端，可将机器本地的日志上报至 CLS，其所使用的域名如下：
+<table>
+<thead>
+<tr>
+<th>地域</th>
+<th>简称</th>
+<th>内网域名</th>
+<th>外网域名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>北京</td>
+<td>ap-beijing</td>
+<td>ap-beijing.cls.tencentyun.com</td>
+<td>ap-beijing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>广州</td>
+<td>ap-guangzhou</td>
+<td>ap-guangzhou.cls.tencentyun.com</td>
+<td>ap-guangzhou.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>上海</td>
+<td>ap-shanghai</td>
+<td>ap-shanghai.cls.tencentyun.com</td>
+<td>ap-shanghai.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>ap-chengdu</td>
+<td>ap-chengdu.cls.tencentyun.com</td>
+<td>ap-chengdu.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>南京</td>
+<td>ap-nanjing</td>
+<td>ap-nanjing.cls.tencentyun.com</td>
+<td>ap-nanjing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>重庆</td>
+<td>ap-chongqing</td>
+<td>ap-chongqing.cls.tencentyun.com</td>
+<td>ap-chongqing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>中国香港</td>
+<td>ap-hongkong</td>
+<td>ap-hongkong.cls.tencentyun.com</td>
+<td>ap-hongkong.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>中国台北</td>
+<td>ap-taipei</td>
+<td>ap-taipei.cls.tencentyun.com</td>
+<td>ap-taipei.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>硅谷</td>
+<td>na-siliconvalley</td>
+<td>na-siliconvalley.cls.tencentyun.com</td>
+<td>na-siliconvalley.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>弗吉尼亚</td>
+<td>na-ashburn</td>
+<td>na-ashburn.cls.tencentyun.com</td>
+<td>na-ashburn.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>新加坡</td>
+<td>ap-singapore</td>
+<td>ap-singapore.cls.tencentyun.com</td>
+<td>ap-singapore.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>曼谷</td>
+<td>ap-bangkok</td>
+<td>ap-bangkok.cls.tencentyun.com</td>
+<td>ap-bangkok.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>孟买</td>
+<td>ap-mumbai</td>
+<td>ap-mumbai.cls.tencentyun.com</td>
+<td>ap-mumbai.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>法兰克福</td>
+<td>eu-frankfurt</td>
+<td>eu-frankfurt.cls.tencentyun.com</td>
+<td>eu-frankfurt.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>东京</td>
+<td>ap-tokyo</td>
+<td>ap-tokyo.cls.tencentyun.com</td>
+<td>ap-tokyo.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>首尔</td>
+<td>ap-seoul</td>
+<td>ap-seoul.cls.tencentyun.com</td>
+<td>ap-seoul.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>莫斯科</td>
+<td>eu-moscow</td>
+<td>eu-moscow.cls.tencentyun.com</td>
+<td>eu-moscow.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>雅加达</td>
+<td>ap-jakarta</td>
+<td>ap-jakarta.cls.tencentyun.com</td>
+<td>ap-jakarta.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>多伦多</td>
+<td>na-toronto</td>
+<td>na-toronto.cls.tencentyun.com</td>
+<td>na-toronto.cls.tencentcs.com</td>
+</tr>
+<tr>
+</tbody></table>
+:::
+::: 日志服务/sAPI/s3.0 [](id:API3)
+
+[日志服务 API 3.0](https://intl.cloud.tencent.com/document/product/614/11321) 是 CLS 最新版本的 API，符合腾讯云统一的 API 规范，可通过 API 管理日志主题和告警策略等资源，其所使用的域名如下：
+
+>? 通过外网访问时，也可使用统一域名 cls.tencentcloudapi.com，将根据调用接口时客户端所在位置，自动解析到最近的某个具体地域的服务器，对时延敏感的业务，建议指定带地域的域名。
+>
 
 | 地域     | 简称             | 内网域名                         | 外网域名                                 |
 | :------- | :--------------- | -------------------------------- | ---------------------------------------- |
@@ -26,33 +194,263 @@
 | 雅加达   | ap-jakarta       | cls.internal.tencentcloudapi.com | cls.ap-jakarta.tencentcloudapi.com       |
 | 多伦多   | na-toronto       | cls.internal.tencentcloudapi.com | cls.na-toronto.tencentcloudapi.com       |
 
+:::
+::: 日志服务/sAPI/s2017 [](id:API2017)
 
+[日志服务 API 2017](https://intl.cloud.tencent.com/document/product/614/16907) 是日志服务旧版本 API，不建议单独使用，其所使用的域名如下：
 
-## 注意事项
+<table>
+<thead>
+<tr>
+<th>地域</th>
+<th>简称</th>
+<th>内网域名</th>
+<th>外网域名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>北京</td>
+<td>ap-beijing</td>
+<td>ap-beijing.cls.tencentyun.com</td>
+<td>ap-beijing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>广州</td>
+<td>ap-guangzhou</td>
+<td>ap-guangzhou.cls.tencentyun.com</td>
+<td>ap-guangzhou.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>上海</td>
+<td>ap-shanghai</td>
+<td>ap-shanghai.cls.tencentyun.com</td>
+<td>ap-shanghai.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>ap-chengdu</td>
+<td>ap-chengdu.cls.tencentyun.com</td>
+<td>ap-chengdu.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>南京</td>
+<td>ap-nanjing</td>
+<td>ap-nanjing.cls.tencentyun.com</td>
+<td>ap-nanjing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>重庆</td>
+<td>ap-chongqing</td>
+<td>ap-chongqing.cls.tencentyun.com</td>
+<td>ap-chongqing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>中国香港</td>
+<td>ap-hongkong</td>
+<td>ap-hongkong.cls.tencentyun.com</td>
+<td>ap-hongkong.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>中国台北</td>
+<td>ap-taipei</td>
+<td>ap-taipei.cls.tencentyun.com</td>
+<td>ap-taipei.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>硅谷</td>
+<td>na-siliconvalley</td>
+<td>na-siliconvalley.cls.tencentyun.com</td>
+<td>na-siliconvalley.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>弗吉尼亚</td>
+<td>na-ashburn</td>
+<td>na-ashburn.cls.tencentyun.com</td>
+<td>na-ashburn.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>新加坡</td>
+<td>ap-singapore</td>
+<td>ap-singapore.cls.tencentyun.com</td>
+<td>ap-singapore.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>曼谷</td>
+<td>ap-bangkok</td>
+<td>ap-bangkok.cls.tencentyun.com</td>
+<td>ap-bangkok.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>孟买</td>
+<td>ap-mumbai</td>
+<td>ap-mumbai.cls.tencentyun.com</td>
+<td>ap-mumbai.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>法兰克福</td>
+<td>eu-frankfurt</td>
+<td>eu-frankfurt.cls.tencentyun.com</td>
+<td>eu-frankfurt.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>东京</td>
+<td>ap-tokyo</td>
+<td>ap-tokyo.cls.tencentyun.com</td>
+<td>ap-tokyo.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>首尔</td>
+<td>ap-seoul</td>
+<td>ap-seoul.cls.tencentyun.com</td>
+<td>ap-seoul.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>莫斯科</td>
+<td>eu-moscow</td>
+<td>eu-moscow.cls.tencentyun.com</td>
+<td>eu-moscow.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>雅加达</td>
+<td>ap-jakarta</td>
+<td>ap-jakarta.cls.tencentyun.com</td>
+<td>ap-jakarta.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>多伦多</td>
+<td>na-toronto</td>
+<td>na-toronto.cls.tencentyun.com</td>
+<td>na-toronto.cls.tencentcs.com</td>
+</tr>
+</tbody></table>
+:::
+::: Kafka/s上传日志 [](id:Kafka)
 
-- 通过外网访问时也可使用统一域名cls.tencentcloudapi.com (仅支持非金融区)，将根据调用接口时客户端所在位置，自动解析到最近的某个具体地域的服务器，对时延敏感的业务，建议指定带地域的域名。
-- 如果日志服务中接入了其他云产品，请您尽量选择与其他云产品相同的地域。相同地域的云产品之间通过内网读写数据，能有效降低延迟和提高访问速度。
-- 以上域名仅支持日志服务API 3.0，LogListener及[日志服务 API 2017](https://intl.cloud.tencent.com/document/product/614/16907)使用域名见下表，使用Kafka协议上传日志参见[使用 Kafka 协议上传日志操作指南](https://intl.cloud.tencent.com/document/product/614/43574)
+[使用 Kafka 协议上传日志](https://intl.cloud.tencent.com/document/product/614/43574) 支持使用 Kafka Producer SDK 和其他 Kafka 相关 agent 上传日志到日志服务，其所使用的域名如下：
 
-| 地域     | 简称             | 内网域名                            | 外网域名                           |
-| -------- | ---------------- | ----------------------------------- | ---------------------------------- |
-| 北京     | ap-beijing       | ap-beijing.cls.tencentyun.com       | ap-beijing.cls.tencentcs.com       |
-| 广州     | ap-guangzhou     | ap-guangzhou.cls.tencentyun.com     | ap-guangzhou.cls.tencentcs.com     |
-| 上海     | ap-shanghai      | ap-shanghai.cls.tencentyun.com      | ap-shanghai.cls.tencentcs.com      |
-| 成都     | ap-chengdu       | ap-chengdu.cls.tencentyun.com       | ap-chengdu.cls.tencentcs.com       |
-| 南京     | ap-nanjing       | ap-nanjing.cls.tencentyun.com       | ap-nanjing.cls.tencentcs.com       |
-| 重庆     | ap-chongqing     | ap-chongqing.cls.tencentyun.com     | ap-chongqing.cls.tencentcs.com     |
-| 中国香港 | ap-hongkong      | ap-hongkong.cls.tencentyun.com      | ap-hongkong.cls.tencentcs.com      |
-| 中国台北 | ap-taipei        | ap-taipei.cls.tencentyun.com        | ap-taipei.cls.tencentcs.com        |
-| 硅谷     | na-siliconvalley | na-siliconvalley.cls.tencentyun.com | na-siliconvalley.cls.tencentcs.com |
-| 弗吉尼亚 | na-ashburn       | na-ashburn.cls.tencentyun.com       | na-ashburn.cls.tencentcs.com       |
-| 新加坡   | ap-singapore     | ap-singapore.cls.tencentyun.com     | ap-singapore.cls.tencentcs.com     |
-| 曼谷     | ap-bangkok       | ap-bangkok.cls.tencentyun.com       | ap-bangkok.cls.tencentcs.com       |
-| 孟买     | ap-mumbai        | ap-mumbai.cls.tencentyun.com        | ap-mumbai.cls.tencentcs.com        |
-| 法兰克福 | eu-frankfurt     | eu-frankfurt.cls.tencentyun.com     | eu-frankfurt.cls.tencentcs.com     |
-| 东京     | ap-tokyo         | ap-tokyo.cls.tencentyun.com         | ap-tokyo.cls.tencentcs.com         |
-| 首尔     | ap-seoul         | ap-seoul.cls.tencentyun.com         | ap-seoul.cls.tencentcs.com         |
-| 莫斯科   | eu-moscow        | eu-moscow.cls.tencentyun.com        | eu-moscow.cls.tencentcs.com        |
-| 雅加达   | ap-jakarta       | ap-jakarta.cls.tencentyun.com       | ap-jakarta.cls.tencentcs.com       |
-| 多伦多   | na-toronto       | na-toronto.cls.tencentyun.com       | na-toronto.cls.tencentcs.com       |
-
+<table>
+<thead>
+<tr>
+<th>地域</th>
+<th>简称</th>
+<th>内网域名</th>
+<th>外网域名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>北京</td>
+<td>ap-beijing</td>
+<td>bj-producer.cls.tencentyun.com</td>
+<td>bj-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>广州</td>
+<td>ap-guangzhou</td>
+<td>gz-producer.cls.tencentyun.com</td>
+<td>gz-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>上海</td>
+<td>ap-shanghai</td>
+<td>sh-producer.cls.tencentyun.com</td>
+<td>sh-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>ap-chengdu</td>
+<td>cd-producer.cls.tencentyun.com</td>
+<td>cd-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>南京</td>
+<td>ap-nanjing</td>
+<td>nj-producer.cls.tencentyun.com</td>
+<td>nj-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>重庆</td>
+<td>ap-chongqing</td>
+<td>cq-producer.cls.tencentyun.com</td>
+<td>cq-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>中国香港</td>
+<td>ap-hongkong</td>
+<td>hk-producer.cls.tencentyun.com</td>
+<td>hk-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>中国台北</td>
+<td>ap-taipei</td>
+<td>tpe-producer.cls.tencentyun.com</td>
+<td>tpe-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>硅谷</td>
+<td>na-siliconvalley</td>
+<td>usw-producer.cls.tencentyun.com</td>
+<td>usw-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>弗吉尼亚</td>
+<td>na-ashburn</td>
+<td>use-producer.cls.tencentyun.com</td>
+<td>use-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>新加坡</td>
+<td>ap-singapore</td>
+<td>sg-producer.cls.tencentyun.com</td>
+<td>sg-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>曼谷</td>
+<td>ap-bangkok</td>
+<td>th-producer.cls.tencentyun.com</td>
+<td>th-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>孟买</td>
+<td>ap-mumbai</td>
+<td>in-producer.cls.tencentyun.com</td>
+<td>in-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>法兰克福</td>
+<td>eu-frankfurt</td>
+<td>de-producer.cls.tencentyun.com</td>
+<td>de-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>东京</td>
+<td>ap-tokyo</td>
+<td>jp-producer.cls.tencentyun.com</td>
+<td>jp-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>首尔</td>
+<td>ap-seoul</td>
+<td>kr-producer.cls.tencentyun.com</td>
+<td>kr-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>莫斯科</td>
+<td>eu-moscow</td>
+<td>ru-producer.cls.tencentyun.com</td>
+<td>ru-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>雅加达</td>
+<td>ap-jakarta</td>
+<td>jkt-producer.cls.tencentyun.com</td>
+<td>jkt-producer.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>多伦多</td>
+<td>na-toronto</td>
+<td>ca-producer.cls.tencentyun.com</td>
+<td>ca-producer.cls.tencentcs.com</td>
+</tr>
+</tbody></table>
+:::
+</dx-tabs>

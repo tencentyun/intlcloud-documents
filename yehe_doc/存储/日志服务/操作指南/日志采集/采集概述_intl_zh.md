@@ -1,0 +1,91 @@
+## 概述
+
+日志服务（Cloud Log Service，CLS）提供采集客户端， API 接入方式和 SDK 采集方式，方便用户将应用程序日志导入到日志服务。目前日志服务提供结构化上传方式，要求数据按照 key-value 的方式进行上传。
+
+## 日志结构化
+
+日志的结构化指您的日志数据将以 key-value 的形式存储在 CLS 平台上。结构化后的日志数据可以根据指定的键值进行日志检索、日志分析及日志投递。日志服务允许直接上报结构化的数据，详见以下说明：
+
+例如，一条本地原始日志为：
+
+```shell
+10.20.20.10;[Tue Jan 22 14:49:45 CST 2019 +0800];GET /online/sample HTTP/1.1;127.0.0.1;200;647;35;http://127.0.0.1/
+```
+
+指定日志的解析方式为分隔符方式，以`;`分号作为分隔符，可以将该条日志解析为多个字段组，每个字段组按 key-value 键值对的方式进行组织，为每个 key 定义一个键名称，如下所示：
+
+```shell
+IP: 10.20.20.10
+time: [Tue Jan 22 14:49:45 CST 2019 +0800]
+request: GET /online/sample HTTP/1.1
+host: 127.0.0.1
+status: 200
+length: 647
+bytes: 35
+referer: http://127.0.0.1/
+```
+
+LogListener 提供多种解析方式，其中单行全文或多行全文上报的日志也会解析成结构化形式，LogListener 会默认添加`__CONTENT__` 作为 key，原文作为 value，以此组成 key-value 键值对，如下表所示：
+
+| LogListener 解析方式 | 键名称（key） | 解释说明                                              |
+| -------------------- | ------------- | ----------------------------------------------------- |
+| 单行/多行全文        | `__CONTENT__`  | 默认 `__CONTENT__` 为键名                              |
+| json 格式            | json 中的名称 | 自动以 json 日志原文中的名称/值，作为 key-value 键值对  |
+| 分隔符格式           | 自定义        | 根据分隔符号划分字段后，需为每组字段自定义 key 名称   |
+| 完全正则             | 自定义        | 根据正则表达式提取字段后，需为每组字段自定义 key 名称 |
+
+
+## 采集方式
+
+日志服务提供多种采集方式：
+
+| 采集方式               | 描述                                                         |
+| :--------------------- | ------------------------------------------------------------ |
+| API 方式采集           | 通过调用 [日志服务 API](https://intl.cloud.tencent.com/document/product/614/12445) 上传结构化日志至日志服务，详情请参考 [上传日志接口](https://intl.cloud.tencent.com/document/product/614/16873) 文档 |
+| SDK 方式采集           | 通过使用 SDK 上传结构化日志至日志服务，详情请参考 [SDK 采集](https://intl.cloud.tencent.com/document/product/614/45006) 文档                                              |
+| LogListener 客户端采集 | LogListener 是日志服务提供的日志采集客户端，通过控制台简单配置可快速接入日志服务，详情请参考 [LogListener 使用流程](https://intl.cloud.tencent.com/document/product/614/31578) |
+
+采集方式对比：
+
+| 类别名称 | LogListener 采集                   | API 方式采集                   |
+| -------- | ---------------------------------- | ------------------------------ |
+| 修改代码 | 对应用程序是无侵入式，无需修改代码 | 需修改应用程序代码才能上报日志 |
+| 断点续传 | 支持断点续传日志                   | 自行代码实现                   |
+| 失败重传 | 自带重试机制                       | 自行代码实现                   |
+| 本地缓存 | 支持本地缓存，高峰期间保障数据完整 | 自行代码实现                   |
+| 资源占用 | 占用内存、CPU 等资源               | 无额外资源占用                 |
+
+## 日志源接入
+
+不同的日志源可以选择不同的日志接入方式，详情参考以下列表：
+
+**日志源类别**
+
+| 日志源类别   | 推荐接入方式 |
+| ------------ | ------------ |
+| 程序直接输出 | API          |
+| 本地日志文件 | LogListener  |
+
+**日志源环境**
+
+| 系统环境    | 推荐接入方式                        |
+| ----------- | ----------------------------------- |
+| Linux/Unix  | LogListener                         |
+| Windows     | API（LogListener 暂不支持 Windows） |
+| iOS/Android | 提供 [SDK 采集](https://intl.cloud.tencent.com/document/product/614/45006)         |
+
+**云产品日志**
+
+| 云产品名称               | 推荐接入方式                                                 |
+| ------------------------ | ------------------------------------------------------------ |
+| 云服务器（Cloud Virtual Machine，CVM）             | 安装配置 LogListener，[采集指引](https://intl.cloud.tencent.com/document/product/614/17414) |
+| 容器服务（Tencent Kubernetes Engine，TKE）             | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/457/32419) |
+| 内容分发网络（Content Delivery Network，CDN）          | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/228/35380) |
+| 负载均衡（Cloud Load Balancer，CLB）              | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/214/35063) |
+| 云函数（Serverless Cloud Function，SCF）               | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/583/34876) |
+| 标准直播（Live Video Broadcasting，LVB）             | 控制台配置，接入指引 |
+| 网络流日志（Flow Logs，FL）            | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/682/18966) |
+| 腾讯云 TI 平台 TI-ONE | 控制台配置，接入指引 |
+| 游戏联机对战引擎（Mobile Game Online Battle Engine，MGOBE）    | 控制台配置，接入指引 |
+
+

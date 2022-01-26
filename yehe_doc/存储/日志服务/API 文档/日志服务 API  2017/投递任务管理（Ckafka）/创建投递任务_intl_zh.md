@@ -2,7 +2,7 @@
 
 本接口用于创建投递任务。
 
->! 创建时，需自行处理对 Ckafka 的写权限。
+>! 创建投递 Ckafka 投递任务时，需要确认对 Ckafka 的 Topic 具有写权限。
 >
 
 ## 请求
@@ -89,4 +89,4 @@ Content-Length: 0
 
 ## 错误码
 
-参见 [错误码](https://intl.cloud.tencent.com/document/product/614/42832)。
+参见 [错误码](https://intl.cloud.tencent.com/document/product/614/12402)。
