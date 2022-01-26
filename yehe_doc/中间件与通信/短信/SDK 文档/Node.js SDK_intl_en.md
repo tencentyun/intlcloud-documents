@@ -60,8 +60,8 @@ const client = new smsClient({
     secretId: process.env.secretId,
     secretKey: process.env.secretKey,
   },
-  /* Required: region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-  region: "ap-guangzhou",
+  /* Required: region information. The parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+  region: "ap-singapore",
   /* Optional:
    * Client configuration object. You can specify the timeout period and other configuration items */
   profile: {
@@ -136,8 +136,8 @@ const client = new smsClient({
     secretId: process.env.secretId,
     secretKey: process.env.secretKey,
   },
-  /* Required: region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-  region: "ap-guangzhou",
+  /* Required: region information. The parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+  region: "ap-singapore",
   /* Optional:
    * Client configuration object. You can specify the timeout period and other configuration items */
   profile: {
@@ -199,8 +199,8 @@ const client = new smsClient({
     secretId: process.env.secretId,
     secretKey: process.env.secretKey,
   },
-  /* Required: region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-  region: "ap-guangzhou",
+  /* Required: region information. The parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+  region: "ap-singapore",
   /* Optional:
    * Client configuration object. You can specify the timeout period and other configuration items */
   profile: {
@@ -268,8 +268,8 @@ const client = new smsClient({
     secretId: process.env.secretId,
     secretKey: process.env.secretKey,
   },
-  /* Required: region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-  region: "ap-guangzhou",
+  /* Required: region information. The parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+  region: "ap-singapore",
   /* Optional:
    * Client configuration object. You can specify the timeout period and other configuration items */
   profile: {
