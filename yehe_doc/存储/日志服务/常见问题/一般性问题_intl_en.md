@@ -48,4 +48,4 @@ iii. Enter the new IP address in the group_ip section of the configuration file.
 iv. Press **Esc**, enter **:wq**, and press **Enter** to save and exit the editor.
 v. Run the following command to restart LogListener.
 /etc/init.d/loglistenerd restart
-vi. Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Machine Group Management** on the left sidebar. Locate the machine group to which the server binds and click **Edit** to enter the **Modify Machine Group Configuration** window. Replace the old IP address with the new one, and click **OK**.
+vi. Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Machine Group Management** on the left sidebar. Locate the machine group to which the server binds and click **Edit**. In the pop-up window, replace the old IP address with the new one, and click **OK**.
