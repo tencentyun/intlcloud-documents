@@ -11,8 +11,8 @@ SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [�
 
 ## 前提条件
 
-- 已开通短信服务，具体操作请参见 [国内短信快速入门](https://intl.cloud.tencent.com/document/product/382/35449)。
-- 如需发送国内短信，需要先购买国内短信套餐包。
+- 已开通短信服务，具体操作请参见 [中国大陆地区短信快速入门](https://intl.cloud.tencent.com/document/product/382/35449)。
+- 如需发送中国大陆地区短信，需要先购买中国大陆地区短信套餐包。
 - 已准备依赖环境：JDK 7 及以上版本。
 - 已在访问管理控制台 >**[API密钥管理](https://console.cloud.tencent.com/cam/capi)**页面获取 SecretID 和 SecretKey。
  - SecretID 用于标识 API 调用者的身份。
@@ -112,8 +112,8 @@ public class SendSms
             clientProfile.setSignMethod("HmacSHA256");
             clientProfile.setHttpProfile(httpProfile);
             /* 实例化要请求产品(以sms为例)的client对象
-             * 第二个参数是地域信息，可以直接填写字符串ap-guangzhou，或者引用预设的常量 */
-            SmsClient client = new SmsClient(cred, "ap-guangzhou",clientProfile);
+             * 第二个参数是地域信息，根据您选择的国际站地域，如您选择的是新加坡国际站，则应该填入字符串ap-singapore，地域列表可参考  https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list */
+            SmsClient client = new SmsClient(cred, "ap-singapore",clientProfile);
             /* 实例化一个请求对象，根据调用的接口和实际情况，可以进一步设置请求参数
              * 你可以直接查询SDK源码确定接口有哪些属性可以设置
              * 属性可能是基本类型，也可能引用了另一个数据结构
@@ -135,7 +135,7 @@ public class SendSms
             String signName = "签名内容";
             req.setSignName(signName);
 
-            /* 国际/港澳台短信 SenderId: 国内短信填空，默认未开通，如需开通请联系 [sms helper] */
+            /* 国际/港澳台短信 SenderId: 中国大陆地区短信填空，默认未开通，如需开通请联系 [sms helper] */
             String senderid = "";
             req.setSenderId(senderid);
 
@@ -235,8 +235,8 @@ public class PullSmsSendStatus {
             clientProfile.setHttpProfile(httpProfile);
 
             /* 实例化要请求产品(以sms为例)的client对象
-             * 第二个参数是地域信息，可以直接填写字符串ap-guangzhou，或者引用预设的常量 */
-            SmsClient client = new SmsClient(cred, "ap-guangzhou", clientProfile);
+             * 第二个参数是地域信息，根据您选择的国际站地域，如您选择的是新加坡国际站，则应该填入字符串ap-singapore，地域列表可参考  https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list */
+            SmsClient client = new SmsClient(cred, "ap-singapore", clientProfile);
 
             /* 实例化一个请求对象，根据调用的接口和实际情况，可以进一步设置请求参数
              * 你可以直接查询SDK源码确定接口有哪些属性可以设置
@@ -330,8 +330,8 @@ public class SendStatusStatistics {
             clientProfile.setHttpProfile(httpProfile);
 
             /* 实例化要请求产品(以sms为例)的client对象
-             * 第二个参数是地域信息，可以直接填写字符串ap-guangzhou，或者引用预设的常量 */
-            SmsClient client = new SmsClient(cred, "ap-guangzhou",clientProfile);
+             * 第二个参数是地域信息，根据您选择的国际站地域，如您选择的是新加坡国际站，则应该填入字符串ap-singapore，地域列表可参考  https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list */
+            SmsClient client = new SmsClient(cred, "ap-singapore",clientProfile);
 
             /* 实例化一个请求对象，根据调用的接口和实际情况，可以进一步设置请求参数
              * 你可以直接查询SDK源码确定接口有哪些属性可以设置
@@ -429,8 +429,8 @@ public class AddSmsTemplate
           clientProfile.setSignMethod("HmacSHA256");
           clientProfile.setHttpProfile(httpProfile);
           /* 实例化 SMS 的 client 对象
-           * 第二个参数是地域信息，可以直接填写字符串 ap-guangzhou，或者引用预设的常量 */
-          SmsClient client = new SmsClient(cred, "ap-guangzhou", clientProfile);
+           * 第二个参数是地域信息，根据您选择的国际站地域，如您选择的是新加坡国际站，则应该填入字符串ap-singapore，地域列表可参考  https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list */
+          SmsClient client = new SmsClient(cred, "ap-singapore", clientProfile);
           /* 实例化一个请求对象，根据调用的接口和实际情况，可以进一步设置请求参数
            * 您可以直接查询 SDK 源码确定接口有哪些属性可以设置
            * 属性可能是基本类型，也可能引用了另一个数据结构
@@ -451,7 +451,7 @@ public class AddSmsTemplate
            /* 短信类型：0表示普通短信, 1表示营销短信 */
           long smstype = 0;
           req.setSmsType(smstype);
-           /* 是否国际/港澳台短信：0：表示国内短信，1：表示国际/港澳台短信。 */
+           /* 是否国际/港澳台短信：0：表示中国大陆地区短信，1：表示国际/港澳台短信。 */
           long international = 0;
           req.setInternational(international);
            /* 模板备注：例如申请原因，使用场景等 */
