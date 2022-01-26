@@ -12,7 +12,7 @@ A `UserID` (user ID) uniquely identifies a user in a TRTC application. It can co
 - The first user who enters a room is the owner of the room. Room owners cannot close rooms manually.
 - **In the call modes**, TRTC closes a room when all users exit the room.
 - **In the live streaming modes**, if the last user who exits a room is an anchor, TRTC will close the room immediately; if the user is audience, TRTC will close the room in 10 minutes.
-- A user will be removed from a room 90 seconds after unexpected disconnection. If all users are unexpectedly disconnected, the room will be closed after 90 seconds. **The waiting time after disconnection is also billed**.
+- A user will be removed from a room 90 seconds after unexpected disconnection. If all users are unexpectedly disconnected, the room will be closed after 90 seconds. **The wait duration after an user is disconnected exceptionally will also be billed.**
 - If a user attempts to enter a room that does not exist, TRTC will automatically create a room with the ID entered.
 
 [](id:que4)
@@ -43,7 +43,7 @@ The following application scenarios are supported:
 
 [](id:que9)
 ### What platforms does TRTC support?
-TRTC supports platforms including iOS, Android, Windows (C++), Unity, macOS, web, and Electron. For more information, see [Supported Platforms](https://intl.cloud.tencent.com/document/product/647/35078).
+TRTC supports platforms including iOS, Android, Windows (C++), Windows (C#), Unity, macOS, web, and Electron. For more information, please see [Supported Platforms](https://intl.cloud.tencent.com/document/product/647/35078).
 
 [](id:que10)
 ### What are the differences among LiteAV_TRTC, TRTC Professional, and TRTC Enterprise? 
@@ -81,7 +81,7 @@ There isn’t a limit.
 
 [](id:que15)
 ### Can TRTC be deployed on-premises?
-On-premises TRTC is not commercially available yet. If you have questions about it or want to use it, please contact us at colleenyu@tencent.com.
+Private deployment of TRTC is not commercially available yet. If you have questions about it or want to use it, please contact us at colleenyu@tencent.com.
 
 [](id:que16)
 ### To enable relayed live streaming in TRTC, do I need to get an ICP filing for my domain name?
@@ -111,10 +111,9 @@ Yes. For details, see the following documents:
 - [Real-Time Screen Sharing (macOS)](https://intl.cloud.tencent.com/document/product/647/37336)
 - [Real-Time Screen Sharing (Web)](https://intl.cloud.tencent.com/document/product/647/35163)
 
-For more information on the screen sharing APIs, see [Client APIs > All Platforms (C++)](https://intl.cloud.tencent.com/document/product/647/35131). You can also use [Electron APIs](https://intl.cloud.tencent.com/document/product/647/35141).
+For more information on the screen sharing APIs, please see [Client APIs > All Platforms (C++) > Overview](https://intl.cloud.tencent.com/document/product/647/35131) or [Client APIs > Electron > Overview](https://intl.cloud.tencent.com/document/product/647/35141).
 
 [](id:que23)
-
 ### Can I share local video files in TRTC?
 
 Yes. You can achieve this using the [Custom Capturing and Rendering](https://intl.cloud.tencent.com/document/product/647/35158) feature.
@@ -166,7 +165,7 @@ TRTC has four room entry modes. Video call (`VideoCall`) and audio call (·Voice
 
 [](id:que33)
 ### Can I use the hands-free mode during video calls in TRTC?
-Yes. You can use the hands-free mode by setting the audio route via the `setAudioRoute` API in native apps and the `sound-mode` attribute of the &lt;live-player&gt; tag in Mini Program.
+Yes. You can enable the hands-free mode by setting audio routes. In a native SDK, use the `setAudioRoute ` API to switch routes.
 
 [](id:que34)
 ### Does TRTC support volume reminders?
@@ -225,9 +224,9 @@ No. Custom message sending is intended for simple and low-frequency signaling sc
 
 [](id:que46)
 ### Can I loop background music in TRTC? Can I adjust the playback progress of background music?  
-Yes. You can call the playback API again in the playback completion callback to loop background music. `seekMusicToPosInMS` of `TXAudioEffectManager` can be used to set the playback progress.
+Yes. You can call the playback API again in the completion callback to loop background music, and call `setBGMPosition()` to set the playback progress.
 
->?  `setBGMPosition()` of `TXAudioEffectManager` has been replaced with `seekMusicToPosInMS` since version 7.3.
+>?  `setBGMPosition()` has been replaced with `TXAudioEffectManager seekMusicToPosInMS` since version 7.3.
 
 [](id:que47)
 ### Can I listen for the entry/exit of users through callbacks in TRTC? Can I use `onUserEnter` or `onUserExit`?
@@ -242,99 +241,116 @@ You can listen for the events through the following callbacks:
 - `onConnectionRecovery`: the SDK is reconnected to the server.
 
 [](id:que49)
+### Does the TRTC SDK support reconnection?
+The SDK supports the unlimited reconnection mechanism for user disconnection. The specific connection status and processing logic during reconnection are as detailed below:
+The following figure shows the listening callback events received between when user `Userid1` joins a channel and when the user is disconnected and joins the room again:
+![](https://qcloudimg.tencent-cloud.cn/raw/6fa1c30fbdef1ba8d40dba183a5f6d74.png)
+**Description**:
+
+- T1: the user calls the `enterRoom` API to initiate a room entry request.
+- T2: the `onEnterRoom` callback is received.
+- T3: the client is disconnected due to a network problem, and the SDK tries to enter the room again.
+- T4: if the client fails to connect to the server in 8 seconds, the `onConnectionLost` disconnection callback will be received.
+- T5: if the client still fails to connect to the server, the `onTryToReconnect` reconnection callback will be received once every 3 seconds.
+- T6: then, the `onTryToReconnect` retry callback will be received once every 24 seconds.
+- T7: if reconnection succeeds at any time point during disconnection, the `onConnectionRecovery` recovery callback will be received.
+
+[](id:que50)
 ### Is there a callback for first frame rendering? Can I listen for the start of image rendering or audio playback?
 Yes. You can use `onFirstVideoFrame` and `onFirstAudioFrame` to listen for the events.
 
-[](id:que50)
+[](id:que51)
 ### Can I take a screenshot of a video in TRTC?
 Currently, you can call `snapshotVideo()` on iOS and Android to take screenshots of local and remote videos.
 
-[](id:que51)
+[](id:que52)
 ### Why do I fail to connect peripheral devices such as Bluetooth earphones to TRTC?
 Currently, TRTC supports mainstream Bluetooth earphones and peripherals, but for some devices, there are still compatibility issues. We recommend that you use our official demos and QQ audio/video calls to test the compatibility of a device.
 
-[](id:que52)
+[](id:que53)
+
 ### How do I get information such as the upstream/downstream bitrate, resolution, packet loss rate, and audio sample rate of a TRTC audio/video call?
 You can call the `onStatistics()` API of the SDK to get the statistics.
 
-[](id:que53)
+[](id:que54)
 ### Does TRTC’s background music API `playBGM()` support online music?
 No. Currently, it supports only local music. You can download an online music file and then call `playBGM()` to play it back.
 
-[](id:que54)
+[](id:que55)
 ### Can I set the local audio capturing volume or the playback volume of each remote user?
 Yes. You can call `setAudioCaptureVolume()` to set the audio capturing volume of the SDK and `setRemoteAudioVolume()` to set the playback volume of a remote user.
 
-[](id:que55)
+[](id:que56)
 ### What are the differences between `stopLocalPreview` and `muteLocalVideo`?
 - `stopLocalPreview` is used to stop local video capturing. If you call this API, both you and other users will not be able to see your image.
 - `muteLocalVideo` is used to stop the sending of local video images. If you call this API, other users will not see your image, but you can still preview your own image.
 
-[](id:que56)
+[](id:que57)
 ### What are the differences between `stopLocalAudio` and `muteLocalAudio`? 
 - `stopLocalAudio` is used to disable the capturing and sending of local audio.
 - When `muteLocalAudio` is called, TRTC does not stop the sending of audio/video data. It continues to send muted data packets at extremely low bitrate.
 
-[](id:que57)
+[](id:que58)
 ### What resolutions does the TRTC SDK support?
 We recommend that you set the resolution as instructed in [Setting Image Quality](https://intl.cloud.tencent.com/document/product/647/35153) for better image quality.
 
-[](id:que58)
+[](id:que59)
 ### How do I set the upstream video bitrate, resolution, and frame rate in the TRTC SDK? 
 Call the `setVideoEncoderParam()` API of `TRTCCloud` and set `videoResolution` (resolution), `videoFps` (frame rate), and `videoBitrate` (bitrate) in `TRTCVideoEncParam`.
 
-[](id:que59)
+[](id:que60)
 ### How do I rotate videos in the TRTC SDK?  
 Please see [Video Image Rotation and Zooming](https://intl.cloud.tencent.com/document/product/647/35154).
 
-[](id:que60)
-### How do I make a video call in the landscape mode? 
-Please see [Video Image Rotation and Zooming](https://intl.cloud.tencent.com/document/product/647/35154).
-
 [](id:que61)
+### How do I make a video call in the landscape mode? 
+For more information, please see [Implementing Video Call in Landscape Mode on Android in TRTC](https://cloud.tencent.com/developer/article/1492095) and [Video Image Rotation and Zooming](https://intl.cloud.tencent.com/document/product/647/35154).
+
+[](id:que62)
 ### How do I match the rotation degrees of the local and remote images if they are different?  
 Please see [Video Image Rotation and Zooming](https://intl.cloud.tencent.com/document/product/647/35154).
 
 
-[](id:que62)
+[](id:que63)
 ### What image quality-related settings (bitrate, resolution, and frame rate) does TRTC recommend?
 See [Setting Image Quality > Recommended Configuration](https://intl.cloud.tencent.com/document/product/647/35153#.E6.8E.A8.E8.8D.90.E7.9A.84.E9.85.8D.E7.BD.AE).
 
-[](id:que63)
+[](id:que64)
 ### Can I test my network speed in TRTC? How?  
 Yes, you can. For details, see [Testing Network Speed Before Chat](https://intl.cloud.tencent.com/document/product/647/35156).
 
-[](id:que64)
+[](id:que65)
 ### Can I control access to a TRTC room to allow only authorized users to enter the room? 
 Yes. For details, please see [Enabling Advanced Permission Control](https://intl.cloud.tencent.com/document/product/647/35157).
 
-[](id:que65)
-### Can I pull and play back streams through CDNs? 
+[](id:que66)
+### Can TRTC pull and play back streams through CDN? 
 Yes. For details, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
 
-[](id:que66)
+[](id:que67)
 ### What formats does TRTC support for custom rendering? 
 - iOS: I420, NV12, and BGRA
 - Android: I420 and Texture2D
 
-[](id:que67)
+[](id:que68)
 ### What is TRTC?
 Tencent Real-Time Communication (TRTC) leverages Tencent's years of experience in network and audio/video technologies to offer group audio/video calls and low-latency interactive live streaming solutions, allowing you to quickly develop cost-effective, low-latency, and high-quality interactive audio/video services. For details, please see [Product Introduction > Overview](https://intl.cloud.tencent.com/document/product/647/35078).
 
-[](id:que68)
+[](id:que69)
 ### How can I try out the TRTC demo?
 Please see [Free Demo](https://intl.cloud.tencent.com/document/product/647/35076).
 
-[](id:que69)
+[](id:que70)
 ### How can I get started quickly with TRTC?
 TRTC offers demo source code for different platforms to allow you to quickly build your own apps. For details, please see [User Tutorial](https://intl.cloud.tencent.com/document/product/647/39386).
 
-[](id:que70)
+[](id:que71)
 ### How do I enable on-cloud recording and playback in TRTC?
 Please see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
 
-[](id:que71)
+[](id:que72)
 ### How do I record streams on the server side?
 Server-side recording relies on the SDK for Linux, which is not commercially available yet. If you have questions about the SDK or want to use it, please contact us at colleenyu@tencent.com.
+
 
 

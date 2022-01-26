@@ -11,7 +11,9 @@ UserSig 的计算原理如下图所示，其本质就是对 SDKAppID、UserID、
 usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire + 
                                  base64(userid + sdkappid + currtime + expire)))
 ```
-
+>?
+>- `currtime` 为当前系统的时间，`expire` 为签名过期的时间。
+>- 如需了解 UserSig 具体计算获取方法，请参见 [UserSig 详情说明](https://intl.cloud.tencent.com/document/product/647/35166)。
 
 [](id:que2)
 ### 实时音视频最多可以同时创建多少个房间？
@@ -30,15 +32,15 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 - [屏幕分享（Mac）](https://intl.cloud.tencent.com/document/product/647/37336)
 - [屏幕分享（Web）](https://intl.cloud.tencent.com/document/product/647/35163)
 
-屏幕分享接口详情请参见 [Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) 或 Windows（C#）API。另外，您也可以使用 [Electron 接口](https://intl.cloud.tencent.com/document/product/647/35141)。
+屏幕分享接口详情请参见 [Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) 。另外，您也可以使用 [Electron 接口](https://intl.cloud.tencent.com/document/product/647/35141)。
 
 
 [](id:que5)
 ### TRTC 支持哪些平台？
 支持的平台包括 iOS、Android、Windows(C++)、Windows(C#)、Mac、Web、Electron，更多详情请参见 [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)。
 
-[](id:que6)
 
+[](id:que6)
 ### 实时音视频最多可以支持多少个人同时通话？
 - 通话模式下，单个房间最多支持300人同时在线，最多支持50人同时开启摄像头或麦克风。
 - 直播模式下，单个房间支持10万人以观众身份在线观看，最多支持50人以主播身份开启摄像头或麦克风。
@@ -103,9 +105,6 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
  - 如果枚举失败，Promise 将返回 rejected，说明浏览器都没有识别到设备，需检查浏览器或设备。
 2. 如果能获取设备列表，则输入 `navigator.mediaDevices.getUserMedia({ audio: true, video: true })` 确认能否正常返回 MediaStream 对象，不能正常返回说明浏览器没有获取到数据，需检查浏览器的配置。
 
-
-
-
 [](id:que17)
 ### 直播、互动直播、实时音视频以及旁路直播有什么区别和关系？
 - **直播**（关键词：一对多，RTMP/HLS/HTTP-FLV，CDN）
@@ -117,12 +116,9 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 - **旁路直播**（关键词：云端混流，RTC 旁路转推，CDN）
  旁路直播是一种技术，指的是将低延时连麦房间里的多路推流画面复制出来，在云端将画面混合成一路，并将混流后的画面推流给直播 CDN 进行分发播放。 
 
-
 [](id:que18)
 ### TRTC 如何查看通话时长和使用量？  
 可在实时音视频控制台的【[用量统计](https://console.cloud.tencent.com/trtc/statistics)】页面查看。
-
-
 
 [](id:que19)
 ### TRTC 出现卡顿怎么排查？
@@ -145,7 +141,3 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
   - iOS & Android 端，请参见 [发布日志（App）](https://intl.cloud.tencent.com/document/product/647/39426)。
   - Web 端，请参见 [发布日志（Web）](https://intl.cloud.tencent.com/document/product/647/39779)。
   - Electron 端，请参见 [发布日志（Electron）](https://intl.cloud.tencent.com/document/product/647/38702)。
-
-
-
-
