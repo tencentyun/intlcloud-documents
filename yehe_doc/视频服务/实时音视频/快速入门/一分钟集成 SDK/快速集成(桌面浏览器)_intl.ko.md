@@ -181,13 +181,13 @@ SDK 다운로드 주소: [다운로드](https://web.sdk.qcloud.com/trtc/webrtc/d
 
 | 기능                       | Sample Code 가이드                                                                                                      |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| 기본 멀티미디어 통화             | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-11-basic-video-call.html)                      |
-| ILVB                   | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-12-basic-live-video.html)                            |
-| 카메라, 마이크 전환         | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-13-basic-switch-camera-mic.html)            |
-| 로컬 비디오 속성 설정           | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-14-basic-set-video-profile.html)            |
-| 로컬 오디오 또는 비디오 동적 ON/OFF | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-15-basic-dynamic-add-video.html)            |
-| 화면 공유                   | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-16-basic-screencast.html)                   |
-| 음량 크기 검증               | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-17-basic-detect-volume.html)                |
+| 기본 멀티미디어 통화             | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-11-basic-video-call.html)                      |
+| ILVB                   | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-12-basic-live-video.html)                            |
+| 카메라, 마이크 전환         | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-13-basic-switch-camera-mic.html)            |
+| 로컬 비디오 속성 설정           | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-14-basic-set-video-profile.html)            |
+| 로컬 오디오 또는 비디오 동적 ON/OFF | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-15-basic-dynamic-add-video.html)            |
+| 화면 공유                   | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-basic-screencast.html)                   |
+| 음량 크기 검증               | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html)                |
 | 사용자 정의 수집 및 사용자 정의 재생 렌더링 | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-20-advanced-customized-capture-rendering.html) |
 | 방에서 업스트림 사용자 수 제한     | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-04-info-uplink-limits.html)                |
 | 배경 음악 및 음향 효과 구현 솔루션     | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-22-advanced-audio-mixer.html)                  |
