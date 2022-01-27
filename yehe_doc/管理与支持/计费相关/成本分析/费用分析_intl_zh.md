@@ -79,7 +79,7 @@
 1. 进入 [消息订阅](https://console.cloud.tencent.com/messageCenter/messageConfig)，找到**成本分析提醒**，单击**编辑**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/096efd042eb152c62115dad9330cae7c.png)
 2. 在弹出的窗口中，**修改消息接收人**。
-![](https://qcloudimg.tencent-cloud.cn/raw/3dd9303fde15ba48b96c4f2c3bab2b86.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/23a8d9d6429043dfec9b3dc3d9b797ec.png)
 >? 费用分析提供短信和邮件两种提醒方式。
 >
 3. 在消息接收人编辑窗口中，对接收人进行修改（默认接收人：创建者），单击**确定**。
