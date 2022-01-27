@@ -128,6 +128,8 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 16.[TencentDB for Tendis](https://intl.cloud.tencent.com/document/product/1083/43457).
 17.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44014).
 18.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44314).
+19.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
+20.[Domains](https://intl.cloud.tencent.com/document/product/242/45147).
 
 ## 관할권별 요구 사항
 
