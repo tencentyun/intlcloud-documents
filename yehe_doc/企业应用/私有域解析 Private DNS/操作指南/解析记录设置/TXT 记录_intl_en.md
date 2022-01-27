@@ -6,9 +6,9 @@ You have created the corresponding private domain.
 
 ## Directions
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns) and click **Private Domain List** on the left sidebar to enter the private domain list.
-2. In the **Private Domain List**, click the name of the private domain for which you need to create a TXT record or **Records** as shown below:
+2. In the **Private Domain List**, click the name of the private domain for which you need to create a TXT record or **DNS** as shown below:
 ![](https://main.qcloudimg.com/raw/1694055358852f8732ffc145c498ec09.png)
-3. On the **Records** tab, click **Add Record** and enter the following record value information as shown below:
+3. On the **DNS Records** tab, click **Add Record** and enter the following record value information as shown below:
 >?You can add up to 20 round-robin DNS records of the same record type for the same host.
 >
 ![](https://main.qcloudimg.com/raw/574e80a8409673fec72391a8183fa6e3.png)
