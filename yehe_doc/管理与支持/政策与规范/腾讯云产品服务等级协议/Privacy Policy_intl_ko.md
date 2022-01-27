@@ -571,5 +571,7 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 14.[TencentDB for Tendis](https://intl.cloud.tencent.com/document/product/1083/43456).
 15.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44012).
 16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
+17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
+18.[Domains](https://intl.cloud.tencent.com/document/product/242/45146).
 ### 수정 내역
 [개인 정보 보호 정책](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
