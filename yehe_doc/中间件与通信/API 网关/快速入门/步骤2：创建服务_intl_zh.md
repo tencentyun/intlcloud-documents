@@ -11,7 +11,7 @@
 1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway)。
 2. 在左侧导航栏中选择**服务**，进入服务列表页。
 3. 单击**新建**，输入服务信息。
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/46511eef95e119326c7680530765dc45.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/7b7094cc1c1a19585efc5251f672a00c.png)
     - 服务名：必填，最长50个字符，支持`a-z`、`A-Z`、`0-9`、`_`，此处我们输入“exampleservice”。
     - 实例类型：关于两种实例的区别请参考 [实例规格](https://intl.cloud.tencent.com/document/product/628/40305)，此处我们选择“共享性”。
     - 备注：此服务备注信息，此处我们填写“测试”。
