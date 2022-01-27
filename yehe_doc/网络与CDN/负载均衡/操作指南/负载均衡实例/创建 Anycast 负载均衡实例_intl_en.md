@@ -25,9 +25,8 @@ An Anycast publishing region is where an accelerated IP address is published, i.
 
 ### Anycast CLB Region
 Just like a region of generic CLB instances, an Anycast CLB region is the one you selected when purchasing an Anycast CLB instance or the region where your real server resides. Currently, Anycast CLB is available in most regions.
-- China: Beijing, Shanghai, Guangzhou, and Hong Kong (China).
-- Europe and the North America: Toronto, Silicon Valley, Frankfurt, Virginia, and Moscow.
-- Southeast Asia: Singapore, Seoul, Mumbai, Bangkok, and Tokyo
+- Asia Pacific: Beijing, Shanghai, Guangzhou, and Hong Kong (China), Singapore, Seoul, Mumbai, Bangkok, and Tokyo.
+- Europe and North America: Toronto, Silicon Valley, Frankfurt, Virginia, and Moscow.
 
 >?
 >- The anycast capability of Anycast CLB is implemented by binding an Anycast EIP to a private network CLB instance.
@@ -47,7 +46,7 @@ Anycast CLB has been widely used in gaming acceleration. Through Anycast CLB, ga
 
 ## Operation Guide
 ### Prerequisites
->This feature is currently in beta test. Make sure that the [application ticket](https://console.cloud.tencent.com/workorder/category) you submitted has been approved before using it.
+This feature is currently in beta test. Make sure that the [application ticket](https://console.cloud.tencent.com/workorder/category) you submitted has been approved before using it.
 
 ### Directions
 1. Log in to the [EIP console](https://console.cloud.tencent.com/cvm/eip?rid=1), select a region in the top-left corner of the **EIP** page, and click **Apply**.
