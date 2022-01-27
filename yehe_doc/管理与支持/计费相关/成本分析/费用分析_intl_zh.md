@@ -1,11 +1,11 @@
 
 [费用分析](https://console.cloud.tencent.com/expense/cost/analysis) 将帮助用户更好地管理云服务资源的消费情况。使用费用分析功能，可以多维度查看资源成本的趋势，按月查看整体费用趋势、按日查看切片费用趋势。（按月最大支持12个月、按日最大支持6个月）。
 
-![](https://main.qcloudimg.com/raw/76c5fbd0294f5b952f25242ff3ec2d15.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3a4d37ba1450753b91c6875e34955f5c.png)
 
 >!
 > - 费用分析数据延迟2天更新，该数据可供成本分析、规划时参考，不作为结算和对账依据。
-> - 每日的费用数据包括包年包月和按量计费两部分的实际发生额。如某日您购买一台12个月的包年包月云服务器 CVM，费用共120元，则此费用一次性计入当日。
+> - 每日的费用数据包括包年包月和按量计费两部分的实际发生额。如某日您购买一台12个月的包年包月云服务器 CVM，费用共120美元，则此费用一次性计入当日。
 > - 显示的当前账单周期的费用是估计费用。本页显示的估计费用或显示在我们发送给您的通知上的费用，可能与您在本账单周期的实际费用有所不同。这是因为本页显示的估计费用不包括本账单周期内您在查看本页的日期之后产生的使用费用。
 > - 可视化图表上，每个时间粒度图形内，仅显示 TOP10 的项目，剩余金额汇总为“其它”；在导出的数据中可查看全部分类明细。
 > - 费用分析目前正在灰度体验中，如需体验，可以联系您的客户经理。
@@ -14,7 +14,7 @@
 ## 费用概览
 
 用户可查看半年（时间粒度按日）、近一年（时间粒度按月）的消耗费用趋势。
-![](https://qcloudimg.tencent-cloud.cn/raw/66cdb23196597a357e6b2ef07e371d8a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a4c0659a2c098e091077cdd0649e2102.png)
 - 分类维度：支持根据默认、产品、计费模式、子产品、项目、地域、可用区、交易类型多个维度查看费用变化趋势。
 - 支持的查看费用：总费用、现金支付、赠送金支付、代金券支付。
 - 时间粒度：支持按天、月等不同粒度，查看一定时间范围内的数据。
@@ -23,30 +23,30 @@
  - 支持展开及收起筛选框。
  - 筛选条件包括产品、子产品、项目、地域、可用区、计费模式、交易类型。
  - 单击**高级筛选**展开筛选框后，单击**筛选条件**（如产品），勾选产品，单击**应用筛选条件**，即可展示出当前用户所有已购产品的列表（其他逻辑相同）。
-![](https://qcloudimg.tencent-cloud.cn/raw/1fc791f0eeb5b0c951f02f2ebe4cb632.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/00dfc3ae482dd7cd07d8ce9f10dd9aee.png)
  - 支持包括全部（默认）、“仅包括”、“仅排除”。如选择了某些产品后，则可以选择“仅包括”、“仅排除”（其他逻辑相同）。
- ![](https://qcloudimg.tencent-cloud.cn/raw/ea0b70356c6b315628d4922314322880.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/cfdad8fb88377b6e6876be21ed5be192.png)
  - 单击**全部清除**：删除全部选定的筛选条件，恢复默认条件。
 
 ## 费用明细
 
 用户可预览或下载所选范围内的数据。
-![](https://main.qcloudimg.com/raw/c4c74043abca4d523541e9778c689313.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8892e1fbfcb35cd05fe1a01156c0f735.png)
 
 ## 提醒设置
 
 用户可设置不同的提醒，当消费达到或超过预警值时，会发送通知。如果超过阈值，每日十点发送用户 T-2 实际发生费用的提醒。涉及多条提醒，则会合并成一条短信和一封邮件，避免过多打扰提醒。
 
-![](https://main.qcloudimg.com/raw/33edbac4cae613273280a520af249290.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/51bc1b970011ffdaf98f0015cfce7f4d.png)
 
 #### 新建提醒
 
 1. 单击**新建提醒**。
 >? 一条提醒中，最多添加3个阈值，满足任意一个即可触发提醒。
 >
-![](https://main.qcloudimg.com/raw/7f2d9359a6d7ab37924ae5f53db06b2e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5910c0fff082aa716521bda5cdcff0d5.png)
 2. 在弹出的窗口中，根据实际需求进行设置。
-![](https://qcloudimg.tencent-cloud.cn/raw/e4d1bc2213c710dd7f0f55e9236f2baa.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dce901907cdf56642a79481ff9427626.png)
 支持的提醒类型有日数据提醒、月数据提醒。
  - 日数据提醒支持三种方式：环比（与上一天比较）、同比（与上个月同一天）、固定值（每日费用与此固定数值比较）
  日数据提醒公式说明：
@@ -66,20 +66,20 @@
 #### 修改提醒设置
 
 用户可根据实际需求，单击**编辑**进行修改提醒设置。
-![](https://main.qcloudimg.com/raw/846b0e69752bb7bb068380ec4ede7b8f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d4e6092dc1c8d1142e33af1fb127d02d.png)
 
 #### 删除与批量删除提醒设置
 
 用户可单击**删除**，删除单条提醒；也可先勾选提醒，再单击上方的**删除**进行批量删除。
-![](https://main.qcloudimg.com/raw/a9415d98fa89067093c73010d0a0a2e5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5c3ddd58173bf38da9b0a40f8c030b5b.png)
 
 
 ## 订阅费用分析提醒
 
-1. 进入 [消息订阅](https://console.cloud.tencent.com/messageCenter/messageConfig)，找到**费用中心**，单击**编辑**。
-![](https://qcloudimg.tencent-cloud.cn/raw/0d2cd118b9e28fb06875e2b626ad5f5b.png)
-2. 在弹出的窗口中，找到**费用分析提醒**，单击**修改消息接收人**。
-![](https://qcloudimg.tencent-cloud.cn/raw/13101ee0b208ba6b920957dcd4c27dcd.png)
+1. 进入 [消息订阅](https://console.cloud.tencent.com/messageCenter/messageConfig)，找到**成本分析提醒**，单击**编辑**。
+![](https://qcloudimg.tencent-cloud.cn/raw/096efd042eb152c62115dad9330cae7c.png)
+2. 在弹出的窗口中，**修改消息接收人**。
+![](https://qcloudimg.tencent-cloud.cn/raw/3dd9303fde15ba48b96c4f2c3bab2b86.png)
 >? 费用分析提供短信和邮件两种提醒方式。
 >
 3. 在消息接收人编辑窗口中，对接收人进行修改（默认接收人：创建者），单击**确定**。
