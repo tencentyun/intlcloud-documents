@@ -26,7 +26,7 @@ For example, enter `0.168.192.in-addr.arpa` as shown below:
 >- If no VPCs are displayed in the currently selected region, please create one in the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1/).
 >- If existing VPCs cannot meet your needs, you can modify them in the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1/).
 >- VPC regions currently supported for association include Beijing, Shanghai, Chengdu, Chongqing, Guangzhou, and Silicon Valley.
-4. Click **OK** to add the reverse private domain. You can directly enter the DNS records page of the domain to add a PTR record as shown below:
+4. Click **Confirm** to add the reverse private domain. You can directly enter the DNS records page of the domain to add a PTR record as shown below:
 ![](https://main.qcloudimg.com/raw/9a211374713ea4b8188da47ae50dad86.png)
 
 
