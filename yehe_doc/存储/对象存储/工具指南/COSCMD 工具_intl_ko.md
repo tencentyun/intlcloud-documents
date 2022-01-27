@@ -1,5 +1,3 @@
->!새로운 TCCLI [COSCLI 툴](https://intl.cloud.tencent.com/document/product/436/43249)이 출시되었으며 점차적으로 COSCMD 툴을 대체합니다. COSCMD 툴은 더 이상 새로운 기능이 추가되지 않으며 기존 Bug만 수정됩니다.
-
 
 ## 기능 설명
 
