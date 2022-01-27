@@ -7,7 +7,7 @@
 - SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md)를 참고하십시오.
 - SDK FAQ는 [Android SDK FAQ](https://intl.cloud.tencent.com/document/product/436/38955)를 참고하십시오.
 
->? XML 버전의 SDK를 사용할 때 함수나 메소드가 존재하지 않는 등의 오류가 발생하는 경우, SDK의 XML 버전을 최신 버전으로 업그레이드한 후 다시 시도하십시오.
+>? XML 버전 SDK 사용 중 함수 또는 메소드가 존재하지 않는 등의 오류 발생 시, XML 버전 SDK를 최신 버전으로 업그레이드한 후 재시도하십시오.
 >
 
 
@@ -21,7 +21,7 @@
 
 ### 방법1: 자동 통합(권장)
 
->?bintray 리포지토리는 이미 삭제되었으며, COS SDK는 mavenCentral에 마이그레이션되어 있습니다. 참고 경로가 변경되었으니 업데이트 시 새 참고 경로를 사용하십시오.
+>? bintray 리포지토리는 이미 삭제되었으며, COS SDK는 mavenCentral에 마이그레이션되어 있습니다. 참고 경로가 변경되었으니 업데이트 시 새 참고 경로를 사용하십시오.
 >
 
 #### mavenCentral 라이브러리 사용
@@ -70,7 +70,9 @@ dependencies {
 
 #### beacon 리포트 기능 비활성화(5.5.8 이상 버전에 적용)
 
-SDK의 품질을 지속적으로 추적 및 최적화하여 사용자에게 더 나은 경험을 제공하기 위해 SDK에 beacon 분석 기능을 도입했습니다.
+SDK의 품질을 지속적으로 모니터링 및 최적화하여 사용자에게 더 나은 경험을 제공하기 위해 SDK에 [Tencent Beacon](https://beacon.qq.com/) SDK를 도입했습니다.
+>? Tencent Beacon은 COS의 요청 성능만을 모니터링하며 서비스 데이터는 리포트하지 않습니다.
+>
 
 해당 기능을 비활성화하려면 애플리케이션 레벨(일반적으로 app 모듈 하위)의 `build.gradle`에 beacon 삭제 명령어를 추가하십시오.
 
@@ -197,7 +199,7 @@ QCloudCredentialProvider myCredentialProvider =
 
 사용자가 키를 제공하는 인스턴스 `myCredentialProvider`를 사용하려면 `CosXmlService` 인스턴스를 초기화해야 합니다.
 
-`CosXmlService`는 COS에 액세스하는 모든 인터페이스를 제공하며, **프로그램 단일 항목**으로 사용하는 것을 권장합니다.
+`CosXmlService`는 COS에 액세스하는 모든 인터페이스를 제공하며, **프로그램 싱글톤**으로 사용하는 것을 권장합니다.
 
 ```java
 // 버킷의 소재 리전 약칭. 예: 광저우 리전 ap-guangzhou
@@ -248,7 +250,7 @@ val cos = cosService(context = application.applicationContext) {
 
 ### 객체 업로드
 
-SDK는 로컬 파일, 바이너리 데이터, Uri, 입력 스트림을 지원합니다. 아래는 로컬 파일 업로드 예시입니다.
+SDK는 로컬 파일, 바이너리 데이터, Uri, 입력 스트림을 지원합니다. 로컬 파일 업로드 예시는 다음과 같습니다.
 
 [//]: # ".cssg-snippet-transfer-upload-file"
 ```java
@@ -270,7 +272,7 @@ String uploadId = null;
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 
-//업로드 진행률 콜백 설정. 업로드 재개에 사용되는 uploadId를 획득할 수 있습니다.
+//업로드 진행 콜백을 설정합니다. 여기에서 업로드 재개를 위한 uploadId를 얻을 수 있습니다.
 cosxmlUploadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
     @Override
     public void onProgress(long complete, long target) {
@@ -345,12 +347,12 @@ viewModelScope.launch {
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참고하십시오.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참고하시기 바랍니다.
 >- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 [사전 서명된 링크 생성](https://intl.cloud.tencent.com/document/product/436/37680) 문서를 참고하십시오. 파일의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 시간이 있습니다.
 
 ### 객체 다운로드
 
-[//]: # ".cssg-snippet-transfer-download-object"
+[//]: #	".cssg-snippet-transfer-download-object"
 ```java
 // 고급 다운로드 인터페이스는 중단된 지점부터 이어 올리기를 지원합니다. 따라서 다운로드 전에 HEAD를 요청하여 파일 정보를 획득하시기 바랍니다.
 // 임시 키 또는 서브 계정을 사용해 액세스하는 경우 권한 리스트에 HeadObject 권한이 포함되어 있는지 확인하십시오.
@@ -361,7 +363,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID.
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 //로컬 디렉터리 경로
 String savePathDir = context.getExternalCacheDir().toString();
@@ -448,5 +450,5 @@ viewModelScope.launch {
 
 >?
 >- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java)를 참고하십시오.
->-고급 다운로드 인터페이스는 중단된 지점부터 이어 올리기를 지원합니다. 따라서 다운로드 전에 HEAD를 요청하여 파일 정보를 획득하시기 바랍니다. 임시 키 또는 서브 계정을 사용해 액세스하는 경우 권한 리스트에 HeadObject 권한이 포함되어 있는지 확인하십시오.
+>- 고급 다운로드 인터페이스는 중단된 지점부터 이어 올리기를 지원합니다. 따라서 다운로드 전에 HEAD를 요청하여 파일 정보를 획득하시기 바랍니다. 임시 키 또는 서브 계정을 사용해 액세스하는 경우 권한 리스트에 HeadObject 권한이 포함되어 있는지 확인하십시오.
 >

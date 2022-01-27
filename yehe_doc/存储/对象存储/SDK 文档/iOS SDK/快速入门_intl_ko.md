@@ -37,15 +37,15 @@ pod 'QCloudCOSXML'
 pod 'QCloudCOSXML/Transfer'
 ```
 
-### 방법 2: 수동 통합
+### 방법2: 수동 통합
 
 정식 패키지의 최신 버전은 [퀵 다운로드 주소](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-ios/latest/qcloud-sdk-ios.zip)에서 다운로드할 수 있으며, 이전 버전은 [SDK Releases](https://github.com/tencentyun/qcloud-sdk-ios/releases)에서 찾을 수 있습니다.
 
 #### 1. 바이너리 라이브러리 가져오기
 
-**QCloudCOSXML.framework, QCloudCore.framework, BeaconAPI_Base.framework, BeaconId.framework**를 프로젝트로 끌어옵니다.
+**QCloudCOSXML.framework, QCloudCore.framework, BeaconAPI_Base.framework, QimeiSDK.framework**를 프로젝트로 끌어옵니다.
 
-![](https://main.qcloudimg.com/raw/5bdcb1f0bb6ac5dc80e82b1cd1960a19.png)  
+![](https://qcloudimg.tencent-cloud.cn/raw/a461545c9de56424126943fc16a3d381.png)  
 
 다음의 종속 라이브러리를 추가합니다.
  - CoreTelephony
@@ -129,7 +129,9 @@ SDK가 요청을 보낼 때 서명을 계산하기 위해 임시 키를 얻어�
 
     QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
     QCloudCOSXMLEndPoint* endpoint = [[QCloudCOSXMLEndPoint alloc] init];
-    // 서비스 리전 약칭(예: 광저우 리전 ap-guangzhou)
+    
+    // 사용자의 region으로 대체합니다. 생성된 버킷이 속한 region은 콘솔에서 확인 가능합니다. https://console.cloud.tencent.com/cos5/bucket
+    // COS에서 지원되는 모든 region 목록은 다음을 참고하십시오. https://www.qcloud.com/document/product/436/6224
     endpoint.regionName = @"COS_REGION";
     // HTTPS 사용
     endpoint.useHTTPS = true;
@@ -151,14 +153,18 @@ SDK가 요청을 보낼 때 서명을 계산하기 위해 임시 키를 얻어�
                   urlRequest:(NSMutableURLRequest*)urlRequst
                    compelete:(QCloudHTTPAuthentationContinueBlock)continueBlock
 {
-        //백엔드 서버에서 가져온 임시 키를 여기에서 동기화합니다. 임시 키의 가용성을 최대한 보장하기 위해 임시 키를 가져오는 로직은 이곳에 배치하는 것을 강력히 권장합니다.
+        //백그라운드 서버에서 가져온 임시 키를 여기에서 동기화합니다. 임시 키의 가용성을 최대한 보장하기 위해 임시 키를 가져오는 로직은 이곳에 배치하는 것을 강력히 권장합니다.
     //...
     QCloudCredential* credential = [QCloudCredential new];
-    // 임시 키 SecretId
+
+    // 임시 키 SecretId 
+    // sercret_id를 사용자의 SecretId로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
     credential.secretID = @"SECRETID";
     // 임시 키 SecretKey
+    // sercret_key를 사용자의 SecretKey로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY";
     // 임시 키 Token
+    // 영구 키를 사용하는 경우 token을 입력할 필요가 없으나, 임시 키를 사용하는 경우 입력해야 합니다. 임시 키 생성 및 사용 가이드는 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/14048
     credential.token = @"TOKEN";
     /** 휴대폰 로컬 시간과의 편차가 너무 커서 서명이 부정확해지지 않도록 서버 시간을 서명 시작 시간으로 반환할 것을 권장합니다(매개변수 startTime과 expiredTime의 단위: 초).
     */
@@ -190,7 +196,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         let config = QCloudServiceConfiguration.init();
 
         let endpoint = QCloudCOSXMLEndPoint.init();
-        //서비스 리전 약칭(예: 광저우 리전 ap-guangzhou)
+
+        // 사용자의 region으로 대체합니다. 생성된 버킷이 속한 region은 콘솔에서 확인 가능합니다. https://console.cloud.tencent.com/cos5/bucket
+        // COS에서 지원되는 모든 region 목록은 다음을 참고하십시오. https://www.qcloud.com/document/product/436/6224
         endpoint.regionName = "COS_REGION";
         // HTTPS 사용
         endpoint.useHTTPS = true;
@@ -213,15 +221,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         urlRequest urlRequst: NSMutableURLRequest!, 
         compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
         
-                //여기서 동기화하여 백엔드 서버에서 임시 키를 획득합니다.
+                //여기서 동기화하여 백그라운드 서버에서 임시 키를 획득합니다.
         //...
 
         let credential = QCloudCredential.init();
-        // 임시 키 SecretId
+        // 임시 키 SecretId 
+        // sercret_id를 사용자의 SecretId로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
         credential.secretID = "SECRETID";
         // 임시 키 SecretKey
+        // sercret_key를 사용자의 SecretKey로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
         credential.secretKey = "SECRETKEY";
         // 임시 키 Token
+        // 영구 키를 사용하는 경우 token을 입력할 필요가 없으나, 임시 키를 사용하는 경우 입력해야 합니다. 임시 키 생성 및 사용 가이드는 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/14048
         credential.token = "TOKEN";
         /** 휴대폰 로컬 시간과의 편차가 너무 커서 서명이 부정확해지지 않도록 서버 시간을 서명 시작 시간으로 반환할 것을 권장합니다(매개변수 startTime과 expiredTime의 단위: 초).
         */
@@ -237,15 +248,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 ```
 
 >! 
->- APPID는 Tencent Cloud 계정 신청 후 획득하게 되는 계정으로 시스템에서 자동으로 할당합니다. 변경 불가능한 고유 ID로, [계정 정보](https://console.cloud.tencent.com/developer)에서 확인할 수 있습니다. Tencent Cloud 계정 APPID는 계정 ID와 유일하게 상응 관계를 갖는 애플리케이션 ID입니다.
->- SecretId와 SecretKey를 통칭하여 Cloud API 키라고 부르며, 사용자가 Tencent Cloud API에 액세스 시 인증할 때 사용하는 보안 자격 증명으로 [API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 획득할 수 있습니다. SecretKey는 서명 문자열 및 서버 인증 서명 문자열 키를 암호화하는 데 사용되며, SecretId는 API 호출자의 신분을 식별하는 데 사용됩니다. APPID 하나로 여러 개의 Cloud API 키를 생성할 수 있습니다.
+>- APPID는 Tencent Cloud 계정 신청 후 획득하게 되는 계정으로 시스템에서 자동으로 할당합니다. 변경 불가능한 고유 ID로, [계정 정보](https://console.cloud.tencent.com/developer)에서 확인할 수 있습니다. Tencent Cloud 계정 APPID는 계정 ID와 유일한 상관 관계를 갖는 애플리케이션 ID입니다.
+>- SecretId와 SecretKey를 통칭하여 Cloud API 키라고 부르며, 사용자가 Tencent Cloud API에 액세스 시 인증할 때 사용하는 보안 자격 증명으로 [API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 획득할 수 있습니다. SecretKey는 서명 문자열 및 서버 인증 서명 문자열 키를 암호화하는 데 사용되며, SecretId는 API 호출자의 ID를 식별하는 데 사용됩니다. APPID별로 여러 개의 Cloud API 키를 생성할 수 있습니다.
 >
 
 SDK는 임시 키의 캐시 및 재사용을 실현하기 위해 `QCloudCredentailFenceQueue`의 스캐폴드를 제공합니다. 키가 만료된 후 스캐폴드는 키 만료 시간이 디바이스의 현재 시간보다 클 때까지 새 키를 얻기 위해 프로토콜을 다시 호출합니다.
 
 >! 스캐폴드는 키의 만료 시간이 기기의 현재 시간보다 긴지 여부에 따라 키 재사용 가능 여부만을 판단하며, 키 신청 시 복잡한 정책을 설정할 경우 스캐폴드 툴을 사용하지 않는 것을 권장합니다.
 
-초기화 프로세스를 `AppDelegate` 또는 **프로그램 싱글톤**에 두는 것을 권장합니다. 스캐폴드를 사용하려면 다음 두 가지 프로토콜을 구현해야 합니다.
+초기화 프로세스를 `AppDelegate` 또는 **프로그램 싱글톤**에 두는 것을 권장합니다. 스캐폴딩을 사용하려면 다음 두 가지 프로토콜을 구현해야 합니다.
 
 - QCloudSignatureProvider
 - QCloudCredentailFenceQueueDelegate
@@ -274,7 +285,9 @@ SDK는 임시 키의 캐시 및 재사용을 실현하기 위해 `QCloudCredenta
         didFinishLaunchingWithOptions:(NSDictionary * )launchOptions {
     QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
     QCloudCOSXMLEndPoint* endpoint = [[QCloudCOSXMLEndPoint alloc] init];
-    // 서비스 리전 약칭(예: 광저우 리전 ap-guangzhou)
+
+    // 사용자의 region으로 대체합니다. 생성된 버킷이 속한 region은 콘솔에서 확인 가능합니다. https://console.cloud.tencent.com/cos5/bucket
+    // COS에서 지원되는 모든 region 목록은 다음을 참고하십시오. https://www.qcloud.com/document/product/436/6224
     endpoint.regionName = @"COS_REGION";
     // HTTPS 사용
     endpoint.useHTTPS = true;
@@ -295,15 +308,18 @@ SDK는 임시 키의 캐시 및 재사용을 실현하기 위해 `QCloudCredenta
 
 - (void) fenceQueue:(QCloudCredentailFenceQueue * )queue requestCreatorWithContinue:(QCloudCredentailFenceQueueContinue)continueBlock
 {
-    //◊백엔드 서버에서 가져온 임시 키를 여기에서 동기화합니다. 임시 키의 가용성을 최대한 보장하기 위해 임시 키를 가져오는 로직은 이곳에 배치하는 것을 강력히 권장합니다.
+    //백그라운드 서버에서 가져온 임시 키를 여기에서 동기화합니다. 임시 키의 가용성을 최대한 보장하기 위해 임시 키를 가져오는 로직은 이곳에 배치하는 것을 강력히 권장합니다.
     //...
 
     QCloudCredential* credential = [QCloudCredential new];
-    // 임시 키 SecretId
+    // 임시 키 SecretId 
+    // sercret_id를 사용자의 SecretId로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
     credential.secretID = @"SECRETID";
     // 임시 키 SecretKey
+    // sercret_key를 사용자의 SecretKey로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY";
     // 임시 키 Token
+    // 영구 키를 사용하는 경우 token을 입력할 필요가 없으나, 임시 키를 사용하는 경우 입력해야 합니다. 임시 키 생성 및 사용 가이드는 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/14048
     credential.token = @"TOKEN";
     /** 휴대폰 로컬 시간과의 편차가 너무 커서 서명이 부정확해지지 않도록 서버 시간을 서명 시작 시간으로 반환할 것을 권장합니다(매개변수 startTime과 expiredTime의 단위: 초).
     */
@@ -355,7 +371,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         let config = QCloudServiceConfiguration.init();
 
         let endpoint = QCloudCOSXMLEndPoint.init();
-        //서비스 리전 약칭, 예: 광저우 리전은 ap-guangzhou
+
+        // 사용자의 region으로 대체합니다. 생성된 버킷이 속한 region은 콘솔에서 확인 가능합니다. https://console.cloud.tencent.com/cos5/bucket
+        // COS에서 지원되는 모든 region 목록은 다음을 참고하십시오. https://www.qcloud.com/document/product/436/6224
         endpoint.regionName = "COS_REGION";
         // HTTPS 사용
         endpoint.useHTTPS = true;
@@ -378,15 +396,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
     func fenceQueue(_ queue: QCloudCredentailFenceQueue!, 
         requestCreatorWithContinue continueBlock: 
         QCloudCredentailFenceQueueContinue!) {
-        //여기서 동기화하여 백엔드 서버에서 임시 키를 획득합니다.
+        //여기서 동기화하여 백그라운드 서버에서 임시 키를 획득합니다.
         //...
 
         let credential = QCloudCredential.init();
-        // 임시 키 SecretId
+        // 임시 키 SecretId 
+        // sercret_id를 사용자의 SecretId로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
         credential.secretID = "SECRETID";
         // 임시 키 SecretKey
+        // sercret_key를 사용자의 SecretKey로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
         credential.secretKey = "SECRETKEY";
         // 임시 키 Token
+        // 영구 키를 사용하는 경우 token을 입력할 필요가 없으나, 임시 키를 사용하는 경우 입력해야 합니다. 임시 키 생성 및 사용 가이드는 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/14048
         credential.token = "TOKEN";
         /** 휴대폰 로컬 시간과의 편차가 너무 커서 서명이 부정확해지지 않도록 서버 시간을 서명 시작 시간으로 반환할 것을 권장합니다(매개변수 startTime과 expiredTime의 단위: 초).
         */
@@ -443,10 +464,13 @@ Tencent Cloud의 영구 키로 개발 단계에 있는 로컬 디버깅을 진�
 {
     
     QCloudCredential* credential = [QCloudCredential new];
-    //SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
-    credential.secretID = @"SECRETID"; // 영구 키 SecretId
-    credential.secretKey = @"SECRETKEY"; // 영구 키 SecretKey
-
+    
+    // 영구 키 secretID 
+    // sercret_id를 사용자의 SecretId로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
+    credential.secretID = @"SECRETID";
+    // 영구 키 SecretKey
+    // sercret_key를 사용자의 SecretKey로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
+    credential.secretKey = @"SECRETKEY"; 
     // 영구 키로 서명 계산
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc] 
         initWithCredential:credential];
@@ -463,9 +487,13 @@ func signature(with fileds: QCloudSignatureFields!,
                 urlRequest urlRequst: NSMutableURLRequest!, 
                 compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
     let credential = QCloudCredential.init();
-    //SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
-    credential.secretID = "SECRETID"; // 영구 키 SecretId
-    credential.secretKey = "SECRETKEY"; // 영구 키 SecretKey
+    
+    // 영구 키 secretID 
+    // sercret_id를 사용자의 SecretId로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
+    credential.secretID = "SECRETID";
+    // 영구 키 SecretKey
+    // sercret_key를 사용자의 SecretKey로 대체합니다. CAM 콘솔에 로그인하여 키를 확인하십시오. https://console.cloud.tencent.com/cam/capi
+    credential.secretKey = "SECRETKEY"; 
 
     // 영구 키로 서명 계산
     let auth = QCloudAuthentationV5Creator.init(credential: credential);
@@ -474,9 +502,9 @@ func signature(with fileds: QCloudSignatureFields!,
 }
 ```
 
-#### 방법 3: 백엔드에서 계산된 서명을 요청 라이선스에 사용
+#### 방법 3: 백그라운드에서 계산된 서명을 요청 라이선스에 사용
 
-서명 과정이 백엔드에 배치되면 `QCloudCredentailFenceQueueDelegate` 프로토콜을 실행하지 않아도 됩니다.
+서명 과정이 백그라운드에 배치되면 `QCloudCredentailFenceQueueDelegate` 프로토콜을 실행하지 않아도 됩니다.
 
 **Objective-C**
 
@@ -490,7 +518,7 @@ func signature(with fileds: QCloudSignatureFields!,
     NSDate *expiration = [[[NSDateFormatter alloc] init] 
                             dateFromString:@"expiredTime"];
     QCloudSignature *sign = [[QCloudSignature alloc] initWithSignature:
-        @"백엔드에서 계산된 서명" expiration:expiration];
+        @"백그라운드에서 계산된 서명" expiration:expiration];
     continueBlock(signature, nil);
 }
 ```
@@ -504,7 +532,7 @@ func signature(with fileds: QCloudSignatureFields!,
                 compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
     // 서명 만료 시간
     let expiration = DateFormatter().date(from: "expiredTime");
-    let sign = QCloudSignature.init(signature: "백엔드에서 계산된 서명", 
+    let sign = QCloudSignature.init(signature: "백그라운드에서 계산된 서명", 
                 expiration: expiration);
     continueBlock(signature,nil);
 }
@@ -522,13 +550,13 @@ SDK는 로컬 파일과 바이너리 데이터 NSData 업로드를 지원합니�
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 // 로컬 파일 경로
 NSURL* url = [NSURL fileURLWithPath:@"파일의 URL"];
-// BucketName-APPID 형식의 버킷 이름
+// BucketName-Appid로 구성된 버킷의 이름. COS 콘솔에서 확인 가능 https://console.cloud.tencent.com/cos5/bucket
 put.bucket = @"examplebucket-1250000000";
-// 객체 키, 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "video/xxx/movie.mp4"입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "video/xxx/movie.mp4"입니다.
 put.object = @"exampleobject";
-//업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
+// 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
 put.body =  url;
-//업로드 진행률 수신
+// 업로드 진행률 수신
 [put setSendProcessBlock:^(int64_t bytesSent,
                             int64_t totalBytesSent,
                             int64_t totalBytesExpectedToSend) {
@@ -537,7 +565,7 @@ put.body =  url;
     //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
 }];
 
-//업로드 결과 수신
+// 업로드 결과 수신
 [put setFinishBlock:^(id outputObject, NSError *error) {
     //outputObject에서 response의 etag 또는 사용자 정의 헤더 등 정보 획득 가능
     NSDictionary * result = (NSDictionary *)outputObject;
@@ -554,9 +582,9 @@ put.body =  url;
 
 ```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
-// BucketName-APPID 형식의 버킷 이름
+// BucketName-Appid로 구성된 버킷의 이름. COS 콘솔에서 확인 가능 https://console.cloud.tencent.com/cos5/bucket
 put.bucket = "examplebucket-1250000000";
-// 객체 키, 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "video/xxx/movie.mp4"입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "video/xxx/movie.mp4"입니다.
 put.object = "exampleobject";
 //업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
 put.body = NSURL.fileURL(withPath: "Local File Path") as AnyObject;
@@ -578,7 +606,7 @@ put.sendProcessBlock = { (bytesSent, totalBytesSent,
     //      totalBytesSent            발송한 바이트 수
     //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
 };
-//업로드 매개변수 설정
+// 업로드 매개변수 설정
 put.initMultipleUploadFinishBlock = {(multipleUploadInitResult, resumeData) in
     //멀티파트 업로드 초기화 완료 후 해당 block을 콜백합니다. 여기에서 resumeData를 획득할 수 있습니다.
     //또한 resumeData를 통해 멀티파트 업로드 요청을 생성할 수 있습니다.
@@ -600,12 +628,12 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```objective-c
 QCloudCOSXMLDownloadObjectRequest * request = [QCloudCOSXMLDownloadObjectRequest new];
     
-// BucketName-APPID 형식의 버킷 이름
+// BucketName-Appid로 구성된 버킷의 이름. COS 콘솔에서 확인 가능 https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
-// 객체 키, 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "video/xxx/movie.mp4"입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "video/xxx/movie.mp4"입니다.
 request.object = @"exampleobject";
 
-//다운로드할 경로 URL 설정, 설정 시 파일이 지정된 경로에 다운로드됩니다.
+//다운로드할 경로 URL 설정. 설정 시 파일이 지정된 경로에 다운로드됩니다.
 request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
 
 //다운로드 결과 수신
@@ -618,7 +646,7 @@ request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
 [request setDownProcessBlock:^(int64_t bytesDownload,
                                 int64_t totalBytesDownload,
                                 int64_t totalBytesExpectedToDownload) {
-    //      bytesDownload                   이번에 다운로드할 바이트 수(대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.)
+    //      bytesDownload                   이번에 다운로드할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
     //      totalBytesDownload              다운로드한 바이트 수
     //      totalBytesExpectedToDownload    이번 다운로드의 총 바이트 수(파일 1개의 크기)
 }];
@@ -633,18 +661,18 @@ request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
 ```swift
 let request : QCloudCOSXMLDownloadObjectRequest = QCloudCOSXMLDownloadObjectRequest();
         
-// 파일이 위치한 버킷
+// BucketName-Appid로 구성된 버킷의 이름. COS 콘솔에서 확인 가능 https://console.cloud.tencent.com/cos5/bucket
 request.bucket = "examplebucket-1250000000";
 // 객체 키
 request.object = "exampleobject";
 
-//다운로드할 경로 URL 설정, 설정 시 파일이 지정된 경로에 다운로드됩니다.
+//다운로드할 경로 URL 설정. 설정 시 파일이 지정된 경로에 다운로드됩니다.
 request.downloadingURL = NSURL.fileURL(withPath: "Local File Path") as URL?;
 
 //다운로드 진행률 수신
 request.sendProcessBlock = { (bytesDownload, totalBytesDownload,
     totalBytesExpectedToDownload) in
-    //      bytesDownload                   이번에 다운로드할 바이트 수(대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.)
+    //      bytesDownload                   이번에 다운로드할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
     //      totalBytesDownload              다운로드한 바이트 수
     //      totalBytesExpectedToDownload    이번 다운로드의 총 바이트 수(파일 1개의 크기)
 }

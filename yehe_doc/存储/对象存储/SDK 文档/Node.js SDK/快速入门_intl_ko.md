@@ -2,9 +2,9 @@
 
 #### 관련 리소스
 
-- COS 서비스의 XML JS SDK 리소스 github 주소: [XML Node.js SDK](https://github.com/tencentyun/cos-nodejs-sdk-v5)
-- SDK 고속 다운로드 주소: [XML Node.js SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-nodejs-sdk-v5/latest/cos-nodejs-sdk-v5.zip)
-- 예시 Demo 다운로드 주소: [XML Node.js SDK Demo](https://github.com/tencentyun/cos-nodejs-sdk-v5/tree/master/demo)
+- COS 서비스의 XML JS SDK 리소스 github 주소: [XML Node.js SDK](https://github.com/tencentyun/cos-nodejs-sdk-v5).
+- SDK 고속 다운로드 주소: [XML Node.js SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-nodejs-sdk-v5/latest/cos-nodejs-sdk-v5.zip).
+- 예시 Demo 다운로드 주소: [XML Node.js SDK Demo](https://github.com/tencentyun/cos-nodejs-sdk-v5/tree/master/demo).
 - SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/NodeJS)를 참고하십시오.
 - SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/CHANGELOG.md)를 참고하십시오.
 
@@ -21,7 +21,7 @@
 
 #### SDK 설치
 
-npm으로 SDK 환경 설치: [npm 주소](https://www.npmjs.com/package/cos-nodejs-sdk-v5)
+npm으로 SDK 환경 설치: [npm 주소](https://www.npmjs.com/package/cos-nodejs-sdk-v5).
 
 ```bash
 npm i cos-nodejs-sdk-v5 --save
@@ -63,7 +63,7 @@ var cos = new COS({
                 // options에서 필요한 매개변수 획득 가능
             }
         }, function (err, response, body) {
-            try{
+            try {
                 var data = JSON.parse(body);
                 var credentials = data.credentials;
             } catch(e) {}
@@ -87,28 +87,28 @@ var cos = new COS({
 
 | 매개변수 이름                 | 매개변수 설명                                                     | 유형     | 필수 입력 여부 |
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
-| SecretId               | 사용자의 SecretId                                              | String   | 예   |
-| SecretKey              | 사용자의 SecretKey. 키가 노출되지 않도록 프런트 엔드 디버깅 시에만 사용하는 것을 권장합니다.       | String   | 예   |
-| FileParallelLimit      | 동일한 인스턴스에 업로드하는 파일의 동시 전송 수. 기본값: 3                        | Number   | 아니요   |
-| ChunkParallelLimit     | 동일한 업로드 파일의 멀티파트 동시 전송 수. 기본값: 3                          | Number   | 아니요   |
-| ChunkRetryTimes        | 멀티파트 업로드 및 멀티파트 복사 시 오류가 발생하여 재시도한 횟수. 기본값: 3(첫 번째 시도를 더하면 요청은 총 4번) | Number   | 아니요   |
-| ChunkSize              | 멀티파트 업로드 시 각 파트의 바이트 수. 기본값: 1048576(1MB)           | Number   | 아니요   |
-| SliceSize              | uploadFiles로 일괄 업로드 시, 파일 크기가 해당 값보다 크면 멀티파트 업로드를 사용하고, 그렇지 않을 경우 간편 업로드를 호출합니다. 단위: Byte, 기본값: 1048576(1MB) | Number   | 아니요   |
-| CopyChunkParallelLimit | 멀티파트 복사 작업 중에 멀티파트 업로드한 동시 전송 수. 기본값: 20             | Number   | 아니요   |
-| CopyChunkSize          | sliceCopyFile로 파일 멀티파트 복사 시, 각 파트의 바이트 수. 기본값: 10485760(10MB) | Number   | 아니요   |
-| CopySliceSize          | sliceCopyFile로 파일 멀티파트 복사 시, 파일 크기가 해당 값보다 크면 멀티파트 복사를 사용하고, 그렇지 않을 경우 간편 복사를 호출합니다. 기본값: 10485760(10MB) | Number   | 아니요   |
-| ProgressInterval       | 업로드 진행률 콜백 방법 onProgress의 콜백 빈도. 단위: ms, 기본값: 1000 | Number   | 아니요   |
-| Protocol               | 요청 시 사용하는 프로토콜. 옵션 항목으로 `https:`와 `http:`가 있습니다. 기본적으로 현재 페이지가 `http:`인 경우 `http:`를 사용하고, 아닌 경우 `https:`를 사용합니다. | String   | 아니요   |
-| ServiceDomain          | getService 방법 호출 시 요청하는 도메인. 예: `service.cos.myqcloud.com` | String   | 아니요   |
-| Domain                 | 버킷 및 객체 작업 API 호출 시 요청 도메인을 사용자 정의합니다.<br>`"{Bucket}.cos.{Region}.myqcloud.com" `과 같은 템플릿을 사용할 수 있으며, API 호출 시 매개변수로 전달하는 Bucket 및 Region으로 변경할 수 있습니다. | String   | 아니요   |
-| UploadQueueSize        | 업로드 큐 최대 길이. 작업이 큐 크기를 초과하고, 실패/완료/취소 상태인 경우 정리합니다. 기본값: 1000 | Number   | 아니요   |
-| ForcePathStyle         | 강제 사용 후 확장명 모드로 요청 발송. 확장명 모드의 Bucket은 도메인 뒤의 pathname에 넣고, Bucket은 서명 pathname 계산을 추가합니다. 기본값: false | Boolean  | 아니요   |
-| UploadCheckContentMd5  | 강제로 업로드한 파일도 Content-MD5 검증. 파일에 대해 Body를 요청하여 md5를 계산하고 header의 Content-MD5 필드에 올립니다. 기본값: false | Boolean  | 아니요   |
-| Timeout                | 타임아웃 시간. 단위: 밀리초. 기본값: 0. 즉 타임아웃 시간을 설정하지 않습니다.               | Number   | 아니요   |
-| KeepAlive              | 다수의 요청이 모두 TCP 연결을 사용. 기본값: true. 동시 요청량이 많은 경우 활성화 권장   | Boolean   | 아니요   |
-| StrictSsl              | HTTPS 인증서 엄격 검증. 기본값: true | Boolean | 아니요   |
-| Proxy                  | 요청 시 HTTP 프록시 사용. 예: `http://127.0.0.1:8080`   | String | 아니요   |
-| getAuthorization       | 서명을 획득하는 콜백 방법. SecretId, SecretKey가 없는 경우 이 매개변수는 필수입니다. | Function | 아니요   |
+| SecretId               | 사용자의 SecretId                                              | String   | Yes   |
+| SecretKey              | 사용자의 SecretKey. 키가 노출되지 않도록 프런트 엔드 디버깅 시에만 사용하는 것을 권장합니다.       | String   | Yes   |
+| FileParallelLimit      | 동일한 인스턴스에 업로드하는 파일의 동시 전송 수. 기본값: 3                        | Number   | No   |
+| ChunkParallelLimit     | 동일한 업로드 파일의 멀티파트 동시 전송 수. 기본값: 3                          | Number   | No   |
+| ChunkRetryTimes        | 멀티파트 업로드 및 멀티파트 복사 시 오류가 발생하여 재시도한 횟수. 기본값: 3(첫 번째 시도를 더하면 요청은 총 4번) | Number   | No   |
+| ChunkSize              | 멀티파트 업로드 시 각 파트의 바이트 수. 기본값: 1048576(1MB)           | Number   | No   |
+| SliceSize              | uploadFiles로 일괄 업로드 시, 파일 크기가 해당 값보다 크면 멀티파트 업로드를 사용하고, 그렇지 않을 경우 간편 업로드를 호출합니다. 단위: Byte, 기본값: 1048576(1MB) | Number   | No   |
+| CopyChunkParallelLimit | 멀티파트 복사 작업 중에 멀티파트 업로드한 동시 전송 수. 기본값: 20             | Number   | No   |
+| CopyChunkSize          | sliceCopyFile로 파일 멀티파트 복사 시, 각 파트의 바이트 수. 기본값: 10485760(10MB) | Number   | No   |
+| CopySliceSize          | sliceCopyFile로 파일 멀티파트 복사 시, 파일 크기가 해당 값보다 크면 멀티파트 복사를 사용하고, 그렇지 않을 경우 간편 복사를 호출합니다. 기본값: 10485760(10MB) | Number   | No   |
+| ProgressInterval       | 업로드 진행률 콜백 방법 onProgress의 콜백 빈도. 단위: ms, 기본값: 1000 | Number   | No   |
+| Protocol               | 요청 시 사용하는 프로토콜. 옵션 항목으로 `https:`와 `http:`가 있습니다. 기본적으로 현재 페이지가 `http:`인 경우 `http:`를 사용하고, 아닌 경우 `https:`를 사용합니다. | String   | No   |
+| ServiceDomain          | getService 방법 호출 시 요청하는 도메인. 예: `service.cos.myqcloud.com` | String   | No   |
+| Domain                 | 버킷 및 객체 작업 API 호출 시 요청 도메인을 사용자 정의합니다.<br>`"{Bucket}.cos.{Region}.myqcloud.com" `과 같은 템플릿을 사용할 수 있으며, API 호출 시 매개변수로 전달하는 Bucket 및 Region으로 변경할 수 있습니다. | String   | No   |
+| UploadQueueSize        | 업로드 큐 최대 길이. 작업이 큐 크기를 초과하고, 실패/완료/취소 상태인 경우 정리합니다. 기본값: 1000 | Number   | No   |
+| ForcePathStyle         | 강제 사용 후 확장명 모드로 요청 발송. 확장명 모드의 Bucket은 도메인 뒤의 pathname에 넣고, Bucket은 서명 pathname 계산을 추가합니다. 기본값: false | Boolean  | No   |
+| UploadCheckContentMd5  | 강제로 업로드한 파일도 Content-MD5 검증. 파일에 대해 Body를 요청하여 md5를 계산하고 header의 Content-MD5 필드에 올립니다. 기본값: false | Boolean  | No   |
+| Timeout                | 타임아웃 시간. 단위: 밀리초. 기본값: 0. 즉 타임아웃 시간을 설정하지 않습니다.               | Number   | No   |
+| KeepAlive              | 다수의 요청이 모두 TCP 연결을 사용. 기본값: true. 동시 요청량이 많은 경우 활성화 권장   | Boolean   | No   |
+| StrictSsl              | HTTPS 인증서 엄격 검증. 기본값: true | Boolean | No   |
+| Proxy                  | 요청 시 HTTP 프록시 사용. 예: `http://127.0.0.1:8080`   | String | No   |
+| getAuthorization       | 서명을 획득하는 콜백 방법. SecretId, SecretKey가 없는 경우 이 매개변수는 필수입니다. | Function | No   |
 
 
 #### getAuthorization 콜백 함수 설명의 함수 설명(형식1 사용)
@@ -130,11 +130,11 @@ getAuthorization 함수 설명:
 
 | 속성 이름            | 매개변수 설명                                                     | 유형   | 필수 입력 여부 |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
-| TmpSecretId       | 획득한 임시 키의 tmpSecretId                             | String | 예   |
-| TmpSecretKey      | 획득한 임시 키의 tmpSecretKey                            | String | 예   |
-| SecurityToken | 획득한 임시 키의 sessionToken. 해당 header의 x-cos-security-token 필드 | String | 아니요   |
-| StartTime         | 키를 획득한 시작 시간. 즉 획득한 시각의 타임스탬프. 단위: 초. startTime. 예: 1580000000. 서명 시작 시간에 사용됩니다. 해당 매개변수를 전송하면 프런트 엔드 시간의 편차로 인한 서명 만료 문제를 방지할 수 있습니다. | String | 아니요   |
-| ExpiredTime       | 획득한 임시 키의 expiredTime, 타임아웃 시간의 타임스탬프. 단위 초. 예: 1580000900 | String | 아니요   |
+| TmpSecretId       | 획득한 임시 키의 tmpSecretId                             | String | Yes   |
+| TmpSecretKey      | 획득한 임시 키의 tmpSecretKey                            | String | Yes   |
+| SecurityToken | 획득한 임시 키의 sessionToken. 해당 header의 x-cos-security-token 필드 | String | Yes   |
+| StartTime         | 키를 획득한 시작 시간. 즉 획득한 시각의 타임스탬프. 단위: 초. startTime. 예: 1580000000. 서명 시작 시간에 사용됩니다. 해당 매개변수를 전송하면 프런트 엔드 시간의 편차로 인한 서명 만료 문제를 방지할 수 있습니다. | String | No   |
+| ExpiredTime       | 획득한 임시 키의 expiredTime. 타임아웃 시간의 타임스탬프. 단위: 초. 예: 1580000900 | String | Yes   |
 
 #### getAuthorization 콜백 함수 설명(형식2 사용)
 
@@ -155,14 +155,14 @@ getAuthorization 함수 설명:
 | callback   | 임시 키 획득 후 콜백                                     | Function |
 
 getAuthorization 계산 완료 후 callback 리턴 매개변수는 두 가지 형식을 지원합니다.
-형식1: 자격 증명 문자열 Authorization 리턴
+형식1: 자격 증명 문자열 Authorization 리턴.
 형식2: 하나의 객체 리턴. 리턴 속성 리스트는 다음과 같습니다.
 
 
 | 속성 이름            | 매개변수 설명                                                     | 유형   | 필수 입력 여부 |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
-| Authorization     | 계산 후 얻은 서명 문자열                                         | String | 예   |
-| SecurityToken | 획득한 임시 키의 sessionToken. 해당 header의 x-cos-security-token 필드 | String | 아니요   |
+| Authorization     | 계산 후 얻은 서명 문자열                                         | String | Yes   |
+| SecurityToken | 획득한 임시 키의 sessionToken. 해당 header의 x-cos-security-token 필드 | String | No   |
 
 #### 자격 증명 획득
 
@@ -172,7 +172,7 @@ getAuthorization 계산 완료 후 callback 리턴 매개변수는 두 가지 �
 2. 인스턴스화 시 getAuthorization 콜백을 전송합니다. 서명이 필요할 때마다 해당 콜백으로 계산하고, 서명을 인스턴스로 반환합니다.
 3. 인스턴스화 시 getSTS 콜백을 전송합니다. 임시 키가 필요할 때마다 해당 콜백을 통해 돌아가 인스턴스에 반환합니다. 요청할 때마다 인스턴스 내부에서 임시 키로 계산하여 서명을 얻습니다.
 
-###버킷 생성하기
+### 버킷 생성
 
 [//]: # (.cssg-snippet-put-bucket)
 ```js
@@ -200,10 +200,10 @@ cos.getService(function (err, data) {
 [//]: # (.cssg-snippet-put-object)
 ```js
 cos.putObject({
-    Bucket: 'examplebucket-1250000000', /* 필수 */
+    Bucket: ’examplebucket-1250000000’, /* 필수 */
     Region: 'COS_REGION',    /* 필수 */
-    Key: 'exampleobject',              /* 필수 */
-    StorageClass: 'STANDARD',
+    Key: ’exampleobject’,              /* 필수 */
+    StorageClass: ’STANDARD’,
     Body: fs.createReadStream('./exampleobject'), // 파일 객체 업로드
     onProgress: function(progressData) {
         console.log(JSON.stringify(progressData));
@@ -218,9 +218,9 @@ cos.putObject({
 [//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
-    Bucket: 'examplebucket-1250000000', /* 필수 */
+    Bucket: ’examplebucket-1250000000’, /* 필수 */
     Region: 'COS_REGION',     /* 필수 */
-    Prefix: 'a/',           /* 선택 */
+    Prefix: ’a/’,           /* 옵션 */
 }, function(err, data) {
     console.log(err || data.Contents);
 });
@@ -231,9 +231,9 @@ cos.getBucket({
 [//]: # (.cssg-snippet-get-object-stream)
 ```js
 cos.getObject({
-    Bucket: 'examplebucket-1250000000', /* 필수 */
+    Bucket: ’examplebucket-1250000000’, /* 필수 */
     Region: 'COS_REGION',    /* 필수 */
-    Key: 'exampleobject',              /* 필수 */
+    Key: ’exampleobject’,              /* 필수 */
     Output: fs.createWriteStream('./exampleobject'),
 }, function(err, data) {
     console.log(err || data);
@@ -245,7 +245,7 @@ cos.getObject({
 [//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
-    Bucket: 'examplebucket-1250000000', /* 필수 */
+    Bucket: ’examplebucket-1250000000’, /* 필수 */
     Region: 'COS_REGION',    /* 필수 */
     Key: 'exampleobject'       /* 필수 */
 }, function(err, data) {

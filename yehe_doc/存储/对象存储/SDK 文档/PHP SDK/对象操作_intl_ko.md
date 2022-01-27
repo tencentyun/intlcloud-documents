@@ -15,7 +15,7 @@
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사 설정             | 파일을 타깃 경로에 복사                             |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 단일 객체 삭제             | 버킷에서 지정 객체 삭제                         |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 다수의 객체 삭제             | 버킷에서 다수의 객체 일괄 삭제                         |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구             | 아카이브 유형의 객체 검색 및 액세스                       |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 아카이브된 객체 복구             | 아카이브 유형의 객체 검색 및 액세스                       |
 
 
 **멀티파트 작업**
@@ -149,7 +149,7 @@ Guzzle\Service\Resource\Model Object
 
 #### 기능 설명
 
-버킷의 일부 또는 모든 객체 및 이전 버전 정보 조회.
+버킷의 일부 또는 모든 객체 및 이전 버전 정보를 조회합니다.
 
 #### 메소드 프로토타입
 
@@ -187,7 +187,7 @@ try {
 | Bucket          | String | 버킷 이름. BucketName-APPID로 구성                         | Yes       |
 | Prefix          | String | 기본값 null. 객체 키를 필터링해 prefix로 시작하는 객체와 매칭   | No       |
 | Delimiter       | String | 기본값 null. 세퍼레이터 설정(예시: `/`을 설정해 가상 폴더화)                | No       |
-| KeyMarker       | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 key 시작 위치 표시 | No       |
+| KeyMarker       | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 키 시작 위치 표시 | No       |
 | VersionIdMarker | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 VersionId 시작 위치 표시 | No       |
 | MaxKeys         | Int    | 반환되는 최대 객체 수량. 기본값은 최대 1,000개                         | No       |
 | EncodingType    | String | 기본 인코딩 없음. 반환값의 인코딩 방식 규정. url 선택 가능                | No       |
@@ -253,7 +253,7 @@ Guzzle\Service\Resource\Model Object
 | Name                | String | 버킷 이름. 형식: BucketName-APPID                           | 없음       |
 | Delimiter           | String | 세퍼레이터 설정(예시: `/`을 설정해 가상 폴더화)                          | 없음       |
 | EncodingType        | String | 반환값의 인코딩 방식 규정                                         | 없음       |
-| KeyMarker           | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 key 시작 위치 표시 | 없음       |
+| KeyMarker           | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 키 시작 위치 표시 | 없음       |
 | VersionIdMarker     | String | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 객체 리스트의 VersionId 시작 위치 표시 | 없음       |
 | NextKeyMarker       | String | IsTruncated가 true이면 그 다음 객체를 반환하는 리스트 키의 시작 위치 표시 | 없음       |
 | NextVersionIdMarker | String | IsTruncated가 true이면 그 다음 객체를 반환하는 리스트의 VersionId 시작 위치 표시 | 없음       |
@@ -299,7 +299,7 @@ try {
 }
 ```
 
-#### 예시2: 보관된 파일 업로드
+#### 예시2: 아카이브된 파일 업로드
 
 [//]: # ".cssg-snippet-put-object-archive"
 
@@ -410,9 +410,9 @@ $result = $cosClient->putObject(array(
 | ContentLength        | Int         | 전송 길이 설정                                                 | No       |
 | ContentType          | String      | 콘텐츠 유형. Content-Type 설정                                  | No       |
 | Expires              | String      | Content-Expires 설정                                              | No       |
-| Metadata             | Array       | 사용자 정의 파일 메타정보                                       | No       |
+| Metadata             | Array       | 사용자 정의 파일 메타정보                                       | No     |
 | StorageClass         | String      | 파일의 스토리지 유형이며(예시: STANDARD, STANDARD_IA, ARCHIVE), 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고   | No       |
-| ContentMD5           | Boolean      | 업로드된 파일의 MD5 값을 검사용으로 자동 생성할지 여부                                | No       |
+| ContentMD5           | Boolean      | 업로드된 파일의 MD5 값을 검사용으로 자동 생성 여부                                | No       |
 | ServerSideEncryption | String      | 서버 암호화 방법                                               | No       |
 
 #### 반환 결과 예시
@@ -440,6 +440,7 @@ Guzzle\Service\Resource\Model Object
 | --------- | ------ | -------------------------- | ------ |
 | ETag      | String | 업로드된 파일의 MD5 값          | 없음     |
 | VersionId | String | 버전 제어 활성화 후 파일의 버전 번호 | 없음     |
+| CRC     | String | CRC64로 [데이터 검사](https://intl.cloud.tencent.com/document/product/436/34078) | 없음     |
 
 ### 객체 추가 업로드
 
@@ -521,7 +522,7 @@ try {
 | Bucket    | String | 버킷 이름. 형식: BucketName-APPID                           | Yes       |
 | Key       | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인<br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | Yes       |
 | Position | Integer | 추가 작업의 시작점. 최초 추가는 Position=0으로 설정하고 후속 추가는 Position을 현재 Object의 content-length로 설정                             | Yes      |
-| Body | File/String | 로컬 파일 스트림 또는 입력 스트림 등 멀티파트 업로드의 콘텐츠         | Yes       |
+| Body | File/String | 로컬 파일 스트림 또는 입력 스트림 등 멀티파트 업로드의 콘텐츠                             | Yes       |
 
 #### 반환 결과 예시
 
@@ -627,17 +628,18 @@ Guzzle\Service\Resource\Model Object
 
 | 매개변수 이름             | 유형   | 설명                                               | 부모 노드 |
 | -------------------- | ------ | -------------------------------------------------- | ------ |
-| CacheControl         | String | 캐시 정책. Cache-Control 설정                                 | 없음     |
-| ContentDisposition   | String | 파일 이름. Content-Disposition 설정                           | 없음     |
-| ContentEncoding      | String | 인코딩 형식. Content-Encoding 설정                              | 없음     |
-| ContentLanguage      | String | 언어 유형. Content-Language 설정                              | 없음     |
+| CacheControl         | String | 캐시 정책. Cache-Control 설정                       | 없음     |
+| ContentDisposition   | String | 파일 이름. Content-Disposition 설정                 | 없음     |
+| ContentEncoding      | String | 인코딩 형식. Content-Encoding 설정                    | 없음     |
+| ContentLanguage      | String | 언어 유형. Content-Language 설정                    | 없음     |
 | ContentLength        | Int    | 전송 길이 설정                                       | 없음     |
-| ContentType          | String | 콘텐츠 유형. Content-Type 설정                                  | 없음     |
-| Metadata             | Array  | 사용자 정의 파일 메타정보                                       | 없음     |
+| ContentType          | String | 콘텐츠 유형. Content-Type 설정                        | 없음     |
+| Metadata             | Array  | 사용자 정의 파일 메타정보                             | 없음     |
 | StorageClass         | String | 파일의 스토리지 유형(예시: STANDARD, STANDARD_IA, ARCHIVE). 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고 | 없음     |
 | ServerSideEncryption | String | 서버 암호화 방법                                     | 없음     |
 | ETag                 | String | 파일의 MD5 값                                      | 없음     |
-| Restore              | String | 보관된 파일 복구 정보                                 | 없음     |
+| Restore              | String | 아카이브된 파일 복구 정보                                 | 없음     |
+| CRC                  | String | CRC64로 [데이터 검사](https://intl.cloud.tencent.com/document/product/436/34078) | 없음     |
 
 ### 객체 다운로드
 
@@ -655,7 +657,7 @@ public Guzzle\Service\Resource\Model getObject(array $args = array());
 
 #### 예시1: 로컬에 파일 다운로드
 
-[//]: # ".cssg-snippet-get-object"
+[//]: #	".cssg-snippet-get-object"
 
 ```php
 try {
@@ -807,7 +809,8 @@ Guzzle\Service\Resource\Model Object
 | ContentLength        | Int         | 전송 길이 설정                                                 | 없음     |
 | ContentType          | String      | 콘텐츠 유형. Content-Type 설정                                  | 없음     |
 | Metadata             | Array       | 사용자 정의 파일 메타정보                                       | 없음     |
-| Restore              | String      | 보관된 파일 복구 정보                                            | 없음     |
+| Restore              | String      | 아카이브된 파일 복구 정보                                            | 없음     |
+| CRC                  | String | CRC64로 [데이터 검사](https://intl.cloud.tencent.com/document/product/436/34078) | 없음     |
 
 ### 객체 복사 설정
 
@@ -1119,7 +1122,7 @@ Guzzle\Service\Resource\Model Object
 
 
 
-### 보관된 객체 복구 
+### 아카이브된 객체 복구 
 
 #### 기능 설명
 
@@ -1161,7 +1164,7 @@ try {
 | Key              | String | 객체 키                                                       | Yes       |
 | Days             | String | 임시 사본 만료 기간 설정(단위: 일)                             | Yes       |
 | CASJobParameters | Array  | 정보 복구                                                     | Yes       |
-| Tier             | String | CAS 유형의 데이터를 복구하는 경우 Tier는 COS가 지원하는 3가지 복구 모드(Expedited, Standard, Bulk) 중 지정 가능. DEEP ARCHIVE 유형의 데이터를 복구하는 경우 Tier는 COS가 지원하는 2가지 복구 모드(Standard, Bulk) 중 지정 가능. | Yes       |
+| Tier             | String | 아카이브 유형의 데이터를 복구하는 경우 Tier는 COS가 지원하는 3가지 복구 모드(Expedited, Standard, Bulk) 지정 가능. 딥 아카이브 유형의 데이터를 복구하는 경우 Tier는 COS가 지원하는 2가지 복구 모드(Standard, Bulk) 지정 가능. | Yes       |
 
 ## 멀티파트 작업
 
@@ -1213,10 +1216,10 @@ try {
 | Bucket         | String | 버킷 이름. 형식: BucketName-APPID                           | Yes       |
 | Delimiter      | String | 기본값 null. 세퍼레이터 설정(예시: `/`을 설정해 가상 폴더화)                | No       |
 | EncodingType   | String | 기본 인코딩이 없음. 반환값의 인코딩 방식 규정. url 선택 가능                | No       |
-| KeyMarker      | String | 반환된 parts 리스트의 시작 위치 표시                            | No       |
-| UploadIdMarker | String | 반환된 parts 리스트의 시작 위치 표시                            | No       |
+| KeyMarker      | String | 반환 parts의 list 시작 위치 표시                            | No       |
+| UploadIdMarker | String | 반환 parts의 list 시작 위치 표시                            | No       |
 | Prefix         | String | 기본값 null. parts 키를 필터링해 지정 접두사(prefix)로 시작하는 객체와 매칭 | No       |
-| MaxUploads     | Int    | 반환되는 최대 parts 수량. 기본값은 최대 1,000개                      | No       |
+| MaxUploads     | Int    | 반환 parts의 최대 수량. 기본값은 최대 1,000개                      | No       |
 
 #### 반환 결과 예시
 
@@ -1334,15 +1337,15 @@ try {
 
 | 매개변수 이름             | 유형   | 설명                                                         | 필수 입력 여부 |
 | -------------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket               | String | 버킷 이름. 형식: BucketName-APPID                           | Yes       |
+| Bucket               | String      | 버킷 이름. 형식: BucketName-APPID                           | Yes       |
 | Key                  | String | 여기서 Key는 객체 키로, 객체에 대한 버킷에서의 고유 식별자. 예시: 객체 액세스 도메인<br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 `doc/pic.jpg` | Yes       |
 | CacheControl         | String | 캐시 정책. Cache-Control 설정                                 | No       |
 | ContentDisposition   | String | 파일 이름. Content-Disposition 설정                           | No       |
 | ContentEncoding      | String | 인코딩 형식. Content-Encoding 설정                              | No       |
 | ContentLanguage      | String | 언어 유형. Content-Language 설정                              | No       |
-| ContentLength | Int    | 전송 길이 설정                                                 | No       |
+| ContentLength        | Int    | 전송 길이 설정                                                 | No       |
 | ContentType          | String | 콘텐츠 유형. Content-Type 설정                                  | No       |
-| Expires              | String  | Content-Expires 설정                                              | No       |
+| Expires              | String | Content-Expires 설정                                              | No       |
 | Metadata             | Array  | 사용자 정의 파일 메타정보                                       | No       |
 | StorageClass         | String | 파일의 스토리지 유형이며(예시: STANDARD, STANDARD_IA, ARCHIVE), 기본값은 STANDARD. 스토리지 유형에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925) 참고       |    No       |
 | ContentMD5           | Boolean | 업로드된 파일의 MD5 값을 검사용으로 자동 생성 여부                           | No       |
@@ -1440,6 +1443,7 @@ Guzzle\Service\Resource\Model Object
 | 매개변수 이름 | 유형   | 설명          | 부모 노드 |
 | -------- | ------ | ------------- | ------ |
 | ETag     | String | 멀티파트 MD5 값 | 없음     |
+| CRC     | String | CRC64로 [데이터 검사](https://intl.cloud.tencent.com/document/product/436/34078) | 없음     |
 
 
 
@@ -1514,6 +1518,7 @@ Guzzle\Service\Resource\Model Object
 | ------------ | ------ | ------------------------------ | ------ |
 | ETag         | String | 멀티파트 MD5 값                  | 없음     |
 | LastModified | String | 반환된 객체의 최종 수정 시간(GMT 형식) | 없음     |
+| CRC     | String | CRC64로 [데이터 검사](https://intl.cloud.tencent.com/document/product/436/34078) | 없음     |
 
 
 ### 업로드된 파트 조회
@@ -1556,8 +1561,8 @@ try {
 | Bucket           | String | 버킷 이름. 형식: BucketName-APPID      | Yes       |
 | Key              | String | 객체 키                                  | Yes       |
 | UploadId         | String | 객체 멀티파트 업로드 ID                       | Yes       |
-| PartNumberMarker | Int    | 반환된 parts 리스트의 시작 위치 표시       | No       |
-| MaxParts         | Int    | 반환되는 최대 parts 수량. 기본값은 최대 1,000개 | No       |
+| PartNumberMarker | Int    | 반환 parts의 list 시작 위치 표시       | No       |
+| MaxParts         | Int    | 반환 parts의 최대 수량. 기본값은 최대 1,000개 | No       |
 
 #### 반환 결과 예시
 
@@ -1612,11 +1617,11 @@ Guzzle\Service\Resource\Model Object
 | 매개변수 이름         | 유형   | 설명                                    | 부모 노드 |
 | ---------------- | ------ | --------------------------------------- | ------ |
 | Bucket           | String | 버킷 이름. 형식: BucketName-APPID      | 없음     |
-| Key              | String | 객체 키                                                       | 없음     |
+| Key              | String | 객체 키                                  | 없음     |
 | UploadId         | String | 객체 멀티파트 업로드 ID                       | 없음     |
 | IsTruncated      | Int    | 반환된 객체의 자르기 여부 표시             | 없음     |
-| PartNumberMarker | Int    | 반환된 parts 리스트의 시작 위치 표시       | 없음     |
-| MaxParts         | Int    | 반환되는 최대 parts 수량. 기본값은 최대 1,000개 | 없음     |
+| PartNumberMarker | Int    | 반환 parts의 list 시작 위치 표시       | 없음     |
+| MaxParts         | Int    | 반환 parts의 최대 수량. 기본값은 최대 1,000개 | 없음     |
 | Initiator        | String | 해당 멀티파트 작업자 초기화                    | 없음     |
 | Parts            | Array  | 반환된 멀티파트 리스트                          | 없음     |
 | Part             | Array  | 반환된 멀티파트 속성                          | Parts  |
@@ -1720,7 +1725,7 @@ try {
 
 ## 고급 인터페이스(권장)
 
-이 챕터에서는 업로드 및 복사 작업을 캡슐화한 COS의 고급 인터페이스를 소개합니다. 사용자는 상응하는 매개변수만 설정하면 됩니다. 해당 인터페이스는 파일 크기에 따라 간편 업로드(복사)와 멀티파트 업로드(복사)를 결정합니다. 인터페이스 사용 전 [시작하기](https://intl.cloud.tencent.com/document/product/436/12266)에서 안내한 초기화 작업이 완료되었는지 확인하십시오.
+이 챕터에서는 업로드 및 복사 작업을 먹싱한 COS의 고급 인터페이스를 소개합니다. 사용자는 상응하는 매개변수만 설정하면 됩니다. 해당 인터페이스는 파일 크기에 따라 간편 업로드(복사)와 멀티파트 업로드(복사)를 결정합니다. 인터페이스 사용 전 [시작하기](https://intl.cloud.tencent.com/document/product/436/12266)에서 안내한 초기화 작업이 완료되었는지 확인하십시오.
 
 ### 객체 업로드
 
@@ -1740,7 +1745,7 @@ public Qcloud\Cos\Client upload(string $bucket, string $key, $body, array $optio
 | bucket   | String | 버킷 이름. 형식: BucketName-APPID | Yes       |
 | key      | String | 객체 키                             | Yes       |
 | body     | Stream/String | 업로드한 콘텐츠 | Yes       |
-| options     | Array | 추가된 구성 항목            | No       |
+| options     | Array | 추가된 설정 항목            | No       |
 
 
 
@@ -1783,7 +1788,7 @@ try {
 }
 ```
 
-#### 예시2: 보관된 객체 업로드
+#### 예시2: 아카이브된 객체 업로드
 
 [//]: # ".cssg-snippet-transfer-upload-file-archive"
 
@@ -1850,7 +1855,7 @@ $secretId = 'SECRETID';
 $secretKey = 'SECRETKEY';
 //'Tencent Cloud API 키 SecretKey';
 $region = 'ap-beijing';
-// 기본 버킷 리전 설정
+//기본 버킷 리전 설정
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
@@ -1905,7 +1910,7 @@ public Qcloud\Cos\Client download(string $bucket, string $key, string $saveAs, a
 | bucket   | String | 버킷 이름. 형식: BucketName-APPID | Yes       |
 | key      | String | 객체 키                             | Yes       |
 | saveAs     | String | 저장한 로컬 경로   | Yes       |
-| options     | Array | 추가된 구성 항목            | No       |
+| options     | Array | 추가된 설정 항목            | No       |
 
 
 
@@ -1914,8 +1919,8 @@ public Qcloud\Cos\Client download(string $bucket, string $key, string $saveAs, a
 | Progress         | Function      | 프로그레스 바 콜백. 매개변수는 총 크기($totalSize), 업로드된 크기($downloadedSize) | No       |
 | PartSize         | Int      | 최소 멀티파트 파일 크기. 기본적으로 5M |No       |
 | Concurrency         | Int      | 동시 실행 정도. 기본 설정값: 10 | No       |
-| ResumableDownload         | Bool      | 중단 지점부터 전송 재개 활성화 여부, 기본값: false | No      |
-| ResumableTaskFile         | Int      | 중단 지점 파일 경로. 기본값: &lt;saveAs.cosresumabletask> | No       |
+| ResumableDownload         | Bool      | 체크포인트부터 전송 재개 활성화 여부, 기본값: false | No      |
+| ResumableTaskFile         | Int      | 체크포인트 파일 경로. 기본값: &lt;saveAs.cosresumabletask> | No       |
 
 
 #### 요청 예시
@@ -1932,11 +1937,11 @@ try {
         $bucket = 'examplebucket-1250000000', //형식: BucketName-APPID
         $key = 'exampleobject',
         $saveAs = $local_path,
-        $options=['Progress' => $printbar, // 프로그레스 바 지정
-                  'PartSize' => 10 * 1024 * 1024, // 멀티파트 크기
-                  'Concurrency' => 5, // 동시 실행 수
-                  'ResumableDownload' => true, //중단 지점부터 이어서 전송 활성화 여부. 기본값: false
-                  'ResumableTaskFile' => 'tmp.cosresumabletask' //중단 지점 파일 정보 경로. 기본 설정값:<localpath>.cosresumabletask
+        $options=['Progress' => $printbar, //프로그레스 바 지정
+                  'PartSize' => 10 * 1024 * 1024, //멀티파트 크기
+                  'Concurrency' => 5, //동시 실행 수
+                  'ResumableDownload' => true, //체크포인트부터 이어서 전송 활성화 여부. 기본값: false
+                  'ResumableTaskFile' => 'tmp.cosresumabletask' //체크포인트 파일 정보 경로. 기본 설정값: <localpath>.cosresumabletask
                 ]
     );
     // 요청 완료
