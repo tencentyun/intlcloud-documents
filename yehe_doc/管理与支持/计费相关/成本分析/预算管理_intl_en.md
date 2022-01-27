@@ -24,7 +24,7 @@ This feature helps you manage budgets for Tencent Cloud products. You can create
        - If you select **Fixed**, enter a fixed value.
        - If you select **Variable**, enter the alert threshold value for each month, quarter, or year.
        - Auto Fill: select **Auto Fill**, set the starting budget and expected growth, and click **Confirm** to automatically enter the monthly/quarterly/annual budget amount. You can set only one starting budget amount and growth rate.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/273208a43960b1c792f34266d33b74c4.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/52967d94fd515381e613379caa59b4a4.png)
 >!Expected growth rate refers to the percentage you expect the budget amount to increase from the previous period.
 >
  2. Set the budget scope.
