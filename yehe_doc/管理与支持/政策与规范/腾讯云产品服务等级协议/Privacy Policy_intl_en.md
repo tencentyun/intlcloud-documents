@@ -567,5 +567,8 @@ The following Modules shall apply and form part of this privacy policy if you us
 13.[Private DNS](https://intl.cloud.tencent.com/document/product/1097/42072).
 14.[TencentDB for Tendis](https://intl.cloud.tencent.com/document/product/1083/43456).
 15.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44012).
+16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
+17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
+18.[Domains](https://intl.cloud.tencent.com/document/product/242/45146).
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
