@@ -6,7 +6,8 @@
 
 リモート認証のリクエストフローは次のとおりです。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/415756d400277c6eaf43eb6ea08055c1.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/8f8d75de26e96ebaf58676eee0ca084a.png)
+
 
 1. エンドユーザーがリソースに対するリクエストを送信します。
 2. CDNがリクエストをリモート認証サーバーに同期転送します。
