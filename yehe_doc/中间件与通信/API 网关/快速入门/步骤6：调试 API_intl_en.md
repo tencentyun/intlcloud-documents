@@ -11,5 +11,5 @@ You have [created an API ](https://intl.cloud.tencent.com/document/product/628/4
 1. Find the API just created in [step 3](https://intl.cloud.tencent.com/document/product/628/44318) on the API list page and click **Debug** in the **Operation** column to enter the API debugging page.
 2. Select `application/x-www-form-urlencoded` as the `Content-Type`.
 3. Click **Send Request** and view the result returned after debugging.
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/2351b803a48808ff924e09b936f56929.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/837bcea2089a7d30b266a93fe580a36d.png)
 
