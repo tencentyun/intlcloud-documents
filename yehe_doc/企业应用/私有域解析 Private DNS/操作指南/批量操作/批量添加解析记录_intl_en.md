@@ -12,5 +12,5 @@ This document describes how to add DNS records for multiple private domains with
 >?
 >- For more information on how to enter record values, see [Setting DNS Record](https://intl.cloud.tencent.com/document/product/1097/40568).
 >- To add multiple record values, simply click **Add**.
-6. Click **Confirm**.
+6. Click **Add**.
 
