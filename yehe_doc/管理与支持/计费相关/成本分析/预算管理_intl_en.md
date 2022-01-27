@@ -10,12 +10,10 @@ This feature helps you manage budgets for Tencent Cloud products. You can create
 1. Log in to the [Billing Center](https://console.cloud.tencent.com/expense/overview).
 2. On the left sidebar, select **Cost Analysis > Budget Management** to enter the budget management page.
 3. Click **New**.
-![](https://qcloudimg.tencent-cloud.cn/raw/ce32b1baa5330dac674eed22467b1e46.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fedadab6f2eb475bb1913cf8214a81b0.png)
 4. Perform the following operations:
- 1. Select **Cost budget** for **Budget Type**.
-![](https://qcloudimg.tencent-cloud.cn/raw/89d980db894429a3b6ce4ce03789c94f.png)
- 2. Set the following budget information:
-![](https://qcloudimg.tencent-cloud.cn/raw/22c12bec7e054eb8cb409b7ce6c1f661.png)
+ 1. Set the following budget information:
+![](https://qcloudimg.tencent-cloud.cn/raw/fd92af55324b288cc08361ba59a0a142.png)
     - Budget Name: enter a budget name, which will be displayed in the budget list.
     - Budget Period: select a budget period. Calendar month/quarter/year is used. For example, Q1 is from January to March.
     - Effective: set the time period during which the budget will be effective.
@@ -26,15 +24,15 @@ This feature helps you manage budgets for Tencent Cloud products. You can create
        - If you select **Fixed**, enter a fixed value.
        - If you select **Variable**, enter the alert threshold value for each month, quarter, or year.
        - Auto Fill: select **Auto Fill**, set the starting budget and expected growth, and click **Confirm** to automatically enter the monthly/quarterly/annual budget amount. You can set only one starting budget amount and growth rate.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/149b4d168123b0edd9bab93721bcdd71.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/273208a43960b1c792f34266d33b74c4.png)
 >!Expected growth rate refers to the percentage you expect the budget amount to increase from the previous period.
 >
- 3. Set the budget scope.
-    ![](https://qcloudimg.tencent-cloud.cn/raw/b7280f948655d76e6c18022949220dd6.png)
+ 2. Set the budget scope.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/1a6e48d5a7955ef7f9d745250b7ae580.png)
     - The budget is applicable to all products by default. You can also apply it and its alert settings to one or more specific products.
     - The budget is applicable to all billing modes by default. You can also apply it and its alert settings to pay-as-you-go or monthly subscription only.
- 4. Set alert thresholds. You can customize up to 3 alert thresholds for each budget.
-    ![](https://qcloudimg.tencent-cloud.cn/raw/c5d675ab57039c8abb0757988f76d93e.png)
+ 3. Set alert thresholds. You can customize up to 3 alert thresholds for each budget.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/8a22a14da57ac3bbdadd82e47e3ca28b.png)
     - Actual spend: Alerts are triggered based on your actual spend.
     - Absolute value: Alerts are triggered when an absolute value is exceeded.
     - Percentage of budgeted amount: An amount threshold is calculated based on the specified percentage of budgeted amount, and alerts will be triggered when the amount is exceeded. If the budgeted amounts vary with month, the amount threshold changes accordingly.
