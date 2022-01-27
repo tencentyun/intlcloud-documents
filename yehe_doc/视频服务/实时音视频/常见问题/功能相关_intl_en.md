@@ -244,7 +244,7 @@ You can listen for the events through the following callbacks:
 ### Does the TRTC SDK support reconnection?
 The SDK supports the unlimited reconnection mechanism for user disconnection. The specific connection status and processing logic during reconnection are as detailed below:
 The following figure shows the listening callback events received between when user `Userid1` joins a channel and when the user is disconnected and joins the room again:
-![](https://qcloudimg.tencent-cloud.cn/raw/6fa1c30fbdef1ba8d40dba183a5f6d74.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/893ec522169d27a7b9a0e2dc4b09c7d0.png)
 **Description**:
 
 - T1: the user calls the `enterRoom` API to initiate a room entry request.
