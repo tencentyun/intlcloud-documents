@@ -27,9 +27,6 @@ Hadoop-2.6.0 버전 이상, Hadoop-COS 플러그 인 5.9.3 버전 이상.
 - Hadoop 2.x 사용자는 [cos-distcp-1.9-2.8.5.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-2.8.5.jar)를 다운로드하여 jar 패키지의 [MD5 검사 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-2.8.5-md5.txt)에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
 - Hadoop 3.x 사용자는 [cos-distcp-1.9-3.1.0.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-3.1.0.jar)를 다운로드하여 jar 패키지의 [MD5 검사 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-3.1.0-md5.txt)에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
 
-#### 설치 설명
-
-Hadoop 환경에서 [Hadoop-COS](https://intl.cloud.tencent.com/document/product/436/6884)를 설치하면 COSDistCp 툴을 실행할 수 있습니다.
 
 
 ## 원리 설명
