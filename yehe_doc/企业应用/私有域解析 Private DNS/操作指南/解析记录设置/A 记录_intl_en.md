@@ -6,9 +6,9 @@ You have created the corresponding private domain.
 
 ## Directions
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns) and click **Private Domain List** on the left sidebar to enter the private domain list.
-2. In the **Private Domain List**, click the name of the private domain for which you need to create an A record or **Records** as shown below:
+2. In the **Private Domain List**, click the name of the private domain for which you need to create an A record or **DNS** as shown below:
 ![](https://main.qcloudimg.com/raw/42b82183750f467096a2a250d168b6a6.png)
-3. On the **Records** tab, click **Add Record** and enter the following record value information as shown below:
+3. On the **DNS Records** tab, click **Add Record** and enter the following record value information as shown below:
 >?You can add up to 10 round-robin DNS records of the same record type for the same host.
 >
 ![](https://main.qcloudimg.com/raw/6c2ad43f95b24bac16edbf5fd08a4ef5.png)
