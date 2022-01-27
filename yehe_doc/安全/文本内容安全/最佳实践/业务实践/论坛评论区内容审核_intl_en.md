@@ -100,8 +100,8 @@ Parameter description:
 
 After completing the above steps, you can call the **TextModeration** API to create a comment moderation task as instructed below:
 
-- Make sure that the text to be moderated meets the [file format requirements](https://cloud.tencent.com/document/product/1124/51860#1.-.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) of the API.
-- Enter the input parameters as instructed in the [API documentation](https://cloud.tencent.com/document/product/1124/51860#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0).
-- If the task is created successfully, the API will return the detailed recognition result, and you can refer to [Text Content Recognition Sample](https://cloud.tencent.com/document/product/1124/51860#.E7.A4.BA.E4.BE.8B1-.E6.96.87.E6.9C.AC.E5.86.85.E5.AE.B9.E5.AE.89.E5.85.A8) for more information on sample response parameters. If task creation failed, the API will return an error code, and you can refer to [Business Error Codes](https://cloud.tencent.com/document/product/1124/51860#6.-.E9.94.99.E8.AF.AF.E7.A0.81) and [Common Error Codes](https://cloud.tencent.com/document/api/1124/51867#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81) for troubleshooting.
+- Make sure that the text to be moderated meets the **file format requirements** of the API.
+- Enter the input parameters as instructed in the **API documentation**.
+- If the task is created successfully, the API will return the detailed recognition result, and you can refer to **Text Content Recognition Sample** for more information on sample response parameters. If task creation failed, the API will return an error code, and you can refer to **Business Error Codes** and **Common Error Codes** for troubleshooting.
 
 >? When connecting to the service, you can use API Explorer for online debugging.
