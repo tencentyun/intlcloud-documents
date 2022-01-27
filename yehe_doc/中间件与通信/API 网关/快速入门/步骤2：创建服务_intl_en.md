@@ -11,7 +11,7 @@ You have obtained the [access permission](https://intl.cloud.tencent.com/documen
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
 2. On the left sidebar, click **Service** to enter the service list page.
 3. Click **Create** and enter the service information.
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/46511eef95e119326c7680530765dc45.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/7b7094cc1c1a19585efc5251f672a00c.png)
     - Service Name: it is required and can contain up to 50 letters, digits, and underscores. **exampleservice** is entered here as an example.
     - Instance Type: for the differences between the two instance types, see [Instance Specification](https://intl.cloud.tencent.com/document/product/628/40305). **Shared** is selected here as an example.
     - Remarks: remarks of the service. **Test** is entered here as an example.
