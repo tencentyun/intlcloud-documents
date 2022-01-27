@@ -79,7 +79,7 @@ You can click **Delete** to delete an alert or select multiple alerts and click 
 1. Go to [Message Subscription](https://console.cloud.tencent.com/messageCenter/messageConfig) and find **Cost Analysis** in **Financial Issues**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/096efd042eb152c62115dad9330cae7c.png)
 2. Click **Modify Message Recipient**.
-![](https://qcloudimg.tencent-cloud.cn/raw/3dd9303fde15ba48b96c4f2c3bab2b86.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/23a8d9d6429043dfec9b3dc3d9b797ec.png)
 >? The spend analysis feature supports two alert channels: SMS and email.
 >
 3. In the pop-up window, modify the recipient (the default recipient is the creator) and click **Confirm**.
