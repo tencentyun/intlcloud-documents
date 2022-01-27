@@ -19,15 +19,15 @@ signurl 명령어에는 다음과 같은 flag 옵션이 포함됩니다.
 
 ## 작업 예시
 
-### bucket1에 있는 pictrue.jpg의 사전 서명된 URL을 가져옵니다.
+### bucket1에 있는 picture.jpg의 사전 서명된 URL을 가져옵니다.
 
 ```plaintext
-./coscli signurl cos://bucket1/pictrue.jpg
+./coscli signurl cos://bucket1/picture.jpg
 ```
 
-### 사전 서명된 pictrue.jpg URL을 bucket2에서 가져와 URL의 만료 시간을 1314초로 설정합니다.
+### 사전 서명된 picture.jpg URL을 bucket2에서 가져와 URL의 만료 시간을 1314초로 설정합니다.
 
 ```plaintext
-./coscli signurl cos://bucket2/pictrue.jpg --time 1314
+./coscli signurl cos://bucket2/picture.jpg --time 1314
 ```
 
