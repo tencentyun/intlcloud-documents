@@ -8,6 +8,7 @@ Tencent Cloud는 불법 사용자가 고객의 리소스에 액세스하는 것�
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/8f8d75de26e96ebaf58676eee0ca084a.png)
 
+
 1. 단말 사용자가 리소스를 요청합니다.
 2. CDN은 동기적으로 원격 인증 서버에 요청을 포워딩합니다.
 3. 원격 인증 서버가 인증 결과를 반환합니다.

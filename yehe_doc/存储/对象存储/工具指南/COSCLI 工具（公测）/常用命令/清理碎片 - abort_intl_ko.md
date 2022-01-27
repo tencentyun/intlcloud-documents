@@ -26,8 +26,8 @@ abort 명령어에는 다음과 같은 flag 옵션이 포함됩니다.
 ./coscli abort cos://bucket1
 ```
 
-### bucket1 버킷의 pictrue 폴더 아래에 있는 모든 조각 지우기
+### bucket1 버킷의 picture 폴더 아래에 있는 모든 조각 지우기
 
 ```plaintext
-./coscli abort cos://bucket1/pictrue/
+./coscli abort cos://bucket1/picture/
 ```

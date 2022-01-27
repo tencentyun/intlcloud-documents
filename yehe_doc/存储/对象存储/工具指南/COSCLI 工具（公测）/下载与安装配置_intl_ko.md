@@ -17,7 +17,9 @@ COSCLI 툴은 간단한 설치 및 설정 후에 사용할 수 있는 Windows, M
 5. 대화 상자에서 `cmd`를 입력하고 `Enter`를 눌러 명령 라인 창을 엽니다.
 6. 명령 라인 창에서 `coscli --help`를 입력하고 다음 정보가 출력되면 설치가 완료된 것입니다.
 >? `Windows` 시스템에서는 명령 라인 클라이언트에 따라 COSCLI를 사용하는 방식이 약간 다를 수 있습니다. `coscli [command]` 입력 후 COSCLI가 정상적으로 작동하지 않을 경우 `./coscli [command]` 형식으로 시도하시기 바랍니다.
->
+
+
+
 ```
 Welcome to use coscli!
    
@@ -48,6 +50,9 @@ Flags:
 Use "coscli [command] --help" for more information about a command.
 ```
 
+
+
+
 ### Mac
 
 1. 다음 명령어를 실행하여 COSCLI를 다운로드합니다.
@@ -59,6 +64,9 @@ wget https://github.com/tencentyun/coscli/releases/download/v0.91-beta/coscli-ma
 mv coscli-mac coscli
 ```
 3. 명령 라인에 `./coscli --help`를 입력하고 다음 정보가 출력되면 설치가 완료된 것입니다.
+
+
+
 ```
 Welcome to use coscli!
    
@@ -88,6 +96,10 @@ Flags:
    
 Use "coscli [command] --help" for more information about a command.
 ```
+
+
+
+
 >? Mac 시스템에서 COSCLI 사용 시 `개발자를 인증할 수 없기 때문에 ‘coscli’를 열 수 없습니다`라는 팝업창이 뜨면 `설정 > 보안성 및 개인정보 보호 > 일반`으로 이동하여 `계속 coscli 열기`를 선택하여 COSCLI를 정상적으로 사용할 수 있습니다.
 >
 
@@ -107,6 +119,11 @@ mv coscli-linux coscli
 chmod 755 coscli
 ```
 3. 명령 라인 창에 `./coscli --help`를 입력하고 다음 정보가 출력되면 설치가 완료된 것입니다.
+
+
+
+
+
 ```
 Welcome to use coscli!
    
@@ -160,6 +177,8 @@ Use "coscli [command] --help" for more information about a command.
 
 `./coscli config init`을 사용하여 설정 파일을 인터랙티브식으로 생성하는 것 외에도, 수동으로 COSCLI 설정 파일을 작성할 수 있습니다. COSCLI의 설정 파일 형식은 `yaml` 형식입니다. 설정 파일의 예시는 다음과 같습니다.
 
+
+
 ```yaml
 cos:
   base:
@@ -177,6 +196,8 @@ cos:
     alias: bucket3
     region: ap-chengdu
 ```
+
+
 
 >!COSCLI는 기본적으로 ~/.cos.yaml의 설정 항목을 읽어옵니다. 사용자 정의 설정 파일을 사용하려면 명령어 뒤에 -c (--config-path) 옵션을 사용합니다.
 

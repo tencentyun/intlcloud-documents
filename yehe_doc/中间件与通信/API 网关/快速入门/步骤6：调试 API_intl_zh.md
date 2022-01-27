@@ -11,5 +11,5 @@
 1. 在 API 列表页找到 [步骤3](https://intl.cloud.tencent.com/document/product/628/44318) 中刚创建的 API ，在操作栏中单击**调试**，进入 API 调试页面。
 2. Content-Type 选择 application/x-www-form-urlencoded。
 3. 单击**发送请求**，即可查看本次调试的返回结果。
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/2351b803a48808ff924e09b936f56929.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/837bcea2089a7d30b266a93fe580a36d.png)
 

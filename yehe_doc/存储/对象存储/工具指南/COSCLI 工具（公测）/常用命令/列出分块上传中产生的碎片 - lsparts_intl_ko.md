@@ -27,8 +27,8 @@ lsparts 명령어에는 다음과 같은 flag 옵션이 포함됩니다.
 ./coscli lsparts cos://bucket1
 ```
 
-### bucket1의 pictrue 폴더에 있는 모든 조각 나열
+### bucket1의 picture 폴더에 있는 모든 조각 나열
 
 ```plaintext
-./coscli lsparts cos://bucket1/pictrue/
+./coscli lsparts cos://bucket1/picture/
 ```
