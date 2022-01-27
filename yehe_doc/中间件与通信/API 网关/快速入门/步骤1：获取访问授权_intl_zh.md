@@ -10,14 +10,11 @@
 
 ## 操作步骤
 
-1. 使用**主账号**首次登录 [API 网关控制台](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fcloud.tencent.com%2F) 时，您需要单击控制台概览页的**立即开通**，开通 API 网关服务。
- ![](https://qcloudimg.tencent-cloud.cn/raw/ddedf3008a7d678b15c94c4146baf868.png)
+1. 使用**主账号**首次登录 [API 网关控制台](https://intl.cloud.tencent.com/login) 时，您需要单击控制台概览页的**立即开通**，开通 API 网关服务。
 
 2. 由于没有授权 API 网关服务角色权限无法访问其他云产品资源，您需要单击**前往授权**，进入 [CAM 控制台](https://console.cloud.tencent.com/cam/overview) 授权。
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/7728e6bc78926a79db5361d33589c5b8.png)
 
 3. 单击**同意授权**，则为 API 网关授权服务角色访问您其他云产品资源。
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/41d6567188329bf509462a39a71bb71c.png)
 
 >?子账号与协作者使用 API 网关服务请参考 [权限管理](https://intl.cloud.tencent.com/document/product/628/34064)。
 
