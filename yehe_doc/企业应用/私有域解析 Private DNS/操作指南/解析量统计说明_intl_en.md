@@ -3,9 +3,9 @@ This document describes how to view the request volume statistics.
 
 ## Directions
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns) and click **Request Volume Statistics** on the left sidebar.
-2. On the **Request Volume Statistics** page, you can view the information of DNS requests as shown below:
+2. On the **Query Statistics** page, you can view the information of DNS requests as shown below:
 ![](https://main.qcloudimg.com/raw/1df5a7a3998719e514f39fb093b3f523.png)
-3. On the **Request Volume Statistics** page, you can perform the following operations:
+3. On the **Query Statistics** page, you can perform the following operations:
     - **Filter by region**: you can filter and display data by the regions of VPCs associated with private domains.
     >?You cannot view the request volume in all regions at once for the time being.
     - **Filter by VPC**: you can filter and display data by the VPC instances associated with private domains.
