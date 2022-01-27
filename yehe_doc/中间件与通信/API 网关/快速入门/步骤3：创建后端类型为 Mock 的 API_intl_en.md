@@ -20,10 +20,10 @@ You have [created a service](https://intl.cloud.tencent.com/document/product/628
    - CORS Support: whether the API supports cross-origin resource sharing. **Yes** is selected here as an example.
    - Remarks: remarks of the API. **Test** is entered here as an example.
    - Parameter Configuration: frontend parameters of the API. Nothing is entered here.
-     ![](https://qcloudimg.tencent-cloud.cn/raw/3297493162b368eb3d63dff03ee73939.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/a3ce9bbefcb0d2dd73aac09b40581802.png)
 3. Click **Next** and enter the backend configuration information of the API.
    - Backend Type: type of the backend service of the API. **Mock** is selected here as an example.
    - Returned Data: data to be returned by Mock. **hello world, hello apigateway** is entered here as an example.
-     ![](https://qcloudimg.tencent-cloud.cn/raw/617dfb02327f80fa19eef749024910cc.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/e5ab34f1a562ba128f6e3832abb045a6.png)
 4. Click **Complete**.
 
