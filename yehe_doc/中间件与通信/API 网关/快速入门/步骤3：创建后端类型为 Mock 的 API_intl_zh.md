@@ -20,10 +20,10 @@
    - 支持CORS：此 API 是否支持跨域资源共享，此处我们选择“是”。
    - 备注：此 API 的备注信息，此处我们填写“测试”
    - 参数配置：此 API 的前端参数，此处我们不填写。
-     ![](https://qcloudimg.tencent-cloud.cn/raw/3297493162b368eb3d63dff03ee73939.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/a3ce9bbefcb0d2dd73aac09b40581802.png)
 3. 单击**下一步**，输入 API 后端配置信息。
    - 后端类型：此 API 后端服务所属类型，此处我们选择“Mock”。
    - 返回数据：Mock 返回数据，此处我们输入“hello world, hello apigateway”。
-     ![](https://qcloudimg.tencent-cloud.cn/raw/617dfb02327f80fa19eef749024910cc.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/e5ab34f1a562ba128f6e3832abb045a6.png)
 4. 单击**完成**，即可完成创建后端类型为 Mock 的 API。
 
