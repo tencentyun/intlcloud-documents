@@ -8,9 +8,9 @@ This document describes how to add a PTR record, through which you can reversely
 
 ## Directions
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns) and click **Private Domain List** on the left sidebar to enter the private domain list.
-2. In the **Private Domain List**, click the name of the private domain for which you need to create a PTR record or **Records** as shown below:
+2. In the **Private Domain List**, click the name of the private domain for which you need to create a PTR record or **DNS** as shown below:
 ![](https://main.qcloudimg.com/raw/f9700dc38bd573a5b8e5330ae34476ae.png)
-3. On the **Records** tab, click **Add Record** and enter the following record value information as shown below:
+3. On the **DNS Records** tab, click **Add Record** and enter the following record value information as shown below:
 ![](https://main.qcloudimg.com/raw/cf6ae77c344e326a4a00919a8d44104b.png)
  - **Host**: the combination of the host and the created domain name (without `in-addr.arpa`) is in the fixed IPv4 format, and you can enter only an integer between 0 and 255 for each IP range.
  - **Record Type**: only **PTR** is supported.
