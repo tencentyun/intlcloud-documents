@@ -28,7 +28,7 @@ You can choose to enable subdomain recursive DNS when adding a private domain fo
 
 ### Disabling subdomain recursive DNS
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns) and click **Private Domain List** on the left sidebar to enter the private domain list.
-2. In the **Private Domain List**, select the private domain for which you want to disable subdomain recursive DNS and click **Records** to enter its **Records** page.
+2. In the **Private Domain List**, select the private domain for which you want to disable subdomain recursive DNS and click **DNS** to enter its **DNS Records** page.
 3. Select the **Private Domain Settings** tab and click <span ><img src="https://main.qcloudimg.com/raw/3e46d1b5a3578be94c9b5803006ffb7a.png" style="margin-bottom:-5px;"/></span> to disable this feature as shown below:
 
 ![](https://main.qcloudimg.com/raw/703574efe2d8d995c046249dd560ad97.png)
