@@ -244,7 +244,7 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 ### TRTC SDK 是否支持断线重连?
 SDK 支持用户断线情况下的无限重连机制，连接过程中具体的连接状态和处理逻辑如下说明。
 下图展示了从用户 Userid1 加入频道，到连接中断，再到重新加入房间过程中，收到的监听回调事件：
-![](https://qcloudimg.tencent-cloud.cn/raw/6fa1c30fbdef1ba8d40dba183a5f6d74.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/893ec522169d27a7b9a0e2dc4b09c7d0.png)
 **具体说明**：
 
 - T1：用户侧发起调用 `enterRoom` 接口发起进房请求。
