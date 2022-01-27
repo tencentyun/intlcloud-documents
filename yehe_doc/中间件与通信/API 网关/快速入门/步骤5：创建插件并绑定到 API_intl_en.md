@@ -10,7 +10,7 @@ You have [created an API](https://intl.cloud.tencent.com/document/product/628/44
 
 1. In the [API Gateway console](https://console.cloud.tencent.com/apigateway), select **Plugin** > **System Plugin** on the left sidebar.
 2. Click **Create** and enter the plugin information.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/6c92c031f1a203e3349f194851261413.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/6880ceebb39878afcd4df46c23acf382.png)
    - Plugin Name: it can contain up to 50 letters, digits, and underscores. **exampleplugin** is entered here as an example.
    - Type: select **IP access control**.
    - Plugin Description: description of the plugin. **Test** is entered here as an example.
@@ -19,7 +19,7 @@ You have [created an API](https://intl.cloud.tencent.com/document/product/628/44
    - Tag: it is optional and makes it easier to categorize and manage resources.
 3. Click **Save**.
 4. On the plugin list page, click **Bind API** in the **Operation** column of the just created plugin.
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/47e97a4e1c6e4ede0739a3140733f508.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/a6d0161e4c80af55a8fd1f0e47646730.png)
    - Service: select the just created **exampleservice** service.
    - Select Environment: select **Release**.
    - Select APIs to bind: select the just created **exampleapi** API.
