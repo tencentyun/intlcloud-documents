@@ -10,7 +10,8 @@
 
 - 不同地域之间的网络完全隔离，不同地域之间的云产品**默认不能通过内网通信**。
 - 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式较为高速、稳定。
-- [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/38441) 功能，则可支持负载均衡跨地域绑定云服务器。
+- [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/12014) 功能，则可支持负载均衡跨地域绑定云服务器。
+
 
 ## 可用区
 
@@ -142,10 +143,6 @@
 			<td>新加坡三区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td>
 		</tr>
 		<tr>
-			<td>亚太东南（雅加达）<br>ap-jakarta</td>
-			<td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td>
-		</tr>
-		<tr>
 			<td  rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
 			<td>首尔一区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-1</td>
 		</tr>
@@ -258,7 +255,7 @@
 	  <td>安全组在某个地域下创建，并且只能与同一地域的实例相关联。腾讯云为用户自动创建三条默认安全组。</td>
 	</tr>
 	<tr>
-	<td> <a href=https://intl.cloud.tencent.com/document/product/362">云硬盘</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/362">云硬盘</a> </td>
 	  <td>disk-xxxxxxxx</td>
 	  <td>只能在单地域的单个可用区下使用</td>
 	  <td>用户只能在特定可用区下创建云硬盘，并且挂载在同一可用区的实例上。</td>
