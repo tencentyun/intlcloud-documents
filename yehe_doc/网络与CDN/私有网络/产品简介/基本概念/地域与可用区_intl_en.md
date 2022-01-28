@@ -213,29 +213,29 @@ Even if you have just one VPC, we still recommend that you deploy your businesse
 - There may be network latency among different availability zones. We recommend that you assess your business requirements and find the optimal balance between high availability and low latency.
 
 ## Resource Availability
-
 The following table describes which Tencent Cloud resources are global, which are regional, and which are specific to availability zones.
 
+
 <table>
-	<tr><th>Resource</th><th>Resource ID Format<br><Resource Abbreviation>-8-Digit String of Numbers and Letters</th><th>Type</th><th>Description</th></tr>
+	<tr><th width="14%">Resource</th><th>Resource ID Format<br><Resource Abbreviation>-8-Digit String of Numbers and Letters</th><th>Type</th><th>Description</th></tr>
 	<tbody>
 	<tr>
 	  <td>User Account</td>
 	  <td>No limit</td>
 	  <td>Globally unique</td>
-	  <td>Users can use the same account to access Tencent Cloud resources around the world.</td> </td>
+	  <td>Users can use the same account to access Tencent Cloud resources around the world.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/213/6092">SSH Keys</a> </td>
 	  <td>skey-xxxxxxxx</td>
 	  <td>Global</td>
-	  <td>Users can use an SSH key to bind a CVM in any region under the account.</td> </td>
+	  <td>Users can use an SSH key to bind a CVM in any region under the account.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/213/4939">CVM Instances</a> </td>
 	  <td>ins-xxxxxxxx</td>
 	  <td>CVM instances are specific to an availability zone</td>
-	  <td>Users can only create a CVM instance in a specific AZ.</td> </td>
+	  <td>Users can only create a CVM instance in a specific AZ.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/213/4941">Custom Images</a></td>
@@ -247,7 +247,7 @@ The following table describes which Tencent Cloud resources are global, which ar
 	<td> <a href="https://intl.cloud.tencent.com/document/product/213/5733">EIPs</a> </td>
 	  <td>eip-xxxxxxxx</td>
 	  <td>Can be used in multiple AZs in a region</td>
-	  <td>EIPs (Elastic IPs) can only be created in a region and be associated with instances in the same region.</td> </td>
+	  <td>EIPs (Elastic IPs) can only be created in a region and be associated with instances in the same region.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/213/12452">Security Groups</a> </td>
@@ -259,37 +259,37 @@ The following table describes which Tencent Cloud resources are global, which ar
 	<td> <a href="https://intl.cloud.tencent.com/document/product/362">Cloud Block Storage</a> </td>
 	  <td>disk-xxxxxxxx</td>
 	  <td>CBS disks are specific to an availability zone.</td>
-	  <td>Users can only create a Cloud Block Storage disk in a specific AZ and mount it to instances in the same availability zone.</td> </td>
+	  <td>Users can only create a Cloud Block Storage disk in a specific AZ and mount it to instances in the same availability zone.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/362/31638">Snapshots</a> </td>
 	  <td>snap-xxxxxxxx</td>
 	  <td>Can be used in multiple AZs in a region</td>
-	  <td>A snapshot created from a cloud disk can be used for other purposes (such as creating cloud disks) in this region.</td> </td>
+	  <td>A snapshot created from a cloud disk can be used for other purposes (such as creating cloud disks) in this region.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/214/524">Cloud Load Balancer</a> </td>
 	  <td>clb-xxxxxxxx</td>
 	  <td>Can be used in multiple AZs in a region</td>
-	  <td>Cloud Load Balancer can be bound with CVMs in different availability zones of a single region for traffic forwarding.</td> </td>
+	  <td>Cloud Load Balancer can be bound with CVMs in different availability zones of a single region for traffic forwarding.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/215/535">VPC</a> </td>
 	  <td>vpc-xxxxxxxx</td>
 	  <td>Available in multiple availability zones of a single region</td>
-	  <td>A VPC in one region can have resources created in different availability zones of the region.</td> </td>
+	  <td>A VPC in one region can have resources created in different availability zones of the region.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/215/535#.E5.AD.90.E7.BD.91">Subnets</a> </td>
 	  <td>subnet-xxxxxxxx</td>
 	  <td>Subnets are specific to an availability zone.</td>
-	  <td>Users cannot create subnets across availability zones.</td> </td>
+	  <td>Users cannot create subnets across availability zones.</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/215/31810">Route Tables</a> </td>
 	  <td>rtb-xxxxxxxx</td>
 	  <td>Can be used in multiple AZs in a region</td>
-	  <td>When creating a route table, users need to specify a VPC. Therefore, route tables are regional as well.</td> </td>
+	  <td>When creating a route table, users need to specify a VPC. Therefore, route tables are regional as well.</td>
 	</tr>
 	</tbody>
 </table>
