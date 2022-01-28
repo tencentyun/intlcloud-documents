@@ -7,7 +7,6 @@ Resource configuration of the classic network-based business:
 + The public network CLB is bound with two CVMs (CVM 1 and CVM 2) as the backend servers.
 + Applications deployed in CVM 1 and CVM 2 can access the backend TencentDB for Redis and TencentDB for MySQL services.
 
-**迁移要求**： 业务平滑切换至私有网络。
 
 ### Migration process
 <dx-steps>
@@ -33,8 +32,7 @@ Resource configuration of the classic network-based business:
 4.  Create a public network CLB in the VPC and associate it with the two CVMs created in the previous step. For more information, see [Getting Started with CLB](https://intl.cloud.tencent.com/document/product/214/8975). Perform a health check to avoid service interruption due to an exception.
 ![]()
 5.  Resolve the DNS domain name to the public network CLB’s VIP in the VPC.
-   >
-   ![]()
+![]()
 6.  Check whether the VPC works well. If yes, release the original public network CLB and CVM resources in the classic network to finish the migration.
  >? The original classic network IP of a TencentDB instance will be automatically released after expiration.
  >

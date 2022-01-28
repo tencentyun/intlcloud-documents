@@ -26,6 +26,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 >? Private network interconnection refers to the interconnection of resources under the same account. Resources under different accounts are completely isolated on the private network.
 
 <span id="MainlandChina"></span>
+
 ## China
 <table class="table-striped">
 <tbody>
@@ -210,9 +211,9 @@ When you select other Tencent Cloud services, we recommend you try to locate the
 - High availability and disaster recovery.
 Even if you have just one VPC, we still recommend that you deploy your businesses in different availability zones to prevent a single point of failure and enable cross-AZ disaster recovery.
 - There may be network latency among different availability zones. We recommend that you assess your business requirements and find the optimal balance between high availability and low latency.
-- 如果您需要访问其他国家和地区的主机，建议您选择其他国家和地区的云服务器进行访问。 如果您在 [中国](#MainlandChina) 创建云服务器，访问 [其他国家和地区的主机](#InternationalArea) 会有较高的访问延迟，不建议您使用。
 
 ## Resource Availability
+
 The following table describes which Tencent Cloud resources are global, which are regional, and which are specific to availability zones.
 
 <table>
@@ -299,12 +300,12 @@ The following table describes which Tencent Cloud resources are global, which ar
 ### Migrating an instance to another availability zone
 
 For an instance that is already started, its availability zone cannot be changed, but its user can migrate it to another availability zone by other means. The migration process involves creating a custom image from the original instance, using the custom image to start an instance in a new availability zone and updating the configuration of the new instance.
-1. Create a custom image for the source instance. - [Creating Custom Images](https://intl.cloud.tencent.com/document/product/213/4942)
-2. 2. If the [network environment](https://intl.cloud.tencent.com/document/product/213/5227) of the current instance is VPC and the private IP address must be retained after migration, you need to delete the subnet in the current availability zone and then create a subnet in the new availability zone with the same IP address range as that of the original subnet. Please note that a subnet can be deleted only when it contains no available instance. Thus, all the instances in the current subnet should be migrated to the new subnet.
+1. Create a custom image for the source instance.  [Creating Custom Images](https://intl.cloud.tencent.com/document/product/213/4942)
+2. If the [network environment](https://intl.cloud.tencent.com/document/product/213/5227) of the current instance is VPC and the private IP address must be retained after migration, you need to delete the subnet in the current availability zone and then create a subnet in the new availability zone with the same IP address range as that of the original subnet. Please note that a subnet can be deleted only when it contains no available instance. Thus, all the instances in the current subnet should be migrated to the new subnet.
 3. Create a new instance in the new AZ by using the created custom image. You can choose the same type and configuration as those of the original instance, or choose new ones. For more information, see [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).
 4. If the source instance is associated with an EIP, disassociate the EIP and associate it with the new instance. For more information about shutting down an instance, please see [Shutdown Instances](https://intl.cloud.tencent.com/document/product/213/4929).
 5.  For more information, see [Terminating Instances](https://intl.cloud.tencent.com/document/product/213/4930). 
 
 ### Copying images to other regions
 
-Region attribute is differentiated for all behaviors such as enabling and viewing instances by users. If image of the instance that the users need to enable does not exist in the region, then the image needs to be copied to current region. - [Copying Images](https://intl.cloud.tencent.com/document/product/213/4943)
+Region attribute is differentiated for all behaviors such as enabling and viewing instances by users. If image of the instance that the users need to enable does not exist in the region, then the image needs to be copied to current region.  [Copying Images](https://intl.cloud.tencent.com/document/product/213/4943)

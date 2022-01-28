@@ -31,12 +31,12 @@ You can easily migrate a instance from the classic network to a VPC. See below f
 ## Hybrid Access Solution During the Migration
 Hybrid access means the services being migrated can access both the classic network and a VPC. Tencent Cloud provides the following hybrid access solution:
 + The accessibility of classic network IP and VPC IP of the TencentDB service ensures the hybrid access at the TencentDB instance level.
-    ![](https://main.qcloudimg.com/raw/e48e84309c8ff4494f5046f52cfce084.png)
+    ![]()
 + The Cloud Object Storage (COS) access through domain name provides the hybrid access capability.
 + To implement interconnection during the migration, use together with:
   + Classiclink:  allows the classic network-based CVMs to interconnect with VPC resources such as CVM, TencentDB, and CLB instances.
   + Terminal connection:  allows the instances in a VPC to communicate with resources in the classic network (except CVMs).
-  ![](https://main.qcloudimg.com/raw/a8c5d3ee6520a0b8992d23b1717a86d0.png)
+  ![]()
    >? 
    >+ If you want to establish a terminal connection, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). This feature only supports accessing classic network-based CVMs. We recommend migrating your resources to a VPC.
    >+ To learn more about VPC and Classiclink solutions, see [Communicating with Classic Network](https://intl.cloud.tencent.com/document/product/215/35505). For more information about how to configure a Classiclink, see [Classiclink](https://intl.cloud.tencent.com/document/product/215/41418).
