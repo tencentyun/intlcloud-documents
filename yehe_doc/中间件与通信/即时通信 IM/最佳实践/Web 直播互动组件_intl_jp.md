@@ -1,315 +1,209 @@
-## TWebLiveの概要
-TWebLiveはTencent CloudのWebライブストリーミングインタラクションコンポーネントです。これはTencent Cloud端末R&Dチームが開発した新しいSDKで、Tencent CloudのTRTC、IM、およびSuper Player TCPlayerを統合し、Webライブストリーミングにおけるインタラクティブなシナリオで一般的な機能（プッシュ、マイクのオン/オフ、カメラのオン/オフ、WeChatの共有・視聴、チャットの「いいね！」など）をカバーするとともに、シンプルで使いやすい[API](https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/TWebLive.html)をカプセル化しています。アクセスすると、Web端末でプッシュ・プル・リアルタイムチャットといったインタラクティブな機能をすばやく実現することができます。
+## まえがき
 
-## TWebLiveの特長
-次の例示説明のとおり、開発者はこの[TWebLive SDK](https://www.npmjs.com/package/tweblive)を使用して、Flashプッシュソリューションと完全に置き換えることができ、Webプッシュ、低遅延Web視聴、CDN視聴、リアルタイムチャットインタラクション（または弾幕）を実現するための複雑さと時間コストを最大限に削減できます。
+ここでは、[IM](https://intl.cloud.tencent.com/product/im)と[TRTC](https://intl.cloud.tencent.com/product/trtc)を統合したWebRTCライブストリーミングインタラクションコンポーネント（UIを含む）についてご紹介いたします。
 
-### 1. プッシュ
+Instant Messaging（IM）は、さまざまなニーズとシナリオに対応する一連のソリューションを提供します。IMの強力なチャットルームインタラクション機能、リレーションシップチェーンホスティング、サードパーティのコールバック機能は、チャットインタラクション、オーディエンス管理、インタラクション抽選といったライブストリーミングシナリオのニーズを完全に満たします。また、開発者のライブストリーミングに対する低遅延要件や高速アクセスに対するニーズに配慮し、IMはTRTCと連携して、UIを含むWeb端末のインタラクティブライブストリーミング・プッシュプルストリーミングコンポーネントであるTUIPusherとTUIPlayerをリリースしました。
 
-プッシュする必要がある場合は、Pusher（プッシュ）オブジェクトを作成します。最も簡単なプッシュ操作は3ステップのみです。
+今回リリースされた[TUIPusher](https://github.com/tencentyun/TUILiveRoom/tree/main/Web/TUIPusher)と[TUIPlayer](https://github.com/tencentyun/TUILiveRoom/tree/main/Web/TUIPlayer)コンポーネントは、視聴者リスト、チャットインタラクション、美顔、画面共有などの機能をカバーしています。展開してすぐに使用でき、主なデスクトップブラウザと互換性があります。TUIPusherとTUIPlayerの機能デモンストレーションについては、下図をご参照ください。また、ユーザー管理システムとルーム管理システムを組み合わせており、[TUIPusher体験リンク](https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/pusher.html)および[TUIPlayer体験リンク](https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/player.html)を提供しています。
 
-```html
-<div id="pusherView" style="width:100%; height:auto;"></div>
-<script>
-// 1、Pusher（プッシュ）オブジェクトを作成します
-let pusher = TWebLive.createPusher({ userID: 'your userID' });
 
-// 2、レンダリングインターフェースを設定し、マイクで音声を収集し、カメラで映像を収集します（デフォルト720p）
-pusher.setRenderView({
-  elementID: 'pusherView',
-  audio: true,
-  video: true
-}).then(() => {
-  // 3、sdkappid roomidなどの情報を入力し、プッシュします
-  // urlは `room://` から始まる必要があります
-  let url = `room://sdkappid=${SDKAppID}&roomid=${roomID}&userid=${userID}&usersig=${userSig}&livedomainname=${liveDomainName}&streamid=${streamID}`;
-  pusher.startPush(url).then(() => {
-    console.log('pusher | startPush | ok');
-  });
-}).catch(error => {
-  console.error('pusher | setRenderView | failed', error);
-});
-</script>
-```
 
-### 2. プル
 
-プル再生が必要な場合は、Player（プレーヤー）オブジェクトを作成します。最も簡単なプル操作は3ステップのみです。
+## 機能の説明
 
-```html
-<div id="playerView" style="width:100%; height:auto;"></div>
-<script>
-// 1、Player（プレーヤー）オブジェクトを作成します
-let player = TWebLive.createPlayer();
+### TUIPusherプッシュコンポーネント
 
-// 2、レンダリングインターフェースを設定します
-player.setRenderView({ elementID: 'playerView' });
+- カメラとマイクからのストリームの収集とプッシュをサポート
+  - 必要に応じてビデオパラメータ（フレームレート、解像度、ビットレート）を設定
+  - 美顔の起動とビデオ美顔パラメータの設定をサポート
+- 画面共有ストリームの収集とプッシュをサポート
+- Tencent Real-Time Communicationバックエンドへのプッシュ、Tencent Cloud CDNへのプッシュをサポート
+- オンラインチャットルームをサポートし、オンライン視聴者とのインタラクティブなチャットを実現
+- 視聴者リストの取得、オンライン視聴者のミュート操作の実行をサポート
 
-// 3、再生CDNストリームをプルするためのflv、hlsアドレスなどの情報を入力します。この時のurlは `https://` から始まる必要があります
-// またはsdkappid、roomidなどの情報を入力し、WebRTC低遅延ストリームをプルして再生します。この時のurlは `room://` から始まる必要があります
-let url = 'https://'
-  + 'flv=https://200002949.vod.myqcloud.com/200002949_b6ffc.f0.flv' + '&' // 実際に使用可能な再生アドレスに置き換えてください
-  + 'hls=https://200002949.vod.myqcloud.com/200002949_b6ffc.f0.m3u8' // 実際に使用可能な再生アドレスに置き換えてください
+### TUIPlayerプルコンポーネント
 
-// let url = `room://sdkappid=${SDKAppID}&roomid=${roomID}&userid=${userID}&usersig=${userSig}`;
-player.startPlay(url).then(() => {
-  console.log('player | startPlay | ok');
-}).catch((error) => {
-  console.error('player | startPlay | failed', error);
-});
-</script>
-```
+- オーディオビデオストリーミングと画面共有ストリーミングの同時再生をサポート
+- オンラインチャットルームをサポートし、キャスターおよびその他視聴者のインタラクティブなチャットを実現
+- 超低遅延ライブストリーミング（300msの遅延）、ライブイベントストリーミング（1000ms以下の遅延）、標準ライブストリーミング（超高速同時視聴をサポート）の3種類のプル回線をサポート
 
-### 3. インタラクティブなライブストリーミング
 
-キャスターと視聴者がチャットをインタラクティブにする必要がある場合は、IMオブジェクトを作成します。最も簡単なメッセージの送受信の操作は3ステップのみです。
+## アクセス方法
 
-```javascript
-// 1、IMオブジェクトを作成し、イベントを監視します
-let im = TWebLive.createIM({
-  SDKAppID: 0 // アクセスするときは、0をお客様のIMアプリケーションのSDKAppIDに置き換える必要があります
-});
-// IM_READY IM_TEXT_MESSAGE_RECEIVEDなどのイベントを監視します
-let onIMReady = function(event) {
-  im.sendTextMessage({ roomID: 'your roomID', text: 'hello from TWebLive' });
-};
-let onTextMessageReceived = function(event) {
-  event.data.forEach(function(message) {
-    console.log((message.from || message.nick) + ' : ', message.payload.text);
-  });
-};
-// アクセス側でこのイベントを監視すると、SDKを呼び出してメッセージなどを送信できます
-im.on(TWebLive.EVENT.IM_READY, onIMReady);
-// テキストメッセージを受信し、画面に移動します
-im.on(TWebLive.EVENT.IM_TEXT_MESSAGE_RECEIVED, onTextMessageReceived);
+### 注意事項
 
-// 2、ログイン
-im.login({userID: 'your userID', userSig: 'your userSig'}).then((imResponse) => {
-  console.log(imResponse.data); // ログイン成功
-  if (imResponse.data.repeatLogin === true) {
-    // アカウントがログイン済みであり、現在のログインが繰り返しのログインであることを示します
-    console.log(imResponse.data.errorInfo);
-  }
-}).catch((imError) => {
-  console.warn('im | login | failed', imError); // ログイン失敗の関連情報
-});
+- TUIPusher&TUIPlayerは、Tencent Cloud TRTCとInstant Messagingサービスをベースに開発されています。アカウントと認証を再利用するためには、TRTCアプリケーションとIMアプリケーションのSDKAppIDが一致している必要があります。
+- UserSigをローカルで計算する方式は、ローカルでの開発とデバッグのみに使用されます。SECRETKEYが漏洩すると、攻撃者がTencent Cloudトラフィックを盗用する可能性があるので、オンラインで直接発行しないでください。UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出しダイナミックUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/1047/34385)をご参照ください。
 
-// 3、ライブストリーミングルームに入室
-im.enterRoom('your roomID').then((imResponse) => {
-  switch (imResponse.data.status) {
-    case TWebLive.TYPES.ENTER_ROOM_SUCCESS: // ライブストリーミングルームへの入室に成功
-      break;
-    case TWebLive.TYPES.ALREADY_IN_ROOM: // ライブストリーミングルームに入室済み
-      break;
-    default:
-      break;
-  }
-}).catch((imError) => {
-  console.warn('im | enterRoom | failed', imError); // ライブストリーミングルーム入室失敗の関連情報
-});
-</script>
-```
+[](id:step1)
 
-開発者の開発コストと人件費を削減するため、TWebLive SDKをベースに、PCとモバイル端末ブラウザの両方に適合するオープンソースの[Demo](https://github.com/tencentyun/TWebLive)をGithubで提供しています。開発者はプロジェクトをfork&cloneしてローカルデバイスに複製し、若干の変更を加えてDemoを実行できます。また、Demoを自身のプロジェクトに統合してデプロイや起動することができます。
-
-## TWebLiveの使用
+### ステップ1：Tencent Cloudサービスのアクティブ化
 
 <dx-tabs>
-::: 方法1：TRTCの場合
-
-#### 手順1：TRTCアプリケーションの作成[](id:step1)
-[TRTCコンソール](https://console.cloud.tencent.com/trtc/app)の、左側ナビゲーションバーで**アプリケーション管理**>**アプリケーションの作成**をクリックしてアプリケーション名を入力し、**OK**をクリックするとTRTCアプリケーションが作成されます。作成が完了してから、SDKAPPIDを保存してください。
-![](https://main.qcloudimg.com/raw/b2acb7f79117f0828928e13a17ea9a6a.png)
-
-<dx-alert infotype="explain" title="">
-同時に、同じSDKAppIDを持つIMアプリケーションが自動的に作成されます。
-</dx-alert>
-
-
-
-#### 手順2：Auto-Relayed Push機能をオンにする
-1. [TRTCコンソール](https://console.cloud.tencent.com/trtc/app)の、左側ナビゲーションバーで**アプリケーション管理**をクリックします。作成したTRTCアプリケーション上で、**機能設定**をクリックしてアプリケーション詳細に入ります。
-![](https://main.qcloudimg.com/raw/2f92ee6867ff2f2b7456a0d03f296145.png)
-2. **Relayed Pushの有効化**をクリックして、Relayed Push方式でGlobal Auto-relayを選択します。Relayed Pushの起動後、TRTCルーム内の各チャネル画面に対し対応する再生アドレスが割り当てられます。
-![](https://main.qcloudimg.com/raw/8c6d2658b2101985fd3f4f202cf5aa77.png)
-
-<dx-alert infotype="explain" title="">
-CDNライブストリーミングの視聴が必要ない場合、Relayed Pushを起動する手順を省略することができます。
-</dx-alert>
-
-
-3. **クイックマスター**をクリックすると、キー情報を確認することができます。キーは保存してください。[](id:step2)
-![](https://main.qcloudimg.com/raw/8996c74d3240aeb2eae4e20d8a769c0d.png)
-4. [Tencent Cloud CSSコンソール](https://console.cloud.tencent.com/live/)で再生ドメイン名を設定し、CNAME設定を完了します。詳細な操作手順については、[CDN relayed live streamingの実装](https://intl.cloud.tencent.com/document/product/647/35242)ドキュメントをご参照ください。
-<dx-alert infotype="explain" title="">
-CDNライブストリーミングの視聴が必要ない場合、再生ドメイン名を設定する手順を省略することができます。
-</dx-alert>
-### 手順3：Demoのダウンロードおよび設定
-1. [Tencent Cloud TWebLiveライブストリーミングインタラクションコンポーネントのDemoプロジェクト]をダウンロードします(https://github.com/tencentyun/TWebLive)。
-2.`TWebLive/dist/debug/GenerateTestUserSig.js`ファイルを開き、関連パラメータを設定します。
- - SDKAPPID：[手順1](#step1)で取得した実際のアプリケーションSDKAppIDを設定してください。
- - SECRETKEY：[手順2](#step2)で取得した実際のキー情報に設定してください。
- - PUSHDOMAIN：CDN視聴の場合、再生プッシュドメイン名を設定します。（CDNライブストリーミングの視聴が必要ない場合は、この設定を無視してかまいません。）
-3. プロジェクトでnpmを介して最新版のtim-js-sdk、trtc-js-sdk、twebliveをインストールします。プロジェクトにtim-js-sdkまたはtrtc-js-sdkが統合済みの場合は、直接最新版にアップグレードしてください。
-```javascript
-npm install tim-js-sdk --save
-npm install trtc-js-sdk --save
-npm install tweblive --save
-```
-4. プロジェクトにTWebLiveをインポートします。
-```javascript
-import TWebLive from 'tweblive'
-Vue.prototype.TWebLive = TWebLive
-```
-5. scriptタグの外部リンクを介してインポートする必要がある場合は、tim-js.js、trtc.js、tweblive.jsをプロジェクトにコピーし、それらを順番にインポートする必要があります。
-```javascript
-<script src="./trtc.js"></script>
-<script src="./tim-js.js"></script>
-<script src="./tweblive.js"></script>
-```
-
-<dx-alert infotype="notice" title="">
-- UserSigをローカルで計算する方法は、ローカルの開発とデバッグにのみ使用されます。`SECRETKEY`が漏えいすると、攻撃者がTencent Cloudのトラフィックを盗用する可能性があるので、ネット上にそのまま公開しないでください。
-- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/1047/34385)をご参照ください。
-
-</dx-alert>
-#### 手順4：Demoの実行
-Chromeブラウザを使用して `dist`ディレクトリのindex.htmlファイルを開くと、Demoが実行されます。
-
-<dx-alert infotype="notice" title="">
-- 通常の場合は、体験Demoは、サーバーにデプロイし、`https://ドメイン名/xxx`経由でアクセスするか、または直接ローカルにサーバーを構築して、`localhost:ポート`経由でアクセスする必要があります。
-- 現在、デスクトップのChromeブラウザはTRTCデスクトップブラウザSDKをサポートしており、関連機能は比較的揃っています。従って、Chromeブラウザを使用して体験することをお勧めします。
-- TWebLiveは、カメラとマイクを使用して、オーディオとビデオをキャプチャする必要があります。体験中、Chromeブラウザから関連プロンプトが表示されることがありますが、その場合は**許可**をクリックします。
-
-</dx-alert>
-
-:::
-::: 方法2：インスタントメッセージ\sIMの場合
+::: 方法1：インスタントメッセージ\sIMの場合
 #### 手順1：IMアプリケーションの作成
+
 1. [IMコンソール](https://console.cloud.tencent.com/im)にログインし、**新しいアプリケーションの作成**をクリックするとダイアログボックスがポップアップします。
-![](https://main.qcloudimg.com/raw/d4eab7277cc150b47d2078d299e75544.png)
+   ![](https://main.qcloudimg.com/raw/b2acb7f79117f0828928e13a17ea9a6a.png)
 2. 自分のアプリケーション名を入力して、**確定**をクリックすると作成が完了します。
-![](https://main.qcloudimg.com/raw/d52080f2e69932798685d9640f4587e4.png)
+   ![](https://main.qcloudimg.com/raw/7954cc2882d050f68cd5d1df2ee776a6.png)
 3. [IMコンソール](https://console.cloud.tencent.com/im)の概要画面で、新規作成したアプリケーションのステータス、サービスバージョン、SDKAppID、作成時間、有効期限を確認することができます。SDKAppID情報を記録してください。
 
 #### 手順2：IMキーを取得してTRTC Video Serviceをアクティブにする
+
 1. [IMコンソール](https://console.cloud.tencent.com/im)の概要ページで、自分で作成を完了したIMアプリケーションをクリックして、直ちにそのアプリケーションの基本設定ページにリダイレクトします。**基本情報**領域で、**キーの表示**をクリックして、キー情報をコピーし保存します。
-![](https://main.qcloudimg.com/raw/9f4662be270ed82fcda3eb41270364b3.png)
-<dx-alert infotype="notice" title="">
-キー情報を適切に保管して、漏えいしないようにしてください。
-</dx-alert>
+   ![](https://main.qcloudimg.com/raw/610dee5720e94e324a48b44f4728816a.png)
 
-2. そのアプリケーションの基本設定ページで、Tencent Cloud TRTC Video Serviceをアクティブにします。
-![](https://main.qcloudimg.com/raw/f098c9ba3b503652bc85a3b4a21a11ef.png)
+>!キー情報を適切に保管して、漏えいしないようにしてください。
 
-### 手順3：Demoのダウンロードおよび設定
-1. [Tencent Cloud TWebLiveライブストリーミングインタラクションコンポーネントのDemoプロジェクト]をダウンロードします(https://github.com/tencentyun/TWebLive)。
-2.`TWebLive/dist/debug/GenerateTestUserSig.js`ファイルを開き、関連パラメータを設定します。
- - SDKAPPID：[手順1](#step1)で取得した実際のアプリケーションSDKAppIDを設定してください。
- - SECRETKEY：[手順2](#step2)で取得した実際のキー情報に設定してください。
- - PUSHDOMAIN：CDN視聴の場合、再生プッシュドメイン名を設定します。（CDNライブストリーミングの視聴が必要ない場合は、この設定を無視してかまいません。）
+2. そのアプリケーションの基本構成ページで、TRTCサービスをアクティブ化します。
+   ![](https://main.qcloudimg.com/raw/8fb2940618dfb8b7ea06eecd62212468.png)
 
-3. プロジェクトでnpmを介して最新版のtim-js-sdk、trtc-js-sdk、twebliveをインストールします。プロジェクトにtim-js-sdkまたはtrtc-js-sdkが統合済みの場合は、直接最新版にアップグレードしてください。
-```javascript
-npm install tim-js-sdk --save
-npm install trtc-js-sdk --save
-npm install tweblive --save
-```
-4. プロジェクトにTWebLiveをインポートします。
-```javascript
-import TWebLive from 'tweblive'
-Vue.prototype.TWebLive = TWebLive
-```
-5. scriptタグの外部リンクを介してインポートする必要がある場合は、tim-js.js、trtc.js、tweblive.jsをプロジェクトにコピーし、それらを順番にインポートする必要があります。
-```javascript
-<script src="./trtc.js"></script>
-<script src="./tim-js.js"></script>
-<script src="./tweblive.js"></script>
-```
-<dx-alert infotype="notice" title="">
-- UserSigをローカルで計算する方法は、ローカルの開発とデバッグにのみ使用されます。`SECRETKEY`が漏えいすると、攻撃者がTencent Cloudのトラフィックを盗用する可能性があるので、ネット上にそのまま公開しないでください。
-- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/1047/34385)をご参照ください。
-</dx-alert>
+:::
+::: 方法2：TRTCの場合
 
-#### 手順4：Demoの実行
-Chromeブラウザを使用して `dist`ディレクトリのindex.htmlファイルを開くと、Demoが実行されます。
+#### 手順1：TRTCアプリケーションの作成
 
-<dx-alert infotype="notice" title="">
-- 通常の場合は、体験Demoは、サーバーにデプロイし、`https://ドメイン名/xxx`経由でアクセスするか、または直接ローカルにサーバーを構築して、`localhost:ポート`経由でアクセスする必要があります。
-- 現在、デスクトップのChromeブラウザはTRTCデスクトップブラウザSDKをサポートしており、関連機能は比較的揃っています。従って、Chromeブラウザを使用して体験することをお勧めします。
-- TWebLiveは、カメラとマイクを使用して、オーディオとビデオをキャプチャする必要があります。体験中、Chromeブラウザから関連プロンプトが表示されることがありますが、その場合は**許可**をクリックします。
+1. [Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/register)を行い、[TRTC](https://console.cloud.tencent.com/trtc)と[IM](https://console.cloud.tencent.com/im)サービスをアクティブ化します。
+2. [TRTCコンソール](https://console.cloud.tencent.com/trtc) で、**アプリケーション管理>アプリケーションの作成** をクリックし、新たなアプリケーションを作成します。
+   ![アプリケーションの作成](https://main.qcloudimg.com/raw/871c535f4b539ad7791f10d57ef0a9f3.png)
 
-</dx-alert>
+#### ステップ2： TRTCキー情報の取得
 
+1. **アプリケーション管理>アプリケーション情報**でSDKAppID情報を取得します。
+   ![](https://qcloudimg.tencent-cloud.cn/raw/4efba95edf4073238420a40ec9a6b3b3.png)
+2. **アプリケーション管理>クイックマスター**でアプリケーションのsecretKey情報を取得します。
+   ![](https://main.qcloudimg.com/raw/8ec16ab9cab85e324a347dea511f7e4e.png)
+
+>?
+>
+>- TRTCアプリケーションを初めて作成するTencent Cloudアカウントは、10000分間のオーディオビデオリソース無料トライアルパッケージを受け取ることができます。
+>- TRTCプリケーションを作成すると、同じSDKAppIDのIMアプリケーションが自動的に作成され、 [IMコンソール](https://console.cloud.tencent.com/im)でこのアプリケーションのパッケージ情報を設定することができます。
 
 :::
 </dx-tabs>
 
-## アーキテクチャとプラットフォームのサポート
+[](id:step2)
+### ステップ2：プロジェクトの準備
 
-### TWebLiveアーキテクチャ
-TWebLiveアーキテクチャの設計は下図に示すとおりです。
-![img](https://main.qcloudimg.com/raw/ab2b13a441da8b0631cc664f95ad18db.png))
-Webプッシュおよび低遅延Web視聴はWebRTC技術を用います。
+1. [GitHub](https://github.com/tencentyun/TUILiveRoom/tree/main/Web)でTUIPusher & TUIPlayerコードをダウンロードします。
+2. TUIPusher & TUIPlayerのためにインストールして依存します。
+   ```bash
+   cd Web/TUIPusher
+   npm install
+   
+   cd Web/TUIPlayer
+   npm install
+   ```
+3. sdkAppIdとsecretKeyを`TUIPusher/src/config/basic-info-config.js`、`TUIPlayer/src/config/basic-info-config.js`設定ファイルに入力します。
+   ![](https://qcloudimg.tencent-cloud.cn/raw/2367f9c25773bc5d5de9db00d0962f06.png)
+4. ローカル開発環境でTUIPusher＆TUIPlayerを実行します。
+   ```bash
+   cd Web/TUIPusher
+   npm run serve
+   
+   cd Web/TUIPlayer
+   npm run serve
+   ```
+5. `http://localhost:8080`と`http://localhost:8081`を開き、TUIPusherとTUIPlayer機能を体験することができます。
+6. `TUIPusher/src/config/basic-info-config.js`、`TUIPlayer/src/config/basic-info-config.js`設定ファイル中のルーム，キャスターおよび視聴者などの情報を変更することができます。**TUIPusherとTUIPlayerのルーム情報、キャスター情報を一致させてください**。
+>!
+>
+> - 上記設定が完了すると、TUIPusher & TUIPlayerを使用して超低遅延ライブストリーミングを実行することができます。ライブイベントストリーミングと標準ライブストリーミングをサポートする必要がある場合は、引き続き[ステップ3：Relayed Live Streaming](#step3)をご参照ください。
+> - UserSigをローカルで計算する方法は、ローカルの開発とデバッグにのみ使用されます。`SECRETKEY`が漏えいすると、攻撃者がTencent Cloudのトラフィックを盗用する可能性があるので、ネット上にそのまま公開しないでください。
+> - UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/1047/34385)をご参照ください。
 
-- お客様のユースケースが主に教育シーンである場合、教師用端末はより安定性の高い[Electron](https://intl.cloud.tencent.com/document/product/647/35097)ソリューションを使用することをお勧めします。このソリューションは、大小のデュアルチャネル画面、より柔軟性の高い画面共有ソリューションおよび脆弱なネットワークに対する高い回復力をサポートしています。
->?WebRTCのテクノロジーはGoogleが初めて提唱し、現在、デスクトップ版Chromeブラウザ、デスクトップ版Edgeブラウザ、デスクトップ版Firefoxブラウザ、デスクトップ版Safariブラウザおよびモバイル版Safariブラウザでは比較的万全なサポートが提供されています。その他のプラットフォーム（Androidプラットフォームブラウザなど）のサポート状況は未だ不十分です。
 
-### TWebLiveプラットフォームのサポート
+[](id:step3)
+### ステップ3：Relayed live streaming
 
-|  OS   |          ブラウザタイプ          | ブラウザの最小バージョン要件 | 受信（再生） | 送信（マイク・オン） |
-| :---------: | :--------------------------: | :----------------: | :----------: | :----------: |
-|   Mac OS    |     デスクトップ版 Safari ブラウザ     |        11+         |     サポート     |     サポート     |
-|   Mac OS    |     デスクトップ版 Chrome ブラウザ     |        56+         |     サポート     |     サポート     |
-|   Mac OS    |    デスクトップ版 Firefox ブラウザ     |        56+         |     サポート     |     サポート     |
-|   Mac OS    |      デスクトップ版 Edge ブラウザ      |        80+         |     サポート     |     サポート     |
-|   Windows   |     デスクトップ版 Chrome ブラウザ     |        56+         |     サポート     |     サポート     |
-|   Windows   | デスクトップ版 QQ ブラウザ（超高速カーネル） |       10.4+        |     サポート     |     サポート     |
-|   Windows   |    デスクトップ版 Firefox ブラウザ     |        56+         |     サポート     |     サポート     |
-|   Windows   |      デスクトップ版 Edge ブラウザ      |        80+         |     サポート     |     サポート     |
-| iOS 11.1.2+ |     モバイル版 Safari ブラウザ     |        11+         |     サポート     |     サポート     |
-| iOS 12.1.4+ |         WeChat埋込みウェブページ         |         -          |     サポート     |    未サポート    |
-|   Android   |       モバイル版 QQ ブラウザ       |         -          |    未サポート    |    未サポート    |
-|   Android   |       モバイル版UCブラウザ       |         -          |    サポートなし    |    サポートなし    |
-|   Android   |   WeChat Embedded Webページ（TBS コア）   |         -          |     サポート     |     サポート     |
-|   Android   |  WeChat Embedded Webページ（XWEB コア）   |         -          |     サポート     |    サポートなし    |
+TUIPusher&TUIPlayerによって実装されるライブイベントストリーミングと標準ライブストリーミングはTencent Cloud[CSSサービス]（https://intl.cloud.tencent.com/document/product/267）に依存しているため、ライブイベントストリーミングと標準ライブストリーミング回線をサポートするには、Relayed Push機能を有効にする必要があります。
 
->! H.264版の権限の制限によって、HuaweiシステムのChromeブラウザおよびChrome WebViewをコアとするブラウザでは、TRTCデスクトップブラウザSDKの正常動作をサポートしていません。
-[](id:sos)
+1. [**TRTCコンソール**](https://console.cloud.tencent.com/trtc) で現在使用中のアプリケーションのRelayed Push設定を有効にします。必要に応じてRelayed Push用指定ストリームまたはGlobal Auto-relayを起動することができます。
+   ![](https://main.qcloudimg.com/raw/b9846f4a7f5ce1e39b3450963e872c90.png)
+2. [**ドメイン名管理**](https://console.cloud.tencent.com/live/domainmanage)ページで独自の再生ドメイン名を追加します。具体的な内容は[独自のドメイン名の追加](https://intl.cloud.tencent.com/document/product/267/35970)をご参照ください。
+3. `TUIPlayer/src/config/basic-info-config.js`設定ファイルで再生ドメイン名を設定します。
+
+上記設定が完了すると、TUIPusher & TUIPlayerがサポートする超低遅延ライブストリーミング、ライブイベントストリーミング、標準ライブストリーミングの全機能を体験できます。
+
+[](id:step4)
+### ステップ4：本番環境アプリケーション
+
+TUIPusher & TUIPlayerを本番環境アプリケーションに使用する場合は、TUIPusher & TUIPlayerにアクセスすることに加え、次の手順を実行する必要があります。
+
+- ユーザーID、ユーザー名、ユーザープロフィール画像などを含む製品ユーザー情報を管理するためのユーザー管理システムを作成します。
+- ライブストリーミングルームID、ライブストリーミングルーム名、ライブストリーミングルームのホスト情報などを含む製品のライブストリーミングルーム情報を管理するためのルーム管理システムを作成します。
+- サーバーがUserSigを発行します。
+
+> !
+>
+> - ここでのUserSigの発行方法は、クライアントが入力したsdkAppIdとsecretKeyに基づきuserSigを発行する方法です。この方法で発行されるsecretKeyは逆コンパイルによって逆クラッキングされやすく、キーがいったん漏洩すると、攻撃者がお客様のTencent Cloudトラフィックを盗用できるようになります。そのため**この方法はローカルのTUIPusher & TUIPlayerクイックスタート機能デバッグの実行のみに適しています**。
+> - UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、アプリケーションから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+
+- `TUIPusher/src/pusher.vue`、`TUIPlayer/src/player.vue`ファイルを参照し、ユーザー情報、ライブストリーミングルーム情報、SDKAppId、UserSigなどのアカウント情報をvuexのstoreに送信し、グローバルストレージを実行すると、プッシュプルストリーミングする2つのクライアントの全機能をクイックスタートすることができます。
+
+## 関連する質問
+
+1. Web端末での美容機能の実現方法
+   [美顔を有効にする](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)をご参照ください。
+
+2. Web端末での画面共有の実現方法。
+   [画面共有](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-16-basic-screencast.html)をご参照ください。
+
+3. Web端末でのクラウドレコーディングの実現方法。
+   クラウドレコーディングを有効にするには、[クラウドレコーディングと再生の実現](https://intl.cloud.tencent.com/document/product/647/35426)をご参照ください 。
+   【クラウドレコーディング】> 【指定ユーザーレコーディング】を有効にすると、Web端末が[TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createClient)インターフェース呼び出し時にuserDefineRecordIdパラメータを渡すことによってレコーディングを開始できます。
+
+4. Web端末でのCDNへのプッシュの実現方法。
+   Web端末でのCDNへのプッシュについては、[CDNへのプッシュの実現](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html)をご参照ください。
+
+
 ## 注意事項
 
-- アカウントと認証を再利用するためには、TRTCアプリケーションとIMアプリケーションのSDKAppIDが一致している必要があります。
-- IMアプリケーションは、テキストメッセージに対し、ベーシック版のセキュリティ対策機能を提供します。不適切な単語のカスタム機能を使用したい場合は、**アップグレード**をクリックします。
-- UserSigをローカルで計算する方法は、ローカルの開発とデバッグにのみ使用されます。SECRETKEYが漏えいすると、攻撃者がTencent Cloudトラフィックを盗用する可能性があるので、ネット上にそのまま公開しないでください。UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを送信し、動的にUserSigを取得します。詳細については、[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/1047/34385)をご参照ください。
+###  プラットフォームのサポート
 
-## よくあるご質問
+| オペレーションシステム（OS） | ブラウザタイプ                   | ブラウザ最低バージョン要件 | TUIPlayer | TUIPusher | TUIPusher画面共有           |
+| -------- | ---------------------------- | ------------------ | --------- | --------- | ---------------------------- |
+| Mac OS   | デスクトップ版Safariブラウザ         | 11+                | サポートあり      | サポートあり      | サポートあり（Safari13以降のバージョンが必要）  |
+| Mac OS   | デスクトップ版Chromeブラウザ         | 56+                | サポートあり      | サポートあり      | サポートあり（Chrome72以降のバージョンが必要）  |
+| Mac OS   | デスクトップ版Firefoxブラウザ        | 56+                | サポートあり      | サポートあり      | サポートあり（Firefox66以降のバージョンが必要） |
+| Mac OS   | デスクトップ版Edgeブラウザ           | 80+                | サポートあり      | サポートあり      | サポートあり                         |
+| Mac OS   | デスクトップ版WeChat Embedded Webページ           | -                  | サポートあり      | サポートなし    | サポートなし                       |
+| Mac OS   | デスクトップ版WeCom Embedded Webページ       | -                  | サポートあり      | サポートなし    | サポートなし |
+| Windows  | デスクトップ版Chromeブラウザ         | 56+                | サポートあり      | サポートあり      | サポートあり（Chrome72以降のバージョンが必要）  |
+| Windows  | デスクトップ版QQブラウザ（クイックコア）  | 10.4+              | サポートあり     | サポートあり      | サポートなし                       |
+| Windows  | デスクトップ版Firefoxブラウザ        | 56+                | サポートあり      | サポートあり      | サポートあり（Firefox66以降のバージョンが必要） |
+| Windows  | デスクトップ版Edgeブラウザ           | 80+                | サポートあり      | サポートあり      | サポートあり                         |
+| Windows  | デスクトップ版WeChat Embedded Webページ           | -                  | サポートあり      | サポートなし    | サポートなし                       |
+| Windows  | デスクトップ版WeCom Embedded Webページ       | -                  | サポートあり      | サポートなし    | サポートなし                       |
 
-<dx-accordion>
-::: 1.\sキーをクエリーするとき、パブリックキーおよびプライベートキーの情報しか取得できませんが、キーはどうしたら取得できますか？
-TRTC SDK 6.6バージョン（2019年8月）では新しい署名アルゴリズムのHMAC-SHA256の使用をスタートしました。それ以前に作成されたアプリケーションは、署名アルゴリズムをアップグレードしないと暗号化鍵を取得できません。
-:::
-::: 2.\sクライアントエラーの発生：「RtcError:\sno\svalid\sice\scandidate\sfound」の対処方法は？
-このエラーが発生した場合、TRTCデスクトップブラウザSDKがSTUNトンネリングに失敗したことを意味しますので、環境要件に従ってファイアウォールの設定を確認してください。
-:::
-::: 3.\sクライアントエラーの発生：「RtcError:\sICE/DTLS\sTransport\sconnection\sfailed」または\s「RtcError:\sDTLS\sTransport\sconnection\stimeout」の対処方法は？
-このエラーが発生した場合、TRTCデスクトップブラウザSDKがSTUNトンネリングに失敗したことを意味しますので、環境要件に従ってファイアウォールの設定を確認してください。
-:::
-::: 4.\s10006\serror\sが発生したときの対処方法は？
-`「Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it」`というエラーが出現した場合は、[TRTCコンソール](https://console.cloud.tencent.com/rav)にログインし、作成したアプリケーションをクリックして、**アカウント情報**をクリックし、アカウント情報パネルでお客様のTRTCアプリケーションのサービスが使用可能な状態かを確認してください。
-![](https://main.qcloudimg.com/raw/e3352d3a227a30326a7631d7d95feace.png)
-:::
-</dx-accordion>
+### ドメイン名要件
+
+ユーザーのセキュリティ、プライバシーなどの問題を考慮し、ブラウザはHTTPSプロトコルでしかTUIPusher & TUIPlayerの全機能を正常に使用できないようにウェブページを制限しています。本番環境のユーザーがTUIPusher & TUIPlayerの全機能にスムーズにアクセスし体験できるようにするには、HTTPSプロトコルを使用してオーディオビデオアプリケーションページにアクセスしてください。
+
+>! ローカル開発には、`http：// localhost`プロトコルを使用してアクセスできます。
+
+URLドメイン名およびプロトコルのサポート状況については、以下の表をご参照ください。
+
+| ユースケース     | プロトコル               | TUIPlayer | TUIPusher | TUIPusher画面共有 | 備考 |
+| ------------ | ------------------ | --------- | --------- | ------------------ | ---- |
+| 本番環境     | HTTPSプロトコル         | サポートあり      |  サポートあり         | サポートあり               | 推奨 |
+| 本番環境     | HTTPプロトコル          | サポートあり      | サポートなし       | サポートなし             | -    |
+| ローカル開発環境 | `http://localhost` | サポートあり      | サポートあり      | サポートあり               | 推奨 |
+| ローカル開発環境 | `http://127.0.0.1` | サポートあり      | サポートあり      | サポートあり               | -    |
+| ローカル開発環境 | `http://[ローカルマシンIP]`  | サポートあり      | サポートなし    | サポートなし             | -    |
+
+### ファイアウォールの制限
+
+TUIPusher & TUIPlayerは次のポートに依存してデータ送信を実行しています。これらのポートをファイアウォールのホワイトリストに追加してください。
+
+- TCPポート：8687
+- UDPポート：8000、8080、8800、843、443、16285
+- ドメイン名：qcloud.rtc.qq.com
 
 ## 結び
 
-ここでは、Tencent Cloudの新しいWebライブストリーミングインタラクションコンポーネントであるTWebLiveを紹介しました。このSDKによって、開発者は迅速かつ簡単にWebプッシュ、低遅延Web視聴、CDN視聴およびリアルタイムチャットインタラクション（または弾幕）などの機能を実装でき、従来のFlashプッシュソリューションとの置き換えが充分に可能です。
+今後のイテレーションで、ここでご紹介したWeb端末のプッシュプルコンポーネントは、iOS、Andriodなどの各端末と徐々に接続し、Web端末において視聴者のマイク接続機能、高度な美顔、カスタムレイアウト、マルチプラットフォームへのプッシュ転送、画像・テキスト・音楽などのアップロード機能を実装します。eコマースライブストリーミングのシーンでは、[IM](https://intl.cloud.tencent.com/product/im)を使用して、モールへの出品・削除、パスワード抽選、Q&A抽選など、多様な遊び方を実装する予定です。ぜひご利用いただき、貴重なご意見をお聞かせください。
 
-また詳細なアクセスソリューションと オンライン Demoを提供しています。現在、TWebLiveは主流のデスクトップブラウザで良好に機能し、モバイル端末ではミニプログラムのソリューションをサポートしています。
-
-将来的には、プッシュ側での画面共有、画像メッセージのインタラクション、視聴者の複数のラインによる視聴（WebRTC低遅延回線とCDN回線）、キャスターと視聴者のマイク接続によるインタラクションといった機能のサポートなど、よりオールラウンドなライブストリーミング機能サービスを提供する予定です。
-
-参考資料：
-
-- [TWebLiveインターフェースマニュアル](https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/TWebLive.html)
-- [オンラインDemo](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html#/)
+ご要望やご意見がありましたら、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)までお願いいたします。
 
