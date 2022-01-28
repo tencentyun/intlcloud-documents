@@ -59,3 +59,13 @@ The unit prices of the Anti-DDoS Pro instance are as follows:
 |Shanghai|700,000 QPS|
 |Beijing|300,000 QPS|
 
+## Arrears notification
+For Anti-DDoS Pro instances:
+- If the account balance is sufficient, the system will automatically settle the fees for the previous month and deduct them on the 1st of the following month.
+- If the account balance is insufficient, the system will remind you to top up the account via the channel you configured (email, SMS, and Message Center).
+
+## Service termination
+Anti-DDoS Pro adopts a pay-as-you-go model. If you want to end the service, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to terminate your instances. Otherwise, charges are still be incurred.
+
+- After you apply for a termination in the current month, the monthly-subscribed items will be settled as usual, while the daily billable items are settled based on the actual usage. After you terminate your instances, the service will be stopped immediately and the instances will no longer be billed for the next month.
+- The entire termination takes 1-3 working days to complete and is subject to the actual operation (protection fees may be incurred during the period).

@@ -18,7 +18,6 @@ You can view your bills and transaction history in [Billing Center > Bill Detail
 ### How do I view the details of my billable durations?
 - Real-time durations: You can find a usage graph and view your usage details in [Usage Statistics](https://console.cloud.tencent.com/trtc/statistics) of the TRTC console. If you select a single day, the page will show usage statistics on a 5-minute basis. If you select multiple days, it will show usage statistics on a daily basis. The statistics are accurate to the minute.
 - Billable durations: You can [download](https://console.cloud.tencent.com/expense/bill/dosageDownload) an Excel file of your billable durations in Tencent Cloud’s billing center. The file shows your usage on a 5-minute as well as daily basis. The statistics are accurate to the second.
-- Query via server API: You can also use a [server API](https://intl.cloud.tencent.com/document/product/647/42971) to query your billable durations. If the time range specified for query is 1 day or shorter, the statistics returned are on a 5-minute basis. If it is longer than 1 day, the statistics returned are on a daily basis. The statistics are accurate to the second.
 
 >! Real-time usage statistics may be slightly different from the durations you are actually billed for. In case of conflicts, **the statistics in your bills shall apply**.
 

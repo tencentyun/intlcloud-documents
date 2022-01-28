@@ -119,6 +119,10 @@ Modul berikut akan berlaku dan dimasukkan dengan referensi ke dalam DPSA ini jik
 16.[TencentDB for Tendis](https://intl.cloud.tencent.com/document/product/1083/43457).
 17.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44014).
 18.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44314).
+19.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
+20.[Domains](https://intl.cloud.tencent.com/document/product/242/45147).
+
+
 
 ## Persyaratan khusus yurisdiksi
 

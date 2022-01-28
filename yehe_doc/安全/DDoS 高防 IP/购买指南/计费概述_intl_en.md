@@ -163,3 +163,14 @@ The following example describes how an Anti-DDoS Advanced instance is billed usi
 Suppose a user purchases an Anti-DDoS Advanced instance in the Singapore region for 20 Gbps base protection bandwidth and 50 Gbps elastic protection bandwidth.
 Suppose DDoS attacks occur with a peak attack bandwidth of 40 Gbps, which exceeds the base protection bandwidth and triggers elastic protection. The peak attack bandwidth falls into the billing tier between 40 Gbps and 50 Gbps. The elastic protection fee generated that day will be 800 USD.
 The user will need to pay a total of 6,350 USD, of which 4,800 USD will be the monthly base protection fee, 750 USD will be the monthly fee for 50 Mbps application bandwidth, and 800 USD will be the elastic protection fee generated that day.
+
+## Arrears notification
+For Anti-DDoS Advanced instances:
+- If the account balance is sufficient, the system will automatically settle the fees for the previous month and deduct them on the 1st of the following month.
+- If the account balance is insufficient, the system will remind you to top up the account via the channel you configured (email, SMS, and Message Center).
+
+## Service termination
+Anti-DDoS Advanced adopts a pay-as-you-go model. If you want to end the service, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to terminate your instances. Otherwise, charges are still be incurred.
+
+- After you apply for a termination in the current month, the monthly-subscribed items will be settled as usual, while the daily billable items are settled based on the actual usage. After you terminate your instances, the service will be stopped immediately and the instances will no longer be billed for the next month.
+- The entire termination takes 1-3 working days to complete and is subject to the actual operation (protection fees may be incurred during the period).

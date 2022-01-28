@@ -1,3 +1,10 @@
+### What should I do if I want to end the Anti-DDoS Advanced service?
+
+Anti-DDoS Advanced adopts a pay-as-you-go model. If you want to end the service, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to terminate your instances. Otherwise, charges are still be incurred.
+
+- After you apply for a termination in the current month, the monthly-subscribed items will be settled as usual, while the daily billable items are settled based on the actual usage. After you terminate your instances, the service will be stopped immediately and the instances will no longer be billed for the next month.
+- The entire termination takes 1-3 working days to complete and is subject to the actual operation (protection fees may be incurred during the period).
+
 ### Are the billing modes the same for elastic protection of different Anti-DDoS services? How are the fees for elastic protection calculated?
 Yes, they are. Elastic protection is billed based on the tiered price of the peak attack traffic bandwidth of the day. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/297/17435).
 For example, you have purchased an Anti-DDoS Advanced instance with 20 Gbps base protection bandwidth and 50 Gbps elastic protection bandwidth. A DDoS attack occurs one day with the peak attack traffic bandwidth of 45 Gbps. Since 45 Gbps exceeds the base protection bandwidth and triggers elastic protection, and it falls between 40 Gbps and 50 Gbps, the fees for elastic protection of the day will be billed according to the tiered price of the billing tier between 40 Gbps and 50 Gbps.

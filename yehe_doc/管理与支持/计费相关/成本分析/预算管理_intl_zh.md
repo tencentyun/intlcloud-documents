@@ -10,12 +10,10 @@
 1. 登录 [费用中心控制台](https://console.cloud.tencent.com/expense/overview)。
 2. 在左侧导航栏中，选择**成本分析 > 预算管理**，进入预算管理页面。
 3. 单击**新建预算**。
-![](https://qcloudimg.tencent-cloud.cn/raw/ce32b1baa5330dac674eed22467b1e46.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fedadab6f2eb475bb1913cf8214a81b0.png)
 4. 在新建预算页面，进行如下操作：
- 1. 预算类型选择为**成本预算**。
-![](https://qcloudimg.tencent-cloud.cn/raw/89d980db894429a3b6ce4ce03789c94f.png)
- 2. 设置如下预算信息：
-![](https://qcloudimg.tencent-cloud.cn/raw/22c12bec7e054eb8cb409b7ce6c1f661.png)
+ 1. 设置如下预算信息：
+![](https://qcloudimg.tencent-cloud.cn/raw/fd92af55324b288cc08361ba59a0a142.png)
     - 预算名称：根据需要设置便于区分的预算名称，该名称将会展示在预算列表。
     - 预算周期：支持月度/季度/年度设置，均指自然月/季度（Q1为1~3月，以此类推）。
     - 有效期起止：设置的预算金额仅在该时间段内生效。
@@ -26,15 +24,15 @@
        - 当选择每月/季度/年度固定值时，填写一个固定值。
        - 当选择每月/季度/年度不同值时，分别填写每月/季度/年度的预警值。
        - 自动填充：选择**自动填充金额**，设置起始预算金额和预算增长率，单击**确认**后便自动填写每月/季度/年度的预算额。自动填充金额仅支持设置一个起始预算金额和增长率。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/149b4d168123b0edd9bab93721bcdd71.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/52967d94fd515381e613379caa59b4a4.png)
 >! 预算增长率指在上一期预算金额的基础上增长的百分比。
 >
- 3. 设置预算范围。
-    ![](https://qcloudimg.tencent-cloud.cn/raw/b7280f948655d76e6c18022949220dd6.png)
+ 2. 设置预算范围。
+    ![](https://qcloudimg.tencent-cloud.cn/raw/1a6e48d5a7955ef7f9d745250b7ae580.png)
     - 默认状态为所有产品，支持选取一款或多款产品，对所选取产品应用预算及预警。
     - 默认状态为所有计费模式，支持仅选择按量计费或包年包月，对所选取的计费模式应用预算及预警。
- 4. 设置提醒阈值。基于每个预算，最多可以设置3组预警，还可以自定义设置预警的阈值条件。
-    ![](https://qcloudimg.tencent-cloud.cn/raw/c5d675ab57039c8abb0757988f76d93e.png)
+ 3. 设置提醒阈值。基于每个预算，最多可以设置3组预警，还可以自定义设置预警的阈值条件。
+    ![](https://qcloudimg.tencent-cloud.cn/raw/8a22a14da57ac3bbdadd82e47e3ca28b.png)
     - 实际消费：按用户的实际消费金额进行预警。
     - 固定值：按一个固定数值的金额，超过该金额时触发预警百分比。
     - 预算金额的百分比：基于预算金额的百分比，计算出一个金额阈值，超过该金额时触发预警；当不同月份的预算金额不同时，按百分比计算的预警金额也就会随之变化。

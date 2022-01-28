@@ -568,3 +568,5 @@ Tencent Cloud プライバシーポリシーの「*お客様の個人データ�
 14.[TencentDB for Tendis](https://intl.cloud.tencent.com/document/product/1083/43456).
 15.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44012).
 16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
+17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
+18.[Domains](https://intl.cloud.tencent.com/document/product/242/45146).

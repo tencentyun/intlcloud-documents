@@ -119,6 +119,11 @@
 16.[云数据库 Tendis](https://intl.cloud.tencent.com/document/product/1083/43457)。
 17.[数据库管理中心](https://intl.cloud.tencent.com/document/product/1125/44014)。
 18.[微瓴物联网类操作系统](https://intl.cloud.tencent.com/document/product/1115/44314)。
+19.[事件总线](https://intl.cloud.tencent.com/document/product/1108/44830)。
+20.[域名注册](https://intl.cloud.tencent.com/document/product/242/45147)。
+
+
+
 ## 特定司法管辖区要求
 
 **欧洲**
