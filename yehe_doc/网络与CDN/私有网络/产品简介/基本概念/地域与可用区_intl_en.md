@@ -213,8 +213,8 @@ Even if you have just one VPC, we still recommend that you deploy your businesse
 - There may be network latency among different availability zones. We recommend that you assess your business requirements and find the optimal balance between high availability and low latency.
 
 ## Resource Availability
-The following table describes which Tencent Cloud resources are global, which are regional, and which are specific to availability zones.
 
+The following table describes which Tencent Cloud resources are global, which are regional, and which are specific to availability zones.
 
 <table>
 	<tr><th width="14%">Resource</th><th>Resource ID Format<br><Resource Abbreviation>-8-Digit String of Numbers and Letters</th><th>Type</th><th>Description</th></tr>
@@ -241,7 +241,7 @@ The following table describes which Tencent Cloud resources are global, which ar
 	<td> <a href="https://intl.cloud.tencent.com/document/product/213/4941">Custom Images</a></td>
 	  <td>img-xxxxxxxx</td>
 	  <td>Regional</td>
-	  Users can create custom Image for instances which can be used in different availability zones of the same region Please copy custom image to other regions using the copy image function to use it in those regions. </td>
+	   <td>Users can create custom Image for instances which can be used in different availability zones of the same region Please copy custom image to other regions using the copy image function to use it in those regions. </td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/213/5733">EIPs</a> </td>
@@ -253,7 +253,7 @@ The following table describes which Tencent Cloud resources are global, which ar
 	<td> <a href="https://intl.cloud.tencent.com/document/product/213/12452">Security Groups</a> </td>
 	  <td>sg-xxxxxxxx</td>
 	  <td>Can be used in multiple AZs in a region</td>
-	  Security Group is created under a certain region, and can only be associated with instance in the same region. Tencent Cloud automatically creates 3 default Security Groups for users. </td>
+	  <td>Security Group is created under a certain region, and can only be associated with instance in the same region. Tencent Cloud automatically creates 3 default Security Groups for users. </td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/362">Cloud Block Storage</a> </td>
