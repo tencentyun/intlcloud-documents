@@ -1,7 +1,7 @@
 ﻿
 
 ### When will an expired domain take effect after renewal?
-About 30 days (may vary by suffix) after a domain expires is the renewal grace period, during which you can renew it at the normal [renewal price](https://buy.cloud.tencent.com/domain?price=1). For detailed directions, see [Domain Renewal](https://intl.cloud.tencent.com/document/product/242/42872). After this period ends, your domain will enter the domain redemption period of about 30 days. For more information on the domain redemption period, see below.  
+About 30 days (may vary by suffix) after a domain expires is the renewal grace period, during which you can renew it at the normal renewal price. For detailed directions, see [Domain Renewal](https://intl.cloud.tencent.com/document/product/242/42872). After this period ends, your domain will enter the domain redemption period of about 30 days. For more information on the domain redemption period, see below.  
 If you renew your domain during the renewal grace period and it is resolved by DNSPod, its DNS will be recovered within 72 hours after successful renewal, while DNS of domains not resolved by DNSPod will be recovered within 48–72 hours after successful renewal.
 
 ### What is the domain redemption period?
