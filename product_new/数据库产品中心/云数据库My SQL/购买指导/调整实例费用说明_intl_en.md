@@ -6,7 +6,7 @@ After upgrade, pay-as-you-go instances will be billed based on the new instance 
 ## Billing Method for Downgraded Instances
 
 #### Pay-as-you-go
-If you choose to degrade a pay-as-you-go database instance, it will be billed at the tier 1 pay-as-you-go price for the new configuration.
+If you choose to downgrade a pay-as-you-go database instance, it will be billed at the tier 1 pay-as-you-go price for the new configuration.
 
 ## Documentation
 TencentDB for MySQL supports quick adjustment of instance specification and allows flexible scaling operations. For more information, please see [Adjusting Database Instance Specification](https://intl.cloud.tencent.com/zh/document/product/236/19707).
