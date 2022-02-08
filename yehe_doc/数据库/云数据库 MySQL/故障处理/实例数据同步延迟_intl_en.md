@@ -4,12 +4,12 @@ The default replica nodes and read-only instances of TencentDB for MySQL use MyS
 
 ## Impact
 - If a [replica node](https://intl.cloud.tencent.com/document/product/236/38328) has a delay, the source-replica switch cannot be completed promptly. In this case, the business may not be restored to normal quickly.
-- If the read business has a high requirement of data consistency, you can set a read-only instance removal policy to automatically remove a read-only instance from the [read-only instance group (RO group)](https://intl.cloud.tencent.com/document/product/236/11361) when its delay with the source instance exceeds the specified threshold. However, once the read-only instance is removed, the business cannot access it through the RO group.
+- If the read business has a high requirement for data consistency, you can set a read-only instance removal policy to automatically remove a read-only instance from the [read-only instance group (RO group)](https://intl.cloud.tencent.com/document/product/236/11361) when its delay with the source instance exceeds the specified threshold. However, once the read-only instance is removed, the business cannot access it through the RO group.
 
 ## Possible Causes
-- **Lack of the primary key or secondary index**
+- **No primary key or secondary index**
 When DML operations (e.g., DELETE, UPDATE, and INSERT) are performed on big tables, the rows to be modified will be retrieved based on the primary key or secondary index when the replica node applies the binlog. If the binlog is in the row format and the corresponding table has no primary key or secondary index, a large number of full-table scans will be caused, slowing down the binlog application and leading to data delays.
-For detailed solutions, please see [Lack of the primary key or secondary index](#wzjhejsy).
+For detailed solutions, please see [No primary key or secondary index](#wzjhejsy).
 
 - **Large transactions** 
 A large transaction refers to a transaction performing INSERT, UPDATE, DELETE, REPLACE operations on millions of rows of data, or a single SQL statement modifying millions of rows of data, whose execution time exceeds 30 seconds.
@@ -28,7 +28,7 @@ A running large transaction or an uncommitted transaction blocks DDL operations,
 For detailed solutions, please see [The "Waiting for table metadata lock" error](#wftmlbc).
 
 ## Troubleshooting Procedure
-### [Lack of the primary key or secondary index](id:wzjhejsy)
+### [No primary key or secondary index](id:wzjhejsy)
 1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/performance/disk) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database type and an instance at the top, and select the **Space Analysis** tab.
 2. On the **Table Without Primary Key** tab, click a table to view its fields and indexes.
 ![](https://main.qcloudimg.com/raw/070bf60984827fb43a33048a38a5969b.png)
