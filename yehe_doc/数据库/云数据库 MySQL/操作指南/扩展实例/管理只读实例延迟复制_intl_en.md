@@ -1,10 +1,10 @@
-This document describes how to set delayed read-only instance replication and enable/disable replication in the TencentDB for MySQL console. You can set delayed replication (i.e., delay between a read-only instance and its source instance) and select to replay by flashbacked position or global transaction identifier (GTID) during the delay to efficiently roll back data and fix failures.
+This document describes how to set delayed replication for read-only instances and enable/disable replication in the TencentDB for MySQL console. You can set delayed replication (i.e., delay between a read-only instance and its source instance) and select to replay by flashbacked position or global transaction identifier (GTID) during the delay to efficiently roll back data and fix failures.
 - Delayed Replication: you can enable and configure the replication delay between a read-only instance and its source instance on its RO group configuration page or management page.
 - Enabling/Disabling Replication: you can manually enable or disable data sync between a read-only instance and its source instance.
 
 ## Delayed Replication Description
-- After delayed replication is enabled for a read-only instance, it will be removed from the RO group with its weight set to 0, and a removal alarm will be triggered. At this point, if you access the removed instance with the VIP address of the RO group, the traffic will not be forwarded to it, and you can only use its own VIP address for access.
-- If delayed read-only instance removal is enabled in an RO group and delayed replication is disabled for a read-only instance, only if the delay time of the instance is less than the delay threshold of the RO group will the weight of the instance be recovered, and a restoration alarm will be triggered at the same time.
+- After delayed replication is enabled for a read-only instance, it will be removed from the RO group with its weight set to 0, and a removal alarm will be triggered. At this point, the traffic will not be forwarded to the removed instance if the RO VIP is used to access the RO group. What's more, the removed instance can only be accessed via the instance's VIP.
+- After the delayed replication is disabled for a read-only instance ( the corresponding RO group has enabled delayed-replication-read-only-instance removal), the weight of this read-only instance in the RO group will be recovered only if the delay time of this instance is less than the delay threshold of the RO group.  And a restoration alarm will be triggered at the same time.
 - During replay by flashbacked position, you cannot restart the instance, adjust its configuration, upgrade its version, or upgrade its kernel minor version.
 
 ## Enabling Delayed Replication
