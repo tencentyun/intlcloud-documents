@@ -174,7 +174,7 @@
 
 #### Turbo series
 - The Turbo series is mounted using a client. After you run the `mount` command on the client installed, you can use the file system the same way as a local file system.
-- The Turbo series is billed according to the capacity purchased. For example, if you purchased a 40 TiB file system of the Standard Turbo storage class, you will be billed at the 40 TiB rates by hour, no matter how much you actually use. For example, if you use the file system for one hour, the fees will be calculated as follows: 40 \* 1024 \* 0.6/24/30 = 34.13 USD. The file system can be terminated anytime.
+- The Turbo series is billed according to the capacity purchased. For example, if you purchased a 40 TiB file system of the Standard Turbo storage class, you will be billed at the 40 TiB rates by hour, no matter how much you actually use. For example, if you use the file system for one hour, the fees will be calculated as follows: 40\*1024*0.09/24/30=5.12 USD. The file system can be terminated anytime.
 - To ensure the cloud load balance of the file system after scaling up, we recommend that you scale up when around 80% of the capacity has been used. Online scale-up is supported and will be imperceptible during the whole process.
 - The Turbo series cannot be scaled down. Alternatively, you can create a Turbo instance, migrate your data, and then delete the old instance.
 - Because the self-deployed cluster needs to be set up again, the initial creation of the Turbo series will take about 20 minutes.
