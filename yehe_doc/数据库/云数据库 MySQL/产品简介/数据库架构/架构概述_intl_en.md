@@ -1,4 +1,4 @@
-TencentDB for MySQL supports three types of architectures: single-node (formerly Basic Edition), two-node (formerly High IO Edition), and three-node (formerly Finance Edition).
+TencentDB for MySQL supports three types of architectures: single-node (formerly Basic Edition), two-node (formerly High-Availability Edition), and three-node (formerly Finance Edition).
 >?General single-node instances are formerly known as Single-node High IO Edition instances.
 
 ## Viewing Instance Architectures
