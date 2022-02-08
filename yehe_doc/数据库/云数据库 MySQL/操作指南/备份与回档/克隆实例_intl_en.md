@@ -18,7 +18,7 @@ You can restore a TencentDB for MySQL instance to any point in time within the l
 - The balance of your account must be positive.
 
 ## Notes
-- The hard disk space of the clone must be larger than the amount of the data to be cloned from, or else the clone task may fail.
+- The hard disk space of the clone instance must be larger than the amount of the data to be cloned from, or else the clone task may fail.
 - The availability zone, database version, replication mode, and default database parameters of the clone must be the same as those of the original instance.
 - The clone will not be displayed in the instance list in the console until the clone process is completed.
 
@@ -34,12 +34,12 @@ You can restore a TencentDB for MySQL instance to any point in time within the l
 ![](https://main.qcloudimg.com/raw/f2fcdd5471326b60f6ee7ea8872f00bc.png)
 4. After purchase, you can view the clone details on the **Backup and Restore** > **Cloned Instance List** tab.
 ![](https://main.qcloudimg.com/raw/3b6a2781adafd4cbde550ea00f3898a8.png)
-5. After the clone process is completed, you can view the clone in the instance list.
+5. After the clone process is completed, you can view the newly created clone instance in the instance list.
 
 ## Related Documents
 - For more information on restoration of single databases and tables, please see [Database Rollback](https://intl.cloud.tencent.com/document/product/236/7276).
 - For more information on how to restore data to a self-created instance, please see [Restoring Databases from Physical Backups](https://intl.cloud.tencent.com/document/product/236/31910) and [Restoring Databases from Logical Backups](https://intl.cloud.tencent.com/document/product/236/31909).
 
 ## FAQs
-#### Will the access to the source instance be affected during the clone process?
+#### Will the access to the original instance be affected during the clone process?
 The original backup set and binlogs uploaded to COS are used for cloning, which will not affect the access to the source instance.
