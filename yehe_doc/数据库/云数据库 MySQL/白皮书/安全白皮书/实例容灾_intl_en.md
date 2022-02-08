@@ -2,7 +2,7 @@
 For applications with high requirements of service continuity, data reliability, and compliance, TencentDB for MySQL provides cross-AZ and cross-region disaster recovery solutions to help enhance your capability to deliver continued services at low costs and improve data reliability.
 
 ### Intra-region Disaster Recovery
-You can create [two-node](https://intl.cloud.tencent.com/document/product/236/38328) and [three-node](https://intl.cloud.tencent.com/document/product/236/38328) TencentDB for MySQL instances to support multi-AZ deployment. Physical servers of a multi-AZ instance are deployed in different AZs in the same region. When an AZ fails, the business traffic will be switched to another AZ swiftly, which is imperceptible to the business and requires no changes at the application layer, helping implement intra-region disaster recovery.
+You can create [two-node](https://intl.cloud.tencent.com/document/product/236/38328) and [three-node](https://intl.cloud.tencent.com/document/product/236/38328) TencentDB for MySQL instances to support multi-AZ deployment. Physical servers of a multi-AZ instance are deployed in different AZs in the same region. When an AZ fails, the business traffic will be switched to another AZ swiftly, which is imperceptible to the business and requires no changes at the application layer to achieve intra-region disaster recovery.
 >?As the nodes of a multi-AZ instance are in different AZs, there may be an additional network sync delay of 2–3 ms.
 
 For more information on intra-region disaster recovery, see [High Availability (Multiple AZs)](https://intl.cloud.tencent.com/document/product/236/8459).
