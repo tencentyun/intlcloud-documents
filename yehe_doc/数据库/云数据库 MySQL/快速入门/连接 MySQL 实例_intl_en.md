@@ -7,7 +7,7 @@ This document describes how to connect to an initialized TencentDB for MySQL ins
 
 ## Connection Methods
 TencentDB for MySQL can be connected in the following methods:
-- **Private network connection**: a CVM instance can be used to connect to the private network address of a TencentDB instance. This method relies on the high-speed private network of Tencent Cloud and features low delay.
+- **Private network connection**: a CVM instance can be used to connect to the private network address of a TencentDB instance. This method utilizes the high-speed private network of Tencent Cloud and features low delay.
  - The two instances must be under the same account and in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region, or both in the classic network.
  - The private network address is provided by TencentDB by default and can be viewed in the instance list or on the instance details page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
 >?CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over the private network through [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003).
