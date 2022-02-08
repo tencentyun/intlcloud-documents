@@ -4,14 +4,14 @@ For applications with high requirements of service continuity, data reliability,
 
 #### Features
 - With a separate database connection address, a disaster recovery instance can offer read access capability for various scenarios such as local access and data analysis with lower costs of device redundancy.
-- Its highly available source/replica architecture helps avoid single points of failure in databases.
-- Its data sync achieved through private network features lower sync latency and higher stability, with the sync linkage being much better than the public network.
-- The traffic of data sync through private network is currently free of charge during the promotion period. If fees will be charged for it, we will inform you in advance.
+- Its highly available source/replica architecture helps avoid single points of failure for databases.
+- Data is synced over a private network with lower latency and higher stability compared to public network. 
+- Currently, data synced over the private network is free during the promotion. If charges are required, we will notify you in advance.
 
 #### How it works
 - If a TencentDB instance is used as a disaster recovery database, this instance will be the backup of the source instance.
 - When any change takes place in the source instance, the log information recording the change will be copied to the disaster recovery instance and then data sync will be implemented through log replay.
-- If any failure occurs in the source instance, the disaster recovery instance can be activated in seconds to restore full read/write capability.
+- If any failure occurs in the source instance,  the disaster recovery instance can be activated in seconds to provide full read/write capability.
 
 ## Feature Limits
 - Disaster recovery instances can be purchased only for high available GTID-enabled source instances on MySQL 5.6 or above with the InnoDB engine at a specification of 1 GB memory and 50 GB disk capacity or above. If your source instance is below this specification, please upgrade it first.
@@ -30,7 +30,7 @@ For applications with high requirements of service continuity, data reliability,
  - If the sync policy is **Sync Now**, data will be synced immediately when the disaster recovery instance is created.
  - If the sync policy is **Sync After Creation**, you need to configure a disaster recovery sync link after the instance is created successfully. For detailed directions, please see [Create a sync link](#cjtblj) below.
 >?
->- The time it takes to complete the creation is subject to the data volume, during which no operations can be performed on the source instance in the console. Please do so at an appropriate time.
+>- The time required to complete the creation depends on the amount of data, during which no operations can be performed on the source instance in the console. Please do so at an appropriate time.
 >- Only the entire instance data can be synced. Please ensure that the disk space is sufficient.
 >- You need to ensure that the source instance is in the running state and none of configuration adjustment tasks, restart tasks, and other modification tasks are executed. Otherwise, the sync task may fail.  
 4. After confirming that everything is correct, click **Buy Now** and wait for disaster recovery instance delivery.
