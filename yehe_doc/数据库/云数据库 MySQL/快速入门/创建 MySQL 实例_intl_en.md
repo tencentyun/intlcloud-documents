@@ -22,7 +22,7 @@ You have registered a Tencent Cloud account and completed identity verification.
 >- When you purchase Tencent Cloud services, we recommend you select the region closest to you to minimize access latency and improve download speed.
 >
  - **Instance Type**: general or dedicated. For more information, see [Resource Isolation Policy](https://intl.cloud.tencent.com/document/product/236/39794).
- - **Instance Specs**: select specifications as needed.
+ - **Instance Specification**: select specifications as needed.
  - **Hard Disk**: the disk space is used to store the files required by MySQL execution.
  - **Network**: select the network where the TencentDB for MySQL instance resides, which is "Default-VPC (default)" by default. We recommend that you select the same VPC in the same region as the CVM instance to be connected to. Otherwise, the MySQL instance cannot connect to the CVM instance over the private network.
  - **Security Group**: for more information on security group creation and management, see [TencentDB Security Group Management](https://intl.cloud.tencent.com/document/product/236/14470).
@@ -37,5 +37,5 @@ You have registered a Tencent Cloud account and completed identity verification.
 2. You will be returned to the instance list after you purchase the instance. The instance will be in the **Delivering** status. You can initialize the instance after around 3-5 minutes when its status changes to **Uninitialized**.
 
 ## Subsequent Operation
-After creating a TencentDB for MySQL instance, you need to initialize it before you can enable it. For more information, see [Initializing MySQL Instance](https://intl.cloud.tencent.com/document/product/236/3128).
+After creating a TencentDB for MySQL instance, you need to initialize it before you can start to use it. For more information, see [Initializing MySQL Instance](https://intl.cloud.tencent.com/document/product/236/3128).
 
