@@ -14,7 +14,7 @@ TencentDB for MySQL comes with the transparent data encryption (TDE) feature. Tr
 - Once you enable TDE, you cannot disable it.
 - Once TDE is enabled, you need to decrypt data before you can restore it to a local database.
 - TDE enhances the security of static data while compromising the read-write performance of encrypted databases. Therefore, please use the feature based on your actual needs.
-- If a source instance is associated with a disaster recovery instance, TDE must be enabled on the disaster recovery. Otherwise, the data synchronization of the disaster recovery instance may fail.
+- If a master node is associated with a disaster recovery instance, TDE must be enabled on the disaster recovery node. Otherwise, the data synchronization of the disaster recovery instance may fail.
 - After TDE is enabled, your account balance must be greater than or equal to zero. Otherwise, instance migration may fail as KMS is inaccessible.
 - After TDE is enabled, more CPU resources will be consumed.
 
