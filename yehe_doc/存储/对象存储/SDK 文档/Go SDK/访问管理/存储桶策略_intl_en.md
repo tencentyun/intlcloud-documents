@@ -102,7 +102,7 @@ type BucketPutPolicyOptions struct {
 | Statement | Detailed information about one or more permissions | Struct |
 | Version | Policy syntax version | Struct            |
 | Principal | Entity to which the permission is granted. For more information, please see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023) | String |
-| action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, e.g., set `action` to `name/cos:GetService`. **Note that this parameter is case-sensitive**. |
+| action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, e.g., set `action` to `name/cos:GetService`. **Note that this parameter is case-sensitive**. | Array |
 | Effect | Allow or explicitly deny | String |
 | resource | Specific data authorized to be operated on. It can be any resource, a resource whose path prefix is specified, a resource with a specified absolute path, or a combination thereof. | Array |
 | condition | Condition (optional). For more information, please see [Condition](https://intl.cloud.tencent.com/document/product/598/10603) | Struct |
