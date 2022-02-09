@@ -17,9 +17,9 @@ Currently, TencentDB for MySQL supports MySQL v8.0, v5.7, v5.6, and v5.5. For mo
 
 
 ## TencentDB for MySQL v8.0 Strengths
-- Combined with a complete set of management services and the TXSQL kernel, TencentDB for MySQL provides an enterprise-level database service that is more stable and quicker to deploy. It is applicable to a variety of use cases and helps you upgrade your business.
+- Combined with a complete set of management services and the TXSQL kernel, TencentDB for MySQL provides an enterprise-level database service that is more stable and quicker to deploy. It applies to various use cases and helps you upgrade your business.
 - TXSQL is 100% compatible with MySQL and the widely-used MySQL forks.
-- TencentDB for MySQL supports three disaster recovery systems including hot standby, cold standby, and multi-AZ switchover. It can achieve a high service availability of up to 99.95% and a high data reliability of up to 99.9996%.
+- TencentDB for MySQL supports three disaster recovery systems including hot standby, cold standby, and multi-AZ switchover. It can achieve up to 99.95% service availability and up to 99.9996% data reliability.
 - TencentDB for MySQL provides a complete set of easy-to-use database management services, including monitoring, backup, rollback, encryption, auto scaling, auditing, and intelligent diagnosis and optimization, allowing you to focus more on business development.
 - A TencentDB for MySQL instance can handle 500,000+ QPS. TencentDB for MySQL greatly simplifies business development, database OPS, and business architecture, making it easy for you to manage databases.
 - Rich architectures: single-node, two-node, and three-node
