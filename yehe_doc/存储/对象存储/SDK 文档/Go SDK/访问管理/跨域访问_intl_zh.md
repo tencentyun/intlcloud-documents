@@ -161,7 +161,7 @@ type BucketCORSRule struct {
 | AllowedOrigins | 设置允许的访问来源，如 `"http://cloud.tencent.com"`，支持通配符 * | []string | 是   |
 | AllowedHeaders | 设置请求可以使用哪些自定义的 HTTP 请求头部，支持通配符 *     | []string | 否   |
 | MaxAgeSeconds  | 设置 OPTIONS 请求得到结果的有效期                            | int      | 否   |
-| ExposeHeaders  | 设置浏览器可以接收到的来自服务器端的自定义头部信息           | []string | 否   |                 |
+| ExposeHeaders  | 设置浏览器可以接收到的来自服务器端的自定义头部信息           | []string | 否   |  
 
 ## 删除跨域配置
 
