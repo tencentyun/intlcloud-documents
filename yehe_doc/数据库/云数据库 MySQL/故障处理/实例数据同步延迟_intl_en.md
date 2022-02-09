@@ -1,5 +1,5 @@
 
-## Symptoms
+## I
 The default replica nodes and read-only instances of TencentDB for MySQL use MySQL's native binlog replication technology and may experience delays during async or semi-sync data replication.
 
 ## Impact
