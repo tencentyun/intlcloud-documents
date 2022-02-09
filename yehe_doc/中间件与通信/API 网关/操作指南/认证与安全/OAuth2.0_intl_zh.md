@@ -49,7 +49,7 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTIyNzgwODksImZvbyI6ImJhciIsIml
 
 1. 在已创建的服务中，创建授权 API，前端配置时，鉴权类型选择 OAuth2.0，OAuth 模式选择授权 API。
 ![](https://main.qcloudimg.com/raw/848c8f2624e4dcba0b9ecc69f4f7fc65.png)
-2. 后端配置时，认证服务器选择自己的个人服务器地址，token 位置选择 Header，公钥为执行文件 produce_key.py 生成的 public 文件中的内容，创建完成后单击【完成】。
+2. 后端配置时，认证服务器选择自己的个人服务器地址，token 位置选择 Header，公钥为执行文件 produce_key.py 生成的 public 文件中的内容，创建完成后单击**完成**。
 ![](https://main.qcloudimg.com/raw/7f2981bb9673c38407d35a0780b71045.png)
 
 ### 步骤3：配置腾讯云 API 网关的业务 API 
