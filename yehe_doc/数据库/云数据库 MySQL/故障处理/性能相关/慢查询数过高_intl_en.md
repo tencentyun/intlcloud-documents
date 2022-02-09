@@ -1,4 +1,4 @@
-## Error Description
+## Issue Description
 When a slow query problem occurs, it is usually accompanied by the simultaneous surge of multiple monitoring metrics, such as CPU utilization and the number of slow queries.
 
 ## Possible Causes
@@ -8,8 +8,8 @@ Generally, this is because that the execution efficiency of SQL statements is no
 
 ## Solutions
 There are different solutions for the two possible causes:
-- Solution 1: optimize the SQL statements to improve their execution efficiency. For more information, please see [measure 1](#cs1).
-- Solution 2: improve the configuration of the TencentDB for MySQL instance. For more information, please see [measure 2](#cs2).
+- Solution 1: optimize the SQL statements to improve their execution efficiency. For more information, please see [Measure 1](#cs1).
+- Solution 2: adjust the configuration of the TencentDB for MySQL instance to meet QPS requirement. For more information, please see [Measure 2](#cs2).
 
 ## Troubleshooting Procedure
 ### [Measure 1: optimize SQL statements](id:cs1)
@@ -20,5 +20,5 @@ You can directly use DBbrain to optimize slow queries, which will analyze the SQ
 3. Click an aggregated SQL template, and specific SQL analysis and statistics will be displayed on the right. You can view the corresponding index advice.
 ![](https://main.qcloudimg.com/raw/f72dcf38d05fc7381007502e930f3014.png)
 
-### [Measure 2: improve the TencentDB for MySQL instance configuration](id:cs2)
-View the [QPS stress test result](https://intl.cloud.tencent.com/document/product/236/8842) of each specification, compare it with the QPS data of the current instance, and adjust the corresponding [MySQL CPU and memory specifications](https://intl.cloud.tencent.com/document/product/236/19707).
+### [Measure 2: adjust the TencentDB for MySQL instance configuration](id:cs2)
+View the Reference Test Result in [Performance White Paper](https://intl.cloud.tencent.com/document/product/236/8842) of each instance specification, compare it with the QPS data of the current instance, and adjust the corresponding [MySQL CPU and memory specifications](https://intl.cloud.tencent.com/document/product/236/19707).
