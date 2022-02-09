@@ -25,7 +25,7 @@ By default, the instance configuration is adjusted in the normal mode, which req
 - You can adjust the configuration of a TencentDB for MySQL instance and its associated read-only and disaster recovery instances only when they are in normal status (running) and are not executing any task.
 - You cannot cancel a configuration adjustment operation in progress.
 - The name, access IP, and access port of the instance remain unchanged after configuration adjustment.
-- During configuration adjustment, you should try to avoid such operations as modifying MySQL's global parameters and user password.
+- During configuration adjustment, you should avoid such operations as modifying MySQL's global parameters and user password.
 - Data migration may be involved in configuration adjustment. During data migration, the TencentDB for MySQL instance can be accessed normally and the business will not be affected.
 - Instance switchover may be needed after configuration adjustment is completed (i.e., the MySQL instance may be disconnected for seconds). It is recommended that applications be configured with auto reconnection feature and that instance switchover be conducted during the instance maintenance period. For more information, see [Setting Instance Maintenance Period](https://intl.cloud.tencent.com/document/product/236/10929).
 - Basic single-node TencentDB for MySQL instances are unavailable for about 15 minutes in the process of configuration adjustment. We recommend that you adjust instance configuration during off-peak hours.
@@ -50,15 +50,15 @@ You can adjust the instance configuration using the `UpgradeDBInstance` API. For
 - Basic single-node TencentDB for MySQL instances are unavailable for about 15 minutes in the process of configuration adjustment. We recommend that you adjust instance configuration during off-peak hours.
 
 #### Why can't my instance be downgraded?
-It may be because the used storage capacity has reached the maximum capacity of the hard disk. To downgrade you instance, you need to clean up data first and make sure the remaining available capacity accounts for more than 20% of the total capacity or over 50 GB.
+It may be because the used storage capacity has reached the maximum capacity of the hard disk. To downgrade your instance, you need to clean up data first and make sure the remaining available capacity accounts for more than 20% of the total capacity or over 50 GB.
 
 #### Why is my instance in the "Waiting for switch" status for a long time after I adjust instance configuration in the console?
 It may be because you select **During maintenance time** as the **Switch Time** when you adjust instance configuration in the [console](https://console.cloud.tencent.com/cdb), so the instance will not be switched immediately after the adjustment.
 To switch immediately, you can locate the desired instance in the instance list and click **Switch Now** in the **Operation** column. The switch causes a short disconnection lasting for just seconds. Ensure that your business has a reconnection mechanism.
 
 #### How long does it take to upgrade instance configuration?
-The time it takes depends on the data volume the instance has and the read requests to replicate data.
-Instances can still be accessed during the upgrade, but after the upgrade is completed, there is a VIP switch which causes a short disconnection lasting for just seconds.
+The time it takes depends on the instance's data volume and the read requests to replicate data.
+Instances can still be accessed during the upgrade, but a VIP switch causes a short disconnection lasting for just seconds after the upgrade completes.
 
 #### How do I view the progress of instance configuration adjustment?
 You can view the progress in [Task List](https://console.cloud.tencent.com/mysql/task) in the console.
@@ -90,7 +90,7 @@ APIs do not support QuickChange for the time being, so instance configuration ca
 The `innodb_buffer_pool_size` parameter will be modified according to the configuration changes.
 
 #### Will database parameters be modified during database configuration adjustment in the QuickChange mode?
-It is the same with the normal mode. In the QuickChange mode, some parameters will be modified according to the configuration changes.
+It is the same as the normal mode. In the QuickChange mode, some parameters will be modified according to the configuration changes.
 
 #### What is the difference between QuickChange mode and normal mode?
 The QuickChange mode requires no data migration, so it takes less time to adjust instance configuration.
