@@ -1,5 +1,5 @@
 
-## Symptoms
+## Issue Description
 - [Symptom 1](id:xz1): failed to connect to or log in to a TencentDB for MySQL instance from a CVM instance.
 - [Symptom 2](id:xz2): failed to connect to or log in to a TencentDB for MySQL instance from a local device.
 - [Symptom 3](id:xz3): failed to connect to or log in to a TencentDB for MySQL instance from DMC.
