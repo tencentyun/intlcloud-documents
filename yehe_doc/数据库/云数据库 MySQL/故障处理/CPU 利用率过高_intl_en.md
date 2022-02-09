@@ -1,5 +1,5 @@
 
-## Symptoms
+## I
 A TencentDB for MySQL instance encounters such issues as slow response, failure to get connections, and timeout. The cause is a high CPU utilization of more than 80%.
 
 You can view the CPU utilization of a TencentDB for MySQL instance on the instance monitoring page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) or in the [DBbrain console](https://console.cloud.tencent.com/dbbrain/event?product=mysql).
