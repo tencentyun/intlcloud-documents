@@ -708,7 +708,7 @@ cosClient.shutdown();
 
 The request members are described as follows:
 
-| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Description                                                     | Type   | Required |
+| Request Member | Setting Method  | Description                                                     | Type   | Required |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
 | bucketName   | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String         | Yes |
 | key | Constructor or set method | Unique identifier of the object in the bucket.<br>For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
@@ -809,7 +809,7 @@ cosClient.shutdown();
 
 The request members are described as follows:
 
-| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Description                                                     | Type   | Required |
+| Request Member | Setting Method   | Description                                                     | Type   | Required |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
 | bucketName   | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String         | Yes |
 | key | Constructor or set method | Unique identifier of the object in the bucket.<br>For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
@@ -1475,7 +1475,7 @@ cosClient.shutdown();
 
 #### Parameter description
 
-| Parameter | Set Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Parameter | Set Method  | Description                                                     | Type   |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
 | bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | key | Constructor or set method | Specifies the path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, for example, `folder/picture.jpg`. | String            |
