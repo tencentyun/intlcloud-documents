@@ -158,7 +158,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
 
 #### 返回值
 
@@ -247,7 +247,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
 
 #### 返回值
 
@@ -373,7 +373,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
 
 #### 返回值
 
@@ -472,7 +472,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
 
 #### 返回值
 
@@ -708,7 +708,7 @@ cosClient.shutdown();
 
 Request 成员说明：
 
-| Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 描述                                                         | 类型   | 必填 |
+| Request 成员 | 设置方法  | 描述                                                         | 类型   | 必填 |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
 | bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String         | 是|
 | key          | 构造函数或 set 方法 | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String         | 是|
