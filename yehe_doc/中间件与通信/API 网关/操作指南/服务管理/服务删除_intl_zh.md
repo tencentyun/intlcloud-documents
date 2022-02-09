@@ -2,10 +2,10 @@
 该任务指导您通过 API 网关控制台，删除不需要的服务。
 
 ## 操作步骤
-1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway/index?rid=1)，在左侧导航栏选择【服务】。
-2. 在服务列表中选择需要删除的服务，单击【删除】。
+1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway/index?rid=1)，在左侧导航栏选择**服务**。
+2. 在服务列表中选择需要删除的服务，单击**删除**。
 ![](https://main.qcloudimg.com/raw/8f2705403ebe5437622fe6a2e534c14c.png)
-3. 在确认删除的弹窗中，单击【确认】，即可删除该服务。
+3. 在确认删除的弹窗中，单击**确认**，即可删除该服务。
 ![](https://main.qcloudimg.com/raw/31635be37cdad206135b08dd35ad78d9.png)
 
 ## 注意事项
