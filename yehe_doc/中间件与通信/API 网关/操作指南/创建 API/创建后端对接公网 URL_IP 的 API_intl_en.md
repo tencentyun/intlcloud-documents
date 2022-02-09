@@ -1,64 +1,64 @@
-## Overview
+## 操作场景
 
-This document describes how to create an API connecting to the public URL/IP in the backend through the API Gateway console.
+该任务指导您通过 API 网关控制台创建后端对接公网 URL/IP 的 API。
 
-## Prerequisites
-You have [created a service](https://intl.cloud.tencent.com/document/product/628/11787).
+## 前提条件
+已完成 [服务创建](https://intl.cloud.tencent.com/document/product/628/11787)。
 
-## Directions
-### Step 1. Create a general API
+## 操作步骤
+### 步骤1：新建通用 API
 
-1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1) and click **Service** in the left sidebar.
-2. In the service list, click the name of the target service to view it.
-3. In the service details, click the **Manage API** tab and choose to create a **General API** based on the backend business type.
-4. Click **Create** for subsequent configuration.
+1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway/index?rid=1) ，在左侧导航栏单击**服务**。
+2. 在服务列表中，单击目标服务的服务名，查看该服务。
+3. 在服务信息中，单击**管理 API**标签页，根据后端业务类型选择创建**通用 API**。
+4. 单击**新建**，进行后续配置。
 
-### Step 2. Perform frontend configuration
+### 步骤2：前端配置
 
-The frontend configuration of an API refers to the relevant configurations provided for external access, including the API name, frontend type, request protocol, HTTP method, URL path, and input parameter definition.
+API 的前端配置指提供给外界访问的相关配置，包括 API 名称、前端类型、请求协议、HTTP 方法、URL 路径和入参的定义。
 
-#### Configuring basic frontend information
+#### 前端基础信息配置
 
-- **API Name**: name of the API you create, which must be unique within the current service and can contain up to 60 characters.
-- **Frontend Type**: supports HTTP&HTTPS and WS&WSS.
-- **Path**: You can write a valid URL path as needed. If you need to configure dynamic parameters in the path, please use `{}` to enclose the parameter names. For example, the `/user/{userid}` path declares the `userid` parameter in the path, which must be defined as a path-type input parameter. Query parameters do not need to be defined in the URL path.
-  **Regular expression match is supported**. Taking `/user` as an example of the path:
-	- `=/user`: indicates exact match. When there are multiple APIs with `/user`, APIs configured with `=/user` have the highest matching priority.
-	- `/user/{id}`: indicates that there is a dynamic parameter in the path. When there are multiple APIs with `/user`, APIs configured with a dynamic parameter have the third-highest matching priority.
-	- `/user`: indicates access by exact match or prefix match. `/user`, `/usertest`, and `/user/test/a` all can access APIs with the path of `/user`.
-- **Request Method**: supports GET, POST, PUT, DELETE, and HEAD.
-- **Authentication Type**: supports [No authentication](https://intl.cloud.tencent.com/document/product/628/11820), [Key pari](https://intl.cloud.tencent.com/document/product/628/11819), and [OAuth 2.0](https://intl.cloud.tencent.com/document/product/628/34065).
-- **CORS is supported**: configures cross-origin resource sharing (CORS). If enabled, `Access-Control-Allow-Origin : *` will be added to the response header by default.
+- **API 名称**：您创建的 API 的名称，在当前服务内具有唯一性，支持最长60个字符。
+- **前端类型**：API 网关支持 HTTP&HTTPS、WS&WSS 两种前端类型。
+- **URL 路径（Path）**：您可以按需求写入合法 URL 路径。如需要在路径中配置动态参数，请使用`{}`符号，并在其中填入参数名，例如`/user/{userid}`路径，申明了路径中的 userid 参数，此参数同时需要在入参中作为 Path 类型参数进行定义。Query 参数可以不用在 URL 路径中定义。
+  **路径支持正则表达式方式匹配**，路径输入内容以`/user`为例：
+	- `=/user`：代表精确匹配，当存在多个 API 接口都有`/use`r时，优先匹配含有`=/user`的配置的 API 接口。
+	- `/user/{id}`：代表路径上存在动态参数，当存在多个 API 接口都有`/user`时，优先级第三匹配含有动态参数的配置的 API 接口。
+	- `/user`：表示完全匹配或前缀匹配的方式访问，访问时`/user`、`/usertest`、`/user/test/a`都可以访问到`/user`路径的 API 接口。
+- **请求方法**：可选择 GET、POST、PUT、DELETE、HEAD 方法。
+- **鉴权类型**：支持 [免鉴权](https://intl.cloud.tencent.com/document/product/628/11820)、[密钥对认证](https://intl.cloud.tencent.com/document/product/628/11819)、[OAuth 2.0](https://intl.cloud.tencent.com/document/product/628/34065) 三种鉴权类型。
+- **支持 CORS**：用于配置跨域资源共享（CORS），开启后将默认在响应头中添加 `Access-Control-Allow-Origin : *`。
 
-#### Configuring frontend parameters
+#### 前端参数配置
 
-**Input parameters**: the input parameters include parameters from the header, query, and path, where a path parameter corresponds to a dynamic parameter defined in the URL path. For any parameter, the parameter name, parameter type, and parameter data type must be specified, and whether it is required, its default value, sample data, and description can be specified optionally. With these configuration items, API Gateway helps you with documentation and preliminary verification of input parameters.
+**入参**：入参包含了来源于 Header、Query、Path 的参数。其中 Path 参数对应于在 URL 路径中定义的动态参数。任一参数，均需要指定参数名，参数类型和参数数据类型；同时可以指明是否必填、默认值、示例数据和描述说明。利用这些配置，API 网关可以协助您完成入参的文档化和初步校验。
 ![](https://main.qcloudimg.com/raw/566e83ea5557af13526016ab1d56179c.png)
 
 > ?
-> - If the request protocol is HTTPS, a request must carry SNI. To ensure request security, API Gateway will deny requests without SNI.
-> - SNI (Server Name Indication) is an extension to TLS. It is used to address situations where a server has multiple domain names and is supported by the protocol since TLSv1.2. Previous SSL handshake messages didn't carry the destination address to be accessed by the client. If a server has multiple virtual hosts, each of which has a unique domain name and uses a unique certificate, then it will not be able to determine which certificate to return to the client. SNI addresses this issue by providing the host information in `Client Hello`.
+> - 请求协议为 HTTPS 时，需要请求中携带 SNI 标识，为了保障请求安全，API 网关会拒绝不携带 SNI 标识的请求。
+> - SNI（Server Name Indication）是 TLS 的一个扩展协议，用于解决一个服务器拥有多个域名的情况，在 TLSv1.2 开始得到协议的支持。之前的 SSL 握手信息中没有携带客户端要访问的目标地址，如果一台服务器有多个虚拟主机，且每个主机的域名不一样，使用了不一样的证书，此时会无法判断返回哪一个证书给客户端，SNI 通过在 Client Hello 中补上 Host 信息解决该问题。
 
-### Step 3. Configure public URL/IP in the backend
+### 步骤3：后端配置对接公网 URL/IP
 
-The backend configuration of an API refers to the configuration that actually provides the service. API Gateway converts a frontend request based on the backend configuration and forwards the call to the actual service.
-If your business is deployed in other cloud vendors, or your local server opens using public URL/IP, please choose public URL/IP as the backend type.
+API 的后端配置，是指的实际提供真实服务的配置。API 网关会将前端请求，依据后端配置进行转换后，转发调用到实际的服务上。
+当您的业务部署在其他云，或者本地服务器用公网URL/IP开放时，后端选用公网URL/IP对接。
 
-Configuration instructions:
+配置说明：
 
-1. If public URL/IP is connected to in the backend, set **Backend Type** to **Public URL/IP**.
-2. Enter the backend domain name that starts with `http://` or `https://` and does not include the path behind, for example, `http://api.myservice.com` or `http://108.160.162.30`.
-3. Enter the backend path that starts with `/`, for example, `/path` or `/path/{petid}`.
-4. Select the request method. The request methods for the frontend and the backend can be different.
-5. Set the backend timeout (up to 30 seconds). When API Gateway calls the backend service, but the response is not returned within the specified timeout, API Gateway will terminate the call and return the corresponding error message.
-6. Set the backend parameters that map the frontend.
-7. Click **Next** and configure the response result.
-   ![](https://main.qcloudimg.com/raw/7985a677e80f14e1d6327504b1df05df.png)
+1. 后端对接公网 URL/IP 时，需要选择您的后端类型为公网 URL/IP。
+2. 输入后端域名，以`http://`或`https://`开头，不包括后面的路径，例如`http://api.myservice.com`或`http://108.160.162.30`。
+3. 输入后端路径，以`/`开头，如`/path`或`/path/{petid}`。
+4. 选择请求方法，前后端选择的请求方法可不一致。
+5. 设置后端超时时间。超时时间的最大限制为30分钟。在 API 网关调用后端服务，未在超时时间内获得响应时，API 网关将终止此次调用，并返回相应的错误信息。
+6. 设置映射前端的后端参数。
+7. 单击**下一步**，配置响应结果。
+![](https://main.qcloudimg.com/raw/7985a677e80f14e1d6327504b1df05df.png)
 
-### Step 4. Configure the response
+### 步骤4：响应配置
 
-API response configuration: includes the configuration of API response data and API error codes.
-API response data configuration: indicates the type of returned data, including the data samples of successful and failed calls.
-API error code definition: indicates the additional error code, error message, and description.
+API 响应配置：包括 API 响应数据配置和 API 错误码配置。
+API 响应数据配置：用于指明返回数据类型，包括成功调用的数据示例和失败调用的数据示例。
+API 的错误码定义：用于指明额外的错误码、错误信息和描述。
 
-> ?Currently, API Gateway directly passes through the response result to the requester without processing it. When the SDK documentation is generated, the entered sample responses will also be displayed in the documentation, which will help users better understand the meanings of APIs.
+> ?目前 API 网关对于响应结果不做处理，直接透传给请求者。在生成 SDK 文档时，填写的响应示例也会一并展示在文档中，它将会更好的帮助使用者理解接口含义。
