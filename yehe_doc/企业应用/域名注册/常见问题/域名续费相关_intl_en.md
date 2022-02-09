@@ -23,7 +23,7 @@ Directions on domain redemption:
 3. In the pop-up window, click **Confirm** and make the payment to redeem the domain.
 
 >?
->- If a domain is in the redemption period, it can be redeemed only at a price higher than the normal renewal price. The domain redemption fees are charged by the registry. For detailed prices, see [Domain Pricing](https://buy.cloud.tencent.com/domain?price=1).
+>- If a domain is in the redemption period, it can be redeemed only at a price higher than the normal renewal price. The domain redemption fees are charged by the registry. For detailed prices, see [Domain Pricing](https://buy.intl.cloud.tencent.com/domain/price?type=overview).
 >- If you have any questions, [submit a ticket](https://intl.cloud.tencent.com/support).
 
 
