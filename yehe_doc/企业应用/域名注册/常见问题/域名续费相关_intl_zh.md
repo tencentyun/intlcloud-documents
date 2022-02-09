@@ -23,7 +23,7 @@
 3. 在弹出的窗口中单击**确定**，完成付费即可完成域名赎回。
 
 >?
->- 域名在 “赎回期” 期间，需要用比正常续费价格高的费用对域名进行赎回，域名赎回价格由注册局规定，详情价格请参见：[域名价格总览](https://buy.cloud.tencent.com/domain?price=1)。
+>- 域名在 “赎回期” 期间，需要用比正常续费价格高的费用对域名进行赎回，域名赎回价格由注册局规定，详情价格请参见：[域名价格总览](https://buy.intl.cloud.tencent.com/domain/price?type=overview)。
 >- 若在使用过程中遇到任何问题，您可以 [进入在线客服](https://intl.cloud.tencent.com/support) 咨询，我们将竭诚为您服务！
 
 
