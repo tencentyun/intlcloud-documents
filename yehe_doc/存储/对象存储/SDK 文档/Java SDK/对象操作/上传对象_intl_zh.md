@@ -809,7 +809,7 @@ cosClient.shutdown();
 
 Request 成员说明：
 
-| Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 描述                                                         | 类型   | 必填 |
+| Request 成员 | 设置方法  | 描述                                                         | 类型   | 必填 |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
 | bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String         | 是|
 | key          | 构造函数或 set 方法 | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String         | 是|
@@ -1475,7 +1475,7 @@ cosClient.shutdown();
 
 #### 参数说明
 
-| 参数名称   | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 描述                                                         | 类型              |
+| 参数名称   | 设置方法          | 描述                                                         | 类型              |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
 | bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String            |
 | key        | 构造函数或 set 方法 | 指定分块上传到 COS 上的路径，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)。例如对象键为 folder/picture.jpg | String            |
