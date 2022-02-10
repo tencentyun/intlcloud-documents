@@ -1,6 +1,6 @@
-## 短视频 SDK 各版本下载                
-<table>     
-   <tr>
+## 短视频 SDK 各版本下载                   
+<table>             
+   <tr>  
       <th width="85px" style="text-align:center">功能模块</td>
       <th width="85px" style="text-align:center">功能项</td>
       <th width="0px"  style="text-align:center">功能简介</td>
@@ -304,19 +304,18 @@
       <td rowspan='2' id = "sdk">SDK 下载</td>
       <td>Android</td>
 	  <td>短视频 SDK（LiteAVSDK）+ 基础功能 Demo 源代码。</td>
-          <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_ugc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_Android_latest.zip">基础版 SDK DOWNLOAD</a> </td>
-	  <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_Android_latest.zip">企业版 SDK DOWNLOAD</a> </td>
+          <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_ugc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_UGC_Android_latest.zip">基础版 SDK DOWNLOAD</a> </td>
+	  <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_enterprise") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_Android_latest.zip">企业版 SDK DOWNLOAD</a> </td>
    </tr>
    <tr>
       <td>iOS</td>
       <td>短视频 SDK（LiteAVSDK）+ 基础功能 Demo 源代码。</td>
-     <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_ugc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_iOS_latest.zip">基础版 SDK DOWNLOAD</a> </td>
-      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_iOS_latest.zip">企业版 SDK DOWNLOAD</a> </td>
+     <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_ugc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_UGC_iOS_latest.zip">基础版 SDK DOWNLOAD</a> </td>
+      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_iOS_latest.zip">企业版 SDK DOWNLOAD</a> </td>
    </tr>
 </table>
 
->? **如果您对 SDK 支持的功能还有疑问，请参见 [功能答疑](https://intl.cloud.tencent.com/document/product/1069/38044)**。
-**若您需要购买SDK的使用权限，请 [联系商务](https://intl.cloud.tencent.com/contact-sales)**
+>? **如果您对 SDK 支持的功能还有疑问，请参见 [功能答疑](https://intl.cloud.tencent.com/document/product/1069/38044)。**
 
 ## 全功能小视频 App（Demo）源代码
 
@@ -329,19 +328,19 @@
   </tr>
   <tr>
     <td>iOS 端源代码</td>
-    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_ios_xsp_src_code") href="https://download-1252463788.file.myqcloud.com/xiaoshipin/TXXiaoShiPinDemo_ios.zip">DOWNLOAD</a></td>
+    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_ios_xsp_src_code") href="https://liteav.sdk.qcloud.com/download/ugc/TXXiaoShiPinDemo_ios.zip">DOWNLOAD</a></td>
     <td><a href="https://github.com/tencentyun/UGSVSDK">Github</a></td>
     <td><a href="https://gitee.com/cloudtencent/UGSVSDK">Gitee</a></td>
   </tr>
   <tr>
     <td>Android 端源代码</td>
-    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_android_xsp_src_code") href="https://download-1252463788.file.myqcloud.com/xiaoshipin/XiaoShiPin_Professional_Android.zip">DOWNLOAD</a></td>
+    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_android_xsp_src_code") href="https://liteav.sdk.qcloud.com/download/ugc/XiaoShiPin_Professional_Android.zip">DOWNLOAD</a></td>
     <td><a href="https://github.com/tencentyun/UGSVSDK">Github</a></td>
     <td><a href="https://gitee.com/cloudtencent/UGSVSDK">Gitee</a></td>
   </tr>
   <tr>
     <td>后台源代码</td>
-    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_android_xsp_src_code") href="https://download-1252463788.cos.ap-shanghai.myqcloud.com/xiaoshipin/vod-xiaoshipin-server-master.zip">DOWNLOAD</a></td>
+    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_android_xsp_src_code") href="https://liteav.sdk.qcloud.com/download/ugc/vod-xiaoshipin-server-master.zip">DOWNLOAD</a></td>
     <td><a onclick=MtaH5.clickStat("ugc_xiaoshipin_server_xsp_src_code") href="https://github.com/tencentyun/vod-xiaoshipin-server">GitHub</a></td>
     <td><a href="https://gitee.com/cloudtencent/vod-xiaoshipin-server">Gitee</a></td>
   </tr>
@@ -361,3 +360,11 @@
     s.parentNode.insertBefore(mta, s);
   })();
 </script>
+
+
+
+
+
+
+
+

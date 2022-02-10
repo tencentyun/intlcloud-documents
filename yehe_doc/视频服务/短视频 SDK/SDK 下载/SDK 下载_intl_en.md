@@ -304,19 +304,18 @@
       <td rowspan='2' id = "sdk">SDK download</td>
       <td>Android</td>
 	  <td>UGSV SDK（LiteAVSDK）+ demo source code for basic features</td>
-          <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_ugc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_Android_latest.zip">Basic SDK download</a> </td>
-	  <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_Android_latest.zip">Enterprise SDK download</a> </td>
+          <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_ugc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_UGC_Android_latest.zip">Basic SDK download</a> </td>
+	  <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_enterprise") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_Android_latest.zip">Enterprise SDK download</a> </td>
    </tr>
    <tr>
       <td>iOS</td>
       <td>UGSV SDK（LiteAVSDK）+ demo source code for basic features</td>
-     <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_ugc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_iOS_latest.zip">Basic SDK download</a> </td>
-      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_iOS_latest.zip">Enterprise SDK download</a> </td>
+     <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_ugc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_UGC_iOS_latest.zip">Basic SDK download</a> </td>
+      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_iOS_latest.zip">Enterprise SDK download</a> </td>
    </tr>
 </table>
 
 >? **If you have questions about the features of the SDK, see [Feature FAQs](https://intl.cloud.tencent.com/document/product/1069/38044).**
-**If you need to purchase SDK licenses, please [contact sales](https://intl.cloud.tencent.com/contact-sales).**
 
 ## (Demo) Source Code for All-Feature UGSV Apps
 
@@ -329,19 +328,19 @@
   </tr>
   <tr>
     <td>Source code for iOS</td>
-    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_ios_xsp_src_code") href="https://download-1252463788.file.myqcloud.com/xiaoshipin/TXXiaoShiPinDemo_ios.zip">Download</a></td>
+    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_ios_xsp_src_code") href="https://liteav.sdk.qcloud.com/download/ugc/TXXiaoShiPinDemo_ios.zip">DOWNLOAD</a></td>
     <td><a href="https://github.com/tencentyun/UGSVSDK">GitHub</a></td>
     <td><a href="https://gitee.com/cloudtencent/UGSVSDK">Gitee</a></td>
   </tr>
   <tr>
     <td>Source code for Android</td>
-    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_android_xsp_src_code") href="https://download-1252463788.file.myqcloud.com/xiaoshipin/XiaoShiPin_Professional_Android.zip">Download</a></td>
+    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_android_xsp_src_code") href="https://liteav.sdk.qcloud.com/download/ugc/XiaoShiPin_Professional_Android.zip">DOWNLOAD</a></td>
     <td><a href="https://github.com/tencentyun/UGSVSDK">GitHub</a></td>
     <td><a href="https://gitee.com/cloudtencent/UGSVSDK">Gitee</a></td>
   </tr>
   <tr>
     <td>Backend source code</td>
-    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_android_xsp_src_code") href="https://download-1252463788.cos.ap-shanghai.myqcloud.com/xiaoshipin/vod-xiaoshipin-server-master.zip">Download</a></td>
+    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_android_xsp_src_code") href="https://liteav.sdk.qcloud.com/download/ugc/vod-xiaoshipin-server-master.zip">DOWNLOAD</a></td>
     <td><a onclick=MtaH5.clickStat("ugc_xiaoshipin_server_xsp_src_code") href="https://github.com/tencentyun/vod-xiaoshipin-server">GitHub</a></td>
     <td><a href="https://gitee.com/cloudtencent/vod-xiaoshipin-server">Gitee</a></td>
   </tr>
