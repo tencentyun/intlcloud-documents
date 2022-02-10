@@ -99,6 +99,10 @@
 | Deletes messages sent by a specified user. | [v4/group_open_http_svc/delete_group_msg_by_sender](https://intl.cloud.tencent.com/document/product/1047/34970) |
 | Gets group message history. | [v4/group_open_http_svc/group_msg_get_simple](https://intl.cloud.tencent.com/document/product/1047/34971) |
 | Gets the number of online users in an audio-video group. | [v4/group_open_http_svc/get_online_member_num](https://intl.cloud.tencent.com/document/product/1047/38521)|
+|Gets Custom Group Attributes|[v4/group_open_attr_http_svc/get_group_attr](https://intl.cloud.tencent.com/document/product/1047/44187)|
+|Modifies Custom Group Attributes|[v4/group_open_http_svc/modify_group_attr](https://intl.cloud.tencent.com/document/product/1047/44188)|
+|Clears Custom Group Attributes|	[v4/group_open_http_svc/clear_group_attr](https://intl.cloud.tencent.com/document/product/1047/44189)|
+|Resets Custom Group Attributes|[v4/group_open_http_svc/set_group_attr](https://intl.cloud.tencent.com/document/product/1047/44190)|
 
 ## Global Mute Management
 | Feature | API |
