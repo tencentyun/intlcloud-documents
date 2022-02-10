@@ -9,7 +9,7 @@
 
 
 ## 产品架构
-实时音视频 TRTC 主打全平台互通的多人音视频通话和低延时互动直播解决方案，提供小程序、Web、Android、iOS、Electron、Windows、macOS 等平台的 SDK 便于开发者快速集成并与实时音视频 TRTC 云服务后台连通。通过腾讯云不同产品间的相互联动，还能简单快速地将实时音视频 TRTC 与即时通信 IM、云直播 CSS、云点播 VOD 等云产品协同使用，扩展更多的业务场景。产品架构如下图所示：
+实时音视频 TRTC 主打全平台互通的多人音视频通话和低延时互动直播解决方案，提供Web、Android、iOS、Electron、Windows、macOS 等平台的 SDK 便于开发者快速集成并与实时音视频 TRTC 云服务后台连通。通过腾讯云不同产品间的相互联动，还能简单快速地将实时音视频 TRTC 与即时通信 IM、云直播 CSS、云点播 VOD 等云产品协同使用，扩展更多的业务场景。产品架构如下图所示：
 ![](https://main.qcloudimg.com/raw/be1345a58328913f7dae524a4cc5e153.svg)
 
 ## 平台支持
@@ -52,14 +52,6 @@
 <td>
   <li>支持 Windows 7 及以上版本、Mac OS 10.10 及以上版本</li>
   <li>支持 Electron 4.0.0 以上版本，推荐使用最新版 Electron SDK</li>
-</td>
-</tr><tr>
-<td>微信小程序</td>
-<td>
-  <li>微信 App iOS 最低版本要求：7.0.9</li>
-  <li>微信 App Android 最低版本要求：7.0.8</li>
-  <li>小程序基础库最低版本要求：2.10.0</li>
-  <li>由于小程序开发者工具不支持原生组件（即 &lt;live-pusher&gt; 和 &lt;live-player&gt; 标签），需要在真机器上运行体验</li>
 </td>
 </tr><tr>
 <td>Flutter</td>
