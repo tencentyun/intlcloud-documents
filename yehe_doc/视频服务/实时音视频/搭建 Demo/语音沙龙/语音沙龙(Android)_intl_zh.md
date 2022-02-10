@@ -2,6 +2,17 @@
 
 您可以 [下载](https://intl.cloud.tencent.com/document/product/647/35076) 安装我们的 App 体验语音沙龙的能力，包括语音聊天、上下麦、低延时语音互动等 TRTC 在语音聊天场景下的相关能力。
 
+<table>
+     <tr>
+         <th>房主麦位操作</th>  
+         <th>听众麦位操作</th>  
+     </tr>
+<tr>
+<td><img src="https://qcloudimg.tencent-cloud.cn/raw/849c3cff658d82b0fe0d3e7b1a490e13.png"/ style="max-height:700px;"></td>
+<td><img src="https://qcloudimg.tencent-cloud.cn/raw/25cc9b7695cc208c946b50710e842e41.png"/  style="max-height:700px;"></td>
+</tr>
+</table>
+
 如需快速接入语音沙龙功能，您可以直接基于我们提供的 App 进行修改适配，也可以使用我们提供的 TRTCChatSalon 组件并实现自定义 UI 界面。
 
 [](id:DemoUI)
@@ -62,14 +73,27 @@
 ### 用户 A
 
 1. 输入用户名（**请确保用户名唯一性，不能与其他用户重复**）并登录。
+
+   ![](https://qcloudimg.tencent-cloud.cn/raw/ae3d6bc2f1900dbc5537f2f3f4fca529.png)
+
 2. 进入后，单击 **创建房间**。
+
+   ![](https://qcloudimg.tencent-cloud.cn/raw/aef2012fdb5a6441dae9406f0539164d.png)
+
 3. 输入房间主题，单击 **开始交谈**。
 
 ### 用户 B
 1. 输入用户名（**请确保用户名唯一性，不能与其他用户重复**）并登录。
+
+   ![](https://qcloudimg.tencent-cloud.cn/raw/7596d1bd53d84d61436a499a92d52240.png)
+
 2. 输入用户 A 创建的房间号，单击 **进入房间**。<br>
 
+   ![](https://qcloudimg.tencent-cloud.cn/raw/68eea3143e1d57158725d80da7895e51.png)
+
 >! 房间号在用户 A 的房间顶部查看。
+>
+>![](https://qcloudimg.tencent-cloud.cn/raw/ae36a652f641761fccd5bdad041a9220.png)
 
 
 [](id:model)
@@ -310,7 +334,7 @@ public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
 1. `pickSeat` 传入听众 userId, 可以抱人上麦，房间内所有成员会收到 `onAnchorEnterSeat` 的事件通知。
 2. `kickSeat` 传入对应用户的 userId 后，可以踢人下麦，房间内所有成员会收到 `onAnchorLeaveSeat` 的事件通知。
 
-![](https://main.qcloudimg.com/raw/6e23550a49c88b823dca96941c638394.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0eb3dbe14b166a24252f0efb45a6b24f.png)
 麦位操作后的事件通知顺序如下：callback > onAnchorEnterSeat 等独立事件。
 <dx-codeblock>
 ::: java java

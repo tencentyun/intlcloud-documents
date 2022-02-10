@@ -188,7 +188,7 @@ self.karaokeRoom.login(sdkAppId: sdkAppID, userId: userId, userSig: userSig) { [
 4. 房主收到组件的 `onSeatListChange` 麦位表变化事件通知，此时可以将麦位表变化刷新到 UI 界面上。
 5. 房主还会收到麦位表有成员进入的 `onAnchorEnterSeat` 的事件通知，此时会自动打开麦克风采集。
 
-<img src="https://liteav.sdk.qcloud.com/doc/res/trtc/picture/zh-cn/ktv_chart_anchor_page.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c925337d62289d8c3cdba4714145f5cb.png">
 
 示例代码：
 <dx-codeblock>
@@ -252,7 +252,7 @@ func onAnchorEnterSeat(index: Int, user: UserInfo) {
 7. 进房后还会收到麦位表有主播进入的` onAnchorEnterSeat` 的事件通知。
 
 
-<img src="https://liteav.sdk.qcloud.com/doc/res/trtc/picture/zh-cn/ktv_chart_audience.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0a96afd3948228a6f1fd19eb0b7b1b3e.png">
 <dx-codeblock>
 ::: Swift Swift
 // 1.听众设置昵称和头像
@@ -301,13 +301,13 @@ func onAnchorEnterSeat(index: Int, user: UserInfo) {
 2. `kickSeat` 传入对应麦位后，可以踢人下麦，房间内所有成员会收到 `onSeatListChange` 和 `onAnchorLeaveSeat` 的事件通知。
 3. `muteSeat` 传入对应麦位后，可以静音/解除静音，房间内所有成员会收到 `onSeatListChange` 和 `onSeatMute` 的事件通知。
 4. `closeSeat` 传入对应麦位后，可以封禁/解禁某个麦位，封禁后听众端将不能再上麦，房间内所有成员会收到` onSeatListChange` 和 `onSeatClose` 的事件通知。
-<img src="https://liteav.sdk.qcloud.com/doc/res/trtc/picture/zh-cn/ktv_chart_seat_anchor.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b6074cf63c373e233b0a1a1d45422eda.png">
 :::
 ::: 听众端
 1. `enterSeat`传入对应的麦位后，可以进行上麦，房间内所有成员会收到`onSeatListChange`和`onAnchorEnterSeat`的事件通知。
 2. `leaveSeat`主动下麦，房间内所有成员会收到`onSeatListChange`和`onAnchorLeaveSeat`的事件通知。
 
-<img src="https://liteav.sdk.qcloud.com/doc/res/trtc/picture/zh-cn/ktv_chart_seat_audience.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/32075b60078151ad6988efffeb9aa49f.png">
 
 麦位操作后的事件通知顺序如下：callback > onSeatListChange > onAnchorEnterSeat 等独立事件。
 
@@ -362,7 +362,7 @@ func onAnchorEnterSeat(index: Int, user: UserInfo) {
 3. 房主选择同意后，调用 `acceptInvitation` 并传入 inviteId。
 4. 听众端收到 `onInviteeAccepted` 的事件通知，调用 `enterSeat` 进行上麦。
 
-<img src="https://liteav.sdk.qcloud.com/doc/res/trtc/picture/zh-cn/ktv_chart_signal_audience.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1396c2611b83bcc5532edceb97d94f94.png">
 
 <dx-codeblock>
 ::: Swift Swift
@@ -397,7 +397,8 @@ func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, co
 3. 听众选择同意后，调用 `acceptInvitation` 并传入 inviteId。
 4. 房主端收到 `onInviteeAccepted` 的事件通知，调用 `pickSeat` 抱听众上麦。
 
-<img src="https://liteav.sdk.qcloud.com/doc/res/trtc/picture/zh-cn/ktv_chart_signal.png">
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/d9ae981d95441aa4e535ee1921d31ed6.png">
 
 
 <dx-codeblock>

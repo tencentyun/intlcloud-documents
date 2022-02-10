@@ -76,9 +76,13 @@ npm install
 npm run serve
 ```
 2. 启动 Chrome 浏览器中打开链接 `http://localhost:8080/` 。
+   ![](https://qcloudimg.tencent-cloud.cn/raw/4bac4a925d537c29f1540fa90d570552.png)
 3. 输入用户 userid，单击 **登录**，并选择 **语音通话**：
+   ![](https://qcloudimg.tencent-cloud.cn/raw/eb1bcfd34409315b3bda70e72d5420f4.png)
 4. 输入呼叫用户 userid，单击 **呼叫**。
+   ![](https://qcloudimg.tencent-cloud.cn/raw/83e4ec55c1feb43c2ef68863a6b4beae.png)
 5. 即可进行语音通话。
+  ![](https://qcloudimg.tencent-cloud.cn/raw/17bb3c8f1f49a4c1f100536bee37caef.png)
 
 
 ## 搭建自己的语音通话
