@@ -210,7 +210,7 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | -------- | ------------------- | ------------------------------------------------------------ |
 | sdkAppId | UInt32              | You can view the `SDKAppID` in the TRTC console > **[Application Management](https://console.cloud.tencent.com/trtc/app)** > "Application Info". |
-| userId   | NSString            | ID of current user, which is a string that can contain only letters (a–z and A–Z), digits (0–9), hyphens (-), and underscores (_). |
+| userId   | NSString            | ID of current user, which is a string that can contain only letters (a–z and A–Z), digits (0–9), hyphens (-), and underscores (_). We recommend you set it based on your business account system.|
 | userSig  | NSString            | Tencent Cloud's proprietary security protection signature. For more information on how to get it, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
 | callback | TRTCMeetingCallback | Callback for login. The `code` will be 0 if the operation succeeds.                                  |
 
