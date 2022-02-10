@@ -43,11 +43,10 @@ This document describes how to install an SSL certificate on a Jetty server.
 1. Log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl), and click **Download** for the certificate you need to install.
 2. In the pop-up window, select **JKS** for the server type, click **Download**, and decompress the `cloud.tencent.com` certificate file package to the local directory.
 After decompression, you can get the certificate file of the corresponding type, which includes the `cloud.tencent.com_jks` folder.
- - **Folder**: `cloud.tencent.com_jks`
- - **Files in the folder**:
-    - `cloud.tencent.com.jks`: keystore file
-    - `cloud.tencent.com.key`: private key file
-    - `keystorePass.txt`: password file (if you have set a private key password, this file will not be generated)
+   - **Folder**: `cloud.tencent.com_jks`
+   - **Files in the folder**:
+     - `cloud.tencent.com.jks`: keystore file
+     - `keystorePass.txt`: password file (if you have set a private key password, this file will not be generated)
 3. Remotely log in to the Jetty server. For example, you can use [PuTTY](https://intl.cloud.tencent.com/document/product/213/32502) for remote login.
 4. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, run the `mkdir cert` command to create the `cert` folder.
 5. Use WinSCP (a tool for copying files between a local computer and a remote computer) to log in to the Jetty server and copy the keystore file `cloud.tencent.com.jks` from the local directory to the `cert` folder.
