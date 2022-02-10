@@ -194,7 +194,7 @@
 		<div class="scene-card-container">
         <div class="scene-card">
             <div style="float: left; margin-top: 20px;">
-                <img src="https://main.qcloudimg.com/raw/7a7b51c1536587f0fea130d375661552.png" width="160" data-nonescope="true">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/4651627d75d0e712d8032fb5f6149a3d.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">在线 K 歌</h3>
