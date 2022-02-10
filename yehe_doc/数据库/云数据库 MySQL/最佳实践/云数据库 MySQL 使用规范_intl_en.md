@@ -84,6 +84,6 @@ Solution: you can modify parameters on the **Database Management** > **Parameter
 - Avoid using an SQL statement with multi-level nested subqueries. The query optimizer prior to MySQL v5.5 can convert IN to EXISTS and does not go through the indexes. In this case, a large external table may result in poor performance.
 
 >?
->- It is difficult to totally avoid the above problems. The solution is not to use the aforementioned conditions as the primary filtering conditions; instead, set them as the conditions secondary to the primary filtering conditions for indexes.
+>- It is difficult to completely avoid the aforementioned issues. The solution is to set the aforementioned conditions as secondary filtering conditions for indexes rather than as primary filtering conditions.
 >- If a large number of full table scans are monitored, set the `log_queries_not_using_indexes` parameter in the console and download the slow logs for analysis later. Do not keep it enabled for too long so as to avoid a surge of slow logs.
 >- Perform the required SQL audit before a business goes live. In daily OPS work, download slow logs regularly for targeted optimization.
