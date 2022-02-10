@@ -30,7 +30,7 @@ It is included in MySQL v5.7 by default and provides summary views to answer the
 
 For more information on improvements and new features in MySQL v5.7, see [MySQL's official documentation](https://dev.mysql.com/doc/refman/5.7/en/mysql-nutshell.html).
 
-### 1.2 Select an instance specification (database memory)
+### 1.2 Select database memory
 Currently, TencentDB for MySQL doesn't offer separate CPU options; instead, the CPU will be allocated proportionally according to the memory specification. You can purchase database specifications based on your business characteristics. We have conducted thorough benchmark tests on each type of instance so as to provide performance information for your reference when you select specifications.
 However, it should be noted that the Sysbench-enabled tests cannot represent all business scenarios. You are recommended to perform stress testing on your instance before launching it officially, so that you can better understand how TencentDB for MySQL performs in your business scenario. For more information, see [Performance White Paper](https://intl.cloud.tencent.com/document/product/236/8842).
 
@@ -38,7 +38,7 @@ Memory is one of the core instance metrics, which features an access speed much 
 
 **For businesses with high read concurrence or sensitive to read delay, it is recommended to choose a higher memory specification so as to ensure high database performance.**
 
-### 1.3 Select a disk (data storage capacity)
+### 1.3 Select disk capacity
 The disk capacity of a TencentDB for MySQL instance includes only the MySQL data directories but not the logs such as binlog, relaylog, undolog, errorlog, and slowlog. When the amount of written data exceeds the instance disk capacity, if the instance is not upgraded, instance lock may be triggered. Therefore, when you purchase a disk, you are recommended to take into account the possible data volume increase in the future and select a larger disk, which helps prevent your instance from being locked or frequently upgraded due to insufficient disk capacity.
 
 ### 1.4 Select a proper data replication mode
@@ -48,7 +48,7 @@ TencentDB for MySQL provides three replication modes: async, semi-sync, and stro
 High availability of TencentDB for MySQL is guaranteed by the source-replica architecture. Source-replica data sync is achieved through binlogs. In addition, the database can be rolled back to any previous point in time, which relies on backups and logs. Therefore, you generally do not need to set up a backup and restoration system on your own or pay additional fees to keep your instance highly available.
 
 ### 1.6 Scalability of TencentDB
-All the different database versions and memory/disk specifications of TencentDB for MySQL support online dynamic hot upgrade. The upgrade process will not interrupt your business, eliminating your concerns over any database bottlenecks caused by business growth.
+All the different database versions and memory/disk specifications of TencentDB for MySQL support hot upgrade. The upgrade process will not interrupt your business, eliminating your concerns over any database bottlenecks caused by business growth.
 
 ### 1.7 Use CVM and TencentDB for MySQL together
 After a purchase is made, you generally need to use CVM and TencentDB for MySQL together. For more information, see [Connecting to MySQL Instances](https://intl.cloud.tencent.com/document/product/236/37788).
