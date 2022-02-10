@@ -24,4 +24,4 @@ If a task is configured to be switched during the maintenance window, but you ne
 
 >?
 >- Immediate switch is applicable to operations involving data migration such as instance specification adjustment, instance version upgrade, and instance kernel upgrade.
->- For version upgrade, if an instance is associated with multiple instances, the switch will be performed in the order from read-only replica to source instance.
+>- For version upgrade, if it is associated with multiple instances, the switch will be performed in the order from read-only replica to source instance.
