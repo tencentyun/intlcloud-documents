@@ -99,6 +99,10 @@
 | 删除指定用户发送的消息 | [v4/group_open_http_svc/delete_group_msg_by_sender](https://intl.cloud.tencent.com/document/product/1047/34970) |
 | 拉取群历史消息         | [v4/group_open_http_svc/group_msg_get_simple](https://intl.cloud.tencent.com/document/product/1047/34971) |
 |获取直播群在线人数|[v4/group_open_http_svc/get_online_member_num](https://intl.cloud.tencent.com/document/product/1047/38521)|
+|获取群自定义属性|[v4/group_open_attr_http_svc/get_group_attr](https://intl.cloud.tencent.com/document/product/1047/44187)|
+|修改群自定义属性|[v4/group_open_http_svc/modify_group_attr](https://intl.cloud.tencent.com/document/product/1047/44188)|
+|清空群自定义属性|	[v4/group_open_http_svc/clear_group_attr](https://intl.cloud.tencent.com/document/product/1047/44189)|
+|重置群自定义属性|[v4/group_open_http_svc/set_group_attr](https://intl.cloud.tencent.com/document/product/1047/44190)|
 
 ## 全局禁言管理
 | 功能说明 |接口 |
