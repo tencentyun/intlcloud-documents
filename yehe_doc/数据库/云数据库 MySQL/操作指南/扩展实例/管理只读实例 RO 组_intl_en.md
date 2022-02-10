@@ -28,7 +28,7 @@ An RO group is a set of read-only instances sharing the same private network add
 ### Configuring RO group
 On the RO group configuration page, you can configure the basic information of the group such as name, removal policy, delay threshold, least RO instances, and read weight.
 >?
->- Read-Only instances in an RO group can use different specifications, and their read traffic weights can be set.
+>- Read-Only instances in an RO group can use different specifications, and their read traffic weights can be different as well.
 >- Read-Only instances in the same RO group can have different expiration dates and billing modes.
 >
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click a source instance name to enter the instance management page.
