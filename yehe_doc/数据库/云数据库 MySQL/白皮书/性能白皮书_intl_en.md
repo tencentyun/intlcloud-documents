@@ -1,7 +1,7 @@
-## Testing Tool
+## Test Tool
 Sysbench 0.5 is the tool used to test the database benchmark performance.
 
-Modifications to the tool:
+Tool configuration:
 The OTLP script that comes with Sysbench was modified. Specifically, the read/write ratio was changed to 1:1 and controlled by the testing command parameters `oltp_point_selects` and `oltp_index_updates`. In this document, all test cases involve four SELECT operations and one UPDATE operation with the read/write ratio at 4:1.
 
 #### Tool installation
@@ -18,12 +18,12 @@ make install
 ```
 >?The installation directions above apply to performance stress testing on a CentOS CVM instance. For directions on installing the tool on other operating systems, please see [the official Sysbench documentation](https://github.com/akopytov/sysbench?spm=a2c4g.11186623.2.12.36061072oZL2qS).
 
-## Testing Environment
+## Test Environment
 
 | Type | Description |
 |--|--|
 | Physical machine | A single machine can support two-node database instances with up to 488 GB memory and 6 TB disk |
-| Instance specification | Currently purchasable mainstream specification (please see the [test cases](#cscs) below) |
+| Instance specification | Specifications which are commonly available (please see the [test cases](#cscs) below) |
 | Client configuration | 4-core CPU and 8 GB memory |
 | Number of clients | 1-6 (more clients need to be added as the configuration is upgraded) |
 | Network environment | Data center with 10-Gigabit connection and a network latency below 0.05 ms |

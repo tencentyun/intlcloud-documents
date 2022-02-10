@@ -3,26 +3,26 @@
 
 ## 操作步骤
 ### 子账号或协作者的权限管理（非标签资源）
-1. 主账号登录【[访问管理控制台](https://console.cloud.tencent.com/cam/overview)】>【[策略](https://console.cloud.tencent.com/cam/policy)】。
-2. 在策略列表页，单击左上角【新建自定义策略】。
-3. 在新建策略弹窗中，选择【按策略生成器创建】。
+1. 主账号登录[**访问管理控制台**](https://console.cloud.tencent.com/cam/overview)>[**策略**](https://console.cloud.tencent.com/cam/policy)。
+2. 在策略列表页，单击左上角**新建自定义策略**。
+3. 在新建策略弹窗中，选择**按策略生成器创建**。
 ![](https://main.qcloudimg.com/raw/14993bbb8ccfe74e7a82d3e4ed2fc3c5.png)
-4. 填写自定义策略信息，完成后单击【添加声明】和【下一步】进入编辑策略页面。
+4. 填写自定义策略信息，完成后单击**添加声明**和**下一步**进入编辑策略页面。
 ![](https://main.qcloudimg.com/raw/245476792d93ce9ec6e9ada61483cc88.png)
    - 效果：允许
    - 服务：API 网关
    - 操作：选择涉及到的操作
    - 资源：当填写内容为所有资源时可以写做`*` ，如果仅涉及到部分资源，可以参考 [资源描述方式](https://intl.cloud.tencent.com/document/product/598/10606) 填写。
 5. 填写策略名称，并对策略内容进行编辑（详细操作请参考 [策略语法](https://intl.cloud.tencent.com/document/product/598/10604)）。
-6. 单击【创建策略】，完成策略创建。
+6. 单击**创建策略**，完成策略创建。
 7. 将创建好的策略绑定在用户或者用户组上（详细操作请参考 [通过策略关联用户/用户组](https://intl.cloud.tencent.com/document/product/598/10602)）。
 
 ### 子账号或协作者的权限管理（标签资源）
 标签能力是腾讯云上的统一能力，您可以对腾讯云上的不同产品的不同资源设置相同的标签，对一套标签设置相同的操作权限。
->?配置基于标签的管理权限与配置非标签的管理权限入口相同，在【[访问管理](https://console.cloud.tencent.com/cam)】>【[策略](https://console.cloud.tencent.com/cam/policy)】中，新建【按照标签授权】策略，详细操作请参考 [按标签授权](https://intl.cloud.tencent.com/document/product/598/35596)。
+>?配置基于标签的管理权限与配置非标签的管理权限入口相同，在[**访问管理**](https://console.cloud.tencent.com/cam)>[**策略**](https://console.cloud.tencent.com/cam/policy)中，新建**按照标签授权**策略，详细操作请参考 [按标签授权](https://intl.cloud.tencent.com/document/product/598/35596)。
 
-1. 登录【[API 网关控制台](https://console.cloud.tencent.com/apigateway/index?rid=8)】>【[服务](https://console.cloud.tencent.com/apigateway/service?rid=8)】。
-2. 在服务列表页，单击服务名进入服务详情页，单击【管理 API】。
+1. 登录[**API 网关控制台**](https://console.cloud.tencent.com/apigateway/index?rid=8)>[**服务**](https://console.cloud.tencent.com/apigateway/service?rid=8)。
+2. 在服务列表页，单击服务名进入服务详情页，单击**管理 API**。
 3. 在管理 API 页，单击 API 的 ID，进入 API 详情页面。 
 4. 在 API 详情页，单击页面底部标签下的<img src="https://main.qcloudimg.com/raw/2563f681e1be1f3c3e94f590b912ac96.png" style="margin:0;">图标即可修改标签。
 ![](https://main.qcloudimg.com/raw/da0219260d001fb03cac2d3179f03526.png)

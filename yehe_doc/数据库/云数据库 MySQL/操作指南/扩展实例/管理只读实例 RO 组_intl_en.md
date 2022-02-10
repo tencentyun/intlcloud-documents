@@ -1,7 +1,7 @@
 ## Overview
 TencentDB for MySQL allows you to create one or more read-only instances to form an RO group, which is suitable for read/write separation and one-source-multiple-replica application scenarios and capable of greatly enhancing the read load capacity of your database.
 
-An RO group is a set of read-only instances sharing the same address. You can set their weights to balance the traffic load, set the policy of removing delayed read-only instances, and perform other configurations. You can deploy an RO group as needed and send the corresponding read requests to read-only instances according to certain rules. In addition, you can implement disaster recovery by configuring multiple read-only instances in the same RO group.
+An RO group is a set of read-only instances sharing the same private network address. You can set their weights to balance the traffic load, set the policy of removing delayed read-only instances, and perform other configurations. You can deploy an RO group as needed and send the corresponding read requests to read-only instances according to certain rules. In addition, you can implement disaster recovery by configuring multiple read-only instances in the same RO group.
 
 ## Prerequisites
 - A source instance must be created first before a read-only instance can be created. For more information, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/236/5160).
@@ -28,7 +28,7 @@ An RO group is a set of read-only instances sharing the same address. You can se
 ### Configuring RO group
 On the RO group configuration page, you can configure the basic information of the group such as name, removal policy, delay threshold, least RO instances, and read weight.
 >?
->- Read-Only instances in an RO group can use different specifications, and their read traffic weights can be set.
+>- Read-Only instances in an RO group can use different specifications, and their read traffic weights can be different as well.
 >- Read-Only instances in the same RO group can have different expiration dates and billing modes.
 >
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click a source instance name to enter the instance management page.
