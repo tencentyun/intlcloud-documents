@@ -61,7 +61,7 @@ cos.getBucket({
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
-    Prefix: 'a/',             /* Prefix表示列出的object的key以prefix开始，非必须 */
+    Prefix: 'a/',              /* Prefix表示列出的object的key以prefix开始，非必须 */
     Delimiter: '/',            /* Deliter表示分隔符, 设置为/表示列出当前目录下的object, 设置为空表示列出所有的object，非必须 */
 }, function(err, data) {
     console.log(err || data.CommonPrefixes);
@@ -104,7 +104,7 @@ var listFolder = function(marker) {
     cos.getBucket({
         Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
         Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
-        Prefix: 'a/',   /* Prefix表示列出的object的key以prefix开始，非必须 */
+        Prefix: 'a/',    /* Prefix表示列出的object的key以prefix开始，非必须 */
         Marker: marker,
         MaxKeys: 1000,
     }, function(err, data) {

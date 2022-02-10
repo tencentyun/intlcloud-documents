@@ -22,7 +22,7 @@ Web、iOS、Android 使用 COS 时，通过固定密钥计算签名方式不能�
 
 ## 获取临时密钥
 
-获取临时密钥，可以通过提供的 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) 方式获取。
+获取临时密钥，可以通过提供的 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) 方式获取，也可以直接请求STS 云 API的方式获取。
 
 
 >!举例使用的是 Java SDK ，需要在 GitHub 上获取 SDK 代码（版本号）。若提示找不到对应 SDK 版本号，请确认是否在 GitHub 上获取到对应版本的 SDK。
@@ -47,22 +47,23 @@ COS 针对 STS 提供了 SDK 和样例，目前已有 Java、Nodejs、PHP、Pyth
 
 #### 代码示例
 ```java
-// 根据 github 提供的 maven 集成方法导入 java sts sdk 
-import java.util.*;
-import org.json.JSONObject; 
-import com.tencent.cloud.CosStsClient;
-
+// 根据 github 提供的 maven 集成方法导入 java sts sdk，使用 3.1.0 及更高版本
 public class Demo {
     public static void main(String[] args) {
         TreeMap<String, Object> config = new TreeMap<String, Object>();
 
         try {
-            // 替换为您的 SecretId
-            config.put("SecretId", "AKID****************************");
-            // 替换为您的 SecretKey
-            config.put("SecretKey", "*******************************");
+            //这里的 SecretId 和 SecretKey 代表了用于申请临时密钥的永久身份（主账号、子账号等），子账号需要具有操作存储桶的权限。
+            // 替换为您的云 api 密钥 SecretId
+            config.put("secretId", "SecretId");
+            // 替换为您的云 api 密钥 SecretKey
+            config.put("secretKey", "SecretKey");
 
-            // 临时密钥有效时长，单位是秒，默认1800秒，目前主账号最长2小时（即7200秒），子账号最长36小时（即129600秒）
+            // 设置域名: 
+            // 如果您使用了腾讯云 cvm，可以设置内部域名
+            //config.put("host", "sts.internal.tencentcloudapi.com");
+
+            // 临时密钥有效时长，单位是秒，默认 1800 秒，目前主账号最长 2 小时（即 7200 秒），子账号最长 36 小时（即 129600）秒
             config.put("durationSeconds", 1800);
 
             // 换成您的 bucket
@@ -70,7 +71,11 @@ public class Demo {
             // 换成 bucket 所在地区
             config.put("region", "ap-guangzhou");
 
-            // 这里改成允许的路径前缀，可以根据自己网站的用户登录态判断允许上传的具体路径，例子：a.jpg 或者 a/* 或者 * 。
+            // 这里改成允许的路径前缀，可以根据自己网站的用户登录态判断允许上传的具体路径
+            // 列举几种典型的前缀授权场景：
+            // 1、允许访问所有对象："*"
+            // 2、允许访问指定的对象："a/a1.txt", "b/b1.txt"
+            // 3、允许访问指定前缀的对象："a*", "a/*", "b/*"
             // 如果填写了“*”，将允许用户访问所有资源；除非业务需要，否则请按照最小权限原则授予用户相应的访问权限范围。
             config.put("allowPrefixes", new String[] {
                     "exampleobject",
@@ -78,7 +83,7 @@ public class Demo {
             });
 
             // 密钥的权限列表。必须在这里指定本次临时密钥所需要的权限。
-            // 简单上传、表单上传和分片上传需要以下的权限，其他权限列表请看 https://intl.cloud.tencent.com/document/product/436/30580
+            // 简单上传、表单上传和分块上传需要以下的权限，其他权限列表请看 https://intl.cloud.tencent.com/document/product/436/30580
             String[] allowActions = new String[] {
                      // 简单上传
                     "name/cos:PutObject",
@@ -94,8 +99,9 @@ public class Demo {
             config.put("allowActions", allowActions);
 
             Response response = CosStsClient.getCredential(config);
-            //成功返回临时密钥信息，如下打印密钥信息
-            System.out.println(Jackson.toJsonPrettyString(response));
+            System.out.println(response.credentials.tmpSecretId);
+            System.out.println(response.credentials.tmpSecretKey);
+            System.out.println(response.credentials.sessionToken);
         } catch (Exception e) {
             e.printStackTrace();
             throw new IllegalArgumentException("no valid secret !");
@@ -136,13 +142,13 @@ public class Demo {
         // 1 初始化用户身份信息(secretId, secretKey)
         COSCredentials cred = new BasicCOSCredentials(tmpSecretId, tmpSecretKey);
         // 2 设置 bucket 区域,详情请参阅 COS 地域 https://cloud.tencent.com/document/product/436/6224
-        ClientConfig clientConfig = new ClientConfig(new Region("ap-beijing"));
+        ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
         // 3 生成 cos 客户端
         COSClient cosclient = new COSClient(cred, clientConfig);
         // bucket 名需包含 appid
         String bucketName = "examplebucket-1250000000";
 
-        String key = "doc/picture.jpg";
+        String key = "exampleobject";
         // 上传 object, 建议 20M 以下的文件使用该接口
         File localFile = new File("src/test/resources/text.txt");
         PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
