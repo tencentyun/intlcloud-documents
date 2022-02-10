@@ -1,5 +1,3 @@
-The following video shows you how to install an SSL certificate on an Nginx server:
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/3386-59866?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 ## Overview
 This document describes how to install an SSL certificate on an Nginx server.
