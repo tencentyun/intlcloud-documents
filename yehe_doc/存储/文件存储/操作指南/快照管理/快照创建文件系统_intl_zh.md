@@ -57,7 +57,7 @@
      </tr>
    	 <tr>
        <td>云联网</td>
-       <td>仅 Turbo 系列需填写云联网，需选择一个现有云联网或新创建一个。详细用途可参考 <a href="https://cloud.tencent.com/product/ccn">云联网介绍</a>。 
+       <td>仅 Turbo 系列需填写云联网，需选择一个现有云联网或新创建一个。详细用途可参考 <a href="https://intl.cloud.tencent.com/products/ccn">云联网介绍</a>。 
      </tr>
    	<tr>
        <td>网段</td>
