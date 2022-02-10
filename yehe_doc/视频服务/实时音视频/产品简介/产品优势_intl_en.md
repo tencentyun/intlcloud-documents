@@ -1,8 +1,5 @@
 ### Cross-platform global interconnection
-**TRTC is a cross-platform solution compatible with more than 5,000 device models.** It provides client SDKs and TencentCloud APIs for mobile and desktop platforms including iOS, Android, Windows, macOS, and web. End users can also use its services via the Mini Program of WeChat, QQ, and WeCom.
-
-### Collaboration with WeChat Mini Program
-As the provider of WeChat’s built-in SDK, TRTC offers user experience in WeChat Mini Program comparable to that of native applications.
+**TRTC is a cross-platform solution compatible with more than 5,000 device models.** It provides client SDKs and TencentCloud APIs for mobile and desktop platforms including iOS, Android, Windows, macOS, and web. End users can also use its services via the QQ, and WeCom.
 
 ### Easy and quick integration
 You can run the TRTC demo and integrate basic TRTC features into your project with simple code. In as short as 1 minute, you can build from scratch a real-time audio/video communication product featuring low latency, low stutter rate, and high-quality. For detailed directions, please see [Quick Demo Start](https://intl.cloud.tencent.com/document/product/647/35086) and [SDK Quick Integration](https://intl.cloud.tencent.com/document/product/647/35092).
