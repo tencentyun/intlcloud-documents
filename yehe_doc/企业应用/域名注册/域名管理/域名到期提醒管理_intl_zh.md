@@ -62,12 +62,12 @@
 ## 操作指南
 ### 关闭域名到期提醒
 1. 登录腾讯云 [域名注册管理控制台](https://console.intl.cloud.tencent.com/domain/managen)，即可进入 “我的域名” 管理页面。
-2. 在 “我的域名” 管理页面中，选择您需要进行关闭到期提醒的域名，并单击**More > Disable Expiration Reminder**，即可完成设置。如下图所示：
+2. 在 “我的域名” 管理页面中，选择您需要进行关闭到期提醒的域名，并单击**更多 > 关闭到期提醒**，即可完成设置。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/b60e1d37e14fe176d45b595c11d6d8c5.png)
 
 ### 开启域名到期提醒
 1. 登录腾讯云 [域名注册管理控制台](https://console.intl.cloud.tencent.com/domain/manage)，即可进入 “我的域名” 管理页面。
-2. 在 “我的域名” 页面中，选择您需要进行开启到期提醒的域名，并单击**More > Enable Expiration Reminder**，即可完成设置。如下图所示：
+2. 在 “我的域名” 页面中，选择您需要进行开启到期提醒的域名，并单击**更多 > 开启到期提醒**，即可完成设置。如下图所示：
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/6a1b26a909cb931caf5728e714fe47fe.png)
 

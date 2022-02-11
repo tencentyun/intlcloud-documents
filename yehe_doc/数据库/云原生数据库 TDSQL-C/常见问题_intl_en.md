@@ -13,10 +13,10 @@ Secondly, TDSQL-C truly implements the concept of log as a database through tran
 When you create an instance, you need to set the admin password by yourself and remember it. If you forgot it, you can reset it through user management.
 
 ### How is TDSQL-C compatible?
-TDSQL-C is compatible with MySQL 5.7 and PostgreSQL 10 at the computing layer, so that existing applications and tools can be smoothly migrated without code modifications.
+TDSQL-C is compatible with MySQL 5.7 and 8.0 and PostgreSQL 10 at the computing layer, so that existing applications and tools can be smoothly migrated without code modifications.
 
 ### How do I update the version of TDSQL-C in time?
-You don't need to pay too much attention to the compatibility with minor version numbers of MySQL and PostgreSQL. If you encounter problems that are fixed on higher versions in the community, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to report them, and our R&D team will fix them in time in the next iteration.
+You don't need to pay too much attention to the compatibility with minor version numbers of MySQL and PostgreSQL. If you encounter problems that are fixed on higher versions in the community, you can [contact us](https://intl.cloud.tencent.com/contact-us) to report them, and our R&D team will fix them in time in the next iteration.
 
 ### What is the maximum volume of data supported by TDSQL-C?
 The maximum storage capacity is 128 TB, which helps you easily cope with dynamic changes and continuous growth of your business data volume. In addition, multiple data replicas are used internally to ensure the data reliability.
@@ -25,4 +25,4 @@ The maximum storage capacity is 128 TB, which helps you easily cope with dynamic
 TDSQL-C reduces TCO through pooling, features minimalist software optimizations, and supports common networks and hardware devices to release the hardware dividend. It has an elastic scaling feature and a built-in high availability architecture, where flexible billing modes and fast scaling capabilities greatly reduce the wastes of computing and storage resources. In addition, it is much cheaper than traditional commercial databases with the same high performance and reliability.
 
 ### How do I import data into TDSQL-C?
-TDSQL-C (MySQL Edition) is compatible with native MySQL at the computing layer, so you can use MySQL's native tools such as MySQLDumper. It also supports open-source data migration tools. For more information, please see [Migrating Data](https://intl.cloud.tencent.com/document/product/1098/40638).
+TDSQL-C for MySQL is compatible with native MySQL at the computing layer, so you can use MySQL's native tools such as MySQLDumper. It also supports open-source data migration tools. For more information, see [Migrating with Command Line Tool](https://intl.cloud.tencent.com/document/product/1098/40638).
