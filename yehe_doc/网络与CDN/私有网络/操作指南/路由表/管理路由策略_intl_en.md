@@ -1,72 +1,95 @@
-The routing policies in the route table can be operated in a real-time manner. Some of the available routing policy actions are adding, deleting, quering, exporting, or publishing and withdrawing to/from CCN. This document describes all the aforementioned operations of the routing policies.
+
+This document describes operations related with routing policies.
 
 ## Adding a Routing Policy
-1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
-2. In the list, click the route table ID to be modified to go to the details page.
+1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and access the **Route Table** page.
+2. Click the **ID/Name** of the route table to modify to go to its details page.
 3. Click **+New routing policies**.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/38e0ec6462b9305afc0d3f7f0897fcde.png" width="80%">
 4. In the pop-up window, <span id="routeParam" />configure the routing policy.
- >? If you have deployed a <a href="https://int/product/457/6759">TKE service</a> in the VPC, when you configure the routing policy of the route table for the VPC subnet, the destination cannot be within the CIDR block range of the VPC, nor can it contain the container IP range. For example, if a VPC CIDR block is 172.168.0.0/16 and the container network CIDR block is 192.168.0.0/16, when you configure the routing policy for the VPC subnet, the destination IP range cannot be in the range of 172.168.0.0/16, and cannot contain 192.168.0.0/16.
- >
-  <table><tbody>
-   <tr><th>Configuration Item</th><th>Description</th></tr>
-   <tr><td>Destination</td><td>The destination IP range to which you want to forward subnet outbound traffic. The requirements are as follows:
-    <ul><li>The destination IP range can only be in the format of the IP range. If you want the destination to be a single IP, set the mask to 32 (for example, 172.16.1.1/32).</li>
-	  <li>The destination cannot be an IP range in the VPC where the routing table is located, because the local routing has indicated that the private network is connected in this VPC by default.</li></ul>
-    	</td></tr>
-    <tr><td>Next hop type</td><td>The egress of the VPC data packets. The following types are supported:
-        <ul>
-           <li> NAT Gateway: the traffic designated for a destination IP range is forwarded to a NAT gateway.</li>
-           <li>Peering Connections: the traffic designated for a destination IP range is forwarded to a VPC on the other end of a peering connection.</li>
-           <li>Direct Connect Gateway: the traffic designated for a destination IP range is forwarded to a direct connect gateway.</li>
-          <li>High Availability Virtual IP: the traffic designated for a destination IP range is forwarded to a high availability virtual IP.</li>
-          <li>VPN Gateway: the traffic designated for a destination IP range is forwarded to a VPN gateway.</li>
-          <li>Public IP of CVM: the traffic designated for a destination IP range is forwarded to the public IP of a CVM instance in a VPC (including public IPs and elastic IPs).</li>
-          <li>CVM: the traffic designated for a destination IP range is forwarded to a CVM instance in a VPC.</li>
-          </ul>
-       </td></tr>
-   <tr><td>Next hop</td><td>Specify the next hop instance to redirect to, such as the gateway or CVM IP.</td></tr>
-    <tr><td>Notes</td><td>You can custom the description of the route for resource management.</td></tr>
-    <tr><td>Add a line</td><td>You can click <b>+Add a line</b> to configure multiple routing policies, or click the deletion icon in the <b>Operation</b> column to delete the unnecessary routing policies.</td></tr>
-     </tbody> </table>
-5. Click **Create** to complete the creation.
-
-## Publishing a Routing Policy to CCN/Withdrawing a Routing Policy from CCN
-For the VPC or VPN instances associated with CCN, the routes are published to CCN by default. For the new custom routing policies that are not published to CCN by default, you need to manually publish them. The routing policies that are manually published or published by default can be withdrawn from CCN.
-Currently, only the routing policies whose **Next hop type** is **High Availability Virtual IP**, **VPN Gateway**, or **CVM** in the route tables (including the default route tables and the custom route tables) can be manually published to CCN/withdrawn from CCN.
-
-### Prerequisites
-The VPCs where the high available virtual IP, VPN gateway, and CVM are located have been associated with CCN.
-
-### Directions
-1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
-2. In the list, click the route table ID to be modified to go to the details page.
-   ![](https://main.qcloudimg.com/raw/351e5dec96293642293015fcebdc3ba5.png)
-3. You can perform the following operations as needed:
-   + For the custom routing policy, you can click **Publish to CCN** to manually publish this routing policy to CCN.
-   + For the custom routing policy that have been published to CCN, you can click **Withdrawn from CCN** to reclaim the policy.
-   + Click **Edit** to modify the routing policy.
- >?
- >+ When a routing policy is disabled, it cannot be published to CCN.
- >+ A routing policy cannot be disabled once being published to CCN.
+>? If you have deployed a [TKE service](https://intl.cloud.tencent.com/document/product/457/6759) in the VPC, the destination you configure in the routing policy of the VPC subnet cannot overlap with the VPC CIDR block or the TKE IP range. For example, if the VPC CIDR block is `172.168.0.0/16` and the TKE CIDR block is `192.168.0.0/16`, the destination IP range cannot fall within `172.168.0.0/16`, or contain `192.168.0.0/16`.
+>
+><table><tbody>
+><tr><th>Configuration Item</th><th>Description</th></tr>
+><tr><td>Destination</td><td>Specifies destination IP range to which you want to forward subnet outbound traffic. Requirements for a destination are as follows:
+><ul><li>Enter an IP range. If you want to enter a single IP, set the mask to `32` (for example, `172.16.1.1/32`).</li>
+><li>The destination cannot be an IP range of the VPC where the route table resides, because the local route already allows private network interconnection in this VPC.</li></ul>
+>	</td></tr>
+><tr><td>Next hop type</td><td>Indicates the egress of data packets for the VPC. Supported types:
+>  <ul>
+>     <li> NAT Gateway: the traffic directed to a destination IP range is forwarded to a NAT Gateway.</li>
+>     <li>Peering Connections: the traffic directed to a destination IP range is forwarded to the VPC peer of a peering connection.</li>
+>     <li>Direct Connect Gateway: the traffic directed to a destination IP range is forwarded to a direct connect gateway.</li>
+>    <li>High Availability Virtual IP: the traffic directed to a destination IP range is forwarded to an HAVIP.</li>
+>    <li>VPN Gateway: the traffic directed to a destination IP range is forwarded to a VPN gateway.</li>
+>    <li>Public IP of CVM: the traffic directed to a destination IP range is forwarded to the public IP (including EIPs) of a CVM instance in the VPC.</li>
+>    <li>CVM: the traffic directed to a destination IP range is forwarded to a CVM instance in the VPC.</li>
+>    </ul>
+> </td></tr>
+><tr><td>Next hop</td><td>Specifies the next hop instance to which the traffic is redirected, such as the gateway or CVM IP.</td></tr>
+><tr><td>Notes</td><td>(Optional) You can enter the route description for resource management.</td></tr>
+><tr><td>Add a line</td><td>You can click <b>+Add a line</b> to configure multiple routing policies, or click the deletion icon in the <b>Operation</b> column to delete the unnecessary routing policies.</td></tr>
+></tbody> </table>
+>
+> <img src="https://qcloudimg.tencent-cloud.cn/raw/5d4e0dcde1c1a257298ea7fbdf15270a.png">
+5. Click **Create**.
 
 ## Editing a Routing Policy
-1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
-2. In the list, click the route table ID to go to the details page.
-3. Click **Edit** on the right of the routing policy to modify it.
+1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and access the **Route Table** page.
+2. In the list, click the **ID/Name** of the target route table to go to its details page.
+3. Click **Edit** in the **Operation** column of the routing policy to modify it.
 ![](https://main.qcloudimg.com/raw/6f817db7223a5f5f2ae146fc6a39d28b.png)
-4. Click **OK** to complete the modification, or click **Cancel** to cancel the modification.
+4. After the modification, click **OK** to save or **Cancel** to discard the modification.
+
+## Publishing/Withdrawing a Routing Policy to/from CCN
+Routes of a VPC associated with a CCN are published to the CCN by default. For the new custom routing policies that are not published, you need to manually publish them. You can also withdraw a routing policy from CCN.
+Currently, only the routing policies whose **Next hop type** is **High Availability Virtual IP** or **CVM** in the default or custom route tables can be manually published to or withdrawn from CCN.
+
+### Prerequisites
+The VPC where the HAVIP or CVM resides is associated with a CCN instance.
+
+### Directions
+1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and access the **Route Table** page.
+2. Click the **ID/Name** of the route table to modify to go to its details page.
+3. Perform the following operations as needed:
+   + Click **Publish to CCN** to manually publish a custom routing policy to CCN.
+   + Click **Withdraw from CCN** to withdraw a custom routing policy that has been published to CCN.
+>!
+>+ A disabled routing policy cannot be published to CCN.
+>+ A routing policy cannot be disabled once being published to CCN.
+
 
 ## Querying and Exporting a Routing Policy
-1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
-2. In the list, click a route table ID to go to the details page. You can find the routing policies in this route table.
-3. In the search box on the top right, you can query the routing policy by entering the destination address.
-![](https://main.qcloudimg.com/raw/0fb54a38484b8525e5cdd9fdc904a183.png)
-4. Click **Export** to export the routing policies in the list, and save it .csv format.
+1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and access the **Route Table** page.
+2. Click the **ID/Name** of the target route table to go to its details page. On this page, you can view the routing policies in this route table.
+3. In the top-right search box, query the routing policies by entering a destination address.
+![](https://qcloudimg.tencent-cloud.cn/raw/9be2e0939c90f89622a8e799e4b11ce6.png)
+4. Click **Export** to save the search result in the .csv format.
+
+## Enabling/Disabling a Routing Policy
+A custom routing policy can be enabled or disabled.
+### Directions
+1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=4), and access the **Route Table** page.
+2. Click the **ID/Name** of the target route table to enter its details page. Check the routing policy status:
+  + <img src="https://main.qcloudimg.com/raw/a142df25497e2ad5828a231dc17f5130.png" width="3%" />: enabled
+ + <img src="https://main.qcloudimg.com/raw/7c04cc17a33bd833f66627628aba31b7.png" width="3%" />: disabled
+3. Disable a routing policy: click the <img src="https://main.qcloudimg.com/raw/a142df25497e2ad5828a231dc17f5130.png" width="3%" /> icon next to a routing policy to disable it.
+>!Disabling a route may result in business interruption. Please double check before continuing.
+>
+   <img src="https://qcloudimg.tencent-cloud.cn/raw/278ad06cfcdad1de0eb0aabd9b08bab8.png" width="50%" />
+4. Enable a routing policy: click the <img src="https://main.qcloudimg.com/raw/7c04cc17a33bd833f66627628aba31b7.png" width="3%" /> icon next to a routing policy to enable it.
+>! Once enabled, the route with the longest mask will be used. This may affect your current business. Please double check before continuing.
+>
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/c0fca3b5ddb0c6ba7e61e07470cd604a.png" width="50%" />
+5. Enable or disable multiple routing policies: select the target routing policies and click **Enable** or **Disable** above the list.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/1ea2f28cc53ed463f26edf7fdfd93640.png)
 
 ## Deleting a Routing Policy
-You can delete the unnecessary routing policies. Only the custom routing policies can be deleted.
-1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
-2. In the list, click the route table ID to be modified to go to the details page.
-3. Click **Delete** on the right of the routing policy that you want to delete.
+You can delete the unused routing policies. Only the custom routing policies can be deleted.
+1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and access the **Route Table** page.
+2. Click the **ID/Name** of the route table to modify to go to its details page.
+3. Select the routing policy to be deleted, and click **Delete** under the **Operation** column.
 ![](https://main.qcloudimg.com/raw/9ab1d9bcca75ba9f4cfdd4abfbddd58e.png)
-4. Please make sure that you are aware of any possible impact of deleting the routing policy, and then click **OK**.
+4. Read the notes and click **OK**.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/57035cab86a2e31d78477792548a7640.png" width="70%" />
+
