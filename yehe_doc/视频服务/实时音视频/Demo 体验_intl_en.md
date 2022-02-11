@@ -93,12 +93,9 @@ The interactive live video streaming mode supports co-anchoring between anchors 
 <td><img width="260" height="561" src="https://main.qcloudimg.com/raw/3182620f791a594d555ecab0cd170e1f.jpeg"/></td>
 </tr>
 </table>
+                                                                                                            
 :::
 ::: Web
-
-:::
-</dx-tabs>
-
 ## Interactive Live Audio Streaming
 In the interactive live audio streaming mode, listeners can become speakers and interact with the room owner, and room owners can compete with each other. It supports smooth mic on/off without waiting, with speaker latency shorter than 300 ms. There is no limit on the cumulative number of speakers in a room, and up to 50 users can speak at the same time. In the low-latency mode, up to 100,000 users can play back at the same time, with latency as low as 1,000 ms. In the CDN live streaming mode, there is no limit on audience size. Common interactive live audio streaming scenarios include low-latency audio streaming, live audio interaction, live audio competition, audio chat room, audio dating, karaoke room, FM radio, etc.
 <table>
@@ -111,7 +108,8 @@ In the interactive live audio streaming mode, listeners can become speakers and 
 <td><img src="https://main.qcloudimg.com/raw/7b73bfdd915a0ba281c52b9ac0518b80.jpeg"/></td>
 </tr>
 </table>
-
+:::
+</dx-tabs>
 
 ## Video Conferencing
 The video conferencing mode offers smooth and HD conference experience. It supports 1080p video and 48 kHz audio, with latency shorter than 300 ms. The screen sharing and file sharing features help make conferences more efficient, and instant messaging enables text- and image-based discussion without interrupting a conference. Common video conferencing scenarios including omni-channel customer service, online conference, government/corporate live streaming, etc.
