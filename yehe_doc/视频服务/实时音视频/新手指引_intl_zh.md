@@ -168,4 +168,4 @@ SDK 下载完成后，您可通过以下方式快速将 TRTC SDK 集成到您的
 使用腾讯实时音视频产品和服务中有任何问题或建议，您可以通过以下渠道反馈：
 
 - 如果发现产品文档的问题，如链接、内容等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+- 如果遇到产品相关问题，您可 [提交工单](https://console.intl.cloud.tencent.com/workorder/category?level1_id=29&level2_id=801&source=14&data_title=Tencent%20Real%20Time%20Communication&step=1) 寻求帮助。

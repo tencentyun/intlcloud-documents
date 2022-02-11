@@ -1,5 +1,5 @@
 
-You can view and modify certain parameters and query parameter modification logs in [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
+You can view and modify certain parameters and query the parameter modification logs  in [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
 
 ## Notes
 - To ensure instance stability, only some parameters can be modified in the console. These parameters are displayed on the **Parameter Settings** page.
@@ -32,7 +32,7 @@ You can view and modify certain parameters and query parameter modification logs
 >
 
 ## Modifying Parameters by Importing Parameter Template
-### Method 1. Importing a parameter template on the "Parameter Settings" page
+### Option 1. Importing a parameter template on the "Parameter Settings" page
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and enter the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Custom Template**. (If you haven't configured a commonly used custom template yet, you can select **Custom Template** on the left sidebar in the TencentDB for MySQL console, click **Create Template** to configure a parameter template, and then import it from the custom template as described in step 2.)
 ![](https://main.qcloudimg.com/raw/bd7a2fd3dc89895f1a3bd779d0fe8bbc.png)
@@ -46,7 +46,7 @@ You can view and modify certain parameters and query parameter modification logs
 >- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
 >
 
-### Method 2. Modifying parameters by importing a parameter configuration file
+### Option 2. Modifying parameters by importing a parameter configuration file
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and enter the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Import Parameters**.
 ![](https://main.qcloudimg.com/raw/52d6f069bbce29c933254593d59c0236.png)
@@ -59,7 +59,7 @@ You can view and modify certain parameters and query parameter modification logs
 >- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
 
 
-### Method 3. Importing a parameter template on the "Parameter Template" page
+### Option 3. Importing a parameter template on the "Parameter Template" page
 For more information, see [Managing Parameter Template > Applying a Parameter Template to a Database](https://intl.cloud.tencent.com/document/product/236/31906).
 
 ## Restoring to Default Template
@@ -75,7 +75,7 @@ For more information, see [Managing Parameter Template > Applying a Parameter Te
 >
 
 ## Parameter Formula
-You can use a formula to set the instance parameters. To do so, set the parameters related to the instance specification as a formula, and when the instance specification is changed, the parameter values in the formula will be dynamically changed accordingly and still take effect after the specification change. In this way, the instance is always in the optimal state required by smooth business operations.
+You can use a formula to set the instance parameters. To do so, set the parameters related to the instance specification as a formula, and when the instance specification is changed, the parameter values in the formula will be dynamically changed accordingly and still take effect after the specification change. In this way, the instance is always in the optimal state for running business smoothly.
 
 Taking the `{DBinitMemory\*786432}` value of the parameter `innodb_buffer_pool_size` as an example, when the `DBinitMemory` in the instance specification is changed, the parameter configuration here doesn't need to be modified, and the value of `innodb_buffer_pool_size` will be changed automatically.
 ![](https://qcloudimg.tencent-cloud.cn/raw/696a0d3be52c058124f7c678a18e6b27.png)
@@ -84,7 +84,7 @@ Expression syntax is supported as follows:
 
 | Supported Type | Description | Sample |
 | -------- | ------------------------------------------------------------ | --------------------- |
-| Variable   | <li>DBinitMemory: memory size of instance specification, which is an integer. For example, if the memory size of the instance specification is 4,000 MB, the value of `DBinitMemory` will be 4000.<li>DBInitCpu: number of CPU cores of instance specification, which is an integer. The value of the `innodb_buffer_pool_size` parameter in TencentDB for MySQL must be between 50% and 90% of the memory size. If the configured value is above 90% or below 50%, it will be automatically configured to 90% or 50% respectively. | {DBinitMemory*786432} |
+| Variable   | <li>DBinitMemory: memory size of instance specification, which is an integer. For example, if the memory size of the instance specification is 4,000 MB, the value of `DBinitMemory` will be 4000.<li>DBInitCpu: number of CPU cores of instance specification, which is an integer. The value of the `innodb_buffer_pool_size` parameter in TencentDB for MySQL must be between 50% and 90% of the memory size. If the configured value is above 90% or below 50%, it will be automatically converted to 90% or 50% respectively. | {DBinitMemory*786432} |
 | Operator | Formula syntax: it should be enclosed in braces (`{}`).  <li>Division operator (/): it divides the dividend by the divisor and returns an integer quotient. If the calculation result is a decimal number, only the integer part will be retained. Decimal numbers are not supported; for example, `{MIN(DBInitMemory/4+500,1000000)}` instead of `{MIN(DBInitMemory\*0.25+500,1000000)}` is supported.<li>Multiplication operator (*): it multiplies two numbers and returns an integer product. If the calculation result is a decimal number, only the integer part will be retained. Decimal number calculation is not supported. |  -                     |
 | Function   | <li>MAX(): it returns the greatest value in an integer or parameter formula list. <li>MIN(): it returns the smallest value in an integer or parameter formula list.</li> | {MAX(DBInitCpu/2,4)}  |
 
@@ -99,7 +99,7 @@ Expression syntax is supported as follows:
 2. Select **Database Management** > **Parameter Settings** and click **Save as Template** to save the existing parameter configuration as a parameter template.
 ![](https://main.qcloudimg.com/raw/fca4ec16b316948af812db9988d0c92c.png)
 
-## Modifying Parameters During Custom Time Window
+## Customize Time Window to Apply Parameter Modifications
 Before you confirm the parameter modification, the "Modify Parameters" dialog box will pop up for you to select a custom time window for the modification to take effect.
 >?If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
 >

@@ -149,4 +149,4 @@ Tencent Real-Time Communicationとその他のTencent Cloud製品を組み合わ
 Tencent Real-Time Communicationの製品やサービスの使用中にご質問やご提案がある場合は、次のチャネルを通じてフィードバックすることができます。
 
 - 製品のドキュメントの間違い等を発見した場合（リンク先、内容、など）は、ドキュメントのページ右側の【ドキュメントに関するフィードバック】をクリックするか、または問題が存在するコンテンツを選択してフィードバックしてください。
-- 製品関連の質問がある場合には、[チケットを提出](https://console.cloud.tencent.com/workorder/category) してサポートを求めることができます。
+- 製品関連の質問がある場合には、[チケットを提出](https://console.intl.cloud.tencent.com/workorder/category?level1_id=29&level2_id=801&source=14&data_title=Tencent%20Real%20Time%20Communication&step=1) してサポートを求めることができます。

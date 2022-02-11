@@ -168,4 +168,4 @@ TRTC는 기타 Tencent Cloud 제품과 결합해 다양한 라이브 방송 시�
 Tencent Cloud TRTC 제품 및 서비스 사용에 대한 문의사항 또는 의견이 있는 경우, 다음 방법을 통해 피드백을 보낼 수 있습니다.
 
 - 링크, 콘텐츠 등 제품 문서에 문제가 발생한 경우, 문서 페이지 오른쪽 [문서 피드백]을 클릭하거나 문제가 있는 내용을 선택하여 피드백을 보낼 수 있습니다.
-- 제품 관련 문제가 발생한 경우, [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 도움을 요청할 수 있습니다.
+- 제품 관련 문제가 발생한 경우, [티켓 제출](https://console.intl.cloud.tencent.com/workorder/category?level1_id=29&level2_id=801&source=14&data_title=Tencent%20Real%20Time%20Communication&step=1)을 통해 도움을 요청할 수 있습니다.
