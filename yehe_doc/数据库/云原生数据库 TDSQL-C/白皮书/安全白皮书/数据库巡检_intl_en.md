@@ -1,0 +1,2 @@
+
+[Database inspection](https://intl.cloud.tencent.com/document/product/1035/37178) is used to automatically and regularly perform health checks on all instances. You can also set up custom inspections based on your own needs to help troubleshoot potential instance issues and provide solutions. A database inspection report contains the following sections: overview, basic information, health, instance status, exception diagnosis, slow SQL analysis, high-risk accounts, big table analysis, and performance curves.

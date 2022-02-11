@@ -5,9 +5,9 @@ This document describes how to delete instances that are no longer used from a c
 
 ## Directions
 1. Log in to the [TDSQL-C console](https://console.cloud.tencent.com/cynosdb) and click a cluster ID in the cluster list to enter the cluster management page.
-2. On the **Instance List** tab, locate the desired instance and select **More** > **Delete** in the **Operation** column.
-![](https://qcloudimg.tencent-cloud.cn/raw/72d05142cc8a417d5508662ab79c44ac.png)
-3. In the pop-up dialog box, confirm that the information about the instance to be deleted is correct and click **OK**.
+2. On the **Instance List** tab, locate the target instance and select **More** > **Delete** in the **Operation** column.
+![](https://qcloudimg.tencent-cloud.cn/raw/9f6ec6c4d3fe667fb07aaec7f2301dac.png)
+3. In the pop-up window, confirm that the information about the instance to be deleted is correct and click **OK**.
 >! 
 >- You can delete the read-write instance only after all read-only instances have been deleted.
 >- If you delete a cluster, all instances in the cluster will be deleted.

@@ -6,7 +6,7 @@
 ## 操作步骤
 1. 登录 [TDSQL-C 控制台](https://console.cloud.tencent.com/cynosdb)，在集群列表中，找到需要的集群，单击集群 ID，进入集群管理页面。
 2. 在集群管理页面，选择**实例列表**页，找到想要删除的实例，选择**更多** > **删除**。
-![](https://qcloudimg.tencent-cloud.cn/raw/72d05142cc8a417d5508662ab79c44ac.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9f6ec6c4d3fe667fb07aaec7f2301dac.png)
 3. 在弹出的对话框，确认待删除实例的信息，确认无误后，单击**确定**。
 >! 
 >- 必须全部删除只读实例之后，才可以删除读写实例。
