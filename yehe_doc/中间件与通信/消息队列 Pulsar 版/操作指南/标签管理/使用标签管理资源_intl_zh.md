@@ -23,7 +23,7 @@
 | ------------------- | -------- | -------- | ------ |
 | pulsar-rgxj35jgo3d1 | 电商     | 营销活动 | 张三   |
 | pulsar-rgxj35jgo3d2 | 电商     | 营销活动 | 王五   |
-| pulsar-rgxj35jgo3d3 | 游戏     | 游戏 A   | 李四   |
+| pulsar-rgxj35jgo3d3 | 游戏     | 游戏 A   | 黎四   |
 | pulsar-rgxj35jgo3d4 | 游戏     | 游戏 B   | 王五   |
 | pulsar-rgxj35jgo3d5 | 文娱     | 后期制作 | 王五   |
 | pulsar-rgxj35jgo3d6 | 文娱     | 后期制作 | 张三   |
