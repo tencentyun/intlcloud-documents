@@ -3,7 +3,7 @@ Database design is important in the software development lifecycle. This documen
 ## Guidelines for Table Structure Definition
 - A field or table name should not contain any special characters, and the recommended length is no more than 32 bytes.
 - A field or table name should be meaningful and avoid misleading abbreviations if possible.
-- You should choose the right data types and not to lose the needed precision of numbers.
+- You should choose the right data types and not lose the needed precision of numbers.
 - Primary keys and shardkeys should be highly discrete for easier load balancing and scaling.
 - The number of indexes you create depends on the queries you need. Indexes should not have the same definition with primary keys.
 - We recommend the INT type for IP addresses of your business.
