@@ -1,5 +1,7 @@
 SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/40463) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
 >!
+>- API version required for connecting to Tencent Cloud International
+>SMS API v2021-01-11 is required. For details, see the sample code.
 >- SMS sending APIs
 >One message can be sent to up to 200 numbers at a time.
 >- Signature and body template APIs
@@ -9,6 +11,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 
 ## Prerequisites
 
+- You have learned about the concept of [region](https://intl.cloud.tencent.com/document/product/382/13299#.E5.9C.B0.E5.9F.9F) and selected a region as needed.
 - You have activated SMS. For detailed directions, please see [Getting Started with Mainland China SMS](https://intl.cloud.tencent.com/document/product/382/35449).
 - If you need to send Mainland China SMS messages, you need to purchase a Mainland China SMS package first.
 - You have prepared the dependent environments: .NET Framework 4.5+ and .NET Core 2.1.
@@ -99,8 +102,8 @@ namespace TencentCloudExamples
 
                 clientProfile.HttpProfile = httpProfile;
                 /* Instantiate the client object of the requested product (with SMS as an example)
-                 * The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-                SmsClient client = new SmsClient(cred, "ap-guangzhou", clientProfile);
+                 * The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+                SmsClient client = new SmsClient(cred, "ap-singapore", clientProfile);
 
                 /* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
                  * You can directly check the SDK source code to determine which attributes of `SendSmsRequest` can be set
@@ -206,8 +209,8 @@ namespace TencentCloudExamples
               // httpProfile.WebProxy = Environment.GetEnvironmentVariable("HTTPS_PROXY");
               clientProfile.HttpProfile = httpProfile;
               /* Instantiate an SMS client object
-               * The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-              SmsClient client = new SmsClient(cred, "ap-guangzhou", clientProfile);
+               * The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+              SmsClient client = new SmsClient(cred, "ap-singapore", clientProfile);
               /* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
                * You can directly check the SDK source code to determine which attributes of `SendSmsRequest` can be set
                * An attribute may be of a basic type or import another data structure
@@ -295,8 +298,8 @@ namespace TencentCloudExamples
                // httpProfile.WebProxy = Environment.GetEnvironmentVariable("HTTPS_PROXY");
                clientProfile.HttpProfile = httpProfile;
                /* Instantiate an SMS client object
-                * The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-               SmsClient client = new SmsClient(cred, "ap-guangzhou", clientProfile);
+                * The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+               SmsClient client = new SmsClient(cred, "ap-singapore", clientProfile);
                /* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
                 * You can directly check the SDK source code to determine which attributes of `SendSmsRequest` can be set
                 * An attribute may be of a basic type or import another data structure
@@ -392,8 +395,8 @@ namespace TencentCloudExamples
               // httpProfile.WebProxy = Environment.GetEnvironmentVariable("HTTPS_PROXY");
               clientProfile.HttpProfile = httpProfile;
               /* Instantiate an SMS client object
-               * The second parameter is the region information. You can directly enter the string `ap-guangzhou` or import the preset constant */
-              SmsClient client = new SmsClient(cred, "ap-guangzhou", clientProfile);
+               * The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+              SmsClient client = new SmsClient(cred, "ap-singapore", clientProfile);
               /* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
                * You can directly check the SDK source code to determine which attributes of `SendSmsRequest` can be set
                * An attribute may be of a basic type or import another data structure
