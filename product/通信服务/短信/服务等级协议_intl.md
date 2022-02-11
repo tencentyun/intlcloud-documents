@@ -42,10 +42,10 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 (2) If the Service Availability in a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month** (excluding the portion deducted by a coupon or promotional voucher, due to discounted service fee or otherwise deducted).
 
- | Service Availability   |Number of Messages Compensated|
- |-|-|
- | ≥ 90% and \< 95%   |    Number of messages corresponding to 10% of the Monthly Service Fee|
- | \< 90%              |   Number of messages corresponding to 30% of the Monthly Service Fee|
+| Service Availability(Av)   |Number of Messages Compensated|
+|-|-|
+| 95% \> Av ≥ 90%|Number of messages corresponding to 10% of the Monthly Service Fee|
+| 90% \> Av|Number of messages corresponding to 30% of the Monthly Service Fee|
 
 **3.2  Time Limit for Compensation Application**
 
