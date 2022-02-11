@@ -1,6 +1,6 @@
 TencentDB for TcaplusDB supports Protocol Buffers data types.
 
-## Mapping between proto3 and Data Types in Other Programing Languages
+## Mapping between proto3 and Data Types in Programing Languages
 
 | .proto | C++ | Java | Python | Go | Ruby | C\# | PHP| Dart | Notes |    
 | ------------ | ---------- | ---------- | ----------- | -------- | ---------------- | ---------- | -------------- | --------- | ----------- |
@@ -21,7 +21,7 @@ TencentDB for TcaplusDB supports Protocol Buffers data types.
 | bytes        | string     | ByteString | str         | byte | string<br>(ASCII-8BIT)        | bytestring | string      |  -         | May contain any arbitrary sequence of bytes no longer than 2^32.                          |
 
 
-## Mapping between proto2 and Data Types in Other Programing Languages
+## Mapping between proto2 and Data Types in Programing Languages
 
 | .proto | C++ | Java  | Python               | Go   | Notes                       |
 | ------------ | ---------- | ---------- | ---------------- | --------- | ---------------------------------- |
