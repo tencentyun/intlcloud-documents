@@ -15,8 +15,8 @@ Web端末でTencent Real-Time Communicationを実現するには、ブラウザ�
 
 
 > ?TBSカーネルに基づくWebViewは、バージョンが ≥ 43600を満足する必要があります。
-> ブラウザで [WebRTC 能力テスト](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 画面を開き、 WebRTCを完全にサポートするか検査することができます。例えば、WeChat公式アカウントなどのブラウザ環境。
-> Huaweiシステムの Chromeブラウザおよび Chrome WebViewをカーネルとするブラウザは、 H264コーデックをサポートしていません。
+>- ブラウザで [WebRTC 能力テスト](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 画面を開き、 WebRTCを完全にサポートするか検査することができます。例えば、WeChat公式アカウントなどのブラウザ環境。
+>- Huaweiシステムの Chromeブラウザおよび Chrome WebViewをカーネルとするブラウザは、 H264コーデックをサポートしていません。
 
 
 ## 環境要件
