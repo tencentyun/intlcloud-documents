@@ -1,6 +1,6 @@
 This document describes the impact of disconnection during instance switch and how to configure automatic reconnection.
 ## Background
-When you are [adjusting database instance specification](https://intl.cloud.tencent.com/document/product/236/19707), [upgrading database engine](https://intl.cloud.tencent.com/document/product/236/8126), the master instance is hanging due to overload, the hardware fails, etc., TencentDB for MySQL instance may need to switch, causing disconnection for few seconds.
+In case of [adjusting database instance specification](https://intl.cloud.tencent.com/document/product/236/19707), [upgrading database engine](https://intl.cloud.tencent.com/document/product/236/8126), the master instance is overloaded and hanging, hardware fails, etc., TencentDB for MySQL instance may need to switch, causing disconnection for few seconds.
 
 If automatic reconnection is not configured, the application will disconnect after the master/slave switch and normal business access will be affected.
 
