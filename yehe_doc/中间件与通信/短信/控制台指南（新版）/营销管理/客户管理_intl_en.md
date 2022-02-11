@@ -3,7 +3,7 @@ Log in to the [SMS Console](https://console.cloud.tencent.com/sms) and select **
 
 ## Customer Pool
 You can **import** or **enter** numbers on this page for management.
-### BImporting
+### Batch Importing
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/sms).
 2. Select **Marketing Management** > **Customer Management** on the left sidebar and click **Import**.
 3. Configure the following parameters as needed:
@@ -11,6 +11,7 @@ You can **import** or **enter** numbers on this page for management.
 	-  **File**: click **Download Templates**, enter the customer mobile numbers in the downloaded form, and click **Click here** or drag and drop the form file to upload it. The maximum form size supported is 30 MB.
 	-  **Number Group**: select **Create a group** or **Select an existing group**. If you select **Create a group**, please enter the group name.
 4. Click **OK**.
+![](https://main.qcloudimg.com/raw/ca54f0d9d8df5a7bd0a8f5392caa6f74.png)
 
 
 ### Entering
