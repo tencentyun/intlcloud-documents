@@ -1,7 +1,8 @@
 SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/40463) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
 
 >!
->
+>- API version required for connecting to Tencent Cloud International
+>  SMS API v2021-01-11 is required. For details, see the sample code.
 >- SMS sending APIs
 >  One message can be sent to up to 200 numbers at a time.
 >- Signature and body template APIs
@@ -10,7 +11,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 
 
 ## Prerequisites
-
+- You have learned about the concept of [region](https://intl.cloud.tencent.com/document/product/382/13299#.E5.9C.B0.E5.9F.9F) and selected a region as needed.
 - You have activated SMS. For detailed directions, please see [Getting Started with Mainland China SMS](https://intl.cloud.tencent.com/document/product/382/35449).
 - If you need to send Mainland China SMS messages, you need to purchase a Mainland China SMS package first.
 - You have prepared the dependent environment: JDK 7 or above.
