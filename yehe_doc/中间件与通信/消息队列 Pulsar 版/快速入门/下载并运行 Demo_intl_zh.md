@@ -39,7 +39,7 @@
 
 // 一个Pulsar client对应一个客户端链接
 // 原则上一个进程一个client，尽量避免重复创建，消耗资源
-// 关于客户端和生产消费者的最佳实践，可以参考官方文档 https://cloud.tencent.com/document/product/1179/58090
+// 关于客户端和生产消费者的最佳实践，可以参考官方文档 https://intl.cloud.tencent.com/document/product/1110/42926
 
 PulsarClient client = PulsarClient.builder()
         //替换成集群接入地址，位于【集群管理】页面接入地址
