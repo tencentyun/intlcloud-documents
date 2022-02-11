@@ -39,7 +39,7 @@ This document describes how to download the demo, perform a simple test, and run
 
 // One Pulsar client corresponds to one client connection
 // In principle, one process corresponds to one client. Try to avoid repeated creation, as this may consume resources
-// For the best practice of clients and producers/consumers, see [Client Connection and Producer/Consumer](https://cloud.tencent.com/document/product/1179/58090)
+// For the best practice of clients and producers/consumers, see [Client Connection and Producer/Consumer](https://intl.cloud.tencent.com/document/product/1110/42926)
 
 PulsarClient client = PulsarClient.builder()
         // Replace it with the cluster access address displayed on the **Cluster Management** page
