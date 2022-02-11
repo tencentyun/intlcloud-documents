@@ -140,7 +140,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 데스크톱 Chrome
 
 > ! 
 >- 브라우저에서 [WebRTC 기능 테스트](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 페이지를 열어 WebRTC가 완벽하게 지원되는지 테스트할 수 있습니다(예: 공식 계정 등 브라우저 환경).
-`>! H.264 저작권 제한으로 인해 화웨이 시스템의 Chrome 브라우저 및 커널이 Chrome WebView인 브라우저에서는 TRTC 데스크톱 브라우저 SDK가 정상적으로 실행되지 않습니다.
+>- H.264 저작권 제한으로 인해 화웨이 시스템의 Chrome 브라우저 및 커널이 Chrome WebView인 브라우저에서는 TRTC 데스크톱 브라우저 SDK가 정상적으로 실행되지 않습니다.
 
 
 ## 방화벽 제한
