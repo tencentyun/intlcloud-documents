@@ -1,15 +1,15 @@
 ## 소개
 
-본 문서는 객체의 삭제 작업에 대한 API 개요 및 SDK 예시 코드를 제공합니다.
+본 문서는 객체 삭제 관련 API 개요 및 SDK 예시 코드를 제공합니다.
 
 | API                                                          | 작업명         | 작업 설명                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 단일 객체 삭제   | 버킷에서 지정 객체 삭제 |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 객체 삭제   | 버킷에서 객체 삭제 |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289)	 | 다수의 객체 삭제	| 버킷에서 객체 일괄 삭제  |
 
-## SDK API 참조
+## SDK API 참고
 
-SDK 모든 인터페이스의 구체적인 매개변수와 방법 설명은 [SDK API](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/)를 참조하십시오.
+SDK 모든 인터페이스의 구체적인 매개변수와 방법 설명은 [SDK API](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/)를 참고하십시오.
 
 ## 단일 객체 삭제
 
@@ -21,8 +21,8 @@ SDK 모든 인터페이스의 구체적인 매개변수와 방법 설명은 [SDK
 
 [//]: # (.cssg-snippet-delete-object)
 ```java
-String bucket = "examplebucket-1250000000"; //버킷 이름. 포맷: BucketName-APPID
-String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
+String bucket = "examplebucket-1250000000"; //버킷 이름, 형식: BucketName-APPID
+String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키.
 
 DeleteObjectRequest deleteObjectRequest = new DeleteObjectRequest(bucket,
         cosPath);
@@ -46,7 +46,7 @@ cosXmlService.deleteObjectAsync(deleteObjectRequest,
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/DeleteObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/DeleteObject.java)를 참고하십시오.
 
 ## 다수의 객체 삭제
 
@@ -58,7 +58,7 @@ cosXmlService.deleteObjectAsync(deleteObjectRequest,
 
 [//]: # (.cssg-snippet-delete-multi-object)
 ```java
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 List<String> objectList = new ArrayList<String>();
 objectList.add("exampleobject1"); //버킷 내 객체 위치 식별자. 즉, 객체 키
 objectList.add("exampleobject2"); //버킷 내 객체 위치 식별자. 즉, 객체 키
@@ -88,6 +88,8 @@ cosXmlService.deleteMultiObjectAsync(deleteMultiObjectRequest,
 });
 ```
 
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/DeleteObject.java)를 참고하십시오.
+
 ## 디렉터리 삭제
 
 #### 기능 설명
@@ -98,16 +100,17 @@ COS의 폴더는 객체 이름이 '/'로 구분되고 파일 시스템과 같은
 
 #### 예시 코드
 
-```
-// parent/directory/ 디렉터리 삭제
-String directory = "parent/directory/";
+[//]: # (.cssg-snippet-delete-prefix)
+```java
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
+String prefix = "folder1/"; //접두사 지정
 
 GetBucketRequest getBucketRequest = new GetBucketRequest(bucket);
-getBucketRequest.setPrefix(directory);
+getBucketRequest.setPrefix(prefix);
 
-// prefix는 삭제할 폴더 의미
-getBucketRequest.setPrefix(directory);
-// 순회할 최대 객체 수를 설정합니다. 한 번에 지원되는 listobject는 최대 1000개입니다.
+// prefix는 삭제할 폴더를 의미
+getBucketRequest.setPrefix(prefix);
+// 순회할 객체의 최대 수량 설정. listobject 1회당 최대 1000개까지 지원
 getBucketRequest.setMaxKeys(1000);
 GetBucketResult getBucketResult = null;
 
@@ -131,6 +134,5 @@ do {
 } while (getBucketResult.listBucket.isTruncated);
 ```
 
-
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/DeleteObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/DeleteObject.java)를 참고하십시오.
 
