@@ -6,8 +6,6 @@ The TRTC SDK for web is based on WebRTC, which was originally released by Google
 - If your application scenario is mainly in the education sector, consider using [TRTC SDK for Electron](https://intl.cloud.tencent.com/document/product/647/35097), which supports big and small (dual-channel) images, with more flexible screen sharing schemes and better recovery capabilities for poor network connections.
 
 
-For details about the browsers supported by the TRTC SDK for web, please see [Supported Platforms](https://intl.cloud.tencent.com/document/product/647/41664).
-
 > ! 
 >- You can run the [TRTC Web SDK Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in a browser, for example, WebView, to test whether the environment fully supports WebRTC.
 >- Due to patent issues, H.264 encoding, which is required for stream publishing, is unavailable for Chrome versions earlier than v88 on Huawei devices. To run the TRTC SDK for web on Chrome or Chrome WebView-based browsers on Huawei devices, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable VP8 encoding/decoding.
