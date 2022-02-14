@@ -1,8 +1,6 @@
 ## Supported Platforms
 
-Proposed by Google, the WebRTC technology is well supported by Chrome (desktop), Edge (desktop), Firefox (desktop), and Safari (desktop and mobile), but poorly or not supported by other platforms such as browsers on Android.
-
-
+The TRTC SDK for web is based on WebRTC, which was originally released by Google and is well supported by many modern browsers such as Chrome, Edge, Firefox, Safari, and Opera. The table below lists the browsers supported by TRTC:
 
 
 <table>
@@ -268,9 +266,10 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 
 >! 
 >- You can run the [TRTC Web SDK Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in a browser, for example, WebView, to test whether the environment fully supports WebRTC.
->- Due to H.264 copyright restrictions, if you want to run the TRTC SDK for web on Chrome or Chrome WebView-based browsers on Huawei devices, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable VP8 encoding/decoding.
->- Firefox for macOS is weak in terms of screen sharing and no solution has been found yet. We recommend that you use Chrome or Safari instead.[](id:attention3)
->- If you want to support dual-channel encoding for publishing from web, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>- Due to patent issues, H.264 encoding, which is required for stream publishing, is unavailable for Chrome versions earlier than v88 on Huawei devices. To run the TRTC SDK for web on Chrome or Chrome WebView-based browsers on Huawei devices, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable VP8 encoding/decoding.
+>- Firefox for macOS performs poorly in terms of screen sharing, and no solution has been found yet. We recommend you use Chrome or Safari instead.[](id:attention3)
+>- If you want the TRTC SDK for web to support dual-channel encoding for publishing, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+
 
 ## URL Protocol Support
 | Scenario     | Protocol             | Receive (Playback) | Send (Publish) | Share Screen | Remarks |
@@ -297,6 +296,16 @@ The tutorials below offer detailed instructions on how to use different APIs.
 | Custom capturing and rendering | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-20-advanced-customized-capture-rendering.html) |
 | Limit on the number of upstream users in a room | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-04-info-uplink-limits.html) |
 | Adding background music and audio effects | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-22-advanced-audio-mixer.html)                  |
+| Environment and device check before calls| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-23-advanced-support-detection.html) |
+| Network quality check before calls| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-24-advanced-network-quality.html) |
+| Device change check| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-25-advanced-device-change.html)|
+| Publishing to CDN| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-26-advanced-publish-cdn-stream.html) |
+| Enabling dual-channel mode| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-27-advanced-small-stream.html) |
+| Enabling beauty filters| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-28-advanced-beauty.html) |
+| Enabling watermarking| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-29-advance-water-mark.html) |
+| Enabling cross-room communication| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-30-advanced-cross-room-link.html) |
+
+>? Learn more about the features of the TRTC SDK for web [here](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-10-basic-get-started-with-demo.html).
 
 
 ## TRTC
@@ -359,7 +368,7 @@ A local audio/video stream is created through [createStream](https://web.sdk.qcl
 | [setAudioProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioProfile) | Sets audio parameters. This API works only if it is called before [initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize). |
 | [setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoProfile) | Sets video parameters. This API works only if it is called before [initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize). |
 | [setScreenProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setScreenProfile) | Sets screen sharing parameters. This API works only if it is called before [initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize). |
-| [setVideoContentHint](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoContentHint) | Sets video content hint. This is mainly used to improve video encoding quality in different scenarios. This API works only if it is called before [initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize). |
+| [setVideoContentHint](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoContentHint) | Sets video content hint, mainly in order to improve the video encoding quality in different scenarios. This method must be called before [initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize) is called. |
 | [switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice)               | Switches media input devices.                                                                                                                                                                       |
 | [addTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#addTrack)                       | Adds an audio or video track to the local stream.                                                                                                                                                                     |
 | [removeTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#removeTrack)                 | Removes the video track of the local stream.                                                                                                                                                                           |
