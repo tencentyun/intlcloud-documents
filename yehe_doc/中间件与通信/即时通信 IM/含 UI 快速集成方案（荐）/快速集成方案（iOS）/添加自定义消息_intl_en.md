@@ -42,6 +42,7 @@ You can receive a custom message via the `onRecvNewMessage` function in [TUIMess
 
 ### Step 1. Create custom CellData
 1. Create the [TUILinkCellData.h](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/Cell/CellData/Custom/TUILinkCellData.h) and [TUILinkCellData.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/Cell/CellData/Custom/TUILinkCellData.m) files in `TUIChat -> Cell -> CellData -> Custom`. Inherit data from `TUIMessageCellData` to `CellData` to store the text to display and the link to redirect.
+
 ```java
 @interface TUILinkCellData : TUIMessageCellData
 @property NSString *text;
@@ -49,6 +50,7 @@ You can receive a custom message via the `onRecvNewMessage` function in [TUIMess
 @end
 ```
 2. Rewrite the `getCellData:` method of the parent class to convert `V2TIMMessage` to the drawing data `TUILinkCellData` of the message list `Cell`.
+
 ```java
 @implementation TUILinkCellData
 + (TUIMessageCellData *)getCellData:(V2TIMMessage *)message{
@@ -65,6 +67,7 @@ You can receive a custom message via the `onRecvNewMessage` function in [TUIMess
 ```
 3. Rewrite the `getDisplayString:` method of the parent class to convert `V2TIMMessage` to the `lastMsg` display text information of the conversation list.
 ![](https://qcloudimg.tencent-cloud.cn/raw/1555df533bc3a105b4a7f5e7676e1c83.png)
+
 ```java
 @implementation TUILinkCellData
 + (NSString *)getDisplayString:(V2TIMMessage *)message {
@@ -74,6 +77,7 @@ You can receive a custom message via the `onRecvNewMessage` function in [TUIMess
 @end
 ```
 4. Rewrite the `contentSize:` method of the parent class to calculate the size of the drawing area occupied by the `cellData` content.
+
 ```java
 - (CGSize)contentSize
 {
@@ -88,6 +92,7 @@ You can receive a custom message via the `onRecvNewMessage` function in [TUIMess
 
 ### Step 2. Create custom Cell
 1. Create the [TUILinkCell.h](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/Cell/CellUI/Custom/TUILinkCell.h) and [TUILinkCell.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/Cell/CellUI/Custom/TUILinkCell.m) files in `TUIChat -> Cell -> CellUI -> Custom`. Inherit data from `TUIMessageCell` to `Cell` to draw `TUILinkCellData` data.
+
 ```java
 @interface TUILinkCell : TUIMessageCell
 @property UILabel *myTextLabel;  // Display text
@@ -96,6 +101,7 @@ You can receive a custom message via the `onRecvNewMessage` function in [TUIMess
 @end
 ```
 2. Rewrite the `initWithStyle:` method of the parent class to create the `myTextLabel` and `myLinkLabel` text display objects and add them to `container`.
+
 ```java
 @implementation TUILinkCell
 // Initialize the control
@@ -114,6 +120,7 @@ You can receive a custom message via the `onRecvNewMessage` function in [TUIMess
 @end
 ```
 3. Rewrite the `fillWithData:` method of the parent class to custom `TUILinkCellData` data display in `TUILinkCell`.
+
 ```java
 @implementation TUILinkCell
 // Draw the cell based on `cellData`
@@ -125,6 +132,7 @@ You can receive a custom message via the `onRecvNewMessage` function in [TUIMess
 @end
 ```
 4. Rewrite the `layoutSubviews` method of the parent class to custom the control coordinates.
+
 ```java
 // Set the control coordinates
 - (void)layoutSubviews
@@ -138,6 +146,7 @@ You can receive a custom message via the `onRecvNewMessage` function in [TUIMess
 
 ### Step 3. Register the custom Cell and CellData
 After `cell` and `cellData` are created, you need to register the `cell` and `cellData` information in the `load` function in [TUIMessageDataProvider.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/DataProvider/TUIMessageDataProvider.m). After the registration is completed, when a message is received, the message list automatically finds the corresponding `cellData` to process message data based on `businessID`. When refreshing the UI, the message list will also automatically create the corresponding `Cell` to draw `cellData` data based on `businessID`.
+
 ```java
 @implementation TUIMessageDataProvider
 + (void)load {
