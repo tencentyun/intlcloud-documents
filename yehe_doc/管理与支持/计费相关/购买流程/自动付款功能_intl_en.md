@@ -17,7 +17,7 @@ By default, auto-payment is disabled for customers with sales reps. You can go t
 After you enable this feature:
 1. On the monthly payment due date (the 10th of every month), the system will deduct payments for all confirmed, due, and unpaid bills for the past months using your default payment method.
 2. The payment due dates are subject to the months of the bills and the billing cycles of your account.
-For example, if your billing cycle is 1 month, the payment due date for bills of May is June 10; if your billing cycle is 2 months, the payment due date for bills of May is July 10.
+For example, if your billing cycle is one month, then your bill for May will be generated early June and the due date for payment will be July 10; if your billing cycle is two months, then your bill for May will be generated early June and the due date for payment will be August 10.
 3. If bills for the past months have not been confirmed, the system will not automatically deduct payments, even when it’s the due date. The system will detect such bills and initiate auto-payments for them in the next cycle. If you hope auto-payments are made as scheduled, please confirm your bills after they are generated each month.
 
 ![](https://main.qcloudimg.com/raw/e81ede56f2b48340a90a9dc2195f5835.png)

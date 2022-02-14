@@ -41,7 +41,7 @@ Make sure that both the source IP and target ENI are in the same VPC and the sou
 1. Return to the **Traffic mirroring** page. If the traffic mirror that you just created is displayed with **Collect Traffic** enabled, the traffic mirror has been created successfully.
 ![](https://main.qcloudimg.com/raw/fd6191f3c858d0f2dd799a467c0d1c40.png)
 2. Perform the following steps to verify whether the collected traffic is mirrored to the receiving IP.
-	1. Generate the ENI traffic. For example, you can log in to the source CVM and run the `ping **public IP**` command.
+	1. Generate the ENI traffic. For example, you can log in to the source CVM and run the ping **public IP** command.
     **Source data:**
 	 ![](https://main.qcloudimg.com/raw/74ad4cbd7a6f2179b441cafee5976bba.png)
 	2. [](id:buzhou2)Log in to the destination CVM and run the following commands to capture data and save it as a “.cap” or “.pcap” file. This document uses the “.pcap” file as an example.
