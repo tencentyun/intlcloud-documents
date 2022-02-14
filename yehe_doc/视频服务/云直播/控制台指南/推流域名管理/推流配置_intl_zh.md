@@ -28,7 +28,7 @@
    2. 填写自定义的流名称 StreamName，例如：`liveteststream`。
    3. 单击 **生成推流地址** 即可生成带着 StreamName 的 RTMP 推流地址。
 ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
-3. 若您的推流域名未开启播放鉴权，您还可以在 **推流配置** > **推流地址解析** 标签下，查看该播放域名下 RTMP、UDP 这两种播放地址。替换推流地址中的 StreamName（流名称）关联播放地址，关联后即可通过播放地址查看直播画面。 
+3. 若您的推流域名未开启推流鉴权，您还可以在 **推流配置** > **推流地址解析** 标签下，查看该播放域名下 RTMP、UDP 这两种播放地址。替换推流地址中的 StreamName（流名称）关联播放地址，关联后即可通过播放地址查看直播画面。 
 ![](https://main.qcloudimg.com/raw/aa129bd839cb307993bfed247e636a41.png)
 
 
