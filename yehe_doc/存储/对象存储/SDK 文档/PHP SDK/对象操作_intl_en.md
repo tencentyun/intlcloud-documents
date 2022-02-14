@@ -270,7 +270,7 @@ Guzzle\Service\Resource\Model Object
 
 #### Description
 
-This API (`PUT Object`) is used to upload an object of up to 5 GB to a specified bucket. To upload objects larger than 5 GB, please use [multipart upload APIs] (#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
+This API (`PUT Object`) is used to upload an object of up to 5 GB to a specified bucket. To upload objects larger than 5 GB, please use [multipart upload APIs](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
 
 #### Method prototype
 
