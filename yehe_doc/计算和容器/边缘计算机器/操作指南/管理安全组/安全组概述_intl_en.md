@@ -89,5 +89,5 @@ When creating a security group, you can select one of the two security group tem
 
 ## Directions
 The following figure shows you how to use a security group:
-![img](https://main.qcloudimg.com/raw/c809499cc911e748f9eb4dd3a3356683.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/52f313281a9a2e8c944867a0c2f391c2.png)
 

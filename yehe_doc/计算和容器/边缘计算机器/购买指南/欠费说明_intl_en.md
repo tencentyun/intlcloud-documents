@@ -1,5 +1,5 @@
 
-![](https://main.qcloudimg.com/raw/6c5d5776cc90f8a791478ad7034451e2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b995ac21df93f58b8ec5cfa0b0d4febb.png)
 
 ## Notes
 - After you stop using an ECM instance, **terminate it as soon as possible** to avoid incurring fees.

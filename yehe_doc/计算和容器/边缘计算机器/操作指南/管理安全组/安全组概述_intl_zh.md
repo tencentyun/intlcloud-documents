@@ -89,5 +89,5 @@ ECM 安全组的使用限制及配额如下表所示：
 
 ## 使用流程
 安全组的使用流程如下图所示：
-![img](https://main.qcloudimg.com/raw/c809499cc911e748f9eb4dd3a3356683.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/52f313281a9a2e8c944867a0c2f391c2.png)
 

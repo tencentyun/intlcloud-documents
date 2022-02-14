@@ -1,5 +1,5 @@
 
-![](https://main.qcloudimg.com/raw/6c5d5776cc90f8a791478ad7034451e2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b995ac21df93f58b8ec5cfa0b0d4febb.png)
 
 ## 注意事项
 - 边缘计算实例不再使用时**请及时销毁**，以免继续产生费用。
