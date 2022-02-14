@@ -28,7 +28,7 @@
    2. 填写自定义的流名称 StreamName，例如：`liveteststream`。
    3. 单击 **生成推流地址** 即可生成带着 StreamName 的 RTMP 推流地址。
 ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
-3. 若您的推流域名未开启推流鉴权，您还可以在 **推流配置** > **推流地址解析** 标签下，查看该播放域名下 RTMP、UDP 这两种播放地址。替换推流地址中的 StreamName（流名称）关联播放地址，关联后即可通过播放地址查看直播画面。 
+3. 若您的推流域名未开启推流鉴权，您还可以在 **推流配置** > **推流地址解析** 标签下，查看该播放域名下 RTMP、UDP 这两种推流地址。替换推流地址中的 StreamName（流名称）关联播放地址，关联后即可通过播放地址查看直播画面。 
 ![](https://main.qcloudimg.com/raw/aa129bd839cb307993bfed247e636a41.png)
 
 
@@ -48,7 +48,7 @@ rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=h
 
 >!
 >- 若您开启了域名鉴权，实际过期时间等于 txTime + Key 有效时间。
->- 控制台为了方便使用，设置的时间即为实际过期时间。**若您开启了域名鉴权，计算播放地址时会按照公式倒推出 txTime**。
+>- 控制台为了方便使用，设置的时间即为实际过期时间。**若您开启了域名鉴权，计算推流地址时会按照公式倒推出 txTime**。
 >- 在过期时间前进行了推拉流，只要推拉流正常没有断开或停止，即使过期时间到了也能正常保持推拉流状态。
 
 

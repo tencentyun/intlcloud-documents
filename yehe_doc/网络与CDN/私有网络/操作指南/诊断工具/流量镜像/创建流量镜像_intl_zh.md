@@ -13,13 +13,13 @@
    - 请填写流量镜像的名称，不超过60字符。
    - 选择“所属网络”。
    - 流量“采集范围”为“弹性网卡”，即采集 VPC 内除绑定接收 IP 的弹性网卡的流量。选择弹性网卡后，需勾选具体弹性网卡。
-![](https://qcloudimg.tencent-cloud.cn/raw/4b3e1c1c5bde43ed33d1724b072bb5e6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/902cad1c6ecd774e67ffe72d3ce4ab64.png)
    - 选择“采集类型”：根据业务类型选择采集流量方向，支持“全部流量”、“出流量”和“入流量”。
    - 选择“流量过滤”方式：根据业务类型选择流量过滤方式，过滤掉不需要的流量可以减轻镜像的规模和压力。
       - 不过滤：采集配置的全部流量。
       - 五元组：采集满足五元组条件的流量。选择“五元组”后，需设置“协议”、“源网段”、“目的网段”、“源端口”和“目的端口”。若需增加筛选条件，请单击“添加”，多个筛选条件为“与”关系。
     ![](https://qcloudimg.tencent-cloud.cn/raw/ab47286ffbc185a6287552ac44de0c6f.png)
-    - 下一跳为 NAT 网关：采集下一跳为 NAT 网关的流量。选择“下一跳为 NAT 网关”后，需在“筛选条件”右侧选择具体 NAT 网关。
+  - 下一跳为 NAT 网关：采集下一跳为 NAT 网关的流量。选择“下一跳为 NAT 网关”后，需在“筛选条件”右侧选择具体 NAT 网关。
 4. 完成配置后，单击“下一步”。
 
 ### 步骤二：设置接收流量
@@ -32,7 +32,7 @@
    + **均衡方式**：选择如下一种方式。
         + **流量均分**：所有流量随机均匀分到目标弹性网卡中。
         + **按弹性网卡 HASH**：将来自同一个网卡的流量转发到同一个目标弹性网卡中。
-![](https://main.qcloudimg.com/raw/8bec0de6223c109daed7eefef1394959.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4b3e1c1c5bde43ed33d1724b072bb5e6.png)
 2. 完成配置后，单击**确定**。
 
 ## 结果验证
@@ -41,23 +41,27 @@
 1. 返回流量镜像页面，创建的流量镜像显示在列表中，且**启用采集**为开启，则表示流量镜像任务创建成功。
 ![](https://main.qcloudimg.com/raw/fd6191f3c858d0f2dd799a467c0d1c40.png)
 2. 执⾏如下操作，验证采集端的流量是否正常镜像到接收端。
-	1. 构造弹性网卡流量，例如您可以登录采集源端 CVM，执行 ping **公网 IP**来构造流量。
-    **source 源数据：**
+   1. 构造弹性网卡流量，例如您可以登录采集源端 CVM，执行 ping **公网 IP**来构造流量。  
+ **source 源数据：**
 	 ![](https://main.qcloudimg.com/raw/74ad4cbd7a6f2179b441cafee5976bba.png)
-	2. [](id:buzhou2)登录接收端云服务器，执行如下命令抓取数据并保存为“.cap”或“.pcap”⽂件。本例以“.pcap”为例。
+    2. [](id:buzhou2)登录接收端云服务器，执行如下命令抓取数据并保存为“.cap”或“.pcap”⽂件。本例以“.pcap”为例。
+
 ```plaintext
 tcpdump -i eth0 -w capture-2020-10-27.pcap    #⽂件名可⾃定义，请根据实际填写
 ```
-
-	**Destination 数据包:** 
+**Destination 数据包:** 
  ![](https://main.qcloudimg.com/raw/404f6d2c612ae76b78aa63a624e98910.png)
-	3. 使⽤终端模拟⼯具（例如 SecureCRT 等）登录接收端服务器，将[ 步骤ii ](#buzhou2)中保存的⽂件导出到本地。
+  
+   3. 使⽤终端模拟⼯具（例如 SecureCRT 等）登录接收端服务器，将[ 步骤ii ](#buzhou2)中保存的⽂件导出到本地。
+
  ```plaintext
 sz -bye capture-2020-10-27.pcap
  ```
-	4. 使⽤报⽂解析⼯具（例如 Wireshark ⼯具）打开下载到本地的⽂件“capture-2020-10-27.pcap”获取数据详情，例如，本例中已从镜像接收端云服务端获取到采集源端的出流量12个数据包。
-	 **包校验：**
+    4. 使⽤报⽂解析⼯具（例如 Wireshark ⼯具）打开下载到本地的⽂件“capture-2020-10-27.pcap”获取数据详情，例如，本例中已从镜像接收端云服务端获取到采集源端的出流量12个数据包。
+	
+ **包校验：**
 ![](https://main.qcloudimg.com/raw/8011aef82006411e35edd41bf5eae5c4.png)
+
 3. 如获取到数据包异常或⽆法正常获取到数据包，请 [提交工单](https://console.cloud.tencent.com/workorder/category)
 
 ## 后续步骤

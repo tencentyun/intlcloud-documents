@@ -13,13 +13,13 @@ Make sure that both the source IP and target ENI are in the same VPC and the sou
    - Enter a name for the traffic mirror (up to 60 characters).
    - Choose **Network**.
    - Choose **ENI** for **Collection Range**. That is, all traffic in the VPC will be collected, but the traffic of the ENI that is bound to receiving IPs will be excluded. This option requires selecting specific ENIs.
-![](https://qcloudimg.tencent-cloud.cn/raw/4b3e1c1c5bde43ed33d1724b072bb5e6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/902cad1c6ecd774e67ffe72d3ce4ab64.png)
    - Choose **Collection type**: select the traffic direction as needed. There are three options: All traffic, Traffic out and Traffic in.
    - Choose **Traffic filtering**: select a method to filter out unnecessary traffic and keep the mirror small and lightweight.
-      -**N/A**: all traffic configured will be collected.
+      - **N/A**: all traffic configured will be collected.
       - **Quintuple**: the traffic that meets 5-tuple conditions will be collected. After this option is selected, please specify **Protocol**, **Source IP range**, **Destination IP range**, **Source port**, and **Destination port**. You can click **Add** to create another filter condition. Only the traffic that meets all of filter conditions will be collected.
     ![](https://qcloudimg.tencent-cloud.cn/raw/ab47286ffbc185a6287552ac44de0c6f.png)
-    - **The next hop is the NAT gateway**: collect traffic whose next hop address is the NAT gateway. After this option is selected, select the corresponding NAT gateway next to **Condition**.
+   - **The next hop is the NAT gateway**: collect traffic whose next hop address is the NAT gateway. After this option is selected, select the corresponding NAT gateway next to **Condition**.
 4. After completing the configuration, click **Next**.
 
 ### Step 2: create a traffic mirror target
@@ -32,7 +32,7 @@ Make sure that both the source IP and target ENI are in the same VPC and the sou
    + **Balance method**: 
         + **Evenly distribution**: all traffic is distributed among all target ENIs evenly.
         + **HASH by ENI**: traffic from an ENI is always forwarded to a fixed target ENI.
-![](https://main.qcloudimg.com/raw/8bec0de6223c109daed7eefef1394959.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4b3e1c1c5bde43ed33d1724b072bb5e6.png)
 2. Click **OK**.
 
 ## Result Validation
