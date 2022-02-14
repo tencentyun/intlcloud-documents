@@ -2,10 +2,10 @@ Tencent Cloud SMS will adjust the billing cycle and list price of Chinese Mainla
 
 ### Updates
 
-| Update | Billing Cycle | List Price |
+|  |Before Adjustment | After Adjustment |
 |-----|-----|-----|
-| Before Adjustment | Monthly | 0.015 USD/message |
-| After Adjustment | Daily | 0.014 USD/message |
+|  Billing Cycle| Monthly | Daily |
+| List Price | 0.015 USD/message | 0.014 USD/message |
 
 ### Note
 
