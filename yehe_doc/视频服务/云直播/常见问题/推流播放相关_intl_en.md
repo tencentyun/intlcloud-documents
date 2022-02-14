@@ -28,19 +28,19 @@ CSS provides stable CDN nodes across the Chinese mainland and around the world. 
 
 [](id:que6)
 ### How can I enable hotlink protection?
-You are strongly advised to enable hotlink protection for your playback URLs to prevent unauthorized users from using your playback URLs, which would consume your Tencent Cloud traffic and thus cause losses. CSS hotlink protection for playback URLs is controlled by `txTime`, `key` (hash key), `txSecret`, and validity period.
+You are strongly advised to enable hotlink protection for your playback URLs to prevent unauthorized users from using your playback URLs, which would consume your Tencent Cloud traffic and cause losses. CSS hotlink protection for playback URLs is controlled by `txTime`, `key` (hash key), `txSecret`, and validity period.
 
 | Hotlink Protection Parameter | Description | Remarks |
 |---------|---------|---------|
-| txTime | Expiration time of the playback URL |It is a Unix hexadecimal time.<br> If `txTime` is greater than the time of a request, the stream can be played back successfully; otherwise, the request will be rejected.|
-| key | MD5 key | You can customize this parameter, and you can set a primary and a backup key.<br> If your primary key is leaked, you can use the backup key to splice playback URLs and change the value of the primary key.|
+| txTime | Expiration time of the playback URL |It is a hexadecimal Unix time.<br> If `txTime` is greater than the time of a request, the stream can be played back successfully; otherwise, the request will be rejected.|
+| key | MD5 key | You can customize this parameter, and you can set a primary and a backup key.<br> If your primary key is disclosed, you can use the backup key to splice playback URLs and change the value of the primary key.|
 | txSecret | Encryption parameter in the playback URL | The value of this parameter is calculated based on `key`, `StreamName`, and `txTime` using the MD5 algorithm. <br>`txSecret` = MD5 (key+StreamName+txTime) |
 | Validity period | Authentication validity period | It must be greater than 0.<br> If you set `txTime` to the current time and the validity period to 300s, the playback URL expiration time is the current time plus 300s.|
 
 [](id:calculate)
 #### Hotlink protection URL calculation
 The calculation of a hotlink protection URL requires three parameters: `key` (a random string), `StreamName` (stream name), and `txTime` (in hexadecimal format).
-Suppose you set `key` to **somestring**, `StreamName` to **test**, `txTime` to **5c2acacc** (2019-01-01 10:05:00), the HD bitrate to **900 Kbps**, and the name of the transcoding template to **900**.
+Assume that you set `key` to **somestring**, `StreamName` to **test**, `txTime` to **5c2acacc** (2019-01-01 10:05:00), the HD bitrate to **900 Kbps**, and the name of the transcoding template to **900**.
 The playback URL of the original stream is:
 ```
 txSecret = MD5(somestringtest5c2acacc) = b77e812107e1d8b8f247885a46e1bd34
@@ -64,7 +64,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 >!
 >- It takes **30 minutes** for the configuration to take effect.
 >- HTTP-FLV: after the `txTime` of the URL is reached, ongoing playback will continue, but new requests for playback via the URL will be rejected.
->- HLS: as HLS breaks a stream into short chunks, it keeps requesting M3U8 files to get the latest TS segments. Suppose you set `txTime` to the current time and the validity period to 10 minutes, then an HLS playback URL request sent 10 minutes after the current time will be rejected. To avoid this, you can update the HLS request URL dynamically on the server or set a greater expiration time point.
+>- HLS: as HLS breaks a stream into short chunks, it keeps requesting M3U8 files to get the latest TS segments. Assume that you set `txTime` to the current time and the validity period to 10 minutes, then an HLS playback URL request sent 10 minutes after the current time will be rejected. To avoid this, you can update the HLS request URL dynamically on the server or set a greater expiration time point.
 
 [](id:que7)
 ### What format requirements must a primary key for playback authentication meet? Is there any limit on its validity period?
@@ -77,7 +77,7 @@ We recommend that you set its validity period to the duration of a live streamin
 Setting a push URL validity period is for authentication and protection. A permanently valid push URL can hardly prevent unauthorized push and may result in business losses.
 There is no limit on the validity period of a push address, which can be set according to your business needs. You can also splice addresses to generate a push URL with a longer validity period. For more information about splicing rules, see [How to Splice a Push URL](https://intl.cloud.tencent.com/document/product/267/38393).
 
->? We do not recommend setting a very long validity period for the push URL, which may cause an error to occur and failed authentication to be reported when the URL is used.
+>? We do not recommend you set a very long validity period for the push URL, which may cause an error to occur and failed authentication to be reported when the URL is used.
 
 [](id:que9)
 ### Will the Tencent Cloud logo be displayed on the live streaming image? 
@@ -97,10 +97,10 @@ Live push and playback are bound with stream IDs, so you do not need to delete r
 If you are using the channel mode, you can call the `DeleteLVBChannel` API and pass in IDs of live streaming channels to delete them in batches.
 
 > ! Channel mode is a legacy mode which is no longer updated or maintained.
-
+ 
 [](id:que13)
  ### What is the usage of the API for enabling/disabling push? 
-This API is used to disable a stream when porn detection is performed. For example, if a live stream is detected to contain pornographic or terroristic contents, you can interrupt or disable this stream at any time.
+This API is used to disable a stream when porn detection is performed. For example, if a live stream is detected to contain pornographic or terroristic content, you can interrupt or disable this stream at any time.
 
 
 [](id:que14)
@@ -150,3 +150,6 @@ M3U8 files are named automatically based on stream names. Stream names **do not 
 ### How do I view the number of online viewers?
 You can get the number of online viewers by calling the [DescribeStreamPlayInfoList](https://intl.cloud.tencent.com/document/product/267/37297) API, but the result may not be 100% accurate. For example, if 3 users use the same IP address for playback at the same time, they will be counted as 1 viewer. Note that the data returned by this API is relevant only if your playback protocol is RTMP or FLV, not if it is HLS.
 
+[](id:que24)
+### Does CSS support backup streams?
+Backup streams are enabled by default with CSS. If you push two streams using the same stream name at the same time, during playback, only the first stream will be visible. If this stream is interrupted, the second stream will become visible.
