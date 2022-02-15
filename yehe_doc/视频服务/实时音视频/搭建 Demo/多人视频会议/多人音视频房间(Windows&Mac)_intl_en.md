@@ -172,7 +172,7 @@ After successful login, call `SetSelfProfile` to set the user profile.
 [](id:step2_10)
 ### Step 10. Enable screen sharing.
 1. The member calls the `StartScreenCapture` API for screen sharing.
-2. Other members receive the `OnRemoteUserScreenVideoAvailable` callback that notifies them of screen sharing by the member.
+2. Other members receive the `OnRemoteUserScreenAvailable` callback that notifies them of screen sharing by the member.
 
 >? You need to implement the window selection logic for the screen sharing module. For the specific implementation, see `ScreenShareWindow.h` in `App`.
 
