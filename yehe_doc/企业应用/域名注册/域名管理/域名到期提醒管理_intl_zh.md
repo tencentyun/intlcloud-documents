@@ -57,7 +57,7 @@
 
 >?
 >- 若您需修改账号 ID 信息，请前往 [访问管理控制台](https://console.intl.cloud.tencent.com/developer) 进行修改。
->- 若您需修改域名所有者信息，请参考 [域名信息修改](https://cloud.tencent.com/document/product/242/3648)。
+>- 若您需修改域名所有者信息，请参考域名信息修改。
 
 ## 操作指南
 ### 关闭域名到期提醒
