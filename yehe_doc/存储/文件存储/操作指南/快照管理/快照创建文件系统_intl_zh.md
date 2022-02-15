@@ -7,8 +7,8 @@
 
 ## 操作步骤
 
-1. 登录文件系统控制台，进入 [快照策略](https://console.cloud.tencent.com/cfs/snapshot/policy?rid=1) 页面。
-2. 在目标快照所在行，单击**更多 > 新建文件系统**。
+1. 登录文件系统控制台，进入 [快照列表](https://console.intl.cloud.tencent.com/cfs/snapshot/list?rid=1) 页面。
+2. 在目标快照所在行，单击**使用**。
 3. 在新建文件系统页面，选定文件系统类型，单击**下一步**，并设置以下参数。
 >? 如下操作以快照创建通用标准型文件系统为例。
 >
@@ -57,7 +57,7 @@
      </tr>
    	 <tr>
        <td>云联网</td>
-       <td>仅 Turbo 系列需填写云联网，需选择一个现有云联网或新创建一个。详细用途可参考 <a href="https://intl.cloud.tencent.com/products/ccn">云联网介绍</a>。 
+       <td>仅 Turbo 系列需填写云联网，需选择一个现有云联网或新创建一个。详细用途可参考 <a href="https://cloud.tencent.com/product/ccn">云联网介绍</a>。 
      </tr>
    	<tr>
        <td>网段</td>
@@ -74,5 +74,4 @@
      </tr>
    </table>
 4. 单击**立即创建**，您即可在文件系统列表查看刚刚新建的文件系统。
-
 
