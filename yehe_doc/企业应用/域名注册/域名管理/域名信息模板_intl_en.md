@@ -1,6 +1,6 @@
 # Domain Registrant Profile
 
-﻿## Overview
+## Overview
 
 A domain registrant profile is a pre-formatted file that contains the domain registrant's basic information to get you started with registering your domain, changing the domain registrant, applying for identity verification and performing other steps quickly by just entering the required information in the profile.
 
