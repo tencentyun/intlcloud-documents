@@ -1,6 +1,6 @@
 # Modifying Registrant Profile
 
-﻿## Overview
+## Overview
 
 This document describes how to modify domain registration information, such as the email address, mobile number, and registrant, for better domain protection.
 Registrant information modification needs to be submitted to the registry for review, which usually takes 1 business day (no more than 7 business days, subject to the review time of the registry). Your domains and their DNS services will not be affected during the review.
