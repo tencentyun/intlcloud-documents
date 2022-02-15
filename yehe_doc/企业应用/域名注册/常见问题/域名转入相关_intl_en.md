@@ -1,37 +1,37 @@
-# Domain Transfer-In
+# 域名转入相关
 
-﻿### Is domain transfer-in free of charge?
+﻿### 域名转入收费吗？
 
-Domain transfer-in is free of charge, but according to the regulations of the registry, you must renew your domain for another year upon transferring it in (i.e. you need to extend the expiration date for the domain before transfer-in by one year). Different domain suffixes have different renewal prices. For detailed billing information, see [Domain Pricing](https://buy.intl.cloud.tencent.com/domain/price?type=overview).
+域名转入是免费办理的，域名注册局的规定，域名在转入的同时需要续费1年（即在域名转入前的域名到期日上再增加1年）。不同域名后缀，续费价格不同，详情查看 [域名价格页面](https://buy.intl.cloud.tencent.com/domain/price?type=overview)。
 >!
->- If an expired domain was renewed at the original registrar less than 45 days ago, transferring it in may be successful but its usage period may not be extended.
->- If your domain has already reached the limit for renewal (10 years), the usage period of the domain may fail to be extended by one year after the domain is successfully transferred in.
+>- 原注册商续费不足45天时，期间进行转入的可能导致转入成功，年限不增加。
+>- 如果您的域名当前已经续费至最大年限（10年），在您成功转入域名后该域名可能无法增加一年年限。
 
- ### How long does it take to transfer a domain in?
- Domain transfer-in usually takes 5–7 business days, subject to the handling time of the registry. Please wait patiently.
-
-
-### Does domain transfer-in affect DNS resolution, website ICP filing, or the usage of the current website business or email?
-Transferring a domain in to Tencent Cloud does not affect the original DNS resolution.
-
-### Will the DNS records of a domain be transferred as well when the domain is transferred in?
-No. After a domain is successfully transferred in, its DNS records are still hosted by the original DNS service provider.
-
-### Can a domain be transferred out immediately after it is transferred in?
-It depends on whether you have selected the option **Enable 60-Day Inter-Registrar Transfer Lock** during the domain transfer-in. If you have selected the option, you will not be able to apply for transferring out the domain within 60 days, and the status cannot be modified. You need to wait until the lock period ends before you can transfer the domain out.
+ ### 域名转入需要多久？
+ 域名转入时间一般需要5 - 7个工作日，转入时间取决于相关注册局的处理时间，请您耐心等待。
 
 
-### How do I modify the information of a domain after it is transferred in to Tencent Cloud?
-Disable the domain protection feature, and click **Edit** to modify the domain information. For more information, see Modifying Domain Information. 
+### 域名转入腾讯云会影响 DNS 解析、网站备案、当前的网站业务或邮箱的使用吗？
+域名转入腾讯云，不会影响原 DNS 解析。
 
-### How do I cancel domain transfer-in?
-1. Log in to the [Domains console](https://console.intl.cloud.tencent.com/domain/manage), enter the **My Domains** page, and select **Transferring in**. Then you can view the list of all domains to be transferred in.
-2. In the row of the domain whose transfer-in is to be canceled, click **Cancel Domain Transfer** in the **Operation** column.
-3. In the **Cancel Domain Transfer** pop-up window, click **OK** to submit the cancellation and wait for the review result.
+### 域名转入时解析会一起转入吗？
+不会，转入成功后，解析仍在原解析商进行托管。
+
+### 域名转入后能不能马上转出？
+具体取决于您在转入时，是否勾选**开启"60天禁止转移注册商锁定期"**，若勾选，则在60天内将无法申请转出，该状态无法进行变更，请等待锁定期结束后再进行转出。
+
+
+### 域名转入后如何修改域名信息？
+先关闭域名保护功能，然后单击**编辑**，进行修改域名信息。具体操作可以参考修改域名信息。 
+
+### 如何取消域名转入？
+1. 请登录 [域名注册控制台](https://console.intl.cloud.tencent.com/domain/manage)，进入**我的域名**，选择**转入中**，即可查看所有待转入的域名列表。
+2. 在您需要取消转入的域名行，单击操作栏的**取消转入**。
+3. 在弹出的**取消转入**窗口中，单击**确认**，即可提交成功，请您耐心等待审核。
 
 >?
->- After the transfer-in of your domain is successfully canceled, the payment you made will be returned to your original payment method. If you have used a voucher for the transfer-in, another voucher of the same amount will be issued to your account.
->- The refund time is generally within 1 business day.
+>- 取消转入成功后，支付费用可原路径退回，若您有使用转入代金券，将重新生成一张等面值的代金券至您的账户中。
+>- 退款时间一般在1个工作日内。
 >
 
 
