@@ -2,7 +2,7 @@
 ## Overview
 TencentDB for MySQL allows you to create one or more read-only instances to form an RO group, which is suitable for read/write separation and one-source-multiple-replica application scenarios and capable of greatly enhancing the read load capacity of your database.
 
-An RO group is a set of read-only instances sharing the same address. You can set their weights to balance the traffic load, set the policy of removing delayed read-only instances, and perform other configurations. You can deploy an RO group as needed and send the corresponding read requests to read-only instances according to certain rules. In addition, you can implement disaster recovery by configuring multiple read-only instances in the same RO group.
+An RO group is a set of read-only instances sharing the same private network address. You can set their weights to balance the traffic load, set the policy of removing delayed read-only instances, and perform other configurations. You can deploy an RO group as needed and send the corresponding read requests to read-only instances according to certain rules. In addition, you can implement disaster recovery by configuring multiple read-only instances in the same RO group.
 
 ## Prerequisites
 - A source instance must be created first before a read-only instance can be created. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/236/5160).
@@ -33,9 +33,9 @@ An RO group is a set of read-only instances sharing the same address. You can se
 5. Return to the instance list. The status of the created instance is **Delivering**. If the status changes to **Running**, the read-only instance has been successfully created.
 
 ### Configuring RO group
-On the RO group configuration page, you can configure the basic information of the group such as ID, name, delayed replication, replication delay, removal policy, delay threshold, least read-only instances, and read weight.
+On the RO group configuration page, you can configure the basic information of the group such as ID, name, delayed replication, removal policy, delay threshold, least read-only instances, and read weight.
 >?
->- Read-Only instances in an RO group can use different specifications, and their read traffic weights can be set.
+>- Read-Only instances in an RO group can use different specifications, and their read traffic weights can be different as well.
 >- Read-Only instances in the same RO group can have different expiration dates and billing modes.
 >- Once enabled, delayed replication will take effect for all read-only instances in this RO group, but won't change their replication statuses.
 >- The replication delay option will appear only after delayed replication is enabled.
