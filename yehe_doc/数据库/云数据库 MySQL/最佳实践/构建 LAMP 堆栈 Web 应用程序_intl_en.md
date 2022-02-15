@@ -1,6 +1,6 @@
 LAMP (Linux + Apache + MySQL/MariaDB + Perl/PHP/Python) is a set of open-source software programs often used to set up dynamic websites or servers. These independent programs are usually used together and increasingly compatible with one another to form a powerful web application platform.
 This tutorial guides you through the following process: starting a TencentDB instance and configuring a LAMP application with a CVM instance to connect to the highly available environment of the TencentDB instance.
-The database can be separated from the environment lifecycle after you run the TencentDB instance. This allows you to connect multiple servers to the same database for simplified database OPS, eliminating your concerns over database installation, deployment, version update, and troubleshooting.
+The database can be separated from the environment lifecycle after you run the TencentDB instance. This allows you to connect the same database from multiple servers for simplified databasecoperation and maintenance, so that you no longer need to worry about database installation, deployment, version update, and troubleshooting, etc.
 
 >The TencentDB and CVM instances used in the tutorial reside in the same region. If this is not the case, see [Access via Public Network](https://intl.cloud.tencent.com/document/product/236/3130).
 
