@@ -1,0 +1,20 @@
+## Práticas recomendadas para servidores de jogos
+1. Em casos de uso em que nem todos os campos precisam ser lidos ou gravados, recomendamos a leitura e a atualização apenas dos campos obrigatórios para evitar a obtenção de dados inválidos. Essa ação pode reduzir o tamanho dos dados transmitidos pela rede e reduzir a quantidade de leituras e gravações de disco.
+2. Se o registro de dados precisar ser gerado ao realizar uma operação de gravação, recomendamos configurar o `result_flag` conforme necessário. Por exemplo, se o registro de dados atualizado for necessário após uma operação de atualização ser realizada, o `result_flag` deve ser definido como 2. Se o registro de dados não for necessário durante uma operação de gravação, o `result_flag` é definido como 0.
+3. Para as palavras de comando em tarefas de processamento em lote, como `batchget`, `listgetall` e `getbypartkey`, recomendamos obter o registro de dados baseado em `offest` e `limit`. Recomendamos definir o `limit` para 200 e habilitar o retorno de vários pacotes no servidor do jogo.
+4. Para tabelas que aceitam o tipo de dados LIST, quando uma operação `listaddafter` é realizada, uma regra de enfileiramento/desenfileiramento deve ser definida caso a lista fique sem espaço disponível. Recomendamos a regra de adicionar um novo registro na frente e excluir um registro na parte de trás ou vice-versa.
+5. Para tabelas que aceitam o tipo de dados LIST, um índice correto deve ser passado para as operações `listreplace`, `listdelete` e `listbatchdelete`.
+6. Antes que o servidor do jogo leia os dados, certifique-se de que os campos de chave não primária do registro de dados a serem lidos não estejam vazios. Por exemplo, quando há três campos de chave não primária: A, B e C, se o servidor do jogo tiver apenas A e B, isso indica que o campo C está vazio. Verifique os campos antes de ler um registro de dados.
+7. O servidor do jogo deve controlar o tempo limite localmente e não recomendamos determinar o tempo limite com base no pacote de resposta proveniente do servidor do jogo.
+8. Quando o servidor do jogo realiza travessia, recomendamos acessar os dados de nós secundários na camada de armazenamento, para evitar que o desempenho dos nós primários seja afetado.
+9. Não recomendamos a execução de operações `memset` em campos grandes para evitar o consumo de recursos da CPU. Você pode definir os valores de alguns campos em grandes estruturas de dados como 0 antes da inicialização.
+10. Ao processar solicitações para o TcaplusDB e respostas do TcaplusDB, o servidor do jogo deve usar o método "dividir e conquistar" para primeiro processar solicitações parciais enviadas para o TcaplusDB e, em seguida, processar as respostas retornadas do TcaplusDB.
+
+## Práticas recomendadas para design de sistema
+1. Crie tabelas separadas para os campos usados com frequência e os campos nos quais uma operação atômica única precisa ser executada.
+2. Quando o servidor do jogo grava os dados de volta, recomendamos limitar o tráfego e discretizar os dados por tempo.
+3. Você pode modificar a estrutura da tabela enquanto a usa, e um plugin de conversão de dados de tabela é fornecido.
+4. A reversão para o ponto no tempo de seu backup manual ou para uma hora exata no nível de tabela/registro em log no modo todos os servidores/todas as regiões é compatível.
+5. Os nós na camada de acesso e na camada de armazenamento podem ser continuamente escalonados para o modo de todos os servidores/todas as regiões e para o modo de vários servidores/várias regiões. Recomendamos o modo de vários servidores/várias regiões.
+6. Os campos com uma relação lógica devem ser mesclados em uma tabela para evitar problemas de transações distribuídas.
+7. Recomendamos habilitar a funcionalidade de compactação, incluindo a compactação de pacotes e logs de solicitação/resposta.
