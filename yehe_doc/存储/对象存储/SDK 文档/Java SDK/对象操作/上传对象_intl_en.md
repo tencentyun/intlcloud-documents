@@ -140,7 +140,7 @@ try {
 
 // After confirming that the process does not use the TransferManager instance anymore, close it.
 // For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on the current page.
-shutdownTransferManger(transferManager);
+shutdownTransferManager(transferManager);
 ```
 
 #### Parameter description
@@ -229,7 +229,7 @@ try {
 
 // After confirming that the process does not use the TransferManager instance anymore, close it.
 // For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on the current page.
-shutdownTransferManger(transferManager);
+shutdownTransferManager(transferManager);
 ```
 
 #### Parameter description
@@ -332,7 +332,7 @@ try {
     // The advanced API will return an asynchronous result `Upload`.
     Upload upload = transferManager.upload(putObjectRequest);
     // Print the upload progress until the upload is completed.
-    showTransferProgress();
+    showTransferProgress(upload);
     // Capture possible exceptions
     UploadResult uploadResult = upload.waitForUploadResult();
 } catch (CosServiceException e) {
@@ -345,7 +345,7 @@ try {
 
 // After confirming that the process does not use the TransferManager instance anymore, close it.
 // For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on the current page.
-shutdownTransferManger(transferManager);
+shutdownTransferManager(transferManager);
 ```
 
 #### Description of progress obtaining
@@ -454,7 +454,7 @@ try {
 
 // After confirming that the process does not use the TransferManager instance anymore, close it.
 // For the detailed code, see "Advanced APIs -> Sample code: Closing a TransferManager instance" on the current page.
-shutdownTransferManger(transferManager);
+shutdownTransferManager(transferManager);
 ```
 
 #### Parameter description
@@ -541,7 +541,7 @@ try {
 
 // After confirming that the process does not use the TransferManager instance anymore, close it.
 // For the detailed code, see "Advanced APIs -> Sample code: Closing a TransferManager instance" on the current page.
-shutdownTransferManger(transferManager);
+shutdownTransferManager(transferManager);
 ```
 
 #### Parameter description
