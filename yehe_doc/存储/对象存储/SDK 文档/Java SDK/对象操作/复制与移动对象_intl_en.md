@@ -78,7 +78,7 @@ After confirming that the process does not use the TransferManager instance to c
 void shutdownTransferManager(TransferManager transferManager) {
     // If the parameter is set to `true`, the COSClient instance in the TransferManager instance will also be closed at the same time.
     // If the parameter is set to `false`, the COSClient instance in the TransferManager instance will not be closed.
-    transferManager.shutdown(true);
+    transferManager.shutdownNow(true);
 }
 ```
 

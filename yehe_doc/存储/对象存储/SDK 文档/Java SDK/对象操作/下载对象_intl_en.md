@@ -259,7 +259,7 @@ try {
     // Return an asynchronous result `Download`. You can synchronously call `waitForCompletion` to wait for the download to end. If successful, `void` is returned; otherwise, an exception will be thrown.
     Download download = transferManager.download(getObjectRequest, downloadFile);
     // Print the download progress until the download is completed.
-    showTransferProgress();
+    showTransferProgress(download);
     // Possible exceptions are captured here.
     download.waitForCompletion();
 } catch (CosServiceException e) {

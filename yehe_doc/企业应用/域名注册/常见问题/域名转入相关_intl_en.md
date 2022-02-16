@@ -2,7 +2,7 @@
 
 ### Is domain transfer-in free of charge?
 
-Domain transfer-in is free of charge, but according to the regulations of the registry, you must renew your domain for another year upon transferring it in (i.e. you need to extend the expiration date for the domain before transfer-in by one year). Different domain suffixes have different renewal prices. For detailed billing information, see [Domain Pricing](https://buy.intl.cloud.tencent.com/domain/price?type=overview).
+Domain transfer-in is free of charge, but according to the regulations of the registry, you must renew your domain for another year upon transferring it in (i.e. you need to extend the expiration date for the domain before transfer-in by one year). Different domain suffixes have different renewal prices. For detailed billing information, see Domain Pricing.
 >!
 >- If an expired domain was renewed at the original registrar less than 45 days ago, transferring it in may be successful but its usage period may not be extended.
 >- If your domain has already reached the limit for renewal (10 years), the usage period of the domain may fail to be extended by one year after the domain is successfully transferred in.
