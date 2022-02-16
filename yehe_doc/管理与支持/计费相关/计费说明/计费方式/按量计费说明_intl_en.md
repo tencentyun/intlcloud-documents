@@ -30,9 +30,11 @@ Overdue amount refers to the bill amount that should have been paid before the d
 For certain pay-as-you-go services such as CVM, the system estimates an amount based on the billing cycle and usage in previous periods and reserves the estimated amount in the available credit. Deposit is the amount reserved in the post-paid account by the system, and it cannot be spent until the resource is released. For deposit rules of each product, please refer to the description of each product.
 
 ### Billing Cycle
-A billing cycle is also called a billing period. It is the time interval at which your spending on Tencent Cloud products is added up and billed. If you are not served by one of our sales representatives, your billing period is 0 by default. If you are, your billing period is a month by default, and fees will be deducted automatically on the 10th day of each month using the payment method bound to your post-paid account. Your sales representative can adjust your billing period.
+A billing cycle is the time interval at which your spending on Tencent Cloud products is added up and billed. If you are not served by one of our sales representatives, your billing cycle is 0 by default. If you are, your billing cycle is a month by default, and fees will be deducted automatically on the 10th day of each month using the payment method bound to your post-paid account. Your sales representative can adjust your billing cycle.
 
-For example, if your initial credit is 1,000 USD, and your billing period is a month, we will calculate your fees for April in May and charge you on June 10. 
+For example, if your initial credit is 1,000 USD, and your billing cycle is a month, we will calculate your fees for April in May and charge you on June 10.
+
+For details, see [Auto-payment](https://intl.cloud.tencent.com/document/product/555/31994).
 
 ### Monthly Expense Alert
 
