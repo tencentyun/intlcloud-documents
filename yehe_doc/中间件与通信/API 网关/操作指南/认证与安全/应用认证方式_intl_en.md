@@ -1,6 +1,6 @@
 If a published API uses the application-enabled authentication method (`ApiAppKey` and `ApiAppSecret`), when a client calls the API, it needs to use the signature key to perform signature calculation on the request content and transfer the signature to the server for signature verification. This document describes how to implement the signature calculation process on the client.
 
->?For application-enabled authentication signature demos for common programming languages, please see [Development Guide - Application-Enabled Authentication Signature Generation in Multiple Programming Languages](https://intl.cloud.tencent.com/document/product/628/35254).
+>?For application-enabled authentication signature demos for common programming languages, see [Development Guide - Generating Application Authentication Signature](https://intl.cloud.tencent.com/document/product/628/35254).
 
 ## Overview
 
@@ -16,8 +16,8 @@ When the client calls the API, it needs to use the authorized signature key to p
 
 ### Prerequisites
 
-- The API caller needs to get the signature key pair (`ApiAppKey` and `ApiAppSecret`) authorized to an API before calling the API.
-- The security authentication type of the called API is "Application-Enabled Authentication".
+- The security authentication type of the called API is "application authentication".
+- The API caller needs to get the authorization granted to the application by the API before calling the API.
 
 ### Signature generation on client
 
@@ -64,6 +64,7 @@ String content-MD5 = Base64.encodeBase64(MD5(bodyStream.getbytes("UTF-8")));
 ```
 
 - PathAndParameters: it contains all the parameters in `Path`, `Query`, and `Form` in the following format:
+	- `path` does not contain release environment (release, prepub, test) information.
 	- The keys of the `Query` and `Form` parameter pair are sorted in lexicographical order and then spliced in the above-mentioned method.
 	- If `Query` and `Form` parameters are empty, use `Path` directly without adding `?`.
 	- If the value of a parameter is empty, only the key is kept to participate in the signature calculation, and the equal sign does not need to be added in the signature.
@@ -110,7 +111,7 @@ Authorization: hmac id="secret_id", algorithm="hmac-sha1", headers="date source"
 
 The parameters in `Authorization` are described as follows:
 
-| Parameter | Description |
+| Parameter | Description | 
 |---------|---------|
 | hmac | Fixed and used to indicate the calculation method |
 | ID | Value of the `secret_id` in the key |
@@ -132,7 +133,7 @@ p=test
 ```
 
 ## Signature Troubleshooting
-**Error description:**
+**Question:**
 If the API Gateway signature verification fails, the server's signature string (StringToSign) will be put in the HTTP response header and returned to the client with an error code of 401.
 
 **Solution:**

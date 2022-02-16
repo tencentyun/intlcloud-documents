@@ -22,7 +22,14 @@
 
 您可以参见 [设置文件夹权限](https://intl.cloud.tencent.com/document/product/436/35261) 为子账号授予指定文件夹的访问权限。如果为子账号进行更高级的授权，可参考文档 [权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
 
+### COS 返回 403 错误，该如何处理？
 
+您可以借助 COS 团队为开发者提供的 [COS 调试工具](https://web.debugger.coshelper.com/)，通过开发者配置 Hosts 抓包 COS API 请求，智能分析请求中出现的错误，也可以按照以下思路进行排查。
+
+1. 请检查您的以下配置信息是否正确：BucketName、APPID、Region、SecretId、SecretKey 等。
+2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。
+3. 授权详情请参见 [权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
+4. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置。
 
 ### COS 报错 AccessDenied，该如何处理？
 
@@ -32,12 +39,14 @@ AccessDenied 一般是由于未授权，缺少权限导致的报错。请按照�
 2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。授权操作请参见 [访问管理权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
 3. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置，详情请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
+COS 团队为开发者提供了 [COS 调试工具](https://web.debugger.coshelper.com/)，通过开发者配置 Hosts 抓包 COS API 请求，智能分析请求中出现的错误，给出错误提示和修改建议。
 
 ### 存储桶访问权限已达上限怎么办？
 
 每个主账号（即同一个 APPID），存储桶 ACL 规则数量最多为1000条。当设置的存储桶 ACL 大于1000条时，会出现此报错，因此建议删除无用的 ACL 规则。
 
->?我们不建议使用文件级别的 ACL 或 Policy。建议您在调用 API 或 SDK 时，若不需要对文件进行特别的 ACL 控制时，请将 ACL 相关参数（如 x-cos-acl、ACL 等）置空，保持继承存储桶权限。
+>? 我们不建议使用文件级别的 ACL 或 Policy。建议您在调用 API 或 SDK 时，若不需要对文件进行特别的 ACL 控制时，请将 ACL 相关参数（如 x-cos-acl、ACL 等）置空，保持继承存储桶权限。
+>
 
 ### 创建存储桶报错，权限设置不规范怎么办？
 
@@ -46,7 +55,7 @@ AccessDenied 一般是由于未授权，缺少权限导致的报错。请按照�
 以下提供两种解决方案供您参考：
 
 方案一：您可以把存储桶的访问权限修改为私有读写，详情请参见 [设置存储桶访问权限](https://intl.cloud.tencent.com/document/product/436/13315)。
-方案二：您可在【Policy 权限设置】中【添加策略】，设置相应的访问权限，详情请参见 [添加存储桶策略](https://intl.cloud.tencent.com/document/product/436/30927)。
+方案二：您可在 **Policy 权限设置**中**添加策略**，设置相应的访问权限，详情请参见 [添加存储桶策略](https://intl.cloud.tencent.com/document/product/436/30927)。
 
 
 ### 如果使用签名链接访问公有读的文件，签名时间过期了，是否可以访问到文件？
@@ -61,6 +70,7 @@ AccessDenied 一般是由于未授权，缺少权限导致的报错。请按照�
 2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。授权操作请参见  [访问管理权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
 3. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置，详情请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
+COS 团队为开发者提供了 [COS 调试工具](https://web.debugger.coshelper.com/)，通过开发者配置 Hosts 抓包 COS API 请求，智能分析请求中出现的错误，给出错误提示和修改建议。
 
 ### COS 如何限制他人下载文件到本地？
 
@@ -89,13 +99,13 @@ AccessDenied 一般是由于未授权，缺少权限导致的报错。请按照�
 
 #### 方法 1：
 
-1. 找到 **Policy 权限设置项**，在【图形设置】下单击【添加策略】。
-2. 按照下图添加对应操作权限，单击【确定】保存。
+1. 找到 **Policy 权限设置项**，在**图形设置**下单击**添加策略**。
+2. 按照下图添加对应操作权限，单击**确定**保存。
    ![Polcy图形设置](https://main.qcloudimg.com/raw/60e17e3473bfb309376a6e54327a41b0.png)
 
 #### 方法 2：
 
-找到 **Policy 权限设置项**，单击【策略语法】>【编辑】，输入以下表达式：
+找到 **Policy 权限设置项**，单击**策略语法 > 编辑**，输入以下表达式：
 
 ```
 {

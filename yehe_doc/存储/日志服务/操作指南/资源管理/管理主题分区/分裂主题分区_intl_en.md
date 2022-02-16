@@ -33,6 +33,8 @@ When a log topic is created, an initial number of partitions is set, which can b
 4. In the **Log Topic** column, click the name of the log topic to enter its basic information page.
 5. In the **Topic Partition Management** column, find the target topic partition to be split and click **Edit** as shown below:
 6. In the pop-up dialog box, select **Split** as the **Operation** and set the **Partition Quantity** as shown below:
-    >? Each partition has a left-closed, right-open range. Even split is used by default.
+<dx-alert infotype="explain" title=""> 
+Each partition has a left-closed, right-open range. Even split is used by default.
+</dx-alert>
 7. Click **OK** to complete split.
 
