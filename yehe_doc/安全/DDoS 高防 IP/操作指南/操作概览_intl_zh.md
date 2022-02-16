@@ -1,7 +1,7 @@
 您在使用 DDoS 高防 IP 时，可能碰到如配置 DDoS 高防 IP 实例、查看安全防护概览、查看操作日志以及设置安全事件通知等问题。本文将介绍使用 DDoS 高防 IP 的常用操作，供您参考。
 
 ## 防护概览
- [查看安全防护概览](https://intl.cloud.tencent.com/document/product/297/37206)
+ [防护概览](https://intl.cloud.tencent.com/document/product/297/44555)
 
 ## 防护配置
 **IP和端口防护**
@@ -9,7 +9,6 @@
 - [水印防护](https://intl.cloud.tencent.com/document/product/297/37211)
 - [特征过滤](https://intl.cloud.tencent.com/document/product/297/37212)
 - [AI 防护](https://intl.cloud.tencent.com/document/product/297/37213)
-- [异常连接防护](https://intl.cloud.tencent.com/document/product/297/37214)
 - [IP 黑白名单](https://intl.cloud.tencent.com/document/product/297/37215)
 
 **域名防护**
@@ -30,15 +29,11 @@
 
 
 ## 调度与解封
-- [配置智能调度](https://intl.cloud.tencent.com/document/product/297/37229)
-- [解封被封堵 IP](https://intl.cloud.tencent.com/document/product/297/37230)
+[配置智能调度](https://intl.cloud.tencent.com/document/product/297/37229)
 
-
-## 安全事件通知
-[设置安全事件通知](https://intl.cloud.tencent.com/document/product/297/15553)
 
 ## 操作日志
-[查看操作日志](https://intl.cloud.tencent.com/document/product/297/34100)
+[查看操作日志](https://intl.cloud.tencent.com/document/product/297/37232)
 
-
-
+##  封堵相关操作 
+[解除封堵](https://intl.cloud.tencent.com/document/product/297/43395)

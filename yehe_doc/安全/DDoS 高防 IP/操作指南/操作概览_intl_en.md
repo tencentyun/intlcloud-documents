@@ -1,7 +1,7 @@
 This document lists the references for common operations in Anti-DDoS Advanced.
 
 ## Protection Overview
- [Viewing security protection overview](https://intl.cloud.tencent.com/document/product/297/37206)
+ [Viewing security protection overview](https://intl.cloud.tencent.com/document/product/297/44555)
 
 ## Protection Configuration
 **IP and port protection**
@@ -9,7 +9,6 @@ This document lists the references for common operations in Anti-DDoS Advanced.
 - [Watermark protection](https://intl.cloud.tencent.com/document/product/297/37211)
 - [Attribute Filtering](https://intl.cloud.tencent.com/document/product/297/37212)
 - [AI protection](https://intl.cloud.tencent.com/document/product/297/37213)
-- [Exceptional connection protection](https://intl.cloud.tencent.com/document/product/297/37214)
 - [IP blocklist/allowlist](https://intl.cloud.tencent.com/document/product/297/37215)
 
 **Domain name protection**
@@ -30,12 +29,11 @@ This document lists the references for common operations in Anti-DDoS Advanced.
 
 
 ## Scheduling and Unblocking
-- [Configuring intelligent scheduling](https://intl.cloud.tencent.com/document/product/297/37229)
-- [Unblocking blocked IP](https://intl.cloud.tencent.com/document/product/297/37230)
+[Configuring intelligent scheduling](https://intl.cloud.tencent.com/document/product/297/37229)
 
-
-## Security Event Notification
-[Setting security event notification](https://intl.cloud.tencent.com/document/product/297/15553)
 
 ## Operation Log
-[Viewing operation log](https://intl.cloud.tencent.com/document/product/297/34100)
+[Viewing operation log](https://intl.cloud.tencent.com/document/product/297/37232)
+
+##  Blocking Operations
+[Unblocking an IP](https://intl.cloud.tencent.com/document/product/297/43395)
