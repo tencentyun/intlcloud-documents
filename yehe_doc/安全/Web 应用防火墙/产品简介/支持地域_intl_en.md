@@ -2,7 +2,7 @@ You can select a WAF type and region according to the deployment method and regi
 
 | WAF Type | Supported Regions |
 |---------|---------|
-| SaaS WAF | <ul><li>South China: Guangzhou</li><li>East China: Shanghai</li><li>North China: Beijing</li><li>Hong Kong (China)</li><li>Southeast Asia: Singapore</li><li>Northeast Asia: Seoul</li><li>Western US: Silicon Valley</li></ul></ul> |
+| SaaS WAF | <ul><li>South China: Guangzhou</li><li>East China: Shanghai</li><li>North China: Beijing</li><li>Hong Kong (China)</li><li>Southeast Asia: Singapore</li><li>Northeast Asia: Seoul</li><li>Western US: Silicon Valley</li><li>Southeast Asia: Bangkok</li><li>Southeast Asia: Jakarta</li><li>North America: Toronto</li><li>Europe: Moscow</li><li>Eastern US: Virginia</li><li>South America: Saopaulo</li><li>Northeast Asia: Tokyo</li></ul></ul> |
 |CLB WAF|<ul></li><li>South Asia: Mumbai</li><li>Southeast Asia: Bangkok, Singapore</li> <li>Northeast Asia: Seoul</li> <li>Europe: Frankfurt</li></ul></li></ul>|
 
 >?
