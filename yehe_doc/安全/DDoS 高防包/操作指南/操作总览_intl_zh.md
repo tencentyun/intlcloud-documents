@@ -22,7 +22,7 @@
 - [CC 频率限制](https://intl.cloud.tencent.com/document/product/1029/36137)
 
 ## 统计报表
-- [查看防护概览](https://intl.cloud.tencent.com/document/product/1029/36138)
+- [防护概览](https://intl.cloud.tencent.com/document/product/1029/44560)
 - [查看操作日志](https://intl.cloud.tencent.com/document/product/1029/36140)
 
 ##  封堵相关操作
