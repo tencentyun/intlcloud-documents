@@ -73,7 +73,7 @@ If the causes cannot be located by the one-click connectivity checker, you can [
 <td>MySQL security group policy</td>
 <td>The <strong>inbound rule</strong> of the MySQL instance's security group rejects the access from the IP and port of the CVM instance. Please refer to <a href="#maqzpzyw">Incorrect MySQL security group configuration</a> to modify the inbound rule to allow the access from the IP and port of the CVM instance.</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/ae30ffd0f9df350e1360ed3f870ff441.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/34a167fa5cdb8ccbb82891e787fa4fce.png">
    - Check items and corresponding solutions in the public network check are as follows:
 <table>
 <thead><tr><th>Check Item</th><th>Exception Handling</th></tr></thead>
@@ -83,7 +83,7 @@ If the causes cannot be located by the one-click connectivity checker, you can [
 <td>Public network access status</td>
 <td>The public network access has been disabled for the MySQL instance. Please refer to <a href="https://intl.cloud.tencent.com/document/product/236/37788">Connecting to MySQL Instance</a> to enable it.</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/502f00b7c8913baf52c9548a525c9772.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/034c6f332316319410833b6303579058.png">
 
 #### [Step 2. If the causes cannot be located by the one-click connectivity checker, refer to the following reasons to check](id:step2)
 [**Incorrect password**](id:mmwt)
