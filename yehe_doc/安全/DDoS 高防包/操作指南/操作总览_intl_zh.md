@@ -26,7 +26,6 @@
 - [查看操作日志](https://intl.cloud.tencent.com/document/product/1029/36140)
 
 ##  封堵相关操作
-- 查看封堵时间
 - [设置安全事件通知](https://intl.cloud.tencent.com/document/product/1029/36139)
-- 连接已被封堵的服务器
-- 解除封堵
+- [连接已被封堵的服务器](https://intl.cloud.tencent.com/document/product/1029/41757)
+- [解除封堵](https://intl.cloud.tencent.com/document/product/1029/41758)
