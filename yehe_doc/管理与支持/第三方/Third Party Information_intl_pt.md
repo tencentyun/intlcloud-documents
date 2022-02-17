@@ -19,7 +19,7 @@ Seu conteúdo (consulte [Adendo de processamento e segurança de dados](https://
 |Glorybird India Private Limited|	Serviços e infraestrutura de Data center|
 |Общество с ограниченной ответственностью «Кайт Бёрд АР»|	Serviços e infraestrutura de Data center|
 |Kite Bird Korea Yuhan Hoesa|	Serviços e infraestrutura de Data center|
-|Tencent Japão GK|	Serviços e infraestrutura de Data center|
+|Glory Bird Japan GK|	Serviços e infraestrutura de Data center|
 |PETRICHOR TELECOMUNICAÇÕES BRASIL LIMITADA|	Serviços e infraestrutura de Data center|
 |KITE BIRD Malásia sdn. Bhd.|	Serviços e infraestrutura de Data center|
 |Kite Bird Alemanha GmbH	|Serviços e infraestrutura de Data center|
