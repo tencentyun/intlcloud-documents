@@ -19,7 +19,7 @@ Tencent Cloud에서 서비스를 제공하는 데 사용하는 제3자란 무엇
 |Glorybird India Private Limited	|데이터 센터 서비스 및 인프라|
 |Общество с ограниченной ответственностью «Кайт Бёрд АР»|	데이터 센터 서비스 및 인프라|
 |Kite Bird Korea Yuhan Hoesa|	데이터 센터 서비스 및 인프라|
-|Tencent Japan GK	|데이터 센터 서비스 및 인프라|
+|Glory Bird Japan GK	|데이터 센터 서비스 및 인프라|
 |PETRICHOR TELECOMUNICAÇÕES BRASIL LIMITADA|	데이터 센터 서비스 및 인프라|
 |KITE BIRD malaysia sdn. bhd.|	데이터 센터 서비스 및 인프라|
 |Kite Bird Germany GmbH	|데이터 센터 서비스 및 인프라|
