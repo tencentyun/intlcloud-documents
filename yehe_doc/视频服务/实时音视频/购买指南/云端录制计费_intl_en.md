@@ -58,6 +58,7 @@ The unit prices of TRTC on-cloud recording are as follows:
          <td style="text-align:center">2K+</td>
          <td style="text-align:center">53.99</td>
  </tr> 
+</table>
 
 Video usage in TRTC is categorized into the following four types according to the aggregate resolution of all videos recorded and subscribed in the recording task. The fees for each type are calculated separately:
 
