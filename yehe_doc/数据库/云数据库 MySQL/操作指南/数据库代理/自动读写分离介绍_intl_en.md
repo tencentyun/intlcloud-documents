@@ -16,7 +16,7 @@ The dedicated database proxy can help you maintain a database connection pool to
 SaaS applications and traditional ecommerce applications may make database connections idle to minimize the response time when users reconnect. You can use the dedicated database proxy to retain idle connections and establish database connections for active requests as needed instead of excessively increasing the threshold or providing database services with higher specifications to support most idle connections.
 
 - **Applications requiring highly smooth failover**
-With the dedicated database proxy, you can build applications that can tolerate active and passive database failures in an imperceptible manner with no need to write complex failure processing code. The dedicated database proxy will automatically route read traffic to new database instances while retaining the application connections.
+With the dedicated database proxy, you can build applications that can tolerate active and passive database failures in an imperceptible manner without writing complex failure processing code. The dedicated database proxy will automatically route read traffic to new database instances while retaining the application connections.
 
 ![](https://main.qcloudimg.com/raw/a5f23e2235bc918b1a7e816c8f2c947b.png)
 
@@ -25,7 +25,7 @@ With the dedicated database proxy, you can build applications that can tolerate 
 - Native linkage support improves the performance and reduces the maintenance costs.
 - You can flexibly set weights and thresholds.
 - Failover is supported, so that even if the database proxy fails, requests can access the source database normally.
-- If the source instance is switched, has configuration adjustment, or has read-only instances added or removed, the database proxy can dynamically hot load the configuration without causing network disconnections or restarts.
+- When a source instance is switched, or its configuration is changed, or a read-only instance is added/removed, the database proxy can dynamically hot reload the configuration without causing network disconnections or restarts.
 
 ## Read/Write Separation Routing Rules
 ### Sending to source instance
