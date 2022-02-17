@@ -73,7 +73,7 @@
 <td>MySQL 安全组策略</td>
 <td>检测到您 MySQL 实例所绑定安全组的<strong>入站规则</strong>未放通对 IP 端口的访问，请参见 <a href="#maqzpzyw">MySQL 安全组配置有误</a> 放通入站规则</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/ae30ffd0f9df350e1360ed3f870ff441.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/034c6f332316319410833b6303579058.png">
    - 若为外网检查，检查项及对应处理建议如下：
 <table>
 <thead><tr><th>检查项</th><th>异常及处理方法</th></tr></thead>
@@ -83,7 +83,7 @@
 <td>外网开通状态</td>
 <td>检测到您的 MySQL 实例未开启外网，可参考 <a href="https://intl.cloud.tencent.com/document/product/236/37788">开启外网</a></td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/502f00b7c8913baf52c9548a525c9772.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/34a167fa5cdb8ccbb82891e787fa4fce.png">
 
 #### [步骤2：若工具检查未能解决问题时，可以参考如下原因检查](id:step2)
 [**密码有误**](id:mmwt)
