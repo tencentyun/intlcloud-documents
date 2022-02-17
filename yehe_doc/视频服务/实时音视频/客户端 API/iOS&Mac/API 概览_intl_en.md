@@ -1,4 +1,4 @@
-### Create Instance And Event Callback
+### Instance creation and event callback APIs
 | API | DESC |
 |-----|-----|
 | [sharedInstance](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ab6884975e069628328d05cf0e2c3dc67) | Create `TRTCCloud` instance (singleton mode) |
