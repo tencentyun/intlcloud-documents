@@ -58,6 +58,7 @@ TRTC 云端录制音视频单价如下：
          <td style="text-align:center">2K+</td>
          <td style="text-align:center">53.99</td>
  </tr> 
+ </table>    
 
 TRTC 根据录制服务任务下录制订阅的所有视频的集合分辨率，将视频用量分为如下四个类型并分别计算各类型视频的费用：
 
