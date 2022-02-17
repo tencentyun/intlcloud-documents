@@ -214,11 +214,11 @@
 | [isCameraZoomSupported](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a8662b8ecab04a55a321ee9f16d0680a7) | Query whether the current camera supports zoom |
 | [setZoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a9777fe95f7830746c1ba6b10446c37a0) | Set camera zoom ratio (focal length) |
 | [isCameraTorchSupported](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#acd005524f8e2c2fbfcc415049e666ced) | Query whether the device supports flash |
-| [enbaleTorch](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#af6b128ee01d91a63dc1976db7a9be555) | Enable/Disable flash |
+| [enableTorch](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#af6b128ee01d91a63dc1976db7a9be555) | Enable/Disable flash |
 | [isCameraFocusPositionInPreviewSupported](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a0e164f727b990581a42f97dca1bf7548) | Query whether the camera supports setting focus |
 | [setFocusPosition](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a6a77cc99c41b926cd99909ae1ace39ae) | Set the focal position of camera |
 | [isCameraAutoFocusFaceModeSupported](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a5af361145f04227ff1a451fee2705a77) | Query whether the device supports the automatic recognition of face position |
-| [enableAutoFaceFoucs](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a32a8f584879b17f211df75494a5be96c) | Enable/Disable face auto focus |
+| [enableAutoFaceFocus](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a32a8f584879b17f211df75494a5be96c) | Enable/Disable face auto focus |
 | [startCameraDeviceTestInView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a1bd6289b969adde0096c83d6a5532332) | Start camera test |
 | [stopCameraDeviceTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a1b67fa3f322efe538d924b381c06e676) | Start camera test |
 | [startMicDeviceTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#aa6f467c12fcea7e09cc97861d511498a) | Start mic test |
