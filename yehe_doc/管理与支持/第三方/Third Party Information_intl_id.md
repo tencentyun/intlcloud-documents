@@ -19,7 +19,7 @@ Konten Anda (lihat [Adendum Pemrosesan Dan Keamanan Data ](https://intl.cloud.te
 | Glorybird India Private Limited            | Layanan dan infrastruktur pusat data |
 | Общество с ограниченной ответственностью «Кайт Бёрд АР»   | Layanan dan infrastruktur pusat data |
 | Kite Bird Korea Yuhan Hoesa                | Layanan dan infrastruktur pusat data |
-| Tencent Japan GK                           | Layanan dan infrastruktur pusat data |
+| Glory Bird Japan GK                           | Layanan dan infrastruktur pusat data |
 | PETRICHOR TELECOMUNICAÇÕES BRASIL LIMITADA | Layanan dan infrastruktur pusat data |
 | KITE BIRD malaysia sdn. bhd.               | Layanan dan infrastruktur pusat data |
 | Kite Bird Germany GmbH                     | Layanan dan infrastruktur pusat data |
