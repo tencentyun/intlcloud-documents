@@ -7,15 +7,16 @@
 - IP 带宽包按照带宽类型，可分为如下类型的带宽包：
 <table>
 <tr><th width="30%">带宽类型</th><th>限制说明</th></tr>
-<tr><td><a href="#bgp">常规 BGP 带宽包</a></td><td>可在控制台手动创建。</td></tr>
-<tr><td><a href="#anycast">Anycast 加速 BGP 带宽包</a></td><td>创建加速 IP 类型的 EIP 时自动创建，不支持手动创建。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/684/15254">常规 BGP 带宽包</a></td><td rowspan="2">可在控制台手动创建。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/684/15254">精品 BGP 带宽包</a></td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/684/15254">Anycast 加速 BGP 带宽包</a></td><td>创建加速 IP 类型的 EIP 时自动创建，不支持手动创建。</td></tr>
 </table>
 
 ## 操作步骤
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，单击左侧导航栏的【共享带宽包】。
 2. 在“共享带宽包”页面，选择所在地域，单击左上角的【新建】。
 3. 在“新建共享带宽包”对话框中，输入名称、选择计费模式，单击【确定】。
-![](https://main.qcloudimg.com/raw/814c74cc9239f580058214409bfdc57e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dc1d8af7fe8cf262d2067e8cc6df9dcf.png)
 <table>
 	<tr><th width="15%">参数</th><th>说明</th></tr>
 	<tr><td><strong>名称</strong></td><td><ul><li>支持的字符集为：<code>a - z</code>、<code>0 - 9</code>、<code>.</code>、<code>-</code>。</li><li>长度限制：1 - 60个字符。</li></ul></td></tr>
@@ -24,7 +25,6 @@
 	<tr><td><strong>高级选项</strong></td><td>支持添加标签，即键-值对（Key-Value），用于分类管理共享带宽包资源。</tr>
 	<tr><td><strong>单价</strong></td><td>计费详情请参见 <a href="https://intl.cloud.tencent.com/document/product/684/15254">计费价格</a>。</td></tr>
 </table>
-
 
 
 ## 后续操作
