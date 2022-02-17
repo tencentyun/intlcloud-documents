@@ -21,7 +21,7 @@
 |Glorybird India Private Limited|	数据中心服务和基础设施|
 |Общество с ограниченной ответственностью «Кайт Бёрд АР»|	数据中心服务和基础设施|
 |Kite Bird Korea Yuhan Hoesa|	数据中心服务和基础设施|
-|Tencent Japan GK|	数据中心服务和基础设施|
+|Glory Bird Japan GK|	数据中心服务和基础设施|
 |PETRICHOR TELECOMUNICAÇÕES BRASIL LIMITADA|	数据中心服务和基础设施|
 |KITE BIRD malaysia sdn. bhd.|	数据中心服务和基础设施|
 |Kite Bird Germany GmbH	|数据中心服务和基础设施|
