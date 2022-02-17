@@ -23,6 +23,6 @@ You have [enabled database proxy](https://intl.cloud.tencent.com/document/produc
 <td>It is a short description of the database proxy address for easier management.</td></tr>
 </tbody></table>
 3. In the pop-up window, modify the proxy address and click **OK**.
->!Modifying the private network address affects the database business being accessed. We recommend you modify the address during off-peak hours. Make sure that your business has a reconnection mechanism.
+>!Modifying the proxy address affects the database business being accessed. We recommend you modify the address during off-peak hours. Make sure that your business has a reconnection mechanism.
 >
 ![](https://main.qcloudimg.com/raw/982fd53d880ab1a6d4f8df0372a99613.png)
