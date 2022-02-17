@@ -7,7 +7,7 @@ After an SMS signature is submitted, it will be reviewed within two hours genera
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 
-2. Select **Mainland China SMS** > **Signatures** on the left sidebar and click **Create Signature**.
+2. Select **Chinese Mainland SMS** > **Signatures** on the left sidebar and click **Create Signature**.
 
 3. Take into account your actual needs and
 
