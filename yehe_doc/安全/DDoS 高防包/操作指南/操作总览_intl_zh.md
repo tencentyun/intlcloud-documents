@@ -13,7 +13,7 @@
 - [AI 防护](https://intl.cloud.tencent.com/document/product/1029/36132)
 - [IP黑白名单](https://intl.cloud.tencent.com/document/product/1029/36134)
 - [IP 端口限速](https://intl.cloud.tencent.com/document/product/1029/36133)
-- [连接类攻击防护](https://intl.cloud.tencent.com/document/product/1029/41749)
+- [连接类攻击防护](https://intl.cloud.tencent.com/document/product/1029/36133)
 - [区域封禁](https://intl.cloud.tencent.com/document/product/1029/41750)
 
 **域名防护**
