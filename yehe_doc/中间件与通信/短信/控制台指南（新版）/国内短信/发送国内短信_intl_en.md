@@ -36,7 +36,7 @@
 
 You can view the SMS delivery result in the following ways:
 - On the **Chinese Mainland SMS** > **Bulk SMS** page, click **Details & Report Analysis** on the line of the target task to view its detailed record and report analysis.
-- Select **Statistics** > **Chinese Mainland SMS** and you can filter and view the statistics and relevant analysis of Chinese Mainland SMS by application, signature, body template, and time.
+- Select **Business Statistics** > **Chinese Mainland SMS** and you can filter and view the statistics and relevant analysis of Chinese Mainland SMS by application, signature, body template, and time.
 
 ## Related Documentation
 You can also send SMS via APIs or SDKs. For detailed directions, please see [API documentation](https://intl.cloud.tencent.com/document/product/382/39155) or SDK documentation.
