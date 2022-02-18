@@ -1,8 +1,7 @@
 ## Feature Overview[](id:FeaturesOverview)
 
-CFS provides the **scheduled snapshot** feature that allows developers to flexibly configure backup task policies.
+CFS provides the **scheduled snapshot** feature that allows developers to flexibly configure snapshot policies.
 The following table describes the scheduled snapshot policies recommended for different businesses.
-
 <table>
 	<tr>
 		<th>Scenario</th>
@@ -168,16 +167,16 @@ The following table describes the content and features of scheduled snapshot pol
 
 1. Log in to the CFS console and go to the [Snapshot Policies](https://console.cloud.tencent.com/cfs/snapshot/policy?rid=1) page.
 2. Select a region.
-3. Select either of the following methods to delete scheduled snapshot policies.
- - Deleting a single policy: click **More** > **Delete Policy** in the row of the target policy.
- - Deleting policies in batches: select the scheduled snapshot policies to delete and click **Delete** above the scheduled snapshot policy list.
+3. Delete a scheduled snapshot policy as follows:
+ Click **More** > **Delete Policy** in the row of the target policy.
 
 ### Setting permanent storage for scheduled snapshots
 
 >? If **Snapshot Retention** is set to **Permanent** for a scheduled snapshot policy, you do not need to perform the following operations for snapshots automatically created using this policy.
 >
 
-1. Log in to the CFS console and go to the [Snapshot Policies](https://console.cloud.tencent.com/cfs/snapshot/policy?rid=1) page.
+1. Log in to the CFS console and go to the [Snapshot List](https://console.intl.cloud.tencent.com/cfs/snapshot/list?rid=1) page.
 2. Select a region.
 3. Click the ID of the target snapshot.
 4. On the details page, click **Permanent** to permanently store the snapshot, and **Snapshot Retention** of the snapshot is changed to **Permanent**.
+
