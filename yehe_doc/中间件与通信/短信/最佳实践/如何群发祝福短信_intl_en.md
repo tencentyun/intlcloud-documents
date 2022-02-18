@@ -84,7 +84,7 @@ Before sending an SMS, you need to confirm that both the SMS signature and body 
 You can send an SMS through the console or [API](https://intl.cloud.tencent.com/document/product/382/34859). This document uses the console as an example.
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
-2. Select **Chinese Mainland SMS** > **Bulk SMS** on the left sidebar and click **Create Bulk SMS Task**.
+2. Select **Chinese Mainland SMS** > **Bulk SMS** on the left sidebar and click **Create Bulk SMS Sending Task**.
 3. Configure the following parameters as needed:
  <table>
      <tr>
