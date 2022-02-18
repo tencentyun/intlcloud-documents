@@ -33,7 +33,7 @@ After an SMS signature or body template is submitted, it will be reviewed within
      </tr>
 	 <tr>      
        <td>Signature purpose</td>   
-	     <td>For self-use (the signature is a company name, website, product name, or something else verified under the current account)</td>   
+	     <td>For verified entities (such as organizations, websites or product names with signatures verified by the account)</td>   
      </tr> 
 	 <tr>      
        <td>Signature type</td>   
