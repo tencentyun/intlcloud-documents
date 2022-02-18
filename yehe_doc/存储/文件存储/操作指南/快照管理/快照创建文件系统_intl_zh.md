@@ -48,7 +48,7 @@
      </tr>
      <tr>
        <td>定期快照</td>
-       <td>可选参数。您可以在创建文件系统时选择定期快照，可根据已创建的定期快照策略，对该文件系统进行定期创建快照。关于定期备份的更多详细信息，请参考 <a href="https://cloud.tencent.com/document/product/582/62814">定期快照</a>。
+       <td>可选参数。您可以在创建文件系统时选择定期快照，可根据已创建的定期快照策略，对该文件系统进行定期创建快照。关于定期备份的更多详细信息，请参考 <a href="https://intl.cloud.tencent.com/document/product/582/44915">定期快照</a>。
        </td>
      </tr>
    	 <tr>
@@ -57,7 +57,7 @@
      </tr>
    	 <tr>
        <td>云联网</td>
-       <td>仅 Turbo 系列需填写云联网，需选择一个现有云联网或新创建一个。详细用途可参考 <a href="https://cloud.tencent.com/product/ccn">云联网介绍</a>。 
+       <td>仅 Turbo 系列需填写云联网，需选择一个现有云联网或新创建一个。详细用途可参考 <a href="https://intl.cloud.tencent.com/products/ccn">云联网介绍</a>。 
      </tr>
    	<tr>
        <td>网段</td>
