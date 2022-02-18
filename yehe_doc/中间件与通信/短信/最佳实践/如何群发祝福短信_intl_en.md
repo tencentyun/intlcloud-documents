@@ -1,6 +1,6 @@
 
 Best wishes for birthdays, holidays, and other matters is an important way for enterprises to retain existing customers. You can use Tencent Cloud SMS to send such messages to users on special days such as holidays, member birthdays (anniversaries), and days of major weather changes for customer care.
->Best wishes messages are marketing SMS and can be sent only by **verified organizational users**. For more information, please see [Differences in Rights](https://intl.cloud.tencent.com/document/product/382/13444#.E6.9D.83.E7.9B.8A.E5.8C.BA.E5.88.AB).
+>?Best wishes messages are marketing SMS and can be sent only by **verified organizational users**. For more information, please see [Differences in Rights](https://intl.cloud.tencent.com/document/product/382/13444#.E6.9D.83.E7.9B.8A.E5.8C.BA.E5.88.AB).
 
 This document uses sending a Spring Festival best wishes message to members by company A as an example to describe how to send such messages quickly.
 
@@ -14,10 +14,11 @@ This document uses sending a Spring Festival best wishes message to members by c
 
 <span id="Step1"></span>
 ## Step 1. Create a signature
->After an SMS signature is submitted, it will be reviewed within two hours generally. You can [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470) to receive review result notifications.
+
+>?After an SMS signature is submitted, it will be reviewed within two hours generally. You can [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470) to receive review result notifications.
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
-2. Select **Mainland China SMS** > **Signature Management** on the left sidebar and click **Create Signature**.
+2. Select **Chinese Mainland SMS** > **Signature Management** on the left sidebar and click **Create Signature**.
 3. Set the following parameters as needed and according to the signature review standards:
  <table>
      <tr>
@@ -53,7 +54,7 @@ This document uses sending a Spring Festival best wishes message to members by c
 >After an SMS body template is submitted, it will be reviewed within two hours generally. You can [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470) to receive review result notifications.
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
-2. Select **Mainland China SMS** > **Template Management** on the left sidebar and click **Create Body Template**.
+2. Select **Chinese Mainland SMS** > **Template Management** on the left sidebar and click **Create Body Template**.
 3. Set the following parameters as needed and according to the body template review standards:
  <table>
      <tr>
@@ -83,7 +84,7 @@ Before sending an SMS, you need to confirm that both the SMS signature and body 
 You can send an SMS through the console or [API](https://intl.cloud.tencent.com/document/product/382/34859). This document uses the console as an example.
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
-2. Select **Mainland China SMS** > **Bulk SMS** on the left sidebar and click **Create Bulk SMS Task**.
+2. Select **Chinese Mainland SMS** > **Bulk SMS** on the left sidebar and click **Create Bulk SMS Task**.
 3. Configure the following parameters as needed:
  <table>
      <tr>
@@ -125,5 +126,5 @@ You can send an SMS through the console or [API](https://intl.cloud.tencent.com/
 
 ## Step 4. View SMS delivery result
 You can view the SMS delivery result in the following ways:
-- On the **Mainland China SMS** > **Bulk SMS** page, click **Details & Report Analysis** on the line of the target task to view its detailed record and report analysis.
-- Select **Statistics** > **Mainland China SMS** and you can filter and view the statistics and relevant analysis of Mainland China SMS by application, signature, body template, and time.
+- On the **Chinese Mainland SMS** > **Bulk SMS** page, click **Details & Report Analysis** on the line of the target task to view its detailed record and report analysis.
+- Select **Statistics** > **Chinese Mainland SMS** and you can filter and view the statistics and relevant analysis of Chinese Mainland SMS by application, signature, body template, and time.
