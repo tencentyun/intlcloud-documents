@@ -140,7 +140,7 @@ function(err, data) { ... }
 
 | Parameter | Description | Type |
 | ----------------- | ------------------------------------------------------------ | ----------- |
-| err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
 | - headers | Headers | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |

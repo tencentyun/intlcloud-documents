@@ -97,7 +97,7 @@ Response:
 }
 ```
 
-Sample 3. Listing all files in a directory
+Sample 3. Listing all files in the `a` directory.
 
 ```js
 var listFolder = function(marker) {
@@ -127,8 +127,8 @@ listFolder();
 | Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Prefix | Key prefix to query objects by | String | No   |
-| Delimiter | Separating symbol used to group object keys, which is usually `/`. Objects with identical paths between `Prefix` or, if no `Prefix` is specified, the beginning of their keys, and the first delimiter are grouped together and defined as common prefixes. All common prefixes are listed. | String | No |
-| Marker | Key of the object after which the returned list begins. Entries are listed in UTF-8 lexicographical order by default. | String | No |
+| Delimiter | Separating symbol used to group object keys. It is usually `/`. The identical paths between `Prefix` or, if no `Prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix. All common prefixes will be listed. | String | No |
+| Marker | Indicates where the object key listing begins. Entries are listed starting from the key after the `Marker` in UTF-8 lexicographical order by default. | String | No |
 | MaxKeys | Maximum number of entries returned in a single response, which is `1000` (the maximum value allowed) by default | String | No |
 | encoding-type | Indicates the encoding method of the returned value. Valid value: `url`, which means that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded as `%E8%85%BE%E8%AE%AF%E4%BA%91`. | String | No |
 
@@ -140,13 +140,13 @@ function(err, data) { ... }
 
 | Parameter | Description | Type |
 | ----------------- | ------------------------------------------------------------ | ----------- |
-| err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
 | - headers | Headers | Object |
 | data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
 | - headers | Headers | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
-| - Name | Bucket name in the format of `BucketName-APPID`, such as `examplebucket-1250000000` | String |
+| - Name | Bucket name in the format of `&lt;BucketName-APPID>`, such as `examplebucket-1250000000` | string |
 | - Prefix          | Key prefix by which objects are queried. Returned objects are listed according to the UTF-8 lexicographical order of their keys after the prefix.   | String      |
 |  - Marker | Marker after which the returned list begins. By default, entries are listed in UTF-8 binary order. | String |
 | - MaxKeys | Maximum number of entries returned in a single response | String |
@@ -158,10 +158,10 @@ function(err, data) { ... }
 | - EncodingType | Encoding type of the returned values. This parameter is applicable to `Delimiter`, `Marker`, `Prefix`, `NextMarker`, and `Key`, | String |
 | - Contents | A list of object metadata | ObjectArray |
 | - - Key | Object key, i.e., object name | String |
-| - - ETag | MD5 checksum of the object </br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end.** | String |
+| - - ETag | MD5 checksum of the object, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end.** | String |
 | - - Size | Object size, in bytes | String |
 | - - LastModified  | Last modified time of the object, in ISO 8601 format, for example, `2019-05-24T10:56:40Z` | String |
 | - - Owner | Information about the object owner | Object |
-| - - - ID | Complete ID of the object owner in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]` </br>Example: `qcs::cam::uin/100000000001:uin/100000000001`, where 100000000001 is the UIN | String |
+| - - - ID | Complete ID of object owner in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, for example, `qcs::cam::uin/100000000001:uin/100000000001`, where `100000000001` is the uin. | String |
 | - - - DisplayName | Name of the object owner | String |
-| - - StorageClass | Storage class of the object, such as `STANDARD`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
+| - - StorageClass | Storage class of the object. For the enumerated values, such as `STANDARD`, `STANDARD_IA` and `ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |

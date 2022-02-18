@@ -9,7 +9,7 @@ An image can be processed:
 
 
 >? 
-> - Image processing is charged by CI. For detailed pricing, please see the image processing prices of CI.
+> - Image Processing is charged by CI. For detailed pricing, please see **Basic image processing fee** in [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 > - You can overlay up to 10 image watermarks over a single image.
 > - An animated image cannot be used as a watermark.
 > 
@@ -71,7 +71,7 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
 >
 
 ## Parameters
@@ -89,7 +89,8 @@ In the code above, `watermark` is the operation name and the number `1` indicate
 | /scatype/    | Scaling mode for the image watermark (relative to the input image). This parameter must be used together with `/spcent/`. Valid values: <br><li>`1`: scales by width.<br><li>`2`: scales by height.<br><li>`3`: scales by area. </li> |
 | /spcent/ | Scale ratio of the image watermark, in permillage. This parameter must be used together with `/scatype/`. Value range: <li>1−1000 (if `/scatype/` is set to `1` </li><li>1−1000 (if `/scatype/` is set to 2)</li><li>1−250 (if `/scatype/` is set to `3`) <br> Example: `http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/xxxxxxx/scatype/3/spcent/250`</li> |
 | /dissolve/ | Opacity of the image watermark. Value range: 1−100. Default value: `90` (meaning 90% opacity) |
-
+| /batch/ | Whether to tile the image watermark. If this parameter is set to `1`, the image watermark will be tiled across the input image. |
+| /degree/ | Angle to rotate the image watermark. This parameter is valid only when `/batch/` is set to `1`. Value range: 0−360. Default value: `0` |
 
 >! An image watermark must:  
 > - Be stored in the same bucket as the input image.
@@ -105,8 +106,8 @@ The 3x3 grid position diagram is as follows. Once you specify the `gravity` para
 
 >?
 > - If `gravity` is set to `center`, `dx` and `dy` are invalid.
-> - If `gravity` is set to `north` or `south`, `dx` is invalid and the watermark will be centered horizontally.
-> - If `gravity` is set to `west` or `east`, `dy` is invalid and the watermark will be centered vertically.
+> - If `gravity` is set to `north` or `south`, `dx` is invalid.
+> - If `gravity` is set to `west` or `east`, `dy` is invalid.
 > 
 
 ## Examples
@@ -126,7 +127,7 @@ After an image watermark is added:
 
 #### Example 2: adding an image watermark with a signature carried
 
-This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&):
+This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast
