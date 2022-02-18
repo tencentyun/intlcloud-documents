@@ -101,11 +101,11 @@ You can send an SMS through the console or [API](https://intl.cloud.tencent.com/
      </tr> 
 	 <tr>
 	     <td>Sent time</td>   
-	     <td>Select **Send by Schedule** and specify a reasonable time point down to the second, such as **2020-01-25 00:00:00**. <br>As only a time point within one month can be specified for schedule, please configure the sending task appropriately.</td>   
+	     <td>Select **Send by schedule** and specify a reasonable time point down to the second, such as **2020-01-25 00:00:00**. <br>As only a time point within one month can be specified for schedule, please configure the sending task appropriately.</td>   
      </tr> 
 	 <tr>
 	     <td>Recipient</td>   
-	     <td>Click **Download Standard Template**, enter recipient's mobile number and custom SMS content in the form by referring to the <a href="#Table2">sample table</a>, and click **Select File** to upload it. The maximum form size supported is 30 MB.</td>   
+	     <td>Click **Download Standard Template**, enter recipient's mobile number and custom SMS content in the form by referring to the <a href="#Table2">sample table</a>, and click **Click here** to upload it. The maximum form size supported is 30 MB.</td>   
      </tr> 
 </table>
  Below is a sample table:
