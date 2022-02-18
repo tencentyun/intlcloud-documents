@@ -24,7 +24,7 @@ After an SMS signature or body template is submitted, it will be reviewed within
 ### Step 1.1. Create a signature[](id:Step1_1)
 
 1. Log in to the [SMS console](https://console.cloud.tencent.com/smsv2).
-2. Select **Chinese Mainland SMS** > **Signature Management** on the left sidebar and click **Create Signature**.
+2. Select **Chinese Mainland SMS** > **Signatures** on the left sidebar and click **Create Signature**.
 3. Set the following parameters as needed:
  <table>
      <tr>
