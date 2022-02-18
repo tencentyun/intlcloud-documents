@@ -10,7 +10,7 @@
 
 | iOS | Android | Mac OS | Windows | Electron| Web端 |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| &#10003; |  &#10003; | &#10003; | &#10003; | &#10003; | &#10003;（参考：[Web 端教程](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-24-advanced-network-quality.html) )|
+| &#10003; |  &#10003; | &#10003; | &#10003; | &#10003; | &#10003;（参考：[Web 端教程](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-24-advanced-network-quality.html) )|
 
 ## 测速的原理
 
