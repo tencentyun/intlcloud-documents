@@ -6,7 +6,7 @@
 
 ## Directions
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/sms).
-2. Select **Global SMS** > **Bulk SMS** on the left sidebar and click **Create Bulk SMS Task**.
+2. Select **Global SMS** > **Bulk SMS** on the left sidebar and click **Create Bulk SMS Sending Task**.
 4. Configure the following parameters as needed:
  - Template Name: select an approved body template to be used (different templates are distinguished by template name).
  - Signature Name: select an approved SMS signature to be used (different signatures are distinguished by signature name), which is optional.
