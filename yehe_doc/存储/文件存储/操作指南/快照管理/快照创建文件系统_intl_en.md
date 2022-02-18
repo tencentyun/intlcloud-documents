@@ -48,7 +48,7 @@ This document describes how to use a snapshot to create a file system on the sna
      </tr>
      <tr>
        <td>Scheduled Snapshot</td>
-       <td>Optional. When creating a file system, you can select **Scheduled Snapshot** to create snapshots for the file system periodically based on the created scheduled snapshot policy. For more information, see <a href="https://cloud.tencent.com/document/product/582/62814">Scheduled Snapshot</a>.
+       <td>Optional. When creating a file system, you can select **Scheduled Snapshot** to create snapshots for the file system periodically based on the created scheduled snapshot policy. For more information, see <a href="https://intl.cloud.tencent.com/document/product/582/44915">Scheduled Snapshot</a>.
        </td>
      </tr>
    	 <tr>
@@ -57,7 +57,7 @@ This document describes how to use a snapshot to create a file system on the sna
      </tr>
    	 <tr>
        <td>CCN</td>
-       <td>Required only for the Turbo series. Select an existing CCN or create a new one. For more information about CCN, please see <a href="https://cloud.tencent.com/product/ccn">here</a>. 
+       <td>Required only for the Turbo series. Select an existing CCN or create a new one. For more information about CCN, please see <a href="https://intl.cloud.tencent.com/products/ccn">here</a>. 
      </tr>
    	<tr>
        <td>IP Range</td>
