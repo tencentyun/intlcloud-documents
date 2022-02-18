@@ -9,8 +9,8 @@
 
 
 ## Viewing Click Data
-After successfully [creating a signature and a template](https://intl.cloud.tencent.com/document/product/382/35449) and sending a Mainland China SMS message, you can view the click data for a single short URL such as number of SMS recipients, number of short URL clickers, and short URL CTR on the **Click Statistics** page.
-1. Select **Business Statistics** > **Mainland China SMS** on the left sidebar and click **Click Statistics**.
+After successfully [creating a signature and a template](https://intl.cloud.tencent.com/document/product/382/35449) and sending a Chinese Mainland SMS message, you can view the click data for a single short URL such as number of SMS recipients, number of short URL clickers, and short URL CTR on the **Click Statistics** page.
+1. Select **Business Statistics** > **Chinese Mainland SMS** on the left sidebar and click **Click Statistics**.
 2. Select a time period, enter the short URL name/short URL, and click **Query**.
 
 >?If this short URL is bound to a global SMS template, you can select **Business Statistics** > **Global SMS** on the left sidebar and view the click data.
