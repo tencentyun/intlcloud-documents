@@ -11,7 +11,9 @@ UserSigの計算原理を次の図に示します。SDKAppID、UserID、ExpireTi
 usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire + 
                                  base64(userid + sdkappid + currtime + expire)))
 ```
-
+>?
+>- `currtime`は現在のシステムの時間で、`expire`は署名の期限切れの時間です。
+>- UserSigの具体的な計算取得方法を知りたい場合は、 [UserSigの詳細な説明](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 [](id:que2)
 ### TRTCではルームを同時にいくつ作成できますか。
@@ -28,17 +30,17 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 サポートしています。次のドキュメントをご参照ください。
 - [画面共有(Windows)](https://intl.cloud.tencent.com/document/product/647/37335)
 - [画面共有(Mac)](https://intl.cloud.tencent.com/document/product/647/37336)
-- [画面共有(Web)](https://intl.cloud.tencent.com/document/product/647/37336)
+- [画面共有（Web）](https://intl.cloud.tencent.com/document/product/647/35163)
 
-画面共有インターフェースの詳細は[Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131)またはWindows（C#）APIをご参照ください。そのほか、[Electronインターフェース](https://intl.cloud.tencent.com/document/product/647/35141)もお使いいただけます。
+画面共有インターフェースの詳細については[Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131)をご参照ください。また、[Electronインターフェース](https://intl.cloud.tencent.com/document/product/647/35141)もご利用いただけます。
 
 
 [](id:que5)
 ### TRTCはどのプラットフォームをサポートしますか。
 サポートしているプラットフォームは、iOS、Android、Windows(C++)、Windows(C#)、Mac、Web、Electronです。詳細については、[プラットフォームのサポート](https://intl.cloud.tencent.com/document/product/647/35078)をご参照ください。
 
-[](id:que6)
 
+[](id:que6)
 ### TRTCは最大何人の同時通話をサポートできますか。
 - 通話モードでは、1ルームあたり最大300人の同時接続、最大50人のカメラまたはマイクの同時使用をサポートしています。
 - ライブストリーミングモードでは、1ルームあたり視聴者10万人のオンライン視聴と、キャスター50人のカメラまたはマイクの使用をサポートしています。
@@ -47,7 +49,7 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 [](id:que7)
 ###  TRTCはライブストリーミングのシーン類のアプリケーションをどのように実現しますか。
 TRTCは、特にオンラインライブストリーミングのシーン向けに、10万人向けの低遅延ライブストリーミングソリューションをリリースしました。これにより、キャスターとマイク接続したキャスター間の最小遅延が200ms、通常の視聴者の遅延が1秒以内になるだけでなく、脆弱なネットワークに極めて高い耐性を持つこととなり、モバイル端末の複雑なネットワーク環境に対応します。
-具体的な操作ガイドについては、[ライブストリーミングクイックスタート](https://intl.cloud.tencent.com/document/product/647/35107)をご参照ください。
+操作ガイドの詳細は[ライブストリーミングクイックスタートモード](https://intl.cloud.tencent.com/document/product/647/35107)をご参照ください。
 
 
 
@@ -69,7 +71,7 @@ TRTCは、特にオンラインライブストリーミングのシーン向け�
 
 
 [](id:que11)
-### iOS端末はSwiftの統合をサポートしていますか。
+###  iOS端末はSwiftの統合をサポートしていますか？
 サポートしています。サードパーティライブラリのフローにそのまま従ってSDKを統合すればOKです。また、[Demoクイックスタート(iOS&Mac)](https://intl.cloud.tencent.com/document/product/647/35086)も参照することができます。
 
 
@@ -80,13 +82,13 @@ TRTCは、特にオンラインライブストリーミングのシーン向け�
 
 
 [](id:que13)
-### デスクトップブラウザSDKログのエラーメッセージのうち、NotFoundError、NotAllowedError、NotReadableError、OverConstrainedError及びAbortErrorは、それぞれどういう意味ですか。
+### Web端末SDKログのエラーメッセージのうち、NotFoundError、NotAllowedError、NotReadableError、OverConstrainedErrorおよびAbortErrorは、それぞれどういう意味ですか。
 
 
-| エラー名 | 説明 | 推奨する対処方法 |
+| エラー名               | 説明 | 推奨する対処方法 |
 |---------|---------|---------|
 | NotFoundError | リクエストを満たすパラメータのメディアタイプ（オーディオ、ビデオ、画面共有を含む）が見つかりません。<br>例えば、PCにカメラがないのに、ブラウザにビデオストリームを取得するようリクエストがあった場合、このエラーが発生します。| ユーザーが通話を開始する前に、通話に必要なカメラやマイクなどのデバイスを確認することをお勧めします。カメラがなく、音声通話を行う必要がある場合は、[TRTC.createStream({ audio: true, video: false })](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createStream)で、マイクのみをキャプチャするように指定できます。 |
-| NotAllowedError|ユーザーが、現在のブラウザ・インスタンスのオーディオ、ビデオおよび画面共有へのアクセスのリクエストを拒否しました。| ユーザーに対し、カメラ/マイクへのアクセス権限を付与しないと、オーディオビデオ通話を行うことができません、というプロンプトが表示されます。|
+| NotAllowedError | ユーザーが、現在のブラウザ・インスタンスのオーディオ、ビデオおよび画面共有へのアクセスのリクエストを拒否しました。   | ユーザーに対し、カメラ/マイクへのアクセス権限を承認しないと、オーディオビデオ通話を行うことができません、というプロンプトが表示されます。        |
 | NotReadableError  | 権限が付与されたユーザーが対応するデバイスを使用していますが、OS上のいずれかのハードウェア、ブラウザまたはWebページの階層に発生したエラーのため、デバイスにアクセスできません。  | ブラウザのエラーメッセージに従って処理すると、ユーザーに対し、「現在カメラ/マイクにアクセスできません。他のアプリケーションがカメラ/マイクへのアクセスをリクエストしていないことを確認してから、もう一度お試しください」というプロンプトが表示されます。|
 | OverConstrainedError|   cameraId/microphoneIdのパラメータの値が無効です。 |  cameraId/microphoneIdの渡された値が正しく有効であることを確認してください。|
 | AbortError  | 何らかの理由により、デバイスを使用できません。| - |
@@ -96,18 +98,15 @@ TRTCは、特にオンラインライブストリーミングのシーン向け�
 
 
 [](id:que14)
-### デスクトップブラウザSDKがデバイス（カメラ/マイク）リストを正常に取得できるかどうか確認するにはどうすればいいですか。
-1. ブラウザがデバイスを正常に使用できるかどうかチェックします。
+### Web端末SDKがデバイス（カメラ/マイク）リストを正常に取得できるかどうか確認するにはどうすればいいですか。
+1. ブラウザがデバイスを正常に使用できるかチェックします。
 ページ上でコンソールを直接開き、`navigator.mediaDevices.enumerateDevices()`と入力して、デバイスリストを取得できるかどうか確認します。
- - デバイスが正常に取得された場合、Promiseが返されます。中にはMediaDeviceInfoオブジェクトの配列があり、配列内の各オブジェクトは使用可能なメディアデバイスに対応しています。
- - 列挙が失敗した場合、Promiseはrejectedを返します。これは、ブラウザがデバイスを認識していないことを示しているので、ブラウザまたはデバイスをチェックする必要があります。
+ - デバイスを正常に取得できるとPromiseが返ってきて、その中に MediaDeviceInfoのオブジェクトの配列があります。配列の中の各オブジェクトが1つの使用可能なメディアデバイスに対応します。
+ - 列挙に失敗すると、Promiseは rejectedを戻し、これは、ブラウザがデバイスを識別できなかったことを表します。ブラウザまたはデバイスをチェックする必要があります。
 2. デバイスリストを取得できる場合は、`navigator.mediaDevices.getUserMedia({ audio: true, video: true })` と入力して、MediaStreamオブジェクトが正常に返されるかどうか確認します。正常に返されない場合、ブラウザがデータを取得していないことを示しているので、ブラウザの設定をチェックする必要があります。
 
-
-
-
 [](id:que17)
-### LVB、ILVB、TRTCおよびRelayed live streamingの違いと関係性は何ですか。
+### ライブストリーミング、インタラクティブライブストリーミング、TRTCおよびRelayed live streamingの違いと関係性は何ですか。
 - **LVB**（キーワード：一対多、RTMP/HLS/HTTP-FLV、CDN）
  LVBは、プッシュ端末、再生端末およびライブストリーミングクラウドサービスに分かれます。クラウドサービスはCDNを使用してライブストリームを配信します。プッシュには一般的な標準プロトコルRTMPが使用されます。CDNによって配信された場合、再生するときには通常、RTMP、HTTP-FLVまたはHLS（H5サポート）を選択して視聴することができます。
 - **ILV**（キーワード：マイク接続、PK）
@@ -117,12 +116,9 @@ TRTCは、特にオンラインライブストリーミングのシーン向け�
 -**Relayed live streaming**（キーワード：クラウドミクスストリーミング、RTCバイパス・プッシュ転送、CDN）
  Relayed live streamingとは、低遅延のマイク接続ルームにおけるマルチチャンネルのプッシュ画面をコピーして、クラウド内で画面を混合して一つのチャネルにし、ミクスストリーミング後の画面をライブCDNにプッシュして配信、再生する技術のことです。 
 
-
 [](id:que18)
 ### TRTCは、通話時間と使用量をどのように確認すればいいですか。  
 TRTCコンソールの【[使用量の統計](https://console.cloud.tencent.com/trtc/statistics)】ページで確認することができます。
-
-
 
 [](id:que19)
 ### TRTCにラグが発生した場合はどのように調査すればいいですか。
@@ -145,7 +141,3 @@ TRTCコンソールの【[使用量の統計](https://console.cloud.tencent.com/
   - iOS & Androidでは、[リリースノート（App）](https://intl.cloud.tencent.com/document/product/647/39426)をご参照ください。
   - デスクトップブラウザでは、[リリースノート（Web）](https://intl.cloud.tencent.com/document/product/647/39779)をご参照ください。
   - Electronでは、[リリースノート（Electron）](https://intl.cloud.tencent.com/document/product/647/38702)をご参照ください。
-
-
-
-

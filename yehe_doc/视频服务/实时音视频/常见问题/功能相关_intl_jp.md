@@ -114,7 +114,6 @@ Relayed live streamingをアクティブ化する必要がある場合は、国�
 画面共有インターフェースの詳細については[Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131)をご参照ください。また、[Electronインターフェース](https://intl.cloud.tencent.com/document/product/647/35141)もご利用いただけます。
 
 [](id:que23)
-
 ### ローカルのビデオファイルをTRTCの中で共有する機能をサポートしていますか。
 
 サポートしています。[ユーザー定義キャプチャ](https://intl.cloud.tencent.com/document/product/647/35158)機能によって実現できます。
@@ -166,7 +165,7 @@ TRTCは、4種類の異なる入室モードをサポートしています。こ
 
 [](id:que33)
 ### TRTCではオーディオビデオ通話のハンズフリーモードをサポートしていますか。
-サポートしています。ハンズフリーモードはオーディオルートを設定して実現し、Native SDKはsetAudioRouteインターフェースを使用して切り替え、ミニプログラムは&lt;live-player&gt;タグのsound-mode属性を使用して設定します。
+サポートしています。ハンズフリーモードは、Audio Routerを設定することで実現できます。Native SDKでは、setAudioRouteインターフェースで切り替えます。
 
 [](id:que34)
 ### TRTCでは音量のボリューム表示をサポートしていますか。
@@ -221,7 +220,7 @@ TRTCは、特にオンラインライブストリーミングのシーン向け�
 
 [](id:que45)
 ### TRTCのカスタムメッセージ送信のインターフェースを利用して、チャットルーム、弾幕等の機能を実現できますか。
-できません。TRTCのカスタムメッセージの送信は、簡単な低周波のシグナリング伝送のシーンに適用されます。制限の詳細は[使用制限](https://intl.cloud.tencent.com/document/product/647/35159)をご参照ください。
+できません。TRTCのカスタムメッセージ送信は簡単で低頻度なコマンドメッセージ転送のシーンに適用します。具体的な制限は [使用制限](https://intl.cloud.tencent.com/document/product/647/35159)をご参照ください。
 
 [](id:que46)
 ### TRTC SDKのBGM再生では、繰り返し再生をサポートしていますか。BGM再生の進行状況を調整する機能をサポートしていますか。  
@@ -232,7 +231,7 @@ TRTCは、特にオンラインライブストリーミングのシーン向け�
 [](id:que47)
 ### TRTCにはルームメンバーのルーム入退室をモニタリングするコールバックがありますか。onUserEnter/onUserExitを使用できますか。
 あります。TRTCでは onRemoteUserEnterRoom/onRemoteUserLeaveRoom を使用してルームメンバーのルーム入退出を監視しています（アップストリームオーディオ・ビデオ権限があるユーザーのみ起動できます）。
->? onUserEnter/onUserExitは6.8バージョンで廃止され、onRemoteUserEnterRoom/onRemoteUserLeaveRoom経由に切り替わっています。
+>?onUserEnter/onUserExitは6.8バージョンで廃止され、onRemoteUserEnterRoom/onRemoteUserLeaveRoom経由に切り替わっています。
 
 [](id:que48)
 ### TRTCでは回線の切断と再接続をどのようにモニタリングしますか。
@@ -242,99 +241,116 @@ TRTCは、特にオンラインライブストリーミングのシーン向け�
 - onConnectionRecovery：SDKとサーバー間の接続回復。
 
 [](id:que49)
+### TRTC SDKは切断後の再接続をサポートしていますか。
+SDKは、ユーザーが切断された場合の再接続を無制限にサポートします。接続時の具体的な接続状態や処理ロジックは以下のとおりです。
+下図はUserid1がチャネルに参加してから、接続が中断し、再びルームに参加する過程で受信したモニタリングコールバックイベントを示しています。
+![](https://qcloudimg.tencent-cloud.cn/raw/893ec522169d27a7b9a0e2dc4b09c7d0.png)
+**具体的な説明**：
+
+- T1：ユーザー側が`enterRoom`インターフェースを呼び出し、ルーム参加リクエストを送信します。
+- T2： `onEnterRoom`コールバックを受信します。
+- T3：クライアントがネットワークの問題で切断された場合、SDKがルームへの再参加を試みます。
+- T4：8秒間待ってもサーバーへ接続されない場合、`onConnectionLost`切断コールバックを受信します。
+- T5：続いて3秒たってもサーバーに接続されない場合、`onTryToReconnect`リトライコールバックを受信します。
+- T6：24秒ごとに、`onTryToReconnect`リトライコールバックを受信します。
+- T7：切断中の任意の時点で再接続に成功した場合、`onConnectionRecovery`再開コールバックを受信します。
+
+[](id:que50)
 ### TRTCには最初のフレームのレンダリングのコールバックはありますか。画面のレンダリング開始、音声の再生開始のモニタリングはできますか。
 サポートしています。onFirstVideoFrame/onFirstAudioFrameでモニタリングできます。
 
-[](id:que50)
+[](id:que51)
 ### TRTCではビデオ画面のスクリーンキャプチャ機能をサポートしていますか。
 現在iOS/Android端末では、snapshotVideo() を呼び出すことで、ローカルおよびリモートのビデオ画面スクリーンキャプチャをサポートしています。
 
-[](id:que51)
+[](id:que52)
 ### TRTCではBluetoothイヤホン等の外付けデバイスとの接続に異常はありますか。
 現在、TRTCでは主流のBluetoothイヤホンや外付けデバイスとは互換性がありますが、それでも互換性に問題のあるデバイスに遭遇することがあり得ます。公式DemoやQQのオーディオビデオ通話の比較を利用し、正常かどうか確認することをお勧めします。
 
-[](id:que52)
+[](id:que53)
+
 ### TRTCのオーディオ・ビデオのプロセスでのアップストリーム、ダウンストリームのビットレート、解像度、パケット損失率、オーディオサンプルレート等の情報はどうすれば取得できますか。
 SDKのインターフェースonStatistics()でこれらの統計情報を取得できます。
 
-[](id:que53)
+[](id:que54)
 ### TRTCのBGM再生インターフェースplayBGM() はオンラインミュージックをサポートしていますか。
 現在はローカルの音楽のみサポートしています。先にローカルにダウンロードしてから、playBGM()を呼び出して再生することが可能です。
 
-[](id:que54)
+[](id:que55)
 ### TRTCではローカルでキャプチャする音量の設定機能をサポートしていますか。各リモートユーザーの再生音量の設定機能をサポートしていますか。
 サポートしています。setAudioCaptureVolume() インターフェースでSDKのキャプチャ音量を設定可能です。また、setRemoteAudioVolume()インターフェースで特定のリモートユーザーの再生音量を設定できます。
 
-[](id:que55)
+[](id:que56)
 ### stopLocalPreviewとmuteLocalVideoの違いは何ですか。
 - stopLocalPreviewは、ローカルでのビデオキャプチャを停止します。このインターフェースを呼び出すと、自らのローカルとリモートの画面をブラックアウトさせます。
 - muteLocalVideoは、バックグラウンドに向けて自らのビデオ画面を送信するかを設定します。このインターフェースを呼び出すと、他のユーザーが視聴していた画面はブラックアウトしますが、自らのローカルのプレビュー画面はまだ見ることができます。
 
-[](id:que56)
+[](id:que57)
 ### stopLocalAudioとmuteLocalAudioの違いは何ですか。 
 - stopLocalAudioは、ローカル音声のキャプチャとアップストリームをオフにします。
 - muteLocalAudioでは、音声・ビデオデータの送信は停止されず、ビットレートが極めて低いミュートパケットが引き続き送信されます。
 
-[](id:que57)
+[](id:que58)
 ### TRTC SDKではどの解像度をサポートしていますか。
 [画質の設定](https://intl.cloud.tencent.com/document/product/647/35153)を参照し、より適切な画質になるまで解像度を設定することを推奨します。
 
-[](id:que58)
+[](id:que59)
 ### TRTC SDKではアップストリームのビデオビットレート、解像度、フレームレートをどのように設定しますか。 
 TRTCCloudのsetVideoEncoderParam()インターフェースで、TRTCVideoEncParamパラメータの中のvideoResolution（解像度）、videoFps（フレームレート）、videoBitrate（ビットレート）を設定できます。
 
-[](id:que59)
+[](id:que60)
 ### SDKの画面の角度と方向の制御はどうすれば実現できますか。  
 詳細は、[ビデオ画面の回転とズーム](https://intl.cloud.tencent.com/document/product/647/35154)をご参照ください。
 
-[](id:que60)
-### 横長画面のビデオ通話はどうすれば実現できますか。 
-詳細は、[ビデオ画面の回転とズーム](https://intl.cloud.tencent.com/document/product/647/35154)をご参照ください。
-
 [](id:que61)
+### 横長画面のビデオ通話はどうすれば実現できますか。 
+詳細については、 [横長画面のビデオ通話の実現](https://cloud.tencent.com/developer/article/1492095) と [ビデオ画面の回転とズーム](https://intl.cloud.tencent.com/document/product/647/35154)をご参照ください。
+
+[](id:que62)
 ### TRTCでローカルとリモートの画面方向が一致しない場合はどうやって調整しますか。  
 詳細は、[ビデオ画面の回転とズーム](https://intl.cloud.tencent.com/document/product/647/35154)をご参照ください。
 
 
-[](id:que62)
+[](id:que63)
 ### TRTC には推奨する画質（ビットレート、解像度、フレームレート）関連のパラメータ設定はありますか。
 詳細は、[推奨設定](https://intl.cloud.tencent.com/document/product/647/35153#.E6.8E.A8.E8.8D.90.E7.9A.84.E9.85.8D.E7.BD.AE)をご参照ください。
 
-[](id:que63)
+[](id:que64)
 ### TRTCではネットワークの速度テストをサポートしていますか。どうやって操作しますか。  
 詳細は、[通話前ネットワークテスト](https://intl.cloud.tencent.com/document/product/647/35156)をご参照ください。
 
-[](id:que64)
+[](id:que65)
 ### TRTCではルームに対する権限の検証をサポートしていますか（例：検証に合格してから会員がシーンに参加できるなど）。 
 サポートしています。詳細は、[ルーム参加権限の保護](https://intl.cloud.tencent.com/document/product/647/35157)をご参照ください。
 
-[](id:que65)
+[](id:que66)
 ### TRTCオーディオ・ビデオストリームは、CDNを介したプルストリームによる視聴をサポートしていますか。 
 サポートしています。詳細については、[CDN relayed live streamingの実装](https://intl.cloud.tencent.com/document/product/647/35242)をご参照ください。
 
-[](id:que66)
+[](id:que67)
 ### TRTCのカスタムレンダリングはどの形式をサポートしていますか。 
 - iOS端末ではi420、NV12、BGRAをサポートしています。
 - Android端末ではI420とtexture2dをサポートしています。
 
-[](id:que67)
+[](id:que68)
 ### TRTCとは何ですか。
 Tencent Real-Time Communication（TRTC）は、Tencentが長年に渡り蓄積したネットワークとオーディオ・ビデオ技術をベースに、多人数のオーディオビデオ通話と低遅延インタラクションライブストリーミングの、シナリオ化した2大ソリューションを提供し、Tencent Cloudのサービスを通じて開発者向けに開放します。これにより、開発者が低コスト、低遅延、高品質のインタラクティブな音声ビデオソリューションを迅速に構築するのを支援します。詳細は、[製品概要]https://intl.cloud.tencent.com/document/product/647/35078をご参照ください。
 
-[](id:que68)
+[](id:que69)
 ### TRTCのDemoはどのように体験できますか。
 詳細内容は、[Demo体験](https://intl.cloud.tencent.com/document/product/647/35076)をご参照ください。
 
-[](id:que69)
+[](id:que70)
 ### TRTCはどのようにクイックスタートしますか。
 TRTCは各プラットフォームのDemoソースコードを提供します。わずかな時間で自分のミニアプリケーションを直ちに構築することができます。詳細内容は[初心者向け（入門編）](https://intl.cloud.tencent.com/document/product/647/39386)をご参照ください。
 
-[](id:que70)
+[](id:que71)
 ### TRTCはどのようにクラウドレコーディングと再生を実現しますか。
 詳細内容は[クラウドレコーディングと再生の実現](https://intl.cloud.tencent.com/document/product/647/35426)をご参照ください。
 
-[](id:que71)
+[](id:que72)
 ### TRTCはどのようにサーバーでのレコーディングを実現しますか。
 サーバーでのレコーディングにはLinux SDKを使用する必要があります。Linux SDKはまだ完全公開されていません。お問い合わせまたは関連サービスの利用をご希望の場合は、colleenyu@tencent.comまでご連絡ください。
+
 
 
