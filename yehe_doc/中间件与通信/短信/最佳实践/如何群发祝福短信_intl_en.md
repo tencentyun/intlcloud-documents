@@ -54,7 +54,7 @@ This document uses sending a Spring Festival best wishes message to members by c
 >After an SMS body template is submitted, it will be reviewed within two hours generally. You can [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470) to receive review result notifications.
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
-2. Select **Chinese Mainland SMS** > **Template Management** on the left sidebar and click **Create Body Template**.
+2. Select **Chinese Mainland SMS** > **Body Templates** on the left sidebar and click **Create Body Template**.
 3. Set the following parameters as needed and according to the body template review standards:
  <table>
      <tr>
