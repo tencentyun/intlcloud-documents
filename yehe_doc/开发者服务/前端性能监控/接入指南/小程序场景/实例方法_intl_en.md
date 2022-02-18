@@ -5,8 +5,8 @@ Currently, RUM provides the following Aegis instance methods:
 | Parameter | Description |
 |---------|---------|
 | setConfig | Passes in the configuration object, which contains information such as user ID and UIN. |
-|info| Is a main reporting field to report allowed logs. <br>A log will be reported to the backend only in the following cases:<br>1. The user who opens the page is in the allowlist.<br>2. The page has an error. |
-|infoAll| Is a main reporting field to report allowed logs. The only difference between it and `info` is as follows: <br>`info` reports the logs of only specified users, while `infoAll` reports the logs of all users. |
+|info| Is a main reporting field to report allowlist logs. <br>A log will be reported to the backend only in the following cases:<br>1. The user who opens the page is in the allowlist.<br>2. The page has an error. |
+|infoAll| Is a main reporting field to report allowlist logs. The only difference between it and `info` is as follows: <br>`info` reports the logs of only specified users, while `infoAll` reports the logs of all users. |
 |error| Is a main reporting field to report the error information. |
 |report| Reports the information of a log in any type. |
 |reportEvent| Reports a custom event. |
