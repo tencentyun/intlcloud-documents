@@ -172,7 +172,7 @@
 [](id:step2_10)
 ### 10단계: 화면 공유
 1. 화면 공유를 위해 StartScreenCapture API를 호출합니다.
-2. 다른 참석자는 OnRemoteUserScreenVideoAvailable 콜백을 수신하여 참석자가 화면을 공유하고 있음을 알립니다.
+2. 다른 참석자는 OnRemoteUserScreenAvailable 콜백을 수신하여 참석자가 화면을 공유하고 있음을 알립니다.
 
 >? 화면 공유 모듈은 창 선택 로직을 수행해야 하며, 구체적인 구현은 App 내 'ScreenShareWindow.h' 구현을 참고하십시오.
 
