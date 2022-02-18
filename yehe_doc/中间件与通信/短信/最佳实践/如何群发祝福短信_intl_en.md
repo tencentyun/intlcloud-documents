@@ -27,7 +27,7 @@ This document uses sending a Spring Festival best wishes message to members by c
      </tr>
 	 <tr>      
        <td>Signature use</td>   
-	     <td>For self-use (the signature is a company name, website, product name, or something else verified under the current account)</td>   
+	     <td>For verified entities (such as organizations, websites or product names with signatures verified by the account)</td>   
      </tr> 
 	 <tr>      
        <td>Signature type</td>   
