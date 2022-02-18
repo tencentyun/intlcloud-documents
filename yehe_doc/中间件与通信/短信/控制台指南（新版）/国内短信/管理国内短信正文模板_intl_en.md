@@ -4,7 +4,7 @@ After an SMS signature or template is submitted, it will be reviewed within two 
 <span id="Template"></span>
 ## Creating a Body Template
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
-2. Select **Mainland China SMS** > **Template Management** on the left sidebar and click **Create Body Template**.
+2. Select **Chinese Mainland SMS** > **Template Management** on the left sidebar and click **Create Body Template**.
 4. Set the following parameters as needed and according to the [body template review standards]:
  - Template Name: name of the template for easy identification.
  - SMS Type: the type of SMS that will be sent with this body template. Enterprise users can choose **Regular SMS** or **Marketing SMS**, while individual users can only choose **Regular SMS**.
