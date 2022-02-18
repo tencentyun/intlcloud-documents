@@ -18,7 +18,7 @@ This document uses sending a Spring Festival best wishes message to members by c
 >?After an SMS signature is submitted, it will be reviewed within two hours generally. You can [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470) to receive review result notifications.
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
-2. Select **Chinese Mainland SMS** > **Signature Management** on the left sidebar and click **Create Signature**.
+2. Select **Chinese Mainland SMS** > **Signatures** on the left sidebar and click **Create Signature**.
 3. Set the following parameters as needed and according to the signature review standards:
  <table>
      <tr>
