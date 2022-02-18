@@ -10,7 +10,7 @@ After an SMS signature is submitted, it will be reviewed within two hours genera
  - Signature Type: type of the SMS signature.
  Organizational users can choose **Company**, **App**, **Website**, **Official Account/Mini Program**, **Trademark**, or **Government/public institution/other**.
  Individual users can choose **App**, **Website**, or **Official Account/Mini Program**.
- - Signature Purpose: purpose of the SMS signature. You can choose **For verified entities** (such as organizations, websites or product names with signatures verified by the account) or **For others** (the signature is a company name, website, product name, or something else verified under other accounts).
+ - Signature Purpose: purpose of the SMS signature. You can choose **For verified entities** (such as organizations, websites or product names with signatures verified by the account) or **For unverified entities** (such as organizations, websites, or product names with signatures that are not verified by the account).
  - Signature Content: actual content of the SMS signature. There is no need to enter \[], such as `Tencent Cloud`.
  - Certificate Type: type of qualification and identity certificates used to apply for SMS signature.
  - Certificate Upload: upload the photo or scan of the corresponding certificate according to the selected **Certificate Type**. Images in .jpg or .png format of less than 5 MB in size are supported.
