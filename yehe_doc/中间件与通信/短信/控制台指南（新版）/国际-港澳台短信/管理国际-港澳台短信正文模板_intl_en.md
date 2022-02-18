@@ -24,7 +24,7 @@ After an SMS signature is submitted, it will be reviewed within two hours genera
  - Content: actual content of the SMS body.
  - Status/Reason: status of the body template, including **pending review**, **rejected**, and **approved**. If the body template status is **rejected**, you can click **View Details** to view the detailed reason or suggestion.
  - Time Applied: the time when the body template was created.
-2. Click **Edit** on the line of a **pending review** or **rejected** body template, modify its information, and click **Confirm** to submit it for review again.
+2. Click **Edit** on the line of a **pending review** or **rejected** body template, modify its information, and click **OK** to submit it for review again.
 
 
 
