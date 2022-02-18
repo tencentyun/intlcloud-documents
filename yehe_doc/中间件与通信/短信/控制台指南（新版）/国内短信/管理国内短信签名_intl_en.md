@@ -26,7 +26,7 @@ After an SMS signature is submitted, it will be reviewed within two hours genera
    - Signature Content: actual content of the SMS signature. There is no need to enter [], such as `Tencent Cloud`.
    - Certificate Type: type of qualification and identity certificates used to apply for SMS signature.
    - Certificate Upload: upload the photo or scan of the corresponding certificate according to the selected **Certificate Type**. Images in .jpg or .png format of less than 5 MB in size are supported.
-   - Authorization: this parameter appears only if the **Signature Purpose** is set to "For others".
+   - Authorization: this parameter appears only if the **Signature Purpose** is set to "For unverified entities".
      i. Download and fill out the [authorization letter](https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx), where the authorized party must be entered as the full name of the individual/organization verified under the current Tencent Cloud account, and the authorizing party must be entered as the full name of the entity to whom the signature belongs.
      ii. Affix the official seal of the authorizing party onto the authorization letter.
      iii. Upload a photo or scan of the authorization letter stamped with the official seal of the authorizing party. Images in .jpg or .png format of less than 5 MB in size are supported.
