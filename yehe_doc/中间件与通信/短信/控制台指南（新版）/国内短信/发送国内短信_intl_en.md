@@ -5,7 +5,7 @@
 
 ## Directions
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
-2. Select **Chinese Mainland SMS** > **Bulk SMS** on the left sidebar and click **Create Bulk SMS Task**.
+2. Select **Chinese Mainland SMS** > **Bulk SMS** on the left sidebar and click **Create Bulk SMS Sending Task**.
 4. Configure the following parameters as needed:
  - Signature Name: select an approved SMS signature to be used (different signatures are distinguished by signature name).
  - Template Name: select an approved body template to be used (different templates are distinguished by template name).
