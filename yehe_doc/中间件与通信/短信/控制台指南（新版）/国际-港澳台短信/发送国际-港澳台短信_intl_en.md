@@ -10,7 +10,7 @@
 4. Configure the following parameters as needed:
  - Template Name: select an approved body template to be used (different templates are distinguished by template name).
  - Signature Name: select an approved SMS signature to be used (different signatures are distinguished by signature name), which is optional.
- - Delivery Time: select **Send Now** or **Send by Schedule**.
+ - Sending Time: select **Send now** or **Send by Schedule**.
  - Recipient: click **Template Download**, enter recipient's mobile number and custom SMS content in the form, and click **Select File** to upload it. The maximum form size supported is 30 MB.
    >Up to 1,000 Global SMS messages can be sent per day under one Tencent Cloud account.
    >
