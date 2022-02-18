@@ -9,7 +9,7 @@
 4. Configure the following parameters as needed:
  - Signature Name: select an approved SMS signature to be used (different signatures are distinguished by signature name).
  - Template Name: select an approved body template to be used (different templates are distinguished by template name).
- - Delivery Time: select **Send Now** or **Send by Schedule**.
+ - Sending Time: select **Send now** or **Send by Schedule**.
  - Recipient: click **Download Standard Template**, enter recipient's mobile number and custom SMS content in the form, and click **Select File** to upload it. The maximum form size supported is 30 MB.
    <table>
      <tr>
