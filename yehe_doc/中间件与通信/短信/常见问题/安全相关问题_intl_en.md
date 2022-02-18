@@ -21,14 +21,14 @@ In view of the fact that SMS bombing (cheating) attacks are generally initiated 
 - [Set over-limit delivery notifications](https://intl.cloud.tencent.com/document/product/382/35469).
 - Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to regularly (for example, once every day) view specific statistics and check SMS deliveries. If an exception is found, you can disable the SMS service in the console in emergency circumstances.
 
-### What are the differences between Mainland China SMS and Global SMS?
-An SMS signature must be carried in Mainland China SMS messages due to the requirements of carriers, while this is optional and up to you for Global SMS messages.
-- Before sending a Mainland China SMS message, you must [create a signature](https://intl.cloud.tencent.com/document/product/382/35456) and [a body template](https://intl.cloud.tencent.com/document/product/382/35457) and get them approved first.
+### What are the differences between Chinese Mainland SMS and Global SMS?
+An SMS signature must be carried in Chinese Mainland SMS messages due to the requirements of carriers, while this is optional and up to you for Global SMS messages.
+- Before sending a Chinese Mainland SMS message, you must [create a signature](https://intl.cloud.tencent.com/document/product/382/35456) and [a body template](https://intl.cloud.tencent.com/document/product/382/35457) and get them approved first.
 - Before sending a Global SMS message, you must first [create a body template](https://intl.cloud.tencent.com/document/product/382/35461) and get it approved. If you want to carry a signature, you also need to [create a signature](https://intl.cloud.tencent.com/document/product/382/35460) and get it approved.
 
 ### How do I check the delivery records for individual mobile numbers?
 You can log in to the [SMS console](https://console.cloud.tencent.com/smsv2), click the name of the target application to enter the application details page, and select one the following methods to query according to your actual needs:
-- Mainland China SMS: select **Statistics and Analytics** > **Mainland China SMS** > **Message Records** and enter a mobile number to query as shown below:
+- Chinese Mainland SMS: select **Statistics and Analytics** > **Chinese Mainland SMS** > **Message Records** and enter a mobile number to query as shown below:
 ![](https://main.qcloudimg.com/raw/ef647abc4454b2b5460b632e68fa50ac.png)
 - Global SMS: select **Statistics and Analytics** > **Global SMS** > **Message Records** to query.
 
@@ -41,7 +41,7 @@ If you need to remove the rate limit for testing mobile numbers, please contact 
 
 ### How do I check whether a specific mobile number has received a message?
 You can log in to the [SMS console](https://console.cloud.tencent.com/smsv2), click the name of the target application to enter the application details page, and select one the following methods to query or export records according to your actual needs:
-- Mainland China SMS: select **Statistics and Analytics** > **Mainland China SMS** > **Message Records** to query or export records within a specified time period.
+- Chinese Mainland SMS: select **Statistics and Analytics** > **Chinese Mainland SMS** > **Message Records** to query or export records within a specified time period.
 - Global SMS: select **Statistics and Analytics** > **Global SMS** > **Message Records** to query or export records within a specified time period.
 
 ### Is there a limit on the number of Global SMS messages that can be sent?
