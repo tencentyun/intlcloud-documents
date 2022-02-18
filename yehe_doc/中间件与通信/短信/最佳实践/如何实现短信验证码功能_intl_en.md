@@ -24,7 +24,7 @@ After an SMS signature or body template is submitted, it will be reviewed within
 ### Step 1.1. Create a signature[](id:Step1_1)
 
 1. Log in to the [SMS console](https://console.cloud.tencent.com/smsv2).
-2. Select **Mainland China SMS** > **Signature Management** on the left sidebar and click **Create Signature**.
+2. Select **Chinese Mainland SMS** > **Signature Management** on the left sidebar and click **Create Signature**.
 3. Set the following parameters as needed:
  <table>
      <tr>
@@ -47,10 +47,6 @@ After an SMS signature or body template is submitted, it will be reviewed within
        <td>Certificate type</td>   
 	     <td>Screenshot of WeChat Mini Program settings page</td>   
      </tr> 
-	 <tr>      
-       <td>Certificate upload</td>   
-	<td><img src="https://main.qcloudimg.com/raw/48ad431a784461465054160737b9b166.png" width=400/></td>    
-     </tr> 
 </table>
 3. Click **OK**.
 Wait for signature review. The SMS signature will be available only after its status changes to **approved**.
@@ -58,7 +54,7 @@ Wait for signature review. The SMS signature will be available only after its st
 
 ### Step 1.2. Create a body template[](id:Step1_2)
 1. Log in to the [SMS console](https://console.cloud.tencent.com/smsv2).
-2. Select **Mainland China SMS** > **Body Templates** on the left sidebar and click **Create Body Template**.
+2. Select **Chinese Mainland SMS** > **Body Templates** on the left sidebar and click **Create Body Template**.
 3. Set the following parameters as needed:
  <table>
      <tr>
@@ -198,10 +194,10 @@ SCF currently supports development in Python, Node.js, PHP, Java, and Go. This d
 
 ## Step 7. Deploy the SMS demo[](id:Step7)
 1. Go to the [SCF console](https://console.cloud.tencent.com/scf/) and select the SMS demo to deploy it.
-![](https://main.qcloudimg.com/raw/96ffd0253553107165d03d6c3038ff96.png)
+
 
 2. Set the environment variables of the demo in **Advanced Configuration**.
-![](https://main.qcloudimg.com/raw/5d85b66aa467a3267f1ba25820381ffa.png)
+
 
 
 | Field | Description |
@@ -209,24 +205,24 @@ SCF currently supports development in Python, Node.js, PHP, Java, and Go. This d
 | REDIS_HOST| Redis database address. |
 |REDIS_PASSWORD| Redis database password. |
 | SMS_TEMPLATE_ID| Template ID. You must enter the ID of an approved template, which can be viewed in the [SMS console](https://console.cloud.tencent.com/smsv2). |
-| SMS_SIGN| Content of the SMS signature, which should be encoded in UTF-8. You must enter an approved signature, which can be viewed in the [SMS console](https://console.cloud.tencent.com/smsv2). Note: this parameter is required for Mainland China SMS. |
+| SMS_SIGN| Content of the SMS signature, which should be encoded in UTF-8. You must enter an approved signature, which can be viewed in the [SMS console](https://console.cloud.tencent.com/smsv2). Note: this parameter is required for Chinese Mainland SMS. |
 | SMS_SDKAPPID| SMS `SdkAppid` actually generated after an application is added in the [SMS console](https://console.cloud.tencent.com/smsv2), such as 1400006666. |
 
 
 3. Set the same VPC environment as the Redis database in **Advanced Configuration**.
-![](https://main.qcloudimg.com/raw/447c4e1e03a60e2b1c0999a4a8ce32a1.png)
+
 
 
 4. Set the permissions of SCF **execution role** in **Advanced Configuration**.
-![](https://main.qcloudimg.com/raw/798b9d7f556d32dd04d432e0f07719a0.png)
+
 You need to associate the `QcloudSMSFullAccess` policy with the `SCF_QcsRole` role in the [CAM console](https://console.cloud.tencent.com/cam/role).
-![](https://main.qcloudimg.com/raw/accb8fe057f2790e8ac9244d08e69259.png)
+
 In this way, the ``TENCENTCLOUD_SECRETID`, `TENCENTCLOUD_SECRETKEY`, and `TENCENTCLOUD_SESSIONTOKEN` environment variables can be obtained in the code, which will be used by the SMS SDK.
 
 5. Click **Complete** to deploy the function.
 
 6. Create an SCF **API Gateway trigger** and request the trigger address to use SMS capabilities.
-![](https://main.qcloudimg.com/raw/b3ee5dcb7fef1cfb3e5657576bf0d865.png)
+
 
 ## Step 8. Use the features
 Verification codes have a high requirement for timeliness. You can store verification codes in the memory or TencentDB for Redis and use the mobile number as a key to store information such as sending time, verification code, number of verification attempts, and verification result.
