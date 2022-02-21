@@ -21,3 +21,10 @@
 | Metric       | Meaning                                                     | Unit  | Dimension       |
 | ---------- | ---------------- | ------------------------------------------------------------ | ----- | ---------- |
 | Service requests | Number of requests that users use LogListener, API, or SDK to call CLS APIs, including read and write requests such as upload and download, creation and deletion, and search and analysis | COUNT | Log topic ID |
+
+
+>? The preceding monitoring metrics are reported to Cloud Monitor. For the corresponding detailed metrics and parameters, please see the CLS monitoring metrics.
+>
+
+
+
