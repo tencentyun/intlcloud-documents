@@ -1,10 +1,10 @@
-### What is the default delivery rate limit of SMS?
-To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, the default SMS delivery rate limit is as detailed below:
+### What is the default sending frequency limit of SMS?
+To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, the default SMS sending frequency limit is as detailed below:
 - For SMS messages with the same content, a maximum of one such message can be sent to the same mobile number within 30 seconds.
 - A maximum of 10 messages can be sent to the same mobile number on a calendar day.
 
-Organizational users can log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to set or modify the corresponding delivery rate limit policy. For detailed directions, please see [Setting Delivery Rate Limit](https://intl.cloud.tencent.com/document/product/382/35469).
-Note: individual users have no permission to modify the delivery rate limit. To use this feature, change "Individual Identity" to "Organizational Identity". For more information on the rights of organizational users, please see [Differences in rights](https://intl.cloud.tencent.com/document/product/382/40653).
+Organizational users can log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to set or modify the corresponding sending frequency limit policy. For detailed directions, please see [Setting Sending Frequency Limit](https://intl.cloud.tencent.com/document/product/382/35469).
+Note: individual users have no permission to modify the sending frequency limit. To use this feature, change "Individual Identity" to "Organizational Identity". For more information on the rights of organizational users, please see [Differences in rights](https://intl.cloud.tencent.com/document/product/382/40653).
 
 ### How do I add an alarm contact?
 For detailed directions, please see [Configuring Alarm Contact](https://intl.cloud.tencent.com/document/product/382/35470).
@@ -17,7 +17,7 @@ The figure below shows a real case encountered by a customer (only dozens of mes
 In view of the fact that SMS bombing (cheating) attacks are generally initiated by servers, the following comprehensive measures are recommended for defense:
 
 - Limit the number of requests allowed per IP.
-- Limit the number of delivery tasks allowed per mobile number. To do so, you can [set the delivery rate limit](https://intl.cloud.tencent.com/document/product/382/35469) and [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470).
+- Limit the number of delivery tasks allowed per mobile number. To do so, you can [set the sending frequency limit](https://intl.cloud.tencent.com/document/product/382/35469) and [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470).
 - [Set over-limit delivery notifications](https://intl.cloud.tencent.com/document/product/382/35469).
 - Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to regularly (for example, once every day) view specific statistics and check SMS deliveries. If an exception is found, you can disable the SMS service in the console in emergency circumstances.
 
