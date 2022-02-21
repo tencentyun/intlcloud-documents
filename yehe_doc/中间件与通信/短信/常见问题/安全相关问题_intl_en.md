@@ -29,7 +29,7 @@ An SMS signature must be carried in Chinese Mainland SMS messages due to the req
 ### How do I check the sending records for individual mobile numbers?
 You can log in to the [SMS console](https://console.cloud.tencent.com/smsv2), click the name of the target application to enter the application details page, and select one the following methods to query according to your actual needs:
 - Chinese Mainland SMS: select **Business Statistics** > **Chinese Mainland SMS** > **Message Records** and enter a mobile number to query as shown below:
-![](https://main.qcloudimg.com/raw/ef647abc4454b2b5460b632e68fa50ac.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a727c37158e9b9d3688ebfeabc13d512.png)
 - Global SMS: select **Business Statistics** > **Global SMS** > **Message Records** to query.
 
 ### How do I create and view an application (SDK AppID)?
