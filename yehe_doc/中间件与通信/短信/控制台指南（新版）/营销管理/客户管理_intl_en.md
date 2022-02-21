@@ -8,7 +8,7 @@ You can **import** or **enter** numbers on this page for management.
 2. Select **Marketing Management** > **Customer Management** on the left sidebar and click **Import**.
 3. Configure the following parameters as needed:
 	-  **SMS Type**: select the type of the SMS messages to be sent to the recipients in the number package.
-	-  **File**: click **Download Templates**, enter the customer mobile numbers in the downloaded form, and click **Click here** or drag and drop the form file to upload it. The maximum form size supported is 30 MB.
+	-  **File**: click **Download Template**, enter the customer mobile numbers in the downloaded form, and click **Click here** or drag and drop the form file to upload it. The maximum form size supported is 30 MB.
 	-  **Number Group**: select **Create a group** or **Select an existing group**. If you select **Create a group**, please enter the group name.
 4. Click **OK**.
 ![](https://main.qcloudimg.com/raw/ca54f0d9d8df5a7bd0a8f5392caa6f74.png)
