@@ -85,6 +85,7 @@
 		<td>bucket_test:logset/20180731/log_{random}_{index}</td>
 	</tr>
 </tbody></table>
+
 5. 单击**下一步**，进入高级配置，选择投递格式为 json，依次填写相关配置参数。
 
 **配置项说明如下：**
