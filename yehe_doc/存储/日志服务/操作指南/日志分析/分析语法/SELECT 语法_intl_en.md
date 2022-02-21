@@ -2,21 +2,22 @@
 
 The `SELECT` statement is used to select data from a table.
 
-## SELECT Syntax Format
+## Syntax Format
 
 ```plaintext
 * | SELECT column (KEY)
 ```
 
-And
+__BLANK__and__BLANK__
 
 ```plaintext
 * | SELECT *
 ```
 
 >? SQL statements are case insensitive, so `SELECT` is equivalent to `select`.
+>
 
-## SELECT Syntax Sample
+## Syntax Examples
 
 Select values whose columns (KEY) are `remote_addr` and `method` from the log data. The columns should be separated by comma:
 
