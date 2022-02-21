@@ -18,7 +18,7 @@ In view of the fact that SMS bombing (cheating) attacks are generally initiated 
 
 - Limit the number of requests allowed per IP.
 - Limit the number of delivery tasks allowed per mobile number. To do so, you can [set the sending frequency limit](https://intl.cloud.tencent.com/document/product/382/35469) and [configure alarm recipients](https://intl.cloud.tencent.com/document/product/382/35470).
-- [Set over-limit delivery notifications](https://intl.cloud.tencent.com/document/product/382/35469).
+- [Set over-limit sending notifications](https://intl.cloud.tencent.com/document/product/382/35469).
 - Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to regularly (for example, once every day) view specific statistics and check SMS deliveries. If an exception is found, you can disable the SMS service in the console in emergency circumstances.
 
 ### What are the differences between Chinese Mainland SMS and Global SMS?
@@ -26,7 +26,7 @@ An SMS signature must be carried in Chinese Mainland SMS messages due to the req
 - Before sending a Chinese Mainland SMS message, you must [create a signature](https://intl.cloud.tencent.com/document/product/382/35456) and [a body template](https://intl.cloud.tencent.com/document/product/382/35457) and get them approved first.
 - Before sending a Global SMS message, you must first [create a body template](https://intl.cloud.tencent.com/document/product/382/35461) and get it approved. If you want to carry a signature, you also need to [create a signature](https://intl.cloud.tencent.com/document/product/382/35460) and get it approved.
 
-### How do I check the delivery records for individual mobile numbers?
+### How do I check the sending records for individual mobile numbers?
 You can log in to the [SMS console](https://console.cloud.tencent.com/smsv2), click the name of the target application to enter the application details page, and select one the following methods to query according to your actual needs:
 - Chinese Mainland SMS: select **Business Statistics** > **Chinese Mainland SMS** > **Message Records** and enter a mobile number to query as shown below:
 ![](https://main.qcloudimg.com/raw/ef647abc4454b2b5460b632e68fa50ac.png)
