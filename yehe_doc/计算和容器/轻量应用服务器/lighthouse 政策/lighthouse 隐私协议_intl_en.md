@@ -10,6 +10,7 @@ This Feature is available to users globally but primarily intended for users loc
 
 ## 4.HOW WE USE PERSONAL INFORMATION
 We will use the information in the following ways and in accordance with the following legal bases:
+
 | **Personal Information**                                     | **Use** |**Legal Basis**  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
 |**Public Network IP Address(es)**  |We use this information for the purpose of providing the Feature to you.  |We process this information as it is necessary for us to perform our contract with you to provide the Feature.  |
