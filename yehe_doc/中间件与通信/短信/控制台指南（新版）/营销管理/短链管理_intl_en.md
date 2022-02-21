@@ -2,7 +2,7 @@
 
 ## Creating Short URL
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2), select **Marketing Management** > **Short URL Management** on the left sidebar, and click **Generate Short URL**.
-2. In the **Generate Short URL** dialog box, enter **Short URL Name** and ***Original URL**.
+2. In the **Generate Short URL** dialog box, enter **Short URL Name** and **Original URL**.
 3. Click **OK** to return to the **Short URL Management** page, and you can view the new short URL, which is valid for 90 days.
 
 
