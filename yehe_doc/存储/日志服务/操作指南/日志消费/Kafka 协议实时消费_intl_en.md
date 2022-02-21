@@ -6,10 +6,10 @@ Kafka real-time consumption allows you to send data collected by Cloud Log Servi
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. Click **Log Topic** in the left sidebar.
 3. Click the log topic name/ID for which real-time consumption needs to be configured to go to its details page.
-4. Click the **Real-time Consumption** tab to go to the real-time consumption configuration page.
-5. Click **Edit** on the right, turn on the **Current Status** switch, and click **Confirm**.
+4. Click the **Real-Time Consumption** tab to go to the real-time consumption configuration page.
+5. Click **Edit** on the right, toggle **Status** on, and click **OK**.
 
-6. Construct a Consumer based on the information of the topic that CLS provides for data consumption. For more information, please see [CKafka SDK](https://intl.cloud.tencent.com/document/product/597/40453).
+6. Construct a consumer based on the information of the topic that CLS provides for data consumption. For more information, please see [CKafka SDK](https://intl.cloud.tencent.com/document/product/597/40453).
 
 
 
