@@ -3,7 +3,7 @@
 如果超过这个时间，创建过程可能存在问题，请及时 [联系我们](https://intl.cloud.tencent.com/document/product/236/32996)。
 
 ### 数据库买错了，如何退货？
-您可以登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表的“操作”列，选择**更多**>**销毁/退货**或**销毁/退货退费**进行退货，详细介绍请参见 [销毁实例](https://intl.cloud.tencent.com/document/product/236/31895)。
+您可以登录 [MySQL 控制台](https://console.intl.cloud.tencent.com/cdb)，在实例列表的“操作”列，选择**更多**>**销毁/退货**或**销毁/退货退费**进行退货，详细介绍请参见 [销毁实例](https://intl.cloud.tencent.com/document/product/236/31895)。
 
 <span id = "shilixiaohui"></span>
 ### 云数据库 MySQL 实例销毁了怎么办？
@@ -11,13 +11,13 @@
 
 <span id = "zhanghaomima"></span>
 ### 帐号误删与忘记密码怎么办？
-- 若误删帐号，可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 单击实例 ID 进入实例管理页，通过单击**数据库管理**>**帐号管理**>**创建帐号**或使用 sql 语句进行新建，详细介绍可参见 [创建帐号](https://intl.cloud.tencent.com/document/product/236/31900)。
+- 若误删帐号，可登录 [MySQL 控制台](https://console.intl.cloud.tencent.com/cdb) 单击实例 ID 进入实例管理页，通过单击**数据库管理**>**帐号管理**>**创建帐号**或使用 sql 语句进行新建，详细介绍可参见 [创建帐号](https://intl.cloud.tencent.com/document/product/236/31900)。
 - 若忘记 root 密码，可通过**数据库管理**>**帐号管理**页找到对应帐号进行**重置密码**操作，详细介绍可参见 [重置密码](https://intl.cloud.tencent.com/document/product/236/31901)。
 以上操作也可以通过 [云 API 接口](https://intl.cloud.tencent.com/document/product/236/17497) 实现。
 
 ### 云数据库 MySQL 的最大连接数是多少，如何修改？
 云数据库 MySQL 最大连接数可至控制台查看，如出现连接数过高时，建议先排查原因并解决，不建议直接调大连接数。
-您可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，单击实例 ID 进入实例管理页，选择**数据库管理**>**参数设置**页，找到`max_connections`参数进行修改。
+您可登录 [MySQL 控制台](https://console.intl.cloud.tencent.com/cdb)，单击实例 ID 进入实例管理页，选择**数据库管理**>**参数设置**页，找到`max_connections`参数进行修改。
 
 ### 为什么 MySQL 实例监控中 max_connections 数值始终显示为1000，而不是实际的当前最大连接数？
 实例监控中 max_connections 表示允许的最大连接个数，自定义区间值为1 - 100000；**当前打开连接数**表示当前时刻实际的连接数，是实时变化的值。
@@ -27,4 +27,4 @@
 
 ### MySQL 初始化后，如何修改表名的敏感度？
 敏感度调整需要调整数据库的`lower_case_table_names`参数。
-您可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，单击实例 ID 进入实例管理页，选择**数据库管理**>**参数设置**页，找到`lower_case_table_names`参数进行修改，0是敏感，1是不敏感。
+您可登录 [MySQL 控制台](https://console.intl.cloud.tencent.com/cdb)，单击实例 ID 进入实例管理页，选择**数据库管理**>**参数设置**页，找到`lower_case_table_names`参数进行修改，0是敏感，1是不敏感。
