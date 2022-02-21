@@ -14,11 +14,11 @@ You must select the signature type when creating a signature:
 
 - The signature content cannot contain non-compliant information such as information related to pornography, gambling, drugs, religion, and politics.
 - The organization or individual to which the signature belongs must be identifiable. Non-identifiable signatures are not allowed.
-- A Mainland China SMS signature consists of "[]" and signature content in the format of `[signature content]`. The signature content can contain 2–12 Chinese characters, letters, or digits (excluding "[]"). We recommend you use Chinese for the content of Mainland China SMS signatures as much as possible.
+- A Chinese Mainland SMS signature consists of "[]" and signature content in the format of `[signature content]`. The signature content can contain 2–12 Chinese characters, letters, or digits (excluding "[]"). We recommend you use Chinese for the content of Chinese Mainland SMS signatures as much as possible.
 - A Global SMS signature consists of "\[]" and signature content in the format of `\[signature content]`. The signature content can contain 2–15 characters (excluding "\[]").
 
 >?You only need to enter the signature content when applying for an SMS signature in the [console](https://console.cloud.tencent.com/sms/smsSign/1400054957/0/10) and don't need to enter "[]" or "\[]".
->For example, the complete Mainland China SMS signature of Tencent Cloud is `[腾讯云]`, and you only need to submit the signature content `腾讯云` when applying for the signature. The complete Global SMS signature of Tencent Cloud is `\[Tencent Cloud]`, and you only need to submit the signature content `Tencent Cloud` when applying for the signature.
+>For example, the complete Chinese Mainland SMS signature of Tencent Cloud is `[Tencent Cloud]`, and you only need to submit the signature content `Tencent Cloud` when applying for the signature. The complete Global SMS signature of Tencent Cloud is `\[Tencent Cloud]`, and you only need to submit the signature content `Tencent Cloud` when applying for the signature.
 
 ## Third-Party Rights
 
