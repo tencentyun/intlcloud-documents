@@ -127,5 +127,5 @@ You can send an SMS through the console or [API](https://intl.cloud.tencent.com/
 
 ## Step 4. View SMS delivery result
 You can view the SMS delivery result in the following ways:
-- On the **Chinese Mainland SMS** > **Bulk SMS** page, click **Details & Report Analysis** on the line of the target task to view its detailed record and report analysis.
+- On the **Chinese Mainland SMS** > **Bulk SMS** page, click **Details & Receipt Analytics** on the line of the target task to view its detailed record and report analysis.
 - Select **Business Statistics** > **Chinese Mainland SMS** and you can filter and view the statistics and relevant analysis of Chinese Mainland SMS by application, signature, body template, and time.
