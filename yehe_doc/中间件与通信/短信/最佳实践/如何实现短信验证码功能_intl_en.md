@@ -4,7 +4,7 @@ This document uses developing a verification code-enabled login and signup servi
 In addition to SCF, you can also use the [SendSms](https://intl.cloud.tencent.com/document/product/382/34859) API for this purpose.
 
 ## Preparations
-- You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verified your organizational identity](https://intl.cloud.tencent.com/document/product/378/10496).
+- You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verified your organization verification](https://intl.cloud.tencent.com/document/product/378/10496).
 - You have purchased an SMS package.
 - Prepare SMS signature owner qualification certificates.
  This document takes a business license as a qualification certificate for example.
@@ -78,7 +78,7 @@ Wait for signature review. The SMS signature will be available only after its st
 Wait for body template review. The body template will be available only after its status changes to **approved**. Please note down the template ID.
 
 ## Step 2. Set the SMS sending frequency limit (optional)[](id:Step2)
->!Individual users have no permission to modify the sending frequency limit. To use this feature, change "Individual Identity" to "Organizational Identity".
+>!Individual users have no permission to modify the sending frequency limit. To use this feature, change "Individual Verification" to "Organization Verification".
 
 To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, you are recommended to [set the sending frequency limit](https://intl.cloud.tencent.com/document/product/382/35469). In addition, you can use Tencent Cloud Captcha to maximize the protection of your business security.
 This document uses the default SMS sending frequency limit policy as an example.
