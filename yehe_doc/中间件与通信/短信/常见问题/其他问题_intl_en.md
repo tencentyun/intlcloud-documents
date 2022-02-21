@@ -146,9 +146,9 @@ When you import numbers into the console, the platform will automatically dedupl
 In one SMS delivery request, the platform will check whether the recipient numbers of the same message content are duplicated and deliver the message only once for duplicated numbers.
 
 ### Are invoices available?
-If you need an invoice, you can apply for it on the **[Invoice Management](https://console.cloud.tencent.com/expense/invoice)** page in the console.
+If you need an invoice, you can apply for it on the **Invoice** page in the [Billing Center console](https://console.intl.cloud.tencent.com/expense/invoicing).
 
-### Why does the number contain asterisks when I preview an SMS message? For example, `Dear customer, your top-up payment of 1**2 CNY has been credited to your account. Please check it in the system!`.
+### Why does the number contain asterisks when I preview an SMS message? For example, `Dear customer, your top-up payment of 1**2 USD has been credited to your account. Please check it in the system!`.
 The console will encrypt numbers for storage, so numbers will contain asterisks when being previewed, but SMS messages received by users will be fully displayed.
 
 ### What are the country/region codes?
