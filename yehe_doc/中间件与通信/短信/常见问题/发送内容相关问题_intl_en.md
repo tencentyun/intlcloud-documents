@@ -8,7 +8,7 @@ Individual users cannot send marketing SMS messages.
 Only organizational users can send marketing SMS messages, and they can only send membership marketing SMS messages.
 
 ### What is the difference between marketing SMS and notification SMS?
-Whether an SMS message is a marketing or regular one depends on the nature of the message. For more information, please see [Common Concepts](https://intl.cloud.tencent.com/document/product/382/13299).
+Whether an SMS message is a marketing or regular one depends on the nature of the message. For more information, please see [Glossary](https://intl.cloud.tencent.com/document/product/382/13299).
 
 ### Can I send website links?
 You can send text that contains an URL, but the URL must be entered in the body template and can be opened for review.
