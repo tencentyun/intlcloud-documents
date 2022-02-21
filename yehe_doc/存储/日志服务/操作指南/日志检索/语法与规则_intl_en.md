@@ -20,12 +20,12 @@
 | ? | Wildcard, which can match one single character, such as `host:www.te?t.com`. |
 | () | Grouping operator, which controls the precedence of logical operations, such as `(ERROR OR WARNING) AND pid:1234`. |
 | > | Range operator, which indicates the left operand is greater than the right operand, such as <code>status:>400`</code> |
-| >= | Range operator, which indicates the left operand is greater than or equal to the right operand, such as <code>status:>=400</code> |
+| >= | Range operator, which indicates the left operand is greater than or equal to the right operand, such as </code>status:>=400</code> |
 | < | Range operator, which indicates the left operand is less than the right operand, such as <code>status:<400</code> |
-| <= | Range operator, which indicates the left operand is less than or equal to the right operand, such as <code>status:<=400`</code> |
+| <= | Range operator, which indicates the left operand is less than or equal to the right operand, such as </code>status:<=400`</code> |
 | [] | Range operator, which includes the upper and lower boundary values, such as `age:[20 TO 30]`. |
 | {} | Range operator, which excludes the upper and lower boundary values, such as `age:{20 TO 30}`. |
-| \             | Escape character. An escaped character represents the literal meaning of the character, such as `url:\/images\/favicon.ico`. You can also use `""` to wrap special characters as a whole, e.g., `url:"/images/favicon.ico"`. For details about the difference between these two search methods, see [Configuring Indexes](https://intl.cloud.tencent.com/document/product/614/39594).|
+| \             | Escape character. An escaped character represents the literal meaning of the character, such as `url:\/images\/favicon.ico`. You can also use `""` to wrap special characters as a whole, e.g., `url:"/images/favicon.ico"`. For details about the difference between these two search methods, see [Configuring Indexes](https://intl.cloud.tencent.com/document/product/614/39594").|
 | + | Logical operator (similar to AND). The term `+A` indicates `A` must exist, such as `+level:ERROR +pid:1234`. |
 | - | Logical operator (similar to NOT). The term `-A` indicates `A` must not exist, such as `+level:ERROR -pid:1234` |
 | && | Logical operator (similar to AND), such as <code>level:ERROR && pid:1234</code> |
@@ -41,7 +41,7 @@
 | Expected Search Result  | Search Statement |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Logs of a specified `SOURCE`                                     | `__SOURCE__:127.0.0.1` or  `__SOURCE__:192.168.0.*`             |
-| Logs from a specified file:                                       | `__FILENAME__:"/var/log/access.log"` or `__FILENAME__:\/var\/log\/*.log` |
+| Logs from a specified file:                                       | `__FILENAME__:"/var/log/access.log"`或`__FILENAME__:\/var\/log\/*.log` |
 | Logs containing `ERROR`  | `ERROR` |
 | Searching-failed logs (Status code > 400)                            | <code>status:>400</code>                                                |
 | Failed logs in the `GET` request (with a status code greater than 400) | <code>method:GET AND status:>400</code> |
@@ -55,7 +55,6 @@
 | Logs with the container name `nginx` in the metadata, and request latency greater than 1s | <code>\_\_TAG\_\_.container_name:nginx AND request_time:>1</code> |
 | Logs that contain the `message` field, or whose `message` field has a value | `message:*` or `_exists_:message` |
 | Logs that do not contain the `message` field  | `NOT _exists_:message` |
-| Logs whose `message` field is empty | `message:""` |
 
 
 
