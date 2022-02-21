@@ -22,8 +22,8 @@ You must select the signature type when creating a signature:
 
 ## Third-Party Rights
 
-- If user A creates a signature for self-use, and the signature's owner is user A, then no third-party rights will be involved.
-- If user A creates a signature for company B, and the signature's owner is company B, then third-party rights will be involved. In this case, please select **For others** as the signature purpose, and company B needs to give user A an authorization letter, on which company B is the delegator, user A is the delegatee, and company B's official stamp must be affixed.
+- If user A creates a signature for verified entities, and the signature's owner is user A, then no third-party rights will be involved.
+- If user A creates a signature for company B, and the signature's owner is company B, then third-party rights will be involved. In this case, please select **For unverified entities** as the signature purpose, and company B needs to give user A an authorization letter, on which company B is the delegator, user A is the delegatee, and company B's official stamp must be affixed.
 
 >?Currently, only enterprises and public institutions are allowed to authorize others to apply for a signature for them.
 
@@ -33,9 +33,9 @@ You must select the signature type when creating a signature:
 - Certificate files must be `.jpg`, `.jpeg`, or `.png` images within 5 MB in size each.
 - If third-party rights are involved, the standard <a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx">authorization letter</a> provided by the SMS service must be used.
 
-## Certificate File List (for Signatures for Self-Use)
+## Certificate File List (for Signatures for Verified Entities)
 ### Organizational user
-- When creating a signature for self-use **for the first time**, you need to upload the following certificate materials:
+- When creating a signature for verified entities **for the first time**, you need to upload the following certificate materials:
  <table>
 <tr>
 <th>Signature Type</th>
@@ -69,7 +69,7 @@ You must select the signature type when creating a signature:
 </tr>
 </table>
 
-- If you want to create another signature for self-use when you already have such a signature, you need to upload the following certificate materials:
+- If you want to create another signature for verified entities when you already have such a signature, you need to upload the following certificate materials:
  <table>
 <tr>
 <th>Signature Type</th>
@@ -103,7 +103,7 @@ You must select the signature type when creating a signature:
 </table>
 
 ### Individual user
-When creating a signature for self-use, you need to upload the following certificate materials:
+When creating a signature for verified entities, you need to upload the following certificate materials:
  <table>
 <tr>
 <th>Signature Type</th>
@@ -123,7 +123,7 @@ When creating a signature for self-use, you need to upload the following certifi
 </tr>
 </table>
 
-## Certificate File List (for Signatures for Others)
+## Certificate File List (for Signatures for Unverified Entities)
 
 When creating a signature owned by an enterprise or public institution, you need to upload the following certificate materials:
 >?Currently, only enterprises and public institutions are allowed to authorize others to apply for a signature for them.
