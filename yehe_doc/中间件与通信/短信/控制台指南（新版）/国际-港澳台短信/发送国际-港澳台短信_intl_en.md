@@ -12,7 +12,7 @@
  - Signature Name: select an approved SMS signature to be used (different signatures are distinguished by signature name), which is optional.
  - Sending Time: select **Send now** or **Send by schedule**.
  - Recipient: click **Template Download**, enter recipient's mobile number and custom SMS content in the form, and click **Click here** to upload it. The maximum form size supported is 30 MB.
-   >Up to 1,000 Global SMS messages can be sent per day under one Tencent Cloud account.
+   >!Up to 1,000 Global SMS messages can be sent per day under one Tencent Cloud account.
    >
    <table>
      <tr>
@@ -23,7 +23,7 @@
 				 <th>SMS Content Variable N</th>
 		</tr>
 	 <tr>      
-        <td>Example: 139xxxxxxxx <br>Instructions: please enter the mobile numbers of recipients. All the mobile numbers in one single SMS sending must be registered outside Mainland China. The cells need to be in a regular format, i.e., without any specific number formats. </td>   
+        <td>Example: 139xxxxxxxx <br>Instructions: please enter the mobile numbers of recipients. All the mobile numbers in one single SMS sending must be registered outside the Chinese Mainland. The cells need to be in a regular format, i.e., without any specific number formats. </td>   
 	     <td>Example: test company A <br>Instructions: please enter the first custom variable content according to the body template, i.e., replacing {1} in the template. </td>   
 	     <td>Example: server B <br>Instructions: please enter the second custom variable content according to the body template, i.e., replacing {2} in the template. </td>      
 	     <td>……</td>        
