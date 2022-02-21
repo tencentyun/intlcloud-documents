@@ -16,6 +16,7 @@ As specified in the DPSA.
 
 # 5. **DATA RETENTION**
 We will store personal data processed in connection with the Feature as follows:
+
 | **Personal Information**                                     | **Retention Policy**                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Business Data**|We retain such data for as long as you use the Feature. You may manually delete such data on the Feature. Once you choose to delete such data or terminate your use of the Feature, such data will be immediately deleted from the Feature. If your use of the Feature is terminated or suspended by us due to arrears of your account and we do not receive such overdue payment within 7 days, we will delete your data after the 7 days. |
