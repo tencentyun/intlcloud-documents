@@ -9,8 +9,8 @@ Tencent Cloud Global SMS collaborates with a great number of premium direct conn
 Global SMS enables you to send SMS messages in multiple languages to users in more than 200 countries/regions through over 1,000 global carriers. It provides complete documentation for SMS access and can be integrated within ten minutes and launched within one hour at the soonest through the Tencent Cloud Console, API, or SDK.
 
 
-### Real-time monitoring, stability, and reliability
-Global SMS works with premium direct connection channels across the world. Over 90% of SMS messages can be received within 10 seconds. A delivery status report will be returned immediately a message is sent. Real-time monitoring and intelligent scheduling ensure service security and reliability.
+### Real-Time monitoring, stability, and reliability
+Global SMS works with premium direct connection channels across the world. Over 90% of SMS messages can be received within 10 seconds. A delivery status report will be returned immediately a message is sent. Real-Time monitoring and intelligent scheduling ensure service security and reliability.
 
 
 ### Comprehensive statistical analysis
