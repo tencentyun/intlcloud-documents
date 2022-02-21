@@ -1,14 +1,14 @@
 
 ## Verification Mode
 ### Identity verification overview
-Tencent Cloud [identity verification](https://intl.cloud.tencent.com/document/product/378/3629) consists of individual and organizational identity verification. **Different verification modes correspond to different SMS features. We recommend you select an identity verification mode based on your actual account ownership.**
+Tencent Cloud [identity verification](https://intl.cloud.tencent.com/document/product/378/3629) consists of individual and organization verification. **Different verification modes correspond to different SMS features. We recommend you select an identity verification mode based on your actual account ownership.**
 
 | Type             | Object                           | Account Ownership | Operation Guide                                                     |
 | :--------------- | :--------------------------------- | :------- | :----------------------------------------------------------- |
-| Individual identity verification | Individual                               | Individual      | [Individual Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/10495) |
-| Organizational identity verification | Enterprises, government, public institutions, schools, and organizations | Organization     | [Organizational Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/10496) |
+| Individual Verification | Individual                               | Individual      | [Individual Verification Guide](https://intl.cloud.tencent.com/document/product/378/10495) |
+| Organization Verification | Enterprises, government, public institutions, schools, and organizations | Organization     | [Organization Verification Guide](https://intl.cloud.tencent.com/document/product/378/10496) |
 
-If you have completed individual identity verification for your account, you can apply for a change to organizational identity. Users who haven't completed identity verification cannot purchase resourcesin the Chinese Mainland.
+If you have completed Individual Verification for your account, you can apply for a change to organizational identity. Users who haven't completed identity verification cannot purchase resourcesin the Chinese Mainland.
 
 ### Differences in rights
 
