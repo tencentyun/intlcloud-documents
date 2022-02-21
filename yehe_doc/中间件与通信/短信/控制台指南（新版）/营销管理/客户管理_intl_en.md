@@ -11,7 +11,7 @@ You can **import** or **enter** numbers on this page for management.
 	-  **File**: click **Download Template**, enter the customer mobile numbers in the downloaded form, and click **Click here** or drag and drop the form file to upload it. The maximum form size supported is 30 MB.
 	-  **Number Group**: select **Create a group** or **Select an existing group**. If you select **Create a group**, please enter the group name.
 4. Click **OK**.
-![](https://main.qcloudimg.com/raw/ca54f0d9d8df5a7bd0a8f5392caa6f74.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/46318786ea30d9776020d6262fba1038.png)
 
 
 ### Entering
