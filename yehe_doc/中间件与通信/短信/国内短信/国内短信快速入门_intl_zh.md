@@ -19,7 +19,7 @@
 ### 选择地域
 在 [快速入门](https://console.cloud.tencent.com/smsv2/guide) 页面，在【快速入门】标题栏单击选择地域。
 腾讯云国际站包括多个地区，各地区之间产品功能和产品刊例价无差异，但数据分区存储，均储存于本地，不跨区存储，请根据业务数据存储需求选择合适的地区。
-![](https://qcloudimg.tencent-cloud.cn/raw/ec3a87b4037656c52d735f4d98f77b24.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/75bdff7ee617e9fb7f2d71d7258b9b5f.png)
 
 [](id:Sign)
 ### 创建签名
