@@ -81,7 +81,7 @@ The fields are defined as follows:
 (2) On the log topic management page, click **Index Configuration**. Configure the index field on the index configuration management page based on the definition of the NGINX log format field.
 ![](https://main.qcloudimg.com/raw/776e9a193ec84adeabea01b229d6162d.png)
 
-#### 5. Querying a NGINX log
+#### 5. Querying an NGINX log
 
 (1) In the left sidebar in the console, click **Log Search** to enter the log search page. Select the corresponding logset and log topic.
 (2) Click **Search** to query the NGINX log.
