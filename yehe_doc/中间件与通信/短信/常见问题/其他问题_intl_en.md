@@ -85,8 +85,8 @@ When you call a Tencent Cloud SMS API to send an SMS message, if the response pa
 
 ### How do I get the SMS API SecretId and SecretKey?
 1. Log in to the Tencent Cloud console.
-2. Go to the [TencentCloud API Key](https://console.cloud.tencent.com/cam/capi) console page.
-3. On the **TencentCloud API Key** page, click **Create** to create a key pair.
+2. Go to the [Manage API Key](https://console.cloud.tencent.com/cam/capi) console page.
+3. On the **Manage API Key** page, click **Create Key** to create a key pair.
 
 **SecretId**: identifies the user that calls an API, which is similar to a username.
 **SecretKey**: authenticates the user that calls the API, which is similar to a password.
