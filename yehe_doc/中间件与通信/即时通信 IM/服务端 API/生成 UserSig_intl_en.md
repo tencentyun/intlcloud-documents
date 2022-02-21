@@ -55,19 +55,4 @@ The calculation function of UserSig uses key parameters like SDKAppID, UserID, a
 | key | Information of the key, which can be obtained from the app details page in the IM [console](https://console.cloud.tencent.com/im). For details, see [Getting the key](#getkey). |
 
 
-[](id:ECDSA-SHA256)
-## Algorithms of Earlier Versions
 
-To simplify signature calculation so that users can conveniently and quickly use Tencent Cloud services, the signature algorithm of the IM service has been upgraded from ECDSA-SHA256 to HMAC-SHA256 since July 19, 2019. This means that all SDKAppIDs created after July 19, 2019 will use the new HMAC-SHA256 algorithm.
-
-If your SDKAppID was created before July 19, 2019, we recommend that you upgrade its signature algorithm to the [HMAC-SHA256 Algorithm](#GeneratingdynamicUserSig). The upgrade will not affect your current businesses. Alternatively, you can still use the signature algorithm of an earlier version. The URLs for downloading the source code of the ECDSA-SHA256 algorithm for different languages are as follows:
-
-| Programming Language | Signature Algorithm | Download URL |
-|:---------:|:---------:|:---------:|
-| Java | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-java) |
-| GO | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-golang) |
-| PHP | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-php) |
-| Nodejs | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-node) |
-| Python | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-python) |
-| C# | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-cs) |
-| C++ | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api) |
