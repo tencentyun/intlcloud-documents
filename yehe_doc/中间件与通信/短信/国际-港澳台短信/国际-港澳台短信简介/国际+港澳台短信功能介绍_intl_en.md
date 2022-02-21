@@ -4,7 +4,7 @@ Global SMS provides various services such as SMS verification code, system notif
 An SMS signature is an identifier added before the message text for identification of a company or business. You can use the name or abbreviation of your company, trademark, product, or website as the signature.
 
 ### Body Template
-The SMS body content can be verification code, system notification, member-targeted marketing, etc. An SMS body template allows you to use parameters (variables) to customize the SMS body content, which can be shared by Mainland China SMS and Global SMS.
+The SMS body content can be verification code, system notification, member-targeted marketing, etc. An SMS body template allows you to use parameters (variables) to customize the SMS body content, which can be shared by Chinese Mainland SMS and Global SMS.
 
 ### SMS Message Delivery
 After both the SMS body template and signature are approved, you can send SMS messages through the SMS console, APIs, or SDKs.
