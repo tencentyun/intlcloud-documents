@@ -6,11 +6,11 @@ Currently, SMS provides the following default policies:
 
 | Policy Name | Description |
 |--------------------------|--------------|
-| QcloudSMSFullAccess     | Full access right |
-| QcloudSMSReadonlyAccess | Read-only access right |
+| QcloudSMSFullAccess     | Full access permission |
+| QcloudSMSReadonlyAccess | Read-Only access permission |
 
 ## Default Policy Use Cases
-### Creating sub-accounts with full access right
+### Creating sub-accounts with full access permission
 1. Access the [User List](https://console.cloud.tencent.com/cam) page in the CAM Console using the Tencent Cloud [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click **Create User**.
 2. On the "Create User" page, select **Custom Create** to enter the "Create Sub-user" page.
 >?Please perform the steps before "User Permissions" as instructed in [Creating a Custom Sub-user](https://intl.cloud.tencent.com/document/product/598/13674).
