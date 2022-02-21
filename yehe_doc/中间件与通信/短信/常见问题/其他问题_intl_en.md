@@ -1,5 +1,5 @@
 ### What should I do if a user fails to receive an SMS message?
-Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) and select **Statistics and Analytics** > **Chinese Mainland SMS** (or **Global SMS**) > **Message Records** to view the **Sending Status** and **Remarks** for the mobile number.
+Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) and select **Business Statistics** > **Chinese Mainland SMS** (or **Global SMS**) > **Message Records** to view the **Sending Status** and **Remarks** for the mobile number.
 - If the **Sending Status** is "Failed", you can troubleshoot the issue based on the cause as described in **Remarks**. The cause may be that the request has hit the rate limit control policy, the SMS message format is incorrect, or the mobile number has been blocked due to unsubscription.
 - If the **Sending Status** is "Succeeded", but an error code is displayed in **Remarks**, please troubleshoot the issue based on the specific [error code](https://intl.cloud.tencent.com/document/product/382/34861).
 - If the **Sending Status** is "Succeeded" and the **Remarks** display that "The user has successfully received the message", but the user actually has not, you can troubleshoot the issue by following the steps below:
