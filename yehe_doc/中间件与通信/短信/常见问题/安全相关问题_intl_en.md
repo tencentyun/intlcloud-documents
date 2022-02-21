@@ -6,8 +6,8 @@ To ensure business and channel security and minimize potential financial losses 
 Organizational users can log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to set or modify the corresponding sending frequency limit policy. For detailed directions, please see [Setting Sending Frequency Limit](https://intl.cloud.tencent.com/document/product/382/35469).
 Note: individual users have no permission to modify the sending frequency limit. To use this feature, change "Individual Identity" to "Organizational Identity". For more information on the rights of organizational users, please see [Differences in rights](https://intl.cloud.tencent.com/document/product/382/40653).
 
-### How do I add an alarm contact?
-For detailed directions, please see [Configuring Alarm Contact](https://intl.cloud.tencent.com/document/product/382/35470).
+### How do I add an alarm recipient?
+For detailed directions, please see [Configuring Alarm Recipient](https://intl.cloud.tencent.com/document/product/382/35470).
 
 ### How do I prevent SMS bombing (cheating)?[](id:Q4)
 SMS bombing (cheating) refers to using malicious programs or tools and exploiting vulnerabilities in website clients or servers to send a large number of SMS verification codes to many irrelevant mobile numbers in a period of time (for example, within a day), which cause harassment to such users.
@@ -17,7 +17,7 @@ The figure below shows a real case encountered by a customer (only dozens of mes
 In view of the fact that SMS bombing (cheating) attacks are generally initiated by servers, the following comprehensive measures are recommended for defense:
 
 - Limit the number of requests allowed per IP.
-- Limit the number of delivery tasks allowed per mobile number. To do so, you can [set the sending frequency limit](https://intl.cloud.tencent.com/document/product/382/35469) and [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470).
+- Limit the number of delivery tasks allowed per mobile number. To do so, you can [set the sending frequency limit](https://intl.cloud.tencent.com/document/product/382/35469) and [configure alarm recipients](https://intl.cloud.tencent.com/document/product/382/35470).
 - [Set over-limit delivery notifications](https://intl.cloud.tencent.com/document/product/382/35469).
 - Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to regularly (for example, once every day) view specific statistics and check SMS deliveries. If an exception is found, you can disable the SMS service in the console in emergency circumstances.
 
