@@ -78,7 +78,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
             "resource": [
                 "*"
             ],
-             "condition":{
+             "condition": {
                     "for_any_value:string_equal": {
                          "qcs:resource_tag": [
                              "key&value"
@@ -129,7 +129,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
     "resource": [
                 "*"
             ],
-     "condition":{
+     "condition": {
         "for_any_value:string_equal": {
            "qcs:resource_tag": [
              "key&value"
@@ -296,7 +296,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
             "resource": [
                 "*"
             ],
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "testCAM&test1"
@@ -349,7 +349,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
             "resource": [
                 "*"
             ],
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "key&value"
@@ -474,7 +474,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
             "resource": [
                 "*"
             ],
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "key&value"
@@ -550,7 +550,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
             "resource": [
                 "*"
             ],
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "key&value"
@@ -593,14 +593,18 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
                 "cls:ModifyAlarmNotice",
                 "cls:DeleteAlarmNotice",
                 "cam:ListGroups",
-                "cam:DescribeSubAccountContacts"
+                "cam:DescribeSubAccountContacts",
+                "cls:GetAlarmLog",
+                "cls:DescribeAlertRecordHistory",
+                "cls:CheckAlarmRule",
+                "cls:CheckAlarmChannel"
             ],
             "resource": "*"
         }
     ]
 }
 ```
-- Authorization for log topics with a specified tag
+- Authorization for log topics with a specified tag (monitoring alarms currently do not fully support permission management by tag)
 ```
 {
     "version": "2.0",
@@ -614,10 +618,10 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
             "resource": [
                 "*"
             ],
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
-                        "key&value"
+                        "testCAM&test1"
                     ]
                 }
             }
@@ -634,7 +638,11 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
                 "cls:ModifyAlarmNotice",
                 "cls:DeleteAlarmNotice",
                 "cam:ListGroups",
-                "cam:DescribeSubAccountContacts"
+                "cam:DescribeSubAccountContacts",
+                "cls:GetAlarmLog",
+                "cls:DescribeAlertRecordHistory",
+                "cls:CheckAlarmRule",
+                "cls:CheckAlarmChannel"
             ],
             "resource": "*"
         }
@@ -664,16 +672,17 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
             "action": [
                 "cls:DescribeAlarms",
                 "cls:DescribeAlarmNotices",
-                "cls:GetAlarmLog"
+                "cls:GetAlarmLog",
+                "cls:DescribeAlertRecordHistory",
+                "cam:ListGroups",
+                "cam:DescribeSubAccountContacts"
             ],
-            "resource": [
-                "*"
-            ]
+            "resource": "*"
         }
     ]
 }
 ```
-- Authorization for log topics with a specified tag
+- Authorization for log topics with a specified tag (monitoring alarms currently do not fully support permission management by tag)
 ```
 {
     "version": "2.0",
@@ -687,10 +696,10 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
             "resource": [
                 "*"
             ],
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
-                        "key&value"
+                        "testCAM&test1"
                     ]
                 }
             }
@@ -700,11 +709,12 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
             "action": [
                 "cls:DescribeAlarms",
                 "cls:DescribeAlarmNotices",
-                "cls:GetAlarmLog"
+                "cls:GetAlarmLog",
+                "cls:DescribeAlertRecordHistory",
+                "cam:ListGroups",
+                "cam:DescribeSubAccountContacts"
             ],
-            "resource": [
-                "*"
-            ]
+            "resource": "*"
         }
     ]
 }
@@ -759,7 +769,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
                 "cls:DescribeLogsets"
             ],
             "resource": "*",
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "age&13",
@@ -831,7 +841,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
                 "cls:DescribeLogsets"
             ],
             "resource": "*",
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "key&value"
@@ -908,7 +918,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
                 "cls:DescribeIndex"
             ],
             "resource": "*", 
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "key&value"
@@ -978,7 +988,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
                 "cls:DescribeTopics",
                 "cls:DescribeLogsets"            ],
             "resource": "*",
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "key&value"
@@ -1052,7 +1062,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
                 "cls:DescribeLogsets"
             ],
             "resource": "*",
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "key&value"
@@ -1125,7 +1135,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
                 "cls:DescribeLogsets"
             ],
             "resource": "*",
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "key&value"
@@ -1185,7 +1195,7 @@ For example, you can set the policy name to `CLS-TopicA-Access`. Configure the p
             "resource": [
                 "*"
             ],
-            "condition":{
+            "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
                         "testCAM&test1"

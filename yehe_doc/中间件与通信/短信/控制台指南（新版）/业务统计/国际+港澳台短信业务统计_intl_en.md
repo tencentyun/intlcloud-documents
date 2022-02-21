@@ -1,4 +1,4 @@
-Log in to the [SMS console](https://console.cloud.tencent.com/sms) and select **Statistics and Analytics** > **Global SMS** on the left sidebar. Then, you can view the details of Global SMS delivery, delivery records, and failure analysis within a specified time period. Click **Export Data** on each page to download the corresponding data table.
+Log in to the [SMS console](https://console.cloud.tencent.com/sms) and select **Business Statistics** > **Global SMS** on the left sidebar. Then, you can view the details of Global SMS delivery, delivery records, and failure analysis within a specified time period. Click **Export Data** on each page to download the corresponding data table.
 
 ## Data Overview
 On the **Data Overview** page, you can specify an application or template to precisely filter and view the SMS delivery details for today, yesterday, the last 7 days, the last 30 days, or a specified time period. Both the trend chart and data table support displaying statistical data in multiple dimensions such as requests, successes, billable messages, and success rate.

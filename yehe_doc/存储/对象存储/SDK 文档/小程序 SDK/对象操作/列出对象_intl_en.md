@@ -10,6 +10,9 @@ This document provides an overview of APIs and SDK code samples related to listi
 
 This API is used to query some or all the objects in a bucket.
 
+>! In COS, if a listed object key is project/, it is an empty object to simulate the effects of a folder. For more information, please see [Folder and directory](https://intl.cloud.tencent.com/document/product/436/13324).
+>
+
 #### Sample code
 
 Sample 1. Listing all files in the `a` directory
@@ -19,7 +22,7 @@ Sample 1. Listing all files in the `a` directory
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
     Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
-    Prefix: 'a/', /*Optional*/
+    Prefix: 'a/',           /* Set a prefix to indicate that the key of the listed object starts with the prefix. Not required. */
 }, function(err, data) {
     console.log(err || data.Contents);
 });
@@ -58,8 +61,8 @@ Sample 2. Listing the files in the `a` directory without deep traversal
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
     Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
-    Prefix: 'a/',              /* Optional */
-    Delimiter: '/',            /* Optional */
+    Prefix: 'a/',           /* Set a prefix to indicate that the key of the listed object starts with the prefix. Not required. */
+    Delimiter: '/',            /* Set the delimiter "/" to list objects in the current directory. To list all objects, leave this parameter empty. Not required. */
 }, function(err, data) {
     console.log(err || data.CommonPrefixes);
 });
@@ -101,8 +104,8 @@ var listFolder = function(marker) {
     cos.getBucket({
         Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
         Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
-        Prefix: 'a/',
-        Marker: marker,
+        Prefix: 'a/',           /* Set a prefix to indicate that the key of the listed object starts with the prefix. Not required. */
+        Marker:       marker,
         MaxKeys: 1000,
     }, function(err, data) {
         if (err) {

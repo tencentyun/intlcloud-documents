@@ -172,7 +172,7 @@ Appを[ダウンロード](https://intl.cloud.tencent.com/document/product/647/3
 [](id:step2_10)
 ### 手順10：画面共有
 1. StartScreenCaptureインターフェース呼び出し 、画面共有を行います。
-2. その他メンバーは、メンバーが画面共有中であることを通知するOnRemoteUserScreenVideoAvailableコールバックを受信します。
+2. その他メンバーは、メンバーが画面共有中であることを通知するOnRemoteUserScreenAvailableコールバックを受信します。
 
 >? 画面共有モジュールは、ウィンドウ選択のロジックを実行する必要があります。具体的な実装については、Appの`ScreenShareWindow.h`の実装をご参照ください。
 

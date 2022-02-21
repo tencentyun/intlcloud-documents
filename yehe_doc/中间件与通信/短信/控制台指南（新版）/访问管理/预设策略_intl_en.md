@@ -6,13 +6,13 @@ Currently, SMS provides the following default policies:
 
 | Policy Name | Description |
 |--------------------------|--------------|
-| QcloudSMSFullAccess     | Full access right |
-| QcloudSMSReadonlyAccess | Read-only access right |
+| QcloudSMSFullAccess     | Full access permission |
+| QcloudSMSReadonlyAccess | Read-Only access permission |
 
 ## Default Policy Use Cases
-### Creating sub-accounts with full access right
+### Creating sub-accounts with full access permission
 1. Access the [User List](https://console.cloud.tencent.com/cam) page in the CAM Console using the Tencent Cloud [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click **Create User**.
-2. On the "Create User" page, select **Custom Create** to enter the "Create Sub-user" page.
+2. On the "Create User" page, select **Custom Creation** to enter the "Create Sub-user" page.
 >?Please perform the steps before "User Permissions" as instructed in [Creating a Custom Sub-user](https://intl.cloud.tencent.com/document/product/598/13674).
 3. On the "User Permissions" page:
 	1. Search for and select the default policy `QcloudSMSFullAccess`.
@@ -67,5 +67,5 @@ Currently, SMS provides the following default policies:
 
 ## Removing a Sub-account’s Full Access to SMS
 1. Access the **[User List](https://console.cloud.tencent.com/cam)** in the CAM console using a Tencent Cloud [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click the target sub-account.
-2. Find the preset policy `QcloudSMSFullAccess` under the "Permissions" tab on the "User Details" page, click **Unassociate** on the right, and complete deauthorization as prompted.
+2. Find the preset policy `QcloudSMSFullAccess` under the "Permissions" tab on the "User Details" page, click **Disassociate** on the right, and complete deauthorization as prompted.
 
