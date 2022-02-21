@@ -77,11 +77,11 @@ Wait for signature review. The SMS signature will be available only after its st
 4. Click **OK**.
 Wait for body template review. The body template will be available only after its status changes to **approved**. Please note down the template ID.
 
-## Step 2. Set the SMS delivery rate limit (optional)[](id:Step2)
->!Individual users have no permission to modify the rate limit. To use this feature, change "Individual Identity" to "Organizational Identity".
+## Step 2. Set the SMS sending frequency limit (optional)[](id:Step2)
+>!Individual users have no permission to modify the sending frequency limit. To use this feature, change "Individual Identity" to "Organizational Identity".
 
-To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, you are recommended to [set the delivery rate limit](https://intl.cloud.tencent.com/document/product/382/35469). In addition, you can use Tencent Cloud Captcha to maximize the protection of your business security.
-This document uses the default SMS delivery rate limit policy as an example.
+To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, you are recommended to [set the sending frequency limit](https://intl.cloud.tencent.com/document/product/382/35469). In addition, you can use Tencent Cloud Captcha to maximize the protection of your business security.
+This document uses the default SMS sending frequency limit policy as an example.
 
 - For SMS messages with the same content, a maximum of one such message can be sent to the same mobile number within 30 seconds.
 - A maximum of 10 messages can be sent to the same mobile number on a calendar day.
