@@ -2,7 +2,7 @@
 
 跟手机直播千篇一律的竖屏体验不同，实时音视频（TRTC）需要兼顾横屏和竖屏两种场景，因此就会有很多横竖屏的处理逻辑需要去应对，本文主要介绍：
 - 如何实现竖屏模式，例如：微信的视频通话就是一个典型的竖屏体验模式。
-- 如何实现横屏模式，例如：多人视频会议 App（类似小鱼易连）往往都是采用横屏模式。
+- 如何实现横屏模式，例如：多人音视频互动 App（类似小鱼易连）往往都是采用横屏模式。
 - 如何自定义控制本地画面和远程画面的旋转方向和填充模式。
 
 ![](https://main.qcloudimg.com/raw/1b4452db22edfe88646cd35888794d44.jpg)
@@ -17,15 +17,17 @@
 ## 竖屏模式
 如果要实现类似微信视频通话的体验模式，需要做两项工作：
 
-<span id="step1"></span>
+[](id:step1)
 ### 1.  配置 App 的 UI 界面为竖屏
-#### iOS平台
+<dx-tabs>
+::: iOS平台
 可以直接在 XCode 的 【General】>【Deployment Info】>【Device Orientation】中进行设置：
 ![](https://main.qcloudimg.com/raw/f7d62ed0954fd44f80d3983a0e6fb52d.png)
 
 您也可以通过实现 Appdelegate 中的  `supportedInterfaceOrientationsForWindow` 方法来达到相同目标：
 
-```
+<dx-codeblock>
+::: ObjectiveC ObjectiveC
 - (UIInterfaceOrientationMask)application:(UIApplication *)application 
     supportedInterfaceOrientationsForWindow:(UIWindow *)window 
 {
@@ -33,23 +35,27 @@
     return  UIInterfaceOrientationMaskPortrait ;
 
 }
-```
+:::
+</dx-codeblock>
 >?CSDN 上有一篇文章 [iOS横竖屏旋转及其基本适配方法](https://blog.csdn.net/DreamcoffeeZS/article/details/79037207)，详细介绍了 iOS 平台中关于屏幕方向的一些开发经验。
-
-#### Android平台
+:::
+::: Android平台
 通过指定 activity 的 `screenOrientation` 属性为 portrait，即可指定该界面为竖屏模式：
-```
+<dx-codeblock>
+::: xml 
 <activity android:name=".trtc.TRTCMainActivity"  android:launchMode="singleTask" android:windowSoftInputMode="adjustPan"
           android:screenOrientation="portrait" />
-```
+:::
+</dx-codeblock>
+:::
+</dx-tabs>
 
-<span id="step2"></span>
+[](id:step2)
 ### 2. 配置 SDK 使用竖屏分辨率
 在使用 TRTCCloud 的 setVideoEncoderParam 接口设置视频编码参数时，将 resMode 指定为 `TRTCVideoResolutionModePortrait` 即可。
-<span id="example_code"></span>
-示例代码如下：
-#### iOS平台
-```
+示例代码如下：[](id:example_code)
+<dx-codeblock>
+::: iOS平台 ObjectiveC
 TRTCVideoEncParam* encParam = [TRTCVideoEncParam new];
 encParam.videoResolution = TRTCVideoResolution_640_360;
 encParam.videoBitrate = 600;
@@ -57,16 +63,16 @@ encParam.videoFps = 15;
 encParam.resMode = TRTCVideoResolutionModePortrait; //设置分辨率模式为竖屏模式
 
 [trtc setVideoEncoderParam: encParam];
-```
-#### Android平台
-```
+:::
+::: Android平台 java
 TRTCCloudDef.TRTCVideoEncParam encParam = new TRTCCloudDef.TRTCVideoEncParam();
 encParam.videoResolution = TRTCCloudDef.TRTC_VIDEO_RESOLUTION_640_360;
 encParam.videoBitrate = 600;
 encParam.videoFps = 15;
 encParam.videoResolutionMode = TRTCCloudDef.TRTC_VIDEO_RESOLUTION_MODE_PORTRAIT; //设置分辨率模式为竖屏模式
 trtc.setVideoEncoderParam(encParams);
-```
+:::
+</dx-codeblock>
 
 ## 横屏模式
 如果希望 App 是横屏体验，那么您需要做的工作跟竖屏模式类似，只是将第一步和第二步中的参数都进行相应的调整即可。

@@ -285,8 +285,8 @@ C++ インターフェースを統合する方法がわからない場合は、�
 ### オーディオデータカスタムコールバック
 | API             | 説明               |
 |-----|-----|
-| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a1488e35460441c351cab75d9702498f6) | ローカルマイクがキャプチャしたオリジナルオーディオデータのコールバック |
-| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#affb432a77f938d1e8dfb6c0d5488dbcf) | ローカルがキャプチャし、オーディオモジュールで前処理したオーディオデータのコールバック |
+| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a1488e35460441c351cab75d9702498f6) | ローカルがキャプチャし、オーディオモジュールで前処理したオーディオデータのコールバック |
+| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#affb432a77f938d1e8dfb6c0d5488dbcf) | ローカルがキャプチャし、オーディオモジュールで前処理、音響処理およびBGMミキシングを行ったオーディオデータのコールバック |
 | [onPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ab841da62beb88a9fa9bce58d25df6f23) | 音声ミキシング前のリモートユーザーごとのオーディオデータ|
 | [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a6649f62d4138d9bc73ae484e63dec081) | 各再生待ちオーディオをミキシングし、最終的にシステムに送信して再生する前のデータコールバック |
 

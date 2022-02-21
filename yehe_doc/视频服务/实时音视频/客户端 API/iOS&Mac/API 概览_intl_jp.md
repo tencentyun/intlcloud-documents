@@ -146,7 +146,7 @@
 ### ネットワークテストインターフェース
 | API             | 説明               |
 |-----|-----|
-| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a058556b224315dcde3601ab621a09dee) | ネットワークスピードテストを開始（入室前に使用） |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a914bc4bdd1f0f0e02f27f873acb7e576) | ネットワークスピードテストを開始（入室前に使用） |
 | [stopSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a58d732ba648d1f9a3a460c02de79bb9b) | ネットワークスピードテストを停止 |
 
 ### デバック関連インターフェース
@@ -358,8 +358,8 @@
 ### オーディオデータカスタムコールバック
 | API             | 説明               |
 |-----|-----|
-| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#aeaeaf9e7091c75e1a072d576a57d7f5c) | ローカルマイクがキャプチャしたオリジナルオーディオデータのコールバック |
-| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a73a3e7de3c5c340957f119bb0f8744b0) | ローカルがキャプチャし、オーディオモジュールで前処理したオーディオデータのコールバック |
+| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#aeaeaf9e7091c75e1a072d576a57d7f5c) | ローカルがキャプチャし、オーディオモジュールで前処理したオーディオデータのコールバック |
+| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a73a3e7de3c5c340957f119bb0f8744b0) | ローカルがキャプチャし、オーディオモジュールで前処理、音響処理およびBGMミキシングを行ったオーディオデータのコールバック |
 | [onRemoteUserAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#aa392c17c27bae1505f148bf541b7746a) | 音声ミキシング前のリモートユーザーごとのオーディオデータ |
 | [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a5a8a0bf6f8d02c33b2fe01c6175dfd4e) | 各再生待ちオーディオをミキシングし、最終的にシステムに送信して再生する前のデータコールバック |
 | [onMixedAllAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a905748efe966e94ec1212fda14161aee) | SDKのすべてのオーディオミキシング後のオーディオデータ（キャプチャしたデータおよび再生待ちのデータを含む） |

@@ -147,7 +147,7 @@
 | [showDebugView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ad2cdb5d447114534f53bad5bdc48afba) | 显示仪表盘 |
 | [setDebugViewMargin](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa2014c293033e9ea60aa6ffd525ee2fa) | 设置仪表盘的边距 |
 | [callExperimentalAPI](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a37f331dd0cfff51ab5a3becf4950a55e) | 调用实验性接口 |
-| [setNetEnv](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a28ae49c86c5e5ba7e5ad2eae171bde76) | 设置 TRTC 的后台集群(仅适用于腾讯云研发团队) |
+| [setNetEnv](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a28ae49c86c5e5ba7e5ad2eae171bde76) | 设置 TRTC 的后台集群（仅适用于腾讯云研发团队） |
 
 ### 废弃接口
 | API | 描述 |
@@ -316,8 +316,8 @@
 ### 音频数据自定义回调
 | API | 描述 |
 |-----|-----|
-| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | 本地麦克风采集到的原始音频数据回调 |
-| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | 本地采集并经过音频模块前处理后的音频数据回调 |
+| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | 本地采集并经过音频模块前处理后的音频数据回调 |
+| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | 本地采集并经过音频模块前处理、音效处理和混 BGM 后的音频数据回调 |
 | [onRemoteUserAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902) | 混音前的每一路远程用户的音频数据 |
 | [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | 将各路待播放音频混合之后并在最终提交系统播放之前的数据回调 |
 | [onMixedAllAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a96923a9286a88b83d6890f607884ceb3) | SDK 所有音频混合后的音频数据（包括采集到的和待播放的） |

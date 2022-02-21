@@ -1,3 +1,21 @@
+## Version 9.3.201 @ 2022.01.05
+
+**機能追加**
+Windows & Mac：[onSpeedTestResult](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSpeedTestResult)ネットワークスピードテストの結果のコールバックを追加しました。
+
+**改善**
+- Windows & Mac：[startSpeedTest](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startSpeedTest)ネットワークスピードテストの開始を改善しました。
+- Windows & Mac：[muteLocalVideo](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#muteLocalVideo)ローカルのビデオストリームの公開の一時停止/再開を改善し、streamTypeパラメータを追加しました。
+- Windows & Mac：[muteRemoteVideoStream](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#muteRemoteVideoStream)指定されたリモートビデオストリームの受信一時停止を改善し、streamTypeパラメータを追加しました。
+- Windows & Mac：[selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget)画面共有パラメータの設定を改善し、source、captureRect、propertyの3つのパラメータをサポートしました。
+- Windows & Mac：[startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture)画面共有の起動を改善し、paramsパラメータを追加しました。
+
+**問題の修正**
+- Mac：MacOS 12新システムでのカメラキャプチャの問題。
+- Windows & Mac：脆弱なネットワークの制御ポリシーを最適化しました。同じシナリオでもよりスムーズです。
+- Windows：AGCアルゴリズムを最適化して、音量の小さすぎ・大きすぎといった問題の発生確率を低減します。
+- Winodws：画面共有時のフレームレート取得異常の問題を修正しました。
+
 ## Version 8.9.102 @ 2021.08.11
 
 **機能追加**
@@ -33,7 +51,7 @@ Windows & Mac：onStatisticsコールバックに新しいフィールドgateway
 
 **品質の最適化**
 - すべてのプラットフォーム：[Music](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#ga865e618ff3a81236f9978723c00e86fb)モードの音質を最適化し、cloubhouse等の音声ライブストリーミングケースに更に適するようになりました。
--  すべてのプラットフォーム：オーディオ・ビデオリンクのネットワーク耐性を最適化しました。著しく劣るネットワーク環境でも、そのうち70%のオーディオ・ビデオは比較的スムーズなままです。
+-  すべてのプラットフォーム：オーディオビデオリンクのネットワーク耐性を最適化しました。著しく劣るネットワーク環境でも、そのうち70%のオーディオビデオは比較的スムーズなままです。
 -  Windows：一部のケースでのライブストリーミングの音質を最適化し、音声障害の問題を大幅に減少させました。
 -  Windows：パフォーマンスを最適化しました。一部のユースケースでパフォーマンスが旧バージョンより20%～30%向上しました。
 
@@ -130,9 +148,10 @@ Windows & Mac：PCのマイクとスピーカーを制御するため、[setCurr
 
 **追加**
 
-[ビッグストリーム](https:/(https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoStreamType)を使用した[画面共有](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture)をサポートします。
+[ビッグストリーム](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoStreamType)を使用した[画面共有](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture)をサポートします。
 
 **改善**
+
 - [ミクスストリーミングプリセットテンプレート](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCTranscodingConfigMode)の使いやすさを最適化しました。
 - [ミクスストリーミング](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setMixTranscodingConfig)を最適化して、成功率を向上させました。
 - Windowsの画面共有を最適化しました。

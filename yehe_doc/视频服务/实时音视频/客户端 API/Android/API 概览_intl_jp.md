@@ -147,7 +147,7 @@
 | [showDebugView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ad2cdb5d447114534f53bad5bdc48afba) | ダッシュボードを表示 |
 | [setDebugViewMargin](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa2014c293033e9ea60aa6ffd525ee2fa) | ダッシュボードのマージンを設定 |
 | [callExperimentalAPI](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a37f331dd0cfff51ab5a3becf4950a55e) | 試験的インターフェースの呼び出し |
-| [setNetEnv](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a28ae49c86c5e5ba7e5ad2eae171bde76) | TRTCのバックエンドクラスターを設定(Tencent Cloud研究開発チームのみに適用) |
+| [setNetEnv](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a28ae49c86c5e5ba7e5ad2eae171bde76) | TRTCのバックエンドクラスターを設定（Tencent Cloud研究開発チームのみに適用） |
 
 ### 破棄されたインターフェース
 | API             | 説明               |
@@ -316,8 +316,8 @@
 ### オーディオデータカスタムコールバック
 | API             | 説明               |
 |-----|-----|
-| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | ローカルマイクがキャプチャしたオリジナルオーディオデータのコールバック |
-| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | ローカルがキャプチャし、オーディオモジュールで前処理したオーディオデータのコールバック |
+| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | ローカルがキャプチャし、オーディオモジュールで前処理したオーディオデータのコールバック |
+| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | ローカルがキャプチャし、オーディオモジュールで前処理、音響処理およびBGMミキシングを行ったオーディオデータのコールバック |
 | [onRemoteUserAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902) | 音声ミキシング前のリモートユーザーごとのオーディオデータ |
 | [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | 各再生待ちオーディオをミキシングし、最終的にシステムに送信して再生する前のデータコールバック |
 | [onMixedAllAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a96923a9286a88b83d6890f607884ceb3) | SDKのすべてのオーディオミキシング後のオーディオデータ（キャプチャしたデータおよび再生待ちのデータを含む） |
