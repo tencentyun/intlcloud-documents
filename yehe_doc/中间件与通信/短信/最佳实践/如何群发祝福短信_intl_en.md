@@ -12,7 +12,7 @@ This document uses sending a Spring Festival best wishes message to members by c
 - Understand the SMS body content review standards.
 
 
-<span id="Step1"></span>
+
 ## Step 1. Create a signature
 
 >?After an SMS signature is submitted, it will be reviewed within two hours generally. You can [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470) to receive review result notifications.
@@ -49,7 +49,7 @@ This document uses sending a Spring Festival best wishes message to members by c
 3. Click **OK**.
  Wait for signature review. The SMS signature will be available only after its status changes to **approved**.
 
-<span id="Step2"></span>
+
 ## Step 2. Create a body template
 >After an SMS body template is submitted, it will be reviewed within two hours generally. You can [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470) to receive review result notifications.
 
@@ -78,7 +78,7 @@ This document uses sending a Spring Festival best wishes message to members by c
  Wait for body template review. The body template will be available only after its status changes to **approved**.
 
 
-<span id="Step3"></span>
+
 ## Step 3. Send SMS
 Before sending an SMS, you need to confirm that both the SMS signature and body template have been approved.
 You can send an SMS through the console or [API](https://intl.cloud.tencent.com/document/product/382/34859). This document uses the console as an example.
@@ -86,6 +86,7 @@ You can send an SMS through the console or [API](https://intl.cloud.tencent.com/
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 2. Select **Chinese Mainland SMS** > **Bulk SMS** on the left sidebar and click **Create Bulk SMS Sending Task**.
 3. Configure the following parameters as needed:
+
  <table>
      <tr>
          <th nowrap="nowrap">Parameter</th>  
@@ -109,7 +110,7 @@ You can send an SMS through the console or [API](https://intl.cloud.tencent.com/
      </tr> 
 </table>
  Below is a sample table:
- <span id="Table2"></span>
+
  <table>
      <tr>
          <th width="50%">Recipient's Mobile Number</th>  
@@ -127,4 +128,4 @@ You can send an SMS through the console or [API](https://intl.cloud.tencent.com/
 ## Step 4. View SMS delivery result
 You can view the SMS delivery result in the following ways:
 - On the **Chinese Mainland SMS** > **Bulk SMS** page, click **Details & Report Analysis** on the line of the target task to view its detailed record and report analysis.
-- Select **Statistics** > **Chinese Mainland SMS** and you can filter and view the statistics and relevant analysis of Chinese Mainland SMS by application, signature, body template, and time.
+- Select **Business Statistics** > **Chinese Mainland SMS** and you can filter and view the statistics and relevant analysis of Chinese Mainland SMS by application, signature, body template, and time.
