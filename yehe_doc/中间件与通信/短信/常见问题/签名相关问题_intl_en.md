@@ -72,7 +72,7 @@ Currently, only enterprises and public institutions are allowed to authorize oth
 </tr>
 <tr>
 <td>Company</td>
-<td rowspan="4">You need to upload the <b><a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx">authorization letter</a> </b>and one of the following enterprise and public institution certificates<b> of the entity that owns the signature: </b><ul><li>Three-in-One</li><li>Business license</li><li>Organization code certificate</li><li>Social credit code certificate</li></ul></td>
+<td rowspan="4">You need to upload the <b><a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx">authorization letter</a> </b>and one of the following enterprise and public institution certificates<b> of the entity that owns the signature: </b><ul><li>Three-in-one</li><li>Business license</li><li>Organization code certificate</li><li>Social credit code certificate</li></ul></td>
 </tr>
 <tr>
 <td>App</td>
