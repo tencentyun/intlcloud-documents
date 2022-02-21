@@ -26,7 +26,7 @@ When you configure a custom callback API, you can insert system variables to the
 | {{.NotifyType}}      |   Notification type. `1`: alarm notification; `2`: alarm clearing notification     | 1     |
 | {{.DetailUrl}}            | Alarm details page link (login-free)       | https://alarm.cls.tencentcs.com/CJNmxxxx                |
 | {{.QueryUrl}}             | Search and analysis link for the first execution statement     | https://alarm.cls.tencentcs.com/Olw8xxxx                |
- 
+
 
 ## Example
 
