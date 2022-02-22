@@ -49,7 +49,7 @@ The following figure shows that your LCP is at the "Needs Improvement" level, an
 
 | View Name | Description |
 |---------|---------|
-| Top underperformanced pages view | It displays the top five pages with the poorest performance, including firstScreenTime, page loading duration, and day-over-day comparison, in order to help you understand the conditions of poorly performing pages and quickly find performance bottlenecks. |
+| Top underperformed pages view | It displays the top five pages with the poorest performance, including firstScreenTime, page loading duration, and day-over-day comparison, in order to help you understand the conditions of poorly performing pages and quickly find performance bottlenecks. |
 | Network/Platform view | It uses a pie chart to display the number of exceptions, percentage, and firstScreenTime of pages from each network type/platform, such as 3G, 4G, and Wi-Fi networks as well as macOS, Windows, and iOS platforms. |
 | ISP view | It uses a pie chart to display the number of exceptions, percentage, and firstScreenTime of pages from each ISP such as China Mobile, China Telecom, and China Unicom. | 
 | Region view | It uses a pie chart to display the number of exceptions, percentage, and firstScreenTime of pages from each region. | 
