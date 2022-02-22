@@ -4,7 +4,7 @@ To experience better CLS log collection service, you can upgrade the LogListener
 
 >? 
 > - Auto upgrade is supported for LogListener v2.5.0 and above. For better user experience, you are advised to [install or upgrade to the latest-version LogListener](https://intl.cloud.tencent.com/document/product/614/17414).
-> - Python 2 is needed for auto upgrade.Auto upgrade cannot be performed on a LogListener with Python 3 installed.
+> - Python 2 is required for auto upgrade. Auto upgrade cannot be performed on a LogListener with Python 3 installed.
 
 ## Directions
 
