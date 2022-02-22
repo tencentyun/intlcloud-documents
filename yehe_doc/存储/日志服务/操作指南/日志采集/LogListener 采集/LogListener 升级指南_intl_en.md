@@ -14,15 +14,15 @@ You can choose auto upgrade or manual upgrade.
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. In the left sidebar, click **Machine Group** to go to the machine management page.
-3. Find the target machine group, move the mouse under ![](https://main.qcloudimg.com/raw/7b707f1dcef1dc117d4446da1265e2c8.png) in the "Auto Upgrade" column, and then click **Enable Now**.
+3. Find the target machine group, move the mouse under ![](https://main.qcloudimg.com/raw/7b707f1dcef1dc117d4446da1265e2c8.png) in the **Auto Upgrade** column, and then click **Enable Now**.
 
 4. In the pop-up, toggle the button on and specify the upgrade time period (the default period is from the current time to two hours later, such as 08:39-10:39). 
 
-5. Click **OK**. When the status of the target machine group changes to **Enabled** as displayed in the **Auto Upgrade** column, that means auto upgrade is enabled successfully.
+5. Click **OK**. When the status of the target machine group changes to **Enabled** as displayed in the **Auto Upgrade** column, auto upgrade has been enabled successfully.
 
 >?
 > - You can set any time period for the auto upgrade, and the system will check if upgrade is needed every day in the specified time period. If the upgrade conditions are met, the auto-upgrade will be performed; otherwise, the operation will be performed.
-> - You can check multiple target machine groups and click **Auto Upgrade** to upgrade them in batch.
+> - You can check multiple target machine groups and click **Auto Upgrade** to upgrade them in batches.
 
 
 ### Manual upgrade
