@@ -11,7 +11,7 @@ TencentCloud Automation Tools (TAT) is installed on the target CVM instances.
 2. On the left sidebar, click **Overview** to go to the overview page.
 3. Choose **Fast Integration** > **Cloud Product Logs**, and click **CVM**.
 
-4. On the batch deployment configuration page, select the target CVM instances, enter `SecretId` information (`SecretId` and SecretKey), and set advanced configuration items accordingly.
+4. On the batch deployment configuration page, select the target CVM instances, enter `SecretId` information (`SecretId` and `SecretKey`), and set advanced configuration items accordingly.
 
 5. Click **Next**.
 6. On the instance installation page, click **Next** when the installation **Status** changes to **Completed**, which indicates that the installation is completed.
