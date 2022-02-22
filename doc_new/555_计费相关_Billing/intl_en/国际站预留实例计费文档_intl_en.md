@@ -32,7 +32,7 @@ Please note that you pay for the entire RI term regardless of actual usage.
 
 **Terms**
 
-1 year
+1 year(365 days)
 
 Assume you purchased a 1-year term CVM R1 on May 25, 2019 11:15:24, the RI will be valid from May 25, 2019 12:00:00 to May 24, 2020 12:00:00.
 
