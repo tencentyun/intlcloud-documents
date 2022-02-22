@@ -31,7 +31,7 @@ You can choose auto upgrade or manual upgrade.
 2. In the left sidebar, click **Machine Group** to go to the management page.
 3. Find the target machine group, and click **Upgrade Now** in the **Operation** column. 
 
-4. In the pop-up, check the target machine with status as **To be upgraded**, and then click **Manual Upgrade**.
+4. In the pop-up, select the target machine with status as **To be upgraded**, and then click **Manual Upgrade**.
 
 The system will upgrade LogListener to the latest version by default. When you see **This is the latest version**, that means the manual upgrade is successful.
 
