@@ -1,6 +1,6 @@
 ## Overview
 
-To experience better CLS log collection service, you can upgrade the LogListener automatically and manually via the console. After the LogListener version is upgraded, users don’t need to download the latest-version installer, they can set a time period for auto upgrade or select specific machines to upgrade manually by one click.
+To experience better CLS log collection service, you can upgrade the LogListener automatically or manually via the console. After the LogListener version is upgraded, you don’t need to download the latest-version installer. You can set a time period for auto upgrade or select specific machines to upgrade manually by one click.
 
 >? 
 > - Auto upgrade is supported for LogListener v2.5.0 and above. For better user experience, you are advised to [install or upgrade to the latest-version LogListener](https://intl.cloud.tencent.com/document/product/614/17414).
