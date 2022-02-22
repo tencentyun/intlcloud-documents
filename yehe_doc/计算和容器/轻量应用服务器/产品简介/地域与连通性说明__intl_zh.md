@@ -18,7 +18,7 @@
 </tr>
 <tr>
 <td>同账号下同一地域内的不同实例互访    </td>
-<td><b>是</b>，请注意放通实例防火墙的对应端口，详情请参见 <a href="https://cloud.tencent.com/document/product/1207/44577" target="_blank">管理防火墙</a>。</td>
+<td><b>是</b>，请注意放通实例防火墙的对应端口</a>。</td>
 </tr>
 <tr>
 <td>同账号下不同地域内的不同实例互访 </td>
@@ -40,13 +40,13 @@
 <tr>
 <td>轻量应用服务器访问云服务器 CVM</td>
 <td>否</td>
-<td><b>支持</b>，详情请参见 <a href="https://cloud.tencent.com/document/product/1207/56847">内网互联</a>。</td>
+<td><b>支持</b></a>。</td>
 </tr>
 <tr>
 <td>轻量应用服务器访问对象存储 COS（同地域）</td>
 <td>
 <b>是</b>，详情请参见对象存储 COS 的 <a href="https://intl.cloud.tencent.com/document/product/436/6224" target="_blank">内网和外网访问</a>。
-<br>您可参考 <a href="https://cloud.tencent.com/document/product/1207/44569#.E5.A6.82.E4.BD.95.E9.AA.8C.E8.AF.81.E8.BD.BB.E9.87.8F.E5.BA.94.E7.94.A8.E6.9C.8D.E5.8A.A1.E5.99.A8.E6.98.AF.E5.90.A6.E4.BD.BF.E7.94.A8.E5.86.85.E7.BD.91.E8.AE.BF.E9.97.AE.E5.AF.B9.E8.B1.A1.E5.AD.98.E5.82.A8-cos.EF.BC.9F" target="_blank">常见问题</a>，判断轻量应用服务器是否使用内网访问对象存储 COS。
+<br>您可参考 <a href="https://intl.cloud.tencent.com/document/product/1103/41257" target="_blank">常见问题</a>，判断轻量应用服务器是否使用内网访问对象存储 COS。
 </td>
 <td>- </td>
 </tr>
@@ -58,7 +58,7 @@
 <tr>
 <td>轻量应用服务器访问云数据库</td>
 <td>否</td>
-<td><b>支持</b>，详情请参见 <a href="https://cloud.tencent.com/document/product/1207/56847">内网互联</a>。</td>
+<td><b>支持</b></a>。</td>
 </tr>
 <tr>
 <td>轻量应用服务器连接负载均衡 CLB</td>
