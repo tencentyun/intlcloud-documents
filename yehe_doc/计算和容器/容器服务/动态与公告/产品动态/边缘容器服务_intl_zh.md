@@ -1,3 +1,12 @@
+## 2021年11月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+  <td>边缘集群增强功能开发</td><td>边缘集群支持边缘节点绑定 ENI、支持边缘节点 Pod 直通能力、支持 kubernetes 1.20 版本产品能力、StatefulSetGrid/Headless service。</td><td>2021-11-06</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/457/35385">边缘集群指南 </a></td>
+</tr>  
+</table>
+
 ## 2021年09月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -21,9 +30,10 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-  <td>支持 statefulsetGrid 应用和灰度升级功能</td><td>后端升级支持 YAML 命令行方式管理 statefulsetGrid 和灰度升级。</td><td>2021-04-27</td><td> </a></td>
+  <td>支持 statefulsetGrid 应用和灰度升级功能</td><td>后端升级支持 YAML 命令行方式管理 statefulsetGrid 和灰度升级。</td><td>2021-04-27</td><td></a></td>
 </tr>  
 </table>
+
 
 
 ## 2021年03月
@@ -40,7 +50,7 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>支持边缘集群运维管理功能</td><td>支持边缘集群运维管理功能，支持配置、概览和检索日志，审计，事件信息。</td><td>2021-01-30</td><td><a href="https://cloud.tencent.com/document/product/457/32090">集群运维</a></td>
+    <td>支持边缘集群运维管理功能</td><td>支持边缘集群运维管理功能，支持配置、概览和检索日志，审计，事件信息。</td><td>2021-01-30</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/457/38428">集群运维</a></td>
 </tr>
 <tr>
     <td>支持使用 TCR 镜像仓库</td><td>创建边缘应用及工作负载，支持选择使用 TCR 镜像仓库。</td><td>2021-01-19</td><td><a href="https://intl.cloud.tencent.com/document/product/457/36838">使用 TCR 企业版实例内容器镜像创建工作负载</a></td>
@@ -69,15 +79,16 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>ServiceGroup 功能产品化</td><td>用户可通过控制台使用 ServiceGroup 功能，功能入口与集群“节点管理”入口平级。</td><td>2020-11-27</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/37772">ServiceGroup 功能概述</a></li><li></a></li><li></a></li></td>
+    <td>ServiceGroup 功能产品化</td><td>用户可通过控制台使用 ServiceGroup 功能，功能入口与集群“节点管理”入口平级。</td><td>2020-11-27</td><td><li></a></li><li><</a></li><li></a></li></td>
 </tr>
 <tr>
     <td>节点安装脚本新增支持 check、clear 两个功能参数</td><td><li>check 参数，方便用户使用脚本手动检查节点环境中不满足安装要求的地方。</li><li>clear 参数，方便一键清理节点中的脏数据、关闭防火墙等。</li></td><td>2020-11-13</td><td>-</td>
 </tr>
 <tr>
     <td>上线边缘 DNS 方案</td><td>边缘 DNS 方案将不再占用节点53端口。</td><td>2020-11-4</td><td>-</a></td>
-</tr>
+</tr
 </table>
+
 
 ## 2020年10月
 <table>
@@ -87,7 +98,7 @@
     <td>支持多体系架构混合管理</td><td>该功能支持在一个集群内同时管理 ARM、X86 CPU 架构的节点。</td><td>2020-10-28</td><td>-</td>
 </tr>
 <tr>
-    <td>支持边缘 Pod HPA</td><td>上线边缘 Pod HPA 功能，同时原生 Kubernetes HPA 功能在边缘也可以生效。</td><td>2020-10-23</td><td><a href="https://cloud.tencent.com/document/product/457/50084">在 TKE 上利用 HPA 实现业务的弹性伸缩</a></td>
+    <td>支持边缘 Pod HPA</td><td>上线边缘 Pod HPA 功能，同时原生 Kubernetes HPA 功能在边缘也可以生效。</td><td>2020-10-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38858">在 TKE 上利用 HPA 实现业务的弹性伸缩</a></td>
 </tr>
 <tr>
     <td>升级 “脚本添加节点” 功能</td><td>支持用户使用同一个脚本多次向集群添加自有节点（脚本时效为1小时），方便批量添加自有节点操作。</td><td>2020-10-22</td><td>-</a></td>

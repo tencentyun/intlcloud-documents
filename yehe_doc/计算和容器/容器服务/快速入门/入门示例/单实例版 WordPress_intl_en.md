@@ -1,73 +1,71 @@
-## Scenario
-WordPress is a blogging platform developed with PHP. You can use it as a content management system, or use it to build websites based on a service architecture that supports PHP and MySQL databases.
+## Overview
+WordPress is a blogging platform developed with PHP. You can use it as a content management system, or use it to create websites on services that support PHP and MySQL databases.
 
-This document describes how to use the official `wordpress` image on Docker Hub to build a public WordPress website.
+This document describes how to use the official `wordpress` image on Docker Hub to create a publicly accessible WordPress website.
 
 
 ## Prerequisites
+>!
+>- The `wordpress` image contains all operating environments for WordPress, allowing you to pull and create the service directly.
+>- WordPress with a single Pod is used for testing purposes only, and therefore cannot ensure persistent data storage. It is recommended that you use a self-built MySQL or TencentDB to store your data. For more information, see [WordPress Using TencentDB](/doc/product/457/7447). 
 >
->- The `wordpress` image contains all runtime environments for WordPress, and you can directly pull these resources to create a service.
->- WordPress with a single pod is used for testing purposes only, and therefore data may not be stored permanently. We recommend that you build your own MySQL or TencentDB database to store your data. For more information, see [WordPress Using TencentDB](https://intl.cloud.tencent.com/document/product/457/7447). 
->
-- You have [registered for a Tencent Cloud account](https://intl.cloud.tencent.com/register).
-- You have created a cluster. For more information on how to create a cluster, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
+- You have registered a [Tencent Cloud account](https://intl.cloud.tencent.com/register).
+- You have created a cluster. For more information on how to create a cluster, see [Creating a cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 
 ## Directions
 ### Creating a WordPress service
-1. Log in to the TKE console and click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
-2. On the "Cluster Management" page, select the ID of the cluster to create the service and go to the "Deployment" page of the workload in the cluster. Then, click **Create**, as shown in the following figure.
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
+2. On the **Cluster Management** page, click the ID of the cluster for which the service is to create to go to the **Deployment** page of the cluster and click **Create**, as shown in the figure below.
 ![](https://main.qcloudimg.com/raw/1e32ac2e0e8d99315305f1b55034d691.png)
-3. On the "Create Workload" page, specify the basic information of the workload as instructed. See the figure below.
+3. On the **Create Workload** page, specify basic information of the workload as instructed in the figure below.
 ![](https://main.qcloudimg.com/raw/a1c6b34a108a7a24d3f22e7048dec3ef.png)
- - **Workload Name**: enter the name of the workload. In this example, the name is `wordpress`.
- - **Description**: specify the related information of the workload.
- - **Tag**: specify the key-value pair. In this example, the default value is k8s-app = **wordpress**.
- - **Namespace**: select a namespace as required.
- - **Type**: select a type as required.
- - **Volume**: set the workload volume to mount. For more information, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
-4. Configure **Containers in Pod** as instructed. See the figure below.
-
-The following describes the main parameters. You can keep the default values of other parameters.
- - **Name**: enter the custom container name. In this example, the name is `test`.
+ - **Workload Name**: enter the name of the workload to create. In this example, `wordpress` is used.
+ - **Description**: specify related workload information.
+ - **Tag**: specify the key-value pair. The default value is k8s-app = **wordpress** here.
+ - **Namespace**: select a namespace based on your requirements.
+ - **Type**: select a type based on your requirements.
+ - **Volume**: set the volume to which the workload is mounted based on your requirements. For more information, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
+4. Set **Containers in the Pod** as instructed below:
+The main parameters are described as follows. You can retain the default values of other parameters.
+ - **Name**: enter the custom container name. In this example, `test` is used.
  - **Image**: enter `wordpress`.
- - **Image Tag**: enter `latest`.
- - **Image Pull Policy**: select one of the three available policies as required. In this example, the default policy is applied.
-If you do not set any image pull policy and leave **Image Tag** empty or set it to `latest`, the `Always` policy is used. Otherwise, the `IfNotPresent` policy is used.
-    - **Always**: always fetch the image remotely.
-    - **IfNotPresent**: use a local image by default. Fetch the image remotely if no local image is available.
-    - **Never**: only use a local image. An exception occurs if no local image is available.
-6. Set the number of pods for the service as instructed. See the figure below.
+ - **Image Tag**: enter **latest**.
+ - **Image Pull Policy**: three policies are available. Select a policy as required. In this example, the default policy is used.
+   If you do not set any image pull policy and **Image Tag** is left empty or set to `latest`, the `Always` policy is used. Otherwise, the `IfNotPresent` policy is used.
+    - **Always**: always pull the image from the remote end.
+    - **IfNotPresent**: a local image is used by default. If no local image is available, the image is pulled remotely.
+    - **Never**: only use a local image. If no local image is available, an exception occurs.
+6. Set the number of Pods for the service as instructed. See the figure below.
 ![](https://main.qcloudimg.com/raw/649c9a62a29a77d09451e6d0dc487d58.png)
- - **Manual adjustment**: specify the number of pods. In this example, it is set to 1. You can click "+" or "-" to change the number of pods.
- - **Auto adjustment**: automatically adjust the number of pods if any of the set conditions is met. For more information, see [Automatic Scaling for Basic Operations](https://intl.cloud.tencent.com/document/product/457/32424).
-8. Configure **Access Settings (Service)** for the workload as instructed. See the figure below.
-![](https://main.qcloudimg.com/raw/be7ada723be03bb14f9d528aa15a0f58.png)
- - **Service**: select "Enable".
- - **Service Access**: select "Public Network Access".
- - **Load Balancer**: create or select a load balancer as required.
- - **Port Mapping**: select the TCP protocol, and set both the container port and service port to port 80.
->The node network, container network, and ports 30000 to 32768 in the security group of the cluster which the service belongs to must be opened to Internet. Otherwise, TKE may be unavailable. For more information, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
+ - **Manual adjustment**: set the number of pods. The number of pods in this example is set to 1. You can click "+" or "-" to change the number of pods.
+ - **Auto Adjustment**: the number of pods is automatically adjusted if any of the setting conditions are met. For more information, see [Automatic Scaling Basic Operations](https://intl.cloud.tencent.com/document/product/457/32424).
+8. Configure **Access Settings (Service)** for the workload as instructed below:
+ - **Service**: select **Enable**.
+ - **Service Access**: select **LoadBalancer (public network)**.
+ - **Load Balancer**: select according to your requirements.
+ - **Port Mapping**: select TCP, and set both the container port and service port to 80.
+>! The security group of the cluster to which the service belongs must open the node network and container network to the Internet. It is also required to open ports 30000 to 32768 to the Internet. Otherwise, TKE may be unavailable. For more information, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
 9. Click **Create Workload** to create the WordPress service.
 
 
 ### Accessing the WordPress service
 
-You can access the WordPress service with either methods.
+You can access the WordPress service using either of the following two methods.
 
-#### Access with CLB IP address
-1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the "Cluster Management" page.
-2. Click the ID of the cluster that the WordPress service belongs to and choose **Service** > **Service**.
-3. On the service management page, copy the CLB IP address of the WordPress service, as shown in the following figure.
+#### Access using the CLB IP address
+1. In the left sidebar, click **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
+2. Click the ID of the cluster to which the WordPress service belongs and select **Services and Routes** > **Service**.
+3. On the service management page, copy the CLB IP address of the WordPress service, as shown in the figure below.
 ![](https://main.qcloudimg.com/raw/8a8ea1dc181ab31660313ed0883bc980.png)
-4. Paste the CLB IP address in the address bar of the browser and press Enter to access the service.
+4. Paste the CLB IP address in the browser and press **Enter** to access the service.
 
-#### Access with service name
-Other services or containers in the cluster can use the service name to directly access the WordPress service.
+#### Accessing the WordPress service using the service name
+Other services or containers in the cluster can access the WordPress service using the service name.
 
 ### Verifying the WordPress service
-The WordPress service is created successfully if you are directed to the WordPress server configuration page when you try to access the service, as shown in the following figure.
+After the service is created, the WordPress server configuration page is displayed when you access the service, as shown in the figure below.
 ![](https://main.qcloudimg.com/raw/4ccbffc42a7f9381e2595175ea32be65.png)
 
 ### More WordPress settings
-If the container cannot be created, you may search [Event FAQs](https://intl.cloud.tencent.com/document/product/457/8187) for a solution.
+If the container fails to be created, you can view [Event FAQs](https://intl.cloud.tencent.com/document/product/457/8187) to locate the causes.
 

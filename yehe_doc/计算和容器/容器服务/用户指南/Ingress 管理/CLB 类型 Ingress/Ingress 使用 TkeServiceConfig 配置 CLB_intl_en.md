@@ -19,7 +19,7 @@ There can be multiple domain names under each layer-7 listener and multiple forw
  - `spec.loadBalancer.l7Listeners.port`: listening port
  - `spec.loadBalancer.l7Listeners.domains[].domain`: domain name
  - `spec.loadBalancer.l7Listeners.domains[].rules[].url`: forwarding path
- - `spec.loadBalancer.l7listeners.protocol.domain.rules.url.forwardType`: backend protocol
+ - `spec.loadBalancer.l7listeners.protocol.domain.rules.url.forwardType`: specifying a backend protocol
     - A backend protocol is the protocol between a CLB instance and the real server. If you select HTTP as the backend protocol, you need to deploy HTTP service for the real server. If you select HTTPS as the backend protocol, you need to deploy HTTPS service for the real server. Encryption and decryption of HTTPS service will consume more resources. For more information, see [Configuring a HTTPS Listener for a CLB Instance](https://intl.cloud.tencent.com/document/product/214/32516).
 
 >?When your domain name is configured as the default value, i.e., public or private VIP, you can configure by entering a null value in the `domain` field.
@@ -167,7 +167,7 @@ spec:
       - domain: ""     # When `domain` is null, the VIP is used as the domain name
         rules:
         - url: "/health"
-          forwardType: HTTP # Specifies HTTP as the backend protocol
+          forwardType: HTTP # It specifies HTTP as the backend protocol
           healthCheck:
             enable: false
     - protocol: HTTPS
@@ -176,7 +176,7 @@ spec:
       - domain: "sample.tencent.com"
         rules:
         - url: "/"
-          forwardType: HTTPS # Specifies HTTPS as the backend protocol
+          forwardType: HTTPS # It specifies HTTPS as the backend protocol
           session:
             enable: true
             sessionExpireTime: 3600
@@ -186,7 +186,7 @@ spec:
             healthNum: 2
             unHealthNum: 2
             httpCheckPath: "/checkHealth"
-            httpCheckDomain: "sample.tencent.com"
+            httpCheckDomain: "sample.tencent.com" # Note: the health check must use a fixed domain name for detection. If you enter a wildcard domain name in `.spec.loadBalancer.l7Listeners.protocol.domains.domain`, be sure to use the `httpCheckDomain` field to specify the domain name that requires health check; otherwise, the wildcard domain name does not support health check.
             httpCheckMethod: HEAD
           scheduler: WRR
 ```

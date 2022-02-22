@@ -1,9 +1,21 @@
+
+
+
+## 2021年11月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>EKS 支持小规格资源折扣</td>	<td>EKS 对于1核2GiB、2核4GiB等小规格资源提供最低35折优惠。</td><td>2021-11-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34055">产品定价</a></td>
+</tr>
+</table>
+
 ## 2021年07月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>支持创建容器实例</td>	<td>容器实例是由弹性容器服务推出的无需用户购买服务器、无需部署 K8s 集群，即可部署容器应用的服务模式。</td><td>2021-07-14</td><td>容器实例</td>
+    <td>支持创建容器实例</td>	<td>容器实例是由弹性容器服务推出的无需用户购买服务器、无需部署 K8S 集群，即可部署容器应用的服务模式。</td><td>2021-07-14</td><td>容器实例</a></td>
 </tr>
 </table>
 
@@ -21,6 +33,7 @@
 <tr> 
     <td>弹性集群支持通过 CRD 配置日志采集</td>	<td>弹性集群支持通过 CRD 的方式配置日志采集。CRD 对 Pod 无侵入性，支持多种日志解析方式，将标准输出、容器内文件日志发送至腾讯云日志服务 CLS，提供检索分析、可视化应用、日志下载消费等服务。推荐使用 CRD 配置日志采集。</td><td>2021-05-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/40585">使用 CRD 配置日志采集</a></td>
 </tr>
+<tr>
 </table>
 
 
@@ -41,9 +54,10 @@
     <td>支持竞价实例</td>	<td>竞价实例成本为原来的 20%，预计可降低 65% 的业务成本。</td><td>2020-12-25</td><td>-</td>
 </tr>
 <tr>
-    <td>事件仪表盘上线</td>	<td>支持多纬度统计 Top 事件、异常事件等，支持聚合检索和趋势观测。</td><td>2020-12-08</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">事件仪表盘</a></td>
+    <td>事件仪表盘上线</td>	<td>支持多纬度统计 Top 事件、异常事件等，支持聚合检索和趋势观测。</td><td>2020-12-08</td><td></a></td>
 </tr>
 </table>
+
 
 ## 2020年11月
 <table>
