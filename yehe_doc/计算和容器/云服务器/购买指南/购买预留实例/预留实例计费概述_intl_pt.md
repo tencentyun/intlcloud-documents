@@ -34,6 +34,6 @@ Sistema operacional: atualmente, apenas as instâncias do CVM do Linux são comp
 
 Método de pagamento: existem três opções de pagamento: **Pagamento total adiantado**, **Pagamento parcial adiantado** e **Sem pagamento adiantado**.
 
-Períodos de vigência: 1 ano
+Períodos de vigência: 1 ano(365 dias)
 
 Cota: cada usuário pode ter até 20 RIs em uma zona de disponibilidade.
