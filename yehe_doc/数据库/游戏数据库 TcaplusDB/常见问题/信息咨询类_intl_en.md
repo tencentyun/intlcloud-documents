@@ -12,8 +12,7 @@
 
 <span id="41"></span>
 ### Does TcaplusDB support data removal?
-TcaplusDB supports table-level data removal, where the data is removed according to the last time it is written.
-
+TcaplusDB supports table-level data removal, where the data is removed according to the last time it is written. 
 <span id="43"></span>
 ### What are the data structures of TcaplusDB?
 TcaplusDB supports data structures such as list array, queries by part of keys (indexes), key-value, key-object (that is, the value of a single key can be arbitrary data structures, for example, game server can serialize `lua table` into the value field).
@@ -24,7 +23,7 @@ The maximum single-instance memory consumption is 73 MB, and the maximum CPU uti
 
 <span id="68"></span>
 ### How many tables are in a table group in TcaplusDB?
-In TcaplusDB, a table group can have up to 256 tables. If there are more than 256 tables in a table group, you can add a new table group or merge the tables. If you need technical support, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) and select **Other** on the **Select the related product** page.
+In TcaplusDB, a table group can have up to 256 tables. If there are more than 256 tables in a table group, you can add a new table group or merge the tables. If you need technical support, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) and select **Others** on the **Select your products** page.
 
 <span id="69"></span>
 ### What are the restrictions on the key and value fields in TcaplusDB?
