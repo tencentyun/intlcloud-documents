@@ -1,7 +1,7 @@
 
-An operator is a reserved word or a character used primarily to specify conditions in an SQL statement and to serve as conjunctions for multiple conditions in an SQL statement.
+An operator is a reserved word or a character used primarily to specify conditions in a SQL statement and to serve as conjunctions for multiple conditions in a SQL statement.
 
-- [Mathematical operator](#.E7.AE.97.E6.9C.AF.E8.BF.90.E7.AE.97.E7.AC.A6)
+- [Mathematical operators](#.E7.AE.97.E6.9C.AF.E8.BF.90.E7.AE.97.E7.AC.A6)
 - [Comparison operators](#.E6.AF.94.E8.BE.83.E8.BF.90.E7.AE.97.E7.AC.A6)
 - [Logical operators](#.E9.80.BB.E8.BE.91.E8.BF.90.E7.AE.97.E7.AC.A6)
 
