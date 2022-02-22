@@ -10,7 +10,7 @@ Tencent Cloud TRTC Web SDKの詳細なサポートレベルの表については
 
 > ! 
 > - ブラウザで[TRTC Web SDK機能テスト画面](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を開けば、現在のブラウザがWebRTCのすべての機能をサポートしているかどうかチェックすることができます。例:WebViewなどのブラウザ環境。
-> - H.264の版権の制限により、HuaweiシステムのChromeブラウザおよびChrome WebViewをコアとするブラウザではTRTC Web SDKの正常な動作をサポートしていません。
+> -  H.264 の著作権上の制限により、Huawei  Chrome 88 より前のバージョンは H264 エンコーディングを使用できません（つまり、ストリームをプッシュできません）。HuaweiデバイスのChromeブラウザで TRTC Web SDK を使用してストリームをプッシュするには、[チケットを提出](https://console.cloud.tencent.com/workorder/category) し、VP8コーデックの有効化を申請してください。
 
 ## URLドメイン名プロトコルの制限
 | ユースケース     | プロトコル             | 受信（再生） | 送信（マイク・オン） | 画面共有 | 備考 |
