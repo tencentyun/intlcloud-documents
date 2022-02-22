@@ -17,13 +17,21 @@ Cost formula:
 
 The duration usage of the TRTC on-cloud recording service is calculated from the start of recording to the end of recording. If both audio and video streams are recorded simultaneously, only video fees will be charged.
 
-Video duration usage = amount of time the recording service records video in the TRTC room.
+Video duration usage = total duration of all recording processes in the TRTC room
 
-Audio duration usage = total amount of time recorded by the recording service in the TRTC room - video duration. Regardless of whether audio is recorded, it will be counted into audio duration usage.
+Audio duration usage = total duration of all recording processes in the TRTC room − video duration. During recording, a duration when video is not recorded will be calculated as audio recording duration regardless of whether audio is recorded.
 
-The duration calculation is not related to the number of audio/video streams that are recorded. For example, if a recording task is started to simultaneously record the video streams of anchors A and B for 5 minutes, then the duration of the recording service will be 5 minutes, and fees will be charged based on the aggregate resolution in the task.
+The duration calculation is not related to the number of audio/video streams that are recorded. For example, if a recording process is started to simultaneously record the video streams of anchors A and B for 5 minutes, the duration billed will be 5 minutes, and fees will be charged based on the aggregate resolution of the two anchors.
 
-The duration calculation is related to the number of recording processes. If multiple recording tasks are started in the room concurrently, the duration of each task is calculated and included in the total usage of the month.
+The duration calculation is related to the number of recording processes. If multiple recording processes are started in the room concurrently, the duration of each process is calculated and included in the total usage of the month.
+
+<br>
+
+Recording service refers to the service on-cloud recording offers. A recording process is a task that is started and stopped using on-cloud recording APIs.
+
+Please note that audio/video durations may be generated during recording because the recording server subscribes to audio and video streams in the room.
+
+<br>
 
 
 ### Unit price
@@ -60,61 +68,61 @@ The unit prices of TRTC on-cloud recording are as follows:
  </tr> 
 </table>
 
-Video usage in TRTC is categorized into the following four types according to the aggregate resolution of all videos recorded and subscribed in the recording task. The fees for each type are calculated separately:
+Video usage in TRTC is categorized into the following four types according to the aggregate resolution of all videos recorded in a recording task. The fees for each type are calculated separately:
 
-| Video Usage Type | Aggregate Resolution of Recorded Video |
+| Video Usage Type | Aggregate Resolution of Recorded Videos |
 | :---------------- | :----------------------------------------------------------- |
 | HD        | Aggregate resolution ≤ 921,600 (1280 × 720)                           |
-| FHD | 921,600 (1280 × 720) < Aggregate resolution ≤ 2,073,600 (1920 × 1080) |
+| FHD | 921,600 (1280 × 720) ＜ aggregate resolution ≤ 2,073,600 (1920 × 1080) |
 | 2K                | 2,073,600 (1920 × 1080) < Aggregate resolution ≤ 3,686,400 (2560 × 1440) |
 | 2K+               | 3,686,400 (2560 × 1440) < Aggregate resolution ≤ 8,847,360 (4096 × 2160) |
 
-For example, if the recording service simultaneously records 2 video streams with a resolution of 960 × 720 each, then the aggregate resolution in the recording task will be 960 × 720 + 960 × 720 = 1,382,400, and the recording fees will be charged according to the FHD unit price.
+For example, if a recording process simultaneously records two video streams with a resolution of 960 × 720 each, the aggregate resolution will be 960 × 720 + 960 × 720 = 1,382,400, and the recording fees will be charged according to the FHD unit price.
 
 
 
 ## Billing Examples
 
-This section describes how TRTC calculates aggregate resolution, durations, and fees.
+This section describes how TRTC calculates aggregate resolution, durations, and costs.
 
 
 
 Suppose you have a project named testRTC under your Tencent Cloud account. In addition to using audio/video services, the project also records and saves audio/video interactions through on-cloud recording. The usage is as follows:
 
-**Recording 1**
+**Example 1**
 
-Four users enter the channel and make a video call that lasts for 5,000 seconds. One on-cloud recording process is started, and 4 audio streams are recorded.
+On February 11, 2022, four users made a video call that lasted for 5,000 seconds. One on-cloud recording process was started to record four audio streams.
 
 Usage statistics: 5,000 seconds of audio duration usage in total.
 
-**Recording 2**
+**Example 2**
 
-Four users enter the channel and make a video call that lasts for 5,000 seconds. Two on-cloud recording processes are started for single-stream recording and mix-stream recording respectively, and 4 audio streams are recorded in each process.
+On February 12, 2022, four users made a video call that lasted for 5,000 seconds. Two on-cloud recording processes were started, one for single-stream recording and the other mixed-stream recording. Four audio streams were recorded in each process.
 
 Usage statistics: 5,000 + 5,000 = 10,000 seconds of audio duration usage in total.
 
-**Recording 3**
+**Example 3**
 
-Four users enter the channel and make a video call that lasts for 3,500 seconds. One on-cloud recording process is started, and 4 audio/video streams are recorded, where each video stream has a resolution of 640 × 360.
+On February 13, 2022, four users made a video call that lasted for 3,500 seconds. One on-cloud recording process was started to record four audio and video streams. Each video stream had a resolution of 640 × 360.
 
 Usage statistics: 3,500 seconds of HD video duration usage in total.
 
-| Streams Subscribed                 |  Resolution Calculation                              | Aggregate Resolution  | Recording Usage Type |
+| Streams Subscribed     | Resolution Calculation | Aggregate Resolution | Recording Usage Type |
 | :--------------- | :--------------- | :------- | :----------- |
 | Audio/Video streams of 4 anchors | 640 × 360 × 4    | 921,600  | HD    |
 
-**Recording 4**
+**Example 4**
 
-Three users enter the channel and interact over video for 1,800 seconds, and the video resolutions are 640 × 360, 1280 × 720, and 960 × 720 respectively. After 1,800 seconds, the fourth user enters the channel and joins the video interaction for 540 seconds, and the video resolution is 1920 × 1080. One on-cloud recording process is started to record the audio/video streams of all users throughout the process.
+On February 14, 2022, three users interacted over video for 1,800 seconds, and their video resolutions were 640 × 360, 1280 × 720, and 960 × 720 respectively. After 1,800 seconds, the fourth user entered the room and interacted for 540 seconds, and the user’s video resolution was 1920 × 1080. One on-cloud recording process was started to record the audio and video streams of all users throughout the process.
 
-Usage statistics: 1,800 seconds of FHD video duration usage and 540 seconds of 2K+ video duration usage.
+Usage statistics: 1,800 seconds of FHD video duration usage and 540 seconds of 2K + video duration usage.
 
-| Streams Subscribed                 |  Resolution Calculation                              | Aggregate Resolution  | Recording Usage Type |
+| Streams Subscribed     | Resolution Calculation | Aggregate Resolution | Recording Usage Type |
 | :--------------- | :----------------------------------------------- | :-------- | :----------- |
 | Audio/Video streams of 3 anchors | 640 × 360 + 1280 × 720 + 960 × 720               | 1,843,200 | FHD |
 | Audio/Video streams of 4 anchors | 640 × 360 + 1280 × 720 + 960 × 720 + 1920 × 1080 | 3,916,800 | 2K+          |
 
-**Fees calculation**
+**Fee calculation**
 
 | Billable Item (Recording Usage Type) | Total Duration Usage (Minutes) | Service Fees (USD) |
 | :----------------------- | :----------------- | :------------------------- |
@@ -122,7 +130,7 @@ Usage statistics: 1,800 seconds of FHD video duration usage and 540 seconds of 2
 | HD               | 59                 | (59/1000) × 5.99 = 0.35341 |
 | FHD            | 30                 | (30/1000) × 13.49 = 0.4047 |
 | 2K+                      | 9                  | (9/1000) × 53.99 = 0.48591 |
-| Total                     | -                  | 1.61652 ***\*≈\****1.62    |
+| Total                     | -                  | 1.61652 ≈ 1.62             |
 
 
 
