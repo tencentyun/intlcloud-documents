@@ -153,7 +153,7 @@ Sample query: if you enter `__TAG__.region:"ap-beijing"`, the sample log can be 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. On the left sidebar, click **Log Topic** to go to the log topic list page.
 3. Click the desired log topic ID/name to go to the log topic management page.
-4. Click the *Index Configuration** tab and click **Edit** to go to the index configuration page. 
+4. Click the **Index Configuration** tab and click **Edit** to go to the index configuration page. 
 
 5. Modify index configuration as needed and click **OK** to save the index configuration.
 When modifying index configuration, you can also click **Auto Configure** to enable the system to automatically get a collected log sample and parse the fields in it into key-value indexes. You can perform fine tuning on the basis of automatic configuration to quickly obtain the final index configuration information, greatly simplifying operations.
