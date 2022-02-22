@@ -85,6 +85,7 @@ Through configuration in the [CLS console](https://console.cloud.tencent.com/cls
 		<td>bucket_test:logset/20180731/log_{random}_{index}</td>
 	</tr>
 </tbody></table>
+
 5. Click **Next** to go to the **Advanced Configuration** page. Select **json** for **Shipping Format** and set other parameters.
 
 **The parameters are described as follows:**

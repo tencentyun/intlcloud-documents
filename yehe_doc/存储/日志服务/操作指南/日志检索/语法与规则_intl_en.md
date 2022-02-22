@@ -41,7 +41,7 @@
 | Expected Search Result  | Search Statement |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Logs of a specified `SOURCE`                                     | `__SOURCE__:127.0.0.1` or  `__SOURCE__:192.168.0.*`             |
-| Logs from a specified file:                                       | `__FILENAME__:"/var/log/access.log"`或`__FILENAME__:\/var\/log\/*.log` |
+| Logs from a specified file:                                       | `__FILENAME__:"/var/log/access.log"`or`__FILENAME__:\/var\/log\/*.log` |
 | Logs containing `ERROR`  | `ERROR` |
 | Searching-failed logs (Status code > 400)                            | <code>status:>400</code>                                                |
 | Failed logs in the `GET` request (with a status code greater than 400) | <code>method:GET AND status:>400</code> |

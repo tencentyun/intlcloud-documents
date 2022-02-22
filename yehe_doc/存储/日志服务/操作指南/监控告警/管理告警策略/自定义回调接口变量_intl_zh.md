@@ -1,7 +1,7 @@
 用户配置自定义回调接口时可以插入系统变量，告警发送时系统将自动解析变量。此变量列表适用于自定义回调接口，详情请参考 [自定义回调接收告警通知](https://intl.cloud.tencent.com/document/product/614/41986) 和 [配置告警策略](https://intl.cloud.tencent.com/document/product/614/39574) 下的自定义回调接口。
 
 >! 以下变量仅适用于自定义回调接口，告警策略自定义通知内容请参考 [通知内容变量](https://intl.cloud.tencent.com/document/product/614/41984)。
->
+
 
 ## 变量列表
 
@@ -26,7 +26,8 @@
 | {{.NotifyType}}      |   告警通知类型，1代表告警通知，2代表恢复通知     | 1     |
 | {{.DetailUrl}}  | 告警详情页面链接（免登录）  | https://alarm.cls.tencentcs.com/CJNmxxxx  |
 | {{.QueryUrl}}  | 第一个执行语句的检索分析链接  | https://alarm.cls.tencentcs.com/Olw8xxxx  |
- 
+
+
 
 ## 示例
 

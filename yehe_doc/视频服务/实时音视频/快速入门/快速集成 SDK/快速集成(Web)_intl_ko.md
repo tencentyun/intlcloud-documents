@@ -10,7 +10,7 @@ Tencent Cloud TRTC Web SDK의 상세 지원 관련 내용은 [지원 플랫폼](
 
 > ! 
 > - 브라우저에서 [TRTC Web SDK 기능 테스트 페이지](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)를 열어 WebRTC의 모든 기능이 지원되는지 테스트할 수 있습니다(예: WebView 등 브라우저 환경).
-> - H.264 버전 권한 제한으로 인해, Huawei 디바이스 상의 Chrome 브라우저와 Chrome WebView 커널의 브라우저에서는 TRTC Web SDK가 정상적으로 실행되지 않습니다.
+> - H.264 버전 권한 제한으로 인해, Huawei Chrome 88 이하 버전은 H264 코덱을 사용할 수 없습니다(즉, 스트림 푸시 불가). Huawei 기기의 Chrome 브라우저에서 TRTC Web SDK를 사용하여 스트림을 푸시하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 VP8 코덱 활성화를 신청하십시오.
 
 ## URL 도메인 프로토콜 제한
 | 응용 시나리오     | 프로토콜             | 수신(재생) | 발송(마이크 켜짐) | 화면 공유 | 비고 |
