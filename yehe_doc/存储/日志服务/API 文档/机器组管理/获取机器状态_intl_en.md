@@ -19,7 +19,7 @@ GET /machines
 
 #### Request header
 
-There are only common response headers but no special response headers.
+There are only common request headers but no special request headers.
 
 #### Request parameters
 
