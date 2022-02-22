@@ -1,0 +1,17 @@
+[MLVB SDK](https://intl.cloud.tencent.com/product/mlvb)とは、 [標準ライブストリーミングサービス(CSS)](https://intl.cloud.tencent.com/product/css)をスマートフォンでのライブストリーミング向けに拡張したサービスです。モバイル端末でのCSSプッシュ、プルが行える**クイックインテグレーションソリューション**をご提供します。また、CSS、VOD、IM、COSなどのクラウドサービスを統合した「一体型ソリューション」もご提供し、美顔、AIエフェクト、マイク接続インタラクションなどの機能が利用できます。
+
+## SDKとソースコードのダウンロード
+
+モバイルライブストリーミングではグローバル版のSDKバージョンをご提供し、モバイルライブストリーミングのLicenseで対応するライブストリーミング機能を使用することが可能です。これによってスマートフォンでライブストリーミング機能をすぐに使えるようになります。具体的には、[SDKダウンロード](https://intl.cloud.tencent.com/document/product/1071/38150)をご参照ください。
+
+
+
+## Demo体験
+
+モバイルライブストリーミングにはTCToolkit Appがあり、関連ソースコードのダウンロードサポートをご提供しています。具体的には[TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)をご参照ください。
+
+## さらに詳しく
+
+- モバイルライブストリーミングSDK機能について、さらにお知りになりたい場合は、 [モバイルライブストリーミングSDKドキュメント](https://intl.cloud.tencent.com/document/product/1071)をご参照ください。
+- モバイルライブストリーミングSDKの料金に関する説明をお知りになりたい場合は、[価格一覧](https://intl.cloud.tencent.com/document/product/1071/38114)をご参照ください。
+
