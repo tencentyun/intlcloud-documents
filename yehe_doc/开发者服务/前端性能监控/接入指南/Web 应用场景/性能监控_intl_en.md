@@ -16,7 +16,7 @@ After you successfully install and initialize the SDK, the Aegis instance will r
 **5. Content transfer**: responseEnd - responseStart  
 **6. DOM parsing**: domInteractive - domLoading  
 **7. Resource loading**: loadEventStart - domInteractive  
-**8. firstScreenTime**: RUM listens on the **first screen** DOM changes within 3 seconds after a page is opened and takes the time when the number of DOM changes reaches the highest as the time when the first screen framework rendering is completed. (`setTimeout` is used to start first screen element collection 3 seconds after SDK initialization. As JavaScript is executed in a single-thread environment, the collection time point may be more than 3 seconds after SDK initialization.)  
+**8. FMP**: RUM listens on the **first screen** DOM changes within 3 seconds after a page is opened and takes the time when the number of DOM changes reaches the highest as the time when the first screen framework rendering is completed. (`setTimeout` is used to start first screen element collection 3 seconds after SDK initialization. As JavaScript is executed in a single-thread environment, the collection time point may be more than 3 seconds after SDK initialization.)  
 **9. Complete page loading duration**: sum of 1–7 (DNS query, TCP connection, SSL connection establishment, request response, content transfer, DOM parsing, and resource loading)  
 
 <dx-alert infotype="explain" title="">
