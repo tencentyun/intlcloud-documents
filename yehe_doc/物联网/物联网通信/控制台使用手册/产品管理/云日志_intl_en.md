@@ -11,7 +11,7 @@ The cloud log module of IoT Hub provides a comprehensive, stable, and reliable l
 
 Running logs are divided into behavior logs, content logs, and device logs. You can search for logs by time and keyword.
 - **Search by time**
-You can select the time range during which to view logs on the time panel, including the last 15 minutes, last hour, last 4 hours, last 24 hours, and custom time range. **Cloud logs can be stored for up to 15 days**.
+You can select the time range during which to view logs on the time panel, including the last 15 minutes, last hour, last 4 hours, last 24 hours, and custom time range. **Cloud logs can be stored for up to 7 days**.
 - **Search by keyword**
 In the log search box, you can filter the logs to be queried. When you need to filter target logs by multiple conditions, you can press Enter to separate different tags.
 

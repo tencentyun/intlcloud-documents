@@ -32,7 +32,7 @@
 | ! | Logical operator (similar to NOT), such as `level:ERROR !pid:1234`. |
 | /             | Regular expression identifier in the format of `/${regExp}/`. For example, `/[mb]oat/` means to return results containing `moat` or `boat`.</br>Note: With a delimiter, the regular expression matches the single word following the delimiter, not the entire log or field. |
 | \_exists\_ | `\_exists\_:key` returns logs that contains `key`. For example, `_exists_:userAgent` means to return logs that contains the `userAgent` field. |
-| ~ | Fuzzy search. For example, `level:errro~` means to return results where `level` contains `error`. |
+| ~ | Fuzzy search. For example, `level:error~` means to return results where `level` contains `error`. |
 
 
 

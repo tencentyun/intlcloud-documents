@@ -13,7 +13,7 @@ LogListener supports only Linux 64-bit operating systems and does not support Wi
 
 ## Supported Features
 
-New features supported on different LogListener versions are detailed as flows:
+New features supported on different LogListener versions are detailed as follows:
 
 | LogListener Version | Supported Feature  | Feature Description | Documentation |
 | --------------- | --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |

@@ -34,6 +34,6 @@ Sistem operasi: saat ini, RI hanya mendukung instans CVM Linux.
 
 Metode pembayaran: ada tiga opsi pembayaran, yaitu **All Upfront** (Lunas di Muka), **Partial Upfront** (Sebagian Di Muka), dan **No Upfront** (Tanpa Pembayaran Di Muka).
 
-Jangka Waktu: 1 tahun
+Jangka Waktu: 1 tahun(365 hari)
 
 Kuota: setiap pengguna dapat memiliki hingga 20 RI dalam satu zona ketersediaan.
