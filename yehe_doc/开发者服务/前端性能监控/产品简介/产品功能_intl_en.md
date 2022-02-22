@@ -5,7 +5,7 @@ Frontend developers can get the information they need by reporting any kind of d
 RUM actively collects information about a wide variety of errors, including browser-based JavaScript code execution errors, API information errors, resource loading exceptions, and Promise exceptions.
 
 ### Performance Data
-RUM offers a lot of page performance metrics, including firstScreenTime, TCP connection establishment time, time to first byte (TTFB), and SSL handshake time.
+RUM offers a lot of page performance metrics, including FMP, TCP connection establishment time, time to first byte (TTFB), and SSL handshake time.
 
 ### Page View
 RUM enables you to easily view the number of page views (PV) and unique visitors (UV) in various dimensions such as ISP, access source, and access region, so that you can stay up to date with and analyze user access in real time.
