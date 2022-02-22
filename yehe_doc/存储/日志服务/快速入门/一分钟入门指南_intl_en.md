@@ -61,7 +61,7 @@ CLS introduces various regions. To lower network latency, please create log reso
 CLS uses a [machine group](https://intl.cloud.tencent.com/document/product/614/30449) to manage a list of log source machines.
 
 1. On the left sidebar, click **Machine Group** to go to the management page.
-2. Select the desired region and click **Create Machine Group**
+2. Select the desired region and click **Create Machine Group**.
 3. Configure as needed on the page that is displayed.
 Multiple IPs can be input in a machine group (one IP per line). For CVM instances, please input the private IP addresses directly. For more information, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 4. Click **OK**.
@@ -133,7 +133,7 @@ With CLS, you can ship data to COS or CKafka to store logs for a longer period a
 To ship logs to COS, you can perform the following steps:
 1. Create a [COS bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 2. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-3. Select the desired log topic ID/ name to go to the management page.
+3. Select the desired log topic ID/name to go to the management page.
 4. Select the **Ship to COS** tab.
 5. Click **Add Shipping Configuration** to create a shipping task.
 Currently, CLS supports shipping logs in [CSV](https://intl.cloud.tencent.com/document/product/614/31582) and [JSON](https://intl.cloud.tencent.com/document/product/614/31583) formats.
@@ -148,7 +148,7 @@ Only logs generated after the configuration can be shipped.
 To ship logs to CKafka, you can perform the following steps:
 1. [Create a CKafka instance and topic](https://intl.cloud.tencent.com/document/product/597/39718).
 2. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-3. Select the desired log topic ID/ name to go to the management page.
+3. Select the desired log topic ID/name to go to the management page.
 4. Select the **Ship to CKafka** tab.
 5. Click **Edit**.
 6. Select the desired CKafka instance and click **OK** to enable CKafka consumption.
