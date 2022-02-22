@@ -34,6 +34,6 @@ Operating system: currently, RI only supports Linux CVM instances.
 
 Payment method: there are three payment options, namely **All Upfront**, **Partial Upfront**, and **No Upfront**.
 
-Terms: 1 year
+Terms: 1 year(365 days)
 
 Quota: each user can have up to 20 RIs in one availability zone.
