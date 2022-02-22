@@ -1,8 +1,8 @@
 ## Operation Scenarios 
 This document describes how to delete a table in the TcaplusDB Console.
->If you delete a table completely, all its data will be completely cleared and cannot be recovered; therefore, please do so with caution.
+>?If you delete a table completely, all its data will be completely cleared and cannot be recovered; therefore, please do so with caution.
 >
-A table in "RUNNING" status can be deleted. Once deleted, it will be moved into the recycle bin, but its data still exists.
+A table in "Running" status can be deleted. Once deleted, it will be moved into the recycle bin, but its data still exists.
 
 ## Prerequisites
 You have created a table. For more information, please see [Creating Table](https://intl.cloud.tencent.com/document/product/1016/32715).
