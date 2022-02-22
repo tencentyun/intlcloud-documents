@@ -32,7 +32,7 @@ Observe que você paga por todo o período de vigência da RI, independentemente
 
 **Períodos de vigência**
 
-1 ano
+1 ano(365 dias)
 
 Suponha que você adquiriu uma RI do CVM com período de vigência de 1 ano em 25 de maio de 2019 às 11:15:24, a RI será válida de 25 de maio de 2019 às 11:00:00 a 25 de maio de 2020 às 11:59:59.
 
