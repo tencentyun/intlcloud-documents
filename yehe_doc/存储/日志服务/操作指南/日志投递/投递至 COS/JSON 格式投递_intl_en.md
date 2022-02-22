@@ -1,6 +1,6 @@
 ## Overview
 
-Through configuration in the [CLS console](https://console.cloud.tencent.com/cls), you can ship log data to COS in the CSV format. This document describes how to create a CSV-formatted log shipping task.
+Through configuration in the [CLS console](https://console.cloud.tencent.com/cls), you can ship log data to COS in the JSON format. This document describes how to create a JSON log shipping task.
 
 ## Prerequisites
 

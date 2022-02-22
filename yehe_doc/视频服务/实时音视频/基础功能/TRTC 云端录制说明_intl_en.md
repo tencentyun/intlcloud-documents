@@ -515,7 +515,7 @@ If the event type is `304` (EVENT\_TYPE\_CLOUD\_RECORDING\_FILE\_INFO):
 ```
 
 
-If the event type is `305` (EVENT\_TYPE\_CLOUD\_RECORDING\_UPLOAD\_STOP 时Payload):
+If the event type is `305` (EVENT\_TYPE\_CLOUD\_RECORDING\_UPLOAD\_STOP):
 
 | Field | Type | Description |
 | ------ | ------ | ------------------------------------------------------------ |

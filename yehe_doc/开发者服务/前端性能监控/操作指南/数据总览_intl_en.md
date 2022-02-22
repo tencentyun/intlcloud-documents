@@ -6,7 +6,7 @@ You have [connected your application](https://intl.cloud.tencent.com/document/pr
 ## Directions
 1. Log in to the [RUM console](https://console.cloud.tencent.com/rum).
 2. On the left sidebar, click **Data Overview** to enter the data overview page.
-3. On the data overview page, you can view the key metric information and overall application score, including PV, firstScreenTime, JavaScript errors/error rate, as well as success rate, failure rate, and duration of API or static resource requests.
+3. On the data overview page, you can view the key metric information and overall application score, including PV, FMP, JavaScript errors/error rate, as well as success rate, failure rate, and duration of API or static resource requests.
 You can click the star on the left of the score to favorite the application panel and view all favorited panels quickly. The panels are sorted by the favorite time.
 ![](https://main.qcloudimg.com/raw/22774ad1f80ff6d5bf122a86d498127a.png)
 
