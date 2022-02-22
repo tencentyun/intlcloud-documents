@@ -14,7 +14,7 @@
 
 ### 单流录制
 
-![单流录制](https://qcloudimg.tencent-cloud.cn/raw/d80e9086886f1be0f25a068f36d9255d.jpg)
+![单流录制](https://qcloudimg.tencent-cloud.cn/raw/cd843d26b27ed6f4179ebbff401ae6e3.png)
 
 如图所示为单流录制的场景，房间1234里面主播1和主播2都上行了音视频流，假设您订阅了主播1和主播2的音视频流，并设置录制模式为单流录制，录制后台会分别拉取主播1和主播2的音视频流，并把他们录制成独立的媒体文件，包含：
 
@@ -31,7 +31,7 @@
 
 ### 混流录制
 
-![混流录制](https://qcloudimg.tencent-cloud.cn/raw/bb4ed7d01bf4b6d05ed9624856ef463b.jpg)
+![混流录制](https://qcloudimg.tencent-cloud.cn/raw/3a29f4527601abe3ac981759bf44ad07.png)
 
 如图所示为混流录制的场景，房间1234里面有主播1和主播2都上行了音视频流，假设您订阅了主播1和主播2的音视频流，设置录制模式为混流录制，录制后台会分别拉取主播1和主播2的音视频流，并把他们的视频流按照您配置多画面模板进行混流，音频流进行混音，最后把媒体流混合成一路媒体文件，包含：
 
@@ -273,11 +273,11 @@ ha\<1/2/3>：高可用的拉起的前缀，比如第一次拉起会变成\<Prefi
 左侧大画面的宽为整个画布宽的4/5,左侧大画面的高为整个画布高的7/8;
 
 屏幕分享布局随着订阅的子画面增加按照下图进行变化：
-   ![屏幕分享布局1](https://qcloudimg.tencent-cloud.cn/raw/4ba02685cd168279b0b2100ce63dc821.jpeg)
-   ![屏幕分享布局2](https://qcloudimg.tencent-cloud.cn/raw/b76baf6692dd7174722236abe50b0067.jpeg)
-   ![屏幕分享布局3](https://qcloudimg.tencent-cloud.cn/raw/978077f0948bbf65806406ebfbfaa589.jpeg)
-   ![屏幕分享布局4](https://qcloudimg.tencent-cloud.cn/raw/ccda6170fa37188ca323c3d4600dc233.jpeg)
-   ![屏幕分享布局4](https://qcloudimg.tencent-cloud.cn/raw/2712f84a834ca5edd8287cc48b37da5c.jpeg)
+   ![屏幕分享布局1](https://qcloudimg.tencent-cloud.cn/raw/d64e7e705060d21ec24d7392f8d43728.png)
+   ![屏幕分享布局2](https://qcloudimg.tencent-cloud.cn/raw/695683aecb62c29976f16124d6e9b29b.png)
+   ![屏幕分享布局3](https://qcloudimg.tencent-cloud.cn/raw/8423e777eb1a5bfb80e384e7b97db49d.png)
+   ![屏幕分享布局4](https://qcloudimg.tencent-cloud.cn/raw/538faeb7d2f993427b7ab1db548cb633.png)
+   ![屏幕分享布局4](https://qcloudimg.tencent-cloud.cn/raw/f911eb5a849da0aa22ed9b69ebe2f63a.png)
 
 ##### 自定义布局：
 根据您的业务需要在 MixLayoutList 内自己定制每个主播画面的布局信息。
@@ -303,7 +303,7 @@ mp4文件将在以下情况下强制分片。
 1. 录制时长超过24小时;
 2. 单个mp4文件大小达到2GB;
    <br>具体的流程如图所示
-   <br>![输出mp4](https://qcloudimg.tencent-cloud.cn/raw/1903f9c66ad7f9f1322d966f67a8682c.jpg)
+   <br>![输出mp4](https://qcloudimg.tencent-cloud.cn/raw/d3a3f5121e9832cc8a39b8d9ec6f7b1a.png)
 
 ### 录制上传点播
 
@@ -312,7 +312,7 @@ mp4文件将在以下情况下强制分片。
 1. 存储参数中的CloudVod和CloudStorage只能同时指定一个，否则发起录制将失败；
 2. 上传点播任务的过程中使用DescribeCloudRecording查询到的任务状态，不会携带录制文件的信息；
    <br>具体的流程如图所示，这里的云存储为录制内部云存储，客户不用填写相关参数。
-   <br>![输出vod](https://qcloudimg.tencent-cloud.cn/raw/19ce84a10c19384d51817a7957ab48fa.jpg)
+   <br>![输出vod](https://qcloudimg.tencent-cloud.cn/raw/28da00ba87fc1b9be2030f96d2dfd820.png)
 
 
 
