@@ -1,5 +1,5 @@
 
-Starting from March 15, 2022, COS will stop supporting default CDN acceleration domains for buckets that have never used them. This change will not affect buckets that are using or once used default CDN acceleration domains. However, we recommend you switch to custom CDN acceleration domains instead. To learn more about CDN acceleration, see [Setting CDN Acceleration](https://intl.cloud.tencent.com/document/product/436/18670).
+Starting from March 28, 2022, COS will stop supporting default CDN acceleration domains for buckets that have never used them. This change will not affect buckets that are using or once used default CDN acceleration domains. However, we recommend you switch to custom CDN acceleration domains instead. To learn more about CDN acceleration, see [Setting CDN Acceleration](https://intl.cloud.tencent.com/document/product/436/18670).
 
 The change will affect users differently.
 
