@@ -22,7 +22,7 @@ You can choose auto upgrade or manual upgrade.
 
 >?
 > - You can set any time period for the auto upgrade, and the system will check if upgrade is needed every day in the specified time period. If the upgrade conditions are met, the auto-upgrade will be performed; otherwise, the operation will be performed.
-> - You can check multiple target machine groups and click **Auto Upgrade** to upgrade them in batches.
+> - You can select multiple target machine groups and click **Auto Upgrade** to upgrade them in batches.
 
 
 ### Manual upgrade
