@@ -6,7 +6,7 @@ We will process the following data in connection with the Feature:
 
 | **Personal Information**                                     | **Use**                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Business Data**   (if you store personal data in the database) | We only process this data for the purposes of providing the Feature to you. Please note that we have no access to the personal data, if any, stored in the database, except if you share your account details with us for troubleshooting, or control over the data. Please note that this data is stored (and backed up, if you choose to do so) in our Cloud Block Storage feature.|
+| **Business Data**   (if you store personal data in the database) | We only process this data for the purposes of providing the Feature to you. <br/>Please note that we have no access to the personal data, if any, stored in the database, except if you share your account details with us for troubleshooting, or control over the data.<br/> Please note that this data is stored (and backed up, if you choose to do so) in our Cloud Block Storage feature.|
 
 ## 3. **SERVICE REGION**
 As specified in the DPSA.
