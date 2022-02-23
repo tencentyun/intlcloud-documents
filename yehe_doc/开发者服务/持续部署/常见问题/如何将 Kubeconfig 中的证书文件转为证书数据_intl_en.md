@@ -1,0 +1,94 @@
+This document describes how to convert certificate files in Kubeconfig to certificate data.
+
+## Prerequisites
+
+You must activate the CODING DevOps service for your Tencent Cloud account before you can use Coding Continuous Deployment (CD). 
+
+## Open Project
+
+1. Log in to the [CODING console](https://console.cloud.tencent.com/coding) and click the team domain name to enter the CODING page.
+2. On the Workspace homepage, click <img src ="https://main.qcloudimg.com/raw/12230547b45d5eae85ad1c4fa86fba68.png" style ="margin:0" data-nonescope="true"> on the left to go to the Continuous Deployment console.
+
+## Feature Overview
+
+When adding a Kubernetes cloud account, you can select Kubeconfig or Service Account authentication method:
+![](https://qcloudimg.tencent-cloud.cn/raw/626e94ef447bff6e3476c366505ac481.png)
+
+For authentication using Kubeconfig certificate files (in the example below, `certificate-authority`, `client-certificate`, and `client-key` are all specific files that contain certificate information), you need to convert the certificate files to base64-encoded strings before adding a cloud account.
+
+```yaml
+apiVersion: v1
+kind: Config
+clusters:
+- cluster:
+    certificate-authority: */ca.crt
+    server: https://******
+  name: demo
+contexts:
+- context:
+    cluster: demo
+    user: demo
+  name: demo
+current-context: demo
+preferences: {}
+users:
+- name: demo
+  user:
+    client-certificate: */client.crt
+    client-key: */client.key
+```
+
+The section below explains how to perform the conversion.
+
+### Get the base64-encoded string of the certificate file
+
+Run the following commands:
+
+#### OS X
+
+```bash
+cat "certificate file" | base64
+```
+
+#### Linux
+
+```bash
+cat "certificate file" | base64
+```
+
+#### Windows
+
+```powershell
+certutil -f -encode "certificate file" "output file"
+```
+
+### Update Kubeconfig file
+
+1. Change `certificate-authority` to `certificate-authority-data`, and enter the base64-encoded string of the `*/ca.crt` certificate file.
+2. Change `client-certificate` to `client-certificate-data`, and enter the base64-encoded string of the `*/client.crt` certificate file.
+3. Change `client-key` to `client-key-data`, and enter the base64-encoded string of the `*/client.key` certificate file.
+
+The result is as follows:
+
+```yaml
+apiVersion: v1
+kind: Config
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZADQFURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQVRBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRYRFRJd01ESXhNREEwTURJMU1Wb1hEVE13TURJd09EQTBNREkxTVZvd0ZURVRNQkVHQTFVRQpBeE1LYldsdWFXdDFZbVZEUVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTUc1CjYwU0txcHVXeE1mWlVabmVFakM5bjFseHFQSzdUTlVQbzROejFWcWxaQkt6NzJDVVErZjBtVGNQLy9oS3BQUVAKaG9pNndyaXJRUmVERTErRFIrOTZHVDIrSGZ3L2VHQTI5ZmErNS80UG5PWlpTUEVpS3MxVVdhc0VqSDJVZG4xTwpEejVRZk1ESkFjZlBoTzV0eUZFaGZNa2hid0Y2QkJONnh5RmJJdXl4OThmZGx5SWJJUnpLSml6VWZQcUx2WUZoCmFQbjF4WFZyT2QyMnFtblgzL2VxZXM4aG51SmpJdlVPbWRDRlhjQVRYdE00Wmw2bERvWUs2VS9vaEFzM0x4VzAKWUV4ZkcxMzFXdjIrR0t4WWV2Q0FuMitSQ3NBdFpTZk9zcVljMmorYS9FODVqdzcySlFkNGd6eGlHMCszaU14WApWaGhpcWFrY1owZlRCc0FtZHY4Q0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUIwR0ExVWRKUVFXCk1CUUdDQ3NHQVFVRkJ3TUNCZ2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDKzFuU2w0dnJDTEV6eWg0VWdXR3ZWSldtV2ltM2dBWFFJU1R2WG56NXZqOXE3Z0JYSwpCRVUyakVHTFF2UEJQWUZwUjhmZllCZCtqT2xtYS9IdU9ISmw0RUxhaHJKbnIwaU9YcytoeVlpV0ZUKzZ2R05RCmY4QnAvNTlkYzY1ejVVMnlUQjd4VkhMcGYzRTRZdUN2NmZhdy9PZTNUUzZUbThZdFBXREgxNDBOR2ZKMHlWRlYKSzZsQnl5THMwMzZzT1V5ZUJpcEduOUxyKytvb09mTVZIU2dpaEJlcEl3ZVVvYk05YU1ram1Hb2VjNk5HTUN3NwpkaFNWTmdMNGxMSnRvRktoVDdTZHFjMmk2SWlwbkJrdUlHUWRJUFliQnF6MkN5eVMyRkZmeEJsV2lmNmcxMTFTClphSUlpQ0lLbXNqeDJvTFBhOUdNSjR6bERNR1hLY1ZyNnhhVQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://******
+  name: demo
+contexts:
+- context:
+    cluster: demo
+    user: demo
+  name: demo
+current-context: demo
+preferences: {}
+users:
+- name: demo
+  user:
+    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURBRENDQWVpZ0F3SUJBZ0lCQWpBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRYRFRJd01ESXhNekV5TXpreU5sb1hEVEl4TURJeE16RXlNemt5Tmxvd01URVhNQlVHQTFVRQpDaE1PYzNsemRHVnRPbTFoYzNSbGNuTXhGakFVQmdOVkJBTVREVzFwYm1scmRXSmxMWFZ6WlhJd2dnRWlNQTBHCkNTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFDdEp5MThYOGVBaVlJc1g3Z0xQazBOZEFuRlNJU0kKeXNGMGIzS21CTk9VclRIcGtnaUFwRldmZDJaVXNZR3Iwd0VBL0FIWm9PMUxPUHdqYzEyb2o1bGIwWlNNWTlMaQpVeW9UQ3huREZIVDJIQnlPNCtGRk5pVCtXTU5FTURURWxERXhlano1WVIwb1pZVjN2V2Z5T3l2SlBna1dFU29IClVVcnVvQmRRbU5LUzhCeXhIUmFvcnFJUFRVRGkzUFJIbTlGZERKV1lNTWpnbDZmbmdHWkRQMnpjTlNFZjRGNzYKc2FUK0VhMU1kbjV5akRCNXczaHJvZXBBclc0QVUyR3NTRFZyTHY2UDFiSWV0RDdONjZrT1BBNklIUlRKbUNLLwp2aEJrbGVPMGFwcERzTERDT3hpMkc2Q1BRNDZVYVZUOEhZMk9sQU5nSmtRRDNwYjFXTnlhQlVpRkFnTUJBQUdqClB6QTlNQTRHQTFVZER3RUIvd1FFQXdJRm9EQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUgKQXdJd0RBWURWUjBUQVFIL0JBSXdBREFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBTHVrZ1dxWnRtbkZITlcxYgpqL012ekcxTmJyUEtWYXVobml5RzRWWnRZYzR1Uk5iSGhicEhEdThyamc2dVB1Y0xMdHAzblU2UGw4S2J2WFpiCmplNmJQR2xvV3VBcFIrVW9KRFQ2VEpDK2o2Qm5CSXpWQkNOL21lSWVPQ0hEK1k5L2dtbzRnd2Q4c2F3U0Z1bjMKZTFVekF2cHBwdTVZY05wcU92aUkxT2NjNGdxNTd2V1h1MFRIdUJkM0VtQ2JZRXUzYXhOL25ldnhOYnYxbDFRSQovSzRaOWw3MXFqaEp3SVlBaHUzek5pTWpCU1VTRjJkZnd2NmFnclhSUnN6b1Z4ejE5Mm9qM2pWU215cXZxeVFrCmZXckpsc3VhY1NDdTlKUE44OUQrVXkwVnZXZmhPdmp4cXVRSktwUW9hMzlQci81Q3YweXFKUkFIMkk5Wk1IZEYKNkJQRVBRPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVQSLS0tLQpNSUlFcEFJQkFBS0NBUUVBclNjdGZGL0hnSW1DTEYrNEN6NU5EWFFKeFVpRWlNckJkRzl5cGdUVGxLMHg2WklJCmdLUlZuM2RtVkxHQnE5TUJBUHdCMmFEdFN6ajhJM05kcUkrWlc5R1VqR1BTNGxNcUV3c1p3eFIwOWh3Y2p1UGgKUlRZay9sakRSREEweEpReE1YbzgrV0VkS0dXRmQ3MW44anNyeVQ0SkZoRXFCMUZLN3FBWFVKalNrdkFjc1IwVwpxSzZpRDAxQTR0ejBSNXZSWFF5Vm1EREk0SmVuNTRCbVF6OXMzRFVoSCtCZStyR2svaEd0VEhaK2Nvd3dlY040CmE2SHFRSzF1QUZOaHJFZzFheTcrajlXeUhyUSt6ZXVwRGp3T2lCMFV5Wmdpdjc0UVpKWGp0R3FhUTdDd3dqc1kKdGh1Z2owT09sR2xVL0IwdGpwUURZQ1pFQTk2VzlWamNtZ1ZJaFFJREFRQUJBb0lCQUdDazVGTnVGaWtkRndYegphd01EZy9oRlV3ckZIZ3hIdHRCcFFBRi80aVF5d3hBT0RTYllFbDVPUTFSME90OFBoNWpvRDVSTHFRWjZTT2owCmhFc0gwMTRYVFNWS3RqTFNua0pBeU9GRWNyL0hFdjJDSFlNRzVJRCtSQWEwTFUrbk13bmRvMWpCcG9lY21uRXAKeTNHOUt3Ukkxc04xVXhNQWdhVk12NWFocGE2UzRTdENpalh3VGVVWUxpc1pSZGp5UGljUWlQN0xaSnhBcjRLTgpTUHlDNE1IZTJtV3F3cjM5cnBrMWZ3WkViMTRPMjR2Z3dMYmROTFJYdVhZSTdicEpOUGRJbEQvRExOQkJSL0FVCjhJYjNDaTZwZ2M4dFA4VzJCeW9TQUJVZUNpWDRFM21wQUttVytKbzFuU3FwQ1FnM2JGV0RpRjFrKzdEZjJZM3IKc09UT0srVUNnWUVBMTBEb3BtRVcrNnowanZadVFZdFlPWlVQQzZwV0dBaDFLWlVHZndYVWVLQ3dnNlNuQW9qRwpuMjR4bWJVdTlzRzBjd2syK0VVcXh3S2IrR2NJVTdyNVdOaUNXNVZYQzV5ZUp3OFZiMWtQekRzMSs4YzA4VjNhCkkzNHluOHpjZm1WTkZOUm1ZS1FMK1FGbnZ3ZXM4NFRleGVBb1hGY2FQcVZTNDNVV2JHRW02ZThDZ1lFQXplNFkKeUxYQ2pWNVppajFsUTdkQ2FweEQvL0dCT2JsemRocXRuSjl1OWxyVkQ4Y3RvUEVKYVkwVFFWc3FaNVhCdTNtVApLb0w4bmZjWHg4cWR3Z3gvZFRHa2c3d00rZFkrUTFuVDNOWnRFSVdVUkR3T0hLT1N1Tm5kdnU1a1Q4aXRrdHhhCktrYVlSMlNOT25iMlFzb1ZHa3F5OS9QK0xWL0FyeWdScmtaYXVNc0NnWUVBaGpUTkdUYzltaXNxeTV2d0FHTzkKM1NFSG9YRlJmbWgvakM2RFAxMUdMUE9iT21qRlREbzFCS0F5d3JBSm1RWUsyUkpzdUh4L2dGY3JJY1F6bCtqaQpvRGRWaDM1a0tEUTlFd00valE0TllIdW1XOVhITjVvWmNMbTFISmNnL3Bsd1pzVkxFNFFVaHVzT1lUZUs2TVgyCkU0OS8rcHJBSFVEOG5oNlpuWGN4U1BjQ2dZRUFub0lQcDZab1MwSjliMi9VbTJ2YS9vNnJ0TDBpOTlpc2JCTWEKNFR6RFAzTXBIc3owYlRZN1JYaW1ncDcybytiY3lUNUtMZVhISnB3RVBPL1R3SUs0Tk8veUxzZzN3TExOR0RCegphRC9Ra1hBUWNQazg3NFJrc2s1WVpkZS9kTDRHQk00QnhScXpxZmhXME5LeXVUUXRUQ0NGWTEvMm5OeGdSekp6CmNZNkwxRU1DZ1lCdXpHRkJVeXM4TFpHekFNTWdmN1VRQ0dVZERrT2dJRHdzd0dxVVlxQ2ZLcnlGYVdCOUJvSi8KMnJMVmVYNDVXTnFpa0tCMlgvckdRbGFIK25YalRBaDlpN0NrWGRySUQzeXA1cGJBa0VnYjg3dGo2Y3hONlBOcQo5cnhzOU1lR0NleFhsdjBkUUpMUkowNXU2OEVxYm44Q0RIOXFRSWZaTml0NXA0S0JFVkp3L1E9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=
+```
+
