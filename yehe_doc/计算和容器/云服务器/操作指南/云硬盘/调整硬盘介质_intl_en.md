@@ -34,7 +34,7 @@ To avoid these downsides, you can convert the local disks attached to your CVMs 
 - **After the adjustment, we recommend you to start up and log in to the CVM to check the data integrity**.
 
 ## Directions
-1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm) and access the **Instances* page.
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm) and access the **Instances** page.
 >? If the CVM has already been shut down, go to [Step 3](#step3).
 2. (Optional) Locate the target CVM, and click **More** > **Instance Status** > **Shutdown** under the **Operation** column to shut it down.
 <span id="step3"></span>
