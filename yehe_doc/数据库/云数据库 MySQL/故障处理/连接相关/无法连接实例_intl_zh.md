@@ -140,13 +140,13 @@
 #### [CVM 与 MySQL 在同一地域内，但属于不同的 VPC 网络](id:cmvbt)
 默认情况下，CVM 与 MySQL 的网络类型都为 VPC 网络，且两者都位于同一 VPC 网络时，才能直接通过内网互通。如果同地域但位于不同 VPC，可以采取以下方法使 CVM 和 MySQL 进行互通。
 - **解决办法一（推荐）**：将 MySQL 迁移到 CVM 所在的 VPC 网络，请参见 [切换网络](https://intl.cloud.tencent.com/document/product/236/31915)。
-- **解决办法二**：在两个 VPC 网络之间建立 [云联网](https://cloud.tencent.com/document/product/877)。
+- **解决办法二**：在两个 VPC 网络之间建立 [云联网](https://intl.cloud.tencent.com/document/product/1003)。
   若不采取以上办法，则位于不同 VPC 网络的 CVM 和 MySQL 只能通过公网互通。这种方式的性能、安全性、稳定性较差。
 
 #### [CVM 与 MySQL 不在同一地域内，属于不同的 VPC 网络](id:dywt)
 CVM 和 MySQL 不在同一个地域内，属于不同的 VPC 网络，则 CVM 无法直接通过内网连接 MySQL。
 - **解决办法一（推荐）**：使用与 MySQL 同一 VPC 的 CVM 进行连接。
-- **解决办法二**：在两个 VPC 网络之间建立 [云联网](https://cloud.tencent.com/document/product/877)。
+- **解决办法二**：在两个 VPC 网络之间建立 [云联网](https://intl.cloud.tencent.com/document/product/1003)。
 - **解决办法三**：CVM 使用 MySQL 的外网连接地址连接 MySQL。这种方式的性能、安全性、稳定性较差，建议您使用 VPC 网络。
 
 ### [安全组配置问题解决方案](id:aqzpzwt)
