@@ -50,6 +50,6 @@ Lihat kasus berikut untuk konfigurasi Anda:
 > + [Membuat Database HA Menggunakan HAVIP + Windows Server Failover Cluster](https://intl.cloud.tencent.com/document/product/215/31878) 
 
 ## Dokumentasi
-Mirip dengan IP pribadi, HAVIP juga dapat diikat dengan atau diputuskan ikatannya dari EIP di konsol. Jika Anda memerlukan komunikasi jaringan publik, lihat [Mengikat atau Memutuskan Ikatan EIP](https://intl.cloud.tencent.com/zh/document/product/215/40083).
+Mirip dengan IP pribadi, HAVIP juga dapat diikat dengan atau diputuskan ikatannya dari EIP di konsol. Jika Anda memerlukan komunikasi jaringan publik, lihat [Mengikat atau Memutuskan Ikatan EIP](https://intl.cloud.tencent.com/document/product/215/40083).
 
 
