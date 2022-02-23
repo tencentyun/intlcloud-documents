@@ -99,7 +99,7 @@
 ### 如何获取短信 SDK AppID 和 AppKey？
 SDK AppID 和 AppKey 是开发者在申请开发新应用时获得的由腾讯云授予的应用程序接入账户和密钥，当您创建应用成功之后即可看到。
 - **SDK AppID**：是腾讯云短信应用的唯一标识码，SDK AppID 如下图所示：
-![](https://main.qcloudimg.com/raw/eee1084a4e88defd26f69061906d7a44.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9f7f80e6a447fc4d50104e35fa47fe51.png)
 - **AppKey**：是用来校验短信发送请求合法性的密码，该密钥在一定技术条件下可保证应用来源的可靠性。
 
 
