@@ -11,7 +11,7 @@ A subnet is specific to an availability zone. A VPC allows subnets in different 
    + Subnet Name: enter a custom subnet name within 60 characters.
    + VPC IP Range: the CIDR block of the selected VPC will be automatically displayed.
    + CIDR: set the CIDR block of the subnet, which must be part of the VPC CIDR block and cannot overlap with the CIDR block of other existing subnets under the VPC.
->? Plan subnet IP ranges that suit your business scale. A private IP address within the specified subnet will be automatically assigned to the CVM instance you are creating. The primary private IP of a CVM can be modified.For more information, see [Modifying Primary Private IP](https://intl.cloud.tencent.com/zh/document/product/576/18541)
+>? Plan subnet IP ranges that suit your business scale. A private IP address within the specified subnet will be automatically assigned to the CVM instance you are creating. The primary private IP of a CVM can be modified.For more information, see [Modifying Primary Private IP](https://intl.cloud.tencent.com/document/product/576/18541)
    + Availability Zone: select an availability zone where the subnet resides.
    + Associated route table: select a route table to be associated. The subnet must be associated with a route table to control outbound traffic. The default route table of the VPC will be associated by default to ensure private network interconnection in the VPC. You can also select another route table within the VPC.
    + Add a line: click **Add a line** to create multiple subnets at a time. Click ![](https://main.qcloudimg.com/raw/ae1ede733a45968e89f58c56aee3099f.png) to delete the selected subnet settings.
