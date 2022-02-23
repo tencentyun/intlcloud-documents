@@ -3,7 +3,7 @@
 - [现象1](id:xz1)：从 CVM 连接登录云数据库 MySQL，连接失败。
 - [现象2](id:xz2)：从本地电脑连接登录云数据库 MySQL，连接失败。
 - [现象3](id:xz3)：从数据库管理 DMC 平台连接登录云数据库 MySQL，连接失败。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/6fd9149e439cab91ff45bb8f9192ec66.png)
 
 ## 可能原因
 <table>
@@ -43,7 +43,7 @@
 ### 现象1、2：CVM、本地连接失败处理方法
 #### [步骤1：通过一键连接检查工具定位原因并进行相应处理](id:step1)
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，选择需要排查的实例，单击实例 ID，进入实例管理页面。
-2. 在实例管理页面，选择**连接检查**>**内网检查**或**外网检查**页面。
+2. 在实例管理页面，选择**连接检查** > **内网检查**或**外网检查**页面。
 >?判断内外网地址，可在实例详情页的基本信息处查看。
 3. 添加访问此 MySQL 实例的 CVM 或外网服务器。
  - 内网检查：添加访问此 MySQL 实例的 CVM。
@@ -73,7 +73,8 @@
 <td>MySQL 安全组策略</td>
 <td>检测到您 MySQL 实例所绑定安全组的<strong>入站规则</strong>未放通对 IP 端口的访问，请参见 <a href="#maqzpzyw">MySQL 安全组配置有误</a> 放通入站规则</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/ae30ffd0f9df350e1360ed3f870ff441.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9af6e13c4dea0f77e49c9192026a0846.png">
+
    - 若为外网检查，检查项及对应处理建议如下：
 <table>
 <thead><tr><th>检查项</th><th>异常及处理方法</th></tr></thead>
@@ -83,7 +84,7 @@
 <td>外网开通状态</td>
 <td>检测到您的 MySQL 实例未开启外网，可参考 <a href="https://intl.cloud.tencent.com/document/product/236/37788">开启外网</a></td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/502f00b7c8913baf52c9548a525c9772.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/def8a3aa846e5ef72efd4d27adc06fe0.png">
 
 #### [步骤2：若工具检查未能解决问题时，可以参考如下原因检查](id:step2)
 [**密码有误**](id:mmwt)
@@ -99,7 +100,7 @@
 数据库帐号除安全组，子网等网络环境限制以外，还会受到 MySQL 自身帐号体系的限制。若数据库帐号指定了具体主机地址，则其他地址无法连接 MySQL。
 您可以通过 MySQL 控制台修改数据库帐号所授权的主机地址，来限制对数据库的连接，进而提升数据库的连接安全。
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID，进入实例管理页面。
-2. 选择**数据库管理**>**帐号管理**页，找到需要修改主机的帐号，在“操作”列选择**更多**>**修改主机**。
+2. 选择**数据库管理** > **帐号管理**页，找到需要修改主机的帐号，在**操作**列选择**更多** > **修改主机**。
 3. 在弹出对话框，输入新主机地址，单击**确定**即可修改帐号所授权的主机地址。
 >?主机地址支持 IP 形式的地址，也支持填入%（表示不做 IP 范围限制）；多个主机以分隔符分隔，分隔符支持换行符、空格和`; , |`。
 >- 示例1：填入%，表示不做 IP 范围限制，即允许所有 IP 地址的客户端使用该帐号连接数据库。
@@ -139,13 +140,13 @@
 #### [CVM 与 MySQL 在同一地域内，但属于不同的 VPC 网络](id:cmvbt)
 默认情况下，CVM 与 MySQL 的网络类型都为 VPC 网络，且两者都位于同一 VPC 网络时，才能直接通过内网互通。如果同地域但位于不同 VPC，可以采取以下方法使 CVM 和 MySQL 进行互通。
 - **解决办法一（推荐）**：将 MySQL 迁移到 CVM 所在的 VPC 网络，请参见 [切换网络](https://intl.cloud.tencent.com/document/product/236/31915)。
-- **解决办法二**：在两个 VPC 网络之间建立 [云联网](https://intl.cloud.tencent.com/zh/document/product/1003)。
+- **解决办法二**：在两个 VPC 网络之间建立 [云联网](https://cloud.tencent.com/document/product/877)。
   若不采取以上办法，则位于不同 VPC 网络的 CVM 和 MySQL 只能通过公网互通。这种方式的性能、安全性、稳定性较差。
 
 #### [CVM 与 MySQL 不在同一地域内，属于不同的 VPC 网络](id:dywt)
 CVM 和 MySQL 不在同一个地域内，属于不同的 VPC 网络，则 CVM 无法直接通过内网连接 MySQL。
 - **解决办法一（推荐）**：使用与 MySQL 同一 VPC 的 CVM 进行连接。
-- **解决办法二**：在两个 VPC 网络之间建立 [云联网](https://intl.cloud.tencent.com/zh/document/product/1003)。
+- **解决办法二**：在两个 VPC 网络之间建立 [云联网](https://cloud.tencent.com/document/product/877)。
 - **解决办法三**：CVM 使用 MySQL 的外网连接地址连接 MySQL。这种方式的性能、安全性、稳定性较差，建议您使用 VPC 网络。
 
 ### [安全组配置问题解决方案](id:aqzpzwt)
@@ -167,8 +168,8 @@ CVM 和 MySQL 不在同一个地域内，属于不同的 VPC 网络，则 CVM �
 “类型”选择MySQL(3306)；“来源”填写您 CVM 的 IP 地址（段）；“策略”选择允许。
 >!连接云数据库 MySQL，须放通 MySQL 实例端口。
 >- MySQL 内网默认端口为3306，同时支持自定义端口，若修改过默认端口号，安全组中需放通 MySQL 新端口信息。
->- MySQL 外网默认端口为60719。您可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 单击实例 ID 进入详情页查看端口。
-  >![](https://main.qcloudimg.com/raw/9f471c644eb9a5aa86bd092fdebd0255.png)
+>- MySQL 外网端口由系统自动分配，不支持自定义，外网开启后将受到安全组网络访问策略的控制，配置安全策略时需放通内网访问端口。您可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 单击实例 ID 进入详情页查看端口。
+  ![](https://main.qcloudimg.com/raw/9f471c644eb9a5aa86bd092fdebd0255.png)
 
 ## 附录2
 ### [查看内外网地址](id:nwwpdff)
@@ -178,8 +179,8 @@ CVM 和 MySQL 不在同一个地域内，属于不同的 VPC 网络，则 CVM �
 ### [网络类型/ VPC 判断方法](id:wllxvpdff)
 使用内网地址连接云数据库时，CVM 和 MySQL 须是同一账号，且同一个 VPC 内（保障同一个地域），或同在基础网络。
 >?CVM 和 MySQL 须是同一账号：
->- 如果实例列表的“网络”处，均显示为“基础网络”或均显示为“VPC”，则表示 CVM 和 MySQL 是同一网络类型。
->- 如果实例列表的“网络”处，均显示为同一个“VPC”（保障同一个地域），则表示 CVM 和 MySQL 是同一 VPC。
+>- 如果实例列表的**网络**处，均显示为“基础网络”或均显示为“VPC”，则表示 CVM 和 MySQL 是同一网络类型。
+>- 如果实例列表的**网络**处，均显示为同一个“VPC”（保障同一个地域），则表示 CVM 和 MySQL 是同一 VPC。
 >
 - **查看 CVM 网络类型/同一 VPC** ：登录 [CVM 控制台](https://console.cloud.tencent.com/cvm/instance)，在实例列表查看“网络”。
   ![](https://main.qcloudimg.com/raw/ce2550045bc286172f841f4fcceb0cc4.png)

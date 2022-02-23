@@ -2,7 +2,7 @@
 云数据库 MySQL 实例备份文件默认可以通过公网或内网进行下载，当您需要对下载进行限制时，可以通过下载配置进行相应的调整。
 >?
 >- 数据库备份下载配置目前支持的地域：
->广州、上海、北京、深圳、成都、重庆、南京、中国香港、北京金融、上海金融、深圳金融、多伦多、新加坡、硅谷、法兰克福、首尔、孟买、曼谷、莫斯科、东京。
+>广州、上海、北京、深圳、成都、重庆、南京、中国香港、多伦多、新加坡、硅谷、法兰克福、首尔、孟买、曼谷、莫斯科、东京。
 >- 如何开通备份下载配置能力：
 >  - 2021年11月09日前，如需使用该能力，可 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行开通。
 >  - 2021年11月09日开始，该能力向全网用户开放。
@@ -106,9 +106,10 @@ qcs::service_type::account:resource
 ![img](https://qcloudimg.tencent-cloud.cn/raw/4ddc463dc28ee48b9dd63d862fa41ea1.png)
 2. 在弹出的对话框，选择**按策略生成器创建**。
 3. 在选择服务和操作页面，选择各项配置，单击 添加声明后，单击下一步。
-   - 服务(Service)：选择**云数据库 MySQL**。
-   - 操作(Action)：选择 MySQL 数据库设置下载备份规则的 API，请参见 [API 文档](https://intl.cloud.tencent.com/document/product/236/43327)。
-   - 资源(Resource)：请参见 [资源描述方式](https://intl.cloud.tencent.com/document/product/598/10606)，输入`*`，表示可以设置所在地域 MySQL 实例的备份下载规则。
+   - 效果（Effect）：选择允许或拒绝，表示对操作项的许可执行。
+   - 服务（Service）：选择云数据库 MySQL。
+   - 操作（Action）：选择 MySQL 数据库设置下载备份规则的 API，请参见 [API 文档](https://intl.cloud.tencent.com/document/product/236/43327)。
+   - 资源（Resource）：请参见 [资源描述方式](https://intl.cloud.tencent.com/document/product/598/10606)，输入`*`，表示可以设置所在地域 MySQL 实例的备份下载规则。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5372ae1d2ac16ff63b63fbf175f3fccf.png)
 4. 在编辑策略页面，按命名规范，输入“策略名称”（例如 BackupDownloadRestriction）和“描述”后，单击**完成**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/3c5454e0da412c0e12beebb4b045979d.png)
