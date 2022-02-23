@@ -39,7 +39,7 @@ Se você tiver vários negócios implantados na mesma região e eles precisarem 
 - **Ao planejar intervalos de IP do VPC, observe que:**
  - Se você precisar criar vários VPCs que se comunicam entre si ou com IDCs, certifique-se de que os intervalos de IP dos VPCs não se sobreponham.
  - Se seu VPC precisar se comunicar com a rede clássica, o intervalo de IP do VPC que você criar deve estar dentro de `10.[0-47].0.0/16` (incluindo os subconjuntos).
- - Depois de criados, os blocos CIDR dos VPCs e das sub-redes não podem ser modificados. Quando os blocos CIDR forem insuficientes, é possível [criar blocos CIDR auxiliares](https://intl.cloud.tencent.com/document/product/215/31805). No entanto, essa funcionalidade ainda está em beta e aumenta a complexidade operacional. Recomendamos que você planeje cuidadosamente os intervalos de IP ao criar os VPCs e as sub-redes.
+ - Depois de criados, os blocos CIDR dos VPCs e das sub-redes não podem ser modificados. Quando os blocos CIDR forem insuficientes, é possível [criar blocos CIDR auxiliares](https://intl.cloud.tencent.com/document/product/215/31805). 
 
 #### Planejamento de intervalos de IP da sub-rede
 - **Intervalo de IP da sub-rede**: é possível usar seu intervalo de IP do VPC ou parte dele como o intervalo de IP da sub-rede. Por exemplo, se o intervalo de IP do VPC for 10.0.0.0/16, o intervalo de IP da sub-rede pode estar entre 10.0.0.0/16-10.0.255.255/28.
