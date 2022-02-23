@@ -140,13 +140,13 @@ CVMとMySQLのネットワークタイプが一致しない場合、CVMはプラ
 #### [CVMとMySQLが同じリージョンにあるが、異なるVPCネットワークに帰属](id:cmvbt)
 デフォルトの状態では、CVMとMySQLのネットワークタイプはいずれもVPCネットワークとなり、かつ両者が同じVPCネットワーク内にある場合にのみ、プライベートネットワーク経由で直接相互通信できます。同じリージョンでも異なるVPCに属する場合は、以下の方法を採用してCVMとMySQLを相互通信させることができます。
 - **対処方法1（推奨）**：MySQLをCVMが属するVPCネットワークに移行します。[ネットワークの切り替え](https://intl.cloud.tencent.com/document/product/236/31915)をご参照ください。
-- **対処方法2**：2つのVPCネットワーク間に[CCN](https://cloud.tencent.com/document/product/877)を構築します。
+- **対処方法2**：2つのVPCネットワーク間に[CCN](https://intl.cloud.tencent.com/document/product/1003)を構築します。
   上記の方法を採用しない場合、異なるVPCネットワークに属するCVMとMySQLはパブリックネットワーク経由でのみ相互通信が可能となります。この方式は性能、安全性、安定性が劣ります。
 
 #### [CVMとMySQLが同じリージョンになく、異なるVPCネットワークに帰属](id:dywt)
 CVMとMySQLが同じリージョンになく、異なるVPCネットワークに属する場合、CVMはプライベートネットワーク経由でのMySQLへの直接接続ができません。
 - **対処方法1（推奨）**：MySQLと同じVPCのCVMを使用して接続します。
-- **対処方法2**：2つのVPCネットワーク間に[CCN](https://cloud.tencent.com/document/product/877)を構築します。
+- **対処方法2**：2つのVPCネットワーク間に[CCN](https://intl.cloud.tencent.com/document/product/1003)を構築します。
 - **対処方法3**：CVMでMySQLのパブリックネットワークの接続アドレスを使用してMySQLに接続します。この方式は性能、安全性、安定性が劣りますので、VPCネットワークの使用を推奨します。
 
 ### [セキュリティグループ設定の問題の解決方法](id:aqzpzwt)
