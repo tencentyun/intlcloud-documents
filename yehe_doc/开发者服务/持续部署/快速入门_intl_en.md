@@ -40,7 +40,7 @@ Because Tencent Kubernetes Engine (TKE) is used, a deployed application is relea
 ![](https://qcloudimg.tencent-cloud.cn/raw/ce33728700f2a7a808a48c773f631a75.png)
 3. After pushing the artifacts to the artifact repository, get the artifact pulling address and enter it as the `image` address in the code repository's `/k8s/deployment.yaml` file.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7dcdefc706453b3df42f4dfd62947922.png)
-4. Next, import the cloud account's `imagePullSecrets` to the code repository. Go to **Deployment Console** > **Cloud Account**, click "View Details", and copy the name.
+4. Next, import the cloud account's `imagePullSecrets` to the code repository. Go to **Deployment Console** > **Cloud Account**, click "View Details", and copy the name.![](https://qcloudimg.tencent-cloud.cn/raw/cca9133d508235f849ea682b8546ddae.png)
 5. Paste the name in the `deployment.yaml` file of the code repository. Make sure that the `namespace` matches the **Namespace** specified above.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9dfe5113d33b4f20966ad0272ea72c31.png)
 6. It must also match the `namespace` in the `service.yaml` file at the same level.
