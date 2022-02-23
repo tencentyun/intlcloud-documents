@@ -56,7 +56,7 @@ Misalkan Anda telah men-deploy bisnis Anda di Tencent Cloud VPC dan IDC. Untuk m
 4. Buka halaman [CCN](https://console.cloud.tencent.com/vpc/ccn) dan klik **+New** (+Baru) untuk membuat instans CCN.
 5. Buka halaman [Tunnel Kustom](https://console.cloud.tencent.com/dc/dc) dan klik **+New** (+Baru) untuk membuat tunnel kustom untuk menghubungkan direct connect gateway berbasis CCN. Masukkan nama tunnel, pilih **CCN** untuk **Access Network** (Jaringan Akses), lalu pilih instans direct connect gateway berbasis CCN yang dibuat sebelumnya. Konfigurasikan alamat IP di kedua sisi Tencent Cloud dan IDC, dan pilih rute BGP. Setelah konfigurasi selesai, klik **Download configuration guide** (Unduh panduan konfigurasi) dan selesaikan konfigurasi perangkat IDC seperti yang diinstruksikan dalam panduan.
 6. Hubungkan VPC dan direct connect gateway berbasis CCN dengan instans CCN untuk saling menghubungkan VPC dan IDC.
->? Untuk petunjuk detail, lihat [Memigrasikan IDC ke Cloud Melalui CCN](https://intl.cloud.tencent.com/zh/document/product/216/41747).
+>? Untuk petunjuk detail, lihat [Memigrasikan IDC ke Cloud Melalui CCN](https://intl.cloud.tencent.com/document/product/216/41747).
 
 ###  [](id:step2)Langkah 2: sambungkan IDC ke VPC melalui VPN connection
 1. Login ke [Konsol VPN Gateway](https://console.cloud.tencent.com/vpc/vpnGw?rid=1) dan klik **+New** (+Baru) untuk membuat VPN gateway dengan **Associate Network** (Hubungkan Jaringan) sebagai **Virtual Private Cloud**.
