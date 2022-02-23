@@ -11,7 +11,7 @@ Subnet khusus untuk zona ketersediaan. VPC memungkinkan subnet di zona ketersedi
    + Nama Subnet: masukkan nama subnet kustom dalam 60 karakter.
    + Rentang IP VPC: blok CIDR dari VPC yang dipilih akan ditampilkan secara otomatis.
    + CIDR: mengatur blok CIDR dari subnet, yang harus menjadi bagian dari blok CIDR VPC dan tidak boleh tumpang tindih dengan blok CIDR dari subnet lain yang ada di bawah VPC.
->? Rencanakan rentang IP subnet yang sesuai dengan skala bisnis Anda. Alamat IP pribadi dalam subnet yang ditentukan akan secara otomatis ditetapkan ke instans CVM yang Anda buat. IP pribadi utama CVM dapat dimodifikasi.Untuk informasi selengkapnya, lihat [Memodifikasi IP Pribadi Utama](https://intl.cloud.tencent.com/zh/document/product/576/18541)
+>? Rencanakan rentang IP subnet yang sesuai dengan skala bisnis Anda. Alamat IP pribadi dalam subnet yang ditentukan akan secara otomatis ditetapkan ke instans CVM yang Anda buat. IP pribadi utama CVM dapat dimodifikasi.Untuk informasi selengkapnya, lihat [Memodifikasi IP Pribadi Utama](https://intl.cloud.tencent.com/document/product/576/18541)
    + Zona Ketersediaan: pilih zona ketersediaan tempat subnet berada.
    + Tabel rute yang terhubung: pilih tabel rute yang akan dihubungkan. Subnet harus dihubungkan dengan tabel rute untuk mengontrol lalu lintas keluar. Tabel rute default VPC akan dihubungkan secara default untuk memastikan interkoneksi jaringan pribadi di VPC. Anda juga dapat memilih tabel rute lain di dalam VPC.
    + Tambahkan baris: klik **Add a line** (Tambahkan baris) untuk membuat beberapa subnet sekaligus. Klik ![](https://main.qcloudimg.com/raw/ae1ede733a45968e89f58c56aee3099f.png) untuk menghapus pengaturan subnet yang dipilih.
