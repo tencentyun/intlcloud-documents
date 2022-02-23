@@ -7,15 +7,16 @@ This document describes how to create an IP bandwidth package under your bill-by
 - Tencent Cloud provides the following bandwidth packages according to the bandwidth type.
 <table>
 <tr><th width="30%">Bandwidth Type</th><th>Restrictions</th></tr>
-<tr><td><a href="#bgp">BGP Bandwidth Package</a></td><td>This type can be manually created on the console.</td></tr>
-<tr><td><a href="#anycast">AIA BGP Bandwidth Package</a></td><td>When an Anycast EIP is created, this type will be automatically created, which cannot be manually created.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/684/15254">BGP Bandwidth Package</a></td><td rowspan="2">This type can be manually created on the console.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/684/15254">Dedicated BGP Bandwidth Package</a></td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/684/15254">AIA BGP Bandwidth Package</a></td><td>When an Anycast EIP is created, this type will be automatically created, which cannot be manually created.</td></tr>
 </table>
 
 ## Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and click **Bandwidth Package** on the left sidebar.
 2. Select a region, and click **+New** in the upper-left corner.
 3. In the pop-up dialog box, enter the bandwidth package name, select a billing mode, and then click **Create**.
-![](https://main.qcloudimg.com/raw/814c74cc9239f580058214409bfdc57e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dc1d8af7fe8cf262d2067e8cc6df9dcf.png)
 <table>
 	<tr><th width="15%">Parameter</th><th>Description</th></tr>
 	<tr><td><strong>Name</strong></td><td><ul><li>Supported characters: <code>a-z</code>, <code>0-9</code>, <code>.</code>, and <code>-</code></li><li>Length: 1-60 characters</li></ul></td></tr>

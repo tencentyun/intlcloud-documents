@@ -21,7 +21,7 @@
         box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
         text-align: center;
     }
-    
+
     .scene-card-container {
         width: 450px;
         display: block;
@@ -30,7 +30,7 @@
         padding-right: 15px;
         box-sizing: border-box;
     }
-    
+
     .scene-card {
         border-radius: 10px;
         padding-top: 10px;
@@ -43,7 +43,7 @@
         overflow: hidden;
         box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
     }
-    
+
     .markdown-text-box img {
         box-shadow: none;
     }
@@ -53,20 +53,20 @@
         position: relative;
         top: -2px;
     }
-    	
-    	@media (max-width: 768px){
-    			.card-container,
-    			.scene-card-container{
-    					width: 100%;
-    			}
-    			.scene-card > div{
-    					width: 100%!important;
-    					margin-left: 0!important;
-    			}
-    			img {
+		
+		@media (max-width: 768px){
+				.card-container,
+				.scene-card-container{
+						width: 100%;
+				}
+				.scene-card > div{
+						width: 100%!important;
+						margin-left: 0!important;
+				}
+				img {
         box-shadow: none;
     }
-    	}
+		}
 </style>
 
 ## API 예시
@@ -159,7 +159,7 @@
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Interactive Live Video Broadcasting(ILVB)</h3>
-                <p style="color:#586376;" ;>로우 코드로 쇼, 이커머스, 경기과 같은 비디오 인터랙티브 라이브 방송 시나리오를 빠르게 구현합니다.</p>
+                <p style="color:#586376;" ;>로우 코드로 쇼, 이커머스, 경기와 같은 비디오 인터랙티브 라이브 방송 시나리오를 빠르게 구현합니다.</p>
                 <a href="https://github.com/tencentyun/TUILiveRoom">GitHub 소스 코드</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36060">문서 바로가기</a>
             </div>
@@ -232,8 +232,8 @@
                 <img src="https://qcloudimg.tencent-cloud.cn/raw/c8b92d2457467e3c349cb56e83b37ef4.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
-                <h3 style="color:191919;">다중 사용자 화상 회의</h3>
-                <p style="color:#586376" ;>컴포넌트화된 UI를 통해 로우 코드로 회의 시나리오를 빠르게 구현하도록 지원합니다.</p>
+                <h3 style="color:191919;">그룹 멀티미디어 인터랙션</h3>
+                <p style="color:#586376" ;>컴포넌트화된 UI를 통해 로우 코드로 멀티미디어 인터랙션 시나리오를 빠르게 구현하도록 지원합니다.</p>
                 <a href="https://github.com/tencentyun/TUIMeeting">GitHub 소스 코드</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">문서 바로가기</a>
             </div>

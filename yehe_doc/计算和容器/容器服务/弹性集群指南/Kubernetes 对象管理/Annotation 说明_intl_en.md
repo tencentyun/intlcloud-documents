@@ -57,7 +57,7 @@ For specific configurations supported by each model, please see <a href="https:/
 <li>1/4*T4</li>
 <li>1/2*T4</li>
 <li>T4</li>
-<li>You can specify the model by priority. For example, “T4,V100” indicates T4 resource Pods will be created first. If the T4 resources in the selected region are insufficient, V100 resource Pods will be created.</li>
+<li>You can specify the model by priority. For example, "T4,V100" indicates T4 resource Pods will be created first. If the T4 resources in the selected region are insufficient, V100 resource Pods will be created.</li>
 </ul>
 For specific configurations supported by each model, please see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
 <td>If GPUs are required, this option is required. When specifying it, ensure that the GPU model is supported. Otherwise, an error will be reported.</td>
@@ -83,38 +83,33 @@ For specific configurations supported by each model, please see <a href="https:/
 <td>No. If you specify it, please make sure the specified CAM role exists.</td>
 </tr>
 <tr>
-<td>eks.tke.cloud.tencent.com/monitor-port</td>
-<td>Opens a port for monitoring data for a Pod, so as to facilitate collection by PROM instance and other components.</td>
-<td>No. If you do not specify it, the port will default to 9100.</td>
-</tr>
-<tr>
 <td>eks.tke.cloud.tencent.com/custom-metrics-url</td>
 <td>Sets a custom monitoring metric pull address for a Pod. The monitoring data opened at this address will be automatically read and reported by the monitoring component.</td>
 <td>No. If you specify it, please ensure that the opened data protocol can be recognized by the monitoring system, such as the Prometheus protocol and cloud monitoring data protocol.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/eip-attributes</td>
-<td>Indicates that the Pod of the Workload needs to be associated with EIP. When the value is "", it indicates that the default EIP configuration is used. You can enter the API parameter json of the EIP in "" to realize custom configuration. For example, if the value of annotation is '{"InternetMaxBandwidthOut":2}', it means the bandwidth is 2M.</td>
+<td>Indicates that the Pod of the Workload needs to be associated with EIP. When the value is "", it indicates that the default EIP configuration is used. You can enter the API parameter json of the EIP in "" to realize custom configuration. For example, if the value of annotation is '{"InternetMaxBandwidthOut":2}', it means the bandwidth is 2M. Note: this cannot be used for non-bill-by-IP accounts.</td>
 <td>No</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/eip-claim-delete-policy</td>
-<td>After the Pod is deleted, whether the EIP is automatically reclaimed (It is reclaimed by default). “Never” means the EIP is not reclaimed.</td>
+<td>Indicates whether to repossess the EIP after the Pod is deleted. `Never` indicates not to repossess. The default value is to repossess. This parameter takes effect only when `eks.tke.cloud.tencent.com/eip-attributes` is specified. Note: this cannot be used for non-bill-by-IP accounts.</td>
 <td>No</td>
 </tr>
 <tr>
-<td>eks.tke.cloud.tencent.com/eip-injection</td>
-<td>When the value is "true", it indicates that the IP information of EIP will be exposed in the Pod. Run the `ip addr` command in the Pod to view the EIP address.</td>
+<td>eks.tke.cloud.tencent.com/eip-id-list</td>
+<td>If the Workload is a StatefulSet, you can also specify one or multiple existing EIPs, such as "eip-xx1,eip-xx2". Note that the number of StatefulSet Pods must be less than or equal to the number of EIP IDs specified in this annotation; otherwise, Pods that cannot be allocated with EIPs will be in the "Pending" status. Note: this cannot be used for non-bill-by-IP accounts.</td>
 <td>No</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/registry-insecure-skip-verify</td>
-<td>Image repository address (separate multiple addresses with “,”, or enter "all"). When you use an image from a HTTPS-based self-signed external image repository to create a workload in an elastic cluster, you may encounter the error “ErrImagePull” and fail to pull the image. You can solve this issue by adding the annotation. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028">How do I use an image from a self-signed or HTTP-based external image repository in an elastic cluster?</a></td>
+<td>Image repository address (for multiple ones, separate them by "," or enter `all`). When you use an image in a self-built HTTPS-based self-signed image repository to create a Workload in EKS, you may encounter the "ErrImagePull" error and fail to pull the image. You can add this annotation to solve this problem. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028">How do I use the external image repository that is created based on the self-signed certificate or HTTP?</a></td>
 <td>No</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/registry-http-endpoint</td>
-<td>Image repository address (separate multiple addresses with “,”, or enter "all"). When you use an image from a HTTP-based external image repository to create a workload in an elastic cluster, you may encounter the error “ErrImagePull” and fail to pull the image. You can solve this issue by adding the annotation. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028">How do I use an image from a self-signed or HTTP-based external image repository in an elastic cluster?</a></td>
+<td>Image repository address (for multiple ones, separate them by "," or enter `all`). When you use an image in a self-built HTTP-based image repository to create a Workload in EKS, you may encounter the "ErrImagePull" error and fail to pull the image. You can add this annotation to solve this problem. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028">How do I use the external image repository that is created based on the self-signed certificate or HTTP?</a></td>
 <td>No</td>
 </tr>
 </tbody></table>

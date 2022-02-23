@@ -38,14 +38,14 @@ With the LogListener service logs are enabled, you can view the monitoring logs 
 Only LogListener v2.5.4 and above support collection and monitoring service logs by machine/machine group. You’re advised to upgrade LogListener to the [latest version](https://intl.cloud.tencent.com/document/product/614/17414).
 
 ## Directions
-### Enabling the service logs
+### Enabling service logs
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. In the left sidebar, click **Machine Group** to go to the machine group management page.
 3. On the machine group list page, select the target machine group and click ![](https://main.qcloudimg.com/raw/f49ecfc95ee483de28fb0928a4ada2dd.png) to enable the LogListener service logs.
 
 
-### Disabling LogListener service logs
+### Disabling service logs
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. In the left sidebar, click **Machine Group** to view the machine group list.
@@ -59,7 +59,7 @@ Only LogListener v2.5.4 and above support collection and monitoring service logs
 When the LogListener service logs are enabled, CLS will create a dashboard `service_log_dashboard` by the type of recorded logs to display LogListener’s collection and monitoring statistics.
 
 #### Collection statistics dashboard
-You can go to the [Dashboard](https://console.cloud.tencent.com/cls/dashboard) page of the CLS console, click the ID of the target dashboard to view LogListener collection statistics, including its status, parsing failure rate, sending success rate, and other metrics.
+You can go to the [Dashboard](https://console.cloud.tencent.com/cls/dashboard) page of the CLS console, and click the ID of the target dashboard to view LogListener collection statistics, including the LogListener status, parsing failure rate, sending success rate, and other metrics.
 
 
 ## Log Types

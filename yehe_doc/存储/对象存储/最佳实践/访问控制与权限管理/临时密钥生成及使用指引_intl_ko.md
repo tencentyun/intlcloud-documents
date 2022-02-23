@@ -1,10 +1,10 @@
 >!
-> - 임시 키를 사용해 액세스 권한을 부여하는 경우, 반드시 비즈니스 수요에 따라 최소 권한 부여를 원칙으로 권한을 부여해야 합니다. 직접 모든 리소스(`(resource:*)` 또는 모든 작업`(action:*)`에 대한 권한을 부여하는 경우 권한 범위가 너무 커 데이터 보안에 대한 리스크가 발생할 수 있습니다.
-> - 임시 키 신청 시 권한 범위를 지정하면, 신청한 임시 키는 권한 범위 내에서만 작동됩니다. 예를 들어 임시 키를 신청할 때 examplebucket-1-1250000000 버킷 파일 업로드 권한 범위를 지정한 임시 키는 examplebucket-2-1250000000에 파일 업로드가 **불가**합니다. **examplebucket-1-1250000000에**파일 다운로드 역시 **불가**합니다.
+> - 임시 키를 사용해 액세스 권한을 부여하는 경우, 반드시 업무 수요에 따라 최소 권한 부여를 원칙으로 권한을 부여해야 합니다. 직접 모든 리소스`(resource:*)` 또는 모든 작업`(action:*)`에 대한 권한을 부여하는 경우 권한 범위가 너무 커 데이터 보안에 대한 리스크가 발생할 수 있습니다.
+> - 임시 키 신청 시 권한 범위를 지정하면 신청한 임시 키가 권한 범위 내에서만 동작할 수 있습니다. 예를 들어 임시 키를 신청할 때 examplebucket-1-1250000000 버킷에 파일을 업로드할 수 있는 권한 범위를 지정한 다음 적용된 키는 examplebucket-2-1250000000에 파일을 업로드**할 수 없습니다**. 또한 examplebucket-1-1250000000에서 파일을 다운로드**할 수 없습니다**.
 
 ## 임시 키
 
-임시 키(임시 액세스 자격 증명)는 CAM CLOUD API를 통해 요청된 액세스 제한 키입니다.
+임시 키(임시 액세스 자격 증명)는 CAM 클라우드 API에서 제공하는 인터페이스를 통해 획득한 제한된 권한을 가진 키입니다.
 COS API는 임시 키를 사용해 서명을 컴퓨팅해 COS API 요청을 전송하는 데 사용합니다.
 COS API 요청은 임시 키를 사용해 서명 컴퓨팅 시, 다음 3개의 임시 키 인터페이스 반환 정보 획득에 사용하는 필드가 필요합니다.
 - TmpSecretId
@@ -22,47 +22,48 @@ COS API 권한 부여 정책과 관련해서는 다음을 참고하십시오.
 
 ## 임시 키 획득
 
-[COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk)를 통해 임시 키를 얻을 수 있습니다. 
+임시 키는 제공되는 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) 방식을 통해 획득할 수 있으며, 직접 STS 클라우드 API 요청 방식으로도 획득할 수 있습니다.
 
 
 >!예시에서는 Java SDK를 사용하였으며, GitHub에서 SDK 코드(버전)을 획득해야 합니다. 해당 SDK 버전을 찾을 수 없다는 안내가 표시되는 경우, GitHub에서 상응하는 버전의 SDK를 획득하였는지 확인하십시오.
 
 ### COS STS SDK 
 
-COS는 STS에 대한 SDK와 샘플을 제공합니다. 현재 Java, Nodejs, PHP, Python, Go 등 여러 가지 언어 샘플을 제공하고 있으며, 자세한 내용은 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk)를 참고하고, 각 SDK별 사용 설명은 Github의 README와 샘플을 참고하십시오. 언어별 GitHub 주소는 다음과 같습니다.
+COS는 STS에 대한 SDK와 샘플을 제공합니다. 현재 Java, Nodejs, PHP, Python, Go 등 여러 가지 언어 샘플을 제공하고 있으며, 자세한 내용은 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk)를 참고하십시오. 각 SDK별 사용 설명은 Github의 README와 예시를 참고하십시오. 각 언어의 GitHub 주소는 하기 표와 같습니다.
 
-| 언어 유형     | 코드 설치 주소   | 코드 샘플 주소 |
+| 언어 유형     | 코드 설치 주소   | 코드 예시 주소 |
 | ------------------------- | ------ | ------|
-| Java              | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java) | [샘플 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/java/src/test/java/com/tencent/cloud/CosStsClientTest.java) |
-| .NET             | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/dotnet) | [샘플 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/dotnet/demo/Program.cs)|
-| Go            | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/go) |  [샘플 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/go/example/sts_demo.go)|
-| NodeJS       | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/nodejs) | [샘플 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/nodejs/demo/sts-server.js) |
-| PHP       | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/php) | [샘플 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/php/demo/sts_test.php) |
-| Python      | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/python)    | [샘플 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/python/demo/sts_demo.py) |
+| Java              | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java) | [예시 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/java/src/test/java/com/tencent/cloud/CosStsClientTest.java) |
+| .NET             | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/dotnet) | [예시 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/dotnet/demo/Program.cs)|
+| Go            | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/go) |  [예시 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/go/example/sts_demo.go)|
+| NodeJS       | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/nodejs) | [예시 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/nodejs/demo/sts-server.js) |
+| PHP       | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/php) | [예시 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/php/demo/sts_test.php) |
+| Python      | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/python)    | [예시 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/python/demo/sts_demo.py) |
 
->! STS SDK는 STS 인터페이스 자체의 버전별 차이점을 차단하기 위해 반환 매개변수 구조가 STS 인터페이스와 완벽하게 일치하지 않을 수 있습니다. 자세한 내용은 [Java SDK 문서](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java)를 참고하십시오.
+>! STS SDK는 STS 인터페이스 자체의 버전별 차이점을 차단하기 위해 반환 매개변수 구조가 STS 인터페이스와 완벽하게 일치하지 않습니다. 세부 사항은 [Java SDK 문서](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java)를 참고하십시오.
 
 
 Java SDK를 사용한다고 가정하고, 먼저 [Java SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java)를 다운로드한 후 실행하여 다음 예시와 같이 임시 키를 획득합니다.
 
-#### 예시 코드
+#### 코드 예시
 ```java
-// github에서 제공하는 maven 통합 방법에 따라 java sts sdk 가져오기 
-import java.util.*;
-import org.json.JSONObject; 
-import com.tencent.cloud.CosStsClient;
-
+// github에서 제공하는 maven 통합 방법에 따라 java sts sdk 가져오기. 3.1.0 이상 버전 사용
 public class Demo {
     public static void main(String[] args) {
         TreeMap<String, Object> config = new TreeMap<String, Object>();
 
         try {
-            // 사용자의 SecretId로 변경
-            config.put("SecretId", "AKID****************************");
-            // 사용자의 SecretKey로 변경
-            config.put("SecretKey", "*******************************");
+            //여기에서 SecretId와 SecretKey는 임시 키를 신청하기 위한 영구 ID(루트 계정, 서브 계정 등)를 나타내며, 서브 계정은 버킷 작업 권한이 있어야 합니다.
+            // Tencent Cloud api 키 SecretId로 교체
+            config.put("secretId", "SecretId");
+            // Tencent Cloud api 키 SecretKey로 교체
+            config.put("secretKey", "SecretKey");
 
-            // 임시 키의 유효 시간은 초 단위입니다. 기본값은 1800초이며, 현재 루트 계정에서 최대 2시간(7200초), 서브 계정에서 최대 36시간(129600초)까지 설정 가능합니다.
+            // 도메인 설정: 
+            // Tencent Cloud cvm을 사용하는 경우 내부 도메인 이름 설정 가능
+            //config.put("host", "sts.internal.tencentcloudapi.com");
+
+            // 임시 키의 유효 시간은 초 단위입니다. 기본값은 1800 초이며, 현재 루트 계정에서 최대 2 시간(7200 초), 서브 계정에서 최대 36시간(129600초)까지 설정 가능
             config.put("durationSeconds", 1800);
 
             // 사용자의 bucket으로 변경
@@ -70,15 +71,19 @@ public class Demo {
             // bucket 소재 리전으로 변경
             config.put("region", "ap-guangzhou");
 
-            // 여기서 허용된 경로의 접두사로 바꾸면 자신의 웹 사이트의 사용자 로그인 상태에 따라 업로드가 허용된 구체적 경로를 판단할 수 있습니다. 예: a.jpg 또는 a/* 또는 *
+            // 여기서 허용된 경로의 접두사로 바꾸면 자신의 웹 사이트의 사용자 로그인 상태에 따라 업로드가 허용된 구체적 경로를 판단할 수 있습니다.
+            // 몇 가지 일반적인 접두사 인증 시나리오:
+            // 1. 모든 객체에 대한 액세스 허용: "*"
+            // 2. 지정된 객체에 대한 액세스 허용: "a/a1.txt", "b/b1.txt"
+            // 3. 지정된 접두사의 객체에 대한 액세스 허용: "a*", "a/*", "b/*"
             // '*'를 입력하면 사용자가 모든 리소스에 액세스하는 것을 허용하게 됩니다. 업무에 필요한 경우가 아니면 최소 권한 원칙에 따라 사용자에게 적합한 액세스 권한 범위를 부여하십시오.
             config.put("allowPrefixes", new String[] {
                     "exampleobject",
                     "exampleobject2"
             });
 
-            // 키의 권한 목록입니다. 이 임시 키에 필요한 권한을 여기에 지정해야 합니다.
-            // 간편 업로드, 폼 업로드 및 멀티파트 업로드 시에는 다음과 같은 권한이 필요합니다. 기타 권한 리스트는 https://intl.cloud.tencent.com/document/product/436/30580을 참고하십시오.
+            // 키에 대한 권한 목록입니다. 이 임시 키에 필요한 권한을 여기에서 지정해야 합니다.
+            // 간편 업로드, 폼 업로드 및 멀티파트 업로드 시에는 다음과 같은 권한이 필요합니다. 기타 권한 리스트는 https://intl.cloud.tencent.com/document/product/436/30580을(를) 참고하십시오.
             String[] allowActions = new String[] {
                      // 간편 업로드
                     "name/cos:PutObject",
@@ -94,8 +99,9 @@ public class Demo {
             config.put("allowActions", allowActions);
 
             Response response = CosStsClient.getCredential(config);
-            //임시 키 정보를 성공적으로 반환하면, 다음과 같은 키 정보가 출력됩니다.
-            System.out.println(Jackson.toJsonPrettyString(response));
+            System.out.println(response.credentials.tmpSecretId);
+            System.out.println(response.credentials.tmpSecretKey);
+            System.out.println(response.credentials.sessionToken);
         } catch (Exception e) {
             e.printStackTrace();
             throw new IllegalArgumentException("no valid secret !");
@@ -106,9 +112,9 @@ public class Demo {
 
 #### FAQ 및 답변
 
-#### JSONObject 패키지 충돌로 인한 NoSuchMethodError 발생
+#### JSONObject 패키지 충돌로 인한 NoSuchMethodError
 
-3.1.0 및 그 이후 버전을 사용하십시오.
+3.1.0 이상 버전을 사용합니다.
 
 
 ### 임시 키를 사용한 COS 액세스
@@ -136,13 +142,13 @@ public class Demo {
         // 1 사용자 자격 정보 초기화(secretId, secretKey)
         COSCredentials cred = new BasicCOSCredentials(tmpSecretId, tmpSecretKey);
         // 2. bucket 리전 설정, 자세한 정보는 COS 리전 https://cloud.tencent.com/document/product/436/6224 참고
-        ClientConfig clientConfig = new ClientConfig(new Region("ap-beijing"));
-        // 3 cos 클라이언트 생성
+        ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
+        // 3 cos 클라이언트 생성.
         COSClient cosclient = new COSClient(cred, clientConfig);
         // bucket 이름에는 반드시 appid를 포함
         String bucketName = "examplebucket-1250000000";
 
-        String key = "doc/picture.jpg";
+        String key = "exampleobject";
         // object 업로드, 20M 이상의 파일은 해당 인터페이스를 사용해 업로드하는 것을 권장
         File localFile = new File("src/test/resources/text.txt");
         PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);

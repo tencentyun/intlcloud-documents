@@ -74,7 +74,7 @@ http://Grafana IP address: 3000
 
 ### Configuring dashboard
 
-1. On the left sidebar, click <b>Creat Dashboards</b>.
+1. On the left sidebar, click <b>Create Dashboards</b>.
 2. On the dashboard page, click <b>Add new panel</b>.
 3. Select the log data source you just created as the data source as shown below:
    ![image-20201229200254913](https://main.qcloudimg.com/raw/b0981c7c5e43d803d0eb694f3b737060.png)

@@ -13,4 +13,3 @@ You can adjust the configuration based on your actual needs.
 </dx-alert>
 5. Click **Enable now**.
 After the creation, you can [view the created reservations](https://intl.cloud.tencent.com/document/product/213/43853).
-

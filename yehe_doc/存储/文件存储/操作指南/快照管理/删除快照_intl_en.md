@@ -13,10 +13,9 @@ When there is no need to use the snapshot again, you can delete the snapshot to 
 
 ## Directions
 
-1. Log in to the CFS console and go to the [Snapshot Policies](https://console.cloud.tencent.com/cfs/snapshot/policy?rid=1) page.
-2. You can delete snapshots using the following methods:
- - Deleting a single snapshot: click **Delete** in the row of the snapshot to be deleted.
- - Deleting snapshots in batches: select all of the snapshots you want to delete (make sure the snapshots are not involved in any tasks) and click **Delete** at the top of the list.
+1. Log in to the CFS console and go to the [Snapshot List](https://console.intl.cloud.tencent.com/cfs/snapshot/list?rid=1) page.
+2. Delete a snapshot as follows:
+ Click **Delete** in the row of the snapshot to be deleted.
 3. Click **Confirm**.
 
 

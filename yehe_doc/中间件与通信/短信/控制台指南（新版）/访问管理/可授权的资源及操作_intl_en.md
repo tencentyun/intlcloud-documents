@@ -14,7 +14,7 @@ SMS supports resource-level authorization for all console APIs listed in this se
 
 ## Console API Actions
 
-| API Name | Used Module | Feature Description |
+| API Name | Applicable Module | Feature Description |
 |-----------------------------|--------------------------------------------------------|-------------|
 | DescribeAppList             | [SMS console](https://console.cloud.tencent.com/smsv2) > Applications > Application List | Gets the application list |
 | DescribeAppInfo             | [SMS console](https://console.cloud.tencent.com/smsv2) > Applications > Application List > Application Info | Gets the application information |

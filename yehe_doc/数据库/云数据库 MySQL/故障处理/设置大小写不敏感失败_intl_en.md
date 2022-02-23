@@ -1,5 +1,5 @@
 
-## I Description
+## Description
 Failed to enable case insensitivity. An error was reported as follows:
 ![](https://main.qcloudimg.com/raw/e10049c280384344318379432bc294fb.png)
 

@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to get the server status in a specified machine group.
+This API is used to get the status of the machines in a specified machine group.
 
 ## Request
 #### Sample request
@@ -19,7 +19,7 @@ GET /machines
 
 #### Request header
 
-There are only common response headers but no special response headers.
+There are only common request headers but no special request headers.
 
 #### Request parameters
 
@@ -52,14 +52,14 @@ There are only common response headers but no special response headers.
 
 | Field Name | Type | Required | Description |
 |-------------|-----------|---------|-------------------------------|
-| machines    |JsonArray  | Yes      | Server information array                    |
+| machines    |JsonArray  | Yes      | Machine information array                    |
 
 `MachineInfo` is in the following format:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| ip         | string | Yes      | Server IP                    |
-| status     | int    | Yes      | 0: exceptional, 1: normal            |
+| ip         | string | Yes      | Machine IP                    |
+| status     | int    | Yes      | 0: abnormal, 1: normal            |
 
 ## Error Codes
 

@@ -21,7 +21,7 @@
         box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
         text-align: center;
     }
-    
+
     .scene-card-container {
         width: 450px;
         display: block;
@@ -30,7 +30,7 @@
         padding-right: 15px;
         box-sizing: border-box;
     }
-    
+
     .scene-card {
         border-radius: 10px;
         padding-top: 10px;
@@ -43,7 +43,7 @@
         overflow: hidden;
         box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
     }
-    
+
     .markdown-text-box img {
         box-shadow: none;
     }
@@ -53,20 +53,20 @@
         position: relative;
         top: -2px;
     }
-    	
-    	@media (max-width: 768px){
-    			.card-container,
-    			.scene-card-container{
-    					width: 100%;
-    			}
-    			.scene-card > div{
-    					width: 100%!important;
-    					margin-left: 0!important;
-    			}
-    			img {
+		
+		@media (max-width: 768px){
+				.card-container,
+				.scene-card-container{
+						width: 100%;
+				}
+				.scene-card > div{
+						width: 100%!important;
+						margin-left: 0!important;
+				}
+				img {
         box-shadow: none;
     }
-    	}
+		}
 </style>
 
 ## API Examples
@@ -232,8 +232,8 @@
                 <img src="https://qcloudimg.tencent-cloud.cn/raw/c8b92d2457467e3c349cb56e83b37ef4.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
-                <h3 style="color:191919;">Video Conferencing</h3>
-                <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly enable video conferencing</p>
+                <h3 style="color:191919;">Multi-person communication</h3>
+                <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly enable audio/video communication</p>
                 <a href="https://github.com/tencentyun/TUIMeeting">GitHub source code</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">Integration guide</a>
             </div>

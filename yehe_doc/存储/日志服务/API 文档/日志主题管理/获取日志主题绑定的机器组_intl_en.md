@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to get the information of the server group bound to a log topic.
+This API is used to get the information of the machine groups bound to a log topic.
 
 ## Request
 
@@ -55,14 +55,14 @@ There are only common response headers but no special response headers.
 
 | Field Name | Type | Required | Description |
 | -------------- | --------- | -------- | ------------------------ |
-| machine_groups | JsonArray | Yes       | Array of server groups bound to log topic |
+| machine_groups | JsonArray | Yes       | Array of machine groups bound to log topic |
 
 `machine_groups` is in the following format:
 
 | Field Name | Type | Required | Description |
 | ---------- | ------ | -------- | ------------ |
-| group_id   | string | Yes      | Server group ID                  |
-| group_name | string | Yes      | Server group name                    |
+| group_id   | string | Yes      | Machine group ID                  |
+| group_name | string | Yes      | Machine group name                    |
 
 ### Error codes
 

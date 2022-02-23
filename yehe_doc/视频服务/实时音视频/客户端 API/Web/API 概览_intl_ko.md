@@ -1,15 +1,13 @@
 ## 지원 플랫폼
 
-WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저(데스크톱), Edge 브라우저(데스크톱), Firefox 브라우저(데스크톱), Safari 브라우저(데스크톱), Safari 브라우저(모바일)에서 비교적 완벽하게 지원되며, 기타 플랫폼(예: Android 브라우저)에 대한 지원은 완전하지 못할 수 있습니다.
-
-
+WebRTC 기술은 Google이 처음 고안한 기술로 Chrome, Edge, Firefox, Safari, Opera 브라우저 등에서 지원되고 있습니다. Tencent Cloud TRTC Web SDK는 WebRTC 패키지를 기반으로 하며 Tencent Cloud TRTC Web SDK에 대한 자세한 지원도는 다음을 참고하십시오.
 
 
 <table>
 <tr>
 <th>운영 체제</th>
 <th>브라우저 유형</th>
-<th>브라우저 최저<br> 버전 요구사항</th>
+<th>브라우저 최저<br>버전 요구사항</th>
 <th>SDK 버전 요구사항</th>
 <th>수신(재생)</th>
 <th>발송(마이크)</th>
@@ -222,7 +220,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 <tr>
 <td>iOS 14.3+</td>
 <td>WeChat 내장 브라우저</td>
-<td>6.5+(WeChat 버전)</td>
+<td>6.5+ (WeChat 버전)</td>
 <td>-</td>
 <td>지원</td>
 <td>지원</td>
@@ -268,9 +266,10 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 
 >! 
 >- 브라우저에서 [TRTC Web SDK 기능 테스트 페이지](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)를 열어 WebRTC의 모든 기능이 지원되는지 테스트할 수 있습니다(예: WebView 등 브라우저 환경).
->- H.264 버전 권한 제한으로 인해, Huawei 시스템의 Chrome 브라우저와 Chrome WebView 커널의 브라우저에서 TRTC Web을 정상 실행하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 VP8 코딩/디코딩 활성화를 신청하십시오.
+>- H.264 저작권 제한으로 인해 Huawei Chrome 88 미만의 버전은 H264 코덱을 사용할 수 없습니다(즉, 스트림 푸시 불가). TRTC Web SDK를 사용하여 Huawei 장치의 Chrome 브라우저에서 스트림을 푸시하려면 [TRTC 그룹 채팅](https://cloud.tencent.com/document/product/647/19906#trtc-.E4.BA.A4.E6.B5.81.E7.BE.A4)의 기술 지원에 문의하여 VP8 코덱을 활성화하십시오.
 >- Mac OS에서 Firefox의 화면 공유 효과가 상대적으로 낮고 아직 해결책이 없는 상황이므로 Chrome 또는 Safari를 통한 화면 공유를 권장합니다.[](id:attention3)
->- Web 스트리밍 시 듀얼 사운드 채널 인코딩 지원을 원하시면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 WebRTC 듀얼 사운드 채널 인코딩을 신청하십시오.
+>- 스트리밍할 때 Web에서 듀얼 사운드 인코딩을 지원하도록 하려면, [TRTC 그룹 채팅](https://cloud.tencent.com/document/product/647/19906#trtc-.E4.BA.A4.E6.B5.81.E7.BE.A4)의 기술 지원에 문의를 통해 WebRTC 듀얼 사운드 인코딩 기능을 활성화하십시오.
+
 
 ## URL 도메인 프로토콜 제한
 | 응용 시나리오     | 프로토콜             | 수신(재생) | 발송(마이크 켜짐) | 화면 공유 | 비고 |
@@ -279,7 +278,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 | 프로덕션 환경     | HTTP 프로토콜         | 지원         | 미지원       | 미지원   | -     |
 | 로컬 개발 환경 | `http://localhost` | 지원         | 지원         | 지원     | 권장 |
 | 로컬 개발 환경 | `http://127.0.0.1` | 지원         | 지원         | 지원     |  -    |
-| 로컬 개발 환경 | `http://[로컬 컴퓨터IP]`  | 지원         | 미지원       | 미지원   |  -    |
+| 로컬 개발 환경 | `http://[로컬 IP]`  | 지원         | 미지원       | 미지원   |  -    |
 | 로컬 개발 환경 | `file:///`         | 지원         | 지원         | 지원     |   -   |
 
 ## API 사용 튜토리얼
@@ -294,9 +293,19 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 Chrome 브라우저
 | 로컬 오디오/비디오 동적 활성화/비활성화 | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-15-basic-dynamic-add-video.html)    |
 | 화면 공유           | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-basic-screencast.html)           |
 | 볼륨 감지       | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html)        |
-| 사용자 정의 수집 및 사용자 정의 재생 렌더링 | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-20-advanced-customized-capture-rendering.html) |
+| 사용자 정의 수집 및 사용자 정의 재생 렌더링 | [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-20-advanced-customized-capture-rendering.html) |
 | 방의 업스트림 사용 인원 제한     | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-04-info-uplink-limits.html)        |
 | 배경 음악/음향 효과 구현     | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-22-advanced-audio-mixer.html)          |
+| 통화 전 환경 및 디바이스 점검| [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-23-advanced-support-detection.html) |
+| 통화 전 네트워크 품질 점검| [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-24-advanced-network-quality.html) |
+| 디바이스 연결/해제 동작 감지| [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-25-advanced-device-change.html)|
+| CDN에 푸시 스트림 구현| [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-26-advanced-publish-cdn-stream.html) |
+| 이중 스트림 활성화| [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-27-advanced-small-stream.html) |
+| 뷰티 필터 활성화| [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-28-advanced-beauty.html) |
+| 워터마크 활성화| [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-29-advance-water-mark.html) |
+| 크로스 룸 마이크 연결 구현| [가이드 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-30-advanced-cross-room-link.html) |
+
+>? [클릭](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-10-basic-get-started-with-demo.html)하여 더 많은 기능을 확인하십시오.
 
 
 ## TRTC
@@ -307,7 +316,7 @@ TRTC는 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html)
 
 | API               | 설명               |
 | ----------------------------------------- | ---------------------------------------- |
-| [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.VERSION)         | TRTC Web SDK 버전 넘버.           |
+| [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.VERSION)         | TRTC Web SDK 버전 번호.           |
 | [checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) | 브라우저의 TRTC Web SDK 호환 여부 확인. 호환되지 않는 경우 사용자에게 최신 버전의 Chrome 브라우저 다운로드를 권고하시기 바랍니다.          |
 | [isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.isScreenShareSupported)   | 브라우저의 화면 공유 지원 여부 확인. 화면 공유 스트림을 생성하기 전에 이 메소드를 호출해 현재 브라우저의 화면 공유 지원 여부를 확인하십시오.               |
 | [getDevices](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getDevices)           | 미디어 입/출력 장치 목록 반환.             |
@@ -387,7 +396,7 @@ LocalStream 로컬 오디오/비디오 스트림은 [createStream](https://web.s
 
 ## RemoteStream
 
-[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-Event.html#.STREAM_ADDED)수신을 통해 얻은 원격 오디오/비디오 스트림은 [Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html)의 하위 클래스입니다.
+[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-Event.html#.STREAM_ADDED) 수신을 통해 얻은 원격 오디오/비디오 스트림은 [Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html)의 하위 클래스입니다.
 
 | API    | 설명           |
 | ------------------------------ | --------------------------- |
@@ -415,7 +424,7 @@ LocalStream 로컬 오디오/비디오 스트림은 [createStream](https://web.s
 
 ## RtcError
 
-RtcError 객체
+RtcError 객체.
 
 | API          | 설명         |
 | ------------------------------------- | ------------ |

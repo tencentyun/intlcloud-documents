@@ -1,8 +1,6 @@
 ## サポートするプラットフォーム
 
-WebRTCのテクノロジーはGoogleが初めて提唱し、現在、デスクトップ版Chromeブラウザ、デスクトップ版Edgeブラウザ、デスクトップ版Firefoxブラウザ、デスクトップ版Safariブラウザおよびモバイル版Safariブラウザでは比較的万全なサポートが提供されています。その他のプラットフォーム（Androidプラットフォームブラウザなど）のサポート状況は未だ不十分です。
-
-
+WebRTCのテクノロジーはGoogleが初めて提唱し、Chrome、Edge、Firefox、Safari、Operaなどのブラウザですべてサポートされています。Tencent Cloud TRTC Web SDKはWebRTCパッケージをベースにしたものです。Tencent Cloud TRTC Web SDKのサポートの詳細については表をご参照ください。
 
 
 <table>
@@ -267,17 +265,17 @@ WebRTCのテクノロジーはGoogleが初めて提唱し、現在、デスク�
 </table>
 
 >! 
->- ブラウザで[TRTC Web SDK機能テスト画面](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を開けば、現在のブラウザがWebRTCのすべての機能をサポートしているかどうかチェックすることができます。例:WebViewなどのブラウザ環境。
->- H.264の著作権上の制限により、HuaweiシステムのChromeブラウザおよびChrome WebViewをカーネルとするブラウザでTRTC Web端末を正常に実行したい場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)し、VP8コーデックの有効化を申請してください。
+>- ブラウザで[TRTC Web SDK能力テスト画面](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を開けば、現在のブラウザがWebRTCのすべての機能をサポートしているかどうかチェックすることができます。例:WebViewなどのブラウザ環境。
+>- H.264の版権の制限により、Huawei Chrome 88以前のバージョンではH264コーデックを使用できません（プッシュできません）。HuaweiデバイスのChromeブラウザでTRTC Web SDKプッシュをご利用になりたい場合は、[TRTCコミュニケーショングループ](https://cloud.tencent.com/document/product/647/19906#trtc-.E4.BA.A4.E6.B5.81.E7.BE.A4)のグループ内テクニカルサポートに連絡し、VP8コーデックを有効にしてください。
 >- Mac OSでのFirefoxの画面共有機能はあまり効果的ではなく、現時点では対処方法もありません。そのため、画面共有にはChromeまたはSafariの使用をお勧めします。[](id:attention3)
->- Web 端末でのプッシュ時のダブルサウンドチャンネルコーデックのサポートを希望される場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)し、WebRTCダブルサウンドチャンネルコーデックを申請してください。
+>- Web端末でのプッシュ時にステレオコーデックのサポートをご希望の場合は、[TRTCコミュニケーショングループ](https://cloud.tencent.com/document/product/647/19906#trtc-.E4.BA.A4.E6.B5.81.E7.BE.A4)のグループ内テクニカルサポートに連絡し、WebRTCステレオコーデック機能を有効にしてください。
 
 
 ## URLドメイン名プロトコルの制限
 | ユースケース     | プロトコル             | 受信（再生） | 送信（マイク・オン） | 画面共有 | 備考 |
 | ------------ | :--------------- | :----------- | ------------ | -------- | ---- |
 | 本番環境     | HTTPSプロトコル        | サポートあり         | サポートあり         | サポートあり     | 推奨 |
-| 本番環境     | HTTPプロトコル        | サポートあり         | サポートなし       | サポートなし   | -     |
+| 本番環境     | HTTPプロトコル         | サポートあり         | サポートなし       | サポートなし   |   -   |
 | ローカル開発環境 | `http://localhost` | サポートあり         | サポートあり         | サポートあり     | 推奨 |
 | ローカル開発環境 | `http://127.0.0.1` | サポートあり         | サポートあり         | サポートあり     |  -    |
 | ローカル開発環境 | `http://[ローカルマシンIP]`  |  サポートあり         | サポートなし       | サポートなし   |  -    |
@@ -292,12 +290,22 @@ APIの使用法の詳細については、以下のガイドをご参照くだ�
 | インタラクティブライブストリーミング                   | [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-12-basic-live-video.html)    |
 | カメラおよびマイクの切り替え         | [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-13-basic-switch-camera-mic.html)    |
 | ローカルビデオのプロパティの設定           | [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-14-basic-set-video-profile.html)    |
-|ローカルオーディオまたはビデオの動的な停止｜ [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-15-basic-dynamic-add-video.html)    |
+|ローカルオーディオまたはビデオの動的な停止| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-15-basic-dynamic-add-video.html)    |
 | 画面共有                   | [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-basic-screencast.html)           |
 | 音量計測       | [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html)        |
 | ユーザー定義キャプチャとカスタマイズ再生レンダリング | [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-20-advanced-customized-capture-rendering.html) |
 | ルーム内アップリンクユーザー数の制限     | [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-04-info-uplink-limits.html)        |
 | バックグラウンドミュージックと効果音の実装ソリューション     | [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-22-advanced-audio-mixer.html)                  |
+| 通話前の環境およびデバイステスト| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-23-advanced-support-detection.html) |
+| 通話前のネットワーク品質テスト| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-24-advanced-network-quality.html) |
+| デバイス挿抜動作チェック| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-25-advanced-device-change.html)|
+| CDNへのプッシュの実現| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-26-advanced-publish-cdn-stream.html) |
+| ビッグスモールストリームの伝送を有効にする| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-27-advanced-small-stream.html) |
+| 美顔を有効にする| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-28-advanced-beauty.html) |
+| ウォーターマークを有効にする| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-29-advance-water-mark.html) |
+| ルーム間マイク接続の実現| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-30-advanced-cross-room-link.html) |
+
+>? その他の機能については[クリックして確認](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-10-basic-get-started-with-demo.html)してください。
 
 
 ## TRTC
@@ -310,7 +318,7 @@ TRTCは[TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html)�
 | ----------------------------------------- | ---------------------------------------- |
 | [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.VERSION)         | TRTC Web SDKバージョン番号。           |
 | [checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) | ブラウザがTRTC Web SDKと互換性があるかチェックします。現在のブラウザとTRTC Web SDKとの互換性がない場合は、Chromeブラウザの最新バージョンをダウンロードすることをお勧めします。          |
-| [isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.isScreenShareSupported)   | ブラウザが画面共有をサポートするかチェックします。画面共有ストリームを作成する前に、このメソッドを呼び出して、現在のブラウザが画面共有をサポートするか確認してください。
+| [isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.isScreenShareSupported)   | ブラウザが画面共有をサポートするかチェックします。画面共有ストリームを作成する前に、このメソッドを呼び出して、現在のブラウザが画面共有をサポートするか確認してください。|
 | [getDevices](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getDevices)           | メディアの入出力デバイスリストを返します。             |
 | [getCameras](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getCameras)           | カメラのデバイスリストを返します。          |
 | [getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getMicrophones)           | マイクのデバイスリストを返します。          |
@@ -330,7 +338,7 @@ TRTCは[TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html)�
 
 ## Client
 
-オーディオビデオ通話のクライアントオブジェクトClientは[createClient()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient)によって作成し、オーディオビデオセッションを代表します。
+オーディオビデオ通話のクライアントオブジェクトClientは[createClient()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient)によって作成し、1回のオーディオビデオセッションを表します。
 
 | API        | 説明         |
 | ---------------------------------- | ---------------------------------------------------------- |
@@ -338,7 +346,7 @@ TRTCは[TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html)�
 | [setTurnServer](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#setTurnServer)     | TURNサーバーを設定します。このメソッドは[setProxyServer()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#setProxyServer)と合わせて使用し、企業が自分でプロキシサーバーおよびTURN中継をデプロイする場合に適用されます。 |
 | [join](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#join)       | オーディオビデオ通話ルームに参加し、入室によってオーディオビデオ通話セッションが始まります。ルームが存在しない場合、システムが自動的に新しいルームを作成します。            |
 | [leave](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#leave)     | 現在のオーディオビデオ通話ルームを退出し、オーディオビデオ通話セッションを終了します。         |
-| [publish](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#publish)         | ローカルのオーディオビデオストリーミングを公開します。このメソッドは[join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#join)で入室後に呼び出す必要があり、1回のオーディオビデオセッションで1度だけローカルストリーミングを公開することができます。           |
+| [publish](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#publish)         | ローカルのオーディオビデオストリーミングを公開します。このメソッドは[join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#join) で入室後に呼び出す必要があり、1回のオーディオビデオセッションで1度だけローカルストリーミングを公開することができます。           |
 | [unpublish](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#unpublish)          | ローカルストリーミングの公開を取り消します。     |
 | [subscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#subscribe)          | リモートストリーミングを閲覧します。         |
 | [unsubscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#unsubscribe)         | リモートストリーミングの閲覧を取り消します。     |
@@ -359,7 +367,7 @@ LocalStreamローカルオーディオビデオストリーミングは、[creat
 | [initialize](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize)           | ローカルのオーディオビデオストリーミングオブジェクトを初期化します。      |
 | [setAudioProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioProfile)         | オーディオProfileを設定します。このメソッドは[initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize)を呼び出す前に呼び出す必要があります。          |
 | [setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoProfile)         | ビデオProfileを設定します。このメソッドは[initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize)を呼び出す前に呼び出す必要があります。          |
-| [setScreenProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setScreenProfile)         | 画面共有Profileを設定します。このメソッドは[initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize)を呼び出す前に呼び出す必要があります。         |
+| [setScreenProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setScreenProfile)       | 画面共有Profileを設定します。このメソッドは[initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize)を呼び出す前に呼び出す必要があります。         |
 | [setVideoContentHint](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoContentHint) | ビデオコンテンツのヒントを設定します。主に、さまざまなシーンにおけるビデオコーデック品質の向上に用いられます。このメソッドは[initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize)の呼び出し完了後に呼び出す必要があります。 |
 | [switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice)       | メディアの入力デバイスを切り替えます。            |
 | [addTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#addTrack)    | オーディオまたはビデオのトラックを追加します。          |

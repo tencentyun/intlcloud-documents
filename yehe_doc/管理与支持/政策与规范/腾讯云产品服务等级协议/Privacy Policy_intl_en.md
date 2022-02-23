@@ -570,5 +570,6 @@ The following Modules shall apply and form part of this privacy policy if you us
 16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
 18.[Domains](https://intl.cloud.tencent.com/document/product/242/45146).
+19.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)

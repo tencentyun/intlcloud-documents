@@ -19,7 +19,7 @@ Your Content (see [Data Processing and Security Addendum](https://intl.cloud.ten
 | Glorybird India Private Limited            | Data center services and infrastructure |
 | Общество с ограниченной ответственностью «Кайт Бёрд АР»   | Data center services and infrastructure |
 | Kite Bird Korea Yuhan Hoesa                | Data center services and infrastructure |
-| Tencent Japan GK                           | Data center services and infrastructure |
+| Glory Bird Japan GK                           | Data center services and infrastructure |
 | PETRICHOR TELECOMUNICAÇÕES BRASIL LIMITADA | Data center services and infrastructure |
 | KITE BIRD malaysia sdn. bhd.               | Data center services and infrastructure |
 | Kite Bird Germany GmbH                     | Data center services and infrastructure |

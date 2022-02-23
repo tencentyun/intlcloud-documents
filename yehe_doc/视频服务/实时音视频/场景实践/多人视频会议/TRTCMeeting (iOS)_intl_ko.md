@@ -210,7 +210,7 @@ TRTCMeeting은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 | 매개변수     | 유형                | 의미                                                         |
 | -------- | ------------------- | ------------------------------------------------------------ |
 | sdkAppId | UInt32              | TRTC 콘솔 >[[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)]> 애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다. |
-| userId   | NSString            | 현재 사용자 ID, 문자열 유형은 영어 알파벳(a-z, A-Z), 숫자(0-9), 대시부호(-), 언더바(_)만 허용됩니다. |
+| userId   | NSString            | 현재 사용자 ID, 문자열 유형은 영어 알파벳(a-z, A-Z), 숫자(0-9), 대시부호(-), 언더바(_)만 허용됩니다. 사업체의 실제 계정 시스템에 맞게 설정할 것을 권장합니다.|
 | userSig  | NSString            | Tencent Cloud가 설계한 일종의 보안 서명으로, 가져오는 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
 | callback | TRTCMeetingCallback | 로그인 콜백이며, 성공 시 code는 0입니다.                                  |
 

@@ -1,5 +1,5 @@
 ### What should I do if a user fails to receive an SMS message?
-Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) and select **Statistics and Analytics** > **Chinese Mainland SMS** (or **Global SMS**) > **Message Records** to view the **Sending Status** and **Remarks** for the mobile number.
+Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) and select **Business Statistics** > **Chinese Mainland SMS** (or **Global SMS**) > **Message Records** to view the **Sending Status** and **Remarks** for the mobile number.
 - If the **Sending Status** is "Failed", you can troubleshoot the issue based on the cause as described in **Remarks**. The cause may be that the request has hit the rate limit control policy, the SMS message format is incorrect, or the mobile number has been blocked due to unsubscription.
 - If the **Sending Status** is "Succeeded", but an error code is displayed in **Remarks**, please troubleshoot the issue based on the specific [error code](https://intl.cloud.tencent.com/document/product/382/34861).
 - If the **Sending Status** is "Succeeded" and the **Remarks** display that "The user has successfully received the message", but the user actually has not, you can troubleshoot the issue by following the steps below:
@@ -85,8 +85,8 @@ When you call a Tencent Cloud SMS API to send an SMS message, if the response pa
 
 ### How do I get the SMS API SecretId and SecretKey?
 1. Log in to the Tencent Cloud console.
-2. Go to the [TencentCloud API Key](https://console.cloud.tencent.com/cam/capi) console page.
-3. On the **TencentCloud API Key** page, click **Create** to create a key pair.
+2. Go to the [Manage API Key](https://console.cloud.tencent.com/cam/capi) console page.
+3. On the **Manage API Key** page, click **Create Key** to create a key pair.
 
 **SecretId**: identifies the user that calls an API, which is similar to a username.
 **SecretKey**: authenticates the user that calls the API, which is similar to a password.
@@ -99,7 +99,7 @@ When you call a Tencent Cloud SMS API to send an SMS message, if the response pa
 ### How do I get the SMS SDK AppID and AppKey?
 The `SDK AppID` and `AppKey` are the application access account and key granted by Tencent Cloud when you apply for a new application. You can view them after you successfully create the application.
 - **SDK AppID**: the unique ID of a Tencent Cloud SMS application as shown below:
-![](https://main.qcloudimg.com/raw/eee1084a4e88defd26f69061906d7a44.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9f7f80e6a447fc4d50104e35fa47fe51.png)
 - **AppKey**: the password used to verify the validity of an SMS delivery request, which can ensure the reliability of the application source under certain technical conditions.
 
 
@@ -146,9 +146,9 @@ When you import numbers into the console, the platform will automatically dedupl
 In one SMS delivery request, the platform will check whether the recipient numbers of the same message content are duplicated and deliver the message only once for duplicated numbers.
 
 ### Are invoices available?
-If you need an invoice, you can apply for it on the **[Invoice Management](https://console.cloud.tencent.com/expense/invoice)** page in the console.
+If you need an invoice, you can apply for it on the **Invoice** page in the [Billing Center console](https://console.intl.cloud.tencent.com/expense/invoicing).
 
-### Why does the number contain asterisks when I preview an SMS message? For example, `Dear customer, your top-up payment of 1**2 CNY has been credited to your account. Please check it in the system!`.
+### Why does the number contain asterisks when I preview an SMS message? For example, `Dear customer, your top-up payment of 1**2 USD has been credited to your account. Please check it in the system!`.
 The console will encrypt numbers for storage, so numbers will contain asterisks when being previewed, but SMS messages received by users will be fully displayed.
 
 ### What are the country/region codes?

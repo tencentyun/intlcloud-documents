@@ -17,7 +17,7 @@ When connecting a device, you can use one of the following server domains based 
 | Region                 | Domain                                             |
 | -------------------- | ------------------------------------------------ |
 | Chinese mainland             | ${productid}.iotcloud.tencentdevices.com         |
-| East US (Virginia) | ${productid}us-east.iotcloud.tencentdevices.com  |
+| East US (Virginia) | ${productid}.us-east.iotcloud.tencentdevices.com  |
 | Central Europe (Frankfurt) | ${productid}.europe.iothub.tencentdevices.com    |
 | Southeast Asia (Bangkok)     | ${productid}.ap-bangkok.iothub.tencentdevices.com |
 

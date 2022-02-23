@@ -5,6 +5,7 @@
 <table>
 <tr><th width="30%">带宽类型</th><th>说明</th></tr>
 <tr><td><a href="#bgp">常规 BGP 带宽包</a></td><td>普通 BGP IP 线路类型的带宽包。可手动创建。</td></tr>
+<tr><td><a href="#cn2">精品 BGP 带宽包</a></td><td>使用专属线路的精品 BGP IP 线路类型的带宽包。可手动创建。</td></tr>
 <tr><td><a href="#anycast">Anycast 加速 BGP 带宽包</a></td><td>采用 Anycast 加速 BGP IP 线路类型的带宽包。自动创建，不支持手动创建。</td></tr>
 </table>
 
@@ -27,6 +28,25 @@
 <td align="left">圣保罗
 </td>
 <td align="left">21.23</td>
+</tr>
+</tbody></table>
+
+## [精品 BGP 带宽包](id:cn2)
+>?
+>- 目前仅标准账户类型支持精品 BGP 带宽包，传统账户类型需升级后才能使用，升级详情请参见 [账户类型升级说明](https://intl.cloud.tencent.com/document/product/684/15246)。如需体验，请联系商务经理。
+>- 仅香港地域支持精品 BGP IP。
+>
+<table>
+<thead>
+<tr>
+<th align="left">地域</th>
+<th align="left" width="35%">单价（美元/Mbps/月）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">中国香港
+</td>
+<td align="left">87.88</td>
 </tr>
 </tbody></table>
 

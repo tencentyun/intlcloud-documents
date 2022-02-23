@@ -2,7 +2,7 @@
 
 This API is used to create a shipping task.
 
->! When creating a shipping task, check that you have the write permission on CKafka topics.
+>! Before creating a task to ship log data to CKafka, make sure you have write access to the target CKafka topic.
 >
 
 ## Request
@@ -38,7 +38,7 @@ Content-Type: application/json
 
 ### Request headers
 
-No special request headers
+No special response headers
 
 ### Request parameters
 
@@ -85,8 +85,8 @@ No special response headers
 
 ### Response parameters
 
-None
+Free
 
 ## Error Codes
 
-For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/614/42832).
+See [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).

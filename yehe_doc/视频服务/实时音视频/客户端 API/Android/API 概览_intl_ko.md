@@ -147,7 +147,7 @@
 | [showDebugView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ad2cdb5d447114534f53bad5bdc48afba) | 대시보드 표시 |
 | [setDebugViewMargin](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa2014c293033e9ea60aa6ffd525ee2fa) | 대시보드 여백 설정 |
 | [callExperimentalAPI](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a37f331dd0cfff51ab5a3becf4950a55e) | 실험용 인터페이스 호출 |
-| [setNetEnv](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a28ae49c86c5e5ba7e5ad2eae171bde76) | TRTC 백그라운드 클러스터 설정(Tencent Cloud R&D 팀만 해당) |
+| [setNetEnv](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a28ae49c86c5e5ba7e5ad2eae171bde76) | TRTC 백그라운드 클러스터 설정 (Tencent Cloud R&D 팀만 해당) |
 
 ### 사용하지 않는 인터페이스
 | API  | 설명         |
@@ -316,8 +316,8 @@
 ### 오디오 데이터 사용자 정의 콜백
 | API  | 설명         |
 |-----|-----|
-| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | 로컬 마이크에서 수집된 원본 오디오 데이터 콜백 |
-| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | 로컬에서 수집하고 오디오 모듈에서 전처리된 오디오 데이터 콜백 |
+| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | 로컬에서 수집되고 오디오 모듈에서 전처리된 오디오 데이터 콜백 |
+| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | 로컬에서 수집되고 오디오 모듈에서 전처리, 사운드 처리 및 BGM 믹싱된 오디오 데이터 콜백 |
 | [onRemoteUserAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902) | 각 원격 사용자의 오디오 믹싱 전 오디오 데이터 |
 | [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | 재생하기 위해 시스템에 제출되기 전 각 채널에서 믹싱된 오디오 데이터 콜백 |
 | [onMixedAllAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a96923a9286a88b83d6890f607884ceb3) | SDK의 모든 믹싱된 오디오 데이터(수집 및 재생 대기 중 포함) |

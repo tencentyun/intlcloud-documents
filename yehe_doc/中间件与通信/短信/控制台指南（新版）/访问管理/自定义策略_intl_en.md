@@ -61,14 +61,14 @@ In the example below, we will create a custom policy, which allows all actions e
 2. Select **Create by Policy Generator** to access the policy creation page.
 3. Select the service and action.
 	● Select **Allow** for **Effect**.
-	● Select **Short Message Service** for **Service**.
+	● Select **Short Message Service (sms)** for **Service**.
 	● Check all items for **Action**.
 	● Enter `qcs::sms::uin/12345678:app/1400000001` for **Resource** according to the [resource syntax description](#.E8.B5.84.E6.BA.90.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0).
 	● The **Condition** configuration item does not need to be configured.
 	● Click **Add Statement** and a statement saying that "Any action is allowed on the SMS application 1400000001" will appear at the bottom of the page.
 4. Continue adding another statement on the same page.
 	● Select **Deny** for **Effect**.
-	● Select **Short Message Service** for **Service**.
+	● Select **Short Message Service (sms)** for **Service**.
 	● Check `DeleteAppInfo` (which can be quickly found using the search engine) for **Action**.
 	● Enter `qcs::sms::uin/12345678:app/1400000001` for **Resource** according to the [resource syntax description](#.E8.B5.84.E6.BA.90.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0).
 	● The **Condition** configuration item does not need to be configured.
@@ -112,5 +112,5 @@ In the example below, we will create a custom policy, which allows all actions t
 }
 ```
 >?The policy content should follow the [CAM policy syntax logic](https://intl.cloud.tencent.com/document/product/598/10603), where the syntax of "resource" and "action" is as shown above in the [Resource syntax description](#.E8.B5.84.E6.BA.90.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0) and the [Action syntax description](#.E6.93.8D.E4.BD.9C.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0).
-6. Click **Create Policy** to create the custom policy.
+6. Click **Complete** to create the custom policy.
 Subsequently, this policy can be granted to other sub-accounts in the same way as [granting full access to SMS to existing sub-accounts](https://intl.cloud.tencent.com/document/product/382/38455#.E5.B0.86-sms-.E5.85.A8.E8.AF.BB.E5.86.99.E8.AE.BF.E9.97.AE.E6.9D.83.E9.99.90.E6.8E.88.E4.BA.88.E5.B7.B2.E5.AD.98.E5.9C.A8.E7.9A.84.E5.AD.90.E8.B4.A6.E5.8F.B7).

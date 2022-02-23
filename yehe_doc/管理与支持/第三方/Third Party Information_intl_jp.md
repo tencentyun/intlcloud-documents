@@ -19,7 +19,7 @@ Tencent Cloud は、サービスを提供するためにどのような第三者
 |Glorybird India Private Limited|	データセンターサービスとインフラストラクチャ|
 |Общество с ограниченной ответственностью «Кайт Бёрд АР»|	データセンターサービスとインフラストラクチャ|
 |Kite Bird Korea Yuhan Hoesa	|データセンターサービスとインフラストラクチャ|
-|Tencent Japan GK	|データセンターサービスとインフラストラクチャ|
+|Glory Bird Japan GK	|データセンターサービスとインフラストラクチャ|
 |PETRICHOR TELECOMUNICAÇÕES BRASIL LIMITADA|	データセンターサービスとインフラストラクチャ|
 |KITE BIRD malaysia sdn. bhd.	|データセンターサービスとインフラストラクチャ|
 |Kite Bird Germany GmbH	|データセンターサービスとインフラストラクチャ|

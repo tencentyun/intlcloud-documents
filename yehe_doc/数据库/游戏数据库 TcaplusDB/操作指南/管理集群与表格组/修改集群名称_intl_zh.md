@@ -9,4 +9,4 @@
 2. 单击“集群名称”处的修改按钮可修改名称，修改的集群名称不能在账号范围内重复。
 ![](https://main.qcloudimg.com/raw/7db1434373599e03e38bd1011a2c7d00.png)
 3. 在弹出的修改集群名称对话框中，输入新的集群名，单击【确定】。
-![](https://main.qcloudimg.com/raw/6097aeaab9a8d28574bbcff41e93bfac.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/47b57380c92cce2b9a69b9dc45bfa093.png)

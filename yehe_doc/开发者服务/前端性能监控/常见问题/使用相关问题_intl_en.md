@@ -23,7 +23,7 @@ The UIN cannot be used to calculate the UV if the current user is not logged in.
 
 An API request log records the request and response content of a user API. Generally, such logs are reported only by used in the allowlist; however, if a JavaScript error occurs when a user is using an API, the API information of the user in the previous period of time will also be reported to the server to help you locate and analyze the problem.
 
-### How is `firstScreenTime` calculated?
+### How is `FMP` calculated?
 
 RUM listens on the first screen DOM changes within 3 seconds after a page is opened and takes the time when the number of DOM changes reaches the highest as the time when the first screen framework rendering is completed. (`setTimeout` is used to start first screen element collection 3 seconds after SDK initialization. As JavaScript is executed in a single-thread environment, the collection time point may be more than 3 seconds after SDK initialization.)
 

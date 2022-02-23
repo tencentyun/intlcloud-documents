@@ -13,7 +13,7 @@ This document lists the references for common operations while using Anti-DDoS P
 - [AI Protection](https://intl.cloud.tencent.com/document/product/1029/36132)
 - [IP Blocklist/Allowlist](https://intl.cloud.tencent.com/document/product/1029/36134)
 - [Exceptional Connection Protection](https://intl.cloud.tencent.com/document/product/1029/36133)
-- [Connection Protection](https://intl.cloud.tencent.com/document/product/1029/41749)
+- [Connection Protection](https://intl.cloud.tencent.com/document/product/1029/36133)
 - [Regional Blocking](https://intl.cloud.tencent.com/document/product/1029/41750)
 
 **Domain name protection**
@@ -26,7 +26,6 @@ This document lists the references for common operations while using Anti-DDoS P
 - [Viewing Operation Log](https://intl.cloud.tencent.com/document/product/1029/36140)
 
 ##  Blocking Operation
-- Viewing blocking time
 - [Configuring Security Event Notification](https://intl.cloud.tencent.com/document/product/1029/36139)
-- Connecting blocked servers
-- Unblocking IPs
+- [Connecting a Blocked Server](https://intl.cloud.tencent.com/document/product/1029/41757)
+- [Unblocking an IP](https://intl.cloud.tencent.com/document/product/1029/41758)

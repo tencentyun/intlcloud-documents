@@ -13,7 +13,7 @@
 - [AI 防护](https://intl.cloud.tencent.com/document/product/1029/36132)
 - [IP黑白名单](https://intl.cloud.tencent.com/document/product/1029/36134)
 - [IP 端口限速](https://intl.cloud.tencent.com/document/product/1029/36133)
-- [连接类攻击防护](https://intl.cloud.tencent.com/document/product/1029/41749)
+- [连接类攻击防护](https://intl.cloud.tencent.com/document/product/1029/36133)
 - [区域封禁](https://intl.cloud.tencent.com/document/product/1029/41750)
 
 **域名防护**
@@ -22,11 +22,10 @@
 - [CC 频率限制](https://intl.cloud.tencent.com/document/product/1029/36137)
 
 ## 统计报表
-- [查看防护概览](https://intl.cloud.tencent.com/document/product/1029/36138)
+- [防护概览](https://intl.cloud.tencent.com/document/product/1029/44560)
 - [查看操作日志](https://intl.cloud.tencent.com/document/product/1029/36140)
 
 ##  封堵相关操作
-- 查看封堵时间
 - [设置安全事件通知](https://intl.cloud.tencent.com/document/product/1029/36139)
-- 连接已被封堵的服务器
-- 解除封堵
+- [连接已被封堵的服务器](https://intl.cloud.tencent.com/document/product/1029/41757)
+- [解除封堵](https://intl.cloud.tencent.com/document/product/1029/41758)

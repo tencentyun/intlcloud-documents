@@ -1,13 +1,13 @@
-### What is the default delivery rate limit of SMS?
-To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, the default SMS delivery rate limit is as detailed below:
+### What is the default sending frequency limit of SMS?
+To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, the default SMS sending frequency limit is as detailed below:
 - For SMS messages with the same content, a maximum of one such message can be sent to the same mobile number within 30 seconds.
 - A maximum of 10 messages can be sent to the same mobile number on a calendar day.
 
-Organizational users can log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to set or modify the corresponding delivery rate limit policy. For detailed directions, please see [Setting Delivery Rate Limit](https://intl.cloud.tencent.com/document/product/382/35469).
-Note: individual users have no permission to modify the delivery rate limit. To use this feature, change "Individual Identity" to "Organizational Identity". For more information on the rights of organizational users, please see [Differences in rights](https://intl.cloud.tencent.com/document/product/382/40653).
+Organizational users can log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to set or modify the corresponding sending frequency limit policy. For detailed directions, please see [Setting Sending Frequency Limit](https://intl.cloud.tencent.com/document/product/382/35469).
+Note: individual users have no permission to modify the sending frequency limit. To use this feature, change "Individual Identity" to "Organizational Identity". For more information on the rights of organizational users, please see [Differences in rights](https://intl.cloud.tencent.com/document/product/382/40653).
 
-### How do I add an alarm contact?
-For detailed directions, please see [Configuring Alarm Contact](https://intl.cloud.tencent.com/document/product/382/35470).
+### How do I add an alarm recipient?
+For detailed directions, please see [Configuring Alarm Recipient](https://intl.cloud.tencent.com/document/product/382/35470).
 
 ### How do I prevent SMS bombing (cheating)?[](id:Q4)
 SMS bombing (cheating) refers to using malicious programs or tools and exploiting vulnerabilities in website clients or servers to send a large number of SMS verification codes to many irrelevant mobile numbers in a period of time (for example, within a day), which cause harassment to such users.
@@ -17,20 +17,20 @@ The figure below shows a real case encountered by a customer (only dozens of mes
 In view of the fact that SMS bombing (cheating) attacks are generally initiated by servers, the following comprehensive measures are recommended for defense:
 
 - Limit the number of requests allowed per IP.
-- Limit the number of delivery tasks allowed per mobile number. To do so, you can [set the delivery rate limit](https://intl.cloud.tencent.com/document/product/382/35469) and [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470).
-- [Set over-limit delivery notifications](https://intl.cloud.tencent.com/document/product/382/35469).
+- Limit the number of delivery tasks allowed per mobile number. To do so, you can [set the sending frequency limit](https://intl.cloud.tencent.com/document/product/382/35469) and [configure alarm recipients](https://intl.cloud.tencent.com/document/product/382/35470).
+- [Set over-limit sending notifications](https://intl.cloud.tencent.com/document/product/382/35469).
 - Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to regularly (for example, once every day) view specific statistics and check SMS deliveries. If an exception is found, you can disable the SMS service in the console in emergency circumstances.
 
-### What are the differences between Mainland China SMS and Global SMS?
-An SMS signature must be carried in Mainland China SMS messages due to the requirements of carriers, while this is optional and up to you for Global SMS messages.
-- Before sending a Mainland China SMS message, you must [create a signature](https://intl.cloud.tencent.com/document/product/382/35456) and [a body template](https://intl.cloud.tencent.com/document/product/382/35457) and get them approved first.
+### What are the differences between Chinese Mainland SMS and Global SMS?
+An SMS signature must be carried in Chinese Mainland SMS messages due to the requirements of carriers, while this is optional and up to you for Global SMS messages.
+- Before sending a Chinese Mainland SMS message, you must [create a signature](https://intl.cloud.tencent.com/document/product/382/35456) and [a body template](https://intl.cloud.tencent.com/document/product/382/35457) and get them approved first.
 - Before sending a Global SMS message, you must first [create a body template](https://intl.cloud.tencent.com/document/product/382/35461) and get it approved. If you want to carry a signature, you also need to [create a signature](https://intl.cloud.tencent.com/document/product/382/35460) and get it approved.
 
-### How do I check the delivery records for individual mobile numbers?
+### How do I check the sending records for individual mobile numbers?
 You can log in to the [SMS console](https://console.cloud.tencent.com/smsv2), click the name of the target application to enter the application details page, and select one the following methods to query according to your actual needs:
-- Mainland China SMS: select **Statistics and Analytics** > **Mainland China SMS** > **Message Records** and enter a mobile number to query as shown below:
-![](https://main.qcloudimg.com/raw/ef647abc4454b2b5460b632e68fa50ac.png)
-- Global SMS: select **Statistics and Analytics** > **Global SMS** > **Message Records** to query.
+- Chinese Mainland SMS: select **Business Statistics** > **Chinese Mainland SMS** > **Message Records** and enter a mobile number to query as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/a727c37158e9b9d3688ebfeabc13d512.png)
+- Global SMS: select **Business Statistics** > **Global SMS** > **Message Records** to query.
 
 ### How do I create and view an application (SDK AppID)?
 SDK AppID is used to identify applications. Each SMS application has a unique SDK AppID, which is automatically generated by the system after the application is created. For detailed directions, please see [Creating Application](https://intl.cloud.tencent.com/document/product/382/35468).
@@ -41,8 +41,8 @@ If you need to remove the rate limit for testing mobile numbers, please contact 
 
 ### How do I check whether a specific mobile number has received a message?
 You can log in to the [SMS console](https://console.cloud.tencent.com/smsv2), click the name of the target application to enter the application details page, and select one the following methods to query or export records according to your actual needs:
-- Mainland China SMS: select **Statistics and Analytics** > **Mainland China SMS** > **Message Records** to query or export records within a specified time period.
-- Global SMS: select **Statistics and Analytics** > **Global SMS** > **Message Records** to query or export records within a specified time period.
+- Chinese Mainland SMS: select **Business Statistics** > **Chinese Mainland SMS** > **Message Records** to query or export records within a specified time period.
+- Global SMS: select **Business Statistics** > **Global SMS** > **Message Records** to query or export records within a specified time period.
 
 ### Is there a limit on the number of Global SMS messages that can be sent?
 Up to 1,000 Global SMS messages can be sent per day under one Tencent Cloud account. If you need to adjust this limit, please contact [SMS Helper](https://tccc.qcloud.com/web/im/index.html#/chat?webAppId=8fa15978f85cb41f7e2ea36920cb3ae1&title=Sms).

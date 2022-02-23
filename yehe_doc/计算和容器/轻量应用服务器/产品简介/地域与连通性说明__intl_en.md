@@ -18,7 +18,7 @@ Both private and public IPs are assigned to Lighthouse instances to provide priv
 </tr>
 <tr>
 <td>Interconnection between instances in the same region under the same account    </td>
-<td><b>Yes</b>. Please open the corresponding port of the instance firewall. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/1103/41393" target="_blank">Managing Firewall</a>.</td>
+<td><b>Yes</b>. Please open the corresponding port of the instance firewall. </a>.</td>
 </tr>
 <tr>
 <td>Interconnection between instances in different regions under the same account </td>
@@ -40,7 +40,7 @@ Both private and public IPs are assigned to Lighthouse instances to provide priv
 <tr>
 <td>Lighthouse access to CVM</td>
 <td>No</td>
-<td><b>Yes</b>. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/1103/41396">Private Network Interconnection</a>.</td>
+<td><b>Yes</b></a>.</td>
 </tr>
 <tr>
 <td>Lighthouse access to COS (in the same region)</td>
@@ -58,7 +58,7 @@ Both private and public IPs are assigned to Lighthouse instances to provide priv
 <tr>
 <td>Lighthouse access to TencentDB</td>
 <td>No</td>
-<td><b>Yes</b>. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/1103/41396">Private Network Interconnection</a>.</td>
+<td><b>Yes</b></a>.</td>
 </tr>
 <tr>
 <td>Lighthouse connection to CLB</td>

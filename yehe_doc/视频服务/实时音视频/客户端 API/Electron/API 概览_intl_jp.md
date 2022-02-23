@@ -42,14 +42,14 @@ subscribeEvents(this.rtcCloud);
 
 ### TRTCCloudシングルトンの作成と破棄
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [getTRTCShareInstance](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#.getTRTCShareInstance) | dllを動的にロードするために使用する場合は、[TRTCCloud](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html)オブジェクトシングルトンを作成します。 |
 | [destroyTRTCShareInstance](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#.destroyTRTCShareInstance) | [TRTCCloud](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html)シングルトンオブジェクトをリリースし、リソースをクリーンアップします。 |
 
 ### ルーム関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom) | ルームに入室します。ルームが存在しない場合は、システムが新しいルームを自動的に作成します。 |
 | [exitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#exitRoom) | ルームを退室します。 |
@@ -62,7 +62,7 @@ subscribeEvents(this.rtcCloud);
 
 ### CDN関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [startPublishing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startPublishing) | Tencent CloudのライブCDNへのプッシュを開始します。 |
 | [stopPublishing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopPublishing) | Tencent CloudのライブCDNへのプッシュを停止します。 |
@@ -73,7 +73,7 @@ subscribeEvents(this.rtcCloud);
 
 ### ビデオ関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [startLocalPreview](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startLocalPreview) | ローカルカメラのキャプチャとプレビューを起動します。 |
 | [stopLocalPreview](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopLocalPreview) | ローカルカメラのキャプチャとプレビューを停止します。 |
@@ -102,7 +102,7 @@ subscribeEvents(this.rtcCloud);
 
 ### オーディオ関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [startLocalAudio](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startLocalAudio) |ローカルオーディオのキャプチャとアップストリームを開始します。 |
 | [stopLocalAudio](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopLocalAudio) | ローカルオーディオのキャプチャとアップストリームを終了します。 |
@@ -122,7 +122,7 @@ subscribeEvents(this.rtcCloud);
 
 ### カメラ関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [getCameraDevicesList](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getCameraDevicesList) | カメラデバイスリストを取得します。 |
 | [setCurrentCameraDevice](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setCurrentCameraDevice) | 使用したいカメラを設定します。 |
@@ -131,7 +131,7 @@ subscribeEvents(this.rtcCloud);
 
 ### オーディオデバイス関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [getMicDevicesList](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getMicDevicesList) | マイクデバイスリストを取得します。 |
 | [getCurrentMicDevice](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getCurrentMicDevice) | 現在選択しているマイクを取得します。 |
@@ -150,7 +150,7 @@ subscribeEvents(this.rtcCloud);
 
 ### 美顔関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [setBeautyStyle](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setBeautyStyle) | 美顔、美白および肌の色調補正エフェクトレベルを設定します。 |
 | [setWaterMark](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setWaterMark) | ウォーターマークを設定します。 |
@@ -158,7 +158,7 @@ subscribeEvents(this.rtcCloud);
 
 ### サブストリーム関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [startRemoteSubStreamView](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteSubStreamView) | 破棄されたインターフェース：リモートユーザーのサブストリーム（画面共有）画面のレンダリングを開始します。 |
 | [stopRemoteSubStreamView](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopRemoteSubStreamView) | 破棄されたインターフェース：リモートユーザーのサブストリーム（画面共有）画面のレンダリングを停止します。 |
@@ -179,7 +179,7 @@ subscribeEvents(this.rtcCloud);
 
 ### カスタムメッセージ送信
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [sendCustomCmdMsg](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#sendCustomCmdMsg) | カスタムメッセージをルーム内のすべてのユーザーに送信します。 |
 | [sendSEIMsg](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#sendSEIMsg) | データ量の小さなカスタムデータをビデオフレームに埋め込みます。 |
@@ -187,7 +187,7 @@ subscribeEvents(this.rtcCloud);
 
 ### BGMミキシング関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [playBGM](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#playBGM) | 破棄されたインターフェース：BGMの再生を起動します。 |
 | [stopBGM](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopBGM) | 破棄されたインターフェース：BGMの再生を停止します。 |
@@ -214,7 +214,7 @@ subscribeEvents(this.rtcCloud);
 
 ### オーディオエフェクト関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [playAudioEffect](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#playAudioEffect) | 破棄されたインターフェース：オーディオエフェクトを再生します。 |
 | [setAudioEffectVolume](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setAudioEffectVolume) | 破棄されたインターフェース：オーディオエフェクト音量を設定します。 |
@@ -227,7 +227,7 @@ subscribeEvents(this.rtcCloud);
 
 ### デバイスおよびネットワークテスト
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [startSpeedTest](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startSpeedTest) | ネットワークスピードテストを開始します（通話品質への影響を避けるため、ビデオ通話中はテストしないでください）。 |
 | [stopSpeedTest](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopSpeedTest) | ネットワークスピードテストを停止します。 |
@@ -241,7 +241,7 @@ subscribeEvents(this.rtcCloud);
 
 ### LOG関連インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [getSDKVersion](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getSDKVersion) | SDKバージョン情報を取得します。 |
 | [setLogLevel](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setLogLevel) | Log出力レベルを設定します。 |
@@ -254,7 +254,7 @@ subscribeEvents(this.rtcCloud);
 
 ### 使用停止インターフェース関数
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [setMicVolumeOnMixing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setMicVolumeOnMixing) | v6.9バージョンから破棄します。 |
 
@@ -265,7 +265,7 @@ Tencent Cloudビデオ通話機能のコールバックインターフェース�
 
 ### エラーイベントおよび警告イベント
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onError](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onError) | エラーコールバック：SDKがリカバリー不能なエラーは、監視する必要があり、状況に応じてユーザーに適切なインターフェースプロンプトを表示します。 |
 | [onWarning](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onWarning) | 警告コールバック：ラグやリカバリー不能なデコードの失敗など、非常に重大な問題を告知するために使用されます。|
@@ -273,7 +273,7 @@ Tencent Cloudビデオ通話機能のコールバックインターフェース�
 
 ### ルームイベントのコールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onEnterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onEnterRoom) | 入室済みのコールバックです。 |
 | [onExitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom) | 退室のイベントコールバックです。 |
@@ -285,7 +285,7 @@ Tencent Cloudビデオ通話機能のコールバックインターフェース�
 
 ### メンバーイベントコールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onRemoteUserEnterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onRemoteUserEnterRoom) | ユーザーが現在のルームに入室します。 |
 | [onRemoteUserLeaveRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onRemoteUserLeaveRoom) | ユーザーが現在のルームを退室します。 |
@@ -302,7 +302,7 @@ Tencent Cloudビデオ通話機能のコールバックインターフェース�
 
 ### 統計および品質コールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onNetworkQuality](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onNetworkQuality) | ネットワーク品質：このコールバックは2秒ごとに1度トリガーされ、現在のネットワークのアップストリームとダウンストリーム品質を統計します。 |
 | [onStatistics](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onStatistics) | 技術指標統計のコールバックです。 |
@@ -310,17 +310,18 @@ Tencent Cloudビデオ通話機能のコールバックインターフェース�
 
 ### サーバーイベントコールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onConnectionLost](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onConnectionLost) | SDKがサーバーとの接続を切断します。 |
 | [onTryToReconnect](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onTryToReconnect) | SDKがサーバーとの再接続を試行中です。 |
 | [onConnectionRecovery](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onConnectionRecovery) | SDKがサーバーとの接続を再開します。 |
-| [onSpeedTest](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSpeedTest) | サーバースピードテストのコールバックです。SDKは複数のサーバーIPに対するスピードテストを実行し、IPごとのスピードテスト結果をこのコールバックを介して通知します。 |
+| [onSpeedTest](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSpeedTest) | 破棄されたインターフェース：サーバースピードテストのコールバックです。SDKは複数のサーバーIPに対するスピードテストを実行し、IPごとのスピードテスト結果をこのコールバックを介して通知します。 |
+| [onSpeedTestResult](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSpeedTestResult)| ネットワークスピードテストの結果のコールバックです。 |
 
 
 ### ハードウェアデバイスイベントコールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onCameraDidReady](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onCameraDidReady) | カメラの準備が完了しました。 |
 | [onMicDidReady](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onMicDidReady) | マイクの準備が完了しました。 |
@@ -334,7 +335,7 @@ Tencent Cloudビデオ通話機能のコールバックインターフェース�
 
 ### カスタムメッセージ受信のコールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onRecvCustomCmdMsg](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onRecvCustomCmdMsg) | カスタムメッセージ受信のコールバックです。 |
 | [onMissCustomCmdMsg](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onMissCustomCmdMsg) | カスタムメッセージ消失のコールバックです。 |
@@ -343,7 +344,7 @@ Tencent Cloudビデオ通話機能のコールバックインターフェース�
 
 ### CDNバイパス転送コールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onStartPublishing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onStartPublishing) | Tencent CloudのライブCDNへのプッシュ開始のコールバックです。TRTCCloudのstartPublishing()インターフェースに対応します。 |
 | [onStopPublishing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onStopPublishing) | Tencent CloudのライブCDNへのプッシュ停止のコールバックです。TRTCCloudのstopPublishing()インターフェースに対応します。 |
@@ -352,19 +353,19 @@ Tencent Cloudビデオ通話機能のコールバックインターフェース�
 | [onSetMixTranscodingConfig](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSetMixTranscodingConfig) | クラウドのミクスストリーミングトランスコードパラメータ設定のコールバックです。TRTCCloudのsetMixTranscodingConfig()インターフェースに対応します。 |
 
 ### システム音量キャプチャコールバック
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSystemAudioLoopbackError) | システム音量キャプチャステータスのコールバック（Macのみで有効）。 |
 
 ### オーディオエフェクトコールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onAudioEffectFinished](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onAudioEffectFinished) | 破棄されたインターフェース：オーディオエフェクト再生終了のコールバック。 |
 
 ### 画面共有コールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onScreenCaptureCovered](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onScreenCaptureCovered) | SDKは画面共有ウィンドウがブロックされ、正常にキャプチャできないことをこのコールバックを介して通知します。このコールバックでユーザーにウィンドウのブロックを解除するよう通知できます。|
 | [onScreenCaptureStarted](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onScreenCaptureStarted) | SDKは画面共有の開始をこのコールバックを介して通知します。 |
@@ -375,14 +376,14 @@ Tencent Cloudビデオ通話機能のコールバックインターフェース�
 
 ### スクリーンキャプチャコールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onSnapshotComplete](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSnapshotComplete) | SDKはスクリーンキャプチャの完了をこのコールバックを介して通知します。 |
 
 
 ### BGMミキシングイベントコールバック
 
-| API      | 説明 |
+| API             | 説明               |
 |-----|-----|
 | [onPlayBGMBegin](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onPlayBGMBegin) | 破棄されたインターフェース：BGMの再生を開始します。 |
 | [onPlayBGMProgress](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onPlayBGMProgress) | 破棄されたインターフェース：BGM再生の進捗です。 |

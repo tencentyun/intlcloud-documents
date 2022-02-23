@@ -33,7 +33,7 @@ When calling the [SendSms](https://intl.cloud.tencent.com/document/product/382/3
 You should prepare different documents according to your SMS signature purpose and account type. For more information, please see [Certificate File List](https://intl.cloud.tencent.com/document/product/382/40658#.E8.AF.81.E6.98.8E.E6.96.87.E4.BB.B6.E8.A7.84.E8.8C.83).
 
 ### Can individual users apply for SMS signatures?[](id:Q10)
-Individual users can click **[Create Signature](https://console.cloud.tencent.com/smsv2/csms-sign)** in **Mainland China SMS** > **Signatures** in the **console**. However, they also need to submit corresponding certificates. For more information, please see [Certificate File List](https://intl.cloud.tencent.com/document/product/382/40658#.E4.B8.AA.E4.BA.BA.E8.AE.A4.E8.AF.81.E7.94.A8.E6.88.B7).
+Individual users can click **[Create Signature](https://console.cloud.tencent.com/smsv2/csms-sign)** in **Chinese Mainland SMS** > **Signatures** in the **console**. However, they also need to submit corresponding certificates. For more information, please see [Certificate File List](https://intl.cloud.tencent.com/document/product/382/40658#.E4.B8.AA.E4.BA.BA.E8.AE.A4.E8.AF.81.E7.94.A8.E6.88.B7).
 
 
 
@@ -62,7 +62,7 @@ When creating a signature for self-use, you need to upload the following certifi
 
 [](id:Q12)
 ### How do I apply for an SMS signature if I need to help an enterprise or public institution send SMS messages?
-Currently, only enterprises and public institutions are allowed to authorize others to apply for a signature for them. The signature type should be selected as **For others**, and the following [certificates](https://intl.cloud.tencent.com/document/product/382/40658#.E8.AF.81.E6.98.8E.E6.96.87.E4.BB.B6.E6.B8.85.E5.8D.95.EF.BC.88.E4.BB.96.E7.94.A8.E7.AD.BE.E5.90.8D.EF.BC.89) should be uploaded:
+Currently, only enterprises and public institutions are allowed to authorize others to apply for a signature for them. The signature type should be selected as **For unverified entities**, and the following [certificates](https://intl.cloud.tencent.com/document/product/382/40658#.E8.AF.81.E6.98.8E.E6.96.87.E4.BB.B6.E6.B8.85.E5.8D.95.EF.BC.88.E4.BB.96.E7.94.A8.E7.AD.BE.E5.90.8D.EF.BC.89) should be uploaded:
 >?Currently, only enterprises and public institutions are allowed to authorize others to apply for a signature for them.
 
  <table>
@@ -72,7 +72,7 @@ Currently, only enterprises and public institutions are allowed to authorize oth
 </tr>
 <tr>
 <td>Company</td>
-<td rowspan="4">You need to upload the <b><a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx">authorization letter</a> </b>and one of the following enterprise and public institution certificates<b> of the entity that owns the signature: </b><ul><li>Three-in-One</li><li>Business license</li><li>Organization code certificate</li><li>Social credit code certificate</li></ul></td>
+<td rowspan="4">You need to upload the <b><a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx">authorization letter</a> </b>and one of the following enterprise and public institution certificates<b> of the entity that owns the signature: </b><ul><li>Three-in-one</li><li>Business license</li><li>Organization code certificate</li><li>Social credit code certificate</li></ul></td>
 </tr>
 <tr>
 <td>App</td>

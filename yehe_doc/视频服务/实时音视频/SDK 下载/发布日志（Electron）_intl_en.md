@@ -1,4 +1,22 @@
-## v8.9.102 Released on August 11, 2021
+## Version 9.3.201 Released on January 5, 2022
+
+**New features**
+- Windows & macOS: added the [onSpeedTestResult](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSpeedTestResult) callback, which returns the result of network speed testing.
+
+**Improvements**
+- Windows & macOS: improved the performance of the speed testing API [startSpeedTest](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startSpeedTest).
+- Windows & macOS: added the `streamType` parameter to the [muteLocalVideo](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#muteLocalVideo) API (which is used to pause/resume publishing local video).
+- Windows & macOS: added the `streamType` parameter to the [muteRemoteVideoStream](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#muteRemoteVideoStream) API (which is used to pause/resume receiving a remote video stream).
+- Windows & macOS: added the `source`, `captureRect`, and `property` parameters to the [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget) API (which is used to configure screen sharing).
+- Windows & macOS: added the `params` parameter to the [startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) API (which is used to start screen sharing).
+
+**Bug fixing**
+- macOS: fixed the camera video capturing issue on macOS 12.
+- Windows & macOS: optimized the QoS control policy under poor network conditions to enable smoother communication.
+- Windows: improved the AGC algorithm, reducing cases of excessively low or high volume.
+- Windows: fixed the frame rate exception for the capturing of screen sharing images.
+
+## Version 8.9.102 Released on August 11, 2021
 
 **New features**
 Windows & macOS: added the new parameter `gatewayRtt` to the [onStatistics](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onStatistics) callback.
@@ -48,7 +66,7 @@ Windows & macOS: added the new parameter `gatewayRtt` to the [onStatistics](http
 
 ## v8.2.7 Released on January 6, 2021
 
-**New APIs**
+**New features**
 - Windows & macOS: added [switchRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#switchRoom) to switch rooms.
 - Windows & macOS: added [setLocalRenderParams](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setLocalRenderParams) to set rendering parameters for the local image (primary stream).
 - Windows & macOS: added [setRemoteRenderParams](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setRemoteRenderParams) to set rendering parameters for a remote image.
@@ -84,18 +102,18 @@ Windows & macOS: added the new parameter `gatewayRtt` to the [onStatistics](http
 
 ## v7.7.330 Released on September 11, 2020
 
-**New APIs**
+**New features**
 Windows & macOS: added [setAudioQuality](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setAudioQuality) to adjust audio quality.
 
 **Improvements**
 - Windows: fixed the issue of high CPU utilization when some low-end cameras are used.
 - Windows: optimized the compatibility with multiple USB cameras and mics to make it easier to turn on such devices.
-- Windows: optimized the selection policy of cameras and mics to avoid audio/video capturing exceptions caused by plugging in and unplugging cameras or mics.
+- Windows: optimized the selection policy of cameras and mics to avoid audio/video capturing exceptions caused by the connection/disconnection of cameras and mics.
 - Windows & macOS: fixed other bugs.
 
 ## v7.6.300 Released on August 26, 2020
 
-**New APIs**
+**New features**
 Windows & macOS: added [setCurrentMicDeviceMute](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setCurrentMicDeviceMute), [getCurrentMicDeviceMute](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getCurrentMicDeviceMute), [setCurrentSpeakerDeviceMute](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setCurrentSpeakerDeviceMute), and [getCurrentSpeakerDeviceMute](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getCurrentSpeakerDeviceMute) to control mics and speakers on PC.
 
 ## v7.5.210 Released on August 11, 2020
@@ -128,7 +146,7 @@ Windows & macOS: added [setCurrentMicDeviceMute](https://web.sdk.qcloud.com/trtc
 
 ## v7.1.157 Released on April 02, 2020
 
-**New APIs**
+**New features**
 
 Supported [screen sharing](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) via the [primary stream](ttps://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoStreamType).
 

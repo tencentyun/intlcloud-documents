@@ -12,8 +12,7 @@ You can create a snapshot for a file system in the normal state, but the snapsho
 
 ## Notes
 
-A snapshot can only capture the written data but not cached data in the memory (such as files in the `/run` directory in a Linux system) of a file system. We strongly recommend that you ensure that all data in the memory is written to the file system and suspend read and write operations of the file system before creating a snapshot. The recommended method for writing data in the memory to the file system is as follows:
-- For better system performance, data is stored in the memory buffer before it is written to the file system at the proper moment. Therefore, the snapshot created for the file system does not contain data that is stored in the memory buffer and is not already written to the file system. As a result, data inconsistency occurs.
+For better system performance, data is stored in the memory buffer before it is written to the file system at the proper moment. A snapshot can only capture the written data but not cached data in the memory (such as files in the `/run` directory in a Linux system) of a file system. Therefore, the snapshot created for the file system does not contain data that is stored in the memory buffer and has not been written to the file system. As a result, data inconsistency occurs. We strongly recommend that you ensure that all data in the memory is written to the file system and suspend read and write operations of the file system before creating a snapshot. The recommended method for writing data in the memory to the file system is as follows:
 - To resolve this issue, run the `sync` command to forcibly write the data in the memory buffer immediately to the file system, and then prevent new data from being written to the file system. If no error message is returned after the command is executed, the data in the memory buffer has been successfully written to the file system, as shown below:
 ![](https://main.qcloudimg.com/raw/e1b0ac245e325281a0693f7ae43946ff.png)
 
@@ -23,6 +22,6 @@ A snapshot can only capture the written data but not cached data in the memory (
 
 1. Log in to the [CFS console](https://console.cloud.tencent.com/cfs).
 2. Click **Create Snapshot** in the row of the target file system.
-3. In the pop-up, enter the snapshot name and click **Confirm**.</br>
-
+3. In the pop-up, enter the snapshot name and click **Confirm**.
+	
 

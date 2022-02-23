@@ -8,7 +8,7 @@
 3. 选择【当前应用】为待操作的目标应用。
 4. 单击【添加告警联系人】。
 5. 填写联系人姓名、手机号码和邮箱地址，选择需要提醒的事件。
-    ![](https://main.qcloudimg.com/raw/016b9d3b1c6a0b27d062f3905a4320c5.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/6f12248a53109427430104de79f28ee1.png)
 6. 单击【添加】。
 
 

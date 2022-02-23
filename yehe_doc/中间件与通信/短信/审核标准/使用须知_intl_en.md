@@ -1,14 +1,14 @@
 
 ## Verification Mode
 ### Identity verification overview
-Tencent Cloud [identity verification](https://intl.cloud.tencent.com/document/product/378/3629) consists of individual and organizational identity verification. **Different verification modes correspond to different SMS features. We recommend you select an identity verification mode based on your actual account ownership.**
+Tencent Cloud [identity verification](https://intl.cloud.tencent.com/document/product/378/3629) consists of individual and organization verification. **Different verification modes correspond to different SMS features. We recommend you select an identity verification mode based on your actual account ownership.**
 
 | Type             | Object                           | Account Ownership | Operation Guide                                                     |
 | :--------------- | :--------------------------------- | :------- | :----------------------------------------------------------- |
-| Individual identity verification | Individual                               | Individual      | [Individual Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/10495) |
-| Organizational identity verification | Enterprises, government, public institutions, schools, and organizations | Organization     | [Organizational Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/10496) |
+| Individual Verification | Individual                               | Individual      | [Individual Verification Guide](https://intl.cloud.tencent.com/document/product/378/10495) |
+| Organization Verification | Enterprises, government, public institutions, schools, and organizations | Organization     | [Organization Verification Guide](https://intl.cloud.tencent.com/document/product/378/10496) |
 
-If you have completed individual identity verification for your account, you can apply for a change to organizational identity. Users who haven't completed identity verification cannot purchase resources in Mainland China.
+If you have completed Individual Verification for your account, you can apply for a change to organizational identity. Users who haven't completed identity verification cannot purchase resourcesin the Chinese Mainland.
 
 ### Differences in rights
 
@@ -49,7 +49,7 @@ If you have completed individual identity verification for your account, you can
 	     <td>There is no limit on the number of characters in each variable, but a template cannot contain only variables</td> 
      </tr>     
 		      <tr> 
-         <td>Custom rate limit control</td>     
+         <td>Custom frequency limit control</td>     
 	     <td>Not supported</td>   
 	     <td>Supported</td> 
      </tr> 
@@ -66,7 +66,7 @@ An SMS message consists of a signature and a body. Before sending an SMS message
 
 | Component | Description | Review Standard |
 |---------|---------|---------|
-| Signature | An SMS signature must conform to its owner's attributes. You need to provide the corresponding qualification certificates when creating a signature, which can be used only after it is approved. | [Signature Review Standards](https://cloud.tencent.com/document/product/382/39022) |
+| Signature | An SMS signature must conform to its owner's attributes. You need to provide the corresponding qualification certificates when creating a signature, which can be used only after it is approved. | [Signature Review Standards](https://intl.cloud.tencent.com/document/product/382/40658) |
 | Body content | You must apply for an SMS body template for the SMS content in advance, which can be used only after it is approved. <br>The template allows you to use variables to customize the SMS content, and the message meaning and scenario must be identifiable through the text content (excluding variables). | [Body Template Review Standards](https://intl.cloud.tencent.com/document/product/382/40659) |
 
 ## Review Process

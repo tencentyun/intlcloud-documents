@@ -17,12 +17,15 @@ When you configure a custom callback API, you can insert system variables to the
 | {{.TopicID}}              | Log topic ID                      | 380fe1f1-0c7b-4b0d-9d70-d514959dxxxx                    |
 | {{.Condition}}            | Trigger condition                         | $1.success_counts < 100                       |
 | {{.Query}}                | Monitoring statement                     | code:200 \| select count(\*) as success_counts           |
-| {{.FireTime}}             | Time when the alarm is triggered for the first time (UNIX timestamp) | 1632281991143                                           |
+| {{.StartTime}}            | Time when the alarm is triggered for the first time | 2021-09-22 11:40:51                                 |
 | {{.TriggerTime}}          | Trigger time                         | 2021-09-22 11:31:51                           |
 | {{.ConsecutiveAlertNums}} | Number of consecutive alarms                     | 2                                                       |
 | {{.Duration}}             | Alarm duration (minutes)             | 0                                                       |
 | {{.TriggerParams}}            | Alarm trigger parameters             |  $1.success_counts=15;                                            |
 | {{.CustomizeMessage}}     | Custom alarm notification content               |  -                                             |
+| {{.NotifyType}}      |   Notification type. `1`: alarm notification; `2`: alarm clearing notification     | 1     |
+| {{.DetailUrl}}            | Alarm details page link (login-free)       | https://alarm.cls.tencentcs.com/CJNmxxxx                |
+| {{.QueryUrl}}             | Search and analysis link for the first execution statement     | https://alarm.cls.tencentcs.com/Olw8xxxx                |
 
 
 ## Example

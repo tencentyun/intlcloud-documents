@@ -175,7 +175,7 @@ For requests whose `http_code` is greater than 400, we conduct multidimensional 
 
 **Check client distribution**
 ```sql
-* | select ua as "Client version", count(*) as "Error count"  where http_code > 400 group by ua order by "Error count" desc limit 10sql
+* | select ua as "Client version", count(*) as "Error count" where http_code > 400 group by ua order by "Error count" desc limit 10
 ```
 
 

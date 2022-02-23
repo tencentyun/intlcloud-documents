@@ -5,7 +5,7 @@ Examples in this document are for reference only. Please create an SMS body temp
 <table>
      <tr>
          <th width="20%">Use Case</th>  
-         <th nowrap="nowrap">Template Example</th>  
+         <th nowrap="nowrap">Sample Template </th>  
      </tr>
 	 <tr>      
          <td rowspan="3">Login/Authentication</td>   

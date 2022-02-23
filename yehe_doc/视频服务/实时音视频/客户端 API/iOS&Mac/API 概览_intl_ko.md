@@ -42,7 +42,7 @@
 | [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a5ef41fa3d7f5e88f638747325a0b9fa1) | 원격 사용자의 비디오 스트림 구독 및 비디오 렌더링 컨트롤러 바인딩 |
 | [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a518d3a8a3b4a4cfd8b5e0dfe7899756b) | 원격 사용자의 비디오 렌더링 컨트롤러 업데이트 |
 | [stopRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a07b8d05d93d2ef7d543772bff6d451a5) | 원격 사용자의 비디오 스트림 구독 중지 및 렌더링 컨트롤러 해제 |
-| [stopAllRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#aaa75cd1b98c226bb7b8a19412b204d2b) | 모든 원격 사용자의 비디오 스트림 구독 중지 및 모든 렌더링 리소스를 해제 |
+| [stopAllRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#aaa75cd1b98c226bb7b8a19412b204d2b) | 모든 원격 사용자의 비디오 스트림 구독 중지 및 모든 렌더링 리소스 해제 |
 | [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ae5b271bc92a7a4d8ffbcbd4c2e509305) | 원격 사용자의 비디오 스트림 구독 일시 중지/재개 |
 | [muteAllRemoteVideoStreams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#adf7cd002366760749c6f4d1ee9291db1) | 모든 원격 사용자의 비디오 스트림 구독 일시 중지/재개 |
 | [setVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) | 비디오 인코더의 인코딩 매개변수 설정 |
@@ -146,7 +146,7 @@
 ### 네트워크 테스트 인터페이스
 | API  | 설명         |
 |-----|-----|
-| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a058556b224315dcde3601ab621a09dee) | 네트워크 속도 테스트 시작(입장 전 사용) |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a914bc4bdd1f0f0e02f27f873acb7e576) | 네트워크 속도 테스트 시작(입장 전 사용) |
 | [stopSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a58d732ba648d1f9a3a460c02de79bb9b) | 네트워크 속도 테스트 중지 |
 
 ### 디버깅 관련 인터페이스
@@ -358,8 +358,8 @@
 ### 오디오 데이터 사용자 정의 콜백
 | API  | 설명         |
 |-----|-----|
-| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#aeaeaf9e7091c75e1a072d576a57d7f5c) | 로컬 마이크에서 수집된 원본 오디오 데이터 콜백 |
-| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a73a3e7de3c5c340957f119bb0f8744b0) | 로컬에서 수집하고 오디오 모듈에서 전처리된 오디오 데이터 콜백 |
+| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#aeaeaf9e7091c75e1a072d576a57d7f5c) | 로컬에서 수집되고 오디오 모듈에서 전처리된 오디오 데이터 콜백 |
+| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a73a3e7de3c5c340957f119bb0f8744b0) | 로컬에서 수집되고 오디오 모듈에서 전처리, 사운드 처리 및 BGM 믹싱된 오디오 데이터 콜백 |
 | [onRemoteUserAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#aa392c17c27bae1505f148bf541b7746a) | 각 원격 사용자의 오디오 믹싱 전 오디오 데이터 |
 | [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a5a8a0bf6f8d02c33b2fe01c6175dfd4e) | 재생하기 위해 시스템에 제출되기 전에 각 채널에서 믹싱된 오디오 데이터 콜백 |
 | [onMixedAllAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a905748efe966e94ec1212fda14161aee) | SDK에서 수집 완료 및 재생될 모든 믹싱 오디오 데이터 |

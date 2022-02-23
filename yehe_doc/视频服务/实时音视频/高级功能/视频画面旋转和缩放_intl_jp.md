@@ -2,14 +2,14 @@
 
 Tencent Real-Time Communication(TRTC)は、携帯電話のライブストリーミングのような縦画面による変化に乏しいユーザーエクスペリエンスとは異なり、横画面と縦画面という2つのユースケースを両立させることが必要です。このため、横画面と縦画面の処理ロジックを対応させる必要があります。ここでは主に、次の事項についてご説明します。
 - 縦画面モードを実装する方法。例：WeChatのビデオ通話は典型的な縦画面体験モードです。
-- 横画面モードを実装する方法。例えば、多人数ビデオミーティングアプリ（XYLink（小魚易連）など）は多くの場合、横画面モードを採用しています。
+- 横画面モードを実装する方法。例えば、多人数インタラクティブオーディオビデオアプリ（XYLink（小魚易連）など）は多くの場合、横画面モードを採用しています。
 - ローカル画面およびリモート画面の回転方向およびフィルモードをカスタマイズする方法。
 
 ![](https://main.qcloudimg.com/raw/1b4452db22edfe88646cd35888794d44.jpg)
 
 ## サポートプラットフォーム
 
-| iOS | Android | Mac OS | Windows | Electron| web|
+| iOS | Android | Mac OS | Windows | Electron|web|
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003;  |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |  × |
 
@@ -17,15 +17,17 @@ Tencent Real-Time Communication(TRTC)は、携帯電話のライブストリー�
 ## 縦画面モード
 WeChatのビデオ通話のような体験モードを実装したい場合は、2つの作業を行う必要があります。
 
-<span id="step1"></span>
+[](id:step1)
 ### 1.  アプリのUIインターフェースを縦画面に設定する
-#### iOSプラットフォーム
+<dx-tabs>
+::: iOSプラットフォーム
 XCodeの【General】>【Deployment Info】>【Device Orientation】で直接設定することができます。
 ![](https://main.qcloudimg.com/raw/f7d62ed0954fd44f80d3983a0e6fb52d.png)
 
 Appdelegateの `supportedInterfaceOrientationsForWindow`メソッドを実装することにより、設定することもできます。
 
-```
+<dx-codeblock>
+::: ObjectiveC ObjectiveC
 - (UIInterfaceOrientationMask)application:(UIApplication *)application 
     supportedInterfaceOrientationsForWindow:(UIWindow *)window 
 {
@@ -33,23 +35,27 @@ Appdelegateの `supportedInterfaceOrientationsForWindow`メソッドを実装す
     return  UIInterfaceOrientationMaskPortrait ;
 
 }
-```
+:::
+</dx-codeblock>
 >?CSDNに掲載されている、[iOSの縦横画面の回転およびその基本的な適用方法](https://blog.csdn.net/DreamcoffeeZS/article/details/79037207)という記事に、iOSプラットフォームで画面の向きに関する開発工程の一部を詳細に説明しています。
-
-#### Androidプラットフォーム
+:::
+::: Androidプラットフォーム
 Androidプラットフォームでは、activityの`screenOrientation`属性をportraitに指定することで、そのインターフェースを縦画面モードに指定することができます。
-```
+<dx-codeblock>
+::: xml 
 <activity android:name=".trtc.TRTCMainActivity"  android:launchMode="singleTask" android:windowSoftInputMode="adjustPan"
           android:screenOrientation="portrait" />
-```
+:::
+</dx-codeblock>
+:::
+</dx-tabs>
 
-<span id="step2"></span>
+[](id:step2)
 ### 2. SDKで使用する縦画面解像度の設定
 TRTCCloudを使用したsetVideoEncoderParamインターフェースにビデオコーデックパラメータを設定する場合は、resModeを`TRTCVideoResolutionModePortrait`に指定します。
-<span id="example_code"></span>
-サンプルコードは次のとおりです。
-#### iOSプラットフォーム
-```
+サンプルコードは次のとおりです。[](id:example_code)
+<dx-codeblock>
+::: iOSプラットフォーム ObjectiveC
 TRTCVideoEncParam* encParam = [TRTCVideoEncParam new];
 encParam.videoResolution = TRTCVideoResolution_640_360;
 encParam.videoBitrate = 600;
@@ -57,16 +63,16 @@ encParam.videoFps = 15;
 encParam.resMode = TRTCVideoResolutionModePortrait; //解像度モードを縦画面モードに設定
 
 [trtc setVideoEncoderParam: encParam];
-```
-#### Androidプラットフォーム
-```
+:::
+::: Androidプラットフォーム java
 TRTCCloudDef.TRTCVideoEncParam encParam = new TRTCCloudDef.TRTCVideoEncParam();
 encParam.videoResolution = TRTCCloudDef.TRTC_VIDEO_RESOLUTION_640_360;
 encParam.videoBitrate = 600;
 encParam.videoFps = 15;
 encParam.videoResolutionMode = TRTCCloudDef.TRTC_VIDEO_RESOLUTION_MODE_PORTRAIT; //解像度モードを縦画面モードに設定
 trtc.setVideoEncoderParam(encParams);
-```
+:::
+</dx-codeblock>
 
 ## 横画面モード
 アプリに横画面のユーザーエクスペリエンスを提供する場合、縦画面モードと同様の作業を行う必要がありますが、手順1と2のパラメータに対応する調整を行うだけでOKです。

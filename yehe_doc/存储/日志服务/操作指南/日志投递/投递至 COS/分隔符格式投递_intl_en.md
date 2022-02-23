@@ -11,9 +11,9 @@ You can log in to the [CLS console](https://console.cloud.tencent.com/cls) and s
 ## Directions
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-2. Click **Logset** in the left sidebar.
+2. Click **Log Topic** in the left sidebar.
 3. Click the desired log topic ID/name to go to the log topic management page.
-4. Click **Ship to COS**, click **Add Shipping Task**, and then finish the configuration.
+4. Click **Ship to COS**, click **Add Shipping Configuration**, and then finish the configuration.
 **The configuration items are described as follows:**
 <table>
    <tr>

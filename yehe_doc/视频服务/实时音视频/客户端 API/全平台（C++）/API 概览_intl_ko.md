@@ -13,7 +13,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 ## ITRTCCloud @ TXLiteAVSDK
 
 ### 인스턴스 생성 및 이벤트 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [getTRTCShareInstance](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ga0ef57994050abf58a18a3defd4cc5fd0) | TRTCCloud 인스턴스 생성(싱글톤 모드) |
 | [destroyTRTCShareInstance](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#gaadc9070c962327451dbc949a4c5a4681) | TRTCCloud 인스턴스 폐기(싱글톤 모드)  |
@@ -34,7 +34,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [destroySubCloud](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a980cf4d173abfb58c00ef35a20e12c85) | 방 서브 인스턴스 폐기 |
 
 ### CDN 관련 인터페이스 함수
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [startPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265) | Tencent Cloud CSS CDN에 멀티미디어 스트림 게시 시작 |
 | [stopPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ac4d3f88b6e067f32d1191878b6db1645) | Tencent Cloud CSS CDN에 멀티미디어 스트림 게시 중지 |
@@ -43,7 +43,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a8c835f1d49ab0f80a85569e030689850) | 클라우드 혼합 스트림 레이아웃 및 트랜스 코딩 매개변수 설정  |
 
 ### 비디오 관련 인터페이스 함수
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [startLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a8ac23e725c7ed75488df1be2ee514884) | 로컬 카메라 미리보기 이미지 활성화(모바일) |
 | [startLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a8ac23e725c7ed75488df1be2ee514884) | 로컬 카메라의 미리보기 이미지 활성화(데스크톱) |
@@ -67,7 +67,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [snapshotVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a8cf480979530c705c04d3c1715787f6c) | 영상 화면 캡처 |
 
 ### 오디오 관련 인터페이스 함수
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [startLocalAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a86c80ed357798e50ccf5c7ae47317f4c) | 로컬 오디오 수집 및 게시 활성화 |
 | [stopLocalAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a47c51247d112b86d2397744c8f3c686b) | 로컬 오디오 수집 및 게시 중지 |
@@ -87,18 +87,18 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [setRemoteAudioParallelParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0e6e6434aaa03ce878280125a9c0fa4b) | 원격 오디오 스트림의 스마트 동시 재생 정책 설정 |
 
 ### 디바이스 관리 관련 인터페이스
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [getDeviceManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#acbe34e3a11decb05d8ea28eb494a113a) | 디바이스 관리 클래스 가져오기(TXDeviceManager) |
 
 ### 뷰티 필터 특수 효과 및 이미지 워터마크
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [setBeautyStyle](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a78c7b8eaa17d721cfd6dcac0224dd50b) | 뷰티 필터, 미백 효과, 안색 보정 등 특수 효과 설정 |
 | [setWaterMark](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a4a1c376670ff4f3fdac8cf30bec78576) | 워터마크 추가 |
 
 ### 배경 음악 및 음향 효과
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [getAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ad9da9a5121bb52fbb85890dd857d7e8a) | 음향 효과 관리 클래스 가져오기(TXAudioEffectManager) |
 | [startSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a157639a4fa3cc73ffc1982bbd8a8985e) | 시스템 오디오 수집 활성화(데스크톱 시스템만 해당) |
@@ -106,7 +106,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [setSystemAudioLoopbackVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a52d0f9a999296633b1d859f75d36d5e8) | 시스템 오디오 수집 볼륨 설정 |
 
 ### 화면 공유 관련 인터페이스
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ab1fc5a303726a666d30051c836e33fdd) | 데스크톱 화면 공유 시작(데스크톱 시스템만 해당) |
 | [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a0e09090fe4281c0e78d8eb38496a8ed0) | 화면 공유 중지 |
@@ -124,7 +124,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [removeAllIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a5d2812b4068e89e6d2a422cd74257246) | 화면 공유 포함 목록에서 모든 창 제거(데스크톱 시스템만 지원) |
 
 ### 사용자 정의 수집 및 렌더링
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#aaeab72ed55be06685e293c3cf92b6f90) | 사용자 정의 비디오 수집 모드 활성화/비활성화 |
 | [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6) | 수집한 비디오 프레임을 SDK에 전달 |
@@ -143,19 +143,19 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [getCustomAudioRenderingFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ac986d3ec66ab6681d94c8eb933b519de) | 재생 가능한 오디오 데이터 가져오기 |
 
 ### 사용자 정의 메시지 전송 인터페이스
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [sendCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a858b11d4d32ee0fd69b42d64a1d65389) | UDP 채널을 사용하여 방의 모든 사용자에게 사용자 정의 메시지 보내기  |
 | [sendSEIMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#aa91b261d10bbdb43508e9e2c33697c29) | SEI 채널을 사용하여 방의 모든 사용자에게 사용자 정의 메시지 보내기  |
 
 ### 네트워크 테스트 인터페이스
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ab9052b69fd4e12b5860da03a868e87d7) | 네트워크 속도 테스트 시작(방 입장 전 사용) |
 | [stopSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ad6ba6ea2c5beace98b99ce98d326be4c) | 네트워크 속도 테스트 중지 |
 
 ### 디버깅 관련 인터페이스
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [getSDKVersion](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a11a1bc22514ac5a7bd9052a5cc444147) | SDK 버전 정보 가져오기 |
 | [setLogLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#aa6551d4e61a7a003d91b045ed2e13466) | Log 출력 레벨 설정 |
@@ -167,7 +167,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [callExperimentalAPI](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a187cb56ce8bbdf9a74e347954d2c7c6a) | 실험용 API 호출 |
 
 ### 사용하지 않는 인터페이스
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#aaeab72ed55be06685e293c3cf92b6f90) | 사용자 정의 비디오 수집 모드 활성화 |
 | [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6) | 수집한 비디오 데이터 전송 |
@@ -176,13 +176,13 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__cplusplus.html#ab9052b69fd4e12b5860da03a868e87d7) |  네트워크 속도 테스트 시작(방 입장 전 사용) |
 
 ### 오류 및 경고 이벤트
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onError](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a9724da0b3da9b2eca5736fa8e54aa410) | 오류 이벤트 콜백 |
 | [onWarning](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a53169ea41d90506cccbff507ba1932a4) | 경고 이벤트 콜백 |
 
 ### 방 관련 이벤트 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onEnterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a236a49e0525615b6435eaa826b7caffe) | 방 입장 성공 여부 이벤트 콜백 |
 | [onExitRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) | 방 퇴장 이벤트 콜백 |
@@ -192,7 +192,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [onDisconnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a292d6661cb93ba30ff68b1f88cf173f1) | 크로스 룸 통화 종료 결과 콜백 |
 
 ### 사용자 관련 이벤트 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onRemoteUserEnterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a43704996ae1f50749b7c7140755350f1) | 사용자 방 입장 |
 | [onRemoteUserLeaveRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a5f7c705f3894d3a430ef1fac8bf8e2c5) | 사용자 방 퇴장 |
@@ -206,22 +206,21 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [onRemoteVideoStatusUpdated](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a967a9b593385a8081083e84d3f5648b5) | 원격 비디오 상태 변경 이벤트 콜백 |
 
 ### 네트워크 및 기술 메트릭에 대한 통계 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onNetworkQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a377441bace65d98a1218817914a12ecb) | 네트워크 품질 실시간 통계 콜백 |
 | [onStatistics](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ae7e4117f9c8004c9bcc5a29d64e840c9) | 멀티미디어 기술 메트릭에 대한 실시간 통계 콜백 |
 | [onSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a7bbfbd86185f20935f8a23d7dad94d9a) | 네트워크 속도 테스트 결과 콜백 |
 
 ### 클라우드 연결 상태 이벤트 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onConnectionLost](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a34c34705bb67127ff6d28700cf2ab591) | SDK와 클라우드 연결이 끊김 |
 | [onTryToReconnect](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#afe74dff22fde93fe0f07fcf18153d334) | SDK와 클라우드 다시 연결 중 |
 | [onConnectionRecovery](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ae90cd149a676418016cb8736b217f1a8) | SDK와 클라우드가 다시 연결됨 |
 
-
 ### 하드웨어 관련 이벤트 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onCameraDidReady](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a13a9ad0933b7ab872987e432f005e8ad) | 카메라 준비 완료 |
 | [onMicDidReady](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a0ba02a5d9009ebb9c4e80c0c43c80bca) | 마이크 준비 완료 |
@@ -234,14 +233,14 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [onTestSpeakerVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a04bb10b06af17cdc43b7831336736539) | 스피커 테스트 볼륨 콜백 |
 
 ### 사용자 정의 메시지 수신 이벤트 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onRecvCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a0a5690652db3902e98e1168bad12ec1a) | 사용자 정의 메시지 수신 이벤트 콜백 |
 | [onMissCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ab5d0cb61c24b77ecdb177ff19fc95075) | 사용자 정의 메시지 손실 이벤트 콜백 |
 | [onRecvSEIMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ab364b929cd0d9ffff6e47c20ec52372c) | SEI 메시지 수신 콜백 |
 
 ### CDN 관련 이벤트 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onStartPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a345ab7b45a9d0027926dbf580e8e0258) | Tencent Cloud CSS CDN에 멀티미디어 스트림 게시 시작 이벤트 콜백 |
 | [onStopPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a8e046f5bd34498b13ae057caaab64913) | Tencent Cloud CSS CDN에 멀티미디어 스트림 게시 중지 이벤트 콜백 |
@@ -250,7 +249,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [onSetMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a0f11cee9e2659f7ea8484fdffd6b8583) | 클라우드 혼합 스트리밍의 레이아웃 및 트랜스 코딩 매개변수 설정 이벤트 콜백 |
 
 ### 화면 공유 관련 이벤트 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onScreenCaptureStarted](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a8baff9a6c699ea1d82c5e7abb6ded97b) | 화면 공유 활성화 이벤트 콜백 |
 | [onScreenCapturePaused](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a32acecdafd9058cc7d70a3abe6995051) | 화면 공유 일시 중지 이벤트 콜백 |
@@ -259,7 +258,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [onScreenCaptureCovered](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a490f827ffd6e7728a6ec49cba63875b1) | 화면 공유 창이 가려짐 이벤트 콜백(Windows만 해당) |
 
 ### 로컬 녹화 및 화면 캡처 이벤트 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onLocalRecordBegin](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a4a40b1b338d93c871f73354d1d45f24b) | 로컬 녹화 작업 시작 이벤트 콜백 |
 | [onLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a0b226b8e627dad7850a880d48ffb91dd) | 로컬 녹화 작업 진행 중 이벤트 콜백 |
@@ -267,7 +266,7 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [onSnapshotComplete](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a10501027a79d1d05231319570c0e5603) | 로컬 화면 캡처 완료 이벤트 콜백 |
 
 ### 사용하지 않는 이벤트 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onUserEnter](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ad606b861a3545832fb4821a7e0230925) | 호스트가 현재 방에 입장함(폐기됨) |
 | [onUserExit](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#abbc4fe2ccac90f77c80f55d46d6c8951) | 호스트가 현재 방에서 퇴장함(폐기됨) |
@@ -278,26 +277,26 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [onSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a455264cfcf2a7a3f022f3bce0659f9f7) | 서버 속도 테스트 결과 콜백(폐기됨) |
 
 ### 비디오 데이터 사용자 정의 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onRenderVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#aea602851c96370558a7eeb850d7eb6b8) | 사용자 정의 비디오 렌더링 콜백 |
 | [onProcessVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#aa416979597d1bec68dc268a9432619ae) | 타사 뷰티 필터 컴포넌트에 의한 비디오 처리 콜백 |
 
 ### 오디오 데이터 사용자 정의 콜백
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
-| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a1488e35460441c351cab75d9702498f6) | 로컬 마이크에서 수집된 원본 오디오 데이터 콜백 |
-| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#affb432a77f938d1e8dfb6c0d5488dbcf) | 로컬에서 수집하고 오디오 모듈에서 전처리된 오디오 데이터 콜백 |
+| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a1488e35460441c351cab75d9702498f6) | 로컬에서 수집되고 오디오 모듈에서 전처리된 오디오 데이터 콜백 |
+| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#affb432a77f938d1e8dfb6c0d5488dbcf) | 로컬에서 수집되고 오디오 모듈에서 전처리, 사운드 처리 및 BGM 믹싱된 오디오 데이터 콜백 |
 | [onPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#ab841da62beb88a9fa9bce58d25df6f23) | 각 원격 사용자의 오디오 믹싱 전 오디오 데이터 |
 | [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a6649f62d4138d9bc73ae484e63dec081) | 재생하기 위해 시스템에 제출되기 전 각 채널에서 믹싱된 오디오 데이터 콜백 |
 
 ### 기타 이벤트 콜백 인터페이스
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [onLog](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudCallback__cplusplus.html#a2fa3d9997c9810ffa6a95e0a7a4a50d0) | 로컬 LOG 출력 콜백 |
 
 ### 비디오 관련 열거 값 정의
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [TRTCVideoResolution](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#gace04ad7a0bf531f4d09dc6a540f09f95) | 비디오 해상도 |
 | [TRTCVideoResolutionMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#gaa6787a9059d7b725a30ffcf9f4aabb64) | 비디오 종횡비 모드 |
@@ -310,8 +309,8 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [TRTCVideoMirrorType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga778fcc2797d6076745997327c8b20009) | 비디오 미러 이미지 유형 |
 | [TRTCSnapshotSourceType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga65de3d8416c7faabe1a8b77a6fd9cc7c) | 로컬 영상 화면 캡처 데이터 소스 |
 
-### 네트워크 관련 열거 값 정의 
-| API                 | 설명       |
+### 네트워크 관련 열거 값 정의
+| API  | 설명         |
 |-----|-----|
 | [TRTCAppScene](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#gaa57f4545ef7331e3157eee1639d28780) | 응용 시나리오 |
 | [TRTCRoleType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga42ff820a33d9f3535d203fd5d6782cb5) | 역할 |
@@ -321,13 +320,13 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [TRTCAVStatusType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga9ab84e3f9458dacd479937e5a24c95f2) | 비디오 상태 유형 |
 | [TRTCAVStatusChangeReason](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga37b6311e4d5ba7376070ba65de520865) | 비디오 상태 변동 원인 |
 
-### 오디오 관련 열거 값 정의 
-| API                 | 설명       |
+### 오디오 관련 열거 값 정의
+| API  | 설명         |
 |-----|-----|
 | [TRTCAudioQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga96f3d4cdcf3baa9df39ab4e1b3f0eb40) | 오디오 품질 |
 
 ### 기타 열거 값 정의
-| API                 | 설명       |
+| API  | 설명         |
 |-----|-----|
 | [TRTCLogLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#gafa83683b4840bcb3200d1da63c10276d) | Log 레벨 |
 | [TRTCScreenCaptureSourceType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#gad96fcfd4a65c0f99579b0c35ef86645d) | 화면 공유 타깃 유형(데스크톱만 해당) |
@@ -337,8 +336,8 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [TRTCDeviceType](https://liteav.sdk.qcloud.com/doc/api/en/namespaceliteav.html#abaf3d3254d2b2e11fb2064478975be17) | 디바이스 유형(데스크톱 플랫폼만 해당) |
 | [TRTCAudioRecordingContent](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#ga5adbddb520b6eea48142c3b5be740205) | 오디오 녹음 콘텐츠 유형 |
 
-### TRTC 핵심 유형 정의 
-| API                 | 설명       |
+### TRTC 핵심 유형 정의
+| API  | 설명         |
 |-----|-----|
 | [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCParams) | 방 입장 매개변수 |
 | [TRTCVideoEncParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCVideoEncParam) | 비디오 인코딩 매개변수 |
@@ -360,5 +359,4 @@ C++ 인터페이스 통합 방법에 대한 자세한 내용은 각 플랫폼의
 | [TRTCAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCAudioFrameCallbackFormat) | 오디오 사용자 정의 콜백 형식 매개변수 |
 | [TRTCScreenCaptureSourceInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#structliteav_1_1TRTCScreenCaptureSourceInfo) | 화면 공유 타깃 정보(데스크톱 시스템만 해당) |
 | [ITRTCScreenCaptureSourceList](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__cplusplus.html#classliteav_1_1ITRTCScreenCaptureSourceList) | 공유할 수 있는 화면 및 창 리스트 |
-
 

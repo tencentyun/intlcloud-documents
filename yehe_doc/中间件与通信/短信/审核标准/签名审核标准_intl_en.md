@@ -14,16 +14,16 @@ You must select the signature type when creating a signature:
 
 - The signature content cannot contain non-compliant information such as information related to pornography, gambling, drugs, religion, and politics.
 - The organization or individual to which the signature belongs must be identifiable. Non-identifiable signatures are not allowed.
-- A Mainland China SMS signature consists of "[]" and signature content in the format of `[signature content]`. The signature content can contain 2–12 Chinese characters, letters, or digits (excluding "[]"). We recommend you use Chinese for the content of Mainland China SMS signatures as much as possible.
+- A Chinese Mainland SMS signature consists of "[]" and signature content in the format of `[signature content]`. The signature content can contain 2–12 Chinese characters, letters, or digits (excluding "[]"). We recommend you use Chinese for the content of Chinese Mainland SMS signatures as much as possible.
 - A Global SMS signature consists of "\[]" and signature content in the format of `\[signature content]`. The signature content can contain 2–15 characters (excluding "\[]").
 
 >?You only need to enter the signature content when applying for an SMS signature in the [console](https://console.cloud.tencent.com/sms/smsSign/1400054957/0/10) and don't need to enter "[]" or "\[]".
->For example, the complete Mainland China SMS signature of Tencent Cloud is `[腾讯云]`, and you only need to submit the signature content `腾讯云` when applying for the signature. The complete Global SMS signature of Tencent Cloud is `\[Tencent Cloud]`, and you only need to submit the signature content `Tencent Cloud` when applying for the signature.
+>For example, the complete Chinese Mainland SMS signature of Tencent Cloud is `[Tencent Cloud]`, and you only need to submit the signature content `Tencent Cloud` when applying for the signature. The complete Global SMS signature of Tencent Cloud is `\[Tencent Cloud]`, and you only need to submit the signature content `Tencent Cloud` when applying for the signature.
 
 ## Third-Party Rights
 
-- If user A creates a signature for self-use, and the signature's owner is user A, then no third-party rights will be involved.
-- If user A creates a signature for company B, and the signature's owner is company B, then third-party rights will be involved. In this case, please select **For others** as the signature purpose, and company B needs to give user A an authorization letter, on which company B is the delegator, user A is the delegatee, and company B's official stamp must be affixed.
+- If user A creates a signature for verified entities, and the signature's owner is user A, then no third-party rights will be involved.
+- If user A creates a signature for company B, and the signature's owner is company B, then third-party rights will be involved. In this case, please select **For unverified entities** as the signature purpose, and company B needs to give user A an authorization letter, on which company B is the delegator, user A is the delegatee, and company B's official stamp must be affixed.
 
 >?Currently, only enterprises and public institutions are allowed to authorize others to apply for a signature for them.
 
@@ -33,9 +33,9 @@ You must select the signature type when creating a signature:
 - Certificate files must be `.jpg`, `.jpeg`, or `.png` images within 5 MB in size each.
 - If third-party rights are involved, the standard <a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx">authorization letter</a> provided by the SMS service must be used.
 
-## Certificate File List (for Signatures for Self-Use)
+## Certificate File List (for Signatures for Verified Entities)
 ### Organizational user
-- When creating a signature for self-use **for the first time**, you need to upload the following certificate materials:
+- When creating a signature for verified entities **for the first time**, you need to upload the following certificate materials:
  <table>
 <tr>
 <th>Signature Type</th>
@@ -44,7 +44,7 @@ You must select the signature type when creating a signature:
 </tr>
 <tr>
 <td>Company</td>
-<td rowspan="4">You need to upload one of the following <b>enterprise or public institution certificates</b>:<ul><li>Three-in-One</li><li>Business license</li><li>Organization code certificate</li><li>Social credit code certificate</li></ul></td>
+<td rowspan="4">You need to upload one of the following <b>enterprise or public institution certificates</b>:<ul><li>Three-in-one</li><li>Business license</li><li>Organization code certificate</li><li>Social credit code certificate</li></ul></td>
 <td>N/A</td>
 </tr>
 <tr>
@@ -69,7 +69,7 @@ You must select the signature type when creating a signature:
 </tr>
 </table>
 
-- If you want to create another signature for self-use when you already have such a signature, you need to upload the following certificate materials:
+- If you want to create another signature for verified entities when you already have such a signature, you need to upload the following certificate materials:
  <table>
 <tr>
 <th>Signature Type</th>
@@ -103,7 +103,7 @@ You must select the signature type when creating a signature:
 </table>
 
 ### Individual user
-When creating a signature for self-use, you need to upload the following certificate materials:
+When creating a signature for verified entities, you need to upload the following certificate materials:
  <table>
 <tr>
 <th>Signature Type</th>
@@ -123,7 +123,7 @@ When creating a signature for self-use, you need to upload the following certifi
 </tr>
 </table>
 
-## Certificate File List (for Signatures for Others)
+## Certificate File List (for Signatures for Unverified Entities)
 
 When creating a signature owned by an enterprise or public institution, you need to upload the following certificate materials:
 >?Currently, only enterprises and public institutions are allowed to authorize others to apply for a signature for them.
@@ -135,7 +135,7 @@ When creating a signature owned by an enterprise or public institution, you need
 </tr>
 <tr>
 <td>Company</td>
-<td rowspan="4">You need to upload the <b><a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx">authorization letter</a> </b>and one of the following enterprise and public institution certificates<b> of the entity that owns the signature: </b><ul><li>Three-in-One</li><li>Business license</li><li>Organization code certificate</li><li>Social credit code certificate</li></ul></td>
+<td rowspan="4">You need to upload the <b><a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx">authorization letter</a> </b>and one of the following enterprise and public institution certificates<b> of the entity that owns the signature: </b><ul><li>Three-in-one</li><li>Business license</li><li>Organization code certificate</li><li>Social credit code certificate</li></ul></td>
 </tr>
 <tr>
 <td>App</td>

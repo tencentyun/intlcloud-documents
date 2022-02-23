@@ -2,8 +2,6 @@
 
 This API is used to modify an existing shipping task.
 
->! When creating a shipping task, check that you have the write permission on CKafka topics.
->
 
 ## Request
 
@@ -40,7 +38,7 @@ Content-Type: application/json
 
 ### Request headers
 
-No special request headers
+No special response headers
 
 ### Request parameters
 
@@ -48,7 +46,7 @@ No special request headers
 |------------|--------|-------|---------|-------------------------------|
 | topic_id | string | query | Yes | ID of the log topic associated with the shipping task |
 | effective    | bool   | body  | No       | Whether the shipping task takes effect                      |
-| ckafka    | object | body  | No      | CKafka cluster information |
+| ckafka    | object | body | No       | CKafka instance information |
 | content   | object | body |  No       | CKafka metadata |
 | need_content   | bool | body | No       | Whether to ship CKafka metadata. Default value: `true` |
 
@@ -90,8 +88,8 @@ No special response headers
 
 ### Response parameters
 
-None
+Free
 
 ## Error Codes
 
-For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/614/42832).
+See [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).

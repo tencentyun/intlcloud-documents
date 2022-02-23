@@ -11,7 +11,7 @@ You can apply for a trial license to try out various features available in the U
 ![](https://qcloudimg.tencent-cloud.cn/raw/5453b61401859a2599bab6ffcedbf808.png)
 
 ### Step 2. Save the trial license
-After the free trial license is successfully created, the page will display the information of the generated license. You need to pass in two parameters `Key` and `LicenseUrl` during initial SDK configuration. Please store the following information properly.
+After the free trial license is successfully created, the page will display the information of the generated license. You need to pass in two parameters `Key` and `LicenseUrl` during initial SDK configuration. Please save the following information properly.
 ![](https://qcloudimg.tencent-cloud.cn/raw/1500204df3029e9bbb23aa7161ad94bd.png)
 
 ## Trial License Renewal
@@ -35,7 +35,7 @@ NSLog(@"%@", [TXUGCBase getLicenceInfo]);
 TXUGCBase.getInstance().getLicenceInfo(context);
 ```
 
-## License Usage
+## How to Use the License
 Call the following methods to configure the license before calling the relevant APIs of the SDK:
 
 - For iOS, we recommend you add the following in `[AppDelegate application:didFinishLaunchingWithOptions:]`:

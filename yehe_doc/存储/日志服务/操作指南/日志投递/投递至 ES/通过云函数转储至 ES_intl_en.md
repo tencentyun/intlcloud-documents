@@ -41,7 +41,7 @@ After the log topic is created, you can click its ID/name on the “Log Topic”
 3. Click **Learn More** in the template to view relevant information in the **Template Details** pop-up window, which can be downloaded.
 
 4. After configuring the basic information, click **Next** to enter the function configuration page.
-5. Keep the default configuration and click **Finish** to complete the function creation.
+5. Keep the default configuration and click **Complete** to complete the function creation.
 > ! You should select the same VPC and subnet of CLS for the created function on the **Function Configuration** page.
 > 
 

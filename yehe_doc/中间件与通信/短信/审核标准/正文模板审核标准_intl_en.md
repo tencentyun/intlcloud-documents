@@ -31,7 +31,7 @@ In addition to the common specifications, there are also special specifications 
      </tr>
 	 <tr>      
          <td nowrap="nowrap">Regular SMS (verification code)</td>   
-	 <td><li>Mainland China SMS verification code messages must contain the keyword <b>验证码</b>, and Global SMS verification code messages must contain the keyword <b>code</b>. </li><li>The variable in an SMS verification code template can contain only 0–6 digits. </li><li>In addition to the common specifications, it is also prohibited to send marketing and promotional content and links, including internal business promotion information of ISPs.</li></td>   
+	 <td><li>Chinese Mainland SMS verification code messages must contain the keyword <b>verification code</b>, and Global SMS verification code messages must contain the keyword <b>code</b>. </li><li>The variable in an SMS verification code template can contain only 0–6 digits. </li><li>In addition to the common specifications, it is also prohibited to send marketing and promotional content and links, including internal business promotion information of ISPs.</li></td>   
      </tr> 
 	<tr> 
 	     <td nowrap="nowrap">Regular SMS (notification)</td>   

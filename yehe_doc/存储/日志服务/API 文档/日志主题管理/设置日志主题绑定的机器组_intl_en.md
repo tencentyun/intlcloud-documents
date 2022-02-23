@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to set the server group information bound to a log topic.
+This API is used to set the machine group information bound to a log topic.
 
 ## Request
 
@@ -30,8 +30,8 @@ There are only common request headers but no special request headers.
 
 | Field Name | Type | Location | Required | Description |
 | -------------- | ----------------- | ----- | -------- | ---------------------------- |
-| topic_id       | string            | query | Yes       | Configured log topic ID            |
-| machine_groups | JsonArray (string) | body  | Yes       | Array of server group IDs bound to log topic |
+| topic_id       | string            | query | Yes       | ID of the log topic to set             |
+| machine_groups | JsonArray (string) | body  | Yes       | Array of machine group IDs to bind to log topic |
 
 ## Response
 

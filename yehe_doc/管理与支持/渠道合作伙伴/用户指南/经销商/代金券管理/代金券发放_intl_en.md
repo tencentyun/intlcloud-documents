@@ -11,15 +11,15 @@ Step 1. Log in to the console and click **[Voucher Management > Voucher Issuance
 Step 2. Click **Create Template** to create a voucher template and enter the voucher rules. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/38aad443fad5afe7b7484b8f252eac80.png)
 
-Template Name: name of the voucher, which can contain up to 20 letters and spaces and must be globally unique.
-Cost Bearer: currently, only Tencent is supported as the cost bearer to issue the voucher to customers.
-Usage: purpose of the voucher. You should select whether the voucher is applicable for product trial or customer offer.
-Product Scope: currently, only general product vouchers are supported.
-Payment Mode: you can restrict the payment mode for voucher usage.
-Voucher Type: currently, only balance deduction vouchers are supported.
-Amount: enter an integer as the amount of the voucher to be issued.
-Validity Period: select the validity period of the voucher.
-Description: enter an optional description of the voucher template.
+**Template Name**: name of the voucher, which can contain up to 20 letters and spaces and must be globally unique.
+**Cost Bearer**: currently, only Tencent is supported as the cost bearer to issue the voucher to customers.
+**Usage**: purpose of the voucher. You should select whether the voucher is applicable for product trial or customer offer.
+**Product Scope**: currently, only general product vouchers are supported.
+**Payment Mode**: you can restrict the payment mode for voucher usage.
+**Voucher Type**: currently, only balance deduction vouchers are supported.
+**Amount**: enter an integer as the amount of the voucher to be issued.
+**Validity Period**: select the validity period of the voucher.
+**Description**: enter an optional description of the voucher template.
 
 Step 3. After confirming that everything is correct, click **Confirm** to save the voucher template.
 
@@ -38,7 +38,7 @@ Step 5. Click **Issue** to issue a voucher to a specific customer.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/118d8aaf41022a1dff215522e4e93cc6.png)
 
-Customer UIN: you can select bound and verified customers in the drop-down list.
-Estimated converted Tencent revenue: enter an integer amount.
-Estimated time for revenue conversion: enter an estimated date.
-Application Reason: enter the reason for the application, which will be reviewed by Tencent.
+**Customer UIN**: you can select bound and verified customers in the drop-down list.
+**Estimated converted Tencent revenue**: enter an integer amount.
+**Estimated time for revenue conversion**: enter an estimated date.
+**Application Reason**: enter the reason for the application, which will be reviewed by Tencent.

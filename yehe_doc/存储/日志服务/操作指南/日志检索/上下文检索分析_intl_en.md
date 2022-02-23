@@ -32,11 +32,11 @@ You can troubleshoot in CLS as follows:
 ## Directions
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-2. On the left sidebar, click **Log Search** to go to the **Search and Analysis** page.
+2. On the left sidebar, click **Search and Analysis** to go to the **Search and Analysis** page.
 3. Select the **Region**, **Logset**, and **Log Topic** as needed.
 4. Enter the search syntax, select a time range, and click **Search and Analysis**.
 5. On the **Raw Data** tab, find the time of the error log and click <img src="https://main.qcloudimg.com/raw/1327fb192ece11abdf3a130feaa4e78a.png"></img> to go to the context search and analysis page.
-6. On the context search and analysis page, 10 logs before and after the error log will be displayed.
+6. On the context search and analysis page, 10 logs before and 10 after the error log will be displayed.
 
 On this page, you can:
  - Scroll up/down to view the context.

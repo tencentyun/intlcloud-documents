@@ -56,10 +56,10 @@
 </dx-alert>
 
 1.单击【发送频率限制】区域的【设置】，您可以根据实际需求勾选限制条件，并设置对应的阈值。
-![](https://qcloudimg.tencent-cloud.cn/raw/6911eb24624726fc856d9b3af3457233.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/16424c4a2e847d0ca1e4027ac3834b93.png)
 
 2.单击【设置】即可保存。
-![](https://qcloudimg.tencent-cloud.cn/raw/b6f36a9aa17e0aa82cbaa8ed81c21acb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6d7f779f88d4ffb51a4fa3af5412c660.png)
 
 ## 设置频率限制白名单
 
@@ -69,14 +69,14 @@
 
 ### 添加白名单号码
 1.单击【频率限制白名单】区域的【设置】，输入手机号码，回车换行，每一行表示一个号码，最多可以添加300个白名单号码。
-![](https://qcloudimg.tencent-cloud.cn/raw/4d18af62c4e49d89db4de78e8d05cf20.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1ceb74b7513e133789522bc71cdb337d.png)
 
 2.单击【设置】即可保存设置。
 ![](https://qcloudimg.tencent-cloud.cn/raw/72c2f32c724fc4335db26b5e1592523a.png)
 
 ### 删除白名单号码
 1.在【频率限制白名单】区域，单击目标号码所在行的【删除】。
-![](https://qcloudimg.tencent-cloud.cn/raw/83ce9b62a99559d4d8a805e1acd5907c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/12bfff56e54349fe94fb1cb7f69b03db.png)
 2.单击【确认删除】即可。
 
 

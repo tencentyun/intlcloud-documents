@@ -3,14 +3,14 @@
 ## 编辑集群标签
 1. 登录 [TcaplusDB 控制台](https://console.cloud.tencent.com/tcaplusdb/app)，在左侧导航选择**集群列表**页。
 2. 在集群列表，需要编辑标签的集群**操作**行中，单击**编辑标签**。
-![](https://main.qcloudimg.com/raw/91340c6dbf89c36e5d6d11c42f9c552f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/93614f96f19baff1c7257d3c0a9cd73b.png)
 3. 在弹出的对话框中，可添加、修改、删除标签，确认无误后，单击**确定**即可。
-![](https://main.qcloudimg.com/raw/046099c7b7d13cc38baca8a42af3d98c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/71c6e93fdf445e405562f58b3ff1e481.png)
 
 ## 编辑表格组标签
 1. 登录 [TcaplusDB 控制台](https://console.cloud.tencent.com/tcaplusdb/app)，在左侧导航选择**集群列表**页。
 2. 在右侧表格组列表，需要编辑标签的表格组**操作**列中，选择**更多**>**编辑标签**。
-![](https://main.qcloudimg.com/raw/53c1b173ea105698bb81ece98ffbaca3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/aa4ac0cb88cf06718fab3719ef737300.png)
 3. 在弹出的对话框中，可添加、修改、删除标签，确认无误后，单击**确定**即可。
 
 ## 编辑单个表格标签

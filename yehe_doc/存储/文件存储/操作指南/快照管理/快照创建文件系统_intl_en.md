@@ -7,8 +7,8 @@ This document describes how to use a snapshot to create a file system on the sna
 
 ## Directions
 
-1. Log in to the CFS console and go to the [Snapshot Policies](https://console.cloud.tencent.com/cfs/snapshot/policy?rid=1) page.
-2. In the row of the target snapshot, click **More** > **Create File System**.
+1. Log in to the CFS console and go to the [Snapshot List](https://console.intl.cloud.tencent.com/cfs/snapshot/list?rid=1) page.
+2. Click **Use** in the row of the target snapshot.
 3. On the file system creation page, select the file system type, click **Next**, and set the following parameters.
 >? The following describes the parameters for creating a file system of Standard type as an example.
 >
@@ -48,7 +48,7 @@ This document describes how to use a snapshot to create a file system on the sna
      </tr>
      <tr>
        <td>Scheduled Snapshot</td>
-       <td>Optional. When creating a file system, you can select **Scheduled Snapshot** to create snapshots for the file system periodically based on the created scheduled snapshot policy. For more information, see <a href="https://cloud.tencent.com/document/product/582/62814">Scheduled Snapshot</a>.
+       <td>Optional. When creating a file system, you can select **Scheduled Snapshot** to create snapshots for the file system periodically based on the created scheduled snapshot policy. For more information, see <a href="https://intl.cloud.tencent.com/document/product/582/44915">Scheduled Snapshot</a>.
        </td>
      </tr>
    	 <tr>
@@ -66,7 +66,7 @@ This document describes how to use a snapshot to create a file system on the sna
    	 </tr>
    	<tr>
        <td>Tag</td>
-       <td>
+       </td>
    		<ul  style="margin: 0;">
          <li>If you already have a tag, you can add it to the new file system here.</li>
    			<li>If you do not have a tag, log in to the <a href="https://console.cloud.tencent.com/tag/taglist">Tag console</a> to create a desired tag, and then bind it to the file system. You can also add a tag to the file system after the file system is created.</li></ul>
@@ -74,5 +74,4 @@ This document describes how to use a snapshot to create a file system on the sna
      </tr>
    </table>
 4. Click **Create Now**. You can see the newly created file system on the file system list. 
-
 
