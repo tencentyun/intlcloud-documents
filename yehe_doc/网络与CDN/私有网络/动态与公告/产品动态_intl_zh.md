@@ -298,6 +298,6 @@
 <td>私有网络（VPC）产品上线</td>
 <td>独立隔离的网络空间，支持软件定义网络、通过 VPN 连接或专线接入连通私有网络与您的数据中心，灵活部署混合云。</td>
 <td>2015-05</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/215" target="_blank">私有网络</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215" target="_blank">私有网络</a></td>
 </tr>
 </tbody></table>
