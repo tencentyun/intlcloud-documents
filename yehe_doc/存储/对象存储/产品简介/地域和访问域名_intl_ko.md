@@ -1,6 +1,6 @@
 ## 소개
 
-**리전(Region)**은 Tencent Cloud 호스팅 데이터 센터의 분포 지역을 의미하며, COS(Cloud Object Storage)의 데이터를 해당 리전의 버킷에 저장합니다. 사용자는 COS를 통해 데이터를 여러 리전에 저장할 수 있으며, 일반적으로 저지연, 저비용, 컴플라이언스 요건을 충족할 수 있도록 사용자의 비즈니스 지역과 가장 근접한 리전에 버킷을 생성하는 것을 권장합니다.
+<b>리전(Region)</b>은 Tencent Cloud 호스팅 데이터 센터의 분포 지역을 의미하며, COS(Cloud Object Storage)의 데이터를 해당 리전의 버킷에 저장합니다. 사용자는 COS를 통해 데이터를 여러 리전에 저장할 수 있으며, 일반적으로 저지연, 저비용, 컴플라이언스 요건을 충족할 수 있도록 사용자의 비즈니스 지역과 가장 근접한 리전에 버킷을 생성하는 것을 권장합니다.
 
 예를 들어, 비즈니스가 화남지역에 분포되어 있는 경우 광저우 리전을 선택해 버킷을 생성하면 객체의 업로드 및 다운로드 속도를 더욱 향상시킬 수 있습니다.
 
@@ -124,7 +124,7 @@
       <td>&lt;BucketName-APPID&gt;.cos.na-toronto.myqcloud.com</td>
    </tr>
    <tr>
-      <td rowspan=3>남미</td>
+      <td rowspan=1>남미</td>
       <td>상파울루</td>
       <td>sa-saopaulo</td>
       <td>&lt;BucketName-APPID&gt;.cos.sa-saopaulo.myqcloud.com</td>
