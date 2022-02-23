@@ -15,7 +15,9 @@ If your website can be accessed only after login, you need to suspend the securi
 
 1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/ip/query) and select **IP Management** > **IP Query** on the left sidebar to enter the IP query page.
 2. On the IP query page, enter the IP address to be queried, click **Query**, and the query result will be displayed.
+![](https://qcloudimg.tencent-cloud.cn/raw/87ec5d206c8b608899f419814cbca333.png)
 3. Click **Add to Blocklist/Allowlist** to enter the **Add Blocked/Allowed IP** page, where you can manually add IPs to the allowlist. Select **Allowlist** as the category, enter the IP address to be allowed, select the expiration time of the allowlist, and click **Add**.
+![](https://qcloudimg.tencent-cloud.cn/raw/21bdfb916d7cdb70220fdab373dcf72b.png)
 
 ### Method 2: add IPs directly to the allowlist
 Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/ip/list) and select **IP Management** > **IP Blocklist/Allowlist** on the left sidebar to enter the IP blocklist/allowlist page.
@@ -23,6 +25,7 @@ Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/ip/list) a
  1. On the IP blocklist/allowlist page, click **Add to Blocklist/Allowlist**, and the **Add Blocked/Allowed IP** window will pop up.
  2. In the **Add Blocked/Allowed IP** window, select **Allowlist** as the category, copy the scanning node IPs of VSS into the IP address input box, select the expiration time of the allowlist, and click **Add**.
 >?Up to 100 IP addresses can be entered and separated by line break.
+![](https://qcloudimg.tencent-cloud.cn/raw/69efe91e23c6a6966417498a76ba0d6a.png)
 
 - **Method 2**: batch import IPs to the allowlist.
 	1. On the IP blocklist/allowlist page, click **Import Data**, and the **Import IP List** window will pop up.
@@ -32,7 +35,7 @@ Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/ip/list) a
 >- Quantity: currently, only one single file can be uploaded.
 >- Content: the file must include three columns: category, IP address, and end time. For more information on the format, see the exported Excel file.
 >- The end time must be before 2033/12/30 23:59:59 in the format of `YYYY/MM/DD HH:MM:SS`.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/ec9bfeed114e2f09bc8031bb19572f03.png)
 
 
 ### Method 3: add blocked IPs to the allowlist.
