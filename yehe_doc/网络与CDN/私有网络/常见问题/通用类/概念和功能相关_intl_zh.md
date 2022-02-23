@@ -1,13 +1,13 @@
 ### 如何实现私有网络不同子网内的通信？
 - 每个私有网络默认内网互通，您可以在对应路由表中看到一条默认路由，该路由即表示该私有网络下所有资源内网互通。
-- 如果是不同私有网络的子网，则内网不互通，需要使用 [对等连接](https://intl.cloud.tencent.com/zh/document/product/553) 或 [云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 才能实现通信。
+- 如果是不同私有网络的子网，则内网不互通，需要使用 [对等连接](https://intl.cloud.tencent.com/document/product/553) 或 [云联网](https://intl.cloud.tencent.com/document/product/1003) 才能实现通信。
 
 ### 能否将服务器部署在同一私有网络下的不同可用区中？
 可以。VPC 具有地域属性（如广州、北京、首尔），VPC 内子网具有可用区属性（如广州一区、广州二区），同一 VPC 内的子网可以部署在同一地域的不同可用区中。而云服务器的可用区属性继承自其所属子网，在可用区的子网下购买服务器，即可实现将服务器部署在不同可用区。
 
 ### 如何实现不同可用区中云服务器和数据库的通信？
 - 相同 VPC：默认互通，如果不通，请优先排查 [安全组](https://intl.cloud.tencent.com/document/product/215/38750) 及 [网络 ACL](https://intl.cloud.tencent.com/document/product/215/31850) 等防火墙策略。
-- 不同 VPC：默认隔离，如需互通，您可以通过 [对等连接](https://intl.cloud.tencent.com/zh/document/product/553) 或 [云联网](https://intl.cloud.tencent.com/zh/document/product/1003)，实现两个 VPC 的内网互通。
+- 不同 VPC：默认隔离，如需互通，您可以通过 [对等连接](https://intl.cloud.tencent.com/document/product/553) 或 [云联网](https://intl.cloud.tencent.com/document/product/1003)，实现两个 VPC 的内网互通。
 
 ### 每个私有网络最多可为云产品实例提供多少个内网 IP 地址？
 每个私有网络最多可为云产品实例提供65533个内网 IP 地址。
