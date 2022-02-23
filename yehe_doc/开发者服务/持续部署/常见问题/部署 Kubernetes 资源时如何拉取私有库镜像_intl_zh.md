@@ -20,12 +20,13 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/574f87f69b4cc268c7467f73b2fb5d0c.png)
 如上图所示，CODING CD 会在 TKE 集群中生成名为 `coding-registry-cred-$(user_id)`的 Secret，此 Secret 信息可以在 TKE 控制台查看：
 ![](https://qcloudimg.tencent-cloud.cn/raw/45354622b6be37c4de9c2b2aa0f1a8a2.png)
-云账号添加成功后，可以查看示例用法
+云账号添加成功后，可以查看示例用法：
+![](https://qcloudimg.tencent-cloud.cn/raw/925fb602f377a95c5494509740b92466.png)
 
 #### Kubernetes 云账号（非 TKE 集群）
 
 如果通过 Kubeconfig 或 Service Account 凭据添加的 Kubernetes 云账号，在 manifest 引用私有库的镜像时，需要先在 Kubernetes 集群中创建 Secret，以 CODING 制品库为例：
-![](https://qcloudimg.tencent-cloud.cn/raw/925fb602f377a95c5494509740b92466.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dd76ee6beb0ab28012db43acf882b885.png)
 在 manifest 中直接引用此私有库的镜像会失败，需要在集群中生成 Secret：
 
 ```shell

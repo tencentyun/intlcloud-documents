@@ -20,12 +20,13 @@ The following describes how to configure `imagePullSecrets` for different types 
 ![](https://qcloudimg.tencent-cloud.cn/raw/574f87f69b4cc268c7467f73b2fb5d0c.png)
 As shown above, CODING-CD generates a Secret named `coding-registry-cred-$(user_id)` in the TKE cluster. You can view the Secret information in the TKE console:
 ![](https://qcloudimg.tencent-cloud.cn/raw/45354622b6be37c4de9c2b2aa0f1a8a2.png)
-After a cloud account is added, you can view the sample usage
+After a cloud account is added, you can view the sample usage：
+![](https://qcloudimg.tencent-cloud.cn/raw/925fb602f377a95c5494509740b92466.png)
 
 #### Kubernetes cloud accounts (non-TKE cluster)
 
 For a Kubernetes cloud account added with Kubeconfig or Service Account credentials, you need to create a Secret in the Kubernetes cluster before manifest can reference images from a private repository (CODING artifact repository is taken as an example here):
-![](https://qcloudimg.tencent-cloud.cn/raw/925fb602f377a95c5494509740b92466.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dd76ee6beb0ab28012db43acf882b885.png)
 If you directly reference images from the private repository in mainfest without generating a Secret in the cluster, the operation will fail.
 
 ```shell
