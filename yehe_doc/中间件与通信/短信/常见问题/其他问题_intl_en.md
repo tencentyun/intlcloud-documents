@@ -99,7 +99,7 @@ When you call a Tencent Cloud SMS API to send an SMS message, if the response pa
 ### How do I get the SMS SDK AppID and AppKey?
 The `SDK AppID` and `AppKey` are the application access account and key granted by Tencent Cloud when you apply for a new application. You can view them after you successfully create the application.
 - **SDK AppID**: the unique ID of a Tencent Cloud SMS application as shown below:
-![](https://main.qcloudimg.com/raw/eee1084a4e88defd26f69061906d7a44.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9f7f80e6a447fc4d50104e35fa47fe51.png)
 - **AppKey**: the password used to verify the validity of an SMS delivery request, which can ensure the reliability of the application source under certain technical conditions.
 
 
