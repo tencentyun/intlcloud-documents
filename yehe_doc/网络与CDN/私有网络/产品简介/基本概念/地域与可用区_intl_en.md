@@ -10,7 +10,7 @@ You can view the following table or use the [DescribeRegions](https://intl.cloud
 
 - The networks of different regions are fully isolated. Tencent Cloud services in different regions **cannot communicate via a private network by default**.
 - Tencent Cloud services across regions can communicate with each other through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224) over the Internet,  while those in different VPCs can communicate with each other through [CCN](https://intl.cloud.tencent.com/document/product/1003), which is faster and more stable.
-- [Cloud Load Balancer (CLB)(https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default.  If you enable the [cross-region binding](https://intl.cloud.tencent.com/document/product/214/12014) feature, cross-region binding of CLB and CVM instances is supported.
+- [Cloud Load Balancer (CLB)(https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default.  If you enable the [Cross-Region Binding 2.0 (New)](https://intl.cloud.tencent.com/document/product/214/38441) feature, cross-region binding of CLB and CVM instances is supported.
 
 
 ## Availability Zone
