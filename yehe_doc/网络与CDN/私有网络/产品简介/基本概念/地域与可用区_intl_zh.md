@@ -10,7 +10,7 @@
 
 - 不同地域之间的网络完全隔离，不同地域之间的云产品**默认不能通过内网通信**。
 - 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式较为高速、稳定。
-- [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/12014) 功能，则可支持负载均衡跨地域绑定云服务器。
+- [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定2.0（新版）](https://intl.cloud.tencent.com/document/product/214/38441) 功能，则可支持负载均衡跨地域绑定云服务器。
 
 
 ## 可用区

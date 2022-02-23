@@ -2,7 +2,7 @@
 TencentDB for MySQLインスタンスのバックアップファイルは、デフォルトではパブリックネットワークまたはプライベートネットワークを通じてダウンロードできますが、ダウンロードを制限する必要がある場合は、ダウンロード設定によって調整を行うことができます。
 >?
 >- データベースバックアップダウンロード設定を現在サポートするリージョン：
->広州、上海、北京、深圳、成都、重慶、南京、中国香港、北京金融、上海金融、深圳金融、トロント、シンガポール、シリコンバレー、フランクフルト、ソウル、ムンバイ、バンコク、モスクワ、東京。
+>広州、上海、北京、深圳、成都、重慶、南京、中国香港、トロント、シンガポール、シリコンバレー、フランクフルト、ソウル、ムンバイ、バンコク、モスクワ、東京。
 >- バックアップダウンロード設定機能のアクティブ化方法：
 >  - 2021年11月9日より前にこの機能を使用したい場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category) してアクティブ化できます。
 >  - 2021年11月9日以降、この機能は全ネットワークユーザーに開放されます。
@@ -86,7 +86,7 @@ qcs::service_type::account:resource
 このうち、cdb-kfxxh3はMySQLインスタンスリソースのIDで、ここではCAMポリシーステートメント中のリソースresourceです。
 
 ### 事例
-以下の例はCAMの使用方法のみを示したものです。MySQLデータベースのバックアップダウンロードルール設定の完全なAPIについては、[APIドキュメント](https://intl.cloud.tencent.com/document/product/236/43327)をご参照ください。
+以下の例は、CAMの使用方法のみを示したものです。MySQLデータベースのバックアップダウンロードルール設定の完全なAPIについては、[APIドキュメント](https://intl.cloud.tencent.com/document/product/236/43327)をご参照ください。
 ```
 {
        "version":"2.0",
@@ -106,8 +106,9 @@ qcs::service_type::account:resource
 ![img](https://qcloudimg.tencent-cloud.cn/raw/4ddc463dc28ee48b9dd63d862fa41ea1.png)
 2. ポップアップしたダイアログボックスで、**ポリシージェネレーターで作成**を選択します。
 3. サービスおよび操作の選択画面で、各項目の設定を選択し、ステートメントの追加をクリックした後、次のステップをクリックします。
-   - サービス(Service)：**TencentDB for MySQL**を選択します。
-   - アクション(Action)：MySQLデータベースのバックアップダウンロードルール設定のAPIを選択します。[APIドキュメント](https://intl.cloud.tencent.com/document/product/236/43327)をご参照ください。
+   - 効果(Effect)：許可または拒否を選択して、操作項目の実行許可を示します。
+   - サービス(Service)：TencentDB for MySQLを選択します。
+   - 操作(Action)：MySQLデータベースのバックアップダウンロードルール設定のAPIを選択します。[APIドキュメント](https://intl.cloud.tencent.com/document/product/236/43327)をご参照ください。
    - リソース(Resource)：[リソース記述法](https://intl.cloud.tencent.com/document/product/598/10606)をご参照ください。`*`を入力し、所在リージョンのMySQLインスタンスのバックアップダウンロードルールが設定可能であることを示します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5372ae1d2ac16ff63b63fbf175f3fccf.png)
 4. ポリシー編集画面で、命名仕様に従い、「ポリシー名」（例えばBackupDownloadRestriction）と「説明」を入力後、**完了**をクリックします。

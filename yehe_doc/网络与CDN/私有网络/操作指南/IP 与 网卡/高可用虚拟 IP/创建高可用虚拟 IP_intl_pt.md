@@ -50,6 +50,6 @@ Consulte os seguintes casos para realizar as suas configurações:
 > + [Criação de um banco de dados de alta disponibilidade usando HAVIP + cluster de failover do Windows Server](https://intl.cloud.tencent.com/document/product/215/31878) 
 
 ## Documentação
-Semelhante a um IP privado, um HAVIP também pode ser vinculado ou desvinculado de um EIP no console. Se você precisar de comunicação de rede pública, consulte [Vinculação ou desvinculação de EIP](https://cloud.tencent.com/document/product/215/53706).
+Semelhante a um IP privado, um HAVIP também pode ser vinculado ou desvinculado de um EIP no console. Se você precisar de comunicação de rede pública, consulte [Vinculação ou desvinculação de EIP](https://intl.cloud.tencent.com/document/product/215/40083).
 
 

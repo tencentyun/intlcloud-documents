@@ -19,23 +19,11 @@ Yes. VSS simulates user behaviors by using real browsers and supports modern JS 
 ### What scanning IPs does VSS have?
 VSS performs security scan by simulating hacker intrusions (harmless attacks) over the public network. If your server has protection measures or restricts accessing IPs, in order to ensure normal scanning, we recommend you add the following IP addresses to the allowlist.
 The scan node IPs of VSS are as follows:
-129.211.162.110
-129.211.162.87
-129.211.163.253
-129.211.164.19
-129.211.166.123
-129.211.167.182
-129.211.167.200
-129.211.167.70
-129.211.162.158
-129.211.162.23
-129.211.166.134
-129.211.167.108
-129.211.167.181
-129.211.166.142
-129.211.166.163
-129.211.167.128
-129.211.167.166
+119.28.101.45
+119.28.101.51
+150.109.12.53 
+101.32.239.31
+101.32.242.117
 
 ### Do I need to repeat verification and authorization when adding multiple subdomains under the same root domain name?
 No. For example, if you have already authorized `bb.com`, you don't need to authorize `v.bb.com` and `123.bb.com`.

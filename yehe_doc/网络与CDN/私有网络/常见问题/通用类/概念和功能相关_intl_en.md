@@ -1,13 +1,13 @@
 ### How do you establish communication between different subnets of a VPC?
 - Each VPC has private network interconnections by default, and you can see a default route in the corresponding route table. This route indicates that all resources in this VPC can connect with each other by private network.
-- Subnets in different VPCs cannot interconnect over the private network and can communicate with each other only by using [Peering Connections](https://intl.cloud.tencent.com/zh/document/product/553) or [CCN](https://intl.cloud.tencent.com/zh/document/product/1003).
+- Subnets in different VPCs cannot interconnect over the private network and can communicate with each other only by using [Peering Connections](https://intl.cloud.tencent.com/document/product/553) or [CCN](https://intl.cloud.tencent.com/document/product/1003).
 
 ### Can different CVMs be deployed in different availability zones in the same VPC?
 Yes. A VPC has a region attribute (such as Guangzhou, Beijing, or Seoul), and the subnets in the VPC have an availability zone attribute (such as Guangzhou Zone 1 or Guangzhou Zone 2), so subnets in the same VPC can be deployed in different availability zones in the same region. The availability zone attribute of a CVM inherits that of the subnet it belongs to, and CVMs are purchased under subnets in availability zones. Therefore, it is possible for different CVMs to be deployed in different availability zones.
 
 ### How do you establish communication between CVMs and databases in different availability zones?
 - Same VPC: there is interconnection by default. If they do not connect, you can give priority to troubleshooting the firewall policies of the [security group](https://intl.cloud.tencent.com/document/product/215/38750) and the [network ACL](https://intl.cloud.tencent.com/document/product/215/31850) .
-- Different VPCs: you can use [Peering Connections](https://intl.cloud.tencent.com/zh/document/product/553) or [CCN](https://intl.cloud.tencent.com/zh/document/product/1003) to implement interconnection over the private network between two VPCs.
+- Different VPCs: you can use [Peering Connections](https://intl.cloud.tencent.com/document/product/553) or [CCN](https://intl.cloud.tencent.com/document/product/1003) to implement interconnection over the private network between two VPCs.
 
 ### How many private IP addresses can each VPC provide for Tencent Cloud service instances?
 Each VPC can provide up to 65,533 private IP addresses for Tencent Cloud service instances.

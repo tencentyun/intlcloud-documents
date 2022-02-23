@@ -1,7 +1,7 @@
 ### How do I apply for a public IP if one was not assigned at the time of purchasing the CVM?
 If a public IP was not assigned when you purchased the CVM, then there is no way to re-apply for an ordinary public IP for this CVM. However, the same function can be accomplished using [EIPs](https://intl.cloud.tencent.com/document/product/213/5733). For more information on how to use this, please see [Applying for EIPs](https://intl.cloud.tencent.com/document/product/213/16586).
 - An EIP is a type of public IP that is fixed to a specific public IP address in a certain region. Unlike an ordinary public IP, it is bound to your account. In other words, you can bind and unbind an EIP with different CVMs as required (only one can be bound at a time).
-- Due to the special nature of an EIP, if you apply for an EIP but do not bind it to an instance, IP resource fees will be incurred. For details, please see [EIP Billing](https://intl.cloud.tencent.com/zh/document/product/213/17156).
+- Due to the special nature of an EIP, if you apply for an EIP but do not bind it to an instance, IP resource fees will be incurred. For details, please see [EIP Billing](https://intl.cloud.tencent.com/document/product/213/17156).
 
 ### How can an instance (CVM or database) access the public network without a public IP address?
 An instance without a public IP can apply for an EIP (see the previous question) or can access the public network through NAT gateway.

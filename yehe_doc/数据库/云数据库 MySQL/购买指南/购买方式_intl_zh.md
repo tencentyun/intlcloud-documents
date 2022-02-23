@@ -2,7 +2,7 @@
 购买前需要实名认证，请参见 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
 
 ## 控制台购买
-1. 登录 [MySQL 购买页](https://buy.Intl.cloud.tencent.com/cdb)，根据实际需求选择各项配置信息，确认无误后，单击**立即购买**。
+1. 登录 [MySQL 购买页](https://buy.intl.cloud.tencent.com/cdb)，根据实际需求选择各项配置信息，确认无误后，单击**立即购买**。
  - **计费模式**：支持按量计费。
     - 若业务量有瞬间大幅波动场景，建议选择按量计费。
  - **地域**：选择您业务需要部署 MySQL 的地域。建议您选择与云服务器同一个地域，不同地域的云产品内网不通，购买后不能更换。
@@ -13,25 +13,29 @@
 >?
 >- 主备机处于不同可用区，可能会增加2ms - 3ms的同步网络延迟。
 >- 购买云服务时建议选择最靠近您的地域，可降低访问时延、提高下载速度。
+>
  - **实例类型**：提供通用型与独享型两种实例类型，详情请参见 [实例类型](https://intl.cloud.tencent.com/document/product/236/39794)。
  - **实例规格**：根据业务需要选择对应规格。
  - **硬盘**：硬盘空间用于存放 MySQL 运行时所必须文件。
  - **网络**：云数据库 MySQL 所属网络，建议您选择与云服务器同一个地域下的同一私有网络，否则无法通过内网连接云服务器和数据库，缺省设置为 Default-VPC（默认）。
+ - **自定义端口**：数据库的访问端口，默认为3306。
  - **安全组**：安全组创建与管理请参见 [云数据库安全组](https://intl.cloud.tencent.com/document/product/236/14470)。
 >?安全组入站规则需要放通 MySQL 实例的3306端口。MySQL 内网默认端口为3306，同时支持自定义端口，若修改过默认端口号，安全组中需放通 MySQL 新端口信息。
- - **参数模版**：除提供的系统参数模板外，您也可以创建自定义参数模板，请参见 [使用参数模板](https://intl.cloud.tencent.com/document/product/236/31906)。
+ - **参数模板**：除提供的系统参数模板外，您也可以创建自定义参数模板，请参见 [使用参数模板](https://intl.cloud.tencent.com/document/product/236/31906)。
+  - **字符集**：支持 LATIN1 、GBK、UTF8 、UTF8MB4 字符集，默认字符集编码格式是 UTF8。购买完成后，亦可在控制台实例详情页修改字符集，更多说明请参见 [字符集说明](https://intl.cloud.tencent.com/document/product/236/7259)。
+ - **表名大小写敏感**：表名是否大小写敏感，默认为开启。
+ - **root密码**：新创建的 MySQL 数据库的用户名默认为 root，此处用来设置该 root 帐号的密码。选择**自动生成密码**时，可在创建完实例后再 [重置密码](https://intl.cloud.tencent.com/document/product/236/31901)。
  - **告警策略**：创建告警用于在云产品状态改变时触发警报并发送相关消息，请参见 [告警策略](https://intl.cloud.tencent.com/document/product/236/8457)。
  - **指定项目**：选择数据库实例所属的项目，缺省设置为默认项目。
- - **标签**：便于分类管理实例资源，详细介绍请参见 [标签概述](https://intl.cloud.tencent.com/document/product/236/31917)。
+ - **标签**：便于分类管理实例资源，请参见 [标签概述](https://intl.cloud.tencent.com/document/product/236/31917)。
  - **实例名**：可选择创建后命名或立即命名。
  - **购买数量**：每个用户在每个可用区可购买按量计费实例的总数量为10个。
- - **服务条款**：请参见 [云数据库服务条款](https://intl.cloud.tencent.com/document/product/236/35543)。
-2. 支付完成后，返回实例列表，会看到实例显示**发货中**（大概需要3min - 5min中，请耐心等待），待实例状态变为**未初始化**，即可进行初始化操作。
+ - **服务条款**：[云数据库服务条款](https://intl.cloud.tencent.com/document/product/236/35543)。
+2. 支付完成后，返回实例列表，会看到实例显示**发货中**（大概需要3min - 5min中，请耐心等待），待实例状态变为**运行中**，即可进行正常操作。
 
 ##  API 购买
 通过 API 购买云数据库的用户，可参考 [创建实例](https://intl.cloud.tencent.com/document/product/236/15865)。
 
 ## 后续操作
-- [初始化 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/3128)
-- [连接 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37788)
+[连接 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37788)
 

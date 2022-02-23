@@ -6,7 +6,7 @@ In the unicast mode, the initiating server sends data to N servers separately. I
 
 >?
 >- The broadcast and multicast features are currently in beta test. If you do need to use them, please [submit an application](https://console.cloud.tencent.com/workorder/category).
->- At present, the regions supporting multicast and broadcast are: Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Nanjing, Hong Kong of China, Singapore, Seoul, Tokyo,Bangkok, Toronto, Silicon Valley, Virginia, Frankfurt and Moscow.
+>- At present, the regions supporting multicast and broadcast are: Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Nanjing, Hong Kong of China, Singapore, Seoul, Tokyo,  Bangkok, Toronto, Silicon Valley, Virginia, Frankfurt and Moscow.
 >
 
 ## Overview

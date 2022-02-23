@@ -298,6 +298,6 @@
 <td>Launches VPC</td>
 <td>A Virtual Private Cloud (VPC) is an independent isolated network space that supports software-defined networks, supports connection with your IDCs via VPN connection or Direct Connect, and supports flexible deployment of hybrid cloud.</td>
 <td>2015-05</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/215" target="_blank">VPC</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215" target="_blank">VPC</a></td>
 </tr>
 </tbody></table>
