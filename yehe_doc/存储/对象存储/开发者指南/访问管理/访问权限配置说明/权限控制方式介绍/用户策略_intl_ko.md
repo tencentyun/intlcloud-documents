@@ -70,9 +70,9 @@ CAM은 [사전 설정 정책 및 사용자 정의 정책](https://intl.cloud.ten
 1. [CAM 콘솔](https://console.cloud.tencent.com/cam)에 로그인합니다.
 2. **정책 > 사용자 정의 정책 생성 > 정책 구문 생성**을 선택하여 정책 생성 페이지로 이동합니다.
 3. **빈 템플릿**을 선택하여 실제 필요에 따라 인증 정책을 사용자 정의하거나 COS와 연결된 **시스템 템플릿**을 선택할 수 있습니다. 다음은 **빈 템플릿**을 선택하는 예시입니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/e41033463378a0b763f2e51219fc4282.jpg)
+
 4. **빈 템플릿**을 선택하여 정책 구문을 입력합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/076b34ce88edae47f377e1a01b3b8c02.png)
+
 다음과 같은 기본 요소가 포함되어야 합니다.
  - **resource: 권한 부여 리소스**.
      - 모든 리소스(`"*"`)
@@ -86,18 +86,18 @@ CAM은 [사전 설정 정책 및 사용자 정의 정책](https://intl.cloud.ten
  - [서브 계정 COS 액세스 인증](https://intl.cloud.tencent.com/document/product/436/11714)
  - [COS API 인증 정책 사용 가이드](https://intl.cloud.tencent.com/document/product/436/30580)
 5. 생성이 완료되면 [CAM 콘솔](https://console.cloud.tencent.com/cam)의 **정책 > 사용자 정의 정책**에서 생성된 사용자 정의 정책을 확인하고 정책을 서브 계정과 연결할 수 있습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/6443b4f089d487d5a4bd43fcd0732e1e.png)
+
 6. 서브 계정을 선택하고 **확인**을 클릭해 권한을 부여하면, 서브 계정을 이용해 한정된 COS 리소스에 액세스할 수 있습니다.
-![](https://main.qcloudimg.com/raw/c37f96e1a2db3f74066ca48c1b09d538.png)
+
 
 <span id="사전 설정 정책"></span>
 ## 사전 설정 정책
 CAM은 몇 가지 사전 설정 정책을 제공합니다. [CAM 콘솔](https://console.cloud.tencent.com/cam)의 **정책 > 사전 설정 정책**에서 ‘COS’를 검색하여 필터링할 수 있습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/394c68827af9c8e3f883470cef9db429.jpg)
+
 
 정책 이름을 클릭하고 **정책 구문 > JSON**으로 이동하여 특정 정책 콘텐츠를 확인합니다. 사전 설정된 정책의 리소스(`resource`)는 COS의 모든 리소스(`"*"`)로 설정되며 수정은 지원되지 않습니다. 일부 COS 버킷 및 객체에 인증을 부여해야 하는 경우 JSON 사전 설정 정책을 복사하여 [사용자 정의 정책](#사용자 정의 정책)을 생성할 수 있습니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/369f7bbfc85aa13cfb099ae8e8e1027b.jpg)
+
 
 표1과 표2는 CAM에서 제공하는 COS 관련 사전 설정 정책 및 설명을 나열합니다.
 
