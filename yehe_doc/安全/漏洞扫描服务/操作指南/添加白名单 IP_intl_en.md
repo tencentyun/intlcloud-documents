@@ -2,23 +2,11 @@ This document describes how to add the monitoring IPs of VSS to the allowlist.
 ## Overview
 
 VSS simulates hacker intrusion attacks to conduct asset discovery and risk monitoring over the public network. If your server has security protection or monitoring services such as WAF and SOC deployed, we recommend you add the monitoring IPs of VSS to the allowlist and grant them scanning access, so that the monitoring service can work smoothly. Such service node scanning IPs include:
-129.211.162.110
-129.211.162.87
-129.211.163.253
-129.211.164.19
-129.211.166.123
-129.211.167.182
-129.211.167.200
-129.211.167.70
-129.211.162.158
-129.211.162.23
-129.211.166.134
-129.211.167.108
-129.211.167.181
-129.211.166.142
-129.211.166.163
-129.211.167.128
-129.211.167.166
+119.28.101.45
+119.28.101.51
+150.109.12.53 
+101.32.239.31
+101.32.242.117
 If your website can be accessed only after login, you need to suspend the security policy (to ensure that the website can be accessed from all IPs) and resume it after your cookie validity is verified.  
 
 ## Directions
