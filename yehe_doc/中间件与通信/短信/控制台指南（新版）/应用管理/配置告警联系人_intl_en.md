@@ -5,8 +5,8 @@ You can add an alarm recipient and configure specific reminder events. When an e
 ## Adding Alarm Recipient
 1. Log in to the [SMS console](https://console.cloud.tencent.com/smsv2).
 2. Select **Application Management** > **Notifications & Alarms** on the left sidebar.
-3. Select the **current application** as the target application to be manipulated.
-4. Click **Add alarm recipient**.
+3. Select the **Current Application** as the target application to be manipulated.
+4. Click **Add Alarm Recipient**.
 5. Enter the name, mobile number, and email address of the contact and select the target events.
     ![](https://qcloudimg.tencent-cloud.cn/raw/6f12248a53109427430104de79f28ee1.png)
 6. Click **Add**.
@@ -15,7 +15,7 @@ You can add an alarm recipient and configure specific reminder events. When an e
 ## Editing Alarm Recipient
 1. Log in to the [SMS console](https://console.cloud.tencent.com/smsv2).
 2. Select **Application Management** > **Notifications & Alarms** on the left sidebar.
-3. Select the **current application** as the target application to be manipulated.
+3. Select the **Current Application** as the target application to be manipulated.
 4. Click **Edit** in the row of the contact.
 5. Click **Modify** to modify the name, mobile number, and email address of the contact and the events.
 
