@@ -140,13 +140,13 @@ CVM과 MySQL의 네트워크 유형이 다른 경우, CVM은 내부 네트워크
 #### [CVM과 MySQL이 동일한 리전에 있지만 서로 다른 VPC에 속해 있는 경우](id:cmvbt)
 기본적으로 CVM과 MySQL의 네트워크 유형이 모두 VPC이고, 둘 다 동일 VPC에 있어야만 내부 네트워크로 통신할 수 있습니다. 동일한 리전에 있지만 VPC가 다를 경우 다음 방법으로 문제를 해결할 수 있습니다.
 - **솔루션1(권장)**: MySQL을 CVM이 있는 VPC로 마이그레이션합니다. 자세한 내용은 [네트워크 변경](https://intl.cloud.tencent.com/document/product/236/31915)을 참고하십시오.
-- **솔루션2**: 두 VPC 사이에 [CCN](https://cloud.tencent.com/document/product/877)을 구축합니다.
+- **솔루션2**: 두 VPC 사이에 [CCN](https://intl.cloud.tencent.com/document/product/1003)을 구축합니다.
   위의 솔루션을 사용하지 않는다면, 서로 다른 VPC 네트워크에 있는 CVM과 MySQL은 공용 네트워크를 통해서만 통신할 수 있습니다. 이런 방식은 성능, 보안성 및 안정성이 떨어집니다.
 
 #### [CVM과 MySQL이 동일한 리전에 있지 않고 서로 다른 VPC에 속한 경우](id:dywt)
 CVM과 MySQL이 동일한 리전에 있지 않고 서로 다른 VPC에 속한 경우, CVM은 내부 네트워크를 통해 MySQL에 직접 연결할 수 없습니다.
 - **솔루션1(권장)**: MySQL과 동일 VPC의 CVM으로 연결을 진행합니다.
-- **솔루션2**: 두 VPC 사이에 [CCN](https://cloud.tencent.com/document/product/877)을 구축합니다.
+- **솔루션2**: 두 VPC 사이에 [CCN](https://intl.cloud.tencent.com/document/product/1003)을 구축합니다.
 - **솔루션3**: CVM에서 MySQL의 공용 네트워크 연결 주소를 사용하여 MySQL에 연결합니다. 해당 방식은 성능, 보안성, 안정성이 떨어지므로 VPC 사용을 권장합니다.
 
 ### [보안 그룹 설정 문제 솔루션](id:aqzpzwt)
