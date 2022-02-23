@@ -15,7 +15,9 @@
 
 1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/ip/query)，在左侧导航中，选择**IP 管理** > **IP 查询**，进入 IP 查询页面。
 2. 在 IP 查询页面，输入需要查询的 IP 地址，单击**查询**，将展示查询结果。
+![](https://qcloudimg.tencent-cloud.cn/raw/87ec5d206c8b608899f419814cbca333.png)
 3. 单击**加入黑白名单**，进入“添加黑白 IP” 页面，可手动添加白名单。类别选择“白名单”，IP 地址填写需要添加到白名单的地址，选择白名单有效期的截止时间，设置完成后，单击**添加**，即完成白名单添加。
+![](https://qcloudimg.tencent-cloud.cn/raw/21bdfb916d7cdb70220fdab373dcf72b.png)
 
 ### 方式2：直接添加 IP 白名单
 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/ip/list)，在左侧导航中，选择**IP 管理**>**IP 黑白名单**，进入 IP 黑白名单页面。
@@ -23,7 +25,7 @@
  1. 在 IP 黑白名单页面，单击**添加黑白名单**，将弹出“添加黑白IP”窗口。
  2. 在“添加黑白 IP”窗口中，类别“白名单”类别，将漏洞扫描服务扫描节点 IP 复制到 IP 地址的输入框内，选择白名单有效期的截止时间，设置完成后，单击**添加**，即完成白名单添加。
 >?最多支持输入100个 IP 地址，多个 IP 地址以换行分隔。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/69efe91e23c6a6966417498a76ba0d6a.png)
 
 - **方式2**：批量导入白名单。
 	1. 在 IP 黑白名单页面，单击**导入数据**，将弹出“导入 IP 名单”窗口。
@@ -34,7 +36,7 @@
 >- 内容：必须包含类别，IP 地址，截止时间三列，具体可参考导出数据 excel 格式。
 >- 截止时间，必须在2033/12/30 23:59:59之前，格式 YYYY/MM/DD HH:MM:SS。
 
-
+![](https://qcloudimg.tencent-cloud.cn/raw/ec9bfeed114e2f09bc8031bb19572f03.png)
 
 ### 方式3：将已封堵 IP 添加白名单
 1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/ip/record)，在左侧导航中，选择**IP 管理** > **IP 封堵状态**，进入 IP 封堵状态。
