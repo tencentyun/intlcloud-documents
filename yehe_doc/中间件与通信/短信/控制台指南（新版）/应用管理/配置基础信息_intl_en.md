@@ -17,6 +17,7 @@ After that, please configure alarm recipients in **Notifications & Alarms** so t
 <dx-alert infotype="notice" title="">
 This feature is supported only for organization users.
 </dx-alert>
+
 1. Click **Set** in **Global SMS Message Sending Limit Settings** to specify which countries/regions can receive SMS messages and set the message sending limit in a calendar day for each country/region.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/004b0e6423c3214962c0d7cdad7ee984.png)
@@ -34,6 +35,7 @@ This feature is supported only for organization users.
 If you want to modify the message sending limit for a single country/region in a calendar day later, click **Edit** in the **Operation** column. You can also delete or export the configured countries/regions.
 
 ## Event Callback Configuration
+
 1. Click **Set** in **Event Callback Configuration**, select message status callback as needed, and enter the corresponding callback URL (callback information receipt API).
 ![](https://qcloudimg.tencent-cloud.cn/raw/8df55c41c5d708b2199e21849f4bb879.png)
 
@@ -52,31 +54,31 @@ To ensure business and channel security and minimize financial loss caused by ma
 - Up to 10 messages can be sent to the same mobile number in a calender day.
 
 <dx-alert infotype="notice" title="">
->- Note: individual users have no permission to modify the frequency limit. To use this feature, change "Individual Verification" to "Organization Verification".
+ Individual users have no permission to modify the frequency limit. To use this feature, change "Individual Verification" to "Organization Verification".
 </dx-alert>
 
 1. Click **Set** in **Sending Frequency Limit**, select the limits as needed, and set the corresponding threshold for each limit.
-![](https://qcloudimg.tencent-cloud.cn/raw/6911eb24624726fc856d9b3af3457233.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/16424c4a2e847d0ca1e4027ac3834b93.png)
 
 2. Click **Set** to save.
-![](https://qcloudimg.tencent-cloud.cn/raw/b6f36a9aa17e0aa82cbaa8ed81c21acb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6d7f779f88d4ffb51a4fa3af5412c660.png)
 
 ## Setting a Frequency Limit Allowlist
 
 <dx-alert infotype="explain" title="">
-> Mobile numbers in the allowlist are not subject to the frequency limit policy. An allowlist can contain up to 300 mobile numbers.
+ Mobile numbers in the allowlist are not subject to the frequency limit policy. An allowlist can contain up to 300 mobile numbers.
 </dx-alert>
 
 ### Adding mobile number to allowlist
 1. Click **Set** in **Frequency Limit Allowlist** and enter a mobile number per row. Up to 300 mobile numbers can be added to the allowlist.
-![](https://qcloudimg.tencent-cloud.cn/raw/4d18af62c4e49d89db4de78e8d05cf20.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1ceb74b7513e133789522bc71cdb337d.png)
 
 2. Click **Set** to save the settings.
 ![](https://qcloudimg.tencent-cloud.cn/raw/72c2f32c724fc4335db26b5e1592523a.png)
 
 ### Deleting mobile number from allowlist
 1. Click **Delete** in the row of the target mobile number in **Frequency Limit Allowlist**.
-![](https://qcloudimg.tencent-cloud.cn/raw/83ce9b62a99559d4d8a805e1acd5907c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/12bfff56e54349fe94fb1cb7f69b03db.png)
 2. Click **Delete**.
 
 
