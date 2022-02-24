@@ -41,9 +41,7 @@ DRMtoday Dashboard 웹 사이트로 이동하여 Configuration-DRMsettings을 �
   openssl x509 -inform der -in fairplay.cer -out fairplay.pem
   ```
 
-- Provider private key
-
-  : 사용자가 키로 보호되는 개인키를 생성하고 업로드 키 유형은 linux에서 openssl 툴을 사용하여 전환할 수 있는 PKCS #8 PEM 형식이어야 합니다. 예시: 개인키 파일 이름이 privatekey.pem 일 때, 전환 명령은 다음과 같습니다.
+- Provider private key: 사용자가 키로 보호되는 개인키를 생성하고 업로드 키 유형은 linux에서 openssl 툴을 사용하여 전환할 수 있는 PKCS #8 PEM 형식이어야 합니다. 예시: 개인키 파일 이름이 privatekey.pem 일 때, 전환 명령은 다음과 같습니다.
 
   ```
   openssl rsa -in privatekey.pem -outform PEM -out out.pem
