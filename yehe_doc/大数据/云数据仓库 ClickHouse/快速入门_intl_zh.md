@@ -13,7 +13,7 @@
 </thead>
 <tbody><tr>
 <td>计费模式</td>
-<td><ul><li/>包年包月：<a href="https://intl.cloud.tencent.com/document/product/555/42701" target="_blank">预付费模式</a>，即在新建集群时先支付费用，后使用资源。<li/>按量计费：<a href="https://intl.cloud.tencent.com/document/product/555/30328" target="_blank">后付费模式</a>，即先按需申请资源使用，每小时生成一份费用账单。在结算时会按实际资源使用量收取费用。</ul></td>
+<td><按量计费：<a href="https://intl.cloud.tencent.com/document/product/555/30328" target="_blank">后付费模式</a>，即先按需申请资源使用，每小时生成一份费用账单。在结算时会按实际资源使用量收取费用。</td>
 </tr>
 <tr>
 <td>地域</td>
