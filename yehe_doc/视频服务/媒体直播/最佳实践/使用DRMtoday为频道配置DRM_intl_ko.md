@@ -66,7 +66,7 @@ DRMtoday Dashboard 웹 사이트로 이동하여 Configuration-DRMsettings을 �
 
    매개변수:
 
-   - **username, password**: DRMtoday의 계정 비밀번호를 사용하거나 DRMtoday에서 생성한 API 계정과 비밀번호를 사용합니다. [DRMtoday API 계정 생성 문서](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html? dummy#adding-accounts)
+   - **username, password**: DRMtoday의 계정 비밀번호를 사용하거나 DRMtoday에서 생성한 API 계정과 비밀번호를 사용합니다. [DRMtoday API 계정 생성 문서](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html?dummy#adding-accounts)
 
    b. CAS Ticket Retrieval: CAS Login 요청 후 반환된 header의 Location 주소로 HTTP POST 요청을 보냅니다.
 
