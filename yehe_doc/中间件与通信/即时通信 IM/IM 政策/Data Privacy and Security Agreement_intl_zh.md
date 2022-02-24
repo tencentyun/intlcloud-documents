@@ -9,7 +9,7 @@ We will process the following data in connection with the Feature:
 
 | **Personal Information**                                     | **Use**                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **User  Information**: nickname, avatar URL, personalized  signature, etc. of the relevant user of the Feature (depending on user  settings) | We only process this data for the purposes of providing the Feature to  you.   Please note that  this data is integrated with our Cloud Load Balancer (CLB), TencentDB for  MySQL (MySQL), TencentDB for MongoDB (MongoDB), TencentDB for Redis (Redis), Message  Queue CKafka (CKafka), Cloud Object Storage (COS) features for this purpose. |
+| **User  Information:** nickname, avatar URL, personalized  signature, etc. of the relevant user of the Feature (depending on user  settings) | We only process this data for the purposes of providing the Feature to  you.   Please note that  this data is integrated with our Cloud Load Balancer (CLB), TencentDB for  MySQL (MySQL), TencentDB for MongoDB (MongoDB), TencentDB for Redis (Redis), Message  Queue CKafka (CKafka), Cloud Object Storage (COS) features for this purpose. |
 | **Chat  Message Records:** any written, photos,  audio and video message contents | We only process this data for the purposes of providing the Feature to  you.   Please note that  this data is integrated with our CLB, MySQL, MongoDB, Redis, CKafka, COS  features for this purpose. |
 
 ## 3.  SERVICE REGION
