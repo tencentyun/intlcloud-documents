@@ -13,7 +13,7 @@
 </thead>
 <tbody><tr>
 <td>Billing Mode</td>
-<td><ul><li/>Monthly subscription: <a href="https://intl.cloud.tencent.com/document/product/555/42701" target="_blank">prepaid</a>, where you should make a payment before creating clusters and using resources.<li/>Pay-as-you-go: <a href="https://intl.cloud.tencent.com/document/product/555/30328" target="_blank">postpaid</a>, where a bill is generated hourly based on resource usage and then you pay for what you use.</ul></td>
+<td><ul><li/>Pay-as-you-go: <a href="https://intl.cloud.tencent.com/document/product/555/30328" target="_blank">postpaid</a>, where a bill is generated hourly based on resource usage and then you pay for what you use.</ul></td>
 </tr>
 <tr>
 <td>Region</td>
