@@ -52,7 +52,7 @@ a. Configure multiple output groups. You can click the "+" icon to configure mul
 
 ![img](https://main.qcloudimg.com/raw/e6af7ba8a52e288e0d02dc3bea54871e.png)
 
-b. Set the name and type of an output group. Currently, StreamLive supports outputs in HLS and DASH formats. You can output HLS files to COS for archiving or output HLS/DASH streams to Tencent Cloud's StreamPackage under the same account. This allows you to build your own origin server for stable and large-scale distribution of live streams.
+b. Set the name and type of an output group. Currently, StreamLive supports outputs in HLS and DASH formats. You can output HLS files [to COS for archiving](https://intl.cloud.tencent.com/document/product/1048/45218) or output HLS/DASH streams [to Tencent Cloud's StreamPackage under the same account](https://intl.cloud.tencent.com/document/product/1048/45219). This allows you to build your own origin server for stable and large-scale distribution of live streams.
 
 >?
 > - [StreamLive Outputting to COS](https://intl.cloud.tencent.com/document/product/1048/45218)
