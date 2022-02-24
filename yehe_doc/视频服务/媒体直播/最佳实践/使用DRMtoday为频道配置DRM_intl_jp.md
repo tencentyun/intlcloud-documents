@@ -41,9 +41,7 @@ DRMtoday Dashboard URLに進み、Configuration-DRMsettingsを選択します。
   openssl x509 -inform der -in fairplay.cer -out fairplay.pem
   ```
 
-- Provider private key
-
-  ：ユーザーはキーで保護された秘密鍵を作成します。アップロードするキーのタイプはPKCS #8 PEM形式でなければならず、linuxのopensslツールを使用して変換することができます。例：秘密鍵のファイル名がprivatekey.pemの場合、変換コマンドは次のとおりです。
+- Provider private key：ユーザーはキーで保護された秘密鍵を作成します。アップロードするキーのタイプはPKCS #8 PEM形式でなければならず、linuxのopensslツールを使用して変換することができます。例：秘密鍵のファイル名がprivatekey.pemの場合、変換コマンドは次のとおりです。
 
   ```
   openssl rsa -in privatekey.pem -outform PEM -out out.pem
