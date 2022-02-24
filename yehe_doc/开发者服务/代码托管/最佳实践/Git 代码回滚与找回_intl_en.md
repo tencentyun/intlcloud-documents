@@ -117,8 +117,6 @@ If `-m <commit description> ` is not included in the command, Git pulls up the e
 ### Rollback scenario: Pushed to remote repository
 
 **Note: Use "git revert" instead of "git reset".  
-**注意！此时不能用 "git reset"，需要用 "git revert"！**  
-**注意！此时不能用 "git reset"，需要用 "git revert"！**  
 
  We want to emphasize this point because "git reset" will delete your history. This can cause various problems if you have already pushed records. But "git revert" only rolls back a commit and makes a new one without erasing history.  
 
