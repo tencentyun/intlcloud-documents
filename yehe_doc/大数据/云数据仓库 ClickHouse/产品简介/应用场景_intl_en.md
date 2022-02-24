@@ -1,0 +1,5 @@
+### User Behavior Analysis
+You can import data such as clicks and dwells in websites, apps, and games into Cloud Data Warehouse to build a large wide table for user characteristics analysis. Cloud Data Warehouse excels in query and responds to queries in milliseconds during multidimensional and multimodal analysis. This facilitates the analysis of user behavior characteristics and patterns, providing strong support for targeted marketing and membership conversion.
+
+### Enterprise Operations Analysis
+You can import massive amounts of enterprise operations data to Cloud Data Warehouse, which allows for hundreds of millions of queries in a large wide table in hundreds of dimensions in milliseconds. In this way, you can implement personalized statistics collection and uninterrupted analysis at any time to make informed business decisions. Cloud Data Warehouse can query data several times faster than traditional data warehouses. Additionally, it can be elastically scaled as needed, perfectly satisfying your need for a high-performance, cost-effective, and scalable data warehouse in the era of big data.
