@@ -66,7 +66,7 @@
 
    参数：
 
-   - **username、password**：可以使用DRMtoday的账号密码，也可以使用DRMtoday创建的API账号及其密码，[DRMtoday 创建API账号文档](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html? dummy#adding-accounts)。
+   - **username、password**：可以使用DRMtoday的账号密码，也可以使用DRMtoday创建的API账号及其密码，[DRMtoday 创建API账号文档](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html?dummy#adding-accounts)。
 
    b. CAS Ticket Retrieval：向CAS Login请求后返回的header中的Location地址发送HTTP POST请求。
 
