@@ -11,7 +11,7 @@ After you activate VOD, the system will assign you a default domain name `xxx.vo
 
 >?
 >- It takes several minutes to add a domain name. After that, you can view its status, CNAME, and domain name type.
->?One Tencent Cloud account can add up to 20 domain names.
+>- One Tencent Cloud account can add up to 20 domain names.
 
 ## Resolving Domain Name
 After adding a domain name, you need to configure the CNAME at the specific DNS service provider of the domain name, so that users can access your video information through the domain name.
