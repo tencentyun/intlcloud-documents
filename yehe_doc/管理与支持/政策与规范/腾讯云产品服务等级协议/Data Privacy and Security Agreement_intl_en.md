@@ -119,6 +119,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 19.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
 20.[Domains](https://intl.cloud.tencent.com/document/product/242/45147).
 21.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280).
+22.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45408).
 
 ## Jurisdiction-specific Requirements
 
