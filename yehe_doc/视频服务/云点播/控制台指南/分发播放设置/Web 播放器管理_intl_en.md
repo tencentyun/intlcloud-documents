@@ -9,7 +9,7 @@ With the web player management feature, you can easily customize the style of th
 2. Click **Create Player** in the top-left corner. In the pop-up window, set the following options as prompted:
 ![](https://main.qcloudimg.com/raw/371b691aeaad9889df3a6973be739891.png)
 	- Basic Settings: you can configure the player name, description, and default definition.
-		- Player Name: you can enter letters, digits, and underscores, with a length of up to 20 chars.
+		- Player Name: you can enter letters, digits, and underscores, with a length of up to 20 characters.
 		- Description: up to 50 characters.
 		- Default Definition: valid values include LD, SD, HD, and FHD. Default value: LD.
 	- Appearance: you can upload your own logo image, customize its position in the player, and set the redirection link upon click.
