@@ -66,7 +66,7 @@ The operations in this step are based on DRMtoday’s official document [DRMtoda
 
    The parameters are described as follows:
 
-   - **username** and **password**: you may use your DRMtoday account and password or the API account and password created at DRMtoday. For details, see DRMtoday's [document on API account creation](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html? dummy#adding-accounts).
+   - **username** and **password**: you may use your DRMtoday account and password or the API account and password created at DRMtoday. For details, see DRMtoday's [document on API account creation](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html?dummy#adding-accounts).
 
    b. CAS ticket retrieval: send an HTTP POST request to the location in the header of the response of the CAS login request.
 
