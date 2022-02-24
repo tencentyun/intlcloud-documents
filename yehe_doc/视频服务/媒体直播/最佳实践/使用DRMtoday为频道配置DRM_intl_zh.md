@@ -41,9 +41,7 @@
   openssl x509 -inform der -in fairplay.cer -out fairplay.pem
   ```
 
-- Provider private key
-
-  ：用户创建受密钥保护的私钥，上传密钥类型要求为PKCS #8 PEM格式，可以使用linux下的openssl工具进行转化。示例：私钥文件名为privatekey.pem，转化命令为:
+- Provider private key：用户创建受密钥保护的私钥，上传密钥类型要求为PKCS #8 PEM格式，可以使用linux下的openssl工具进行转化。示例：私钥文件名为privatekey.pem，转化命令为:
 
   ```
   openssl rsa -in privatekey.pem -outform PEM -out out.pem
