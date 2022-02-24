@@ -80,7 +80,7 @@ LogListener 采集程序的策略是，单个文件，只能上传至一个 topi
 
 ### 如何使用非 root 权限启动 LogListener？
 
-建议用户使用 root 权限安装启动。如需在非 root 权限下使用 loglistene，可以参考设置非 root 权限启动 LogListener。
+建议用户使用 root 权限安装启动。如需在非 root 权限下使用 LogListener，可以参考设置非 root 权限启动 LogListener)。
 
 
 ### 如何对 LogListener 的进程进行绑核？
