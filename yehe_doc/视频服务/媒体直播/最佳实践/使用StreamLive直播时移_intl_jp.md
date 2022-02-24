@@ -2,7 +2,7 @@
 
 
 
-### StreamPackage CSSタイムシフト機能のアクティブ化
+### StreamLive CSSタイムシフト機能のアクティブ化
 
 [チケットを提出](https://console.cloud.tencent.com/workorder/category)してStreamLiveタイムシフト機能のアクティブ化を申請します。ユーザーアカウントのAPPID、タイムシフトドメイン名を提供する必要があります。
 
