@@ -16,7 +16,7 @@ With the web player management feature, you can easily customize the style of th
 		- Logo Image: GIF, JPG, PNG, and BMP formats are supported. Dimensions: ≤ 200 * 200p. Size: ≤ 1MB.
 		- Redirect URL: this is the URL to redirect to upon clicking the logo image. You need to enter a valid URL and add the HTTP(S) protocol.
 		- Logo Position: Lower Left, Upper Left, Lower Right, or Upper Right.
-	- Roll Image: you can customize the pre-, mid-, and post-roll images for the video in the player, and redirection is supported for the images. GIF, JPG, PNG, and BMP formats are supported (for GIF files, only the first frame will be used). Video roll files of less than 1 MB will be supported in the future.
+	- Video Clip: you can customize the images that appear before and after the player plays content as well as when it stops the playback, and redirection is supported for the images. GIF, JPG, PNG, and BMP formats are supported (for GIF files, only the first frame will be used). Video roll files within 1 MB will be supported in the future.
 3. After creating the player, you can preview, modify, copy, or delete it or set it as the default player:
 	- Preview: open the preview video file and see the effects of the selected player.
 	- Modify: modify player settings in the "Modify Player" dialog box.
