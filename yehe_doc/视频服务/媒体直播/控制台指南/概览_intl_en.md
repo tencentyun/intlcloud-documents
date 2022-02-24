@@ -13,6 +13,7 @@ The StreamLive console consists of four modules: **Security Group Management **,
 | Channel Management | This is the main module of StreamLive, via which you can perform various video processing operations such as transcoding and remuxing and send the results to the specified destination or store them on COS. |
 | Watermark Management     | This module allows you to configure text or image watermark templates on the **Watermark Management** page and configure watermarks on the **Channel Management** page. |
 
+![](https://qcloudimg.tencent-cloud.cn/raw/e283f308d9debf0978b5bc9e83f89673.png)
 ### Console Entry
 
 Log in to the [StreamLive console](https://console.cloud.tencent.com/mdl/security).
