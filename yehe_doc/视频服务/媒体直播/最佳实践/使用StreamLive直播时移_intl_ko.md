@@ -2,7 +2,7 @@ StreamLive 라이브 방송을 통한 서비스 타임 시프트 이전에, 사�
 
 
 
-### StreamPackage 라이브 방송 타임 시프트 기능 활성화
+### StreamLive 라이브 방송 타임 시프트 기능 활성화
 
 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 StreamLive 타임 시프트 기능 활성화를 신청합니다. 사용자 계정 APPID 및 타임 시프트 도메인이 필요합니다.
 
