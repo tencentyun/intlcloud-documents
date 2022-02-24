@@ -9,48 +9,6 @@ Log in to the [Cloud Data Warehouse console](https://console.cloud.tencent.com/c
 
 >?You can configure an alarm threshold and export monitoring data for specific metrics. Metrics are collected once every 10 seconds, the minimum time granularity for data display is 1 minute, and the maximum value of data points collected within 1 minute is displayed.
 
-### Cluster alarm configuration
-1. On the cluster monitoring page, select a metric and configure its threshold for alarming as detailed below.
-2. On the CM console window that pops up, filter the instance objects (by ClickHouse cluster name) and configure the metric thresholds as instructed in the configuration template. The configuration items for an alarm policy are as displayed below:
-<table>
-<tr>
-<th>Item</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>Policy Name</td>
-<td>Name of the alarm policy</td>
-</tr>
-<tr>
-<td>Monitor Type</td>
-<td>Default: Cloud Product Monitoring</td>
-</tr>
-<tr>
-<td>Policy Type</td>
-<td>Default: Cloud Data Warehouse/CK alarm</td>
-</tr>
-<tr>
-<td rowspan="2">Alarm Object</td>
-<td>Default: Instance ID</td>
-</tr>
-<tr>
-<td>Select a ClickHouse cluster in the drop-down list</td>
-</tr>
-<tr>
-<td rowspan="2">Trigger Condition</td>
-<td>Default: Manual Configuration</td>
-</tr>
-<tr>
-<td>Thresholds and alarm policies configured in <b>Metric alarm</b></td>
-</tr>
-<tr>
-<td>Notification Template</td>
-<td>Select an existing notification template or create one</td>
-</tr>
-</table>
->?Do not modify the default values.
->
-3. Click **Complete** to submit the alarm policy. For more CM alarm policies, see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
 
 ## Monitoring Metrics
 ### Node metrics
@@ -113,4 +71,4 @@ For metric descriptions, see [system.metrics](https://clickhouse.tech/docs/en/op
 
 #### Notes
 1. ZooKeeper monitoring metrics are available for HA clusters on v21.3.9.84 or later.
-2. When advanced [Grafana monitoring](https://intl.cloud.tencent.com/document/product/1129/44427) is enabled, the basic monitoring page will be updated to the advanced monitoring page.
+
