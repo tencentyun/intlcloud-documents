@@ -4,7 +4,7 @@ StreamLive控制台基于Channel维度进行管理，您可以创建高质量的
 
 ### 控制台概览
 
-StreamLive控制台基于Channel维度进行管理。主要分为安全组（Security Groups）、频道输入（Input）、频道管理（Channel）、水印（Watermark）四个模块。
+StreamLive控制台由四个模块组成：安全组管理（Security Groups Management）、频道输入（Input Management）、频道管理（Channel Management）、水印（Watermark Management）。
 
 | 模块名称 | 模块功能                                                     |
 | -------- | ------------------------------------------------------------ |
