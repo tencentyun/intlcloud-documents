@@ -41,9 +41,7 @@ Check **Update certificate and keys**, and set the parameters as described below
   openssl x509 -inform der -in fairplay.cer -out fairplay.pem
   ```
 
-- **Provider private key**:
-
-  the password-protected private key created. The key must be in the PKCS#8 PEM format. You can convert a key into the required format using OpenSSL on Linux. For example, for a key file named `privatekey.pem`, the command for conversion is:
+- **Provider private key**: the password-protected private key created. The key must be in the PKCS#8 PEM format. You can convert a key into the required format using OpenSSL on Linux. For example, for a key file named `privatekey.pem`, the command for conversion is:
 
   ```
   openssl rsa -in privatekey.pem -outform PEM -out out.pem
