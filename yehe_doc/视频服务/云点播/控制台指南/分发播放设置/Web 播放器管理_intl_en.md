@@ -11,11 +11,11 @@ With the web player management feature, you can easily customize the style of th
 	- Basic Settings: you can configure the player name, description, and default definition.
 		- Player Name: you can enter letters, digits, and underscores, with a length of up to 20 characters.
 		- Description: up to 50 characters.
-		- Default Definition: valid values include LD, SD, HD, and FHD. Default value: LD.
+		- Default Definition: valid values include LD, SD, HD, and UHD. Default value: LD.
 	- Appearance: you can upload your own logo image, customize its position in the player, and set the redirection link upon click.
 		- Logo Image: GIF, JPG, PNG, and BMP formats are supported. Dimensions: ≤ 200 * 200p. Size: ≤ 1MB.
-		- Redirection Link: this is the URL to redirect to upon clicking the logo image. You need to enter a valid URL and add the HTTP(S) protocol.
-		- Logo Position: bottom left, top left, bottom right, or top right.
+		- Redirect URL: this is the URL to redirect to upon clicking the logo image. You need to enter a valid URL and add the HTTP(S) protocol.
+		- Logo Position: Lower Left, Upper Left, Lower Right, or Upper Right.
 	- Roll Image: you can customize the pre-, mid-, and post-roll images for the video in the player, and redirection is supported for the images. GIF, JPG, PNG, and BMP formats are supported (for GIF files, only the first frame will be used). Video roll files of less than 1 MB will be supported in the future.
 3. After creating the player, you can preview, modify, copy, or delete it or set it as the default player:
 	- Preview: open the preview video file and see the effects of the selected player.
