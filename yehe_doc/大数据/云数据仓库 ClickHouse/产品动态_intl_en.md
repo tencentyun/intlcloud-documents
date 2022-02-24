@@ -40,26 +40,6 @@
 </tbody></table>
 
 
-## July 2021
-
-<table>
-<thead>
-<tr>
-<th width=20%>Update</th>
-<th width=45%>Description</th>
-<th width=15%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported advanced monitoring for Cloud Data Warehouse clusters</td>
-<td>Cloud Data Warehouse supports the multi-metric monitoring dashboard at the cluster level for on-demand configuration of monitoring metrics and alarms.</td>
-<td>2021-07-30</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1129/44426">Cluster Monitoring</a><br><a href="https://intl.cloud.tencent.com/document/product/1129/44425">Alarm Configuration</a></td>
-</tr>
-</tbody></table>
-
 
 ## February 2021
 
