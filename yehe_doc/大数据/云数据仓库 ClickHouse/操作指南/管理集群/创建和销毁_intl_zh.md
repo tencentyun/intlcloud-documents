@@ -6,23 +6,21 @@
 - 在详情页，可以查看集群基本信息、集群监控、可进行集群参数配置、也可以查看集群操作记录。
 - 通过单击集群名称后面的编辑按钮，可对集群名字进行修改。
 
-![](https://main.qcloudimg.com/raw/bec82ce3426523f52b844227a2a9ab20.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/29e980bc48dfb1db3f0099b555f3de48.png)
 
 ## 查看监控信息
 在集群详情页，选择**集群监控**页签，可以查看集群的各种监控指标。
-![](https://main.qcloudimg.com/raw/b018e09953f89f7a80df20a6fba371da.png)![](https://main.qcloudimg.com/raw/752369a1de2150ac7b30eab55944db7e.png)
-
+![](https://qcloudimg.tencent-cloud.cn/raw/25322efcb9cb80dade95ff3281779805.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/80080915ccf6d678246011a8a10596a1.png)
 ## 集群销毁
 选择集群列表中**操作 > 销毁**，根据提示，完成集群销毁。
-- 包年包月的集群：集群销毁后，会以“已隔离”的状态保留7天，期间集群不可用，在此期间可进行续费，续费后集群可正常使用。
-![](https://main.qcloudimg.com/raw/f77972cb5c57ba37a885b18317f20a45.png)
 - 按量计费的集群：集群销毁后，则会在24小时内，释放资源，清除数据。
-![](https://main.qcloudimg.com/raw/be3b1cdeface74e6e3f346cbcbd8a028.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/60056113a1afaee3aa53850af6c88c04.png)
 
 ## 参数配置
 在集群详情页面，选择**参数配置**页签，进入到参数配置页面，该页面显示的参数来自 config.xml 文件。修改参数后，单击【应用到集群】，修改后的参数即可生效。
-![](https://main.qcloudimg.com/raw/66d3107976c004f926a90893493ecc40.png)
+
 
 ## 查看操作记录
 在集群详情页面，选择**操作记录**页签，可以查看一段时间内所有操作。
-![](https://main.qcloudimg.com/raw/abf5fbcdd831df231316f57cde29f543.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c563838c3f7d31845f63072bc73b2926.png)
