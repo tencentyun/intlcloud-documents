@@ -33,7 +33,7 @@ DRMtoday Dashboard URLに進み、Configuration-DRMsettingsを選択します。
 
 **Update certificate and keys**にチェックを入れた後、次のパラメータを設定します。
 
-   - **Application secret key(ASK)**：Fairplay証明書申請のステップ5で取得したASKを、hexエンコード形式で入力します。
+   - **Application secret key**(ASK)：Fairplay証明書申請のステップ5で取得したASKを、hexエンコード形式で入力します。
     
    - Provider certificate：Fairplay証明書申請のステップ6でダウンロードしたFairPlay Certificate（証明書）は、アップロードする証明書のタイプがPEM形式でなければならず、linuxのopensslツールを使用して変換することができます。例：証明書名がfairplay.cerの場合、変換コマンドは次のとおりです。
 
@@ -66,7 +66,7 @@ DRMtoday Dashboard URLに進み、Configuration-DRMsettingsを選択します。
 
    パラメータ：
 
-   - **username、password**：DRMtodayのアカウントパスワードを使用することも、DRMtodayで作成したAPIアカウントとそのパスワードを使用することもできます。[DRMtodayでのAPIアカウント作成ドキュメント](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html? dummy#adding-accounts)をご参照ください。
+   - **username、password**：DRMtodayのアカウントパスワードを使用することも、DRMtodayで作成したAPIアカウントとそのパスワードを使用することもできます。[DRMtodayでのAPIアカウント作成ドキュメント](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html?dummy#adding-accounts)をご参照ください。
 
    b. CAS Ticket Retrieval：CAS Loginリクエスト後に返されるheaderの中のLocationアドレスにHTTP POSTリクエストを送信します。
 
