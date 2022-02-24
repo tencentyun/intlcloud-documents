@@ -10,22 +10,23 @@
 ## 操作步骤
 1. 登录 [云数据仓库 ClickHouse](https://console.cloud.tencent.com/cdwch) 控制台，在【集群列表】中选择对应的集群，单击集群【名称/ID】进入集群详情页，在集群详情页单击【参数配置】。
 2. 存量集群“参数配置”页面以 KV 模式配置参数，支持的参数来自 config.xml 文件。按需调整参数后，单击【应用到集群】，修改后的参数即可生效。
- ![](https://main.qcloudimg.com/raw/c45bc08ead716820e3580b6b823e4d32.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/7d8ed86eef495fe9adc5cd4840ff2452.png)
 3. 新建集群或存量集群使用 XML 模式配置管理后，在“参数配置”页面会显示 XML 模式的参数配置。目前 XML 模式参数支持包括 config.xml、metrika.xml、users.xml 三个配置文件的当前内容的查看和编辑。下图显示了配置文件的当前内容。
- ![](https://main.qcloudimg.com/raw/bf24c77874834e87b4650bdf516f33ca.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/4ee91b79f9696929e8f27ce1758dbef3.png)
 可直接对配置文件的内容进行编辑，修改后可单击【保存配置】。
- ![](https://main.qcloudimg.com/raw/0f8f1cffa026784e26203cf0dbc112b8.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/735ddad46cb09d6d0f35846df0d82d10.png)
 可以通过【对比详情】查看修改情况。
- ![](https://main.qcloudimg.com/raw/de667c095debf81d065f64f3518ef534.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/0b937abff09be753c1e0b8e9b9636ecb.png)
 确定修改无误后，可单击【保存并下发】将新配置提交到集群节点上。
- ![](https://main.qcloudimg.com/raw/2481efaf13ba57ec6c79e07e246c3c84.png)
+
 4. 配置下发提交成功后，集群状态会进入“状态变更中”，并且修改的配置文件会提示“配置发生变化，请重启”。请根据具体配置修改的内容判断是否需要重启。如需重启，则单击右上角的【重启】，进行集群节点重启。
- ![](https://main.qcloudimg.com/raw/75ac514664a5754c631de50012f143b6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/b726149b6ae0d94fd0b16ae1107421e2.png)
 5.	提交配置修改后，可以在【修改历史】中查看配置文件的修改历史，以及每次修改的对比详情。
 
 ## 注意事项
 - 不建议用户在配置文件增加 Clickhouse 内核本身不支持的配置项，防止启动失败或其他问题。Clickhouse 支持的配置信息详情请参考 [Clickhouse 官方文档](https://clickhouse.tech/docs/en/operations/server-configuration-parameters/settings/)。
 -	目前该 XML 配置管理对 metrika.xml 支持的信息是有限的，目前只支持以下配置项和对应内容的修改。
+  
 ```
 <yandex>
     <clickhouse_remote_servers>
@@ -62,6 +63,7 @@
     </zookeeper-servers>
 </yandex>
 ```
+
 其中，new_cluster_1 表示支持新的 cluster 的名称，second_host 为 ClickHouse 对内核一个改进功能参数，目前只在 Clickhouse 内核版本20.8.7.15中支持。
  - 不支持 port 的修改，不支持 host 的 IP 设置为其他 IP 或其他集群的 IP。默认生成的 metrika.xml 中的 host 的 IP 与【基本信息】>【网络信息】中看到的 IP 是同一节点的两个 IP，前者用于后台管理，后者用于用户访问，metrika.xml 中的 IP 要使用非用户 VPC 的 IP 进行配置。
  - 建议 metrika.xml 只用于维护以上与 cluster 和 zookeeper 相关的信息，如果在 metrika.xml 中增加了其他不支持的配置项，虽然提交修改成功，但是有不生效或丢失的风险。metrika.xml 后续会逐渐完善对更多配置项的支持后，会同步文档说明。
