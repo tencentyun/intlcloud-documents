@@ -10,17 +10,17 @@ This document describes how to manage clusters in the console. You can adopt eit
 ## Directions
 1. Log in to the [Cloud Data Warehouse console](https://console.cloud.tencent.com/cdwch), select the target cluster in **Cluster List**, click **Name/ID** to enter the cluster details page, and click **Parameter Configuration**.
 2. On the **Parameter Configuration** tab for existing clusters, parameters can be configured in key-value mode and come from the `config.xml` file. After a parameter is modified, click **Apply to Cluster** for the modification to take effect.
- ![](https://main.qcloudimg.com/raw/c45bc08ead716820e3580b6b823e4d32.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/7d8ed86eef495fe9adc5cd4840ff2452.png)
 3. For new clusters or existing clusters with the parameter configuration mode switched to XML, the **Parameter Configuration** tab displays parameter configurations in XML mode. Currently, you can view and edit parameters in `config.xml`, `metrika.xml`, and `users.xml` files as shown below.
- ![](https://main.qcloudimg.com/raw/bf24c77874834e87b4650bdf516f33ca.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/4ee91b79f9696929e8f27ce1758dbef3.png)
 You can edit a configuration file and click **Save Configuration**.
- ![](https://main.qcloudimg.com/raw/0f8f1cffa026784e26203cf0dbc112b8.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/735ddad46cb09d6d0f35846df0d82d10.png)
 You can view the modification through **Details**.
- ![](https://main.qcloudimg.com/raw/de667c095debf81d065f64f3518ef534.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/0b937abff09be753c1e0b8e9b9636ecb.png)
 After confirming that the modification is correct, click **Save and Deliver** to commit it to the nodes in the cluster.
- ![](https://main.qcloudimg.com/raw/2481efaf13ba57ec6c79e07e246c3c84.png)
+
 4. The cluster will enter the **Changing** status, and the prompt "Configuration has changed. Please restart" will be displayed. Determine whether a restart is needed according to the specific modification, and if so, click **Restart** in the top-right corner.
- ![](https://main.qcloudimg.com/raw/75ac514664a5754c631de50012f143b6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/b726149b6ae0d94fd0b16ae1107421e2.png)
 5. 	After the modification is committed, you can view the modification history of the configuration file and the comparison details of each modification in **Modification History**.
 
 ## Notes
