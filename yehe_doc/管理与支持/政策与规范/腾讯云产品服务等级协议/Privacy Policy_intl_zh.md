@@ -570,3 +570,4 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 16.[微瓴物联网类操作系统](https://intl.cloud.tencent.com/document/product/1115/44315)。
 17.[事件总线](https://intl.cloud.tencent.com/document/product/1108/44831)。
 18.[域名注册](https://intl.cloud.tencent.com/document/product/242/45146)。
+19.[轻量应用服务器](https://intl.cloud.tencent.com/document/product/1103/45279).
