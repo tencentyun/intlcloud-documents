@@ -121,7 +121,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 21.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280).
 22.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45408).
 23.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
-24.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45413)
+24.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45413).
 ## Jurisdiction-specific Requirements
 
 **Europe**
