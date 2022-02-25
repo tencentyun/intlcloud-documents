@@ -48,5 +48,5 @@ The upgrade duration depends on the amount of data in the instance, the data rep
 TencentDB for MySQL upgrade involves data migration and generally takes a relatively long time. Please wait patiently. Your business will not be affected during the upgrade process and can be accessed normally.
 
 #### Why is the instance always in the "Waiting for switch" status?
-It may be because you select **During maintenance window** as the **Switch Time**, and the switch will be initiated within the next maintenance window after the instance upgrade is completed.
+It may be because you select **During maintenance time** as the **Switch Time**, and the switch will be initiated within the next maintenance window after the instance upgrade is completed.
 To switch the instance immediately, click **Switch Now** in the **Operation** column in the instance list. The connection may be interrupted during switch. Make sure that the database has a reconnection mechanism.
