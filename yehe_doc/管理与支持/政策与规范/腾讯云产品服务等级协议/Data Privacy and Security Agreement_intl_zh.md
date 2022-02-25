@@ -121,7 +121,7 @@
 18.[微瓴物联网类操作系统](https://intl.cloud.tencent.com/document/product/1115/44314)。
 19.[事件总线](https://intl.cloud.tencent.com/document/product/1108/44830)。
 20.[域名注册](https://intl.cloud.tencent.com/document/product/242/45147)。
-
+21.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280)
 
 
 ## 特定司法管辖区要求
