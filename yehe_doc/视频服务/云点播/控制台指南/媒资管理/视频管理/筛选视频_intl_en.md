@@ -13,8 +13,8 @@ This document describes how to filter video files in the VOD console.
 | FileID | The unique identifier of a file uploaded to VOD. |
 | Category | The media asset category you specified. If you don't specify a category for a media asset, it will be categorized as "Other" by default. |
 | Source | The source of a media resource you uploaded to VOD, such as live recording, local upload, and MPS. |
-| Video label | The media asset label you specified. |
-| Name prefix | The media asset name prefix you specified. |
-| File description | Your description of a media asset. |
-| Upload time | The time when a file was uploaded. |
+| Video Label | The media asset label you specified. |
+| Name Prefix | The media asset name prefix you specified. |
+| File Description | Your description of a media asset. |
+| Uploading Time | The time when a file was uploaded. |
 | Stream ID | The stream ID you used during live recording. |
