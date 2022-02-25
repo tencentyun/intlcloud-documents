@@ -4,7 +4,7 @@
 
 예시: 다음 이미지에서 인스턴스 A와 C의 동일한 이름을 가진 테이블은 인스턴스 B와 동기화해야 합니다. 동기화 작업 1과 4에서 하나의 작업에서만 DDL을 선택할 수 있습니다.  
 
-<img src="https://main.qcloudimg.com/raw/273f8bdd817008e04f79a1e5a18d049e.png" style="zoom:40%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f1e3638e92d99b6e51b61e0980e96a83.png" style="zoom:40%;" />
 
 ## 수정 방법
 
