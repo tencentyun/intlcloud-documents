@@ -43,7 +43,7 @@ The operation takes a long time, and the instance will be disconnected for sever
 		As the same private IP is shared within an RO group, if a VPC is used, the same security group settings will be shared. If an RO group is specified, it is not possible to customize any security group when instances are purchased.
  - Remove Delayed RO Instances: this option indicates whether to enable the removal policy. If a read-only instance is removed when its delay exceeds the threshold, it will become inactive, its weight will be set to 0 automatically, and warning notifications will be sent out (for more information on how to configure the read-only instance removal alarm and recipients, see [Alarming Feature](https://intl.cloud.tencent.com/document/product/236/8457). The instance will be put back into the RO group when its delay falls below the threshold. No matter whether this option is enabled, a read-only instance that is removed due to instance failure will rejoin the RO group when it is repaired.
 ![](https://main.qcloudimg.com/raw/5c002d37fdeb72a5396a394133672338.png)
-4. After the purchase is completed, you will be redirected to the instance list. After the status of the read-only replica is displayed as **Running**, it can be used normally.
+4. After the purchase is completed, you will be redirected to the instance list. After the status of the read-only instance is displayed as **Running**, it can be used normally.
 
 ## FAQs
 #### What are the rules for removing read-only instances?
