@@ -25,10 +25,10 @@ TencentDB for MySQL supports database engine upgrade:
 >?MySQL 8.0 cannot be upgraded to a later version.
 >
 2. In the pop-up window, select the database version to be upgraded to and click **Upgrade**.
-As database upgrading involves data migration, after the upgrade is completed, a very short disconnection from the MySQL database lasting for just seconds may occur. When the upgrade is initiated, the **Switch Time** can be selected as **During maintenance window**, so that the switch will be initiated within the next **maintenance window** after the instance upgrade is completed.
->!If you select **During maintenance window**, the switch will not occur immediately after the database specification upgrade is completed; instead, the sync will continue till the instance goes into the next **maintenance window** when the switch will be performed. In this way, the overall time it takes to upgrade the instance may be extended.
+As database upgrading involves data migration, after the upgrade is completed, a very short disconnection from the MySQL database lasting for just seconds may occur. When the upgrade is initiated, the **Switch Time** can be selected as **During maintenance time**, so that the switch will be initiated within the next **maintenance window** after the instance upgrade is completed.
+>!If you select **During maintenance time**, the switch will not occur immediately after the database specification upgrade is completed; instead, the sync will continue till the instance goes into the next **maintenance window** when the switch will be performed. In this way, the overall time it takes to upgrade the instance may be extended.
 >
-![](https://main.qcloudimg.com/raw/8a27b736891296d8c64077cf01409f08.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5fd7b83457ffb0cab80112ad32e8e0be.png)
 
 ## FAQs
 #### Will TencentDB for MySQL automatically back up data before upgrade?
