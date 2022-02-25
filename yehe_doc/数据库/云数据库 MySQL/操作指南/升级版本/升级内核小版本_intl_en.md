@@ -25,7 +25,7 @@ You can also manually upgrade kernel minor version in the console.
 2. In the **Configuration Info** section, click **Upgrade Kernel Minor Version**.
 ![](https://main.qcloudimg.com/raw/3fda3cffc784b3cde619e698d728d486.png)
 3. In the pop-up dialog box, select the switch time and click **Upgrade**.
->!As database upgrading involves data migration, after the upgrade is completed, a very short disconnection from the MySQL database lasting for just seconds may occur. We recommend that you select **During maintenance window** as the switch time, so that the switch will be initiated within the next maintenance time after the instance upgrade is completed.
+>!As database upgrading involves data migration, after the upgrade is completed, a very short disconnection from the MySQL database lasting for just seconds may occur. We recommend that you select **During maintenance time** as the switch time, so that the switch will be initiated within the next maintenance time after the instance upgrade is completed.
 >
-![](https://main.qcloudimg.com/raw/19d059cb26a22b9ae8c173daae8590e8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c758e092bce297bbfeb553297bf9b266.png)
 
