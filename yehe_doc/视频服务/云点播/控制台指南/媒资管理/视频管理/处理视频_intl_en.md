@@ -1,9 +1,9 @@
 ## Overview
-This document describes how to process videos in the VOD Console, such as transcoding, watermarking, and auditing videos.
+This document describes how to process videos in the VOD console, such as transcoding, watermarking, and auditing videos.
 
 ## Directions
-1. Log in to the VOD Console and select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** to enter the "Uploaded" page by default.
-2. Select one or more target video files, click **Process Video** above the list, configure video processing parameters in the "Process Video" pop-up window according to the table below, and click **OK** to start executing the video processing task.
+1. Log in to the VOD console and select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**. The "Uploaded" page is displayed.
+2. Select one or more target video files, click **Process Video** above the list, configure video processing parameters in the "Process Video" pop-up window according to the table below, and click **Confirm** to start executing the video processing task.
 ![](https://qcloudimg.tencent-cloud.cn/raw/2f3e527fc7a03ece7ffa5a9bbee0fdaf.png)
 
 <table>
@@ -15,7 +15,7 @@ This document describes how to process videos in the VOD Console, such as transc
      </tr>
 	 <tr>      
          <td>Transcoding</td>   
-	     <td>If **Transcoding** is selected as the processing type, this parameter is <b>"Transcoding Template"</b><ul><li>Click **Transcoding Template** to select an existing template<li>Click **Common Template** to select a common template</ul></td>   
+	     <td>If **Transcoding** is selected as the processing type, this parameter is <b>Transcoding Template</b><ul><li>Click **Transcoding Template** to select an existing template<li>Click **Common Template** to select a common template</ul></td>   
 	     <td nowrap="nowrap"><ul><li>Select **No watermark** <li>Select **Default watermark** <li>Select **Select watermark template**</td>   
 	     <td>Select whether to use the first frame as the video cover</td>
      </tr> 
