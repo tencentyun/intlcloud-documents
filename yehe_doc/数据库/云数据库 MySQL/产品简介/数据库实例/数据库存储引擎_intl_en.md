@@ -9,7 +9,7 @@ TencentDB for MySQL supports InnoDB by default. It no longer supports the MyISAM
 - MyISAM has defects in protecting data integrity, which may lead to data corruption or even loss. Moreover, many of these defects are design issues and cannot be fixed without breaking compatibility.
 - Migration from MyISAM and Memory to InnoDB can be achieved at low cost by simply changing the code to create the tables for most applications.
 - MyISAM is giving ground to InnoDB. In the latest MySQL 8.0, all system tables come in the InnoDB type.
-- Memory cannot guarantee data integrity. If the instance restarts or experiences master/slave switch, all data in the table will be lost. It's recommended to migrate to InnoDB as soon as possible.
+- Memory cannot guarantee data integrity. If the instance restarts or experiences source/replica switch, all data in the table will be lost. It's recommended to migrate to InnoDB as soon as possible.
 
 For more information, please see [InnoDB Overview](https://dev.mysql.com/doc/refman/5.7/en/innodb-introduction.html) and [MyISAM Overview](https://dev.mysql.com/doc/refman/5.7/en/myisam-storage-engine.html).
 
