@@ -31,9 +31,9 @@ You can directly change the video storage class as needed. The following storage
 5. DEEP ARCHIVE is currently available only in Beijing, Shanghai, and Chongqing.
 6. **STANDARD_IA, ARCHIVE, or DEEP ARCHIVE files must be stored for at least a minimum storage duration, and will still be billed for the minimum storage duration if deleted early.**
 >?
->- Minimum storage duration for STANDARD_IA days: 30 days
->- Minimum storage duration for ARCHIVE days: 90 days
->- Minimum storage duration for DEEP ARCHIVE days: 180 days
+>- Minimum storage duration for STANDARD_IA files: 30 days
+>- Minimum storage duration for ARCHIVE files: 90 days
+>- Minimum storage duration for DEEP ARCHIVE files: 180 days
 >- Minimum storage duration for daily billing and monthly billing users: billed the next day and month respectively.
 
 #### Use limits:
