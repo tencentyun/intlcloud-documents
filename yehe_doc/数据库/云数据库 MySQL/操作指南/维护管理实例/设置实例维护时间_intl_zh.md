@@ -15,7 +15,7 @@
 2. 在详情页的**维护信息**处，单击**修改**。
 ![](https://main.qcloudimg.com/raw/388e3aa6ca18c6cb947eb4d053ad1eb5.png)
 3. 在弹出的对话框，选择您所需的“维护周期”和“维护时间”，单击**确定**。
-![](https://main.qcloudimg.com/raw/001fee80a9e1e7f5f55c2de15802a613.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/91738d5593aad8f573fde932420ae9fe.png)
 
 <span id="lijiqiehuan"></span>
 ### 立即切换
