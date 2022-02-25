@@ -1,13 +1,13 @@
 ## Overview
 
-This document describes how to upload images through the VOD Console, including local upload and image pull.
+This document describes how to upload images through the VOD console, including local upload and image pull.
 >!JPG, JPEG, PNG, GIF, BMP, TIFF, AI, CDR, and EPS formats are supported.
 
 
 ## Local Upload
 
 
-1. Log in to the VOD Console and select **Media Assets** > **[Image Management](https://console.cloud.tencent.com/vod/pics)** to enter the "Uploaded" page by default. Click **Upload Image** to enter the image upload page.
+1. Log in to the VOD console and select **Media Assets** > **[Image Management](https://console.cloud.tencent.com/vod/pics)**. The "Uploaded" page is displayed. Click **Upload Image** to enter the image upload page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/082b64eabda8615e87ef4686ce2607cb.png)
 2. Select **Local Upload** to upload a local file to the console. Click **Select Image** to select a local image file or drag and drop the file into the upload list zone.
 >?
@@ -18,9 +18,9 @@ This document describes how to upload images through the VOD Console, including 
 ## Image Pull
 
 
-1. Log in to the VOD Console and select **Media Assets** > **[Image Management](https://console.cloud.tencent.com/vod/pics)** to enter the "Uploaded" page by default. Click **Upload Image** to enter the image upload page.
+1. Log in to the VOD console and select **Media Assets** > **[Image Management](https://console.cloud.tencent.com/vod/pics)**. The "Uploaded" page is displayed. Click **Upload Image** to enter the image upload page.
 2. Select **Pull Image** to pull an image from the image URL to the console.
-3. Click **Add a row** in the upload list section and enter the information of the source image to be uploaded. Each row represents an image. You can add multiple images by repeatedly clicking this button.
+3. Click **Add a Row** in the upload list section and enter the information of the source image to be uploaded. Each row represents an image. You can add multiple images by repeatedly clicking this button.
 	- Image URL: enter the URL information of the source image.
 	- Image Name: enter the name of the source image.
 	- Image Category: select an image category.
