@@ -25,7 +25,7 @@ Basic information:
 | Field     | Description       |
 | ------- | --------------------------------------- |
 | FileId  | `FileId` of the media on which the task is executed                |
-| Filename    | Filename of the media                       |
+| File Name    | Filename of the media                       |
 | Task Type    | Type of task attached to the `FileId`, which can be video processing, video audit, content analysis, or content recognition |
 | Task Status    | <li>Processing</li><li>Completed</li>                                 |
 | Subtask|  Name of the subtask attached to the `FileId`               |
