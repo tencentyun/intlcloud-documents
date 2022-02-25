@@ -14,7 +14,7 @@ Your identity needs to be verified first. For more information, see [Identity Ve
 >- If the source and replica nodes are in different AZs, there may be an additional network sync delay of 2–3 ms.
 >- When you purchase Tencent Cloud services, we recommend you select the region closest to you to minimize access latency and improve download speed.
  - **Instance Type**: general or dedicated. For more information, see [Resource Isolation Policy](https://intl.cloud.tencent.com/document/product/236/39794).
- - **Instance Specs**: select specifications as needed.
+ - **Instance Specification**: select specifications as needed.
  - **Hard Disk**: the disk space is used to store the files required by MySQL execution.
  - **Network**: select the network where the TencentDB for MySQL instance resides, which is "Default-VPC (default)" by default. We recommend that you select the same VPC in the same region as the CVM instance to be connected to. Otherwise, the MySQL instance cannot be connected from the CVM instance over the private network.
  - **Security Group**: for more information on security group creation and management, see [TencentDB Security Group Management](https://intl.cloud.tencent.com/document/product/236/14470).
