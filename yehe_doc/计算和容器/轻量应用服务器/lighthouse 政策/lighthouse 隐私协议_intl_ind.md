@@ -10,6 +10,7 @@ Fitur ini tersedia untuk pengguna secara global, tetapi ditujukan terutama bagi 
 
 ## 4.CARA KAMI MENGGUNAKAN INFORMASI PRIBADI
 Kami akan menggunakan informasi dengan cara berikut dan sesuai dengan dasar hukum berikut:
+
 | **Informasi Pribadi**                                     | **Penggunaan** |**Dasar Hukum**  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
 |**Alamat Jaringan Publik**  |Kami menggunakan informasi ini untuk tujuan menyediakan Fitur kepada Anda.  |Kami memproses informasi ini karena merupakan hal yang penting bagi kami guna melaksanakan kontrak kami dengan Anda untuk menyediakan Fitur.  |
