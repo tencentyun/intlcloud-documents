@@ -117,7 +117,7 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 18.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44314).
 19.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
 20.[Domains](https://intl.cloud.tencent.com/document/product/242/45147).
-
+21.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280)
 ## 法域特定の要件
 
 **ヨーロッパ**
