@@ -41,7 +41,7 @@ On the RO group configuration page, you can configure the basic information of t
 >- The replication delay option will appear only after delayed replication is enabled.
 >
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click a source instance ID to enter the instance management page.
-2. On the instance management page, click the **Read-Only Instance** tab and click **Configure** in the **RO Group** column to enter the RO group configuration page.
+2. On the instance management page, select the **Read-Only Instance** tab, locate the desired RO group, and click **Configuration** to enter the RO group configuration page.
 ![](https://main.qcloudimg.com/raw/f03a6fc7e5460181e1e933157b4922cb.png)
 3. On the RO group configuration page, configure the RO group information and click **OK**.
    You can set delayed replication and select to replay by flashbacked position or global transaction identifier (GTID) during the delay to efficiently roll back data and fix failures.
@@ -69,11 +69,11 @@ On the RO group configuration page, you can configure the basic information of t
 >?
 >
 >- RO groups cannot be deleted manually.
-- An RO group will be automatically deleted when the last read-only instance in it is eliminated.
-- Empty RO groups cannot be retained.
+>- An RO group will be automatically deleted when the last read-only instance in it is eliminated.
+>- Empty RO groups cannot be retained.
 >
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click a source instance ID to enter the instance management page.
-2. On the instance management page, click the **Read-Only Instance** tab and click **Terminate/Return** in the **Operation** column on the right.
+2. On the instance management page, select the **Read-Only Instance** tab, locate the desired RO group, and delete all read-only instances by clicking **Terminate/Return** on the right.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ef06e1a956370519e0c0b652b8a07c72.png)
 3. In the pop-up window, read and agree to the **Termination Rules** and click **Terminate Now**.
 
