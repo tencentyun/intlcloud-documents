@@ -12,7 +12,7 @@ This document describes how to set delayed replication for read-only instances a
 
 ### Enabling on the read-only instance's RO group configuration page
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click a source instance ID to enter the instance management page.
-2. On the instance management page, click the **Read-Only Instance** tab and click **Configure** in the **RO Group** column to enter the RO group configuration page.
+2. On the instance management page, select the **Read-Only Instance** tab, locate the desired RO group, and click **Configuration** to enter the RO group configuration page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/87041c7addd9dcfd058b2d3f7c417625.png)
 3. On the RO group configuration page, enable **Delayed Replication**, set the **Replication Delay**, and click **OK**.
    You can set delayed replication and select to replay by flashbacked position or global transaction identifier (GTID) during the delay to efficiently roll back data and fix failures.
@@ -21,7 +21,7 @@ This document describes how to set delayed replication for read-only instances a
    - **Delay Threshold**: this sets a delay threshold for the read-only instance. When the threshold is exceeded, the instance will be removed from the read-only group.
    - **Least RO Instances**: this is the minimum number of instances that should be retained in the RO group. When there are fewer instances in the RO group, even if an instance exceeds the delay threshold, it will not be removed.
    - **Assign Read Weight**: the RO group supports two weight assignment methods: automatic assignment by the system and custom assignment. The weight value must be an integer between 0 and 100.
-   - **Rebalance**:
+   - **Load Rebalancing**:
     - Modifying weight will only affect new loads if rebalancing is disabled. The operation has no impact on read-only instances accessed by existing persistent connections and does not cause momentary database disconnection.
     - If rebalancing is enabled, all connections to the database will be temporarily disconnected, and the loads of newly added connections will be balanced according to the set weights.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/c40a92c3a6dcc083ac92f01169b259ff.png"  style="zoom:50%;">
@@ -39,26 +39,28 @@ This document describes how to set delayed replication for read-only instances a
 ## Modifying Delayed Replication
 ### Modifying on the read-only instance's RO group configuration page
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click a source instance ID to enter the instance management page.
-2. On the instance management page, click the **Read-Only Instance** tab and click **Configure** in the **RO Group** column to enter the RO group configuration page.
+2. On the instance management page, select the **Read-Only Instance** tab, locate the desired RO group, and click **Configuration** to enter the RO group configuration page.
 3. On the RO group configuration page, modify **Replication Delay** and click **OK**.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/437d781e478652416c166449b4420910.png"  style="zoom:60%;">
 
 ### Modifying on the read-only instance management page
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click a read-only instance ID in the instance list to enter the read-only instance details page.
-2. On the read-only instance details page, click **Modify** in **Deployment Info** > **Delayed Replication**.
+2. On the read-only instance details page, click **Modify** in **Deployment Info** > **Delayed Replication**.  
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/5098762edf0e478942ad060c5bd80da5.png"  style="zoom:80%;">
 3. In the pop-up window, set the delay and click **OK**.
 
 ## Disabling Delayed Replication
 ### Disabling on the read-only instance's RO group configuration page
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click a source instance ID to enter the instance management page.
-2. On the instance management page, click the **Read-Only Instance** tab and click **Configure** in the **RO Group** column to enter the RO group configuration page.
-3. On the RO group configuration page, click **Disable Delayed Replication** and click **OK**.
+2. On the instance management page, select the **Read-Only Instance** tab, locate the desired RO group, and click **Configuration** to enter the RO group configuration page.
+3. On the RO group configuration page, click **Delayed Replication** and click **OK**.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/9191e1c61694da2970323b59a21c59f3.png"  style="zoom:70%;">
 
 ### Disabling on the read-only instance management page
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click a read-only instance ID in the instance list to enter the read-only instance details page.
 2. On the read-only instance details page, click **Disable** in **Deployment Info** > **Delayed Replication**.
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/5f3a33f7b23513b8766eb62455406478.png"  style="zoom:80%;">
 3. In the pop-up dialog box, confirm that everything is correct and click **OK**.
 >?If delayed replication is disabled, the delayed replication time will be 0 seconds, that is, real-time data sync is resumed between the read-only instance and its source instance. 
@@ -84,9 +86,11 @@ The length of instance `server_uuid` is fixed at 36 bits, and the GTID must be i
 >- To avoid overusing the disk space of a delayed read-only instance when replication is disabled for it, the I/O thread of the read-only instance will be paused when its available disk space drops below 5 GB.
 > 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/92671ad35d5ef5acbfdf3bfbb47f967a.png"  style="zoom:85%;">
-5. During the process of replay by flashbacked position, you can click **Replaying** after **Replication Status** to query and refresh the task details.
+5. During the process of replay by flashbacked position, you can click **Replaying** after **Replication Status** to query and refresh the task details.  
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/39274c3aa8e92e6c4dfe0a242de0392e.png"  style="zoom:85%;">
-6. After the replication is completed, click **Enable** after **Replication Status**, and the read-only instance can continue to replicate.
+6. After the replication is completed, click **Enable** after **Replication Status**, and the read-only instance can continue to replicate.  
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/b27f75181ebae1e8c9b833762ba9388d.png"  style="zoom:85%;">
 
 
@@ -96,7 +100,7 @@ The length of instance `server_uuid` is fixed at 36 bits, and the GTID must be i
 >- Once replication is disabled, I/O and SQL threads will also be ended.
 >
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click a read-only instance ID in the instance list to enter the read-only instance details page.
-2. On the read-only instance details page, click **Stop** in **Deployment Info** > **Replication Status**.
+2. On the read-only instance details page, click **Disable** in **Deployment Info** > **Replication Status**.
 <img src="https://main.qcloudimg.com/raw/8921d228b70bf42ca5120d6fcf44e92c.png"  style="zoom:85%;">
 3. In the pop-up dialog box, confirm that everything is correct and click **OK**.
 
