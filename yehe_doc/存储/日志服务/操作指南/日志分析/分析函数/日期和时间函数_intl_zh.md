@@ -39,7 +39,7 @@ histogram(time_column, interval)
 
 | 参数        | 说明                                                         |
 | ----------- | ------------------------------------------------------------ |
-| time_column | 时间列（KEY），例如 \_\_TIMESTAMP\_\_。</br>该列的值必须为毫秒的 LONG 类型或 TIMESTAMP 类型的日期时间表达式。如果时间列不符合上述要求，可以使用 cast 函数将 ISO8601 格式的时间字符串转换为 TIMESTAMP 类型，例如`cast('2020-08-19T03:18:29.000Z' as timestamp)`。 |
+| time_column | 时间列（KEY），例如 \_\_TIMESTAMP\_\_。该列的值必须为毫秒的 LONG 类型 UNIX 时间戳或 TIMESTAMP 类型的日期时间表达式。</br>如果时间列不符合上述要求，可以使用 cast 函数将 ISO8601 格式的时间字符串转换为 TIMESTAMP 类型，例如`cast('2020-08-19T03:18:29.000Z' as timestamp)`，或使用 [date_parse](#date_parse) 函数转换其他自定义类型时间字符串。</br>时间列使用 TIMESTAMP 时，其对应的日期时间表达式需要为 UTC+0 时区。如果日期时间表达式本身为其他时区，需通过计算调整为 UTC+0 时区。例如原始时间为北京时间（UTC+8）时，使用`cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour`进行调整。 |
 | interval    | 时间间隔，支持单位为 SECOND（秒）、MINUTE（分）、HOUR（小时）、DAY（天）、MONTH（月）、YEAR（年）。例如时间间隔5分钟，即 INTERVAL 5 MINUTE。 |
 
 **示例**
@@ -50,7 +50,7 @@ histogram(time_column, interval)
 * | select histogram(__TIMESTAMP__, INTERVAL 5 MINUTE) AS dt, count(*) as PV group by dt order by dt limit 1000
 ```
 
-
+![image-20210719003224086](https://main.qcloudimg.com/raw/13bfe6019fb000314de02acbeb7b68f7.png)
 
 
 
@@ -71,7 +71,7 @@ time_series(time_column, interval, format, padding)
 
 | 参数        | 说明                                                         |
 | ----------- | ------------------------------------------------------------ |
-| time_column | 时间列（KEY），例如 \_\_TIMESTAMP\_\_。</br>该列的值必须为毫秒的 LONG 类型或 TIMESTAMP 类型的日期时间表达式。 |
+| time_column | 时间列（KEY），例如 \_\_TIMESTAMP\_\_。该列的值必须为毫秒的 LONG 类型 UNIX 时间戳或 TIMESTAMP 类型的日期时间表达式。</br>如果时间列不符合上述要求，可以使用 cast 函数将 ISO8601 格式的时间字符串转换为 TIMESTAMP 类型，例如`cast('2020-08-19T03:18:29.000Z' as timestamp)`，或使用 [date_parse](#date_parse) 函数转换其他自定义类型时间字符串。</br>时间列使用 TIMESTAMP 时，其对应的日期时间表达式需要为 UTC+0 时区。如果日期时间表达式本身为其他时区，需通过计算调整为 UTC+0 时区。例如原始时间为北京时间（UTC+8）时，使用`cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour`进行调整。 |
 | interval    | 时间间隔，支持单位为s（秒）、m（分）、h（小时）、d（天）。例如5分钟，即5m。 |
 | format      | 返回结果为 format 时间格式。                                 |
 | padding     | 补全的内容，包括：<ul  style="margin: 0;"><li>0：将缺失的值补全为0。</li><li>null：将缺失的值补全为 null。</li><li>last：将缺失的值补全为上一个时间点的值。</li><li>next：将缺失的值补全为下一个时间点的值。</li><li>avg：将缺失的值补全为前后两个时间点的平均值。</li></ul> |
@@ -84,7 +84,7 @@ time_series(time_column, interval, format, padding)
 * | select time_series(__TIMESTAMP__, '2m', '%Y-%m-%dT%H:%i:%s+08:00', '0')  as time, count(*) as count group by time order by time limit 1000
 ```
 
-
+![](https://qcloudimg.tencent-cloud.cn/raw/99a7347df11c30457ae49f63e4df1ecf.png)
 
 ## 时间截断函数
 
@@ -138,7 +138,7 @@ unit 取值如下：
 ```
 * ｜ SELECT date_diff('second', TIMESTAMP '2020-03-01 00:00:00', TIMESTAMP '2020-03-02 00:00:00')
 ```
-
+![image-20210715010326425](https://main.qcloudimg.com/raw/30aa668d55d1689a15840f8a14ebae43.png)
 
 
 
@@ -167,10 +167,11 @@ unit 取值如下：
 ```
 * | SELECT parse_duration('3.81 d')
 ```
+![image-20210715012028686](https://main.qcloudimg.com/raw/7a6b418727cc5366166f1272e43358d1.png)
 
 
-
-## **时间格式化函数**
+<span id="date_parse"></span>
+## 时间格式化函数
 
 | 函数名                         | 说明                                                         | 示例                                                         |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -217,5 +218,5 @@ Format 说明：
 ```
 * | SELECT date_parse('2017-05-17 09:45:00','%Y-%m-%d %H:%i:%s')
 ```
-
+![image-20210715155837224](https://main.qcloudimg.com/raw/543fc20f5945d5ca1f33aa5b2356ac91.png)
 

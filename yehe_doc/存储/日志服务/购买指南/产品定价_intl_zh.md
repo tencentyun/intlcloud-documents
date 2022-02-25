@@ -11,127 +11,123 @@
 <table>
    <tr>
       <th colspan="2" rowspan="3"><center>地域</center></th>
-			<th colspan="9"><center>计费项</center></th>
+			<th colspan="10"><center>计费项</center></th>
    </tr>
    <tr>
       <th colspan="4"><center>流量类</center></th>
       <th colspan="3"><center>存储量类</center></th>
-      <th colspan="2"><center>其他</center></th>
+      <th colspan="3"><center>其他</center></th>
    </tr>
    <tr>
-      <td>写流量(元/GB/日)</td>
-      <td>外网读流量（元/GB/日）</td>
-      <td>内网读流量(元/GB/日)</td>
-      <td>索引流量（元/GB/日）</td>
-      <td>索引存储(元/GB/日)</td>
-      <td>实时存储(元/GB/日)</td>
-      <td>离线存储(元/GB/日)</td>
-      <td>请求次数（元/百万次/日）</td>
-      <td>分区数量(元/个/日)</td>
+      <td>写流量(美元/GB/日)</td>
+      <td>外网读流量（美元/GB/日）</td>
+      <td>内网读流量(美元/GB/日)</td>
+      <td>索引流量（美元/GB/日）</td>
+      <td>索引存储(美元/GB/日)</td>
+      <td>实时存储(美元/GB/日)</td>
+      <td>离线存储(美元/GB/日)</td>
+      <td>请求次数（美元/百万次/日）</td>
+      <td>分区数量(美元/个/日)</td>
+    <td>数据加工(元/GB/日)</td>
    </tr>
    <tr>
       <td>中国大陆</td>
       <td  nowrap="nowrap">北京<br>上海<br>广州<br>南京<br>成都<br>重庆</td>
-      <td>0.18</td>
-      <td>0.8</td>
-      <td>0.18</td>
-      <td>0.35</td>
-      <td>0.014</td>
-      <td>0.014</td>
-      <td>0.0033</td>
-      <td>0.15</td>
-      <td>0.04</td>
-   </tr>
-   <tr>
-      <td>中国金融专区</td>
-      <td  nowrap="nowrap">上海金融<br>深圳金融</td>
-      <td>0.3</td>
-      <td>1.2</td>
-      <td>0.3</td>
-      <td>0.6</td>
-      <td>0.017</td>
-      <td>0.017</td>
-      <td>0.0033</td>
-      <td>0.15</td>
-      <td>0.04</td>
+      <td>0.032</td>
+      <td>0.141</td>
+      <td>0.032</td>
+      <td>0.062</td>
+      <td>0.0024</td>
+      <td>0.0024</td>
+      <td>-</td>
+      <td>0.026</td>
+      <td>0.007</td>
+      <td>0.026</td>
    </tr>
    <tr>
       <td>中国港澳台</td>
-      <td  nowrap="nowrap">中国香港</td>
-      <td>0.18</td>
-      <td>0.8</td>
-      <td>0.18</td>
-      <td>0.41</td>
-      <td>0.0165</td>
-      <td>0.0165</td>
+      <td  nowrap="nowrap">中国香港<br>中国台北</td>
+      <td>0.032</td>
+      <td>0.141</td>
+      <td>0.032</td>
+      <td>0.066</td>
+      <td>0.00243</td>
+      <td>0.00243</td>
       <td>-</td>
-      <td>0.17</td>
-      <td>0.04</td>
+      <td>0.028</td>
+      <td>0.007</td>
+      <td>0.032</td>
    </tr>
    <tr>
       <td>亚太地区</td>
-      <td  nowrap="nowrap">新加坡<br>孟买<br>东京<br>曼谷</td>
-      <td>0.18</td>
-      <td>0.8</td>
-      <td>0.18</td>
-      <td>0.41</td>
-      <td>0.0165</td>
-      <td>0.0165</td>
+      <td  nowrap="nowrap">新加坡<br>孟买<br>东京<br>曼谷<br>首尔</td>
+      <td>0.032</td>
+      <td>0.141</td>
+      <td>0.032</td>
+      <td>0.066</td>
+      <td>0.00243</td>
+      <td>0.00243</td>
       <td>-</td>
-      <td>0.17</td>
-      <td>0.04</td>
+      <td>0.028</td>
+      <td>0.007</td>
+      <td>0.032</td>
    </tr>
    <tr>
       <td rowspan="3">北美地区</td>
       <td>硅谷</td>
-      <td>0.21</td>
-      <td>0.7</td>
-      <td>0.21</td>
-      <td>0.49</td>
-      <td>0.018</td>
-      <td>0.018</td>
+      <td>0.037</td>
+      <td>0.124</td>
+      <td>0.037</td>
+      <td>0.086</td>
+      <td>0.0032</td>
+      <td>0.0032</td>
       <td>-</td>
-      <td>0.18</td>
-      <td>0.04</td>
+      <td>0.032</td>
+      <td>0.007</td>
+      <td>0.032</td>
    </tr>
    <tr>
       <td>多伦多</td>
-      <td>0.23</td>
-      <td>0.8</td>
-      <td>0.23</td>
-      <td>0.52</td>
-      <td>0.019</td>
-      <td>0.019</td>
+      <td>0.041</td>
+      <td>0.141</td>
+      <td>0.041</td>
+      <td>0.092</td>
+      <td>0.0034</td>
+      <td>0.0034</td>
       <td>-</td>
-      <td>0.19</td>
-      <td>0.04</td>
+      <td>0.034</td>
+      <td>0.007</td>
+      <td>0.026</td>
    </tr>
 	 <tr>
       <td>弗吉尼亚</td>
-      <td>0.18</td>
-      <td>0.6</td>
-      <td>0.18</td>
-      <td>0.41</td>
-      <td>0.015</td>
-      <td>0.015</td>
+      <td>0.032</td>
+      <td>0.106</td>
+      <td>0.032</td>
+      <td>0.072</td>
+      <td>0.0027</td>
+      <td>0.0027</td>
       <td>-</td>
-      <td>0.15</td>
-      <td>0.04</td>
+      <td>0.026</td>
+      <td>0.007</td>
+      <td>0.026</td>
    </tr>
     <tr>
       <td>欧洲地区</td>
-      <td nowrap="nowrap">法兰克福</td>
-      <td>0.18</td>
-      <td>0.8</td>
-      <td>0.18</td>
-      <td>0.41</td>
-      <td>0.0165</td>
-      <td>0.0165</td>
+      <td nowrap="nowrap">法兰克福<br>俄罗斯</td>
+      <td>0.032</td>
+      <td>0.141</td>
+      <td>0.032</td>
+      <td>0.066</td>
+      <td>0.00243</td>
+      <td>0.00243</td>
       <td>-</td>
-      <td>0.17</td>
-      <td>0.04</td>
+      <td>0.028</td>
+      <td>0.007</td>
+      <td>0.032</td>
    </tr>
 </table>
 
->! 目前日志离线存储处于公测阶段，公测阶段免除离线存储的日志主题写入流量费用及存储费用。
->
+>! 
+> - 目前日志离线存储处于公测阶段，公测阶段免除离线存储的日志主题写入流量费用及存储费用。
+> - 数据加工处于公测阶段，公测阶段免费，2022年3月16日零点开始计费。

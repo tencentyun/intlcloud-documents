@@ -49,7 +49,7 @@ GROUP BY
   http_user_agent
 ```
   - 查询和分析结果
-
+![image-20211108042836003](https://qcloudimg.tencent-cloud.cn/raw/fc5871dabac0087c4bcd90f89872f2b1.png)
 - 示例2：统计不同请求时间的分布情况。
   - 查询和分析语句
 ```
@@ -67,7 +67,7 @@ GROUP BY
   request_time
 ```
   - 查询和分析结果
-
+![image-20211108043145849](https://qcloudimg.tencent-cloud.cn/raw/e374910d8b6f772d2bb90dd062fa7083.png)
 
 
 <span id="IF"></span>
@@ -104,6 +104,7 @@ SELECT
   sum(IF(status = 200, 1, 0)) * 1.0 / count(*) AS status_200_percentag
 ```
 - 查询和分析结果
+![image-20211108043554359](https://qcloudimg.tencent-cloud.cn/raw/5e6a960b29adf2b8e248618534fc8556.png)
 
 
 <span id="NULLIF"></span>
@@ -125,14 +126,14 @@ NULLIF(expression1, expression2)
 
 ### 示例
 
-判断 **server_addr**、**http_host** 两个字段的值是否相同。当不相同时，返回 **client_ip** 字段的值。
+判断 **server_addr**、**http_host** 两个字段的值是否相同。当不相同时，返回 **server_addr** 字段的值。
 
 - 查询和分析语句
 ```
 * | SELECT NULLIF(server_addr,http_host)
 ```
 - 查询和分析结果
-
+![image-20211108044354167](https://qcloudimg.tencent-cloud.cn/raw/385643b55d531b8828eb699c5f69834e.png)
 
 
 <span id="TRY"></span>
@@ -167,7 +168,7 @@ GROUP BY
   file
 ```
 - 查询和分析结果
-
+![image-20211108044634878](https://qcloudimg.tencent-cloud.cn/raw/be64b0943d47ba13ed251fc8bf453373.png)
 
 
 <span id="COALESCE"></span>
@@ -195,7 +196,7 @@ COALESCE(expression1, expression2...)
 * | select COALESCE(null, 'test')
 ```
 - 查询和分析结果
-
+![](https://qcloudimg.tencent-cloud.cn/raw/9a55a530e9970f5b6d3470da22fa0dea.png)
 
 
 

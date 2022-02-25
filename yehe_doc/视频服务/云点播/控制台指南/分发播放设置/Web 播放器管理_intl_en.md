@@ -4,19 +4,19 @@ With the web player management feature, you can easily customize the style of th
 
 ## Directions
 
-1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview), and click **Delivery and Playback Settings** > **Web Player Management** on the left sidebar to enter the "Web Player Management" page.
+1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview), and click **Delivery and Playback** > **Web Player Management** on the left sidebar to enter the "Web Player Management" page.
 >?This page displays a list of players. You can create and maintain up to 10 custom players.
-2. Click **Create Player** in the top-left corner to pop up the "Create Player" dialog box, and set the following options as prompted:
+2. Click **Create Player** in the top-left corner. In the pop-up window, set the following options as prompted:
 ![](https://main.qcloudimg.com/raw/371b691aeaad9889df3a6973be739891.png)
 	- Basic Settings: you can configure the player name, description, and default definition.
-		- Player Name: you can enter letters, digits, and underscores, with a length of up to 20 chars.
+		- Player Name: you can enter letters, digits, and underscores, with a length of up to 20 characters.
 		- Description: up to 50 characters.
-		- Default Definition: valid values include LD, SD, HD, and FHD. Default value: LD.
+		- Default Definition: valid values include LD, SD, HD, and UHD. Default value: LD.
 	- Appearance: you can upload your own logo image, customize its position in the player, and set the redirection link upon click.
 		- Logo Image: GIF, JPG, PNG, and BMP formats are supported. Dimensions: ≤ 200 * 200p. Size: ≤ 1MB.
-		- Redirection Link: this is the URL to redirect to upon clicking the logo image. You need to enter a valid URL and add the HTTP(S) protocol.
-		- Logo Position: bottom left, top left, bottom right, or top right.
-	- Roll Image: you can customize the pre-, mid-, and post-roll images for the video in the player, and redirection is supported for the images. GIF, JPG, PNG, and BMP formats are supported (for GIF files, only the first frame will be used). Video roll files of less than 1 MB will be supported in the future.
+		- Redirect URL: this is the URL to redirect to upon clicking the logo image. You need to enter a valid URL and add the HTTP(S) protocol.
+		- Logo Position: Lower Left, Upper Left, Lower Right, or Upper Right.
+	- Video Clip: you can customize the images that appear before and after the player plays content as well as when it stops the playback, and redirection is supported for the images. GIF, JPG, PNG, and BMP formats are supported (for GIF files, only the first frame will be used). Video roll files within 1 MB will be supported in the future.
 3. After creating the player, you can preview, modify, copy, or delete it or set it as the default player:
 	- Preview: open the preview video file and see the effects of the selected player.
 	- Modify: modify player settings in the "Modify Player" dialog box.

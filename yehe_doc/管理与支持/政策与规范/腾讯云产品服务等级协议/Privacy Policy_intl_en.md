@@ -571,5 +571,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
 18.[Domains](https://intl.cloud.tencent.com/document/product/242/45146).
 19.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
+20.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
+
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)

@@ -1,0 +1,17 @@
+## 什么是 CODING 代码托管
+CODING 代码托管是 [CODING DevOps](https://intl.cloud.tencent.com/zh/products/coding-cr) 的子产品，为开发者打造的云端便捷研发协作工具，旨在为更多的开发者带去便捷、高效的开发体验，全面支持 Git、SVN 两种常见版本控制工具，云端高可用，无忧数据保障。用户可以通过本产品进行代码托管、代码评审和分支管理。
+
+## 应用场景
+
+### 代码管理
+CODING 代码托管支持 Git、SVN 两种模式进行代码管理，方便研发团队高效地管理代码资源。其中 Git 模式具备查看提交历史、代码对比、保护分支、部署公钥等功能，SVN 模式目前暂只支持代码浏览功能。
+![](https://qcloudimg.tencent-cloud.cn/raw/1100413e8cdf67ba45da156e30fca122.png)
+
+### 分支管理
+在多人开发的情况下，CODING 代码托管能清晰地查看各分支权限，针对团队成员设置分支操作权限，进行精确有效的管理，提高安全性和协作流畅度。
+![](https://qcloudimg.tencent-cloud.cn/raw/571bd4d0a76d768c09fbf1cc84d8196d.png)
+
+### 代码评审
+开发完毕的代码在合并入主干分支前可以进行组员评审，审批等流程，并可以通过配置持续集成等自动化工具，检测代码风格并对代码质量进行辅助评审。
+![](https://qcloudimg.tencent-cloud.cn/raw/094218c4e094f032e22a98d123656fcf.png)
+

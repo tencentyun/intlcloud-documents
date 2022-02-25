@@ -41,9 +41,7 @@
   openssl x509 -inform der -in fairplay.cer -out fairplay.pem
   ```
 
-- Provider private key
-
-  ：用户创建受密钥保护的私钥，上传密钥类型要求为PKCS #8 PEM格式，可以使用linux下的openssl工具进行转化。示例：私钥文件名为privatekey.pem，转化命令为:
+- Provider private key：用户创建受密钥保护的私钥，上传密钥类型要求为PKCS #8 PEM格式，可以使用linux下的openssl工具进行转化。示例：私钥文件名为privatekey.pem，转化命令为:
 
   ```
   openssl rsa -in privatekey.pem -outform PEM -out out.pem
@@ -68,7 +66,7 @@
 
    参数：
 
-   - **username、password**：可以使用DRMtoday的账号密码，也可以使用DRMtoday创建的API账号及其密码，[DRMtoday 创建API账号文档](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html? dummy#adding-accounts)。
+   - **username、password**：可以使用DRMtoday的账号密码，也可以使用DRMtoday创建的API账号及其密码，[DRMtoday 创建API账号文档](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html?dummy#adding-accounts)。
 
    b. CAS Ticket Retrieval：向CAS Login请求后返回的header中的Location地址发送HTTP POST请求。
 

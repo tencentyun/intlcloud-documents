@@ -52,7 +52,7 @@ a. 多输出组设置。StreamLive支持一个频道多个Output Group的输出�
 
 ![img](https://main.qcloudimg.com/raw/e6af7ba8a52e288e0d02dc3bea54871e.png)
 
-b. 输出组名称和类型。设置当前Output Group的名称和类型。目前支持StreamLive支持HLS、DASH类型输出，同时支持输出HLS文件至腾讯云COS进行归档（具体操作详见第六节），也支持直接联合腾讯云StreamPackage一起使用，将HLS/DASH格式直播流直接输出至同账号下的StreamPackage中（具体操作详见第七节），从而帮助客户形成自己的源站，以便于直播的大规模稳定分发。
+b. 输出组名称和类型。设置当前Output Group的名称和类型。目前支持StreamLive支持HLS、DASH类型输出，同时支持输出HLS文件[至腾讯云COS进行归档](https://intl.cloud.tencent.com/document/product/1048/45218)，也支持直接联合腾讯云StreamPackage一起使用，将HLS/DASH格式直播流直接[输出至同账号下的StreamPackage中](https://intl.cloud.tencent.com/document/product/1048/45219)，从而帮助客户形成自己的源站，以便于直播的大规模稳定分发。
 
 >?
 > - 腾讯云对象存储COS介绍详见：[腾讯云对象存储COS详情](https://intl.cloud.tencent.com/document/product/436/6222)
@@ -141,7 +141,7 @@ StreamLive的【Channel Management】界面会显示您所有创建的频道及�
 
 ![img](https://main.qcloudimg.com/raw/92bf580af5c4f013363915688744f1f6.png)
 
-1. 频道编辑和删除
+#### 频道编辑和删除
 
 频道正在【RUNNING】过程中无法进行编辑/删除操作，需先【Stop】频道在进行编辑/删除操作。
 

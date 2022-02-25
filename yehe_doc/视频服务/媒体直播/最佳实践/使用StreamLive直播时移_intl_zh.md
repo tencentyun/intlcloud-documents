@@ -2,7 +2,7 @@
 
 
 
-### 开通StreamPackage直播时移功能
+### 开通StreamLive直播时移功能
 
 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通StreamLive时移能力。需要提供用户账号APPID、时移域名。
 

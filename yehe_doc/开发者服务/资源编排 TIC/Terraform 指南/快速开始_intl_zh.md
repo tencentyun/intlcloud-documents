@@ -35,7 +35,7 @@ source ~/.bash_profile
 terraform  -version
 ```
 返回信息如下所示（版本号可能存在差异），则表示安装成功。
-```bash
+```hcl
 > Terraform v1.0.10
 > on darwin_amd64
 > Your version of Terraform is out of date! The latest version
