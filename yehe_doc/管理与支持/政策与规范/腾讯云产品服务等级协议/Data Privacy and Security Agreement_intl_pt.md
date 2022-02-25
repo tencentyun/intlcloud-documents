@@ -121,7 +121,7 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 18.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44314).
 19.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
 20.[Domains](https://intl.cloud.tencent.com/document/product/242/45147).
-
+21.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280)
 
 
 ## Requisitos específicos da jurisdição
