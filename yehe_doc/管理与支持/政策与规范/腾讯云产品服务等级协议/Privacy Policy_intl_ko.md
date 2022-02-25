@@ -573,5 +573,6 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
 18.[Domains](https://intl.cloud.tencent.com/document/product/242/45146).
+19.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
 ### 수정 내역
 [개인 정보 보호 정책](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
