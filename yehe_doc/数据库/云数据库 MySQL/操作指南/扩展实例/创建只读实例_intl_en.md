@@ -28,12 +28,12 @@ The MySQL source-replica binlog sync feature is adopted for read-only instances,
 The operation takes a long time, and the instance will be disconnected for several seconds. You are recommended to do so during off-peak hours and add a reconnection mechanism in the programs that access the database.
 - Read-only instances only support the InnoDB engine.
 - Data inconsistency between multiple read-only instances may occur due to the delay in data sync between the read-only instances and the source instance. You can check the delay in the console.
-- The specification of a read-only replica can be different from that of the source instance, which makes it easier for you to upgrade the read-only replica according to the load. We recommend you keep the same specifications of read-only instances in one RO group.
+- The specification of a read-only instance can be different from that of the source instance, which makes it easier for you to upgrade the read-only instance according to the load. We recommend you keep the same specifications of read-only instances in one RO group.
 
 ## Directions
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the **Operation** column to access the instance details page.
-2. Click **Add Read-Only Instance** in the **Instance Architecture Diagram** section on the **Instance Details** tab or click **Create** on the **Read-only Replica** tab.
-3. On the displayed purchase page, specify the following read-only replica configurations, confirm that everything is correct, and click **Buy Now**.
+2. Click **Add Read-Only Instance** in the **Instance Architecture Diagram** section on the **Instance Details** tab or click **Create** on the **Read-Only Instance** tab.
+3. On the displayed purchase page, specify the following read-only instance configurations, confirm that everything is correct, and click **Buy Now**.
  - **Specify RO Group**: you can use the RO group automatically assigned by the system allocation, create one, or select an existing one.
     - **Assigned by system**: if multiple instances are purchased at a time, each of them will be assigned to an independent RO group, and their weights will be automatically assigned by the system by default.
     - **Create RO group**: create an RO group. If multiple instances are purchased at a time, all of them will be assigned to this new RO group, and their weights will be allocated by the system automatically by default.
