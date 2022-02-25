@@ -54,7 +54,7 @@ After the account falls into arrears, the backup will change with the lifecycle 
 | binlog centralization | Local storage | Centralized storage |
 
 ## Suggestions for Reducing Backup Costs
-- Delete the manual backups which are no longer needed You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID or **Manage** in the **Operation** column to access the instance management page, and delete manual backups on the **Backup and Restore** tab. Automatic backups cannot be manually deleted in the console. Instead, they are automatically deleted after they expire.
+- Delete the manual backups which are no longer needed. You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID or **Manage** in the **Operation** column to access the instance management page, and delete manual backups on the **Backup and Restoration** tab. Automatic backups cannot be manually deleted in the console. Instead, they are automatically deleted after they expire.
 - Reduce the frequency of automatic data backup for non-core businesses (you can adjust the backup cycle and retention period in the console, and the frequency should be at least twice a week).
 >?The [rollback feature](https://intl.cloud.tencent.com/document/product/236/7276) relies on the backup cycle and retention days of data backups and log backups (binlog). Rollback will be affected if you reduce the automatic backup frequency and retention period. Please select the parameters as needed.
 >
