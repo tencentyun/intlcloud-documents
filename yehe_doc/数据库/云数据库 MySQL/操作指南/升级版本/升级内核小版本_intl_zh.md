@@ -27,5 +27,5 @@
 3. 在弹出的对话框中，选择切换时间后，单击**升级**。
 >!数据库内核小版本升级会涉及到数据迁移，所以在升级完成时会发生秒级的 MySQL 数据库连接闪断。建议您选择切换时间为**维护时间内**，实例会在升级完成后的下一个维护时间内发起切换。
 >
-![](https://main.qcloudimg.com/raw/19d059cb26a22b9ae8c173daae8590e8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c758e092bce297bbfeb553297bf9b266.png)
 
