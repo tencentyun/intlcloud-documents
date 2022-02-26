@@ -2,7 +2,7 @@
 
 The ZIP decompression feature is a data processing solution provided by Tencent Cloud COS based on [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/583). When you upload a compressed file to a bucket with a ZIP decompression rule configured, the SCF preset by COS will be triggered automatically to decompress the file into the specified bucket and directory. The decompression flow is shown as follows:
 
-![Decompression Flow](https://main.qcloudimg.com/raw/8595c7c538a7d951779b9e5b849377b4.png)
+![Decompression Flow](https://main.qcloudimg.com/raw/4899b5c92bb085a0f18a522dfae344ae.jpg)
 
 You can use the ZIP decompression feature by the following methods:
 - Console: ZIP files uploaded to the bucket will be automatically decompressed after you configure a ZIP decompression function in the console.
