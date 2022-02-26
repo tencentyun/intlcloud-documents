@@ -4,8 +4,10 @@ SEO configuration is a feature that solves the problem of incorrect weights for 
 
 > !
 > - As search engine IPs are changed frequently, Tencent Cloud CDN can only guarantee that most but not all search engine IPs can be identified.
-- The SEO configuration feature is available only when the connected domain name is an [external origin](https://intl.cloud.tencent.com/document/product/228/6289). After this feature is enabled, if a domain name has multiple origin server addresses, the first one will be the default origin-pull address.
+> - The SEO configuration feature is available only when the connected domain name is an [external origin](https://intl.cloud.tencent.com/document/product/228/6289). After this feature is enabled, if a domain name has multiple origin server addresses, the first one will be the default origin-pull address.
 > - This feature is not supported in regions outside the Chinese mainland currently. If the acceleration region of your domain name is outside the Chinese mainland, this feature cannot be enabled. If your domain name is configured for global acceleration, the SEO configuration will take effect only within Chinese mainland.
+
+
 ## Directions
 
 ### Viewing the configuration
