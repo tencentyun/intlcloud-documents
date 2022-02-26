@@ -1,7 +1,7 @@
 [](id:q6)
-### When do I need to use the features of purge and prefetch?
-- Purge: to ensure that your users are always served with fresh resources and the domain name configuration is always up to date, you can submit a purge task. For more information, see [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299).
-- Prefetch: schedules a prefetch task for marketing activities or launching of installation/upgrade packages, so as to cache static resources to CDN cache node in advance to reduce pressure of original server, improve service availability and user experience. For more information, see [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000).
+### When do I need to purge and prefetch?
+- Purge: To ensure that users access to the latest resources when there are resources to update, restricted resources to remove, or domain name configurations to change on your origin server, you can submit a purge task, which can prevent user access to old resources or old configurations from the node cache. For more details, see [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299).
+- Prefetch: For operating activities, installation packages or upgrade packages to release, you can submit a prefetch task to prefetch static resources to CDN acceleration nodes, which will reduce strain on the origin server and improve the service availability and user experience. For more details, see [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000).
 
 [](id:q1)
 ### What are differences between purge and prefetch?
@@ -17,8 +17,8 @@
 	- URL prefetch: A maximum of 1,000 URLs can be prefetched each day, and a maximum of 20 URLs can be submitted for each prefetch task. It takes about 5 to 30 minutes for the prefetch to take effect, depending on the file size.
 
 [](id:q3)
-### Will the cached content on CDN cache nodes be updated in real time?
-No. The cached content on CDN cache nodes are updated based on the [Cache Expiration Configuration](https://intl.cloud.tencent.com/document/product/228/38424) you configured in the console. If you need to update a file's cache in real time, use [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299).
+### Will the cache on CDN nodes be updated in real time?
+No. The cached content on CDN cache nodes are updated based on the [cache validity](https://intl.cloud.tencent.com/document/product/228/38424) you configured in the console. If you need to update a file's cache in real time, use [cache purge](https://intl.cloud.tencent.com/document/product/228/6299).
 
 
 
@@ -27,6 +27,6 @@ No. The cached content on CDN cache nodes are updated based on the [Cache Expira
 You can check the purge and prefetch history in the CDN console. For more information, see [History](https://intl.cloud.tencent.com/document/product/228/42176).
 
 [](id:q6)
-### Can I bring a custom request header to prefetch?
-Not supported.
+### Can I prefetch with custom request headers?
+No. 
 
