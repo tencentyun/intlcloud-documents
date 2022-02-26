@@ -35,12 +35,12 @@ Step 2. Check whether your origin server returns different contents according to
    - If it does not, go to [Step 5](#step5).
 [](id:step3)
 Step 3. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click **Manage** on the right of a domain name to enter its configuration page. Open the **Cache Configuration** tab to find the **Cache Key Rule Configuration** section. Then check whether the **Ignore parameter** is configured as **Not ignore**.
-![img](https://main.qcloudimg.com/raw/53ceba436ae110bd0dafef8bad72ceff.png)
+
    - If it is not, go to [Step 4](#step4).
    - If it is, go to [Step 5](#step5).
 [](id:step4)
 Step 4. Click **Modify** on the right of the rule, tick **Not ignore**, and click **Save**.
-![img](https://main.qcloudimg.com/raw/f866bc80c384bc6daca649dbeb006fdb.png)
+
 >? If this operation is not suitable for your business, you can use the **Reserve Specified Parameter** feature as needed. For more information, please see [Cache Key Rule Configuration](https://intl.cloud.tencent.com/document/product/228/35316).
 >
 [](id:step5)
