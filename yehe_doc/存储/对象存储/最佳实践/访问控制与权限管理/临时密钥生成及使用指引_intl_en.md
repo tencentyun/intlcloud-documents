@@ -1,6 +1,6 @@
 >!
 > - When authorizing access with a temporary key, ensure that you follow the principle of the least privilege as needed. If you grant excessive permissions, such as granting permissions to all resources `(resource: *)` or all operations `(action: *)`, data security risks may arise.
-> - If you have specified a permission scope for the temporary key when applying for it, you can only use the key within the scope. For example, if you have limited the permissions to only uploading objects to the `examplebucket-1-1250000000`, you can **not** upload objects to the `examplebucket-2-1250000000` bucket or download objects from the `examplebucket-1-1250000000` bucket.
+> - If you have specified a permission scope for the temporary key when applying for it, you can only use the key within the scope. For example, if you have limited the permissions to only uploading objects to the `examplebucket-1-1250000000`, you **can’t** upload objects to the `examplebucket-2-1250000000` bucket or download objects from the `examplebucket-1-1250000000` bucket.
 
 ## Temporary Key
 
@@ -13,7 +13,7 @@ When a COS API request uses a temporary key to calculate the signature for authe
 
 ## Benefits to Use a Temporary Key
 
-When using COS on Web, iOS, and Android applications, fixed keys are less ideal for permission management and less safe if stored in your client-side code, as the key could leak. In this case, you can use a temporary key.
+When using COS on web, iOS, and Android applications, fixed keys are less ideal for permission management and less secure if stored in your client-side code, as the key may be disclosed. In this case, you can use a temporary key.
 For example, when applying for a temporary key, you can specify the action and resource by setting the [policy](https://intl.cloud.tencent.com/document/product/436/30580) field to grant limited access permissions.
 
 For COS API authorization policies, see:
@@ -22,10 +22,10 @@ For COS API authorization policies, see:
 
 ## Getting a Temporary Key
 
-You can get a temporary key via [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk).
+You can get a temporary key via [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk), or by calling the STS API directly.
 
 
->!The Java SDK is used as an example in this document. To use it, you need to get the SDK code (version number) on GitHub. If you cannot find the SDK version number, check whether this SDK version is available on GitHub.
+>! The Java SDK is used as an example in this document. To use it, you need to get the SDK code (version number) on GitHub. If you cannot find the SDK version number, check whether this SDK version is available on GitHub.
 
 ### COS STS SDK 
 
@@ -47,20 +47,21 @@ Here is an example to obtain a temporary key using the downloaded [Java SDK](htt
 
 #### Sample codes
 ```java
-// Import `java sts sdk` using the integration method with Maven as described on GitHub 
-import java.util.*;
-import org.json.JSONObject; 
-import com.tencent.cloud.CosStsClient;
-
+// Import `java sts sdk` using the integration method with Maven as described on GitHub, with v3.1.0 or later required.
 public class Demo {
     public static void main(String[] args) {
         TreeMap<String, Object> config = new TreeMap<String, Object>();
 
         try {
-            // Replace it with your own SecretId
-            config.put("SecretId", "AKID****************************");
-            // Replace it with your own SecretKey
-            config.put("SecretKey", "*******************************");
+            // `SecretId` and `SecretKey` represent permanent identities (root account, sub-account) for applying for a temporary key. If it is a sub-account, it must have permission to operate buckets.
+            // Replace it with your Cloud API key SecretId
+            config.put("secretId", "SecretId");
+            // Replace it with your Cloud API key SecretKey
+            config.put("secretKey", "SecretKey");
+
+            // Set a domain: 
+            // If you use Tencent Cloud CVMs, you can set an internal domain.
+            //config.put("host", "sts.internal.tencentcloudapi.com");
 
             // Validity period of the key, in seconds (default: 1800). The value can be up to 7200 (2 hours) for the root account, and 129600 (36 hours) for a sub-account.
             config.put("durationSeconds", 1800);
@@ -70,19 +71,23 @@ public class Demo {
             // Replace it with the region where your bucket resides
             config.put("region", "ap-guangzhou");
 
-            // Change it to the allowed path prefix (such as "a.jpg", "a/*", or "*"). You can determine the upload path based on your login status.
-            // If "*" is entered, you allow the user to access all resources. If not necessary, please grant the user only the limited permissions that are needed, following the principle of the least privilege.
+            // Change it to an allowed path prefix. You can determine the upload path based on your login status.
+            // Examples of several typical prefix authorization scenarios:
+            // 1. Allow access to all objects: "*"
+            // 2. Allow access to specified objects: "a/a1.txt", "b/b1.txt"
+            // 3. Allow access to objects with specified prefixes: "a*", "a/*", "b/*"
+            // If "*" is entered, you allow the user to access all resources. Unless otherwise necessary, grant the user only the limited permissions that are needed following the principle of least privilege.
             config.put("allowPrefixes", new String[] {
                     "exampleobject",
                     "exampleobject2"
             });
 
             // A list of permissions needed for the key (required)
-            // The following permissions are required for simple upload, upload using a form, and multipart upload. For other permissions, please visit https://intl.cloud.tencent.com/document/product/436/30580
+            // The following permissions are required for simple upload, upload using a form, and multipart upload. For other permissions, visit https://intl.cloud.tencent.com/document/product/436/30580
             String[] allowActions = new String[] {
                      // Simple upload
                     "name/cos:PutObject",
-                    // Upload using a form or Wechat Mini Program
+                    // Upload using a form or WeChat Mini Program
                     "name/cos:PostObject",
                     // Multipart upload
                     "name/cos:InitiateMultipartUpload",
@@ -94,8 +99,9 @@ public class Demo {
             config.put("allowActions", allowActions);
 
             Response response = CosStsClient.getCredential(config);
-            // If it succeeds, the temporary key information will be returned and printed out as shown below:
-            System.out.println(Jackson.toJsonPrettyString(response));
+            System.out.println(response.credentials.tmpSecretId);
+            System.out.println(response.credentials.tmpSecretKey);
+            System.out.println(response.credentials.sessionToken);
         } catch (Exception e) {
             e.printStackTrace();
             throw new IllegalArgumentException("no valid secret !");
@@ -106,7 +112,7 @@ public class Demo {
 
 #### FAQs
 
-#### NoSuchMethodError due to JSONObject package conflict
+#### What should I do if NoSuchMethodError occurs due to JSONObject package conflict?
 
 Use 3.1.0 or a later version.
 
@@ -136,13 +142,13 @@ public class Demo {
         // 1. Initialize user authentication information (secretId, secretKey).
         COSCredentials cred = new BasicCOSCredentials(tmpSecretId, tmpSecretKey);
         // 2. Set the bucket region. For COS regions, see https://cloud.tencent.com/document/product/436/6224.
-        ClientConfig clientConfig = new ClientConfig(new Region("ap-beijing"));
+        ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
         // 3. Generate a COS client.
         COSClient cosclient = new COSClient(cred, clientConfig);
         // The bucket name must contain `appid`.
         String bucketName = "examplebucket-1250000000";
 
-        String key = "doc/picture.jpg";
+        String key = "exampleobject";
         // Upload an object. You are advised to call this API to upload objects smaller than 20 MB.
         File localFile = new File("src/test/resources/text.txt");
         PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);

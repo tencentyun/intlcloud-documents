@@ -7,6 +7,7 @@ The `sync` command is used to sync object upload, download, and copy. How `sync`
 ```
 
 >? For more information on `bucketAlias`, please see [Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
+>
 
 `sync` includes the following optional flags:
 
@@ -18,9 +19,9 @@ The `sync` command is used to sync object upload, download, and copy. How `sync`
 |  None  | --exclude   | Excludes specific objects.    |
 | -r        | --recursive | Whether to traverse all objects in the directory recursively  |
 |   None  | --storage-class | Specifies the storage class for the object to upload. Default value: `STANDARD` |
-|   None       | --part-size     | Part size. Default value: `32 MB`      |
+|   None       | --part-size     | Part size. Default value: `32 MB`; maximum value: `5 GB`     |
 |   None       | --thread-num    | Number of concurrent threads. Default value: `5`      |
-|   None       | --rate-limiting | Speed limit for a single URL. Value range: 0.1-100 MB/s       |
+|   None       | --rate-limiting | Speed limit for a single URL. Value range: 0.1–100 MB/s       |
 
 
 >?

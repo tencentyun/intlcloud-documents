@@ -1,5 +1,8 @@
-COS will release a new domain – tencentcos.cn – on March 15, 2022. The current domain myqcloud.com will remain available, but will not support the new features of COS. We recommend you switch to the new domain, which is more secure and reliable.
+COS will release a new domain – tencentcos.cn – on March 15, 2022. The current domain myqcloud.com will remain available, but will not support new features of COS. We recommend you switch to the new domain, which is more secure and reliable.
 
+
+>! The current domain myqcloud.com will remain available, and its existing features (e.g., intelligent resolution for public and private access) will not be affected. However, it will not support new features provided later.
+>
 
 Specifically, there will be two changes:
 
@@ -24,8 +27,8 @@ The table below compares current and new domains.
 
 | Type   | Current                    | New                |
 | -------------- | ---------------------------------- | ---------------- |
-| Default bucket domain | &lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.myqcloud.com, the same for domains for private and public access | <ul  style="margin: 0;"><li>Domain for public access: &lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.tencentcos.cn </li><li>Domain for private access: &lt;BucketName-APPID&gt;.cos-internal.&lt;Region&gt;.tencentcos.cn  </li></ul>     |
-| Global acceleration domain | &lt;BucketName-APPID&gt;.cos.accelerate.myqcloud.com, the same for domains for private and public access   |  <ul  style="margin: 0;"><li>Domain for public access: &lt;BucketName-APPID&gt;.cos.accelerate.tencentcos.cn </li><li>Domain for private access: &lt;BucketName-APPID&gt;.cos-internal.accelerate.tencentcos.cn </li></ul>              |
-| Domain for static website |&lt;BucketName-APPID&gt;.cos-website.&lt;Region&gt;.myqcloud.com, the same for domains for private and public access | <ul  style="margin: 0;"><li>Domain for public access: &lt;BucketName-APPID&gt;.cos-website.&lt;Region&gt;.tencentcos.cn </li><li>Domain for private access: &lt;BucketName-APPID&gt;.cos-website-internal.&lt;Region&gt;.tencentcos.cn</li></ul> |
+| Default bucket domain | &lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.myqcloud.com, the same for domains for private and public access | <ul  style="margin: 0;"><li>Domain for public access: &lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.tencentcos.cn </li><li>Domain for private access: &lt;BucketName-APPID&gt;.cos-internal.&lt;Region&gt;.tencentcos.cn  </li></ul>     |   
+| Global acceleration domain | &lt;BucketName-APPID&gt;.cos.accelerate.myqcloud.com, the same for domains for private and public access   |  <ul  style="margin: 0;"><li>Domain for public access: &lt;BucketName-APPID&gt;.cos.accelerate.tencentcos.cn </li><li>Domain for private access: &lt;BucketName-APPID&gt;.cos-internal.accelerate.tencentcos.cn </li></ul>              |   
+| Domain for static website |&lt;BucketName-APPID&gt;.cos-website.&lt;Region&gt;.myqcloud.com, the same for domains for private and public access | <ul  style="margin: 0;"><li>Domain for public access: &lt;BucketName-APPID&gt;.cos-website.&lt;Region&gt;.tencentcos.cn </li><li>Domain for private access: &lt;BucketName-APPID&gt;.cos-website-internal.&lt;Region&gt;.tencentcos.cn</li></ul> |       
 
 
