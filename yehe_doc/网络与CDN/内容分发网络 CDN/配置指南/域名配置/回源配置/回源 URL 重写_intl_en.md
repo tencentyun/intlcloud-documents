@@ -1,4 +1,4 @@
-## Configuration Overview
+## Overview
 
 If you need to modify the origin-pull request URL to the URL that matches the origin server, you can use the origin URL rewrite configuration in Tencent Cloud CDN.
 
@@ -35,8 +35,8 @@ You can click **Add Rule** to add rewrite rules as needed.
 ## Configuration Samples:
 
 Suppose the **Origin URL Rewrite Configuration** of the acceleration domain name www.test.com is as follows:
-![](https://main.qcloudimg.com/raw/c255f4e4643a15e2e47a29a608a9fd01.png)
+![](https://main.qcloudimg.com/raw/eb34fde06561eb2c2cfe7afc9afc4d77.png)
 
 The origin-pull will be rewritten as follows:
-- In case www.test.com/images/1.jpg is requested, the request hits the first and third rule. As rules are executed from the bottom to top, the URL will be re-written to www.test.com/index.html.
-- In case www.test.com/images is requested, the request hits the first, second, and third rule. As rules are executed from the bottom to top, the URL will be re-written to www.test.com/index.html.
+- In case www.test.com/images/1.jpg is requested, the request hits the first, second and third rule. As rules are executed from the bottom to top, the URL will be re-written to www.test.com/index.html.
+- In case www.test.com/images is requested and the request hits the second rule, the URL will be rewritten to www.test.com/goodboy.html.
