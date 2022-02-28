@@ -18,26 +18,26 @@ Tencent Cloud supports **classic network** and **VPC**, which are capable of off
 ### Adding network
 1. Log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the instance details page, click **Add Network** in **Basic Info** > **Network**.
-![](https://qcloudimg.tencent-cloud.cn/raw/3de39b31e27cbb85438faf4a96d1631c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/55a5f543d7e9fa529cdb4f7931d56464.png)
 3. In the pop-up window, select a network. You can let the system automatically set an IP or manually specify an IP. After confirming that everything is correct, click **OK**.
 >?
 >- You can configure one or two networks for each instance.
 >- If an instance has two networks, both are controlled by the security group associated with the instance.
 >- You can only select a new VPC and subnet in the same region and AZ where the instance resides.
 >
-<img src="https://qcloudimg.tencent-cloud.cn/raw/35cd66dacf889c14d3a86694a24a6893.png"  style="zoom:80%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/a4cd02d67817ff8ddc99a62ea3c5f0cf.png"  style="zoom:80%;">
 4. After the instance status changes from **Changing network** to **Running**, you can query the changed instance network on the instance details page.
 
 ### Deleting network
 1. Log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the instance details page, click **Delete Network** in **Basic Info** > **Network**.
-![](https://qcloudimg.tencent-cloud.cn/raw/06032b8443d6dc123e4a2c63eb6ff1c4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/adfa87be226a11db2a941327d1d94bda.png)
 3. In the pop-up window, select the network to be deleted and click **OK**.
 >?
 >- You can configure one or two networks for each instance.
 >- You must confirm that a network is no longer required before deleting it, as you will not be able to access an instance over a deleted network.
 >
-<img src="https://qcloudimg.tencent-cloud.cn/raw/16ab36cbbc0c49c6ea6d57bfb45d6cb3.png"  style="zoom:100%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9a6b2119f55fef8a573fffea4b3ad2d5.png"  style="zoom:100%;">
 4. After the instance status changes from **Changing network** to **Running**, you can query the changed instance network on the instance details page.
 
 ### Modifying network
