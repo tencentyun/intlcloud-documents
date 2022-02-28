@@ -14,13 +14,13 @@ v{社区主版本号.社区次版本号}_r{不兼容版本号.兼容版本号}
 v 代表 Version，r 代表 Release，如：v12.7_r1.1对应的社区版本是12.7，r1.1是代表腾讯云迭代版本，由 `r {不兼容版本号}.{兼容版本号}` 这两部分构成。
 
 >?
-- Version：PostgreSQL 社区版本号，与社区对应。包含有两个数字，分别是 Major Version、Minor Version；Major Version 从10开始（9.3、9.4、9.5、9.6按照旧递进关系），Minor Version 从1开始。当社区次要版本 released 后，腾讯云会定时跟随社区版本进行版本更新。
-- Release：云数据库 PostgreSQL 迭代用的版本号，表达云数据库对 PostgreSQL 所做的修改。包含有两个数字，分别是 Incompatible Version 和 Compatible Version；Incompatible Version 从1开始，Compatible Version 从0开始。
- - 不兼容版本号
-不兼容定义：用新的数据库内核程序启动数据库实例，若启动失败或功能无法正常使用，该修改就是不兼容的。
-当内核支持了不兼容的功能，需要将不兼容版本号增加1。不兼容版本号将用于判断能否直接进行二进制小版本升级。
- - 兼容性版本号
-增加兼容性的修改时，需要将兼容版本号增加1。
+>- Version：PostgreSQL 社区版本号，与社区对应。包含有两个数字，分别是 Major Version、Minor Version；Major Version 从10开始（9.3、9.4、9.5、9.6按照旧递进关系），Minor Version 从1开始。当社区次要版本 >released 后，腾讯云会定时跟随社区版本进行版本更新。
+>- Release：云数据库 PostgreSQL 迭代用的版本号，表达云数据库对 PostgreSQL 所做的修改。包含有两个数字，分别是 Incompatible Version 和 Compatible Version；Incompatible Version 从1开始，Compatible Version >从0开始。
+> - 不兼容版本号
+>不兼容定义：用新的数据库内核程序启动数据库实例，若启动失败或功能无法正常使用，该修改就是不兼容的。
+>当内核支持了不兼容的功能，需要将不兼容版本号增加1。不兼容版本号将用于判断能否直接进行二进制小版本升级。
+> - 兼容性版本号
+>增加兼容性的修改时，需要将兼容版本号增加1。
 
 ## 版本支持列表
 - PostgreSQL 10
