@@ -31,7 +31,7 @@ Enter the user/user group page and select the user/user group to which to add a 
 
   ![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
 
-- Click **Users** > **User List** or **User Groups** on the left sidebar, click the name of the user/user group to which to add a policy to enter the details page, click **Associate Policy**, select the corresponding CSS policy, and click **OK**.
+- Click **Users** > **User List** or **User Groups** on the left sidebar, click the name of the user/user group to which to add a policy to enter the details page, click **Associate Policy**, select the corresponding CSS policy, and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
 :::
 ::: Method 2. Associate policy with user/user group
