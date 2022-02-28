@@ -581,5 +581,6 @@ The following Modules shall apply and form part of this privacy policy if you us
 21.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
 22.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45412).
 23.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
+24.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45476).
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
