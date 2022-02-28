@@ -18,26 +18,26 @@
 ### 新增网络
 1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 在实例详情页的**基本信息** > **所属网络**后，单击**新增网络**。
-![](https://qcloudimg.tencent-cloud.cn/raw/3de39b31e27cbb85438faf4a96d1631c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/55a5f543d7e9fa529cdb4f7931d56464.png)
 3. 在弹出的对话框，选择网络，可自动设置 IP 或指定 IP，确认后单击**确定**。
 >?
 >- 实例最多同时存在两套网络配置，最少必须拥有一套网络配置。
 >- 若同实例存在两套网络时，安全组会对两套网络同时生效，请注意配置安全组策略。
 >- 只能选择实例所在地域和可用区内的 VPC 网络与子网。
 >
-<img src="https://qcloudimg.tencent-cloud.cn/raw/35cd66dacf889c14d3a86694a24a6893.png"  style="zoom:80%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/a4cd02d67817ff8ddc99a62ea3c5f0cf.png"  style="zoom:80%;">
 4. 待实例状态从**网络变更中**到**运行中**时，可在实例详情页查询到变更后的实例所属网络。
 
 ### 删除网络
 1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 在实例详情页的**基本信息** > **所属网络**后，单击**删除网络**。
-![](https://qcloudimg.tencent-cloud.cn/raw/06032b8443d6dc123e4a2c63eb6ff1c4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/adfa87be226a11db2a941327d1d94bda.png)
 3. 在弹出的对话框，选择需要删除的网络，单击**确定**。
 >?
 >- 实例最多同时存在两套网络配置，最少必须拥有一套网络配置。
 >- 请确保网络的确不再使用后即可删除，删除后无法通过此网络访问到实例。
 >
-<img src="https://qcloudimg.tencent-cloud.cn/raw/16ab36cbbc0c49c6ea6d57bfb45d6cb3.png"  style="zoom:100%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9a6b2119f55fef8a573fffea4b3ad2d5.png"  style="zoom:100%;">
 4. 待实例状态从**网络变更中**到**运行中**时，可在实例详情页查询到变更后的实例所属网络。
 
 ### 修改网络
