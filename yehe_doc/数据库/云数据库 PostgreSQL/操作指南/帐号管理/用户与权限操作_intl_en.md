@@ -1,8 +1,7 @@
 ## TencentDB Default Role
-TencentDB for PostgreSQL has disabled the superuser attribute and some special default roles due to security requirements. However, some operations must be performed by a superuser, so TencentDB for PostgreSQL provides the tencentdb_superuser role.
-The administrator role you specify when creating an instance is a tencentdb_superuser.
+TencentDB for PostgreSQL does not open the `superuser` role attribute and the `pg_execute_server_program`, `pg_read_server_files`, and `pg_write_server_files` roles for you to use. However, as some operations require the `superuser` role, TencentDB for PostgreSQL provides the `pg_tencentdb_superuser` to replace `superuser`.
 
-## tencentdb_superuser
+## pg_tencentdb_superuser Role
 This role supports system permissions and database object permissions, as listed in the following tables.
 
 #### System permissions
@@ -16,24 +15,24 @@ This role supports system permissions and database object permissions, as listed
 #### Object permissions
 | Object                 | Description                                                         |
 | -------------------- | ------------------------------------------------------------ |
-| database             | By default, have the permissions of all databases whose owner is not a superuser.               |
-| schema               | By default, have the permissions of all schemas whose owner is not a superuser.               |
-| table/sequence    | By default, have the permissions of all tables/sequences whose owner is not a superuser.       |
-| function               | By default, have the permissions of all functions whose owner is not a superuser.             |
+| database             | By default, have the permissions of all databases not owned by a  a superuser.               |
+| schema               | By default, have the permissions of all schemas not owned by a superuser.               |
+| table/sequence    | By default, have the permissions of all tables/sequences not owned by a  a superuser.       |
+| function               | By default, have the permissions of all functions not owned by a superuser.             |
 | language             | No permissions.                                                     |
 | tablespace           | No permissions.                                                     |
-| FDW/foreign server | By default, have the permissions of all FDWs/foreign servers whose owner is not a superuser. |
-| TYPE                       | By default, have the permissions of all TYPEs whose owner is not a superuser.                 |
+| FDW/foreign server | By default, have the permissions of all FDWs/foreign servers not owned by a  a superuser. |
+| TYPE                       | By default, have the permissions of all TYPEs not owned by a superuser.                 |
 
 #### Other operations
 - Pub/Sub: the tencentdb_superuser role can implement the pub/sub messaging paradigm, create a publication for all tables, and create slots.
-- Extensions: the tencentdb_superuser role can create all supported extensions. When creating an extension, the tencentdb_superuser is temporarily escalated to superuser and passes all permission checks. 
+- Extensions: the tencentdb_superuser role can create all supported extensions. When creating an extension, the `pg_tencentdb_superuser` is temporarily escalated to superuser and passes all permission checks. 
 - The load_file permission only allows loading supported extension libraries.
 - The tencentdb_superuser role can use the `pgstat_get_backend_current_activity` function to view deadlock details, so that users can easily troubleshoot deadlocks themselves.
-- The use of the `pg_signal_backend` function is restricted, and processes of the tencentdb_superuser role can only be killed by itself.
+- The use of the `pg_signal_backend` function is restricted, and processes of the `pg_tencentdb_superuser` role can only be killed by itself.
 
 ## Permission Operations
-For more information, please see the official documents in the PostgreSQL community:
+For more information, see the official documents in the PostgreSQL community:
 - [Create a user](https://www.postgresql.org/docs/13/sql-createuser.html):
 ```
 CREATE USER name [ [ WITH ] option [ ... ] ]
