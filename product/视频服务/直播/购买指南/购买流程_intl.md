@@ -14,5 +14,5 @@ After your personal or organizational identity is verified, you can activate the
 
 ## Activate CSS
 
-Go to the [CSS console](https://console.cloud.tencent.com/live) page, select [I agree to the Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248) and click **Activate** to activate the CSS service for use.
+Go to the [CSS console](https://console.cloud.tencent.com/live) page, select [Agree to Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248) and click **Apply for Activation** to activate the CSS service.
 ![](https://main.qcloudimg.com/raw/dec97eeb50fc64dbcbd2b443fa7b96d4.png)
