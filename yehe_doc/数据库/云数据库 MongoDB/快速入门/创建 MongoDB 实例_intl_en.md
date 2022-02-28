@@ -20,9 +20,9 @@ You have registered a Tencent Cloud account and completed identity verification.
 <td><b>Pay-as-You-Go</b> is supported. For more information, see <a href="https://intl.cloud.tencent.com/document/product/240/3550">Billing Overview</a>.</td></tr>	
 <tr>
 <td>Region</td>
-<td>Select a region where your instance resides. You should select a region closest to you to reduce access latency.<ul><li>Note that the region cannot be changed after the instance is successfully created.</li><li>We recommend that you select the same region as the CVM instance for private network communication.</li></ul></td></tr>
+<td>Select a region where your instance resides. Please select a region closest to you to reduce access latency.<ul><li>Note that the region cannot be changed after the instance is successfully created.</li><li>We recommend that you select the same region as the CVM instance for private network communication.</li></ul></td></tr>
 <tr>
-<td>Availability Zone</td>
+<td>AZ</td>
 <td>Both single-AZ and multi-AZ deployment schemes are supported.<ul><li>Select an AZ in the region where the instance resides.</li><li>If you select <b>multi-AZ deployment</b>, select AZs for the <b>primary node</b>, <b>secondary node 1</b>, and <b>secondary node 2</b>. To ensure successful cross-AZ switch, <b>multi-AZ deployment</b> only supports deploying instance nodes to three AZs.</li></ul></td></tr>	
 <tr>
 <td>Configuration Type</td>
@@ -76,7 +76,7 @@ You have registered a Tencent Cloud account and completed identity verification.
 <td>Instance Name</td>
 <td>You can select <b>Set After Creation</b> or <b>Set Now</b>. <br>The instance name can contain up to 60 letters, digits, or symbols (-_).</td></tr>  
 <tr>
-<td>Set a password</td>
+<td>Set Password</td>
 <td><b>Set Now</b> is selected by default.</td></tr>   
 <tr>
 <td>Username</td>
@@ -92,12 +92,12 @@ You have registered a Tencent Cloud account and completed identity verification.
 <td>Set security group rules to control the inbound/outbound traffic to/from your instance. You can either select a security group from the <b>Existing Security Groups</b> drop-down list or click <b>Custom Security Groups</b> to create one and set <b>inbound</b>/<b>outbound</b> rules. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/12452">Security Group</a>.</td></tr> 
 <tr>
 <td>Quantity</td>
-<td>You can purchase up to 30 instances in each region and up to 10 instances each time.</td></tr> 
+<td>You can purchase up to 30 instances in each region and up to 10 instances each time.</td></tr>
 </tbody></table>
 
 3. Click **Billing Details** to view product pricing and confirm the total fees.
 4. Click **Buy Now**. After the purchase success message is displayed, click **Go to Console** to enter the instance list page. After the instance's status becomes **Running**, you can use it.
 
 ## API
-For more information on how to create TencentDB instances via the API, see [CreateDBInstance](https://cloud.tencent.com/document/product/240/31810).
+For more information on how to create TencentDB instances via the API, see [CreateDBInstanceHour](https://intl.cloud.tencent.com/document/product/240/34704).
 
