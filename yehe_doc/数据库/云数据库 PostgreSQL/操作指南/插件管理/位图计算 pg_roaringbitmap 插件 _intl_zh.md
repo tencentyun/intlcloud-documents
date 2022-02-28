@@ -50,54 +50,35 @@ SELECT RB_ITERATE(bitmap) FROM t1 WHERE id = 1;
 
 | 函数名 | 	输入 | 输出 | 描述 | 示例 | 结果 |
 |---------|---------|---------|---------|---------|---------|
-| rb_build | integer[] | roaringbitmap | Create roaringbitmap from integer array | ```rb_build('{1,2,3,4,5}')``` | {1,2,3,4,5}|
-| rb_index | roaringbitmap,integer | bigint | Return the 0-based index of element in this roaringbitmap, or -1 if do not exsits | ```rb_index('{1,2,3}',3)``` | 2 |
-| rb_cardinality | roaringbitmap | bigint | Return cardinality of the roaringbitmap | ```rb_cardinality('{1,2,3,4,5}')``` | 5 |
-| rb_and_cardinality | roaringbitmap,roaringbitmap | bigint | Return cardinality of the AND of two roaringbitmaps | ```rb_or_cardinality('{1,2,3}','{3,4,5}')``` | 1 |
-| rb_xor_cardinality | roaringbitmap,roaringbitmap | bigint | Return cardinality of the XOR of two roaringbitmaps | ```rb_xor_cardinality('{1,2,3}','{3,4,5}')``` | 4 |
-| rb_andnot_cardinality | roaringbitmap,roaringbitmap | bigint | Return cardinality of the ANDNOT of two roaringbitmaps | ```rb_andnot_cardinality('{1,2,3}','{3,4,5}')``` | 2 |
-| rb_is_empty | roaringbitmap | boolean | Check if roaringbitmap is empty. | ```rb_is_empty('{1,2,3,4,5}')``` | t |
-| rb_fill | roaringbitmap,range_start bigint,range_end bigint | roaringbitmap | Fill the specified range (not include the range_end) | ```rb_fill('{1,2,3}',5,7)``` | {1,2,3,5,6} |
-| rb_clear | roaringbitmap,range_start bigint,range_end bigint | roaringbitmap | Clear the specified range (not include the range_end) | ```rb_clear('{1,2,3}',2,3)``` | {1,3} |
-| rb_flip | roaringbitmap,range_start bigint,range_end bigint | roaringbitmap | Negative the specified range (not include the range_end) | ```rb_flip('{1,2,3}',2,10)``` | {1,4,5,6,7,8,9} |
-| rb_range | roaringbitmap,range_start bigint,range_end bigint | roaringbitmap | Return new set with specified range (not include the range_end) | ```rb_range('{1,2,3}',2,3)``` | {2} |
-| rb_range_cardinality | roaringbitmap,range_start bigint,range_end bigint | bigint | Return the cardinality of specified range (not include the range_end) | ```rb_range_cardinality('{1,2,3}',2,3)``` | 1 |
-| rb_min | roaringbitmap | integer | Return the smallest offset in roaringbitmap. Return NULL if the bitmap is empty | ```rb_min('{1,2,3}')``` | 1 |
-| rb_max | roaringbitmap | integer | Return the greatest offset in roaringbitmap. Return NULL if the bitmap is empty | ```rb_max('{1,2,3}')``` | 3 |
-| rb_rank | roaringbitmap,integer | bigint | Return the number of elements that are smaller or equal to the specified offset | ```rb_rank('{1,2,3}',3)``` | 3 |
-| rb_jaccard_dist | roaringbitmap,roaringbitmap | double precision | Return the jaccard distance(or the Jaccard similarity coefficient) of two bitmaps | ```rb_jaccard_dist('{1,2,3}','{3,4}')``` | 0.25 |
-| rb_select | roaringbitmap,bitset_limit bigint,bitset_offset bigint=0,reverse boolean=false,range_start bigint=0,range_end bigint=4294967296 | roaringbitmap | Return subset [bitset_offset,bitset_offset+bitset_limit) of bitmap between range [range_start,range_end) | ```rb_select('{1,2,3,4,5,6,7,8,9}',5,2)``` | {3,4,5,6,7} |
-| rb_to_array | roaringbitmap | integer[] | Convert roaringbitmap to integer array | ```rb_to_array(roaringbitmap('{1,2,3}'))``` | {1,2,3} |
-| rb_iterate | roaringbitmap | SET of integer | Return set of integer from a roaringbitmap data. | ```SELECT rb_iterate(rb_build('{1,2,3}'))``` | 1<br>2<br>3 |
+| rb_build | integer[] | roaringbitmap | Create roaringbitmap from integer array | `rb_build('{1,2,3,4,5}')` | {1,2,3,4,5}|
+| rb_index | roaringbitmap,integer | bigint | Return the 0-based index of element in this roaringbitmap, or -1 if do not exsits | `rb_index('{1,2,3}',3)` | 2 |
+| rb_cardinality | roaringbitmap | bigint | Return cardinality of the roaringbitmap | `rb_cardinality('{1,2,3,4,5}')` | 5 |
+| rb_and_cardinality | roaringbitmap,roaringbitmap | bigint | Return cardinality of the AND of two roaringbitmaps | `rb_or_cardinality('{1,2,3}','{3,4,5}')` | 1 |
+| rb_xor_cardinality | roaringbitmap,roaringbitmap | bigint | Return cardinality of the XOR of two roaringbitmaps | `rb_xor_cardinality('{1,2,3}','{3,4,5}')` | 4 |
+| rb_andnot_cardinality | roaringbitmap,roaringbitmap | bigint | Return cardinality of the ANDNOT of two roaringbitmaps | `rb_andnot_cardinality('{1,2,3}','{3,4,5}')` | 2 |
+| rb_is_empty | roaringbitmap | boolean | Check if roaringbitmap is empty. | `rb_is_empty('{1,2,3,4,5}')` | t |
+| rb_fill | roaringbitmap,range_start bigint,range_end bigint | roaringbitmap | Fill the specified range (not include the range_end) | `rb_fill('{1,2,3}',5,7)` | {1,2,3,5,6} |
+| rb_clear | roaringbitmap,range_start bigint,range_end bigint | roaringbitmap | Clear the specified range (not include the range_end) | `rb_clear('{1,2,3}',2,3)` | {1,3} |
+| rb_flip | roaringbitmap,range_start bigint,range_end bigint | roaringbitmap | Negative the specified range (not include the range_end) | `rb_flip('{1,2,3}',2,10)` | {1,4,5,6,7,8,9} |
+| rb_range | roaringbitmap,range_start bigint,range_end bigint | roaringbitmap | Return new set with specified range (not include the range_end) | `rb_range('{1,2,3}',2,3)` | {2} |
+| rb_range_cardinality | roaringbitmap,range_start bigint,range_end bigint | bigint | Return the cardinality of specified range (not include the range_end) | `rb_range_cardinality('{1,2,3}',2,3)` | 1 |
+| rb_min | roaringbitmap | integer | Return the smallest offset in roaringbitmap. Return NULL if the bitmap is empty | `rb_min('{1,2,3}')` | 1 |
+| rb_max | roaringbitmap | integer | Return the greatest offset in roaringbitmap. Return NULL if the bitmap is empty | `rb_max('{1,2,3}')` | 3 |
+| rb_rank | roaringbitmap,integer | bigint | Return the number of elements that are smaller or equal to the specified offset | `rb_rank('{1,2,3}',3)` | 3 |
+| rb_jaccard_dist | roaringbitmap,roaringbitmap | double precision | Return the jaccard distance(or the Jaccard similarity coefficient) of two bitmaps | `rb_jaccard_dist('{1,2,3}','{3,4}')` | 0.25 |
+| rb_select | roaringbitmap,bitset_limit bigint,bitset_offset bigint=0,reverse boolean=false,range_start bigint=0,range_end bigint=4294967296 | roaringbitmap | Return subset [bitset_offset,bitset_offset+bitset_limit) of bitmap between range [range_start,range_end) | `rb_select('{1,2,3,4,5,6,7,8,9}',5,2)` | {3,4,5,6,7} |
+| rb_to_array | roaringbitmap | integer[] | Convert roaringbitmap to integer array | `rb_to_array(roaringbitmap('{1,2,3}'))` | {1,2,3} |
+| rb_iterate | roaringbitmap | SET of integer | Return set of integer from a roaringbitmap data. | `SELECT rb_iterate(rb_build('{1,2,3}'))` | 1<br>2<br>3 |
 
 ## 聚合函数列表
 | 聚合函数名 | 	输入 | 输出 | 描述 | 示例 | 结果 |
 |---------|---------|---------|---------|---------|---------|
-| rb_build_agg | 	integer | 	roaringbitmap | Build a roaringbitmap from a integer set | ```select rb_build_agg(id)
-    from (values (1),(2),(3)) t(id)``` | {1,2,3} |
-| rb_or_agg | roaringbitmap | roaringbitmap | 	AND Aggregate calculations from a roaringbitmap set | ```select rb_or_agg(bitmap) 
-    from (values (roaringbitmap('{1,2,3}')),
-                 (roaringbitmap('{2,3,4}'))
-          ) t(bitmap)``` | {1,2,3,4} |
-| rb_and_agg | roaringbitmap | roaringbitmap | 	AND Aggregate calculations from a roaringbitmap set | ```select rb_and_agg(bitmap) 
-    from (values (roaringbitmap('{1,2,3}')),
-                 (roaringbitmap('{2,3,4}'))
-          ) t(bitmap)``` | {2,3} |
-| rb_xor_agg | roaringbitmap | roaringbitmap | XOR Aggregate calculations from a roaringbitmap set | ```select rb_xor_agg(bitmap) 
-    from (values (roaringbitmap('{1,2,3}')),
-                 (roaringbitmap('{2,3,4}'))
-          ) t(bitmap)``` | {1,4} |
-| rb_or_cardinality_agg | roaringbitmap | bigint | 	OR Aggregate calculations from a roaringbitmap set, return cardinality. | ```select rb_or_cardinality_agg(bitmap) 
-    from (values (roaringbitmap('{1,2,3}')),
-                 (roaringbitmap('{2,3,4}'))
-          ) t(bitmap)``` | 4 |
-| rb_and_cardinality_agg | roaringbitmap | bigint | AND Aggregate calculations from a roaringbitmap set, return cardinality | ```select rb_and_cardinality_agg(bitmap) 
-    from (values (roaringbitmap('{1,2,3}')),
-                 (roaringbitmap('{2,3,4}'))
-          ) t(bitmap)``` | 2 |
-| rb_xor_cardinality_agg | roaringbitmap | bigint | XOR Aggregate calculations from a roaringbitmap set, return cardinality | ```select rb_xor_cardinality_agg(bitmap) 
-    from (values (roaringbitmap('{1,2,3}')),
-                 (roaringbitmap('{2,3,4}'))
-          ) t(bitmap)``` | 2 |
+| rb_build_agg | 	integer | 	roaringbitmap | Build a roaringbitmap from a integer set | `select rb_build_agg(id) from (values (1),(2),(3)) t(id)` | {1,2,3} |
+| rb_or_agg | roaringbitmap | roaringbitmap | 	AND Aggregate calculations from a roaringbitmap set | `select rb_or_agg(bitmap) from (values (roaringbitmap('{1,2,3}')), (roaringbitmap('{2,3,4}'))) t(bitmap)` | {1,2,3,4} |
+| rb_and_agg | roaringbitmap | roaringbitmap | 	AND Aggregate calculations from a roaringbitmap set | `select rb_and_agg(bitmap)  from (values (roaringbitmap('{1,2,3}')), (roaringbitmap('{2,3,4}'))) t(bitmap)` | {2,3} |
+| rb_xor_agg | roaringbitmap | roaringbitmap | XOR Aggregate calculations from a roaringbitmap set | `select rb_xor_agg(bitmap) from (values (roaringbitmap('{1,2,3}')), (roaringbitmap('{2,3,4}'))) t(bitmap)` | {1,4} |
+| rb_or_cardinality_agg | roaringbitmap | bigint | 	OR Aggregate calculations from a roaringbitmap set, return cardinality. | `select rb_or_cardinality_agg(bitmap)  from (values (roaringbitmap('{1,2,3}')),(roaringbitmap('{2,3,4}')) ) t(bitmap)` | 4 |
+| rb_and_cardinality_agg | roaringbitmap | bigint | AND Aggregate calculations from a roaringbitmap set, return cardinality | `select rb_and_cardinality_agg(bitmap) from (values (roaringbitmap('{1,2,3}')), (roaringbitmap('{2,3,4}'))) t(bitmap)` | 2 |
+| rb_xor_cardinality_agg | roaringbitmap | bigint | XOR Aggregate calculations from a roaringbitmap set, return cardinality | `select rb_xor_cardinality_agg(bitmap)  from (values (roaringbitmap('{1,2,3}')), (roaringbitmap('{2,3,4}')) ) t(bitmap)` | 2 |
 
 
