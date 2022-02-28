@@ -580,5 +580,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 20.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
 21.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
 22.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45412).
+23.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
+24.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
