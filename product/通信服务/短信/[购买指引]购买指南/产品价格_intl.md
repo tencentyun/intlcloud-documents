@@ -53,7 +53,6 @@ Download the Global SMS Price List [here](https://main.qcloudimg.com/raw/6a82762
 |Cook Islands	|CK|	682	|0.0403 |
 |Chile|	CL	|56|	0.0680 |
 |Cameroon|	CM	|237	|0.0548 |
-|Mainland China |CN | 86 |0.0150|
 | Colombia |	CO|	57|	0.0414|
 | Costa Rica |	CR|	506	|0.0694 |
 |Cape Verde	|CV|	238	|0.0869|

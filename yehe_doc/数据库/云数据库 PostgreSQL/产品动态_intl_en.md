@@ -1,3 +1,22 @@
+## December 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Supported PostgreSQL 13</td>
+<td>TencentDB for PostgreSQL supports PostgreSQL 13 to provide more stable and faster enterprise-grade database services that are easier to deploy in more industries and help upgrade your business.</td>
+<td>2021-12</td><td>-</td></tr>
+<td>Supported multi-network settings for instances</td>
+<td>TencentDB for PostgreSQL supports multiple sets of network configurations, so the same instance can be accessed through different VIPs, and the networks can be modified and switched. This supports multi-plane network features.</td>
+<td>2021-12</td><td><a href="https://intl.cloud.tencent.com/document/product/409/44359" target="_blank">Network Management</a></td></tr>
+<td>Added extensions</td>
+<td>New extensions such as `pg_roaringbitmap` and `postgres_fdw` (for cross-database access) are added.</td>
+<td>2021-12</td><td><a href="https://intl.cloud.tencent.com/document/product/409/7567" target="_blank">Supported Plugins/Extensions</a></td></tr>
+<td>Supported kernel version management</td>
+<td>TencentDB for PostgreSQL supports multiple kernel versions, with stronger stability and shorter access latency. You can query them and submit tickets to upgrade them.</td>
+<td>2021-12</td><td><a href="https://intl.cloud.tencent.com/document/product/409/44364" target="_blank">Kernel Version Management</a></td></tr>
+</tbody></table>
+
 ## October 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
