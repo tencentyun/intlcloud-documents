@@ -2,6 +2,8 @@
 
 本文介绍 TRTC 如何按月统计使用[语音通话](https://intl.cloud.tencent.com/document/product/647/36064)、[视频通话](https://intl.cloud.tencent.com/document/product/647/36063)、[音视频互动直播](https://intl.cloud.tencent.com/document/product/647/36059)的费用。
 
+如需预估业务费用，请使用[TRTC价格计算器](https://intl.cloud.tencent.com/pricing/trtc/calculator)。
+
 如果你已与我们的销售签约，则实际计费信息以合同为准。
 
 >? 2021年10月27日起首次在 TRTC 控制台创建[应用](https://intl.cloud.tencent.com/zh/document/product/647/37714)的账号，开始按照本文档中的“集合分辨率”方式计量计费。
@@ -173,6 +175,10 @@ TRTC 为您提供音视频通用[套餐包](https://intl.cloud.tencent.com/docum
 ## 注意事项
 
 本节提供更多注意事项以供参考。
+
+### 价格计算器
+
+请查看[TRTC价格计算器](https://intl.cloud.tencent.com/pricing/trtc/calculator)。
 
 ### 时长用量精度
 

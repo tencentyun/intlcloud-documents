@@ -1,12 +1,16 @@
-This document describes how [audio call](https://intl.cloud.tencent.com/document/product/647/36064), [video call](https://intl.cloud.tencent.com/document/product/647/36063), and [interactive live audio/video streaming](https://intl.cloud.tencent.com/document/product/647/36059) are billed on a monthly basis.
+# Billing of TRTC Basic Services
+
+This document describes how [audio calls](https://intl.cloud.tencent.com/document/product/647/36064), [video calls](https://intl.cloud.tencent.com/document/product/647/36063), and [interactive live audio/video streaming](https://intl.cloud.tencent.com/document/product/647/36059) are billed on a monthly basis.
+
+You can use the [TRTC price calculator](https://intl.cloud.tencent.com/pricing/trtc/calculator) to estimate your cost.
 
 If you have a contract with TRTC, the billing details in the contract will apply.
 
->? The concept of aggregate resolution mentioned in this document applies to accounts that create their first [application](https://intl.cloud.tencent.com/zh/document/product/647/37714) in the TRTC console on or after October 27, 2021.
+>? Aggregate resolution applies to accounts whose first TRTC [application](https://intl.cloud.tencent.com/document/product/647/37714) is created on or after October 27, 2021.
 
 ## Billable Items
 
-TRTC adds up the audio and video durations of all projects under your [account](https://console.intl.cloud.tencent.com/trtc) at the end of each month. Note that video durations are classified into three categories based on resolution and priced differently. TRTC offers each account a [10,000-minute free package per month](https://intl.cloud.tencent.com/document/product/647/42735), which will be deducted from your total monthly durations. The remaining durations multiplied by their unit prices are your total monthly cost.
+TRTC adds up the audio and video durations of all projects under your [account](https://console.intl.cloud.tencent.com/trtc) at the end of each month. Note that video durations are classified into three categories based on aggregate resolution and are priced differently. TRTC offers each account a [10,000-minute free package per month](https://intl.cloud.tencent.com/document/product/647/42735), which will be deducted from your total monthly duration. The remaining durations multiplied by their unit prices are your total monthly cost.
 
 Cost formula:
 
@@ -42,7 +46,7 @@ For example, if a user subscribes to two 960 × 720 video streams, the aggregate
 
 ## Prepaid Package
 
-TRTC offers [general packages](https://intl.cloud.tencent.com/document/product/647/42736), from which audio, SD video, HD video, and FHD video durations are deducted in the proportion of **1:1, 2:1, 4:1, and 15:1** respectively. For example, for 1 minute of HD video duration used, 4 minutes will be deducted from a general package.
+TRTC offers [general packages](https://intl.cloud.tencent.com/document/product/647/42736), from which audio, SD video, HD video, and FHD video durations are deducted at ratios of **1:1, 2:1, 4:1, and 15:1** respectively. For example, if you use one minute of HD video duration, four minutes will be deducted from the general package.
 
 Below are the prices of general packages:
 
@@ -120,10 +124,10 @@ Below are the prices of general packages:
 
 > ?
 >- The package unit prices in the table are rounded up to 3 decimal places. However, in actual billing, unit prices are rounded to 8 decimal places.
->- Currently, you need to be on our allowlist to use TRTC prepaid packages. You can [contact us](](https://intl.cloud.tencent.com/contact-us)) to add your account to the list.
->- If your monthly usage exceeds 3 million minutes on average, you can [contact us](](https://intl.cloud.tencent.com/contact-us)) for deeper discounts.
+>- You must be on our allowlist to use TRTC prepaid packages. [Contact us](https://intl.cloud.tencent.com/contact-us) to add your account to the allowlist.
+>- If your monthly usage exceeds 3 million minutes on average, you can [contact us](https://intl.cloud.tencent.com/contact-us) for more discounts.
 
-## Billing Examples
+## Billing Example
 
 This section describes how TRTC calculates aggregate resolution, durations, and costs.
 
@@ -170,7 +174,11 @@ The table below shows how to calculate the total cost of the streaming session:
 
 ## Notes
 
-This section provides extra information on billing.
+This section provides extra information on the billing of On-Cloud MixTranscoding.
+
+### Price calculator
+
+You can use the [TRTC Price Calculator](https://intl.cloud.tencent.com/pricing/trtc/calculator) to estimate your costs.
 
 ### Accuracy of durations
 
@@ -196,4 +204,4 @@ On web, a target resolution may be unattainable due to device and browser restri
 
 ### Cost of using other products/services
 
-If your application scenario involves TRTC products or services other than video call and interactive live streaming, for example, [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/38929), you will be charged additional fees. You can refer to the billing document of the corresponding product or service for details.
+If you use other Tencent Cloud products or TRTC services that are not video call or interactive live streaming, for example, [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/38929), you will be charged additional fees. For details, see the billing documents of the corresponding products or TRTC services.

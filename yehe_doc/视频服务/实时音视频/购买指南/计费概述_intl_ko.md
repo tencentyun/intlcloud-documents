@@ -6,7 +6,9 @@
 
 - **[선불 패키지](https://intl.cloud.tencent.com/document/product/647/42736), 선결제 할인 혜택 제공**.
 
-  TRTC 선불 패키지를 구매하기 전에 먼저 [Tencent Cloud 가입](https://intl.cloud.tencent.com/document/product/378/17985)을 완료해야 하며, [문의하기](https://intl.cloud.tencent.com/contact-us)를 통해 화이트리스트 심사를 진행해야 합니다.
+  TRTC 선불 패키지를 구매하기 전에 먼저 [Tencent Cloud 가입](https://intl.cloud.tencent.com/document/product/378/17985)을 완료해야 하며, [문의하기](https://intl.cloud.tencent.com/contact-us)를 통해 얼로우리스트 심사를 진행해야 합니다.
+  
+- **[가격 계산기](https://intl.cloud.tencent.com/pricing/trtc/calculator)로 빠르게 예상 비용 확인**.
 
 ## 매월 10,000분 무료
 

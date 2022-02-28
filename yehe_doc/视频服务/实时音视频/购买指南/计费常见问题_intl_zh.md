@@ -11,7 +11,12 @@
 
 [](id:que1)
 
+### 价格计算器
+
+请查看[TRTC价格计算器](https://intl.cloud.tencent.com/pricing/trtc/calculator)。
+
 ### 如何查看账单及扣费明细？
+
 您可以在 [费用中心 > 账单详情](https://console.cloud.tencent.com/expense/bill/summary) 中查看详细账单及扣费明细。
 
 [](id:que3)
