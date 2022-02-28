@@ -14,13 +14,13 @@ Example: v12.7_r1.1
 v stands for version, and r stands for release; for example, v12.7_r1.1 corresponds to the community version 12.7, where r1.1 indicates Tencent Cloud's iteration version composed of `r{incompatible version number}.{compatible version number}`.
 
 >?
-- Version: it is the PostgreSQL community version number composed of two numbers: major version and minor version. The former starts from 10 (9.3, 9.4, 9.5, 9.6, and so on), and the latter starts from 1. When a community minor version is released, Tencent Cloud will regularly follow the community to update the version.
-- Release: it is the version number used for TencentDB for PostgreSQL iteration and represents the modifications made by TencentDB for PostgreSQL. It consists of two numbers: incompatible version (starting from 1) and compatible version (starting from 0).
- - Incompatible version number
-Definition of "incompatible": when a new database kernel program is used to start a database instance, if the start fails or some features cannot be used normally, the modification is incompatible.
-When the kernel contains incompatible features, the incompatible version number needs to be increased by 1. It will be used to determine whether the minor version upgrade can be performed directly.
- - Compatible version number
-When a compatible modification is added, the compatible version number needs to be increased by 1.
+>- Version: it is the PostgreSQL community version number composed of two numbers: major version and minor version. The former starts from 10 (9.3, 9.4, 9.5, 9.6, and so on), and the latter starts from 1. When a >community minor version is released, Tencent Cloud will regularly follow the community to update the version.
+>- Release: it is the version number used for TencentDB for PostgreSQL iteration and represents the modifications made by TencentDB for PostgreSQL. It consists of two numbers: incompatible version (starting from 1) and >compatible version (starting from 0).
+> - Incompatible version number
+>Definition of "incompatible": when a new database kernel program is used to start a database instance, if the start fails or some features cannot be used normally, the modification is incompatible.
+>When the kernel contains incompatible features, the incompatible version number needs to be increased by 1. It will be used to determine whether the minor version upgrade can be performed directly.
+> - Compatible version number
+>When a compatible modification is added, the compatible version number needs to be increased by 1.
 
 ## Supported Versions
 - PostgreSQL 10
