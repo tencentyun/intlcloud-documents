@@ -11,6 +11,7 @@
 创建插件时，当前 pg_tencentdb_superuser 会临时提权为 superuser，通过所有的权限检查。
 PostgreSQL 的插件是在 database 之下进行管理的，不同 database 之间可创建不同的插件，并且无法互相使用。
 如需创建插件，请通过客户端工具访问至数据库中，执行如下语句创建指定插件：
+
 ```
 CREATE EXTENSION [ IF NOT EXISTS ] extension_name
 [ WITH ]
@@ -22,6 +23,7 @@ CREATE EXTENSION [ IF NOT EXISTS ] extension_name
 ## 查看已创建的插件
 当已经安装了部分插件，需要查看当前 database 安装的插件列表，可通过以下命令查看：
 - 如使用 psql 客户端，可执行 \dx 命令。
+
 ```
 \dx
                                         List of installed extensions
@@ -37,7 +39,9 @@ CREATE EXTENSION [ IF NOT EXISTS ] extension_name
  postgis       | 3.0.2   | public     | PostGIS geometry, geography, and raster spatial types and functions
 (8 rows)
 ```
+
 - 如需使用 SQL 查看，则可执行 `select * from pg_available_extensions where installed_version is not null;` 语句查看已安装的插件列表。
+
 ```
         name      | default_version | installed_version |                               comment                               
 ---------------+-----------------+-------------------+---------------------------------------------------------------------
