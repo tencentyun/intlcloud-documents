@@ -22,6 +22,7 @@ CREATE EXTENSION [ IF NOT EXISTS ] extension_name
 ## Viewing Created Extension
 If you have installed extensions, you can run the following command to view the list of extensions installed in the current database:
 - You can run the `\dx` command if you use the psql client.
+
 ```
 \dx
                                         List of installed extensions
@@ -37,7 +38,9 @@ If you have installed extensions, you can run the following command to view the 
  postgis       | 3.0.2   | public     | PostGIS geometry, geography, and raster spatial types and functions
 (8 rows)
 ```
+
 - If you want to use SQL statements to view the extensions, run the `select * from pg_available_extensions where installed_version is not null;` statement to view the list of installed extensions.
+
 ```
         name      | default_version | installed_version |                               comment                               
 ---------------+-----------------+-------------------+---------------------------------------------------------------------
