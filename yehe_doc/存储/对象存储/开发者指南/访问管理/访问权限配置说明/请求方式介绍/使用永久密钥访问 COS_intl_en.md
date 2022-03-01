@@ -9,7 +9,7 @@ Compared with an anonymous request, a signed request carries an additional signa
 You can log in to the CAM console and go to the [Manage API Key](https://console.cloud.tencent.com/cam/capi) page to get a permanent key. A permanent key consists of a SecretId and a SecretKey. It represents the permanent identity of your account and does not expire.
 - SecretId: used to identify the API caller.
 - SecretKey: used to encrypt the signature string and server-side authentication signature string.
-![](https://qcloudimg.tencent-cloud.cn/raw/d00f0767b6423ea150cfbc54e421c345.png)
+
 
 ## Accessing COS Using a Permanent Key
 
