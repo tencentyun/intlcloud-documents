@@ -25,7 +25,7 @@ CLS 支持按量计费（后付费）方式，即根据用户的实际使用资�
 
 ### 计费项图示说明
 
-![](https://qcloudimg.tencent-cloud.cn/raw/88e67a1df3d70c63a739741cb32e20bf.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ddc794095b1a38f57fb076342216facf.png)
 
 
 ### 计费项详细说明
