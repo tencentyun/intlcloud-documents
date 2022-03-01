@@ -1,7 +1,7 @@
 
 ## Overview
 
-After the CLS service is commercialized, Tencent Cloud still provides a certain free tier for all users in each region as detailed below:
+After the CLS service is commercialized, Tencent Cloud still provides a certain free tier for all users in each region. The details are as follows:
 
 | Billable Item     | Daily Free Tier |
 | :--------- | :---------- |
@@ -16,16 +16,18 @@ After the CLS service is commercialized, Tencent Cloud still provides a certain 
 
 >!
 >- The free tier is counted for all resources of a single user in each region.
->- **The Free Tier perk will end at 23:59:59 on June 30, 2022.**
->- The daily free tier will not be accumulated into the next billing cycle.
+> - **The Free Tier perk will end at 23:59:59 on June 30, 2022.**
+> - The daily free tier will not roll over to the next billing cycle.
 > - If your service is suspended due to violations or overdue payment, you will not be eligible for the Free Tier perk. Free Tier will be unavailable until the service is restarted.
->- The free tier is applicable to all regions supported by CLS.
+> - The free tier is applicable to all regions supported by CLS.
 > - To learn more about the cost estimate, use the [Price Calculator](https://buy.cloud.tencent.com/price/cls/calculator) to export the cost estimate list.
+> 
+
 ## Examples
 
 #### NGINX log query and analysis
 
-Company A's website receives 100 million requests per day, and each request produces a 100-byte log on average. This results in 100 million logs with a total size of approximately 9.31 GB per day. Company A decides to upload the Nginx access logs to CLS in the Beijing region, and save them for 15 days for query and statistical analysis.
+Company A's website receives 100 million requests per day, and each request produces an average of a 100-byte log. This results in 100 million logs per day for a total of approximately 9.31 GB. Company A decides to upload the NGINX access logs to the CLS in the Beijing region, and save them for 15 days for query and statistical analysis.
 
 <table>
    <tr>
@@ -38,72 +40,70 @@ Company A's website receives 100 million requests per day, and each request prod
    <tr>
       <td rowspan="4">Traffic fees</td>
       <td>Write traffic</td>
-       <td>LogListener is used to compress and upload logs, resulting in 2.33 GB traffic consumption.<b>The daily free tier is 5 GB.</td>
+       <td>LogListener is used to compress and upload logs, resulting in 2.33 GB traffic consumption. <b>The daily free tier is 5 GB.</b></td>
       <td>0 GB</td>
       <td>0.032 USD/GB/day</td>
-      <td>0.00 USD/day</td>
+      <td>0 USD/day</td>
    </tr>
      <tr>
       <td>Index traffic</td>
       <td>After full-text index is enabled, 11.2 GB of index traffic is generated (as the index is expanded), <b>and a free tier of 1 GB/day is available.</b></td>
       <td>10.2 GB</td>
-      <td>0.063 USD/GB/day</td>
-      <td>0.64 USD/day</td>
+      <td>0.062 USD/GB/day</td>
+      <td>0.6324 USD/day</td>
    </tr>
    <tr>
       <td>Private network read traffic</td>
       <td>There is no download or consumption via a private network. No private network read traffic is generated.</td>
       <td>0 GB</td>
       <td>0.032 USD/GB/day</td>
-      <td>0.00 USD/day</td>
+      <td>0 USD/day</td>
    </tr>
    <tr>
       <td>Public network read traffic</td>
       <td>There is no download or consumption via a public network. No public network read traffic is generated.</td>
       <td>0 GB</td>
-      <td>0.144 USD/GB/day</td>
-      <td>0.00 USD/day</td>
+      <td>0.141 USD/GB/day</td>
+      <td>0 USD/day</td>
    </tr>
    <tr>
       <td rowspan="2">Storage fees</td>
       <td>Log storage</td>
-      <td>Logs of 2.33 GB are uploaded every day.<b>The daily free tier is 1 GB.</b>The average storage capacity after 15 days is 19.95 GB (1.33 GB * 15 days).</td>
+      <td>Logs of 2.33 GB are uploaded every day. <b>The daily free tier is 1 GB. </b>The average storage capacity after 15 days is 19.95 GB (1.33 GB x 15 days).</td>
       <td>19.95 GB</td>
-      <td nowrap="nowrap">0.0025 USD/GB/day</td>
-      <td nowrap="nowrap">0.0499 USD/day</td>
+      <td nowrap="nowrap">0.0024 USD/GB/day</td>
+      <td nowrap="nowrap">0.04788 USD/day</td>
    </tr>
    <tr>
       <td>Index storage</td>
-      <td>Indexes of 11.2 GB are generated every day.<b>The daily free tier is 1 GB.</b>The average storage capacity after 15 days is 153 GB (10.2 GB * 15 days).</td>
+      <td>Indexes of 11.2 GB are generated every day. <b>The daily free tier is 1 GB. </b>The average storage capacity after 15 days is 153 GB (10.2 GB x 15 days).</td>
       <td>153 GB</td>
-      <td>0.0025 USD/GB/day</td>
-      <td nowrap="nowrap">0.382 USD/day</td>
+      <td>0.0024 USD/GB/day</td>
+      <td nowrap="nowrap">0.3672 USD/day</td>
    </tr>
    <tr>
       <td rowspan="2">Other fees</td>
       <td>Service request</td>
-      <td>LogListener is used to upload logs in batches, producing 100,000 upload requests.<b>The daily free tier is 1,000,000 requests.</b></td>
+      <td>LogListener is used to upload logs in batches, producing 100,000 upload requests. <b>The daily free tier is 1 million requests.</b></td>
       <td>0 times</td>
-      <td>0.027 USD/GB/day</td>
-      <td>0.00 USD/day</td>
+      <td>0.026 USD/GB/day</td>
+      <td>0 USD/day</td>
    </tr>
    <tr>
       <td>Topic partition tenant fees</td>
       <td>The business log peak is 8 MB/s, so two topic partitions are required, <b>and a free tier of 1 partition/day is available.</b></td>
       <td>1 partition</td>
-      <td>0.0072 USD/partition/day</td>
-      <td>0.0072 USD/day</td>
+      <td>0.007 USD/partition/day</td>
+      <td>0.007 USD/day</td>
    </tr>
    <tr>
       <td colspan="2">Total amount</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>1.0791 USD/day</td>
+      <td>1.05448 USD/day</td>
    </tr>
 </table>
-
-
 
 
 
@@ -112,8 +112,8 @@ Company A's website receives 100 million requests per day, and each request prod
 [Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/document/product/457) is a high-scalability and high-performance container management service. You can easily run applications in a managed CVM instance cluster. In response to the high complexity of daily OPS of container clusters and difficulties in troubleshooting, CLS and TKE jointly launched the cluster audit and event log center. With the aid of CLS' log data processing capabilities, you can view audit logs and cluster events in real time through visual charts, which helps you improve the efficiency of container cluster OPS with ease. For TKE audit logs and event logs, CLS offers the following **Free Tier perk**:
 
 #### Eligibility
-TKE audit/event logs written by log topics automatically created by TKE are eligible for this perk. Such log topics are marked with TKE-Audit or TKE-Event. You can view them on the **Logset** > **Log Topic** list page in the **[CLS console](https://console.cloud.tencent.com/cls/logset/desc)**.
-
+TKE audit/event logs written by log topics automatically created by TKE are eligible for this perk. Such log topics are marked with TKE-Audit or TKE-Event. You can view them on the list page **Log Topic in the [CLS console](https://console.cloud.tencent.com/cls/logset/desc)**.
+![](https://main.qcloudimg.com/raw/83ea60f5ea2e85eb7f926d6bd087e79d.png)
 
 #### Rules
 
@@ -124,3 +124,8 @@ TKE audit/event logs written by log topics automatically created by TKE are elig
 #### Validity period
 
 Now through 23:59:59 on June 30, 2022.
+
+#### Samples
+![](https://main.qcloudimg.com/raw/1955438aa1c136c081e72087bdeee7da.png)
+![](https://main.qcloudimg.com/raw/a2051816f647312a2301f7a41d3598ae.png)
+

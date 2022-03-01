@@ -1,6 +1,6 @@
 >!
-> - Cloud Log Service (CLS) was officially commercialized at 00:00:00 on August 03, 2020. After the commercialization, CLS still provides a free tier for all users in each region. For more information, please see [Free Tier](https://intl.cloud.tencent.com/document/product/614/37889).
-> - For more information about the billing rules and standards, please see [Billing Mode](#.E8.AE.A1.E8.B4.B9.E6.96.B9.E5.BC.8F) and other chapters below. To view the current resource usage, go to the [CLS console](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou).  
+> - Cloud Log Service (CLS) was officially commercialized at 00:00:00 on August 3, 2020. After the commercialization, CLS still provides a free tier for all users in each region. For more information, please see [Free Tier](https://intl.cloud.tencent.com/document/product/614/37889).
+> - For more information about the billing rules and standards, please see [Billing Mode](#.E8.AE.A1.E8.B4.B9.E6.96.B9.E5.BC.8F) and other sections below. To view the current resource usage, go to the [CLS console](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou).  
 > - If you know the resource usage and need to know the cost estimate, use the [Price Calculator](https://buy.cloud.tencent.com/price/cls/calculator) to export the cost estimate list.
 > 
 
@@ -21,23 +21,23 @@ CLS is a pay-as-you-go service which bills you according to actual resource usag
 ### Overview
 
 
-![](https://main.qcloudimg.com/raw/177d97d23b8bccc5190dc9cec01bc6af.png)
+![](https://main.qcloudimg.com/raw/1f485ea2c29c05469952e673630fae35.png)
 
 ### Graphic illustration
 
-![](https://qcloudimg.tencent-cloud.cn/raw/ddc794095b1a38f57fb076342216facf.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/88e67a1df3d70c63a739741cb32e20bf.png)
 
 
 ### Description
 
 #### Traffic billable items
 
-| Traffic billable items   | Description                                                   | Billing formula                                     |
+| Traffic Billable Item   | Description                                                   | Billing Formula                                     |
 | -------------- | ------------------------------------------------------------ | -------------------------------------------- |
-| Write traffic     | Billed by the data volume received by CLS. If you compress and upload logs, write traffic will be the actual data volume after the compression. [LogListener](https://intl.cloud.tencent.com/document/product/614/31578) uploads compressed logs by default. | Write traffic fees = unit price per GB * daily accumulated write traffic         |
-| Index traffic   | Billed by the data volume generated when CLS constructs an index. Index traffic is generated only after the index is enabled, and is dependent on the number of fields configured in the index. | Index traffic fees = unit price per GB * daily accumulated index traffic     |
-| Private network read traffic | Billed by the downstream traffic generated when the CLS private domain name is accessed.<br>For example, private network read traffic fees will be incurred when you download CLS logs, consume logs, or ship logs to COS or CKafka over a private network. Log search and analysis via the console or API does not incur any read traffic or fees. | Private network read traffic fees = unit price per GB * daily accumulated private network read traffic |
-| Public network read traffic | Billed by the downstream traffic generated when the CLS public domain name is accessed.<br>For example, public network read traffic fees will be incurred when you download CLS logs, consume logs, or ship logs to COS or CKafka over a public network. Log search and analysis via the console or API does not incur any read traffic or fees. | Public network read traffic fees = unit price per GB * daily accumulated public network read traffic |
+| Write traffic     | Billed by the data volume received by CLS. If you compress and upload logs, write traffic will be the actual data volume after the compression. [LogListener](https://cloud.tencent.com/document/product/614/33495) uploads compressed logs by default. | Write traffic fees = unit price per GB x daily accumulated write traffic         |
+| Index traffic   | Billed by the data volume generated when CLS constructs an index. Index traffic is generated only after the index is enabled, and is dependent on the number of fields configured in the index. | Index traffic fees = unit price per GB x daily accumulated index traffic     |
+| Private network read traffic | Billed by the downstream traffic generated when the CLS private domain name is accessed.<br>For example, private network read traffic fees will be incurred when you download CLS logs, consume logs, ship logs to COS or CKafka, or read source log topics through data processing tasks over a private network. Log search and analysis via the console or API does not incur any read traffic or fees. | Private network read traffic fees = unit price per GB x daily accumulated private network read traffic |
+| Public network read traffic | Billed by the downstream traffic generated when the CLS public domain name is accessed.<br>For example, public network read traffic fees will be incurred when you download CLS logs, consume logs, ship logs to COS or CKafka, or read cross-region source log topics through data processing tasks over a public network. Log search and analysis via the console or API does not incur any read traffic or fees. | Public network read traffic fees = unit price per GB x daily accumulated public network read traffic |
 
  #### Restrictions
 
@@ -49,43 +49,43 @@ CLS is a pay-as-you-go service which bills you according to actual resource usag
 
 #### Storage billable items
 
-| Storage billable items | Description                               | Billing formula                                  |
+| Storage Billable Item | Description                               | Billing Formula                                  |
 | ------------ | ---------------------------------------- | ----------------------------------------- |
-| Log storage | Billed by log data storage usage. | Log storage fees = unit price per GB * daily average log storage |
-| Index storage | Billed by index data storage usage. | Index storage fees = unit price per GB * daily average index storage |
+| Log storage | Billed by log data storage usage. | Log storage fees = unit price per GB x daily average log storage |
+| Index storage | Billed by index data storage usage. | Index storage fees = unit price per GB x daily average index storage |
+
 
 #### Restrictions
 
-1. CLS calculates log storage based on the uploaded data volume. For example, suppose the raw log size is 100 GB:
+1. CLS calculates log storage based on the uploaded data volume. For example, assume that the raw log size is 100 GB:
 	 - If **compression is enabled**, and the data volume uploaded is 25 GB, the log storage is increased by 25 GB.
 	 - If **compression is not enabled**, and the data volume uploaded is 100 GB, the log storage is increased by 100 GB.
 	 - Similarly, when **Log Index** is enabled and fields generate index traffic of 50 GB, the index storage is increased by 50 GB.
-2. Log storage is billed based on average usage. Storage usage values are collected per minute, and averaged per day. The calculation formula is as follows:
- - Daily log storage= "sum of the log storage values per minute for the day" / 1440
- - Daily index storage= "sum of the index storage values per minute for the day" / 1440
-3. The log data and index data are saved based on your configured storage cycle. Expired data does not incur storage fees and will be deleted on the hour. For example, suppose the storage cycle is set for 3 days and logs are uploaded on June 15 12:15. The logs will be saved between June 15 12:15 and June 18 12:15, and the data will be deleted on June 18 13:00. **Do not change the storage cycle frequently, and you can only change it once a day**
- - **Extending the storage cycle**
-When you extend the storage cycle, CLS will save the data for a longer period. For example, if you extend the storage cycle from 7 days to 15 days on June 15 12:30, the data uploaded on June 8 12:00 will be saved to June 23 13:00, instead of being deleted on June 15 13:00.
- - **Shortening the storage cycle**
-       When you shorten the storage cycle, CLS saves data for a reduced period. For example, if you shorten the storage cycle from 15 days to 7 days on June 15, 12:30, the data uploaded between June 1 12:00 and June 8 13:00 will be deleted on June 15 13:00.
+2. Storage is billed based on average usage. Storage usage values are collected on each hour, and averaged per day. 
+3. The log data and index data are saved based on your configured storage cycle. Expired data does not incur storage fees and will be deleted on the hour. For example, assume that the storage cycle is set to 3 days and logs are uploaded on June 15 12:15. The logs will be saved between June 15 12:15 and June 18 12:15, and the data will be deleted on June 18 13:00. **Do not change the storage cycle frequently, and you can only change it once a day.**
+   - **Extending the storage cycle**
+       When you extend the storage cycle, CLS will save the data for a longer period. For example, if you extend the storage cycle from 7 days to 15 days on June 15 12:30, the data uploaded on June 8 12:00 will be saved until June 23 13:00, instead of being deleted on June 15 13:00.
+   - **Shortening the storage cycle**
+       When you shorten the storage cycle, CLS will save the data for a reduced period. For example, if you shorten the storage cycle from 15 days to 7 days on June 15, 12:30, the data uploaded between June 1 12:00 and June 8 13:00 will be deleted on June 15 13:00.
 
 
 #### Other billable items (on demand)
 
-| Other billable items | Description                                                   | Billing formula                                                     |
+| Other Billable Item | Description                                                   | Billing Formula                                                     |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Service request | Billed by the total number of CLS API calls.                         | Service request fees = unit price per 1,000,000 requests * (daily accumulated number of requests / 1000000) |
-| Topic partition | Billed by the number of topic partitions used, including the read-write topic partitions and read-only partitions. | Topic partition fees = unit price * daily accumulated number of topic partitions                      |
+| Service request | Billed by the total number of CLS API calls.                         | Service request fees = unit price per 1,000,000 requests x (daily accumulated number of requests / 1000000) |
+| Topic partition | Billed by the number of topic partitions used, including the read-write topic partitions and read-only partitions. | Topic partition fees = unit price x daily accumulated number of topic partitions                      |
+| Data processing | Billed by the actual amount of data processed, not the compressed amount.| Data processing fees = unit price x amount of data processed
 
 #### Restrictions
-1. Service request counts the requests from [LogListener](https://intl.cloud.tencent.com/document/product/614/31578), [API](https://intl.cloud.tencent.com/document/product/614/42757) or CLS API calls via SDK. This includes read and write requests such as upload and download, creation and deletion, search and analysis.
+1. Service request counts the requests from [LogListener](https://intl.cloud.tencent.com/document/product/614/31578), [API](https://intl.cloud.tencent.com/document/product/614/16907) or CLS API calls via SDK. This includes read and write requests such as upload and download, creation and deletion, search and analysis.
 2. Service requests will be counted regardless of the request result.
 
      
 
-## Billing Example
+## Billing Examples
 
-#### NGINX logs query and analysis
+#### NGINX log query and analysis
 
 Company A's website receives 100 million requests per day, and each request produces a 100-byte log on average. This results in 100 million logs with a total size of approximately 9.31 GB per day. Company A decides to upload the NGINX access logs to CLS in the Beijing region, and save them for 15 days for query and statistical analysis.
 
@@ -103,65 +103,67 @@ Company A's website receives 100 million requests per day, and each request prod
       <td>LogListener is used to compress and upload logs, resulting in 2.33 GB traffic consumption</td>
       <td>2.33 GB</td>
       <td>0.032 USD/GB/day</td>
-      <td>0.075 USD/day</td>
+      <td>0.07456 USD/day</td>
    </tr>
      <tr>
       <td>Index traffic</td>
       <td>Full-text index is enabled, generating an index traffic of 11.2 GB (index traffic is larger than the write traffic)</td>
       <td>11.2 GB</td>
-      <td>0.063 USD/GB/day</td>
-      <td>0.7056 USD/day</td>
+      <td>0.062 USD/GB/day</td>
+      <td>0.6944 USD/day</td>
    </tr>
    <tr>
       <td>Private network read traffic</td>
       <td>There is no download or consumption via a private network. No private network read traffic is generated.</td>
       <td>0 GB</td>
       <td>0.032 USD/GB/day</td>
-      <td>0.00 USD/day</td>
+      <td>0 USD/day</td>
    </tr>
    <tr>
       <td>Public network read traffic</td>
       <td>There is no download or consumption via a public network. No public network read traffic is generated.</td>
       <td>0 GB</td>
-      <td>0.144 USD/GB/day</td>
-      <td>0.00 USD/day</td>
+      <td>0.141 USD/GB/day</td>
+      <td>0 USD/day</td>
    </tr>
    <tr>
       <td rowspan="2">Storage fees</td>
       <td>Log storage</td>
-      <td>Logs of 2.33 GB are uploaded every day. The average storage capacity after 15 days is 34.95 GB (2.33 GB * 15 days)</td>
+      <td>Logs of 2.33 GB are uploaded every day. The average storage capacity after 15 days is 34.95 GB (2.33 GB x 15 days)</td>
       <td>34.95 GB</td>
-      <td nowrap="nowrap">0.0025 USD/GB/day</td>
-      <td nowrap="nowrap">0.088 USD/day</td>
+      <td nowrap="nowrap">0.0024 USD/GB/day</td>
+      <td nowrap="nowrap">0.08388 USD/day</td>
    </tr>
    <tr>
       <td>Index storage</td>
-      <td>Indexes of 11.2 GB are generated every day. The average storage capacity after 15 days is 168 GB (11.2 GB * 15 days)</td>
+      <td>Indexes of 11.2 GB are generated every day. The average storage capacity after 15 days is 168 GB (11.2 GB x 15 days)</td>
       <td>168 GB</td>
-      <td>0.0025 USD/GB/day</td>
-      <td nowrap="nowrap">0.42 USD/day</td>
+      <td>0.0024 USD/GB/day</td>
+      <td nowrap="nowrap">0.4032 USD/day</td>
    </tr>
    <tr>
       <td rowspan="2">Other fees</td>
       <td>Service request</td>
       <td>LogListener is used to upload logs in batches, producing 100,000 upload requests</td>
       <td>100,000 requests</td>
-      <td>0.027 USD/million requests/day</td>
-      <td>0.0027 USD/day</td>
+      <td>0.026 USD/million requests/day</td>
+      <td>0.0026 USD/day</td>
    </tr>
    <tr>
       <td>Topic partition tenant fees</td>
-      <td>The peak bandwidth for business logs is 8 MB/sec. Two topic partitions are needed.</td>
+      <td>The peak bandwidth for business logs is 8 MB/s. Two topic partitions are needed.</td>
       <td>2 partitions</td>
-      <td>0.0072 USD/partition/day</td>
-      <td>0.0144 USD/day</td>
+      <td>0.007 USD/partition/day</td>
+      <td>0.014 USD/day</td>
    </tr>
    <tr>
       <td colspan="2">Total amount</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>1.3095 USD/day</td>
+      <td>1.27264 USD/day</td>
    </tr>
 </tbody></table>
+
+
 
