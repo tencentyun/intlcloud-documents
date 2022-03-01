@@ -27,9 +27,9 @@ DDoS 高防为已接入防护的网站业务提供 CC 频率限制防护策略�
 ## 操作步骤
 1. 登录 [DDoS 高防（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-native/config/port) ，在左侧导航中，单击**防护配置** > **CC 防护**。
 2. 在 CC 防护页面的左侧列表中，选中高防包的 ID，如“bgp-00xxxxxx”。
-![](https://qcloudimg.tencent-cloud.cn/raw/87a4773836c1e230b9b742325f35270c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/96e22f56ce73f2fb7af2e0760d27d986.png)
 3. 在右侧 CC 频率限制卡片中，单击**设置**，进入 CC 频率限制列表。
-![](https://qcloudimg.tencent-cloud.cn/raw/02c524bc9b7dd9d08f0abfd0b38d678a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f9eb316ce763443c727a9393fe156bc3.png)
 4. 在CC 频率限制列表中，单击**新增规则**，创建频率限制规则，填写相关字段。
 >!
 >- 当没有创建规则时，自定义等级不允许开启。

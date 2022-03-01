@@ -6,9 +6,9 @@ DDoS 高防支持对已接入防护的网站业务，设置基于地理区域的
 ## 操作步骤
 1. 登录 [DDoS 高防（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-native/config/port) ，在左侧导航中，单击**防护配置** > **CC 防护**。
 2. 在 CC 防护页面的左侧列表中，选中高防包的 ID，如“bgp-00xxxxxx”。
-![](https://qcloudimg.tencent-cloud.cn/raw/87a4773836c1e230b9b742325f35270c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3db9584e9adc4c083500f47612012d77.png)
 3. 在右侧 区域封禁卡片中，单击**设置**，进入区域封禁页面。
-![](https://qcloudimg.tencent-cloud.cn/raw/df42178c35b65334ce4320a72990f229.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/04c6b323da9cdb744fc9727ff5622aae.png)
 4. 在区域封禁页面中，单击**新建**，弹出新建区域封禁弹窗。
 5. 在新建区域封禁弹窗中，选择 IP、域名、所封禁的区域，单击**确定**，创建区域封禁规则。
 ![](https://qcloudimg.tencent-cloud.cn/raw/acb49706477347c879d611c70506852c.png)

@@ -42,9 +42,9 @@ DDoS 高防支持对已接入防护的网站业务配置精准防护策略。开
 ## 操作步骤
 1. 登录 [DDoS 高防（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-native/config/port) ，在左侧导航中，单击**防护配置** > **CC 防护**。
 2. 在 CC 防护页面的左侧列表中，选中高防包的 ID，如“bgp-00xxxxxx”。
-![](https://qcloudimg.tencent-cloud.cn/raw/87a4773836c1e230b9b742325f35270c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e55e701a6d9aee4891fcddaf143463fe.png)
 3. 在精准防护卡片中，单击**设置**，进入精准防护规则列表。
-![](https://qcloudimg.tencent-cloud.cn/raw/e88ea57e52dd770cc6d7c464e8ab5993.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4405e6e6b2cfac3fedbf30bde7b4cce4.png)
 4. 在精准防护规则列表中，单击**新建**，创建精准防护规则，填写相关字段，填写完成后，单击**确定**。
 ![](https://main.qcloudimg.com/raw/6cd2b642946d053123a03387c7ab3cc5.png)
 5. 新建完成后，精准防护列表将会新增一条精准防护规则，可以在右侧操作栏单击**配置**，修改精准防护规则。
