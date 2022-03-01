@@ -48,8 +48,8 @@ sink.csv.directory=/tmp/goosefs-metrics # Set the monitoring metric export path
 After the configuration, you need to restart the node for the configuration to take effect. After the configuration takes effect, the monitoring metrics will be periodically exported to CSV files and stored to the specified path.
 
 >!
-- GooseFS provides a monitoring configuration template. For more information, see the `conf/metrics.properties.template` file.
-- If GooseFS is deployed on a cluster, ensure that the specified metric storage path can be read by all nodes.
+>- GooseFS provides a monitoring configuration template. For more information, see the `conf/metrics.properties.template` file.
+>- If GooseFS is deployed on a cluster, ensure that the specified metric storage path can be read by all nodes.
 
 ### 3. Pulling Prometheus monitoring metrics
 You can run the following commands to view Prometheus monitoring metrics on the GooseFS master node (metrics port: 9201) and worker node (metrics port: 9204):
