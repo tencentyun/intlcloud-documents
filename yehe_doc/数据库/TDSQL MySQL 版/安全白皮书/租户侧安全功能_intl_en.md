@@ -53,14 +53,6 @@ TDSQL for MySQL complies with applicable Chinese information security standards 
 - ITSS Certification
 - CSA STAR Gold certification and dual certification for information security management system from CNAS and UKAS
 
-## Data Security Encryption
-TDSQL for MySQL supports tablespace encryption (transparent encryption) and connection encryption (SSL connection encryption). In scenarios where Tencent Cloud Key Management Service (KMS) is not utilized, TDSQL for MySQL supports the keyring service, enabling internal server components and plugins to securely store sensitive data for subsequent retrieval. This service provides a set of APIs for the encryption feature to call KMS.
-
-
-## SQL Firewall
-SQL firewall is a security feature that filters out unauthorized SQL statements by analyzing the syntax of SQL statements sent by users. It works with SQL Engine to check whether an SQL statement is on the predefined list of unauthorized SQL statements so as to filter out and block it accordingly, which effectively prevents SQL injection attacks.
-
->?SQL firewall can be used together with Tencent Cloud services such as Web Application Firewall (WAF). Taking into account the business conditions and SQL complexity, there are no preset rules in TDSQL for MySQL firewall currently.
 
 ## Comprehensive Security Audit
 Security audit is one of the most important tracing methods; therefore, China's Cybersecurity Classified Protection Certification (Level 3) stipulates that an information system should support auditing. TDSQL for MySQL provides audit capabilities at the following three layers to deliver complete security protection:
