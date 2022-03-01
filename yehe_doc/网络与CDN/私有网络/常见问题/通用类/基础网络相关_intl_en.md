@@ -8,7 +8,6 @@ Your existing resources running on the classic network are still available till 
 This depends on the specific Tencent Cloud service that you use:
 + For TencentDB services, your services are not affected as dual-IP accessing is supported during migration.
 + To migration a CVM instance, the instance must be shut down, which will interrupt your service for a shor while. We recommend you migrate during off-peak hours.
-+ CLB 不支持直接迁移，可重建相同配置的实例，将业务流量逐步迁移。
 
 ### Will the billing mode change after the migration from the classic network to VPC?
 The billing mode is not changed.
@@ -25,7 +24,6 @@ No.
 
 
 ### What are the differences between the classic network and VPC?
-基础网络与私有网络均为云上网络空间，区别在于：
 - The classic network is a public network resource pool shared by all Tencent Cloud users. The private IPs of all CVMs are assigned by Tencent Cloud. You cannot customize IP ranges or IP addresses.
 - A VPC is a logically isolated network space in Tencent Cloud. In a VPC, you can customize IP ranges, IP addresses, and routing policies, making it more suitable for use cases requiring custom configurations.
 
@@ -63,7 +61,6 @@ If these conditions are met, you can configure Classiclink on the VPC details pa
 No. A VPC supports more features with greater flexibility, and therefore we recommend that you migrate resources from the classic network to a VPC.
 
 ### How can I disassociate a VPC from a CVM in the classic network?
-您好，解关联步骤如下：
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc).
 2. Click the **ID/Name** of the VPC which needs Classiclink to access the details page.
 3. Click **Classiclink**. Select the classic network-based CVM to be disassociated and click **Disassociate**.
