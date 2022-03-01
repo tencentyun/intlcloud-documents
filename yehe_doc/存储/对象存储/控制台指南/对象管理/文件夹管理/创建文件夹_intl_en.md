@@ -1,6 +1,6 @@
 ## Overview
 
-In COS that comes with no folders, objects are stored in a flat structure. To make it easier for you to get started, objects whose object keys are suffixed with `/` can be used as "folders", but the "folders" are actually objects occupying 0 KB in COS.
+COS stores objects in a flat structure with no traditional folder concept. In order to make COS customary, we turn an object into a "folder" by suffixing it with `/` in its key. In fact, a "folder" in COS is an object with a storage capacity of 0 KB. For more information, see [Folder and directory](https://intl.cloud.tencent.com/document/product/436/13324#folder-and-directory).
 
 >! The length of the folder name cannot exceed 255 characters, and the following ASCII control characters are not supported:
 >- Up (↑): CAN (24)
@@ -16,11 +16,11 @@ A bucket is created. For operation details, see [Creating a Bucket](https://intl
 ## Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
-2. In the left sidebar, click **Bucket List** to go to the bucket list page.
+2. Click **Bucket List** on the left sidebar.
 3. Locate the bucket for which a folder is to be created, and click the bucket name to go to the bucket management page.
-4. In the left sidebar, choose **File List** to go to the file list page.
+4. Click **File List** on the left sidebar.
 5. Click **Create Folder**.
-
+![](https://main.qcloudimg.com/raw/f7557e7c7656c5e008046a2f4ce3bc83.png)
 6. In the pop-up window, enter the folder name and click **OK**.
 ![](https://main.qcloudimg.com/raw/49710cbfaa3a06f22118a7e6e334787f.png)
 >! Folders cannot be renamed. Please exercise caution when naming folders.

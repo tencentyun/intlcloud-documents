@@ -1,4 +1,3 @@
-
 ## Overview
 This document describes how to install an SSL certificate on an Nginx server.
 >?
@@ -41,13 +40,14 @@ This document describes how to install an SSL certificate on an Nginx server.
 1. Log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl), and click **Download** for the certificate you need to install.
 2. In the pop-up window, select **Nginx** for the server type, click **Download**, and decompress the `cloud.tencent.com` certificate file package to the local directory.
 After decompression, you can get the certificate file of the corresponding type, which includes the `cloud.tencent.com_nginx` folder.
- - **Folder**: `cloud.tencent.com_nginx`
- - **Files in the folder**:
+   - **Folder**: `cloud.tencent.com_nginx`
+   - **Files in the folder**:
      - `cloud.tencent.com_bundle.crt`: certificate file
-     - `cloud.tencent.com_bundle.pem`: certificate file
+     - `cloud.tencent.com_bundle.pem`: certificate file (This file can be ignored.)
      - `cloud.tencent.com.key`: private key file
      - `cloud.tencent.com.csr`: CSR file
 >?The CSR file is uploaded by you or generated online by the system and is provided to the certificate authority (CA) when you apply for the certificate. It is not relevant to installation.
+>
 3. Log in to the Nginx server using WinSCP (a tool copying files between a local computer and a remote computer).
 4. Copy the `cloud.tencent.com_bundle.crt` and `cloud.tencent.com.key` files from the local directory to the `/usr/local/nginx/conf` directory of the Nginx server (this is the default Nginx installation directory and needs to be adjusted as needed).
 5. Log in to the Nginx server remotely by using a login tool such as [PuTTY](https://intl.cloud.tencent.com/document/product/213/32502).
@@ -84,18 +84,18 @@ server {
 ```
 ./sbin/nginx -t
 ```
- - If yes, reconfigure or fix the problem as prompted.
- - If no, proceed to [step 7](#step7).
-[](id:step7)
+   - If yes, reconfigure or fix the problem as prompted.
+   - Otherwise, proceed to [step 8](#step8).
+ [](id:step8)
 8. Restart the Nginx server and then you can access the `cloud.tencent.com` website over the HTTPS protocol.
 
 ### (Optional) security configuration for automatic redirect from HTTP to HTTPS
 You can redirect HTTP requests to HTTPS by configuring the following settings:
 1. Select one of the following configuration methods based on your actual needs:
- - Add a JavaScript script to the page.
- - Add redirect in the backend program.
- - Redirect through a web server.
- - Nginx supports rewrite. If you did not remove pcre during the compilation, you can add `return 301 https://$host$request_uri;` to the HTTP server to redirect requests made to default port 80 to HTTPS.
+   - Add a JavaScript script to the page.
+   - Add redirect in the backend program.
+   - Redirect through a web server.
+   - Nginx supports rewrite. If you did not remove pcre during the compilation, you can add `return 301 https://$host$request_uri;` to the HTTP server to redirect requests made to default port 80 to HTTPS.
 >?
 >- Uncommented configuration statements can be configured as shown below.
 >- You may need to configure the configuration file differently based on the Nginx version. For example, use `listen 443 ssl` instead of `listen 443` and `ssl on` for version `nginx/1.15.0` or later.
@@ -117,7 +117,7 @@ server {
 			# Path to the website homepage. This example is for reference only. You should configure it with the actual path 
 			#For example, fill in /etc/www if your website running directory is /etc/www.
 		root html;
-        index  index.html index.htm;
+        index index.html index.htm;
     }
 }
 server {
@@ -127,7 +127,7 @@ server {
 	# Redirect requests made to an HTTP domain name to HTTPS
     return 301 https://$host$request_uri; 
 }
-``` 
+```
 2. After modification is complete, restart the Nginx server and then you can access the `cloud.tencent.com` website over the HTTPS protocol.
 
 >!If you experience any issues with the above steps, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).

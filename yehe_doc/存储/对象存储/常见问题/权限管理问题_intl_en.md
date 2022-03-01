@@ -2,7 +2,7 @@
 
 ### How can I view the key information such as `APPID`, `SecretId`, and `SecretKey`?
 
-The second half of a bucket name is the `APPID`. You can view it by logging in to the [COS console](https://console.cloud.tencent.com/cos5/bucket). To view information such as `SecretId` and `SecretKey`, log in to the CAM console and go to [Manage API Key](https://console.cloud.tencent.com/cam/capi).
+The second half of a bucket name is the `APPID`. You can view it by logging in to the [COS console](https://console.cloud.tencent.com/cos5/bucket). To view information such as `SecretId` and `SecretKey`, log in to the CAM console and go to the [Manage API Key](https://console.cloud.tencent.com/cam/capi) page.
 
 ### How long will a temporary key be valid?
 
@@ -14,7 +14,7 @@ You can delete the compromised key and create a new one. For more information, p
 
 ### How can I generate a time-bound access URL for a Private Read/Write file?
 
-You can set a validity period for your key by referring to [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+You can set the effective time for your key by referring to [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 ## Permissions
 
@@ -22,7 +22,14 @@ You can set a validity period for your key by referring to [Generating and Using
 
 You can grant such permission by referring to [Setting Folder Permissions](https://intl.cloud.tencent.com/document/product/436/35261). To grant more advanced permissions to a sub-account, please see [Cases of Permission Setting](https://intl.cloud.tencent.com/document/product/436/12514).
 
+### What do I do if COS returns a 403 error?
 
+You can use the [COS debugger](https://web.debugger.coshelper.com/) that the COS team developed for developers to configure Hosts to capture COS API requests and intelligently analyze the error in the requests. You can also troubleshoot the error according to the following process:
+
+1. Check whether the configuration of `BucketName`, `APPID`, `Region`, `SecretId`, and `SecretKey` is correct.
+2. If the above information is correct, check whether a sub-account is used. If so, check whether the sub-account has been authorized by the root account. If it has not been authorized, log in to the root account to authorize the sub-account.
+3. Perform authorization. For more information, see [Cases of Permission Setting](https://intl.cloud.tencent.com/document/product/436/12514).
+4. If a temporary key is used for operation, check whether the current operation is in the Policy set when obtaining the temporary key. Otherwise, modify the relevant Policy settings.
 
 ### What do I do if “AccessDenied” is reported?
 
@@ -32,12 +39,14 @@ In most cases, this error is reported due to unauthorized access or insufficient
 2. If the configuration above is correct, check whether a sub-account is used for the operation. If yes, check whether the sub-account has been authorized by the root account. If it has not yet been authorized, log in using the root account to authorize the sub-account. For more information about authorization, please see [Cases of Permission Settings](https://intl.cloud.tencent.com/document/product/436/12514).
 3. If a temporary key is used, check whether the current operation is in the policy set when the temporary key is obtained; if not, modify the relevant policy settings. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
+You can also use the [COS debugger](https://web.debugger.coshelper.com/) that the COS team developed for developers to configure Hosts to capture COS API requests and intelligently analyze the error in the requests. The tool will provide the error details and handling suggestions.
 
 ### What do I do if the number of bucket permissions has reached the upper limit?
 
 Each root account (i.e., each `APPID`) can have up to 1,000 bucket ACLs. If more bucket ACLs have been configured, an error will be reported. Therefore, you are advised to delete unnecessary ACLs.
 
 >?You are not advised to use file-level ACLs or policies. When calling APIs or SDKs, if you do not need ACL control over a file, we recommend leaving the ACL-related parameters (such as x-cos-acl and ACL) empty to inherit the bucket permissions.
+>
 
 ### What should I do if an incorrect permission error is reported when I am creating a bucket?
 
@@ -61,6 +70,7 @@ You can troubleshoot as follows:
 2. If the configuration above is correct, check whether a sub-account is used for the operation. If yes, check whether the sub-account has been authorized by the root account. If it has not yet been authorized, log in using the root account to authorize the sub-account. For more information about authorization, please see [Cases of Permission Settings](https://intl.cloud.tencent.com/document/product/436/12514).
 3. If a temporary key is used, check whether the current operation is in the policy set when the temporary key is obtained; if not, modify the relevant policy settings. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
+You can also use the [COS debugger](https://web.debugger.coshelper.com/) that the COS team developed for developers to configure Hosts to capture COS API requests and intelligently analyze the error in the requests. The tool will provide the error details and handling suggestions.
 
 ### How can I prevent users from downloading COS data?
 
