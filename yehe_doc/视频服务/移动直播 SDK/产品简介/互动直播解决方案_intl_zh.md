@@ -12,8 +12,10 @@
 <td><ul style="margin:0">
 <li>借助移动直播 SDK，快速实现包括 Android、iOS、H5 及微信小程序等多个主流平台的直播推拉流能力。 </li>
 <li>得力于腾讯优图团队支持，支持面部五官定位，实现实时美颜、动画贴纸特效等直播互动。 </li>
+<li>在移动直播 SDK 借助 RTMPAccess 建立主播和主播、主播和观众之间的音视频通话，从而实现低延时的直播连麦互动。 </li>
 <li>移动直播 SDK 计费规则请参见 <a href="https://intl.cloud.tencent.com/document/product/1071/38114">移动直播价格总览</a>。 </li>
-<li>移动直播连麦功能请参见 <a href="https://intl.cloud.tencent.com/document/product/1071/39888">连麦互动</a>。 </li>
+<li>快速搭建直播应用请使用 <a href="https://intl.cloud.tencent.com/document/product/1071/38147">移动直播 SDK Demo 体验</a> 产品功能。 </li>
+<li>移动直播连麦功能请参见 <a href="https://intl.cloud.tencent.com/document/product/1071/42210">连麦互动</a>。 </li>
 </ul></td>
 </tr><tr>
 <td>云直播</td>

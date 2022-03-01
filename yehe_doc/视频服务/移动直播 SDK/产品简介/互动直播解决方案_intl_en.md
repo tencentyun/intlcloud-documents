@@ -3,7 +3,7 @@
 Interactive Live Streaming is a new one-stop solution for real-time mic connect among multiple users. Powered by the MLVB SDK, CSS, VOD, and IM, it enables one-to-many and many-to-many interaction during live streaming and features multi-video effects and high-quality video.
 
 
-## Related Tencent Cloud Services
+## Related Tencent Cloud Products
 
 <table>
 <tr><th>Service</th><th>Description</th>
@@ -12,8 +12,10 @@ Interactive Live Streaming is a new one-stop solution for real-time mic connect 
 <td><ul style="margin:0">
 <li>The MLVB SDK offers publishing and playback capabilities on multiple mainstream platforms including Android, iOS, H5 pages, and WeChat Mini Program. </li>
 <li>Powered by YouTu’s technologies, the MLVB SDK supports facial feature recognition, real-time beauty filters, animated stickers, and other special effects.</li>
+<li>Connection between anchors and audience members is established over RTMP, allowing low-latency mic connect and interaction.</li>
 <li>For the billing of the MLVB SDK, please see <a href="https://intl.cloud.tencent.com/document/product/1071/38114">Purchase Guide</a>.</li>
-<li>For more information on the mic connect feature of the MLVB SDK, please see <a href="https://intl.cloud.tencent.com/document/product/1071/39888">Mic Connect</a>.</li>
+<li>You can use the <a href="https://intl.cloud.tencent.com/document/product/1071/38147">trial demo</a> to try MLVB features.</li>
+<li>For more information on the mic connect feature of the MLVB SDK, please see <a href="https://intl.cloud.tencent.com/document/product/1071/42210">Mic Connect</a>.</li>
 </ul></td>
 </tr><tr>
 <td>CSS</td>
@@ -44,3 +46,4 @@ Interactive Live Streaming is a new one-stop solution for real-time mic connect 
 ## Architecture
 
 ![](https://main.qcloudimg.com/raw/510a784c9d15fddc136ea89be3dfb7aa.png)
+
