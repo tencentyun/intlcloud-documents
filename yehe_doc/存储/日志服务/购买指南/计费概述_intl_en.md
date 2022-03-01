@@ -25,7 +25,7 @@ CLS is a pay-as-you-go service which bills you according to actual resource usag
 
 ### Graphic illustration
 
-![](https://main.qcloudimg.com/raw/d22617cda4657e9692866add60a06d46.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ddc794095b1a38f57fb076342216facf.png)
 
 
 ### Description
