@@ -9,7 +9,7 @@
 您可以在访问管理控制台中的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取永久密钥，永久密钥包括 SecretId 和 SecretKey，代表了账号的永久身份，不会过期。
 - SecretId：用于标识 API 调用者身份。
 - SecretKey：用于加密签名字符串和服务端验证签名字符串的密钥。
-![](https://qcloudimg.tencent-cloud.cn/raw/d00f0767b6423ea150cfbc54e421c345.png)
+
 
 ## 使用永久密钥访问 COS
 

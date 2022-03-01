@@ -1,8 +1,8 @@
 COS supports object upload and download using pre-signed URLs, which are signed links with signatures embedded. You can control the effective time of a pre-signed URL based on the validity period of the corresponding signature.
 
-You can use pre-signed URLs to download objects, obtain temporary URLs for sharing files and folders temporarily, or set a long signature validity period to obtain long-term URLs for sharing files for a long time. For more information, see [Sharing Files](#Sharing Files).
+You can use pre-signed URLs to download objects, obtain temporary URLs for sharing files and folders temporarily, or set a long signature validity period to obtain long-term URLs for sharing files for a long time. For more information, see Sharing Files.
 
-You can also use pre-signed URLs to upload objects. For more information, see [Uploading Files](#Uploading Files).
+You can also use pre-signed URLs to upload objects. For more information, see Uploading Files
 
 <span id="Sharing Files"></span>
 ## Sharing Files (Downloading Files)
@@ -27,9 +27,9 @@ You can quickly obtain temporary links of objects via the console or COSBrowser.
 #### Console (web page)
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5), click a desired bucket name, go to the file list page, and click **Details** corresponding to a target object.
-![](https://qcloudimg.tencent-cloud.cn/raw/72a4c937ea9a2e9f44349b215828d590.png)
+
 2. On the object details page, copy the temporary link, which is valid for 1 hour.
-![](https://qcloudimg.tencent-cloud.cn/raw/4ea811f3a49709c73d7a8d3bfb171aaa.png)
+
 
 #### COSBrowser (client)
 
@@ -46,7 +46,7 @@ Follow the steps below:
 2. Obtain SecretId and SecretKey from [API Key Management](https://console.cloud.tencent.com/cam/capi).
 3. Click **COS Signature Tool** to obtain the signed URL.
 The effective time can be set by second, minute, hour, or day.
-![](https://qcloudimg.tencent-cloud.cn/raw/0c9a4378cf8ba2e90b216abc0b030067.png)
+
 
 #### Using an SDK to obtain pre-signed URLs in batches
 

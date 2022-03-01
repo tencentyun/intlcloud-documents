@@ -20,7 +20,7 @@ A bucket is created. For operation details, see [Creating a Bucket](https://intl
 3. Locate the bucket for which a folder is to be created, and click the bucket name to go to the bucket management page.
 4. Click **File List** on the left sidebar.
 5. Click **Create Folder**.
-![](https://main.qcloudimg.com/raw/f7557e7c7656c5e008046a2f4ce3bc83.png)
+
 6. In the pop-up window, enter the folder name and click **OK**.
 ![](https://main.qcloudimg.com/raw/49710cbfaa3a06f22118a7e6e334787f.png)
 >! Folders cannot be renamed. Please exercise caution when naming folders.
