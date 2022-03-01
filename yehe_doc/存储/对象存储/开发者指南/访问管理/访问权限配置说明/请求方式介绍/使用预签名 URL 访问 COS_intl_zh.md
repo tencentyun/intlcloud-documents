@@ -27,9 +27,9 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 #### 控制台（Web 页面）
 
 1. 登录 [COS 控制台](https://console.cloud.tencent.com/cos5)，单击存储桶名称，进入“文件列表”，单击对象**详情**。
-![](https://qcloudimg.tencent-cloud.cn/raw/72a4c937ea9a2e9f44349b215828d590.png)
+
 2. 进入对象详情页面，复制临时链接，有效期为1小时。
-![](https://qcloudimg.tencent-cloud.cn/raw/4ea811f3a49709c73d7a8d3bfb171aaa.png)
+
 
 #### COSBrowser（客户端）
 
@@ -46,7 +46,7 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 2. 从 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中获取 SecretId 和 SecretKey。
 3. 单击COS 签名工具，获取签名链接。
 有效时间：支持秒、分钟、小时、天级别设置。
-![](https://qcloudimg.tencent-cloud.cn/raw/0c9a4378cf8ba2e90b216abc0b030067.png)
+
 
 #### 使用 SDK 批量获取预签名 URL
 
