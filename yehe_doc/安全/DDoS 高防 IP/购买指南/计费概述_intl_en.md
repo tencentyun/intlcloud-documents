@@ -94,7 +94,11 @@ See the following table for detailed prices.
 
 ### Application Bandwidth
 Application bandwidth is the bandwidth used for forwarding the application traffic that has been cleansed by the Tencent Cloud Anti-DDoS data center back to the data center on the real server.
-It is billed by the monthly subscription plan. See the following table for detailed prices.
+
+- After elastic application bandwidth is enabled:
+  - If elastic application bandwidth is not triggered, only the preset application bandwidth fee will be charged.
+  - If elastic application bandwidth is triggered (the actual application bandwidth exceeds the preset application bandwidth), the excessive bandwidth will be billed on a daily basis with bill for day T pushed on day T + 1. The billing rule is excessive bandwidth * 1 USD/Mbps, and the excessive bandwidth is the maximum outbound Anti-DDoS traffic on day T minus the preset application bandwidth specification. If the excess is < 0, no bill will be pushed on day T + 1.
+- If elastic application bandwidth is not enabled, the maximum application bandwidth is the preset specification. If it is exceeded, packet loss or business impact may occur, and only the preset application bandwidth fee will be charged as follows:
 
 | Bandwidth | Price (USD/month) |
 |-|-|
