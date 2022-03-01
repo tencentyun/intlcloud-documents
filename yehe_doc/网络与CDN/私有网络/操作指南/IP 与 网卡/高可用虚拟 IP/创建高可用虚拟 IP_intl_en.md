@@ -48,8 +48,8 @@ After the configurations are completed in the HA software of CVM, the HAVIP stat
 ![]()
 
 See the following cases for your configurations:
-> + [Building High Availability Primary/Secondary Cluster by Using HAVIP + Keepalived](https://intl.cloud.tencent.com/document/product/215/31877) under Best Practices
-> + [Creating a High-availability Database by Using HAVIP + Windows Server Failover Cluster](https://intl.cloud.tencent.com/document/product/215/31878) under Best Practices 
+ + [Building High Availability Primary/Secondary Cluster by Using HAVIP + Keepalived](https://intl.cloud.tencent.com/document/product/215/31877) under Best Practices
+ + [Creating a High-availability Database by Using HAVIP + Windows Server Failover Cluster](https://intl.cloud.tencent.com/document/product/215/31878) under Best Practices 
 
 ## Relevant Documentation
 Similar to a private IP, a HAVIP can also be bound with or unbound from an EIP on the VPC console. If you need public network communication, see [Binding or Unbinding EIP](https://intl.cloud.tencent.com/document/product/215/40083).
