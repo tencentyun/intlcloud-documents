@@ -2,7 +2,6 @@
 VPCs or subnets cannot be deleted.
 
 ## Common Causes
-目前 VPC 和子网的删除条件为：
 + VPC: A VPC can only be deleted when there is no resource associated other than empty subnets (IPs in the subnet are not used), routing tables, and network ACLs.
 + Subnet: A subnet can only be deleted when it’s not associated with any resource.
 >? Resources that can be associated with the subnet include CVM, private network CLB, ENI, HAVIP, SCF, TKE, and TencentDB (for MySQL, Redis, TDSQL, etc.).
@@ -26,5 +25,5 @@ According to the rules above, VPCs and subnets cannot be deleted in the followin
 + For more information, see [Terminating Instances](https://intl.cloud.tencent.com/document/product/213/4930) (for CVM), [Deleting CLB Instances](https://intl.cloud.tencent.com/document/product/214/15369), [Deleting an ENI](https://intl.cloud.tencent.com/document/product/576/18536), [Deleting a Peering Connection](https://intl.cloud.tencent.com/document/product/553/18848), [Deleting NAT Gateway](https://intl.cloud.tencent.com/document/product/1015/30243), [Deleting a VPN Gateway](https://intl.cloud.tencent.com/document/product/1037/41582), [Deleting Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19258), [Delete Flow Logs](https://intl.cloud.tencent.com/document/product/682/18968), [Network Probe](https://intl.cloud.tencent.com/document/product/215/35522), [Releasing HAVIPs](https://intl.cloud.tencent.com/document/product/215/40082), [Terminating Instance](https://intl.cloud.tencent.com/document/product/239/31937) (for TencentDB for Redis), and [Terminating Instance](https://intl.cloud.tencent.com/document/product/236/31895) (for TencentDB for MySQL).
 </dx-alert>
 4. After the resources are completely released, [delete the VPC](https://intl.cloud.tencent.com/document/product/215/40073) and [subnet](https://intl.cloud.tencent.com/document/product/215/40077) again.
-   + 删除成功，结束。
+
    + If the problem persists, [contact us](https://intl.cloud.tencent.com/contact-sales) for assistance.
