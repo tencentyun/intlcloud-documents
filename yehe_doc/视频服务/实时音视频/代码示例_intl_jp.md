@@ -232,8 +232,8 @@
                 <img src="https://qcloudimg.tencent-cloud.cn/raw/c8b92d2457467e3c349cb56e83b37ef4.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
-                <h3 style="color:191919;">多人数インタラクティブオーディオビデオ</h3>
-                <p style="color:#586376" ;>コンポーネント化されたUIによって、インタラクティブオーディオビデオシーンをローコードですばやく実現</p>
+                <h3 style="color:191919;">多人数オーディオビデオルーム</h3>
+                <p style="color:#586376" ;>コンポーネント化されたUIによって、オーディオビデオルームシーンをローコードですばやく実現</p>
                 <a href="https://github.com/tencentyun/TUIMeeting">GitHubソースコード</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">ドキュメントにアクセス</a>
             </div>

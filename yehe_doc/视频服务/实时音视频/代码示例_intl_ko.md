@@ -232,8 +232,8 @@
                 <img src="https://qcloudimg.tencent-cloud.cn/raw/c8b92d2457467e3c349cb56e83b37ef4.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
-                <h3 style="color:191919;">그룹 멀티미디어 인터랙션</h3>
-                <p style="color:#586376" ;>컴포넌트화된 UI를 통해 로우 코드로 멀티미디어 인터랙션 시나리오를 빠르게 구현하도록 지원합니다.</p>
+                <h3 style="color:191919;">그룹 멀티미디어 룸</h3>
+                <p style="color:#586376" ;>컴포넌트화된 UI를 통해 로우 코드로 멀티미디어 룸 시나리오를 빠르게 구현하도록 지원합니다.</p>
                 <a href="https://github.com/tencentyun/TUIMeeting">GitHub 소스 코드</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">문서 바로가기</a>
             </div>

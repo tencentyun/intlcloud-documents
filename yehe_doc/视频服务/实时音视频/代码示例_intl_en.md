@@ -232,8 +232,8 @@
                 <img src="https://qcloudimg.tencent-cloud.cn/raw/c8b92d2457467e3c349cb56e83b37ef4.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
-                <h3 style="color:191919;">Multi-person communication</h3>
-                <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly enable audio/video communication</p>
+                <h3 style="color:191919;">Group audio/video room</h3>
+                <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly enable audio/video room</p>
                 <a href="https://github.com/tencentyun/TUIMeeting">GitHub source code</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">Integration guide</a>
             </div>
