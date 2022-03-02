@@ -37,7 +37,7 @@ VPC supports ECMP for the same type of routes, as detailed below.
 | Public IP of CVM | No                     | N/A                 |
 | CVM       | Yes                    | 8       |
 | Peering connection       | No                     | N/A                 |
-| Direct connect gateway       | Yes                     | 8       |
+| Direct connect gateway       | No                     |N/A       |
 | CCN         | No                    | N/A                 |
 | HAVIP   | Yes                    | 8       |
 | VPN gateway        | Yes                      | 8       |
