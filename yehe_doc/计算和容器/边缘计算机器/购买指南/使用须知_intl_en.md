@@ -12,7 +12,7 @@ Read the following use instructions before purchasing and using ECM.
 
 ## Edge Node SLA
 
-- The service availability (SLA) of ECM is no less than 99.9%. For more information, see [SLA](https://intl.cloud.tencent.com/document/product/1119/43451). 
+- The service availability (SLA) of ECM is no less than 99.9%.  
 The duration of service unavailability resulting from any of the following shall not be included in the calculation of service unavailability or indemnity:
 Exceptions of networks and devices that don't belong to Tencent Cloud, exceptions caused by system maintenance and upgrade that Tencent Cloud informs the customer of in advance, exceptions caused by the customer, and unavailability caused by force majeure events. 
 - The local disk and instance reliability is subject to the reliability of the host. If a single point of failure occurs or a single edge node cannot be connected, ECM will help the instance reconnect as soon as possible but will not guarantee data reliability.
