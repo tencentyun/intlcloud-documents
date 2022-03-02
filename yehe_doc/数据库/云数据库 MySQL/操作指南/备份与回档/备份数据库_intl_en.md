@@ -26,7 +26,6 @@ Two-node and three-node TencentDB for MySQL instances support two backup types:
 ## Notes
 - Since February 26, 2019, the automatic backup feature of TencentDB for MySQL only supports physical backup (default type) and no longer provides logical backup. Existing automatic logical backups will be switched to physical backups automatically.
 This will not affect your business access, but may impact your automatic backup habit. If you need logical backups, you can use the manual backup feature in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) or call the [CreateBackup API](https://intl.cloud.tencent.com/document/product/236/15844) to generate logical backups.
-- Both logical and physical backup files will be compressed, so some files may be unusable after being downloaded. In that case, you can use the table backup feature in manual logical backup. For more information, see [Backing up MySQL Data Manually](#manual-backup).
 - Instance backup files occupy backup space. We recommend that you plan the usage of backup space appropriately. Usage of backup space that exceeds the free tier will incur fees. For more information, please see [Backup Space Billing](https://intl.cloud.tencent.com/document/product/236/32344).
 - We recommend that you back up your data during off-peak hours.
 - We recommend that you download the backup files locally before they are deleted after the retention period ends.
