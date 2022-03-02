@@ -1,38 +1,38 @@
 ## Prerequisites
-Before purchasing an Anti-DDoS Advanced instance, you need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+Before purchasing an Anti-DDoS Advanced instance, you have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for Tencent Cloud and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629). If your identity verification is not completed, your purchase will fail.
 
 ## Directions
-### Purchasing Anti-DDoS Advanced instance in Mainland China
-1. Open the [Anti-DDoS product purchase page](https://buy.cloud.tencent.com/antiddos#/advanced) and click **Anti-DDoS Advanced (Mainland China)**.
+### Purchase an Anti-DDoS Advanced instance (Chinese mainland)
+1. Go to the [buy page](https://buy.cloud.tencent.com/antiddos#/advanced), and select **Anti-DDoS Advanced (Chinese Mainland)**.
 ![](https://main.qcloudimg.com/raw/089ed04e4850dea1d320261f702efc3a.png)
-2. Set the parameters based on your actual needs.
- - Line: you can select BGP line or non-BGP (China Telecom, China Unicom, and China Mobile) line as the Anti-DDoS protective line based on your actual needs.
- - Specification Description:
-    - Connection Mode: proxy mode
-    - Bandwidth type: multi-line BGP
-    - Resource Overview: 1 dedicated IP
-    - Protection Capability: base protection + elastic protection
- - Base Protection Bandwidth: it is prepaid on a monthly basis. You are recommended to select a base protection bandwidth slightly higher than the average historical attack traffic, which can prevent most attacks.
- - Elastic Protection Bandwidth: it is billed by actual protection bandwidth on a daily basis. You are recommended to set the elastic protection bandwidth slightly higher than the highest historical attack traffic to defend against large traffic attacks. Elastic protection can help you keep your IPs from being blocked when the attack traffic goes over the maximum protection capability.
- - Application Bandwidth: The application traffic limit applies to both the inbound anti-DDoS forwarding traffic and the outbound Anti-DDoS traffic. The application bandwidth needs to be higher than the peak bandwidth of the two, whichever is greater.
->?If the actual application bandwidth is continuously higher than the Application Bandwidth selected when you purchased your Anti-DDoS Advanced instance, packet loss may occur. This might affect your service. We recommend adjusting your application bandwidth to avoid such occurrences.
- - Number of Forwarding Rules: it refers to the number of TCP/UDP ports that can be added in non-website access configuration or HTTP/HTTPS domain names that can be added in website access configuration. The number of forwarding rules of an Anti-DDoS Advanced instance is the total number of forwarding rules in the two aforementioned access methods.
- - Purchase Duration: how long the instance is going to be valid. The prepaid price will be calculated based on the number of IPs, the base protection bandwidth, and the purchase duration.
-3. Click **Buy Now** to complete the purchase.
+2. Configure the following parameters as needed.
+  - Line: provides BGP lines and non-BGP lines (CTCC, CUCC, CMCC).
+   - Specifications:
+        - Access mode: proxy
+        - Resources: 1 dedicated IP
+        - Bandwidth type: multi-line BGP
+        - Protection capability: base protection bandwidth + elastic protection bandwidth
+ - Base protection bandwidth: supports monthly subscription. We recommend that you select a base protection bandwidth slightly higher than the average value of the historical attack traffic, which will allow you to handle normal attacks.
+ - Elastic protection bandwidth: Fees based on the actual protection bandwidth by day. We recommend that you select an elastic protection bandwidth slightly higher than the largest attack traffic in history to defend against sudden increases in attack traffic, and avoid IP blocking caused by traffic exceeding the protection bandwidth limit.
+ - Application bandwidth: the maximum application bandwidth, which must be greater than the total amount of inbound and outbound application bandwidth.
+>! You can enable elastic protection bandwidth when you need to increase application bandwidth and QPS. After it’s enabled, the amount of bandwidth exceeding the specified amount will be billed at 1 USD/Mbps/day. Please select as needed.
+ - Forwarding rules: the total number of TCP/UDP ports (for non-website connections) and HTTP/HTTPS domain names (for website connections) that you configure for an Anti-DDoS Advanced instance.
+ - Validity: Select how long the service plan you want to purchase. The fees are prepaid and calculated based on the number of instances, the base protection bandwidth and the purchased usage period.
+3. Click **Pay Now** to complete your purchase.
 
-### Purchasing Anti-DDoS Advanced instance Outside Mainland China
-1. Open the [Anti-DDoS product purchase page](https://buy.cloud.tencent.com/antiddos#/advanced-intl) and click **Anti-DDoS Advanced (Outside Mainland China)**.
+### Purchase an Anti-DDoS Advanced instance (outside the Chinese mainland)
+1. Go to the [buy page](https://buy.cloud.tencent.com/antiddos#/advanced-intl), and select **Anti-DDoS Advanced (Outside Chinese Mainland)**.
 ![](https://main.qcloudimg.com/raw/56d59436eed833b37b06e23298f2bd68.png)
-2. Configure the following parameters based on your actual needs:
- - Specification Description:
-    - Connection Mode: proxy mode
-    - Resource Overview: 1 dedicated IP
-    - Protection Capability: base protection + elastic protection
-  - Region: Anti-DDoS Advanced uses the proxy-based forwarding method. Please select a region near the location of your real server to reduce access latency.
-  - Base Protection Bandwidth: it is prepaid on a monthly basis. You are recommended to select a base protection bandwidth slightly higher than the average historical attack traffic, which can prevent most attacks.
-  - Elastic Protection Bandwidth: it is billed by actual protection bandwidth on a daily basis. You are recommended to set the elastic protection bandwidth slightly higher than the highest historical attack traffic to defend against large traffic attacks. Elastic protection can help you keep your IPs from being blocked when the attack traffic goes over the maximum protection capability.
- - Application Bandwidth: The application traffic limit applies to both the inbound anti-DDoS forwarding traffic and the outbound Anti-DDoS traffic. The application bandwidth needs to be higher than the peak bandwidth of the two, whichever is greater.
->?If the actual application bandwidth is continuously higher than the Application Bandwidth selected when you purchased your Anti-DDoS Advanced instance, packet loss may occur. This might affect your service. We recommend adjusting your application bandwidth to avoid such occurrences.
-  - Number of Forwarding Rules: it refers to the number of TCP/UDP ports that can be added in non-website access configuration or HTTP/HTTPS domain names that can be added in website access configuration. The number of forwarding rules of an Anti-DDoS Advanced instance is the total number of forwarding rules in the two aforementioned access methods.
-  - Purchase Duration: how long the instance is going to be valid. The prepaid price will be calculated based on the number of IPs, the base protection bandwidth, and the purchase duration.
-3. Click **Buy Now** to complete the purchase.
+2. Specify the following configurations according to your needs.
+ - Specifications:
+    - Access mode: proxy
+    - Resources: 1 dedicated IP
+    - Protection capability: base protection bandwidth + elastic protection bandwidth
+  - Region: Anti-DDoS Advanced uses the forwarding proxy method. Please choose a location near the real server to reduce connection latency.
+  - Base protection bandwidth: supports monthly subscription. We recommend that you select a base protection bandwidth slightly higher than the average value of the historical attack traffic, which will allow you to handle normal attacks.
+  - Elastic protection bandwidth: Fees based on the actual protection bandwidth by day. We recommend that you select an elastic protection bandwidth slightly higher than the largest attack traffic in history to defend against sudden increases in attack traffic, and avoid IP blocking caused by traffic exceeding the protection bandwidth limit.
+  - Application bandwidth: the maximum application bandwidth, which must be greater than the total amount of inbound and outbound application bandwidth.
+>! You can enable elastic protection bandwidth when you need to increase application bandwidth and QPS. After it’s enabled, the amount of bandwidth exceeding the specified amount will be billed at 1 USD/Mbps/day. Please select as needed.
+  - Forwarding rules: the total number of TCP/UDP ports (for non-website connections) and HTTP/HTTPS domain names (for website connections) that you configure for an Anti-DDoS Advanced instance.
+  - Validity: Select how long the service plan you want to purchase. The fees are prepaid and calculated based on the number of instances, the base protection bandwidth and the purchased usage period.
+3. Click **Pay Now** to complete your purchase.
