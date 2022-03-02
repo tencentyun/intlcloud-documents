@@ -33,6 +33,9 @@ update 场景复制时间减少85%，insert 场景减少约30%。
 | cdb_sql_statistics                                           | true    | bool      | false   | 是否开始对 SQL 运行情况进行统计的开关            |
 | cdb_sql_statistics_info_threshold                            | true    | ulonglong | 10000   | CDB_SQL_STATISTICS 的 map 里保存最多的统计的 SQL 个数 |
 
+>?用户目前无法直接修改以上参数的参数值，如需修改可 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行修改。
+>
+
 #### 新增 information_schema.CDB_SQL_STATISTICS 表
 
 | 名称                           | 类型                | 说明                                             |
