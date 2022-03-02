@@ -6,11 +6,10 @@ For example, in the `default` namespace, there are a Pod with labels of `app: ht
 
 ## Directions
 
-1. When [configuring the TKE tunnel](https://intl.cloud.tencent.com/document/product/628/44300), manually enter the extra node label. The effect is as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/02e06bdebb15e79706fd231d6b3aae54.png)        
+1. When [configuring the TKE tunnel](https://intl.cloud.tencent.com/document/product/628/44300), manually enter the extra node label.  
 2. Click **Save** to create or modify the TKE tunnel.
     The final effect of forwarding is as follows:
-   ![](https://qcloudimg.tencent-cloud.cn/raw/80e178d36f3147eceb00a1ed6ebf1fcf.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/d4a3cae0c115f018c86fb40065dee07a.png)
 
 
 ## How It Works
