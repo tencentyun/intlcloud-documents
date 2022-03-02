@@ -10,7 +10,7 @@
 </tr>
 <tr>
 <td>域名最新价格可参考腾讯云官网售卖价格</td>
-<td><a href="链接">域名价格表</a></td>
+<td><a href="https://buy.intl.cloud.tencent.com/domain/price?type=overview ">域名价格表</a></td>
 
 </tr>
 </table>
