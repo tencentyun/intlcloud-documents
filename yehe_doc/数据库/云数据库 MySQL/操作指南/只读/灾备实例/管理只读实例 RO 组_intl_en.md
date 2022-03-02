@@ -24,7 +24,7 @@ An RO group is a set of read-only instances sharing the same private network add
  - **Assign Read Weight**: it is assigned by the system.
  - **Billing Mode**: read-only instances are pay-as-you-go.
 ![](https://main.qcloudimg.com/raw/a8f80ce3f01cbaa1847978bec455aa0d.png)
- - **Region**: it is the same as that of the source instance by default and cannot be changed currently.
+ - **Region**: it is the same as that of the source instance by default.
  - **Database Version**: it is the same as that of the source instance by default.
  - **Architecture**: it is single-node. Although the single-node architecture is cost-effective, there are risks of single points of failures. We recommend you purchase at least two read-only instances in the RO group of your business that requires high availability.
  - **Data Replication Mode**: it is the same as that of the source instance by default.
