@@ -31,3 +31,5 @@ Parameters are as follows:
 | cdb_enable_offset_pushdown | Yes  | bool | ON   | {ON,OFF}   | Enable or disable LIMIT/OFFSET pushdown |
 | cdb_enable_sumagg_pushdown | Yes  | bool | OFF  | {ON,OFF}   | Enable or disable SUM pushdown          |
 
+>?Currently, you cannot directly modify the values of the above parameters. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>
