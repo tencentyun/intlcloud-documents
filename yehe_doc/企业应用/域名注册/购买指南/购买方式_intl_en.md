@@ -10,7 +10,7 @@
 </tr>
 <tr>
 <td>For the latest domain prices, see the product pricing at Tencent Cloud official website.</td>
-<td><a href="link">Domain Pricing</a></td>
+<td><a href="https://buy.intl.cloud.tencent.com/domain/price?type=overview ">Domain Pricing</a></td>
 
 </tr>
 </table>
