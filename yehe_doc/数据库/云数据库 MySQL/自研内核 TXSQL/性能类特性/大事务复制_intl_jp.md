@@ -33,6 +33,9 @@ Tencent Cloudカーネルチームは大規模トランザクションレプリ�
 | cdb_sql_statistics                                           | true    | bool      | false   | SQL実行状況の統計を開始するかどうかのスイッチ            |
 | cdb_sql_statistics_info_threshold                            | true    | ulonglong | 10000   | CDB_SQL_STATISTICSのmap内に保存される最大の統計SQL数 |
 
+>?ユーザーは現在、上記パラメータのパラメータ値を直接変更することはできません。変更する場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)から変更することができます。
+>
+
 #### 追加されたinformation_schema.CDB_SQL_STATISTICSテーブル
 
 | 名称                           | タイプ                | 説明                                             |
