@@ -1,10 +1,10 @@
-本文介绍如何从 [Kafka](https://intl.cloud.tencent.com/product/ckafka) 中实时消费数据到云数据仓库 ClickHouse。
+本文介绍如何从 [Kafka](https://intl.cloud.tencent.com/products/ckafka) 中实时消费数据到云数据仓库。
 
 ## 前提条件
-数据源 Kafka 集群和目的端云数据仓库 ClickHouse 集群必须在同一个 VPC 下。
+数据源 Kafka 集群和目的端云数据仓库集群必须在同一个 VPC 下。
 
 ## 操作步骤
-1. [登录](https://intl.cloud.tencent.com/document/product/1129/44393) 云数据仓库 ClickHouse 集群，创建 Kafka 消费表。
+1. [登录](https://intl.cloud.tencent.com/document/product/1129/44393) 云数据仓库集群，创建 Kafka 消费表。
 ```
 	CREATE TABLE queue (
 			timestamp UInt64,
