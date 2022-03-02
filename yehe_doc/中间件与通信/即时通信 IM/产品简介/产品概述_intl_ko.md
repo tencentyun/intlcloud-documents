@@ -1,6 +1,6 @@
 ## 소개
 Tencent는 중국 최초이자 최대의 IM 개발 업체입니다. Tencent에서 개발한 QQ와 WeChat은 모든 인터넷 사용자에게 없어서는 안될 애플리케이션이 되었습니다. 산업 디지털화 추세에 따라, Tencent Cloud는 SDK 및 REST API의 형태로 높은 동시성과 안정성을 갖춘 IM 기능과 IM 제품을 출시했습니다. Tencent Cloud가 제공하는 IM SDK는 간편하게 애플리케이션에 통합할 수 있으며, 서버 REST API 호출을 통해 WeChat 및 QQ와 같은 강력한 IM 기능을 쉽게 누릴 수 있습니다. IM 서비스와 애플리케이션 간의 상호 통신은 다음 이미지와 같습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/31c81bf616b86c225f1c99fa532397de.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2e57bf9cbb3a1855efe7abdfd7d8beab.png)
 개발자의 다양한 단계의 요구 사항 및 시나리오를 위해 Instant Messaging(IM) 팀은 Android, iOS, Windows 및 Web의 SDK 컴포넌트, 서버 통합 [REST API](https://intl.cloud.tencent.com/document/product/1047/34620), [서드 파티 콜백 API](https://intl.cloud.tencent.com/document/product/1047/34354) 등을 비롯한 일련의 솔루션을 제공합니다. 이러한 컴포넌트와 기능을 통해 개발자는 자유롭고 글로벌한 커뮤니케이션을 지원하는 안정적인 IM 제품을 구축할 수 있습니다.
 
 ## 아키텍처
