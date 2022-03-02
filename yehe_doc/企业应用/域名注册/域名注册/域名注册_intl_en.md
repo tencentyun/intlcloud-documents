@@ -6,7 +6,7 @@ Before registering a domain, you need to query whether the domain or its suffix 
 1. Log in on the [Domain Registration](link) page.
 2. On the **Domain Registration** page, enter the target domain and suffix and click <span ><img src="https://main.qcloudimg.com/raw/0cc93679f33e50d7c6b3fea4d9110cc1.png" style="margin-bottom:-5px;"/></span> to view its registration status as shown below:
 For example, enter `example.com`.
-![](https://main.qcloudimg.com/raw/cabdb3d2a0cc7465fb4b8fe09fce2de8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4e6335791264b199fe0cba1ed0e30478.png)
  - If the returned query result shows **Registered**, the domain has already been registered, and you need to change the domain or suffix.
  - If the returned query result shows **Add to Cart**, the domain can be registered.
 
