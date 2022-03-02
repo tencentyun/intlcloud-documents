@@ -149,3 +149,6 @@ msg.setPriority(TIMMessagePriority.High);
 ### 발신자가 블랙리스트에 포함되었는데 왜 계속 메시지에 발송 성공이라고 표시되나요?
 IM 콘솔의 [블랙리스트 확인](https://intl.cloud.tencent.com/document/product/1047/34419)에서 메시지 발송 후 발송 성공 표시 기능을 제공합니다. 해당 기능을 활성화하면 블랙리스트에 포함된 사용자가 메시지를 발송한 후에도 발송 성공이 표시됩니다(실제로 상대방은 메시지를 수신하지 않음). 해당 설정을 비활성화하면 블랙리스트에 추가된 사용자는 메시지 발송 후 실패 알람을 받으며 SDK는 [에러 코드 20007](https://intl.cloud.tencent.com/document/product/1047/34348)를 수신합니다. 자세한 설정은 [블랙리스트 확인](https://intl.cloud.tencent.com/document/product/1047/34419) 문서를 참고하십시오.
 
+
+### COS를 사용하여 이미지 주소를 다운로드 가능한 도메인 형식으로 변경하는 방법은 무엇입니까?
+업로드는 사용자가 처리해야 합니다. 스토리지 서비스 비공개 읽기를 사용하는 경우 다운로드 권한을 보장하기 위해 URL 서명이 필요합니다([미리 서명한 라이선스 다운로드](https://intl.cloud.tencent.com/document/product/436/14116)).
