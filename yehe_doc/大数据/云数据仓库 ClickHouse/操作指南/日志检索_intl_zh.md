@@ -14,7 +14,7 @@ ClickHouse 集群创建未开启日志服务时，用户可以随时通过集群
  ![](https://qcloudimg.tencent-cloud.cn/raw/3727abbf1528b8a69c3d7a6aac472a33.png)
 
 ## 使用日志检索
-1. 登录 [云数据仓库 ClickHouse 控制台](https://console.cloud.tencent.com/cdwch)，在**集群列表**中单击**集群 ID/名称**进入集群详情页，切换到**日志检索**页签。
+1. 登录 [云数据仓库控制台](https://console.cloud.tencent.com/cdwch)，在**集群列表**中单击**集群 ID/名称**进入集群详情页，切换到**日志检索**页签。
 2. 支持选择节点日志和搜索两种页面模式，支持运行日志和错误日志筛选，根据条件查看对应各个节点的日志。
  ![](https://qcloudimg.tencent-cloud.cn/raw/7ed0845d6e901cd98bf17465d4744d6c.png)
 3. 支持查询包含关键字的日志记录，筛选结果按照节点 IP 进行分组，以便查看各个节点的搜索结果。查询结果默认展示各个节点最近100条记录。
