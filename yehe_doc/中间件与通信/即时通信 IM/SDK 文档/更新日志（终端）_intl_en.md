@@ -1,3 +1,49 @@
+## 5.8.1696 @2021.12.10 - Enhanced Version
+
+### SDK
+
+- Fixed the failure to quickly clearing the unread message count of conversations including disbanded or left group conversations.
+
+### TUIKit
+
+- Added the message reply feature.
+- Changed the default skin and optimized the UI logic.
+- iOS: fixed the occasional failure to load resource files.
+
+## 5.8.1672 @2021.11.30 - Enhanced Version
+
+### SDK
+
+- Optimized the device information getting logic to meet compliance requirements.
+- Fixed the crashes in quickly clearing the unread message count under certain conditions.
+
+## 5.8.1668 @2021.11.19 - Enhanced Version
+
+### SDK
+
+- Added the feature of quickly clearing the total unread message count of all conversations.
+- Added support for the community group (Community) feature. A community group supports up to 100,000 members. Users must activate the Flagship Edition package before they can use the feature.
+- Added the feature of displaying the 20 historical messages before a user joins an audio-video group (AVChatRoom). Users must activate the Flagship Edition package before they can use the feature.
+- Added the feature of automatically excluding conversions whose message receiving option is "Receive but not notify" or "Not receive" when getting the total unread message count of all conversations.
+- Added support for Chinese SM algorithms for encrypted tunnels of persistent connections.
+- Fixed the issue where, when historical messages were pulled, the end tag was incorrectly determined occasionally.
+- Fixed the issue where, when the SDK was upgraded from the Basic Edition to Enhanced Edition in overriding mode, audio-video groups that users previously joined had unread message count.
+- Fixed the failure to setting auto read reporting for accounts in special formats.
+- Fixed the occasional error of connecting to incorrect servers during frequent network reconnections in private environments.
+- Fixed the issue where, in multi-client sync scenario, when a user received a group message sent by the user, the SDK automatically clears the unread message count of the group conversation.
+- Fixed the issue where there is occasionally no callback when users log in again after going offline and being kicked off.
+- Cross-platform SDK for C: added support for supplementing offline push fields when receiving a new message.
+
+### TUIKit
+- Optimized the notification muting logic.
+- Optimized the logic for displaying a red dot for unread messages in the conversation list.
+- Added support for allowing users to trigger group @ messages by tapping and holding the group profile photo.
+- Added support for allowing users to tap a button to stop voice message playback.
+- Added the feature of quickly clearing the total unread message count of all conversations.
+- Added support for the community group feature.
+
+
+
 ## Latest Enhanced Version 5.7.1435 @2021.09.30
 
 ### SDK
