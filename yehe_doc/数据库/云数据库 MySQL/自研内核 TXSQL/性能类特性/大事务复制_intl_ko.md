@@ -33,6 +33,8 @@ update 복제 시간은 85%, insert는 약 30% 단축됩니다.
 | cdb_sql_statistics                                           | true    | bool      | false   | SQL 연산에 대한 통계 시작 여부            |
 | cdb_sql_statistics_info_threshold                            | true    | ulonglong | 10000   | CDB_SQL_STATISTICS map에 가장 많은 통계가 저장된 SQL의 수 |
 
+>?사용자는 상기 매개변수의 값을 직접 수정할 수 없습니다. 필요 시 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 수정이 가능합니다.
+
 #### information_schema.CDB_SQL_STATISTICS 테이블 추가
 
 | 이름                           | 유형                | 설명                                             |
