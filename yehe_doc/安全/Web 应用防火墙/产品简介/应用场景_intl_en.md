@@ -8,7 +8,6 @@ WAF can be accessed with one click, and configured with ease. It can hide and pr
 
 ### Financial website protection
 - WAF can be accessed with one click, and integrates with the large-traffic DDoS defense, and also provides web security protection.
-- WAF can effectively monitor DNS linkage hijacking to avoid malicious directing of website traffic.
 - WAF can effectively detect exceptional access like account credential enumeration attack to avoid user information leakage.
 - With cloud resources and automatic scaling capability, WAF can easily deal with sudden business growth and large-traffic CC attacks.
 
