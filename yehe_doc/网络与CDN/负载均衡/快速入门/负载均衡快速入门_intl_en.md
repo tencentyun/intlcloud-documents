@@ -11,9 +11,9 @@ Tencent Cloud CLB comes with various protocols such as TCP, UDP, TCP SSL, HTTP, 
 After a successful purchase, the system will automatically assign a VIP to the CLB instance. The VIP will be used as the IP address to provide services to clients.
 1. Log in to the Tencent Cloud console and go to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
 2. First, select the same region as your CVM instance. Next, select **Cloud Load Balancer** as the instance type, **Public Network** as the network type. For more details, please see [Product Attribute Selection](https://intl.cloud.tencent.com/document/product/214/13629).
->?The beta test of static single-line IP is only available in Jinan, Hangzhou, Fuzhou, Shijiazhuang, Wuhan, and Changsha. You can submit an application for using it. Once allowed, you can select an ISP (China Mobile, China Unicom, or China Telecom) on the purchase page. If you want to try it out in Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, and Chongqing, please contact your sales rep.
+>?Static single-line IP is in beta test. It’s supported only in Jinan, Hangzhou, Fuzhou, Shijiazhuang, Wuhan, and Changsha. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). After your application is approved, you can select an ISP (China Mobile/China Unicom/China Telecome) on the buy page. If it is needed in Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, and Chongqing, please contact your sales rep.
 >
-3. Click **Buy Now** and make a payment.
+3. Click **Buy Now** to complete your purchase.
 4. Return to the **Instance Management** page, select the region to see the new instance.
 ![](https://main.qcloudimg.com/raw/2c2afd943a9f6a6d03f55c00e62da8b5.png)
 
@@ -34,7 +34,7 @@ If a client initiates a request, the CLB instance will forward the request accor
 1. On the **Listener Management** tab, click **+** on the right of the new listener.
 ![](https://main.qcloudimg.com/raw/f8ab76b69f8a0cfdd5b4332c8b80b1f2.png)
 2. In the **Create Forwarding Rules** window, configure the domain name, URL, balancing method, and then click **Next**.
-  - Domain name: the domain name of your real server (e.g., **www.example.com**).
+  - Domain name: the domain name of your real server (e.g., **www.example.com **).
   - Default domain name: if a client request does not match any listener domain names, the CLB instance will forward the request to the default domain name (default server). Each listener can be configured with only one default domain name. If a listener has no default domain name, the CLB instance will forward the request to the first domain name. This example will skip the configuration step.
   - URL: the access path to your real server (e.g., `/image/`).
   - Select **Weighted Round Robin** as the balancing method and then click **Next**. For more information, please see [Load Balancing Methods](https://intl.cloud.tencent.com/document/product/214/6153).
@@ -47,6 +47,7 @@ For more information on CLB listeners, please see [CLB Listener Overview](https:
 >?
 >- Forwarding rules: each listener can be configured with multiple domain names, and each domain name can be configured with multiple URLs. You can select a listener or domain name, and then click the **+** icon to create new rules.
 >- Session persistence: if session persistence is disabled and a round-robin method is selected, requests from the same client will be assigned to different real servers in sequence; if session persistence is enabled, or it is disabled but `ip_hash` balancing method is used, requests from the same client will always be assigned to the same real server.
+>
 
 ### Bind real servers to the listener
 If a client initiates a request, the CLB instance will forward the request to the CVM instance that is bound to its listener for processing.
@@ -55,7 +56,6 @@ If a client initiates a request, the CLB instance will forward the request to th
 2. In the pop-up window, select **CVM** as the instance type, select the two CVM instances **rs-1** and **rs-2** (which are in the same region as the CLB instance), set their ports to **80** and weights to **10** (the default value), and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/02a6cf1b63726a7133f97f5f56c10d74.png)
 3. [](id:qrjkjc)Now you can view the bound CVM instances and their health check status in the **Forwarding Rules** section. If the port health status is **Healthy**, the CVM instance can normally process requests forwarded by CLB instances.
-![](https://main.qcloudimg.com/raw/8ef5732d0748b73dd1d71b3ab0aed1d4.png)
 >!One forwarding rule (listening protocol, port, domain name, and URL) can be bound with multiple ports of the same CVM instance. If a user deploys the same service on the port **80** and **81** of **rs-1**, both ports can be bound with the sample forwarding rule and both will receive requests forwarded by the CLB instance.
 
 ## Step 3: Configuring a Security Group
@@ -70,6 +70,7 @@ For more information, please see [CLB Security Group Configuration](https://intl
 
 ## Step 4: Verifying the CLB Service
 After configuring a CLB instance, you can verify whether it is effective by accessing different real servers via different **domain names and URLs** under the same CLB instance, or verifying the **Content-based Routing** feature.
+
 ### Method 1: Configure `hosts` and map the domain name to the CLB instance
 1. In a Windows device, modify the **hosts** file at the directory `C:\Windows\System32\drivers\etc`, and map the domain name to the CLB instance's VIP.
 ![](https://main.qcloudimg.com/raw/b12ee22250cb7c24d5e12ecb803e6355.png)
@@ -81,12 +82,25 @@ After configuring a CLB instance, you can verify whether it is effective by acce
 ![](https://main.qcloudimg.com/raw/ab7db7b5c3952739919ae6e271bb1348.png)
 >!The **/** in the **image/** cannot be omitted. **/** indicates that **image** is a default directory instead of a file name.
 
+### Method 2: Map the domain name to the CLB instance through DNSPod
+1. Go to the [Tencent Cloud DNSPod](https://dnspod.cloud.tencent.com) to query and register a domain name.
+2. Log in to the [DNSPod console](https://console.cloud.tencent.com/cns), click **Domain Name Resolution List** on the left sidebar, and click **Resolve** on the right of a domain name.
+3. Open the **Record Management** tab, click **Add Records** to add an A record for the domain name with the following parameters:
+  - Host: The prefix of the domain name. Here takes resolving all prefixes as an example: `*.example.com`.
+  - Record Type: A
+  - Split Zone: Default
+  - Value: Click **Associate Tencent Cloud Resources** and then tick the CLB instance created above.
+  - TTL: Leave it as the default value **600** s.
+    ![](https://main.qcloudimg.com/raw/569c078b0b8263515cbe2910d41970ff.png)
+4. Click **Save**.
+5. About 10 minutes later, open the bound CNAME domain name in a browser (`www.example.com`). If the corresponding page can be normally displayed, it indicates that the CLB instance is in effect.
+
 ## Configuring Redirection (optional)
 CLB supports automatic redirection and manual redirection. For more information, please see [Configuring Layer-7 Redirection](https://intl.cloud.tencent.com/document/product/214/8839).
 - Automatic redirection (forced HTTPS): when a PC or mobile browser accesses a web service with an HTTP request, an HTTPS response is returned to the browser after the request passes through the CLB proxy, forcing the browser to access the webpage using HTTPS.
 - Manual redirection: if you want to temporarily deactivate your web business in cases such as product sellout, page maintenance, or update and upgrade, you need to redirect the original page to a new page. Otherwise, the old address in a visitor's favorites and search engine database will return a 404 or 503 error message page, degrading the user experience, resulting in traffic waste, and even invalidating the accumulated scores on search engines.
 
 
-## Relevant Operations
+## Related Operations
 - [Deploying Java Web on CentOS](https://intl.cloud.tencent.com/document/product/214/32391) 
 - [Installing and Configuring PHP](https://intl.cloud.tencent.com/document/product/213/10182)
