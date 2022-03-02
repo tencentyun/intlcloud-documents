@@ -8,9 +8,9 @@ CC 防护根据访问特征和连接状态判定恶意行为来阻断黑客的�
 ## 操作步骤
 1. 登录 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) ，在左侧导航中，单击**防护配置** > **CC 防护**。
 2. 在 CC 防护页面的左侧列表中，选中高防 IP 的 ID 下面的域名。
- ![](https://qcloudimg.tencent-cloud.cn/raw/d2699b5321965d929c07908171c5b7c5.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/48b33703155d1418b3a1c3aab979e8f4.png)
 3. 在右侧 CC 防护开关及清洗阈值卡片中，单击![](https://qcloudimg.tencent-cloud.cn/raw/b56da8e70914bb5f6fce1900bcf81ef5.png)开启 CC 防护，当防护开启后必须进行清洗阈值设置否则无法开启 CC 防护。
-![](https://qcloudimg.tencent-cloud.cn/raw/1586e1763e894c57a4eb6c730c81a21a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/48b33703155d1418b3a1c3aab979e8f4.png)
 >?
 >- CC 防护开关是控制是否启用 CC 防护的总开关，开启后下方的防护策略才能生效。
 >- 清洗阈值是高防产品启动清洗动作的阈值。当指定域名收到的 HTTP 请求超过阈值时，触发 CC 防护。
