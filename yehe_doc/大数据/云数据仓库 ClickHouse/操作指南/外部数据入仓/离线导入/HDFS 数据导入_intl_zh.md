@@ -1,11 +1,11 @@
-本文介绍如何从 [HDFS](https://intl.cloud.tencent.com/product/chdfs) 中导入数据到云数据仓库 ClickHouse。
+本文介绍如何从 HDFS 中导入数据到云数据仓库。
 
 ## 前提条件
 1. 访问 HDFS 的数据需要具备对 HDFS 的读权限。如何设置权限，请参见访问控制概述。
-2. 确保 HDFS 的实例和云数据仓库 ClickHouse 集群处在相同 VPC 中。
+2. 确保 HDFS 的实例和云数据仓库集群处在相同 VPC 中。
 
 ## 操作步骤
-1. 登录云数据仓库 ClickHouse ，创建 HDFS 表。
+1. 登录云数据仓库，创建 HDFS 表。
 ```
 CREATE TABLE hdfs_engine_table
 (
