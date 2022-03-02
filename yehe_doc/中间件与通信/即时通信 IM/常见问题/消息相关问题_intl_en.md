@@ -149,3 +149,6 @@ Historical message storage is available for one-to-one chat messages and non–a
 ### Why does it show that messages are sent successfully even though the senders are blocklisted?
 When you enable **Show "Sent successfully" After Sending Messages** in the [Blocklist Check](https://intl.cloud.tencent.com/document/product/1047/34419) section in the IM console, blocklisted users will be prompted that the messages are sent successfully when they send messages, but the recipients will not receive the messages. When you disable this feature, blocklisted users will be prompted that message sending fails when they send messages and the SDK will receive [error code 20007](https://intl.cloud.tencent.com/document/product/1047/34348). For more information, see the **Blocklist check** section in [Feature Configuration](https://intl.cloud.tencent.com/document/product/1047/34419).
 
+
+### How to convert an image address into the downloadable domain name format by using COS?
+You need to upload the image yourself. If the image uses COS private read, you need to get a signed URL to obtain the download permission ([Download via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14116)).
