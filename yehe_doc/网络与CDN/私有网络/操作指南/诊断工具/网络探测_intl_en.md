@@ -56,10 +56,12 @@ If you specify the CCN as the next hop and the probe destination IPs belong to t
 </li></ul></td>
 </tr>
 </tbody></table>
+
 5. (Optional) **Verify** the **Probe Destination IP**.
+
 >?Skip this step if you do not specify the next hop.
- - If the connection succeeds, click **OK**.
- - If the connection fails, check whether the subnet route is correctly configured, and whether the probed device enables Network ACL, security group or other firewalls, which may block the connection. For more information, see [Managing Network ACLs](https://intl.cloud.tencent.com/document/product/215/31852) and [Modifying a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35515).
+ >- If the connection succeeds, click **OK**.
+ >- If the connection fails, check whether the subnet route is correctly configured, and whether the probed device enables Network ACL, security group or other firewalls, which may block the connection. For more information, see [Managing Network ACLs](https://intl.cloud.tencent.com/document/product/215/31852) and [Modifying a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35515).
 
 ## Checking the Latency and Packet Loss of a Network Probe
 
