@@ -1,13 +1,13 @@
-本文介绍如何将 [COS（腾讯云对象存储）](https://intl.cloud.tencent.com/product/cos)数据导入到云数据仓库 ClickHouse。
+本文介绍如何将 [COS（腾讯云对象存储）](https://intl.cloud.tencent.com/product/cos)数据导入到云数据仓库。
 
 ## 前提条件
-1. 数据源 COS 和云数据仓库 ClickHouse 集群须在同一个 VPC 下。
+1. 数据源 COS 和云数据仓库集群须在同一个 VPC 下。
 2. 表函数中填写的 acces-key-id、access-key-secret 必须对相应的 oss-file-path 有读取权限。
 3. oss-file-path 参数的格式需要满足 OSS 路径规范，一般格式为 oss://<bucket-name/<path-to-file> 。
 
 ## 操作步骤
-以下例子可以作为从 S3系统（本文以 COS 为例）将数据导入到云数据仓库 ClickHouse 的参考。
-1. 登陆云数据仓库 ClickHouse ，创建 S3表。
+以下例子可以作为从 S3系统（本文以 COS 为例）将数据导入到云数据仓库的参考。
+1. 登陆云数据仓库，创建 S3表。
 ```
 CREATE TABLE cos_engine_table
 (
