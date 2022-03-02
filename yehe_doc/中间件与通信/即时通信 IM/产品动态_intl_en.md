@@ -1,3 +1,53 @@
+## December 2021
+<table>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
+</tr> 
+<tr>
+    <td> SDK 5.8.1696 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+        <li> Fixed the failure to quickly clearing the unread message count of conversations including disbanded or left group conversations.</li>
+    	<li> TUIKit: added the message reply feature.</li>
+	<li> TUIKit: changed the default skin and optimized the UI logic.</li>
+	<li> iOS: fixed the occasional failure to load resource files.</li>
+    </ul></td>
+    <td> December 10, 2021</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+</table>
+
+## November 2021
+
+<table>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
+</tr> 
+<tr>
+    <td> SDK 5.8.1672 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+        <li> Optimized the device information getting logic to meet compliance requirements.</li>
+    	<li> Fixed the crashes in quickly clearing the unread message count under certain conditions.</li>
+    </ul></td>
+    <td> 2021-11-30 </td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+<tr>
+    <td> SDK 5.8.1668 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+        <li> Added the feature of quickly clearing the total unread message count of all conversations.</li>
+    	<li> Added support for community groups (Community) which support up to 100,000 members per group. Users must activate the Flagship Edition package before they can use the feature.</li>
+    	<li> Added the feature of displaying the 20 historical messages before a user joins an audio-video group (AVChatRoom). Users must activate the Flagship Edition package before they can use the feature.</li>
+    	<li> Added the feature of automatically excluding conversions whose message receiving option is "Receive but not notify" or "Not receive" when getting the total unread message count of all conversations.</li>
+    	<li> Added support for Chinese SM algorithms for encrypted tunnels of persistent connections.</li>
+    	<li> Fixed the issue where, when historical messages were pulled, the end tag was incorrectly determined occasionally.</li>
+    	<li> Fixed the issue where, when the SDK was upgraded from the Basic Edition to Enhanced Edition in overriding mode, audio-video groups that users previously joined had unread message count.</li>
+    	<li> Fixed the failure to setting auto read reporting for accounts in special formats.</li>
+    	<li> Fixed the occasional error of connecting to incorrect servers during frequent network reconnections in private environments.</li>
+	<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Update Log (Native)</a>.</li>
+    </ul></td>
+    <td> 2021-11-19 </td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+</table>
+
 ## September 2021
 
 <table>
