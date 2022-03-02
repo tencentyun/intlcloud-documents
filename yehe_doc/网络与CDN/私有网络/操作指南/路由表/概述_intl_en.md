@@ -4,7 +4,7 @@ A route table consists of multiple routing policies that control the outbound tr
 There are two types of route tables: default and custom. 
 - **Default route table**: when you create a VPC, the system automatically generates a default route table, which will be associated with subnets created later if no custom route table is selected. You cannot delete the default route table, but you can add, delete, and modify routing policies in it.
 - **Custom route table**: you can create or delete a custom route table in the VPC. This custom route table can be associated with all the subnets to apply the same routing policy.
-![](https://main.qcloudimg.com/raw/a86260ffb40bec52c9f64a307d956691.png)  
+![]()  
 >?You can associate a route table when [creating a subnet](https://intl.cloud.tencent.com/document/product/215/31806), or [changing the route table](https://intl.cloud.tencent.com/document/product/215/40090) after a subnet is created.
 >
 
