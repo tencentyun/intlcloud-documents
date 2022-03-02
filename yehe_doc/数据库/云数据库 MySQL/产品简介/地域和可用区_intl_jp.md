@@ -94,20 +94,22 @@ Tencent Cloudは異なるリージョン間を完全に隔離し、リージョ�
 <tbody>
 <tr><th>地域</th><th>アベイラビリティーゾーン</th></tr>
 <tr>
-<td rowspan="3">東南アジア（シンガポール）<br>ap-singapore</td>
+<td rowspan="4">東南アジア（シンガポール）<br>ap-singapore</td>
 <td>シンガポール1区（シンガポールのノードは東南アジア地域をカバーできる）<br>ap-singapore-1</td></tr>
 <tr>
 <td>シンガポール2区（シンガポールのノードは東南アジア地域をカバーできる）<br>ap-singapore-2</td></tr>
 <tr>
-<td>シンガポール3区（シンガポールのノードは東南アジア地域をカバーできる）<br>ap-singapore-3</td>
-</tr>
+<td>シンガポール3区（シンガポールのノードは東南アジア地域をカバーできる）<br>ap-singapore-3</td></tr>
+<tr>
+<td>シンガポール4区（シンガポールのノードは東南アジア地域をカバーできる）<br>ap-singapore-4</td></tr>
+<tr>
 <td>東南アジア（ジャカルタ）<br>ap-jakarta</td>
 <td>ジャカルタ1区（ジャカルタのノードは東南アジア地域をカバーできる）<br>ap-jakarta-1</td></tr>
 <tr>
 <td  rowspan="2">東南アジア（バンコク）<br>ap-bangkok </td>
-<td >バンコク1区 （バンコクのノードは東南アジア地域をカバーできる）<br>ap-bangkok-1</td>
+<td >バンコク1区 （バンコクのノードは東南アジア地域をカバーできる）<br>ap-bangkok-1</td></tr>
 <tr>
-<td >バンコク2区 （バンコクのノードは東南アジア地域をカバーできる）<br>ap-bangkok-2</td>
+<td >バンコク2区 （バンコクのノードは東南アジア地域をカバーできる）<br>ap-bangkok-2</td></tr>
 <tr>
 <td  rowspan="2">南アジア太平洋（ムンバイ）<br>ap-mumbai</td>
 <td>ムンバイ1区（ムンバイのノードは南アジア太平洋地域をカバーできる）<br>ap-mumbai-1</td></tr>
