@@ -16,7 +16,6 @@
 </table>
 
 ## November 2021
-
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> 
