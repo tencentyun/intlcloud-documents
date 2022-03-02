@@ -5,12 +5,12 @@
 >?若您的网站业务不在腾讯云上，建议您使用 SaaS 型 WAF 接入防护。
 
 为了使负载均衡型 WAF 能够识别出需要防护的域名，需要配置负载均衡并且在监听器配置相应域名，实现业务正常转发。详情请参见 [配置 HTTP 监听器](https://intl.cloud.tencent.com/document/product/214/32515) 和 [配置 HTTPS 监听](https://intl.cloud.tencent.com/document/product/214/32516)。
-本文以防护`wow.qcloudwaf.com`为例，查看已配置完成的负载均衡监听器的配置信息。
+本文以防护`clb.technicalsupport.cn`为例，查看已配置完成的负载均衡监听器的配置信息。
 1. 登录腾讯云 [负载均衡控制台](https://console.cloud.tencent.com/clb)，在左侧导航栏中，单击【实例管理】，进入实例管理页面。
 2. 选择【地区】>【负载均衡】，查看已经创建好的负载均衡，在右侧操作栏，单击【配置监听器】，进行配置查看。
 ![](https://main.qcloudimg.com/raw/0b659850e585b4059a3ccbd378a088e7.png)
 
-3. 在监听器配置页面，单击【监听器管理】，查看监听器域名配置信息。监听器的名称为 waftest，监听器转发规则监听的域名为`wow.qcloudwaf.com`，域名防护状态为未启用。
+3. 在监听器配置页面，单击【监听器管理】，查看监听器域名配置信息。监听器的名称为 waftest，监听器转发规则监听的域名为`clb.technicalsupport.cn`，域名防护状态为未启用。
 ![](https://main.qcloudimg.com/raw/3ee447a41b62014026cec0c1c0f40cce.png)
 
 ## 后续步骤
