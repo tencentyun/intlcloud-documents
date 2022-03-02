@@ -33,6 +33,9 @@ To better monitor the transaction execution, the `CDB_SQL_STATISTICS` table is a
 | cdb_sql_statistics                                           | true    | bool      | false   | Switch of SQL statement execution statistics collection.            |
 | cdb_sql_statistics_info_threshold                            | true    | ulonglong | 10000   | Maximum number of SQL statements saved in `map` of `CDB_SQL_STATISTICS`. |
 
+>?Currently, you cannot directly modify the values of the above parameters. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>
+
 #### Newly added `information_schema.CDB_SQL_STATISTICS` table
 
 | Name                           | Type                | Description                                             |
