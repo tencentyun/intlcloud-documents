@@ -1,3 +1,53 @@
+## 2021年12月
+<table>
+<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th><th width="15%">发布时间</th><th width="15%">相关文档</th>
+</tr> 
+<tr>
+    <td> SDK 5.8.1696 增强版本发布</td>
+    <td><ul style="margin:0">
+        <li> 修复本地包含解散的群会话或退出的群会话未读数时，一键清空未读消息出现失败的问题</li>
+    	<li> TUIKit 新增消息回复功能的支持</li>
+	<li> TUIKit 更换默认皮肤，优化界面逻辑</li>
+	<li> iOS 修复资源文件偶现加载失败的问题</li>
+    </ul></td>
+    <td> 2021-12-10 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+</tr>
+</table>
+
+## 2021年11月
+
+<table>
+<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th><th width="15%">发布时间</th><th width="15%">相关文档</th>
+</tr> 
+<tr>
+    <td> SDK 5.8.1672 增强版本发布</td>
+    <td><ul style="margin:0">
+        <li> 优化设备信息获取逻辑，满足合规要求</li>
+    	<li> 修复一键清空未读数功能在某些条件下的崩溃问题</li>
+    </ul></td>
+    <td> 2021-11-30 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 5.8.1668 增强版本发布</td>
+    <td><ul style="margin:0">
+        <li> 新增一键清空所有会话未读消息的能力</li>
+    	<li> 新增 Community 社群的支持，社群最多支持 10万人；需开通旗舰版套餐包</li>
+    	<li> 加入 AVChatRoom 直播群时，支持返回进群前 20 条消息；需开通旗舰版套餐包</li>
+    	<li> 获取会话未读总数自动剔除掉消息接收选项为“接收不提醒”和“不接收消息”的会话</li>
+    	<li> 长连接加密通道新增国密的支持</li>
+    	<li> 修复拉取群历史消息时，偶现结束标记判断错误的问题</li>
+    	<li> 修复从基础版覆盖升级到增强版时，之前加入的直播群会有未读数的问题</li>
+    	<li> 修复对特殊格式帐号设置已读上报出现失败的问题</li>
+    	<li> 修复私有化环境下频繁断网重连时，偶现连接的服务器不正确的问题</li>
+	<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新日志</a></li>
+    </ul></td>
+    <td> 2021-11-19 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+</tr>
+</table>
+
 ## 2021年09月
 
 <table>
