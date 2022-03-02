@@ -6,11 +6,10 @@
 
 ## 操作步骤
 
-1. 在 [配置 TKE 通道](https://intl.cloud.tencent.com/document/product/628/44300) 的服务前提下，再手动输入额外节点 Label。效果如下：
-![](https://qcloudimg.tencent-cloud.cn/raw/02e06bdebb15e79706fd231d6b3aae54.png)        
+1. 在 [配置 TKE 通道](https://intl.cloud.tencent.com/document/product/628/44300) 的服务前提下，再手动输入额外节点 Label。  
 2. 单击**保存**，新建或修改 TKE 通道。
     最终转发的效果如下：
-   ![](https://qcloudimg.tencent-cloud.cn/raw/80e178d36f3147eceb00a1ed6ebf1fcf.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/d4a3cae0c115f018c86fb40065dee07a.png)
 
 
 ## 原理说明
