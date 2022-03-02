@@ -31,23 +31,17 @@
    - Host Header：可选项，Host Header 是 API 网关访问后端服务时候，HTTP/HTTPS 请求中，携带的请求 HEADER 中 Host 的值。
    - 标签：可选项，标签用于从不同维度对资源分类管理。
 
-一个完整的 TKE 通道配置如下：
-
-![](https://qcloudimg.tencent-cloud.cn/raw/1091058afb38b1e33f3c6ec269b7dd4f.png)  
-
 ### 步骤2：API 后端对接 TKE 通道
 1. 在 API 网关控制台的 [服务](https://console.cloud.tencent.com/apigateway/service)页面，单击目标服务的“ID”，进入管理 API 页面。
 2. 单击**新建**，创建通用 API。
 3. 输入前端配置，然后点击**下一步**。
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/d0afa98fcc4c5a83bc1a8f1ddd5e464e.png)
 4. 选择后端类型为 **VPC内资源**，并且选择后端通道类型为 **TKE通道**，单击**下一步**。  
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/d3365999710dea204a252c2619230616.png)
 5. 设置响应结果，并单击**完成**。
 
 ## 网络架构
 TKE 通道被 API 绑定后，整个网络的架构如下：
 
-![](https://qcloudimg.tencent-cloud.cn/raw/ca04e628647d61f5b46e68e48a28dc7c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3d06738e23d743081e6deb01a8a06504.png)
 
 API 网关直接访问 TKE 集群中的 Pod，不需要经过 CLB。因为在 TKE 集群中，httpbin 的服务配置文件 YAML 如下，其中 selector 中，表示选择带有标签键 app，标签值为 httpbin 的 Pod 作为 TKE 通道的节点。因此，version 为 v1/v2/v3 的 Pod 也都是 TKE 通道的节点。
 ```yaml
