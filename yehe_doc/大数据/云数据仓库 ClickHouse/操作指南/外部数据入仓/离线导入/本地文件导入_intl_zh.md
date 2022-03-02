@@ -1,9 +1,9 @@
-﻿本文介绍如何把本地文件的数据导入到云数据仓库 ClickHouse。
+﻿本文介绍如何把本地文件的数据导入到云数据仓库。
 
 ## 前提条件
 1. 已经安装 clickhouse-client，没有安装可点击[下载](https://repo.yandex.ru/clickhouse/rpm/stable/x86_64/)并安装。
-2. 支持导入到云数据仓库 ClickHouse 的常见文件格式为 TabSeparated、TabSeparatedRaw、TabSeparatedWithNames、TabSeparatedWithNamesAndTypes、Template、CSV和CSVWithNames 等。更多支持的文件格式，请参见[文件格式及说明](https://clickhouse.com/docs/zh/interfaces/formats/#tabseparated)。
-3. 确保 clickhouse-client 所在的本地服务器和云数据仓库 ClickHous 集群处于同一 VPC 下。
+2. 支持导入到云数据仓库的常见文件格式为 TabSeparated、TabSeparatedRaw、TabSeparatedWithNames、TabSeparatedWithNamesAndTypes、Template、CSV和CSVWithNames 等。更多支持的文件格式，请参见[文件格式及说明](https://clickhouse.com/docs/zh/interfaces/formats/#tabseparated)。
+3. 确保 clickhouse-client 所在的本地服务器和云数据仓库ClickHous 集群处于同一 VPC 下。
 
 >!
 - 不同的客户端和服务器版本彼此兼容，但是一些特性可能在旧客户机中不可用。我们建议使用与服务器应用相同版本的客户端。当您尝试使用旧版本的客户端时，服务器上的 clickhouse-client 会显示如下信息: “ClickHouse client version is older than ClickHouse server. It may lack support for new features.”可使用如下命令进行导入：`cat <data_file> | ./clickhouse-client --host=<host> --port=<port> --user=<username> --password=<password> --query="INSERT INTO <table_name> FORMAT <format>";`
