@@ -1,5 +1,5 @@
 ## 新建集群
-1. 通过腾讯云账号登录 [云数据仓库 ClickHouse 介绍页](https://intl.cloud.tencent.com/product/cdwch)，单击**立即购买**。或者通过腾讯云账号登录 [云数据仓库 ClickHouse 控制台](https://console.cloud.tencent.com/cdwch)，单击**新建集群**。
+1. 通过腾讯云账号登录云数据仓库介绍页，单击**立即购买**。或者通过腾讯云账号登录 [云数据仓库控制台](https://console.cloud.tencent.com/cdwch)，单击**新建集群**。
 2. 进入购买页，按照实际需要根据页面提示，进行配置并购买。各配置项说明见 [配置项说明](#jump)。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5de5d6bb0689480d21568217d356f8bb.png)
 [](id:jump)
@@ -17,7 +17,7 @@
 </tr>
 <tr>
 <td>地域</td>
-<td>目前云数据仓库 ClickHouse 支持上海、香港、北京、广州、新加坡、硅谷地域，建议按业务就近的原则选择合适的地域，地域一旦选定，购买后无法更改。</td>
+<td>目前云数据仓库支持上海、香港、北京、广州、新加坡、硅谷地域，建议按业务就近的原则选择合适的地域，地域一旦选定，购买后无法更改。</td>
 </tr>
 <tr>
 <td>可用区</td>
@@ -47,7 +47,7 @@
 
 
 ## 查看集群信息
-集群创建后，您即可进入 [云数据仓库 ClickHouse 控制台](https://console.cloud.tencent.com/cdwch)，选择集群所在地域后，查看集群状态和信息。如下图：
+集群创建后，您即可进入 [云数据仓库控制台](https://console.cloud.tencent.com/cdwch)，选择集群所在地域后，查看集群状态和信息。如下图：
 ![](https://qcloudimg.tencent-cloud.cn/raw/d71e07e64964fad24f33c39f92b273d8.png)
 
 ## 使用 ClickHouse
