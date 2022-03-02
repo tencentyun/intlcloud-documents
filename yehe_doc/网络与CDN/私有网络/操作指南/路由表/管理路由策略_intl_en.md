@@ -8,30 +8,29 @@ This document describes operations related with routing policies.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/38e0ec6462b9305afc0d3f7f0897fcde.png" width="80%">
 4. In the pop-up window, <span id="routeParam" />configure the routing policy.
 >? If you have deployed a [TKE service](https://intl.cloud.tencent.com/document/product/457/6759) in the VPC, the destination you configure in the routing policy of the VPC subnet cannot overlap with the VPC CIDR block or the TKE IP range. For example, if the VPC CIDR block is `172.168.0.0/16` and the TKE CIDR block is `192.168.0.0/16`, the destination IP range cannot fall within `172.168.0.0/16`, or contain `192.168.0.0/16`.
->
-><table><tbody>
-><tr><th>Configuration Item</th><th>Description</th></tr>
-><tr><td>Destination</td><td>Specifies destination IP range to which you want to forward subnet outbound traffic. Requirements for a destination are as follows:
-><ul><li>Enter an IP range. If you want to enter a single IP, set the mask to `32` (for example, `172.16.1.1/32`).</li>
-><li>The destination cannot be an IP range of the VPC where the route table resides, because the local route already allows private network interconnection in this VPC.</li></ul>
->	</td></tr>
-><tr><td>Next hop type</td><td>Indicates the egress of data packets for the VPC. Supported types:
->  <ul>
->     <li> NAT Gateway: the traffic directed to a destination IP range is forwarded to a NAT Gateway.</li>
->     <li>Peering Connections: the traffic directed to a destination IP range is forwarded to the VPC peer of a peering connection.</li>
->     <li>Direct Connect Gateway: the traffic directed to a destination IP range is forwarded to a direct connect gateway.</li>
->    <li>High Availability Virtual IP: the traffic directed to a destination IP range is forwarded to an HAVIP.</li>
->    <li>VPN Gateway: the traffic directed to a destination IP range is forwarded to a VPN gateway.</li>
->    <li>Public IP of CVM: the traffic directed to a destination IP range is forwarded to the public IP (including EIPs) of a CVM instance in the VPC.</li>
->    <li>CVM: the traffic directed to a destination IP range is forwarded to a CVM instance in the VPC.</li>
->    </ul>
-> </td></tr>
-><tr><td>Next hop</td><td>Specifies the next hop instance to which the traffic is redirected, such as the gateway or CVM IP.</td></tr>
-><tr><td>Notes</td><td>(Optional) You can enter the route description for resource management.</td></tr>
-><tr><td>Add a line</td><td>You can click <b>+Add a line</b> to configure multiple routing policies, or click the deletion icon in the <b>Operation</b> column to delete the unnecessary routing policies.</td></tr>
-></tbody> </table>
->
-> <img src="https://qcloudimg.tencent-cloud.cn/raw/5d4e0dcde1c1a257298ea7fbdf15270a.png">
+ <table><tbody>
+ <tr><th>Configuration Item</th><th>Description</th></tr>
+ <tr><td>Destination</td><td>Specifies destination IP range to which you want to forward subnet outbound traffic. Requirements for a destination are as follows:
+ <ul><li>Enter an IP range. If you want to enter a single IP, set the mask to `32` (for example, `172.16.1.1/32`).</li>
+ <li>The destination cannot be an IP range of the VPC where the route table resides, because the local route already allows private network interconnection in this VPC.</li></ul>
+	</td></tr>
+ <tr><td>Next hop type</td><td>Indicates the egress of data packets for the VPC. Supported types:
+  <ul>
+     <li> NAT Gateway: the traffic directed to a destination IP range is forwarded to a NAT Gateway.</li>
+     <li>Peering Connections: the traffic directed to a destination IP range is forwarded to the VPC peer of a peering connection.</li>
+      <li>Direct Connect Gateway: the traffic directed to a destination IP range is forwarded to a direct connect gateway.</li>
+     <li>High Availability Virtual IP: the traffic directed to a destination IP range is forwarded to an HAVIP.</li>
+     <li>VPN Gateway: the traffic directed to a destination IP range is forwarded to a VPN gateway.</li>
+     <li>Public IP of CVM: the traffic directed to a destination IP range is forwarded to the public IP (including EIPs) of a CVM instance in the VPC.</li>
+     <li>CVM: the traffic directed to a destination IP range is forwarded to a CVM instance in the VPC.</li>
+    </ul>
+   </td></tr>
+ <tr><td>Next hop</td><td>Specifies the next hop instance to which the traffic is redirected, such as the gateway or CVM IP.</td></tr>
+ <tr><td>Notes</td><td>(Optional) You can enter the route description for resource management.</td></tr>
+ <tr><td>Add a line</td><td>You can click <b>+Add a line</b> to configure multiple routing policies, or click the deletion icon in the <b>Operation</b> column to delete the unnecessary routing policies.</td></tr>
+</tbody> </table>
+
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/5d4e0dcde1c1a257298ea7fbdf15270a.png">
 5. Click **Create**.
 
 ## Editing a Routing Policy
@@ -91,5 +90,5 @@ You can delete the unused routing policies. Only the custom routing policies can
 3. Select the routing policy to be deleted, and click **Delete** under the **Operation** column.
 ![](https://main.qcloudimg.com/raw/9ab1d9bcca75ba9f4cfdd4abfbddd58e.png)
 4. Read the notes and click **OK**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/57035cab86a2e31d78477792548a7640.png" width="70%" />
+ ![](https://qcloudimg.tencent-cloud.cn/raw/57035cab86a2e31d78477792548a7640.png)
 
