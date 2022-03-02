@@ -2,7 +2,8 @@
 This feature speeds up the creation of secondary index. After the feature is enabled, secondary indexes can be concurrently sorted in a temp table using multiple threads. The feature also optimizes the operation of locking the flush list when loading bulk data, effectively reducing the time consumed by CREATE INDEX and the impact on concurrent DML operations.
 
 ## Supported Versions
-Kernel version: MySQL 8.0 20210330 and above.
+- Kernel version: MySQL 8.0 20210330 and above.
+- Kernel version: MySQL 5.7 20210331 and above.
 
 ## Use Cases
 You need to perform DDL operations frequently on your database and may encounter the following DDL-related problems:
@@ -28,3 +29,5 @@ Use the `innodb_parallel_merge_threads` parameter to control the number of concu
 | ----------------------------- | ---- | ------- | ---- | ---------- | ---------------------------- |
 | innodb_fast_ddl               | Yes  | bool    | OFF  | {ON,OFF}   | Enable or disable FAST DDL           |
 | innodb_parallel_merge_threads | Yes  | Integer | 8    | 1 - 32       | Control the number of concurrent threads used to sort secondary indexes in a temp table |
+
+>?At present, you can't directly modify the parameter values of the above parameters. If you need to modify the parameter values, you can [Submit a ticket](https://console.cloud.tencent.com/workorder/category) for modification.  
