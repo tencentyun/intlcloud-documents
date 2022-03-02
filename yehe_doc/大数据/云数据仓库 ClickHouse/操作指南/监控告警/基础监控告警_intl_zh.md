@@ -4,7 +4,7 @@ ClickHouse 提供了46项丰富的业务及性能监控指标，方便您查看�
 
 
 ### 集群监控
-登录 [云数据仓库 ClickHouse 控制台](https://console.cloud.tencent.com/cdwch) 在**集群列表**中选中对应的集群，单击集群 **ID/名称**进入集群详情页，单击**集群监控**查看集群的各项性能指标。
+登录 [云数据仓库控制台](https://console.cloud.tencent.com/cdwch) 在**集群列表**中选中对应的集群，单击集群 **ID/名称**进入集群详情页，单击**集群监控**查看集群的各项性能指标。
 ![](https://qcloudimg.tencent-cloud.cn/raw/3e7d23cf9cd4d7b414e21dfcab996626.png)
 
 >?可针对具体指标做告警阈值配置及监控数据导出等。监控视图的展示逻辑-指标采集间隔为10秒，视图最小展示粒度为1min，数据点的聚合逻辑为1min内数据采集点的最大值。
