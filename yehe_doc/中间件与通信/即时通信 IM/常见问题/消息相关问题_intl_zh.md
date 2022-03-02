@@ -149,3 +149,6 @@ msg.setPriority(TIMMessagePriority.High);
 ### 为什么发送者已经被拉入黑名单但消息依旧显示发送成功？
 即时通信 IM 在控制台的 [黑名单检查](https://intl.cloud.tencent.com/document/product/1047/34419) 管理中提供发送消息后展示发送成功功能，当启用该功能时被拉黑用户侧发消息后仍展示发送成功 (实际对方不会收到消息) 。停用本设置项，则被拉黑用户侧发消息后会提示失败，SDK 会收到 [错误码 20007](https://intl.cloud.tencent.com/document/product/1047/34348) 。具体配置请参照文档 [黑名单检查](https://intl.cloud.tencent.com/document/product/1047/34419)。
 
+### 如何通过 COS 将图片地址变成可下载的域名格式？
+上传需要用户自己处理。如果使用存储服务私有读，需要 URL 签名确保有下载权限（[预签名下载](https://intl.cloud.tencent.com/document/product/436/14116)）。
+
