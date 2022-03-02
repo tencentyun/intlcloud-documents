@@ -31,4 +31,5 @@ SQLの実行中に、対応する機能制御パラメータのオンオフ状�
 | cdb_enable_offset_pushdown | Yes  | bool | ON   | {ON,OFF}   | LIMIT/OFFSETプッシュダウンを制御。デフォルトではオン |
 | cdb_enable_sumagg_pushdown | Yes  | bool | OFF  | {ON,OFF}   | SUMプッシュダウンを制御。デフォルトではオフ          |
 
->?用户目前无法直接修改以上参数的参数值，如需修改可 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行修改。
+>?ユーザーは現在、上記パラメータのパラメータ値を直接変更することはできません。変更する場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)から変更することができます。
+
