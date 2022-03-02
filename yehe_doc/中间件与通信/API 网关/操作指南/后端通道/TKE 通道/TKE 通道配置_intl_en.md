@@ -31,23 +31,17 @@ You can directly access Pods in a TKE cluster through API Gateway without passin
    - Host Header: it is optional and is the value of host in the request header carried in the HTTP/HTTPS request when API Gateway accesses the backend service.
    - Tags: they are optional and manage resources by category in different dimensions.
 
-The configuration of a complete TKE tunnel is as follows:
-
-![](https://qcloudimg.tencent-cloud.cn/raw/1091058afb38b1e33f3c6ec269b7dd4f.png)  
-
 ### Step 2. Connect the API backend to the TKE tunnel
 1. On the [Service](https://console.cloud.tencent.com/apigateway/service) page in the API Gateway console, click the target service ID to enter the API management page.
 2. Click **Create** to create a general API.
 3. Enter the frontend configuration information and click **Next**.
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/d0afa98fcc4c5a83bc1a8f1ddd5e464e.png)
 4. Select **VPC resources** as the backend type, select **TKE tunnel** as the backend tunnel type, and click **Next**.  
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/d3365999710dea204a252c2619230616.png)
 5. Set the response result and click **Complete**.
 
 ## Network Architecture
 After the TKE tunnel is bound to the API, the architecture of the entire network is as follows:
 
-![](https://qcloudimg.tencent-cloud.cn/raw/ca04e628647d61f5b46e68e48a28dc7c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3d06738e23d743081e6deb01a8a06504.png)
 
 API Gateway directly accesses the Pods in the TKE cluster without passing through CLB. The YAML configuration file of the cluster's httpbin service is as follows, where the `selector` indicates that the Pod with the tag key `app` and tag value `httpbin` is selected as the node of the TKE tunnel. Therefore, Pods on versions 1/2/3 are also nodes of the TKE tunnel.
 ```yaml
