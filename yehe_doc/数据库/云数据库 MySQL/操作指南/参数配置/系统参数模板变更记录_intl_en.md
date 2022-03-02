@@ -21,7 +21,7 @@ TencentDB for MySQL provides system parameter templates for batch parameter sett
 | time_zone                      | Value range updated | New value range: [SYSTEM\|-12:00\|-11:00\|-10:00\|-09:00\|-08:00\|-07:00\|-06:00\|<br>-05:00\|-04:00\|-03:00\|-02:00\|-01:00\|\+00:00\|\+01:00\|\+02:00\|\+03:00\|\+04:00\|\+05:00\|<br>\+05:30\|\+06:00\|\+06:30\|\+07:00\|\+08:00\|\+09:00\|\+10:00\|\+11:00\|\+12:00\|\+13:00] |
 | max_connections                | Value range updated | New value range: [1-100000]                                 |
 | slave_rows_search_algorithms   | Default value updated | New default value: TABLE_SCAN,INDEX_SCAN,HASH_SCAN            |
-| innodb_open_files              | Default value updated | New default value: 10240                                      |
+| innodb_open_files              | Value range updated  | New default value: 10240                                      |
 | slave_parallel_type            | Value range updated | New value range: [LOGICAL_CLOCK\|TABLE\|DATABASE]           |
 
 
@@ -65,7 +65,7 @@ TencentDB for MySQL provides system parameter templates for batch parameter sett
 | slave_pending_jobs_size_max     | Default value updated |  New default value: 1GB     |
 | time_zone                       | Value range updated |   New value range: [SYSTEM\|-12:00\|-11:00\|-10:00\|-09:00\|-08:00\|-07:00\|-06:00\|<br>-05:00\|-04:00\|-03:00\|-02:00\|-01:00\|\+00:00\|\+01:00\|\+02:00\|\+03:00\|\+04:00\|\+05:00\|<br>\+05:30\|\+06:00\|\+06:30\|\+07:00\|\+08:00\|\+09:00\|\+10:00\|\+11:00\|\+12:00\|\+13:00]      |
 | max_connections                | Value range updated | New value range: [1-100000]                                 |
-| cdb_more_gtid_feature_supported | Default value updated |  New default value: on    |
+| cdb_more_gtid_feature_supported | Default value updated |  New default value: OFF    |
 | slave_rows_search_algorithms   | Default value updated | New default value: TABLE_SCAN,INDEX_SCAN,HASH_SCAN            |
 | innodb_open_files              | Default value updated | New default value: 10240                                      |
 
