@@ -1,3 +1,53 @@
+## 2021년 12월
+<table>
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th><th width="15%">배포일</th><th width="15%">관련 문서</th>
+</tr> 
+<tr>
+    <td> SDK 5.8.1696 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+        <li> 로컬에서 해산된 그룹 세션이나 퇴장한 그룹 대화 읽지 않은 메시지 수가 포함된 경우, 읽지 않은 메시지 비우기 실패가 발생하는 문제 수정</li>
+    	<li> TUIKit 메시지 답장 기능 추가 지원</li>
+	<li> TUIKit 기본 스킨 변경 및 인터페이스 로직 최적화</li>
+	<li> iOS 리소스 파일 로딩 실패 문제 수정</li>
+    </ul></td>
+    <td> 2021-12-10 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 다운로드</a></td>
+</tr>
+</table>
+
+## 2021년 11월
+
+<table>
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th><th width="15%">배포일</th><th width="15%">관련 문서</th>
+</tr> 
+<tr>
+    <td> SDK 5.8.1672 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+        <li> 컴플라이언스 요구 충족을 위해 디바이스 정보 수집 로직 최적화</li>
+    	<li> 특정 조건에서의 읽지 않은 메시지 수 원클릭 비우기 기능 크래쉬 문제 수정</li>
+    </ul></td>
+    <td> 2021-11-30 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 다운로드</a></td>
+</tr>
+<tr>
+    <td> SDK 5.8.1668 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+        <li> 모든 세션의 읽지 않은 메시지 원클릭 비우기 기능 추가</li>
+    	<li> 울티메이트 버전 Community 지원 추가(최대 10만명)</li>
+    	<li> 울티메이트 버전 활성화 시 AVChatRoom 라이브 그룹 입장 이전의 20개의 메시지 반환 지원</li>
+    	<li> 가져온 읽지 않은 총 세션 수에서 수신 옵션이 ‘알림 수신 중지’ 및 ‘메시지 수신 중지’ 세션의 메시지를 자동으로 제거</li>
+    	<li> 장기간 연결 암호화 채널에 대한 국비급 지원 추가</li>
+    	<li> 그룹 메시지 기록 풀링 시, 종료 플래그의 판단 오류 문제 수정</li>
+    	<li> 기본 버전에서 인핸스드 버전으로 업그레이드 시 이전에 입장한 라이브 그룹에 읽지 않은 메시지 수가 발생하는 문제 수정</li>
+    	<li> 특수 형식 계정의 읽음 리포트 설정 실패 문제 수정</li>
+    	<li> 개인 환경에서 네트워크 연결이 자주 끊겼다가 다시 연결될 때 간헐적으로 연결된 서버가 올바르지 않은 문제 수정</li>
+	<li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">업데이트 로그</a>를 참고하십시오</li>
+    </ul></td>
+    <td> 2021-11-19 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 다운로드</a></td>
+</tr>
+</table>
+
 ## 2021년 09월
 
 <table>
