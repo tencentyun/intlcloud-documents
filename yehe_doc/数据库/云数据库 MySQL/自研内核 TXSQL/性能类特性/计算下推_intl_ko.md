@@ -31,3 +31,4 @@ SQL 실행 중 해당 기능 제어 매개변수의 활성화/비활성화 상�
 | cdb_enable_offset_pushdown | Yes  | bool | ON   | {ON,OFF}   | LIMIT/OFFSET 푸시 다운 제어, 기본 활성화 |
 | cdb_enable_sumagg_pushdown | Yes  | bool | OFF  | {ON,OFF}   | SUM 푸시 다운 제어, 기본 비활성화          |
 
+>?사용자는 상기 매개변수의 값을 직접 수정할 수 없습니다. 필요 시 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 수정이 가능합니다.
