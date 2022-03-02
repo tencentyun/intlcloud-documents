@@ -11,14 +11,12 @@ For the usage and features of conditional routing, see [Conditional Routing Plug
 
 ## Directions
 
-1. Create an API on the [API Gateway](https://console.cloud.tencent.com/apigateway/service) service page. Select VPC resources as the backend type of the API and select TKE tunnel as the tunnel.[](id:step1)
-   ![](https://qcloudimg.tencent-cloud.cn/raw/f35af2e585b2542a647dadcdef158a46.png)        
+1. Create an API on the [API Gateway](https://console.cloud.tencent.com/apigateway/service) service page. Select VPC resources as the backend type of the API and select TKE tunnel as the tunnel.[](id:step1)   
 2. After the API is published, create a conditional routing plugin.
    1. Select **Plugin** > **System Plugin** on the left sidebar in the console.
-   2. Click **Create** and select **Conditional routing** as the type.
-      <img src="https://qcloudimg.tencent-cloud.cn/raw/2291584bab61ecc63b2e1dec59879783.png" width="450px">                         
-   3. Create a conditional routing policy: the semantics of the conditional routing in the following example is that when the value of UserName in the request header is `admin`, the request will be forwarded to the TKE tunnel `upstream-1ca1d6yi`.
-      ![](https://qcloudimg.tencent-cloud.cn/raw/2dfe8aa99b540e172305f4d4d6d0cb3e.png)        
+   2. Click **Create** and select **Conditional routing** as the type.                    
+   3. Create a conditional routing policy: the semantics of the conditional routing in the following example is that when the value of UserName in the request header is `admin`, the request will be forwarded to the TKE tunnel `upstream-1ca1d6yi`.  
+
       Policy details:
 ```yaml
 ServiceType: HTTP
