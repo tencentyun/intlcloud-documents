@@ -91,7 +91,7 @@ After configuring a CLB instance, you can verify whether it is effective by acce
   - Split Zone: Default
   - Value: Click **Associate Tencent Cloud Resources** and then tick the CLB instance created above.
   - TTL: Leave it as the default value **600** s.
-    ![](https://main.qcloudimg.com/raw/569c078b0b8263515cbe2910d41970ff.png)
+    ![]()
 4. Click **Save**.
 5. About 10 minutes later, open the bound CNAME domain name in a browser (`www.example.com`). If the corresponding page can be normally displayed, it indicates that the CLB instance is in effect.
 
