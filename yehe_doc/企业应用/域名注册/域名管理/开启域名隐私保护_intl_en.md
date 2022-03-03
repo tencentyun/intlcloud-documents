@@ -12,7 +12,7 @@ According to applicable policies of CNNIC, to meet users' needs in privacy prote
 4. Click <span ><img src="https://main.qcloudimg.com/raw/ce844f426842c9ae41963f5d3bc4f4c0.png" style="margin-bottom:-5px;"/></span> to enable privacy protection as shown below:
 >?You can enable privacy protection only for ".cn" and <span ><img src="https://qcloudimg.tencent-cloud.cn/raw/29f35e6bb04d3f2b635d608c36f46d00.png" style="margin-bottom:-5px;"/></span> domain suffixes.
 >
-![](https://main.qcloudimg.com/raw/40947bed1bddc070c3b658277e62d67d.png)
+
 
 
 
