@@ -571,4 +571,5 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 17.[事件总线](https://intl.cloud.tencent.com/document/product/1108/44831)。
 18.[域名注册](https://intl.cloud.tencent.com/document/product/242/45146)。
 19.[轻量应用服务器](https://intl.cloud.tencent.com/document/product/1103/45279)。
-20.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45415)。
+20.[即时通信 IM](https://intl.cloud.tencent.com/zh/document/product/1047/45407)。
+21.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45415)。
