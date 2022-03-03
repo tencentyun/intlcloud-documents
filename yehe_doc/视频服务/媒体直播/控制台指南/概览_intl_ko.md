@@ -4,7 +4,7 @@ StreamLive 콘솔은 Channel 차원의 관리를 통해 사용자가 고품질 �
 
 ### 콘솔 개요
 
-StreamLive 콘솔은 Channel 차원을 기반으로 관리합니다. 주로 보안 그룹(Security Groups), 채널 입력(Input), 채널 관리(Channel) 및 워터마크(Watermark)의 4가지 부분으로 나뉩니다.
+StreamLive 콘솔을 구성하는 네 가지 모듈: 보안 그룹 관리(Security Groups Management), 입력 관리(Input Management), 채널 관리(Channel Management) 및 워터마크 관리(Watermark Management).
 
 | 모듈 이름 | 모듈 기능                                                     |
 | -------- | ------------------------------------------------------------ |
@@ -13,6 +13,7 @@ StreamLive 콘솔은 Channel 차원을 기반으로 관리합니다. 주로 보�
 | 채널 관리 | 채널은 StreamLive의 주요 부분으로, 설정된 구성에 따라 입력 스트림에 대해 트랜스 코딩 및 리먹싱 등 일련의 비디오 처리 작업을 수행한 다음 지정된 타깃 또는 아카이브로 출력 |
 | 워터마크     | 워터마크 관리 페이지에서 텍스트/이미지 워터마크 템플릿 설정 및 채널 관리 페이지에서 워터마크 설정 |
 
+![](https://qcloudimg.tencent-cloud.cn/raw/e283f308d9debf0978b5bc9e83f89673.png)
 ### 콘솔 게이트
 
 [Tencent Cloud StreamLive 콘솔](https://console.cloud.tencent.com/mdl/security)에 로그인합니다.

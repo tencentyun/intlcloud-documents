@@ -1,14 +1,20 @@
 StreamLiveコンソールはChannelディメンションをベースとして管理されます。お客様は高品質のビデオストリームを作成し、さまざまなタイプのデバイスに配信することができます。チャネルはStreamLiveのメインモジュールであり、所定の設定に従って入力ストリームに対し、トランスコードやカプセル化形式の変換など、一連のビデオ処理操作を行い、指定された宛先またはアーカイブストレージに出力することができます。
 
+
+
 ### チャネル作成
 
 【Channel Management】メニューを選択し、【Create Channel】をクリックしてチャネル入力を作成します。
+
+
 
 #### 1、チャネル名のカスタマイズ
 
 作成したさまざまなチャネルを識別するために用いられます。【Next Step】をクリックして、次のステップに進みます。
 
 ![img](https://main.qcloudimg.com/raw/824d8ad80106fb65f69df5dffae7bd0b.png)
+
+
 
 #### 2、入力ソースの追加
 
@@ -46,13 +52,15 @@ c. 【フェイルオーバーの設定】RTMP_PUSH / RTP_PUSH入力ソースに
 
 【Next Step】をクリックして次のステップに進みます。
 
+
+
 #### 3、出力グループの設定
 
 a. 複数の出力グループを設定します。StreamLiveは、1つのチャネルに対して複数のOutput Groupの出力をサポートします。右上のプラス記号をクリックして、複数のOutput Groupを追加します。
 
 ![img](https://main.qcloudimg.com/raw/e6af7ba8a52e288e0d02dc3bea54871e.png)
 
-b. 出力グループ名とタイプです。現在のOutput Groupの名称とタイプを設定します。 現在、StreamLiveをサポートし、HLSおよびDASHタイプの出力をサポートするとともに、HLSファイルのTencent Cloud COSへの出力、アーカイブをサポートしています（具体的な操作についてはセクション6を参照）。また、Tencent Cloud StreamPackageと直接組み合わせて一緒に使用し、HLS/DASH形式のCSSストリームを同じアカウントのStreamPackageへ直接出力することもサポートしています（具体的な操作についてはセクション7を参照）。これにより、お客様が独自のオリジンサーバーを構築し、ライブストリーミングの大規模かつ安定的な配信を行うお手伝いをします。
+b. 出力グループ名とタイプです。現在のOutput Groupの名称とタイプを設定します。 現在、StreamLiveをサポートし、HLSおよびDASHタイプの出力をサポートするとともに、HLSファイルの[Tencent Cloud COSへの出力、アーカイブ](https://intl.cloud.tencent.com/document/product/1048/45218) をサポートしています。また、Tencent Cloud StreamPackageと直接組み合わせて一緒に使用し、HLS/DASH形式のCSSストリームを直接[同じアカウントのStreamPackageへ出力](https://intl.cloud.tencent.com/document/product/1048/45219) することもサポートしています。これにより、お客様が独自のオリジンサーバーを構築し、ライブストリーミングの大規模かつ安定的な配信を行うお手伝いをします。
 
 >?
 > - Tencent Cloud COSの詳細については、[Tencent Cloud COSの詳細](https://intl.cloud.tencent.com/document/product/436/6222)をご参照ください。
@@ -109,9 +117,12 @@ j. この時点で、チャネル全体の構成が完了しています。【St
 ![img](https://main.qcloudimg.com/raw/ec0fe249551d5db6d80697a1c5d47d36.png)
 
 
+
 ### チャネルのインポート・エクスポート、クローン作成および編集・削除
 
 StreamLiveは、チャネル構成ファイルのエクスポート/インポートとチャネルのクローン機能により、チャネルの作成をすばやく完了する業務をサポートしています。
+
+
 
 #### チャネルのエクスポート
 
@@ -120,6 +131,8 @@ StreamLiveの【Channel Management】インターフェースには、作成し�
 ![img](https://main.qcloudimg.com/raw/764c7eea7b0ea222364a5b4dad88eb41.png)
 
 ![img](https://main.qcloudimg.com/raw/e67829bbee59c2148ba68ae1e652f8da.png)
+
+
 
 #### チャネルのインポート
 
@@ -133,6 +146,8 @@ jsonファイルを送信した後、チャネル編集ステータスに入る�
 > - チャネルインポート機能とは、実際はクイック入力プロセスです。インポートしたjsonファイルに基づいて、【Basic Information】、【Output Group Setting】という2つの部分の内容が自動的に入力されます。【Input Setting】部分は無視されますので、Inputを再選択する必要があります。従って、この方法ですばやくChannelを作成する必要がある場合は、あらかじめ新しいinputを作成できます。
 > - チャネルの編集時に新しい構成ファイルをインポートすると、元のチャネル構成情報が上書きされます。
 
+
+
 #### チャネルクローン
 
 チャネルクローンの本質とは、特殊なチャネルのエクスポート/インポートのすばやい操作です。【Channel Management】インターフェースを開き、【Operation】の下の【Clone】をクリックすれば、クローンチャネルの構成ステータスに進めます。
@@ -141,11 +156,15 @@ jsonファイルを送信した後、チャネル編集ステータスに入る�
 
 ![img](https://main.qcloudimg.com/raw/92bf580af5c4f013363915688744f1f6.png)
 
-1. チャネルの編集と削除
+
+
+#### チャネルの編集と削除
 
 【RUNNING】プロセスではチャネルの編集・削除はできませんので、まず【Stop】チャネルの編集/削除操作を行ってください。
 
 ![img](https://main.qcloudimg.com/raw/57923bc62f83d99ee10df572bebbb6e3.png)
+
+
 
 ### チャネル品質のモニタリング
 
@@ -167,6 +186,7 @@ Heathはユーザーに対し、チャネル入力（帯域幅・入力ビデオ
 
 ![img](https://main.qcloudimg.com/raw/e49e312b0d134d0d9fb1c8dccbcee00b.png)
 ![img](https://main.qcloudimg.com/raw/de84757254338b428e55695b4b3a2170.png)
+
 
 
 ### タイムプランの設定
@@ -191,6 +211,8 @@ StreamLiveチャネルにタイムプランを設定し、プッシュ中の予�
 作成されたすべてのイベントを「トリガー時間」の時系列によって上から順に並べ、イベントを閲覧、削除、追加することができます。
 
 >! 作成済みイベントの編集操作はサポートしていません。
+
+
 
 ### チャネル構成のベストプラクティス
 

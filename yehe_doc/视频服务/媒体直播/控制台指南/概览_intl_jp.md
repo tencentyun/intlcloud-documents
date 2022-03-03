@@ -4,7 +4,7 @@ StreamLiveコンソールはChannelディメンションをベースとして管
 
 ### コンソール概要
 
-StreamLiveコンソールはChannelディメンションをベースとして管理されます。これは主に、セキュリティグループ（Security Groups）、チャネル入力（Input）、チャネル管理（Channel）、ウォーターマーク（Watermark）という4つのモジュールに分かれます。
+StreamLiveコンソールは、セキュリティグループ管理（Security Groups Management）、チャネル入力管理（Input Management）、チャネル管理（Channel Management）、ウォーターマーク（Watermark Management）という4つのモジュールで構成されています。
 
 | モジュール名 | モジュール機能                                                     |
 | -------- | ------------------------------------------------------------ |
@@ -13,6 +13,7 @@ StreamLiveコンソールはChannelディメンションをベースとして管
 | チャネル管理 | チャネルはStreamLiveのメインモジュールであり、所定の設定に従って入力ストリームに対し、トランスコードやカプセル化形式の変換など、一連のビデオ処理操作を行い、指定された宛先またはアーカイブストレージに出力することができます |
 | ウォーターマーク     | ウォーターマーク管理ページでテキスト/画像ウォーターマークテンプレートを設定し、チャネル管理ページでウォーターマークを設定します |
 
+![](https://qcloudimg.tencent-cloud.cn/raw/e283f308d9debf0978b5bc9e83f89673.png)
 ### コンソールポータル
 
 [Tencent Cloud StreamLiveコンソール](https://console.cloud.tencent.com/mdl/security)にログインします。

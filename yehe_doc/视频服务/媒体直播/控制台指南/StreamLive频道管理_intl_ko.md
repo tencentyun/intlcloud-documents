@@ -1,14 +1,20 @@
 StreamLive 콘솔은 Channel 차원을 기반으로 관리되며 다양한 유형의 장치에 배포할 고품질 비디오 스트림을 생성할 수 있습니다. 채널은 StreamLive의 주요 모듈로, 설정된 구성에 따라 입력 스트림에 대해 트랜스 코딩 및 리먹싱 등의 일련의 비디오 처리 작업을 수행한 다음 지정된 타깃 또는 아카이브 스토리지로 출력할 수 있습니다.
 
+
+
 ### 채널 생성
 
 [Channel Management] 메뉴를 선택하고 [Create Channel]을 클릭하여 채널 입력을 생성합니다.
+
+
 
 #### Ⅰ. 채널 이름 사용자 정의
 
 사용자가 생성한 채널을 식별하는 데 사용됩니다. [Next Step]을 클릭하여 다음 단계로 넘어갑니다.
 
 ![img](https://main.qcloudimg.com/raw/824d8ad80106fb65f69df5dffae7bd0b.png)
+
+
 
 #### Ⅱ. 입력 소스 추가
 
@@ -46,13 +52,15 @@ c. [액티브/스탠바이 재해 복구 설정] 사용자는 RTMP_PUSH / RTP_PU
 
 [Next Step]을 클릭하여 다음 단계로 넘어갑니다.
 
+
+
 #### Ⅲ. 출력 그룹 설정
 
 a. 여러 출력 그룹 설정. StreamLive는 단일 채널의 여러 Output Group에 대한 출력을 지원합니다. 우측 상단의 플러스를 클릭하여 여러 Output Group을 추가합니다.
 
 ![img](https://main.qcloudimg.com/raw/e6af7ba8a52e288e0d02dc3bea54871e.png)
 
-b. 출력 그룹의 이름 및 유형. 현재 Output Group의 이름과 유형을 설정합니다. 현재 StreamLive는 HLS/DASH 포맷의 출력을 지원하며, HLS 파일을 출력해 Tencent Cloud COS로의 보관(자세한 작업 방식은 제 6챕터 참조)을 지원합니다. 또한 Tencent Cloud StreamPackage와 함께 사용하여 HLS/DASH 포맷의 라이브 방송 스트림을 그대로 동일 계정의 StreamPackage에서 출력할 수 있도록 지원(자세한 작업 방식은 제 7챕터 참조)함으로써, 사용자가 자체 원본 서버를 구축하여 대규모 라이브 방송을 안정적으로 배포할 수 있도록 해줍니다.
+b. Output Group의 이름과 유형을 설정합니다. 현재 StreamLive는 HLS 및 DASH 형식의 출력을 지원합니다. HLS 파일을 [Tencent Cloud COS 아카이브](https://intl.cloud.tencent.com/document/product/1048/45218)로 출력하거나 HLS/DASH 스트림을 Tencent Cloud [동일 계정의 StreamPackage로 출력](https://intl.cloud.tencent.com/document/product/1048/45219)할 수 있습니다. 이를 통해 라이브 스트림의 안정적이고 대규모 배포를 위해 자체 원본 서버를 구축할 수 있습니다.
 
 >?
 > - Tencent Cloud COS 참고 문서: [Tencent Cloud COS 세부정보](https://intl.cloud.tencent.com/document/product/436/6222)
@@ -109,9 +117,12 @@ j. 이로써 채널 설정이 모두 완료되었습니다. [Start]를 클릭하
 ![img](https://main.qcloudimg.com/raw/ec0fe249551d5db6d80697a1c5d47d36.png)
 
 
+
 ### 채널 가져오기/내보내기, 복제, 편집 및 삭제
 
 StreamLive는 채널 구성 파일 가져오기/내보내기 및 채널 복제 기능을 통해 신속한 채널 생성을 지원합니다.
+
+
 
 #### 채널 내보내기
 
@@ -120,6 +131,8 @@ StreamLive의 [Channel Management] 인터페이스에 생성한 채널 및 상�
 ![img](https://main.qcloudimg.com/raw/764c7eea7b0ea222364a5b4dad88eb41.png)
 
 ![img](https://main.qcloudimg.com/raw/e67829bbee59c2148ba68ae1e652f8da.png)
+
+
 
 #### 채널 가져오기
 
@@ -133,6 +146,8 @@ json 파일을 제출하면 채널 편집 상태로 전환되며, 기존의 구�
 > - 채널 가져오기는 실제로는 매우 빠르게 진행되는 입력 프로세스로, 사용자가 가져온 json 파일을 기반으로 [Basic Information], [Output Group Setting] 두 부분의 내용을 빠르게 자동으로 입력해주며, [Input Setting] 부분은 무시하기 때문에 Input을 다시 선택해야 합니다. 따라서 이와 같은 방법으로 빠르게 Channel을 생성해야 하는 경우, 사전에 새로운 input을 생성해 놓을 수 있습니다.
 > - 채널 편집 시 새로운 구성 파일을 가져오는 경우, 기존 채널 구성 정보는 덮어쓰기 됩니다.
 
+
+
 #### 채널 복제
 
 채널 복제는 빠르고 특수한 채널 내보내기/가져오기 작업으로, [Channel Management] 인터페이스에서 [Operation]의 [Clone]을 클릭하면 복제 채널의 구성 상태로 전환됩니다.
@@ -141,11 +156,15 @@ json 파일을 제출하면 채널 편집 상태로 전환되며, 기존의 구�
 
 ![img](https://main.qcloudimg.com/raw/92bf580af5c4f013363915688744f1f6.png)
 
-1. 채널 편집 및 삭제
+
+
+#### 채널 편집 및 삭제
 
 [RUNNING] 중인 채널은 편집/삭제가 불가능하며, 먼저 [Stop] 후 편집/삭제를 진행해야 합니다.
 
 ![img](https://main.qcloudimg.com/raw/57923bc62f83d99ee10df572bebbb6e3.png)
+
+
 
 ### 채널 품질 모니터링
 
@@ -167,6 +186,7 @@ Heath는 사용자가 현재 채널이 정상적으로 운영되고 있는지 �
 
 ![img](https://main.qcloudimg.com/raw/e49e312b0d134d0d9fb1c8dccbcee00b.png)
 ![img](https://main.qcloudimg.com/raw/de84757254338b428e55695b4b3a2170.png)
+
 
 
 ### 시간 계획 설정
@@ -191,6 +211,8 @@ StreamLive 채널 시간 계획을 설정하여, 푸시 스트리밍 과정에�
 생성한 모든 이벤트는 '트리거 시간' 순서에 따라 차례대로 정렬될 수 있습니다. 이벤트는 조회, 삭제 및 추가할 수 있습니다.
 
 >! 생성된 이벤트는 편집 작업을 지원하지 않습니다.
+
+
 
 ### 채널 설정 모범 사례
 
