@@ -18,7 +18,7 @@ A basic module contains the following files:
 
 ```
 
-You are advised to add the `examples` directory to store the examples for importing and using the module. For more information, visit https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-vpc/tree/master/examples.
+You are advised to add the `examples` directory to store the examples for importing and using the module. For more information, [visit](https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-vpc/tree/master/examples).
 
 ## Publishing a Module
 
