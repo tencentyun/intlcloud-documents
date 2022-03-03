@@ -250,10 +250,12 @@ if (ret == 0) {  
 
 ## [(Optional) Monitor TOA Status](id:monitor-toa)
 To ensure execution stability, this kernel module allows you to monitor status. After inserting the `toa.ko` kernel module, you can monitor the TOA working status on the host of the container in either of the following ways.
+
 <dx-accordion>
+
 ::: Method 1: Check the IPv6 address stored in TOA
 Run the following command to check the IPv6 address stored in TOA.
->!Executing this command may degrade performance. Please proceed with caution.
+- Executing this command may degrade performance. Please proceed with caution.
 
 ```
 cat /proc/net/toa_table
