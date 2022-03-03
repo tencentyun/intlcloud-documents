@@ -1,11 +1,11 @@
 COS resources (buckets and objects) are configured with the Private Read/Write permission by default. Even if anonymous users obtain object URLs, they cannot access your resource content through the URLs due to lack of signature information.
-![](https://qcloudimg.tencent-cloud.cn/raw/90b71308a1e1e6f1a842d0c7bd8c44d6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fa01129197b8f995eeddf992bd30a13a.png)
 
 ## Main Steps
 
 COS's authorization and identity verification process consists of five steps, as shown in the figure below.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/9d95ab96154600c8d92d45daf2375f10.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/257077f136d7c50be671964140e7996d.png)
 
 #### Step 1. Register a Tencent Cloud account
 
@@ -38,7 +38,7 @@ You can access COS through the console, API requests, and SDKs. For security rea
 
 ## COS Identity Verification Modes
 
-![](https://qcloudimg.tencent-cloud.cn/raw/6e44d339c032f4920c5c9c6cea76c4c2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ec955992e6a0af7e9a01b7fd1e009330.png)
 
 COS buckets are private by default. Identity verification is required no matter whether you access COS using keys (permanent or temporary keys) or pre-signed URLs. In special scenarios, you can set your bucket permission to Public Read so that any user can use object URLs to download objects directly without identity verification, which is risky.
 
@@ -46,7 +46,7 @@ COS buckets are private by default. Identity verification is required no matter 
 
 A key (SecretId and SecretKey) is the security credential used for identity verification when a user accesses a Tencent Cloud API and can be viewed on the [Manage API Key](https://console.cloud.tencent.com/cam/capi) page in the CAM console. Multiple keys can be created under each root account or sub-account.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/04ea2e35e83786447c17a4d432d522f2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6b2eac5ee953de3ace61b954e12c0cf2.png)
 
 A permanent key consists of a SecretId and a SecretKey. Two pairs of permanent keys can be generated for each root account or sub-account. Permanent keys represent the permanent identities of accounts. They are valid forever if not deleted. For more information, see [Accessing COS Using a Temporary Key](https://intl.cloud.tencent.com/document/product/436/45241).
 
