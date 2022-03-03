@@ -9,7 +9,7 @@
 Gradleを使って自動でローディングするか、または手動でaarをダウンロードし、それをプロジェクトにインポートする方式を選択できます。
 
 ### 方法1：自動ローディング（aar）
-TRTC SDK はjCenterでライブラリを公開していますので、Gradleを設定すれば、自動でダウンロードされ、更新されます。
+TRTC SDK はmavenCentralでライブラリを公開していますので、Gradleを設定すれば、自動でダウンロードされ、更新されます。
 Android Studioを使って SDKを統合したいプログラム（ここでの例は、[TRTCScenesDemo](https://github.com/tencentyun/LiteAVClassic/tree/master/Android/TRTCScenesDemo)）を開き、その後簡単な3つのステップで app/build.gradle ファイルを修正しさえすれば、SDKの統合が完成します。
 ![](https://main.qcloudimg.com/raw/47b8e9f7ee41895a479334f16dd50a12.png)
 
@@ -39,7 +39,7 @@ defaultConfig {
 
 
 ### 方法2：手動ダウンロード（aar）
-お客様のネットワークとjCenterの接続に問題がある場合は、SDKを手動でダウンロードし、プログラムに統合することができます。
+お客様のネットワークとmavenCentralの接続に問題がある場合は、SDKを手動でダウンロードし、プログラムに統合することができます。
 
 1. 最新バージョンの[TRTC SDK](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip)をダウンロードします。
 2. ダウンロードした aar ファイルをプログラムの**app/libs** ディレクトリの下にコピーします。
@@ -104,7 +104,6 @@ AndroidManifest.xml の中で Appの権限を設定します。TRTC SDKには次
 <uses-permission android:name="android.permission.BLUETOOTH" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 
