@@ -84,6 +84,5 @@ window_function (expression) OVER (
 * | select avg(pv) over(order by analytic_time rows between 2 preceding and current row) as avg_pv_3,pv,analytic_time from (select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 day) as analytic_time, count(*) as pv group by analytic_time order by analytic_time)
 ```
 - 查询和分析结果
-![](https://qcloudimg.tencent-cloud.cn/raw/e4056fba03106eb8705a19f1f77f68b0.png)
 
 
