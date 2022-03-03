@@ -20,13 +20,11 @@
 | 后端类型 | 必填     | 支持公网 URL/IP、VPC 内资源、云函数SCF、Mock、微服务平台 TSF。  |
 | 后端配置 | 必填     | 当客户端请求满足条件时将被转发到的后端，请输入 YAML 格式的后端配置。 |
 
-![](https://main.qcloudimg.com/raw/e961c1531b24f9da006e3b9981ffb507.png)
-
 ### 步骤2：绑定 API 并生效
 
 1. 在列表中选中刚刚创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/a91c4bdedc7bef63610b0124747fda8e.png)
 3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 ## 条件表达式写作指南
