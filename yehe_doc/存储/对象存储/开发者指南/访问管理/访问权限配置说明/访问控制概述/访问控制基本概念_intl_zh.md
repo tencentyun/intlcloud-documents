@@ -2,13 +2,13 @@
 
 创建腾讯云子账号后，您可以通过访问策略为子账号授权；若需要将资源开放给非腾讯云用户，可以通过设置资源（存储桶、对象、目录）的公共权限（公有读）实现。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/90b71308a1e1e6f1a842d0c7bd8c44d6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d22047a7656e9524482def3ce67b61ed.png)
 
 ## 访问控制的元素
 
 授予访问权限，指的是用户可以决定什么人、在何种条件下、对哪些资源、执行具体操作的控制能力组合。因此描述一个访问权限行为，通常包括四个元素：**身份、资源、操作、条件（可选）**。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/76920126347974448795fd58f7b8d26d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/164bdaaee60662fb9848d305f355cd49.png)
 
 ## 访问权限的元素
 
@@ -59,15 +59,15 @@ COS 提供多种设置权限的方式实现访问控制，包括存储桶策略�
 
 按照策略设置的出发点，可以分为基于资源和基于用户两种方式；按照授权方式，可以分为策略和 ACL 两种方式。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/332efdd73dc362ef889257cdfbd4d686.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2adcbc5554e21fafae569d3c7abb209c.png)
 
 **分类方法一：基于资源 vs 基于用户**
-![](https://qcloudimg.tencent-cloud.cn/raw/fdc1f3434c0e75425f2a650a4ece79ec.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f92521c28d8a4841f71f267ca9964dcc.png)
 - 以资源为出发点：将权限关联在具体的资源上，包括存储桶策略、存储桶 ACL 和对象 ACL，在 COS 控制台或通过 COS API 配置。
 - 以用户为出发点：用户策略（CAM 策略），将权限关联在用户上，填写策略时不需要填写用户，需要指定资源、操作、条件等，在 [CAM 控制台](https://console.cloud.tencent.com/cam) 配置。
 
 **分类方法二：策略 vs ACL**
-![](https://qcloudimg.tencent-cloud.cn/raw/5949e32de545aad4e878400e42dfef4c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e861ab92e54560071e26ac27a180c54b.png)
 - 策略：用户策略（CAM 策略）和存储桶策略，都是基于完整的策略语法进行授权的，授权的动作细化到了每个 API 对应的动作，支持指定允许/拒绝效力。
 - ACL：存储桶 ACL 和对象 ACL 都是基于访问控制列表（ACL）实现的。ACL 是与资源关联的一个指定被授权者和授予权限的列表，对应经过整理和抽象的权限，仅支持指定允许效力。
 
