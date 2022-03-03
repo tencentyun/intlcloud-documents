@@ -17,7 +17,7 @@ This document describes how to use cross-account domain transfer to transfer a d
 3. Enter the **Domain Name Info** page, select the **Domain Transfer** tab, and click **Transfer** after **Cross-Account Transfer** as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/7818c6d4c83a31d0c4cd0553a15a334e.png)
 4. In the **Identity Verification** window that pops up, get and enter the SMS verification code, and then click **Confirm** as shown below:
-![](https://main.qcloudimg.com/raw/e5d712ca5d1d9807d43f0e3a00e8c8c9.png)
+
 5. On the **Cross-Account Transfer** page, confirm the relevant information, enter the target account ID, and click **Confirm** > **Next** as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/05231418aa924327a9b2a72f8d54f01a.png)
  - **Transferred Domain**: check whether the domain to be transferred is correct.
