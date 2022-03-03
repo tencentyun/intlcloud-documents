@@ -122,8 +122,8 @@
 19.[事件总线](https://intl.cloud.tencent.com/document/product/1108/44830)。
 20.[域名注册](https://intl.cloud.tencent.com/document/product/242/45147)。
 21.[轻量应用服务器](https://intl.cloud.tencent.com/document/product/1103/45280)。
-22.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45416。
-
+22.[即时通信 IM](https://intl.cloud.tencent.com/zh/document/product/1047/45408)。
+23.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45416)。
 
 
 ## 特定司法管辖区要求
