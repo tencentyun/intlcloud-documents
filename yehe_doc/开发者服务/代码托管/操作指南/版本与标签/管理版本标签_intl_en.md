@@ -8,7 +8,7 @@ This document describes how to manage version tags.
 2. Click <img src ="https://main.qcloudimg.com/raw/d94a8e60dd3a41d0af07d72ae0e9d70e.png" style ="margin:0"> in the upper-right corner to open the project list page and click a project icon to open the corresponding project.
 3. Select **Code Repositories** in the menu on the left and click **Branches** to go to the branch management page.
 
-If a multi-branch development workflow is used, we recommend you set the master branch as a [protected branch](/docs/repo/branch/protected.html). Developers can create temporary develop branches and initiate merge requests for them. After continuous integration (CI) and code reviews, developers can merge the develop branch into the master branch.
+If a multi-branch development workflow is used, we recommend you set the master branch as a protected branch. Developers can create temporary develop branches and initiate merge requests for them. After continuous integration (CI) and code reviews, developers can merge the develop branch into the master branch.
 
 
 
