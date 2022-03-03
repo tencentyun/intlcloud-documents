@@ -29,9 +29,11 @@ Your Content (see [Data Processing and Security Addendum](https://intl.cloud.ten
 
 Administrative Information ([Privacy Policy](https://intl.cloud.tencent.com/document/product/301/17345) for more detail)
 
-| Entity                                | Purpose                    |
+| Entity/ Party                                | Purpose                    |
 | ------------------------------------- | -------------------------- |
 | Tencent Computing (Beijing) Co., Ltd. | Providing back-end support |
 | Paypal Inc.                           | Payment processor          |
 | Frensworkz Software Technology Co., Limited               | Backend support |
 | Salesforce.com Singapore Pte. Ltd                 | Customer support           |
+|              | Marketing support        |
+| Third party resellers (Salesforce CRM)                 | Business development           |
