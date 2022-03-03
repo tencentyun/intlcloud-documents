@@ -41,7 +41,7 @@ Click **Renew** in the row of the domain to be renewed to submit the renewal app
 4. After the payment, if the page displays "Payment successful", the renewal is successful as shown below:
 >?You can click **Go to Console** to check whether the validity period of your domain has been updated. If you need an invoice, you can apply for it in **Cost > Cost Center > Invoice and Contract > [Invoice Management](link)**.
 >
-![](https://main.qcloudimg.com/raw/86afe3cd08a800db2031fc5210c8e9a1.png)
+
 
 ## Common Issues After Renewal
 If you renew your domain during the redemption period, its DNS may have been paused by the registrar, making your website inaccessible.
