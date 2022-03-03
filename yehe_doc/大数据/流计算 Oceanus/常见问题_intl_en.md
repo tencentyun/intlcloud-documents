@@ -8,7 +8,7 @@ Batch computing requires the collection of all data before starting various comp
 
 ### What is a CU?
 
-A compute unit (CU) is the smallest unit of computing resources provided by Oceanus, which contains 1 CPU core and 4 GB memory. 
+A compute unit (CU) is the smallest unit of computing resources provided by Stream Compute Service, which contains 1 CPU core and 4 GB memory. 
 
 
 
@@ -17,7 +17,7 @@ A compute unit (CU) is the smallest unit of computing resources provided by Ocea
 Yes. You can access your self-built services such as Druid and Kafka through peering connection.
 
 ### What are fine-grained resources?
-Fine-grained resources refer to resources whose computing resource unit specifications can be below 1 CU (1 CPU core and 4 GB memory). Oceanus currently supports three types of CU specifications: 0.5 CU, 1 CU, and 2 CU. Different specifications can be set for JobManager and TaskManager, respectively.
+Fine-grained resources refer to resources whose computing resource unit specifications can be below 1 CU (1 CPU core and 4 GB memory). Stream Compute Service currently supports three types of CU specifications: 0.5 CU, 1 CU, and 2 CU. Different specifications can be set for JobManager and TaskManager, respectively.
 
 ### Why does the actual running job concurrency fail to reach the maximum job concurrency?
 In the process of using fine-grained resources in resource configuration, there is a very small probability that resource fragments may affect job operations, so the actual running job concurrency may not reach the maximum job concurrency. You can avoid resource fragments as much as possible by choosing an appropriate resource specification. If the above issue occurs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
