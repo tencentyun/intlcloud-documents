@@ -35,5 +35,4 @@ Administrative Information ([Privacy Policy](https://intl.cloud.tencent.com/docu
 | Paypal Inc.                           | Payment processor          |
 | Frensworkz Software Technology Co., Limited               | Backend support |
 | Salesforce.com Singapore Pte. Ltd                 | Customer support           |
-|              | Marketing support        |
 | Third party resellers (Salesforce CRM)                 | Business development           |
