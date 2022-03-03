@@ -3,11 +3,11 @@
 ## Overview
 If you have registered multiple domains, you can use the batch renewal feature provided by Tencent Cloud to renew them at once.
 >?
->- Once expired, a domain cannot be transferred out. You need to renew it before transferring it out. For more applicable rules, see [Domain Transfer Out Rules](link).
->- Within 30 days after a domain expires, its status will change from renewable to redeemable. We recommend you renew it within 29 days after it expires. For the renewal prices, see [Domain Pricing](link).
+>- Once expired, a domain cannot be transferred out. You need to renew it before transferring it out. For more applicable rules, see [Domain Transfer Out Rules](https://intl.cloud.tencent.com/document/product/242/42858).
+>- Within 30 days after a domain expires, its status will change from renewable to redeemable. We recommend you renew it within 29 days after it expires. For the renewal prices, see [Domain Pricing](https://buy.intl.cloud.tencent.com/domain/price?type=overview).
 
 ## Directions
-Log in to the [Domains console](link) and enter the **My Domains** page.
+Log in to the [Domains console](https://console.intl.cloud.tencent.com/domain/manage) and enter the **My Domains** page.
 
 ### Batch renewing domains
 
@@ -36,4 +36,4 @@ If you renew your domain during the redemption period, its DNS may have been pau
 - DNS of domains resolved by DNSPod will be recovered within 72 hours after successful renewal.
 - DNS of domains not resolved by DNSPod will be recovered within 48–72 hours after successful renewal.
 
-For more issues, see [Domain Renewal](link).
+For more issues, see [Domain Renewal](https://intl.cloud.tencent.com/document/product/242/42863).

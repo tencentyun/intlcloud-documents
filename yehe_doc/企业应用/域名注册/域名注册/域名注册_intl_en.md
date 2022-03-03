@@ -3,7 +3,7 @@
 ## Step 1. Query the domain
 Before registering a domain, you need to query whether the domain or its suffix has already been registered by somebody else, and if so, you need to choose an unregistered domain or suffix before proceeding to the next step.
 
-1. Log in on the [Domain Registration](link) page.
+1. Log in on the [Domain Registration](https://buy.intl.cloud.tencent.com/domain/buy) page.
 2. On the **Domain Registration** page, enter the target domain and suffix and click <span ><img src="https://main.qcloudimg.com/raw/0cc93679f33e50d7c6b3fea4d9110cc1.png" style="margin-bottom:-5px;"/></span> to view its registration status as shown below:
 For example, enter `example.com`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4e6335791264b199fe0cba1ed0e30478.png)
@@ -37,14 +37,14 @@ For example, enter `example.com`.
 
 On the **Payment** page, select a payment method as appropriate.
 >? 
->- After making the payment, you can view/manage your domain in [My Domains](link).
->- If you need an invoice, you can apply for it in **Cost > Cost Center > Invoice and Contract > [Invoice Management](link)**.
+>- After making the payment, you can view/manage your domain in [My Domains](https://console.intl.cloud.tencent.com/domain/manage).
+>- If you need an invoice, you can apply for it in **Cost > Cost Center > Invoice and Contract > [Invoice Management](https://console.intl.cloud.tencent.com/expense/invoicing)**.
 
 
 
 ## FAQs
-- [Can I refund after successfully registering a domain?](link)
-- [What should I do if domain registration fails?](link)
+- [Can I refund after successfully registering a domain?](https://intl.cloud.tencent.com/document/product/242/42860)
+
 
 If you encounter any problems during domain registration, you can try troubleshooting as instructed in Registration Process. If the problem persists, contact [technical support](https://intl.cloud.tencent.com/zh/contact-us) for assistance.
 

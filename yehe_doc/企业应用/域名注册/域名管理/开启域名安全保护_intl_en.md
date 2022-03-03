@@ -5,7 +5,7 @@
 In the era of information, more and more websites are emerging, the demand for domains increases, and the domain security problems also attract wide attention. Therefore, after purchasing a domain, you are advised to enable the domain protection feature.
 
 ## Prerequisites
-You have logged in to the [Domains console](https://console.cloud.tencent.com/domain) and entered the **My Domains** page.
+You have logged in to the [Domains console](https://console.intl.cloud.tencent.com/domain/manage) and entered the **My Domains** page.
 
 
 ## Directions

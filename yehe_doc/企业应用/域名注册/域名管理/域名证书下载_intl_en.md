@@ -7,7 +7,7 @@ This document describes how to download the domain certificate automatically gen
 >!If the naming is rejected, no certificate can be downloaded.
 
 ## Directions
-1. Log in to the **[Domains console]**(https://console.cloud.tencent.com/domain/), enter the **My Domains** page, and view the information of all purchased domains.
+1. Log in to the **[Domains console]**(https://console.intl.cloud.tencent.com/domain/manage), enter the **My Domains** page, and view the information of all purchased domains.
 2. In the row of the domain whose certificate you want to download, click **More** > **Download Certificate** as shown below:
 ![](https://main.qcloudimg.com/raw/09aba323fe7767bd78d4c90d837aba14.png)
 3. In the **Domain Certificate** pop-up window, click **Download Certificate** and select the download path to store the certificate as shown below:

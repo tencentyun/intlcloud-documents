@@ -15,7 +15,7 @@ According to international practices, the application for domain names follows t
  When you enter a domain name in your browser to visit a website, the domain name will be translated to an IP to find the corresponding server and open the requested page. For more information about DNS resolution, see [Adding Record](https://docs.dnspod.com/dns/5faa06d691e2ca46b29ff43e/).
 - **Domain transfer to Tencent Cloud**: if you have a domain name registered with another registrar and want to host it with Tencent Cloud, you can transfer it to Tencent Cloud.
  - **Domain transfer-in**
-    Before transferring your domain name, check the [prerequisites](link) carefully and obtain the transfer code from your current registrar. For detailed instructions on domain transfer-in, see [Domain Transfer to Tencent Cloud](https://intl.cloud.tencent.com/document/product/242/42877).
+    Before transferring your domain name, check the [prerequisites](https://intl.cloud.tencent.com/zh/document/product/242/45180) carefully and obtain the transfer code from your current registrar. For detailed instructions on domain transfer-in, see [Domain Transfer to Tencent Cloud](https://intl.cloud.tencent.com/document/product/242/42877).
  - **DNS resolution**:
  When you enter a domain name in your browser to visit a website, the domain name will be translated to an IP to find the corresponding server and open the requested page. For more information about DNS resolution, see [Adding Record](https://docs.dnspod.com/dns/5faa06d691e2ca46b29ff43e/).
 

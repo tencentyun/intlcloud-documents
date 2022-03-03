@@ -6,21 +6,21 @@ This document describes how to create, verify, and use a new mobile number and e
 
 ## Directions
 ### Creating mobile number
-1. Log in to the [Domains console](link).
-2. On the **Domain Templates** page, select the **[Phone and Email Verification](link)** tab and click **Create Mobile Number**.
+1. Log in to the [Domains console](https://console.intl.cloud.tencent.com/domain/manage).
+2. On the **Domain Templates** page, select the **[Phone and Email Verification](https://console.intl.cloud.tencent.com/domain/template/verify)** tab and click **Create Mobile Number**.
 3. In the **Create Mobile Number** pop-up window, enter the mobile number that you want to add and the received verification code as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/c6720e4d60a19f8e843499ac3662dda7.png)
 4. Click **Confirm**.
 
 ### Creating email address
 1. Log in to the [Domains console](link).
-2. On the **Domain Templates** page, select the **[Phone and Email Verification](link)** tab and click **Create Email Address**.
+2. On the **Domain Templates** page, select the **[Phone and Email Verification](https://console.intl.cloud.tencent.com/domain/template/verify)** tab and click **Create Email Address**.
 3. In the **Create Email Address** pop-up window, enter the email address that you want to add and the received verification code as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/ec1d3215fdbcc8c0fb5cbe548c53dd5f.png)
 4. Click **Confirm**.
 
 ## Subsequent Operations
-After completing the previous steps, you can go to the [Domains console](link) and use the verified mobile number/email address to create your domain identity information template. For more information, see [Information Template Management](link).
+After completing the previous steps, you can go to the [Domains console](https://console.intl.cloud.tencent.com/domain/manage) and use the verified mobile number/email address to create your domain identity information template. For more information, see [Information Template Management](https://intl.cloud.tencent.com/document/product/242/45182).
 
 ## FAQs
 ### Why should I verify the mobile number/email address?
@@ -32,10 +32,10 @@ You need to modify the relevant domain information and information template by c
 
 
 ### How do I verify the information?
-Go to the [Phone and Email Verification](link) page, create a mobile number/email address, and verify them. After verification, you can select and use them in the domain information, identity verification, and information template.
+Go to the [Phone and Email Verification](https://console.intl.cloud.tencent.com/domain/template/verify) page, create a mobile number/email address, and verify them. After verification, you can select and use them in the domain information, identity verification, and information template.
 
 ### Can I skip verifying the mobile number/email address?
-No. Unverified mobile numbers/email addresses cannot be used in domain information, identity verification, and information template. To use them, you must create and verify them on the [Phone and Email Verification](link) page first. In one single information template, both the mobile number and email address must be verified.
+No. Unverified mobile numbers/email addresses cannot be used in domain information, identity verification, and information template. To use them, you must create and verify them on the [Phone and Email Verification](https://console.intl.cloud.tencent.com/domain/template/verify) page first. In one single information template, both the mobile number and email address must be verified.
 
 ### What is the impact on domains that already passed identity verification?
 Domains that already passed identity verification can be used normally with no impact, but if you want to modify the domain information, you must select a verified mobile number/email address as the contact information.

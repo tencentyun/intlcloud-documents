@@ -4,5 +4,5 @@ According to ICANN’s [Transfer Policy](https://www.icann.org/resources/pages/t
 
 | Operation | Document | 
 |---------|---------|
-| Domain information modification | [Associating Domain with Template](link), [Domain Information Modification](link), [Batch Domain Information Modification](link) | 
-| Domain push | [Domain Push](link) | 
+| Domain information modification |  [Domain Information Modification](https://intl.cloud.tencent.com/document/product/242/45182) | 
+
