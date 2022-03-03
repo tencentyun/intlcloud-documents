@@ -12,7 +12,7 @@
 
 1.  进入任一项目后，在**项目协同** > **需求**页面，单击模块右上方**创建需求**，填写需求标题、需求描述等基本信息后即可完成创建。
 ![](https://qcloudimg.tencent-cloud.cn/raw/37d35d77d24623c1dcd580a25768c81b.png)
-2.  创建完成后，可以进行设置处理人、规划所属迭代、调整优先级、设置起始日期等详细操作，支持团队根据管理习惯，对需求的属性维度自定义，具体设置请参见 [自定义事项属性](https://intl.cloud.tencent.com/document/product/1133/447671)。
+2.  创建完成后，可以进行设置处理人、规划所属迭代、调整优先级、设置起始日期等详细操作，支持团队根据管理习惯，对需求的属性维度自定义，具体设置请参见 [自定义事项属性](https://intl.cloud.tencent.com/document/product/1133/44767)。
 ![](https://qcloudimg.tencent-cloud.cn/raw/15cbb620735f11cb21fd104f6674804c.png)
 
 ## 需求分解[](#decompose)
