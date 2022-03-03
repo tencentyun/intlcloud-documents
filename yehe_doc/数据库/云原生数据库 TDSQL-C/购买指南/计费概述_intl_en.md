@@ -18,16 +18,73 @@ TDSQL-C adopts a computing-storage separation architecture. It is sold by cluste
 
 ### [Product specifications](id:cpgg)
 
-| Computing Node Specifications | Maximum Storage Space (TB) |
-| ------- | ---------------- |
-| 1-core 1 GB   | 1              |
-| 1-core 2 GB   | 1             |
-| 2-core 4 GB   | 5            |
-| 4-core 8 GB   | 10             |
-| 8-core 32 GB  | 10             |
-| 16-core 64 GB | 20            |
-| 16-core 128 GB | 20            |
-| 32-core 256 GB | 50            |
+<table>
+<thead><tr>
+<th rowspan=2 >Compute Node Specification<br>(CPU and Memory)</th>
+<th colspan = "2" style="text-align:center" width="50%">Supported Max Storage Space (GB)</th>
+<th rowspan=2 >Max IOPS</th>
+<th rowspan=2 >I/O Bandwidth</th>
+<tr>
+<th>MySQL 5.7 (Kernel Minor Version < 2.0.15)<br>MySQL 8.0 (Kernel Minor Version < 3.1.2)</th><th>MySQL 5.7 (Kernel Minor Version ≥ 2.0.15)<br>MySQL 8.0 (Kernel Minor Version ≥ 3.1.2)</th>
+</thead><tbody>
+<td>1 core, 1 GB</td>
+<td>1000</td><td>3000</td><td>8000</td><td>1 Gbps</td></tr>
+<tr>
+<td>1 core, 2 GB</td>
+<td>1000</td><td>3000</td><td>8000</td><td>1 Gbps</td></tr>
+<tr>
+<td>2 cores, 4 GB</td>
+<td>5000</td><td>10000</td><td>48000</td><td>6 Gbps</td></tr>
+<tr>
+<td>2 cores, 8 GB</td>
+<td>5000</td><td>10000</td><td>48000</td><td>6 Gbps</td></tr>
+<tr>
+<td>2 cores, 16 GB</td>
+<td>5000</td><td>10000</td><td>48000</td><td>6 Gbps</td></tr>
+<tr>
+<td>4 cores, 8 GB</td>
+<td>10000</td><td>30000</td><td>96000</td><td>12 Gbps</td></tr>
+<tr>
+<td>4 cores, 16 GB</td>
+<td>10000</td><td>30000</td><td>96000</td><td>12 Gbps</td></tr>
+<tr>
+<td>4 cores, 32 GB</td>
+<td>10000</td><td>30000</td><td>96000</td><td>12 Gbps</td></tr>
+<tr>
+<td>8 cores, 16 GB</td>
+<td>10000</td><td>50000</td><td>216000</td><td>27 Gbps</td></tr>
+<tr>
+<td>8 cores, 32 GB</td>
+<td>10000</td><td>50000</td><td>216000</td><td>27 Gbps</td></tr>
+<tr>
+<td>8 cores, 64 GB</td>
+<td>10000</td><td>50000</td><td>216000</td><td>27 Gbps</td></tr>
+<tr>
+<td>16 cores, 64 GB</td>
+<td>20000</td><td>100000</td><td>384000</td><td>48 Gbps</td></tr>
+<tr>
+<td>16 cores, 96 GB</td>
+<td>20000</td><td>100000</td><td>384000</td><td>48 Gbps</td></tr>
+<tr>
+<td>16 cores, 128 GB</td>
+<td>20000</td><td>100000</td><td>384000</td><td>48 Gbps</td></tr>
+<tr>
+<td>32 cores, 128 GB</td>
+<td>50000</td><td>200000</td><td>576000</td><td>72 Gbps</td></tr>
+<tr>
+<td>32 cores, 256 GB</td>
+<td>50000</td><td>200000</td><td>576000</td><td>72 Gbps</td></tr>
+<tr>
+<td>64 cores, 256 GB</td>
+<td>50000</td><td>400000</td><td>720000</td><td>90 Gbps</td></tr>
+<tr>
+<td>64 cores, 512 GB</td>
+<td>50000</td><td>400000</td><td>720000</td><td>90 Gbps</td></tr>
+<tr>
+<td>88 cores, 710 GB</td>
+<td>50000</td><td>400000</td><td>780000</td><td>98 Gbps</td></tr>
+<tr>
+</tbody></table>	
 
 >?If you need other computing node specifications or larger storage space, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
