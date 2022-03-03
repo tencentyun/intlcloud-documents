@@ -55,7 +55,7 @@ Submit a domain transfer out application to the original registrar to get the do
 After auto-renewal is enabled, you can disable it in the [domain name list](link).
 </dx-alert>
 2. Domain transfer in requires to you renew the domain for one year. After the transfer order is generated, click **Pay** to make the payment as prompted as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/dc0ee2c791036235a7edc37509195273.png)
+
 3. After successful payment, you can return to the console, select **My Domains** > **Pending Transfer In** to view the status of your domain to be transferred in as shown below:
 >!
 > - Domain transfer in generally takes **5–7** business days, subject to the handling time of the registry. Please wait patiently.
