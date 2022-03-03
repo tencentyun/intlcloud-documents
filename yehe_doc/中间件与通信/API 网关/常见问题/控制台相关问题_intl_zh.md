@@ -1,7 +1,7 @@
 ### 根据后端 path 如何确定后端 URL？
-如果客户进来的请求是 `/release/apia/20171012/index.html`，命中 path 为 `/apia/` 的 API：
-- 如果后端 path 为空串，那么转给后端的 URL 就是 `/apia/20171012/index.html`；
-- 如果后端 path 的内容不为空为 `/endpoint/`，那么就切掉 `/apia/` 部分，剩下的黏在后端的 path 后面成为 `/endpoint/20171012/index.html`。
+如果客户进来的请求是 `/product/apigw/document`，命中 前端 path 为 `/product/` 的 API：
+- 如果后端 path 为空串，那么转给后端的 URL 就是 `/apigw/document`；
+- 如果后端 path 的内容不为空为 `/tencent/`，那么就切掉 `/product/` 部分，剩下的黏在后端的 path 后面成为 `/tencent/apigw/document`。
 
 ### API 命中优先级如何确定？ 
 - 如果 API path 以 `=` 开始，代表精确匹配，优先级最高。
@@ -11,8 +11,8 @@
 
 ### API 网关支持 CORS 时如何配置？
 在创建 API 时，若勾选了支持 CORS，则 API 网关支持跨域请求，默认配置如下：
-
-```plaintext
+<dx-codeblock>
+:::  plaintext
 #define CORS_DEFAULT_AC_ALLOW_ORIGIN  ("*")
 
 #define CORS_DEFAULT_AC_ALLOW_METHODS  ("GET,POST,PUT,DELETE,HEAD,OPTIONS,PATCH")
@@ -24,7 +24,8 @@
 #define CORS_DEFAULT_AC_EXPOSE_HEADERS  (CORS_DEFAULT_AC_ALLOW_HEADERS)
 
 #define CORS_DEFAULT_AC_MAX_AGE  ("86400")
-```
+:::
+</dx-codeblock>
 
 ### API 请求失败时如何处理？ 
 用户在创建 API 服务后，经常发现调用失败，返回类似提示：
@@ -35,3 +36,13 @@
 
 另外，当服务发布在不同环境中，默认调用地址中需要带环境名称，如：
 `service-asoj98o0-1251762227.ap-guangzhou.apigateway.myqcloud.com/release/用户路径`
+
+
+### 对于使用 path 参数的 API，前后端参数如何映射？
+- 如果前端配置包含固定串和Path参数，如前端路径为 `/{PathA}/{PathB}/detail`，如果客户进来的请求是 `/middleware/apigw/detail`，那么传给后端的PathA参数值为middleware，PathB参数值为apigw；
+- 如果前端配置包含固定串和Path参数，如前端路径为 `/{PathA}/product/{PathB}`，如果客户进来的请求是 `/middleware/product/apigw/detail`，那么传给后端的PathA参数值为middleware，PathB参数值为apigw/detail；
+- 如果前端配置仅使用Path参数，如前端路径为 `/{PathA}/{PathB}`，如果客户进来的请求是 `/middleware/apigw/detail`，那么传给后端的PathA参数值为middleware/apigw，PathB参数值为detail。
+
+> ?对于微服务 API，不建议同时将 X-NameSpace-Code和X-MicroService-Name 定义为 Path 参数。如需同时定义为 Path 参数，请使用固定串分割，如/{X-NameSpace-Code}/{X-MicroService-Name}/service。
+
+
