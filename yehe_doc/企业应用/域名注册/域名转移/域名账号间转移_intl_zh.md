@@ -16,8 +16,8 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/b34df866d595d8b6cdea2966dd7c12d4.png)
 3. 进入 “域名信息” 页面，选择**域名转移**页签，在 “账号间转移” 处单击**转移**。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/7818c6d4c83a31d0c4cd0553a15a334e.png)
-4. 在弹出的 “身份验证” 窗口中，获取并填写短信验证码，单击**确定**。如下图所示：
-![](https://main.qcloudimg.com/raw/e5d712ca5d1d9807d43f0e3a00e8c8c9.png)
+4. 在弹出的 “身份验证” 窗口中，获取并填写短信验证码，单击**确定**。
+
 5. 在 “账号间转移” 页面，确认相关信息，并输入待转移的账号 ID，单击**确认 > 下一步**。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/05231418aa924327a9b2a72f8d54f01a.png)
  - **转移域名**：请确认您需要转移的域名是否正确。
