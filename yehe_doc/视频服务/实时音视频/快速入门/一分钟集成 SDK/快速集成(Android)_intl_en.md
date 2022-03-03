@@ -9,7 +9,7 @@ This document describes how to quickly integrate the Tencent Cloud TRTC SDK for 
 You can use Gradle to automatically load the AAR file or manually download the AAR file and import it into your project.
 
 ### Method 1. Automatic loading (aar)
-The TRTC SDK has been released to the JCenter repository, and you can configure Gradle to download updates automatically.
+The TRTC SDK has been released to the mavenCentral repository, and you can configure Gradle to download updates automatically.
 Simply use Android Studio to open the project that needs to be integrated with the SDK ([TRTCScenesDemo](https://github.com/tencentyun/LiteAVClassic/tree/master/Android/TRTCScenesDemo) is used as an example in this document), and then modify the `app/build.gradle` file in three simple steps to complete SDK integration:
 ![](https://main.qcloudimg.com/raw/47b8e9f7ee41895a479334f16dd50a12.png)
 
@@ -39,7 +39,7 @@ defaultConfig {
 
 
 ### Method 2: manual download (AAR)
-If you have difficulty accessing JCenter, you can manually download the SDK and integrate it into your project.
+If you have difficulty accessing mavenCentral, you can manually download the SDK and integrate it into your project.
 
 1. [Download the SDK](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip).
 2. Copy the downloaded AAR file to the **app/libs** directory of your project.
@@ -104,7 +104,6 @@ Configure application permissions in `AndroidManifest.xml`. The TRTC SDK require
 <uses-permission android:name="android.permission.BLUETOOTH" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 
