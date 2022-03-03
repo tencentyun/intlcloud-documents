@@ -9,7 +9,7 @@
 Gradle 자동 로딩 방식을 사용하거나 수동으로 aar을 다운로드한 후, 귀하의 현재 프로그래밍 프로젝트에 가져옵니다.
 
 ### 방법1: 자동 로딩(aar)
-TRTC SDK를 jcenter에 이미 배포했다면 gradle 자동 다운로드 설정을 통해 업데이트할 수 있습니다.
+TRTC SDK를 mavenCentral에 이미 배포했다면 gradle 자동 다운로드 설정을 통해 업데이트할 수 있습니다.
 Android Studio를 사용해 통합이 필요한 SDK 프로그램(본문은 [TRTCScenesDemo](https://github.com/tencentyun/LiteAVClassic/tree/master/Android/TRTCScenesDemo)를 예시로 함)을 연 후, 간단한 세 단계를 걸쳐 app/build.gradle 파일을 수정하면 SDK 통합이 완료됩니다.
 ![](https://main.qcloudimg.com/raw/47b8e9f7ee41895a479334f16dd50a12.png)
 
@@ -39,7 +39,7 @@ defaultConfig {
 
 
 ### 방법2: 수동 다운로드(aar)
-네트워크에 jcenter 연결 문제가 있을 경우 SDK를 수동으로 다운로드하여 프로그램에 통합할 수 있습니다.
+네트워크에 mavenCentral 연결 문제가 있을 경우 SDK를 수동으로 다운로드하여 프로그램에 통합할 수 있습니다.
 
 1. 최신 버전 [TRTC SDK](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip)를 다운로드합니다.
 2. 다운로드한 aar 파일을 프로그램 **app/libs** 디렉터리에 복사합니다.
@@ -104,7 +104,6 @@ AndroidManifest.xml에서 앱 권한을 설정합니다. TRTC SDK는 다음 권�
 <uses-permission android:name="android.permission.BLUETOOTH" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 
