@@ -118,7 +118,8 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 19.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
 20.[Domains](https://intl.cloud.tencent.com/document/product/242/45147).
 21.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280).
-22.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
+22.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45408).
+23.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
 
 ## 法域特定の要件
 
