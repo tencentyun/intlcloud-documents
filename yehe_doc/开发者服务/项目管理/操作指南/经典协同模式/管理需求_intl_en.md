@@ -12,7 +12,7 @@ A requirement refers to a software feature that users need in order to solve a c
 
 1. Open any project and select **Project Collaboration** > **Requirements**. Click **Create Requirement** in the upper-right corner of the module and enter a requirement title, requirement description, and other basic information to create the requirement.
 ![](https://qcloudimg.tencent-cloud.cn/raw/37d35d77d24623c1dcd580a25768c81b.png)
-2. After you have created the requirement, you can set the assignee, plan the parent iteration, adjust the priority, and set the start date. Teams can customize the fields and dimensions of requirements to suit their management needs. See [Custom Issue Fields](https://intl.cloud.tencent.com/document/product/1133/447671) for configuration details.
+2. After you have created the requirement, you can set the assignee, plan the parent iteration, adjust the priority, and set the start date. Teams can customize the fields and dimensions of requirements to suit their management needs. See [Custom Issue Fields](https://intl.cloud.tencent.com/document/product/1133/44767) for configuration details.
 ![](https://qcloudimg.tencent-cloud.cn/raw/15cbb620735f11cb21fd104f6674804c.png)
 
 ## Break Down Requirement[](#decompose)
