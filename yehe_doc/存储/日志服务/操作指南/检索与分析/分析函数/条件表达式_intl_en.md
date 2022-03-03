@@ -49,7 +49,7 @@ GROUP BY
   http_user_agent
 ```
   - Query and analysis result
-![image-20211108042836003](https://qcloudimg.tencent-cloud.cn/raw/fc5871dabac0087c4bcd90f89872f2b1.png)
+
 - Example 2. Get the statistics on the distribution of different request times.
   - Query and analysis statement
 ```
@@ -67,7 +67,7 @@ GROUP BY
   request_time
 ```
   - Query and analysis result
-![image-20211108043145849](https://qcloudimg.tencent-cloud.cn/raw/e374910d8b6f772d2bb90dd062fa7083.png)
+
 
 
 <span id="IF"></span>
@@ -104,7 +104,7 @@ SELECT
   sum(IF(status = 200, 1, 0)) * 1.0 / count(*) AS status_200_percentag
 ```
 - Query and analysis result
-![image-20211108043554359](https://qcloudimg.tencent-cloud.cn/raw/5e6a960b29adf2b8e248618534fc8556.png)
+
 
 
 <span id="NULLIF"></span>
@@ -133,7 +133,7 @@ Determine whether the values of the `server_addr` and `http_host` fields are the
 * | SELECT NULLIF(server_addr,http_host)
 ```
 - Query and analysis result
-![image-20211108044354167](https://qcloudimg.tencent-cloud.cn/raw/385643b55d531b8828eb699c5f69834e.png)
+
 
 
 <span id="TRY"></span>
@@ -168,7 +168,7 @@ GROUP BY
   file
 ```
 - Query and analysis result
-![image-20211108044634878](https://qcloudimg.tencent-cloud.cn/raw/be64b0943d47ba13ed251fc8bf453373.png)
+
 
 
 <span id="COALESCE"></span>
@@ -196,7 +196,7 @@ COALESCE(expression1, expression2...)
 * | select COALESCE(null, 'test')
 ```
 - Query and analysis result
-![](https://qcloudimg.tencent-cloud.cn/raw/9a55a530e9970f5b6d3470da22fa0dea.png)
+
 
 
 
