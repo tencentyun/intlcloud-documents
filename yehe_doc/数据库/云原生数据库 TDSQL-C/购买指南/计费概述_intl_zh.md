@@ -18,16 +18,73 @@
 
 ### [产品规格](id:cpgg)
 
-| 计算节点规格    | 最大存储空间（TB)|
-| ------- | ---------------- |
-| 1核1GB   | 1              |
-| 1核2GB   | 1             |
-| 2核4GB   | 5            |
-| 4核8GB   | 10             |
-| 8核32GB  | 10             |
-| 16核64GB | 20            |
-| 16核128GB | 20            |
-| 32核256GB | 50            |
+<table>
+<thead><tr>
+<th rowspan=2 >计算节点规格<br>（CPU和内存）</th>
+<th colspan = "2" style="text-align:center" width="50%">支持最大存储空间（GB)</th>
+<th rowspan=2 >最大IOPS</th>
+<th rowspan=2 >I/O带宽</th>
+<tr>
+<th>MySQL 5.7内核小版本<2.0.15<br>MySQL 8.0内核小版本<3.1.2</th><th>MySQL 5.7内核小版本≥2.0.15<br>MySQL 8.0内核小版本≥3.1.2</th>
+</thead><tbody>
+<td>1核1GB</td>
+<td>1000</td><td>3000</td><td>8000</td><td>1 Gbps</td></tr>
+<tr>
+<td>1核2GB</td>
+<td>1000</td><td>3000</td><td>8000</td><td>1 Gbps</td></tr>
+<tr>
+<td>2核4GB</td>
+<td>5000</td><td>10000</td><td>48000</td><td>6 Gbps</td></tr>
+<tr>
+<td>2核8GB</td>
+<td>5000</td><td>10000</td><td>48000</td><td>6 Gbps</td></tr>
+<tr>
+<td>2核16GB</td>
+<td>5000</td><td>10000</td><td>48000</td><td>6 Gbps</td></tr>
+<tr>
+<td>4核8GB</td>
+<td>10000</td><td>30000</td><td>96000</td><td>12 Gbps</td></tr>
+<tr>
+<td>4核16GB</td>
+<td>10000</td><td>30000</td><td>96000</td><td>12 Gbps</td></tr>
+<tr>
+<td>4核32GB</td>
+<td>10000</td><td>30000</td><td>96000</td><td>12 Gbps</td></tr>
+<tr>
+<td>8核16GB</td>
+<td>10000</td><td>50000</td><td>216000</td><td>27 Gbps</td></tr>
+<tr>
+<td>8核32GB</td>
+<td>10000</td><td>50000</td><td>216000</td><td>27 Gbps</td></tr>
+<tr>
+<td>8核64GB</td>
+<td>10000</td><td>50000</td><td>216000</td><td>27 Gbps</td></tr>
+<tr>
+<td>16核64GB</td>
+<td>20000</td><td>100000</td><td>384000</td><td>48 Gbps</td></tr>
+<tr>
+<td>16核96GB</td>
+<td>20000</td><td>100000</td><td>384000</td><td>48 Gbps</td></tr>
+<tr>
+<td>16核128GB</td>
+<td>20000</td><td>100000</td><td>384000</td><td>48 Gbps</td></tr>
+<tr>
+<td>32核128GB</td>
+<td>50000</td><td>200000</td><td>576000</td><td>72 Gbps</td></tr>
+<tr>
+<td>32核256GB</td>
+<td>50000</td><td>200000</td><td>576000</td><td>72 Gbps</td></tr>
+<tr>
+<td>64核256GB</td>
+<td>50000</td><td>400000</td><td>720000</td><td>90 Gbps</td></tr>
+<tr>
+<td>64核512GB</td>
+<td>50000</td><td>400000</td><td>720000</td><td>90 Gbps</td></tr>
+<tr>
+<td>88核710GB</td>
+<td>50000</td><td>400000</td><td>780000</td><td>98 Gbps</td></tr>
+<tr>
+</tbody></table>	
 
 >?如需其他计算节点规格或更大的存储空间，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
 
