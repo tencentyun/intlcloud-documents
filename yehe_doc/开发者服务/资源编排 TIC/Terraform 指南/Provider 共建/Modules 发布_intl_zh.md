@@ -18,7 +18,7 @@ GitHub 新建代码仓库，命名格式为：`terraform-<PROVIDER>-<NAME>`， �
 
 ```
 
-建议添加 example 目录，存放该模块引入和使用示例，参考 https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-vpc/tree/master/examples
+建议添加 example 目录，存放该模块引入和使用示例，[参考](https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-vpc/tree/master/examples)。
 
 ## Module 发布
 
