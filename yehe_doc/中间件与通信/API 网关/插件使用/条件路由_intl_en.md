@@ -20,13 +20,11 @@ The conditional routing plugin can forward different client requests to differen
 | Backend type | Yes     | Public network URL/IP, VPC resources, SCF, Mock, and TSF are supported.  |
 | Backend configuration | Yes     | Backend to which the client request will be forwarded if the request meets the condition. Enter the backend configuration in YAML format. |
 
-![](https://main.qcloudimg.com/raw/e961c1531b24f9da006e3b9981ffb507.png)
-
 ### Step 2. Bind an API and make the plugin effective
 
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the API to which the plugin needs to be bound.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/a91c4bdedc7bef63610b0124747fda8e.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ## Conditional Expression Writing Guide
