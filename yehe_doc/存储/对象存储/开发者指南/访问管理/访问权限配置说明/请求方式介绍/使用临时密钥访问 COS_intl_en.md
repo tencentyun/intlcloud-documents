@@ -20,14 +20,14 @@ You need a CAM user account (Tencent Cloud root account or sub-account) to apply
 Assume that A represents the original permissions of the CAM user, B represents the permissions that are set for the temporary key by using the `policy` parameter, and the intersection of A and B is the final valid permissions of the temporary key.
 
 As shown in the figure below, the intersection of the CAM user permissions and the temporary permissions specified by `policy` is valid permissions:
-![](https://qcloudimg.tencent-cloud.cn/raw/572574445d9af1b01e3bd33cb82d830a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d7897c607e0fc93729cd924908c1b0be.png)
 
 As shown in the figure below, the temporary permissions specified by `policy` are within the CAM user permissions, and therefore, the temporary permissions specified by `policy` are valid permissions.
-![](https://qcloudimg.tencent-cloud.cn/raw/ebc98a1e309ec5d9ce4420284ca52c6d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0611470aff77eef075b58109c3014f4a.png)
 
 ## Accessing COS Using a Temporary Key
 
-![](https://qcloudimg.tencent-cloud.cn/raw/36aca86fa63cb782214eb58789a9c82c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3e735b970a04e2afe3efa74cfb30fcb.png)
 A temporary key consists of a SecretId, a SecretKey, and a token. Multiple temporary keys can be generated for each root account or sub-account. Compared with permanent keys, temporary keys have shorter validity periods (30 minutes to 36 hours). Therefore, temporary keys are suitable for temporary authorization scenarios such as frontend direct transmission. Compared with permanent keys, temporary keys are more secure to be distributed to untrusted users. For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) and [Temporary Key Security Guide for Frontend Direct Upload to COS](https://intl.cloud.tencent.com/document/product/436/35265).
 
 - Initiating API requests
@@ -55,7 +55,7 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 ## Use Cases of Temporary Keys
 
 Temporary keys are used to authorize third parties to temporarily access COS. For example, when a user develops a client app and stores data in a COS bucket, it is unsafe to store the permanent key directly on the app client, but the client needs to be granted the upload and download permissions. For this scenario, you can use a temporary key.
-![](https://qcloudimg.tencent-cloud.cn/raw/e15d7339e894311f4e3003735cde9eff.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0b37dd8a160a065efe68c0fbeea09c3b.png)
 
 As shown in the figure above, the user has developed the app client, and the permanent key is stored in the user server. The following steps are required to use a temporary key for frontend direct transmission:
 1. The app client requests a temporary key from the user server for data upload and download.
