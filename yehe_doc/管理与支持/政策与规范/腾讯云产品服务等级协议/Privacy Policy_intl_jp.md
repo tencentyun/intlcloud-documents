@@ -571,3 +571,4 @@ Tencent Cloud プライバシーポリシーの「*お客様の個人データ�
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
 18.[Domains](https://intl.cloud.tencent.com/document/product/242/45146).
 19.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
+20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
