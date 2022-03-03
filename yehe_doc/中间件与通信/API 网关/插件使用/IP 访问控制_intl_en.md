@@ -11,13 +11,13 @@ IP access control is a security protection capability provided by API Gateway. I
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway)
 2. On the left sidebar, click **Plugin** to enter the plugin list page.
 3. Click **Create** in the top-left corner to create an IP access control plugin.
-	  ![](https://main.qcloudimg.com/raw/f235b18119f3c55a41f95d4bbebe42f5.png)
+	  ![](https://qcloudimg.tencent-cloud.cn/raw/fd057884f8e573035360566d4e79132b.png)
 
 ### Step 2. Bind an API and make the plugin effective
 
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the API to which the plugin needs to be bound.
-	 ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/29ae4fe59d4d76ad47da75cc819ab600.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 
