@@ -9,8 +9,8 @@
 ### 步骤1：创建插件
 
 1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway)。
-2. 在左侧导航栏，单击【插件】，进入插件列表页。
-3. 单击页面左上角的【新建】，选择插件类型为【跨域访问控制】，新建一个跨域访问控制插件。
+2. 在左侧导航栏，单击**插件**，进入插件列表页。
+3. 单击页面左上角的**新建**，选择插件类型为**跨域访问控制**，新建一个跨域访问控制插件。
 
 | 参数           | 是否必填 | 说明                                                         |
 | -------------- | -------- | ------------------------------------------------------------ |
@@ -25,16 +25,41 @@
 
 ### 步骤2：绑定 API 并生效
 
-1. 在列表中选中刚刚创建好的插件，点击操作列的【绑定API】。
+1. 在列表中选中刚刚创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/5ecc46c0cacb83b911097f4903701d89.png)
-3. 单击【确定】，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
+    ![](https://main.qcloudimg.com/raw/5ecc46c0cacb83b911097f4903701d89.png)
+3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
+
+## PluginData
+
+```json
+{
+    "allow_origin":[ // 允许的ORIGIN, 支持*，表示全部域名都允许
+        "*"
+    ],
+    "allow_methods":[ // 允许的方法, 支持GET、PUT、POST、DELETE、HEAD
+        "PUT",
+        "GET",
+        "POST",
+        "DELETE",
+        "HEAD"
+    ],
+    "allow_headers":[ // 允许的请求头部, 支持*，表示全部 Header 都允许
+        "X-Api-ID"
+    ],
+    "expose_headers":[ // 允许暴露给XMLHttpRequest对象的头, 支持*，表示全部 Header 都允许
+        "X-Api-ID"
+    ],
+    "allow_credentials":true, // 是否允许Cookie
+    "max_age":600 // 设置 OPTIONS 请求得到结果的有效期（秒）。数值必须为正整数，例如600秒
+}
+```
 
 ## 注意事项
 
 目前 API 网关中有两个地方可以设置跨域访问控制规则：
 
-- 创建 API - 前端配置 - 支持 CORS：在创建 API 时打开“支持CORS”配置项，开启后 API 网关将默认在响应头中添加`Access-Control-Allow-Origin : *`。
+- 创建 API - 前端配置 - 支持 CORS：在创建 API 时打开“支持CORS”配置项，开启后 API 网关将默认在响应头中添加 `Access-Control-Allow-Origin : *`。
 - 本文所描述的“跨域访问控制”插件：参考 [操作步骤](#steps)。
 
 “跨域访问控制“插件的优先级高于”支持CORS“配置项，当跨域访问控制插件绑定到某一API时，该 API 的“支持CORS”配置项将不生效。
