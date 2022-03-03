@@ -39,7 +39,7 @@ Your identification has been saved in /Users/you/.ssh/id_rsa.
 4.  Set the validity of the public key. You can select a specific expiration date or set it to Never expire.
 ![](https://qcloudimg.tencent-cloud.cn/raw/396f688414ace2681660ec9959d5605f.png)
 5.  Click **Add** and enter the password to add the public key.
-6.  Then, run a test in the command line. You will need to trust the host when establishing a connection for the first time. Run the `ssh -T git@e.coding.net` command. You can also verify whether the connection with a CODING remote repository is correct using [Key Fingerprint Authentication](/docs/repo/ssh/fingerprint.html).
+6.  Then, run a test in the command line. You will need to trust the host when establishing a connection for the first time. Run the `ssh -T git@e.coding.net` command. You can also verify whether the connection with a CODING remote repository is correct using key Fingerprint Authentication.
 
 ## Add the Public Deploy Key[](id:project-ssh)
 
