@@ -41,14 +41,13 @@ You can configure the cache plugin to enable API Gateway to store backend respon
 <td>It is the cache validity period, which is a positive integer between 0 and 3600.</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/a56706c16714848626b78618a7b52bf4.png">
 
 
 ### Step 2. Bind an API and make the plugin effective
 
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the API to which the plugin needs to be bound.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/a91c4bdedc7bef63610b0124747fda8e.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ## PluginData
