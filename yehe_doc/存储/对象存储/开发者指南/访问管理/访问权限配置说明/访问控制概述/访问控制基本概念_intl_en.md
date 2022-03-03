@@ -2,13 +2,13 @@
 
 After creating a Tencent Cloud sub-account, you can configure an access policy to authorize the sub-account. If you want to open up resources (buckets, objects, and directories) to non-Tencent Cloud users, you only need to set the permissions of the resources to Public Read.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/90b71308a1e1e6f1a842d0c7bd8c44d6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d22047a7656e9524482def3ce67b61ed.png)
 
 ## Elements for Access Permissions
 
 You can grant access permissions by specifying a person to perform a specified action on specified resources under a specified condition. Generally, the following four elements are used to describe an access permission action: **identity, resource, action, and condition (optional)**.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/76920126347974448795fd58f7b8d26d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/164bdaaee60662fb9848d305f355cd49.png)
 
 ## Access Permission Elements
 
@@ -59,15 +59,15 @@ COS provides multiple permission setting methods to implement access control, in
 
 These methods can be classified into resource-based authorization and user-based authorization according to the starting point of policy setting, and classified into policy-based authorization and ACL-based authorization according to the authorization mode.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/332efdd73dc362ef889257cdfbd4d686.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2adcbc5554e21fafae569d3c7abb209c.png)
 
 **Classification method 1: resource-based authorization vs user-based authorization**
-![](https://qcloudimg.tencent-cloud.cn/raw/fdc1f3434c0e75425f2a650a4ece79ec.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f92521c28d8a4841f71f267ca9964dcc.png)
 - Resource-based authorization: resource policies associate permissions with specific resources, including bucket policies, bucket ACLs, and object ACLs. Resource policies can be configured by using the COS console or APIs.
 - User-based authorization: user policies (CAM policies) associate permissions with users. When configuring a user-based policy, you do not need to specify users. Instead, you only need to specify resources, operations, conditions, and so on. User policies can be configured in the [CAM console](https://console.cloud.tencent.com/cam).
 
 **Classification method 2: policy-based authorization vs ACL-based authorization**
-![](https://qcloudimg.tencent-cloud.cn/raw/5949e32de545aad4e878400e42dfef4c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e861ab92e54560071e26ac27a180c54b.png)
 - Policy-based authorization: both user policies (CAM policies) and bucket policies implement authorization based on complete policy syntax. They authorize refined actions specific to each API and allow specifying the `allow` or `deny` effect.
 - ACL-based authorization: bucket ACLs and object ACLs are implemented based on ACLs. An ACL is a list of specified grantees and permissions granted, and is associated with resources and corresponds to organized and abstracted permissions. ACLs allow specifying only the `allow` effect.
 
