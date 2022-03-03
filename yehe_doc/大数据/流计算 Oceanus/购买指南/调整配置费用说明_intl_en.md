@@ -1,5 +1,5 @@
 ## Cluster Scale-out
-Cluster scale-out means to increase the number of CUs. You can do so in the [Oceanus console](https://console.cloud.tencent.com/oceanus). During cluster scale-out, you need to pay for the configuration adjustment according to the remaining validity period of the cluster. The calculation rule for the scale-out fees of monthly subscribed clusters is as follows:
+Cluster scale-out means to increase the number of CUs. You can do so in the [Stream Compute Service console](https://console.cloud.tencent.com/oceanus). During cluster scale-out, you need to pay for the configuration adjustment according to the remaining validity period of the cluster. The calculation rule for the scale-out fees of monthly subscribed clusters is as follows:
 - Scale-out fees = number of new CUs * monthly unit price of CU * number of scale-out days / (365 / 12)
 - Scale-out days = cluster expiration time - current time
 
