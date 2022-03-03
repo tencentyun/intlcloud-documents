@@ -21,11 +21,11 @@ CLS 支持按量计费（后付费）方式，即根据用户的实际使用资�
 ### 计费项概览
 
 
-![](https://main.qcloudimg.com/raw/1f485ea2c29c05469952e673630fae35.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3e19ac671121afbf7b5054fb06668d5c.png)
 
 ### 计费项图示说明
 
-![](https://qcloudimg.tencent-cloud.cn/raw/ddc794095b1a38f57fb076342216facf.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1dc8c2a90dc3fb1b828f63a80f8f421b.png)
 
 
 ### 计费项详细说明
