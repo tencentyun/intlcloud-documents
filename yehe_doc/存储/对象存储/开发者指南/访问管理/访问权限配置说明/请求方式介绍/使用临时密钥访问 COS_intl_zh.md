@@ -20,14 +20,14 @@
 假设，“A”代表 CAM 用户的原有权限，“B”代表通过 policy 参数为临时密钥设置的权限，“A”和“B”的交集代表了临时密钥最终的有效权限。
 
 如下图，CAM 用户权限和 policy 临时权限的交集为有效权限：
-![](https://qcloudimg.tencent-cloud.cn/raw/572574445d9af1b01e3bd33cb82d830a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d7897c607e0fc93729cd924908c1b0be.png)
 
 如下图，policy 在 CAM 用户权限以内，policy 为有效权限：
-![](https://qcloudimg.tencent-cloud.cn/raw/ebc98a1e309ec5d9ce4420284ca52c6d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0611470aff77eef075b58109c3014f4a.png)
 
 ## 使用临时密钥访问 COS
 
-![](https://qcloudimg.tencent-cloud.cn/raw/36aca86fa63cb782214eb58789a9c82c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3e735b970a04e2afe3efa74cfb30fcb.png)
 临时密钥包括 SecretId、SecretKey 和 Token，每个主账号和子账号都可以生成多个临时密钥。相比永久密钥，临时密钥的有效期只有30分钟 - 36小时。临时密钥适用于前端直传等临时授权场景，相比永久密钥，分发临时密钥给不受信任的用户，安全性更高，详情参考 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048) 及 [用于前端直传的临时密钥使用指引](https://intl.cloud.tencent.com/document/product/436/35265)。
 
 - 发起 API 请求
@@ -55,7 +55,7 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 ## 临时密钥的使用场景
 
 临时密钥主要用于授权第三方临时访问 COS。例如，用户开发了客户端 App，将数据存储在 COS 存储桶上，此时将永久密钥直接存放在 App 客户端上是不安全的，但又需要授予客户端上传、下载的权限，针对这种场景可使用临时密钥。
-![](https://qcloudimg.tencent-cloud.cn/raw/e15d7339e894311f4e3003735cde9eff.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0b37dd8a160a065efe68c0fbeea09c3b.png)
 
 如上图所示，用户开发了 App 客户端，用户服务器上存放有永久密钥，使用临时密钥进行前端直传需要经过以下几步：
 1.	App 客户端向用户服务器请求临时密钥，用于上传、下载数据。
