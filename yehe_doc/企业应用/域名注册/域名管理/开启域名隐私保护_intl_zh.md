@@ -12,7 +12,7 @@
 4. 单击<span ><img src="https://main.qcloudimg.com/raw/ce844f426842c9ae41963f5d3bc4f4c0.png" style="margin-bottom:-5px;"/></span>，即可开启隐私保护。如下图所示：
 >?仅 “.CN”，“.中国” 域名后缀的域名可开启隐私保护服务。
 >
-![](https://main.qcloudimg.com/raw/40947bed1bddc070c3b658277e62d67d.png)
+
 
 
 
