@@ -1,4 +1,4 @@
-## Access Policies for Data Collection
+## Authorization Policy Statements for Data Collection
 
 ### Collecting data using LogListener
 
@@ -59,33 +59,42 @@ Users can upload logs to CLS using the Kafka protocol. The example below grants 
 ### Managing collection configurations and machine groups
 
 Users can create, modify, and delete collection configurations and machine groups.
+- APIs whose names contain **Config** are used to manage collection configuration related resources.
+- APIs whose names contain **MachineGroup** are used to manage machine group related resources.
+- The three APIs whose names contain **ConfigExtra** are used to manage log upload related configuration of self-built Kubernetes clusters. If you do not use self-built Kubernetes clusters to upload logs, you can ignore these APIs.
 
 ```
 {
-	"version": "2.0",
-	"statement": [{
-		"action": [
-			"cls:DescribeLogsets",
-			"cls:DescribeTopics",
-			"cls:CreateConfig",
-			"cls:CreateConfig",
-			"cls:DeleteConfig",
-			"cls:DescribeConfigs",
-			"cls:ModifyConfig",
-			"cls:CreateMachineGroup",
-			"cls:DeleteMachineGroup",
-			"cls:DescribeMachineGroups",
-			"cls:ModifyMachineGroup"
-		],
-		"resource": "*",
-		"effect": "allow"
-	}]
+    "version": "2.0",
+    "statement": [{
+        "action": [
+            "cls:DescribeLogsets",
+            "cls:DescribeTopics",
+            "cls:CreateConfig",
+            "cls:CreateConfig",
+            "cls:DeleteConfig",
+            "cls:DescribeConfigs",
+            "cls:ModifyConfig",
+            "cls:CreateConfigExtra",
+            "cls:DeleteConfigExtra",
+            "cls:ModifyConfigExtra",
+            "cls:CreateMachineGroup",
+            "cls:DeleteMachineGroup",
+            "cls:DescribeMachineGroups",
+            "cls:DeleteConfigFromMachineGroup",
+            "cls:ApplyConfigToMachineGroup",
+            "cls:ModifyMachineGroup"
+        ],
+        "resource": "*",
+        "effect": "allow"
+    }
+	]
 }
 ```
 
-## Access Policies for Search and Analysis
+## Authorization Policy Statements for Search and Analysis
 
-### Searching for logs via the console
+### Log search via console
 
 #### Managing all log topics
 
@@ -651,7 +660,7 @@ Users can view specific dashboards and the data of specific log topics via dashb
 	    ]
 	}
 
-## Access Policies for Alarms
+## Authorization Policy Statements for Monitoring Alarms
 
 #### Managing all alarm policies
 
@@ -889,7 +898,7 @@ Users can view the data processing tasks of all log topics, which does not requi
 
 #### Viewing the CKafka shipping of all log topics
 
-Users can view the CKafka shipping of all log topics.
+Authorization for all log topics
 
 ```
 {
@@ -964,7 +973,7 @@ Users can view the CKafka shipping of all log topics.
 
 #### Managing the COS shipping of all log topics
 
-Users can manage the COS shipping of all log topics.
+Authorization for all log topics
 
 ```
 {
@@ -1114,7 +1123,7 @@ Users can manage the COS shipping of all log topics.
 
 #### Managing the SCF shipping of all log topics
 
-Users can manage the SCF shipping of all log topics.
+Authorization for all log topics
 
 ```
 {
@@ -1193,7 +1202,7 @@ Users can manage the SCF shipping of all log topics.
 
 #### Viewing the SCF shipping of all log topics
 
-Users can view the SCF shipping of all log topics.
+Authorization for all log topics
 
 ```
 {
@@ -1341,7 +1350,7 @@ Users can manage the real-time consumption of log topics with specific tags.
 }
 ```
 
-## Access Policies for Developers 
+## Authorization Policy Statements for Developers 
 
 ### CLS connection to Grafana
 

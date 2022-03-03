@@ -39,7 +39,7 @@ histogram(time_column, interval)
 
 | Parameter | Description |
 | ----------- | ------------------------------------------------------------ |
-| time_column | Time column (KEY), such as `\_\_TIMESTAMP\_\_`.</br>The value in this column must be a date and time expression of the LONG or TIMESTAMP type in milliseconds. If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`. |
+| time_column | Time column (KEY), such as `\_\_TIMESTAMP\_\_`. The value in this column must be a UNIX timestamp of the LONG type or a date and time expression of the TIMESTAMP type in milliseconds. </br>If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted time string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`, or use the `[date_parse](#date_parse)` function to convert a time string of another custom type. </br> If the time column adopts the TIMESTAMP type, the corresponding date and time expression must be in the UTC+0 time zone. If the date and time expression itself is in a different time zone, adjust it to UTC+0 by calculation. For example, if the time zone of the original time is UTC+8, use `cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour` to adjust the time zone. |
 | interval    | Time interval. The following time units are supported: SECOND, MINUTE, HOUR, DAY, MONTH, and YEAR. For example, `INTERVAL 5 MINUTE` indicates an interval of 5 minutes. |
 
 **Example**
@@ -50,7 +50,7 @@ Count the PV value every 5 minutes:
 * | select histogram(__TIMESTAMP__, INTERVAL 5 MINUTE) AS dt, count(*) as PV group by dt order by dt limit 1000
 ```
 
-
+![image-20210719003224086](https://main.qcloudimg.com/raw/13bfe6019fb000314de02acbeb7b68f7.png)
 
 
 
@@ -71,7 +71,7 @@ time_series(time_column, interval, format, padding)
 
 | Parameter | Description |
 | ----------- | ------------------------------------------------------------ |
-| time_column | Time column (KEY), such as `\_\_TIMESTAMP\_\_`</br>The value in this column must be a date and time expression of the LONG or TIMESTAMP type in milliseconds. |
+| time_column | Time column (KEY), such as `\_\_TIMESTAMP\_\_`. The value in this column must be a UNIX timestamp of the LONG type or a date and time expression of the TIMESTAMP type in milliseconds. </br>If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted time string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`, or use the `[date_parse](#date_parse)` function to convert a time string of another custom type. </br> If the time column adopts the TIMESTAMP type, the corresponding date and time expression must be in the UTC+0 time zone. If the date and time expression itself is in a different time zone, adjust it to UTC+0 by calculation. For example, if the time zone of the original time is UTC+8, use `cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour` to adjust the time zone. |
 | interval    | Time interval. Valid values are `s` (second), `m` (minute), `h` (hour), and `d` (day). For example, `5m` indicates 5 minutes. |
 | format      | Time format of the return result.                                   |
 | padding     | Value used to complete missing data. Valid values include:<ul  style="margin: 0;"><li>0: complete a missing value with `0`</li><li>null: complete a missing value with `null`</li><li>last: complete a missing value with the value of the previous point in time</li><li>next: complete a missing value with the value of the next point in time</li><li>avg: complete a missing value with the average value of the previous and next points in time</li></ul> |
@@ -84,7 +84,7 @@ Complete data with a time unit of 2 minutes:
 * | select time_series(__TIMESTAMP__, '2m', '%Y-%m-%dT%H:%i:%s+08:00', '0')  as time, count(*) as count group by time order by time limit 1000
 ```
 
-
+![](https://qcloudimg.tencent-cloud.cn/raw/99a7347df11c30457ae49f63e4df1ecf.png)
 
 ## Time Truncation Function
 
@@ -138,7 +138,7 @@ Return the interval value in seconds between '2020-03-01 00:00:00' and '2020-03-
 ```
 * | SELECT date_diff('second', TIMESTAMP '2020-03-01 00:00:00', TIMESTAMP '2020-03-02 00:00:00')
 ```
-
+![image-20210715010326425](https://main.qcloudimg.com/raw/30aa668d55d1689a15840f8a14ebae43.png)
 
 
 
@@ -167,10 +167,11 @@ Parse the unit value string '3.81 d' into a duration string:
 ```
 * | SELECT parse_duration('3.81 d')
 ```
+![image-20210715012028686](https://main.qcloudimg.com/raw/7a6b418727cc5366166f1272e43358d1.png)
 
 
-
-## **Time Formatting Function**
+<span id="date_parse"></span>
+## Time Formatting Function
 
 | Function                                  | Description                                                         | Example                                                         |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -217,5 +218,5 @@ Parse the time string '2017-05-17 09:45:00' in `format` into a date and time exp
 ```
 * | SELECT date_parse('2017-05-17 09:45:00','%Y-%m-%d %H:%i:%s')
 ```
-
+![image-20210715155837224](https://main.qcloudimg.com/raw/543fc20f5945d5ca1f33aa5b2356ac91.png)
 

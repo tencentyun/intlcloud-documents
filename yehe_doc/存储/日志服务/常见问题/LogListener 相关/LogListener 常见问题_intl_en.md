@@ -80,7 +80,7 @@ The filter rule is collection after matching, not discarding after matching. Log
 
 ### How do I use non-root permission to start LogListener?
 
-You are recommended to use the root permission to start LogListener.
+You are advised to use the root permission to start LogListener. If you need to use LogListener with non-root permission, see "Configuring Non-Root Permission to start LogListener".
 
 
 ### How do I pin the LogListener process to a CPU?

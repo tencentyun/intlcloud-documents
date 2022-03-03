@@ -20,7 +20,7 @@ A custom access policy consists of two parts:
 - Action: the action a user is allowed to perform, such as searching for logs, modifying index configuration, uploading logs, and creating alarm policies
 - Resource: the resources a user is allowed to operate on, such as a specific log topic, dashboard, data processing task
 
-For the actions and resources supported by CLS, see the CAM document on CLS. For how to configure custom access policies, see [Creating Custom Policy](https://intl.cloud.tencent.com/document/product/598/35596).
+For the authorizable resource types and related APIs supported by CLS, see [Authorizable Resource Types](https://cloud.tencent.com/document/product/614/70091). For how to configure custom access policies, see [Creating Custom Policy](https://intl.cloud.tencent.com/document/product/598/35596).
 
 Configuring custom access policies can be a demanding process. The examples we offer in [Examples of Custom Access Policies](https://intl.cloud.tencent.com/document/product/614/45004) should meet most access management needs. You can also modify the examples based on your requirements.
 1. Log in to the console with the root account (or an account with CAM access). On the [Policies](https://console.cloud.tencent.com/cam/policy) page, click **Create Custom Policy**.
