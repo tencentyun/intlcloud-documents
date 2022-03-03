@@ -33,7 +33,7 @@ Domain transfer out is to transfer your domain from DNSPod to another domain reg
 >- If you haven't received the email, click **Resend**.
 >- If the email address is incorrect, click **Cancel Transfer Out** and get a new auth-code after [modifying the owner information](link).
 >
-![](https://main.qcloudimg.com/raw/b2036cf19f50f5551880301c7d204c05.png)
+
 
 ### Entering auth-code
 
