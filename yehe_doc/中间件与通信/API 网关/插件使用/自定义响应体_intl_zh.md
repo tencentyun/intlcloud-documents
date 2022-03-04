@@ -34,15 +34,13 @@ API 网关响应给客户端响应体中包含很多字段，如果您需要修�
 | 自定义内容  | 必填     | 设置 API 网关发送给修改响应体的函数的响应内容，支持选择 Header、Body、响应状态码。未选择的响应内容部分将不被修改，直接返回给客户端。 |
 | Base64 编码 | 必填     | 业务后端响应内容传到云函数中时是否要经过Base64编码，一般适用于响应内容是二进制的情况。 |
 
-![](https://qcloudimg.tencent-cloud.cn/raw/f77fdd378bb923aa4be290bacc02e204.png)
-
 4. 单击**保存**，即可成功创建自定义响应体插件。
 
 ### 步骤3：绑定 API
 
 1. 在插件列表中选中 [步骤2](#step2) 创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e9e674392e0070e320d38c1c00fc1ba2.png)
 3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 ## pluginData
