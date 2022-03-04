@@ -120,7 +120,7 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 21.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280).
 22.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45408).
 23.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
-
+24.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
 ## 法域特定の要件
 
 **ヨーロッパ**
