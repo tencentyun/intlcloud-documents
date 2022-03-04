@@ -573,14 +573,13 @@ The following Modules shall apply and form part of this privacy policy if you us
 15.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44012).
 16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
-18.[Domains](https://intl.cloud.tencent.com/document/product/242/45146).
-19.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
-20.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
-21.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
-22.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45412).
-23.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
-24.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
-25.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45476).
+18.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
+19.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
+20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
+21.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45412).
+22.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
+23.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
+24.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45476).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
