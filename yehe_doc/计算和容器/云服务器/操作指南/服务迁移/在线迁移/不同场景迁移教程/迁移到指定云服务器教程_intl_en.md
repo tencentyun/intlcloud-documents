@@ -202,8 +202,7 @@ Before migration, you need to check the source server and destination CVM separa
 		<li>Check whether SELinux is enabled, and if yes, disable it as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/32395#closeSELinux">How do I disable SELinux?</a>.</li>
 		<li>After a migration request is made to the TencentCloud API, the API will use the current UNIX time to check the generated
 		token. You need to make sure that the current system time is correct.</li>
-		<li>Check the login method of the source server. If your AWS source server uses SSH key pair for login, we recommend you change it to login with password.</li>
-		密钥对方式登录，建议更换为密码方式登录。</li>
+		<li>Check the login method of the source server. If your AWS source server uses SSH key pair for login, we recommend you change it to login with password.</li>		
 	  </ol>
 	</td>
   </tr>
