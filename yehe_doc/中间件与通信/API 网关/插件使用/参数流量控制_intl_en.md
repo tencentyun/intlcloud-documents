@@ -34,20 +34,18 @@ You can create up to 10 traffic throttling policies in the same parameter traffi
 | Traffic throttling parameter location | Yes     | You can enter only one traffic throttling parameter and need to select the location and set the parameter name. For example, `Header.ClientIP` indicates to perform traffic throttling for each value of the `ClientIP` parameter in `Header`.<br>The following locations are supported: Header, Query, and Path. The `Path` parameter represents a complete API path, for which you don't need to enter the parameter name. |
 | Traffic throttling parameter name | Yes     | You can enter only one traffic throttling parameter and need to select the location and set the parameter name. For example, `Header.ClientIP` indicates to perform traffic throttling for each value of the `ClientIP` parameter in `Header`.<br>The traffic throttling parameter name needs to be used together with the parameter location. The `Path` parameter represents a complete API path, for which you don't need to enter the parameter name. |
 | Threshold       | Yes     | Traffic throttling threshold for the traffic throttling parameter in this policy, which must be a positive integer and used together with the traffic throttling duration. |
-| Traffic throttling duration     | Yes     It supports four units: second, minute, hour, and day, and is used together with the threshold.           |
-
-![](https://qcloudimg.tencent-cloud.cn/raw/36230286d28c8e5bbdd7c6bd1100f67d.png)
+| Traffic throttling duration     | Yes     |   It supports four units: second, minute, hour, and day, and is used together with the threshold.           |
 
 ### Step 2. Bind an API and make the plugin effective
 
 1. Select the just created plugin in the plugin list and click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the API to which the plugin needs to be bound.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e9e674392e0070e320d38c1c00fc1ba2.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ## How It Works
 
-![](https://qcloudimg.tencent-cloud.cn/raw/71c9a89fd4e5fa4afda1aee4c7ef4679.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/75df4215d303d402915d6ad9abfc7946.png)
 
 - The default policy implements traffic throttling at the API level and is independent from all other traffic throttling policies. For each request, the default policy will be checked first before other policies.
 - If you configure multiple traffic throttling policies in a plugin, API Gateway will sort them in a descending order by the policy weight and check whether the request meets the condition of each policy one by one. If any policy is not met, traffic throttling will be triggered, and the request will be rejected.
