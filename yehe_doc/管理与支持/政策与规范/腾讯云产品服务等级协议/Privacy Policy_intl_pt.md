@@ -569,8 +569,7 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 15.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44012).
 16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
-18.[Domains](https://intl.cloud.tencent.com/document/product/242/45146).
-19.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
-20.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
-21.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
-22.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
+18.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
+19.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
+20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
+21.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
