@@ -129,10 +129,10 @@ String key = "exampleobject";
 // Get the current object metadata.
 ObjectMetadata objectMetadata = cosclient.getObjectMetadata(bucketName, key);
 // `Replaced` must be set if you modify object metadata.
-objectMetadata.addUserMetadata("metadata-directive", "Replaced");
+objectMetadata.addUserMetadata("x-cos-metadata-directive", "Replaced");
 
 // Set the new object metadata.
-objectMetadata.addUserMetadata("storage-class", "STANDARD_IA");
+objectMetadata.addUserMetadata("x-cos-storage-class", "STANDARD_IA");
 objectMetadata.setContentType("text/plain");
 
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(region, bucketName, key, bucketName, key);
