@@ -109,6 +109,7 @@ We will use the information in the following ways and in accordance with the fol
 | Promotional Contact Data: Name, Email, Phone Number, Company Name, Business Service, Location and details of your query (Optional) | We use this information  to: <br/>·  promote our products and services to you; and to send you direct marketing communications through us or our third party partners. | We process this information with your consent. You can withdraw this consent at any time. |
 | Marketing Data: Name, Business Email, Phone Number, Company Name, Country/Region and Industry (Mandatory) | We use this information: <br/>· to reserve you a place on our online events and webinars<br/>· for product notifications; <br/>· for order confirmations; and <br/>· to send you direct marketing communications through us or our third party partners.| We process this information with your consent. You can withdraw this consent at any time. |
 | Name, Email Address, Country Code, Phone Number, Company Name, Business Service, Inquiry (Mandatory) | We use this information: <br/>· to process your application for the COVID-19 Cloud Resources Support Program;<br/>· to respond to requests for our products; <br/>· for product notifications; and <br/>· for order confirmations.  | We process this information pursuant to our contract with you to provide the support. |
+| Name, Email Address, Country Code, Phone Number and Company Name (Mandatory)  |  We use this information to communicate (whether through us or our third party partners) with you, in order to understand products and services that may interest you, and to explore potential business opportunities with you.  | It is in our legitimate interests to process such data to maintain a relationship with you and to better understand your business needs.  |
 
 <span id="3"></span>
 ### How We Share and Store Your Personal Information
@@ -160,6 +161,7 @@ We will retain your personal information as described below (except if otherwise
 | Promotional Contact Data: Name,  Email and Phone Number                | Such data is held until  you tell us that you no longer wish to receive promotional information. |
 | Marketing Data: Name, Business Email, Phone Number, Company Name, Country and Industry. | Such data is held until you tell us that you no longer wish to receive promotional information. |
 | Name, Email Address, Country Code, Phone Number, Company Name, Business Service, Inquiry. | This data is held for so long as the COVID-19 Cloud Resources Support Program operates. Information is erased within ninety (90) days of the date the COVID-19 Cloud Resources Support Program ends. |
+| Name, Email Address, Country Code, Phone Number and Company Name |  This data is held for so long as an account exists. Information is erased within thirty (30) days of the date the account is deleted. |  
 
 Personal information, which has fulfilled the purpose for which it was collected or used, or has reached the period of time during which personal information was to be possessed, will be destroyed in an irreversible way. Personal information stored in electronic files will be deleted safely in an irreversible manner by using technical methods, and printed information will be destroyed by shredding or incinerating such information. Also, we will delete your personal information within 10 days (i) upon your request to have your personal information deleted; (ii) upon your deletion of your account; and/or (iii) if any personal information is left behind with incomplete account registrations.
 
@@ -227,7 +229,7 @@ a.  We delegate the processing of your personal information as described below, 
 | Adyen Singapore Pte Ltd.                                     | Payment  processing and risk management |
 | Image  Frame Investment (HK) Limited                         | SMS Sending                             |
 | Tencent Computing (Beijing) Co., Ltd.                        | Providing back-end support              |
-| Third Party Resellers                       | Client relationship management and marketing communications              |
+| Third Party Resellers                     | Client relationship management and marketing communications              |
 
 
 ### Overseas Transfer of Personal Information
