@@ -14,7 +14,7 @@ After creating a dashboard, you can perform the following operations in the dash
 
 | Operation            | Description                                                         |
 | --------------- | ------------------------------------------------------------ |
-| Adding a chart        | A dashboard also provides an entry for creating statistical charts, supporting simple chart creation and custom chart creation. For more information, please see [Adding a Chart](https://intl.cloud.tencent.com/document/product/614/43560). |
+| Adding a chart        | A dashboard also provides an entry for creating statistical charts, supporting simple chart creation and custom chart creation. For more information, please see Adding a Chart. |
 | Deleting a chart        | You can delete an existing chart.                                             |
 | Editing a chart        | You can edit a chart on the chart editing page.                                             |
 | Copying a chart        | You can copy a chart to the current or another dashboard.                             |
