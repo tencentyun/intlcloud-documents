@@ -574,7 +574,8 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
 18.[Domains](https://intl.cloud.tencent.com/document/product/242/45146).
 19.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
-20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
-
+20.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
+21.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
+22.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
 ### 수정 내역
 [개인 정보 보호 정책](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
