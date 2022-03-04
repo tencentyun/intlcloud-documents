@@ -1,4 +1,5 @@
 TXLivePusher 푸시 스트리밍 SDK는 주로 비디오 클라우드의 LEB(초저지연 라이브 스트리밍) 푸시 스트리밍에 사용되며, 브라우저가 수집한 멀티미디어 화면을 WebRTC를 통해 라이브 스트리밍 서버로 푸시하는 역할을 합니다. 현재 카메라 푸시 스트리밍, 화면 녹화 푸시 스트리밍 및 로컬 미디어 파일 푸시 스트리밍을 지원합니다.
+>! WebRTC 프로토콜을 사용하여 스트림을 푸시하며 각 푸시 도메인의 동시 푸시 스트림 수는 기본적으로 **100개** 로 제한됩니다. 제한 확장은 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청할 수 있습니다. 
 
 ## 기본 지식
 
@@ -46,12 +47,12 @@ LEB 푸시 스트리밍은 WebRTC를 기반으로 구현되며 WebRTC에 대한 
 ```
 
 ### 3단계: 라이브 방송 푸시 스트리밍
-1. **푸시 스트리밍 SDK 인스턴스 생성: **
+1. **푸시 스트리밍 SDK 인스턴스 생성:**
 전역 객체 'TXLivePusher'를 통해 SDK 인스턴스를 생성하고, 후속 작업은 해당 인스턴스를 통해 완료합니다.
 ```javascript
 var livePusher = new TXLivePusher();
 ```
-2. **로컬 비디오 플레이어 컨테이너 지정: **
+2. **로컬 비디오 플레이어 컨테이너 지정:**
 로컬 비디오 플레이어 컨테이너 div를 지정하면 브라우저에서 수집한 멀티미디어 화면이 div로 렌더링됩니다.
 ```javascript
 livePusher.setRenderView('id_local_video');
@@ -61,7 +62,7 @@ livePusher.setRenderView('id_local_video');
 >document.getElementById('id_local_video').getElementsByTagName('video')[0].muted = true;
 >```
 ```
-3. **멀티미디어 품질 설정: **
+3. **멀티미디어 품질 설정:**
 멀티미디어 스트림 수집 이전에 먼저 멀티미디어 품질을 설정하고, 사전 설정된 품질 매개변수가 요구 사항을 충족하지 않는 경우 개별적인 사용자 정의 설정을 진행할 수 있습니다.
 ​```javascript
 // 비디오 품질 설정
@@ -71,7 +72,7 @@ livePusher.setAudioQuality('standard');
 // 프레임 레이트 사용자 정의
 livePusher.setProperty('setVideoFPS', 25);
 ```
-4. **스트림 수집 시작: **
+4. **스트림 수집 시작:**
 현재 카메라 디바이스, 마이크 디바이스 수집, 화면 녹화 및 로컬 미디어 파일 스트림 수집을 지원합니다. 멀티미디어 스트림이 성공적으로 수집되면 로컬로 수집된 멀티미디어 화면이 플레이어 컨테이너에서 재생됩니다.
 ```javascript
 // 카메라 켜기
@@ -79,13 +80,12 @@ livePusher.startCamera();
 // 마이크 켜기
 livePusher.startMicrophone();
 ```
-5. **푸시 스트리밍 시작: **
+5. **푸시 스트리밍 시작:**
 Tencent Cloud LEB 푸시 스트리밍 주소를 전달하고 푸시 스트리밍을 시작합니다. 푸시 스트리밍 주소의 형식은 [Tencent Cloud LVB URL](https://intl.cloud.tencent.com/document/product/267/38393)을 참고하십시오. RTMP 푸시 스트리밍 주소 앞의 `rtmp://`를 `webrtc://`로 바꾸면 됩니다.
 ```javascript
 livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx');
 ```
 >?푸시 스트리밍 이전에 멀티미디어 스트림이 수집되었는지 확인하십시오. 그렇지 않으면 푸시 스트리밍 인터페이스 호출이 실패하게 됩니다. 멀티미디어 스트림 수집 후 자동 푸시 스트리밍을 구현하려면 콜백 이벤트 알림을 통해, 첫 번째 프레임이 성공적으로 수집되었다는 알림을 받으면 스트림을 다시 푸시합니다. 비디오 스트림과 오디오 스트림이 동시에 수집된 경우 첫 번째 비디오 프레임과 첫 번째 오디오 프레임의 콜백 알림을 모두 수신한 후 푸시 스트림밍을 진행해야 합니다.
-
 ```javascript
 var hasVideo = false;
 var hasAudio = false;
@@ -107,13 +107,12 @@ livePusher.setObserver({
 		}
 });
 ```
-
 </dx-codeblock>
-6. **LEB 푸시 스트리밍 중지: **
+6. **LEB 푸시 스트리밍 중지:**
 ```javascript
 livePusher.stopPush();
 ```
-7. **멀티미디어 스트림 수집 중지: **
+7. **멀티미디어 스트림 수집 중지:**
 ```javascript
 // 카메라 끄기
 livePusher.stopCamera();
@@ -145,7 +144,7 @@ TXLivePusher.checkSupport().then(function(data) {
 </dx-codeblock>
 
 ### 콜백 이벤트 알림
-SDK는 현재 콜백 이벤트 알림을 제공하고 있으며, Observer 설정을 통해 SDK 내부 상태 정보 및 WebRTC 관련 데이터 통계를 알아볼 수 있습니다. 자세한 내용은 [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/41272)를 참고하십시오.
+SDK는 현재 콜백 이벤트 알림을 제공하고 있으며, Observer 설정을 통해 SDK 내부 상태 정보 및 WebRTC 관련 데이터 통계를 알아볼 수 있습니다. 자세한 내용은 [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/42709)를 참고하십시오.
 <dx-codeblock>
 ::: javascript javascript
 livePusher.setObserver({
@@ -181,8 +180,6 @@ deviceManager.getDevicesList().then(function(data) {
 deviceManager.switchCamera('camera_device_id');
 :::
 </dx-codeblock>
-
-
 
 
 

@@ -1,4 +1,5 @@
 TXLivePusherプッシュSDKは、主にビデオクラウドのライブイベントストリーミング（超低遅延ライブストリーミング）のプッシュに使用され、ブラウザが収集したオーディオ・ビデオ画面を、WebRTCを介してライブストリーミングサーバーにプッシュする役割を担います。現在、カメラプッシュ、スクリーンレコーディングプッシュおよびローカルメディアファイルプッシュをサポートしています。
+>! WebRTCプロトコルを使用してストリームをプッシュします。各プッシュドメイン名は、デフォルトで**100パス同時**プッシュ数に制限されています。このプッシュ制限を超える必要がある場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してお申し出ください。
 
 ## 基礎知識
 
@@ -85,7 +86,6 @@ Tencent Cloudライブイベントストリーミングプッシュアドレス�
 livePusher.startPush('webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx');
 ```
 >?プッシュする前にオーディオビデオストリーミングがキャプチャされていることを確認します。キャプチャされていない場合、プッシュインターフェースの呼び出しに失敗することがあります。オーディオビデオストリーミングをキャプチャした後に自動的にプッシュを実現したい場合は、コールバックイベントを介して通知することができます。最初のフレームのキャプチャ成功通知を受信した後に、もう一度プッシュを実行します。オーディオストリームとビデオストリームを同時にキャプチャした場合、最初のビデオフレームとオーディオフレームのキャプチャ成功のコールバック通知をすべて受信した後に、もう一度プッシュを開始する必要があります。
-
 ```javascript
 var hasVideo = false;
 var hasAudio = false;
@@ -107,7 +107,6 @@ livePusher.setObserver({
 		}
 });
 ```
-
 </dx-codeblock>
 6. **ライブイベントストリーミングプッシュの停止：**
 ```javascript
@@ -145,7 +144,7 @@ TXLivePusher.checkSupport().then(function(data) {
 </dx-codeblock>
 
 ### コールバックイベント通知
-SDKは、現在、コールバックイベント通知を提供しています。Observerを設定することで、SDK内部のステータス情報とWebRTC関連のデータ統計について知ることができます。 詳細については、 [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/41272)をご参照ください。
+SDKは、現在、コールバックイベント通知を提供しています。Observerを設定することで、SDK内部のステータス情報とWebRTC関連のデータ統計について知ることができます。 詳細については、 [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/42709)をご参照ください。
 <dx-codeblock>
 ::: javascript javascript
 livePusher.setObserver({
@@ -181,8 +180,6 @@ deviceManager.getDevicesList().then(function(data) {
 deviceManager.switchCamera('camera_device_id');
 :::
 </dx-codeblock>
-
-
 
 
 
