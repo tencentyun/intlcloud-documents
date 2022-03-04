@@ -120,11 +120,10 @@
 17.[数据库管理中心](https://intl.cloud.tencent.com/document/product/1125/44014)。
 18.[微瓴物联网类操作系统](https://intl.cloud.tencent.com/document/product/1115/44314)。
 19.[事件总线](https://intl.cloud.tencent.com/document/product/1108/44830)。
-20.[域名注册](https://intl.cloud.tencent.com/document/product/242/45147)。
-21.[轻量应用服务器](https://intl.cloud.tencent.com/document/product/1103/45280)。
-22.[即时通信 IM](https://intl.cloud.tencent.com/zh/document/product/1047/45408)。
-23.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45416)。
-24.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45473)。
+20.[轻量应用服务器](https://intl.cloud.tencent.com/document/product/1103/45280)。
+21.[即时通信 IM](https://intl.cloud.tencent.com/zh/document/product/1047/45408)。
+22.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45416)。
+23.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45473)。
 
 ## 特定司法管辖区要求
 
