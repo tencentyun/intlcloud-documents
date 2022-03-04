@@ -6,7 +6,7 @@
 
 ## 原理详解
 
-![](https://qcloudimg.tencent-cloud.cn/raw/9eee13f98ed942b670538890df5e9e99.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8bc578e1686993758428bcbc691847b7.png)
 您可在断路器插件中设置**判断时间窗口**、**错误条件**、**错误次数**、**断路器持续时间**、**降级后端配置**等配置项；
 一次断路器周期可分为三个阶段：
 
@@ -77,14 +77,13 @@
 <td>	在 API 后端配置中设置的后端超时时间被触发，算作一次错误。</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/5b2b48ed9c904a0590ac6b0b81ab48f4.png">
 
 
 ### 步骤2：绑定 API 并生效
 
 1. 在列表中选中刚刚创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e9e674392e0070e320d38c1c00fc1ba2.png)
 3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 ## PluginData
