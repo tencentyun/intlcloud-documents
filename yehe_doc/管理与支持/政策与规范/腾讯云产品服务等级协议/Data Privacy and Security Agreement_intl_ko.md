@@ -129,11 +129,10 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 17.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44014).
 18.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44314).
 19.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
-20.[Domains](https://intl.cloud.tencent.com/document/product/242/45147).
-21.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280).
-22.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45408).
-23.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
-24.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
+20.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280).
+21.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45408).
+22.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
+23.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
 
 ## 관할권별 요구 사항
 
