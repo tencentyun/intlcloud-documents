@@ -129,7 +129,7 @@ try {
 
 // After confirming that the process does not use the TransferManager instance anymore, close it.
 // For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on the current page.
-shutdownTransferManger(transferManager);
+shutdownTransferManager(transferManager);
 ```
 
 #### Parameter description
@@ -208,7 +208,7 @@ try {
 
 // After confirming that the process does not use the TransferManager instance anymore, close it.
 // For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on the current page.
-shutdownTransferManger(transferManager);
+shutdownTransferManager(transferManager);;
 ```
 
 #### Parameter description
