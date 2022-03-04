@@ -49,7 +49,7 @@ try {
 
 // After confirming that the process does not use the TransferManager anymore, close it.
 // For the detailed code, see "Advanced APIs -> Closing TransferManager" on the current page.
-shutdownTransferManger(transferManager);
+shutdownTransferManager(transferManager);
 ```
 
 ### Using server-side encryption with customer-provided encryption keys (SSE-C) to protect data
@@ -100,7 +100,7 @@ try {
 
 // After confirming that the process does not use the TransferManager anymore, close it.
 // For the detailed code, see "Advanced APIs -> Closing TransferManager" on the current page.
-shutdownTransferManger(transferManager);
+shutdownTransferManager(transferManager);
 ```
 
 ### Using server-side encryption with KMS-managed encryption keys (SSE-KMS) to protect data
@@ -147,5 +147,5 @@ try {
 
 // After confirming that the process does not use the TransferManager anymore, close it.
 // For the detailed code, see "Advanced APIs -> Closing TransferManager" on the current page.
-shutdownTransferManger(transferManager);
+shutdownTransferManager(transferManager);
 ```
