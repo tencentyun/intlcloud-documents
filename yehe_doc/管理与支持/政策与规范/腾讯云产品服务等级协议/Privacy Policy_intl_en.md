@@ -227,7 +227,7 @@ a.  We delegate the processing of your personal information as described below, 
 | Adyen Singapore Pte Ltd.                                     | Payment  processing and risk management |
 | Image  Frame Investment (HK) Limited                         | SMS Sending                             |
 | Tencent Computing (Beijing) Co., Ltd.                        | Providing back-end support              |
-| [Third Party Resellers]                       | Client relationship management and marketing communications              |
+| Third Party Resellers                       | Client relationship management and marketing communications              |
 
 
 ### Overseas Transfer of Personal Information
