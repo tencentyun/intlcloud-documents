@@ -277,7 +277,7 @@ headers.put("header1", "value1");
 // HTTP method of the request. PUT for an upload request, GET for a download request, and DELETE for a deletion request.
 HttpMethodName method = HttpMethodName.GET;
 
-String sign = signer.buildAuthorizationStr(method, key, headers, params, cred, expirationDate);
+String sign = signer.buildAuthorizationStr(method, key, headers, params, cred, expirationDate, true);
 ```
 
 ### Generating a signature using a permanent key
@@ -315,5 +315,5 @@ headers.put("header1", "value1");
 // HTTP method of the request. PUT for an upload request, GET for a download request, and DELETE for a deletion request.
 HttpMethodName method = HttpMethodName.GET;
 
-String sign = signer.buildAuthorizationStr(method, key, headers, params, cred, expirationDate);
+String sign = signer.buildAuthorizationStr(method, key, headers, params, cred, expirationDate, true);
 ```
