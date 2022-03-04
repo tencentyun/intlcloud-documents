@@ -484,7 +484,7 @@ cos.multipartUpload({
    Region: 'COS_REGION',     /* Bucket region. Required */
    Key: 'exampleobject', /* Required */
    UploadId: 'exampleUploadId',
-   PartNumber: '1',
+   PartNumber: 1,
    Body: fileObject
 }, function(err, data) {
    console.log(err || data);
@@ -502,7 +502,7 @@ cos.multipartUpload({
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | ContentLength | HTTP request length (in bytes) as defined in RFC 2616 | String | Yes |
-| PartNumber | Part number | String | Yes |
+| PartNumber | Part number | Number  | Yes |
 | UploadId | ID of the multipart upload | String | Yes |
 | Body          | Content of the uploaded file part, which can be a string or ArrayBuffer object    | String/ArrayBuffer | Yes   |
 | Expect | HTTP request length (in bytes) defined in RFC 2616. If `Expect: 100-continue` is used, the request content will be sent only after confirmation from the server is received. | String | No |
@@ -614,7 +614,7 @@ cos.multipartComplete({
     Key: 'exampleobject', /* Required */
     UploadId: 'exampleUploadId', /*Required*/
     Parts: [
-        {PartNumber: '1', ETag: 'exampleETag'},
+        {PartNumber: 1, ETag: 'exampleETag'},
     ]
 }, function(err, data) {
     console.log(err || data);
@@ -630,7 +630,7 @@ cos.multipartComplete({
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | UploadId | ID of the upload | String | Yes |
 | Parts | A list of information about the parts of the multipart upload | ObjectArray | Yes |
-| - PartNumber | Part number | String | Yes |
+| - PartNumber | Part number | Number  | Yes |
 | - ETag | MD5 checksum of each part. <br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880"`<br>**Note that double quotation marks are required at the beginning and the end.** | String | Yes |
 
 #### Callback function description
@@ -726,7 +726,7 @@ var uploadFile = function(file) {
         onProgress: function (progressData) { /* Optional */
             console.log(JSON.stringify(progressData));
         },
-        onFileFinish: function (err, data, options) {
+        onFileFinish: function (err, data, options) {  /* Optional */
           console.log(options.Key + 'upload' + (err ? 'failed' : 'completed'));
         },
     }, function(err, data) {
@@ -763,7 +763,7 @@ wx.chooseMessageFile({
 | - progressData.total                                         | Size of the entire file, in bytes                      | Number    | No   |
 | - progressData.speed                                         | File upload speed, in bytes/s                 | Number    | No   |
 | - progressData.percent | File upload progress, in decimal form. For example, 0.5 means 50% has been uploaded. | Number | No |
-| onFileFinish | Completion or error callback for each file | String | Yes |
+| onFileFinish | Completion or error callback for each file | Function  | No |
 | - err | Upload error message | Object | No |
 | - data | Information about the completion of object upload | Object | No |
 | - options | Parameter information about the files that have been uploaded | Object | No |
@@ -944,7 +944,7 @@ wx.chooseMessageFile({
 | - progressData.total | Size of the entire file, in bytes | Number | No |
 | - progressData.speed | File upload speed, in bytes/s | Number | No |
 | - progressData.percent | Percentage of the file upload progress, in decimal form. For example, 0.5 means 50% has been uploaded. | Number | No |
-| onFileFinish | Completion or error callback for each file | String | Yes |
+| onFileFinish | Completion or error callback for each file | Function | No |
 | - err | Upload error message | Object | No |
 | - data | Information about the completion of object upload | Object | No |
 | - options | Parameter information about the files that have been uploaded | Object | No |
