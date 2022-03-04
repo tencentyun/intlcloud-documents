@@ -15,7 +15,7 @@
 检索条件为`sample`时，上述分词后的日志包含`sample`，即认为符合检索条件。
 
 检索条件本身也会进行分词，例如下图3种检索条件：
-![](https://qcloudimg.tencent-cloud.cn/raw/a0b675624980e4620e706153a63dcbd9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6d5e38901a2c8968c37dcbf03ce84cb9.png)
 
 - 检索条件A：`\/online\/login`
   - 其中`\`用于转义`/`符号（该符号为检索语法保留符号，因此需要转义）
