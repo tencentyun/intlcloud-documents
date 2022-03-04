@@ -34,15 +34,13 @@ The service backend will send the response body to the API Gateway after process
 | Custom content | Required | It sets the response content sent to the SCF by the API Gateway. You can select Header, Body and response status code. The response content not selected will not be modified and will be returned to the Client as is. |
 | Base64 encoding | Required | It specifies whether to Base64-encode the response content to be forwarded by the service backend to the SCF. Generally, it is applicable to binary content. |
 
-![](https://qcloudimg.tencent-cloud.cn/raw/f77fdd378bb923aa4be290bacc02e204.png)
-
 4. Click **Save** to complete the process.
 
 ### Step 3: binding the API
 
 1. Select the plugin created in [step 2](#step2) from the plugin list. Click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the API to which the plugin needs to be bound.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e9e674392e0070e320d38c1c00fc1ba2.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ## pluginData
