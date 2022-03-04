@@ -573,3 +573,4 @@ Tencent Cloud プライバシーポリシーの「*お客様の個人データ�
 19.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
 20.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
 21.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
+22.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
