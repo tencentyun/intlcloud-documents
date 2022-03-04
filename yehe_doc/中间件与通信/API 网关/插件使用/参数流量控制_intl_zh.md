@@ -36,18 +36,16 @@
 | 流控值       | 必填     | 本条策略中针对流控参数的流控值，请输入正整数，必须与控制时长搭配使用。 |
 | 控制时长     | 必填     | 支持秒、分钟、小时、天四个单位，与流控值搭配使用。           |
 
-![](https://qcloudimg.tencent-cloud.cn/raw/36230286d28c8e5bbdd7c6bd1100f67d.png)
-
 ### 步骤2：绑定 API 并生效
 
 1. 在**插件列表**中选中刚刚创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e9e674392e0070e320d38c1c00fc1ba2.png)
 3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 ## 原理详解
 
-![](https://qcloudimg.tencent-cloud.cn/raw/71c9a89fd4e5fa4afda1aee4c7ef4679.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/75df4215d303d402915d6ad9abfc7946.png)
 
 - 默认策略是 API 级别的流控，独立于所有的限流策略。每次请求时，会先校验默认策略，再校验限流策略；
 - 一个插件中同时配置多条流控策略时，API 网关将按策略权重由大到小的顺序依次校验请求是否满足条件；只要有一条流控策略不满足则触发流控，拒绝请求；
