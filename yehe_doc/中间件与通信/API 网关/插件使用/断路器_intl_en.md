@@ -6,7 +6,7 @@ You can use the circuit breaker plugin for circuit breaking and downgrade when t
 
 ## How It Works
 
-![](https://qcloudimg.tencent-cloud.cn/raw/9eee13f98ed942b670538890df5e9e99.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8bc578e1686993758428bcbc691847b7.png)
 You can set configuration items such as **judgment time window**, **error condition**, **number of errors**, **circuit breaking duration**, and **downgraded backend configuration** in the circuit breaker plugin.
 A circuit breaker cycle can be divided into three phases:
 
@@ -77,14 +77,13 @@ The circuit breaker plugin supports the following conditions:<span id = "table">
 <td>	If the backend timeout period set in the API backend configuration is exceeded, the request will be considered an error.</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/5b2b48ed9c904a0590ac6b0b81ab48f4.png">
 
 
 ### Step 2. Bind an API and make the plugin effective
 
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the API to which the plugin needs to be bound.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e9e674392e0070e320d38c1c00fc1ba2.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ## PluginData
