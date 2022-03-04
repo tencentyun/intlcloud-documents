@@ -15,7 +15,7 @@ For example, the above sample log can be divided based on symbols `@&()='",;:<>[
 If the search condition is `sample`, the preceding log after segmentation contains `sample` and therefore is considered to meet the search condition.
 
 The search condition itself is also segmented, such as the 3 types of search conditions in the figure below:
-![](https://qcloudimg.tencent-cloud.cn/raw/a0b675624980e4620e706153a63dcbd9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6d5e38901a2c8968c37dcbf03ce84cb9.png)
 
 - Search condition A: `\/online\/login`
   - `\` is used to escape the `/` symbol (this symbol is a reserved symbol of the search syntax and therefore needs to be escaped).
