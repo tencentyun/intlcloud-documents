@@ -3,7 +3,7 @@
 ## 步骤一：查询域名
 注册域名之前，您需要查询您想要注册的域名或者后缀是否已经被他人注册。如果已经被注册，您需要更换一个域名或者后缀，直至该域名没有被注册，才可以选择该域名进行下一步操作。
 
-1. 登录 [域名注册页面](链接)。
+1. 登录 [域名注册页面](https://buy.intl.cloud.tencent.com/domain/buy)。
 2. 在域名注册页面，输入您想要的域名和后缀，单击<span ><img src="https://main.qcloudimg.com/raw/0cc93679f33e50d7c6b3fea4d9110cc1.png" style="margin-bottom:-5px;"/></span>，即可查看该域名的注册情况。如下图所示：
 例如，输入 example.com。
 ![](https://qcloudimg.tencent-cloud.cn/raw/4e6335791264b199fe0cba1ed0e30478.png)
@@ -37,14 +37,13 @@
 
 在 “支付” 页面，根据实际需求，选择支付方式。
 >? 
->- 支付完成后，即可在 [我的域名](链接) 查看/管理您的域名。
->- 如果您需要开具发票，可以在**费用 > 费用中心 > 发票与合同 > [发票管理](链接)** 中申请开票。
+>- 支付完成后，即可在 [我的域名](https://console.intl.cloud.tencent.com/domain/manage) 查看/管理您的域名。
+>- 如果您需要开具发票，可以在**费用 > 费用中心 > 发票与合同 > [发票管理](https://console.intl.cloud.tencent.com/expense/invoicing)** 中申请开票。
 
 
 
 ## 遇到问题？
-- [域名注册成功后还能退款吗？](链接)
-- [域名注册失败需要怎么做？](链接)
+- [域名注册成功后还能退款吗？](https://intl.cloud.tencent.com/document/product/242/42860)
 
 若您在注册域名过程中遇到更多问题，您可以参考文档注册流程进行处理，若仍无法解决您的问题，请您联系 [技术支持](https://intl.cloud.tencent.com/zh/contact-us) 协助您解决。
 

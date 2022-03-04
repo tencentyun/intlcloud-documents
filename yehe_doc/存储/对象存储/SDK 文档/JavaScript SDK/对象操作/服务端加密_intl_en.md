@@ -7,7 +7,7 @@ This document describes how to enable server-side encryption when uploading obje
 * Customer-provided key
 * KMS-managed key
 
-#### Using server-side encryption with COS-managed encryption keys (SSE-COS) to protect data
+### Using server-side encryption with COS-managed encryption keys (SSE-COS) to protect data
 
 With this method, your master key and data are managed by COS. COS can automatically encrypt your data when written into the IDC and automatically decrypt it when accessed. Currently, COS supports AES-256 encryption using a COS master key pair.
 

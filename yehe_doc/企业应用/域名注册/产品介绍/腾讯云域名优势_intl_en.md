@@ -7,7 +7,7 @@ Tencent Cloud has obtained certification from both ISO9001 CNAS (China National 
 With a solid infrastructure and years of experience of internet services, Tencent Cloud offers various professional services in social, gaming, and other fields.
 
 ## Diversified Domain Types
-Tencent Cloud offers a variety of domain registration services. Whether you want to register a domain name or transfer a domain name to Tencent Cloud, we can fulfill your requirements. For more information, see [Tencent Cloud Domain Suffixes](link).
+Tencent Cloud offers a variety of domain registration services. Whether you want to register a domain name or transfer a domain name to Tencent Cloud, we can fulfill your requirements. For more information, see [Tencent Cloud Domain Suffixes](https://buy.intl.cloud.tencent.com/domain/price?type=overview).
 
 ## Fast DNS Resolution
 Tencent Cloud uses new-generation high-performance DNS server programs to provide stable DNS service. Our DNS resolution speed is hundreds of times faster than other major DNS services, making your DNS resolution take effect within seconds. In addition, Tencent Cloud also provides free smart DNS resolution service for domain names across the entire internet. We possess strong processing capability, flexible scalability, and high security, providing stable, secure, and fast DNS resolution for your websites.

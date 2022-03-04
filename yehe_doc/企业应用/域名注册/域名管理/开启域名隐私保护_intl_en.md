@@ -6,7 +6,7 @@ According to applicable policies of CNNIC, to meet users' needs in privacy prote
 
 
 ## Directions
-1. Log in to the [Domains console](link) and enter the **My Domains** page.
+1. Log in to the [Domains console](https://console.intl.cloud.tencent.com/domain/manage) and enter the **My Domains** page.
 2. On the **My Domains** page, select the name of the top-level domain for which you want to enable domain privacy protection and click **Manage**.
 3. Enter the **Domain Info** page and click the **Domain Security** tab.
 4. Click <span ><img src="https://main.qcloudimg.com/raw/ce844f426842c9ae41963f5d3bc4f4c0.png" style="margin-bottom:-5px;"/></span> to enable privacy protection as shown below:

@@ -9,12 +9,12 @@ It takes about **5–7** business days to transfer your domain to DNSPod from an
 Domain transfer in is between registrars. The requirements for transfer in are as follows:
 - The original registrar cannot be Tencent Cloud.  
 - You must be the domain owner or authorized by the owner to manage the domain.
-- The domain was registered at least 60 days ago and will expire in more than 15 days. For the domain expiration date, see [WHOIS Lookup](link).
+- The domain was registered at least 60 days ago and will expire in more than 15 days. For the domain expiration date, see [WHOIS Lookup](https://whois.cloud.tencent.com/domain).
 - If an expired domain was renewed or redeemed at the original registrar less than 45 days ago, transferring it in is not recommended, as doing so may invalidate the renewal with the original registrar or shorten the renewal period.  
 - The domain is in normal status and not involved in any disputes or overdue payments.  
 - The domain is not being processed by judiciaries, arbitration institutions, or domain dispute resolution agencies. 
 - During domain transfer in, the registry needs to verify again whether the naming of its prefix is valid. If the verification fails, the domain cannot be transferred in.
-- Currently, different domain suffixes have different prices. For domain suffixes that can be transferred in, see [Domain Pricing](link). 
+- Currently, different domain suffixes have different prices. For domain suffixes that can be transferred in, see [Domain Pricing](https://buy.intl.cloud.tencent.com/domain/price?type=tran). 
 
 >!Domain management right and resolution right are independent of each other. If domain transfer in does not involve DNS server changes, the existing DNS will not be affected. If you want to use the DNSPod service, proceed as instructed in [Modifying DNS Server](https://docs.dnspod.com/dns/601105aaf5ab591fcad80d2d/).
 
@@ -42,7 +42,7 @@ Submit a domain transfer out application to the original registrar to get the do
 
 ### Creating domain transfer in
 
-1. Log in to the [Domains console](link) and enter the **My Domains** page.
+1. Log in to the [Domains console](https://console.intl.cloud.tencent.com/domain/manage) and enter the **My Domains** page.
 3. Select **Transfer Domain** on the left sidebar to enter the **My Transfers** page.
 4. Click **Transfer Domain** to start the domain transfer in process.
 
@@ -52,7 +52,7 @@ Submit a domain transfer out application to the original registrar to get the do
   - **Domain and auth-code**: enter them as required.
   - **Auto-Renewal**: the system will automatically renew your domain before it expires. Make sure that your account balance is sufficient.
 <dx-alert infotype="explain" title="">
-After auto-renewal is enabled, you can disable it in the [domain name list](link).
+After auto-renewal is enabled, you can disable it in the [domain name list](https://console.intl.cloud.tencent.com/domain/manage).
 </dx-alert>
 2. Domain transfer in requires to you renew the domain for one year. After the transfer order is generated, click **Pay** to make the payment as prompted as shown below:
 

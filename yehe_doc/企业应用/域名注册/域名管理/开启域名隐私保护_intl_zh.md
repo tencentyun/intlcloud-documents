@@ -6,7 +6,7 @@
 
 
 ## 操作步骤
-1. 登录 [域名注册管理控制台](链接)，进入 “我的域名” 管理页面。
+1. 登录 [域名注册管理控制台](https://console.intl.cloud.tencent.com/domain/manage)，进入 “我的域名” 管理页面。
 2. 在 “我的域名” 管理页面，选择您需要开启域名隐私保护的国家域名名称并单击**管理**。
 3. 进入 “域名信息” 管理页面，单击**域名安全**页签。
 4. 单击<span ><img src="https://main.qcloudimg.com/raw/ce844f426842c9ae41963f5d3bc4f4c0.png" style="margin-bottom:-5px;"/></span>，即可开启隐私保护。如下图所示：

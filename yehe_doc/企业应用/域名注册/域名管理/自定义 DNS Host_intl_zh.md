@@ -10,7 +10,7 @@
 
 
 ## 操作指南
-1. 登录 [腾讯云域名注册管理控制台](https://console.cloud.tencent.com/domain)，单击您需要设置自定义 DNS Host 的域名，即可进入 “域名信息” 页面。
+1. 登录 [腾讯云域名注册管理控制台](https://console.intl.cloud.tencent.com/domain/manage)，单击您需要设置自定义 DNS Host 的域名，即可进入 “域名信息” 页面。
 2. 在 “域名信息” 页面，选择**自定义 DNS Host**页签。
 3. 在 “自定义 DNS Host” 中， 您可以通过以下两种方式添加自定义 DNS Host。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/c616deed65bad1927f8c8266666065e5.png)

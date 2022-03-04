@@ -1,4 +1,4 @@
-# Managing Domain Expiration Reminders
+
 ## Overview
 Tencent Cloud Domains provides the domain expiration reminder feature. If your domain is about to expire, the service will remind you to renew your domain via SMS, email, or other means according to the information you have provided in Tencent Cloud to avoid domain unavailability or high redemption fees caused by domain expiration. This document describes how to enable or disable the domain expiration reminder feature.
 
