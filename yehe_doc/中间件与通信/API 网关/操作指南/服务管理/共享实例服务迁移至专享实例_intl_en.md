@@ -42,8 +42,5 @@ Scenario 3: in scenario 2, if the client supports changing the multiple private 
 ### Can service in all shared instances be migrated to a dedicated instance in an imperceptible manner?
 
 No. For historical reasons, if the original service's domain name suffix is `apigateway.myqcloud.com`, we recommend you not migrate it currently, as migration will be perceptible. However, there is an alternative: you can create a service in the dedicated instance, and then use API Gateway's existing API replication feature to sync the API configuration of the original service to the new service. **If the `myqcloud` domain name is configured in a custom domain name or WAF or hardcoded in the client, it needs to be updated synchronously.**
-![](https://qcloudimg.tencent-cloud.cn/raw/d5fa98418bbe4e9c6474b11a9d780872.png)
-Replication page:
-![](https://qcloudimg.tencent-cloud.cn/raw/700b3c19c567d00ba21776dbac288bba.png)
 
 ​           
