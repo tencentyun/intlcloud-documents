@@ -1,4 +1,4 @@
-﻿单击 [域名注册](https://intl.cloud.tencent.com/document/product/242/42861)，了解注册流程。
+单击 [域名注册](https://intl.cloud.tencent.com/document/product/242/42861)，了解注册流程。
 >?
 >- **域名属于即时产品，注册成功后不可以修改，也不能退款。**
 >- 域名新注、续费、转入等价格将跟随市场调整，白金域名价格可能高于普通域名，请以订单最终结算价格为准。
