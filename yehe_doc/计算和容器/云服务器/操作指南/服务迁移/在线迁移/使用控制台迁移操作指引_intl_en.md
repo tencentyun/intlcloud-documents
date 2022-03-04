@@ -103,8 +103,9 @@ You can also configure the account API access key in the `user.json` file before
 </dx-alert>
 If the information in the following figure is displayed in the window of the migration tool, the migration source has been imported to the console successfully, and you can go to the console to view it:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f9cf0fd99504aba51ebf82b0cab250b8.png"/>
-<br>You can log in to the <a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">CVM console</a> and enter the online migration page to view the imported migration source, whose status is **Online** 
-If "Import source server successfully" isn't displayed, the migration source failed to be imported, and you can view the log (which is the `logs/log` file in the migration tool directory by default) for troubleshooting. Then, run the migration tool to import the migration source again.
+<br>You can log in to the <a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">CVM console</a> and enter the online migration page to view the imported migration source, whose status is **Online** as shown below:
+<img src="https://qcloudimg.tencent-cloud.cn/raw/11b1e6cada0384dae292e89378629ddc.png"/>
+   2. If "Import source server successfully" isn't displayed, the migration source failed to be imported, and you can view the log (which is the `logs/log` file in the migration tool directory by default) for troubleshooting. Then, run the migration tool to import the migration source again.
 <dx-alert infotype="notice" title="">
 After the migration source is imported successfully, don't close the migration tool in the instance until the migration task is completed; otherwise, the migration task can't be completed after the migration source becomes offline.
 </dx-alert>
@@ -114,8 +115,9 @@ After the migration source is imported successfully, don't close the migration t
 ### Creating and starting migration task
 
 1. Create a migration task
-Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), go to the online migration page, and click **Create Migration Task** on the right of the desired migration source. In the **Create Migration Task** pop-up window, configure the task 
-[](id:jobSettings)Configure the migration as follows:
+Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), go to the online migration page, and click **Create Migration Task** on the right of the desired migration source. In the **Create Migration Task** pop-up window, configure the task  as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
+2. [](id:jobSettings)Configure the migration as follows:
 <table>
 <thead>
 <tr>
@@ -175,9 +177,11 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 <dx-alert infotype="explain" title="">
 You can skip this step if your task is scheduled, which will automatically start running at the scheduled execution time.
 </dx-alert>
-After creating a migration task, you can click the <b>Migration Task</b> tab to view the task 
-You can click <b>Start/Retry</b> on the right of the task to start it, and the task status will become **Migrating** 
-<dx-alert infotype="notice" title="">
+After creating a migration task, you can click the <b>Migration Task</b> tab to view the task as shown below:
+<img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
+2. You can click <b>Start/Retry</b> on the right of the task to start it, and the task status will become **Migrating**  as shown below:
+<img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
+4. <dx-alert infotype="notice" title="">
 - The migration in console feature can automatically migrate the system disk and all mounted data disks of the source server and generate destination disks with the same partition structure as the source disks.
 - Currently, the migration in console feature supports only the public network. To migrate over the private network, you can use the migration tool. For more information, see [Private Network Migration](https://intl.cloud.tencent.com/document/product/213/44341).
 - If the migration destination is a CVM instance, the destination CVM enters migration mode after the migration starts. Do not reinstall the system, shut down, terminate, or reset passwords of the destination CVM until the migration is completed and the destination CVM exits the migration mode.
@@ -187,8 +191,8 @@ You can click <b>Start/Retry</b> on the right of the task to start it, and the t
 
 ### Waiting for migration task to end
 
-
-After the migration task status becomes **Successful**, the migration is completed successfully 
+After the migration task status becomes **Successful**, the migration is completed successfully as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)
 
 <dx-alert infotype="explain" title="">
 - The time required for data transfer depends on the size of the data on the source server, network bandwidth, etc. Please wait for the migration process to complete.

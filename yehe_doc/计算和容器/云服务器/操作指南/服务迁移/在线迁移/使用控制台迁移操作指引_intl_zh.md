@@ -105,8 +105,9 @@ sudo ./go2tencentcloud_x64
 </dx-alert>
 当迁移工具界面出现如下图所示信息时，表示迁移源已经成功导入控制台，可前往控制台查看迁移源。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f9cf0fd99504aba51ebf82b0cab250b8.png"/>
-<br>登录 <a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">在线迁移控制台</a> 即可查看已导入的迁移源，状态为“在线” 。
-若未提示 Import source server successfully， 表示导入迁移源失败， 可查看日志（默认为迁移工具目录下的 logs/log 文件)解决问题之后重新运行迁移工具导入迁移源。
+<br>登录 <a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">在线迁移控制台</a> 即可查看已导入的迁移源，状态为“在线” 。如下图所示：
+<img src="https://qcloudimg.tencent-cloud.cn/raw/11b1e6cada0384dae292e89378629ddc.png"/>
+   2. 若未提示 Import source server successfully， 表示导入迁移源失败， 可查看日志（默认为迁移工具目录下的 logs/log 文件)解决问题之后重新运行迁移工具导入迁移源。
 <dx-alert infotype="notice" title="">
 迁移源导入成功之后，请勿关闭实例中的迁移工具直至迁移任务完成。否则，迁移源离线之后，将无法完成迁移任务。
 </dx-alert>
@@ -116,8 +117,9 @@ sudo ./go2tencentcloud_x64
 ### 创建并启动迁移任务
 
 1. 创建迁移任务
-登录 [在线迁移控制台](https://console.cloud.tencent.com/cvm/csm/online?rid=1)，单击目标迁移源所在行右侧的**创建迁移任务**。在弹出的“创建迁移任务”窗口中，参考以下信息进行配置。
-[](id:jobSettings)迁移任务详细配置说明如下表：
+登录 [在线迁移控制台](https://console.cloud.tencent.com/cvm/csm/online?rid=1)，单击目标迁移源所在行右侧的**创建迁移任务**。在弹出的“创建迁移任务”窗口中，参考以下信息进行配置。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
+2. [](id:jobSettings)迁移任务详细配置说明如下表：
 <table>
 <thead>
 <tr>
@@ -177,9 +179,11 @@ sudo ./go2tencentcloud_x64
 <dx-alert infotype="explain" title="">
 预约执行的任务可跳过本步骤，到达预约执行时间后，迁移任务将会自动开始执行。
 </dx-alert>
-创建迁移任务后，可单击<b>迁移任务</b>页签，查看迁移任务。
-单击任务所在行右侧的<b>开始/重试</b>，即可开始迁移任务。此时任务状态变更为“迁移中” 。
-<dx-alert infotype="notice" title="">
+创建迁移任务后，可单击<b>迁移任务</b>页签，查看迁移任务。如下图所示：
+<img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
+2. 单击任务所在行右侧的<b>开始/重试</b>，即可开始迁移任务。此时任务状态变更为“迁移中” 。如下图所示：
+<img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
+4. <dx-alert infotype="notice" title="">
 - 通过控制台迁移时会帮助您自动迁移源端主机的系统盘和所有已挂载的数据盘，并自动生成与迁移源磁盘分区结构一致的目标磁盘。
 - 控制台迁移目前仅支持公网迁移，如果需要使用内网迁移，可使用迁移工具迁移，详情请参见 [内网迁移教程](https://intl.cloud.tencent.com/document/product/213/44341)。
 - 迁移目标是云服务器时，开始迁移后目标云服务器将进入迁移模式，请不要对目标云服务器进行重装系统、关机、销毁、重置密码等操作，直至迁移完成退出迁移模式。
@@ -189,8 +193,8 @@ sudo ./go2tencentcloud_x64
 
 ### 等待迁移任务结束
 
-
-当迁移任务状态为“成功”时，表示成功完成迁移。
+当迁移任务状态为“成功”时，表示成功完成迁移。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)
 
 <dx-alert infotype="explain" title="">
 
