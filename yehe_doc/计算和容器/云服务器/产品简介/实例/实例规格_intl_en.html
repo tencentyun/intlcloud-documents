@@ -46,6 +46,7 @@
 <td>
 <ul style="margin-bottom: 0;">
 	<li><a href="#M6">Memory Optimized M6</a> </li>
+        <li><a href="#M6ce">Security-enhanced Memory Optimized M6ce</a> </li>
 	<li><a href="#M5">Memory Optimized M5</a> </li>
 	<li><a href="#M5">Memory Optimized MA2</a> </li>
 	<li><a href="#M4">Memory Optimized M4</a> </li>
@@ -10790,6 +10791,342 @@
 <p>-</p>
 </div></div>
 </td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+
+<table class="tableblock frame-none grid-all spread custom-style">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="sect2">
+<h3 id="S6 Memory Optimized Instance Family">Security-enhanced Memory Optimized M6ce</h3>
+<div class="paragraph">
+		<p>As the latest generation of memory optimized instances, M6ce instances are powered by an all-new optimized virtualization platform and designed to deliver fast and stable performance for workloads that process large data sets in memory. They are ideal for applications that require high in-memory computing performance.
+</p>
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p>This instance type is now only available to beta users. Contact your account manager to purchase it.</p>
+</blockquote>
+<div class="sect3">
+<h4 id="_Features_8">Features</h4>
+<div class="ulist">
+<ul>
+<li><p>A new-generation Star Lake two-way server developed by Tencent Cloud, with the 3rd generation Intel® Xeon® scalable processor</p></li>
+<li><p>Intel® Xeon® Ice Lake processor, with a CPU clock rate of 2.7 GHz and a turbo frequency of 3.3 GHz</p></li>
+<li><p>Intel® SGX encrypted computing, with a single instance containing up to 428 GB encrypted memory, ensuring the confidentiality and security of critical data and codes</p></li>
+<li><p>The processor-to-memory ratio is 1: 8. The encrypted memory accounts for about 50% of the memory</p></li>
+<li><p>Lowest price per GB of memory among instance types</p></li>
+<li><p>The network performance of an instance depends on its specification. A higher specification means a greater network forwarding performance and a higher private network bandwidth cap.</p></li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_UseCases_8">Use Cases</h4>
+<div class="paragraph">
+<p>These instances are ideal for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li><p>Data sharing and computing, protecting confidential data shared between different users or vendors</p></li>
+<li><p>Blockchain applications, enhancing the privacy and security of transactions and key storage, etc.</p></li>
+<li><p>Scenarios with high security and reliability requirements, such as finance, government agencies, medical care, etc.</p></li>
+<li><p>Confidential computing scenarios and data encryption applications</p></li>    
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Requirements_8">Requirements</h4>
+<div class="ulist">
+<ul>
+<li><p>Supports pay-as-you-go.</p></li>
+<li><p>Supports only VPC.</p></li>
+<li><p>See below for available M6ce specifications:</p></li>
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note: </p><p>If you use the key bound to hardware to encrypt data (such as SGX Sealing) in Intel SGX Enclave, you cannot decrypt the corresponding data once the host changes in the following scenarios. It is recommended that you back up data in the application layer to ensure the application reliability.
+Scenarios such as host failure, adjustment of instance types, no charges when shutdown, modification of instance placement group, etc., may lead to host changes.</p>
+</blockquote>
+<p>For more information on how to use security-enhanced memory optimized M6ce instances, see <a href="https://intl.cloud.tencent.com/document/product/213/45510">Building an SGX Confidential Computing Environment.</a> </p>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__a_href_instancetype_BackToTop_a_8">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="doc-table-wrap"><table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 5%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 5%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 15%;">
+<col style="width: 5%;">   
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Specification</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>vCPU</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Memory (GB)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Encrypted memory (GB)</p>
+</div></div></td>    
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Throughput (pps) (received and sent packets)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Number of connections</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Number of queues</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>CPU clock rate</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Notes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.MEDIUM16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>300,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>250,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.LARGE32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>600,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>500,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.2XLARGE64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1,200,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>7</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.4XLARGE128</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>128</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2,500,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>13</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.8XLARGE256</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>256</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>128</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>5,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>26</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.31MEDIUM428</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>62</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>428</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>214</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>10,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>48</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>50</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.31XLARGE856</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>124</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>856</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>428</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>19,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>48</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>100</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
 </tr>
 </tbody>
 </table></div></td>
