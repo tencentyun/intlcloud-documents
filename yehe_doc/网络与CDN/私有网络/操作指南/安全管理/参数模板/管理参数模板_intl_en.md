@@ -73,7 +73,7 @@ After creating a parameter template, you can directly import it when adding rule
 2. Click **Security** > **Security Group** on the left sidebar to access the management page.
 3. In the list, find the security group that needs to import the parameter template and click its ID to enter the details page.
 4. On the **Inbound/Outbound Rules** tab, click **Add Rule**.
-5. In the pop-up window, select the **Custom** type, select the created parameter template in **Source** and **Protocol Port**, and click **Complete**. For more information on how to add inbound/outbound rules, please see [Adding a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35513).
+5. In the pop-up window, select the **Custom** type, select the created parameter template in **Source** and **Protocol Port**, and click **Completed**. For more information on how to add inbound/outbound rules, please see [Adding a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35513).
 >?If you need to add a new IP address or protocol port in the future, you only need to add it to the corresponding IP address group or protocol port group, and there is no need to modify the security group rules or create another security group.
 >
  ![](https://main.qcloudimg.com/raw/3a06123b12ef4814c0c95e33418952cc.png)
