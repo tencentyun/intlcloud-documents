@@ -30,6 +30,9 @@ cdb_plan_cacheスイッチを追加することでプランキャッシュをオ
 
 cdb_plan_cache_statsスイッチがオンの場合は、情報が記録されることになるため、パフォーマンスに影響する場合があります。
 
+>?ユーザーは現在、上記パラメータのパラメータ値を直接変更することはできません。変更する場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)から変更することができます。
+>
+
 ## 関連ステータス説明
 show profileによってSQLの各実行段階のステータスを確認する際、SQLを実行してプランキャッシュがヒットした場合は、optimizing、statistics、preparingステータスが省略されます。
 
