@@ -35,7 +35,7 @@ Make sure you’ve [signed up for a Tencent Cloud account](https://intl.cloud.te
 ![](https://qcloudimg.tencent-cloud.cn/raw/7ec59dbff60a37870ef4f9cdaf2aff70.png)
  - Public network bandwidth: do not check <img src="https://main.qcloudimg.com/raw/50eef42428eb34dc35cf40995c9b7736.png" style="margin:-3px 0">.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f59fd4da95bd18e3f8585a1541d7547b.png)
- - Security Group: select **New security group** and configure it as instructed in [Configuring Security Groups](https://intl.cloud.tencent.com/document/product/213/15377).
+ - Security Group: select **Create security group** and configure it as instructed in [Configuring Security Groups](https://intl.cloud.tencent.com/document/product/213/15377).
 ![](https://qcloudimg.tencent-cloud.cn/raw/72584971b62015e38c9ad22da7ddd3d4.png)
 
 ### Step 3: apply for an EIP and bind it to the CVM instance
