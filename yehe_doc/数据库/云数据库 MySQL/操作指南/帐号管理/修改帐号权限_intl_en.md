@@ -3,8 +3,8 @@ You can manage the permissions of existing database accounts in the TencentDB fo
 
 ## Directions
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID or **Manage** in the **Operation** column to access the instance management page.
-2. Select the **Database Management** > **Manage Account** tab, find the account for which to modify the permissions, and click **Modify Permissions**.
-![](https://main.qcloudimg.com/raw/144f93c6415892d0fe828f3cf267c94e.png)
+2. Select the **Database Management** > **Account Management** tab, find the account for which to modify the permissions, and click **Modify Permissions**.
+![](https://qcloudimg.tencent-cloud.cn/raw/c791cf541807d81ef00270f648c6021e.png)
 3. In the pop-up dialog box, select or deselect permissions and click **OK** to complete the modification.
  - **Global Privileges**: grant global permissions to all databases in the instance.
  - **Object Level Privileges**: grant permissions to certain databases in the instance.
