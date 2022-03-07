@@ -14,9 +14,9 @@ Unless you have fully read and completely understand and accept all of the provi
 Tencent Cloud Weiling guarantees a 99% service availability. If such guarantee is not honored, you may get compensation as specified in Article 3 of this Agreement. 
 **2.1 Calculation method for service availability**
 The service availability of Tencent Cloud Weiling is determined on a service cycle basis. It is calculated from the average 5-minute error rate, which is calculated by dividing the sum of 5-minute error rates in a service cycle by the total number of 5-minute periods in the service cycle, i.e., service availability = (1 - sum of 5-minute error rates in a service cycle/total number of 5-minute periods in the service cycle) * 100%.
->!
->Total number of 5-minute periods in a service cycle = 12 * 24 * number of days in the service cycle.
->
+
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><p>Total number of 5-minute periods in a service cycle = 12 * 24 * number of days in the service cycle.</a></p>
+</blockquote>
 
 **2.2 Exclusions from compensation**
 Any service unavailability caused by the following shall not be entitled to compensation:
@@ -41,9 +41,9 @@ Any service unavailability caused by the following shall not be entitled to comp
 (1) Tencent Cloud will compensate you by **issuing vouchers (non-cash)**, which may only be used by you for purchasing the Service rather than other Tencent Cloud services and may not be transferred or gifted to any third parties.
 (2) If the Service fails to reach the service availability standard in a certain service month, you will be compensated as calculated for such service month, **and the aggregate liability of Tencent Cloud to you shall not exceed the service fees paid by you for the Service for such service month**  (the monthly service fees herein shall not include non-cash deductions made to the service fees through vouchers or coupons). 
 
->!
->For the purposes of this Agreement, a service month shall refer to each natural month included in the term for which you purchase the Service. For example, if you purchase the Service for two months, and the Service is activated on March 17, then the 1st service month will refer to the period from March 17 to March 31, the 2nd from April 1 to April 30, and the 3rd from May 1 to May 16. 
->
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><p>For the purposes of this Agreement, a service month shall refer to each natural month included in the term for which you purchase the Service. For example, if you purchase the Service for two months, and the Service is activated on March 17, then the 1st service month will refer to the period from March 17 to March 31, the 2nd from April 1 to April 30, and the 3rd from May 1 to May 16. </a></p>
+</blockquote>
+
 
 <table>
 <thead>
@@ -66,6 +66,7 @@ Any service unavailability caused by the following shall not be entitled to comp
 <td>100% of the monthly service fees </td>
 </tr>
 </tbody></table>
+
 **3.2 Time limit for submitting a compensation claim**
 3.2.1. If the Service fails to reach the service availability standard in a certain service month, you may submit a claim for compensation **only by contacting your Tencent Cloud rep by email** after the fifth (5) business day of the month following such service month. Tencent Cloud will review your claim for compensation. In case of any dispute over the calculation of the service availability for a certain service month, **the Parties agree that the records on the backend of Tencent Cloud shall apply.**
 3.2.2. **You shall submit any claim for compensation no later than sixty (60) natural days after the end of the service month in which the Service fails to reach the service availability standard.** If you fail to submit a claim for compensation within such period, or if you submit a claim for compensation after such period, or if you submit a claim for compensation not pursuant to this Agreement, you will be deemed to have waived your claim for compensation and your other claims against Tencent Cloud, and Tencent Cloud shall have the right not to accept your claim for compensation or compensate you.  
