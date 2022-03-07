@@ -17,11 +17,11 @@ Check whether the public network address of the instance is enabled and correctl
  >- If the **Basic Info** section displays the public network address and port, the public network address has been enabled.
  >- For more information on the restrictions on enabling the public network address, please see [Connecting to MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37788).
  >
-![](https://main.qcloudimg.com/raw/eb085d53fb6f569d763412bba5afcf11.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/40c8d7d175e9209992609daa3357cbf5.png)
 3. [](id:step3)Check whether the public network address entered on the client is the same as that of the instance.
  - If so, please proceed to [step 4](#step4).
  - If not, please copy the "public network address" as shown in the red box in the screenshot below, paste it on the client, and then proceed to [step 4](#step4).
- ![](https://main.qcloudimg.com/raw/27246f1777099c9e34b8dd26a89693eb.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/b6ebdab6bc0be840f1c79f983e3db9d6.png)
 4. [](id:step4)Ping the public network address and check whether the DNS resolution is normal.
  - If so, the specific network latency will be returned, and the troubleshooting ends.
  - If not, the `Unknown host` error will be returned. In this case, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
