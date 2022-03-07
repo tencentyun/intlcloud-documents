@@ -25,7 +25,7 @@ You can create a parameter template, modify the parameter values, and apply the 
 ## Applying a Parameter Template to Instances
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/mysql/parameter-templates) and select **Parameter Templates** on the left sidebar.
 2. In the parameter template list, locate the desired template and click **Apply to Instances** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/4598668de63c22bcbef5f7a20b262f02.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/adbbd3a6bca759b7e98ce1a8252cb900.png)
 3. On the displayed page, specify the execution mode and instances, make sure that all parameter values are correct, and click **Submit**.
  - **Execution Mode**: **Immediate execution** is selected by default. If you select **During maintenance window**, the parameter modification task will be executed and take effect during the [instance maintenance period](https://intl.cloud.tencent.com/document/product/236/10929).
  - **MySQL Instance**: select one or more instances that need to apply the parameter template in the specified region.
