@@ -29,6 +29,9 @@ create table t3(a int, b int, c int, unique key idx3(a));
 | ----------------------- | ---- | ---- | ----- | ---------- | ------------------- |
 | cdb_opt_outline_enabled | yes  | bool | fasle | true/false | outline 기능 활성화 여부 |
 
+>?사용자는 상기 매개변수의 값을 직접 수정할 수 없습니다. 필요 시 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 수정이 가능합니다.
+
+
 ### OUTLINE 바인딩
 OUTLINE을 직접 바인딩하는 방법은 하나의 SQL을 다른 SQL로 교체하는 것이나, SQL의 의미는 바뀌지 않았으며, 옵티마이저에게 실행 방법을 알려주기 위해 일부 HINT 정보만 추가되었습니다.
 구문 형식: `outline "sql" set outline_info "outline";`이며, outline_info 뒤의 문자열은 "OUTLINE:"으로 시작해야 하고, "OUTLINE:" 뒤의 문자열은 HINT를 추가한 후의 SQL입니다. 예를 들어 SQL `select *from t1, t2 where t1.a = t2.a`의 t2 테이블에 a 열의 인덱스를 추가합니다.
