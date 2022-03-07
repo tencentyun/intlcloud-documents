@@ -1,6 +1,6 @@
 ### How do I view binlogs?
-Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click an instance ID/name to access the management page. On the **Backup and Restore** > **Log Backup List** tab, locate the desired binlog and click **Download** to view it.
-![](https://main.qcloudimg.com/raw/b411a99afeae2858ae578696ad9d66af.png)
+Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click an instance ID/name to access the management page. On the **Backup and Restoration** > **Log Backup List** tab, locate the desired binlog and click **Download** to view it.
+![](https://qcloudimg.tencent-cloud.cn/raw/e913a1ed725ca8b84280b090129c8c40.png)
 
 ### Why does my instance have no binlog?
 Probably because data is written slowly into the binlog, which, accordingly, has not been split yet. A non-split binlog will not be displayed in the TencentDB for MySQL console.
@@ -17,5 +17,5 @@ You can log in to the database and run the `flush logs` command, and then check 
 Log in to the database and run the `flush logs` command, and then check the binlog in the TencentDB for MySQL console three minutes later.
 
 ### How do I back up binlogs? 
-The binlog is automatically backed up every day. To set the log backup retention period, you can log in to the TencentDB for MySQL console and click an instance ID/name to access the management page. On the **Backup and Restore** > **Log Backup List** tab, click **Auto Backup Settings** and set the log backup retention period in the pop-up dialog box.
+The binlog is automatically backed up every day. To set the log backup retention period, you can log in to the TencentDB for MySQL console and click an instance ID/name to access the management page. On the **Backup and Restoration** > **Log Backup List** tab, click **Auto-Backup Settings** and set the log backup retention period in the pop-up dialog box.
 
