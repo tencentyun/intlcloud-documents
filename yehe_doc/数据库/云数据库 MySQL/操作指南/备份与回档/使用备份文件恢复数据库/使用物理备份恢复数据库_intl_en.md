@@ -21,7 +21,7 @@ You can download data backups and log backups of TencentDB for MySQL instances i
 >?Each IP can have up to 10 download links by default, with a download speed limit of 20–30 Mbps each.
 >
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
-2. On the **Backup and Restore** > **Data Backup List** tab, locate the backup file to be downloaded and click **Download** in the **Operation** column.
+2. On the **Backup and Restoration** > **Data Backup List** tab, locate the backup file to be downloaded and click **Download** in the **Operation** column.
 3. Copy the download address in the pop-up dialog box, [log in to the Linux CVM in the same VPC as the TencentDB instance](https://intl.cloud.tencent.com/document/product/213/10517), and run `wget` to download the file over the high-speed private network.
 >?
 >- You can also click **Download** to download it directly. However, this may take longer.
