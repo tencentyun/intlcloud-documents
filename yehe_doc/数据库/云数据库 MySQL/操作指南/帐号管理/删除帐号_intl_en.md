@@ -7,7 +7,7 @@ In order to disable an existing database account, it must be deleted in the Tenc
 ## Directions
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the "Operation" column to enter the instance management page.
 2. Select the **Database Management** > **Manage Account** tab, find the account to be deleted, and select **More** > **Delete Account**.
-![](https://main.qcloudimg.com/raw/8925fb7e9e11aa87466a5c9134773689.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/602d9e1d3471e28d89a6b95c2e0be272.png)
 3. In the pop-up dialog box, click **OK** to delete the account.
 ![](https://main.qcloudimg.com/raw/c1680eda4e1abd7fb7b16d061475ada7.png)
 
