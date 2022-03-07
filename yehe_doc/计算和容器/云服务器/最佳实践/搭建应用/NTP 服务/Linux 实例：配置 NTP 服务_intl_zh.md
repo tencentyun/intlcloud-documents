@@ -57,13 +57,6 @@ service ntpd status
 ```
 返回类似如下结果，表示 ntpd 状态正常。
 ![ntpd status](https://main.qcloudimg.com/raw/321e56d0f7797f382d9f6903c0315f96.png)
-- 执行以下命令，查看 NTP 是否正常启动以及是否配置到正确的 NTP 时钟源服务器。
-```
-ntpstat
-```
-输出当前 NTP 时钟源服务器的 IP 地址。此 IP 地址应为上述配置的 NTP 时钟源服务器的 IP 地址。如下图所示：
-![](https://main.qcloudimg.com/raw/a99f5da438bafb1d148e9b033f48afad.png)
-您也可以通过执行 `nslookup 域名` 命令，获取域名对应的 IP 地址。
 - 执行以下命令，获取更详细的 NTP 服务信息。
 ```
 ntpq -p
