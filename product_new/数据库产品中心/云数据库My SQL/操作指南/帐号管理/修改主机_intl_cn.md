@@ -5,7 +5,7 @@
 1. 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb)。
 2. 在实例列表中，选择需要修改的实例，单击实例名或【操作】列的【管理】，进入实例管理页面。
 3. 选择【数据库管理】>【帐号管理】页签，找到需要修改主机的帐号，选择【更多】>【修改主机】。
-![](https://main.qcloudimg.com/raw/9f6a4add3bde860cde8c9565f4f0a3d5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ce35c100d385cc7df8f29e6a0b830ada.png)
 4. 在弹出的修改主机对话框中，输入新主机地址，单击【确定】即可修改帐号所授权的主机地址。
 >?主机地址支持 IP 形式的地址，如需允许所有客户端使用该数据库帐号访问数据库，可填写%。
 >
