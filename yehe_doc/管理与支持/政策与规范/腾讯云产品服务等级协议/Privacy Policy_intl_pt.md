@@ -573,3 +573,4 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 19.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
 20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
 21.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
+22.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
