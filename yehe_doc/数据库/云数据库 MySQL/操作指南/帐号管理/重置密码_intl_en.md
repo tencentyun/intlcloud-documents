@@ -7,8 +7,8 @@ If you forgot your database account password or need to change it while using Te
 
 ## Directions
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the "Operation" column to enter the instance management page.
-2. Select **Database Management** > **Manage Account**, find the account for which to reset the password, and select **More** > **Reset Password**.
-![](https://main.qcloudimg.com/raw/f8ff03d7b57ab9c96231f98920704441.png)
+2. Select **Database Management** > **Account Management**, find the account for which to reset the password, and select **More** > **Reset Password**.
+![](https://qcloudimg.tencent-cloud.cn/raw/cbb345bf5ecd9dfa0e4b117c698db6d8.png)
 3. In the pop-up dialog box, enter and confirm the new password and then click **OK**.
 >?The database password should contain 8–64 characters in at least two of the following character types: letters, digits, and special symbols (_+-&=!@#$%^*()).
 > 
