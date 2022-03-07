@@ -11,8 +11,8 @@ When an instance is returned, it will be retained in the recycle bin for a perio
 
 <span id = "zhanghaomima"></span>
 ### What if I accidentally delete an account or forget the password?
-- If you delete an account accidentally, you can log in to the [TencentDB for MySQL console](https://console.intl.cloud.tencent.com/cdb), click an instance ID to enter the instance management page, and create an account by clicking **Database Management** > **Manage Account** > **Create** or by using an SQL statement. For more information, please see [Creating an Account](https://intl.cloud.tencent.com/document/product/236/31900).
-- If you forget the root password, find the corresponding account in **Database Management** > **Manage Account** and click **More** > **Reset Password** in the **Operation** column. For more information, please see [Resetting Password](https://intl.cloud.tencent.com/document/product/236/31901).
+- If you delete an account accidentally, you can log in to the [TencentDB for MySQL console](https://console.intl.cloud.tencent.com/cdb), click an instance ID to enter the instance management page, and create an account by clicking **Database Management** > **Account Management** > **Create** or by using an SQL statement. For more information, please see [Creating an Account](https://intl.cloud.tencent.com/document/product/236/31900).
+- If you forget the root password, find the corresponding account in **Database Management** > **Account Management** and click **More** > **Reset Password** in the **Operation** column. For more information, please see [Resetting Password](https://intl.cloud.tencent.com/document/product/236/31901).
 The above operations can also be performed through the [ModifyAccountPassword](https://intl.cloud.tencent.com/document/product/236/17497) API.
 
 ### What is the maximum number of connections to TencentDB for MySQL? How do I modify it?
