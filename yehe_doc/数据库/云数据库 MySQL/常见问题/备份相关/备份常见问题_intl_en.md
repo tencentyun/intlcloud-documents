@@ -26,7 +26,7 @@ For prices of backup capacity that exceeds the free tier, please see [Backup Spa
 
 <span id = "bfwt2"></span>
 ### How can I reduce the backup capacity cost?
-- Delete manual backups that are no longer used (you can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID to access the instance’s management page, and delete manual backups on the **Backup and Restore** tab). 
+- Delete manual backups that are no longer used (you can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID to access the instance’s management page, and delete manual backups on the **Backup and Restoration** tab). 
 - Reduce the frequency of automatic data backup for non-core businesses (you can adjust the backup cycle and retention period in the console, and the frequency should be at least twice a week).
 >?The [rollback feature](https://intl.cloud.tencent.com/document/product/236/7276) relies on the backup cycle and retention days of data backups and log backups (binlog). Rollback will be affected if you reduce the automatic backup frequency and retention period. Please select the parameters as needed.
 >
@@ -34,15 +34,15 @@ For prices of backup capacity that exceeds the free tier, please see [Backup Spa
 
 | Business Scenario             | Recommended Backup Retention Period                                                 |
 | -------------------- | ------------------------------------------------------------ |
-| Core businesses             | 7-732 days                                              |
+| Core businesses             | 7-1830 days                                              |
 | Non-core and non-data businesses | 7 days                                                      |
 | Archive businesses             | 7 days. We recommend that you manually back up data based on your business needs and delete the backups promptly after use |
 | Testing businesses             | 7 days. We recommend that you manually back up data based on your business needs and delete the backups promptly after use |
 
 <span id = "bfwt3"></span>
 ### How do I configure automatic backup?
-You can configure it on the **Backup and Restore** tab in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
-![](https://main.qcloudimg.com/raw/4df9e17b3d0d23d3e74f284e1e5efacd.png)
+You can configure it on the **Backup and Restoration** tab in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
+![](https://qcloudimg.tencent-cloud.cn/raw/053719ca0c4898c87bad068cbf70651c.png)
 
 <span id = "bfwt4"></span>
 ### How do I back up data on my own?
@@ -67,7 +67,7 @@ No. We recommend that you [use DTS to migrate a MySQL instance](https://intl.clo
 ### Can I delete backups manually?
 - Automatic backups cannot be deleted manually. You can set the retention period for automatic backups, and the backups will be deleted automatically when they expire.
 - Manual backups can be manually deleted from the backup list in the console. Manual backups can be retained permanently as long as they are not deleted.
- 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID to access the instance’s management page, and select the **Backup and Restore** tab.
+ 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID to access the instance’s management page, and select the **Backup and Restoration** tab.
  2. Click **Delete** in the **Operation** column in the backup list.
 
 <span id = "bfwt9"></span>
@@ -76,7 +76,7 @@ Backup tasks cannot be canceled.
 
 <span id = "bfwt10"></span>
 ### What should I do if the backup download is slow?
-We recommend that you copy the download address on the **Backup and Restore** tab in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command for high-speed download over the private network.
+We recommend that you copy the download address on the **Backup and Restoration** tab in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command for high-speed download over the private network.
 >?`wget` command format: wget -c 'backup file download address' -O custom filename.xb
 
 <span id = "bfwt11"></span>
@@ -96,7 +96,7 @@ Please check the automatic backup time you configured. If the instance is perfor
 
 <span id = "bfwt14"></span>
 ### Why cannot I logically back up and download by tables?
-After the [backup](https://intl.cloud.tencent.com/document/product/236/37796) feature was upgraded, both logical and physical backups adopted the new compression algorithm, making some download features currently unavailable. To perform logical backups by tables, you can log in to the TencentDB for MySQL console, click an instance ID to access the instance’s management page, click **Manual Backup** on the **Backup and Restore** tab, and select **Logical cold backup** > **Specify table** in the pop-up dialog box. You can also download the logical backup file from the backup list after the backup is completed.
+After the [backup](https://intl.cloud.tencent.com/document/product/236/37796) feature was upgraded, both logical and physical backups adopted the new compression algorithm, making some download features currently unavailable. To perform logical backups by tables, you can log in to the TencentDB for MySQL console, click an instance ID to access the instance’s management page, click **Manual Backup** on the **Backup and Restoration** tab, and select **Logical cold backup** > **Specify table** in the pop-up dialog box. You can also download the logical backup file from the backup list after the backup is completed.
 
 <span id = "bfwt15"></span>
 ### Why can’t a downloaded backup file be unpacked/decompressed with tar?
