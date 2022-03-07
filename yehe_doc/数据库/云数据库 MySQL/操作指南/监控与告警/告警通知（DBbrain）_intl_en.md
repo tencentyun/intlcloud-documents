@@ -12,7 +12,7 @@ Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cd
 ![](https://main.qcloudimg.com/raw/22f1e14880499e6d18ff38f019b74d2d.png)
 
 ### Option 2
-Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), select **Instance List**, **Task List**, **Parameter Template**, **Recycle Bin** or **Placement Group** on the left sidebar, and click **Exception Alarm** in the top-right corner to expand the list of historical exception alarm messages. The number of alarms generated in the instances under your account is displayed next to the button.
+Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), select **Instance List**, **Task List**, **Parameter Templates**, **Recycle Bin** or **Placement Group** on the left sidebar, and click **Exception Alarm** in the top-right corner to expand the list of historical exception alarm messages. The number of alarms generated in the instances under your account is displayed next to the button.
 ![](https://main.qcloudimg.com/raw/18bda2b422ce5c221001f885bd8279a4.png)
 
 In the expanded list of historical exception alarm messages, you can view all pushed exception alarm messages. You can view them by region and click a message to view the diagnosis details of the exception alarm event.
