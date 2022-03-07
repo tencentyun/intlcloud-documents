@@ -33,6 +33,7 @@ Valid values:
 | Parameter                                  | Effective Immediately | Type    | Default Value | Valid Values/Value Range      | Description                                                         |
 | ----------------------------- | ---- | ------ | ---- | ---------------- | ---------------- |
 | innodb_trx_schedule_algorithm | Yes  | string | auto | [auto,fcfs,cats] | Specify the transaction scheduling algorithm |
-
+>?Currently, you cannot directly modify the values of the above parameters. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>
 In MySQL 8.0, `auto` is the only valid value.
 
