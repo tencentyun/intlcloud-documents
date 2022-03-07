@@ -66,6 +66,7 @@ Any service unavailability caused by the following shall not be entitled to comp
 <td>100% of the monthly service fees </td>
 </tr>
 </tbody></table>
+
 **3.2 Time limit for submitting a compensation claim**
 3.2.1. If the Service fails to reach the service availability standard in a certain service month, you may submit a claim for compensation **only by contacting your Tencent Cloud rep by email** after the fifth (5) business day of the month following such service month. Tencent Cloud will review your claim for compensation. In case of any dispute over the calculation of the service availability for a certain service month, **the Parties agree that the records on the backend of Tencent Cloud shall apply.**
 3.2.2. **You shall submit any claim for compensation no later than sixty (60) natural days after the end of the service month in which the Service fails to reach the service availability standard.** If you fail to submit a claim for compensation within such period, or if you submit a claim for compensation after such period, or if you submit a claim for compensation not pursuant to this Agreement, you will be deemed to have waived your claim for compensation and your other claims against Tencent Cloud, and Tencent Cloud shall have the right not to accept your claim for compensation or compensate you.  
