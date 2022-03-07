@@ -57,13 +57,6 @@ service ntpd status
 ```
 以下のような結果が返されると、NTPDステータスが正常であることを意味します。
 ![ntpd status](https://main.qcloudimg.com/raw/321e56d0f7797f382d9f6903c0315f96.png)
-- 次のコマンドを実行して、NTPが正常に起動するか、正しいNTPクロックソースサーバに設定されているかどうかを確認します。
-```
-ntpstat
-```
-現在のNTPクロックソースサーバのIPアドレスを出力します。このIPアドレスは、上記設定されたNTPクロックソースサーバのIPアドレスでなければなりません。以下に示すように。
-![](https://main.qcloudimg.com/raw/a99f5da438bafb1d148e9b033f48afad.png)
-また、`nslookup ドメイン名`コマンドを実行して、ドメイン名に対応するIPアドレスを取得することもできます。
 次のコマンドを実行して、より詳細なNTPサービス情報を取得します。
 ```
 ntpq -p
