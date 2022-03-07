@@ -4,16 +4,16 @@
 
 ## 内网连接检查
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，选择需要排查的实例，单击实例 ID，进入实例管理页面。
-2. 在实例管理页面，选择【连接检查】>【内网检查】页面。
-3. 检查内网连接问题时，需单击【添加访问此实例的云主机】，添加访问此 MySQL 的 CVM。
+2. 在实例管理页面，选择**连接检查**>**内网检查**页面。
+3. 检查内网连接问题时，需单击**添加访问此实例的云主机**，添加访问此 MySQL 的 CVM。
 >?选择 CVM 时，默认仅提供同地域 CVM，如果您需要跨地域访问，请通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 实现网络互通。
 >
-4. 添加完成后，单击【开始检查】，检查任务完成后，会生成检查报告。
-![](https://main.qcloudimg.com/raw/e233a1cd63718cfdc31347da83153fd8.png)
+4. 添加完成后，单击**开始检查**，检查任务完成后，会生成检查报告。
+![](https://qcloudimg.tencent-cloud.cn/raw/654edb2725bfa39830429678c3927460.png)
 
-5. 在检查报告的“状态”列，单击【查看报告】可查看检查结果。
- - 若检查状态为【正常】，则表示 CVM 可以通过内网正常访问该 MySQL 实例。
- - 若检查状态为【异常】，则表示 CVM 无法通过内网正常访问该 MySQL 实例，请参考处理建议调整后再进行连接。
+5. 在检查报告的“状态”列，单击**查看报告**可查看检查结果。
+ - 若检查状态为**正常**，则表示 CVM 可以通过内网正常访问该 MySQL 实例。
+ - 若检查状态为**异常**，则表示 CVM 无法通过内网正常访问该 MySQL 实例，请参考处理建议调整后再进行连接。
 <table>
 <thead><tr><th>检查项</th><th>异常及处理方法</th></tr></thead>
 <tbody><tr>
@@ -36,17 +36,17 @@
 <td>MySQL 安全组策略</td>
 <td>检测到您 MySQL 实例所绑定安全组的<strong>入站规则</strong>未放通对 IP 端口的访问，请参见 <a href="https://intl.cloud.tencent.com/document/product/236/37864#maqzpzyw">MySQL 安全组配置有误</a> 放通入站规则</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/b183b27af9c6b5a28cdb708f8a5c44d8.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/26017a06eee625078778be7d49a598cf.png">
 
 ## 外网连接检查
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，选择需要排查的实例，单击实例 ID，进入实例管理页面。
-2. 在实例管理页面，选择【连接检查】>【外网检查】页面。
-2. 检查外网连接问题时，需单击【添加访问此实例的外网服务器】，添加访问此 MySQL 实例的外网服务器。
-3. 添加完成后，单击【开始检查】，检查任务完成后，会生成检查报告。
-![](https://main.qcloudimg.com/raw/43d9e61c2052797740e7ef6817251f5e.png)
-4. 在检查报告的“状态”列，单击【查看报告】可查看检查结果。
- - 若检查状态为【正常】，则表示外网服务器可以通过外网正常访问该 MySQL 实例。
- - 若检查状态为【异常】，则表示外网服务器无法通过外网正常访问该 MySQL 实例，请参考处理建议调整后再进行连接。
+2. 在实例管理页面，选择**连接检查**>**外网检查**页面。
+2. 检查外网连接问题时，需单击**添加访问此实例的外网服务器**，添加访问此 MySQL 实例的外网服务器。
+3. 添加完成后，单击**开始检查**，检查任务完成后，会生成检查报告。
+![](https://qcloudimg.tencent-cloud.cn/raw/f778cf24c66a1b3dbbacc744cddae743.png)
+4. 在检查报告的“状态”列，单击**查看报告**可查看检查结果。
+ - 若检查状态为**正常**，则表示外网服务器可以通过外网正常访问该 MySQL 实例。
+ - 若检查状态为**异常**，则表示外网服务器无法通过外网正常访问该 MySQL 实例，请参考处理建议调整后再进行连接。
 <table>
 <thead><tr><th>检查项</th><th>异常及处理方法</th></tr></thead>
 <tbody><tr>
@@ -55,4 +55,4 @@
 <td>外网开通状态</td>
 <td>检测到您的 MySQL 实例未开启外网，可参考 <a href="https://intl.cloud.tencent.com/document/product/236/37788">开启外网</a></td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/01998fb06fe6d8a762dd5a2a9a5eb26c.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c2eca23c3ceba00e8a890f9eea682c52.png">
