@@ -76,6 +76,8 @@ The following DDL syntaxes are supported:
 | innodb_column_compression_threshold     | Yes  | Integer | 256  | [0, 0xffffffff] | Column compression threshold in bytes. Value range: 1–0xffffffff. Only data whose length is at or above this threshold will be compressed; otherwise, the original data will stay unchanged with only a compression header added. |
 | innodb_column_compression_pct           | Yes  | Integer | 100  | [1, 100]        | Column compression ratio in percentages. Value range: 1–100. Data will be compressed only if the **data size after compression/data size before compression** is below this value; otherwise, the original data will stay unchanged with only a compression header added. |
 
+>?Currently, you cannot directly modify the values of the above parameters. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>
 
 ### New status description
 

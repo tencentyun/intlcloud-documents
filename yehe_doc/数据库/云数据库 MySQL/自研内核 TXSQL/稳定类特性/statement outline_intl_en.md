@@ -29,6 +29,9 @@ create table t3(a int, b int, c int, unique key idx3(a));
 | ----------------------- | ---- | ---- | ----- | ---------- | ------------------- |
 | cdb_opt_outline_enabled | Yes  | bool | false | true/false | Whether to enable the outline feature. |
 
+>?Currently, you cannot directly modify the values of the above parameters. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>
+
 ### Binding outline
 To bind an outline, replace the SQL statement with another where the SQL syntax is not changed but some hint information is added to tell the optimizer how to execute the statement.
 The syntax is in the format of `outline "sql" set outline_info "OUTLINE";`. Note that the string after `outline_info` must start with `"OUTLINE:"`, which is followed by the SQL statement with the hint information added. For example, you can add the index in column `a` to table `t2` in the SQL statement `select *from t1, t2 where t1.a = t2.a` as follows:

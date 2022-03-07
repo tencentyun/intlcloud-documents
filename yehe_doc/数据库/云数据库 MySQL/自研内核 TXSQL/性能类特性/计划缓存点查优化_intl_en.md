@@ -30,6 +30,9 @@ You can run the `show cdb_plan_cache` command to query information about executi
 
 After `cdb_plan_cache_stats` is enabled, cache hit information will be recorded, affecting database performance.
 
+>?Currently, you cannot directly modify the values of the above parameters. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>
+
 ## SQL Execution Status
 You can run `show profile` to show the status at each stage of SQL statement execution. But when the execution plan cache is hit, the status of `optimizing`, `statistics`, and `preparing` will be omitted.
 

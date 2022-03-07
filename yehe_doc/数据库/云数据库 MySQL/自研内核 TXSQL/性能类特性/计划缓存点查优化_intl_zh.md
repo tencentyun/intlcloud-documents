@@ -30,6 +30,9 @@ MySQL 8.0 20210830 版本只对（UK&PK）点查起作用，我们将会在后�
 
 当 cdb_plan_cache_stats 开关打开时，相当于信息记录，将会对性能产生影响。
 
+>?用户目前无法直接修改以上参数的参数值，如需修改可 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行修改。
+
+
 ## 相关状态说明
 在通过 show profile 查看 SQL 执行各阶段状态时，当执行 SQL 命中计划缓存，optimizing、statistics 和 preparing 状态将被省略。
 

@@ -57,13 +57,6 @@ service ntpd status
 ```
 아래와 같은 결과가 출력된다면 NTPD의 상태가 정상임을 의미합니다.
 ![ntpd status](https://main.qcloudimg.com/raw/321e56d0f7797f382d9f6903c0315f96.png)
-- 다음 명령어를 실행하여 NTP가 정상적으로 실행되고 있는지, 올바른 NTP 시계 원본 서버가 설정되어 있는지 확인합니다.
-```
-ntpstat
-```
-현재 NTP 시계 원본 서버의 IP 주소를 출력합니다. 아래 이미지와 같이 해당 IP 주소가 위에서 설정한 NTP 시계 원본 서버의 IP 주소여야 합니다.
-![](https://main.qcloudimg.com/raw/a99f5da438bafb1d148e9b033f48afad.png)
-또는 `nslookup 도메인` 명령어를 실행하여 도메인에 해당하는 IP 주소를 받을 수 있습니다.
 - 다음 명령어를 실행하여 더 자세한 NTP 서비스 정보를 받을 수 있습니다.
 ```
 ntpq -p

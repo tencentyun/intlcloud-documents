@@ -57,13 +57,6 @@ service ntpd status
 ```
 If the following result is returned, the ntpd status is normal.
 ![ntpd status](https://main.qcloudimg.com/raw/321e56d0f7797f382d9f6903c0315f96.png)
-- Run the following command to check whether NTP has been started normally and configured to the correct NTP clock source server.
-```
-ntpstat
-```
-The IP address of the current NTP clock source server that was configured earlier should be returned, as shown below:
-![](https://main.qcloudimg.com/raw/a99f5da438bafb1d148e9b033f48afad.png)
-You can also get the IP address corresponding to the domain name by running the command `nslookup domain name`.
 - Run the following command to get more detailed NTP service information.
 ```
 ntpq -p

@@ -76,6 +76,8 @@ CREATE TABLE t1(
 | innodb_column_compression_threshold     | Yes  | Integer | 256  | [0, 0xffffffff] | 칼럼 압축에 사용되는 압축 임계값. 최소값: 1, 최대값: 0xffffffff, 단위: 바이트. 길이가 이 값 이상이면 데이터가 압축되며, 그렇지 않으면 원본 데이터가 변경되지 않고 그대로 유지되고 압축 헤더만 추가됩니다. |
 | innodb_column_compression_pct           | Yes  | Integer | 100  | [1, 100]        | 칼럼 압축에 사용되는 압축률. 최소값: 1, 최대값: 100. 단위: 백분율. **압축 후 데이터 크기 / 압축 전 데이터 크기**가 이 값보다 작으면 데이터가 압축되며, 그렇지 않으면 원본 데이터가 변경되지 않고 그대로 유지되고 압축 헤더만 추가됩니다. |
 
+>?사용자는 상기 매개변수의 값을 직접 수정할 수 없습니다. 필요 시 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 수정이 가능합니다.
+
 
 ### 상태 설명 추가
 
