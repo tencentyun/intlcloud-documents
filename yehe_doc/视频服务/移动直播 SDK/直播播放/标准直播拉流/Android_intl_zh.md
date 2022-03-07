@@ -12,7 +12,6 @@
 |---------|---------|---------|---------|
 |FLV |成熟度高、高并发无压力 |需集成 SDK 才能播放 |2s - 3s |
 |RTMP |延迟较低 |高并发情况下表现不佳 |1s - 3s |
-|HLS(m3u8) |手机浏览器支持度高 |延迟非常高 |10s - 30s |
 |WebRTC |延迟最低 |需集成 SDK 才能播放 |< 1s |
 
 >?标准直播与快直播计费价格不同，更多计费详情请参见 [标准直播计费](https://intl.cloud.tencent.com/document/product/267/2818) 和 [快直播计费](https://intl.cloud.tencent.com/document/product/267/39969)。
@@ -26,8 +25,8 @@
 
 | 所属平台 |                         GitHub 地址                          |
 | :------: | :----------------------------------------------------------: |
-|   iOS    | [Github](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC) |
-| Android  | [Github](https://github.com/tencentyun/MLVBSDK/tree/master/Android/MLVB-API-Example) |
+|   iOS    | [Github](https://github.com/LiteAVSDK/Live_iOS/tree/main/MLVB-API-Example-OC) |
+| Android  | [Github](https://github.com/LiteAVSDK/Live_Android/tree/main/MLVB-API-Example) |
 
 ## 对接攻略
 [](id:step1)
