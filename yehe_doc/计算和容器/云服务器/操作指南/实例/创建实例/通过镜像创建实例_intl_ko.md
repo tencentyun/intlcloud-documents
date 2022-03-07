@@ -15,13 +15,13 @@
 
 ## 작업 순서
 
-1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/instance/index?rid=1)에 로그인합니다.
+1. **CVM 콘솔**(https://console.cloud.tencent.com/cvm/instance/index?rid=1)에 로그인합니다.
 2. 왼쪽 메뉴의 [Images]를 클릭하여 이미지 관리 페이지에 접속합니다.
 3. 이미지 관리 페이지 상단의 상태에서 리전을 선택합니다.
 4. 이미지의 출처에 따라 탭을 선택하여 이미지 리스트 인터페이스에 접속합니다.
- - [Public Images] 탭: 공용 이미지 인터페이스로 이동합니다.
- - [Custom Image] 탭: 사용자 정의 이미지 인터페이스로 이동합니다.
- - [Shared Image] 탭: 공유 이미지 인터페이스로 이동합니다.
+ - **Public Images** 탭: 공용 이미지 인터페이스로 이동합니다.
+ - **Custom Image** 탭: 사용자 정의 이미지 인터페이스로 이동합니다.
+ - **Shared Image** 탭: 공유 이미지 인터페이스로 이동합니다.
 5. 사용 대기 중인 이미지의 작업 열에서 [Create Instance]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/4c5806f49da53595d31ad07662bf363a.png)
 6. 팝업된 알림 상자에서 [OK]를 클릭합니다.
