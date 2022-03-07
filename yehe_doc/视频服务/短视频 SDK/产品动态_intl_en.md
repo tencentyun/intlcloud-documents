@@ -1,3 +1,20 @@
+## January 2022
+<table>
+<tr><th width="20%">Update</th><th width="50%">Description</th> <th width="15%">Release Date</th> <th width="15%">Document</th>
+</tr><tr>
+<td>Version 9.5</td>
+<td ><ul style="margin:0;">
+<li>iOS: fixed the issue where some triple split-screen videos cannot be previewed after shooting.</li>
+<li>iOS: fixed the issue where the SDK quits unexpectedly when videos are played during editing in certain scenarios.</li>
+<li>Android: fixed the issue where, when users shoot 1080p videos, beauty filters do not take effect due to failure to detect faces.</li>
+</ul>
+</td>
+ <td>2022-01-11</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
+</tr></table>
+
+
+
 ## December 2021
 <table>
 <tr><th width="20%">Update</th><th width="50%">Description</th> <th width="15%">Release Date</th> <th width="15%">Document</th>
@@ -303,7 +320,7 @@
 </thead>
 <tbody><tr>
 <td>Version 7.5</td>
-<td>
+<td >
 iOS: fixed the problem of watermarks flashing towards the end of UGSV playback.
 </td>
  <td>2020-07-31</td> 

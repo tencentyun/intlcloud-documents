@@ -1,3 +1,8 @@
+### Version 9.5 Released on January 11, 2022
+- iOS: fixed the issue where some triple split-screen videos cannot be previewed after shooting.
+- iOS: fixed the issue where the SDK quits unexpectedly when videos are played during editing in certain scenarios.
+- Android: fixed the issue where, when users shoot 1080p videos, beauty filters do not take effect due to failure to detect faces.
+
 ### Version 9.4 Released on December 9, 2021
 - iOS: fixed the issue where, when animated effects are enabled, the effects are not applied to the videos shot.
 - Android: fixed the issue where video editing does not support outputting 1080p videos.
