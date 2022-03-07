@@ -30,6 +30,9 @@ MySQL 8.0 20210830 버전은 (UK&PK) 점검에 대해서만 작동됩니다. 이
 
 cdb_plan_cache_stats가 활성화된 경우, 정보 기록에 해당하며 성능에 영향을 미칩니다.
 
+>?사용자는 상기 매개변수의 값을 직접 수정할 수 없습니다. 필요 시 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 수정이 가능합니다.
+
+
 ## 관련 상태 설명
 show profile을 통해 SQL 실행의 각 단계의 상태를 조회할 때, SQL 히트 플랜 캐시를 실행하면 optimizing, statistics, preparing 상태가 생략됩니다.
 
