@@ -13,7 +13,7 @@ You can view and modify certain parameters and query the parameter modification 
 ![](https://main.qcloudimg.com/raw/82c535bd50543645831988ca2e9b688e.png)
 3. Locate the desired parameters, and modify their values in the **Current Value** column. After confirming that everything is correct, click **Confirm Modification**.
 ![](https://main.qcloudimg.com/raw/5307fbeef4b1fccef478ab7fd57b3167.png)
-4. In the pop-up window, select the **execution mode** and click **OK**.
+4. In the pop-up window, select the **Execution Mode** and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
 >- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
@@ -25,7 +25,7 @@ You can view and modify certain parameters and query the parameter modification 
 ![](https://main.qcloudimg.com/raw/4687ed705274b76ec92c43b7f9d448ab.png)
 3. Modify the value within the restrictions stated in the **Acceptable Values** column and click <img src="https://main.qcloudimg.com/raw/1f4c7f2e0744bc601efb5d9fb04a7a04.png"  style="margin:0;"> to save the modification. You can click <img src="https://main.qcloudimg.com/raw/2106cb4b9337a1a2fff5908581d2a908.png"  style="margin:0;"> to cancel the operation.
 ![](https://main.qcloudimg.com/raw/41c7d73d4c5d404a112f54c3a63da726.png)
-4. In the pop-up window, select the **execution mode** and click **OK**.
+4. In the pop-up window, select the **Execution Mode** and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
 >- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
@@ -34,13 +34,13 @@ You can view and modify certain parameters and query the parameter modification 
 ## Modifying Parameters by Importing Parameter Template
 ### Option 1. Importing a parameter template on the "Parameter Settings" page
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and enter the instance management page.
-2. Select **Database Management** > **Parameter Settings** and click **Custom Template**. (If you haven't configured a commonly used custom template yet, you can select **Custom Template** on the left sidebar in the TencentDB for MySQL console, click **Create Template** to configure a parameter template, and then import it from the custom template as described in step 2.)
+2. Select **Database Management** > **Parameter Settings** and click **Custom Template**. (If you haven't configured a commonly used custom template yet, you can select **Parameter Templates** on the left sidebar in the TencentDB for MySQL console, click **Create Template** to configure a parameter template, and then import it from the custom template as described in step 2.)
 ![](https://main.qcloudimg.com/raw/bd7a2fd3dc89895f1a3bd779d0fe8bbc.png)
 3. In the pop-up window, select a parameter template and click **Import and Overwrite Original Parameters**.
 ![](https://main.qcloudimg.com/raw/2f649840f16befabea6259f9b4c7f47c.png)
 4. After confirming that everything is correct, click **Confirm Modification**.
 ![](https://main.qcloudimg.com/raw/1673166256bc4d122f5a72c3c703ffab.png)
-5. In the pop-up window, select the **execution mode** and click **OK**.
+5. In the pop-up window, select the **Execution Mode** and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
 >- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
@@ -53,7 +53,7 @@ You can view and modify certain parameters and query the parameter modification 
 3. Click **Select File** to locate the desired parameter file and click **Import and Overwrite Original Parameters**.
 ![](https://main.qcloudimg.com/raw/42fb6ef8936131a3bc776e492478e745.png)
 4. After confirming that everything is correct, click **Confirm Modification**.
-5. In the pop-up window, select the **execution mode** and click **OK**.
+5. In the pop-up window, select the **Execution Mode** and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
 >- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
@@ -68,7 +68,7 @@ For more information, see [Managing Parameter Template > Applying a Parameter Te
 ![](https://qcloudimg.tencent-cloud.cn/raw/030f986ea488796d5c084cb97aec5d6b.png)
 3. Click **Confirm Modification** to redirect to the parameter modification confirmation window.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5ba2e9ba71f33211db43637e0aed8f37.png)
-4. In the pop-up window, select the **execution mode**, read and indicate your consent to the **restart rules**, and click **OK**.
+4. In the pop-up window, select the **Execution Mode**, read and indicate your consent to the **restart rules**, and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
 >- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
