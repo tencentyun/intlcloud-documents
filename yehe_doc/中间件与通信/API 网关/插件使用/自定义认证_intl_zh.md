@@ -3,7 +3,7 @@
 如果 API 网关提供的认证鉴权方式不能满足您的需求，您可以使用自定义认证插件，通过您自定义的函数进行认证鉴权。
 
 自定义认证插件作用在请求过程中，客户端请求 API 网关后，API 网关会将请求内容转发到认证云函数中。云函数认证通过后请求才会被转发给业务后端，否则将拒绝请求。
-<img  src="https://main.qcloudimg.com/raw/8f6531a0b947d32fc361f8d1f8d7f4f1.png" width="600px">
+<img  src="https://qcloudimg.tencent-cloud.cn/raw/eaad1bafed794ebf70d0fbbd3d0e01bf.png" width="600px">
 
 
 ## 前提条件
@@ -37,7 +37,7 @@
 | 认证参数     | 选填     | 设置用于认证的请求参数。当“缓存时间”不为0时，必须设置此参数。使用缓存时，此参数将作为搜索条件来查询认证结果。 |
 | 缓存时间     | 必填     | 设置认证结果缓存的时间。值为0时代表不开启缓存，缓存时间最大支持3600秒。 |
 
-![](https://main.qcloudimg.com/raw/b2e4e33e51d2be89dd4c71d202cbb99c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1bdab422c46bae1be216a2dca590a75d.png)
 
 > ? 开启缓存后，API 网关会记录鉴权参数的取值与 api-auth 的值之间的关系。缓存时间内后续请求，如果鉴权参数取值与第一次请求完全相同，请求将不会转到云函数，直接按第一次请求的 api-auth 值处理请求。
 
@@ -48,7 +48,7 @@
 
 1. 在列表中选中刚刚创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e9e674392e0070e320d38c1c00fc1ba2.png)
 3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 
