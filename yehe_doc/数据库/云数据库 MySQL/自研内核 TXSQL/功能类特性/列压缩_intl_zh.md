@@ -76,6 +76,8 @@ CREATE TABLE t1(
 | innodb_column_compression_threshold     | Yes  | Integer | 256  | [0, 0xffffffff] | 列压缩使用的压缩阈，最小值为：1，最大值为：0xffffffff，单位：字节。只有长度大于或等于该值数据才会被压缩，否则原数据保持不变，只是添加压缩头 |
 | innodb_column_compression_pct           | Yes  | Integer | 100  | [1, 100]        | 列压缩使用的压缩率，最小值：1，最大值：100，单位：百分比。只有**压缩后数据大小 / 压缩前数据大小**低于该值时，数据才会被压缩，否则原数据保持不变，只是添加压缩头 |
 
+>?用户目前无法直接修改以上参数的参数值，如需修改可 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行修改。
+
 
 ### 新增状态说明
 
