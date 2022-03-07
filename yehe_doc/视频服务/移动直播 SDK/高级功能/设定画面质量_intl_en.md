@@ -3,8 +3,8 @@ Regarding frequently asked questions among developers, Tencent Cloud offers an e
 
 | Platform |                         GitHub Address                          |
 | :------: | :----------------------------------------------------------: |
-| iOS| [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC) |
-| Android  | [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/Android/MLVB-API-Example) |
+|   iOS    | [Github](https://github.com/LiteAVSDK/Live_iOS/tree/main/MLVB-API-Example-OC) |
+| Android  | [Github](https://github.com/LiteAVSDK/Live_Android/tree/main/MLVB-API-Example) |
 
 ## Features
 LiveAVSDK uses the `setVideoQuality` API provided by `V2TXLivePusher` to set video quality.
@@ -12,7 +12,7 @@ LiveAVSDK uses the `setVideoQuality` API provided by `V2TXLivePusher` to set vid
 ### API definition
 You can use `setVideoQuality` to set the resolution and resolution mode (landscape/portrait) of published video.
 ```
-int setVideoQuality(V2TXLiveVideoResolution resolution, V2TXLiveVideoResolutionMode resolutionMode);
+public abstract int setVideoQuality(V2TXLiveVideoEncoderParam param);
 ```
 #### Parameters
 | Parameter | Type | Description |
