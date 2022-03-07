@@ -6,7 +6,7 @@
 ## 操作步骤
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 在实例管理页面，选择**数据库管理**>**数据库列表**页，单击**数据导入**。
-![](https://main.qcloudimg.com/raw/a8854e74caebb9c69d831dc1583c10c0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/eb01b7c4ff2ad548955f54d0a17971e7.png)
 3. 在弹出的页面，单击**新增文件**导入文件，上传完成后，单击**下一步**。
 >?
 >- 避免因系统表被破坏而导致数据库不可用，请勿导入系统表的数据，例如 mysql.user 表。 
