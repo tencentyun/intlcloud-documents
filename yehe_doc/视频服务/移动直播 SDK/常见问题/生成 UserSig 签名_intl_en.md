@@ -31,7 +31,7 @@ We provide an open-source module called `GenerateTestUserSig` in the MLVB SDK sa
 
 | Language |  Platform | Source Code |
 |:---------:|:---------:|:---------:|
-| Objective-C | iOS  | [GitHub](https://github.com/tencentyun/MLVBSDK/blob/master/iOS/MLVB-API-Example/Debug/GenerateTestUserSig.h)|
+| Objective-C | iOS  | [Github](https://github.com/LiteAVSDK/Live_iOS/blob/main/MLVB-API-Example-OC/Debug/GenerateTestUserSig.h)|
 | Java | Android  | [GitHub](https://github.com/tencentyun/MLVBSDK/blob/master/Android/Demo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) |
 
 
