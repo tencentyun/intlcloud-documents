@@ -3,7 +3,7 @@
 
 ## 主要步骤
 
-从注册腾讯云账号开始，COS 的授权与身份认证流程需要经过以下五步：注册腾讯云账号、开通 COS 服务、创建授权身份、为身份设置权限、开始访问与身份认证。
+从注册腾讯云账号开始，COS 的授权与身份认证流程需要经过这五步：注册腾讯云账号、开通 COS 服务、创建授权身份、为身份设置权限、开始访问与身份认证。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/257077f136d7c50be671964140e7996d.png)
 
@@ -30,17 +30,17 @@
 
 #### 第四步：为身份设置权限
 
-COS 支持多种权限配置方式，包括 [存储桶策略](https://intl.cloud.tencent.com/document/product/436/18031)、[用户策略（CAM 策略）](https://intl.cloud.tencent.com/document/product/436/45236)、[存储桶 ACL](https://intl.cloud.tencent.com/document/product/436/30583) 和 [对象 ACL](https://intl.cloud.tencent.com/document/product/436/30583)，您可以根据自己的使用场景选择合适的授权方式。
+COS 支持多种权限配置方式，包括 [存储桶策略](https://intl.cloud.tencent.com/document/product/436/45235)、[用户策略（CAM 策略）](https://intl.cloud.tencent.com/document/product/436/45236)、[存储桶 ACL](https://intl.cloud.tencent.com/document/product/436/30583) 和 [对象 ACL](https://intl.cloud.tencent.com/document/product/436/30583)，您可以根据自己的使用场景选择合适的授权方式。
 
 #### 第五步：开始访问与身份认证
 
-您可以通过控制台、API 请求、SDK 等多种途径访问 COS。出于安全的考虑，存储桶默认为私有读，无论通过哪种途径都需要经过身份认证。对于控制台，使用账号密码即可登录。对于 API 请求和 SDK，用户都需要使用密钥（ak/sk）进行身份认证。
+您可以通过控制台、API 请求、SDK 等多种途径访问 COS。出于安全的考虑，存储桶默认为私有读，无论通过哪种途径都需要经过身份认证。对于控制台，使用账号密码即可登录。对于 API 请求和 SDK，用户都需要使用密钥（SecretId/SecretKey）进行身份认证。
 
 ## COS 身份认证方式
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/ec955992e6a0af7e9a01b7fd1e009330.png)
 
-默认情况下，COS 存储桶为私有的，访问 COS 需要通过密钥（永久密钥、临时密钥）进行身份认证，或使用预签名 URL 进行访问。出于特殊需要，您也可以将存储桶开放为公有读，这是一种有风险的操作，任何用户都可以通过对象 URL 直接下载对象，不需要经过身份认证。
+默认情况下，COS 存储桶为私有的，无论是通过密钥（永久密钥、临时密钥）访问 COS，还是使用预签名 URL 访问，都要经过身份认证的环节。出于特殊需要，您也可以将存储桶开放为公有读，这是一种有风险的操作，任何用户都可以通过对象 URL 直接下载对象，不需要经过身份认证。
 
 ### 1. 使用永久密钥访问
 
@@ -70,7 +70,7 @@ COS 支持多种权限配置方式，包括 [存储桶策略](https://intl.cloud
 - 使用 SDK 生成预签名 URL
 使用 SDK 可以批量获取自定义有效期的预签名 URL，详情参考 [使用 SDK 批量获取预签名 URL](https://intl.cloud.tencent.com/document/product/436/45243) 文档。
 - 使用签名工具生成预签名 URL
-适合对编程不熟悉的用户，获取自定义有效期的预签名 URL，详情参考使用签名工具 文档。
+适合对编程不熟悉的用户，获取自定义有效期的预签名 URL，详情参考使用签名工具文档。
 - 自行拼接签名链接
 预签名 URL 实际上就是在对象 URL 之后拼接了签名；因此您也可以通过 SDK、签名生成工具等，自行生成签名，将 URL 与签名拼接成签名链接。然而，由于签名生成算法较为复杂，一般情况下不推荐这种使用方式。
 
@@ -100,6 +100,7 @@ COS 支持多种权限配置方式，包括 [存储桶策略](https://intl.cloud
 
 您可以在控制台将单个对象设置为公有读。这种情况下，只有该对象可以直接通过 URL 被下载，其他对象不受影响。配置方式可参考 [设置对象的访问权限](https://intl.cloud.tencent.com/document/product/436/13327)。
 
-#### 将文件开放为公有读
+#### 将文件夹开放为公有读
 
 您可以在控制台将文件夹设置公有读。这种情况下，该文件夹下的所有对象都可以直接通过 URL 被下载，文件夹之外的对象不受影响。配置方式可参考 [设置文件夹权限](https://intl.cloud.tencent.com/document/product/436/35261)。
+

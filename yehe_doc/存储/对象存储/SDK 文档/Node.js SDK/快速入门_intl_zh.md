@@ -17,7 +17,8 @@
 2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) 创建存储桶后，获取存储桶名称和 [地域名称](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) 获取您的项目 SecretId 和 SecretKey。
 
-> ?关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
+>? 关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
+>
 
 #### 安装 SDK
 
@@ -36,7 +37,7 @@ npm i cos-nodejs-sdk-v5 --save
 请先在访问管理控制台中的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取 SecretId、SecretKey。
 将 SecretId、SecretKey、Bucket 和 Region 修改为您实际开发环境下的值，测试上传文件，请参考以下示例代码：
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```js
 // SECRETID 和 SECRETKEY请登录 https://console.cloud.tencent.com/cam/capi 进行查看和管理
 var COS = require('cos-nodejs-sdk-v5');
@@ -50,7 +51,7 @@ var cos = new COS({
 
 临时密钥生成和使用请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。Node.js SDK 支持通过传入临时密钥进行初始化，请参考以下示例代码：
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```js
 var request = require('request');
 var COS = require('cos-nodejs-sdk-v5');
@@ -88,7 +89,7 @@ var cos = new COS({
 | 参数名                 | 参数描述                                                     | 类型     | 是否必填 |
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
 | SecretId               | 用户的 SecretId                                              | String   | 是   |
-| SecretKey              | 用户的 SecretKey，建议只在前端调试时使用，避免暴露密钥       | String   | 是   |
+| SecretKey              | 用户的 SecretKey                                             | String   | 是   |
 | FileParallelLimit      | 同一个实例下上传的文件并发数，默认值3                        | Number   | 否   |
 | ChunkParallelLimit     | 同一个上传文件的分块并发数，默认值3                          | Number   | 否   |
 | ChunkRetryTimes        | 分块上传及分块复制时，出错重试次数，默认值3（加第一次，请求共4次） | Number   | 否   |
@@ -100,7 +101,7 @@ var cos = new COS({
 | ProgressInterval       | 上传进度的回调方法 onProgress 的回调频率，单位 ms ，默认值1000 | Number   | 否   |
 | Protocol               | 发请求时用的协议，可选项`https:`、`http:`，默认判断当前页面是`http:`时使用`http:`，否则使用`https:` | String   | 否   |
 | ServiceDomain          | 调用 getService 方法时，请求的域名，例如`service.cos.myqcloud.com` | String   | 否   |
-| Domain                 | 调用操作存储桶和对象的 API 时自定义请求域名。可以使用模版，<br>例如`"{Bucket}.cos.{Region}.myqcloud.com" `，即在调用 API 时会使用参数中传入的 Bucket 和 Region 进行替换 | String   | 否   |
+| Domain                 | 调用操作存储桶和对象的 API 时自定义请求域名。可以使用模板，<br>例如`"{Bucket}.cos.{Region}.myqcloud.com" `，即在调用 API 时会使用参数中传入的 Bucket 和 Region 进行替换 | String   | 否   |
 | UploadQueueSize        | 上传队列最长大小，超出队列大小并失败/已完成/已取消状态的任务会被清理，默认1000 | Number   | 否   |
 | ForcePathStyle         | 强制使用后缀式模式发请求。后缀式模式中 Bucket 会放在域名后的 pathname 里，并且 Bucket 会加入签名 pathname 计算，默认 false | Boolean  | 否   |
 | UploadCheckContentMd5  | 强制上传文件也校验 Content-MD5，会对文件请求 Body 计算 md5 放在 header 的 Content-MD5 字段里，默认 false | Boolean  | 否   |
@@ -172,9 +173,43 @@ getAuthorization 计算完成后，callback 回传参数支持两种格式：
 2. 实例化时，传入 getAuthorization 回调，每次需要签名通过这个回调计算完返回签名给实例。
 3. 实例化时，传入 getSTS 回调，每次需要临时密钥通过这个回调回去完返回给实例，在每次请求时实例内部使用临时密钥计算得到签名。
 
+### 使用技巧
+
+通常情况下我们只需要创建一个 COS SDK 实例，然后在需要调用SDK方法的地方直接使用这个实例即可，示例代码如下：
+
+```js
+var cos = new COS({
+  ....
+});
+
+/* 自己封装的上传方法 */
+function myUpload() {
+  // 不需要在每个方法里创建一个 COS SDK 实例
+  // var cos = new COS({
+  //   ...
+  // });
+  cos.putObject({
+    ....
+  });
+}
+
+/* 自己封装的删除方法 */
+function myDelete() {
+  // 不需要在每个方法里创建一个 COS SDK 实例
+  // var cos = new COS({
+  //   ...
+  // });
+  cos.deleteObject({
+    ....
+  });
+}
+```
+
+以下是部分常用接口入口，更详细的初始化方法请参见 [demo](https://github.com/tencentyun/cos-nodejs-sdk-v5/tree/master/demo/demo.js) 示例。
+
 ### 创建存储桶
 
-[//]: # (.cssg-snippet-put-bucket)
+[//]: # ".cssg-snippet-put-bucket"
 ```js
 cos.putBucket({
     Bucket: 'examplebucket-1250000000',
@@ -186,7 +221,7 @@ cos.putBucket({
 
 ### 查询存储桶列表
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```js
 cos.getService(function (err, data) {
     console.log(data && data.Buckets);
@@ -195,9 +230,9 @@ cos.getService(function (err, data) {
 
 ### 上传对象
 
-该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31710) 文档。
+该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/43551) 文档。
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -215,7 +250,7 @@ cos.putObject({
 
 ### 查询对象列表
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -228,7 +263,7 @@ cos.getBucket({
 
 ### 下载对象
 
-[//]: # (.cssg-snippet-get-object-stream)
+[//]: # ".cssg-snippet-get-object-stream"
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -242,7 +277,7 @@ cos.getObject({
 
 ### 删除对象
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */

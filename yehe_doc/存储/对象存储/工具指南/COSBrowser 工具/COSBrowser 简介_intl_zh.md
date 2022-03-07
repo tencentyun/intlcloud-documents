@@ -84,22 +84,26 @@ COSBrowser 桌面端支持以下功能：
 | [查看文件详情](https://intl.cloud.tencent.com/document/product/436/32565#view) | 支持查看存储桶中的文件基本信息                               |
 | [生成文件链接](https://intl.cloud.tencent.com/document/product/436/32565#generatelinks) | 支持通过请求临时签名的方式生成带有时效的文件访问链接         |
 | [文件/文件夹分享](https://intl.cloud.tencent.com/document/product/436/32565#share) | 支持分享文件和文件夹，支持设置分享的有效时间         |
-| [导出文件 URL](https://intl.cloud.tencent.com/document/product/436/32565#export) | 支持批量导出文件 URL         |
+| [导出文件链接](https://intl.cloud.tencent.com/document/product/436/32565#export) | 支持批量导出文件链接         |
 | [文件预览](https://intl.cloud.tencent.com/document/product/436/32565#preview) | 支持预览存储桶中的媒体文件（图片、视频、音频）               |
 | [搜索文件](https://intl.cloud.tencent.com/document/product/436/32565#searchfile) | 支持以前缀搜索的方式对存储桶中的文件进行搜索                 |
 | [搜索存储桶](https://intl.cloud.tencent.com/document/product/436/32565#searchbuckete) | 支持搜索已创建的存储桶                                       |
 | [查看历史版本或文件碎片](https://intl.cloud.tencent.com/document/product/436/32565#viewfiles) | <li>支持在已开启版本控制的存储桶中，查看文件的历史版本<br><li>支持查看存储桶内的文件碎片详情           |
+|[文件对比](https://intl.cloud.tencent.com/document/product/436/32565#compare) |     支持将本地文件夹与存储桶里的文件进行对比           |
+| [视频转码](https://intl.cloud.tencent.com/document/product/436/32565#transcoding)   |  支持对已开启媒体处理功能的存储桶中的文件进行转码  |
+|  [生成授权码](https://intl.cloud.tencent.com/document/product/436/32565#authorization)   |   通过授权码可实现临时登录 COSBrowser 客户端   |
+|  [图片处理](https://intl.cloud.tencent.com/document/product/436/32565#processing)  |  支持缩放、裁剪、旋转等基本图片处理和文字水印、图片水印，并支持生成处理后的图片链接   |
 | [设置网络代理](https://intl.cloud.tencent.com/document/product/436/32565#sets) | 支持设置网络代理来访问 COS                                   |
-| [设置传输并发数](https://intl.cloud.tencent.com/document/product/436/32565#sets) | 支持设置文件上传、下载的传输并发数                           |
-| [设置传输分块数](https://intl.cloud.tencent.com/document/product/436/32565#sets) | 支持设置文件分块上传、下载的分块数                           |
-| [设置传输失败重试数](https://intl.cloud.tencent.com/document/product/436/32565#sets) | 支持设置文件上传、下载失败时的重试次数                       |
+| [设置上传/下载的文件并发数](https://intl.cloud.tencent.com/document/product/436/32565#sets) | 支持设置文件上传、下载的传输并发数                           |
+| [设置上传/下载的分块并发数](https://intl.cloud.tencent.com/document/product/436/32565#sets) | 支持设置文件分块上传、下载的分块数                           |
+| [设置上传/下载失败重试数](https://intl.cloud.tencent.com/document/product/436/32565#sets) | 支持设置文件上传、下载失败时的重试次数                       |
+| [设置单线程上传/下载限速](https://intl.cloud.tencent.com/document/product/436/32565#sets) |   支持设置单线程上传限速和下载限速   |
 | [设置上传二次校验](https://intl.cloud.tencent.com/document/product/436/32565#sets) | 支持对上传至存储桶中的文件进行二次校验                       |
-| [设置单线程限速](https://intl.cloud.tencent.com/document/product/436/32565#sets) | 支持设置单线程上传限速和下载限速 |
 | [查看本地日志](https://intl.cloud.tencent.com/document/product/436/32565#sets) | 支持将用户对 COSBrowser 的操作记录以本地日志的形式保存       |
 
 ## 移动端功能列表
 
-COSBrowser 移动端注重对资源的查看及监控，用户可以随时随地监控 COS 的存储量、流量等数据。关于 COSBrowser 移动端所支持的功能，请参见 [移动端功能列表](https://intl.cloud.tencent.com/document/product/436/41616)。
+COSBrowser 移动端注重对资源的查看及监控，用户可以随时随地监控 COS 的存储量、流量等数据。关于 COSBrowser 移动端所支持的功能，请参见 [移动端功能列表](https://intl.cloud.tencent.com/document/product/436/32566)。
 
 ## 更新日志
 
@@ -112,3 +116,5 @@ COSBrowser 移动端注重对资源的查看及监控，用户可以随时随地
 
 - 桌面端反馈：[issues](https://github.com/tencentyun/cosbrowser/issues)。
 - 移动端反馈：[issues_mobile](https://support.qq.com/embed/phone/67467)。
+  
+   
