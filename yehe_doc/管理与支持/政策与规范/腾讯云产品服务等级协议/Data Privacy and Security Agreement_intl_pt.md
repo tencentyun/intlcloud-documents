@@ -124,6 +124,7 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 21.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45408).
 22.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
 23.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
+24.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45465).
 
 ## Requisitos específicos da jurisdição
 
