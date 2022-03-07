@@ -12,7 +12,6 @@ The table below lists the common protocols used for live streaming. We recommend
 |---------|---------|---------|---------|
 | FLV | Mature, well adapted to high-concurrency scenarios | SDK integration is required. | 2-3s |
 |RTMP |Relatively low latency |Poor performance in high-concurrency scenarios |1-3s |
-| HLS (M3U8) | Well supported on mobile browsers | High latency |10-30s|
 |WebRTC |Lowest latency |SDK integration is required. |< 1s |
 
 >? LVB and LEB are priced differently. For details, please see [LVB Billing Overview](https://intl.cloud.tencent.com/document/product/267/2818) and [LEB Billing Overview](https://intl.cloud.tencent.com/document/product/267/39969).
@@ -26,8 +25,8 @@ Regarding frequently asked questions among developers, Tencent Cloud offers a st
 
 | Platform |                         GitHub Address                          |
 | :------: | :----------------------------------------------------------: |
-| iOS| [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC) |
-| Android  | [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/Android/MLVB-API-Example) |
+|   iOS    | [Github](https://github.com/LiteAVSDK/Live_iOS/tree/main/MLVB-API-Example-OC) |
+| Android  | [Github](https://github.com/LiteAVSDK/Live_Android/tree/main/MLVB-API-Example) |
 
 ## Integration
 [](id:step1)
