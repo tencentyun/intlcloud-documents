@@ -33,8 +33,8 @@ This will not affect your business access, but may impact your automatic backup 
 - Single-node TencentDB for MySQL instances cannot be backed up.
 
 ## Backing up MySQL Data Automatically
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID on the instance list page to access the instance’s management page, and select **Backup and Restore** > **Auto Backup Settings**.
-![](https://main.qcloudimg.com/raw/69fed1aac393a518bd8cc2ad1fea550f.png)
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID on the instance list page to access the instance’s management page, and select **Backup and Restoration** > **Auto-Backup Settings**.
+![](https://qcloudimg.tencent-cloud.cn/raw/da6aad42478cbbddba52d02b1d677238.png)
 2. Select backup parameters in the pop-up window (details are shown as below) and click **OK**:
 >?
 >- The [rollback feature](https://intl.cloud.tencent.com/document/product/236/7276) relies on the backup cycle and retention days of data backups and log backups (binlog). Rollback will be affected if you reduce the automatic backup frequency and retention period. Please select the parameters as needed.
@@ -45,15 +45,15 @@ This will not affect your business access, but may impact your automatic backup 
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody>
 <tr>
-<td>Backup Schedule</td><td>To ensure data security, please back up your data at least twice a week. All seven days of the week will be selected by default.</td></tr>
+<td>Backup Cycle</td><td>To ensure data security, please back up your data at least twice a week. All seven days of the week will be selected by default.</td></tr>
 <tr>
 <td>Backup Start Time</td><td><ul><li>The default backup start time is automatically assigned by the system. <li>You can set a start time as needed. We recommend that you set it to off-peak hours. This is just the start time of the backup process and does not indicate the end time. <br>For example, if the backup start time is set to 02:00-06:00, the system will initiate a backup at a point in time during 02:00-06:00, which depends on the backend backup policy and backup system conditions.</td></tr>
 <tr>
-<td>Data Backup Retention Time</td><td>Data backup files can be retained for 7 (default value) to 1830 days.</td></tr>
+<td>Data Backup Retention Period</td><td>Data backup files can be retained for 7 (default value) to 1830 days.</td></tr>
 <tr>
-<td>Log Backup Retention Time</td><td>Log backup files can be retained for 7 (default value) to 1830 days. </td></tr>
+<td>Log Backup Retention Period</td><td>Log backup files can be retained for 7 (default value) to 1830 days. </td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/a371d4ba960264aa5630b59a3bfe5096.png"  style="margin:0;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/df1418761b0a5a47c7cf273160954f8e.png"  style="margin:0;">
 
 ## [Backing up MySQL Data Manually](id:manual-backup)
 The manual backup feature allows you to initiate a backup task manually.
@@ -62,7 +62,7 @@ The manual backup feature allows you to initiate a backup task manually.
 >- Manual backups can be manually deleted from the backup list in the console. You can delete manual backups that are no longer in use to free up space. Manual backups can be retained permanently as long as they are not deleted.
 >- When the instance is performing daily automatic backup, no manual backup tasks can be initiated.
 >
-1. On the instance list page, click an instance ID to access the instance’s management page, and select **Backup and Restore** > **Manual Backup**.
+1. On the instance list page, click an instance ID to access the instance’s management page, and select **Backup and Restoration** > **Manual Backup**.
 2. Select the backup mode and object in the pop-up window and click **OK**.
 ![](https://main.qcloudimg.com/raw/a16e644f51756b6a98597945e45329cd.png)
 >?For single-database/table logical backup, select the database or table to be backed up in **Select database & table** in the left column and add the selected item to the right column. If you don't have a database, please create a database/table first.
@@ -84,7 +84,7 @@ Expired backup sets will be deleted automatically and cannot be downloaded or re
 No. However, you can reduce the backup frequency and delete manual backups no longer used via the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) to lower the capacity usage.
 
 #### 4. How can I reduce the backup capacity costs?
-- Delete manual backups that are no longer used (you can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID to access the instance’s management page, and delete manual backups on the **Backup and Restore** tab). 
+- Delete manual backups that are no longer used (you can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID to access the instance’s management page, and delete manual backups on the **Backup and Restoration** tab). 
 - Reduce the frequency of automatic data backup for non-core businesses (you can adjust the backup cycle and retention period in the console, and the frequency should be at least twice a week).
 >?The [rollback feature](https://intl.cloud.tencent.com/document/product/236/7276) relies on the backup cycle and retention days of data backups and log backups (binlog). Rollback will be affected if you reduce the automatic backup frequency and retention period. Please select the parameters as needed.
 >
