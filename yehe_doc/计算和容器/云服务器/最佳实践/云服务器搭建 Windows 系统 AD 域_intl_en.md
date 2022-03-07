@@ -36,7 +36,7 @@ It's not recommended to create an instance with an image whose source instance i
 
 
 ### Deploying AD domain controller[](id:Step1)
-1. Log in to the CVM instance used as a DC, as instructed in [Logging in to a Windows Instance by Using WebRDP](https://intl.cloud.tencent.com/document/product/213/41018).
+1. Log in to the CVM instance used as a DC.
 2. In the OS interface, click <img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin:-3px 0px"> to open **Server Manager**.
 3. Click **Add Roles and Features**, and the **Add Roles and Features Wizard** window pops up.
 4. In the **Select Installation Type** page, select **Role-based or feature-based installation** and click **Next** twice.
@@ -58,7 +58,7 @@ Modify the SID of the instance used as the client. For details, see [Modifying S
 
 
 ### Joining the client to AD domain
-1. Log in to the CVM instance used as the client, as instructed in [Logging in to a Windows Instance by Using WebRDP](https://intl.cloud.tencent.com/document/product/213/41018).
+1. Log in to the CVM instance used as the client.
 2. Modify the DNS server address.
     i. Open **Control Panel** > **Network and Internet** > **Network and Sharing Center**, and click **Ethernet**, .
       ii. In the **Ethernet Status** window, click **Properties**.
