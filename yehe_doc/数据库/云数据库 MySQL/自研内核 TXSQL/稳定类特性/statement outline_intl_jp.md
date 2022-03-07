@@ -29,6 +29,9 @@ create table t3(a int, b int, c int, unique key idx3(a));
 | ----------------------- | ---- | ---- | ----- | ---------- | ------------------- |
 | cdb_opt_outline_enabled | yes  | bool | fasle | true/false | outline機能をオンにするかどうか |
 
+>?ユーザーは現在、上記パラメータのパラメータ値を直接変更することはできません。変更する場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)から変更することができます。
+>
+
 ### OUTLINEのバインド
 OUTLINEの直接バインド方式とは、1文のSQLを、SQLの意味は変えずに別の1文に置き換えるもので、いくつかのHINT情報を追加して、どう実行するかをオプティマイザに通知するだけのものです。
 構文形式は`outline "sql" set outline_info "outline";`です。outline_infoの後の文字列は必ず"OUTLINE:"で開始し、"OUTLINE:"の後にHINTの後のSQLを追加することに注意してください。例えば、`select *from t1, t2 where t1.a = t2.a`というSQLのt2テーブルにa列のインデックスを加えます。
