@@ -34,7 +34,7 @@
 
 ## 自动备份 MySQL 数据
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表页，单击实例 ID 进入管理页面，选择**备份恢复**>**自动备份设置**。
-![](https://main.qcloudimg.com/raw/69fed1aac393a518bd8cc2ad1fea550f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/da6aad42478cbbddba52d02b1d677238.png)
 2. 在弹出的备份设置对话框选择各备份参数，单击**确定**。参数说明如下：
 >?
 >- [回档功能](https://intl.cloud.tencent.com/document/product/236/7276) 基于备份周期和备份保留天数内的数据备份 + 日志备份（binlog），缩短自动备份频率和保留天数会影响实例数据的回档时间范围，请您权衡备份配置。
@@ -53,7 +53,7 @@
 <tr>
 <td>日志备份保留时间</td><td>日志备份文件可以保留7天 - 1830天，默认为7天。</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/a371d4ba960264aa5630b59a3bfe5096.png"  style="margin:0;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/df1418761b0a5a47c7cf273160954f8e.png"  style="margin:0;">
 
 ## [手动备份 MySQL 数据](id:manual-backup)
 手动备份功能允许用户自助发起备份任务。
