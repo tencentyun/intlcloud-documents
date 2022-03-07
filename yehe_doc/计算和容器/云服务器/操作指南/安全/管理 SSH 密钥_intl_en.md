@@ -42,7 +42,7 @@ This document describes common operations related to using SSH key pair to log i
  4. In the pop-up window, enter the new key name or description, and click **OK**.
 
 ### Deleting SSH keys
->! An SSH key cannot be deleted when it is bound with CVM instances or custom images,  cannot be deleted.
+>! An SSH key cannot be deleted when it is bound with CVM instances or custom images.
 >
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
 2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar. You can delete a single or multiple SSH keys as needed.
@@ -59,6 +59,6 @@ This document describes common operations related to using SSH key pair to log i
 
 ### Using a SSH key to log in to a Linux CVM
 
-1. [Create a SSH key](#creatSSH).
-2. [Bind a SSH key to a CVM instance](#bindingSSH).
+1. [Create an SSH key](#creatSSH).
+2. [Bind an SSH key to a CVM instance](#bindingSSH).
 3. [Log in to a Linux instance via SSH key](https://intl.cloud.tencent.com/document/product/213/32501).
