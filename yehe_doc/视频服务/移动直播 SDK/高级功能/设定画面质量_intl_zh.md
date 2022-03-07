@@ -3,8 +3,8 @@
 
 | 所属平台 |                         GitHub 地址                          |
 | :------: | :----------------------------------------------------------: |
-|   iOS    | [Github](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC) |
-| Android  | [Github](https://github.com/tencentyun/MLVBSDK/tree/master/Android/MLVB-API-Example) |
+|   iOS    | [Github](https://github.com/LiteAVSDK/Live_iOS/tree/main/MLVB-API-Example-OC) |
+| Android  | [Github](https://github.com/LiteAVSDK/Live_Android/tree/main/MLVB-API-Example) |
 
 ## 功能介绍
 LiteAVSDK 通过 V2TXLivePusher 提供的 `setVideoQuality` 接口来设定画面质量：
@@ -12,7 +12,7 @@ LiteAVSDK 通过 V2TXLivePusher 提供的 `setVideoQuality` 接口来设定画�
 ### 接口定义
 可以通过 `setVideoQuality` 设置推流视频分辨率，以及宽高比模式（横屏 / 竖屏）。
 ```
-int setVideoQuality(V2TXLiveVideoResolution resolution, V2TXLiveVideoResolutionMode resolutionMode);
+public abstract int setVideoQuality(V2TXLiveVideoEncoderParam param);
 ```
 #### 参数
 | 参数  | 类型     | 含义           |
