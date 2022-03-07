@@ -23,7 +23,7 @@ After creating a dashboard, you can perform the following operations in the dash
 | Quickly adding an alarm    | You can quickly add search statements, log topics, and other information for the current chart on the alarm editing page. |
 | Full-screen browsing        | Full-screen browsing of a single chart or the entire dashboard is supported.                           |
 | Refreshing            | Automatically periodic data refreshing and manual data refreshing are supported.                               |
-| Adding a template variable    | Template variables allow you to define and modify data query and filtering parameters in the dashboard more flexibly, which improves the reuse rate of the dashboard and the granularity of analysis. For more information, please see [Template Variables](https://intl.cloud.tencent.com/document/product/614/43561). |
+| Adding a template variable    | Template variables allow you to define and modify data query and filtering parameters in the dashboard more flexibly, which improves the reuse rate of the dashboard and the granularity of analysis. For more information, please see Template Variables. |
 | Viewing/Editing a dashboard | You can view a dashboard and edit the dashboard layout.                                   |
 
 
