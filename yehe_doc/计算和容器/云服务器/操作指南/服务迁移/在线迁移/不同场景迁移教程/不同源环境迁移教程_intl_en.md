@@ -123,7 +123,7 @@ You can skip this step if your task is scheduled, which will automatically start
 </dx-alert>
 After creating a migration task, you can click the <b>Migration Task</b> tab to view the task as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
-You can click <b>Start/Retry</b> on the right of the task to start it, and the task status will become **Migrating** as shown below:
+You can click <b>Start/restart</b> on the right of the task to start it, and the task status will become **Migrating** as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
 6. Wait for the migrate task to end.
 After the migration task status becomes **Successful**, the migration is completed successfully as shown below:
@@ -137,7 +137,7 @@ The time required for data transfer depends on the size of the data on the sourc
 ### Checking after migration
 
 - **Failed migration**:
-Check the error information in log files (under the migration tool directory by default), operation guides, or [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395) for troubleshooting methods. After fixing the problem, click **Start/Retry** in the **Operation** column of the migration task to start it again.
+Check the error information in log files (under the migration tool directory by default), operation guides, or [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395) for troubleshooting methods. After fixing the problem, click **Start/restart** in the **Operation** column of the migration task to start it again.
 - **Successful migration**:
  - If the migration destination is a CVM instance, check whether the destination CVM can be started normally, whether data on the destination CVM is consistent with that on the source server, whether the network is normal, and whether other system services run normally.
  - If the migration destination is a CVM image, you can click the **CVM image ID** on the row of the migration task to enter the [CVM image page](https://console.cloud.tencent.com/cvm/image/index) and view the image information. You can use it to create CVM instances.
