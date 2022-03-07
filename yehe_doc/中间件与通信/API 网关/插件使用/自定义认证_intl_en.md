@@ -3,7 +3,7 @@
 If the verification and authentication method provided by the API Gateway cannot meet your requirements, you can use custom verification plugin to verify and authenticate a request.
 
 Custom verification plugin applies during the request process. The API Gateway will forward the request to the verification SCF after receiving it from the Client. Then, the request will be forwarded to the service backend only if it passes the verification by the SCF, otherwise the request will be denied.
-<img  src="https://main.qcloudimg.com/raw/8f6531a0b947d32fc361f8d1f8d7f4f1.png" width="600px">
+<img  src="https://qcloudimg.tencent-cloud.cn/raw/eaad1bafed794ebf70d0fbbd3d0e01bf.png" width="600px">
 
 
 ## Prerequisites
@@ -37,7 +37,7 @@ Custom verification plugin applies during the request process. The API Gateway w
 | Verification parameter | Optional | It sets the request parameters for verification. When caching time is not `0`, this parameter must be set. When caching is enabled, the verification result will be queried with this parameter as the search condition. |
 | Caching time | Required | It sets the caching time for the verification result. `0` indicates that caching is not enabled. Caching time can be up to 3,600 seconds. |
 
-![](https://main.qcloudimg.com/raw/b2e4e33e51d2be89dd4c71d202cbb99c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1bdab422c46bae1be216a2dca590a75d.png)
 
 > ? After caching is enabled, the API Gateway will record the relationship between the value of authentication parameter and the value of api-auth. If there is subsequent request during caching time, and the value of authentication parameter is the same as the value of the first request, the request will not be forwarded to the SCF and will be processed according to the value of api-auth for the first request.
 
@@ -48,7 +48,7 @@ Custom verification plugin applies during the request process. The API Gateway w
 
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the API to which the plugin needs to be bound.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e9e674392e0070e320d38c1c00fc1ba2.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 
