@@ -126,7 +126,7 @@ You can skip this step if your task is scheduled, which will automatically start
 </dx-alert>
 After creating a migration task, you can click the **Migration Task** tab to view the task as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png)
-You can click **Start/Retry** on the right of the task to start it, and the task status will become **Migrating** as shown below:
+You can click **Start/restart** on the right of the task to start it, and the task status will become **Migrating** as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png)
 6. Wait for the migrate task to end.
 After the migration task status becomes **Successful**, the migration is completed successfully as shown below:
@@ -260,7 +260,7 @@ If the following appears on the console, the migration has been completed succes
 
 
 ### Checking after migration
- - If the migration fails, check the error information in log files (under the migration tool directory by default), operation guides, or [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395) for troubleshooting methods. After fixing the problem, click **Start/Retry** in the **Operation** column of the migration task to start it again.
+ - If the migration fails, check the error information in log files (under the migration tool directory by default), operation guides, or [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395) for troubleshooting methods. After fixing the problem, click **Start/restart** in the **Operation** column of the migration task to start it again.
  - If the migration succeeds, check whether the destination CVM can be started normally, whether data on the destination CVM is consistent with that on the source server, whether the network is normal, and whether other system services run normally.
 
 
