@@ -36,7 +36,7 @@ When using CAM, you can associate a policy with a user or user group to allow or
 ### Authorizing sub-accounts
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) with the root account, locate the target sub-user in the user list, and click **Authorize**.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/89d7cf063bd376a0cc4f4db0c78e7e56.png)
-2. In the pop-up window, select the **QcloudCDBFullAccess** preset policy and click **OK** to complete the authorization.
+2. In the pop-up window, select the **QcloudCDBFullAccess** preset policy and click **Confirm** to complete the authorization.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0819ca9a1a81fc00968f0a263dc7727e.png)
 
 ### Policy syntax
