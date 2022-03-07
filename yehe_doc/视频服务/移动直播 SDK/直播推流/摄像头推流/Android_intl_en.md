@@ -12,8 +12,8 @@ Publishing from camera refers to the process of collecting video and audio data 
 |   iOS    | [GitHub](https://github.com/tencentyun/LiteAVProfessional_iOS/blob/master/Demo/TXLiteAVDemo/LivePusherDemo/CameraPushDemo/CameraPushViewController.m) | CameraPushViewController.m  |
 | Android  | [GitHub](https://github.com/tencentyun/LiteAVProfessional_Android/blob/master/Demo/livepusherdemo/src/main/java/com/tencent/liteav/demo/livepusher/camerapush/ui/CameraPushMainActivity.java) | CameraPushMainActivity.java |
 >?In addition to the above sample code, regarding frequently asked questions among developers, Tencent Cloud offers a straightforward API example project, which you can use to quickly learn how to use different APIs.
->- iOS: [MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example-OC)
->- Android: [MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/Android/MLVB-API-Example)
+>- iOS：[MLVB-API-Example](https://github.com/LiteAVSDK/Live_iOS/tree/main/MLVB-API-Example-OC)
+>- Android：[MLVB-API-Example](https://github.com/LiteAVSDK/Live_Android/tree/main/MLVB-API-Example)
 
 ## Integration
 
