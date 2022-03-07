@@ -115,7 +115,7 @@ After the migration source is imported successfully, don't close the migration t
 ### Creating and starting migration task
 
 1. Create a migration task
-Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), go to the online migration page, and click **Create Migration Task** on the right of the desired migration source. In the **Create Migration Task** pop-up window, configure the task  as shown below:
+Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), go to the online migration page, and click **Create migration task** on the right of the desired migration source. In the **Create migration task** pop-up window, configure the task  as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
 2. [](id:jobSettings)Configure the migration as follows:
 <table>
@@ -128,22 +128,22 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 </thead>
 <tbody>
 <tr>
-<td>Destination Region</td>
+<td>Target region</td>
 <td>Yes</td>
   <td>Tencent Cloud region to which the source server is to be migrated. For more information on regions, see <a href="https://intl.cloud.tencent.com/document/product/213/6091">Regions and AZs</a>.</td>
 </tr>
 <tr>
-<td>Task Name</td>
+<td>Task name</td>
 <td>Yes</td>
 <td>Migration task name.</td>
 </tr>
 <tr>
-<td>Task Description</td>
+<td>Task description</td>
 <td>No</td>
 <td>Migration task description.</td>
 </tr>
 <tr>
-<td>Destination Type</td>
+<td>Target type</td>
 <td>Yes</td>
 <td>
   Set the destination type for the source server to be migrated to Tencent Cloud.
@@ -158,17 +158,17 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 </td>
 </tr>
 <tr>
-<td>Scheduled Execution Time</td>
+<td>Scheduled start time</td>
 <td>No</td> 
   <td>Set the time when the migration task will be automatically started after creation. It can be as early as <b>10</b> minutes after the current time.</td>
 </tr>
 <tr>
-<td>Transfer Restriction (KB/s)</td>
+<td>Transfer speed limit (KB/s)</td>
 <td>No</td>  
 <td>Cap of the data transfer bandwidth during migration in KB/s.</td>
 </tr>
 <tr>
-<td>Checksum Verification</td>
+<td>Checksum verification</td>
 <td>No</td>  
 <td>After it is enabled, data consistency check will be enhanced, but the transfer speed may be reduced.</td>
 </tr>
@@ -177,9 +177,9 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 <dx-alert infotype="explain" title="">
 You can skip this step if your task is scheduled, which will automatically start running at the scheduled execution time.
 </dx-alert>
-After creating a migration task, you can click the <b>Migration Task</b> tab to view the task as shown below:
+After creating a migration task, you can click the <b>Migration task</b> tab to view the task as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
-2. You can click <b>Start/Retry</b> on the right of the task to start it, and the task status will become **Migrating**  as shown below:
+2. You can click <b>Start/Restart</b> on the right of the task to start it, and the task status will become **Migrating** as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
 4. <dx-alert infotype="notice" title="">
 - The migration in console feature can automatically migrate the system disk and all mounted data disks of the source server and generate destination disks with the same partition structure as the source disks.
@@ -197,7 +197,7 @@ After the migration task status becomes **Successful**, the migration is complet
 <dx-alert infotype="explain" title="">
 - The time required for data transfer depends on the size of the data on the source server, network bandwidth, etc. Please wait for the migration process to complete.
 - After the migration task starts, you can click **Pause** on the row of the task to stop it.
-- The migration tool supports checkpoint restart. After a task is paused, you can click **Start/Retry** again to resume migration from where you paused.
+- The migration tool supports checkpoint restart. After a task is paused, you can click **Start/restart** again to resume migration from where you paused.
 - A migration task can be paused during data transfer. After you click **Pause** for it in the console, the migration tool will pause the data transfer in progress.
 - If the migration process is time-consuming and you need to stop it, you can pause the migration task first and click **Delete** to delete it.
 </dx-alert>
@@ -207,7 +207,7 @@ After the migration task status becomes **Successful**, the migration is complet
 ### Checking after migration[](id:checkAfter)
 
 - **Failed migration**:
-Check the error information in log files (under the migration tool directory by default), operation guides, or [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395) for troubleshooting methods. After fixing the problem, click **Start/Retry** in the **Operation** column of the migration task to start it again.
+Check the error information in log files (under the migration tool directory by default), operation guides, or [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395) for troubleshooting methods. After fixing the problem, click **Start/restart** in the **Operation** column of the migration task to start it again.
 - **Successful migration**:
  - If the migration destination is a CVM instance, check whether the destination CVM can be started normally, whether data on the destination CVM is consistent with that on the source server, whether the network is normal, and whether other system services run normally.
  - If the migration destination is a CVM image, you can click the **CVM image ID** on the row of the migration task to enter the [CVM image page](https://console.cloud.tencent.com/cvm/image/index) and view the image information. You can use it to create CVM instances.
