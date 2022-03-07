@@ -3,7 +3,7 @@
 客户端发给业务后端的请求体中包含很多字段，如果您需要修改请求体内容，可以通过自定义请求体插件实现。
 
 自定义请求体插件基于云函数实现，作用在请求过程中。客户端请求 API 网关后，API 网关会将请求内容转发到指定的云函数中，云函数修改请求体内容后将修改后的请求体响应给 API 网关，API 网关再将修改后的请求体转发给业务后端。
-<img  src="https://main.qcloudimg.com/raw/4c76f728b504d982ff4829a1444621d3.png" width="600px">
+<img  src="https://qcloudimg.tencent-cloud.cn/raw/d08dee5fddf27985ffc89b23836060b7.png" width="600px">
 
 ## 前提条件
 
@@ -32,7 +32,7 @@
 | 自定义内容  | 必填     | 设置 API 网关发送给修改请求体的函数的请求内容，支持选择 Header、Body、Query。未选择的请求内容部分将不被修改，直接转发给业务后端。 |
 | Base64 编码 | 必填     | 是否将请求内容 Base64 编码后再转发给修改请求体的函数，一般适用于请求内容是二进制的情况。 |
 
-![](https://main.qcloudimg.com/raw/47b2eceb6a0b84fd9ace7bf7415b8c27.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/19cefb5320773a3a1a09bbaba0cc3c7d.png)
 
 4. 单击**保存**，即可成功创建自定义请求体插件。
 
@@ -40,7 +40,7 @@
 
 1. 在列表中选中 [步骤2](#step2) 创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e9e674392e0070e320d38c1c00fc1ba2.png)
 3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 ## 自定义请求体云函数的编写方法[](id:scfdemo)
