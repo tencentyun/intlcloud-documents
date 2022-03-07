@@ -29,7 +29,7 @@ Tencent Cloud shared image is identified by the unique ID of the root account wi
  2. Click **[Images](https://console.cloud.tencent.com/cvm/image)** on the left sidebar.
  3. Click the **Custom Image** tab to enter the custom image management page.
  4. Select the custom image you want to share in the custom image list and click **Share** on the right.
- 5. In the “Shared Image** pop-up window, enter the ID of the account you want to share the image with, and click **Share**.
+ 5. In the **Shared Image** pop-up window, enter the ID of the account you want to share the image with, and click **Share**.
  6.The other account needs to log in to the [CVM console](https://console.cloud.tencent.com/cvm/), and select **Images** > **Shared Image** to view the image you have shared.
  7. Repeat the steps above to share an image with multiple users.
 
