@@ -1,8 +1,5 @@
-# Service Level Agreement
-
 **In order to use the TI Platform TIONE (the “Service”), you shall read and comply with this TI Platform TIONE Service Level Agreement (this “Agreement”, or this “SLA”) and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, among others, the terms and definitions of the Service, level indicators of the Service availability and success rate, compensation plan and disclaimer of liabilities. Unless otherwise stipulated, this Agreement does not apply to functions of the Service’s closed beta testing. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.
-Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking “Agree”/ “Next”, or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.
-**
+Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking “Agree”/ “Next”, or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
 ## 1. Terms and Definitions
 
@@ -46,11 +43,11 @@ Tencent Cloud TI Platform TIONE provides compensation for affected product featu
 （2）Training task anomalies due to model training components of Tencent Cloud TI Platform TIONE.
 （3）Anomalies of service publishing function and service access function due to online service components of Tencent Cloud TI Platform TIONE.
 
-> ？
-> The following features are beyond the scope of compensation for Standards of Service Availability of the Service.
-> - Effect caused open-source software Kubernetes, Docker, operating system kernel, TensorFlow, Pytorchand and other open-source portions.
-> - Effect caused by relevant Tencent Cloud products per se, e.g., failure for online service publishing and access due to CLB interface anomaly, anomaly for the platform to create resources because the quota has been reached or the resources are sold out.
-> - Data, tasks and service anomalies due the user's failure to use the platform reasonably in accordance with its operating rules.
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><p>
+The following features are beyond the scope of compensation for Standards of Service Availability of the Service.(1)Effect caused open-source software Kubernetes, Docker, operating system kernel, TensorFlow, Pytorchand and other open-source portions.
+(2)Effect caused by relevant Tencent Cloud products per se, e.g., failure for online service publishing and access due to CLB interface anomaly, anomaly for the platform to create resources because the quota has been reached or the resources are sold out.
+(3)Data, tasks and service anomalies due the user's failure to use the platform reasonably in accordance with its operating rules.</a></p>
+</blockquote>
 
 #### 3.2 Standards of Compensation
 
