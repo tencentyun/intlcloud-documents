@@ -9,7 +9,7 @@ This document describes common operations related to using SSH key pair to log i
 ### Creating a SSH key
  1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
  2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar.
- 3. Click **New** on the **SSH Key**page.
+ 3. Click **New** on the **SSH Key** page.
  >! After clicking **OK**, the private key will be automatically downloaded. Tencent Cloud will not retain your private key. Be sure to keep it safe.
  > 
 ![](https://main.qcloudimg.com/raw/a6675ade459e6bf236ff7301995a35f2.png)
@@ -21,7 +21,7 @@ This document describes common operations related to using SSH key pair to log i
 ### Binding a key to instance
  1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
  2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar.
- 3. On the SSH key management page, select the target SSH key, and click **Bind with instances**.
+ 3. On the SSH key management page, select the target SSH key, and click **Bind an instance**.
 ![](https://main.qcloudimg.com/raw/7419df720863aa9463e0dcf478580bbd.png)
  4. In the pop-up window, select the target region and instances, and click **Bind**.
 
@@ -29,7 +29,7 @@ This document describes common operations related to using SSH key pair to log i
 ### Unbinding a key from instance
  1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
  2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar.
- 3. On the SSH key management page, select the target SSH key, and click **Unbind from instances**.
+ 3. On the SSH key management page, select the target SSH key, and click **Unbind an instance**.
 ![](https://main.qcloudimg.com/raw/263f344c4bea3cdff4e422996821cb5d.png)
  4. In the pop-up window, select the region and instances to unbind from the key, and click **Unbind**.
 
