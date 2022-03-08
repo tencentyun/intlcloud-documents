@@ -80,7 +80,7 @@ The filter rule is collection after matching, not discarding after matching. Log
 
 ### How do I use non-root permission to start LogListener?
 
-You are recommended to use the root permission to start LogListener. If you need to use LogListener with non-root permission, see "Configuring Non-Root Permission to start LogListener".
+You are advised to use the root permission to start LogListener. If you need to use LogListener with non-root permission, see "Configuring Non-Root Permission to start LogListener".
 
 
 ### How do I pin the LogListener process to a CPU?
@@ -123,7 +123,7 @@ Yes, provided that you configure the machine group by machine ID. For more infor
 ### How do I modify the LogListener configuration after the server IP address is changed?
 
 - If you configure the machine group by machine ID, you don’t need to modify the LogListener configuration. This method is recommended when the server IP frequently changes. For more information, see [Configuring the machine group by machine ID](https://intl.cloud.tencent.com/document/product/614/17412#.E9.80.9A.E8.BF.87.E9.85.8D.E7.BD.AE.E6.9C.BA.E5.99.A8.E6.A0.87.E8.AF.86.E5.88.9B.E5.BB.BA.E6.9C.BA.E5.99.A8.E7.BB.84).
-- If you configure the server group by server IP address, modify the configuration as follows:
+- If you configure the machine group by IP address, modify the configuration as follows:
   a. Add the new IP address to the `group_ip` field in the configuration file.
 ```shell
 sed -i '' "s/group_ip *=.*/group_ip = ${group_ip}/" etc/loglistener.conf
