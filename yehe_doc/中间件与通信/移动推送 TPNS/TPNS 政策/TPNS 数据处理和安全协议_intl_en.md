@@ -3,7 +3,7 @@
 This Module applies if you use the Tencent Push Notification Service (“**Feature**”). This Module is incorporated into the Data Processing and Security Agreement located at [DPSA](https://intl.cloud.tencent.com/document/product/301/17347). Terms used but not defined in this Module shall have the meaning given to them in the DPSA. In the event of any conflict between the DPSA and this Module, this Module shall apply to the extent of the inconsistency.
 
 
-## 2. PROCESSING
+## 2. Processing
 
 We will process the following personal data in connection with the Feature:
 
@@ -16,14 +16,14 @@ We will process the following personal data in connection with the Feature:
 | IDFA                                                         | If you choose to bundle the token ID and IDFA we will process the   associated IDFA in accordance with your instructions. |
 
 
-## 3.  service region
+## 3. Service region
 
-As specified in the DPSA.
+As specified in the DPSA
 
-## 4.  SUB-Processors
+## 4. Sub-processors
 
-As specified in the DPSA.
+As specified in the DPSA
 
-## 5. data retention
+## 5. Data retention
 
 As specified in the DPSA
