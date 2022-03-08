@@ -106,7 +106,6 @@ SELECT
 - Query and analysis result
 
 
-
 <span id="NULLIF"></span>
 ## NULLIF
 
