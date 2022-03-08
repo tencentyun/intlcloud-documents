@@ -2,7 +2,7 @@
 
 Data processing provides capabilities to cleanse, filter, mask, enrich, and distribute log data and more. The service is free of charge before March 15, 2022.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/b9eaf5787fe5a5cdd5b58da336fbb3b3.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/d974fd27c17733119feb79035516d6a0.png)
 
 You can select a source log topic and write Domain Specific Language (DSL) processing function statements to process logs line by line and send logs that meet certain requirements to specified target log topics. 
 
