@@ -19,7 +19,7 @@ A logset usually corresponds to a project/business in a company. You are advised
 
 ## Example
 
-![](https://qcloudimg.tencent-cloud.cn/raw/4e25a8a18a2a9e3f8cbe885b963e62db.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b98a2804a2b46eda2d480d0099c205e2.png)
 
 As shown in the figure above, the company has two departments:
 
