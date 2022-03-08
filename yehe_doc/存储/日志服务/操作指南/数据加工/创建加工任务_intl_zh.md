@@ -2,7 +2,7 @@
 
 数据加工提供对日志数据的过滤、清洗、脱敏、富化、分发等能力，2022年3月15日之前免费使用。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/b9eaf5787fe5a5cdd5b58da336fbb3b3.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/d974fd27c17733119feb79035516d6a0.png)
 
 用户选择一个源日志主题，编写一段 DSL（Domain Specific Language）加工函数的语句，DSL 函数将针对一行一行的日志，进行加工，最后可以根据一定的条件，将满足条件的日志发送到指定的目标日志主题中。 
 
