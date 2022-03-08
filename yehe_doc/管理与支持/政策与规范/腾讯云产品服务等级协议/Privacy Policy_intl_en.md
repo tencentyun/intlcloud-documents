@@ -580,6 +580,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 22.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
 23.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
 24.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45476).
+25.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590)
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
