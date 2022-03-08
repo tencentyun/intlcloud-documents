@@ -3,13 +3,13 @@
 >?Only two-node and three-node TencentDB for MySQL instances support importing SQL files.
 >
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click an instance ID to enter the management page.
-2. Select **Manage Database** > **Database List** > **Data Import**. Select the file to be imported and the target database and click **OK** to import the data.
+2. Select **Database Management** > **Database List** > **Import Data**. Select the file to be imported and the target database and click **Next** to import the data.
 >?
 >- To avoid database unavailability caused by corruption of system tables, do not import data from system tables such as the `mysql.user` table. 
 >- Only incremental import is supported. If there is obsolete data in the database, clear the data before the importing operation.
 >- A single file does not exceed 10 GB. The file name only allows letters, numbers, and underscores.
 >
-![](https://main.qcloudimg.com/raw/a8854e74caebb9c69d831dc1583c10c0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8475a29058e3b8e16e04a2548b85fb60.png)
 For more information, see [Importing SQL Files](https://intl.cloud.tencent.com/document/product/236/8466).
 
 ### How do I export data from a database?
