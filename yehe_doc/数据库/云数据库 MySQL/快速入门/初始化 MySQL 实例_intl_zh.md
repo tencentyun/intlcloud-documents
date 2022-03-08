@@ -9,7 +9,7 @@
  - **设置root帐号密码**：新创建的 MySQL 数据库的用户名默认为 root，此处用来设置该 root 帐号的密码。
  - **确认密码**：再次输入密码。
 3. 在弹出的初始化对话框，单击**确定**。
-![](https://qcloudimg.tencent-cloud.cn/raw/cd8d4f83c43cc23b23c50c2e85773473.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d92243c0d68fdf794c39300c7ca367d4.png)
 4. 返回实例列表，待实例状态变为**运行中**，即可正常使用。
 
 ## 后续操作
