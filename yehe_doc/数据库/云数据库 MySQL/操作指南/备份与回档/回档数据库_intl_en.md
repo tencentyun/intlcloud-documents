@@ -39,7 +39,7 @@ The rollback feature can roll back databases or tables to a specified point in t
 >- If the rollback involves foreign keys and other constraints of the table during the execution of binlogs, the SQL statements may fail.
 >
 ![](https://main.qcloudimg.com/raw/6cb2fa4d3e8b0d795bd5bf19f8d69d86.png)
-3. Set the post-rollback database or table name and rollback time, and click **Rollback**.
+3. Set the post-rollback database or table name and rollback time, and click **Roll Back**.
 >?
 >- Only one rollback time can be set for each instance.
 >- If you choose to set a batch rollback time, all databases or tables will be rolled back at the specified time.
