@@ -19,7 +19,7 @@
 
 ## 场景示例
 
-![](https://qcloudimg.tencent-cloud.cn/raw/4e25a8a18a2a9e3f8cbe885b963e62db.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b98a2804a2b46eda2d480d0099c205e2.png)
 
 如上图，该公司有两个部门：
 
