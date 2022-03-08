@@ -165,15 +165,15 @@
 <tr>
 </tbody></table>
 :::
-::: 日志服务/sAPI/s3.0 [](id:API3)
+::: 日志服务API3.0 [](id:API3)
 
 [日志服务 API 3.0](https://intl.cloud.tencent.com/document/product/614/11321) 是 CLS 最新版本的 API，符合腾讯云统一的 API 规范，可通过 API 管理日志主题和告警策略等资源，其所使用的域名如下：
 
->? 通过外网访问时，也可使用统一域名 cls.tencentcloudapi.com，将根据调用接口时客户端所在位置，自动解析到最近的某个具体地域的服务器，对时延敏感的业务，建议指定带地域的域名。
->
+通过外网访问时，也可使用统一域名 cls.tencentcloudapi.com，将根据调用接口时客户端所在位置，自动解析到最近的某个具体地域的服务器，对时延敏感的业务，建议指定带地域的域名。
+
 
 | 地域     | 简称             | 内网域名                         | 外网域名                                 |
-| :------- | :--------------- | -------------------------------- | ---------------------------------------- |
+| ------- | --------------- | -------------------------------- | ---------------------------------------- |
 | 北京     | ap-beijing       | cls.internal.tencentcloudapi.com | cls.ap-beijing.tencentcloudapi.com       |
 | 广州     | ap-guangzhou     | cls.internal.tencentcloudapi.com | cls.ap-guangzhou.tencentcloudapi.com     |
 | 上海     | ap-shanghai      | cls.internal.tencentcloudapi.com | cls.ap-shanghai.tencentcloudapi.com      |
@@ -195,7 +195,7 @@
 | 多伦多   | na-toronto       | cls.internal.tencentcloudapi.com | cls.na-toronto.tencentcloudapi.com       |
 
 :::
-::: 日志服务/sAPI/s2017 [](id:API2017)
+::: 日志服务API2017 [](id:API2017)
 
 [日志服务 API 2017](https://intl.cloud.tencent.com/document/product/614/16907) 是日志服务旧版本 API，不建议单独使用，其所使用的域名如下：
 
@@ -324,7 +324,7 @@
 </tr>
 </tbody></table>
 :::
-::: Kafka/s上传日志 [](id:Kafka)
+::: Kafka上传日志 [](id:Kafka)
 
 [使用 Kafka 协议上传日志](https://intl.cloud.tencent.com/document/product/614/43574) 支持使用 Kafka Producer SDK 和其他 Kafka 相关 agent 上传日志到日志服务，其所使用的域名如下：
 
