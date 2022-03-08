@@ -23,10 +23,8 @@ When you configure a custom callback API, you can insert system variables to the
 | {{.Duration}}             | Alarm duration (minutes)             | 0                                                       |
 | {{.TriggerParams}}            | Alarm trigger parameters             |  $1.success_counts=15;                                            |
 | {{.CustomizeMessage}}     | Custom alarm notification content               |  -                                             |
-| {{.NotifyType}}      |   Notification type. `1`: alarm notification; `2`: alarm clearing notification     | 1     |
-| {{.DetailUrl}}            | Alarm details page link (login-free)       | https://alarm.cls.tencentcs.com/CJNmxxxx                |
-| {{.QueryUrl}}             | Search and analysis link for the first execution statement     | https://alarm.cls.tencentcs.com/Olw8xxxx                |
-
+| {{.NotifyType}}      |   Alarm notification type. 1: alarm notification; 2: alarm clearing notification     | 1     |
+ 
 
 ## Example
 

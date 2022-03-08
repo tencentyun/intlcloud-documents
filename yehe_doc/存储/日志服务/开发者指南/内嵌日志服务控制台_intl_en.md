@@ -1,4 +1,3 @@
-
 ## Overview
 
 CLS allows you to embed the [CLS console](https://console.cloud.tencent.com/cls) into an external system so you can conduct log search and analysis without logging in to Tencent Cloud console. This feature offers benefits as follows:
@@ -8,33 +7,28 @@ CLS allows you to embed the [CLS console](https://console.cloud.tencent.com/cls)
 
 **Sample code for an embedded page: [cls-iframe-demo](https://github.com/TencentCloud/cls-iframe-demo).**
 
+>! This example does not include the authentication logic of external systems. After deployment, all users (even if they have not logged in to Tencent cloud) can view the data under their accounts with the role permissions configured in the example. To ensure data privacy and security, please add the authentication logic of external systems or restrict their access to the private network only to ensure that only authorized users can view the page.
+>
+
 See the figure below for an overview of this feature:
 ![img](https://main.qcloudimg.com/raw/c04840e707a3e9aca812d58d9414faea.png)
 
-
-
 ## Prerequisites
 
-1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview) to create a [CAM role](https://intl.cloud.tencent.com/document/product/598/19381) **with console login permissions**. Set the role entity to root account, e.g. `CompanyOpsRole`. Grant the CAM role appropriate access permissions using policies, e.g. `QcloudCLSReadOnlyAccess` for read-only access. You can create a CAM role in 2 ways: [using the console](#step1) or [using APIs](#step2).
+1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview) to create a [CAM role](https://intl.cloud.tencent.com/document/product/598/19381) **with console login permissions**. Set the role entity to root account, e.g. `CompanyOpsRole`. Grant the CAM role appropriate access permissions using policies, e.g. `QcloudCLSReadOnlyAccess` for read-only access.
 <span id="step1"></span>
- - **Creating a CAM role using the console**:
-	1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview).
-	2. Click **Roles** on the left sidebar to go to the roles list page.
-	3. Select **Create Role** > **Tencent Cloud Account** to create a custom role.
-	4. Select **Current root account **, check **Allow the current role to access console**, and click **Next**.
+ 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview).
+ 2. Click **Roles** on the left sidebar to go to the roles list page.
+ 3. Choose **Create Role** > **Tencent Cloud Account** to create a custom role.
+ 4. Select **Current root account **, check **Allow the current role to access console**, and click **Next**.
 
-	>!If the option **Allow the current role to access console* is not available, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for adding the role to the allowlist.
-	5. Set access policies for the role, e.g., the read-only policy `QcloudCLSReadOnlyAccess`, and click **Next**.
+>!If the option **Allow the current role to access console** is not available, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for adding the role to the allowlist.
+>
+ 5. Set access policies for the role, e.g., the read-only policy `QcloudCLSReadOnlyAccess`, and click **Next**.
 
-	6. Enter the role name and click **Done**.
+ 6. Enter the role name and click **Done**.
 
 <span id="step2"></span>
- - **Creating a CAM role using APIs**:
- For detailed directions, see [CreateRole](https://intl.cloud.tencent.com/document/product/598/33561). Note that you need to enter `1` as the value of ConsoleLogin to allow the role to log in to the console.
- Sample request:
-```plaintext
-https://cam.tencentcloudapi.com/?Action=CreateRole&RoleName=CompanyOpsRole&ConsoleLogin=1&PolicyDocument={"version":"2.0","statement":[{"action":["cls:get*","cls:list*","cls:GetHistogram","cls:GetFastAnalysis","cls:GetChart","cls:ListChart","cls:ListDashboard","cls:GetDashboard","cls:searchLog","cls:downloadLog","cls:pullLogs"],"effect":"allow","principal":{"qcs":["qcs::cam::uin/100001234567:root"]}}]}
-```
 2. Obtain the access key of the current user. For more information, see [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228).
 
 ## Directions
@@ -141,116 +135,86 @@ echo $signStr;
 6. Combine your login information and destination page URL into a login URL.
    1. **Get the CLS console search analysis page URL**.
 ```plaintext
-https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_id>&topic_id=<topic_id>
+https://console.cloud.tencent.com/cls/search?region=<region>&topic_id=<topic_id>
 ```
    **Parameters in the CLS console search analysis page URL**:
 <table>
-<thead>
-<tr>
-<th align="left">Parameter</th>
-<th align="left">Required</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">region</td>
-<td align="left">Yes</td>
-<td align="left">String</td>
-<td align="left">Region abbreviation, e.g., ap-shanghai for Shanghai region. For other available region abbreviations, see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a></td>
-</tr>
-<tr>
-<td align="left">logset_id</td>
-<td align="left">Yes</td>
-<td align="left">String</td>
-<td align="left">Logset ID</td>
-</tr>
-<tr>
-<td align="left">topic_id</td>
-<td align="left">Yes</td>
-<td align="left">String</td>
-<td align="left">Log topic ID</td>
-</tr>
-<tr>
-<td align="left">time </td>
-<td align="left">No</td>
-<td align="left">String</td>
-<td align="left">Time range for log search. Format example: 
-```
-2021-07-15T10:00:00.000,2021-07-15T12:30:00.000
-```
-</td>
-</tr>
-<tr>
-<td align="left">query</td>
-<td align="left">No</td>
-<td align="left">String</td>
-<td align="left">Keyword search syntax. Reserved URL characters (if any) in keywords must be URL encoded</td>
-</tr>
-<tr>
-<td align="left">hideWidget</td>
-<td align="left">No</td>
-<td align="left">Boolean</td>
-<td align="left">Indicates whether to hide the Smart Customer Service icon. `true`: Yes; `false`: No (default)</td>
-</tr>
-<tr>
-<td align="left">hideTopNav</td>
-<td align="left">No</td>
-<td align="left">Boolean</td>
-<td align="left">Indicates whether to hide the top navigation bar in the Tencent Cloud console. `true`: Yes; `false`: No (default)</td>
-</tr>
-<tr>
-<td align="left">hideLeftNav</td>
-<td align="left">No</td>
-<td align="left">Boolean</td>
-<td align="left">Indicates whether to hide the left sidebar in the Tencent Cloud console. `true`: Yes; `false`: No (default)</td>
-</tr>
-<tr>
-<td align="left">hideHeader</td>
-<td align="left">No</td>
-<td align="left">Boolean</td>
-<td align="left">Indicates whether to hide the top navigation bar on the CLS page (title and region options). `true`: Yes; `false`: No (default)</td>
-</tr>
-<tr>
-<td align="left">hideTopTips</td>
-<td align="left">No</td>
-<td align="left">Boolean</td>
-<td align="left">Indicates whether to hide the tips on the CLS page. `true`: Yes; `false`: No (default)</td>
-</tr>
-<tr>
-<td align="left">hideRegion</td>
-<td align="left">No</td>
-<td align="left">Boolean</td>
-<td align="left">Indicates whether to hide region options at the top of the CLS page. `true`: Yes; `false`: No (default)</td>
-</tr>
-<tr>
-<td align="left">hideLogsetSelect</td>
-<td align="left">No</td>
-<td align="left">Boolean</td>
-<td align="left">Indicates whether to hide logset options on the CLS page. `true`: Yes; `false`: No (default)</td>
-</tr>
-<tr>
-<td align="left">hideTopicSelect</td>
-<td align="left">No</td>
-<td align="left">Boolean</td>
-<td align="left">Indicates whether to hide log topic options on the CLS page. `true`: Yes; `false`: No (default)</td>
-</tr>
-</tbody>
+	<tr><th>Parameter</th><th>Required</th><th>Type</th><th>Description</th></tr>
+	<tr><td>region</td><td>Yes</td><td>String</td><td>Region abbreviation, e.g., ap-shanghai for Shanghai region. For other available region abbreviations, see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a></td></tr>
+	<tr><td>topic_id</td><td>No</td><td>String</td><td>Log topic ID</td></tr>
+	<tr><td>logset_name</td><td>No</td><td>String</td><td>Logset name</td></tr>
+	<tr><td>topic_name</td><td>No</td><td>String</td><td>Log topic name</td></tr>
+	<tr><td>time</td><td>No</td><td>String</td><td>Time range for log search. Format example:
+2021-07-15T10:00:00.000,2021-07-15T12:30:00.000</td></tr>
+	<tr><td>queryBase64</td><td>No</td><td>String</td><td>Search and analysis statement, which is base64Url-encoded</td></tr>
+	<tr><td>filter</td><td>No</td><td>String</td><td>Filter condition, which is base64Url-encoded. For more information, see <a href="#ParameterDesc">Filter Parameter Description</a></td></tr>
+	<tr><td>hideWidget</td><td>No</td><td>Boolean</td><td>Indicates whether to hide agent/documentation button in the bottom-right corner. `true`: Yes; `false`: No (default)</td></tr>
+	<tr><td>hideTopNav</td><td>No</td><td>Boolean</td><td>Indicates whether to hide the top navigation bar in the Tencent Cloud console. `true`: Yes; `false`: No (default)</td></tr>
+	<tr><td>hideLeftNav</td><td>No</td><td>Boolean</td><td>Indicates whether to hide the left navigation bar in the Tencent Cloud console. `true`: Yes; `false`: No (default)</td></tr>
+	<tr><td>hideTopicSelect</td><td>No</td><td>Boolean</td><td>Indicates whether to hide the log topic selection controls (including the region, logset, and log topic controls). `true`: Yes; `false`: No (default)</td></tr>
+	<tr><td>hideHeader</td><td>No</td><td>Boolean</td><td>Indicates whether to hide the log topic selection control and the row where the control resides. `true`: Yes; `false`: No (default). This parameter is valid only when `hideTopicSelect` is `true`.</td></tr>
+	<tr><td>hideTopTips</td><td>No</td><td>Boolean</td><td>Indicates whether to hide the announcements on the top of the page. `true`: Yes; `false`: No (default)</td></tr>
+	<tr><td>hideConfigMenu</td><td>No</td><td>Boolean</td><td>Indicates whether to hide the log topic configuration management menu. `true`: Yes; `false`: No (default)</td></tr>
+	<tr><td>hideLogDownload</td><td>No</td><td>Boolean</td><td>Indicates whether to hide the raw log download button. `true`: Yes; `false`: No (default)</td></tr>
 </table>
- 2. Splice your login information and destination page URL into a login URL. <b>The parameter values should be URL-encoded.</b>
+>! You can specify the log topic to search using URL parameters in either the following modes:
+> - topic_id: use the log topic ID to specify the log topic to search.
+> - logset_name+topic_name: use the logset name and log topic name to specify the log topic to search. Note that if the logset or log topic name changes, the URL adopting this mode will become invalid.
+>
+> If the `topic_id`, `logset_name`, and `topic_name` parameters exist at the same time, `topic_id` prevails. 
+>
+The following figure shows the mappings between hidden parameters and page modules:
+
+ 2. Splice your login information and destination page URL into a login URL. **The parameter values should be URL-encoded.**
 ```plaintext
 https://cloud.tencent.com/login/roleAccessCallback
 ?algorithm=<encryption algorithm for signing; currently only supports SHA1 (used by default) and SHA256
 &secretId=<secretId for signing>
 &token=<Temporary key token>
 &nonce=<nonce for signing>
-&timestamp=<timestamp for signing>
-&signature=<signature string>
-&s_url=<destination URL after login>
+&timestamp=<Timestamp for signing>
+&signature=<Signature string>
+&s_url=<Destination URL after login>
 ```
 7. Use the final URL to access the embedded CLS page of the Tencent Cloud console. The sample below is a URL to the CLS search analysis page:
 ```plaintext
 https://cloud.tencent.com/login/roleAccessCallback?nonce=52055817&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcls%2Fsearch%3Fregion%3Dap-guangzhou%26start_time%3D2020-05-26%25252014%25253A01%25253A18%26end_time%3D2020-05-26%25252014%25253A16%25253A18&secretId=AKID-vHJ7WPHcy_RVIOm-QTIktXOf9S9z_k_JackOp3dyQPJwmDrNLQJuiNuw9******&signature=eXeWaDn6iJlcPp1sqqGd6m9%2FQk****&timestamp=1592455018&token=5e4vuBHL7fBQPi1V9fvSINw4Vu7PSr9Ic3de78b86109c171eb4e3ea27c137c1fIWKU8JC-LO01L87sIYlfTSaHHXeHcqim7Jg9hBuN2nbdfgeBUPXhmpyAk4G6e9bHFZ-7yNRig7Y33CQHxh6jOesP4VfhRzQprWGRtC5No1ty******-aoj_WJhA55oyvqaqxw2jtTdh8nx9OjJr3tlbIa9oJe7aZYoPbdpFqrF6ZjlCPPap2yQB_SkUsWwDl_9BrK2Km3U2IocdvQ7QxrW0ts1aiBi7xtTSJRcfkBYPYEV_YoJrtkhYW3E4L47imA1bfVAjM9F5uKWzVzsDGDT0aCUU9mqdb4vjJrY8tm-wJKKEe8eiyY9EbkH3VWnFV2YocYNDJqFyjKOWR******
 ```
 
+<span id="ParameterDesc"></span>
+## Filter Parameter Description
+
+Filter parameters are used to generate the filter condition in the query statement box at the bottom of the page, as shown in the figure blow, and are suitable for fixed search criteria.
+
+
+Filter parameters are in JSON format in the following structure:
+```
+[{
+    "key": "action",
+    "grammarName": "INCLUDE",
+    "values": [{
+        "values": ["test1"]
+    }]
+}]
+```
+Where:
+- `key` indicates the field name for key-value search. For full-text search, leave `key` empty.
+- `grammarName` indicates the specific filter mode of the filter condition. Supported values include `INCLUDE`, `EXCLUDE`, `EXISTS`, and `RANGE`.
+<table>
+	<tr><th>Feature</th><th>grammarName</th><th>Example</th><th>Equivalent Search Statement</th></tr>
+	<tr><td>Key-value search - INCLUDE</td><td>INCLUDE</td><td>[{"key":"action","grammarName":"INCLUDE","values":[{"values":["test1"]}]}]</td><td>action:"test1"</td></tr>
+	<tr><td>Key-value search - EXCLUDE</td><td>EXCLUDE</td><td>[{"key":"action","grammarName":"EXCLUDE","values":[{"values":["test1","test2"]}]}]</td><td>NOT action:"test1" AND NOT action:"test2"</td></tr>
+	<tr><td>Full-text search - INCLUDE</td><td>INCLUDE_WITHOUT_KEY</td><td>[{"key":"","grammarName":"INCLUDE_WITHOUT_KEY","values":[{"values":["test3"]}]}]</td><td>"test3"</td></tr>
+	<tr><td>Full-text search - EXCLUDE</td><td>EXCLUDE_WITHOUT_KEY</td><td>[{"key":"","grammarName":"EXCLUDE_WITHOUT_KEY","values":[{"values":["test3"]}]}]</td><td>NOT "test3"</td></tr>
+	<tr><td>The field exists</td><td>EXISTS</td><td>[{"key":"action","grammarName":"EXISTS","values":[]}]</td><td>_exists_:action</td></tr>
+	<tr><td>The field does not exist</td><td>NOT_EXISTS</td><td>[{"key":"action","grammarName":"NOT_EXISTS","values":[]}]</td><td>NOT _exists_:action</td></tr>
+	<tr><td>The numeric type field is in the specified range</td><td>RANGE</td><td>[{"key":"time","grammarName":"RANGE","values":[{"values":["1"]},{"values":["100"]}]}]</td><td>time:[1 TO 100]</td></tr>
+	<tr><td>The numeric type field is outside the specified range</td><td>NOT_RANGE</td><td>[{"key":"time","grammarName":"NOT_RANGE","values":[{"values":["1"]},{"values":["100"]}]}]</td><td>NOT time:[1 TO 100]</td></tr>
+	<tr><td>The numeric type field is greater than the specified value</td><td>MORE_THAN</td><td>[{"key":"time","grammarName":"MORE_THAN","values":[{"values":["1"]}]}]</td><td>time:>1</td></tr>
+	<tr><td>The numeric type field is greater than or equal to the specified value</td><td>MORE_THAN_OR_EQUAL</td><td>[{"key":"time","grammarName":"MORE_THAN_OR_EQUAL","values":[{"values":["1"]}]}]</td><td>time:>=1</td></tr>
+	<tr><td>The numeric type field is less than the specified value</td><td>LESS_THAN</td><td>[{"key":"time","grammarName":"LESS_THAN","values":[{"values":["1"]}]}]</td><td>time:<1</td></tr>
+	<tr><td>The numeric type field is less than or equal to the specified value</td><td>LESS_THAN_OR_EQUAL</td><td>[{"key":"time","grammarName":"LESS_THAN_OR_EQUAL","values":[{"values":["1"]}]}]</td><td>time:<=1</td></tr>
+</table>
+>! Only base64Url-encoded filter parameters can be added to URLs.
+>
 

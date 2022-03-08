@@ -1,6 +1,6 @@
 ## Overview
 
-Partition is the smallest read/write unit of Cloud Log Service (CLS). A log topic can be divided into several partitions and must have at least one partition. CLS uses the value range of MD5 as the valid range and controls the overall throughput performance by merging or splitting partitions. A log topic supports up to 50 partitions. We recommend that you use and work with topic partitions rationally to prevent waste of resources.
+Partition is the smallest read/write unit of CLS. A log topic can be divided into several partitions and must have at least one partition. CLS uses the value range of MD5 as the valid range and controls the overall throughput performance by merging or splitting partitions. A log topic supports up to 50 partitions. We recommend that you use and work with topic partitions rationally to prevent waste of resources.
 
 Basic attributes of a partition:
 
@@ -9,6 +9,9 @@ Basic attributes of a partition:
 - **Partition status**:
   - Read-write: the current partition allows read and write.
   - Read-only: the current partition is read-only and no data can be written to it.
+
+>? Topic partitioning is a complex concept. You are advised to use the [Auto Split]() function in actual practice. CLS automatically adjusts topic partitioning based on the volume of log data.
+>
 
 ## Partition Range
 
@@ -42,16 +45,16 @@ Each partition has a certain level of read and write capability. We recommend th
 <tr>
    <td rowspan="2">Frequency control</td>
    <td>Write requests</td>
-   <td>Every partition supports a maximum of 500 QPS of write operations. It will reject requests and return the status code 429 with an error message of “SpeedQuotaExceed” when the limit is exceeded.</td>
+   <td>Every partition supports a maximum of 500 QPS of write operations. It will reject requests and return the status code 429 with an error message of "SpeedQuotaExceed" when the limit is exceeded.</td>
  </tr>
  <tr>
    <td>Read requests</td>
-   <td>Every partition supports a maximum of 200 QPS of read operations. It will reject requests and return the status code 429 with an error message of “SpeedQuotaExceed” when the limit is exceeded.</td>
+   <td>Every partition supports a maximum of 200 QPS of read operations. It will reject requests and return the status code 429 with an error message of "SpeedQuotaExceed" when the limit is exceeded.</td>
  </tr>
  <tr>
-   <td >Traffic throttle</td>
+   <td >Traffic throttling</td>
    <td>Write traffic</td>
-   <td>Every partition supports the write traffic up to 5 MB/sec. It will truncate data and return the status code 429 with an error message of “SpeedQuotaExceed” when the limit is exceeded.</td>
+   <td>Every partition supports the write traffic of up to 5 MB/sec. It will truncate data and return the status code 429 with an error message of "SpeedQuotaExceed" when the limit is exceeded.</td>
  </tr>
 </table>
 
@@ -59,17 +62,17 @@ Each partition has a certain level of read and write capability. We recommend th
 
 ## Partition Status
 
-A partition can be in **read-write** or **read-only** mode. Only read-write partitions support data writing. Read-only partitions does not allow data writing but can be consumed within their lifetime. All partitions are readable and writable when they are created, but merging and splitting operations will change the status to read-only.
+A partition can be in **read-write** or **read-only** mode. Only read-write partitions support data writing. Read-only partitions do not allow data writing but can be consumed within their lifetime. All partitions are readable and writable when they are created, but merging and splitting operations will change the status to read-only.
 
 #### Merging partitions
 
-Two adjacent read-write partitions can be merged into one partition. After the merge, the two original partitions become read-only, which only allow data consumption, but not data writing. The new partition is readable and writable and covers the range of the two original partitions.
+Two adjacent read-write partitions can be merged into one partition. After two partitions are merged, the two original partitions become read-only, which only allow data consumption, but not data writing. The new partition is readable and writable and covers the range of the two original partitions.
 
 
-![](https://main.qcloudimg.com/raw/cbe51af3ace4388f1ca8b5a36d30dbe6.png)
+![](https://main.qcloudimg.com/raw/450faaa7fd7e8e3a8a4f4e4197c86778.png)
 
 #### Splitting a partition
 
-A read-write partition can be split into two partitions with smaller ranges. When splitting a partition, you need to specify the MD5 value of a split point, which must be larger than the value of the start point and smaller than the value of the end point. After the split, the original partition becomes read-only, which only allows data consumption, but not data writing. The new partitions are readable and writable and cover the range of the original partition.
+A read-write partition can be split into two partitions with smaller ranges. When splitting a partition, you need to specify the MD5 value of a split point, which must be larger than the value of the start point and smaller than the value of the end point. After a partition is split, the original partition becomes read-only, which only allows data consumption, but not data writing. The new partition is readable and writable and covers the range of the original partition.
 
-![](https://main.qcloudimg.com/raw/2c13d5f4948a22306b880763908fe72a.png)
+![](https://main.qcloudimg.com/raw/80b47765d6f7c0f22366246d95f3e6e1.png)
