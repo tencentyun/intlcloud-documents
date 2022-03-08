@@ -12,7 +12,7 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 ## Configuring Security Groups for TencentDB
 ### Step 1. Create a security group
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/securitygroup).
-2. Select **Security Group** on the left sidebar, select a region, and click **Create**.
+2. Select **Security Group** on the left sidebar, select a region, and click **New**.
 3. In the pop-up dialog window, configure the following items, and click **OK**.
  - **Template**: select a template based on the service to be deployed on the TencentDB instance in the security group, which simplifies the security group rule configuration, as shown below:
 <table>
