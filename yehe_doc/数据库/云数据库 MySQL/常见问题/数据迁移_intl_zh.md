@@ -9,7 +9,7 @@
 >- 仅支持增量导入数据，如数据库内有废弃数据，请先清空数据后再执行导入操作。
 >- 单个文件不超过10GB，文件名仅允许英文、数字、下划线。
 >
-![](https://main.qcloudimg.com/raw/a8854e74caebb9c69d831dc1583c10c0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8475a29058e3b8e16e04a2548b85fb60.png)
 详情请参见 [导入 SQL 文件](https://intl.cloud.tencent.com/document/product/236/8466)。
 
 ### 如何导出数据库数据？
