@@ -165,15 +165,15 @@ The domain names used by different CLS modules differ as follows:
 <tr>
 </tbody></table>
 :::
-::: CLS/sAPI/s3.0 [](id:API3)
+::: CLS API 3.0 [](id:API3)
 
 [CLS API 3.0](https://intl.cloud.tencent.com/document/product/614/11321) is CLS's latest API version and complies with the unified API specifications of Tencent Cloud. You can use the APIs to manage resources such as log topics and alarm policies. The APIs use the following domain names:
 
->? If you access CLS via the public network, you can also use unified domain name cls.tencentcloudapi.com. Your API request will be automatically resolved to a server that is **nearest** to the client. For latency-sensitive businesses, we recommend that you specify the region in the domain name.
->
+If you access CLS via the public network, you can also use unified domain name cls.tencentcloudapi.com. Your API request will be automatically resolved to a server that is **nearest** to the client. For latency-sensitive businesses, we recommend that you specify the region in the domain name.
+
 
 | Region     | Alias             | Private Network Domain Name                            | Public Network Domain Name                           |
-| :------- | :--------------- | -------------------------------- | ---------------------------------------- |
+| ------- | --------------- | -------------------------------- | ---------------------------------------- |
 | Beijing     | ap-beijing       | cls.internal.tencentcloudapi.com | cls.ap-beijing.tencentcloudapi.com       |
 | Guangzhou     | ap-guangzhou     | cls.internal.tencentcloudapi.com | cls.ap-guangzhou.tencentcloudapi.com     |
 | Shanghai     | ap-shanghai      | cls.internal.tencentcloudapi.com | cls.ap-shanghai.tencentcloudapi.com      |
@@ -195,7 +195,7 @@ The domain names used by different CLS modules differ as follows:
 | Toronto   | na-toronto       | cls.internal.tencentcloudapi.com | cls.na-toronto.tencentcloudapi.com       |
 
 :::
-::: CLS/sAPI/s2017 [](id:API2017)
+::: CLS API 2017 [](id:API2017)
 
 [CLS API 2017](https://intl.cloud.tencent.com/document/product/614/16907) is CLS's earlier API version and is not recommended to be used alone. The APIs use the following domain names:
 
@@ -324,7 +324,7 @@ The domain names used by different CLS modules differ as follows:
 </tr>
 </tbody></table>
 :::
-::: Kafka/sUploading Logs [](id:Kafka)
+::: Kafka Uploading Logs [](id:Kafka)
 
 With the feature of [uploading logs via Kafka](https://intl.cloud.tencent.com/document/product/614/43574), you can use Kafka Producer SDKs or other Kafka agents to upload logs to CLS. The feature uses the following domain names:
 
