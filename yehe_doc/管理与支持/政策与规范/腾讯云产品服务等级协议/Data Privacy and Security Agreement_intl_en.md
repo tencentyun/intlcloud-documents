@@ -124,6 +124,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 24.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45465).
 25.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
 26.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45475).
+27.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45591)
 
 ## Jurisdiction-specific Requirements
 
