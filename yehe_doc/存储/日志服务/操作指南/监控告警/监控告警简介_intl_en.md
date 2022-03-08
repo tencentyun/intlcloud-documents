@@ -16,4 +16,5 @@ CLS supports setting alarm policies for one or more log topics. An alarm policy 
 
 ### Flowchart
 
-![image-20201230144652106](https://main.qcloudimg.com/raw/238b109e5c3f22088bbcc1fe62ed2ee3.png)
+![image-20201230144652106](https://qcloudimg.tencent-cloud.cn/raw/9e338c05e4c15c75759a0dd04adf297a.png)
+
