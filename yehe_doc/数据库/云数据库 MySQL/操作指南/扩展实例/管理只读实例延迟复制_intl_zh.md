@@ -46,7 +46,7 @@
 ### 通过只读实例管理页修改
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击只读实例 ID，进入只读实例详情页。
 2. 在只读实例详情页的**部署信息** > **延迟复制**处，单击**修改**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5098762edf0e478942ad060c5bd80da5.png"  style="zoom:80%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f9b0fffd50ddfb2f2d4819860be9aef0.png"  style="zoom:80%;">
 3. 在弹出的对话框，设置延迟时间后，单击**确定**。
 
 ## 关闭延迟复制
@@ -59,7 +59,7 @@
 ### 通过只读实例管理页关闭
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击只读实例 ID，进入只读实例详情页。
 2. 在只读实例详情页的**部署信息** > **延迟复制**处，单击**关闭**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5f3a33f7b23513b8766eb62455406478.png"  style="zoom:80%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ae3a4a7f40ee28f4d5ad032f68c8a5a2.png"  style="zoom:80%;">
 3. 在弹出的对话框，确认无误后，单击**确定**。
 >?关闭延迟复制，则延迟复制时间将为0秒，即只读实例与主实例之间将恢复数据的实时同步。 
 > 
@@ -69,7 +69,7 @@
 >
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击只读实例 ID，进入只读实例详情页。
 2. 在只读实例详情页下方的**部署信息** > **复制状态**处，单击**启动**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/29703db36415992fda7e1767a7b830e8.png"  style="zoom:80%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e6bcd6a0ae7cd0c82cf23da4f10144a7.png"  style="zoom:80%;">
 3. 在弹出的对话框，单击**确定**。
 >? 启动复制后，只读实例恢复与主实例的数据同步。
 >
@@ -97,7 +97,7 @@
 >
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击只读实例 ID，进入只读实例详情页。
 2. 在只读实例详情页下方的**部署信息** > **复制状态**处，单击**停止**。
-<img src="https://main.qcloudimg.com/raw/8921d228b70bf42ca5120d6fcf44e92c.png"  style="zoom:85%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6b1570566d533f93306256cf41113fc5.png"  style="zoom:85%;">
 3. 在弹出的对话框，确认无误后，单击**确定**。
 
 ## 热点问题
