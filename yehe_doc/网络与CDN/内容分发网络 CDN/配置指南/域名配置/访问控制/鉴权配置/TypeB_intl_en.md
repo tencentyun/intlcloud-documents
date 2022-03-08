@@ -16,8 +16,8 @@
 ### Parameter description
 TypeB requires the following configurations:
 ![](https://main.qcloudimg.com/raw/d0cd00305ed4911a500995628bd45cfd.png)
-**Custom Authentication Key**: it can contain 6 to 40 digits, uppercase and lowercase letters. It should be kept private and disclosed to only the client and server.
-**Custom Validity Period**: the `timestamp` value in the request path plus the configured validity period is compared with the current time to determine whether the request has expired; if so, a 403 error will be directly returned.
+**Authentication Key**: it can contain 6 to 40 digits, uppercase and lowercase letters. It should be kept private and disclosed to only the client and server.
+**Validity Time**: the `timestamp` value in the request path plus the configured validity period is compared with the current time to determine whether the request has expired; if so, a 403 error will be directly returned.
 
 ### Object
 After configuring the key, parameter name, and validity period, you can specify the authentication object as needed. The following three authentication modes are supported:
