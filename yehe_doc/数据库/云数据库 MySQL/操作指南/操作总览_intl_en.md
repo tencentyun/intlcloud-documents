@@ -7,7 +7,7 @@ You can log in to the [TencentDB for MySQL console](https://console.cloud.tencen
 | Feature | Description |
 |---------|---------|
 | Configuration adjustment | In the instance list, click **More** in the **Operation** column to adjust the configuration (i.e., scaling) of your database instance. Both instance upgrade and downgrade are supported. For more information, see [Adjusting Database Instance Specification](https://intl.cloud.tencent.com/document/product/236/19707). |
-| Rollback | In the instance list, select the instance to be rolled back and click **More** > **Roll back** at the top to roll it back to a specified time point based on cold backup and binlog. For more information, see [Rolling Back Databases](https://intl.cloud.tencent.com/document/product/236/7276).|
+| Rollback | In the instance list, select the instance to be rolled back and click **More** > **Roll Back** at the top to roll it back to a specified time point based on cold backup and binlog. For more information, see [Rolling Back Databases](https://intl.cloud.tencent.com/document/product/236/7276).|
 | Restart | In the instance list, select an instance and click **Restart** at the top to restart it. You can also select multiple instances for batch restart. <li>The instance will be inaccessible during the restart, and existing connections to it will be closed. <li>If the number of business writes and the number of dirty pages is high during the restart, the restart will fail. In this case, the instance will go back to the state before the restart and become accessible. <li>Please restart instances during off-peak hours to ensure the restart success rate and reduce the impact on your business.</li> |
 
 ## Instance Management Page
