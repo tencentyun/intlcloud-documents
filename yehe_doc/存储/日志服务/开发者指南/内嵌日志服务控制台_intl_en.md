@@ -157,12 +157,15 @@ https://console.cloud.tencent.com/cls/search?region=<region>&topic_id=<topic_id>
 	<tr><td>hideConfigMenu</td><td>No</td><td>Boolean</td><td>Indicates whether to hide the log topic configuration management menu. `true`: Yes; `false`: No (default)</td></tr>
 	<tr><td>hideLogDownload</td><td>No</td><td>Boolean</td><td>Indicates whether to hide the raw log download button. `true`: Yes; `false`: No (default)</td></tr>
 </table>
+
+
+
 >! You can specify the log topic to search using URL parameters in either the following modes:
 > - topic_id: use the log topic ID to specify the log topic to search.
 > - logset_name+topic_name: use the logset name and log topic name to specify the log topic to search. Note that if the logset or log topic name changes, the URL adopting this mode will become invalid.
 >
-> If the `topic_id`, `logset_name`, and `topic_name` parameters exist at the same time, `topic_id` prevails. 
->
+> - If the `topic_id`, `logset_name`, and `topic_name` parameters exist at the same time, `topic_id` prevails. 
+
 The following figure shows the mappings between hidden parameters and page modules:
 
  2. Splice your login information and destination page URL into a login URL. **The parameter values should be URL-encoded.**
@@ -215,6 +218,8 @@ Where:
 	<tr><td>The numeric type field is less than the specified value</td><td>LESS_THAN</td><td>[{"key":"time","grammarName":"LESS_THAN","values":[{"values":["1"]}]}]</td><td>time:<1</td></tr>
 	<tr><td>The numeric type field is less than or equal to the specified value</td><td>LESS_THAN_OR_EQUAL</td><td>[{"key":"time","grammarName":"LESS_THAN_OR_EQUAL","values":[{"values":["1"]}]}]</td><td>time:<=1</td></tr>
 </table>
+
+
 >! Only base64Url-encoded filter parameters can be added to URLs.
 >
 
