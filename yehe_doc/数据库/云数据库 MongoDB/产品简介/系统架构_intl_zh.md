@@ -6,10 +6,10 @@
 - Secondary 节点：通过定期轮询 Primary 节点的 oplog（操作日志）复制 Primary 节点的数据，保证数据与 Primary 节点一致。在 Primary 节点故障时，多个 Secondary 节点通过选举成为新的 Primary 节点，保障高可用。
 
 副本集的系统架构图如下：
-![](https://qcloudimg.tencent-cloud.cn/raw/b736f3db997ed56b7609889d78460ad6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bc1c6b6c2ce9fd2be557ccdda1a00172.png)
 
 副本集4.0版本简化了架构，去掉了 proxy set 组件，用户可以直接访问到每个节点，提高了性能。
-![](https://qcloudimg.tencent-cloud.cn/raw/57826733ce38e14c866697e8d80f89e9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b494d248fc185dff72c5d077fe157473.png)
 
 ## 分片集群
 云数据库 MongoDB 分片集群（Sharded Cluster）架构在副本集的基础上，通过多组复制集群的组合，实现数据的横向扩展。每一个分片集群实例由 mongos 节点、config server、shard 节点等组件组成。
@@ -20,7 +20,7 @@
 
 - **shard 节点**：负责将数据分片存储在多个服务器上。 您可以购买多个 Shard 节点来横向扩展实例的数据存储和读写并发能力。每一个分片集群实例可支持 2个 - 20个 Shard 节点。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/0a2a9805fccb368b431acfb7e66ed300.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4bd4036e4ef5d9d4e9756cfa14f83250.png)
 
 ## 单节点
 云数据库 MongoDB 单节点是腾讯云打造的一款高性价比数据库服务，在保障性能的同时，运营成本仅为集群版本1/3，适用于个人或企业学习、业务内部测试环境、对可用性要求不高的业务如内部系统、个人开发者开发的小程序或 App 等非高可用场景。

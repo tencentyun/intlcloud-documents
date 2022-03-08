@@ -6,10 +6,10 @@ The replica set architecture of TencentDB for MongoDB achieves high availability
 - Secondary node: it replicates the data of the primary node by periodically polling the oplogs of the primary node with data consistency guaranteed. When the original primary node fails, a new primary node will be elected from multiple secondary nodes to ensure the high availability.
 
 The architecture diagram of a replica set instance is as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/b736f3db997ed56b7609889d78460ad6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bc1c6b6c2ce9fd2be557ccdda1a00172.png)
 
 Replica set 4.0 simplifies the architecture by removing the proxy set component, so you can directly access each node for a higher performance:
-![](https://qcloudimg.tencent-cloud.cn/raw/57826733ce38e14c866697e8d80f89e9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b494d248fc185dff72c5d077fe157473.png)
 
 ## Sharded Cluster
 TencentDB for MongoDB's sharded cluster architecture implements the horizontal capacity expansion of data based on the replica set architecture by combining multiple replica sets. Each sharded cluster instance is composed of mongos nodes, config server nodes, shard nodes, and other components.
@@ -20,7 +20,7 @@ TencentDB for MongoDB's sharded cluster architecture implements the horizontal c
 
 - **Shard node**: it is responsible for sharding data storage on multiple servers. You can purchase multiple shard nodes to horizontally expand the data storage and read/write concurrency capabilities of the instance. Each sharded cluster instance can contain 2–20 shard nodes.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/0a2a9805fccb368b431acfb7e66ed300.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4bd4036e4ef5d9d4e9756cfa14f83250.png)
 
 ## Single Node
 Single-Node TencentDB for MongoDB is a cost-effective database service, whose operating costs are only one-third as many as the cluster MongoDB while ensuring good performance. It is suitable for learning, testing, and the businesses where the requirement for availability is not high, such as internal systems, and mini programs or applications of individual developers.
