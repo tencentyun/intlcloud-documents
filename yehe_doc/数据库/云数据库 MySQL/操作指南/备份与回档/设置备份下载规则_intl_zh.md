@@ -22,7 +22,7 @@
      - IP 地址条件值使用 `,` 进行分割。
      - IP 条件支持 IP 地址以及 IP 地址段作为条件值。
      - 当 IP、VPC 条件均为空时，内网下载不受限制。
-![](https://qcloudimg.tencent-cloud.cn/raw/7e0a4a48af62fdd643259f8902fcd95f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c2e1481c2a14a5ad8b3dde4819f783c1.png)
 4. 配置完成后，返回**下载配置**页可查看生效的条件。
 ![](https://qcloudimg.tencent-cloud.cn/raw/cb4ac45dcde8a57610b0eaec9075c6cb.png)
 
