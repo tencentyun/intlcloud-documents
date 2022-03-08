@@ -22,7 +22,7 @@ By default, you can download backup files of TencentDB for MySQL instances over 
      - You should separate the values of an IP condition with commas.
      - You can enter IPs or IP ranges as the values of an IP condition.
      - If no IP and VPC requirements are set, there will be no limit on download over private network.
-![](https://qcloudimg.tencent-cloud.cn/raw/7e0a4a48af62fdd643259f8902fcd95f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c2e1481c2a14a5ad8b3dde4819f783c1.png)
 4. After the configuration is completed, return to the **Download Settings** tab to view the rules that take effect.
 ![](https://qcloudimg.tencent-cloud.cn/raw/cb4ac45dcde8a57610b0eaec9075c6cb.png)
 
