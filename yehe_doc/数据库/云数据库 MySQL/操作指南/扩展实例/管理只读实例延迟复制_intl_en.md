@@ -47,7 +47,7 @@ This document describes how to set delayed replication for read-only instances a
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click a read-only instance ID in the instance list to enter the read-only instance details page.
 2. On the read-only instance details page, click **Modify** in **Deployment Info** > **Delayed Replication**.  
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5098762edf0e478942ad060c5bd80da5.png"  style="zoom:80%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f9b0fffd50ddfb2f2d4819860be9aef0.png"  style="zoom:80%;">
 3. In the pop-up window, set the delay and click **OK**.
 
 ## Disabling Delayed Replication
@@ -61,7 +61,7 @@ This document describes how to set delayed replication for read-only instances a
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click a read-only instance ID in the instance list to enter the read-only instance details page.
 2. On the read-only instance details page, click **Disable** in **Deployment Info** > **Delayed Replication**.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5f3a33f7b23513b8766eb62455406478.png"  style="zoom:80%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ae3a4a7f40ee28f4d5ad032f68c8a5a2.png"  style="zoom:80%;">
 3. In the pop-up dialog box, confirm that everything is correct and click **OK**.
 >?If delayed replication is disabled, the delayed replication time will be 0 seconds, that is, real-time data sync is resumed between the read-only instance and its source instance. 
 > 
@@ -71,7 +71,7 @@ This document describes how to set delayed replication for read-only instances a
 >
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click a read-only instance ID in the instance list to enter the read-only instance details page.
 2. On the read-only instance details page, click **Enable** in **Deployment Info** > **Replication Status**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/29703db36415992fda7e1767a7b830e8.png"  style="zoom:80%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e6bcd6a0ae7cd0c82cf23da4f10144a7.png"  style="zoom:80%;">
 3. In the pop-up window, click **OK**.
 >? Once the replication is enabled, the data sync between the read-only instance and the source instance will resume.
 >
@@ -101,7 +101,7 @@ The length of instance `server_uuid` is fixed at 36 bits, and the GTID must be i
 >
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click a read-only instance ID in the instance list to enter the read-only instance details page.
 2. On the read-only instance details page, click **Disable** in **Deployment Info** > **Replication Status**.
-<img src="https://main.qcloudimg.com/raw/8921d228b70bf42ca5120d6fcf44e92c.png"  style="zoom:85%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6b1570566d533f93306256cf41113fc5.png"  style="zoom:85%;">
 3. In the pop-up dialog box, confirm that everything is correct and click **OK**.
 
 ## FAQs
