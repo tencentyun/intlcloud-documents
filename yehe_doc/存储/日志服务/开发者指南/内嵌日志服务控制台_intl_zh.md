@@ -157,12 +157,14 @@ https://console.cloud.tencent.com/cls/search?region=<region>&topic_id=<topic_id>
 	<tr><td>hideConfigMenu</td><td>否</td><td>Boolean</td><td>隐藏日志主题配置管理菜单：默认不隐藏，true 表示隐藏</td></tr>
 	<tr><td>hideLogDownload</td><td>否</td><td>Boolean</td><td>隐藏原始日志下载按钮：默认不隐藏，true 表示隐藏</td></tr>
 </table>
+
+
 >! 可通过两种方式在 URL 参数中指定需要检索的日志主题：
 > - topic_id：根据日志主题 ID 指定日志主题。
 > - logset_name+topic_name：根据日志集名称及日志主题名称指定日志主题，需要注意的是当日志集或日志主题名称发生变化时，采用该方式的 URL 会失效。
 >
-> 如 topic_id、logset_name 和 topic_name 参数同时存在，将以 topic_id 为准。 
->
+> - 如 topic_id、logset_name 和 topic_name 参数同时存在，将以 topic_id 为准。 
+
 隐藏参数与页面模块对应关系如下图：
 
  2. 拼接完整登录信息以及目的页地址进行登录，**参数值需要 urlencode 编码**。
@@ -215,6 +217,9 @@ filter 参数为 json 格式，结构如下：
 	<tr><td>数值类型字段小于指定值</td><td>LESS_THAN</td><td>[{"key":"time","grammarName":"LESS_THAN","values":[{"values":["1"]}]}]</td><td>time:<1</td></tr>
 	<tr><td>数值类型字段小于等于指定值</td><td>LESS_THAN_OR_EQUAL</td><td>[{"key":"time","grammarName":"LESS_THAN_OR_EQUAL","values":[{"values":["1"]}]}]</td><td>time:<=1</td></tr>
 </table>
+
+
+
 >! filter 参数需采用 base64Url 编码才能添加到 URL 中。
 >
 
