@@ -41,12 +41,12 @@ If you encounter a connectivity issue when accessing a TencentDB for MySQL insta
 ## Public Network Connectivity Check
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the ID of the instance to be checked and access the instance management page.
 2. Select **Connection Check** > **Public Network Check**.
-3. Click **Add an external server to access this instance**.
+3. Click **Add Public Network Servers to Access This Instance**.
 4. Click **Start Check** and a check report will be generated after the check is completed.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f778cf24c66a1b3dbbacc744cddae743.png)
 5. In the **Operation** column of the check report, click **View Report** to view the check result.
  - If the check status is **Normal**, it means that the server is allowed to access this TencentDB for MySQL instance over the public network.
- - If the check status is **Abnormal**, it means that the server cannot access this TencentDB for MySQL instance over the public network. In this case, troubleshoot by following the **Handling Suggestions** and connect again.
+ - If the check status is **Abnormal**, it means that the server cannot access this TencentDB for MySQL instance over the public network. In this case, troubleshoot by following the **Suggested Solution** and connect again.
 <table>
 <thead><tr><th>Check Item</th><th>Exception Handling</th></tr></thead>
 <tbody><tr>
