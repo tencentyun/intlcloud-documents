@@ -9,7 +9,7 @@ After a TencentDB for MySQL instance is created, it is in the **Uninitialized** 
  - **Root Account Password**: set the password of the root account (the default user name for a new MySQL database is "root").
  - **Confirm Password**: enter the password again.
 3. In the initialization pop-up window, click **OK**.
-![](https://qcloudimg.tencent-cloud.cn/raw/cd8d4f83c43cc23b23c50c2e85773473.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d92243c0d68fdf794c39300c7ca367d4.png)
 4. Return to the instance list. After the status of the instance changes to **Running**, the instance can be used normally.
 
 ## Subsequent Operations
