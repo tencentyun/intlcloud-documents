@@ -25,10 +25,6 @@ For example, if you create a resource or create and immediately terminate a reso
 | Memory (GB) |   0.63333 CNY/GB/day   |
 | Storage (GB) |   0.01167 CNY/GB/day   |
 
->!
->- The billing mode and prices of CPU and memory of the GN7vw GPU instance model are different from those in the above table. For more information, see [T4 GPU Instance Billing Overview](https://intl.cloud.tencent.com/document/product/1119/43405).
->- Instances with different configurations provide different computing and storage capabilities. You can select the instance configuration and quantity based on your actual business needs.
->
 
 ### Pricing examples
 At 10:00 on August 1, 2020, a user created two Standard S4 instances with the same configuration on an edge node in Beijing Zone 1 (China Mobile). The instance configuration was as follows:
