@@ -31,7 +31,7 @@ A Kubernetes cloud account supports two commonly used credentials, i.e. Kubeconf
 
 Log in to the Cloud Computing Web Console, copy Kubeconfig, and then add the CODING IP range to the extranet access control list (allowlist) of the cluster.
 
-<dx-alert infotype="explain" title="CODING 持续部署的公网 IP 段：">
+<dx-alert infotype="explain" title="CODING Continuous Deployment：">
  212.64.105.0/24, 212.129.144.0/24
 </dx-alert>
 
