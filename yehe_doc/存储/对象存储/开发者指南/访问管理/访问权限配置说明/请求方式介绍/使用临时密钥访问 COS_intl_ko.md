@@ -20,14 +20,14 @@
 가령 ‘A’는 CAM 사용자의 원래 권한을 나타내고 ‘B’는 policy 매개변수를 통해 임시 키에 대해 설정된 권한을 나타내며 ‘A’와 ‘B’가 교차하는 것은 임시 키의 최종 유효 권한을 나타냅니다.
 
 아래 이미지와 같이 CAM 사용자 권한과 policy 임시 권한의 교집합이 유효 권한입니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/572574445d9af1b01e3bd33cb82d830a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d7897c607e0fc93729cd924908c1b0be.png)
 
 아래 이미지와 같이 policy는 CAM 사용자 권한 내에 있으며 policy는 유효 권한입니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/ebc98a1e309ec5d9ce4420284ca52c6d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0611470aff77eef075b58109c3014f4a.png)
 
 ## 임시 키를 사용한 COS 액세스
 
-![](https://qcloudimg.tencent-cloud.cn/raw/36aca86fa63cb782214eb58789a9c82c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3e735b970a04e2afe3efa74cfb30fcb.png)
 임시 키는 SecretId, SecretKey 및 Token이 있으며, 각 루트 계정과 서브 계정은 여러 개의 임시 키를 생성할 수 있습니다. 영구 키에 비해 임시 키는 30분 - 36시간 동안만 유효합니다. 임시 키는 프런트 엔드 다이렉트 업로드와 같은 임시 인증 시나리오에 적합하며 영구 키에 비해 신뢰할 수 없는 사용자에게 임시 키를 배포하는 것이 더 안전합니다. 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048) 및 [프런트 엔드 다이렉트 업로드를 위한 임시 키 사용 가이드](https://intl.cloud.tencent.com/document/product/436/35265)를 참고하십시오.
 
 - API 요청 발송
@@ -55,7 +55,7 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 ## 임시 키 사용 시나리오
 
 임시 키는 주로 3rd party가 COS에 임시로 액세스할 수 있는 권한을 부여하는 데 사용됩니다. 예를 들어 사용자가 클라이언트 App을 개발하여 COS 버킷에 데이터를 저장하는 경우 이때 영구 키를 App 클라이언트에 직접 저장하는 것은 안전하지 않지만 클라이언트에게 업로드 및 다운로드 권한을 부여해야 하는 이런 시나리오에서 임시 키를 사용할 수 있습니다. 
-![](https://qcloudimg.tencent-cloud.cn/raw/e15d7339e894311f4e3003735cde9eff.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0b37dd8a160a065efe68c0fbeea09c3b.png)
 
 상기 이미지와 같이 사용자가 App 클라이언트를 개발하고 사용자의 서버에 영구 키를 저장합니다. 프론트 엔드 다이렉트 업로드를 위해 임시 키를 사용하려면 다음 단계가 필요합니다.
 1. App 클라이언트는 데이터 업로드 및 다운로드를 위해 사용자 서버에 임시 키를 요청합니다.
