@@ -84,7 +84,7 @@ You can enable the real-time audio/video call feature for your project with ease
 
 The audio/video call component `TUICalling` depends on the TRTC SDK and IM SDK. Follow the steps below to integrate the two SDKs into your project:
 
-#### Method 1: adding dependencies via Maven
+#### Method 1: adding dependencies via mavenCentral
 
 1. Add the TRTC SDK and IM SDK dependencies to `dependencies`.
 <dx-codeblock>
@@ -98,7 +98,7 @@ dependencies {
 }
 :::
 </dx-codeblock>
->?You can view the latest version numbers of the two SDKs by visiting their GitHub pages at [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK).
+
 2. In `defaultConfig`, specify the CPU architecture to be used by your application.
 <dx-codeblock>
 ::: java java
@@ -110,11 +110,11 @@ defaultConfig {
 :::
 </dx-codeblock>
 3. Click **Sync Now** to sync the SDKs.
->?If you have no problem connecting to JCenter, the SDKs will be downloaded and integrated into your project automatically.
+>?If you have no problem connecting to mavenCentral, the SDKs will be downloaded and integrated into your project automatically.
 
 
 #### Method 2: adding dependencies through local AAR files
-If your access to the Maven repository is slow, you can download the ZIP files of the SDKs and manually integrate them into your project as instructed in the documents below.
+If your access to the mavenCentral repository is slow, you can download the ZIP files of the SDKs and manually integrate them into your project as instructed in the documents below.
 
 | SDK | Download Page | Integration Guide |
 | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
