@@ -9,7 +9,7 @@ RESTful API를 통해 COS(Cloud Object Storage)에 대한 HTTP 익명 요청 또
 CAM 콘솔의 [API 키 관리](https://console.cloud.tencent.com/cam/capi) 페이지에서 영구 키를 얻을 수 있으며 영구 키는 계정의 영구 신분을 나타내는 SecretId 및 SecretKey를 포함하며 만료되지 않습니다.
 - SecretId: API 호출자를 식별하기 위해 사용합니다.
 - SecretKey: 서명 문자열을 암호화하고 서버에서 서명 문자열을 인증하는 데 사용되는 키입니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/d00f0767b6423ea150cfbc54e421c345.png)
+
 
 ## 영구 키를 사용한 COS 액세스
 
