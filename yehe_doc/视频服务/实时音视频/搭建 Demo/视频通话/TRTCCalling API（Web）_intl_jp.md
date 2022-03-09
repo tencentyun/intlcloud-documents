@@ -779,7 +779,7 @@ trtcCalling.on(TRTCCalling.EVENT.INVITED, handleNewInvitationReceived);
 | sponsor     | String  | 招待者                                                                                                   |
 | userIDList  | Array   | 同時に招待された人                                                                                         |
 | isFromGroup | Boolean | IMグループの招待の有無                                                                                         |
-| inviteData  | Object  | <li/>新しいユーザーへの招待： {version, callType, roomID} <li/>最後のユーザーとの通話終了：{version, callType, callEnd} |
+| inviteData  | Object  | 新しいユーザーへの招待： {version, callType, roomID} |
 | inviteID    | String  | 招待ID、1回招待を表示                                                                                    |
 
 #### CALLING_CANCEL
@@ -838,9 +838,9 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 ## アップグレードガイド
 
 - **TRTCCallingバージョンを>= 1.0.2にアップグレードします **
-	- 注意：TSignalingバージョンを>= 0.9.0にアップグレードする必要があります
+	- 注意：TSignalingバージョンを> 0.9.0にアップグレードする必要があります
 	- 原因：[ログの更新](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-3)
-- **1.0.2にアップグレード >=TRTCCallingバージョン >=1.0.0**
+- **1.0.2にアップグレード >TRTCCallingバージョン >=1.0.0**
 	- 注意：TSignalingバージョンを>= 0.8.0にアップグレードする必要があります
 	- 原因：[ログの更新](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-5)
 
@@ -860,6 +860,6 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 ## 参考ドキュメント
 - [TRTCCalling web公式サイトで体験](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
 - [TRTCCalling npm](https://www.npmjs.com/package/trtc-calling-js)
-- [TRTCCalling web demoソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)
+- [TRTCCalling web demoソースコード](https://github.com/tencentyun/TUICalling)
 - [TRTCCalling web API](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
 - [TRTCCalling webに関するご質問](https://intl.cloud.tencent.com/document/product/647/43096)
