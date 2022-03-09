@@ -118,7 +118,7 @@ dependencies {
 }
 :::
 </dx-codeblock>
->?You can view the latest version numbers of the two SDKs by visiting their GitHub pages at [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK).
+
 2. In `defaultConfig`, specify the CPU architecture to be used by your application.
 <dx-codeblock>
 ::: java java
