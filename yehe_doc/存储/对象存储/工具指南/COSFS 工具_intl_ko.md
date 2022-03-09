@@ -25,7 +25,7 @@ COSFS는 패키지 방식과 컴파일 소스 코드 방식의 두 가지 설치
 
 
 ### 방법1: 패키지로 설치하기
->?해당 방법은 Ubuntu, CentOS 주요 시스템을 지원합니다.
+>? 해당 방법은 Ubuntu, CentOS 주요 시스템을 지원합니다.
 >
 
 #### Ubuntu 시스템
@@ -41,7 +41,7 @@ wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-
 #Ubuntu20.04
 wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb
 ```
-2. 설치(예시: Ubuntu16.04).
+2. 설치. (예시: Ubuntu16.04).
 ```shell
 sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
 ```
@@ -59,7 +59,7 @@ wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-
 #CentOS7.0
 wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm
 ```
-3. 설치(예시: CentOS7.0)
+3. 설치. (예시: CentOS7.0)
 ```shell
 sudo rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm
 ```
@@ -132,10 +132,10 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig/:/usr/local/lib/p
 modprobe fuse   #fuse 커널 모듈 마운트
 echo "/usr/local/lib" >> /etc/ld.so.conf
 ldconfig   #동적 링크 라이브러리 업데이트
-pkg-config --modversion fuse  #fuse 버전 넘버 조회. “2.9.4”가 표시되는 경우 fuse 2.9.4 설치가 완료되었다는 의미입니다. 
+pkg-config --modversion fuse  #fuse 버전 넘버 조회, “2.9.4”가 표시되는 경우 fuse 2.9.4 설치가 완료되었다는 의미입니다. 
 ```
 - SUSE 시스템에서는 fuse 2.8.4 이상 버전을 직접 설치해야 하며 설치 명령어 예시는 다음과 같습니다.
->!설치 시 `example/fusexmp.c` 파일의 제 222행 내용을 주석 처리해야 합니다. 주석 처리하지 않을 경우 make에 오류가 발생합니다. 주석 방법: `/*content*/`.
+>! 설치 시 `example/fusexmp.c` 파일의 제 222행 내용을 주석 처리해야 합니다. 주석 처리하지 않을 경우 make에 오류가 발생합니다. 주석 방법: `/*content*/` .
 >
 ```shell
 zypper remove fuse libfuse2
@@ -173,10 +173,10 @@ echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
 chmod 640 /etc/passwd-cosfs
 ```
 
->? <>의 매개변수를 사용자 정보로 변경해야 합니다.
->- <BucketName-APPID>는 버킷 이름 포맷입니다. 버킷 이름 생성 규칙에 대한 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오.
->- <SecretId>와 <SecretKey>는 키 정보입니다. CAM 콘솔의 [Tencent Cloud API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 조회 및 생성할 수 있습니다.
->- 키는 $HOME/.passwd-cosfs 파일에서 설정하거나 -opasswd_file=[path]로 키 파일 경로를 지정할 수 있으며, 키 파일의 권한 값은 600으로 설정해야 합니다.
+>? &lt;&gt;의 매개변수를 사용자 정보로 변경해야 합니다.
+> - &lt;BucketName-APPID&gt;는 버킷 이름 포맷입니다. 버킷 이름 생성 규칙에 대한 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오.
+> - &lt;SecretId&gt;와 &lt;SecretKey&gt;는 키 정보입니다. CAM 콘솔의 [Tencent Cloud API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 조회 및 생성할 수 있습니다.
+> - 키는 $HOME/.passwd-cosfs 파일에서 설정하거나 -opasswd_file=[path]로 키 파일 경로를 지정할 수 있으며, 키 파일의 권한 값은 600으로 설정해야 합니다.
 > 
 
 **예시:**
@@ -197,8 +197,8 @@ chmod 640 /etc/passwd-cosfs
 cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
 그중에서,
-- < MountPoint >는 로컬 마운트 디렉터리(예: `/mnt`)입니다.
-- < Region >는 리전 약칭입니다(예시: ap-guangzhou, eu-frankfurt 등). 리전 약칭에 대한 자세한 정보는 [가용 리전](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
+- &lt;MountPoint&gt;:는 로컬 마운트 디렉터리(예: `/mnt`)입니다.
+- &lt;Region&gt;는 리전 약칭입니다(예시: ap-guangzhou, eu-frankfurt 등). 리전 약칭에 대한 자세한 정보는 [가용 리전](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
 - -odbglevel은 로그 레벨을 지정합니다. 기본 값은 crit이며, 옵션값은 crit, error, warn, info, debug입니다.
 - -oallow_other: 마운트되지 않은 사용자의 마운트 폴더 액세스를 허용합니다.
 
@@ -209,11 +209,13 @@ mkdir -p /mnt/cosfs
 cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -onoxattr -oallow_other
 ```
 
->! V1.0.5 이하 버전 COSFS의 마운트 명령어는 cosfs &lt;APPID>:&lt;BucketName> &lt;MountPoint> -ourl=&lt;CosDomainName> -oallow_other입니다.
+>!
+>- COSFS 툴은 성능 향상을 위해 기본적으로 업로드 및 다운로드의 임시 캐시를 시스템 디스크에 저장하고 파일을 닫은 후 공간을 릴리스합니다. 동시에 열려 있는 파일의 수가 많거나 대용량 파일을 읽고 쓸 때 COSFS 툴은 성능 향상을 위해 가능한 한 많은 디스크를 사용합니다. 기본적으로 다른 프로그램에서 사용할 수 있도록 100MB의 여유 디스크 공간만 보관되어 있습니다. oensure_diskfree=[size] 옵션을 사용하여 COSFS 툴이 보관한 사용 가능한 하드 디스크 공간의 크기를 MB 단위로 설정할 수 있습니다. 예를 들어 `-oensure_diskfree=1024`인 경우 COSFS 툴은 1024MB의 여유 공간을 보관합니다.
+>- V1.0.5 이하 버전 COSFS의 마운트 명령어는 cosfs &lt;APPID>:&lt;BucketName> &lt;MountPoint> -ourl=&lt;CosDomainName> -oallow_other입니다.
 >
 
 
-#### 3. 버킷 언마운트
+### 3. 버킷 언마운트
 
 버킷 언마운트 예시는 다음과 같습니다.
 
@@ -232,7 +234,7 @@ cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud
 다른 사용자에게 마운트 폴더 액세스를 허용할 경우 COSFS 실행 시 해당 매개변수를 지정합니다.
 
 #### -odel_cache
-기본적으로 COSFS는 성능 최적화를 위해 umount 후 로컬의 캐시 데이터를 삭제하지 않습니다. COSFS 로그아웃 시 캐시를 자동 삭제하려는 경우 마운트할 때 이 옵션을 추가합니다.
+기본적으로 COSFS 툴은 성능 최적화를 위해 umount 후 로컬의 캐시 데이터를 삭제하지 않습니다. COSFS 로그아웃 시 캐시를 자동 삭제하려는 경우 마운트할 때 이 옵션을 추가합니다.
 
 ####  -onoxattr
 getattr/setxattr 기능을 비활성화합니다. COSFS 1.0.9 이전 버전은 확장 속성을 설정하거나 획득할 수 없습니다. 마운트 시 use_xattr 옵션을 사용한 경우 mv 파일을 Bucket에 업로드 시 실패가 발생할 수 있습니다.
@@ -251,6 +253,10 @@ COSFS 로그 기록 레벨을 설정합니다. info, dbg, warn, err, crit 중에
 #### -ouid=[uid]
 이 옵션으로 사용자 id가 [uid]인 사용자가 마운트 디렉터리 내 파일 권한 제한에 영향을 받지 않고 마운트 디렉터리의 모든 파일에 액세스할 수 있도록 허용할 수 있습니다.
 사용자의 uid는 id 명령어를 사용하여 획득할 수 있으며, 포맷은 ` id -u username`입니다. 예를 들어, `id -u user_00`을 실행하는 경우 사용자 user_00의 uid를 획득할 수 있습니다.
+
+#### -oensure_diskfree=[size]
+
+COSFS 툴은 성능 향상을 위해 기본적으로 업로드 및 다운로드의 임시 캐시를 시스템 디스크에 저장하고 파일을 닫은 후 공간을 릴리스합니다. 동시에 열려 있는 파일의 수가 많거나 대용량 파일을 읽고 쓸 때 COSFS 툴은 성능 향상을 위해 가능한 한 많은 디스크를 사용합니다. 기본적으로 다른 프로그램에서 사용할 수 있도록 100MB의 여유 디스크 공간만 보관되어 있습니다. oensure_diskfree=[size] 옵션을 사용하여 COSFS 툴이 예약한 사용 가능한 하드 디스크 공간의 크기를 MB 단위로 설정할 수 있습니다. 예를 들어 `-oensure_diskfree=1024`인 경우 COSFS 도구는 1024MB의 여유 공간을 보관합니다.
 
 
 ## FAQ

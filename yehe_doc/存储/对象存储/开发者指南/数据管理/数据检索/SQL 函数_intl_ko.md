@@ -84,7 +84,7 @@ CAST ( expression AS data_type )
 > ?
 >
 > - expression 매개변수는 값, 배열, 오퍼레이터 혹은 어떤 확정 값을 계산할 수 있는 SQL 함수일 수 있습니다.
-> - data type 매개변수는 변환 후의 데이터 유형이며 INT 유형을 예시로 들 수 있습니다. 현재 COS Select에서 지원하는 데이터 유형은 [데이터 유형](https://intl.cloud.tencent.com/document/product/436/32476)을 참조하십시오.
+> - data type 매개변수는 변환 후의 데이터 유형이며 INT 유형을 예시로 들 수 있습니다. 현재 COS Select에서 지원하는 데이터 유형은 [데이터 유형](https://intl.cloud.tencent.com/document/product/436/32476)을 참고하십시오.
 
 #### 예시
 
@@ -118,7 +118,6 @@ DATE_ADD( date_part, quantity, timestamp )
 DATE_ADD(year, 5, `2010-01-01T`)                -- 2015-01-01
 DATE_ADD(month, 1, `2010T`)                     -- 2010-02T 
 DATE_ADD(month, 13, `2010T`)                    -- 2011-02T
-DATE_ADD(day, -1, `2017-01-10T`)                -- 2017-01-09 
 DATE_ADD(hour, 1, `2017T`)                      -- 2017-01-01T01:00-00:00
 DATE_ADD(hour, 1, `2017-01-02T03:04Z`)          -- 2017-01-02T04:04Z
 DATE_ADD(minute, 1, `2017-01-02T03:04:05.006Z`) -- 2017-01-02T03:05:05.006Z
@@ -196,7 +195,7 @@ TO_STRING ( timestamp time_format_pattern )
 | y             | 연도 단위 4자리 수                                                    | 1998                              |
 | yyyy           | 연도 단위 고정 4자리 수, 부족한 부분은 0으로 보충                                 | 0199                            |
 | M              | 월 단위                                                         | 1                              |
-| MM             | 월 단위 고정 4자리 수, 부족한 부분은 0으로 보충                                 | 01                              |
+| MM             | 월 단위 고정 2자리 수, 부족한 부분은 0으로 보충                                 | 01                              |
 | MMM            | 월 단위 영어 약어                                               | Jan                             |
 | MMMM           | 월 단위 영어 전체 표기                                               | January                         |
 | MMMMM          | 월 단위의 첫 글자 약어                                             | J(to_timestamp 함수에는 적합하지 않음) |
@@ -318,7 +317,8 @@ LOWER('TENcent') -- 'tencent'
 
  SUBSTRING 함수는 문자열의 부속 문자열을 반환합니다. 하나의 인덱스를 지정하고 SUBSTRING 함수를 사용해 인덱스부터 부속 문자열 길이에 따라 기존 문자열의 나머지를 추출하여 결과를 반환합니다.
 
-> 입력 문자열이 1개의 문자로 이루어졌고 인덱스 설정이 1보다 크면 SUBSTRING 함수가 그 문자열을 자동으로 1로 치환합니다.
+>? 입력 문자열이 1개의 문자로 이루어졌고 인덱스 설정이 1보다 크면 SUBSTRING 함수가 그 문자열을 자동으로 1로 치환합니다.
+>
 
 #### 구문
 
@@ -385,3 +385,4 @@ UPPER ( string )
 ```shell
 UPPER('tenCENT') -- 'TENCENT'
 ```
+

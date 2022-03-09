@@ -1,6 +1,6 @@
 Goosefs는 설정을 통해 지표 데이터를 Prometheus와 같은 다른 모니터링 시스템으로 출력할 수 있습니다. Prometheus는 오픈 소스 모니터링 프레임워크로 현재 Tencent Cloud 모니터링은 Prometheus를 통합하였습니다. 다음으로 Goosefs의 모니터링 지표와 자체구축한 Prometheus와 클라우드 Prometheus에 모니터링 지표를 보고하는 과정을 중점적으로 소개합니다.
 
-## 준비 과정
+## 준비 작업
 
 Prometheus를 통해 모니터링 시스템을 구축하려면 다음 준비 작업이 선행되어야 합니다.
 
@@ -28,7 +28,7 @@ curl <WORKER_IP>:<WOKER_PORT>/metrics/prometheus/
 
 ## 자체구축 Prometheus에 모니터링 지표 보고
 
-1. Promethus 설치 패키지를 다운로드 및 압축 해제하고, promethus.yml을 수정합니다.
+1. Prometheus 설치 패키지를 다운로드 및 압축 해제하고, prometheus.yml을 수정합니다.
 <pre class="rno-code-pre"><code class="language-plaintext">
 # prometheus.yml
 global:
@@ -78,6 +78,8 @@ http://<PROMETHEUS_BI_IP>:<PROMETHEUS_BI_PORT>/targets
 wget https://rig-1258344699.cos.ap-guangzhou.myqcloud.com/prometheus-agent/agent_install && chmod +x agent_install && ./agent_install prom-12kqy0mw agent-grt164ii ap-guangzhou &lt;secret_id> &lt;secret_key>
 </code></pre>
 2. master와 worker의 캡처 작업을 설정합니다.
+
+**방식1:**
 <pre class="rno-code-pre"><code class="language-plaintext">
  job_name: goosefs-masters
  honor_timestamps: true
@@ -97,8 +99,32 @@ file_sd_configs:
 	refresh_interval: 1m
 </code></pre>
 
- >! job_name에는 빈칸이 없지만, 오프라인 Prometheus의 job_name에는 빈칸이 포함될 수 있습니다.
+>! job_name에는 빈칸이 없지만, 오프라인 Prometheus의 job_name에는 빈칸이 포함될 수 있습니다.
 >
+
+**방식2:**
+<pre class="rno-code-pre"><code class="language-plaintext">
+job_name: goosefs masters
+honor_timestamps: true
+metrics_path: /metrics/prometheus
+scheme: http
+static_configs:
+- targets:
+ - "&lt;TARGERTS_MASTER_IP>:&lt;TARGERTS_MASTER_PORT>"
+ refresh_interval: 1m
+ 
+job_name: goosefs workers
+honor_timestamps: true
+metrics_path: /metrics/prometheus
+scheme: http
+static_configs:
+- targets:
+ - "&lt;TARGERTS_WORKER_IP>:&lt;TARGERTS_WORKER_PORT>"
+ refresh_interval: 1m
+</code></pre>
+
+>! 캡처 작업은 두 번째 방법에 따라 구성되며 targets/cluster/masters/경로에 masters.yml 및 workers.yml 파일을 생성할 필요가 없습니다.
+> 
 
 ## Grafana를 사용하여 모니터링 지표 조회
 
