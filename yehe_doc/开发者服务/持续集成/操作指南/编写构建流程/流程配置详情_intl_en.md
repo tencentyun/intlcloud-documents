@@ -50,7 +50,7 @@ The parameter scm is an object that allows the SCM type to be configured, such a
 
 - `url`: string
 - `name`: string, name of a remote repository such as "origin"
-- `refspec`: string, for more information, see [Git Internals - The Refspec](https://git-scm.com/book/zh/v2/Git-内部原理-引用规格).
+- `refspec`: string, for more information, see [Git Internals - The Refspec](https://git-scm.com/book/zh/v2).
 - `branches`: array of objects (optional)
 - `changelog`: boolean (optional)
 - `credentialsId`: string (optional)
