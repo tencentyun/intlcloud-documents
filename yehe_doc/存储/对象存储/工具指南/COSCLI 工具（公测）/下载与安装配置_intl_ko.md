@@ -16,8 +16,10 @@ COSCLI 툴은 간단한 설치 및 설정 후에 사용할 수 있는 Windows, M
 4. `win+r` 키를 눌러 `실행` 프로그램을 엽니다.
 5. 대화 상자에서 `cmd`를 입력하고 `Enter`를 눌러 명령 라인 창을 엽니다.
 6. 명령 라인 창에서 `coscli --help`를 입력하고 다음 정보가 출력되면 설치가 완료된 것입니다.
+
 >? `Windows` 시스템에서는 명령 라인 클라이언트에 따라 COSCLI를 사용하는 방식이 약간 다를 수 있습니다. `coscli [command]` 입력 후 COSCLI가 정상적으로 작동하지 않을 경우 `./coscli [command]` 형식으로 시도하시기 바랍니다.
->
+
+
 ```
 Welcome to use coscli!
    
@@ -46,6 +48,7 @@ Flags:
    -h, --help                 help for coscli
    
 Use "coscli [command] --help" for more information about a command.
+
 ```
 
 ### Mac
@@ -63,6 +66,7 @@ mv coscli-mac coscli
 chmod 755 coscli
 ```
 4. 명령 라인에 `./coscli --help`를 입력하고 다음 정보가 출력되면 설치가 완료된 것입니다.
+
 ```
 Welcome to use coscli!
    
@@ -91,7 +95,9 @@ Flags:
    -h, --help                 help for coscli
    
 Use "coscli [command] --help" for more information about a command.
+
 ```
+
 >? Mac 시스템에서 COSCLI 사용 시 `개발자를 인증할 수 없기 때문에 ‘coscli’를 열 수 없습니다`라는 팝업창이 뜨면 `설정 > 보안성 및 개인정보 보호 > 일반`으로 이동하여 `계속 coscli 열기`를 선택하여 COSCLI를 정상적으로 사용할 수 있습니다.
 >
 
@@ -111,6 +117,7 @@ mv coscli-linux coscli
 chmod 755 coscli
 ```
 4. 명령 라인 창에 `./coscli --help`를 입력하고 다음 정보가 출력되면 설치가 완료된 것입니다.
+
 ```
 Welcome to use coscli!
    
@@ -139,6 +146,7 @@ Flags:
    -h, --help                 help for coscli
    
 Use "coscli [command] --help" for more information about a command.
+
 ```
 
 
