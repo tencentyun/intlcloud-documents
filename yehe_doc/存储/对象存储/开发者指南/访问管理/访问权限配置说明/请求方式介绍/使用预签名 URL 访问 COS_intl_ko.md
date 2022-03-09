@@ -27,9 +27,9 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 #### 콘솔(Web 페이지)
 
 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인하여 버킷 이름을 클릭하고 ‘파일 리스트’를 입력한 다음 **세부 사항** 객체를 클릭합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/72a4c937ea9a2e9f44349b215828d590.png)
+
 2. 객체 세부 정보 페이지로 이동하여 유효한 1시간 동안 임시 링크를 복사합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/4ea811f3a49709c73d7a8d3bfb171aaa.png)
+
 
 #### COSBrowser(클라이언트)
 
@@ -46,7 +46,7 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 2. [API Keys 관리](https://console.cloud.tencent.com/cam/capi)에서 SecretId와 SecretKey를 가져옵니다.
 3. COS 서명 툴을 클릭하여 서명 링크를 가져옵니다.
 유효 기간: 초, 분, 시 및 일 레벨 설정을 지원합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/0c9a4378cf8ba2e90b216abc0b030067.png)
+
 
 #### SDK를 사용하여 일괄적으로 사전 서명된 URL 가져오기
 
