@@ -5,16 +5,40 @@ table th:nth-of-type(3){ width:16%; }
 table th:nth-of-type(4){ width:19%; } 
 </style>
 
+## January 2022
+| Update | Description                                               | Release Date   | Documentation                                                     |
+| -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
+|ECDN origin-pull monitoring|This feature enables you to view monitoring curves in real time.|January 06, 2022|[Origin-Pull Monitoring](https://intl.cloud.tencent.com/document/product/228/32921)|
+
+## December 2021
+| Update | Description                                               | Release Date   | Documentation                                                     |
+| -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
+|New names of acceleration types|Tencent Cloud CDN has changed the names of acceleration types: "Static content" to "Webpage file download", "Download" to "Large file download", and "Streaming media" to "Audio & video on demand". Note that only the names have changed.|December 10, 2021|[Adding Domain Names](https://intl.cloud.tencent.com/document/product/228/5734), [Basic Information](https://intl.cloud.tencent.com/document/product/228/7864)|
+|Upgrade of real-time logging|Real-time logging allows you to ship logs for regions outside the Chinese mainland and search logs in various ways.|December 06, 2021|[Real-time Logs](https://intl.cloud.tencent.com/document/product/228/35380)|
+
+
+## October 2021
+| Update | Description                                               | Release Date   | Documentation                                                     |
+| -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
+|New user rewards|From October 25, 2021, new users who have activated Tencent Cloud CDN service and completed tasks during the required period will be rewarded.|October 25, 2021|New User Rewards|
+|Added data metrics|Tencent Cloud CDN has added three metrics for beta data for regions in the Chinese mainland: top client IPs, top UA, and top Referer.|October 21, 2021|[Data Analysis](https://intl.cloud.tencent.com/document/product/228/32923)|
+|Purging and prefetching .txt files| Purging and prefetching .txt files is supported.|October 13, 2021 | [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299), [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000)|
+|Fine-grained configuration|Configuration based on file extension, file directory, and full directory is supported.|October 12, 2021 |[Range GETs Configuration](https://intl.cloud.tencent.com/document/product/228/7184)|
+|Supported file types|Options `All Files` and `File Content-Type` are added.|October 12, 2021 |[Smart Compression Configuration](https://intl.cloud.tencent.com/document/product/228/35220)|
+
+
 ## September 2021
 | Update | Description                                               | Release Date   | Documentation                                                     |
 | -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
+|Underscores and Punycode-converted Chinese characters|Underscores and Punycode-converted Chinese characters are supported. The Chinese domain name must obtain an ICP filing with the Chinese characters.|September 16, 2021|[Adding Domain Names](https://intl.cloud.tencent.com/document/product/228/5734)|
+|Added traffic limiting|The setting "Usage Limit Configuration", previously "Bandwidth Cap Configuration" supports traffic limiting with alarm percentage.|September 15, 2021|[Usage Limit Configuration](https://intl.cloud.tencent.com/document/product/228/7541)|
 |Alarm threshold for bandwidth cap |CDN supports setting an alarm threshold for bandwidth cap. When the ratio of access bandwidth to the bandwidth cap reaches this value, an alarm message will be sent.|September 2, 2021|[Bandwidth Cap Configuration](https://intl.cloud.tencent.com/document/product/228/7541)|
 
 
 ## August 2021
 | Update | Description                                               | Release Date   | Documentation                                                     |
 | -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-|Quick configuration of CNAME|The capabilities of resolution and configuration have been interconnected between Tencent Cloud CDN and [DNSPod](https://console.dnspod.cn/). For domain names hosted on Tencent Cloud DNSPod, you can configure CNAME with fewer steps in the [CDN console](https://console.cloud.tencent.com/cdn/domains) to enable CDN acceleration.|August 26, 2021|Quick Configuration of CNAME|
+|Quick configuration of CNAME|The capabilities of resolution and configuration have been interconnected between Tencent Cloud CDN and [DNSPod](https://console.dnspod.cn/). For domain names hosted on Tencent Cloud DNSPod, you can configure CNAME with fewer steps in the [CDN console](https://console.cloud.tencent.com/cdn/domains) to enable CDN acceleration.|August 26, 2021|[Configuring CNAME via DNSPod ](https://intl.cloud.tencent.com/document/product/228/42353)|
 |Invalid status for URL prefetch| A new cache status "Invalid" is added. For invalid prefetch, the origin server will return an error status code such as 4XX/5XX.|August 18, 2021|[Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000)|
 |New log field|A new log field is added, which is a port connecting the client and CDN nodes.|August 6, 2021|[Download Logs](https://intl.cloud.tencent.com/document/product/228/6316)|
 
@@ -34,6 +58,7 @@ table th:nth-of-type(4){ width:19%; }
 
 | Update | Description                                               | Release Date   | Documentation                                                     |
 | -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
+|Extended refund period for a traffic package | Eligible traffic packages are now refundable within 15 days | June 23, 2021 |Traffic Package Refund|
 | Daily URL purge and prefetch quota increase | When you are running out of daily URL purge and prefetch quota, you can quickly increase it. | June 23, 2021 | [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299), [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000)|
 |Query for the origin-pull node IP of acceleration domain names in the console | Supports querying the origin-pull node IP (including IP address and IP range) of acceleration domain names. | June 23, 2021 | Origin-pull Node Query|
 
@@ -288,7 +313,7 @@ table th:nth-of-type(4){ width:19%; }
 | Update | Description                                               | Release Date   | Documentation                                                     |
 | ------------------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | The resource prefetch feature is launched<br>(In beta test)   | CDN offers a resource prefetch feature that enables you to load specified resources to a cache node by simply submitting the list of resources in the CDN console instead of waiting for user requests to trigger. | June 30, 2016 | [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000) |
-| Entry for Overseas CDN application is opened <br>(In beta test) | You can apply to enable Overseas CDN acceleration on this page. | June 30, 2016 | [Overseas Acceleration](https://intl.cloud.tencent.com/product/cdn)          |
+| Entry for Overseas CDN application is opened <br>(In beta test) | You can apply to enable Overseas CDN acceleration on this page. | June 30, 2016 | [Overseas Acceleration](https://intl.cloud.tencent.com/document/product/228 ) |
 | The CDN monthly operational report feature is launched | Your monthly business status is displayed in multiple dimensions to facilitate analysis of your business operations. | June 13, 2016 | [Data Analysis](https://intl.cloud.tencent.com/document/product/228/32923) |
 
 ## April 2016
