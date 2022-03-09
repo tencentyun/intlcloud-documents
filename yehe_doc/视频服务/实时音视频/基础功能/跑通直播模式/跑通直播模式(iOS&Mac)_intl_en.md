@@ -15,7 +15,7 @@ For audience to speak, they must switch the role (`switchRole`) to “anchor”.
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## Sample Code
-You can visit [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC) to obtain the sample code used in this document.
+You can visit [GitHub](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC) to obtain the sample code used in this document.
 ![](https://main.qcloudimg.com/raw/91ba84ef5cee887717ba69e97d939fcd.png)
 
 >?If your access to GitHub is slow, download the ZIP file [here](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip).
