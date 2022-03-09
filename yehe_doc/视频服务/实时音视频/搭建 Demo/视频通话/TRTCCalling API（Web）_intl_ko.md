@@ -779,7 +779,7 @@ trtcCalling.on(TRTCCalling.EVENT.INVITED, handleNewInvitationReceived);
 | sponsor     | String  | 초대 발신자                                                                                                   |
 | userIDList  | Array   | 동시에 초대를 수신한 사용자                                                                                         |
 | isFromGroup | Boolean | IM 그룹 초대 여부                                                                                         |
-| inviteData  | Object  | <li/>신규 사용자 초대: {version, callType, roomID} <li/> 마지막으로 통화를 종료한 사용자: {version, callType, callEnd} |
+| inviteData  | Object  | 신규 사용자 초대: {version, callType, roomID} |
 | inviteID    | String | 초대 식별 ID.                                                                                    |
 
 #### CALLING_CANCEL
@@ -840,7 +840,7 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 - **TRTCCalling 버전 업데이트 >= 1.0.2**
 	- 참고: TSignaling 버전 업데이트 필요 >= 0.9.0
 	- 원인: [업데이트 로그](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-3)
-- **1.0.2 >= TRTCCalling 버전 업데이트 >=1.0.0**
+- **1.0.2 > TRTCCalling 버전 업데이트 >=1.0.0**
 	- 참고: TSignaling 버전 업데이트 필요 >= 0.8.0
 	- 원인: [업데이트 로그](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-5)
 
@@ -860,6 +860,6 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 ## 참고 문서
 - [TRTCCalling web 공식 웹사이트 체험](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
 - [TRTCCalling npm](https://www.npmjs.com/package/trtc-calling-js)
-- [TRTCCalling web demo 소스 코드](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)
+- [TRTCCalling web demo 소스 코드](https://github.com/tencentyun/TUICalling)
 - [TRTCCalling web API](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
 - [TRTCCalling web 관련 질문](https://intl.cloud.tencent.com/document/product/647/43096)
