@@ -40,7 +40,7 @@ manifest 파일에 다음 activity를 붙여넣습니다. 프로젝트 코드에
 Android 7.0 시스템에서 백그라운드에서 실행되는 일반 App 프로세스로 전환합니다. 하지만 CPU가 사용되고 있을 경우 시스템에서 강제로 종료할 수 있습니다. 그러므로 App이 백그라운드로 전환되어 화면 공유를 진행할 경우에는 플로팅 창 팝업으로 시스템에 의해 강제 종료되는 것을 막을 수 있습니다. 동시에 휴대폰 화면에 플로팅 창을 표시할 경우 사용자에게 현재 화면 공유 중임을 알려 사용자의 프라이버시 유출을 막을 수 있습니다.
 
 - **솔루션1: 일반 플로팅 창 팝업**
-‘VooV Meeting’과 비슷한 미니 플로팅 창을 팝업해야 합니다. 예시 코드 [FloatingView.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTC-API-Example/Basic/ScreenShare/src/main/java/com/tencent/trtc/screenshare/FloatingView.java)의 구현을 참고하십시오.
+‘VooV Meeting’과 비슷한 미니 플로팅 창을 팝업해야 합니다. 예시 코드 [FloatingView.java](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Basic/ScreenShare/src/main/java/com/tencent/trtc/screenshare/FloatingView.java)의 구현을 참고하십시오.
 ```java
 public void showView(View view, int width, int height) {
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
