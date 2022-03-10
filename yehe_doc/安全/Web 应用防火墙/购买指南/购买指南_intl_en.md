@@ -20,7 +20,6 @@ Tencent Cloud WAF adopts billing by basic packs and extra packs.
 |OWASP Top 10 threats, such as SQL injection, cross-site scripting, cross-site request forgery and web shell trojan upload|Supported|Supported|Supported|
 |Automatic update of protection rules against 0day vulnerabilities on cloud|Supported|Supported|Supported|
 |AI-based online learning, including false positive/false negative submission, security model processing and online attack verification|-|-|Supported|
-|Bot management, including identifying and protecting known bots, unknown bots and custom bots|-|Supported|Supported|
 |Custom rule based on bot session features|-|20 rules per domain name|50 rules per domain name|
 |Port|Protection for HTTP ports (ports 80 and 8080) and HTTPS ports (ports 443 and 8443)|Protection for non-standard HTTP and HTTPs ports (not limited to ports 80, 8080, 443 and 8443). Customizing non-standard ports is not supported.|Protection for non-standard HTTP and HTTPs ports (not limited to ports 80, 8080, 443 and 8443). Customizing non-standard ports is supported.|
 |Regional blocking based on geographic locations|Supported|Supported|Supported|
