@@ -1,7 +1,7 @@
 본 문서에서는 시청자로서 라이브 룸에 입장해 마이크 연결 인터랙션을 시작하는 시나리오를 소개합니다. 호스트로서 라이브 방송을 진행하는 시나리오는 TRTC 통화 시나리오와 동일하게 [TRTC 통화](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-11-basic-video-call.html)를 참고하십시오.
 
 ## 예시
-[Demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-live.html) 를 클릭하여 멀티미디어 기능을 경험하거나 [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Web/base-react-next/src/pages/basic-live)에 로그인하여 본 문서와 관련된 샘플 코드를 얻을 수 있습니다.
+[Demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-live.html) 를 클릭하여 멀티미디어 기능을 경험하거나 [GitHub](https://github.com/LiteAVSDK/TRTC_Web/tree/main/base-react-next/src/pages/basic-live)에 로그인하여 본 문서와 관련된 샘플 코드를 얻을 수 있습니다.
 
 ## 1단계: Client 객체 생성 
 
