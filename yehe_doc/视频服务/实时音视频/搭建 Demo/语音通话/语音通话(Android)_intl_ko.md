@@ -99,7 +99,7 @@ dependencies {
 }
 :::
 </dx-codeblock>
->?두 SDK 제품의 최신 버전 번호는 [TRTC](https://github.com/tencentyun/TRTCSDK) 및 [IM](https://github.com/tencentyun/TIMSDK)의 Github 첫 페이지에서 획득할 수 있습니다.
+
 2. defaultConfig에서 App이 사용하는 CPU 구성을 지정합니다.
 <dx-codeblock>
 ::: java java
