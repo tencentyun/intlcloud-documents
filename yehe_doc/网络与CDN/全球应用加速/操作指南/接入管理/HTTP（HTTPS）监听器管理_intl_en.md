@@ -21,7 +21,7 @@ Under the **HTTP/HTTPS Listener Management** tab, click **Set a rule** in the op
 1. To add a domain name for an HTTP listener, enter a valid domain name. It must be 3 to 80 characters containing [a-z], [0–9], [.-]. Only exact match is supported.
  ![](https://qcloudimg.tencent-cloud.cn/raw/fed0aa02e83804a36799763b0f88cf33.png)
 2. To add a domain name for an HTTPS listener, enter a valid domain name and select the corresponding server certificate.
- ![](https://qcloudimg.tencent-cloud.cn/raw/27131602718160d5f4c096db488dccf6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/68b14a92208741316c4d92f3200a147c.png)
 	- **Domain**: 3 to 80 characters containing [a-z], [0–9], [.-]. Only exact match is supported.
 	- **Server Certificate**: by default, it is the certificate used to create the listener. If you upload another certificate, the domain name is authenticated with the uploaded certificate.
 	- **HTTP3 Transfer**: enables it to support QUIC. If the client does not support this protocol, HTTP2.0 and previous versions will be used for access.
