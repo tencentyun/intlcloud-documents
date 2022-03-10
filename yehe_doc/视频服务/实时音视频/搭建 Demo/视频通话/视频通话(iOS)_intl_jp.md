@@ -93,7 +93,7 @@ Xcode（バージョン11.0以上）を使用してソースコードプロジ�
  pod 'TXLiteAVSDK_TRTC' 
 :::
 </dx-codeblock>
->?2つのSDK製品の最新バージョン番号は、[TRTC](https://github.com/tencentyun/TRTCSDK)と[IM](https://github.com/tencentyun/TIMSDK) のGithubトップページで取得することができます。
+
 - **方法2：ローカルを介する依存**
 開発環境でのcocoapodsリポジトリへのアクセスが遅い場合は、ZIPパッケージを直接ダウンロードし、統合ドキュメントに従って手動でプロジェクトに統合することができます。
 <table>
