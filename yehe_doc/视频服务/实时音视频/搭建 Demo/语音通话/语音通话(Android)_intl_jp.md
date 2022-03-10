@@ -99,7 +99,7 @@ dependencies {
 }
 :::
 </dx-codeblock>
->?2つのSDK製品の最新バージョン番号は、[TRTC](https://github.com/tencentyun/TRTCSDK)と[IM](https://github.com/tencentyun/TIMSDK) のGithubトップページで取得することができます。
+
 2. defaultConfigでAppが使用するCPUアーキテクチャを指定します。
 <dx-codeblock>
 ::: java java
