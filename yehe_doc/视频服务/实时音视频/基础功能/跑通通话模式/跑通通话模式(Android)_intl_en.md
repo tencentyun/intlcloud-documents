@@ -13,7 +13,7 @@ In the call modes, all users in a TRTC room are assigned to access servers and a
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## Sample Code
-You can visit [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example) to obtain the sample code used in this document.
+You can visit [GitHub](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example) to obtain the sample code used in this document.
 ![](https://main.qcloudimg.com/raw/cdef573133900a8dce22dcca5242fcfc.png)
 
 >?If your access to GitHub is slow, download the ZIP file [here](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip).
@@ -23,7 +23,7 @@ You can visit [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android
 ### Step 1. Integrate the SDKs
 You can integrate the **TRTC SDK** into your project in the following ways:
 #### Method 1: automatic loading (AAR)
-The TRTC SDK has been released to the JCenter repository, and you can configure Gradle to download updates automatically.
+The TRTC SDK has been released to the mavenCentral repository, and you can configure Gradle to download updates automatically.
 The TRTC SDK has integrated `TRTC-API-Example`, which offers sample code for your reference. Use Android Studio to open your project and follow the steps below to modify the `app/build.gradle` file.
 
 1. Add the TRTC SDK dependency to `dependencies`.
@@ -43,7 +43,7 @@ dependencies {
   }
 ```
 3. Click **Sync Now** to sync the SDK.
- If you have no problem connecting to JCenter, the SDK will be downloaded and integrated into your project automatically.
+ If you have no problem connecting to mavenCentral, the SDK will be downloaded and integrated into your project automatically.
 
 #### Method 2: manual integration
 You can directly download the [ZIP package](https://intl.cloud.tencent.com/document/product/647/34615) and integrate the SDK into your project as instructed in [Quick Integration (Android)](https://intl.cloud.tencent.com/document/product/647/35093).

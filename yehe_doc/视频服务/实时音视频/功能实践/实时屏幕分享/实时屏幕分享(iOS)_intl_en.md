@@ -33,7 +33,7 @@ We recommend the following encoding settings for screen sharing on iOS:
 ## Cross-app Sharing
 
 ### Sample code
-You can find the sample code for cross-app sharing in the **ScreenShare** directory of [this GitHub page](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC), which contains the following files:
+You can find the sample code for cross-app sharing in the **ScreenShare** directory of [this GitHub page](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC), which contains the following files:
 
 ```
 ├─ TRTC-API-Example-OC              // TRTC API examples 
@@ -56,7 +56,7 @@ You can find the sample code for cross-app sharing in the **ScreenShare** direct
 |  |  |  │   └── SampleHandler.m                // Code for receiving screen recording data from the system
 ```
 
-You can run the demo as instructed in [README](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTC-API-Example-OC/README.md).
+You can run the demo as instructed in [README](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/README.md).
 
 
 ### Directions
@@ -207,7 +207,7 @@ Before screen sharing starts, the host app must be on standby to receive screen 
 In [step 3](#receive), users need to start screen sharing manually by pressing and holding the screen recording button in the Control Center. To make it possible to start screen sharing by tapping a button in your app as in VooV Meeting, follow these steps:
 
 
-1. Find the `TRTCBroadcastExtensionLauncher` class in the [demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC/Basic/ScreenShare) and add it to your project.
+1. Find the `TRTCBroadcastExtensionLauncher` class in the [demo](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Basic/ScreenShare) and add it to your project.
 2. Add a button to your UI and call the `launch` function of `TRTCBroadcastExtensionLauncher` in the response function of the button to trigger screen sharing.
 <dx-codeblock>
 ::: iOS object-c

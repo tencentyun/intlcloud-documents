@@ -84,7 +84,7 @@ Android Studio（バージョン3.5以降）を使用してソースコードプ
 
 オーディオビデオ通話コンポーネントTUICallingは、TRTC SDKとIM SDKに依存しています。次の手順で2つのSDKをプロジェクトに統合することができます。
 
-#### 方法1：Mavenリポジトリを介する依存
+#### 方法1：mavenCentralリポジトリを介する依存
 
 1. dependenciesにTRTCSDKとIMSDKの依存を追加します。
 <dx-codeblock>
@@ -98,7 +98,7 @@ dependencies {
 }
 :::
 </dx-codeblock>
->?2つのSDK製品の最新バージョン番号は、[TRTC](https://github.com/tencentyun/TRTCSDK)と[IM](https://github.com/tencentyun/TIMSDK) のGithubトップページで取得することができます。
+
 2. defaultConfigでAppが使用するCPUアーキテクチャを指定します。
 <dx-codeblock>
 ::: java java
@@ -110,11 +110,11 @@ defaultConfig {
 :::
 </dx-codeblock>
 3. **Sync Now**をクリックし、SDKを同期します。
->?jcenterへのネットワーク接続に問題がない場合、SDKは自動的にダウンロードされ、プロジェクトに統合されます。
+>? mavenCentral へのネットワーク接続に問題がない場合、SDKは自動的にダウンロードされ、プロジェクトに統合されます。
 
 
 #### 方法2：ローカルAARを介する依存
-開発環境でのMavenリポジトリへのアクセスが遅い場合は、ZIPパッケージを直接ダウンロードし、統合ドキュメントに従って手動でプロジェクトに統合することができます。
+開発環境でのmavenCentralリポジトリへのアクセスが遅い場合は、ZIPパッケージを直接ダウンロードし、統合ドキュメントに従って手動でプロジェクトに統合することができます。
 
 | SDK      | ダウンロードページ                                                     | 統合ガイド                                                     |
 | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |

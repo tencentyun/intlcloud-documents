@@ -779,7 +779,7 @@ The parameters are as detailed below:
 | sponsor     | String  | Inviter                                                                                                    |
 | userIDList  | Array   | Users invited to the same call                                                                                          |
 | isFromGroup | Boolean | Whether it is an IM group invitation                                             |
-| inviteData  | Object  | <li/>For a new user invitation: {version, callType, roomID} <li/> For the last user hanging up: {version, callType, callEnd} |
+| inviteData  | Object  | For a new user invitation: {version, callType, roomID} |
 | inviteID    | String  | Invitation ID, which identifies an invitation                                        |
 
 #### CALLING_CANCEL
@@ -860,6 +860,6 @@ For more information, [contact us](https://intl.cloud.tencent.com/contact-us) or
 ## References
 - [TRTCCalling for web demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
 - [TRTCCalling npm](https://www.npmjs.com/package/trtc-calling-js)
-- [Source code of TRTCCalling for web demo](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)
+- [Source code of TRTCCalling for web demo](https://github.com/tencentyun/TUICalling)
 - [TRTCCalling for web API](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
 - [FAQs about TRTCCalling for web](https://intl.cloud.tencent.com/document/product/647/43096)

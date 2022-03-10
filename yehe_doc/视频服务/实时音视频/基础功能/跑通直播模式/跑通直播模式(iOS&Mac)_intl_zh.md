@@ -15,7 +15,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## 示例代码
-您可以登录 [Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC) 获取本文档相关的示例代码。
+您可以登录 [Github](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC) 获取本文档相关的示例代码。
 ![](https://main.qcloudimg.com/raw/91ba84ef5cee887717ba69e97d939fcd.png)
 
 >?如果访问 Github 较慢，您也可以直接下载 [TXLiteAVSDK_TRTC_iOS_latest.zip](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip)。

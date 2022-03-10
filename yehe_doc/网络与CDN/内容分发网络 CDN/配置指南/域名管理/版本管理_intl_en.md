@@ -1,5 +1,15 @@
 
-## Features
+
+
+<blockquote class="d-mod-alarm">
+<div class="d-mod-title d-alarm-title">
+<i class="d-icon-alarm"></i>Notice:
+</div>
+<p></p>This feature is in beta testing and will become generally available soon.</p>
+</blockquote>
+
+
+## Feature Description
 
 Tencent Cloud CDN supports version management for a single domain name. You can create one configuration for each domain name version, and deploy it to the production environment and staging environment.
 
@@ -7,13 +17,13 @@ Tencent Cloud CDN supports version management for a single domain name. You can 
 - Staging environment: a sandbox for testing domain name configurations only. This environment is built on a small scale and is only expected for domain name configuration tests in the console. It should not be use for actual business running or performance tests.
 
 >!
->1. The acceleration region should be in the Chinese mainland. The domain name should not use external certificates, and the Image Optimization feature  should not be enabled.
+>1. For domain names without using external certificates and image optimization, version management is supported.
 >2. Only one version can be deployed at a time in each environment.
->3. URL refresh is supported in both the production environment and staging environment, while directory refresh and URL prefetch are only allowed in the production environment. For more information, see [Purge and Prefetch](https://intl.cloud.tencent.com/document/product/228/6299).
->4. Data and usage monitoring features, like [bandwidth cap configuration](https://intl.cloud.tencent.com/document/product/228/7541), are only available in the production environment.
+>3. URL refresh is supported in both the production environment and staging environment, while directory refresh and URL prefetch are only allowed in the production environment. For more information, see [Purge and Prefetch](https://intl.cloud.tencent.com/document/product/228/33982).
+>4. Data and usage monitoring features, like [usage limit configuration](https://intl.cloud.tencent.com/document/product/228/7541), are only available in the production environment.
 
 
-## Use Cases
+## Overview
 
 - Applicable to beta test for domain name configuration
 
@@ -58,7 +68,7 @@ For domain names with version management enabled, release versions as follows:
 ![](https://main.qcloudimg.com/raw/13b8f5a168719c31c2c1b03b532933a9.png)
 2. CDN will assign an IPv4 IP to the domain name. To test the version deployed in the staging environment, modify the client HOSTS, and point the domain name to the IP.
 3. If you want to adjust the configuration and test again, you need to add and submit a new version, and then repeat step 1 and 2.
-4. After testing, click **Sync to Production Env.** next to the version number to sync it to the production environment and deploy the configuration to the live site. 
+4. After testing, click **Sync to Production Env.** next to the version number to sync it to the production environment and deploy the configuration to the live site.
 ![](https://main.qcloudimg.com/raw/89b2d937dcba03f68c62a2aad60b9f6f.png)
 5. If you need to change the version in the production environment, repeat steps 1 through 4.
 
@@ -87,7 +97,7 @@ Once you disable it, the version deployed in the production environment will be 
 You can click **Enable Version Management** to enable it again as needed.
 
 
-## Notes:
+## Notes
 
 For domain names with version management enabled:
 - Batch configuring features, like [copying configuration](https://intl.cloud.tencent.com/document/product/228/38936) and [batch changing configuration](https://intl.cloud.tencent.com/document/product/228/39911), are not supported.

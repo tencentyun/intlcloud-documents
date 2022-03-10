@@ -33,7 +33,7 @@ iOS 화면 공유 시 다음과 같은 인코딩 매개변수를 권장합니다
 ## 애플리케이션 간 공유
 
 ### 예시 코드
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC)의 **ScreenShare** 디렉터리에 애플리케이션 간 공유 예시 코드가 저장되어 있으며, 다음 파일이 포함되어 있습니다.
+[Github](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC)의 **ScreenShare** 디렉터리에 애플리케이션 간 공유 예시 코드가 저장되어 있으며, 다음 파일이 포함되어 있습니다.
 
 ```
 ├─ TRTC-API-Example-OC              // TRTC API Example 
@@ -56,7 +56,7 @@ iOS 화면 공유 시 다음과 같은 인코딩 매개변수를 권장합니다
 |  |  |  │   └── SampleHandler.m                // 시스템 녹화 데이터 수신에 사용
 ```
 
-[README](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTC-API-Example-OC/README.md)의 가이드를 참고하여 해당 예시 Demo를 실행할 수 있습니다.
+[README](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/README.md)의 가이드를 참고하여 해당 예시 Demo를 실행할 수 있습니다.
 
 
 ### 연결 절차
@@ -206,7 +206,7 @@ iOS 시스템에서 애플리케이션 간 화면 공유 시 메인 App 프로�
 #### 4단계: 화면 공유 트리거 버튼 추가(옵션)
 [3단계](#receive)까지의 화면 공유는 사용자가 제어 센터에서 녹화 버튼을 길게 눌러 수동으로 실행하는 방법입니다. 이와 달리 VooV Meeting과 유사하게 버튼 클릭으로 효과를 트리거하는 방법은 다음과 같습니다.
 
-1. [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC/Basic/ScreenShare)에서 `TRTCBroadcastExtensionLauncher` 클래스를 찾아 프로그램에 추가 합니다.
+1. [Demo](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Basic/ScreenShare)에서 `TRTCBroadcastExtensionLauncher` 클래스를 찾아 프로그램에 추가 합니다.
 2. 프로그램 인터페이스  버튼을 만들고, 버튼의 응답 함수에 `TRTCBroadcastExtensionLauncher`의 `launch` 함수를 호출하면 화면 공유 기능을 호출할 수 있습니다.
 <dx-codeblock>
 ::: iOS object-c

@@ -114,7 +114,7 @@ dependencies {
 	 compile 'com.tencent.imsdk:imsdk:latest.release'
 }
 ```
->?You can view the latest version numbers of the two SDKs by visiting their GitHub pages at [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK).
+
 
 	2. In `defaultConfig`, specify the CPU architecture to be used by your application.
 ```java

@@ -84,7 +84,7 @@
 
 音视频通话组件 TUICalling 依赖 TRTC SDK 和 IM SDK，您可以按照如下步骤将两个 SDK 集成到项目中。
 
-#### 方法一：通过 Maven 仓库依赖
+#### 方法一：通过 mavenCentral 仓库依赖
 
 1. 在 dependencies 中添加 TRTCSDK 和 IMSDK 的依赖。
 <dx-codeblock>
@@ -98,7 +98,7 @@ dependencies {
 }
 :::
 </dx-codeblock>
->?两个 SDK 产品的最新版本号，可以在 [实时音视频](https://github.com/tencentyun/TRTCSDK) 和 [即时通信 IM](https://github.com/tencentyun/TIMSDK) 的 Github 首页获取。
+
 2. 在 defaultConfig 中，指定 App 使用的 CPU 架构。
 <dx-codeblock>
 ::: java java
@@ -110,11 +110,11 @@ defaultConfig {
 :::
 </dx-codeblock>
 3. 单击 **Sync Now** 同步 SDK。
->?若您的网络连接 jcenter 没有问题，SDK 会自动下载集成到工程里。
+>?若您的网络连接 mavenCentral 没有问题，SDK 会自动下载集成到工程里。
 
 
 #### 方法二：通过本地 AAR 依赖
-如果您的开发环境访问 Maven 仓库较慢，可以直接下载 ZIP 包，并按照集成文档手动集成到您的工程中。
+如果您的开发环境访问 mavenCentral 仓库较慢，可以直接下载 ZIP 包，并按照集成文档手动集成到您的工程中。
 
 | SDK      | 下载页面                                                     | 集成指引                                                     |
 | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |

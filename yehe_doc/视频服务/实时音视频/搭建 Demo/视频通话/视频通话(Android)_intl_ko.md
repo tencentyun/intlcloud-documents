@@ -84,7 +84,7 @@ Android Studio(버전 3.5 이상)를 사용하여 소스 프로젝트 `TUICallin
 
 음성 및 영상 통화 컴포넌트 TUICalling은 TRTC SDK와 IM SDK에 종속되어 있습니다. 아래 단계에 따라 두 가지 SDK를 프로젝트에 통합할 수 있습니다.
 
-#### 방법1: Maven 라이브러리를 통한 종속
+#### 방법1: mavenCentral 라이브러리를 통한 종속
 
 1. dependencies에 TRTCSDK와 IMSDK의 종속 패키지를 추가합니다.
 <dx-codeblock>
@@ -98,7 +98,7 @@ dependencies {
 }
 :::
 </dx-codeblock>
->?두 SDK 제품의 최신 버전 번호는 [TRTC](https://github.com/tencentyun/TRTCSDK) 및 [IM](https://github.com/tencentyun/TIMSDK)의 Github 첫 페이지에서 획득할 수 있습니다.
+
 2. defaultConfig에서 App이 사용하는 CPU 구성을 지정합니다.
 <dx-codeblock>
 ::: java java
@@ -110,11 +110,11 @@ defaultConfig {
 :::
 </dx-codeblock>
 3. **Sync Now**를 클릭해 SDK를 동기화합니다.
->?네트워크의 jcenter 연결에 문제가 없을 경우 SDK가 자동으로 다운로드되어 프로그램에 통합됩니다.
+>?네트워크의 mavenCentral 연결에 문제가 없을 경우 SDK가 자동으로 다운로드되어 프로그램에 통합됩니다.
 
 
 #### 방법2: 로컬 AAR을 통한 종속
-개발 환경에서 Maven 라이브러리 액세스가 느릴 경우, ZIP 패키지를 다운로드하고 통합 가이드 문서에 따라 수동으로 프로그램에 통합할 수 있습니다.
+개발 환경에서 mavenCentral 라이브러리 액세스가 느릴 경우, ZIP 패키지를 다운로드하고 통합 가이드 문서에 따라 수동으로 프로그램에 통합할 수 있습니다.
 
 | SDK      | 다운로드 페이지                                                     | 통합 가이드                                                     |
 | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |

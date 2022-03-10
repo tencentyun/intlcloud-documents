@@ -13,7 +13,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## 示例代码
-您可以登录 [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example) 获取本文档相关的示例代码。
+您可以登录 [Github](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example) 获取本文档相关的示例代码。
 ![](https://main.qcloudimg.com/raw/cdef573133900a8dce22dcca5242fcfc.png)
 
 >?如果访问 Github 较慢，您也可以直接下载 [TXLiteAVSDK_TRTC_Android_latest.zip](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip)。
@@ -23,7 +23,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 ### 步骤1：集成 SDK
 您可以选择以下方式将 **TRTC SDK** 集成到项目中。
 #### 方式一：自动加载（aar）
-TRTC SDK 已发布到 jcenter 库，您可以通过配置 gradle 自动下载更新。
+TRTC SDK 已发布到 mavenCentral 库，您可以通过配置 gradle 自动下载更新。
 您只需用 Android Studio 打开待集成 SDK 的工程（TRTC-API-Example 已完成集成，示例代码可以供您参考），然后通过简单的步骤修改`app/build.gradle`文件，即可完成 SDK 集成：
 
 1. 在 dependencies 中添加 TRTCSDK 的依赖。
@@ -43,7 +43,7 @@ dependencies {
   }
 ```
 3. 单击【Sync Now】同步 SDK。
- 如果您的网络连接 jcenter 没有问题，SDK 会自动下载集成到工程中。
+ 如果您的网络连接 mavenCentral 没有问题，SDK 会自动下载集成到工程中。
 
 #### 方式二：下载 ZIP 包手动集成
 您可以直接下载 [ZIP 压缩包](https://intl.cloud.tencent.com/document/product/647/34615)，并参考 [快速集成(Android)](https://intl.cloud.tencent.com/document/product/647/35093) 将 SDK 集成到您的工程中。

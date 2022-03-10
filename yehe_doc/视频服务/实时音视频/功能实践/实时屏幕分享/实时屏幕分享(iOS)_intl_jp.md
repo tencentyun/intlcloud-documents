@@ -33,7 +33,7 @@ iOS画面共有に推奨されるエンコードパラメータは次のとお�
 ## アプリケーション間共有
 
 ### サンプルコード
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC)の**ScreenShare**ディレクトリに、アプリケーション間共有用のサンプルコードを設置しています。これには、次のようなテキストが含まれています。
+[Github](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC)の**ScreenShare**ディレクトリに、アプリケーション間共有用のサンプルコードを設置しています。これには、次のようなテキストが含まれています。
 
 ```
 ├─ TRTC-API-Example-OC              // TRTC API Example 
@@ -56,7 +56,7 @@ iOS画面共有に推奨されるエンコードパラメータは次のとお�
 |  |  |  │   └── SampleHandler.m                // システムからのスクリーンキャプチャデータを受信するために使用されます
 ```
 
-[README](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTC-API-Example-OC/README.md)のガイドによって、このサンプルDemoを実行することができます。
+[README](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/README.md)のガイドによって、このサンプルDemoを実行することができます。
 
 
 ### 結合手順
@@ -205,7 +205,7 @@ iOSシステムでアプリケーション間画面共有を行うには、Exten
 #### 手順4：画面共有のトリガーボタンの追加（オプション）
 [手順3](＃receive)までに、ユーザーがコントロールセンターからスクリーンキャプチャボタンを長押しして、画面共有を手動で開始する必要があります。以下の方法で、VooVMeetingのように、ボタンをクリックすることでトリガーする効果を実現できます。
 
-1. [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC/Basic/ScreenShare)において`TRTCBroadcastExtensionLauncher`というクラスを見つけて、お客様のプロジェクトに追加します。
+1. [Demo](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Basic/ScreenShare)において`TRTCBroadcastExtensionLauncher`というクラスを見つけて、お客様のプロジェクトに追加します。
 2. インターフェースにボタンを設置し、ボタンの応答関数において`TRTCBroadcastExtensionLauncher`の`launch`関数を呼び出すと、画面共有機能を呼び出すことができます。
 <dx-codeblock>
 ::: iOS object-c

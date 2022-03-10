@@ -1,7 +1,7 @@
 ここでは主に、視聴者としてライブストリーミングルームに入室し、マイク接続して双方向通信を行うシナリオをご紹介します。キャスターとして入室してライブストリーミングを行うシナリオは、TRTCの通話シナリオと同様です。[TRTC通話](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-11-basic-video-call.html)をご参照ください。
 
 ## 事例
-[Demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-live.html)をクリックしてオーディオビデオ機能の体験に移動し、または[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Web/base-react-next/src/pages/basic-live) にログインして、このドキュメントに関連するサンプルコードを取得できます。
+[Demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-live.html)をクリックしてオーディオビデオ機能の体験に移動し、または[GitHub](https://github.com/LiteAVSDK/TRTC_Web/tree/main/base-react-next/src/pages/basic-live) にログインして、このドキュメントに関連するサンプルコードを取得できます。
 
 ## 手順1： Clientオブジェクトの新規作成 
 

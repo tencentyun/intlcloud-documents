@@ -13,7 +13,7 @@ TRTCクラウドサービスは、「インターフェースモジュール」�
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## サンプルコード
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC) にログインし、本ファイルに関連するサンプルコードを取得することができます。
+[Github](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC) にログインし、本ファイルに関連するサンプルコードを取得することができます。
 ![](https://main.qcloudimg.com/raw/468128bcaf078183eed097f7ee5f9c21.png)
 
 >Githubへのアクセスが遅い場合は、[TXLiteAVSDK_TRTC_iOS_latest.zip](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip)を直接ダウンロードすることもできます。

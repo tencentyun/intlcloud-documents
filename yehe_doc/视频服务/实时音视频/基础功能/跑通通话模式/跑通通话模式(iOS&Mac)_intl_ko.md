@@ -13,7 +13,7 @@ TRTC 클라우드 서비스는 '인터페이스 노드'와 '프록시 노드'라
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## 예시 코드
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC)에 로그인하여 본 문서와 관련된 예시 코드를 확인할 수 있습니다.
+[Github](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC)에 로그인하여 본 문서와 관련된 예시 코드를 확인할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/468128bcaf078183eed097f7ee5f9c21.png)
 
 >?Github 액세스 속도가 느리다면 [TXLiteAVSDK_TRTC_iOS_latest.zip](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip)을 직접 다운로드할 수도 있습니다.

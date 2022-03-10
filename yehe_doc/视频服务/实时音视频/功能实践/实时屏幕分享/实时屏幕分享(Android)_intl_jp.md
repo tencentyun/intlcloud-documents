@@ -40,7 +40,7 @@ Androidデバイスでの画面共有は、`TRTCCloud`の[startScreenCapture()](
 Android 7.0以降のシステムから、バックグラウンドで実行されている通常のアプリプロセスに切り替わりますが、CPUのアクティビティがある場合、常にシステムによって強制終了されやすくなります。従って、アプリをバックグラウンドに切り替えてサイレントで画面共有すると、フローティングウィンドウのポップアップというソリューションによって強制終了を回避することができます。また、携帯電話の画面にフローティングウィンドウを表示することは、ユーザーが今、画面共有を行っていることをユーザーに知らせ、プライバシー情報の漏えい防止につながります。
 
 - **方法1：通常のフローティングウィンドウをポップアップする**
-「VooVMeeting」のようなミニフローティングウィンドウをポップアップするには、サンプルコード[FloatingView.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTC-API-Example/Basic/ScreenShare/src/main/java/com/tencent/trtc/screenshare/FloatingView.java)の実装を参照すればOKです。
+「VooVMeeting」のようなミニフローティングウィンドウをポップアップするには、サンプルコード[FloatingView.java](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Basic/ScreenShare/src/main/java/com/tencent/trtc/screenshare/FloatingView.java) の実装を参照すればOKです。
 ```java
 public void showView(View view, int width, int height) {
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);

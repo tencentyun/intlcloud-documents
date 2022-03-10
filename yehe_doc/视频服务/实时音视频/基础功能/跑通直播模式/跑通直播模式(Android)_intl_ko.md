@@ -14,7 +14,7 @@ TRTC 클라우드 서비스는 '인터페이스 노드'와 '프록시 노드'라
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## 예시 코드
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example)에 로그인하여 본문과 관련된 예시 코드를 확인할 수 있습니다.
+[Github](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example)에 로그인하여 본문과 관련된 예시 코드를 확인할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/959efe00790a0a2952f8837a48baec25.png)
 
 >?Github 액세스 속도가 느리다면 [TXLiteAVSDK_TRTC_Android_latest.zip](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip)을 직접 다운로드 할 수도 있습니다.
@@ -24,7 +24,7 @@ TRTC 클라우드 서비스는 '인터페이스 노드'와 '프록시 노드'라
 ### 1단계: SDK 통합
 아래의 방법 중에서 하나를 택해 **TRTC SDK**를 프로젝트에 통합할 수 있습니다.
 #### 방법1: 자동 로딩(aar)
-TRTC SDK를 jcenter에 이미 배포했다면 gradle 자동 다운로드 설정을 통해 업데이트할 수 있습니다.
+TRTC SDK를 mavenCentral 에 이미 배포했다면 gradle 자동 다운로드 설정을 통해 업데이트할 수 있습니다.
 Android Studio를 사용해 통합이 필요한 SDK 프로그램(TRTC-API-Example는 이미 통합 완료, 참고용 예시 코드 제공 가능)을 연 후, 간단한 단계를 거쳐 `app/build.gradle` 파일을 수정하면 SDK 통합이 완료됩니다.
 
 1. dependencies에서 TRTCSDK 종속을 추가합니다.
@@ -44,7 +44,7 @@ dependencies {
   }
 ```
 3. **Sync Now**를 클릭해 SDK를 동기화합니다.
- 네트워크에서 jcenter 연결에 문제가 없으면 SDK는 자동으로 다운로드되어 프로그램에 통합됩니다.
+ 네트워크에서 mavenCentral 연결에 문제가 없으면 SDK는 자동으로 다운로드되어 프로그램에 통합됩니다.
 
 #### 방법2: ZIP 패키지를 다운로드하여 수동으로 통합
 [ZIP 압축 패키지](https://intl.cloud.tencent.com/document/product/647/34615)를 다운로드하고 [빠른 통합(Android)](https://intl.cloud.tencent.com/document/product/647/35093)을 참고하여 SDK를 프로세스에 통합할 수 있습니다.

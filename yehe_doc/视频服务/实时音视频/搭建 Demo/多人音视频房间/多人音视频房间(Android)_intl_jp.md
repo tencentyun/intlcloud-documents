@@ -115,7 +115,7 @@ dependencies {
 	 compile 'com.tencent.imsdk:imsdk:latest.release'
 }
 ```
->?2つのSDKの最新バージョン番号は、[TRTC](https://github.com/tencentyun/TRTCSDK) および[IM](https://github.com/tencentyun/TIMSDK) のGithubトップページで取得することができます。
+
 
 	2. defaultConfigでAppが使用するCPUアーキテクチャを指定します。
 ```java
