@@ -92,7 +92,7 @@ Xcode(11.0 및 이후 버전) 소스 코드 프로젝트 `TUICalling/Example/TUI
  pod ’TXLiteAVSDK_TRTC’ 
 :::
 </dx-codeblock>
->?두 SDK 제품의 최신 버전 번호는 [TRTC](https://github.com/tencentyun/TRTCSDK) 및 [IM](https://github.com/tencentyun/TIMSDK)의 Github 첫 페이지에서 획득할 수 있습니다.
+
 - **방법2: 로컬을 통한 종속**
 개발 환경에서 cocoapods 라이브러리 액세스가 느릴 경우, ZIP 패키지를 다운로드하고 통합 가이드 문서에 따라 수동으로 프로그램에 통합할 수 있습니다.
 <table>
