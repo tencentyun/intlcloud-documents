@@ -21,7 +21,7 @@ Abra a guia **HTTP/HTTPS Listener Management (Gerenciamento de listener HTTP/HTT
 Para adicionar um nome de domínio para um listener HTTP, basta inseri-lo no formato especificado. Apenas a correspondência exata é aceita. Um nome de domínio pode conter de 3 a 80 caracteres dos seguintes tipos: `a–z`, `0–9`, `_` e `–`.
  ![](https://qcloudimg.tencent-cloud.cn/raw/fed0aa02e83804a36799763b0f88cf33.png)
 Para adicionar um nome de domínio para um listener HTTPS, basta inseri-lo e selecionar o certificado do servidor correspondente. O certificado selecionado durante a criação do listener é usado no console por padrão. Se você carregar um novo certificado, o nome de domínio será autenticado com ele.
- ![](https://qcloudimg.tencent-cloud.cn/raw/27131602718160d5f4c096db488dccf6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/68b14a92208741316c4d92f3200a147c.png)
 
 ### Adição de regra
 
