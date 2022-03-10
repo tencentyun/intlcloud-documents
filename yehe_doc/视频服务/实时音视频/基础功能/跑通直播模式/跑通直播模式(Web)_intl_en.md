@@ -1,7 +1,7 @@
 This document describes how to enter a room as audience and start co-anchoring. The process of entering a room and publishing streams as an anchor in live streaming scenarios is the same as that in call scenarios. Please see [Real-Time Audio/Video Call](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-11-basic-video-call.html).
 
 ## Example
-You can click [Demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-live.html) to try out the audio/video features, or log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Web/base-react-next/src/pages/basic-live) to get the sample code related to this document.
+You can click [Demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-live.html) to try out the audio/video features, or log in to [GitHub](https://github.com/LiteAVSDK/TRTC_Web/tree/main/base-react-next/src/pages/basic-live) to get the sample code related to this document.
 
 ## Step 1. Create a client object 
 
