@@ -37,7 +37,7 @@ To quickly enable the chat salon feature, you can modify the demo we provide and
 1. In the **Modify Configuration** step, select your platform.
 2. Find and open `/example/lib/debug/GenerateTestUserSig.dart`.
 3. Set parameters in `GenerateTestUserSig.dart` as follows.
-<ul><li/>SDKAPPID: a placeholder by default. Set it to the actual `SDKAppID`.
+<ul><li/>`SDKAPPID`: a placeholder by default. Set it to the actual `SDKAppID`.
 	<li>`SECRETKEY`: a placeholder by default. Set it to the actual key.</ul>
 <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png"/>
 
