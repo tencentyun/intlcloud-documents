@@ -19,11 +19,11 @@ Global replication is a new feature added to the open-source version of the kern
 ## Use Cases
 ### Read-only instance and disaster recovery
 In the global replication scheme of TencentDB for Redis, a master instance is configured in a replication group, while read-only instances are deployed in multiple regions and replicate data from the master instance. The data version is based on the master instance, and the data consistency level is eventual consistency. This allows you to access data locally with a quicker response, better experience, higher data availability, and greater data security.
-![](https://qcloudimg.tencent-cloud.cn/raw/3023873423bc126eca8b76d0e421ea3b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/32586e18f567cfbab7adf9efbd58cc1d.png)
 
 ### Multi-master architecture
 If you need to roam and merge data across regions, you need to distribute the same copy of data in multiple regions, read and update data in any region, or merge data from multiple regions. In this case, the database should have the ability to write data in multiple regions. In a global replication group, you can configure a multi-master architecture, so data written to one master instance will be synced to other master instances in other regions.
-![](https://qcloudimg.tencent-cloud.cn/raw/8455e41f886cd09a342c8516e735d2ee.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1702367157d53cf5e3b177eca2577f16.png)
 > !TencentDB for Redis master instances do not perform version detection and write time check for data written by the application and by other master instances in the replication group; instead, they execute the commands chronologically in the order they are received. If the same data is updated in different master instances at the same time, the globally replicated data may be misaligned and fail to be consistent.
 > Therefore, in multi-master scenarios, avoid updating the same data in different master instances at the same time. As the multi-instance architecture may cause data inconsistency, carefully evaluate whether it is suitable for your business.
 
