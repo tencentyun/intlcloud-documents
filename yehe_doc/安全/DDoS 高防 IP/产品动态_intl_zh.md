@@ -9,6 +9,14 @@
 </tr>
 </thead>
 <tbody>
+ <tr>
+<td>优化防护概览</td>
+<td>优化高防包防护概览页视觉交互。</td>
+<td> 2022-01-13</td>
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/297/44555">防护概览</a>
+</td>
+</tr>
 <tr>
 <td>BGP 线路防护能力提升至1000Gbps</td>
 <td>高防 IP BGP线路防护能力提升至1000Gbps。</td>
@@ -18,6 +26,8 @@
 </td>
 </tr>
 </tbody></table>
+
+
 
 ## 2021-12
 <table>
@@ -35,7 +45,7 @@
 <td>防护概览（总览）页面全量展示业务 IP 和高防 IP 实例的安全状态。</td>
 <td>2021-12-23</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/297/44555">防护概览（总览）</a>
+<a href="https://intl.cloud.tencent.com/document/product/297/44555">防护概览</a>
 </td>
 </tr>
 <tr>
@@ -120,7 +130,7 @@
 <td><li>增加请求数量维度。</li><li>优化请求速率展示维度。</li></td>
 <td> 2021-11-10</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/297/37206">查看防护概览</a>
+<a href="https://intl.cloud.tencent.com/document/product/297/44555">查看防护概览</a>
 </td>
 </tr>
 </tbody></table>

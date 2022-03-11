@@ -6,8 +6,9 @@ You have purchased an [Anti-DDoS Advanced instance](https://intl.cloud.tencent.c
 ## Directions
 1. Log in to the [Anti-DDoS console](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) and select **Anti-DDoS Advanced (New)** > **Configurations** on the left sidebar. Open the **DDoS Protection** tab.
 2. Select an Anti-DDoS Advanced instance ID in the list on the left, such as "bgpip-xxxxxx".
-![](https://main.qcloudimg.com/raw/dcb8de6c5b81f6f522b25962f4ad3c11.png)3. Click **Set** in the **Port Filtering** section to enter the page.
-![](https://qcloudimg.tencent-cloud.cn/raw/f49c805c5fbf89de4e5cd8ab8bf941ab.png)
+![](https://main.qcloudimg.com/raw/9926499f6012c6a88194642aae7474e0.png)
+3. Click **Set** in the **Port Filtering** section to enter the port filtering page.
+![](https://qcloudimg.tencent-cloud.cn/raw/8a3cad6018765d794f35efcc6ae7ed6c.png)
 4. Click **Create**, enter the required fields based on the action you select, and then click **Save**.
 >?
 >- Multiple instances can be created at a time. For instances without protected resources, you cannot create rules.

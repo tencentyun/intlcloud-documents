@@ -4,13 +4,11 @@ DDoS 高防 IP 支持针对访问 DDoS 高防 IP 的源流量，基于端口进�
 您需要成功 [购买 DDoS 高防 IP](https://intl.cloud.tencent.com/document/product/1029/36115)  ，并设置防护对象。
 
 ## 操作步骤
-1.	登录  [DDoS 高防 IP 控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) ，在左侧导航中，单击**防护配置** > **DDoS 防护**。
-2. 在 DDoS 防护页面的左侧，选中高防IP的 ID，如“bgpip-xxxxxx”。
-![](https://main.qcloudimg.com/raw/dcb8de6c5b81f6f522b25962f4ad3c11.png)
+1. 登录 [DDoS 高防 IP 控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) ，在左侧导航中，单击**防护配置** > **DDoS 防护**。
+2. 在 DDoS 防护页面的左侧，选中高防 IP 的 ID，如“bgpip-xxxxxx”。
+![](https://main.qcloudimg.com/raw/9926499f6012c6a88194642aae7474e0.png)
 3. 在端口过滤卡片中，单击**设置**，进入端口过滤页面。
-
-![](https://qcloudimg.tencent-cloud.cn/raw/f49c805c5fbf89de4e5cd8ab8bf941ab.png)
-
+![](https://qcloudimg.tencent-cloud.cn/raw/8a3cad6018765d794f35efcc6ae7ed6c.png)
 4. 在端口过滤页面中，单击**新建**，创建端口过滤规则，根据需求，选择不同防护动作并填写相关字段，单击**保存**。
 >?
 >- 支持选择多个实例资源批量创建，未绑定防护资源的实例，不允许创建规则。

@@ -1,3 +1,32 @@
+## January 2022
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+<td>Protection overview</td>
+<td>The display of protection overview is optimized.</td>
+<td>January 13, 2022</td>
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/297/44555">Protection Overview</a>
+</td>
+</tr>
+<tr>
+<td>Protection bandwidth of BGP lines</td>
+<td>The protection bandwidth of Anti-DDoS Advanced BGP lines is increased to 1000 Gbps.</td>
+<td> October 01, 2021</td>
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/297/37240">Billing Overview </a>
+</td>
+</tr>
+</tbody></table>
+
 
 
 ## December 2021
@@ -12,19 +41,43 @@
 </thead>
 <tbody>
 <tr>
+<td>Protection overview</td>
+<td>The protection overview page fully displays the security status of application IPs and Anti-DDoS Advanced instances.</td>
+<td>December 23, 2021</td>
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/297/44555">Protection Overview</a>
+</td>
+</tr>
+<tr>
+<td>CC protection and cleansing threshold</td>
+<td>The feature "CC Protection and Cleansing Threshold" is optimized.</td>
+<td>December 23, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/37217">Protection Level and Cleansing Threshold</a></td>
+</tr>
+<tr>
+<td>Port filtering</td>
+<td>Visual interaction is optimized and batch creation of multiple instances is supported.</td>
+<td>December 23, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/42153">Port Filtering</a></td>
+</tr>
+<tr>
+<td>CC frequency limit</td>
+<td>The feature of CC frequency limit is optimized.</td>
+<td>December 23, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/37219">CC Frequency Limit</a></td>
+</tr>
+<tr>
+<td>IP allowlist/blocklist</td>
+<td>The IP allowlist/blocklist configuration is added.</td>
+<td>December 23, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/44559">IP Blocklist/Allowlist</a></td>
+</tr>
+<tr>
 <td>Elastic application bandwidth (pay-per-use)</td>
 <td>Elastic application bandwidth is provided when you need to increase application bandwidth or QPS.</td>
 <td> December 03, 2021</td>
 <td>
 <a href="https://intl.cloud.tencent.com/document/product/297/37240">Billing Overview</a>
-</td>
-</tr>
-<tr>
-<td>IPv6 access</td>
-<td>Only Anti-DDoS Advanced allows access to IPV6 BGP lines.</td>
-<td> December 03, 2021</td>
-<td>
-<a href="https://intl.cloud.tencent.com/document/product/297/37241">Purchase Directions</a>
 </td>
 </tr>
 <tr>
@@ -73,11 +126,11 @@
 </td>
 </tr>
 <tr>
-<td>CC data display is optimized.</td>
+<td>CC data display optimized</td>
 <td><li>A new dimension, number of requests, is added.</li><li>The display of request rate is optimized.</li></td>
 <td> November 10, 2021</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/297/37206">Viewing Security Protection Overview</a>
+<a href="https://intl.cloud.tencent.com/document/product/297/44555">Viewing Security Protection Overview</a>
 </td>
 </tr>
 </tbody></table>
