@@ -89,7 +89,7 @@ In the settings window, you can select devices, set beauty filter parameters, an
 ![](https://qcloudimg.tencent-cloud.cn/raw/9d927c98a595667d9f3f16d597abc77e.png)
 
 ### Leaving a room
-There are two options when the anchor leaves the room:
+There are two options when the anchor leaves a room:
 - **Destroy Room**: All users need to leave the room.
 - **Leave Room**: The room's anchor permission will be transferred to another user.
 
