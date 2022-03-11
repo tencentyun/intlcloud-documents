@@ -93,12 +93,12 @@ The `Source` folder in the source code contains two subfolders: `ui` and `model`
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/7596d1bd53d84d61436a499a92d52240.png)
 
-2. Enter the ID of the room created by user A and tap **Enter Room**.
+2. Enter the number of the room created by user A and tap **Enter Room**.
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/68eea3143e1d57158725d80da7895e51.png)
 
 
->! You can find the room ID at the top of user A’s room view.
+>! You can find the room number at the top of user A’s room view.
 >
 >![](https://qcloudimg.tencent-cloud.cn/raw/ae36a652f641761fccd5bdad041a9220.png)
 
