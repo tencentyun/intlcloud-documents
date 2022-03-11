@@ -189,7 +189,7 @@ In addition to the features of the Professional edition, the Enterprise edition 
       <td style="text-align:center">Yes</td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
-      <td style="text-align:center"> jar: 2.2M<br>so(armeabi): 9.3M</td>
+      <td style="text-align:center"> jar: 2.2M<br>so (armeabi): 9.3M</td>
    </tr>
 </table>
 
