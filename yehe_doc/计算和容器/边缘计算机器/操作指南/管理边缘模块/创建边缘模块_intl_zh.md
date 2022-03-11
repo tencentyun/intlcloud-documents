@@ -5,9 +5,9 @@
 
 1. 登录 [边缘计算机器控制台](https://console.cloud.tencent.com/ecm/overview)，在左侧导航栏中选择【边缘模块】。
 2. 在边缘模块页面，单击【新建模块】。
-![](https://main.qcloudimg.com/raw/0f31271f9fcde99a4335c9b8fc255229.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f39fbfda6cebd5ce2f676eb9a10de66a.png)
 3. 在创建模块及实例配置页面，根据提示，配置以下信息：
-![](https://main.qcloudimg.com/raw/6e6bc4b396fb3a0b148c301de872ea41.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ede2b7f554722f08cc2701195551221d.png)
  - **模块名称**：表示需要创建的边缘模块名称，用户自定义。
  - **实例类型**：目前支持【高IO型IT5】、【标准型S4】、【高内网带宽型S4】和【标准型SN3ne】。在某些特殊场景下，不同的机型性能会有略微差异。如需了解具体差异，则请查阅 [实例规格](https://intl.cloud.tencent.com/document/product/1119/43401)。
  为简化实例创建的机型选择，建议您选择【新机型优先】。在此策略下，系统会在您选择的边缘节点按可用的最新机型创建实例。若某个选定的节点无可用的最新机型，则系统会按其他可用机型创建实例。
@@ -25,7 +25,7 @@
      </dx-alert>
     - **默认标签**：通过设置默认标签，您可以对边缘模块进行分类管理。边缘模块已设置的默认标签会在创建新实例时作为新实例的标签建议键值，您也可以在创建实例时修改为您需要的标签键值。
      <dx-alert infotype="notice" title="">
-     该设置项仅修改边缘模块的标签键值，不会自动同步修改已经创建成功的实例标签键值。
-     </dx-alert>
+      该设置项仅修改边缘模块的标签键值，不会自动同步修改已经创建成功的实例标签键值。
+      </dx-alert>
 4. 单击【确定】。
 >? 如控制台提供的边缘模块配置未能满足您的要求，请通过 [提交工单](https://console.intl.cloud.tencent.com/workorder) 反馈，会有专门的商务人员与您对接。

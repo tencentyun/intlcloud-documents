@@ -14,11 +14,10 @@
 - 如果需要导入规则的安全组下没有安全组规则，建议您先下载模板，待编辑好模板文件后，再将文件导入。
 </dx-alert>
 
-![](https://main.qcloudimg.com/raw/91bbc13b687ecf2a3411cb617014ee69.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ea9f0f03e2b83afe353c9020baf7354d.png)
 导入后会重新生成一条面向边缘产品的安全组数据。
 
 
 
   
-
 

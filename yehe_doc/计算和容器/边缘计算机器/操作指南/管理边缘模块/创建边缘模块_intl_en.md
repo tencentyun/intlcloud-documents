@@ -5,9 +5,9 @@ This document describes how to create an ECM module in the console. An ECM modul
 
 1. Log in to the [ECM console](https://console.cloud.tencent.com/ecm/overview) and select **ECM Module** on the left sidebar.
 2. On the ECM module page, click **Create Module**.
-![](https://main.qcloudimg.com/raw/0f31271f9fcde99a4335c9b8fc255229.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f39fbfda6cebd5ce2f676eb9a10de66a.png)
 3. On the module creation and instance configuration page, configure the following information as prompted:
-![](https://main.qcloudimg.com/raw/6e6bc4b396fb3a0b148c301de872ea41.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ede2b7f554722f08cc2701195551221d.png)
  - **Module Name**: it is the custom name of the ECM module to be created.
  - **Instance Type**: currently, **High I/O IT5** **Standard S4**, **High Private Network Bandwidth S4**, and **Standard SN3ne** models are supported. The performance of a model may vary slightly by scenario. For the specific performance differences, see [Instance Specification](https://intl.cloud.tencent.com/document/product/1119/43401).
  To make model selection during instance creation easier, we recommend you select **New Model First**. If this policy is enabled, the system will create an instance of the latest available model on your selected edge node. If there is no available latest model on the selected node, the system will create an instance in another available model.
@@ -25,7 +25,7 @@ This document describes how to create an ECM module in the console. An ECM modul
      </dx-alert>
     - **Default Tags**: you can set default tags to manage instances in the ECM module by group. During instance creation, the default tags set in the ECM module will be used as the recommended tag key-value pairs, and you can also modify them as needed.
      <dx-alert infotype="notice" title="">
-     This configuration item only modifies the tag key-value pairs of the ECM module but doesn't automatically sync changes to those of successfully created instances.
-     </dx-alert>
+      This configuration item only modifies the tag key-value pairs of the ECM module but doesn't automatically sync changes to those of successfully created instances.
+      </dx-alert>
 4. Click **OK**.
 >? If the ECM module configuration provided in the console cannot meet your requirements, [submit a ticket](https://console.intl.cloud.tencent.com/workorder) for assistance, and a dedicated Tencent Cloud rep will contact you.

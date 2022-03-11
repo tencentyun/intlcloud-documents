@@ -9,7 +9,7 @@ This document describes how to create a security group in the ECM console.
 1. Log in to the ECM console and select **Edge Network** > **[Security Group](https://console.cloud.tencent.com/ecm/safe)** on the left sidebar.
 3. On the **Security Group** management page, click **Create**.
 4. In the **Create ECM Security Group** pop-up window, configure the options as shown below:
-   ![](https://main.qcloudimg.com/raw/3a87af04f0f969ce605b9eecc21f64b7.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/5150a861044b0f1acf692205bcb53e2e.png)
    - **Template**: select an appropriate template based on the service to be deployed in the ECM instance in the security group, which simplifies the security group rule configuration, as shown below:
 <table>
 <tbody><tr><th>Template</th><th>Description</th><th>Scenario</th></tr>

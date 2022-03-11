@@ -12,10 +12,9 @@
 1. 登录 [边缘计算机器控制台](https://console.cloud.tencent.com/ecm/overview)。
 2. 在左侧导航栏中，选择【实例列表】。
 3. 在实例列表页面，勾选待重置密码的实例，单击【更多操作】>【重置密码】。
-![](https://main.qcloudimg.com/raw/57e03c1e0d2745534ee1513b3d4bb6c5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9151d35c259f61873c7c2effe6073e0c.png)
 4. 在弹出的窗口中，确认需要重置密码的用户名（如 Linux 实例的用户名为 `root`、Windows 实例的用户名为 `Administrator`），输入对应的 “新密码” 和 “确认密码”，单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/0d07a69d2aae080c34dde6170bd974cc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3996c5c676b47243362d96e64d5c735d.png)
 5. 勾选 “同意强制关机”，单击【重置密码】，完成重置。如下图所示：
-![](https://main.qcloudimg.com/raw/cb85dfa6ef987bbae382a29ea1e51926.png)
-
+![](https://qcloudimg.tencent-cloud.cn/raw/a690d230cd06b32252f227985dd07564.png)
 

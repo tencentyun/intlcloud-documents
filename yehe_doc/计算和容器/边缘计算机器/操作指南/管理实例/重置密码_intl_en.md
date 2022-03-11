@@ -12,10 +12,9 @@ This document describes how to reset your instance login password in the ECM con
 1. Log in to the [ECM console](https://console.cloud.tencent.com/ecm/overview).
 2. On the left sidebar, select **Instance List**.
 3. On the instance list page, select the target instance and click **More** > **Reset Password**.
-![](https://main.qcloudimg.com/raw/57e03c1e0d2745534ee1513b3d4bb6c5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9151d35c259f61873c7c2effe6073e0c.png)
 4. In the pop-up window, confirm the username for which you want to reset the password (for example, the username is `root` in a Linux instance and is `Administrator` in a Windows instance), enter the new password in **New Password** and **Confirm Password**, and click **Next** as shown below:
-![](https://main.qcloudimg.com/raw/0d07a69d2aae080c34dde6170bd974cc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3996c5c676b47243362d96e64d5c735d.png)
 5. Select **Agree to a forced shutdown** and click **Reset Password** as shown below:
-![](https://main.qcloudimg.com/raw/cb85dfa6ef987bbae382a29ea1e51926.png)
-
+![](https://qcloudimg.tencent-cloud.cn/raw/a690d230cd06b32252f227985dd07564.png)
 

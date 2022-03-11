@@ -9,4 +9,4 @@
 1. 登录边缘计算机器控制台，选择左侧导航中的**边缘网络** > **[安全组](https://console.cloud.tencent.com/ecm/safe)**。
 2. 进入“安全组”管理页面，单击需要查看规则的安全组 ID/名称，或该安全组所在行右侧的**修改规则**，进入安全组规则页面。
 4. 在安全组规则页面，单击**入站/出站规则**页签，可以查看到入站/出站的安全组规则。如下图所示：
-![](https://main.qcloudimg.com/raw/19d222bac11a4a7324413e3bc1ec8c0d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4b30303b01500baa6cdac68397cf3450.png)

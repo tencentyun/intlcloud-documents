@@ -9,18 +9,16 @@
 ## 步骤2：申请开通服务
 
 <div style="background-color:#00A4FF; width: 350px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/ecm" target="_blank"  style="color: white; font-size:16px;">点此进入边缘计算机器 ECM 控制台</a></div>
-</br>
 
-![](https://main.qcloudimg.com/raw/6bd1b4beb9ad04eae864541732ca53f9.png)
 单击控制台“开通服务”页面中的**提交申请**进入申请页面，完成用户信息填写并提交申请后，请等待审核人员审核通过。
 审核通过后，您就可以创建和使用边缘云计算机器了。
 
 ## 步骤3：创建边缘模块
 1. 登录 [边缘计算机器控制台](https://console.cloud.tencent.com/ecm/overview)，在左侧导航栏中选择**边缘模块**。
 2. 在边缘模块页面，单击**新建模块**。
-![](https://main.qcloudimg.com/raw/0f31271f9fcde99a4335c9b8fc255229.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2ec28001fa5981c1e205f3bce3dee6af.png)
 3. 在创建模块及实例配置页面，根据提示，配置以下信息：
-![](https://main.qcloudimg.com/raw/6e6bc4b396fb3a0b148c301de872ea41.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/af276599c94f54bce1cbce2f26872942.png)
  - **模块名称**：表示需要创建的边缘模块名称，用户自定义。
  - **实例类型**：目前支持**高IO型IT5**、**标准型S4**、**高内网带宽型S4**和**标准型SN3ne**。在某些特殊场景下，不同的机型性能会有略微差异。如需了解具体差异，则请查阅 [实例规格](https://intl.cloud.tencent.com/document/product/1119/43401)。
  - **CPU核数**：默认为8核，请根据实际需求进行选择。
@@ -43,9 +41,9 @@
 ## 步骤4：创建实例
 
 1. 单击**创建边缘实例**。如下图所示：
-![](https://main.qcloudimg.com/raw/52445f2cbc074aee131ebfdde4181c63.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1faccecb24761cb9539861aa20641344.png)
 2. 在创建实例进行部署的“密码，镜像及带宽”页面，根据提示，配置以下信息：
-	![](https://main.qcloudimg.com/raw/38ca39004bd78ae3bac729bfa2d2d383.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/a22b00b74bf4b696dbac07d64e0827bf.png)
 	- **选择所属模块**：请根据实际需求进行选择。
 	- **默认镜像**：腾讯云提供公共镜像和自定义镜像。默认为与所属模块相同的镜像，请根据实际需求进行选择。
 	- **默认网络带宽上限**：对带宽上限进行限制，若超出此上限，则默认丢包。默认为25Mbps，上限为1024Mbps。
@@ -64,7 +62,7 @@
 	- **设置密码和确认密码**：自定义设置登录实例的密码。
 3. 单击**下一步**。
 4. 在创建实例进行部署的“区域部署”页面，根据提示，配置以下信息：
-![](https://main.qcloudimg.com/raw/5daf2418a19cbd6a202a183975c56a5d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4a817e9a4488e55a17b7110c361c2e81.png)
  - **节点省份**：建议选择与您的客户最近的省份，可降低访问时延、提高访问速度。
  - **节点地区**：请根据实际需求进行选择。
  - **网络类型**：请根据实际需求选择公网运营商。

@@ -14,11 +14,10 @@ Security group rules can be imported from a file. You can use this feature to qu
 - If there are no existing rules in the security group, download a template and edit it before importing it.
 </dx-alert>
 
-![](https://main.qcloudimg.com/raw/91bbc13b687ecf2a3411cb617014ee69.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ea9f0f03e2b83afe353c9020baf7354d.png)
 After the import, a security group data record for ECM will be generated.
 
 
 
   
-
 

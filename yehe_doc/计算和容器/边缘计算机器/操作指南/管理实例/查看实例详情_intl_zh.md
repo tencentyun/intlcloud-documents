@@ -9,6 +9,6 @@
 3. 在实例列表页面，找到需要查看详情的实例，单击 ID/实例名，进入实例详情页面。
 >? 您也可以在需要查看详情的实例行中，单击**更多操作** > **详情**，进入实例详情页面。
 >
-![](https://main.qcloudimg.com/raw/339084fc5ff7044fdca97007282c912a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0435cca6af589adbbabc8da24d3602b0.png)
 在实例详情页面，您可以查看到包括实例的基本信息、实例配置、节点信息、网络信息等信息。
 

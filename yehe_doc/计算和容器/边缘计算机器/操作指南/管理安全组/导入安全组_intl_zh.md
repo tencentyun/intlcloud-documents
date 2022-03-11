@@ -8,7 +8,7 @@
 1. 登录边缘计算机器控制台，选择左侧导航中的**边缘网络** > **[安全组](https://console.cloud.tencent.com/ecm/safe)**。
 3. 在“安全组”管理页面，单击**导入**。
 4. 在弹出的“导入安全组”窗口中，进行以下操作。如下图所示：
-![](https://main.qcloudimg.com/raw/2b084c2cd2cc3ba6a77e68d1a7a8574a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/259544dc3982cc4a5d18622f08b627be.png)
   1. 选择对应的中心云地域（Region），界面会展示该地域下的所有安全组。
   2. 选择需要导入的安全组数据。
  <dx-alert infotype="notice" title="">

@@ -26,7 +26,7 @@ After creating an instance successfully, you can log in to it as instructed in [
 
 ## 4. Console UI
 The overview page of the ECM console is as shown below:
-![](https://main.qcloudimg.com/raw/d3c86ff230745246771925b0cb9e0242.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6d6beba9823815468e740018db8a635e.png)
 
 ## 5. Overview of Console Features
 <table>
@@ -82,5 +82,4 @@ The overview page of the ECM console is as shown below:
 If you have any questions or suggestions about ECM, you can send your feedback through the following channels, and we will get back to you accordingly:
 - If you have any questions regarding the product documentation, such as links, content, or APIs, please click **Send Feedback** on the right of the document page.
 - If you encounter problems when using the product, [submit a ticket](https://console.intl.cloud.tencent.com/workorder) for assistance.
-
 

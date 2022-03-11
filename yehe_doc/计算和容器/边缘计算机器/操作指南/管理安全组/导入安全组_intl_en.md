@@ -8,7 +8,7 @@ You can also create a security group by yourself. For more information, see [Cre
 1. Log in to the ECM console and select **Edge Network** > **[Security Group](https://console.cloud.tencent.com/ecm/safe)** on the left sidebar.
 3. On the **Security Group** management page, click **Import**.
 4. In the **Security Group** pop-up window, perform the operations as shown below:
-![](https://main.qcloudimg.com/raw/2b084c2cd2cc3ba6a77e68d1a7a8574a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/259544dc3982cc4a5d18622f08b627be.png)
   1. Select the central cloud region, and all security groups in this region will be displayed.
   2. Select the security group data to be imported.
  <dx-alert infotype="notice" title="">

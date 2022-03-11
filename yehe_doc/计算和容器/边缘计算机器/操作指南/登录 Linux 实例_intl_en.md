@@ -19,7 +19,7 @@ If you forgot your password, you can [reset it](https://intl.cloud.tencent.com/d
 
 1. Log in to the [ECM console](https://console.cloud.tencent.com/ecm/overview) and select **Instance List** on the left sidebar.
 2. In **Instance List**, select the target Linux instance and click **Login** as shown below: 
-![](https://main.qcloudimg.com/raw/39c88030110b8e87a5f2bc2857596847.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5e31ba1eaff47d5fbd4bc3ac9d6bdb4c.png)
 3. In the **Log in to Linux Instance** pop-up window, select **Log in Through VNC** and click **Log in Now** as shown below:
 ![](https://main.qcloudimg.com/raw/344a4741252ffb89e9125c7c5c25be99.png)
 4. In the pop-up dialog box, enter the username after **login** and press **Enter**.
