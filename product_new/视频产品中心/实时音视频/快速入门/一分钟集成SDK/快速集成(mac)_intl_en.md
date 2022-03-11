@@ -68,7 +68,7 @@ After the pod command is executed, a project file with the .xcworkspace extensio
 4. Click **Link Binary with Libraries** to expand it and then click the "+" icon at the bottom to add the dependent library.
 ![](https://main.qcloudimg.com/raw/17046154417930f9d31b6452782df55d.jpg)
 
-5. Add the downloaded SDK Framework and its required dependent library in sequence: `AudioUnit.framework`, `libc++.tbd` and `Accelerate.framework`。  
+5. Add the downloaded SDK Framework and its required dependent library in sequence: `AudioUnit.framework`, `libc++.tbd`, and `Accelerate.framework`.  
     
  Successful addition is as shown below:
 ![](https://main.qcloudimg.com/raw/7bddb832347a971f3e69238480fa3e8d.jpg)
@@ -80,7 +80,7 @@ To use the audio/video features of the SDK, you need to grant the mic and camera
 
 ![](https://main.qcloudimg.com/raw/ce02c335f1a6413fb37adb0ed20a9603.png)
 
-If **App Sandbox** or **Hardened Runtime** is enabled, you need to select `Network`, `Camera` and `Audio Input` options.
+If **App Sandbox** or **Hardened Runtime** is enabled, you need to select `Network`, `Camera`, and `Audio Input` options.
 - App Sandbox is configured as shown below:
 ![](https://main.qcloudimg.com/raw/b77d2ab814e6e14e8bed17efdcbee1a6.png)
 - Hardened Runtime is configured as shown below:
