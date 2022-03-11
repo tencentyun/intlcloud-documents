@@ -12,7 +12,7 @@ alias:
 
 ### 功能介绍
 
-本文将给出如何使用持续集成任务构建 Docker 镜像的示例 Jenkinsfile。构建完成后可以使用预置插件便捷的上传至 CODING 制品仓库中。在使用该功能之前，请确保您对 Docker 类型制品库有[初步了解](/docs/artifacts/quick-start/docker.html)。
+本文将给出如何使用持续集成任务构建 Docker 镜像的示例 Jenkinsfile。构建完成后可以使用预置插件便捷的上传至 CODING 制品仓库中。在使用该功能之前，请确保您对 Docker 类型制品库有[初步了解](https://intl.cloud.tencent.com/document/product/1135/45430)。
 
 ### Jenkinsfile
 
@@ -47,8 +47,4 @@ pipeline {
 }
 ```
 
-### 常见问题
 
-1.  如何自动生成版本号？
-
-请阅读：[自动生成版本号](/docs/ci/artifacts/version.html)
