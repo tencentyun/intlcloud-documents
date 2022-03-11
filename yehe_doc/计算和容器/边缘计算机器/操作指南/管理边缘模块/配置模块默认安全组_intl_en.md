@@ -8,7 +8,7 @@ When creating an ECM module, you must configure the default security group for i
 1. Log in to the ECM console and select **[ECM Module](https://console.cloud.tencent.com/ecm/module)** on the left sidebar to enter the **ECM Module** page.
 2. On the **ECM Module** page, click the ID of the ECM module for which you want to configure a security group to enter the module details page.
 3. On the module details page, select the **Security Group** tab and click **Bind** in the **Bound Security Groups** section as shown below:
-![](https://main.qcloudimg.com/raw/1ebbba3c4e1a61c43b2458cfb95f81da.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/41712ade3d8f01b13217c4e8f212d516.png)
 4. In the **Configure Security Group** pop-up window, select the name of the security group to be bound based on your actual needs and click **OK** as shown below:
-![](https://main.qcloudimg.com/raw/482b645697d44bf804eec56a2a2954cc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c6369f5954c36269e117b7d29d6bae00.png)
 

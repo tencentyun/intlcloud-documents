@@ -8,7 +8,7 @@
 1. 登录边缘计算机器控制台，选择左侧导航栏中的【[边缘模块](https://console.cloud.tencent.com/ecm/module)】，进入“边缘模块”页面。
 3. 在“边缘模块”页面中，单击需配置安全组的边缘模块 ID，进入模块详情页面。
 4. 在模块详情页面，选择【安全组】页签，并在 “已绑定安全组” 栏中，单击【绑定】。如下图所示：
-![](https://main.qcloudimg.com/raw/1ebbba3c4e1a61c43b2458cfb95f81da.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/41712ade3d8f01b13217c4e8f212d516.png)
 5. 在弹出的“配置安全组” 窗口中，根据实际需求勾选需要绑定的安全组，单击【确定】即可完成绑定。如下图所示：
-![](https://main.qcloudimg.com/raw/482b645697d44bf804eec56a2a2954cc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c6369f5954c36269e117b7d29d6bae00.png)
 

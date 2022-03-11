@@ -26,7 +26,7 @@
 
 ## 4. 控制台界面
 以下为边缘计算机器控制台概览页：
-![](https://main.qcloudimg.com/raw/d3c86ff230745246771925b0cb9e0242.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6d6beba9823815468e740018db8a635e.png)
 
 ## 5. 控制台功能概述
 <table>
@@ -82,5 +82,4 @@
 使用腾讯云边缘计算机器产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
 - 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧**文档反馈**或选中存在问题的内容进行反馈。
 - 如果遇到产品相关问题，您可通过 [提交工单](https://console.intl.cloud.tencent.com/workorder) 寻求帮助。
-
 

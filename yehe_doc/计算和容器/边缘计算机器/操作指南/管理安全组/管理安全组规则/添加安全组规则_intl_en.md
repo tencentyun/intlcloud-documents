@@ -13,11 +13,11 @@ This document describes how to add security group rules to allow or reject traff
 3. On the **Security Group** management page, select **Modify Rule** on the right of the target security group.
 4. [](id:Step4)On the **Security Group Rule** tab, click **Inbound Rule** or **Outbound Rule** and select one of the following methods to add a rule:
    - **Method 1**: click **Open all ports** and confirm the operation in the pop-up window. This method is ideal if you do not need custom ICMP rules and all traffic goes through ports 20, 21, 22, 80, 443, and 3389 and the ICMP protocol as shown below:
-   ![](https://main.qcloudimg.com/raw/2e2889f1558598cb44e15a8773df1fda.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/783d4990e00ca11a94b81d2685741c55.png)
    - **Method 2**: click **Add Rule** and configure the rule in the pop-up window. For more information, see [step 5](#Step5). This method is ideal if you need to set multiple communication protocols such as ICMP as shown below:
-   ![](https://main.qcloudimg.com/raw/1f1219089aa4647d53db7e6236bba3de.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/afd977f19b1cf101905f53d673b28e33.png)
   - **Method 3**: on the security group rule page, you can modify inbound/outbound rules based on your needs. Select **Inbound Rule** or **Outbound Rule** and add a rule position as needed. Click **Insert** > **Insert Row Above** or **Insert Row Below** on the right of a rule and quickly configure it as instructed in [step 5](#Step5) as shown below:
-![](https://main.qcloudimg.com/raw/28c62121bbab49280ec7019c86abc2dd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3799df703b87a1d046fc9d4b13892599.png)
 5. [](id:Step5)The main parameters for adding a rule are as detailed below:
    - **Type**: **Custom** is selected by default. You can also choose another system rule template including **Login Windows CVMs (3389)**, **Login Linux CVMs (22)**, **Ping**, **HTTP (80)**, **HTTPS (443)**, **MySQL (3306)**, and **SQL Server (1433)**.
    - **Source** or **Destination**: traffic source (inbound rules) or destination (outbound rules). You need to specify one of the following options:

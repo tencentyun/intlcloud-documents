@@ -12,7 +12,7 @@ Before creating an ECM instance, you must complete the following operations:
 1. Log in to the [ECM console](https://console.cloud.tencent.com/ecm/overview) and select **Instance List** on the left sidebar.
 2. On the instance list page, click **Add Instance** to enter the **Create and Deploy Instance** page.
 3. Configure the following information as prompted by the page:
-![](https://main.qcloudimg.com/raw/38ca39004bd78ae3bac729bfa2d2d383.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/46a23b1b3ca42a49e4a0415bb46d410e.png)
  - **Select Module**: select a module as needed.
  - **Default Image**: Tencent Cloud provides public and custom images. The image used by the module is selected by default. You can select an image as needed.
  - **Default Network Bandwidth Cap**: if the network bandwidth exceeds this cap, packets will be discarded by default. The default value is 25 Mbps, and the maximum value is 1,024 Mbps.
@@ -30,7 +30,7 @@ Before creating an ECM instance, you must complete the following operations:
  - **Set Password** and **Confirm Password**: set the custom password for instance login.
 7. Click **Next**.
 8. On the **Region Deployment** tab of the **Create and Deploy Instance** page, configure the following information as prompted:
-![](https://main.qcloudimg.com/raw/cc01962da2d497f471f581c1a1babf2f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3c834b87a5994c90107ff15aaa02c95a.png)
  - **Node Province**: we recommend you select the province closest to your end users to minimize the access latency and accelerate the access.
  - **Node Region**: select a region as needed.
  - **Network Type**: select a public network ISP as needed.

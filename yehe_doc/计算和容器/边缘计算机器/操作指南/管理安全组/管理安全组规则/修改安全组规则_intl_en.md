@@ -11,4 +11,4 @@ For information on how to create a security group and add security group rules t
 4. Use **Inbound Rule** and **Outbound Rule** to switch between inbound and outbound security group rules.
 5. Find the target rule and click **Edit** on the right.
 6. You can modify the rule as instructed in [Rule Parameter Description](https://intl.cloud.tencent.com/document/product/1119/43440) and click **Save** after modification as shown below:
-![](https://main.qcloudimg.com/raw/2e9178671fcd3a18950735775b061b3c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ad4a9b8f72acff7956155cda139a1dc5.png)

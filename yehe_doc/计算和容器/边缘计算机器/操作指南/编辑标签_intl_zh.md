@@ -7,8 +7,7 @@
 1. 登录 [边缘计算机器控制台](https://console.cloud.tencent.com/ecm/overview)。
 2. 在左侧导航栏中，选择【实例列表】。
 3. 在实例列表页面，选择待调整网络的实例，单击【更多操作】>【编辑标签】。
-![](https://main.qcloudimg.com/raw/36771b217e757db5bd30289704fd41cd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/babce5e402bce46ccf2f11aea24e7c33.png)
 4. 在弹出的窗口中，根据实际需求，输入标签键和标签值，单击【确定】。
-![](https://main.qcloudimg.com/raw/06b1e6542562dc12e7c693316b84381e.png)
-
+![](https://qcloudimg.tencent-cloud.cn/raw/3707b8b612db716aba2aa0980ffd06b7.png)
 

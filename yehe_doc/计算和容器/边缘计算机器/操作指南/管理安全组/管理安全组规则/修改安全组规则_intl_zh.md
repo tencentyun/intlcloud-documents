@@ -11,4 +11,4 @@
 4. 在安全组规则页面，根据需要修改安全组规则所属的方向（入站/出站），单击**入站/出站规则**页签。
 5. 找到需要修改的安全组规则，单击该规则所在行右侧的**编辑**。
 6. 可参考 [规则参数说明](https://intl.cloud.tencent.com/document/product/1119/43440) 对已有规则进行修改，修改完成后单击**保存**即可。如下图所示：
-![](https://main.qcloudimg.com/raw/2e9178671fcd3a18950735775b061b3c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ad4a9b8f72acff7956155cda139a1dc5.png)

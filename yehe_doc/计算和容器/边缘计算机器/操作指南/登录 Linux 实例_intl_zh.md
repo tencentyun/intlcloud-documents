@@ -19,7 +19,7 @@
 
 1. 登录 [边缘计算机器控制台](https://console.cloud.tencent.com/ecm/overview)，在左侧导航栏中选择【实例列表】。
 2. 在【实例列表】，选择需要登录的 Linux 实例，单击【登录】。如下图所示： 
-![](https://main.qcloudimg.com/raw/39c88030110b8e87a5f2bc2857596847.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5e31ba1eaff47d5fbd4bc3ac9d6bdb4c.png)
 3. 在弹出的【登录Linux实例】窗口中，选择【VNC登录】，单击【立即登录】。如下图所示：
 ![](https://main.qcloudimg.com/raw/344a4741252ffb89e9125c7c5c25be99.png)
 4. 在弹出的对话框中，在 “login” 后输入用户名，按 **Enter**。

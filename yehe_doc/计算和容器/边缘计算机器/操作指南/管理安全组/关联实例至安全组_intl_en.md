@@ -15,7 +15,7 @@ You have created an ECM instance.
 3. On the **Security Group** management page, select **More** > **Manage Instance** on the right of the instance to be associated.
 4. On the **Associate Instance** page, click **Associate**.
 5. In the **Associate Instance** pop-up window, perform the operations as shown below:
-![](https://main.qcloudimg.com/raw/b948aedc32c764eef3e0b903ee025a42.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/46e13de2751e1ce4da86b58610515edb.png)
  1. Filter out the node region, and the page will display all ECM instances in this region. The instance data in all regions is displayed by default.
  2. Filter out the module, and the page will display all ECM instances under this module. The instance data under all modules is displayed by default.
  3. Select the instance ID/name of the ECM instance to be associated.

@@ -9,7 +9,7 @@
 1. 登录边缘计算机器控制台，选择左侧导航中的**边缘网络** > **[安全组](https://console.cloud.tencent.com/ecm/safe)**。
 3. 在“安全组”管理页面中，单击**新建**。
 4. 在弹出的“新建边缘安全组”窗口中，参考以下信息进行配置。如下图所示：
-   ![](https://main.qcloudimg.com/raw/3a87af04f0f969ce605b9eecc21f64b7.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/5150a861044b0f1acf692205bcb53e2e.png)
    - **模板**：根据安全组中的边缘实例需要部署的服务，选择合适的模板，简化安全组规则配置。如下表所示：
 <table>
 <tbody><tr><th>模板</th><th>说明</th><th>场景</th></tr>

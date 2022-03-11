@@ -9,4 +9,4 @@ For information on how to create a security group and add security group rules t
 1. Log in to the ECM console and select **Edge Network** > **[Security Group](https://console.cloud.tencent.com/ecm/safe)** on the left sidebar.
 2. On the **Security Group** management page, click the ID/name of the target security group or click **Modify Rule** on the right to enter the security group rule page.
 4. On the security group rule page, click the **Inbound Rule** or **Outbound Rule** tab to view the inbound or outbound rules of the security group as shown below:
-![](https://main.qcloudimg.com/raw/19d222bac11a4a7324413e3bc1ec8c0d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4b30303b01500baa6cdac68397cf3450.png)
