@@ -153,7 +153,7 @@ pTRTCCloud->enterRoom(params, trtc::TRTCAppSceneVideoCall);
 5. If you use UE4 Editor, add the above permissions to the **UE4Editor.app** file.
 :::
 ::: Windows\s
-1. Go to **File > Package Project > Windows > Windows(64-bit)**.
+1. Go to **File > Package Project > Windows > Windows (64-bit)**.
 ![](https://imgcache.qq.com/operation/dianshi/other/win.ba79ccce59ae58718e6c35c16cdef55531456a70.png)
 :::
 ::: iOS\s
