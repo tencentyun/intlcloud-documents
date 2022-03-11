@@ -40,7 +40,7 @@ If a template is updated, the creator of the template can click [Sync Template](
 
 #### [Trigger rules](#trigger)
 
-You can configure code source trigger, scheduled trigger, or manual trigger rules. The settings are the same as those of normal build plans. For more information, see [Trigger Rules](/docs/ci/trigger.html).
+You can configure code source trigger, scheduled trigger, or manual trigger rules. The settings are the same as those of normal build plans. For more information, see [Trigger Rules](https://intl.cloud.tencent.com/document/product/1135/45430).
 
 #### [Variables and caches](#variable)
 
