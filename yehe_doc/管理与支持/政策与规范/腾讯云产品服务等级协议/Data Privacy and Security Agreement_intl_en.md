@@ -126,6 +126,12 @@ The following Modules shall apply and be incorporated by reference into this DPS
 26.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45475).
 27.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45591).
 28.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45789).
+29.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45792).
+30.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45795).
+31.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45798).
+32.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45801).
+33.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
+
 ## Jurisdiction-specific Requirements
 
 **Europe**
