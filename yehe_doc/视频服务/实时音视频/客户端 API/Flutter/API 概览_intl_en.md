@@ -237,7 +237,7 @@ Callback APIs for background music playback
 | [onScreenCaptureStarted](https://pub.dev/documentation/tencent_trtc_cloud/latest/trtc_cloud_listener/TRTCCloudListener.html#onScreenCaptureStarted) | Callback of starting screen sharing |
 | [onScreenCapturePaused](https://pub.dev/documentation/tencent_trtc_cloud/latest/trtc_cloud_listener/TRTCCloudListener.html#onScreenCapturePaused) | Callback of pausing screen sharing via the calling of `pauseScreenCapture()` |
 | [onScreenCaptureResumed](https://pub.dev/documentation/tencent_trtc_cloud/latest/trtc_cloud_listener/TRTCCloudListener.html#onScreenCaptureResumed) | Callback of resuming screen sharing via the calling of `resumeScreenCapture()` |
-| [onScreenCaptureStopped](https://pub.dev/documentation/tencent_trtc_cloud/latest/trtc_cloud_listener/TRTCCloudListener.html#onScreenCaptureStopped) | Callback of stopping screen sharing |
+| [onScreenCaptureStoped](https://pub.dev/documentation/tencent_trtc_cloud/latest/trtc_cloud_listener/TRTCCloudListener.html#onScreenCaptureStoped) | Callback of stopping screen sharing |
 
 ### Screenshot callback API
 
