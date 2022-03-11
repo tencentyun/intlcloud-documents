@@ -3,7 +3,7 @@
 The rule engine allows you to configure rules to forward eligible data reported by devices to the message queue TDMQ topic. After subscribing to a TDMQ topic through TencentCloud API, you can receive messages pushed from the topic. The message push mechanism of the TDMQ topic provides the capability to receive messages asynchronously with high reliability.
 
 The following graph shows the entire process of forwarding data to a TDMQ topic by the rule engine:
-2. ![]()
+![]()
 
 ## Configuration
 
