@@ -4,8 +4,9 @@ All layer-4 (TCP/UDP/TCP SSL) and layer-7 (HTTP/HTTPS) CLB services support gett
 - For layer-7 CLB, you can use the `X-Forwarded-For` or `remote_addr` field to directly get the client IP. For the access logs of layer-7 CLB, see [Configuring Access Logs](https://intl.cloud.tencent.com/document/product/214/35063). 
 
 >?
-- For layer-4 CLB, the client IP can be directly obtained with no additional configuration required on the backend CVM instance.
-- For other layer-7 load balancing services with SNAT enabled, you need to configure the backend CVM instance and then use `X-Forwarded-For` to get the real client IP.
+>- For layer-4 CLB, the client IP can be directly obtained with no additional configuration required on the backend CVM instance.
+>- For other layer-7 load balancing services with SNAT enabled, you need to configure the backend CVM instance and then use `X-Forwarded-For` to get the real client IP.
+>
 
 Below are commonly used application server configuration schemes.
 
@@ -24,7 +25,7 @@ Below are commonly used application server configuration schemes.
 ![](https://main.qcloudimg.com/raw/280f11e95b7ac8cd4a754d98ad0cd2b7.png)
 4. In the pop-up window, click **Register**.
 ![](https://main.qcloudimg.com/raw/1d6f7bd38077f2c9f089eb84a1995aa1.png)
-5 Add the downloaded DLL files as shown below:
+5.  Add the downloaded DLL files as shown below:
 ![](https://main.qcloudimg.com/raw/354a35a203c24d802d59782c91dfe02a.png)
 6. After adding the files, select them and click **OK**.
 ![](https://main.qcloudimg.com/raw/9fffdfa02fba225f13090ef2598e1c0e.png)
