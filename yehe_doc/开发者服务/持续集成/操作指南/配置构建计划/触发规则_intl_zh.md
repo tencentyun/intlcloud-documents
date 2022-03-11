@@ -78,7 +78,7 @@ alias:
 
 #### [GitLab 私有云](#gitlab)
 
-绑定GitLab 私有云时，会自动创建 GitLab Webhook，后续事件自动通知 CODING，然后匹配上述触发规则设置。 
+绑定 GitLab 私有云时，会自动创建 GitLab Webhook，后续事件自动通知 CODING，然后匹配上述触发规则设置。 
 
 ![](https://help-assets.codehub.cn/enterprise/20210818202005.png)
 
