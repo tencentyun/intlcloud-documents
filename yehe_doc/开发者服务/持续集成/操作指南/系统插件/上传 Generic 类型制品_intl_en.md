@@ -19,7 +19,7 @@ In an actual production environment, many tasks are repetitive. CODING Continuou
 
 ### Use plugin to upload generic artifacts
 
-In the process of building a CI task, you can choose to upload an artifact to the CODING Artifact Repository (CODING-AR). Generic artifacts upload plugin allows you to conveniently upload generic artifacts of up to 5 GB in Continuous Integration. Before using this function, ensure that you have a basic understanding of generic repositories. For more information, see [Using Generic Repositories](/docs/artifacts/quick-start/generic.html).
+In the process of building a CI task, you can choose to upload an artifact to the CODING Artifact Repository (CODING-AR). Generic artifacts upload plugin allows you to conveniently upload generic artifacts of up to 5 GB in Continuous Integration. Before using this function, ensure that you have a basic understanding of generic repositories. For more information, see [Using Generic Repositories](https://intl.cloud.tencent.com/document/product/1136/44805).
 
 ### Getting Started
 
