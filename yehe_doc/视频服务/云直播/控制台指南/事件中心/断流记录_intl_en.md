@@ -7,7 +7,7 @@ You can view records of live push interruptions and the causes in the CSS consol
 ## Directions
 
 In the console, select **Event Center** > **[Stream Interruption Records](https://console.cloud.tencent.com/live/tools/streamevent)** in the left sidebar.
-)**，进入断流记录页。
+
 ![](https://qcloudimg.tencent-cloud.cn/raw/7109f254ed3f4c892bd93632d9f04629.png)
 
 On the **Stream Interruption Records** page:
