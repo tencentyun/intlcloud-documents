@@ -73,7 +73,7 @@ allprojects {
 
 ### [私有制品库](#private)
 
-使用 Maven 私有制品库需先获得用户名/密码，参考文档：[《搭建团队级制品库》](/docs/artifacts/practices/team-share.html)。
+使用 Maven 私有制品库需先获得用户名/密码。
 
 #### gradle.properties
 
