@@ -73,7 +73,7 @@ allprojects {
 
 ### [Private artifact repository](#private)
 
-To use a private Maven repository, you need to first retrieve the username and password. See [Building a Team Repository](/docs/artifacts/practices/team-share.html).
+To use a private Maven repository, you need to first retrieve the username and password. 
 
 #### gradle.properties
 
