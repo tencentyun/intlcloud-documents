@@ -88,10 +88,10 @@ In the settings window, you can select devices, set beauty filter parameters, an
 - The anchor can mute/unmute all members.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9d927c98a595667d9f3f16d597abc77e.png)
 
-### Exiting a room
-There are two options when the anchor exits the room:
-- **Dismiss the room**: all users need to exit the room.
-- **Leave the room**: the room's anchor permission will be transferred to another user.
+### Leaving a room
+There are two options when the anchor leaves the room:
+- **Destroy Room**: All users need to leave the room.
+- **Leave Room**: The room's anchor permission will be transferred to another user.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/e2485085cdb43de94ef9d8bc6851a436.png)
 
