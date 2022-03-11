@@ -23,8 +23,8 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com)
 ## Directions
 [](id:step1)
 ### Step 1. Create an application
-1. In the TRTC console, select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Enter an application name such as `TestTRTC`. If you have already created an application, click **Existing** to select it.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+2. Select **New** and enter an application name such as `TestTRTC`. If you have already created an application, select **Existing**.
 3. Add or edit tags according to your actual business needs and click **Create**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f5fbbe70b7139531600e763846051a54.png)
 
@@ -73,7 +73,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com)
 5. If you use UE4 Editor, add the above permissions to the **UE4Editor.app** file.
 :::
 ::: Windows\s
-1. Go to **File > Package Project > Windows > Windows(64-bit)**.
+1. Go to **File > Package Project > Windows > Windows (64-bit)**.
 ![](https://imgcache.qq.com/operation/dianshi/other/win.ba79ccce59ae58718e6c35c16cdef55531456a70.png)
 :::
 ::: iOS\s
