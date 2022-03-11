@@ -1,19 +1,19 @@
-Live transcoding (including video transcoding and audio transcoding) refers to the process where the original stream pushed from the live streaming site is converted into streams of different codecs, resolutions, and bitrates in the cloud before being pushed to viewers. This meets playback needs in varying network environments on different devices. This document describes how to create, bind, unbind, modify, and delete a transcoding template via the CSS Console.
+Live transcoding (including video transcoding and audio transcoding) refers to the process where the original stream pushed from the live streaming site is converted into streams of different codecs, resolutions, and bitrates in the cloud before being pushed to viewers. This meets playback needs in varying network environments on different devices. This document describes how to create, bind, unbind, modify, and delete a transcoding template via the CSS console.
 
 **You can create a transcoding template in two ways:**
 
-- Create a transcoding template in the CSS console. For detailed directions, please see [Creating standard transcoding template](#C_trans), [Creating top speed codec transcoding template](#C_topspeed), and [Creating audio-only transcoding template](#C_audio).
-- Create a transcoding template for live channels with APIs. For specific parameters and samples, please see [CreateLiveTranscodeTemplate](https://intl.cloud.tencent.com/document/product/267/30790).
+- Create a transcoding template in the CSS console. For detailed directions, see [Creating standard transcoding template](#C_trans), [Creating top speed codec transcoding template](#C_topspeed), and [Creating audio-only transcoding template](#C_audio).
+- Create a transcoding template for live channels with APIs. For specific parameters and samples, see [CreateLiveTranscodeTemplate](https://intl.cloud.tencent.com/document/product/267/30790).
 
 
 ## Notes
-- CSS supports standard transcoding, top speed codec transcoding, and audio-only transcoding. Please read the billing overview before using the service.
-   - Standard transcoding: [standard transcoding pay-as-you-go billing mode](https://intl.cloud.tencent.com/document/product/267/39604#n_trans).
-   - Top speed codec transcoding: [top speed codec transcoding pay-as-you-go billing mode](https://intl.cloud.tencent.com/document/product/267/39604#s_trans).
+- CSS supports standard transcoding, top speed codec transcoding, and audio-only transcoding. Read the billing overview before using the service.
+   - [Live Transcoding > Standard Transcoding](https://intl.cloud.tencent.com/document/product/267/39604)
+   - [Live Transcoding > Top Speed Codec Transcoding](https://intl.cloud.tencent.com/document/product/267/39604)
 - Compared with **standard transcoding**, **top speed codec transcoding** provides higher video quality at lower bitrate. Leveraging technologies including intelligent scene recognition, dynamic encoding, and CTU/line/frame-level bitrate control, top speed codec transcoding allows you to provide higher-definition streaming services at lower bitrates (30% lower on average). It is widely used for the streaming of games, shows, and other events.
 - After creating a template, you can bind it with a playback domain name. The binding takes effect in 5-10 minutes.
 - You can append the name of a transcoding template to the `StreamName` of a live stream to generate a URL of the transcoded stream. If you have specified the height and width or short and long sides of the transcoded stream, keep the original resolution as close to the values set as possible to prevent image distortion.
-- After a transcoding template has been bound, the configured settings will be displayed on the template. You can also use this template to view and [unbind](#untie) granular settings created via APIs.
+- On the **Live Transcoding** page of the console, you can view the domain a template is bound to, as well as finer-granularity bindings performed via APIs. You can also [unbind](#untie) a template here.
 - You can bind one playback domain name with **multiple transcoding templates**, or bind one transcoding template with **multiple playback domain names**.
 - You can create up to **50** transcoding templates.
 
@@ -24,8 +24,8 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Standard Transcoding** for transcoding type, and complete the following configuration:
-  - Basic configuration: template name, video bitrate, video resolution and more. For details, see [Basic Configuration for Standard Transcoding](#C_trans_normal).
-  - Advanced configuration (optional): click **Advanced Configuration** to show advanced settings. For details, see [Advanced Configuration for Standard Transcoding](#C_trans_high).
+  - Basic configuration: Template name, video bitrate, video resolution and more. For details, see [Basic Configuration for Standard Transcoding](#C_trans_normal).
+  - Advanced configuration (optional): Click **Advanced Configuration** to show advanced settings. For details, see [Advanced Configuration for Standard Transcoding](#C_trans_high).
 3. Click **Save**.
 
 ![](https://main.qcloudimg.com/raw/cde1db91ea2796656a0297889e918daa.png)
@@ -51,14 +51,14 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 </tr><tr>
 <td>Video Bitrate<br>(in Kbps)</td>
 <td>Yes</td>
-<td>Average output bitrate. Value range: 100-8,000 Kbps.<ul style="margin:0">
-  <li>A value below 1,000 must be a multiple of 100.</li>
-  <li>A value above 1,000 must be a multiple of 500.</li></ul>
+<td>Average output bitrate. Value range: 100-8000.<ul style="margin:0">
+  <li>A value not larger than 1,000 must be a multiple of 100.</li>
+  <li>A value larger than 1,000 must be a multiple of 500.</li></ul>
 </td>
 </tr><tr>
-<td>Video Resolution</td>
+<td>Video Resolution (px)</td>
 <td>Yes</td>
-<td>Default: **Set the height**.<li>The value entered will be the height of the transcoded video. You can also select **Set the short side length**, and the value entered will be the short side of the transcoded video. <li>Value range: 0-3000 px. The value must be a multiple of 2. The other side will be auto-scaled.</td>
+<td>Default: <b>Set the height</b>.<li>The value entered will be the height of the transcoded video. You can also select <b>Set the short side length</b>, and the value entered will be the short side of the transcoded video. <li>Value range: 0-3000. The value must be a multiple of 2. The other side will be auto-scaled.</td>
 </tr></table>
 
 
@@ -67,11 +67,11 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 <tr>
 <td>Codec</td>
 <td>No</td>
-<td>Default setting: original bitrate. You can also select H.264 or H.265.</td>
+<td>Default setting: Original codec. You can also select H.264 or H.265.</td>
 </tr><tr>
-<td>Video Frame Rate</td>
+<td>Video Frame Rate (fps)</td>
 <td>No</td>
-<td>Value range: 0-60 fps. If this parameter is left empty, `0` will be used.</td>
+<td>Value range: 0-60. If this parameter is left empty, `0` will be used, which means to use the original frame rate.</td>
 </tr><tr>
 <td>GOP<br>(in seconds)</td>
 <td>No</td>
@@ -79,7 +79,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 </tr><tr>
 <td>Parameter Limit</td>
 <td>No</td>
-<td>Disabled by default and can be enabled manually.<br>After this feature is enabled, the original parameter of the input stream will be used for the output stream if you enter a value higher than the original parameter. This prevents image quality issues where a low resolution video stream is played back in a high resolution.</td>
+<td>Disabled by default and can be enabled manually.<br>After a limit is enabled, the original value of the input stream will be used if you enter a value larger than the original. This can avoid video quality issues caused by using high video quality settings to transcode videos of low quality.</td>
 </tr></table>
 
 
@@ -90,8 +90,8 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 ### Creating top speed codec transcoding template
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Top Speed Codec Transcoding** for transcoding type, and complete the following configuration:
-  - Basic configuration: template name, video bitrate, video resolution and more. For details, see [Basic Configuration for Top Speed Codec Transcoding](#C_topspeed_normal).
-  - Advanced configuration (optional): click **Advanced Configuration** to show advanced settings. For details, see [Advanced Configuration for Top Speed Codec Transcoding](#C_topspeed_high).
+  - Basic configuration: Template name, video bitrate, video resolution and more. For details, see [Basic Configuration for Top Speed Codec Transcoding](#C_topspeed_normal).
+  - Advanced configuration (optional): Click **Advanced Configuration** to show advanced settings. For details, see [Advanced Configuration for Top Speed Codec Transcoding](#C_topspeed_high).
 3. Click **Save**.
 
 ![](https://main.qcloudimg.com/raw/68e80755dce7d3fa52210d7237f89418.png)
@@ -105,7 +105,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 </tr><tr>
 <td>Template Name</td>
 <td>Yes</td>
-<td>Live transcoding template name, which must be 3-10 characters long and can contain letters only or a combination of digits and letters.</td>
+<td>Live transcoding template name, which must be 2-10 characters long and can contain letters only or a combination of digits and letters.</td>
 </tr><tr>
 <td>Template Description</td>
 <td>No</td>
@@ -117,11 +117,11 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 </tr><tr>
 <td>Video Bitrate<br>(in Kbps)</td>
 <td>Yes</td>
-<td>Average output bitrate. Value range: 100-8,000 Kbps. <li>A value below 1,000 Kbps must be a multiple of 100.</li><li>A value above 1,000 Kbps must be a multiple of 500.</li></td>
+<td>Average output bitrate. Value range: 100-8000. <li>A value not larger than 1,000 must be a multiple of 100.</li><li>A value larger than 1,000 must be a multiple of 500.</li></td>
 </tr><tr>
 <td>Video Resolution</td>
 <td>Yes</td>
-<td>Default: **Set the height**.<li>The value entered will be the height of the transcoded video. You can also select **Set the short side length**, and the value entered will be the short side of the transcoded video.</li><<li>Value range: 0-3000 px. The value must be a multiple of 2. The other side will be auto-scaled.</td>
+<td>Default: <b>Set the height</b>.<li>The value entered will be the height of the transcoded video. You can also select <b>Set the short side length</b>, and the value entered will be the short side of the transcoded video. </li><li>Value range: 0-3000. The value must be a multiple of 2. The other side will be auto-scaled.</li></td>
 </tr>
 </table>
 
@@ -130,11 +130,11 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 </tr><tr>
 <td>Codec</td>
 <td>No</td>
-<td>Default setting: original bitrate. You can also select H.264 or H.265.</td>
+<td>Default setting: Original codec. You can also select H.264 or H.265.</td>
 </tr><tr>
-<td>Video Frame Rate</td>
+<td>Video Frame Rate (fps)</td>
 <td>No</td>
-<td>Value range: 0-60 fps. If this parameter is left empty, the default value 0 fps will be used.</td>
+<td>Value range: 0-60. If this parameter is left empty, `0` will be used.</td>
 </tr><tr>
 <td>GOP<br>(in seconds)</td>
 <td>No</td>
@@ -142,7 +142,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 </tr><tr>
 <td>Parameter Limit</td>
 <td>No</td>
-<td>Disabled by default and can be enabled manually.<br>After this feature is enabled, the original parameter of the input stream will be used for the output stream if you enter a value higher than the original parameter. This prevents image quality issues where a low resolution video stream is played back in a high resolution.</td>
+<td><li/>Disabled by default and can be enabled manually.<li/>After a limit is enabled, the original value of the input stream will be used if you enter a value larger than the original. This can avoid video quality issues caused by using high video quality settings to transcode videos of low quality.</td>
 </tr></table>
 
 [](id:C_audio)
@@ -159,28 +159,35 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 <td>Transcoding Type</td>
 <td>Yes</td>
 <td>Transcoding type, which can be standard transcoding, top speed codec transcoding, or <strong>audio-only transcoding</strong>.</td>
-</tr><tr>
+</tr>
+<tr>
 <td>Template Name</td>
 <td>Yes</td>
-<td>Live transcoding template name, which must be 3-10 characters long and can contain letters only or a combination of digits and letters.</td>
-</tr><tr>
+<td>Live transcoding template name, which must be 1-10 characters long and can contain letters only or a combination of digits and letters.</td>
+</tr>
+<tr>
 <td>Template Description</td>
 <td>No</td>
 <td>Live transcoding template description, which can contain only letters, digits, underscores (_), and hyphens (-).</td>
 </tr>
-</table>
+<tr>
+<td>Audio Bitrate (Kbps)</td>
+<td>Yes</td>
+<td>You can <b>use the original audio bitrate</b> or <b>set a custom bitrate</b>. Value range: 101-500.</td>
+</tr>
+</tbody></table>
+
 
 [](id:related)
 ## Binding Domain Name
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Enter the domain name binding page in either of the following ways:
-  - **Bind a domain name to an existing transcoding template**: click **Bind Domain Name** in the top left
+  - **Bind a domain name to an existing transcoding template**: Click **Bind Domain Name** in the top left.
     ![](https://main.qcloudimg.com/raw/ffa3a7d7c8392dc0509bf679f8d56c14.png)
-  - **Bind a domain name after creating a transcoding template**: after [creating a template](#create), click **Bind Domain Name** in the pop-up
+  - **Bind a domain name after creating a transcoding template**: After [creating a template](#create), click **Bind Domain Name** in the pop-up window.
     ![](https://main.qcloudimg.com/raw/82060d2edf81b37a0706cc11833c9d9a.png)
 3. Select a transcoding template and a playback domain name in the domain name binding window and then click **Confirm**.
 ![](https://main.qcloudimg.com/raw/8d0f571fab2c3765e3cebe5f5a819720.png)
-
 >? You can click **Add** to bind multiple playback domain names to a template.
 
 
@@ -219,6 +226,6 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 
 
 ## Related Operations
-For more information about **binding** and **unbinding** a domain name with a transcoding template, see [Transcoding Configuration](https://intl.cloud.tencent.com/document/product/267/31062).
+For more information about **binding** and **unbinding** domain names, see [Transcoding Configuration](https://intl.cloud.tencent.com/document/product/267/31062).
 
 
