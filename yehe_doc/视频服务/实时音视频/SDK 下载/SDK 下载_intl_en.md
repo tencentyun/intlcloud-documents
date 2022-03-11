@@ -22,7 +22,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center">3M（arm64）</td>
+      <td style="text-align:center">3M (arm64)</td>
    </tr>
      <tr>
       <td style="text-align:center">Android</td>
@@ -31,7 +31,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
-      <td style="text-align:center">jar：546K<br> so（armeabi）：4.5M<br> so（armv7）：4.5M<br>so（arm64）：5.3M</td>
+      <td style="text-align:center">jar: 546K<br> so (armeabi): 4.5M<br> so (armv7): 4.5M<br>so (arm64): 5.3M</td>
    </tr>
      <tr>
       <td style="text-align:center">Windows(C++)  </td>
@@ -40,7 +40,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
-      <td style="text-align:center">12.7M（C++ x86）<br>15.6M（C++ x64）</td>
+      <td style="text-align:center">12.7M (C++ x86)<br>15.6M (C++ x64)</td>
    </tr>
      <tr>
       <td style="text-align:center">Windows(C#) </td>
@@ -49,7 +49,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
-      <td style="text-align:center">13.8M（C# x64）<br>13.3M（C# x86）</td>
+      <td style="text-align:center">13.8M (C# x64)<br>13.3M (C# x86)</td>
    </tr>
      <tr>
       <td style="text-align:center">Mac</td>
@@ -58,7 +58,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35094">DOC</a></td>
-      <td style="text-align:center">2.05M（arm64）</td>
+      <td style="text-align:center">2.05M (arm64)</td>
    </tr>
      <tr>
       <td style="text-align:center">Web</td>
@@ -143,7 +143,7 @@ The Professional edition integrates multiple key audio/video features of Tencent
       <td style="text-align:center">Yes</td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center">3.2M（arm64）</td>
+      <td style="text-align:center">3.2M (arm64)</td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
@@ -152,7 +152,7 @@ The Professional edition integrates multiple key audio/video features of Tencent
       <td style="text-align:center">Yes</td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
-      <td style="text-align:center">jar：1M<br> so（armeabi）：5.7M<br> so（armv7）：5.7M<br>so（arm64）：6.8M</td>
+      <td style="text-align:center">jar: 1M<br> so (armeabi): 5.7M<br> so (armv7): 5.7M<br>so (arm64): 6.8M</td>
    </tr>
 </table>
 
@@ -181,7 +181,7 @@ In addition to the features of the Professional edition, the Enterprise edition 
       <td style="text-align:center">Yes</td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center"> 5.5M（arm64）</td>
+      <td style="text-align:center"> 5.5M (arm64)</td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
@@ -189,7 +189,7 @@ In addition to the features of the Professional edition, the Enterprise edition 
       <td style="text-align:center">Yes</td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
-      <td style="text-align:center"> jar：2.2M<br>so(armeabi)：9.3M</td>
+      <td style="text-align:center"> jar: 2.2M<br>so(armeabi): 9.3M</td>
    </tr>
 </table>
 
