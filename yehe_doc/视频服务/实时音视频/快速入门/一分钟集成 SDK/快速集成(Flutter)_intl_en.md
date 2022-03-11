@@ -1,7 +1,7 @@
 This document describes how to quickly integrate TRTC SDK for Flutter into your project.
 
 ## Environment Requirements
-- Flutter 2.0or above
+- Flutter 2.0 or above
 - Developing for Android:
   - Android Studio 3.5 or above
   - Devices with Android 4.1 or above
