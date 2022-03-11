@@ -582,5 +582,10 @@ The following Modules shall apply and form part of this privacy policy if you us
 24.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45476).
 25.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590).
 26.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45788).
+27.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45791).
+28.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45794).
+29.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45797).
+30.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45800).
+31.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45803).
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
