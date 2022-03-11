@@ -8,7 +8,7 @@ To quickly enable the interactive live video streaming feature, you can modify t
 
 [](id:ui.step1)
 ### Step 1. Create an application
-1. In the TRTC console, select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name such as `TestLiveRoom` and click **Create**.
 3. Click **Next** to skip this step.
 
