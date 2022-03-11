@@ -22,6 +22,6 @@ pageNext: ci/process/detail.html
 ### [参考阅读](#jenkinsfile)
 
 -   [Jenkinsfile 官方文档](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/)
--   [配置详情](/docs/ci/process/detail.html)
+-   [配置详情](https://intl.cloud.tencent.com/document/product/1135/45428)
 
 ==== 2021/08/14 ====
