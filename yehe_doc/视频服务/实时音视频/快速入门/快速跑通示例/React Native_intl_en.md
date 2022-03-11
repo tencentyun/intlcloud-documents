@@ -19,8 +19,8 @@ You have [signed up for a Tencent Cloud account(https://intl.cloud.tencent.com) 
 [](id:step1)
 ### Step 1. Create an application
 1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Enter an application name such as `TestTRTC` and click **Create**. If you have already created an application, click **Existing** to select it.
-3. Add or edit tags for your application if necessary, and click **Create**.
+2. Select **New** and enter an application name such as `TestTRTC`. If you have already created an application, select **Existing**.
+3. Add or edit tags according to your actual business needs and click **Create**.
 
 
 >?

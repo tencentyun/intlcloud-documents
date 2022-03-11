@@ -35,9 +35,9 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 [](id:step1)
 
 ### Step 1. Create an application
-1. In the TRTC console, select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Enter an application name such as `TestTRTC` and click **Create**. If you have already created an application, click **Existing** to select it.
-3. Add or edit tags for your application if necessary, and click **Create**.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+2. Select **New** and enter an application name such as `TestTRTC`. If you have already created an application, select **Existing**.
+3. Add or edit tags according to your actual business needs and click **Create**.
 ![](https://main.qcloudimg.com/raw/8dc52b5fa66ec4a5a4317719f9d442b9.png)
 >?
 >- An application name can contain up to 15 characters. Only digits, letters, Chinese characters, and underscores are allowed.
@@ -87,7 +87,7 @@ TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HM
 Upgrade/Switch:
  1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
  2. Click **Application Management** on the left sidebar, find your application, and click **Application Info**.
- 3. Select the **Quick Start** tab and click **Upgrade**, **Asymmetric Encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
+ 3. Select the **Quick Start** tab and click **Upgrade**, **asymmetric encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
   - Upgrade
   - Switch to the old algorithm ECDSA-SHA256:
       ![](https://main.qcloudimg.com/raw/49da46eea23847de79925a12e7a07102/%E8%B7%91%E9%80%9ADemo(%E6%A1%8C%E9%9D%A2%E6%B5%8F%E8%A7%88%E5%99%A8)4-%E8%BF%94%E8%BF%98.png)
