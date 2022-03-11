@@ -412,13 +412,14 @@ Event types
 | EVENT\_TYPE\_CLOUD\_RECORDING\_VOD\_COMMIT            | 311  | On-cloud recording - Upload was completed for the recording to VOD task.                    |
 | EVENT\_TYPE\_CLOUD\_RECORDING\_VOD\_STOP              | 312  | On-cloud recording - The recording to VOD task ended.                                |
 
+
 Event information
 
-| Field  | Type          | Description                                |
+| Field  | Type          | Description                                 |
 | ------- | ------------- | ------------------------------------ |
-RoomId      |     String/Number       |     Room ID (same type as Room ID on the client)   |
+RoomId      |     String/Number       |     Room ID (same type as Room ID on the client)    |
 | EventTs | Number | Unix timestamp (s) when the event occurred    |
-| UserId  | String        | User ID of the recording robot          |
+| UserId  | String        | User ID of the recording robot                  |
 | TaskId  | String        | Recording ID, which uniquely identifies a recording task     |
 | Payload | JsonObject    | The content of this field varies with event type.             |
 
@@ -763,6 +764,8 @@ If the event type is `312` (EVENT\_TYPE\_CLOUD\_RECORDING\_VOD\_STOP):
 
 
 
+
+
 ## Best Practices
 
 To ensure the high availability of the recording service, we recommend the following practices when you use the RESTful APIs:
@@ -771,8 +774,8 @@ To ensure the high availability of the recording service, we recommend the follo
 
    The status code consists of two parts, for example `InvalidParameter.SdkAppId`.
 
-   - `InValidParameter.xxxxx` indicates that a parameter value entered was invalid. Please check the parameter.
    - `InternalError.xxxxx` indicates that a server error occurred. You can retry until the request succeeds and `TaskId` is returned. We recommend you use the exponential backup algorithm for retry. For example, you can wait for three seconds for the first retry, six seconds for the second, 12 seconds for the third, and so on.
+   - `InValidParameter.xxxxx` indicates that a parameter value entered was invalid. Please check the parameter.
    - `FailedOperation.RestrictedConcurrency` indicates that you reached the maximum number (100 by default) of ongoing recording tasks allowed. To raise the limit, please contact technical support.
 
 2. The `UserId` and `UserSig` you pass in when calling `CreateCloudRecording` are for the recording robot. Please make sure that they are different from those of other users in the room. In addition, the room users join from the TRTC client must be of the same type as the room you specify when calling the API. For example, if the room created in the TRTC SDK is a string, the room specified for on-cloud recording must also be a string.
@@ -783,4 +786,6 @@ To ensure the high availability of the recording service, we recommend the follo
    - After a `CreateCloudRecording` request succeeds, if there are anchors publishing data in the room, you can splice the name of the recording file according to the naming conventions.
    - If you have registered on-cloud recording callbacks, the information of recording files will be sent to your server via callbacks.
    - You can specify a COS bucket to save recording files when calling the `CreateCloudRecording` API, so after a recording task ends, you can find the recording file in the COS bucket.
+
+4. Make sure the validity period of the recording user’s UserSig is set longer than the duration of the recording task. This is to avoid cases where the high availability scheme fails to resume a recording task after an internet disconnection because the UserSig is already expired.
 
