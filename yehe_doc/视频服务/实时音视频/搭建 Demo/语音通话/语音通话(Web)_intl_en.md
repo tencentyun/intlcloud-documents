@@ -79,11 +79,11 @@ npm run serve
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/4bac4a925d537c29f1540fa90d570552.png)
 
-3. Enter a user ID, click **Log In**, and select **Audio Call**.
+3. Enter a user ID, click **Sign in**, and select **Audio**.
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/eb1bcfd34409315b3bda70e72d5420f4.png)
 
-4. Enter the user ID of the callee and click **Call**.
+4. Enter the user ID of the callee and click **call**.
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/83e4ec55c1feb43c2ef68863a6b4beae.png)
 
