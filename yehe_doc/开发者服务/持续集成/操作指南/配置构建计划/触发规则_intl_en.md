@@ -78,7 +78,7 @@ In the settings, you can select "Automatically cancel identical version numbers"
 
 #### [Private GitLab](#gitlab)
 
-In the case of [Bind Private GitLab](/docs/admin/service-integration/gitlab.html), GitLab Webhooks will be automatically created. Subsequently, CODING will be notified of events to match the above-set trigger rules. 
+In the case of Bind Private GitLab, GitLab Webhooks will be automatically created. Subsequently, CODING will be notified of events to match the above-set trigger rules. 
 
 ![](https://help-assets.codehub.cn/enterprise/20210818202005.png)
 
