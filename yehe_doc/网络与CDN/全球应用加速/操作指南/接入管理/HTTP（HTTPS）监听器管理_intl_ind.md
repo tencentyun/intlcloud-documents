@@ -21,7 +21,7 @@ Buka tab **HTTP/HTTPS Listener Management** (Manajemen Pendengar HTTP/HTTPS) dan
 Untuk menambahkan nama domain untuk pendengar HTTP, Anda hanya perlu memasukkannya dalam format yang ditentukan, dan hanya pencocokan yang akurat yang didukung. Nama domain dapat berisi 3–80 karakter dalam jenis berikut: `a–z`, `0–9`, `_`, dan `–`.
  ![](https://qcloudimg.tencent-cloud.cn/raw/fed0aa02e83804a36799763b0f88cf33.png)
 Untuk menambahkan nama domain untuk pendengar HTTPS, Anda harus memasukkannya dan memilih sertifikat server yang sesuai. Sertifikat yang dipilih selama pembuatan pendengar digunakan di konsol secara default. Jika Anda mengunggah sertifikat baru, nama domain akan diautentikasi dengan sertifikat baru.
- ![](https://qcloudimg.tencent-cloud.cn/raw/27131602718160d5f4c096db488dccf6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/68b14a92208741316c4d92f3200a147c.png)
 
 ### Menambahkan aturan
 

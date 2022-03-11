@@ -21,7 +21,7 @@
 1. 为HTTP监听器添加域名只需直接输入域名即可，但须符合域名格式要求，且只支持精确匹配。监听器支持的字符集有：`a-z、0-9、.、–，长度3 - 80`。
  ![](https://qcloudimg.tencent-cloud.cn/raw/fed0aa02e83804a36799763b0f88cf33.png)
 2. 为 HTTPS 监听器添加域名需输入域名并选择对应服务器证书
- ![](https://qcloudimg.tencent-cloud.cn/raw/27131602718160d5f4c096db488dccf6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/68b14a92208741316c4d92f3200a147c.png)
 	- 域名：需要符合域名的格式要求，只支持精确匹配，支持字符集如下，长度3-80个字符：a-z 0-9  . -
 	- 服务器证书：默认使用创建监听器时选择的证书。如您在此处重新上传证书，则该域名将使用新证书进行认证
 	- HTTP3 传输：点击**开启**后，支持通过 HTTP3（QUIC）访问，若客户端不支持 HTTP3，规则自动降级为 HTTP2.0 及以下协议访问
