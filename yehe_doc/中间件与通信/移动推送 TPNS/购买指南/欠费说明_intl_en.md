@@ -7,7 +7,7 @@ Pay-as-you-go billing is an elastic billing mode of TPNS. You can activate or te
 After purchasing the pay-as-you-go service, please ensure that your account balance is always sufficient. If your account has overdue payment for more than 24 hours, the pay-as-you-go service will be suspended.
 
 ### Service suspension mechanism
-- At 06:00 every day, the system will settle the fees incurred the previous day, generate a bill, and deduct the fees from your account balance. If your account balance is insufficient or the sum of available balance and frozen amount is negative, and the deduction cannot be completed, your account will have overdue payment.
+- At 06:00 every day, the system will settle the fees incurred the previous day, generate a bill, and deduct the fees from your account balance. If your account balance is insufficient or the sum of available balance and frozen amount is negative, and the deduction cannot be completed, your account have overdue payment.
 - The system will push payment overdue reminders when your account has overdue payment through phone call, SMS, WeChat, email, and Message Center (subject to the actual receipt channels and recipients configured in [Message Center](https://console.cloud.tencent.com/message/subscription)).
 - If you fail to make the payment in 24 hours, the service will be officially suspended. If you make the payment in 24 hours, the service will remain available.
 >!
