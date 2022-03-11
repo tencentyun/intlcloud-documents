@@ -122,7 +122,7 @@ You can find the information on the **[Usage Statistics](https://console.cloud.t
 
 [](id:que19)
 ### How do I fix stutter?
-You can check call quality by `RoomID` or `UserID` in **[Monitoring Dashboard](https://console.cloud.tencent.com/trtc/monitor)** in the TRTC console.
+You can check call quality by room ID or user ID in **[Monitoring Dashboard](https://console.cloud.tencent.com/trtc/monitor)** in the TRTC console.
 - Check the send and receive statistics from the recipient’s perspective.
 - Check the send and receive packet loss. High packet loss suggest that the stutter may be caused by unstable network connections.
 - Check the frame rate and CPU usage. Both low frame rates and high CPU usage can cause stutter.
