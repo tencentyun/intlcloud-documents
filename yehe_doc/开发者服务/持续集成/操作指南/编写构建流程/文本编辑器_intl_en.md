@@ -22,6 +22,6 @@ Follow the syntax for Jenkinsfile in the build process. For more information, re
 ### [More information](#jenkinsfile)
 
 - [Official Jenkinsfile Documentation](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/)
-- [Configuration Details](/docs/ci/process/detail.html)
+- [Configuration Details](https://intl.cloud.tencent.com/document/product/1135/45428)
 
 ==== 2021/08/14 ====
