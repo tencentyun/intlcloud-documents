@@ -111,5 +111,5 @@ using namespace trtc;
 
 ## FAQs
 ### 1. Does the TRTC SDK support running in the background?
-Yes. If you want the SDK to run relevant features in the background, you can select the current project, set **Background Modes** under **Capabilities** to **ON**, and check **Audio, AirPlay and Picture in Picture** as shown below:
+Yes. If you want the SDK to run relevant features in the background, you can select the current project, set **Background Modes** under **Capabilities** to **ON**, and check **Audio, AirPlay, and Picture in Picture** as shown below:
 ![](https://main.qcloudimg.com/raw/d960dfec88388936abce2d4cb77ac766.jpg)
