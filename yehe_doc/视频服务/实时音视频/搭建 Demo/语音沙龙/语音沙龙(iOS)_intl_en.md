@@ -25,7 +25,7 @@ To quickly enable the chat salon feature, you can modify the demo app we provide
 
 1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name such as `TestChatSalon` and click **Create**.
-3. Click **Next** to skip the source code download step.
+3. Click **Next**.
 
 ![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 
