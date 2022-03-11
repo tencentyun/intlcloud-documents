@@ -12,7 +12,7 @@ alias:
 
 ### Feature Overview
 
-This document provides an example of a Jenkinsfile for building a Docker image with a continuous integration task. After you build the Docker image, you can use a preset plugin to upload it to the CODING Artifact Repository (CODING-AR). Before using this function, ensure that you have a [basic understanding](/docs/artifacts/quick-start/docker.html) of Docker artifact repositories.
+This document provides an example of a Jenkinsfile for building a Docker image with a continuous integration task. After you build the Docker image, you can use a preset plugin to upload it to the CODING Artifact Repository (CODING-AR). Before using this function, ensure that you have a [basic understanding](https://intl.cloud.tencent.com/document/product/1135/45430) of Docker artifact repositories.
 
 ### Jenkinsfile
 
@@ -47,8 +47,4 @@ pipeline {
 }
 ```
 
-### FAQ
 
-1. How do I auto generate version numbers?
-
-See: [Auto Generate Version Numbers](/docs/ci/artifacts/version.html)
