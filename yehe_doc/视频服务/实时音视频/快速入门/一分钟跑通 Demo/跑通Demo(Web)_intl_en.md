@@ -74,7 +74,7 @@ Open `index.html` in the root directory of the demo with Chrome to run the demo.
 
 
 - Click **Join** to join a room and publish the local stream.
- You can open multiple pages and click **Join* on each of them. You should be able to see multiple video images, which simulate a real-time video/audio call.
+ You can open multiple pages and click **Join** on each of them. You should be able to see multiple video images, which simulate a real-time video/audio call.
 - Click **Camera Select** to select a camera.
 - Click **Microphone Select** to select a mic.
 >?WebRTC uses the camera and mic of your device to capture audio and video. During the demo run, when prompted by Chrome, you should click **Allow**.
