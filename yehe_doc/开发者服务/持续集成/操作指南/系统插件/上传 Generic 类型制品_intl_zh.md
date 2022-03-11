@@ -19,7 +19,7 @@ alias: devops/ci/plugins/generic.html
 
 ### 使用插件上传 Generic 类型制品
 
-在 CODING 持续集成任务构建过程当中，您可以选择将构建物上传至 CODING 制品库。Generic 制品上传插件能够让您更方便地在持续集成当中上传 Generic 类型构建物，目前单文件大小最高支持 5GB。在使用该功能之前，请确保您对 Generic 类型制品库有初步了解，您可以点击阅读[使用 Generic 制品库](/docs/artifacts/quick-start/generic.html)了解更多。
+在 CODING 持续集成任务构建过程当中，您可以选择将构建物上传至 CODING 制品库。Generic 制品上传插件能够让您更方便地在持续集成当中上传 Generic 类型构建物，目前单文件大小最高支持 5GB。在使用该功能之前，请确保您对 Generic 类型制品库有初步了解，您可以点击阅读[使用 Generic 制品库](https://intl.cloud.tencent.com/document/product/1136/44805)了解更多。
 
 ### 快速开始
 
