@@ -9,7 +9,7 @@ To quickly implement the audio chat room feature, you can modify the app we prov
 
 [](id:ui.step1)
 ### Step 1. Create an application
-1. In the TRTC console, select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name such as `TestVoiceRoom` and click **Create**.
 3. Click **Next**.
 
