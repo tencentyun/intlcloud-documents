@@ -67,11 +67,11 @@ Select **Create Room** or **Enter Room**.
 
 
 ### Room creation page
-When user A creates a room, the room ID will be automatically generated. User A can click **Create Room** to access the main UI.
+When user A creates a room, the room ID will be automatically generated. User A can tap **Create Room** to access the main UI.
 
 
 ### Room entry page
-User B enters the ID of the room created by user A and click **Join** to access the main UI.
+User B enters the ID of the room created by user A and taps **Enter Room** to access the main UI.
 
 
 ### Main UI (user A)
