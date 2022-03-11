@@ -54,7 +54,7 @@ TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HM
 Upgrade/Switch:
  1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
  2. Click **Application Management** in the left navigation pane, find your application, and click **Application Info**.
- 3. Select the **Quick Start** tab and click **Upgrade**, **Asymmetric Encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
+ 3. Select the **Quick Start** tab and click **Upgrade**, **asymmetric encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
   - Upgrade.
   - Switch to the old algorithm ECDSA-SHA256:
       ![](https://main.qcloudimg.com/raw/a8737123c1e3cc0f7eb34901ed2629f7.png)
