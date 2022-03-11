@@ -64,20 +64,20 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 <table>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37680">Android SDK</a>
-<td><a href="https://cloud.tencent.com/document/product/436/35560">C SDK</td>
-<td><a href="https://cloud.tencent.com/document/product/436/35163">C++ SDK</td>
-<td><a href="https://cloud.tencent.com/document/product/436/32873">.NET SDK</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31520">C SDK</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31524">C++ SDK</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38068">.NET SDK</a>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31528">Go SDK</a>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37690">iOS SDK</a>
-<td><a href="https://cloud.tencent.com/document/product/436/35217">Java SDK</a></td>
-<td><a href="https://cloud.tencent.com/document/product/436/35651">JavaScript SDK</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31536">Java SDK</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31540">JavaScript SDK</a></td>
 </tr>
 <tr>
-<td><a href="https://cloud.tencent.com/document/product/436/36121">Node.js SDK</a></td>
-<td><a href="https://cloud.tencent.com/document/product/436/34284">PHP SDK</a></td>
-<td><a href="https://cloud.tencent.com/document/product/436/35153">Python SDK</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/32455">Node.js SDK</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31544">PHP SDK</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31548">Python SDK</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31711">小程序 SDK</a></td>
 </tr>
 </table>
@@ -100,20 +100,20 @@ T=min(X,Y)；由于 X<=36，所以 T<=36。
 <table>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37680">Android SDK</a>
-<td><a href="https://cloud.tencent.com/document/product/436/35560">C SDK</td>
-<td><a href="https://cloud.tencent.com/document/product/436/35163">C++ SDK</td>
-<td><a href="https://cloud.tencent.com/document/product/436/32873">.NET SDK</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31520">C SDK</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31524">C++ SDK</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38068">.NET SDK</a>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31528">Go SDK</a>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37690">iOS SDK</a>
-<td><a href="https://cloud.tencent.com/document/product/436/35217">Java SDK</a></td>
-<td><a href="https://cloud.tencent.com/document/product/436/35651">JavaScript SDK</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31536">Java SDK</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31540">JavaScript SDK</a></td>
 </tr>
 <tr>
-<td><a href="https://cloud.tencent.com/document/product/436/36121">Node.js SDK</a></td>
-<td><a href="https://cloud.tencent.com/document/product/436/34284">PHP SDK</a></td>
-<td><a href="https://cloud.tencent.com/document/product/436/35153">Python SDK</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/32455">Node.js SDK</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31544">PHP SDK</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31548">Python SDK</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31711">小程序 SDK</a></td>
 </tr>
 </table>
