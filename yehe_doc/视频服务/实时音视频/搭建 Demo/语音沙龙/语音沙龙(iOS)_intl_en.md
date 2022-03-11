@@ -23,7 +23,7 @@ To quickly enable the chat salon feature, you can modify the demo app we provide
 
 ### Step 1. Create an application
 
-1. In the TRTC console, select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name such as `TestChatSalon` and click **Create**.
 3. Click **Next** to skip the source code download step.
 
@@ -82,18 +82,18 @@ The `Source` folder in the source code contains two subfolders: `ui` and `model`
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/ae3d6bc2f1900dbc5537f2f3f4fca529.png)
 
-2. Click **Create Room**.
+2. Tap **Create Room**.
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/aef2012fdb5a6441dae9406f0539164d.png)
 
-3. Type a subject for the conference and tap **Let’s go**.
+3. Type a subject for the room and tap **Let’s go**.
 
 ### User B
 1. Enter a username (**which must be unique**) and log in.
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/7596d1bd53d84d61436a499a92d52240.png)
 
-2. Enter the ID of the room created by user A and tap **Join**.
+2. Enter the ID of the room created by user A and tap **Enter Room**.
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/68eea3143e1d57158725d80da7895e51.png)
 
