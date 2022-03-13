@@ -121,7 +121,7 @@ trtcCloud.setVideoEncoderParam(encParam);
 </dx-codeblock>
 
 [](id:step6)
-### Step 6. Sets beauty filters
+### Step 6. Set beauty filters
 
 1. Call [setBeautyStyle(style, beauty, white, ruddiness)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setBeautyStyle) to enable filters.
 2. Parameter description:
