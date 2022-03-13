@@ -41,9 +41,9 @@ You have activated Tencent Cloud [CSS](https://console.cloud.tencent.com/live) a
 1. Log in to the [CSS console](https://console.cloud.tencent.com/live).
 2. In the navigation pane on the left, select **Domain Management** and you will see that a push domain name in the format of `xxxxx.livepush.myqcloud.com` has been added to the list. `xxxxx` is `bizid`, which is a numeric string and can be found in TRTC console > **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info**.
 3. Click **Add Domain**, enter a playback domain name for which you have obtained an ICP license. For **Type**, select **Playback Domain**, choose an acceleration region, and click **Confirm**.
-4. Once your domain name is added, the system will automatically assign to it a CNAME, which ends with `.liveplay.myqcloud.com`. The CNAME can be accessed only after you configure it at your domain name service provider. You will be able to use LVB services once the configuration takes effect. For detailed directions, see [Configuring CNAME for Domain Name](https://intl.cloud.tencent.com/document/product/267/31057).
+4. Once your domain name is added, the system will automatically assign to it a CNAME, which ends with `.liveplay.myqcloud.com`. The CNAME can be accessed only after you configure it at your domain name service provider. You will be able to use CSS services once the configuration takes effect. For detailed directions, see [Configuring CNAME for Domain Name](https://intl.cloud.tencent.com/document/product/267/31057).
 
->! **You do not need to add a push domain name.** After you enable relayed push in [step 1](#step1), Tencent Cloud will add a push domain name in the format of `xxxxx.livepush.myqcloud.com` to the domain list of the LVB console, which is the default push domain name used by LVB and TRTC and cannot be modified.
+>! **You do not need to add a push domain name.** After you enable relayed push in [step 1](#step1), Tencent Cloud will add a push domain name in the format of `xxxxx.livepush.myqcloud.com` to the domain list of the CSS console, which is the default push domain name used by CSS and TRTC and cannot be modified.
 
 <span id="step3"></span>
 ### Step 3. Associate TRTC streams with CSS `streamId`.
