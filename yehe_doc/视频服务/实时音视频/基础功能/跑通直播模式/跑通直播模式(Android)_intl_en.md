@@ -51,7 +51,7 @@ You can download the [ZIP file](https://intl.cloud.tencent.com/document/product/
 
 
 [](id:step2)
-### Step 2. Configure app permissions.
+### Step 2. Configure app permissions
 Add camera, mic, and network permission requests in `AndroidManifest.xml`.
 
 ```
