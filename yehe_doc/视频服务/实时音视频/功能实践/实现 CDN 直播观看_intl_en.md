@@ -24,7 +24,7 @@ The biggest strength of TRTC is audio/video co-anchoring. If there are multiple 
 > For one, it is difficult to synchronize multiple channels of streams played back via CDNs; for another, pulling multiple channels of streams consumes more traffic than downloading single-channel streams. Therefore, it is common in the industry to mix streams in the cloud before playback.
 
 ## Prerequisites
-You have activated Tencent Cloud [LVB](https://console.cloud.tencent.com/live) and, according to the requirements of the regulator, you must have a playback domain name for live streaming. For details, see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970)
+You have activated Tencent Cloud [CSS](https://console.cloud.tencent.com/live) and, according to the requirements of the regulator, you must have a playback domain name for live streaming. For details, see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
 
 ## Directions
 
@@ -32,21 +32,21 @@ You have activated Tencent Cloud [LVB](https://console.cloud.tencent.com/live) a
 ### Step 1. Enable relayed push.
 
 1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
-2. Select **Application Management** in the navigation pane to the left, find your application, and click **Function Configuration**.
+2. Select **Application Management** in the navigation pane on the left, find your application, and click **Function Configuration**.
 3. In **Relayed Push Configuration**, click ![](https://main.qcloudimg.com/raw/5f58afe211aa033037e5c0b793023b49.png) next to **Enable Relayed Push**, and click **Enable Relayed Push** in the dialog box that pops up.
 
 
 <span id="step2"></span>
 ### Step 2. Configure the playback domain name and CNAME record.
-1. Log in to the [LVB console](https://console.cloud.tencent.com/live).
-2. In the navigation pane to the left, select **Domain Management** and you will see that a push domain name in the format of `xxxxx.livepush.myqcloud.com` has been added to the list. `xxxxx` is `bizid`, which is a numeric string and can be found in TRTC console > **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info**.
+1. Log in to the [CSS console](https://console.cloud.tencent.com/live).
+2. In the navigation pane on the left, select **Domain Management** and you will see that a push domain name in the format of `xxxxx.livepush.myqcloud.com` has been added to the list. `xxxxx` is `bizid`, which is a numeric string and can be found in TRTC console > **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info**.
 3. Click **Add Domain**, enter a playback domain name for which you have obtained an ICP license. For **Type**, select **Playback Domain**, choose an acceleration region, and click **Confirm**.
 4. Once your domain name is added, the system will automatically assign to it a CNAME, which ends with `.liveplay.myqcloud.com`. The CNAME can be accessed only after you configure it at your domain name service provider. You will be able to use LVB services once the configuration takes effect. For detailed directions, see [Configuring CNAME for Domain Name](https://intl.cloud.tencent.com/document/product/267/31057).
 
 >! **You do not need to add a push domain name.** After you enable relayed push in [step 1](#step1), Tencent Cloud will add a push domain name in the format of `xxxxx.livepush.myqcloud.com` to the domain list of the LVB console, which is the default push domain name used by LVB and TRTC and cannot be modified.
 
 <span id="step3"></span>
-### Step 3. Associate TRTC streams with LVB `streamId`.
+### Step 3. Associate TRTC streams with CSS `streamId`.
 After relayed push is enabled, each stream in a TRTC room will be assigned a playback address in the following format:
 ```
 http://playback domain name/live/[streamId].flv
@@ -74,8 +74,8 @@ For how to calculate `userSig`, see [UserSig](https://intl.cloud.tencent.com/doc
 After relayed push is enabled, if you do not specify a `streamId`, the system will automatically generate one according to the following rules.
 
 - **Fields included**
-  - SDKAppID, which can be found in [TRTC console] (https://console.cloud.tencent.com/trtc/app) > ** Application Management > **Application Info**.
-  - bizid: which can be found in [TRTC console] (https://console.cloud.tencent.com/trtc/app) > ** Application Management > **Application Info**.
+  - SDKAppID, which can be found in [TRTC console](https://console.cloud.tencent.com/trtc/app) > **Application Management** > **Application Info**.
+  - bizid: which can be found in [TRTC console](https://console.cloud.tencent.com/trtc/app) > **Application Management** > **Application Info**.
   - roomId, which is specified in `TRTCParams` when you call `enterRoom`.
   - userId, which is specified in `TRTCParams` when you call `enterRoom`.
   - streamType, which is `main` if the camera image is streamed and `aux` if the screen sharing image is streamed. WebRTC supports only one upstream channel, so in WebRTC, `streamType` is `main` too if the screen sharing image is streamed.
@@ -170,15 +170,15 @@ Example of the configuration code using `Objective-C` on iOS:
 
 The costs of CDN relayed live streaming include **playback fees** and **transcoding fees**. Playback fees are basic service fees, and transcoding fees are charged only if [On-Cloud MixTranscoding](#mixCDN) is enabled.
 
->!The prices used in this document are for reference only. In case of any inconsistencies, the prices specified in [LVB > Purchase Guide > LVB Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2819) shall prevail.
+>!The prices used in this document are for reference only. In case of any inconsistencies, the prices specified in [CSS > Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2819) shall prevail.
 
 ### Playback fees: cost of playing live streams via CDNs
 
-**LVB** charges you for playing streams via CDNs based on the downstream traffic generated or bandwidth used. You can choose whichever billing mode fits your need. By default, the bill-by-traffic mode is used. For details, see [LVB > Purchase Guide > Basic Services > Billing Details > Traffic and Bandwidth](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#traffic-and-bandwidth).
+**LVB** charges you for playing streams via CDNs based on the downstream traffic generated or bandwidth used. You can choose whichever billing mode fits your need. By default, the bill-by-traffic mode is used. For details, see [CSS > Billing of LVB](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#traffic-and-bandwidth).
 
 
 ### Transcoding fees: cost of mixing multiple channels of streams
-Stream mixing involves data decoding and encoding, so if you enable [stream mixing](#mixCDN), an additional stream mixing and transcoding fee will be incurred, which is charged based on the resolution and duration of the streams transcoded. The higher resolution an anchor uses, and the longer co-anchoring (the most common application scenario for stream mixing) lasts, the higher the cost. For details, see [LVB > Purchase Guide > Basic Services > Billing Details > LVB Transcoding](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#lvb-transcoding).
+Stream mixing involves data decoding and encoding, so if you enable [stream mixing](#mixCDN), an additional stream mixing and transcoding fee will be incurred, which is charged based on the resolution and duration of the streams transcoded. The higher resolution an anchor uses, and the longer co-anchoring (the most common application scenario for stream mixing) lasts, the higher the cost. For details, see [CSS > Billing of LVB](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#lvb-transcoding).
 
 >Suppose you use [`setVideoEncodrParam()`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) to set the bitrate (`videoBitrate`) for anchors to 1,500 Kbps and resolution to 720p, and an anchor co-anchored with a viewer for 1 hour, during which [stream mixing](#mixCDN) was enabled. The transcoding fee incurred will be `0.0057 USD/min × 60 min=0.342 USD`.
 
