@@ -12,7 +12,7 @@ Based on Apple's ReplayKit scheme, cross-app sharing allows the sharing of conte
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   &#10003;  |
 
-## In-app Sharing
+## In-App Sharing
 
 You can implement in-app sharing simply by calling the [startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a16d30ca3f89863da2581ff3872bf31f0) API of the TRTC SDK, passing in the encoding parameter `TRTCVideoEncParam`. If `TRTCVideoEncParam` is set to `nil`, the SDK will use the encoding parameters set previously.
 
@@ -30,7 +30,7 @@ We recommend the following encoding settings for screen sharing on iOS:
 - The highest bitrate (`videoBitrate`) refers to the highest output bitrate when a shared screen changes dramatically. If the shared content does not change a lot, the actual encoding bitrate will be lower.
 
 
-## Cross-app Sharing
+## Cross-App Sharing
 
 ### Sample code
 You can find the sample code for cross-app sharing in the **ScreenShare** directory of [this GitHub page](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC), which contains the following files:
