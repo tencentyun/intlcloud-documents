@@ -112,7 +112,7 @@ When calling the [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group
 >- The value of `appScene` must be the same on each client. Inconsistent `appScene` may cause unexpected problems.
 
 [](id:step5)
-### Step 5. Enables camera preview and mic capturing
+### Step 5. Enable camera preview and mic capturing
 1. Call [startLocalPreview()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) to enable preview of the local camera. The SDK will ask for camera permission.
 2. Call [setLocalViewFillMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#af36ab721c670e5871e5b21a41518b51d) to set the display mode of the local video image:
  - `Fill`: aspect fill. The image may be scaled up and cropped, but there are no black bars.
@@ -135,7 +135,7 @@ mTRTCCloud.startLocalAudio();
 ```
 
 [](id:step6)
-### Step 6. Sets beauty filters
+### Step 6. Set beauty filters
 
 1. Call [getBeautyManager()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) to get the beauty filter management class [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager).
 2. Call [setBeautyStyle()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) to set the beauty filter style.
