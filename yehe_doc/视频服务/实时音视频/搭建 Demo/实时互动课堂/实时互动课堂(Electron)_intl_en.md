@@ -6,7 +6,7 @@
 ## Using the Demo UI
 [](id:ui.step1)
 ### Step 1. Create an application
-1. In the TRTC console, select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name such as `TestEduDemo` and click **Create**.
 
 >?This feature uses two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When you activate TRTC, IM will be activated automatically. IM is a value-added service. See [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) for its billing details.
@@ -101,7 +101,7 @@ const rtcClient = new TrtcElectronEducation({
  });
 ```
 
-### Step 3. Start a class as a teacher.
+### Step 3. Start a class as a teacher
 1. Call the [`createRoom`](https://intl.cloud.tencent.com/document/product/647/37279#createRoom) method of the component to create a classroom.
 ```typescript
 const params = {
@@ -163,7 +163,7 @@ rtcClient.enterRoom({
 rtcClient.raiseHand()
 ```
 
-### Step 5. Implement the chat room feature.
+### Step 5. Implement the chat room feature
 
 The teacher and students can send text messages to each other in a chat room.
 ```typescript
