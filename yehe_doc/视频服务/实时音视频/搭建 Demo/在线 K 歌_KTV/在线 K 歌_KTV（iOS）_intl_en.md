@@ -19,7 +19,7 @@ To quickly enable the karaoke feature, you can modify the demo app we provide an
 
 [](id:ui.step1)
 ### Step 1. Create an application
-1. In the TRTC console, select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name such as `TestKaraoke` and click **Create**.
 3. Click **Next** to skip this step.
 
@@ -76,12 +76,12 @@ Each `TRTC'XXXX'ViewController` folder contains `ViewController`, `RootView`, an
 
 ### User A
 1. Enter a username (**which must be unique**) and log in.
-2. Click **Create Room**.
-2. Enter the room subject and click **Sing Together**.
+2. Tap **Create Room**.
+2. Enter the room subject and tap **Join**.
 
 ### User B
 1. Enter a username (**which must be unique**) and log in.
-2. Enter the ID of the room created by user A, and tap **Join**.<br>
+2. Enter the ID of the room created by user A, and tap **Enter Room**.<br>
 
 
 >! You can find the room ID at the top of user A’s room view.
