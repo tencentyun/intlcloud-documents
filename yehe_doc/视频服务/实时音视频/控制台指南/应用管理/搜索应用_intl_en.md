@@ -6,7 +6,7 @@ You can search by application name, SDKAppID, or tag in the TRTC console to quic
 
 
 ## Directions
-1. Go to **Application Management**, and click the search box at the top.
+1. Go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, and click the search box at the top.
    ![](https://main.qcloudimg.com/raw/3abd557bc3ecd3ab7c981cf5e3637c79.png)
 2. Select a search field, enter the keywords you want to search for, and click the search button ![](https://main.qcloudimg.com/raw/8f708a40d39225bf23332c4a6eebbc06.png).
 ![](https://main.qcloudimg.com/raw/2137f489a32829e87873719720c5e3bf.png)
