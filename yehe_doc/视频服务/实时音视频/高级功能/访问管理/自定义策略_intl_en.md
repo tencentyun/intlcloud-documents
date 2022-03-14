@@ -102,14 +102,14 @@ In the example below, we create a custom policy that allows all actions under TR
 2. Select **Create by Policy Generator**.
 3. Select the service and action.
    - For **Effect**, select **Allow**.
-   - For **Service**, select **TRTC** .
+   - For **Service**, select **Tencent Real-Time Communication (trtc)** .
    - For **Action**, check all the items.
-   - For **resource**, enter `qcs::trtc::uin/12345678:sdkappid/1400000001`, which aligns with the syntax described in [Resource syntax conventions](#s_grammar).
+   - For **Resource**, enter `qcs::trtc::uin/12345678:sdkappid/1400000001`, which aligns with the syntax described in [Resource syntax conventions](#s_grammar).
    - No configuration is needed for **Condition**.
    - Click **Add Statement**, and a statement indicating that any action is allowed under TRTC application `1400000001` appears below.
 4. Add another statement on the same page.
    - For **Effect**, select **Deny**.
-   - For **Service**, select **TRTC**.
+   - For **Service**, select **Tencent Real-Time Communication (trtc)**.
    - For **Action**, select `RemoveUser`. You can use the search feature to quickly locate the action.
    - For **Resource**, enter `qcs::trtc::uin/12345678:sdkappid/1400000001`, which aligns with the syntax described in [Resource syntax conventions](#s_grammar).
    - No configuration is needed for **Condition**.
