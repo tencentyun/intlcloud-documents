@@ -1,7 +1,6 @@
-To improve the user experience, Game Server Engine (GSE) will be remaining in beta, which was originally scheduled to end on June 30, 2020. We will notify users via the console Message Center, email and SMS when the product is ready for launch as a paid service. If you have any questions, please submit a ticket, or [contact us](https://intl.cloud.tencent.com/contact-sales).
+GSE has become a paid service starting from January 23, 2021. If you have any questions, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 GSE fees consist of the server fees and network traffic fees. Billing is pay-as-you-go by default upon service activation. Details are as follows.
-
 ## Server Fees
 
 GSE server fees are billed per second on an hourly billing cycle at prices determined by model, region, CPU, and memory.
