@@ -18,12 +18,12 @@
 
 
 ### 为什么容器镜像服务个人版不能用镜像构建和触发器？
-为了向您提供更加稳定强大的代码编译、镜像构建及部署等服务，容器镜像服务企业版现已与 CODING DevOps 实现容器 DevOps 相关功能互通，请前往 [容器镜像服务 TCR](https://intl.cloud.tencent.com/zh/product/tcr) 了解使用。
+为了向您提供更加稳定强大的代码编译、镜像构建及部署等服务，容器镜像服务企业版现已与 CODING DevOps 实现容器 DevOps 相关功能互通，请前往 [容器镜像服务 TCR](https://intl.cloud.tencent.com/products/tcr) 了解使用。
 
 
 
 ### 使用个人版时找不到已推送的镜像？
-由于容器镜像服务个人版镜像仓库是和其他所有公有云账号资源共享的，已拉取/推送的镜像阻塞在队列中因而没有显示。您可以尝试重新 push，同时建议您将业务迁移至 [容器镜像服务企业版](https://intl.cloud.tencent.com/zh/document/product/1051)，独享整个实例的服务资源和存储资源。
+由于容器镜像服务个人版镜像仓库是和其他所有公有云账号资源共享的，已拉取/推送的镜像阻塞在队列中因而没有显示。您可以尝试重新 push，同时建议您将业务迁移至 [容器镜像服务企业版](https://intl.cloud.tencent.com/document/product/1051)，独享整个实例的服务资源和存储资源。
 
 
 
