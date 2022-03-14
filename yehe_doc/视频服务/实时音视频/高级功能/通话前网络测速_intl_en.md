@@ -8,7 +8,7 @@ It is difficult for ordinary users to measure network quality. Before calls are 
 
 ## Supported Platforms
 
-| iOS | Android | Mac OS | Windows | Electron| Web |
+| iOS | Android | macOS | Windows | Electron| Web |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; |  &#10003; | &#10003; | &#10003; | &#10003; | &#10003; (Reference: [Guide for Web](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-24-advanced-network-quality.html))|
 
