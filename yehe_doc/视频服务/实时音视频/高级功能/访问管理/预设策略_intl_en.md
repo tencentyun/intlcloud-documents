@@ -15,7 +15,7 @@ TRTC offers the following preset policies currently.
 ### Creating a sub-account with the read-and-write permission
 
 1. Go to the [User List](https://console.cloud.tencent.com/cam) page of the CAM console using a Tencent Cloud [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click **Create User**.
-2. On the "Create User" page, click **Custom Create** to go to the "Create Sub-user" page.
+2. On the displayed page, click **Custom Creation** to go to the "Create Sub-user" page.
 	
 	>?Finish the steps before **User Permissions** as instructed in [Creating a Custom Sub-user](https://intl.cloud.tencent.com/document/product/598/13674).
 3. On the **User Permissions** page:
