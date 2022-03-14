@@ -6,7 +6,7 @@ If you need to manage access to TRTC, please log in to the console with a Tencen
 
 
 ## Type of Manageable Resources
-- TRTC access management allows you to control access to [applications](https://intl.cloud.tencent.com/document/product/647/37714).
+TRTC access management allows you to control access to [applications](https://intl.cloud.tencent.com/document/product/647/37714).
 
 
 ## APIs Supporting Resource-Level Authorization[](id:Support)
