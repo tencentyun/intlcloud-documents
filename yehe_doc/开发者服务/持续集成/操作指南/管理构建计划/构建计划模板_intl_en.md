@@ -44,7 +44,7 @@ You can configure code source trigger, scheduled trigger, or manual trigger rule
 
 #### [Variables and caches](#variable)
 
-You can add environment variables to a build plan. If you manually enable a build task, the environment variables will be used as the default values for startup parameters. For more information, see [Environment Variables](/docs/ci/env.html).
+You can add environment variables to a build plan. If you manually enable a build task, the environment variables will be used as the default values for startup parameters. For more information, see [Environment Variables](https://intl.cloud.tencent.com/zh/document/product/1135/45431).
 
 ### [Use build plan template](#using)
 
