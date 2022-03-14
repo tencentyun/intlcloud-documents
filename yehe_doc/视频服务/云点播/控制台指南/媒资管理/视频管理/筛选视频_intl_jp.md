@@ -4,7 +4,7 @@ VODコンソールを介して、ビデオフィルタリング操作を行う�
 ## 操作手順
 1. VODコンソールにログインし、【メディア資産管理】>[【ビデオ管理】](https://console.cloud.tencent.com/vod/media)を選択して、デフォルトで「アップロード済み」画面に進みます。
 2. リストの上にある検索ボックスで、**メディア資産の属性**を選択するか、または**キーワード**を入力し、アップロード済みのファイルをフィルタリングします。
-![](https://qcloudimg.tencent-cloud.cn/raw/1163c0eec3d6e04b051e41634f736c9c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/04fedccfb7aa45eeef651fa9fa08b923.png)
 
 	>?属性を選択しない場合、デフォルトではファイル名でマッチングします。
 

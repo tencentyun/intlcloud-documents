@@ -66,7 +66,7 @@ composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
 ### [私有 composer 制品库](#composer-private)
 
-使用私有制品库需先获得用户名/密码，参考文档：[《搭建团队级制品库》](/docs/artifacts/practices/team-share.html)。
+使用私有制品库需先获得用户名/密码。
 
 #### composer.json
 

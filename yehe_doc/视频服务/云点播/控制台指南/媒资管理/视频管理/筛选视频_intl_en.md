@@ -4,7 +4,7 @@ This document describes how to filter video files in the VOD console.
 ## Directions
 1. Log in to the VOD console and select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**. The **Uploaded** page is displayed.
 2. In the search box above the list, select a **media asset attribute** or enter a **keyword** to filter the uploaded files.
-![](https://qcloudimg.tencent-cloud.cn/raw/1163c0eec3d6e04b051e41634f736c9c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/04fedccfb7aa45eeef651fa9fa08b923.png)
 
 	>?If you don't select any attribute, the filename will be matched by default.
 

@@ -18,12 +18,12 @@ You can also go to the **Instance Management** page to select a Personal Edition
 
 
 ### Why can't I use image building and trigger in TCR Personal Edition?
-To provide more stable and powerful services such as code compilation and image building and deployment, TCR Enterprise Edition now shares the container DevOps features of CODING DevOps. For more information, see [Tencent Container Registry](https://intl.cloud.tencent.com/zh/product/tcr).
+To provide more stable and powerful services such as code compilation and image building and deployment, TCR Enterprise Edition now shares the container DevOps features of CODING DevOps. For more information, see [Tencent Container Registry](https://intl.cloud.tencent.com/products/tcr).
 
 
 
 ### What should I do if I cannot find the pushed image when using the Personal Edition?
-Since the image repository of TCR Personal Edition is shared with all other public cloud account resources, the images that have been pulled/pushed are blocked in the queue and are not displayed. You can try to push again, and we recommend that you migrate your services to [TCR Enterprise Edition](https://intl.cloud.tencent.com/zh/document/product/1051) to enjoy the service resources and storage resources of the entire instance.
+Since the image repository of TCR Personal Edition is shared with all other public cloud account resources, the images that have been pulled/pushed are blocked in the queue and are not displayed. You can try to push again, and we recommend that you migrate your services to [TCR Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051) to enjoy the service resources and storage resources of the entire instance.
 
 
 

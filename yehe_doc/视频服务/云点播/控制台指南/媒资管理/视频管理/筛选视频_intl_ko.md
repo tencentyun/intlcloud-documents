@@ -4,7 +4,7 @@
 ## 작업 단계
 1. VOD 콘솔에 로그인하여 [미디어 자원 관리]>[[비디오 관리]](https://console.cloud.tencent.com/vod/media)를 선택하면 ‘업로드 완료’ 페이지로 이동합니다.
 2. 목록 위의 검색 상자에서 **미디어 자산 속성**을 선택하거나 **키워드**를 입력하여 업로드된 파일을 필터링합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/1163c0eec3d6e04b051e41634f736c9c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/04fedccfb7aa45eeef651fa9fa08b923.png)
 
 	>?속성을 선택하지 않으면 기본적으로 파일 이름을 매칭합니다.
 

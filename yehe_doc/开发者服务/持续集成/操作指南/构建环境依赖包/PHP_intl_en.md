@@ -66,7 +66,7 @@ composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
 ### [Private composer repository](#composer-private)
 
-To use a private repository, you need to first retrieve the username and password. See [Building a Team Repository](/docs/artifacts/practices/team-share.html).
+To use a private repository, you need to first retrieve the username and password. 
 
 #### composer.json
 
