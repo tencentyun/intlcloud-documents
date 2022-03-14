@@ -8,7 +8,7 @@ You have activated TRTC and opened the [TRTC console](https://console.cloud.tenc
 ### Step 1. Create an application
 1. In the TRTC console, select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name such as `TestTRTC`. If you have already created an application, click **Existing** to select it.
-3. Add tags for your application and click **Create**.
+3. Add or edit tags according to your actual business needs and click **Create**.
 ![](https://main.qcloudimg.com/raw/2d399b26b80d7716e9d1a850f308ed9e.png)
 
 >?
