@@ -1,5 +1,7 @@
 本文主要介绍如何快速地将腾讯云 TRTC SDK（Flutter）集成到您的项目中，只要按照如下步骤进行配置，就可以完成 SDK 的集成工作。
 
+>! 目前Flutter SDK仅支持Android和iOS
+
 ## 环境要求
 - Flutter 2.0及以上版本。
 - Android 端开发：

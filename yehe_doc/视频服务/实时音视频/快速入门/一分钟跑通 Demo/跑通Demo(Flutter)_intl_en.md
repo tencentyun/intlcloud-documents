@@ -1,6 +1,6 @@
 This document describes how to quickly run the TRTC demo for Flutter.
 
->! Currently, the demo for Windows/macOS only supports audio but not video APIs. It supports video calls on Android/iOS.
+>! At present, the Flutter SDK only supports Android and iOS
 
 ## Environment Requirements
 - Flutter 2.0 or above
@@ -32,7 +32,7 @@ You have [signed up](https://intl.cloud.tencent.com) for a Tencent Cloud account
 
 [](id:step2)
 ### Step 2. Download the SDK and demo source code
-1. Download the SDK and [demo source code](https://github.com/tencentyun/TRTCFlutterScenesDemo) for your platform.
+1. Download the SDK and [Demo source code](https://github.com/LiteAVSDK/TRTC_Flutter/tree/master/TRTC-Simple-Demo) for your platform.
 2. Click **Next**.
 ![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 
@@ -40,7 +40,7 @@ You have [signed up](https://intl.cloud.tencent.com) for a Tencent Cloud account
 [](id:step3)
 ### Step 3. Configure demo project files
 1. In the **Modify Configuration** step, select the development platform in line with the source package downloaded.
-2. Find and open `/example/lib/debug/GenerateTestUserSig.dart`.
+2. Find and open `TRTC-Simple-Demo/example/lib/debug/GenerateTestUserSig.dart`.
 3. Set parameters in `GenerateTestUserSig.dart` as follows.
 <ul><li/>SDKAPPID: a placeholder by default. Set it to the actual `SDKAppID`.
 	<li/>`SECRETKEY`: a placeholder by default. Set it to the actual key.</ul>
@@ -63,7 +63,8 @@ You have [signed up](https://intl.cloud.tencent.com) for a Tencent Cloud account
 2. Open the demo project with Android Studio (3.5 or above), and click **Run**.
 :::
 ::: iOS\s
-Open the `/ios` demo project in the source code directory with Xcode (11.0 or above) and compile and run the demo project.
+1. To `ios` directory，run `pod install`
+2. Open the `/ios` demo project in the source code directory with Xcode (11.0 or above) and compile and run the demo project.
 :::
 ::: Windows
 1. Enable the Windows support by running `flutter config --enable-windows-desktop`.
@@ -71,7 +72,8 @@ Open the `/ios` demo project in the source code directory with Xcode (11.0 or ab
 :::
 ::: macOS
 1. Enable the macOS support by running `flutter config --enable-macos-desktop`.
-2. Run `flutter run -d macos`.
+2. To `macos` directory，run `pod install`
+3. Run `flutter run -d macos`.
 :::
 </dx-tabs>
 

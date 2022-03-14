@@ -1,6 +1,6 @@
 本文主要介绍如何快速运行腾讯云 TRTC Demo（Flutter）。
 
->! 目前 Windows/MacOs 端仅支持音频，视频接口暂不支持。Android/iOS 端支持视频通话。
+>! 目前Flutter SDK仅支持Android和iOS
 
 ## 环境要求
 - Flutter 2.0 及以上版本。
@@ -32,7 +32,7 @@
 
 [](id:step2)
 ### 步骤2：下载 SDK 和 Demo 源码
-1. 根据实际业务需求下载 SDK 及配套的 [Demo 源码](https://github.com/tencentyun/TRTCFlutterScenesDemo)。
+1. 根据实际业务需求下载 SDK 及配套的 [Demo 源码](https://github.com/LiteAVSDK/TRTC_Flutter/tree/master/TRTC-Simple-Demo)。
 2. 下载完成后，单击【已下载，下一步】。
 ![](https://main.qcloudimg.com/raw/a4f5a2ac1f49d67b4c6968d8b22cdeb0.png)
 
@@ -40,7 +40,7 @@
 [](id:step3)
 ### 步骤3：配置 Demo 工程文件
 1. 进入修改配置页，根据您下载的源码包，选择相应的开发环境。
-2. 找到并打开 `/example/lib/debug/GenerateTestUserSig.dart` 文件。
+2. 找到并打开 `TRTC-Simple-Demo/example/lib/debug/GenerateTestUserSig.dart` 文件。
 3. 设置 `GenerateTestUserSig.dart` 文件中的相关参数：
 <ul><li/>SDKAPPID：默认为 PLACEHOLDER ，请设置为实际的 SDKAppID。
 	<li/>SECRETKEY：默认为 PLACEHOLDER ，请设置为实际的密钥信息。</ul>
@@ -62,7 +62,8 @@
 2. 使用 Android Studio（3.5及以上的版本）打开源码工程，单击【运行】即可。
 :::
 ::: iOS\s端
-使用 XCode（11.0及以上的版本）打开源码目录下的 `/ios` 工程，编译并运行 Demo 工程即可。
+1. 到ios目录 `pod install`
+2. 使用 XCode（11.0及以上的版本）打开源码目录下的 `/ios` 工程，编译并运行 Demo 工程即可。
 :::
 ::: Windows\s端
 1. 启用 Windows 支持：`flutter config --enable-windows-desktop`。
@@ -70,6 +71,7 @@
 :::
 ::: macOS\s端
 1. 启用 macOS 支持：`flutter config --enable-macos-desktop`。
+2. 到macos目录 `pod install`
 2. 执行 `flutter run -d macos`。
 :::
 </dx-tabs>
