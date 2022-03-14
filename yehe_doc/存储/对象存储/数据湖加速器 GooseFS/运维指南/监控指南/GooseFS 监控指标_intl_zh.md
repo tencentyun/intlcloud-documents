@@ -200,7 +200,7 @@ Worker 监控指标有两大类，其一是默认指标，Worker 运行过程中
 | Client.CacheGetErrors                   | COUNTER      | Number of failures when getting cached data in the client cache. |
 | Client.CacheGetNotReadyErrors           | COUNTER      | Number of failures when cache is not ready to get pages.     |
 | Client.CacheGetStoreReadErrors          | COUNTER      | Number of failures when getting cached data in the client cache due to failed read from page stores. |
-| Client.CacheHitRate                     | GAUGE        | Cache hit rate: ( bytes read from cache) / ( bytes requested). |
+| Client.CacheHitRate                     | GAUGE       | Cache hit rate: <# bytes read from cache >/<# bytes requested>. |
 | Client.CachePages                       | COUNTER      | Total number of pages in the client cache.                   |
 | Client.CachePagesEvicted                | METER        | Total number of pages evicted from the client cache.         |
 | Client.CachePutAsyncRejectionErrors     | COUNTER      | Number of failures when putting cached data in the client cache due to failed injection to async write queue. |
