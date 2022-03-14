@@ -248,12 +248,12 @@ V2TXLiveCode:
 
 ***
 
-### enableCustomRendering
+### enableObserveVideoFrame
 
 This API is used to set custom video rendering. You can use this API to obtain each frame of decoded video for custom rendering.
 >? After custom rendering is enabled, you can get video frames in the `V2TXLivePlayerObserver.onRenderVideoFrame` callback.
 ```
-public abstract int enableCustomRendering(
+public abstract int enableObserveVideoFrame(
         boolean enable,
         V2TXLivePixelFormat pixelFormat, 
         V2TXLiveBufferType bufferType);
