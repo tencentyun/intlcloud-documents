@@ -1,6 +1,6 @@
 >!This document describes the management of access to **TRTC**. For access management of other Tencent Cloud services, see [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
 
-[Cloud Access Management](https://intl.cloud.tencent.com/document/product/598) (Cloud Access Management **CAM**) is a web service provided by Tencent Cloud that helps customers securely manage access to their Tencent Cloud account resources. CAM allows you to create, manage, or terminate users or user groups and control who is allowed to access and use your Tencent Cloud resources through identity and policy management.
+[Cloud Access Management](https://intl.cloud.tencent.com/document/product/598) (**CAM**) is a web service provided by Tencent Cloud that helps customers securely manage access to their Tencent Cloud account resources. CAM allows you to create, manage, or terminate users or user groups and control who is allowed to access and use your Tencent Cloud resources through identity and policy management.
 
 TRTC has supported **CAM**. You can grant TRTC permissions to sub-accounts as needed. 
 
