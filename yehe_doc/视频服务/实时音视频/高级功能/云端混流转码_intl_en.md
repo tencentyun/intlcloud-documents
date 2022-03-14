@@ -580,10 +580,10 @@ During On-Cloud MixTranscoding, the MCU cluster decodes and re-encodes the audio
 
 ### Cost control
 
-- **If you use server-side RESTful APIs, stream mixing stops when either of the following conditions is met.
+- **If you use server-side RESTful APIs, stream mixing stops** when either of the following conditions is met.
   - All users, including anchors and audience, have left the room.
   - You have called [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) to manually stop stream mixing.
-- **If you use client-side APIs of the TRTC SDK, stream mixing stops when either of the following conditions is met.
+- **If you use client-side APIs of the TRTC SDK, stream mixing stops** when either of the following conditions is met.
   - The anchor who started stream mixing. i.e., the user who called the client-side API `setMixTranscodingConfig`, has left the room.
   - You have called [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) and set the parameter to `nil`/`null` to manually stop stream mixing.
 
