@@ -35,7 +35,7 @@ The player has the following capabilities:
 | [pauseVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#a0db95f1fb6d448b943400b3149bacff3)            | Pauses the player’s video.       |
 | [resumeVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#ac6addf129d35e104ba087ee6a93718d3)           | Resumes the player’s video.       |
 | [snapshot](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#a2a507ea1cd894a1635dbfd772802fefd)              | Takes a screenshot of played video. |
-| [enableCustomRendering](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#a3c31a1de340f63433d486befa6371e7c) | Sets the callback for custom video rendering.   |
+| [enableObserveVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#af105fd13a342720b70e3f85eee054197)  | Sets the callback for custom video rendering.   |
 
 ### Audio APIs
 
