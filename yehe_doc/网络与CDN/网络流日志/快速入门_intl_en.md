@@ -60,8 +60,8 @@ CVM A (10.16.0.22) and CVM B (10.16.0.40) reside in the same VPC. After you log 
 3. Click<b>OK</b>.
 
 >!
- - You can view the record of a newly created flow log in CLS after 15 minutes upon the creation (10 minutes for the capture window and 5 minutes for data publishing).
- - FL is free of charge, but the data stored in CLS is charged at standard prices.
+>- You can view the record of a newly created flow log in CLS after 15 minutes upon the creation (10 minutes for the capture window and 5 minutes for data publishing).
+>- FL is free of charge, but the data stored in CLS is charged at standard prices.
 
 
 ## Result Validation
