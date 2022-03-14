@@ -19,10 +19,10 @@ After an application is created, its information, including `SDKAppID`, applicat
 | Item  | Description  |
 | ---------------------- | ---------------------- |
 | SDKAppID | `SDKAppID` is the unique identifier of an application and is generated automatically upon application creation. It is a required parameter for calling audio APIs. |
-| Application name | The name specified during application creation |
+| Application Name | The name specified during application creation |
 | Tag | Tags added in [Application Info](https://intl.cloud.tencent.com/document/product/647/39079). <br/>You can use tags to mark and sort your Tencent Cloud resources. For example, your company may have multiple business units, each using one or more TRTC applications. You can tag the applications with the information of the corresponding business units. |
-| Service status | The service status of the application, which may be **Normal** or **Disabled**.<br/>If it is **Disabled**, please check whether your [package](https://console.cloud.tencent.com/trtc/package) has remaining minutes, and whether your [account](https://console.cloud.tencent.com/expense/overview) has overdue payment. |
-| Creation time | Time when the application is created                                         |
+| Service Status | The service status of the application, which may be **Normal** or **Disabled**.<br/>If it is **Disabled**, please check whether your [package](https://console.cloud.tencent.com/trtc/package) has remaining minutes, and whether your [account](https://console.cloud.tencent.com/expense/overview) has overdue payment. |
+| Creation Time | Time when the application is created                                         |
 | Operation | **Usage Statistics**, **Function Configuration**, **Application Info**    |
 
 
