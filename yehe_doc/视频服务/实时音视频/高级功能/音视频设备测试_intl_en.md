@@ -3,7 +3,7 @@
 Given that it is difficult for users to detect device problems during a call, we recommend that you test devices such as cameras and mics before a video call.
 
 
-## Platform Support
+## Supported Platforms
 
 | iOS | Android | macOS | Windows  | Electron  |Web|
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
