@@ -2,7 +2,7 @@
 
 #### Packaging arm64 only (recommended) 
 
-You can package only arm64 into applications for iPhone 5S and later. In Xcode, set **Build Active Architecture Only** to **Yes** and enter `arm64` only for **Valid Architectures**. Packaging only 1 architecture can reduce the amount the SDK adds to an IPA file by half.
+You can package only arm64 into applications for iPhone 5S and later. In Xcode, set **Build Active Architecture Only** to **Yes** and enter `arm64` only for **Valid Architectures**. A single-architecture TRTC SDK adds only 1.9 MB to an IPA file.
 ![](https://main.qcloudimg.com/raw/e8f7a3d2f5ee4c11df8b3fae4cc1ed31.png)
 
 ### How do I reduce the size of an installation package for Android?
@@ -23,7 +23,7 @@ Specifically, you need to add `abiFilters "armeabi-v7a"` in `build.gradle` of yo
 SO files take up most of the size of the MLVB SDK for Android. Therefore, if you want the SDK to add 1 MB or less to your installation package, you can have SO files downloaded to users’ phones after installation.
 
 - **Step 1. Download the SO files**
-At [GitHub](https://github.com/tencentyun/MLVBSDK/tree/master/Android), look for a ZIP file named `LiteAVSDK_x.x.xxx.zip` in the folders and decompress it. Find the SO files for the architectures you want to use.
+Download `LiteAVSDK_x.x.xxx.zip` at [GitHub](https://github.com/LiteAVSDK/TRTC_Android/SDK), decompress the file, and find the SO files for the architecture you use. Find the SO files for the architectures you want to use.
 
 - **Step 2. Upload the SO files to your server**
 Upload the SO files downloaded in Step 1 to your server (or to Tencent Cloud [COS](https://intl.cloud.tencent.com/product/cos)) and note the download URL, such as `http://xxx.com/so_files.zip`.
