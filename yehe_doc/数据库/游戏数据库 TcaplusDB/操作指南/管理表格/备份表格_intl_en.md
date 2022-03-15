@@ -1,19 +1,58 @@
-## Operation Scenarios 
-This document describes how to back up a table in the TcaplusDB Console.
+## Overview 
+This document describes how to back up a table in the TencentDB for TcaplusDB console.
 
-## Prerequisites
+## Prerequisite
 You have created a table. For more information, please see [Creating Table](https://intl.cloud.tencent.com/document/product/1016/32715).
 
 ## Directions
-### Automatic backup
-TcaplusDB automatically backs up tables at 01:00 AM (Beijing time) every day, and the backup data will be retained for 7 days, after which it will be automatically deleted.
+### Backup settings
+TcaplusDB 表格的数据库流水日志保留时间固定为7天不可修改，到期后备份将自动删除。
 
-### Manual backup
+TcaplusDB 表格支持用户修改数据保留时间 N 天：N <= 7天时，N天内可回档至任意时间点；N > 7天时，7天内可回档至任意时间点，7天后只能回档到自动备份（冷备）时间点。到期后备份将自动删除。
+
+#### 设置方式
+Enter the [Table List](https://console.cloud.tencent.com/tcaplusdb/table) page, click a table ID to enter the table details page, and click **Manual Backup** in the top-right corner to back up the table.
+2. 在弹出的备份设置对话框中，修改备份保留时间后，单击**确定**。
+
+#### 备份策略生效优先级
+集群、表格组、表格三者的层级关系为集群→表格组→表格，备份策略冲突时的生效优先级为：表格 > 表格组 > 集群。备份策略冲突时的生效策略详见下表，其中：“&#10003;” 表示已配置该层级的备份策略，“-”表示未配置该层级的备份策略。
+
+| 集群策略 | 表格组策略 | 表格策略 | 生效策略   |
+| -------- | ---------- | -------- | ---------- |
+| &#10003;        | -          | -        | 集群策略   |
+| -                     | &#10003;          | -        | 表格组策略 |
+| -                     | -          | &#10003;        | 表格策略   |
+| &#10003;        | &#10003;          | -        | 表格组策略 |
+| &#10003;        | -          | &#10003;        | 表格策略   |
+| &#10003;        | &#10003;          | &#10003;        | 表格策略   |
+
+例，设置了集群策略， 该集群下有3个表格组（1,2,3）， 只有表格组1设置了保留时间。那么，表格组1会遵循表格组1的策略，表格组2和表格组3因未设置具体表格组策略，故向上继承集群策略。
+
+表格同理，只有针对某表格 A 设置了对应的表格策略，表格 A 才会遵循此表格策略执行；未设置表格策略的表格将向上继承策略。
+
+### Automatic Backup
+TcaplusDB 于每日02:00-06:00自动对表格进行备份。
+
+### Manual Backup
 If you want to back up a table manually, you can do so in the console.
+
 **Method 1:**
-1. Enter the [Table List](https://console.cloud.tencent.com/tcaplusdb/table) page, select the target table and click **More** > **Back Up** in the "Operation" column, or select multiple tables and click **Batch Backup** at the top.
-2. In the pop-up backup dialog box, enter the remarks and click **OK** to back up the selected tables.
+1. Enter the [Table List](https://console.cloud.tencent.com/tcaplusdb/table) page, select the target table and click **Expand** in the "Operation" column, or select multiple tables and click **Batch Expand** at the top.
+2. 在弹出的备份对话框中，备注信息后，单击**确定**。
 
 **Method 2:**
 Enter the [Table List](https://console.cloud.tencent.com/tcaplusdb/table) page, click a table ID to enter the table details page, and click **Manual Backup** in the top-right corner to back up the table.
+
+### 备份历史
+
+Enter the [Table List](https://console.cloud.tencent.com/tcaplusdb/table) page, click a table ID to enter the table details page, and click **Manual Backup** in the top-right corner to back up the table.
+
+Where,
+- 备份方式有两种：自动备份/手动备份。
+- 存储文件数量表示该数据备份被划分成的存储文件数量。
+- 文件大小表示该备份文件的大小。
+- 备份时间表示启动备份任务的时间。
+- 文件过期时间表示该备份文件将保存至该时间，到达该时间点时将被系统自动清除。
+- 备份状态显示执行备份任务的结果（成功/失败）。
+- 操作：仅支持删除手动备份的文件。
 
