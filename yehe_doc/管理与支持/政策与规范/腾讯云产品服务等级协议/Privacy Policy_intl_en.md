@@ -587,5 +587,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 29.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45797).
 30.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45800).
 31.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45803).
+32.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590)
+
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
