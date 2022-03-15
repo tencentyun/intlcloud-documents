@@ -1,5 +1,5 @@
 ## 1.CONSIDERAÇÕES
-Esse módulo se aplica se você utiliza IoT Hub ("**Recurso**"). Este Módulo é incorporado ao contrato de segurança e privacidade de dados localizado no  (“**[DPSA](https://intl.cloud.tencent.com/document/product/301/17347)**"). Os termos utilizados, mas não definidos neste módulo, devem ter o significado dado a eles no DPSA. No caso de qualquer conflito entre o DPSA e este Módulo, este Módulo se aplicará conforme a inconsistência.
+Esse módulo se aplica se você utiliza IoT Hub ("**Recurso**"). Este Módulo é incorporado ao contrato de segurança e privacidade de dados localizado no  (“[DPSA](https://intl.cloud.tencent.com/document/product/301/17347)"). Os termos utilizados, mas não definidos neste módulo, devem ter o significado dado a eles no DPSA. No caso de qualquer conflito entre o DPSA e este Módulo, este Módulo se aplicará conforme a inconsistência.
 
 ## 2.PROCESSAMENTO
 Processaremos os seguintes dados em conexão com o Recurso:

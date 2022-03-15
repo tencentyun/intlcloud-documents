@@ -1,5 +1,5 @@
 ## 1.PENGANTAR
-Modul ini berlaku jika Anda menggunakan IoT Hub (“**Fitur**”). Modul ini tergabung dalam kebijakan privasi yang berada di  (“**[Kebijakan Privasi](https://intl.cloud.tencent.com/document/product/301/17345)**”). Istilah-istilah yang digunakan, tetapi tidak didefinisikan dalam Modul ini memiliki arti yang ditentukan dalam Kebijakan Privasi. Jika terdapat perbedaan antara Kebijakan Privasi dan Modul ini, Modul inilah yang akan berlaku meskipun terjadi inkonsistensi.
+Modul ini berlaku jika Anda menggunakan IoT Hub (“**Fitur**”). Modul ini tergabung dalam kebijakan privasi yang berada di  (“[Kebijakan Privasi](https://intl.cloud.tencent.com/document/product/301/17345)”). Istilah-istilah yang digunakan, tetapi tidak didefinisikan dalam Modul ini memiliki arti yang ditentukan dalam Kebijakan Privasi. Jika terdapat perbedaan antara Kebijakan Privasi dan Modul ini, Modul inilah yang akan berlaku meskipun terjadi inkonsistensi.
 
 ## 2.PENGONTROLAN
 Pengontrol informasi pribadi yang dijelaskan dalam Modul ini adalah sebagaimana yang ditentukan dalam Kebijakan Privasi.

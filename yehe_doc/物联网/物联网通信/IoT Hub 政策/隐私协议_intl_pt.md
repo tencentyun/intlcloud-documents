@@ -1,5 +1,5 @@
 ## 1.INTRODUÇÃO
-Esse módulo se aplica se você utiliza IoT Hub ("**Recurso**"). Este Módulo é incorporado à política de privacidade localizada na  (“**[Política de Privacidade](https://intl.cloud.tencent.com/document/product/301/17345)**”). Os termos usados, mas não definidos neste módulo devem ter o significado que lhes é atribuído na Política de Privacidade. Em caso de conflito entre o DPSA e este módulo, este Módulo se aplicará conforme a inconsistência.
+Esse módulo se aplica se você utiliza IoT Hub ("**Recurso**"). Este Módulo é incorporado à política de privacidade localizada na  (“[Política de Privacidade](https://intl.cloud.tencent.com/document/product/301/17345)”). Os termos usados, mas não definidos neste módulo devem ter o significado que lhes é atribuído na Política de Privacidade. Em caso de conflito entre o DPSA e este módulo, este Módulo se aplicará conforme a inconsistência.
 
 ## 2.CONTROLADORIA
 O controlador das informações pessoais descritas neste Módulo é o especificado na Política de Privacidade.

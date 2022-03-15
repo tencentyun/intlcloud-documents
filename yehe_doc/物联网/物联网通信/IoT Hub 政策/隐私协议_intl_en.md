@@ -1,5 +1,5 @@
 ## 1.INTRODUCTION
-This Module applies if you use IoT Hub (“**Feature**”). This Module is incorporated into the privacy policy located at  (“**[Privacy Policy](https://intl.cloud.tencent.com/document/product/301/17345)**”). Terms used but not defined in this Module shall have the meaning given to them in the Privacy Policy. In the event of any conflict between the Privacy Policy and this Module, this Module shall apply to the extent of the inconsistency.
+This Module applies if you use IoT Hub (“**Feature**”). This Module is incorporated into the privacy policy located at  (“[Privacy Policy](https://intl.cloud.tencent.com/document/product/301/17345)”). Terms used but not defined in this Module shall have the meaning given to them in the Privacy Policy. In the event of any conflict between the Privacy Policy and this Module, this Module shall apply to the extent of the inconsistency.
 
 ## 2.CONTROLLERSHIP
 The controller of the personal information described in this Module is as specified in the Privacy Policy.
