@@ -577,5 +577,6 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
 21.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
 22.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
+23.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590)
 ### 수정 내역
 [개인 정보 보호 정책](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
