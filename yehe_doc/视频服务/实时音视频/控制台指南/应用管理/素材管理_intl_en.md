@@ -56,7 +56,7 @@ If you want to set an image as the background displayed during on-cloud stream m
 3. In the list on the left, select the image you want to delete, and click **Delete** in the list or in the **Image Info** section.
 4. A dialog box is displayed, asking you to confirm the deletion.
 ![](https://main.qcloudimg.com/raw/d4d2100c34a8720de9ad5fc85afbde2b.png)
-5. Click **Confirm** to delete the image.
+5. Click **Confirm** to delete the image. 
 
 
 ## References
