@@ -32,9 +32,9 @@ This document describes how to install an SSL certificate (JKS format) on a Tomc
 >!
 >
 >- For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM console](https://console.cloud.tencent.com/cvm) to obtain the server IP address, username, and password.
-- If you have selected the **Paste CSR** method when applying for the SSL certificate, or your certificate brand is Wotrus, the option to download the JKS certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
- - Access the [conversion tool](https://myssl.com/cert_convert.html).
- - Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
+>- If you have selected the **Paste CSR** method when applying for the SSL certificate, or your certificate brand is Wotrus, the option to download the JKS certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
+>    - Access the [conversion tool](https://myssl.com/cert_convert.html).
+>    - Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
 
 
 ## Directions
@@ -64,7 +64,7 @@ For details about the `server.xml` file, see below:
 >
 ```
  <?xml version="1.0" encoding="UTF-8"?>
-  <Server port="8005" shutdown="SHUTDOWN">
+ <Server port="8005" shutdown="SHUTDOWN">
     <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
     <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
     <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
@@ -76,24 +76,25 @@ For details about the `server.xml` file, see below:
               description="User database that can be updated and saved"
               factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
               pathname="conf/tomcat-users.xml" />
-  </GlobalNamingResources>
-  <Service name="Catalina">
+ </GlobalNamingResources>
+   <Service name="Catalina">
+
         <Connector port="80" protocol="HTTP/1.1" connectionTimeout="20000"  redirectPort="8443" />
         <Connector port="443" protocol="HTTP/1.1"
                maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
                clientAuth="false"
                 keystoreFile="Tomcat installation directory/conf/cloud.tencent.com.jks"
                 keystorePass="******" />
-    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
-   <Engine name="Catalina" defaultHost="cloud.tencent.com">
-      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
+    <Engine name="Catalina" defaultHost="cloud.tencent.com">
+        <Realm className="org.apache.catalina.realm.LockOutRealm">
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
                resourceName="UserDatabase"/>
-      </Realm>
-    <Host name="cloud.tencent.com"  appBase="webapps" 
+        </Realm>
+     <Host name="cloud.tencent.com"  appBase="webapps" 
         unpackWARs="true" autoDeploy="true" >
         <Context path="" docBase ="Knews" />
-    <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
            prefix="localhost_access_log" suffix=".txt"  
            pattern="%h %l %u %t &quot;%r&quot; %s %b" />
       </Host>
@@ -101,6 +102,7 @@ For details about the `server.xml` file, see below:
   </Service>
 </Server>
 ```
+
 The main parameters of the configuration file are described as below:
  - **keystoreFile**: location of the keystore file. You can specify an absolute path or a path relative to the &lt;CATALINA_HOME&gt; (Tomcat installation directory) environment variable. If this parameter is not set, Tomcat reads the file named ".keystore" from the user directory of the current OS user.
  - **keystorePass**: keystore password. If you set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the `keystorePass.txt` file in the Tomcat folder.
@@ -128,18 +130,19 @@ You can redirect HTTP requests to HTTPS by configuring the following settings:
     <!-- Authorization setting for SSL -->
     <auth-method>CLIENT-CERT</auth-method>
     <realm-name>Client Cert Users-only Area</realm-name>
-    </login-config>
-    <security-constraint>
-    <!-- Authorization setting for SSL -->
-    <web-resource-collection>
-    <web-resource-name>SSL</web-resource-name>
-    <url-pattern>/*</url-pattern>
-    </web-resource-collection>
-    <user-data-constraint>
-    <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-    </user-data-constraint>
-    </security-constraint>
+</login-config>
+<security-constraint>
+   <!-- Authorization setting for SSL -->
+   <web-resource-collection>
+      <web-resource-name>SSL</web-resource-name>
+      <url-pattern>/*</url-pattern>
+   </web-resource-collection>
+   <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+   </user-data-constraint>
+</security-constraint>
 ```
+
 3. Edit the `server.xml` file in the Tomcat installation directory by changing the `redirectPort` parameter to the port of the SSL connector, i.e., port 443, as shown below:
 ```
 <Connector port="80" protocol="HTTP/1.1"
