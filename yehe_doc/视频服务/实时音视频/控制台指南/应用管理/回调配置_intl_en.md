@@ -15,9 +15,9 @@ The event callback feature can send notifications about TRTC events in the form 
 3. Click **Confirm** to complete the configuration.
 
 <span id="setadd"></span>
-### Setting Callback Address
-1. In the **Callback Address** section of the [**Callback Configuration**](#step0) tab, click **Edit**.
-2. Enter a callback address (required).
+## Setting Callback URL
+1. In the **Callback URL** section of the [**Callback Configuration**](#step0) tab, click **Edit**.
+2. Enter a callback URL (required).
 	- Room event callback: supports sending notifications about creating/closing a room, entering/exiting a room, etc.
 	- Media event callback: supports sending notifications about starting or stopping video/audio/substream data push, etc.
 >? Protocols for callback URLs: http and https; up to 2,083 characters
