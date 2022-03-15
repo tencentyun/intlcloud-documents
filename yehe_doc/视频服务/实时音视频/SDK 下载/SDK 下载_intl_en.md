@@ -17,7 +17,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_iOS_en_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
@@ -26,7 +26,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
    </tr>
      <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Android_en_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
@@ -35,7 +35,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
    </tr>
      <tr>
       <td style="text-align:center">Windows(C++)  </td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Win_en_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
@@ -44,7 +44,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
    </tr>
      <tr>
       <td style="text-align:center">Windows(C#) </td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Win_en_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
@@ -53,7 +53,7 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
    </tr>
      <tr>
       <td style="text-align:center">Mac</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Mac_en_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
@@ -80,8 +80,8 @@ LiteAV_TRTC integrates only TRTC and stream playback (`TXLivePlayer`) features. 
    </tr>
 	    <tr>
       <td style="text-align:center">Flutter</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'zip'})" target="_blank" href="https://pub.dev/packages/tencent_trtc_cloud/versions">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'github'})" target="_blank" href="https://github.com/c1avie/trtc_demo">Github</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'zip'})" target="_blank" href="https://comm.qq.com/trtc/TRTC-Simple-Demo_en.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'github'})" target="_blank" href="https://github.com/LiteAVSDK/TRTC_Flutter">Github</a></td>
       <td style="text-align:center">N/A</td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/39243">DOC</a></td>
       <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35098">DOC</a></td>
