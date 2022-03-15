@@ -2,7 +2,7 @@
 ## Specifications
 ### Memory edition
 >?
->- As a trial version, the 256 MB specification on v4.0 or v5.0 is only suitable for product verification in testing environments but not recommended for use in production environments. It is available only in Shanghai Zone 5, Beijing Zone 6, and Guangzhou Zone 6. Other 1 GB and above specifications cannot be downgraded to the 256 MB specification.
+>- As a trial version, the 256 MB specification on v4.0 or v5.0 is only suitable for product verification in testing environments but not recommended for use in production environments. It is available only in Shanghai Zone 5, Beijing Zone 6, and Guangzhou Zone 6. Specifications of 1 GB and greater cannot be downgraded to the 256 MB specification.
 >- v2.8 is unavailable currently, and v4.0 or later is recommended. To purchase v2.8, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 <table>
 <thead><tr>
@@ -17,7 +17,7 @@
 <tr>
 <td>QPS</td><td>80,000 to 100,000</td><td>80,000 to 100,000</td><td>80,000 to 100,000 per shard</td></tr>
 <tr>
-<td>Max connections</td><td>40,000</td><td>40,000</td><td>40,000 per shard</td></tr>
+<td>Max connections</td><td>10,000 by default and up to 40,000</td><td>10,000 by default and up to 40,000</td><td>10,000/shard by default and up to 40,000</td></tr>
 <tr>
 <td>Traffic limit</td><td>10 MB/s to 64 MB/s</td><td>10 MB/s to 64 MB/s</td><td>144 MB/s to 6 GB/s</td></tr>
 <tr>
@@ -115,7 +115,7 @@ Cluster edition throughput = shard throughput * number of shards
 
 ## Performance Data
 ### Performance references
-The time needed to execute Redis commands varies. Businesses use different database commands in their production environments; therefore, the corresponding performance values will also vary. The test results listed here are obtained with specified parameters and are for your reference only. Please conduct tests in your actual business environment for more accurate results.
+The time needed to execute Redis commands varies. Businesses use different database commands in their production environments; therefore, the corresponding performance values will also vary. The test results listed here are obtained with specified parameters and are for your reference only. Conduct tests in your actual business environment for more accurate results.
 
 #### Single-node test performance
 |  Redis Instance Specification | Connections | QPS |
@@ -143,5 +143,5 @@ redis-benchmark -h 10.66.187.x -p 6379 -a crs-090rjlih:1234567 -t set -c 3500 -d
 ```
 
 #### QPS calculation
-Sum of the QPS values of 3 pressure test clients (tested by redis-benchmark).
+Sum of the QPS values of three pressure test clients (tested by redis-benchmark).
 
