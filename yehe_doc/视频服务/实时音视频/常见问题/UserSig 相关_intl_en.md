@@ -27,7 +27,7 @@ If you want to quickly run the demo to try out TRTC SDK features, you can calcul
 ### Calculating `UserSig` through client sample code
 1. **Get the `SDKAppID` and key**:
     1. Log in to the **TRTC console** and select **[Application Management](https://console.cloud.tencent.com/trtc/app)**.
-    2. Click **Application Information** of the target `SDKAppID` and click the **Quick Start** tab.
+    2. Click **Application Info** of the target `SDKAppID` and click the **Quick Start** tab.
     3. View the secret key used to calculate `UserSig` in **Step 2: obtain the secret key to issue UserSig**.
     4. Click **Copy Secret Key** to copy the key to the clipboard.
  ![](https://main.qcloudimg.com/raw/b8575d1c97952ad8b1b28df16d69a8cb.png)
@@ -81,7 +81,7 @@ TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HM
 **Upgrade/Switch:**
 1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
 2. Click **Application Management** on the left sidebar, find your application, and click **Application Info**.
-3. Select the **Quick Start** tab and click **Upgrade**, **Asymmetric Encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
+3. Select the **Quick Start** tab and click **Upgrade**, **asymmetric encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
   - Upgrade
   - Switch to the old algorithm ECDSA-SHA256:
       ![](https://qcloudimg.tencent-cloud.cn/raw/4fc4e0e0b9480b74cd7a9206f235b550.png)
