@@ -1,4 +1,4 @@
-Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview) and select **Video Processing Settings** > **Template Settings** on the left sidebar. Built-in templates there include **video transcoding template**, **TESHD template**, **audio transcoding template**, **adaptive bitrate streaming template**, **watermark template**, **screencapture template**, **animated image generating template**, and **intelligent recognition template**, each of which can be added to a task flow for video processing.
+Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview) and select **Video Processing** > **Template Settings** on the left sidebar. Built-in templates there include **video transcoding template**, **TESHD template**, **audio transcoding template**, **adaptive bitrate streaming template**, **watermark template**, **screencapture template**, **animated image generating template**, and **intelligent recognition template**, each of which can be added to a task flow for video processing.
 
 
 ## Video Transcoding Template
@@ -25,7 +25,7 @@ For details, please see [Preset transcoding templates](https://intl.cloud.tencen
 
 ## TESHD Template
 
-You can create a TESHD template and customize it according to your business needs. Select **TESHD** and click **Create Transcoding Template** to enter the custom template configuration page.
+You can create a TESHD template and customize it according to your business needs. Select **TESHD Template** and click **Create Transcoding Template** to enter the custom template configuration page.
 + Template name: enter up to 64 characters. Only letters, digits, spaces, underscores (_), hyphens (-), and periods (.) are supported
 + Container format: MP4, FLV, HLS
 + Configuration items: video and audio parameters
