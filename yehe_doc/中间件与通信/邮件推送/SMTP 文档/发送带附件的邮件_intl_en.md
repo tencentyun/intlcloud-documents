@@ -162,7 +162,7 @@ Some fields have parameters in addition to values. Value and parameter as well a
 The meaning and use of each of these types can be seen from their names. The hierarchical relationship between them can be summarized as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/c8fc71fa5b2e90fd96e5ad2755effd2b.png)
 If you want to add attachments to an email, you must define the `multipart/mixed` part. If there are embedded resources, you must define at least the `multipart/related` part; if plain text and hypertext coexist, you must define at least the `multipart/alternative` part.
->?The number of attachments should not exceed 10, the size of a single attachment should not exceed 5 MB, and the total size of all attachments should not exceed 10 MB. For more information, see [Data Structure](https://intl.cloud.tencent.com/document/product/1084/39418#Attachment).
+>?The number of attachments should not exceed 10, the size of a single attachment should not exceed 4 MB, and the total size of all attachments should not exceed 8 MB. For more information, see [Data Structure](https://intl.cloud.tencent.com/document/product/1084/39418#Attachment).
 
 ## Sample Code
 <dx-codeblock>
