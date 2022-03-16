@@ -21,13 +21,13 @@ See the figure below for an overview of this feature:
  2. Click **Roles** on the left sidebar to go to the roles list page.
  3. Choose **Create Role** > **Tencent Cloud Account** to create a custom role.
  4. Select **Current root account **, check **Allow the current role to access console**, and click **Next**.
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/1db44714391015369d870e5aabbd0618.png)
 >!If the option **Allow the current role to access console** is not available, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for adding the role to the allowlist.
 >
  5. Set access policies for the role, e.g., the read-only policy `QcloudCLSReadOnlyAccess`, and click **Next**.
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/853c5443975035744c41ee9c09187eb3.png)
  6. Enter the role name and click **Done**.
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/d45e624e8f71c58d55afe479ed19adc7.png)
 <span id="step2"></span>
 2. Obtain the access key of the current user. For more information, see [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228).
 
@@ -188,7 +188,7 @@ https://cloud.tencent.com/login/roleAccessCallback?nonce=52055817&s_url=https%3A
 ## Filter Parameter Description
 
 Filter parameters are used to generate the filter condition in the query statement box at the bottom of the page, as shown in the figure blow, and are suitable for fixed search criteria.
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/0e4c485436980cff533aebc657c4ed81.png)
 
 Filter parameters are in JSON format in the following structure:
 ```
