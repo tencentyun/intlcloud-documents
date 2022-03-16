@@ -13,11 +13,11 @@
 2. On the left sidebar, click **Dashboard** to enter the dashboard management page.
 3. Click the ID/name of the target dashboard to enter the dashboard details page.
 4. Click ![](https://qcloudimg.tencent-cloud.cn/raw/db1173f042aa2fcc3bd65cfa2a682639.png) at the top to enter the configuration page.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/101678bae6703791c195955f9a17c273.png)
 5. Click **Template Variable** and click **Create**.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/4afdfcc855ed171d9bcad02b54e78177.png)
 6. In the pop-up window, configure the template variable information and click **Submit**.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/10a34ab965cc3d050f73b336073619fc.png)
 <table>
 	<tr><th>Parameter</th><th>Description</th></tr>
 	<tr><td>Variable Type</td><td>Variable category. Different categories correspond to different configuration items and application scenarios. Here, select **Data Source**.</td></tr>
@@ -30,10 +30,10 @@
 >? If there are no charts on your dashboard, please [add charts](https://intl.cloud.tencent.com/document/product/614/43560).
 >
 8. At the top of the edited chart, click **Log Topic**, select **Use Data Source Variable**, and select the template variable created just now.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/0f3390d4b75f694718bb30ef4c7731c8.png)
 9. Click **Save**.
 10. On the dashboard details page, click the **Data Source** drop-down list and select another log topic. Then the system changes automatically changes the data source of the chart using the variable accordingly.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/7965ccbc7def0e3ff7d3cbe9491773b9.png)
 
 
 
@@ -50,11 +50,11 @@ A data source variable does not apply directly to all charts on the dashboard. I
 2. On the left sidebar, click **Dashboard** to enter the dashboard management page.
 3. Click the ID/name of the target dashboard to enter the dashboard details page.
 4. Click ![](https://qcloudimg.tencent-cloud.cn/raw/db1173f042aa2fcc3bd65cfa2a682639.png) at the top to enter the configuration page.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/0124612359c336be0c6fedf717a1e06d.png)
 5. Click **Template Variable** and click **Create**.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/b94b9a91d97290aab7b5b1268a4c1e4d.png)
 6. In the pop-up window, configure the template variable information and click **Submit**.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/fb06fb025edf90a46c6e181175091a99.png)
 <table>
 	<tr><th>Parameter</th><th>Description</th></tr>
 	<tr><td>Variable Type</td><td>Variable category. Different categories correspond to different configuration items and application scenarios. Here, select **Quick Filtering**.</td></tr>
@@ -64,7 +64,7 @@ A data source variable does not apply directly to all charts on the dashboard. I
 	<tr><td>Support Multiple-Selection</td><td>If this parameter is toggled on, you can select multiple variable values as filter conditions.</td></tr>
 </table>
 7. On the dashboard details page, click the variable console and select the filter field. Then the data on the dashboard is refreshed to the filtered content.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/c94d5e052a18665e27f06fbcd7d11d10.png)
 
 
 
