@@ -33,7 +33,7 @@ Value-added services are available only for the Pro and Flagship editions. See t
 <th width="25%">Flagship Edition</th>
 </tr><tr>
 <td>Increasing the maximum number of audio-video groups (AvChatRoom) to unlimited</td>
-<td rowspan = "3">Billed by calendar month. Fees incurred within a calendar month will be deducted on the third day of the next month. No fees will be charged for the month the service is activated.</td>
+<td rowspan = "3">Billed by calendar month. Fees incurred within a calendar month will be deducted on the third day of the next month. </td>
 <td>449.99 USD/month</td>
 <td>N/A</td>
 </tr>
