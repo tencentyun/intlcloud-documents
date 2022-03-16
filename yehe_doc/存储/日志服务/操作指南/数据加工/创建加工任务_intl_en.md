@@ -48,9 +48,9 @@ The following describes how to create a data processing task.
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. On the left sidebar, click **Data Processing**.  
 3. Click **Create Processing Task**.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/e96c95d62e1c810492d68b1663f366e8.png)
 4. On the **Basic Info** page, configure the following information:
-
+![](https://qcloudimg.tencent-cloud.cn/raw/1076f04e3090f71483e843f4d8a2e679.png)
  - Task Name: enter the custom task name.
  - Source Log Topic: select the source log topic.
  - Target Log Topic: enter a target name and select a log topic.
@@ -58,7 +58,7 @@ The following describes how to create a data processing task.
 5. Click **Next**.
 6. On the **Edit Processing Statement** page, perform the following operations:
  1. A DSL function can be tested by two types of data: raw log data and custom data. The system automatically loads raw log data, 100 records by default. If you don't think the raw log data is insufficient for testing the DSL function, you can directly enter custom data on the **Custom Data** tab page. Alternatively, you can click **Add Custom Data** on the **Raw Data** tab page, modify the data, and use it as your custom data.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/a80edc9e020d5d2847ad66728e515dfd.png)
 >! Custom data must be in JSON format.
 > 
  If there are multiple entries of custom data, add them in the following format:
@@ -82,5 +82,5 @@ The DSL statement generator provides the descriptions and examples of multiple t
 
  4. After writing the DSL processing statement, click **Preview** or **Checkpoint Debugging** to run and debug the DSL function.
 The running result will be displayed at the bottom right of the page. You can adjust the DSL statement according to the running result until it meets your requirements.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/e3a8a47fc5d0e50532ca4f7b186eb421.png)
 7. Click **OK** to submit the data processing task.
