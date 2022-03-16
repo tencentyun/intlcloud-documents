@@ -1,4 +1,4 @@
-In the [VOD console](https://console.cloud.tencent.com/vod/overview), select **Data Center** > **Data Analysis** where **IP Visit** (displayed by default), **Playback** and **Traffic Usage** tabs can be viewed.
+In the [VOD console](https://console.cloud.tencent.com/vod/overview), select **Data Center** > **Data Analysis** where **IP Visit** (displayed by default), **Playback**, and **Traffic Usage** tabs can be viewed.
 
 ## IP Visit
 
