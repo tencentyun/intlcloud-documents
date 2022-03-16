@@ -1,4 +1,4 @@
-When creating an EMR cluster, if you do not check "Enable Public Network Access for Cluster Master Node", you cannot access the WebUIs of relevant components through the native WebUI access addresses on the component management page. This document describes how to view native component WebUIs in a cluster where the public network access to master node is not enabled.
+When creating an EMR cluster, if you do not check **Enable Public Network Access for Cluster Master Node**, you cannot access the WebUIs of relevant components through the native WebUI access addresses on the component management page. This document describes how to view native component WebUIs in a cluster where the public network access to master node is not enabled.
 ## Private Network Access
 
 You can use a browser to access a component's WebUI over the private network. Below are the links to native WebUIs of each component:
@@ -20,7 +20,7 @@ You can use a browser to access a component's WebUI over the private network. Be
 ## Binding an EIP
 
 You can bind an elastic public IP (EIP) to the master node by following the steps below to access component WebUIs from a browser over the public network:
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the ID/Name of the target cluster to enter the cluster details page. Select the primary node to which an EIP binds in **Cluster Resources** ->**Resource Management** and click its Instance ID/Resource Name to enter the CVM Console.
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the **ID/Name** of the target cluster to enter the cluster details page. Select the primary node to which an EIP binds in **Cluster Resources** ->**Resource Management** and click its Instance ID/Resource Name to enter the CVM Console.
 
 ![](https://main.qcloudimg.com/raw/ecb4451fbe49fe2c0c7c1907500f8f24.png)
 2. Adjust the network bandwidth settings of the CVM instance to which the EIP will be bound and make sure that its bandwidth is not 0; otherwise, the node cannot be connected.
