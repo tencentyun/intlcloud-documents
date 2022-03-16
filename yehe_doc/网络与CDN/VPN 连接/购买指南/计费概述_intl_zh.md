@@ -46,6 +46,7 @@ VPN 网关支持按流量计费。
 <td>-</td>
 </tr>
 </tbody></table>
+
 >?200MB、500MB和1000MB带宽目前仅华北地区（北京）、华东地区（上海）、华南地区（广州）、西南地区（成都）、港澳台地区（中国香港）、华东地区（南京）和等可用区开放，如需请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
 
 
