@@ -33,7 +33,7 @@ CVM에 동일한 용량과 종류의 클라우드 디스크가 여러 개 탑재
 2. 확장할 클라우드 디스크를 찾고 작업 열에서 **더보기** > **확장**을 선택합니다.
 3. 필요한 새로운 용량 크기(반드시 현재 크기보다 크거나 같아야 함)를 선택합니다.
 4. 결제를 완료합니다.
-5. 타깃 클라우드 서비스의 운영 체제 유형에 따라 사용자는 [파티션 및 파일 시스템(Windows) 확장](https://cloud.tencent.com/document/product/362/31601) 또는 [파티션 및 파일 시스템(Linux) 확장](https://cloud.tencent.com/document/product/362/39995)을 실행하여 확장된 부분의 용량을 기존 파티션 안으로 나누거나 확장된 부분의 용량을 독립된 새로운 파티션으로 포맷해야 합니다.
+5. 타깃 클라우드 서비스의 운영 체제 유형에 따라 사용자는 [파티션 및 파일 시스템(Windows) 확장](https://intl.cloud.tencent.com/document/product/362/31601) 또는 [파티션 및 파일 시스템(Linux) 확장](https://intl.cloud.tencent.com/document/product/362/39995)을 실행하여 확장된 부분의 용량을 기존 파티션 안으로 나누거나 확장된 부분의 용량을 독립된 새로운 파티션으로 포맷해야 합니다.
 :::
 ::: \sAPI\s를 통한 데이터 디스크 확장[](id:useAPI)
 ResizeDisk API를 사용하여 지정된 클라우드 디스크를 확장할 수 있습니다. 자세한 작업 내용은 [ResizeDisk](https://intl.cloud.tencent.com/document/product/362/16310)를 참고하십시오.
