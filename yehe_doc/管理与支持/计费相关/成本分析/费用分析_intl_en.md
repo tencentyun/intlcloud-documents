@@ -8,7 +8,6 @@ The [spend analysis](https://console.cloud.tencent.com/expense/cost/analysis) fe
 > - Daily spend includes your actual spend on monthly subscription and pay-as-you-go resources. Assume that you pay 120 USD for a 12-month subscription of a CVM. The 120 USD will be entirely counted into the spend of the day of purchase.
 > - The spend data on this page and in the notifications we send to you is estimation and may differ from your actual spend. It only covers your spend until the date you view the page.
 > - The chart displays the top 10 projects by spend, and the rest are aggregated into "Others". You can export the data to view the spend of all projects.
-> - The spend analysis feature is currently in beta test. To try it out, contact your Tencent Cloud rep.
 > 
 
 ## Spend Overview
@@ -89,7 +88,18 @@ You can click **Delete** to delete an alert or select multiple alerts and click 
 1. The spend analysis overview and details of the root account can be viewed by the root account and its sub-accounts (sub-users/collaborators) if the root account has enabled the spend analysis feature.
 2. The spend analysis overview and details of the root account cannot be viewed by the root account or its sub-accounts (sub-users/collaborators) if the root account hasn’t enabled the spend analysis feature.
 
+## Spend Projection
 
+In **Spend Analysis**, you can view your projected spend for a specified period (90 days at most).
+![](https://qcloudimg.tencent-cloud.cn/raw/7d49609d2dd0f667aaa8362947084c74.png)
+
+>? 
+> - The projection results are for reference only. For reconciliation, please use your actual bills.
+> - This feature works only if you have spending history for at least 60 days with an average daily spend of at least 1 USD.
+> - Spend projection does not support categorization or advanced filters. When you select an item for **Categorize By** or **Advanced Filters**, spend projection will be disabled automatically.
+> - Spend projection is based on your past spend on pay-as-you-go resources and therefore covers only your pay-as-you-go spend. The data is for reference only and may differ from your actual spend during the projected period.
+> - The feature supports only the projection of your total pay-as-you-go spend. It cannot project your spend for specific products, projects, etc.
+> 
 
 
 
