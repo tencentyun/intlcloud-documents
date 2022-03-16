@@ -59,9 +59,11 @@ See the [AppDelegate+Push](https://github.com/tencentyun/TIMSDK/blob/master/iOS/
     NSLog(@"[PUSH][TPNS] %s", __func__);
 }
 ```
+
 2. **Perform account binding during login**: after logging in to the IM SDK, you need to perform the following operations:
 	 1. Get and save the token obtained after TPNS registration from the TPNS-iOS SDK callback `- xgPushDidRegisteredDeviceToken:xgToken:error:`.
 	 2. Bind the current login IM account with the TPNS push service.
+
 ```
 /**
 @brief   // Callback for TPNS registration
@@ -70,6 +72,7 @@ See the [AppDelegate+Push](https://github.com/tencentyun/TIMSDK/blob/master/iOS/
 @param error   // Error message. If `error` is `nil`, the push service has been successfully registered.
 @note TPNS SDK1.2.6.0+
 */
+
 - (void)xgPushDidRegisteredDeviceToken:(nullable NSString *)deviceToken xgToken:(nullable NSString *)xgToken error:(nullable NSError *)error
 {
     NSLog(@"[PUSH][TPNS] %s, deviceToken:%@, xgToken:%@, error:%@", __func__, deviceToken, xgToken, error);
@@ -109,7 +112,9 @@ See the [AppDelegate+Push](https://github.com/tencentyun/TIMSDK/blob/master/iOS/
     [XGPushTokenManager.defaultTokenManager upsertAccountsByDict:@{ @(0): userID?:@"" }];
 }
 ```
+
 3. **Unbind the account upon logout**: after logging out of the IM SDK, you need to call the following method to unbind the TPNS push account to avoid receiving pushed messages after logout.
+
 ```
 - (void)push_unregisterIfLogouted
 {
@@ -118,8 +123,10 @@ See the [AppDelegate+Push](https://github.com/tencentyun/TIMSDK/blob/master/iOS/
     NSLog(@"[PUSH][TPNS] %s", __func__);
 }
 ```
+
 4. **Set offline push messages when sending messages.**
 When calling [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send messages, you can use [V2TIMOfflinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) to set offline push parameters. For more information, see the `+ sendMessage:toConversation:isSendPushInfo:isOnlineUserOnly:priority:Progress:SuccBlock:FailBlock:` method of [TUIMessageDataProvider](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/DataProvider/TUIMessageDataProvider.m) in the TUIKit demo.
+
 ```java
     NSString *userID = conversationData.userID;
     NSString *groupID = conversationData.groupID;
@@ -160,8 +167,10 @@ When calling [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager
                                                succ:succ
                                                fail:fail];
 ```
+
 5. **Parse offline push messages.**
 After TPNS is integrated, your app can listen for notification bar push clicks via the TPNS callback `- xgPushDidReceiveNotificationResponse:withCompletionHandler:`, parse offline push messages based on the offline push format configured via [V2TIMOfflinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) in [step 4](#step4), and implement redirection. For more information, see the code for parsing offline push messages in the TUIKit demo.
+
 ```
  /// Unified click callback
 /// @param response   //`UNNotificationResponse` for iOS 10+ and macOS 10.14+, or `NSDictionary` for earlier versions
