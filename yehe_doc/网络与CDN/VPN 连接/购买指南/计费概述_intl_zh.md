@@ -16,7 +16,7 @@ VPN 网关支持按流量计费。
 
 ### 按流量计费
 按流量计费为后付费模式，包含两部分费用：访问公网产生的**流量费用**和**网关费用**（按小时计算）。
-- 流量费用请参见 [公网网络-按流量计费](https://buy.cloud.tencent.com/price/idc)。
+- 流量费用请参见 [公网网络-按流量计费](https://intl.cloud.tencent.com/document/product/213/10578)。
 - 网关费用请参见下表：
 <table>
 <thead>
