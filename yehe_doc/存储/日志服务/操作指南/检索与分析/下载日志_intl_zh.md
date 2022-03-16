@@ -13,12 +13,12 @@
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
 2. 在左侧导航栏中，单击**检索分析**，进入检索分析管理页面。
 3. 单击“日志集”和“日志主题”的下拉框，选择待检索的内容。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/8594f9cc1e8780f5ec0645deac120b51.png)
 4. 单击日志时间，选择需要检索的日志时间。
 您可以选择最近时间、相对时间，也可以自定义时间范围。
 5. 单击**检索分析**。
 6. 待检索到日志数据后，单击 <img src="https://main.qcloudimg.com/raw/53b7030f85123fe5658e7cce23b730c8.png"></img> > **下载日志**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/f5af6beb79610ca69c488f44f6f655db.png)
 >? 若未检索到日志数据，则无法下载日志。
 >
 7. 在弹出的窗口中，确认需下载日志的时间范围和检索语句，并根据如下信息设置下载日志数据。
