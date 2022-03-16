@@ -1,4 +1,4 @@
-## 現象の説明
+##故障について
 Linux CVMは、メモリ使用率が100%でない場合、OOM(Out Of Memory)をトリガーします。下図のとおりです。
 ![](https://main.qcloudimg.com/raw/72cbd63ac445a1caa8d82fa1e55ba5a5.png)
 
@@ -7,7 +7,7 @@ Linux CVMは、メモリ使用率が100%でない場合、OOM(Out Of Memory)を�
  - `vm.panic_on_oom=0`の場合、システムはOOMを提示し、oom-killerを起動して、メモリの占有が最も多いプロセスを強制終了します。
  - `vm.panic_on_oom =1`の場合、システムは自動的に再起動します。
 
-## 解決方法
+## ソリューション
 1. [処理手順](#ProcessingSteps)を参照して、トラブルシューティングを行います。インスタンスのメモリ使用率が高すぎないか、またプロセス総数が制限されていないか確認してください。
 2. `min_free_kbytes`値の設定を確認し、正しい設定に変更します。
 
@@ -25,9 +25,10 @@ sysctl -a | grep min_free
 ```
 vim /etc/sysctl.conf
 ```
-5. **i**を押して編集モードに入り、`vm.min_free_kbytes`設定項目を変更します。
->?`vm.min_free_kbytes`の値をメモリ合計の1%以下に変更することをお勧めします。
->
+5. **i**を押して編集モードに入り、`vm.min_free_kbytes`設定項目を変更します。この設定項目が存在しない場合は、設定ファイルに直接追加すればOKです。
+<dx-alert infotype="explain" title="">
+`vm.min_free_kbytes`の値をメモリ合計の1%以下に変更することをお勧めします。
+</dx-alert>
 6. **Esc**を押して**:wq**と入力し、次に**Enter**を押してVIMエディタを保存して終了します。
 7. 以下のコマンドを実行して、設定を有効にすれば完了です
 ```

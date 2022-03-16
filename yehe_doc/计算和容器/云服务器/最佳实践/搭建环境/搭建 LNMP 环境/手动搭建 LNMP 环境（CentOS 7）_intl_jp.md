@@ -1,8 +1,13 @@
 ## 概要
 LNMP環境とは、LinuxでのNginx+MySQL/MariaDB+PHPで構成されるウェブサイトサーバーアーキテクチャです。本ドキュメントは、Tencent Cloud CVMでLNMP環境を手動で構築する方法について説明します。
 
-手動でLNMP 環境を構築するには、 Linux コマンド（例：[CentOS環境でのYUMを使用してソフトウェアのインストール](https://intl.cloud.tencent.com/document/product/213/2046)）等の常用コマンドに精通している必要があります。また、インストールするソフトウェアの使用方法及びバージョン間の互換性を把握することも必要です。
->!Tencent Cloudでは、クラウドマーケットのイメージ環境を通じてLNMP環境をデプロイすることをお勧めしています。LNMP環境を手動で構築すると時間がかかる可能性があります。
+手動でLNMP 環境を構築するには、 Linux コマンド（例：[CentOS環境でのYUMを使用してソフトウェアのインストール](https://cloud.tencent.com/document/product/213/2046)）等の常用コマンドに精通している必要があります。また、インストールするソフトウェアの使用方法及びバージョン間の互換性を把握することも必要です。
+
+<dx-alert infotype="notice" title="">
+Tencent Cloudでは、クラウドマーケットのイメージ環境を通じてLNMP環境をデプロイすることをお勧めしています。LNMP環境を手動で構築すると時間がかかる可能性があります。
+</dx-alert>
+
+
 
 ## ソフトウェアのバージョン
 この例では、LNMP環境の構築に使用されるソフトウェアのバージョンと説明は次のとおりです。
@@ -12,8 +17,8 @@ LNMP環境とは、LinuxでのNginx+MySQL/MariaDB+PHPで構成されるウェブ
 - PHP：スクリプト言語、本ドキュメントはPHP 7.2.22を例とします。
 
 
-## 前提条件
-Linux CVMを購入済みであること。CVMを購入していない場合は、[Linux CVMのクイック設定](https://intl.cloud.tencent.com/zh/document/product/213/10517)をご参照ください。
+##  前提条件
+Linux CVMを購入済みであること。
 
 
 ## 操作手順
@@ -109,10 +114,10 @@ yum -y remove パッケージ名
 vi /etc/yum.repos.d/MariaDB.repo
 ```
 3. **i**キーを押して編集モードに切り替え、以下の内容を書き込み、MariaDBソフトウェアライブラリを追加します。
->? 
->- 異なるOSのMariaDBソフトウェアライブラリが違うため、[MariaDB 公式サイト](https://downloads.mariadb.org) にアクセスして、他のOSに対応するMariaDBソフトウェアライブラリのインストール情報を取得できます。
->- CVMが[プライベートネットワークサービス](https://intl.cloud.tencent.com/document/product/213/5225)を使用する場合、`mirrors.cloud.tencent.com` をプライベートネットワークアドレス `mirrors.tencentyun.com`に変更します。このようにして、パブリックネットワークトラフィックは影響を受けず、アクセス速度が高速になります。 
->
+<dx-alert infotype="explain" title="">
+- 以下の設定では、Tencent Cloudイメージソースを使用しています。Tencent Cloudイメージソースは、MariaDB公式サイトソースと同期して更新が行われるため、MariaDB 10.4バージョンのソースに不具合が発生する可能性があります（ここでは、CentOS 7.6にMariaDBバージョン10.4.22をインストールした場合を例とします）。他のバージョンやOSでのMariaDBリポジトリのインストール情報については、[MariaDB公式サイト](https://downloads.mariadb.org)で確認できます。
+- お客様のCVMが[プライベートネットワークサービス](https://intl.cloud.tencent.com/document/product/213/5225)を使用している場合、`mirrors.cloud.tencent.com`を`mirrors.tencentyun.com`プライベートネットワークアドレスに置き換えることができます。プライベートネットワークのトラフィックは、パブリックトラフィックを占有せず、より高速になります。
+</dx-alert>
 ```
 # MariaDB 10.4 CentOS repository list - created 2019-11-05 11:56 UTC
 # http://downloads.mariadb.org/mariadb/repositories/
@@ -193,4 +198,4 @@ LNMP環境を構築した後、CVMに関する機能をより多く理解と把�
 CVMの使用中に問題が発生した場合は、下記のドキュメントを参照しながら実際状況に合わせ分析した上で問題を解決することが可能です。
 - CVMのログインに関する問題は、[パスワードとキー](https://intl.cloud.tencent.com/document/product/213/18120)、[ログインとリモート接続](https://intl.cloud.tencent.com/document/product/213/17278)ドキュメントをご参照ください。
 - CVMのネットワークに関する問題は、 [IPアドレス](https://intl.cloud.tencent.com/document/product/213/17285)、[ポートとセキュリティグループ](https://intl.cloud.tencent.com/document/product/213/2502)ドキュメントをご参照ください。
-- CVMのハードディスクに関する問題は、[システムディスクとデータディスク](https://intl.cloud.tencent.com/document/product/213/17351)ドキュメントをご参照ください。
+- CVMのハードディスクに関する事項については、[システムディスクとデータディスク](https://intl.cloud.tencent.com/zh/document/product/213/17351)をご参照ください。

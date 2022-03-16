@@ -2,7 +2,12 @@
 LNMP 环境是指在 Linux 系统下，由 Nginx + MySQL/MariaDB + PHP 组成的网站服务器架构。本文档介绍如何在腾讯云云服务器（CVM）上手动搭建 LNMP 环境。
 
 进行手动搭建 LNMP 环境，您需要熟悉 Linux 命令，例如 [CentOS 环境下通过 YUM 安装软件](https://intl.cloud.tencent.com/document/product/213/2046) 等常用命令，并对所安装软件的使用及版本兼容性比较了解。
->!腾讯云建议您可以通过云市场的镜像环境部署 LNMP 环境，手动搭建 LNMP 环境可能需要较长的时间。
+
+<dx-alert infotype="notice" title="">
+腾讯云建议您可以通过云市场的镜像环境部署 LNMP 环境，手动搭建 LNMP 环境可能需要较长的时间。
+</dx-alert>
+
+
 
 ## 示例软件版本
 本文搭建的 LNMP 环境软件组成版本及说明如下：
@@ -13,7 +18,7 @@ LNMP 环境是指在 Linux 系统下，由 Nginx + MySQL/MariaDB + PHP 组成的
 
 
 ## 前提条件
-已购买 Linux 云服务器。如果您还未购买云服务器，请参考 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/zh/document/product/213/10517)。
+已购买 Linux 云服务器。
 
 
 ## 操作步骤
@@ -109,10 +114,10 @@ yum -y remove 包名
 vi /etc/yum.repos.d/MariaDB.repo
 ```
 3. 按 **i** 切换至编辑模式，写入以下内容，添加 MariaDB 软件库。
->? 
->- 不同操作系统的 MariaDB 软件库不同，您可前往 [MariaDB 官网](https://downloads.mariadb.org) 获取其他版本操作系统的 MariaDB 软件库安装信息。
->- 若您的云服务器使用了 [内网服务](https://intl.cloud.tencent.com/document/product/213/5225)，则可以将 `mirrors.cloud.tencent.com` 替换为 `mirrors.tencentyun.com` 内网地址，内网流量不占用公网流量且速度更快。
->
+<dx-alert infotype="explain" title="">
+- 以下配置使用了腾讯云镜像源，腾讯云镜像源同步 MariaDB 官网源进行更新，可能会出现 MariaDB 10.4 版本源失效问题（本文以在 CentOS 7.6 上安装 MariaDB 10.4.22 版本为例），您可前往 [MariaDB 官网](https://downloads.mariadb.org) 获取其他版本及操作系统的 MariaDB 软件库安装信息。
+- 若您的云服务器使用了 [内网服务](https://intl.cloud.tencent.com/document/product/213/5225)，则可以将 `mirrors.cloud.tencent.com` 替换为 `mirrors.tencentyun.com` 内网地址，内网流量不占用公网流量且速度更快。
+</dx-alert>
 ```
 # MariaDB 10.4 CentOS repository list - created 2019-11-05 11:56 UTC
 # http://downloads.mariadb.org/mariadb/repositories/
@@ -193,4 +198,4 @@ http://云服务器实例的公网 IP
 如果您在使用云服务器的过程中遇到问题，可参考以下文档并结合实际情况分析并解决问题：
 - 云服务器的登录问题，可参考 [密码及密钥](https://intl.cloud.tencent.com/document/product/213/18120)、[登录及远程连接](https://intl.cloud.tencent.com/document/product/213/17278)。
 - 云服务器的网络问题，可参考 [IP 地址](https://intl.cloud.tencent.com/document/product/213/17285)、[端口与安全组](https://intl.cloud.tencent.com/document/product/213/2502)。
-- 云服务器硬盘问题，可参考 [系统盘和数据盘](https://intl.cloud.tencent.com/document/product/213/17351)。
+- 云服务器硬盘问题，可参考 [系统盘和数据盘](https://intl.cloud.tencent.com/zh/document/product/213/17351)。
