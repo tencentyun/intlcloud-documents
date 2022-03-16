@@ -1,6 +1,6 @@
 In the [VOD console](https://console.cloud.tencent.com/vod/overview), select **Data Center** > **Data Analysis** where **IP Visit** (displayed by default), **Playback** and **Traffic Usage** tabs can be viewed.
 
-## Access Statistics
+## IP Visit
 
 - The time dimensions of access statistics include today, yesterday, the last 7 days, the last 30 days, and any custom time period within the last 30 days. In addition to the time dimensions, you can also filter the access statistics by domain name, region, and ISP.
 - The data overview metrics are total requests and total access requests from unique IPs for the specified time period.
@@ -11,7 +11,7 @@ In the [VOD console](https://console.cloud.tencent.com/vod/overview), select **D
 
 
 
-## Playback Statistics
+## Playback
 
 The playback statistics page displays **file playback statistics query**, **top 100 videos (playback)**, and **top 100 videos (traffic)**.
 
