@@ -52,7 +52,6 @@ Open the project in the Unity Editor, wait until dependencies are loaded, and co
 [](id:step5)
 ### Step 5. Test script
 1. [Download the test script](https://imgcache.qq.com/operation/dianshi/other/Demo.1fdc6bd474aa3d12f0f3061155d4a5accdf30c7b.zip), decompress the file, import the decompressed file to the project, and bind TestApi.cs to any scenario.
-)，将文件解压后，放入项目中，并绑定 TestApi.cs 到任意场景上。
 ![](https://qcloudimg.tencent-cloud.cn/raw/b4d770775523fdd76b75f1d80f07c925.jpg)
 2. Select and run the scenario, and enter the `SDKAppID`, `UserID`, and `UserSig` obtained in [Step 1](#step1) to start the test.
 ![](https://qcloudimg.tencent-cloud.cn/raw/940da8044cd80db27d08a7b0dff45b94.png)
