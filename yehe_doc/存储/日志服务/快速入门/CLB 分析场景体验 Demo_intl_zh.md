@@ -17,11 +17,11 @@
 
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls/overview)。
 2. 在**概览**页面的**快速接入**中，找到**负载均衡 CLB**，并单击**开启Demo**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/a57daa94fa726ad3d75cd2ae6a0cac4b.png)
 3. 在弹出的提示框中，单击**确认**。
 资源初始化过程需约等待2分钟。
 4. 初始化完成后，可以执行如下操作：
-
+![](https://qcloudimg.tencent-cloud.cn/raw/90ac81e528fd281ee495e9eb24b0b5c5.png)
  - 单击 **Demo日志 > 进入检索页**，查看检索分析详情。
  - 单击 **Demo日志 > 查看仪表盘**，查看仪表盘详情。
  - 单击 **Demo日志 > 配置告警**，查看监控告警详情。
@@ -32,7 +32,7 @@
 
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls/overview)。
 2. 在**概览**页面的**快速接入**中，找到**负载均衡 CLB**，并单击 **Demo日志 > 重置Demo**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/4181c22ee42eaf484dc34f4c16df7540.png)
 资源重置过程需约等待2分钟。
 
 
@@ -40,7 +40,7 @@
 
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls/overview)。
 2. 在**概览**页面的**快速接入**中，找到**负载均衡 CLB**，并单击 **Demo日志 > 关闭Demo**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/314cc7a0cdae72ad71f1c624b7172266.png)
 3. 在弹出的提示框中，单击**确认**，Demo 日志停止写入，且删除 Demo 资源。
 
 
