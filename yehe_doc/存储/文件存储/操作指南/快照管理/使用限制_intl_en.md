@@ -1,4 +1,4 @@
-The free beta of the Tencent Cloud Snapshot product is scheduled to end on March 1, 2022. During beta, all snapshots are stored for free. After beta, snapshot data will be stored normally, but billing will start. You can adjust your snapshot scale based on your business requirements before the end of beta.
+The free beta of the Tencent Cloud Snapshot product is scheduled to end on May 1, 2022. During beta, all snapshots are stored for free. After beta, snapshot data will be stored normally, but billing will start. You can adjust your snapshot scale based on your business requirements before the end of beta.
 
 - During beta, feature limitations are as follows:
 <table>
