@@ -3,7 +3,7 @@ The "Video Audit" page displays video audit results, including the results of au
 
 ## Directions
 
-1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview) and click **Video Audit** on the left sidebar to enter the "Video Audit" page.
+1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview) and click **Video Audit** on the left sidebar.
 ![](https://qcloudimg.tencent-cloud.cn/raw/aefccb09bebcd2aa3e79b0c8f58e94c5.png)
 	- Query by time period: video audit results for today, yesterday, last 7 days, and any time period within the last 7 days can be queried in the video audit list.
 	- Prefix search: you can search for audit results by `FileId` or video name prefix.
@@ -12,7 +12,7 @@ The "Video Audit" page displays video audit results, including the results of au
 	
 >?You need to initiate [video audit](https://intl.cloud.tencent.com/document/product/266/33892) in "Media Assets" to get the video audit result.
 
-2. Click **View Result** in the row of the desired video file to enter the "Audit Result" page.
+2. Click **View Result** in the row of the desired video file to go to the audit result page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/fcf31a23f67809fbec7ded67a01f7be9.png)
 	- Content display: this page displays the task ID, video filename, source video file URL, intelligent audit result, human verification result, and the details of the intelligent audit result.
 	- Copy video information: you can copy the task ID, video filename, and source video file URL.
