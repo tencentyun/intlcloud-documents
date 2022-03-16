@@ -37,26 +37,27 @@ Go to the **Platform Management** page and click the ID of the target platform t
 Go to the **Platform Management** page and click the ID of the target platform to enter the platform details page. Select the **TCP/UDP Listener Management** tab, click **Create**, configure the listener information in the pop-up window, and click **OK** to create a forwarding rule.
 ![](https://qcloudimg.tencent-cloud.cn/raw/33b6eff9530c5133a11155d2cc3eb1b9.png)
 >! Set **Protocol** and *Get client IP** based on your actual business protocol. If the secondary origin server is enabled, the protocol can be TCP only.
->
->![](https://qcloudimg.tencent-cloud.cn/raw/6ac3b171bd051529c2c2644459d61d43.png)
->-	Listener name: Enter a custom listener name, which can contain up to 30 characters.
->-	Get client IP: You can select **TOA** or **Proxy Protocol**.
->-	Protocol: It uses the default configuration and does not need to be entered.
->-	Listening port: Access port of the acceleration line, which cannot be modified after the configuration is submitted.
->Value range: 1-64999 (36000 and 56000 are unavailable). You can click **Add** to add multiple port records. Up to 20 ports can be added during each listener creation. The listening ports of each acceleration platform must be unique.
->-	Origin Type: Select **IP** or **Domain Name**.
->-	Origin-pull policy: If the origin type is **IP**, you can select **RR** or **Weighted RR**. If the origin type is **Domain Name**, you can select **RR** only.
->-	Origin-pull Address: Enter the origin server address, which can contain up to 80 characters. The value range of the origin server port is 1–65535.
->	1. If the origin type is **IP**, you can click **Add** to add up to nine origin servers, and only IPv4 IPs are supported. If the origin type is **Domain Name**, you can add only one origin server.
->	2. The origin server port refers to the port accessed during origin-pull.
->	3. A weight ranges from 1 to 100, and the system calculates the origin-pull ratio of different origin servers based on their weights. For example, if you configure three origin server: A, B, and C, whose weights are 10, 20, and 30 respectively, then 10/(10+20+30) requests will be forwarded to origin server A, 20/(10+20+30) requests to B, and 30/(10+20+30) requests to C.
->-	Secondary origin: It is disabled by default. If you select **Enable**, you need to configure the secondary origin-pull policy and address.
->-	Origin-pull policy: Same as the primary origin server's **origin-pull policy**. 
->-	Origin-pull address: Its type can only be the same as that of the primary origin server's **origin-pull Address**.
->2.	Modify a listener
->Go to the **Platform Management** page and click the ID of the target platform to enter the platform details page. Select the **TCP/UDP Listener Management** tab, click **Modify** in the **Operation** column of the target listener, modify the listener information (the protocol and listening port cannot be modified) in the pop-up window, and click **OK**.
->3.	Delete a listener
->Go to the **Platform Management** page and click the ID of the target platform to enter the platform details page. Select the **TCP/UDP Listener Management** tab, click **Delete** in the **Operation** column of the target listener, and click **OK** in the pop-up window.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/6ac3b171bd051529c2c2644459d61d43.png)
+
+ -	Listener name: Enter a custom listener name, which can contain up to 30 characters.
+ -	Get client IP: You can select **TOA** or **Proxy Protocol**.
+ -	Protocol: It uses the default configuration and does not need to be entered.
+ -	Listening port: Access port of the acceleration line, which cannot be modified after the configuration is submitted.
+Value range: 1-64999 (36000 and 56000 are unavailable). You can click **Add** to add multiple port records. Up to 20 ports can be added during each listener creation. The listening ports of each acceleration platform must be unique.
+ -	Origin Type: Select **IP** or **Domain Name**.
+ -	Origin-pull policy: If the origin type is **IP**, you can select **RR** or **Weighted RR**. If the origin type is **Domain Name**, you can select **RR** only.
+ -	Origin-pull Address: Enter the origin server address, which can contain up to 80 characters. The value range of the origin server port is 1–65535.
+	1. If the origin type is **IP**, you can click **Add** to add up to nine origin servers, and only IPv4 IPs are supported. If the origin type is **Domain Name**, you can add only one origin server.
+	2. The origin server port refers to the port accessed during origin-pull.
+	3. A weight ranges from 1 to 100, and the system calculates the origin-pull ratio of different origin servers based on their weights. For example, if you configure three origin server: A, B, and C, whose weights are 10, 20, and 30 respectively, then 10/(10+20+30) requests will be forwarded to origin server A, 20/(10+20+30) requests to B, and 30/(10+20+30) requests to C.
+ -	Secondary origin: It is disabled by default. If you select **Enable**, you need to configure the secondary origin-pull policy and address.
+ -	Origin-pull policy: Same as the primary origin server's **origin-pull policy**. 
+ -	Origin-pull address: Its type can only be the same as that of the primary origin server's **origin-pull Address**.
+2.	Modify a listener
+Go to the **Platform Management** page and click the ID of the target platform to enter the platform details page. Select the **TCP/UDP Listener Management** tab, click **Modify** in the **Operation** column of the target listener, modify the listener information (the protocol and listening port cannot be modified) in the pop-up window, and click **OK**.
+3.	Delete a listener
+Go to the **Platform Management** page and click the ID of the target platform to enter the platform details page. Select the **TCP/UDP Listener Management** tab, click **Delete** in the **Operation** column of the target listener, and click **OK** in the pop-up window.
 
 ### 	Attack defense
 1. Go to the **Platform Management** page and click the ID of the target platform to enter the platform details page. Select the **Attack Defense** tab and set security access policies to control the public network access permissions of the acceleration platform. After configuration, click **Save** to make the rules take effect.
