@@ -1,5 +1,5 @@
 ## Overview
-This document describes how to upload videos through the VOD Console, including local upload and video pull.
+This document describes how to upload videos through the VOD console, including local upload and video pull.
 
 >! 
 >- Formats such as WMV, RM, MOV, MPEG, MP4, 3GP, FLV, AVI, and RMVB are supported.
@@ -9,16 +9,16 @@ This document describes how to upload videos through the VOD Console, including 
 
 ## Local Upload
 
-1. Log in to the VOD Console and select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** to enter the "Uploaded" page by default.
-2. Click **Upload Video** to enter the "Upload Video" page.
+1. Log in to the VOD console and select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**. The "Uploaded" page is displayed.
+2. Click **Upload Video**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/50c01e2bc231a24b497310b876dc0d3f.png)
-3. Select **Local Upload** to upload a local file to the console. Click **Select Video** to select a local video file or drag and drop the file into the upload list zone.
+3. Select **Local Upload** to upload a local file to the console. Click **Select Video** to select a local video file or drag and drop the file into the upload area.
 
 4. In the upload list, you can check the filename and size of a selected video, modify its name and category, or delete it.
 ![](https://qcloudimg.tencent-cloud.cn/raw/2b5afcb82c221fffcffeaf5f2b1565b3.png)
 5. You can choose whether to process the uploaded video.
-   - If no processing is needed, select **No Processing After Upload**.
-   - If processing is needed, select **Automatic Processing After Upload** and configure video processing parameters according to the table below.
+   - If no processing is needed, select **No processing after upload**.
+   - If processing is needed, select **Auto-processing after upload** and configure video processing parameters according to the table below.
 
    <table>
      <tr>
@@ -30,7 +30,7 @@ This document describes how to upload videos through the VOD Console, including 
 	 <tr>      
          <td>Transcoding</td>   
 	     <td>If <b>Transcoding</b> is selected as the processing type, this parameter is <b>"Transcoding Template"</b><ul><li>Click <b>Transcoding Template</b> to select an existing template<li>Click <b>Common Template</b> to select a common template</ul></td>   
-	     <td nowrap="nowrap"><ul><li>Select <b>No watermark</b> <li>Select <b>Default watermark</b> <li>Select <b>Select watermark template</b></td>   
+	     <td nowrap="nowrap"><ul><li>Select <b>No watermark</b> <li>Select <b>Default watermark</b> <li>Select <b>Select watermark</b></td>   
 	     <td>Select whether to use the first frame as the video cover</td>
      </tr> 
 	 <tr>      
@@ -53,10 +53,10 @@ This document describes how to upload videos through the VOD Console, including 
 ## Video Pull
 
 ### Pulling by row
-1. Log in to the VOD Console and select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** to enter the "Uploaded" page by default.
-2. Click **Upload Video** to enter the "Upload Video" page.
-3. Select **Pull Video** to pull a video from the video URL to the console. Click **Add a row** in the upload list section.
-4. Enter the information of the source video to be uploaded. Each row represents a video. You can add multiple videos by repeatedly clicking **Add a row** in the upload list zone.
+1. Log in to the VOD console and select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**. The "Uploaded" page is displayed.
+2. Click **Upload Video**.
+3. Select **Pull** to pull a video from the video URL to the console. Click **Add a Row** in the upload area.
+4. Enter the information of the source video to be uploaded. Each row represents a video. You can add multiple videos by repeatedly clicking **Add a Row** in the upload area.
  - Video URL: enter the URL information of the source video.
  - Video Name: enter the name of the source video.
  - Cover URL: enter the URL of the cover to be pulled.
