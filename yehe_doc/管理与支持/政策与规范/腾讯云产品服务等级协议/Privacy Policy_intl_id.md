@@ -574,3 +574,4 @@ Modul berikut akan berlaku dan merupakan bagian dari kebijakan privasi ini jika 
 20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
 21.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
 22.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
+23.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590).

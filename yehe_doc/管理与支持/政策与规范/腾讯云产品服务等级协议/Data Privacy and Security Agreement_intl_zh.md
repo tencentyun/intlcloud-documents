@@ -124,7 +124,8 @@
 21.[即时通信 IM](https://intl.cloud.tencent.com/zh/document/product/1047/45408)。
 22.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45416)。
 23.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45473)。
-24.[腾讯云 TI 平台](https://intl.cloud.tencent.com/document/product/1141/45465)
+24.[腾讯云 TI 平台](https://intl.cloud.tencent.com/document/product/1141/45465)。
+25.[物联网通信](https://intl.cloud.tencent.com/document/product/1105/45591)。
 
 ## 特定司法管辖区要求
 

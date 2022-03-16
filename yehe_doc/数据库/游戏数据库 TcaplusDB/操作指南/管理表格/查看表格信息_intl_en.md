@@ -1,15 +1,17 @@
-## Operation Scenarios 
-This document describes how to view table information in the TcaplusDB Console.
 
-## Prerequisites
-You have created a table. For more information, please see [Creating Table](https://intl.cloud.tencent.com/document/product/1016/32715).
+## Overview 
+This document describes how to view table information in the TcaplusDB console.
+
+## Prerequisite
+You have created a table. For more information, see [Creating Table](https://intl.cloud.tencent.com/document/product/1016/32715).
 
 ## Directions
-1. Enter the [Table List](https://console.cloud.tencent.com/tcaplusdb/table) page to view the information about created tables, such as the table ID, table status, cluster name, table name, cluster ID, table group (ID), used capacity, reserved read, and reserved write.
-2. Click a table ID to enter the table management page, which consists of **Table Details**, **Table Configuration**, **Table Monitoring**, and **Table Rollback** tabs.
-![](https://main.qcloudimg.com/raw/5dd8aaecae4a2093bd5cdbbfb0dea2ff.png)
- - The **Table Details** tab displays basic table information, network information, and reserved configuration information. You can click the "Modify" icon next to "Remarks" to modify the remarks.
+1. Enter the [Table List](https://console.cloud.tencent.com/tcaplusdb/table) page to view the information about created tables, such as the table ID, table status, table name, cluster name (ID), and table group name (ID).
+2. Click a table ID, enter the table management page, and view table details.
+![](https://qcloudimg.tencent-cloud.cn/raw/c1c0b531c81097e998f906243a475f96.png)
+ - The **Table Details** tab displays the information of table, network, and reserved configuration. You can click the "Modify" icon next to the remarks to modify the remarks.
  - The **Table Configuration** tab displays the field definition information of a table.
- - The **Table Monitoring** tab displays table monitoring information. You can select the monitoring data for different periods and at different granularities and compare data for different periods.
- - The **Table Rollback** tab provides the table rollback feature.
+ - The **Table Monitoring** tab displays [table monitoring](https://intl.cloud.tencent.com/document/product/1016/36547) information. You can select the monitoring data for different periods and at different granularities and compare data for different periods.
+ - The **Table Rollback** tab provides the [table rollback](https://intl.cloud.tencent.com/document/product/1016/36735) feature.
+ - The **Table Caching** tab allows you to enable/disable the table caching feature.
 

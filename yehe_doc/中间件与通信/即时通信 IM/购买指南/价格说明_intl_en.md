@@ -2,8 +2,8 @@
 
 
 ### IM Plan Prices[](id:Package)
-A plan can be applied only to a single `SDKAppID`. You must purchase a plan for each `SDKAppID` if you want to [upgrade](https://intl.cloud.tencent.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) multiple ones to the Pro or Flagship edition.
-IM plans are pay-as-you-go on a monthly basis. Fees incurred within a calendar month will be deducted on the third day of the next month. No fees will be charged for the month the plan is activated. Billing starts from the next month. See the table below for billing details:
+A plan can be applied only to a single `SDKAppID`. You must purchase a plan for each `SDKAppID` if you want to [upgrade](https://intl.cloud.tencent.com/document/product/1047/34577?lang=en&pg=#upgrading-an-app) multiple ones to the Pro or Flagship edition.
+IM plans are pay-as-you-go on a monthly basis. Fees incurred within a calendar month will be deducted on the third day of the next month. See the table below for billing details:
 
 | Item | Trial Edition | Pro Edition | Flagship Edition |
 | -------- | ------ | ------------- | ------------- |
@@ -33,7 +33,7 @@ Value-added services are available only for the Pro and Flagship editions. See t
 <th width="25%">Flagship Edition</th>
 </tr><tr>
 <td>Increasing the maximum number of audio-video groups (AvChatRoom) to unlimited</td>
-<td rowspan = "3">Billed by calendar month. Fees incurred within a calendar month will be deducted on the third day of the next month. No fees will be charged for the month the service is activated.</td>
+<td rowspan = "3">Billed by calendar month. Fees incurred within a calendar month will be deducted on the third day of the next month. </td>
 <td>449.99 USD/month</td>
 <td>N/A</td>
 </tr>

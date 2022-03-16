@@ -32,9 +32,9 @@
 >!
 >
 >- 在腾讯云官网购买的云服务器，您可以登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)  获取服务器 IP 地址、用户名及密码。
-- 当您申请 SSL 证书时选择 “粘贴 CSR” 方式，或购买的品牌证书为 Wotrus，则不提供 JKS 证书文件的下载，需要您通过手动转换格式的方式生成密钥库。其操作方法如下： 
- - 访问 [转换工具](https://myssl.com/cert_convert.html)。
- - 将 Nginx 文件夹中的证书文件和私钥文件上传至转换工具中，并填写密钥库密码，单击**提交**，转换为 jks 格式证书。
+>- 当您申请 SSL 证书时选择 “粘贴 CSR” 方式，或购买的品牌证书为 Wotrus，则不提供 JKS 证书文件的下载，需要您通过手动转换格式的方式生成密钥库。其操作方法如下： 
+>   - 访问 [转换工具](https://myssl.com/cert_convert.html)。
+>   - 将 Nginx 文件夹中的证书文件和私钥文件上传至转换工具中，并填写密钥库密码，单击**提交**，转换为 jks 格式证书。
 
 
 ## 操作步骤
@@ -64,7 +64,7 @@
 >
 ```
  <?xml version="1.0" encoding="UTF-8"?>
-  <Server port="8005" shutdown="SHUTDOWN">
+ <Server port="8005" shutdown="SHUTDOWN">
     <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
     <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
     <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
@@ -76,24 +76,24 @@
               description="User database that can be updated and saved"
               factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
               pathname="conf/tomcat-users.xml" />
-  </GlobalNamingResources>
-  <Service name="Catalina">
+ </GlobalNamingResources>
+   <Service name="Catalina">
         <Connector port="80" protocol="HTTP/1.1" connectionTimeout="20000"  redirectPort="8443" />
         <Connector port="443" protocol="HTTP/1.1"
                maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
                clientAuth="false"
                 keystoreFile="Tomcat 安装目录/conf/cloud.tencent.com.jks"
                 keystorePass="******" />
-    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
-   <Engine name="Catalina" defaultHost="cloud.tencent.com">
-      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
+    <Engine name="Catalina" defaultHost="cloud.tencent.com">
+        <Realm className="org.apache.catalina.realm.LockOutRealm">
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
                resourceName="UserDatabase"/>
-      </Realm>
-    <Host name="cloud.tencent.com"  appBase="webapps" 
+        </Realm>
+     <Host name="cloud.tencent.com"  appBase="webapps" 
         unpackWARs="true" autoDeploy="true" >
         <Context path="" docBase ="Knews" />
-    <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
            prefix="localhost_access_log" suffix=".txt"  
            pattern="%h %l %u %t &quot;%r&quot; %s %b" />
       </Host>
@@ -128,18 +128,19 @@ startup.bat
     <!-- Authorization setting for SSL -->
     <auth-method>CLIENT-CERT</auth-method>
     <realm-name>Client Cert Users-only Area</realm-name>
-    </login-config>
-    <security-constraint>
-    <!-- Authorization setting for SSL -->
-    <web-resource-collection>
-    <web-resource-name>SSL</web-resource-name>
-    <url-pattern>/*</url-pattern>
-    </web-resource-collection>
-    <user-data-constraint>
-    <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-    </user-data-constraint>
-    </security-constraint>
+</login-config>
+<security-constraint>
+   <!-- Authorization setting for SSL -->
+   <web-resource-collection>
+      <web-resource-name>SSL</web-resource-name>
+      <url-pattern>/*</url-pattern>
+   </web-resource-collection>
+   <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+   </user-data-constraint>
+</security-constraint>
 ```
+
 3. 编辑 Tomcat 安装目录下的 `server.xml` 文件，将 redirectPort 参数修改为 SSL 的 connector 的端口，即443端口。如下所示：
 ```
 <Connector port="80" protocol="HTTP/1.1"

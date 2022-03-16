@@ -1,5 +1,4 @@
 ## Enabling SMTP Sending Feature
-You need to enable the SMTP sending feature and apply for custom permissions through your Tencent Cloud rep first before you can send emails with the SMTP API.
 ## Directions
 ### Step 1. Go to the sender address page
 Log in to the [SES console](https://console.cloud.tencent.com/ses) and click **Email Configuration** > **Sender Address** on the left sidebar to enter the sender address page.

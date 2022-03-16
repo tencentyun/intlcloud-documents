@@ -125,6 +125,7 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 22.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
 23.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
 24.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45465).
+25.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45591).
 
 ## Requisitos específicos da jurisdição
 

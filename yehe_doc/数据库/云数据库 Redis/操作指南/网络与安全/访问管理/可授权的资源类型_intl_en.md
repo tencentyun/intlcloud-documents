@@ -1,10 +1,10 @@
-Resource-Level permission can be used to specify which resources a user can manipulate. TencentDB for Redis supports certain resource-level permissions. This means that for TencentDB for Redis operations that support resource-level permission, you can control the time when a user is allowed to perform operations or to use specified resources. The following table describes the types of resources that can be authorized in CAM.
+Resource-level permission can be used to specify which resources a user can manipulate. TencentDB for Redis supports certain resource-level permissions. This means that for TencentDB for Redis operations that support resource-level permission, you can control the time when a user is allowed to perform operations or to use specified resources. The following table describes the types of resources that can be authorized in CAM.
 
 | Resource Type | Resource Description Method in Authorization Policy |
 | ---------------------------- | ------------------------------------------------------------ |
 | [TencentDB for Redis instance](#xiangguan) | `qcs::redis:$region::instance/*`<br>`qcs::redis:$region:$account:instance/$instance` |
 
-The table below lists the TencentDB for Redis API operations which currently support resource-level permission control as well as the resources supported by each operation. When specifying a resource path, you can use the `*` wildcard in the path.
+The table below lists the TencentDB for Redis API operations that currently support resource-level permission control, as well as the resources that each operation supports. You can use the `*` wildcard in a resource path when defining it.
 
 <span id="xiangguan"></span>
 ### [List of APIs supporting resource-level authorization](id:xiangguan)
@@ -103,3 +103,6 @@ For TencentDB API operations that don't support resource-level authorization, yo
 | DescribeTaskInfo         | Queries task information          |
 | DescribeTasks         | Queries the list of tasks          |
 | ModifyParamTemplate           | Modifies parameter template                 |
+| ListUsers             | Queries sub-account names |
+| ListCollaborators     |   Queries collaborator account names  |
+| ListWeChatWorkSubAccounts  | Queries WeChat usernames  |
