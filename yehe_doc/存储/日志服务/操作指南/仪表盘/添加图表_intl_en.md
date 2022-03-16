@@ -12,7 +12,7 @@ CLS supports visual chart statistics of search and analysis results, and saves s
 2. On the left sidebar, click **Search and Analysis** to go to the search and analysis management page.
 3. Click the **Chart Analysis** tab and click **Add to Dashboard**.
 4. In the pop-up window, enter information and click **OK**.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/f7780847c352e5f244b57ae36417e704.png)
 <table>
 	<tr><th>Parameter</th><th>Description</th></tr>
 	<tr><td>Chart Name</td><td>Name of the chart.</td></tr>
@@ -29,9 +29,9 @@ CLS supports visual chart statistics of search and analysis results, and saves s
 >? If you do not have a dashboard, please [create one](https://intl.cloud.tencent.com/document/product/614/37886).
 >
 4. Click **Create** and select a chart type as needed to create a chart.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/629154e713c86586c6c5bdbb07d0c765.png)
  - Quick Chart: you can drag and drop to easily create charts. However, this mode supports weaker statistical and analytical features.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/d4abd28ea7ee6393a8b4c03054236046.png)
  <table>
 	<tr><th>Chart Element</th><th>Description</th></tr>
 	<tr><td>Field list</td><td>A list of log topic fields. You can click or drag and drop a field to add it to the condition input boxes on the right.</td></tr>
@@ -42,10 +42,10 @@ CLS supports visual chart statistics of search and analysis results, and saves s
 	<tr><td>Max Rows</td><td>This row limit is used for quantitative filtering of statistical results. After a number is specified, the specified number of (or less) rows of statistical results will be displayed in ascending order. This parameter supports values ranging from 1 to 1,000 and defaults to **1000**.</td></tr>
 </table>
  - Custom Chart: you can customize a search statement to create charts. This mode supports all statistical and analytical features.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/d8f95bab0eeda9116101cadc30a43978.png)
 Enter the search and analysis statement and click **Generate Chart**.
 5. Check whether the data configuration meets your requirements. The system automatically fills the data according to the chart data structure requirements. You can manually adjust the data structure if necessary.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/9ecddd28dd4934e5b59043fc91c4cdd1.png)
 6. Click **Save**.
 
 
