@@ -16,6 +16,9 @@ Container Servicesに対する最適化が実行されました。以下のよ�
 ## Container Servicesカスタマイズの特徴
 ### Container Servicesリソース表示の隔離
 - ホストレベルスイッチの追加：カーネルでは類似のLXCFS特性がすでに実現しています。ユーザーはノードでLXCFSファイルシステムをデプロイしてPOD specを変更する必要はありません。ノードでグローバルスイッチ（`sysctl -w kernel.stats_isolated=1`）を有効にして、`/proc/cpuinfo`および`/proc/meminfo`等のファイルを取得するだけで、Container Services隔離をオンにすることができます。
+<dx-alert infotype="notice" title="">
+TencentOS Server 2.4バージョンのみが`kernel.stats_isolated`パラメータをサポートしており、TencentOS Server 2.4（TK4）および3.1以降のバージョンではサポートしていません。
+</dx-alert>
 - Container Servicesレベルのスイッチの追加：類似のノード監視コンポーネント等の特殊コンテナのために、Container Servicesレベルのスイッチ`kernel.container_stats_isolated`を追加しました。ホストレベルのスイッチを有効にする時は、Container Servicesの起動スクリプトでContainer Servicesレベルのスイッチを閉じると（`sysctl -w kernel.container_stats_isolated=0`）、Container Servicesで`/proc/cpuinfo`および`/proc/meminfo`ファイルを読み取る時にホスト情報を取得することができます。
 
 ### カーネルパラメータの隔離
