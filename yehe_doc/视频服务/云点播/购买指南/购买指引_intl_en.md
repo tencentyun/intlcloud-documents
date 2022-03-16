@@ -13,6 +13,6 @@ VOD supports the **pay-as-you-go daily billing mode**.
 - **Daily billing** means you pay for the service you use on a daily basis. To do this, you need to [top up](https://console.cloud.tencent.com/expense/recharge) your Tencent Cloud account in advance. Every day, the system calculates the actual usage of the previous day, sends a bill, and deducts fees from your account based on the usage. For details, see [Pay-as-You-Go Daily Billing Mode](https://intl.cloud.tencent.com/document/product/266/14666).
 
 ## Using the VOD Service
-After you purchase the VOD service, select **Products** > **Video Services** > **[Video on Demand](https://console.cloud.tencent.com/vod)** on the Tencent Cloud console to use it.
+After you purchase the VOD service, select **Products** > **Video Services** > **[Video on Demand](https://console.cloud.tencent.com/vod)** in the Tencent Cloud console to use it.
 
 
