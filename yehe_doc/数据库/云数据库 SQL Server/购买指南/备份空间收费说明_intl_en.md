@@ -19,7 +19,7 @@ TencentDB for SQL Server offers a certain amount of backup space free of charge 
 >- The backup space can be viewed on the database backup page in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver).
 
 ## Backup Pricing
-Backups beyond the free tier (100% disk storage) are pay-as-you-go by region at 0.000127 USD/GB/hour in the Chinese mainland and 0.000142 USD/GB/hour outside the Chinese mainland.
+Backups beyond the free tier (100% disk storage) are pay-as-you-go by region at 0.0001261 USD/GB/hour in the Chinese mainland and 0.0001418 USD/GB/hour outside the Chinese mainland.
 >?Billable space of less than 1 GB is not billed, and a billable time period of less than one hour is counted as one hour.
 
 ## Billing Schedule for Backup Space
