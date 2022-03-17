@@ -34,12 +34,12 @@ Parameter description:
 - name: the name of the collection to create
 - options: (optional) options of memory size and index
 
-| options Field | Type |      | Description                                                         |
-| ----------- | ---- | ---- | ------------------------------------------------------------ |
-| capped      | BOOL | No   | Whether to set a maximum size in bytes for the collection. Valid values: `true` (the `size` field must be specified), `false` (default) |
-| autoIndexId | BOOL | No   | Whether to automatically create an index on the `\_id` field. Valid values: `true`, `false` (default) |
-| size        | number | No   | The maximum size in bytes of the collection                                       |
-| max         | number | No   | The maximum number of documents in the collection                                 |
+| options Field | Type |  Description                                                         |
+| ----------- | ---- | ------------------------------------------------------------ |
+| capped      | BOOL |  Whether to set a maximum size in bytes for the collection. Valid values: `true` (the `size` field must be specified), `false` (default) |
+| autoIndexId | BOOL |  Whether to automatically create an index on the `\_id` field. Valid values: `true`, `false` (default) |
+| size        | number |  The maximum size in bytes of the collection                                       |
+| max         | number |  The maximum number of documents in the collection                                 |
 
 Create a collection named "FirstCol" in the myFirstDB database:
 ```
