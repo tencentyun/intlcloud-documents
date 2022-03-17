@@ -23,14 +23,15 @@ function doesObjectExist() {
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
   }, function(err, data) {
-    if (err) return console.log(err);
-    if (data.statusCode === 404) {
-      console.log('对象不存在');
-    } else {
-      // 其他状态码参考api文档说明
-      console.log('对象存在');
-    }
-  });
+        if (data) {
+          console.log('对象存在');
+        } else if (err.code == 404) {
+          console.log('对象不存在');
+        } else if (err.code == 403) {
+          console.log('没有该对象读权限');
+        }
+    });
+
 }
 ```
 
