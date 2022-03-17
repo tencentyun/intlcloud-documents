@@ -12,7 +12,7 @@
 2. 在左侧导航栏中，单击**检索分析**，进入检索分析管理页面。
 3. 选择**图表分析**，单击**添加到仪表盘**。
 4. 在弹出的窗口中，填写信息，单击**确定**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/f7780847c352e5f244b57ae36417e704.png)
 <table>
 	<tr><th>表单元素</th><th>说明</th></tr>
 	<tr><td>图表名称</td><td>图表名称。</td></tr>
@@ -29,9 +29,9 @@
 >? 如果您没有仪表盘，请 [新建仪表盘](https://intl.cloud.tencent.com/document/product/614/37886)。
 >
 4. 单击**新建**，根据实际需求选择图表类型，创建图表。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/629154e713c86586c6c5bdbb07d0c765.png)
  - 简易图表：通过可视化拖拽方式轻松创建图表，但统计分析功能较弱。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/d4abd28ea7ee6393a8b4c03054236046.png)
  <table>
 	<tr><th>图表元素</th><th>说明</th></tr>
 	<tr><td>选择字段</td><td>展示当前日志主题字段信息的列表，可以单击或直接鼠标拖拽添加到右侧条件输入框。</td></tr>
@@ -42,10 +42,10 @@
 	<tr><td>行数限制</td><td>行数限制用于统计结果的数量过滤。设置后将按照排序从前往后显示设定数量的统计结果。行数限制取值范围为1 - 1000，系统默认使用“1000”。</td></tr>
 </table>
  - 自定义图表：通过自定义检索语句创建图表，则支持全部统计分析功能。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/d8f95bab0eeda9116101cadc30a43978.png)
 填写检索分析语句后，单击**生成图表**即可。
 5. 检查数据配置是否符合要求，系统将会根据图表数据结构要求自动填充。但必要时用户可手动调整数据结构配置。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/9ecddd28dd4934e5b59043fc91c4cdd1.png)
 6. 单击**保存**。
 
 

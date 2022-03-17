@@ -23,7 +23,7 @@ Time-shift playback in live streaming is based on live recording, live streaming
 To add the Tencent Cloud VOD domain name for time-shift playback, perform the following:
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview) and click **Distribution and Playback** > **Domain Name** in the left sidebar.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f3a42999b551357b871b8b3381953ba1.png)
-2. Click **Add Domain Name** and enter the VOD domain name. For more information, please see [Distribution and Playback Settings](https://intl.cloud.tencent.com/document/product/266/35572)
+2. Click **Add Domain** and enter the VOD domain name. For more information, please see [Distribution and Playback Settings](https://intl.cloud.tencent.com/document/product/266/35572)
 ![](https://qcloudimg.tencent-cloud.cn/raw/167658ece2ff8138b1e3efdc53c5ebbc.png)
 
 3. Configure the new domain CNAME.

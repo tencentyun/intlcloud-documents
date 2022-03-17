@@ -21,13 +21,13 @@
  2. 单击左侧菜单栏中的**角色**，进入角色页面。
  3. 选择**新建角色 > 腾讯云账户**，开始新建自定义角色。
  4. 选择**当前主账号**并勾选**允许当前角色服务控制台**，单击**下一步**。
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/1db44714391015369d870e5aabbd0618.png)
 >! 若无 “允许角色登录控制台” 选项，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们开通白名单。
 >
  5. 为角色设置访问策略，例如只读策略权限 QcloudCLSReadOnlyAccess，单击**下一步**。
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/853c5443975035744c41ee9c09187eb3.png)
  6. 输入角色名，完成创建。
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/d45e624e8f71c58d55afe479ed19adc7.png)
 <span id="step2"></span>
 2. 获取当前用户的访问密钥。如何获取持久密钥，可参见 [主账号访问密钥管理](https://intl.cloud.tencent.com/document/product/598/34228) 文档。
 
@@ -187,7 +187,7 @@ https://cloud.tencent.com/login/roleAccessCallback?nonce=52055817&s_url=https%3A
 ## 过滤条件参数说明
 
 filter 参数用于生成下图中查询语句输入框底部的过滤条件，适合比较固定的检索条件。
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/0e4c485436980cff533aebc657c4ed81.png)
 
 filter 参数为 json 格式，结构如下：
 ```

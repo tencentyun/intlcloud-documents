@@ -55,7 +55,7 @@ For detailed directions on how to purchase a CVM instance and reinstall the syst
 <span id="p2"></span>
 ### Step 2. Activate VOD
 
-Please activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
+Activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
 <span id="p3"></span>
 ### Step 3. Get the API key and APPID
 
@@ -100,7 +100,7 @@ Copy the address of the event notification receipt service in the output log (wh
 
 As described in [Avoiding affecting production environment](#p0), please confirm that your business in the production environment does not depend on VOD event notifications before performing the following operations:
 
-Log in to the [VOD Console](https://console.cloud.tencent.com/vod/callback), click **Settings**, select **Normal Callback** as the callback mode, enter the event notification receipt service address obtained in [step 4](#p4) as the callback URL, check all callback events, and click **OK** as shown below:
+Log in to the [VOD console](https://console.cloud.tencent.com/vod/callback), click **Set**, select **Normal Callback** as the event notification method, enter the event notification receipt service address obtained in [step 4](#p4) as the callback URL, select all callback events, and click **Confirm** as shown below:
 ![](https://main.qcloudimg.com/raw/4664c0b6d1991eb136fde116881d7467.png)
 >!If two callback URL configuration items (v2.0 format and v3.0 format) are displayed at the same time in the console, please configure the v3.0 one.
 

@@ -24,13 +24,13 @@ The shipping feature of CLS interconnects the upstream linkages of the product e
  1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
  2. On the left sidebar, click **Overview** to go to the overview page.
  3. In the **Other Logs** area, locate **Import from COS** and click **Integrate Now**.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/514ecd8031f341cc6d16096075aaf0ae.png)
  4. On the log topic creation page, configure the log topic information such as the log topic name and log retention period as needed, and click **Next**.
 - If you want to select an existing log topic, perform the following operations:
  1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
  2. On the left sidebar, click **Log Topic** and select a log topic to be shipped to go to the log topic management page.
  3. Click the **Collection Configuration** tab and click **Add** in the **Data Import Configuration** area.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/adcb729aa16256f01552c354b6a6bc03.png)
 
 ### Step 2. Configure the data source
 

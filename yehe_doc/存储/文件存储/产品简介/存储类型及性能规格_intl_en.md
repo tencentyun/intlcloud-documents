@@ -118,6 +118,5 @@ High-Performance Turbo is a high-bandwidth, low-latency, parallel file system th
 - The table above shows the capabilities of the file system. To reach the performance upper threshold, you usually need to perform multi-threaded reads/writes using multiple compute nodes.
 - The performance benchmark is tested in interruption-free conditions. The results of mixed tests or other loads might vary.
 - OPS suggests the file system's ability to process metadata per second, which is not the same as IOPS.
-- High-Performance is in closed beta test and will be available for open beta test in mid-January 2022.
 
 

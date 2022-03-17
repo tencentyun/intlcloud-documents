@@ -145,7 +145,7 @@ If the status of the test video is **Processing** on the **Video Management** pa
 
 When the status of the test video changes to **Normal** on the [Video Management](https://console.cloud.tencent.com/vod/media) page, the transcoding is finished. Click **Manage** on the right to enter the video management page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/be5fa72994d786fa6737bf3590d4324f.png)
-In the **Standard Transcoding List** under the **Basic Info** tab, videos of `STD-H264-MP4-360P` and `STD-H264-MP4-540P` specifications are the transcoding outputs. You can click **Preview** on the right to watch them, or click **Copy URL** and then publish them through other channels.
+In the **Standard Transcoding List** under the **Basic Info** tab, videos of `STD-H264-MP4-360P` and `STD-H264-MP4-540P` specifications are the transcoding outputs. You can click **Preview** on the right to watch them, or click **Copy address** and then publish them through other channels.
 ![](https://qcloudimg.tencent-cloud.cn/raw/48867ad69971690bc6a528cf9f14473c.png)
 
 ## Calling TencentCloud APIs to initiate transcoding
@@ -211,7 +211,7 @@ If the status of the test video is **Processing** on the **Video Management** pa
 ![](https://qcloudimg.tencent-cloud.cn/raw/5fcd99f766d6587f1644daac23c10d4d.png)
 When the status of the test video changes to **Normal**, the transcoding is finished. Click **Manage** on the right to enter the video management page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/be5fa72994d786fa6737bf3590d4324f.png)
-In the **Standard Transcoding List** under the **Basic Info** tab, videos of desired specifications are the transcoding outputs. You can click **Preview** on the right to watch them, or click **Copy URL** and then publish them through other channels.
+In the **Standard Transcoding List** under the **Basic Info** tab, videos of desired specifications are the transcoding outputs. You can click **Preview** on the right to watch them, or click **Copy address** and then publish them through other channels.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9067b71ebcac7658c58222499f47fcf0.png)
 
 ## Auto Transcoding After Uploading (Task Flow)

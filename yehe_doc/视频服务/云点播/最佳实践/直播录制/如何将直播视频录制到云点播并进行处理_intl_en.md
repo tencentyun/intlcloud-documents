@@ -93,7 +93,7 @@ You can configure audio recording in .acc format if only audio is pushed.
 >!A binding rule will take effect in about 5 to 10 minutes after creation. Any change of the binding rule will not affect live streams that are being pushed and will apply only to new live streams.
 
 ### Step 3. Push a live stream
-After binding the recording template with the push domain name as instructed in [Step 2](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E9.80.89.E6.8B.A9.E5.BD.95.E5.88.B6.E6.96.B9.E6.A1.88), generate the corresponding push domain name from the push address and start [CSS push](https://intl.cloud.tencent.com/document/product/267/31558).
+After binding the recording template with the push domain name as instructed in [Step 2](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E9.80.89.E6.8B.A9.E5.BD.95.E5.88.B6.E6.96.B9.E6.A1.88), generate the corresponding push domain name from the push address and start [live push](https://intl.cloud.tencent.com/document/product/267/31558).
 
 After the live stream is over, the recording file will be stored on the [VOD](https://console.cloud.tencent.com/vod/overview) platform.
 
@@ -116,7 +116,7 @@ You can query and get a recording file through:
 	![](https://qcloudimg.tencent-cloud.cn/raw/643aa06605824bab31016d95a5607099.png)
 	2. Bind the template to a task flow created in the VOD console.
 	![](https://qcloudimg.tencent-cloud.cn/raw/f2c1fdb36cee77be20e9fa366b1994ca.png)
-	3. Push the live stream. For details, see [CSS Push](https://intl.cloud.tencent.com/document/product/267/31558).
+	3. Push the live stream. For details, see [Live Push](https://intl.cloud.tencent.com/document/product/267/31558).
 	4. After the recording is finished, get the `FileId`.
 	![](https://qcloudimg.tencent-cloud.cn/raw/8a70ec2190bde5eb95401ad27b71f9fa.png)
 	5. Get the URL for playback.
@@ -125,7 +125,7 @@ You can query and get a recording file through:
 - **Use cases**: if you only want to store the recording file of a live stream to VOD without transcoding it right away, you can create a recording task without adding other operations. If you want to transcode the video later, you can trigger the transcoding operation manually and use the on-cloud clipping feature in combination to achieve better results.
 
 - **Steps**:
-	1. Push a live stream. For details, see [CSS Push](https://intl.cloud.tencent.com/document/product/267/31558).
+	1. Push a live stream. For details, see [Live Push](https://intl.cloud.tencent.com/document/product/267/31558).
 	2. Record the file automatically to VOD.
 	3. Get the `FileId`.
 	4. Configure a transcoding template or task flow to manually transcode the stream. For details, see [Template Settings](https://intl.cloud.tencent.com/document/product/266/14059).
@@ -138,7 +138,7 @@ You can query and get a recording file through:
 - **Use cases**: if you have high requirements for video security that cannot be satisfied through HLS encryption, you can use self-adaption and superplayer in combination to further enhance the video security. This scheme is highly suitable for online education and corporate training.
 
 - **Steps**:
-	1. Push a live stream. For details, see [CSS Push](https://intl.cloud.tencent.com/document/product/267/31558).
+	1. Push a live stream. For details, see [Live Push](https://intl.cloud.tencent.com/document/product/267/31558).
 	2. Record the file automatically to VOD.
 	3. Get the VOD `FileId`.
 	4. Configure a task flow to generate an adaptive bitrate stream. For details, see [Task Flow Settings](https://intl.cloud.tencent.com/document/product/266/14058).

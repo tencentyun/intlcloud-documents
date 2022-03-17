@@ -14,7 +14,7 @@ The system mainly involves four components: developer (you), API Gateway, SCF, a
 
 The specific business process is as follows:
 
-1. Get the original URL of the video in the VOD Console (in the actual production environment, it should be the player that requests the video URL from the business backend; to simplify the process, this document takes your operation as an example to simulate such business behavior here).
+1. Get the original URL of the video in the VOD console (in the actual production environment, it should be the player that requests the video URL from the business backend; to simplify the process, this document takes your operation as an example to simulate such business behavior here).
 2. Use the original URL of the video to request a hotlink protection signature from SCF.
 3. Use the video URL with the hotlink protection signature to request VOD CDN to play back the video.
 
@@ -94,7 +94,7 @@ Copy the address of the signature distribution service in the output log (which 
 
 ### Step 5. Test key hotlink protection
 
-Upload a test video to VOD as instructed in [Uploading Video - Local Upload](https://intl.cloud.tencent.com/document/product/266/33890). After the video is uploaded, click **Quick View** and click **Copy Address** on the right to copy the video URL.
+Upload a test video to VOD as instructed in [Uploading Video - Local Upload](https://intl.cloud.tencent.com/document/product/266/33890). After the video is uploaded, click **Quick View** and click **Copy URL** on the right to copy the video URL.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ac27b65a2bb0cc91ac9f71b141a31cb2.png)
 On the command line on the CVM instance, run the `curl` command to try directly accessing this URL. The access will be rejected by the server for non-compliance with the key hotlink protection rule, and the HTTP return code will be 403 (during the test, please replace the URL in the command with the actual URL, which also applies below):
 

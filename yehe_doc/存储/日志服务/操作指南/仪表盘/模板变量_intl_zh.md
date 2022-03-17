@@ -13,11 +13,11 @@
 2. 在左侧导航栏中，单击**仪表盘**，进入仪表盘管理页面。
 3. 单击需要操作的仪表盘 ID/名称，进入该仪表盘详情页面。
 4. 单击顶部的 ![](https://qcloudimg.tencent-cloud.cn/raw/db1173f042aa2fcc3bd65cfa2a682639.png)，进入设置页面。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/101678bae6703791c195955f9a17c273.png)
 5. 选择**模板变量**，单击**新建**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/4afdfcc855ed171d9bcad02b54e78177.png)
 6. 在弹出的窗口中，设置模板变量信息，单击**提交**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/10a34ab965cc3d050f73b336073619fc.png)
 <table>
 	<tr><th>表单元素</th><th>说明</th></tr>
 	<tr><td>变量类型</td><td>变量的类别，不同的类别对应不同的配置项与应用场景，此处选择数据源。</td></tr>
@@ -30,10 +30,10 @@
 >? 如果您的仪表盘中没有图表，请 [添加图表](https://intl.cloud.tencent.com/document/product/614/43560)。
 >
 8. 在编辑图表上方，单击**日志主题**，勾选**使用数据源变量**，选择刚新建的模板变量。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/0f3390d4b75f694718bb30ef4c7731c8.png)
 9. 单击**保存**。
 10. 返回仪表盘详情页面，单击上方的数据源变量下拉框，将日志主题切换为其他日志主题，使用该变量的图表将自动切换数据源。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/7965ccbc7def0e3ff7d3cbe9491773b9.png)
 
 
 
@@ -50,11 +50,11 @@
 2. 在左侧导航栏中，单击**仪表盘**，进入仪表盘管理页面。
 3. 单击需要操作的仪表盘 ID/名称，进入该仪表盘详情页面。
 4. 单击顶部的 ![](https://qcloudimg.tencent-cloud.cn/raw/db1173f042aa2fcc3bd65cfa2a682639.png)，进入设置页面。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/0124612359c336be0c6fedf717a1e06d.png)
 5. 选择**模板变量**，单击**新建**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/b94b9a91d97290aab7b5b1268a4c1e4d.png)
 6. 在弹出的窗口中，设置模板变量信息，单击**提交**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/fb06fb025edf90a46c6e181175091a99.png)
 <table>
 	<tr><th>表单元素</th><th>说明</th></tr>
 	<tr><td>变量类型</td><td>变量的类别，不同的类别对应不同的配置项与应用场景，此处选择快速过滤。</td></tr>
@@ -64,7 +64,7 @@
 	<tr><td>支持多选</td><td>开启后可以选择多个变量值作为过滤条件。</td></tr>
 </table>
 7. 返回仪表盘详情页面，单击变量控件，选择过滤字段，仪表盘数据将刷新为过滤后内容。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/c94d5e052a18665e27f06fbcd7d11d10.png)
 
 
 

@@ -6,7 +6,7 @@ First, you must verify the domain to prove that you own it. Each Tencent Cloud a
 
 [](id:que2) 
 ### Is there a limit on the size of an email sent via SES?
-Yes, an email (including images and attachments) cannot exceed 10 MB.
+Yes, an email (including images and attachments) cannot exceed 4 MB.
 
 [](id:que3) 
 ### Are there any limits on the number of emails that I can send?

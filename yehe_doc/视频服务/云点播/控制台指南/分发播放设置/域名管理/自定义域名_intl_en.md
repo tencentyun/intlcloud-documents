@@ -6,7 +6,7 @@ After you activate VOD, the system will assign you a default domain name `xxx.vo
 
 ## Adding Domain Name
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod) and click **Distribution and Playback** > **Domain Name** on the left sidebar.
-2. Click **Add Domain**, enter the domain in the pop-up, and click **Confirm**.
+2. Click **Add Domain**, enter the domain on the displayed page, and click **Confirm**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/6ce1d60d21bf80b237a5a46a4b1aafed.png)
 
 >?

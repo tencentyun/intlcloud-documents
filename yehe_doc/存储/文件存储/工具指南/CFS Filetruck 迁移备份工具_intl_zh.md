@@ -2,6 +2,7 @@
 
 - Filetruck 的主要功能如下：
   - 数据迁移任务
+  - 支持增量迁移，自动完成 MD5 一致性校验 （迁移时建议使用 sycn 方式挂载，进一步保障一致性）
   - 根据任务 ID 查询任务执行情况
   - 列出所有历史任务
 - Filetruck 支持的源和目的地址如下：
@@ -32,7 +33,7 @@ Filetruck 为一次性迁移工具，如在迁移过程中修改源文件，可�
 
 ## 准备工作
 
-在迁移工作开始前，用户可以到腾讯云镜像市场找到CFS 迁移工具 Filetruck的镜像。
+在迁移工作开始前，用户可以到腾讯云镜像市场找到CFS 迁移工具 Filetruck 的镜像。
 
 1. 使用 CFS Filetruck 镜像创建一个 CVM 云服务器（推荐最低配置 ：2核4G1.5Gbps）。主机成功创建后，迁移工具及相关环境配置已经就绪；
 2. 将需要迁移/备份的文件所在的源地址及目的地址挂载到该主机上，详情请参见 [ CFS 文件系统挂载指引](https://intl.cloud.tencent.com/document/product/582/11523)；
@@ -194,7 +195,7 @@ Success
 ```
 CFS-Filetruck version: 0.1.3b
 Copyright (C) 2020 Tencent Inc. All rights reserved.
-Link: https://cloud.tencent.com/product/cfs
+Link: https://intl.cloud.tencent.com/products/cfs
  
 CFS-Filetruck makes file migration easier.
  

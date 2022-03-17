@@ -1,0 +1,18 @@
+## 操作场景
+云服务器控制台实例列表页面支持页签及列表视图，您可参考本文进行页面视图切换。
+页签视图具备实例自助检测工具自动发起检测、可快速获取实例信息及高频操作入口等优势。建议您在拥有云服务器数量 ≤ 5台时，使用页签视图。
+
+
+
+
+## 操作步骤
+1. 登录云服务器控制台，选择左侧导航栏中的 **[实例](https://console.cloud.tencent.com/cvm/instance/index)**。
+2. 在“实例”页面中，您可选择页面右侧的**切换至页签视图**，进行视图切换。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/806d036bb33a2ddd9eef4726a807b0dc.png)
+3. 页签视图切换成功后，如下图所示：
+您可在页签视图中，快速获取实例健康状态信息、实例详细信息及进行实例管理操作。
+![](https://qcloudimg.tencent-cloud.cn/raw/9f4b7bcae5ef4b1c7efb5ce84da1f72a.png)
+<dx-alert infotype="explain" title="">
+当您具有多台云服务器实例时，可选择页面右侧的**切换至列表视图**，切换为列表页面使用。
+</dx-alert>
+

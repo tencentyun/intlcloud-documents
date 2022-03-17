@@ -26,11 +26,11 @@ The pull from URL feature provided by VOD has the following limits:
 <span id="p11"></span>
 ### Step 1. Activate VOD
 
-Please activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
+Activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
 <span id="p12"></span>
 ### Step 2. Create a pull task
 
-Go to the [upload page](https://console.cloud.tencent.com/vod/media/upload) in the VOD Console, select **Pull Video** as the upload method, click **Add a Row**, enter the URL of the video to be pulled (the [test URL](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) is used here as an example. Other configuration items are optional, which can be entered as needed), and click **Pull Video** in the bottom-left corner:
+Go to the [upload page](https://console.cloud.tencent.com/vod/media/upload) in the VOD console, select **Pull** as the upload method, click **Add a Row**, enter the URL of the video to be pulled (the [test URL](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) is used here as an example. Other configuration items are optional, which can be entered as needed), and click **Pull Video** in the bottom-left corner:
 
 ![](https://main.qcloudimg.com/raw/3871a2c05ca1f26f62e0518cb3943309.png)
 >?The time it takes to pull a video is directly proportional to the video file size. We recommend you use a small video (of dozens of megabytes in size) for the test to avoid long wait.
@@ -63,7 +63,7 @@ Your API key (i.e., `SecretId` and `SecretKey`) is required for TencentCloud API
 <span id="p23"></span>
 ### Step 3. Activate VOD
 
-Please activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
+Activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
 <span id="p24"></span>
 ### Step 4. Initiate a pull task
 

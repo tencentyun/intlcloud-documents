@@ -1,5 +1,5 @@
 ## Overview
-On the **Application Management** page, users can disable and terminate the resources in an application, which allows users to manage their applications more flexibly. The life cycle phases (normal, disabled, and terminated) and descriptions of applications are detailed as below:
+On the **Application Management** page, users can disable and terminate the resources in an application, which allows users to manage their applications more flexibly. The lifecycle phases (normal, disabled, and terminated) and descriptions of applications are detailed as below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/5d453fecd052b987f8219a2fe4e331a2.png)
 
 
@@ -28,7 +28,7 @@ If the account has multiple subapplications, go to **Admin** > **Application Man
 ![](https://qcloudimg.tencent-cloud.cn/raw/279d7be223412490b95bb0d73e2ed55d.png)
 
 
-## Notes:
+## Notes
 1. Without subapplications enabled:
 	- Terminating the primary application will clear all resources and configurations in the VOD account.
 	- You can enable the application after termination. But you cannot use it if there is overdue payment. To use it, you need to top up the account.

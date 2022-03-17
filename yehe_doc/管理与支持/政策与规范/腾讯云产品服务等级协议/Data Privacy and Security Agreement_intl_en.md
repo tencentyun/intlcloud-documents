@@ -89,6 +89,7 @@ Tencent and Organisation acknowledge that Organisation is the Controller and Ten
 <li>following Tencent’s approval of a draft Notification Statement, Organisation must provide a copy of the approved Notification Statement to the applicable data protection regulators, Data Subjects and any other person as required under the Data Protection Laws; and</li>
 <li>not, and must ensure that its Affiliates and their respective personnel do not, make any public statement or disclosure relating to any suspected or actual Data Breach without the prior written consent of Tencent.</li></ol></ol>
 	
+
 ## Appointment of Sub-Processors
 
 1. Tencent may authorize any Sub-Processor to Process the Personal Data on its behalf provided that, where (and to the extent) required by Data Protection Laws, Tencent enters into a written agreement with the Sub-Processor containing terms which are substantially the same as those contained in this DPSA. Organisation hereby grants Tencent general written authorisation to engage such Sub-Processors listed at the Tencent Cloud [Third Parties](https://intl.cloud.tencent.com/services/thirdParties), subject to the requirements of this clause 8.
@@ -131,6 +132,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 31.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45798).
 32.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45801).
 33.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
+34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
 
 ## Jurisdiction-specific Requirements
 
