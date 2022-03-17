@@ -1,6 +1,5 @@
 ## Supported Regions
 Lighthouse is currently available in the following regions. We recommend you select the region closest to your target users to reduce the network access latency.
-- **Chinese mainland**: Beijing, Guangzhou, Shanghai, Chengdu, and Nanjing.
 - **Hong Kong/Macao/Taiwan (China Region)**: Hong Kong (China).
 - **Other countries and regions**: Singapore, Silicon Valley, Tokyo, and Moscow.
 
