@@ -91,37 +91,6 @@ Lighthouse packages are offered in the form of traffic package, which counts onl
 </tr>
 </tbody></table>
 
-<dx-alert infotype="explain" title="">
-<sup>1</sup>. This package is eligible for duration discounts.
-</dx-alert>
-
-Deactivated packages are as listed below (we recommend you upgrade them to new packages):
-<table>
-<thead>
-<tr>
-<th>CPU (Cores)</th><th>Memory (GB)</th><th>System Disk - SSD (GB)</th><th>Peak Bandwidth (Mbps)</th>
-<th>Monthly Traffic Package (GB)</th><th>Price (CNY/Month)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<tr>
-<td>2</td><td>2</td><td>80</td><td>30</td><td>3,072</td><td><strong>132</strong></td>
-</tr>
-<tr>
-<td>2</td><td>4</td><td>100</td><td>30</td><td>4,096</td><td><strong>265</strong></td>
-</tr>
-<tr>
-<td>2</td><td>8</td><td>200</td><td>30</td><td>5,120</td><td><strong>465</strong></td>
-</tr>
-</tbody></table>
-
-:::
-</dx-tabs>
-
->?Both newly purchased and renewed instances are eligible for duration discounts.
-
-
 ## [Excessive Traffic Overview](id:additional)
 If the actually used traffic exceeds the monthly traffic package limit of the basic package, Lighthouse will be billed by the outbound traffic, that is, it will be billed by the total amount of data (in GB) transferred over the public network.
 
