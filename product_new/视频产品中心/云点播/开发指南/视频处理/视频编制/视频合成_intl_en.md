@@ -13,7 +13,7 @@ The container format of the media file after compositing is MP4 (video) or MP3 (
 
 ## Task Initiation
 
-You can initiate a video composing task by calling a [server API](https://intl.cloud.tencent.com/document/product/266/34127). The return result of the API contains the task ID, which is used to associate with the corresponding task result when [getting result](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96).
+You can initiate a video compositing task by calling a [server API](https://intl.cloud.tencent.com/document/product/266/34127). The return result of the API contains the task ID, which is used to associate with the corresponding task result when [getting result](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96).
 
 ## Getting Result
 
