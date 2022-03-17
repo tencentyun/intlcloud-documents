@@ -1,32 +1,28 @@
-## Overview
+## Scenario
 
-This document describes how to upload files from a local Windows computer to a Windows CVM using Microsoft Terminal Services Client (MSTSC). 
+The common method for file upload to Windows CVM is to use Microsoft Terminal Services Client. This document describes how to upload files to Windows CVM using remote desktop connection on a local Windows computer.
 
 ## Prerequisites
 
 Make sure the Windows CVM can access the public network.
 
 ## Directions
->? This document takes a Windows 7 computer as an example. The procedure may vary slightly according to the operating system version.
+> The following takes the local computer with Windows 7 operating system as an example. The specific steps may vary by operating systems.
 >
 ### Obtaining a public IP
-Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index), navigate to the **Instances** page, and record the public IP of the CVM to which you want to upload files.
+Log in to [CVM Console](https://console.cloud.tencent.com/cvm/index). On the instance list page, record the public IP of the CVM to which you want to upload files.
 
-### Uploading files
-1. Press **Windows + R** on the local computer to open the **Run** window.
-2. In the **Run** pop-up window, enter **mstsc**, and click **OK** to open the **Remote Desktop Connection** dialog box.
-3. In the pop-up dialog box, enter the public IP address of the CVM and click **Show Options**.
-4. On the **General** tab, enter the CVM public IP address and username “Administrator”.
+### Uploading a file
+1. Use the shortcut key **Windows + R** on the local computer to open the **Run** window.
+2. In the pop-up **Run** window, enter **mstsc**, and click **OK** to open the **Remote Desktop Connection** box.
+3. In the **Remote Desktop Connection** box, enter the public IP address of the CVM and click **Show Options**.
+4. On the **General** tab, enter the CVM public network IP address and user name Administrator.
 5. Select the **Local Resources** tab and click **More**.
-6. In the **Local devices and resources** pop-up window, select the **Drives** module, check the local disk where the files to upload locate, and click **OK**.
+6. In the pop-up **Local devices and resources** window, select the **Drives** module, check local disks where files to be uploaded to Windows CVM are located, and click **OK**.
 7. After the local configuration is complete, click **Connect** to log in to Windows CVM remotely.
-8. Select <img src="https://main.qcloudimg.com/raw/ef8fb18be7880d8b48ce402b973f22dc.png" style="margin:-3px 0px"> and click **Computer** on the Windows CVM, and you can see the local disk attached.
->? This step uses a Tencent Cloud Windows CVM with Windows Server 2016 operating system as an example. The procedure may vary slightly according to the operating system version.
->
-9. Double click to open the attached local disk. Copy desired local files to another drive of the Windows CVM.
-For example, copy the file A from local disk (E) to the C drive of Windows CVM.
+8. Click **Start** > **Computer** on Windows CVM, and you can see the local disks mounted to the CVM.
+9. Double-click to open the mounted local disks, and copy the local files to other hard disks of Windows CVM to complete file uploads.
+For example, copy file A from local disk (E) to disk C of Windows CVM.
 
-### Downloading files
-To download files from Windows CVM to your computer, you only need to copy desired files from the CVM to the attached local disk.
-
-
+### Downloading a file
+To download files from Windows CVM to the local computer, refer to the file upload operations above and copy the required files from Windows CVM to the mounted local disks to complete file downloads.
