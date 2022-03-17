@@ -60,6 +60,7 @@ Lighthouse packages are offered in the form of traffic package, which counts onl
 <td>2</td><td>8</td><td>100</td><td>30</td><td>4,096</td><td><strong>20.0</strong></td>
 </tr>
 </tbody></table>
+
 :::
 ::: Windows\sinstance\spackages
 <table>
@@ -69,10 +70,7 @@ Lighthouse packages are offered in the form of traffic package, which counts onl
 <th>Monthly Traffic Package (GB)</th><th>Price (USD/Month)</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<tr>
-<tr>
+<tbody><tr>
 <td>2</td><td>2</td><td>50</td><td>30</td><td>1,024</td><td><strong>8.5</strong></td>
 </tr>
 <tr>
