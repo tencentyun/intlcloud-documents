@@ -184,4 +184,4 @@ Show the result:
 ```
 
 ## References
-For more information, see [MongoDB official documentation](https://docs.mongodb.com/manual/reference/connection-string/).
+For more information, see [MongoDB official documentation](https://docs.mongodb.com/manual/reference/command/).
