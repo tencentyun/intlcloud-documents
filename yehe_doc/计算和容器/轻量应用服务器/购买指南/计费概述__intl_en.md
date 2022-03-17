@@ -31,61 +31,61 @@ Lighthouse packages are offered in the form of traffic package, which counts onl
 ### Hong Kong/Singapore/Tokyo/Silicon Valley/Frankfurt/Mumbai
 
 <dx-tabs>
-::: Linux instance packages
+::: Linux\sinstance\spackages
 <table>
 <thead>
 <tr>
 <th>CPU (Cores)</th><th>Memory (GB)</th><th>System Disk - SSD (GB)</th><th>Peak Bandwidth (Mbps)</th>
-<th>Monthly Traffic Package (GB)</th><th>Price (CNY/Month)</th>
+<th>Monthly Traffic Package (GB)</th><th>Price (USD/Month)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <tr>
 <tr>
-<td>1</td><td>1</td><td>25</td><td>30</td><td>1,024</td><td><strong>24</strong></td>
+<td>2</td><td>2</td><td>30</td><td>30</td><td>1,024</td><td><strong>5.0</strong></td>
 </tr>
 <tr>
-<td>1</td><td>2</td><td>50</td><td>30</td><td>2,048</td><td><strong>34</strong></td>
+<td>2</td><td>2</td><td>50</td><td>30</td><td>2,048</td><td><strong>6.5</strong></td>
 </tr>
-<td>2</td><td>4</td><td>80</td><td>30</td><td>3,072</td><td><strong>67</strong></td>
-</tr>
-<tr>
-<td>2</td><td>8</td><td>100</td><td>30</td><td>4,096</td><td><strong>133</strong><sup>1</sup></td>
+<td>2</td><td>4</td><td>60</td><td>30</td><td>2,560</td><td><strong>8.0</strong></td>
 </tr>
 <tr>
-<td>4</td><td>8</td><td>200</td><td>30</td><td>5,120</td><td><strong>266</strong><sup>1</sup></td>
+<td>2</td><td>4</td><td>80</td><td>30</td><td>3,072</td><td><strong>10.0</strong></td>
 </tr>
 <tr>
-<td>4</td><td>16</td><td>400</td><td>30</td><td>6,144</td><td><strong>532</strong><sup>1</sup></td>
+<td>2</td><td>8</td><td>90</td><td>30</td><td>3,584</td><td><strong>15.0</strong></td>
+</tr>
+<tr>
+<td>2</td><td>8</td><td>100</td><td>30</td><td>4,096</td><td><strong>20.0</strong></td>
 </tr>
 </tbody></table>
 
-::: Windows\s instance packages
+::: Windows\sinstance\spackages
 <table>
 <thead>
 <tr>
 <th>CPU (Cores)</th><th>Memory (GB)</th><th>System Disk - SSD (GB)</th><th>Peak Bandwidth (Mbps)</th>
-<th>Monthly Traffic Package (GB)</th><th>Price (CNY/Month)</th>
+<th>Monthly Traffic Package (GB)</th><th>Price (USD/Month)</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>1</td><td>1</td><td>40</td><td>30</td><td>1,024</td><td><strong>48</strong></td>
+<td>2</td><td>2</td><td>50</td><td>30</td><td>1,024</td><td><strong>8.5</strong></td>
 </tr>
 <tr>
-<td>1</td><td>2</td><td>50</td><td>30</td><td>2,048</td><td><strong>68</strong></td>
+<td>2</td><td>2</td><td>60</td><td>30</td><td>2,048</td><td><strong>11.0</strong></td>
 </tr>
 <tr>
-<td>2</td><td>4</td><td>80</td><td>30</td><td>3,072</td><td><strong>121</strong></td>
+<td>2</td><td>4</td><td>70</td><td>30</td><td>2,560</td><td><strong>15.0</strong></td>
 </tr>
 <tr>
-<td>2</td><td>8</td><td>100</td><td>30</td><td>4,096</td><td><strong>239</strong><sup>1</sup></td>
+<td>2</td><td>4</td><td>80</td><td>30</td><td>3,072</td><td><strong>20.0</strong></td>
 </tr>
 <tr>
-<td>4</td><td>8</td><td>200</td><td>30</td><td>5,120</td><td><strong>465</strong><sup>1</sup></td>
+<td>2</td><td>8</td><td>90</td><td>30</td><td>3,584</td><td><strong>30.0</strong></td>
 </tr>
 <tr>
-<td>4</td><td>16</td><td>400</td><td>30</td><td>6,144</td><td><strong>788</strong><sup>1</sup></td>
+<td>2</td><td>8</td><td>100</td><td>30</td><td>4,096</td><td><strong>40.0</strong></td>
 </tr>
 </tbody></table>
 
