@@ -25,7 +25,6 @@ Lighthouse packages are offered in the form of traffic package, which counts onl
 
 ## [Basic Package Pricing](id:basisPrice)
 >? 
-
 >- **Linux instance package**: uses a Linux system image or an application image based on Linux.
 >- **Windows instance package**: uses a Windows Server system image or an ASP.NET application image.
 >- Deactivated packages are no longer purchasable. We recommend you upgrade such instance packages. For more information, please see [Upgrading Instance Package](https://intl.cloud.tencent.com/document/product/1103/41407).
