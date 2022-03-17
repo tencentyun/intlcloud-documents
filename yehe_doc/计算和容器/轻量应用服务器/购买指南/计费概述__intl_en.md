@@ -116,7 +116,7 @@ The **number of custom images exceeding the free tier** is billed hourly by regi
 
 
 ### Pricing information
-The unit price of excessive custom images is 0.01 CNY/hour.
+The unit price of excessive custom images is 0.0015 USD/hour.
 
 ### Overdue payments
 If your account has overdue payments:
