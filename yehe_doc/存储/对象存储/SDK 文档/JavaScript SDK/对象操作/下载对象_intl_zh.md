@@ -17,7 +17,7 @@ GET Object 接口请求可以获取存储桶里指定文件的内容，得到文
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -30,7 +30,7 @@ cos.getObject({
 
 指定 Range 获取文件内容：
 
-[//]: # ".cssg-snippet-get-object-range"
+[//]: # (.cssg-snippet-get-object-range)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -44,7 +44,7 @@ cos.getObject({
 
 返回blob格式文件内容：
 
-[//]: # ".cssg-snippet-get-object-data-type"
+[//]: # (.cssg-snippet-get-object-data-type)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -60,7 +60,7 @@ cos.getObject({
 
 >?关于下载对象的限速说明，请参见 [单链接限速](https://intl.cloud.tencent.com/document/product/436/34072)。
 
-[//]: # ".cssg-snippet-get-object-traffic-limit"
+[//]: # (.cssg-snippet-get-object-traffic-limit)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -136,13 +136,13 @@ function(err, data) { ... }
 
 按前缀下载多个对象（下载指定目录下的文件）：
 
-[//]: # ".cssg-snippet-get-objects"
+[//]: # (.cssg-snippet-get-objects)
 ```js
 var getObjects = function (marker) {
     cos.getBucket({
         Bucket: config.Bucket,
         Region: config.Region,
-        Prefix: 'abc', /* 要删除的目录，或要删除的前缀 */
+        Prefix: 'abc', /* 要下载的目录，或要下载的前缀 */
         Marker: marker,
         MaxKeys: 1000,
     }, function (listError, listResult) {

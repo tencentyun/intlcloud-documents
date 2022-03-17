@@ -17,7 +17,7 @@ This API (`GET Object`) is used to get the content, in string format, of a speci
 
 #### Sample code
 
-[//]: # ".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
@@ -30,7 +30,7 @@ cos.getObject({
 
 Getting file content with `Range` specified
 
-[//]: # ".cssg-snippet-get-object-range"
+[//]: # (.cssg-snippet-get-object-range)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
@@ -44,7 +44,7 @@ cos.getObject({
 
 Object content in BLOB format is returned.
 
-[//]: # ".cssg-snippet-get-object-data-type"
+[//]: # (.cssg-snippet-get-object-data-type)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -60,7 +60,7 @@ Downloading an object (limiting single-URL speed):
 
 >?For more information about the speed limits on object downloads, please see [Single-URL Speed Limits](https://intl.cloud.tencent.com/document/product/436/34072).
 
-[//]: # ".cssg-snippet-get-object-traffic-limit"
+[//]: # (.cssg-snippet-get-object-traffic-limit)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
@@ -107,7 +107,7 @@ function(err, data) { ... }
 
 ```
 
-| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | 
+| Parameter  | Description | Type | 
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
@@ -136,7 +136,7 @@ function(err, data) { ... }
 
 Downloading multiple objects with a specified prefix (downloading files in a specified directory):
 
-[//]: # ".cssg-snippet-get-objects"
+[//]: # (.cssg-snippet-get-objects)
 ```js
 var getObjects = function (marker) {
     cos.getBucket({

@@ -25,9 +25,9 @@ function doesObjectExist() {
     }, function(err, data) {
         if (data) {
             console.log('The object exists.');
-        } else if (err.code === 404) {
+        } else if (err.code == 404) {
             console.log('The object does not exist.');
-        } else if (err.code === 403) {
+        } else if (err.code == 403) {
             console.log ('no permission to read the object');
         }
     });

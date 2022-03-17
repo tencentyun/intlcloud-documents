@@ -8,8 +8,8 @@ Before using VOD, please make sure that you have met the following prerequisites
 You need to activate VOD in the following steps:
 
 1. Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
-2. For more information about VOD service billing, please see [Billing Overview] (https://intl.cloud.tencent.com/document/product/266/2838).
-3. Select **Cloud Products** > **Video Services** > **[Video on Demand](https://console.cloud.tencent.com/vod)** to enter the VOD Console.
+2. For more information about VOD service billing, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/266/2838).
+3. Select **Products** > **Video Services** > **[Video on Demand](https://console.cloud.tencent.com/vod)** to enter the VOD console.
 
 At this point, you have activated VOD.
 
@@ -17,7 +17,7 @@ At this point, you have activated VOD.
 
 You need to make sure that hotlink protection for your default distribution domain name is not enabled:
 
-1. Log in to the VOD Console, select **Distribution and Playback Settings** > **[Domain Management](https://console.cloud.tencent.com/vod/distribute-play/domain)**, and click **Settings** of the "default distribution domain name" to enter the settings page.
+1. Log in to the VOD console, select **Distribution and Playback** > **[Domain Name](https://console.cloud.tencent.com/vod/distribute-play/domain)**, and click **Set** of the "default distribution domain name" to enter the settings page.
 <img src="https://main.qcloudimg.com/raw/06259e41a62ea14ce8eb19ef6480182c.png" width="800" />
 2. Confirm that the statuses of **Referer Hotlink Protection** and **Key Hotlink Protection** are both "Not Enabled".
 ![](https://qcloudimg.tencent-cloud.cn/raw/12689eb5bed63fc76cd7d88e38907c09.png)
@@ -26,19 +26,19 @@ You need to make sure that hotlink protection for your default distribution doma
 ## Step 1. Upload and process a video
 This step describes how to upload a video, transcode it to adaptive bitstream, and capture the cover and image sprite.
 
-1. Log in to the VOD Console, select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**, and click **Upload Video**.
+1. Log in to the VOD console, select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**, and click **Upload Video**.
 ![](https://main.qcloudimg.com/raw/b1ad4f0706ad1cd24044c8420a759868.png)
 2. On the upload page, select **Local Upload**, click **Select Video** to upload a local video, and set other items as follows:
- * Select **Automatic Processing After Upload** as **Video Processing**.
- * Select **Task Flow** as **Processing Type**.
- * Select **LongVideoPreset** as **Task Flow Template**.
+ * Select **Auto-processing after upload** for **Process Video**.
+ * Select **Task Flow** for **Processing Type**.
+ * Select **LongVideoPreset** for **Task Flow Template**.
  >?`LongVideoPreset` is a preset task flow, which uses template 10 for adaptive bitrate streaming, template 10 for cover generating, and template 10 for image sprite capturing.
 ![](https://main.qcloudimg.com/raw/c5d53f748ce95ab0c8accea42687256a.png)
 3. Click **Upload** to enter the "Uploading" page and wait for the upload to complete.
 4. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** and find the newly uploaded video (FileId: 528xxx3757278095). Here, the ID is the `FileId` of the uploaded video.
 ![](https://main.qcloudimg.com/raw/f2b3744a3c42a07863db0b7545dd892f.png)
->?Wait until the "video status" changes from **Processing** to **Normal**, which indicates that video processing is completed.
-5. Click **Manage** in the "Operation" column of the newly uploaded video to enter the management page:
+>?Wait until the video status changes from **Processing** to **Normal**, which indicates that video processing is completed.
+5. Click **Manage** in the **Operation** column of the newly uploaded video to enter the management page:
  - Select the **Basic Info** tab, and you can view the generated cover and output adaptive bitstream (template ID: 10).
  - Select the **Screenshot Info** tab, and you can view the generated image sprite (template ID: 10).
 
@@ -46,8 +46,8 @@ This step describes how to upload a video, transcode it to adaptive bitstream, a
 
 In the previous step, you have uploaded and processed the video. Now, you can use the superplayer for web, iOS, and Android to quickly preview video playback.
 
-1. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**, find the video uploaded and processed in **step 1**, click **Manage** in the "Operation" column, and select **Superplayer Preview**.
-2. Select "default" as **Superplayer Configuration**.
+1. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**, find the video uploaded and processed in **step 1**, click **Manage** in the **Operation** column, and select **Superplayer Preview**.
+2. Select **default** for **Playback Configuration**.
 >? `default` is a preset superplayer configuration, which is used to output the adaptive bitstream with template 10 and the image sprite with template 10.
  <img src="https://main.qcloudimg.com/raw/17e2552964195c6919239d2d13a0d012.png" width="500" />
 4. In **Web Player**, click the button in the middle of the player, and you can play back the video on web.

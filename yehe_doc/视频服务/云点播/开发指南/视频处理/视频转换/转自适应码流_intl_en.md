@@ -32,7 +32,7 @@ Below are instructions for initiating adaptive bitrate streaming tasks in these 
 * Specify a task upon upload from client: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create an adaptive bitrate streaming task flow (by specifying `MediaProcessTask.AdaptiveDynamicStreamingTaskSet`), and in the [request to upload video from client](https://intl.cloud.tencent.com/document/product/266/33922), set `procedure` to the created task flow.
 * Specify a task upon upload from the console: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create an adaptive bitrate task flow (by specifying `MediaProcessTask.AdaptiveDynamicStreamingTaskSet`), and when uploading video via the console, choose [**Automatic Processing After Upload**](https://intl.cloud.tencent.com/document/product/266/33890) and select the created task flow.
 
-## Obtain Results
+## Getting Result
 
 After initiating an adaptive bitrate streaming task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the adaptive bitrate streaming task is initiated (the fields with null value are omitted):
 
