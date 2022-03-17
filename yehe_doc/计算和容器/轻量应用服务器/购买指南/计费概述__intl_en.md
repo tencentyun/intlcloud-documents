@@ -102,11 +102,12 @@ If your account has overdue payments, all instances generating excessive traffic
 
 
 ## [Excessive Traffic Pricing](id:OverRatedPrice)
-| Region | Price (CNY/GB) |
+| Region | Price (USD/GB) |
 |---------|---------|
-| Chinese mainland, Singapore, Moscow, and Tokyo | 0.8 |
-Hong Kong (China) | 	1.0 |
-| Silicon Valley	 | 	0.5 |
+| Tokyo | 0.13 |
+|Hong Kong (China) | 	0.12 |
+| Silicon Valley	\Frankfurt | 	0.5 |
+| Mumbai | 	0.1 |
 
 ## [Custom Image Billing Overview](id:customizeOS)
 ### Billing mode
