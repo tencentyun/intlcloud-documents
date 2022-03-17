@@ -21,8 +21,6 @@ Lighthouse packages are offered in the form of traffic package, which counts onl
  - **If the monthly used traffic exceeds the monthly traffic package limit**, the excessive traffic will be billed by usage. 
 
 
-
-
 ## [Basic Package Pricing](id:basisPrice)
 >? 
 >- **Linux instance package**: uses a Linux system image or an application image based on Linux.
@@ -30,7 +28,7 @@ Lighthouse packages are offered in the form of traffic package, which counts onl
 >- Deactivated packages are no longer purchasable. We recommend you upgrade such instance packages. For more information, please see [Upgrading Instance Package](https://intl.cloud.tencent.com/document/product/1103/41407).
 >
 
-### Hong Kong/Macao/Taiwan (China Region) and other countries/regions
+### Hong Kong/Singapore/Tokyo/Silicon Valley/Frankfurt/Mumbai
 
 <dx-tabs>
 ::: Linux instance packages
