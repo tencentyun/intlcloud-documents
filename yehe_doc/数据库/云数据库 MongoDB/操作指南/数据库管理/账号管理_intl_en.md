@@ -29,7 +29,7 @@ We recommend you reset the database password periodically at least once every th
 
 ### Creating account
 1. On the **Account Management** page, click **Create Account**.
-2. On the **Create Account** tab in the **Set Permissions** pop-up window, configure the account information according to the table below and click **OK**.
+2. On the **Create Account** tab in the **Create Account** pop-up window, configure the account information according to the table below and click **OK**.
 <table>
 <thead><tr><th>Parameter</th><th>Required</th><th>Description</th><th>Value Range/Valid Values</th><th>Sample Value</th></tr></thead>
 <tbody>
