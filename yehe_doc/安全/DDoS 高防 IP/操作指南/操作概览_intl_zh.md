@@ -1,20 +1,27 @@
 您在使用 DDoS 高防 IP 时，可能碰到如配置 DDoS 高防 IP 实例、查看安全防护概览、查看操作日志以及设置安全事件通知等问题。本文将介绍使用 DDoS 高防 IP 的常用操作，供您参考。
 
 ## 防护概览
- [防护概览](https://intl.cloud.tencent.com/document/product/297/44555)
+ -[防护概览](https://intl.cloud.tencent.com/document/product/297/44555)
+ -[使用限制](https://intl.cloud.tencent.com/document/product/297/37207)
 
 ## 防护配置
-**IP和端口防护**
+#### DDoS 防护
 - [协议封禁](https://intl.cloud.tencent.com/document/product/297/37210)
 - [水印防护](https://intl.cloud.tencent.com/document/product/297/37211)
 - [特征过滤](https://intl.cloud.tencent.com/document/product/297/37212)
 - [AI 防护](https://intl.cloud.tencent.com/document/product/297/37213)
 - [IP 黑白名单](https://intl.cloud.tencent.com/document/product/297/37215)
+- [端口过滤](https://intl.cloud.tencent.com/document/product/297/42153)
+- [区域封禁](https://intl.cloud.tencent.com/document/product/297/42158)
+- [IP 端口限速](https://intl.cloud.tencent.com/document/product/297/42151)
+- [连接类攻击防护](https://intl.cloud.tencent.com/document/product/297/37214)
 
-**域名防护**
-- [防护等级与清洗阈值](https://intl.cloud.tencent.com/document/product/297/37217)
+#### CC 防护
+- [CC 防护开关及清洗阈值](https://intl.cloud.tencent.com/document/product/297/37217)
 - [精准防护](https://intl.cloud.tencent.com/document/product/297/37218)
 - [CC 频率控制](https://intl.cloud.tencent.com/document/product/297/37219)
+- [区域封禁](https://intl.cloud.tencent.com/document/product/297/43393)
+- [IP 黑白名单](https://intl.cloud.tencent.com/document/product/297/44559)
 
 ## 业务接入
 - [端口接入](https://intl.cloud.tencent.com/document/product/297/37221)
