@@ -30,47 +30,7 @@
 >- 已下线套餐已不再售卖，建议使用已下线套餐的用户进行实例套餐升级。详情请参见 [升级实例套餐](https://intl.cloud.tencent.com/document/product/1103/41407)。
 >
 
-### 中国内地地域
-中国内地地域根据套餐配置的不同，分为**通用型**及**存储型**两种类型，请根据您的业务情况进行选择。创建实例时，一次性购买半年及以上将享受优惠价格。
-
-<table>
-	<tr><th>套餐类型</th><th>CPU（核）</th><th>内存（GB）</th><th>系统盘-SSD（GB） </th><th>带宽（Mbps）</th><th>每月流量包（GB）</th><th>价格（元/月）</th></tr>
-	<tr><td rowspan=7>通用型</td></tr>
-	<tr><td>1</td><td>1</td><td>40</td><td>4</td><td>300</td><td><b>40</b></td></tr>
-	<tr><td>1</td><td>2</td><td>50</td><td>5</td><td>500</td><td><b>50</b></td></tr>
-	<tr><td>1</td><td>2</td><td>60</td><td>6</td><td>1000</td><td><b>90</b></td></tr>
-	<tr><td>2</td><td>4</td><td>80</td><td>8</td><td>1200</td><td><b>140</b></td></tr>
-	<tr><td>4</td><td>8</td><td>100</td><td>10</td><td>1500</td><td><b>255</b></td></tr>
-	<tr><td>4</td><td>16</td><td>120</td><td>12</td><td>2000</td><td><b>350</b></td></tr>
-	<tr><td rowspan=4>存储型</td><td>1</td><td>2</td><td>200</td><td>3</td><td>200</td><td><b>70</b></td></tr>
-	<tr><td>2</td><td>4</td><td>350</td><td>4</td><td>300</td><td><b>105</b></td></tr>
-	<tr><td>2</td><td>8</td><td>500</td><td>5</td><td>500</td><td><b>150</b></td></tr>
-	<tr><td>4</td><td>8</td><td>1000</td><td>8</td><td>1000</td><td><b>300</b></td></tr>
-</table>
-
-下表为已下线套餐（建议升级为新套餐）：
-<table>
-	<tr><th>套餐类型</th><th>CPU（核）</th><th>内存（GB）</th><th>系统盘-SSD（GB） </th><th>带宽（Mbps）</th><th>每月流量包（GB）</th><th>价格（元/月）</th></tr>
-	<tr><td rowspan=6>通用型</td><td>1</td><td>1</td><td>20</td><td>3</td><td>200</td><td><b>40</b></td></tr>
-	<tr><td>1</td><td>1</td><td>40</td><td>3</td><td>300</td><td><b>50</b></td></tr>
-	<tr><td>1</td><td>1</td><td>40</td><td>3</td><td>500</td><td><b>90</b></td></tr>
-	<tr><td>1</td><td>2</td><td>40</td><td>5</td><td>1000</td><td><b>140</b></td></tr>
-	<tr><td>2</td><td>4</td><td>60</td><td>8</td><td>1500</td><td><b>255</b></td></tr>
-	<tr><td>2</td><td>8</td><td>80</td><td>10</td><td>2000</td><td><b>350</b></td></tr>
-</table>
-
-
-
-
-### 中国内地地域时长折扣
-
-| 1 - 5个月 | 6 - 11个月 | 12个月及以上 |
-|---------|---------|---------|
-| 无 | 88折 | 85折 |
-
->?新购及续费实例均可享受时长折扣。
-
-### 中国港澳台地区和其他国家地域
+### 中国香港/新加坡/东京/硅谷/法兰克福/孟买
 
 <dx-tabs>
 ::: Linux\s实例套餐
@@ -85,48 +45,23 @@
 <tr>
 <tr>
 <tr>
-<td>1</td><td>1</td><td>25</td><td>30</td><td>1024</td><td><strong>24</strong></td>
+<td>2</td><td>2</td><td>30</td><td>30</td><td>1,024</td><td><strong>5.0</strong></td>
 </tr>
 <tr>
-<td>1</td><td>2</td><td>50</td><td>30</td><td>2048</td><td><strong>34</strong></td>
+<td>2</td><td>2</td><td>50</td><td>30</td><td>2,048</td><td><strong>6.5</strong></td>
 </tr>
-<td>2</td><td>4</td><td>80</td><td>30</td><td>3072</td><td><strong>67</strong></td>
-</tr>
-<tr>
-<td>2</td><td>8</td><td>100</td><td>30</td><td>4096</td><td><strong>133</strong><sup>1</sup></td>
+<td>2</td><td>4</td><td>60</td><td>30</td><td>2,560</td><td><strong>8.0</strong></td>
 </tr>
 <tr>
-<td>4</td><td>8</td><td>200</td><td>30</td><td>5120</td><td><strong>266</strong><sup>1</sup></td>
+<td>2</td><td>4</td><td>80</td><td>30</td><td>3,072</td><td><strong>10.0</strong></td>
 </tr>
 <tr>
-<td>4</td><td>16</td><td>400</td><td>30</td><td>6144</td><td><strong>532</strong><sup>1</sup></td>
+<td>2</td><td>8</td><td>90</td><td>30</td><td>3,584</td><td><strong>15.0</strong></td>
+</tr>
+<tr>
+<td>2</td><td>8</td><td>100</td><td>30</td><td>4,096</td><td><strong>20.0</strong></td>
 </tr>
 </tbody></table>
-
-<dx-alert infotype="explain" title="">
-<sup>1</sup> 该套餐可享受时长折扣。
-</dx-alert>
-
-下表为已下线套餐（建议升级为新套餐）：
-<table>
-<thead>
-<tr>
-<th>CPU（核）</th><th>内存（GB）</th><th>系统盘-SSD（GB）</th><th>峰值带宽（Mbps）</th>
-<th>每月流量包（GB）</th><th>价格（元/月）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td><td>2</td><td>80</td><td>30</td><td>3072</td><td><strong>67</strong></td>
-</tr>
-<tr>
-<td>2</td><td>4</td><td>100</td><td>30</td><td>4096</td><td><strong>133</strong></td>
-</tr>
-<tr>
-<td>2</td><td>8</td><td>200</td><td>30</td><td>5120</td><td><strong>266</strong></td>
-</tr>
-</tbody></table>
-
 :::
 ::: Windows\s实例套餐
 <table>
@@ -137,62 +72,25 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>1</td><td>1</td><td>40</td><td>30</td><td>1024</td><td><strong>48</strong></td>
+<td>2</td><td>2</td><td>50</td><td>30</td><td>1,024</td><td><strong>8.5</strong></td>
 </tr>
 <tr>
-<td>1</td><td>2</td><td>50</td><td>30</td><td>2048</td><td><strong>68</strong></td>
+<td>2</td><td>2</td><td>60</td><td>30</td><td>2,048</td><td><strong>11.0</strong></td>
+</tr>
+<td>2</td><td>4</td><td>70</td><td>30</td><td>2,560</td><td><strong>15.0</strong></td>
 </tr>
 <tr>
-<td>2</td><td>4</td><td>80</td><td>30</td><td>3072</td><td><strong>121</strong></td>
+<td>2</td><td>4</td><td>80</td><td>30</td><td>3,072</td><td><strong>20.0</strong></td>
 </tr>
 <tr>
-<td>2</td><td>8</td><td>100</td><td>30</td><td>4096</td><td><strong>239</strong><sup>1</sup></td>
+<td>2</td><td>8</td><td>90</td><td>30</td><td>3,584</td><td><strong>30.0</strong></td>
 </tr>
 <tr>
-<td>4</td><td>8</td><td>200</td><td>30</td><td>5120</td><td><strong>465</strong><sup>1</sup></td>
-</tr>
-<tr>
-<td>4</td><td>16</td><td>400</td><td>30</td><td>6144</td><td><strong>788</strong><sup>1</sup></td>
-</tr>
-</tbody></table>
-
-<dx-alert infotype="explain" title="">
-<sup>1</sup> 该套餐可享受时长折扣。
-</dx-alert>
-
-下表为已下线套餐（建议升级为新套餐）：
-<table>
-<thead>
-<tr>
-<th>CPU（核）</th><th>内存（GB）</th><th>系统盘-SSD（GB）</th><th>峰值带宽（Mbps）</th>
-<th>每月流量包（GB）</th><th>价格（元/月）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<tr>
-<td>2</td><td>2</td><td>80</td><td>30</td><td>3072</td><td><strong>132</strong></td>
-</tr>
-<tr>
-<td>2</td><td>4</td><td>100</td><td>30</td><td>4096</td><td><strong>265</strong></td>
-</tr>
-<tr>
-<td>2</td><td>8</td><td>200</td><td>30</td><td>5120</td><td><strong>465</strong></td>
+<td>2</td><td>8</td><td>100</td><td>30</td><td>4,096</td><td><strong>40.0</strong></td>
 </tr>
 </tbody></table>
-
 :::
 </dx-tabs>
-
-
-
-### 中国港澳台地区和其他国家地域时长折扣
-| 1 - 5个月 | 6 - 11个月 | 12个月及以上 |
-|---------|---------|---------|
-| 无 | 88折 | 85折 |
-
->?新购及续费实例均可享受时长折扣。
-
 
 ## [套餐外超额流量概述](id:additional)
 当实际使用流量超出基础套餐的月流量包限额，轻量应用服务器将按流量计费（仅统计服务器的出流量），即按公网传输的数据总量（单位为GB）计费。
