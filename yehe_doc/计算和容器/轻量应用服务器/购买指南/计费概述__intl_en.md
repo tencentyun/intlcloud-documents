@@ -31,46 +31,6 @@ Lighthouse packages are offered in the form of traffic package, which counts onl
 >- Deactivated packages are no longer purchasable. We recommend you upgrade such instance packages. For more information, please see [Upgrading Instance Package](https://intl.cloud.tencent.com/document/product/1103/41407).
 >
 
-### Chinese mainland regions
-In Chinese mainland regions, two types of packages are available: **General** and **Storage**, which differ in configurations. Pleas choose based on your actual business conditions. When creating an instance, you can enjoy a discount if you purchase for 6 months or longer at a time.
-
-<table>
-	<tr><th>Package Type</th><th>CPU (Cores)</th><th>Memory (GB)</th><th>System Disk - SSD (GB) </th><th>Bandwidth (Mbps)</th><th>Monthly Traffic Package (GB)</th><th>Price (CNY/Month)</th></tr>
-	<tr><td rowspan=7>General</td></tr>
-	<tr><td>1</td><td>1</td><td>40</td><td>4</td><td>300</td><td><b>40</b></td></tr>
-	<tr><td>1</td><td>2</td><td>50</td><td>5</td><td>500</td><td><b>50</b></td></tr>
-	<tr><td>1</td><td>2</td><td>60</td><td>6</td><td>1,000</td><td><b>90</b></td></tr>
-	<tr><td>2</td><td>4</td><td>80</td><td>8</td><td>1,200</td><td><b>140</b></td></tr>
-	<tr><td>4</td><td>8</td><td>100</td><td>10</td><td>1,500</td><td><b>255</b></td></tr>
-	<tr><td>4</td><td>16</td><td>120</td><td>12</td><td>2,000</td><td><b>350</b></td></tr>
-	<tr><td rowspan=4>Storage</td><td>1</td><td>2</td><td>200</td><td>3</td><td>200</td><td><b>70</b></td></tr>
-	<tr><td>2</td><td>4</td><td>350</td><td>4</td><td>300</td><td><b>105</b></td></tr>
-	<tr><td>2</td><td>8</td><td>500</td><td>5</td><td>500</td><td><b>150</b></td></tr>
-	<tr><td>4</td><td>8</td><td>1,000</td><td>8</td><td>1,000</td><td><b>300</b></td></tr>
-</table>
-
-Deactivated packages are as listed below (we recommend you upgrade them to new packages):
-<table>
-	<tr><th>Package Type</th><th>CPU (Cores)</th><th>Memory (GB)</th><th>System Disk - SSD (GB) </th><th>Bandwidth (Mbps)</th><th>Monthly Traffic Package (GB)</th><th>Price (CNY/Month)</th></tr>
-	<tr><td rowspan=6>General</td><td>1</td><td>1</td><td>20</td><td>3</td><td>200</td><td><b>40</b></td></tr>
-	<tr><td>1</td><td>1</td><td>40</td><td>3</td><td>300</td><td><b>50</b></td></tr>
-	<tr><td>1</td><td>1</td><td>40</td><td>3</td><td>500</td><td><b>90</b></td></tr>
-	<tr><td>1</td><td>2</td><td>40</td><td>5</td><td>1,000</td><td><b>140</b></td></tr>
-	<tr><td>2</td><td>4</td><td>60</td><td>8</td><td>1,500</td><td><b>255</b></td></tr>
-	<tr><td>2</td><td>8</td><td>80</td><td>10</td><td>2,000</td><td><b>350</b></td></tr>
-</table>
-
-
-
-
-### Duration discount in Chinese mainland regions
-
-| 1–5 Months | 6–11 Months | 12 Months and Above |
-|---------|---------|---------|
-| None | 12% off | 15% off |
-
->?Both newly purchased and renewed instances are eligible for duration discounts.
-
 ### Hong Kong/Macao/Taiwan (China Region) and other countries/regions
 
 <dx-tabs>
@@ -101,30 +61,6 @@ Deactivated packages are as listed below (we recommend you upgrade them to new p
 </tr>
 <tr>
 <td>4</td><td>16</td><td>400</td><td>30</td><td>6,144</td><td><strong>532</strong><sup>1</sup></td>
-</tr>
-</tbody></table>
-
-<dx-alert infotype="explain" title="">
-<sup>1</sup>. This package is eligible for duration discounts.
-</dx-alert>
-
-Deactivated packages are as listed below (we recommend you upgrade them to new packages):
-<table>
-<thead>
-<tr>
-<th>CPU (Cores)</th><th>Memory (GB)</th><th>System Disk - SSD (GB)</th><th>Peak Bandwidth (Mbps)</th>
-<th>Monthly Traffic Package (GB)</th><th>Price (CNY/Month)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td><td>2</td><td>80</td><td>30</td><td>3,072</td><td><strong>67</strong></td>
-</tr>
-<tr>
-<td>2</td><td>4</td><td>100</td><td>30</td><td>4,096</td><td><strong>133</strong></td>
-</tr>
-<tr>
-<td>2</td><td>8</td><td>200</td><td>30</td><td>5,120</td><td><strong>266</strong></td>
 </tr>
 </tbody></table>
 
@@ -184,13 +120,6 @@ Deactivated packages are as listed below (we recommend you upgrade them to new p
 
 :::
 </dx-tabs>
-
-
-
-### Duration discounts in Hong Kong/Macao/Taiwan (China Region) and other countries/regions
-| 1–5 Months | 6–11 Months | 12 Months and Above |
-|---------|---------|---------|
-| None | 12% off | 15% off |
 
 >?Both newly purchased and renewed instances are eligible for duration discounts.
 
