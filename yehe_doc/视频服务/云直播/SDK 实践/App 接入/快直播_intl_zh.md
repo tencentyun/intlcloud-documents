@@ -1,12 +1,13 @@
-[快直播 SDK](https://intl.cloud.tencent.com/document/product/1071/41875) 是云直播服务（CSS）在手机直播超低延迟播放方向的延伸，为用户提供移动端毫秒级低延迟直播拉流的**快速集成方案**。 能够满足一些对延迟性能要求更高的特定场景需求，例如在线教育、体育赛事直播、在线答题、直播拍卖等。
+[快直播 SDK](https://intl.cloud.tencent.com/document/product/1071/41875) 是云直播服务（CSS）在手机直播超低延时播放方向的延伸，为用户提供移动端毫秒级低延时直播拉流的**快速集成方案**。 能够满足一些对延迟性能要求更高的特定场景需求，例如在线教育、体育赛事直播、在线答题、直播拍卖等。
 
 ## SDK 与源码下载
 
-快直播 SDK 已集成至移动直播 SDK，可通过[国际版（International）](https://intl.cloud.tencent.com/document/product/1071/38150) 实现毫秒级超低延迟拉流能力， 助您快速上线手机超低延迟直播功能 ，具体请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/1071/38150)。
+快直播 SDK 已集成至移动直播 SDK，可通过 [国际版（International）](https://intl.cloud.tencent.com/document/product/1071/38150) 实现毫秒级超低延时拉流能力， 助您快速上线手机超低延时直播功能 ，具体请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/1071/38150)。
 
 
 ## Demo 体验
-视频云工具包是腾讯云开源的一套完整的音视频服务解决方案，您可通过视频云工具包体验快直播毫秒级低延迟拉流能力。
+视频云工具包是腾讯云开源的一套完整的音视频服务解决方案，您可通过视频云工具包体验快直播毫秒级低延时拉流能力。
+
 
 <table>
   <tr>
@@ -34,7 +35,6 @@
     <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/12c7da97cc910eda673cb19b66fc7cb3.png" width="150"></td>
   </tr>
 </table>
-
 
 
 ## 了解更多

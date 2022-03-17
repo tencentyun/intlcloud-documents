@@ -3,7 +3,7 @@
  
 ## 产品架构
 
-![](https://qcloudimg.tencent-cloud.cn/raw/89955303a40baec947ea981238baef9e.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/33003e986f9f27a19dbeaad7108d63d0.png" width="750px">
 
 
 ## 产品特性
