@@ -13,7 +13,8 @@ TencentDB for MongoDB provides flexible scaling operations. You can adjust the c
 - TencentDB for MongoDB 4.2 sharded instances don't support adjusting the number of nodes per shard and the number of shards.
 
 ## Billing Description
-After the instance configuration is adjusted, the instance will be billed by the new configuration. Make sure that your Tencent Cloud account balance is sufficient. For more information, see [Configuration Adjustment Billing](https://intl.cloud.tencent.com/document/product/240/44174).
+After the instance configuration is adjusted, the instance will be billed by the new configuration. Make sure that your Tencent Cloud account balance is sufficient. 
+For details, see [Configuration Adjustment Billing](https://intl.cloud.tencent.com/document/product/240/44174).
 
 ## Notes
 1. You can adjust the configuration only when there are no tasks being executed in the instance.
