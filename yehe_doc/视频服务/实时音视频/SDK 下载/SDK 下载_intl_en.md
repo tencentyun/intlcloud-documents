@@ -53,7 +53,6 @@
 ## SDK Download
 TRTC is a set of low-latency and high-quality audio/video communication services provided by Tencent Cloud. It offers stable and reliable audio/video transmission capabilities at a low cost. TRTC services are implemented via a global transmission network and an SDK. You can find below different editions of the TRTC SDK, which cover mainstream platforms and software frameworks.
 
->? 如果您当前网络访问 Github 速度不理想，可以 [单击这里](https://gitee.com/cloudtencent/TRTCSDK) 访问 Gitee 中的镜像仓库。
 
 ### Web
 
