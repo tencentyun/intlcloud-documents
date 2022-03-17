@@ -34,12 +34,12 @@ db.createCollection(name, options)
 - name：要创建的集合名称。
 - options：可选参数, 指定有关内存大小及索引的选项。
 
-| options 字段 | 类型 |      | 描述                                                         |
-| ----------- | ---- | ---- | ------------------------------------------------------------ |
-| capped      | BOOL | 否   | 指是否设置集合的最大字节数。如果为 true，需设置 size 参数。默认为 false。 |
-| autoIndexId | BOOL | 否   | 设置是否自动创建索引。如为 true，自动在 \_id 字段创建索引。默认为 false。 |
-| size        | 数值 | 否   | 设置集合的最大字节数。                                       |
-| max         | 数值 | 否   | 设置集合包含文档的最大数量。                                 |
+| options 字段 | 类型 | 描述                                                         |
+| ----------- | ---- | ------------------------------------------------------------ |
+| capped      | BOOL | 指是否设置集合的最大字节数。如果为 true，需设置 size 参数。默认为 false。 |
+| autoIndexId | BOOL | 设置是否自动创建索引。如为 true，自动在 \_id 字段创建索引。默认为 false。 |
+| size        | 数值 | 设置集合的最大字节数。                                       |
+| max         | 数值 | 设置集合包含文档的最大数量。                                 |
 
 在 myFirstDB 数据库中创建 FirstCol 集合示例：
 ```
@@ -85,13 +85,13 @@ FirstCol
 ## 插入文档
 -  MongoDB 使用 insert() 或 save() 方法向集合中插入文档，示例如下：
 ```
-> db.FirstCol.insert({name:"李四",sex:"女",age:25,status:"A"})
+> db.FirstCol.insert({name:"黎四",sex:"女",age:25,status:"A"})
 WriteResult({ "nInserted" : 1 })
 ```
 查看集合中插入的文档：
 ```
 > db.FirstCol.find()
-{ "_id" : ObjectId("61716957a6fe1ef4d7eae979"), "name" : "李四", "sex" : "女", "age" : 25, "status" : "A" }
+{ "_id" : ObjectId("61716957a6fe1ef4d7eae979"), "name" : "黎四", "sex" : "女", "age" : 25, "status" : "A" }
 ```
   
 - db.collection.insertMany() 用于向集合插入一个多个文档，语法格式如下：
@@ -102,7 +102,7 @@ db.collection.insertMany(
 ```
 示例如下：
 ```
-> db.FirstCol.insertMany([{name:"李三",sex:"女",age:25,status:"A"},{name:"王六",sex:"男",age:26,status:"B"},{name:"王五",sex:"男",age:26,status:"A",groups:["news","sports"]}])
+> db.FirstCol.insertMany([{name:"黎三",sex:"女",age:25,status:"A"},{name:"王六",sex:"男",age:26,status:"B"},{name:"王五",sex:"男",age:26,status:"A",groups:["news","sports"]}])
 {
        
         "acknowledged" : true,
@@ -117,9 +117,9 @@ db.collection.insertMany(
 ## 更新数据库
 MongoDB使用 update() 更新集合中的文档。
 
-更新 FirstCol 集合 name 为李三的数据，示例如下：
+更新 FirstCol 集合 name 为黎三的数据，示例如下：
 ```
-> db.FirstCol.update({name:"李三",sex:"女",age:25,status:"A"},{$set:{'age':28}})
+> db.FirstCol.update({name:"黎三",sex:"女",age:25,status:"A"},{$set:{'age':28}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 ```
 
@@ -128,7 +128,7 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 > db.FirstCol.find().pretty()
 {
         "_id" : ObjectId("618904b6258a6c38daf13abd"),
-        "name" : "李三",
+        "name" : "黎三",
         "sex" : "女",
         "age" : 28,
         "status" : "A"
@@ -156,7 +156,7 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 ## 删除数据库
 MongoDB 使用 remove() 删除集合中的文档。示例如下：
 ```
-> db.FirstCol.remove({name:"李三",sex:"女",age:28,status:"A"})
+> db.FirstCol.remove({name:"黎三",sex:"女",age:28,status:"A"})
 WriteResult({ "nRemoved" : 1 })
 ```
 
