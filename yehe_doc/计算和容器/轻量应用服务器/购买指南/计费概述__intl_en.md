@@ -108,6 +108,7 @@ If your account has overdue payments, all instances generating excessive traffic
 |Hong Kong (China) | 	0.12 |
 | Silicon Valley	\Frankfurt | 	0.5 |
 | Mumbai | 	0.1 |
+| Singapore | 	0.081 |
 
 ## [Custom Image Billing Overview](id:customizeOS)
 ### Billing mode
