@@ -88,6 +88,8 @@ Lighthouse packages are offered in the form of traffic package, which counts onl
 <td>2</td><td>8</td><td>100</td><td>30</td><td>4,096</td><td><strong>40.0</strong></td>
 </tr>
 </tbody></table>
+:::
+</dx-tabs>
 
 ## [Excessive Traffic Overview](id:additional)
 If the actually used traffic exceeds the monthly traffic package limit of the basic package, Lighthouse will be billed by the outbound traffic, that is, it will be billed by the total amount of data (in GB) transferred over the public network.
