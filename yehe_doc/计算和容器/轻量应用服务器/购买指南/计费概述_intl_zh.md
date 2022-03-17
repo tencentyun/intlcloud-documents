@@ -38,7 +38,7 @@
 <thead>
 <tr>
 <th>CPU（核）</th><th>内存（GB）</th><th>系统盘-SSD（GB）</th><th>峰值带宽（Mbps）</th>
-<th>每月流量包（GB）</th><th>价格（元/月）</th>
+<th>每月流量包（GB）</th><th>价格（美元/月）</th>
 </tr>
 </thead>
 <tbody>
@@ -68,7 +68,7 @@
 <thead>
 <tr>
 <th>CPU（核）</th><th>内存（GB）</th><th>系统盘-SSD（GB）</th><th>峰值带宽（Mbps）</th>
-<th>每月流量包（GB）</th><th>价格（元/月）</th>
+<th>每月流量包（GB）</th><th>价格（美元/月）</th>
 </tr>
 </thead>
 <tbody><tr>
