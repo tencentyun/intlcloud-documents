@@ -27,7 +27,6 @@ If you no longer need an instance, you can terminate it. The terminated instance
 4. In the instance list, find the target instance.
 5. In the **Operation** column of the target instance, select **More** > **Terminate**.
 6. In the pop-up window, read the prompt message carefully, confirm the instance to be terminated, and click **OK**.
->!A pay-as-you-go instance will be directly terminated without a retention period, and all its data will be cleared and cannot be recovered. Therefore, proceed with caution.
->
-![](https://main.qcloudimg.com/raw/b0d642108a455149b47158c059521ea2.png)
 
+## Recycle Bin
+Destroyed instances are kept in the recycle bin.  You can restore a destroyed instance within the retention period. For details, see [Recycle Bin](https://intl.cloud.tencent.com/document/product/240/44553).
