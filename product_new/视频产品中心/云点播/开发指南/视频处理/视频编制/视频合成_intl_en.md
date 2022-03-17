@@ -1,7 +1,7 @@
-Video composing is an offline task that performs a series of complicated operations on a video in VOD such as clipping, splicing, overlaying, and flipping. It can achieve the following effects:
+Video compositing is an offline task that performs a series of complicated operations on a video in VOD such as clipping, splicing, overlaying, and flipping. It can achieve the following effects:
 
 * **Rotation**: rotates videos or images by certain degrees or in a certain direction.
-**Audio control**: turns up/down sound volume in videos/audios or mutes videos.
+* **Audio control**: turns up/down sound volume in videos/audios or mutes videos.
 * **Overlaying**: overlays videos/images in sequence to achieve effects such as picture-in-picture.
 * **Audio mixing**: mixes the sound in videos/audios.
 * **Audio extraction**: extracts sound from videos (without retaining the image).
