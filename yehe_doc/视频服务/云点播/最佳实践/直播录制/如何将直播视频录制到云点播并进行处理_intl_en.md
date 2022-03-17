@@ -93,7 +93,7 @@ You can configure audio recording in .acc format if only audio is pushed.
 >!A binding rule will take effect in about 5 to 10 minutes after creation. Any change of the binding rule will not affect live streams that are being pushed and will apply only to new live streams.
 
 ### Step 3. Push a live stream
-After binding the recording template with the push domain name as instructed in [Step 2](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E9.80.89.E6.8B.A9.E5.BD.95.E5.88.B6.E6.96.B9.E6.A1.88), generate the corresponding push domain name from the push address and start [CSS push](https://intl.cloud.tencent.com/document/product/267/31558).
+After binding the recording template with the push domain name as instructed in [Step 2](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E9.80.89.E6.8B.A9.E5.BD.95.E5.88.B6.E6.96.B9.E6.A1.88), generate the corresponding push domain name from the push address and start [live push](https://intl.cloud.tencent.com/document/product/267/31558).
 
 After the live stream is over, the recording file will be stored on the [VOD](https://console.cloud.tencent.com/vod/overview) platform.
 
