@@ -23,16 +23,17 @@ function doesObjectExist() {
     Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
     Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
   }, function(err, data) {
-    if (err) return console.log(err);
-    if (data.statusCode === 404) {
-      console.log('The object does not exist.');
-    } else {
-      // For other status codes, see the API documentation.
-      console.log('The object exists.');
-    }
-  });
+        if (data) {
+          console.log('The object exists.');
+        } else if (err.code == 404) {
+          console.log('The object does not exist.');
+        } else if (err.code == 403) {
+            console.log ('no permission to read the object');
+        }
+    });
 }
 ```
+
 
 #### Parameter description
 
