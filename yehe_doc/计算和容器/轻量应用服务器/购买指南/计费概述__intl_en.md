@@ -62,7 +62,7 @@ Lighthouse packages are offered in the form of traffic package, which counts onl
 </tbody></table>
 
 :::
-::: Windows\sinstance\spackages
+::: Windows\s instance packages
 <table>
 <thead>
 <tr>
