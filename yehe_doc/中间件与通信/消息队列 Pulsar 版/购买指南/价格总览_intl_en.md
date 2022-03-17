@@ -4,7 +4,7 @@ This document describes the pricing details and free tiers of each billable item
 
 ### API call price
 
-TDMQ for Pulsar adopts tiered pricing for API calls. **API call fees = (number of API calls for message sending + number of API calls for message consumption) * API call unit price**.
+TDMQ for Pulsar adopts tiered pricing for API calls. <b>API call fees = (number of API calls for message sending + number of API calls for message consumption) * API call unit price</b>.
 
 The unit price of API call (USD/million calls) is as shown below:
 
@@ -71,7 +71,7 @@ The number of API calls for consuming messages refers to the number of messages 
 
 ### Message storage price
 
-TDMQ for Pulsar adopts linear billing for message storage. **Message storage fees = message storage size * message storage unit price**.
+TDMQ for Pulsar adopts linear billing for message storage. <b>Message storage fees = message storage size * message storage unit price</b>.
 
 The unit price of message storage (USD/GB/hour) is as shown below:
 
@@ -85,7 +85,7 @@ The unit price of message storage (USD/GB/hour) is as shown below:
 
 ### Partition topic resource usage price
 
-TDMQ for Pulsar adopts linear billing for partition topic resource usage. **Partition topic resource usage fees = number of partition topics * partition topic resource usage unit price**.
+TDMQ for Pulsar adopts linear billing for partition topic resource usage. <b>Partition topic resource usage fees = number of partition topics * partition topic resource usage unit price</b>.
 
 The number of partition topics in TDMQ for Pulsar refers to the sum of all partitions of all topics; that is, if there are two three-partition topics, the number of partition topics is 2 * 3 = 6.
 
