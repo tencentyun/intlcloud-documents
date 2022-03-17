@@ -10,16 +10,16 @@ Before reading this document, please make sure that you have read [Stage 1. Play
 
 ## Step 1. Create an adaptive bitrate streaming template
 
-1. Log in to the VOD Console, select **Video Processing Settings** > **[Template Settings](https://console.cloud.tencent.com/vod/video-process/template)**, and click **Create Template** on the **Adaptive Bitrate Streaming Template** tab.
+1. Log in to the VOD console, select **Video Processing** > **[Template Settings](https://console.cloud.tencent.com/vod/video-process/template)**, and click **Create Template** on the **Adaptive Bitrate Streaming** tab.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/19f292b6dbd89cf702ba27b3e9adf042.png" width="800" />
-2. Enter the **Template Settings** page, click **Add Substream** to create substreams 1, 2, and 3, and enter the parameters as follows:
-	- **Basic information module**
+2. On the **Template Settings** page, click **Add Substream** to create substreams 1, 2, and 3, and enter the parameters as follows:
+	- **Basic info**
 	  - **Template Name**: enter `MyTestTemplate`.
 	  - **Muxing Format**: HLS
 	  - **Encryption Type**: select **Not encrypted**.
-	  - **Allow Transcoding from Low Resolution to High Resolution**: disable this option.
+	  - **Switch from Low Resolution to High Resolution**: disable this option.
 	  
- - **Substream information module**
+ - **Substream info**
 <table>
 <thead>
 <tr>
@@ -57,14 +57,14 @@ Before reading this document, please make sure that you have read [Stage 1. Play
 </tr>
 </tbody></table>
 <img src="https://qcloudimg.tencent-cloud.cn/raw/995fcae82a8d2f1a27f0b128147c285b.png" width="500" />
-3. Click **Create**, an adaptive bitrate streaming template containing three substreams will be generated, and the template ID will be `1145464`.
+3. Click **Create**. An adaptive bitrate streaming template containing three substreams will be generated, and the template ID will be `1145464`.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/1b1ffba4a8c37c8d81132e8f93c801b6.png)
 
 ## Step 2. Create an image sprite template
 
-1. Log in to the VOD Console, select **Video Processing Settings** > **[Template Settings](https://console.cloud.tencent.com/vod/video-process/template)**, and click **Create Template** on the **Screencapturing Template** tab.
-2. On the "Template Settings" page, enter the template parameters:
+1. Log in to the VOD console, select **Video Processing** > **[Template Settings](https://console.cloud.tencent.com/vod/video-process/template)**, and click **Create Screenshot Template** on the **Screenshot** tab.
+2. On the **Template Settings** page, enter the template parameters:
  * **Template Name**: `MyTestTemplate`.
  * **Template Type**: **Image Sprite Screencapturing**.
  * **Image Dimension**: 726x240.
