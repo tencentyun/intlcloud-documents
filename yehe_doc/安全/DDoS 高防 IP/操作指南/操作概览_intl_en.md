@@ -1,7 +1,8 @@
 This document lists the references for common operations in Anti-DDoS Advanced.
 
 ## Protection Overview
- [Viewing security protection overview](https://intl.cloud.tencent.com/document/product/297/44555)
+ -[Viewing security protection overview](https://intl.cloud.tencent.com/document/product/297/44555)
+ -[Use Limits](https://intl.cloud.tencent.com/document/product/297/37207)
 
 ## Protection Configuration
 **IP and port protection**
@@ -10,11 +11,17 @@ This document lists the references for common operations in Anti-DDoS Advanced.
 - [Attribute Filtering](https://intl.cloud.tencent.com/document/product/297/37212)
 - [AI protection](https://intl.cloud.tencent.com/document/product/297/37213)
 - [IP blocklist/allowlist](https://intl.cloud.tencent.com/document/product/297/37215)
+- [Port Filtering](https://intl.cloud.tencent.com/document/product/297/42153)
+- [Regional Blocking](https://intl.cloud.tencent.com/document/product/297/42158)
+- [IP and Port Rate Limiting](https://intl.cloud.tencent.com/document/product/297/42151)
+- [Connection Attack Protection](https://intl.cloud.tencent.com/document/product/297/37214)
 
 **Domain name protection**
 - [Protection level and cleansing threshold](https://intl.cloud.tencent.com/document/product/297/37217)
 - [Targeted protection](https://intl.cloud.tencent.com/document/product/297/37218)
 - [CC frequency control](https://intl.cloud.tencent.com/document/product/297/37219)
+- [Regional Blocking](https://intl.cloud.tencent.com/document/product/297/43393)
+- [IP Blocklist/Allowlist](https://intl.cloud.tencent.com/document/product/297/44559)
 
 ## Business Connection
 - [Port connection](https://intl.cloud.tencent.com/document/product/297/37221)
