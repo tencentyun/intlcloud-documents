@@ -1,4 +1,4 @@
-TRTCコンソールの**クラウドレコーディングの使用量統計**は、主にTRTCの [レコーディング時間による](https://intl.cloud.tencent.com/document/product/647/38385)課金の使用量明細に用いられます。使用するのがLVB[同時ピークレコーディングチャネル数に基づく](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6) 課金の場合は、[LVBコンソール](https://console.cloud.tencent.com/live/analysis/bill?tab=record) で確認する必要があります。
+TRTCコンソールの**クラウドレコーディングの使用量統計**は、主にTRTCの [レコーディング時間による](https://intl.cloud.tencent.com/document/product/647/45176)課金の使用量明細に用いられます。
 
 ## 注意事項
 使用統計はリアルタイム更新ではありません。5分ごとに1回統計し、データの表示には5分～20分の遅れがあります。

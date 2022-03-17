@@ -1,4 +1,4 @@
-TRTC 콘솔의 **클라우드 녹화 사용량 통계**는 TRTC [녹화 시간에 따른](https://intl.cloud.tencent.com/document/product/647/38385) 과금 방식에 대한 사용량 내역을 표시하는 데 주로 사용됩니다. 사용 중인 LVB가 [녹화 동시 피크 채널 수](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6) 과금 방식인 경우 [LVB 콘솔](https://console.cloud.tencent.com/live/analysis/bill?tab=record)에서 조회해야 합니다.
+TRTC 콘솔의 **클라우드 녹화 사용량 통계**는 TRTC [녹화 시간에 따른](https://intl.cloud.tencent.com/document/product/647/45176) 과금 방식에 대한 사용량 내역을 표시하는 데 주로 사용됩니다. 
 
 ## 주의 사항
 사용랑 통계는 실시간으로 업데이트되지 않고 5분에 한 번씩 집계됩니다. 또한 데이터 표시까지 약 5분 - 20분의 딜레이가 발생할 수 있습니다.
