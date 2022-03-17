@@ -9,7 +9,7 @@ Video compositing is an offline task that performs a series of complicated opera
 * **Splicing**: splices videos/audios/images in chronological order.
 * **Transition**: adds transition effects between segments during video or image splicing.
 
-The container format of the media file after composing is MP4 (video) or MP3 (audio).
+The container format of the media file after compositing is MP4 (video) or MP3 (audio).
 
 ## Task Initiation
 
@@ -17,7 +17,7 @@ You can initiate a video composing task by calling a [server API](https://intl.c
 
 ## Getting Result
 
-After initiating a composing task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the video composing task is initiated (the fields with null value are omitted):
+After initiating a compositing task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the video compositing task is initiated (the fields with null value are omitted):
 
 ```json
 {
@@ -68,7 +68,7 @@ After initiating a composing task, you can wait for [result notification](https:
 				}
 			],
 			"Output": {
-				"FileName": "Video composing effect test",
+				"FileName": "Video compositing effect test",
 				"Container": "mp4"
 			}
 		},
@@ -81,8 +81,8 @@ After initiating a composing task, you can wait for [result notification](https:
 }
 ```
 
-In the callback result, `Input.Tracks` contains two elements in `Type` of `Video` and `Audio`, indicating the composed video contains a video track and an audio track.
+In the callback result, `Input.Tracks` contains two elements in `Type` of `Video` and `Audio`, indicating the composited video contains a video track and an audio track.
 - Video track: the ID of the source video is `5285485487985271487`, and the video is muted.
 - Audio track: it includes 5 seconds of silence and two voiceover bits lasting 15s and 14s, respectively.
 
-`Output.FileId` is the `FileId` of the new video generated after video composing, and the playback URL is the value in `FileUrl`.
+`Output.FileId` is the `FileId` of the new video generated after video compositing, and the playback URL is the value in `FileUrl`.
