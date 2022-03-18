@@ -1,5 +1,5 @@
 
-This document describes the **parameters and APIs** of the web superplayer of VOD, which should be used together with [User Guide](https://intl.cloud.tencent.com/document/product/266/33977). This document is intended for developers who have a basic knowledge of JavaScript.
+This document describes the **parameters and APIs** of the web superplayer of VOD, which should be used together with [Integration Guide](https://intl.cloud.tencent.com/document/product/266/33977). This document is intended for developers who have a basic knowledge of JavaScript.
 
 ## Initialization Parameters
 Two parameters should be passed in for initializing the player, namely, the player container ID and the function parameter object.
