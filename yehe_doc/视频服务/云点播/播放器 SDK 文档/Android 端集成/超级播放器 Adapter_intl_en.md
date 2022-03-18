@@ -101,7 +101,7 @@ TXCPlayerAdapter.destroy();
 
 
 [](id:sdkList)
-## ## SDK API List
+## SDK API List
 
 #### Initializing TXCPlayerAdatper
 

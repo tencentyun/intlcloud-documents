@@ -5,7 +5,7 @@
 | OS | System Requirements | Download Address |
 | :--------- | :-------------- | :----------------------------------------------------------- |
 | Android | Above Android 4.4 | [Android](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.apk) |
-| iOS | Above iOS 11 | [iOS](https://apps.apple.com/cn/app/id1469323992) |
+| iOS | Above iOS 11 | iOS|
 
 #### Software installation
 
@@ -23,7 +23,7 @@ COSBrowser Mobile Version supports the following three login methods:
 
 > ?
 >
-> If your Tencent Cloud account was created with a QQ account, you can also use the login with WeChat method to log in just by selecting login with QQ on the redirected WeChat Mini Program screen.
+> - If your Tencent Cloud account was created with a QQ account, you can also use the login with WeChat method to log in just by selecting login with QQ on the redirected WeChat Mini Program screen.
 >
 > - If you use a sub-account, you can log in with key or WeChat. For login with WeChat, just select the sub-account on the redirected WeChat Mini Program screen.
 

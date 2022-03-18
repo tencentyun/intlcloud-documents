@@ -27,7 +27,7 @@ Yes. Just integrate the SDK in the same steps as you do a third-party library or
 
 [](id:que9)
 ### Can I run the TRTC SDK in the background on iOS?
-Yes, you can. To run the SDK in the background, select the project, set **Background Modes** under **Capabilities** to **ON**, and check **Audio, AirPlay and Picture in Picture**, as shown below:
+Yes, you can. To run the SDK in the background, select the project, set **Background Modes** under **Capabilities** to **ON**, and check **Audio, AirPlay, and Picture in Picture**, as shown below:
 ![](https://main.qcloudimg.com/raw/d960dfec88388936abce2d4cb77ac766.jpg)
 
 [](id:que10)
