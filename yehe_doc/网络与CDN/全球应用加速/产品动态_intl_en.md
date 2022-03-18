@@ -12,7 +12,7 @@ table th:nth-of-type(4){ width:19%; }
 | -------------------------- | ------------------------------------------------------------ | -------- | ---------------------------- |
 | Multiple domain names for the default entry of the unified domain name | The default entry of the unified domain name supports configuring multiple domain names, separated by semicolons. | December 2021 | This feature is supported by default. |
 | Domain name dimension for statistics | Statistics support the domain name dimension listened on by HTTP/HTTPS. Data types include request volume and status code. | December 2021 | To use this feature, please submit a ticket. |
-| CUCC cross-border leased line          | If your business involves the Chinese mainland, use CUCC cross-MLC-border connections (currently only supported between Chinese mainland and Hong Kong (China)). | December 2021  | This feature is supported by default.                     |
+
 
 ## November 2021
 
