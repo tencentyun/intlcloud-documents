@@ -1,44 +1,47 @@
-## Membuat Pendengar HTTP/HTTPS
+## Menambahkan Pendengar HTTP/HTTPS
 
-1. Login ke [konsol GAAP](https://console.cloud.tencent.com/gaap), masuk ke halaman **Access Management** (Manajemen Akses), dan klik **ID/Connection Name** (ID/Nama Koneksi) dari koneksi yang ditentukan.
-2. Pada halaman yang muncul, pilih **HTTP/HTTPS Listener Management** (Manajemen Pendengar HTTP/HTTPS) > **Create** (Buat). Anda dapat memilih protokol HTTP atau HTTPS. (Catatan: saat ini, konfigurasi pendengar HTTP/HTTPS tidak didukung untuk koneksi IPv6.)
-3. Konfigurasi spesifiknya adalah sebagai berikut:
-   1. Jika HTTP dipilih, hanya nomor port yang diperlukan, dan pendengar akan meneruskan paket melalui protokol HTTP secara default.
+1. Login ke [konsol GAAP](https://console.cloud.tencent.com/gaap). Masuk ke halaman **Access Management** (Manajemen Akses). Klik **ID/Connection Name** (ID/Nama Koneksi) koneksi tertentu.
+2. Di halaman yang muncul, pilih **HTTP/HTTPS Listener Management** > **Create** (Manajemen Pendengar HTTP/HTTPS > Buat). Anda dapat memilih protokol HTTP atau HTTPS. (Catatan: saat ini, konfigurasi pendengar HTTP/HTTPS tidak didukung untuk koneksi IPv6.)
+3. Detail terkait konfigurasi dapat dilihat di bagian berikut:
+   1. Jika **HTTP** dipilih, hanya nomor port pendengar yang diperlukan, dan pendengar akan meneruskan paket menggunakan protokol HTTP secara default.
 ![](https://main.qcloudimg.com/raw/0096d45b44fbd916012317a49a97a884.png)
-   2. Jika HTTPS dipilih, sertifikat dan informasi tambahan perlu dikonfigurasi seperti yang ditunjukkan di bawah ini:
+   2. Jika **HTTPS** dipilih, sertifikat dan informasi tambahan perlu dikonfigurasi seperti yang ditunjukkan di bawah ini:
 ![](https://main.qcloudimg.com/raw/941665ba354633d345929e3fbd02fa8c.png)
-      - **Listeners communicate with the origin server using HTTP protocol** (Pendengar berkomunikasi dengan server asal menggunakan protokol HTTP) berarti protokol HTTPS digunakan antara klien dan koneksi akselerasi VIP, sedangkan protokol HTTP digunakan antara VIP dan server asal, yang perlu membuka port HTTP di server asal;
-        **Listeners communicate with the origin server using HTTP protocol** (Pendengar berkomunikasi dengan server asal menggunakan protokol HTTP) berarti protokol HTTPS digunakan antara klien dan server asal, yang memerlukan port HTTPS untuk dibuka di server asal.
-      - Parsing SSL: autentikasi satu arah dan dua arah didukung.
-      - Sertifikat Server/Klien: Anda perlu mengunggah sertifikat atau memperbaruinya di **Certificate Management** (Pengelolaan Sertifikat) di konsol GAAP, lalu memilihnya saat membuat/memodifikasi pendengar HTTPS. Untuk informasi selengkapnya, lihat [Pengelolaan Otorisasi](https://intl.cloud.tencent.com/document/product/608/42343).
+      - **Listeners communicate with the origin server using HTTP protocol** (Pendengar berkomunikasi dengan server asal menggunakan protokol HTTP) berarti bahwa protokol HTTPS digunakan antara klien dan koneksi akselerasi VIP, sedangkan protokol HTTP digunakan antara VIP dan server asal, yang mengharuskan port HTTP dibuka di server asal;
+        **Listeners communicate with the origin server using HTTPS protocol** (Pendengar berkomunikasi dengan server asal menggunakan protokol HTTPS) berarti bahwa protokol HTTPS digunakan antara klien dan server asal, yang mengharuskan port HTTPS dibuka di server asal.
+      - **SSL Parsing** (Parsing SSL): Autentikasi satu arah dan dua arah didukung.
+      - **Server/Client Certificate** (Sertifikat Server/Klien): Unggah/Perbarui sertifikat di **Certificate Management** (Manajemen Sertifikat) di konsol GAAP, lalu pilih sertifikat tersebut saat membuat/memodifikasi pendengar HTTPS. Untuk informasi selengkapnya, lihat [Manajemen Sertifikat](https://intl.cloud.tencent.com/document/product/608/42343).
 
 ## Mengonfigurasi Pendengar HTTP/HTTPS
 
-Buka tab **HTTP/HTTPS Listener Management** (Manajemen Pendengar HTTP/HTTPS) dan klik **Set Rule** (Tetapkan Aturan) di kolom **Operation** (Operasi) untuk memasukkan nama domain dan halaman manajemen URL.
+Di tab **HTTP/HTTPS Listener Management** (Manajemen Pendengar HTTP/HTTPS), klik **Set a Rule** (Tetapkan Aturan) di kolom operasi untuk memasukkan nama domain dan halaman manajemen URL.
 
-### Menambahkan nama domain
+## Membuat distribusi
 
-Untuk menambahkan nama domain untuk pendengar HTTP, Anda hanya perlu memasukkannya dalam format yang ditentukan, dan hanya pencocokan yang akurat yang didukung. Nama domain dapat berisi 3–80 karakter dalam jenis berikut: `a–z`, `0–9`, `_`, dan `–`.
+1. Untuk menambahkan nama domain untuk pendengar HTTP, masukkan nama domain yang valid. Nama domain harus terdiri dari 3 hingga 80 karakter, dan karakter yang dapat digunakan adalah [a-z], [0–9], dan [.-]. Hanya pencocokan persis yang didukung.
  ![](https://qcloudimg.tencent-cloud.cn/raw/fed0aa02e83804a36799763b0f88cf33.png)
-Untuk menambahkan nama domain untuk pendengar HTTPS, Anda harus memasukkannya dan memilih sertifikat server yang sesuai. Sertifikat yang dipilih selama pembuatan pendengar digunakan di konsol secara default. Jika Anda mengunggah sertifikat baru, nama domain akan diautentikasi dengan sertifikat baru.
- ![](https://qcloudimg.tencent-cloud.cn/raw/68b14a92208741316c4d92f3200a147c.png)
+2. Untuk menambahkan nama domain untuk pendengar HTTPS, masukkan nama domain yang valid, lalu pilih sertifikat server yang sesuai.
+ ![](https://qcloudimg.tencent-cloud.cn/raw/27131602718160d5f4c096db488dccf6.png)
+	- **Domain**: panjangnya 3 hingga 80 karakter, dan karakter yang dapat digunakan adalah [a-z], [0–9], dan [.-]. Hanya pencocokan persis yang didukung.
+	- **Server Certificate** (Sertifikat Server): secara default, ini adalah sertifikat yang digunakan untuk membuat pendengar. Jika Anda mengunggah sertifikat lain, nama domain diautentikasi dengan sertifikat yang diunggah.
+	- **HTTP3 Transfer** (Transfer HTTP3): memungkinkannya mendukung QUIC. Jika klien tidak mendukung protokol ini, HTTP2.0 dan versi sebelumnya akan digunakan untuk akses.
 
 ### Menambahkan aturan
 
-Setelah menambahkan nama domain, Anda dapat mengeklik **Add Rule** (Tambah Aturan) untuk menambahkan URL yang sesuai dan memilih jenis server asal. Anda dapat menambahkan hingga 20 aturan URL untuk satu nama domain seperti yang ditunjukkan di bawah ini:
+Setelah nama domain ditambahkan, klik **Add Rule** (Tambahkan Aturan) untuk menambahkan URL yang sesuai dan memilih jenis server asal. Anda dapat menambahkan hingga 20 aturan URL untuk satu nama domain seperti yang ditunjukkan di bawah ini:
 
 1. Konfigurasi dasar:
    ![](https://main.qcloudimg.com/raw/fcf56bdf702b67b81990cc4dedd89f0d.png)
-   - URL: dapat berisi 1–80 karakter dengan jenis berikut: `a–z`, `A–Z`, `0–9`, `_`, `.`, `-`, dan `/`.
-   - Jenis Server Asal: ini dapat berupa IP atau nama domain, tetapi hanya satu jenis yang dapat dipilih untuk satu pendengar. 
-2. Kebijakan pemrosesan server asal:
-   Tetapkan aturan penerusan server asal; yaitu, jika pendengar terikat ke beberapa server asal, Anda harus memilih kebijakan penjadwalan untuk server asal.
+   - **URL**: panjangnya antara 1-80 karakter, dan berikut adalah jenis karakter yang dapat digunakan: [a-z], [0–9], dan [_.-/].
+   - **Origin Server Type** (Jenis Server Asal): mendukung IP atau nama domain. Satu pendengar hanya mendukung satu jenis. 
+2. Kebijakan pemrosesan untuk server asal:
+   Konfigurasi kebijakan pemrosesan server asal, yaitu, jika pendengar terikat ke beberapa server asal, Anda harus memilih kebijakan penjadwalan untuk server asal.
     ![](https://main.qcloudimg.com/raw/bb6f7d4cf05d2fb6e623c5ed28904dbc.png)
-   - RR: beberapa server asal melakukan origin-pull sesuai dengan kebijakan RR.
-   - RR Tertimbang: beberapa server asal melakukan origin-pull sesuai dengan rasio bobot (konfigurasi ini tidak didukung jika jenis server asal adalah nama domain).
-   - Koneksi Terkecil: ini berarti menjadwalkan server asal dengan jumlah koneksi paling sedikit terlebih dahulu.
+   - **RR**: beberapa server asal melakukan origin-pull sesuai dengan kebijakan RR.
+   - **Weighted RR** (RR Tertimbang): beberapa server asal melakukan origin-pull sesuai dengan rasio bobot (konfigurasi ini tidak didukung jika jenis server asal adalah nama domain).
+   - **Least Connections** (Koneksi Terkecil): menjadwalkan server asal dengan jumlah koneksi paling sedikit terlebih dahulu.
 3. Mekanisme pemeriksaan kesehatan server asal:
-   Anda dapat memilih untuk mengaktifkan mekanisme pemeriksaan kesehatan untuk nama domain saat ini dan mengatur URL pemeriksaan independen. Metode permintaan HEAD dan GET didukung. Periksa kode status termasuk http_1xx, http_2xx, http_3xx, http_4xx, dan http_5xx, satu atau beberapa dapat dipilih. Ketika kode status tertentu terdeteksi, pendengar menganggap server asal backend normal. Jika tidak ada kode status yang terdeteksi, pendengar menganggap server asal backend pengecualian.
+   Mekanisme pemeriksaan kesehatan dapat diaktifkan. Untuk nama domain saat ini, Anda dapat mengonfigurasi URL pemeriksaan independen. Metode permintaan HEAD dan GET didukung. Centang kode status http_1xx, http_2xx, http_3xx, http_4xx, dan http_5xx, dan satu atau beberapa kode dapat dipilih. Ketika kode status tertentu terdeteksi, pendengar menganggap bahwa server asal backend normal. Jika tidak ada kode status yang terdeteksi, pendengar menganggap bahwa server asal backend memiliki pengecualian.
 ![](https://main.qcloudimg.com/raw/20d08ec6efd43a94734b6a408afc2d10.png)
 
 ### Memodifikasi nama domain
@@ -51,31 +54,39 @@ Setelah menambahkan nama domain, Anda dapat mengeklik **Modify Domain Name** (Mo
 Setelah menambahkan nama domain, Anda dapat mengeklik **Delete** (Hapus) untuk menghapus nama domain. Jika aturan dalam nama domain telah diikatkan ke server asal, Anda harus memilih **Force deletion of listeners bound with origin server** (Penghapusan paksa pendengar yang terikat ke server asal).
  ![](https://main.qcloudimg.com/raw/3a7a088320acb13f1c822b1ec34c9ba1.png)
 
+### Konfigurasi HTTP3
+
+Konfigurasi HTTP3 menentukan didukung atau tidaknya HTTP3 (QUIC). Saat ini, HTTP3 hanya dapat dikonfigurasi untuk pendengar HTTPS.
+![](https://qcloudimg.tencent-cloud.cn/raw/77cd9b19beeed46f427983d71bc23f7e.png)
+
 ### Memodifikasi aturan
 
-Ikuti langkah-langkah yang dijelaskan dalam "Menambahkan aturan" di atas. Perbedaan utamanya adalah nama domain dan jenis server asal tidak dapat dimodifikasi.
+Lihat bagian **Menambahkan aturan** di atas. Perbedaan utamanya adalah nama domain dan jenis server asal tidak dapat dimodifikasi.
 
-### Mengikat server asal
+## Mengikat server asal
 
-Untuk informasi selengkapnya, lihat Mengikat Server Asal. Anda dapat mengikat port yang berbeda ke server asal yang berbeda. Untuk informasi selengkapnya tentang fitur **Cover Port** dan **Complement Port**, lihat Mengikat TCP/UDP Pendengar ke Server Asal.
+Untuk informasi selengkapnya, lihat Mengikat Server Asal. Anda dapat mengikat port yang berbeda ke server asal yang berbeda. Untuk informasi selengkapnya tentang fitur **Cover Port** dan **Complement Port**, lihat Mengikat Pendengar TCP/UDP ke Server Asal.
 
-> ! Aturan dapat diikatkan ke hingga 100 server asal.
+> ! Aturan dapat diikatkan ke maksimum 100 server asal.
 
 ### Menghapus aturan
 
 Setelah menambahkan aturan, Anda dapat mengeklik **Delete** (Hapus) untuk menghapus aturan. Jika aturan telah diikatkan ke server asal, Anda harus memilih **Force deletion of listeners bound with origin server** (Penghapusan paksa pendengar yang terikat ke server asal) terlebih dahulu.
  ![](https://main.qcloudimg.com/raw/2fd560217ca2f53847033d501eb90e1a.png)
 
+
+
 ### Mengonfigurasi header permintaan origin-pull
 
-1. Setelah menambahkan aturan, Anda dapat memilih **More** (Lainnya) di kolom **Operation** (Operasi) aturan dan klik **Set Origin-Pull Request Header** (Atur Header Permintaan Origin-Pull).
+1. Setelah menambahkan aturan, Anda dapat memilih **More** (Lainnya) di kolom **Operation** (Operasi) aturan dan mengeklik **Set Origin-Pull Request Header** (Atur Header Permintaan Origin-Pull).
    ![](https://qcloudimg.tencent-cloud.cn/raw/9dc95f9ef0c564ec6435c4b7f0635cdd.png)
-2. Klik **Add Parameter** (Tambahkan Parameter) untuk menambahkan parameter nama dan nilai header permintaan. Nilai variabel dari header yang membawa IP nyata pengguna adalah `$remote_addr` (secara default, header `X-Forwarded-For` membawa IP klien untuk origin-pull). Saat ini, kecuali variabel `$remote_addr`, variabel lain dengan `$` tidak didukung.
+2. Klik **Add Parameter** (Tambahkan Parameter) untuk menambahkan parameter nama dan nilai header permintaan. Nilai variabel dari header yang membawa IP sebenarnya pengguna adalah `$remote_addr` (secara default, header `X-Forwarded-For` membawa IP klien untuk origin-pull). Saat ini, kecuali variabel `$remote_addr`, variabel lain yang mengandung `$` tidak didukung.
 
 > !
-> 1. Nilai `Key` dari nama header HTTP dapat berisi 1–100 digit (0–9), huruf (a–z, A–Z), dan simbol khusus (-, _, :, dan spasi). `Nilai` dapat berisi 1–100 karakter. Kecuali `$remote_addr`, item konfigurasi lainnya tidak dapat berisi karakter `$`;
-> 2. Hingga 10 header permintaan HTTP origin-pull dapat dikonfigurasi untuk setiap aturan;
-> 3. Header standar yang tercantum di bawah ini tidak dapat diatur/ditambah/dihapus secara mandiri.
+>
+> 1. Nilai `Key` untuk nama header HTTP dapat berisi 1–100 digit (0–9), huruf (a–z, A–Z), dan simbol khusus (-, _, :, dan spasi). `Nilai` dapat berisi 1–100 karakter. Kecuali `$remote_addr`, item konfigurasi lainnya tidak dapat berisi karakter `$`;
+> 2. Hingga 10 header permintaan HTTP origin-pull dapat dikonfigurasikan untuk setiap aturan;
+> 3. Header standar yang tercantum di bawah ini tidak dapat diatur/ditambahkan/dihapus secara mandiri.
 
 <table>
     <tr>
@@ -121,7 +132,7 @@ Setelah menambahkan aturan, Anda dapat mengeklik **Delete** (Hapus) untuk mengha
         <td>keep-alive</td>
     </tr>
     <tr>
-        <td>accept</td>
+        <td>Accept</td>
         <td>accept-charset</td>
         <td>expect</td>
         <td>max-forwards</td>
@@ -262,5 +273,5 @@ Setelah menambahkan aturan, Anda dapat mengeklik **Delete** (Hapus) untuk mengha
 
 ## Menghapus Pendengar HTTP/HTTPS
 
-Buka tab **HTTP/HTTPS Listener Management** (Manajemen Pendengar HTTP/HTTPS) dan klik **Delete** (Hapus) di kolom **Operation** (Operasi) dari pendengar yang ditentukan untuk dihapus. Jika pendengar terikat ke server asal, Anda perlu memeriksa **Allow force deletion of listeners with bound origin servers** (Izinkan penghapusan paksa pendengar dengan server asal terikat) terlebih dahulu. Setelah penghapusan, layanan akselerasi untuk port pendengar akan berhenti.
+Buka tab **HTTP/HTTPS Listener Management** (Manajemen Pendengar HTTP/HTTPS), klik **Delete** (Hapus) di sebelah kanan pendengar yang dipilih. Jika pendengar telah terikat ke server asal, Anda perlu mencentang **Allow force deletion of listeners bound with origin servers** (Izinkan penghapusan paksa pendengar yang terikat ke server asal) terlebih dahulu. Setelah pendengar dihapus, akselerasi port pendengar akan berhenti.
  ![](https://main.qcloudimg.com/raw/5df2bff2fb4f07ce2631824792429147.png)

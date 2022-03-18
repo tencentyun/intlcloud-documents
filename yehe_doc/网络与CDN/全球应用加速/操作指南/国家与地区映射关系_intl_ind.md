@@ -1,4 +1,4 @@
-Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan mempertimbangkan tampilan data dan cakupan node akselerasi, kami telah menggabungkan negara/wilayah yang berdekatan menjadi zona geografis yang lebih besar, dan membaginya dengan wilayah yang lebih besar. Saat menggunakan fitur "nama domain terpadu secara global" dan memilih wilayah yang akan dicakup oleh node akselerasi global, lihat pemetaan antara negara dan wilayah berikut untuk mengonfigurasi zona yang akan dicakup oleh node akselerasi global.
+Karena perbedaan luas wilayah antarnegara di seluruh dunia, dan pertimbangan tampilan data dan cakupan node akselerasi, kami menggabungkan negara/wilayah yang berdekatan menjadi zona geografis yang lebih besar, dan membagi negara/wilayah dengan luas wilayah yang lebih besar menjadi wilayah yang lebih kecil. Saat menggunakan fitur "nama domain terpadu global" dan memilih wilayah yang akan dicakup oleh node akselerasi global, lihat pemetaan antara negara dan wilayah berikut untuk mengonfigurasi zona yang akan dicakup oleh node akselerasi global.
 
 
 <table>
@@ -11,19 +11,19 @@ Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan memp
    <tr>
       <td  rowspan="54">Asia</td>
       <td  rowspan="8">Asia Timur</td>
-      <td>Daratan Tiongkok - Tiongkok Utara</td>
+      <td>Tiongkok Daratan - Tiongkok Utara</td>
       <td>Heilongjiang, Jilin, Liaoning, Beijing, Tianjin, Hebei, Shandong, Shanxi, Mongolia Dalam</td>
    </tr>
    <tr>
-      <td>Daratan Tiongkok - Tiongkok Timur</td>
+      <td>Tiongkok Daratan - Tiongkok Timur</td>
       <td>Hubei, Anhui, Jiangsu, Shanghai, Zhejiang, Jiangxi, Fujian</td>
    </tr>
    <tr>
-      <td>Daratan Tiongkok - Tiongkok Selatan</td>
+      <td>Tiongkok Daratan - Tiongkok Selatan</td>
       <td>Henan, Hunan, Guangdong, Guangxi, Hainan</td>
    </tr>
    <tr>
-      <td>Daratan Tiongkok - Tiongkok Barat Daya</td>
+      <td>Tiongkok Daratan - Tiongkok Barat Daya</td>
       <td>Shaanxi, Gansu, Ningxia, Qinghai, Xinjiang, Tibet, Sichuan, Chongqing, Guizhou, Yunnan </td>
    </tr>
    <tr>
@@ -56,7 +56,7 @@ Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan memp
       <td></td>
    </tr>
    <tr>
-      <td>Timor Leste</td>
+      <td>Timor Timur</td>
       <td></td>
    </tr>
    <tr>
@@ -130,7 +130,7 @@ Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan memp
    </tr>
    <tr>
       <td rowspan="5">Asia Tengah</td>
-      <td>Kazakhstan</td>
+      <td>Kazakstan</td>
       <td></td>
    </tr>
    <tr>
@@ -151,7 +151,7 @@ Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan memp
    </tr>
    <tr>
       <td rowspan="20">Asia Barat</td>
-      <td>Afghanistan</td>
+      <td>Afganistan</td>
       <td></td>
    </tr>
    <tr>
@@ -291,7 +291,7 @@ Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan memp
       <td></td>
    </tr>
    <tr>
-      <td>Republik Ceko</td>
+      <td>Ceko</td>
       <td></td>
    </tr>
    <tr>
@@ -299,7 +299,7 @@ Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan memp
       <td></td>
    </tr>
    <tr>
-      <td>Hongaria</td>
+      <td>Hungaria</td>
       <td></td>
    </tr>
    <tr>
@@ -419,7 +419,7 @@ Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan memp
       <td></td>
    </tr>
    <tr>
-      <td>Libya</td>
+      <td>Libia</td>
       <td></td>
    </tr>
    <tr>
@@ -431,7 +431,7 @@ Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan memp
       <td></td>
    </tr>
    <tr>
-      <td>Algeria</td>
+      <td>Aljazair</td>
       <td></td>
    </tr>
    <tr>
@@ -497,7 +497,7 @@ Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan memp
       <td></td>
    </tr>
    <tr>
-      <td>Guinea ekuator</td>
+      <td>Guinea Ekuator</td>
       <td></td>
    </tr>
    <tr>
@@ -899,7 +899,7 @@ Karena ukuran wilayah yang berbeda dari negara-negara di seluruh dunia, dan memp
       <td></td>
    </tr>
    <tr>
-      <td>Guyana Perancis</td>
+      <td>Guyana Prancis</td>
       <td></td>
    </tr>
    <tr>
