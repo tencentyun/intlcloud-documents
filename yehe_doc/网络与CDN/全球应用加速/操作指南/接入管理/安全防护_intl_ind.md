@@ -4,9 +4,12 @@ Di konsol GAAP, Anda juga dapat mengonfigurasi daftar blokir/daftar izin. Konfig
 1. Login ke [konsol GAAP](https://console.cloud.tencent.com/gaap), masuk ke halaman **Access Management** (Manajemen Akses), lalu klik **ID/Connection Name** (ID/Nama Koneksi) dari koneksi yang dipilih.
 2. Pilih **Attack Defense** > **Add Rule** (Pertahanan Serangan > Tambahkan Aturan), kemudian lakukan langkah-langkah konfigurasi berikut:
 	1. Tambahkan aturan akses dan pilih untuk mengizinkan atau menolak semua lalu lintas yang mengakses koneksi tersebut secara default.
-	 ![](https://main.qcloudimg.com/raw/db45ecb4382cfc75b632f086caba4d2a.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/e53fc82cbd2e9b9dd40237c796990f56.jpg)
 	2. Tambahkan IP sumber, pilih protokol, dan tambahkan port protokol. Kemudian pilih **Allow** (Izinkan) atau **Reject** (Tolak) untuk memproses akses dari IP.
-<img src="https://main.qcloudimg.com/raw/435c2ede3aa58b20060e828cad9db856.png" width="50%">
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0cf0464e39a7b802e81dd0e23141eb7f.jpg" width="50%">
+
 >? i. Maksimum 100 aturan akses dapat ditambahkan.
->
+
+
 3. Klik **Confirm** (Konfirmasi).
