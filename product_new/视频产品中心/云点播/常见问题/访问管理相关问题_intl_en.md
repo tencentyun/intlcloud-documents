@@ -9,7 +9,7 @@ VOD offers multiple upload methods such as [upload from server](https://intl.clo
 | Pull from URL | Specified subapplication |  [PullUpload](https://intl.cloud.tencent.com/document/product/266/34118) | - |
 | LVB recording   | All subapplications   | -  | The LVB recording feature needs to be enabled |
 
->[Local upload](https://intl.cloud.tencent.com/document/product/266/33890#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4) of videos in the VOD Console is a form of upload from client.
+>[Local upload](https://intl.cloud.tencent.com/document/product/266/33890#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4) of videos in the VOD console is a form of upload from client.
 
 ### A "no permission" error is returned for upload from server, but upload through other methods can succeed. Why?
 
