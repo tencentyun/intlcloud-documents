@@ -13,10 +13,10 @@ Before reading this document, please make sure that you have read [Stage 1. Play
 >? 
 >- `SimpleAesEncryptPreset` is a preset task flow, which uses template 12 for adaptive bitrate streaming, template 10 for cover generating, and template 10 for image sprite capturing.
 >- Adaptive bitrate streaming with template 12 is to output an encrypted multi-bitrate stream.
-3. Click **OK** and wait until the "video status" changes from "Processing" to "Normal", which indicates that video processing is completed.
+3. Click **Confirm** and wait until the video status changes from **Processing** to **Normal**, which indicates that video processing is completed.
 ![](https://main.qcloudimg.com/raw/885b68427d36faefe8f2bb5b489e1e19.png)
-4. Click **Manage** in the "Operation" column of the video to enter the management page:
- * Select the "Basic Info" tab, and you can view the generated cover and output encrypted adaptive bitstream (template ID: 12).
+4. Click **Manage** in the **Operation** column of the video to enter the management page:
+ * Select the **Basic Info** tab, and you can view the generated cover and output encrypted adaptive bitstream (template ID: 12).
  * Select the **Screenshot Info** tab, and you can view the generated image sprite (template ID: 10).
 
 
@@ -24,8 +24,8 @@ Before reading this document, please make sure that you have read [Stage 1. Play
 
 In the previous step, you have uploaded and processed the video. Now, you can use the superplayer for web, iOS, and Android to quickly preview video playback.
 
-1. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**, find the video uploaded and processed in **step 1**, click **Manage** in the "Operation" column, and select **Superplayer Preview**.
-2. Select "basicDrmPreset" as **Superplayer Settings**.
+1. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**, find the video uploaded and processed in **step 1**, click **Manage** in the **Operation** column, and select **Superplayer Preview**.
+2. Select **basicDrmPreset** for **Playback Configuration**.
 
  >? `basicDrmPreset` is a preset superplayer configuration, which is used to output the adaptive bitstream with template 12 and the image sprite with template 10.
 3. As hotlink protection is enabled for the default distribution domain name, you can set the hotlink protection expiration time and the preview duration on the **Playback Control** tab. You can use the default parameter settings here (the default expiration time of playback hotlink protection is 1 day, and the preview duration and maximum number of IPs allowed for playback are left empty).
