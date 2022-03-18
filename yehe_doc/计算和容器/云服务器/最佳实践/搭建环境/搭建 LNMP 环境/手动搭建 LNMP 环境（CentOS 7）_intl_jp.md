@@ -1,13 +1,7 @@
-## 概要
-LNMP環境とは、LinuxでのNginx+MySQL/MariaDB+PHPで構成されるウェブサイトサーバーアーキテクチャです。本ドキュメントは、Tencent Cloud CVMでLNMP環境を手動で構築する方法について説明します。
+## ユースケース
+LNMP環境とは、LinuxでのNginx+MySQL/MariaDB+PHPで構成されるウェブサイトサーバーアーキテクチャです。本ドキュメントは、Tencent Cloud Virtual Machine(CVM)でLNMP環境を手動で構築する方法について説明します。
 
-手動でLNMP 環境を構築するには、 Linux コマンド（例：[CentOS環境でのYUMを使用してソフトウェアのインストール](https://cloud.tencent.com/document/product/213/2046)）等の常用コマンドに精通している必要があります。また、インストールするソフトウェアの使用方法及びバージョン間の互換性を把握することも必要です。
-
-<dx-alert infotype="notice" title="">
-Tencent Cloudでは、クラウドマーケットのイメージ環境を通じてLNMP環境をデプロイすることをお勧めしています。LNMP環境を手動で構築すると時間がかかる可能性があります。
-</dx-alert>
-
-
+手動でLNMP 環境を構築するには、 Linux コマンド（例：[CentOS環境でのYUMを使用してソフトウェアのインストール](https://cloud.tencent.com/document/product/213/2046)等の常用コマンドに精通している必要があります。また、インストールするソフトウェアの使用方法及びバージョン間の互換性を把握することも必要です。
 
 ## ソフトウェアのバージョン
 この例では、LNMP環境の構築に使用されるソフトウェアのバージョンと説明は次のとおりです。
@@ -16,24 +10,19 @@ Tencent Cloudでは、クラウドマーケットのイメージ環境を通じ�
 - MariaDB：データベース、本ドキュメントはMariaDB 10.4.8を例として説明します。
 - PHP：スクリプト言語、本ドキュメントはPHP 7.2.22を例とします。
 
-
-##  前提条件
-Linux CVMを購入済みであること。
-
-
 ## 操作手順
 
-### ステップ1：Linuxインスタンスにログインする
-[標準的な方法を使用してLinuxインスタンスにログインする（推奨）](https://intl.cloud.tencent.com/document/product/213/5436)。実際の操作方法に応じて、他のログイン方法を選択することもできます：
-- [リモートログインソフトウェアを使用してLinuxインスタンスにログインする](https://intl.cloud.tencent.com/document/product/213/32502)
-- [SSHキーを使用してLinuxインスタンスにログインする](https://intl.cloud.tencent.com/document/product/213/32501)
+### ステップ1：Linuxインスタンスへのログイン
+[標準のログイン方法を使用してLinuxインスタンスにログインする（推奨）](https://cloud.tencent.com/document/product/213/5436)。実際の操作習慣に応じて、他のログイン方式を使用することもできます。
+- [リモートログインソフトウェアを使用してLinuxインスタンスにログインする](https://cloud.tencent.com/document/product/213/35699)
+- [SSHを使用してLinuxインスタンスにログインする](https://cloud.tencent.com/document/product/213/35700)
 
-### ステップ2：Nginxをインストールする
+### ステップ2：Nginxのインストール
 1. 下記のコマンドを実行して、 `/etc/yum.repos.d/` の下に `nginx.repo` という名前のファイルを作成します。
 ```
 vi /etc/yum.repos.d/nginx.repo
 ```
-2. **i**キーを押して編集モードに切り替え、以下の内容を書き込みます。
+2. 「**i**」キーを押して編集モードに切り替えます。下記の内容を入力してください。
 ```
 [nginx] 
 name = nginx repo 
@@ -41,17 +30,20 @@ baseurl = https://nginx.org/packages/mainline/centos/7/$basearch/
 gpgcheck = 0 
 enabled = 1
 ```
-3. **Esc**を押し、**:wq**を入力して、ファイルを保存して戻ります。
+3.  「**Esc**」をクリックし、「**:wq**」を入力し、ファイルを保存してから戻ります。
 4. 以下のコマンドを実行して、nginxをインストールします。
 ```
 yum install -y nginx
 ```
-5. 以下のコマンドを実行し、`default.conf`ファイルを開きます。
+5. 以下のコマンドを実行して、`nginx.conf` ファイルを開きます。
 ```
-vim /etc/nginx/conf.d/default.conf
+vim /etc/nginx/nginx.conf
 ```
-6. **i**を押して編集モードに切り替え、`default.conf`ファイルを編集します。
-7.`server{...}`を見つけて、 `server` 大括弧内の対応する設定情報を次の内容に置き換えます。 
+6.「**i**」を押して編集モードに切り替えます。`nginx.conf` ファイルを編集します。
+7. `server{...}` を見つけて、`server` の{...}の中に対応する構成情報を以下の内容に切り替えます。
+IPv6アドレスへの監視を取り消し、同時にNginxを設定し、PHPとの連動を実現します。
+> `Ctrl+F`を使用してページを下に、`Ctrl+B`を使用してページを上に移動してファイルを表示できます。`nginx.conf` ファイアに`server{...}` を見つけない場合は、`include /etc/nginx/conf.d/*conf;` の上方に以下の内容を追加してください。
+>
 ```
 server {
 	listen       80;
@@ -80,8 +72,8 @@ server {
 	}
 }
 ```
-7.  **Esc**を押し、 **:wq**を入力し、ファイルを保存してから戻ります。
-8.  以下のコマンドを実行して、Nginxを起動します。
+7.  「**Esc**」をクリックし、「**:wq**」を入力し、ファイルを保存してから戻ります。
+1. 以下のコマンドを実行して、Nginxを起動します。
 ```
 systemctl start nginx
 ```
@@ -113,22 +105,20 @@ yum -y remove パッケージ名
 ```
 vi /etc/yum.repos.d/MariaDB.repo
 ```
-3. **i**キーを押して編集モードに切り替え、以下の内容を書き込み、MariaDBソフトウェアライブラリを追加します。
-<dx-alert infotype="explain" title="">
-- 以下の設定では、Tencent Cloudイメージソースを使用しています。Tencent Cloudイメージソースは、MariaDB公式サイトソースと同期して更新が行われるため、MariaDB 10.4バージョンのソースに不具合が発生する可能性があります（ここでは、CentOS 7.6にMariaDBバージョン10.4.22をインストールした場合を例とします）。他のバージョンやOSでのMariaDBリポジトリのインストール情報については、[MariaDB公式サイト](https://downloads.mariadb.org)で確認できます。
-- お客様のCVMが[プライベートネットワークサービス](https://intl.cloud.tencent.com/document/product/213/5225)を使用している場合、`mirrors.cloud.tencent.com`を`mirrors.tencentyun.com`プライベートネットワークアドレスに置き換えることができます。プライベートネットワークのトラフィックは、パブリックトラフィックを占有せず、より高速になります。
-</dx-alert>
+3. 「**i**」キーを押して編集モードに切り替えます。下記の内容を入力し、MariaDBのソフトウェアライブラリを追加してください。
+> 異なるOSのMariaDBソフトウェアライブラリが違うため、[MariaDB 公式サイト](https://downloads.mariadb.org) にアクセスして、他のOSに対応するMariaDBのインストール情報を取得できます。
+>
 ```
 # MariaDB 10.4 CentOS repository list - created 2019-11-05 11:56 UTC
 # http://downloads.mariadb.org/mariadb/repositories/
 [mariadb]
 name = MariaDB
-baseurl = https://mirrors.cloud.tencent.com/mariadb/yum/10.4/centos7-amd64
-gpgkey=https://mirrors.cloud.tencent.com/mariadb/yum/RPM-GPG-KEY-MariaDB
+baseurl = http://yum.mariadb.org/10.4/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
-4. ** Esc **を押して**：wq **を入力し、ファイルを保存して戻ります。
-5. 以下のコマンドを実行して、MariaDBをインストールします。このプロセスには時間がかかります。インストールの進行状況に注意し、インストールが完了するまでお待ちください。
+4.  「**Esc**」を押して、 「**:wq**」を入力し、ファイルを保存してから戻ります。
+5.次のコマンドを実行して、MariaDBをインストールします。 インストールの進行状況に注意して、インストールが完了するまでお待ちください。
 ```
 yum -y install MariaDB-client MariaDB-server
 ```
@@ -144,7 +134,7 @@ systemctl enable mariadb
 ```
 mysql
 ```
-以下のような結果が表示されたら、インストールが成功したことを意味します。
+以下のような結果が表示されたら、インストールに成功しました。
 ![](https://main.qcloudimg.com/raw/bfe9a604457f6de09933206c21fde13b.png)
 9. 下記のコマンドを実行し、MariaDBを終了します。
 ```
@@ -179,23 +169,27 @@ systemctl enable php-fpm
 ```
 echo "<?php phpinfo(); ?>" >> /usr/share/nginx/html/index.php
 ```
-2. 以下のコマンドを実行して、Nginxサービスを再起動します。
+2. 以下のコマンドを実行して、Nginxサービスをリスタートします。
 ```
 systemctl restart nginx
 ```
-3. ローカルブラウザに次のURLを入力して、環境設定が成功したかどうかを確認します。
+2. ローカルブラウザで以下のアドレスにアクセスして、環境設定が成功したかどうかを確認します。
 ```
-http://CVMインスタンスのパブリックIPアドレス
+http://CVMインスタンスのパブリックIP
 ```
-以下のような結果が表示されたら、環境設定が成功したことを示します。
+以下のような結果が表示されたら、環境設定が成功したことを示しています。
 ![](https://main.qcloudimg.com/raw/640812413941a61efe29d7faa546ad80.png)
 
 
-## 関連する操作
-LNMP環境を構築した後、CVMに関する機能をより多く理解と把握するために、[WordPress Webサイトを手動で構築](https://intl.cloud.tencent.com/document/product/213/8044)できます。
+## 関連操作
+LNMP環境を構築した後、CVMに関する機能をより多く理解と把握するために、[WordPress Webサイトを手動で構築](https://cloud.tencent.com/document/product/213/8044)できます。
 
 ## よくあるご質問
 CVMの使用中に問題が発生した場合は、下記のドキュメントを参照しながら実際状況に合わせ分析した上で問題を解決することが可能です。
-- CVMのログインに関する問題は、[パスワードとキー](https://intl.cloud.tencent.com/document/product/213/18120)、[ログインとリモート接続](https://intl.cloud.tencent.com/document/product/213/17278)ドキュメントをご参照ください。
-- CVMのネットワークに関する問題は、 [IPアドレス](https://intl.cloud.tencent.com/document/product/213/17285)、[ポートとセキュリティグループ](https://intl.cloud.tencent.com/document/product/213/2502)ドキュメントをご参照ください。
-- CVMのハードディスクに関する事項については、[システムディスクとデータディスク](https://intl.cloud.tencent.com/zh/document/product/213/17351)をご参照ください。
+- CVMのログインに関する問題については、 [パスワードとキー](https://cloud.tencent.com/document/product/213/18120)、[ログインとリモート接続](https://cloud.tencent.com/document/product/213/17278)をご参照ください。
+- CVMネットワークに関する問題については、 [IPアドレス](https://cloud.tencent.com/document/product/213/17285)、[ポートとセキュリティグループ](https://cloud.tencent.com/document/product/213/2502)をご参照ください。
+ - CVMディスクに関する問題については、[システムディスクとデータディスク](https://cloud.tencent.com/document/product/213/17351)をご参照ください。
+
+
+
+

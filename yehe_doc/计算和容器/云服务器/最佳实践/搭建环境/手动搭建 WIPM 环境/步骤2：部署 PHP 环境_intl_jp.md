@@ -3,7 +3,7 @@
 本ドキュメントはWindows Server 2012 R2 OS CVMを例として、Windows CVMでPHP 5.3および以前のバージョン、またPHP 5.3以降のバージョンの設定方法を説明します。
 
 
-##  前提条件
+## 前提条件
 
 - Windows CVMにログイン済みであり、かつそのCVMでIISロールの追加とインストールが完了していること。 詳細については[IISサービスのインストール](https://cloud.tencent.com/document/product/213/2755)をご参照ください。
 - Windows CVMのパブリックIPを取得済みであること。詳細については、[パブリックIPアドレスの取得](https://cloud.tencent.com/document/product/213/17940)をご参照ください。
@@ -20,8 +20,7 @@
 3. 「Web Server Setup」画面で、下図に示すように、【IIS FastCGI】を選択して、【Next】をクリックします。
 ![](https://main.qcloudimg.com/raw/c5fc89547b020e6ec943732d16186a7b.png)
 4. インストールインターフェースの指示により、PHPをインストールします。
-4. `C:/inetpub/wwwroot` ディレクトリの配下で、PHPファイルを作成します。例えば、下図に示すように、`hello.php` とううファイルを作成します。
-![](https://qcloudimg.tencent-cloud.cn/raw/4e738f31b98255cc3088e5470768bbbd.png)
+4. `C:/inetpub/wwwroot` ディレクトリの配下で、PHPファイルを作成します。例えば、下図に示すように、`hello.php` というファイルを作成します。
 6. 新しく作成された `hello.php` ファイルに、下記の内容を記入して保存します。
 ```
 	<?php

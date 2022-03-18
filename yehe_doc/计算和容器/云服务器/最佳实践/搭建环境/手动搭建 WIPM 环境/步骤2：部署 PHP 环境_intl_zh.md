@@ -18,10 +18,9 @@
 1. 在云服务器中打开 PHP 安装包。
 2. 按照安装界面的指引，单击【Next】。
 3. 在 “Web Server Setup” 界面，选择【IIS FastCGI】，单击【Next】。如下图所示：
-![](https://main.qcloudimg.com/raw/c5fc89547b020e6ec943732d16186a7b.png)
+ ![](https://main.qcloudimg.com/raw/c5fc89547b020e6ec943732d16186a7b.png)
 4. 按照安装界面的指引，完成 PHP 的安装。
-4. 在 `C:/inetpub/wwwroot` 目录下，创建一个 PHP 文件。例如创建一个 `hello.php` 文件，如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/4e738f31b98255cc3088e5470768bbbd.png)
+4. 在 `C:/inetpub/wwwroot` 目录下，创建一个 PHP 文件。例如创建一个 `hello.php` 文件。
 5. 在新创建的 `hello.php` 文件中，填写以下内容并保存。
 ```
 	<?php

@@ -2,11 +2,6 @@
 本文档介绍如何在腾讯云云服务器（CVM）上手动部署 Node.js 环境，并创建示例项目。
 
 进行手动搭建 Node.js 环境，您需要熟悉 Linux 命令，例如 [CentOS 环境下通过 YUM 安装软件](https://intl.cloud.tencent.com/document/product/213/2046) 等常用命令，并对所安装软件使用、配置和兼容性比较了解。
-<dx-alert infotype="explain" title="">
-腾讯云建议您可以通过云市场的镜像环境部署 Node.js 环境，手动搭建 Node.js 环境可能需要较长的时间。
-</dx-alert>
-
-
 
 ## 示例软件版本
 本文搭建 Node.js 环境使用软件版本及组成说明如下：
@@ -15,7 +10,7 @@
 - npm：Node.js 节点版本管理器，管理多个 Node.js 版本，本文以 npm 6.9.0 为例。
 
 ## 前提条件
-已购买 Linux 云服务器。
+已购买 Linux 云服务器。如果您还未购买云服务器，请参考 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2936)。
 
 ## 操作步骤
 ### 步骤1：登录 Linux 实例
@@ -29,9 +24,8 @@
 ```
 wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz
 ```
-<dx-alert infotype="explain" title="">
-您可前往 [Node.js 官网](https://nodejs.org/zh-cn/download/) 获取更多安装信息。
-</dx-alert>
+>您可前往 [Node.js 官网](https://nodejs.org/zh-cn/download/) 获取更多安装信息。
+>
 2. 执行以下命令，解压安装包。
 ```
 tar xvf node-v10.16.3-linux-x64.tar.xz
@@ -53,20 +47,15 @@ npm -v
 ```
 
 ### 步骤3：安装 Node.js 多版本（可选）
-
-
-<dx-alert infotype="explain" title="">
-此步骤通过 npm 安装多个版本的 Node.js，并可快速进行切换。适用于开发人员，您可根据实际需求进行安装。
-</dx-alert>
-
-
+>此步骤通过 npm 安装多个版本的 Node.js，并可快速进行切换。适用于开发人员，您可根据实际需求进行安装。
+>
 1. 执行以下命令，安装 git。
 ```
 yum install -y git
 ```
 2. 执行以下命令，下载 NVM 源码并检查最新版本。
 ```
-git clone git://github.com/cnpm/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
+git clone https://github.com/cnpm/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
 ```
 3. 执行以下命令，配置 NVM 环境变量。
 ```
@@ -108,7 +97,7 @@ cd ~
 ```
 vim index.js
 ```
-2. 按 **i** 切换至编辑模式，并将以下内容输入 `index.js` 文件中。
+2. 按 “**i**” 切换至编辑模式，并将以下内容输入 `index.js` 文件中。
 ```
 const http = require('http');
 const hostname = '0.0.0.0';
@@ -122,10 +111,9 @@ server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
-<dx-alert infotype="explain" title="">
-本文在 `index.js` 项目文件中使用端口号为7500，您可根据实际需求自行修改。
-</dx-alert>
-3. 按 **Esc**，输入 **:wq** 并按 **Enter**，保存文件并返回。
+>本文在 `index.js` 项目文件中使用端口号为7500，您可根据实际需求自行修改。
+>
+3. 按“**Esc**”，输入“**:wq**”，保存文件并返回。
 4. 执行以下命令，运行 Node.js 项目。
 ```
 node index.js
@@ -142,5 +130,5 @@ http://云服务器实例的公网 IP:已配置的端口号
 如果您在使用云服务器的过程中遇到问题，可参考以下文档并结合实际情况分析并解决问题：
 - 云服务器的登录问题，可参考 [密码及密钥](https://intl.cloud.tencent.com/document/product/213/18120)、[登录及远程连接](https://intl.cloud.tencent.com/document/product/213/17278)。
 - 云服务器的网络问题，可参考 [IP 地址](https://intl.cloud.tencent.com/document/product/213/17285)、[端口与安全组](https://intl.cloud.tencent.com/document/product/213/2502)。
-- 云服务器硬盘问题，可参考 [系统盘和数据盘](https://intl.cloud.tencent.com/zh/document/product/213/17351)。
+- 云服务器硬盘问题，可参考 [系统盘和数据盘](https://intl.cloud.tencent.com/document/product/213/17351)。
 

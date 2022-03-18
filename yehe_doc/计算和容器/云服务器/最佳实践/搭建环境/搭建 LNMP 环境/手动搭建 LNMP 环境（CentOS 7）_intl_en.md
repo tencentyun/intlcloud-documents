@@ -1,20 +1,14 @@
-## Overview
-The LNMP environment is a website server architecture consisting of Nginx, MySQL or MariaDB, and PHP running on Linux. This document describes how to manually set up the LNMP environment on a Tencent Cloud CVM.
+## Scenario
+LNMP refers to a common web server architecture consisting of Nginx, MySQL or MariaDB, and PHP running on Linux. This article describes how to deploy LNMP on a Tencent Cloud Virtual Machine (CVM).
 
-To manually set up the LNMP environment, you should familiarize yourself with common Linux commands such as [installing software via YUM in CentOS](https://intl.cloud.tencent.com/document/product/213/2046), and understand the usage and version compatibility of the software to be installed.
+To manually build an LNMP environment, you need to be familiar with Linux commands (see [Installing Software by Using YUM in a CentOS Environment](https://intl.cloud.tencent.com/document/product/213/2046) for some examples), usage, and version compatibility of the software to be installed.
 
-<dx-alert infotype="notice" title="">
-It's recommended that you can configure the LNMP environment through the image environment of Tencent Cloud marketplace, and it may take a long time to set up the LNMP environment manually.
-</dx-alert>
-
-
-
-## Software
-The following software is used to build the LNMP environment.
-- Linux: Linux operating system. This document uses CentOS 7.6 as an example.
-- Nginx: web server. This document uses Nginx 1.17.7 as an example.
-- MariaDB: database. This document uses MariaDB 10.4.8 as an example.
-- PHP: scripting language. This document uses PHP 7.2.22 as an example.
+## Sample Software Versions
+In this example, the following software versions are used to build the LNMP environment:
+- Linux: Linux operating system. In this example, CentOS 7.6 is used.
+- Nginx: web server. In this example, Nginx 1.17.7 is used.
+- MariaDB: database. In this example, MariaDB 10.4.8 is used.
+- PHP: scripting language. In this example, PHP 7.2.22 is used.
 
 
 ## Prerequisites
@@ -23,17 +17,17 @@ You have purchased a Linux CVM.
 
 ## Directions
 
-### Step 1: log in to a Linux instance
-[Log in to the Linux instance using standard login method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use any of the following login methods you are comfortable with:
-- [Logging in to Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502)
-- [Logging in to Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
+### Step 1: Logging in to a Linux instance
+[Log in to a Linux instance in standard mode (recommended)](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods based on your requirements:
+- [Log in to a Linux instance by using remote login software](https://intl.cloud.tencent.com/document/product/213/32502)
+- [Log in to a Linux instance by using SSH](https://intl.cloud.tencent.com/document/product/213/32501)
 
-### Step 2: install Nginx
+### Step 2: Installing Nginx
 1. Run the following command to create a file named `nginx.repo` under `/etc/yum.repos.d/`.
 ```
 vi /etc/yum.repos.d/nginx.repo
 ```
-2. Press **i** to switch to the editing mode and enter the following.
+2. Press i to switch to the editing mode and enter the following.
 ```
 [nginx] 
 name = nginx repo 
@@ -41,17 +35,19 @@ baseurl = https://nginx.org/packages/mainline/centos/7/$basearch/
 gpgcheck = 0 
 enabled = 1
 ```
-3. Click **Esc** and enter **:wq** to save and close the file.
+3. Press Esc, enter **:wq**, and save the file and return.
 4. Run the following command to install Nginx.
 ```
 yum install -y nginx
 ```
-5. Run the following command to open the `default.conf` file.
+5. Run the following command to open `nginx.conf`.
 ```
-vim /etc/nginx/conf.d/default.conf
+vim /etc/nginx/nginx.conf
 ```
-6. Press **i** to switch to the edit mode to modify the `default.conf` file.
-7. Find `server{...}` and replace the content inside the curly brackets with the following. This is to cancel the listening of the IPv6 address and configure Nginx to realize linkage with PHP.
+6. Press i to switch to the editing mode, and edit the `nginx.conf` file.
+7. Find `server{...}` and replace the string inside the curly brackets with the following. This is to cancel the listening of IPv6 address and configure Nginx to realize linkage with PHP.
+> You can use `Ctrl+F` for page down and `Ctrl+B` for page up to view the file.
+>
 ```
 server {
 	listen       80;
@@ -80,63 +76,63 @@ server {
 	}
 }
 ```
-7. Press **Esc** and enter **:wq** to save and close the file.
-8. Run the following command to start Nginx.
+If you cannot find `server{...}` in `nginx.conf`, add the following before `include /etc/nginx/conf.d/*conf;`, as shown in the following figure:
+![](https://main.qcloudimg.com/raw/901a3957ccd992c2fb345287271c4bef.png)
+7. Press Esc, enter **:wq**, and save the file and return.
+8. Run the following command to launch Nginx.
 ```
 systemctl start nginx
 ```
-9. Run the following command to enable Nginx autostart.
+9. Run the following command to configure the automatic launch of Nginx on startup.
 ```
 systemctl enable nginx 
 ```
-10. Enter the following URL in your local browser and verify whether the Nginx service is working properly.
+10. In a local browser, visit the following URL to verify that the Nginx service is working properly.
 ```
-http://[Public IP address of the CVM instance]
+http://<Public IP address of the CVM instance>
 ```
 If the following appears, Nginx has been successfully installed and configured.
 ![](https://main.qcloudimg.com/raw/fdc40877928729679d392eb304a3f12c.png)
 
 
-### Step 3: install a database
+### Step 3: Installing a database
 1. Run the following command to check if MariaDB is already installed. 
 ```
 rpm -qa | grep -i mariadb
 ```
- - If the following appears, MariaDB is already installed.
+ - If the following appears, MariaDB has been installed.
 ![](https://main.qcloudimg.com/raw/6fa7fb51de4a61f4da08eb036b6c3e85.png)
 To avoid conflicts between different versions, run the following command to remove the installed MariaDB.
 ```
-yum -y remove [Package name]
+yum -y remove <Package name>
 ```
- - If nothing is returned, MySQL has not been installed. In this case, proceed to the next step.
-2. Execute the following command to create the `MariaDB.repo` file under `/etc/yum.repos.d/`.
+ - If the returned result is empty, MariaDB is not installed. In this case, proceed to the next step.
+2. Run the following command to create the `MariaDB.repo` file under `/etc/yum.repos.d/`.
 ```
 vi /etc/yum.repos.d/MariaDB.repo
 ```
-3. Press **i** to switch to edit mode and enter the following content to add MariaDB.
-<dx-alert infotype="explain" title="">
-- The following configuration uses the Tencent Cloud image source. When the Tencent Cloud image source is updated with the MariaDB official website source, there may be a problem that the MariaDB 10.4 source becomes invalid (this document uses installing MariaDB 10.4.22 on CentOS 7.6 as an example). In this case, you can go to [MariaDB website](https://downloads.mariadb.org) to get the MariaDB software library installation information for other versions and operating systems.
-- If your CVM has [private network access](https://intl.cloud.tencent.com/document/product/213/5225), change `mirrors.cloud.tencent.com` to the private network address `mirrors.tencentyun.com`. In this way, your public network traffic will not be affected and the access is faster.
-</dx-alert>
+3. Press i to switch to the editing mode and enter the following to add MariaDB.
+> Different operating systems use different versions of MariaDB. For installation information about other operating system versions, visit the [MariaDB website](https://downloads.mariadb.org).
+>
 ```
 # MariaDB 10.4 CentOS repository list - created 2019-11-05 11:56 UTC
 # http://downloads.mariadb.org/mariadb/repositories/
 [mariadb]
 name = MariaDB
-baseurl = https://mirrors.cloud.tencent.com/mariadb/yum/10.4/centos7-amd64
-gpgkey=https://mirrors.cloud.tencent.com/mariadb/yum/RPM-GPG-KEY-MariaDB
+baseurl = http://yum.mariadb.org/10.4/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
-4. Press **Esc**, enter **:wq**, save the file and return.
+4. Press Esc, enter **:wq**, and save the file and return.
 5. Run the following command to install MariaDB. Please pay attention to the installation progress and wait for the installation to complete.
 ```
 yum -y install MariaDB-client MariaDB-server
 ```
-6. Run the following command to start the MariaDB service.
+6. Run the following command to launch the MariaDB service.
 ```
 systemctl start mariadb
 ```
-7. Run the following command to enable MariaDB autostart.
+7. Run the following command to configure the automatic launch of MariaDB on startup.
 ```
 systemctl enable mariadb
 ```
@@ -152,7 +148,7 @@ If the following appears, MariaDB has been successfully installed.
 ```
 
 
-### Step 4: install and configure PHP
+### Step 4: Installing and configuring PHP
 1. Run the following commands to update the software source of PHP in Yum.
 ```
 rpm -Uvh https://mirrors.cloud.tencent.com/epel/epel-release-latest-7.noarch.rpm
@@ -164,17 +160,17 @@ rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 ```
 yum -y install mod_php72w.x86_64 php72w-cli.x86_64 php72w-common.x86_64 php72w-mysqlnd php72w-fpm.x86_64
 ```
-3. Run the following command to start the PHP-FPM service.
+3. Run the following command to launch the PHP-FPM service.
 ```
 systemctl start php-fpm
 ```
-4. Run the following command to enable PHP-FPM autostart.
+4. Run the following command to configure the automatic launch of PHP-FPM service on startup.
 ```
 systemctl enable php-fpm
 ```
 
-## Verifying the Environment Configuration
-Follow these steps to verify that the LNMP environment has been built successfully.
+## Verifying Your Setup
+After finishing the environment configuration, complete the following steps to verify that the LNMP environment has been built successfully.
 1. Run the following command to create a test file.
 ```
 echo "<?php phpinfo(); ?>" >> /usr/share/nginx/html/index.php
@@ -183,19 +179,23 @@ echo "<?php phpinfo(); ?>" >> /usr/share/nginx/html/index.php
 ```
 systemctl restart nginx
 ```
-3. Enter the following URL in a local browser to check whether the environment configuration is successful.
+3. In a local browser, visit the following URL to check whether the environment configuration is successful.
 ```
-http://[Public IP address of the CVM instance]
+http://<Public IP address of the CVM instance>
 ```
-If the following appears, the environment has been successfully configured.
+If the following results appear, the environment configuration was successful.
 ![](https://main.qcloudimg.com/raw/640812413941a61efe29d7faa546ad80.png)
 
 
-## Related Operations
-After the LNMP environment is built, you can [manually build a WordPress website](https://intl.cloud.tencent.com/document/product/213/8044) to familiarize yourself with CVM and its features.
+## Relevant Operations
+After the LNMP environment is built, you can [build a WordPress website](https://intl.cloud.tencent.com/document/product/213/8044).
 
 ## FAQs
-If you encounter a problem when using CVM, refer to the following documents for troubleshooting:
-- CVM login: [Password Login and SSH Key Login](https://intl.cloud.tencent.com/document/product/213/18120) and [Login and Remote Access](https://intl.cloud.tencent.com/document/product/213/17278).
-- CVM network: [IP Address](https://intl.cloud.tencent.com/document/product/213/17285) and [Port](https://intl.cloud.tencent.com/document/product/213/2502).
-- CVM disks: [System and Data Disks](https://intl.cloud.tencent.com/zh/document/product/213/17351).
+If you encounter a problem when using CVM, refer to the following documents for troubleshooting based on your actual situation.
+- For issues regarding CVM login, see [Password Login and SSH Key Login](https://intl.cloud.tencent.com/document/product/213/18120) and [Login and Remote Access](https://intl.cloud.tencent.com/document/product/213/17278).
+- For issues regarding the CVM network, see [IP Addresses](https://intl.cloud.tencent.com/document/product/213/17285) and [Ports and Security Groups](https://intl.cloud.tencent.com/document/product/213/2502).
+- For issues regarding CVM disks, see [System Disks and Data Disks](https://intl.cloud.tencent.com/document/product/213/17351).
+
+
+
+

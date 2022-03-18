@@ -8,7 +8,7 @@
 - Windows CVM 로그인 및 해당 CVM에서 IIS 역할 추가 및 설치를 완료해야합니다. 자세한 내용은 [IIS 서비스 설치](https://cloud.tencent.com/document/product/213/2755)를 참고하십시오.
 - Windows CVM 공용 네트워크 IP 가져오기를 완료해야 합니다. 자세한 내용은 [공용 네트워크 IP 주소 가져오기](https://cloud.tencent.com/document/product/213/17940)를 참고하십시오.
 
-## 작업 단계
+## 작업 순서
 
 
 ### PHP 5.3 및 이전 버전 설치[](id:jump1)
@@ -20,8 +20,7 @@
 3. 다음 이미지와 같이 'Web Server Setup' 인터페이스에서 [IIS FastCGI]를 선택하고 [Next]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/c5fc89547b020e6ec943732d16186a7b.png)
 4. 설치 인터페이스의 가이드에 따라 PHP 설치를 완료합니다.
-4. 다음 이미지와 같이 `C:/inetpub/wwwroot` 디렉터리에서 1개의 PHP 파일을 생성합니다. 예: 1개 `hello.php` 파일 생성.
-![](https://qcloudimg.tencent-cloud.cn/raw/4e738f31b98255cc3088e5470768bbbd.png)
+4. 아래 이미지와 같이, `C:/inetpub/wwwroot` 디렉터리에서 `hello.php`와 같은 PHP 파일 하나를 생성합니다.
 5. 새로 생성된 `hello.php` 파일에서 다음과 같은 내용을 입력하고 저장합니다.
 ```
 	<?php

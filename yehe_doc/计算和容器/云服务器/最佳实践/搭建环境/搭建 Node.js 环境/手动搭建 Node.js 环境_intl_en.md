@@ -1,12 +1,7 @@
-## Overview
+## Introduction
 This article describes how to deploy Node.js on a CVM and create a sample project.
 
 To do this, you need to be familiar with common Linux commands such as [Installing Software via YUM in a CentOS Environment](https://intl.cloud.tencent.com/document/product/213/2046) and understand the versions of the installed software.
-<dx-alert infotype="explain" title="">
-It's recommended that you can configure the Node.js environment through the image environment of Tencent Cloud marketplace, and it may take a long time to set up the Node.js environment manually.
-</dx-alert>
-
-
 
 ## Software
 Setting up Node.js involves:
@@ -15,13 +10,13 @@ Setting up Node.js involves:
 - npm: a package manager for JavaScript. We use npm 6.9.0 in this article to manage multiple Node.js versions.
 
 ## Prerequisites
-You have purchased a Linux CVM.
+To set up Node.js, you need a Linux CVM. If you have not purchased one yet, see [Getting Started with Linux CVMs](http://intl.cloud.tencent.com/document/product/213/2936).
 
 ## Directions
-### Step 1: log in to a Linux instance
-[Log in to the Linux instance using standard login method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use any of the following login methods you are comfortable with:
-- [Logging in to Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502)
-- [Logging in to Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
+### Step 1: Logging in to a Linux instance
+[Log in to a Linux instance using WebShell (recommended)](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are comfortable with:
+- [Log in to a Linux instance using remote login software](https://intl.cloud.tencent.com/document/product/213/32502).
+- [Log in to a Linux Instance using SSH](https://intl.cloud.tencent.com/document/product/213/32501)
 
 
 ### Step 2: Installing Node.js
@@ -29,9 +24,8 @@ You have purchased a Linux CVM.
 ```
 wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz
 ```
-<dx-alert infotype="explain" title="">
-Visit the [Node.js official website](https://nodejs.org/download/) for more information.
-</dx-alert>
+>Visit the [Node.js official website](https://nodejs.org/download/) for more information.
+>
 2. Run the following command to decompress the install package.
 ```
 tar xvf node-v10.16.3-linux-x64.tar.xz
@@ -53,20 +47,15 @@ npm -v
 ```
 
 ### Step 3: Installing multiple Node.js versions (optional)
-
-
-<dx-alert infotype="explain" title="">
-This process allows you to install multiple Node.js versions. Developers can use this to quickly switch among versions.
-</dx-alert>
-
-
+>This process allows you to install multiple Node.js versions. Developers can use this to quickly switch among versions.
+>
 1. Run the following command to install git.
 ```
 yum install -y git
 ```
 2. Run the following command to download the NVM source code and check for the newest version.
 ```
-git clone git://github.com/cnpm/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
+git clone https://github.com/cnpm/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
 ```
 3. Run the following to configure NVM environment variables.
 ```
@@ -97,7 +86,7 @@ If the following appears, then the installation is successful and the current ve
 ```
 nvm use v6.9.5
 ```
-The following information will appear:
+The following appears:
 ![](https://main.qcloudimg.com/raw/817fd96fef77f818e65ce41a3723e5bc.png)
 
 ### Step 4: Creating a sample project
@@ -114,7 +103,7 @@ const http = require('http');
 const hostname = '0.0.0.0';
 const port = 7500;
 const server = http.createServer((req, res) => { 
-    res.statusCode = 200;
+    if (res.statusCode === 200) {
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello World\n');
 }); 
@@ -122,10 +111,9 @@ server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
-<dx-alert infotype="explain" title="">
-This article uses port 7500 in the `index.js` file. You can use other ports as needed.
-</dx-alert>
-3. Click **Esc**, enter **:wq**, and press **Enter** to save and close the file.
+>This article uses port 7500 in the `index.js` file. You can use other ports as needed.
+>
+3. Press **Esc** and input **:wq** to save the file and go back.
 4. Run the following command to execute the Node.js project we just created.
 ```
 node index.js
@@ -138,9 +126,9 @@ If the following appears, Node.js is installed successfully.
 ![](https://main.qcloudimg.com/raw/5b72798dc9e988eee8d8186055aa45e9.png)
 
 
-## FAQs
-If you encounter a problem when using CVM, refer to the following documents for troubleshooting:
-- CVM login: [Password Login and SSH Key Login](https://intl.cloud.tencent.com/document/product/213/18120) and [Login and Remote Access](https://intl.cloud.tencent.com/document/product/213/17278).
-- CVM network: [IP Address](https://intl.cloud.tencent.com/document/product/213/17285) and [Port](https://intl.cloud.tencent.com/document/product/213/2502).
-- CVM disks: [System and Data Disks](https://intl.cloud.tencent.com/zh/document/product/213/17351).
+## FAQ
+If you encounter a problem when using CVM, refer to the following documents for troubleshooting based on your actual situation.
+- For issues regarding CVM login, see [Password Login and SSH Key Login](https://intl.cloud.tencent.com/document/product/213/18120) and [Login and Remote Access](https://intl.cloud.tencent.com/document/product/213/17278).
+- For issues regarding the CVM network, see [IP Addresses](https://intl.cloud.tencent.com/document/product/213/17285) and [Ports and Security Groups](https://intl.cloud.tencent.com/document/product/213/2502).
+- For issues regarding CVM disks, see [System and Data Disks](https://intl.cloud.tencent.com/document/product/213/17351).
 
