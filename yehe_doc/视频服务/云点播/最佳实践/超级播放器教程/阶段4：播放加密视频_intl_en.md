@@ -5,10 +5,10 @@ This document describes how to encrypt a video and use the superplayer to play b
 Before reading this document, please make sure that you have read [Stage 1. Play back a video with superplayer](https://intl.cloud.tencent.com/document/product/266/38098) and [Stage 2. Play back a video with hotlink protection enabled](https://intl.cloud.tencent.com/document/product/266/38292) in the Superplayer Guide. This document uses the account activated and the video uploaded in [stage 1](https://intl.cloud.tencent.com/document/product/266/38098), and hotlink protection needs to be enabled as instructed in [stage 2](https://intl.cloud.tencent.com/document/product/266/38292).
 
 ## Step 1. Encrypt a video
-1. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** in the VOD Console, select the target video (FileId: 528xxx3757278095), and click **Process Video**.
-2. On the video processing page:
- * Select **Task Flow** as **Processing Type**.
- * Select **SimpleAesEncryptPreset** as **Task Flow Template**.
+1. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** in the VOD console, select the target video (FileId: 528xxx3757278095), and click **Process Video**.
+2. In the **Process Video** pop-up window:
+ * Select **Task Flow** for **Processing Type**.
+ * Select **SimpleAesEncryptPreset** for **Task Flow Template**.
 <img src="https://main.qcloudimg.com/raw/4cc8649c21b5c60305b925120f84d7e6.png" width="" /><span>
 >? 
 >- `SimpleAesEncryptPreset` is a preset task flow, which uses template 12 for adaptive bitrate streaming, template 10 for cover generating, and template 10 for image sprite capturing.
