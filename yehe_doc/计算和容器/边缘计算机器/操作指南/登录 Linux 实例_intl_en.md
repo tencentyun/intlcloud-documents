@@ -20,12 +20,10 @@ If you forgot your password, you can [reset it](https://intl.cloud.tencent.com/d
 1. Log in to the [ECM console](https://console.cloud.tencent.com/ecm/overview) and select **Instance List** on the left sidebar.
 2. In **Instance List**, select the target Linux instance and click **Login** as shown below: 
 ![](https://qcloudimg.tencent-cloud.cn/raw/5e31ba1eaff47d5fbd4bc3ac9d6bdb4c.png)
-3. In the **Log in to Linux Instance** pop-up window, select **Log in Through VNC** and click **Log in Now** as shown below:
-![](https://main.qcloudimg.com/raw/344a4741252ffb89e9125c7c5c25be99.png)
+3. In the **Log in to Linux Instance** pop-up window, select **Log in Through VNC** and click **Log in Now** .
 4. In the pop-up dialog box, enter the username after **login** and press **Enter**.
 5. Enter the password after **Password** and press **Enter**.
-The entered password is not displayed by default, as shown below:
-![](https://main.qcloudimg.com/raw/bab14d0f56db2f3bc1ab949e08fcc0f0.png)
+The entered password is not displayed by default.
 
 <span id="ECM_SSHLoginLinux"></span>
 ### Logging in over SSH
@@ -33,16 +31,13 @@ The entered password is not displayed by default, as shown below:
 >
 
 1. Open the Xshell client and click **New**.
-2. In the **New Session Properties** window, enter the following content:
-![](https://main.qcloudimg.com/raw/a9687002f69254be9ef82204b2a9f5df.png)
+2. In the **New Session Properties** window, enter the following content.
  - Name: enter a session name, such as `test`.
  - Host: enter the public IP of the ECM instance (log in to the [ECM console](https://console.cloud.tencent.com/ecm/instance), and you can get the public IP on the instance list page).
  - Protocol: select "SSH".
  - Port Number: enter the port of the ECM instance, which must be set to 22.
 3. Click **Connect**.
-4. Enter the login username such as `root` and click **OK** as shown below:
-![](https://main.qcloudimg.com/raw/ca0f13ec931dca98f2150a86ac3f4b7d.png)
-5. Enter the login password and click **OK** as shown below:
-![](https://main.qcloudimg.com/raw/ee835c4ed380a356188aec5023608087.png)
+4. Enter the login username such as `root` and click **OK** .
+5. Enter the login password and click **OK** .
 Once logged in, you can see the information of the ECM instance to which you are currently logged in on the left of the command prompt.
 
