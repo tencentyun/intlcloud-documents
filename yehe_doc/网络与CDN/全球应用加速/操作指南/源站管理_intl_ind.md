@@ -18,14 +18,14 @@ Login ke konsol GAAP. Di halaman **Origin Server Management** (Manajemen Server 
 1. Login ke [konsol GAAP](https://console.cloud.tencent.com/gaap). Di halaman **Origin Server Management** (Manajemen Server Asal), klik ikon di sebelah kanan server asal yang sehat.
 >!Fitur ini tidak tersedia jika server asal tidak terikat ke pendengar.
 >
-![](https://main.qcloudimg.com/raw/bf9e90955fe8511fa3be4d8ae4dfc4cd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5d987f08bf034cb6cd1de5d7aad891d5.jpg)
 2. Di jendela pop-up di sudut kanan atas, Anda dapat melihat status kesehatan server asal selama periode dan perincian waktu yang berbeda. `1` berarti server asal normal dan `0` berarti server tidak normal.
-<img src="https://main.qcloudimg.com/raw/0efb8e67c662f26c00a241edf8f03d44.png" width="70%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6317c3ccdb5cd1442a1cf4e0105c9896.jpg" width="70%">
 
  
 
 ## Mengedit Tag
 1. Login ke [konsol GAAP](https://console.cloud.tencent.com/gaap). Di halaman **Origin Server Management** (Manajemen Server Asal), klik **Edit Tag** di sebelah kanan server asal.
- ![](https://main.qcloudimg.com/raw/cce3e88aee41d021d5d483fd87419a1f.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/9f10b4b55e4601c3ad6bf602bee99c83.jpg)
 2. Pilih tag untuk mengategorikan dan mengelola server asal dalam banyak dimensi. Klik **OK** (Oke).
- ![](https://main.qcloudimg.com/raw/16d0bdf88b2c0ec31cd3df0671083b55.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/74527ba60e680b59f6cd0a7ccc23feac.jpg)
