@@ -5,7 +5,7 @@ This document lists the references for common operations in Anti-DDoS Advanced.
  -[Use Limits](https://intl.cloud.tencent.com/document/product/297/37207)
 
 ## Protection Configuration
-**IP and port protection**
+#### DDoS protection
 - [Protocol blocking](https://intl.cloud.tencent.com/document/product/297/37210)
 - [Watermark protection](https://intl.cloud.tencent.com/document/product/297/37211)
 - [Attribute Filtering](https://intl.cloud.tencent.com/document/product/297/37212)
@@ -16,7 +16,7 @@ This document lists the references for common operations in Anti-DDoS Advanced.
 - [IP and Port Rate Limiting](https://intl.cloud.tencent.com/document/product/297/42151)
 - [Connection Attack Protection](https://intl.cloud.tencent.com/document/product/297/37214)
 
-**Domain name protection**
+#### CC protection
 - [Protection level and cleansing threshold](https://intl.cloud.tencent.com/document/product/297/37217)
 - [Targeted protection](https://intl.cloud.tencent.com/document/product/297/37218)
 - [CC frequency control](https://intl.cloud.tencent.com/document/product/297/37219)
