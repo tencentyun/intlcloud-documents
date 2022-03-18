@@ -152,7 +152,7 @@ lib/TRTCLiveRoom/model/
 </tr>
 <tr>
 <td>CDNPlayDomain</td>
-<td>Specifies the domain name for CDN live streaming, which takes effect only if `useCDNFirst` is set to `true`. You can set it in CSS console > **<a href="https://console.cloud.tencent.com/live/domainmanage">Domain Management</a>**.</td>
+<td>Specifies the domain name for CDN live streaming, which takes effect only if `useCDNFirst` is set to `true`. You can set it in CSS console > <a href="https://console.cloud.tencent.com/live/domainmanage">Domain Management</a>.</td>
 </tr>
 </table>
 
