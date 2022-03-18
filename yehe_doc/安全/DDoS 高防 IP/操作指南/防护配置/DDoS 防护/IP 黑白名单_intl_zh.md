@@ -16,6 +16,6 @@ DDoS 高防支持通过配置 IP 黑名单和白名单实现对访问 DDoS 高�
 ![](https://qcloudimg.tencent-cloud.cn/raw/6865bd3d710068fc607fbe4799aef9ad.png)
 4. 在 IP 黑白名单页面中，单击**新建**，创建 IP 黑白名单规则，选择黑白名单类型，单击**保存**。
 ![](https://main.qcloudimg.com/raw/1c3a46e9eea39733555bec2741bedc10.png)
-6. 新建完成后，IP 黑白名单列表将新增一条 IP 黑白名单规则，可以在右侧操作列，单击**删除**，删除 IP 黑白名单规则。
+5. （可选）新建完成后，IP 黑白名单列表将新增一条 IP 黑白名单规则，可以在右侧操作列，单击**删除**，删除 IP 黑白名单规则。
 ![](https://main.qcloudimg.com/raw/ffe79141e64da02c47ad887b3ca23ef2.png)
 
