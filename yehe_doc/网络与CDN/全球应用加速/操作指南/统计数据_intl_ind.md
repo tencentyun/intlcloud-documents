@@ -10,7 +10,7 @@ Anda dapat melihat statistik koneksi, seperti yang ditunjukkan di bawah ini:
 - **Time Period** (Periode Waktu): Pilih periode waktu.
 - **Time Granularity** (Perincian Waktu): Pilih perincian waktu. Waktu kueri maksimum adalah 15 hari untuk perincian 1 menit, 31 hari untuk perincian 5 menit, 93 hari untuk perincian 1 jam, dan 186 hari untuk perincian 1 hari.
 
-![](https://main.qcloudimg.com/raw/ebcbf2519d0189f9437d5375aa50ece9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4d3f9eaea3e2ca9442ec8cfabf0ad73f.jpg)
 
 ## Grup Koneksi
 
@@ -21,7 +21,7 @@ Anda dapat melihat statistik grup koneksi, seperti yang ditunjukkan di bawah ini
 - **Time Period** (Periode Waktu): Pilih periode waktu.
 - **Time Granularity** (Perincian Waktu): Pilih perincian waktu. Waktu kueri maksimum adalah 15 hari untuk perincian 1 menit, 31 hari untuk perincian 5 menit, 93 hari untuk perincian 1 jam, dan 186 hari untuk perincian 1 hari.
 
-![](https://main.qcloudimg.com/raw/7517ea8a6d1bffccd5436b64882d7c8f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fce7e20b2dcaa474095a117380f41e85.jpg)
 
 ## Pendengar
 
@@ -33,7 +33,7 @@ Anda dapat melihat statistik pendengar, seperti yang ditunjukkan di bawah ini:
 - **Time Period** (Periode Waktu): Pilih periode waktu.
 - **Time Granularity** (Perincian Waktu): Pilih perincian waktu. Waktu kueri maksimum adalah 15 hari untuk perincian 1 menit, 31 hari untuk perincian 5 menit, 93 hari untuk perincian 1 jam, dan 186 hari untuk perincian 1 hari.
 
-![](https://main.qcloudimg.com/raw/150adb14a909f5d954fb52b579d1cd72.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b1975214d1f82e89dcded5c4280d0bb9.jpg)
 
 ## Server Asal
 
@@ -45,12 +45,12 @@ Anda dapat melihat statistik status kesehatan server asal, seperti yang ditunjuk
 - **Time Period** (Periode Waktu): Pilih periode waktu.
 - **Time Granularity** (Perincian Waktu): Pilih perincian waktu. Waktu kueri maksimum adalah 15 hari untuk perincian 1 menit, dan 31 hari untuk perincian 5 menit.
 
-![](https://main.qcloudimg.com/raw/cb936fbfbca6c9a7e370d0401f4b6c55.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/75ce6339c8d51048a066fd3df481a642.jpg)
 
 ## Mengekspor Data
 
 Buka halaman **Statistics** (Statistik), lalu klik ikon unduh untuk mengekspor data.
-![](https://main.qcloudimg.com/raw/fada34020a50842ff1c7625cdee437f7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7646c6fb333f613b5dc1059de73b9847.jpg)
 
 ## Mengonfigurasi Kebijakan Alarm
 Buka halaman [Statistik](https://console.cloud.tencent.com/gaap/data), lalu klik **Configure Alarm** (Konfigurasi Alarm) di pojok kanan atas untuk mengonfigurasi kebijakan alarm. Untuk detail selengkapnya, lihat [Akses Pemantauan Cloud](https://intl.cloud.tencent.com/document/product/608/17541).
