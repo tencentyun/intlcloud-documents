@@ -37,4 +37,4 @@ Set the `allowfullscreen` attribute in the `iframe` tag. Below is the sample cod
 In legacy browsers that do not support the Fullscreen API, the VOD player uses CSS to implement the webpage full screen mode. With the aid of full screen mode of the browsers (generally by pressing F11), the device full screen effect can be achieved. It should be ensured that the in-page full screen style of the player is not restricted by CSS in the page; for example, the parent container `overflow:hidden` should not be set for the browser.
 
 If iframe is used, the player cannot modify the CSS style outside the iframe, and the external page needs to provide script and style support. Generally, the external page requires cross-domain support to implement webpage full screen. Therefore, it is not recommended to use the player with iframe.
->? Internet Explorer 8/9/10 do not support the Fullscreen API; therefore, the device full screen mode cannot be implemented through this API.
+>?Internet Explorer 8/9/10 do not support the Fullscreen API; therefore, the device full screen mode cannot be implemented through this API.
