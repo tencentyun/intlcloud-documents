@@ -33,7 +33,7 @@ Set the `allowfullscreen` attribute in the `iframe` tag. Below is the sample cod
 <iframe allowfullscreen src="" frameborder="0" scrolling="no" width="100%" height="270"></iframe>
 ```
 
-### How to solve the problem that full screen cannot be entered in IE 8/9/10?
+### How to solve the problem that full screen cannot be entered in Internet Explorer 8/9/10?
 In legacy browsers that do not support the Fullscreen API, the VOD player uses CSS to implement the webpage full screen mode. With the aid of full screen mode of the browsers (generally by pressing F11), the device full screen effect can be achieved. It should be ensured that the in-page full screen style of the player is not restricted by CSS in the page; for example, the parent container `overflow:hidden` should not be set for the browser.
 
 If iframe is used, the player cannot modify the CSS style outside the iframe, and the external page needs to provide script and style support. Generally, the external page requires cross-domain support to implement webpage full screen. Therefore, it is not recommended to use the player with iframe.
