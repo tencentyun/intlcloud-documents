@@ -47,7 +47,7 @@ You can create a recording template in either of the following two methods:
    <td>Videos can be outputted in formats of .hls, .mp4, .flv, and .aac (for audio-only recording).</td>
    </tr>
    </tbody></table>
->! 
+>!
 >- If an audio-only transcoding template is selected, the recording format must be an audio format as well.
 >- To record transcoded streams, the system will initiate transcoding tasks, for which you will be charged transcoding fees. If you use the same transcoding template for playback, the transcoding will be charged only once.
 
@@ -104,7 +104,7 @@ You can create a recording template in either of the following two methods:
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Recording](https://console.cloud.tencent.com/live/config/record)**.
 2. Select a recording template with bound domain names, find the target domain name, and click **Unbind**.
    ![](https://main.qcloudimg.com/raw/f7071a4b4f9297124b460ffebcba64d3.png)
-3. In the pop-up, click **Confirm**.
+3. In the pop-up window, click **Confirm**.
     ![](https://main.qcloudimg.com/raw/a666387f882584860eaf2c229c2b4769.png)
 
 >? 
