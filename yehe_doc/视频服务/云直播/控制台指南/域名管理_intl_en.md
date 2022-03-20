@@ -17,7 +17,7 @@ If you need to configure a playback domain name, please see [Playback Configurat
 
 
 ## Disabling a Domain Name
-To disable a domain name, click **Disable** on its right, and then click **OK** in the pop-up. After its status changes from **Enabled** to **Disabled**, it has been successfully disabled.
+To disable a domain name, click **Disable** on its right, and then click **Confirm** in the pop-up window. After its status changes from **Enabled** to **Disabled**, it has been successfully disabled.
 >? Once disabled, a domain name cannot be accessed. It can be accessed again after enabled. The steps of enabling and disabling are the same for playback and push domain names.
 
 ![](https://main.qcloudimg.com/raw/16c8c3f389c8e3a3c06c77e3c3ad8a23.png)
@@ -28,6 +28,6 @@ To enable a disabled domain name, click **Enable** on its right. After its statu
 
 
 ## Deleting a Domain Name
-To delete a domain name, click **Delete** on its right, and then click **OK** in the pop-up.
+To delete a domain name, click **Delete** on its right, and then click **Confirm** in the pop-up window.
 ![](https://main.qcloudimg.com/raw/16c8c3f389c8e3a3c06c77e3c3ad8a23.png)
 
