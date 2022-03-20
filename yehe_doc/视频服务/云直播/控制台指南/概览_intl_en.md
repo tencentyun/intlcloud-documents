@@ -73,7 +73,7 @@ The CSS console allows you to change the time granularity when viewing the trend
 </tbody></table>
 
 - **Switching the billing mode**
-  If the current billing mode is daily billing, you can click **Switch** in **Yesterday's Traffic Usage** to switch the billing mode. Click **Confirm** in the pop-up to complete the switch. For more information on billing mode switch, please see [Changing Billing Mode](https://intl.cloud.tencent.com/document/product/267/30411).
+  If the current billing mode is daily billing, you can click **Switch** in **Yesterday's Traffic Usage** to switch the billing mode. Click **Confirm** in the pop-up window to complete the switch. For more information on billing mode switch, please see [Changing Billing Mode](https://intl.cloud.tencent.com/document/product/267/30411).
 
 
 >? For more information, see [Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2819).
