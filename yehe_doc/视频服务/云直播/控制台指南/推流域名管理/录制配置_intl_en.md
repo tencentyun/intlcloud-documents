@@ -17,17 +17,17 @@ The recording feature is disabled for CSS push by default. This document describ
 [](id:conect)
 ## Binding Recording Template
 1. 	Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **push domain** to be configured or **Manage** to enter the domain name details page.
-2. 	Select the **Template Configuration** tab and click **Edit** in the top-right corner of the **Recording Configuration** block.
+2. 	Select the **Template Configuration** tab and click **Edit** in the top-right corner of the **Recording Configuration** section.
 ![](https://main.qcloudimg.com/raw/29bf30fa3b4ce940a9903c0331fc608e.png)
-3. Select a recording configuration template and click **OK**.
+3. Select a recording configuration template and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/8ecacaebb47ab9ae476d9286c1796b46.png)
 
 
 [](id:unite)
 ## Unbinding Recording Template
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **push domain** to be configured or **Manage** to enter the domain name details page.
-2. Select the **Template Configuration** tab and click **Edit** in the top-right corner of the **Recording Configuration** block.
-3. Deselect the target template and click **OK**.
+2. Select the **Template Configuration** tab and click **Edit** in the top-right corner of the **Recording Configuration** section.
+3. Clear the target template and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/f2c5f091437cd8b873ed6447562fb697.png)
 
 >? 
