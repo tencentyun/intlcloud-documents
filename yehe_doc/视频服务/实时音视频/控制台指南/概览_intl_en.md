@@ -6,7 +6,7 @@ Click **[Overview](https://console.cloud.tencent.com/trtc)** on the left sidebar
 
 ## Usage Statistics
 ### Cumulative durations of the month
-This section shows your cumulative usage of TRTC services of the month, including **audio duration**, *SD video duration*, **HD video duration**, and **FHD video duration**.
+This section shows your cumulative usage of TRTC services of the month, including **audio duration**, **SD video duration**, **HD video duration**, and **FHD video duration**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/b19df4c87758c69554d3ab96c91e3a51.png)
 To view more usage details, click **View More** in the top right to visit the **[Usage Statistics](https://console.cloud.tencent.com/trtc/statistics)** section. For more information, see [Usage Statistics](https://intl.cloud.tencent.com/document/product/647/39066).
 
