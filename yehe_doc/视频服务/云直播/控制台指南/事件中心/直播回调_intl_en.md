@@ -72,7 +72,7 @@ If a template is bound to a domain name, you need to unbind it before you can de
 
 1. Select **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)**.
 2. Find the target callback template, and click **Delete**.
-3. In the pop-up, click **Confirm**.
+3. In the pop-up window, click **Confirm**.
 
 ![](https://main.qcloudimg.com/raw/1bf90e6b3197dd2e18aff8c52cbe331c.jpg)
 
