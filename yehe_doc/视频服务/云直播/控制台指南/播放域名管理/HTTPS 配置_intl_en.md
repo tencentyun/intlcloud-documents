@@ -8,8 +8,8 @@ The HTTPS protocol is a network protocol built based on the SSL and HTTP protoco
 ## Directions 
 ### Step 1. Edit the HTTPS configuration
 1. Enter **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **playback domain name** to be configured or **Manage** on the right to enter the domain name details page.
-2. Select **Advanced Configuration** to view the **HTTPS Configuration** tab.
-3. Click **Edit** to enter the HTTPS configuration page and click ![](https://main.qcloudimg.com/raw/897761946b06e8f904bfa6301d282817.png) to enable the HTTPS service.
+2. Select **Advanced Configuration** and find the **HTTPS Configuration** section.
+3. Click **Edit** and click ![](https://main.qcloudimg.com/raw/897761946b06e8f904bfa6301d282817.png) to enable the HTTPS service.
 4. Select the source of the certificate to be configured, enter relevant information, and click **Save**.
 <table>
 <tr><th>Certificate Source</th><th>Required Configuration Items</th></tr>
