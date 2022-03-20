@@ -38,7 +38,7 @@ Publish a local file using the web push tool to CSS. Click **Select** to select 
 	- Select an expiration time, such as `2021-08-28 16:16:52`.
 	- Click **Confirm**, and a push URL is auto-generated.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3437d3d4e57ae021aa3e0bea3e6fc4e6.png)
-7. Click **Start Push** to start streaming. To enable/disable video or audio, click ![](https://main.qcloudimg.com/raw/da098f4e5ab01021e3c4704b0de41240.png) or (https://main.qcloudimg.com/raw/aa8d8d4c9c32359a249de37ed0d723be.png). After you disable video/audio, data capturing will continue and push will still succeed, but the stream cannot be previewed and will have no video or audio.
+7. Click **Start Push** to start streaming. To enable/disable video or audio, click ![](https://main.qcloudimg.com/raw/da098f4e5ab01021e3c4704b0de41240.png) or ![](https://main.qcloudimg.com/raw/aa8d8d4c9c32359a249de37ed0d723be.png). After you disable video/audio, data capturing will continue and push will still succeed, but the stream cannot be previewed and will have no video or audio.
 >? You cannot enable or disable preview after push succeeds, and you may incur bandwidth/traffic costs or the costs of other value-added services for pushing streams.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/f8e3e7571205090d9ad14a4faa280125.png)
