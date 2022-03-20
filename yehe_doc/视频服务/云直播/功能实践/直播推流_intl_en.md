@@ -69,7 +69,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 3. Enter the [push address](#step1) manually or by scanning the QR code.
 4. Tap **Start** in the bottom-left corner to start the push.
 
->? If you did not prepare a push address in advance, you can tap **New** on the right of the push address bar on the **Camera Push** page, and the system will automatically enter a push address and provide the corresponding playback address which can be used for CSS playback.
+>? If you did not prepare a push address in advance, you can tap **New** on the right of the push address bar on the **Camera Push** page, and the system will automatically enter a push address and provide the corresponding playback address which can be used for live playback.
 
 [](id:sdk)
 ### Scenario 4. Live SDK push
