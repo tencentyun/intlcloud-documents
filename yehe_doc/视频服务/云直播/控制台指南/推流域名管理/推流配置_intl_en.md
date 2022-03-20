@@ -14,7 +14,7 @@ You have activated the CSS service and completed identity verification.
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target **push domain name** or click **Manage** to enter the domain details page. 
 2. Click **Push Configuration**, view the **Authentication Configuration** section, and click **Edit** on the right.
 	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
-3. On the **Authentication Configuration** page, toggle ![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png) to enable or disable push configuration.
+3. In the **Authentication Configuration** pop-up window, toggle ![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png) to enable or disable push configuration.
 4. Enter the primary key and backup key, and click **Save**.
 ![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
 >? Primary key is required and backup key is optional. Entering both allows you to switch keys when one key is disclosed.
