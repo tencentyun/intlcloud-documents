@@ -62,8 +62,8 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 | :--------- | :----------------------------------------------------------- |
 | Component type  | CSS sub-feature used in this month                               |
 | Component name  | Sub-item under this component type                                 |
-| Component’s published unit price | The component’s published unit price without discounts                    |
-| Component’s usage   | Usage of the component                                             |
+| Component list price | The component’s published unit price without discounts                    |
+| Component usage   | Usage of the component                                             |
 | Discount rate    | The user’s discount this month: users on the daily billing cycle do not receive discounts. Their discount rate is 0. Users on the monthly billing cycle can contact sales to query about receiving discounts |
 | Usage duration   | Total usage duration of the component    |
 | Total cost    | Total cost = Component’s original price x (1 - Discount rate). Component’s original price = Component’s published unit price x Usage duration |
