@@ -23,8 +23,8 @@ Log in to the CSS console, select **CSS Toolkit** > **[Address Generator](https:
 >-If you need a **persistent push address**, you can enter **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, select a push domain name, click **Manage**, and select **Push Configuration** for calculation and generation by referring to the sample code in **Push Address Sample Code**. For more information, please see [How can I view the push sample code?](https://intl.cloud.tencent.com/document/product/267/31059).
 
 [](id:live_push)
-## CSS Push
-You can use the following methods to implement CSS push based on your business scenario:
+## Live Push
+You can use the following methods to implement live push based on your business scenario:
 
 [](id:pc)
 ### Scenario 1. PC push
@@ -72,16 +72,16 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 >? If you did not prepare a push address in advance, you can tap **New** on the right of the push address bar on the **Camera Push** page, and the system will automatically enter a push address and provide the corresponding playback address which can be used for CSS playback.
 
 [](id:sdk)
-### Scenario 4. CSS SDK push
-If you need to integrate only CSS push into your existing application, follow the steps below:
+### Scenario 4. Live SDK push
+If you need to integrate only live push into your existing application, follow the steps below:
 1. Download the [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38150).
 2. Complete the integration as instructed in the [iOS](https://intl.cloud.tencent.com/document/product/1071/38157) or [Android](https://intl.cloud.tencent.com/document/product/1071/38158) integration document.
 
-The CSS SDK is a collection of mobile live streaming services. It demonstrates in the form of free source code how to use Tencent Cloud CSS, VOD, IM, and COS to build the most appropriate live streaming solution for your business. For more information, please see [MLVB](https://intl.cloud.tencent.com/product/mlvb). 
+The live SDK is a collection of mobile live streaming services. It demonstrates in the form of free source code how to use Tencent Cloud CSS, VOD, IM, and COS to build the most appropriate live streaming solution for your business. For more information, see [MLVB](https://intl.cloud.tencent.com/product/mlvb). 
 
 
 ## FAQs
-- [How can I implement CSS playback?](https://intl.cloud.tencent.com/document/product/267/31559)
+- [How can I implement live playback?](https://intl.cloud.tencent.com/document/product/267/31559)
 - [How can I splice a push URL?](https://intl.cloud.tencent.com/document/product/267/38393)
 - [How can I calculate a hotlink protection URL?](https://intl.cloud.tencent.com/document/product/267/31560)
 
