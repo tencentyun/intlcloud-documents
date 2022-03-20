@@ -30,7 +30,7 @@ You can create a screencapture and porn detection template in the following ways
 <span id="Screenshot"></span>
 ## Creating a Screencapture and Porn Detection Template
 
-1. Log in to the CSS console, and select **Feature Configuration** > **[Live Screencapture & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh).
+1. Log in to the CSS console, and select **Feature Configuration** > **[Live Screencapture & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh)**.
 2. Click **Create Screencapture and Porn Detection Template**, configure settings, and then click **Save**.
 ![](https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png)
 <table>
