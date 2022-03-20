@@ -68,8 +68,8 @@ You can enter the generated push URL into the push software as appropriate for y
 [](id:step4)
 ## Step 4. Get playback URL
 
-1. After push succeeds, select **[Stream Management](https://console.cloud.tencent.com/live/streammanage)** > **Online Streams**, view the status of the push address, and click **Test** to play back the stream online.
-2. Select **CSS Toolbox** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to get a playback address and configure as follows:
+1. After push succeeds, select **[Stream Management](https://console.cloud.tencent.com/live/streammanage)** > **Live Streams**, view the status of the push address, and click **Test** to play back the stream online.
+2. Select **CSS Toolkit** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to get a playback address and configure as follows:
    1. Select the type of generation, such as playback domain name.
    2. Select a playback domain name you added in **Domain Management**.
    3. Enter the `StreamName` in the push URL to play back the corresponding stream.
