@@ -5,7 +5,7 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 <span id="resources_id"></span>
 ## Bill by Instance
 1. Click the **Bill by Instance** tab.
-2. Click **All products** and then select **CSS** to view the CSS bills.
+2. Click **All products** and then select **Cloud Streaming Services** to view the CSS bills.
 
 ![](https://main.qcloudimg.com/raw/9db167f7285dfaf82d83a9028d589ad8.png)
 
