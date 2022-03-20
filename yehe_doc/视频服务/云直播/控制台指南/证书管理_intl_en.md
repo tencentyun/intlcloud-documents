@@ -9,7 +9,7 @@ The purpose of configuring an SSL certificate for a domain name is to encrypt ke
 ![](https://main.qcloudimg.com/raw/e39413b101a445ed747d78c8c9e7c8ac.png)
 2. Click **Configure Certificate** to add a certificate configuration.
 ![](https://main.qcloudimg.com/raw/5aeee06ba8b978b823be16e9191bf705.png)
-3. In the certificate configuration pop-up, select a certificate source:
+3. In the certificate configuration pop-up window, select a certificate source:
   - **Self-owned certificate**: enter remarks, content, and key of this certificate. After the configuration is saved, the certificate info will be synced to [Certificate Management](https://console.cloud.tencent.com/ssl) in the SSL Certificate Service console. For details about how to set the certificate content and key, please see [HTTPS Configuration](https://intl.cloud.tencent.com/document/product/267/31066).
 ![](https://main.qcloudimg.com/raw/998de2fdadf6ed9ab52e7fdcef288f51.png)
   - **Tencent Cloud-hosted certificate**: select a certificate you purchased in the SSL Certificate Service console.
@@ -41,7 +41,7 @@ After you [configure a certificate](#c_ssl), you can go to **[Certificate Manage
 ## Deleting Certificate Configuration
 1. Go to **[Certificate Management](https://console.cloud.tencent.com/live/common/certificate)**, find the target certificate configuration in the list, and click **Delete** on its right.
 ![](https://main.qcloudimg.com/raw/a5d8f92c8aa7f2264c56e5ef6bf1f15b.png)
-2. In the confirmation pop-up, click **Confirm**.
+2. In the confirmation pop-up window, click **Confirm**.
 ![](https://main.qcloudimg.com/raw/10305e0609cfcda523505cbcf8a099c8.png)
 >! After unbinding the certificate, the domain names cannot use HTTPS configuration.
 
