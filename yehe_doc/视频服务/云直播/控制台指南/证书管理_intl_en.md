@@ -43,6 +43,6 @@ After you [configure a certificate](#c_ssl), you can go to **[Certificate Manage
 ![](https://main.qcloudimg.com/raw/a5d8f92c8aa7f2264c56e5ef6bf1f15b.png)
 2. In the confirmation pop-up window, click **Confirm**.
 ![](https://main.qcloudimg.com/raw/10305e0609cfcda523505cbcf8a099c8.png)
->! After unbinding the certificate, the domain names cannot use HTTPS configuration.
+>! After you unbind the certificate, the domain names cannot use HTTPS configuration.
 
 
