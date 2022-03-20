@@ -197,7 +197,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select a template, find the target domain name, and click **Unbind**.
 ![](https://main.qcloudimg.com/raw/59ecf14bea1e5b3ffa7b1fe6da0d565b.png)
-3. In the pop-up, click **Confirm**.
+3. In the pop-up window, click **Confirm**.
 ![](https://main.qcloudimg.com/raw/e335a8c597413b90dfabda9a1f7f3150.png)
 
 
