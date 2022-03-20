@@ -8,7 +8,7 @@
 >
 4. Log in to the [Tencent Cloud Domain Service Console](https://console.cloud.tencent.com/domain) and configure CNAME for the successfully added playback domain name. For detailed directions, please see [Domain Name CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057).
 
-## Get playback URL
+## Getting Playback URL
 2. Select **CSS Toolkit** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to get a playback URL and configure as follows:
 - Select **Playback Domain** as the type of the URL.
 2. Select a playback domain name you added in **Domain Management**.
