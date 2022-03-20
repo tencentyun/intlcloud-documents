@@ -82,9 +82,10 @@ You can create a recording template in either of the following two methods:
       </tr>
       </tbody></table>
 
->! Notes:
->- If you select **STANDARD** for **Storage Policy** and cold storage is enabled for the selected application/category, streams will be recorded to STANDARD storage first before the configured cold storage policy is executed on the recording files. You can go to [Cold Storage](https://console.cloud.tencent.com/vod/inactivation) to view your cold storage policies.
+>! For **Storage Policy**:
+>- If you select **STANDARD** and cold storage is enabled for the selected application/category, streams will be recorded to STANDARD storage first before the configured cold storage policy is executed on the recording files. You can go to [Cold Storage](https://console.cloud.tencent.com/vod/inactivation) to view your cold storage policies.
 >- If you select **STANDARD_IA** and cold storage is enabled for the selected application/category, streams will be recorded to STANDARD_IA storage first, and the system will then determine whether to execute the cold storage policy.
+
 4. Click **Save**.
 
 [](id:conect)
