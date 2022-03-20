@@ -47,6 +47,7 @@ You can create a recording template in either of the following two methods:
    <td>Videos can be outputted in formats of .hls, .mp4, .flv, and .aac (for audio-only recording).</td>
    </tr>
    </tbody></table>
+
 >!
 >- If an audio-only transcoding template is selected, the recording format must be an audio format as well.
 >- To record transcoded streams, the system will initiate transcoding tasks, for which you will be charged transcoding fees. If you use the same transcoding template for playback, the transcoding will be charged only once.
