@@ -102,14 +102,14 @@ You can create a screencapture and porn detection template in the following ways
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Screencapture & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh)**.
 2. Select a screencapture and porn detection template with bound domain names, find the target domain name, and click **Unbind**.
    ![](https://main.qcloudimg.com/raw/fd20557cc393cc483d9a36dd0ddb6652.png)
-3. In the pop-up, click **Confirm**.
+3. In the pop-up window, click **Confirm**.
    ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
 
 
 <span id="change"></span>
 ## Modifying a Template
 
-1. Log in to the CSS console and select **Feature Configuration** > **[Live Screencapture & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh).
+1. Log in to the CSS console and select **Feature Configuration** > **[Live Screencapture & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh)**.
 2. Find the screencapture and porn detection template that you created, and click **Edit** on the right to modify template information.
 3. Click **Save**.
 
