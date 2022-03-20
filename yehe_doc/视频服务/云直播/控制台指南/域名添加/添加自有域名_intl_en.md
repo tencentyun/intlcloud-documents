@@ -16,7 +16,7 @@ You have activated the [CSS](https://cloud.tencent.com/product/css) service.
 >! 
 >- The domain name can be up to **29** characters and cannot contain uppercase letters.
 >- By default, each account can add up to 100 domain names. To add more, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to increase the upper limit.
->- After adding your own domain name successfully, you can go to the domain name management list, and click the target domain name or **Manage** on the right to enter the domain name details page. Then, select **Advanced Configuration** to view the **Region Configuration** tab, click **Edit** to enter the region configuration page, reselect an acceleration region, and click **Save**.
+>- After adding your own domain name successfully, you can go to the domain name management list, and click the target domain name or **Manage** on the right to enter the domain name details page. Then, select **Advanced Configuration**, click **Edit** in the **Region Configuration** area, reselect an acceleration region, and click **Save**.
 
 [](id:step2)
 ### Step 2. Configure the CNAME record of the domain name
