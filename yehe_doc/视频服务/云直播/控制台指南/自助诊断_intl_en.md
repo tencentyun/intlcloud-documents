@@ -101,7 +101,7 @@ After the diagnosis, you will see the result and suggestions for handling the ex
 <td>Check for exceptions caused by the IP allowlist/blocklist or regional restrictions</td>
 </tr><tr>
 <td>Stream Data</td>
-Analyze real-time monitoring data of the live stream to determine whether the exception is caused by network congestion, jitters, or other reasons. <a href="https://console.cloud.tencent.com/live/analysis/stream">View stream data</a></td>
+<td>Analyze real-time monitoring data of the live stream to determine whether the exception is caused by network congestion, jitters, or other reasons. <a href="https://console.cloud.tencent.com/live/analysis/stream">View stream data</a></td>
 </tr>
 </tbody></table>
 
