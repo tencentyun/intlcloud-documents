@@ -1,4 +1,4 @@
-To view your CSS bills and payment details, go to the **Billing Center** > **Bills** > **[Bill Details](https://console.cloud.tencent.com/expense/bill/summary)** on the Tencent Cloud console.
+To view your CSS bills and payment details, go to **Billing Center** > **Bills** > **[Bill Details](https://console.cloud.tencent.com/expense/bill/summary)** in the Tencent Cloud console.
 The Bill Details page includes the **Bill by Instance** and **Bill Details** tabs:
 - Bill by Instance: displays aggregated bills by instance.
 - Bill Details: displays one record per bill without performing aggregation.
