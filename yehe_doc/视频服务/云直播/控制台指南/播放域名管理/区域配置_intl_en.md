@@ -12,6 +12,6 @@ To use content delivery, acceleration, and playback services for your playback d
 - Switching the region will invalidate the bandwidth cap configuration, so you will need to configure it again.
 ## Directions
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the playback domain name to be configured or **Manage** on the right to go to the domain details page.
-2. In **Advanced Configuration**, view the **Region Configuration** tab.
+2. Select **Advanced Configuration** and find the **Region Configuration** section.
 3. Click **Edit** to switch between **Chinese mainland**, **Global**, and **Outside Chinese mainland**.
 4. Click **Save**.
