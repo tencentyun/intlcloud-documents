@@ -12,10 +12,10 @@ If you have a self-built origin server and live streaming source, and want to st
 
 ## Directions
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the playback domain name to be configured or **Manage** on the right to go to the domain details page.
-2. Select **Advanced Configuration**, and click the **Origin Server Settings** tab.
+2. Select **Advanced Configuration** and find the **Origin Server Settings** section.
 3. Click **Edit** and configure as follows:
  1. Toggle **Origin Server Settings** on.
- 2. Select the **Forwarding Protocol** and **Playback Protocol**
+ 2. Set **Forwarding Protocol** and **Playback Protocol**.
  3. Enter an IP or a domain name as the **Master Origin Server Address**.
  4. Click **Save**.
 
