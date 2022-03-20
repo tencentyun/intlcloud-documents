@@ -3,13 +3,13 @@ The nature of CSS is a streaming process, similar to the live broadcast of TV ch
 [](id:step1)
 ## Preparations
 1. Activate the [CSS service](https://console.cloud.tencent.com/live?from=product-banner-use-lvb).
-2. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click **Add Domain Name** to add an ICP filed push domain name. For more information, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
+2. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click **Add Domain** to add a push domain name with an ICP filing number. For more information, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
 >? CSS provides a default push domain name in the format of `xxx.livepush.myqcloud.com`. We recommend you not use it as the push domain name for your real business.
 
 [](id:push_add)
 ## Getting Push Address
 Log in to the CSS console, select **CSS Toolkit** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to generate a push address and configure as follows:
-- Select **push domain name** as the type of address to generate.
+- Select **Push Domain** as the domain type.
 - Select the push domain name you added in domain management.
 - Enter an `AppName` (`live` by default). This is used to differentiate the paths of different applications under the same domain name.
 - Enter a custom `StreamName`, such as `liveteststream`.
