@@ -21,7 +21,7 @@ You have logged in to the [CSS console](https://console.cloud.tencent.com/live/l
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Domain Type</td>
-<td>Select <strong>push domain</strong> or <strong>playback domain</strong>.</td>
+<td>Select <strong>Push Domain</strong> or <strong>Playback Domain</strong>.</td>
 </tr><tr><td>AppName</td>
 <td>Live streaming application name, used to identify the live stream file storage path. Default value: `live`.<br>Only letters, digits, and symbols are allowed.</td>
 </tr><tr><td>StreamName</td>
@@ -47,7 +47,7 @@ You have logged in to the [CSS console](https://console.cloud.tencent.com/live/l
 
 [](id:pushurl)
 ### Notes
-As the protocols RTMP, WebRTC, and SRT are supported for push, the push URLs generated start with `rtmp://`, webrtc://, or `srt://`.
+As the protocols RTMP, WebRTC, and SRT are supported for push, the push URLs generated start with `rtmp://`, `webrtc://`, or `srt://`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d866991901d2c780112da709d4e0ba3c.png)
 
 
