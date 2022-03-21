@@ -100,4 +100,4 @@ In April 2019, John didn't perform any other operations, and the 60 GB of data w
 > ?The above example applies to scenarios where a new user has activated the COS service for the first time, and is eligible for the free tier. For billing after the free tier term ends, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 ## Troubleshooting
 
-Should you have any questions about the free tier or your bills, see [Billing](https://intl.cloud.tencent.com/document/product/436/10373).
+If you have any questions about the free tier or your bills, see [Billing](https://intl.cloud.tencent.com/document/product/436/10373).
