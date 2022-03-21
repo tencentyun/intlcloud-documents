@@ -12,7 +12,7 @@ This document describes how to configure a stream on a PC in OBS Studio.
  1. **<span id="step1">Set a push address</span>**
 Open OBS Studio and click **Controls** > **Settings** at the bottom to enter the Settings page.
 ![](https://main.qcloudimg.com/raw/493a19e0f2bbea80983c341dd742a044.png)
-Click **Stream** on the left sidebar and select "Custom Streaming Server" as stream type. Take the push address below as an example.
+Click **Stream** on the left sidebar and select "Custom" as the service type. Take the push address below as an example.
 ![](https://main.qcloudimg.com/raw/55512ddf58bf32014424fa33b6f3d31f.png)
 Divide the push address into two parts to enter the URL and stream name respectively. Enter the former part of the address before Path for the URL and the latter part after StreamName for the stream name. Thus, the parameter is set as below:
 ```
