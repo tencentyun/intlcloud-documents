@@ -18,7 +18,7 @@ If not, check the current network environment.
 Currently, only RTMP is supported.
 	 
 ### Does live playback outside Chinese mainland support HTTPS?
-Yes. Go to the CSS console > [Domain Management](https://console.cloud.tencent.com/live/domainmanage) > Playback Domain Name > Management > Advanced Configuration > HTTPS Configuration, where you can add an HTTPS certificate to the domain name for which you want to configure HTTPS pull.
+Yes. Go to the CSS console > [Domain Management](https://console.cloud.tencent.com/live/domainmanage) > Playback Domain > Manage > Advanced Configuration > HTTPS Configuration, where you can add an HTTPS certificate to the domain name for which you want to configure HTTPS pull.
 	 
 ### Can I modify the region of live playback acceleration outside Chinese mainland?
 Yes. You can do so in the CSS console > Domain Management. It takes about 15 minutes for the change to take effect.

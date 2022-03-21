@@ -1,4 +1,4 @@
-## Overview
+## Feature Description
 
 This API is used to set the default encryption configuration for a bucket.
 
@@ -6,7 +6,7 @@ To call this API, you must have the `PutBucketEncryption` permission. By default
 
 ## Request
 
-**Sample request**
+**Request sample**
 
 ```sh
 PUT /?encryption HTTP 1.1
@@ -17,7 +17,7 @@ Authorization: Auth String
 
 >? 
 > - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 **Request parameters**
@@ -28,7 +28,7 @@ This API has no request parameter.
 
 This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-**Request body**
+**Request Body**
 
 You can configure the default encryption in the request body using the XML markup language. The configuration mainly includes the encryption item.
 
@@ -63,11 +63,11 @@ This API only returns [Common Response Headers](https://intl.cloud.tencent.com/d
 
 The response body is empty.
 
-**Error codes**
+**Error Code**
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Example
+## Examples
 
 **Request**
 

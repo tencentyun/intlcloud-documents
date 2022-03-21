@@ -9,7 +9,7 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
       <th>Description</td>
    </tr>
    <tr>
-      <td rowspan=11>Basic image processing service</td>
+      <td rowspan=11>Image Processing-Basic Services</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36366">Scaling</a></td>
       <td>Proportional scaling, scaling image to target width and height, and more</td>
    </tr>
@@ -30,7 +30,7 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
       <td>Changes the quality of images in JPG and WEBP formats</td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/36371">Gaussian blur</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36371">Gaussian blurring</a></td>
       <td>Blurs images</td>
    </tr>
    <tr>
@@ -66,7 +66,7 @@ Samples of basic image processing are as follows:
 String bucketName = "examplebucket-1250000000";
 String key = "qrcode.png";
 GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
-// Scale down the image’s width and height to 50%.
+// Scale the width and height to 50% of the original image.
 String rule = "imageMogr2/thumbnail/!50p";
 getObj.putCustomQueryParameter(rule, null);
 cosClient.getObject(getObj, new File("qrcode-50p.png"));
@@ -78,7 +78,7 @@ cosClient.getObject(getObj, new File("qrcode-50p.png"));
 String bucketName = "examplebucket-1250000000";
 String key = "qrcode.png";
 GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
-// Scale down the image’s width and height to 50%.
+// Crop the radius of an inscribed circle to an integer greater than 0 and less than half of the shorter side of the original image. The center of the inscribed circle is the center of the image.
 String rule = "imageMogr2/iradius/150";
 getObj.putCustomQueryParameter(rule, null);
 cosClient.getObject(getObj, new File("qrcode-cropping.png"));
@@ -90,7 +90,7 @@ cosClient.getObject(getObj, new File("qrcode-cropping.png"));
 String bucketName = "examplebucket-1250000000";
 String key = "qrcode.png";
 GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
-// Scale down the image’s width and height to 50%.
+// Rotate 90 degrees clockwise
 String rule = "imageMogr2/rotate/90";
 getObj.putCustomQueryParameter(rule, null);
 cosClient.getObject(getObj, new File("qrcode-rotate.png"));

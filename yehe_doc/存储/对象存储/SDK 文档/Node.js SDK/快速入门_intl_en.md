@@ -17,7 +17,8 @@
 2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get your project's `SecretId` and `SecretKey`.
 
-> ?For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+>? For the definition of terms such as SecretId, SecretKey, and Bucket, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+>
 
 #### Installing SDK
 
@@ -36,7 +37,7 @@ npm i cos-nodejs-sdk-v5 --save
 First, log into the CAM console, and get your `SecretId` and `SecretKey` from the [Access Key](https://console.cloud.tencent.com/cam/capi) page.
 Replace `SecretId`, `SecretKey`, `bucket`, and `region` with the actual values in your development environment. To test file upload, please see the following sample code.
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```js
 // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to check and manage the `SecretId` and `SecretKey` of your project.
 var COS = require('cos-nodejs-sdk-v5');
@@ -50,7 +51,7 @@ var cos = new COS({
 
 For more information on how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048). The SDK for Node.js supports initialization by passing in a temporary key as shown in the sample code below:
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```js
 var request = require('request');
 var COS = require('cos-nodejs-sdk-v5');
@@ -81,14 +82,14 @@ var cos = new COS({
 
 Below are some examples of common APIs. For more detailed initialization methods, please see the [Demo](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/demo/demo.js).
 
-### Configuration items
+### Configuration Item
 
 #### Constructor parameters
 
 | Parameter | Description | Type | Required |
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
 | SecretId | User SecretId | String | Yes |
-| SecretKey | User SecretKey. We recommend you only use the SecretKey for frontend debugging to avoid key exposure | String | Yes |
+| SecretKey | User SecretKey | String | Yes |             
 | FileParallelLimit | Number of concurrent file uploads in the same instance. Default value: 3 | Number | No |
 | ChunkParallelLimit | Number of concurrent part uploads for the same uploaded file. Default value: 3 | Number | No |
 | ChunkRetryTimes | Number of retries upon multipart upload/copy failure. Default value: 3 (a request will be made 4 times in total, including the initial one) | Number | No|
@@ -100,7 +101,7 @@ Below are some examples of common APIs. For more detailed initialization methods
 | ProgressInterval | Callback frequency of the upload progress callback method `onProgress` in milliseconds. Default value: 1000 | Number | No |
 | Protocol | Protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` is used when the current page is determined to be in `http:` format; otherwise, `https:` is used | String | No |
 | ServiceDomain | The request domain name when `getService` is called, such as `service.cos.myqcloud.com` | String | No |
-| Domain | Custom request domain name used to call a bucket or object API. You can use a template <br>such as `"{Bucket}.cos.{Region}.myqcloud.com"` which will use the bucket and region information passed in the replacement parameters when an API is called. | String | No |
+| Domain | Custom request domain name used to call a bucket or object API. You can use a template <br>such as `"{Bucket}.cos.{Region}.myqcloud.com"` which will use the bucket and region information passed in the replacement parameters when an API is called.</br> | String | No |
 | UploadQueueSize | The maximum size of the upload queue. If the maximum is exceeded, failed, completed, and canceled tasks will be cleared. Default value: 1000 | Number | No |
 | ForcePathStyle | Forces the use of a suffix when sending requests. The suffixed bucket will be placed in the pathname after the domain name, and the bucket will be added to the signature pathname for calculation. Default value: false | Boolean | No |
 | UploadCheckContentMd5  | Forces the verification of `Content-MD5` for file uploads, which calculates the MD5 checksum of the file request body and places it in the `Content-MD5` field of the header. Default value: false | Boolean | No |
@@ -123,12 +124,12 @@ getAuthorization function parameters:
 | -------- | ------------------------------------------------------------ | -------- |
 | options | Required for getting the signature | Object |
 | - Bucket  | Bucket name in the format of `BucketName-APPID`. The bucket name entered here must be in this format | String |
-| - Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). | String |
+| - Region | Bucket region. For the enumerated values, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). | String |
 | callback | Callback method after the temporary key is obtained | Function |
 
 After the temporary key is obtained, the callback returns an object. The attributes of the returned object are as listed below:
 
-| Attribute | Description | Type  |Required |
+| Attribute | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | TmpSecretId | `tmpSecretId` of the obtained temporary key | String | Yes |
 | TmpSecretKey | `tmpSecretKey` of the obtained temporary key | String | No |
@@ -159,7 +160,7 @@ An Authorization string.
 An object whose attributes are listed as follows:
 
 
-| Attribute | Description | Type  |Required |
+| Attribute | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | Authorization | Calculated signature string | String | Yes |
 | SecurityToken | `sessionToken` of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header | String | No |
@@ -172,9 +173,43 @@ There are three ways to get the authentication credentials for your instance by 
 2. During instantiation, pass in the `getAuthorization` callback function, and each time a signature is required, it will be calculated and returned to the instance through this callback.
 3. During instantiation, pass in the `getSTS` callback, and each time a temporary key is required, it will be returned to the instance for signature calculation within the instance during each request.
 
+### Tips
+
+In most cases, you only need to create a COS SDK instance, and use it directly where SDK methods need to be called.  
+
+```js
+var cos = new COS({
+  ....
+});
+
+/* Self-encapsulated upload method */
+function myUpload() {
+  // COS SDK instances do not need to be created in each method
+  // var cos = new COS({
+  //   ...
+  // });
+  cos.putObject({
+    ....
+  });
+}
+
+/* Self-encapsulated deletion method */
+function myDelete() {
+  // COS SDK instances do not need to be created in each method
+  // var cos = new COS({
+  //   ...
+  // });
+  cos.deleteObject({
+    ....
+  });
+}
+```
+
+Below are some common APIs. For more detailed initialization methods, please see the [Demo](https://github.com/tencentyun/cos-nodejs-sdk-v5/tree/master/demo/demo.js).
+
 ### Creating a bucket
 
-[//]: # (.cssg-snippet-put-bucket)
+[//]: # ".cssg-snippet-put-bucket"
 ```js
 cos.putBucket({
     Bucket: 'examplebucket-1250000000',
@@ -186,7 +221,7 @@ cos.putBucket({
 
 ### Querying the bucket list
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```js
 cos.getService(function (err, data) {
     console.log(data && data.Buckets);
@@ -195,9 +230,9 @@ cos.getService(function (err, data) {
 
 ### Uploading an object
 
-This API is used to upload small files. For large files, please use the multipart upload API. For more information, see [Actions on Objects](https://intl.cloud.tencent.com/document/product/436/31710).
+This API is used to upload small files. For large files, please use the multipart upload API. For more information, see [Actions on Objects](https://intl.cloud.tencent.com/document/product/436/43551).
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -213,9 +248,9 @@ cos.putObject({
 });
 ```
 
-### Query objects
+### Querying objects
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: #	".cssg-snippet-get-bucket"
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -226,9 +261,9 @@ cos.getBucket({
 });
 ```
 
-### Download an object
+### Downloading an object
 
-[//]: # (.cssg-snippet-get-object-stream)
+[//]: # ".cssg-snippet-get-object-stream"
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -242,7 +277,7 @@ cos.getObject({
 
 ### Delete an object
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: #	".cssg-snippet-delete-object"
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* Required */

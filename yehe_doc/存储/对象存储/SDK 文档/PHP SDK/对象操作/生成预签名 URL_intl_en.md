@@ -4,9 +4,10 @@ The COS SDK for PHP provides an API for getting pre-signed request URLs. Below a
 >?
 > - You are advised to use a temporary key to generate a pre-signed URL for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
 > - If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
-> 
+> - Get the object URL and download the object parameters. You can concatenate the `response-content-disposition=attachment` parameter to the end of the obtained URL.
+>
 
-## Generating Pre-signed URL with Permanent Key
+## Generating Pre-Signed URL with Permanent Key
 
 ### Upload request samples
 
