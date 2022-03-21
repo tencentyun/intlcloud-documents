@@ -5,7 +5,7 @@ You can readily access COS through the console, APIs, SDKs, or tools to store an
 
 ## Features
 
-COS provides both enterprises and individual users with a suite of features, including data management, remote disaster recovery, data access acceleration and data processing for diverse use cases. For more information, please see [Feature Overview](https://intl.cloud.tencent.com/document/product/436/8186).
+COS provides both enterprises and individual users with a suite of features, including data management, remote disaster recovery, data access acceleration and data processing for diverse use cases. For more information, please see [Features](https://intl.cloud.tencent.com/document/product/436/8186).
 
 ## Concepts
 
