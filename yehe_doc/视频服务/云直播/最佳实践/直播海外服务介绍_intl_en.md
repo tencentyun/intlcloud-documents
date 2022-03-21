@@ -40,7 +40,7 @@ In addition to technical architectures and solutions, resource reserves are also
 
 <span id="open"></span>
 ### How to Activate
-The Global CSS service can be directly activated in the [CSS console](https://console.cloud.tencent.com/live)
+The Global CSS service can be directly activated in the [CSS console](https://console.cloud.tencent.com/live).
 - If you don't have a Tencent Cloud account yet, you need to sign up first as instructed in [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985) and then [apply for activation of the CSS service](https://intl.cloud.tencent.com/document/product/267/30410).
 - If you already have a Tencent Cloud account and have activated CSS, you can proceed directly to the next step.
 
