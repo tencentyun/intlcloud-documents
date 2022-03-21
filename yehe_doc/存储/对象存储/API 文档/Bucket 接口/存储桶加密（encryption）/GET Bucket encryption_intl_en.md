@@ -1,4 +1,4 @@
-## Overview
+## Feature Description
 
 This API is used to query the default encryption configuration of a specified bucket.
 
@@ -6,7 +6,7 @@ To call this API, you need to have the `GetBucketEncryption` permission. By defa
 
 ## Request
 
-**Sample request**
+**Request sample**
 
 ```sh
 GET /?encryption HTTP 1.1
@@ -17,7 +17,7 @@ Authorization: Auth String
 
 >? 
 > - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 **Request parameters**
@@ -26,17 +26,17 @@ This API has no request parameter.
 
 **Request headers**
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-**Request body**
+**Request Body**
 
 This API does not have a request body.
 
 ## Response
 
-**Response header**
+**Response headers**
 
-This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 **Response body**
 
@@ -53,20 +53,20 @@ The SSE-COS-encrypted response body is follows:
 ```
 
 
-The specific elements are as follows:
+The nodes are described as follows:
 
 | Element | Parent Node | Description | Type |
 | ---------------------------------- | ---------------------------------- | ------------------------------------------------------------ | --------- |
-| ServerSideEncryptionConfiguration | None | Contains the default encryption configuration parameters. | Container |
-| Rules | ServerSideEncryptionConfiguration | Default server-side encryption configuration rule | Container |
-| ApplyServerSideEncryptionByDefault | Rules | Default configuration of server-side encryption | Container |
+| ServerSideEncryptionConfiguration | None | Contains the default encryption configuration parameters | Container |
+| Rule | ServerSideEncryptionConfiguration | Default server-side encryption configuration rule | Container |
+| ApplyServerSideEncryptionByDefault | Rule | Default configuration of server-side encryption | Container |
 | SSEAlgorithm | ApplyServerSideEncryptionByDefault | Server-side encryption algorithm to be used. Enumerated value: AES256 | String |
 
-**Error codes**
+**Error Code**
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Sample
+## Examples
 
 **Request**
 

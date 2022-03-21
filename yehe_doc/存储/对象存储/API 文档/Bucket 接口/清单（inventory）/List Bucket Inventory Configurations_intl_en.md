@@ -1,4 +1,4 @@
-## Overview
+## Feature Description
 
 This API is used to query all inventory jobs set for a bucket. You can configure up to 1,000 inventory jobs for a bucket.  
 
@@ -16,13 +16,13 @@ For more information, please see [Inventory Overview](https://intl.cloud.tencent
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=ListBucketInventoryConfigurations&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can use it to query the request and response of each API call as well as generate sample code for calls.
             </div>
         </div>
     </div>
@@ -41,7 +41,7 @@ Authorization: Auth String
 
 >? 
 > - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 #### Request parameters
@@ -139,7 +139,7 @@ The nodes are described as follows:
 
 | Node Name | Parent Node | Description | Type |
 | ------------------------------------ | ----------------------------------- | ------------------------------------------------------------ | --------- |
-| ListInventoryConfigurationResult | None | Information about all inventory jobs of the bucket | Container |
+| List InventoryConfigurationResult | None | Information about all inventory jobs of the bucket | Container |
 | InventoryConfiguration | ListInventoryConfigurationResult | Detailed configuration of an inventory job. For the XML structure, please see [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623). | Container |
 | IsTruncated | ListInventoryConfigurationResult | Whether all inventory jobs have been listed. If yes, the value is `false`. Otherwise, the value is `true`. | Boolean   |
 | ContinuationToken | ListInventoryConfigurationResult | Identifier of the current response. This parameter corresponds to the `continuation-token` request parameter. | String |
@@ -149,7 +149,7 @@ The nodes are described as follows:
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Example
+## Examples
 
 #### Request
 

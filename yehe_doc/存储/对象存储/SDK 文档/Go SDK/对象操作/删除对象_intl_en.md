@@ -23,10 +23,35 @@ func (s *ObjectService) Delete(ctx context.Context, key string) (*Response, erro
 
 [//]: # (.cssg-snippet-delete-object)
 ```go
-key := "exampleobject"
-_, err := client.Object.Delete(context.Background(), key)
-if err != nil {
-    panic(err)
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    key := "exampleobject"
+    _, err := client.Object.Delete(context.Background(), key)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
@@ -35,10 +60,35 @@ if err != nil {
 This request does not delete objects in the folder but only the specified key.
 
 ```go
-key := "folder/"
-_, err := c.Object.Delete(context.Background(), key)
-if err != nil {
-    panic(err)
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    key := "folder/"
+    _, err := client.Object.Delete(context.Background(), key)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
@@ -46,13 +96,13 @@ if err != nil {
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`. | String | Yes |
+| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`. | String | Yes |
 
 ## Deleting Multiple Objects
 
 #### Description
 
-The API is used to delete multiple objects from a bucket. You can delete up to 1,000 objects in one request.
+This API is used to delete multiple objects from a bucket. You can delete up to 1,000 objects in one request.
 
 #### Method prototype
 
@@ -64,53 +114,103 @@ func (s *ObjectService) DeleteMulti(ctx context.Context, opt *ObjectDeleteMultiO
 
 [//]: # (.cssg-snippet-delete-multi-object)
 ```go
-var objects []string
-objects = append(objects, []string{"a", "b", "c"}...)
-obs := []cos.Object{}
-for _, v := range objects {
-    obs = append(obs, cos.Object{Key: v})
-}
-opt := &cos.ObjectDeleteMultiOptions{
-    Objects: obs,
-    // Boolean, which indicates whether to enable the Quiet or Verbose mode.
-    // `true` indicates the Quiet mode while `false` (default) indicates the Verbose mode.
-    // Quiet: true,
-}
+package main
 
-_, _, err := client.Object.DeleteMulti(context.Background(), opt)
-if err != nil {
-    panic(err)
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    var objects []string
+    objects = append(objects, []string{"a", "b", "c"}...)
+    obs := []cos.Object{}
+    for _, v := range objects {
+        obs = append(obs, cos.Object{Key: v})
+    }
+    opt := &cos.ObjectDeleteMultiOptions{
+        Objects: obs,
+        // Boolean, which indicates whether to enable the Quiet or Verbose mode.
+        // `true` indicates the Quiet mode and `false` (default) indicates the Verbose mode.
+        // Quiet: true,
+    }
+
+    _, _, err := client.Object.DeleteMulti(context.Background(), opt)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
 #### Sample 2: deleting a folder and the objects contained
 
 COS uses slashes (/) to separate object paths to simulate the effect of a file system. Therefore, deleting a folder in COS means deleting all objects that have a specified prefix. For example, the folder 'prefix/' contains all objects prefixed with 'prefix/'. In other words, you can delete all objects prefixed with 'prefix/' to delete the 'prefix/' folder.
-Currently, COS’s Go SDK did not provide an API to perform this operation. However, you can still use a combination of basic operations to do so.
+Currently, the COS Go SDK does not provide an API to perform this operation. However, you can still use a combination of basic operations to do so.
 
 ```go
-dir := "exampledir/"
-var marker string
-opt := &cos.BucketGetOptions{
-    Prefix:  dir,
-    MaxKeys: 1000,
-}
-isTruncated := true
-for isTruncated {
-    opt.Marker = marker
-    v, _, err := c.Bucket.Get(context.Background(), opt)
-    if err != nil {
-        // Error
-        break
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+    dir := "exampledir/"
+    var marker string
+    opt := &cos.BucketGetOptions{
+        Prefix:  dir,
+        MaxKeys: 1000,
     }
-    for _, content := range v.Contents {
-        _, err = c.Object.Delete(context.Background(), content.Key)
+    isTruncated := true
+    for isTruncated {
+        opt.Marker = marker
+        v, _, err := client.Bucket.Get(context.Background(), opt)
         if err != nil {
             // Error
+            break
         }
+        for _, content := range v.Contents {
+            _, err = client.Object.Delete(context.Background(), content.Key)
+            if err != nil {
+                // Error
+            }
+        }
+        isTruncated = v.IsTruncated
+        marker = v.NextMarker
     }
-    isTruncated = v.IsTruncated
-    marker = v.NextMarker
 }
 ```
 
@@ -131,7 +231,7 @@ type Object struct {
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | --------- | ---- |
-| Quiet | Indicates whether to enable Quiet or Verbose mode for the response result. Valid values:</br><li>`true`: enables the Verbose mode that returns the deletion result for each object<br><li>`false` (default): enables the Quiet mode that only returns information on objects that fail | Boolean | No |
+| Quiet | Indicates whether to enable the Quiet mode for the response result. Valid values:<br><li>`true`: enables the Quiet mode that only returns information on objects that fail</br><li>`false` (default): enables the Verbose mode that returns the deletion result for each object</li> | Boolean | No |
 | Objects | Describes each destination object to be deleted | Container | Yes |
 | Key | Name of the destination object | String | Yes |
 
