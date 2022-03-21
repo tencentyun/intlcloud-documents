@@ -164,7 +164,7 @@ examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com
 >- ap-guangzhou: abbreviation of the bucket region
 >- myqcloud.com: indicates Tencent Cloud domain (fixed)
 
-If you store an image (picture.jpg) to a created bucket, the access URL of the image will be:
+If you store an image (picture.jpg) to the created bucket, the access URL of the image will be:
 
 ```shell
 examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/picture.jpg
