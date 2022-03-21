@@ -19,7 +19,7 @@ You may get the recording file in about 5 minutes after the live streaming is ov
 <span id="que4"></span>
 ### After live recording is completed, how do I get the recording files?
 The generated recording files are automatically stored in the VOD system. After you have activated VOD, you can get the recording files in the following ways:
-- [VOD Console](https://intl.cloud.tencent.com/document/product/267/31563#vod-console)
+- [VOD console](https://intl.cloud.tencent.com/document/product/267/31563#vod-console)
 - [Recording event notification](https://intl.cloud.tencent.com/document/product/267/31563#recording-event-notification)
 - [VOD APIs](https://intl.cloud.tencent.com/document/product/267/31563#vod-api-query)
 
