@@ -71,9 +71,11 @@ If you use a webcam that supports RTMP, you can also set the RTMP publishing add
 ### What are the differences between stream interruption and stream disabling?
 - **Stream interruption**: if a live stream is interrupted, the push will stop, and viewers will be unable to watch the stream. However, the host can start the push again to resume the live streaming.
 - **Stream disabling**: if a live stream is disabled, the push will stop, and viewers will be unable to watch the stream. The host cannot start the push again. You can disable a stream on the stream management page of the CSS console. Disabled streams can be found in the list of disabled streams. You can click **Enable** to enable a disabled stream.
+
 [](id:Que10)
 ### Can I enable text chat for live streaming?
 Yes. You can use the Instant Messaging (IM) component to realize text chat for live streaming. In addition, IM provides on-screen comments, likes, gifts, repeat notifications and other interactive features. You can also use the room management feature to realize co-anchoring, manage user identities and the permission to mute members, among others.
+
 [](id:Que11)
 ### Can I activate CSS with a new account after using the service? 
 Any account can activate CSS as long as it has completed identify verification. 
