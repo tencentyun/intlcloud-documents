@@ -19,7 +19,7 @@ The COSBrowser Window Version can run on Windows 7 32/64-bit or above, and Windo
 
 
 
-## Step 2. Login to COSBrowser
+## Step 2. Log in to COSBrowser
 
 Use your [API Key](https://console.cloud.tencent.com/cam/capi) to log in to COSBrowser.
 
@@ -61,7 +61,7 @@ Use your [API Key](https://console.cloud.tencent.com/cam/capi) to log in to COSB
 3. Click **Download now**, and COSBrowser will begin downloading the file you selected.
 
 
-## Step 6. Sharing an object
+## Step 6. Share an object
 
 Each file stored in COS can be accessed through a specific link. If a file is private-read, you can request a temporary signature to generate a temporary access link with a certain validity period. The two methods for generating object links are as follows:
 
@@ -91,7 +91,7 @@ In addition to the above capabilities, COSBrowser has many more to offer, such a
 
 ## Troubleshooting
 
-We are deeply sorry for any inconvenience you may have encountered when using the console. If you need to reach out, please contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
+If you encounter any inconvenience when using COSBrowser, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Documentation
 
