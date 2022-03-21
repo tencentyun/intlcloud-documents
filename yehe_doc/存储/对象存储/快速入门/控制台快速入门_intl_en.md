@@ -93,4 +93,4 @@ In addition to the console, the following accesses are also provided for you to 
 
 ## Troubleshooting
 
-We are deeply sorry for any inconvenience you may have encountered when using the console. If you need to reach out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+If you encounter any problems when using the console, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
