@@ -5,7 +5,7 @@ This document describes the parameters in callback message notifications sent by
 ## Notes
 - You need to understand how to configure callbacks and how you will receive messages via Tencent Cloud CSS before reading this document. For more information, see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080).
 - By default, only questionable results of porn detection will be called back.
-- We recommend you use the `[type](#type)` of an image to determine whether it is pornographic. As the detection results are not 100% accurate and there may be false positives or false negatives, you can confirm them manually if necessary.
+- We recommend you use the `type` of an image to determine whether it is pornographic. As the detection results are not 100% accurate and there may be false positives or false negatives, you can confirm them manually if necessary.
 
 ## Screencapturing Event Parameters
 ### Event type parameters
