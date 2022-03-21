@@ -20,6 +20,6 @@ To ensure security, Tencent Cloud requires configuring hotlink protection for al
 See [Best Practice > Live Push](https://intl.cloud.tencent.com/document/product/267/31558) for how to get reliable push URLs.
 
 ### 5. Check whether the push URL is occupied.
-One push URL can have only one push client at a time, and a second client that tries to push using this URL will be rejected by Tencent Cloud. In this case, you can log in to the CSS console and check whether the stream is already being pushed in **[Stream Management](https://console.cloud.tencent.com/live/streammanage)** > **Live Streams**. You can also check whether the stream is forbidden in **Forbidden Streams**.
+A push URL can be used by only one client at a time. A second client trying to push using the URL will be rejected by Tencent Cloud. You can log in to the CSS console and check whether a stream is already being pushed in **[Stream Management](https://console.cloud.tencent.com/live/streammanage)** > **Live Streams**. You can also check whether a stream is disabled in **Disabled Streams**.
 
  
