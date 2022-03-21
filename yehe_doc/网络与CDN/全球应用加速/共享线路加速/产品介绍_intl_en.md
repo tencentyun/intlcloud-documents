@@ -9,4 +9,4 @@ Based on technologies such as smart route optimization, transfer protocol accele
 
 ## Process Overview
 
-![](https://qcloudimg.tencent-cloud.cn/raw/62be6da938585167773022a2d3d8789c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dd0dda69e7a217f4cfdbc2da967f0701.png)
