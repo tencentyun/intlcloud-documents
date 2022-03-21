@@ -281,8 +281,8 @@ You can disable porn detection by deleting the screencapturing rule or modifying
 
 ### 1. Delete the screencapturing rule
 
-Call [DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833), passing in the `DomainName`, `AppName`, and `StreamName` bind to the screencapturing template ID to delete the screencapturing rule.
+Call [DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833), passing in the `DomainName`, `AppName`, and `StreamName` bound to the screencapturing template ID to delete the screencapturing rule.
 
 ### 2. Modify the screencapturing template
 
-Call [ModifyLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30828), setting `PornFlag` to `0.
+Call [ModifyLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30828), setting `PornFlag` to `0`.
