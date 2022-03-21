@@ -51,7 +51,7 @@ The files are expected to occupy 20 TB storage capacity of the ARCHIVE storage c
 
 >?The storage capacity is calculated in binary, for example, 1 TB = 1024 GB.
 
-| Item | Free Tier | Unit Price | Billable Usage | Fees (Unit Price \* Billable Usage) |
+| Item | Free Tier | Unit Price | Billable Usage | Fees (Unit Price x Billable Usage) |
 | ------------ | -------- | ------------- | ------------ | ------------------------ |
 | Storage capacity | 0 GB | 0.0045 USD/GB/month | (20 TB x 1024) GB | 92.16 USD |
 | Monthly fee           | -        | -            | -           | **92.16 USD**                 |
