@@ -43,7 +43,7 @@ To add the Tencent Cloud VOD domain name for time-shift playback, perform the fo
 
 Go to the [ticket system](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=39&source=0&data_title=%E4%BA%91%E7%9B%B4%E6%92%AD%20%20CSS&step=1) to submit a ticket. Select “CSS” and request to activate time shift feature and provide the following parameters:
 
-- **VOD domain name for **time-shift playback** added in [Step 2](#step2).
+- **VOD domain name for time-shift playback** added in [Step 2](#step2).
 - Recording template ID added in [Step 3](#step3). 
 - Define time-shift duration `timeshift_dur` in seconds
   > ? 
