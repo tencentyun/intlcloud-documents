@@ -54,9 +54,9 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
    </tr>
 </table>
 
-## COSBrowser for Desktop
+## COSBrowser Desktop Version
 
-COSBrowser for desktop focuses on resource management and uploading and downloading data in batches.
+COSBrowser Desktop Version focuses on resource management and uploading and downloading data in batches.
 
 > !COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.
 >
@@ -64,7 +64,7 @@ COSBrowser for desktop focuses on resource management and uploading and download
 > - For queries on macOS, go to "Network Preferences".
 > - For queries on Linux, go to System Settings > Network > Network Proxy.
 
-COSBrowser for desktop has the following features:
+COSBrowser Desktop Version has the following features:
 
 | Feature | Description |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
