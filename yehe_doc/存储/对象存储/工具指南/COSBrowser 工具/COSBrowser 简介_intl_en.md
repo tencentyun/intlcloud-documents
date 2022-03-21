@@ -41,9 +41,9 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
       <td>iOS</a></td>
    </tr>
    <tr>
-      <td>Web Edition</td>
+      <td>Web Version</td>
       <td>Web</td>
-      <td>Browsers such as Chrome, FireFox, Safari, and IE10+</td>
+      <td>Browsers such as Chrome, Firefox, Safari, and Internet Explorer 10+</td>
       <td><a href="https://cosbrowser.cloud.tencent.com/web">Web</a></td>
    </tr>
    <tr>
@@ -58,7 +58,7 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
 
 COSBrowser for desktop focuses on resource management and uploading and downloading data in batches.
 
-> !COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the Internet.
+> !COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.
 >
 > - For queries on Windows, go to "Internet Options".
 > - For queries on macOS, go to "Network Preferences".
@@ -72,7 +72,7 @@ COSBrowser for desktop has the following features:
 | [Viewing bucket details](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | Views the basic information of your bucket |
 | [Viewing statistics](https://intl.cloud.tencent.com/document/product/436/32565#count)           | Views the current storage capacity and number of objects in your bucket                         |
 | [Permission management](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket)                               | Modifies the permissions on your buckets and objects                                 |
-| [Setting versioning](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket)                                     | Enable/Suspends bucket versioning                                 |
+| [Setting versioning](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket)                                     | Enables/Suspends bucket versioning                                 |
 | [Adding an access path](https://intl.cloud.tencent.com/document/product/436/32565#addaccess)                                     | Adds an access path                                             |
 | [Uploading a file/folder](https://intl.cloud.tencent.com/document/product/436/32565#upload) | Uploads files/folders to a bucket separately, in batches, or incrementally |
 | [Downloading a file/folder](https://intl.cloud.tencent.com/document/product/436/32565#download) | Downloads files/folders to the local file system separately, in batches, or incrementally |
@@ -99,7 +99,7 @@ COSBrowser for desktop has the following features:
 
 ## COSBrowser Mobile Version
 
-The COSBrowser mobile version is mainly used to monitor COS resources (such as storage usage and traffic) at any time you want. For more supported features, please see [Mobile Version Features](https://intl.cloud.tencent.com/document/product/436/41616).
+The COSBrowser Mobile Version is mainly used to monitor COS resources (such as storage usage and traffic) at any time you want. For more supported features, please see [Mobile Version Features](https://intl.cloud.tencent.com/document/product/436/41616).
 
 ## Changelog
 
