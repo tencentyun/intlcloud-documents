@@ -574,4 +574,10 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
 21.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
 22.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
-23.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590)
+23.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590).
+24.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45788).
+25.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45791).
+26.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45794).
+27.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45797).
+28.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45800).
+29.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45803).
