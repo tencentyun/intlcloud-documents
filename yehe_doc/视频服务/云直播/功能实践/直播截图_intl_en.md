@@ -8,15 +8,15 @@ The live screencapture feature takes screenshots of a real-time live stream at r
 
 Overall process:
 1. Configure the live screencapture feature in the console or through TencentCloud API.
-- Start an live push. 
-- The screencapturing service generates screenshot data according to the configuration and stores it in COS.
-- Information about the generated screenshot is returned in a callback.
+2. Start live push. 
+3. The screencapture service generates screenshot data according to the configuration and stores it in COS.
+4. Information about the generated screenshot is returned in a callback.
 
 ## Live Screencapture Configuration
 
 ### Screencapture configuration method
 - [CSS API](https://intl.cloud.tencent.com/zh/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
-- **CSS Console** > **Feature Template** > **[Screencapturing and Porn Detection Configuration](https://console.cloud.tencent.com/live/config/jtjh)**
+- **CSS console** > **Feature Configuration** > **[Live Screencapture and Porn Detection](https://console.cloud.tencent.com/live/config/jtjh)**
 
 ### Screencapturing interval configuration
 
