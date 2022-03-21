@@ -35,6 +35,6 @@ CSS has a global acceleration feature, and you can choose an appropriate acceler
 
 | Playback Domain Name Acceleration Region Type | Available Region Type | Remarks |
 | :----------------------- | :--------------------------------- | :----------------------------------------------------------- |
-| Mainland China | Mainland China | If "Mainland China" is selected as the acceleration region, bandwidth capping will be supported only in Mainland China. |
+| Chinese mainland | Chinese mainland | If "Chinese mainland" is selected as the acceleration region, bandwidth capping will be supported only in the Chinese mainland. |
 | Hong Kong/Macao/Taiwan (China Region) and other regions | Hong Kong/Macao/Taiwan (China Region) and other regions | If "Hong Kong/Macao/Taiwan (China Region) and other regions" is selected as the acceleration region, bandwidth capping will be supported only in Hong Kong/Macao/Taiwan (China Region) and other regions. |
-| Global acceleration | Mainland China; Hong Kong/Macao/Taiwan (China Region) and other regions | If "global acceleration" is selected as the acceleration region, you can set different bandwidth caps for Mainland China and Hong Kong/Macao/Taiwan (China Region) and other regions separately. You can also set a bandwidth cap for global acceleration. |
+| Global acceleration | Chinese mainland; Hong Kong/Macao/Taiwan (China Region) and other regions | If "global acceleration" is selected as the acceleration region, you can set different bandwidth caps for the Chinese mainland and Hong Kong/Macao/Taiwan (China Region) and other regions separately. You can also set a bandwidth cap for global acceleration. |
