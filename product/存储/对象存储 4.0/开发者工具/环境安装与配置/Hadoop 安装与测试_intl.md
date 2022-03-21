@@ -2,7 +2,7 @@ Hadoop (2.7.2 or above) tool provides the capability to run computing tasks usin
 
 ## Preparation
 1. Prepare several servers.
-2. Install and configure the system: [CentOS-7-x86_64-DVD-1611.iso](http://isoredirect.centos.org/centos/7/isos/x86_64/)。.
+2. Install and configure the system: [CentOS-7-x86_64-DVD-1611.iso](http://isoredirect.centos.org/centos/7/isos/x86_64/).
 3. Install the Java environment. For more information, see [Installing and Configuring Java](https://intl.cloud.tencent.com/document/product/436/10865).
 4. Install the available Hadoop package: [Apache Hadoop Releases Download](http://hadoop.apache.org/releases.html#16+April%2C+2018%3A+Release+2.7.6+available)。 .
 
@@ -28,7 +28,7 @@ systemctl status firewalld.service  //Check firewall status
 systemctl stop firewalld.service  //Turn off firewall
 systemctl disable firewalld.service  //Disable firewall to start on boot
 ```
-### Time synchronization
+### Synchronize time
 ```
 yum install -y ntp  //Install ntp service
 ntpdate cn.pool.ntp.org  //Sync network time
@@ -59,7 +59,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 source/etc/profile    //Make the configuration file take effect
 java -version       //View Java version
 ```
-### Configuring Keyless Access via SSH
+### Configure keyless access via SSH
 Check the SSH service status on each host:
 ```
 systemctl status sshd.service  //Check the SSH service status.
@@ -93,7 +93,7 @@ scp authorized_keys slave2:~/.ssh
 scp authorized_keys slave3:~/.ssh
 ```
 ## Installing and Configuring Hadoop
-### Installing Hadoop
+### Install Hadoop
 Upload the Hadoop installer package (such as hadoop-2.7.4.tar.gz) to the `root` directory.
 ```
 tar -zxvf hadoop-2.7.4.tar.gz -C /usr
