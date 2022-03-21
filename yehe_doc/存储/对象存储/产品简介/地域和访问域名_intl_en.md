@@ -146,7 +146,7 @@ For example, if your business is distributed in South China, creating buckets in
 
 ### Global acceleration endpoint
 
-A global acceleration endpoint is formatted as `&lt;BucketName-APPID&gt;.cos.accelerate.myqcloud.com`. For more information about global acceleration endpoints and the use cases, please see [Overview](https://intl.cloud.tencent.com/document/product/436/33409).
+A global acceleration endpoint is formatted as &lt;BucketName-APPID&gt;.cos.accelerate.myqcloud.com. For more information about global acceleration endpoints and the use cases, please see [Overview](https://intl.cloud.tencent.com/document/product/436/33409).
 
 
 ### Example
