@@ -12,7 +12,7 @@ Tencent Cloud uses `SDKAppID` (application ID) to uniquely identify TRTC applica
 UserID (user ID) uniquely identifies a user in a TRTC application.
 
 - `UserID` is a mapping of the user accounts of your project in Tencent Cloud. Normally, you can use user names as `UserID`.
-- `UserID` should preferably be 32 bytes or shorter. It can contain digits, letters (case sensitive).
+- `UserID` should preferably be 32 bytes or shorter. It can contain digits, underscores, and letters (case sensitive).
 
 ### Room
 
