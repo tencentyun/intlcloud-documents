@@ -14,7 +14,7 @@ COSFS allows you to mount COS buckets to local and work with the COS objects as 
 - `Rename` operation on a file/folder is not atomic.
 - For metadata operations such as `list directory`, COSFS performs unsatisfactorily as it requires remote access to the COS server.
 - COSFS does not support hard links and is inapplicable to high-concurrency reads/writes.
-- Mounting and unmounting files cannot be performed on the same mounting point at the same time. You can use the `cd` command to switch to another directory and then mount and unmount the files at the mounting point.
+- Mounting and unmounting files cannot be performed on the same mount point at the same time. You can use the `cd` command to switch to another directory and then mount and unmount the files at the mount point.
 
 ## Operating Environments
 Mainstream Ubuntu, CentOS, SUSE, and macOS
@@ -112,7 +112,7 @@ sudo make install
 cosfs --version  #View the COSFS version number
 ```
 
-#### 4. Troubleshooting configure issues
+#### 4. Troubleshoot configure issues
 
 Messages displayed during the `configure` operation vary depending on the OS. If your FUSE version is earlier than 2.8.4, the following error message will be displayed:
 ```shell
@@ -135,7 +135,7 @@ ldconfig   # Update the dynamic-link library.
 pkg-config --modversion fuse  #View the fuse version number. If "2.9.4" is displayed, fuse 2.9.4 is installed successfully. 
 ```
 - Install FUSE 2.8.4 or later on the SUSE system manually, as shown below:
->! During installatioDuring installation, you need to comment out the content of line 222 in `example/fusexmp.c` by using `/*content*/`. Otherwise, an error will be reported when you use Make.
+>! During installation, you need to comment out the content of line 222 in `example/fusexmp.c` by using `/*content*/`. Otherwise, an error will be reported when you use Make.
 >
 ```shell
 zypper remove fuse libfuse2
@@ -211,7 +211,7 @@ cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud
 
 >!
 >- To improve performance, COSFS uses the system disk by default for the temporary cache of uploaded and downloaded files and releases space after files are closed. When a large number of concurrent files are opened or large files are read or written, COSFS uses hard disk space as much as possible to improve performance. By default, only 100 MB of free hard disk space is reserved for other applications. You can use the `oensure_diskfree=[size]` option to set the size of available hard disk space in MB reserved by COSFS. For example, `-oensure_diskfree=1024` indicates that COSFS will reserve 1024 MB of free space.
->- If your COSFS is v1.0.5 or earlier, use the following mount command: `cosfs &lt;APPID>:&lt;BucketName> &lt;MountPoint> -ourl=&lt;CosDomainName> -oallow_other`.
+>- If your COSFS is v1.0.5 or earlier, use the following mount command: cosfs &lt;APPID>:&lt;BucketName> &lt;MountPoint> -ourl=&lt;CosDomainName> -oallow_other.
 >
 
 
