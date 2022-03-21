@@ -91,7 +91,7 @@ In addition to the above capabilities, COSBrowser has many more to offer, such a
 
 ## Troubleshooting
 
-If you encounter any inconvenience when using COSBrowser, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+If you encounter any problems when using COSBrowser, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Documentation
 
