@@ -22,7 +22,7 @@ If the Python version is displayed, Python has been installed successfully.
 
 >? If you use Windows, you may need to restart your computer after the installation.
 
-### 4. Configure the environment variable
+### 4. Configure environment variables
 In Windows, if “not recognized as an internal or external command” is reported in Terminal after the command above is run, right-click the **Computer** icon, click **Properties** > **Advanced system settings** > **Environment Variables**, and in the **System variables** area, click **New** to add the Python installation path, as shown in the following figure:
 
 

@@ -19,7 +19,7 @@ The COSBrowser Window Version can run on Windows 7 32/64-bit or above, and Windo
 
 
 
-## Step 2. Login to COSBrowser
+## Step 2. Log in to COSBrowser
 
 Use your [API Key](https://console.cloud.tencent.com/cam/capi) to log in to COSBrowser.
 
@@ -61,7 +61,7 @@ Use your [API Key](https://console.cloud.tencent.com/cam/capi) to log in to COSB
 3. Click **Download now**, and COSBrowser will begin downloading the file you selected.
 
 
-## Step 6. Sharing an object
+## Step 6. Share an object
 
 Each file stored in COS can be accessed through a specific link. If a file is private-read, you can request a temporary signature to generate a temporary access link with a certain validity period. The two methods for generating object links are as follows:
 
@@ -78,9 +78,9 @@ Each file stored in COS can be accessed through a specific link. If a file is pr
 1. Click <img src="https://main.qcloudimg.com/raw/b3de2bc7284b5aaba9b4f9af6c408205.jpg" style="margin:0;"> in the upper-right of the COSBrowser page to switch to list view (Skip this step if you are already in list view).
 1. Under Actions on the right side, click **...**, and in the drop-down list, click **Share**.
 ![](https://main.qcloudimg.com/raw/1ab8d2c4a61ae3e0b94c06c9d65ce3f7.png)
-2. In the **Copy link with expires** pop-up window, configure your file link. If your file is **Private read-write**, select **Copy url with signature…**. Note that the link is valid for the period of time that you specify.
+2. In the **Copy URL** pop-up window, configure your file URL. If your file is **Private read-write**, select **Signed URL**. Note that the URL is valid for the period of time that you specify.
 ![](https://main.qcloudimg.com/raw/1d4b5c7f047c2ecfa8fb182a9daed1d2.png)
-3. Click **Copy** to copy the temporary file link, with which you can now access your file.
+3. Click **Copy** to copy the temporary file URL, with which you can now access your file.
 
 
 
@@ -91,7 +91,7 @@ In addition to the above capabilities, COSBrowser has many more to offer, such a
 
 ## Troubleshooting
 
-We are deeply sorry for any inconvenience you may have encountered when using the console. If you need to reach out, please contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
+If you encounter any problems when using COSBrowser, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Documentation
 

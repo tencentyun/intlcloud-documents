@@ -9,4 +9,4 @@ GAAP 共享线路加速通过智能路由优化、传输协议加速、安全链
 
 ## 操作步骤概览
 
-![](https://qcloudimg.tencent-cloud.cn/raw/62be6da938585167773022a2d3d8789c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dd0dda69e7a217f4cfdbc2da967f0701.png)

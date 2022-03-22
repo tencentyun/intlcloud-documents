@@ -126,7 +126,12 @@
 23.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45473)。
 24.[腾讯云 TI 平台](https://intl.cloud.tencent.com/document/product/1141/45465)。
 25.[物联网通信](https://intl.cloud.tencent.com/document/product/1105/45591)。
-
+26.[代码托管](https://intl.cloud.tencent.com/document/product/1132/45789)。
+27.[项目管理](https://intl.cloud.tencent.com/document/product/1133/45792)。
+28.[测试管理](https://intl.cloud.tencent.com/document/product/1134/45795)。
+29.[持续集成](https://intl.cloud.tencent.com/document/product/1135/45798)。
+30.[制品库](https://intl.cloud.tencent.com/document/product/1136/45801)。
+31.[持续部署](https://intl.cloud.tencent.com/document/product/1137/45804)。
 ## 特定司法管辖区要求
 
 **欧洲**

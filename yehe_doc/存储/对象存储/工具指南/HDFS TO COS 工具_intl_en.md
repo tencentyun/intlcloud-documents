@@ -47,7 +47,7 @@ Only the length is checked here, as the overheads would be very high if the dige
 ```
 ./hdfs_to_cos_cmd --decompress_har --hdfs_path=/tmp/hive --cos_path=/hdfs/20170224/
 ```
-If the `--decompress_har` parameter is not specified, the directory will be copied as an ordinary HDFS directory, that is, the files in the `Har` directory such as index and `masterindex` will be copied as-is.
+If the `--decompress_har` parameter is not specified, the directory will be copied as an ordinary HDFS directory, that is, the files in the `Har` directory such as `index` and `masterindex` will be copied as-is.
 
 ### Directory information
 

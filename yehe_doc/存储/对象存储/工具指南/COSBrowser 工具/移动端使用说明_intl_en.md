@@ -9,7 +9,7 @@
 
 #### Software installation
 
-COSBrowser Mobile Edition is currently available in most app platforms such as MyApp and App Store. You can download it from the above download address or in an app platform.
+COSBrowser Mobile Version is currently available in most app platforms such as MyApp and App Store. You can download it from the above download address or in an app platform.
 
 <span id="dulu"></span>
 
@@ -91,14 +91,14 @@ In the specified bucket or path, tap **+** in the top-right corner, tap **Create
 
 #### 6. View file details
 
-To view the details of a file, click its filename. File details include its basic information, such as the object size, storage class, and object address, as well as its permission information.
+To view the details of a file, tap its filename. File details include its basic information, such as the object size, storage class, and object address, as well as its permission information.
 <img src="https://main.qcloudimg.com/raw/34e5aa857508257a80119356abffce80.png" style="zoom:85%;" />
 
 <span id="filepreview"></span>
 
 #### 7. Preview a file
 
-COSBrowser supports previewing media files, currently including images, videos, and audio. You can click a file name, and enter the file details page to see the preview area above the details.
+COSBrowser supports previewing media files, currently including images, videos, and audio. You can tap a filename, and enter the file details page to see the preview area above the details.
 
 > !
 > - Preview is available for images in most formats, .mp4 and .webm videos, and .mp3. and .wav audios.
@@ -112,7 +112,7 @@ Each file stored in COS can be accessed through a specific link. File links with
 
 You can generate file links in the following ways:
 
-- Click **Operation** on the right of the file and select **Copy Link** to generate a link and copy it. If the file is **public-read**, the link will not carry a signature and will be valid permanently. If the file is **private-read**, the link will carry a signature and be valid for 1 hour.
+- Tap **Operation** on the right of the file and select **Copy Link** to generate a link and copy it. If the file is **public-read**, the link will not carry a signature and will be valid permanently. If the file is **private-read**, the link will carry a signature and be valid for 1 hour.
 - In the file details, you can easily generate a link by changing the validity period and tapping *Generate a Link*.
 
 > !If you log in with a temporary key, you cannot configure the validity period of the file link, which is 1 hour by default.
@@ -133,7 +133,7 @@ To quickly locate a bucket, enter the bucket name in the search box above the bu
 
 #### 11. View bucket details
 
-To view the details of a bucket, click **Operation** on the right of the bucket on the bucket list page and tap **Bucket Details**. Bucket details include bucket name, region, creation time, access domain name, and access permission.
+To view the details of a bucket, tap **Operation** on the right of the bucket on the bucket list page and tap **Bucket Details**. Bucket details include bucket name, region, creation time, access domain name, and access permission.
 
 - Basic Information: this includes bucket name, region, creation time, and access permission.
 - Domain Information: you can view the domain names owned by the current bucket, which contains the endpoint by default. For more information on domain names, please see [Overview](https://intl.cloud.tencent.com/document/product/436/18424).
@@ -142,7 +142,7 @@ To view the details of a bucket, click **Operation** on the right of the bucket 
 
 #### 12. Create a bucket
 
-To create a bucket, click **Create Bucket** in the upper-right corner on the bucket list page and specify the name, region, and access permission.
+To create a bucket, tap **Create Bucket** in the upper-right corner on the bucket list page and specify the name, region, and access permission.
 
 <img src="https://main.qcloudimg.com/raw/2cfabcbe6c970ef295a05029e4c03b63.png" style="zoom:35%;" />
 

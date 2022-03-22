@@ -15,12 +15,12 @@ If this is your first time using COS, you are advised to learn the following con
 
 This document describes how to get started and store your data in the cloud using the COS console.
 
-## Step 1. Sign up for a Tencent Cloud Account
+## Step 1. Sign Up for a Tencent Cloud Account
 You must register a Tencent Cloud account before using the COS service. To do so, click the button below. Skip this step if you already have an account.
 
 <div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">Account Sign Up</a></div>
 
-## Step 2. Verify your Identity
+## Step 2. Verify Your Identity
 Once registered, use your registered account to log in to the [Tencent Cloud console](https://console.cloud.tencent.com/) and verify your identity. For detailed instructions, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629). If you are already done so, please skip this step. If you haven’t performed identity verification, you cannot purchase any COS instance in the Chinese mainland.
 
 <div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:13px;"  hotrep="document.guide.3128.btn2">Identity Verification</a></div>
@@ -93,4 +93,4 @@ In addition to the console, the following accesses are also provided for you to 
 
 ## Troubleshooting
 
-We are deeply sorry for any inconvenience you may have encountered when using the console. If you need to reach out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+If you encounter any problems when using the console, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).

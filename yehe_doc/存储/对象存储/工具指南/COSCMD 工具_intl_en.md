@@ -241,7 +241,7 @@ coscmd -b examplebucket-1250000000 -r ap-beijing createbucket
 coscmd -b examplebucket-1250000000 -r ap-beijing upload D:/picture.jpg /
 ```
 
-### Command for specifying the configuration file and log file paths
+### Specifying the configuration file and log file paths
 
 If you do not specify the configuration file path, `~/.cos.conf` will be used by default. Similarly, if you do not specify the log file path, `~/.cos.log` will be used by default.
 
@@ -284,7 +284,7 @@ You can prefix `-s` or `--silence` in each command so that no message will be ou
 ```plaintext
 coscmd -s upload <localpath> <cospath>
 ```
-- Sample:
+- Sample
 ```plaintext
 coscmd -s upload D:/picture.jpg /
 ```

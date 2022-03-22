@@ -16,7 +16,7 @@ COS FTP Server allows you to directly operate on COS objects and directories ove
 
 >?The FTP Server tool does not support checkpoint restart.
 
-## Getting started
+## Getting Started
 
 #### Operating system
 
@@ -26,9 +26,9 @@ COS FTP Server allows you to directly operate on COS objects and directories ove
 >? FTP Server does not support Python 3.
 >
 - Dependent packages:
- - [cos-python-sdk-v5](https://pypi.org/project/cos-python-sdk-v5/) (≥1.6.5)
- - [pyftpdlib](https://pypi.org/project/pyftpdlib/) (≥1.5.2)
- - [psutil](https://pypi.org/project/psutil/) (>=5.6.1)
+ - [cos-python-sdk-v5](https://pypi.org/project/cos-python-sdk-v5/) (v1.6.5 or later)
+ - [pyftpdlib](https://pypi.org/project/pyftpdlib/) (v1.5.2 or later)
+ - [psutil](https://pypi.org/project/psutil/) (v5.6.1 or later)
 
 
 #### Use limits
@@ -157,7 +157,7 @@ ftp 192.xxx.xx.103 2121
 2. After configuring the access information for COS FTP Server on your FileZilla client, click **Quick Connect**.
  - **Host (H):** corresponds to **masquerade_address** in the sample configuration file `conf/vsftpd.conf.example`. In this example, the IP is set to `192.xxx.xx.103`.
 >!If the COS FTP Server is behind a gateway or NAT, you can use this section to specify the gateway's IP address or domain name as the Server’s IP address.
- - **Username (U)*:* corresponds to **ftp_login_user_name** (requires configuration) in the sample configuration file `conf/vsftpd.conf.example`.
+ - **Username (U)**: corresponds to **ftp_login_user_name** (requires configuration) in the sample configuration file `conf/vsftpd.conf.example`.
  - **Password (W):** corresponds to **ftp_login_user_password** (requires configuration) in the sample configuration file `conf/vsftpd.conf.example`.
  - **Port (P):** corresponds to **listen_port** in the sample configuration file `conf/vsftpd.conf.example`. In this example, the port is set to `2121`.
 

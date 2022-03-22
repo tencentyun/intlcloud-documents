@@ -121,8 +121,13 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 22.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
 23.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
 24.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45465).
-25.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45591)
-
+25.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45591).
+26.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45789).
+27.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45792).
+28.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45795).
+29.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45798).
+30.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45801).
+31.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
 ## 法域特定の要件
 
 **ヨーロッパ**

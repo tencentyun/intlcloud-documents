@@ -574,4 +574,10 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 20.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45415)。
 21.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45472)。
 22.[腾讯云TI平台](https://intl.cloud.tencent.com/document/product/1141/45464)。
-23.[物联网通信](https://intl.cloud.tencent.com/document/product/1105/45590)
+23.[物联网通信](https://intl.cloud.tencent.com/document/product/1105/45590)。
+24.[代码托管](https://intl.cloud.tencent.com/document/product/1132/45788)。
+25.[项目管理](https://intl.cloud.tencent.com/document/product/1133/45791)。
+26.[测试管理](https://intl.cloud.tencent.com/document/product/1134/45794)。
+27.[持续集成](https://intl.cloud.tencent.com/document/product/1135/45797)。
+28.[制品库](https://intl.cloud.tencent.com/document/product/1136/45800)。
+29.[持续部署](https://intl.cloud.tencent.com/document/product/1137/45803)。
