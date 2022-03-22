@@ -79,7 +79,7 @@ COS에 저장된 모든 파일은 관련 링크를 통해 액세스할 수 있�
 1. 파일 오른쪽 작업 열에서 [**...**]를 클릭한 뒤, 드롭다운 메뉴의 [공유]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/1ab8d2c4a61ae3e0b94c06c9d65ce3f7.png)
 2. 사용자 정의 복사 링크 팝업창에서 파일 링크를 설정합니다. 파일이 개인 읽기 및 쓰기 권한이라면 [서명을 보유한 임시 링크 복사….]를 선택합니다. 링크는 설정한 시간에 한해 유효합니다.
-![](https://main.qcloudimg.com/raw/1d4b5c7f047c2ecfa8fb182a9daed1d2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/be35af7fe2e1a4138ec75e2fa90e5343.png)
 3. [복사]를 클릭하여 임시 파일 링크를 복사하면 해당 링크를 통해 파일에 액세스할 수 있습니다.
 
 
