@@ -79,7 +79,7 @@ Each file stored in COS can be accessed through a specific link. If a file is pr
 1. Under Actions on the right side, click **...**, and in the drop-down list, click **Share**.
 ![](https://main.qcloudimg.com/raw/1ab8d2c4a61ae3e0b94c06c9d65ce3f7.png)
 2. In the **Copy URL** pop-up window, configure your file URL. If your file is **Private read-write**, select **Signed URL**. Note that the URL is valid for the period of time that you specify.
-![](https://main.qcloudimg.com/raw/1d4b5c7f047c2ecfa8fb182a9daed1d2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/be35af7fe2e1a4138ec75e2fa90e5343.png)
 3. Click **Copy** to copy the temporary file URL, with which you can now access your file.
 
 
