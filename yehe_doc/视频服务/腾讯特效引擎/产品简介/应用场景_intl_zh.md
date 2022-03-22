@@ -1,0 +1,30 @@
+## 直播类产品
+视频直播、互动直播、视频通话、视频会议等实时视频类应用场景。接入腾讯特效 SDK，创造更多乐趣，留下更美印象。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/22395e418a378f15da6dcfcba6b9ed07.png)
+
+## 互动聊天
+在移动端的消息聊天场景，接入腾讯特效 SDK，一张有趣的相片，一段生动的影像，传递感情的力量。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/f691db03fb610cced7905b7fdf38c291.png)
+
+## 短视频
+在创意短视频拍摄场景，接入腾讯特效 SDK，用奇妙的特效光影，记录人生的丰富多彩。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/f306b7287b070b15b9f886532187d444.jpg)
+
+## 游戏竞技
+竞技互动直播，拍摄游戏场景，接入腾讯特效 SDK，增强玩家带入感，享受更多游戏乐趣。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/4bef1502eb7cf2d275663e12a7361374.png)
+
+## AI 相机
+快速定位五官位置，实时磨皮美白，滤镜优化，自然美化生活的每一个有趣瞬间。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/1474f2b4d1bdc3fc26347430e474d8fe.png)
+
+## 会议
+在线上会议中，接入腾讯特效 SDK，利用人像分割技术切换会议背景，更能实时人像美颜，留下最佳状态。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/76f6056e7e4dc590414a16462daf7a46.jpg)
+
