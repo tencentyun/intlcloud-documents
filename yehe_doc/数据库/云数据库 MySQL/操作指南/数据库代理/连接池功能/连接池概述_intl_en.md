@@ -5,7 +5,7 @@ You have [enabled the database proxy](https://intl.cloud.tencent.com/document/pr
 
 ## Background
 #### Session-level connection pool
-![](https://qcloudimg.tencent-cloud.cn/raw/74a11fec85a25b1c7e1d076bf504ea8d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f708a404a68e16abb747e1088ce14ba6.png)
 The session-level connection pool is applicable to non-persistent connection scenarios.
 
 - The session-level connection pool is used to reduce the instance load caused by frequent establishments of new non-persistent connections. If a client connection is closed, the system will determine whether the current connection is idle, and if so, the system will put it into the proxy connection pool and retain it for a short period of time (which is five seconds by default and can be [customized](https://intl.cloud.tencent.com/document/product/236/45623)).
