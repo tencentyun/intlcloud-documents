@@ -1,6 +1,6 @@
 ## Risk Control Engine (RCE) Overview
 
-Tencent Cloud Risk Control Engine (RCE) is a risk management engine developed on the basis of Tencent's AI technologies and 20 years of experience in risk management. It is provided in the form of a lightweight SaaS service and designed to prevent frauds in key scenarios such as payment, registration, login, and marketing campaign and combat black and gray market activities in real time.
+Tencent Cloud Risk Control Engine (RCE) is a risk management engine developed on the basis of Tencent's AI technologies and 20 years of experience in risk management. It is provided in the form of a lightweight SaaS service and designed to quickly designed to prevent frauds in key scenarios such as payment, registration, login, and marketing campaign and combat black and gray market activities in real time.
 
 ## Strengths
 
