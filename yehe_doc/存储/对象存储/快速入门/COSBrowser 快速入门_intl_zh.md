@@ -79,7 +79,7 @@ Windows 版 COSBrowser 的系统要求：Windows 7 32/64位以上、Windows Serv
 1. 在文件右侧的操作栏下，单击【**...**】，在下拉菜单中，单击【分享】。
 ![](https://main.qcloudimg.com/raw/1ab8d2c4a61ae3e0b94c06c9d65ce3f7.png)
 2. 在弹出的自定义复制链接窗口中，配置文件链接。此处文件为私有读写权限，则需要选择【复制带签名的临时链接....】，链接在指定的时间内有效。
-![](https://main.qcloudimg.com/raw/1d4b5c7f047c2ecfa8fb182a9daed1d2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/be35af7fe2e1a4138ec75e2fa90e5343.png)
 3. 单击【复制】，复制临时文件链接。您即可通过该链接访问文件。
 
 
