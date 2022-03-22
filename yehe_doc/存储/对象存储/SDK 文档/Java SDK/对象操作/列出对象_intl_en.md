@@ -315,7 +315,7 @@ do {
 
     // Save the subdirectories listed.
     List<String> commonPrefixs = objectListing.getCommonPrefixes();
-    for (String commonPrefix : commonPrefixs) {
+    for (String commonPrefix : commonPrefixes) {
         System.out.println(commonPrefix);
     }
 
