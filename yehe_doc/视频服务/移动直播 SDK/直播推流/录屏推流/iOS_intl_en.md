@@ -6,7 +6,7 @@ Screen recording is a new feature in iOS 10. In addition to using ReplayKit to r
 
 ## Tryout
 
-To try out the screen sharing feature, [click here](https://itunes.apple.com/cn/app/%E8%A7%86%E9%A2%91%E4%BA%91%E5%B7%A5%E5%85%B7%E5%8C%85/id1152295397?mt=8) or scan the QR code below to download Video Cloud Toolkit.
+To try out the screen sharing feature, scan the QR code below to download Video Cloud Toolkit.
 ![](https://main.qcloudimg.com/raw/386c06636b522fbd0f85714acf73209b.png)
 
 >! You can publish streams from the screen only in iOS 11 or above.
