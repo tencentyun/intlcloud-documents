@@ -249,7 +249,7 @@ Click **Share** in the operation column or the context menu to share a COS folde
 
  <img src="https://main.qcloudimg.com/raw/0583a5a5c7d30b7def3c28ce0787ccb1.png" width="60%">
 
-| Parameter <div style="width: 80pt">| Description |
+| Parameter | Description |
 | --- | --- |
 | Permissions | Sets the access permission for the shared folder. |
 | \- Read only | Pulls the folder list and downloads files in the folder using the access URL. |
