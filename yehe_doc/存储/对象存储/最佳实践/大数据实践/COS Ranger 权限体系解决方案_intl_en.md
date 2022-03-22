@@ -188,7 +188,7 @@ hadoop fs -rm cosn://examplebucket-1250000000/doc/exampleobject.txt
 
 ## FAQs
 
-#### Does Kerberos must be installed?
+#### Must Kerberos be installed?
 Kerberos meets the authentication needs. If the cluster and users are trusted, and the purpose of the authentication is only to avoid misoperations caused by unauthorized users, you can skip installing Kerberos and only use Ranger for authentication. As a matter of fact, Kerberos also compromises performance. Therefore, you can balance your needs for security and performance. If authentication is needed, you can enable Kerberos, and then configure COSRangerService and COSRangerClient.
 #### What would happen if I enable Ranger, but haven’t set any policy or no policy is matched?
 If no policy is matched, the operation will be denied by default.
