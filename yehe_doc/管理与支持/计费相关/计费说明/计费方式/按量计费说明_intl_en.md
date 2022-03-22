@@ -1,13 +1,13 @@
 >! All the dates and time for settlements and transactions under your Tencent Cloud account are based on Beijing Time (UTC + 08:00).
 
-Tencent Cloud's post-paid billing account provides you with a better experience by extending a credit limit, allowing you to spend within the credit limit for any Tencent Cloud services. We will automatically charge the bill amount using your default payment method bound with your post-paid account based on your billing cycle. You can also make an early payment. Once the bill is paid successfully, your available credit will be restored.
+Tencent Cloud's postpaid billing account provides you with a better experience by extending a credit limit, allowing you to spend within the credit limit for any Tencent Cloud services. We will automatically charge the bill amount using your default payment method bound with your postpaid account based on your billing cycle. You can also make an early payment. Once the bill is paid successfully, your available credit will be restored.
 
 ## Postpaid account information
 ### Initial Credit
 Initial credit is the credit offered by Tencent Cloud according to a customer's credit rating, which will increase with successful payments.
 
 ### Available Credit
-Available credit is the current available amount of credit within the billing cycle, and you can purchase any Tencent Cloud services if you have a surplus amount of available credit in your post-paid billing account. Available credit is a variable, which can run out if there is a large bill pending.
+Available credit is the current available amount of credit within the billing cycle, and you can purchase any Tencent Cloud services if you have a surplus amount of available credit in your postpaid billing account. Available credit is a variable, which can run out if there is a large bill pending.
 
 Available Credit = Credit limit - unsettled amount - outstanding balance - deposit
 
@@ -27,10 +27,10 @@ Due amount refers to the bill amount that should be paid before the due date.
 Overdue amount refers to the bill amount that should have been paid before the due date and is in fact overdue.
 
 ### Deposit
-For certain pay-as-you-go services such as CVM, the system estimates an amount based on the billing cycle and usage in previous periods and reserves the estimated amount in the available credit. Deposit is the amount reserved in the post-paid account by the system, and it cannot be spent until the resource is released. For deposit rules of each product, please refer to the description of each product.
+For certain pay-as-you-go services such as CVM, the system estimates an amount based on the billing cycle and usage in previous periods and reserves the estimated amount in the available credit. Deposit is the amount reserved in the postpaid account by the system, and it cannot be spent until the resource is released. For deposit rules of each product, please refer to the description of each product.
 
 ### Billing Cycle
-A billing cycle is the time interval at which your spending on Tencent Cloud products is added up and billed. If you are not served by one of our sales representatives, your billing cycle is 0 by default. If you are, your billing cycle is a month by default, and fees will be deducted automatically on the 10th day of each month using the payment method bound to your post-paid account. Your sales representative can adjust your billing cycle.
+A billing cycle is the time interval at which your spending on Tencent Cloud products is added up and billed. If you are not served by one of our sales representatives, your billing cycle is 0 by default. If you are, your billing cycle is a month by default, and fees will be deducted automatically on the 10th day of each month using the payment method bound to your postpaid account. Your sales representative can adjust your billing cycle.
 
 For example, if your initial credit is 1,000 USD, and your billing cycle is a month, we will calculate your fees for April in May and charge you on June 10.
 
