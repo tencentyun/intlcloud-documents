@@ -3,7 +3,7 @@ According to users' different requirements for log search latency and log proces
 >!
 >   - As an upgraded version of the offline storage solution, IA storage will completely replace it.
 >   - Currently, the IA storage solution is in beta testing and available only in Beijing, Guangzhou, Shanghai, and Hong Kong (China). If the solution is unavailable in the region of your log topic, contact [smart customer service](https://intl.cloud.tencent.com/contact-sales) for application.
->   - For IA storage in the beta phase, the fees for log write traffic and storage of log topics are exempted. (The beta phase is scheduled to end at 23:59:59 on March 31, 2022.)
+>   - For IA storage in the beta phase, the fees for log write traffic and storage of log topics are exempted. 
 >   
 
 ## Real-Time Storage
