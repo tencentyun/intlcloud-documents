@@ -1,5 +1,5 @@
-IM livestreaming groups (AVChatRooms) have the following features:
-- **Support interactive livestreaming scenarios with unlimited group members.**
+IM audio-video groups (AVChatRooms) have the following features:
+- **Support interactive live streaming scenarios with unlimited group members.**
 - Support pushing messages (group system notifications) to all online members.
 - Allow users to receive messages as guests without logging in using the web client or WeChat Mini Program.
 - Allow users to join a group without admin approval.
@@ -8,13 +8,13 @@ IM livestreaming groups (AVChatRooms) have the following features:
 
 ## Use Cases
 
-#### On-screen comments for livestreaming
- A livestreaming group (AVChatRoom) supports various message types, including on-screen comments, gifts, and likes. It can easily build a good chatting and interactive experience for livestreaming. It also supports on-screen comment moderation to protect your livestreams from sensitive words.
+#### On-screen comments for live streaming
+ An audio-video group (AVChatRoom) supports various message types, including on-screen comments, gifts, and likes. It can easily build a good chatting and interactive experience for live streaming. It also supports on-screen comment moderation to protect your live streams from sensitive words.
 #### Influencer marketing
- A livestreaming group (AVChatRoom), when combined with business livestreaming, supports specific message types, such as likes, inquiries, and vouchers, helping you monetize your traffic.
+ An audio-video group (AVChatRoom), when combined with business live streaming, supports specific message types, such as likes, inquiries, and vouchers, helping you monetize your traffic.
 
 #### Teaching whiteboard
- A livestreaming group (AVChatRoom) provides capabilities, such as online classrooms, text messages, and pen motion sensing to support teaching scenarios, such as communication between teachers and students, pen motion saving, large classes, and small classes.
+ An audio-video group (AVChatRoom) provides capabilities, such as online classrooms, text messages, and pen motion sensing to support teaching scenarios, such as communication between teachers and students, pen motion saving, large classes, and small classes.
 
 ## Use limits
 - [Recalling messages](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#revokeMessage) is not supported.
@@ -46,7 +46,7 @@ IM livestreaming groups (AVChatRooms) have the following features:
 4. Take note of the SDKAppID.
 
 <span id="Step2"></span>
-### Step 2: create a livestreaming group (AVChatRoom)
+### Step 2: create an audio-video group (AVChatRoom)
 You can create a group in the console or by calling [Creating a Group](https://intl.cloud.tencent.com/document/product/1047/34895). This document creates a group in the console.
 
 
@@ -102,7 +102,7 @@ tim.<span class="hljs-keyword">on</span>(TIM.EVENT.MESSAGE_RECEIVED, function(<s
   <span class="hljs-title">for</span> (<span class="hljs-params"><span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++</span>)</span> {
     <span class="hljs-comment">// For more information on the data structure of Message instances, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html">Message</a>.</span>
     <span class="hljs-comment">// Pay particular attention to the type and payload properties.</span>
-    <span class="hljs-comment">// Starting from SDK v2.6.0, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as users joining and quitting livestreaming groups. This allows the access side to provide a better display experience.</span>
+    <span class="hljs-comment">// Starting from SDK v2.6.0, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as users joining and quitting audio-video groups. This allows the access side to provide a better display experience.</span>
     <span class="hljs-comment">// To do this, you must first set your own nick (nickname) and avatar (profile photo URL) by calling updateMyProfile. For more information, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile">updateMyProfile Description</a>.</span>
     message = <span class="hljs-keyword">event</span>.data[i]
     <span class="hljs-keyword">switch</span> (message.type) {
@@ -182,10 +182,10 @@ promise.then(function(imResponse) {
 
 <span id="Step6"></span>
 ### Step 6: set your nickname and profile photo
-Starting from SDK v2.6.2, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as joining and quitting groups in livestreaming groups. You can call [updateMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile) to set your nickname and profile photo.
+Starting from SDK v2.6.2, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as joining and quitting groups in audio-video groups. You can call [updateMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile) to set your nickname and profile photo.
 
 ```javascript
-// Starting from SDK v2.6.0, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as joining and quitting groups in livestreaming groups. This allows the access side to provide a better display experience. To do this, you must first set your own profile by calling updateMyProfile.
+// Starting from SDK v2.6.0, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as joining and quitting groups in audio-video groups. This allows the access side to provide a better display experience. To do this, you must first set your own profile by calling updateMyProfile.
 // Modify your personal standard profile.
 let promise = tim.updateMyProfile({
   nick: 'My nickname',
@@ -252,19 +252,19 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 
 You can call [getMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getMyProfile) to obtain your nickname and profile photo.
 
-### 2. How can I mute a group member in a livestreaming group?
+### 2. How can I mute a group member in an audio-video group?
 
 You can use a custom message to mute a specific group member. The custom message must contain the Members_Account of the group member to be muted and the muting time. Send the custom message to the business backend by calling the [Callback Before Delivering Group Messages](https://intl.cloud.tencent.com/document/product/1047/34374). The business backend will call [Muting and Unmuting Group Members](https://intl.cloud.tencent.com/document/product/1047/34951) to mute the group member.
 
-### 3. How can I remove a group member from a livestreaming group?
+### 3. How can I remove a group member from an audio-video group?
 
 You can use a custom message to remove a specific group member. The custom message must contain the Members_Account of the group member to be removed. Set the priority of the custom message to High to prevent the message from being discarded by the backend due to the message sending frequency limit of 40 messages per second. After the SDK receives the message, it calls the [kickGroupMember API](https://intl.cloud.tencent.com/document/product/1047/36169) to remove the group member from the group.
 
 <span id ="p4"></span>
 
-### 4. A group member quits a livestreaming group on the Android, iOS, or PC client when the API for quitting a group is called on the WeChat Mini Program or web client. However, when the API for quitting a group is called on the Android, iOS, or PC client, the group member does not quit the livestreaming group on the WeChat Mini Program or web client. Why is this the case?
+### 4. A group member quits an audio-video group on the Android, iOS, or PC client when the API for quitting a group is called on the WeChat Mini Program or web client. However, when the API for quitting a group is called on the Android, iOS, or PC client, the group member does not quit the audio-video group on the WeChat Mini Program or web client. Why is this the case?
 
-The WeChat Mini Program and web client allow users to join livestreaming groups as guests. When the API for quitting a group is called on the Android, iOS, or PC client, the WeChat Mini Program or web client will not proactively trigger the quit group operation.
+The WeChat Mini Program and web client allow users to join audio-video groups as guests. When the API for quitting a group is called on the Android, iOS, or PC client, the WeChat Mini Program or web client will not proactively trigger the quit group operation.
 
 - To ensure synchronized group quitting on all clients, configure the [Callback After a Group Member Drops Out](https://intl.cloud.tencent.com/document/product/1047/34373) and determine the quit platform based on the OptPlatform field. When the quit platform is Android, iOS, or PC, call [Send a One-to-One Message](https://intl.cloud.tencent.com/document/product/1047/34919) to send a custom message to the group member who quits the group. The frontend screens the conversation and does not display it on the UI. After the WeChat Mini Program or web client receives the message, it calls the [quitGroup API](https://intl.cloud.tencent.com/document/product/1047/33999).
 - To ensure independent group quitting on different clients, configure [Callback After a Group Member Drops Out](https://intl.cloud.tencent.com/document/product/1047/34373) and determine the quit platform based on the OptPlatform field. Call [Send a One-to-One Message](https://intl.cloud.tencent.com/document/product/1047/34919) to send a custom message to the group member who quits the group. The frontend screens the conversation and does not display it on the UI. After a non-quit platform receives the message, it calls the [joinGroup API](https://intl.cloud.tencent.com/document/product/1047/36169) to join the group. To prevent multiple system notifications for joining and quitting a group, you can submit a ticket to disable system notifications for joining and quitting a group.
@@ -273,8 +273,8 @@ The WeChat Mini Program and web client allow users to join livestreaming groups 
 
 Messages can be lost due to the following conditions:
 
-- Livestreaming groups have a message sending frequency limit of 40 messages per second. You can determine whether a message is discarded due to the frequency limit based on the callbacks before and after delivering group messages. If a message receives the callback before delivering group messages but does not receive the callback after delivering group messages, the message is discarded due to the frequency limit.
-- When a group member quits a livestreaming group from the WeChat Mini Program or web client, the member may also quit on the Android, iOS, or PC client. For more information, see [FAQ 4](#p4).
+- Audio-video groups have a message sending frequency limit of 40 messages per second. You can determine whether a message is discarded due to the frequency limit based on the callbacks before and after delivering group messages. If a message receives the callback before delivering group messages but does not receive the callback after delivering group messages, the message is discarded due to the frequency limit.
+- When a group member quits an audio-video group from the WeChat Mini Program or web client, the member may also quit on the Android, iOS, or PC client. For more information, see [FAQ 4](#p4).
 - If the WeChat Mini Program or web client encounters an exception, check whether your SDK version is earlier than v2.7.6. If yes, upgrade your SDK to the latest version.
 
 If the fault persists, submit a ticket to contact us.
@@ -285,13 +285,13 @@ Customize the like or follow message type. When a user clicks the like or follow
 
 ### 7. How can I properly set message priorities?
 
-To prevent important messages from being discarded, a livestreaming group provides three message priorities for all messages. The SDK preferentially obtains high priority messages. We recommend that you set the priorities of custom messages as follows:
+To prevent important messages from being discarded, an audio-video group provides three message priorities for all messages. The SDK preferentially obtains high priority messages. We recommend that you set the priorities of custom messages as follows:
 
 - High: red packets, gifts, and messages for removing group members
 - Normal: common text messages
 - Low: likes and follows
 
-### 8. Are there any open-source livestreaming components that can be directly used to watch videos and chat?
+### 8. Are there any open-source audio-video components that can be directly used to watch videos and chat?
 
 Yes. The code is also open-source. For more information, see [Tencent Cloud TWebLive](https://github.com/tencentyun/TWebLive).
 
