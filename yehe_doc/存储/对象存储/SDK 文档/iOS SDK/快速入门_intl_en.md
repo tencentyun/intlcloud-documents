@@ -18,7 +18,7 @@
 
 ## Step 1. Install the SDK
 
-### Method 1. Integration using CocoaPods (recommended)
+### Method 1: Integration using CocoaPods (recommended)
 
 #### Standard SDK
 
@@ -106,7 +106,7 @@ import QCloudCOSXMLTransfer
 
 ### 2. Initialize the COS service and implement the signature protocol
 
-#### Method 1. Obtaining a temporary key pair to authenticate requests (recommended)
+#### Method 1: Obtaining a temporary key pair to authenticate requests (recommended)
 
 The SDK needs to get a temporary key to calculate the signature before sending a request. Therefore, you need to implement the 'QCloudSignatureProvider' protocol to obtain the key and call back the key to the SDK through the 'continueBlock' parameter.
 
@@ -448,7 +448,7 @@ If your `QCloudServiceConfiguration` has changed, you can register a new instanc
 + (QCloudCOSTransferMangerService*) registerCOSTransferMangerWithConfiguration:(QCloudServiceConfig
 
 ```
-#### Method 2. Using a permanent key for local debugging
+#### Method 2: Using a permanent key for local debugging
 
 You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to replace it with a temporary key before launching your application.**
 
@@ -502,7 +502,7 @@ func signature(with fileds: QCloudSignatureFields!,
 }
 ```
 
-#### Method 3. Using a backend-calculated signature to authenticate requests
+#### Method 3: Using a backend-calculated signature to authenticate requests
 
 When the signature is generated on the backend, you can choose not to implement the `QCloudCredentailFenceQueueDelegate` protocol
 
@@ -540,7 +540,7 @@ func signature(with fileds: QCloudSignatureFields!,
 
 ## Step 3. Access COS
 
-### Uploading an object
+### Upload an object
 
 The SDK allows you to upload local files and binary data in NSData format. The following uses local file upload as an example:
 
