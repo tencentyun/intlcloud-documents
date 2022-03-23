@@ -13,21 +13,24 @@ Four types of monitoring are available for TencentDB for MySQL: resource monitor
 - **Engine monitoring (general)** provides monitoring data of the number of connections, locks, hotspot tables, and slow queries, helping you troubleshoot issues and optimize the performance.
 - **Engine monitoring (extended)** provides a wider variety of engine-related monitoring metrics so as to assist you in identifying existing or potential database problems as much as possible.
 - **Deployment monitoring** provides monitoring metrics with regard to source-replica delay. It divides into source monitoring and replica monitoring:
- - Deploy monitoring on the source: when the monitored instance is a source instance which is not a replica of any instance, replication-related monitoring data is invalid for the source, and the IO and SQL threads are disabled. Replication-related monitoring data is valid and the IO and SQL threads can be enabled only when the monitored instance is a disaster recovery or a read-only instance.
-
- - Deploy monitoring on the replica: the two-node or three-node source instance and disaster recovery instance come in a source/replica architecture by default. As a result, replication-related monitoring data is valid for the replica only when the monitored instance is a source or disaster recovery instance. Such monitoring data can reflect the replication delay distance and time between the source or disaster recovery instance and its hidden replica nodes. We recommend you keep an eye out for such monitoring data of the replica. If the source or disaster recovery instance fails, its monitored hidden replica nodes can be promoted to the source instance quickly.
-
-![](https://main.qcloudimg.com/raw/183cebeb93cdeaca2dedeb228ab8f0be.png)
+ - If the instance is a source instance, the object of instance deployment monitoring is the linkage between the source instance and its hidden replica. Deployment monitoring displays the IO and SQL thread status of the hidden replica. The source-replica delay (in MB) and source-replica delay (in seconds) are about the delay between the source instance and its hidden replica.
+![](https://qcloudimg.tencent-cloud.cn/raw/cd49ced7a330000fac4a22a6404adcb1.png)
+ - If the instance is a read-only instance, the object of instance deployment monitoring is the linkage between the source instance and the read-only instance. Deployment monitoring displays the IO and SQL thread status of the read-only instance. The source-replica delay (in MB) and source-replica delay (in seconds) are about the delay between the read-only instance and the source instance.
+![](https://qcloudimg.tencent-cloud.cn/raw/05b3c9324bc603b537302ce3f52b096f.png)
+ - If the instance is a disaster recovery instance:
+ a. The object of instance deployment monitoring (source) is the linkage between the disaster recovery instance and the source instance. Deployment monitoring displays the IO and SQL thread status of the disaster recovery instance. The source-replica delay (in MB) and source-replica delay (in seconds) are about the delay between the disaster recovery instance and the source instance.
+ b. The object of instance deployment monitoring (replica) is the linkage between the disaster recovery instance and its hidden replica. Deployment monitoring displays the IO and SQL thread status of the hidden replica. The source-replica delay (in MB) and source-replica delay (in seconds) are about the delay between the disaster recovery instance and its hidden replica.
+![](https://qcloudimg.tencent-cloud.cn/raw/6a2f2a0ea1765882b782989a355a3c2b.png)
 
 ## Monitoring Granularity
 TencentDB for MySQL has adopted an adaptive policy for monitoring granularity since August 11, 2018, which means that you cannot select a monitoring granularity as desired for the time being. The adaptive policy is as follows:
 
 | Time Span | Monitoring Granularity | Adaptation Description | Retention Period |
 |:-------|:--------|:----|:-----|
-| (0h, 4h] | 5 seconds | The time span is below 4 hours, and the monitoring granularity is 5 seconds | 1 day |
-| (4h, 2d] | 1 minute | The time span is above 4 hours but below 2 days, and the monitoring granularity is 1 minute | 15 days |
-| (2d, 10d] | 5 minutes | The time span is above 2 days but below 10 days, and the monitoring granularity is 5 minutes | 31 days |
-| (10d, 30d] | 1 hour | The time span is above 10 days but below 30 days, and the monitoring granularity is 1 hour | 62 days |
+| (0h, 4h] | Five seconds | The time span is below four hours, and the monitoring granularity is five seconds | One day |
+| (4h, 2d] | One minute | The time span is above four hours but below two days, and the monitoring granularity is one minute | 15 days |
+| (2d, 10d] | Five minutes | The time span is above two days but below ten days, and the monitoring granularity is five minutes | 31 days |
+| (10d, 30d] | One hour | The time span is above ten days but below 30 days, and the monitoring granularity is one hour | 62 days |
 
 >?Currently, you can view monitoring data of TencentDB for MySQL in the past 30 days.
 
@@ -59,17 +62,17 @@ Cloud Monitor provides the following monitoring metrics for TencentDB for MySQL 
 | Disk Utilization |volume_rate | % | Total disk usage/purchased instance space |
 | Private Outbound Traffic | bytes_sent       | Byte/sec | The number of bytes sent per second |
 | Private Inbound Traffic | bytes_received | Byte/sec | The number of bytes received per second |
-| Query Cache Hit Rate | qcache_hit_rate | % | The query cache hit rate |
+| Query Cache Hit Ratio | qcache_hit_rate | % | The query cache hit ratio |
 | Query Cache Utilization | qcache_use_rate | % | The query cache utilization |
 | Table Locks Awaited |table_locks_waited| Counts/second | The number of times that a request for a table lock could not be granted immediately and a wait was needed |
 | Temp Tables | created_tmp_tables | Counts/second | The number of internal temporary tables created by the server while executing statements |
-| InnoDB Cache Hit Rate | innodb_cache_hit_rate | % | The InnoDB engine cache hit rate |
+| InnoDB Cache Hit Ratio | innodb_cache_hit_rate | % | The InnoDB engine cache hit ratio |
 | InnoDB Cache Utilization | innodb_cache_use_rate | % | The InnoDB engine cache utilization |
 | InnoDB Disk Reads |innodb_os_file_reads| Counts/sec | The total number of file reads performed by read threads within InnoDB |
 | InnoDB Disk Writes | innodb_os_file_writes | Counts/second | The total number of file writes performed by write threads within InnoDB |
 | InnoDB fsync() Calls | innodb_os_fsyncs | Counts/second | The number of calls of the fsync function by InnoDB per second |
 | Tables Opened by InnoDB | innodb_num_open_files | - | The number of files InnoDB currently holds open |
-| MyISAM Cache Hit Rate | key_cache_hit_rate | % | The MyISAM engine cache hit rate |
+| MyISAM Cache Hit Ratio | key_cache_hit_rate | % | The MyISAM engine cache hit ratio |
 | MyISAM Cache Utilization | key_cache_use_rate | % | The MyISAM engine cache utilization |
 | CPU Utilization | cpu_use_rate | % | If overuse of idle resources is permitted, the CPU utilization may exceed 100% |
 | Memory Utilization               | memory use rate     | %   | If overuse of idle resources is permitted, the memory utilization may exceed 100% |
@@ -109,4 +112,3 @@ Cloud Monitor provides the following monitoring metrics for TencentDB for MySQL 
 | Source-Replica Delay (in Seconds)     | seconds_behind_master        |	Sec   | The source-replica delay (in seconds)  |
 | IO Thread Status       |	slave_io_running   |	Status values: 0: Yes; 1: No; 2: Connecting | The IO thread running status     |
 | SQL Thread Status    |	slave_sql_running  |	Status value: 0: Yes; 1: No                      | The SQL thread running status  |
-

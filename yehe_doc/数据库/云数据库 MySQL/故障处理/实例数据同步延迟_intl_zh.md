@@ -1,10 +1,11 @@
 
 ## 现象描述
-云数据库 MySQL 对应的默认备库、只读实例均采用 MySQL 原生 binlog 复制技术，当数据复制方式为异步复制或半同步复制时，都有可能发生延迟。
+云数据库 MySQL 对应的默认备库、灾备实例、只读实例均采用 MySQL 原生 binlog 复制技术，当数据复制方式为异步复制或半同步复制时，都有可能发生延迟。
 
 ## 故障影响
 - 若 [备库](https://intl.cloud.tencent.com/document/product/236/38328) 存在延迟，会导致主备实例无法在短时间内完成切换，进而影响业务无法在短时间内恢复正常。
-- 若读业务对数据一致性有较高要求，[只读组](https://intl.cloud.tencent.com/document/product/236/11361) 可以设置延迟剔除策略，当只读实例与主实例延迟时间超过阈值，对应的只读实例会被自动剔除，从而导致读业务无法正常访问只读实例。
+- 若 [灾备实例](https://intl.cloud.tencent.com/document/product/236/7272) 存在延迟，在堆积的 binlog 未应用完之前，灾备实例将无法顺利升级为主实例，在此期间业务的连续性会因此受到影响。
+- 若读业务对数据一致性有较高要求，[只读组](https://intl.cloud.tencent.com/document/product/236/11361#.E9.85.8D.E7.BD.AE.E5.8F.AA.E8.AF.BB.E5.AE.9E.E4.BE.8B-ro-.E7.BB.84) 可以设置延迟剔除策略，当只读实例与主实例延迟时间超过阈值，对应的只读实例会被自动剔除，从而导致读业务无法正常访问只读实例。
 
 ## 可能原因
 - **无主键或二级索引**
@@ -12,7 +13,7 @@
 处理步骤请参见 [无主键或二级索引](#wzjhejsy)。
 
 - **大事务** 
-大事务：特指对数据进行增删改的 insert，update，delete，replcae这一类语句。在一个事务中包含对数百万行数据的操作；或者是一个 SQL 语句修改百万行数据，导致执行时间超过30s。
+大事务：特指对数据进行增删改的 insert，update，delete，replace 这一类语句。在一个事务中包含对数百万行数据的操作；或者是一个 SQL 语句修改百万行数据，导致执行时间超过30s。
 当主实例执行大数据量的 DML 操作，大量的 binlog 日志传送到从库时，从库需要花费与主实例相同的时间来完成相应事务，进而导致从库出现数据延迟。处理步骤请参见 [大事务](#dsw)。
 
 
@@ -20,7 +21,7 @@
 由于只读节点上会有用户的查询在上面运行，如果只读节点上有一个执行时间非常长的查询正在执行，那么这个查询会堵塞来自主库的 DDL，直到查询结束为止，进而导致只读节点的数据延迟。处理步骤请参见 [DDL 操作](#dcz)。
 
 - **实例规格过小**
-只读实例的规格小于主实例且负载较高，会导致只读实例的数据延迟。
+只读实例、灾备实例的规格小于主实例且负载较高，会导致只读实例、灾备实例的数据延迟。
 处理步骤请参见 [实例规格过小](#slgggx)。
 
 - **Waiting for table metadata lock 报错**
@@ -36,15 +37,15 @@
 3. 为步骤2中的无主键表创建主键，若表无法创建主键，建议选择基数高的列创建二级索引。
 
 ### [大事务](id:dsw)
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在“诊断项”勾选**事务导致复制延迟**，可过滤查看实例的大事务。
+1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在**诊断项**勾选**事务导致复制延迟**，可过滤查看实例的大事务。
 ![](https://main.qcloudimg.com/raw/508e3bfd033a2f5a5422aae9902cc598.png)
 2. 将大事务拆分为小事务，通过 where 条件限制每次要处理的数据量。
 >?通过 DBbrain 定位耗时的大事务，将大事务拆分成为小事务进行，这样只读节点就可以迅速完成事务的执行，不会造成数据延迟。
 
 ### [DDL 操作](id:dcz)
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在“诊断项”勾选**DDL导致复制延迟**，可过滤查看实例对应的 DDL 操作。
+1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在**诊断项**勾选**DDL导致复制延迟**，可过滤查看实例对应的 DDL 操作。
 ![](https://main.qcloudimg.com/raw/7d7c9ec01da894fa1554f6d9bf135366.png)
-2. 在告警列表单击“操作”列的**详情**，可跳转至事件详情页进行相应处理。
+2. 在告警列表单击**操作**列的**详情**，可跳转至事件详情页进行相应处理。
  - 事件详情：包括诊断项、起止时间、风险等级、持续时长、概要等信息。
  - 现场描述：异常事件（或健康巡检事件）的外在表现现象的快照和性能趋势。
  - 智能分析：分析导致性能异常的根本原因，定位具体操作。
@@ -52,14 +53,14 @@
 
 
 ### [实例规格过小](id:slgggx)
-1. 建议只读实例规格大于等于主实例，实例规格可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 的实例列表查看。
-2. 若只读实例承载了大量的分析类业务导致实例负载过高，需将其实例规格升级至合适的配置或者对其性能低效的 SQL 进行优化。
+1. 建议只读实例、灾备实例规格大于等于主实例，实例规格可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 的实例列表查看。
+2. 若只读实例、灾备实例承载了大量的分析类业务导致实例负载过高，需将其实例规格升级至合适的配置或者对其性能低效的 SQL 进行优化。
  - 优化低效 SQL 请参见 [SQL 优化](https://intl.cloud.tencent.com/document/product/1035/36040)。
  - 升级实例规格请参见 [调整数据库实例规格](https://intl.cloud.tencent.com/document/product/236/19707)。
 
 ### [Waiting for table metadata lock 报错](id:wftmlbc)
 建议使用 [数据库智能管家 DBbrain](https://intl.cloud.tencent.com/document/product/1035/36036) 对实际业务和实例进行诊断，排查慢查询等指标，来定位耗时的大事务。
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在“诊断项”勾选如下诊断项，来定位耗时的大事务。
+1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在**诊断项**勾选如下诊断项，来定位耗时的大事务。
 ![](https://main.qcloudimg.com/raw/11e0dc3ba8fa61eaf07ec3ecf7e38474.png)
 2. 对应如下不同故障场景，采取对应处理措施：
  - 大事务运行，阻塞 DDL，继而阻塞所有同表的后续操作，根据 DBbrain 的异常诊断提示找到大事务的 ID，然后 kill 掉。
