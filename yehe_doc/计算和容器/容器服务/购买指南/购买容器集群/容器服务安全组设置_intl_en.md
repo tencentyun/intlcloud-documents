@@ -1,7 +1,7 @@
-Security is always of utmost importance. Tencent Cloud prioritizes security in product design and strictly requires that all products are fully isolated. The Tencent Cloud classic network provides multiple layers of security protection. Tencent Kubernetes Engine (TKE) also pays special attention to security. TKE selects [VPC](https://intl.cloud.tencent.com/document/product/215/535) with richer network features as the underlying network. This document describes the best practice of using security groups in TKE, helping you select the most appropriate security group policy.
+Security is a matter of utmost importance. Tencent Cloud considers security as a top priority in product design and requires all its products to be fully isolated and provides multiple layers of security protection with its basic network. TKE is a typical example. It adopts [VPC](/doc/product/215/535) as the underlying network of container services. This document describes the best practice of security group usage in TKE to help you select the most appropriate security group policy.
 
-## Security Group
-A security group is a virtual firewall for stateful data packet filtering. As an important network isolation approach provided by Tencent Cloud, a security group is used to set network access control of one or more Cloud Virtual Machine (CVMs). For more information on security groups, please see [Security Groups](https://intl.cloud.tencent.com/document/product/213/12452).
+## Security Groups
+A security group is a virtual firewall capable of filtering stateful packets. As an important network security isolation means provided by Tencent Cloud, it can be used to configure network access control for one or more CVM instances. For more information, see [Security Group](/doc/product/213/5221).
 
 ## How to Select a Security Group for TKE
 - In a container cluster, service pods are distributed on different nodes. We recommend that you bind all CVM instances in one cluster to the same security group and do not add non-clustered CVMs to a security group for a cluster.
@@ -13,13 +13,13 @@ A security group is a virtual firewall for stateful data packet filtering. As an
  - Open port 22 to the Internet if SSH login is required.
  - Open ports 30000 to 32768 on nodes to the Internet.
  In the access path, you must use a load balancer to forward data packets to NodeIP:NodePort of the container cluster. NodeIP is the CVM instance IP of any node in the cluster. NodePort is assigned by the container cluster by default when the service is created. NodePort ranges from 30000 to 32768.
- The following figure uses service access from the public network as an example.
-![Public network access through CLB](https://main.qcloudimg.com/raw/0a237626a95174fd851052f49a0ff5b3.png)
+    The following figure uses service access from the public network as an example.
+  ![Public network access through CLB](https://main.qcloudimg.com/raw/0a237626a95174fd851052f49a0ff5b3.png)
 
 ## Default Security Group Rules for TKE
 ### Default security group rules for node
 Some ports must be opened to the Internet to ensure normal communication between cluster nodes. To avoid cluster creation failures due to binding to invalid security groups, TKE provides default security group rules, as described in the following table.
-> ! If the current default security group cannot meet your service requirements and you have created a cluster bound to this security group, you can view and modify the security group rules for the cluster. For more information, please see [Managing Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34275).
+> ! If the current default security group cannot meet your service requirements and you have created a cluster bound to this security group, you can view and modify the security group rules for the cluster. For more information, please see [Managing Security Group Rules](https://intl.cloud.tencent.com/zh/document/product/213/34826).
 
 #### Inbound rules
 | Protocol | Port Number | Source IP Address | Rule | Description |
@@ -27,8 +27,8 @@ Some ports must be opened to the Internet to ensure normal communication between
 | All | All | CIDR of the container network | Allow | Enable the communication between pods in the container network. |
 | All | All | CIDR of the cluster network | Allow | Enable the communication between nodes in the cluster network. |
 | TCP | 22 | 0.0.0.0/0 | Allow | Open the SSH login port to the Internet. |
-| TCP | 30000 to 32768 | 0.0.0.0/0 | Allow | Enable the communication between master and worker nodes. |
-| UDP | 30000 to 32768 | 0.0.0.0/0 | Allow | Enable the communication between master and worker nodes. |
+| tcp | 30000 - 32768 | 0.0.0.0/0 | Allow | Open NodePort to the Internet (Services in LoadBalancer type need to be forwarded through NodePort). |
+| udp | 30000 - 32768 | 0.0.0.0/0 | Allow | Open NodePort to the Internet (Services in LoadBalancer type need to be forwarded through NodePort). |
 | ICMP | - | 0.0.0.0/0 | Allow | Enable the support for Internet Control Message Protocol (ICMP) and ping operations. |
 
 #### Outbound rules
@@ -42,10 +42,10 @@ Some ports must be opened to the Internet to ensure normal communication between
 > - If you configure this rule for container nodes, the services in the cluster can be accessed using different access methods.
 > - For more information on how to access a service in a cluster, please see "Service Access" in [Overview](https://intl.cloud.tencent.com/document/product/457/36832).
 
-### Default security group rules for self-deployed cluster Master
-When a self-deployed cluster is created, the TKE default security group will be bound to the Master model by default to reduce the risk that the Master and Node cannot communicate normally and the Service cannot be accessed normally after the cluster is created. The default security group configuration rules are as follows:
->?The permission to create a security group is same as the permission configured in TKE **Service Authorization**. For more information, see [Description of Role Permissions Related to Service Authorization](https://intl.cloud.tencent.com/document/product/457/37808)
-
+### Default security group rules for master node in self-deployed cluster
+When you create a self-deployed cluster, the default TKE security group will be bound to the master node by default to reduce the risks where the master node cannot communicate with other nodes normally or Services cannot be accessed normally. The configuration rules of default security group are as detailed below:
+>?The security group creation permission is inherited from the TKE service role. For more information, see [Description of Role Permissions Related to Service Authorization](https://intl.cloud.tencent.com/document/product/457/37808).
+>
 #### Inbound rules
 <table>
 <thead>
@@ -53,72 +53,72 @@ When a self-deployed cluster is created, the TKE default security group will be 
 <th>Protocol</th>
 <th>Port</th>
 <th style="width:13%">IP Range</th>
-<th>Rule</th>
-<th style="width:25%">Description</th>
+<th>Policy</th>
+<th style="width:25%">Remarks</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>ICMP</td>
-<td>ALL</td>
+<td>All</td>
 <td>0.0.0.0/0</td>
-<td>Allow</td>
-<td>Ping is supported.</td>
+<td>Supported</td>
+<td>Ping operations are supported.</td>
 </tr>
 <tr>
 <td>TCP</td>
-<td>30000 - 32768</td>
+<td>30000–32768</td>
 <td>Cluster network CIDR</td>
-<td>Allow</td>
-<td>Enable the communication between Master and Worker nodes.</td>
+<td>Supported</td>
+<td>It is used to open NodePort to the Internet (Services in LoadBalancer type need to be forwarded through NodePort).</td>
 </tr>
 <tr>
 <td>UDP</td>
-<td>30000 - 32768</td>
+<td>30000–32768</td>
 <td>Cluster network CIDR</td>
-<td>Allow</td>
-<td>Enable the communication between Master and Worker nodes.</td>
+<td>Supported</td>
+<td>It is used to open NodePort to the Internet (Services in LoadBalancer type need to be forwarded through NodePort).</td>
 </tr>
 <tr>
 <td>TCP</td>
-<td>60001,60002,10250,2380,2379,53,17443,<br>50055,443,61678</td>
+<td>60001, 60002, 10250, 2380, 2379, 53, 17443,<br>50055, 443, 61678</td>
 <td>Cluster network CIDR</td>
-<td>Allow</td>
-<td>Enable the communication of API Server.</td>
+<td>Supported</td>
+<td>It is used to open API Server communication to the Internet.</td>
 </tr>
 <tr>
 <td>TCP</td>
-<td>60001,60002,10250,2380,2379,53,17443</td>
+<td>60001, 60002, 10250, 2380, 2379, 53, 17443</td>
 <td>Container network CIDR</td>
-<td>Allow</td>
-<td>Enable the communication of API Server.</td>
+<td>Supported</td>
+<td>It is used to open API Server communication to the internet.</td>
 </tr>
 <tr>
 <td>TCP</td>
-<td>30000 - 32768</td>
+<td>30000–32768</td>
 <td>Container network CIDR</td>
-<td>Allow</td>
-<td>Enable the communication of Service.</td>
+<td>Supported</td>
+<td>It is used to open NodePort to the Internet (Services in LoadBalancer type need to be forwarded through NodePort).</td>
 </tr>
 <tr>
 <td>UDP</td>
-<td>30000 - 32768</td>
+<td>30000–32768</td>
 <td>Container network CIDR</td>
-<td>Allow</td>
-<td>Enable the communication of Service.</td>
-</tr>
-<tr>
-<td>UDP</td>
-<td>53</td>
-<td>Container network CIDR</td>
-<td>Allow</td>
-<td>Enable the communication of CoreDNS.</td>
+<td>Supported</td>
+<td>It is used to open NodePort to the Internet (Services in LoadBalancer type need to be forwarded through NodePort).</td>
 </tr>
 <tr>
 <td>UDP</td>
 <td>53</td>
+<td>Container network CIDR</td>
+<td>Supported</td>
+<td>It is used to open CoreDNS communication to the internet.</td>
+</tr>
+<tr>
+<td>UDP</td>
+<td>53</td>
 <td>Cluster network CIDR</td>
-<td>Allow</td>
-<td>Enable the communication of CoreDNS.</td>
+<td>Supported</td>
+<td>It is used to open CoreDNS communication to the internet.</td>
 </tr>
 </tbody></table>
 
@@ -127,5 +127,8 @@ When a self-deployed cluster is created, the TKE default security group will be 
 | Protocol | Port Number | Source IP Address | Rule |
 |:--------:|:---------:|:-------:|:-------:|
 | All | All | 0.0.0.0/0 | Allow |
+
+
+
 
 

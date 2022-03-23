@@ -1,11 +1,19 @@
-<span id="Nginx-ingress"></span>
-## 安装 NginxIngress 组件
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【集群】。
+
+
+
+
+
+
+## 安装 NginxIngress 组件[](id:Nginx-ingress)
+>? 如果您需要安装 NginxIngress 组件，可通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 来联系我们。
+>
+
+
+
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**集群**。
 2. 在“集群管理”页面单击目标集群 ID，进入集群详情页。
 3. 选择左侧菜单栏中的**组件管理**，进入 “组件列表” 页面。
-![](https://main.qcloudimg.com/raw/04312e2e5736ed4be538911502c63a3b.png)
 4. 在“组件列表”页面中选择**新建**，并在“新建组件”页面中勾选 NginxIngress。
-![](https://main.qcloudimg.com/raw/ececc5fbac93e9b7073ca01a5b20171f.png)
 5. 单击**完成**即可安装组件。
 
 
@@ -17,15 +25,15 @@
 
 
 
-<span id="DaementSet"></span>
-### 通过 DaemonSet 形式在指定节点池部署（推荐）
+
+### 通过 DaemonSet 形式在指定节点池部署（推荐）[](id:DaemonSet)
 
 Nginx 作为关键的流量接入网关，不建议您将 Nginx 与其他业务部署在相同的节点内。推荐您使用指定的节点池来部署 Nginx-ingress。部署架构如下图所示：
 ![](https://main.qcloudimg.com/raw/70b726a482703a3c1b959844da65ff89.png)
 请参考以下步骤进行安装：
 
 >? 使用此安装方式，您可以完整享有节点池快速扩缩容的能力，后续您只要调整节点池的数量，即可扩缩容 Nginx 的副本。
-
+>
 1. 准备用于部署 Nginx-ingress 的节点池，同时设置污点 taint（防止其他 Pod 调度到该节点池）。部署节点池详情可参见 [节点池相关说明](https://intl.cloud.tencent.com/document/product/457/35900)。
 2. 在集群中 [安装 NginxIngress 组件](#Nginx-ingress)。
 3. 在新建的 Nginx Ingress 组件详情页，单击**新增Nginx Ingress实例**（一个集群内可以同时存在多个 Nginx）。
@@ -33,11 +41,11 @@ Nginx 作为关键的流量接入网关，不建议您将 Nginx 与其他业务�
 ![](https://main.qcloudimg.com/raw/fa11343e51e9643bc1fe90d4e2fbb100.png)
  - 节点池：配置节点池。
  - Nginx 配置：Requst 需设置比节点池的机型配置小（节点本身有资源预留）。Limit 可不设置。
-5. 单击**确定**即可完成安装。
+4. 单击**确定**即可完成安装。
 
 
-<span id="Deployment+HPA"></span>
-### 通过 Deployment + HPA 形式并指定调度规则部署
+
+### 通过 Deployment + HPA 形式并指定调度规则部署[](id:Deployment+HPA)
 使用 Deployment + HPA 的形式部署 Nginx-ingress，您可以根据业务需要配置污点和容忍将 Nginx 和业务 Pod 分散部署。同时搭配 HPA，可设置 Nginx 根据 CPU / 内存等指标进行弹性伸缩。部署架构如下图所示：
 ![](https://main.qcloudimg.com/raw/ab2743999ad2c8fbc8806673c77e0ef4.png)
 
@@ -51,8 +59,10 @@ Nginx 作为关键的流量接入网关，不建议您将 Nginx 与其他业务�
  - Nginx 配置：Requst 需设置比节点池的机型配置小（节点本身有资源预留）。Limit 可不设置。
 5. 单击**确定**即可完成安装。
 
-<span id="LB"></span>
-### Nginx 前端接入 LB 部署方式
+
+
+
+### Nginx 前端接入 LB 部署方式[](id:LB)
 
 仅部署 Nginx 在集群内将无法接收外部流量，还需配置 Nginx 的前端 LB。TKE 现已提供产品化的安装能力，您也可以根据业务需要选择不同的部署模式。
 
@@ -60,7 +70,7 @@ Nginx 作为关键的流量接入网关，不建议您将 Nginx 与其他业务�
 
 如果您的集群是 VPC-CNI 模式的集群，推荐您使用 CLB 直通 Nginx 的 Serivce。下图为以节点池部署的负载示例。
 ![](https://main.qcloudimg.com/raw/c77cf9503a0b98886c402647dd7ec558.png)
-当前方案性能好，而且不需要手动维护 CLB，是最理想的方案。需要集群支持 VPC-CNI，如果您的集群已配置 VPC-CNI 网络插件，或者已配置 Global Router 网络插件并开启了 VPC-CNI 的支持（两种模式混用），建议使用此方案。
+当前方案性能好，而且不需要手动维护 CLB，是最理想的方案。需要集群支持 VPC-CNI，如果您的集群已配置 VPC-CNI 网络插件，或者已配置 Global Router 网络插件并开启了 VPC-CNI 的支持（两种模式混用)，建议使用此方案。
 
 #### Globalrouter 模式集群使用普通 Loadbalancer 模式的 Service
 
@@ -103,20 +113,20 @@ Nginx 作为关键的流量接入网关，不建议您将 Nginx 与其他业务�
 apiVersion: v1
 kind: ConfigMap
 metadata:
-     name: alpha-ingress-nginx-controller
-     namespace: kube-system
+  name: alpha-ingress-nginx-controller
+  namespace: kube-system
 data:
-     access-log-path: /var/log/nginx/nginx_access.log
-     error-log-path: /var/log/nginx/nginx_error.log
-     log-format-upstream: $remote_addr - $remote_user [$time_iso8601] $msec "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" $request_length $request_time [$proxy_upstream_name] [$proxy_alternative_upstream_name] [$upstream_addr] [$upstream_response_length] [$upstream_response_time] [$upstream_status] $req_id
-     keep-alive-requests: "10000"
-     max-worker-connections: "65536"
-     upstream-keepalive-connections: "200"
+  access-log-path: /var/log/nginx/nginx_access.log
+  error-log-path: /var/log/nginx/nginx_error.log
+  log-format-upstream: $remote_addr - $remote_user [$time_iso8601] $msec "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" $request_length $request_time [$proxy_upstream_name] [$proxy_alternative_upstream_name] [$upstream_addr] [$upstream_response_length] [$upstream_response_time] [$upstream_status] $req_id
+  keep-alive-requests: "10000"
+  max-worker-connections: "65536"
+  upstream-keepalive-connections: "200"
 ```
 
 >!
->- 请勿修改 `access-log-path ` 、`error-log-path`、`log-format-upstream`。若修改则会对 CLS 日志采集造成影响。
->- 若您需要根据业务配置不同的参数，可参见 [官方文档](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/)。
+- 请勿修改 `access-log-path ` 、`error-log-path`、`log-format-upstream`。若修改则会对 CLS 日志采集造成影响。
+- 若您需要根据业务配置不同的参数，可参见 [官方文档](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/)。
 
 
 

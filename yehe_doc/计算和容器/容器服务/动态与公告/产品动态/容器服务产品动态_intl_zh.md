@@ -1,3 +1,17 @@
+
+## 2021年12月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>CFS-CSI 存储插件功能更新</td>
+		<td>
+		通过 StorageClass 动态创建 CFS 实例时支持添加云标签。
+		</td>
+		<td>2021-12-25</td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/36154"> 
+
+​		
 ## 2021年11月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
