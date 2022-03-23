@@ -14,7 +14,7 @@
 #### Environmental dependencies
 
 1. The SDK requires your runtime environment to include Node.js (v6 or later) and NPM.
-2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
+2. Log in to the [COS console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get your project's `SecretId` and `SecretKey`.
 
 >? For the definition of terms such as SecretId, SecretKey, and Bucket, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
@@ -34,7 +34,7 @@ npm i cos-nodejs-sdk-v5 --save
 
 #### Initializing with permanent key
 
-First, log into the CAM console, and get your `SecretId` and `SecretKey` from the [Access Key](https://console.cloud.tencent.com/cam/capi) page.
+First, log in to the CAM console, and get your `SecretId` and `SecretKey` from the [Access Key](https://console.cloud.tencent.com/cam/capi) page.
 Replace `SecretId`, `SecretKey`, `bucket`, and `region` with the actual values in your development environment. To test file upload, please see the following sample code.
 
 [//]: # ".cssg-snippet-global-init"
@@ -275,7 +275,7 @@ cos.getObject({
 });
 ```
 
-### Delete an object
+### Deleting an object
 
 [//]: #	".cssg-snippet-delete-object"
 ```js
