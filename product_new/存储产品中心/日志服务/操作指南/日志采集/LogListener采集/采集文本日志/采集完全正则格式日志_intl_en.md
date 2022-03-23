@@ -1,5 +1,5 @@
 ## Overview
-The Full RegEx mode is a log parsing mode used to extract multiple key-value pairs from a log by RegEx. If no key-value pair needs to be extracted, see [Single-Line Full Text Collection](https://intl.cloud.tencent.com/document/product/614/17421) or [Multi-Line Full Text Collection](https://intl.cloud.tencent.com/document/product/614/17422) for configuration. To configure the Full RegEx mode, you need to enter a log sample and then define a regular expression. The system extracts the related key-value pair according to the capturing group in the regular expression. The following describes how to collect full regular logs.
+The Full RegEx mode is a log parsing mode used to extract multiple key-value pairs from a log by RegEx. If no key-value pair needs to be extracted, see Single-Line Full Text Collection or Multi-Line Full Text Collection for configuration. To configure the Full RegEx mode, you need to enter a log sample and then define a regular expression. The system extracts the related key-value pair according to the capturing group in the regular expression. The following describes how to collect full regular logs.
 
 ### Sample
 
