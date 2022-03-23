@@ -87,7 +87,7 @@ After the regular expression for extraction passes verification, name a key-valu
 
 
 
-#### 5. Querying an NGINX log
+#### 5. Query NGINX logs
 
 1. On the left sidebar, click **Search and Analysis** to go to the search and analysis page.
 2. Click the drop-down lists of **Logset** and **Log Topic** to select the log topic to be searched.
