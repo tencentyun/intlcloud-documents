@@ -83,11 +83,11 @@ After the regular expression for extraction passes verification, name a key-valu
 
 1. On the left sidebar, click **Log Topic** to go to the log topic management page.
 2. Click the desired log topic ID/name to go to the log topic management page.
-3. Click the *Index Configuration** tab and configure the corresponding index field based on the definition of the NGINX log format fields.
+3. Click the **Index Configuration** tab and configure the corresponding index field based on the definition of the NGINX log format fields.
 
 
 
-#### 5. Querying a NGINX log
+#### 5. Querying an NGINX log
 
 1. On the left sidebar, click **Search and Analysis** to go to the search and analysis page.
 2. Click the drop-down lists of **Logset** and **Log Topic** to select the log topic to be searched.
