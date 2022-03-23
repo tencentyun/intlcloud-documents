@@ -34,19 +34,20 @@
 - [群组管理（Web & 小程序）](https://intl.cloud.tencent.com/document/product/1047/34330)
 
 ## 使用指南
-<span id="Step1"></span>
+[](id:Step1)
 ### 步骤1：创建应用
 
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。
  >?如果您已有应用，请记录其 SDKAppID，并执行 [步骤2](#Step2)。
- >同一个腾讯云账号，最多可创建300个即时通信 IM 应用。若已有300个应用，您可以先 [停用并删除](https://intl.cloud.tencent.com/document/product/1047/34540) 无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
+ >同一个腾讯云帐号，最多可创建300个即时通信 IM 应用。若已有300个应用，您可以先 [停用并删除](https://intl.cloud.tencent.com/document/product/1047/34540) 无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
  >
-2. 单击**+添加新应用**。
+2. 单击 **+添加新应用**。
 3. 在**创建应用**对话框中输入您的应用名称，单击**确定**。创建完成后，可在控制台总览页查看新建应用的状态、业务版本、SDKAppID、创建时间以及到期时间。
 4. 记录该应用的 SDKAppID 信息。
 
-<span id="Step2"></span>
+[](id:Step2)
 ### 步骤2：创建 AVChatRoom
+
 您可以通过控制台创建群组，也可以通过调用 [创建群组 API](https://intl.cloud.tencent.com/document/product/1047/34895) 创建群组。本文以通过控制台创建为例。
 
 
@@ -56,7 +57,7 @@
 4. 单击**确定**，待群组创建成功后，记录其**群ID**（本文以`@TGS#aC72FIKG3`为例）。
 
 
-<span id="Step3"></span>
+[](id:Step3)
 ### 步骤3：集成 SDK
 您可以通过 NPM 或 Script 集成 SDK，推荐使用 NPM 集成。本文以使用 NPM 集成为例。
 
@@ -77,7 +78,7 @@ npm install tim-wx-sdk --save-dev
 npm config set registry http://r.cnpmjs.org/
 ```
 
-<span id="Step4"></span>
+[](id:Step4)
 ### 步骤4：创建 SDK 实例
 
 <pre><code><span class="hljs-comment">// 创建 SDK 实例，TIM.create() 方法对于同一个 SDKAppID 只会返回同一份实例</span>
@@ -168,7 +169,7 @@ _handleGroupSystemNotice(message) {
   <span class="hljs-comment">// 用 REST API 发送群系统通知请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34958">在群组中发送系统通知 API</a></span>
 }</code></pre>
 
-<span id="Step5"></span>
+[](id:Step5)
 ### 步骤5：登录 SDK
 
 ```javascript
@@ -180,7 +181,7 @@ promise.then(function(imResponse) {
 });
 ```
 
-<span id="Step6"></span>
+[](id:Step6)
 ### 步骤6：设置自己的昵称和头像
 2.6.2及以上版本 SDK，AVChatRoom 内的群聊消息和群提示消息（例如进群退群等），都增加了 nick（昵称） 和 avatar（头像URL） 属性，您可以调用接口 [updateMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile) 设置自己的 nick（昵称） 和 avatar（头像URL）。
 
@@ -198,7 +199,7 @@ promise.then(function(imResponse) {
 });
 ```
 
-<span id="Step7"></span>
+[](id:Step7)
 ### 步骤7：加入群组
 ```javascript
 // 匿名用户加入（无需登录，入群后仅能接收消息）
