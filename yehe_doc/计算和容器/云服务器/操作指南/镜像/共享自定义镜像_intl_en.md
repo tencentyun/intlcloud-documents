@@ -23,7 +23,7 @@ To share an image to another user, you need to know their root account ID. They 
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
 2. Click the account name in the top-right corner and select **Account Information**.
 3. View and note down the account ID.
-4. 通知对方将获取到的账号 ID 发送给自己。
+4. Notify the other party to send the obtained account ID to itself.
 
 ### Sharing images
 <dx-tabs>
