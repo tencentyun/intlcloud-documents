@@ -6,7 +6,9 @@
 - 已开通密钥管理服务 KMS。如未开通，可在开通数据加密过程中根据引导开通 KMS。
 - 已授予 KMS 密钥权限。如未授予，可在开通数据加密过程中根据引导进行授权。
 - 操作账号需具有 QcloudAccessForMySQLRole 的权限，如无权限，可在开通数据加密过程中根据引导进行授权。
->?加密使用的密钥由 [密钥管理服务 KMS](https://intl.cloud.tencent.com/document/product/1030/32774) 产生和管理，云数据库 MySQL 不提供加密所需的密钥和证书。
+>?
+>- 加密使用的密钥由 [密钥管理服务 KMS](https://intl.cloud.tencent.com/document/product/1030/32774) 产生和管理，云数据库 MySQL 不提供加密所需的密钥和证书。
+>- 透明数据加密（Transparent Data Encryption，TDE）功能不会额外收费，但密钥管理服务 KMS 有可能产生额外费用，请参考 [计费概述](https://intl.cloud.tencent.com/document/product/1030/31966)。
 - 当账号处于欠费状态时，无法从 KMS 获取密钥，可能导致迁移、升级等任务无法正常进行，请参见 [欠费说明](https://intl.cloud.tencent.com/document/product/1030/31968)。
 
 ## 注意事项
@@ -29,9 +31,9 @@
 >
 ![](https://main.qcloudimg.com/raw/bc032cee3e68506b77c044622e8c029f.png)
 3. 在弹出的对话框，开通 KMS 服务和授予 KMS 密钥权限，选择密钥后，单击**加密**。
-  - 选择**使用腾讯云自动生成的密钥**时，由腾讯云自动生成密钥。
+   - 选择**使用腾讯云自动生成的密钥**时，由腾讯云自动生成密钥。
     ![](https://main.qcloudimg.com/raw/d54abe36c8e392c09b39045f0b7a5b95.png)
-  - 选择**使用已有自定义密钥**时，可选择自己创建的密钥。
+   - 选择**使用已有自定义密钥**时，可选择自己创建的密钥。
 >?如无自定义密钥，需单击**前往创建**，在密钥管理系统控制台创建密钥，详情请参见 [创建密钥](https://intl.cloud.tencent.com/document/product/1030/31971)。
 >
 ![](https://main.qcloudimg.com/raw/39d442d9620f36c1d57b55a409e6f9e2.png)
@@ -54,3 +56,4 @@ ALTER TABLE t1 ENCRYPTION=’Y’;
 ```
 ALTER TABLE t1 ENCRYPTION=’N’;
 ```
+
