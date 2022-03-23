@@ -1,12 +1,11 @@
->? SSL VPN is in beta test. To try it out, please [submit an application](https://cloud.tencent.com/apply/p/xhfe94i9u8f).
->
+
 
 ## Prerequisites
 - The local private IP range and the Tencent Cloud VPC cannot overlap. 
 - The client has connected to the public network.
 
 ## Configuration
-![](https://qcloudimg.tencent-cloud.cn/raw/aa83c71919f5f685999a1a5690ab90c2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/21651b0e3cab4ee790a14a1147199b23.png)
 1. [Create an SSL VPN gateway](https://intl.cloud.tencent.com/document/product/1037/43919).
 Create a VPN gateway using the SSL protocol
 2. [Create an SSL VPN server](https://intl.cloud.tencent.com/document/product/1037/43905).
