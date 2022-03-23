@@ -34,7 +34,7 @@ IMライブストリーミンググループ（AVChatRoom）には、次の特�
 - [グループ管理（Web & ミニプログラム）](https://intl.cloud.tencent.com/document/product/1047/34330)
 
 ## 使用ガイドライン
-<span id="Step1"></span>
+[](id:Step1)
 ### 手順1：アプリケーションの作成
 
 1. [IMコンソール](https://console.cloud.tencent.com/im)にログインします。
@@ -45,7 +45,7 @@ IMライブストリーミンググループ（AVChatRoom）には、次の特�
 3. **アプリケーションの作成**ダイアログボックスにアプリケーション名を入力し**OK**をクリックします。作成が完了すると、コンソールの概要ページで、作成したアプリケーションのステータス、サービスバージョン、SDKAppID、作成時間、有効期限を確認できます。
 4. このアプリケーションのSDKAppID情報を記録します。
 
-<span id="Step2"></span>
+[](id:Step2)
 ### 手順2：AVChatRoomの作成
 コンソールを介して、または[グループ作成API](https://intl.cloud.tencent.com/document/product/1047/34895) を呼び出して、グループを作成することができます。ここではコンソールを介した作成を例示します。
 
@@ -56,7 +56,7 @@ IMライブストリーミンググループ（AVChatRoom）には、次の特�
 4. **OK**をクリックし、グループが正常に作成されたら、その**グループID**（このドキュメントでは `@TGS#aC72FIKG3` を例とします）を記録します。
 
 
-<span id="Step3"></span>
+[](id:Step3)
 ### 手順3：SDKの統合 
 NPMまたはScriptを介してSDKを統合することができますが、NPMを使用して統合することを推奨します。このドキュメントではNPMを使用した 統合を例示します。
 
@@ -77,7 +77,7 @@ npm install tim-wx-sdk --save-dev
 npm config set registry http://r.cnpmjs.org/
 ```
 
-<span id="Step4"></span>
+[](id:Step4)
 ### 手順4： SDKインスタンスの作成
 
 <pre><code><span class="hljs-comment">// SDK インスタンスを作成します。TIM.create() メソッドは、同じSDKAppIDに対して同じインスタンスのみを返します</span>
@@ -168,7 +168,7 @@ _handleGroupSystemNotice(message) {
   <span class="hljs-comment">// REST APIを使用してグループシステム通知を送信する場合は、 <a href="https://intl.cloud.tencent.com/document/product/1047/34958">グループ内システム通知送信API</a>をご参照ください</span>
 }</code></pre>
 
-<span id="Step5"></span>
+[](id:Step5)
 ### 手順5：SDKにログイン 
 
 ```javascript
@@ -180,7 +180,7 @@ promise.then(function(imResponse) {
 });
 ```
 
-<span id="Step6"></span>
+[](id:Step6)
 ### 手順6：自身のニックネームとプロフィール画像の設定
 2.6.2以上の SDKには、AVChatRoom内のグループチャットメッセージとグループプロンプトメッセージ（グループへの参加やグループからの退出など）に、nick（ニックネーム）とavatar（プロフィール画像URL）属性が追加されています。インターフェース [updateMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile) を呼び出して、自身のnick（ニックネーム）とavatar（プロフィール画像URL）を設定できます。
 
@@ -198,7 +198,7 @@ promise.then(function(imResponse) {
 });
 ```
 
-<span id="Step7"></span>
+[](id:Step7)
 ### 手順7：グループへの参加
 ```javascript
 // 匿名ユーザーの参加（ログインする必要はなく、グループに参加した後にのみメッセージを受信できます）
