@@ -1,7 +1,7 @@
-﻿## Introduction to Domain Name Registrars
+
+## Introduction to Domain Name Registrars
 A domain name registrar is a service provider delegated by a registry to provide domains services. A registry does not directly sell domain names. You need to purchase and use domain names through a domain name registrar. Different registries manage different top-level domain names, so registrars with their delegation vary. The domain name registrar of Tencent Cloud International is as follows:
 
-腾讯云的域名注册商共4家，具体如下：
 
 <table>
 <tr>
