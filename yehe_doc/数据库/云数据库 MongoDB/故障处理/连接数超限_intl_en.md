@@ -1,5 +1,5 @@
 
-## Error Description
+## Issue Description
 If the number of connections exceeds the upper limit, you can use the connection management and restart features in the [console](https://console.cloud.tencent.com/mongodb) and optimize the service for troubleshooting.
 
 ## Cause
@@ -7,7 +7,7 @@ If the number of connections exceeds the upper limit, you can use the connection
 -  There is a large number of concurrent application requests, and the configured upper limit of connections is insufficient, so the current database specification cannot sustain such requests.
 
 ## Troubleshooting Procedure
-### Method 1. Increase the upper limit
+### Option 1. Increase the upper limit
 1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb) and click an instance ID to enter the instance management page.
 2. Select **Database Management** > **Manage Connection** and view the source IPs and number of connections for service troubleshooting.
 >?
@@ -16,7 +16,7 @@ If the number of connections exceeds the upper limit, you can use the connection
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/686de823dd9e3629e521b0799fa5db0f.png)
 
-### Method 2. Restart the instance
+### Option 2. Restart the instance
 1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb) and click an instance ID to enter the instance management page.
 2. Select **Database Management** > **Manage Connection**. You can click **Restart** on the right to restart the mongos instance to fix the problem.
 >?
@@ -25,6 +25,6 @@ If the number of connections exceeds the upper limit, you can use the connection
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/883b7df53c6412cd9ee854da194e3b5d.png)
 
-### Method 3. Optimize the service
+### Option 3. Optimize the service
 You can troubleshoot the service for optimization.
 
