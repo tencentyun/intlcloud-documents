@@ -1,3 +1,23 @@
+## February 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Supported connection pool for the database proxy</td>
+<td>TencentDB for MySQL's database proxy supports the session-level connection pool feature. It can effectively solve the problem of excessively high database instance loads caused by frequent establishments of new non-persistent connections.</td>
+<td>2022-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/45622" target="_blank">Connection Pool Overview</a></td></tr>
+<tr>
+<tr>
+<td>Optimized and updated the database proxy feature</td>
+<td>TencentDB for MySQL's database proxy feature is optimized and updated. It can now support the upgrade of proxy kernel minor version, network switch, and reconfigurations, which delivers a higher convenience and performance.</td>
+<td>2022-02</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/236/45627" target="_blank">Upgrading Database Proxy Kernel Minor Version</a><br
+><li><a href="https://intl.cloud.tencent.com/document/product/236/45628" target="_blank">Switching Database Proxy Network</a><br
+><li><a href="https://intl.cloud.tencent.com/document/product/236/45629" target="_blank">Reconfiguring Database Proxy</a></td></tr>
+</tbody></table>
+
+
 ## December 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
