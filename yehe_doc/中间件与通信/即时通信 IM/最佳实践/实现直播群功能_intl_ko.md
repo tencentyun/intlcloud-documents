@@ -34,18 +34,18 @@ IM 라이브 방송 그룹(AVChatRoom)은 다음과 같은 특징이 있습니�
 - [그룹 관리(Web&미니프로그램)](https://intl.cloud.tencent.com/document/product/1047/34330)
 
 ## 사용 안내
-<span id="Step1"></span>
+[](id:Step1)
 ### 1단계: 애플리케이션 생성
 
 1. [IM 콘솔](https://console.cloud.tencent.com/im)에 로그인합니다.
  >? 이미 애플리케이션이 있는 경우 SDKAppID를 기록하고 [2단계](#step2)를 실행합니다.
- >동일한 Tencent Cloud 계정으로 최대 300개의 IM 애플리케이션을 만들 수 있습니다. 이미 300개의 애플리케이션이 있는 경우 신규 애플리케이션 생성 전에 사용하지 않는 애플리케이션을 [비활성화 및 삭제](https://intl.cloud.tencent.com/document/product/1047/34540)합니다. **애플리케이션 삭제 후에는 SDKAppID에 해당하는 모든 데이터 및 서비스를 복구할 수 없으므로 주의하시기 바랍니다. **
+ >동일한 Tencent Cloud 계정으로 최대 300개의 IM 애플리케이션을 만들 수 있습니다. 이미 300개의 애플리케이션이 있는 경우 신규 애플리케이션 생성 전에 사용하지 않는 애플리케이션을 [비활성화 및 삭제](https://intl.cloud.tencent.com/document/product/1047/34540)합니다.  **애플리케이션 삭제 후에는 SDKAppID에 해당하는 모든 데이터 및 서비스를 복구할 수 없으므로 주의하시기 바랍니다.**
  >
 2. [신규 애플리케이션 추가]를 클릭합니다.
 3. [애플리케이션 생성] 대화 상자에서 애플리케이션 이름을 입력한 후 [확인]을 클릭합니다. 애플리케이션 생성 완료 후, 콘솔 전체보기 페이지에서 새로 생성된 애플리케이션의 상태, 서비스 버전, SDKAppID, 생성 시간 및 만료 시간을 확인할 수 있습니다.
 4. 애플리케이션의 SDKAppID를 기록해둡니다.
 
-<span id="Step2"></span>
+[](id:Step2)
 ### 2단계: AVChatRoom 생성
 콘솔을 통해 그룹을 생성할 수 있고, [그룹 생성 API](https://intl.cloud.tencent.com/document/product/1047/34895) 호출을 통해 그룹을 생성할 수도 있습니다. 본문에서는 콘솔을 통해 그룹을 생성합니다.
 
@@ -56,7 +56,7 @@ IM 라이브 방송 그룹(AVChatRoom)은 다음과 같은 특징이 있습니�
 4. [확인]을 클릭하고 그룹이 성공적으로 생성된 후 [그룹 ID]를 기록해둡니다(본문은 `@TGS#aC72FIKG3`을 예로 듦).
 
 
-<span id="Step3"></span>
+[](id:Step3)
 ### 3단계: SDK 통합
 NPM 또는 Script를 통해 SDK를 통합할 수 있으며, NPM 통합 사용을 권장합니다. 이 문서에서는 NPM 통합을 예로 듭니다.
 
@@ -77,7 +77,7 @@ npm install tim-wx-sdk --save-dev
 npm config set registry http://r.cnpmjs.org/
 ```
 
-<span id="Step4"></span>
+[](id:Step4)
 ### 4단계: SDK 인스턴스 생성
 
 <pre><code><span class="hljs-comment">// SDK 인스턴스 생성. TIM.create() 메소드는 SDKAppID에 동일한 인스턴스만 반환합니다.</span>
@@ -168,7 +168,7 @@ _handleGroupSystemNotice(message) {
   <span class="hljs-comment">// REST API를 사용하여 그룹 시스템 알림을 보내는 방법에 대한 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34958">그룹에서 시스템 알림 메시지 발송 API를 참고하십시오.</a></span>
 }</code></pre>
 
-<span id="Step5"></span>
+[](id:Step5)
 ### 5단계: SDK 로그인
 
 ```javascript
@@ -180,7 +180,7 @@ promise.then(function(imResponse) {
 });
 ```
 
-<span id="Step6"></span>
+[](id:Step6)
 ### 6단계: 닉네임 및 프로필 사진 설정
 v2.6.0 이후 SDK 버전부터 AVChatRoom 내 그룹 채팅 메시지 및 그룹 알림 메시지(예: 그룹 입/퇴장 등) 에 nick(닉네임) 및 avatar(프로필 사진 URL) 속성이 추가되었습니다. [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile) 인터페이스를 호출하여 자신의 nick(닉네임) 및 avatar(프로필 사진 URL)를 설정할 수 있습니다.
 
@@ -198,7 +198,7 @@ promise.then(function(imResponse) {
 });
 ```
 
-<span id="Step7"></span>
+[](id:Step7)
 ### 7단계: 그룹 참여
 ```javascript
 // 익명 사용자 참여(로그인 필요 없음, 그룹 참여 후 메시지 수신만 가능)
