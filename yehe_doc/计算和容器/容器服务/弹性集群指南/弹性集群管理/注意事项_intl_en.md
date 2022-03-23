@@ -49,3 +49,5 @@ In addition, for the ordinary Kubernetes cluster, the Service of ClusterIP type 
 EKS supports the volume of the Hostpath type. For more information, see [Instructions for Other Storage Volumes](https://intl.cloud.tencent.com/document/product/457/30678).
 EKS clusters may not necessarily meet your expectations because they don’t have nodes, although EKS is still compatible with Host-related parameters (such as `Hostpath`, `Hostnetwork: true`, and `DnsPolicy: ClusterFirstWithHostNet`, etc.) in the Pod. For example, you want to use Hostpath to share data, but the two Pods scheduled to the same virtual node may be the Hostpath of different hosts. Therefore, we recommend that the tasks you run on the EKS cluster do not strongly depend on Host-related parameters.
 
+## Port Limits
+Port 9100 and ports above the port 62000 are not available.

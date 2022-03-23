@@ -1,11 +1,13 @@
 ## Overview
-You can use either [the console](https://intl.cloud.tencent.com/document/product/457/32419) or the Custom Resource Definitions (CRD) to configure log collection. CRD supports the collection of container standard outputs, container files, and host files. It also supports multiple log collection formats.
+Besides using the TKE console, you can also configure the log collection settings by using the Custom Resource Definitions (CRD). CRD supports the collection of container standard outputs, container files, and host files. It also supports multiple log collection formats, and supports shipping logs to different consumers such as CLS and CKafka.
 
 ## Prerequisites
-You have enabled log collection in **[Feature Management](https://console.cloud.tencent.com/tke2/ops/list?rid=8)** in the TKE console. For more information, see [Enabling log collection](https://intl.cloud.tencent.com/document/product/457/32419).
+You have enabled Log Collection in **[Feature Management](https://console.cloud.tencent.com/tke2/ops/list?rid=8)** in the TKE console. For more information, see [Enabling Log Collection](https://intl.cloud.tencent.com/document/product/457/32419).
 
-## Creating the CRD
-To create a collection configuration, you only need to define the LogConfig CRD. The log-agent will modify the corresponding CLS log topics based on changes to the LogConfig CRD and set the bound server group. The CRD format is as follows:
+
+
+## Creating CRD to Ship Logs to CLS 
+To create a collection configuration, you only need to define the LogConfig CRD. The log-agent modifies the corresponding CLS log topics based on changes to the LogConfig CRD and set the bound server group. The CRD format is as follows:
 ``` yaml
 apiVersion: cls.cloud.tencent.com/v1
 kind: LogConfig                              ## Default value
@@ -13,12 +15,12 @@ metadata:
   name: test                                ## CRD resource name, unique in the cluster
 spec:
   clsDetail:
-    # Note: you cannot modify the topic after it is specified.
+    # Note: You cannot modify the topic after it is specified.
     # If the log topic is created automatically, the names of logset and topic need to be specified at the same time.
     logsetName: test                        ## CLS logset name. Logset for the name will be created automatically if there is not any. If there is the logset, log topic will be created under it.
     topicName: test                         ## CLS log topic name. Log topic for the name will be created automatically if there is not any.
      
-    # Select existing log topic
+    # Select an existing log topic
     topicId: xxxxxx-xx-xx-xx-xxxxxxxx       ## CLS log topic ID. The log topic needs to be created in CLS in advance and should not be occupied by other collection configurations.
     logType: minimalist_log                 ## Log collection format. json_log: json format. delimiter_log: separator-based format. minimalist_log: full text in a single line. multiline_log: full text in multi lines. fullregex_log: full regex format.
     extractRule:                            ## Extraction and filtering rule
@@ -60,12 +62,12 @@ If the collection type is selected as "Container File Path", the corresponding p
 </dx-alert>
 
 
-## Log Parsing Format
+### Configuring the CLS log parsing format
 <dx-tabs>
 ::: Full text in a single line
 A log with full text in a single line means a line is a full log. When CLS collects logs, it uses the line break `\n` to mark the end of a log. For easier structural management, a default key value `__CONTENT__` is given to each log, but the log data itself will no longer be structured, nor will the log field be extracted. The time attribute of a log is determined by the collection time. For more information, see [Full Text in a Single Line](https://intl.cloud.tencent.com/document/product/614/32287).
 
-Assume that the raw data of a log is:
+Assume that the raw data of a log is as follows:
 ```
 Tue Jan 22 12:08:15 CST 2019 Installed: libjpeg-turbo-static-1.2.90-6.el7.x86_64
 ```
@@ -120,7 +122,7 @@ The data collected to CLS is as follows:
 :::
 ::: Single line - full regex
 Full Regex is often used to process structured logs. It parses a full log by extracting multiple key-value pairs based on a regex. For more information, see [Collecting Full RegEx Logs](https://intl.cloud.tencent.com/zh/document/product/614/32283).
-Assume that the raw data of a log is:
+Assume that the raw data of a log is as follows:
 <dx-codeblock>
 :::  log
 10.135.46.111 - - [22/Jan/2019:19:19:30 +0800] "GET /my/course/1 HTTP/1.1" 127.0.0.1 200 782 9703 "http://127.0.0.1/course/explore?filter%5Btype%5D=all&filter%5Bprice%5D=all&filter%5BcurrentLevelId%5D=all&orderBy=studentNum" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0"  0.354 0.354
@@ -166,7 +168,7 @@ upstream_response_time: 0.354
 ::: Multiple lines - full regex
 The multi-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from a complete piece of log data that spans multiple lines in a log text file (such as Java program logs) based on a regular expression. If you don't need to extract key-value pairs, please configure it as instructed in full text in multi lines. For more information, see [Full Text in Multi Lines](https://intl.cloud.tencent.com/document/product/614/32284).
 
-Assume that the raw data of a log is:
+Assume that the raw data of a log is as follows:
 <dx-codeblock>
 :::  log
 [2018-10-01T10:30:01,000] [INFO] java.lang.Exception: exception happened
@@ -293,6 +295,61 @@ time: [Tue Jan 22 14:49:45 CST 2019 +0800]
 </dx-tabs>
 
 
+
+
+
+## Creating CRD to Ship Logs to CKafka
+You can configure CRD to ship the logs of Pods in TKE to external Kafka service or Tencent Cloud CKafka. You need to define the log source and consumer according to the following configurations. 
+The specific configuration of CRD is as follows:
+```
+apiVersion: cls.cloud.tencent.com/v1
+kind: LogConfig                          ## Default value
+metadata:
+  name: test                                ## CRD resource name, unique in the cluster
+spec:
+  kafkaDetail:
+    kafkaType:       ## (Required) Kafka service type. "ckafka" indicates Tencent Cloud CKafka and "" indicates external Kafka services.
+      type: string
+    instanceId:     ## ckafka instance ID.
+      type: string
+    brokers: xxxxxx       ## (Required) The broker address. Generally, it is domain name:port. If there are more than one address, separate them with ",".
+    topic: xxxxxx         ## (Required) Topic name.        
+    messageKey:           ## (Optional) You can specify the Pod field as the key to upload to the specified partition.
+      valueFrom:
+        fieldRef:
+          fieldPath: metadata.name   
+    timestampKey:            ## The key of timestamp. Default value is @timestamp.
+    timestampFormat:       ## The format of timestamp. Default value is double.
+  inputDetail:
+    type: container_stdout                  ## Log collection type, including container_stdout (container standard output) and container_file (container file).
+
+    containerStdout:                        ## Container standard output
+      namespace: default                    ## The Kubernetes namespace of the container to be collected. If this parameter is not specified, it indicates all namespaces.
+      allContainers: false                  ## Whether to collect the standard output of all containers in the specified namespace
+      container: xxx                        ## Name of the container to be collected. This item can be left empty.
+      includeLabels:                         ## Only Pods that contain the specified labels will be collected.
+        k8s-app: xxx                        ## Only the logs generated by Pods with the configuration of "k8s-app=xxx" in the Pod labels will be collected. This parameter cannot be specified at the same time as workloads and allContainers=true.
+      workloads:                            ## Kubernetes workload to which the container Pod to be collected belongs
+      - namespace: prod                     ## Workload namespace
+        name: sample-app                    ## Workload name
+        kind: deployment                    ## Workload type. Supported values include deployment, daemonset, statefulset, job, and cronjob.
+        container: xxx                      ## Name of the container to be collected. If this item is left empty, it indicates all containers in the workload Pod will be collected.
+
+    containerFile:                          ## File in the container
+      namespace: default                    ## The Kubernetes namespace of the container to be collected. A namespace must be specified.
+      container: xxx                        ## Name of the container to be collected. You can enter a * for this item.
+      includeLabels:                         ## Only Pods that contain the specified labels will be collected.
+        k8s-app: xxx                        ## Only the logs generated by Pods with the configuration of "k8s-app=xxx" in the Pod labels are collected. This parameter cannot be specified at the same time as workload.
+      workload:                             ## Kubernetes workload to which the container Pod to be collected belongs
+        name: sample-app                    ## Workload name                  
+        kind: deployment                    ## Workload type. Supported values include deployment, daemonset, statefulset, job, and cronjob.
+      logPath: /opt/logs                    ## Log folder. Wildcards are not supported.
+      filePattern: app_*.log                ## Log file name. It supports the wildcards "*" and "?". "*" matches multiple random characters, and "?" matches a single random character.
+     
+      ...
+```
+
+
 ## Log Collection Types
 ### Container standard output
 #### Sample 1: collecting the standard output of all containers in the default namespace
@@ -410,20 +467,24 @@ The following table lists the metadata:
 		<td>image_name</td> <td>The image name IP of the container to which logs belong</td>
 	</tr>
 	<tr>
-		<td>namespace</td> <td>The namespace of the Pod to which logs belong</td>
+		<td>namespace</td> <td>The namespace of the Pod to which the logs belong</td>
 	</tr>
 	<tr>
-		<td>pod_uid</td> <td>The UID of the Pod to which logs belong</td>
+		<td>pod_uid</td> <td>The UID of the Pod to which the logs belong</td>
 	</tr>
 	<tr>
-		<td>pod_name</td> <td>The name of the Pod to which logs belong</td>
+		<td>pod_name</td> <td>The name of the Pod to which the logs belong</td>
 	</tr>
 	<tr>
-		<td>pod_ip</td> <td>The IP of the Pod to which logs belong</td>
+		<td>pod_ip</td> <td>The IP of the Pod to which the logs belong</td>
 	</tr>
 	<tr>
-		<td>pod_lable_{label name}</td> <td>The labels of the Pod to which logs belong (for example, if a Pod has two labels: app=nginx and env=prod, 
+		<td>pod_lable_{label name}</td> <td>The labels of the Pod to which the logs belong (for example, if a Pod has two labels: app=nginx and env=prod, 
 the reported log will have two metadata entries attached: pod_label_app:nginx and pod_label_env:prod).
 </td>
 	</tr>
 </table>
+
+
+
+

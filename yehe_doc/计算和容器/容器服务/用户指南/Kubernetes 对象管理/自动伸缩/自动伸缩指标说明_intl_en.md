@@ -90,7 +90,7 @@ The following tables list the details of the autoscaling metrics:
 </table>
 
 
-### Network Metrics	
+### Internet	
 
 <table>
 <tr>
@@ -156,7 +156,7 @@ The following tables list the details of the autoscaling metrics:
 	<th width="6.6%">type</th><th width="33%">metricName</th><th width="11.4%">Default Unit</th>
 	</tr>
 	<tr>
-	<td>MEM Usage</td>
+	<td>Memory usage</td>
 	<td>Mib</td>
 	<td>Amount of memory used by the pod</td>
 	<td>Pods</td>
@@ -225,6 +225,7 @@ The following tables list the details of the autoscaling metrics:
 
 
 ### GPU
+>? The following GPU-related triggering metrics can only be used in EKS clusters. 
 
 <table>
 <tr>
@@ -307,22 +308,22 @@ You can create and edit an HPA by using a YAML file. The following example shows
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-    name: example
-    namespace: default
-    labels:
-      qcloud-app: example
+  name: example
+  namespace: default
+  labels:
+    qcloud-app: example
 spec:
-    minReplicas: 1
-    maxReplicas: 2
-    metrics:
-    - type: Pods# Support using Resource
-      pods:
-        metricName: k8s_pod_cpu_core_used
-        targetAverageValue: "1"
-    scaleTargetRef:
-      apiVersion: apps/v1beta2
-      kind: Deployment
-      name: nginx
+  minReplicas: 1
+  maxReplicas: 2
+  metrics:
+  - type: Pods# Support using Resource
+    pods:
+      metricName: k8s_pod_cpu_core_used
+      targetAverageValue: "1"
+  scaleTargetRef:
+    apiVersion: apps/v1beta2
+    kind: Deployment
+    name: nginx
 ```
 
 

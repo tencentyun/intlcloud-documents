@@ -1,7 +1,7 @@
 ## Overview
-TKE's log collection feature allows you to collect logs in a cluster and send logs in specific paths of cluster services or nodes to [Tencent Cloud Log Service (CLS)](https://intl.cloud.tencent.com/product/cls). Log collection applies to users who need to store and analyze service logs in Kubernetes clusters.
+The Log Collection feature lets users to collect logs in the cluster, store them to a file in the cluster service or cluster node, and ship them to [Tencent Cloud CLS](https://intl.cloud.tencent.com/zh/product/cls) and [CKafka](https://intl.cloud.tencent.com/zh/document/product/597).
 
-You need to manually enable log collection for each cluster, and configure the collection rules. After log collection is enabled for a cluster, the log collection agent runs as a DaemonSet in the cluster, collects logs from the collection source based on the collection source, CLS log topic, and log parsing method configured by users in the log collection rules, and sends the collected logs to the CLS for storage. Log collection supports the following operations:
+You need to manually enable log collection for each cluster, and configure the collection rules. After log collection is enabled for a cluster, the log collection agent runs as a DaemonSet in the cluster, collects logs from the collection source based on the collection source, CLS log topic, and log parsing method configured by users in the log collection rules, and sends the collected logs to the consumer. Log collection supports the following operations:
 - [Enabling log collection](#open)
 - [Collecting standard output logs of a container](#stout)
 - [Collecting file logs in containers](#insideDocker)
@@ -10,39 +10,39 @@ You need to manually enable log collection for each cluster, and configure the c
 
 
 ## Prerequisites
-- Before enabling log collection, ensure that there are sufficient resources on cluster nodes. Enabling log collection will occupy some cluster resources.
-  - CPU resources occupied: 0.11 to 1.1 cores by default. You can increase the CPU resources as needed if the quantity of logs is too large.
-  - Memory resources occupied: 24 to 560 MB by default. You can increase the memory resources as needed if the quantity of logs is too large.
-  - Maximum log length: 512 K for a log. The log is truncated if this limit is exceeded.
-- To use log collection, confirm that nodes in the Kubernetes cluster can access CLS. Only Kubernetes clusters of version 1.10 or later support the following log collection features.
+- Before enabling log collection, ensure that there are sufficient resources on cluster nodes. 
+  - 0.11 to 1.1 cores are required. You can increase the CPU resources on your own as needed.
+  - 24 to 560 MB memory is required. You can increase the memory resources on your own as needed.
+  - The maximum size of a log is 512 K. The log is truncated if this limit is exceeded.
+- To use log collection, confirm that nodes in the Kubernetes cluster can access the consumer of logs. Only Kubernetes clusters of version 1.10 or higher support the following log collection features.
 
 ## Concepts
 
-- **Log Collection Agent**: the agent that TKE uses to collect logs. It adopts Loglistener and runs within the cluster as a DaemonSet.
-- **Log Rules**: users can use log rules to specify the log collection source, log topic, and log parsing method and configure the filter.
+- **Log Collection Agent**: The agent that TKE uses to collect logs. It adopts Loglistener and runs within the cluster as a DaemonSet.
+- **Log Rules**: Configures rules to specify the log collection source, log topic, and log parsing method and configure the filter.
   - The log collection agent monitors changes in the log collection rules, and rule changes take effect within 10 seconds.
   - Multiple log collection rules do not create multiple DaemonSets, but too many log collection rules cause the log collection agent to occupy more resources.
-- **Log Source**: log sources include specified container standard output, files in containers, and node files.
+- **Log Source**: It includes the specified container standard output, files in containers, and node files.
   - When collecting container standard output logs, users can select TKE logs in all containers or specified workloads and specified Pod labels as the log collection source.
   - When collecting container file path logs, users can specify container file path logs in workloads or Pod labels as the collection source.
   - When collecting node file path logs, users can set the node file path as the log collection source.
-- **Consumer**: users can select the logsets and log topics of the CLS as the consumer end.
-- **Extraction mode**: the log collection agent supports the delivery of collected logs to the user-specified log topic in the format of single-line text, JSON, separator-based text, multi-line text, or full regex.
-- **Filter**: after filter is enabled, logs will be collected according to the specified rules. "key" supports full matching and the rule supports regex matching. For example, you can set to collect logs containing "ErrorCode = 404".
+- **Consumer**: It can be a logset or a log topic.
+- **Extraction mode**: The log collection agent can ship the collected logs to the specified log topic in the format of single-line text, JSON, separator-based text, multi-line text, or full regex.
+- **Filter**: Sets filters to collect only logs match the rules. "key" supports full matching and the rule supports regex matching. For example, you can set to collect logs containing "ErrorCode = 404".
 
 ## Directions
 [](id:open)
 ### Enabling log collection
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and choose **Cluster OPS** > **Feature Management** in the left sidebar.
-2. At the top of the **Feature Management** page, select the region. On the right side of the cluster for which you want to enable log collection, click **Set**, as shown in the figure below:
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and choose **Operation Management** > **Feature Management** in the left sidebar.
+2. At the top of the **Feature Management** page, select the region. Locate the target cluster, click **Set** on the right.
 ![](https://main.qcloudimg.com/raw/3f0743029e71e20e4f3b3bfdd7045bab.png)
-3. On the "Configure Features" page, click **Edit** for log collection, enable log collection, and confirm this operation, as shown in the figure below:
+3. On the **Configure Features** page, click **Edit** for log collection, enable log collection, and confirm this operation, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/9c1a88b996982ab6112f9032bfa15040.png)
 
 ### Configuring the log rules
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster OPS** > **Log Rules** in the left sidebar.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Operation Management** > **Log Rules** in the left sidebar.
 2. At the top of the “Log Rules” page, select the region and the cluster where you want to configure the log collection rules and click **Create**, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/e94605fda5b4039d2c3eb285ffb415c0.png)
 3. On the **Create Log Collecting Policy** page, select the collection type and configure the log source. Currently, the following collection types are supported: **Container Standard Output**, **Container File Path**, and **Node File Path**.
@@ -68,7 +68,7 @@ If the collection type is selected as "Container File Path", the corresponding p
 ::: Collecting file logs on nodes
 Select **Node File Path** as the collection type. You can add custom `metadata` as needed. Attach `metadata` with a specified key-value pair to the collected log information to add the attached metadata to log records, as shown in the figure below:
 
->! One node log file can be collected for only one log topic.
+>! Each node log file can be collected to only one log topic.
 >
 ![](https://main.qcloudimg.com/raw/7c5c8341315408c5668add566a3ff550.png)
 You can specify a file path or use wildcards. For example, when the container file paths for collection are `/opt/logs/service1/*.log` and `/opt/logs/service2/*.log`, you can specify the folder of the collection path as `/opt/logs/service*` and the file name as `*.log`.
@@ -108,17 +108,32 @@ the reported log will have two metadata entries attached: pod_label_app:nginx an
 
 </dx-alert>
 
-4. Configure the CLS as the consumer end. Select the desired logset and log topic. You can select new or existing log topics, as shown in the figure below:
->!
->- CLS currently only supports log collection and reporting for intra-region container clusters.
->- If there are already 10 log topics, you cannot create a new one.
->
+4. Configure the consumer of logs.
+<dx-tabs>
+::: Configuring CLS as the consumer
+Select a logset and the corresponding log topic. You can create a log topic or select an existing one. See the figure below:
 ![](https://main.qcloudimg.com/raw/3f51e21168a1cd506f6421c7dec06b52.png)
+>!
+>- CLS only supports log collection and reporting for intra-region container clusters.
+>- If there are already 500 log topics in the log set, no more log topic can be created.
+>
+:::
+::: Configuring Kafka as the consumer
+You can select Tencent Cloud CKafka or other external Kafka instances. If CKafka is selected, you need to enter the instance ID and instance topic. For an external Kafka instance, you need to enter the broker address and topic.
+!
+>- If the Kafka instance and the node are not in the same VPC, you are prompted to create an access point for the Kafka instance.
+>- In daemonSet of the cluster, select the kube-system namespace and locate the kafkalistener container under tke-log-agent pod to query the logs of Kafka collector.
+>
 
+You can ship the logs to a specified partition by specifying a key in advanced settings. This feature is disabled by default and the logs are shipped randomly. When it is enabled, logs with the same key are shipped to the same partition. You can enter the TimestampKey (@timestamp by default) and specify the timestamp format.
 
+:::
+</dx-tabs>
 
 5. Click **Next** and choose a log extraction mode, as shown below:
->! Currently, one log topic supports only one collection configuration. Ensure that all container logs that adopt the log topic can accept the log parsing method that you choose. If you create different collection configurations under the same log topic, the earlier collection configurations will be overwritten.
+>! 
+> - One log topic supports only one collection configuration. Ensure that all container logs that adopt the log topic can accept the log parsing method that you choose. If you create different collection configurations under the same log topic, the earlier collection configurations will be overwritten.
+> - Configuring log parsing method is only supported when you select shipping logs to CLS.
 >
 ![](https://main.qcloudimg.com/raw/7b1d1338253aba3082aa1d824b942e09.png)
 <table>
@@ -142,7 +157,7 @@ the reported log will have two metadata entries attached: pod_label_app:nginx an
 <tr>
 <td>Single line - full regex</td>
 <td>The single-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from a complete log. When configuring the single-line - full regular expression mode, you need to enter a sample log first and then customize your regular expression. After the configuration is completed, the system will extract the corresponding key-value pairs according to the capture group in the regular expression. The regular expression can be generated automatically.</td>
-<td><a href="https://cloud.tencent.com/document/product/614/32817">Full Regular Format (Single-Line)</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/614/39589">Full Regular Format (Single-Line)</a></td>
 </tr>
 <tr>
 <td>Multiple lines - full regex</td>
@@ -156,7 +171,7 @@ the reported log will have two metadata entries attached: pod_label_app:nginx an
 </tr>
 <tr>
 <td>Separator</td>
-<td>In a separator log, the entire log data can be structured according to the specified separator, and each complete log ends with a line break `\n`. When CLS processes separator logs, you need to define a unique key for each separate field. Invalid fields, which are fields that need not be collected, can be left blank. However, you cannot leave all fields blank.</td>
+<td>Structure the data in a log with the specified separator, and each complete log ends with a line break `\n`. Define a unique key for each separate field. Leave the field blank if you don’t need to collect it. At least one field is required.</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/614/32285">Separator Format</a></td>
 </tr>
 </tbody></table>
@@ -166,8 +181,8 @@ the reported log will have two metadata entries attached: pod_label_app:nginx an
 
 
 ### Updating the log rules
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster OPS** > **Log Rules** in the left sidebar.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Operation Management** > **Log Rules** in the left sidebar.
 2. At the top of the “Log Rules” page, select the region and the cluster where you want to update the log collection rules and click **Edit Collecting Rule** at the right, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/31dad4c82bdb27197873b5141dcfa3b0.png)
 3. Update the configuration as needed and click **Done**.
->! The logset and log topic cannot be updated.
+>! The logset and log topic cannot be modified later.

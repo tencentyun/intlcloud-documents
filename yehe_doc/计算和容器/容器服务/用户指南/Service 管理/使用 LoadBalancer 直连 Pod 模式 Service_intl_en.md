@@ -8,19 +8,19 @@ For a service in native LoadBalancer mode, a Cloud Load Balancer (CLB) can be au
 
 
 
-> ? Currently, the CLB-to-Pod direct access mode is available for both GlobalRouter and VPC-CNI container network modes. Click the cluster ID in the [cluster list](https://console.cloud.tencent.com/tke2/cluster?rid=1) to go to the cluster details page. On the **Basic Information** page, you can find the container network plugin used by the current cluster.
+> ? The CLB-to-Pod direct access mode is available for both GlobleRouter and VPC-CNI container network modes. Click the cluster ID in the [cluster list](https://console.cloud.tencent.com/tke2/cluster?rid=1) to go to the cluster details page. In the **Basic Information** page, you can find the container network add-on used by the current cluster.
 >
 
 
 ## VPC-CNI Mode
 
-### Use limits
+### Usage limits
 
 - The Kubernetes version of the cluster must be 1.12 or later.
 - The VPC-CNI ENI mode must be enabled for the cluster network mode.
 - The workloads used by a service in direct access mode must adopt the VPC-CNI ENI mode.
 - Up to 200 workload replicas can be bound to the CLB backend by default. If you need to bind more replicas, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder) to increase the quota.
-- The feature limits of a CLB bound to an ENI must be satisfied. For more information, please see [Binding an ENI](https://intl.cloud.tencent.com/document/product/214/32520).
+- The feature limits of a CLB bound to an ENI must be satisfied. For more information, see [Binding an ENI](https://intl.cloud.tencent.com/document/product/214/32520).
 - When workloads in CLB-to-Pod direct access mode are updated, a rolling update is performed based on the health check status of the CLB, which will affect the update speed.
 - HostNetwork type workloads are not supported.
 
@@ -29,11 +29,11 @@ For a service in native LoadBalancer mode, a Cloud Load Balancer (CLB) can be au
 <dx-tabs>
 ::: Console
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. Refer to the step of [Creating a service in the console](https://intl.cloud.tencent.com/document/product/457/36833) to go to the "Create a Service" page and set the service parameters as required.
+2. Refer to the steps of [Creating a service in the console](https://intl.cloud.tencent.com/document/product/457/36833) to go to the "Create a Service" page and set the service parameters as required.
     Some key parameters need to be set as follows:
     ![](https://main.qcloudimg.com/raw/1f9ff7c6ebcffd2cfb35404f9d1f728e.png)
  - **Service Access Method**: select **Public Network CLB Access** or **Private Network CLB Access**.
- - **Network Mode**: select **Enable CLB-to-Pod Direct Access**.
+ - **Network Mode**: check **Enable CLB-to-Pod Direct Access**.
  - **Workload Binding**: select **Reference Workload**.
 3. Click **Create Service**. 
 		
@@ -47,7 +47,7 @@ kind: Service
 apiVersion: v1
 metadata:
   annotations:
-    service.cloud.tencent.com/direct-access: "true" ## Enable CLB-to-Pod direct access
+    service.cloud.tencent.com/direct-access: "true" ##Enable CLB-to-Pod direct access
   name: my-service
 spec:
   selector:
@@ -61,7 +61,7 @@ spec:
 
 #### Annotation extension
 
-For the CLB configuration, please see [Service CLB Configuration](https://intl.cloud.tencent.com/document/product/457/36834). The annotation configuration is as follows:
+For the CLB configuration, see [TkeServiceConfig](https://intl.cloud.tencent.com/document/product/457/36834). The annotation configuration is as follows:
 
 ```
 service.cloud.tencent.com/tke-service-config: [tke-service-configName]
@@ -69,6 +69,18 @@ service.cloud.tencent.com/tke-service-config: [tke-service-configName]
 
 :::
 </dx-tabs>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### Notes
@@ -90,24 +102,37 @@ Kubernetes clusters provide a service registration mechanism. You only need to r
 
 #### Disaster recovery of the ReadinessGate mechanism
 
-The service registration or certificates in user clusters may be deleted by users, although these system component resources should not be modified or destroyed by users. However, such problems will inevitably occur because of users’ exploration of clusters or misoperations. Therefore, the integrity of the above resources will be checked when the access layer component is started, and the resources will be rebuilt if the integrity is damaged to strengthen the robustness of the system. For more information, please see [Pod readiness](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-readiness-gate).
+The service registration or certificates in user clusters may be deleted by users, although these system component resources should not be modified or destroyed by users. However, such problems will inevitably occur because of users’ exploration of clusters or misoperations. Therefore, the integrity of the above resources will be checked when the access layer component is started, and the resources will be rebuilt if the integrity is damaged to strengthen the robustness of the system.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## GlobalRouter Mode 
 
-### Use limits
+### Usage limits
 
-- A workload can only run in one network mode. You can choose VPC-CNI ENI mode or GlobalRouter mode for the workloads used by a service in direct access mode.
+- A workload can only run in one network mode. You can choose VPC-CNI ENI mode or GlobalRoute mode for the workloads used by a service in direct access mode.
+- Only bill-by-IP accounts are supported. 
 - Up to 200 workload replicas can be bound to the CLB backend by default. If you need to bind more replicas, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder) to increase the quota.
 - When the CLB-to-Pod direct access mode is used, the network linkage is restricted by the security group of CVM. Please confirm whether the security group configuration opens the corresponding protocol and port. **The port corresponding to the workload on the CVM needs to be opened.**
-- After the CLB-to-Pod direct access mode is enabled, the [ReadinessGate](https://intl.cloud.tencent.com/document/product/457/38368) (readiness check) will be enabled by default. It will check whether the traffic from the load balancer is normal during the rolling update of Pod. You also need to configure the correct health check configuration for the application. For details, please see [Service CLB Configuration](https://intl.cloud.tencent.com/document/product/457/36834).
-- The CLB-to-Pod direct access in GlobalRouter mode is in beta test. You can use it through the following two ways:
- -**You can use it via [CCN](https://intl.cloud.tencent.com/zh/document/product/1003)** (recommended). CCN can verify the bound IP address to prevent common IP binding problems such as binding errors and address loopback. The instructions are as follows:
-   1. Create a CCN instance. For more information, please see [Creating a CCN Instance](https://intl.cloud.tencent.com/document/product/1003/30062).
+- After the CLB-to-Pod direct access mode is enabled, the [ReadinessGate](https://intl.cloud.tencent.com/document/product/457/38368) (readiness check) will be enabled by default. It will check whether the traffic from the load balancer is normal during the rolling update of Pod. You also need to configure the correct health check configuration for the application. For details, see [TkeServiceConfig](https://intl.cloud.tencent.com/document/product/457/36834).
+- The CLB-to-Pod direct access in Globalrouter mode is in beta test. You can use it through the following two ways:
+ - **You can use it via [CCN](https://intl.cloud.tencent.com/zh/document/product/1003).** (recommended). CCN can verify the bound IP address to prevent common IP binding problems such as binding errors and address loopback. The instructions are as follows:
+   1. Create a CCN instance. See [Creating a CCN Instance](https://intl.cloud.tencent.com/document/product/1003/30062).
    2. Add the VPC where the cluster is located to the created CCN instance.
-   3. Register the container network CIDR block of the relevant cluster to the CCN. On the cluster's **Basic Information** page, enable the **CCN**.
+   3. Register the container network CIDR block of the relevant cluster to the CCN. In the cluster’s **Basic Information** page, enable the **CCN**.
    ![](https://main.qcloudimg.com/raw/0f65c1e444196f44bfcdd47a02d97240.png)
- - **You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder) to apply for it.** CCN will not verify the IP address in this method (not recommended).
+ - You can also [submit a ticket](https://console.intl.cloud.tencent.com/workorder) to apply for the CLB-to-Pod direct access. This method is not recommended as the IP verification feature, which is available in CCN, is not provided in this case.
 
 
 ### Directions
@@ -115,14 +140,16 @@ The service registration or certificates in user clusters may be deleted by user
 <dx-tabs>
 ::: Console
 **Prerequisites**
-Add `GlobalRouteDirectAccess: "true"` to the `kube-system/tke-service-controller-config` ConfigMap to enable the direct access capability of GlobalRouter.
+<li>Add `GlobalRouteDirectAccess: "true"`` to the `kube-system/tke-service-controller-config` ConfigMap to enable the direct access capability of GlobalRoute.</li>
+<li>This feature is only available to beta users of CLB SNAT Pro. To become a beta user, please <a href="https://console.intl.cloud.tencent.com/workorder">submit a ticket</a>.</li>
+<br>
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. Refer to the step of [Creating a service in the console](https://intl.cloud.tencent.com/document/product/457/36833) to go to the "Create a Service" page and set the service parameters as required.
+2. Refer to the steps of [Creating a service in the console](https://intl.cloud.tencent.com/document/product/457/36833) to go to the "Create a Service" page and set the service parameters as required.
     Some key parameters need to be set as follows:
     ![](https://main.qcloudimg.com/raw/1f9ff7c6ebcffd2cfb35404f9d1f728e.png)
  - **Service Access Method**: select **Public Network CLB Access** or **Private Network CLB Access**.
- - **Network Mode**: select **Enable CLB-to-Pod Direct Access**.
+ - **Network Mode**: check **Enable CLB-to-Pod Direct Access**.
  - **Workload Binding**: select **Reference Workload**.
 3. Click **Create Service**. 
 :::
@@ -130,7 +157,9 @@ Add `GlobalRouteDirectAccess: "true"` to the `kube-system/tke-service-controller
 The YAML configuration for a service in CLB-to-Pod direct access mode is the same as that for a common service. In this example, the annotation indicates whether to enable the CLB-to-Pod direct access mode.
 
 **Prerequisites**
-Add `GlobalRouteDirectAccess: "true"` to the `kube-system/tke-service-controller-config` ConfigMap to enable the direct access capability of GlobalRouter.
+<li>Add `GlobalRouteDirectAccess: "true"` to the `kube-system/tke-service-controller-config` ConfigMap to enable the direct access capability of GlobalRoute.</li>
+<li>This feature is only available to beta users of CLB SNAT Pro. To become a beta user, please <a href="https://console.intl.cloud.tencent.com/workorder">submit a ticket</a>.</li>
+<br>
 
 **Enable the direct access mode in the Service's YAML**
 
@@ -139,7 +168,7 @@ kind: Service
 apiVersion: v1
 metadata:
   annotations:
-    service.cloud.tencent.com/direct-access: "true" ## Enable CLB-to-Pod direct access
+    service.cloud.tencent.com/direct-access: "true" ##Enable CLB-to-Pod direct access
   name: my-service
 spec:
   selector:
@@ -154,7 +183,7 @@ spec:
 #### Annotation extension
 
 
-For the CLB configuration, please see [Service CLB Configuration](https://intl.cloud.tencent.com/document/product/457/36834). The annotation configuration is as follows:
+For the CLB configuration, see [TkeServiceConfig](https://intl.cloud.tencent.com/document/product/457/36834). The annotation configuration is as follows:
 
 ```
 service.cloud.tencent.com/tke-service-config: [tke-service-configName]

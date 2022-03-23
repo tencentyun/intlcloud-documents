@@ -71,6 +71,18 @@ service.cloud.tencent.com/tke-service-config: [tke-service-configName]
 </dx-tabs>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 ### 注意事项
 
 #### 如何保证滚动更新时的可用性保证
@@ -93,11 +105,24 @@ Kubernetes 集群提供了服务注册的机制，只需要将您的服务以 `M
 用户集群中的服务注册或证书有可能被用户删除，虽然这些系统组件资源不应该被用户修改或破坏。在用户对集群的探索或是误操作下，这类问题会不可避免的出现。因此接入层组件在启动时会检查以上资源的完整性，在完整性受到破坏时会重建以上资源，加强系统的鲁棒性。详情可参见 [Kubernetes Pods ReadinessGate 特性](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-readiness-gate)。
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 ## 容器网络模式为 GlobalRouter 
 
 ### 使用限制
 
 - 单个工作负载仅能运行在一种网络模式下，您可选择弹性网卡直连或 GlobalRoute 直连。
+- 仅支持带宽上移账号，如若当前账户是传统账号类型（带宽非上移），可参见账户类型升级说明。
 - 默认 CLB 的后端数量限制是 200 个，如果您绑定的工作负载的副本数超过 200 时，可通过 [提交工单](https://console.intl.cloud.tencent.com/workorder) 提升负载均衡 CLB 的配额。
 - 使用 CLB 直连 Pod，需注意网络链路受云服务器的安全组限制，确认安全组配置是否放开对应的协议和端口，**需要开启 CVM 上工作负载对应的端口**。
 - 开启直连后，默认将启用 [ReadinessGate](https://intl.cloud.tencent.com/document/product/457/38368) 就绪检查，将会在 Pod 滚动更新时检查来自负载均衡的流量是否正常，需要为业务方配置正确的健康检查配置，详情可参见 [TkeServiceConfig 介绍](https://intl.cloud.tencent.com/document/product/457/36834)。
@@ -115,7 +140,9 @@ Kubernetes 集群提供了服务注册的机制，只需要将您的服务以 `M
 <dx-tabs>
 ::: 控制台操作指引
 **前置使用条件**
-在 `kube-system/tke-service-controller-config` ConfigMap 中新增 `GlobalRouteDirectAccess: "true"` 以开启 GlobalRoute 直连能力。
+<li>在 `kube-system/tke-service-controller-config` ConfigMap 中新增 `GlobalRouteDirectAccess: "true"` 以开启 GlobalRoute 直连能力。</li>
+<li>该功能需要开通 CLB SNAT Pro 的白名单，您可通过 <a href="https://console.intl.cloud.tencent.com/workorder">提交工单</a> 进行申请。</li>
+<br>
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 参考 [控制台创建 Service](https://intl.cloud.tencent.com/document/product/457/36833) 步骤，进入 “新建Service” 页面，根据实际需求设置 Service 参数。
@@ -130,7 +157,9 @@ Kubernetes 集群提供了服务注册的机制，只需要将您的服务以 `M
 直连 Pod 模式 Service 的 YAML 配置与普通 Service YAML 配置相同，示例中的 annotation 即代表是否开启直连 Pod 模式。
 
 **前置使用条件**
-在 `kube-system/tke-service-controller-config` ConfigMap 中新增 `GlobalRouteDirectAccess: "true"` 以开启 GlobalRoute 直连能力。
+<li>在 `kube-system/tke-service-controller-config` ConfigMap 中新增 `GlobalRouteDirectAccess: "true"` 以开启 GlobalRoute 直连能力。</li>
+<li>该功能需要开通 CLB SNAT Pro 的白名单，您可通过 <a href="https://console.intl.cloud.tencent.com/workorder">提交工单</a> 进行申请。</li>
+<br>
 
 **在 Service YAML 里开启直连模式**
 

@@ -1,16 +1,16 @@
 
-## Billing
+## Billing Mode
 
-Pods scheduled to the virtual node adopt the pay-as-you-go and spot billing modes. For details, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/457/34054), [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055), and [Purchase Limits](https://intl.cloud.tencent.com/document/product/457/34056).
+For pods scheduled to the virtual nodes, there are two billing mode options, pay-as-you-go and spot billing. See [Billing Overview](https://intl.cloud.tencent.com/document/product/457/34054), [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055), and [Purchase Limits](https://intl.cloud.tencent.com/document/product/457/34056).
 
 
 ## Kubernetes Version
 
-Only the Kubernetes clusters of v1.16 and later versions are supported.
+It only supports clusters of v1.16 and v1.18.
 
 ## Default Quota
 
-By default, up to **100 Pods** can be scheduled to the virtual node for each cluster. If the number of required Pods exceeds the quota limit, you can submit a ticket to apply for a higher quota. Tencent Cloud will assess your actual needs and increase your quota as appropriate.
+By default, up to **100 Pods** can be scheduled to a virtual node for each cluster. If the number of required Pods exceeds the quota limit, you can submit a ticket to apply for a higher quota. Tencent Cloud will assess your actual needs and increase your quota as appropriate.
 
 ### Applying for a higher quota
 1. [Submit a ticket](https://console.cloud.tencent.com/workorder/category). On the **Submit a ticket** page, select the product name and issue type (Others), and then complete the ticket information.
@@ -34,9 +34,9 @@ When each Pod scheduled to the virtual node is created, a temporary image storag
 
 ### Pod network
 
-The Pods scheduled to virtual node are on the same VPC network plane as the Tencent Cloud services such as CVM and TencentDB. Each Pod will use an IP address of the VPC subnet.
+The Pods scheduled to virtual node are on the same VPC network plane as the Tencent Cloud services such as CVM and TencentDB. Each Pod takes an IP address in the VPC subnet.
 
-Pod and Pod, Pod and other Tencent Cloud services in the same VPC can communicate directly without any performance losses.
+A Pod can connect to other Pods or Tencent Cloud services in the same VPC without any performance losses.
 
 ### Pod isolation
 
@@ -49,7 +49,7 @@ You can define `template annotation` in a YAML file to implement capabilities su
 >!
 >- If no security group is specified, the Pod will be bound to the specified security group of the node pool by default. Please ensure that the network policy of the security group does not affect the normal operation of the Pod. For example, you need to open port 80 if the Pods provide service via port 80.
 >- To allocate CPU resources, you must specify both `cpu` and `mem` annotations and make sure that their values meet the CPU specifications in [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057). In addition, you can select Intel or AMD CPUs to allocate by specifying `cpu-type`. AMD CPUs are more cost-effective. For more information, see [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055). 
-
+>- To allocate GPU resources through the method specified in the annotation, you must specify the `gpu-type` and `gpu-count` annotations and ensure that their values meet the GPU specifications in [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057).
 
 <table>
 <thead>
@@ -63,32 +63,32 @@ You can define `template annotation` in a YAML file to implement capabilities su
 <tr>
 <td>eks.tke.cloud.tencent.com/security-group-id</td>
 <td>Default security group bound with a workload. Specify the <a href="https://console.cloud.tencent.com/cvm/securitygroup" target="_blank">security group ID</a>.
-	<li>You can specify multiple security group IDs and separate them by commas (<code>,</code>). For example, <code>sg-id1,sg-id2</code>.</li>
+	<li>You can specify multiple security group IDs and separate each of them by commas (<code>,</code>). For example, <code>sg-id1,sg-id2</code>.</li>
 	<li>Network policies take effect based on the sequence of security groups.</li>
 </td>
-<td>No. If you do not specify it, the workload is bound to the specified security group of the node pool by default.<br>If you specify it, ensure that the security group ID already exists in the region to which the workload belongs.</td></tr>
+<td>Not required. Make sure that the security group ID exists in the region of the workload.<br>If it’s not specified, the workload is bound to the security group specified in the node pool by default.</td></tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/cpu</td>
-<td>Number of CPU cores required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit is core by default.</td>
-<td>No. If you specify it, ensure that the specifications are supported and specify the <code>cpu</code> and <code>mem</code> parameters.</td>
+<td>Number of CPU cores required by a Pod. See <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
+<td>Not required. Make sure the entered specification is supported and both the <code>cpu</code> and <code>mem</code> are specified.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/mem</td>
-<td>Memory required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit must be included in the value, for example, 512 MiB, 0.5 GiB, or 1 GiB.</td>
-<td>No. If you specify it, ensure that the specifications are supported and specify the <code>cpu</code> and <code>mem</code> parameters.</td>
+<td>Memory required by a Pod. See <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit must be included in the value, for example, `512Mi`, `0.5Gi` and `1Gi`.</td>
+<td>Not required. Make sure the entered specification is supported and both the <code>cpu</code> and <code>mem</code> are specified.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/cpu-type</td>
-<td>Model of the GPU resources required by a Pod. Currently, supported models include:
+<td>Model of the CPU resources required by a Pod. The supported models include:
 <li>intel</li>
 <li>amd</li>
-<li>Specific model, such as S4, S3</li>
-For more information about configurations supported by different models, see <a href="https://cloud.tencent.com/document/product/457/39808" target="_blank">Resource Specifications</a>.</td>
-<td>No. If you do not specify it, the CPU type is not forcibly specified by default. The system will match the most suitable specifications according to <a href="https://intl.cloud.tencent.com/document/product/457/36161" target="_blank">Specifying Resource Specifications</a>. If the matched specifications are supported by both Intel and AMD, Intel CPUs are preferred.</td>
+<li>Specific model, such as `S4`, `S3`</li>
+See <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
+<td>Not required. If it’s not specified, the system automatically choose the best-suit specification. See <a href="https://intl.cloud.tencent.com/document/product/457/36161" target="_blank">Specifying Resource Specifications</a>. If the matched specifications are supported by both Intel and AMD, Intel CPUs are preferred.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/gpu-type</td>
-<td>Model of the GPU resources required by a Pod. Currently, the supported models include:
+<td>Model of the GPU resources required by a Pod. The supported models include:
 <ul  class="params">
 <li>V100</li>
 <li>1/4*T4</li>
@@ -96,59 +96,64 @@ For more information about configurations supported by different models, see <a 
 <li>T4</li>
 <li>You can specify the model by priority. For example, “T4,V100” indicates T4 resource Pods will be created first. If the T4 resources in the selected region are insufficient, V100 resource Pods will be created.</li>
 </ul>
-For specific configurations supported by each model, please see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
+For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
 <td>If GPUs are required, this option is required. When specifying it, ensure that the GPU model is supported. Otherwise, an error will be reported.</td>
 </tr>
 <tr>
+<td>eks.tke.cloud.tencent.com/gpu-count</td>
+<td>Number of GPU cards required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. </td>
+<td>Not required. Make sure that the entered specification is supported.</td>
+</tr>
+<tr>
 <td>eks.tke.cloud.tencent.com/retain-ip</td>
-<td>The static IP of a Pod. Enter the value <code>"true"</code> to enable this feature. If a Pod with the static IP enabled is terminated, its IP will be retained 24 hours by default. If the Pod is rebuilt within 24 hours after termination, its IP can still be used. Otherwise, its IP may be occupied by other Pod.<b>Only valid for statefulset and rawpod.</b></td>
-<td>No</td>
+<td>Whether to retain the IP when the Pod is deleted. <code>"true"</code>: Retain the IP after the deletion of a Pod (for 24 hours by default. If the Pod is rebuilt the retention period, this IP can be retrieve.<b>It’s only valid for `statefulset` and `rawpod`.</b></td>
+<td>Not required</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/retain-ip-hours</td>
-<td>Modifies the default retention duration of the Pod’s static IP. Enter a number. Unit: hour. Default value: 24 hours. The IP can be retained up to one year.<b>Only valid for statefulset and rawpod.</b></td>
-<td>No</td>
+<td>The retention period of the IP of a Pod in hours. It can be up to 8760 hours (one year).<b>It’s only valid for `statefulset` and `rawpod`.</b></td>
+<td>Not required</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/eip-attributes</td>
-<td>Indicates that the Pod of the Workload needs to be associated with EIP. When the value is "", it indicates that the default EIP configuration is used. You can enter the API parameter json of the EIP in "" to realize custom configuration. For example, if the value of annotation is '{"InternetMaxBandwidthOut":2}', it means the bandwidth is 2M.</td>
-<td>No</td>
+<td>Attributes of the EIP associated with Pods of the Workload. When the value is `""`, it indicates that the default EIP configuration is used. You can enter the API parameter json of the EIP in within "" to realize custom configuration. For example, if the value of annotation is '{"InternetMaxBandwidthOut":2}', it means the bandwidth is 2M. Note that it is only applicable to bill-by-IP accounts.</td>
+<td>Not required</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/eip-claim-delete-policy</td>
-<td>After the Pod is deleted, whether the EIP is automatically reclaimed (It is reclaimed by default). “Never” means the EIP is not reclaimed.</td>
-<td>No</td>
+<td>Whether to release the EIP once the Pod is deleted. `Never`: Do not release. This parameter takes effect only when eks.tke.cloud.tencent.com/eip-attributes is specified. Note that it is only applicable to bill-by-IP accounts.</td>
+<td>Not required</td>
 </tr>
 <tr>
-<td>eks.tke.cloud.tencent.com/eip-injection</td>
-<td>When the value is "true", it indicates that the IP information of EIP will be exposed in the Pod. Run the `ip addr` command in the Pod to view the EIP address.</td>
-<td>No</td>
+<td>eks.tke.cloud.tencent.com/eip-id-list</td>
+<td>For a StatefulSet workload, you can specify multiple existing EIPs (such as "eip-xx1, eip-xx2"). Note that the number of StatefulSet pods can not exceed the number of EIPs specified in the annotation. Otherwise, the pods without EIPs go pending. It is only applicable to bill-by-IP accounts.</td>
+<td>Not required</td>
 </tr>
 </tbody></table>
 
 
-For samples, please see [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
+For samples, see [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
 
-## Pod limits
+## Pod Limits
 
 ### Workload limits
 
-The Pods for workloads of the DaemonSet type will not be scheduled to the virtual node.
+The Pods for DaemonSet workloads are not scheduled to the virtual node.
 
 ### Service limits
 
-If the cluster service using [GlobalRouter Mode](https://intl.cloud.tencent.com/document/product/457/38968) has enabled externaltrafficpolicy = local, the traffic will not be forwarded to the Pod scheduled to the virtual node.
+For cluster services using [GlobalRouter Mode](https://intl.cloud.tencent.com/document/product/457/38968), if externaltrafficpolicy = local, the traffic is not forwarded to Pods scheduled to the virtual node.
 
 ### Volume limits
 
-The Pods that mount volumes of hostpath type will not be scheduled to the virtual node.
+Pods that mount with hostpath volumes are not scheduled to the virtual node.
 
 
 ### Other limits
 
 - The virtual node feature is not available for the cluster without any server nodes.
-- The Pods that have enabled the [Static IP Address](https://intl.cloud.tencent.com/document/product/457/38974) cannot be scheduled to the virtual node.
-- The Pods that have specified the hostPort will not be scheduled to the virtual node.
-- The Pods that have specified the hostIP will use the Pod IP as the value of hostIP by default.
-- If the anti-affinity feature is enabled, only one of the Pods with the same workload will be created on the virtual node.
+- Pods that have enabled the [Static IP Address](https://intl.cloud.tencent.com/document/product/457/38974) cannot be scheduled to the virtual node.
+- Pods with hostPort specified are not scheduled to the virtual node.
+- Pods that with hostIP specified use the Pod IP as the hostIP by default.
+- If Anti-affinity is enabled, only one pod is created on the virtual node for the same workload.
 - If the container logs are stored in the specified node file, and log collection is performed through the node file, the Pod logs on the virtual node cannot be collected.
