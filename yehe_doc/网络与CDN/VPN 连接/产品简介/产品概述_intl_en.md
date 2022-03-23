@@ -16,10 +16,9 @@ Tencent Cloud VPN Connections consists of the following components:
 
 
 ## SSL VPN
->? The SSL VPN is in beta test now. To try it out, please [submit an application.] (https://console.cloud.tencent.com/workorder/category).
->
+
 Tencent Cloud SSL VPN Connections consists of the following components:
 - SSL VPN gateway: a VPN gateway using the SSL protocol
 - SSL VPN server: a module providing SSL services
 - SSL VPN client: providing a certificate for connecting the mobile client to the server
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/9a76dba7981cba360851e3ac28edaf32.png)
