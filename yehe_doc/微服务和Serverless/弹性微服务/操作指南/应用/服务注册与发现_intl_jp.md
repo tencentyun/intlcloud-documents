@@ -1,4 +1,4 @@
-## 操作シナリオ
+## 概要
 
 ここでは主に、TEMコンソールでSpringCloudアプリケーションサービスの登録と検出を実装するための具体的な手順を紹介します。
 
@@ -6,9 +6,9 @@
 ### コンソール操作
 
 1. [TEMコンソール](https://console.cloud.tencent.com/tem)にログインします。
-2. 左側ナビゲーションバーで、【アプリケーションリスト】をクリックしてアプリケーション管理ページに進み、アプリケーションデプロイのリージョンを選択します。
-3. 【新規作成】をクリックして新規作成アプリケーションページに進み、アプリケーション情報を入力してデプロイします。[アプリケーションの作成](https://cloud.tencent.com/document/product/1371/53294)をご参照ください。
-4. Spring Cloudアプリケーションの場合、選択した【環境のパブリッシュ】がレジストリに関連付けられている場合、デプロイする際に**レジストリ情報を自動的に挿入**を選択することができます。
+2. 左側のナビゲーションバーで、**アプリケーション管理**をクリックしてアプリケーション管理ページに進み、アプリケーションをデプロイするリージョンを選択します。
+3. **新規作成**をクリックしてアプリケーションの新規作成ページに進み、アプリケーション情報を入力してデプロイします。[アプリケーションの作成とデプロイ](https://intl.cloud.tencent.com/document/product/1094/40362)をご参照ください。
+4. Spring Cloudアプリケーションの場合、選択した**環境のパブリッシュ**がレジストリにバインドされている場合、デプロイする際に**レジストリ情報を自動的に挿入**を選択することができます。
 
 ### 具体的な構成
 
@@ -17,8 +17,8 @@
 同時にTEMは、このディレクトリをアプリケーションの [SPRING_CONFIG_ADDITIONAL-LOCATION](https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/boot-features-external-config.html#boot-features-external-config-application-property-files)環境変数に追加します。SPRING_CONFIG_ADDITIONAL-LOCATIONがアプリケーションに存在しない場合、この環境変数はアプリケーションに追加されます。
 
 基本構成は次のとおりです。
-
-```bash
+<dx-codeblock>
+:::  bash
 apiVersion: v1
 kind: Deployment
 metadata:
@@ -41,7 +41,9 @@ spec:
         items:
           - key: tse-default-spring-cloud-config.properties
             path: tse-default-spring-cloud-config.properties
-```
+:::
+</dx-codeblock>
+
 
 TEMはそれぞれのレジストリに応じて、異なるパラメータを注入します。
 <dx-tabs>
@@ -77,21 +79,6 @@ metadata:
 </dx-codeblock>
 :::
 
-:::consul
-申請するconsulのアドレスを10.0.1.32:8500と仮定します。
-<dx-codeblock>
-:::  bash
-apiVersion: v1
-data:
-  tse-default-spring-cloud-config.properties: |
-    spring.cloud.consul.host=10.0.1.32
-    spring.cloud.consul.port=8500
-    spring.cloud.consul.discovery.preferIpAddress=true
-kind: ConfigMap
-metadata:
-  name: tse-config
-:::
-</dx-codeblock>
 :::
 </dx-tabs>
 
@@ -127,14 +114,5 @@ JVM起動パラメータを直接追加して設定することもできます�
 -Deureka.instance.preferIpAddress=true
 ```
 :::
-::: consul
-```bash
-# 申請するconsulのアドレスを10.0.1.32:8500と仮定します
--Dspring.cloud.consul.host=10.0.1.32 
--Dspring.cloud.consul.port=8500 
--Dspring.cloud.consul.discovery.preferIpAddress=true
-```
-:::
 </dx-tabs>
-
 
