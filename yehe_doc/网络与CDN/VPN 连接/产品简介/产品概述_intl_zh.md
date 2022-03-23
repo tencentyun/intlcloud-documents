@@ -16,10 +16,9 @@ VPN 连接（VPN Connections）是指在 Internet 公共网络上建立的一个
 
 
 ## SSL VPN
->?SSL VPN 内测中，如需体验，请 [提交工单](https://console.cloud.tencent.com/workorder/category)。
->
+
 腾讯云 SSL VPN 连接分为如下组成部分:
 - SSL VPN 网关：创建的 SSL 协议类型的 VPN 网关。
 - SSL 服务端：提供 SSL 服务的服务模块。
 - SSL 客户端：提供移动端连接上服务端的证书。
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/9a76dba7981cba360851e3ac28edaf32.png)
