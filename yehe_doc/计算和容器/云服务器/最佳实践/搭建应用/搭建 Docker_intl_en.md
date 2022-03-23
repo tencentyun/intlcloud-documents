@@ -25,7 +25,7 @@ Docker must be built on a 64-bit operating system with the kernel version 3.10 o
 
 ### Installing Docker
 
-Proceed according to the actually used operating system version.
+Proceed according to the actual operating system version.
 
 <dx-tabs>
 ::: CentOS 8.2

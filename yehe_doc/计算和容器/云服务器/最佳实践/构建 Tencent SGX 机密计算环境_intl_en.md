@@ -9,7 +9,7 @@ You have created and logged in to an [M6ce instance](https://intl.cloud.tencent.
 
 
 <dx-alert infotype="explain" title="">
-This document uses an instance on the TencentOS Server 3.1 (TK4) as an example. The steps vary by OS version; therefore, proceed based on your actual conditions.
+This document uses an instance on the TencentOS Server 3.1 (TK4) as an example. 
 </dx-alert>
 
 
@@ -19,12 +19,12 @@ This document uses an instance on the TencentOS Server 3.1 (TK4) as an example. 
 ```
 uname -a
 ```
-Check whether the kernel version is below 5.4.119-19.0008:
- - If so, run the following command to update the kernel:
+Check whether the kernel version is earlier than 5.4.119-19.0008.
+ - If yes, run the following command to update the kernel:
 ```
 yum update kernel
 ```   
- - If not, proceed to the next step.
+ - If no, proceed to the next step.
 2. Run the following command to install the software packages required by the SGX runtime:
 ```
 yum install \
@@ -43,11 +43,11 @@ The default installation directory of the SGX AESM service is `/opt/intel/sgx-ae
 yum install sgx-linux-x64-sdk
 ```
 <dx-alert infotype="explain" title="">
-The default installation directory of the Intel SGX SDK is `/opt/intel/sgxsdk`. You can develop an SGX program as instructed in [Intel® Software Guard Extensions (Intel® SGX) SDK for Linux* OS Developer Reference](https://download.01.org/intel-sgx/sgx-linux/2.13/docs/Intel_SGX_Developer_Reference_Linux_2.13_Open_Source.pdf?spm=a2c4g.11186623.0.0.2f8d31b8PMoC1w&file=Intel_SGX_Developer_Reference_Linux_2.13_Open_Source.pdf).
+The default installation directory of the Intel SGX SDK is `/opt/intel/sgxsdk`. You can develop an SGX program as instructed in [Intel® Software Guard Extensions (Intel® SGX) SDK for Linux OS Developer Reference](https://download.01.org/intel-sgx/sgx-linux/2.13/docs/Intel_SGX_Developer_Reference_Linux_2.13_Open_Source.pdf?spm=a2c4g.11186623.0.0.2f8d31b8PMoC1w&file=Intel_SGX_Developer_Reference_Linux_2.13_Open_Source.pdf).
 </dx-alert>
 4. After installing the SGX runtime and Intel SGX SDK, restart the instance as instructed in [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928).
 5. Configure the Tencent Cloud SGX remote attestation service.
-The Tencent Cloud SGX remote attestation service is deployed by region. You can access the service in the region where your SGX CVM instance resides to get the optimal experience. After you install the Intel SGX SDK, the default configuration file `/etc/sgx_default_qcnl.conf` of the service will be generated automatically. Manually modify the file in the following steps to adapt to the service in the region of your SGX CVM instance.
+The Tencent Cloud SGX remote attestation service is deployed at the regional level. You can access the service in the region where your SGX CVM instance resides to get the optimal experience. After you install the Intel SGX SDK, the default configuration file `/etc/sgx_default_qcnl.conf` of the service will be generated automatically. Manually modify the file in the following steps to adapt to the service in the region of your SGX CVM instance.
 <dx-alert infotype="explain" title="">
 - Currently, the SGX remote attestation service is available only in the Beijing, Shanghai, and Guangzhou regions.
 - Intel Ice Lake supports only the remote attestation method based on Intel SGX DCAP rather than Intel EPID.
@@ -98,7 +98,7 @@ cd /opt/intel/sgxsdk/SampleCode/SampleEnclave && make
 ```
 ./app
 ```
-If a result in the following figure is returned, the start succeeds.
+If a result in the following figure is returned, the enclave is started.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ae6cf48bfae18e245cb9c22fe85c5c63.png)
 
 
