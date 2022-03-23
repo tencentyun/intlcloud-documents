@@ -1,12 +1,11 @@
->?SSL VPN 内测中，如需体验，请 [提交工单](https://console.cloud.tencent.com/workorder/category)。
->
+
 
 ## 前提条件
 - 本地设备和腾讯云侧 VPC 内私有网段不能相同，避免出现 IP 冲突。 
 - 客户端已连接公网。
 
 ## 配置流程
-![](https://qcloudimg.tencent-cloud.cn/raw/aa83c71919f5f685999a1a5690ab90c2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/21651b0e3cab4ee790a14a1147199b23.png)
 1. [创建 SSL VPN 网关](https://intl.cloud.tencent.com/document/product/1037/43919)。
 创建 SSL 协议类型的 VPN 网关。
 2. [创建 SSL 服务端](https://intl.cloud.tencent.com/document/product/1037/43905)。
