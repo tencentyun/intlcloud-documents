@@ -5,7 +5,7 @@ Your profile photo, display name, and personal meeting ID are displayed.
 
 ### Account type
 - Your account type is displayed.
-- 显示最大参会人数：2000人。
+
 
 ### Account security
 - The mobile number and locking status are displayed.
@@ -33,8 +33,6 @@ Your profile photo, display name, and personal meeting ID are displayed.
 **Mute Attendees upon Entry**
 Enable When Attendees Exceed 6 People.
 
-**入会成员设置**
-展示入会成员范围。
 
 ## Meeting List
 The meeting list displays upcoming and past meetings.
@@ -49,7 +47,4 @@ The meeting list displays upcoming and past meetings.
 - Clicking **Meeting Topic** will redirect you to **Meeting Details**, where you can sync the meeting start time to your calendar and view the meeting documents.
 - To schedule a meeting, you can click **Schedule a Meeting** to enter the meeting scheduling page.
 
-**实时会议**
-- 列表展示参数：开始时间、会议主题、会议号、人数、操作。
-- 若要安排新会议，可单击**预定会议**跳转至预定会议页面。、
 
