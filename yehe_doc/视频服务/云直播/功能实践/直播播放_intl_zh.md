@@ -4,8 +4,7 @@
 3. 选择 [域名管理](https://console.cloud.tencent.com/live/domainmanage)，单击【添加域名】，填写您已备案成功的域名，选择类型为【播放域名】，单击【保存】即可。
 >!
 >- 若您没有播放域名，可以前往 [【域名注册】](https://buy.cloud.tencent.com/domain?from=console) 购买域名。您也可以通过其他域名服务商购买域名。
->-  若您已有购买域名且未进行域名备案，请前往腾讯云的 [域名备案](https://cloud.tencent.com/product/ba) 进行备案，您也可以在其他域名服务商那进行备案。
->
+
 4. 登录 [域名服务控制台](https://console.cloud.tencent.com/domain)，对已添加成功的播放域名进行 CNAME 配置，具体操作请参见 [配置域名 CNAME](https://intl.cloud.tencent.com/document/product/267/31057)。
 
 ## 获取播放地址
