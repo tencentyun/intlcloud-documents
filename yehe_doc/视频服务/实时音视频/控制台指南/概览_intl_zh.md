@@ -23,7 +23,7 @@
 - 若您的套餐包状态为“使用中”，支持通过单击套餐包右侧的 **告警设置** 进入开启余量告警功能。
 - 若您需购买新的套餐包，可单击 **购买套餐包** 前往实时音视频 TRTC 通用套餐包购买页进行购买。
 >? 购买套餐包前，请确保已了解相关计费信息，详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/647/34610)。
-- 若您需对已有套餐包进行管理，可单击 **[套餐包管理](https://console.cloud.tencent.com/trtc/package)** 进入相关操作页面，更多详情请参见 [套餐包管理](https://intl.cloud.tencent.com/document/product/647/41613)。 
+- 若您需对已有套餐包进行管理，可单击 **[套餐包管理](https://console.cloud.tencent.com/trtc/package)** 进入相关操作页面。 
 
 ## 快捷工具
 <table>
