@@ -5,7 +5,7 @@
 | Quick filtering | A quick filtering variable allows you to filter data of all charts on the dashboard by specified fields, which is equivalent to adding filter criteria in chart query statements. | All charts on the dashboard         |
 
 
-## Variable Data Source
+## Configuring a Data Source Variable
 
 ### Directions
 
@@ -44,7 +44,7 @@
 A data source variable does not apply directly to all charts on the dashboard. It applies only to those charts that use it on the chart editing page.
 
 
-## Quick Filtering Variable
+## Configuring a Quick Filtering Variable
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls/overview).
 2. On the left sidebar, click **Dashboard** to enter the dashboard management page.
