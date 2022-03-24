@@ -13,7 +13,7 @@ Before the metadata import, you need to first export the metadata file from open
 
 1. Open the browser and log in to the open-source RabbitMQ console.
 2. On the **Overview** tab page, click **Export definitions**, and enter the filename for download. Select “All” or a specific vhost for the “Virtual host” field and click **Download broker definitions** on the right to export the metadata file of all vhosts or the specified vhost.
-![](https://qcloudimg.tencent-cloud.cn/raw/5faa9f9ac376fe202882d5a090fd0c53.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b9e3d7c937efc4730416a937b1516f3a.png)
 
 #### Export metadata with the HTTP-based API of open-source RabbitMQ
 
@@ -33,14 +33,14 @@ Before the metadata import, you need to first export the metadata file from open
 
 1. Log in to the [TDMQ for RabbitMQ console](https://console.cloud.tencent.com/tdmq/rabbit-cluster) and click **Migration to Cloud** on the left sidebar.
 2. On the **Migration to Cloud** page, select a region and click **Create Task**.
-![](https://qcloudimg.tencent-cloud.cn/raw/5f52006a9fcc1df81b0e822aae37d9fb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1f0baeaa288d59616d7b5e9ba1742fd5.png)
 3. On the task creation page, create a task to import the open-source RabbitMQ metadata and fill in the required fields.
 <dx-tabs>
 ::: Cluster migration
-![](https://qcloudimg.tencent-cloud.cn/raw/815bdd1d86c2d2dc585920987aa040f0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b8a87752504a3cda48e381e4b55c50fb.png)
 :::
 ::: Vhost import
-![](https://qcloudimg.tencent-cloud.cn/raw/e1afafb104c5e2ed26e6764a64beafdf.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/540b17cb81c8fd162789abab60709ab0.png)
 :::
 </dx-tabs>
 
@@ -64,7 +64,7 @@ After that, the metadata file format will be automatically verified. Once the ve
 ### View migration task details
 
 1. Select a region on the [Migration to Cloud]https://console.cloud.tencent.com/tdmq/rabbit-migrate page, and you can view the list of all migration tasks in this region.
-![](https://qcloudimg.tencent-cloud.cn/raw/cddd79fa84d2f4beeb2ca08500e4feab.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d904ce359b3efd2d784a2dea0ef716a0.png)
 2. The **Status** column displays the execution status of each migration task. Below are the status descriptions:
 
 | Status     | Description                                                         |
@@ -76,7 +76,7 @@ After that, the metadata file format will be automatically verified. Once the ve
 | Timed out | The metadata file import timed out.                                       |
 
 3. Click **View Details** in the **Operation** column to view the metadata file import details.
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/475a0e7aa59ff87b654a20c12a2b4d5c.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/298ff7c0bb77d7da146cc864331511dc.png)
 
 ## Metadata import description
 
