@@ -23,8 +23,7 @@ This section shows you package usage. You can view information including package
 - If the status of your package is **In Use**, you can click **Alarm Settings** to enable **Remaining Usage Alarm**.
 - To purchase a package, click **Purchase Package** to visit the TRTC general package purchase page.
 >? Before purchasing a package, make sure that you are aware of the billing standards. For details, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/647/34610).
--To manage your packages, click **[Package Management](https://console.cloud.tencent.com/trtc/package)**. For details, please see [Package Management](https://intl.cloud.tencent.com/document/product/647/41613). 
-
+-To manage your packages, click **[Package Management](https://console.cloud.tencent.com/trtc/package)**.
 ## Shortcuts
 <table>
 <tr><th width="45%">Sidebar</th><th width="20%">Section</th><th>Description</th>
