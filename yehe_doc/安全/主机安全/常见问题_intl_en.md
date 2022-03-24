@@ -37,7 +37,7 @@ If you find an undetected trojan file, please [submit a ticket](https://console.
 Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing), select **Asset Management** > **Server List** on the left sidebar, find the server from which you want to uninstall CWP, and click **Uninstall**. Or, open the installation directory and use the uninstaller there for uninstallation.
 
 ### What should I do if there is a problem with identity verification for my Tencent Cloud account?
-If you have encountered a problem related to the Tencent Cloud account when using CWP, please see the [account documentation](https://intl.cloud.tencent.com/document/product/378?from_cn_redirect=1).
+Make sure you have completed real-name registration before you purchased resources for the Chinese mainland. If you have encountered a problem related to the Tencent Cloud account when using CWP, please see the [account documentation](https://intl.cloud.tencent.com/document/product/378?from_cn_redirect=1).
 
 ### How can I reduce the probability of server intrusion?
 - Fix high-risk vulnerabilities and baseline issues in a timely manner.
