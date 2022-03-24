@@ -1,7 +1,7 @@
 ## 概要
 このドキュメントでは、一般的なパブリックIPアドレスを使用する方法についてご紹介いたします。 一般的なパブリックIPはCloud Virtual Machineの購入時にのみ割り当てられます。CVMとのバインドを解除することはできません。 購入時に割り当てられていない場合は、取得することができません。
 <dx-alert infotype="explain" title="">
-- 従来タイプのアカウントが標準IPとのバインドを解除する場合、各アカウントには1日に無料で10回、パブリックIPを再割り当てすることができます。
+- 従来のアカウントタイプでは、CVMでEIPのバインドを解除すると、各アカウントが通常のパブリックIPを1日10回無料で再配布できます。
 - 現在、一般的なパブリックIPのアドレスタイプは、標準BGP IPのみサポートしています。
 </dx-alert>
 
@@ -21,12 +21,27 @@
 	<th width="20%">関連ドキュメント</th>	
   </tr>
   <tr>
+	<td>パブリックIPアドレスの回収</td>
+	<td>誤操作によってパブリックIPアドレス（Elastic IPと一般的なパブリックIPを含む）をリリースまたは返却した場合は、パブリックIP
+	コンソールで回収でき、回収後のパブリックIPはElastic IPとなります。</td>
+	<td>
+	  -
+	</td>
+  </tr>
+  <tr>
+	<td>一般的なパブリックIPのEIPへの転換</td>
+	<td>CVMの一般的なパブリックIPをElastic IPに転換すると、転換後のElastic IPは
+	いつでもCVMとバインド解除およびバインドできるため、パブリックIPの柔軟な管理をさらに手軽に実現できます。</td>
+	<td>
+	  -</a>
+	</td>
+  </tr>
+  <tr>
 	<td>パブリックIPの変更</td>
 	<td>CVMの一般的なパブリックIPを変更し、変更後、元のパブリックIPはリリースされます。</td>
 	<td>
 	  <ul style="margin:0px">
-		<li>
-		  <a href="https://intl.cloud.tencent.com/document/product/213/16642">CVMコンソールにおけるパブリックIPの変更</a>
+	 <a href="https://intl.cloud.tencent.com/document/product/213/16642">CVMコンソールにおけるパブリックIPの変更</a>
 		</li>
 	  </ul>
 	</td>
@@ -39,3 +54,4 @@
 	</td>
   </tr>
 </table>
+
