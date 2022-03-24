@@ -13,7 +13,7 @@
 
 1. 打开浏览器登录开源 RabbitMQ 控制台。
 2. 在 Overview 页面下方，单击 **Export definitions**。在输入框中填写目标文件名后，在“Virtual host”处选择“All”或某个 Vhost，单击右侧的 **Download broker definitions**，导出全部 Vhosts 或某个 Vhost 的元数据文件。
-![](https://qcloudimg.tencent-cloud.cn/raw/5faa9f9ac376fe202882d5a090fd0c53.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b9e3d7c937efc4730416a937b1516f3a.png)
 
 #### 使用开源 RabbitMQ HTTP API 导出元数据
 
@@ -33,14 +33,14 @@
 
 1. 登录 [消息队列 RabbitMQ 版控制台](https://console.cloud.tencent.com/tdmq/rabbit-cluster)，在左侧导航栏单击**迁移上云**。
 2. 在迁移上云页面，选择目标地域后，单击**新建任务**。
-![](https://qcloudimg.tencent-cloud.cn/raw/5f52006a9fcc1df81b0e822aae37d9fb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1f0baeaa288d59616d7b5e9ba1742fd5.png)
 3. 在新建任务页面，创建导入开源 RabbitMQ 元数据任务，填写相关字段：
 <dx-tabs>
 ::: 集群迁移
-![](https://qcloudimg.tencent-cloud.cn/raw/815bdd1d86c2d2dc585920987aa040f0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b8a87752504a3cda48e381e4b55c50fb.png)
 :::
 ::: 导入 Vhost
-![](https://qcloudimg.tencent-cloud.cn/raw/e1afafb104c5e2ed26e6764a64beafdf.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/540b17cb81c8fd162789abab60709ab0.png)
 :::
 </dx-tabs>
 
@@ -64,7 +64,7 @@
 ### 查看迁移任务详情
 
 1. 进入 [迁移上云](https://console.cloud.tencent.com/tdmq/rabbit-migrate) 界面，选择目标地域后，即可查看该地域下所有迁移上云的任务列表。
-![](https://qcloudimg.tencent-cloud.cn/raw/cddd79fa84d2f4beeb2ca08500e4feab.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d904ce359b3efd2d784a2dea0ef716a0.png)
 2. 状态列展示了某一迁移上云任务的执行结果。各状态说明如下：
 
 | 状态     | 说明                                                         |
@@ -76,7 +76,7 @@
 | 迁移超时 | 导入元数据文件时超时。                                       |
 
 3. 单击操作列的**查看详情**，查看元数据文件导入详情。
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/475a0e7aa59ff87b654a20c12a2b4d5c.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/298ff7c0bb77d7da146cc864331511dc.png)
 
 ## 元数据导入说明
 
