@@ -1,6 +1,6 @@
 ## Prerequisites
 
-Before purchasing an Anti-DDoS Advanced instance, you need to register a Tencent cloud account and complete identity verification.
+Before purchasing an Anti-DDoS Advanced (Chinese Mainland) instance , you need to register a Tencent cloud account and complete identity verification.
 
 ## Steps
 1. Log in to the [Anti-DDoS Advanced console](https://console.cloud.tencent.com/dayu/bgpip), and click ***Create***.
