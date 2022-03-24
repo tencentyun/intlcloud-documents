@@ -41,121 +41,61 @@ rm -rf /var/lib/cloud
 Tencent Cloud implements all instance initialization operations through cloud-init, ensuring the transparency of the operations inside an instance. The following briefly covers some initialization operations. For more details, see [cloud-init documentation](http://cloudinit.readthedocs.io/en/latest/).
 
 <table>
+<tr><th style="width: 25%;">Initialization operation</th><th style="width: 25%;">Default behavior</th><th style="width: 25%;">Customization</th><th style="width: 25%;">Notes</th></tr>
 <tr>
-    <th style="width: 18%;">Initialization Type</th>
-    <th style="width: 25%;">Default Behavior</th>
-    <th style="width: 27%;">Disablement Method</th>
-    <th style="width: 30%;">Note</th>
-  </tr>
-  <tr>
-	<td>hostname initialization</td>
-	<td>During <b>the first boot</b> of an instance, cloud-init will set the hostname of the instance according to the hostname information in <code>vendor_data.json</code>.</td>
-	<b>首次启动</b>时，Cloud-Init 会根据 
-	<code>vendor_data.json</code> 中的 hostname 信息来设置实例的 hostname。</td>
-	<td>
-	When you use a custom image to create or reinstall an instance, if you want to keep the custom hostname settings of the image, set <code>preserve_hostname</code> in <code>/etc/cloud/cloud.cfg</code> to <code>true</code> and delete the <code>- scripts-user</code> line before making the image.
-	设置，则请在制作自定义镜像之前将 <code>/etc/cloud/cloud.cfg</code> 中的 <code>preserve_hostname</code> 设置为 <code>true</code>，并删除 <code>- scripts-user</code> 这行配置。
-	</td>
-	<td>If <code>preserve_hostname</code> is <code>true</code> and the <code>- scripts-user</code> configuration is disabled, the instance's internal <code>/var/lib/cloud/instance/scripts/runcmd</code> initialization script will not be executed, which will affect the initialization of other items (mainly related to cloud monitoring and security product installation and repository settings). 
-	<code>true</code> 且 <code>- scripts-user</code> 配置被禁用，则实例内部的 
-	<code>/var/lib/cloud/instance/scripts/runcmd</code>
-	初始化脚本将不会被执行，并会同时影响其他子项的初始化（主要涉及：云监控、云安全的安装、软件源的设置）。
-	Meanwhile, custom scripts will not be executed when you create an instance.</td>
-  </tr>
-  <tr>
-	<td>/etc/hosts initialization</td>
-	<td>During <b>the first boot</b> of an instance, cloud-init will initialize <code>/etc/hosts</code> as <code>127.0.0.1 $hostname</code> by default.</td>
-	<b>首次启动</b>时，Cloud-Init 会默认将 
-	<code>/etc/hosts</code> 初始化为 
-	<code>127.0.0.1 $hostname</code>。</td>
-	<td>When you use a custom image to create or reinstall an instance, if you want to keep the custom `/etc/hosts` settings of the image, you can delete the <code>- scripts-user</code> and <code>- [&#39;update_etc_hosts&#39;, &#39;once-per-instance&#39;]</code> lines in <code>/etc/cloud/cloud.cfg</code> before making the image.</td>
-	设置，可以在制作自定义镜像之前在 
-	<code>/etc/cloud/cloud.cfg</code> 里面删除 
-	<code>- scripts-user</code> 与 
-	<code>- [&#39;update_etc_hosts&#39;, &#39;once-per-instance&#39;]</code> 这两行配置。</td>
-	<td>
-	  <ul style="margin: 0px;">
-		<li>If the <code>- scripts-user</code> configuration is disabled, the instance's internal <code>/var/lib/cloud/instance/scripts/runcmd</code> initialization script will not be executed, which will affect the initialization of other items (mainly related to cloud monitoring and security product installation and repository settings). Meanwhile, custom scripts will not be executed when you create an instance.</li> 
-		<code>- scripts-user</code> 这行配置，实例内部的 
-		<code>/var/lib/cloud/instance/scripts/runcmd</code>
-		初始化脚本将不会被执行，并会同时影响其他子项的初始化（主要涉及：云监控、云安全的安装、软件源的设置）。同时，在您创建子机时，自定义脚本也不会被执行。</li>
-		<li>During instance restart, the <code>/etc/hosts</code> settings of some existing instances will be overwritten. For solutions, see <a href="https://intl.cloud.tencent.com/document/product/213/32504">Modifying etc/hosts Configuration of Linux Instance</a>.</li> 
-		<code>/etc/hosts</code> 的设置都会被覆盖。解决方案请参见 
-		<a href="https://intl.cloud.tencent.com/document/product/213/32504">如何有效的修改 Linux 实例的 etc hosts
-		配置</a>。</li>
-	  </ul>
-	</td>
-  </tr>
-  <tr>
-	<td>DNS initialization (non-DHCP scenario)</td>
-	<td>During <b>the first boot</b> of an instance, cloud-init will set the DNS of the instance according to the nameservers information in <code>vendor_data.json</code>.</td>
-	<b>首次启动</b>时，Cloud-Init 会根据 
-	<code>vendor_data.json</code> 中的 nameservers 信息来设置实例的 DNS。</td>
-	<td>When you use a custom image to create or reinstall an instance, if you want to keep the custom DNS settings of the image, you can delete the <code>- resolv_conf</code> and <code>unverified_modules: [&#39;resolv_conf&#39;]</code> lines in <code>/etc/cloud/cloud.cfg</code> before making the image.</td>
-	设置，可以在制作自定义镜像之前在 
-	<code>/etc/cloud/cloud.cfg</code> 里面删除 
-	<code>- resolv_conf</code> 与 
-	<code>unverified_modules: [&#39;resolv_conf&#39;]</code> 两行配置。</td>
-	<td>None.</td>
-  </tr>
-  <tr>
-	<td>Repository initialization</td>
-	<td>During <b>the first boot</b> of an instance, cloud-init will set the repository of the instance according to the write_files information in <code>vendor_data.json</code>.</td>
-	<b>首次启动</b>时，Cloud-Init 会根据 
-	<code>vendor_data.json</code> 中的 write_files 信息来设置实例的软件源。</td>
-	<td>
-	When you use a custom image to create or reinstall an instance, if you want to keep the custom repository settings of the image, you can delete the <code>- write-files</code> line in <code>/etc/cloud/cloud.cfg</code> before making the image.</td>
-	<code>/etc/cloud/cloud.cfg</code> 里面删除 
-	<code>- write-files</code> 这行配置。</td>
-	<td>None.</td>
-  </tr>
-  <tr>
-	<td>NTP initialization</td>
-	<td>During <b>the first boot</b> of an instance, cloud-init will set the NTP server configuration of the instance according to the NTP server information in <code>vendor_data.json</code> and start the NTP service.</td>
-	<b>首次启动</b>时，Cloud-Init 会根据 
-	<code>vendor_data.json</code> 中的 NTP Server 信息来设置实例的 NTP 服务器配置，并拉起 NTP
-	Service。</td>
-	<td>When you use a custom image to create or reinstall an instance, if you want to keep the custom NTP settings of the image, you can delete the <code>- ntp</code> line in <code>/etc/cloud/cloud.cfg</code> before making the image.</td>
-	设置，可以在制作自定义镜像之前在 
-	<code>/etc/cloud/cloud.cfg</code> 里面删除 
-	<code>- ntp 这行配置。</code></td>
-	<td>None.</td>
-  </tr>
-  <tr>
-	<td>Password initialization</td>
-	<td>During <b>the first boot</b> of an instance, cloud-init will set the default account password of the instance according to the chpasswd information in <code>vendor_data.json</code>.</td>
-	<b>首次启动</b>时，Cloud-Init 会根据 
-	<code>vendor_data.json</code> 中的 chpasswd 信息来设置实例的默认账号密码。</td>
-	<td>
-	When you use a custom image to create or reinstall an instance, if you want to keep the custom default account password of the image, you can delete the <code>- set-passwords</code> line in <code>/etc/cloud/cloud.cfg</code> before making the image.</td>	
-	<code>/etc/cloud/cloud.cfg</code> 里面删除 
-	<code>- set-passwords</code> 这行配置。</td>
-	<td>None.</td>
-  </tr>
-  <tr>
-	<td>Key binding</td>
-	<td>During <b>the first boot</b> of an instance, cloud-init will set the default account key of the instance according to the ssh_authorized_keys information in <code>vendor_data.json</code>.</td>
-	<b>首次启动</b>时，Cloud-Init 会根据 
-	<code>vendor_data.json</code> 中的 ssh_authorized_keys 信息来设置实例的默认账号密钥。</td>
-	<td>
-	When you use a custom image to create or reinstall an instance, if you want to keep the custom key of the image, you can delete the <code>- users-groups</code> line in <code>/etc/cloud/cloud.cfg</code> before making the image.</td>	
-	<code>/etc/cloud/cloud.cfg</code> 里面删除 
-	<code>- users-groups</code> 这行配置。</td>
-	<td>
-	If you manually bind the instance to a key inside the instance, the previous key will be overwritten when the key binding operation is performed in the console. </td>
-  </tr>
-  <tr>
-	<td>Network initialization (non-DHCP scenario)</td>
-	<td>During <b>the first boot</b> of an instance, cloud-init will set the IP, Gateway, and Mask according to the information in <code>network_data.json</code>.</td>
-	<b>首次启动</b>时，Cloud-Init 会根据 
-	<code>network_data.json</code> 中的信息来设置实例的 IP、GATEWAY、MASK 等。</td>
-	<td>
-	When you use a custom image to create or reinstall an instance, if you want to keep the custom network information of the image, you can add the <code>network: {config: disabled}</code> line in <code>/etc/cloud/cloud.cfg</code> before making the image.</td>	
-	<code>/etc/cloud/cloud.cfg</code> 里面增加 
-	<code>network: {config: disabled}</code> 这行配置。</td>
-	<td>None.</td>
-  </tr>
+<td>hostname initialization</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the hostname of the instance according to the hostname information in <code>vendor_data.json</code>.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom hostname of the image, you can delete the configuration, <code>- scripts-user</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>After you disable <code>- scripts-user</code>, the initialization script, <code>/var/lib/cloud/instance/scripts/runcmd</code>, inside the instance will not be run. Disabling the configuration will also affect the initialization of other sub-items such as the installation of cloud monitor and cloud security and software source settings. Also, the custom script will not be run when you create the CVM.</td>
+</tr>
+<tr>
+<td>/etc/hosts initialization</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will initialize <code>/etc/hosts</code> to <code>127.0.0.1 $hostname</code> by default.</td>
+<td>If you create or reinstall an instance with a custom image and want to keep the custom /etc/hosts setting of the image, you can delete the <code>- scripts-user</code> and <code>- ['update_etc_hosts', 'once-per-instance']</code> configurations from <code>/etc/cloud/cloud.cfg</code> before creating a custom image.</td>
+<td>
+<ul style="margin: 0px;">
+<li>After you disable <code>- scripts-user</code>, the initialization script, <code>/var/lib/cloud/instance/scripts/runcmd</code>, inside the instance will not be run. Disabling the configuration will also affect the initialization of other sub-items such as the installation of cloud monitor and cloud security and software source settings. Also, the custom script will not be run when you create the CVM.</li>
+<li>Every time the CVM restarts, the <code>/etc/hosts</code> settings of some existing CVMs will be overwritten. To solve this problem, see <a href="https://intl.cloud.tencent.com/document/product/213/32504">Modifying the etc/hosts Settings of a Linux Instance</a>.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>DNS initialization (non-DHCP scenario)</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the DNS of the instance according to the nameservers information in <code>vendor_data.json</code>.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom DNS setting of the image, you can delete the configuration, <code>- resolv_conf</code> and <code>unverified_modules: ['resolv_conf']</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>None.</td>
+</tr>
+<tr>
+<td>Software source initialization</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the software source of the instance according to the write_files information in <code>vendor_data.json</code>.</td><td>If you create or reinstall an instance with a custom image and you want to keep the custom software source setting of the image, you can delete the configuration, <code>- write-files</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>None.</td>
+</tr>
+<tr>
+<td>NTP initialization</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the NTP server configuration of the instance according to the NTP server information in <code>vendor_data.json</code> and start the NTP service.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom NTP configuration of the image, you can delete the configuration, <code>- ntp<code/>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>None.</td>
+</tr>
+<tr>
+<td>Password initialization</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the default account password of the instance according to the chpasswd information in <code>vendor_data.json</code>.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom default password of the image, you can delete the configuration, <code>- set-passwords</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>None.</td>
+</tr>
+<tr>
+<td>Key binding</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the default account key of the instance according to the ssh_authorized_keys information in <code>vendor_data.json</code>.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom default key of the image, you can delete the configuration, <code>- users-groups</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>If you manually bind the instance to a key inside the instance, the previous key will be overwritten when the key binding operation is performed via the console. </td>
+</tr>
+<tr>
+<td>Network initialization (non-DHCP scenario)</td>
+<td>During <b>the initial launch</b> of an instance, cloud-init will set the IP, Gateway, and Mask according to the information in <code>network_data.json</code>.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom network information of the image, you can add <code>network: {config: disabled}</code> to <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>None.</td>
+</tr>
 </table>
+
 
 
 
