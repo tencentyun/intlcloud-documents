@@ -1,6 +1,6 @@
 ## Feature Description
 Sometimes, you may need to obtain the list of server IP addresses for security purposes. This API is used by the app admin to obtain the list of server IP addresses or IP ranges used by the SDK and third-party callbacks.  
->!You can only use this API to obtain IP addresses or IP ranges within Mainland China.
+
 
 ## API Calling Description
 ### Sample request URL
