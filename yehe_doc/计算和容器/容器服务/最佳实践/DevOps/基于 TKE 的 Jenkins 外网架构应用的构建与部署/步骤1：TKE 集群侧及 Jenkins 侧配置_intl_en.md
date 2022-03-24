@@ -96,7 +96,7 @@ If the result shown in the following figure appears, the configuration was succe
 1. Log in to the Jenkins backend and click **Manage Jenkins** on the left sidebar.
 2. On the **Manage Jenkins** panel, click **Manage Plugins**.
 3. On the **Available** tab, select **Kubernetes**, **Git Parameter**, and **Extended Choice Parameter**.
- - **Locale**：汉化语言插件，安装该插件可使 Jenkins 界面默认设置为中文版。
+ - **Locale**：Chinese language plug-in. Installing this plug-in can make the Jenkins interface default to the Chinese version.
  - **Kubernetes**: indicates the Kubernetes plug-in.
  - **Git Parameter** and **Extended Choice Parameter**: are used to pass parameters during package building.
    Take the Kubernetes plug-in as an example, as shown in the following figure:
