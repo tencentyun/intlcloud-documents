@@ -16,7 +16,7 @@
 
 - PHP 5.6+
 You can run the `php -v` command to view the current PHP version.
->! If your PHP version is `>=5.3` and `<5.6`, please use [v1.3](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3).
+>! If your PHP version is 5.3 or later and earlier than 5.6, please use [v1.3](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3).
 >
 - cURL extension
 - XML extension
@@ -65,7 +65,7 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 ```
 This command will create a `vendor` folder in the current directory. The folder will contain the SDK's dependent library and an `autoload.php` script file for future calls in your project.
->! Composer will download Guzzle 6 or Guzzle 7 according to the PHP version. Guzzle 7 supports the Laravel 8 framework. If the PHP version is or later than 7.2.5, Guzzle 7 will be downloaded by default. Otherwise, Guzzle 6 will be downloaded.
+>! Composer will download Guzzle 6 or Guzzle 7 according to the PHP version. Guzzle 7 supports the Laravel 8 framework. If the PHP version is 7.2.5 or later, Guzzle 7 will be downloaded by default. Otherwise, Guzzle 6 will be downloaded.
 >
 5. Run the `autoloader` script to call cos-php-sdk-v5 and import the `autoload.php` file into your code.
 ```php
@@ -81,8 +81,8 @@ Now, you can use COS XML SDK for PHP in your project.
 Install the SDK using the Phar method as instructed below:
 1. Download the phar file [here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
 >? 
-> - If your PHP version is or later than = 5.6 but earlier than 7.2.5, download `cos-sdk-v5-6.phar` to use Guzzle 6.
-> - If your PHP version is or later than 7.2.5, download `cos-sdk-v5-7.phar` to use Guzzle 7.
+> - If your PHP version is 5.6 or later and earlier than 7.2.5, download `cos-sdk-v5-6.phar` to use Guzzle 6.
+> - If your PHP version is 7.2.5 or later, download `cos-sdk-v5-7.phar` to use Guzzle 7.
 > 
 2. Import the phar file into your code.
 ```php
@@ -94,8 +94,8 @@ require  '/path/to/cos-sdk-v5-x.phar';
 Install the SDK using the source code as instructed below:
 1. Download the `cos-sdk-v5.tar.gz` compressed file on the [SDK releases page](https://github.com/tencentyun/cos-php-sdk-v5/releases).
 >? 
-> - If your PHP version is or later than 5.6 but earlier than 7.2.5, download `cos-sdk-v5-6.tar.gz` to use Guzzle 6.
-> - If your PHP version is or later than 7.2.5, download `cos-sdk-v5-7.tar.gz` to use Guzzle 7.
+> - If your PHP version is 5.6 or later and earlier than 7.2.5, download `cos-sdk-v5-6.tar.gz` to use Guzzle 6.
+> - If your PHP version is 7.2.5 or later, download `cos-sdk-v5-7.tar.gz` to use Guzzle 7.
 > 
 2. Decompress the file and run the `autoload.php` script to load the SDK and import the `autoload.php` file into your code:
 ```php
@@ -367,7 +367,7 @@ try {
 }
 ```
 
-### Delete an object
+### Deleting an object
 
 [//]: # ".cssg-snippet-delete-object-comp"
 ```php
