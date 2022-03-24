@@ -1,5 +1,5 @@
 
-## Signing up for a Tencent Cloud Account
+## Signing Up for a Tencent Cloud Account
 You need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) before using VOD.
 
 
