@@ -31,7 +31,7 @@ You can use tools such as [VLC](https://intl.cloud.tencent.com/document/product/
 4. Tap the play button in the bottom-left corner to start playback.
 
 ### Scenario 4. Playback on web
-You are recommended to choose [TCPlayerLite](https://cloud.tencent.com/document/product/881/20207) in the player SDK for playback. Based on Tencent Cloud's powerful backend functionality and AI technology, TCPlayerLite provides excellent playback capabilities for live streaming and video on-demand. Deeply integrated with the Tencent Cloud LVB and VOD services, Player+ features smooth and stable playback performance, advertising placement, and data monitoring.
+You are recommended to choose TCPlayerLite in the player SDK for playback. Based on Tencent Cloud's powerful backend functionality and AI technology, TCPlayerLite provides excellent playback capabilities for live streaming and video on-demand. Deeply integrated with the Tencent Cloud LVB and VOD services, Player+ features smooth and stable playback performance, advertising placement, and data monitoring.
 >! Currently, most mobile browsers on the market do not support HTTP-FLV playback. Therefore, for web-based playback, you are recommended to select the HTTP-FLV playback protocol for PC browsers and HLS for mobile browsers. 
 
 ## FAQs
