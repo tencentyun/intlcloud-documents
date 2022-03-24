@@ -8,7 +8,7 @@ Time-shift playback in live streaming is based on live recording, live streaming
 - You have [signed up](https://intl.cloud.tencent.com/register) and [logged in to](https://intl.cloud.tencent.com/login) a Tencent Cloud account, and completed the identity verification. Unverified users cannot purchase instances of live streaming time shifting for Chinese mainland.
 - You have activated the CSS service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 
-## Notes:
+## Notes
 - To use time-shift playback, you need first enable the [time shifting](#time) feature.
 - The smallest time-shift duration is 90s, which means there is a latency of over 90s in the playback content compared with the live streaming content.
 - The time shifting feature is being beta tested and is not charged currently. However, the feature relies on live recording, so you will be charged a [live recording fee](https://intl.cloud.tencent.com/document/product/267/39605) and [storage and playback fees](https://intl.cloud.tencent.com/document/product/266/2838) for using the feature.
