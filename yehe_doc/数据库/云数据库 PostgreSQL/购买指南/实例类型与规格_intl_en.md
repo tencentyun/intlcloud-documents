@@ -28,7 +28,7 @@ TencentDB for PostgreSQL supports the following types of instances:
 <th>Edition</th><th>Version</th><th>Specification Type</th><th>CPU and MEM</th><th>Disk Capacity</th></tr>
 <tr>
 <td rowspan="13" width="20%">Dual-Server high-availability edition (one primary and one standby)<br>Read-Only instance</td>
-<td rowspan="13" width="12%">10, 11, and 12</td>
+<td rowspan="13" width="12%">10, 11, 12 and 13</td>
 <td rowspan="13" width="22%">General - local high-performance SSD</td>
 <td>1 core, 2 GiB</td>
 <td>10-2,000 GB</td></tr>
