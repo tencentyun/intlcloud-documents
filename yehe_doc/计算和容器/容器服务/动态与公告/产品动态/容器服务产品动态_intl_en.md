@@ -9,9 +9,11 @@
 		You can add cloud labels when using StorageClass to dynamically create a CFS instance.
 		</td>
 		<td>2021-12-25</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/36154"> 
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/36154">Managing CFS Templates by Using a StorageClass</a></td>
+</tr>	
+</table>
 
-​		
+
 ## November 2021
 <table>
 <tr><th style="width:20%">Update</th>	<th style="width:50%">Description</th> 
@@ -1438,5 +1440,10 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>-</td>
 	</tr>
 </table> 
+
+
+
+
+
 
 

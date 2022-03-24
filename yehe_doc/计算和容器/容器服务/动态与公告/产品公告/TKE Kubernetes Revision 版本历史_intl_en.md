@@ -22,9 +22,9 @@
 <li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit. (kubelet)</li>
 <li>Merges pr72914, which fixes the issue where mounting might fail if you delete a pod, create a new one, and schedule it to the same node. (kube-controller-manager)</li>
 <li>Fixes the issue where creating containers in CentOS results in cgroup leakage. (kubelet)</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
+<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows you to use kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
 <li>Merges pr97752, which fixes the issue where NewReplicaSet is displayed as <code>&lt;none&gt;</code> when describing deployment. (kubectl)</li>
-<li>Merges pr94833, which fixes the issue where the image tags in status do not match when Pod image has multiple tags. (kubelet).</li>
+<li>Merges pr94833, which fixes the issue where the image tags in status do not match when Pod image has multiple tags. (kubelet)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/100060" rel="nofollow">pr100060</a>, which automatically deletes the volume directory left by orphaned Pod (kubelet).</li>
 <li>The kube-controller-manager supports virtual nodes (kube-controller-manager).</li>
 <li>The kube-scheduler supports retaining fixed number of local replicas when hybrid cloud adds virtual nodes. (kube-scheduler)</li>
@@ -85,7 +85,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/97752" rel="nofollow">pr97752</a>, which fixes the issue where NewReplicaSet is displayed as <code>&lt;none&gt;</code> when describing deployment (kubectl).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/93808" rel="nofollow">pr93808</a>, which fixes the issue where unnecessary information is returned when <code>kube-scheduler --version</code> is executed. (kube-scheduler)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/91590" rel="nofollow">pr91590</a>, which fixes the issue of warning that the port has been allocated when using the multiprotocol service of NodePort type (kube-apiserver).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
+<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows you to use kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/95154" rel="nofollow">pr95154</a>, which fixes the issue where kube-scheduler snapshot contains the nodes being deleted. (kube-scheduler)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/95711" rel="nofollow">pr95711</a>, which fixes the issue where kubectl drain command occupies too much CPU. (kubectl)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/96602" rel="nofollow">pr96602</a>, which fixes the issue where apiserver memory leaks before or after the time gaps. (kube-apiserver)</li>
@@ -93,7 +93,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/97527" rel="nofollow">pr97527</a>, which fixes the issue where map access operations are not synchronized in cpumanager (kubelet).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/100190" rel="nofollow">pr100190</a>, which automatically deletes the volume directory left by orphaned Pod (kubelet).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/92614" rel="nofollow">pr92614</a>, when all containers of the Pod whose restart policy is RestartPolicyOnFailure exit successfully, no new sandbox will be created (kubelet).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/94833" rel="nofollow">pr94833</a>, which fixes the issue where the image tag does not match in status when Pod image has multiple tags (kubelet).</li>
+<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/94833" rel="nofollow">pr94833</a>, which fixes the issue where the image tags in status do not match when Pod image has multiple tags. (kubelet)</li>
 	        </ul></td>
 </tr>
 <tr>
@@ -159,7 +159,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
     <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>, which fixes the issue of missing environmental variables of KUBERNETES_SERVICE_HOST (kubelet).</li>
     <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/92537">92537</a>, which fixes the issue where client-go reflector could not recover from the error "Too large resource version" (kube-apiserver, kube-controller-manager, kube-scheduler, kubelet, and kube-proxy).</li>
     <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/92969">pr92969</a>, which fixes the issue where CVE-2020-8559 privilege escalation from an invaded node results in invasion into other nodes (kube-apiserver).</li>
-    <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/92921">pr92921</a>, which fixes the DOS attack issue where CVE-2020-8557 exhausts the disk space by writing into "/etc/hosts" (kubelet).</li></ul></td>
+    <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/92921">pr92921</a>, which fixes the DOS attack issue where CVE-2020-8557 exhausts the disk space by writing into “/etc/hosts” (kubelet).</li></ul></td>
 </tr>
 </tbody></table>
 
@@ -196,7 +196,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/97752" rel="nofollow">pr97752</a>, which fixes the issue where NewReplicaSet is displayed as <code>&lt;none&gt;</code> when describing deployment (kubectl).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/92614" rel="nofollow">pr92614</a>, when all containers of the Pod whose restart policy is RestartPolicyOnFailure exit successfully, no new sandbox will be created (kubelet).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/91590" rel="nofollow">pr91590</a>, which fixes the issue of warning that the port has been allocated when using the multiprotocol service of NodePort type (kube-apiserver).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
+<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows you to use kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/95301" rel="nofollow">pr95301</a>, which automatically deletes the volume directory left by orphaned Pod (kubelet).</li>
 	        </ul></td>
 </tr>	
@@ -287,7 +287,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
 <tr>
 	<td>2020-01-06</td>
 	<td>v1.16.3-tke.1</td>
-	<td><ul class="params"><li>Incorporates<a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank"> pr79036</a>, which fixes the issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a pod is Guaranteed.</li><li>Incorporates<href="https://github.com/kubernetes/kubernetes/pull/84167" target="_blank"> pr84167</a>, which fixes the issue where an incorrect Etcd key prefix causes an apiserver health check failure.</li><li>Reverts<a href="https://github.com/kubernetes/kubernetes/pull/63066" target="_blank"> pr63066</a>, which fixes the CLB health check and IPVS issues.</li><li>Incorporates<a href="https://github.com/kubernetes/kubernetes/pull/72914" target="_blank"> pr72914</a>, which fixes the issue where mounting may fail if you delete a pod, create a new one, and schedule it to the same node.</li><li>Fixes the issue where creating containers in CentOS results in cgroup leakage.</li><li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Adds metadata cache and timeout. cloud-provider now supports using node names as hostnames.</li><li>Reverts pr79036, which fixes the issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a pod is Guaranteed.</li><li>Produces a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly.</li></ul></td>
+	<td><ul class="params"><li>Incorporates<a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank"> pr79036</a>, which fixes the issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a pod is Guaranteed.</li><li>Incorporates<a href="https://github.com/kubernetes/kubernetes/pull/84167" target="_blank"> pr84167</a>, which fixes the issue where an incorrect Etcd key prefix causes an apiserver health check failure.</li><li>Reverts<a href="https://github.com/kubernetes/kubernetes/pull/63066" target="_blank"> pr63066</a>, which fixes the CLB health check and IPVS issues.</li><li>Incorporates<a href="https://github.com/kubernetes/kubernetes/pull/72914" target="_blank"> pr72914</a>, which fixes the issue where mounting may fail if you delete a pod, create a new one, and schedule it to the same node.</li><li>Fixes the issue where creating containers in CentOS results in cgroup leakage.</li><li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Adds metadata cache and timeout. cloud-provider now supports using node names as hostnames.</li><li>Reverts pr79036, which fixes the issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a pod is Guaranteed.</li><li>Produces a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly.</li></ul></td>
 </tr>
 </tbody></table>
 
@@ -310,7 +310,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
 	<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/97752" rel="nofollow">pr97752</a>, which fixes the issue where NewReplicaSet is displayed as <code>&lt;none&gt;</code> when describing deployment (kubectl).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/78999" rel="nofollow">pr78999</a>, which fixes the issue of judging the case of the protocol during graceful close (kube-proxy).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/91590" rel="nofollow">pr91590</a>, which fixes the issue of warning that the port has been allocated when using the multiprotocol service of NodePort type (kube-apiserver).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
+<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows you to use kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/95301" rel="nofollow">pr95301</a>, which automatically deletes the volume directory left by orphaned Pod (kubelet).</li>
 	        </ul></td>
 </tr>	
@@ -395,7 +395,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
 <tr>
 	<td>2019-12-17</td>
 	<td>v1.14.3-tke.7</td>
-	<td><ul class="params"><li>Adds metadata cache and timeout.</li> <li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Avoids the readiness state of "pod not ready" when kubelet is restarted.</li></ul></td>
+	<td><ul class="params"><li>Adds metadata cache and timeout.</li> <li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Avoids the readiness state of “pod not ready” when kubelet is restarted.</li></ul></td>
 </tr>
 <tr>
 	<td>2019-11-28</td>
@@ -505,7 +505,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
 <tr>
 	<td>2019-12-17</td>
 	<td>v1.12.4-tke.14</td>
-	<td><ul class="params"> <li>Adds metadata cache and timeout.</li> <li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Avoids the readiness state of "pod not ready" when kubelet is restarted.</li></ul></td>
+	<td><ul class="params"> <li>Adds metadata cache and timeout.</li> <li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Avoids the readiness state of “pod not ready” when kubelet is restarted.</li></ul></td>
 </tr>
 	<tr>
 	<td>2019-11-28</td>
@@ -592,7 +592,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
 <tr>
     <td>2020-04-29</td>
 	<td>v1.10.5-tke.17</td>
-    <td>Merges <a href="https://github.com/kubernetes/kubernetes/pull/75622" target="_blank">pr75622</a>, which fixes the issue where, when a large number (>2000) of sts workloads exist in a cluster, it takes too long (about 20s) to synchronize sts changes to a Pod.</td>
+    <td>Merges<a href="https://github.com/kubernetes/kubernetes/pull/75622"> pr75622</a>, which fixes the issue where, when a large number (>2000) of sts workloads exist in a cluster, it takes too long (about 20s) to synchronize sts changes to a Pod.</td>
     </tr>
 <tr>
     <td>2020-04-14</td>
@@ -608,7 +608,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
 <tr>
 	<td>2020-01-13</td>
 	<td>v1.10.5-tke.14</td>
-	<td><ul class="params"><li>Merges<a href="https://github.com/google/cadvisor/pull/2359" target="_blank"> pr2359</a>, which fixes the issue of missing monitoring records when docker root fails to be obtained.</li> <li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86583" target="_blank"> pr86583</a>, which increases the logging level to prevent excessive logs from being generated when iptables does not support random-fully.</li><li>kube-scheduler supports dynamic logging level configuration.</li><li>Produces a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly.</li><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86230" target="_blank"> pr86230</a>, which skips assumed pod updates when pods are scheduled.</li></ul></td>
+	<td><ul class="params"><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/2359" target="_blank"> pr2359</a>, which fixes the issue of missing monitoring records when docker root fails to be obtained.</li> <li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86583" target="_blank"> pr86583</a>, which increases the logging level to prevent excessive logs from being generated when iptables does not support random-fully.</li><li>kube-scheduler supports dynamic logging level configuration.</li><li>Produces a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly.</li><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86230" target="_blank"> pr86230</a>, which skips assumed pod updates when pods are scheduled.</li></ul></td>
 </tr>
 <tr>
 	<td>2019-12-23</td>
@@ -731,7 +731,7 @@ TKE supports hybrid cloud node. (kube-controller-manager)</td>
 <tr>
 	<td>2019-12-17</td>
 	<td>v1.7.8-tke.4</td>
-	<td><ul class="params"><li>kubelet does not delete nodes when checking externalID.</li> <li>Adds metadata cache and timeout.</li><li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Avoids the readiness state of "pod not ready" when kubelet is restarted.</li></ul></td>
+	<td><ul class="params"><li>kubelet does not delete nodes when checking externalID.</li> <li>Adds metadata cache and timeout.</li><li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Avoids the readiness state of “pod not ready” when kubelet is restarted.</li></ul></td>
 </tr>
 <tr>
 	<td>2018-09-28</td>

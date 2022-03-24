@@ -9,9 +9,11 @@
 		通过 StorageClass 动态创建 CFS 实例时支持添加云标签。
 		</td>
 		<td>2021-12-25</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/36154"> 
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/36154"> StorageClass 管理文件存储模板</a></td>
+</tr>	
+</table>
 
-​		
+
 ## 2021年11月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -1438,5 +1440,10 @@
 		<td>-</td>
 	</tr>
 </table> 
+
+
+
+
+
 
 

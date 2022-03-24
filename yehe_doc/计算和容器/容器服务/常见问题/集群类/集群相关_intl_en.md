@@ -15,7 +15,20 @@ All pay-as-you-go models that use cloud disks as system disks are supported.
 
 ### What operating systems are supported for TKE hosts?
 
-Currently, Ubuntu 16.04 and CentOS 7.2 are supported. If you need other operating systems, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us.
+Currently, Ubuntu 16.04 and CentOS 7.2 are supported. If you need other operating systems, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to contact us.
+
+
+
+
+## Cluster Network
+
+
+### What should I do for the cluster network when I develop a custom webhook?
+When you develop a custom webhook, do not block Pods under `kube-system namespace`; otherwise, you cannot use the cluster network normally.
+
+
+
+
 
 ## Adding CVMs
 
