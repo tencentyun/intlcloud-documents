@@ -344,7 +344,7 @@ response = client.upload_file(
 print(response['ETag'])
 ```
 
-### Query objects
+### Querying objects
 
 ```python
 # -*- coding=utf-8
@@ -467,7 +467,7 @@ fp = response['Body'].get_raw_stream()
 print(fp.read())
 ```
 
-### Delete an object
+### Deleting an object
 
 ```python
 # -*- coding=utf-8
