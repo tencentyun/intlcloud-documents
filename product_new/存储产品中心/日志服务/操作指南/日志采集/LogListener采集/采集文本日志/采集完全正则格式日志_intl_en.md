@@ -33,7 +33,7 @@ time_local: [22/Jan/2019:19:19:30 +0800]
 upstream_response_time: 0.354
 ```
 
-> The Full RegEx mode supports extraction of key-value pairs only from single-line logs. To collect from multi-line logs, see [Multi-Line Full Text Collection](https://intl.cloud.tencent.com/document/product/614/17422).
+> The Full RegEx mode supports extraction of key-value pairs only from single-line logs. To collect from multi-line logs, see Multi-Line Full Text Collection.
 
 ## Collection Configuration
 
