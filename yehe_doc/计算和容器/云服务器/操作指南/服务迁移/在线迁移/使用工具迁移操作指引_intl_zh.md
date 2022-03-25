@@ -40,7 +40,7 @@ cd go2tencentcloud_tool
 `go2tencentcloud` 目录下的文件将不会被迁移，请勿将需迁移的文件放置在该目录下。
 </dx-alert>
 2. 在 `user.json` 文件中配置目标云服务器。
-请按照 [user.json 文件参数说明](https://intl.cloud.tencent.com/document/product/213/44340) 配置必填项和所需项的值。请将对应参数值替换为您实际的配置参数，参考示例如下：
+请按照 user.json 文件参数说明配置必填项和所需项的值。请将对应参数值替换为您实际的配置参数，参考示例如下：
  - 示例1：将一台 Linux 源端主机迁移至腾讯云广州地域的一台云服务器中，`user.json` 文件配置为以下内容：
 ```json
 {  
@@ -88,9 +88,9 @@ cd go2tencentcloud_tool
 }  
 ```
 2. （可选）在 `client.json` 文件中配置迁移模式和其他项。
-请按照 [client.json 文件参数说明](https://intl.cloud.tencent.com/document/product/213/44340) 进行配置。如果源端主机和目标云服务器任何一方不能直接访问公网，则可以选择先通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037)、[云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 或者 [专线接入](https://intl.cloud.tencent.com/zh/document/product/216) 等方式建立连接通道，再进行内网模式迁移，详情请参见 [内网迁移教程](https://intl.cloud.tencent.com/document/product/213/44341)。
+请按照 client.json 文件参数说明进行配置。如果源端主机和目标云服务器任何一方不能直接访问公网，则可以选择先通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037)、[云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 或者 [专线接入](https://intl.cloud.tencent.com/zh/document/product/216) 等方式建立连接通道，再进行内网模式迁移。
 3. （可选）排除源端主机上不需迁移的文件或目录。
-若 Linux 源端主机中存在不需要迁移的文件或目录，可将文件或目录添加至 [rsync\_excludes\_linux.txt 文件](https://intl.cloud.tencent.com/document/product/213/44340)。
+若 Linux 源端主机中存在不需要迁移的文件或目录，可将文件或目录添加至 rsync\_excludes\_linux.txt 文件。
 
 ### 迁移前的检查
 
