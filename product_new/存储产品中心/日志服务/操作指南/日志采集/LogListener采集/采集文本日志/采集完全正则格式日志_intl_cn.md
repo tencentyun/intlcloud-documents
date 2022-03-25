@@ -34,7 +34,7 @@ time_local: [22/Jan/2019:19:19:30 +0800]
 upstream_response_time: 0.354
 ```
 
-> 完全正则目前只支持单行日志提取 key-value ，多行日志暂不支持提取，如需采集多行日志请参阅 [多行全文采集](https://intl.cloud.tencent.com/document/product/614/17422) 文档。
+> 完全正则目前只支持单行日志提取 key-value ，多行日志暂不支持提取，如需采集多行日志请参阅多行全文采集 文档。
 
 ## 采集配置
 
