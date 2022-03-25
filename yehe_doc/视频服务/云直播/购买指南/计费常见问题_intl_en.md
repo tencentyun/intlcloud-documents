@@ -15,7 +15,8 @@ You can log in to the [CSS console](https://console.cloud.tencent.com/live) and 
 
 [](id:live_que3)
 ### Will I be charged for upstream push?
-No. You will only be charged for downstream traffic.
+- By default, fees are billed by downstream usage. However, upstream usage will also be billed when the ratio of upstream usage and downstream usage is larger than 1:10, and the daily upstream peak bandwidth exceeds 100 Mbps.
+- Upstream usage will be billed according to the same billing modes and tiered pricing rules as downstream usage. **Billing rules for upstream usage have been applied since 00:00, July 1, 2021**.
 
 [](id:live_que4)
 ### When will value-added service fees start to be billed?

@@ -71,7 +71,7 @@
 
 ## API Examples
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
-    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC" target="view_window">
+    <a href="https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC" target="view_window">
         <div class="card-container">
             <div class="card">
                 <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
@@ -80,7 +80,7 @@
             </div>
         </div>
     </a>
-    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example" target="view_window">
+    <a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example" target="view_window">
         <div class="card-container">
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
@@ -98,7 +98,7 @@
             </div>
         </div>
     </a>
-    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Mac/QTDemo" target="view_window">
+    <a href="https://github.com/LiteAVSDK/Live_Mac/tree/main/QTDemo" target="view_window">
         <div class="card-container">
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
@@ -107,16 +107,16 @@
             </div>
         </div>
     </a>
-    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Web/base-react-next" target="view_window">
+    <a href="https://github.com/LiteAVSDK/TRTC_Web/tree/main/base-react-next" target="view_window">
         <div class="card-container">
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
                 <h3>API Example: Web</h3>
-                <p>Demonstrates how to use RTC APIs for web<br>Build an RTC application from scratch</p>
+                <p>Demonstrates how to use RTC web APIs<br>Build an RTC application from scratch</p>
             </div>
         </div>
     </a>
-    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTC-API-Example" target="view_window">
+    <a href="https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example" target="view_window">
         <div class="card-container">
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/559e93ed3c05c3916300b04b0b09e7aa.svg" data-nonescope="true">
@@ -129,8 +129,8 @@
         <div class="card-container">
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
-                <h3>Online Tryout of APIs for Web</h3>
-                <p>Easy and quick online tryout of the RTC features enabled by the APIs for web</p>
+                <h3>Try Web APIs</h3>
+                <p>Easily and quickly try out the RTC features enabled by web APIs</p>
             </div>
         </div>
     </a>
@@ -138,15 +138,24 @@
         <div class="card-container">
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/559e93ed3c05c3916300b04b0b09e7aa.svg" data-nonescope="true">
-                <h3>Quick Tryout of APIs for Electron</h3>
+                <h3>Try APIs for Electron</h3>
                 <p style="color:#586376;">
-                    Download an installer for tryout (in-application coding supported):
+                    Download an installer to try the features (in-application coding supported):
                     <a href="https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-windows.zip" download>Windows</a> &nbsp;&nbsp;&nbsp;
                     <a href="https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-mac.zip" download>macOS</a>
                 </p>
             </div>
         </div>
     </span>
+    <a href="https://github.com/LiteAVSDK/TRTC_Flutter/tree/master/TRTC-API-Example" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img class="icon" src="https://qcloudimg.tencent-cloud.cn/raw/a63fddf5902b311356966d44419098db.svg" data-nonescope="true">
+                <h3>API Example: Flutter</h3>
+                <p>Demonstrates how to use RTC APIs for Flutter<br>Build an RTC application from scratch</p>
+            </div>
+        </div>
+    </a>	
 </div>
 
 ## Use Cases
@@ -159,7 +168,7 @@
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Interactive Live Streaming</h3>
-                <p style="color:#586376;" ;>Low-code solution to enable interactive video streaming applications including showroom, live shopping, and sports event streaming</p>
+                <p style="color:#586376;" ;>Low-code solution to implement interactive video streaming applications including showroom, live shopping, and sports event streaming</p>
                 <a href="https://github.com/tencentyun/TUILiveRoom">GitHub source code</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36060">Integration guide</a>
             </div>
@@ -172,7 +181,7 @@
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Chat Salon</h3>
-                <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly enable chat salon</p>
+                <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly implement chat salon applications</p>
                 <a href="https://github.com/tencentyun/TUIChatSalon">GitHub source code</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/39803">Integration guide</a>
             </div>
@@ -185,7 +194,7 @@
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Audio Chat Room</h3>
-                <p style="color:#586376;" ;>Low-code solution with component-based UI design to help you quickly enable audio chat room</p>
+                <p style="color:#586376;" ;>Low-code solution with component-based UI design to help you quickly implement audio chat room applications</p>
                 <a href="https://github.com/tencentyun/TUIVoiceRoom">GitHub source code</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37287">Integration guide</a>
             </div>
@@ -198,7 +207,7 @@
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Online Karaoke</h3>
-                <p style="color:#586376;" ;>Low-code solution with component-based UI design to help you quickly enable online karaoke</p>
+                <p style="color:#586376;" ;>Low-code solution with component-based UI design to help you quickly implement online karaoke applications</p>
                 <a href="https://github.com/tencentyun/TUIKaraoke">GitHub source code</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/41940">Integration guide</a>
             </div>
@@ -215,9 +224,9 @@
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Interactive Classroom</h3>
-                <p style="color:#586376" ;>Cross-platform Electron component to help you quickly enable interactive classroom</p>
+                <p style="color:#586376" ;>Cross-platform Electron component to help you quickly implement interactive classroom applications</p>
                 <a
-                    href="https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTCScenesDemo/TRTCEducation">GitHub source code</a>
+                    href="https://github.com/TencentCloud/trtc-education-electron">GitHub source code</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37278">Integration guide</a>
             </div>
         </div>
@@ -232,8 +241,8 @@
                 <img src="https://qcloudimg.tencent-cloud.cn/raw/c8b92d2457467e3c349cb56e83b37ef4.png" width="160" data-nonescope="true">
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
-                <h3 style="color:191919;">Group audio/video room</h3>
-                <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly enable audio/video room</p>
+                <h3 style="color:191919;">Group Audio/Video Room</h3>
+                <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly implement audio/video room applications</p>
                 <a href="https://github.com/tencentyun/TUIMeeting">GitHub source code</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">Integration guide</a>
             </div>
@@ -246,7 +255,7 @@
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Audio Call</h3>
-                <p style="color:#586376" ;>Component-based UI design to help you quickly enable WeChat-like audio call</p>
+                <p style="color:#586376" ;>Component-based UI design to help you quickly implement WeChat-like audio call applications</p>
                 <a href="https://github.com/tencentyun/TUICalling">GitHub source code</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36067">Integration guide</a>
             </div>
@@ -259,7 +268,7 @@
             </div>
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Video Call</h3>
-                <p style="color:#586376" ;>Component-based UI design to help you quickly enable WeChat-like video call</p>
+                <p style="color:#586376" ;>Component-based UI design to help you quickly implement WeChat-like video call applications</p>
                 <a href="https://github.com/tencentyun/TUICalling">GitHub source code</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36065">Integration guide</a>
             </div>

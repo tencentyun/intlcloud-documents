@@ -39,7 +39,7 @@ VOD also provides **sample code for signature generation** and a signature gener
 - [Upload from client - signature checker](https://video.qcloud.com/signature/ugcdecode.html)
 		
 	
-## <span id ="p2"></span>Descriptions of signature parameters
+## <span id ="p2"></span>Descriptions of Signature Parameters
  
 | Parameter Name | Required | Type | Description |
 | --- | --- | --- | --- | 

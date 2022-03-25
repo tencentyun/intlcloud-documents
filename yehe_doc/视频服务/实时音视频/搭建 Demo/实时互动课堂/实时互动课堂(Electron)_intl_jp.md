@@ -1,178 +1,103 @@
 ## Demo体験
-<input type="button" value="Windows版" style="height: 30px;width: 150px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;margin-right:10px;"  onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe')" />
+<input type="button" value="Windows版" style="height: 30px;width: 150px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;margin-right:10px;"  onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-windows-latest.zip')" />
 
-<input type="button" value="MacOS版" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education/TRTC_Education_Demo-1.1.0.dmg')" />
+<input type="button" value="MacOS版" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-mac-latest.zip')" />
 
-## DemoのUIの再利用
-[](id:ui.step1)
-### 手順1：アプリケーションの新規作成
-1. TRTCコンソールにログインし、**開発支援**>**[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)**を選択します。
-2. `TestEduDemo`などのアプリケーション名を入力して、**作成**をクリックします。
-
->?本機能はTencent Cloud[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047)という2つの基本的なPAASサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの価格説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
+## デモンストレーション
+すでに作成してあるAppインストールパッケージをダウンロード、インストールして、リアルタイムインタラクティブ授業の機能を体験することができます。基本的なオーディオビデオ通話、画面共有、ホワイトボード、チャットなどの基本機能を提供するだけでなく、全員のマイクミュート、学生の挙手による発言申請、先生の学生への発言要請、点呼、サインインなどといった高度な機能の提供も実現しました。
 
 
-[](id:ui.step2)
-### ステップ2：SDKおよびDemoソースコードをダウンロード
-1. 実際のビジネスニーズに基づき、SDKおよび付属のDemoソースコードをダウンロードします。
-2. ダウンロード完了後、**ダウンロードしました。次のステップ**をクリックします。
-![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
+## リアルタイムインタラクティブ授業クイックスタートのソースコード
+[](id:step1)
+### ステップ1：アプリケーションの作成、SDKAppIDとキーの取得
+すでにTRTCのアプリケーションを作成している場合は、このステップをスキップし、以前作成したアプリケーションのSDKAppIDとキーを直接使用することができます。
 
-[](id:ui.step3)
-### ステップ3：Demo プログラムファイルの設定
-1. 設定変更画面に進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
-2.  `Electron/js/GenerateTestUserSig.js` ファイルを見つけて開きます。
-3. `GenerateTestUserSig.js` のファイルの関連するパラメータを設定します。
-<ul>
- <li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
- <li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
- <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png"/>
-4. 貼り付け完了後、**貼り付けました。次のステップ**をクリックすれば、作成が完了します。
-5. コンパイル完了後、 **コンソール概要に戻る** をクリックすれば終了です。
+1. TRTCコンソールにログインし、**開発支援** > **[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)**を選択し、**アプリケーションの作成**タブで`TestTRTC`などのアプリケーション名を入力して、**作成**ボタンをクリックします。  
+![](https://qcloudimg.tencent-cloud.cn/raw/dfb1acca0137cd30d5168c3d9d72aa13.png)
+2. **ソースコードのダウンロード**タブをスキップし、**次のステップ**ボタンを直接クリックして**設定の変更**タブに進み、次のページに表示されたSDKAppIDとキーを以後のステップで使用できるよう、記録します。
+![](https://qcloudimg.tencent-cloud.cn/raw/ca5da75be8285ead342e06971229680e.png)
+
+[](id:step2)
+### ステップ2：Instant Messagingの設定
+>?リアルタイムインタラクティブ授業はTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047) という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期してアクティブ化することができます。 IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
+
+1. **関連するクラウドサービス**メニューに進み、下図の**IMアプリケーション**をクリックしてIMアプリケーション管理ページにジャンプします。
+    ![](https://qcloudimg.tencent-cloud.cn/raw/14e4c3b097ecadb046330975dbec6bd0.png)
+
+2. 先ほど作成したアプリケーションを見つけてクリックするとアプリケーション管理ページに進み、下図のように表示されます。
+    ![](https://qcloudimg.tencent-cloud.cn/raw/50aa612285befcfa14562923622cad6d.png)
+
+3. メニューの**機能設定** > **ログインとメッセージ**を開くと、下図のように表示されますので、**ログイン設定**エリアの**編集**リンクをクリックし、**Web端末の同時オンライン可能数**を2以上の値に設定します（現在このアプリケーションで最もニーズが多いのは同時に2つのWeb IMインスタンスへのログインで、引き続き使用する際の設定の追加が可能です）。
+
+   ![](https://qcloudimg.tencent-cloud.cn/raw/2385858860a8f12091eab619b313eaec.png)
+
+
+[](id:step3)
+### ステップ3：実行環境の準備
+このコードプロジェクトの実行はnode.jsとyarnに依存します。
+
+1. **node.jsのインストール**
+[node.js](https://nodejs.org/en/download/) は14.16.0以降のバージョンの使用をお勧めします。インストール完了後、コマンドライン端末で以下のコマンドを実行してnode.jsのバージョンを確認してください。
+```
+node --version
+```
+2. **yarnのインストール**
+ - node.jsのバージョンが16.10より前の場合は、コマンドライン端末で以下のコマンドを実行して[yarn](https://yarnpkg.com/getting-started/install)をインストールします。
+```
+npm i -g corepack
+```
+ - node.jsのバージョンが16.10以降の場合は、コマンドライン端末で以下のコマンドを実行してyarnをインストールします。
+```
+corepack enable
+```
+>!Window10、11で権限不足のエラーメッセージが表示されたときは、 管理者ロールによりcmdで実行してみてください。
+
+
+
+[](id:step4)
+### ステップ4：コードクローンプロジェクト
+
+直接[コードのダウンロード](https://github.com/TencentCloud/trtc-education-electron)ができ、解凍後にコードディレクトリ`trtc-education-electron`、または [git](https://git-scm.com/downloads) ツールを使用したコードクローンプロジェクトに進みます。gitツールを使用したコードクローンプロジェクトでは、コマンドライン端末で以下のコマンドを実行してください。
+
+```
+git clone https://github.com/TencentCloud/trtc-education-electron.git
+
+cd trtc-education-electron
+```
+
+[](id:step5)
+### ステップ5：SDKAppIDとキーの設定
+1. `src/main/config/generateUserSig.js`ファイルを見つけて開きます。
+2. 身分認証発行用のユーザー署名UserSigに使用するため、`generateUserSig.js`ファイルの関連パラメータを設定します。
+   - SDKAPPID：デフォルトは0。 [ステップ1](#step1)で作成したアプリケーションのSDKAppIDを設定してください。
+   - SECRETKEY：デフォルトは空文字列。 [ステップ1](#step1) で作成したアプリケーションのキーを設定してください。
 
 >!
 >- ここで言及したUserSigの新規作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します**。
 >- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[UserSigに関するご質問](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
-### 手順4：Demoの動作
+[](id:step6)
+### ステップ6：開発モードの実行
+コマンドライン端末で、コードディレクトリ`trtc-education-electron`に進み、以下のコマンドを実行します。
+```
+yarn
 
-```typescript
-// yarnをインストールし、demoをyarnに基づき管理します
-npm install yarn -g
-// 必要な依存をインストールします
-yarn install
-// 開発デバック
-yarn dev
-// パッケージ化
+yarn start
+```
+>!
+>- 初めてyarnコマンド実行の依存関係をインストールする際、Window10、Window11で権限不足のエラーメッセージが表示された場合は、管理者ロールによりcmdで一度実行してみてください。その後は一般ユーザーロールによりcmdまたはVisual Studio Code、WebStormといった統合開発ツール付属の端末で実行することができます。
+>- 依存関係のインストール中に、Electronのダウンロードが遅い、またはスタックするなどの問題が発生した場合は、[お問い合わせ](https://intl.cloud.tencent.com/contact-us) を参照して問題を解決できます。
+
+[](id:step7)
+### ステップ7：インストールパッケージの作成、実行
+コマンドライン端末で、コードディレクトリ`trtc-education-electron`に進み、以下のコマンドを実行してインストールパッケージを作成します。作成したインストールパッケージは`trtc-education-electron/build/release`ディレクトリにあり、インストールの実行が可能です。
+
+```
 yarn package
 ```
 
->! 
->- 依存関係のインストール中に、Electronのダウンロードが遅い、またはスタックするなどの問題が発生した場合は、[お問い合わせ]（https://intl.cloud.tencent.com/contact-us）を参照して問題を解決できます。
->- Macでパッケージ化したMacパッケージング、Windows PCでパッケージ化したWindowsパッケージのみ使用できます。
+>!Mac PCを使用したMacインストールパッケージの作成、Windows PCを使用したWindowsインストールパッケージの作成のみ可能です。
 
-
-### 手順5：Demoソースコードの修正
-Demoで使用するアーキテクチャの技術は次のとおりです。
-- typescript
-- react & react hooks
-- electron & electron-react-boilerplate
-- element-ui
-
-以下の表にはファイルまたはフォルダおよび対応するUIをリストアップして、二次調整を行いやすくしています。
-
-| ファイル |機能説明|
-| ----- | ----- |
-| app/containers/HomePage.tsx|教室参加のUIの実装コード|
-| app/containers/ClassRoomPage.tsx|教室のUIの実装コード|
-| app/components/TeacherClass.tsx|教室-教師側UIの実装コード|
-| app/components/StudentClass.tsx|教室-学生側UIの実装コード|
-| app/components/Chat.tsx|教室-チャットルームのUIの実装コード|
-| app/components/UserList.tsx|教室-メンバーリストのUIの実装コード|
-
-## UIカスタマイズの実装
-Demoにデフォルトで実装されているUIが期待どおりでない場合は、必要に応じて独自のユーザーインターフェースを実装することができます。すなわち、当社がパッケージングした[trtc-electron-education](https://www.npmjs.com/package/trtc-electron-education)コンポーネントで提供する音声・ビデオの機能のみを使用し、UI部分を単独で実装します。
-![](https://main.qcloudimg.com/raw/cba4f331a811dd5dbf31cce80bd1d826.png)
-
-### 手順1：SDKの統合 
-
-```
-// yarn方式の導入
-yarn add trtc-electron-education
-// npm方式の導入
-npm i trtc-electron-education --save
-```
-
-### 手順2：コンポーネントの初期化
-コンポーネントを初期化します。そのうち、入力必須となる主要パラメータを下表で紹介します。
-
-| パラメータ |タイプ|説明|
-| ----- | ----- | ----- |
-|sdkAppId|number|入力必須のパラメータ。<a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a>の中でSDKAppIDを確認できます。|
-|userID|string|入力必須のパラメータ。ユーザーIDは、お客様のアカウントシステムから指定できます。ビジネスの実際のアカウントシステムを組み合わせて設定することをお勧めします。|
-|userSig|string|入力必須のパラメータ。ID署名（ログインパスワードに相当）は、userIDから算出します。具体的な計算方法については、[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。|
-
-```typescript
-import TrtcElectronEducation from 'trtc-electron-education';
-const rtcClient = new TrtcElectronEducation({
-   sdkAppId: 1400***803,
-   userID: '123'
-   userSig: 'eJwtzM9****-reWMQw_'
- });
-```
-
-### 手順3：教師側の授業の実現
-1. 教師側がコンポーネント [createRoom](https://intl.cloud.tencent.com/document/product/647/37279#createRoom)のメソッドを呼び出し、教室を作成します。
-```typescript
-const params = {
-      classId, // 教室ID
-      nickName // ニックネーム
-}
-rtcClient.createRoom(params).then(() => {
-  //教室の作成の成功
-})
-```
-2. 教師側がコンポーネント[enterRoom](https://intl.cloud.tencent.com/document/product/647/37279#enterRoom)のメソッドを呼び出し、授業を開始します。
-```typescript
-rtcClient.enterRoom({
-      role: 'teacher', // ロール
-      classId // 教室ID
-})
-```
-3. 教師側がコンポーネント[openCamera](https://intl.cloud.tencent.com/document/product/647/37279#openCamera)のメソッドを呼び出し、自分のカメラを立ち上げます。
-```typescript
-const domEle = document.getElementById('test');
-rtcClient.openCamera(domEle)
-```
-4. 教師側は自分の画面を学生側に共有させ、PPT、教材の再生などを視聴させることができます。
- a. 先にコンポーネント[getScreenShareList](https://intl.cloud.tencent.com/document/product/647/37279#getScreenShareList)のメソッドを呼び出し、ウィンドウのリストを取得する必要があります。
-```typescript
-const screenList = rtcClient.getScreenShareList()
-```
- b. コンポーネントの[startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37279#startScreenCapture)を呼び出し、画面を共有するストリームのプッシュを開始します。
-```typescript
-rtcClient.startScreenCapture({
-      type,// キャプチャソースタイプ
-      sourceId,// ソースIDの収集。ウィンドウについては、当該フィールドにウィンドウのハンドルを表示します。画面については、当該フィールドに画面IDを表示します
-      sourceName // ソース名の収集、UTF8エンコーディング
- })
-```
-5. 授業中、教師が学生と質疑応答の交流を行いたい場合、コンポーネント[startQuestionTime](https://intl.cloud.tencent.com/document/product/647/37279#startQuestionTime)のメソッドを呼び出し、質疑応答時間をオンにすることができます。学生側は、このコマンドの受信後、挙手にて回答を申請できるようになります。
-```typescript
-rtcClient.startQuestionTime(classId) // classIdは教室IDです
-```
-6. 学生の挙手の後、教師側はコンポーネント[inviteToPlatform](https://intl.cloud.tencent.com/document/product/647/37279#inviteToPlatform)のメソッドを呼び出し、学生を皆の前での発言に招待することができます。招待された学生はマイクが自動的に起動します。
-```typescript
-rtcClient.inviteToPlatform(userID) // 発言に招待された学生のuserID
-```
-7. 教師側は、コンポーネント[finishAnswering](https://intl.cloud.tencent.com/document/product/647/37279#finishAnswering)のメソッドを呼び出して、学生のマイク使用を禁止することができます。
-```typescript
-rtcClient.finishAnswering(userID)// マイク使用を禁止された学生のuserID
-```
-
-### 手順4：学生側の聴講の実現
-1. 学生側は、コンポーネント[enterRoom](https://intl.cloud.tencent.com/document/product/647/37279#enterRoom)のメソッドを呼び出して、教室に入室して聴講の準備をします。
-```typescript
-rtcClient.enterRoom({
-      role: 'student', // ロール
-      classId // 教室ID
-})
-```
-2. 教師側が挙手による質疑応答をオープンにすると、学生側はコンポーネント[raiseHand](https://intl.cloud.tencent.com/document/product/647/37279#raiseHand)のメソッドを呼び出し、発言を申請できます。
-```typescript
-rtcClient.raiseHand()
-```
-
-### 手順5：チャットルーム機能の実装
-
-教師側と学生側は、チャットルームを利用してテキストメッセージを相互に送信することができます。
-```typescript
-const params = {
-   classId: classId, // 教室ID
-   message: 'こんにちは' // メッセージのテキスト
-}
-rtcClient.sendTextMessage(params) // チャットルームのメッセージの送信
-```
 
 ## 技術的なお問い合わせ
 詳細については、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)にご連絡をいただくか、colleenyu@tencent.comにメールでご連絡ください。
@@ -181,6 +106,6 @@ rtcClient.sendTextMessage(params) // チャットルームのメッセージの�
 
 - [SDK APIマニュアル](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/index.html)
 - [SDK更新ログ](https://intl.cloud.tencent.com/document/product/647/38702)
-- [Simple Demoソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTCSimpleDemo)
-- [API Exampleソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTC-API-Example)
+- [Simple Demoソースコード](https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTCSimpleDemo)
+- [API Exampleソースコード](https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example)
 - [Electronについてのよくあるご質問](https://intl.cloud.tencent.com/document/product/647/43093)

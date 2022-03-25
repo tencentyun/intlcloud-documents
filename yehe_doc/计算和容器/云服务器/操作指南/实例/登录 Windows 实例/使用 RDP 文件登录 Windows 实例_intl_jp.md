@@ -1,5 +1,8 @@
->! 現在、Windowsインスタンスのログイン方式のデフォルトは**標準ログイン方式（WebRDP）**となり、コンソール経由でWindowsインスタンスにワンクリックログインできます。ローカルにダウンロードしてクライアントにログインする必要はありません。
->
+<dx-alert infotype="notice" title="">
+現在、Windowsインスタンスのデフォルトのログイン方式は**標準ログイン方式(WebRDP)**となっており、ローカルのログインクライアントをダウンロードすることなく、コンソールからワンクリックでWindowsインスタンスにログインできます。ログイン方式については、[標準方式を使用してWindowsインスタンスにログイン（推奨）](https://intl.cloud.tencent.com/document/product/213/41018)をご参照ください。
+</dx-alert>
+
+
 
 ## 概要
 RDPはRemote Desktop Protocolの略称であり。お客様のローカルコンピュータがリモートコンピュータに接続できるようにするためにMicrosoftが開発したマルチチャネルプロトコルです。 Tencent Cloudは、Windows CVMへのログインにRDP方式を推奨しています。このドキュメントは、RDPファイルを使用してWindowsインスタンスにログインする方法について説明します。
@@ -7,7 +10,7 @@ RDPはRemote Desktop Protocolの略称であり。お客様のローカルコン
 ## サポートされるシステム
 Windows、Linuxと Mac OSは全てRDPを使用してCVMにログインすることができます。
 
-## 前提条件
+##  前提条件
 
 - Windowsインスタンスにリモートログインするには、インスタンスの管理者アカウント番号と対応するパスワードを獲得する必要があります。
  - インスタンス作成時に、システムによるパスワードのランダム発行を選択した場合は、[サイト内メッセージ](https://console.cloud.tencent.com/message)にアクセスして取得してください。
@@ -22,25 +25,35 @@ Windows、Linuxと Mac OSは全てRDPを使用してCVMにログインするこ�
 <dx-tabs>
 ::: Windows\sシステムでは\sRDP\sを使用してログインします[](id:windowsRDP)
 1. [CVMコンソール](https://console.cloud.tencent.com/cvm/index)にログインします。
-2. インスタンスの管理ページで、ログインしたいWindows CVMを選択して、**ログイン**をクリックします。下図のとおりです。
-![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)
+2. インスタンスの管理画面で、実際に使用されているビューモードに従って操作します。
+ -**リストモード**：下図のように、ログインしたいWindows CVMを探し、右側にある**ログイン**をクリックします。
+![](https://qcloudimg.tencent-cloud.cn/raw/bad0e4e6670096461c7e9498d5d47654.png)
+ -**タブモード**：下図のように、ログインしたいWindows CVMタブを選択し、**ログイン**をクリックします。
+![](https://qcloudimg.tencent-cloud.cn/raw/2cdbf7a52ed228109fd1bc55a6ed1d6c.png)
 3. 開いた「標準ログイン | Windowsインスタンス」ウィンドウの中から、**RDPファイルのダウンロード**を選択し、RDPファイルをローカルにダウンロードします。
->?リモートログインポートを変更した場合は、RDPファイルを変更し、IPアドレスの後ろに`：port`を追加する必要があります。
->
-![](https://main.qcloudimg.com/raw/0b0076390b95da3885c8967093683975.png)
+<dx-alert infotype="explain" title="">
+リモートログインポートを変更した場合は、RDPファイルを変更し、IPアドレスの後ろに`：ポート`を追加する必要があります。
+</dx-alert>
+<img src="https://main.qcloudimg.com/raw/0b0076390b95da3885c8967093683975.png"/>
 4. ローカルにダウンロードしたRDPファイルをダブルクリックして開き、パスワードを入力して、**OK**をクリックすれば、Windows CVMにリモート接続されます。
  - システムのデフォルトパスワードを使用してインスタンスにログインする場合は、[サイト内メール](https://console.cloud.tencent.com/message)にアクセスしてパスワードを取得してください。
  - パスワードを忘れた場合は、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
+
 :::
 ::: Linux\sシステムでは\sRDP\sを使用してログインします[](id:LinuxRDP)
->?対応するリモートデスクトップ接続プログラムをインストールする必要がある場合は、rdesktopを使用して接続することをお勧めします。詳細は [rdesktop 公式説明](http://www.rdesktop.org/)をご参照ください。
->
+
+
+<dx-alert infotype="explain" title="">
+対応するリモートデスクトップ接続プログラムをインストールする必要がある場合は、rdesktopを使用して接続することをお勧めします。詳細については、[rdesktop公式説明](http://www.rdesktop.org/)をご参照ください。
+</dx-alert>
+
+
 1. 以下のコマンドを実行し、システムにrdesktopをインストールされているかどうかを確認します。
 ```
 rdesktop
 ```
- - rdesktopをインストールしている場合、[ステップ4](#step04)を実行してください。
- - command not foundというプロンプトが表示された場合、rdesktopをインストールされていないことを示し、[ステップ2](#step02)を実行してください。
+   - rdesktopをインストールしている場合、[ステップ4](#step04)を実行してください。
+   - command not foundというプロンプトが表示された場合、rdesktopをインストールされていないことを示し、[ステップ2](#step02)を実行してください。
 2. [](id:step02)端末で以下のコマンドを実行し、rdesktopのインストールパッケージをダウンロードします。この手順ではrdesktop 1.8.3バージョンを例示します。
 ```
 wget https://github.com/rdesktop/rdesktop/releases/download/v1.8.3/rdesktop-1.8.3.tar.gz
@@ -53,36 +66,42 @@ cd rdesktop-1.8.3
 make 
 make install
 ```
-4. [](id:step04)以下のコマンドを実行し、Windowsのインスタンスにリモートで接続します。</span>
->? 例中のパラメータを自身のパラメータに変更してください。
->
+4. [](id:step04)以下のコマンドを実行し、Windowsのインスタンスにリモートで接続します。
+<dx-alert infotype="explain" title="">
+例の中のパラメータをご自分のパラメータに変更してください。
+</dx-alert>
 ```
 rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ```
- - `Administrator` は前提条件で入手した管理者アカウントです。
- - `<your-password>` は設定されたログインパスワードです。
+   - `Administrator` は前提条件で入手した管理者アカウントです。
+   - `<your-password>` は設定されたログインパスワードです。
    システムのデフォルトパスワードを使用してインスタンスにログインする場合、[サイト内メール](https://console.cloud.tencent.com/message)から取得してください。パスワードを忘れた場合、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
- - `<hostname or IP address>`は、お客様のWindowsインスタンスのパブリックIPまたはカスタムドメイン名となります。インスタンスのパブリックIPの取得方法は、[パブリックIPアドレスの取得](https://intl.cloud.tencent.com/document/product/213/17940)をご参照ください。
+   - `<hostname or IP address>`は、お客様のWindowsインスタンスのパブリックIPまたはカスタムドメイン名となります。インスタンスのパブリックIPの取得方法は、[パブリックIPアドレスの取得](https://intl.cloud.tencent.com/document/product/213/17940)をご参照ください。
+
 :::
 ::: MacOS\sシステムでは\sRDP\sを使用してログインします[](id:MacRDP)
->?
->- 以下の操作は Microsoft Remote Desktop for Mac の例です。マイクロソフトは2017年に Remote Desktop クライアントのダウンロードリンクの提供を正式に停止し、現在は、子会社の HockeyApp が Beta 版を配布しています。 [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac)で Beta 版をダウンロードすることができます。
->- 以下の操作は Windows Server 2012 R2  OSに接続されているCloud Virtual Machine を例として説明します。
->
+
+
+<dx-alert infotype="explain" title="">
+- 以下の操作は、Microsoft Remote Desktop for Macの例です。Microsoftは2017年にRemote Desktopクライアントのダウンロードリンクの提供を停止し、現在は子会社であるHockeyAppがBeta版をリリースしています。[Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac)でBeta版をダウンロードすることができます。
+- 以下の操作は Windows Server 2012 R2 OSに接続されるCVMを例に説明します。
+</dx-alert>
+
+
 1. Microsoft Remote Desktop for Macをダウンロードして、ローカルにインストールします。
-2. MRDを起動して、【Add Desktop】をクリックします。下図に示すように：
+2. MRDを起動して、下図に示すように**Add Desktop**をクリックします。
 ![](https://main.qcloudimg.com/raw/e69528d10e9a17dfa26119a090766c49.png)
 3. 表示された「Add Desktop」ウィンドウで、以下の手順に従って、接続を作成します。下図に示すように：
 ![](https://main.qcloudimg.com/raw/d8e20278dd7c8aed487be2c43986f5e4.png)
     1.「PC name」にCVMのパブリックネットワークIPを入力します。取得方法については、[パブリックIPアドレスの取得](https://intl.cloud.tencent.com/document/product/213/17940)をご参照ください。
-    2. 【Add】をクリックして、接続の作成を確認します。
+    2. **Add**をクリックして、接続の作成を確認します。
     3. 他のオプションはデフォルト設定のままで、接続が作成されます。
     ウィンドウで作成された接続を確認できます。下図に示すように：
 ![](https://main.qcloudimg.com/raw/1c0eff28aa68a7f02e8f295917bb603b.png)
-4.新しく作成した接続をダブルクリックして開き、ポップアップウィンドウでプロンプトに従って、CVMのアカウントとパスワードを入力し、【Continue】をクリックしてください。
+4. 新規作成した接続をダブルクリックして開き、ポップアップウィンドウでプロンプトに従って、CVMのアカウントとパスワードを入力し、**Continue**をクリックします。
  - システムのデフォルトパスワードを使用してインスタンスにログインする場合は、[サイト内メール](https://console.cloud.tencent.com/message)にアクセスしてパスワードを取得してください。
  - パスワードを忘れた場合は、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
-5. ポップアップウインドウで【Continue】をクリックし、接続を確認します。下図に示すように：
+5. 下図のように、ポップアップしたウィンドウで**Continue**をクリックして、接続を確認します。
 ![](https://main.qcloudimg.com/raw/61b3d9566365183fcc1d92c2f6bc2e7b.png)
 接続に完了すると、 以下に示すように、Windows CVM画面が表示されます
 ![](https://main.qcloudimg.com/raw/5a524210acd13624af7263b6de3aea54.png)
@@ -91,8 +110,13 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 
 ## RDP帯域幅制限の説明[](id:illustrate)
 ネットワークの使用可能な帯域幅は、RDP経由のログインやCVMの使用体験に直接影響し、アプリケーションプログラムやディスプレイ解像度ごとに、各々のネットワーク設定が必要です。マイクロソフトは、それぞれのユースケースでRDPを使用する時のインスタンスの最小帯域幅要件を提供しています。下表を参照して、インスタンスのネットワーク設定が業務のニーズを確実に満たすようにしてください。そうでない場合、ラグなどの問題が生じます。
->?インスタンスの帯域幅を調整したい場合は、[ネットワーク設定の調整](https://intl.cloud.tencent.com/document/product/213/15517)をご参照ください。
->
+
+
+<dx-alert infotype="explain" title="">
+インスタンスの帯域幅を調整したい場合は、[ネットワーク設定の調整](https://intl.cloud.tencent.com/document/product/213/15517)をご参照ください。
+</dx-alert>
+
+
 以下のデータは、1920 × 1080の解像度を採用し、デフォルトのグラフィックモードおよびH.264/AVC 444グラフィックモードを同時に採用するシングルモニターの設定に適用するものです。
 
 <table>

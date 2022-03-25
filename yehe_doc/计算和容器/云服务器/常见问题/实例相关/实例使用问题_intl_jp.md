@@ -53,7 +53,7 @@ CVMインスタンスのIPアドレスは、CVMインスタンスを購入した
 ### CVMインスタンスはデフォルトでデータベースを提供しますか。
 CVMインスタンスはデフォルトでデータベースを提供しませんが、ユーザが次の手順でデータベースを利用できます。
 - データベースを自分で配置します。例えば、[MySQLデータベースをインストール](https://intl.cloud.tencent.com/document/product/213/10190)します。
-- [TencentDB for MySQL](https://cloud.tencent.com/product/cdb) サービスを個別に購入します。
+- [TencentDB for MySQL](https://intl.cloud.tencent.com/zh/products/cdb) サービスを個別に購入します。
 - イメージマーケットを使用して環境データベースを設定します。
 
 ### CVMインスタンス上にデータベースを構築できますか。

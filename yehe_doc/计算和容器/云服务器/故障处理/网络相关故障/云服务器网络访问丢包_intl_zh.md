@@ -9,11 +9,12 @@
 - [UDP 接收缓冲区满](#receiveBuffer)
 - [TCP 全连接队列满](#tcpFullyConnectedQueue)
 - [TCP 请求溢出](#tcpRequestOverflow)
-- [连接数达到上限](upperLimit)
+- [连接数达到上限](#upperLimit)
+- [iptables policy 设置相关规则](#iptablesPolicy)
 
 
 ## 前提条件
-在进行问题定位及处理前需登录实例，详情请参见 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32493) 及 [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/32495)。
+在进行问题定位及处理前需登录实例，详情请参见 [登录 Linux 实例](https://intl.cloud.tencent.com/zh/document/product/213/32493) 及 [登录 Windows 实例](https://intl.cloud.tencent.com/zh/document/product/213/32495)。
 
 ## 故障处理
 
@@ -29,14 +30,13 @@ Linux 实例可执行 `sar -n DEV 2` 命令查看带宽及包量。其中，`rxp
 ### 触发限速导致 UDP 丢包[](id:udpPacketLoss)
 参考 [触发限速导致 TCP 丢包](#tcpPacketLoss) 步骤，判断是否由实例规格性能瓶颈引起丢包。
  - 是，则需升级实例规格或调整业务量。
- - 若未达到实例规格性能瓶颈，则可能是由平台对 DNS 请求额外的频率限制引起。在实例整体带宽或包量达到实例规格的性能瓶颈时，可能会触发 DNS 请求限速而出现 UDP 丢包。可通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category
-) 进一步定位处理。
+ - 若未达到实例规格性能瓶颈，则可能是由平台对 DNS 请求额外的频率限制引起。在实例整体带宽或包量达到实例规格的性能瓶颈时，可能会触发 DNS 请求限速而出现 UDP 丢包。可通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 进一步定位处理。
 
 
 ### 触发软中断丢包[](id:softInterrupt)
 当操作系统监测到 `/proc/net/softnet_stat` 的第二列计数值在增长时，则会判断为“软中断丢包”。当您的实例触发了软中断丢包时，可通过以下步骤进行排查及处理： 
 查看是否开启 RPS：
- - 开启，则内核参数 `net.core.netdev_max_backlog` 偏小时会引发丢包，需调大。内核参数详细信息请参见 [Linux 实例常用内核参数介绍](https://cloud.tencent.com/document/product/213/46400)。
+ - 开启，则内核参数 `net.core.netdev_max_backlog` 偏小时会引发丢包，需调大。内核参数详细信息请参见 [Linux 实例常用内核参数介绍](https://intl.cloud.tencent.com/document/product/213/39162)。
  - 未开启，则查看是否为 CPU 单核软中断高，导致未能及时收发数据。若是，您可以：
   - 选择开启 RPS，使软中断分配更为均衡。
   - 检查业务程序是否会引发软中断分配不均匀。
@@ -71,15 +71,38 @@ setsockopt 的取值受内核参数 `net.core.rmem_max` 和 `net.core.wmem_max` 
 
 ### 连接数达到上限[](id:upperLimit)
 云服务器实例具备多种规格，且不同规格有不同的连接数性能指标。当实例的连接数超过实例规格对应的标准时，会触发平台的限速，导致丢包。处理步骤如下：
->?连接数指宿主机上保存的云服务器实例的会话数，包含 TCP、UDP 和 ICMP。该数值大于在云服务器实例上通过 `ss` 或 `netstat` 命令获取的网络连接数。
->
+<dx-alert infotype="explain" title="">
+连接数指宿主机上保存的云服务器实例的会话数，包含 TCP、UDP 和 ICMP。该数值大于在云服务器实例上通过 `ss` 或 `netstat` 命令获取的网络连接数。
+</dx-alert>
+
 查看您实例的连接数，并对比 [实例规格](https://intl.cloud.tencent.com/document/product/213/11518)，查看是否达到实例规格性能瓶颈。
  - 是，则需升级实例规格或调整业务量。
- - 否，若未达到实例规格性能瓶颈，则可通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category
-) 进一步定位处理。
+ - 否，若未达到实例规格性能瓶颈，则可通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 进一步定位处理。
 
 
+### iptables policy 设置相关规则[](id:iptablesPolicy)
+在云服务器 iptables 未设置相关规则的情况下，可能是 iptables policy 相关规则设置导致到达云服务器的包都被丢弃。处理步骤如下：
 
+1. [](id:Step1)执行以下命令，查看 iptables policy 规则。
+```
+iptables -L | grep policy 
+```
+iptables policy 规则默认为 ACCEPT。若 INPUT 链 policy 非 ACCEPT，则会导致所有到服务器的包都被丢弃。例如，若返回如下结果，表示进入云服务器的包都会被 drop。
+```
+Chain INPUT (policy DROP)
+Chain FORWARD (policy ACCEPT)
+Chain OUTPUT (policy ACCEPT)
+```
+2. 执行如下命令，按需调整 `-P` 后的值。
+```
+iptables -P INPUT ACCEPT 
+```
+调整后，可再次执行 [步骤1](#Step1) 命令查看，应返回如下结果：
+```
+Chain INPUT (policy ACCEPT)
+Chain FORWARD (policy ACCEPT)
+Chain OUTPUT (policy ACCEPT)
+```
 
 
 

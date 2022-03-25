@@ -57,7 +57,7 @@ Please activate the VOD service as instructed in [Getting Started - Step 1](http
 
 Your API key (i.e., `SecretId` and `SecretKey`) and `APPID` are required for deploying and running the web upload demo service.
 - If you have not created an API key yet, please generate one as instructed in [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228). If you have already created a key, please get it as instructed in the same document.
-- You can view the `APPID` on the [Account Information](https://console.cloud.tencent.com/developer) page in the console as shown below:
+- You can view the `APPID` on the [Account Information](https://console.cloud.tencent.com/developer) page in the console.
 
 
 ### Step 4. Deploy the service backend and webpage
@@ -94,14 +94,14 @@ This command will download the demo source code from GitHub and automatically ru
 
 ### Step 5. Use the web upload demo
 
-1. Access the address copied in [step 4](#p4) in a browser to start using the web upload demo as shown below:
+1. Access the address copied in [step 4](#p4) in a browser to start using the web upload demo.
 2. Perform video upload operations on this page:
 	1. Select a local video file (MP4 format is recommended).
 	2. (Optional) Select a local cover image (in JPG or PNG format).
 	3. (Optional) Enter the video name.
 	4. Click **Start Upload** to upload the video.
-3. After the upload is completed, the VOD media IDs (i.e., `fileId`) and URLs of the uploaded video and cover will be displayed at the bottom of the page as shown below:
-You can view the uploaded video in the [VOD console](https://console.cloud.tencent.com/vod/media) as shown below:
+3. After the upload is completed, the VOD media IDs (i.e., `fileId`) and URLs of the uploaded video and cover will be displayed at the bottom of the page.
+You can view the uploaded video in the [VOD console](https://console.cloud.tencent.com/vod/media).
 
 >?You can try out other features on the upload page as prompted.
 
@@ -125,14 +125,14 @@ You can access the [SCF service list](https://console.cloud.tencent.com/scf/list
 >- The two SCF functions used by the demo are deployed under the namespace `vod_demo` in the Guangzhou region.
 >- You need to select the corresponding region and namespace in the console to view the deployed SCF functions.
 
-Click the function name, select **Trigger Management** on the left, and **Access Path** on the right is the URL of the upload page. Click **API Service Name** to redirect to the corresponding API Gateway page as shown below:
+Click the function name, select **Trigger Management** on the left, and **Access Path** on the right is the URL of the upload page. Click **API Service Name** to redirect to the corresponding API Gateway page.
 To test the service, directly access the page URL in a browser to check whether the upload page is displayed normally.
 
 #### Upload signature distribution
 
 You can access the [SCF service list](https://console.cloud.tencent.com/scf/list) to view the details of the upload signature distribution service in the same way as detailed in [Upload page](#p6).
 
-Click the function name, select **Trigger Management** on the left, and **Access Path** on the right is the URL of the service. Click **API Service Name** to redirect to the corresponding API Gateway page as shown below:
+Click the function name, select **Trigger Management** on the left, and **Access Path** on the right is the URL of the service. Click **API Service Name** to redirect to the corresponding API Gateway page.
 To test the service, manually send an HTTP request and run the following command on a Linux or macOS device with public network access (please modify the service URL according to the actual situation):
 ```
 curl -d '' https://service-xxxxxxxx-125xxxxxxx.gz.apigw.tencentcs.com/release/ugc_upload_sign

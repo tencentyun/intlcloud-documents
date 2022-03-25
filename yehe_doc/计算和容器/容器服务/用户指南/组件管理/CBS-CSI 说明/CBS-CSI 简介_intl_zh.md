@@ -34,5 +34,8 @@ CBS-CSI 组件在集群内部署后，包含以下组件：
 - 使用 CBS-CSI 组件后，才可在 TKE 集群中为云硬盘在线扩容和创建快照。
 - 已经使用 QcloudCbs（In-Tree 插件）的 TKE 集群，可以继续正常使用。（后续将通过 Volume Migration 统一到 CBS CSI）
 
+## 使用示例
 
+- [通过 CBS-CSI 避免云硬盘跨可用区挂载](https://intl.cloud.tencent.com/document/product/457/45998)
+- [在线扩容云硬盘](https://intl.cloud.tencent.com/document/product/457/45999)
 

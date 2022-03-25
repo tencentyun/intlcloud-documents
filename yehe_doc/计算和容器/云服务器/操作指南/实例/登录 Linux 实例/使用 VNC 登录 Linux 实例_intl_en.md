@@ -1,40 +1,50 @@
-## Scenario
+## Overview
+
+VNC login provided by Tencent Cloud allows users to remotely log in to CVM via a web browser. If a client does not have remote login installed or it cannot be used, user can log in to the CVM using VNC login to check the CVM status and perform basic management operations using the CVM account.
 
 
-VNC login provided by Tencent Cloud allows users to remotely log in to CVM via a web browser. If a client does not have remote login installed or it cannot be used, user can log in to the CVM using VNC login to check the CVM status and perform basic management operations using the CVM account.    
-
-## Applicable OS
-
-Windows, Linux, or macOS.
-
-## Use Limits
+## Usage Limits
 
 - VNC login currently does not support copy and paste, Chinese input method, and file upload or download.
 - When you use VNC to log in to CVM, mainstream browsers must be used, such as Chrome, Firefox, IE 10 and above.
 - VNC login is a dedicated terminal, meaning only one user can use VNC login at a time.
 
 ## Prerequisites
-You must already have the admin account and password of the Linux instance to be logged in to.
-- If you use a system default password to log in to the instance, first go to [Internal Message](https://console.cloud.tencent.com/message) to get it.
-- If you forget your password, please [reset the instance password](https://intl.cloud.tencent.com/document/product/213/16566).
+You already have the admin account and password to log in to the instance.
+- If you have chosen to generate a random password when creating an instance, please get it from [Message Center](https://console.cloud.tencent.com/message).
+- If you have set a login password, please use it for login. If you forgot it, please [reset it](https://intl.cloud.tencent.com/document/product/213/16566).
+
 
 ## Directions
 
-1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
-2. On the Instance management page, select the Linux CVM you want to log in to and click **Log In**, as shown below:
-![](https://main.qcloudimg.com/raw/a4cc736f2dc7f13bf39756b8e39532d4.png)
-3. In the **Log into Linux instance** window that pops up, select **Alternative login methods (VNC)** and click **Log In Now**, as shown below.
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
+2. On the instance management page, proceed according to the actually used view mode:
+<dx-tabs>
+::: List view
+Locate the Linux CVM instance you want to log in to and click **Log In** on the right as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/bad0e4e6670096461c7e9498d5d47654.png)
+
+:::
+::: Tab view
+Select the tab of the Linux CVM instance you want to log in to and click **Log In** as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/2cdbf7a52ed228109fd1bc55a6ed1d6c.png)
+
+:::
+</dx-tabs>
+3. In the **Standard Login | Linux Instance** window that is opened, select **login with VNC** as shown below:
 ![](https://main.qcloudimg.com/raw/1bd4877abc15d06adb8c54fc7ed1318e.png)
-4. In the pop-up dialog box, enter the username after **login** and press **Enter**.
+4. In the opened window, enter the username after **login** and press **Enter**.
+The default username of Linux instances is `root`, and the default username of Ubuntu instances is `ubuntu`. Please enter as needed.
 5. Enter the password after **Password** and press **Enter**.
-The entered password is not displayed by default, as shown below:
+The entered password is not displayed by default. After login, the information of the CVM that you are currently logged in to will appear on the left of the command prompt as shown below:
 ![](https://main.qcloudimg.com/raw/03a8492f66e8342221858709b6068669.png)
-After logging in, information about the CVM that you currently log in to appears to the left of the command prompt. 
+
 
 ## Subsequent Operations
 
-After logging in to the CVM, you can build a personal website or forum or perform other operations. For more information, see the following documents:
--  [Common Operations and Commands](https://intl.cloud.tencent.com/document/product/213/2150) 
-- [Build a personal WordPress site](https://intl.cloud.tencent.com/document/product/213/8044?from_cn_redirect=1)
-- [Build a Discuz! forum](https://intl.cloud.tencent.com/document/product/213/8043?from_cn_redirect=1)
+
+After logging in to the CVM, you can build a personal website or forum or perform other operations. For more information, please see:
+- [Common Operations and Commands](https://intl.cloud.tencent.com/document/product/213/2150) 
+- [Manually Building WordPress Website](https://intl.cloud.tencent.com/zh/document/product/213/8044)
+- [Manually Building Discuz! Forum](https://intl.cloud.tencent.com/zh/document/product/213/8043)
 

@@ -1,4 +1,5 @@
-**Monitoring and Alarming** help ensure high reliability, availability and performance of CVMs. This document describes the CVM monitoring and alarm features. For more information, please see the [Cloud Monitor](https://intl.cloud.tencent.com/document/product/248?) documentation.
+**Monitoring and Alarming** help ensure high reliability, availability and performance of CVMs. When you create a CVM, Cloud Monitor will be activated for free by default, through which you can analyze and implement alarms and get CVM monitoring metrics.
+This document describes the CVM monitoring and alarm features. For more information, please see the [Cloud Monitor](https://intl.cloud.tencent.com/zh/document/product/248) documentation.
 
 ## Overview
 CVM Monitoring and Alarming displays complete monitoring data of different CVM key metrics in real time. With this feature, you can have a comprehensive understanding of the resource usage, performance, and running status of the CVM instance. You can also configure custom alarm thresholds and notification rules.
@@ -17,7 +18,7 @@ You can access the following CVM monitoring and alarms features in the Cloud Mon
 
 For more information about Cloud Monitor, please see [Product Overview](https://intl.cloud.tencent.com/document/product/248/32799)
 
-## Use Cases
+## Overview
 - **Daily management:** log in to the Cloud Monitor console and view the running status of each monitored product.
 - **Troubleshooting exceptions:** Cloud Monitor will send you alarm notifications promptly when the monitoring data reaches the alarm threshold so that you can troubleshoot the issue.
 - **Timely expansion:** you can configure alarm policies for bandwidth, number of connections, disk utilization and other monitoring items to check the overall status of your Tencent Cloud services. You will receive alarm notifications when business surges and can expand your CVMs accordingly.
@@ -40,5 +41,5 @@ To benchmark instance performance, you should at least monitor the following ite
 - **Monitoring interval:** Cloud Monitor provides monitoring data at different statistical granularities, including 1 minute, 5 minutes, 1 hour, and 1 day. CVM supports the monitoring granularity of 1 minute, meaning data is collected every 1 minute. The default interval is 5 minutes.
 - **Data storage:** monitoring data at a 1-minute, 5-minute, and 1-hour granularity will be retained for 31 days; monitoring data at a 1-day granularity will be retained for half a year.
 - **Alarm display:** data is displayed in easy-to-read charts. The Cloud Monitor console displays the monitoring data of all products to give you a comprehensive overview of their running status.
-- **Alarm settings:** you can set limits for monitoring metrics. When the condition is met, alarm notification will be sent to the recipient group promptly. For more information, please see [Configuring Alarm Policies](https://intl.cloud.tencent.com/document/product/248/38908).
--  **Dashboard settings:** you can create a monitoring metric dashboard to dynamically analyze abnormal metrics and view the metric change in real time for prompt resource expansion. For more information, see [Creating a Dashboard](https://intl.cloud.tencent.com/document/product/248/38468).
+- **Alarm settings:** you can set limits for monitoring metrics. When the condition is met, alarm notification will be sent to the recipient group promptly. For more information, please see [Configuring Alarm Policies](https://intl.cloud.tencent.com/document/product/248/38916).
+- **Dashboard settings:** you can create a monitoring metric dashboard to dynamically analyze abnormal metrics and view the metric change in real time for prompt resource expansion. For more information, see [Creating a Dashboard](https://intl.cloud.tencent.com/document/product/248/38468).

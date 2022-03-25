@@ -34,5 +34,8 @@ After it is deployed in a cluster, the CBS-CSI add-on contains the following com
 - You can expand cloud disks online and create snapshots in a TKE cluster only after using the CBS-CSI add-on.
 - You can continue to use QcloudCbs (In-Tree plugin) in your TKE cluster. (It will be integrated to CBS-CSI through Volume Migration in the future.)
 
+## Use Cases
 
+- [Avoid attaching cloud disk across availability zones through cbs-csi](https://intl.cloud.tencent.com/document/product/457/45998)
+- [Online Expansion of Cloud Disk](https://intl.cloud.tencent.com/document/product/457/45999)
 

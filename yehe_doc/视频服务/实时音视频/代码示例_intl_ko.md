@@ -71,7 +71,7 @@
 
 ## API 예시
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
-    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC" target="view_window">
+    <a href="https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC" target="view_window">
         <div class="card-container">
             <div class="card">
                 <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
@@ -80,7 +80,7 @@
             </div>
         </div>
     </a>
-    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example" target="view_window">
+    <a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example" target="view_window">
         <div class="card-container">
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
@@ -98,7 +98,7 @@
             </div>
         </div>
     </a>
-    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Mac/QTDemo" target="view_window">
+    <a href="https://github.com/LiteAVSDK/Live_Mac/tree/main/QTDemo" target="view_window">
         <div class="card-container">
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
@@ -107,7 +107,7 @@
             </div>
         </div>
     </a>
-    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Web/base-react-next" target="view_window">
+    <a href="https://github.com/LiteAVSDK/TRTC_Web/tree/main/base-react-next" target="view_window">
         <div class="card-container">
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
@@ -116,7 +116,7 @@
             </div>
         </div>
     </a>
-    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTC-API-Example" target="view_window">
+    <a href="https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example" target="view_window">
         <div class="card-container">
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/559e93ed3c05c3916300b04b0b09e7aa.svg" data-nonescope="true">
@@ -147,6 +147,15 @@
             </div>
         </div>
     </span>
+    <a href="https://github.com/LiteAVSDK/TRTC_Flutter/tree/master/TRTC-API-Example" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img class="icon" src="https://qcloudimg.tencent-cloud.cn/raw/a63fddf5902b311356966d44419098db.svg" data-nonescope="true">
+                <h3>Flutter API 예시</h3>
+                <p>RTC Flutter API를 사용한 <br>오디오/비디오 App 구축 방법 예시</p>
+            </div>
+        </div>
+    </a>	
 </div>
 
 ## 솔루션 시나리오
@@ -217,7 +226,7 @@
                 <h3 style="color:191919;">인터랙션 클래스</h3>
                 <p style="color:#586376" ;>Electron 크로스 플랫폼 컴포넌트는 클래스를 신속하게 구축하도록 지원합니다.</p>
                 <a
-                    href="https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTCScenesDemo/TRTCEducation">GitHub 소스 코드</a>
+                    href="https://github.com/TencentCloud/trtc-education-electron">GitHub 소스 코드</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37278">문서 바로가기</a>
             </div>
         </div>
