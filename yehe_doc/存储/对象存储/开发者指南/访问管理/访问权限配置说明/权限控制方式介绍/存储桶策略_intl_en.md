@@ -54,18 +54,18 @@ COS provides you with different templates depending on the combination of author
 
 <dx-accordion>
 ::: Grantee
-![](https://qcloudimg.tencent-cloud.cn/raw/5bbbb7480540db13b04a495ce9ad02e8.png)
+
  - **All users (allow anonymous access)**: if you want to grant operation permissions to anonymous users, select this option. If you select this option, all users (`*`) will be automatically selected for you during policy configuration in step 2.
  - **Specified user**: you can select designated users when you want to grant operation permissions to designated sub-accounts, root accounts, or cloud services. During policy configuration in step 2, you need to further specify the account UINs.
 :::
 ::: Resource Scope
-![](https://qcloudimg.tencent-cloud.cn/raw/cda6978246b8efd9da1b681859eceb80.png)
+
  - **The whole bucket**: if you want to grant bucket configuration permissions or set the resource scope to the entire bucket, you can select this option to automatically add the entire bucket as a resource for you during policy configuration in step 2.
  - **Specified directory**: select this option if you want to restrict the resource scope to a specified folder. During policy configuration in step 2, you need to further specify the specific directory.
 :::
 ::: Template
 A template is a collection of operations that you want to authorize. COS provides you with different recommended templates depending on the combination of authorized users and resource scope you choose. If the templates provided by COS do not meet your requirements, you can skip this step and add or delete authorized operations during policy configuration in step 2.
-![Custom](https://qcloudimg.tencent-cloud.cn/raw/71fca1a52aa2f87a4c3dff3b9e68c3e6/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AD%96%E7%95%A5%E6%A8%A1%E6%9D%BF.png)
+
  - **Custom (no preset configuration)**: If you do not need to use a template, select this option and add policies as needed during policy configuration in step 2.
  - **Other templates**: COS provides you with different recommended templates depending on the combination of authorized users and resource scope you choose. After you select a template, COS automatically adds the corresponding operation permissions for you during policy configuration in step 2.
 
@@ -150,7 +150,7 @@ Based on the combination of authorized users, specified directories, and templat
 >? To authorize the permissions of a directory, you need to add `/*` to the resource path entered. For example, to authorize the `test` directory, you need to enter `test/*`.
 
 If the recommended templates provided by COS do not meet your requirements, you can add or delete authorized users, resources, and operations in this step. See the figure below.
-![](https://qcloudimg.tencent-cloud.cn/raw/6656f5c0709887d1d3b815eb940be6be.png)
+
 The configuration items are described as follows:
 - **Effect**: select **Allow** or **Deny**, corresponding to `allow` or `deny` in the policy syntax.
 - **User**: add or delete authorized users. Options include **Everyone** (`*`), **Root account**, **Sub-account**, and **Cloud service**.
@@ -165,7 +165,7 @@ The configuration items are described as follows:
 If you are familiar with bucket policies, you can click the target bucket, choose **Permission Management** > **Permission Policy Settings** > **JSON*, and write the bucket policy in JSON language.
 
 After writing the bucket policy, you can add it via [API](https://intl.cloud.tencent.com/document/product/436/8282) or [SDK](https://intl.cloud.tencent.com/document/product/436/6474). See the figure below.
-![](https://qcloudimg.tencent-cloud.cn/raw/d728a544c194ae269c6e6a02ee5435fa.jpg)
+
 
 #### JSON policy example 
 
