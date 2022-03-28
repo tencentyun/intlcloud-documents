@@ -10,7 +10,7 @@ You can upload objects to a bucket through the **File List** page in the COS con
 
 Before uploading an object, make sure that you have already created a bucket. If no bucket has been created, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
 
-### Directions
+## Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List**. Select the bucket to which you want to upload an object, and choose **File List**. Then, click **Upload Files**, as shown below.
 ![](https://main.qcloudimg.com/raw/1f499717168f5559337899f635e19a13.png)
