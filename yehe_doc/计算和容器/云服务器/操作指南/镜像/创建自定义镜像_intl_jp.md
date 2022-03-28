@@ -4,7 +4,6 @@ Tencent Cloudが提供するパブリックイメージ、マーケットプレ�
 
 <dx-alert infotype="explain" title="">
 イメージ下位層がCloud Block Storageスナップショットサービスを使用しているため：
- - 国内リージョンでは50GBの無料利用枠が提供されます。詳細については[利用枠の贈呈](https://intl.cloud.tencent.com/document/product/362/32415)をご参照ください。
  - カスタムイメージを作成する場合、デフォルトでイメージに関連付けられたスナップショットが作成されます。カスタムイメージを保持すると一定のスナップショット料金が発生します。詳細については[スナップショットの料金概要]（](https://intl.cloud.tencent.com/document/product/362/32415)をご参照ください。
 </dx-alert>
 
