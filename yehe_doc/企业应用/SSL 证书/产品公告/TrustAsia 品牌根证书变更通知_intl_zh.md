@@ -3,8 +3,6 @@
 
 根证书变更后，基于 Sectigo 根证书支持中国区 OCSP（在线证书状态协议）节点特性，将在很大程度上解决中国区网站设置 HTTPS 后访问速度变慢问题。
 
-若需使用 Digcert 颁发证书，请于**2022年03月03日22:00:00**前，前往 [SSL 证书管理控制台](https://console.cloud.tencent.com/ssl) 进行 [证书申请](https://intl.cloud.tencent.com/document/product/1007/40205) 操作。申请成功并颁发后，您可将您的证书部署至云服务。详情参见：[如何选择 SSL 证书安装部署类型？](https://intl.cloud.tencent.com/document/product/1007/30173)
-
 
 >!
 >- 该变更对于已颁发使用的 SSL 证书没有任何影响。
