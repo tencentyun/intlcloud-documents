@@ -29,5 +29,5 @@ COS supports response to OPTIONS requests for CORS, and returns specific rules s
  **Max-age**: validity period (in seconds) of the results obtained by OPTIONS. The value must be a positive integer, such as 600.
  ![](https://main.qcloudimg.com/raw/6a1f4bed7f42fba69449514822759c42.png)
 
-4. After configuration, click **Confirm** and you will see the CORS rule added. To modify it, click **Edit**.
+4. After configuration, click **Submit** and you will see the CORS rule added. To modify it, click **Edit**.
    ![](https://main.qcloudimg.com/raw/c4399193611b4f81e57a549634ea865a.png)
