@@ -11,7 +11,7 @@ For more information, see [Lifecycle Overview](https://intl.cloud.tencent.com/do
 
 ### Via the COS Console
 
-You can configure the lifecycle in the COS Console. For more information, see [Lifecycle Management](https://intl.cloud.tencent.com/document/product/436/14605) in Console Guide.
+You can configure the lifecycle in the COS console. For more information, see [Lifecycle Management](https://intl.cloud.tencent.com/document/product/436/14605) in Console Guide.
 
 ### Via REST API
 
