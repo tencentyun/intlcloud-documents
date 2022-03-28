@@ -5,7 +5,7 @@ The service fee for TKE consists of two parts, cluster management fee and Tencen
 #### Cluster management fee
 >! Tencent Cloud starts charging for managed clusters from 10:00, March 21, 2022 (UTC +8). See [Starting Charging for Managed Clusters](https://intl.cloud.tencent.com/document/product/457/45156).
 >
-**Managed clusters** incur the cluster management fee based on their cluster models. For more information, see [Cluster Management Fees].(#cluster).
+**Managed clusters** incur the cluster management fee based on their cluster models. For more information, see [Cluster Management Fees](#cluster).
 
 
 
