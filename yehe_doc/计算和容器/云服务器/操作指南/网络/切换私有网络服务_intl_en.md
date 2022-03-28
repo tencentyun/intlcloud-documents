@@ -26,7 +26,7 @@ The instance is in the classic network if "Network: Classic Network" appears in 
 </dx-tabs>
 <dx-alert infotype="notice" title="">
 - Switching from a classic network to a VPC is irreversible. A CVM instance cannot communicate with CVM instances in classic networks after being migrated from a classic network to a VPC.
-- Before switching from a classic network to a VPC, it is necessary to create a VPC in the same region and a subnet in the same availability zone as the CVM in the classic network to be migrated in advance. For details, see [Creating VPCs] (https://intl.cloud.Tencent.com/document/product/215/31805).
+- Before switching from a classic network to a VPC, it is necessary to create a VPC in the same region and a subnet in the same availability zone as the CVM in the classic network to be migrated in advance. For details, see [Creating VPCs](https://intl.cloud.tencent.com/document/product/215/31805).
 - After determining the network attribute of the instance, [switch to VPC](#changeVPC) as required.
 </dx-alert>
 
