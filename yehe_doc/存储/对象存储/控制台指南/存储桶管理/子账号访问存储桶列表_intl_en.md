@@ -39,7 +39,7 @@ A sub-account can access the bucket list by **adding the preset policy QcloudCOS
 
 
 
-1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam) with the root account to enter the user list page.
+1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) with the root account to enter the user list page.
 2. Locate the sub-account to which you want to add a policy, and click **Grant Permission** on the right to enter the Associate Policies page.
 ![](https://main.qcloudimg.com/raw/bd701b29b255102c37ca17ca5974099a.png)
 3. Search for and add the preset policy [QcloudCOSGetServiceAccess](https://console.cloud.tencent.com/cam/policy/detail/2158379&QcloudCOSGetServiceAccess&2) (i.e., the permission to access the bucket list in COS) in the policy list. No search result will be displayed if the policy has been added.
