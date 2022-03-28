@@ -49,13 +49,10 @@ echo "IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==" | base64 -d
 ### Passing the text
 
 You can launch an instance through multiple methods, and here we introduce two of them. Choose a method according to your requirements:
-- [Using the official website or the console](#Consoletrans)
-- [Using API](#APItrans)
+<dx-tabs>
+::: Using the official website or the console[](id:Consoletrans)
 
-<span id="Consoletrans"></span>
-#### Using the official website or the console
-
-1. Refer to [Creating Instances](https://intl.cloud.tencent.com/document/product/213/4855) to purchase an instance, and click **Advanced Settings** in “4. Security Group and CVM”, as shown below:
+1. Refer to [Creating Instances](https://intl.cloud.tencent.com/document/product/213/4855) to purchase an instance, and click **Advanced Settings** in “2. Complete Configuration”, as shown below:
 ![](https://main.qcloudimg.com/raw/28baf2764488ecfaf5bbac791cec7ea3.png)
 2. In **Advanced Settings**, enter the returned result of [Base64 encoded script](#Base64Script) in the Custom Data text box, as shown below:
 For example, the Base64 encoded result of the `script_text` script is `IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==`.
@@ -63,8 +60,8 @@ For example, the Base64 encoded result of the `script_text` script is `IyEvYmluL
 3. Create an CVM instance as prompted by the page.
 >Tencent Cloud CVM executes the script using the open-source software cloud-init. For more information about cloud-init, see [cloud-init's official website](https://cloud-init.io/).
 
-<span id="APItrans"></span>
-#### Using API
+:::
+::: Using API[](id:APItrans)
 
 When creating a CVM by using API, you can pass the text by assigning the value of the encoded result returned in [Base64 encoded script](#Base64Script) to the UserData parameter of the RunInstances API.
 The following is a sample CVM creation request with UserData:
@@ -76,3 +73,5 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
   &UserData=IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==
   &<Common request parameters>
 ```
+:::
+</dx-tabs>
