@@ -57,6 +57,7 @@ echo "IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==" | base64 -d
 例如，使用 Base64 编码 script_text 脚本文件返回的结果为 `IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==`。
 ![](https://main.qcloudimg.com/raw/0b6b594f174568ca7d3312821c0571ed.png)
 3. 按照界面信息逐步操作，完成创建云服务器。
+<dx-alert infotype="explain" title="">	
 > 腾讯云服务器将通过开源软件 cloud-init 执行脚本。有关 cloud-init 的更多内容，请参阅 [cloud-init 官方网站](https://cloud-init.io/)。
 </dx-alert>
 :::
