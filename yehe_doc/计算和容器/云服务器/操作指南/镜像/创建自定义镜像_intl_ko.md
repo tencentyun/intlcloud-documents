@@ -4,7 +4,6 @@ Tencent Cloud에서 제공하는 공용 이미지, 마켓 플레이스 이미지
 
 <dx-alert infotype="explain" title="">
 이미지는 데이터 저장을 위해 CBS 스냅샷 서비스를 사용합니다. 
- - 중국 국내 리전은 50GB의 무료 한도가 제공됩니다. 자세한 내용은 [무료 한도](https://intl.cloud.tencent.com/document/product/362/32415)를 참고하십시오.
  - 사용자 정의 이미지를 생성하면 해당 이미지와 연결된 스냅샷이 기본 생성됩니다. 사용자 정의 이미지 보관은 일정 스냅샷 요금이 발생합니다. 자세한 내용은 [스냅샷 과금 개요](https://intl.cloud.tencent.com/document/product/362/32415)를 참고하십시오.
 </dx-alert>
 
