@@ -29,7 +29,7 @@ This feature is currently not supported in other regions. To use an HTTPS certif
 <span id="1"></span>
 - Method 1: Bind a custom origin server domain name via the COS console
 Bind the `testhttps-1250000000` bucket to the `https://test.cos.com` domain and disable CDN acceleration. For detailed directions, please see [Enabling Custom Accelerated Domain Name](https://intl.cloud.tencent.com/document/product/436/31507).
-![](https://qcloudimg.tencent-cloud.cn/raw/b4adae8bfba22bf8d14bc282b628128d.png)
+
 <span id="2"></span>
 - Method 2: Configure a reverse proxy for the domain name
 Configure a reverse proxy for the `https://test.cos.com` endpoint on the server, as shown below (the Nginx configuration is for reference only):
