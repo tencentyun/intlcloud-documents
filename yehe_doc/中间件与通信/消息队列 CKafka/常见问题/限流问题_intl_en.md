@@ -58,8 +58,7 @@ To ensure stability of the service, CKafka implement network traffic control str
 ### How do I determine whether CKafka has been throttled?
 
 1. In the instance list, you can see the health status of each cluster. If it's "Warning", you can hover your mouse over it to view the detailed data. The data displays your peak traffic and the throttling times, by which you can determine whether this instance has been throttled.
-![](https://main.qcloudimg.com/raw/0ea089e54c336cd671cbd91a66565570.png)
 2. You can click the **Monitor** tab to view the max traffic value. If **the value of max traffic multiplied by replica quantity is greater than that of the purchased peak bandwidth**, you can determine that at least one throttling has occurred. You can also configure an alarm for traffic throttling.
      ![](https://main.qcloudimg.com/raw/3c0b2b6346b358287eea11c3f889b90d.png)
 3. View the instance monitoring data on the monitoring page in the CKafka console. If the number of throttling times is greater than 0, throttling has occurred.
-![](https://qcloudimg.tencent-cloud.cn/raw/2f881ffd847d40af9a9a388fe510fa32.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/c08d9c6cf510cb0357353513a733ca14.png)
