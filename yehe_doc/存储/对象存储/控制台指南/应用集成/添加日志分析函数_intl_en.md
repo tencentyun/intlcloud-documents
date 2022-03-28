@@ -20,7 +20,7 @@ The COS log analysis feature applies to various scenarios to help you efficientl
  - **Authentication Method**: Only SCF is supported.
  - **SCF Authorization**: SCF need to be authorized to read files from your bucket and save the result file to the specified folder.
 5. Click **Confirm**.
-![](https://qcloudimg.tencent-cloud.cn/raw/08d929cfc60cc748e4d9ae209447b4ec.png)
+
    You can perform the following operations on the created function:
  - Click **Log** to view the historical running status.
  - Click **Details** to view detailed configuration rules.
