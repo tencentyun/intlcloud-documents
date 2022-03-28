@@ -60,6 +60,7 @@ echo "IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==" | base64 -d
 <dx-alert infotype="explain" title="">	
 > 腾讯云服务器将通过开源软件 cloud-init 执行脚本。有关 cloud-init 的更多内容，请参阅 [cloud-init 官方网站](https://cloud-init.io/)。
 </dx-alert>
+
 :::
 ::: 通过 API 传递[](id:APItrans)
 当您通过 API 创建云服务器时，可以将 [使用 Base64 编码脚本文件](#Base64Script) 中返回的编码结果赋值给 RunInstances 接口的 UserData 参数，以此来传递文本。
