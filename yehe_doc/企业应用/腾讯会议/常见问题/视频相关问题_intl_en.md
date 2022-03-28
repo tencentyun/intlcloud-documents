@@ -73,12 +73,7 @@ Currently, the video image quality enhancement feature of VooV Meeting includes 
 - You can swipe left or right to switch between the two modes.
 
 
-此处删除了
 
-此处删除了
-
-此处删除了
-此处删除了
 
 ### How do I lock a video screen?
 **On PC client**
