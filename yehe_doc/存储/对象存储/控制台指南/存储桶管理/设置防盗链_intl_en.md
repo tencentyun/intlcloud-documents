@@ -51,7 +51,7 @@ Webmaster B manages a website:
 www.fake.com
 ```
 
-and wants to put this image on `www.fake.com'. But he doesn't want to pay for traffic costs. He creates a direct link to picture.jpg through the following address and places it into the homepage index.html on `www.fake.com`.
+and wants to put this image on `www.fake.com`. But he doesn't want to pay for traffic costs. He creates a direct link to picture.jpg through the following address and places it into the homepage index.html on `www.fake.com`.
 
 ```plaintext
 examplebucket-1250000000.file.myqcloud.com/picture.jpg
