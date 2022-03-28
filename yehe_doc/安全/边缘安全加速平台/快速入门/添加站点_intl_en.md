@@ -1,0 +1,45 @@
+## Overview
+You can purchase and connect to EdgeOne by site (i.e., second-level domain). The following two [connection methods](https://intl.cloud.tencent.com/document/product/1145/45967) are supported:
+- NS connection (recommended): You can transfer DNS records to EdgeOne and quickly enable the security protection and acceleration services.
+- CNAME connection: You can continue using your current DNS service provider and add the specified CNAME record at it to enable the EdgeOne security protection and acceleration services.
+
+>?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
+## NS Connection (Recommended)
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Service Overview** on the left sidebar.
+2. On the service overview page, click **Add Site** in the top-right corner.
+3. On the site addition page, enter a valid second-level domain and click **Next**.
+>?You cannot add a site repeatedly. If a site has been connected by another account, you need to reclaim it through [site verification](https://intl.cloud.tencent.com/document/product/1145/45969).
+
+![](https://qcloudimg.tencent-cloud.cn/raw/9cd35232f89edc7be81a188e41432968.png)
+4. On the DNS configuration page, the system will automatically scan and import the original DNS records of your site. You can also add, delete, and modify records and configure the [proxy mode](https://intl.cloud.tencent.com/document/product/1145/45968). Then, click **Next**.
+![](https://qcloudimg.tencent-cloud.cn/raw/be7ddf8d079f1952819079bb16d7d765.png)
+6. Log in at the domain registrar of your site and modify the NS server records to the value specified in EdgeOne as instructed on the NS server modification page. For detailed directions, see [How to Modify NS](#NSXG).
+7. After modification, click **Complete** to redirect to the site overview page.
+>?The time when the NS records take effect is subject to your domain registrar. After they take effect, the system will inform you by email, SMS, and Message Center.
+
+
+## CNAME Connection
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Service Overview** on the left sidebar.
+2. On the service overview page, click **Add Site** in the top-right corner.
+3. On the site addition page, enter a valid second-level domain and click **Next**.
+>?You cannot add a site repeatedly. If a site has been connected by another account, you need to reclaim it through [site verification](https://intl.cloud.tencent.com/document/product/1145/45969).
+
+![](https://qcloudimg.tencent-cloud.cn/raw/9cd35232f89edc7be81a188e41432968.png)
+5. On the DNS configuration page, you can add, delete, and modify records and configure the [proxy mode](https://intl.cloud.tencent.com/document/product/1145/45968). Then, click **Use CNAME Connection**.
+![](https://qcloudimg.tencent-cloud.cn/raw/c0b310a56e2c7442ab259cc100c6129b.png)
+6. On the site verification page, add a TXT record at your DNS service provider to verify your ownership of the site and click **Complete Verification**.
+![](https://qcloudimg.tencent-cloud.cn/raw/b797c208677d51fc5e465d77f20d9225.png)
+
+
+## How to Modify NS[](id:NSXG)
+1. Log in at the domain registrar of your site. If you cannot confirm the registrar, query it at [ICANN WHOIS](https://lookup.icann.org/).
+2. After login, disable the Domain Name System Security Extensions (DNSSEC) configuration.
+3. Delete the original NS configuration and modify it to the value specified in EdgeOne.
+4. Wait for the NS records to take effect. After they take effect, the system will inform you by email, Message Center, and SMS.
+
+Configuration guides for major domain registrars:
+- [Amazon](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-name-servers-glue-records.html#domain-name-servers-glue-records-adding-changing)
+- [GoDaddy](https://sg.godaddy.com/zh/help/change-nameservers-for-my-domains-664)
+- [Google Domains](https://support.google.com/domains/answer/3290309?hl%3Den)
+- [Name.com](https://www.name.com/support/articles/205934547-changing-nameservers-for-dns-management)
+- [Yahoo!](http://support.hostgator.com/articles/how-to-change-name-servers-with-yahoo-com)
