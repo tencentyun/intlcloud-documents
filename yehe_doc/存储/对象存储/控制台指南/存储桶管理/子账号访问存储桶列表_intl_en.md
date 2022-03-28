@@ -1,8 +1,8 @@
 ## Overview
 
-**Sub-accounts** have no permissions to pull a bucket list by default. Therefore, if you log in to the [COS Console](https://console.cloud.tencent.com/cos5) with a sub-account, you cannot access overview data, bucket list, or any other administration items that require permissions.
+**Sub-accounts** have no permissions to pull a bucket list by default. Therefore, if you log in to the [COS console](https://console.cloud.tencent.com/cos5) with a sub-account, you cannot access overview data, bucket list, or any other administration items that require permissions.
 
-**Sub accounts** can access a bucket list using the following two method:
+**Sub-accounts** can access a bucket list using the following two methods:
 - **Adding an access path**: this method applies to scenarios where a sub-account has permissions to operate on objects but no permissions to access a bucket list. The access path can be a **Bucket** or a **Path under the bucket**. Please make sure the added path is authorized.
 - **Adding a preset policy**: you can add a preset policy QcloudCOSGetServiceAccess with your root account for a sub-account to access a bucket list. This method also allows you to check the statistics overview in the console.
 
@@ -19,7 +19,7 @@ The sub-account has been granted user permissions on a bucket by the root accoun
 
 #### Directions
 
-1. Log in to the COS Console with a **sub-account**, enter the [Access Path List](https://console.cloud.tencent.com/cos5/access_path) page, and click **Add Access Path**.
+1. Log in to the COS console with a **sub-account**, enter the [Access Path List](https://console.cloud.tencent.com/cos5/access_path) page, and click **Add Access Path**.
 ![](https://main.qcloudimg.com/raw/6fbc8c24673e0e7719d0a4e907c2c15e.png)
 2. In the **Add Access Path** pop-up window, select the bucket region and enter the access path, as shown below:
  - **Region**: select the region of the bucket to be allowed for access.
@@ -27,7 +27,7 @@ The sub-account has been granted user permissions on a bucket by the root accoun
 ![](https://main.qcloudimg.com/raw/1fe816fae295dc4a087354d701fcd941.png)
 3. After confirming that the region and the access path are correct, click **OK** to add the path to the authorized bucket or an object in it.
 ![](https://main.qcloudimg.com/raw/1bef930d904b582ad4629603a390b6f6.png)
-4. Click **File List** on the right, and you can see the object(s) to which the sub-account has been granted access.
+4. Click **Objects** on the right, and you can see the object(s) to which the sub-account has been granted access.
 
 
 ## Adding a Preset Policy
@@ -35,7 +35,7 @@ A sub-account can access the bucket list by **adding the preset policy QcloudCOS
 
 >
 > - The preset policy QcloudCOSFullAccess or QcloudCOSReadOnlyAccess can also grant a sub-account access permission to the bucket list. However, due to the wide coverage of permissions granted by these two policies, **they are not recommended for security reasons**.
-- The collection of statistics in the overview requires the access permission to the bucket list. When the sub-account needs to pull statistics, please make sure that the root account has added the preset policy [QcloudCOSGetServiceAccess](https://console.cloud.tencent.com/cam/policy/detail/2158379&QcloudCOSGetServiceAccess&2) to it; otherwise, the system will prompt that the sub-account has no access permission to the statistics.
+> - The collection of statistics in the overview requires the access permission to the bucket list. When the sub-account needs to pull statistics, please make sure that the root account has added the preset policy [QcloudCOSGetServiceAccess](https://console.cloud.tencent.com/cam/policy/detail/2158379&QcloudCOSGetServiceAccess&2) to it; otherwise, the system will prompt that the sub-account has no access permission to the statistics.
 
 
 
