@@ -10,9 +10,9 @@
 ### [매개변수 일괄 수정](id:plxgcs)
 1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb) 로그인 후, 인스턴스 리스트에서 인스턴스 ID 또는 **작업**열의 **관리**를 클릭하여 인스턴스 관리 페이지로 이동합니다.
 2. **데이터베이스 관리** > **매개변수 설정**페이지를 선택하고 **매개변수 일괄 수정**을 클릭합니다.
-![](https://main.qcloudimg.com/raw/82c535bd50543645831988ca2e9b688e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0236dc88558f16937f71daca3e2d8d0f.png)
 3. **매개변수 실행값** 열에서 수정이 필요한 매개변수를 수정하고 오류가 없는지 확인한 뒤, **수정 확인**을 클릭합니다.
-![](https://main.qcloudimg.com/raw/5307fbeef4b1fccef478ab7fd57b3167.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1f904a228aa0ee6bb28f870f3238396c.png)
 4. 팝업 창에서 매개변수 작업의 **실행 방식**을 선택한 뒤, **확인**을 클릭합니다.
 >?
 >- **즉시 실행**을 선택하면 선택된 인스턴스의 매개변수 수정 작업이 즉시 실행 및 적용됩니다.
@@ -22,7 +22,7 @@
 ### [단일 매개변수 수정](id:xgdgcs)
 1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후, 인스턴스 리스트에서 인스턴스 ID를 클릭하여 인스턴스 관리 페이지로 이동합니다.
 2. **데이터베이스 관리** > **매개변수 설정**에서 수정이 필요한 매개변수를 선택한 뒤, **매개변수 실행값** 열의 <img src="https://main.qcloudimg.com/raw/788902e3f8c335cf17de420f7181c2a8.png"  style="margin:0;">을(를) 클릭하여 매개변수 값을 수정합니다.
-![](https://main.qcloudimg.com/raw/4687ed705274b76ec92c43b7f9d448ab.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d6bce1222a71d69a26bfc85a52feedea.png)
 3. **매개변수 수정 가능 값** 열의 안내에 따라 타깃 매개변수 값을 입력한 뒤, <img src="https://main.qcloudimg.com/raw/1f4c7f2e0744bc601efb5d9fb04a7a04.png"  style="margin:0;">을(를) 클릭하면 수정된 값이 저장되고, <img src="https://main.qcloudimg.com/raw/2106cb4b9337a1a2fff5908581d2a908.png"  style="margin:0;"> 을(를) 클릭하면 작업이 취소됩니다.
 ![](https://main.qcloudimg.com/raw/41c7d73d4c5d404a112f54c3a63da726.png)
 4. 팝업 창에서 매개변수 작업의 **실행 방식**을 선택한 뒤, **확인**을 클릭합니다.
@@ -35,11 +35,11 @@
 ### 방법1: 매개변수 설정 페이지를 통해 가져오기
 1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후, 인스턴스 리스트에서 인스턴스 ID를 클릭하여 인스턴스 관리 페이지로 이동합니다.
 2. **데이터베이스 관리** > **매개변수 설정** 탭을 선택하고 **사용자 정의 템플릿**을 클릭합니다(사용 가능한 사용자 정의 템플릿이 없다면 MySQL 콘솔, 왼쪽 메뉴 매개변수 템플릿을 통해 사용자 정의 템플릿을 찾을 수 있습니다. 템플릿을 만들려면 사전에 매개변수 템플릿을 설정하고, 2단계를 통해서 사용자 정의 템플릿을 가져올 수 있습니다).
-![](https://main.qcloudimg.com/raw/bd7a2fd3dc89895f1a3bd779d0fe8bbc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4eab1607d41b9bb420135141d68da1b6.png)
 3. 팝업 창에서 매개변수 템플릿을 선택한 후, **가져오기 및 기존의 매개변수 덮어쓰기**를 클릭합니다.
-![](https://main.qcloudimg.com/raw/2f649840f16befabea6259f9b4c7f47c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8bb98a9e921f3aae984d12b3dc7909c1.png)
 4. 매개변수를 확인한 후에 **수정 확인**을 클릭합니다.
-![](https://main.qcloudimg.com/raw/1673166256bc4d122f5a72c3c703ffab.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1fa0b69eda99b5d4a799082cf8fde7e5.png)
 5. 팝업 창에서 매개변수 작업의 **실행 방식**를 선택한 뒤, **확인**을 클릭합니다.
 >?
 >- **즉시 실행**을 선택하면 선택된 인스턴스의 매개변수 수정 작업이 즉시 실행 및 적용됩니다.
@@ -49,7 +49,7 @@
 ### 방법2: 매개변수 설정 파일 가져오기로 매개변수 수정하기
 1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후, 인스턴스 리스트에서 인스턴스 ID를 클릭하여 인스턴스 관리 페이지로 이동합니다.
 2. **데이터베이스 관리** > **매개변수 설정** 탭을 선택하고 **매개변수 가져오기**를 클릭합니다.
-![](https://main.qcloudimg.com/raw/52d6f069bbce29c933254593d59c0236.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/81f1a98c44457434e69d9660c084a358.png)
 3. **파일 선택**을 클릭하여 필요한 매개변수 파일을 찾은 다음 **가져오기 및 기존의 매개변수 덮어쓰기**를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/42fb6ef8936131a3bc776e492478e745.png)
 4. 매개변수를 확인한 후에 **수정 확인**을 클릭합니다.
@@ -82,28 +82,43 @@ innodb_buffer_pool_size 파라미터 설정 참고: {DBinitMemory\*786432} 인�
 
 표현식 구문 관련 내용은 다음 표를 참고하십시오.
 
-| 지원 유형 | 지원 설명                                                     | 예시                  |
-| -------- | ------------------------------------------------------------ | --------------------- |
-| 변수     | <li>DBinitMemory: 인스턴스 사양의 메모리 크기. 정수 유형. 예를 들어 인스턴스 사양의 메모리 크기가 4000MB인 경우 DBinitMemory의 값은 4000입니다. <li>DBInitCpu: 인스턴스 사양의 CPU 코어 수. 정수 유형. TencentDB for MySQL의 innodb_buffer_pool_size 파라미터 설정은 메모리 크기의 50% - 90% 사이를 유지해야 하며, 설정 값이 90%보다 크면 자동으로 90%로, 설정 값이 50% 미만이면 50%로 자동 설정됩니다. | {DBinitMemory * 786432}<br>ie: 메모리 크기(DBinitMemory) * 백분율(시스템 기본값: 75%) * 1024 * 1024(단위 변환) |
-| 오퍼레이터   | 수식 구문: `{}` 패키지 사용. <li>나눗셈 오퍼레이터(/): 피제수를 제수로 나누고 정수 몫을 반환합니다. 계산 결과가 소수이면 정수 부분이 잘립니다. 소수는 지원하지 않습니다. 예를 들어 시스템은 {MIN(DBInitMemory/4+500,1000000)}을 지원하지만 {MIN(DBInitMemory\*0.25+500,1000000)}은 지원하지 않습니다. <li>곱셈 오퍼레이터(*): 정수 곱을 반환하려면 두 개의 승수를 곱합니다. 계산 결과가 소수이면 정수 부분이 잘립니다. 소수 연산을 지원하지 않습니다. |   -                    |
-| 함수     | <li>함수 MAX(), 정수 유형 또는 매개변수 수식 목록에서 가장 큰 값을 반환합니다. <li>함수 MIN(), 정수 또는 매개변수 수식 목록에서 가장 작은 값을 반환합니다.</li> | {MAX(DBInitCpu/2,4)}  |
+| 지원 유형 | 지원 설명                                                     | 예시                                                         |
+| :------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| 변수     | DBinitMemory: 인스턴스 사양의 메모리 크기, 정수 유형. 예를 들어 인스턴스 사양의 메모리 크기가 4000MB인 경우 DBinitMemory의 값은 4000입니다. DBInitCpu: 인스턴스 사양의 CPU 코어 수, 정수 유형. 예를 들어 인스턴스 사양이 8코어인 경우 DBInitCpu의 값은 8입니다. | {DBinitMemory * 786432} ie: 메모리 크기(DBinitMemory) * 백분율(시스템 기본값 75%) * 1024 * 1024(단위 변환) |
+| 오퍼레이터   | 수식 구문: `{}` 패키지 사용. 나눗셈 오퍼레이터(/): 피제수를 제수로 나누고 정수 몫을 반환합니다. 계산 결과가 소수이면 정수 부분이 잘립니다. 소수는 지원하지 않습니다. 예를 들어 시스템은 {MIN(DBInitMemory/4+500,1000000)}을 지원하지만 {MIN(DBInitMemory\*0.25+500,1000000)}은 지원하지 않습니다. 곱셈 오퍼레이터(\*): 정수 곱을 반환하려면 두 개의 승수를 곱합니다. 계산 결과가 소수이면 정수 부분이 잘립니다. 소수 연산을 지원하지 않습니다. | -                                                            |
+| 함수     | MAX() 함수는 정수 유형 또는 매개변수 공식 목록에서 가장 큰 값을 반환합니다. MIN() 함수는 정수 유형 또는 매개변수 공식 목록에서 가장 작은 값을 반환합니다. | {MAX(DBInitCpu/2,4)}                                         |
+
+
+### 매개변수 공식을 지원하는 매개변수
+| 매개변수 이름        | 매개변수 설명                           | 기본 공식                          |
+| :----------------- | :-------------------------------- | :-------------------------------- |
+| thread_pool_size             | 스레드 풀의 스레드 그룹 수를 설정하는 매개변수로, 기본값은 CPU 수와 동일한 스레드 그룹 수를 의미합니다. | {MIN(DBInitCpu,64)}               |
+| table_open_cache_instances   | MySQL이 table 핸들을 캐시하는 파티션의 수를 나타냅니다.                   | {MIN(DBInitMemory/1000,16)}       |
+| table_open_cache             | 파일 활성화/비활성화 횟수를 줄이기 위한 테이블 디스크립터 캐시 크기입니다.                  | {MAX(DBInitMemory\*512/1000,2048)} |
+| table_definition_cache       | 활성화된 테이블 캐시 인스턴스의 수입니다.                                     | {MAX(DBInitMemory\*512/1000,2048)} |
+| max_connections              | 최대 연결 수 입니다.                                                 | {MIN(DBInitMemory/4+500,1000000)} |
+| join_buffer_size             | 일반 인덱스 스캔, 범위 인덱스 스캔 및 전체 테이블 스캔을 수행하는 테이블 연결을 위한 버퍼의 최소 크기입니다. | {MIN(DBInitMemory\*128,262144)}    |
+| innodb_write_io_threads      | 쓰기 작업에 사용되는 InnoDB의 I/O 스레드 수입니다.                           | {MAX(DBInitCpu/2,4)}              |
+| innodb_read_io_threads       | 읽기 작업에 사용되는 InnoDB의 I/O 스레드 수입니다.                           | {MAX(DBInitCpu/2,4)}              |
+| innodb_buffer_pool_instances | InnoDB 버퍼 풀 영역 수입니다.                                  | {MIN(DBInitMemory/2000,16)}       |
+| innodb_buffer_pool_size      | 버퍼 풀의 크기(바이트), InnoDB 테이블 캐시 및 데이터  인덱스 메모리 영역입니다. | {DBInitMemory\*786432}             |
 
 
 ## 매개변수 설정 파일 내보내기
 1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후, 인스턴스 리스트에서 인스턴스 ID를 클릭하여 인스턴스 관리 페이지로 이동합니다.
 2. **데이터베이스 관리** > **매개변수 설정** 탭을 선택하고 **매개변수 내보내기**를 클릭하여 매개변수 구성 파일을 내보냅니다.
-![](https://main.qcloudimg.com/raw/6885ffbc45f3154ed203551a309e1848.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5a8357f189cc68ff63ccfe08efecaec4.png)
 
 ## 매개변수 설정을 매개변수 템플릿으로 내보내기
 1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후, 인스턴스 리스트에서 인스턴스 ID를 클릭하여 인스턴스 관리 페이지로 이동합니다.
 2. **데이터베이스 관리** > **매개변수 설정** 탭을 선택하고 **템플릿으로 저장**을 클릭하여 기존 매개변수 구성을 매개변수 템플릿으로 저장합니다.
-![](https://main.qcloudimg.com/raw/fca4ec16b316948af812db9988d0c92c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5e93d4f27f975b7d7adac82ff42d7fae.png)
 
 ## 사용자 정의 시간에 매개변수 수정
 매개변수 수정 작업 마지막 단계를 수행할 때 팝업 창에서 매개변수의 수정 시간을 설정할 수 있습니다.
 >?**점검 시간 내**를 선택하면 인스턴스의 [점검 시간](https://intl.cloud.tencent.com/document/product/236/10929) 내에 매개변수 수정 작업이 실행 및 적용됩니다.
 >
-![](https://main.qcloudimg.com/raw/00d4892fb614dd285cdec91a4a74cf2d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/33fb2f56d3fb40db0a6771fa8fb43825.png)
 
 ## 매개변수 수정 작업 취소
 **점검 시간 내**의 매개변수 수정 작업을 제출한 후 매개변수의 수정을 취소하고 싶다면, 작업이 실행되기 전에(**실행 대기** 상태) 왼쪽 사이드바의 [**작업 리스트**](https://console.cloud.tencent.com/mysql/task) 페이지에서 **작업**열의 **취소**를 클릭하여 매개변수 수정 작업을 취소할 수 있습니다.
