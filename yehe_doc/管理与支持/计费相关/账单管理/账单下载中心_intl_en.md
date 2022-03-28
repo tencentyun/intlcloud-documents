@@ -1,6 +1,6 @@
 ## Overview
 
-Bill Download Center is a new console feature we rolled out in January 2022. It is currently in beta testing and is expected to be available to all users in mid-February. You can download your bill data since Bills 3.0 (released in July 2021). Specifically, you can:
+Bill Download Center is a new console feature we rolled out in January 2022. You can download your bill data since Bills 3.0 (released in July 2021). Specifically, you can:
 
 1. Download bill packages, PDF bills (L0), bill summary (L1), bills by instance (L2), and bill details (L3)
 
