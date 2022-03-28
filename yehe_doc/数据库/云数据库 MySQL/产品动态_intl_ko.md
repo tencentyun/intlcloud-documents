@@ -1,3 +1,43 @@
+## 2022년 02월
+<table>
+<tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=10%>배포일</th><th width=20%>관련 문서</th></tr>
+<tbody>
+<tr>
+<td>데이터베이스 프록시 연결 풀 지원</td>
+<td>TencentDB for MySQL 데이터베이스 프록시는 연결 풀 기능을 제공하여 세션 수준 연결 풀을 지원합니다. 빈번한 비지속 연결로 인한 과도한 데이터베이스 인스턴스 로드 문제를 효과적으로 해결할 수 있습니다.</td>
+<td>2022-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/45622" target="_blank">연결 풀 개요</a></td></tr>
+<tr>
+<tr>
+<td>데이터베이스 프록시 기능 최적화 및 업데이트</td>
+<td>TencentDB for MySQL 데이터베이스 프록시 기능 최적화 및 업데이트. 프록시 커널의 마이너 버전, 네트워크 전환 기능, 자체 설정 조정 업그레이드 지원. 더 우수하고 편리한 성능.</td>
+<td>2022-02</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/236/45627" target="_blank">데이터베이스 프록시 커널 마이너 버전 업그레이드</a><br
+><li><a href="https://intl.cloud.tencent.com/document/product/236/45628" target="_blank">데이터베이스 프록시 네트워크 전환</a><br
+><li><a href="https://intl.cloud.tencent.com/document/product/236/45629" target="_blank">데이터베이스 프록시 설정 조정</a></td></tr>
+</tbody></table>
+
+
+## 2021년 12월
+<table>
+<tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=10%>배포일</th><th width=20%>관련 문서</th></tr>
+<tbody>
+<tr>
+<td>RO 그룹 딜레이 설정 최적화</td>
+<td>TencentDB for MySQL RO 딜레이 설정이 인스턴스 설정에서 RO 그룹 설정으로 변경되어, RO 그룹 설정 딜레이 및 제거 정책이 상호 배타적이지 않아 RO 인스턴스 딜레이 관리가 간편해졌습니다. RO 그룹 통합 IP 주소로 액세스할 때 딜레이된 RO 인스턴스로 인해 액세스 데이터가 예상과 불일치한 상황이 발생하지 않습니다.</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/41085" target="_blank">읽기 전용 인스턴스 딜레이 복사 관리</a></td></tr>
+<tr>
+<td>가용존 마이그레이션 지원</td>
+<td>TencentDB for MySQL 가용존 마이그레이션 기능이 출시되었습니다. 이 기능은 비즈니스 근거리 액세스, 리소스 확장을 구현하고, 리전 내 다른 가용존의 리소스를 충분히 활용할 수 있도록 합니다.</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/44337" target="_blank">가용존 마이그레이션</a></td></tr>
+<tr>
+<td>매개변수 템플릿 및 인스턴스 구입 최적화</td>
+<td>TencentDB for MySQL은 매개변수 관련 기능 및 전달 프로세스를 최적화했습니다. 이 최적화에는 매개변수 템플릿 생성, 매개변수 비교, 매개변수 템플릿 적용, 매개변수 수정 및 기타 기능, 수정 가능한 매개변수, 신규 구입 인스턴스 최적화 업데이트가 포함됩니다.</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/43459" target="_blank">매개변수 템플릿 및 인스턴스 구입 최적화</a></td></tr>
+</tbody></table>
 
 ## 2021년 07월
 <table>
@@ -10,7 +50,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/236/19707" target="_blank">데이터베이스 인스턴스 사양 변경</a></td></tr>
 </tbody></table>
 
-
 ## 2021년 04월
 <table>
 <tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=10%>배포일</th><th width=20%>관련 문서</th></tr>
@@ -19,7 +58,7 @@
 <td>데이터베이스 프록시 지원</td>
 <td>데이터베이스 프록시는 CDB 서비스와 애플리케이션 서비스 사이에 위치한 네트워크 프록시 서비스입니다. 애플리케이션 서비스가 CDB에 액세스할 때 발생하는 모든 요청을 중계하는 데 사용됩니다. <br>데이터베이스 프록시 액세스 주소는 기존의 데이터베이스 액세스 주소와 별개이며, 데이터베이스 프록시 주소의 요청을 통해 프록시 클러스터 내 데이터베이스의 마스터/슬레이브 노드에 액세스하여 읽기/쓰기를 분리하고, 읽기 요청을 읽기 전용 인스턴스에 전달해 마스터 데이터베이스의 부하를 낮춥니다.</td>
 <td>2021-04</td>
-<td><a href="https://cloud.tencent.com/document/product/236/54652" target="_blank">데이터베이스 프록시</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/42048" target="_blank">데이터베이스 프록시</a></td></tr>
 <tr>
 <td>binlog 사용 용량이 디스크 총 사용 용량에 포함된 내용에 대한 설명</td>
 <td>binlog의 입력 속도가 데이터베이스 실행 성능에 영향을 미칠 수 있습니다. TencentDB for MySQL의 성능 및 안정성 향상을 위해 TencentDB for MySQL에서 binglog 스토리지를 업그레이드합니다. 업그레이드가 완료되면 인스턴스 binlog의 스토리지 미디어가 고성능 SSD 디스크(사용자 인스턴스의 스토리지 용량)로 이동합니다.</td>
