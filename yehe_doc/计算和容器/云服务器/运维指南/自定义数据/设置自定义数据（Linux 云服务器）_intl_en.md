@@ -58,8 +58,10 @@ You can launch an instance through multiple methods, and here we introduce two o
 For example, the Base64 encoded result of the `script_text` script is `IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==`.
 ![](https://main.qcloudimg.com/raw/0b6b594f174568ca7d3312821c0571ed.png)
 3. Create an CVM instance as prompted by the page.
->Tencent Cloud CVM executes the script using the open-source software cloud-init. For more information about cloud-init, see [cloud-init's official website](https://cloud-init.io/).
-
+<dx-alert infotype="explain" title="">	
+Tencent Cloud CVM executes the script using the open-source software cloud-init. For more information about cloud-init, see [cloud-init's official website](https://cloud-init.io/).
+</dx-alert>
+	
 :::
 ::: Using API[](id:APItrans)
 
