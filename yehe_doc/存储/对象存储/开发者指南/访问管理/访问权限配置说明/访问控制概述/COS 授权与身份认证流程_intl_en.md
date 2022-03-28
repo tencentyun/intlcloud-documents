@@ -30,7 +30,7 @@ For authorization across Tencent Cloud accounts, if you need to authorize only o
 
 #### Step 4. Configure permissions for the identity
 
-COS supports various permission configuration modes, including [bucket policies](https://intl.cloud.tencent.com/document/product/436/18031), [user policies (CAM policies)](https://intl.cloud.tencent.com/document/product/436/45236), [bucket ACLs](https://intl.cloud.tencent.com/document/product/436/30583), and [object ACLs](https://intl.cloud.tencent.com/document/product/436/30583). You can choose an authorization mode according to your use case.
+COS supports various permission configuration modes, including [bucket policies](https://intl.cloud.tencent.com/document/product/436/45235), [user policies (CAM policies)](https://intl.cloud.tencent.com/document/product/436/45236), [bucket ACLs](https://intl.cloud.tencent.com/document/product/436/30583), and [object ACLs](https://intl.cloud.tencent.com/document/product/436/30583). You can choose an authorization mode according to your use case.
 
 #### Step 5. Start access and identity verification
 
@@ -40,7 +40,7 @@ You can access COS through the console, API requests, and SDKs. For security rea
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/ec955992e6a0af7e9a01b7fd1e009330.png)
 
-COS buckets are private by default. Identity verification is required no matter whether you access COS using keys (permanent or temporary keys) or pre-signed URLs. In special scenarios, you can set your bucket permission to Public Read so that any user can use object URLs to download objects directly without identity verification, which is risky.
+COS buckets are private by default. Identity verification is required regardless of whether you access COS using keys (permanent or temporary keys) or pre-signed URLs. In special scenarios, you can set your bucket permission to Public Read so that any user can use object URLs to download objects directly without identity verification, which is risky.
 
 ### 1. Access via permanent key
 
@@ -103,3 +103,4 @@ You can set the permission of an object to Public Read in the COS console so tha
 #### Setting the permission of a folder to Public Read
 
 You can set the permission of a folder to Public Read in the COS console so that all objects in the folder can be downloaded directly via object URL, and objects outside of the folder are not affected. For the permission setting method, see [Setting Folder Permissions](https://intl.cloud.tencent.com/document/product/436/35261).
+

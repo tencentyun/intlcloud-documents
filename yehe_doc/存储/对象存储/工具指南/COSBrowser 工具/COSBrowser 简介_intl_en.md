@@ -26,7 +26,7 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
    <tr>
       <td>Linux</td>
       <td>Includes a GUI that supports the <a href="https://appimage.org">AppImage</a> format<br>
-          Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox in the terminal .</code></td>
+          Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox</code></td> in the terminal.
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
    <tr>
@@ -38,12 +38,12 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
    <tr>
       <td>iOS</td>
       <td>iOS 11 or above</td>
-      <td>iOS</a></td>
+      <td><a href="https://apps.apple.com/cn/app/id1469323992">iOS</a></td>
    </tr>
    <tr>
-      <td>Web Version</td>
+      <td>Web Edition</td>
       <td>Web</td>
-      <td>Browsers such as Chrome, Firefox, Safari, and Internet Explorer 10+</td>
+      <td>Browsers such as Chrome, FireFox, Safari, and IE10+</td>
       <td><a href="https://cosbrowser.cloud.tencent.com/web">Web</a></td>
    </tr>
    <tr>
@@ -54,17 +54,17 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
    </tr>
 </table>
 
-## COSBrowser Desktop Version
+## COSBrowser for Desktop
 
-COSBrowser Desktop Version focuses on resource management and uploading and downloading data in batches.
+COSBrowser for desktop focuses on resource management and uploading and downloading data in batches.
 
-> !COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.
+> !COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the Internet.
 >
 > - For queries on Windows, go to "Internet Options".
 > - For queries on macOS, go to "Network Preferences".
 > - For queries on Linux, go to System Settings > Network > Network Proxy.
 
-COSBrowser Desktop Version has the following features:
+COSBrowser for desktop has the following features:
 
 | Feature | Description |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -72,7 +72,7 @@ COSBrowser Desktop Version has the following features:
 | [Viewing bucket details](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | Views the basic information of your bucket |
 | [Viewing statistics](https://intl.cloud.tencent.com/document/product/436/32565#count)           | Views the current storage capacity and number of objects in your bucket                         |
 | [Permission management](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket)                               | Modifies the permissions on your buckets and objects                                 |
-| [Setting versioning](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket)                                     | Enables/Suspends bucket versioning                                 |
+| [Setting versioning](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket)                                     | Enable/Suspends bucket versioning                                 |
 | [Adding an access path](https://intl.cloud.tencent.com/document/product/436/32565#addaccess)                                     | Adds an access path                                             |
 | [Uploading a file/folder](https://intl.cloud.tencent.com/document/product/436/32565#upload) | Uploads files/folders to a bucket separately, in batches, or incrementally |
 | [Downloading a file/folder](https://intl.cloud.tencent.com/document/product/436/32565#download) | Downloads files/folders to the local file system separately, in batches, or incrementally |
@@ -89,17 +89,21 @@ COSBrowser Desktop Version has the following features:
 | [Searching a file](https://intl.cloud.tencent.com/document/product/436/32565#searchfile) | Searches files in a bucket through prefix search |
 | [Searching buckets](https://intl.cloud.tencent.com/document/product/436/32565#searchbuckete) | Searches existing buckets |
 | [Viewing file versions/incomplete multipart uploads](https://intl.cloud.tencent.com/document/product/436/32565#viewfiles) |  <li>Views multiple versions of a file in a versioning-enabled bucket<br><li>Views the incomplete multipart uploads in your bucket  |
+| [Comparing files](https://intl.cloud.tencent.com/document/product/436/32565#compare) |     Compares files in a local folder to those in a bucket            |
+| [Transcoding a video](https://intl.cloud.tencent.com/document/product/436/32565#transcoding)   |  Transcodes videos with the media processing feature enabled in a bucket    |
+|  [Generating an authorization code](https://intl.cloud.tencent.com/document/product/436/32565#authorization)   |   Generates an authorization code for logging in to the COSBrowser client   |
+|  [Processing an image](https://intl.cloud.tencent.com/document/product/436/32565#processing)  |  Scales, crops, or rotates an image, or adds text or image watermarks, and generates a URL of the output image   |
 | [Setting up a proxy](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets up a proxy to access COS |
-| [Setting the number of concurrent transfers](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of concurrent transfers for file upload or download |
-| [Setting the number of parts to be transferred](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of parts for multipart upload or download |
-| [Setting the number of retries upon transfer failure](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of retries upon upload or download failure |
+| [Setting the number of concurrent uploads/downloads](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of concurrent transfers for file upload or download |
+| [Setting the number of parts to upload/download](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of parts for multipart upload or download |
+| [Setting the number of retries upon upload/download failure](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of retries upon upload or download failure |
+| [Limiting single-thread upload/download speed](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Limits the upload and download speeds for a single thread |
 | [Setting upload check](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Double-checks files uploaded to a bucket |
-| [Limiting single-thread speed](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Limits the upload and download speeds for a single thread |
 | [Viewing a local log](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Saves the record of operations on COSBrowser in the form of a local log |
 
 ## COSBrowser Mobile Version
 
-The COSBrowser Mobile Version is mainly used to monitor COS resources (such as storage usage and traffic) at any time you want. For more supported features, please see [Mobile Version Features](https://intl.cloud.tencent.com/document/product/436/41616).
+The COSBrowser mobile version is mainly used to monitor COS resources (such as storage usage and traffic) at any time you want. For more supported features, please see [Mobile Version Features](https://intl.cloud.tencent.com/document/product/436/32566).
 
 ## Changelog
 
@@ -112,3 +116,5 @@ If you have any questions or suggestions during your use of COSBrowser, please f
 
 - Feedback on Desktop Version: [issues](https://github.com/tencentyun/cosbrowser/issues).
 - Feedback on Mobile Version: [issues_mobile](https://support.qq.com/embed/phone/67467).
+  
+   

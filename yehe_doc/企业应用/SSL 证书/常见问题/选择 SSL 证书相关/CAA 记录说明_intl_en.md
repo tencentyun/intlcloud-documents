@@ -6,8 +6,8 @@ Certification Authority Authorization (CAA) is designed to avoid SSL certificate
 The domain name holder can set the CAA record to authorize a specific CA to issue an SSL certificate for it. The CA will mandatorily check the domain name’s CAA record under the regulations. If it’s not authorized, CA will reject issuing an SSL certificate for it to avoid certificate misissuance and security risks.
 
 >?
->- If the domain name holder did not set a CAA record for the domain name, any CA can issue an SSL certificate for this domain name.
->- If your domain name is hosted with DNSPod, see [CAA Record](https://docs.dnspod.cn/dns/5f3b337aab35dc34f57913e4/).
-
+>- If a CAA record is not configured for the domain, any CA can issue an SSL certificate for this domain.
+>- If your domain is hosted with DNSPod, see [CAA Record](https://docs.dnspod.cn/dns/5f3b337aab35dc34f57913e4/).
+>- If a CAA record for a non-Tencent Cloud CA is configured for the domain name, an SSL certificate cannot be issued for the domain properly. Before domain validation, check whether a CAA record is added for the domain and remove it if there is any.
 
 
