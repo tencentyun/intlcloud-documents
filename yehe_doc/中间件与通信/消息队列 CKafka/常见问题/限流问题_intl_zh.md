@@ -58,8 +58,7 @@ CKafka 实例的底层限流机制是基于令牌桶原理实现的。将每秒�
 ### 如何判断 CKafka 是否发生限流？
 
 1. 在实例列表上，每个集群都有对应的健康度展示。当健康度显示为“警告”字样时，可以将鼠标移至其上查看弹出的详细数据。这个数据会展示当前用户的峰值流量以及发生限流的次数，用户可以根据这里的数据判断该实例是否发生过限流。
-![](https://main.qcloudimg.com/raw/0ea089e54c336cd671cbd91a66565570.png)
 2. 用户可以打开监控数据查看流量的最大值，如果 **(流量的最大值 × 副本数) ＞ 购买时的峰值带宽**，则表明至少发生过一次限流。可通过配置限流告警得知是否发生限流。
      ![](https://main.qcloudimg.com/raw/3c0b2b6346b358287eea11c3f889b90d.png)
 3. 在 CKafka 控制台的监控页面查看实例监控，当限流次数大于0，证明发生过限流。
-![](https://qcloudimg.tencent-cloud.cn/raw/2f881ffd847d40af9a9a388fe510fa32.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/c08d9c6cf510cb0357353513a733ca14.png)
