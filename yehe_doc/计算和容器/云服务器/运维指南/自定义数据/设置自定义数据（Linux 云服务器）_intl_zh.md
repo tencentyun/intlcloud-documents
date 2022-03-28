@@ -50,16 +50,17 @@ echo "IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==" | base64 -d
 
 我们提供多种启动实例的方式，主要分为以下两种情况。请根据您的实际需求，进行选择：
 <dx-tabs>
-:::通过官网或控制台传递[](id:Consoletrans)
-1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855) 购买实例，并在 “2.设置主机” 中单击【高级设置】。如下图所示：
+::: 通过官网或控制台传递[](id:Consoletrans)
+1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855) 购买实例，并在 “2.设置主机” 步骤中单击**高级设置**。如下图所示：
 ![](https://main.qcloudimg.com/raw/28baf2764488ecfaf5bbac791cec7ea3.png)
 2. 在 “高级设置” 的 “自定义数据” 文本框中，输入 [使用 Base64 编码脚本文件](#Base64Script) 返回的编码结果。如下图所示：
 例如，使用 Base64 编码 script_text 脚本文件返回的结果为 `IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==`。
 ![](https://main.qcloudimg.com/raw/0b6b594f174568ca7d3312821c0571ed.png)
 3. 按照界面信息逐步操作，完成创建云服务器。
-<dx-alert infotype="explain" title="">	
-> 腾讯云服务器将通过开源软件 cloud-init 执行脚本。有关 cloud-init 的更多内容，请参阅 [cloud-init 官方网站](https://cloud-init.io/)。
+<dx-alert infotype="explain" title="">
+腾讯云服务器将通过开源软件 cloud-init 执行脚本。有关 cloud-init 的更多内容，请参阅 [cloud-init 官方网站](https://cloud-init.io/)。
 </dx-alert>
+
 
 :::
 ::: 通过 API 传递[](id:APItrans)
@@ -73,6 +74,6 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
   &UserData=IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==
   &<公共请求参数>
 ```
+
 :::
 </dx-tabs>
-
