@@ -29,7 +29,7 @@ COS 国内公有云地域、新加坡地域已支持托管自定义源站域名�
 <span id="1"></span>
 - 方式一：通过 COS 控制台绑定自定义源站域名
 将存储桶 testhttps-1250000000 绑定到域名`https://test.cos.com`，关闭 CDN 加速，详细操作指引请参见 [开启自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507) 文档。
-![](https://qcloudimg.tencent-cloud.cn/raw/b4adae8bfba22bf8d14bc282b628128d.png)
+
 <span id="2"></span>
 - 方式二：为域名配置反向代理
 在服务器上为域名`https://test.cos.com`配置反向代理。具体配置参考如下（以下 Nginx 配置仅供参考）：
