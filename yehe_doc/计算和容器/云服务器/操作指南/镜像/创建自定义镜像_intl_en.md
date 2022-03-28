@@ -4,7 +4,6 @@ You can create a custom image in addition to using available Tencent Cloud publi
 
 <dx-alert infotype="explain" title="">
 Images use the CBS snapshot service for data storage:
- -A free tier of 50 GB is provided in domestic regions. For more information, please see [Free Tier](https://intl.cloud.tencent.com/document/product/362/32415).
  - When creating a custom image, an associated snapshot will also be created by default. As a result, retaining custom images incurs costs. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/362/32415).
 </dx-alert>
 
