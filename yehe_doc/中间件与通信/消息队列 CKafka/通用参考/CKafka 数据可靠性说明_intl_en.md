@@ -21,9 +21,12 @@ When the producer sends data to CKafka, the data may be lost due to network jitt
   When the producer sends data to the leader, the data reliability level can be set using the `request.required.acks` and `min.insync.replicas` parameters.
  - When acks = 1 (default value), the producer's leader in ISR has successfully received a data entry, and the next data entry can be sent. If the leader is down, as the data may have not been synced to its followers, the data will be lost.
  - When acks = 0, the producer sends the next message without waiting for acknowledgment from the broker. In this case, data transfer efficiency is the highest, but data reliability is the lowest.
+   <dx-alert infotype="notice" title="">
+   When the producer is configured with `acks = 0`, if the current instance is throttled, in order for the server to provide services normally, the server will actively close the connection with the client.
+   </dx-alert>
  - When acks = -1 or all, the producer needs to wait for acknowledgment of message receipt from all the followers in ISR before sending the next message, which leads to highest reliability.
-   Even if ACK is configured as above, there is no guarantee that data will never be lost. For example, when there is only one leader in ISR (the number of members in ISR may increase or decrease in certain circumstances, and in some cases, only one leader is left), `acks` will be 1. Therefore, you also need to use the `min.insync.replicas` parameter (which can be configured in CKafka Console > Topic Management > Advanced Configuration). It represents the minimum number of replicas in ISR, which is 1 by default and takes effect when and only when acks = -1 or all.
-
+   Even if ACK is configured as above, there is no guarantee that data will never be lost. For example, when there is only one leader in ISR (the number of members in ISR may increase or decrease in certain circumstances, and in some cases, only one leader is left), `acks` will be 1. Therefore, you also need to use the `min.insync.replicas` parameter (which can be configured in the CKafka console > Topic Management > Advanced Configuration). It represents the minimum number of replicas in ISR, which is 1 by default and takes effect when and only when acks = -1 or all.
+   
 #### Recommended parameter values
 
 These parameter values are for reference only, and actual values depend on the actual conditions of your business.
@@ -38,12 +41,12 @@ These parameter values are for reference only, and actual values depend on the a
 #### Causes of data loss
 
 - The partition's leader is down before the backup of followers is completed. Even if a new leader is elected, data will be lost because it has not been backed up yet.
-- Open-source Kafka features async storage to disk, that is, data is first stored in PageCache. If the broker breaks, restarts, or fails, the data stored in PageCache will be lost because it has not been stored to the disk yet.
+- Open-source Kafka features async storage to disk, that is, data is first stored in PageCache. If the broker disconnects, restarts, or fails, the data stored in PageCache will be lost because it has not been stored to the disk yet.
 - Stored data may be lost due to disk failure.
 
 #### Solution
 
-- Open-Source Kafka has a multi-replica feature. You are recommended to use replicas to ensure data integrity. Data will be lost only if multiple replicas and multiple brokers fail at the same time, so data reliability is higher than that in the single-replica case. Therefore, CKafka requires at least 2 replicas for a topic and supports configuring 3 replicas.
+- Open-source Kafka has a multi-replica feature. You are recommended to use replicas to ensure data integrity. Data will be lost only if multiple replicas and multiple brokers fail at the same time, so data reliability is higher than that in the single-replica case. Therefore, CKafka requires at least 2 replicas for a topic and supports configuring 3 replicas.
 - More reasonable values are configured for the `log.flush.interval.messages` and `log.flush.interval.ms` parameters in CKafka for data flushing.
 - In CKafka, the disk is specially designed to ensure that data reliability will not be compromised even if the disk is partially damaged.
 

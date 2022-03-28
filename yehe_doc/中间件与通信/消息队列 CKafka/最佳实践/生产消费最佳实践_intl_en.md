@@ -4,10 +4,9 @@ This document describes the best practices of message production and consumption
 
 ### Recommendations for topic use
 
-- Configuration requirements: 3 replicas and in-sync replication are recommended. The minimum number of in-sync replicas should be 2, and the number of in-sync replicas cannot be equal to the number of topic replicas; otherwise, the failure of 1 replica will lead to the inability to produce messages.
-- Creation method: you can choose whether to enable **Auto-Create Topic** in CKafka. After it is enabled, a topic with 3 partitions and 3 replicas will be automatically created when a topic that has not been created is produced or consumed in.
-- The recommended maximum number of partitions for a topic is 100.
-- A topic can have 3 replicas (due to the limits on the current version, this value cannot be changed).
+- Configuration requirements: It is recommended to use 3 replicas and in-sync replication. The minimum number of in-sync replicas should be 2, and the number of in-sync replicas cannot be equal to the number of topic replicas; otherwise, the failure of 1 replica will lead to the inability to produce messages.
+- Creation method: You can choose whether to enable **Auto-Create Topic** in CKafka. After it is enabled, a topic with 3 partitions and 2 replicas will be automatically created when a topic that has not been created is produced or consumed in.
+
 
 ### Retry upon failure
 
@@ -15,7 +14,7 @@ In a distributed environment, due to network or other issues, messages may occas
 
 You can set the following retry parameters based on your business needs:
 
-|  Parameter  |  Description |
+| Parameter | Description |
 | ------ | ------ | 
 | `retries` | Number of retries, which is `3` by default. You can consider setting it to `Integer.MAX_VALUE` (valid and maximum) for applications that have zero tolerance for data loss. |
 | `retry.backoff.ms` | Retry interval. We recommend you set it to `1000`. |
@@ -36,11 +35,11 @@ Kafka's ACK mechanism refers to the producer's mechanism for acknowledgment of m
 
 The `Acks` parameter is described as follows:
 
-|  Parameter  |  Description |
+| Parameter | Description |
 | ------ | ------ | 
 | `acks=0` | No response from the server is required. In this case, the performance is high, but the risk of data loss is great. |
 | `acks=1` | A response will be returned after the primary server node writes successfully. In this case, the performance is moderate, and the risk of data loss is also moderate. A failure of the primary node may cause data loss. |
-| `acks=all` | A response will be returned only after the primary server node writes successfully and the secondary node syncs successfully. The performance is poor, but the risk of data loss is small. Only a failure of both the primary and secondary nodes will cause data loss. |
+| `acks=all` | A response will be returned only after the primary server node writes successfully and the nodes in ISR sync successfully. The performance is poor, but the risk of data loss is small. Only a failure of both the primary and secondary nodes will cause data loss. |
 
 We recommend you select `acks=1` generally and select `acks=all` for important services.
 
@@ -51,13 +50,18 @@ A CKafka topic generally has multiple partitions. Before the producer client sen
 
 The batch parameters are described as follows:
 
-|  Parameter  |  Description |
+| Parameter | Description |
 | ------ | ------ | 
 | `batch.size` | Size of cached messages sent to each partition (which is the sum of bytes of the messages rather than the number of messages). Once the set value is reached, a network request will be triggered, and the producer client will send the messages to the server in batch. |
 | `linger.ms` | Maximum amount of time each message is cached. After this time elapses, the producer client will ignore the limit of the `batch.size` and immediately send the messages to the server. |
 | `buffer.memory` | After the total size of all cached messages exceeds this value, the messages will be sent to the server immediately, and the limits of `batch.size` and `linger.ms` will be ignored. The default value of `buffer.memory` is 32 MB, which can ensure sufficient performance for a single producer. |
 
-  >? If you start multiple producers in the same JVM, it is likely that each producer will use 32 MB of cache space. In this case, OOM errors may occur, and you need to consider the value of `buffer.memory` in order to avoid OOM errors.
+ 
+
+
+<dx-alert infotype="explain" title="">
+If you start multiple producers in the same JVM, it is likely that each producer will use 32 MB of cache space. In this case, OOM errors may occur, and you need to consider the value of `buffer.memory` in order to avoid OOM errors.
+</dx-alert>
 
 You can adjust the values of the parameters based on your actual business needs.
 
@@ -65,21 +69,21 @@ You can adjust the values of the parameters based on your actual business needs.
 
 Each message in CKafka has two fields: key (message identifier) and value (message content).
 
-For ease of tracking, please set a unique key for each message, which allows you to track a message and print its sending and consumption logs to learn about its production and consumption conditions.
+For ease of tracking, set a unique key for each message, which allows you to track a message and print its sending and consumption logs to learn about its production and consumption conditions.
 
-If you want to send a large number of messages, we recommend you use the sticky partitioning policy instead of setting keys.
+If you want to send a large number of messages, we recommend you use the sticky partitioning strategy instead of setting keys.
 
 ### Sticky partitioning
 
-Only messages sent to the same partition will be placed in the same batch, so one factor that determines how a batch will be formed is the partitioning policy set by the Kafka producer. The Kafka producer allows you to choose a partition that suits your business by setting the partitioner implementation class. If a key is specified for a message, the default policy of the Kafka producer is to hash the message key and then select a partition based on the result of hashing to ensure that messages with the same key are sent to the same partition.
+Only messages sent to the same partition will be placed in the same batch, so one factor that determines how a batch will be formed is the partitioning strategy set by the Kafka producer. The Kafka producer allows you to choose a partition that suits your business by setting the partitioner implementation class. If a key is specified for a message, the default strategy of the Kafka producer is to hash the message key and then select a partition based on the result of hashing to ensure that messages with the same key are sent to the same partition.
 
-If no key is specified for a message, the default policy of Kafka below v2.4 is to use all partitions in the topic in loops and send the message to each partition in a round robin manner. However, this default policy has a poor batch performance and may produce a large number of small batches, which increases actual delays. As it was inefficient in partitioning messages without a key, Kafka 2.4 introduced the sticky partitioning policy.
+If no key is specified for a message, the default strategy of Kafka below v2.4 is to use all partitions in the topic in loops and send the message to each partition in a round robin manner. However, this default strategy has a poor batch performance and may produce a large number of small batches, which increases actual delays. As it was inefficient in partitioning messages without a key, Kafka 2.4 introduced the sticky partitioning strategy.
 
-The sticky partitioning policy mainly addresses the problem of small batches caused by the distribution of messages without a key into different partitions. The main practice is to randomly select another partition and use it as much as possible for subsequent messages after the batch is completed for a partition. With this policy, messages will be sent to the same partition in the short run, but from the perspective of the entire execution, messages will be evenly sent to different partitions, which helps avoid skewed partitions while reducing delays and improving the overall service performance.
+The sticky partitioning strategy mainly addresses the problem of small batches caused by the distribution of messages without a key into different partitions. The main practice is to randomly select another partition and use it as much as possible for subsequent messages after the batch is completed for a partition. With this strategy, messages will be sent to the same partition in the short run, but from the perspective of the entire execution, messages will be evenly sent to different partitions, which helps avoid skewed partitions while reducing delays and improving the overall service performance.
 
-If you use a Kafka producer client on v2.4 or later, the default partitioning policy is sticky partitioning. If you use an older producer client, you can implement a partitioning policy on your own based on how the sticky partitioning policy works and then make it take effect through the `partitioner.class` parameter.
+If you use a Kafka producer client on v2.4 or later, the default partitioning strategy is sticky partitioning. If you use an older producer client, you can implement a partitioning strategy on your own based on how the sticky partitioning strategy works and then make it take effect through the `partitioner.class` parameter.
 
-For more information on how to implement the sticky partitioning policy, please see the following implementation of Java code. The code is implemented by switching from one partition to another at certain time intervals.
+For more information on how to implement the sticky partitioning strategy, see the following implementation of Java code. The code is implemented by switching from one partition to another at certain time intervals.
 
 ```
 public class MyStickyPartitioner implements Partitioner {
@@ -159,7 +163,7 @@ If you want messages to be consumed in the sending order, you can specify keys f
 
 ### Load balancing
 
-Each consumer group can contain multiple consumers with the same `group.id` value. In this way, consumers in the same consumer group consume the subscribed topic through load balancing.
+Each consumer group can contain multiple consumers with the same `group.id` value. In this way, consumers in the same consumer group consume the same subscribed topic.
 
 For example, if consumer group A subscribes to topic A and enables three consumer instances C1, C2, and C3, then each message sent to topic A will be eventually delivered to only one of the three instances. By default, CKafka will evenly distribute messages to the consumer instances to achieve consumption load balancing.
 
@@ -202,14 +206,14 @@ Number of remaining messages (aka the "number of retained messages") = MaxOffset
 **Offset commit**
 
 There are two parameters related to CKafka consumers:
-- enable.auto.commit: the default value is `true`.
-- auto.commit.interval.ms: the default value is 1000, i.e., 1s.
+- enable.auto.commit: The default value is `true`.
+- auto.commit.interval.ms: The default value is 1000, i.e., 1s.
 
 As a result of the combination of the two parameters, before the client polls the data, it will always check the time of the last committed offset first, and if the time defined by the `auto.commit.interval.ms` parameter has elapsed, the client will start an offset commit.
 
 Therefore, if `enable.auto.commit` is set to `true`, it is always necessary to ensure that the data polled last time has been consumed before data polling; otherwise, the offset may be skipped.
 
-If you want to control offset commits by yourself, please set `enable.auto.commit` to `false` and call the `commit(offsets)` function.
+If you want to control offset commits by yourself, set `enable.auto.commit` to `false` and call the `commit(offsets)` function.
 
 **Offset reset**
 
@@ -218,9 +222,9 @@ The `ConsumerOffset` will be reset under the following two circumstances:
 - A message is pulled from an invalid offset (for example, the `MaxOffset` in a partition is 10, but the client pulls a message from offset 11).
 
 For a Java client, you can configure a resetting policy by using `auto.offset.reset`. There are three policies: 
-- latest: consumption will start from the maximum offset.
-- earliest: consumption will start from the minimum offset.
-- none: resetting will not be performed.
+- latest: Consumption will start from the maximum offset.
+- earliest: Consumption will start from the minimum offset.
+- none: Resetting will not be performed.
 
 >?
 >- We recommend you set the resetting policy to `latest` instead of `earliest` so as to avoid starting consumption from the beginning when the offset is invalid, as that may cause a lot of repetitions.
@@ -229,14 +233,14 @@ For a Java client, you can configure a resetting policy by using `auto.offset.re
 ### Message pull
 
 In the consumption process, the client pulls messages from the server. When the client pulls large messages, you should control the pulling speed and pay attention to the following parameters:
-- max.poll.records: set it to 1 if a single message exceeds 1 MB in size.
-- max.partition.fetch.bytes: set it to a value slightly greater than the size of a single message.
-- fetch.max.bytes: set it to a value slightly greater than the size of a single message.
+- max.poll.records: Set it to 1 if a single message exceeds 1 MB in size.
+- max.partition.fetch.bytes: Set it to a value slightly greater than the size of a single message.
+- fetch.max.bytes: Set it to a value slightly greater than the size of a single message.
 
 When messages are consumed over the public network, a disconnection may often occur due to the bandwidth limit of the public network. In this case, you should control the pulling speed and pay attention to the following parameters:
-- fetch.max.bytes: we recommend you set it to half of the public network bandwidth (note that the unit of this parameter is bytes, while the unit of the public network bandwidth is bits).
+- fetch.max.bytes: We recommend you set it to half of the public network bandwidth (note that the unit of this parameter is bytes, while the unit of the public network bandwidth is bits).
 
-- max.partition.fetch.bytes: we recommend you set it to one third or one fourth of `fetch.max.bytes`.
+- max.partition.fetch.bytes: We recommend you set it to one third or one fourth of `fetch.max.bytes`.
 
 ### Duplicate messages and consumption idempotency
 
@@ -273,7 +277,11 @@ It should be ensured as much as possible that the consumer will not jam the cons
 
 - Increase the number of consumer instances.
   You can either increase the number of consumer instances directly in the process (you need to ensure that each instance corresponds to one thread) or deploy multiple consumer instance processes.
-  >?After the number of instances exceeds the number of partitions, you can't add more instances; otherwise, there will be idle consumer instances.
+<dx-alert infotype="explain" title="">
+After the number of instances exceeds the number of partitions, you can't add more instances; otherwise, there will be idle consumer instances.
+</dx-alert>
+
+
 
 - Increase the number of consumer threads. 
   1. Define a thread pool.

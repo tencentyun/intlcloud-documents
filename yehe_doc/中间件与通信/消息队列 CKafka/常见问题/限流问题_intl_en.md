@@ -3,22 +3,22 @@ Kafka's traffic throttling mechanism is soft throttling; that is, when the user'
 
 Take API traffic throttling as an example:
 
-**Hard traffic throttling**: if the call rate is 100 times/s, when the client calls more than 100 times per second, the server will return an error, and the client needs to process it according to the business logic.
+**Hard traffic throttling**: If the call rate is 100 times/s, when the client calls more than 100 times per second, the server will return an error, and the client needs to process it according to the business logic.
 
-**Soft traffic throttling**: if the call rate is 100 times/s, and the normal duration is 10 ms, when the client calls more than 100 times per second:
+**Soft traffic throttling**: If the call rate is 100 times/s, and the normal duration is 10 ms, when the client calls more than 100 times per second:
 - If it is 110 times, this request will take 20 ms.
 - If it is 200 times, this request will take 50 ms. In this case, throttling is friendly to the client, no error alarms will be triggered due to traffic surges or fluctuations, and the business can continue normally.
 
 Therefore, in high-traffic scenarios such as Kafka, soft traffic throttling is better for a smooth user experience.
 
-<dx-alert infotype="explain">
-<ul>
-Relationship between purchased bandwidth and production/consumption bandwidth:
-<li>Maximum production bandwidth (per second) = purchased bandwidth/number of replicas</li>
-<li>Maximum consumption bandwidth (per second) = purchased bandwidth</li> 
-</ul>
+<dx-alert infotype="explain" title="Relationship between purchased bandwidth and production/consumption bandwidth:">
+- Maximum production bandwidth (per second) = purchased bandwidth/number of replicas
+- Maximum consumption bandwidth (per second) = purchased bandwidth 
 </dx-alert>
 
+
+
+</dx-fold-block>
 
 <dx-fold-block title="How Delayed Response Works">
 The underlying traffic throttling mechanism of a CKafka instance is implemented based on token bucket. Each second is divided into multiple time buckets measured in ms.
@@ -58,8 +58,8 @@ To ensure stability of the service, CKafka implement network traffic control str
 ### How do I determine whether CKafka has been throttled?
 
 1. In the instance list, you can see the health status of each cluster. If it's "Warning", you can hover your mouse over it to view the detailed data. The data displays your peak traffic and the throttling times, by which you can determine whether this instance has been throttled.
-
-2. You can click the **Monitor** tab to view the max traffic value. If **the value of max traffic multiplied by replica quantity is greater than that of the purchased peak bandwidth**, you can determine that at least one throttling has occurred. You can also configure an alarm for traffic throttling to check whether throttling occurs.
-   ![](https://main.qcloudimg.com/raw/3c0b2b6346b358287eea11c3f889b90d.png)
-
-3. A monitoring chart for displaying the number of traffic throttling times will be added in the console.
+![](https://main.qcloudimg.com/raw/0ea089e54c336cd671cbd91a66565570.png)
+2. You can click the **Monitor** tab to view the max traffic value. If **the value of max traffic multiplied by replica quantity is greater than that of the purchased peak bandwidth**, you can determine that at least one throttling has occurred. You can also configure an alarm for traffic throttling.
+     ![](https://main.qcloudimg.com/raw/3c0b2b6346b358287eea11c3f889b90d.png)
+3. View the instance monitoring data on the monitoring page in the CKafka console. If the number of throttling times is greater than 0, throttling has occurred.
+![](https://qcloudimg.tencent-cloud.cn/raw/2f881ffd847d40af9a9a388fe510fa32.png)
