@@ -12,7 +12,7 @@ Before uploading an object, make sure that you have already created a bucket. If
 
 ### Directions
 
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List**. Select the bucket to which you want to upload an object, and choose the **File List** tab. Then, click **Upload Files**, as shown below.
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List**. Select the bucket to which you want to upload an object, and choose **File List**. Then, click **Upload Files**, as shown below.
 ![](https://main.qcloudimg.com/raw/1f499717168f5559337899f635e19a13.png)
 
 2. On the **Upload Files** page, click **Select Files** or **Select Folders** to select a single or multiple local files/folders. Then, click **Upload**. You can also click **Next** to set object properties before clicking **Upload** (see Step 3).
@@ -32,4 +32,4 @@ Before uploading an object, make sure that you have already created a bucket. If
 4. After clicking **Upload**, you can check the upload progress in **Task Completed** in the top right of the page. Once the upload is complete, the uploaded object(s) will appear in the **File List**.
 ![](https://main.qcloudimg.com/raw/eab5784b108fc096dbe317fed25f7925.png)
 
-> ?The upload progress in the figure indicates the number of tasks created by the current upload operation. For example, if all 10 files are uploaded successfully, the task progress will display "succeeded: 10, failed: 0, paused: 0)".
+> ?The upload progress in the figure indicates the number of tasks created by the current upload operation. For example, if all 10 files are uploaded successfully, the task progress will display "succeeded: 10, failed: 0, paused: 0".
