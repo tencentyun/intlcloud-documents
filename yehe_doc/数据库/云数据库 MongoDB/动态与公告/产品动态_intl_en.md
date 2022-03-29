@@ -1,3 +1,13 @@
+## January 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tbody><tr>
+<td>Connected to DBbrain</td>
+<td>DBbrain is connected to improve the Ops efficiency.</td>
+<td>2022-01</td>
+<td>-</td></tr>
+</tbody></table>
+
 ## September 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
