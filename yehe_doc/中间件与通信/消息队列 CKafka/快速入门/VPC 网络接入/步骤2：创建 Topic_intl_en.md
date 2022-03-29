@@ -4,12 +4,11 @@ This document describes how to create a topic in a created instance in the CKafk
 
 ## Directions
 
-
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
-2. On the **Instance List** page, click the **ID/Name** of the instance created in [Step 1](https://intl.cloud.tencent.com/document/product/597/40044) to enter the instance details page.
+2. On the **Instance List** page, click the **ID/Name** of the instance created in [Step 1](https://intl.cloud.tencent.com/document/product/597/40043) to enter the instance details page.
 3. On the instance details page, click **Topic Management** at the top and click **Create**.
 4. In the **Create Topic** window, set the number of partitions and replicas and other parameters.
-       ![](https://main.qcloudimg.com/raw/b059e7bddbb29b16b9449e1dbbcf1b4d.png)
+      ![](https://main.qcloudimg.com/raw/a0a6444b0bb665691a1e4c61ff1114ec.png)
    - Name: The topic name. It cannot be changed once entered and can contain only letters, digits, underscores, hyphens, and periods.
    - Partition Count: It is a concept in physical partition, where one topic can contain one or more partitions. CKafka uses partition as an allocation unit.
    - Replica Count: The number of partition replicas is used to ensure the high availability of the partition. To ensure data reliability, creating a single-replica topic is not supported. Two replicas are enabled by default.
@@ -17,4 +16,3 @@ This document describes how to create a topic in a created instance in the CKafk
    - **Tag**: Set a resource tag. For more information, see [Tag Overview](https://intl.cloud.tencent.com/document/product/597/41600).
    - Preset ACL policy: Select the preset ACL policy. For more information on ACL policy, see [Configuring ACL Policy](https://intl.cloud.tencent.com/document/product/597/39084).
 4. Click **Submit**.
-
