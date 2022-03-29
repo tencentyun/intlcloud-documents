@@ -5,7 +5,7 @@ EdgeOne is an integrated edge security and acceleration platform offering 3D pro
 - Web security protection: It effectively prevents top 10 OWASP web ricks like SQL injection and cross-site scripting (XSS) and quickly identifies and blocks bot behaviors.
 - API security protection: It guarantees API access security based on a secure and reliable access authentication mechanism.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/379c07a80f7879601a03d5b572e25023.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a8aca67f5c50a8cd9efaf08890a8e54b.png)
 
 ## Web or Bot Attack Protection 
 #### Bot recognition and protection
