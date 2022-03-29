@@ -1,3 +1,4 @@
+>!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31, , 2022.
 This document describes GPM’s MatchTicket parameters. For more information about relevant concepts, see [Glossary](https://intl.cloud.tencent.com/document/product/1072/38351#P).
 
 ## Status
@@ -107,6 +108,5 @@ MatchTicket status changes during the lifecycle of a matchmaking request. The up
 <td>MatchTicket ID of the current players.</td>
 </tr>
 </tbody></table>
-
 
 

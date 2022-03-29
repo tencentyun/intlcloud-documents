@@ -1,3 +1,4 @@
+>!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31, , 2022.
 <span id = "celueyufa"></span>
 
 ### Policy syntax
@@ -96,5 +97,4 @@ The table below describes the resources that can be used by GPM and the correspo
 - “project” refers to project ID.
 - “region” refers to region.
 - “account” refers to account ID.
-
 
