@@ -9,7 +9,7 @@ This document lists the limits of certain metrics and performance in CKafka. Be 
     <tbody>
     <tr>
         <td>Number of topics</td>
-        <td>The number of topics varies with product specification. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/597/11745).</td>
+        <td>The number of topics varies with product specification. For more information, see <a href='https://intl.cloud.tencent.com/document/product/597/11745'>Billing Overview</a>.</td>
     </tr>
     <tr>
         <td>Number of partitions</td>
@@ -29,16 +29,14 @@ This document lists the limits of certain metrics and performance in CKafka. Be 
     </tr>
     <tr>
         <td>Number of consumer groups</td>
-        <td>The instance-level number of consumer groups should be below 200. For Pro Edition instances, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to increase the limit to 500.
-            申请升级到500个。
+        <td>The instance-level number of consumer groups should be below 200. For Pro Edition instances, you can <a href='https://console.cloud.tencent.com/workorder/category'>submit a ticket</a> to increase the limit to 500.
         </td>
     </tr>
     <tr>
         <td>Instance</td>
         <td>
             <li>The region attribute of instances cannot be changed.</li>
-            <li>The maximum number of client connections to an instance is 5,000. When the number of instance connections has reached the limit, the client cannot create more connections. If this maximum value is unreasonable in your actual business, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to increase it.
-                    href='https://console.cloud.tencent.com/workorder/category'>提交工单</a> 申请扩大。
+            <li>The maximum number of client connections to an instance is 5,000. When the number of instance connections has reached the limit, the client cannot create more connections. If this maximum value is unreasonable in your actual business, you can <a href='https://console.cloud.tencent.com/workorder/category'>submit a ticket</a> to increase it.
             </li>
         </td>
     </tr>
