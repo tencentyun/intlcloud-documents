@@ -12,9 +12,9 @@ EdgeOne 以站点 (zone，又称二级域名) 为维度提供服务购买和接�
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/e3677f3738c1a65ea34fe413be154d01.png)
 4. 在 DNS 配置页面，系统会自动扫描并导入站点的原有 DNS 记录，可以对 DNS 记录进行增删改，并配置 [代理模式](https://intl.cloud.tencent.com/document/product/1145/45968)，单击**下一步**。
-![](https://qcloudimg.tencent-cloud.cn/raw/93f56859b479d239090ef7f0698057a9.png)
-6. 在修改 NS 服务器页面，需要登录站点对应的域名注册商，将 NS 服务器记录修改为 EdgeOne 指定的值。具体操作详情请参见 [NS 修改指南](#NSXG)。
-7. 修改后，单击**完成**自动跳转到站点概览页面。
+![](https://qcloudimg.tencent-cloud.cn/raw/aa62a8c7d2247738bd21d85cb370d019.png)
+5. 在修改 NS 服务器页面，需要登录站点对应的域名注册商，将 NS 服务器记录修改为 EdgeOne 指定的值。具体操作详情请参见 [NS 修改指南](#NSXG)。
+6. 修改后，单击**完成**自动跳转到站点概览页面。
 >?NS 记录修改生效时间取决于您的域名注册商，生效后系统会通过邮件/短信/站内信通知。
 
 
