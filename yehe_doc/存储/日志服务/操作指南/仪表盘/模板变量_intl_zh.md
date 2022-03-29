@@ -112,7 +112,7 @@ http_status:>=400 | select histogram( cast(__TIMESTAMP__ as timestamp),interval 
 ```
 * | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as analytic_time, avg(request_time) as response_time group by analytic_time order by analytic_time limit 1000
 ```
-3. 添加模版变量。
+3. 添加模板变量。
  - 变量类型：快速过滤
  - 显示名称：接口名称
  - 日志主题：日志主题 A
@@ -133,7 +133,7 @@ http_status:>=400 | select histogram( cast(__TIMESTAMP__ as timestamp),interval 
 #### 解决方案
 
 1. 创建仪表盘。
-2. 添加模版变量。
+2. 添加模板变量。
  - 变量类型：数据源
  - 变量名称：env
  - 显示名称：应用环境
@@ -144,7 +144,6 @@ http_status:>=400 | select histogram( cast(__TIMESTAMP__ as timestamp),interval 
 
 4. 重复执行**步骤3**，添加其他图表。
 5. 返回仪表盘详情页面，并在该页面顶部单击数据源变量“应用环境”，在该变量的下拉菜单中切换日志主题。同时，使用该变量的图表也将切换日志主题。
-
 
 
 
