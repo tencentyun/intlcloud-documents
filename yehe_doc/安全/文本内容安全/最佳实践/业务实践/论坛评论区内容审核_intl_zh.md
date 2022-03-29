@@ -100,8 +100,8 @@
 
 在完成以上步骤后，可以调用**文本内容检测（TextModeration）**接口创建评论内容审核任务，具体方法如下：
 
-- 确保您的待审核文本内容符合接口传入的 **文件格式要求**。
-- 参考接口的 **接口文档说明**，填入相应的输入参数。
-- 若任务创建成功，接口会返回详细识别结果，请参考 **文本内容识别示例** 进一步了解返回参数示例；若任务创建失败，接口会返回错误码，请参考 **业务错误码** 和 **公共错误码** 进行问题排查。
+- 确保您的待审核文本内容符合接口传入的 [文件格式要求](https://intl.cloud.tencent.com/document/product/1121/46072)。
+- 参考接口的 [接口文档说明](https://intl.cloud.tencent.com/document/product/1121/46072)，填入相应的输入参数。
+- 若任务创建成功，接口会返回详细识别结果，请参考 [文本内容识别示例](https://intl.cloud.tencent.com/document/product/1121/46072) 进一步了解返回参数示例；若任务创建失败，接口会返回错误码，请参考 [业务错误码](https://intl.cloud.tencent.com/document/product/1121/46072) 和 [公共错误码](https://intl.cloud.tencent.com/document/product/1121/46069) 进行问题排查。
 
 >?  在进行服务接入时，可以使用 API Explorer工具进行在线调试。
