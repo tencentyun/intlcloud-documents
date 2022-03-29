@@ -1,6 +1,7 @@
 ## Feature Description
 Sometimes, you may need to obtain the list of server IP addresses for security purposes. This API is used by the app admin to obtain the list of server IP addresses or IP ranges used by the SDK and third-party callbacks.  
-
+## Overview
+>! This API only supports obtaining the IP address or IP range information of IM integration methods in specified regions (countries). If you call it in other regions, a cache node will be connected by default. To obtain the IP address or IP range information of the cache node, [contact us] (https://intl.cloud.tencent.com/document/product/1047/41676) to enable this feature. We will assess your needs based on your application and enable this feature for you if appropriate.
 
 ## API Calling Description
 ### Sample request URL
